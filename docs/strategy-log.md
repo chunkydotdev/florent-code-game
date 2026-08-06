@@ -30,6 +30,37 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### aug7 — Sentinel-first defense: the untested strategy-notes guess held, hard
+
+- **Date:** 2026-08-07 · `bots/aug7`, built on v4 · **Not yet submitted** (no platform account)
+- **Hypothesis:** [strategy-notes.md](strategy-notes.md) flagged Sentinel as strictly better
+  than Gunner for a static base defender (more dmg/round, better Ti-per-damage, more HP,
+  2.5x the attack radius, unblockable by walls/units) except for 10 Ti lower entry cost and
+  re-aimability — neither of which matters once a turret is placed and never moves. Marked
+  "untested guess, needs a real A/B" in the notes.
+- **Change:** one conceptual swap. `_try_build_gunner`/`_run_gunner` → sentinel equivalents
+  at the same trigger point (`harvester_count >= TARGET_HARVESTERS`), same facing-away-from-
+  core logic, same 18-tile-from-core placement gate, same `AMMO_BUFFER = 20`. The only new
+  code: sentinels have no `get_gunner_target()`-style helper, so targeting scans
+  `get_attackable_tiles()` for the first tile holding an enemy unit or building and fires
+  there.
+- **Result:**
+  - **Screen vs v4 (48 matches): 64.6% [50.4%, 76.6%]** — 5 `core_destroyed` wins appeared
+    where the v4-only baseline essentially never had any.
+  - **Confirm vs v4 (256 matches): 68.4%, CI [62.4%, 73.7%] — clears the accept gate outright.**
+  - 0 crashes both sides. Win conditions shifted hard: 24 `core_destroyed` (up from a
+    background rate near zero), plus more `titanium_collected` wins too — sentinels aren't
+    just killing cores, they're also denying enemy economy better.
+- **Read:** the derivation held, and by a wide margin — this isn't a marginal tuning win,
+  it's the biggest single-change jump since v1's crash fix. Best explanation: r²=32 vs r²=13
+  means a sentinel covers a conveyor approach a gunner simply can't see, and the unblockable
+  line means enemy builder bots can't screen it by standing in front of infrastructure.
+  Reinforces the notes' broader point that the tutorials' Gunner-first framing is actively
+  wrong for this game, not just suboptimal.
+- **Next:** aug7 is now the strongest bot measured. Continue the loop from here — the ammo
+  buffer (20 Ti = 2 sentinel shots) was left untouched for attribution; worth its own
+  experiment now that sentinels are the default (open-questions.md: adaptive ammo).
+
 ### v4 — full direction-neutralisation: the fairness fix turned out to be a strength fix
 
 - **Date:** 2026-08-06 · **Not yet submitted** (no platform account) · **Current best**

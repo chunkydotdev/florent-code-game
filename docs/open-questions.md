@@ -52,7 +52,9 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
 
 ## Strategy questions we can answer ourselves offline
 
-- [ ] Is Sentinel-first actually better than Gunner-first? (see [strategy-notes.md](strategy-notes.md))
+- [x] ~~Is Sentinel-first actually better than Gunner-first?~~ **Yes, decisively.** Measured
+      2026-08-07: 68.4% [62.4%, 73.7%] vs v4 (Gunner-first), 256 matches, 24 `core_destroyed`
+      appearing where the Gunner baseline had essentially none. See strategy-log.md (aug7).
 - [ ] What's the real payback period on a harvester once conveyor cost and builder-rounds are
       counted? At what chain length does a harvester stop being worth building?
 - [ ] Does the "scout first, build later" scale-tax dodge beat building immediately?
