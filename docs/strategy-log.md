@@ -30,6 +30,141 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### v45's economy change — conveyor facing follows the trail, and the failed first attempt named the real constraint
+
+- **Date:** 2026-08-08 (session 7) · challenger `bots/_facing_v2`, pinned incumbent `bots/aug7`
+  (`3cfa588`), primary gate `bots/opp_v44`
+- **Hypothesis, pre-specified by the previous session's census:** 71% of residual facing failures
+  are path bends, where "dominant axis toward the Core" and "along the trail" disagree. Facing
+  each trail conveyor at the trail's own continuation should close them.
+
+**The first implementation was refuted at the screen, and that is where the real finding is.**
+The pure rule — an outward-walking builder faces the new conveyor back at the tile it came from,
+always — screened at **11.1% [6.1%, 19.3%]** over 90 matches, losing on **all 15 maps**, 0
+crashes. A census of 30 fresh replays says why, and it is not what either competing hypothesis
+predicted:
+
+| terminal cause of a non-delivering conveyor | pure trail rule | `aug7` |
+| --- | --- | --- |
+| **closed cycle** (mutual-pointing loop, can never reach the Core) | **931 (43.6%)** | **0** |
+| dangling into empty ground | 726 | 725 |
+| wall / building / other | 476 | 923 |
+
+- **Cycles are the dominant failure, and `aug7`'s rule cannot produce a single one.** "Point at the
+  Core" is a *global field*: every arrow descends the same potential, so loops are impossible by
+  construction. "Point back down my own trail" is *local per builder*, and two builders crossing
+  the same corridor in opposite directions point at each other. **84% of the cycles sat within
+  Chebyshev distance 5 of the Core**, where trails converge and cross most.
+- The predicted origin gap was real but secondary: dangling heads landed on a recorded
+  builder-spawn tile **23.6%** of the time against `aug7`'s **4.8%** — the first trail tile points
+  back at the spawn tile, which never receives a conveyor.
+- **The transferable lesson: conveyor facing is a global consistency problem.** A local rule is
+  only safe if it is anchored to a global one. Conditional delivery rate collapsed **44.0% →
+  7.2%**; on `drumlin`, the wall-free control where `aug7` scores best, the pure rule scored
+  **0.0%**.
+
+**The corrected rule keeps both properties and it clears the gate.** Trail linking applies only
+when the builder is walking outward **and** `next_pos` is farther than
+`NEAR_CORE_FACING_DIST_SQ = 18` from the Core; inside that radius `aug7`'s converging field is
+kept byte-for-byte, so chains still terminate *into* the Core and the crossing-trail zone keeps
+its global anchor.
+
+| measurement | result |
+| --- | --- |
+| screen vs `aug7`, 90 matches | 66.7% [56.4%, 75.5%] |
+| **confirm vs `aug7`, 480 matches** | **58.5% [54.1%, 62.9%] — lower bound clears, ACCEPT** |
+| no-collapse vs `starter`, 480 | 75.2% [71.2%, 78.9%] (0 crashes us, 808 theirs) |
+| no-collapse vs `opp_v39`, 480 | 69.0% [64.7%, 72.9%] — above the 65.8% `aug7` reference |
+| primary gate vs `opp_v44`, 480 | 43.8% [39.4%, 48.2%] — **does not clear 50%** |
+| cycles in 1,891 non-delivering conveyors | **0 — the failure mode is gone** |
+| crashes, all 2,000+ matches | **0** |
+
+Per map against `aug7` it is broad rather than concentrated — above half on 12 of 15, no map
+collapses, and the largest margin is **`heart` 26/32**, which is exactly the map where
+zero-delivery was first observed.
+
+**Read it honestly, because this is the second facing change in a row whose win the facing
+metric does not explain.** In a like-for-like census (30 matches, both seats) the conditional
+delivery rate came out **52.9% for the challenger against 53.1% for `aug7` — a dead tie.** What
+moved was *volume*: harvesters 165 vs 139, graph-connected chains 140 vs 113, and **titanium
+collected 166,920 vs 129,630, +29%**. The change buys more economy, not a higher *fraction* of
+correct facings. Two candidate explanations, both testable: end-of-game `chain_dir` is a
+snapshot that cannot see **time-to-first-delivery** (a chain that completes 200 rounds earlier
+scores identically), and a bot with more income simply builds more harvesters. **Next
+measurement should be first-delivery round, not end-state facing.** Also unresolved and recorded
+rather than explained away: the challenger still shows a **3× dangling-head spike at Chebyshev
+distance 1-2** versus `aug7`, in a zone where its code is byte-identical to `aug7` — so the
+far-zone topology is feeding the near zone differently, and nobody has said how.
+
+**What went into the v45 package alongside it: the (0,0)-Core store fix**, which has been waiting
+on a decision since the previous session. Inside the assembled candidate it takes **`jackpot`
+seat A from 0/32 to 15/32 = 46.9% [31%, 64%]**, with 29 of 32 games now decided on titanium
+collected rather than a harvester tiebreak. It has **exactly one writer and one reader** of those
+two slots, so it is **provably inert on every map whose Core is not at (0, 0)** — `jackpot` alone
+in this rotation. That argument, not the pooled no-verdict it produced last session, is why it
+ships.
+
+**And the gap to `opp_v44` is structural, from three independent directions.** The assembled
+package scores **44.8% [40.4%, 49.3%]** against it — up from `aug7`'s 40.8% but with the upper
+bound now *excluding* 50%. A full CEM constants sweep landed at **40.8%, identical to untuned
+`aug7`** — tuning buys nothing. And the per-map split is the same bimodal shape as everything
+else we run against v44: **`fjordgate` 32/32** — a clean sweep of the 10×10 map where v44's own
+`w*h > 120` gate disables its vision-triggered battery, exactly the hole read out of its source
+last session — **`archipelago` 28/32, `heart` 22/32**, against **`atoll` 1/32 and `hive` 4/32**,
+the two lowest-ore maps in the pool. Single-match reads on those two are unambiguous about the
+direction: we finish with **125 buildings to v44's 16** on `hive` while collecting **400 to their
+1,190**, and lose the Core at round 262. **We are not out-teched there, we are out-delivered
+while spending more.** That is the next lane: conveyor spend per unit of delivered titanium.
+
+- **Date:** 2026-08-08 (session 7) · no code change; three corrections to entries below, two of
+  them to claims made *today*. Date labels still run one day ahead of wall clock — see the
+  standing note in HANDOVER.md; every commit here is authored Thu Aug 6 2026.
+
+**1. `bots/rush_probe` is weak, and a number was relayed inverted.** The control run settles it:
+**`aug7` beats `rush_probe` 96.2% [93.0%, 98.0%]** over 240 matches. The defense-carrying
+`ladder1` scores **94.2% [90.4%, 96.5%]** against the same probe over 240 — **the intervals
+overlap and the point estimate is two points lower**. So the reactive-defense port has **no
+demonstrated benefit against a rush**, and a hint of cost.
+
+For a while today the belief in circulation was the opposite — that the port had "inverted a
+95/5 rush matchup". It came from reading "the 95.0% rush baseline" as *the rusher's* score. It
+was always the **defender's**: the entry below already says so in bold, and the cross-tab it
+reports says it twice over — **the probe's own Core died 22 times to `aug7`'s 5**. A probe that
+loses its own base four times more often than it takes yours is not dominating anybody.
+
+- **Rule, because this cost us a working session's framing: a metric report must name both
+  sides.** Write "X beats Y at N%", never "the baseline is N%". `arena.py` reports the
+  **first-named** bot's rate, and a bare percentage is a coin flip in prose.
+- **Rule: a cross-tab that contradicts the headline is a defect to resolve before relaying, not
+  colour to relay alongside it.** Both times this number went wrong, the contradicting
+  cross-tab was sitting in the same log file.
+
+**2. The defense port's "violently bimodal per map" split was mis-attributed to the port.** The
+entry below reads a 0-for-32 on `hive` and 3-for-32 on `atoll` as structural evidence about the
+defense mechanism, with ore starvation as the leading explanation. **Today's facing candidate
+carries no defense change at all and collapses on the same maps against the same opponent:**
+
+| vs `opp_v44`, wins /32 | `atoll` | `hive` | `jackpot` | `drumlin` | `meander` | `snowflake` |
+| --- | --- | --- | --- | --- | --- | --- |
+| `ladder1` + reactive defense | 3 | 0 | 6 | 7 | 9 | 3 |
+| `_facing_v2`, no defense change | **0** | **0** | 5 | 5 | 9 | 11 |
+
+The strong end matches too (`archipelago`, `lighthouse`, `moonrise`, `heart` high in both). **The
+bimodality is a property of the aug7-lineage-versus-`opp_v44` matchup, not of either change.**
+The ore-starvation hypothesis is not refuted as physics, but it is no longer *evidence for*
+anything about defense — it was explaining a pattern that was already there.
+
+**3. Consequence for the v45 package: the reactive defense is NOT in it.** It failed its primary
+gate (40.6% vs `opp_v44` against a 40.8% baseline), it shows no benefit against the only rush
+instrument we have, and the per-map argument that kept it alive belonged to the matchup. It is
+preserved intact at **`bots/_defense_port`** — the mechanism (threat detection decoupled from our
+own economy) is still the right idea and the ladder rush threat is still real and independently
+evidenced (the watched blowout loss, the turn-1-Launcher benchmark in opponents.md, the
+first-Sentinel cluster at rounds 3-6 across 24 real replays). **What we lack is a competent local
+rusher to test it against.** `bots/rush_probe_fast` — launcher insertion, with enough economy to
+sustain ammo — is that instrument. **If its baseline shows it is genuinely dangerous, that is the
+defense port's real test, and it should be re-gated then, not now.**
+
 ### Finding — the facing bug has three distinct causes, we fixed the smallest one, and the real one is now named
 
 - **Date:** 2026-08-08 · 28 fresh replays + 24 ladder replays, censused with

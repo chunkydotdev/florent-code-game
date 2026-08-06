@@ -1,4 +1,7 @@
-"""_pkg45 — the assembled v45 candidate: _facing_v2 + the (0,0)-Core store fix.
+"""_pkg45b — _pkg45 plus the deterministic, trail-aware tie-break (three changes
+over aug7). See bots/_tiebreak1 for that tie-break in isolation.
+
+_pkg45 — _facing_v2 + the (0,0)-Core store fix.
 
 Two changes over bots/aug7 (3cfa588), each measured separately:
   1. trail-linked conveyor facing outside NEAR_CORE_FACING_DIST_SQ = 18
@@ -160,7 +163,8 @@ def nearest_cardinal(d: Direction) -> Direction:
     }[d]
 
 
-def cardinal_toward(src: Position, dst: Position) -> Direction | None:
+def cardinal_toward(src: Position, dst: Position,
+                    prefer: Direction | None = None) -> Direction | None:
     """The cardinal direction that points most directly from src to dst.
 
     nearest_cardinal() snapped an already-quantised 8-way Direction, which threw
@@ -186,12 +190,27 @@ def cardinal_toward(src: Position, dst: Position) -> Direction | None:
         return Direction.EAST if dx > 0 else Direction.WEST
     if abs(dy) > abs(dx):
         return Direction.SOUTH if dy > 0 else Direction.NORTH
-    # An exact diagonal: the two cardinals are equally near, so there is no
-    # right answer -- break the tie at random rather than by absolute compass
-    # direction, the same way this file breaks every other tie.
+    # An exact diagonal: the two cardinals are equally near. Random is
+    # symmetric but it is a coin flip at precisely the tiles where being wrong
+    # is most expensive -- exact ties cluster on the shared trunk tiles near
+    # the Core where many harvester trails converge, and one tie resolved
+    # wrong was measured collapsing 8 of 12 harvesters at once
+    # (docs/strategy-log.md, the three-causes census, cause #3).
+    #
+    # `prefer` lets the caller name the chain-aware answer: the direction back
+    # down the trail this builder is walking. It is deterministic and it is
+    # defined relative to the walk, not to the absolute compass, so it is
+    # equivariant under rotation AND under both reflections -- which is what
+    # a seat-symmetric tie-break has to be. Fall back to random only when the
+    # caller has no opinion or its preference is not one of the two tied
+    # cardinals.
+    east_west = Direction.EAST if dx > 0 else Direction.WEST
+    north_south = Direction.SOUTH if dy > 0 else Direction.NORTH
+    if prefer is not None and prefer in (east_west, north_south):
+        return prefer
     if random.random() < 0.5:
-        return Direction.EAST if dx > 0 else Direction.WEST
-    return Direction.SOUTH if dy > 0 else Direction.NORTH
+        return east_west
+    return north_south
 
 
 class Player:
@@ -610,7 +629,9 @@ class Player:
                     > NEAR_CORE_FACING_DIST_SQ):
                 cardinal = d.opposite()
             else:
-                cardinal = cardinal_toward(next_pos, self.core_pos)
+                # d.opposite() is the tile we came from: the chain-aware answer
+                # whenever the Core direction is an exact diagonal tie.
+                cardinal = cardinal_toward(next_pos, self.core_pos, d.opposite())
             if cardinal is not None and ct.can_build_conveyor(next_pos, cardinal):
                 ct.build_conveyor(next_pos, cardinal)
 

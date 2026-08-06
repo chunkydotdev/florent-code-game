@@ -1,16 +1,4 @@
-"""_pkg45 — the assembled v45 candidate: _facing_v2 + the (0,0)-Core store fix.
-
-Two changes over bots/aug7 (3cfa588), each measured separately:
-  1. trail-linked conveyor facing outside NEAR_CORE_FACING_DIST_SQ = 18
-     (58.5% [54.1%, 62.9%], 480 matches vs aug7)
-  2. the Core publishes x+1/y+1 into the store and builders subtract 1, so a
-     Core at exactly (0, 0) is distinguishable from an unwritten slot. There
-     is exactly one writer and one reader of those slots, so this is provably
-     inert on every map whose Core is not at (0, 0) -- in the current rotation
-     that is jackpot alone, where it takes team A from 0 titanium collected,
-     every game, to a fair seat split.
-
-_facing_v2 — aug7 + trail linking outside the near-Core zone (one change,
+"""_facing_v2 — aug7 + trail linking outside the near-Core zone (one change,
 in _try_move; NEAR_CORE_FACING_DIST_SQ = 18).
 
 aug7 — v4 + Sentinel-first defense (strategy-notes.md: sentinel beats
@@ -276,18 +264,8 @@ class Player:
         # Write our position into the store every round so newly spawned bots
         # can read it. Store writes are buffered — they become visible next round.
         pos = ct.get_position()
-        # We publish x+1/y+1, not the raw coordinates: every store slot starts
-        # at 0, so 0 doubles as "nothing written yet" -- a Core whose true
-        # position is (0, 0) would publish 0 and 0 and be indistinguishable
-        # from an unwritten slot. That is not hypothetical: on jackpot team A's
-        # Core sits at exactly (0, 0), and with the raw write every builder's
-        # read-guard stayed false for the whole match, so core_pos was never
-        # set, no trail conveyors got laid, no sentinels got built, and the
-        # team delivered exactly zero titanium. The +1 offset keeps 0 reserved
-        # for "unwritten" while still round-tripping any real position (undone
-        # in _read_core_pos).
-        ct.write_store(SLOT_CORE_X, pos.x + 1)
-        ct.write_store(SLOT_CORE_Y, pos.y + 1)
+        ct.write_store(SLOT_CORE_X, pos.x)
+        ct.write_store(SLOT_CORE_Y, pos.y)
 
         # Keep the sentinels supplied: top the global ammo pool up to AMMO_BUFFER
         # whenever we have titanium to spare (we reserve enough for a builder
@@ -381,17 +359,13 @@ class Player:
     def _read_core_pos(self, ct: Controller) -> None:
         """Read the core's position from the communication store.
 
-        The core publishes x+1/y+1, not raw coordinates (see _run_core): 0 is
-        what every slot holds before anyone writes to it, so a Core truly at
-        (0, 0) would otherwise be unreadable from "not written yet". Both slots
-        are written together on the same round, so once published both are >= 1
-        -- require both (not either) before trusting the value, then undo the
-        offset.
+        The core writes its position on round 1, so on round 1 these will
+        still be 0. We skip storing (0, 0) unless the core really is there.
         """
         x = ct.read_store(SLOT_CORE_X)
         y = ct.read_store(SLOT_CORE_Y)
-        if x > 0 and y > 0:
-            self.core_pos = Position(x - 1, y - 1)
+        if x > 0 or y > 0:
+            self.core_pos = Position(x, y)
 
     def _try_build_harvester(self, ct: Controller) -> bool:
         """Try to build a harvester on an adjacent ore tile.

@@ -1,17 +1,30 @@
-"""_pkg45 — the assembled v45 candidate: _facing_v2 + the (0,0)-Core store fix.
+"""ladder1 — aug7 + reactive home defense.
 
-Two changes over bots/aug7 (3cfa588), each measured separately:
-  1. trail-linked conveyor facing outside NEAR_CORE_FACING_DIST_SQ = 18
-     (58.5% [54.1%, 62.9%], 480 matches vs aug7)
-  2. the Core publishes x+1/y+1 into the store and builders subtract 1, so a
-     Core at exactly (0, 0) is distinguishable from an unwritten slot. There
-     is exactly one writer and one reader of those slots, so this is provably
-     inert on every map whose Core is not at (0, 0) -- in the current rotation
-     that is jackpot alone, where it takes team A from 0 titanium collected,
-     every game, to a fair seat split.
+Adds exactly one mechanism on top of aug7: the Core publishes a threat flag
+whenever an enemy unit or building is visible within a modest radius of
+itself (decoupled from our own harvester count -- it reacts to what the
+enemy is doing, not to our own economy progress), and a builder bot that
+sees that flag drops its current target, heads home, and builds a Sentinel
+with the usual harvester-count gate bypassed.
 
-_facing_v2 — aug7 + trail linking outside the near-Core zone (one change,
-in _try_move; NEAR_CORE_FACING_DIST_SQ = 18).
+Why: `_try_build_sentinel` was previously only ever invoked once
+`SLOT_HARVESTER_COUNT >= TARGET_HARVESTERS`, AND only by whichever builder
+happened to already be within dist_sq<=18 of the Core at that moment -- a
+single point of failure against a fast rush (field-observed first-Sentinel
+turns of 81, 436, or never, despite the harvester gate being met turn
+22-28). Core-side turret construction was considered and empirically ruled
+out first: `ct.can_build_sentinel(...)` and the generic `ct.can_build(...)`
+both return False for every candidate tile when called from the Core's own
+run() branch (verified with a throwaway single-match probe, no exception
+raised) -- consistent with the official docs ("[the Core's] active
+abilities are spawning Builder Bots and converting ammunition") and with
+every can_build_*/build_* stub docstring's "orthogonally adjacent tile to
+this builder bot" wording. So the fix runs through a builder instead.
+
+Every other line below -- economy, movement, targeting, ammo, the
+harvester-gated sentinel path -- is byte-for-byte aug7. When no threat has
+ever been reported, `responding` is always False and the new branches in
+_run_builder collapse to exactly aug7's original control flow.
 
 aug7 — v4 + Sentinel-first defense (strategy-notes.md: sentinel beats
 gunner on nearly every axis except entry cost and re-aim; static base
@@ -39,20 +52,25 @@ Use ct.get_entity_type() to branch on what kind of unit you are.
 Strategy:
   1. Core spawns builder bots, publishes its position via the store, and keeps
      a small global-ammo buffer topped up (turrets fire from that shared pool)
-  2. Builder bots explore, build harvesters on ore, and lay conveyors toward
+  2. Core also publishes a threat flag whenever it currently sees an enemy
+     within a modest radius of itself, every round it's true
+  3. Builder bots explore, build harvesters on ore, and lay conveyors toward
      the core so titanium flows back automatically
-  3. Once the economy is running (3+ harvesters), builder bots place sentinels
-     near the core for defense
-  4. Sentinels auto-fire at the closest visible enemy on their attack line
+  4. Once the economy is running (3+ harvesters), builder bots place sentinels
+     near the core for defense -- OR immediately, gate bypassed, if the
+     threat flag is fresh and we haven't already reactively built a couple
+  5. Sentinels auto-fire at the closest visible enemy on their attack line
 
 Entity types used:  Core, Builder Bot, Harvester, Conveyor, Sentinel
 
 Communication store slots:
-  0  SLOT_CORE_X          Core X position (written by core on round 1)
-  1  SLOT_CORE_Y          Core Y position
-  2  SLOT_HARVESTER_COUNT Total harvesters built by the team
-  3  SLOT_ORE_LOCATION    Packed (x, y) of an uncovered ore tile
-  Slots 4-15 are free — use them for your own coordination logic.
+  0  SLOT_CORE_X            Core X position (written by core on round 1)
+  1  SLOT_CORE_Y            Core Y position
+  2  SLOT_HARVESTER_COUNT   Total harvesters built by the team
+  3  SLOT_ORE_LOCATION      Packed (x, y) of an uncovered ore tile
+  4  SLOT_HOME_THREAT       (round Core last saw a nearby enemy) + 1; 0 = never
+  5  SLOT_HOME_SENTINEL_COUNT  Sentinels built via the reactive path (plain count)
+  Slots 6-15 are still free — use them for your own coordination logic.
 
 Ideas for improvement:
   - Build full conveyor chains from distant harvesters back to the core
@@ -77,15 +95,6 @@ DIRECTIONS = [d for d in Direction if d != Direction.CENTRE]
 # on screen -- see its corner compass.
 CARDINALS = [Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST]
 
-# Radius² around the Core inside which trail conveyors keep aug7's
-# "dominant axis toward the Core" facing. Outside it, an outward-walking
-# builder links each new conveyor back to the tile it came from instead.
-# See the comment block in _try_move for why the near-Core zone must keep
-# the converging rule (chain termination), and results.tsv for the 11.1%
-# screen that established it. Every spawn-ring tile sits within dist²=8 of
-# the Core's NW corner; 18 keeps a buffer beyond the ring.
-NEAR_CORE_FACING_DIST_SQ = 18
-
 # --- Communication store slot assignments ---
 # The store has 16 slots (indices 0-15), each holding a u32 value.
 # Writes are buffered: a write_store() call becomes visible to all units
@@ -94,6 +103,37 @@ SLOT_CORE_X = 0
 SLOT_CORE_Y = 1
 SLOT_HARVESTER_COUNT = 2
 SLOT_ORE_LOCATION = 3
+
+# --- Reactive home defense (new) ---
+# (round Core last saw a nearby enemy) + 1; 0 means "never". The +1 offset
+# is required because round 0 is a legitimate round to spot a threat on,
+# and a bare 0 would be indistinguishable from "unwritten" (every store
+# slot starts at 0 and only holds non-negative integers -- see pack_pos()
+# below for the same trick applied to positions).
+SLOT_HOME_THREAT = 4
+# Sentinels built via the reactive (gate-bypassed) path. A plain count --
+# 0 is a legitimate "none yet" value here, same convention as
+# SLOT_HARVESTER_COUNT, so no offset is needed.
+SLOT_HOME_SENTINEL_COUNT = 5
+
+# "Modest radius" around the Core that counts as a home threat. Bigger than
+# the 12-tile spawn ring (every ring tile is within dist_sq<=8 of the
+# Core's NW-corner position -- see docs/game-model.md and the dist_sq=8
+# scan in _run_core below) so we get some warning before an attacker is
+# actually camped in it, but comfortably inside the Core's own vision
+# (dist_sq<=36) so we only react to something we can actually see.
+HOME_THREAT_DIST_SQ = 30
+
+# How many rounds a threat report stays "active" after the Core's last
+# sighting. Absorbs the one-round comms-store lag (writes are visible
+# starting next round) and the occasional CPU-guarded skip.
+HOME_THREAT_STALE_ROUNDS = 5
+
+# Cap on sentinels built via the bypassed-gate reactive path, so a
+# long-lived threat can't indefinitely divert every builder from economy.
+# Once this many are built, the incumbent's own harvester-gated path
+# (unchanged, below) takes back over.
+HOME_SENTINEL_CAP = 2
 
 # How many builder bots the core will spawn over the course of the game
 MAX_BUILDERS = 5
@@ -276,18 +316,27 @@ class Player:
         # Write our position into the store every round so newly spawned bots
         # can read it. Store writes are buffered — they become visible next round.
         pos = ct.get_position()
-        # We publish x+1/y+1, not the raw coordinates: every store slot starts
-        # at 0, so 0 doubles as "nothing written yet" -- a Core whose true
-        # position is (0, 0) would publish 0 and 0 and be indistinguishable
-        # from an unwritten slot. That is not hypothetical: on jackpot team A's
-        # Core sits at exactly (0, 0), and with the raw write every builder's
-        # read-guard stayed false for the whole match, so core_pos was never
-        # set, no trail conveyors got laid, no sentinels got built, and the
-        # team delivered exactly zero titanium. The +1 offset keeps 0 reserved
-        # for "unwritten" while still round-tripping any real position (undone
-        # in _read_core_pos).
-        ct.write_store(SLOT_CORE_X, pos.x + 1)
-        ct.write_store(SLOT_CORE_Y, pos.y + 1)
+        ct.write_store(SLOT_CORE_X, pos.x)
+        ct.write_store(SLOT_CORE_Y, pos.y)
+
+        # Reactive home defense, step 1: report any enemy unit or building
+        # within a modest radius of us, every round it's true, so builders
+        # can react without waiting on the harvester-count gate below. This
+        # is decoupled from our own economy on purpose -- it fires off what
+        # the enemy is doing, not off how many harvesters we've built.
+        # Purely additive: everything else in this method is unchanged, and
+        # this scan costs one extra vision query per round when nothing is
+        # nearby (the common case against our local, non-scouting opponent
+        # pool). Core-side turret construction was ruled out empirically
+        # (see module docstring) -- this only ever writes a flag, never
+        # attempts to build.
+        my_team = ct.get_team()
+        for eid in ct.get_nearby_entities():
+            if ct.get_team(eid) == my_team:
+                continue
+            if pos.distance_squared(ct.get_position(eid)) <= HOME_THREAT_DIST_SQ:
+                ct.write_store(SLOT_HOME_THREAT, ct.get_current_round() + 1)
+                break
 
         # Keep the sentinels supplied: top the global ammo pool up to AMMO_BUFFER
         # whenever we have titanium to spare (we reserve enough for a builder
@@ -326,11 +375,15 @@ class Player:
 
     def _run_builder(self, ct: Controller) -> None:
         """Builder bot logic, executed each round. Priority order:
-        1. Build a harvester if adjacent to uncovered ore
-        2. Build a sentinel if we already have enough harvesters
-        3. Heal any damaged friendly buildings nearby
-        4. Move toward the next target (ore or exploration)
-        5. Broadcast any visible ore to teammates via the store
+        1. If the Core recently reported a nearby threat (and we haven't
+           already reactively built HOME_SENTINEL_CAP sentinels), try to
+           plant a defensive sentinel right now, harvester gate bypassed.
+        2. Build a harvester if adjacent to uncovered ore
+        3. Build a sentinel if we already have enough harvesters
+        4. Heal any damaged friendly buildings nearby
+        5. Move toward the next target (ore, home if responding to a
+           threat, or exploration)
+        6. Broadcast any visible ore to teammates via the store
         """
         pos = ct.get_position()
 
@@ -347,13 +400,29 @@ class Player:
             self.stuck = 0
         self.last_pos = pos
 
+        # Reactive home defense, step 2: while the Core's threat report is
+        # fresh and we're still under the reactive-sentinel cap, this
+        # builder prioritises defense over economy below. When there is no
+        # recent threat (the common case against our local opponent pool),
+        # `responding` is False and every branch below that reads it
+        # collapses to exactly aug7's original behavior.
+        responding = (
+            self._home_threat_recent(ct)
+            and ct.read_store(SLOT_HOME_SENTINEL_COUNT) < HOME_SENTINEL_CAP
+        )
+
         # --- Build phase (requires action cooldown == 0) ---
         # Try to build a harvester first; if none available, consider a sentinel
         if ct.get_action_cooldown() == 0:
-            if not self._try_build_harvester(ct):
-                # Only build sentinels once our economy is up (enough harvesters)
+            acted = responding and self._try_build_sentinel(ct)
+            if acted:
+                count = ct.read_store(SLOT_HOME_SENTINEL_COUNT)
+                ct.write_store(SLOT_HOME_SENTINEL_COUNT, count + 1)
+            if not acted and not self._try_build_harvester(ct):
+                # Only build sentinels once our economy is up (enough
+                # harvesters), or right away if reacting to a threat.
                 harvester_count = ct.read_store(SLOT_HARVESTER_COUNT)
-                if harvester_count >= TARGET_HARVESTERS:
+                if harvester_count >= TARGET_HARVESTERS or responding:
                     self._try_build_sentinel(ct)
 
         # Phase priority under CPU pressure: build > heal > move > share.
@@ -369,6 +438,11 @@ class Player:
             return
 
         # --- Move phase (requires move cooldown == 0) ---
+        # Responding builders head straight home instead of wherever
+        # _pick_target would otherwise send them. _move_toward_target and
+        # _pick_target themselves are untouched.
+        if responding and self.core_pos is not None:
+            self.target = self.core_pos
         self._move_toward_target(ct)
 
         if self._cpu_exhausted(ct):
@@ -381,17 +455,28 @@ class Player:
     def _read_core_pos(self, ct: Controller) -> None:
         """Read the core's position from the communication store.
 
-        The core publishes x+1/y+1, not raw coordinates (see _run_core): 0 is
-        what every slot holds before anyone writes to it, so a Core truly at
-        (0, 0) would otherwise be unreadable from "not written yet". Both slots
-        are written together on the same round, so once published both are >= 1
-        -- require both (not either) before trusting the value, then undo the
-        offset.
+        The core writes its position on round 1, so on round 1 these will
+        still be 0. We skip storing (0, 0) unless the core really is there.
         """
         x = ct.read_store(SLOT_CORE_X)
         y = ct.read_store(SLOT_CORE_Y)
-        if x > 0 and y > 0:
-            self.core_pos = Position(x - 1, y - 1)
+        if x > 0 or y > 0:
+            self.core_pos = Position(x, y)
+
+    def _home_threat_recent(self, ct: Controller) -> bool:
+        """True if the Core reported an enemy near itself recently enough to
+        still act on (see SLOT_HOME_THREAT, written in _run_core).
+
+        The slot holds (round_seen + 1); 0 means "never written". Writes
+        are visible starting the round after the Core wrote them, so this
+        always lags the real detection by at least one round --
+        HOME_THREAT_STALE_ROUNDS absorbs that plus any round our own read
+        gets skipped under CPU pressure.
+        """
+        seen_plus_one = ct.read_store(SLOT_HOME_THREAT)
+        if seen_plus_one == 0:
+            return False
+        return ct.get_current_round() - (seen_plus_one - 1) <= HOME_THREAT_STALE_ROUNDS
 
     def _try_build_harvester(self, ct: Controller) -> bool:
         """Try to build a harvester on an adjacent ore tile.
@@ -579,38 +664,7 @@ class Player:
             return False
 
         if ct.is_tile_empty(next_pos) and self.core_pos is not None:
-            # TRAIL LINKING IN THE FAR OUTWARD CASE (the one change here).
-            #
-            # aug7 faces every trail conveyor by dominant axis toward the Core.
-            # That is right near home -- the arrows converge and the last hop
-            # drops straight into the Core footprint -- but it breaks at every
-            # bend further out, which the replay census measured as 71% of the
-            # residual facing failures: a tile can correctly compute "the Core
-            # is mostly west" and still never meet its own continuation one
-            # tile north.
-            #
-            # When the builder is walking OUTWARD (its current tile is nearer
-            # home than the tile it is stepping onto), the tile it is standing
-            # on is the immediately preceding trail tile and already carries
-            # the conveyor laid when it stepped there. Facing the new conveyor
-            # back at it is an EXACT link, whatever shape the path has --
-            # bends, staircases and detours all stay connected.
-            #
-            # Near the Core we deliberately keep aug7's rule. The first tile a
-            # builder steps onto after spawning has no predecessor conveyor --
-            # the spawn-ring tile it came from never received one -- so a pure
-            # trail rule terminates one tile short of the Core and delivers
-            # nothing. Measured, not assumed: the pure version screened at
-            # 11.1% [6.1%, 19.3%] over 90 matches, losing on all 15 maps.
-            # Inside NEAR_CORE_FACING_DIST_SQ the Core itself is the trail's
-            # continuation, so the converging field is what we want.
-            if (pos.distance_squared(self.core_pos)
-                    < next_pos.distance_squared(self.core_pos)
-                    and next_pos.distance_squared(self.core_pos)
-                    > NEAR_CORE_FACING_DIST_SQ):
-                cardinal = d.opposite()
-            else:
-                cardinal = cardinal_toward(next_pos, self.core_pos)
+            cardinal = cardinal_toward(next_pos, self.core_pos)
             if cardinal is not None and ct.can_build_conveyor(next_pos, cardinal):
                 ct.build_conveyor(next_pos, cardinal)
 

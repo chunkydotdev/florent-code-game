@@ -108,11 +108,27 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       nothing, and the real lever is where sentinels get built at all. Cheap to instrument
       (count candidates at the gate, print to stderr, aggregate over a few matches); do this
       **before** any further turret-placement work.
-- [ ] **Do the conveyor chains our builders lay actually complete a path to the Core?** The
-      chain-building discard (2026-08-07) never verified completion, so it refutes "dedicate
-      builders to plumbing" but says nothing about whether complete chains are valuable.
-      Delivery-only crediting makes this measurable directly: instrument whether each
-      harvester's stack reaches the Core, rather than inferring from win rate.
+- [x] ~~**Do the conveyor chains our builders lay actually complete a path to the Core?**~~
+      **Answered** (2026-08-08, `tools/replay_census.py`): often not. Roughly half of
+      graph-connected harvesters are also facing-correct — conditional rate ~53% for the v45
+      candidate and for `aug7`, against a field average of 68.4% — and `chain_dir == 0` implies
+      zero titanium collected in every economically-decided game measured. Chains are worth
+      completing; ours frequently do not complete.
+- [ ] **Does the facing metric measure the right thing?** Two accepted facing changes in a row
+      won on the harness while leaving the end-of-game conditional rate statistically unchanged
+      (v45: 52.9% vs 53.1%), with the gain showing up as volume instead — +19% harvesters, +29%
+      titanium. End-state `chain_dir` is a snapshot and cannot see **time-to-first-delivery**.
+      Measure the round at which each team's first `distributeResources` into the Core fires,
+      per replay; that is the number the wins are probably tracking.
+- [ ] **Why does the v45 candidate still show a 3× dangling-head spike at Chebyshev distance
+      1-2 from the Core**, when its code inside that radius is byte-identical to `aug7`'s? The
+      far-zone topology must be feeding the near zone differently. Unexplained, and it is the
+      most likely place another 10 points of delivery is hiding.
+- [ ] **What does a conveyor cost us per unit of delivered titanium?** On `hive` against
+      `opp_v44` we finish with **125 buildings to their 16** while collecting **400 to their
+      1,190**. Every walked tile lays a conveyor, at +1% category scale each, whether or not the
+      trail will ever carry anything. A budget, a cap, or laying only on tiles that already
+      connect to a harvester are all untested and all cheap.
 - [ ] Does a trail conveyor ever face its *output* into an adjacent harvester (which would
       refuse that harvester's stack on that side)? The 99.6%-adjacency probe measured presence,
       not accept-side correctness.
