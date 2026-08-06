@@ -202,6 +202,18 @@ A turret with no code is a 20–30 Ti ornament that also eats a unit-cap slot an
 - **Gunner** — single-tile-wide forward ray. Stops at the first targetable tile (Builder Bot or
   building), friend or foe. Empty tiles don't block; walls do block and aren't targetable.
   The only turret that can re-aim after being built.
+
+**Tile enumeration is row-major in absolute map coordinates — y ascending, then x ascending —
+and it does not depend on the querying entity [measured 2026-08-08].** This holds for both
+`get_nearby_tiles()` (verified from a Core at two different corners and from three builders at
+varied positions, `dist_sq` irrelevant) and `get_attackable_tiles()` (verified at all 8 turret
+facings, 2 samples each). **Consequence, and it is a trap:** a turret loop that takes the
+*first* occupied tile out of `get_attackable_tiles()` is scanning its own ray in an absolute
+direction, so the near/far preference flips with facing — **N, NE, NW and W turrets engage the
+farthest enemy on the line; E, SE, S and SW turrets engage the nearest.** Any "first hit wins"
+scan over either method is absolutely oriented and belongs to the same bug class as the spawn
+scan (see strategy-log 2026-08-06). Use a geometric criterion — nearest by
+`distance_squared` — not enumeration order.
 - **Sentinel** — same single-tile-wide line, but much longer reach and **never blocked** by
   walls or units in the way.
 - **Launcher** — no damage, no ammo. Picks up an adjacent (incl. diagonal) Builder Bot **from
@@ -331,6 +343,20 @@ Worth knowing that these exist, since the tutorials never use them:
 `get_attackable_tiles()`, `get_attackable_tiles_from()`, `can_fire_from()` (hypothetical
 targeting — ignores ammo and cooldown), `is_tile_passable()`, `get_stored_resource()`,
 `get_unit_count()`, `build()`/`can_build()` (generic), `rotate()`, `launch()`, `resign()`.
+
+`Position` and `Direction` are plain Python (`fcode/_types.py`); only the `Controller` is the
+compiled engine. **`Position.direction_to()` is `atan2`-based and has no ties [measured
+2026-08-08]** — every integer `(dx, dy)` lands strictly inside one of the 8 sectors, and a
+400-pair sweep found zero equivariance failures under 180° rotation or either reflection. It
+is safe to build symmetric logic on. `Direction` declares clockwise from north:
+`NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST, CENTRE`.
+
+**The comms store cannot represent a zero [measured 2026-08-08 — this one costs whole games].**
+All 16 slots start at 0 and every value is a non-negative integer, so a slot holding 0 is
+indistinguishable from a slot nobody has written. Coordinates therefore **must** be published
+with an offset — the starter bot's `pack_pos()` reserves 0 correctly, but its raw
+`write_store(SLOT_CORE_X, pos.x)` does not, and a Core at `(0, 0)` (jackpot has one) publishes
+a position its own builders read as "no data". See the strategy log for what that costs.
 
 Debug: `print()` is captured per round into the replay; `ct.draw_indicator_dot(pos,r,g,b)` and
 `ct.draw_indicator_line(a,b,r,g,b)` draw overlays saved into the replay.
