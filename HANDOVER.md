@@ -66,11 +66,11 @@ cp -r bots/v63guard bots/v5        # v5 is the next free LOCAL freeze slot (v1..
 .venv/bin/fcode submission activate <version-number>
 ```
 
-## What is in the candidate, and what each piece bought
+## What is in our own challenger (`bots/_pkg45` = `bots/ladder1`)
 
-Two changes over `bots/aug7` (`3cfa588`), each measured separately.
-
-It is fully gated and crash-free; these numbers are what make it a credible component donor.
+Two changes over `bots/aug7` (`3cfa588`), each measured separately. It is fully gated and
+crash-free — these numbers are what make it a credible component donor even though it is not
+going to be submitted.
 
 | gate (480 matches: 15 maps × 16 seeds × both orderings; rush runs 240) | result |
 | --- | --- |
@@ -137,7 +137,7 @@ is exactly what the near-Core zone does in the shipped version, and the census c
    **End-of-game `chain_dir` is a snapshot; it cannot see time-to-first-delivery.** Measuring
    the round of each team's first delivery is now the highest-value instrument change.
 
-## What is deliberately NOT in the candidate
+## What is deliberately NOT in the challenger
 
 - **The reactive home-defense port — unproven, and now moot.** `bots/_defense_port` has been
   measured on every instrument we own and has never once cleared a gate: **40.6% vs `opp_v44`**

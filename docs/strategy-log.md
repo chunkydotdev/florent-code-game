@@ -67,14 +67,27 @@ Rules of thumb:
   map 4-0; the small-map area gate on their vision-triggered battery (`fjordgate` 26/32 for us
   against v63, 32/32 against v44); the (0,0)-Core store fix if their line still writes raw
   coordinates; and the instruments — `tools/replay_census.py`, `tools/arena.py`, and this tape.
-- **The reactive-defense port is retired, not pending.** `rush_probe_fast` landed and is a real
-  instrument at last — **`aug7` beats it only 68.3% [62.2%, 73.9%]**, against 96.2% for the old
-  walked `rush_probe`, a 28-point drop that finally quantifies the rush threat locally. Gated
-  against it, the defense port scores **61.3% [55.0%, 67.2%]** — *below* plain `aug7`. Three
-  instruments, three negatives, intervals overlapping every time. The mechanism may still be
-  right; this implementation is not. Note also that our economy candidate is **62.1%** against
-  the same probe, below `aug7` too: **the economy accept does not make us more rush-robust, and
-  should not be read as if it might.**
+- **`rush_probe_fast` landed and is a real instrument at last.** Against a frozen build:
+  **`aug7` 60.4% [54.1%, 66.4%]**, matching the probe author's independent 61.7%, where the old
+  walked `rush_probe` conceded only ~4%. An undefended economy bot loses ~39% of games to it.
+- **The reactive-defense port, final verdict: a wash on every instrument — unproven, not
+  disproven.** Against that same frozen probe it scores **63.7% [57.5%, 69.6%]** to `aug7`'s
+  60.4%, and our economy candidate **64.2%**: all three overlap. **An earlier reading of the
+  defense as a regression was a method defect of mine** — the two runs straddled an edit to the
+  probe by its own author (file mtime mid-series), so they measured different instruments.
+  Corrected on the tape, and the trap is now in HANDOVER: **pin the opponent build before a
+  comparison series.** The mechanism stays unproven; it is moot for the base switch anyway,
+  because `florent-v63` already ships a more developed version of it.
+- **The finding that turns the base switch into something we can ship today: `florent-v63` has
+  no CPU guard, and it is losing real ladder games to that.** A decoded ladder replay shows
+  **272 CPU-truncated rounds out of 310, losing by `core_destroyed` while paralysed**, and a full
+  source audit of their line finds **zero `get_cpu_time_elapsed()` calls** in either v58 or v63.
+  Our line has carried a phase-boundary guard since v2. Their author is out of tokens.
+  **So stage 1 is `bots/v63guard` — their code, our guard, nothing else** — and stage 2 is the
+  rest of the integration. Their `run()` also dispatches without a top-level `try`/`except`, so
+  any escaping exception permanently deletes the unit; latent today (0 crashes in 480 matches),
+  but the same three lines that saved our line in v1.
+- **The bar is now frozen** at `opp_v45`: no further teammate uploads are coming.
 
 ### The `ladder1` candidate's economy change — conveyor facing follows the trail, and the failed first attempt named the real constraint
 
