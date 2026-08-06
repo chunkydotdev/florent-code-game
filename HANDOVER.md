@@ -1,145 +1,197 @@
-# Handover — 2026-08-07, updated after session 5 (parallel loop, tag `aug7`)
+# Handover — 2026-08-08, after session 6 (ladder phase, tag `ladder1`)
 
 Start here, then [README.md](README.md) → [docs/game-model.md](docs/game-model.md) →
 [docs/strategy-log.md](docs/strategy-log.md).
 
-## Session 5 (parallel): four hypotheses, zero accepts, one real finding
+## The one thing to decide
 
-Ran the loop with **three Sonnet subagents concurrently**, one hypothesis each, then a fourth
-follow-up. `bots/aug7` is **unchanged** — nothing cleared the accept gate.
+**Apply `bots/_fix_core00` — a five-line change — or don't.** The loop deliberately did not
+promote it, because it did not clear the accept gate and promoting it changes the submission
+candidate. `bots/_fix_core00` is the current `aug7` **plus** that fix, regenerated after this
+session's accept, so it is directly usable as-is.
 
-| hypothesis | screen (n=48) | confirm (n=256) | verdict |
-| --- | --- | --- | --- |
-| deliberate harvester→Core conveyor chains | 54.2% [40.3, 67.4] | **45.3% [39.3, 51.4]** | discard |
-| aimed sentinel placement (`get_attackable_tiles_from`) | 56.2% [42.3, 69.3] | **50.0% [43.9, 56.1]** | discard |
-| demand-driven ammo conversion | 41.7% [28.8, 55.7] | **46.1% [40.1, 52.2]** | discard |
-| harvester first-conveyor fix | — | not run (no gap to fix) | closed |
+It fixes a bug that costs us **every single game on `jackpot` when we draw seat A**:
 
-Zero crashes on either side across ~800 matches. All four are written up in
-[strategy-log.md](docs/strategy-log.md).
+| evidence | before | after |
+| --- | --- | --- |
+| team A's `titanium_collected` on jackpot, 6 single matches | **0, 0, 0, 0, 0, 0** | 4970, 2480, 4970, 4960, 2480, 4970 |
+| jackpot mirror seat split (identical bots both sides) | **0/48 = 0.0%** [0%, 7%] | **22/48 = 45.8%** [33%, 60%] |
+| pooled confirm vs the incumbent, 480 matches | — | 51.5% [47.0%, 55.9%] — **no verdict** |
+| regression vs `opp_v39`, 240 matches | 65.0% [57.8%, 71.6%] | 62.5% [56.2%, 68.4%] — no regression |
 
-**The finding worth more than the three nulls:** `_try_build_conveyor_toward_core` is **dead
-code in the entire lineage** (starter, v4, aug7) — verified, 24 calls / 0 legal / 0 built. The
-cause is a grid-parity fact that constrains a whole class of ideas: *a builder adjacent to a
-building it just placed can never build anything orthogonally touching that building*, because
-two tiles one step apart share no common orthogonal neighbour. **Do not fix it** — instrumented
-across 8 maps, 263 of 264 harvesters (99.6%) get an adjacent conveyor anyway from incidental
-trail-laying. Also logged in [opponents.md](docs/opponents.md): most of the field inherits the
-same dead function from the shipped starter.
+The bug: all 16 comms-store slots start at 0 and hold non-negative integers, so **0 is
+indistinguishable from "nobody wrote this yet"**. The Core publishes `write_store(SLOT_CORE_X,
+pos.x)`, and builders read it back behind `if x > 0 or y > 0`. On `jackpot` team A's Core sits
+at exactly **(0, 0)** — the only Core in the 15-map rotation that does — so every builder on
+that team reads "no data" and never learns where home is. Three things are gated on
+`core_pos is not None`: the trail conveyor laid in `_try_move` (**the only mechanism that ever
+delivers our titanium**), sentinel construction, and heading home. That team therefore builds
+harvesters that idle with nowhere to output, lays nothing, defends nothing, and collects
+nothing. The fix publishes `x + 1` / `y + 1` and subtracts the offset on read.
 
-**Method notes from this session:**
-- **Run a null-change control.** A byte-identical copy of aug7 vs aug7 (n=96) gave 48–48 and,
-  more usefully, the first real baseline for the **win-condition mix** (`core_destroyed`
-  16.7%). Without it, "44 core kills" is an uninterpretable number. Both discards that looked
-  mechanistically interesting were settled by comparing against it.
-- **Screens are close to worthless as evidence.** Two of three screened above 50% and confirmed
-  at or below it. Under "keep if the number went up" this session accepts two dead changes.
-- **Parallel agents need `--jobs 3`**, and the control was re-run at that setting first to
-  confirm the harness still reads a no-op as a coin flip under contention. It does.
-- **One change per experiment, strictly.** The ammo experiment moved a floor *and* added a
-  mechanism, so its loss is unattributable between the two. That's a wasted slot, not a result.
+**Why the loop didn't just keep it:** the confirm is a no-verdict, and the standing rule is that
+a no-verdict is a discard. But the no-verdict was **predicted in writing before the run** —
+repairing 1 map out of 15 is worth about +1.7 points pooled, and 480 matches cannot resolve
+that. The measurement came back +1.5. This is the same category as **v2's CPU guard, which was
+also kept on a no-verdict** as ladder insurance. Recommended: apply. Worth deciding separately
+whether `program.md`'s accept rule should gain an explicit per-map correctness clause, because
+as written it is structurally blind to any defect confined to a single map.
 
-**Scratch dirs left on disk, untracked:** `bots/aug7_h1|h2|h3` (discarded implementations,
-kept in case the code is worth reading), `bots/aug7_h4` and `bots/_probe_conv`
-(instrumentation only). Delete them freely — nothing depends on them.
+**Free bonus:** the shipped starter bot has the identical guard, so **most of the field has this
+bug too**. `starter` vs `starter` on jackpot leaves seat A with 0 collected, 0 units and 1
+building. Any opponent descended from the starter hands us jackpot whenever they draw seat A.
 
-### Read session 5's numbers with this caveat
+## What changed in the bot
 
-The real rotation landed in `maps/new-maps/` (commit f71614e) **while this session's agents
-were already running**, so every experiment above was measured on the eight invented maps.
-That was correct per [runbook.md](docs/runbook.md) §2 — pool cutover happens *between* loop
-tags, never mid-tag — but the invented pool is all-rotational, low-wall and small-map-heavy,
-while the real one is 8 rot / 3 hmir / 3 vmir, up to 30.8% walls, with only one truly small
-map. **Diagnostic run (not a metric change), aug7 vs starter on the 14 real maps, n=224:**
+**One accept, promoted into `bots/aug7` (commit `3cfa588`):** the trail conveyor now picks its
+facing with `cardinal_toward(src, dst)`, comparing `|dx|` and `|dy|` on the real delta, instead
+of snapping an already-quantised 8-way `Direction` through `nearest_cardinal`'s table.
+**57.9% [53.5%, 62.3%] over 480 matches** against the pinned previous incumbent; regression vs
+`opp_v39` 65.8% [59.6%, 71.5%]; **0 challenger crashes across 1,004 matches**.
 
-- **69.6% [63.3%, 75.3%]**, versus **80.5% [75.2%, 84.9%]** on the invented pool. The
-  intervals barely overlap, so the edge is real but ~11 points thinner than the headline.
-- **0 crashes in 224 matches** against starter's 355, including on `jackpot`'s literal corner
-  Core and the ≥14%-wall maps. The robustness and full-ring-spawn work transfers intact —
-  that was the main thing at risk, and it held.
-- Weakest maps: `hive` 6/16, `archipelago` 8/16, `atoll` and `jackpot` 9/16. (An earlier n=56
-  pass read 57.1% — that was small-sample noise; use the n=224 figure.)
+**Read the accept honestly: the hypothesis that motivated it was refuted by the same run.** The
+argument was that `nearest_cardinal`'s table is a chirality rule that inverts under mirroring,
+and that the six mirror maps' seat splits would move toward 50%. They did not — two got worse,
+and in the confirm the challenger took **61.1% on the nine rotational maps against 53.1% on the
+six mirror ones**, the opposite ordering. What paid was simply pointing trails at the Core, and
+it paid most where trails are long and walls dense (archipelago, snowflake, saga are the top
+three maps). **The mirror asymmetry is still unfixed**, and `heart` is now its sharpest example.
+Do not treat this accept as having closed the equivariance work.
 
-**What this implies for the discards:** they were measured on a distribution that
-under-represents walls and mirror symmetry. The aimed-sentinel null is the one most likely to
-read differently on the real pool — a Sentinel's wall-ignoring line is worth far more at 30.8%
-wall density than at ours, and placement matters more when walls constrain approach corridors.
-It is worth re-running **after** cutover, not because the result was wrong, but because it was
-answered on the wrong question. The other two discards look distribution-robust.
+## Ladder telemetry — and the number that reframes everything
+
+Rating **1186.17 → 1205.27** over ~40 minutes (2026-08-06 11:51 → 12:30 UTC), rank **#53 → #52
+of 103**, tier crossed from Unranked into **Bronze**. Trend is up.
+
+Four things worth more than the rating:
+
+1. **v40 has played exactly one ladder series, ever** — `1018bf11`, a 3-2 win over Leviathan.
+   The team ran 42 submission versions in ~16 hours (several people testing concurrently), so
+   **essentially all ladder history describes other people's bots, not ours.** Do not read the
+   97-match record as evidence about `aug7`.
+2. **`fcode status`'s "Last 10" disagrees with `fcode match list`.** Status said 3W-7L;
+   reconstructing the real last ten series three independent ways gives **6W-4L** every time,
+   while the `rating` field in the same response is current. Trust `match list`.
+3. **We lose Core fights and win economy ones: 15W-74L (17%) on `core_destroyed` across 485
+   games, against 51% on the titanium tiebreak.** Against `1337` it is **0W-17L** on core
+   kills, across 17 games, with kills landing anywhere from turn 188 to 737 — not a rush.
+4. **The #1 team's build, from an unrated scouting replay (`91d77721`, Pivot, ~1947):
+   12 harvesters, 39 conveyors, 17 gunners, and zero sentinels.** They out-collected us
+   **3170 to 810**. Our bot switches builders to defense at `TARGET_HARVESTERS = 3` and then
+   builds sentinels without a cap — a local probe counted **116 sentinels across 10 matches,
+   66 in one**, at +20% cost scale each.
+
+**Put (3) and (4) together and the next experiment writes itself:** we are running roughly a
+quarter of the winning economy and pouring the difference into turrets that lose their fights
+anyway. `TARGET_HARVESTERS` and the absent sentinel cap are the two highest-value levers in the
+file, and neither has ever been tested. Note the standing caution though — every previous
+attempt to trade economy for *defense* lost, and this points the opposite way, at trading
+defense for economy, which is untested territory rather than a re-run.
+
+Worst map on the current rotation: **`saga` 2W-8L (20%)** over 10 games. See
+[opponents.md](docs/opponents.md) for per-opponent patterns and the full per-map ladder record.
+
+## What else this session did
+
+1. **Mirror seat audit of the real rotation** (240 matches, `aug7` vs itself, 0 crashes).
+   Pooled seat A 51.7% — the harness still reads a no-op as a coin flip. Per map it found
+   `jackpot` at **0/16**, and follow-ups at n=48 promoted three sub-threshold flags to real
+   ones. The contaminated pre-cutover flags are resolved: `jackpot` confirmed and worse than
+   reported, `atoll` confirmed, **`heart` (~83%) refuted outright**. Comparing two *different*
+   bots cannot separate a seat split from a strength difference; a mirror run can.
+2. **The jackpot wipeout, diagnosed** — see above. Two independent lines of work reached the
+   same mechanism, after a plausible competing hypothesis was measured and refuted (that
+   `get_position()`'s NW-corner reference is not rotation-equivariant — a real asymmetry that
+   turned out not to bind; measuring both core-distance gates to the footprint centre moved no
+   map's split at all).
+3. **A mirror-equivariance audit of the lineage**, which found two live bugs and established
+   several engine facts now in [game-model.md](docs/game-model.md).
+4. **A bounded-BFS pathfinder, built and CPU-profiled** in `bots/_dev_bfs` — see below.
+
+## The other live bug the audit found, not yet fixed
+
+**`get_attackable_tiles()` enumerates row-major in absolute map coordinates** (y then x),
+regardless of the turret's facing, and `_run_sentinel` fires at the *first* occupied tile it
+meets. So **turrets facing N, NE, NW or W engage the farthest enemy on their line, and E, SE, S,
+SW the nearest** — an absolute orientation bias that breaks under rotation as well as
+reflection, on all 15 maps. Instrumented before committing an experiment to it: ≥2 enemies on
+the ray happens in **31% of firing rounds**, but first-hit and nearest actually differ in only
+**4%** of enemy-sighting rounds, and that evidence is concentrated in one map and one seat.
+When they do differ the gap is large (~30% of the sentinel's range). Verdict: a legitimate cheap
+try, not a clear win. Fix is a `min()` on `distance_squared`, not enumeration order.
 
 ## Where we are
 
-- **`bots/aug7` is the current best and the new submission candidate**: 80.5%
-  [75.2%, 84.9%] vs starter over 256 matches, zero crashes vs starter's 538. It is v4 plus
-  one accepted change: **Sentinel-first defense instead of Gunner-first**, confirmed 68.4%
-  [62.4%, 73.7%] vs v4 over 256 matches — the biggest single-change jump since v1's crash
-  fix, and it started producing `core_destroyed` wins where the Gunner-first lineage
-  essentially never had any. `bots/aug7` is **not** frozen/protected like `bots/v*` — it's
-  still the live edit target for the next session; freeze it into `bots/v5` when ready to lock
-  it in as a submission candidate (that promotion is Magnus-only per `.claude/settings.json`).
-- **Three follow-up hypotheses were tested and discarded this session**, each logged with a
-  mechanism, not just a number (`docs/strategy-log.md`, all dated 2026-08-07):
-  - Raising `AMMO_BUFFER` 20→50 for the sentinel's higher per-shot cost: no-verdict, 45.3%
-    [39.3%, 51.4%] — a bigger buffer just parks Ti as idle ammo in quiet phases instead of
-    building.
-  - `SCOUT_ROUNDS=20` delay before any building starts: decisively refuted, 8.3%
-    [3.3%, 19.6%] — settles that open question outright. Harvester ROI dominates the
-    scale-tax-avoidance argument by a wide margin.
-  - Map-size-branched defense trigger (1 harvester instead of 3 on ≤150-tile maps): refuted,
-    35.4% [23.4%, 49.6%] — same failure shape as the scout-first discard, in miniature.
-  - **Net effect:** two open questions closed with clear answers, and growing evidence that
-    this bot's economy-first shape is robust across map size — cutting economy for earlier
-    defense loses every way it's been tried so far.
-- **Every offline-answerable question from session 1 is still answered and current** in
-  [game-model.md](docs/game-model.md): Core spawn = the 12-tile ring; seat wipeouts were
-  mostly our own absolute-direction bias (fixed) plus a real engine first-mover edge on 8×8
-  (unfixable bot-side); titanium is credited — balance *and* tiebreak counter — **only on
-  delivery to the Core**.
-- [docs/runbook.md](docs/runbook.md) exists: the approval-day checklist and the recalibration
-  procedure for the organisers' announced changes (map pool hidden until the tournament,
-  possibly other variables). Probe bots are kept in `bots/probe_*` so re-verifying measured
-  facts against a new engine takes minutes ([tooling.md](docs/tooling.md)).
+- **Research bot: `bots/aug7` at `3cfa588`** — the previous incumbent plus this session's one
+  accept. **Not submitted.** The ladder still runs **v40** (`a9d81a1`, "aug7-sentinel-economy").
+  Freezing into `bots/v5` and submitting are Magnus-only steps.
+- **`bots/_fix_core00`** — current `aug7` plus the (0,0) fix, awaiting the decision above.
+- **`bots/_dev_bfs`** — a bounded-BFS wall-aware pathfinder, built and profiled but developed
+  against the *previous* incumbent, so it needs the accepted change ported in before it can be
+  gated attributably. Profile (via `time.process_time()`, because the engine's CPU counter is
+  inert locally — see Traps): p50 71us, p99 1398us, **worst case 3785us** at `BFS_NODE_CAP =
+  200`, against the 8000us guard. 34 sanity matches, zero tracebacks, and it builds *more*
+  infrastructure than the incumbent (94.5 buildings vs 76.7). **Before any CPU-heavy change is
+  submitted it needs `fcode match test` on real hardware** — local runs cannot verify the
+  budget.
+- The evaluation pool is `maps/*.map26`, the real **15-map** weekly rotation. Census is in
+  [game-model.md](docs/game-model.md), including that **all 15 declare `symmetry = 0`
+  (rotational) and 6 of them are lying** — eider, heart, moonrise mirror across a vertical axis;
+  antler, meander, nordkap across a horizontal one. Verify against tiles, never the header.
 
-## The one blocker (unchanged)
+## The biggest open question, and it is not small
 
-Registration approval — application submitted, awaiting the invitation. The moment it lands,
-run [runbook.md](docs/runbook.md) §1 top to bottom: login → `maps sync` → pool census →
-re-baseline arena on the real pool → submit the frozen candidate → `match test` on real
-hardware → answer the platform questions in [open-questions.md](docs/open-questions.md)
-(prize categories, team rules, finals dates, **how seats are assigned within a best-of-five**
-— first-order now). **Note:** the runbook's step 5 still says `fcode submit bots/v2` — update
-the submit target to whichever version gets frozen as the candidate (aug7's lineage, once
-promoted) before running it.
+**Four maps have large, reproducible seat asymmetries that nothing yet explains**, measured with
+identical bots on both sides so a strength difference is excluded by construction:
+**archipelago seat A ~77-88%**, **atoll ~21-31%**, **heart ~31%**, **lighthouse ~28%**. None is
+the (0,0) bug, and the NW-corner reference was tested and refuted. Together they are worth
+several times what jackpot was. `fjordgate` (10×10, seat A ~69-75%) is separate and is probably
+the documented engine first-mover edge showing up at small map size.
+
+**The method that cracked jackpot is the method to use:** stop reading win rates, read the
+**per-team process metrics** in the end-of-match JSON, and look for a quantity that is
+*structurally* different between seats rather than merely lower. On jackpot the giveaway was
+`titanium_collected` being exactly **0** rather than "smaller". Then instrument the one function
+that quantity flows through.
+
+Also unexplained, from ladder replays and worth a look at our own code: in `3209e6da` game 3
+(`lighthouse`, v35) our bot built **zero** structures across a 102-turn loss while the same
+version built 29 conveyors in game 1 of the same series; and in `3d957a49` game 2 (`jackpot`,
+v32) we had 3 harvesters alive — the documented sentinel trigger — and built no sentinel.
 
 ## Traps
 
-All from prior sessions still apply (python3 is 3.14 — use `.venv/bin/`; always `--tle 10`;
-`print()` goes to the replay; never single-seat or pooled evaluation; the project
-`CLAUDE.md`/`AGENTS.md` is the organisers' doc with known errors — game-model.md wins);
-`random` is NOT seeded by `--seed`; absolute-direction habits are a bug class; program.md's
-accept gate is for strategy changes, not insurance changes. New this session:
+All previous ones still apply (python3 is 3.14 — use `.venv/bin/`; always `--tle 10`; `print()`
+goes to the replay, use stderr; `random` is not seeded by `--seed`; never single-seat or pooled
+evaluation; the project `CLAUDE.md`/`AGENTS.md` is the organisers' doc with known errors —
+game-model.md wins; compare against the incumbent, not `starter`). New this session:
 
-- **Compare screens/confirms against the current incumbent commit, not `starter`.** `starter`
-  is now far enough behind (aug7 beats it 80.5%) that a marginal improvement over the
-  incumbent is invisible in a vs-starter run — both read as "big win" regardless. This session
-  checked each change out into a scratch `bots/_incumbent` dir via `git show <sha>:path >
-  file` and ran `arena.py aug7 _incumbent`, deleting the scratch dir after. `results.tsv`
-  entries record which commit was actually the comparison baseline.
-- **A change that looks reasonable can still lose to opportunity cost.** All three discards
-  this session shared one shape: trade some economy for earlier/cheaper defense or lower
-  scale tax. All three lost, by comfortable margins. Don't re-try variants of "delay/skip
-  economy for X" without a genuinely different mechanism — the pattern is now well-evidenced,
-  not just one data point.
+- **The comms store cannot represent a zero.** Anything positional must be published with an
+  offset. The file's own `pack_pos()` gets this right for the ore slot; the Core slots did not.
+  Assume any other raw `write_store(slot, some_coordinate)` is the same bug waiting.
+- **`ct.get_cpu_time_elapsed()` is inert under `fcode run`, even with `--tle 10`** — it read 0
+  before and after a loop that `time.process_time()` clocked at 22 ms. Our CPU guard has never
+  tripped locally *because the counter never moves*, not because we are fast. Profile with
+  `time.process_time()`; only `fcode match test` on Graviton3 really verifies.
+- **The bot-code validator rejects `try`/`finally` blocks.** Undocumented anywhere.
+- **A pooled win rate cannot see a single-map defect.** A total wipeout on 1 of 15 maps reads as
+  ~2 points of drag, inside the noise of any affordable sample. The instrument for this class is
+  the **per-map mirror seat table** — re-run it every time the rotation changes.
+- **When an outcome is extreme and stable, stop running matches and go read the state.** 0 wins
+  in 104 was not a signal to gather more win data; six single matches with the JSON parsed
+  answered it.
+- **A well-argued arithmetic hypothesis can be completely wrong, and a change can win for a
+  reason other than the one you proposed.** Both happened this session, in opposite directions.
+  Log the mechanism separately from the number, or the next session tunes the wrong lever.
+- **A per-replay observation is only evidence about the submission version that played it.**
+  The team ran 42 versions in a day; a "we don't have that bug" conclusion drawn from one replay
+  was wrong for exactly this reason.
 
 ## Not done
 
-- Daily retro for 2026-08-07 in the dev-knowledge vault.
+- Daily retro for 2026-08-08 in the dev-knowledge vault.
 - Still no `git remote`; `results.tsv` still deliberately untracked.
-- Remaining unknowns, ranked with methods, in [open-questions.md](docs/open-questions.md):
-  ore depletion, enemy-conveyor crediting, `destroy()` refund on dead-end stacks, adaptive
-  ammo buffering (the AMMO_BUFFER discard's suggested follow-up), and the platform questions
-  above.
-- Untested from this session's remaining hypothesis list: `destroy()` on obsolete/dead-end
-  conveyors (deprioritized — correct dead-end detection needs real topology tracking, higher
-  engineering risk than a quick attributable change); harvester payback/chain-length
-  crossover as an explicit lever (no concrete code change was designed for it yet).
+- Scratch dirs on disk, all untracked and safe to delete: `bots/_incumbent` (stale pin of
+  `a9d81a1`), `bots/_diag_core`, `bots/_diag_seat`, `bots/_probe_sent`, `bots/aug7_h1..h4`,
+  `bots/_probe_conv`. **Keep `bots/_fix_core00`** until the decision above is made, and
+  **`bots/_dev_bfs`** until the pathfinder is gated.
