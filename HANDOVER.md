@@ -43,6 +43,30 @@ same dead function from the shipped starter.
 kept in case the code is worth reading), `bots/aug7_h4` and `bots/_probe_conv`
 (instrumentation only). Delete them freely — nothing depends on them.
 
+### Read session 5's numbers with this caveat
+
+The real rotation landed in `maps/new-maps/` (commit f71614e) **while this session's agents
+were already running**, so every experiment above was measured on the eight invented maps.
+That was correct per [runbook.md](docs/runbook.md) §2 — pool cutover happens *between* loop
+tags, never mid-tag — but the invented pool is all-rotational, low-wall and small-map-heavy,
+while the real one is 8 rot / 3 hmir / 3 vmir, up to 30.8% walls, with only one truly small
+map. **Diagnostic run (not a metric change), aug7 vs starter on the 14 real maps, n=224:**
+
+- **69.6% [63.3%, 75.3%]**, versus **80.5% [75.2%, 84.9%]** on the invented pool. The
+  intervals barely overlap, so the edge is real but ~11 points thinner than the headline.
+- **0 crashes in 224 matches** against starter's 355, including on `jackpot`'s literal corner
+  Core and the ≥14%-wall maps. The robustness and full-ring-spawn work transfers intact —
+  that was the main thing at risk, and it held.
+- Weakest maps: `hive` 6/16, `archipelago` 8/16, `atoll` and `jackpot` 9/16. (An earlier n=56
+  pass read 57.1% — that was small-sample noise; use the n=224 figure.)
+
+**What this implies for the discards:** they were measured on a distribution that
+under-represents walls and mirror symmetry. The aimed-sentinel null is the one most likely to
+read differently on the real pool — a Sentinel's wall-ignoring line is worth far more at 30.8%
+wall density than at ours, and placement matters more when walls constrain approach corridors.
+It is worth re-running **after** cutover, not because the result was wrong, but because it was
+answered on the wrong question. The other two discards look distribution-robust.
+
 ## Where we are
 
 - **`bots/aug7` is the current best and the new submission candidate**: 80.5%

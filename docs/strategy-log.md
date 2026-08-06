@@ -30,6 +30,33 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Diagnostic — aug7 on the real map rotation: 69.6%, not 80.5%, and still crash-free
+
+- **Date:** 2026-08-07 · diagnostic only, **not** an accept/discard run and not a metric change
+- **Why:** the real rotation landed in `maps/new-maps/` (f71614e) mid-session, while the
+  parallel experiments were already running on the eight invented maps. Cutover is a
+  between-tags operation ([runbook.md](runbook.md) §2), so the right move was to leave the
+  metric alone and measure the gap explicitly rather than guess at it.
+- **Setup:** `arena.py aug7 starter --maps maps/new-maps/*.map26 --seeds 8 --jobs 8`, n=224.
+  Passing explicit paths means no protected file was touched and the standing metric is
+  unchanged.
+- **Result:** **69.6% [63.3%, 75.3%]** vs the invented pool's **80.5% [75.2%, 84.9%]** —
+  intervals barely overlap, so the edge is genuine but roughly 11 points thinner than our
+  headline. **0 crashes in 224 matches** (starter: 355), including `jackpot`'s literal corner
+  Core and the five maps at ≥14% wall density. Weakest: `hive` 6/16, `archipelago` 8/16,
+  `atoll`/`jackpot` 9/16. An earlier n=56 pass read 57.1%; that was noise, use n=224.
+- **Read:** the two things this lineage was actually built on — crash-freedom and
+  direction-neutrality — **transfer to the real distribution intact**, which is the outcome
+  that mattered most and was genuinely in doubt (a corner Core is exactly the case the
+  full-ring spawn scan was written for). What does not transfer is the size of the margin: a
+  meaningful part of our 80.5% was earned against maps we invented, on which starter's
+  weaknesses are presumably over-exposed. Treat 69.6% as the honest pre-ladder expectation.
+- **Next:** re-baseline properly after cutover, and re-run the aimed-sentinel experiment
+  specifically — a Sentinel's wall-ignoring line is worth much more at 30.8% wall density than
+  at our inventions', so that null was arguably answered on the wrong distribution. Per-map
+  tuning has a one-week shelf life given the weekly rotation; robust-across-maps changes keep
+  their priority permanently.
+
 ### Finding — the harvester's first conveyor has never been built, in any version, ever
 
 - **Date:** 2026-08-07 · found as a side-observation while discarding the conveyor-chain
