@@ -72,3 +72,27 @@ works — but stderr is simpler and doesn't need the replay written at all.
 
 Uncaught exception tracebacks, by contrast, *do* go to stderr during `fcode run` — which is
 how the starter bot's crash bug was spotted (see [strategy-log.md](strategy-log.md)).
+
+## Self-play: `tools/arena.py`
+
+`fcode run BOT_A BOT_B` already plays our bots against each other — that's the whole
+mechanism. What it doesn't give you is a trustworthy answer, because variance in this game is
+enormous (identical bots have finished 0-units vs 10) and seat matters hugely on some maps.
+
+`tools/arena.py` wraps it:
+
+```bash
+.venv/bin/python tools/arena.py v1 starter --seeds 8      # ~96 matches, ~1 min on 8 cores
+.venv/bin/python tools/arena.py starter starter           # measure the noise floor
+```
+
+- plays every (map x seed) in **both seat orderings** — non-negotiable, see below
+- runs matches in parallel, reports a Wilson 95% interval, and **refuses to name a winner**
+  while the interval straddles 50%
+- counts uncaught-exception crashes per bot (each one permanently kills a unit)
+- reports the seat split **per map**, never pooled
+
+That last point is load-bearing. Seat A goes 0/16 on three of our six maps and ~56% on the
+other three; the pooled average reads ~21%, which describes none of them. Any evaluation run
+on one seat ordering, or summarised pooled, will produce confident nonsense. See
+[strategy-log.md](strategy-log.md) for the measurement.

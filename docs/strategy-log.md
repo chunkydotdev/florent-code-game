@@ -70,3 +70,44 @@ check. `next_pos` is off the map whenever a builder is on an edge tile, and the 
 **Next:** our v1 is the starter bot plus (a) a top-level `try/except` in `run()` and (b) a
 bounds check before that call. Nothing else. If the baseline read is right, that alone should
 be a large improvement, and it isolates a single change so the result is attributable.
+
+---
+
+### Seat matters enormously on some maps — measured, cause unknown
+
+- **Date:** 2026-08-06
+- **Setup:** `tools/arena.py starter starter`, 16 mirror matches per map (8 seeds × both
+  seat orderings), `--tle 10`.
+
+With **identical bots on provably symmetric maps**, the team that acts first (seat A) wins:
+
+| Map | seat A wins | 95% CI |
+| --- | --- | --- |
+| tiny8 | **0 / 16** | [0%, 19%] |
+| small12 | **0 / 16** | [0%, 19%] |
+| mid20 | **0 / 16** | [0%, 19%] |
+| duel16 | 9 / 16 | [33%, 77%] |
+| large30 | 9 / 16 | [33%, 77%] |
+| wide30x14 | 10 / 16 | [39%, 82%] |
+
+Three maps are fair. Three hand the win to the second mover **every single time**.
+
+**Ruled out:** map asymmetry. The generator's output was verified tile-by-tile — every map is
+exactly symmetric under its declared transform (`asym=0`), with equal ore near each core.
+
+**Not yet known:** whether this is (a) an engine turn-order advantage that only bites on
+certain layouts, or (b) the starter bot's absolute-direction bias — it closes the x-gap before
+the y-gap and scans `CARDINALS` in a fixed order, so under 180° rotation it genuinely plays
+differently from the other seat. A symmetry-type probe was inconclusive: horizontal-mirror
+gave 29%, vertical-mirror 54%, and the six rotational maps split 3 fair / 3 wipeout.
+
+**What this changes right now, regardless of cause:**
+
+1. **Never evaluate on a single seat ordering.** On half these maps it would produce a
+   perfectly confident, completely wrong answer. `tools/arena.py` plays both orderings
+   always, and reports seat split per map rather than pooled.
+2. **Pooled statistics lie here.** The 96-match aggregate read 20.8% seat-A — a number that
+   describes none of the six maps. Always decompose.
+3. **Suspect absolute-direction logic in our own bot.** Whatever the cause, a bot whose
+   behaviour depends on which way is "east" is a bot that plays two different games depending
+   on which corner it spawns in. Prefer core-relative reasoning to map-absolute reasoning.

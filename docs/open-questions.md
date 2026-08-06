@@ -15,6 +15,19 @@ What's left is mostly gaps in the published numbers and one real contradiction.
 - [x] ~~Can we run matches locally without an account?~~ **Yes** — see
       [tooling.md](tooling.md); `.map26` maps are generatable offline.
 
+## Why does the second mover always win on some maps?
+
+- [ ] **On three of six symmetric maps, identical bots give seat A a 0/16 record.**
+      Measured, cause unknown — see [strategy-log.md](strategy-log.md). Map asymmetry is
+      ruled out. Two candidates: an engine turn-order advantage, or the starter bot's
+      absolute-direction bias.
+      *How to settle it:* write a direction-neutral throwaway bot (no x-before-y, randomised
+      cardinal scan order) and re-run the mirror. If the wipeout disappears, it was the bot;
+      if it survives, it's the engine.
+      This matters beyond the harness: if the **ladder** assigns seats without alternating
+      them across a best-of-five, seat draw could swing whole series independently of skill.
+      Worth checking how seats are assigned once we have an account.
+
 ## Contradictions still unresolved
 
 - [ ] **Core spawn range: r²=2 or r²=8?** `docs/game-rules-core` says spawn range r²=2
