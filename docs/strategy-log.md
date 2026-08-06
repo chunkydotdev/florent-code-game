@@ -36,6 +36,14 @@ Rules of thumb:
 - **Headline:** **`aug7` beats `rush_probe` 95.0% [91.5%, 97.1%]**. Control: `starter` beats it
   **93.3%** — while hemorrhaging **221 units** to its own unguarded `is_tile_empty` crash bug.
   An all-in rush loses to a *crashing* economy bot.
+- **⚠ Read the direction of these numbers carefully — this one has already been misread once.**
+  `arena.py` reports the **first-named bot's** win rate, and the runs were
+  `arena.py aug7 rush_probe` and `arena.py starter rush_probe`. So **95.0% and 93.3% are the
+  DEFENDER's win rates. The rusher lost both, badly.** Inverted, these numbers read as "the
+  meta threat is quantified and severe", which is the opposite of what was measured and would
+  send the next session optimising against a threat level nobody has established yet. **The
+  meta threat is NOT yet quantified.** What is quantified is that *this* probe — all-in,
+  walk-in, ammo-starved — is harmless. A faithful probe does not exist yet.
 - **Do not read this as "we are safe from rushes."** A real 1306-rated opponent beat us **0-5,
   all five by `core_destroyed`**. The probe and the ladder disagree, so the probe is wrong, and
   its own diagnostics say exactly how. A cross-tab of *who died* is what made this legible:

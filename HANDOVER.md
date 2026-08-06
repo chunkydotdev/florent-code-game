@@ -155,12 +155,39 @@ real 1306 opponent beat us **0-5 by Core kills**, the probe is wrong, and its ow
 how: **rush_probe's own Core died in 22 matches to `aug7`'s 5** (all-in leaves zero home
 defense), and **on 7 of 15 maps neither Core died at all**.
 
+**⚠ Direction check, because this has already been misread once:** `arena.py` reports the
+**first-named** bot's win rate, and the runs were `arena.py aug7 rush_probe` and
+`arena.py starter rush_probe`. **95.0% and 93.3% are the DEFENDER's win rates — the rusher lost
+both, badly.** Inverted, they read as "the meta threat is quantified and severe", which is the
+opposite of the measurement. **The meta threat is not yet quantified.** What is quantified is
+that *this* probe is harmless. Do not size the defense work off these numbers.
+
 **The correction that matters: three Sentinels stall on ammo, not damage.** One firing on
 cooldown burns **5 Ti/round**, three burn **~15**, against **2.5 Ti/round** passive income — so
 a probe with no economy fires about a sixth of the time. **The real meta is economy-PLUS-rush,
 not all-in rush.** Also, walk-only delivery under-tests big maps by an order of magnitude:
 measured first-Sentinel turn was 3-4 on fjordgate but **24-56 on drumlin**, against an observed
 benchmark of **turn 4-15 regardless of map size**.
+
+### The ammo arithmetic converges two workstreams — sequence v45 accordingly
+
+**Sustained fire requires delivered income.** 15 Ti/round for three Sentinels against 2.5/round
+passive is not a rusher's problem — it is *everyone's*, including ours the moment reactive
+defense actually fires. So **vision-triggered defense and delivery/chain completion are one
+workstream, not two**, and the ordering is forced:
+
+1. **Delivery first.** Our `AMMO_BUFFER` is **20 — two Sentinel shots.** A reactive battery with
+   nothing to fire is furniture, and we already know our chains sometimes deliver **exactly
+   zero** (`heart` fails ~60% of the time locally; a ladder replay shows 0 collected with 99
+   conveyors built). **Fixing delivery is a prerequisite for defense, not a parallel track** —
+   and it is separately the highest-value diagnostic we have.
+2. **Then the v44 vision-triggered defense adoption**, which can only sustain itself on top of
+   (1). Adaptive ammo (raise the buffer while under threat) belongs here, not earlier.
+3. **Then offense** — enemy-Core tracking and minimum-viable attack — which has the same income
+   dependency, one step further out.
+
+The already-measured pieces (`3cfa588` conveyor facing, and `bots/_fix_core00` pending your
+decision) sit underneath all of this: both are delivery fixes, which is the same axis.
 
 **Two probe modes are now in flight:** walked-sentinel (common meta) and launcher-insertion (top
 meta — builder turn 0, **Launcher turn 1 next to its own Core**, own scout thrown 6-8 tiles,
