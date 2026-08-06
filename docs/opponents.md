@@ -746,6 +746,293 @@ from spawn/movement/gating constants in the source, not measured (no match run).
   reciprocate in time; against a mirror-image early rusher it would be surviving entirely on
   the reactive-defense layer, not winning a race with its own attack.
 
+### florent-v63 (`bots/opp_v45`) — source diff against v58, and where the +38 points most plausibly comes from (2026-08-06)
+
+x3r0's active submission jumped from `bots/opp_v44` ("florent-v58") to `bots/opp_v45`, measured
+**beating v58 78.3% [70.1%, 84.8%] and our `bots/aug7` 80.0% [72.0%, 86.2%]**, zero crashes
+either side. This is a full source read of `bots/opp_v45/main.py` (1573 lines) against
+`bots/opp_v44/main.py` (1312 lines) — a +38-point jump inside one author's own lineage is
+unusually clean signal. No matches run this pass, source only, per this task's constraints.
+
+**A version-labeling note first, because it caps how much weight their own numbers can carry.**
+`bots/opp_v45/main.py`'s own docstring calls itself **"v61 OFFLINE"** (line 1) — neither "v58"
+nor "v63". Worse, `bots/opp_v45/meta.json` is **byte-identical to `bots/opp_v44/meta.json`** in
+every field that matters — same `"version": "v58"`, same `sha256`, same `accepted_suite` (378
+games, 376 wins, 349 core_kills, 0 tracebacks/TLEs) — despite `main.py` itself being a
+substantially different, larger file (66,538 bytes / 1573 lines vs 55,812 bytes / 1312 lines).
+**This meta.json was not regenerated for the new bot**; none of its numbers describe this file's
+own acceptance run. Everything below is source-diff evidence only — there is no "official" v63
+suite score to cite the way the existing florent-v58 entry above could.
+
+**1. Mechanism inventory diff**
+
+New in v63, not present in v58 at all:
+
+- **Verified-alignment counterbattery**, `_try_counterbattery()` (`opp_v45:844-883`). Reads the
+  attacker's exact tracked position from the new `SLOT_THREAT` slot (`opp_v45:34`, written at
+  `opp_v45:252,257,434`) and, for each of 4 adjacent tiles × 8 facings, calls the engine's
+  documented hypothetical-fire check `ct.can_fire_from(bp, facing, turret_type, threat)`
+  (`opp_v45:870`; API confirmed at `docs/reference/official-docs.md:437`) **before** ever
+  building — guarantees the placed turret's ray actually reaches the tracked threat. v58 had no
+  such verification anywhere: its equivalents (`opp_v44:246-260` Core battery, `opp_v44:708-718`
+  reactive builder Sentinel) both compute `facing = bp.direction_to(aim)` and build unconditionally
+  once `can_build_sentinel` returns true for *some* position, with no check that the ray actually
+  intersects the target. Since Sentinels can never re-aim once built (`docs/game-model.md:227`,
+  "Rotate? No (fixed at build)"), an unverified placement can waste the whole turret.
+- **Planned forward siege battery**, `_plan_siege()` (`opp_v45:667-766`) +
+  `_try_siege_build()` (`opp_v45:768-800`). Runs a real BFS terrain flood for path distance
+  (`opp_v45:691-704`), then for every enemy-Core-footprint tile × 8 facings × integer ray length
+  enumerates firing positions, checks wall-blocking along the whole ray (`opp_v45:730-734`),
+  requires cardinal-adjacent buildability (`opp_v45:740-758`), and scores by BFS distance plus a
+  self-ray and ore-terrain penalty (`opp_v45:751-758`). The per-direction ray lengths — Sentinel 5
+  cardinal / 4 diagonal, Gunner 3 cardinal / 2 diagonal (`opp_v45:682`) — are an exact integer
+  decomposition of `docs/game-model.md:224-227`'s documented `r²=32` (Sentinel) / `r²=13` (Gunner)
+  attack thresholds (5²=25≤32<6²; 4²+4²=32≤32; 3²=9≤13<4²; 2²+2²=8≤13<3²+3²), not an approximation.
+  v58's forward emplacement (`_saboteur`, `opp_v44:639-663`) built only Gunners, on the first
+  cardinal-adjacent tile within d²≤64 of the enemy Core, facing `direction_to(ec)` with no wall or
+  alignment check at all.
+- **`SLOT_SIEGE`** (`opp_v45:35`) coordinates the primary forward emplacement across builders —
+  written once by the role_n==0 builder's first forward gun (`opp_v45:796-797`), read by every
+  other builder's `_plan_siege` to avoid re-choosing that tile (`opp_v45:706,723-726`), and used by
+  the role_n==0 builder to keep re-healing that specific position (`opp_v45:807-814`). No
+  equivalent in v58.
+- **An independent HP-drop threat trigger.** `opp_v45:260-263`:
+  `if self.last_hp is not None and hp < self.last_hp: under = True` — a "we are losing HP right
+  now" signal layered on top of the same vision/proximity checks v58 already had
+  (`opp_v45:242-258`, matching `opp_v44:199-213` almost verbatim). Not present in v58.
+- **Map-signature disambiguation.** `known_map_for(w, h, own, ct=None)` (`opp_v45:116-147`) now
+  takes the controller and, when two pool maps share a `(w,h,core-anchor)` signature (the two
+  26×26 layouts in `EXTRA_MAP_CODES`, `opp_v45:96-97`), scores every candidate against
+  currently-sensed terrain (`opp_v45:139-147`) to pick the right one. v58's version
+  (`opp_v44:98-113`) takes no controller and returns the first signature match unconditionally —
+  silently wrong whenever two known maps collide.
+- **Six more recognized maps.** `EXTRA_MAP_CODES` (`opp_v45:94-102`) plus 6 more `CORE_PAIRS`
+  (`opp_v45:56-59`) extend the exact per-map terrain/ore database from 21 to 27 signatures — same
+  mechanism as v58, wider coverage.
+- **Deterministic, non-random builder placement.** `import random` is gone (present at
+  `opp_v44:9`, absent from `opp_v45`'s imports). Spawn-tile choice is now a fixed hash sort
+  (`opp_v45:320-321`), and the first builder is explicitly steered to the ring tile nearest the
+  enemy Core rather than a shuffled one (`opp_v45:315-318`) — the stated purpose is reproducible
+  offline testing (comment, `opp_v45:316-317`), but it also means the first offensive unit starts
+  closer to the enemy from turn 0 every game, not just on lucky shuffles.
+- **A large layer of hardcoded per-map/per-seat special cases — at least nine, none present in
+  v58**: `atoll_burst_magazine`/`hive_magazine` ammo targets up to 256 (`opp_v45:281-292`);
+  `nordkap_home_a`/`snowflake_home_b` builder-cap overrides (`opp_v45:303-309`); forced role
+  overrides for two named seats (`opp_v45:447-467`); `keep_artillery_forward`
+  (`opp_v45:535-545`); `hive_home_a`/`snowflake_home_b`-gated recall via the new `_rank2_hold`
+  (`opp_v45:510-530`, method at `opp_v45:596-602`); a `hive_bunker` barrier routine fixed to tile
+  (20,4) (`opp_v45:902-923,959-963`); `chase_battery` (`opp_v45:925-928,940-943`); `hive_freeze`,
+  which stops all expander activity past round 42 on two named seats (`opp_v45:1003-1010`); and
+  `healer_focus` turret-priority reordering on one named seat (`opp_v45:1377-1417`).
+
+Removed from v58, confirmed by grep as well as diff:
+
+- **All Core-side turret construction.** v58's `_core()` built up to 3 emergency Sentinels from
+  the Core's own ring, gated `under and w*h>120` (`opp_v44:246-260`), and up to 12 Gunners the
+  same way (`opp_v44:262-278`). None of it survives in `_core()` — replaced by a one-line comment:
+  "Cores cannot construct turrets; the defender consumes SLOT_THREAT and owns all counterbattery
+  placement" (`opp_v45:328-329`).
+- **Launcher construction, functionally, though not textually.** `_try_build_launcher()` still
+  exists verbatim (`opp_v45:356-378`) but **has zero call sites anywhere in the file** — confirmed
+  by grep, not just diff. Its one and only call site in v58, inside `_defend` (`opp_v44:682`), has
+  no counterpart anywhere in v63's `_defend` (`opp_v45:900-957`). `_launcher()`
+  (`opp_v45:1456-1573`), `_launchwait()` (`opp_v45:628-654`) and `_offer_launch()`
+  (`opp_v45:656-665`) all still exist but are structurally close to unreachable: the spawn-time
+  role split (`opp_v45:390-395`) never assigns `"launchwait"` at all (v58's did, `opp_v44:377`),
+  the only path to it is a late dynamic promotion (`opp_v45:486-491`) gated on `role_n>=5`, which
+  is unreachable under the new `MAX_BUILDERS=5` cap except on the one map special-cased to 6
+  builders. The docstring states the reasoning directly: "one-hop Launchers and a 60-ammo
+  stockpile were dead capital" (`opp_v45:3-4`).
+- **The immediate-fire-on-adjacent-Core special case** in `_sabotage_prio` (`opp_v44:535-546`) —
+  removed, folded into a unified priority table (below).
+- **The "distance from home > 80 ⇒ Launcher dropped me" heuristic** (`opp_v44:465`) — deleted,
+  with a comment explaining it was simply wrong: "long economy chains routinely travel farther
+  than nine tiles" (`opp_v45:506-508`).
+- **The Launcher-savings reserve gate** on paving and link-building (`opp_v44:907-913` and
+  `opp_v44:1111-1114`) — gone from both call sites (`opp_v45:1160-1162`, `opp_v45:1358-1365`),
+  consistent with the point above.
+
+Reparameterized (same mechanism, different constants or priority):
+
+- `MAX_BUILDERS` 8→5, `EARLY_BUILDERS` 4→5, `ECO_CAP` 8→18, `ECO_NEED` 4→3, `AMMO_FLOOR` 40→16
+  (`opp_v44:17-20,37` vs `opp_v45:15-18,37`).
+- Role assignment at spawn: v58 was 0→defend, then size-dependent (`opp_v44:370-377`: small map
+  1-2→expand/3+→saboteur, large map ≤4→expand/5+→launchwait). v63 is 0→saboteur, 1-3→expand,
+  4→defend (`opp_v45:390-395`) — offense now gets the *first* builder rather than a
+  late-population fraction, and with only 5 total builders the split is close to a fixed 1:3:1
+  ratio rather than v58's size/threshold branching.
+- `_sabotage_prio`'s priority table: v58 excluded enemy turrets from its fallback fire list
+  (`if et in (GUNNER, SENTINEL, CORE): continue`, `opp_v44:556`). v63 folds Core into a single
+  table and puts enemy Gunner/Sentinel at *top* priority (`opp_v45:615-620`) — a cardinal-adjacent
+  builder will now shoot an enemy turret, which v58's fallback path never did.
+- `_heal_core`: v58 used `p.distance_squared(self.core) <= 5` (`opp_v44:497,662`), a Euclidean
+  approximation of adjacency to the Core's 2×2 footprint. v63 factors this into a helper that
+  checks the actual 4 footprint tiles via `core_tiles()` and heals whichever one `ct.can_heal()`
+  accepts (`opp_v45:837-842`).
+
+**2. Where the +38 points most plausibly comes from, ranked**
+
+1. **[New capability, highest confidence] Replacing what was very likely non-functional Core-side
+   defense with a working, verified, builder-side one.** `docs/reference/official-docs.md:174`
+   states plainly: "The Core has no movement or attack actions — its active abilities are spawning
+   Builder Bots and converting ammunition." Our own project's `_defense_port` design note
+   confirmed this the hard way (`bots/_defense_port/main.py:15-19`): "Core-side turret
+   construction was considered and empirically ruled out first: `ct.can_build_sentinel(...)` and
+   the generic `ct.can_build(...)` both return False for every candidate tile when called from the
+   Core's own `run()` branch (verified with a throwaway single-match probe, no exception raised)."
+   v58's headline "Core builds its own defense directly" mechanism (`opp_v44:246-278` — the
+   mechanism the *existing* florent-v58 entry above gave top billing) sits entirely inside
+   `_core()` and depends on exactly that call succeeding. If the same engine restriction applies
+   uniformly to every team — there is no reason to think it wouldn't — that code was very likely
+   dead in every v58 game, on every map, `w*h` gate or not, which would also explain the existing
+   entry's own replay-measured finding that v58's reactive defense "misses badly... or not at all"
+   in roughly half of qualifying cases: what actually fired, when it did, was the low-priority
+   builder-side fallback buried at the bottom of `_defend`'s `elif` chain (`opp_v44:708-720`), not
+   the instant Core battery the source read like it should. v63 deletes the dead Core code outright
+   and promotes a working, alignment-verified, builder-side counterbattery to a high position in
+   the same call chain (`opp_v45:933-945`, `opp_v45:572-578`). Plausibly the single largest
+   contributor — turning "usually not happening" into "actually happening, and aimed correctly."
+   Caveat, stated plainly: this is inference from documented engine rules plus our own probe on our
+   own bot, not a probe run against v58/v63 specifically — this pass's constraints rule that out.
+2. **[New capability] Verified-alignment forward siege, Sentinel-primary.**
+   `_plan_siege`/`_try_siege_build` replace v58's unverified, Gunner-only, proximity-triggered
+   forward emplacement with wall-aware, ray-verified, BFS-ranked placement, and specifically
+   prefer a Sentinel (longer, wall-piercing) for the first forward gun
+   (`PRIMARY_SENTINEL`, `opp_v45:38,679`). Same category of change as our own biggest single-version
+   win (Sentinel-first, 68.4% vs v4 — `docs/strategy-log.md:1054-1083`), taken one step further
+   with engine-verified placement. Notably, our own attempt at verified aimed-placement
+   (`can_fire_from`-style scoring of `_run_sentinel`, `docs/strategy-log.md:889-926`) came back "a
+   perfect null" for us — for a specific, named structural reason: by the time our builder reaches
+   the sentinel gate it's already boxed in by our own economy build-out, so the candidate set has
+   usually collapsed to one legal tile before scoring even runs. v63's siege planner doesn't have
+   that problem — it picks *where to walk* from a wide BFS-reachable candidate set before
+   committing (`opp_v45:667-766`), rather than scoring only tiles the builder is already standing
+   next to. That structural difference is plausibly why the same idea pays off for them where it
+   measured as a null for us.
+3. **[Mostly tuning, some capability] A leaner, front-loaded economy with offense assigned first,
+   not last.** Fewer total builders (5 vs 8) all spawned early, higher `ECO_CAP` (18 vs 8)
+   concentrating more harvesters per remaining builder, and the first builder assigned to offense
+   from spawn instead of the last population fraction. Same underlying spawn/role mechanism as
+   v58, but both the constants and — more structurally — *which* builder gets which role changed.
+4. **[Tuning] Just-in-time ammo.** `AMMO_FLOOR` 40→16 plus graduated/map-specific targets
+   replacing a flat "60 if under attack." Docstring names this as intentional ("a 60-ammo
+   stockpile were dead capital"). Same `convert_ammo` mechanism, retuned thresholds.
+5. **[Lowest confidence, probably map-concentrated] The 9+ new per-map special cases.**
+   Individually narrow (named maps/seats only), so plausibly a real but concentrated contribution
+   on the handful of maps each one targets, not a broad-based one. Can't rank more precisely
+   without a per-map breakdown, which would need matches this pass didn't run.
+
+**3. Delivery and economy — conveyor facing, precisely, since this is what we most need answered**
+
+v63 (unchanged from v58 in this specific area) runs **two parallel conveyor-laying systems**, and
+they answer the task's question differently:
+
+- **The primary system — every harvester's link to the Core — is a planned path, not a walked
+  trail, in both versions.** `_link_path()` (`opp_v45:1057-1158`) runs before a single conveyor is
+  placed: a multi-source reverse BFS from every valid Core-input tile (`opp_v45:1058-1066` builds
+  the goal set, `opp_v45:1091-1105` grows the tree) builds a parent-pointer tree, and the
+  harvester's own route is read off that tree from harvester to Core (`opp_v45:1108-1113`). The
+  resulting `link_queue` is walked in order by `_build_next_link()` (`opp_v45:1160-1195`); each
+  interior tile's facing is set toward the *next tile already in that precomputed queue*
+  (`opp_v45:1181-1182`: `f = tile.cardinal_direction_to(self.link_queue[1])`), and only the
+  terminal tile — the one actually adjacent to the Core — recomputes a direct aim at the nearest
+  real Core footprint tile (`opp_v45:1180,1186`). Because the whole route is a BFS tree grown from
+  the goal outward, it is cycle-free by construction (every tile gets exactly one parent, once)
+  *and* bend-safe by construction (facing always points at the actual next hop of the actual
+  chosen route, never a recomputed "dominant axis" that could disagree with where the path really
+  goes next).
+- **This is a third architecture, distinct from both what we started with and what we just
+  shipped.** Our own accepted fix threads a needle: dominant-axis-toward-Core inside
+  `NEAR_CORE_FACING_DIST_SQ=18`, trail-linked (face back at the tile you came from) outside it — a
+  hybrid forced by the finding that a naive always-trail-link rule produces closed cycles near the
+  Core (43.6% of that experiment's failures — trails converging near the Core point back at each
+  other, `docs/strategy-log.md:49`) even though it fixes the bend problem everywhere else. v63's
+  plan-first approach gets both properties — no cycles, no bend breaks — simultaneously and
+  without a near/far split, because what it calls a "trail" was never locally remembered; it's a
+  global tree from the start. **Direct answer: v63 routes its primary delivery chains as a planned
+  path, computed once via BFS ahead of construction, not as a walked trail.**
+- **v63 does *not* have the facing/termination defect of the kind we just fixed, in this primary
+  system — in either version.** This code is byte-identical between v58 and v63 (the only diff in
+  this region removes a Launcher-savings spending gate, `opp_v44:907-913` vs `opp_v45:1160-1162`,
+  not any part of the facing logic itself) — so whatever it gets right or wrong here isn't part of
+  what changed between v58 and v63, and it isn't broken in the way pre-fix `aug7` was.
+- **But there is a second, secondary system, and it still has exactly that defect, unchanged
+  across both versions.** `_move()`'s opportunistic paving (`opp_v45:1351-1369`, identical logic to
+  `opp_v44:1102-1123`) fires whenever an "expand"-role builder happens to step onto empty ground
+  that's strictly closer to the Core than where it stood (`opp_v45:1358-1362`), and computes
+  facing fresh, per tile, independent of any plan or memory:
+  `nearest_cardinal(nxt.direction_to(nearest_core_tile(nxt, self.core)))` (`opp_v45:1363`) —
+  dominant-axis-toward-Core, recomputed at every tile. This is the exact rule our own strategy log
+  characterized as "Cause #2, 71% of the residual [facing] breaks... a conveyor should point where
+  the trail goes, not where the Core is" (`docs/strategy-log.md:188-197`). It is a smaller-footprint
+  problem for them than it would be for a bot that relies on it as the *primary* delivery
+  mechanism (every harvester already gets a correct planned chain from `_link_path` regardless of
+  what this secondary system does), and the monotonic-closer-to-Core guard likely limits how often
+  it produces a genuine directional flip — but it is a live, citable, unfixed instance of the same
+  defect, present in both v58 and v63, that has gone untouched across at least this one version
+  jump.
+
+**4. What remains unaddressed, and the fjordgate gate specifically**
+
+- **The `w*h<=120` gate is gone, not narrowed — and so is the mechanism it gated.** Confirmed by
+  grep as well as diff: `w * h` appears exactly once in all of `opp_v45/main.py`
+  (`opp_v45:127`), inside the unrelated map-decoding routine — there is no map-area threshold
+  anywhere in v63's control flow. v58's gate lived entirely inside the (very likely non-functional,
+  see §2.1) Core-side emergency-Sentinel block (`opp_v44:247`). Its replacement,
+  `_try_counterbattery` (`opp_v45:844-883`), has no size gate of any kind — it runs at any map
+  size, fjordgate included. **But it trades one dependency for another**: because it only runs
+  from a *builder's own* action (called from `_defend`/`_home_defend`, both builder-context
+  methods — `opp_v45:933-945`, `opp_v45:572-578`), it requires an actual builder to be nearby when
+  `SLOT_THREAT` is populated, which is exactly the "single point of failure" the original v58
+  source-read flagged as `aug7`'s own weakness relative to v58's (apparently illusory) Core-side
+  battery. Net effect specifically for the fjordgate exploit: **the mechanism the 32/32 sweep was
+  tuned against — a size-gated, Core-side battery that structurally cannot fire below 120 tiles —
+  no longer exists in v63 in that form.** Whether the sweep still holds against v63's
+  builder-mediated replacement is a question this source read cannot answer without running
+  matches, which this pass's constraints rule out; it would need dedicated re-verification.
+- **v63 replaces one broad size gate with roughly nine narrow name-specific ones** (§1, "large
+  layer of hardcoded per-map/per-seat special cases"). Each is brittle in the same way the
+  exact-map database itself is — memorized from specific replays, works only on maps/seats already
+  seen, silent no-op everywhere else (every one of them is guarded by an exact
+  `(mw, mh, core.x, core.y)` tuple match) — but that is a known, already-accepted tradeoff in this
+  lineage (the whole per-map terrain database works the same way), not a new category of risk.
+- **Confirmed still absent in v63, same as v58:** no `ct.destroy()` / `self_destruct()` anywhere
+  (grep, zero hits) — neither version does active cost-scale management by tearing down obsolete
+  or redundant buildings. No `get_cpu_time_elapsed()` call anywhere (grep, zero hits) — no explicit
+  CPU budget guard in either version; both rely on inline bounds-checks plus narrow `try/except`
+  blocks instead (v63 has 9 such blocks vs v58's 6 — `opp_v45:140,808,869,1076,1133,1138,1143,
+  1263,1397` — a modest increase consistent with the new `known_map_for` disambiguation and the
+  new `can_fire_from` guard, not a change in overall philosophy).
+
+**5. Adoption notes**
+
+Ranked, what's worth porting from v63 into our own line:
+
+1. **Verify fire alignment (`ct.can_fire_from`) at candidate-selection time, not just among tiles
+   already reached.** This is the structural fix to why our own equivalent experiment
+   (`docs/strategy-log.md:889-926`) came back a null — ours only ever scored tiles the builder had
+   already walked into; v63's `_plan_siege` chooses *where to walk* from a wide reachable set
+   first. Worth re-testing our own idea with that one change before concluding verified placement
+   doesn't pay off for us.
+2. **An exact threat-position broadcast slot**, not just a boolean flag — cheap (one comms slot,
+   mirrors `SLOT_ATK_RND`'s existing pattern) and a prerequisite for the point above.
+3. **The HP-drop independent trigger** (`opp_v45:260-263`) — catches damage sources a
+   vision/proximity scan might miss, three lines, purely additive.
+4. **The plan-first BFS conveyor router**, as a longer-term replacement for our own near/far
+   hybrid rather than a bolt-on — it appears to get bend-safety and cycle-safety simultaneously
+   without needing a radius split at all. Structural, not a quick port (`_link_path`/
+   `_build_next_link` together are about 140 lines), but worth scoping.
+
+And the harder, more important question — what of **ours** is worth porting onto **their** base if
+we switched:
+
+| our mechanism | status on v63's base |
+| --- | --- |
+| Trail-linked conveyor facing (exact-link, survives bends) | **Mixed.** Their *primary* delivery chain already solves the same problem by a different, arguably stronger route (plan-first BFS tree, §3) — porting ours there would be redundant. Their *secondary* opportunistic-pave path (`opp_v45:1351-1369`) still runs the unfixed dominant-axis rule, unchanged across two versions — a real, narrow, well-scoped port target: our exact fix, applied to their `_move()`. |
+| (0,0)-Core store fix | **Already present**, unchanged since v58's predecessor v39. `pack_pos`/`unpack_pos` (`opp_v45:150-157`) use the identical `+1` offset scheme and explicit `if not val: return None` guard as ours (`bots/aug7/main.py:95-108`). Nothing to port. |
+| Sentinel-first defense | **Already present, and more developed than ours.** `PRIMARY_SENTINEL=True` (`opp_v45:38`) drives both defensive and offensive turret-type choice, and — unlike our straight type swap at one fixed trigger — is paired with `can_fire_from` alignment verification before committing. Nothing to port; if anything, worth studying theirs. |
+| Reactive vision-triggered defense port | **Already present, and *shipped* — unlike ours.** Our own `bots/_defense_port` failed its own accept gate (40.6% vs `opp_v44`, no measurable benefit vs `rush_probe`) and sits parked, not adopted into our active line (`docs/strategy-log.md:119-166`). v63's equivalent (`SLOT_UNDER`/`SLOT_THREAT`/35-round memory, now plus the HP-drop trigger) is live and wired into its only defense path. Nothing of ours to port here that would improve on theirs — the more useful move is treating v63's version as the working reference implementation of the idea our own attempt didn't clear its bar with. |
+
 ## Version-attributed match audit + top-team unrated pattern digest (2026-08-06, ~13:52 UTC)
 
 Fresh full pull of `fcode match list --mine --json` (paginated with `--limit 100` + `--cursor`,

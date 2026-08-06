@@ -11,67 +11,77 @@ that landed and are kept only because every row in `results.tsv` references thos
 call our challenger "v45" anywhere durable.** It is *the `ladder1` candidate*; the platform
 assigns its number at upload.
 
-## The decision on the table: the honest answer is a base switch
+## The decision on the table: two deliverables, both human-activated
 
-**The `ladder1` candidate is assembled, fully gated, crash-free, and a large clean improvement on
-our own line — and it is not the team's strongest bot, and cannot be made into one from here.**
+**The bar is frozen.** x3r0 is out of tokens, so `bots/opp_v45` ("florent-v63") is the last
+teammate upload and the fixed gate for everything below. It is the **active ladder submission**,
+the team is at **~1310 and climbing**, and it beats our own fully-gated challenger **78/22**.
 
-| gate (480 matches: 15 maps × 16 seeds × both orderings, `--tle 10`; rush runs 240) | result |
+**Our line is not going to catch it, and that stopped being the question.** The deliverable is
+the team's strongest bot, so the work splits in two:
+
+### Stage 1 — the hotfix, ready to ship first
+
+**`bots/v63guard` = `florent-v63` + our phase-boundary CPU-budget guard, and nothing else.**
+
+The active bot is losing real ladder games to a fixable timeout: a decoded replay shows
+**272 CPU-truncated rounds out of 310, losing by `core_destroyed` while paralysed**. A full
+source audit of their line found **no `get_cpu_time_elapsed()` call anywhere — no CPU guard at
+all**, in either v58 or v63. Ours has carried one since v2. Their author cannot ship a fix.
+
+**The validation caveat that must travel with this package: `ct.get_cpu_time_elapsed()` is inert
+under `fcode run`** — it reads 0 however much CPU is burned. So the guard is a **no-op locally**,
+local gates can only prove *no harm*, and its new code paths are exercised locally only by a
+forced-trip build (threshold 0). **The real check is `fcode match test` on Graviton3, and that is
+a human step.** Treat the local gates as an insurance-change accept, the same precedent as v2's
+own CPU guard, which was kept on a no-verdict.
+
+### Stage 2 — the integration, on their base not ours
+
+Port our measured components onto `florent-v63`, each gated separately against pristine
+`opp_v45`. What the v58→v63 source catalogue (now in [opponents.md](docs/opponents.md)) says is
+actually worth porting:
+
+| our component | status on their base |
 | --- | --- |
-| **vs `bots/opp_v45` (PRIMARY GATE — x3r0's active "florent-v63")** | **22.1% [18.6%, 26.0%] — fails badly** |
-| vs `bots/opp_v44` (previous teammate bot, now a reference) | 44.8% [40.4%, 49.3%] — fails |
-| vs `bots/aug7` (`3cfa588`, pinned incumbent) — the facing change alone | **58.5% [54.1%, 62.9%] — accept** |
-| **vs `bots/_incumbent` = submission `v40`, what our line last put on the ladder** | **67.1% [62.8%, 71.1%]** |
-| no-collapse vs `bots/starter` | 83.5% [80.0%, 86.6%] |
-| no-collapse vs `bots/opp_v39` | 73.1% [69.0%, 76.9%] |
-| rush stress vs `bots/rush_probe_fast` (the real instrument) | 62.1% [55.8%, 68.0%] — **below `aug7`'s 68.3%** |
-| rush stress vs `bots/rush_probe` (the weak one) | 93.8% [91.2%, 95.6%] |
-| `jackpot` mirror probe, seat A, 32 matches | **0/32 → 15/32 = 46.9% [31%, 64%]** |
-| **crashes, our side, every run above** | **0** |
+| **CPU-budget guard** | **absent — this is stage 1** |
+| top-level `try`/`except` in `run()` | **absent.** Their `run()` dispatches unwrapped; an escaping exception permanently deletes the unit. They measured 0 crashes in 480 matches, so it is latent, not active |
+| trail-linked conveyor facing | their **primary** chain is a pre-planned BFS tree — bend- and cycle-safe by construction, no defect to fix. Their **secondary opportunistic-pave** path still uses the naive dominant-axis rule, and ladder replays show partial defects (`chain_dir` 4/7 and 2/3). **That path is the port target** |
+| (0,0)-Core store fix | already present, identical `+1` scheme, since their v39 |
+| Sentinel-first / reactive vision-triggered defense | already present and more developed than ours |
 
-**Recommendation: do not activate the candidate. Switch bases to `florent-v63` and carry our
-findings across, not our code.** Three independent measurements say the same thing:
+**Our own challenger's remaining value is as a component donor and as a measuring rig**, not as a
+submission. It is preserved, gated and documented below.
 
-1. **The gap is not closable by economy work.** `opp_v45` beats `aug7` 80.0% and our candidate
-   78/22. Our whole session's accepted change moved that matchup by about **2 points**
-   (20.0% → 22.1%).
-2. **Their economy is already better than ours, so our accepted fix has nothing to give them.**
-   A 20-replay census: their conditional delivery rate is **86.2% against our 70.0%**, and they
-   collect **14% more titanium while building 42% fewer structures** (651 vs 1,115; conveyors
-   552 vs 1,038). They do not have the facing defect we spent the session repairing.
-3. **The decisive gap is combat, and it is stark.** Of their 15 wins over us in that census,
-   **11 were Core kills. Our Core died 11 times in 20 matches; theirs died zero times.** Their
-   first Sentinel lands at **median round 24 against our 51**, and they field Gunners (59 built,
-   18 surviving) where we build none.
-
-**What we can still contribute to the team's strongest bot** — these are real and worth more than
-our lineage is:
-
-- **A reproducible economy failure in `florent-v63` itself: on `heart`, seated as team B, it
-  builds ZERO harvesters and collects zero titanium** — 2 of 2 seeds, and we sweep `heart` 4-0
-  because of it. Same *class* of bug as our own (0,0)-Core defect. **Report this to x3r0 first;
-  it is the highest-value thing in this handover.**
-- **`fjordgate`, and small maps generally.** Their line disables its vision-triggered battery
-  below a map-area threshold; we take `fjordgate` **26/32** against v63 and took it **32/32**
-  against v44. Whatever base wins, that gate should go.
-- **The (0,0)-Core store fix**, if their line still writes raw coordinates (check the v58→v63
-  catalogue in [opponents.md](docs/opponents.md)).
-- **The instruments**: `tools/replay_census.py`, `tools/arena.py`, and `results.tsv` as the
-  append-only tape. The delivery census above took twenty minutes because those already existed.
-
-If the team wants the artifact on the platform anyway — it costs nothing and preserves the work:
+**Team etiquette, and it matters: Magnus should tell x3r0 we are building on their engine with
+their bug fixed.** Their blessing keeps this collaboration healthy, and every stage-2 component
+above is credited to their design except the two they are missing.
 
 ```bash
 # Magnus only — bots/v* is write-protected for agents:
-cp -r bots/_pkg45 bots/v5          # v5 is the next free LOCAL freeze slot (v1..v4 exist)
-.venv/bin/fcode submit bots/v5 --name ladder1-trail-facing
-.venv/bin/fcode submission list    # note the version number it is assigned
-# Do NOT activate it: fcode submission activate <n> would replace a bot that beats it 78/22.
+cp -r bots/v63guard bots/v5        # v5 is the next free LOCAL freeze slot (v1..v4 exist)
+.venv/bin/fcode submit bots/v5 --name v63-cpuguard
+.venv/bin/fcode match test v5 opp_v45     # REAL-HARDWARE TLE CHECK -- do this before activating
+.venv/bin/fcode submission list           # note the assigned version number
+.venv/bin/fcode submission activate <version-number>
 ```
 
 ## What is in the candidate, and what each piece bought
 
 Two changes over `bots/aug7` (`3cfa588`), each measured separately.
+
+It is fully gated and crash-free; these numbers are what make it a credible component donor.
+
+| gate (480 matches: 15 maps × 16 seeds × both orderings; rush runs 240) | result |
+| --- | --- |
+| **vs `opp_v45` (frozen primary gate)** | **22.1% [18.6%, 26.0%]** |
+| vs `opp_v44` (previous teammate bot) | 44.8% [40.4%, 49.3%] |
+| vs `aug7` (`3cfa588`) — the facing change alone | **58.5% [54.1%, 62.9%] — accept** |
+| **vs `_incumbent` = submission `v40`, what our line last ran** | **67.1% [62.8%, 71.1%]** |
+| no-collapse vs `starter` / `opp_v39` | 83.5% [80.0%, 86.6%] / 73.1% [69.0%, 76.9%] |
+| rush vs `rush_probe_fast` (frozen build) | 64.2% [57.9%, 70.0%] — `aug7` 60.4%, level |
+| `jackpot` mirror probe, seat A | **0/32 → 15/32 = 46.9% [31%, 64%]** |
+| **crashes, our side, every run** | **0** |
 
 **1. Trail-linked conveyor facing** (`_try_move`, `NEAR_CORE_FACING_DIST_SQ = 18`). A builder
 walking *outward* faces each new trail conveyor **back at the tile it came from** — an exact
@@ -129,14 +139,15 @@ is exactly what the near-Core zone does in the shipped version, and the census c
 
 ## What is deliberately NOT in the candidate
 
-- **The reactive home-defense port — now RETIRED, not pending.** `bots/_defense_port` has been
-  measured on every instrument we own and has never once been positive: **40.6% vs `opp_v44`**
-  against a 40.8% baseline; **94.2% vs the weak `rush_probe`** against `aug7`'s 96.2%; and now
-  **61.3% [55.0%, 67.2%] vs `rush_probe_fast`** — the competent Launcher-insertion probe built
-  specifically to test it — against **`aug7`'s 68.3% [62.2%, 73.9%]**. Intervals overlap
-  everywhere, so nothing here is a proven regression, but three instruments pointing the same
-  way is a verdict. **The mechanism (threat detection decoupled from our own economy) may still
-  be right; this implementation is not.** Keep the directory as a reference, stop gating it.
+- **The reactive home-defense port — unproven, and now moot.** `bots/_defense_port` has been
+  measured on every instrument we own and has never once cleared a gate: **40.6% vs `opp_v44`**
+  against a 40.8% baseline; **94.2% vs the weak `rush_probe`** against `aug7`'s 96.2%; and
+  **63.7% [57.5%, 69.6%] vs `rush_probe_fast`** against `aug7`'s **60.4% [54.1%, 66.4%]** on the
+  identical frozen build. Read honestly: it is **a wash everywhere, leaning very slightly
+  positive against a real rush — unproven, not disproven.** An earlier reading of this as a
+  regression was an artefact of comparing across two builds of the probe while its author was
+  still editing it. Moot for stage 2 regardless: **`florent-v63` already ships an equivalent
+  vision-triggered mechanism, more developed than ours.**
 - **The deterministic trail-aware tie-break** (`bots/_tiebreak1`, and assembled as
   `bots/_pkg45b`). Screen 50.0% [39.9%, 60.1%], confirm **52.9% [48.4%, 57.3%]** — no verdict,
   therefore discard. It leans positive and its mechanism evidence is the strongest we have;
@@ -173,30 +184,32 @@ is exactly what the near-Core zone does in the shipped version, and the census c
 - **`archipelago`'s seat advantage is an engine fact** (team A's Nth builder always gets the
   lower unit id, so A resolves first), not something the candidate changes.
 
-## The next queue, ranked — assuming the base switch
+## The next queue, ranked
 
-**On `florent-v63` as the base:**
+**Stage 1, to finish and ship:** `bots/v63guard` gates (in flight at handover — check
+`results.tsv`), then the human `fcode match test` TLE validation on real hardware, then activate.
 
-1. **Tell x3r0 about the `heart` seat-B zero-harvester failure** and help fix it. Reproducible,
-   costs them a whole map, and it is the same class of bug as the (0,0)-Core defect we fixed.
-2. **Remove the small-map area gate on their vision-triggered battery.** We beat v44 32/32 and
-   v63 26/32 on `fjordgate` largely because of it.
-3. **Census their delivery on the maps where it is weakest** (`atoll` 68.8% conditional against
-   our 100% there) — that is the one place our facing work may still transfer.
-4. **Re-run the per-map mirror seat table on the new base.** Six of fifteen maps mirror; nobody
-   has checked whether their line is equivariant.
+**Stage 2, on the `florent-v63` base, one gated change at a time against pristine `opp_v45`:**
 
-**If the team keeps our lineage alive anyway** (as a second submission, or for the learning):
+1. **Top-level `try`/`except` in their `run()`** — latent unit-loss bug, ~3 lines, same v1
+   heritage as the CPU guard.
+2. **Our trail-linked facing on their secondary opportunistic-pave path** — the only place their
+   delivery still shows the defect (`chain_dir` 4/7 and 2/3 in ladder replays).
+3. **Tell x3r0 about `heart`**: seated as team B, `florent-v63` builds **zero harvesters and
+   collects zero titanium**, reproducibly (2 of 2 seeds) — we sweep that map 4-0 because of it.
+   Same class of bug as the (0,0)-Core defect. Highest-value single thing in this handover after
+   the CPU guard.
+4. **`rush_probe_fast` stress-test on the integrated base**, then probe-hardening (more
+   attackers, leaner probe economy) which was deferred out of this session.
+5. **Re-tune constants on the integrated base** —
+   `.venv/bin/python tools/tune.py <candidate> opp_v45 --guards starter opp_v39`. On our own line
+   a full CEM sweep was worth **nothing** (40.8%, identical to untuned), so do this last.
+6. **Re-run the per-map mirror seat table on the new base.** Six of fifteen maps mirror and
+   nobody has checked whether their line is equivariant.
 
-5. **Combat, not economy.** 11 of 15 losses to v63 are Core kills; our Core died 11/20, theirs
-   0/20. Enemy-Core tracking, `ct.fire()` sabotage, and Gunners are all still unbuilt, and their
-   first Sentinel lands at round 24 against our 51.
-6. **Instrument time-to-first-delivery** and re-read every facing result against it — the
-   end-of-game snapshot demonstrably cannot see what our accepted changes are buying.
-7. **Conveyor spend per delivered titanium.** We build 1,115 structures to v63's 651 and collect
-   14% less. Every walked tile lays a conveyor whether or not that trail will ever carry
-   anything.
-8. **The tie-break** (`bots/_tiebreak1`), at resolving power or on the correctness argument.
+**Still true of any base:** instrument **time-to-first-delivery** (end-of-game `chain_dir` is a
+snapshot and demonstrably cannot see what our accepted changes buy), and watch **conveyor spend
+per delivered titanium** — we build 1,115 structures to their 651 and collect 14% less.
 
 ## Operating notes for the next session
 
@@ -221,7 +234,8 @@ is exactly what the near-Core zone does in the shipped version, and the census c
 
 | path | what it is |
 | --- | --- |
-| **`bots/_pkg45`** | **the candidate.** `bots/ladder1` is a byte-identical copy |
+| **`bots/v63guard`** | **stage-1 hotfix: `florent-v63` + our CPU guard** |
+| **`bots/_pkg45`** | our challenger, now a component donor. `bots/ladder1` is a byte-identical copy |
 | `bots/_facing_v2` | the candidate minus the (0,0) fix — the artifact the accept was measured on |
 | `bots/_pkg45b`, `bots/_tiebreak1` | the discarded tie-break, packaged and standalone |
 | `bots/_defense_port` | the reactive home-defense port, preserved, awaiting `rush_probe_fast` |
@@ -255,3 +269,12 @@ zero; a pooled win rate cannot see a single-map defect. New this session:
   parsed output. Rebuild it before trusting the next routing change.
 - **In zsh here, `set -- $var` inside a loop does not populate `$1`.** Cost two failed
   diagnostic runs; write the arguments out explicitly.
+- **Pin the opponent before a comparison series — hash the file.** A peer agent was still
+  editing `bots/rush_probe_fast` while I gated against it (mtime 17:46:35, mid-series), which
+  silently turned an A/B into a comparison across two different instruments and produced a
+  "defense is worse" reading that the re-run reversed. Every number in a series must come from
+  the same opponent build.
+- **`ct.get_cpu_time_elapsed()` is inert under `fcode run`, so any CPU-guard code you add is
+  untestable locally by ordinary means.** Force it: build a throwaway copy with the threshold at
+  0 so every guard fires, and require zero crashes. Otherwise you are shipping code paths that
+  have never executed.
