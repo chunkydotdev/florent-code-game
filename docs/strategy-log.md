@@ -30,6 +30,48 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Discard on the pooled number, but the per-map split is the finding — reactive home defense
+
+- **Date:** 2026-08-08 · challenger `bots/ladder1`, primary gate `bots/opp_v44`
+- **Hypothesis (pre-registered above):** our defense is scheduled off *our own* economy and never
+  off the *enemy's* behaviour, so adopting v44's vision-triggered emergency battery — threat
+  detection decoupled from harvester count — should close the gap to v44.
+- **Result: 40.6% [36.3%, 45.1%], n=480, 0 crashes either side.** The `aug7` baseline against
+  the same opponent is **40.8% [32.5%, 49.8%]**. Statistically indistinguishable. **Discard
+  against the primary gate.**
+- **And the pooled number is the least informative thing in the run.** The per-map split is
+  **violently bimodal**, not flat (`ladder1` wins, out of 32 per map):
+
+  | wins big | | collapses | |
+  | --- | --- | --- | --- |
+  | antler | **27** | hive | **0** |
+  | lighthouse | **22** | atoll | **3** |
+  | archipelago | **20** | snowflake | **3** |
+  | heart | **20** | jackpot | **6** |
+  | moonrise | **19** | drumlin | **7** |
+  | | | meander | **9** |
+
+  **A 0-for-32 is structural, not variance.** And `core_destroyed` came in at **120/480 = 25%**
+  against this bot's usual **~17%** house rate, so the mechanism is unambiguously *engaging* —
+  it is not a null. Something in it is worth a great deal on five maps and catastrophic on six,
+  and averaging those into 40.6% describes neither.
+- **Leading hypothesis, not yet confirmed:** economy starvation on ore-poor maps. **`atoll` has
+  8 ore tiles and `hive` 12 — the two lowest in the 15-map pool** — and both collapsed, while
+  ore-rich maps did fine. Diverting a builder or spending on ammo costs proportionally far more
+  where there is little ore to work. This converges with the ammo arithmetic logged below:
+  sustained defense **requires** delivered income, and where income is thin, defense eats the
+  economy that pays for it.
+- **Caveat recorded honestly:** the diff runs to ~159 changed lines, which is large for one
+  mechanism, and it has not yet been confirmed that a second behaviour did not creep in
+  alongside the trigger. If it did, the bimodality is unattributable between them. Diagnosis
+  requested; **do not build on this result until that question is answered.**
+- **What to do with it:** do **not** average this away. The five maps at 60-84% are a real
+  signal. The next move is to find what distinguishes them from the six that collapse — the
+  ore-density hypothesis is testable directly — and gate a variant that keeps the mechanism
+  where it pays. A map-conditional defense trigger is a legitimate follow-up, but note the
+  standing caution that per-map tuning has a **one-week shelf life** on a weekly rotation, so
+  prefer a rule keyed to a *measurable map property* (ore count, ore density) over a map list.
+
 ### Finding — we out-collected them 4880 to 0 and still lost, to three units we never touched
 
 - **Date:** 2026-08-08 · from a 9-replay batched digest across 6 opponents rated 1323-1965
