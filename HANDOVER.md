@@ -199,6 +199,29 @@ not all-in rush.** Also, walk-only delivery under-tests big maps by an order of 
 measured first-Sentinel turn was 3-4 on fjordgate but **24-56 on drumlin**, against an observed
 benchmark of **turn 4-15 regardless of map size**.
 
+### The delivery bug has a mechanism: conveyors are mis-FACED, not just incomplete
+
+`tools/replay_census.py` (new; schema in `tools/replay_schema.md`, both protected — read and run,
+never edit) emits one TSV row per replay and separates two things we had been conflating:
+**`chain`** = harvesters reachable from the Core through the conveyor graph, versus
+**`chain_dir`** = harvesters connected by a **facing-correct** delivery path. The gap between
+them is the bug.
+
+Measured on the old lineage: `v1`-vs-`starter` showed **5 of 6 harvesters graph-connected but
+only 2 of 6 facing-correct**; and one `heart` replay had **40 conveyors, `chain` 2/2,
+`chain_dir` 0/2, and ZERO titanium collected**. That is the "exactly zero collected" mystery
+resolved into a concrete, per-replay-diagnosable mechanism: **trail conveyors point along the
+walk direction rather than the flow direction.**
+
+**This is probably the single biggest economy fix available**, and it partially overlaps a
+change we already accepted: `cardinal_toward` (in `bots/aug7` at `3cfa588`) replaced exactly the
+mis-snapping facing rule, but was accepted on win rate with **no mechanism-level confirmation**.
+A unit is now censusing `v4` (pre-fix) against `aug7` (post-fix) across `heart`, `hive`,
+`lighthouse`, `archipelago` and `drumlin` to establish whether the gap is **closed or merely
+reduced** — the residual, if any, is the next economy experiment. **Standing rule from here:
+verify any candidate's own test replays show `chain_dir == chain` before believing any economy
+or ammo number it produces.**
+
 ### The ammo arithmetic converges two workstreams — sequence v45 accordingly
 
 **Sustained fire requires delivered income.** 15 Ti/round for three Sentinels against 2.5/round
@@ -233,6 +256,13 @@ there are TWO archetypes and the early one is faster than previously stated:**
 - **"forward-Gunner", turn 33-39.** A distinct second lane, with `Pivot`, `not adgato` and
   `Besvikomat` — three unrelated opponents — converging tightly. **Defense must cover both
   windows.**
+
+**The timing calendar now has a distribution, not an anecdote.** Census of **24 real ladder
+replays (48 team-sides)**: 28 sides built a Sentinel at all, and first-Sentinel rounds **cluster
+hard at rounds 3-6** (12 of 48 sides), **median 10**. So **reactive defense must be armed from
+round ~3** — which is a hard constraint on implementation, not a preference: a warm-up counter, a
+target-selection delay, or a comms-store round trip (writes are visible only from the *next*
+round) can each push first response past the entire cluster.
 
 **Ring-camping is correlated with wins, not causal.** Both the replay digest and the local probe
 agree the blocker never decides a game. Do not over-invest in it.

@@ -415,3 +415,30 @@ a position its own builders read as "no data". See the strategy log for what tha
 
 Debug: `print()` is captured per round into the replay; `ct.draw_indicator_dot(pos,r,g,b)` and
 `ct.draw_indicator_line(a,b,r,g,b)` draw overlays saved into the replay.
+
+## Reading replays
+
+`.replay26` is protobuf; the full recovered schema and the wire-level traps live in
+[`tools/replay_schema.md`](../tools/replay_schema.md), consumed by `tools/replay_census.py`
+(both protected — read and run them, never edit). Facts from it that are about **the game**
+rather than the file format:
+
+- **Rounds in a replay are 0-based: `turns[i]` IS round `i`.** The visualiser prepends an empty
+  turn so its scrubber can show the pre-game state; that offset is a display artefact, not part
+  of the file. Verified against `probe_credit`, which logs `ct.get_current_round()` as it acts.
+- **Each team's opening Builder Bot is spawned by the bot, not the engine [measured].** A bot
+  that never calls `spawn()` (`probe_idle`) emits no `placeEntity` at all and finishes with zero
+  units. So **"first builder round" is a bot decision, not a constant** — do not read it as a
+  fixed opening when comparing opponents.
+- **Cores are never emitted as entity updates.** They exist only in the map header, so a parser
+  must seed both at 500 HP before turn 0 or it will miss them entirely — and then `removeEntity`
+  on a Core id, which is how a `core_destroyed` match ends, has nothing to remove.
+- **One delivered stack is exactly 10 titanium, and delivery-only crediting is now confirmed a
+  second way [measured].** `DistributeResources` moves whose destination lands on a Core
+  footprint tile, counted over a whole match and multiplied by 10, equal that team's final
+  `titaniumCollected` **exactly** — 56 team-sides across 28 replays, zero mismatches. That is
+  also the cheapest end-to-end check that a replay parser's geometry is right.
+- **Absent means zero:** `titaniumCollected` is simply omitted when a team banked nothing, so a
+  team that never completes a delivery chain reads 0 — matching `fcode run --json`.
+- `Replay.winCondition` (field 6) is present in real replays but **undeclared** in the
+  visualiser's own schema, as is an unidentified `Player` field 6.
