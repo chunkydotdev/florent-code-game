@@ -119,14 +119,34 @@ territory, not a re-run. Note also that the top of the ladder is not economy-lig
 a probe counted **66 in one match**, at +20% scale each. `TARGET_HARVESTERS` and the missing
 sentinel cap are untested levers.
 
-## The rush-defense lane (in flight, not finished)
+## The rush-defense lane — now the critical path (in flight, not finished)
 
-Our entire local opponent pool — `starter`, `opp_v39`, our own lineage — is passive. **Every
-"early aggression doesn't pay" result we have was measured against a field that never
-attacks.** The 1300+ band does. `bots/rush_probe` is being built to close that hole: a
-measurement instrument, not a competitor, replicating the observed pattern. **Its baseline run
-(`aug7` vs `rush_probe`, seeds 8) had not completed when this session ended — that number is the
-first thing to get.**
+**Field observation, high confidence: the sentinel rush is the COMMON ladder opening, including
+among high-Elo teams.** Not one team's quirk. That makes `rush_probe` a model of the *median*
+opponent, and it makes **`aug7` vs `rush_probe` the single most ladder-predictive local number
+we have.** It did not complete before this session ended. **Get it first.**
+
+Our entire local opponent pool — `starter`, `opp_v39`, our own lineage — is passive, so **every
+"early aggression doesn't pay" result we have was measured against a field that never attacks.**
+Those results answered a question about a distribution we do not play against.
+
+**The counter-meta hypothesis, pre-registered in [strategy-log.md](docs/strategy-log.md) before
+any measurement: defended economy farms a converged-rush field.** Three measured facts favour
+the defender *if* defense triggers early enough — healing at **0.25 Ti/HP** against ~0.56 for
+any attacker; **Sentinels cannot rotate**, so a rush emplacement approached off-axis is
+furniture; and every rush Sentinel costs the attacker **+20% scale permanently**, so a failed
+rush taxes everything they build afterwards. Our defect is not "too little defense" — it is that
+defense is scheduled off *our* economy and never off the *enemy's* behaviour. `bots/ladder1`
+currently holds a **reactive home defense** variant testing exactly that, with predictions
+stated in advance: **a no-op against the passive pool, a material gain against aggression.** If
+both halves hold, it counters the median opponent rather than patching a weakness.
+
+**Calibrate `rush_probe` FAST — top teams execute this well.** Target distribution, from decoded
+series `81d83bb5`: first Sentinel at the enemy Core by **turn 4-15**, blocker in the spawn ring
+by **turn 6-27**, and the **turn-1 Launcher self-throw** is what makes the timing
+map-size-independent. A walk-only probe will be far too slow on big maps and will under-measure
+the real threat. As replays yield observed first-sentinel timestamps, match the probe to that
+distribution — the aggregate feeds a per-map timing calendar.
 
 The pattern it replicates, decoded from ladder series `81d83bb5` (Albert And Einstein **1306.8**
 vs us **1222.8**, **0-5**, all five games `core_destroyed`, and **we out-collected them in every

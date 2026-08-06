@@ -30,6 +30,50 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Hypothesis, pre-registered — defended economy farms a converged-rush field
+
+- **Date:** 2026-08-08 · **written before the measurement exists**, which is the point of writing
+  it down. Experiment in flight as `bots/ladder1`; probe in flight as `bots/rush_probe`.
+- **The field observation this rests on** (Magnus, from replay watching, high confidence): **the
+  sentinel rush is the COMMON ladder opening, including among high-Elo teams.** Not one team's
+  quirk. Canonical execution, decoded from series `81d83bb5`: builder turn 0, **Launcher turn 1
+  next to their own Core**, own scout thrown 6-8 tiles in one action, camped in our Core's spawn
+  ring by turn 6-27, **3-4 Sentinels 1-4 tiles from our Core, first landing turn 4-15**, four
+  builders total.
+- **Why this changes the evaluation set, not just the strategy.** Our entire local opponent pool
+  — `starter`, `opp_v39`, our own lineage — is passive. **Every "early aggression doesn't pay"
+  result this project has produced was measured against a field in which nobody ever attacks.**
+  Those results are not wrong, but they answered a question about a distribution we do not play
+  against. `aug7` vs `rush_probe` is therefore likely **the most ladder-predictive local number
+  available**, and it does not exist yet.
+- **The claim:** a bot that keeps its economy-first shape but defends *reactively* does not
+  merely survive the rush — it **profits** from a field that has converged on it. Three measured
+  facts favour the defender, conditional on the defense triggering early enough:
+  1. **Healing costs 0.25 Ti/HP** (+4 HP for 1 Ti) against **~0.56 Ti/HP** for any attacker.
+     Attrition against a healed target is a losing trade at every level; 2 builders out-heal a
+     Gunner, 3 out-heal a Sentinel.
+  2. **Sentinels cannot rotate** — facing is fixed at build time. A rush emplacement covers one
+     line forever, so approaching off its axis turns 30 Ti of enemy investment into furniture.
+  3. Every rush Sentinel costs the attacker **+20% cost scale permanently**, and scale never
+     decays. A failed rush is not a neutral trade; it is a tax on everything they build after.
+  So the rusher's investment is front-loaded, irreversible, and cheap to blunt — while ours is
+  an economy that keeps compounding.
+- **Our actual defect, and it is not "too little defense":** defense is scheduled off *our*
+  economy and never off the *enemy's* behaviour. `_try_build_sentinel` is gated on 3 harvesters
+  **and** on a builder happening to be within dist²≤18 of the Core. In the decoded series our
+  first Sentinel landed at **turn 436** and **turn 81** with the harvester gate met at turn
+  22-28, and one game never met the gate at all — zero defense, 28 unmitigated hits.
+- **The change being tested:** reactive home defense — defend immediately when an enemy is
+  visible near our Core, regardless of harvester count. **Purely additive by construction.**
+- **Predictions, stated now:** a **no-op (~50%) against the passive pool**, because nobody
+  approaches our Core early there; a **material gain against `rush_probe` and `opp_v44`**. If
+  both halves hold, the change is not a patch on a weakness — it is a counter to the median
+  opponent. **If the passive-pool half comes back materially negative, the change is not
+  additive and the implementation is wrong, not the hypothesis.**
+- **Accept rule for this lane:** clear the normal Wilson gate against `opp_v44`, **and**
+  materially improve against `rush_probe`, **and** not collapse against `starter`/`opp_v39` —
+  we still climb through a mostly passive field and must not overfit to rushers.
+
 ### Finding — we sometimes deliver exactly zero titanium on maps with no (0,0) Core, and nobody has explained it
 
 - **Date:** 2026-08-08 · two independent observations converging, no code change yet
