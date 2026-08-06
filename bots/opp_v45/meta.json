@@ -1,0 +1,27 @@
+{
+  "version": "v58",
+  "status": "accepted_offline_incumbent",
+  "sha256": "c3e382a6d21b0ba8c9f05f89003aff066d00e493affe4ff3b3c6e18336337182",
+  "engine": "fcode 2.3.6",
+  "accepted_suite": {
+    "maps": 21,
+    "seeds": [17, 31337, 99991],
+    "opponents": 3,
+    "both_sides": true,
+    "tle_ms": 10,
+    "games": 378,
+    "wins": 376,
+    "core_kills": 349,
+    "tracebacks": 0,
+    "tles": 0
+  },
+  "online_deployed": true,
+  "submission": {
+    "id": "5783d57d-b064-4a1d-959e-2416c6207813",
+    "version": 44,
+    "name": "florent-v58",
+    "status": "ready",
+    "active": true,
+    "uploaded_at": "2026-08-06T13:00:45.351Z"
+  }
+}

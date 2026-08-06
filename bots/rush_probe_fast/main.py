@@ -1,60 +1,72 @@
-"""rush_probe -- a measurement instrument, not a competitor.
+"""rush_probe_fast -- the top-meta Launcher-insertion rush, replicated.
 
-Our whole local opponent pool (starter, opp_v39, our own aug7 lineage) is
-passive and economy-first, so every conclusion we've drawn about early
-aggression was measured against a field that never attacks. The real ladder
-above ~1300 does: three Sentinels built directly at the Core, early, plus one
-Builder Bot parked in the spawn ring body-blocking it (Builder Bots are
-mutually impassable and cannot be attacked by other Builder Bots, so a single
-enemy builder in your spawn ring paralyses movement for free).
+Forked from bots/rush_probe (the verified "walked" rush). That bot proved the
+swarm-rush shape (attackers, enemy sentinels, one ring blocker) but starts on
+foot and runs no real economy, so it starves its own turrets and leaves its
+own Core undefended -- see docs/opponents.md "Albert And Einstein": the top
+of the ladder opens Builder Bot turn 0 -> Launcher turn 1 -> Sentinel(s) turn
+4-15, using the Launcher to throw the opening scout 6-8 tiles instantly
+(docs/game-model.md, "Used offensively on your OWN builder").
 
-This bot exists to apply exactly that pressure, faithfully and repeatably,
-so we can measure how badly our real lineage folds to it. It does not need
-to win on economy or be robust across strategies -- it needs to reliably:
-  1. Rush the enemy Core with a swarm of Builder Bots (no economy phase).
-  2. Build 2-3 Sentinels adjacent to the enemy Core, facing it, and keep
-     them fed from an aggressively-maintained ammo buffer.
-  3. Park one Builder Bot in the enemy Core's 12-tile spawn ring permanently,
-     cycling between ring tiles rather than wandering off.
+Delta vs rush_probe, kept minimal:
+  1. Opener: one builder builds a Launcher adjacent to our own Core early;
+     the Launcher then throws adjacent friendly builders toward the enemy
+     Core (throw r²=26 from the Launcher, not the bot) -- one instant hop,
+     then the thrown builder walks the rest, same as the field does it.
+  2. Sustaining economy: 2-3 dedicated builders harvest near home and lay a
+     full conveyor chain back to the Core as they walk it, each tile facing
+     the next tile on the path (rush_probe's single-tile conveyor is a
+     dead-end for anything not immediately adjacent to the Core; crediting
+     is delivery-only, so a broken chain earns zero) -- this is what keeps
+     ammo flowing once Sentinels start firing.
+  3. 1-2 home Sentinels, built once an economy builder's chain is done, so
+     the Core isn't undefended (rush_probe's Core died 22x to 5 kills).
 
 Infrastructure (movement, stuck-detection, spawn-ring enumeration, CPU guard,
-the top-level try/except) is inherited from bots/aug7 -- only the strategy
-branches are rewritten. See docs/game-model.md and docs/reference/official-
-docs.md for the API details this relies on (12-tile spawn ring geometry,
-tile-query vision guarding, sentinel targeting order).
+the top-level try/except) is inherited unchanged. See docs/game-model.md and
+docs/reference/official-docs.md for the API details this relies on (12-tile
+spawn ring geometry, tile-query vision guarding, sentinel targeting order,
+Launcher pickup/throw radii).
 
-Entity types used: Core, Builder Bot, Sentinel.
+Entity types used: Core, Builder Bot, Sentinel, Launcher.
 
 Communication store slots:
   0  SLOT_CORE_X          Our Core's X position (written by the core)
   1  SLOT_CORE_Y          Our Core's Y position
-  2  SLOT_HARVESTER_COUNT Harvesters built by the team (capped at 2, opportunistic)
+  2  SLOT_HARVESTER_COUNT Economy harvesters actually built (target: 2-3)
   3  SLOT_SENTINEL_COUNT  Sentinels built near the enemy Core (target: 3)
   4  SLOT_BLOCKER_ID      Entity id (+1; 0 = unclaimed) of the current ring-blocker
   5  SLOT_BLOCKER_PING    Round the current blocker last confirmed it's alive
   6  SLOT_ENEMY_CORE      Packed (x, y) of the enemy Core once directly sighted
+  7  SLOT_LAUNCHER_CLAIM  Entity id (+1) of the builder assigned to build the Launcher
+  8  SLOT_LAUNCHER_BUILT  1 once the opener Launcher exists
+  9  SLOT_HOME_SENTINEL_COUNT Home-defense Sentinels built (target: 2)
+  10 SLOT_ECON_CLAIM      Count of builders claimed for the dedicated harvester role
+  11-13 SLOT_HARVESTER_IDS Entity id (+1) of each economy builder -- the Launcher
+                        skips these so it never throws one off its route
 """
 
+import math
 import random
 import sys
 
-from fcode import Controller, Direction, EntityType, GameError, Position
+from fcode import Controller, Direction, EntityType, Environment, GameError, Position
 
 # Cardinal directions only -- movement, and anything "orthogonally adjacent"
 # (builds, heals, fires): conveyors/splitters/heal/fire/build all require it.
 CARDINALS = [Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST]
 
 # --- Debug instrumentation -------------------------------------------------
-# Set True to get round-numbered stderr evidence (tag RUSHPROBE) of when the
-# swarm reaches the enemy Core, builds/fires Sentinels, and when the blocker
-# takes up residence in the enemy spawn ring. Silenced (False) is the
-# shipped state -- flip only for verification runs.
+# Set True to get round-numbered stderr evidence (tag RUSHFAST) of opener
+# milestones (event=launcher_built/first_throw/contact/first_turret/
+# first_shot) plus the swarm/blocker/economy detail underneath them.
+# Silenced (False) is the shipped state -- flip only for verification runs.
 DEBUG = False
 
 
 def _dbg(msg: str) -> None:
     if DEBUG:
-        print(f"RUSHPROBE {msg}", file=sys.stderr)
+        print(f"RUSHFAST {msg}", file=sys.stderr)
 
 
 # --- Communication store slot assignments ---
@@ -65,6 +77,14 @@ SLOT_SENTINEL_COUNT = 3
 SLOT_BLOCKER_ID = 4
 SLOT_BLOCKER_PING = 5
 SLOT_ENEMY_CORE = 6
+SLOT_LAUNCHER_CLAIM = 7
+SLOT_LAUNCHER_BUILT = 8
+SLOT_HOME_SENTINEL_COUNT = 9
+SLOT_ECON_CLAIM = 10
+# One slot per economy builder (id+1, 0=unfilled) -- the Launcher reads
+# these to avoid throwing a "harvester"-role unit off its route (see
+# _run_launcher). Fixed-size, sized to TARGET_HARVESTERS.
+SLOT_HARVESTER_IDS = (11, 12, 13)
 
 # How many builder bots the core will try to spawn over the game. In practice
 # cost-scaling (+20% per builder, additive) makes this ceiling essentially
@@ -77,10 +97,17 @@ MAX_BUILDERS = 30
 # the enemy Core by the time the reserve kicks in.
 MIN_BUILDERS_BEFORE_RESERVING = 6
 
-# At most this many harvesters, built only opportunistically (adjacent to our
-# path, never a dedicated detour) -- "so it can afford things", not an
-# economy phase.
-TARGET_HARVESTERS = 2
+# Dedicated economy builders (role "harvester"): claimed once at spawn (see
+# _resolve_role), each finds nearby ore, builds a harvester, then walks the
+# output back to the Core laying a real conveyor chain -- unlike rush_probe's
+# opportunistic single-tile stub, this one actually delivers (crediting is
+# delivery-only). Needed to sustain ammo conversion once Sentinels are firing.
+TARGET_HARVESTERS = 3
+
+# How far (Chebyshev, in tiles) an economy builder with no ore in sight will
+# wander while still looking, capped so it stays near home rather than
+# drifting into enemy territory on a small map (see _pick_econ_target).
+ECON_WANDER_RADIUS = 7
 
 # Sentinels built adjacent to the enemy Core, facing it.
 SENTINEL_TARGET = 3
@@ -88,6 +115,17 @@ SENTINEL_TARGET = 3
 # A builder only attempts a sentinel build once within this squared distance
 # of the enemy Core -- otherwise it just keeps walking.
 SENTINEL_BUILD_RANGE_SQ = 18
+
+# Home-defense Sentinels, built by an economy builder once its harvester
+# chain reaches the Core -- so the base isn't undefended while the swarm is
+# busy rushing (rush_probe's Core died 22x to 5 kills with zero home defense).
+HOME_SENTINEL_TARGET = 2
+
+# Squared distance from our own Core within which the opener Launcher and
+# home Sentinels may be built -- the same dist_sq=8 superset bound the Core
+# itself uses to enumerate its 12-tile spawn ring (see _run_core), so both
+# stay genuinely "adjacent to our own Core".
+HOME_BUILD_RANGE_SQ = 8
 
 # Global ammo buffer. 3 Sentinels reloading every 2 rounds cost at most
 # 15 ammo / 2 rounds; this buffer is a large multiple of that so conversion
@@ -197,7 +235,11 @@ class Player:
         self.target: Position | None = None
         self.last_pos: Position | None = None
         self.stuck = 0
-        self.role: str | None = None  # "attacker" or "blocker", resolved every round
+        # "attacker", "blocker", "launcher_builder" or "harvester"
+        self.role: str | None = None
+        self.harvester_done = False  # "harvester" role: harvester built, now walking home
+        self.chain_gap: Position | None = None  # "harvester" role: see _try_close_chain_gap
+        self.dbg_thrown = False  # Launcher only: one-shot first-throw debug flag
 
         # Cached positions
         self.core_pos: Position | None = None    # our own Core (home)
@@ -235,6 +277,8 @@ class Player:
             self._run_builder(ct)
         elif etype == EntityType.SENTINEL:
             self._run_sentinel(ct)
+        elif etype == EntityType.LAUNCHER:
+            self._run_launcher(ct)
 
     def _cpu_exhausted(self, ct: Controller) -> bool:
         """True once this unit has used CPU_BUDGET_US of its 10ms this round.
@@ -318,12 +362,16 @@ class Player:
 
     def _run_builder(self, ct: Controller) -> None:
         """Builder bot logic. Priority order:
-        1. Resolve our role (attacker vs. the one spawn-ring blocker) --
-           cheap, and the blocker's heartbeat needs to survive CPU pressure.
-        2. Build: harvester (capped, opportunistic) > sentinel (near enemy,
-           capped) > heal.
-        3. Move toward our target (enemy Core for attackers, a ring tile for
-           the blocker) -- reuses aug7's movement/stuck-detection verbatim.
+        1. Resolve our role (attacker / blocker / launcher_builder /
+           harvester) -- cheap, and the blocker's heartbeat needs to survive
+           CPU pressure.
+        2. Build, by role: launcher_builder -> the opener Launcher;
+           harvester -> its harvester, then (once done) a home Sentinel;
+           attacker -> a Sentinel near the enemy Core (capped); blocker ->
+           nothing. Whoever didn't act tries to heal instead.
+        3. Move toward our target (enemy Core for attackers, home for
+           launcher_builder/harvester, a ring tile for the blocker) --
+           reuses aug7's movement/stuck-detection verbatim.
         """
         pos = ct.get_position()
 
@@ -348,9 +396,27 @@ class Player:
 
         if ct.get_action_cooldown() == 0:
             acted = False
-            if self.role != "blocker" and ct.read_store(SLOT_HARVESTER_COUNT) < TARGET_HARVESTERS:
-                acted = self._try_build_harvester(ct)
-            if not acted and self.role != "blocker":
+            if self.role == "launcher_builder":
+                if self._try_build_launcher(ct):
+                    acted = True
+                    # Job done -- become an attacker (and prime candidate to
+                    # be the Launcher's own first throw, since it's likely
+                    # still standing right next to it). SLOT_LAUNCHER_BUILT
+                    # is buffered and won't be visible for a round, so
+                    # without this the sticky role would try to build a
+                    # SECOND Launcher next round [measured: it did].
+                    self.role = "attacker"
+            elif self.role == "harvester":
+                if not self.harvester_done:
+                    if self._try_build_harvester(ct):
+                        self.harvester_done = True
+                        self.chain_gap = ct.get_position()
+                        acted = True
+                elif self.chain_gap is not None:
+                    acted = self._try_close_chain_gap(ct)
+                else:
+                    acted = self._try_build_home_sentinel(ct)
+            elif self.role != "blocker":
                 acted = self._try_build_sentinel_near_enemy(ct)
             if not acted:
                 self._try_heal(ct)
@@ -378,7 +444,7 @@ class Player:
             d = pos.distance_squared(self.enemy_pos)
             if d <= SENTINEL_BUILD_RANGE_SQ:
                 self.dbg_reached_enemy = True
-                _dbg(f"round={ct.get_current_round()} unit={ct.get_id()} reached enemy core area, dist_sq={d}")
+                _dbg(f"r={ct.get_current_round()} event=contact unit={ct.get_id()} dist_sq={d}")
 
     def _read_core_pos(self, ct: Controller) -> None:
         """Read our own Core's position from the store (written round 1,
@@ -439,6 +505,24 @@ class Player:
         survives into next round) -- not worth a stricter protocol for a
         probe.
         """
+        # "launcher_builder" and "harvester" are one-shot jobs: claimed at
+        # most once per unit, on its first-ever resolution (self.role is
+        # still None), then remembered locally for the rest of that unit's
+        # life -- the early return at the top of this method skips straight
+        # past all of the below once either is set. Neither supports the
+        # blocker's mid-game reclaim-if-stale below; acceptable for a probe,
+        # and moot in practice because the Core spawns at most one new
+        # builder per round (its own action cooldown), so these claims are
+        # never contested by two units in the same round.
+        if self.role in ("launcher_builder", "harvester"):
+            return
+        fresh = self.role is None
+        if fresh and ct.read_store(SLOT_LAUNCHER_BUILT) == 0 and ct.read_store(SLOT_LAUNCHER_CLAIM) == 0:
+            ct.write_store(SLOT_LAUNCHER_CLAIM, ct.get_id() + 1)
+            self.role = "launcher_builder"
+            _dbg(f"r={ct.get_current_round()} event=launcher_claimed unit={ct.get_id()}")
+            return
+
         my_token = ct.get_id() + 1
         rnd = ct.get_current_round()
         claimant = ct.read_store(SLOT_BLOCKER_ID)
@@ -463,7 +547,42 @@ class Player:
             _dbg(f"round={rnd} unit={ct.get_id()} reclaims stale blocker role (idle since {last_ping})")
             return
 
+        econ_idx = ct.read_store(SLOT_ECON_CLAIM)
+        if fresh and econ_idx < TARGET_HARVESTERS:
+            ct.write_store(SLOT_ECON_CLAIM, econ_idx + 1)
+            ct.write_store(SLOT_HARVESTER_IDS[econ_idx], ct.get_id() + 1)
+            self.role = "harvester"
+            _dbg(f"r={ct.get_current_round()} event=econ_claimed unit={ct.get_id()}")
+            return
+
         self.role = "attacker"
+
+    def _try_build_launcher(self, ct: Controller) -> bool:
+        """Build the opener Launcher on a tile adjacent to our own Core --
+        turn ~1, mirroring the top-meta rush (docs/opponents.md, Albert And
+        Einstein: Builder Bot turn 0 -> Launcher turn 1 -> Sentinel(s) turn
+        4-15). No facing to compute -- build_launcher() takes a position
+        only, Launchers have none.
+        """
+        if self.core_pos is None:
+            return False
+        ti = ct.get_global_resources()
+        cost = ct.get_launcher_cost()
+        if ti < cost:
+            return False
+        pos = ct.get_position()
+        if pos.distance_squared(self.core_pos) > HOME_BUILD_RANGE_SQ:
+            return False
+        dirs = list(CARDINALS)
+        random.shuffle(dirs)
+        for d in dirs:
+            build_pos = pos.add(d)
+            if ct.can_build_launcher(build_pos):
+                ct.build_launcher(build_pos)
+                ct.write_store(SLOT_LAUNCHER_BUILT, 1)
+                _dbg(f"r={ct.get_current_round()} event=launcher_built pos={build_pos} unit={ct.get_id()}")
+                return True
+        return False
 
     def _try_build_harvester(self, ct: Controller) -> bool:
         """Opportunistic only -- never a dedicated detour. If ore happens to
@@ -486,6 +605,7 @@ class Player:
                 ct.write_store(SLOT_HARVESTER_COUNT, count + 1)
                 self._try_build_conveyor_toward_core(ct, build_pos)
                 self.target = None  # don't linger trying to walk onto it
+                _dbg(f"r={ct.get_current_round()} event=harvester_built pos={build_pos} unit={ct.get_id()}")
                 return True
         return False
 
@@ -507,6 +627,43 @@ class Player:
         conv_pos = harvester_pos.add(facing)
         if ct.can_build_conveyor(conv_pos, facing):
             ct.build_conveyor(conv_pos, facing)
+
+    def _try_close_chain_gap(self, ct: Controller) -> bool:
+        """One-shot fixup for a real gap in the chain: the tile a "harvester"
+        role builder is STANDING ON when it finishes building (its position
+        at that moment, adjacent to the harvester by construction, cached
+        as self.chain_gap) can never itself get a conveyor -- "never its own
+        tile" -- so it's structurally excluded from both
+        _try_build_conveyor_toward_core (which places a conveyor relative to
+        the HARVESTER, not the builder, and silently no-ops in exactly the
+        geometry where the two coincide) and _try_move_laying_conveyor
+        (which only builds on tiles AHEAD as we walk, never the one behind
+        us). Measured 2026-08-06: without this, a harvester built this way
+        delivered 0 titanium all game despite a "connected-looking" trail
+        leading away from it -- the one tile touching the harvester was
+        simply never a conveyor.
+
+        Fixed here once the builder has taken its first step away (now
+        adjacent to, but no longer standing on, self.chain_gap): build a
+        conveyor there, facing toward wherever we are now -- exactly
+        bridging harvester -> chain_gap -> the rest of the trail
+        _try_move_laying_conveyor lays from here on.
+        """
+        pos = ct.get_position()
+        if pos == self.chain_gap:
+            return False  # haven't moved off it yet
+        if pos.distance_squared(self.chain_gap) != 1:
+            # Cardinal movement only, so this shouldn't happen -- but don't
+            # get stuck retrying forever against a stale/unreachable gap.
+            self.chain_gap = None
+            return False
+        facing = self.chain_gap.direction_to(pos)
+        if ct.can_build_conveyor(self.chain_gap, facing):
+            ct.build_conveyor(self.chain_gap, facing)
+            _dbg(f"r={ct.get_current_round()} event=chain_gap_closed pos={self.chain_gap} facing={facing.name}")
+            self.chain_gap = None
+            return True
+        return False
 
     def _try_build_sentinel_near_enemy(self, ct: Controller) -> bool:
         """Build a Sentinel adjacent to the enemy Core, facing it, once
@@ -539,9 +696,51 @@ class Player:
             if ct.can_build_sentinel(build_pos, facing):
                 ct.build_sentinel(build_pos, facing)
                 ct.write_store(SLOT_SENTINEL_COUNT, count + 1)
+                event = "first_turret" if count == 0 else "sentinel_built"
                 _dbg(
-                    f"round={ct.get_current_round()} sentinel #{count + 1} built "
+                    f"r={ct.get_current_round()} event={event} sentinel #{count + 1} built "
                     f"at {build_pos} facing {facing.name} by unit={ct.get_id()}"
+                )
+                return True
+        return False
+
+    def _try_build_home_sentinel(self, ct: Controller) -> bool:
+        """Build a defensive Sentinel adjacent to our OWN Core, facing
+        outward (away from the Core) -- called only once an economy
+        builder's harvester chain is done and it has walked back home (see
+        _pick_econ_target). Mirrors _try_build_sentinel_near_enemy above,
+        aimed the opposite way: rush_probe's Core died 22x to 5 kills with
+        zero home defense; this is the fix.
+        """
+        if self.core_pos is None:
+            return False
+        count = ct.read_store(SLOT_HOME_SENTINEL_COUNT)
+        if count >= HOME_SENTINEL_TARGET:
+            return False
+        ti = ct.get_global_resources()
+        cost = ct.get_sentinel_cost()
+        if ti < cost:
+            return False
+
+        pos = ct.get_position()
+        if pos.distance_squared(self.core_pos) > HOME_BUILD_RANGE_SQ:
+            return False
+
+        dirs = list(CARDINALS)
+        random.shuffle(dirs)
+        for d in dirs:
+            build_pos = pos.add(d)
+            inward = build_pos.direction_to(nearest_core_tile(build_pos, self.core_pos))
+            if inward == Direction.CENTRE:
+                continue
+            facing = inward.opposite()
+            if ct.can_build_sentinel(build_pos, facing):
+                ct.build_sentinel(build_pos, facing)
+                ct.write_store(SLOT_HOME_SENTINEL_COUNT, count + 1)
+                event = "first_turret" if count == 0 else "home_sentinel_built"
+                _dbg(
+                    f"r={ct.get_current_round()} event={event} home sentinel #{count + 1} "
+                    f"built at {build_pos} facing {facing.name} by unit={ct.get_id()}"
                 )
                 return True
         return False
@@ -594,8 +793,11 @@ class Player:
         perpendicular = [d for d in CARDINALS if d not in (desired, desired.opposite())]
         random.shuffle(perpendicular)
         alternatives = [desired, *perpendicular, desired.opposite()]
+        mover = self._try_move
+        if self.role == "harvester" and self.harvester_done:
+            mover = self._try_move_laying_conveyor
         for d in alternatives:
-            if self._try_move(ct, d):
+            if mover(ct, d):
                 return
 
     def _try_move(self, ct: Controller, d: Direction) -> bool:
@@ -603,15 +805,17 @@ class Player:
 
         aug7 also drops a conveyor toward home on every empty tile it steps
         onto, building out a resource network as builders wander. We
-        deliberately DON'T reuse that part: it spends titanium and adds
-        +1% cost-scale per conveyor for a supply network this bot has no
-        use for (it isn't running an economy), and measured against a live
+        deliberately DON'T reuse that part for attackers/blocker: it spends
+        titanium and adds +1% cost-scale per conveyor for a supply network
+        this bot has no use for on that path, and measured against a live
         opponent it was competing with Sentinel-building for the same
         titanium pool -- with ~20-30 builders each dropping a trail of
         conveyors on their way to the enemy Core, cost-scale climbed fast
         enough that by the time an attacker was adjacent to the enemy Core,
         the team often couldn't afford a single Sentinel yet. Movement
         itself (this method's actual job) is otherwise unchanged from aug7.
+        The "harvester" role uses _try_move_laying_conveyor instead, below
+        -- there the trail IS the point (see TARGET_HARVESTERS).
         """
         if d == Direction.CENTRE:
             return False
@@ -626,18 +830,141 @@ class Player:
             return True
         return False
 
+    def _try_move_laying_conveyor(self, ct: Controller, d: Direction) -> bool:
+        """Like _try_move, but for a "harvester"-role builder walking a
+        finished harvester's output back to the Core: lay a conveyor on the
+        tile we're about to step onto, facing further toward the Core, so a
+        full multi-tile chain accretes automatically as we walk it home.
+        Each tile's facing is computed fresh from THAT tile toward the Core
+        (cardinal_toward), so it's always correct regardless of how far
+        there still is to go -- this is aug7's verified trail-laying
+        pattern (see _try_move above for why attackers deliberately skip
+        it); reused here because a real chain is exactly what's needed to
+        get a harvester crediting anything (delivery-only, see
+        _try_build_conveyor_toward_core).
+        """
+        if d == Direction.CENTRE:
+            return False
+        pos = ct.get_position()
+        next_pos = pos.add(d)
+
+        if not in_bounds(ct, next_pos):
+            return False
+
+        if self.core_pos is not None and ct.is_tile_empty(next_pos):
+            cardinal = cardinal_toward(next_pos, self.core_pos)
+            if cardinal is not None and ct.can_build_conveyor(next_pos, cardinal):
+                ct.build_conveyor(next_pos, cardinal)
+                _dbg(
+                    f"r={ct.get_current_round()} event=chain_link pos={next_pos} facing={cardinal.name} "
+                    f"unit={ct.get_id()} dist_sq_home={next_pos.distance_squared(self.core_pos)}"
+                )
+
+        if ct.can_move(d):
+            ct.move(d)
+            return True
+        return False
+
     def _pick_target(self, ct: Controller) -> Position | None:
         """Attackers beeline for the enemy Core -- no economy detours, no
-        ore-seeking. The blocker cycles between enemy spawn-ring tiles.
-        Reaching the (impassable) enemy Core position just means the
-        attacker parks adjacent to it, which is exactly where we want it
-        for sentinel-building.
+        ore-seeking. The blocker cycles between enemy spawn-ring tiles. The
+        launcher-builder and harvester roles head home instead (see below).
+        Reaching an (impassable) Core position just means the unit parks
+        adjacent to it, which is exactly where we want it for
+        sentinel/launcher-building.
         """
         if self.role == "blocker":
             return self._pick_ring_target(ct)
+        if self.role == "launcher_builder":
+            return self.core_pos if self.core_pos is not None else self._random_target(ct)
+        if self.role == "harvester":
+            return self._pick_econ_target(ct)
         if self.enemy_pos is not None:
             return self.enemy_pos
         return self._random_target(ct)
+
+    def _pick_econ_target(self, ct: Controller) -> Position:
+        """Economy builder, before building: seek the nearest visible
+        unclaimed ore tile (aug7's proven pattern -- ct.get_nearby_tiles()
+        is already vision-bounded, so no GameError guarding needed). Once
+        built (self.harvester_done), head home instead; _move_toward_target
+        switches to _try_move_laying_conveyor for that leg so the walk home
+        also lays the delivery chain.
+
+        No ore visible: wander, but bounded NEAR HOME (_random_target_near),
+        not _random_target's whole-map roll. Measured 2026-08-06: on a small
+        map (fjordgate, 10x10) a whole-map random target routinely lands
+        near the enemy Core, so a dedicated economy builder with no local
+        ore ends up walking straight into the enemy's defenses instead of
+        continuing to look for ore close to home -- 3 of 3 "harvester" role
+        builders did exactly this in one match and none ever built anything.
+
+        Ore IS visible but on the enemy's side of the map: skip it too
+        (_on_our_side) -- also measured, same match, same failure mode: an
+        econ builder that wandered near the midpoint spotted enemy-side ore
+        and beelined for it (ending up dist_sq=1 from the enemy Core), which
+        is exactly the kind of long, hostile, low-value chain this role
+        should never attempt when it's dedicated home economy, not a scout.
+        """
+        if self.harvester_done:
+            return self.core_pos if self.core_pos is not None else self._random_target(ct)
+
+        pos = ct.get_position()
+        best: list[Position] = []
+        best_dist = None
+        for tile in ct.get_nearby_tiles():
+            if ct.get_tile_env(tile) != Environment.ORE_TITANIUM:
+                continue
+            if ct.get_tile_building_id(tile) is not None:
+                continue
+            if not self._on_our_side(tile):
+                continue
+            d = pos.distance_squared(tile)
+            if best_dist is None or d < best_dist:
+                best_dist = d
+                best = [tile]
+            elif d == best_dist:
+                best.append(tile)
+        if best:
+            return random.choice(best)
+        if self.core_pos is not None:
+            return self._random_target_near(ct, self.core_pos, ECON_WANDER_RADIUS)
+        return self._random_target(ct)
+
+    def _on_our_side(self, pos: Position) -> bool:
+        """True if pos is at least as close to our own Core as to the
+        enemy's -- the midpoint test shared by _pick_econ_target's ore scan
+        and _random_target_near's wander, so economy builders never chase
+        ore or drift into the enemy's half looking for something to do.
+        """
+        if self.core_pos is None or self.enemy_pos is None:
+            return True
+        return pos.distance_squared(self.core_pos) <= pos.distance_squared(self.enemy_pos)
+
+    def _random_target_near(self, ct: Controller, origin: Position, radius: int) -> Position:
+        """A random in-bounds tile within +/-radius of origin (Chebyshev,
+        not a true disc -- cheap, and precision doesn't matter for a wander
+        target), rejecting candidates closer to the enemy Core than to
+        origin. Anchored on origin (not the caller's current position) so
+        repeated calls keep exploring the SAME bounded region rather than
+        drifting further every time the unit is stuck or arrives.
+
+        The rejection step matters more than the radius: on a small map
+        (fjordgate, 10x10, cores ~4 tiles apart) a fixed radius=7 still
+        covers nearly the whole board, so a plain box sample kept landing
+        past the midpoint -- measured 2026-08-06, 3 of 3 economy builders
+        drifted into "contact" range of the enemy Core and never built
+        anything. Constraining to "our half" (relative to self.enemy_pos)
+        scales correctly with map size instead of needing a tuned radius.
+        """
+        w, h = ct.get_map_width(), ct.get_map_height()
+        for _ in range(6):
+            x = max(0, min(w - 1, origin.x + random.randint(-radius, radius)))
+            y = max(0, min(h - 1, origin.y + random.randint(-radius, radius)))
+            candidate = Position(x, y)
+            if self._on_our_side(candidate):
+                return candidate
+        return origin
 
     def _pick_ring_target(self, ct: Controller) -> Position:
         """Choose the next enemy spawn-ring tile to occupy: prefer a tile we
@@ -729,6 +1056,94 @@ class Player:
             if not self.dbg_fired:
                 self.dbg_fired = True
                 _dbg(
-                    f"round={ct.get_current_round()} sentinel unit={ct.get_id()} "
+                    f"r={ct.get_current_round()} event=first_shot sentinel unit={ct.get_id()} "
                     f"fired at {best_tile} target_id={best_target_id}"
                 )
+
+    # ------------------------------------------------------------------
+    # Launcher (the opener's throwing arm)
+    # ------------------------------------------------------------------
+
+    def _run_launcher(self, ct: Controller) -> None:
+        """Every round, if we know where the enemy Core is, grab any
+        adjacent friendly Builder Bot (pickup r²=2, incl. diagonal) --
+        EXCEPT a "harvester"-role economy builder (see SLOT_HARVESTER_IDS)
+        -- and throw it as far toward the enemy Core as throw range (r²=26,
+        measured from US, not the bot) allows. can_launch()/launch() take
+        (bot_pos, target) -- there's no "self" bot to throw, so we scan
+        get_nearby_units() for one. The thrown builder walks the rest: one
+        throw covers up to ~5 tiles instantly, ordinary cardinal movement
+        (unchanged, role stays "attacker") covers the remainder -- see
+        docs/opponents.md, Albert And Einstein signature behaviour.
+
+        The harvester exclusion is load-bearing, not defensive coding:
+        measured 2026-08-06 (lighthouse) an economy builder mid-chain
+        wandered adjacent to our own Launcher and got thrown clear across
+        the map towards the enemy, abandoning a chain it had already laid
+        20+ tiles of. The blocker and a just-finished launcher_builder (who
+        becomes "attacker") are NOT excluded -- getting thrown only helps
+        them reach their own targets faster.
+        """
+        if self.core_pos is None:
+            self._read_core_pos(ct)
+        if self.core_pos is not None:
+            self._sync_enemy_core(ct)
+
+        if self._cpu_exhausted(ct):
+            return
+        if self.enemy_pos is None:
+            return
+
+        pos = ct.get_position()
+        my_team = ct.get_team()
+        my_id = ct.get_id()
+        target = self._throw_target(ct, pos)
+        if target is None:
+            return
+
+        protected = {v for s in SLOT_HARVESTER_IDS if (v := ct.read_store(s)) != 0}
+
+        for uid in ct.get_nearby_units(dist_sq=2):
+            if uid == my_id or ct.get_team(uid) != my_team:
+                continue
+            if ct.get_entity_type(uid) != EntityType.BUILDER_BOT:
+                continue
+            if (uid + 1) in protected:
+                continue
+            bot_pos = ct.get_position(uid)
+            if ct.can_launch(bot_pos, target):
+                ct.launch(bot_pos, target)
+                if not self.dbg_thrown:
+                    self.dbg_thrown = True
+                    _dbg(f"r={ct.get_current_round()} event=first_throw bot={uid} from={bot_pos} to={target}")
+                return
+
+    def _throw_target(self, ct: Controller, pos: Position) -> Position | None:
+        """Pick a bot-passable tile within throw range (r²=26, measured
+        from the Launcher's own position) that makes maximum progress
+        toward the enemy Core. Backs off along the same line (5, 4, 3, 2
+        tiles) if the ideal spot is a wall or otherwise illegal rather than
+        giving up outright -- wall density runs up to 30.8% on some maps in
+        the pool (docs/game-model.md).
+        """
+        dx = self.enemy_pos.x - pos.x
+        dy = self.enemy_pos.y - pos.y
+        dist = math.sqrt(dx * dx + dy * dy)
+        if dist < 1:
+            return None
+        for hop in (5.0, 4.0, 3.0, 2.0):
+            scale = min(1.0, hop / dist)
+            tx = pos.x + round(dx * scale)
+            ty = pos.y + round(dy * scale)
+            candidate = Position(
+                max(0, min(ct.get_map_width() - 1, tx)),
+                max(0, min(ct.get_map_height() - 1, ty)),
+            )
+            if candidate == pos:
+                continue
+            try:
+                if ct.is_tile_passable(candidate):
+                    return candidate
+            except GameError:
+                continue
+        return None
