@@ -33,7 +33,11 @@ no regression); starter/opp_v39 no-collapse runs were in flight at handover — 
 rows of `results.tsv` before shipping; expect ~90% both, 0 crashes ours, else stop.**
 
 ```bash
-# Magnus only — bots/v* is write-protected for agents:
+# FIRST check whether this already happened: .venv/bin/fcode status
+# (if the active bot is named v63-mapfix-launcher or similar, skip this block
+#  and start on the queue below)
+# Magnus only — bots/v* is write-protected for agents (classifier-enforced,
+# verified this session):
 cp -r bots/_v63full bots/v5            # v5 is still the next free LOCAL freeze slot
 .venv/bin/fcode submit bots/v5 --name v63-mapfix-launcher
 .venv/bin/fcode match test v5 opp_v45  # real-hardware sanity; rate-limited 5 per 10 min
