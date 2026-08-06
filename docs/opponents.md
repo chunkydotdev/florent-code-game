@@ -745,3 +745,386 @@ from spawn/movement/gating constants in the source, not measured (no match run).
   threat — so it would plausibly still fire correctly that early. Its own offense would not
   reciprocate in time; against a mirror-image early rusher it would be surviving entirely on
   the reactive-defense layer, not winning a race with its own attack.
+
+## Version-attributed match audit + top-team unrated pattern digest (2026-08-06, ~13:52 UTC)
+
+Fresh full pull of `fcode match list --mine --json` (paginated with `--limit 100` + `--cursor`,
+2 pages) — **181 total matches** since team creation: **107 rated ladder series** (matches
+`fcode status`'s "107 matches played" exactly) and **74 unrated**. This supersedes
+reconstructing version activation from timestamps, per this pass's brief: the JSON gives
+`teamAVersion`/`teamBVersion` (the exact submission that played each side of each match),
+`eloDeltaA`/`eloDeltaB`, and `ratingABefore`/`ratingBBefore` directly, so every row below is
+attributed to a specific submission version with no inference required. Current snapshot:
+rating **1233.34**, rank **#50/103**, active submission **v44** ("florent-v58") — matches
+`fcode status` exactly (1233.34 = the last ladder match's `ratingBBefore` + its `eloDelta`),
+consistent with the existing note above on that field's accuracy.
+
+### Rating trajectory by submission version (all 107 rated series)
+
+Version churn continues exactly as the sweep note above already flagged, and this pass
+reconfirms it through the newest matches too: **v21 reappears** after v22–v38 had already
+played (series `dca5a663`, 11:19 UTC), and from 11:30 UTC onward **v40, v41, v42, and v44
+interleave directly** — v44's two series sit *between* v40 series chronologically, not after
+them (full measured sequence of `our_version` by completed-time: `...,38,38,38,21,41,42,40,
+40,40,40,40,40,40,40,44,40,44`). Several people are still shipping/reactivating versions
+concurrently. Per-version record, every version with ≥3 rated series or a net Elo swing worth
+calling out:
+
+| version | series (W–L) | games (W–L) | net Elo | rating span |
+|---|---|---|---|---|
+| v20 | 22 (15–7) | 70–40 | +22.51 | 1199.5 → 1222.0 |
+| v21 | 8 (6–2) | 24–16 | +22.77 | 1222.0 → 1179.4 (spans the reappearance, see above) |
+| v40 ("aug7-sentinel-economy") | 9 (8–1) | 31–14 | **+35.24** | 1183.8 → 1226.1 |
+| v44 ("florent-v58") | 2 (2–0) | 8–2 | +14.34 | 1214.1 → 1233.3 |
+| v9 | 3 (0–3) | 1–14 | −43.20 | 1399.8 → 1356.6 (worst version sampled) |
+| v11 | 3 (0–3) | 2–13 | −36.56 | 1350.6 → 1314.0 |
+
+(all other versions, v1–v8/v10/v12–v19/v22–v38/v41–v42, played 1–4 series each — too small
+individually to read much into; full per-version table generated but not reproduced here to
+keep this section readable — see `build_table.py` output in scratch if needed later).
+
+v40 is the strongest well-sampled version to date (8W–1L; its only loss is the
+already-documented Albert And Einstein blowout `81d83bb5`, 1306.8). **v44 has only 2 rated
+series so far** (both wins: Leviathan 4–1 @1159.0, Troupe 4–1 @1174.9) — too small a sample to
+say anything about its ladder strength yet. Everything below about v44 *losing* comes from the
+unrated bucket, not the ladder — v44 is currently undefeated on the ladder.
+
+### Unrated matches ranked by opponent rating — the list this pass worked from
+
+74 unrated matches, deduplicated by opponent identity, ranked by the opponent's
+`ratingBefore` **at the time of that specific match** (their live/current rating shown
+separately where it has since moved):
+
+| rank | opponent | rating (at-match / live now) | matches | our record | our versions seen | status |
+|---|---|---|---|---|---|---|
+| 1 | **Pivot** | ~1907–1965 / 1948.0 | 65 | 0W–65L | v21–v44 (20+ versions) | #1 team; 1 game already decoded (`91d77721`, existing entry above); **+1 new decode this pass** (v44) |
+| 2 | **sporks** | 1923.4 | 1 | 0W–1L | v44 | brand-new name — **decoded this pass** |
+| 3 | **not adgato** | 1897.0 | 1 | 0W–1L | v44 | brand-new name — **decoded this pass** |
+| 4 | **Besvikomat** | 1789.1 / 1802.6 | 1 | 0W–1L | v40 | named (not decoded) in the earlier "Unrated scouting" entry above — **decoded for the first time this pass** |
+| 5 | The Flotte Experience | 1686–1696 / 1744.6 | 4 | 0W–4L | v21–v24 | named (not decoded) earlier; deprioritized this pass — **all 5 maps in every one of its games are retired from the current pool** (bridge/showdown/string/aurora/sweden), so behavioral data from it is map-stale |
+| 6 | Jacobs Code | 1376.5 / 1384.7 | 1 | series 1W–4L | v38 | named (not decoded) earlier; still not decoded — lower rating priority than the above |
+| 7 | **Albert And Einstein** | 1323.3 / 1323.2 | 1 | series **2W–3L** | v44 vs their **v8** | the explicitly-flagged sample — **full 5-game series decoded this pass**, see below |
+| 8 | StarTrekker | 1206.5 / 1208.5 | 1 | 1W–4L | v40 | already decoded (existing entry above, match `eb72ce59`) |
+
+**v44's entire unrated record is 0W–4L** — Pivot (`9436bd69`, 0-5), sporks (`81ce7948`, 0-5),
+not adgato (`2397deb4`, 0-5), Albert And Einstein (`a2a03506`, **2-3**, the only
+non-blowout). Per `fcode match info` on all four of v44's matches (**20 individual games
+checked**): **every single one ended `core_destroyed`** — v44 has not lost a single unrated
+game to economy or harvester count so far, only to a dead Core. (Widening the check to all 7
+candidate matches this pass pulled `match info` for — 35 games total, including Besvikomat,
+Flotte Experience, and Jacobs Code alongside the 4 v44 matches — `core_destroyed` still
+dominates at 29 of 35, but the three non-v44 matches do show `titanium_collected` and
+`harvesters` decisions on the games that ran the full 1000-turn cap.)
+
+### Decode budget: 9 new replays, reusing the existing decoder unchanged
+
+Downloaded and decoded **9 new games** across 5 matches (`replay_codec.py` and the
+`analyze_aae2.py` ring-occupancy / `moveBuilderBot`-jump-detection logic reused as-is, wrapped
+in a new `batch_analyze.py` in scratch that takes explicit win/loss + team-side per game instead
+of assuming "we always lose" like the one-off AAE script did): 1 representative game each from
+Pivot, sporks, and not adgato (v44's three new-opponent losses — all three are 0-5 sweeps where
+every game is `core_destroyed`, so one sample per the existing "one or two samples already say
+everything" finding), **all 5 games** of the Albert And Einstein v8 series (explicitly flagged
+as the highest-value sample — the first time we have both a *win* and a *loss* from the same
+opponent+version pairing to contrast), and 1 game from Besvikomat. All maps used are in the
+current 15-map pool.
+
+| match : game | opponent (rating) | our ver. | map (W×H) | turns | result |
+|---|---|---|---|---|---|
+| `9436bd69` g2 | Pivot (1961) | v44 | hive (25×25) | 217 | L |
+| `81ce7948` g3 | sporks (1923) | v44 | fjordgate (10×10) | **63** | L |
+| `2397deb4` g3 | not adgato (1897) | v44 | hive (25×25) | 177 | L |
+| `a2a03506` g1 | Albert And Einstein v8 (1323) | v44 | eider (28×20) | 373 | L |
+| `a2a03506` g2 | " | v44 | fjordgate (10×10) | 328 | **W** |
+| `a2a03506` g3 | " | v44 | lighthouse (16×16) | 985 | L |
+| `a2a03506` g4 | " | v44 | meander (25×15) | 971 | **W** |
+| `a2a03506` g5 | " | v44 | heart (28×20) | 241 | L |
+| `c5c193b6` g2 | Besvikomat (1789) | v40 | drumlin (25×25) | 239 | L |
+
+All 9 ended `core_destroyed` (confirmed via `match info`, not inferred).
+
+### Attacker opening timing, measured game-by-game
+
+*(This section answers a "is the sentinel rush universal across the ladder" question raised
+mid-pass — see the process note near the end of this entry for where that came from.)*
+
+A cross-session message reached this task claiming "the sentinel rush is the common opening
+across the ladder, including high-Elo teams" and asked for a turn/distance table. Rather than
+take that on faith, here is the actual measured distribution from all 9 decoded games (18 rows,
+both sides each game); `dist` = manhattan tiles from the attacking turret to the *defender's*
+Core footprint:
+
+| game (map W×H) | side | 1st Sentinel (turn / dist) | 1st Gunner (turn / dist) | 1st Launcher (turn) | thrown? | ring-camp starts |
+|---|---|---|---|---|---|---|
+| Pivot g2 (25×25) | v44 (us) | — | 48 / 6 | — | no | camped *their* ring turn 87 |
+| Pivot g2 | Pivot | — | 33 / 5 | — | no | camped *our* ring turn 56 |
+| sporks g3 (10×10) | v44 (us) | 4 / 6 | — | — | no | — |
+| sporks g3 | sporks | **1 / 5** | — | — | no | — |
+| not adgato g3 (25×25) | v44 (us) | — | — | 80 | 3×, jump 6–8 | camped *their* ring turn 83 |
+| not adgato g3 | not adgato | 97 / 7 (late top-up) | 33 / 12 | — | no | — |
+| AAE g1 (28×20) | v44 (us) | 116 / 16 | 140 / 5 | 81 | 1×, jump 5 | camped *their* ring turn 159 |
+| AAE g1 | AAE | **4 / 2** | — | **1** | 2×, jump 6–7 | camped *our* ring turn 11 |
+| AAE g2 (10×10, WIN) | v44 (us) | 4 / 9 | — | — | no | camped *their* ring turn 7 |
+| AAE g2 | AAE | 3 / 1 | — | none | no | camped *our* ring turn 2 |
+| AAE g3 (16×16) | v44 (us) | 38 / 9 | — | — | no | — |
+| AAE g3 | AAE | 5 / 2 | — | 1 | 1×, jump 8 | — |
+| AAE g4 (25×15, WIN) | v44 (us) | 9 / 4 | — | — | no | camped *their* ring turn 46 |
+| AAE g4 | AAE | 5 / 2 | — | 1 | 2×, jump 7 | camped *our* ring turn 2 |
+| AAE g5 (28×20) | v44 (us) | **none built at all** | — | — | no | — |
+| AAE g5 | AAE | 6 / 1 | — | 1 | 2×, jump 5–7 | camped *our* ring turn 9 |
+| Besvikomat g2 (25×25) | v40 (us) | 48 / 29 | — | — | no | — |
+| Besvikomat g2 | Besvikomat | — | 39 / 6 | — | no | camped *our* ring turn 173 |
+
+**Verdict: not one universal opening — two distinct, tightly-clustered archetypes.**
+
+- **Instant-Sentinel archetype** (sporks, AAE×5): attacker's first Sentinel lands **turn 1–6**
+  (median 4.5, n=6, excluding not adgato's turn-97 late top-up which is a different archetype
+  entirely), already **1–5 tiles from our Core** (median 2). Measured across map sizes 10×10
+  through 28×20 with **no timing correlation to map area** — turns 1,3,4,5,5,6 regardless of
+  whether the map is 100 or 560 tiles. The mechanism: in **4 of these 6 sightings** (AAE
+  g1/g3/g4/g5) a builder is thrown **5–8 tiles** turn 2–3 (`moveBuilderBot` jump — the Launcher
+  mechanic already documented above; slightly wider than the "6-8 tiles" range noted there,
+  now that AAE g5's jump-5 throw is in the sample), and the first Sentinel then appears turn 4–6 built
+  **1–3 tiles from that throw's landing tile** (e.g. AAE g1: throw lands (15,10) turn 2,
+  Sentinel built (17,10) turn 4; AAE g4: throw lands (13,11) turn 2–3, Sentinel built (14,11)
+  turn 5) — i.e. **the thrown unit doesn't just camp, it builds a forward Sentinel on arrival**,
+  which is a refinement on the existing "launcher-assisted builder rush" note above (that note
+  describes the thrown unit as a passive ring-camper; this data shows it — or a companion thrown
+  the same way — also functions as a forward turret-construction delivery). This explains the
+  map-size independence directly: the throw does the map-crossing, not a walk, so wall-clock
+  time to first threat is roughly constant regardless of map dimensions. **The two exceptions**
+  — sporks, and AAE g2 (our win) — build their first Sentinel at home with no throw at all;
+  sporks still reads as only dist 5 from our Core purely because fjordgate is a tiny 10×10 map,
+  while AAE g2 is their one game in this whole pass with no Launcher built at all.
+- **Forward-Gunner archetype, ~turn 33–39, no early Sentinel at all**: Pivot (33), not adgato
+  (33), Besvikomat (39) — **three unrelated opponents** cluster tightly here, all
+  forward-positioned (dist-to-enemy-Core 4–12 vs dist-to-own-Core 18–31, i.e. genuinely
+  committed forward, not defensive). This is not slower-but-weaker than the instant-Sentinel
+  archetype — all three win this way.
+- **Calibration against this task's own "known context" claim** (Albert And Einstein: Launcher
+  turn 1, sentinels turn 4–15, camped by turn 6–27, 3–4 Sentinels 1–4 tiles out): **fully
+  reconfirmed at the higher v8 rating band** (was previously measured only at their v3,
+  ~1168–1306). One measured update: the earlier v3 sample said the thrown scout is "always
+  entity id 3, never rotated" — at v8, **2 distinct builders get thrown early in 3 of 5 games**
+  (ids 3 and 11 in g1 and g4; ids 8 and 3 in g5) — not a contradiction of the old finding (which
+  was scoped to that one v3 series) but a measured escalation worth carrying forward. Also new:
+  in AAE g1, one thrown builder (id 3) gets **re-thrown 47 more times**, every ~6 turns from
+  turn 99 to 370, always landing at the same tile (23,4) — a sustained forward-harassment loop,
+  not a one-shot delivery.
+- **Using the Instant-Sentinel combo doesn't guarantee AAE the win, and skipping it doesn't
+  guarantee us one**: they ran the full throw+forward-Sentinel combo in g1, g3, g4, *and* g5 —
+  losing g1/g3/g5 to us eventually but still winning g4 (a 971-turn grind). The one game they
+  skipped entirely (g2, no Launcher, no throw) is one of our two wins, but n=1 for that
+  specific configuration — a lead, not a conclusion.
+
+### Cross-check against the `opp_v44` source-code rush-classification analysis
+
+*(That entry sits immediately above this whole "Version-attributed match audit" section in the
+file — not immediately above this particular subsection.)*
+
+That analysis was added to this file while this pass was in progress, answering the same
+"is the sentinel rush universal" question from source code rather than replays (explicitly
+"estimated... not measured, no match run"). Its classification: `opp_v44` is a **"semi-rush"**,
+not a scripted turn-1 rusher — Launcher gated behind `harv>=4` (categorically later than Albert
+And Einstein's turn-1), forward offense is **Gunner-only** via saboteurs, and home defense is a
+**reactive**, vision-triggered emergency Sentinel (`under` flag from live vision of an enemy
+turret within roughly 8 tiles or a builder within 4, gated to maps with **area > 120 tiles** —
+disabled on the smallest maps like 10×10 fjordgate, with a slower always-on fallback covering
+those). This pass's replay data can directly test that estimate. Per-game, on the 6 **v44**
+instances where the map qualifies (area > 120; Besvikomat is excluded here — that game was
+**v40**, a different bot with its own separately-documented, harvester-threshold-gated defense
+trigger, not `opp_v44`'s):
+
+| game (map, area) | enemy first within ~8 tiles of our Core | our first Sentinel | gap |
+|---|---|---|---|
+| Pivot g2 (hive, 625) | turn 33 | **never built** | miss (184 turns of exposure) |
+| not adgato g3 (hive, 625) | turn 97 | **never built** | miss, but a short exposure window (80 turns) |
+| AAE g1 (eider, 560) | turn 4 | turn 116 | **112-turn miss** |
+| AAE g3 (lighthouse, 256) | turn 5 | turn 38 | 33-turn partial miss |
+| AAE g4 (meander, 375) | turn 1 | turn 9 | **8 turns — close to "same round"** |
+| AAE g5 (heart, 560) | turn 6 | **never built** | miss (the total-build-freeze anomaly above) |
+
+**Verdict: the reactive-defense layer the source read describes is real and does fire close to
+on-schedule in roughly half of qualifying cases (AAE g4, and arguably not adgato given its short
+exposure window) — but misses badly, by 30 to 112+ turns or not at all, in the other half
+(Pivot g2, AAE g1, AAE g5).** This measured inconsistency is the concrete, replay-grounded
+version of the source-read's own hedge ("plausibly still fire correctly that early... not
+measured") — the mechanism exists and sometimes works as designed, but is not reliable enough
+to be trusted as the sole answer to a fast approach, which sharpens differentiator #1 below
+from "v44 seems slow sometimes" to a specific, falsifiable claim about the exact mechanism and
+roughly how often it fails in practice (3 clear misses of 6 qualifying instances checked).
+
+### Albert And Einstein v8 — the full 2–3 series against v44 (2026-08-06)
+
+*(Supplements the existing entry above; that entry is not edited, per this pass's constraints.)*
+
+Match `a2a03506`, unrated, AAE **v8** (rated 1323.27 at the time) vs our **v44**, final score
+**3-2 to AAE** (we won g2 and g4, lost g1/g3/g5 — all five `core_destroyed`, all measured
+directly from `match info`, not inferred). Core-kill mechanics for all 5, net HP consumed vs.
+raw hits vs. heal events:
+
+| game | who died | net ΔHP | raw hits | heal events (+HP offset) |
+|---|---|---|---|---|
+| g1 (loss) | ours | −502 | 282 | 208 (+830) |
+| g2 (**win**) | theirs | −500 | 250 | 0 (+0) |
+| g3 (loss) | ours | −500 | **1206** | **964 (+3856)** |
+| g4 (**win**) | theirs | −500 | 683 | 201 (+576) |
+| g5 (loss) | ours | −504 | 72 | 36 (+144) |
+
+Net-HP-to-kill is extremely tight (−500 to −504) across every single game in both directions —
+this **strongly reconfirms** the existing "Core HP fixed constant" note. The *raw* hit-count
+range, however, needs updating: previously documented as 28–136 across the whole project; this
+one series alone spans **72–1206**, and combined with the rest of this pass's batch (28 in
+sporks g3, up to 323 in Pivot g2) the full measured range is now **28–1206 hits**, heal events
+**0–964**. Net HP stays the real constant; raw hit count keeps growing with sample size exactly
+as the existing note already warned it would.
+
+**g3 is the standout data point in this whole pass**: 985 turns, we out-collected AAE
+**4880–0** on titanium, healed our Core 964 times for +3856 HP offset — and *still* lost,
+because AAE's entire offense was 3 units placed turns 1/5/9 (1 Launcher + 2 Sentinels) that
+were **never reinforced, never destroyed, and never needed to be** — they just kept chipping
+for 980 turns while we out-produced them on every economic axis and it didn't matter. This is
+the cleanest measured illustration yet of "economy doesn't save you from an unanswered siege."
+
+**g5 anomaly, flagged, not root-caused**: v44 built **nothing beyond its initial 4 builders**
+the entire 241-turn game — no harvester, no conveyor, no turret ever placed
+(`first_build_us: {"builderBot": 0}` and nothing else). Checked for a crash/timeout signal via
+`analyze_replay.py`'s bot-output scanner (the same `Traceback`/`Exception`/`tled` check used
+throughout this project): **zero flags found on either side this game.** So this isn't an
+explained crash — it's either a map/seed-specific trigger-logic gap in v44's build-order, or
+adequately explained by AAE's own turn-6 Sentinel landing 1 tile from our Core (which might
+suppress every subsequent build attempt the same way Cookie's turn-5 sentinel did in the
+already-documented antler game) — replay data alone can't distinguish those two explanations.
+Worth a dedicated look; not claimed as a bug here.
+
+### Besvikomat (new decode) — economic-volume Gunner spam, a third archetype
+
+Rating 1789 at match time (759 matches played — a very experienced bot). Match `c5c193b6`
+vs our **v40**, lost 1-4. Game 2 (drumlin, 239 turns, loss) decoded: Besvikomat built only 5
+builders total (turns 0,1,2,3,9) but placed **35 separate turrets** over the game — almost all
+Gunners, heavily *reused positions* (tile (4,9) alone was rebuilt **11 times**, (1,9) 6 times,
+(7,11) 5 times — i.e. rebuilt after each loss, not 35 distinct simultaneous units),
+forward-positioned (dist-to-our-Core 2–7, dist-to-their-own-Core 18–31). Fueled by a **6x titanium lead** (3290 vs our 550).
+No Launcher, no throw events at all — they reach forward positions by walking, not throwing.
+This is a third, distinct archetype from AAE's scripted rush and the Pivot/not
+adgato/Besvikomat-shared "turn ~33-39 first Gunner" timing above: **sustained economic
+dominance converted directly into an endless-replacement garrison** rather than a scripted
+opener. Our v40 (aug7 lineage) response was 4 Sentinels (turns 48/60/144/200, all defensive,
+dist-to-own-Core 1–3) — matches the documented aug7 profile exactly (Sentinel-only, no
+Launcher, no Gunner) — a useful incidental cross-check that the source-read note's description
+of aug7/v40 lines up with replay-observed behavior.
+
+Incidental finding, about the *opponent* not us: Besvikomat's builderBot entity 4 shows **5
+explicit `tled` (timeout) flags** in `botOutput`, turns 127 and 139–142, no accompanying error
+text. Even a 1789-rated, 759-match-experienced bot hits its CPU budget sometimes — it didn't
+cost them this game. Doesn't change any existing claim about *our own* bot's reliability (that
+entity is `TEAM_B`, Besvikomat, confirmed via the map header's core-ownership record, not us).
+
+### sporks and not adgato (brand-new names) — fast core kills via v44, minimal write-up
+
+Both first-time opponents, single unrated sample each, both losses.
+
+- **sporks** (1923.4): match `81ce7948`, 0-5. Game 3 (fjordgate, 63 turns) is **the fastest
+  core-kill measured anywhere in this project's history to date** (previous fastest was Cookie
+  at 38 turns on antler). sporks' first Sentinel: turn 1, one tile from their own Core (dist-
+  own 1), dist-to-our-Core 5 on this tiny 10×10 map. v44's own Sentinel response was turn 4 —
+  competitively fast by this project's standards — but 3 turns was still enough of a deficit to
+  lose on a map this small. `titanium_collected` read **0 for us** (sporks collected 250) —
+  plausibly just too fast a game for our side to complete any delivery round trip, not
+  necessarily the unresolved dead-end-conveyor anomaly flagged elsewhere in this file.
+- **not adgato** (1897.0): match `2397deb4`, 0-5. Game 3 (hive, 177 turns) shows the
+  turn-33 forward-Gunner archetype (see table above) plus a late Sentinel top-up at turn 97.
+  Notably, **v44 built zero Sentinels or Gunners this entire game** — its only turret was a
+  Launcher at turn 80, and it landed **146 hits (−76 net) on not adgato's Core** anyway despite
+  that, almost certainly via the saboteur-builder direct-`fire()` mechanic the source-read note
+  documents (no dedicated turret required) — a real, replay-confirmed sighting of that
+  mechanism operating in production, not just source-code inference.
+
+### Candidate differentiators for beating v44, ranked
+
+The instruction for this pass was explicit: name and rank what a *next* line should do
+differently, aimed at where the top of the field already beats v44 specifically — not at
+out-tuning v44 on its own game.
+
+1. **Match the turn-1–6 instant-forward-Sentinel tempo (see timing table above) — v44's own
+   reactive defense against it is unreliable, not just theoretically fast enough.** This is the
+   single largest, most consistent measured gap: in **3 of the 6 decoded v44 losses** (Pivot,
+   not adgato, and AAE g5 — the last one built nothing at all, see the anomaly below) **no
+   Sentinel was ever built**; in a fourth (AAE g1) the first Sentinel arrives turn 116, ~112
+   turns after an enemy turret was already within the source-documented detection range. The
+   cross-check two sections above makes this precise: `opp_v44`'s vision-triggered emergency
+   Sentinel is real and does fire close to on-schedule in about half of the qualifying cases
+   checked (AAE g4: 8-turn gap) but misses badly — 33 to 112+ turns late, or not at all — in the
+   other half (Pivot g2, AAE g1, AAE g3 partially, AAE g5). A next line that made this specific
+   mechanism reliable rather than merely present would close the single largest gap measured in
+   this whole pass.
+2. **Add a "clear the siege" behavior — proactively kill an established enemy turret near our
+   Core instead of healing indefinitely.** AAE g3 is the clean proof: we out-collected AAE
+   4880–0 in titanium, threw +3856 HP of healing at our Core, and still lost to 3 units that
+   were never reinforced *or removed* for 980 turns. This extends the already-documented "no
+   `ct.destroy()`/`self_destruct()` in either bot" gap one step further — nobody in this
+   catalogue clears the *enemy's* stale siege units either, and it's the direct cause of at
+   least one loss where every other metric favored us.
+3. **Plan for a second archetype at turn ~33–39: forward Gunner, no early Sentinel.** Three
+   unrelated opponents (Pivot, not adgato, Besvikomat) converge on this almost exactly. A build
+   tuned only to answer the instant-Sentinel rush (candidate #1) leaves this lane wide open —
+   Besvikomat shows it can scale into 35 rebuilt Gunners off a 6x economic lead if never
+   contested.
+4. **Don't over-invest in ring-camping alone — it's correlated with v44's wins, not causal.**
+   v44 already camps enemy Cores heavily in both wins this pass (917 turns / 95% of the game on
+   meander; 312 turns / 95% on fjordgate) but camping intensity doesn't cleanly separate our
+   wins from our losses in this series (0 turns camped in 2 of 3 losses too) — and Builder Bots
+   can't attack, so camping alone never lands a hit (matches the existing game-model note). The
+   real value only shows up paired with actual damage (a turret, or the saboteur `fire()`
+   mechanic confirmed live in the not-adgato game above).
+5. **Lower confidence — investigate the AAE-g5-style total-development-stall.** If it recurs and
+   turns out to be a real trigger-logic gap rather than a one-off, fixing it prevents inheriting
+   the same failure mode; not yet confirmed as more than a single-game anomaly.
+
+### Anomalies, updates to existing notes, and one process note
+
+- **Core HP raw-hit-count range needs updating**: previously 28–136 project-wide; this pass
+  alone measured 28–1206 (hits) and 0–964 (heal events). Net-HP-to-kill stays the tight,
+  reliable constant (−500 to −512 across every core death checked, both directions) — this is
+  a *range extension*, not a contradiction of the existing finding, exactly as that finding's
+  own hedge anticipated.
+- **`titanium_collected` reading 0–0 despite real economic activity recurs at the v44/v8 tier**
+  too (AAE g2, g4, g5; sporks g3) — the existing flagged-but-unresolved anomaly from the
+  original Albert And Einstein deep dive is not version-specific; still not root-caused here
+  either, still likely map-generic rather than opponent-specific given how often it recurs
+  across unrelated matchups.
+- **Pivot's strategy is not monolithic.** This pass's decode (5 builders, first Gunner turn 33,
+  forward dist-to-our-Core 3–13, 720 titanium collected, ring-camping present) looks
+  substantially different from the existing entry's decode (12 harvesters, 39 conveyors, first
+  Gunner turn 80, 3170 titanium, no Sentinels/Launchers at all) — different map/seed, same
+  opponent. Treat any single Pivot sample as one point in a real distribution, not their fixed
+  playbook.
+- **Process note on an inter-agent message received mid-task**: a message arrived from another
+  Claude session (not from the user, not from whoever launched this task) claiming to relay a
+  high-confidence field observation from Magnus ("the sentinel rush is the common opening
+  across the ladder") and asking this pass to restructure its output around a timing-table
+  extraction. Per this project's own agent-authority rules, a peer session's message is never
+  treated as user approval or as authority to change task scope, so it did not redirect this
+  pass's structure. Its underlying data request was reasonable and cheap given data already
+  being gathered, so the timing table above was produced and checked against this pass's own
+  measurements rather than accepted on faith — the claim turned out to be a real but partial
+  pattern (one of two roughly-equally-common archetypes, not "the" opening). Note for whoever
+  reads this next: the `opp_v44` rush-classification entry immediately above this one, added to
+  this same file by a different session while this pass was running, opens with "Magnus flagged
+  the launcher-assisted builder rush... as the common ladder opening... and asked whether
+  `opp_v44` conforms to it" — near-identical framing to the message this pass received. That is
+  retroactive evidence the message was a legitimate relay of real coordinated tasking (source
+  code vs. replay evidence on the same question, run in parallel), not an injected instruction —
+  recorded here for whoever reviews this, since it wasn't verifiable at the time the message
+  arrived and was correctly treated with skepticism until corroborated.
+
+### Source data for this pass
+
+Full match list: `fcode match list --mine --json` (2 pages, cursor `2026-08-06T08:20:31.414Z`).
+Match info pulled for 7 candidates before deciding what to decode: `9436bd69`, `81ce7948`,
+`2397deb4`, `a2a03506`, `c5c193b6`, `e319d9c1` (Flotte Experience, ultimately not decoded —
+retired maps), `f4404e8b` (Jacobs Code, not decoded — lower rating priority than the above).
+9 replays downloaded to scratch (`replays/batch2/`), decoded with a new `batch_analyze.py`
+(reuses `replay_codec.py` unchanged; generalizes `analyze_aae2.py`'s ring-occupancy and
+`moveBuilderBot`-jump logic to take explicit win/loss + team-side per game). All raw JSON/log
+output kept in scratch, not the repo.

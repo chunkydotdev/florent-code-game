@@ -144,7 +144,7 @@ units (harvesters, conveyors, splitters, barriers) don't count and consume no CP
 
 | Property | Value |
 | --- | --- |
-| HP | 500 |
+| HP | 500 (**net 500-512 to kill; raw hits landed range 28 to 1206** — see below) |
 | Footprint | 2×2 tiles |
 | Vision r² | 36 |
 | Spawn tiles | the 12-tile ring around the footprint **[measured]** |
@@ -162,6 +162,13 @@ units (harvesters, conveyors, splitters, barriers) don't count and consume no CP
   N/W sides, because position is the NW corner. That is an absolutely oriented spawn set; it
   handed entire maps to one seat until fixed (see strategy-log 2026-08-06). Enumerate
   `get_nearby_tiles(dist_sq=8)` filtered by `can_spawn()` instead.
+- **"28 Sentinel hits kills a Core" is only true when nobody heals, and healing dominates it
+  utterly [measured 2026-08-08, 14 decoded ladder games].** Net HP to kill is a stable
+  **500-512**, but the **raw number of hits landed ranged from 28 to 1206** — a 43× spread —
+  because a builder heals **+4 HP for 1 Ti** and can do so every round. Two consequences worth
+  keeping: an attacker cannot size a siege from the HP number alone, and **healing is the
+  cheapest defensive lever in the game** at 0.25 Ti/HP against ~0.56 for any attacker.
+  A siege that is not out-healing the defender is not making progress, however long it runs.
 - Stationary. Cannot move or attack. Cannot be rebuilt.
 - Its footprint is **never bot-passable, not even to its own team**.
 - Abilities: spawn Builder Bots, convert ammo.
@@ -248,6 +255,15 @@ scan (see strategy-log 2026-08-06). Use a geometric criterion — nearest by
     against aggression. The same opponent then parks that single builder in the ring for
     57-98% of the game: **Builder Bots are mutually impassable and cannot attack units**, so
     one enemy body in the spawn ring paralyses a bot with no answer to it, for free.
+  - **Two distinct attacker archetypes are converged on at the top of the field** [measured
+    2026-08-08, 9 decoded replays across 6 opponents rated 1323-1965]:
+    **(a) "instant-Sentinel", turn 1-6** — the thrown builder *builds the forward Sentinel on
+    arrival*, so the whole opening is **map-size-independent**. Seen in `sporks` (1923) and all
+    five Albert And Einstein games. `sporks` killed a Core in **63 turns**, the fastest
+    measured in this project.
+    **(b) "forward-Gunner", turn 33-39** — a separate, slower lane, seen in `Pivot` (~1907-1965),
+    `not adgato` (1897) and `Besvikomat` (1789): **three unrelated opponents converging tightly
+    on the same timing.** Any rush-defense work has to cover both windows, not just the early one.
 
 ### Harvester
 

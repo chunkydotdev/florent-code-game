@@ -3,12 +3,42 @@
 Start here, then [docs/game-model.md](docs/game-model.md) →
 [docs/strategy-log.md](docs/strategy-log.md) → [docs/opponents.md](docs/opponents.md).
 
-## Read this first: the frame changed under us
+## Read this first: the game we keep losing is not the one we keep fixing
+
+**We out-collected Albert And Einstein 4880 to 0 and lost the game** — to **3 enemy units that
+were never reinforced, over 985 turns**. Not a rush that overwhelmed us. Three static pieces
+that sat there all game while we had no way to remove them.
+
+`aug7` has **no mechanism that removes an established enemy emplacement**: no enemy-Core
+tracking, no movement toward it, no `fire()` sabotage, no forward turrets. So once a siege is
+planted we spend the rest of the match accumulating a tiebreak we can never reach. **More
+defense does not fix this.** The cheapest tool for it is one we already have and have never
+used: `ct.fire()` from a builder, 2 damage for 2 Ti against buildings, orthogonally adjacent.
+**Call this lane "clear the siege" and treat it as a peer of the defense lane, not a follow-up.**
+
+Related and equally load-bearing: the Core's *net* HP-to-kill is a stable 500-512, but **raw
+hits landed range from 28 to 1206** across decoded games, because healing (+4 HP for 1 Ti, every
+round) absorbs the difference. **Healing is the cheapest defensive lever in the game** — 0.25
+Ti/HP against ~0.56 for any attacker — and a siege that is not out-healing the defender is not
+making progress no matter how long it runs.
+
+## Read this second: the frame changed under us
 
 `bots/aug7` got measurably better this session — one accepted change, +7.9 points against the
-version we started with. It is also **no longer the strongest bot on our own team**. Our
-teammate x3r0's active submission, now vendored locally as `bots/opp_v44` ("florent-v58"),
-**beats `aug7` 59/41** (aug7 at 40.8% [32.5%, 49.8%], 120 matches, 38 `core_destroyed`).
+version we started with. Locally it is also **beaten by our teammate x3r0's active submission**,
+vendored as `bots/opp_v44` ("florent-v58"), which takes it **59/41** (aug7 at 40.8%
+[32.5%, 49.8%], 120 matches, 38 `core_destroyed`).
+
+**But hold that lightly against the ladder record, which points the other way.** With real
+per-match version attribution (`fcode match list --mine --json`, 181 matches): **v40 — our line
+— is 8W-1L, net Elo +35.24, the strongest well-sampled version the team has.** v44 has only
+**2 rated series** (+14.34) and is undefeated on the rated ladder; **all of its observed losses
+are unrated, 0W-4L, and all 20 of those games ended `core_destroyed`** — to the rush archetypes
+below. The 120-match local arena is far better powered than either ladder sample and its verdict
+stands, but the honest summary is: *our line has not been outperformed where it counts yet, and
+v44's only known weakness is exactly the one this session's lane targets.*
+(An earlier entry in this handover claimed v40 played "exactly one ladder series" — that was
+wrong, produced by reconstructing an activation timeline by hand. Corrected in the log.)
 
 **Consequences, both now standing rules:**
 - **`opp_v44` is the primary confirm opponent.** A keep must clear the Wilson gate against it.
@@ -189,12 +219,23 @@ workstream, not two**, and the ordering is forced:
 The already-measured pieces (`3cfa588` conveyor facing, and `bots/_fix_core00` pending your
 decision) sit underneath all of this: both are delivery fixes, which is the same axis.
 
-**Two probe modes are now in flight:** walked-sentinel (common meta) and launcher-insertion (top
-meta — builder turn 0, **Launcher turn 1 next to its own Core**, own scout thrown 6-8 tiles,
-contact turn 4-15). **Both must carry enough economy to sustain ammo, and both keep 1-2 home
-Sentinels** — a probe that suicides measures its own fragility, not our defense. When replays
-yield more first-sentinel timestamps, match the probes to that distribution; the aggregate feeds
-the per-map timing calendar.
+**Two probe modes are now in flight:** walked-sentinel (`bots/rush_probe`, preserved as the
+verified baseline artifact) and launcher-insertion (`bots/rush_probe_fast`). **Both must carry
+enough economy to sustain ammo, and both keep 1-2 home Sentinels** — a probe that suicides
+measures its own fragility, not our defense.
+
+**Calibration targets, corrected from 9 decoded replays across 6 opponents rated 1323-1965 —
+there are TWO archetypes and the early one is faster than previously stated:**
+- **"instant-Sentinel", turn 1-6.** The Launcher-thrown builder **builds the forward Sentinel on
+  arrival**, making the opening **map-size-independent**. Seen in `sporks` (1923) and all five
+  AAE games; `sporks` killed a Core in **63 turns**, the fastest measured here. The earlier
+  "turn 4-15" target was too slow — **assume contact from turn 1**.
+- **"forward-Gunner", turn 33-39.** A distinct second lane, with `Pivot`, `not adgato` and
+  `Besvikomat` — three unrelated opponents — converging tightly. **Defense must cover both
+  windows.**
+
+**Ring-camping is correlated with wins, not causal.** Both the replay digest and the local probe
+agree the blocker never decides a game. Do not over-invest in it.
 
 The pattern it replicates, decoded from ladder series `81d83bb5` (Albert And Einstein **1306.8**
 vs us **1222.8**, **0-5**, all five games `core_destroyed`, and **we out-collected them in every

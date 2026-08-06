@@ -30,6 +30,59 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Finding — we out-collected them 4880 to 0 and still lost, to three units we never touched
+
+- **Date:** 2026-08-08 · from a 9-replay batched digest across 6 opponents rated 1323-1965
+  (full tables in [opponents.md](opponents.md)); no code change
+- **The single most damning game in the archive:** an Albert And Einstein match in which we
+  finished **4880 titanium collected to their 0** — total economic dominance — and **lost
+  anyway**, to **3 units that were never reinforced, over 985 turns**. Not a rush that
+  overwhelmed us. Three static pieces that sat there for the entire game while we had no way to
+  remove them.
+- **The gap this exposes is not defense, it is "clear the siege".** We can out-economy the top
+  of the field and still lose, because `aug7` has **no mechanism that removes an established
+  enemy emplacement**. It has no offense at all (no enemy-Core tracking, no movement toward it,
+  no `fire()` sabotage, no forward turrets), so once a siege is planted, every remaining round
+  is spent accumulating a tiebreak we will never reach. **Building more defense does not fix
+  this; only the ability to attack a static target does.** `ct.fire()` from a builder — 2 damage
+  for 2 Ti against buildings, orthogonally adjacent — is the cheapest tool we already have and
+  have never used.
+- **Two attacker archetypes, converged on independently across the top of the field:**
+  - **"instant-Sentinel", turn 1-6.** The Launcher-thrown builder **builds the forward Sentinel
+    on arrival**, so the opening is **map-size-independent**. Seen in `sporks` (1923) and all
+    five AAE games. `sporks` killed a Core in **63 turns** — the fastest in this project's
+    history. **This supersedes the turn 4-15 calibration target; the real number is turn 1-6.**
+  - **"forward-Gunner", turn 33-39.** A separate, slower lane — `Pivot` (~1907-1965),
+    `not adgato` (1897) and `Besvikomat` (1789), **three unrelated opponents converging tightly**.
+    Rush defense must cover both windows, not just the early one.
+- **Ring-camping is correlated with wins, not causal** — do not over-invest in blocking as a
+  mechanism, and note this agrees with the local probe, where the blocker never once decided a
+  game.
+- **Model correction, flagged loudly:** the Core's **raw** hit-count-to-kill range widens from
+  28-136 to **28-1206**, while net HP holds at 500-512. Healing dominates siege arithmetic by up
+  to 43×. Now in [game-model.md](game-model.md).
+
+### Telemetry correction — v40's ladder record was much better than we logged
+
+- **Date:** 2026-08-08 · from `fcode match list --mine --json`, fully paginated, 181 matches
+  (107 rated + 74 unrated) with per-match `teamAVersion`/`teamBVersion`, `eloDelta`,
+  `ratingBefore`
+- **Supersedes the earlier entry below that read "v40 played exactly one ladder series."** That
+  was an artefact of reconstructing an activation timeline by hand. With real version
+  attribution: **v40 ("aug7-sentinel-economy", our line) is 8W-1L, net Elo +35.24 — the
+  strongest well-sampled version the team has.** Current team rating **1233.34, rank #50/103**.
+- **v44 ("florent-v58") has only 2 rated series, both wins** (+14.34), and is **undefeated on
+  the rated ladder**. Everything we know about v44 losing comes from the **unrated** bucket,
+  where it is **0W-4L with all 20 games ending `core_destroyed`**.
+- **Read carefully, because this cuts against a claim made earlier today.** The local arena says
+  `opp_v44` beats `aug7` 59/41 over 120 matches — well powered, and it stands. The ladder
+  samples (9 series vs 2) are far too small to contradict it. What they *do* say is that our
+  line has not been outperformed on the ladder, and that **v44's only observed losses are to
+  the rush archetypes above** — which is exactly the weakness our current lane targets.
+- **Method note that earned its keep:** `--mine --json` carries per-match version attribution
+  directly. **Never reconstruct an activation timeline by hand again** — doing so produced a
+  wrong entry in this log within the same day.
+
 ### Measurement — the first rush baseline says 95%, and the number is not the finding
 
 - **Date:** 2026-08-08 · `bots/rush_probe` v1, 240 matches vs `aug7`, 0 crashes either side
