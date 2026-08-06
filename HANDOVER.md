@@ -1,7 +1,47 @@
-# Handover — 2026-08-07, updated after session 4 (program.md loop, tag `aug7`)
+# Handover — 2026-08-07, updated after session 5 (parallel loop, tag `aug7`)
 
 Start here, then [README.md](README.md) → [docs/game-model.md](docs/game-model.md) →
 [docs/strategy-log.md](docs/strategy-log.md).
+
+## Session 5 (parallel): four hypotheses, zero accepts, one real finding
+
+Ran the loop with **three Sonnet subagents concurrently**, one hypothesis each, then a fourth
+follow-up. `bots/aug7` is **unchanged** — nothing cleared the accept gate.
+
+| hypothesis | screen (n=48) | confirm (n=256) | verdict |
+| --- | --- | --- | --- |
+| deliberate harvester→Core conveyor chains | 54.2% [40.3, 67.4] | **45.3% [39.3, 51.4]** | discard |
+| aimed sentinel placement (`get_attackable_tiles_from`) | 56.2% [42.3, 69.3] | **50.0% [43.9, 56.1]** | discard |
+| demand-driven ammo conversion | 41.7% [28.8, 55.7] | **46.1% [40.1, 52.2]** | discard |
+| harvester first-conveyor fix | — | not run (no gap to fix) | closed |
+
+Zero crashes on either side across ~800 matches. All four are written up in
+[strategy-log.md](docs/strategy-log.md).
+
+**The finding worth more than the three nulls:** `_try_build_conveyor_toward_core` is **dead
+code in the entire lineage** (starter, v4, aug7) — verified, 24 calls / 0 legal / 0 built. The
+cause is a grid-parity fact that constrains a whole class of ideas: *a builder adjacent to a
+building it just placed can never build anything orthogonally touching that building*, because
+two tiles one step apart share no common orthogonal neighbour. **Do not fix it** — instrumented
+across 8 maps, 263 of 264 harvesters (99.6%) get an adjacent conveyor anyway from incidental
+trail-laying. Also logged in [opponents.md](docs/opponents.md): most of the field inherits the
+same dead function from the shipped starter.
+
+**Method notes from this session:**
+- **Run a null-change control.** A byte-identical copy of aug7 vs aug7 (n=96) gave 48–48 and,
+  more usefully, the first real baseline for the **win-condition mix** (`core_destroyed`
+  16.7%). Without it, "44 core kills" is an uninterpretable number. Both discards that looked
+  mechanistically interesting were settled by comparing against it.
+- **Screens are close to worthless as evidence.** Two of three screened above 50% and confirmed
+  at or below it. Under "keep if the number went up" this session accepts two dead changes.
+- **Parallel agents need `--jobs 3`**, and the control was re-run at that setting first to
+  confirm the harness still reads a no-op as a coin flip under contention. It does.
+- **One change per experiment, strictly.** The ammo experiment moved a floor *and* added a
+  mechanism, so its loss is unattributable between the two. That's a wasted slot, not a result.
+
+**Scratch dirs left on disk, untracked:** `bots/aug7_h1|h2|h3` (discarded implementations,
+kept in case the code is worth reading), `bots/aug7_h4` and `bots/_probe_conv`
+(instrumentation only). Delete them freely — nothing depends on them.
 
 ## Where we are
 

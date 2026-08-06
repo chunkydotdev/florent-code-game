@@ -30,6 +30,148 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Finding — the harvester's first conveyor has never been built, in any version, ever
+
+- **Date:** 2026-08-07 · found as a side-observation while discarding the conveyor-chain
+  experiment; verified independently before being believed
+- **The claim:** `_try_build_conveyor_toward_core` — the function that gives each newly built
+  harvester its output conveyor toward the Core — is **dead code**, and has been since the
+  organisers' shipped starter bot. The identical line is in `bots/starter/main.py:286`,
+  `bots/v4/main.py:375` and `bots/aug7/main.py:379`, i.e. the entire lineage.
+- **Verification:** instrumented copy (`bots/_probe_conv`), single matches across mid20,
+  large30, hsym16, duel16. **24 calls, 0 legal, 0 conveyors built.** Target tile was the
+  builder's own tile 18 times (`dist_sq=0`), diagonal or 2 steps away the other 6.
+- **Cause — a grid-parity fact worth remembering:** `can_build_conveyor(pos, facing)` requires
+  `pos` to be orthogonally adjacent to **the acting builder**, not to the harvester. The
+  builder stands orthogonally adjacent to the harvester `H` (build requires that), and the
+  code targets another orthogonal neighbour of `H`. The grid graph is bipartite, so **two
+  tiles one step apart share no common orthogonal neighbour**: the target is either the
+  builder's own tile (explicitly disallowed) or not adjacent to the builder. Always illegal.
+  Generalised: **a builder adjacent to a building it just placed can never build anything
+  orthogonally touching that building — it must move first.** This constrains every
+  build-adjacent-to-a-building idea we might have, not just this one.
+- **Why it has not hurt us — measured, not assumed.** `_try_move` lays a conveyor on the tile
+  *ahead* before stepping onto it, so a builder is usually standing on a conveyor, and its own
+  tile *is* orthogonally adjacent to the harvester it then builds. Instrumented across all 8
+  maps, 3–4 seeds each, 30 matches: **264 harvesters built, 263 (99.6%) had an orthogonally
+  adjacent friendly conveyor**, 233 of them by the earliest measurable round (the round after
+  the build). One miss, on duel16. 0 lost, 0 unresolved.
+- **Conclusion: do not fix it.** The bug is real, permanently non-firing, and completely
+  masked. Deleting or repairing the function would change nothing measurable, and a change
+  that cannot move the metric is not worth the risk of touching the submission candidate.
+  This is the rare case where the correct action on a verified bug is to write it down and
+  walk away.
+- **Residual, unmeasured:** adjacency is necessary but not *sufficient* for delivery — a
+  conveyor whose output side faces into the harvester won't accept from it. The probe measured
+  presence, not accept-side correctness. Trail conveyors face toward the Core and harvesters
+  round-robin across neighbours, so this is unlikely to bite, but it is a distinct question
+  if anyone pushes further.
+- **Note on the field:** anyone who started from the organisers' starter bot has inherited
+  this same dead function. See [opponents.md](opponents.md).
+
+### Discard — aimed sentinel placement is a perfect null, and the null is the finding
+
+- **Date:** 2026-08-07 · tested against sentinel-first aug7 (fc53345 working tree), parallel
+  session (`bots/aug7_h*`, `--jobs 3`)
+- **Hypothesis:** a sentinel is 30 Ti + a 20% scale tax — the most expensive irreversible
+  decision the bot makes — and its whole value is *(position, facing)*, since it fires an
+  unblockable line. The incumbent takes the first legal adjacent tile and faces
+  `direction_to(core).opposite()`, i.e. the builder's incidental standing position picks the
+  arc. `can_fire_from()` / `get_attackable_tiles_from()` exist precisely to evaluate a
+  placement before paying for it, and nothing in the tutorials or our lineage uses them.
+- **Change:** score all legal (≤4 adjacent tiles × 8 facings) pairs and build the best.
+  Score per covered tile = proximity to our Core + alignment with the corridor toward the
+  inferred enemy Core (point-reflection of our Core through the map centre), with tiles
+  already inside an existing friendly sentinel's arc down-weighted to 0.4. Ties broken by
+  shuffled iteration. `_run_sentinel` targeting deliberately left unchanged.
+- **Result:** screen **56.2% [42.3%, 69.3%]** (n=48) — survived, leaning positive. Confirm
+  **50.0% [43.9%, 56.1%]**, exactly 128–128 (n=256), 0 crashes both sides. **No verdict,
+  therefore discard.**
+- **Read:** this is a stronger null than the win rate alone shows, and that is the point.
+  `core_destroyed` came in at **44/256 = 17.2%** against the null-change control's
+  **16/96 = 16.7%** — the change produced *no detectable effect at all* on the one axis it was
+  specifically designed to move. That distinguishes "didn't clear the bar" from "did nothing",
+  and the two call for different follow-ups.
+  The likely structural reason, per the runner's read: by the time a builder reaches the
+  sentinel gate it has navigated to within dist²≤8 of the Core, where the tiles are already
+  occupied by our own economy build-out — so the candidate set frequently collapses to a
+  single legal position and the scorer only refines facing among options that were already
+  narrow. **This was not instrumented** — no count of how often the scorer picked differently
+  from the incumbent — so the mechanism is inference, not measurement.
+- **Next:** do **not** try another arc-scoring function first; the flat `core_destroyed` rate
+  says arc quality isn't the binding constraint. The cheap prerequisite is to instrument how
+  many legal (position, facing) pairs a builder actually has at the sentinel gate. If that
+  number is usually 1, the real lever is *where sentinels get built at all* (reserving tiles,
+  or building them further out on the approach) and every arc experiment downstream of it is
+  measuring nothing.
+- **Method note:** the screen read 56.2% and the confirm read 50.0% — a textbook illustration
+  of why the screen cannot promote and why "the number went up" is not an accept rule.
+
+### Discard — deliberate harvester-to-Core conveyor chains cost more builder-rounds than they earn
+
+- **Date:** 2026-08-07 · tested against sentinel-first aug7 (fc53345 working tree), parallel
+  session (`bots/aug7_h*`, `--jobs 3`)
+- **Hypothesis:** the highest-ceiling idea available. Crediting is delivery-only (measured,
+  game-model.md): a harvester whose path to the Core never closes earns exactly zero, on the
+  balance *and* on tiebreak #1. The incumbent has no deliberate chain-building at all — only
+  incidental conveyors dropped on tiles a builder happens to walk over. Conveyors are also the
+  cheapest thing in the game on cost-scale (+1% vs +20% for a builder bot), so plumbing should
+  be cheap where builder-rounds are the real expense.
+- **Change:** a per-builder state machine that, after placing a harvester, takes over that
+  builder entirely until the chain is done: greedy staircase route toward the Core (axis with
+  more distance remaining, ties random), each link's facing recomputed from its own position
+  so corners stay connected, terminating on the Core / an existing building / a 200-round cap.
+- **Result:** screen **54.2% [40.3%, 67.4%]** (n=48), confirm **45.3% [39.3%, 51.4%]**
+  (n=256), 0 crashes both sides. **No verdict, therefore discard.**
+- **Read:** the cost is builder-rounds, not titanium. Laying a chain runs ~2 rounds per tile
+  (walk, then build) and monopolises one of only ~5 builders for potentially dozens of rounds,
+  against an opponent spending those same rounds finding and building more harvesters. The
+  `core_destroyed` rate (42/256 = 16.4%) sat right on the null-change control's 16.7%, so
+  nothing about the game's character changed — this was purely an economic trade, and it lost.
+  **The chains were never verified to complete**, so strictly this refutes "dedicate builders
+  to plumbing", not "complete chains are worthless" — those come apart only if completion is
+  measured, which it wasn't.
+- **Next:** the same session's dead-code finding above (harvesters may already be served by
+  incidental trail conveyors) is the cheaper way at the same underlying question, and is being
+  measured directly rather than inferred. Third discard in a row for the shape "spend
+  builder-rounds or economy on something else" — that pattern is now very well evidenced.
+
+### Discard — demand-driven ammo conversion loses the same way a bigger buffer did
+
+- **Date:** 2026-08-07 · tested against sentinel-first aug7 (fc53345 working tree), parallel
+  session (three hypotheses run concurrently in scratch dirs `bots/aug7_h*`, `--jobs 3`)
+- **Hypothesis:** the AMMO_BUFFER 20->50 discard refuted a bigger *standing* buffer, not
+  better-*timed* conversion. `convert_ammo()` is usable the same turn and costs no action
+  cooldown, so ammo can in principle be raised on demand: hold near-nothing while quiet, burst
+  when a threat appears. Named as the explicit follow-up in that discard's "Next".
+- **Change:** new store slot 4 carries a threat timestamp. Sentinels scan
+  `get_nearby_units(dist_sq=get_vision_radius_sq())` (r²=32, same as their attack radius, so
+  strictly earlier warning at no extra reach) and write `round + 1` on seeing any enemy unit.
+  The Core reads it and targets 40 ammo (4 sentinel shots) if the sighting is <=5 rounds old,
+  else 10 (one shot). Conversion still gated on `harvester_count >= TARGET_HARVESTERS` and
+  still reserves a builder bot's cost before converting, both unchanged from the incumbent.
+- **Result:** screen **41.7% [28.8%, 55.7%]** (n=48) — survived by the letter of the rule, and
+  coincidentally the identical figure to the AMMO_BUFFER=50 screen. Confirm **46.1%
+  [40.1%, 52.2%]** (n=256), 0 crashes both sides — **no verdict, therefore discard**.
+- **Read:** two independent ammo-timing levers have now failed in the same direction, which
+  makes this a pattern rather than one data point: at this bot's strength, ammo scheduling is
+  not where the wins are. The experiment confounded two changes it shouldn't have — it both
+  *lowered the quiet-phase floor* (20 -> 10) and *added a delayed burst*, so it cannot separate
+  "holding too little ammo when first contact happens" from "the burst arrives a round late
+  because store writes are buffered". On the mix: this session ran a **null-change control**
+  (byte-identical copy of aug7 vs aug7, n=96) which gives the first real baseline for the
+  win-condition mix — `core_destroyed` **16/96 = 16.7%**. Against that, the ammo run's
+  **28/256 = 10.9%** is a *reduction* in decisive combat outcomes, and the H2 run in the same
+  session sat at 17.2%, i.e. right on the control. So the cut ammo floor does look like it
+  suppressed core kills — the CIs overlap at the edge (control [10.4%, 25.5%] vs
+  [7.7%, 15.4%]) so this is suggestive, not established. Note also the mix is pooled across
+  **both** bots in a match, so it can never be attributed to the challenger alone.
+- **Next:** if ammo is ever revisited, the clean version is baseline held at 20 (identical to
+  the incumbent) with a burst added *on top*, which isolates the burst from the floor cut.
+  Low priority: two discards deep, the prior should now be that this lever is worth little.
+  The general lesson generalises further than ammo — **an experiment that changes a floor and
+  adds a mechanism at once is one experiment producing zero attributable answers.**
+
 ### Discard — lowering the small-map defense trigger also loses
 
 - **Date:** 2026-08-07 · tested against sentinel-first aug7 (a9d81a1)

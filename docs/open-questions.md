@@ -68,6 +68,23 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       looks robust across map size, at least via this lever. Untested: branching on something
       other than the harvester trigger (sentinel placement, spawn rate, MAX_BUILDERS).
 - [ ] Does `ct.destroy()` on obsolete buildings measurably cut later build costs?
+- [ ] **How many legal (position, facing) pairs does a builder actually have at the
+      sentinel-build gate?** Raised by the 2026-08-07 aimed-sentinel discard, which was a
+      perfect null (`core_destroyed` 17.2% vs a no-op control's 16.7% — no mechanism-level
+      effect at all). The suspicion is that by the time a builder reaches dist²≤8 of the Core
+      the surrounding tiles are already occupied by our own build-out, collapsing the choice
+      to a single legal position — in which case *every* arc-scoring experiment is measuring
+      nothing, and the real lever is where sentinels get built at all. Cheap to instrument
+      (count candidates at the gate, print to stderr, aggregate over a few matches); do this
+      **before** any further turret-placement work.
+- [ ] **Do the conveyor chains our builders lay actually complete a path to the Core?** The
+      chain-building discard (2026-08-07) never verified completion, so it refutes "dedicate
+      builders to plumbing" but says nothing about whether complete chains are valuable.
+      Delivery-only crediting makes this measurable directly: instrument whether each
+      harvester's stack reaches the Core, rather than inferring from win rate.
+- [ ] Does a trail conveyor ever face its *output* into an adjacent harvester (which would
+      refuse that harvester's stack on that side)? The 99.6%-adjacency probe measured presence,
+      not accept-side correctness.
 
 ## Platform / competition
 
