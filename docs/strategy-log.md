@@ -30,6 +30,45 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### ACCEPT — conveyor facing by dominant axis: 57.9%, and the reason it won is not the reason we tried it
+
+- **Date:** 2026-08-08 · challenger `bots/ladder1`, baseline `bots/_incumbent` = `a9d81a1`.
+  **Promoted into `bots/aug7`.**
+- **Hypothesis, stated before measuring:** `nearest_cardinal()`'s diagonal table (NE→N, SE→E,
+  SW→S, NW→W) is a **chirality rule** — each diagonal snaps to its clockwise-preceding cardinal
+  — so it survives a 180° rotation and **inverts under both mirrors, on all four diagonals**.
+  Six of the fifteen maps in the rotation are mirrors, which no previous audit exercised
+  because the old invented pool was all-rotational. Its one live call site is the trail
+  conveyor's facing in `_try_move`, and that trail is the only thing that ever delivers our
+  titanium. **Predicted effect: the six mirror maps' seat splits move toward 50%.**
+- **Change (one):** a new `cardinal_toward(src, dst)` picks the cardinal by comparing `|dx|`
+  and `|dy|` on the real delta, breaking an exact-diagonal tie at random. `nearest_cardinal`
+  and the dead `_try_build_conveyor_toward_core` left untouched, for attribution.
+- **Results:** screen 53.3% [43.1%, 63.3%] (n=90). **Confirm 57.9% [53.5%, 62.3%] (n=480) —
+  the lower bound clears 50%, so this is an accept.** Regression vs `opp_v39` 65.8%
+  [59.6%, 71.5%] (n=240), above the `aug7` reference of 65.0% [57.8%, 71.6%]. **0 crashes for
+  the challenger across all 1,004 matches.**
+- **And the hypothesis was wrong.** Two independent reads say so:
+  - The mirror-map self-play diagnostic (192 matches) is **mixed, not a repair**: antler
+    31.2%→40.6% and eider 43.8%→53.1% improved, moonrise barely moved, but **meander
+    56.2%→37.5% and heart 43.8%→21.9% got worse**, and heart is now the only mirror map the
+    harness flags as seat-decided.
+  - In the confirm, the split that mattered went the wrong way: the challenger took
+    **176/288 = 61.1%** on the nine **rotational** maps against **102/192 = 53.1%** on the six
+    **mirror** maps. If mirror-equivariance were the mechanism, that ordering would be
+    reversed.
+- **Read:** what actually paid is the part of the change nobody was arguing about. Snapping an
+  already-quantised 8-way `Direction` throws away the magnitudes — a delta of (−2, −3) is
+  mostly north, but it lands in the NORTHWEST sector and the table sent it WEST. Comparing
+  `|dx|` and `|dy|` just points the trail at the Core, and that pays wherever trails are long
+  and terrain is awkward: the biggest per-map gains are **archipelago 24/32 (30.8% walls),
+  snowflake 24/32, saga 23/32 (28.5% walls)**. The equivariance argument was the reason we
+  looked at the function; it was not the reason the change won. **Both facts are worth keeping:
+  a correct hypothesis is not required for a correct change, but reporting the win without the
+  refuted mechanism would leave the next session tuning the wrong lever.**
+- **Next:** the mirror asymmetry itself is therefore **still unfixed and still real**, and heart
+  is now the sharpest example of it. Do not treat this accept as having closed queue item 2.
+
 ### No-verdict, escalated not discarded — the (0,0) Core store fix repairs the map and the gate can't see it
 
 - **Date:** 2026-08-08 · challenger `bots/ladder1`, baseline `bots/_incumbent` = `a9d81a1`

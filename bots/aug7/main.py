@@ -136,6 +136,40 @@ def nearest_cardinal(d: Direction) -> Direction:
     }[d]
 
 
+def cardinal_toward(src: Position, dst: Position) -> Direction | None:
+    """The cardinal direction that points most directly from src to dst.
+
+    nearest_cardinal() snapped an already-quantised 8-way Direction, which threw
+    away the magnitudes: a delta of (-2, -3) is mostly north, but it lands in the
+    NORTHWEST sector and the table snapped every NORTHWEST to WEST. That table is
+    a chirality rule -- each diagonal to its clockwise-preceding cardinal -- so it
+    survives a 180 degree rotation and inverts under a mirror, and 6 of the 15
+    maps in the rotation are mirrors. Comparing |dx| and |dy| directly is exact,
+    and is equivariant under rotation and under both reflections.
+
+    Measured 2026-08-08: 57.9% [53.5%, 62.3%] over 480 matches against the
+    version that snapped. The gain turned out NOT to be the mirror repair it was
+    predicted to be -- the rotational maps improved more than the mirror ones --
+    so what this really bought was trails that point at the Core along the
+    dominant axis instead of being mis-snapped, which pays most where trails are
+    long and terrain is awkward.
+    """
+    dx = dst.x - src.x
+    dy = dst.y - src.y
+    if dx == 0 and dy == 0:
+        return None
+    if abs(dx) > abs(dy):
+        return Direction.EAST if dx > 0 else Direction.WEST
+    if abs(dy) > abs(dx):
+        return Direction.SOUTH if dy > 0 else Direction.NORTH
+    # An exact diagonal: the two cardinals are equally near, so there is no
+    # right answer -- break the tie at random rather than by absolute compass
+    # direction, the same way this file breaks every other tie.
+    if random.random() < 0.5:
+        return Direction.EAST if dx > 0 else Direction.WEST
+    return Direction.SOUTH if dy > 0 else Direction.NORTH
+
+
 class Player:
     def __init__(self):
         # Core tracks how many builder bots it has spawned
@@ -507,9 +541,8 @@ class Player:
             return False
 
         if ct.is_tile_empty(next_pos) and self.core_pos is not None:
-            toward_core = next_pos.direction_to(self.core_pos)
-            cardinal = nearest_cardinal(toward_core)
-            if ct.can_build_conveyor(next_pos, cardinal):
+            cardinal = cardinal_toward(next_pos, self.core_pos)
+            if cardinal is not None and ct.can_build_conveyor(next_pos, cardinal):
                 ct.build_conveyor(next_pos, cardinal)
 
         # A build/attack/heal and a move can never happen in the same round --
