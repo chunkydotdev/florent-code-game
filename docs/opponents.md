@@ -1405,6 +1405,33 @@ out-tuning v44 on its own game.
   recorded here for whoever reviews this, since it wasn't verifiable at the time the message
   arrived and was correctly treated with skepticism until corroborated.
 
+### florent-v63: three defects found while porting our CPU guard onto it (2026-08-08)
+
+Found by reading `bots/opp_v45` line by line to place guard bail-outs, not by measurement. None
+were fixed — the port changed one mechanism only. **All three should go to x3r0.**
+
+1. **The entire Launcher subsystem is dead code, and this is strategically expensive.**
+   `_try_build_launcher()` is the only caller of `ct.build_launcher()` and it has **zero call
+   sites anywhere in the file**. `SLOT_LAUNCHER` can therefore only ever be set by *noticing a
+   Launcher that already exists*, never by building one — which makes the `launchwait` role and
+   the ~100 lines of drop-site / exile-throw / launch-handshake logic in `_launcher()`
+   unreachable. Compounded by `MAX_BUILDERS = EARLY_BUILDERS = 5`, which caps `role_n` at 4
+   while entering `launchwait` requires `role_n >= 5`.
+   **Why it matters: the turn-1 Launcher self-throw is *the* top-meta opening** — `sporks` (1923)
+   killed a Core in 63 turns with it, and all five Albert And Einstein games opened that way
+   (see the timing census above). The team's strongest bot carries the code for it and cannot
+   execute it.
+2. **`run()` dispatches with no top-level `try`/`except`.** Any exception escaping `_core`,
+   `_builder`, `_turret` or `_launcher` permanently deletes that unit. Latent rather than active
+   — 0 crashes across 480 gate matches — but it is the same three lines that took our own line
+   from 515 crashes to 0 back at v1.
+3. **Dead state consistent with the abandoned Launcher feature:** `self.forward_barriers`,
+   `self.link_source`, and `LAUNCHER_RESERVE = 80` are written or defined and never read.
+
+Separately confirmed while cataloguing v58 → v63: **the `w*h <= 120` small-map gate on the
+vision-triggered battery is gone in v63**, along with the mechanism it gated — so our continued
+`fjordgate` edge against v63 (26/32) no longer has the explanation that covered v44 (32/32).
+
 ### Source data for this pass
 
 Full match list: `fcode match list --mine --json` (2 pages, cursor `2026-08-06T08:20:31.414Z`).
