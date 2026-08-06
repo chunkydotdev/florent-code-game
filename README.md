@@ -18,8 +18,12 @@ Full details in [docs/game-model.md](docs/game-model.md).
 
 ## Status
 
+**New session? Read [HANDOVER.md](HANDOVER.md) first.**
+
 Project scaffolded and **running matches locally**. `fcode` 2.3.6 installed in `.venv`
-(Python 3.13), starter bot at `bots/starter/main.py`, six self-generated maps in `maps/`.
+(Python 3.13), starter bot at `bots/starter/main.py` (kept pristine as the reference opponent), eight
+self-generated maps in `maps/`. Current best bot is **`bots/v1`** — 59.4% against starter
+over 256 matches.
 
 **Not yet registered on the platform** — no account, so no ladder matches, no real map pool,
 and no submissions. That's the only remaining blocker; everything else is unblocked, because
