@@ -60,6 +60,30 @@ methods raise `GameError` when illegal.
   (traversable, Harvester-buildable).
 - **Series:** ladder matches are **best-of-five**. All five games always play to completion.
 
+### Competition map pool — and the symmetry field is wrong [measured]
+
+The live rotation is in `maps/*.map26` (weekly; re-census after every sync — `runbook.md` §2).
+Census by parsing the protobuf tile grid, 2026-08-08: **15 maps**, areas **100–676**
+(fjordgate 10×10 up to archipelago/snowflake 26×26), wall density **0.6%–30.8%**.
+
+**Every one of the 15 declares `symmetry = 0` (rotational) in its file header, and for 6 of
+them that is false.** Comparing tiles directly:
+
+| actual tile-grid symmetry | maps |
+| --- | --- |
+| 180° rotational | archipelago, atoll, drumlin, fjordgate, hive, jackpot, lighthouse, saga, snowflake |
+| mirror across a vertical axis (`x → W-1-x`) | eider, heart, moonrise |
+| mirror across a horizontal axis (`y → H-1-y`) | antler, meander, nordkap |
+
+Do not trust the declared field — verify against the tiles. This matters because the two
+symmetries impose **different** invariants on bot logic: a rule can be perfectly equivariant
+under 180° rotation and still be biased under reflection (rotation maps NE↔SW, reflection maps
+NE↔NW), and 6 of 15 maps grade us on the reflection case.
+
+`jackpot` has a Core footprint in the literal map corner — team A at `(0, 0)`, team B at
+`(14, 14)` on a 16×16 grid — which is the extreme case for any code that uses the Core's
+`get_position()` (the footprint's **NW corner**, not its centre) as a reference point.
+
 ### Win condition
 
 Destroy the opponent's Core. Losing your Core ends the match immediately.
