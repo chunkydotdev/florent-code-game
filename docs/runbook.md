@@ -77,6 +77,12 @@ Run top to bottom; each step either confirms an assumption or flags exactly what
 6. **If `GameConstants` values changed**, update the tables in game-model.md and check every
    strategy-notes derivation that quotes them (harvester ROI, heal-vs-damage economics,
    scale-tax table).
+7. **Refresh any bot-embedded map tables.** The v63-lineage bots (our stage-2 line included)
+   hardcode the pool in `CORE_PAIRS` / `MAP_CODES` / `EXTRA_MAP_CODES`; a rotation that isn't
+   reflected there silently disables `_plan_siege` on the missing maps and can produce
+   seat-dependent economy collapses (the heart zero-harvester bug, 2026-08-06). Regenerate
+   entries with the encoder in the session scratchpad pattern (base-3 pack, round-trip verify;
+   see strategy-log session 8) and gate the refresh like any other change.
 
 ## Standing rule while variables are uncertain
 

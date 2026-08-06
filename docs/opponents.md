@@ -825,6 +825,29 @@ New in v63, not present in v58 at all:
   which stops all expander activity past round 42 on two named seats (`opp_v45:1003-1010`); and
   `healer_focus` turret-priority reordering on one named seat (`opp_v45:1377-1417`).
 
+**Stale map tables — the single biggest defect found in v63 (2026-08-06, equivariance audit +
+measured fix).** `CORE_PAIRS` / `MAP_CODES` / `EXTRA_MAP_CODES` (`opp_v45:44-102`) predate the
+current weekly rotation: **eider, heart, meander, drumlin and saga have no entry**, so
+`known_map_for` returns `None` there, `self.map_grid` stays `None`, and `_plan_siege`
+(`opp_v45:669`) — the line's primary attack — is **disabled on 5 of the 15 pool maps**, three of
+them mirror maps. Two long-standing mysteries fall out of this at once: (1) **the heart
+zero-harvester-as-B defect is this bug** — with refreshed tables (bots/_v63maps) team B goes from
+1 building / 0 mined to 75 buildings / 2450 mined on seed 1; (2) our Launcher wake-up swept
+**eider** precisely because the base cannot siege there, so games decay to economy tiebreaks.
+Corollary: **this table refresh must recur at every weekly pool cutover** (runbook step added).
+
+**Equivariance audit summary (same pass; full detail in the session transcript).** Ranked
+per-seat asymmetry risks on mirrored maps: (1) the **nordkap one-seat gate cluster**
+(`opp_v45:307-308,448-451,925-928`, all keyed to core `(9,6)` with no `(9,18)` twin — different
+builder cap, role split and defense per seat); (2) **moonrise `keep_artillery_forward`**
+(`opp_v45:536-537`, `core.x == 5` only — one seat never recalls forward artillery, the other
+does); (3) **`_plan_siege`'s absolute west/north tie-break + `candidates[2]` follower pick**
+(`opp_v45:754-762`) making mirrored seats' forward batteries non-mirror-images. Also notable:
+**id-parity pathing chirality** (`opp_v45:1310`: `side = 1 if (self.idx & 1) else -1` — seat A's
+unit ids are always one below seat B's, so corresponding builders prefer opposite detours on
+every map), and `nearest_cardinal` (`opp_v45:160-167`) is not equivariant under reflection *or*
+rotation. The named one-seat gates may be deliberate per-seat tuning; the tie-breaks are not.
+
 Removed from v58, confirmed by grep as well as diff:
 
 - **All Core-side turret construction.** v58's `_core()` built up to 3 emergency Sentinels from
