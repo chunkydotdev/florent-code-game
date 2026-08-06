@@ -30,6 +30,67 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Measurement — mirror seat audit of the real rotation: one map is a 0/16 wipeout, and it is ours
+
+- **Date:** 2026-08-08 · measurement only, **no code change**, no accept/discard
+- **Why:** the per-map seat split of a bot against *itself* is this project's standing
+  regression test for orientation bias (strategy-notes.md). Every previous audit ran on the
+  eight invented maps, which were all rotational and mostly small. The pool has since cut over
+  to the real 15-map competition rotation, so the test had to be re-run on the distribution we
+  are actually graded on. A second motive: an earlier non-mirror run had flagged `jackpot`
+  (~8% seat A), `heart` (~83%) and `atoll` (~17%), but that data was contaminated — the two
+  sides were different bots, so a seat split and a strength difference are not separable.
+  A mirror run separates them by construction.
+- **Setup:** `arena.py aug7 aug7 --seeds 8 --jobs 8` — 15 maps × 8 seeds × 2 orderings =
+  **240 matches**, identical code on both sides. Under a fair map and an orientation-neutral
+  bot every row should sit near 50%.
+- **Result — pooled:** seat A **124/240 = 51.7%** [45.4%, 58.0%]. **0 crashes.** Win
+  conditions: `titanium_collected` 188 (78.3%), `core_destroyed` 40 (**16.7%**), `harvesters`
+  7, `titanium_stored` 5. The harness reads a no-op as a coin flip, so the sanity check passes;
+  and the `core_destroyed` rate reproduces the invented pool's null-control 16.7% **exactly**,
+  which is a useful invariant — the Core-kill rate is a property of this bot, not of the pool.
+- **Result — per map** (seat A share, Wilson 95%):
+
+  | map | seat A | flag |
+  | --- | --- | --- |
+  | **jackpot** | **0/16 = 0.0%** [0%, 19%] | **decisive** (two-sided p = 3.1e-5; survives Bonferroni over 15 maps, p_adj = 4.6e-4) |
+  | archipelago | 14/16 = 87.5% [64%, 97%] | suggestive (p = 4.2e-3, p_adj = 0.063) |
+  | fjordgate | 12/16 = 75.0% [51%, 90%] | nominal only (p = 0.077, p_adj = 1.0) |
+  | atoll | 4/16 = 25.0% [10%, 49%] | nominal only (p = 0.077, p_adj = 1.0) |
+  | antler | 5/16 = 31.2% | not flagged |
+  | heart | 7/16 = 43.8% | not flagged |
+  | the other 9 | 8–11/16 | not flagged |
+
+  Fifteen simultaneous 95% intervals produce ~0.75 false flags by chance, so read the p-values,
+  not the flag column. Only `jackpot` is decisive; `archipelago` is worth a look; `fjordgate`
+  and `atoll` are what a 15-map audit looks like when nothing is wrong.
+- **Verdict on the contaminated flags:** `jackpot` **confirmed and worse than reported** (~8%
+  → 0%). `atoll` confirmed in direction only, and not significant once you count the
+  comparisons. `heart` (~83%) is **refuted** — 43.8% [23%, 67%], no detectable seat effect.
+  That is the value of the mirror design: one of three "findings" was an artefact of comparing
+  two different bots.
+- **Read:** `jackpot` is 16×16 and **tile-grid-exact 180° rotationally symmetric** (verified by
+  parsing the `.map26`; cores A=(0,0), B=(14,14), footprints map onto each other exactly under
+  the rotation). A fair map plus identical bots plus 0/16 leaves only one conclusion:
+  **the bot handicaps itself in seat A.** This is not an engine effect — the known engine
+  first-mover edge favours seat A, and this is the opposite sign. It is the same bug class the
+  v3/v4 work was built to kill, surviving in a place that audit never reached, because the
+  invented pool had no corner Core.
+  The leading mechanism, from reading the code rather than from measurement: the Core publishes
+  `ct.get_position()`, the footprint's **NW corner tile**, and every builder treats that single
+  tile as "where the Core is". The footprint's centre is at corner + (0.5, 0.5), so the corner
+  carries a fixed (−0.5, −0.5) offset **that does not rotate with the map**. On jackpot it
+  points off-map for seat A and into open ground for seat B. Hand-counting the two gates that
+  consume it: tiles at d²≤8 (the return-home gate) number **5** for seat A against **12** for
+  seat B; at d²≤18 (the sentinel-build gate) roughly **11** against **30**. Seat A's builders
+  are being told to crowd into less than half the space and have a third of the legal turret
+  sites.
+- **Next:** diagnosed separately before any fix is gated (see the corner-Core entry). Note the
+  size of the prize is bounded: jackpot is 1/15 of the pool, so even a perfect repair is worth
+  ~2 points of pooled win rate — below what a 480-match confirm can resolve. The per-map seat
+  table, not the pooled win rate, is the instrument that can see this class of bug, and that is
+  an argument for running this audit every time the rotation changes.
+
 ### Diagnostic — aug7 on the real map rotation: 69.6%, not 80.5%, and still crash-free
 
 - **Date:** 2026-08-07 · diagnostic only, **not** an accept/discard run and not a metric change
