@@ -71,8 +71,20 @@ the collapse. The first battery is load-bearing; the second onward is the bankru
 
 ## The next queue, ranked
 
-1. **Ship `_v64cbA` as v6** (block above), then let the ladder run. Both v47 and v6 are now
-   waiting on match volume; do not stack a third submission before v6 has a record.
+1. **Ship `_v64cbA` as v6 — but this now collides with the Elo regression rule, and Magnus
+   should make the call.** The rule (operating notes below) wants ~20 ladder matches under
+   v47 before a verdict; v47 has played **one** in twelve hours. Shipping v6 now permanently
+   confounds the question "was v47 better than v46?". The two readings:
+   - **Ship now.** The local evidence is strong and independent of the ladder: 70.0% vs v47's
+     own engine over 480, two maps converted, rush guard up 8.7 points, all guards green. At
+     ~1 ladder match per session, waiting for n=20 could cost weeks of ladder time, and the
+     rule exists to catch *regressions* — this is the opposite of a suspected regression.
+   - **Wait.** The directive is explicit and new, and v47 is the first bot it applies to;
+     spending its first application on an exception sets the precedent that it yields to any
+     confident local number. Local gate strength is exactly what the rule distrusts.
+   - **The compromise, if wanted:** ship v6 and accept that v46→v47 stays unattributed, but
+     record v6's baseline row properly so the rule gets a clean first real application on
+     v47→v6. Either way, **do not stack a third submission before v6 has a record.**
 2. **Launcher warts — `bots/_v64lw` is already built and unmeasured.** The r180–199 flip-flop
    is worse than churn: `rnd >= 180` sets `saboteur`, the `rnd < 200` recruit gate sets it
    straight back to `launchwait` in the same call, every round — **the give-up at 180 is dead
@@ -111,8 +123,23 @@ Everything we shipped on their base stays credited to their engine.
 
 ## Operating notes
 
-- **The submission watcher was armed this session** (5-min poll of `fcode status`, persistent
-  monitor); it caught the 1383 → 1397 tick. It dies with the session — **re-arm it next time.**
+- **Standing directive (Magnus, 2026-08-06): measure Elo over time so we never ship a worse
+  bot and fail to notice.** `elo_history.tsv` (repo root, **tracked**, unlike `results.tsv`) is
+  the append-only ladder tape: `timestamp, rating, matches, active_bot, note`. It is fed by the
+  session monitor; **re-arm the logging variant at every session start** — it appends each
+  rating change to the file as well as notifying. **Regression rule:** every activation gets a
+  baseline row (rating, match count); after **~20 ladder matches** under a new bot, compare its
+  rating delta against the previous bot's trajectory over its final 20. Clearly negative with
+  no confound (opponent-pool shift, teammate activations) → **roll back**
+  (`.venv/bin/fcode submission activate <previous>`, Magnus runs it) and log the reversal on
+  both tapes. v47's baseline: **1383 @ 132 matches**.
+- **The Elo logger monitor dies with its session — re-arm it** (5-min poll of `fcode status`).
+  Session-9 note on a hazard this created: a **concurrent session** (the one that introduced
+  `elo_history.tsv`, commit `bc583e0`) had its logging monitor live at the same time as this
+  session's notify-only watcher. Both saw the 1383 → 1397 tick; only one wrote it, which is the
+  correct outcome. **Run exactly one *appending* monitor at a time** — two would duplicate rows
+  on a tape whose whole purpose is trend detection. If you find rows you did not write, another
+  session owns the logger; keep yours notify-only.
 - **Orchestration norm (Magnus, session 8): two-tier, not three-tier.** Fable inline on
   design/edits/verdicts; delegated read-only diagnostics as single subagents WITH explicit
   model tier; three-tier reserved for wide fan-outs. Session 9 needed no delegation at all —
