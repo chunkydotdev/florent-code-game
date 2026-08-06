@@ -57,7 +57,10 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       appearing where the Gunner baseline had essentially none. See strategy-log.md (aug7).
 - [ ] What's the real payback period on a harvester once conveyor cost and builder-rounds are
       counted? At what chain length does a harvester stop being worth building?
-- [ ] Does the "scout first, build later" scale-tax dodge beat building immediately?
+- [x] ~~Does the "scout first, build later" scale-tax dodge beat building immediately?~~
+      **No, decisively.** Measured 2026-08-07: a 20-round build delay scored 8.3%
+      [3.3%, 19.6%] vs building immediately, 48 matches. Harvester ROI (~8-12 round payback)
+      dominates the scale-tax argument by a wide margin. See strategy-log.md.
 - [ ] How much does map size change the right opening? Where's the crossover?
 - [ ] Does `ct.destroy()` on obsolete buildings measurably cut later build costs?
 

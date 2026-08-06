@@ -30,6 +30,26 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Discard — scout-first before building is a decisive loser
+
+- **Date:** 2026-08-07 · tested against sentinel-first aug7 (a9d81a1)
+- **Hypothesis:** open-questions.md asked whether "scout first, build later" (dodging early
+  scale tax, per strategy-notes.md) beats building immediately — flagged explicitly as
+  worth testing rather than assuming, against the official docs' opposite advice.
+- **Change:** gate `_try_build_harvester` on `ct.get_current_round() >= SCOUT_ROUNDS` (20).
+  Nothing else built (harvesters, sentinels) for the first 20 rounds either, since sentinels
+  are already gated on harvester count.
+- **Result:** screen vs incumbent: **8.3%, CI [3.3%, 19.6%] — decisively refuted**, discarded
+  without running confirm (upper bound nowhere near 50%).
+- **Read:** settles the open question outright, and confirms harvester ROI dominance
+  (strategy-notes.md: payback ~8-12 rounds) beats the scale-tax-avoidance argument by a wide
+  margin at 20 rounds. The official docs' "build aggressively early" was right about the
+  direction, if not the reasoning given. Scale tax matters at the margin (which harvester to
+  build, not whether/when to start) — it doesn't justify sitting on your hands.
+- **Next:** the scale-tax discipline from strategy-notes.md (don't over-build builder bots,
+  `destroy()` obsolete infrastructure) is a different claim than "delay everything" and isn't
+  refuted by this result. Worth keeping separate in future tests.
+
 ### Discard — raising AMMO_BUFFER for sentinels backfired
 
 - **Date:** 2026-08-07 · tested against the sentinel-first aug7 commit (a9d81a1), not v4
