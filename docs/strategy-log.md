@@ -30,6 +30,26 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Discard — raising AMMO_BUFFER for sentinels backfired
+
+- **Date:** 2026-08-07 · tested against the sentinel-first aug7 commit (a9d81a1), not v4
+- **Hypothesis:** AMMO_BUFFER=20 was tuned for gunners (4 Ti/shot -> 5 shots buffered); a
+  sentinel at 10 Ti/shot only gets 2 shots of reserve at the same number. Raising it to 50
+  (5 shots, matching gunner's shot-count buffer) should sustain fire better in a fight.
+- **Change:** `AMMO_BUFFER = 20` → `50`. Nothing else.
+- **Result:** screen 41.7% [28.8%, 55.7%] (not clearly refuted by the letter of the screen
+  rule, but already trending down); confirm **45.3%, CI [39.3%, 51.4%] — no-verdict**,
+  leaning negative. Discarded, `git reset --hard`.
+- **Read:** the mechanism assumed sustained-fire fights are common enough that a bigger
+  buffer pays for itself. More likely what actually happens: most of the match nothing is in
+  range, so a bigger buffer just means more Ti parked as idle ammo instead of building
+  harvesters/sentinels/conveyors during the quiet phases — exactly the failure mode
+  strategy-notes.md already called out for the starter bot's fixed top-up. Bigger ≠ better
+  once the buffer covers a couple of shots; the quiet-phase opportunity cost dominates.
+- **Next:** an adaptive buffer (top up more only when an enemy is actually visible) is the
+  more promising version of this idea, per strategy-notes' "adaptive ammo" note — a fixed
+  buffer at any size trades against economy growth. Left for a future experiment.
+
 ### aug7 — Sentinel-first defense: the untested strategy-notes guess held, hard
 
 - **Date:** 2026-08-07 · `bots/aug7`, built on v4 · **Not yet submitted** (no platform account)
