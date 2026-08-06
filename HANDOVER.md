@@ -1,4 +1,60 @@
-# Handover — 2026-08-09/10, after session 10 (v7 frozen and ready; x3r0 shipped three bots in one night)
+# Handover — 2026-08-09/10, after session 10 — READ THE SESSION-10-LATE ADDENDUM FIRST
+
+## SESSION 10 LATE ADDENDUM — v8 candidate `bots/_v67ch2`, validated on a new instrument
+
+Everything below the addendum still holds, but the evening continued past the v7 submit
+(v7 went live as **platform v51**, climbing 1475 → ~1512-1517, rank #30) and produced the
+highest-value change in project history:
+
+- **Unrated scouting program (Magnus, ~12 matches, 10 teams from #33 to #1):** our offense
+  wins games at every level (beat Lorem 3-2, took games off Pantheon #4 and Pivot #1); our
+  early defense loses to the band's three styles — hyper-rush (Banminary r42-58 kills on
+  EVERY map), mid-siege (Flotte r144-239), grind (kladde/sporks). Replays all archived in
+  the session scratchpad; `tools/replay_census.py` + schema decode them.
+- **Replay post-mortems found the mechanism:** (1) our own counterbattery gate locks home
+  defense out when an offensive forward gun eats the free-battery allowance and harassment
+  pins harvesters < ECO_NEED (meander loss, heart loss — the gate we handed x3r0 is
+  exploitable from the other side); (2) core healing decided every game: 0 heals in both
+  losses, 82 heals (+328 HP) in the win, and the whole heal capability hung on ONE builder
+  (role_n 4) not being distracted — melee short-circuits starved it.
+- **`bots/band_probe`** (md5 33cd3c140882b1466f492653cfb08dcf) — NEW frozen instrument,
+  replay-extracted Banminary all-in rush (launcher-thrown builder r2, zero eco, ~75% Ti to
+  ammo, 4-angle barrage, r29-56 kills). **The live bot scores 26.7% against it.**
+  `rush_probe_fast` (97.5%) was measuring nothing real. Gate all early-defense work here.
+- **`bots/_v67ch2` = _v66mB + the core-heal package** (universal adjacent heal on
+  SLOT_UNDER!=0 — noise-free because can_heal refuses a full core; heal-beats-sabotage
+  under observed shelling; role-4 defender walks home when the core visibly loses HP; zero
+  store-semantics changes): **93.3% vs band_probe (from 26.7%), 64.2% vs opp_v50 (best
+  ever, from 56.7%), guards 97.9/100.0/95.8 green, 0 crashes.**
+
+```bash
+# Magnus: v8 ship
+cp -r bots/_v67ch2 bots/v8
+.venv/bin/fcode submit bots/v8 --name v67-heal-reflex
+.venv/bin/fcode status
+# then rerun the loss pairings as before/after (deterministic rematches):
+# fcode match unrated <flotte-id> --map meander --map eider ...
+```
+
+- **On hold, pending better design:** the `_v67hg*` battery-gate line (slot split +
+  damage-gated unlock). hg4 finally made the design function (clobber guard: builders
+  write SLOT_UNDER=1 only when the slot reads 0) but it costs the meander sweep vs opp_v50
+  (53.3%); re-evaluate against band_probe now that it exists — the heal package may have
+  absorbed most of its value anyway. Refuted en route: _v67hg naive split (45.6%),
+  _v67hg2/hg3 (==2 unreachable — clobbered; identical-rows fingerprint caught it twice).
+- **Equivariance program: paused with verdict "reroll, not convergence"** (rows in
+  results.tsv; _v66eq* variants kept). Dead engineer branch discovered (round-0 buffered
+  store read — activation measured 41%, DISCARD; branch should be deleted). Tell x3r0: his
+  engine shares the dead branch and the counterbattery lockout exploitability.
+- **Unrated meta-facts:** matches vs the same team on the same map are deterministic
+  repeats (one sample per pairing); the CLI can queue them (`fcode match unrated <team-id>
+  --map X`, up to 5); choose maps deliberately, never random; rotate opponents.
+- v51's ladder record so far: 5W-3L, 1475 → ~1512. The rolling regression check matures
+  around match ~161 but v8 supersedes the question.
+
+---
+
+# Original session-10 handover below (still accurate for the pre-addendum state)
 
 Start here, then [docs/game-model.md](docs/game-model.md) →
 [docs/strategy-log.md](docs/strategy-log.md) → [docs/opponents.md](docs/opponents.md).
