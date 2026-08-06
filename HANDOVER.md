@@ -23,10 +23,20 @@ the team's strongest bot, so the work splits in two:
 ### Stage 1 — the hotfix, ready to ship first
 
 **`bots/v63guard` = `florent-v63` + our phase-boundary CPU-budget guard, and nothing else.**
-The port is written and verified as a single-mechanism delta (constant, `_cpu_exhausted()`
-helper, early returns at phase boundaries in `_core`/`_builder`/`_turret`, and a check every 64
-iterations inside each BFS loop). Its gates were still running at handover — **read the
-`v63guard` rows in `results.tsv` before acting on this package.**
+The port is a verified single-mechanism delta (constant, `_cpu_exhausted()` helper, early
+returns at phase boundaries, and a check every 64 iterations inside each BFS loop), and it is
+**gated and clean**:
+
+| stage-1 gate | result |
+| --- | --- |
+| **no-regression vs `opp_v45`, 480 matches** | **exactly 240-240 — 50.0% [45.5%, 54.5%], 0 crashes both sides** |
+| forced-trip build (threshold 0, every guard fires), 120 matches | **0 crashes** — bail-outs leave no half-updated state |
+| no-collapse vs `starter` / `opp_v39` | see the `v63guard` rows in `results.tsv` |
+
+**A dead-even 240-240 is the ideal outcome here, not a disappointing one.** The guard is a no-op
+locally by construction, so the gate can only demonstrate *no harm* — which it does, precisely.
+The forced-trip build is the only local way to execute the new code paths at all, and it comes
+back crash-free.
 
 The active bot is losing real ladder games to a fixable timeout: a decoded replay shows
 **272 CPU-truncated rounds out of 310, losing by `core_destroyed` while paralysed**. A full
