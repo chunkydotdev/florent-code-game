@@ -14,7 +14,18 @@ its first ten. `bots/v63guard` is byte-identical to what is live.
 gate. Platform v46 = our v63guard. Our stage-2 artifacts are the `bots/_v63*` family. Never
 call anything by a bare "v45"/"v46" without saying which namespace.
 
-## The decision on the table: ship `bots/_v63full`
+## SHIPPED: `bots/v5` is live as platform v47 "v63-mapfix-launcher"
+
+**The decision below was taken and executed the same evening (2026-08-06 ~18:00 wall clock):**
+Magnus submitted `bots/v5` (= `_v63full`); it went live as **platform v47** — **activation was
+automatic on submit**, a platform behavior change worth knowing (v40/v46 needed explicit
+`submission activate`). Real-hardware `match test` vs `opp_v45`: **4-1, no TLE deaths**.
+Activation baseline for judging the 63.3% prediction: **rating 1383, rank #40 of 103, 132
+matches played.** The next session's first job: compare the ladder record since this baseline
+against the prediction, and log it in the strategy log. The section below is kept as the
+decision record.
+
+## The decision that was on the table: ship `bots/_v63full`
 
 **`bots/_v63full` = v63guard + three separately-gated keeps, and it beats the active bot's
 engine 63.3% [58.9%, 67.5%] over 480, 0 crashes.** Components, each gated alone vs pristine
