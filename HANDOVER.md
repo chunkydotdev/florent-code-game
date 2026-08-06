@@ -23,6 +23,10 @@ the team's strongest bot, so the work splits in two:
 ### Stage 1 — the hotfix, ready to ship first
 
 **`bots/v63guard` = `florent-v63` + our phase-boundary CPU-budget guard, and nothing else.**
+The port is written and verified as a single-mechanism delta (constant, `_cpu_exhausted()`
+helper, early returns at phase boundaries in `_core`/`_builder`/`_turret`, and a check every 64
+iterations inside each BFS loop). Its gates were still running at handover — **read the
+`v63guard` rows in `results.tsv` before acting on this package.**
 
 The active bot is losing real ladder games to a fixable timeout: a decoded replay shows
 **272 CPU-truncated rounds out of 310, losing by `core_destroyed` while paralysed**. A full
