@@ -30,6 +30,68 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Finding — a Core at (0,0) is invisible to its own builders, and it costs the whole map
+
+- **Date:** 2026-08-08 · found by chasing the `jackpot` seat wipeout; the first hypothesis was
+  wrong and the measurement that refuted it is what pointed at the real one
+- **The claim:** on `jackpot`, whose team-A Core sits at **(0, 0)**, team A delivers
+  **exactly zero titanium for the entire match**, every match, in every bot we have. Not
+  "less" — zero.
+- **The evidence, in the order it arrived:**
+  1. Mirror audit: seat A **0/16** on jackpot (see the audit entry below). Repeated in a
+     second run at 0/8, and again at 0/48 — **0 for 104** in total, across three different
+     bot generations (`aug7`, `probe_neutral`, and a modified `aug7`).
+  2. `probe_neutral` — v1 with every absolute-direction bias removed, a different code
+     generation — reproduces it exactly (0/32), and **all 32 games ended on
+     `titanium_collected`**. So the deficit is economic, and it is not aug7-specific.
+  3. Six single matches, `aug7` vs `aug7` on jackpot, reading the end-of-match JSON:
+     `a_titanium_collected` = **0, 0, 0, 0, 0, 0**, against `b_titanium_collected` ≈ 4950.
+     Team A ends with 4–8 buildings against team B's 39–96, and a final balance of ~2500 —
+     which is 500 starting titanium plus 1000 rounds of passive income, i.e. team A spent
+     almost nothing all game because it never earned anything.
+- **The mechanism, and it is three lines of code:**
+  ```python
+  ct.write_store(SLOT_CORE_X, pos.x)          # the Core publishes 0 and 0
+  ...
+  if x > 0 or y > 0:                          # ...and no builder ever believes it
+      self.core_pos = Position(x, y)
+  ```
+  All 16 comms slots start at 0 and hold non-negative integers, so **0 is indistinguishable
+  from "nobody has written this yet"**. A Core at the origin publishes its position and every
+  builder on that team reads it as no-data, for the whole match. Three things are gated on
+  `core_pos is not None`: laying the trail conveyor in `_try_move` — **which is the only thing
+  that ever delivers our titanium** (the dedicated harvester conveyor is verified dead code,
+  see the entry below) — building sentinels, and heading home in `_pick_target`. Team A
+  therefore builds harvesters that idle with nowhere to output, lays no conveyors, builds no
+  sentinels, and collects nothing. The existing comment even flags the ambiguity and resolves
+  it the wrong way: *"we skip storing (0, 0) unless the core really is there"* — the one case
+  it doesn't handle is the Core really being there.
+- **The whole field has this bug.** It is inherited verbatim from the organisers' shipped
+  starter bot (`bots/starter/main.py:230`). Measured directly: `starter` vs `starter` on
+  jackpot, seat A finishes with `titanium_collected` **0**, `units` **0**, `buildings` **1** —
+  the bare Core. See [opponents.md](opponents.md); this is exploitable metagame information,
+  not just our own bug.
+- **The hypothesis this replaced, and why the refutation was worth its CPU.** The first
+  candidate was that `get_position()` returns the 2×2 footprint's **NW corner**, which is not
+  a rotation-equivariant reference point — the centre sits half a tile SE, so every
+  core-relative gate is displaced by a fixed offset that does not rotate with the map. On
+  jackpot the arithmetic looked damning: 5 legal tiles inside the return-home gate for seat A
+  against 12 for seat B, ~11 sentinel sites against ~30. It was wrong. A build with both gates
+  measured to the footprint centre instead (`bots/_diag_core`, integer-exact in doubled
+  coordinates) moved **nothing**: jackpot 0/48 (unchanged), archipelago 72.9% vs 77.1%, atoll
+  20.8% vs 31.2%, fjordgate 64.6% vs 66.7% — all within noise of the incumbent. Plausible
+  arithmetic about a real asymmetry, and the asymmetry simply wasn't binding. The refutation
+  is what forced the question "why is *collected* exactly zero rather than merely lower",
+  which is the question that has only one answer.
+- **What this does not explain.** `archipelago` (seat A 77%) and `atoll` (seat A 21%) are
+  still unexplained and are **not** this bug — neither has a Core at the origin. They are the
+  next thing to chase, and they are worth more in aggregate than jackpot was.
+- **Method note:** the win rate could never have found this. A pooled metric over 15 maps
+  shows a total wipeout on one of them as a couple of points of drag. The instruments that
+  found it were the **per-map mirror seat table** and the **end-of-match JSON's per-team
+  `titanium_collected`** — a process metric, not an outcome metric. When an outcome is
+  extreme and stable (0 for 104), stop running more matches and go read the state.
+
 ### Measurement — mirror seat audit of the real rotation: one map is a 0/16 wipeout, and it is ours
 
 - **Date:** 2026-08-08 · measurement only, **no code change**, no accept/discard
