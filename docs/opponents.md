@@ -487,3 +487,184 @@ Fresh `fcode status` snapshot, captured 2026-08-06 13:16:55 UTC (`date -u`): rat
 rank **#50 of 103**, **105** matches played, last-10 record **5W–5L** (per `status`; see the
 earlier note in this file on why that specific figure has been unreliable before — not
 re-verified this pass).
+
+### florent-v58 (`bots/opp_v44`) — full source read, not a replay inference (2026-08-06)
+
+The sweep above logged v44/"florent-v58" (x3r0, uploaded 13:00:45Z) becoming our active
+submission. This entry is a source read of that same bot — `bots/opp_v44/main.py` (1312
+lines) plus its author's earlier `bots/opp_v39/main.py` (845 lines) for a diff — done because
+it just beat our own `bots/aug7` **40.8% [32.5%, 49.8%] over 120 matches, 38 `core_destroyed`,
+0 crashes either side**, and is now the activation bar. `meta.json`: their own 378-game
+acceptance suite (21 maps × 3 seeds × 3 opponents × both sides) scored 376W, **349 core_kills
+(92%)**, 0 tracebacks, 0 TLEs.
+
+**Mechanism catalogue, vs what `bots/aug7` does today:**
+
+- **No blanket `try/except` in `run()` at all** (`_core`/`_builder`/`_turret`/`_launcher`
+  dispatch directly, line 182) — the opposite of aug7's unconditional wrap. Robustness instead
+  comes from bounds-checking every position inline before every engine call
+  (`0 <= bp.x < w and 0 <= bp.y < h`, repeated at every call site rather than factored into a
+  helper) plus four narrow, targeted `try/except` blocks exactly where the vision-raise trap
+  bites: BFS neighbor-tile inspection (lines 877–892), a buildings-iteration guard
+  (line 820–833), and the turret target-priority scan (1145–1170). No `get_cpu_time_elapsed()`
+  call anywhere — no CPU guard at all, yet 0 TLEs on their own suite.
+- **Exact per-map database.** `CORE_PAIRS`/`MAP_CODES` (lines 43–84, 21 map signatures each)
+  hardcode the enemy Core's exact position and the full wall/ore grid (packed 3-per-char,
+  decoded once by `known_map_for()`, line 98) for every map they recognize — sidestepping the
+  rotation-vs-mirror trap this project's own game-model.md documents (6 of 15 live maps are
+  actually mirror-symmetric) by memorizing ground truth instead of assuming an invariant.
+  Falls back to the naive `Position(w-2-x, h-2-y)` rotational guess (`enemy_core_for()`,
+  line 87) only for an unrecognized map. This is the root of most of what follows.
+- **Deliberate conveyor chains, not incidental trail-laying.** `_link_path()`/
+  `_build_next_link()` (801–946) run a real BFS — multi-source reverse BFS from every
+  Core-input tile on a known map, forward BFS from the harvester on an unknown one — to plan
+  an exact route from each harvester to the Core, then execute it waypoint-by-waypoint. A
+  secondary opportunistic-paving system (`_move`, 1102–1123) mirrors aug7's own mechanism as a
+  supplement for builders not currently on a link errand, so both systems run at once.
+- **Economy is capped and staged, not open-ended.** `ECO_CAP = 8` hard-caps harvesters
+  (aug7 has no cap); builder spawning is staged in three tiers keyed to economic milestones
+  (`EARLY_BUILDERS=4` before the first harvester, +1 more while saving for a Launcher, 8 after)
+  and throttled by an explicit `LAUNCHER_RESERVE = 80` Ti savings reserve the Core won't spend
+  through until a Launcher exists (`_core`, 280–291) — aug7 has no concept of reserving Ti for
+  anything beyond its next spawn.
+- **Role caste assigned at builder spawn** (`_builder`, 366–378): builder #0 → "defend"
+  (bootstraps the first harvester + its conveyor chain + the Launcher single-handedly); next
+  up to 4 → "expand" (economy, statically partitioned across the known ore list by builder
+  index on a known map, `_pick`, 969–990, so builders never race the same deposit); the rest →
+  "saboteur" (walk to the enemy Core, `fire()` it directly once adjacent, plant a forward
+  Gunner) or "launchwait" (large maps: stage near home for the Launcher). **Offense is a fixed
+  fraction of the population from birth, not a threshold-triggered global switch** — aug7's
+  entire population runs identical logic with zero role differentiation and zero offense.
+- **The Core builds its own defense directly**, no builder required nearby: up to 3 emergency
+  Sentinels the instant a threat is detected on larger maps (246–260), and up to 12 home
+  Gunners once a Launcher exists (262–278, note: *not* gated on `under` — a standing garrison,
+  not purely reactive). aug7's Core only ever spawns builders and tops up ammo; 100% of its
+  turret construction depends on a builder bot happening to be within `distance_squared <= 18`
+  of the Core when the harvester threshold trips (`_try_build_sentinel`, aug7:437-439) — a
+  single point of failure v44 doesn't have.
+- **Turret targeting is a full priority scan, not first-hit.** `_turret()` (1125–1193) scans
+  every tile off `get_attackable_tiles()` and fires at the single highest-value target by an
+  explicit table — `CORE:0, SENTINEL:1, GUNNER:2, BUILDER_BOT:3, LAUNCHER:4, HARVESTER:5,
+  CONVEYOR/SPLITTER:6, BARRIER:7` (1158–1164) — orientation-independent by construction, and
+  notably not just the geometric "nearest" fix game-model.md proposes for aug7's bug, but a
+  strictly better *value*-based one. Gunners try the engine's `get_gunner_target()` helper
+  first (1130–1131, gated to Gunners only — see v39 diff below) and `rotate()` toward the
+  nearest visible enemy when idle (1185–1193); Sentinels never rotate (matches the engine
+  rule). Compare aug7's `_run_sentinel` (627–646): first tile off `get_attackable_tiles()`,
+  unconditionally — the orientation bug game-model.md documents.
+- **Launcher use aug7 has zero equivalent of** — aug7 never builds one (confirmed: no
+  `EntityType.LAUNCHER` anywhere in `bots/aug7/main.py`). `_launcher()` (1195–1312) runs a
+  claim/heartbeat protocol (`SLOT_LAUNCH_ID`/`_RND`) to elect one waiting builder, throws it at
+  pre-tiered `drop_sites` adjacent to the enemy Core, and — new in v44 — leapfrogs it partway
+  (`advance` fallback, 1292–1312) when the full distance exceeds throw range (r²=26),
+  closing the gap over several throws on maps wider than one hop (most of them: throw radius
+  ≈5 tiles, maps run to 30×30). An ACK slot (`SLOT_LAUNCHED_ID`, 420–425) tells the thrown
+  builder it arrived so it doesn't try to walk itself home. The Launcher is also repurposed
+  defensively: it grabs and exiles enemy Builder Bots that wander adjacent (either-team
+  pickup is a documented engine rule, game-model.md).
+- **No `ct.destroy()` / `self_destruct()` anywhere in either bot** — confirmed absent in
+  `opp_v44`, `opp_v39`, and `aug7` alike. Nobody in this comparison does active cost-scale
+  management by tearing down obsolete buildings; that's a real gap on both sides, not a v44
+  advantage.
+- **Comms store: 14 of 16 slots active** (vs aug7's 4). Notably a leader-election-with-lease
+  pattern for the Launcher claim (self-heals if the claimant dies or two builders race, since
+  the Launcher only ever throws the bot whose id exactly matches the currently-stored claim),
+  and a monotonic harvester-count ratchet (`_sync_harvesters`, 319–334: `if live >
+  read_store(...)`, line 331) that only ever raises the shared count — fixed from v39's `!=`
+  check (line 206), which could let a builder with partial vision undercount and corrupt the
+  shared total downward.
+- **Checked specifically for the two bugs this project's docs flag as costing whole games —
+  both absent.** (1) The **(0,0) Core store bug**: `pack_pos`/`unpack_pos` (116–123) use the
+  same `+1` offset scheme as our own fix, and `unpack_pos` additionally treats the raw
+  sentinel `0` as "no data" explicitly (`if not val: return None`) — confirmed byte-identical
+  in `opp_v39` too, so this bot never had it, at least not since v39. (2) The **first-tile
+  orientation bug**: fixed, and via a value-priority scan rather than the geometric-nearest
+  fix game-model.md suggests (previous bullet).
+- **Does it scout?** No dedicated scout role. Reconnaissance is a side effect of
+  saboteur/launchwait builders' offensive routing, plus a spiral expanding-radius search
+  pattern around the Core for the unknown-map ore fallback (`_pick`, 996–1001) — a more
+  systematic sweep than aug7's uniform-random map-wide teleport target
+  (`_pick_target` step 4, aug7:604-606).
+
+**v39 → v44, the most important lessons, in order of how much downstream code depends on
+them:** (1) the exact per-map database is the headline addition — static ore partitioning,
+BFS pathing (`_bfs_direction`, new in v44, 1003–1085, replacing v39's pure greedy
+`p.cardinal_direction_to`), and BFS conveyor planning are all downstream of having it.
+(2) The Launcher choreography was hardened from "works sometimes" to reliable: the
+claim/heartbeat + ACK handshake replaced pure-proximity reselection (which could "steal" the
+economy builder mid-transit, per v44's own comment at 421-422), and the multi-hop `advance`
+fallback means a throw beyond one hop's range now makes progress instead of v39's Launcher
+silently never firing on any map wider than the throw radius. (3) Small, precise, evidence-
+grade bug fixes in the same spirit as this project's own strategy-log: a stray `return`
+immediately after `convert_ammo()` that wasted the Core's otherwise-free spawn turn every
+time ammo topped up (v39:160-161 vs v44:238-241, with an explicit comment citing the fix);
+Sentinels calling the Gunner-only `get_gunner_target()` unconditionally (v39:747, no type
+guard, vs v44:1130-1131, gated); and the harvester-ratchet monotonicity fix above. The home
+Gunner cap also rose 5→12 and dropped its `under`-attack gate — a shift from reactive to
+standing garrison.
+
+**Gunners vs. Sentinels — not a contradiction of our own Sentinel-first result.** Sentinel is
+still the *first*, most reflexive defensive response (Core builds one the instant a threat is
+detected, even pre-Launcher). Gunner is predominantly used where Sentinel's advantages don't
+apply: forward-planted adjacent to the *enemy* Core by saboteurs (range stops mattering at
+point-blank) and as a cheap, massable *volume* addition once flush (cap 12) layered on top of
+the Sentinel layer, not instead of it. Their v41–43 names ("ammo-gunner", "gunner-deadzone")
+read as exactly this kind of placement/ammo tuning arc, not a static-defender A/B against
+Sentinel.
+
+**Ranked adoptable changes for `bots/aug7/main.py`, most valuable first:**
+
+1. **Fix `_run_sentinel`'s targeting** (aug7:627-646): replace the first-hit
+   `for tile in get_attackable_tiles(): ... return` with a full scan tracking the
+   single best target by a priority table, matching v44:1145-1171. One function, ~15 lines,
+   touches nothing else. Caveat for honesty: our own strategy-log found *zero* suboptimal
+   sentinel-targeting events across 625 captured self-play firings, so the isolated win-rate
+   value is unproven and may be small against a passive field — but it's free, strictly
+   correct, and more likely to matter against an opponent as multi-unit-aggressive as v44.
+2. **Give the Core its own threat signal and let it build a defensive Sentinel directly on
+   its own ring**, independent of any builder being nearby — new store slot + ~15 lines in
+   `_run_core`, modeled on v44:246-260/300-309. Removes aug7's single point of failure (no
+   builder within dist²≤18 of Core when the harvester threshold trips = no defense).
+3. **Track the enemy Core position at all.** aug7 has no equivalent of `self.enemy` /
+   `SLOT_ENEMY_CORE` anywhere in the file — confirmed by grep, the word "enemy" appears only
+   in comments. Add the naive rotational guess broadcast on a new offset-safe slot (mirror
+   `pack_pos`'s `+1`), overwritten with ground truth on first sighting — v39's much simpler
+   original version, not even the full 21-map table. Cheap, purely additive, and a
+   prerequisite for #4 and for aiming home-Sentinel facing at the real enemy direction instead
+   of just "away from our own Core."
+4. **Minimum-viable offense**: once the economy threshold is met, redirect a small fixed
+   fraction of newly spawned builders (e.g. every 5th) to walk toward the tracked enemy Core
+   instead of continuing to hunt ore, and `fire()` any adjacent enemy building en route
+   (Core preferred) — a scoped slice of v44's saboteur role, sized like this project's past
+   single-swap experiments (e.g. Sentinel-first). It is the smallest change that gives aug7
+   any core-kill capability at all, which today is exactly zero.
+5. **Adaptive ammo buffer** (raise the target when under attack) — depends on #2/#3's threat
+   signal; a ~3-line change once that signal exists. This is our own strategy-notes.md's
+   "adaptive ammo" open item (it explicitly calls the fixed buffer wasteful in quiet phases
+   and starved in fights) — v44 already implements it (`ammo_target = 60 if under else
+   AMMO_FLOOR`, 233).
+6. **Structural, not a single change — flagged honestly rather than oversold.** (a) The full
+   BFS conveyor-chain planner (`_link_path`/`_build_next_link`, ~150 lines, stateful
+   per-builder queue): high plausible economic value, but a genuine subsystem. (b) The exact
+   per-map database: we already hold the raw ingredients (`maps/*.map26`, 15 files locally,
+   already census-parsed once per game-model.md's wall-density table), so a Core-position-only
+   table (6 ints × 15 maps) is a realistic scoped follow-up — but the full terrain grid plus
+   the BFS pathing/ore-partition machinery built on top of it is a multi-part rewrite, not a
+   patch. (c) The Launcher + role-caste + claim/heartbeat/ACK choreography in full: this is
+   most of `opp_v44`'s file, and the actual explanation for its core-kill rate (below).
+   Adopting it means writing a comparable subsystem, not editing aug7.
+
+**Best explanation for the 38 `core_destroyed` outcomes against aug7:** aug7 has *no* code
+path that produces a core kill unless an enemy happens to walk into a home Sentinel's line —
+no enemy-location tracking, no unit ever moves toward the enemy, no direct-fire sabotage, no
+forward turret placement, no Launcher. `opp_v44` has at least three independent, redundant
+paths engineered specifically to produce one (forward Gunners planted at the enemy Core's
+doorstep, bypassing Sentinel's range advantage entirely; direct low-cost `fire()` chip damage
+from saboteurs once adjacent; Launcher-driven multi-hop insertion that skips most of the
+walk), layered on top of three independent home-defense mechanisms (Core-direct emergency
+Sentinels, a 12-cap Core-direct Gunner garrison, instant all-hands response to melee threats
+near the Core) that a purely economic, non-scouting opponent's incidental wandering was never
+going to punch through. Given aug7's 40.8% overall score, the parsimonious read is that
+nearly all 38 core-kills are `opp_v44` finishing an unaware, undefended-in-depth aug7 Core —
+a structural mismatch in offensive capability, not 38 close fights that could have gone either
+way mechanically.
