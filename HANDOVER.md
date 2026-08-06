@@ -90,12 +90,20 @@ the full catalogue with line references is in [opponents.md](docs/opponents.md).
    the moment any unit sights the real thing. Cheap, purely additive, and a **prerequisite for
    anything offensive**. Note the guess is wrong on the 6 mirror maps — v44 keeps a 21-map table
    for exactly this reason, and we already have the census.
-2. **Let the Core build its own defensive Sentinel on its own ring**, independent of whether a
-   builder is nearby (~15 lines, modelled on `opp_v44:246-260`). Removes `aug7`'s single point
-   of failure: today, if no builder is within dist²≤18 when the threshold trips, there is no
-   defense at all. Also the natural home for **reactive** defense — build immediately when an
-   enemy is visible near our Core, regardless of harvester count, which preserves economy-first
-   against the passive field.
+2. **Adopt v44's vision-triggered emergency defense — the rush lane's primary candidate, and
+   the highest-value adoptable piece in the catalogue.** `aug7` has **zero threat detection of
+   any kind**; today defense is scheduled off *our* economy and never off the *enemy's*
+   behaviour. v44 computes the threat **Core-side from the Core's own vision** and triggers on
+   an **enemy turret at d² ≤ 64 or an enemy builder at d² ≤ 16**, then banks ammo and raises a
+   **3-turret battery facing the threat in the same round**; separately, a **`home_defend`**
+   all-hands diverts nearby friendly builders when an enemy builder is at **d² ≤ 20**.
+   **Port the mechanism — threat detection decoupled from own economy progress — not the
+   constants**, and build Sentinels rather than their Gunners, since Sentinel-first is measured
+   in our lineage. It is teammate code; adoption is the point.
+   **Do not replicate one detail: v44 disables this battery on maps with `w*h <= 120`**, so
+   `fjordgate` (10×10 = 100) falls through to a slow `harvesters >= 1` fallback. That is a known
+   hole in our own team's active bot — and in anyone who copies the pattern. Our port should
+   cover small maps, and `fjordgate` is the per-map row where that shows.
 3. **Minimum-viable offense.** Once economy is up, send a fixed fraction of new builders at the
    tracked enemy Core, `fire()`-ing adjacent enemy buildings en route (2 dmg for 2 Ti, no ammo).
    The smallest change that gives us *any* Core-kill capability.
@@ -141,12 +149,25 @@ currently holds a **reactive home defense** variant testing exactly that, with p
 stated in advance: **a no-op against the passive pool, a material gain against aggression.** If
 both halves hold, it counters the median opponent rather than patching a weakness.
 
-**Calibrate `rush_probe` FAST — top teams execute this well.** Target distribution, from decoded
-series `81d83bb5`: first Sentinel at the enemy Core by **turn 4-15**, blocker in the spawn ring
-by **turn 6-27**, and the **turn-1 Launcher self-throw** is what makes the timing
-map-size-independent. A walk-only probe will be far too slow on big maps and will under-measure
-the real threat. As replays yield observed first-sentinel timestamps, match the probe to that
-distribution — the aggregate feeds a per-map timing calendar.
+**The first baseline is in, and the number is not the finding: `aug7` beats `rush_probe` 95.0%
+[91.5%, 97.1%]** (`starter` beats it 93.3% while losing 221 units to its own crash bug). Since a
+real 1306 opponent beat us **0-5 by Core kills**, the probe is wrong, and its own cross-tab says
+how: **rush_probe's own Core died in 22 matches to `aug7`'s 5** (all-in leaves zero home
+defense), and **on 7 of 15 maps neither Core died at all**.
+
+**The correction that matters: three Sentinels stall on ammo, not damage.** One firing on
+cooldown burns **5 Ti/round**, three burn **~15**, against **2.5 Ti/round** passive income — so
+a probe with no economy fires about a sixth of the time. **The real meta is economy-PLUS-rush,
+not all-in rush.** Also, walk-only delivery under-tests big maps by an order of magnitude:
+measured first-Sentinel turn was 3-4 on fjordgate but **24-56 on drumlin**, against an observed
+benchmark of **turn 4-15 regardless of map size**.
+
+**Two probe modes are now in flight:** walked-sentinel (common meta) and launcher-insertion (top
+meta — builder turn 0, **Launcher turn 1 next to its own Core**, own scout thrown 6-8 tiles,
+contact turn 4-15). **Both must carry enough economy to sustain ammo, and both keep 1-2 home
+Sentinels** — a probe that suicides measures its own fragility, not our defense. When replays
+yield more first-sentinel timestamps, match the probes to that distribution; the aggregate feeds
+the per-map timing calendar.
 
 The pattern it replicates, decoded from ladder series `81d83bb5` (Albert And Einstein **1306.8**
 vs us **1222.8**, **0-5**, all five games `core_destroyed`, and **we out-collected them in every

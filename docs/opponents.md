@@ -668,3 +668,80 @@ going to punch through. Given aug7's 40.8% overall score, the parsimonious read 
 nearly all 38 core-kills are `opp_v44` finishing an unaware, undefended-in-depth aug7 Core —
 a structural mismatch in offensive capability, not 38 close fights that could have gone either
 way mechanically.
+
+**Follow-up, same day — is it a rush? Timing analysis against the Albert-And-Einstein pattern
+above.** Magnus flagged the launcher-assisted builder rush (Albert And Einstein entry, this
+file: Launcher turn 1 next to *their own* Core, scout thrown 6-8 tiles, camped in our ring by
+turn 6-27, first of 3-4 Sentinels turn 4-15) as the *common* ladder opening, not one team's
+quirk, and asked whether `opp_v44` conforms to it. It does not — timings below are estimated
+from spawn/movement/gating constants in the source, not measured (no match run).
+
+- **Commitment to offense has no single trigger — role is assigned at spawn** (`_builder`,
+  366-378), splitting the population from birth: builder #0 → "defend"; on a small map
+  (`mw*mh<=220`) role_n 3+ → "saboteur" *immediately*, no economy gate on the role itself; on a
+  large map role_n 5+ → "launchwait" (stages near home, doesn't walk yet) until the Launcher
+  throws it, or until `rnd>=70 and no Launcher yet and role_n!=5` (438, the role_n==5 primary
+  candidate gets extra patience), or unconditionally by `rnd>=180` (440). But the
+  offense-*delivery* mechanisms are economy-gated: a forward Gunner needs the saboteur within
+  d²≤64 of the enemy Core plus ammo≥4 (615-619); the **Launcher itself cannot be built before
+  `harv >= ECO_NEED` (4)** (`_defend`, 682, unreachable until the "defend" builder's own
+  first-harvester link chain is already finished, 675-682 sequential `elif`s) — a genuine
+  multi-harvester economy milestone, categorically different from Albert-And-Einstein's turn-1
+  Launcher next to their own Core. Spawning itself is cheap and fast early (500 starting Ti
+  comfortably covers the first 4 builders even under +20%/build cost-scaling, and the
+  `can_spend_spawn` reserve check at 287 is trivially satisfied that early), so builders 0-3
+  are plausibly all spawned by round ~3-4 — but that only sets *when a saboteur exists*, not
+  when it can hit anything. **Best-case estimate: small-map saboteur reaches an 8-tile band of
+  the enemy Core roughly round 15-35** (spawn ~4 + cardinal walk); **large-map Launcher-assisted
+  insertion is gated behind harv>=4, unlikely before roughly round 20-30 even optimistically.**
+  Both are roughly an order of magnitude slower than the measured turn 4-15 first-Sentinel
+  benchmark.
+- **Forward turrets at the enemy Core: yes, but Gunner-only and un-clustered.**
+  `_saboteur()` (615-629) plants a Gunner, never a Sentinel, on any adjacent tile to wherever
+  the saboteur happens to be once within d²≤64 (8 tiles) of the enemy Core, facing it
+  (`bp.direction_to(ec)`, 624). No fixed count — scales with however many saboteurs survive to
+  get there, not a designed "3-4." Looser radius than the observed "1-4 tiles" pattern.
+- **Launcher rush-delivery: yes, same mechanism, different schedule.** `_launcher()`'s primary
+  path (1277-1312) throws the claimed builder at `drop_sites` computed from the *enemy* Core
+  (`dest`, 1207), including a multi-hop leapfrog (1292-1312) if one throw doesn't close the
+  distance — mechanically identical to what Albert-And-Einstein does. Difference is entirely
+  timing: theirs fires turn 1 off their own Core; `opp_v44`'s can't exist before harv>=4.
+  Defensive use (exile an adjacent enemy builder, 1253-1275, gated d²≤2 from the Launcher) is
+  checked first each round and wins if applicable, but is opportunistic, not the design intent.
+- **Spawn-ring blocking: no deliberate version.** No code enumerates the enemy's ring and parks
+  a passive body on it. `_saboteur` targeting is attack-first (walk toward `ec`, or orbit
+  radius 2 if stuck within d²≤8 of it, 644-649) — an active loop, not camping. Incidental
+  overlap: `_launcher`'s first-priority `drop_sites` tier (211-216) *is* exactly the enemy's
+  12-tile spawn ring (cardinal, `dist_core==1`), chosen so a landed saboteur can `fire()` the
+  Core immediately via `_sabotage_prio`'s cardinal check — so one ring tile often does get
+  occupied, but as a side effect of optimizing for immediate damage, not as denial-first design
+  the way Albert-And-Einstein's 96-98%-of-the-game camping reads.
+- **Anti-rush defense: yes, genuinely reactive, not schedule-gated — the important finding.**
+  Two independent, vision/proximity-triggered tracks, neither gated on `opp_v44`'s own economy
+  state: (a) `_core()` recomputes `under` fresh every round from its own live vision
+  (enemy turret d²≤64 or enemy builder d²≤16 of the Core, 199-213, plus a 35-round memory via
+  `SLOT_ATK_RND` for builder-reported threats, 218-221) and can go straight from that to
+  ammo-banking (234-241) to an emergency 3-Sentinel battery *the same round*, facing the actual
+  threat position (`aim = threat or ec`, 250) — **gated `w*h>120`, so disabled on the smallest
+  maps** (fjordgate is 10×10=100, below threshold, per game-model.md's census); a slower,
+  always-available fallback (`harv>=1`-gated reactive Sentinel, 300-309) covers every map size
+  regardless. (b) `_home_defend()` (493-533): any saboteur/launchwait-role builder within d²≤25
+  of the Core switches to all-hands mode — heal, fire, emergency Sentinel/Barrier, or body-block
+  — the instant an enemy Builder Bot is within d²≤20 of the Core (469-482). Rough estimate: a
+  camper landing in the ring by turn 6-27 (Albert-And-Einstein's own measured range) would very
+  plausibly be seen by the Core the same round (the ring sits well inside its own r²=36 vision)
+  and answered within a round or two after, i.e. roughly turn 7-29 in that timeline — *not*
+  measured, but structurally the opposite of aug7, which has no threat detection at all and
+  whose only trigger is a wandering ore-seeker's economy-gated coincidence (see this file's own
+  Albert-And-Einstein entry: our real defense arrived turn 436 or turn 81, or never).
+- **Classification: semi-rush (economy first, then a real timed attack) — with two honest
+  caveats.** It's population-split-from-birth, not strictly sequential (offense-track *role*
+  assignment doesn't wait on economy; only the delivery mechanisms do), and the "economy
+  first" phase is deliberately shallow (`ECO_NEED=4`, well under `ECO_CAP=8`) rather than
+  maximized. It is **not** full-rush by the Albert-And-Einstein yardstick — no turn-1 Launcher,
+  no turn 4-15 forward turrets; its fastest path is roughly an order of magnitude slower by the
+  estimate above. **If its opponent rushed it at turn 4-15:** the reactive-defense layer (two
+  bullets up) is orthogonal to `opp_v44`'s own build progress — it only depends on seeing a
+  threat — so it would plausibly still fire correctly that early. Its own offense would not
+  reciprocate in time; against a mirror-image early rusher it would be surviving entirely on
+  the reactive-defense layer, not winning a race with its own attack.

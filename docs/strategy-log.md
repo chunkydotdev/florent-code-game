@@ -30,6 +30,52 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Measurement — the first rush baseline says 95%, and the number is not the finding
+
+- **Date:** 2026-08-08 · `bots/rush_probe` v1, 240 matches vs `aug7`, 0 crashes either side
+- **Headline:** **`aug7` beats `rush_probe` 95.0% [91.5%, 97.1%]**. Control: `starter` beats it
+  **93.3%** — while hemorrhaging **221 units** to its own unguarded `is_tile_empty` crash bug.
+  An all-in rush loses to a *crashing* economy bot.
+- **Do not read this as "we are safe from rushes."** A real 1306-rated opponent beat us **0-5,
+  all five by `core_destroyed`**. The probe and the ladder disagree, so the probe is wrong, and
+  its own diagnostics say exactly how. A cross-tab of *who died* is what made this legible:
+  - **rush_probe's own Core died in 22 matches; `aug7`'s in 5.** Going all-in leaves zero home
+    defense, and on small maps `aug7`'s purely defensive Sentinels reach far enough to kill it
+    (fjordgate 7/8).
+  - **On 7 of 15 maps neither Core died in 1000 rounds** — three Sentinels cannot close 500 HP
+    even completely unopposed.
+  - When it does win it is **100% `core_destroyed`, 0% economic** — Sentinels are the only lever
+    that ever wins a rush; the spawn-ring blocker never decides a game.
+- **Why three Sentinels stall, and it is the most useful thing here: it is ammo, not damage.**
+  A Sentinel firing on its 2-round cooldown burns **5 Ti/round**; three is **~15 Ti/round**
+  against **2.5 Ti/round** of passive income. Stripped of economy, the probe can fire about a
+  sixth of the time, so its theoretical ~27 dmg/round never arrives.
+  **Therefore the real meta is economy-PLUS-rush, not all-in rush.** Albert And Einstein spent
+  four builders on a Launcher and turrets *and* still ran enough economy to sustain fire. This
+  is a genuine correction to how we framed the threat.
+- **Second defect: walk-only delivery under-tests big maps by an order of magnitude.** Measured
+  first-Sentinel turn ran **3-4 on fjordgate (10×10)** but **24-56 on drumlin (25×25)**, against
+  an observed ladder benchmark of **turn 4-15 regardless of map size** — because the top
+  execution throws its own builder 6-8 tiles with a **turn-1 Launcher**.
+- **Next:** two probe modes — walked-sentinel (common meta) and launcher-insertion (top meta) —
+  **both with enough economy to sustain ammo, and both keeping 1-2 home Sentinels**, since a
+  probe that suicides measures its own fragility rather than our defense.
+- **Method note worth keeping:** the win rate was the least informative number in this run. The
+  who-died cross-tab and the per-map "neither Core died" count are what turned a misleading 95%
+  into a specific, fixable list of three defects. When a result contradicts a real-world
+  observation, instrument the disagreement rather than believing the cleaner number.
+
+### Intel — a hole in our own team's active bot, on small maps
+
+- **Date:** 2026-08-08 · from the `opp_v44` source read (full addendum in
+  [opponents.md](opponents.md) under `florent-v58`)
+- v44's emergency-defense battery — the mechanism we are adopting — is **disabled on maps with
+  `w * h <= 120`**. **`fjordgate` is 10×10 = 100** and falls below the gate, leaving only a
+  slower `harvesters >= 1` fallback to cover it.
+- Worth logging twice over: it is a known weakness in the strongest bot on our own team, and it
+  will be inherited by **anyone who copies this pattern**. Our own port must **not** replicate
+  the gate; `fjordgate` is the per-map row where that difference should show up.
+
 ### Hypothesis, pre-registered — defended economy farms a converged-rush field
 
 - **Date:** 2026-08-08 · **written before the measurement exists**, which is the point of writing
