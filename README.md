@@ -39,7 +39,11 @@ diff it if the organisers change the rules mid-competition. Re-run with
 
 ## Getting set up
 
+**Gotcha on this machine:** the default `python3` is **3.14.3, which `fcode` does not support**.
+`python3.13` (3.13.7) and `python3.12` (3.12.9) are both installed — use one of those.
+
 ```bash
+python3.13 -m venv .venv && source .venv/bin/activate
 pip install fcode          # needs Python 3.12 or 3.13 — NOT 3.14
 fcode login                # browser OAuth; requires an approved platform account
 fcode starter              # scaffolds fcode.toml, bots/starter/main.py, maps/
