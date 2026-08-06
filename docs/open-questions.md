@@ -110,17 +110,17 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       **before** any further turret-placement work.
 - [x] ~~**Do the conveyor chains our builders lay actually complete a path to the Core?**~~
       **Answered** (2026-08-08, `tools/replay_census.py`): often not. Roughly half of
-      graph-connected harvesters are also facing-correct — conditional rate ~53% for the v45
+      graph-connected harvesters are also facing-correct — conditional rate ~53% for the `ladder1`
       candidate and for `aug7`, against a field average of 68.4% — and `chain_dir == 0` implies
       zero titanium collected in every economically-decided game measured. Chains are worth
       completing; ours frequently do not complete.
 - [ ] **Does the facing metric measure the right thing?** Two accepted facing changes in a row
       won on the harness while leaving the end-of-game conditional rate statistically unchanged
-      (v45: 52.9% vs 53.1%), with the gain showing up as volume instead — +19% harvesters, +29%
+      (52.9% vs 53.1%), with the gain showing up as volume instead — +19% harvesters, +29%
       titanium. End-state `chain_dir` is a snapshot and cannot see **time-to-first-delivery**.
       Measure the round at which each team's first `distributeResources` into the Core fires,
       per replay; that is the number the wins are probably tracking.
-- [ ] **Why does the v45 candidate still show a 3× dangling-head spike at Chebyshev distance
+- [ ] **Why does the `ladder1` candidate still show a 3× dangling-head spike at Chebyshev distance
       1-2 from the Core**, when its code inside that radius is byte-identical to `aug7`'s? The
       far-zone topology must be feeding the near zone differently. Unexplained, and it is the
       most likely place another 10 points of delivery is hiding.

@@ -30,7 +30,53 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
-### v45's economy change — conveyor facing follows the trail, and the failed first attempt named the real constraint
+### The gate moved out from under us, and the honest endgame is a base switch
+
+- **Date:** 2026-08-08 (session 7), late · challenger `bots/ladder1` / `bots/_pkg45`, new primary
+  gate `bots/opp_v45` (x3r0's active "florent-v63")
+- **What happened:** mid-session our teammate shipped five internal iterations at once.
+  **`opp_v45` beats `opp_v44` 78.3% [70.1%, 84.8%] and beats `aug7` 80.0% [72.0%, 86.2%]**, so
+  the primary gate moved to the stronger teammate bot, as the standing norm requires.
+- **Our candidate scores 22.1% [18.6%, 26.0%] against it over 480 matches, 0 crashes.** For
+  reference `aug7` scores 20.0%. **A full session of gated economy work moved this matchup by
+  about two points.**
+- **Their economy is better than ours, which kills the "port our fix onto their base" plan
+  before it starts.** A 20-replay paired census (5 maps, both seats):
+
+  | | ours (`_pkg45`) | `opp_v45` |
+  | --- | --- | --- |
+  | conditional delivery rate (`chain_dir`/`chain`) | 70.0% | **86.2%** |
+  | titanium collected, pooled | 58,510 | **66,630** |
+  | structures built, pooled | **1,115** | 651 |
+  | conveyors | **1,038** | 552 |
+  | Cores surviving, of 20 | 9 | **20** |
+
+  **They collect 14% more while building 42% fewer structures.** They show no sign of the
+  facing/termination defect we spent this session repairing — and our own candidate still throws
+  one clean instance of it (`drumlin`, 1 chain, 0 `chain_dir`, 0 collected).
+- **The decisive gap is combat and it is not close. Of their 15 wins over us, 11 are Core kills.
+  Our Core died 11 times in 20 matches; theirs died zero.** Their first Sentinel lands at
+  **median round 24 against our 51**; they field Gunners (59 built, 18 surviving) where we build
+  none; they never even needed a Launcher against us in this sample. On the 9 matches that
+  reached the economic tiebreak we actually won 5-4.
+- **Conclusion, stated plainly because it is the deliverable: the team's strongest bot is
+  `florent-v63`, not ours, and it cannot be caught from here by economy repair.** Recommend
+  switching bases and carrying findings across rather than code. What our line still has to give:
+  **a reproducible economy failure in `florent-v63` itself — on `heart` seated as team B it
+  builds zero harvesters and collects zero titanium, 2 of 2 seeds**, which is why we sweep that
+  map 4-0; the small-map area gate on their vision-triggered battery (`fjordgate` 26/32 for us
+  against v63, 32/32 against v44); the (0,0)-Core store fix if their line still writes raw
+  coordinates; and the instruments — `tools/replay_census.py`, `tools/arena.py`, and this tape.
+- **The reactive-defense port is retired, not pending.** `rush_probe_fast` landed and is a real
+  instrument at last — **`aug7` beats it only 68.3% [62.2%, 73.9%]**, against 96.2% for the old
+  walked `rush_probe`, a 28-point drop that finally quantifies the rush threat locally. Gated
+  against it, the defense port scores **61.3% [55.0%, 67.2%]** — *below* plain `aug7`. Three
+  instruments, three negatives, intervals overlapping every time. The mechanism may still be
+  right; this implementation is not. Note also that our economy candidate is **62.1%** against
+  the same probe, below `aug7` too: **the economy accept does not make us more rush-robust, and
+  should not be read as if it might.**
+
+### The `ladder1` candidate's economy change — conveyor facing follows the trail, and the failed first attempt named the real constraint
 
 - **Date:** 2026-08-08 (session 7) · challenger `bots/_facing_v2`, pinned incumbent `bots/aug7`
   (`3cfa588`), primary gate `bots/opp_v44`
@@ -96,7 +142,7 @@ rather than explained away: the challenger still shows a **3× dangling-head spi
 distance 1-2** versus `aug7`, in a zone where its code is byte-identical to `aug7` — so the
 far-zone topology is feeding the near zone differently, and nobody has said how.
 
-**What went into the v45 package alongside it: the (0,0)-Core store fix**, which has been waiting
+**What went into the candidate package alongside it: the (0,0)-Core store fix**, which has been waiting
 on a decision since the previous session. Inside the assembled candidate it takes **`jackpot`
 seat A from 0/32 to 15/32 = 46.9% [31%, 64%]**, with 29 of 32 games now decided on titanium
 collected rather than a harvester tiebreak. It has **exactly one writer and one reader** of those
@@ -154,16 +200,18 @@ bimodality is a property of the aug7-lineage-versus-`opp_v44` matchup, not of ei
 The ore-starvation hypothesis is not refuted as physics, but it is no longer *evidence for*
 anything about defense — it was explaining a pattern that was already there.
 
-**3. Consequence for the v45 package: the reactive defense is NOT in it.** It failed its primary
-gate (40.6% vs `opp_v44` against a 40.8% baseline), it shows no benefit against the only rush
-instrument we have, and the per-map argument that kept it alive belonged to the matchup. It is
+**3. Consequence for the candidate package: the reactive defense is NOT in it.** It failed its primary
+gate (40.6% vs `opp_v44` against a 40.8% baseline), it shows no benefit against either rush
+instrument (see the newest entry above: 61.3% against `rush_probe_fast` where plain `aug7` scores
+68.3%), and the per-map argument that kept it alive belonged to the matchup. It is
 preserved intact at **`bots/_defense_port`** — the mechanism (threat detection decoupled from our
 own economy) is still the right idea and the ladder rush threat is still real and independently
 evidenced (the watched blowout loss, the turn-1-Launcher benchmark in opponents.md, the
 first-Sentinel cluster at rounds 3-6 across 24 real replays). **What we lack is a competent local
 rusher to test it against.** `bots/rush_probe_fast` — launcher insertion, with enough economy to
-sustain ammo — is that instrument. **If its baseline shows it is genuinely dangerous, that is the
-defense port's real test, and it should be re-gated then, not now.**
+sustain ammo — is that instrument. **It landed the same evening, it IS genuinely dangerous
+(`aug7` beats it only 68.3%, against 96.2% for the walked probe), the defense port was gated
+against it, and it lost at 61.3%.** This lane is closed rather than open — see the newest entry.
 
 ### Finding — the facing bug has three distinct causes, we fixed the smallest one, and the real one is now named
 

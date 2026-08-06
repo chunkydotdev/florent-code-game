@@ -1,46 +1,75 @@
-# Handover — 2026-08-08, after session 7 (v45 endgame, tag `ladder1`)
+# Handover — 2026-08-08, after session 7 (candidate endgame, tag `ladder1`)
 
 Start here, then [docs/game-model.md](docs/game-model.md) →
 [docs/strategy-log.md](docs/strategy-log.md) → [docs/opponents.md](docs/opponents.md).
 
-## The decision on the table
+## Naming, because the platform has overtaken us
 
-**`v45` is assembled, fully gated, and sitting in `bots/_pkg45` (byte-identical copy in
-`bots/ladder1`). It is a large, clean improvement on our own line — and it still loses to the
-teammate bot currently holding the team slot.** Both halves of that sentence are load-bearing.
+**The platform's submission `v45` is x3r0's `florent-v63`, not ours** — vendored locally as
+`bots/opp_v45`. Our own artifact directories (`bots/_pkg45`, `bots/_pkg45b`) were named before
+that landed and are kept only because every row in `results.tsv` references those names. **Do not
+call our challenger "v45" anywhere durable.** It is *the `ladder1` candidate*; the platform
+assigns its number at upload.
 
-| gate (all 480 matches: 15 maps × 16 seeds × both seat orderings, `--tle 10`) | result |
+## The decision on the table: the honest answer is a base switch
+
+**The `ladder1` candidate is assembled, fully gated, crash-free, and a large clean improvement on
+our own line — and it is not the team's strongest bot, and cannot be made into one from here.**
+
+| gate (480 matches: 15 maps × 16 seeds × both orderings, `--tle 10`; rush runs 240) | result |
 | --- | --- |
-| **vs `bots/_incumbent` = submission `v40`, the last version of our line the ladder ran** | **67.1% [62.8%, 71.1%]** |
+| **vs `bots/opp_v45` (PRIMARY GATE — x3r0's active "florent-v63")** | **22.1% [18.6%, 26.0%] — fails badly** |
+| vs `bots/opp_v44` (previous teammate bot, now a reference) | 44.8% [40.4%, 49.3%] — fails |
 | vs `bots/aug7` (`3cfa588`, pinned incumbent) — the facing change alone | **58.5% [54.1%, 62.9%] — accept** |
-| **vs `bots/opp_v44` (PRIMARY GATE, x3r0's active "florent-v58")** | **44.8% [40.4%, 49.3%] — fails** |
-| no-collapse vs `bots/starter` | 75.2% [71.2%, 78.9%] |
-| no-collapse vs `bots/opp_v39` | 69.0% [64.7%, 72.9%] |
-| rush stress vs `bots/rush_probe` | 93.8% [91.2%, 95.6%] (aug7 reference 96.2%, overlapping) |
+| **vs `bots/_incumbent` = submission `v40`, what our line last put on the ladder** | **67.1% [62.8%, 71.1%]** |
+| no-collapse vs `bots/starter` | 83.5% [80.0%, 86.6%] |
+| no-collapse vs `bots/opp_v39` | 73.1% [69.0%, 76.9%] |
+| rush stress vs `bots/rush_probe_fast` (the real instrument) | 62.1% [55.8%, 68.0%] — **below `aug7`'s 68.3%** |
+| rush stress vs `bots/rush_probe` (the weak one) | 93.8% [91.2%, 95.6%] |
 | `jackpot` mirror probe, seat A, 32 matches | **0/32 → 15/32 = 46.9% [31%, 64%]** |
-| **crashes, our side, across every run above** | **0** |
+| **crashes, our side, every run above** | **0** |
 
-**Recommendation: upload v45, do not activate it over v44.** The standing norm is that the team
-slot follows arena measurement, and the arena is unambiguous — at n=480 the interval's *upper*
-bound (49.3%) now excludes 50%, so v44 being better is not a sampling artefact. Uploading anyway
-costs nothing, keeps the artifact on the platform, and means the slot can flip the moment the
-remaining gap closes.
+**Recommendation: do not activate the candidate. Switch bases to `florent-v63` and carry our
+findings across, not our code.** Three independent measurements say the same thing:
 
-The counter-argument, stated so it is decided rather than forgotten: **on the rated ladder our
-line is 8W-1L (+35.24 Elo, v40) against v44's 2 rated series.** The local arena is far better
-powered and it stands, but if the team ever chooses ladder record over arena measurement, that
-is a decision to make explicitly and write down — not something to drift into.
+1. **The gap is not closable by economy work.** `opp_v45` beats `aug7` 80.0% and our candidate
+   78/22. Our whole session's accepted change moved that matchup by about **2 points**
+   (20.0% → 22.1%).
+2. **Their economy is already better than ours, so our accepted fix has nothing to give them.**
+   A 20-replay census: their conditional delivery rate is **86.2% against our 70.0%**, and they
+   collect **14% more titanium while building 42% fewer structures** (651 vs 1,115; conveyors
+   552 vs 1,038). They do not have the facing defect we spent the session repairing.
+3. **The decisive gap is combat, and it is stark.** Of their 15 wins over us in that census,
+   **11 were Core kills. Our Core died 11 times in 20 matches; theirs died zero times.** Their
+   first Sentinel lands at **median round 24 against our 51**, and they field Gunners (59 built,
+   18 surviving) where we build none.
+
+**What we can still contribute to the team's strongest bot** — these are real and worth more than
+our lineage is:
+
+- **A reproducible economy failure in `florent-v63` itself: on `heart`, seated as team B, it
+  builds ZERO harvesters and collects zero titanium** — 2 of 2 seeds, and we sweep `heart` 4-0
+  because of it. Same *class* of bug as our own (0,0)-Core defect. **Report this to x3r0 first;
+  it is the highest-value thing in this handover.**
+- **`fjordgate`, and small maps generally.** Their line disables its vision-triggered battery
+  below a map-area threshold; we take `fjordgate` **26/32** against v63 and took it **32/32**
+  against v44. Whatever base wins, that gate should go.
+- **The (0,0)-Core store fix**, if their line still writes raw coordinates (check the v58→v63
+  catalogue in [opponents.md](docs/opponents.md)).
+- **The instruments**: `tools/replay_census.py`, `tools/arena.py`, and `results.tsv` as the
+  append-only tape. The delivery census above took twenty minutes because those already existed.
+
+If the team wants the artifact on the platform anyway — it costs nothing and preserves the work:
 
 ```bash
 # Magnus only — bots/v* is write-protected for agents:
-cp -r bots/_pkg45 bots/v45
-.venv/bin/fcode submit bots/v45 --name v45-trail-facing
-.venv/bin/fcode submission list           # note the version number it was assigned
-# ONLY if the team deliberately overrides the arena verdict:
-.venv/bin/fcode submission activate <version-number>
+cp -r bots/_pkg45 bots/v5          # v5 is the next free LOCAL freeze slot (v1..v4 exist)
+.venv/bin/fcode submit bots/v5 --name ladder1-trail-facing
+.venv/bin/fcode submission list    # note the version number it is assigned
+# Do NOT activate it: fcode submission activate <n> would replace a bot that beats it 78/22.
 ```
 
-## What is in v45, and what each piece bought
+## What is in the candidate, and what each piece bought
 
 Two changes over `bots/aug7` (`3cfa588`), each measured separately.
 
@@ -84,7 +113,7 @@ is exactly what the near-Core zone does in the shipped version, and the census c
    matchup" came from reading the defender's win rate as the rusher's. **Standing rule now:
    every metric report names both sides — "X beats Y at N%", never "the baseline is N%".**
    `arena.py` reports the **first-named** bot's rate.
-2. **The reactive-defense port's "violently bimodal per map" split was never its own.** The v45
+2. **The reactive-defense port's "violently bimodal per map" split was never its own.** The
    candidate carries no defense change and collapses on the *same* maps against v44 (`atoll`
    1/32, `hive` 4/32, `jackpot` 6, `drumlin` 6, `meander` 9) while winning the same ones
    (`fjordgate` 32/32, `archipelago` 28/32, `heart` 22/32). **It is a property of the
@@ -98,20 +127,20 @@ is exactly what the near-Core zone does in the shipped version, and the census c
    **End-of-game `chain_dir` is a snapshot; it cannot see time-to-first-delivery.** Measuring
    the round of each team's first delivery is now the highest-value instrument change.
 
-## What is deliberately NOT in v45
+## What is deliberately NOT in the candidate
 
-- **The reactive home-defense port** — preserved intact at **`bots/_defense_port`**. It failed
-  its primary gate (40.6% vs 40.8%), shows no benefit against the only rush instrument we have,
-  and its per-map case belonged to the matchup. **The mechanism is still the right idea and the
-  ladder rush threat is still real** (the watched blowout, the turn-1-Launcher benchmark, the
-  first-Sentinel cluster at rounds 3-6 across 24 real replays). **Its real test is
-  `bots/rush_probe_fast`** — launcher insertion, with enough economy to sustain ammo. Re-gate it
-  then, not before. Note it *did* cut `core_destroyed` against v44 from 35% to 25% without
-  converting that into wins, which is a lead, not a result (different candidates, confounded).
+- **The reactive home-defense port — now RETIRED, not pending.** `bots/_defense_port` has been
+  measured on every instrument we own and has never once been positive: **40.6% vs `opp_v44`**
+  against a 40.8% baseline; **94.2% vs the weak `rush_probe`** against `aug7`'s 96.2%; and now
+  **61.3% [55.0%, 67.2%] vs `rush_probe_fast`** — the competent Launcher-insertion probe built
+  specifically to test it — against **`aug7`'s 68.3% [62.2%, 73.9%]**. Intervals overlap
+  everywhere, so nothing here is a proven regression, but three instruments pointing the same
+  way is a verdict. **The mechanism (threat detection decoupled from our own economy) may still
+  be right; this implementation is not.** Keep the directory as a reference, stop gating it.
 - **The deterministic trail-aware tie-break** (`bots/_tiebreak1`, and assembled as
   `bots/_pkg45b`). Screen 50.0% [39.9%, 60.1%], confirm **52.9% [48.4%, 57.3%]** — no verdict,
   therefore discard. It leans positive and its mechanism evidence is the strongest we have;
-  resolving a ~3-point effect needs on the order of 1,900 matches. **Top of the v46 queue.**
+  resolving a ~3-point effect needs on the order of 1,900 matches. **Top of the next candidate's queue.**
 - **Tuned constants.** A full CEM sweep of `MAX_BUILDERS` / `TARGET_HARVESTERS` / `AMMO_BUFFER`
   against v44 confirmed at **40.8% — identical to untuned `aug7`.** The gap is structural, not
   tuning. Directionally the elite distribution drifted `TARGET_HARVESTERS` 3→4 and `AMMO_BUFFER`
@@ -121,14 +150,14 @@ is exactly what the near-Core zone does in the shipped version, and the census c
 
 ## Known residual weaknesses
 
-- **`atoll` 1/32 and `hive` 4/32 against v44** — the two lowest-ore maps in the pool. Single
+- **`atoll` 1/32 and `hive` 4/32 against `opp_v44`, and 0/32 on both against `opp_v45`** — the two lowest-ore maps in the pool. Single
   matches are unambiguous about the mechanism: on `hive` we finish with **125 buildings to their
   16** while collecting **400 to their 1,190**, and lose the Core at round 262. **We are
   out-delivered while spending more.** Every walked tile lays a conveyor, at +1% category scale
   each, whether or not that trail ever carries anything. A conveyor budget, a cap, or laying only
   where a trail already reaches a harvester are all cheap and untested. **This is the top
-  economy lane for v46.**
-- **The near-Core dangling spike is unexplained.** v45 still shows ~3× `aug7`'s dangling-head
+  economy lane for the next candidate.**
+- **The near-Core dangling spike is unexplained.** The candidate still shows ~3× `aug7`'s dangling-head
   count at Chebyshev distance 1-2 — in a zone where its code is byte-identical to `aug7`. The
   far-zone topology is feeding the near zone differently and nobody has said how. Most likely
   place another chunk of delivery is hiding.
@@ -139,26 +168,35 @@ is exactly what the near-Core zone does in the shipped version, and the census c
 - **Mirror equivariance: still unfixed, still unmeasured this session.** Six of the 15 maps
   mirror; `cardinal_toward` is equivariant, and the new trail rule is defined relative to the
   walk (so it is equivariant under rotation *and* both reflections by construction), but no
-  per-map mirror seat table was re-run for v45. `jackpot` is now repaired; `heart`, `lighthouse`
+  per-map mirror seat table was re-run for the candidate. `jackpot` is now repaired; `heart`, `lighthouse`
   and `atoll` seat asymmetries remain open.
 - **`archipelago`'s seat advantage is an engine fact** (team A's Nth builder always gets the
-  lower unit id, so A resolves first), not something v45 changes.
+  lower unit id, so A resolves first), not something the candidate changes.
 
-## The next queue, ranked
+## The next queue, ranked — assuming the base switch
 
-1. **Conveyor spend per delivered titanium** (the `atoll`/`hive` lane above). Biggest measured
-   inefficiency we have, and it is our own code.
-2. **Instrument time-to-first-delivery** and re-read every facing result against it. Cheap: the
-   replay carries `distributeResources` events and `tools/replay_census.py` already parses them.
-3. **Re-run the tie-break at resolving power** (~1,900 matches) or fold it in on the correctness
-   argument — it replaces a coin flip with a deterministic, seat-symmetric rule at the tiles
-   where being wrong is most expensive.
-4. **`rush_probe_fast` baseline, then re-gate `bots/_defense_port`** against it. Do not re-gate
-   the defense against `rush_probe`; that instrument is too weak to answer the question.
-5. **Enemy-Core tracking and minimum-viable offense** (items 1 and 3 of session 6's queue,
-   unchanged and still unstarted). We still have **no code path that can kill a Core** except by
-   an enemy wandering into a home Sentinel's line, and v44 kills ours in 28% of matches.
-6. **Re-tune constants** after 1-2 land.
+**On `florent-v63` as the base:**
+
+1. **Tell x3r0 about the `heart` seat-B zero-harvester failure** and help fix it. Reproducible,
+   costs them a whole map, and it is the same class of bug as the (0,0)-Core defect we fixed.
+2. **Remove the small-map area gate on their vision-triggered battery.** We beat v44 32/32 and
+   v63 26/32 on `fjordgate` largely because of it.
+3. **Census their delivery on the maps where it is weakest** (`atoll` 68.8% conditional against
+   our 100% there) — that is the one place our facing work may still transfer.
+4. **Re-run the per-map mirror seat table on the new base.** Six of fifteen maps mirror; nobody
+   has checked whether their line is equivariant.
+
+**If the team keeps our lineage alive anyway** (as a second submission, or for the learning):
+
+5. **Combat, not economy.** 11 of 15 losses to v63 are Core kills; our Core died 11/20, theirs
+   0/20. Enemy-Core tracking, `ct.fire()` sabotage, and Gunners are all still unbuilt, and their
+   first Sentinel lands at round 24 against our 51.
+6. **Instrument time-to-first-delivery** and re-read every facing result against it — the
+   end-of-game snapshot demonstrably cannot see what our accepted changes are buying.
+7. **Conveyor spend per delivered titanium.** We build 1,115 structures to v63's 651 and collect
+   14% less. Every walked tile lays a conveyor whether or not that trail will ever carry
+   anything.
+8. **The tie-break** (`bots/_tiebreak1`), at resolving power or on the correctness argument.
 
 ## Operating notes for the next session
 
@@ -166,7 +204,7 @@ is exactly what the near-Core zone does in the shipped version, and the census c
   attached to the main session and dies with it. **Re-arm it** if you want submission/activation
   changes noticed automatically; nothing on the platform side reports them to us.
 - **Standing norm: the team slot follows arena measurement.** A candidate that beats `opp_v44`
-  takes the slot, with the numbers attached. v45 does not, so it does not.
+  takes the slot, with the numbers attached. This candidate does not, so it does not.
 - **Date labels still run one day ahead of wall clock.** Every commit here is authored
   `Thu Aug 6 2026`; the log labels sessions 5-7 as `2026-08-07`/`08`. **Three logged "days" are
   one calendar day.** Left deliberately rather than silently renumbered.
@@ -183,13 +221,15 @@ is exactly what the near-Core zone does in the shipped version, and the census c
 
 | path | what it is |
 | --- | --- |
-| **`bots/_pkg45`** | **the v45 candidate.** `bots/ladder1` is a byte-identical copy |
-| `bots/_facing_v2` | v45 minus the (0,0) fix — the artifact the accept was measured on |
+| **`bots/_pkg45`** | **the candidate.** `bots/ladder1` is a byte-identical copy |
+| `bots/_facing_v2` | the candidate minus the (0,0) fix — the artifact the accept was measured on |
 | `bots/_pkg45b`, `bots/_tiebreak1` | the discarded tie-break, packaged and standalone |
 | `bots/_defense_port` | the reactive home-defense port, preserved, awaiting `rush_probe_fast` |
 | `bots/aug7` (`3cfa588`) | pinned incumbent |
 | `bots/_incumbent` (`a9d81a1`) | submission **v40** — what the ladder last ran from our line |
-| `bots/opp_v44`, `bots/opp_v39` | teammate's active bot (primary gate) and the older guard |
+| `bots/opp_v45` | **x3r0's new active bot** (platform submission v45, "florent-v63") — the primary gate |
+| `bots/opp_v44`, `bots/opp_v39` | the previous teammate bot (secondary reference) and the older guard |
+| `bots/rush_probe`, `bots/rush_probe_fast` | the weak walked rush, and the Launcher-insertion probe |
 | `bots/_fix_core00`, `bots/_dev_bfs`, `bots/_facing_v3` | superseded / discarded, kept for reference |
 | safe to delete | `bots/_tune_*`, `bots/_diag_*`, `bots/_probe_*`, `bots/aug7_h1..h4` |
 
