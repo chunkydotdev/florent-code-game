@@ -30,6 +30,46 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Telemetry — v40's ladder window, and the bar moving out from under us
+
+- **Date:** 2026-08-08 · platform reads only, no code change
+- **v40 ("aug7-sentinel-economy", `a9d81a1`) — the whole ladder record it ever produced:**
+  rating **1182 → ~1222**, ending its window at roughly **104 matches played / ~1214 rating**,
+  rank around **#52-53 of 103**, crossing from Unranked into **Bronze**. Then x3r0 activated
+  **v44 ("florent-v58") at ~13:00**, so **every ladder result after that measures their bot,
+  not ours.** Attribute segments accordingly; do not read the team's later trajectory as
+  evidence about `aug7`.
+- **The sample is thinner than the match count suggests.** The team ran **42 submission
+  versions in ~16 hours** across several people, and **v40 played exactly one ladder series**
+  (`1018bf11`, a 3-2 win over Leviathan). The 97-match history is mostly other people's bots.
+  A per-replay observation is only evidence about the version that played it — a lesson that
+  cost us a wrong conclusion this session (see the opponents.md correction).
+- **Trust `fcode match list`, not `fcode status`'s "Last 10".** Status reported 3W-7L;
+  reconstructing the real last ten series three independent ways gives **6W-4L** every time,
+  while the `rating` field in the same response is current.
+- **Where we actually lose: fights.** Across 485 games, **`core_destroyed` is 15W-74L (17%)**
+  against **51% on the titanium tiebreak**. Against `1337` it is **0W-17L** on Core kills over
+  17 games, with kills landing anywhere from turn 188 to 737 — sustained pressure, not a rush.
+  Worst map on the current rotation: **`saga` 2W-8L**.
+- **What the top of the ladder builds.** Unrated scouting replay `91d77721` against **Pivot**
+  (#1, ~1947): **12 harvesters, 39 conveyors, 17 Gunners, zero Sentinels**, out-collecting us
+  **3170 to 810**. Our bot switches builders to defense at `TARGET_HARVESTERS = 3` and then
+  builds Sentinels with no cap — a local probe counted **116 sentinels across 10 matches, 66 in
+  one**, at +20% cost scale each. **We are running roughly a quarter of the winning economy and
+  spending the difference on fights we lose 17% of.**
+- **And the bar moved.** Our own teammate's active bot, `opp_v44`, **beats `aug7` — 40.8%
+  [32.5%, 49.8%] over 120 matches**, 0 crashes both sides, **38 `core_destroyed`**. Its version
+  names ("ammo-gunner", "gunners-before", "gunner-deadzone") say the line is **Gunner-focused**,
+  which sits directly against our own measured Sentinel-first result (68.4% [62.4%, 73.7%]).
+  That result was obtained against a **passive** opponent pool; v44 was evolved against live
+  ladder opponents. **`opp_v44` is therefore the primary confirm opponent from here on** — a
+  keep must clear the Wilson gate against it, with `aug7` retained for lineage attribution and
+  `starter`/`opp_v39` as no-collapse checks.
+- **Read:** the honest summary of this session's ladder position is that our accepted local
+  improvements are real and measured, and simultaneously our bot is no longer the strongest bot
+  on our own team. The single largest gap is not a bug — it is that we cap economy at 3
+  harvesters and cannot win a Core fight.
+
 ### Discard — wall-aware BFS pathfinding, and it is worst exactly where it should have been best
 
 - **Date:** 2026-08-08 · challenger `bots/ladder1`, baseline `bots/aug7` at `3cfa588`
