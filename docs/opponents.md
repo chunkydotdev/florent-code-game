@@ -92,20 +92,89 @@ is one game's worth of evidence rather than a confirmed pattern.
 
 - **Name / team:** Albert And Einstein
 - **Ladder position when observed:** outside our current ±5 ladder window; rated
-  ~1168–1249 across the times we played them (mostly above us).
-- **Opening:** Inconsistent between games. Replay `3209e6da` game 1 (`atoll`, a win for us)
-  shows a normal economy opening (harvester turn 4). Game 3 of the *same series* (`lighthouse`,
-  a fast loss for us, turn 102) shows an immediate launcher on turn 1 and a sentinel by turn
-  5. **Caution:** the rush game is the outlier, not their norm — across their other 4 series
-  against us (20 games, not replay-decoded, read from `fcode match info`), `core_destroyed`
-  never happened once. Don't generalize a turn-1 rush as their signature from one game.
-- **Signature behaviour:** None identified with confidence. Losses are spread across core
-  combat, harvester tiebreaks, and economy tiebreaks fairly evenly — reads as a broad-based
-  gap rather than one exploitable pattern.
-- **Where they're strong:** No specific phase stands out.
-- **Where they're exploitable:** Not identified.
-- **Our record against them:** 1W–4L series, 9W–16L games. Losing matchup, no single fix
-  visible from this sample.
+  ~1168–1249 across four earlier series (mostly above us). One new series decoded in full at a
+  considerably higher rating — **1306.8** vs our **1222.8** — 2026-08-06 ~12:47 UTC, match
+  `81d83bb5` (**0–5 blowout loss**, ELO −12.21, our first loss to a higher-rated team of this
+  size). Treat the two rating bands as possibly different bot versions on their side; see
+  Signature behaviour.
+- **Opening:** Two modes now confirmed, not one inconsistent mix as first thought. *Non-rush
+  mode* (their other 4 lower-rated series, 20 games, not replay-decoded): normal economy,
+  `core_destroyed` never happened once. *Rush mode*: first seen in one outlier game (replay
+  `3209e6da` game 3, `lighthouse`, immediate launcher turn 1 + sentinel by turn 5) and
+  originally written off as non-representative — **that caution turned out wrong.** All 5
+  games of match `81d83bb5` (decoded in full) show the identical opening, turn-for-turn:
+  **Builder Bot turn 0 → Launcher turn 1 → Sentinel(s) from turn 4–15.** The earlier "outlier"
+  and this new series are the same signature; it just wasn't their norm at the lower rating
+  band we'd mostly seen until now.
+- **Signature behaviour — the launcher-assisted builder rush [measured, high value, changes
+  our threat model]:** Their first Builder Bot (always entity id 3, spawned turn 0 next to
+  their own Core) takes one normal cardinal step, then in the same or next turn jumps **6–8
+  tiles in a single `moveBuilderBot` event** — impossible for ordinary movement (cardinal, 1
+  tile/round) — landing roughly halfway or more across the map. This lines up exactly with
+  their Launcher (built turn 1, ~4–5 tiles from *their own* Core in every game, never near
+  ours) picking up their own scout builder and throwing it. The builder then walks the rest of
+  the way normally and is camped **inside our Core's 12-tile spawn ring by turn 6–27**
+  depending on map size — see the Metagame note below, this is a mechanic we hadn't seen used
+  this way before. Once there, the *same single builder* (id 3 again, every game, never
+  rotated or replaced) camps for most or all of the remaining game — turns-occupied / game
+  length: **440/449 (98%) G1 `heart`, 628/641 (98%) G2 `nordkap`, 75/132 (57%) G3
+  `snowflake`, 77/125 (62%) G4 `hive`, 163/169 (96%) G5 `lighthouse`.** In G1, G2, G5 it's one
+  continuous streak from turn 6–9 to the Core's death; in G3/G4 (their two shortest games)
+  it's genuinely "circling" — many short streaks in and out rather than one block. Builder
+  investment is lean and identical every game: **exactly 4 builders, all spawned turns 0–3**,
+  none built after. Turret count: **3 Sentinels in 3 of 5 games** (matches what was flagged
+  from watching it live), 4 in G3, just 1 in G4 — all placed **1–4 tiles (manhattan) from our
+  Core**, all within the first 15 turns except G3/G4's later top-ups (turns 27–72). No Gunners,
+  ever.
+  **Verdict — sentinels killed us, not the blocker, every single time:** all 5 games ended
+  `core_destroyed` (0/5 ended on `titanium_collected`), so the blocker never got the chance to
+  decide a game on the economic tiebreak it's positioned to win — the Core always died first.
+  Net Core HP consumed to kill us was **502–512 in every game** (consistent with the existing
+  ~504–506 estimate), but the *raw* damage-event count behind that varies hugely — see the Core
+  HP metagame note below for why (short answer: we heal our own Core mid-siege). The blocker's
+  clearest effect is indirect, not a tiebreak win: our own defense only triggers once we hit 3
+  harvesters, and while G3/G5 show our first Sentinel landing within turns of hitting that
+  gate, **G1 and G2 show a massive delay** — gate met ~turn 28 (G1) / ~turn 22 (G2), first
+  Sentinel not until turn 436 (G1, +408 turns) / turn 81 (G2, +59 turns) — and **G4 never meets
+  the gate at all** (stuck at 1 harvester the entire game, 0 Sentinels built, 0 healing events,
+  the single enemy Sentinel landed all 28 of its hits clean, unmitigated). Whether that delay
+  is *caused* by the blocker tying up builders versus our own build-order simply
+  deprioritizing turrets isn't distinguished by this data — flagged as an open question, not a
+  conclusion.
+  **Also measured, worth its own line: our builders actively heal the Core under fire.**
+  `ct.heal()` events (+4 HP each, matches the documented rate exactly) land throughout the
+  siege in 4 of 5 games — G1: 297 heals offsetting 70% of incoming damage (1182 of 1692 raw),
+  G2: 79% offset, G5: 52% offset, G3: only 4% (barely engaged), G4: 0% (never engaged, matches
+  the "gate never opened" finding above). We still lose every time — Sentinel damage output
+  outpaces our max heal rate over a long enough siege — but this is real, active defense our
+  bot already performs that wasn't written down anywhere in our docs before this.
+  **One more anomaly, flagged but not root-caused:** `titanium_collected` read exactly 0–0 in
+  G1 and G4 despite both games building substantial economy (G1: 5 harvesters, 99 conveyors by
+  the end; G4: 79 conveyors). It's not that nothing moved — `distributeResources` events (a
+  resource-stack-hop counter, not previously decoded) fired 33 times in G1 and 12 in G4 — but
+  nothing ever completed the trip to the Core. **This is not the ring blocker's doing:** we
+  confirmed every Core-adjacent delivery tile (the 8 of the 12 ring tiles that touch the 2×2
+  footprint orthogonally) got a conveyor built on it, early, in every single game including
+  G1/G4, and the enemy builder was never on those specific tiles at the moment we built there.
+  G2/G3/G5 (comparable or higher ring occupancy) delivered 4000/290/760 titanium just fine.
+  Reads as a pre-existing dead-end-conveyor-chain fragility in **our own** bot, independent of
+  this opponent — real, worth a dedicated look, but out of scope for an opponent-pattern file;
+  belongs in strategy-log.md territory.
+  **Where we do not lose ground: the economy race itself.** In every game with a nonzero
+  reading, we collected as much or more titanium than they did (G2: 4000 vs 190, G3: 290 vs
+  290 tied, G5: 760 vs 400) — including G1, where they never built a single harvester the
+  entire 449-turn game and funded their whole rush off the 500 starting balance plus passive
+  income alone. This loss is a tempo/military problem, not an economic one.
+- **Where they're strong:** The rush, when they choose to run it — fast (turns 4–15 for first
+  Sentinel(s)), close (1–4 tiles from our Core), and backed by a spawn-ring blocker that ties
+  up our response for most or all of the game.
+- **Where they're exploitable:** Their entire rush runs on 4 builders and, in G1 at least, zero
+  economy on their side either — if our own defense actually landed on schedule when the
+  3-harvester gate opens (see the G1/G2 400-turn/59-turn delay above), we might catch the
+  Sentinels before the siege compounds. Untested as a deliberate change.
+- **Our record against them:** 1W–5L series (6 total, +1 loss from `81d83bb5`), 9W–21L games
+  (+0W–5L from this match). Losing matchup, now with a specific, repeatable mechanism
+  identified at the higher rating band — not just "a broad-based gap" as first read.
 
 ### Troupe
 
@@ -344,3 +413,77 @@ any replay where an opponent is team A on a map with a Core at the origin: if th
 `titanium_collected` is ~0, or their final balance is near passive-only (500 + 2.5/round), they
 have it. Worth checking specifically for **Pivot** — if the #1 team does *not* have it, how they
 publish the Core position tells us what a fixed bot looks like.
+
+### Launcher-assisted builder rush — a mechanic we hadn't seen used this way (2026-08-06)
+
+Measured in full across all 5 games of rated match `81d83bb5` (Albert And Einstein, rated
+1306.8 — full numbers under their opponent entry above). Their first Builder Bot makes one
+normal cardinal step, then jumps 6–8 tiles in a single `moveBuilderBot` event — impossible for
+ordinary movement — matching a Launcher built turn 1 next to *their own* Core picking up and
+throwing their own scout builder toward us. It then walks the rest of the way and is camped
+inside our Core's 12-tile spawn ring by turn 6–27, often for the rest of the game (96–98% of
+all turns in 3 of the 5 games, one continuous streak from turn ~8 to Core death in those three).
+**This defeats the "a large map buys us time" assumption for how fast an enemy builder can
+reach our base.** The mechanic itself is already documented in game-model.md (Launcher: pick up
+an adjacent Builder Bot, throw it within range) but we'd only ever considered it for combat
+utility — sabotage, denial, repositioning under fire — never as a turn-1 rush-delivery tool for
+a scout/blocker. Worth checking any future opponent that opens with a turn-1 Launcher built
+near *their own* Core (not ours) for the same pattern. So far this is one series against one
+team — flagged for pattern-watching across the rest of the field, not yet claimed as universal.
+
+### Core HP "fixed constant" note revisited — only holds when nobody is healing (2026-08-06)
+
+The `81d83bb5` series (Albert And Einstein, see above) complicates the earlier "every core kill
+lands in exactly 28 hits of −18, total −504" finding from the 2026-08-06 ladder-telemetry note.
+Net HP consumed to kill our Core across all 5 games of that series was still tightly banded
+(−510, −510, −502, −504, −512 — consistent with the ~504–506 estimate), but the *raw* count of
+damage events behind that ranged from 28 (game 4) to 136 (game 2) — because our own builders
+were actively healing the Core (`ct.heal()`, +4 HP each) in 4 of the 5 games, offsetting
+anywhere from 4% to 79% of incoming damage before eventually losing anyway. The clean "28 hits
+of −18" pattern holds only in the *unhealed* case — reconfirmed here in game 4, which shows
+zero heal events and exactly 28×−18 = −504. **Net Core HP-to-kill looks like the real constant;
+raw hit count does not, once healing is in play** — don't use hit count alone to estimate how
+long a siege lasted or how many turrets were involved without checking for interleaved heals.
+
+### Ladder sweep (2026-08-06, ~13:16 UTC)
+
+Fresh `fcode match list --mine --type ladder --json` / `--type unrated --json` pull, diffed
+against the previous sweep's cutoff (last completed match at the time of the notes above:
+2026-08-06T11:47:47Z rated / 2026-08-06T12:17:45Z unrated).
+
+**8 new rated series** completed since, in order: TKB (W 4–1, opp rated 998.6), Cookie (W 4–1,
+opp 1050.4), Cookie again (W 4–1, opp 1046.8), Troupe (W 4–1, opp 1214.5), **Kleos** (W 5–0, opp
+1238.3 — new opponent name, not previously logged here, flagging the name only, no write-up
+yet), **Albert And Einstein** (L 0–5, opp 1306.8 — match `81d83bb5`, the subject of this
+update), vjg (W 4–1, opp 1072.7), Leviathan (W 4–1, opp 1159.0). Net effect: the two wins
+immediately following the Albert And Einstein blowout (vjg, then Leviathan) recovered almost
+exactly the rating the blowout cost (1222.8 before that loss → 1221.2 now, three series later).
+
+**3 new unrated matches:** Pivot (L 0–5, `9436bd69` — consistent with the existing 63-loss
+pattern, now 64 of 64), sporks (L 0–5, new name, single sample, not investigated), not adgato
+(L 0–5, new name, single sample, not investigated).
+
+**Named watchlist, checked as requested:**
+- **Pivot** (#1, ~1947) — +1 unrated loss as above, nothing new in the pattern.
+- **HTTP 418** (~1713) — **zero matches against them so far**, rated or unrated. Presumably
+  outside pairing range on the rated ladder (they're ~1713, we're ~1221); unclear why they
+  haven't turned up in unrated scouting either given other high-rated teams have (Pivot,
+  Besvikomat 1789, The Flotte Experience 1752).
+- **StarTrekker** (~1207) — unrated count unchanged (still the single game already decoded,
+  match `eb72ce59`). But the *rated* ladder list shows **7 StarTrekker series** in the current
+  100-match window that hadn't been called out as a group before (separate from the one
+  unrated sample in the "Unrated scouting" note above) — not decoded, flagging for a future
+  pass, not analyzed here.
+- **1337** (~1248) — unchanged at 8 series in the current 100-match window, matches the
+  existing write-up exactly. Nothing new.
+
+**Mid-sweep note:** the active submission changed while this sweep was running — from **v40**
+("aug7-sentinel-economy", the version that played the `81d83bb5` match this whole update is
+about) to **v44** ("florent-v58", uploaded by x3r0 at 2026-08-06T13:00:45Z). Everything dated
+2026-08-06 in this file up to and including this sweep describes v40's play; results from here
+on reflect a different, newer bot.
+
+Fresh `fcode status` snapshot, captured 2026-08-06 13:16:55 UTC (`date -u`): rating **1221.23**,
+rank **#50 of 103**, **105** matches played, last-10 record **5W–5L** (per `status`; see the
+earlier note in this file on why that specific figure has been unreliable before — not
+re-verified this pass).
