@@ -36,6 +36,7 @@ and no submissions. That's the only remaining blocker; everything else is unbloc
 | [docs/opponents.md](docs/opponents.md) | Patterns we observe in other players' bots. |
 | [docs/open-questions.md](docs/open-questions.md) | What we still don't know, and how to find out. |
 | [docs/reference/](docs/reference/) | Verbatim scrape of all 23 official docs pages and 24 tutorial steps, plus the scraper. |
+| [program.md](program.md) | Protocol for running the bot-improvement loop unattended. |
 
 `AGENTS.md` (and its copy `CLAUDE.md`) is the organisers' own context file for AI coding
 tools, taken verbatim from `docs/agents-md`. It's the most compact accurate summary of the

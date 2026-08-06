@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 replay*.replay26
 *.replay26
+results.tsv
