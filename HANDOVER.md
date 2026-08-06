@@ -133,7 +133,11 @@ Everything we shipped on their base stays credited to their engine.
   no confound (opponent-pool shift, teammate activations) → **roll back**
   (`.venv/bin/fcode submission activate <previous>`, Magnus runs it) and log the reversal on
   both tapes. v47's baseline: **1383 @ 132 matches**.
-- **The Elo logger monitor dies with its session — re-arm it** (5-min poll of `fcode status`).
+- **The Elo logger monitor dies with its session — re-arm it** (5-min poll of `fcode status`),
+  **and include the second watch (Magnus, 2026-08-06): poll `fcode submission list` in the same
+  loop and notify on any NEW team upload** — x3r0/Jimmy76/Mr.Smith submitting matters twice
+  over: submissions may auto-activate (v47 did), and a stronger teammate bot moves the primary
+  gate per the standing norm.
   Session-9 note on a hazard this created: a **concurrent session** (the one that introduced
   `elo_history.tsv`, commit `bc583e0`) had its logging monitor live at the same time as this
   session's notify-only watcher. Both saw the 1383 → 1397 tick; only one wrote it, which is the
