@@ -5,6 +5,33 @@ Same shape: an agent edits one file, measures against a fixed harness, keeps or 
 repeats unattended. The structure carries over directly. **The accept rule does not** — see
 "Why the accept rule is different" below, which is the whole reason this file isn't a copy.
 
+## Who runs this — model tiering
+
+The loop is deliberately harness-gated: the arena and the Wilson accept rule do the judging,
+so the runner needs competence, not brilliance. Run it on the cheap tier by default and spend
+the expensive tier only where judgment actually lives.
+
+- **Sonnet — the default runner.** The whole loop: pick one hypothesis (strategy-notes and
+  open-questions first), edit `bots/<tag>`, screen, confirm, log. Also the pre-written
+  probe experiments in open-questions.md, and runbook §1 when approval lands.
+- **Haiku — mechanical re-runs only.** Recalibration probe/arena re-runs (runbook §2),
+  reporting numbers verbatim. Not for editing bot code.
+- **Fable/Opus — on triggers, sparingly.** (1) A result that surprises or contradicts
+  game-model.md — per the log's own rule, that's a fact to be understood, not a tweak.
+  (2) Designing a new experiment methodology. (3) Any change to the harness, maps,
+  program.md, or frozen bot versions — also permission-blocked for everyone in
+  `.claude/settings.json`; changes go through Magnus. (4) The every-~10-accepts incumbent
+  audit (winner's-curse retest below). (5) Post-approval pool census interpretation and any
+  strategy re-derivation after a rules diff.
+
+**Escalation triggers — stop the loop and report rather than improvise:** the baseline
+sanity check fails; the harness or maps look wrong; 20+ consecutive no-accepts; a result
+contradicts game-model.md; the task needs a protected file edited.
+
+**Session hygiene for cheap runs:** one session per run tag; arena output goes to a file and
+only the printed summary is read back (never full match logs into context); results.tsv is
+append-only tape — never rewrite history.
+
 ## Setup
 
 1. **Agree a run tag** with the human — e.g. `aug6`. The branch `research/<tag>` must not
@@ -33,6 +60,8 @@ composition, build order — all fair game.
 If the harness or the maps look wrong, **stop and report it to the human**. Do not fix them
 mid-run. An agent that can edit its own scoreboard will, eventually and without meaning to,
 optimise the scoreboard instead of the bot. This is the single most important rule here.
+(As of 2026-08-06 it is also mechanically enforced: `.claude/settings.json` denies Edit/Write
+on the harness, maps, starter, frozen `bots/v*`, probe bots, and this file.)
 
 **Never** weaken a test to make a change pass.
 

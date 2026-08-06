@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(tools/arena.py)",
+      "Write(tools/arena.py)",
+      "Edit(tools/make_map.py)",
+      "Write(tools/make_map.py)",
+      "Edit(maps/**)",
+      "Write(maps/**)",
+      "Edit(bots/starter/**)",
+      "Write(bots/starter/**)",
+      "Edit(bots/v*/**)",
+      "Write(bots/v*/**)",
+      "Edit(bots/probe_*/**)",
+      "Write(bots/probe_*/**)",
+      "Edit(program.md)",
+      "Write(program.md)"
+    ]
+  }
+}
