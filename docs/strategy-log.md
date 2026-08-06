@@ -30,6 +30,53 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Session 8 — stage 2 executed: the bug that was never strategy, and a 63.3% ship candidate
+
+- **Date:** 2026-08-08 (session 8; wall clock still 2026-08-06 — the one-day label skew stands) ·
+  base `bots/v63guard` (= live submission **v46 "v63guard-tle-armor"**, activated by Magnus, team
+  rating 1310 → ~1377 during the session), gate `bots/opp_v45`, all gates 480 matches
+- **Stage 1 confirmation:** the real-hardware `fcode match test` TLE validation passed (tape row:
+  5-0 vs starter on the 5 heaviest maps) and v46 is the active ladder bot, 10-0 in its first ten.
+- **Four components gated separately vs pristine `opp_v45`, one at a time:**
+  1. **Crash armor** (`bots/_v63armor`, top-level try/except): **exactly 240-240 and 16/32 on all
+     15 maps** — the inertness fingerprint; kept on the insurance precedent. **keep**
+  2. **Launcher wake-up** (`bots/_v63launch`, two edits: v58's `_try_build_launcher` call site
+     restored, recruit gate `role_n >= 5 → 3`): 53.3% pooled, **eider swept 32/32, every other
+     map dead 16/32**. Diagnostic replay: the payoff was NOT the insertion throw — the round-8
+     Launcher **exiles the enemy's opening saboteur** (defensive throw, round 10). **keep**
+  3. **Trail-linked facing port** (`bots/_v63face`, our accepted outward-pave rule on their
+     expander walk): **refuted 31.7% [27.7%, 36.0%]** — 0/32 on five maps, inert elsewhere.
+     The rebuilt cycle census was clean (0 cycles in 306) but showed **+65% relay spend**: the
+     mechanism that bought our line 58.5% transplants our overspend weakness onto their lean
+     economy. Their inward-only pave + BFS-planned links is correct for their base. **discard**
+  4. **Map-table refresh** (`bots/_v63maps`, entries for eider/heart/meander/drumlin/saga):
+     **63.3% [58.9%, 67.5%] — the largest accept ever measured against a gate this strong.**
+     32/32 both seats on drumlin, eider, heart, saga. **keep**
+- **The load-bearing discovery (subagent equivariance audit): v63's hardcoded map tables predate
+  the current weekly rotation.** Five pool maps have no entry → `known_map_for` returns None →
+  `_plan_siege` (their primary attack) silently disabled on 5 of 15 maps. This one fact explains:
+  the **heart zero-harvester-as-B defect** (fixed at the root: 1 building/0 mined → 75
+  buildings/2450 mined), the **eider launcher sweep** (base can't siege there, games decay to
+  tiebreaks where our exile-defense wins), and part of the v63 line's map-shape variance.
+  **Weekly-rotation corollary now in the runbook: refresh embedded map tables at every cutover.**
+- **fjordgate diagnosed (subagent, both seeds reproduce):** on the 10×10 the absolute threat
+  radii cover the opponent's normal opening area; economy-ungated `_try_counterbattery` spends
+  the bank on Sentinels aimed at transient spawn tiles by round 6, then the home-gun ammo policy
+  (`ti_floor` → 12) converts all income to ammo forever — **0 harvesters in 255 rounds.** We win
+  26/32 there because at core separation d²=32 our defensive sentinel ring reaches their core.
+  Fix named: mirror the siege path's ECO_NEED gate onto `_try_counterbattery`. Top of next queue.
+- **Ship candidate: `bots/_v63full`** = v63guard + armor + launcher + maps. Ship gate **63.3%
+  [58.9%, 67.5%]**, identical to maps alone (launcher's eider win subsumed; armor inert), 0
+  crashes anywhere. Rush stress on the integrated line: 80.0% vs `rush_probe_fast` against the
+  base's 82.1% — no regression, and **the v63 line concedes half what our lineage does to a
+  competent rush** (their 82% vs our 60-64%, same frozen probe). No-collapse guards in flight at
+  write time; numbers on the tape.
+- **Read:** the biggest wins of the base-switch era are correctness-at-the-seams (stale tables,
+  dead subsystems), not strategy. Both decisive finds came from reading their source against the
+  current pool, not from matches — and both were found by delegated read-only audits.
+- **Next:** counterbattery ECO_NEED gate; launchwait flip-flop wart (r180-199); meander (table
+  entry does no harm but siege doesn't convert it); mirror seat table on the new base still unrun.
+
 ### The gate moved out from under us, and the honest endgame is a base switch
 
 - **Date:** 2026-08-08 (session 7), late · challenger `bots/ladder1` / `bots/_pkg45`, new primary

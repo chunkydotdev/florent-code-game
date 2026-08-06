@@ -836,6 +836,22 @@ zero-harvester-as-B defect is this bug** — with refreshed tables (bots/_v63map
 **eider** precisely because the base cannot siege there, so games decay to economy tiebreaks.
 Corollary: **this table refresh must recur at every weekly pool cutover** (runbook step added).
 
+**The fjordgate collapse, diagnosed (2026-08-06, subagent + 2 instrumented matches, both seeds
+reproduce).** On the 10x10 (core anchors d²=32 apart — closest pair in the pool), v63's
+threat-response complex misfires on opening noise and bankrupts itself pre-income: the core marks
+`under` for any enemy builder within d²≤16 (`opp_v45:254-257`) — which covers ordinary spawn-ring
+tiles here; the melee-recall gate (`opp_v45:546-558`, d²≤25/20) keeps the saboteur home, where
+`_home_defend` runs **`_try_counterbattery` (`opp_v45:844-883`), which unlike `_plan_siege` has
+no forward-gun cap and no economy gate** — it built 3 fixed-facing Sentinels by round 6 aimed at
+*transient builder spawn tiles*, and with 5 builder spawns the bank hit ~12 Ti before the first
+harvester. Permanent: any home gun makes `weapons` truthy, dropping `ti_floor` to 12
+(`opp_v45:293-294`), so all income above the floor converts to ammo forever — seed 1 ends 255
+rounds at **0 harvesters, 0 mined, ti = exactly 12**. Our line wins 26/32 there because our
+near-core sentinel ring (r²=32, unblockable) reaches their core footprint at this separation —
+home defense doubles as a siege battery. **Fix target, next queue: mirror `opp_v45:674`'s
+ECO_NEED gate onto `_try_counterbattery`, and stop writing builder positions into SLOT_THREAT
+for fixed-facing turret aiming (`opp_v45:254,257`).** Radii scaling by map size is the deeper fix.
+
 **Equivariance audit summary (same pass; full detail in the session transcript).** Ranked
 per-seat asymmetry risks on mirrored maps: (1) the **nordkap one-seat gate cluster**
 (`opp_v45:307-308,448-451,925-928`, all keyed to core `(9,6)` with no `(9,18)` twin — different
