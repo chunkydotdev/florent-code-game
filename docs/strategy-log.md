@@ -30,6 +30,92 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### v4 — full direction-neutralisation: the fairness fix turned out to be a strength fix
+
+- **Date:** 2026-08-06 · **Not yet submitted** (no platform account) · **Current best**
+- **Hypothesis:** v3's ring spawn removed only part of the measured seat bias (mid20 mirror
+  0/32 → 28%, not 50%); carrying over the rest of probe_neutral's neutralisations — randomised
+  movement tie-break, randomised ore-scan tie-break, shuffled build/heal scans — should finish
+  the job. Expected mostly a fairness change, neutral-to-slightly-positive on win rate.
+- **Change:** v2's CPU guard + the complete neutralisation set from probe_neutral. One
+  conceptual change vs v3: "remove the remaining absolute-direction tie-breaks".
+- **Result:**
+  - **vs v3: 60.9%, CI [54.8%, 66.7%], 256 matches — clears the accept gate outright.**
+  - vs starter: **74.2%, CI [68.5%, 79.2%]** (v1 was 59.4%), 0 crashes vs 535, tiny8 32/32.
+  - Mirror seat split: mid20 53.1%, small12 46.9% — **fair**. tiny8 84.4% — engine effect,
+    expected, unfixable.
+- **Read:** the surprise is the raw strength gain. Best explanation: v1's fixed tie-breaks
+  made every builder chase the *same* first-enumerated target, colliding and shadowing each
+  other; randomising de-correlates them into better map coverage. (Also: on biased maps, half
+  of all games were previously started from the handicapped seat.) A fairness argument found
+  a play-quality bug — absolute-direction habits were costing games everywhere, invisibly.
+- **Next:** v4 is the submission candidate. On approval: re-baseline on the real pool before
+  any tuning (runbook.md).
+
+### v3 — full-ring spawn only: the decomposition step
+
+- **Date:** 2026-08-06 · superseded by v4 the same day
+- **Hypothesis:** the NW-corner spawn scan is the dominant cause of the seat wipeouts.
+- **Change:** v2 + spawn candidates = whole 12-tile ring (random choice), nothing else.
+- **Result:** mirror mid20 seat A 0/32 → **28.1%** [16%, 45%] — most of the wipeout, not all
+  of it. vs v2: 52.0% [45.8%, 58.0%], no-verdict (expected: the fix only pays on the map
+  class that exposes the handicap). 0 crashes.
+- **Read:** ring spawn is necessary but not sufficient; the residual bias lives in the other
+  absolute-direction tie-breaks. Kept only as the attribution step for v4.
+
+### Experiment — seat bias dissected: it was mostly us, and partly the engine
+
+- **Date:** 2026-08-06 · `bots/probe_neutral` (v1 with every absolute-direction bias removed)
+- **Design:** if the seat-A wipeouts survive direction-neutralisation in a mirror, they're
+  the engine's; if they vanish, they were ours.
+- **Result (mirror, 32 matches/map):** mid20 0/32 → **53.1%** and small12 → 46.9% — *ours*.
+  tiny8 → **78.1% [61%, 89%] seat-A**, confirmed at 84.4% in the v4 mirror — *the engine's*:
+  a genuine first-mover advantage on the 8×8 map that survives full neutralisation.
+- **Mechanism found on the way:** `get_position()` is the Core footprint's NW corner, so the
+  starter bot's `pos.add(d)` spawn scan reaches only the N/W sides of the legal 12-tile ring
+  (`bots/probe_spawn`, tile-by-tile). One seat spawned toward the map corner, the other
+  toward the centre, every game.
+- **What this changes:** (1) absolute-direction habits are a class of bug, not a style choice
+  — audit for them; (2) on tight maps, seat draw is real regardless of bot quality → find out
+  how the ladder assigns seats within a best-of-five; (3) our mirror-fairness check (arena
+  per-map seat split) is now a standing regression test for reintroduced direction bias.
+
+### Experiment — titanium is credited on Core delivery, and only then
+
+- **Date:** 2026-08-06 · `bots/probe_credit` / `probe_credit_nc` / `probe_idle`
+- **Design:** one harvester + one dead-end conveyor (facing away from the core, output onto
+  empty ground / off-map), then idle; core logs the balance every round. NC variant: no
+  conveyor at all. Passive-only slope is 2.5 Ti/round; a credited harvester would add 2.5.
+- **Result:** both variants, 990+ rounds: balance slope **exactly 2.500**,
+  `a_titanium_collected` **0**. A dead-end chain and no chain are *identical*: zero.
+- **Read:** **"titanium collected" = titanium delivered to the Core.** The tiebreak-#1
+  counter and the spendable balance both move only on delivery. An unrouted harvester
+  contributes nothing to tiebreak #1 or #3 and no income — it pads tiebreak #2 (harvester
+  count) while costing 20 Ti and +5% permanent scale. Chain completion isn't an optimisation,
+  it's the whole game. This also closes the loop on the starter bot's economics: its walking
+  trails of toward-core conveyors evidently do deliver (balance reconciliation matches), so
+  hypothesis (c) from open-questions held.
+- **Aside, measured:** `can_build_conveyor()` permits a facing whose output is off-map.
+
+### v2 — CPU-budget guard: bail at phase boundaries, not mid-statement
+
+- **Date:** 2026-08-06 · **Not yet submitted** (no platform account)
+- **Hypothesis:** exceeding 10 ms CPU silently truncates the unit's round mid-statement —
+  wasted round, possibly half-updated instance state. v1 never approaches the limit locally,
+  so the guard should be inert here; its value is ladder hardware (Graviton3, unknown relative
+  speed) and future heavier strategy code. Predicted before measuring: no local effect,
+  vs v1 reads no-verdict ≈50%.
+- **Change:** `_cpu_exhausted()` checks `get_cpu_time_elapsed()` ≥ 8000 µs between builder
+  phases (priority: build > heal > move > share); first trip per unit reported to stderr.
+  Nothing else.
+- **Result:** vs v1: **52.0%, CI [45.8%, 58.0%]**, 256 matches, no-verdict — as predicted.
+  vs starter: 56.6% [50.5%, 62.6%] (v1's edge retained). 0 crashes. Guard confirmed never to
+  trip locally (zero CPU-GUARD lines across a full instrumented match).
+- **Read / rule note:** program.md's gate (lower bound > 50%) is for changes claiming to
+  improve play; applied to insurance changes it would auto-discard all of them. Accept rule
+  used here, stated in advance: keep unless refuted (upper bound < 50%) or crashes appear.
+  Deliberate, documented deviation — not a precedent for strategy changes.
+
 ### v1 — robustness only: don't let units delete themselves
 
 - **Date:** 2026-08-06 · **Not yet submitted** (no platform account)

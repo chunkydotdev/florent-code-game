@@ -50,6 +50,12 @@ methods raise `GameError` when illegal.
 - **Turn order:** every living unit runs in **spawn order** — the Core always acts first.
   Resource changes made by one unit are **immediately visible** to the next unit that acts
   within the same round. (The comms Store is the exception — see below.)
+- **Team A (first mover) has a real engine-level advantage on very small maps [measured].**
+  With a fully direction-neutral bot in a mirror match, seat A won 78% [61%, 89%] on the
+  8×8 map, while 12×12 and up were fair once bot-side direction bias was removed
+  (2026-08-06, `bots/probe_neutral`). Mechanism unproven; consistent with same-round races
+  for contested tiles being decided by act order. Implication: on tight maps, seat draw
+  matters independently of skill — check how the ladder assigns seats within a best-of-five.
 - **Tiles:** `EMPTY` (traversable), `WALL` (impassable, blocks LOS), `ORE_TITANIUM`
   (traversable, Harvester-buildable).
 - **Series:** ladder matches are **best-of-five**. All five games always play to completion.
@@ -59,7 +65,8 @@ methods raise `GameError` when illegal.
 Destroy the opponent's Core. Losing your Core ends the match immediately.
 
 If neither Core dies by round 1000, tiebreakers in order:
-1. most titanium **collected**
+1. most titanium **collected** — and collected means **delivered to the Core [measured]**;
+   see Resource flow below
 2. most **harvesters**
 3. most titanium **stored**
 4. coin flip
@@ -95,8 +102,21 @@ units (harvesters, conveyors, splitters, barriers) don't count and consume no CP
 | HP | 500 |
 | Footprint | 2×2 tiles |
 | Vision r² | 36 |
-| Spawn range r² | 2 (adjacent ring incl. diagonals, not the footprint) |
+| Spawn tiles | the 12-tile ring around the footprint **[measured]** |
 
+- `ct.get_position()` returns the **NW corner tile** of the 2×2 footprint **[measured]**.
+- **Spawnable tiles are exactly the 12-tile ring around the footprint** — every tile
+  orthogonally or diagonally adjacent to any footprint tile, nothing else. Verified
+  tile-by-tile with `can_spawn()` on 2026-08-06 (`bots/probe_spawn`) **[measured]**. This
+  resolves the docs contradiction: r²=2 (rules page) measures from the *nearest footprint
+  tile*, sqrt(8) (agents-md) is the distance from the *position corner* to the far ring
+  corner. Neither is a radius rule — tiles at d²≤8 from the position that aren't ring tiles
+  (e.g. two straight north of the corner) are rejected.
+- **Trap:** scanning `pos.add(d)` over the 8 directions (the starter bot) reaches only 5 of
+  the 12 legal tiles, and `get_nearby_tiles(dist_sq=2)` (every tutorial) only 6 — all on the
+  N/W sides, because position is the NW corner. That is an absolutely oriented spawn set; it
+  handed entire maps to one seat until fixed (see strategy-log 2026-08-06). Enumerate
+  `get_nearby_tiles(dist_sq=8)` filtered by `can_spawn()` instead.
 - Stationary. Cannot move or attack. Cannot be rebuilt.
 - Its footprint is **never bot-passable, not even to its own team**.
 - Abilities: spawn Builder Bots, convert ammo.
@@ -210,6 +230,13 @@ turrets never hold or accept resources.
 
 Resources can be pushed onto an **opposing team's** conveyor network or Core — so a badly
 aimed chain can feed the enemy, and their network is in principle divertible.
+
+**Crediting is delivery-only [measured 2026-08-06, `bots/probe_credit`]:** the team balance
+and the `titanium_collected` tiebreak counter move **only when titanium reaches the Core**.
+A harvester with no acceptor produces nothing, and a harvester feeding a dead-end conveyor
+chain contributes exactly as much — zero, over 990 measured rounds — while still costing its
+20 Ti and +5% permanent scale. Unfinished chains are pure cost. (Also measured:
+`can_build_conveyor()` permits a facing whose output points off the map.)
 
 ## Economy
 

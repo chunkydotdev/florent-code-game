@@ -22,12 +22,16 @@ Full details in [docs/game-model.md](docs/game-model.md).
 
 Project scaffolded and **running matches locally**. `fcode` 2.3.6 installed in `.venv`
 (Python 3.13), starter bot at `bots/starter/main.py` (kept pristine as the reference opponent), eight
-self-generated maps in `maps/`. Current best bot is **`bots/v1`** — 59.4% against starter
-over 256 matches.
+self-generated maps in `maps/`. Current best bot is **`bots/v4`** — **74.2%** [68.5%, 79.2%]
+against starter over 256 matches, zero crashes, and mirror-fair on the maps where earlier
+versions auto-lost one seat. Lineage: v1 crash guard → v2 CPU guard → v3 ring spawn → v4
+full direction-neutralisation ([docs/strategy-log.md](docs/strategy-log.md)).
 
-**Not yet registered on the platform** — no account, so no ladder matches, no real map pool,
-and no submissions. That's the only remaining blocker; everything else is unblocked, because
-`tools/make_map.py` generates `.map26` maps offline (see [docs/tooling.md](docs/tooling.md)).
+**Not yet registered on the platform** — application submitted, awaiting approval. No account
+means no ladder, no real map pool, no submissions; it's the only blocker. The organisers have
+also announced the **map pool changed (hidden until the tournament), possibly other variables
+too** — [docs/runbook.md](docs/runbook.md) is the checklist for approval day and for absorbing
+rule changes. Everything accepted so far is distribution-independent by design.
 
 ## Docs
 
@@ -36,7 +40,8 @@ and no submissions. That's the only remaining blocker; everything else is unbloc
 | [docs/game-model.md](docs/game-model.md) | Ground truth: rules, API, costs, limits. Facts only. |
 | [docs/strategy-notes.md](docs/strategy-notes.md) | Derived analysis — the arithmetic on those facts, and what it implies. |
 | [docs/strategy-log.md](docs/strategy-log.md) | One entry per bot version: what changed, what the ladder did. |
-| [docs/tooling.md](docs/tooling.md) | Local setup, offline map generation, reading `print()` from replays. |
+| [docs/tooling.md](docs/tooling.md) | Local setup, offline map generation, probe bots, reading `print()` from replays. |
+| [docs/runbook.md](docs/runbook.md) | Approval-day checklist and the rules-change recalibration procedure. |
 | [docs/opponents.md](docs/opponents.md) | Patterns we observe in other players' bots. |
 | [docs/open-questions.md](docs/open-questions.md) | What we still don't know, and how to find out. |
 | [docs/reference/](docs/reference/) | Verbatim scrape of all 23 official docs pages and 24 tutorial steps, plus the scraper. |

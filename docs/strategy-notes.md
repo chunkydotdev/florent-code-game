@@ -63,6 +63,12 @@ dramatically more than distant ore.
 "shortest delivery path per harvester". Rank ore by chain length, not by distance to the bot
 that happened to see it.
 
+**Upgraded from derivation to measurement (2026-08-06):** crediting is delivery-only — a
+harvester with an incomplete chain earns zero balance and zero tiebreak-#1 credit for as long
+as the chain stays incomplete (game-model.md, `bots/probe_credit`). "Build the harvester,
+sort out routing later" is not a partial win; it is pure cost until the last conveyor closes
+the path to the Core.
+
 ## Cost scale is a budget we spend, not a clock — and Builder Bots are the expensive part
 
 Scale is **additive per entity built** and **decreases when entities are destroyed**:
@@ -150,6 +156,22 @@ opening" and "large map opening" as separate strategies rather than tuning one c
   checks `ct.get_cpu_time_elapsed()` and bails out gracefully degrades instead of failing.
 - **Always `--tle 10` locally.** `fcode run` does *not* enforce the time limit by default, so
   local matches will happily run code that dies on the ladder.
+
+## Absolute-direction habits are bugs, and de-correlating builders wins games
+
+Measured 2026-08-06 (strategy-log): removing every absolute-direction tie-break from the
+starter lineage — full-ring spawn, randomised movement tie-break, randomised ore-tie choice,
+shuffled build/heal scans — didn't just make the biased maps fair, it beat the
+ring-spawn-only version **60.9% [54.8%, 66.7%]**. Fixed tie-breaks sent every builder to the
+same first-enumerated target, colliding and shadowing each other; randomisation spreads them
+for free. Corollaries:
+
+- Any new logic that iterates tiles or directions in a fixed order and takes the first hit is
+  suspect. Break ties randomly, or by an explicit seat-symmetric criterion.
+- The arena's per-map **mirror seat split is the standing regression test** for this bug class.
+- On 8×8, seat A wins ~4 in 5 no matter what we do (engine turn order, measured with a fully
+  neutral bot). Small-map strategy should *assume* the seat, not fight it — and how the ladder
+  assigns seats within a best-of-five is now a first-order platform question.
 
 ## Underused API surface
 

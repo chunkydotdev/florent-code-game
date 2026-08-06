@@ -96,3 +96,21 @@ That last point is load-bearing. Seat A goes 0/16 on three of our six maps and ~
 other three; the pooled average reads ~21%, which describes none of them. Any evaluation run
 on one seat ordering, or summarised pooled, will produce confident nonsense. See
 [strategy-log.md](strategy-log.md) for the measurement.
+
+## Probe bots
+
+Throwaway single-question bots, kept in `bots/` because the recalibration checklist
+([runbook.md](runbook.md)) re-runs them whenever the organisers change anything:
+
+- **`probe_spawn`** — logs `can_spawn()` over every tile near the Core at round 0, then
+  resigns. Settled the spawn-ring geometry; re-verifies it plus starting titanium in seconds.
+- **`probe_neutral`** — v1 with every absolute-direction bias removed. Mirror it through
+  arena.py to measure *engine-side* seat effects with bot bias excluded.
+- **`probe_credit` / `probe_credit_nc` / `probe_idle`** — one harvester plus one dead-end
+  conveyor (or none), against a do-nothing opponent, with the core logging the balance every
+  round. Settled delivery-only crediting.
+
+Gotcha discovered writing them: **Python's `random` is not seeded by `--seed`** — two runs of
+the same command diverge. arena.py's many-match design absorbs this; a single probe run that
+depends on exploration may need a retry (probe_credit walks to the map centre until ore is
+visible for this reason).
