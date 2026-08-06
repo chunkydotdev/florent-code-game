@@ -173,6 +173,41 @@ for free. Corollaries:
   neutral bot). Small-map strategy should *assume* the seat, not fight it — and how the ladder
   assigns seats within a best-of-five is now a first-order platform question.
 
+## Borrowing from the RTS canon — what translates, and what doesn't
+
+The 1306-rated ladder loss (2026-08-08, see opponents.md) was proxy-cannon-rush 101: static
+weapons built in our base plus a worker body-blocking ours. Classic RTS theory maps well onto
+this game — but every tactic must be re-derived from these mechanics, not imported on vibes.
+Ranked by leverage-per-effort given where we are:
+
+- **Scouting buys the timing information everything else needs.** Fog is real and vision
+  radii are small (builder r²=20). One early builder pass toward the enemy Core costs only
+  builder-rounds — zero titanium, zero scale tax — and converts "reactive defense" from a
+  guess into a trigger. The field (starter-lineage) does not scout deliberately at all.
+- **Wall-offs exist and nobody uses them.** Barriers: 3 Ti, +1% scale, block movement AND
+  line of sight, and the starter lineage never builds one. Choke-blocking on the wally maps,
+  and ring-adjacent placement against blocker builders, is the cheapest counter to everything
+  we saw in that loss. (A barrier also blocks a Gunner's ray — though not a Sentinel's.)
+- **Fixed facings make every contain leaky — theirs and ours.** Sentinels can never rotate.
+  A sentinel contain has permanent blind angles: approach off-axis and it's furniture. The
+  same discipline applies to our placement: cover chokes and harvest lines deliberately,
+  don't just "face outward from the Core". This is *better* than StarCraft, where turrets turn.
+- **Timing windows are computable per map.** The earliest possible enemy-sentinel-at-our-Core
+  round is a function of Core separation and walk distance — an offline calculation per map.
+  Defense triggers should key on that calendar and on scout sightings, not on our own
+  harvester count (which is what the current bot does, and what the rush punished).
+- **Worker harass economics we already derived:** heal (0.25 Ti/HP) beats chip damage, so
+  sabotage only pays against undefended infrastructure — but the *threat* of harass forces
+  the opponent to park healers, which is pure opportunity cost. One cheap menacing builder
+  can tax an economy without ever firing.
+- **The Launcher is mobility tech.** Throw range r²=26 moves a builder ~5 tiles in one
+  action: fast expansion, surprise placement, and the clean answer to blocker builders
+  (pick up an adjacent enemy builder — it works on either team — and yeet it).
+- **What does NOT translate:** there is no unit micro (builders cannot attack units; turrets
+  cannot move), so combat is placement geometry, not battles; there is no supply — the
+  cost-scale tax is the real macro constraint and it has no StarCraft analog; and there is no
+  detection layer or air. Import the strategic layer, never the tactical one.
+
 ## Underused API surface
 
 Things the tutorials never touch, all plausibly worth exploiting:
