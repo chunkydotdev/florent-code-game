@@ -88,8 +88,11 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
 
 ## Platform / competition
 
-- [ ] What are the **prize categories**? €20K is split among "category winners", so raw ladder
-      rank may not be the only thing being rewarded — this could change what we optimise for.
+- [x] ~~What are the **prize categories**?~~ **Raw Elo** (confirmed by Magnus 2026-08-06,
+      post-approval). Nothing to redirect: ladder rating is the single optimisation target.
+      Fractional-series scoring (a 5-0 moves rating ~2.5× a 3-2) means consistency across
+      the whole 15-map rotation beats peak performance on a subset — which is exactly what
+      the accept gate already selects for.
 - [ ] **Team size limits** — solo entry or do we need teammates? (`fcode team` and a
       `/team/join` route both exist, so teams are a first-class concept.)
 - [ ] Qualification cutoff and dates for the Stockholm finals (top 16 qualify).
