@@ -30,6 +30,64 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Session 10 — the night x3r0 shipped three bots, and the mirror table came up all-lottery
+
+- **Date:** 2026-08-09/10 (session 10; wall clock 2026-08-06 evening) · bases `bots/v6`
+  (= `_v64cbA`, live as platform v48 at session start) then the `_v65*`/`_v66*` family ·
+  gates `opp_v45` → `opp_v49` → `opp_v50` as x3r0 kept shipping
+- **Ladder:** v48 went 1383 → 1421 over 3 matches (its "Last 10: 3W 7L" scare was unrated
+  test games polluting the platform stat, not losses). Then x3r0's test window: platform
+  v49 (18:17), v50 (18:48, active, ~1461 @ 140). Teammate window = named confound, no
+  regression reasoning applies.
+
+**Five gated changes measured, three kept, one refuted, one held:**
+
+1. **`_v65lw` (KEEP):** `LAUNCH_GIVEUP_RND = 180` — the r180 give-up / r<200 re-recruit
+   flip-flop made the give-up dead code. Flat on all three non-mirror instruments
+   (97.9 / 99.2 / 96.7), 0 crashes. Correctness at zero cost.
+2. **`_v65sb` (KEEP):** `LAUNCH_STALL_RNDS = 36` per-unit launchwait progress bound +
+   12-round re-recruit block (audit: a waiter recruited at r12 could idle to r180, or
+   forever in matches decided earlier — and matches ARE decided earlier). Flat-to-up
+   (98.8 / 99.2 / 97.1). Zero-gain vs x3r0's engine (58.8% unchanged, per-map identical):
+   insertions rarely resolve there, so the fix pays vs third parties, not him.
+3. **`_v66mA` (REFUTED):** global melee-before-repair (ported from his v49's `_saboteur`
+   reorder). Drumlin 0→16/32 but hive sweep lost (32→16), moonrise handed over (16→0),
+   eider dented: 55.4% vs baseline 58.8%. **Repair-first is load-bearing on denser maps.**
+4. **`_v66mB` (KEEP, = `bots/v7`):** the same reorder wall-gated to <1.5% wall fraction —
+   only drumlin (0.64%) qualifies; next is meander (2.13%). vs v49: **62.1% [57.7, 66.3]**,
+   exactly baseline + the predicted drumlin dividend, all sweeps intact. vs v50 (shipped an
+   hour later): **56.7% [52.2, 61.0]** — his v50 re-took drumlin, lighthouse fell to us.
+   Guards 97.5 / 100.0 / 97.5. **Frozen as v7 by Magnus, awaiting submit.**
+5. **`_v66eq` (HOLD):** rotation-equivariant `_plan_siege` tie-break (raw x,y ties → map-
+   center then own-core distance). Sanity-proven on synthetic mirrors (old key near-reversed
+   tie blocks; non-lead engineers drew from the wrong end). vs v50: 58.8 vs 56.7,
+   overlapping, per-map churn (+drumlin +snowflake −lighthouse −eider). Held as base for
+   finishing the set: spawn-ring sort (:409), spawn-dispersion hash (:412, a coordinate
+   hash as PRIMARY key), ore partition (:1421).
+
+**The structural finding — queue item 4 finally ran.** `_v66mB` self-play, 480 matches:
+**every one of the 15 maps is fully seat-decided** (9 to seat B, which rules out first-mover
+advantage as the cause — our own asymmetries decide). `_v66eq`'s mirror: still 15/15
+seat-decided, heart flipped direction. Under a deterministic engine, one residual asymmetry
+re-decides everything: **the mirror table is all-or-nothing and cannot grade partial fixes.**
+Judge equivariance work per-map against a different engine.
+
+**Tooling:** `tools/sprt.py` (queue item 6) built by an Opus subagent, calibrated by us on
+the settled 70% gate — H1 accepted at 40/480 matches, estimate exactly 70.0%, 15 s. Adopted
+for screens/discards; ship gates stay fixed-480. The `_v66mA` refutation and both `_v66eq`
+screens ran on it; the drumlin variant screens cost seconds.
+
+**Meta:** two-tier ran at full tilt — six subagent delegations (three Opus implementations,
+two Sonnet audits, one Opus toolbuild), zero measurement delegated, every verdict from the
+main loop's own arena runs. Shipping rule amended by Magnus: local-battery-clean ships;
+Elo trajectory check is rolling and post-hoc. x3r0 adopted our ladder1 CPU/exception guards
+in his v49+; his map-pack refresh mooted message 1 to him; the counterbattery gate (his v50
+still drops fjordgate AND meander 32/32 to us) is now the headline handover.
+
+**Next:** finish the equivariance set on `_v66eq` (one sort per gated change, SPRT-screened,
+judged vs `opp_v50` per-map); then the launch-insertion resolution problem; then fjordgate
+root causes (shared with his engine); constants re-tune last.
+
 ### Session 9 — one gate converts two maps, and the second one was not the one we aimed at
 
 - **Date:** 2026-08-09 (session 9; wall clock 2026-08-06, the one-day label skew stands) ·
