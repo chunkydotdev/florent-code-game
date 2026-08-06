@@ -1,0 +1,8 @@
+[
+  {"name": "MAX_BUILDERS", "lo": 2, "hi": 12, "type": "int",
+   "why": "starter default 5; scale tax says fewer, unit economics say more — never measured"},
+  {"name": "TARGET_HARVESTERS", "lo": 1, "hi": 8, "type": "int",
+   "why": "defense trigger; 3 was refuted downward on small maps but never swept upward"},
+  {"name": "AMMO_BUFFER", "lo": 5, "hi": 60, "type": "int",
+   "why": "20 was tuned for gunners; 50 flat was a no-verdict; the sweet spot is unmeasured"}
+]
