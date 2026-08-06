@@ -23,8 +23,11 @@ against them. The checklists below are how those design choices get cashed in.
    `.venv/bin/python tools/arena.py v2 starter --seeds 16`
    Read the per-map table. Note which *real* maps are seat-decided — and remember the seat
    split is only cleanly interpretable in mirror or near-mirror runs.
-5. Submit: `.venv/bin/fcode submit bots/v2`, activate it, and let the ladder schedule
-   (first match can take ~10 min). v2 is robustness-only and safe to expose.
+5. Submit the current frozen candidate — **check [HANDOVER.md](../HANDOVER.md) for which
+   version that is**, and if the candidate is still a live edit target (like a `bots/<tag>`
+   research dir), freeze it into the next `bots/v<N>` first (Magnus does this; `bots/v*` is
+   write-protected). Then `.venv/bin/fcode submit bots/<candidate>`, activate it, and let the
+   ladder schedule (first match can take ~10 min).
 6. `fcode match test v2 starter` (rate limit: 5 per 10 min) — real ladder hardware
    (AWS Graviton3) with the limit enforced. This is the only way to verify the CPU guard's
    8 ms threshold fits real hardware timing before the ladder does it for us.
