@@ -1,4 +1,8 @@
-"""v4 — v2's CPU guard + every absolute-direction bias removed.
+"""aug7 — v4 + Sentinel-first defense (strategy-notes.md: sentinel beats
+gunner on nearly every axis except entry cost and re-aim; static base
+defense doesn't need either).
+
+v4 — v2's CPU guard + every absolute-direction bias removed.
 
 The seat experiments (docs/strategy-log.md, 2026-08-06) proved the seat-A
 wipeouts on some maps were our own absolute orientation: the spawn scan
@@ -22,11 +26,11 @@ Strategy:
      a small global-ammo buffer topped up (turrets fire from that shared pool)
   2. Builder bots explore, build harvesters on ore, and lay conveyors toward
      the core so titanium flows back automatically
-  3. Once the economy is running (3+ harvesters), builder bots place gunners
+  3. Once the economy is running (3+ harvesters), builder bots place sentinels
      near the core for defense
-  4. Gunners auto-fire at the closest visible enemy
+  4. Sentinels auto-fire at the closest visible enemy on their attack line
 
-Entity types used:  Core, Builder Bot, Harvester, Conveyor, Gunner
+Entity types used:  Core, Builder Bot, Harvester, Conveyor, Sentinel
 
 Communication store slots:
   0  SLOT_CORE_X          Core X position (written by core on round 1)
@@ -73,7 +77,7 @@ MAX_BUILDERS = 5
 # How many harvesters we want before switching builder bots to defense duty
 TARGET_HARVESTERS = 3
 
-# Global ammo buffer the core maintains (4 Ti per gunner shot -> 5 shots).
+# Global ammo buffer the core maintains (10 Ti per sentinel shot -> 2 shots).
 # Turrets fire from the team's global ammo pool; the core fills it by
 # converting titanium 1:1 with convert_ammo(), at most once per turn.
 AMMO_BUFFER = 20
@@ -180,8 +184,8 @@ class Player:
             self._run_core(ct)
         elif etype == EntityType.BUILDER_BOT:
             self._run_builder(ct)
-        elif etype == EntityType.GUNNER:
-            self._run_gunner(ct)
+        elif etype == EntityType.SENTINEL:
+            self._run_sentinel(ct)
 
     def _cpu_exhausted(self, ct: Controller) -> bool:
         """True once this unit's round has used CPU_BUDGET_US of its 10 ms.
@@ -217,7 +221,7 @@ class Player:
         ct.write_store(SLOT_CORE_X, pos.x)
         ct.write_store(SLOT_CORE_Y, pos.y)
 
-        # Keep the gunners supplied: top the global ammo pool up to AMMO_BUFFER
+        # Keep the sentinels supplied: top the global ammo pool up to AMMO_BUFFER
         # whenever we have titanium to spare (we reserve enough for a builder
         # bot so conversion never blocks spawning). The ammo is usable the same
         # turn, and converting does not use the core's action cooldown.
@@ -255,7 +259,7 @@ class Player:
     def _run_builder(self, ct: Controller) -> None:
         """Builder bot logic, executed each round. Priority order:
         1. Build a harvester if adjacent to uncovered ore
-        2. Build a gunner if we already have enough harvesters
+        2. Build a sentinel if we already have enough harvesters
         3. Heal any damaged friendly buildings nearby
         4. Move toward the next target (ore or exploration)
         5. Broadcast any visible ore to teammates via the store
@@ -276,13 +280,13 @@ class Player:
         self.last_pos = pos
 
         # --- Build phase (requires action cooldown == 0) ---
-        # Try to build a harvester first; if none available, consider a gunner
+        # Try to build a harvester first; if none available, consider a sentinel
         if ct.get_action_cooldown() == 0:
             if not self._try_build_harvester(ct):
-                # Only build gunners once our economy is up (enough harvesters)
+                # Only build sentinels once our economy is up (enough harvesters)
                 harvester_count = ct.read_store(SLOT_HARVESTER_COUNT)
                 if harvester_count >= TARGET_HARVESTERS:
-                    self._try_build_gunner(ct)
+                    self._try_build_sentinel(ct)
 
         # Phase priority under CPU pressure: build > heal > move > share.
         # Each check lets us finish the round at a clean boundary.
@@ -376,40 +380,42 @@ class Player:
         if ct.can_build_conveyor(conv_pos, facing):
             ct.build_conveyor(conv_pos, facing)
 
-    def _try_build_gunner(self, ct: Controller) -> bool:
-        """Build a gunner turret on an adjacent tile, facing away from the core.
+    def _try_build_sentinel(self, ct: Controller) -> bool:
+        """Build a sentinel turret on an adjacent tile, facing away from the core.
 
-        Gunners fire in a straight line in their facing direction, so pointing
-        them outward from the core gives them the best chance of hitting
-        approaching enemies. We only build if we're close to the core
-        (within ~4 tiles) so gunners end up defending the base.
+        Sentinels beat gunners on nearly every axis (strategy-notes.md): more
+        damage/round, better Ti-per-damage, more HP, far larger attack radius,
+        and an unblockable line shot that ignores obstacles/units. The only
+        gunner advantages -- 10 Ti cheaper and re-aimable via rotate() -- don't
+        apply to a static base defender, so sentinel-first should out-defend
+        gunner-first at the same economy trigger point.
 
-        Note: gunners fire from the team's global ammo pool, which the core
-        fills by converting titanium (see AMMO_BUFFER in _run_core) — no
-        physical ammo delivery is needed.
+        Note: sentinels fire from the team's global ammo pool (10/shot), which
+        the core fills by converting titanium (see AMMO_BUFFER in _run_core) --
+        no physical ammo delivery is needed.
         """
         ti = ct.get_global_resources()
-        cost = ct.get_gunner_cost()
+        cost = ct.get_sentinel_cost()
         if ti < cost:
             return False
 
         pos = ct.get_position()
-        # Only build gunners when we're reasonably close to the core
+        # Only build sentinels when we're reasonably close to the core
         if self.core_pos is None or pos.distance_squared(self.core_pos) > 18:
             return False
 
-        # Face the gunner away from the core (toward incoming enemies)
+        # Face the sentinel away from the core (toward incoming enemies)
         facing = pos.direction_to(self.core_pos).opposite()
         if facing == Direction.CENTRE:
             facing = random.choice(DIRECTIONS)
 
-        # Try each adjacent tile for a valid gunner placement, in random order
+        # Try each adjacent tile for a valid sentinel placement, in random order
         dirs = list(Direction)
         random.shuffle(dirs)
         for d in dirs:
             build_pos = pos.add(d)
-            if ct.can_build_gunner(build_pos, facing):
-                ct.build_gunner(build_pos, facing)
+            if ct.can_build_sentinel(build_pos, facing):
+                ct.build_sentinel(build_pos, facing)
                 return True
         return False
 
@@ -522,7 +528,7 @@ class Player:
         Priority:
         1. Closest visible ore tile without a harvester on it — go build one
         2. If economy is established (enough harvesters), head back toward
-           the core so we can build gunners for defense
+           the core so we can build sentinels for defense
         3. Ore location shared by a teammate via the store — head that way
         4. Random map position — pure exploration
         """
@@ -550,7 +556,7 @@ class Player:
             return random.choice(best_ore)
 
         # 2. Once we have enough harvesters, head back to the core so we can
-        #    build gunners nearby.  _try_build_gunner requires being within
+        #    build sentinels nearby.  _try_build_sentinel requires being within
         #    distance² 18 of the core, so we navigate there.
         harvester_count = ct.read_store(SLOT_HARVESTER_COUNT)
         if harvester_count >= TARGET_HARVESTERS and self.core_pos is not None:
@@ -582,16 +588,26 @@ class Player:
                     return
 
     # ------------------------------------------------------------------
-    # Gunner
+    # Sentinel
     # ------------------------------------------------------------------
 
-    def _run_gunner(self, ct: Controller) -> None:
-        """Gunner logic: fire at the first enemy in our line of sight.
+    def _run_sentinel(self, ct: Controller) -> None:
+        """Sentinel logic: fire at the first enemy on our attack line.
 
-        get_gunner_target() returns the closest entity along the gunner's
-        facing direction, or None if the line is clear. We only fire if
-        can_fire() confirms we have ammo and cooldown is ready.
+        Unlike gunners, sentinels have no get_gunner_target()-style helper,
+        so we scan get_attackable_tiles() (the turret's raw line, ignoring
+        obstacles) for the first tile holding an enemy unit or building.
+        can_fire() confirms ammo and cooldown before we commit.
         """
-        target = ct.get_gunner_target()
-        if target is not None and ct.can_fire(target):
-            ct.fire(target)
+        my_team = ct.get_team()
+        for tile in ct.get_attackable_tiles():
+            target_id = ct.get_tile_builder_bot_id(tile)
+            if target_id is None:
+                target_id = ct.get_tile_building_id(tile)
+            if target_id is None:
+                continue
+            if ct.get_team(target_id) == my_team:
+                continue
+            if ct.can_fire(tile):
+                ct.fire(tile)
+            return
