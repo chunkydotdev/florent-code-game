@@ -30,6 +30,28 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Discard — lowering the small-map defense trigger also loses
+
+- **Date:** 2026-08-07 · tested against sentinel-first aug7 (a9d81a1)
+- **Hypothesis:** strategy-notes.md's map-size section: a 14x area range (8x8-30x30) probably
+  needs branched strategies, and small maps favour rushing since economy has no time to
+  compound. Tried the cheapest version: switch to sentinel-building at 1 harvester instead of
+  3 on maps <=150 tiles (tiny8 64, small12 144 -- 2 of 8 maps).
+- **Change:** `target_harvesters(ct)` returns 1 below the area threshold, 3 above it. Used at
+  both call sites (sentinel-build gate, navigate-to-core gate). Everything else unchanged.
+- **Result:** screen vs incumbent: **35.4%, CI [23.4%, 49.6%] — refuted** (upper bound just
+  under 50), discarded without a confirm run.
+- **Read:** same mechanism as the scout-first discard just above, in miniature — cutting
+  harvesters from 3 to 1 forfeits ~2 harvesters' worth of economy (each ~2.5 Ti/round once
+  delivering) in exchange for a slightly earlier sentinel, and the economy loss outweighs the
+  earlier defense even on the smallest maps. Combined with the scout-first result, this is a
+  second, independent data point that this bot's economy-first shape is robust across the map
+  size range — "small map = rush" from strategy-notes.md is not supported so far, at least not
+  via this lever.
+- **Next:** map-size branching on *something other than the harvester trigger* remains
+  untested (e.g. sentinel placement radius, spawn aggressiveness, MAX_BUILDERS) if this is
+  revisited. Lower priority now given two discards in a row on the small-map-rush thesis.
+
 ### Discard — scout-first before building is a decisive loser
 
 - **Date:** 2026-08-07 · tested against sentinel-first aug7 (a9d81a1)

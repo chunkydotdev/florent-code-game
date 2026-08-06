@@ -61,7 +61,12 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       **No, decisively.** Measured 2026-08-07: a 20-round build delay scored 8.3%
       [3.3%, 19.6%] vs building immediately, 48 matches. Harvester ROI (~8-12 round payback)
       dominates the scale-tax argument by a wide margin. See strategy-log.md.
-- [ ] How much does map size change the right opening? Where's the crossover?
+- [ ] How much does map size change the right opening? Where's the crossover? **Partial
+      negative result 2026-08-07:** lowering the small-map (<=150 tile) harvester-to-defense
+      trigger from 3 to 1 was refuted, 35.4% [23.4%, 49.6%] vs the sentinel-first incumbent
+      (strategy-log.md). Consistent with the scout-first discard just below -- economy-first
+      looks robust across map size, at least via this lever. Untested: branching on something
+      other than the harvester trigger (sentinel placement, spawn rate, MAX_BUILDERS).
 - [ ] Does `ct.destroy()` on obsolete buildings measurably cut later build costs?
 
 ## Platform / competition
