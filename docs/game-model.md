@@ -240,6 +240,14 @@ scan (see strategy-log 2026-08-06). Use a geometric criterion — nearest by
 - **Launcher** — no damage, no ammo. Picks up an adjacent (incl. diagonal) Builder Bot **from
   either team** and throws it to any bot-passable tile within throw range (measured from the
   Launcher, not the bot).
+  - **Used offensively on your OWN builder, this is a rush-delivery tool, and the field is
+    already doing it [measured 2026-08-08, ladder replay `81d83bb5`, all 5 games].** Build a
+    Launcher next to your own Core on turn 1, throw your own scout builder **6-8 tiles in one
+    action**, and it walks the rest — arriving inside the enemy Core's 12-tile spawn ring by
+    **turn 6-27 regardless of map size**. This kills the assumption that a large map buys time
+    against aggression. The same opponent then parks that single builder in the ring for
+    57-98% of the game: **Builder Bots are mutually impassable and cannot attack units**, so
+    one enemy body in the spawn ring paralyses a bot with no answer to it, for free.
 
 ### Harvester
 

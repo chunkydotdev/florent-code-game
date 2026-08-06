@@ -30,6 +30,71 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Finding — we sometimes deliver exactly zero titanium on maps with no (0,0) Core, and nobody has explained it
+
+- **Date:** 2026-08-08 · two independent observations converging, no code change yet
+- **The observation:** `titanium_collected` comes out at **exactly 0** in games where the
+  economy visibly exists. This is the same signature as the jackpot (0,0) Core bug — but on
+  maps with no Core at the origin, so it is a **different, unexplained failure**.
+  1. **From a ladder replay** (`81d83bb5`, vs Albert And Einstein, our own v40): games 1
+     (`heart`) and 4 (`hive`) finished **0 collected for both sides**, while game 1 had
+     **5 harvesters and 99 conveyors** built. Resource movement *did* occur — 33 and 12
+     `distributeResources` events — so stacks were flowing and never arriving. The analyst
+     specifically ruled out the enemy blocker denying our delivery tiles: we built conveyors on
+     every Core-adjacent delivery tile, early, in every game, with no enemy builder on those
+     tiles at build time.
+  2. **From local instrumentation**, independently: on `heart`, **3 of 5** `aug7`-vs-`aug7`
+     matches ended with **both sides at exactly 0 collected**, decided on the harvester
+     tiebreak. `heart` was already one of the four unexplained seat-asymmetry maps and was
+     flagged as "a different phenomenon" before the replay evidence existed.
+- **Why this matters more than it looks:** crediting is delivery-only (measured, game-model.md),
+  **78% of our games are decided on the titanium tiebreak**, and this failure mode zeroes the
+  scoring quantity outright. It is not a small inefficiency — it is the economy not existing.
+  A trail conveyor whose output side faces *into* the harvester will refuse that harvester's
+  stack, and a chain that dead-ends carries stacks that are never credited; both were logged as
+  residual unmeasured questions in the 2026-08-07 conveyor work, and this is what they look like
+  when they bite.
+- **Why it has stayed hidden:** it is invisible in a win rate — when *both* sides zero out, the
+  game still resolves on a tiebreak and the pooled number moves by nothing.
+- **Next, and this is the highest-value diagnostic left:** instrument whether a given
+  harvester's stack ever reaches the Core, per match, per map — the open question
+  "do the conveyor chains our builders lay actually complete a path to the Core?" has been open
+  since 2026-08-07 and now has two independent pieces of evidence that the answer is sometimes
+  no. `heart` is the map to run it on, because it fails ~60% of the time there.
+
+### Intel — the launcher-assisted rush, and what actually kills us
+
+- **Date:** 2026-08-08 · full decode of ladder series `81d83bb5`, all 5 games, no code change
+- **The series:** Albert And Einstein (**1306.8**) vs OpenSverige (**1222.8**), **0-5**, ELO
+  −12.21. **All five games ended `core_destroyed`.** In every game with a non-zero economy
+  reading, **we out-collected them** — and lost anyway.
+- **Their opening, identical turn-for-turn in all five games:** Builder Bot turn 0 → **Launcher
+  turn 1, next to their own Core** → their own scout builder thrown **6-8 tiles in a single
+  action** → that builder walks in and is **camped inside our Core's spawn ring by turn 6-27**,
+  where it stays for **57-98% of the game**. Then **3-4 Sentinels built 1-4 tiles from our
+  Core**, from turn 4-15. Total investment: exactly **4 builders**, spawned turns 0-3.
+- **Verdict — the sentinels kill us, not the blocker.** 5 of 5 `core_destroyed`, 0 of 5 on any
+  economy tiebreak; the Core always died first, so the blocker never got to decide anything.
+  Net HP to kill our Core was 502-512 every game.
+- **But the blocker is not free for us either, and the mechanism is worth naming.** Our defense
+  gate (3 harvesters) was met around turn 22-28 in games 1 and 2, yet our first Sentinel did not
+  land until **turn 436** and **turn 81** respectively — against near-instant responses in the
+  games where ring occupancy was lower. Game 4 never met the gate at all (stuck on 1 harvester,
+  zero defense, 28 unmitigated hits). Whether that is the blocker tying up our builders or our
+  own build order deprioritising turrets **is not separable from this data** — it is a question,
+  not a conclusion.
+- **Two model corrections fell out of the decode**, both now in game-model.md:
+  - **The Launcher is a rush-delivery tool**, and a large map no longer buys time. We knew
+    Launchers throw builders; we had never seen one used to deliver a rush on turn 1.
+  - **"28 hits of −18 kills a Core" is only true when nobody heals.** Our builders *do* heal the
+    Core (+4 HP for 1 Ti, exactly as documented), offsetting **4-79%** of incoming damage; raw
+    hit counts ran **28 to 136**. Only the net ~504 held constant. That is real active defense
+    our bot already performs and which nothing in our own docs had noticed.
+- **Read:** every "early aggression doesn't pay" result this project has ever produced was
+  measured against `starter`, `opp_v39` and our own lineage — **a pool in which nobody ever
+  rushes**. The 1300+ band does. That is a structural blind spot in the evaluation set, not a
+  strategic conclusion, and it is why `bots/rush_probe` now exists.
+
 ### Telemetry — v40's ladder window, and the bar moving out from under us
 
 - **Date:** 2026-08-08 · platform reads only, no code change
@@ -39,6 +104,12 @@ Rules of thumb:
   **v44 ("florent-v58") at ~13:00**, so **every ladder result after that measures their bot,
   not ours.** Attribute segments accordingly; do not read the team's later trajectory as
   evidence about `aug7`.
+  **Exact slot timeline** (it flipped twice, so segment carefully): v40 active until ~13:00 →
+  **v44** from ~13:00 → v40 briefly re-activated for roughly **one series** (around match ~105,
+  rating ~1221) → **v44** again from ~15:15, after the 59/41 head-to-head was confirmed.
+  A 13:16 UTC snapshot during that window read rating **1221.23**, rank **#50 of 103**, 105
+  matches, last-10 5W-5L. **Standing team norm from here: the active slot follows arena
+  measurement** — a candidate that beats `opp_v44` takes the slot, with the numbers attached.
 - **The sample is thinner than the match count suggests.** The team ran **42 submission
   versions in ~16 hours** across several people, and **v40 played exactly one ladder series**
   (`1018bf11`, a 3-2 win over Leviathan). The 97-match history is mostly other people's bots.
