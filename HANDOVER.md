@@ -213,14 +213,39 @@ only 2 of 6 facing-correct**; and one `heart` replay had **40 conveyors, `chain`
 resolved into a concrete, per-replay-diagnosable mechanism: **trail conveyors point along the
 walk direction rather than the flow direction.**
 
-**This is probably the single biggest economy fix available**, and it partially overlaps a
-change we already accepted: `cardinal_toward` (in `bots/aug7` at `3cfa588`) replaced exactly the
-mis-snapping facing rule, but was accepted on win rate with **no mechanism-level confirmation**.
-A unit is now censusing `v4` (pre-fix) against `aug7` (post-fix) across `heart`, `hive`,
-`lighthouse`, `archipelago` and `drumlin` to establish whether the gap is **closed or merely
-reduced** — the residual, if any, is the next economy experiment. **Standing rule from here:
-verify any candidate's own test replays show `chain_dir == chain` before believing any economy
-or ammo number it produces.**
+**The census is done, and it names three distinct causes.** `cardinal_toward` (accepted at 57.9%)
+fixed the smallest one. The isolating metric is the **conditional rate** — of harvesters that got
+graph-connected, what fraction also face correctly — because raw `chain_dir%` is confounded by
+overall bot strength.
+
+| cause | status |
+| --- | --- |
+| **1. chirality mis-snap** (`nearest_cardinal`'s "NORTHWEST → WEST") | **fixed.** Non-tie wrong-cardinal picks 8/58 → **0/63**. On `drumlin` (wall-free control) the conditional rate goes **50% → 91.7%** |
+| **2. facing computed toward the CORE, not toward the next trail tile** | **open — 71% of the residual.** Any bend in the path breaks the chain *even when every tile's facing is locally correct* |
+| **3. exact diagonal ties on shared trunk tiles near the Core** | **open — rare but catastrophic.** One tie resolved wrong collapsed **8 of 12 harvesters at once**; `cardinal_toward` still breaks ties with `random.random()`, i.e. 50/50 exactly where it costs most |
+
+Pooled, the conditional rate barely moved: **v4 47.4% → aug7 48.9%, z ≈ 0.2, not significant** —
+and on `heart` it went the *wrong* way, 37.5% → 12.5%. So the 57.9% accept is real and properly
+attributed, but **it is not explained by facing-correctness**, which is a more interesting claim
+than either "it worked" or "it didn't".
+
+**The next economy experiment, precisely specified — do this one first:** in `_try_move`, face
+the trail conveyor **toward the tile the builder is about to step onto**, not toward the Core.
+Straight-line-to-Core and trail-direction agree only on straight paths, which is exactly why
+`drumlin` looks fixed and `heart` does not. One attributable change, addresses 71% of residual
+breaks, needs no new state — `_try_move` already has `next_pos`. Then, separately, replace the
+random tie-break with something chain-aware.
+
+**Two calibration notes.** `chain_dir == 0` ⇔ zero collected is **18/18 perfect in
+economically-decided games**, but the converse fails in combat-truncated ones (a network can be
+destroyed after banking), so read it as: zero economy *always* implies `chain_dir == 0`. And
+field-wide across 24 ladder replays and 10 opponents the conditional rate is **68.4% against our
+48.9%** — **we are below field average at delivery facing.**
+
+**Standing rule: verify any candidate's own test replays show `chain_dir == chain` before
+believing any economy or ammo number it produces.** Worth also running the clean single-change
+census — `aug7` vs `bots/_incumbent` (`a9d81a1`, aug7 minus `cardinal_toward`) — since the
+comparison above used `v4`, which differs by two changes.
 
 ### The ammo arithmetic converges two workstreams — sequence v45 accordingly
 

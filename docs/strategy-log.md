@@ -30,6 +30,68 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Finding — the facing bug has three distinct causes, we fixed the smallest one, and the real one is now named
+
+- **Date:** 2026-08-08 · 28 fresh replays + 24 ladder replays, censused with
+  `tools/replay_census.py`. No code change. **This retroactively re-characterises an accepted
+  change, which is exactly what a mechanism measurement is for.**
+- **The isolating metric.** Raw `chain_dir%` rose 36.3% → 44.7% from `v4` to `aug7`, but that is
+  confounded — `aug7`'s raw `chain%` (undirected connectivity) also rose 76.5% → 91.3%, i.e. it
+  is simply the stronger bot. The number that isolates *facing* is the **conditional rate**: of
+  harvesters that got graph-connected, what fraction also face correctly.
+  **v4 47.4% (37/78) vs aug7 48.9% (46/94) — z ≈ 0.2, not significant.**
+  **Pooled, `cardinal_toward` did not measurably close the facing gap.**
+- **But it did exactly what it was designed to do, and the per-map story is sharp:**
+  - **The chirality bug is dead.** Non-tie wrong-cardinal picks: **8/58 for v4, 0/63 for aug7.**
+    Caught live and deterministically: on `hive`, tile (22,5) is built `stored_facing=WEST` in
+    two independent seeds where the correct dominant axis is NORTH — `nearest_cardinal`'s
+    "NORTHWEST always snaps to WEST" defect, reproducible because it depends only on geometry.
+  - **On `drumlin`, the wall-free control, the conditional rate goes 50% → 91.7%.** Where paths
+    are straight, the fix is close to total.
+  - **On `heart` it goes the wrong way: 37.5% → 12.5%** — and `heart` is precisely where
+    zero-delivery was first observed.
+- **Cause #2, and it is 71% of the residual: facing is computed per tile as "dominant axis
+  toward the Core", not "toward the next tile in the actual trail".** Any path that bends —
+  staircase routing around terrain — breaks the chain **even when every individual tile's facing
+  is locally correct**. 45 of aug7's 63 breaks are exactly this. Worked example
+  (`aug7_v4_heart_s1`, chain 4/4, `chain_dir` 0/4, **0 titanium**): tile (12,11) correctly
+  computes WEST because the Core is far more west than north — but the real trail continues one
+  more tile *north* to (12,10) before turning west, so the WEST-facing conveyor never meets its
+  own continuation. **A conveyor should point where the trail goes, not where the Core is.**
+  Straight-line and trail agree only on straight paths, which is why `drumlin` looks fixed and
+  `heart` does not.
+- **Cause #3, rarer but the most expensive per occurrence: exact diagonal ties cluster near the
+  Core**, where many independent harvester trails converge onto a few shared trunk tiles.
+  `aug7_v4_archipelago_s1`: tile (18,20) is an exact tie, resolved to NORTH instead of EAST, and
+  **that single tile is the shared last hop for 8 of 12 harvesters** — all collapse together.
+  `cardinal_toward` breaks ties with `random.random()`, i.e. **50/50 at precisely the tiles where
+  being wrong is most expensive.** aug7 hits this on 10/63 of its breaks against v4's 29/58.
+- **Zero-collected ↔ `chain_dir == 0`: 18/18 perfect** in games decided economically, on an
+  independent sample. **Correct causal statement, with the qualifier the census earned:** zero
+  economy **always** implies `chain_dir == 0`; the converse holds **only in economically-decided
+  games** — 5 of 18 `chain_dir == 0` sides in combat-truncated ladder games had positive
+  titanium, because chain/chain_dir are end-of-game snapshots and a network can be destroyed
+  after banking.
+- **Field-wide, and not flattering:** across 24 ladder replays, 42 team-sides, 10 distinct
+  opponents — conditional rate **68.4%** against our **48.9%**. The facing gap is a
+  field-wide phenomenon, **and we are below field average at it.**
+- **Confound recorded honestly:** `aug7` vs `v4` differ by **two** changes (Sentinel-first *and*
+  `cardinal_toward`), so this is a good proxy for the facing mechanism but not a clean
+  single-change test. **The clean comparison is `aug7` vs `bots/_incumbent`** (`a9d81a1`, which
+  is aug7 minus `cardinal_toward`) — cheap, and worth running before anyone concludes the accept
+  was mis-attributed. The 57.9% win rate itself remains properly attributable: it *was* measured
+  against a one-change baseline. What this census shows is that the win is **not** primarily
+  explained by facing-correctness, which is a different and more interesting claim.
+- **The next experiment, now precisely specified:** in `_try_move`, face the trail conveyor
+  **toward the tile the builder is about to step onto** (the trail's own continuation) rather
+  than toward the Core. One attributable change, addresses 71% of the residual breaks, and needs
+  no new state — `_try_move` already knows `next_pos`. Second, separate experiment: replace the
+  random tie-break with something chain-aware, since ties concentrate on shared trunk tiles.
+- **Also noted:** `aug7` still calls the old `nearest_cardinal` inside
+  `_try_build_conveyor_toward_core` — harmless, since that function is verified dead code, but
+  the migration was not total. And one replay reported `win_condition=titanium_stored`, a value
+  absent from `tools/replay_schema.md`'s documented set.
+
 ### Discard on the pooled number, but the per-map split is the finding — reactive home defense
 
 - **Date:** 2026-08-08 · challenger `bots/ladder1`, primary gate `bots/opp_v44`
