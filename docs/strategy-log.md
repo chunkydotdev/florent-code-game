@@ -30,6 +30,80 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Discard — wall-aware BFS pathfinding, and it is worst exactly where it should have been best
+
+- **Date:** 2026-08-08 · challenger `bots/ladder1`, baseline `bots/aug7` at `3cfa588`
+- **Hypothesis:** the incumbent walks greedily — a productive cardinal at random, then the
+  perpendiculars, then the reverse, giving up on a target after 3 stuck rounds. In a concave
+  wall pocket that wanders. The rotation has five maps at ≥19% wall density (archipelago 30.8%,
+  saga 28.5%, lighthouse 25.0%, heart 21.8%, jackpot 19.5%) and they are among our weakest.
+  **Predicted: the walliest maps gain most, the near-empty ones (drumlin 0.6%, meander 2.1%,
+  eider 3.9%) stay flat.**
+- **Change:** bounded BFS over a per-unit memo of **walls only** (buildings excluded, since they
+  come and go; never-seen tiles optimistically passable), node cap 200 counted on expansions,
+  path cached and recomputed only when absent / target changed / consumed, neighbour order
+  shuffled at every expansion, and the incumbent's greedy walker retained as the fallback when
+  BFS exhausts its budget. `_try_move` still performs the step, so trail-laying is unchanged.
+- **CPU:** profiled with `time.process_time()` over ~55,000 builder-rounds — p50 71 µs, p99
+  1398 µs, **worst case 3785 µs** against the 8000 µs guard. (Node cap 300 measured 5813 µs and
+  was rejected as too tight.) Comfortably affordable; CPU was not the problem.
+- **Result:** screen 45.6% [35.7%, 55.8%] (n=90). **Confirm 45.8% [41.4%, 50.3%] (n=480) — no
+  verdict, therefore discard.** 0 crashes both sides.
+- **Read — the prediction did not merely fail, it inverted.** On the five walliest maps the
+  challenger scored **57/160 = 35.6%**; on the other ten, **163/320 = 50.9%**, a dead heat. Its
+  three worst maps in the whole run are **archipelago 11/32, lighthouse 8/32, saga 10/32** — the
+  three walliest. A change that is neutral everywhere and specifically bad on exactly the maps
+  it targeted is not noise; it is a mechanism pointing the other way.
+  The best-supported explanation is that **the greedy walker's meandering is exploration, and
+  the shortest path is not.** Target selection is unchanged and picks the nearest *visible*
+  ore, so what a builder sees determines what it can go build. Detouring around a wall sweeps
+  vision across ground a straight line never touches, and it lays trail conveyor over a wider
+  footprint. On wally maps the detours are longest — which is exactly where the BFS bot gives up
+  the most incidental discovery. Consistent with the development measurement that the BFS build
+  produced *more* buildings (94.5 vs 76.7) yet still lost: it was building more efficiently in a
+  smaller explored region.
+- **Next:** do not retry shortest-path movement as a movement change. If it is retried at all it
+  has to come with a **separate** exploration mechanism (systematic frontier targeting rather
+  than nearest-visible-ore plus random walk), and that is a `_pick_target` experiment, not a
+  `_move_toward_target` one. Kept in `bots/_dev_bfs` and portable.
+
+### Finding — seat A acts first for every unit, and on contested-ore maps that is worth 2.3× the harvesters
+
+- **Date:** 2026-08-08 · instrumented diagnosis, `bots/_diag_seat`, 30 matches, no code change
+- **Question:** four maps show large seat asymmetries with identical bots on both sides —
+  archipelago ~77-88% for seat A, atoll ~21-31%, heart ~31%, lighthouse ~28%. None is the (0,0)
+  Core bug and the NW-corner-reference hypothesis was already refuted.
+- **First result, and it reframed the search:** all four are decided on **economy**, never on
+  Core kills, and never on unit attrition — the losing seat often has *more* units alive.
+- **archipelago is explained.** Engine unit IDs show **team A's Nth builder always has an ID
+  exactly one less than team B's Nth** — zero exceptions over 10 instrumented matches on two
+  maps. Units run in spawn order, so **seat A resolves first in every round of the match**. On
+  archipelago 16% of the 38 ore tiles sit in the contested band near the midline; a Harvester
+  blocks movement; so seat A wins each same-round race for a contested tile and then physically
+  walls seat B out of it while retargeting deeper ore. Measured: **62 harvesters for A against
+  27 for B (2.3×)**, **10 of A's built on B's side of the midline**, B crossing **zero** times,
+  and a 1.9× collected-titanium gap that the harvester ratio accounts for. Both sides find ore
+  through `_pick_target` at ~99%, and B actually reaches its *first* harvester sooner — so this
+  is not a vision or targeting difference. It is the compounding of contested-tile races.
+- **The other three, honestly:** `atoll` has only 8 ore tiles with 50% contested, and lands in a
+  near-tie decided by the harvester tiebreak — consistent. `lighthouse` has **0% contested ore**,
+  harvesters come out 8-7, and seat B still wins both instrumented matches *despite* worse
+  movement metrics on every axis (more stuck events, more move failures, 20× more
+  random-exploration fallback). **Unresolved** — the likely axis is trail *completion* rather
+  than harvester count, which nobody has ever instrumented. `heart` is stranger still: 3 of 5
+  matches ended with **both sides at exactly 0 collected**, decided on the harvester tiebreak.
+  **Unresolved, and a different phenomenon.**
+- **Also refuted along the way:** the sentinel far-vs-near targeting bias was a tempting
+  secondary explanation (atoll: seat A 75% far-class facings vs seat B 80% near-class). It is
+  not driving this. Across **625 captured sentinel-fire events, zero were suboptimal** — rays
+  essentially never held 2+ enemies at once. Lighthouse settles it outright: seat A had the
+  *good* facing profile there and lost anyway.
+- **Read:** this upgrades a fact in game-model.md rather than adding a bug to fix. The seat-A
+  edge was recorded as "an advantage on very small maps"; it is really **an advantage
+  proportional to how much ore is contested**, and small maps were a proxy for that. The
+  bot-side lever, if there is one, is contesting the midline earlier instead of accepting the
+  split — which is an economy-expansion question, not a fairness bug.
+
 ### ACCEPT — conveyor facing by dominant axis: 57.9%, and the reason it won is not the reason we tried it
 
 - **Date:** 2026-08-08 · challenger `bots/ladder1`, baseline `bots/_incumbent` = `a9d81a1`.

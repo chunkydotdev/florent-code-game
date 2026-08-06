@@ -50,12 +50,26 @@ methods raise `GameError` when illegal.
 - **Turn order:** every living unit runs in **spawn order** — the Core always acts first.
   Resource changes made by one unit are **immediately visible** to the next unit that acts
   within the same round. (The comms Store is the exception — see below.)
-- **Team A (first mover) has a real engine-level advantage on very small maps [measured].**
-  With a fully direction-neutral bot in a mirror match, seat A won 78% [61%, 89%] on the
-  8×8 map, while 12×12 and up were fair once bot-side direction bias was removed
-  (2026-08-06, `bots/probe_neutral`). Mechanism unproven; consistent with same-round races
-  for contested tiles being decided by act order. Implication: on tight maps, seat draw
-  matters independently of skill — check how the ladder assigns seats within a best-of-five.
+- **Team A acts before Team B, every round, for every unit — and the mechanism of its
+  advantage is now measured [2026-08-08].** Team A's Nth builder is always issued a unit ID
+  exactly **one less** than Team B's Nth builder: zero exceptions across 10 instrumented
+  matches on two maps (e.g. A = [3, 5, 9, 13, 19], B = [4, 6, 10, 14, 20]). Since units run in
+  spawn order, seat A resolves its action first in every round of the match.
+  **What that buys depends entirely on how much ore is contested.** On `archipelago`, where
+  16% of the 38 ore tiles sit near the midline, seat A wins the same-round race for each
+  contested tile, and a Harvester **blocks movement** — so the winner walls the loser out and
+  immediately retargets deeper ore. Measured over 5 instrumented matches: **62 harvesters for
+  A against 27 for B (2.3×)**, including **10 of A's built past the midline on B's side**,
+  while B never crossed once. That is the whole ~78% seat-A share on that map, and every
+  affected map is decided on economy, never on Core kills.
+  The earlier reading — "an advantage on very small maps" (seat A 78% [61%, 89%] on 8×8 with
+  `bots/probe_neutral`, 2026-08-06) — was the same effect seen through a proxy: small maps are
+  simply maps where everything is contested. **Contested ore, not map size, is the variable.**
+  Corroborating: `atoll` has 8 ore tiles with 50% contested and lands in a near-tie decided by
+  the harvester tiebreak; `lighthouse` has 0% contested ore and shows no harvester gap at all.
+  Implication: seat draw is worth real rating independently of skill, so **how the ladder
+  assigns seats within a best-of-five is a first-order question**. Bot-side, the lever is
+  contesting the midline earlier rather than accepting the split.
 - **Tiles:** `EMPTY` (traversable), `WALL` (impassable, blocks LOS), `ORE_TITANIUM`
   (traversable, Harvester-buildable).
 - **Series:** ladder matches are **best-of-five**. All five games always play to completion.
