@@ -30,7 +30,82 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
-### Session 8 — stage 2 executed: the bug that was never strategy, and a 63.3% ship candidate
+### Session 9 — one gate converts two maps, and the second one was not the one we aimed at
+
+- **Date:** 2026-08-09 (session 9; wall clock 2026-08-06, the one-day label skew stands) ·
+  base `bots/v5` (= live submission **platform v47 "v63-mapfix-launcher"** = `_v63full`),
+  gate `bots/opp_v45`, 480 matches
+- **Ladder check first, and it is a non-result:** `fcode status` reads rating 1383, rank #40,
+  **132 matches** — byte-identical to the activation baseline logged at the end of session 8.
+  v47 has played **zero** ladder matches since going live. The 63.3% prediction remains
+  untested; there is nothing to compare yet. Watcher re-armed.
+
+**The change:** queue item 1, exactly as diagnosed in session 8 — mirror `_plan_siege`'s
+economy gate onto `_try_counterbattery`, which had neither a forward-gun cap nor an economy
+gate:
+
+```python
+if ct.read_store(SLOT_HOME_GUN) >= 1 and ct.read_store(SLOT_HARVESTERS) < ECO_NEED:
+    return False
+```
+
+Six added lines over `bots/v5`, nothing else, verified by diff. Both call sites
+(`_home_defend`, `_defend`) route through the one function, so one gate covers both.
+
+**Result: 70.0% [65.8%, 73.9%] vs the live bot's own engine, up from 63.3%, 0 crashes both
+sides.** +32 wins is exactly two maps converted, and the per-map table says which:
+
+| map | `_v63full` (live) | `_v64cbA` | |
+| --- | --- | --- | --- |
+| fjordgate | 16/32 | **32/32** | predicted from source, twice over |
+| meander | 16/32 | **32/32** | **not predicted — this was queue item 3** |
+| drumlin, eider, heart, saga | 32/32 | 32/32 | held |
+| the other nine | 16/32 | 16/32 | unmoved |
+
+**Read:** fjordgate is the clean confirmation — a mechanism read off the source in session 8
+(ungated counterbattery buys three fixed-facing Sentinels at *transient spawn tiles* by round
+6; any home gun makes `weapons` truthy, pinning `ti_floor` at 12 forever; seed 1 ended 255
+rounds at 0 harvesters and exactly 12 Ti) predicted a specific map would convert, and it
+converted 32/32 both seats, every win by core kill.
+
+**Meander is the more interesting one, and the honest version is narrower than it looks.**
+Session 8 left meander as an open puzzle: it got its map-table entry, so `_plan_siege` was
+enabled there, and it still sat at 16/32. What we now know is that the counterbattery gate
+converts meander **on top of** the map tables — the table fixed *can it plan a siege*, the
+gate fixed *can it still afford one*. What we have **not** established is the other direction:
+the gate alone, without the tables, was never measured on meander, so "these two only pay
+together" is a hypothesis, not a result. It is the mirror image of session 8's trap (two
+changes that each gate keep and fail to stack): two changes that individually leave a map dead
+and jointly convert it. Both directions argue the same thing — **attribute per map, never
+reason about components from the pooled number.**
+
+**Refuted on the way (recorded because it was the tempting fix):** `_v64cbB`, the strict gate
+with no free first battery — on the theory that one gun alone is enough to pin `ti_floor`.
+Fjordgate-only screen, 32 games: pooled 16/32 but **seat A 32/32**. Removing early home
+defense does not cure the collapse, it converts the map into a pure first-mover coinflip. The
+first battery is load-bearing; the second one onward is the bankruptcy. Screening one map for
+6 seconds before spending a 480-match gate is the cheap move that made this visible.
+
+**Guards, all three passed — and the rush guard is a second finding:**
+
+| guard | `_v63full` (live v47) | `_v64cbA` | |
+| --- | --- | --- | --- |
+| vs `starter` | 98.3% | 97.9% [95.2%, 99.1%] | flat, no regression |
+| vs `opp_v39` | 98.3% | 99.2% [97.0%, 99.8%] | flat/up |
+| vs `rush_probe_fast` | 86.7% [81.8%, 90.4%] | **95.4% [92.0%, 97.4%]** | **intervals do not overlap** |
+
+The rush number was not something we set out to move, and it is the same mechanism seen from
+the other side: **the opening bankruptcy was also what lost to rushes.** A bot that has spent
+its opening bank on three fixed-facing Sentinels aimed at spawn tiles has nothing left when a
+real attack arrives; an economy that stands can afford real defense. On the one frozen rush
+instrument the line now reads aug7 60.4% → `_pkg45` 64.2% → `v63guard` 82.1% → `_v63full`
+86.7% → `_v64cbA` 95.4%. 0 crashes on our side in all three guards.
+
+**Next:** `_v64cbA` is a validated ship candidate over v47 — Magnus freezes it into `bots/v6`
+and submits (`bots/v*` is agent-write-protected). Prediction on the record, to be checked the
+way session 8's was: it should beat v47's ladder performance, and the honest caveat is that
+the 70.0% is measured against v47's *own engine* in mirror, where our six swept maps are
+worth 6/15 of the pool — against a diverse ladder field the effect will be smaller.
 
 - **Date:** 2026-08-08 (session 8; wall clock still 2026-08-06 — the one-day label skew stands) ·
   base `bots/v63guard` (= live submission **v46 "v63guard-tle-armor"**, activated by Magnus, team

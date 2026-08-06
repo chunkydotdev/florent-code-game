@@ -852,6 +852,17 @@ home defense doubles as a siege battery. **Fix target, next queue: mirror `opp_v
 ECO_NEED gate onto `_try_counterbattery`, and stop writing builder positions into SLOT_THREAT
 for fixed-facing turret aiming (`opp_v45:254,257`).** Radii scaling by map size is the deeper fix.
 
+**SOLVED, 2026-08-09 (session 9), by the first half of that fix alone.** Mirroring the
+ECO_NEED gate onto `_try_counterbattery` — six lines, `bots/_v64cbA` — converts fjordgate
+**16/32 → 32/32** both seats, every win by core kill, and takes the pooled gate vs `opp_v45`
+from 63.3% to **70.0%**. It also converted **meander** (16/32 → 32/32), which was a separate
+open puzzle, and lifted the rush guard from 86.7% to 95.4% on the frozen instrument. The
+other two items in the fix target were **not** needed for this and remain open: SLOT_THREAT
+still takes builder positions for fixed-facing aiming, and the absolute radii still do not
+scale with map size. Both are still live in x3r0's engine — a third message for the team.
+The strict variant (no free first battery, `bots/_v64cbB`) is refuted: it turns fjordgate into
+a first-mover coinflip instead of curing it.
+
 **Equivariance audit summary (same pass; full detail in the session transcript).** Ranked
 per-seat asymmetry risks on mirrored maps: (1) the **nordkap one-seat gate cluster**
 (`opp_v45:307-308,448-451,925-928`, all keyed to core `(9,6)` with no `(9,18)` twin — different
