@@ -63,19 +63,36 @@ dramatically more than distant ore.
 "shortest delivery path per harvester". Rank ore by chain length, not by distance to the bot
 that happened to see it.
 
-## Cost scale is a budget we spend, not a clock
+## Cost scale is a budget we spend, not a clock — and Builder Bots are the expensive part
 
-Scale is **additive per entity built** and **decreases when entities are destroyed** — it never
-moves on its own. Harvester +5%, Gunner +20%, Sentinel +20%.
+Scale is **additive per entity built** and **decreases when entities are destroyed**:
+conveyor/splitter/barrier +1%, harvester +5%, launcher +10%, **builder bot / gunner /
+sentinel +20%**.
 
-- **A turret costs the same scale tax as 4 harvesters.** Rushing turrets taxes every future
-  build, permanently, including all the economy you haven't built yet.
-- Since scale drops when things are destroyed, **`ct.destroy()` on obsolete buildings is a real
-  lever** — demolishing a conveyor chain we've rerouted around cuts the tax on everything after.
-  Nothing in the tutorials does this.
+**A Builder Bot costs the same scale tax as a Sentinel — 20%, the joint most expensive thing
+in the game, and four times a Harvester's.** That reframes everything:
+
+- The shipped starter bot spawns a Builder Bot every round it can afford one. That is the
+  single most scale-expensive habit available. Measured in a real match: by round 200 its
+  scale hit 139%, pushing Builder Bot cost from 30 → 41 Ti, and it stayed there.
+- **Bot count is a strategic decision, not a default.** Every extra builder makes all future
+  harvesters, conveyors, and turrets permanently more expensive. A small crew that survives
+  probably beats a large one that's constantly replaced — which is doubly true given that
+  dead bots get respawned at the new, higher price.
+- Conveyors are nearly free on this axis at +1%. **Twenty conveyor tiles cost less scale than
+  one Builder Bot.** Long delivery chains are cheap; the bots that build them aren't.
+- `ct.destroy()` gives the scale back, **costs nothing, has no cooldown, and is unlimited per
+  round** — the only free action in the game. Demolishing a rerouted-around conveyor chain
+  cuts the tax on everything built afterward, and refunds any stack in transit. Nothing in the
+  tutorials or the starter bot does this.
 - A bot that scouts for 100 rounds and builds nothing pays **zero** scale tax in that window.
   The cost of building early is real but so is the compounding from an early harvester —
   worth measuring rather than assuming.
+
+The official docs claim the opposite conclusion ("build aggressively early... before costs
+make expansion prohibitive"). That advice ignores that the cost rise *is caused by your own
+building* and never decays with time. Worth testing rather than taking on faith — it's exactly
+the sort of thing the field will follow by default.
 
 ## Sentinel looks strictly better than Gunner except for cost and rotation
 

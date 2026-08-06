@@ -35,7 +35,14 @@ and no submissions. That's the only remaining blocker; everything else is unbloc
 | [docs/tooling.md](docs/tooling.md) | Local setup, offline map generation, reading `print()` from replays. |
 | [docs/opponents.md](docs/opponents.md) | Patterns we observe in other players' bots. |
 | [docs/open-questions.md](docs/open-questions.md) | What we still don't know, and how to find out. |
-| [docs/reference/](docs/reference/) | Verbatim scrape of the official docs and tutorials, plus the scraper. |
+| [docs/reference/](docs/reference/) | Verbatim scrape of all 23 official docs pages and 24 tutorial steps, plus the scraper. |
+
+`AGENTS.md` (and its copy `CLAUDE.md`) is the organisers' own context file for AI coding
+tools, taken verbatim from `docs/agents-md`. It's the most compact accurate summary of the
+rules and API that exists — but note it has two known errors, flagged in
+[docs/game-model.md](docs/game-model.md) and [docs/open-questions.md](docs/open-questions.md):
+it says the cost scale starts at 1.0 (the API returns 100.0) and gives the Core a spawn radius
+that contradicts the rules page.
 
 `docs/reference/` is vendored so the full Controller API is available offline and so we can
 diff it if the organisers change the rules mid-competition. Re-run with

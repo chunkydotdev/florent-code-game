@@ -49,20 +49,26 @@ Two other routes to a map, for reference:
   `#000000` empty, `#44465E` wall, `#5AD4FF` titanium ore, `#FFBF40` core A, `#6EAAFF` core B.
   Handy for eyeballing or hand-drawing a map; the engine itself only reads `.map26`.
 
-## Reading `print()` output from a match
+## Getting instrumentation out of a match
 
 `print()` inside `run()` does **not** appear on stdout — it's captured into the replay and
-shown in the visualiser. For headless work, the replay is protobuf with the debug strings
-stored plainly, so:
+shown in the visualiser. **Use `stderr` for console output** instead:
 
-```bash
-.venv/bin/fcode run mybot starter maps/duel16.map26 --tle 10 --replay /tmp/p.replay26
-strings /tmp/p.replay26 | grep "MYTAG"
+```python
+import sys
+print(f"PROBE r={ct.get_current_round()} ti={ct.get_global_resources()}", file=sys.stderr)
 ```
 
-Prefix every probe line with a unique tag and this becomes a usable instrumentation channel
-for offline experiments — it's how the turret-firing and starting-titanium questions in
-[game-model.md](game-model.md) got settled.
+```bash
+.venv/bin/fcode run mybot starter maps/duel16.map26 --tle 10 | grep PROBE
+```
+
+Prefix probe lines with a unique tag so they're greppable. This is how the turret-firing,
+starting-titanium, and cost-scale questions in [game-model.md](game-model.md) got settled.
+
+If you only have `print()` output (e.g. from a bot you don't want to modify), the replay is
+protobuf with the debug strings stored plainly, so `strings replay.replay26 | grep TAG` also
+works — but stderr is simpler and doesn't need the replay written at all.
 
 Uncaught exception tracebacks, by contrast, *do* go to stderr during `fcode run` — which is
 how the starter bot's crash bug was spotted (see [strategy-log.md](strategy-log.md)).

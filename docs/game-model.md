@@ -103,7 +103,19 @@ units (harvesters, conveyors, splitters, barriers) don't count and consume no CP
 
 ### Builder Bot
 
+| Property | Value |
+| --- | --- |
+| HP | 40 |
+| Cost | 30 Ti |
+| Vision r² | 20 |
+| Action range | orthogonally adjacent tile only — no radius |
+| Move / action cooldown | 1 round each |
+
 - The **only** mobile unit.
+- **Passable to a builder:** EMPTY, ORE_TITANIUM (even before a Harvester is built),
+  Conveyor and Splitter tiles **of either team**.
+  **Impassable:** WALL, another Builder Bot, Harvester, Barrier, turret, and Core tiles —
+  all of these for **either** team, including your own Core.
 - Moves **cardinal only** (N/S/E/W). Diagonals raise `GameError`; `can_move()` returns False
   for them. Diagonals stay valid for turret facing and building orientation.
 - Movement puts the unit on a 1-round cooldown.
@@ -116,6 +128,11 @@ units (harvesters, conveyors, splitters, barriers) don't count and consume no CP
   Not a way to attack enemy units. It's a sabotage tool.
 - `ct.heal(pos)` — orthogonally adjacent only, **4 HP for 1 Ti**, heals a building and a
   friendly Builder Bot on the same tile in one call.
+- `ct.destroy(pos)` — destroys an **allied** building on an orthogonally adjacent tile.
+  Costs **no titanium and no action cooldown**, and is **unlimited per round** — the only
+  action in the game that's completely free. Destroying a Conveyor also **returns any
+  resources in transit on that tile** to your balance, and removes that entity's cost-scale
+  contribution.
 - `ct.self_destruct()` — deals **zero** damage. Older docs claiming area damage are wrong.
   Only use: freeing unit-cap space or denying a bounty.
 
@@ -167,20 +184,39 @@ A turret with no code is a 20–30 Ti ornament that also eats a unit-cap slot an
 
 ### Conveyor / Splitter / Barrier
 
-- **Conveyor** — relays one tile per round in a single direction fixed at build time.
-  Cardinal facings only.
-- **Splitter** — input from directly behind, output to any of the other **three** cardinal
-  sides. Does **not** split a stack: each delivery goes whole (10 Ti) to whichever connected
-  side was used least recently, so multiple outputs take turns.
+| | HP | Cost | Blocks movement | Blocks LOS |
+| --- | --- | --- | --- | --- |
+| Conveyor | 20 | 3 Ti | No | No |
+| Splitter | 20 | 6 Ti | No | No |
+| Barrier | 30 | 3 Ti | Yes | Yes |
+
+- **Conveyor** — relays one stack (10 Ti) one tile per round, in a single direction fixed at
+  build time. Cardinal facings only. **Accepts from any of its three non-output sides.**
+  Holds 1 stack at a time.
+- **Splitter** — input from **directly behind only**, output to any of the other **three**
+  cardinal sides. Does **not** split a stack: each round it sends its whole stack (10 Ti) to
+  whichever of the three outputs was used least recently, rotating through them.
 - Conveyors and Splitters are **bot-passable** — you can walk on them (yours or the enemy's).
-- **Barrier** — blocks movement and LOS, no facing.
+- **Barrier** — blocks movement and LOS, no facing. Cannot be placed on a wall tile.
+  Cheap HP with no other function; use for choke points and funnelling.
+
+### Resource flow
+
+Titanium moves **physically** through the map in stacks of 10, separate from the global
+balance you spend from. Harvesters → conveyors/splitters → Core is a purely economic pipeline;
+turrets never hold or accept resources.
+
+**Distribution happens once at end of round, after every unit has acted.**
+
+Resources can be pushed onto an **opposing team's** conveyor network or Core — so a badly
+aimed chain can feed the enemy, and their network is in principle divertible.
 
 ## Economy
 
 - **Titanium is the only resource.** Single shared team balance, `ct.get_global_resources()`.
-- **Starting balance: 500 Ti [measured]** — undocumented, and a lot. That's 25 Harvesters at
-  base cost, or 200 rounds of passive income, available at round 0. The opening is far richer
-  than the income numbers alone suggest.
+- **Starting balance: 500 Ti** (`GameConstants.STARTING_TITANIUM`) **[measured]** — a lot.
+  That's 16 Builder Bots or 25 Harvesters at base cost, or 200 rounds of passive income,
+  available at round 0. The opening is far richer than the income numbers alone suggest.
 - **Passive income: 10 Ti every 4 rounds** (2.5/round), granted to the team directly — not
   tied to the Core or anything you build. Over a full 1000-round match that's ~2500 Ti.
 - **Ammunition** is a separate team-wide balance, starts at **0**, with **no passive income**.
@@ -189,12 +225,21 @@ A turret with no code is a 20–30 Ti ornament that also eats a unit-cap slot an
   - Usable the **same** turn.
   - Does **not** use the Core's action cooldown — never costs you a spawn.
   - No converting back.
-- **Cost scaling:** every build cost scales with **how much your team has built**, not with
-  time. Starts at 100%, increases **additively** per entity built, and **decreases again when
-  something is destroyed**. It never moves on its own between builds.
-  - Harvester: **+5%** each
-  - Gunner: **+20%** each · Sentinel: **+20%** each
-  - `ct.get_scale_percent()` reads it; every `ct.get_*_cost()` already bakes it in.
+- **Cost scaling:** `effective_cost = floor(scale × base_cost)` **[measured]**. Scale rises
+  with **how much your team has built**, not with time — additively per entity, and it
+  **decreases again when an entity is destroyed**. It never moves on its own between builds.
+
+  | Entity built | Scale added |
+  | --- | --- |
+  | Conveyor, Splitter, Barrier | **+1%** each |
+  | Harvester | **+5%** each |
+  | Launcher | **+10%** each |
+  | **Builder Bot**, Gunner, Sentinel | **+20%** each |
+
+  `ct.get_scale_percent()` returns a **percentage** (100.0 at match start, not 1.0
+  — the AGENTS.md doc says 1.0, which contradicts the API and the observed value)
+  **[measured]**. Every `ct.get_*_cost()` already bakes the scale in — use those getters, and
+  `GameConstants`, rather than hardcoding base costs.
 
 ## Global Communication Store
 

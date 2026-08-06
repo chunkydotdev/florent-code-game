@@ -1,8 +1,15 @@
 import re, html, urllib.request, sys
 
-DOCS = """quick-start game-rules-overview game-rules-core game-rules-harvester
-game-rules-turrets global-comms robot-api api-types platform-matches
-platform-ladder platform-submitting cli-reference cli-submitting""".split()
+# NOTE: enumerate these from the /docs index page, NOT from the JS bundle --
+# the bundle only lists a subset of the routes (this cost us 10 pages once).
+#   curl -sL https://game.code.florent.vc/docs | grep -oE 'href="/docs/[a-z0-9/_-]*"' | sort -u
+DOCS = """florent-code-league quick-start
+game-rules-overview game-rules-core game-rules-builder-bot game-rules-turrets
+game-rules-conveyors game-rules-harvester game-rules-other-buildings
+game-rules-resources game-rules-reference
+global-comms robot-api api-types agents-md
+platform-matches platform-ladder platform-submitting
+cli-installation cli-first-bot cli-running-matches cli-reference cli-submitting""".split()
 
 TUTS = """movement-sensing/01-welcome movement-sensing/02-spawning movement-sensing/03-moving
 movement-sensing/04-sensing movement-sensing/05-recap

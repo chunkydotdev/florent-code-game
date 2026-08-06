@@ -15,22 +15,31 @@ What's left is mostly gaps in the published numbers and one real contradiction.
 - [x] ~~Can we run matches locally without an account?~~ **Yes** — see
       [tooling.md](tooling.md); `.map26` maps are generatable offline.
 
+## Contradictions still unresolved
+
+- [ ] **Core spawn range: r²=2 or r²=8?** `docs/game-rules-core` says spawn range r²=2
+      ("adjacent ring, including diagonals") and every tutorial uses
+      `get_nearby_tiles(dist_sq=2)`. `docs/agents-md` says the Core has "an action radius of
+      sqrt(8)" used to decide where it may spawn. If it's really 8, the Core can spawn onto a
+      wider ring than any tutorial uses — which matters for getting builders out past a
+      blocked-in base. *Settle by:* iterating `get_nearby_tiles(dist_sq=8)` and logging which
+      tiles return `can_spawn() == True`.
+
 ## Undocumented numbers
 
-The docs publish full stats for Core, Harvester, and all three turrets, but not these.
-All of them are answerable offline now, by probe-printing and reading the replay
-(technique in [tooling.md](tooling.md)):
+Everything previously listed here was answered by `docs/game-rules-builder-bot`,
+`game-rules-conveyors`, `game-rules-other-buildings`, `game-rules-resources`, and
+`game-rules-reference` — pages missed on the first scrape. All folded into
+[game-model.md](game-model.md). What's left:
 
-- [ ] Builder Bot **HP**, **vision radius²**, and **base spawn cost**
-- [ ] **Base costs** for Conveyor, Splitter, Barrier (the `get_*_cost()` methods exist;
-      the base values aren't published)
-- [ ] Barrier **HP**
-- [ ] **Cost-scale contribution** of everything except Harvester (+5%) and Gunner/Sentinel
-      (+20%). What does spawning a Builder Bot add? A Conveyor? A Launcher? A Barrier?
-      *How to find out:* read `get_scale_percent()` before and after one build of each type
-      in a local match. Cheap and fully answerable offline.
-- [ ] Conveyor and Splitter **HP** (matters for how many builder-fire hits cut a supply line)
 - [ ] Harvester ore depletion — do ore tiles ever run out, or is income indefinite?
+      Nothing in the docs mentions depletion, which suggests indefinite, but it's untested.
+- [ ] Does a stack pushed onto an **enemy** conveyor actually credit their balance? The docs
+      say resources "can still be pushed onto an opposing team's conveyor network or core" —
+      if that credits them, a misaimed chain is worse than no chain.
+- [ ] What exactly does tiebreak #1 count? `game-rules-overview` says "titanium collected",
+      `agents-md` says "titanium delivered to core". The match summary prints a "mined"
+      figure. If it's *delivered*, an unrouted Harvester scores nothing at all.
 
 ## Strategy questions we can answer ourselves offline
 
