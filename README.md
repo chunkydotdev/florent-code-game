@@ -18,9 +18,12 @@ Full details in [docs/game-model.md](docs/game-model.md).
 
 ## Status
 
-Docs absorbed, nothing built. **Not yet registered on the platform** — no `fcode` account,
-no matches run. Everything in [docs/strategy-notes.md](docs/strategy-notes.md) is derived from
-published numbers, not observed play.
+Project scaffolded and **running matches locally**. `fcode` 2.3.6 installed in `.venv`
+(Python 3.13), starter bot at `bots/starter/main.py`, six self-generated maps in `maps/`.
+
+**Not yet registered on the platform** — no account, so no ladder matches, no real map pool,
+and no submissions. That's the only remaining blocker; everything else is unblocked, because
+`tools/make_map.py` generates `.map26` maps offline (see [docs/tooling.md](docs/tooling.md)).
 
 ## Docs
 
@@ -29,6 +32,7 @@ published numbers, not observed play.
 | [docs/game-model.md](docs/game-model.md) | Ground truth: rules, API, costs, limits. Facts only. |
 | [docs/strategy-notes.md](docs/strategy-notes.md) | Derived analysis — the arithmetic on those facts, and what it implies. |
 | [docs/strategy-log.md](docs/strategy-log.md) | One entry per bot version: what changed, what the ladder did. |
+| [docs/tooling.md](docs/tooling.md) | Local setup, offline map generation, reading `print()` from replays. |
 | [docs/opponents.md](docs/opponents.md) | Patterns we observe in other players' bots. |
 | [docs/open-questions.md](docs/open-questions.md) | What we still don't know, and how to find out. |
 | [docs/reference/](docs/reference/) | Verbatim scrape of the official docs and tutorials, plus the scraper. |

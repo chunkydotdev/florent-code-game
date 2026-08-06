@@ -6,21 +6,20 @@ Things we don't know, with how we'd find out. Move an answer into
 Most of the original blocking questions were answered by the official docs on 2026-08-06.
 What's left is mostly gaps in the published numbers and one real contradiction.
 
-## Contradictions in the official material
+## Settled
 
-- [ ] **Do turrets fire by themselves, or must we call `ct.fire()`?**
-  The turrets tutorial says they "attack automatically once built — no CPU time spent aiming
-  or deciding when to fire." The rules doc says "like every other unit, each turret runs its
-  own instance of your bot code once per round," and every tutorial code sample writes an
-  explicit `_run_gunner` that calls `get_gunner_target()` / `can_fire()` / `fire()`.
-  These can't both be right. Evidence favours "you must call `fire()`" — a Gunner with no
-  code branch would make the ammo tutorial pointless.
-  *How to settle it:* run a match with a Gunner that has no `GUNNER` branch at all and watch
-  whether ammo drops. **Do this before designing anything around turret behaviour.**
+- [x] ~~Do turrets fire by themselves, or must we call `ct.fire()`?~~ **You must call it.**
+      Measured 2026-08-06 — see [game-model.md](game-model.md#turrets). The tutorial's
+      "attack automatically" line is wrong.
+- [x] ~~Starting titanium balance~~ — **500 Ti**, measured. Undocumented anywhere.
+- [x] ~~Can we run matches locally without an account?~~ **Yes** — see
+      [tooling.md](tooling.md); `.map26` maps are generatable offline.
 
 ## Undocumented numbers
 
-The docs publish full stats for Core, Harvester, and all three turrets, but not these:
+The docs publish full stats for Core, Harvester, and all three turrets, but not these.
+All of them are answerable offline now, by probe-printing and reading the replay
+(technique in [tooling.md](tooling.md)):
 
 - [ ] Builder Bot **HP**, **vision radius²**, and **base spawn cost**
 - [ ] **Base costs** for Conveyor, Splitter, Barrier (the `get_*_cost()` methods exist;

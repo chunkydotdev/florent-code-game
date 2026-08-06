@@ -5,8 +5,8 @@ Ground truth about how the game works, transcribed from the official docs and tu
 [strategy-notes.md](strategy-notes.md), things we're trying go in
 [strategy-log.md](strategy-log.md).
 
-Source: `game.code.florent.vc/docs/*` and `/tutorials/*`, scraped 2026-08-06. Nothing here is
-verified against a running match yet — the platform account isn't set up.
+Source: `game.code.florent.vc/docs/*` and `/tutorials/*`, scraped 2026-08-06. Facts marked
+**[measured]** were verified in a local match on that date; everything else is as published.
 
 ## Platform
 
@@ -125,6 +125,13 @@ Stationary combat buildings, built by Builder Bots. Each runs your code every ro
 and a unit-cap slot). They fire from the **team-wide ammo balance** — they hold no ammo and
 never need feeding by conveyor.
 
+**Turrets do NOT fire on their own — you must call `ct.fire()` from their branch of `run()`.
+[measured]** The turrets tutorial claims they "attack automatically once built"; that is wrong.
+A full 1000-round match with Gunners built but given no code branch consumed **zero** ammo
+while the balance climbed monotonically to 4640. (Caveat: we can't prove an enemy crossed a
+firing line, but over 1000 rounds with builders wandering a 16×16 map it's near-certain.)
+A turret with no code is a 20–30 Ti ornament that also eats a unit-cap slot and CPU.
+
 | Turret | HP | Cost | Damage | Ammo/shot | Reload | Vision/attack r² | Rotate? |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Gunner | 25 | 20 Ti | 7 | 4 | 1 round | 13 | Yes (10 Ti, 1-round cooldown) |
@@ -171,6 +178,9 @@ never need feeding by conveyor.
 ## Economy
 
 - **Titanium is the only resource.** Single shared team balance, `ct.get_global_resources()`.
+- **Starting balance: 500 Ti [measured]** — undocumented, and a lot. That's 25 Harvesters at
+  base cost, or 200 rounds of passive income, available at round 0. The opening is far richer
+  than the income numbers alone suggest.
 - **Passive income: 10 Ti every 4 rounds** (2.5/round), granted to the team directly — not
   tied to the Core or anything you build. Over a full 1000-round match that's ~2500 Ti.
 - **Ammunition** is a separate team-wide balance, starts at **0**, with **no passive income**.
