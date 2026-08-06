@@ -1,4 +1,51 @@
-# Handover — 2026-08-09/10, after session 10 — READ THE SESSION-10-LATE ADDENDUM FIRST
+# Handover — 2026-08-09/10, after session 10 — READ THE OVERNIGHT ADDENDUM FIRST
+
+## OVERNIGHT ADDENDUM (session 10, autonomous loop while Magnus was AFK)
+
+**Live: platform v53 "v68-saboteur-escort" (= `bots/_v68si`), 7-3 on the ladder, peak
+1557 / rank #26** (from 1383/#40 at the start of session 9 — +174 in ~30 hours). One of
+three allowed overnight submissions used; policy and bar held for the rest.
+
+**What v53 is:** v52 (heal reflex) + the saboteur REPAIR ESCORT — the role-1 expander
+guards whatever building a raider is chipping and out-heals the pecks (1 Ti/+4 HP beats
+2 Ti/2 dmg; builders cannot attack units, an implementer catch that turned the spec into
+something better). +10.0 pts on flotte_probe [intervals separated], flat everywhere else.
+
+**The instrument triad is complete** — gate defense work against all three:
+| probe | md5 | models | live-bot baseline |
+| --- | --- | --- | --- |
+| `bots/band_probe` | 33cd3c14… | Banminary all-in rush | 90.0% (was 26.7% pre-heal) |
+| `bots/flotte_probe` | ff968416… | Flotte strangulation | 86.7% (v53) |
+| `bots/kladde_probe` | 42fa9f50… | kladde slow grind | **73.8% — the open front** |
+
+**Overnight verdicts (all in results.tsv):** `_v69pp` perimeter patrol DISCARDED (eider
+gain churned away elsewhere); `_v69bc` builder-cap scaling DISCARDED as parameterized
+(~13-pt opp_v50 regression from cost-scale inflation); `_v69dr` defend-succession
+HOLD-in-family (proven mechanism, inert on all instruments, zero cost); `_v67hg*` battery
+line CLOSED (heal package absorbed its value); dead engineer branch REMOVED in
+`_v69clean` (byte-identical, verified). **Family head / next-session base: `bots/_v69clean`**
+(= _v68si + succession + cleanup; unshipped — no measured improvement, bar is the bar).
+
+**Next queue, evidence in hand:**
+1. **Leaner builder-cap re-tune.** The grind probe out-collects us 17.5k vs 13.8k over
+   1000 rounds (replay `si_kladde_eider.replay26` in the session scratchpad) — the cap
+   thesis is right, `_v69bc`'s shape was wrong (cap 8 + 3 replacements inflated cost
+   scale). Try cap 6, replacements-only, or ECO_CAP raise instead.
+2. **Grind residual mechanism** (probe sweeps eider/hive 16/16 vs v53) — diagnose before
+   coding, one replay is already captured.
+3. **Nemesis audits:** Powerpuff Girls and I Stone have each beaten two consecutive
+   versions of ours narrowly — ladder replays downloadable by match id.
+4. Strangle residual (meander/eider vs flotte_probe) resisted three targeted fixes —
+   revisit only with new mechanism evidence.
+
+**Meta for the next session:** the probe-first discipline paid immediately (bc's
+regression was caught by opp_v50 screening, pp/dr honestly refuted by their own target
+instruments); identical-rows is now a reflex-check fingerprint (caught two dead-code
+situations); the replay analyst agent's pipeline (`timeline.py`, `report_gen.py`,
+`econ_curve.py` in the scratchpad) decodes any .replay26 — scratchpad dies with the
+session, so REGENERATE from tools/replay_census.py + the replay files if needed.
+
+---
 
 ## SESSION 10 LATE ADDENDUM — v8 candidate `bots/_v67ch2`, validated on a new instrument
 

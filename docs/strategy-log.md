@@ -30,6 +30,39 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Session 10 overnight — the autonomous loop: one ship, three honest refutations, the triad complete
+
+- **Date:** 2026-08-10 overnight (wall clock Aug 6 23:00 → Aug 7 ~00:30+) · autonomous
+  /loop while Magnus slept, policy: ≤3 submissions on the full bar · base `_v67ch2` (v52)
+- **Shipped: platform v53 "v68-saboteur-escort" (`_v68si`).** The Flotte saboteur can't be
+  killed (builders cannot attack units — implementation caught the spec error), so the
+  interceptor became a repair escort: guard the victim building, out-heal the pecks
+  (1 Ti/+4 HP vs 2 Ti/2 dmg). +10.0 on flotte_probe with separated intervals, flat on all
+  four other instruments. Ladder: 7-3, peak 1557/#26.
+- **Instrument triad completed:** kladde_probe (grind class) joins band_probe and
+  flotte_probe. Live-bot baselines 90.0 / 86.7 / **73.8** — the grind is the open front.
+  Kladde extraction's key fact: on meander they LOST the economy race the whole game and
+  still won — patience + a 40-round late strike vs a core that happened to have no
+  healers. Both reference games predate the heal reflex.
+- **Refuted honestly, all on their own target instruments:** perimeter patrol (eider
+  converted, then churned away on three other maps — net negative); builder-cap scaling
+  as cap-8+replacements (~13-pt opp_v50 regression: cost-scale inflation where the
+  economy thrives, never engages where it's suppressed); the whole `_v67hg*` battery-gate
+  line (heal package absorbed its value — 40.0 vs 93.3 on band_probe).
+- **Held:** defend-role succession (`_v69dr`) — mechanism proven in mock traces (death
+  r36 → promote r42 → three home sentinels), inert in every instrument's games, zero
+  cost. In the family base as insurance. Dead engineer branch removed (`_v69clean`,
+  byte-identical verified). **`_v69clean` is the next-session base.**
+- **The residuals are now MAPPED, not mysterious:** grind = we lose the 1000-round
+  titanium race 13.8k vs 17.5k (uncapped economy vs our caps — leaner cap re-tune is
+  queue 1, replay captured); strangle eider/meander = resisted three targeted fixes,
+  needs new mechanism evidence; nemeses Powerpuff/I Stone each beat two consecutive
+  versions narrowly.
+- **Meta:** ~8 gated measurements, 3 implementations, 3 extractions, 2 probe builds in
+  ~90 minutes of loop time; two-tier discipline held throughout (every verdict from the
+  main loop's own arena runs); the ship bar rejected four candidates the local numbers
+  couldn't justify — the bar working exactly as designed.
+
 ### Session 10 — the night x3r0 shipped three bots, and the mirror table came up all-lottery
 
 - **Date:** 2026-08-09/10 (session 10; wall clock 2026-08-06 evening) · bases `bots/v6`
