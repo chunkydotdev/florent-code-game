@@ -23,6 +23,17 @@ What's left is mostly gaps in the published numbers and one real contradiction.
       **engine first-mover advantage remains on the 8×8 map** — seat A 78% [61%, 89%] even
       with the neutral bot. Unfixable bot-side; folded into game-model.md. Raises the
       priority of the "how does the ladder assign seats in a best-of-five" platform question.
+- [x] ~~Why did seat A lose every single game on `jackpot`?~~ **Because a Core at (0,0)
+      publishes its position into the comms store as two zeros, and every slot starts at 0,
+      so its own builders read "no data" and never learn where home is — for the whole
+      match.** Settled 2026-08-08: that team lays no trail conveyors, builds no sentinels, and
+      delivers **exactly zero** titanium (measured 0 in 6 of 6 matches). Fixing it by
+      publishing x+1/y+1 moves the map's mirror seat split from 0/48 to 22/48. Inherited from
+      the organisers' shipped starter bot, so most of the field has it too — see
+      [opponents.md](opponents.md). Full write-up in [strategy-log.md](strategy-log.md).
+      A prior hypothesis — that `get_position()`'s NW-corner reference is not
+      rotation-equivariant — was measured and **refuted**; it is a real asymmetry that turned
+      out not to bind.
 - [x] ~~Core spawn range: r²=2 or r²=8?~~ **Neither is a radius — spawnable tiles are
       exactly the 12-tile ring around the 2×2 footprint**, measured tile-by-tile
       (`bots/probe_spawn`). The two published numbers describe that same ring from different
@@ -68,6 +79,26 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       looks robust across map size, at least via this lever. Untested: branching on something
       other than the harvester trigger (sentinel placement, spawn rate, MAX_BUILDERS).
 - [ ] Does `ct.destroy()` on obsolete buildings measurably cut later build costs?
+- [ ] **Why is seat A systematically favoured or punished on `archipelago`, `atoll`, `heart`
+      and `lighthouse`?** This is now the biggest open question in the project, and it is worth
+      several times what the jackpot bug was. Measured 2026-08-08 in mirror runs (identical
+      bots, so a strength difference is excluded by construction) and reproduced in a
+      480-match head-to-head: **archipelago seat A ~77-78%** (n=64+), **atoll ~28-31%**,
+      **heart ~31%**, **lighthouse ~28%**. All four are far outside the interval, all four are
+      terrain-symmetric maps, and **none of them is the (0,0) Core bug** — that one is
+      jackpot-only and is now diagnosed. `fjordgate` (10×10, seat A ~69-75%) is probably the
+      documented engine first-mover edge showing up at small size and is a separate story.
+      Method that worked on jackpot and should be used here: stop looking at win rates, read
+      the **per-team process metrics** in the end-of-match JSON (`titanium_collected`,
+      `units`, `buildings`) across a dozen single matches, and look for a quantity that is
+      *structurally* different rather than merely lower for one seat. Then instrument the
+      one function that quantity flows through.
+- [x] ~~What order do `get_nearby_tiles()` and `get_attackable_tiles()` return tiles in?~~
+      **Row-major in absolute map coordinates, y then x, independent of the querying entity.**
+      Measured 2026-08-08, now in [game-model.md](game-model.md). Consequence: our
+      `_run_sentinel` takes the first occupied tile off its ray, so turrets facing N/NE/NW/W
+      engage the **farthest** enemy on the line and E/SE/S/SW the **nearest** — an absolute
+      orientation bias that breaks under rotation as well as reflection, on all 15 maps.
 - [ ] **How many legal (position, facing) pairs does a builder actually have at the
       sentinel-build gate?** Raised by the 2026-08-07 aimed-sentinel discard, which was a
       perfect null (`core_destroyed` 17.2% vs a no-op control's 16.7% — no mechanism-level
