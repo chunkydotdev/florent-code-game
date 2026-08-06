@@ -90,9 +90,12 @@ v6 + three gated keeps stacked into one submission:
 
 1. ~~Stale map tables~~ — **moot**, his v62 refresh fixed them (that is what flipped
    drumlin/saga/heart into contests).
-2. **Counterbattery ECO_NEED gate — still the highest-value handover.** His v50 still loses
-   fjordgate 32/32 and meander 32/32 to us; the six-line gate is measured at +6.7 pooled on
-   his own engine class. Offer it.
+2. **Counterbattery ECO_NEED gate — DELIVERED (Magnus → x3r0, end of session 10).** Expect
+   his next upload to absorb it: our fjordgate/meander 32/32 sweeps against his engine
+   should disappear, and our measured edge over him will shrink accordingly — that is the
+   point (team Elo is shared; his bot defends the rating when his is active). When his next
+   version lands: re-pin, re-gate, and CHECK THOSE TWO MAPS FIRST — they are the receipt
+   that the gate went in.
 3. **Launchwait warts**: his engine has the unfixed r180/r200 flip-flop AND the stall-free
    waiter (audit line refs in strategy-log). Ours are fixed in v7; the diff is small.
 4. Credit where due: his platform v49/v50 adopted the CPU bail-out + exception wrapper from
