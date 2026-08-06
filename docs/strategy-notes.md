@@ -173,6 +173,36 @@ for free. Corollaries:
   neutral bot). Small-map strategy should *assume* the seat, not fight it — and how the ladder
   assigns seats within a best-of-five is now a first-order platform question.
 
+## Separation doctrine — everyone has AI loops; what actually differentiates
+
+Assume every serious team runs LLM-assisted iteration (the organisers ship AGENTS.md — it's
+the intended mode). The observed field still carries inherited starter bugs and ships
+unmeasured versions by the dozen, so the differentiators are discipline-shaped, not
+tool-shaped:
+
+1. **Ratchet vs random walk.** A gated line only ever keeps true improvements; a vibes line
+   accepts noise ~1 run in 6 and drifts. Weeks of compounding make this the primary edge —
+   protect the gate above everything else.
+2. **Private physics.** Every measured divergence from the published docs ((0,0) comms bug,
+   spawn ring, delivery-only crediting, act-order economics, mislabeled symmetries, inert
+   local CPU counter) is knowledge most teams don't have — because they trust the same docs
+   we falsified. Keep probing exactly where everyone else trusts.
+3. **Play the field distribution, not the abstract game.** Elo pays for beating the bots that
+   exist. The starter lineage is the majority and its habits are predictable — inherited bugs
+   are an exploit *class* (e.g. a corner-seated starter-lineage bot on jackpot delivers zero
+   all game). Opponent dossiers + version tracking turn this into targeting data.
+4. **Buy perishable advantages — automation makes them affordable.** The weekly map rotation
+   expires map-specific work every Monday. Teams doing it by hand can't justify rebuilding
+   opening books, per-map timing calendars, and tuned constants weekly; a pipeline can. The
+   rotation is a moat FOR whoever automates recalibration, not against them.
+5. **The human channel.** Replay-watching humans redirected our queue twice (rush meta,
+   high-Elo scouting) — self-play can't see strategies nobody in the pool plays. Keep the
+   human watching and the machine listening.
+
+Corollary of 1+4: the variance that makes this game miserable to measure (identical bots
+finishing 0-vs-10) is itself a moat — naive tuning chases noise and goes nowhere. Whoever
+handles the statistics correctly gets to spend compute where others literally cannot.
+
 ## Borrowing from the RTS canon — what translates, and what doesn't
 
 The 1306-rated ladder loss (2026-08-08, see opponents.md) was proxy-cannon-rush 101: static
