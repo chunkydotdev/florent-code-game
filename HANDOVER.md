@@ -189,7 +189,14 @@ game-model.md wins; compare against the incumbent, not `starter`). New this sess
 
 ## Not done
 
-- Daily retro for 2026-08-08 in the dev-knowledge vault.
+- **The dated labels in our docs have drifted ahead of wall-clock and I have propagated the
+  drift rather than silently renumbering.** Every git commit in this repo is authored
+  `Thu Aug 6 2026`, and the platform's own timestamps (`fcode status`, `match list`) read
+  `2026-08-06`, but session 5 labelled its entries `2026-08-07` and this session's are labelled
+  `2026-08-08` to stay monotonic with them. **The three "days" in the log are one calendar
+  day.** Worth fixing deliberately — and worth knowing before correlating any of it with the
+  dev-knowledge vault's daily notes, which are keyed to real dates.
+- Daily retro in the dev-knowledge vault.
 - Still no `git remote`; `results.tsv` still deliberately untracked.
 - Scratch dirs on disk, all untracked and safe to delete: `bots/_incumbent` (stale pin of
   `a9d81a1`), `bots/_diag_core`, `bots/_diag_seat`, `bots/_probe_sent`, `bots/aug7_h1..h4`,
