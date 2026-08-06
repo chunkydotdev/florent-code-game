@@ -99,6 +99,13 @@ If neither Core dies by round 1000, tiebreakers in order:
 
 - **10 ms of CPU per unit per round**, plus a banked buffer of up to 5% of that (unused time
   banks, overuse is debited). Monitor with `ct.get_cpu_time_elapsed()` (microseconds).
+- **`ct.get_cpu_time_elapsed()` appears inert under the local runner [measured 2026-08-08].**
+  It read 0 both before and after a 500,000-iteration Python loop that `time.process_time()`
+  measured at ~22 ms — 2.75× the whole budget — and returned zero non-zero deltas across
+  ~55,000 sampled builder-rounds, with `--tle 10` passed. **Consequence: our CPU guard cannot
+  be validated locally, and neither can a change's CPU cost.** Profile locally with
+  `time.process_time()` instead, and treat `fcode match test` on real hardware (AWS Graviton3,
+  limit enforced) as the only real verification before submitting anything CPU-heavy.
 - Exceeding the limit **interrupts that unit for that round only** — `run()` is called fresh
   next round. Cheap.
 - **An uncaught exception permanently removes the unit from the match.** It never acts again.
@@ -343,6 +350,16 @@ Worth knowing that these exist, since the tutorials never use them:
 `get_attackable_tiles()`, `get_attackable_tiles_from()`, `can_fire_from()` (hypothetical
 targeting — ignores ammo and cooldown), `is_tile_passable()`, `get_stored_resource()`,
 `get_unit_count()`, `build()`/`can_build()` (generic), `rotate()`, `launch()`, `resign()`.
+
+**Tile queries raise on anything outside current vision, not just off the map [measured
+2026-08-08].** `get_tile_env()`, `is_tile_passable()` and `get_tile_building_id()` all raise
+`GameError: Position out of vision range` for an in-bounds tile the unit cannot currently see —
+with the *identical* message as a genuinely off-map position, so the engine does not let you
+tell the two apart. `in_bounds()` is necessary but **not sufficient**. Anything that reasons
+about ground a unit saw earlier must read a memo the bot maintains itself; re-querying is not
+an option. Relatedly, `get_nearby_tiles(dist_sq=N)` **raises** when `N` exceeds the caller's
+vision radius (`GameError: dist_sq exceeds vision radius`) — fine for the Core's `dist_sq=8`
+against its r²=36, but not a knob to turn up freely.
 
 `Position` and `Direction` are plain Python (`fcode/_types.py`); only the `Controller` is the
 compiled engine. **`Position.direction_to()` is `atan2`-based and has no ties [measured

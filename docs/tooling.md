@@ -73,6 +73,22 @@ works — but stderr is simpler and doesn't need the replay written at all.
 Uncaught exception tracebacks, by contrast, *do* go to stderr during `fcode run` — which is
 how the starter bot's crash bug was spotted (see [strategy-log.md](strategy-log.md)).
 
+## Two traps in the local harness (both measured 2026-08-08)
+
+- **The bot-code validator rejects `try`/`finally`.** Submitting or running a bot whose
+  `main.py` contains a `finally:` block fails outright with
+  `ValueError: <bot>/main.py:557: 'finally' blocks are not allowed`. Undocumented anywhere in
+  the organisers' pages. Wrap-and-restore instrumentation patterns have to be written as
+  call-then-report instead. `try`/`except` is fine — and mandatory, see game-model.md.
+- **`ct.get_cpu_time_elapsed()` is inert under `fcode run`, even with `--tle 10`.** It read 0
+  before and after a 500,000-iteration loop that `time.process_time()` clocked at ~22 ms, and
+  produced zero non-zero deltas across ~55,000 sampled builder-rounds. So the shipped CPU guard
+  never trips locally *because the counter never moves*, not because we are fast. **To profile
+  a change's CPU cost locally, instrument with `time.process_time()`**; leave the shipped guard
+  on `ct.get_cpu_time_elapsed()`, which is the real signal on ladder hardware. The only genuine
+  verification of a CPU-heavy change is `fcode match test` on AWS Graviton3, where the limit is
+  enforced — and that is a rate-limited platform command, so budget it.
+
 ## Self-play: `tools/arena.py`
 
 `fcode run BOT_A BOT_B` already plays our bots against each other — that's the whole
