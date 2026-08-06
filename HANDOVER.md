@@ -121,8 +121,19 @@ queue.** Full mechanism with line numbers in [opponents.md](docs/opponents.md).
 
 ## Operating notes
 
-- **The submission-watcher monitor died with this session — re-arm it** (five-minute poll of
-  `fcode status`; it caught every rating tick this session).
+- **Standing directive (Magnus, 2026-08-06): measure Elo over time so we never ship a worse
+  bot and fail to notice.** `elo_history.tsv` (repo root, tracked) is the append-only ladder
+  tape: `timestamp, rating, matches, active_bot, note`. It is fed by the session monitor
+  (below); **re-arm the logger version at every session start** — the poll appends each rating
+  change to the file as well as notifying. **Regression rule:** every activation gets a
+  baseline row (rating, match count); after **~20 ladder matches** under a new bot, compare its
+  rating delta against the previous bot's trajectory over its final 20. Clearly negative with
+  no confound (opponent-pool shift, teammate activations) → **roll back**
+  (`.venv/bin/fcode submission activate <previous>`, Magnus runs it) and log the reversal on
+  both tapes. v47's baseline: 1383 @ 132 matches.
+- **The Elo logger monitor dies with this session — re-arm it** (five-minute poll of
+  `fcode status`; the logger variant is in this handover's git history and in the memory of
+  the session that built it — it appends to `elo_history.tsv` and notifies on change).
 - **Orchestration norm (Magnus, this session): two-tier, not three-tier.** Fable inline on
   design/edits/verdicts; delegated read-only diagnostics as single subagents WITH explicit
   model tier; three-tier reserved for wide fan-outs (tournament-week recalibration). Both of
