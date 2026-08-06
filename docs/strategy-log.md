@@ -30,6 +30,52 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### v1 — robustness only: don't let units delete themselves
+
+- **Date:** 2026-08-06 · **Not yet submitted** (no platform account)
+- **Hypothesis:** the starter bot's uncaught exceptions are its single biggest weakness. The
+  engine permanently deletes a unit on any escaping exception, so every crash is a unit lost
+  for the rest of the match — not a skipped turn.
+- **Change:** two things, nothing else.
+  1. `run()` wraps a `_dispatch()` in `try/except Exception`, reporting only the first
+     traceback per unit to stderr (so a per-round bug can't flood the log or eat the 10 ms
+     CPU budget formatting tracebacks).
+  2. New `in_bounds()` helper, checked in `_try_move()` before touching the engine.
+     `_move_toward_target()` tries up to four directions, and tile queries like
+     `is_tile_empty()` **raise** off-map rather than returning False — so every bot standing
+     on an edge tile was rolling the dice on its own life.
+- **Predicted effect:** large. Stated before measuring.
+
+**Result — 256 matches (8 maps × 16 seeds × both seat orderings):**
+
+| | v1 | starter |
+| --- | --- | --- |
+| Wins | **152** | 104 |
+| Win rate | **59.4%**, 95% CI [53.3%, 65.2%] | — |
+| Crashes | **0** | **515** |
+
+Lower bound clears 50%. **Keep.**
+
+**Read:** the hypothesis held, but the effect is *smaller than the crash count suggests*.
+515 crashes over 256 matches is ~2 units lost per match per side — real, but with typical
+end-of-match unit counts of 5–13 it's usually a wound rather than a kill. The exception is
+small maps: on `tiny8` v1 went **31/32**, where losing two bots is losing the whole economy.
+So the crash bug's cost scales inversely with map size.
+
+**Worth not over-reading:** per-map splits here are 32 matches each, so their intervals are
+±17 points. v1's apparent loss on `vsym16` (13/32) is well inside noise. Only the pooled
+verdict is solid.
+
+**New evidence on the seat question:** on `mid20`, seat A lost **0/32** — and v1 took exactly
+the 16 of those where it happened to be seat B. Seat decided that map regardless of which bot
+sat in it. Since v1 doesn't crash at all, this rules out "crashes cause the seat effect" and
+points at an engine/layout interaction. `small12` behaves the same way (2/32). The earlier
+`tiny8` wipeout, by contrast, has now vanished (46.9%) — that one *was* crash-driven.
+
+**Next:** v1 is the new baseline. Real strategy changes should wait for `fcode maps sync`;
+tuning against eight invented maps risks fitting the wrong distribution. Remaining robustness
+work that's distribution-independent: a CPU-budget guard using `ct.get_cpu_time_elapsed()`.
+
 ### Baseline — shipped starter bot, measured locally
 
 - **Date:** 2026-08-06
