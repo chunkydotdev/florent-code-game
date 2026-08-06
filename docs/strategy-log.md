@@ -30,6 +30,59 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### No-verdict, escalated not discarded — the (0,0) Core store fix repairs the map and the gate can't see it
+
+- **Date:** 2026-08-08 · challenger `bots/ladder1`, baseline `bots/_incumbent` = `a9d81a1`
+- **Hypothesis, stated before measuring:** publishing the Core's position with a +1 offset so
+  that store slot 0 keeps meaning "unwritten" will restore delivery for a team whose Core sits
+  at (0,0), repairing `jackpot` from a guaranteed seat-A loss to a fair map. **Predicted pooled
+  effect: about +1.7 points** — a full repair of one map out of fifteen moves that map from
+  ~50% to ~75% head-to-head (we win it outright in the seat the incumbent throws away, and play
+  it evenly in the other), which is 25 points on 1/15 of the pool. **That is below what a
+  480-match confirm can resolve, and it was written down before the run.**
+- **Change (one, minimal):** `_run_core` writes `pos.x + 1` / `pos.y + 1`; `_read_core_pos`
+  requires `x > 0 and y > 0` and subtracts the offset. Comments rewritten to explain the trap.
+  Nothing else in the file touched.
+- **Results:**
+
+  | run | n | result |
+  | --- | --- | --- |
+  | mechanism, 6 single matches on jackpot | 6 | team A `titanium_collected` **0/0/0/0/0/0 → 4970 / 2480 / 4970 / 4960 / 2480 / 4970** |
+  | jackpot mirror seat split | 48 | **0/48 = 0.0% [0%, 7%] → 22/48 = 45.8% [33%, 60%]** |
+  | screen vs incumbent | 90 | 56.7% [46.4%, 66.4%] — survived |
+  | **confirm vs incumbent** | **480** | **51.5% [47.0%, 55.9%] — no verdict** |
+  | regression vs `opp_v39` | 240 | 62.5% [56.2%, 68.4%], clears 50%; reference `aug7` 65.0% [57.8%, 71.6%] — overlapping, no regression |
+
+  0 crashes for the challenger in every run (opp_v39: 382). Confirm per-map: **jackpot is the
+  challenger's best map at 25/32 = 78.1%**, the only map that moved, and **no map regressed**.
+- **Verdict under the standing rule: no verdict, therefore not promoted.** The incumbent stays
+  `bots/aug7` at `a9d81a1`. The change is preserved at `bots/_fix_core00/` rather than deleted.
+- **Why it is being escalated instead of dropped on the floor.** Everything the accept rule was
+  built to reject is absent here, and everything it was built to protect is satisfied:
+  - The a-priori prediction was **+1.7 points**; the measurement came back **+1.5**. This is not
+    a change that "looked good and shrank" — it landed on its stated number.
+  - The mechanism was measured directly rather than inferred from the win rate: a team's
+    `titanium_collected` moved from **exactly zero** to normal, and the map's mirror seat split
+    moved from 0/48 to 45.8%. Those are p-values in the 1e-14 range, not coin flips.
+  - The pooled gate is simply the wrong instrument for a defect confined to 1 map in 15. It is
+    not that the evidence is weak; it is that 480 matches over 15 maps cannot resolve two
+    points, and no achievable sample would — halving the interval needs ~2000 matches, and it
+    would still straddle 50%.
+  - This project has already made this call once, deliberately: **v2's CPU guard was kept on a
+    no-verdict** (`results.tsv`: *"no-verdict as predicted for an inert-locally change; kept as
+    ladder insurance"*), and [HANDOVER.md](../HANDOVER.md) states the rule outright — *the
+    accept gate is for strategy changes, not insurance changes*. A guard against a measured
+    total-failure mode is the same category.
+  Promoting it is nonetheless a human decision, not the loop's: it changes the submission
+  candidate. **Recommended: apply.** Whether the pooled gate should be extended with an explicit
+  per-map correctness clause is a program.md question for Magnus.
+- **What the confirm's per-map table also says:** with the (0,0) bug removed, `jackpot`'s seat
+  split is *still* skewed (28.1% seat A) because the **incumbent** on the other side is still
+  broken there — which is the correct signature, and a reminder that a head-to-head seat column
+  measures both bots at once. The maps still flagged with both bots healthy — archipelago 78%,
+  atoll 28%, heart 31%, lighthouse 28%, fjordgate 75% — are **untouched by this fix** and are
+  the open work.
+
 ### Finding — a Core at (0,0) is invisible to its own builders, and it costs the whole map
 
 - **Date:** 2026-08-08 · found by chasing the `jackpot` seat wipeout; the first hypothesis was
