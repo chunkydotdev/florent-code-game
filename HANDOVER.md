@@ -31,7 +31,7 @@ returns at phase boundaries, and a check every 64 iterations inside each BFS loo
 | --- | --- |
 | **no-regression vs `opp_v45`, 480 matches** | **exactly 240-240 — 50.0% [45.5%, 54.5%], 0 crashes both sides** |
 | forced-trip build (threshold 0, every guard fires), 120 matches | **0 crashes** — bail-outs leave no half-updated state |
-| no-collapse vs `starter` / `opp_v39` | see the `v63guard` rows in `results.tsv` |
+| no-collapse vs `starter` / `opp_v39`, 240 each | 90.8% [86.5%, 93.9%] / 88.3% [83.7%, 91.8%], 0 crashes |
 
 **A dead-even 240-240 is the ideal outcome here, not a disappointing one.** The guard is a no-op
 locally by construction, so the gate can only demonstrate *no harm* — which it does, precisely.
