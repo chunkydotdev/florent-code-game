@@ -156,7 +156,7 @@ is exactly what the near-Core zone does in the shipped version, and the census c
   against v44 confirmed at **40.8% — identical to untuned `aug7`.** The gap is structural, not
   tuning. Directionally the elite distribution drifted `TARGET_HARVESTERS` 3→4 and `AMMO_BUFFER`
   20→~14. **Re-tune after the delivery economy changes, not before:**
-  `.venv/bin/python tools/tune.py _pkg45 opp_v44 --guards starter opp_v39`.
+  `.venv/bin/python tools/tune.py <candidate> opp_v45 --guards starter opp_v39`.
 - **BFS pathfinding** — still discarded, code in `bots/_dev_bfs` (see session 6's entry).
 
 ## Known residual weaknesses
@@ -172,10 +172,11 @@ is exactly what the near-Core zone does in the shipped version, and the census c
   count at Chebyshev distance 1-2 — in a zone where its code is byte-identical to `aug7`. The
   far-zone topology is feeding the near zone differently and nobody has said how. Most likely
   place another chunk of delivery is hiding.
-- **Small maps: `fjordgate` is our best map against v44 (32/32) for a reason that is theirs, not
-  ours** — v44 gates its vision-triggered battery on `w*h > 120`, so on the 10×10 it is
-  disabled. The hole read out of its source last session is real and total. **Do not copy that
-  gate**, and do not read our 32/32 as small-map strength of our own.
+- **Small maps: `fjordgate` is our best map against both teammate bots — 32/32 vs v44 and
+  26/32 vs v63 — and only the first has an explanation.** v44 gated its vision-triggered battery
+  on `w*h > 120`, disabling it on the 10×10. **v63 removed that gate entirely** (confirmed in the
+  source catalogue), so our continued 26/32 there is currently *unexplained* and worth one
+  diagnostic before anyone assumes small maps are a strength of ours.
 - **Mirror equivariance: still unfixed, still unmeasured this session.** Six of the 15 maps
   mirror; `cardinal_toward` is equivariant, and the new trail rule is defined relative to the
   walk (so it is equivariant under rotation *and* both reflections by construction), but no
