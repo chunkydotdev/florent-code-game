@@ -37,7 +37,18 @@ against them. The checklists below are how those design choices get cashed in.
 8. Watch the first few ladder replays (`fcode watch`) and start filling
    [opponents.md](opponents.md) with real observations.
 
-## 2. Tournament-start / rules-change recalibration
+## 2. Weekly-rotation / rules-change recalibration
+
+**The map pool rotates WEEKLY** (learned 2026-08-06, when the current rotation landed in
+`maps/new-maps/`). So this checklist isn't just for tournament start: steps 3–4 run at least
+weekly, the full list on any announced change. Corollaries: per-map tuning and any future
+opening-book tables have a one-week shelf life, and robust-across-maps changes keep their
+priority permanently.
+
+**Pool cutover** (between loop tags only, never mid-tag — it changes the test distribution
+mid-comparison): retire the invented maps and promote the rotation via Bash (`maps/` is
+Edit/Write-protected by design): `git rm maps/*.map26 && cp maps/new-maps/*.map26 maps/ &&
+git add maps/*.map26`, then commit. The invented set stays recoverable in git history.
 
 Run top to bottom; each step either confirms an assumption or flags exactly what moved.
 

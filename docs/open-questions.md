@@ -81,12 +81,18 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       so a series without seat alternation is partly a coin flip on tight maps.
 - [ ] Is there a public ladder API worth polling for opponent tracking, or is `fcode ladder`
       the only interface?
-- [ ] The competition **map pool** — how many maps, what size distribution? `fcode maps list`
-      answers this once we're logged in, and it directly determines how much the small-map
-      case matters. **Announced 2026-08-06: the pool has changed and stays hidden until the
-      tournament, and other variables may be tweaked** — so census it at approval AND again
-      at tournament start, and run the recalibration checklist in [runbook.md](runbook.md)
-      both times.
+- [x] ~~The competition **map pool** — how many maps, what size distribution?~~ **Current
+      rotation obtained 2026-08-06 (`maps/new-maps/`), and the rotation is reportedly
+      WEEKLY.** Census (tile-exact parse): **14 maps, areas 100–676, median ~470** — only one
+      truly small map (fjordgate 10×10, cores 4 apart) plus a 21×8 corridor (moonrise), so
+      the small-map case is a minor slice this week. **All three symmetries appear** (8
+      rotational, 3 horizontal-mirror, 3 vertical-mirror) — our invented pool was
+      all-rotational, so mirror-map behaviour is newly load-bearing. **Wall density runs
+      0.6%–30.8%** (five maps ≥14%, far wallier than our inventions — pathfinding and the
+      Sentinel's wall-ignoring line matter more). `jackpot` has a literal corner Core at
+      (0,0), where the full-ring spawn scan earns its keep. Weekly rotation means re-census +
+      re-baseline weekly ([runbook.md](runbook.md) §2), and per-map tuning has a one-week
+      shelf life.
 
 ## Blocked on account access
 
