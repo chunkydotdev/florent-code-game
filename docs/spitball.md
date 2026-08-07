@@ -1180,3 +1180,21 @@ Scope caveat: measured on Ouroboros v8 only; family reach unknown (their
 gentleness-era probe calibration suggests other deterministic teams exist —
 same instrument would test any of them). Parked as a shaped direction for
 the morning brief; no build tonight (not in the mandate).
+
+## Opponent error prints = free displacement telemetry in local legs (builder+research, overnight ~23:20)
+
+Three consistent data points tonight: opp_v69's stale-pave caught-exception
+prints scale with how much OUR bot displaces his builders — 22-32/120 base
+band (no ring, no thrower), 68/120 under C1's ring pressure, 90/120 under
+HD's 127-throw ejection. His error rate is OUR displacement meter, at zero
+instrumentation cost, readable from stderr in any local battery. Uses:
+(a) mechanism-fire verification for any future displacement piece (throw
+counts from OUR logs say what we did; HIS print count says what actually
+landed on his dispatch); (b) regression canary — a displacement-neutral
+change that moves his print rate is doing something we didn't intend.
+Limits: local-only (stderr never reaches us from platform games), opponent-
+specific (needs a lineage that prints its catches; x3r0 forks do), and it
+counts units-touched not severity (his freshness gate caps per-event cost
+at ~1 action). Generalizes to any opponent whose caught-exception prints
+correlate with a game state we induce — worth checking which other pool
+teams print diagnostics at all.

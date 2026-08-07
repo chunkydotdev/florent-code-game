@@ -166,6 +166,19 @@ the same command diverge. arena.py's many-match design absorbs this; a single pr
 depends on exploration may need a retry (probe_credit walks to the map centre until ore is
 visible for this reason).
 
+## Cross-batch win-rate deltas are not trustworthy at n=120 (builder measurement, overnight 2026-08-08)
+
+Non-interleaved 120-game legs against opp_v69 spread ~10 percentage points
+SAME-BINARY on this machine (measured during the piece-U anomaly diagnosis;
+retro-caveat applied on the coordination tape to every cross-batch vs-parent
+delta from that night). Two independent noise sources stack: opponent-side
+nondeterminism (x3r0-fork spawn salt; also the tb-decode's 6-vs-1 freeze
+incidence across legs, worth ~5 games alone) and batch conditions. Per-leg
+Wilson intervals stand; DELTAS between separately-run batches don't resolve
+10-15pp effects at n=120. Standard going forward: deterministic-paired runs
+(all-sides noise-off, paired seeds, protobuf turn-differ — builder-session
+tooling, promotion candidate) or interleave both variants in the same batch.
+
 ## Determinism references for local runs (2026-08-07, session 12)
 
 `bots/starter` calls unseeded `random.shuffle/choice/randrange` (main.py:167,315,372,450)

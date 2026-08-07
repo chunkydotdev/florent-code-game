@@ -53,12 +53,12 @@ stay the builder's.
 | research | S14 ferry-loop ATTRIBUTION RE-CHECK (parked-run-in-idle-window per builder; window = now): launcher-owner attribution on the premortem's long-loop games (a7aa49ec/b10cce55/cdbd5b52) — is the repeat-throw launcher CAD's or the defender's? Resolves the KCM read's inversion flag. One read-only Sonnet agent | addendum resolution in docs/research/cad-ferry-premortem-2026-08-07.md | local only | LANDED ~21:25 — VERDICT: INVERTS. Premortem's exact loop counts reproduced (17×/21×/28× same tiles) with OWNERSHIP FLIPPED: every long-game loop launcher is the DEFENDER's, discarding CAD's inserted raiders at a fixed edge tile; CAD's own launcher is r1-build/r6-self-destroy in 13/15 games and structurally dead before any loop. K2 deny-vs-displace MOOT for loop tiles (a barrier there obstructs the defender's own disposal). Finding-1 opening constants untouched; PARK stands. Method gotcha logged in tooling.md (launcher throws = long moveBuilderBot, never FireTurret). Matches Clankers' independently-observed ejection ring |
 | research | OVERNIGHT (22:15 mandate) KCM-WIN natural-experiment decode: c821193d (OpenSverige v68 3-2 KCM v1, ladder 22:19 local, ARCHIVED 5 replays) — first-ever KCM ladder win; per-game test of the C1 predictor (≥3 their turrets at d²≤36 of our core ⇒ loss) + what v68 did differently in won games (counter-gunner killed early? home turrets?) — feeds builder's ACTIVE C1 gate design. One read-only Opus agent | docs/research/kcm-win-c1-validation-2026-08-07.md | local only — archived, no downloads | LANDED 22:50 — PREDICTOR REFUTED both directions (g1 WIN with 3-at-d²≤36 held 78 rds; g4 LOSS with never-3): 13/15 lifetime = weak correlate, NOT a gate; no radius (25/49/64) or threshold (≥2) rescues it. REPLACEMENT with perfect separation on this match (23 KCM near-core turrets): RAY COVERAGE — 8/8 on a reachable friendly firing ray died to our turrets, 15/15 uncovered took ZERO turret shots ever; both game-losing turrets uncovered. C1 DESIGN CONSEQUENCES (time-critical for the race worker): spec C1 as ray coverage of tiles d²≤9 of footprint, NOT a radius ring; sentinels CANNOT rotate (0/277 re-emissions) → home ring is fixed-facing, re-aim = free destroy + rebuild; kill rotate-thrash (g5: 219 rotations ≈ 2190 Ti = 75% of income for 65 shots). KCM deltas: builder-attacks-vs-turrets NEW (227/109 in g4/g5), 4th-convert decoupled from first-turret, 1-throw openings on ≥24-wide maps, 6 barriers > "≤4 ever". Decode validated: placeEntity dedupe (277 re-emits all gunner rotations), ammo identity holds on all 10 team-sides |
 | research | OVERNIGHT CAD v116-era first read: 27435b40 (CAD v116 5-0 our v68, ladder 21:56 local, ARCHIVED 5 replays) — (1) loss modes vs v68: same ferry+counter-gunner or new capability; (2) are the premortem's map-keyed OPPONENT-INDEPENDENT opening constants still true under v116; (3) v116-era opening rows staged for builder's probe re-freeze. One read-only Opus agent | docs/research/cad-v116-first-read-2026-08-07.md | local only — archived, no downloads | LANDED 22:55 — SAME CLASS 5/5 (insertion + forward battery + counter-turrets; all family signatures reproduce; ferry inversion HOLDS in v116). OPENING-CONSTANTS ASSET SURVIVES v107→v116: byte-identical rows on 4/5 maps w/ archived v107 same-map games (SHA-1 map match), opponent-independence re-confirmed — the family A/B churn is NOT touching the first 30 rounds → opening-row re-freeze is safe even mid-churn (mid-game rows stay perishable). FREEZE: launcher rnd+tile, spawn tiles, r2-4 throw DESTINATIONS, r6 self-destroy, 8/8/8 ammo. DON'T: throw sources, 4th lump (16-186 variable), r3 forward-turret row (the ONE mover: 28×20 gunner (16,10)→sentinel (15,9), cause UNCERTAIN). +2 cad_probe adds (exact-tile turret re-plant; builders attack core). OUR side: pave crash 0/5 (consistent w/ base rate), delivery freeze cost us (wiredness 31/78…0/0 vs their 6/6…17/17, g3 delivered ZERO); NEW BUG for builder ticket: g4 builder immured itself behind own harvester, idle 221 rnds, never destroy()-freed. TOOLING FIX APPLIED: throw attribution d²≤2 incl. diagonals (orthogonal-only rule returned NONE on 6/14 throws; d²≤1 attributions unchanged so ferry inversion unaffected). Decode: 2271/2271 dmg events attributed, all self-checks PASS |
-| research | OVERNIGHT Clankers NO-CONFOUND read (successor item 3 UNBLOCKED): 5 fresh matches none-vs-us — marquee 024d13d6 (Clankers 5-0 Leviathan LADDER = family-speed stress test), d22ea676 (3-2 gsxWins ladder), e55076da/4867c6ea/74beed02 (unrated) — the 8 pre-registered watch items. Corpus NOT yet archived (completed 22:07-22:20 local, after archiver reach); archive-first: wait for 23:00/23:30 cycles, direct-pull marquee (5 files, paced ≥60s, from night budget 15) only if still absent after 23:30 cycle | docs/research/clankers-noconfound-2026-08-07.md | archive-first → ≤5 direct | WAITING on archiver |
+| research | OVERNIGHT Clankers NO-CONFOUND read (successor item 3 UNBLOCKED): 5 fresh matches none-vs-us — marquee 024d13d6 (Clankers 5-0 Leviathan LADDER = family-speed stress test), d22ea676 (3-2 gsxWins ladder), e55076da/4867c6ea/74beed02 (unrated) — the 8 pre-registered watch items. Corpus NOT yet archived (completed 22:07-22:20 local, after archiver reach); archive-first: wait for 23:00/23:30 cycles, direct-pull marquee (5 files, paced ≥60s, from night budget 15) only if still absent after 23:30 cycle | docs/research/clankers-noconfound-2026-08-07.md | archive-first → 10/15 direct | PULLING 23:30 — three archiver cycles missed the corpus (crowded out by newer globals), pre-stated pull condition met. CORPUS EVOLVED since registration: Clankers now ~13 no-confound matches incl. their FIRST OBSERVED LOSS (5792d8fa, 1-4 vs O(1) v10 LADDER, 23:16 local) + wins vs OGE/Besvikomat/Banminary/SmartFridge; also CAD bumped AGAIN v116→v117 (21:22Z unrated vs Clankers). Pulled: marquee 024d13d6 (Leviathan 0-5 Clankers, 5 files + meta, DONE) + 5792d8fa (the loss — how the pool beats the new sub-type; 5 files, paced 65s, background). Both pulls VERIFIED (10 files + 2 metas). LANDED 23:53 — CLASS RELABEL PROPOSED: HEAL-TANK SIEGE (picket does NOT survive: watch item 3 REFUTED — first forward sentinel r7-r41 typical, PRECEDES any enemy turret in 3 games; same opening family as our v68). Scorecard: 1 REVISED (pure reactive counterbattery, 17/18 sited d²≤2 of an enemy turret, absent when no target), 2 REVISED (ejection ring income-gated: 439 ejections all-enemy-all-outward, zero launchers when broke), 4 CONFIRMED+quantified, 6 CONFIRMED (0 barriers/splitters in 15 games), 7 REVISED (siphon RECURS — 196 stacks/1,960 Ti, emergent conveyor-first router, not designed tap), 8 REVISED. THE CONTROLLER LAW (headline): proportional core-heal tracks incoming dmg within 2% in all 7 survivals; ceiling 6.12 HP/rnd under suppressed economy; kill condition measured, death round PREDICTED from deficit 220/395/385 vs actual 219/393/365. EXPLOIT RESTATED: source COUNT wrong variable, ~60-rnd figure REFUTED — target is ≥10 dmg/rnd sustained on footprint while their delivery <~500 Ti (219-393 rnds to kill); one sentinel ~9/rnd = on the line and exactly what their counterbattery eats. Delivered-Ti predicted all 10 outcomes. PROBE SPEC: GO, 8-item spec in doc §0.4 (heal controller headlines). BONUS: O(1) v10 FIRST-CLASSIFIED (forward-gunner saturation + builder chip, 64-81% on conveyors, over fixed 2-3-harvester economy; 1786 Elo = highest decoded). WAKE ITEM: Leviathan v26 showed ZERO rush behavior (0 sentinels/launchers/builder-attacks in 5 games) — inconsistent with the family read; version-era check needed before the family counter is trusted vs current Leviathan. Both decode identities verified (delivery 20/20, NEW core-damage-ledger check 10/10) |
 | research | OVERNIGHT axis-split v3 RATED-ONLY re-cut (successor item 5 unblocked: our-corpus 22→37 matches, v68 rated-only now 19 matches/~95 games): same verbatim method (Replay.cores, dx==0 or dy==0 = cardinal, team0=teamA), cut version × rated/unrated × axis — primary question: does v68's sign-flip vs v67 survive UR exclusion, or was it the strong-opponent UR-burst confound as flagged in v2? One read-only Sonnet agent, no downloads | docs/research/axis-split-our-games-2026-08-07.md (v3 section appended) | local only | LANDED 22:40 (verified vs `date`) — SIGN-FLIP DOES NOT SURVIVE: v68 rated-only cardinal 50.0 [34.1,65.9] vs diag 42.6 [31.0,55.1] (same direction as v67/sporks); the reversal lived entirely in the UR cut (cardinal 7.1% there — UR opps avg 1813 Elo vs rated 1570; Pivot/not-adgato/Jython/sporks 0W-16L combined = the confound, CONFIRMED as v2 flagged). Pooled rated-only 52.2 vs 39.2, direction consistent for the first time, but ALL CI pairs overlap 12-19pts — still NOT claimable for Thor-layer map choices. Corpus 37/185, zero parse failures, seat-map re-verified zero mismatch |
 | research | OVERNIGHT OREKEEPER (v69) DELTA READ (slot changed 22:21 local, x3r0 upload; bar rebased to opp_v69 by builder, pre-stated): code diff opp_v68→opp_v69 (md5 562b01e9 VERIFIED by research; E-series ~125 diff-block lines) — (1) do E-pieces touch the delivery-freeze defect (v68 read: 5/11 r1000 games frozen, network never re-attaches); (2) does tiebreak-#1 delivered-Ti territory change; (3) predecessor-read carryover audit (which v68-chokewall findings survive); (4) crash-class exposure (research pre-verified: v69:3536 same unguarded is_tile_empty(pp), piece-F handshake is ANCESTRAL — in v68 too, which still crashed 22/120; residual path = enemy throws + handshake misses); (5) production sanity vs 4d5fcf04 (v69 4-1 I Stone, 22:30 local) if archived in time. One read-only Opus agent | docs/research/orekeeper-v69-delta-read-2026-08-07.md | local only | LANDED 23:05 — delta is ECONOMY-ONLY (8 hunks, 40 live code lines; combat/siege/chokewall/endgame untouched). Q1 DELIVERY-FREEZE UNTOUCHED: no re-plan on conveyor loss, _link_path still fires only on harvester-build; BONUS ROOT CAUSE (both versions): SLOT_HARVESTERS is a monotonic high-water mark (writes only if live>stored, never decrements) — why pave/ammo gates stay open after a harvester wipe. Q2: delivered floor RISES on 2 map classes (E2a decoded ≤8-ore unstick; E2b ore pave ban), ceiling + post-r300 unchanged (SURGE_MIN_RND=300 still last switch) — Branch-B note: soften "v69 delivers zero", measure OWN margin vs a recovering opponent. NO E3 EXISTS (E1/E2/E4 only) — morning question for x3r0. Carryover: ALL v68 findings CARRY (small-map collapse RE-VERIFY magnitude only — E2a fires there; map-recognition dependency DEEPENS). GRAFT-BRIEF PLANK REVISION: pave-bug asymmetry — in his line the stale read is freshness-gated to ONE lost action (run() swallows all; E2b try/except inserted 11 lines below the unguarded call), vs recurring dispatch loss in ours pre-N → piece-N is worth ~nothing to him; do NOT oversell the "gift" plank. Q5 skipped clean (zero v69 replays archived, no download taken; 5 falsifiable predictions pre-registered in the doc) |
-| research | OVERNIGHT v69 PRODUCTION READ (successor item 1 analogue for the teammate slot change; instrument = the delta doc's 5 pre-registered predictions, NOT spec rev 3 which is our-lineage): 3 archived ladder matches / 15 games — 4d5fcf04 (v69 4-1 I Stone v18), fb335c41 (v69 1-4 OGE v21 — the r1000-grinder we 5-0'd under v68; direct delivery-freeze/tiebreak stress), 54107b82 (v69 2-3 PP v18). Per-prediction verdicts + wiredness both sides + E2a/E2b firing evidence + post-wipe high-water behavior. One read-only Opus agent | docs/research/orekeeper-v69-production-read-2026-08-07.md | local only — archived, no downloads | SPAWNED ~22:58 (registry stamps corrected to `date` henceforth) |
-| research | OVERNIGHT WILD-KCM ESTABLISHMENT RATES (builder ask post-C1-gate: cad_probe establishes ~7 near-core turrets/game vs wild KCM 1-5 — supply-constraint calibration for C1b's cap + arming gate): apply the ray-coverage predicate + establishment counting over the FULL archived KCM corpus (c821193d done tonight; b3656fe7, 9a32a859 vs-us; 484095e3, 4a36151e, 9e41db1a non-us = ~25 more games) → per-game establishment rate, covered/uncovered split, lifetimes, arming-gate signature (how early is insertion-class identifiable). Reuses tonight's scratchpad walker if intact. One read-only Sonnet agent | docs/research/kcm-wild-establishment-rates-2026-08-07.md | local only — archived, no downloads | SPAWNED 23:08 |
-| research | OVERNIGHT TIEBREAK-SPLIT DECODE (successor item 2 LIVE — builder's instrument legs landed): tb_v69_replays/ (_v80e6d_tb md5 005db756 vs opp_v69, 60g) + e6c_v69_replays/ (_v79e6c control md5 8aaa91e6, 60g) in builder scratchpad (paths verified, 61 files each). Topline relayed: tb 26/60 vs ctrl 31/60, r1000 tb 28 (take 14) vs ctrl 25 (take 15) — pooled cuts don't favor T; thesis lives/dies on the four pre-registered questions: (a) delivered-floor lift in r1000 games, (b) tiebreak-#1 MARGINS not share, (c) v69 freeze firing locally, (d) SLOT_HARVESTERS high-water post-wipe check BOTH sides (our lineage shares the design). Measurement + attribution only — KEEP/refute verdict stays the builder's. One read-only Opus agent | docs/research/tiebreak-split-decode-2026-08-07.md | local only — builder scratchpad replays, no downloads | SPAWNED 23:13 |
+| research | OVERNIGHT v69 PRODUCTION READ (successor item 1 analogue for the teammate slot change; instrument = the delta doc's 5 pre-registered predictions, NOT spec rev 3 which is our-lineage): 3 archived ladder matches / 15 games — 4d5fcf04 (v69 4-1 I Stone v18), fb335c41 (v69 1-4 OGE v21 — the r1000-grinder we 5-0'd under v68; direct delivery-freeze/tiebreak stress), 54107b82 (v69 2-3 PP v18). Per-prediction verdicts + wiredness both sides + E2a/E2b firing evidence + post-wipe high-water behavior. One read-only Opus agent | docs/research/orekeeper-v69-production-read-2026-08-07.md | local only — archived, no downloads | LANDED 23:31 — scorecard 3 CONFIRMED (E2b 0/725 ore-paves vs v68 10/725; E2a total separation on idle ore-runs; E1 0/1190 floor violations vs v68 55/679) / 1 REFUTED (E4: 924/1190 residual futile swings are on TURRETS — counterbattery path out of scope; worst 346 consecutive) / 1 NOT EXERCISED (freeze: 0 in both corpora, longest gap 8 rnds; mild form in g4 — wired stuck 36 while relays grew 69→76). OGE 1-4 LOSS MECHANISM: NOT the freeze — 3 core deaths (opening tempo/economy scale: harvesters 2/3/9/12 vs OGE 7/3/24/18, first delivery r89 vs r9) + 1 tiebreak-#1 loss on MARGIN with continuous delivery (17,410 vs 26,570); our one win happened because OGE ITSELF froze (r74, 925 dead rounds, 0/5 wired) — NEW OGE fact. Seat-inversion caveat: not "v69 worse than v68". SURPRISES: S1 HIGH-VALUE EXPLOIT — enemy builder parked on v69 conveyor → v69 attacks own conveyor forever (489 swings/978 Ti one game, medic heals it back; 11% of v69 melee = own buildings; E4 blind, ledger keys enemy ids); S2 E2a step-off sits BELOW the move_cooldown early-return (saboteur camped ore 125/125 gate-ON — graft must hoist); S4 piece-F enemy-throw gap exercised hard (OGE 108 throws one game, 15 builders lost, v69 threw 5/15 games). GRAFT RECS: E2b+E1 take clean; E2a widen gate (74-wall map missed by 6; ore≤12 or walls≥70) + hoist; E4 scope-extend to turret path. 0 TLE/tracebacks/stdout all 20 games |
+| research | OVERNIGHT WILD-KCM ESTABLISHMENT RATES (builder ask post-C1-gate: cad_probe establishes ~7 near-core turrets/game vs wild KCM 1-5 — supply-constraint calibration for C1b's cap + arming gate): apply the ray-coverage predicate + establishment counting over the FULL archived KCM corpus (c821193d done tonight; b3656fe7, 9a32a859 vs-us; 484095e3, 4a36151e, 9e41db1a non-us = ~25 more games) → per-game establishment rate, covered/uncovered split, lifetimes, arming-gate signature (how early is insertion-class identifiable). Reuses tonight's scratchpad walker if intact. One read-only Sonnet agent | docs/research/kcm-wild-establishment-rates-2026-08-07.md | local only — archived, no downloads | LANDED 23:22 — C1b calibration: (1) wild establishment d²≤36 median 3 (0-14; v1 median 4, v7 1.5; vs competent defense 1-2) — cad_probe's ~7/game = 80-85th PERCENTILE of wild, the probe over-stresses supply; (2) simultaneity median 2 / max 7 (max 5 excluding 10×10 radius-cut artifact) — provision 7, budget 2; (3) arming: class recognizable r1 in 100% (r1 launcher, or r1 point-blank gunner on 10×10s), threat arrival median r12 / p90 r93 / 8% never / 10×10 ZERO lead time. RAY LAW WILD: necessary-condition direction PERFECT — 0/54 wild uncovered turrets ever took a turret shot (0/69 combined across two independent corpora); covered→killed only 63% wild (19/30) vs 8/8 in c821193d — coverage NECESSARY not sufficient. Method: c821193d walker reused, cross-validated vs replay_census bit-for-bit, throw-attribution inversion trap caught (defender-recycling false positive) |
+| research | OVERNIGHT TIEBREAK-SPLIT DECODE (successor item 2 LIVE — builder's instrument legs landed): tb_v69_replays/ (_v80e6d_tb md5 005db756 vs opp_v69, 60g) + e6c_v69_replays/ (_v79e6c control md5 8aaa91e6, 60g) in builder scratchpad (paths verified, 61 files each). Topline relayed: tb 26/60 vs ctrl 31/60, r1000 tb 28 (take 14) vs ctrl 25 (take 15) — pooled cuts don't favor T; thesis lives/dies on the four pre-registered questions: (a) delivered-floor lift in r1000 games, (b) tiebreak-#1 MARGINS not share, (c) v69 freeze firing locally, (d) SLOT_HARVESTERS high-water post-wipe check BOTH sides (our lineage shares the design). Measurement + attribution only — KEEP/refute verdict stays the builder's. One read-only Opus agent | docs/research/tiebreak-split-decode-2026-08-07.md | local only — builder scratchpad replays, no downloads | LANDED 23:35 — ATTRIBUTION: FLOOR-DOES-NOT-LIFT primary (T.1 arm: fired 245/245 w/ clean negative control, directed wiredness +18pp with FEWER conveyors, but floor moved DOWN — min 0 vs 50, sub-2000 games 6 vs 2, Mann-Whitney p=0.97; structural cause measured: 67% of remaining unwired relays are in T.1's ONE-STEP BLIND SPOT — output into a friendly relay not aimed back, verdict calls it "live"); INSTRUMENT-DID-NOT-ENGAGE secondary (T.2: ZERO attributable firings, control had MORE post-r300 harvester builds 61 vs 48; famine question (d) never tested by this battery); CONFOUNDED bounds topline (v69 freeze 6-vs-1 across legs by nondeterminism, freeze games 7/7 wins = up to 5 games = the whole 26-vs-31 gap; excl. freeze: 42.4 vs 46.3). NOT floor-lifts-but-decided-elsewhere. MARGINS: tighten both ways (lose −3415 vs −8155, win +3140 vs +2750) but share EXACTLY 14 vs 14; deficit is in CORE-DESTROYED games not tiebreaks. CONDITIONAL find: healthy-chain-at-r300 bin tb +34% delivered; broken bin CRATERS (930 vs 4635) + our terminal freeze 8/60 vs 4/60. HIGH-WATER (d): reproduces OUR side — 9 famine episodes, 0 rebuilds all 9 both legs, delivery flat-zero 276-699 rnds. T.3 fires (heal share 37.9 vs 21.1; splitter tier = dead code). CORRECTION applied to agent's (f): "zero exception prints in 120 replays" is EXPECTED (prints are stderr, replays carry print() only) — NOT evidence against the arena-side 68/120; channel artifact |
 | research | OVERNIGHT v65-ERA OUROBOROS RE-VERIFY BY DECODE (successor item 6 unblocked by builder backfill; this is the PRE-REGISTERED Loki-gate instrument — adjudication: "ONE v65-era Ouroboros re-verify game gates the Loki hardcode"; backfill delivers a full LADDER MATCH 071cd20c, v65 5-0 Ouroboros v8, 14:21Z — decode replaces the planned rate-budgeted unrated leg, zero platform cost): do the book's v64-era GO constants (eider core-threat r50@(16,10) margin 48; meander r46@(13,8) margin 45) hold under v65's perturbed early-game? One read-only Sonnet agent | docs/research/ouroboros-v65-era-reverify-2026-08-07.md | local only | LANDED 22:56 — GATE RESULT NEGATIVE: meander SHIFTED (book 1st-gunner r4@(13,6) → observed r8@(8,6), tile appears only as 2nd gunner r40; creep r46@(13,8) → r489@(8,10)); eider NOT TESTABLE (map absent). Archipelago matched the book EXACTLY (r28@(7,7)) → meander shift is real signal, not noise. RECOMMENDATION to builder/Magnus: retire the fixed-tile Loki hardcode, deny-regions/policy path stands (deniability likely grew; coordinates don't survive our versions). MECHANISM CORRECTION: divergence starts r3, 16 rnds BEFORE our first builder death r19 — contra the adjudication's builder-death-perturbation theory; something earlier in our opening perturbs their queue. BRIEFING ERROR (research arm's, caught by agent): match is Ouroboros 5-0 US (we lost, seat-lock consistent), not the reverse — my backfill sweep printed scoreA/B without seat mapping. Decode self-checks all PASS |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
@@ -1096,6 +1096,60 @@ downloads. Watch state: Clankers corpus + first v69 replays (builder
 archiver pings), builder race gate (predictor-v2 instrument), tiebreak
 instrument ASK, morning brief ~07:30.
 
+### 2026-08-07 23:55 (from `date`) — RESEARCH ARM OVERNIGHT STATE (standing note per the 22:15 mandate; updated in place if more lands before morning)
+
+ALL LANES LANDED. Nine deliverables tonight, every one relayed to the
+builder on landing, registry rows carry full verdicts:
+
+1. axis-split v3 (confound resolved, no Thor input)
+2. kcm-win-c1-validation (predictor REFUTED → ray-coverage law; builder
+   replicated n=405; steered the C1 race mid-flight)
+3. cad-v116-first-read (opening constants SURVIVE the churn; re-freeze
+   unblocked for opening rows; tooling throw-attribution fix)
+4. ouroboros-v65-era-reverify (Loki fixed-tile hardcode gate NEGATIVE;
+   r3-divergence corrects the adjudication mechanism)
+5. orekeeper-v69-delta-read (delivery-freeze untouched; SLOT_HARVESTERS
+   high-water root cause; no E3; graft plank revised to asymmetry framing)
+6. kcm-wild-establishment-rates (C1b calibration: wild median 3, probe at
+   80-85th pctile; ray law necessary-not-sufficient; arming r1/latent)
+7. orekeeper-v69-production-read (E-series scorecard 3/1/1; OGE loss =
+   tempo not freeze; S1 own-conveyor exploit — our lineage NOT exposed,
+   his is; piece-F gap farmed 108 throws/game in the wild)
+8. tiebreak-split-decode (floor does NOT lift; T.1 blind spot measured;
+   T.2 never fired; topline confounded by v69 freeze nondeterminism;
+   spawned builder's piece U)
+9. clankers-noconfound (relabel → HEAL-TANK SIEGE; heal-controller law
+   predicts death rounds ±2; exploit arithmetic revised to ≥10 dmg/rnd +
+   delivery <500; probe spec GO; O(1) v10 classified at 1786; Leviathan
+   era anomaly flagged)
+
+Plus: 2 spitball entries (opening-as-steering; error-prints-as-telemetry),
+1 tooling correction, 3 confound catches that changed builder
+instruments (C1 print spike = ring interaction not E2a; fb335c41 NOT
+freeze confirmation; tiebreak-decode print "surprise" = channel artifact).
+
+Downloads 10/15 (two paced pulls, both archived, pre-stated condition
+met after three archiver-cycle misses). No bot edits, no matches run,
+no verdicts written — measurements and attributions only, all verdict
+calls left on the builder/Magnus side.
+
+OPEN AT WATCH: builder's C1b + piece-U gates (their pre-stated criteria;
+ship rule applies), morning items assembled on the builder board (graft
+brief w/ revised planks, no-E3 question for x3r0, S1 exploit disclosure,
+O(1)/Leviathan follow-ups, Loki direction, probe re-freezes behind
+version-quiet window — CAD reached v117 tonight). Research arm holds in
+watch state; no self-wrap, per the standing directive.
+
+UPDATE ~00:2x: both builder gates verdicted (C1b NO SHIP w/ quantified
+farm case + C1c spec from the sig-1 synthesis; U famine-response refuted
+w/ mechanism, detector kept). NIGHT'S HARNESS FINDING folded into
+tooling.md: cross-batch v69 deltas spread ~10pp same-binary at n=120 —
+per-leg Wilson stands, cross-batch deltas retro-caveated; deterministic-
+paired / interleaved is the new standard, morning re-reads owed on the
+three "tax" deltas before any C1c/U2 build. Both queues drained; both
+arms watch state. NO SHIP overnight — v69 (x3r0) holds the slot;
+everything else queues for Magnus's morning review.
+
 ### 2026-08-07 22:30 (from `date`) — builder arm ONLINE (fresh boot): monitors re-armed, overnight queue engaged
 
 Boot per /builder: HANDOVER + board read through the 22:15 mandate.
@@ -1349,3 +1403,229 @@ Ejection-mechanism footnote for the book: HD's throws inflate the
 opponent's stale-pave prints (90/120 vs 22-32/120 base band) — a
 free diagnostic side-channel for "are we displacing their builders",
 and further confirmation of the ring-interaction read.
+
+### 2026-08-07 23:25 (from `date`) — builder arm: wild-rates absorbed → C1B WORKER SPAWNING (registered); gate pre-stated
+
+Wild-KCM calibration absorbed (est median 3 wild vs probe's 7 =
+80-85th pct — C1's supply verdict was near-worst-case load;
+simultaneity budget 2 provision 5; arming class-ID r1-cheap but
+arrival median r12 / p90 r93 / 8% never → latent capacity; success
+metric = NO UNCOVERED ESTABLISHMENT SURVIVES, coverage necessary-
+not-sufficient at 63% covered→killed wild). C1B WORKER (Opus) on the
+_v82c1 base → bots/_v83c1b, registered + spawning: mechanism A =
+insertion-class ARMING GATE (ring arms on early-raider-near-home OR
+turret-established-at-fp-dsq≤36; latent until arrival; kills the v69
+tax); mechanism B = coverage SUPPLY (nearest non-defender second
+responder w/ build-time coverage-dedup as the race-abort; sized for
+wild simultaneity 2). Independent toggles C1B_ARMING_GATE_ON /
+C1B_SUPPLY_ON. GATE PRE-STATED: 5 guards × 60 + v69 120 (PASS BAR:
+back to ≥ parent 52.5 band — the arming gate's whole point) + cad 60
+w/ replays; predictor-v2 signature = uncovered-survivor→0 rate CUT
+BY LOAD QUANTILE (games with est ≤4 = wild-median-like → expect ~0;
+full-load games = stress read, judged vs wild reframe not refuted by
+it). 10×10 pre-arm variant explicitly OUT OF SCOPE (noted for the
+book). Ship rule unchanged: only a v69-480 Wilson-clear-50 ships
+tonight; realistic outcome = morning candidate.
+
+### 2026-08-07 23:29 (from `date`) — builder arm: BRANCH B VERDICTED (piece T refuted-as-vehicle; T.1 kept-parked); PIECE U famine re-trigger = new lead candidate; worker registered
+
+Tape row _v80e6d_tb-instr carries the full layered verdict. The
+night's biggest OUR-side find is the famine: 9 episodes across both
+legs, zero rebuilds in all nine, delivery flat-zero for 276-699
+rounds while relays held — the SLOT_HARVESTERS monotone high-water +
+ECO_READY latch never lets the economy re-trigger after a wipe
+(shared ancestry with v69's version of the same defect, research's
+orekeeper read). This is the "economy identity dies on contact"
+meta-census mirror, now with a measured mechanism.
+
+PIECE U WORKER (Opus) registered + spawning on the _v81e6e base →
+bots/_v83u: NARROW famine re-trigger — detect famine state (live
+harvesters == 0 while ≥1 relay alive, or delivery flat ≥ N rounds
+post-wipe), clear the ECO_READY/high-water latch effect on eco
+routing (single-writer discipline: core-side), route ONE builder to
+nearest known ore, rebuild; explicitly forbidden from touching the
+opening bootstrap (the _v70ec inversion lesson) — famine-state-only
+by construction. Gate pre-stated: standard 5 guards × 60 + v69 120
++ a FAMINE-SPECIFIC leg (the instrument legs' 9-episode replay set
+re-cut: episodes should terminate in rebuilds; plus kladde/ouro
+grind legs watched for regression since famine games are grind-
+shaped). C1b still building (separate dir, no collision).
+
+### 2026-08-07 23:50 (from `date`, corrected in-place — the 23:38 guess predated the date output by 12 min) — builder arm: CLANKERS RELABEL ADJUDICATED (accepted); anti-Clankers arithmetic + wake items onto the morning book
+
+ADJUDICATION (mine per protocol): Clankers class relabel ACCEPTED —
+"picket sub-type" (provisional, confound-fenced) → HEAL-TANK SIEGE
+(early forward-sentinel siege over proportional-controller core
+heal). Basis: no-confound 13-match corpus beats the single
+confounded first read; watch item 3 refuted cleanly (forward
+sentinel r7-41 PRECEDES enemy turrets); counterbattery reactive
+17/18; ejection income-gated. The 23:38-era book should note their
+opening family resemblance to v68 — relevant to the graft brief's
+snipe-exposure planks.
+
+Morning-book items from the decode (no builds tonight): (1) the
+CONTROLLER LAW as a targeting equation (predicted death rounds
+220/395/385 vs actual 219/393/365 — build the anti-Clankers cycle
+against ≥10 dmg/rnd sustained + delivery-under-500-Ti as ONE lever;
+the old two-source/60-round framings are refuted); (2) O(1) v10
+pre-classified (forward-gunner saturation + conveyor chip, 1786 —
+highest decoded; also the measured anti-Clankers recipe); (3)
+Leviathan v26 zero-rush contradiction → version-era check before
+trusting the afternoon family read; (4) clanker_probe spec GO
+(8 items, §0.4 of the deliverable) — probe build queues behind the
+version-quiet re-freeze batch. Research board fully landed; my C1b
++ U workers are the night's remaining open events.
+
+### 2026-08-08 00:01 (from `date`) — builder arm: C1B LANDED → sig-2 verdict taken (OFF) → GATE FIRING
+
+_v83c1b landed (worker md5 846a3a1f): toggle-off 32/32 byte-identical
+to _v82c1, arming r3-9 sig-1 on cad, supply mechanism proven (11
+helper builds, 8 coverage-dedup race-aborts, two-answerer cases
+observed), 0 our tracebacks/96 games, unarmed cost ~one bool test.
+Worker flag #1 ADJUDICATED (mine): signature 2 DISABLED
+(C1B_ARM_TURRET_DSQ=-1, md5 now 909667f5) — sig 2 armed vs v63
+14/16 (the non-insertion tax re-introduced), while sig 1 alone
+measured PERFECT separation (12/12 cad r3-8, 0/12 v63), and the
+unarmed path keeps parent-grade single-gun counterbattery vs parked
+snipes. Worker's sig-1 walk-feasibility redesign (fp_man > round+1
+= must-have-been-thrown) ACCEPTED — it IS the class definition,
+measured clean both directions. Flag #6 (inherited stuck-replan
+BFS/round) → cleanup list w/ the pre-scoped latch remedy. C1B GATE
+FIRING (bg): 5 guards × 60 + cad 60 w/ replays (triplet + load-
+quantile cut) + v69 120 (PASS BAR = back to ≥ parent 52.5 band).
+Piece U worker still building (separate dir).
+
+### 2026-08-08 00:10 (from `date`) — builder arm: C1B VERDICTED — no ship (v69 bar), but the WILD-KCM CASE IS MEASURED-ALIVE (85% at wild-median load); C1 arc closed for the night
+
+Tape row _v83c1b-gate. The three-cycle C1 arc ends with a clean
+load-conditional story: reactive home-ring defense (a) works
+mechanically (coverage 54/42%, supply + arming + facing all proven),
+(b) WINS 85% in the wild-median establishment regime (est≤4: 17/20,
+the pre-registered quantile cut), (c) drowns at saturation load
+(est≥5: 30%) which is where cad_probe lives (80-85th wild pct), and
+(d) taxes us vs the holder because x3r0's lineage is itself
+insertion-adjacent (sig-1 fires on his ferries) — v69 leg 40.0
+clears 50 the wrong way = hard no-ship. MORNING DECISION SHAPED:
+C1b as a KCM-targeted play-the-players piece needs either sig-1
+lineage-pattern refinement (KCM 2-3 throws r2-4 vs x3r0 1 mid-map;
+big-map recall risk flagged) or an armed-state heal-line floor —
+both pre-scoped on the tape. Slot-relevant fact for Magnus: KCM's
+~1585 is still substantially farmed FROM us and 85%-at-wild-median
+is the measured recovery number.
+
+Night state: piece U worker = the last open build lane. After its
+gate: morning brief + HANDOVER update. Ship rule: unmet all night
+(C1 miss, HD refuted, C1b v69-blocked) — everything queues for
+Magnus per the mandate.
+
+### 2026-08-08 00:11 (from `date`) — builder arm: sig-1 refinement spec BOOKED (research corpus synthesis); C1c NOT built tonight — one measurement owed first
+
+Research's destination/age-keyed sig-1 design booked as the C1c spec
+(their ~00:12 relay: insertion class = r1-fresh launcher, r2-4
+throws, RAID destinations near defender core, self-destroy r6;
+x3r0-ferry = persistent launcher, sparse economic drops; Clankers =
+outward ring — separates on every corpus decoded tonight, big-map
+recall preserved because raids land core-adjacent by purpose;
+implementable as C1B_ARM_RAIDER_DSQ 64→36 + the existing walk-
+infeasibility test). NOT BUILT tonight, two reasons on the record:
+(1) MISSING MEASUREMENT — the C1b gate captured no arming-frequency
+stats vs v69, so whether the 40.0 tax flows through an armed ring or
+through something subtler is UNDIAGNOSED; instrument before the next
+variant (stderr arming counter + 120-game leg = the morning's first
+diagnostic). (2) HONESTY NOTE on my own tape row: C1b-v69 40.0
+[31.7,48.9] vs parent 52.5 [43.6,61.2] OVERLAP at 43.6-48.9 — "tax
+persists" is directionally supported but its magnitude is noise-
+bounded; the clears-50-wrong-way read is against PARITY, not against
+parent. Morning package for the C1 arc: quantified wild case (85%),
+shaped C1c spec, one owed diagnostic. Piece U still the open lane.
+
+### 2026-08-08 00:21 (from `date`) — builder arm: PIECE U LANDED (exceptional) → GATE FIRING; ship-path candidate
+
+_v83u landed (md5 bd968c12): core-side delivery meter validated
+EXACT vs replay distributeResources (491/491, 1000/1000 rounds);
+U_DRY_RNDS=24 measured off n=15,333 delivery gaps (p99.9=6 — the
+distributions do not touch); famine signal costs NO slot
+(SLOT_ECO_READY measured WRITE-ONLY across the whole line — four
+writers, zero readers, reclaimed as the famine flag); full slot-4
+reader audit on the report; ancestral ECO_READY latch off-by-one
+found + fixed (toggled for ablation purity). Mechanism: parent 0%
+famine rebuilds (decode's 9-episode find reproduced independently:
+6/60 episodes, 0 rebuilt) → U 47% rebuilt (8/17); terminal-freeze
+tail 21.9% → 12.5% indicative; 0 detections in 32 healthy games;
+bootstrap behaviorally identical FULL-game; toggle-off 16/16
+byte-identical; 0 tracebacks/~190 games; detector cost 5.9µs median.
+Worker flags ranked w/ remedies (top: bank-not-trigger binds in
+besieged famines — austerity extension is the shaped follow-up;
+reach when no expander alive; single-harvester maps out of scope by
+the high-water≥ECO_NEED gate). U GATE FIRING (bg): 5 guards × 60 +
+v69 120 (60 replay-saved for the famine re-cut + 60 pooled, noise
+makes seeds fresh). NOTE: U is the night's one SHIP-PATH candidate —
+famine lives in exactly the v69 delivered-tiebreak territory; if the
+120 pools strong AND guards are clean, the 480 slot bar fires under
+the ship rule.
+
+### 2026-08-08 00:33 (from `date`) — builder arm: U GATE ANOMALY — verdict HELD, diagnosis running
+
+U gate: guards ALL CLEAN (v63 53.3 flat, band 96.7 [+8!], kladde
+71.7, ouro 80.0, orizon 71.7) but v69 value CRATERED: 36.7 pooled
+/120 + probe leg 23/60 = 67/180 = 37.2% vs parent's SAME-SESSION
+re-leg 55.0/60 — gap is real, not drift. CONTRADICTION: famine
+detection fired in only 2/60 probe games (won 0), undetected games
+39.7% — yet U ≡ parent when inert (full-game bootstrap identity)
+and every U site audits famine-gated. Live hypothesis: builders
+read the famine SLOT-PAIR directly (harv≥ECO_NEED ∧ ready==0) —
+a spurious buffered-transition window could scatter austerity
+rounds through healthy games with the core never detecting.
+Builder-side probe leg running (counts famine-mode rounds in
+games with zero core detections). U verdict HELD until it lands;
+famine re-cut on U's own 60: 1 tail / 0 resumes (mechanism barely
+exercised — the drag is elsewhere by construction).
+
+### 2026-08-08 00:37 (from `date`) — builder arm: U anomaly narrowed (spurious-window + TLE hypotheses DEAD; corpus signature = loses LONG games) → diff-audit agent spawned
+
+Spurious-window probe: ZERO builder-famine rounds without core
+detection (hypothesis dead). TLE: zero events, all corpora, both
+sides (dead). Corpus signature vs the 6c control: U's games run
+LONGER (median 992 vs 515), deliver MORE (2540 vs 2145 med), same
+opening (harv 4, first-harv r6-7) — but win FEWER tiebreaks (8 vs
+14). Detection-conditional record: famine games 0-for-10 (they are
+losing sieges regardless); undetected games ~39% vs parent ~53
+(disjoint intervals at pooled n). Something non-famine-gated moves
+LONG-game behavior. Fresh-eyes Opus diff-audit spawned (read-only,
+priority suspects: the endgame-branch restructure at the _expand
+build gate, endgame-reachable hunks, move-phase fall-through state).
+U verdict stays HELD; U leg count now 240 pooled at ~37%.
+
+### 2026-08-08 01:28 (from `date`) — builder arm: U VERDICTED (refuted-as-response, detector kept); HARNESS FINDING retro-caveats every cross-batch v69 delta tonight; queue DRAINED → watch state
+
+Tape row _v83u-verdict carries all three layers: (1) U ≡ parent
+outside famine at replay-stream level (240 paired deterministic
+games, zero flips — the anomaly was never code); (2) HARNESS
+FINDING: non-interleaved 120-game v69 legs spread ~10pp same-binary
+on this machine — every cross-batch vs-parent delta tonight (C1
+41.7, HD 43.3, C1b 40.0, U 36.7 vs parent 52.5/55.0) now carries
+the caveat on the tape; per-leg below-parity Wilson reads stand;
+NEW STANDARD: holder comparisons run deterministic-paired
+(all-sides noise-off + paired seeds + turn-differ, tooling in
+builder scratchpad rdiff.py/det.py/pair.py — promotion to tools/
+after a validation pass) or interleaved-same-batch only. (3) Famine
+RESPONSE refuted with mechanism (reserve-exempt harvester + reserve-
+bound LINK = unwireable harvesters + absorbing austerity; same-game
+A/B 3450 vs 890 delivered); detector infrastructure KEPT (meter
+exact, thresholds measured, write-only slot 5). U2 shape on the
+morning queue.
+
+RETRO-CAVEAT APPLIED, stated plainly: tonight's three "v69 tax"
+stories (C1, C1b, U) were all cross-batch comparisons and are all
+WEAKENED — possibly none of the three pieces taxes the holder
+matchup at all; C1b's 85%-at-wild-median case and HD's cad-negative
+are within-leg reads and UNAFFECTED. The morning's first
+measurement (before any C1c/U2 build): deterministic-paired legs
+of _v82c1 / _v83c1b / _v83u vs opp_v69 to re-read all three deltas
+on the new standard.
+
+BUILD QUEUE: DRAINED (mandate items 1-4 + C1b + U all verdicted;
+ship rule unmet all night — nothing cleared the holder bar). Per
+the no-self-wrap directive: WATCH STATE — monitors alive, both-arm
+boards current, morning brief block next (HANDOVER + commit), then
+holding for Magnus.

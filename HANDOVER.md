@@ -1,4 +1,49 @@
-# Session 14 LIVE header (builder arm; supersedes the s13 block below where in conflict)
+# Session 15 LIVE header (builder arm, overnight autonomous run per Magnus's
+# 22:15 mandate; supersedes s14 blocks below where in conflict)
+
+## State at 01:30 2026-08-08 — QUEUE DRAINED, WATCH STATE (no self-wrap; Magnus wraps)
+- LIVE: **v69 "orekeeper" (x3r0)**, since 22:21 — v68 + E-series ore/econ
+  fixes (delta read: docs/research/orekeeper-v69-delta-read + production
+  read; net −1.80 Elo first 3 matches; delivery-freeze NOT fixed but NOT
+  firing in fresh corpora; crash class v69:3536 confirmed unguarded).
+  Local copy bots/opp_v69 md5 562b01e9. Ship bar was REBASED to the
+  holder (pre-stated, 22:42 note) — NOTHING cleared it; no ship tonight.
+- **LINEAGE BASE UNCHANGED: _v81e6e (6e)**. Night's branches, all
+  verdicted on the tape: **_v82c1 C1 home ring KEEP-dev** (supply-bound at
+  probe load; ray-coverage law replicated n=405); **_v82hd Heimdall
+  PARKED-refuted** (ejection fires, value-negative, exile-target hole);
+  **_v83c1b C1b KEEP-dev** (arming+supply proven; **85% at wild-median
+  load** = the KCM farm-recovery number; sig-2 off); **_v83u piece U
+  PARKED-refuted as response, DETECTOR KEPT** (delivery meter exact,
+  famine thresholds measured; response = absorbing austerity via
+  reserve-bound links — U2 shape queued).
+- **HARNESS FINDING (read before trusting any v69 delta)**: non-interleaved
+  120-game legs spread ~10pp same-binary. All cross-batch "vs-parent v69
+  tax" claims tonight are retro-caveated on the tape. NEW STANDARD:
+  holder comparisons = deterministic-paired (all-sides NOISE_OFF + paired
+  seeds + turn-differ; tooling in s15 scratchpad rdiff.py/det.py/pair.py,
+  promote to tools/ after validation) or interleaved-same-batch only.
+- **MORNING QUEUE (in order)**: (1) deterministic-paired re-reads of
+  C1/C1b/U vs opp_v69 (the three "tax" deltas may be phantoms); (2) C1c =
+  destination/age-keyed sig-1 (research's corpus spec, booked 00:11) +
+  arming-frequency diagnostic FIRST; (3) U2 = U detector + reserve-exempt
+  famine link + no queue-wipe + clear-ore fix; (4) graft/slot conversation
+  (Magnus/x3r0) — brief planks all on the board: asymmetry framing (pave
+  guard, print rate, S1 own-conveyor bait, no-E3 question), KCM/Clankers
+  snipe-exposure, C1b wild case; (5) probe re-freezes on a version-quiet
+  ≥2h window (CAD v117!, Lunds v45, kladde v73, PP v18; opening rows
+  exempt per the v107→v116 test) + clanker_probe GO spec.
+- Research arm: board fully landed (9 deliverables tonight incl. Clankers
+  relabel HEAL-TANK SIEGE + controller-law targeting equation, O(1)
+  classified, wild-KCM rates, v69 reads, tiebreak decode). Their morning
+  items are in the 22:08 + wave notes.
+- Monitors: 4/4 alive this session (ids in 22:30 note) — they DIE with
+  session end; successor re-arms per /builder step 3.
+- Tape: results.tsv rows _v81e6e-vs-v69 → _v83u-verdict; commits 7516f0c +
+  the 01:3x wrap commit. Ladder at last read: 1559@293 #27.
+
+# Session 14 header below (superseded where in conflict)
+# (superseded) Session 14 LIVE header (builder arm; supersedes the s13 block below where in conflict)
 
 ## STANDING RULES added this session (mirror of protocol/coordination)
 - **NO SELF-INITIATED WRAPS** (Magnus directive ~19:47 via research relay,
