@@ -10,11 +10,14 @@ stay the builder's.
 
 | arm | what | output | budget | status |
 |---|---|---|---|---|
-| builder | v67 slot bar: _v76e51 (Eir 5.1) vs opp_v67 (wave_ghost), all maps × 16 seeds × both seats = 480 | tape row + measured case for Magnus | local only | running |
-| research | Viktor5776 classification (1 match) | docs/research/ | ≤5 downloads | queued behind wave_ghost decode |
+| builder | v67 slot bar: _v76e51 (Eir 5.1) vs opp_v67 (wave_ghost), all maps × 16 seeds × both seats = 480 | tape row + measured case for Magnus | local only | LANDED 18:12 — PARITY 51.9 [47.4,56.3] |
 | research | v66 production read (pre-ordered): VOID as specified — no nordkap/battery-family match ever ran under v66 (Team 48 5-0 is v67-stamped; see 18:05 note). Salvage: CAD v107 leg a7aa49ec (latch under losing pressure + insertion drop tiles) | docs/research/ | archive-first | salvage queued |
-| research | wave_ghost (x3r0 v67) first field read: sporks 0-5 (b92d7da8) + team lazy 1-4 (e71e0b65) direct pull, paced ≥60s; Team 48 5-0 + CAD leg from archiver next cycle | docs/research/ | ≤10 game files direct | RUNNING (research arm, session 13) |
+| research | wave_ghost (x3r0 v67) first field read: sporks 0-5 (b92d7da8) + team lazy 1-4 (e71e0b65) direct pull, paced ≥60s; Team 48 5-0 + CAD leg from archiver next cycle | docs/research/wave-ghost-first-read-2026-08-07.md | 10/10 files used | LANDED 18:15 exc. Team 48 leg (archiver) |
+| research | Viktor5776 classification: b41a1d2a (3-2 vs Innovex, not ours — no our-version confound), direct paced pull | docs/research/ | ≤5 game files | RUNNING (research arm, session 13) |
+| research | axis-split of OUR games (board-routed small #1): cardinal vs diagonal core-pair win split per our version, archived corpus only, sporks-decode method — subagent sweep, no downloads | docs/research/axis-split-our-games-2026-08-07.md | local only | RUNNING (subagent) |
 | builder | Eir 6 worker (Opus): piece K standing heal budget + sporks ammo policy + B' pop-floor redesign, 3 toggles, on Eir 5.1 base | bots/_v77e6 | local only | running |
+| builder | orizon_probe worker (Opus): point-blank gunner battery per thread-7 spec + family plant signature — the missing battery-class instrument for the Eir 6 gate | bots/orizon_probe | local only | running |
+| builder | wave_ghost vs-field profile: opp_v67 vs kladde/ouro/band/flotte/cad probes, 60 games each (all maps × 2 seeds × both seats), md5s verified pre-run | tape rows + slot case | local only | LANDED 18:15 (see note + results.tsv) |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
@@ -189,6 +192,50 @@ momentum belongs to Eir 5/5.1's windows — do NOT let v67's window inherit the
 streak in trajectory reads; baseline v67's window separately from its
 activation row. Magnus pinged (push sent). Research arm: wave_ghost is a new
 decode target the moment its first replays land.
+
+### 2026-08-07 18:15 (from `date`) — builder arm: SLOT CASE COMPLETE — measured equivalence, v67 stays
+
+Field profile landed (results.tsv row, 0 crashes/300): wave_ghost vs our
+five frozen probes is statistically indistinguishable from our own line's
+instrument profile — kladde 75.0 (ours 75.0), ouro 71.7 (72.5), band 91.7
+(90.0), flotte 81.7 (86.7), cad 61.7 [49.0,72.9] the only leg not clearing
+50 (ours 65.0 v55-era; CAD v107 also took v66 1-4 on ladder — insertion is
+the shared soft class). Combined with head-to-head parity (51.9/480) and
+the 0-4 incoming-UR context: NO measured case to flip the slot either way.
+Team norm: the retake bar is not met → v67 stays; the Eir 6 cycle is the
+vehicle to clear it properly. Magnus gets the package for the x3r0
+conversation regardless — the equivalence itself is informative (x3r0's
+independent line converged to our strength level on every class).
+
+FOR THE WAVE_GHOST DECODE (research): weak-map texture from the legs —
+hive 0/4 vs BOTH kladde and ouro probes (hive also seat-decided in the
+480 head-to-head); lighthouse+meander 0-2/4 vs cad_probe; meander 1/4 vs
+flotte. Insertion + hive geometry look like the exploitable seams. Also:
+~48% of head-to-head games reached r1000 tiebreaks — wave_ghost is
+tiebreak-disciplined like our line; a tiebreak-margin read may matter more
+than a kill read for any future anti-wave_ghost work (relevant only if the
+slot situation turns adversarial, which is NOT the frame — same team).
+
+### 2026-08-07 18:12 (from `date`) — builder arm: SLOT BAR VERDICT
+
+Head-to-head is PARITY: _v76e51 (v66 Eir 5.1) vs opp_v67 (wave_ghost) 51.9
+[47.4, 56.3] over 480, interval straddles 50, 0 crashes both sides. No map
+decisively owned (we range 14-20/32 on every map). Notable texture: 229/480
+games decided on tiebreak #1 (ti-collected) + 1 on stored — HALF this
+matchup reaches r1000, so tiebreak discipline (v66's dump cap) is
+load-bearing against this bot. Tape row appended (results.tsv).
+
+Head-to-head does not settle the slot under the ship-gate redefinition —
+the vs-field battery decides. Commissioned (registered above): opp_v67 vs
+the five frozen probes (md5s verified against HANDOVER records pre-run), 60
+games each, to set wave_ghost's field profile against the same instruments
+our line is scored on. Package for Magnus when in: parity head-to-head +
+field profile + the 0-4 incoming-UR read. The slot call stays his.
+
+TRAP for the tape (also in HANDOVER): `fcode submission download -o <path>`
+writes a ZIP at <path> — extract it; a zip-as-botdir makes arena report
+"every match failed to produce a result" (bot-B load failure), which burned
+one full 480 run this session.
 
 ### 2026-08-07 17:59 (from `date`) — builder arm: BOOT (session 13)
 

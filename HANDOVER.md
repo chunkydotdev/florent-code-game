@@ -5,7 +5,15 @@
 ## +18 with a 5-0 over Team 48 v16 (03af6569) → 1589@266 rank #24. BUT 0-4 in
 ## incoming URs (5-15 games): 0-5 sporks v2, 1-4 team lazy v94, 2-3 SmartFridge
 ## v34, 2-3 Lorem Ipsum v14 — beats one family battery, loses to another.
-## Slot bar (Eir 5.1 vs wave_ghost, 480 local) RUNNING; slot call is Magnus's.
+## SLOT CASE COMPLETE (18:15): head-to-head PARITY 51.9 [47.4,56.3]/480
+## (229/480 games decided on ti-collected tiebreak — the matchup is a
+## tiebreak grind); field profile vs our 5 probes statistically identical to
+## our line (kladde 75.0/ouro 71.7/band 91.7/flotte 81.7; cad 61.7 only
+## non-clearing leg — shared soft class); wall-density niche prediction
+## REFUTED vs us (r=0.03). NO measured case to flip either way → v67 stays
+## per team norm; Eir 6 is the vehicle to clear the bar. Slot call Magnus's.
+## wave_ghost decode: docs/research/wave-ghost-first-read-2026-08-07.md
+## (forward-sentinel core-snipe, drip ammo, 3 loss modes).
 ## Local copy bots/opp_v67 (TRAP: `fcode submission download` emits a ZIP —
 ## extract it; saving the zip as the bot dir made 480 arena games silently
 ## produce "no result" as bot-B load failures).
