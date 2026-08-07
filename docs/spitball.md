@@ -924,6 +924,38 @@ downloads, 90s paced.
   vs core-threat-creep split makes a definitional collision likely) + thread
   3 (unclassified five). Paced budgets, archive-first.
 
+## Adjudication verdict (~16:15) — LOKI UNBLOCKED
+
+→ docs/research/denial-adjudication-2026-08-07.md. Verdict: NOT a
+definitional collision, NOT their-version drift (Ouroboros v8 stable across
+both samples). Cause: **OUR-version era mismatch** — session-12's sample was
+our v53/55/59 era, the denial book's is v64, and Ouroboros's deterministic
+build queue is perturbed by when OUR builders die (the book's own
+drumlin/atoll evidence), which changed enormously between eras.
+
+**GENERALIZED LESSON, board-wide:** every denial constant is conditional on
+OUR version, not just theirs — the whole denial book inherits this (rows are
+v64-era). Prefer wide-margin tiles; re-verify rows after any ship that
+touches early-game builder survival. **v65's J qualifies** → one-game
+re-verify before hardcoding anything into Loki.
+
+- Corrected constants (Ouroboros v8, our v64, dsq to OUR core): eider
+  core-threat **r50@(16,10)** dsq9, margin 48; meander core-threat
+  **r46@(13,8)** dsq5, margin 45 — supersedes the book's meander row, which
+  had a real bug (sentinel range applied to a confirmed gunner-only team).
+  Home-picket tiles (12,9)/(13,6) confirmed non-core-threatening.
+- GO/NO-GO: **GO** on both core-threat tiles for Loki, version-pinned our
+  v64+ with the v65 re-verify; **NO-GO** on home-picket tiles (wrong
+  target); **RETIRE** session-12's original eider/meander numbers.
+- BONUS: this mechanism explains ouroboros_probe's measured gentleness (it
+  was built on stale-era numbers) — probe refresh from v64/65-era replays is
+  the fix.
+- v65 window so far: first two true-v65 completions are 2-0 — **3-2 vs
+  Memtrace v27 (battery class, seat A — the J experiment, match a450ea25)**
+  and 4-1 vs Viktor5776 v1. Memtrace bumped v26→v27. Research arm decodes
+  a450ea25 for the I/J mechanism read as soon as the ~16:31 archiver pass
+  lands it.
+
 ## Main-session decisions on the sporks/denial batch (~16:05, via board)
 
 - **J-WIDENING accepted as PIECE K, NOT retrofitted** — Eir 5's screens are
@@ -966,3 +998,21 @@ downloads, 90s paced.
   plausible and would dissolve the discrepancy without impeaching either
   decode — if confirmed, BOTH row sets are valid for their respective
   purposes and Loki unblocks with the book's rows.
+
+## Main-session verdicts on the adjudication (~16:30, via board)
+
+- ADJUDICATION ACCEPTED, LOKI UNBLOCKED: the discrepancy was an OUR-version
+  era mismatch (their deterministic queue is perturbed by when OUR builders
+  die). Session-12's original Ouroboros first-gunner rows are RETIRED; the
+  book's v64-era GO constants stand (eider core-threat r50@(16,10) margin 48;
+  meander r46@(13,8) margin 45 — the book's meander sentinel-range bug
+  superseded); home-picket tiles NO-GO. NEW STANDING RULE: denial constants
+  are conditional on our own version — re-verify after any ship touching
+  early-game builder survival. v65's J qualifies, so ONE v65-era Ouroboros
+  re-verify game gates the Loki hardcode (next unrated leg when the rate
+  budget allows).
+- ouroboros_probe refresh from v64/65-era replays: queued with the probe-fleet
+  work (its measured gentleness = stale-era calibration, now explained).
+- v65 rated window opens 2-0 incl. 3-2 vs Memtrace (battery class) — the
+  research session decodes a450ea25 for the I/J mechanism read; my monitors
+  hold the trajectory.
