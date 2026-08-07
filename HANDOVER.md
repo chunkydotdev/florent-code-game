@@ -1,5 +1,22 @@
 # Handover — session 11 close-of-coverage state (2026-08-07 ~11:00)
 
+## FINAL ADDENDUM (session 11 close, ~11:50)
+- **x3r0's v89 auto-activated over Eir 2 late in the session; measured
+  Eir 2 > v89 at 60.4 [54.1, 66.4]/240.** The slot case is Magnus's to take
+  to x3r0 — do not flip it unilaterally. `bots/opp_v63` is the local copy.
+- **The research session's findings landed in docs/spitball.md — READ THEM
+  BEFORE picking from the queue below.** Headlines: the grind residual is a
+  SOLVENCY problem (heal funding + the r63-390 farm-death window
+  MEDIC_MIN_RND leaves open), not DPS; the seat-B deferral never covered the
+  forward roles (break the 38 deaths down by role before the next counter);
+  cad_probe should be re-frozen from a fresh CAD replay; slot 9 is the only
+  reclaimable store slot; classifier design: default + two flags, Core as
+  sole writer. External-meta scavenge estimates +150-250 Elo inside the
+  current strategy family.
+- Ladder at handover: **1557/#27, recovering on an Eir-line 4-streak.**
+- Dead-code cleanup owed in `_v72e2`: COUNTERBATTERY_RICH_TI declared,
+  never referenced (leftover of a refuted edit).
+
 ## FIRST ACTIONS for the next session
 1. Re-arm THREE monitors (they died with session 11): Elo logger 5-min
    (appending, thresholded ±25/new-submission), match watcher 2-min (4+
