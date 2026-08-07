@@ -137,3 +137,14 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T10:23	1528	220	v61	rank #29
 2026-08-07T10:28	1533	221	v61	rank #29
 2026-08-07T10:29	1528	220	v61	PORTFOLIO ROW Lunds v41 (Eir era, 15 maps): 7-8 total BUT 6-4 as seat A, 0-5 as seat B — the chip-class weakness is SEAT, not maps (all prior 0-5 panic legs were seat-B). Seat-B defense vs first-mover chip opening = next diagnosis target. Wins incl archipelago core@112, lighthouse @105, fjordgate @634; eider/atoll/drumlin tiebreaks
+2026-08-07T10:33	1533	221	v61	rank #29
+2026-08-07T10:38	1534	222	v61	rank #28
+2026-08-07T10:43	1534	222	v61	rank #28
+2026-08-07T10:49	1530	223	v61	rank #28
+2026-08-07T10:50	1528	220	v61	PORTFOLIO ROWS: CAD v107 5-10 (= exactly at E~0.32 expectation vs 1658; our 5 wins all fast core kills r117-215). Ouroboros 1-14 (ALL 15 games as seat B - seat lottery; far below E~0.40 expectation). Two nemeses now implicate the same root: SEAT-B COLLAPSE vs first-mover openings. That diagnosis = top of next cycle
+2026-08-07T10:54	1530	223	v61	rank #28
+2026-08-07T10:59	1533	224	v61	rank #28
+2026-08-07T11:04	1533	224	v61	rank #28
+2026-08-07T11:09	1521	225	v61	rank #28
+2026-08-07T11:14	1521	225	v61	rank #28
+2026-08-07T11:18	1533	226	v62ours	Eir 3 baseline (_v73e3 = Eir 2 + THREAT-CONDITIONAL seat-B frontier deferral, from the seatB diagnosis: 19v38 builder deaths by r80, 9/9 tiebreaks to seat A; blanket deferral + second-gun both refuted by ablation, only the scoped deferral ships). Local: all guards flat, v82 53.8[47.4,59.9] mild dip accepted (v82 not on ladder). REVERSION CRITERIA: Lunds/Ouroboros re-legs must beat 0-5-as-seat-B / 1-14 baselines, else roll back to Eir 2. kladde shipped v62 (~1811), probe stale
