@@ -1492,3 +1492,22 @@ retired maps), `f4404e8b` (Jacobs Code, not decoded — lower rating priority th
 (reuses `replay_codec.py` unchanged; generalizes `analyze_aae2.py`'s ring-occupancy and
 `moveBuilderBot`-jump logic to take explicit win/loss + team-side per game). All raw JSON/log
 output kept in scratch, not the repo.
+
+## Production portfolio, Eir era (2026-08-07, unrated sweep, 15 maps/team)
+
+First complete production win-map. Game-share vs rating expectation (E from the
+measured Δ=32×(share−E) model); seat noted because the seat-B resolution-order
+tax (see game-model) confounds several rows.
+
+| team | their rating | score | share | E | read |
+|---|---|---|---|---|---|
+| Lunds Stallions | 1609 | 7-8 | .47 | ~.40 | **above expectation** — but 6-4 as seat A vs 0-5 as seat B |
+| Powerpuff Girls | ~1560 | 8-7 | .53 | ~.51 | at expectation; won 4/5 as seat B (their chip doesn't tax builders) |
+| CtrlAltDefeat | 1658 | 5-10 | .33 | ~.32 | at expectation; our 5 wins all fast core kills r117-215 |
+| kladde | 1799 | 2-13 | .13 | ~.20 | slightly below; probe stale (they shipped v62 ~1811) |
+| Flotte | 1837 | 1-14 | .07 | ~.15 | slightly below; above our weight at any seat |
+| Ouroboros | 1597 | 1-14 | .07 | ~.40 | **the leak** — far below expectation, though all 15 games drew seat B |
+
+Actionable: Ouroboros is the single biggest per-team Elo leak (≈ -5 games/15 vs
+expectation); their pattern is still undecoded (NOT grind — core kills @265/323).
+Eir 3's seat-B deferral targets exactly the confound; its validation legs decide.
