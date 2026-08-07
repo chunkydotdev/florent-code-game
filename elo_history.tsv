@@ -148,3 +148,8 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T11:09	1521	225	v61	rank #28
 2026-08-07T11:14	1521	225	v61	rank #28
 2026-08-07T11:18	1533	226	v62ours	Eir 3 baseline (_v73e3 = Eir 2 + THREAT-CONDITIONAL seat-B frontier deferral, from the seatB diagnosis: 19v38 builder deaths by r80, 9/9 tiebreaks to seat A; blanket deferral + second-gun both refuted by ablation, only the scoped deferral ships). Local: all guards flat, v82 53.8[47.4,59.9] mild dip accepted (v82 not on ladder). REVERSION CRITERIA: Lunds/Ouroboros re-legs must beat 0-5-as-seat-B / 1-14 baselines, else roll back to Eir 2. kladde shipped v62 (~1811), probe stale
+2026-08-07T11:19	1533	226	v62	rank #28
+2026-08-07T11:24	1533	226	v62	rank #28
+2026-08-07T11:29	1542	227	v62	rank #28
+2026-08-07T11:34	1542	227	v62	rank #28
+2026-08-07T11:38	1544	228	v61	EIR 3 REVERTED per pre-committed criteria: Lunds seat-B re-leg still 0-5, Ouroboros 1-4 = baseline. Threat-conditional deferral trace-sound but production-flat (like _v70th's first iteration — the seat-B tax needs a different counter). Eir 2 (v61) reactivated. _v73e3 kept as dev branch; seatB_diagnosis remains the map
