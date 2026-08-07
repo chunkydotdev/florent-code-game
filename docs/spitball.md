@@ -844,6 +844,86 @@ surgical-map hand-off:
   docs/research/orizon-family-2026-08-07.md; thread 3 (unclassified five)
   queued behind it for download pacing.
 
+## Research arm — Eir 5 production watch plan (2026-08-07 ~16:00)
+
+v65 confirmed live (baseline 1545 @ 251). NOTE the version-boundary trap:
+matches are version-stamped at creation, so completions through 15:47 local
+still read teamVersion 64 — the tape rows 252-253 are v64 games under a v65
+label. True v65 replays start with the next wave.
+
+Research arm will decode the first 1-2 true-v65 replays vs battery/picket
+opponents for MECHANISM verification (production, not arena — immune to the
+noise-regime issue). Per-piece checks with pre-ship baselines:
+- Piece I: gunner rotation count per game (baseline: up to 325/game, 146
+  A→B→A oscillations; expect collapse to near-zero non-firing rotations).
+- Piece J: counterbattery builds per game under battery pressure (baseline:
+  exactly 1/game; expect >1) + hive: economy does not freeze after first gun
+  (freeze-disarm — the arena already showed hive 1/32→11/32 noise-on).
+- Piece H: any r1000 game — harvester count and ammo dump in r960-1000
+  (baseline: inert bank 2,700+, 13 shots).
+Natural experiments to prioritize if drawn: Orizon (we just went 2-3 vs
+them under v64 — J's exact target class), Lunds v37 seat B (0-5 cell
+persists as of 13:36Z — denial-book target, launcher-r1 constant).
+
+Ack on the noise-regime discovery: my surgical map's "screens" section cited
+pre-noise history rows (flotte 16/16 guard maps etc.) — those numbers are
+seed-amplified per your finding; the map's LINE-NUMBER and mechanism content
+is unaffected (code-read, not tape-read). Matched-noise batteries supersede
+that section's screen suggestions.
+
+Queued behind thread 2 (rate pacing): the DENIAL DISCREPANCY ADJUDICATION
+(session-12 decode vs denial book on Ouroboros eider/meander, single-sample
+each) — now build-relevant since it blocks Loki. Plan: archive-first
+re-decode of both sources' exact replays + any third observation; ≤3
+downloads, 90s paced.
+
+## Research session #3 — Orizon family verdict (~16:20)
+
+- **FAMILY CONFIRMED** → docs/research/orizon-family-2026-08-07.md (18 games
+  decoded, 8 paced downloads): team lazy v88 + Orizon v34 + Team 48 v16 are
+  ONE code family — gunner-only in every decoded game, zero
+  sentinels/launchers/barriers, creeping-closer plants, front-loaded ammo.
+  Askar City v72 is CONVERGENT, not family (sentinel+launcher+barrier,
+  one-shot commit). One counter therefore addresses ~17% of our matched pool
+  plus top-8 #6.
+- **MECHANISM INSIGHT with a cheap-counter candidate**: the family's "aims
+  the core" is GEOMETRY, not target selection — a straight FIRST-BLOCKER
+  gunner ray from ever-closer plants. Consequence: whatever stands ON the
+  creep ray becomes the target. team lazy's ammo cap measured at 36; gunner
+  dmg 7 vs barrier 30 HP → one 3-Ti barrier eats ~5 shots = 20 ammo, TWO
+  BARRIERS ≈ team lazy's entire bank. Candidate Loki/piece-K counter vs the
+  whole family. CAVEATS before any build: outer-creep phases only (no room
+  at dsq 1-4), needs ray prediction (denial-book plant tables), and
+  thread-5's bait-barrier refutation does NOT apply here (that was for
+  priority-table teams; the family has no priority table to bypass) — but
+  pre-mortem against the 607ffaeb replays anyway.
+- **MATCHUP CORRECTION, both directions**: thread-7's "no answer to Orizon"
+  is dead — 607ffaeb (Orizon v34 vs our v64) went **3-2 to us** (their creep
+  broke on antler/archipelago, never closed past d9). BUT the report's
+  "freshest series" is itself superseded: 047ea519 (15:06 local, after its
+  data pool) went **2-3 against**. Net: Orizon under Eir 4 is a COINFLIP,
+  not solved — and v65's J is the tiebreaker experiment.
+- **STALE-VS-SHIP correction** (report snapshot raced the ship): its "piece
+  J not shipped" was true of _v74e4 — **J shipped in v65 mid-flight**. Its
+  mechanism finding sharpens J's story rather than contradicting it: the
+  pre-existing ECO_NEED-gated counterbattery already kills family gunners in
+  single-digit rounds WHEN it fires before the core bleeds; the losses are
+  the bleeding-first path — exactly the case J's unlock covers.
+- Exploitable split: Orizon heals its front gunner (now often insufficiently
+  — dies anyway in 4/5 games), team lazy and Team 48 mostly don't.
+- **Retire from the model**: "Orizon = 4 builders ever" — false in long
+  games (45 builders in 607ffaeb g5, r1000); short-game artifact of the old
+  sample.
+- **RIDER RESULT**: the cardinal/diagonal effect is NOT map-level — Orizon
+  and Team 48 do WORSE on cardinal maps, Askar City and sporks better, team
+  lazy neutral (confounded with separation, small samples, directional
+  only). sporks' 9W-0L cardinal record is its architecture's bill, not free
+  map knowledge.
+- Spawning now: denial adjudication (blocks Loki; includes checking whether
+  the two sources simply counted DIFFERENT gunners — the book's home-picket
+  vs core-threat-creep split makes a definitional collision likely) + thread
+  3 (unclassified five). Paced budgets, archive-first.
+
 ## Main-session decisions on the sporks/denial batch (~16:05, via board)
 
 - **J-WIDENING accepted as PIECE K, NOT retrofitted** — Eir 5's screens are
@@ -865,3 +945,24 @@ surgical-map hand-off:
   from either row set until resolved.
 - Axis-split analysis of our own games: queued (sporks 9W-0L cardinal / 6W-10L
   diagonal; confound honesty noted).
+
+## Main-session decisions on the Orizon-family batch (~16:25, via board)
+
+- FAMILY VERDICT ACCEPTED (team lazy + Orizon + Team 48 one code family, Askar
+  convergent): one counter addresses ~17% of matched pool + top-8 #6. The
+  family-scoped BAIT-BARRIER is accepted as a Loki/K-cycle candidate — scoped
+  strictly to the family (first-blocker ray geometry, no priority table;
+  thread-5's refutation covered priority-table teams only), gated on (a) the
+  denial adjudication resolving, (b) a pre-mortem vs 607ffaeb, (c) ray
+  prediction from the denial book. Two 3-Ti barriers ~= team lazy's whole
+  measured ammo bank is the arithmetic to beat.
+- J'S PRODUCTION EXPERIMENT: agreed the next Orizon/Team 48 pairing under v65
+  is the cleanest read; research session watches, my monitors + tape record.
+  v64-Orizon = measured coinflip (3-2 then 2-3) is the prior.
+- MODEL CORRECTIONS APPLIED: retire "Orizon 4 builders ever" (45 in r1000);
+  axis effect is architecture-specific, not map-level.
+- Denial adjudication note: the definitional-collision hypothesis (session-12
+  counted home-economy pickets, the book counted core-threat creeps) is
+  plausible and would dissolve the discrepancy without impeaching either
+  decode — if confirmed, BOTH row sets are valid for their respective
+  purposes and Loki unblocks with the book's rows.
