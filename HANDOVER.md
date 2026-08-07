@@ -1,3 +1,30 @@
+# Handover — session 13 FINAL (wrapped 19:07; Magnus restarting fresh arms)
+
+## FIRST ACTIONS for the successor (boot: /builder)
+## 1. RE-ARM FOUR MONITORS (they died with this wrap; tools/monitors/, arm
+##    one-liners in docstrings, state re-baselines silently, ~30s).
+##    zsh TRAP: never `set -- $var` or bare globs in loop one-liners —
+##    burned a 240-game battery today; explicit paths only.
+## 2. FIRE THE EIR 6B WORKER — queued NOT SPAWNED at wrap: bots/_v78e6b is
+##    an UNMODIFIED copy of _v77e6 (worker never ran). Spec = coordination
+##    18:46 note: K' = keep income budget + per-builder shares, RESTORE
+##    siege gate on core heal (budget throttles it — the 972-heal
+##    starvation fix), proactive trunk trigger (budget replaces the ≥8
+##    depth gate, which never fires: gunner dmg 7 < 8 — smoke the
+##    fjordgate/lighthouse flip maps), SPORKS_AMMO stays OFF (refuted),
+##    POP_FLOOR stays OFF pending item 3.
+## 3. POP-FLOOR ISOLATION BATTERY — queued NOT FIRED: _v77e6_flooronly
+##    (dir ready, toggles verified) vs opp_v63 + band_probe + orizon_probe
+##    60/leg. Clean/positive → rides along with K'.
+## 4. Eir 6b gate: guards (v63 55 / band 88.3 / kladde 80 / ouro 80 / cad
+##    50 — the _v76e51 60-game rows) + orizon_probe value leg (beat 58.3)
+##    + slot bar vs opp_v67 480 (parity 51.9 to beat; THE retake bar).
+## 5. BLOCKED: Eir 5.1 traceback fix awaits x3r0's traceback text or
+##    kite_proxy zip (asked via Magnus; NOT unit-deleting — run() catches,
+##    main.py:832-843 — one lost action round per unit lifetime).
+
+# Session-13-live header below (superseded only where the wrap says so).
+# (superseded header follows)
 # Handover — session 13 live (builder arm; two-arm ops per docs/two-session-protocol.md)
 
 ## LIVE: v67 "wave_ghost" — x3r0's line, NOT ours. Auto-activated on upload

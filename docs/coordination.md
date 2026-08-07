@@ -21,14 +21,15 @@ stay the builder's.
 | builder | Eir 6 ablation: _v77e6_noammo (K+floor, ammo OFF) + _v77e6_konly (K only) vs opp_v63 + band_probe, 60/leg = 240 | attribution: is sporks-ammo the sole regression | local only | LANDED 18:47 — NO: K itself drags (konly v63 45/55, band 55/88; noammo 41.7/46.7). Ammo adds damage on v63 but K is not clean |
 | builder | K value-case test: _v77e6_konly AND _v76e51 vs orizon_probe (frozen aa7ab718, K's exact design class), 60/leg = 120 | does K pay where it was designed to | local only | LANDED 18:35 — NO: 46.7 vs baseline 58.3; Eir 6 REFUTED AS-BUILT (see verdict note) |
 | builder | K-diagnosis replay set for research decode: paired konly/base vs orizon_probe + konly vs band, eider/nordkap/fjordgate × 2 seeds = 18 replays | builder scratchpad k_diag_replays/ | local only | LANDED 18:39 — 18 files, path pinged to research with the three-suspect question |
-| research | K-drag diagnosis decode (commissioned): three suspects + paired-divergence analysis over the 18 replays | docs/research/k-drag-diagnosis-2026-08-07.md | local only | LANDED 18:44, CORRECTED 19:00 — three suspects refuted (stands, salt-independent); r0-divergence claim RETRACTED (piece G unseeded spawn salt, verified main.py:1082 + HANDOVER warning — designed noise, attributes nothing); base-drag = unevidenced pending builder's purity control; trunk-heal starvation arithmetic (≥8 vs 7) = the redesign target |
+| research | K-drag diagnosis decode (commissioned): three suspects + paired-divergence analysis over the 18 replays | docs/research/k-drag-diagnosis-2026-08-07.md | local only | LANDED 18:44, CORRECTED ~18:45 — three suspects refuted (stands, salt-independent); r0-divergence claim RETRACTED (piece G unseeded spawn salt, verified main.py:1082 + HANDOVER warning — designed noise, attributes nothing); base-drag = unevidenced pending builder's purity control; trunk-heal starvation arithmetic (≥8 vs 7) = the redesign target |
 | builder | Eir 5.1 traceback hunt (x3r0 stress report: kite_proxy/hive/seed-42, exception escaped run() → unit deleted; kite_proxy is his local bot, not in our repo) | root cause + fix across _v76e51-lineage dev dirs | local only | BLOCKED on x3r0 traceback text/zip (correction routed: run() catches, unit not deleted) |
 | builder | Base-purity control (research stop absorbed, premise corrected — r0 divergence = NOISE_ON salt, not refactor evidence): _v77e6_alloff vs opp_v63 + band + _v76e51 mirror, 60/leg, pooled read, decision rule pre-stated | verdict amendment or confirmation on tape | local only | LANDED 18:46 — BASE CLEAN (60/91.7/58.3-mirror), refactor exonerated, K refutation CONFIRMED w/ control (konly-vs-alloff: −15 v63, −35 band); see 18:46 note + tape |
 | builder | orizon_probe worker (Opus): point-blank gunner battery per thread-7 spec + family plant signature — the missing battery-class instrument for the Eir 6 gate | bots/orizon_probe | local only | LANDED ~18:30 — FROZEN md5 aa7ab718..., signature reproduced (fp_dsq 9 creep to 1-2), tape row 18:35 |
 | builder | wave_ghost vs-field profile: opp_v67 vs kladde/ouro/band/flotte/cad probes, 60 games each (all maps × 2 seeds × both seats), md5s verified pre-run | tape rows + slot case | local only | LANDED 18:15 (see note + results.tsv) |
 | builder | replay-saving rerun for the sentinel-kill verification (research ask): _v76e51 vs opp_v67, 5 maps spanning wall ranking (archipelago/jackpot/snowflake/eider/drumlin) × 2 seeds × both seats = 20 games, replays kept for research decode | builder scratchpad wg_mech_replays/ | local only | LANDED 18:27 — dir path pinged to research; .json sidecars polluted (parse tail), replays verified clean |
-
-| research | CAD ferry-loop barrier PRE-MORTEM (builder-offered thread): archived CAD corpus sweep (15 games, 3 opponents; 607ffaeb not in archive — not needed), ferry-tile predictability, displacement-vs-denial evidence, kill conditions | docs/research/cad-ferry-premortem-2026-08-07.md | local only (no downloads) | LANDED 19:15 — PARK recommended: ferry tile NOT map-keyed (same map, different tiles per opponent), predictable opening tiles are low-value; BUT openings are map-keyed + OPPONENT-INDEPENDENT = the only ship-robust denial constants found today |
+| research | CAD ferry-loop barrier PRE-MORTEM (builder-offered thread): archived CAD corpus sweep (15 games, 3 opponents; 607ffaeb not in archive — not needed), ferry-tile predictability, displacement-vs-denial evidence, kill conditions | docs/research/cad-ferry-premortem-2026-08-07.md | local only (no downloads) | LANDED ~18:50 — PARK recommended: ferry tile NOT map-keyed (same map, different tiles per opponent), predictable opening tiles are low-value; BUT openings are map-keyed + OPPONENT-INDEPENDENT = the only ship-robust denial constants found today |
+| builder | Eir 6b worker (Opus): K' redesign on _v77e6 base per the 18:46 spec — siege-gated budget-capped core heal, proactive trunk trigger, ammo stays OFF, floor toggle kept | bots/_v78e6b | local only | QUEUED, NOT SPAWNED (session wrapped first; bots/_v78e6b is an UNMODIFIED copy of _v77e6, worker never ran — successor fires it) |
+| builder | Pop-floor isolation battery (the owed leg): _v77e6_flooronly (floor ON, K+ammo OFF) vs opp_v63 + band_probe + orizon_probe, 60/leg = 180 | floor verdict: ride-along or park | local only | QUEUED, NOT FIRED (variant dir ready + toggle-verified; successor runs it) |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
@@ -429,3 +430,25 @@ v66-salvage-cad-leg, axis-split-our-games, k-drag-diagnosis (corrected
 (2) dump-cap verification on the first r1000 game under an Eir-lineage
 ship, (3) axis-split re-run once --mine accumulates, (4) instrumented
 CAD challenge decode if the builder ever spends it.
+
+### 2026-08-07 18:56 (from `date`) — builder arm: SESSION 13 WRAP (Magnus restarting both arms for the next major-version run)
+
+State at wrap: v67 (x3r0 wave_ghost) live by team decision, 1575 @ 271 —
+window +4 net from its 1571@265 baseline over 6 matches. No open builds:
+Eir 6 refuted-with-control, dev dirs kept for lineage (_v77e6 + _noammo/
+_konly/_alloff/_flooronly ablation set, _v78e6b = clean unmodified base
+copy). Eir 6b worker + pop-floor isolation are QUEUED NOT STARTED (rows
+above) — the successor's first builds, spec in the 18:46 note + task text
+mirrored in HANDOVER. Blocked: x3r0 traceback data (correction routed).
+MONITORS: all four are THIS session's task processes — they DIE at this
+wrap; /builder step 3 re-arms (~30s, scripts in tools/monitors/).
+
+Session 13 ledger: slot case measured (parity + field equivalence + fork
+discovery), team slot decision supported, Eir 6 cycle run end-to-end
+(build → battery → ablation → value case → purity control → controlled
+refutation with mechanism + redesign spec), orizon_probe built + frozen
+(5th instrument, battery class covered), 2,438 arena games, two arm-vs-arm
+adjudications resolved on evidence with one catch each way, protocol
+incident-log grew one rule (NOISE_ON provenance). Tape current, all
+verdicts evidenced. Research arm wrapped clean at ~19:15 (its 18:50-ish
+message = its wrap note; all deliverables landed/corrected/registered).
