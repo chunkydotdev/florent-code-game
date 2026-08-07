@@ -32,15 +32,29 @@ PER_CYCLE = 8
 
 def main() -> None:
     os.makedirs(ARCHIVE, exist_ok=True)
+    # Our own matches first, every cycle — the global list is deep enough to
+    # rotate our games out between passes (measured: missed our Memtrace match
+    # entirely on 2026-08-07), and our matches are the ones both sessions
+    # decode same-day.
+    matches = []
+    try:
+        mine = subprocess.run(
+            [FCODE, "match", "list", "--mine", "--json", "--limit", "20"],
+            capture_output=True, text=True, timeout=120,
+        )
+        matches.extend(json.loads(mine.stdout)["matches"])
+    except Exception:
+        pass
     try:
         out = subprocess.run(
             [FCODE, "match", "list", "--json", "--limit", "100"],
             capture_output=True, text=True, timeout=120,
         )
-        matches = json.loads(out.stdout)["matches"]
+        matches.extend(json.loads(out.stdout)["matches"])
     except Exception:
-        print("REPLAY ARCHIVER: match-list fetch failed this cycle")
-        return
+        if not matches:
+            print("REPLAY ARCHIVER: match-list fetch failed this cycle")
+            return
 
     st = {"archived": [], "failed": {}}
     if os.path.exists(MANIFEST):
@@ -52,7 +66,12 @@ def main() -> None:
     done = set(st.get("archived", []))
     failed = st.get("failed", {})
 
-    todo = [m for m in matches if m.get("status") == "complete" and m["id"] not in done]
+    seen_ids = set()
+    todo = []
+    for m in matches:
+        if m.get("status") == "complete" and m["id"] not in done and m["id"] not in seen_ids:
+            seen_ids.add(m["id"])
+            todo.append(m)
     todo.sort(key=lambda m: m.get("completedAt") or "", reverse=True)
     for m in todo[:PER_CYCLE]:
         mid = m["id"]
