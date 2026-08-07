@@ -208,3 +208,24 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T15:34	1555	251	v64	rank #28
 2026-08-07T15:39	1538	252	v64	rank #29
 2026-08-07T15:43	1545	251	v65	EIR 5 SHIPPED (run-with-recommendations): v65 = _v75e5 = Eir 4 + I rotation discipline + J defender cb-unlock/freeze-disarm + H endgame switch. MATCHED noise-on battery: kladde hive+eider 48.4 vs 23.4 (+25 CLEAN - J freeze-disarm real: hive 1/32->11/32), v63 58.8 vs 55.4, picket/flotte/band flat, 0 crashes ~480. METHODOLOGICAL DISCOVERY on this cycle: all pre-noise tape rows are seed-amplified history (piece C hive 'fix' 16/32 noise-off = 1/32 noise-on; flotte '93 pct sweeps' = ~65 true) - noise-on rows are the only honest currency going forward
+2026-08-07T15:44	1538	252	v65	rank #29
+2026-08-07T15:49	1538	253	v65	rank #29
+2026-08-07T15:54	1538	253	v65	rank #29
+2026-08-07T15:59	1546	254	v65	rank #29
+2026-08-07T16:04	1546	254	v65	rank #29
+2026-08-07T16:09	1538	252	v65	J EXPERIMENT sample 1 (self-created unrated, Orizon, seat B): 2-3 - matches the v64 coinflip prior. Shape: our 2 wins both r1000 titanium tiebreaks (eider/meander - H's turf); their 3 all core kills incl. hive r119, BEFORE HUNT_MIN_RND arms - the family's speed beats J's gates, which is piece K's case (heal budget runs from r0). Team 48 sibling sample fired (96d26726). Field churn: Lunds retrying v42, CAD 5th reversion to v107, Flotte v35->v36 (first move; jackpot holes were structural across v27-35)
+2026-08-07T16:09	1547	255	v65	rank #29
+2026-08-07T16:14	1547	255	v65	rank #29
+2026-08-07T16:19	1547	255	v65	rank #29
+2026-08-07T16:24	1533	256	v65	rank #29
+2026-08-07T16:29	1548	257	v65	rank #29
+2026-08-07T16:34	1548	257	v65	rank #29
+2026-08-07T16:39	1552	258	v65	rank #28
+2026-08-07T16:44	1552	258	v65	rank #28
+2026-08-07T16:49	1549	259	v65	rank #28
+2026-08-07T16:54	1549	259	v65	rank #28
+2026-08-07T16:59	1559	260	v65	rank #26
+2026-08-07T17:04	1559	260	v65	rank #26
+2026-08-07T17:09	1560	261	v65	rank #27
+2026-08-07T17:14	1560	261	v65	rank #27
+2026-08-07T17:15	1560	261	v66	EIR 5.1 SHIPPED: v66 = _v76e51 = v65 + rotation latch (tile-keyed latch was the real bug - dropped free when the held builder stepped; now time+lock-dsq+no-return, pathology structurally unreachable: 26 fast re-rots -> 0, reversals 7 -> 0) + H dump cap incl. drip suppression (tiebreak-#3 protected: worst measured case kept 23,169 stored vs 212). Screens: v63 56.2 flat, kladde 35.9 then 48.4 on resample (first run = noise; matches v65 exactly), ouro 82.8. 0 crashes/432+50. v65 window closed 5-3ish at 1560 - Eir line +22 net since the 1538 v65 baseline
