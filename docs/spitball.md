@@ -261,3 +261,58 @@ experiment).
   survival binds first.
 - "Play the players" → doctrine, in memory + tape; drove the CAD decode and
   the v79 absorption cycle.
+
+## Session-12 measuring-session findings (2026-08-07, Fable + two Sonnet analysts)
+
+Verdicts here are screen-level, not battery-level; the tape (results.tsv) has the rows.
+
+- **Grind residual, hive half: FIXED AT SCREEN LEVEL by piece C (deep-damage early
+  medic).** The siege-solvency package (16-Ti heal reserve + siege respawn floor)
+  screened non-binding — 0/32 identical to baseline on hive vs kladde_probe, all 64
+  games titanium_collected, zero core deaths: the core_destroyed@787 replay was the
+  v55-era shape and the current line already survives the siege. The binding constraint
+  was the farm-death window r63-150. Piece C (medic from r40 but ONLY for damage >= 8,
+  i.e. four accumulated raid pecks; late window bit-identical) moved hive 0/32 -> 16/32
+  with the row now seat-decided (seat A 32/32). Guards green on the exact maps whose
+  ablation flips set MEDIC_MIN_RND=150 (flotte fjordgate/lighthouse 16/16 each, band
+  fjordgate 16/16). The depth discriminator dodges the opening-tempo tax by
+  construction. Seed-amp caveat acknowledged (~2 distinct games per seat-decided row).
+- **The seat-B death excess and the Ouroboros leak are largely ONE mechanism: solo
+  melee duels our builders initiate against live gunners.** Two independent analyses
+  converged: (1) fresh 71-death seat-B loss corpus (matches 706faea6/a72b53f9/c7dec9d5)
+  — killer 70/71 gunner fire, 8 of 11 traced attack-deaths were a lone builder
+  attacking a 17-25/25 HP gunner; zero tile-race/positional deaths (corroborates the
+  contested-ore REJECTED verdict). (2) 13-replay Ouroboros decode: a FOURTH opponent
+  class, "creeping picket siege" — gunner-only (never one sentinel/launcher in 13
+  games = the mid-match fingerprint), normal economy underneath, deterministic per-map
+  first-gunner (meander r6@(10,7) dsq10; eider r32@(14,10) dsq25; drumlin r22@(10,7)
+  dsq185 — identical across seeds AND our versions 53/55/59), phase-1 builder
+  attrition (5/5 builders dead by r83-151), phase-2 picket creep to dsq 1-9, kill
+  r226-427 scaling with map size. Meander disproves the range-only theory (their
+  gunners sat INSIDE dsq20 all game, our reflex engaged, we still lost 12 builders);
+  fjordgate proves melee VOLUME works (348 hits, multiple concurrent builders, we
+  win). Piece D ("duel discipline") in build: gate _sabotage_prio/_intercept melee on
+  gunner/sentinel targets — allow only if target HP <= HUNT_FINISH_HP, OR a second
+  friendly builder is adjacent, OR the turret's firing ray does not cover my tile
+  (the trap-list "a turret firing at the core is not firing at its adjacent attacker"
+  principle, generalized). ouroboros_probe being frozen from the decode as the 4th
+  instrument.
+- **Eir 3's deferral was self-narrowing — sharper than the role-guard gap.** The
+  deferral lives in _pick, reached only via _expand; but when SLOT_UNDER != 0 the
+  convergence block returns BEFORE _pick for exactly the roles (2, 5+) the deferral
+  nominally covered. The arming condition disarms the coverage. Any future seat-B
+  counter must not route through _pick.
+- **Turn order refined (game-model.md updated in place):** global ascending unit-ID,
+  pairwise seat-A edge only; mid-match-built entities act after all earlier spawns
+  regardless of team; 35/71 dying seat-B builders had acted in their death round.
+  Replay decoder trap: per-round update lists are not temporally ordered (a killer's
+  FireTurret can serialize after its victim's RemoveEntity) — correlate per-round.
+- **Platform seat assignment anomaly, unmeasured:** in all 13 queryable
+  Ouroboros-vs-us matches, Ouroboros holds teamA/side-a — 13/13. Either the ladder
+  scheduler seats systematically (first-order question, game-model.md already asks
+  it) or the match-list convention encodes something (challenger? rating?). Cheap to
+  check across the full match list. Feeds the determinism thread.
+- **Ammo-conversion vs replacement-floor contention (Ouroboros decode, tertiary):**
+  our convert_ammo spend (154-2657 Ti in the loss sample) competes with
+  REPLACE_TI_FLOOR=250 for the same bank while the picket farms our builders —
+  compounding, not primary. Noted for the classifier/solvency work.

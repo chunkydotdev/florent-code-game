@@ -55,6 +55,15 @@ methods raise `GameError` when illegal.
   exactly **one less** than Team B's Nth builder: zero exceptions across 10 instrumented
   matches on two maps (e.g. A = [3, 5, 9, 13, 19], B = [4, 6, 10, 14, 20]). Since units run in
   spawn order, seat A resolves its action first in every round of the match.
+  **REFINED [2026-08-07, session-12 death census]:** the order is global ascending unit-ID, so
+  the seat-A edge is **pairwise** (each A unit acts before its spawn-twin), NOT "every A action
+  before any B action" — B's first builder acts before A's second, and any entity spawned later
+  (e.g. a turret the opponent raises mid-match) acts **after** every earlier-spawned unit
+  regardless of team. Measured in a fresh 71-death seat-B corpus: 35/71 dying builders had
+  already acted in their death round; of the 36 that had not, 30 were on ordinary action
+  cooldown (symmetric between seats). Decoder caveat discovered the same pass: within a round,
+  a .replay26 update list is **not a strict temporal trace** (a killer's FireTurret event can
+  serialize after its victim's RemoveEntity) — correlate per-round, never sequentially.
   **What that buys depends entirely on how much ore is contested.** On `archipelago`, where
   16% of the 38 ore tiles sit near the midline, seat A wins the same-round race for each
   contested tile, and a Harvester **blocks movement** — so the winner walls the loser out and
