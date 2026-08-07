@@ -118,3 +118,13 @@ early-game behavior (deterministic opponents re-seed on OUR version).
   research pulled directly (2s-paced) and spec'd the `--mine` fix.
 - Tooling footnote: zsh `nomatch` inside a background watcher loop burned a
   silent 30 minutes — poll with `ls | grep -q`, never bare globs.
+- Determinism assumed (research, session 13): the K-diag divergence read
+  treated same-seed arena pairs as deterministic and called their r0
+  spawn divergence a base-refactor defect; piece G's UNSEEDED spawn salt
+  (main.py:1082, HANDOVER MEASUREMENT WARNING) makes paired-seed runs
+  nondeterministic BY DESIGN. Builder caught it within minutes; deliverable
+  corrected in place. RULE: HANDOVER's measurement warnings bind research
+  decodes of arena-produced artifacts — before attributing anything from
+  paired replays, check NOISE_ON provenance; salt-dependent observations
+  (openings, small-n outcomes) attribute nothing, salt-independent
+  aggregates (action mixes, target classes) remain valid.

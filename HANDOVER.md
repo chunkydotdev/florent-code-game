@@ -29,12 +29,19 @@
 ## His stated next move: graft I/J/H onto his v8 — i.e. re-add what the
 ## fork dropped; our measured specs are the contribution. CAD production
 ## read confirms the latch HELD under losing pressure (graft de-risked).
-## EIR 6: REFUTED AS-BUILT (tape 18:35), all three pieces PARKED. K below
-## baseline in all 6 paired comparisons incl. its own value case
-## (orizon_probe 46.7 vs 58.3). Suspects: heal-on-quiet-rounds + role
-## coverage. Sporks ammo refuted as-ported (bank drain). Pop floor never
-## isolated — owes a leg. K-diagnosis replays with research for the
-## binding-mechanism read. Dev dirs: _v77e6, _v77e6_noammo, _v77e6_konly.
+## EIR 6: REFUTED AS-BUILT, mechanism PINNED w/ control cell (tape 18:35 +
+## 18:46). Base-purity: _v77e6 refactor EXONERATED (alloff = baseline:
+## 60/91.7/58.3-mirror). K alone costs −15 (v63) / −35 (band) vs alloff.
+## Mechanism: trunk half NEVER fires (depth gate 8 > gunner dmg 7 — one-
+## reload qualify window) so K-as-built = un-gated core-heal-from-r0 eating
+## builder turns mid-fight (27-31% of turns in fast rush losses). REDESIGN
+## SPEC (next cycle lead, 18:46 note): keep budget+shares, RESTORE siege
+## gate on core heal, proactive trunk trigger — the real sporks mechanism
+## was never tested. Sporks ammo refuted as-ported. Pop floor owes an
+## isolation leg. Dev dirs: _v77e6 + _noammo/_konly/_alloff (ablation).
+## Two-arm incident tonight (both directions, protocol incident-log
+## updated): research r0-divergence claim retracted (NOISE_ON salt breaks
+## paired-replay attribution — check noise provenance before attributing).
 ## NEW INSTRUMENT: orizon_probe FROZEN md5 aa7ab7185e5e1f6906071a72eb48d843
 ## (point-blank battery class, family plant signature; gentler than wild).
 ## OPEN: Eir 5.1 traceback (x3r0 stress, kite_proxy/hive/42) — run() DOES
