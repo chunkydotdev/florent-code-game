@@ -956,6 +956,39 @@ re-verify before hardcoding anything into Loki.
   a450ea25 for the I/J mechanism read as soon as the ~16:31 archiver pass
   lands it.
 
+## Unclassified five — classified (~16:35); brief-b COMPLETE
+
+→ docs/research/unclassified-five-2026-08-07.md. All three brief-b threads
+now landed (sporks decode, family cross-check, this). Headlines:
+
+- **Leviathan v9 = FOURTH family member** (team lazy / Orizon / Team 48 /
+  Leviathan): point-blank gunner battery, fastest yet — median 64 rounds,
+  93% core-kill, aim 0.0. The family counter (J + barrier ammo-sink + Stage
+  3 race) now addresses four teams.
+- **CtrlAltDefeat v107 = UNCHANGED from the cad_probe era** — launcher r1 +
+  three thrown raiders at r2/r3/r4, identical across two unrelated maps (the
+  tightest deterministic signature decoded today). Consequences: (a)
+  cad_probe is CURRENTLY VALID whenever they sit on v107 (they flip
+  v107↔v112 — check version before trusting a leg); (b) NEW LOKI CANDIDATE:
+  **insertion-drop denial** — their throw targets are the passable tiles
+  near our core ring; pre-occupying the historical drop tiles (denial-book
+  method, our-version-pinned) denies the landing itself. Pre-mortem vs the
+  decoded throws first.
+- **OopsGotYourElo v21 = the most tiebreak-committed team measured anywhere**
+  (60% of its games reach r1000, vs sporks' 12%). Piece H flips r1000
+  tiebreaks → the next OGE pairing under v65 is **H's natural experiment**,
+  exactly as Memtrace is J's. Watch both.
+- gsxWins caught MID-SHIP v16→v18 (battery, sentinel-led, 100% core-kill in
+  15 games); SingleCore v7 battery sentinel-variant with a period-8
+  shuttle-throw quirk (possible probe target).
+- **Updated pool mix (fresh last-60, 93.3% classified):** point-blank 46.4 /
+  picket 28.6 / econ-first 10.7 / all-in 8.9 / launcher-insertion 3.6 (new
+  row) / grind 1.8. The 9-seat battery recommendation (4 point-blank / 3
+  picket / 1 econ / 1 all-in) is UNCHANGED. Battery+picket = 75% of what we
+  face.
+- New unclassified opponent surfaced: **Viktor5776 v1** (we beat them 4-1 in
+  v65's second match) — queue a 1-match classification pass next cycle.
+
 ## Main-session decisions on the sporks/denial batch (~16:05, via board)
 
 - **J-WIDENING accepted as PIECE K, NOT retrofitted** — Eir 5's screens are
@@ -1030,3 +1063,24 @@ re-verify before hardcoding anything into Loki.
    perturbed queue does differently against our current openings. Your
    era-mismatch finding predicts the specific gaps; write them down and I
    commission the rebuild with the fleet work.
+
+## Main-session verdicts on the unclassified-five batch (~16:45, via board)
+
+- LEVIATHAN = 4TH FAMILY MEMBER ACCEPTED (median 64 rnds — the fastest yet;
+  the family counter now covers 4 teams / ~20%+ of pool). Strengthens the
+  Eir-6 round-floor case from today's J-experiment observation: the family's
+  speed (64-119 rnd kills) outruns every defensive gate we have
+  (HUNT_MIN_RND=120, MEDIC_EARLY_MIN_RND=40 helps but heal-budget-from-r0 =
+  piece K is the structural answer).
+- POOL MIX FIRMED at 93.3% classified (point-blank 46.4 / picket 28.6 / econ
+  10.7 / rush 8.9 / launcher-insertion 3.6 / grind 1.8); 9-seat battery
+  allocation unchanged.
+- CAD_PROBE CONDITIONAL VALIDITY RULE adopted: valid iff CAD sits on v107
+  (byte-stable vs the probe era, tightest signature of the day) — check the
+  version stamp before trusting any CAD leg. Insertion-drop denial joins the
+  Loki candidate list, gated on a pre-mortem vs the decoded throws.
+- NATURAL-EXPERIMENT WATCHLIST adopted: family pairings = J's read (a450ea25
+  decode pending), OopsGotYourElo = H's read (60% r1000-committed — H's
+  designed prey). My match watcher surfaces completions; flag any OGE result
+  under v65 the moment it lands.
+- Viktor5776 (new, 4-1'd under v65) queued next cycle.
