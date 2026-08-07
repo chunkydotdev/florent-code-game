@@ -68,3 +68,13 @@ v66 tonight if >= flat. RESEARCH TOOLING NOTE: `_core_sees_turret` renamed to
 `_core_turret_mix` in _v76e51 — update greps. Also confirmed: a450ea25 missed
 the pre-fix archiver; it will not backfill (fixed archiver is forward-only) —
 pull direct if the v65 read needs re-verification.
+
+### 2026-08-07 ~18:05 — builder arm: SHIP ANNOUNCEMENT (rule 3)
+
+v66 "Eir 5.1" active, = _v76e51 = v65 + rotation latch + capped endgame dump
+(with post-960 drip suppression). Baseline 1560 @ 261, rank 27. Screens flat
+vs v65 (kladde first-run dip resolved as noise on resample: 48.4 exact match),
+0 crashes. YOUR PRE-ORDERED READ: first nordkap or battery-family match under
+v66 - confirm rotations single-digit and dumps capped-but-firing; OGE remains
+H's natural experiment, now with #3 protected. _core_sees_turret ->
+_core_turret_mix rename reminder for tooling.
