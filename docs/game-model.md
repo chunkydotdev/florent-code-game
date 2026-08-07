@@ -471,3 +471,23 @@ rather than the file format:
   team that never completes a delivery chain reads 0 — matching `fcode run --json`.
 - `Replay.winCondition` (field 6) is present in real replays but **undeclared** in the
   visualiser's own schema, as is an unidentified `Player` field 6.
+
+- **Determinism, measured end-to-end [2026-08-07, session-12 research fan-out, thread 1]:**
+  a rated game is a pure function of (opponent, opp_version, map, our_version, our_seat) —
+  mapSeed does NOT vary the game. Three byte-identical replay pairs on record, every decoded
+  stream matching round-for-round: Ouroboros/atoll 227t (d0116d59… g5 = 89114461… g5),
+  Lunds/hive 194t (b17d5862… g4 = 2b00ef7c… g5), Team48/lighthouse 805t (dcfe2cf0… g3 =
+  8ce1c0d9… g2). Across all 1160 rated games: 4.74% strict-key re-pair rate, 48
+  identical-fingerprint repeats, 19 of them re-LOST games (~61 Elo at +3.2/coinflip);
+  89.6% of repeat groups fully reproducible. Forward EV of decision noise is small (~0.06
+  Elo/game) at pool level BUT concentrates on the Ouroboros seat-lock (their-A/our-B every
+  match; one atoll group had 4 identical copies). Consequence for LOCAL measurement: this is
+  the mechanism behind the seed-amplification trap — seeds don't vary games, so per-map arena
+  rows collapse to ~1 distinct game per seat. Bot-side entropy (see decision-noise piece)
+  would make local batteries honest again at the cost of exact paired-seed reproducibility.
+- **Engine-side nondeterminism, one source found [same thread]:** harvester OUTPUT ROUTING
+  breaks ties non-deterministically across games — a fresh harvester with two valid adjacent
+  acceptors (one per team) resolved differently in otherwise byte-identical games with zero
+  preceding bot-decision divergence, cascading to a 99-round game-length difference
+  (Ouroboros/drumlin group, forked r63; 5 of 48 repeat groups affected). Do not assume
+  resource-pipeline topology ties are stable.
