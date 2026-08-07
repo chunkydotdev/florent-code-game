@@ -1127,3 +1127,56 @@ builder.
   effect on its next 30-min cycle without re-arm.
 - v65 window 4-2; Lunds seat-B cell moved for the FIRST time (0-5 lifetime ->
   2-3, their-v42 confound noted); Ouroboros seat lock intact.
+
+## Rollbacks are re-characterization triggers (research, s14 ~20:05)
+
+Two same-day data points: CAD v110→v107 (probe conditional-validity rule
+already adopted) and now Powerpuff v26→v18 (opp_watcher, builder 19:57
+note) — their v26-era rows and census-era characterization are suspect
+until a v18-era match is read. Idea: the opponent version watch should
+treat a ROLLBACK exactly like a version bump — same staleness rule, same
+"re-verify before relying" discipline — plus one extra: the rolled-BACK-to
+version may match an OLD era we already decoded (v18-era rows may exist in
+the archive predating v26; a lookup beats a fresh decode). Class-map
+impact is nil while probes cover the class (flotte_probe holds for
+Powerpuff); wild-fidelity claims are what go stale.
+
+## The CAD family moved versions TOGETHER tonight (research, s14 ~21:15)
+
+Four family-adjacent teams changed versions within one evening: CAD
+v107→v115, Lunds v42→v43, KCM 7→1 (rollback), Powerpuff 26→18 (rollback).
+Synchronized movement strengthens the one-code-family hypothesis (shared
+maintainers pushing together) — and suggests a family-wide re-freeze after
+any observed member bump is cheaper than per-team staleness discovery: when
+ONE member moves, presume ALL members' constants stale and re-verify the
+family in a batch. Also: two of the four are rollbacks (see the rollback
+re-characterization entry above) — the family may be A/B-ing against the
+field, which makes their constants systematically less stable than
+loner teams'.
+
+## Opening-as-steering: deterministic queues that READ us are an input we control (research, overnight ~23:00)
+
+The v65-era Ouroboros re-verify killed the fixed-tile Loki hardcode, but its
+mechanism correction opens a better door: their queue diverges from the
+book's transcript at r3 — before any casualty — so the perturbation keys on
+our OPENING SIGNATURE (what they see us do/be in the first rounds), not on
+when our builders die. If their build order is a deterministic function of
+our early visible state, then our opening is literally an argument to their
+build queue. Three escalating uses, all play-the-players shaped:
+1. MEASURE: a Loki probe shouldn't replay fixed tiles; it should map
+   f(our-opening-variant) → their-first-gunner (round, tile) over a small
+   set of our opening variants, per map. If f is stable per variant (their
+   determinism suggests yes), we get a steering table instead of a tile book.
+2. STEER-TO-COVER: pick the opening variant per map whose induced gunner
+   tiles land ON our home turrets' firing rays (the ray-coverage law:
+   covered = median lifetime 8-11 rnds, uncovered = 81-105). We don't deny
+   their turret — we schedule its death.
+3. UNREASONABLE VARIANT (Magnus's standing welcome): a throwaway opening
+   feint — one early builder step pattern chosen purely to steer their queue
+   into a dead shape, costing us ~nothing if f is flat on that map (measure
+   first). Candidate cycle name if it ever builds: Loki (it IS the trickster
+   shape — denial by suggestion, not obstruction).
+Scope caveat: measured on Ouroboros v8 only; family reach unknown (their
+gentleness-era probe calibration suggests other deterministic teams exist —
+same instrument would test any of them). Parked as a shaped direction for
+the morning brief; no build tonight (not in the mandate).

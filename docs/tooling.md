@@ -39,6 +39,19 @@ scripts died with that session; these are the two things a rebuild must know):
   (e.g. 95 conveyors alive, 1/95 wired, delivery frozen from r59) — see
   docs/research/v68-chokewall-first-read-2026-08-07.md for the reference
   numbers.
+- **Launcher throws do NOT emit `FireTurret`** (that's gunner/sentinel shots
+  only — a naive fire-count on launchers reads 0 forever). A throw appears as
+  a `moveBuilderBot` whose `to` is more than one tile from `frm` (builders
+  otherwise only step one cardinal tile). Attribute the thrower as the
+  launcher alive at **d² ≤ 2 of the pre-throw tile — diagonals included**
+  (corrected by the CAD v116 read, 2026-08-07 overnight: the original
+  orthogonal-only rule returned NONE for 6 of 14 throws in one match; since
+  d²≤1 is a subset of d²≤2, prior attributions are unchanged and the ferry
+  ownership-inversion verdict is unaffected — the fix only adds coverage).
+  Attribution matters: the ferry re-check (see cad-ferry-premortem re-check
+  resolution) found every long-game throw loop belonged to the DEFENDER
+  disposing of the attacker's raiders — same tiles, same counts, inverted
+  ownership.
 
 ## Generating maps offline
 
