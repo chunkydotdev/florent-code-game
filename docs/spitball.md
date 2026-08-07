@@ -353,3 +353,35 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   candidate behind the Eir 4 matrix. Team-read shelf life: team lazy v88
   stable 16.5h (saga/moonrise holes open); Pivot ships hourly — never build
   on Pivot reads.
+
+- **Thread 2 (lane saturation) verdicts:** lane-wiring build idea NULL, ECO_CAP raise
+  NULL (lanes max 6/8 wired, cap max 17/18, stranded belt capital 0.1-2.3% of
+  delivered). The throughput bottleneck on the current line is BUILDER-HANDS
+  SURVIVABILITY: 2 of 3 v61 economy losses crash to sustained ZERO builders
+  (~r235-250) and never recover — convergent with the duel-death mechanism (piece D)
+  and re-pointing at the RECOVERY gate (REPLACE_TI_FLOOR=250 unmeetable
+  mid-strangle; population-floor clause = piece B' candidate, AFTER D's verdict so
+  replacements aren't spawned into the same picket). One lane-bound counterexample
+  (v59 saga 2618b9b4 g2, 17 harvesters through 1 lane) — old generation, the
+  exception. TWO LIVE BUGS code-confirmed by the measuring session:
+  (1) hive bunker freeze `_v72e2:1867-1876` — on hive with a home gun from r42,
+  _expand returns before EVERYTHING (harvesters, links, AND the chain medic):
+  vs gunner-picket opponents (Ouroboros) hive economy self-freezes; dormant vs
+  kladde_probe (no home gun), so piece C's hive screen was not confounded — but
+  ouroboros_probe hive legs WILL hit it; treat hive-vs-picket reads accordingly.
+  (2) SLOT_HARVESTERS ratchet — builder increment on build (:1901) + sync that
+  only raises (:710-725, deliberate "lower bound" comment): ECO_CAP compares
+  lifetime-ish max, not live count; contested-tile rebuild churn (15-16x one tile,
+  v59) permanently burns cap headroom and can block farm RECOVERY after mass
+  death. Fix needs design (no death events exist) — piece-H-class, composes with
+  thread-10 hysteresis.
+- **Thread 4 (tiebreak margins) verdicts:** endgame spend-switch @r960 is the
+  dominant lever — flips 6/9 current-line r1000 losses (+38.4 Elo equivalent);
+  BUILD QUEUED behind piece F. One-more-stack idea NULL (0/21 at any k; the
+  "atoll lost by 190 Ti" prior was stale — smallest delivered deficit is 260, and
+  the real atoll tiebreak game was delivered-TIED, lost on harvester count: ONE
+  harvester built by r960 flips it). Harvester-adjacent splice: marginal as a
+  tiebreak lever (1/21 alone, subsumed by the spend-switch); mechanics probe stays
+  parked, Magnus's call. Cross-thread caveat honored: the spend-switch needs
+  living builders at r960 — it composes with piece D (D keeps hands alive, the
+  switch cashes the bank), intersect before attributing.
