@@ -66,6 +66,18 @@ by design.** Pooled Wilson reads only, or flip NOISE_ON=False in local copies.
 - v89's archipelago+jackpot holes (0/32 each in the 480 battery) — undecoded;
   first item for the next research brief.
 
+## SHIP-GATE REDEFINITION (Magnus directive, 2026-08-07 late session)
+Ship verdicts now weigh the CLASS-WEIGHTED vs-field battery — probe-fleet legs
+weighted by the ladder's actual class mix (meta census supplies weights) plus
+slot bars — NOT improvement-over-our-own-previous-version. Self-paired legs
+survive for ATTRIBUTION only (ablation grids, identical-rows fingerprint).
+Rationale: our economy/survivability meta is nearly unique on the ladder;
+self-A/B undervalues anti-field changes (the external-meta lesson). System
+build is task-tracked: probe fleet (top-8, refresh on version-bump events),
+fidelity ledger (wild-gap per probe from unrated sweeps), weighted battery.
+Meta census (top-12 classification + weights + probe-ability) commissioned
+from replay_archive data — check its report first next session.
+
 ## Session-12 process state
 - Research fan-out template worked (12 threads + cross-check, all verdicted
   same-day; brief format in docs/research-brief-2026-08-07.md). Next brief goes
