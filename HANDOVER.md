@@ -22,13 +22,27 @@
 ## version), UR 1-2. SmartFridge ran a deliberate 4-UR version-cycling probe
 ## series against our slot (v34→v33→v35→v34 in 31 min) — book-worthy signature;
 ## expect their next version tuned against whatever holds the slot.
-## IN PROGRESS: Eir 6 worker on bots/_v77e6 = Eir 5.1 + piece K (budgeted
-## ~5%-income core+trunk heal from r0) + sporks ammo policy (17@r0/cap60/
-## topup4) + B' pop-floor redesign (floor 5, delivered-rate gate), 3 toggles.
-## Then ablation screens + class-weighted vs-field gate (SHIP-GATE section).
-## Monitors: re-armed 17:58 session 13. Research arm: session-13 successor
-## online (wave_ghost decode running; v66 read VOID — no battery-family match
-## ever ran under v66; CAD a7aa49ec salvage leg).
+## TEAM DECISION (~18:30, Magnus/x3r0 direct): KEEP v67. x3r0's own Fable
+## read matched ours (104-100/204 direct = same parity coin). FORK FINDING:
+## wave_ghost IS our Eir 4 + 304 diff lines (vs 2,268 to his v89) — a
+## PRIMARY_SENTINEL snipe overlay on our lineage, dropping v65/v66 pieces.
+## His stated next move: graft I/J/H onto his v8 — i.e. re-add what the
+## fork dropped; our measured specs are the contribution. CAD production
+## read confirms the latch HELD under losing pressure (graft de-risked).
+## EIR 6: REFUTED AS-BUILT (tape 18:35), all three pieces PARKED. K below
+## baseline in all 6 paired comparisons incl. its own value case
+## (orizon_probe 46.7 vs 58.3). Suspects: heal-on-quiet-rounds + role
+## coverage. Sporks ammo refuted as-ported (bank drain). Pop floor never
+## isolated — owes a leg. K-diagnosis replays with research for the
+## binding-mechanism read. Dev dirs: _v77e6, _v77e6_noammo, _v77e6_konly.
+## NEW INSTRUMENT: orizon_probe FROZEN md5 aa7ab7185e5e1f6906071a72eb48d843
+## (point-blank battery class, family plant signature; gentler than wild).
+## OPEN: Eir 5.1 traceback (x3r0 stress, kite_proxy/hive/42) — run() DOES
+## catch it (one-per-lifetime diagnostic print, unit NOT deleted, correction
+## routed); underlying exception blocked on x3r0's traceback text.
+## Monitors: re-armed 17:58 session 13. Research arm session 13: queue
+## drained (wave_ghost read, T48+CAD legs, Viktor5776=econ-greed, axis-split
+## underpowered pending --mine archive); now on the K-diagnosis decode.
 
 # Prior header (session 12 wrap, superseded 17:52 by the v67 auto-activation) below.
 ## (superseded) LIVE: v66 "Eir 5.1" (= `bots/_v76e51`), shipped 17:14. Baseline 1560 @ 261,

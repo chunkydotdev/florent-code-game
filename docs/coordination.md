@@ -11,13 +11,20 @@ stay the builder's.
 | arm | what | output | budget | status |
 |---|---|---|---|---|
 | builder | v67 slot bar: _v76e51 (Eir 5.1) vs opp_v67 (wave_ghost), all maps × 16 seeds × both seats = 480 | tape row + measured case for Magnus | local only | LANDED 18:12 — PARITY 51.9 [47.4,56.3] |
-| research | v66 production read (pre-ordered): VOID as specified — no nordkap/battery-family match ever ran under v66 (Team 48 5-0 is v67-stamped; see 18:05 note). Salvage: CAD v107 leg a7aa49ec (latch under losing pressure + insertion drop tiles) | docs/research/ | archive-first | salvage queued |
+| research | v66 production read (pre-ordered): VOID as specified — no nordkap/battery-family match ever ran under v66 (Team 48 5-0 is v67-stamped; see 18:05 note). Salvage: CAD v107 leg a7aa49ec (latch under losing pressure + insertion drop tiles) | docs/research/v66-salvage-cad-leg-2026-08-07.md | archive-first → direct | LANDED 18:47 — latch HELD (0 oscillations, 5 games); dump cap dies unverified; CAD ferry-loop signature NEW |
 | research | wave_ghost (x3r0 v67) first field read: sporks 0-5 (b92d7da8) + team lazy 1-4 (e71e0b65) direct pull, paced ≥60s; Team 48 5-0 + CAD leg from archiver next cycle | docs/research/wave-ghost-first-read-2026-08-07.md | 10/10 files used | LANDED 18:15 exc. Team 48 leg (archiver) |
-| research | Viktor5776 classification: b41a1d2a (3-2 vs Innovex, not ours — no our-version confound), direct paced pull | docs/research/ | ≤5 game files | RUNNING (research arm, session 13) |
-| research | axis-split of OUR games (board-routed small #1): cardinal vs diagonal core-pair win split per our version, archived corpus only, sporks-decode method — subagent sweep, no downloads | docs/research/axis-split-our-games-2026-08-07.md | local only | RUNNING (subagent) |
-| builder | Eir 6 worker (Opus): piece K standing heal budget + sporks ammo policy + B' pop-floor redesign, 3 toggles, on Eir 5.1 base | bots/_v77e6 | local only | running |
+| research | Viktor5776 classification: b41a1d2a (3-2 vs Innovex, not ours — no our-version confound), direct paced pull | docs/research/viktor5776-classification-2026-08-07.md | 5/5 files used | LANDED 18:25 — econ-first, zero-turret pure greed |
+| research | axis-split of OUR games (board-routed small #1): cardinal vs diagonal core-pair win split per our version, archived corpus only, sporks-decode method — subagent sweep, no downloads | docs/research/axis-split-our-games-2026-08-07.md | local only | LANDED 18:29 — underpowered (only 2/96 archived matches are ours); re-run once --mine archive accumulates |
+| research | Team 48 leg (03af6569) + CAD salvage leg (a7aa49ec) direct paced pull — archiver ETA analysis says 2-3 cycles behind newer globals (newest-first sort), both legs are committed reads | docs/research/ (wave-ghost read + v66 salvage) | 10/10 files used | LANDED 18:47 (both legs read) |
+| builder | Eir 6 worker (Opus): piece K standing heal budget + sporks ammo policy + B' pop-floor redesign, 3 toggles, on Eir 5.1 base | bots/_v77e6 | local only | LANDED 18:25 — 3 pieces + toggles clean, slot 9 reclaimed (SLOT_LINKS_DONE→SLOT_HEAL_BUDGET), red flag: ammo TI_FLOOR=12 may pin bank (eider smoke 270 mined) |
+| builder | Eir 6 paired screening battery: _v77e6 AND _v76e51 vs opp_v63/kladde/ouro/cad/band + _v77e6 vs opp_v67 (480-game baseline exists), 60 games/leg = 660, matched noise | tape rows + piece verdicts | local only | LANDED 18:44 — Eir 6 as-built REGRESSES: v63 30 vs 55, band 60 vs 88, v67 32 vs 52; kladde/ouro soft-neg; cad flat. Sporks-ammo drain suspected (worker's red flag) |
+| builder | Eir 6 ablation: _v77e6_noammo (K+floor, ammo OFF) + _v77e6_konly (K only) vs opp_v63 + band_probe, 60/leg = 240 | attribution: is sporks-ammo the sole regression | local only | LANDED 18:47 — NO: K itself drags (konly v63 45/55, band 55/88; noammo 41.7/46.7). Ammo adds damage on v63 but K is not clean |
+| builder | K value-case test: _v77e6_konly AND _v76e51 vs orizon_probe (frozen aa7ab718, K's exact design class), 60/leg = 120 | does K pay where it was designed to | local only | LANDED 18:35 — NO: 46.7 vs baseline 58.3; Eir 6 REFUTED AS-BUILT (see verdict note) |
+| builder | K-diagnosis replay set for research decode: paired konly/base vs orizon_probe + konly vs band, eider/nordkap/fjordgate × 2 seeds = 18 replays | builder scratchpad k_diag_replays/ | local only | running |
+| builder | Eir 5.1 traceback hunt (x3r0 stress report: kite_proxy/hive/seed-42, exception escaped run() → unit deleted; kite_proxy is his local bot, not in our repo) | root cause + fix across _v76e51-lineage dev dirs | local only | running |
 | builder | orizon_probe worker (Opus): point-blank gunner battery per thread-7 spec + family plant signature — the missing battery-class instrument for the Eir 6 gate | bots/orizon_probe | local only | running |
 | builder | wave_ghost vs-field profile: opp_v67 vs kladde/ouro/band/flotte/cad probes, 60 games each (all maps × 2 seeds × both seats), md5s verified pre-run | tape rows + slot case | local only | LANDED 18:15 (see note + results.tsv) |
+| builder | replay-saving rerun for the sentinel-kill verification (research ask): _v76e51 vs opp_v67, 5 maps spanning wall ranking (archipelago/jackpot/snowflake/eider/drumlin) × 2 seeds × both seats = 20 games, replays kept for research decode | builder scratchpad wg_mech_replays/ | local only | LANDED 18:27 — dir path pinged to research; .json sidecars polluted (parse tail), replays verified clean |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
@@ -257,3 +264,120 @@ SmartFridge) — NOT fired by this arm, so they're other teams challenging us,
 which means they ran our ACTIVE bot at runtime; version pins pending from
 research. If v67-ran, wave_ghost's first field read opens 5-10 across 3
 opponents.
+
+### 2026-08-07 18:32 (from `date`) — builder arm: IDENTITY ADJUDICATED + x3r0/Magnus slot decision + Eir 6 regression
+
+IDENTITY CLOSED (research hold resolved): bots/opp_v67 is GENUINE — fresh
+re-download byte-identical (zip 700dfeb5..., main.py 27b33652...). The
+gunner anomaly dissolves: **wave_ghost is a fork of OUR Eir 4** — diff to
+_v74e4 is 304 lines (vs 2,268 to x3r0's own v89) — with a sentinel-snipe
+overlay and a PRIMARY_SENTINEL selector (first forward turret = sentinel,
+later ones = gunner; opp_v67 main.py ~1570). Production 1-gunner-in-25 =
+the conditional path rarely firing vs the field; arena mirror gunners =
+Eir-4-inherited behavior both sides. Swap anomaly = shared per-(map,seat)
+opening geometry, not a harness bug. ALL measurements stand (480 parity,
+field profile); the INTERPRETATION changes: not independent convergence —
+one lineage, and v67 DROPS our measured v65/v66 pieces (I/J/H/latch/cap).
+
+TEAM DECISION (Magnus relayed x3r0, ~18:30): KEEP v67 — x3r0's own Fable
+read: 104-100 direct/204 (parity, matches our 51.9/480), ~7pts better vs a
+common baseline (CIs overlap but direction consistent), stress 89/100 w/ 1
+traceback vs 92,90. No dispute from this arm: our tape said bar-not-met
+before the decision. x3r0's takeaway 3 (graft I/J/H onto v8) is EXACTLY
+re-adding what the fork dropped — we hold the measured specs.
+
+BUG REPORT CORRECTION (for x3r0 via Magnus): Eir 5.1's run() catches ALL
+exceptions and prints ONE traceback per unit lifetime by design
+(_v76e51/main.py:832-843) — the unit is NOT deleted; the print is the
+diagnostic. Underlying exception still real + hunted: NOT reproducible vs
+opp_v67/cad/band/kladde on hive/seed-42 (kite_proxy-specific). ASK routed
+to x3r0: the traceback text (it is in his fixture's replay bot output) or
+the kite_proxy zip; fix lands in minutes with either.
+
+EIR 6 FIRST BATTERY (tape row 18:32): as-built REGRESSES — v63 30/55,
+band 60/88, v67 32/52 paired; kladde/ouro soft-neg; cad flat; 0 crashes.
+Pattern = sporks-ammo bank drain (worker's red flag). Ablation running
+(_noammo = K+floor, _konly = K) vs the two clear-regression instruments.
+K's verdict pends ablation — do NOT read the battery as killing piece K.
+
+orizon_probe LANDED + FROZEN md5 aa7ab7185e5e1f6906071a72eb48d843:
+signature reproduced (first plant fp_dsq 9, creep 9,5,1,1,1; eider seat A
++ nordkap seat B smokes, 0 crashes, deterministic, gunner-only). Gentler
+than family wild exemplars (3 harvesters, 65-82 shots vs their 116-207) —
+safe direction, same convention as ouroboros_probe. Validation vs the
+family battery-class + fidelity ledger entry = next cycle with the fleet
+work. Research: wave-ghost-first-read + T48 leg absorbed; production
+signature reference (1 gunner/25 games, snipe r4-30 dsq 18-32) matches the
+fork+selector explanation cleanly.
+
+### 2026-08-07 18:34 (from `date`) — research arm: session-13 deliverable set complete; salvage + specs
+
+All registered research rows LANDED. Durable summary (pings die with
+sessions):
+
+- **wave_ghost first field read** → docs/research/wave-ghost-first-read-
+  2026-08-07.md. Forward-sentinel core-snipe strangler; one gunner in 25
+  platform games; three measured loss modes (snipe dies → permanently
+  dark; out-tempoed by healing batteries; economy/tiebreak collapse);
+  family-split answered (Team 48's broken fire establishment vs lazy's
+  heal-while-shooting). ARENA IDENTITY FLAG open with the builder: the
+  20-game rerun's opp_v67 does not match platform v67's signature —
+  everything platform-derived is unaffected; the 480/field-profile
+  verdicts are the builder's to re-verify.
+- **Viktor5776 v2** → docs/research/viktor5776-classification-2026-08-07.md:
+  econ-first pure-greed, zero turrets, 250-ammo fossil bank; nudges the
+  econ pool row up; no probe warranted.
+- **v66 salvage (CAD leg)** → docs/research/v66-salvage-cad-leg-2026-08-07.md:
+  rotation latch HELD under losing pressure (0 fast flips, 8 gunners, 5
+  games); dump cap dies UNVERIFIED (no r1000 game in v66's 39-min life) —
+  carry to Eir 6 reads. NEW CAD v107 signature: corner ferry loop (17
+  throws → one tile in g3) = cheapest denial target measured today; also
+  first observed abduction of OUR builder (g2 r32). Throw map v66-era-
+  pinned per the standing constants rule.
+- **axis-split** → docs/research/axis-split-our-games-2026-08-07.md:
+  underpowered (2/96 archived matches are ours) — becomes meaningful as
+  the --mine archive accumulates; method + script reusable.
+- **ARCHIVER SPEC (shared-infra clause, builder fixes):** (1) dedupe is
+  manifest-only — add file-existence check (all 5 games + meta present →
+  mark archived) so research direct-pulls aren't re-downloaded; my 25
+  direct-pulled game files for b92d7da8/e71e0b65/b41a1d2a/03af6569/
+  a7aa49ec sit in replay_archive/ with standard names but are NOT in the
+  manifest. (2) The --mine pass is defeated by the final
+  `todo.sort(completedAt desc)` + PER_CYCLE cap — our matches should get
+  reserved slots ahead of globals, or 03af6569-class items queue behind
+  fresh globals for cycles.
+- Research budget spent this session: 25 game files direct (10+5+10),
+  all declared pre-pull, all paced ≥60s, all archived locally.
+
+### 2026-08-07 18:35 (from `date`) — builder arm: EIR 6 REFUTED AS-BUILT; cycle verdicts
+
+VERDICTS (tape rows 18:32/18:35): **Eir 6 first implementation REFUTED — all
+three pieces PARKED.** K sits below baseline in all six paired comparisons
+including its own value case (orizon_probe: konly 46.7 vs baseline 58.3).
+Mechanism suspects for the redesign: heal-on-quiet-rounds burning builder
+actions, and K x role coverage (forward roles heal instead of acting —
+worker risk 5). Sporks ammo policy: refuted AS-PORTED (bank drain; needs an
+economy guard = redesign, and our sentinel-heavy mix may just not be
+sporks' gunner economy). Pop floor: never isolated — owes one clean leg
+next cycle before any verdict. The DESIGN AIMS survive: baseline vs
+orizon_probe at 58.3 shows the family fight is real and close; K's aim was
+right, its trigger was too broad. Dev dirs kept: _v77e6, _v77e6_noammo,
+_v77e6_konly (disposable ablation variants).
+
+orizon_probe FROZEN (5th instrument, md5 aa7ab718..., tape row) — the
+point-blank battery class finally has a local exemplar; add to every
+future gate.
+
+RESEARCH ABSORBED: CAD salvage read (latch HELD in production under losing
+pressure — v66's rotation latch is production-verified; ferry-loop
+signature noted as new CAD material). Traceback hunt BLOCKED on x3r0's
+traceback text or kite_proxy zip (ask routed via Magnus; correction also
+routed — run() catches, unit not deleted, one-per-lifetime diagnostic
+print).
+
+NEXT CYCLE (queue, in order): (1) K redesign with narrow trigger
+(core-adjacent + recent-damage only, budget kept); (2) pop-floor isolation
+leg; (3) the graft question — x3r0's v8 + I/J/H merge may become the team
+line; our specs are the contribution either way; (4) F root fix +
+kladde_probe_v2 (kladde settled?) from the standing queue; (5) traceback
+fix when x3r0's data arrives.
