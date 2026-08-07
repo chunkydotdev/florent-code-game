@@ -46,8 +46,8 @@ stay the builder's.
 | research | S14 v68 "chokewall" FIRST READ (builder ASK per ship-announcement rule, jumps queue): identity vs x3r0 v8/wave_ghost lineages incl. the announced I/J/H graft question; mechanism (name suggests barrier chokepoints); loss modes; v67-decode carryover. Code-read bots/opp_v68 (md5 04811b4a VERIFIED) + archived replays: 3 ladder (f62d1798 Askar, c2b2b94c Team 48, fad5dc1c I Stone — all VERIFIED in archive w/ meta) + the 19:26-28 four-UR self-probe burst (IDs via meta.json sweep). Two read-only Opus subagents: (A) code identity/mechanism, (B) replay decode | docs/research/v68-chokewall-first-read-2026-08-07.md | local only — replays already archived, no downloads | SPAWNED 19:58; PRIORITY RAISED ~20:02 (tiebreak lead question, agents steered mid-flight); LANDED COMPLETE ~20:25 — code half: NOT the graft (I/J/H absent), NO endgame switch after r300, chokewall +0-detour on entire pool; replay half (35/35 v68-era games): ALL 11 r1000 games resolved at tiebreak step 1 DELIVERED-Ti (stored-Ti step unreachable — dump plays wasted vs v68), delivery-freeze defect in 5/11 (frozen r59-350, network never re-attaches to core), median win r97 / no plan B past ~r150, small-map collapse 4-9 on ≤256 tiles, snipe carryover production-confirmed, production barriers = old v67 screen code not the choke planner, TLE delta = platform variance (guard byte-identical), wave-ghost gunner-baseline definition footnote flagged |
 | research | S14 axis-split RE-RUN (queue item 3, unblocked by archiver fix): cardinal vs diagonal core-pair win split per our version over the grown our-corpus, method + script per docs/research/axis-split-our-games-2026-08-07.md — one read-only subagent, no downloads | docs/research/axis-split-our-games-2026-08-07.md (updated in place, v2 section) | local only | LANDED ~20:50 — corpus 22 matches/110 games (more than est.). VERDICT: NOT CLAIMABLE, direction-inconsistent — v1's "all diagonal games lost" was a 6-game artifact (diagonal now 31.1%); v67 leans sporks-direction (card 57.9 vs diag 22.6, 3.5pt CI overlap) but v68 REVERSES the sign (26.7 vs 40.0, overlapping). No axis input to Thor-layer map choices. Follow-ups flagged: rated/unrated re-cut (strong-opponent UR burst likely confounds v68's cut), v65/v66 eras STILL absent from archive (backfill gap) |
 | research | S14 Kings College Munich CLASSIFICATION (builder-ranked FIRST — 2-0 vs us today, 9-1 game margin across BOTH lineages, most Elo-relevant unclassified team): mechanism/class, why it beats fork AND our line, counters, probe-coverage verdict. Corpus: b3656fe7 (0-5 vs our v67) + 9a32a859 (1-4 vs our v68) + 3 archived non-us matches (484095e3, 4a36151e, 9e41db1a) = 25 games, 15 confound-free. One read-only Opus agent | docs/research/kings-college-classification-2026-08-07.md | local only — all archived, no downloads | LANDED ~21:05 — KCM = CAD-FAMILY LAUNCHER-FERRY (opening table matches CAD v107 exactly under map rotation; high confidence), cad_probe COVERS them (+2 calibration adds: 4th-ammo=24 pin, diagonal max-range sentinel finisher). All 9 KCM wins are vs US (0-5 vs each strong team; their Elo rides on beating us). Kill mechanism measured: counter-gunner plinks our forward sentinels dead in median 15 rnds; our ONE win = home sentinel ring (C1: re-aim what we already build). Their core = softest on the board (orizon-class point-blank beat them 5-0 twice). FLAG: CAD ferry-loop attribution may be inverted (defender recycling attacker's raiders) — premortem addendum added, re-check queued as candidate |
-| research | S14 Clankers classification (builder-ranked second): 3f024b23 now fully archived (5 games + meta) — the ONLY Clankers match in the archive, all 5 games vs our v68 = full our-version confound, verdict will be PROVISIONAL. One read-only Opus agent | docs/research/clankers-classification-2026-08-07.md | local only | SPAWNED ~20:55 (was QUEUED 20:44) |
-| research | S14 ferry-loop ATTRIBUTION RE-CHECK (parked-run-in-idle-window per builder; window = now): launcher-owner attribution on the premortem's long-loop games (a7aa49ec/b10cce55/cdbd5b52) — is the repeat-throw launcher CAD's or the defender's? Resolves the KCM read's inversion flag. One read-only Sonnet agent | addendum resolution in docs/research/cad-ferry-premortem-2026-08-07.md | local only | SPAWNED ~21:10 |
+| research | S14 Clankers classification (builder-ranked second): 3f024b23 now fully archived (5 games + meta) — the ONLY Clankers match in the archive, all 5 games vs our v68 = full our-version confound, verdict will be PROVISIONAL. One read-only Opus agent | docs/research/clankers-classification-2026-08-07.md | local only | LANDED ~21:20 — PROVISIONAL: PICKET, NEW SUB-TYPE (launcher-ejection perimeter [266 throws, all OURS, all outward — CAD's polarity inverted] + counterbattery gunner [kills our snipe in exactly 6 shots, 3x] + 2,600-heal line + delayed sentinel siege over a 100%-wired econ). NOT probe-covered (ouroboros nearest, ~1/3). Exploit found: g4 heal-tank equilibrium = passive-income-funded (2.4 Ti/rnd heal vs 2.5 income) — a SECOND simultaneous damage source breaks it and their economy is zero while tanking. Anomaly: conveyor siphon stole 630 Ti off OUR harvesters (out-earned our own network). Elo 1655 rising, 8 watch items pre-registered for first no-confound match |
+| research | S14 ferry-loop ATTRIBUTION RE-CHECK (parked-run-in-idle-window per builder; window = now): launcher-owner attribution on the premortem's long-loop games (a7aa49ec/b10cce55/cdbd5b52) — is the repeat-throw launcher CAD's or the defender's? Resolves the KCM read's inversion flag. One read-only Sonnet agent | addendum resolution in docs/research/cad-ferry-premortem-2026-08-07.md | local only | LANDED ~21:25 — VERDICT: INVERTS. Premortem's exact loop counts reproduced (17×/21×/28× same tiles) with OWNERSHIP FLIPPED: every long-game loop launcher is the DEFENDER's, discarding CAD's inserted raiders at a fixed edge tile; CAD's own launcher is r1-build/r6-self-destroy in 13/15 games and structurally dead before any loop. K2 deny-vs-displace MOOT for loop tiles (a barrier there obstructs the defender's own disposal). Finding-1 opening constants untouched; PARK stands. Method gotcha logged in tooling.md (launcher throws = long moveBuilderBot, never FireTurret). Matches Clankers' independently-observed ejection ring |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
@@ -892,3 +892,93 @@ adds are all SUSPECT until re-frozen; the whole CAD family moved
 tonight (KCM label 7→1, Powerpuff v26→v18, CAD v115). Probe
 maintenance list grows; nothing tonight depended on cad legs beyond
 guard duty. v68 ladder: 1561@283 #28.
+
+### 2026-08-07 21:2x (from `date`) — builder arm: Clankers read absorbed — snipe-exposure plank now 3 data points; chain-hygiene ceiling measured; exploit candidates queued
+
+Clankers (provisional, confound-fenced): new picket sub-type, NOT
+probe-covered (~1/3 via ouro_probe); clanker_probe correctly gated on
+a no-confound match. Absorbed into the standing cases:
+- GRAFT BRIEF: THIRD independent team measured hard-countering
+  forward deployment (gunner in our snipe sentinel's own firing line,
+  dead by r27 for 44 Ti). The snipe-needs-home-cover plank is no
+  longer a nuance — it's the pattern of the evening.
+- BRANCH B VALIDATION FROM THE FIELD: Clankers run 100% conveyor
+  wiring at every snapshot vs OUR 27-53% — chain hygiene is where
+  their economy edge lives. Branch B's instrument should add
+  wiring-percentage as a mid-game metric alongside the tiebreak
+  split (both measure the same health).
+- PIECE-K POST-MORTEM CLOSURE: their heal line is heal-as-armor
+  working as designed — K's AIM validated by an opponent that
+  implements it well; our implementation history stands as the
+  cautionary tape.
+- EXPLOIT QUEUE (play-the-players): (a) two simultaneous damage
+  sources break their core heal-tank equilibrium in ~60 rounds
+  (measured, our g4 win); (b) sustained chip may convert their
+  builder pool to medics and zero their economy (watch item 4, needs
+  confirmation). Clankers at 1655 and climbing — expect this to
+  matter soon.
+Queue order unchanged (C1 → tiebreak/wiring instrument → backfill);
+all building gated on Magnus's slot/graft input. Ferry attribution
+still running research-side; its inversion hypothesis got independent
+support from Clankers' ejection-ring signature.
+
+### 2026-08-07 21:3x (from `date`) — builder arm: ferry attribution INVERTS (absorbed); Heimdall candidate born; research board drained — both arms watch state
+
+Ferry re-attribution absorbed: the loop is the DEFENDER's launcher
+disposing of CAD's inserted raiders (CAD's own launcher dead by r6 in
+13/15, never built in 2). K2 deny framing moot; PARK stands; the
+map-keyed opening constants remain the one durable CAD denial asset
+(now v107-era-stamped, suspect under v115 until re-frozen).
+
+NEW BUILD CANDIDATE from the convergent evidence (two independent
+teams evolved it: CAD-family defenders + Clankers' 266-throw
+ejection ring, vs OUR 3 throws in 5 games): defender-side launcher
+disposal of inserted raiders — cheap (20 Ti, no ammo, facing-free),
+directly answers the insertion class (CAD/KCM) we measured as a
+shared soft spot of BOTH team lineages. Queue name: HEIMDALL ring
+(the reserved insertion-guard name finds its mechanism). Slots into
+the queue behind C1 — or composes with it as the anti-CAD-family
+cycle: C1 kills the counter-gunner, Heimdall ejects the raiders.
+
+Research board fully drained (5 deliverables + attribution + method
+gotcha, registry current). Both arms watch state per the no-self-wrap
+directive; the open input is Magnus's slot/graft call. Build queue at
+watch: (1) C1 home ring [+ Heimdall pairing decision], (2) tiebreak/
+wiring instrument, (3) archive backfill, (4) probe re-freezes for the
+CAD-family version wave.
+
+### 2026-08-07 22:08 (from `date`) — research arm state: SESSION-14 WRAP (Magnus called it)
+
+Wrap-safe: NO live subagents (all five landed and relayed), no pending
+relays, no open downloads (session budget: 0 direct pulls — everything read
+from archive), registry rows all LANDED/closed. Deliverable set this
+session, all version-tagged, all in docs/research/: v68-chokewall-first-read
+(COMPLETE incl. production tiebreak read), kings-college-classification
+(CAD family, cad_probe covers), clankers-classification (PROVISIONAL new
+picket sub-type, 8 watch items), axis-split v2 section (not claimable, v1
+artifact retracted), cad-ferry-premortem addendum + re-check resolution
+(INVERTS), eir6b-production-read-spec at rev 3 (6e-ready, shelved). Plus:
+3 replay-decode gotchas + timezone key in tooling.md, 2 incident-log
+entries, 2 spitball patterns (rollback re-characterization, family
+synchronized version moves), staleness banners on 3 v107-citing docs.
+
+SUCCESSOR QUEUE (research), in order:
+1. Production read fires on ANY ship (spec at rev 3 covers 6e; re-rev if a
+   different lineage ships). Includes post-ship constants re-extraction —
+   doubly due after tonight's CAD-family version wave.
+2. Tiebreak-split decode ASK when the builder runs Branch B's instrument
+   (chain-wiredness method preserved in tooling.md).
+3. Clankers watch items (8, pre-registered in the deliverable) on their
+   first no-confound archived match; clanker_probe spec only after.
+4. CAD-family re-freeze support: v115/v43/v18/v1-era constants
+   re-extraction when the builder re-freezes probes (all v107-era forward
+   claims banner-flagged suspect).
+5. Rated-only axis-split re-cut when the --mine corpus grows (v68 sign-flip
+   is probably opponent-mix confound).
+6. v65/v66-era analyses unblock when the builder's archive backfill lands.
+
+Builder-side context for the successor: v68 (x3r0) holds the slot at
+parity with our _v81e6e lineage base; Magnus's slot/graft decision is the
+gate on everything (brief complete, five planks, three-team snipe-exposure
+case); builder queue = C1 home ring, Heimdall ring (new, pool-evidenced),
+tiebreak-split instrument, archive backfill.

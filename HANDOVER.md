@@ -15,21 +15,44 @@
   what-slowed-us bullets to its coordination verdict note (retro cadence
   (1), acked 19:5x; full retros only at Magnus-called wraps).
 
-## Session-14 state at last update (~19:50)
-- LIVE: **v68 "chokewall" (x3r0), uploaded 19:12, auto-activated mid-gate.**
-  1589 @ 276 rank #25 and climbing at last elo row. opp_v68 local copy
-  extracted (md5 04811b4a...); research first-read commissioned.
-- **Eir 6c (`bots/_v79e6c`, md5 8aaa91e6...) PASSED gate stage 1**
-  class-weighted (orizon +16.7 / v63 +6.7 / band +5.0 / cad flat / ouro at
-  long-run / kladde soft −7 accepted trade, mechanism + parked fix on
-  tape). = 5.1 + budgeted proactive trunk repair + pop floor (isolation-
-  verified) + ammo actually off. K'-cap variant (6b) refuted; full arc in
-  results.tsv rows _v78e6b*, _v79e6c*.
-- **Stage 2 slot bar RUNNING vs opp_v68**, 480 games, bar = beat the slot
-  holder (team norm). Ship decision after; slot calls remain Magnus/x3r0.
-- Archiver our-matches-first SORT BUG found+fixed (session-14 comment in
-  replay_archiver.py); older 5 of the 6 gap matches land next cycle.
-- Still BLOCKED: Eir 5.1 traceback fix (x3r0 data).
+## Session-14 state at last update (~22:10; research arm wrapped 22:08 on
+## Magnus's call — BUILDER TEARDOWN AWAITS HIS DIRECT CONFIRMATION HERE)
+- LIVE: **v68 "chokewall" (x3r0)**, 1561 @ 283 #28 at last read, window
+  net-negative w/ an L4 streak inside it. NOT the announced graft (I/J/H
+  absent). opp_v68 local (md5 04811b4a...), full read in docs/research/
+  v68-chokewall-first-read-2026-08-07.md (no post-r300 behavior;
+  delivered-tiebreak-#1 always; delivery-freeze defect 5/11 grinds).
+- **LINEAGE BASE: Eir 6e (`bots/_v81e6e`, md5 31a10eb2) = 6c + piece N**
+  (one-line pave vision guard killing the ancestral launcher-throw crash
+  — 0-vs-128 crashes/480 vs v68; ALSO resolves x3r0's kite_proxy
+  traceback, fix is a gift for his line). SLOT BAR: 51.0 [46.6,55.5]/480
+  = PARITY, bar not met, v68 stays; 46.0→51.0 from piece N alone.
+- Arc on tape: 6b (K'-cap) refuted by ablation grid; 6c KEEP (stage-1
+  pass, stale-baseline catch); 6d RACE both branches KEEP-dev,
+  inconclusive-clean (_v80e6d_kfix kladde-direction-right;
+  _v80e6d_tb tiebreak thesis untested by pooled rate — needs the
+  replay-split + wiring-pct instrument BEFORE re-gating).
+- **GRAFT BRIEF for Magnus/x3r0 = the 21:10 + 21:2x-21:3x coordination
+  notes**: 5 measured planks; snipe-exposure backed by THREE teams
+  (KCM 9-1 mechanism, CAD family, Clankers r27 kill); merged line needs
+  both parents.
+- **BUILD QUEUE (gated on Magnus's slot/graft input)**: (1) C1 home
+  sentinel ring (KCM/CAD counter, measured cheap, ≥3-turrets-d²≤36
+  predictor = gate signature) [+ HEIMDALL disposal-ring pairing
+  decision — defender-side launcher ejection, 2-team convergent
+  evidence]; (2) tiebreak-split + wiring-pct instrument (Branch B's
+  real test; our wiring 27-53% vs Clankers' 100%); (3) v65/66 archive
+  backfill (--cursor pagination); (4) probe re-freezes: CAD-family
+  version wave (CAD v115, Lunds v43, KCM 7→1, Powerpuff v18) makes
+  cad_probe + v107 constants suspect.
+- Research successor queue: their 22:08 wrap note. Exploit candidates
+  on the book: Clankers heal-tank two-source break (measured) +
+  medic-conversion (watch item); v68 delivery-freeze.
+- Traceback hunt RESOLVED (was blocked on x3r0 data — found it
+  ourselves: pave/launcher, see piece N).
+- Monitors: ALIVE and watching (4/4, this session's processes — they die
+  with this session's END; successor re-arms per /builder step 3).
+  Wake-file rule: read all four task outputs at every wake-up.
 
 # Handover — session 13 FINAL (wrapped 19:07; Magnus restarting fresh arms)
 
