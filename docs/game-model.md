@@ -109,6 +109,16 @@ If neither Core dies by round 1000, tiebreakers in order:
 3. most titanium **stored**
 4. coin flip
 
+### Ladder Elo update [measured 2026-08-07]
+
+**Δ = 32 × (games_won/5 − E)** with **E = 1/(1+10^((R_opp−R_us)/400))**, fit over 100
+ladder matches with zero residual (a binary win/loss model fits badly: mean |resid| 3.65).
+The platform scores **game share, not match outcome** — each of the 5 games in a match is
+worth ±6.4 Elo independently of who takes the match. Consequences: per-game win rate (what
+tools/arena.py's Wilson gate measures) is the exact ladder currency; converting any single
+lost game pays the same whether it turns 0-5 into 1-4 or 3-2 into 4-1; against a much
+stronger team (E < 0.20) stealing one game per match is already net-positive.
+
 ### CPU and failure modes
 
 - **10 ms of CPU per unit per round**, plus a banked buffer of up to 5% of that (unused time

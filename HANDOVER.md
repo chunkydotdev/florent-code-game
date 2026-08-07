@@ -49,16 +49,21 @@ single-slot SLOT_THREAT (can't track 2 threats), and turret-hunting (turrets are
 BUILDINGS — builders can attack them 2dmg/2Ti; a turret shelling the core does not
 shoot back at its attacker; never implemented, ranked next).
 
-## Strategic frame (Magnus + Fable, 2026-08-07, at ~1550-1600)
+## Strategic frame (Magnus + Fable, 2026-08-07, at ~1550-1600; CORRECTED same day)
 
-Elo pays on match outcome only (margin is free) and the scheduler pairs near-rating, so
-the goal is NOT "beat everyone": it is **map-majority against the near-band**. A match
-vs a team is best-of-5 over the 15-map pool → win ≥8/15 maps vs a team and the matchup
-flips to usually-win. Priorities that follow: (1) class fixes over per-team fixes (one
-map row moves against many teams); (2) spend all cycles on near-rating nemeses (Lunds ✓
-flipped by v54, Ouroboros, Landers, Orizon), zero on top-8 teams (losses to them cost
-~-3, wins pay ~+15 — asymmetric, ignore until Stockholm); (3) 2-3 and r1000-tiebreak
-losses are the flip-candidates list, not a comfort metric.
+**MEASURED (session 11, 100-match zero-residual fit): Δ = 32 × (games_won/5 − E),
+E = 1/(1+10^((R_opp−R_us)/400)).** The platform scores GAME SHARE, not match outcome —
+the original "margin is free / map-majority" frame was wrong. Every individual game is
+worth ±6.4 Elo; there is no flip point at 3 games. **The ladder currency is per-game
+win rate — exactly what the local arena's Wilson gate measures.** Priorities that
+follow: (1) class fixes over per-team fixes (one map row moves against many teams) —
+unchanged; (2) near-rating nemeses still the best Elo/effort (E≈0.5 maximizes leverage:
+Lunds ✓ flipped by v54, Ouroboros, Landers, Orizon), BUT blowout-loss reduction pays
+against anyone in-band, and vs top-8 teams stealing a single game per match is already
+net-positive (vs Flotte E≈0.17: 0-5 = −5.4, 1-4 = +1.0) — one-map specialization
+against the top is profitable, not vanity; (3) 2-3 and r1000-tiebreak losses remain
+the flip-candidates list, and every game dragged to a winnable tiebreak pays a full
++6.4 (strengthens the starvation track).
 
 ## The queue
 
