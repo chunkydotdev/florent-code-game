@@ -481,3 +481,19 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   counterbattery should prioritize sentinels (piece-J input). Ablation grid
   results on the measuring tape (results.tsv): D flat on local instruments,
   F owns eider+atoll+meander gains AND the hive collapse, heart is C's.
+
+- **Thread 5 (turret idiom census) verdict: bait-barrier exploit REFUTED for all
+  five nemeses** — the raw 73% row-major-first agreement (kladde n=82) was a
+  confound: 4/5 nemeses shoot the Core whenever legal, and a forward turret's
+  Core target is usually also its geometrically-farthest; deconfounded (Core
+  candidates excluded) the signal collapses to 48% and reverses on far-predicted
+  facings. The field runs priority tables (kladde: Core-first 48/55 then
+  geometric-nearest), not the tutorial idiom — the absolute-enumeration trap in
+  game-model stays true of the API, just not exploitable against this field.
+  Census methodology note worth keeping: resolve chosen targets via HpEvent
+  ground truth and collapse repeat shots to distinct decisions, or the Core
+  confound manufactures the signal. NEW LEAD (next-cycle verification, single
+  third-party-match provenance 73afd924): FLOTTE NEVER TARGETS THE CORE (0/29,
+  even as sole farthest option) — any candidate sharing the besieging sentinel's
+  line postpones their core damage indefinitely = standing core-shield vs the
+  chip class; composes with the Flotte x jackpot theft build.
