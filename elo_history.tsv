@@ -115,3 +115,13 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T08:58	1575	212	v56	rank #26
 2026-08-07T09:03	1575	212	v56	rank #26
 2026-08-07T09:03	1584	210	v56	SLOT DECISION PACKAGE: v55 vs v79 head-to-head 53.1 [48.7,57.5] over 480 = parity, NO clean local win (Magnus bar not met). Map portfolio near-complementary: v55 sweeps antler/fjordgate/hive/nordkap 32-0 + saga 25/lighthouse 22; v79 sweeps atoll/heart/jackpot/meander 32-0; 5 maps seat-coinflip. Class coverage: v55 beats cad_probe 65.0, v79 loses 43.3. _v70cg counter FAILED its gate (63.3 vs v55s 65.0 on cad_probe, kladde flat) — dev branch, not shipped. cad_probe frozen md5 6d0e955f96de1f0d11f93db573ade458
+2026-08-07T09:08	1586	213	v56	rank #25
+2026-08-07T09:13	1586	213	v56	rank #25
+2026-08-07T09:18	1567	214	v56	rank #26
+2026-08-07T09:23	1567	214	v56	rank #26
+2026-08-07T09:28	1553	215	v56	rank #28
+2026-08-07T09:33	1553	215	v56	rank #28
+2026-08-07T09:38	1548	216	v56	rank #28
+2026-08-07T09:43	1548	216	v58	rank #28
+2026-08-07T09:48	1545	217	v58	rank #28
+2026-08-07T09:52	1548	216	v58	EIR GATE COMPLETE (_v71eir = v55 + escort-disengage + footprint-band-41/corner-floor + ammo-latch50/gun-magazine + ore-stepoff + counterbattery-bleeding-waiver): vs v79 59.6 [55.1,63.9], vs v82 ACTIVE 59.6 [55.1,63.9], 0 crashes/960. Fortress maps 0/64 -> 44/64; flotte meander 0-forever -> 8/16. Guards: kladde baseline held, band 100, flotte 96.7. Open trade: cad_probe 64->51 (meander waiver). New v82 hole: archipelago 0/32. Slot bar MET - awaiting Magnus go (submit auto-activates)
