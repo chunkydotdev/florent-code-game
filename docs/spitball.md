@@ -434,3 +434,21 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   byte-identical across seeds AND series — fully map-determined script; spec in
   findings/thread7_landers_orizon.md); Landers' strangle arm is the ready-made
   attrition harness for exercising piece B' (population-floor respawn).
+
+- **Thread 3 (kladde v62 decode) verdict: kladde_probe stale CONFIRMED with a
+  full refresh spec** (findings/thread3_kladde_v62.md, replay ids in file).
+  Deltas v2 must carry: repeating 2-turret waves (first r137-314, next ~150-165
+  later) instead of the one-shot 3-pack; the SENTINEL TREADMILL — forward
+  sentinel rebuilt up to 58x on one tile by ONE camping builder that also healed
+  it 614 times (plant-and-forget probes under-model the class; killing the
+  turret without killing/displacing the CAMPER achieves nothing — direct input
+  to piece D margins and the escort lesson); hard strike trigger ammo>=150 (7/7
+  games, all versions) + builders-at-cap + >=5 home turrets; close-core rush on
+  meander-class maps (sentinel r3, shooting core r4 — probe's earliest turret is
+  r150); softer per-wave (2 not 3, builder cap 6 not 16, no barriers/rotations;
+  hive winnable-r: they lost hive with zero offense — piece C's real-world hive
+  value may exceed the probe read). kladde_probe_v2 freeze QUEUED next cycle
+  (with orizon_probe); the current battery keeps the frozen triad for row
+  comparability, v2 legs get added when frozen. CAVEAT recorded: the original
+  probe's source replay is unrecoverable, so v56-vs-v62 attribution rests on a
+  rating-matched proxy — version-tag v2's source ids at freeze.
