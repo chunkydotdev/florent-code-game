@@ -109,6 +109,12 @@ orizon family + Lunds-v37 picket. Pivot: DO NOT probe (hourly churn) — track
 the class. (5) team lazy (1892) = third Orizon-family member; one fix may
 retire three opponents. Loose ends: 5 unclassified teams = 20% of our games.
 
+## Two-arm operation
+The builder/research split is contractual: docs/two-session-protocol.md
+(roles, channels, fcode budget, anti-collision rules, boot sequences).
+Ops channel + IN-FLIGHT registry: docs/coordination.md. Boot the research
+arm per the protocol's boot sequence, not ad hoc.
+
 ## Session-12 process state
 - Research fan-out template worked (12 threads + cross-check, all verdicted
   same-day; brief format in docs/research-brief-2026-08-07.md). Next brief goes
