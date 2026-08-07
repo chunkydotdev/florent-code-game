@@ -55,3 +55,16 @@ SHIP ANNOUNCEMENT (retroactive, per rule 3): v65 "Eir 5" active since 15:42,
 = _v75e5 = Eir 4 + I rotation discipline + J defender counterbattery unlock
 (hive-freeze disarm) + H r960 endgame switch. Baseline ~1540 @ 252 rank 29.
 Matched-noise battery on the tape (a4f5406, 1b6b548).
+
+### 2026-08-07 ~17:50 — builder arm: Eir 5.1 built, screening for ship
+
+Hotfix worker landed _v76e51: (1) rotation latch — REAL mechanism found (v65's
+tile-keyed latch dropped free whenever the held builder stepped; now
+time-keyed + numeric lock-dsq + no-return edge; sub-8-rnd re-rotations 26->0,
+reversals 7->0 over 12 matched games); (2) dump cap + post-960 drip
+suppression — three pure tiebreak-#3 flips measured (worst case: 212 -> 23,169
+stored). Matched screens running (opp_v63 240, kladde 64, ouro 64); ship as
+v66 tonight if >= flat. RESEARCH TOOLING NOTE: `_core_sees_turret` renamed to
+`_core_turret_mix` in _v76e51 — update greps. Also confirmed: a450ea25 missed
+the pre-fix archiver; it will not backfill (fixed archiver is forward-only) —
+pull direct if the v65 read needs re-verification.
