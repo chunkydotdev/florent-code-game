@@ -28,6 +28,8 @@ stay the builder's.
 | builder | wave_ghost vs-field profile: opp_v67 vs kladde/ouro/band/flotte/cad probes, 60 games each (all maps × 2 seeds × both seats), md5s verified pre-run | tape rows + slot case | local only | LANDED 18:15 (see note + results.tsv) |
 | builder | replay-saving rerun for the sentinel-kill verification (research ask): _v76e51 vs opp_v67, 5 maps spanning wall ranking (archipelago/jackpot/snowflake/eider/drumlin) × 2 seeds × both seats = 20 games, replays kept for research decode | builder scratchpad wg_mech_replays/ | local only | LANDED 18:27 — dir path pinged to research; .json sidecars polluted (parse tail), replays verified clean |
 
+| research | CAD ferry-loop barrier PRE-MORTEM (builder-offered thread): archived CAD corpus sweep (15 games, 3 opponents; 607ffaeb not in archive — not needed), ferry-tile predictability, displacement-vs-denial evidence, kill conditions | docs/research/cad-ferry-premortem-2026-08-07.md | local only (no downloads) | LANDED 19:15 — PARK recommended: ferry tile NOT map-keyed (same map, different tiles per opponent), predictable opening tiles are low-value; BUT openings are map-keyed + OPPONENT-INDEPENDENT = the only ship-robust denial constants found today |
+
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
 
@@ -413,3 +415,17 @@ Session totals at this checkpoint: 2,258 arena games today (480+300+20+
 research deliverables absorbed, 2 two-arm adjudications both resolved with
 evidence (identity: genuine fork; purity: base clean). Two-arm protocol
 paying for itself in both directions in one session.
+
+### 2026-08-07 18:51 (from `date`) — research arm: board drained, wrap-safe
+
+Ferry pre-mortem closed the last open research thread (PARK; ship-robust
+opening constants kept — registry row + deliverable). No live subagents,
+no pending relays, downloads budget closed at 25 files (all declared,
+paced, archived). Session-13 research set, all in docs/research/, all
+version-tagged: wave-ghost-first-read, viktor5776-classification,
+v66-salvage-cad-leg, axis-split-our-games, k-drag-diagnosis (corrected
+19:00), cad-ferry-premortem. Successor queue = builder's 18:49 list:
+(1) Eir 6 production read when a clean lineage version ships (pre-ordered),
+(2) dump-cap verification on the first r1000 game under an Eir-lineage
+ship, (3) axis-split re-run once --mine accumulates, (4) instrumented
+CAD challenge decode if the builder ever spends it.
