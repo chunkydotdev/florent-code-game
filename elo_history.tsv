@@ -157,3 +157,5 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T11:44	1544	228	v63	rank #27
 2026-08-07T11:49	1557	229	v63	rank #27
 2026-08-07T11:49	1557	229	v63	SESSION 11 FINAL: x3r0 v89 auto-activated over Eir 2; measured Eir 2 > v89 60.4 [54.1,66.4]/240 — slot case is Magnus's to take to x3r0. Research session delivered (docs/spitball.md): grind residual = SOLVENCY not DPS (healing stopped 300 rnds at 0 Ti; hunting's healer-floor needs bodies that need Ti the raid destroys — MEDIC_MIN_RND=150 window assumption contradicted on hive), seat-B deferral gap (only routes via _pick/expand — break the 38 deaths down by role first), cad_probe stale (re-freeze v2), COUNTERBATTERY_RICH_TI dead code cleanup, external-meta ceiling +150-250 in current family. Ladder recovered to 1557 on an Eir-line 4-streak
+2026-08-07T11:58	1570	230	v62	rank #25
+2026-08-07T11:58	1570	230	v62	rank #25
