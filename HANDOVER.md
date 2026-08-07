@@ -1,6 +1,6 @@
-# Handover — session 12 FINAL (wrapped ~18:20 for the two-arm restart)
+# Handover — session 12 FINAL (wrapped ~17:55 for the two-arm restart)
 
-## LIVE: v66 "Eir 5.1" (= `bots/_v76e51`), shipped 18:03. Baseline 1560 @ 261,
+## LIVE: v66 "Eir 5.1" (= `bots/_v76e51`), shipped 17:14. Baseline 1560 @ 261,
 ## rank #27. = v65 + rotation latch (time+lock-dsq+no-return; the v65 tile-keyed
 ## latch was the real bug) + capped r960 dump w/ drip suppression (tiebreak-#3
 ## protected — and #3 decided a real game today: Team 48 g3, "Titanium Stored").
