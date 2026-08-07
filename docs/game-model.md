@@ -70,6 +70,16 @@ methods raise `GameError` when illegal.
   Implication: seat draw is worth real rating independently of skill, so **how the ladder
   assigns seats within a best-of-five is a first-order question**. Bot-side, the lever is
   contesting the midline earlier rather than accepting the split.
+- **Seed amplification in local batteries [measured 2026-08-07]:** local seeds vary games
+  only weakly (byte-identical replays observed across adjacent seeds), so a per-map arena
+  row of N games contains far fewer distinct games — a "seat decides this map" row is
+  effectively **~2 distinct games, not 2×seeds**. Consequences: Wilson intervals overstate
+  confidence; a ±16-game per-map swing between candidates can be ONE knife-edge
+  deterministic game amplified (measured: v55 vs `_v70cg` on snowflake — every knob subset
+  of the candidate lost the same replicated seat-B game while the control won it, with
+  mutually exclusive knob sets, ruling out any mechanism-level cause). Paired same-seed
+  comparisons between candidates remain valid; treat per-map deltas on seat-decided maps
+  as single-game evidence and weigh the POOLED rate plus mechanism explanations instead.
 - **Tiles:** `EMPTY` (traversable), `WALL` (impassable, blocks LOS), `ORE_TITANIUM`
   (traversable, Harvester-buildable).
 - **Series:** ladder matches are **best-of-five**. All five games always play to completion.

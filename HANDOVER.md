@@ -1,4 +1,43 @@
-# Handover — session 11 start (written 2026-08-07 morning, end of the session-10 marathon)
+# Handover — updated mid-session 11 (2026-08-07, after the v55 ship and the team slot event)
+
+## Session 11 headline state (prepend; original session-11-start notes below still valid)
+
+- **v55 "v70-medic-surge" (`bots/_v70cm`) shipped clean** (kladde 71.2→81.9, opp_v50
+  59.2→66.5, guards flat, 0 crashes/1920) — then **x3r0 activated v56 ("v79-lsq-eco…")
+  over it** ~06:43Z. Team norm: our line retakes the slot only by beating v79 locally.
+- **v55 vs v79 = 53.1 [48.7,57.5] over 480 — parity, bar NOT met.** But the map
+  portfolio is near-complementary: v55 sweeps antler/fjordgate/hive/nordkap 32-0
+  (+saga/lighthouse majorities), v79 sweeps atoll/heart/jackpot/meander 32-0, 5 maps
+  seat-coinflip. AND v55 covers the CtrlAltDefeat insertion class (65.0 vs cad_probe)
+  which v79 bleeds to (43.3). Slot decision = Magnus/team judgment; package on the tape.
+- **CtrlAltDefeat insertion class decoded** (0-5 ladder loss e40a6c01 under v55, 5 games):
+  Launcher r1, 2-3 thrown raiders, sentry ~r11 at core-dsq 10-41, kill median r361.
+  Three gaps: hunt band too small (sentinel range 32 > band 20), hunt floor r120,
+  population collapse (respawn floor unmeetable at 2-12 Ti banks). **`bots/cad_probe`
+  frozen (md5 6d0e955f96de1f0d11f93db573ade458)** — harsher than the original.
+- **`bots/_v70cg` = dev branch, NOT shipped** (failed its gate: cad_probe 63.3 vs v55's
+  65.0, kladde flat-redistributed). Contains ablation-tested pieces to re-earn their
+  place: interceptor BODY-BLOCK (Magnus-scouted: stand in the raider's doorway —
+  builders are mutually impassable and can't attack units), siege-mode respawn +
+  converter/spawner reserve agreement, hunt band widened to core-footprint dsq≤41.
+  REFUTED en route: early-hunt waiver (eider 8/16→0/16), `_v70ec` labor reserve
+  (bootstrap inversion), ore-barrier/steal as hive flips (denial works — halves their
+  collection — but our own farm survival binds; `_v70sm`/`_v70st` parked).
+- **Elo is GAME-SHARE: Δ=32×(games_won/5−E), zero-residual fit** — margin is nearly
+  everything, per-game win rate is the ladder currency, one stolen game vs top teams is
+  net-positive. Strategic frame in this file corrected accordingly (§ below).
+- **Seed amplification trap (game-model.md):** local seeds vary games weakly; a
+  seat-decided per-map row ≈ 2 distinct games, not 2×seeds. Weigh pooled rates +
+  mechanism, not per-map swings.
+- **Cost scale is team-wide** (one multiplier, per-type increments) — twice confirmed;
+  the organisers' per-category table is wrong. Conveyor churn = +1%/relay on EVERYTHING.
+- Magnus directives this session: **unreasonable variants** (try low-prior exploits) and
+  **"play the players"** (exploit measured opponent habits; both in auto-memory).
+- Instruments now: band/flotte/kladde probes + **cad_probe** + opp_v50 + **opp_v56**
+  (x3r0's v79, downloaded via `fcode submission download 56` — teammate submissions ARE
+  locally obtainable; keep opp_v56 as the slot bar).
+
+# Original session-11-start handover (written 2026-08-07 morning, end of the session-10 marathon)
 
 Start here → [docs/game-model.md](docs/game-model.md) → [docs/strategy-log.md](docs/strategy-log.md)
 → [docs/opponents.md](docs/opponents.md). Full session-10 history: git log of this file.

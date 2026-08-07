@@ -97,3 +97,21 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T07:51	1588	205	v55	v55 baseline (_v70cm = _v70th turret-hunting + chain-medic r150 + labor surge ti1500/rnd300, clean ship no trade): kladde 81.9 vs 71.2, flotte 93.3 flat, band 93.3 flat, opp_v50 66.5 vs 59.2, 0 crashes/1920. v54 final: 1550->~1586, +36 net
 2026-08-07T07:53	1588	205	v55	rank #25
 2026-08-07T07:55	1588	205	v55	v55 A/B legs: wild kladde 2-3 (meander+jackpot Ti-tiebreak WINS vs 1799), Ouroboros 0-5 (NOT grind class - core kills @265/323, reclassify), Lunds re-leg 2-3 (eider flipped away; opp version may have moved). _v70sm ore-barrier stack PARKED: halves kladde hive collection (8880->4120) but our farm still dies; hive residual = own-economy survival, not denial
+2026-08-07T07:58	1600	206	v55	rank #23
+2026-08-07T08:03	1600	206	v55	rank #23
+2026-08-07T08:06	1588	205	v55	_v70st (ore STEAL: harvester-on-their-ore, donation/counter/scale traps guarded, barrier fallback) screened: eider 8/16 held, hive 0/16 — steal margin (cost+150) never met on hive, poverty-gated to barrier mode. Denial family (_v70sm/_v70st) parked pending hive own-farm survival fix. Magnus principle logged: play the players — kladde 41-400rnd reaction latency IS the exploit surface
+2026-08-07T08:08	1602	207	v55	rank #23
+2026-08-07T08:13	1602	207	v55	rank #23
+2026-08-07T08:18	1588	208	v55	rank #24
+2026-08-07T08:23	1588	208	v55	rank #24
+2026-08-07T08:28	1592	209	v55	rank #24
+2026-08-07T08:33	1592	209	v55	rank #24
+2026-08-07T08:38	1584	210	v55	rank #24
+2026-08-07T08:43	1584	210	v56	rank #24
+2026-08-07T08:45	1584	210	v56	TEAM EVENT: x3r0 activated v56 (v79-lsq-eco+tal...) over our v55 at 06:43Z. v55 window: 5 matches, 1588->1584, unreadable. Slot bar for our line now = beating v79 locally (no local copy; opp_v50 stale as proxy). _v70cg kladde battery 81.0 flat-redistributed (hive +16, fjordgate +9, snowflake -16, antler -8); single-knob ablations do NOT restore snowflake -> interaction, pairwise ablation running
+2026-08-07T08:46	1584	210	v56	Snowflake attribution resolved: NOT a knob regression — knife-edge deterministic game amplified by weak seed variation (v55 control 16/16; every cg knob-subset 8/16). Battery per-map rows with seat-decides = ~2 distinct games, not 32; Wilson CIs overstate. _v70cg kladde = flat paired (81.0 vs 81.9); counter's case rides on cad_probe gate
+2026-08-07T08:48	1582	211	v56	rank #25
+2026-08-07T08:53	1582	211	v56	rank #25
+2026-08-07T08:58	1575	212	v56	rank #26
+2026-08-07T09:03	1575	212	v56	rank #26
+2026-08-07T09:03	1584	210	v56	SLOT DECISION PACKAGE: v55 vs v79 head-to-head 53.1 [48.7,57.5] over 480 = parity, NO clean local win (Magnus bar not met). Map portfolio near-complementary: v55 sweeps antler/fjordgate/hive/nordkap 32-0 + saga 25/lighthouse 22; v79 sweeps atoll/heart/jackpot/meander 32-0; 5 maps seat-coinflip. Class coverage: v55 beats cad_probe 65.0, v79 loses 43.3. _v70cg counter FAILED its gate (63.3 vs v55s 65.0 on cad_probe, kladde flat) — dev branch, not shipped. cad_probe frozen md5 6d0e955f96de1f0d11f93db573ade458
