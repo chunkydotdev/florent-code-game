@@ -130,3 +130,12 @@ Gotcha discovered writing them: **Python's `random` is not seeded by `--seed`** 
 the same command diverge. arena.py's many-match design absorbs this; a single probe run that
 depends on exploration may need a retry (probe_credit walks to the map centre until ore is
 visible for this reason).
+
+## Determinism references for local runs (2026-08-07, session 12)
+
+`bots/starter` calls unseeded `random.shuffle/choice/randrange` (main.py:167,315,372,450)
+and produces different replays on identical (map, seed, tle) — measured md5-divergent at
+--tle 0 with PYTHONHASHSEED=0, outcomes up to 1000 turns apart. It is UNUSABLE as a
+determinism reference for any harness. Use `bots/opp_v63` (no random import, measured
+byte-identical across repeat runs) as the deterministic opponent for replay-equivalence
+checks.
