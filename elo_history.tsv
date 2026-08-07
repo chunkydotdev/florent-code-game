@@ -125,3 +125,4 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T09:43	1548	216	v58	rank #28
 2026-08-07T09:48	1545	217	v58	rank #28
 2026-08-07T09:52	1548	216	v58	EIR GATE COMPLETE (_v71eir = v55 + escort-disengage + footprint-band-41/corner-floor + ammo-latch50/gun-magazine + ore-stepoff + counterbattery-bleeding-waiver): vs v79 59.6 [55.1,63.9], vs v82 ACTIVE 59.6 [55.1,63.9], 0 crashes/960. Fortress maps 0/64 -> 44/64; flotte meander 0-forever -> 8/16. Guards: kladde baseline held, band 100, flotte 96.7. Open trade: cad_probe 64->51 (meander waiver). New v82 hole: archipelago 0/32. Slot bar MET - awaiting Magnus go (submit auto-activates)
+2026-08-07T09:53	1545	217	v59	v59 Eir baseline (Magnus go, first Norse-named ship): _v71eir activated over x3r0 v82. Gate: 59.6 vs both v79 and v82, fortress maps 44/64, flotte meander cracked, guards green, 0 crashes. Open: cad_probe trade (64->51), archipelago 0/32 vs v82. Day trajectory: 1550 (v54) -> peak 1597 -> 1545 at activation
