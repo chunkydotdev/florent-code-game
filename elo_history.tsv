@@ -178,3 +178,5 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T13:13	1567	237	v63	rank #25
 2026-08-07T13:18	1560	238	v63	rank #26
 2026-08-07T13:23	1560	238	v63	rank #26
+2026-08-07T13:28	1550	239	v63	rank #28
+2026-08-07T13:30	1550	239	v64	EIR 4 SHIPPED on Magnus's run-with-recommendations directive: v64 = _v74e4 (A+B siege solvency, C early medic, D duel discipline ON via mechanism-override, F pave trail hive-gated, G noise ON, E B8 off). Battery 0 crashes/1752: v89 bar 57.9 [53.5,62.3]/480, v79 61.7, kladde 75.0 (hive 0->16, eider 0->7), flotte 86.7, band 90.0, ouro-probe 72.5 (paired 67.2->81.2), opp_v50 trio 16/48->48/48. Baseline 1550 @ 239, rank 28. NOTE for all future local A/B: NOISE_ON ships true - paired-seed determinism is gone by design; use pooled Wilson reads or flip the toggle in local copies

@@ -1,4 +1,91 @@
-# Handover — session 11 close-of-coverage state (2026-08-07 ~11:00)
+# Handover — session 12 state (2026-08-07 ~13:35, written at the Eir 4 ship)
+
+## LIVE: v64 "Eir 4" (= `bots/_v74e4`), shipped 13:29 on Magnus's standing
+## run-with-recommendations directive. Baseline 1550 @ 239, rank #28.
+
+Contents on top of Eir 2 (every piece toggled + ablation-attributed on the tape):
+A+B siege solvency (16-Ti heal reserve + siege respawn floor; HOLD-grade, wild-
+Lunds value case, harmless), C deep-damage early medic (r40+, dmg>=8 — THE hive
+fix, 0/32→16/32 vs kladde_probe), D duel discipline (no solo melee into a live
+gun whose ray covers you; locally flat, shipped on mechanism-override: 8/11
+traced seat-B deaths + 70/71 Ouroboros kills are exactly this, probe measured
+GENTLER than wild), F pave trail (pave the tile just left facing the move —
+directed-connectivity fix; owns eider 0→7/32, opp_v50 heart/meander/atoll
+16/48→48/48; HIVE-GATED after a one-tile diagnosis: walk-direction pave at r22
+dead-ends (4,18), linker's occupied-implies-correct poisons the trunk), G
+decision noise ON (once-per-match spawn-dispersion salt; determinism measured:
+games are pure functions of (opp,versions,map,seat), 19 historical re-lost
+identical games), E B8 sensing OFF (null vs opp_v50 AND vs v89 — archipelago
+needs a different mechanism). Battery: 0 crashes/1752 — v89 bar 57.9
+[53.5,62.3]/480, v79 61.7, kladde 75.0, flotte 86.7, band 90.0, ouro-probe 72.5
+(paired 67.2→81.2).
+
+**MEASUREMENT WARNING while G ships: paired-seed local runs are nondeterministic
+by design.** Pooled Wilson reads only, or flip NOISE_ON=False in local copies.
+
+## FIRST ACTIONS next session
+1. Re-arm FOUR monitors — now repo scripts, no regeneration: tools/monitors/
+   {elo_logger,match_watcher,opp_watcher,replay_archiver}.py, arm one-liners in
+   each docstring. State files → session scratchpad (first poll = silent baseline).
+2. Read Eir 4's rolling trajectory vs the 1550@239 baseline (~20-match check).
+3. Continue the unrated portfolio sweep (leg 1 fired at ship: Ouroboros
+   bab61537-2315-4121-9286-d9447197afc2, eider/meander/drumlin/atoll/hive).
+   Ouroboros is PLATFORM SEAT-LOCKED (they hold seat A 13/13, p≈0.008) — only
+   unrated legs can ever read our seat-A matchup; repeat challenges until the
+   seat flips (check teamAId in match JSON). Pace: ~5/10min shared limit, never
+   from a loop.
+4. Harvest docs/spitball.md "Research session #2" synthesis if not yet read —
+   and docs/research/2026-08-07-fanout/ holds every findings file + the
+   validated replay toolkit (replay_lib.py fixes 3 undocumented schema traps;
+   promotion to tools/ after a validation pass).
+
+## Build queue (specs ready, in priority order)
+- Piece H — endgame spend-switch @r960: flips 6/9 current-line r1000 losses
+  (+38.4 Elo equiv, thread-4 pricing). Needs living builders → composes with D.
+- Piece J — heal-dispatch reorder: universal heal sits above role dispatch, so
+  under siege NOBODY reaches counterbattery (Orizon = 5th class, point-blank
+  gunner battery, exposes it; hunt-ballot idiom is the fix shape). Also fix
+  SLOT_HOME_GUN monotone (rubble counts as a live gun).
+- Piece I — rotation discipline: 4,460 Ti of gunner rotation thrash across 8
+  games (56.5% of income worst case); rotate only if can_fire_from lands the
+  target and it's off-ray, + 3x hysteresis.
+- Piece B' — population-floor respawn (hands crash to sustained ZERO ~r235-250
+  and never refill; REPLACE_TI_FLOOR=250 unmeetable mid-strangle). After D's
+  production read.
+- F root fix — _build_next_link verifies facing, destroy()+rebuild wrong heads
+  (destroy() measured FREE: consumes neither action nor move, unlimited/turn).
+  Removes the hive gate's reason to exist. Also SLOT_HARVESTERS ratchet fix.
+- Flotte x jackpot steal — denial table vs their CONSTANT per-(map,seat)
+  openings + ~120 delivered floor (thread-8); Flotte NEVER targets the core
+  (0/29) → core-shield lead, next-cycle verification.
+- Probes: kladde_probe_v2 (spec in thread-3 findings; WAIT — kladde rolled back
+  v62→v60 at ~13:15, let their version settle), orizon_probe (spec in thread-7;
+  Orizon script is fully map-determined). ouroboros_probe FROZEN today, md5
+  8828b5d50039309cdc294ea07833989e — gentler than wild (4/8 vs their 14/15),
+  verdicts understate real pressure.
+- v89's archipelago+jackpot holes (0/32 each in the 480 battery) — undecoded;
+  first item for the next research brief.
+
+## Session-12 process state
+- Research fan-out template worked (12 threads + cross-check, all verdicted
+  same-day; brief format in docs/research-brief-2026-08-07.md). Next brief goes
+  out after Eir 4's production read; the closed research session can be
+  re-messaged or a new one spun with the brief file.
+- STALE-BASELINE RULE (3 catches today): re-run any cited baseline before
+  commissioning from it; version-tag every claim.
+- bots/starter is NONDETERMINISTIC (unseeded random) — determinism reference is
+  opp_v63 (docs/tooling.md).
+- Slot history today: v61→v62(accidental Eir 3)→v61→v63(v89)→v64 Eir 4.
+  Magnus + x3r0 handled the slot; the measured case (Eir2 60.4, Eir4 57.9 vs
+  v89) is on the tape.
+- Dev/ablation dirs: _v74e4 (SHIPPED content), _v74e4_noF/_noD/b8/b8v2
+  (ablation variants, disposable), _v73e3 (Eir 3, parked).
+- New instruments/infra: ouroboros_probe (4th probe), replay_archive/ (passive
+  whole-ladder harvest, gitignored), tools/monitors/ (4 scripts).
+
+# Session-11 handover below (superseded where in conflict)
+
+# (old header) Handover — session 11 close-of-coverage state (2026-08-07 ~11:00)
 
 ## FINAL ADDENDUM (session 11 close, ~11:50)
 - **x3r0's v89 auto-activated over Eir 2 late in the session; measured
