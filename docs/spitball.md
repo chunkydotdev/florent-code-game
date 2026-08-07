@@ -316,3 +316,40 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   our convert_ammo spend (154-2657 Ti in the loss sample) competes with
   REPLACE_TI_FLOOR=250 for the same bank while the picket farms our builders —
   compounding, not primary. Noted for the classifier/solvency work.
+
+## Session-12 verdicts, continued (2026-08-07 afternoon, measuring session)
+
+- **Barrier siege-ring prophylaxis (scavenge item 3) -> REFUTED** by thread-6
+  geometry (findings/thread6_barrier_geometry.md + siege_table.tsv in the
+  research scratchpad): the "~40-60 Ti structurally removes the chip class"
+  claim is false on 15/15 maps — occupying the real threat set costs 75-240 Ti
+  at round-0 prices (340-500 at mid-game scale); min-cuts are launcher-
+  bypassable (min dsq 2 everywhere) and wall off 65-86% of our own reachable
+  ore; fjordgate and meander are undeniable at any price. SURVIVORS promoted
+  to the board: (a) the d<=2 inner ring (12 tiles) is denied for free by a
+  WIRED ECONOMY — a conveyor denies a plant tile identically to a barrier at
+  the same 3 Ti +1% and stays bot-passable; (b) reactive deletion beats
+  prophylaxis everywhere (~40 Ti of builder attacks kills a landed sentinel);
+  (c) the 66us/unit alignment-threat trigger ("enemy builder within Manhattan
+  2 of a threat tile") is spec'd and cheap — future defense pre-positioning
+  piece; (d) OPEN: thread 6 claims HUNT_BAND_DSQ=41 was an NW-corner artifact
+  and the real footprint-dsq threat set reaches 50 on 10/15 maps — the outer
+  shell is unhunted; audit before touching the twice-validated constant.
+  Also verified from 376 replays: barriers CAN be built on ore (_v70sm's
+  self-shutoff was unneeded — unparks that line's design space).
+- **One-map specialist vs top-8 (open idea) -> target CORRECTED, meander
+  refuted:** Flotte x JACKPOT is the steal (thread-8,
+  findings/thread8_theft_prep.md): Flotte 7W-31L on jackpot (vs 24W-12L
+  meander), 9 of the 31 are r1000 titanium steals by 12 different opponents
+  incl. a +121-gap team winning 2610-120 delivered; holes structural across
+  their v27-v35. Mechanism: Flotte has NO economy scaling (never >3
+  harvesters/9 conveyors in 6 decoded replays); jackpot delivery floor
+  ~80-120 Ti. We are already 86% on jackpot pool-wide. BONUS: Flotte's
+  opening plant tiles are per-(map,seat) CONSTANTS across seeds AND versions
+  (jackpot seat B: r0 builder@(14,13), r4 harvester@(14,11), r6
+  conveyor@(14,12), r15 launcher@(11,14)) — precomputable denial table in the
+  findings file. Caveat honored: surviving Flotte to r1000 without the
+  delivery floor still loses (results.tsv:141, hive). Queued as a build
+  candidate behind the Eir 4 matrix. Team-read shelf life: team lazy v88
+  stable 16.5h (saga/moonrise holes open); Pivot ships hourly — never build
+  on Pivot reads.
