@@ -12,6 +12,10 @@ Rules of the road (so parallel sessions don't trip each other):
 - Research sessions: read everything, measure nothing (no arena, no
   submissions, no unrated challenges — the rate limit is shared), edit no
   bot. Drop findings here or message the main session directly.
+- Two-arm operation (builder + research): full protocol in
+  docs/two-session-protocol.md (2026-08-07). Coordination notes + the
+  IN-FLIGHT registry moved to docs/coordination.md — this board returns to
+  ideas/findings only.
 
 ---
 

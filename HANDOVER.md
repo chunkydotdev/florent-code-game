@@ -1,6 +1,29 @@
-# Handover — session 12 FINAL (wrapped ~17:55 for the two-arm restart)
+# Handover — session 13 live (builder arm; two-arm ops per docs/two-session-protocol.md)
 
-## LIVE: v66 "Eir 5.1" (= `bots/_v76e51`), shipped 17:14. Baseline 1560 @ 261,
+## LIVE: v67 "wave_ghost" — x3r0's line, NOT ours. Auto-activated on upload
+## 17:52:43 (mid-wrap, over our v66). Window baselines from 1571@265, opened
+## +18 with a 5-0 over Team 48 v16 (03af6569) → 1589@266 rank #24. BUT 0-4 in
+## incoming URs (5-15 games): 0-5 sporks v2, 1-4 team lazy v94, 2-3 SmartFridge
+## v34, 2-3 Lorem Ipsum v14 — beats one family battery, loses to another.
+## Slot bar (Eir 5.1 vs wave_ghost, 480 local) RUNNING; slot call is Magnus's.
+## Local copy bots/opp_v67 (TRAP: `fcode submission download` emits a ZIP —
+## extract it; saving the zip as the bot dir made 480 arena games silently
+## produce "no result" as bot-B load failures).
+## v66 "Eir 5.1" FINAL RECORD: window 17:14–17:52:43 (39 min), ladder 2-1 net
+## +9.3 (W 4-1 farming_200s v7, W 4-1 0033 v42, L 1-4 CAD v107 — probe-valid
+## version), UR 1-2. SmartFridge ran a deliberate 4-UR version-cycling probe
+## series against our slot (v34→v33→v35→v34 in 31 min) — book-worthy signature;
+## expect their next version tuned against whatever holds the slot.
+## IN PROGRESS: Eir 6 worker on bots/_v77e6 = Eir 5.1 + piece K (budgeted
+## ~5%-income core+trunk heal from r0) + sporks ammo policy (17@r0/cap60/
+## topup4) + B' pop-floor redesign (floor 5, delivered-rate gate), 3 toggles.
+## Then ablation screens + class-weighted vs-field gate (SHIP-GATE section).
+## Monitors: re-armed 17:58 session 13. Research arm: session-13 successor
+## online (wave_ghost decode running; v66 read VOID — no battery-family match
+## ever ran under v66; CAD a7aa49ec salvage leg).
+
+# Prior header (session 12 wrap, superseded 17:52 by the v67 auto-activation) below.
+## (superseded) LIVE: v66 "Eir 5.1" (= `bots/_v76e51`), shipped 17:14. Baseline 1560 @ 261,
 ## rank #27. = v65 + rotation latch (time+lock-dsq+no-return; the v65 tile-keyed
 ## latch was the real bug) + capped r960 dump w/ drip suppression (tiebreak-#3
 ## protected — and #3 decided a real game today: Team 48 g3, "Titanium Stored").

@@ -10,9 +10,14 @@ stay the builder's.
 
 | arm | what | output | budget | status |
 |---|---|---|---|---|
-| builder | Eir 5.1 hotfix worker (I oscillation latch + H dump cap) | bots/_v76e51 | local only | running |
-| builder | Team 48 family sample (unrated 96d26726, fired 16:10) | tape row on read | 1 challenge | awaiting read |
-| research | Viktor5776 classification (1 match) | docs/research/ | ≤5 downloads | handed to next research session (restart pending; deliberately not spawned — subagents die with their session) |
+| builder | v67 slot bar: _v76e51 (Eir 5.1) vs opp_v67 (wave_ghost), all maps × 16 seeds × both seats = 480 | tape row + measured case for Magnus | local only | running |
+| research | Viktor5776 classification (1 match) | docs/research/ | ≤5 downloads | queued behind wave_ghost decode |
+| research | v66 production read (pre-ordered): VOID as specified — no nordkap/battery-family match ever ran under v66 (Team 48 5-0 is v67-stamped; see 18:05 note). Salvage: CAD v107 leg a7aa49ec (latch under losing pressure + insertion drop tiles) | docs/research/ | archive-first | salvage queued |
+| research | wave_ghost (x3r0 v67) first field read: sporks 0-5 (b92d7da8) + team lazy 1-4 (e71e0b65) direct pull, paced ≥60s; Team 48 5-0 + CAD leg from archiver next cycle | docs/research/ | ≤10 game files direct | RUNNING (research arm, session 13) |
+| builder | Eir 6 worker (Opus): piece K standing heal budget + sporks ammo policy + B' pop-floor redesign, 3 toggles, on Eir 5.1 base | bots/_v77e6 | local only | running |
+
+Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
+(4-1 seat A, on the tape) — see the 17:35 wrap note.
 
 ## Notes
 
@@ -142,6 +147,38 @@ WRAP ACK — builder arm restart-ready. v66 live since 17:14, early window
 1560@261 -> ~1571@265, rank touched #24. Successors boot with /builder and
 /research. Session 12 closes.
 
+### 2026-08-07 18:02 (from `date`) — research arm: version pins for the flip window (relayed to builder 17:59)
+
+Ground truth from match JSON, durable copy of the ping (session 13 research
+arm online 17:57, handshake done):
+
+- **Flip time corrected: v67 activated 17:52:43 local** (= upload
+  15:52:43Z, auto-activate; last v66-stamped match created 17:49:01, first
+  v67-stamped created 17:52:43.777 — same second as upload). The 17:58 flip
+  note's discovery time was ~6 min behind the actual flip.
+- **Match #266 = 03af6569 = Team 48 ladder = v67-stamped, 5-0 WIN seat B,
+  +18.13** (1570.7@265 → 1588.8@266). v67's window opens +18, not 0 — and
+  the game belongs to wave_ghost, not v66. Corrects the builder-ack reading
+  of "Team 48 0-5 = loss": winnerId is us.
+- **v66 final record (complete; live 17:14–17:52:43, 39 min):** ladder 2-1
+  (W 4-1 farming_200s v7, W 4-1 0033 v42, L 1-4 CtrlAltDefeat v107 —
+  probe-valid version), net +9.3; UR 1-2. The PRE-ORDERED v66 READ IS VOID
+  as specified: no nordkap or battery-family match ever ran under v66.
+  Salvage: CAD v107 leg (a7aa49ec) = latch-under-losing-pressure + fresh
+  insertion drop-tile extraction vs the Eir line.
+- **UR pins (all incoming, none ours; each sits fully on one side of the
+  flip):** ran-v66 — a9395e9a L 1-4 SmartFridge v34, 96b326d0 L 1-4
+  SmartFridge v33, 4fae8fc9 W 3-2 SmartFridge v35. Ran-v67 — b7c0ea11
+  L 2-3 SmartFridge v34, 28c962a9 L 2-3 Lorem Ipsum v14, e71e0b65 L 1-4
+  team lazy v94, b92d7da8 L 0-5 sporks v2 (sporks rated 2024).
+- **SmartFridge behavioral flag:** 4 URs at us in 31 min cycling three
+  versions (v34→v33→v35→v34) — a deliberate A/B probe series against our
+  slot. Book-worthy.
+- **wave_ghost early field read:** ladder 1-0 (+18, 5-0 over Team 48 v16)
+  but UR 0-4 (5-15 in games) incl. 1-4 to family member team lazy — beats
+  one family battery, loses to another. That split is the first decode
+  question; pull registered in IN-FLIGHT.
+
 ### 2026-08-07 17:58 (from `date`) — builder arm: POST-WRAP SLOT FLIP, correcting the handover
 
 x3r0's v67 "wave_ghost" auto-activated over v66 mid-wrap — the wrap headers
@@ -152,3 +189,24 @@ momentum belongs to Eir 5/5.1's windows — do NOT let v67's window inherit the
 streak in trajectory reads; baseline v67's window separately from its
 activation row. Magnus pinged (push sent). Research arm: wave_ghost is a new
 decode target the moment its first replays land.
+
+### 2026-08-07 17:59 (from `date`) — builder arm: BOOT (session 13)
+
+Booted via /builder. All four monitors re-armed (tools/monitors/, state
+re-baselined silently in the new scratchpad). Tape row 17:58: 1589 @ 266,
+rank #24 — one rated match landed since wrap, +18 over the 1571@265
+activation row; v67's window baselines from 1571@265 per the post-wrap rule.
+
+opp_v67 downloaded. SLOT BAR RUNNING (registered above): _v76e51 (Eir 5.1)
+vs opp_v67 (wave_ghost), all maps x 16 seeds x both seats = 480. Verdict +
+tape row when it lands; slot conversation is Magnus's per team norm.
+
+Research arm handshake received 17:57 (successor session online); its queue
+confirmed and registered: v66 production read (Team 48 0-5 at 17:55 = the
+battery-family sample, and a LOSS — check the rotation latch under losing
+pressure too), Viktor5776, wave_ghost decode. Research heads-up in flight:
+three incoming URs completed ~17:58 (1-4 team lazy, 2-3 Lorem Ipsum, 2-3
+SmartFridge) — NOT fired by this arm, so they're other teams challenging us,
+which means they ran our ACTIVE bot at runtime; version pins pending from
+research. If v67-ran, wave_ghost's first field read opens 5-10 across 3
+opponents.
