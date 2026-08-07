@@ -79,6 +79,13 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       looks robust across map size, at least via this lever. Untested: branching on something
       other than the harvester trigger (sentinel placement, spawn rate, MAX_BUILDERS).
 - [ ] Does `ct.destroy()` on obsolete buildings measurably cut later build costs?
+      **Mechanics half MEASURED 2026-08-07 (session-12 probe, replicated across builders):
+      `destroy()` consumes NEITHER the action NOR the move and is unlimited per turn** —
+      two destroys in one turn left acd=0/mcd=0 with build and move both still available;
+      the follow-up build then took the action normally. The organisers' "free, no
+      cooldown, unlimited" claim is confirmed against the engine. The Elo half (does a
+      destroy doctrine pay?) is what remains — thread-10 spec + pave-facing bug hand-off
+      in the research session's findings.
 - [ ] **Why is seat A systematically favoured or punished on `archipelago`, `atoll`, `heart`
       and `lighthouse`?** This is now the biggest open question in the project, and it is worth
       several times what the jackpot bug was. Measured 2026-08-08 in mirror runs (identical
