@@ -1,6 +1,23 @@
-# Handover — session 12 state (2026-08-07 ~13:35, written at the Eir 4 ship)
+# Handover — session 12 state (updated ~15:45 at the Eir 5 ship)
 
-## LIVE: v64 "Eir 4" (= `bots/_v74e4`), shipped 13:29 on Magnus's standing
+## LIVE: v65 "Eir 5" (= `bots/_v75e5`), shipped 15:42. Baseline ~1540 @ 252,
+## rank #29. = Eir 4 + I rotation discipline + J defender counterbattery
+## unlock (whose live-gun scan also DISARMS the hive_freeze self-freeze — the
+## real hive gain) + H r960 endgame switch (core ammo-dump gated on a live
+## visible turret; builder half no-ops gracefully). Matched noise-on battery:
+## kladde hive+eider 48.4 vs Eir 4's 23.4 (clean separation), v63 slot bar
+## 58.8 vs 55.4, picket/flotte/band flat, 0 crashes. Build source:
+## docs/research/eir5-surgical-map-2026-08-07.md (the research session's
+## verified spec — raw findings specs were stale, again).
+
+## MEASUREMENT RULE (discovered this cycle, supersedes all older tape rows):
+## every pre-noise row is seed-amplified HISTORY — piece C's hive "fix"
+## (16/32 noise-off) is 1/32 under noise; the flotte "93% sweeps" are ~65%
+## true. Only noise-on rows are currency. Matched-regime baselines are
+## mandatory: candidate and baseline must share the NOISE_ON setting.
+
+# Prior header (Eir 4 ship, ~13:35) below for the day's arc.
+## (superseded) LIVE: v64 "Eir 4" (= `bots/_v74e4`), shipped 13:29 on Magnus's standing
 ## run-with-recommendations directive. Baseline 1550 @ 239, rank #28.
 
 Contents on top of Eir 2 (every piece toggled + ablation-attributed on the tape):
@@ -75,8 +92,22 @@ Rationale: our economy/survivability meta is nearly unique on the ladder;
 self-A/B undervalues anti-field changes (the external-meta lesson). System
 build is task-tracked: probe fleet (top-8, refresh on version-bump events),
 fidelity ledger (wild-gap per probe from unrated sweeps), weighted battery.
-Meta census (top-12 classification + weights + probe-ability) commissioned
-from replay_archive data — check its report first next session.
+META CENSUS COMPLETE: docs/research/2026-08-07-fanout/meta-census.md — READ IT
+FIRST next session. Headlines: (1) sporks (#2, 1960) IS our meta played
+correctly — 15-35 harvesters, 4380 median delivered, defensive mid-map sentinel
+screen (0.61 separation, 35% damage to units/turrets = interception), still
+wins 88% by core kill; "study it, do not imitate it". (2) UNCOMFORTABLE MIRROR:
+our live bot's production profile (38 games, v61-64) classifies as a SENTINEL
+CORE BATTERY WITH A SMALL ECONOMY — median 3 harvesters, 820 delivered, 68%
+damage at cores, r14 aggression at aim 0.0. The economy identity exists in
+code and dies on contact (the master constraint as an identity gap). (3)
+Matched pool = 44% point-blank core battery + 36% picket; recommended battery
+seats 4 battery / 3 picket / 1 economy / 1 rush. (4) Probe set from MID-POOL
+scripts, not the top 8: Team 48 + farming_200s (freeze AIM POLICY, aim-dsq 0.0
+sd 0) + Askar City (purest script: launcher r1/conveyor r3, 5/5 all sizes) +
+orizon family + Lunds-v37 picket. Pivot: DO NOT probe (hourly churn) — track
+the class. (5) team lazy (1892) = third Orizon-family member; one fix may
+retire three opponents. Loose ends: 5 unclassified teams = 20% of our games.
 
 ## Session-12 process state
 - Research fan-out template worked (12 threads + cross-check, all verdicted
