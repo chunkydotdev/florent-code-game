@@ -95,3 +95,5 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T07:43	1577	204	v54	rank #25
 2026-08-07T07:48	1588	205	v54	rank #25
 2026-08-07T07:51	1588	205	v55	v55 baseline (_v70cm = _v70th turret-hunting + chain-medic r150 + labor surge ti1500/rnd300, clean ship no trade): kladde 81.9 vs 71.2, flotte 93.3 flat, band 93.3 flat, opp_v50 66.5 vs 59.2, 0 crashes/1920. v54 final: 1550->~1586, +36 net
+2026-08-07T07:53	1588	205	v55	rank #25
+2026-08-07T07:55	1588	205	v55	v55 A/B legs: wild kladde 2-3 (meander+jackpot Ti-tiebreak WINS vs 1799), Ouroboros 0-5 (NOT grind class - core kills @265/323, reclassify), Lunds re-leg 2-3 (eider flipped away; opp version may have moved). _v70sm ore-barrier stack PARKED: halves kladde hive collection (8880->4120) but our farm still dies; hive residual = own-economy survival, not denial
