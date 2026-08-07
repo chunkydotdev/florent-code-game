@@ -780,3 +780,88 @@ surgical-map hand-off:
   when the screen is bypassed) — that single answer most changes the build
   priorities. Eir 5 build from the surgical map starts now; arena resumes when
   its worker lands, so keep replay downloads paced as planned.
+
+## Research session #3 — landings (2026-08-07 ~15:55, Fable research arm)
+
+- **SPORKS DECODE LANDED** → docs/research/sporks-decode-2026-08-07.md (all
+  25 census-cited games, zero downloads — archive covered everything).
+  DIRECT ANSWER to the builder's one question (screen trigger logic):
+  **there is no screen.** Turrets sit at 0.67 of sporks' OWN conveyor-network
+  depth (corr .51; 81% at/behind the economy frontier), never retreat, never
+  self-recycle (0/46 deaths), 7/187 rebuilt on-tile — the line only EXTENDS,
+  and the advance trigger == the kill trigger == **ammo at cap 60 with the
+  core repaired to full** (ammo 46-56 at 11/12 kill-starts; Ti near zero —
+  they advance on a full magazine, not a titanium surplus). When bypassed:
+  nothing to bypass — farms sit FORWARD (0.71) behind the enemy's own
+  advance, conveyor mass eats the raid as ablative armour (66% of team
+  lazy's entire output went into 3-Ti conveyors, 1% touched a harvester),
+  and heal absorbs the rest at 4.6% of income (core 369→500 mid-siege, held
+  328 rounds). Census corrections inside: sporks is NOT defensive (91% of
+  its damage lands in the enemy half; a sentinel-heavy damage profile is its
+  LOSING signature — gunners win its games).
+- **BUILD-RELEVANT RECOMMENDATIONS** (measuring session owns the verdicts;
+  sporks decode §7 has the full table):
+  1. **Re-scope PIECE J**: from "unblock counterbattery" to "sustain
+     core+trunk HP as a standing ~5%-of-income budget". Heal actions
+     discriminate wins/losses 290 vs 84; counterbattery is the slow cleanup
+     (median 49 rounds per intruding turret), not the savior. Same-series
+     proof: ed29909b g1 (723 heals, win) vs g4 (0 heals, core dead r63) vs
+     the identical team lazy v88 — the class that is 44% of our pool.
+  2. **Port the AMMO POLICY**: convert_ammo(17) at r0 in 25/25 games (sd 0);
+     hard cap 60; 50% of 2,622 conversions are exactly 4 (one gunner shot).
+     Contrast our under/weapons-gated conversion. ~15 core-side lines,
+     composes with piece H (gives its spend-switch a measured-good target).
+  3. **Re-spec PIECE B'**: sporks' effective floor is 5 bodies with
+     expansion gated on realised income — vs our REPLACE_TI_FLOOR=250,
+     unmeetable mid-strangle. Floor-of-5 + delivered-rate gate.
+  4. **Do NOT copy the land-grab / network-relative turret rule** — one
+     indivisible mechanism, and the reason sporks is 9W-0L on cardinal-axis
+     maps vs 6W-10L on diagonals (every loss diagonal; axis confounded with
+     separation, 9-game sample).
+- **NEW OPEN QUESTION** (cheap, high value): compute OUR OWN
+  cardinal-vs-diagonal record from the match corpus — if the axis effect is
+  a map property rather than a sporks property, it reprices every per-map
+  read on the board.
+- **DENIAL BOOK LANDED** → docs/research/denial-book-2026-08-07.md (27
+  (team,map,seat) rows; zero fcode calls — team/version from meta.json
+  sidecars, maps matched byte-for-byte vs maps/*.map26). **22/27 DENIABLE**,
+  1 TIGHT (Orizon fjordgate r1@(5,4), margin 0), Orizon/Landers absent from
+  the archive entirely (rows cited from thread-7/-3, gap flagged). KEY
+  REFRAME: 7/8 Ouroboros "first turrets" are a HOME-ECONOMY picket, not
+  aimed at us — the real core threat is the later creep, margins 48-730
+  rounds, ALWAYS deniable; same split on 3/5 Flotte maps. Top-3 denial
+  candidates: (1) Ouroboros's creep tile on drumlin/atoll/eider (their
+  seat-A lock = guaranteed matchup config); (2) Orizon's literal first
+  gunner on 5/6 maps (kills the mechanism at root; feeds the 44% battery
+  class); (3) **eider** — the one map where Ouroboros, Orizon AND Flotte all
+  plant core-threat turrets with comfortable margins.
+- **DISCREPANCY FLAG for the measuring session**: the book's fresh decode
+  disagrees with session-12's cited Ouroboros eider/meander first-gunner
+  numbers on BOTH round and tile (single-sample each side); left open in
+  the book rather than overridden. Resolve before hardcoding any denial
+  constant (Loki gate).
+- Brief-b thread 2 (Orizon family cross-check) spawned →
+  docs/research/orizon-family-2026-08-07.md; thread 3 (unclassified five)
+  queued behind it for download pacing.
+
+## Main-session decisions on the sporks/denial batch (~16:05, via board)
+
+- **J-WIDENING accepted as PIECE K, NOT retrofitted** — Eir 5's screens are
+  mid-flight on J-as-built and stay attributable. Piece K (standing ~5%-income
+  core+trunk heal budget) leads the Eir 6 cycle with the two ride-alongs
+  (sporks ammo policy: convert 17 @ r0 sd 0, cap 60, top-up 4; B' redesign:
+  floor 5 bodies + delivered-rate gate). Mid-screen scope changes are how
+  attribution dies.
+- **SPORKS REFRAME ACCEPTED WHOLESALE**: the economy is the armor (conveyor
+  mass = 3-Ti ablative plates eating 66% of raids; heal = 4.6% of income),
+  the army is a solvency-triggered finisher (advance == ammo at cap 60 with
+  core repaired, 11/12 kill-starts). New strategy-file frame for the arc. It
+  recontextualizes the census identity gap: our economy dies because it is
+  THIN AND UNHEALED, not because economy-under-aggression is unviable.
+- **DENIAL DISCREPANCY = BLOCKING for Loki**: the fresh Ouroboros eider/
+  meander first-gunner rows contradict the session-12 13-replay decode (round
+  AND tile). I own resolution; hypotheses to test: within-v8 drift,
+  seat-dependent tile mirroring, map-rotation tile changes. NO Loki constants
+  from either row set until resolved.
+- Axis-split analysis of our own games: queued (sporks 9W-0L cardinal / 6W-10L
+  diagonal; confound honesty noted).
