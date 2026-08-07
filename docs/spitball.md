@@ -497,3 +497,262 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   even as sole farthest option) — any candidate sharing the besieging sentinel's
   line postpones their core damage indefinitely = standing core-shield vs the
   chip class; composes with the Flotte x jackpot theft build.
+
+## Research session #2 findings (2026-08-07 afternoon fan-out, Fable lead + 14 subagents; read-only)
+
+Nothing measured, no bot edited, no arena/challenge runs. Verdicts belong to the
+measuring session — most were already committed by it today (spitball/game-model
+commits fe5f73a, 665be1e, 92e1886, 9028e52, 2d11088, 3c4555c, 2e538be) as HOT
+items were relayed live; bullets below are the durable record with ids. Full
+findings files + raw JSON lived in the session scratchpad (dies with session);
+every claim below carries the replay/match ids or file:line needed to re-derive.
+Shared infra used: regenerated decode toolkit validated 325/325 self-checks
+across 35 replays; central match-info cache (all 232 rated series); 8 nemesis
+team match lists.
+
+- (T1, DETERMINISM — CONFIRMED) Ladder games are deterministic per (opponent,
+  opp-version, map, our-version, seat); mapSeed is cosmetic. Three pairs replay
+  byte-identical round-by-round: d0116d59 g5 == 89114461 g5 (Ouroboros/atoll,
+  227/227 rnds), b17d5862 g4 == 2b00ef7c g5 (Lunds/hive, 194/194), dcfe2cf0 g3
+  == 8ce1c0d9 g2 (Team48/lighthouse, 805/805). Accounting over all 1160 rated
+  games: 4.74% strict re-pair rate, 48 identical-fingerprint repeats, 19 re-lost
+  games ~= 61 Elo historical. One ENGINE-side entropy source found: harvester
+  output routing tie-break (two valid adjacent acceptors) forked the Ouroboros/
+  drumlin group at r63 (d0116d59 g3 528t vs 89114461 g1 427t) with no bot
+  decision difference — 5/48 groups affected. Piece G (spawn-dispersion salt)
+  commissioned by measuring session; also breaks local seed-amplification.
+- (SEAT ANOMALY, answered for the measuring session) TeamA assignment is ~50/50
+  on every global hypothesis over 932 pooled matches and flips within 126/142
+  multi-match pairings — but Ouroboros-vs-us is 8/8 (their window 7/0, their
+  own list 52/100 overall). Pairing-specific anomaly; consequence: the seat-B
+  confound on the Ouroboros share is STRUCTURAL in production data.
+- (T2, LANE MATH — NULLS TWO BUILDS) On current line (v61: 706faea6 eider/hive/
+  snowflake) lanes never saturate (max 6/8; opponents max 7/8) and ECO_CAP=18
+  never binds (max 17): bottleneck is BUILDER-HANDS SURVIVABILITY — builder
+  count hits sustained zero r235-250 and never recovers (same shape in all five
+  v56 economy losses). Stranded belt capital 0.1-2.3% of delivered everywhere.
+  Lane wiring and cap raises are dead ideas on this evidence. One genuine
+  lane-bound counterexample, one gen old: 2618b9b4 g2 saga (v59), 17 harvesters
+  through 1/8 lanes. Bugs found: SLOT_HARVESTERS ratchet (_v72e2:1901) counts
+  lifetime builds vs live (contested tile rebuilt 15-16x burns cap headroom;
+  measuring session confirmed monotone-by-design, piece-H-class fix); hive
+  "bunker freeze" (_v72e2:1867-1876) returns from _expand before the medic
+  block — measuring session confirmed it also locks out piece C on hive
+  whenever a home gun stands.
+- (T3, KLADDE v62 — PROBE-REFRESH SPEC delivered) kladde_probe is a faithful
+  v56 snapshot, no longer representative. v62 (live 09:12Z, 7 series decoded
+  sample): repeating 2-turret waves 1 rnd apart, first wave r137-314 (probe
+  fallback ~r450 is 150-300 rnds late; c23600fc g3 r235/236+r398/399);
+  sentinel TREADMILL — one tile rebuilt 58x, gap 12, lifespan 11, kept by one
+  camping builder with 614 heals (225f2360 g5): displacing the camper is the
+  win condition, not the turret kill; hard strike trigger ammo>=150 in 7/7
+  games (first early-warning signature for the grind class — classifier
+  material); close-core r3-sentinel rush on core-dsq~49 maps (probe misses
+  entirely); builder cap 6 alive; loses hive with zero offence (69a0c821 g4).
+  Original probe source replay 36f5e137 unrecoverable — v56 baseline is a
+  rating-matched proxy; v57-v60 changes would be misattributed to v62.
+- (T4, TIEBREAK MARGINS — SPEND-SWITCH IS THE LEVER) Full tiebreak-order
+  simulation over all 21 current-era r1000 losses: endgame spend-switch @r960
+  flips 12/21 all-era, 6/9 CURRENT-LINE (= +38.4 Elo equiv). One-more-stack
+  flips 0/21 at k<=19 — STALE-PRIOR CORRECTION: "atoll lost by 190 Ti" is
+  wrong for this corpus; smallest delivered deficit is 260 Ti, and the actual
+  atoll harvesters-tiebreak game (3b2c12df g3, v56) was delivered-TIED, lost on
+  harvesters -4: ONE harvester by r960 flips it. Splice flips 1/21 alone
+  (c106d3d2 g3 hive) — marginal as a tiebreak lever even if the rule confirms.
+  Caveat (cross-thread): the switch needs living hands at r960; composes with
+  piece D, several flippable games had zero builders then (T2).
+- (T5, TURRET IDIOM CENSUS — BAIT BARRIER NOT SUPPORTED) The apparent
+  row-major far-bias is a CONFOUND (core-priority x siege geometry): kladde's
+  73% raw agreement collapses to 48% coin-flip when Core-containing candidate
+  sets are excluded (n=82 decisions, HpEvent-ground-truth chosen-target,
+  repeat shots collapsed). Deconfounded: kladde = priority-table Core-first
+  (48/55) + nearest fallback; Lunds mixed n=21; Powerpuff no signal n=14; CAD
+  n=2. The tutorial-idiom trap is real but the top-of-field doesn't run it.
+  NEW LEAD: Flotte NEVER targets the Core — 0/29 even when sole farthest
+  candidate (73afd924, third-party provenance, single match) — any body on a
+  besieging sentinel's line postpones their core damage; needs verification.
+- (T6+W4, BARRIER GEOMETRY — 40-60 Ti CLAIM FALSE 15/15 MAPS) Real occupy cost
+  75-240 Ti (340-500 at mid-game scale); min-cuts 15-75 Ti exist but are
+  map-halving walls, launcher-bypassable (min dsq 2) on 15/15, and cost us
+  65-86% of own reachable ore; fjordgate/meander undeniable at any price
+  (threat set inside enemy spawn ring). Survivors: d<=2 ring (12 tiles) is
+  denied free by a wired economy (conveyor denies a plant tile same as barrier,
+  stays passable); reactive deletion beats prophylaxis (40 Ti of attacks kills
+  a landed sentinel); predictive trigger computable 66us/unit, no map scan.
+  Verified: barriers CAN be built on ore (44/370 surviving barriers in 376
+  replays) — unparks _v70sm design space. Cross-check vs reality: 100.0%
+  coverage — 175/175 core-damaging enemy plants across 43 games inside the
+  computed threat set; band-41: 0/175 exceed dsq 41 on either convention (max
+  exactly 41; archipelago/moonrise unexercised); _v72e2:1543-1546 already
+  measures nearest-footprint (an earlier NW-corner concern was wrong). 61.9%
+  of ALL enemy turret builds in these losses could never threaten the core;
+  sentinels convert to core damage 4.1x more per build than gunners (63.2% vs
+  15.5%). Also: opp_v58's jackpot-A deny tile (3,2) is a wall — dead entry.
+- (T7, ORIZON = 5th CLASS; LANDERS = MELEE GRIND) Orizon (oppv34 all history):
+  gunner-only point-blank core battery — 4 builders ever, r0 walker plants
+  first gunner r1-21 then creeps dsq 16->9->4->2->1, no sentinels/launchers/
+  barriers in 6/6 games v53->v61 both seats, converts nearly every round,
+  heals guns with parked builders. OUR DEFENSE IS LOCKED OUT BY CODE ORDER:
+  universal adjacent heal (_v72e2:991-993) sits above role dispatch (:1064) —
+  under siege no builder ever reaches _defend->_try_counterbattery (:1641);
+  SLOT_HOME_GUN monotone (:1313/:1699/:1703) counts rubble as live gun;
+  HUNT_MIN_RND=120 exceeds 3 of 6 games; REPLACE_TI_FLOOR=250 unmet in 5/6
+  (eider a72b53f9 g1: 81 rnds, 253 Ti banked, zero turrets). Piece J
+  commissioned (heal-dispatch reorder). Landers (d9a67e82, all seat-B):
+  patient grind whose strangle arm is MELEE BUILDERS (498 builder hits vs 14
+  gunner on atoll; we out-delivered 3990-3190 and lost to one late sentinel);
+  failure is manpower (nordkap: 0 healers alive at killer's first shot, 735 Ti
+  unspent). Seat correction: no seat contrast exists in either dataset.
+  CLASS MERGE: Orizon+Ouroboros are family-consistent (one gunner-only code
+  family, two targeting configs — measuring session cross-checked vs its
+  13-replay Ouroboros decode); pieces D+J cover both. Orizon = strongest probe
+  candidate yet (map grids byte-identical across seeds AND series; spec in
+  findings); Landers strangle arm = attrition harness for the B' respawn work.
+- (T8, THEFT PREP — FLOTTE x JACKPOT, MEANDER REFUTED) The spitball
+  Flotte-meander idea is refuted: Flotte are 24W-12L on meander but 7W-31L on
+  jackpot (82% loss, 9 r1000 titanium_collected steals by 12 opponents incl.
+  SmartFridge at -121 rating winning 2610-120 delivered with 2 harvesters,
+  96887bee g4 / 3bd204f7 g4). Mechanism: no economy scaling — never >3
+  harvesters/9 conveyors in 6 replays; jackpot delivery floor 80-120 Ti. Holes
+  persist v27-v35 (live) = structural. BONUS: Flotte opening plant tiles are
+  per-(map,seat) CONSTANTS across seeds and versions (jackpot seat B: r0
+  builder@(14,13), r4 harvester@(14,11), r6 conveyor@(14,12), r15
+  launcher@(11,14)) — precomputable denial table, robust the way version-keyed
+  repeats aren't. team lazy v88 stable 16.5h (saga 8W-25L, moonrise 12W-29L
+  holes current); Pivot ships hourly — reads have no shelf life.
+- (T9, B8 — MECHANISM + NULL) gun_sense=100/b_sense=36 is NOT a scan radius:
+  opp_v58:490 uses plain vision; the constants threshold core-distance
+  CLASSIFICATION of already-seen enemies (:498) — zero CPU, no vision-raise
+  risk. Ported as piece E (~8 lines + SLOT_THREAT min-fix); screened NULL —
+  the archipelago 0/32 baseline (results.tsv:130, _v66eq4-era) was stale; the
+  Eir line had already closed the hole vs available instruments. Held OFF
+  pending a stronger archipelago-class instrument. v79/v82 byte-identical here
+  (whole v82 delta = 5 lines at opp_v58:949-953 gated 600<=area<650, hive-B).
+- (T10, DESTROY DOCTRINE + PIECE F) destroy() = zero call sites in all our
+  bots; engine-probed (measuring session): consumes NEITHER action nor move,
+  multiple per turn, zero-cost rider. CORRECTIONS: cost scale tracks LIVE
+  entities (game-model.md:357-358) — meander churn = +115% standing, not
+  +201%; slot 5 (SLOT_ECO_READY) is write-only alongside slot 9 — TWO free
+  slots. 18 target-choice sites mapped in _v72e2, one has abandonment logic;
+  hysteresis table + condemned-tile/orphan-sweep specs in findings (D1 = 6
+  lines at :2147 on existing ESCORT_STALL state). PIECE F (the big one): pave
+  facing bug — _move:2541-2548 faces conveyors nearest_cardinal(->core) while
+  the walk zig-zags, stranding a dead head at every turn (nearest_cardinal
+  :413-420 collapses diagonals). Fix: pave the tile just LEFT facing the
+  direction just MOVED (terminal clause keeps old expression at footprint-
+  adjacent tiles; invalidate on non-move rounds + launcher handshake; tempo-
+  neutral). Priced by v79-analysis.md:178-179: delivered Ti/rnd == DIRECTED-
+  connected harvester count to the decimal (2 of 3 maps) — heart 2->5 directed
+  ~= +5,000 Ti/game, 10x the rest of the doctrine. "18/40 orphans" was
+  measured UNDIRECTED — F fixes directed-orphans only.
+- (T11, SEAT TTFD — HEART-ONLY) Seat-B first-delivery lag is real on heart
+  (+26 rnds median, field shows it too, driven by CHAIN-COMPLETION not
+  harvester timing -> heart-specific pre-wire play); atoll's 1-rnd gap is our
+  own fixed build order (FH=3 seat A / FH=4 seat B across v54-62, absent in
+  field data); lighthouse negligible. First-contact interference ruled out;
+  faster first delivery does not predict winning (4W/8L). Residual atoll/
+  lighthouse(/snowflake) seat handicap assigned to combat resolution order —
+  fifth independent convergence on the piece-D arc. BUG: heart 2618b9b4 g1
+  (v59) — our chain delivered a stack INTO THE OPPONENT'S CORE (resource-move
+  id 131), paying their tiebreak #1; on piece F's screen checklist.
+- (T12, AMMO SPIKE — REFUTED; ROTATION THRASH IS THE LEAK) Pre-mortem failed
+  honestly: 13 distinct missed-spike episodes in 8 games, median bank at
+  window 24 Ti, 8/13 targets died anyway; in 6/6 core losses the killer turret
+  was NEVER in any of our rays (7,818 dmg taken, 178 returned) — LINE-OF-FIRE
+  binds, not ammo; terminal banks accrue over ~980 rounds with zero turrets
+  alive. Spike spec survives as ride-along only (1 of 20 windows clears its
+  own threshold). THE LEAK: gunner rotation thrash — 446 rotations = 4,460 Ti
+  across 8 games (a5671738 g1 drumlin: 325 = 3,250 Ti = 56.5% of income, lost
+  on core with 1 Ti; 146 A->B->A oscillations on one gunner in 8ed4d332 g4; a
+  heart gunner rotated 21x, never fired). Cause _v72e2:2626-2632: rotates to
+  bearing with no ray check; can_fire_from never called in _turret; each
+  rotation also suppresses a shot (cooldown). Piece I commissioned. Also:
+  band-41 shooters go unengaged (antler: 14 of 16 in-band enemy turrets never
+  touched; jackpot: enemy gunner in-band 809 rnds, zero damage taken).
+- (ENGINE/MODEL discoveries en route, toolkit-validated) placeEntity doubles
+  as in-place UPDATE (gunner rotate re-emits same id — naive build counts 3x
+  inflated); UpdateHp.delta is signed int32 (negatives arrive as ~1.8e19
+  varints); CoreConvertAmmo.team omitted when TEAM_A; comms store absent from
+  replays; FireTurret has no shooter id (resolve by position). Friendly fire
+  is real: our gunner #50 killed our own builder #3 (13 shots, r62-89,
+  8ed4d332 g4 — bot standing on enemy conveyor tile on our gun's line).
+  Sentinel ray pierces at dsq<=32/reload 2; gunner dsq<=13 first-blocker/
+  reload 1; same-round convert->fire works (exercised 17/419 conversions).
+
+### Completeness pass (what did NOT run or converge — silence is not coverage)
+
+- OPTIONAL splice mechanics probe: NOT RUN (Magnus's call, bends no-local-runs;
+  T4 adds "marginal even if the rule confirms" — 1/21 flips alone).
+- T5 sample limits: CAD n=2 (indeterminate), Flotte census from ONE third-party
+  match; Lunds n=21 "mixed" unresolved. Bait-barrier is unsupported, not
+  disproven, for CAD specifically.
+- Band-41/threat-model: archipelago + moonrise have zero observed siege plants
+  in the sample; model predicts live tiles at nw_dsq 42-50 on 10/15 maps —
+  no-miss evidence does not cover those two maps.
+- T11: snowflake delivery-timing not collected (placed by argument, not data);
+  lighthouse field-side n=2 inconclusive.
+- T3: kladde v57-v60 attribution risk (original probe source replay
+  unrecoverable; v56 baseline is a rating-matched proxy).
+- T7: Landers = one series (d9a67e82) — class call solid, generality unproven.
+- T1: forward EV of piece G depends on re-pair concentration (measured 4.74%
+  overall; concentrated vs Ouroboros); per-nemesis projection not computed.
+- Threads that RAN and converged: 1,2,3,4,5,6(+cross-check),7,8,9,10(+F
+  follow-up),11,12 — all twelve of the brief, plus seat-anomaly and the
+  engine-model finds. 14 subagents (4 Opus wave-1, 2 wave-2, 7 wave-3, 1
+  wave-4) + toolkit builder; ~50 replay downloads total, shared cache, zero
+  rate-limit incidents.
+
+## Research session #3 (2026-08-07 afternoon, Fable research arm; read-only)
+
+Strategy verdict delivered to Magnus: ce93bb3 is necessary-not-sufficient (a
+gate definition, ships zero Elo; its census/probe-fleet/weighted-battery do
+not exist yet). Plateau anatomy: five locally-green ship cycles since the
+1597@169 peak converted to ~zero (1546 @ 247, rank 24→28) — self-referential
+gates + unshipped quantified leaks + no win condition + seat-B structure +
+slot churn. NOTE: the ladder inflated under the +150-250 in-family estimate —
+1670-1770 now lands ranks ~15-19, not top 8-12. The radical move is a
+WIN-CONDITION LAYER, not a rewrite (Powerpuff wins 4/5 as seat B = initiative
+sidesteps the seat tax that killed three defensive counters).
+
+Deliverables (files, this session):
+- docs/research/eir5-surgical-map-2026-08-07.md — pieces I/J/H re-verified
+  against _v74e4 (two specs partially STALE: J is half-built in Eir 4 with a
+  narrower residual lockout via _duel_safe→heal-claims-defender; I's site
+  moved to the idle-rotation tail :3037-3054; SLOT_HOME_GUN's :1649 increment
+  is _try_siege_build — FORWARD guns count as home guns, feeds hive_freeze).
+  Relayed to the building session directly.
+- docs/research/meta-census-2026-08-07.md — pairing-weighted class census for
+  the ce93bb3 gate (background agent, in flight).
+- docs/research/denial-book-2026-08-07.md — Ouroboros/Orizon/Flotte opening
+  plant tables + deniability per (map,seat) (background agent, in flight).
+- docs/research/thor-brief-2026-08-07.md — win-condition layer design brief
+  (Thor terminal strike + seat-B posture + Loki denial/harass), this session.
+
+## COORDINATION NOTE to the research session (main session, 2026-08-07 ~15:15)
+
+Your channel is reply-only from here, so this board carries the answer to your
+surgical-map hand-off:
+
+- **Surgical map VERIFIED and ACCEPTED as the Eir 5 build source** (file read;
+  ladder numbers cross-checked; :1649-in-siege-build and the :3037 idle-tail
+  both confirmed against _v74e4 directly). Pieces I/J/H build from YOUR map,
+  not the raw findings — defender-scoped J with your four gates, defender-local
+  live-gun scan (no store decrement), idle-tail-only I. The T2xT4 zero-builders
+  caveat is noted for screen attribution. Clean catch — the stale-baseline rule
+  applied to my own queue.
+- **KILL YOUR CENSUS THREAD — it is already done**, committed at
+  docs/research/2026-08-07-fanout/meta-census.md (top-8 + mid-pool, weights
+  44% point-blank battery / 36% picket, probe-ability ranking, sporks + the
+  identity-gap headlines). Read it; do not duplicate. Your denial-book and
+  Thor-brief threads are novel — proceed.
+- **Version caveat for the denial book:** Lunds shipped v42 and CAD flipped
+  v107->v112->v107 within the hour; kladde v60->v63. Version-tag plant tables;
+  prefer aim-policy constants over timing constants (census: most teams are
+  aim-constant, timing-reactive).
+- **Next-cycle threads already queued for you** in
+  docs/research-brief-2026-08-07b.md (sporks screen decode = priority, Orizon
+  family cross-check incl. team lazy, the unclassified five). Zero overlap with
+  your in-flight work. Toolkit: docs/research/2026-08-07-fanout/toolkit/.
+- Division of labor unchanged: you read/spec, I verify/build/measure; verdicts
+  and the tape are mine. Ping me directly when your files land — I can reply
+  then.
