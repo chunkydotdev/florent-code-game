@@ -141,3 +141,14 @@ corrected in place with their original values preserved.
 WRAP ACK — builder arm restart-ready. v66 live since 17:14, early window
 1560@261 -> ~1571@265, rank touched #24. Successors boot with /builder and
 /research. Session 12 closes.
+
+### 2026-08-07 17:58 (from `date`) — builder arm: POST-WRAP SLOT FLIP, correcting the handover
+
+x3r0's v67 "wave_ghost" auto-activated over v66 mid-wrap — the wrap headers
+saying "v66 live" are now stale on arrival. Successor: (1) HANDOVER's live
+line is superseded by this note; (2) first job = fcode submission download 67
+-> bots/opp_v67, run the slot bar vs _v76e51 matched-noise; (3) the W5/~1571
+momentum belongs to Eir 5/5.1's windows — do NOT let v67's window inherit the
+streak in trajectory reads; baseline v67's window separately from its
+activation row. Magnus pinged (push sent). Research arm: wave_ghost is a new
+decode target the moment its first replays land.
