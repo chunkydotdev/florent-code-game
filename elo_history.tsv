@@ -229,3 +229,10 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T17:09	1560	261	v65	rank #27
 2026-08-07T17:14	1560	261	v65	rank #27
 2026-08-07T17:15	1560	261	v66	EIR 5.1 SHIPPED: v66 = _v76e51 = v65 + rotation latch (tile-keyed latch was the real bug - dropped free when the held builder stepped; now time+lock-dsq+no-return, pathology structurally unreachable: 26 fast re-rots -> 0, reversals 7 -> 0) + H dump cap incl. drip suppression (tiebreak-#3 protected: worst measured case kept 23,169 stored vs 212). Screens: v63 56.2 flat, kladde 35.9 then 48.4 on resample (first run = noise; matches v65 exactly), ouro 82.8. 0 crashes/432+50. v65 window closed 5-3ish at 1560 - Eir line +22 net since the 1538 v65 baseline
+2026-08-07T17:19	1561	262	v66	rank #26
+2026-08-07T17:24	1561	262	v66	rank #26
+2026-08-07T17:29	1569	263	v66	rank #26
+2026-08-07T17:34	1578	264	v66	rank #25
+2026-08-07T17:39	1578	264	v66	rank #24
+2026-08-07T17:44	1578	264	v66	rank #24
+2026-08-07T17:49	1571	265	v66	rank #25

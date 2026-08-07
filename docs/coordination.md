@@ -12,7 +12,7 @@ stay the builder's.
 |---|---|---|---|---|
 | builder | Eir 5.1 hotfix worker (I oscillation latch + H dump cap) | bots/_v76e51 | local only | running |
 | builder | Team 48 family sample (unrated 96d26726, fired 16:10) | tape row on read | 1 challenge | awaiting read |
-| research | Viktor5776 classification (1 match) | docs/research/ | ≤5 downloads | assigned, see note 17:25 |
+| research | Viktor5776 classification (1 match) | docs/research/ | ≤5 downloads | handed to next research session (restart pending; deliberately not spawned — subagents die with their session) |
 
 ## Notes
 
@@ -78,3 +78,42 @@ vs v65 (kladde first-run dip resolved as noise on resample: 48.4 exact match),
 v66 - confirm rotations single-digit and dumps capped-but-firing; OGE remains
 H's natural experiment, now with #3 protected. _core_sees_turret ->
 _core_turret_mix rename reminder for tooling.
+
+### 2026-08-07 ~18:15 — research arm: WRAP NOTE (Magnus is restarting both arms)
+
+Research-arm state for the next session (boot with `/research` — new
+one-word slash commands exist for both arms in `.claude/commands/`):
+
+- **No live subagents; all deliverables relayed.** Today's set, all in
+  `docs/research/`, all version-tagged: eir5-surgical-map, thor-brief
+  (+census reconciliation), denial-book, denial-adjudication (Loki GO
+  constants, version-pinned v64+, re-verify under current version),
+  orizon-family, unclassified-five, sporks-decode, v65-production-read.
+- **Open queue, priority order:** (1) the v66 PRE-ORDERED READ above —
+  first nordkap or battery-family match under v66; remember matches are
+  version-stamped at CREATION (boundary games mislabel), and a450ea25 will
+  never backfill (archiver fix is forward-only) — pull direct if needed.
+  (2) Viktor5776 classification (registered above, not started). (3) Note
+  the `_core_sees_turret` → `_core_turret_mix` rename in `_v76e51` before
+  any grep-based code-read.
+- Protocol, roles, and boot sequences: `docs/two-session-protocol.md`
+  (builder-ACKed 17:25).
+
+### 2026-08-07 ~18:20 — builder arm: WRAP NOTE (restart-ready)
+
+IN-FLIGHT registry resolved: Eir 5.1 worker LANDED (shipped as v66, announced
+above); Team 48 sample LANDED — 4-1 seat A (96d26726: core kills r78/92/159 =
+the out-race-thin-houses pattern vs an actual family member; g3 won on
+TITANIUM STORED — tiebreak #3 decided a real game, the dump-cap concern
+validated in production). Research rows: Viktor5776 stays assigned, v66 read
+pre-ordered (nordkap rotations single-digit, dumps capped-but-firing).
+
+CORRECTION to the research wrap's monitor claim: the four monitors are THIS
+session's task processes — assume they DIE at this wrap. /builder step 3
+handles it (verify, re-arm dead ones; scripts + arm one-liners in
+tools/monitors/, state files re-baseline silently in the new scratchpad).
+
+Ladder at wrap: W5, ~1578, v66 live since 18:03. Session 12 ledger: three
+ships (v64/v65/v66), matched-noise measurement methodology, 93.3%-classified
+field, 4 probes + fleet plan, two-arm protocol, this file. Tape current
+through commit aedac6f.

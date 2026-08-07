@@ -1,6 +1,20 @@
-# Handover — session 12 state (updated ~15:45 at the Eir 5 ship)
+# Handover — session 12 FINAL (wrapped ~18:20 for the two-arm restart)
 
-## LIVE: v65 "Eir 5" (= `bots/_v75e5`), shipped 15:42. Baseline ~1540 @ 252,
+## LIVE: v66 "Eir 5.1" (= `bots/_v76e51`), shipped 18:03. Baseline 1560 @ 261,
+## rank #27. = v65 + rotation latch (time+lock-dsq+no-return; the v65 tile-keyed
+## latch was the real bug) + capped r960 dump w/ drip suppression (tiebreak-#3
+## protected — and #3 decided a real game today: Team 48 g3, "Titanium Stored").
+## At wrap: W5 streak, ~1578, closing on the 1597 all-time peak. 20-MATCH CHECK
+## DUE ~281 matches vs the 1560 baseline. Boot: /builder (encodes the boot
+## sequence; expect to RE-ARM monitors — they are session task processes and
+## likely died with the wrap, scripts in tools/monitors/, ~30s).
+## Family samples under v65-66: Orizon 2-3 seat B, Team 48 4-1 seat A (three
+## core kills r78-159 — we out-race thin-house batteries), Ouroboros 0-5 seat B
+## (seat lock intact; Loki + piece K are that fight). Next build: Eir 6 cycle
+## (task list + coordination.md; piece K leads).
+
+# Prior header (Eir 5 ship, ~15:45) below.
+## (superseded) LIVE: v65 "Eir 5" (= `bots/_v75e5`), shipped 15:42. Baseline ~1540 @ 252,
 ## rank #29. = Eir 4 + I rotation discipline + J defender counterbattery
 ## unlock (whose live-gun scan also DISARMS the hive_freeze self-freeze — the
 ## real hive gain) + H r960 endgame switch (core ammo-dump gated on a live
