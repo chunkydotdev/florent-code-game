@@ -30,6 +30,31 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### Session 10 morning — counter-battery blindness named, and v54 ships on a judgment trade
+
+- **Date:** 2026-08-07 morning (Magnus present) · base `_v69clean` → `_v70rp` → `_v70mh` = **platform v54 "v70-respawn-convergence"**, shipped ~08:05 at 1550@197.
+- **The Lunds audit (10 games decoded) unified the middle class:** one infiltrator, one
+  turret near our core, 150-900 rounds of chip while we bank thousands — named
+  **counter-battery blindness**. Root causes: the counterbattery eco-gate, single-slot
+  SLOT_THREAT, fixed turret facings. Lunds went 0-5 lifetime against us on it.
+- **Two gated keeps:** builder respawn-on-death (`self.n` was a lifetime cap — the
+  eider diagnosis: 586 rounds on 2 builders, 12.3k Ti unspent; replacements gated
+  ti≥250∧rnd≥60, no cap raise = the `_v69bc` lesson applied) and multi-healer
+  convergence (role-2/5+ expanders in vision of a damaged core converge; +8..12/rnd
+  flips the single-sentinel arithmetic).
+- **Battery:** flotte 93.3 [89.4,95.9] vs 86.7 (+6.6, the wild class), band 93.3,
+  kladde 71.2 flat (the probe's 3-sentinel barrage out-damages any heal rate — probes
+  can be harder than their wild exemplars), guards green, opp_v50 59.2 vs 63.3
+  (-4 overlapping). **Magnus called the trade: ship** — the ladder pool resembles the
+  probes, not the teammate proxy.
+- **Retro (Magnus-requested) adopted three process fixes** — map-targeted screens
+  before full runs; pre-mortem variants against the losing replays (four
+  trace-proven-but-game-flat variants motivated it); thresholded monitors. In the
+  operating notes and the orchestration memory.
+- **Next:** v54 before/after rematches (Lunds/Flotte legs queued at ship time),
+  turret-hunting design (pre-mortemed first), the grind residual's real binding
+  constraint, nemesis audits (Ouroboros 0-4 likely grind-class).
+
 ### Session 10 overnight — the autonomous loop: one ship, three honest refutations, the triad complete
 
 - **Date:** 2026-08-10 overnight (wall clock Aug 6 23:00 → Aug 7 ~00:30+) · autonomous
