@@ -30,6 +30,29 @@ Rules of thumb:
 
 <!-- newest entries at the top, below this line -->
 
+### v55 — "v70-medic-surge" (session 11: the grind front cracks)
+
+- **Date deployed:** 2026-08-07 ~07:50, at 1588/#25, 205 matches. Base `_v70th` → `_v70cm`.
+- **Hypothesis:** the kladde-class residual binds on economy, not combat — specifically
+  (a) siege turrets shelling the core unpunished, (b) conveyor churn under enemy melee
+  (rebuild = +1% team-wide scale each, the real poison), (c) surplus bank with capped labor.
+- **Change (three stacked, each ablation-verified):** turret-hunting under siege
+  (defer-while-progress ballot, r120 floor after a fjordgate rush regression),
+  chain-medic heal-in-passing (1 Ti/+4 HP vs melee's 2 dmg, zero scale creep; r150
+  floor after flotte fjordgate/lighthouse flips), late labor surge (spawn budget +5 and
+  ECO_CAP 18→24 when ti≥1500 ∧ rnd≥300 — the `_v69bc` lesson done right: surplus only).
+- **Battery (fixed-480 each, 0 crashes/1920):** kladde 81.9 [78.2,85.1] vs 71.2 (+10.7,
+  separated; eider 17/32 from 0/16-forever), flotte 93.3 flat, band 93.3 flat, opp_v50
+  66.5 [62.1,70.5] vs 59.2 (+7.3 — v54's shipped trade recovered). Clean ship, no trade.
+- **Refuted en route:** `_v70ec` (labor reserve + rebuild caps) — the reserve inverted
+  the income bootstrap (eider collected 9390→3160 by ablation); low-bank link spending
+  IS the bootstrap. Kept for reference.
+- **Predicted effect:** grind-class ladder losses (kladde, Ouroboros, sporks) tighten or
+  flip; hive residual stays until ore-denial lands (`_v70sb` next).
+- **Result:** (pending ~20-match trajectory)
+- **Next:** stack `_v70sb` ore-barriers onto this head for the hive/ore-access residual;
+  Elo-model correction (game-share, Δ=32×(games/5−E)) says every game margin pays.
+
 ### Session 10 morning — counter-battery blindness named, and v54 ships on a judgment trade
 
 - **Date:** 2026-08-07 morning (Magnus present) · base `_v69clean` → `_v70rp` → `_v70mh` = **platform v54 "v70-respawn-convergence"**, shipped ~08:05 at 1550@197.

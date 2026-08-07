@@ -76,3 +76,22 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T06:18	1557	196	v53	rank #26
 2026-08-07T06:28	1550	197	v53	rank #27
 2026-08-07T08:05	1550	197	v54	v54 baseline (_v70mh = respawn + multi-healer convergence, Magnus-approved ship on the flotte +6.6 / opp_v50 -4 trade): v53 final 28-26, 1507->1550 net +43, peak 1597
+2026-08-07T06:38	1558	198	v54	rank #26
+2026-08-07T06:42	1558	198	v54	production A/B read (session 11 start): Lunds after-leg 3-2 W (was 0-5 lifetime; eider/drumlin/jackpot went to rnd-1000 Ti tiebreaks, meander core-kill @177) = convergence works vs single-turret chip in production. Flotte 0-5 unchanged but FASTER collapses on slow maps (meander 797->223, lighthouse 723->329) — strangulation gap distinct and slightly worsened
+2026-08-07T06:43	1558	198	v54	rank #26
+2026-08-07T06:48	1550	199	v54	rank #28
+2026-08-07T06:53	1550	199	v54	rank #28
+2026-08-07T06:58	1560	200	v54	rank #26
+2026-08-07T07:03	1560	200	v54	rank #26
+2026-08-07T07:08	1561	201	v54	rank #26
+2026-08-07T07:13	1561	201	v54	rank #26
+2026-08-07T07:18	1573	202	v54	rank #26
+2026-08-07T07:19	1558	198	v54	_v70th (turret-hunting) HOLD verdict: ballot deadlock found+fixed (defer-while-progress, staggered override), round floor 120 added after fjordgate rush regression (5 flips, restored 30/30). Screens: band 100 flat, flotte 93.3 flat, kladde 0 wins but core kills 15->7 of 32, hive s1 core_destroyed@787 -> survives r1000. Econ is binding on kladde maps; stacking econ fix next (_v70ec)
+2026-08-07T07:23	1573	202	v54	rank #26
+2026-08-07T07:28	1586	203	v54	rank #25
+2026-08-07T07:33	1586	203	v54	rank #25
+2026-08-07T07:38	1577	204	v54	rank #25
+2026-08-07T07:43	1586	203	v54	_v70cm battery 1/4: kladde_probe 81.9 [78.2,85.1] vs 71.2 baseline (+10.7, intervals separated), 0 crashes/480. eider 17/32 from 0, hive 0/32 residual (ore access -> _v70sb next), meander 16/32 seat-split. Stack = _v70th hunting + chain-medic(r150 floor) + labor surge(ti1500/rnd300)
+2026-08-07T07:43	1577	204	v54	rank #25
+2026-08-07T07:48	1588	205	v54	rank #25
+2026-08-07T07:51	1588	205	v55	v55 baseline (_v70cm = _v70th turret-hunting + chain-medic r150 + labor surge ti1500/rnd300, clean ship no trade): kladde 81.9 vs 71.2, flotte 93.3 flat, band 93.3 flat, opp_v50 66.5 vs 59.2, 0 crashes/1920. v54 final: 1550->~1586, +36 net
