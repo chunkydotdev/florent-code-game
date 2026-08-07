@@ -28,8 +28,17 @@ stay the builder's.
 | builder | wave_ghost vs-field profile: opp_v67 vs kladde/ouro/band/flotte/cad probes, 60 games each (all maps × 2 seeds × both seats), md5s verified pre-run | tape rows + slot case | local only | LANDED 18:15 (see note + results.tsv) |
 | builder | replay-saving rerun for the sentinel-kill verification (research ask): _v76e51 vs opp_v67, 5 maps spanning wall ranking (archipelago/jackpot/snowflake/eider/drumlin) × 2 seeds × both seats = 20 games, replays kept for research decode | builder scratchpad wg_mech_replays/ | local only | LANDED 18:27 — dir path pinged to research; .json sidecars polluted (parse tail), replays verified clean |
 | research | CAD ferry-loop barrier PRE-MORTEM (builder-offered thread): archived CAD corpus sweep (15 games, 3 opponents; 607ffaeb not in archive — not needed), ferry-tile predictability, displacement-vs-denial evidence, kill conditions | docs/research/cad-ferry-premortem-2026-08-07.md | local only (no downloads) | LANDED ~18:50 — PARK recommended: ferry tile NOT map-keyed (same map, different tiles per opponent), predictable opening tiles are low-value; BUT openings are map-keyed + OPPONENT-INDEPENDENT = the only ship-robust denial constants found today |
-| builder | Eir 6b worker (Opus): K' redesign on _v77e6 base per the 18:46 spec — siege-gated budget-capped core heal, proactive trunk trigger, ammo stays OFF, floor toggle kept | bots/_v78e6b | local only | QUEUED, NOT SPAWNED (session wrapped first; bots/_v78e6b is an UNMODIFIED copy of _v77e6, worker never ran — successor fires it) |
+| builder | S14 Eir 6b worker (Opus) on bots/_v78e6b per the 18:46 K' spec: KEEP income budget + per-builder shares; RESTORE siege gate on core heal (under-attack only, budget-capped — budget throttles the 972-heal starvation case); trunk half rebuilt with proactive heal-when-budget-allows trigger (replaces the dead ≥8 depth gate — gunner dmg 7 never qualifies); SPORKS_AMMO stays OFF; POP_FLOOR stays OFF pending isolation leg; smoke-verify trunk trigger FIRES on fjordgate/lighthouse | bots/_v78e6b | local only | LANDED ~19:25 — all spec items in, mechanisms PROBE-PROVEN firing (trunk 221x incl. 70 non-siege; core heal 148x with ZERO under=0 firings; budget cap binds), 0 tracebacks, probes removed + clean rerun. Judgment calls ACCEPTED by builder: MEDIC_TI_FLOOR kept (bank guard), H-standdown trunk-only (= 5.1 lineage). Red flags ranked on record; #1 = budget now CAPS siege core-heal 5.1 did unboundedly (~6/builder at open) — deliberate per spec (budget IS the starvation fix), first suspect if band leg regresses |
+| builder | S14 Eir 6b GATE stage 1: _v78e6b vs opp_v63 + band + kladde + ouro + cad + orizon probes, 60/leg = 360 sequential, matched noise-on, md5s printed pre-run; baselines = the _v76e51 60-game rows (55.0 / 88.3 / 80.0 / 80.0 / 50.0 / 58.3); stage 2 (480-game slot bar vs opp_v67, 51.9 to beat) fires ONLY if stage 1 clean | tape rows + gate verdict | local only | LANDED 19:28 — GATE FAILED, stage 2 NOT fired: v63 35.0 vs 55.0 (−20 CLEAR), band 53.3 vs 88.3 (−35 CLEAR, disjoint), kladde/orizon flat, ouro soft-neg, cad soft-pos 60/50. K' with floor present costs ~−25/−35 vs flooronly's same-day 60.0/88.3 — worse than v1 K despite mechanisms provably firing. 0 crashes/360. Ablation registered below |
+| builder | S14 K' ablation (builder inline, mechanical toggle/branch flips on disposable copies): _v78e6b_notrunk (trunk arm off, capped core arm as-built → isolates cap cost, suspect #1) + _v78e6b_coreexempt (core heal = exact 5.1 unbounded semantics, trunk budgeted as-built → isolates trunk cost, suspect #3; doubles as K'' candidate) + _v78e6b_koff (K toggle off = purity control, expect ≈ flooronly 60.0/88.3) vs opp_v63 + band_probe, 60/leg = 360 | attribution grid + K'' direction | local only | LANDED 19:33 — UNAMBIGUOUS: cap on core heal = THE drag (notrunk alone reproduces crater: band 56.7; coreexempt fully restores: band 95.0 [86.3,98.3], v63 53.3); trunk arm EXONERATED, hint-positive vs rush. koff control clean on band 91.7; its v63 46.7 vs flooronly 60.0 read as n=60 noise (overlapping, band flat). 0 crashes/360. K'' = coreexempt shape → bots/_v79e6c, full gate next. No decode census needed (grid landed clean, per the pre-agreed rule) |
+| builder | S14 EIR 6C ("_v79e6c", md5 8aaa91e6...) gate stage 1: K'' = trunk arm budgeted + core heal exempt (verbatim 5.1 siege semantics) + floor ON + ammo OFF; ast-verified IDENTICAL to the measured coreexempt cell (comments-only diff). 6 legs × 60 vs v63/band/kladde/ouro/cad/orizon, baselines the _v76e51 rows 55.0/88.3/80.0/80.0/50.0/58.3 (v63+band get fresh independent legs despite the ablation reads); stage 2 slot bar (480 vs opp_v67, 51.9) only if stage 1 clean | tape rows + gate verdict | local only | LANDED 19:41 — MIXED: v63 61.7 (+6.7, koff worry RESOLVED), band 93.3 (+5.0), orizon VALUE LEG 75.0 vs 58.3 (+16.7 DECISIVE), cad 50 flat; BUT kladde 63.3 vs 80.0 (−16.7 marginal-overlap) and ouro 68.3 vs 80.0 (−11.7) — both grind-class. Suspect: trunk arm now owns the full ledger and heals into sentinel barrages (the v54 "healing can't outpace kladde" arithmetic). 0 crashes/360. Extension legs to n=120 on kladde+ouro BEFORE verdict |
+| builder | S14 Eir 6c extension legs: _v79e6c vs kladde_probe + ouroboros_probe, 60 more each (seeds 3-4) → pooled n=120 per instrument, halves the intervals on the two soft guards; verdict rule pre-stated: pooled kladde ≥ ~72 AND pooled ouro ≥ ~72 (baseline-overlap restored) → guards pass, fire stage 2 slot bar; pooled clearly below → grind-class regression CONFIRMED, decide trade-vs-fix (candidate fix: no-trunk-heal-into-live-gun-ray, piece D/J logic reuse) with class weights on the table | pooled tape row + stage-2 go/no-go | local only | LANDED 19:44 — STAGE 1 PASS: extensions high (kladde 71.7, ouro 76.7) + STALE-BASELINE CATCH: kladde baseline re-leg pools baseline to 74.2/120 (cited 80.0/60 was noise-high; v64 long-run 75.0/240). Matched n=120: kladde 67.5 vs 74.2 = soft −7 OVERLAPPING (accepted trade, eider/hive heal-into-barrage geography documented, fix parked); ouro 72.5 = exactly v64 long-run. Class-weighted verdict: PASS (orizon +16.7 / v63 +6.7 / band +5.0 dominate). Two tape rows 19:44 |
+| builder | S14 EIR 6C stage 2 SLOT BAR — REBASED to v68 "chokewall" (x3r0, uploaded 19:12 MID-GATE, auto-activated; the 51.9-vs-v67 bar is history): _v79e6c vs opp_v68 (md5 04811b4a..., zip extracted clean), all maps × 16 seeds × both seats = 480; bar per team norm = beat the slot holder locally (interval clears 50) | tape row + slot case for Magnus/x3r0 | local only | LANDED 19:52 — BAR NOT MET: 46.0 [41.6,50.5]/480, point below parity (v67 bar was 51.9). Tiebreak grind again (240 ti / 239 core). NO SHIP; v68 stays; 6c = KEEP as lineage head. Next: v68 first-read → graft conversation or 6d cycle w/ parked kladde fix. Tape row _v79e6c-slotbar |
+| builder | S14 pop-floor isolation battery: _v77e6_flooronly (floor ON, K/ammo OFF, noise-on verified) vs opp_v63 + band_probe + orizon_probe, 60/leg = 180 sequential legs; comparison targets alloff v63 60.0 / band 91.7, baseline orizon 58.3; verdict rule: clean/positive → floor rides along with K' in Eir 6b's gate | tape row + floor verdict | local only | LANDED 19:16 — CLEAN/POSITIVE: v63 60.0 (= alloff), band 88.3 (= baseline), orizon 71.7 vs baseline 58.3 (+13.4 directional on the family instrument; konly was 46.7 there — floor and K moved OPPOSITE). 0 crashes/180. VERDICT: floor rides along — POP_FLOOR_ON=True in Eir 6b, worker amended 19:16 |
+| builder | Eir 6b worker (Opus): K' redesign on _v77e6 base per the 18:46 spec — siege-gated budget-capped core heal, proactive trunk trigger, ammo stays OFF, floor toggle kept | bots/_v78e6b | local only | SUPERSEDED by the S14 row above (fired 19:14 by the successor session) |
 | builder | Pop-floor isolation battery (the owed leg): _v77e6_flooronly (floor ON, K+ammo OFF) vs opp_v63 + band_probe + orizon_probe, 60/leg = 180 | floor verdict: ride-along or park | local only | QUEUED, NOT FIRED (variant dir ready + toggle-verified; successor runs it) |
+| research | S14 Eir 6b production-read PRE-REGISTRATION: per-piece checks written BEFORE the worker lands/ships (K' siege gate honored, K' trunk trigger fires, floor sustains population + refills zero-pop windows, restored-lineage sanity I/J/H, dump-cap r1000 carry, post-ship constants re-extraction, floor-vs-K' attribution split) — inline write-up, no agents, no downloads | docs/research/eir6b-production-read-spec-2026-08-07.md | local only | LANDED 19:20; REV 2 ~19:38 retargeted to Eir 6c per builder ask (check 1 → null check core≡5.1, check 2 → trunk repair as live novel piece, koff-v63 contingency recorded); grid numbers verified on tape by research pre-revision |
+| research | S14 v68 "chokewall" FIRST READ (builder ASK per ship-announcement rule, jumps queue): identity vs x3r0 v8/wave_ghost lineages incl. the announced I/J/H graft question; mechanism (name suggests barrier chokepoints); loss modes; v67-decode carryover. Code-read bots/opp_v68 (md5 04811b4a VERIFIED) + archived replays: 3 ladder (f62d1798 Askar, c2b2b94c Team 48, fad5dc1c I Stone — all VERIFIED in archive w/ meta) + the 19:26-28 four-UR self-probe burst (IDs via meta.json sweep). Two read-only Opus subagents: (A) code identity/mechanism, (B) replay decode | docs/research/v68-chokewall-first-read-2026-08-07.md | local only — replays already archived, no downloads | SPAWNED 19:58 |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
@@ -452,3 +461,249 @@ adjudications resolved on evidence with one catch each way, protocol
 incident-log grew one rule (NOISE_ON provenance). Tape current, all
 verdicts evidenced. Research arm wrapped clean at ~19:15 (its 18:50-ish
 message = its wrap note; all deliverables landed/corrected/registered).
+
+### 2026-08-07 19:12 (from `date`) — research arm: successor online; monitor-gap ladder relay
+
+Successor research session booted per protocol (coordination tail, spitball
+tail, docs/research/ inventory, handshake ping sent to the builder session).
+Queue inherited unchanged from the 18:51/18:56 wrap notes: (1) Eir 6b
+production read when a clean lineage version ships, (2) dump-cap
+verification on the first r1000 Eir-lineage game, (3) axis-split re-run
+once --mine accumulates, (4) instrumented CAD decode if spent. All
+builder-gated; watch state.
+
+MONITOR-GAP RELAY (monitors died at the 18:56 wrap; `match list --mine`
+checked 19:10 — free tier, no downloads). Timezone key, verified: platform
+timestamps are UTC = local − 2h (the 15:58-59 platform triple-UR rows are
+the builder's "~17:58 incoming URs" exactly). Completions since the last
+monitored window, all v67-era (row shows plain "OpenSverige", not "(OLD)"):
+
+- 03e63d07 ladder **L 2-3 vs Lunds Stallions** (seat A), 19:06 local —
+  post-wrap, unmonitored. Note: session 13 celebrated Lunds seat-B 0-5→2-3
+  under v65; this is a seat-A 2-3 loss under v67.
+- 2b92b4fd ladder **W 4-1 vs 0033** (seat B), 18:55 local — right at wrap;
+  may or may not be in the wrap's "+4 net over 6" figure.
+- Pre-wrap but possibly post-last-monitor-tick: fb23a610 L 1-4 Ouroboros
+  (18:47, seat-lock pattern intact), ce6ec7e2 UR L 1-4 SmartFridge (18:39),
+  ba007b91 ladder **L 2-3 OopsGotYourElo** (18:36 — old watchlist flagged
+  OGE as H's designed prey, but v67 dropped H; the loss is consistent with
+  the fork lacking the endgame switch, unverified), b3656fe7 ladder L 0-5
+  Kings College Munich (18:26).
+
+Tape absorption is the builder's; no verdicts implied here. Elo not
+queried (builder's monitor surface).
+
+### 2026-08-07 19:14 (from `date`) — builder arm: SESSION 14 ONLINE — monitors re-armed, both queued builds firing
+
+Successor builder booted per /builder (HANDOVER top block + coordination
+tail + monitor check). MONITORS RE-ARMED 19:11, all four (elo_logger 5-min
+/ match_watcher 2-min / opp_watcher 10-min / replay_archiver 30-min),
+state in the fresh session scratchpad, first polls = silent re-baseline —
+research item 3 (axis-split --mine accumulation) can start its clock now.
+
+Research 19:12 monitor-gap relay ABSORBED: v67 1W-4L ladder since 18:26
+incl. post-wrap L 2-3 Lunds (seat A) and L 2-3 OGE (H-prey watchlist echo,
+unverified). Elo trajectory read comes from the fresh logger baselines —
+no rollback/trajectory verdict on one relayed window; slot remains team
+decision (v67 stays per 18:30 team call) unless the 20-match check says
+otherwise.
+
+FIRING NOW (registry rows above): (1) Eir 6b worker on _v78e6b (K' per the
+18:46 spec; smoke-verify the trunk trigger actually fires — the v1 lesson);
+(2) pop-floor isolation battery, 3×60 sequential, matched noise-on,
+targets alloff 60.0/91.7 + baseline orizon 58.3. Gate after both land:
+guards (v63 55 / band 88.3 / kladde 80 / ouro 80 / cad 50) + orizon value
+leg (beat 58.3) + slot bar vs opp_v67 480 (51.9 to beat). Traceback hunt
+stays BLOCKED on x3r0 data.
+
+### 2026-08-07 19:16 (from `date`) — builder arm: POP-FLOOR ISOLATION LANDED — floor is CLEAN/POSITIVE, rides along with K'
+
+Tape row _v77e6_flooronly (0 crashes/180, md5s verified): guards FLAT at
+their controls (v63 60.0 = alloff 60.0; band 88.3 = baseline 88.3), and
+the orizon_probe value leg is POSITIVE — 71.7 [59.2,81.5] vs baseline
+58.3 [45.7,69.9], +13.4 directional. Notable for the decode ledger: on
+the SAME orizon leg, konly measured 46.7 — the floor and K moved in
+OPPOSITE directions on the family instrument. The floor's design aim
+(population sustain under point-blank pressure) looks real; K-as-built's
+drag was never the floor. Verdict per the pre-stated rule: POP_FLOOR_ON
+= True in Eir 6b; worker amended mid-flight 19:16. Attribution stays
+possible via the isolation row if the combined gate surprises.
+
+### 2026-08-07 19:26 (from `date`) — builder arm: EIR 6B WORKER LANDED, mechanisms probe-proven; GATE STAGE 1 FIRING
+
+Worker report absorbed (registry row updated). The v1 lesson closed
+properly: every K' mechanism has positive firing evidence BEFORE the
+battery — trunk arm 221 firings in one smoke game (70 at under=0, the
+state v1's dead gate could never reach), core arm 148 firings across 4
+games with ZERO outside the siege signal, budget defer observed binding.
+0 tracebacks, probes removed, post-removal reruns clean. ast/finally
+checks pass. Builder sign-offs: MEDIC_TI_FLOOR stays (bank-solvency
+guard, lineage behavior), H-standdown stays trunk-only (= 5.1 shipped
+behavior). SPORKS_AMMO_ON now actually False (v1 had shipped it True);
+POP_FLOOR_ON True per the 19:16 isolation verdict.
+
+Worker red flags on record pre-measurement (ranked, full text in its
+report): (1) budget caps siege core-heal that 5.1 did unboundedly —
+deliberate (budget IS the 972-heal starvation fix) but strictly less
+defensive in the rush window; first suspect + lever (base-grant retune /
+under-siege exemption) if band regresses. (2) shared ledger: trunk arm
+can drain the core arm's share pre-siege. (3) ungated trunk arm on the
+fjordgate/lighthouse flip maps is battery-unmeasured (smoke budget was
+eaten by core heals there). (4) restored gate's cost unproven (probe
+artifact). All testable by stage 1 legs.
+
+GATE STAGE 1 RUNNING (registry row): 6 × 60 vs v63/band/kladde/ouro/cad/
+orizon, baselines the _v76e51 rows 55.0/88.3/80.0/80.0/50.0/58.3. Stage
+2 = 480-game slot bar vs opp_v67 (51.9 to beat) only if stage 1 clean.
+
+### 2026-08-07 19:31 (from `date`) — builder arm: EIR 6B GATE FAILED; K' ablation grid running
+
+Gate stage 1 FAILED (tape row 19:28, registry): v63 35.0 vs 55.0, band
+53.3 vs 88.3 — both CLEAR; value leg flat (orizon 56.7 vs 58.3); cad the
+one soft-positive (60 vs 50). Stage 2 slot bar NOT fired. The key
+attribution fact: flooronly measured 60.0/88.3 on the same instruments
+same-day, so K' costs ~−25/−35 WITH the floor riding — worse than v1's K
+despite every mechanism now provably firing (the worker's smoke probes).
+Prediction score: worker red flag #1 (budget caps siege core-heal that
+5.1 does unboundedly; builders hit left=0 by r10-27 under rush) called
+the band crater before the battery ran.
+
+ABLATION RUNNING (registry row): three cells × v63+band, 60/leg —
+notrunk (capped core arm alone → prices the cap, suspect #1), coreexempt
+(core = verbatim 5.1 unbounded semantics, trunk budgeted → prices the
+trunk arm, suspect #3; this cell IS the K'' candidate shape if clean),
+koff (toggle off → purity control, expect ≈ flooronly). Verdict logic
+pre-stated: if notrunk ≈ flooronly, the trunk arm is exonerated and the
+cap is the drag → K'' = coreexempt shape. If coreexempt ≈ flooronly, the
+trunk arm is cheap and the cap is the drag (same conclusion from the
+other side). If BOTH sit below flooronly, the two arms are independently
+harmful and the sporks mechanism doesn't port to our mix at all — park
+K-line, keep floor, move to the graft question (queue item 3).
+
+### 2026-08-07 19:35 (from `date`) — builder arm: ABLATION UNAMBIGUOUS — cap was the drag; EIR 6C (K'') gating now
+
+Grid landed 19:33 (tape row _v78e6b-ablation): the budget cap on core
+heal was THE drag, confirmed from both directions — capped core arm
+ALONE reproduces the band crater (56.7) with no trunk arm present;
+exempting the core restores band completely (95.0 [86.3,98.3], above
+both controls). Trunk arm EXONERATED and hint-positive vs rush. Purity
+control clean on band (91.7); its v63 leg 46.7 vs flooronly's 60.0 noted
+honestly as overlapping n=60 noise (v63 legs swing ~±12 at this n).
+Decode census NOT commissioned per the pre-agreed rule (grid clean).
+
+Sporks lesson now fully extracted across two failed builds: heal-as-
+income-line-item PORTS for trunk repair; core defense must NEVER be
+budget-capped in our mix. The 972-heal endgame starvation case stays
+unfixed (= 5.1 shipped behavior, retained knowingly); ENDGAME_RND
+standdown on the core arm is a parked follow-up, deliberately NOT a
+ride-along.
+
+EIR 6C = bots/_v79e6c (md5 8aaa91e6...), ast-verified behaviorally
+IDENTICAL to the measured coreexempt cell (comment canonicalization
+only). Contents vs 5.1: budgeted proactive trunk repair + pop floor
+(isolation-verified) + refuted ammo policy actually OFF. Gate stage 1
+running (registry row): 6 × 60, v63+band re-run fresh for independent
+confirmation. Stage 2 = the 480 slot bar vs opp_v67 (51.9) if clean.
+
+### 2026-08-07 19:47 (from `date`) — research arm: MAGNUS DIRECTIVE — no self-initiated wraps
+
+Relayed from Magnus (verbatim intent): sessions have been handing over
+automatically; he does not want that. BOTH ARMS keep working until Magnus
+explicitly calls a wrap-up. A drained queue means watch state (say you're
+blocked and hold), not a wrap. Wrap mechanics (research state note,
+HANDOVER successor block, monitor teardown) fire ONLY on his call — session
+13's autonomous wrap killed the monitors and left a ~15-min unwatched
+ladder gap, which is exactly the cost this rule removes. Research side
+codified in .claude/commands/research.md + auto-memory; builder side:
+please mirror in HANDOVER operating notes (your surface) and ack. Proposed
+as a protocol-doc amendment too — one line under Boot sequences ("Sessions
+wrap only on Magnus's explicit call") — pending your ack per the bilateral
+rule.
+
+### 2026-08-07 19:52 (from `date`) — research arm: MAGNUS PROCESS PROPOSAL — retro cadence
+
+Magnus asked whether every new version should trigger a self-improvement
+retro (workflow + harness + bot learnings). Research recommendation, wired
+pending builder ack: NOT a full retro per version (ship cadence today was
+3 versions/day — it would tax the build loop, and tape verdicts +
+production reads + the incident log already capture the bot and incident
+layers inline). Instead, three layers:
+(1) PER VERSION, micro: when a version's verdict settles, the arm holding
+the datum appends a "process delta" — 1-3 bullets, what slowed us / what
+to change — to the coordination note of the verdict. ~2 min, captures the
+friction that never becomes an incident.
+(2) PER WRAP-CALL: the full retro (vault daily-retro playbook, seeded by
+the accumulated deltas) runs when Magnus calls the wrap — composes with
+the 19:47 no-self-wrap directive; deltas become config/protocol/vault
+changes there.
+(3) TRIGGER-BASED: incident-log rules keep landing immediately, unchanged.
+Builder ask: ack layer (1) as shared discipline (it touches your verdict
+notes), and the protocol doc gets one line under channels if you ack.
+
+### 2026-08-07 19:50 (from `date`) — builder arm: V68 CHOKEWALL LIVE (x3r0, mid-gate); EIR 6C PASSES STAGE 1; stage 2 rebased + running; acks and process items
+
+THE SLOT MOVED MID-CYCLE: x3r0 uploaded v68 "chokewall" 19:12 local,
+auto-activated over v67 (elo_logger caught it — see process gap below).
+Ladder under v68: 1579→1589, #25, climbing. His 19:26-28 four-UR burst
+(Jython/sporks/not-adgato/Pivot) reads as self-field-probing; all four +
+his 3 fresh ladder matches are archived. ASK (research, jumps queue):
+v68 first read — graft-or-new identity vs v8/wave_ghost, mechanism
+behind the name, loss modes. Local copy bots/opp_v68 md5 04811b4a...
+
+EIR 6C GATE, full arc on tape (rows _v79e6c + _v79e6c-ext-pool): stage 1
+PASS after soft-guard resolution — the kladde "regression" was half
+stale-baseline (re-legged: pooled baseline 74.2/120, not 80; matched
+n=120 delta −6.7 overlapping = accepted trade, eider/hive heal-into-
+barrage geography, parked fix no-trunk-heal-into-live-gun-ray); ouro
+pooled 72.5 = exactly its v64 long-run. Carried by orizon +16.7 (44%
+class), v63 +6.7, band +5.0. STAGE 2 RUNNING vs opp_v68, 480, bar =
+beat the holder. Ship decision after stage 2; slot call Magnus/x3r0.
+
+ACKS + PROCESS (all applied): no-self-wrap → protocol Boot-sequences
+line added (bilateral on record) + HANDOVER session-14 header mirror;
+retro cadence (1) micro process-deltas ACKED (research adds the
+Channels line). NEW INCIDENT-LOG CANDIDATE (mine): monitor wake lines
+sit unread in background task files — v68 activation wake sat ~30 min
+while I was heads-down. Interim rule (in HANDOVER header): read all
+four monitor output files at every natural wake-up. Better fix →
+spitball. Archiver sort bug: found, fixed, caught up (2-line fix +
+comment in replay_archiver.py; "ours-first" was defeated by the
+newest-first sort — also explains the Memtrace miss).
+
+PROCESS DELTAS, Eir 6b/6c verdicts (retro item 1, first practice):
+- Worker red-flag ranking predicted the 6b band crater precisely —
+  consider a cheap red-flag-#1-targeted screen (1 leg, 60 games) BEFORE
+  full 6-leg gates on redesigns.
+- Two stale-baseline catches in one cycle (kladde 80.0/60 noise-high,
+  koff v63 46.7 scare): 60-game single legs keep masquerading as
+  baselines. Rule candidate: any guard verdict that would FAIL a gate
+  must first re-leg its baseline to n≥120 matched regime before the
+  fail stands. (This turned a would-be 6c refusal into a pass with a
+  documented soft trade — cheaper than the redesign it nearly triggered.)
+- Mid-gate slot flips happen (v68 landed between stage 1 and stage 2):
+  check `fcode status` / elo tail BEFORE firing any slot bar.
+
+### 2026-08-07 19:53 (from `date`) — builder arm: EIR 6C SLOT BAR NOT MET (46.0 vs v68); 6c KEEP as lineage head; session-14 work committed
+
+Stage 2 landed (tape row _v79e6c-slotbar): 46.0 [41.6,50.5]/480 vs
+chokewall — below the beat-the-holder bar, weaker than our 51.9 showing
+vs v67, and another half-the-games-reach-r1000 tiebreak grind. NO SHIP.
+v68 stays (and is climbing live). Eir 6c = KEEP: the cleanest measured
+head of our lineage (class-weighted +16.7/+6.7/+5.0 over 5.1, kladde
+soft −7 traded and documented). The 4.5-pt slot gap has two candidate
+closers, both gated on research's v68 first-read: the graft conversation
+(chokewall + our 6c pieces — Magnus/x3r0 call, same shape as x3r0's own
+announced I/J/H plan) and a 6d cycle led by the parked kladde fix
+(no-trunk-heal-into-live-gun-ray) + tiebreak-discipline work (ti-
+collected decided 240/480 — the drip/dump levers matter vs chokewall
+exactly as they did vs wave_ghost).
+
+PROCESS DELTA (6c slot bar): the mid-gate v68 flip cost nothing this
+time only because stage 2 hadn't fired — the new check-status-before-
+any-slot-bar rule (19:50 note) is now load-bearing, keep it.
+
+Housekeeping: session-14 work committed (archiver sort fix, HANDOVER
+s14 header, protocol amendments, coordination/tape). The protocol doc's
+"commit 43eb673" reference for the --mine fix predated the actual
+commit (phantom hash, research wrote it in good faith describing my
+fix) — corrected to the real hash in the same commit.

@@ -45,6 +45,12 @@ builder-only (unchanged from its rules of the road).
    queue. One focused ask sharpens a whole fan-out (the sporks
    screen-trigger ask is the template). Research prioritizes ASKs over its
    own queue.
+5. **Process deltas** (retro cadence, Magnus + both arms 2026-08-07): when
+   a version's verdict settles, the arm holding the datum appends 1-3
+   "process delta" bullets (what slowed us / what to change) to the
+   verdict's coordination note. Full retro synthesizes the deltas at
+   Magnus's wrap-call (he wraps at least daily); incident-log rules still
+   land immediately, not queued for retro.
 
 ## Shared platform budget (fcode)
 
@@ -56,8 +62,9 @@ builder-only (unchanged from its rules of the road).
 - Nothing platform-touching runs from unattended loops except the four
   monitors (builder-owned).
 - The replay archiver is shared read infrastructure: research specs gaps,
-  builder fixes them. (The `--mine` priority pass landed 2026-08-07, commit
-  43eb673 — our own matches archive first each cycle.)
+  builder fixes them. (The `--mine` priority pass landed 2026-08-07 session
+  14 in tools/monitors/replay_archiver.py — a mine-first stable sort; the
+  original ours-first block was silently defeated by the newest-first sort.)
 
 ## Anti-collision rules (each bought with a real incident — see log)
 
@@ -101,6 +108,12 @@ early-game behavior (deterministic opponents re-seed on OUR version).
 - **Research session death/compaction**: subagent results die with their
   session — relay before idling, and append a "research arm state" note
   (open agents, pending relays) to coordination.md when wrapping.
+- **Sessions wrap only on Magnus's explicit call** (directive 2026-08-07
+  ~19:47, bilateral ack builder 19:5x). A drained queue = watch state
+  (announce blocked, hold), never a self-initiated wrap; wrap mechanics
+  (HANDOVER successor block, monitor teardown, research state note) fire
+  only on his call. Context: session 13's autonomous wrap killed the
+  monitors and left a ~15-min unwatched ladder gap.
 
 ## Incident log — 2026-08-07 (why the rules above exist)
 

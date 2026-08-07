@@ -1,3 +1,36 @@
+# Session 14 LIVE header (builder arm; supersedes the s13 block below where in conflict)
+
+## STANDING RULES added this session (mirror of protocol/coordination)
+- **NO SELF-INITIATED WRAPS** (Magnus directive ~19:47 via research relay,
+  bilateral, in two-session-protocol.md Boot sequences + auto-memory):
+  drained queue = watch state, announce and hold; wrap mechanics fire only
+  on Magnus's explicit call.
+- **READ THE FOUR MONITOR TASK-OUTPUT FILES at every natural wake-up**
+  (task completion, cross-session message): monitor wake lines print into
+  background task files nobody sees until the loop exits — the v68
+  activation wake sat unread ~30 min (incident-log candidate). Files live
+  in the session tasks/ dir; ids in this session: elo busk6h1sv, match
+  b5rmf2yvd, opp b7rp97c4r, archiver bfa6yg71a.
+- **Micro process-deltas**: when a version verdict settles, append 1-3
+  what-slowed-us bullets to its coordination verdict note (retro cadence
+  (1), acked 19:5x; full retros only at Magnus-called wraps).
+
+## Session-14 state at last update (~19:50)
+- LIVE: **v68 "chokewall" (x3r0), uploaded 19:12, auto-activated mid-gate.**
+  1589 @ 276 rank #25 and climbing at last elo row. opp_v68 local copy
+  extracted (md5 04811b4a...); research first-read commissioned.
+- **Eir 6c (`bots/_v79e6c`, md5 8aaa91e6...) PASSED gate stage 1**
+  class-weighted (orizon +16.7 / v63 +6.7 / band +5.0 / cad flat / ouro at
+  long-run / kladde soft −7 accepted trade, mechanism + parked fix on
+  tape). = 5.1 + budgeted proactive trunk repair + pop floor (isolation-
+  verified) + ammo actually off. K'-cap variant (6b) refuted; full arc in
+  results.tsv rows _v78e6b*, _v79e6c*.
+- **Stage 2 slot bar RUNNING vs opp_v68**, 480 games, bar = beat the slot
+  holder (team norm). Ship decision after; slot calls remain Magnus/x3r0.
+- Archiver our-matches-first SORT BUG found+fixed (session-14 comment in
+  replay_archiver.py); older 5 of the 6 gap matches land next cycle.
+- Still BLOCKED: Eir 5.1 traceback fix (x3r0 data).
+
 # Handover — session 13 FINAL (wrapped 19:07; Magnus restarting fresh arms)
 
 ## FIRST ACTIONS for the successor (boot: /builder)

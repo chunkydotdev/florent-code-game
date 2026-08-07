@@ -42,7 +42,15 @@ def main() -> None:
             [FCODE, "match", "list", "--mine", "--json", "--limit", "20"],
             capture_output=True, text=True, timeout=120,
         )
-        matches.extend(json.loads(mine.stdout)["matches"])
+        mine_rows = json.loads(mine.stdout)["matches"]
+        # Tag ours so the newest-first sort below cannot rotate them out of
+        # the PER_CYCLE window (session-14 catch: the plain merge+sort made
+        # "our matches first" a comment, not a behavior — 6 of our matches
+        # sat unarchived behind fresher globals; also explains the earlier
+        # Memtrace miss).
+        for m in mine_rows:
+            m["_mine"] = True
+        matches.extend(mine_rows)
     except Exception:
         pass
     try:
@@ -73,6 +81,7 @@ def main() -> None:
             seen_ids.add(m["id"])
             todo.append(m)
     todo.sort(key=lambda m: m.get("completedAt") or "", reverse=True)
+    todo.sort(key=lambda m: 0 if m.get("_mine") else 1)  # stable: ours first, each group newest-first
     for m in todo[:PER_CYCLE]:
         mid = m["id"]
         try:
