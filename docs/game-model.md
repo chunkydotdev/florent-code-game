@@ -491,3 +491,9 @@ rather than the file format:
   preceding bot-decision divergence, cascading to a 99-round game-length difference
   (Ouroboros/drumlin group, forked r63; 5 of 48 repeat groups affected). Do not assume
   resource-pipeline topology ties are stable.
+
+- **Turret mechanics [measured 2026-08-07, thread-12 replay validation]:** sentinel ray
+  pierces (hits through occupied tiles) at dsq<=32, reload 2; gunner is first-blocker at
+  dsq<=13, reload 1; same-round convert_ammo -> fire works in production (exercised in
+  17/419 observed conversion rounds); zero misaligned shots across the corpus once
+  rotation history is applied — the engine's facing model is exactly as documented.

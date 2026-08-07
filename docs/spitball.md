@@ -385,3 +385,24 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   parked, Magnus's call. Cross-thread caveat honored: the spend-switch needs
   living builders at r960 — it composes with piece D (D keeps hands alive, the
   switch cashes the bank), intersect before attributing.
+
+- **Thread 12 verdicts:** ammo-spike trigger (scavenge item 2) -> REFUTED as a
+  standalone build: 13 missed-spike episodes across 8 games had median bank 24 Ti
+  at the window; 8/13 targets died within 5 rounds anyway; in 6/6 core losses the
+  killer turret was never inside any of our turrets' rays while we banked 246-985
+  Ti (7,818 dmg taken vs 178 returned). LINE-OF-FIRE binds, not ammunition; the
+  terminal banks accrue with zero turrets alive. Spike trigger spec survives as
+  ride-along only (1 of 20 windows clears its own threshold — honest arithmetic
+  in findings/thread12_ammo_spike.md). THE REAL ITEM, promoted to build (piece I,
+  rotation discipline): gunner rotation thrash, current-line, root-caused at
+  `_v72e2:2626-2632` — rotate to nearest-45° bearing with NO can_fire_from check
+  (never called in _turret), modal rotation gap 1 round, literal A->B->A
+  reversals (146 on one gunner), 21 rotations without ever firing; 446 rotations
+  = 4,460 Ti across 8 games (opponents 1,490), worst case 3,250 Ti = 56.5% of
+  income in a game lost with 1 Ti left. Rotation Ti competes directly with heal
+  solvency and respawn funding — same master constraint. Fix: rotate only if
+  can_fire_from(pos, new_dir, type, target) AND target not on current ray, plus
+  3x retarget hysteresis. Also noted: band-41 shooters go unengaged (antler 14/16
+  in-band turrets never touched; jackpot gunner in-band 809 rounds untouched) —
+  converges with the D/counterbattery direction and the HUNT_BAND outer-shell
+  audit already queued.
