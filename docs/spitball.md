@@ -406,3 +406,31 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   in-band turrets never touched; jackpot gunner in-band 809 rounds untouched) —
   converges with the D/counterbattery direction and the HUNT_BAND outer-shell
   audit already queued.
+
+- **Thread 7 (Landers + Orizon): ORIZON = 5th class, "point-blank core battery"**
+  (gunner-only, 4 builders ever, r0 walker plants at dsq 16 then creeps 9->4->2->1,
+  never rotates, adjacent-builder gun healing, converts Ti->ammo near-every round;
+  identical v53->v61, both seats). THE STRUCTURAL BUG it exposes, promoted to build
+  (piece J, heal-dispatch reorder): the universal adjacent heal (`_v72e2:991-993`)
+  sits ABOVE role dispatch (:1064) — under siege every core-adjacent builder heals
+  every round and none reaches _defend -> _try_counterbattery (:1641; the :1077
+  site is role-gated away). Counterbattery fires exactly once per game; eider: 81
+  rounds under battery, 68 with a live builder, 253 Ti + 24 ammo banked, zero
+  turrets built. Compounding ratchets: SLOT_HOME_GUN monotone (:1313/:1699/:1703)
+  so the eco-gate counts rubble as a live gun (SLOT_HARVESTERS family);
+  HUNT_MIN_RND=120 exceeds 3 of 6 game lengths; REPLACE floor unmet 5/6. LANDERS
+  = patient grind whose strangle arm is MELEE BUILDERS (498 melee hits vs 14
+  shots on atoll; we out-delivered 3990-3190 and lost to one late sentinel) —
+  the FOURTH independent arrival at builder survivability as the master
+  constraint. Seat corrections: all 5 Landers games seat B (no contrast exists);
+  Orizon kills both seats identically — neither story is the seat-B tax.
+  CLASS-MERGE HYPOTHESIS (cross-checked vs the session-12 Ouroboros decode):
+  plausible and family-consistent — both gunner-only, deterministic per map,
+  creeping plants, zero sentinels/launchers; they differ in target priority
+  (Ouroboros phase-1 snipes BUILDERS from midfield dsq 25-514, Orizon goes
+  straight at the core from dsq 16) — one code family with different targeting,
+  so piece D + piece J plausibly covers both = two of six nemeses on one fix
+  arc. PROBES: Orizon is the strongest instrument candidate yet (map grids
+  byte-identical across seeds AND series — fully map-determined script; spec in
+  findings/thread7_landers_orizon.md); Landers' strangle arm is the ready-made
+  attrition harness for exercising piece B' (population-floor respawn).
