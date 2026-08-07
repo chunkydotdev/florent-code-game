@@ -49,6 +49,17 @@ single-slot SLOT_THREAT (can't track 2 threats), and turret-hunting (turrets are
 BUILDINGS — builders can attack them 2dmg/2Ti; a turret shelling the core does not
 shoot back at its attacker; never implemented, ranked next).
 
+## Strategic frame (Magnus + Fable, 2026-08-07, at ~1550-1600)
+
+Elo pays on match outcome only (margin is free) and the scheduler pairs near-rating, so
+the goal is NOT "beat everyone": it is **map-majority against the near-band**. A match
+vs a team is best-of-5 over the 15-map pool → win ≥8/15 maps vs a team and the matchup
+flips to usually-win. Priorities that follow: (1) class fixes over per-team fixes (one
+map row moves against many teams); (2) spend all cycles on near-rating nemeses (Lunds ✓
+flipped by v54, Ouroboros, Landers, Orizon), zero on top-8 teams (losses to them cost
+~-3, wins pay ~+15 — asymmetric, ignore until Stockholm); (3) 2-3 and r1000-tiebreak
+losses are the flip-candidates list, not a comfort metric.
+
 ## The queue
 
 1. **Read the v54 before/after rematches** (ids above) — they decide whether the
