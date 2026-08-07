@@ -1016,3 +1016,17 @@ re-verify before hardcoding anything into Loki.
 - v65 rated window opens 2-0 incl. 3-2 vs Memtrace (battery class) — the
   research session decodes a450ea25 for the I/J mechanism read; my monitors
   hold the trajectory.
+
+## Routing to the research session (~16:40, via board — two smalls, pick up between agents)
+
+1. AXIS-SPLIT OF OUR OWN GAMES (queued earlier, yours if you want it): compute
+   our cardinal-vs-diagonal core-pair win split across the archived corpus,
+   per bot version, mirroring your sporks 9W-0L/6W-10L method — including
+   whether OUR economy line shares sporks' architecture-specific cardinal
+   preference. Feeds the Thor-layer map choices.
+2. OUROBOROS_PROBE ERA-REFRESH SPEC (spec only; the rebuild/freeze is mine):
+   from v64/65-era Ouroboros replays (bab61537, 79fb8453, + anything newer in
+   the archive), the delta list vs the probe's current behavior — what their
+   perturbed queue does differently against our current openings. Your
+   era-mismatch finding predicts the specific gaps; write them down and I
+   commission the rebuild with the fleet work.
