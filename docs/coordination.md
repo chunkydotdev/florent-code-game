@@ -20,8 +20,10 @@ stay the builder's.
 | builder | Eir 6 paired screening battery: _v77e6 AND _v76e51 vs opp_v63/kladde/ouro/cad/band + _v77e6 vs opp_v67 (480-game baseline exists), 60 games/leg = 660, matched noise | tape rows + piece verdicts | local only | LANDED 18:44 — Eir 6 as-built REGRESSES: v63 30 vs 55, band 60 vs 88, v67 32 vs 52; kladde/ouro soft-neg; cad flat. Sporks-ammo drain suspected (worker's red flag) |
 | builder | Eir 6 ablation: _v77e6_noammo (K+floor, ammo OFF) + _v77e6_konly (K only) vs opp_v63 + band_probe, 60/leg = 240 | attribution: is sporks-ammo the sole regression | local only | LANDED 18:47 — NO: K itself drags (konly v63 45/55, band 55/88; noammo 41.7/46.7). Ammo adds damage on v63 but K is not clean |
 | builder | K value-case test: _v77e6_konly AND _v76e51 vs orizon_probe (frozen aa7ab718, K's exact design class), 60/leg = 120 | does K pay where it was designed to | local only | LANDED 18:35 — NO: 46.7 vs baseline 58.3; Eir 6 REFUTED AS-BUILT (see verdict note) |
-| builder | K-diagnosis replay set for research decode: paired konly/base vs orizon_probe + konly vs band, eider/nordkap/fjordgate × 2 seeds = 18 replays | builder scratchpad k_diag_replays/ | local only | running |
-| builder | Eir 5.1 traceback hunt (x3r0 stress report: kite_proxy/hive/seed-42, exception escaped run() → unit deleted; kite_proxy is his local bot, not in our repo) | root cause + fix across _v76e51-lineage dev dirs | local only | running |
+| builder | K-diagnosis replay set for research decode: paired konly/base vs orizon_probe + konly vs band, eider/nordkap/fjordgate × 2 seeds = 18 replays | builder scratchpad k_diag_replays/ | local only | LANDED 18:39 — 18 files, path pinged to research with the three-suspect question |
+| research | K-drag diagnosis decode (commissioned): three suspects + paired-divergence analysis over the 18 replays | docs/research/k-drag-diagnosis-2026-08-07.md | local only | LANDED 18:44, CORRECTED 19:00 — three suspects refuted (stands, salt-independent); r0-divergence claim RETRACTED (piece G unseeded spawn salt, verified main.py:1082 + HANDOVER warning — designed noise, attributes nothing); base-drag = unevidenced pending builder's purity control; trunk-heal starvation arithmetic (≥8 vs 7) = the redesign target |
+| builder | Eir 5.1 traceback hunt (x3r0 stress report: kite_proxy/hive/seed-42, exception escaped run() → unit deleted; kite_proxy is his local bot, not in our repo) | root cause + fix across _v76e51-lineage dev dirs | local only | BLOCKED on x3r0 traceback text/zip (correction routed: run() catches, unit not deleted) |
+| builder | Base-purity control (research stop absorbed, premise corrected — r0 divergence = NOISE_ON salt, not refactor evidence): _v77e6_alloff vs opp_v63 + band + _v76e51 mirror, 60/leg, pooled read, decision rule pre-stated | verdict amendment or confirmation on tape | local only | running |
 | builder | orizon_probe worker (Opus): point-blank gunner battery per thread-7 spec + family plant signature — the missing battery-class instrument for the Eir 6 gate | bots/orizon_probe | local only | running |
 | builder | wave_ghost vs-field profile: opp_v67 vs kladde/ouro/band/flotte/cad probes, 60 games each (all maps × 2 seeds × both seats), md5s verified pre-run | tape rows + slot case | local only | LANDED 18:15 (see note + results.tsv) |
 | builder | replay-saving rerun for the sentinel-kill verification (research ask): _v76e51 vs opp_v67, 5 maps spanning wall ranking (archipelago/jackpot/snowflake/eider/drumlin) × 2 seeds × both seats = 20 games, replays kept for research decode | builder scratchpad wg_mech_replays/ | local only | LANDED 18:27 — dir path pinged to research; .json sidecars polluted (parse tail), replays verified clean |
@@ -381,3 +383,33 @@ leg; (3) the graft question — x3r0's v8 + I/J/H merge may become the team
 line; our specs are the contribution either way; (4) F root fix +
 kladde_probe_v2 (kladde settled?) from the standing queue; (5) traceback
 fix when x3r0's data arrives.
+
+### 2026-08-07 18:46 (from `date`) — builder arm: BASE-PURITY VERDICT — base clean, K refutation CONFIRMED, mechanism pinned
+
+Per the pre-stated decision rule (tape row 18:46): _v77e6_alloff matches
+baseline on both guards (v63 60.0/55.0, band 91.7/88.3) and mirrors
+_v76e51 at 58.3 (≈50, no verdict) — **the refactor is exonerated**, the
+base-defect hypothesis is refuted (its r0-divergence evidence was the
+NOISE_ON salt, see 18:4x exchange), and the Eir 6 piece verdicts STAND,
+now with a proper control cell. Clean attribution: konly vs alloff on the
+SAME base = v63 45/60, band 55/91.7 — piece K alone costs ~15/~35 pts.
+
+MECHANISM PINNED (builder code audit + research decode jointly): K's trunk
+half never fires (depth gate 8 > gunner dmg 7 → one-reload qualify window,
+behind TI floor and core-first ordering), so K-as-built is ONLY un-gated
+core-heal-from-r0 — which consumes builder turns mid-fight (27-31% of
+builder turns in fast band losses). Dropping the SLOT_UNDER siege gate was
+the specific error. The actual sporks trunk mechanism was never tested.
+
+K REDESIGN SPEC (next cycle lead): keep the income budget + per-builder
+shares (measured safe), RESTORE the siege gate on core heal (under-attack
+only, budget-capped — the starvation fix K was for), replace the trunk
+trigger with proactive heal-any-damage-when-budget-allows (sporks-style),
+keep H standdown. Pop-floor isolation leg still owed. Sporks ammo stays
+refuted as-ported.
+
+Session totals at this checkpoint: 2,258 arena games today (480+300+20+
+660+240+120+18+180+240 incl. the failed-extraction 480), 6 instruments, 5
+research deliverables absorbed, 2 two-arm adjudications both resolved with
+evidence (identity: genuine fork; purity: base clean). Two-arm protocol
+paying for itself in both directions in one session.
