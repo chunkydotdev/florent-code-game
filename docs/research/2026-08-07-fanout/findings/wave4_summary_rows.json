@@ -1,0 +1,117 @@
+{
+ "summary_rows": [
+  {
+   "bucket": "CtrlAltDefeat",
+   "n_games": 2,
+   "n_plants": 35,
+   "n_coredmg": 9,
+   "in_threat_pct": "34.3%",
+   "coredmg_in_threat_pct": "100.0%",
+   "coredmg_in_threat_n": 9,
+   "coredmg_total_n": 9,
+   "not_aligned": 10,
+   "fp_range": [
+    1,
+    425
+   ]
+  },
+  {
+   "bucket": "Lunds Stallions",
+   "n_games": 9,
+   "n_plants": 72,
+   "n_coredmg": 13,
+   "in_threat_pct": "30.6%",
+   "coredmg_in_threat_pct": "100.0%",
+   "coredmg_in_threat_n": 13,
+   "coredmg_total_n": 13,
+   "not_aligned": 30,
+   "fp_range": [
+    1,
+    514
+   ]
+  },
+  {
+   "bucket": "Orizon",
+   "n_games": 7,
+   "n_plants": 60,
+   "n_coredmg": 27,
+   "in_threat_pct": "66.7%",
+   "coredmg_in_threat_pct": "100.0%",
+   "coredmg_in_threat_n": 27,
+   "coredmg_total_n": 27,
+   "not_aligned": 15,
+   "fp_range": [
+    1,
+    613
+   ]
+  },
+  {
+   "bucket": "Ouroboros",
+   "n_games": 13,
+   "n_plants": 268,
+   "n_coredmg": 15,
+   "in_threat_pct": "16.4%",
+   "coredmg_in_threat_pct": "100.0%",
+   "coredmg_in_threat_n": 15,
+   "coredmg_total_n": 15,
+   "not_aligned": 174,
+   "fp_range": [
+    1,
+    530
+   ]
+  },
+  {
+   "bucket": "Powerpuff Girls",
+   "n_games": 4,
+   "n_plants": 65,
+   "n_coredmg": 8,
+   "in_threat_pct": "21.5%",
+   "coredmg_in_threat_pct": "100.0%",
+   "coredmg_in_threat_n": 8,
+   "coredmg_total_n": 8,
+   "not_aligned": 33,
+   "fp_range": [
+    1,
+    485
+   ]
+  },
+  {
+   "bucket": "kladde-adj (kladde=besieger)",
+   "n_games": 4,
+   "n_plants": 103,
+   "n_coredmg": 63,
+   "in_threat_pct": "67.0%",
+   "coredmg_in_threat_pct": "100.0%",
+   "coredmg_in_threat_n": 63,
+   "coredmg_total_n": 63,
+   "not_aligned": 20,
+   "fp_range": [
+    5,
+    452
+   ]
+  },
+  {
+   "bucket": "kladde-adj (kladde=victim)",
+   "n_games": 4,
+   "n_plants": 118,
+   "n_coredmg": 40,
+   "in_threat_pct": "62.7%",
+   "coredmg_in_threat_pct": "100.0%",
+   "coredmg_in_threat_n": 40,
+   "coredmg_total_n": 40,
+   "not_aligned": 36,
+   "fp_range": [
+    1,
+    313
+   ]
+  }
+ ],
+ "coverage_n": 175,
+ "coverage_d": 175,
+ "misses": [],
+ "nw_over_41": [],
+ "fp_over_41": [],
+ "non_aligned_n": 318,
+ "total_plants": 721,
+ "aligned_out_of_range_n": 128
+}
