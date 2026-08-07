@@ -34,11 +34,20 @@ stay the builder's.
 | builder | S14 EIR 6C ("_v79e6c", md5 8aaa91e6...) gate stage 1: K'' = trunk arm budgeted + core heal exempt (verbatim 5.1 siege semantics) + floor ON + ammo OFF; ast-verified IDENTICAL to the measured coreexempt cell (comments-only diff). 6 legs × 60 vs v63/band/kladde/ouro/cad/orizon, baselines the _v76e51 rows 55.0/88.3/80.0/80.0/50.0/58.3 (v63+band get fresh independent legs despite the ablation reads); stage 2 slot bar (480 vs opp_v67, 51.9) only if stage 1 clean | tape rows + gate verdict | local only | LANDED 19:41 — MIXED: v63 61.7 (+6.7, koff worry RESOLVED), band 93.3 (+5.0), orizon VALUE LEG 75.0 vs 58.3 (+16.7 DECISIVE), cad 50 flat; BUT kladde 63.3 vs 80.0 (−16.7 marginal-overlap) and ouro 68.3 vs 80.0 (−11.7) — both grind-class. Suspect: trunk arm now owns the full ledger and heals into sentinel barrages (the v54 "healing can't outpace kladde" arithmetic). 0 crashes/360. Extension legs to n=120 on kladde+ouro BEFORE verdict |
 | builder | S14 Eir 6c extension legs: _v79e6c vs kladde_probe + ouroboros_probe, 60 more each (seeds 3-4) → pooled n=120 per instrument, halves the intervals on the two soft guards; verdict rule pre-stated: pooled kladde ≥ ~72 AND pooled ouro ≥ ~72 (baseline-overlap restored) → guards pass, fire stage 2 slot bar; pooled clearly below → grind-class regression CONFIRMED, decide trade-vs-fix (candidate fix: no-trunk-heal-into-live-gun-ray, piece D/J logic reuse) with class weights on the table | pooled tape row + stage-2 go/no-go | local only | LANDED 19:44 — STAGE 1 PASS: extensions high (kladde 71.7, ouro 76.7) + STALE-BASELINE CATCH: kladde baseline re-leg pools baseline to 74.2/120 (cited 80.0/60 was noise-high; v64 long-run 75.0/240). Matched n=120: kladde 67.5 vs 74.2 = soft −7 OVERLAPPING (accepted trade, eider/hive heal-into-barrage geography documented, fix parked); ouro 72.5 = exactly v64 long-run. Class-weighted verdict: PASS (orizon +16.7 / v63 +6.7 / band +5.0 dominate). Two tape rows 19:44 |
 | builder | S14 EIR 6C stage 2 SLOT BAR — REBASED to v68 "chokewall" (x3r0, uploaded 19:12 MID-GATE, auto-activated; the 51.9-vs-v67 bar is history): _v79e6c vs opp_v68 (md5 04811b4a..., zip extracted clean), all maps × 16 seeds × both seats = 480; bar per team norm = beat the slot holder locally (interval clears 50) | tape row + slot case for Magnus/x3r0 | local only | LANDED 19:52 — BAR NOT MET: 46.0 [41.6,50.5]/480, point below parity (v67 bar was 51.9). Tiebreak grind again (240 ti / 239 core). NO SHIP; v68 stays; 6c = KEEP as lineage head. Next: v68 first-read → graft conversation or 6d cycle w/ parked kladde fix. Tape row _v79e6c-slotbar |
+| builder | S14 6D RACE (Magnus directive ~20:05: run 2+ directions in parallel, keep the best) — Branch A worker (Opus) on _v79e6c base → bots/_v80e6d_kfix: trunk arm skips heal targets covered by a live enemy turret ray (piece D/J live-gun scan reuse; repairs the kladde −7 trade); smoke-verify SKIP fires on eider/hive vs kladde_probe AND trunk still heals uncovered targets | bots/_v80e6d_kfix | local only | LANDED 20:20 (md5 90371968...) — KF in, ONE mechanism: piece D ray walk extracted as shared _ray_covers, PROVEN behavior-preserving (2304-scenario differential vs 6c = 0 diffs, 13/13 unit tests). Eider: 333-389 skips WITH 284-315 heals alongside (ray filter, not stand-down; 192/315 heals fired with a gun visible but ray off-tile). Hive 0 skips = CORRECT (kladde hive pressure is 2-dmg builder pecks, heals win there — the KF-addressable deficit is EIDER-shaped). 0 tracebacks, probes removed, toggle-off ablation ran clean. Spec correction absorbed: _cb_over_heal is friendly-presence not ray (D was the only ray logic). Red flags ranked: vision asymmetry (sentinel r²32 > builder r²20 → partial suppression), watch NON-kladde legs (skip fires on any gun-covered economy). NEW TOOLING TRAP: get_cpu_time_elapsed() returns 0 locally (engine stub) — CPU self-guards untestable under fcode run, use perf_counter (_live_gun_covers measured 13.7µs median) |
+| builder | S14 6D RACE Branch B — post-r300 tiebreak contest (_v80e6d_tb): v68's uncontested endgame territory (code-read: static post-r300, wins tiebreak #1/#2, never dumps #3 fat); lever FIXED by replay half (20:0x): DELIVERY CONTINUITY — every v68 r1000 game resolves at tiebreak #1 delivered-Ti (9/11 grinds lost on it, 5/11 delivery-freeze defect, no post-r150 second plan) → piece T: chain-connectivity repair (verify facing, FREE destroy+rebuild misfaced heads — the F root fix earns its place), post-r300 harvester sustain floor, trunk-repair priority toward chain pieces. KEEP RULE pre-stated: both branches same fresh 6-leg gate, winner by class-weighted profile; both-clean + orthogonal → compose, re-gate composite vs both parents (must beat better parent); survivor → 480 slot bar vs opp_v68 | bots/_v80e6d_tb | local only | LANDED 20:31 — piece T in, 3 sub-mechanisms probe-proven: T.1 30 destroy+rebuilds w/ before/after facing (delivery-verdict design: destroy ONLY conveyors proven to deliver nothing — live/orphan/stray + 2-step-lookahead chooser, never touches chains under construction); T.2 post-r300 harvester rebuild 5 fires in eider long game; T.3 12/22 multi-candidate reorders. 0 own tracebacks, probes removed, clean re-runs (2 anecdotal core-kill WINS vs opp_v68). 8 red flags ranked (top: opp_v68 is nondeterministic — x3r0's fork carries OUR G noise — pooled reads only; T.1 3-cycle blind spot self-limiting; ENDGAME_RND standdown may be wrong vs delivered-tiebreak, one-line flip if gate disagrees). Pre-existing lineage note: _v79e6c threw caught GameError in _nav (unit survives, one lost round) — cleanup candidate parked |
+| builder | S14 6D RACE GATE (fairness amendment pre-stated BEFORE results: 6-leg-only would structurally favor A since B's value case is v68-tiebreak-shaped) — EACH branch: 6 × 60 guard legs (v63/band/kladde/ouro/cad/orizon, parent-6c + baseline comparisons) + 120-game opp_v68 VALUE leg (parent 46.0 [41.6,50.5]/480) = 480/branch, 960 total, matched noise, md5s pre-printed. Winner = value case met + guards clean; both met → composite (mechanisms orthogonal by code path) re-gates before the 480 slot bar | race verdict + keep decision | local only | LANDED 20:41 — INCONCLUSIVE-CLEAN (tape row _v80e6d-race): both branches guard-clean, NEITHER value case met at n (A kladde 70.0 direction-right vs baseline 74.2; B v68 45.8 = parent 46.0 flat — pooled rate blunt for the tiebreak thesis, replay-split test queued). KEEP both as dev heads, no composite, no ship. CRASH DIAGNOSIS: arena counts = CAUGHT diagnostics, ALL from ONE ancestral bug (_move pave is_tile_empty(pave_prev) after launcher-throw teleport; v68 inherits it; NO new-code frames — branches exonerated); = x3r0's kite_proxy traceback w/ high confidence → BLOCKED hunt RESOLVED |
+| builder | S14 PIECE N / EIR 6E (_v81e6e, md5 31a10eb2...): one-line vision guard on the pave block (is_in_vision(pp) before is_tile_empty) — kills the whole ancestral crash class, strictly recovers lost dispatch actions; single-site diff on 6c, ast-verified. Compact gate: opp_v68 120 (primary read = OUR crash count → 0, guard = win rate ≥ parent 46.0) + v63 60 + band 60 | crash-class fix + new lineage base for composites/graft | local only | LANDED 20:52 — KEEP: crash class DEAD (0/120 ours vs v68's 22/120 to the same inherited bug — asymmetry now measured), v68 leg 55.0 [46.1,63.6]/120 vs parent 46.0/480 (overlapping, mechanism-direct), guards flat (v63 56.7, band 88.3), 0 crashes all legs. _v81e6e = new lineage base. Tape row 20:52 |
+| builder | S14 EIR 6E SLOT BAR: _v81e6e vs opp_v68, all maps × 16 seeds × both seats = 480; bar = beat the holder (interval clears 50); prior reads: parent 46.0/480, 6e compact 55.0/120 | tape row + slot/ship case for Magnus/x3r0 | local only | LANDED 21:09 — PARITY 51.0 [46.6,55.5]/480, bar NOT met (compact 55.0 regressed to mean; pooled 51.8/600 still straddles). State change real: 46.0→51.0 from piece N alone, crashes 0 vs 128 asymmetric. v68 stays per norm; 6e = lineage base; C1 home ring = next cycle. Tape row _v81e6e-slotbar |
 | builder | S14 pop-floor isolation battery: _v77e6_flooronly (floor ON, K/ammo OFF, noise-on verified) vs opp_v63 + band_probe + orizon_probe, 60/leg = 180 sequential legs; comparison targets alloff v63 60.0 / band 91.7, baseline orizon 58.3; verdict rule: clean/positive → floor rides along with K' in Eir 6b's gate | tape row + floor verdict | local only | LANDED 19:16 — CLEAN/POSITIVE: v63 60.0 (= alloff), band 88.3 (= baseline), orizon 71.7 vs baseline 58.3 (+13.4 directional on the family instrument; konly was 46.7 there — floor and K moved OPPOSITE). 0 crashes/180. VERDICT: floor rides along — POP_FLOOR_ON=True in Eir 6b, worker amended 19:16 |
 | builder | Eir 6b worker (Opus): K' redesign on _v77e6 base per the 18:46 spec — siege-gated budget-capped core heal, proactive trunk trigger, ammo stays OFF, floor toggle kept | bots/_v78e6b | local only | SUPERSEDED by the S14 row above (fired 19:14 by the successor session) |
 | builder | Pop-floor isolation battery (the owed leg): _v77e6_flooronly (floor ON, K+ammo OFF) vs opp_v63 + band_probe + orizon_probe, 60/leg = 180 | floor verdict: ride-along or park | local only | QUEUED, NOT FIRED (variant dir ready + toggle-verified; successor runs it) |
 | research | S14 Eir 6b production-read PRE-REGISTRATION: per-piece checks written BEFORE the worker lands/ships (K' siege gate honored, K' trunk trigger fires, floor sustains population + refills zero-pop windows, restored-lineage sanity I/J/H, dump-cap r1000 carry, post-ship constants re-extraction, floor-vs-K' attribution split) — inline write-up, no agents, no downloads | docs/research/eir6b-production-read-spec-2026-08-07.md | local only | LANDED 19:20; REV 2 ~19:38 retargeted to Eir 6c per builder ask (check 1 → null check core≡5.1, check 2 → trunk repair as live novel piece, koff-v63 contingency recorded); grid numbers verified on tape by research pre-revision |
-| research | S14 v68 "chokewall" FIRST READ (builder ASK per ship-announcement rule, jumps queue): identity vs x3r0 v8/wave_ghost lineages incl. the announced I/J/H graft question; mechanism (name suggests barrier chokepoints); loss modes; v67-decode carryover. Code-read bots/opp_v68 (md5 04811b4a VERIFIED) + archived replays: 3 ladder (f62d1798 Askar, c2b2b94c Team 48, fad5dc1c I Stone — all VERIFIED in archive w/ meta) + the 19:26-28 four-UR self-probe burst (IDs via meta.json sweep). Two read-only Opus subagents: (A) code identity/mechanism, (B) replay decode | docs/research/v68-chokewall-first-read-2026-08-07.md | local only — replays already archived, no downloads | SPAWNED 19:58 |
+| research | S14 v68 "chokewall" FIRST READ (builder ASK per ship-announcement rule, jumps queue): identity vs x3r0 v8/wave_ghost lineages incl. the announced I/J/H graft question; mechanism (name suggests barrier chokepoints); loss modes; v67-decode carryover. Code-read bots/opp_v68 (md5 04811b4a VERIFIED) + archived replays: 3 ladder (f62d1798 Askar, c2b2b94c Team 48, fad5dc1c I Stone — all VERIFIED in archive w/ meta) + the 19:26-28 four-UR self-probe burst (IDs via meta.json sweep). Two read-only Opus subagents: (A) code identity/mechanism, (B) replay decode | docs/research/v68-chokewall-first-read-2026-08-07.md | local only — replays already archived, no downloads | SPAWNED 19:58; PRIORITY RAISED ~20:02 (tiebreak lead question, agents steered mid-flight); LANDED COMPLETE ~20:25 — code half: NOT the graft (I/J/H absent), NO endgame switch after r300, chokewall +0-detour on entire pool; replay half (35/35 v68-era games): ALL 11 r1000 games resolved at tiebreak step 1 DELIVERED-Ti (stored-Ti step unreachable — dump plays wasted vs v68), delivery-freeze defect in 5/11 (frozen r59-350, network never re-attaches to core), median win r97 / no plan B past ~r150, small-map collapse 4-9 on ≤256 tiles, snipe carryover production-confirmed, production barriers = old v67 screen code not the choke planner, TLE delta = platform variance (guard byte-identical), wave-ghost gunner-baseline definition footnote flagged |
+| research | S14 axis-split RE-RUN (queue item 3, unblocked by archiver fix): cardinal vs diagonal core-pair win split per our version over the grown our-corpus, method + script per docs/research/axis-split-our-games-2026-08-07.md — one read-only subagent, no downloads | docs/research/axis-split-our-games-2026-08-07.md (updated in place, v2 section) | local only | LANDED ~20:50 — corpus 22 matches/110 games (more than est.). VERDICT: NOT CLAIMABLE, direction-inconsistent — v1's "all diagonal games lost" was a 6-game artifact (diagonal now 31.1%); v67 leans sporks-direction (card 57.9 vs diag 22.6, 3.5pt CI overlap) but v68 REVERSES the sign (26.7 vs 40.0, overlapping). No axis input to Thor-layer map choices. Follow-ups flagged: rated/unrated re-cut (strong-opponent UR burst likely confounds v68's cut), v65/v66 eras STILL absent from archive (backfill gap) |
+| research | S14 Kings College Munich CLASSIFICATION (builder-ranked FIRST — 2-0 vs us today, 9-1 game margin across BOTH lineages, most Elo-relevant unclassified team): mechanism/class, why it beats fork AND our line, counters, probe-coverage verdict. Corpus: b3656fe7 (0-5 vs our v67) + 9a32a859 (1-4 vs our v68) + 3 archived non-us matches (484095e3, 4a36151e, 9e41db1a) = 25 games, 15 confound-free. One read-only Opus agent | docs/research/kings-college-classification-2026-08-07.md | local only — all archived, no downloads | LANDED ~21:05 — KCM = CAD-FAMILY LAUNCHER-FERRY (opening table matches CAD v107 exactly under map rotation; high confidence), cad_probe COVERS them (+2 calibration adds: 4th-ammo=24 pin, diagonal max-range sentinel finisher). All 9 KCM wins are vs US (0-5 vs each strong team; their Elo rides on beating us). Kill mechanism measured: counter-gunner plinks our forward sentinels dead in median 15 rnds; our ONE win = home sentinel ring (C1: re-aim what we already build). Their core = softest on the board (orizon-class point-blank beat them 5-0 twice). FLAG: CAD ferry-loop attribution may be inverted (defender recycling attacker's raiders) — premortem addendum added, re-check queued as candidate |
+| research | S14 Clankers classification (builder-ranked second): 3f024b23 now fully archived (5 games + meta) — the ONLY Clankers match in the archive, all 5 games vs our v68 = full our-version confound, verdict will be PROVISIONAL. One read-only Opus agent | docs/research/clankers-classification-2026-08-07.md | local only | SPAWNED ~20:55 (was QUEUED 20:44) |
+| research | S14 ferry-loop ATTRIBUTION RE-CHECK (parked-run-in-idle-window per builder; window = now): launcher-owner attribution on the premortem's long-loop games (a7aa49ec/b10cce55/cdbd5b52) — is the repeat-throw launcher CAD's or the defender's? Resolves the KCM read's inversion flag. One read-only Sonnet agent | addendum resolution in docs/research/cad-ferry-premortem-2026-08-07.md | local only | SPAWNED ~21:10 |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
@@ -707,3 +716,179 @@ s14 header, protocol amendments, coordination/tape). The protocol doc's
 "commit 43eb673" reference for the --mine fix predated the actual
 commit (phantom hash, research wrote it in good faith describing my
 fix) — corrected to the real hash in the same commit.
+
+### 2026-08-07 19:57 (from `date`) — builder arm: watch-state wake check — Powerpuff ROLLBACK v26→v18 (opp_watcher)
+
+First catch for the new read-the-wake-files rule: opp_watcher flagged
+Powerpuff Girls v26 → v18 (rollback, CAD-style). Effect: their v26-era
+rows and any census-era Powerpuff characterization are now suspect;
+class coverage via flotte_probe (strangle/chip class) is unaffected as
+an instrument, but wild-fidelity for Powerpuff specifically is unknown
+under v18. No action owed now — logged for the next cycle that touches
+the strangle class. Elo meanwhile: v68 1580@277 #26 (−9 on one match,
+below wake threshold, normal variance). Research's two v68 agents
+mid-flight on the tiebreak-led read; builds holding.
+
+### 2026-08-07 20:03 (from `date`) — builder arm: v68 code-read absorbed; routed nav check ANSWERED (we route around barriers)
+
+Research's v68 code half landed: NOT the graft (I/J/H absent at
+file:line), NO endgame switch (static post-r300; tiebreak-#1/#2 engine
+via r300 labor surge + never-dump, tiebreak-#3 fat unspent —
+post-r300 H-class levers UNCONTESTED = the 6d anchor), chokewall
+namesake near-dead on the current pool (fires archipelago+saga only,
++0-round detours), snipe carries over → our v67 measurements apply.
+
+ROUTED CHECK answered on my surface (relayed with file:line): nav
+routes AROUND enemy barriers — _bfs_direction :3581-3634 blocks every
+visible barrier both teams; no blocked→attack logic exists; BARRIER
+sits at attack-priority 7/8 (last-resort adjacent fire only). The
+30-Ti peck bait does not exist for us; residual exposure ≈ nil.
+Out-of-vision barriers = re-route on first contact (detour, not peck).
+
+HOLDING for the replay half (tiebreak trajectories) before drafting
+the graft brief for Magnus + the 6d spec. Graft question status
+sharpened by headline 1: x3r0's announced I/J/H graft has NOT happened
+in v68 — our specs remain the outstanding contribution, and 6c's
+pieces (trunk repair, floor) plus post-r300 tiebreak discipline are
+additive on top.
+
+### 2026-08-07 20:09 (from `date`) — builder arm: 6D RACE FIRED (2 branches, Magnus's experiment directive); v68 read complete → graft brief
+
+Magnus directive ~20:05: run 2+ directions in parallel, keep the best —
+formalized as the 6D RACE (registry rows + pre-stated keep rule: same
+fresh 6-leg gate, class-weighted winner; both-clean+orthogonal →
+composite re-gated vs both parents; survivor → 480 slot bar vs v68).
+Branch A _v80e6d_kfix (kladde fix: trunk arm skips ray-covered targets,
+D/J scan reuse) and Branch B _v80e6d_tb (delivery continuity: F-root
+facing verification w/ free destroy+rebuild, post-r300 harvester
+sustain, chain-first trunk priority) BOTH SPAWNED 20:08 on the 6c base.
+Branch B's lever was fixed by research's replay half: ALL v68 r1000
+games resolve at tiebreak #1 delivered-Ti; v68 lost 9/11 grinds on it,
+5/11 via a permanent delivery-freeze defect; no post-r150 second plan.
+
+GRAFT BRIEF (for Magnus → x3r0, evidence in docs/research/v68-chokewall-
+first-read-2026-08-07.md + our tape): (1) v68 is NOT the graft — I/J/H
+absent at file:line; x3r0's announced plan is still open and our specs
+remain the contribution. (2) The complementarity is now production-
+crisp: his line wins fast or not at all (median win r97, 11/13 wins
+pre-r140, no endgame behavior after r300, delivery freezes in 45% of
+long games); our line grinds and holds tiebreaks. A graft = his
+fast-kill opening + our grind/tiebreak endgame. (3) Direction
+recommendation: his snipe overlay is ~300 additive lines outside every
+diff hunk with a self-contained window (r4-30, role 0) — porting IT
+onto OUR 6c/6d head is now the cheaper graft direction vs re-adding 5+
+pieces to his older base; propose as experiment branch C once the A/B
+race resolves, x3r0 reviews. (4) His two open defects (delivery freeze,
+small-map defensive sentinel) are fixable on his side with our F-root
+insight — same disease our linker had ("occupied-implies-correct").
+
+Research read absorbed in full incl. reconciliations (production
+barriers = old plug code, choke planner never observed; TLE delta =
+platform variance; wave-ghost gunner-rate footnote). Defect candidates
+(delivery-freeze code look at opp_v68, small-map gate) parked on the
+queue behind the race.
+
+### 2026-08-07 20:36 (from `date`) — builder arm: wake check — v68 L4 STREAK (1561@280 #26); older-5 archived; race gate running
+
+match_watcher fired STREAK L4: v68 latest L 1-4 vs Clankers, rating
+1589→1561 over 4 matches. v68 window now NET NEGATIVE: 1579@273 →
+1561@280 (−18/7 matches) after opening +10. No verdict off 7-9 matches
+— but it's context for the graft brief and the race: the slot holder
+is not running away with it while our 6d branches gate. Archiver: the
+older 5 gap matches all landed on the regular cycle (fix fully
+confirmed); our-match archive now 13 and growing — research's
+axis-split re-run (queue item 3) is UNBLOCKED. Race gate (960 games)
+running, ETA ~20:50.
+
+### 2026-08-07 20:43 (from `date`) — builder arm: RACE VERDICT (inconclusive-clean) + THE CRASH THREAD: ancestral pave bug found, x3r0 traceback hunt RESOLVED, piece N gating
+
+RACE (tape row _v80e6d-race): both 6d branches guard-clean vs parent,
+neither value case met at n. KEEP both as dev heads; no composite, no
+ship. Branch B's tiebreak thesis is NOT refuted — pooled win rate is
+the wrong instrument for it; the proper test (replay-saved
+delivered-tiebreak split, tb vs 6c control vs opp_v68) is the queued
+next measurement.
+
+THE REAL FIND of the race: the "crash" counts were caught-diagnostic
+prints miscounted by arena (it splits stderr on Traceback blocks; our
+run() catch prints once per unit), and every single traceback — both
+sides, all legs — is ONE ancestral bug: the pave block calls
+is_tile_empty(pave_prev) assuming pp is adjacent "by construction",
+which a between-turns LAUNCHER THROW violates → GameError aborts the
+whole dispatch for that unit that round (and every round it recurs).
+Both lineages build launchers; v68 inherits the bug (12-23 affected
+units/120 games live on the ladder — graft-brief material for x3r0,
+we can hand him the one-line fix). HIGH-CONFIDENCE match to x3r0's
+Eir 5.1 kite_proxy/hive stress traceback — the BLOCKED hunt is
+RESOLVED without his data. PIECE N (_v81e6e, md5 31a10eb2): one-line
+is_in_vision guard, skips the pave never the move, strictly recovers
+lost actions. Compact gate running (v68 120 primary read = crash
+count → 0; v63/band guards).
+
+PROCESS DELTAS (race verdict):
+- Arena's crash counter conflates caught-and-printed diagnostics with
+  fatal crashes — for any lineage bot that prints tracebacks from a
+  catch, read crash counts as "units that hit ≥1 exception", and
+  diff them against the parent's leg before treating them as new.
+  (Candidate arena.py improvement: distinguish blocks followed by
+  engine unit-deletion messages, if the engine emits any.)
+- The race's fairness amendment (adding value legs per branch) was
+  right but insufficient: value cases whose mechanism lives in a
+  GAME-SHAPE subset (tiebreak games) need their instrument designed
+  BEFORE the race fires, not diagnosed after. Pre-commit the split
+  measurement next time.
+- 41 "crashes" on a clean-guard branch nearly triggered a defect
+  hunt inside the new code; the 5-minute foreground-traceback sample
+  (attribute FIRST) prevented it. Rule: attribute crash counts by
+  traceback before any code-level suspicion.
+
+### 2026-08-07 21:02 (from `date`) — builder arm: KCM read absorbed — C1 home-ring = leading next-cycle candidate; ferry re-check PARKED
+
+Research's KCM classification absorbed (CAD-family launcher-ferry,
+cad_probe covers them; 9-1 mechanism = their counter-gunner kills our
+forward sentinel in median 15 rounds while we under-shoot 3-20x;
+predictor: ≥3 their turrets at d²≤36 of our core = 9/9 losses). Their
+~1585 Elo is substantially farmed FROM US — the cheap counter C1 (home
+sentinel ring, re-aiming what we already build; our only win did it:
+one r19 gunner kill and they never re-established) flips both cells.
+QUEUE: C1 = leading candidate for the cycle AFTER the 6e slot bar
+resolves, on whatever base wins. C2 (orizon-recipe battery on their
+soft core) = the play-the-players pairing if C1 gates clean.
+
+GRAFT-BRIEF NUANCE from this read: x3r0's snipe overlay is exactly
+what the KCM/CAD counter-gunner farms — a graft inherits that
+exposure; our home-defense identity is what beats KCM. The merge
+needs C1-style home cover for the snipe, not just the snipe.
+
+Ferry-loop owner re-attribution (research's own correction flag on
+the premortem): PARKED — no verdict depends on it tonight; run it in
+any idle window, no collision risk from my side.
+
+### 2026-08-07 21:10 (from `date`) — builder arm: 6E SLOT BAR = PARITY (51.0/480, bar not met); session-14 arc closed to a decision point; CAD v115 + Lunds v43 bumps
+
+Slot bar landed (tape row _v81e6e-slotbar): 51.0 [46.6,55.5]/480 —
+parity, not a clear-50 flip case. v68 stays per team norm. But the
+board state for the Magnus/x3r0 slot-and-graft conversation is now
+fully measured: (a) our line moved 46.0 → 51.0 vs the holder on a
+ONE-LINE bug fix (piece N), crashes 0-vs-128 asymmetric; (b) the same
+one-liner is a gift for his line; (c) the matchup is a delivered-
+tiebreak grind (248/480) where his engine has a measured freeze
+defect and no post-r300 plan; (d) his ladder window is net-negative
+(1561@283 #28, L4 streak within it); (e) KCM farms his snipe class
+and our home identity is the measured cheap counter — the graft
+needs both parents. Next builds queued in order: C1 home ring (on
+6e base), tiebreak-split instrument for Branch B's thesis, archive
+backfill. Lineage state: _v81e6e = base (6c+N); 6d branches KEEP-dev
+pending their instruments.
+
+PROCESS DELTA (6e slot bar): the compact 120-leg's 55.0 was mean-
+regressed optimism by 480 — pre-registered full-bar discipline
+prevented a premature ship claim; keep the two-stage (compact →
+full) pattern but never quote the compact number as the case.
+
+WAKE ITEMS: CAD v107→v115 AND Lunds v42→v43 (opp_watcher) — cad_probe
+fidelity + the v107-era opening constants + the KCM-CAD calibration
+adds are all SUSPECT until re-frozen; the whole CAD family moved
+tonight (KCM label 7→1, Powerpuff v26→v18, CAD v115). Probe
+maintenance list grows; nothing tonight depended on cad legs beyond
+guard duty. v68 ladder: 1561@283 #28.

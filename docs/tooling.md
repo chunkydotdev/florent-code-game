@@ -18,6 +18,28 @@ version-specific — a 3.13 venv gets the `cp313` wheel.
 Always run local matches with `--tle 10`. Without it `fcode run` enforces **no** CPU limit,
 so you can develop a bot that dies on the ladder.
 
+**Platform timestamps are UTC = local − 2h** (`fcode match list`/`match info` dates).
+Verified 2026-08-07 19:10 by the research arm: the 15:58–15:59 platform rows are the
+incoming-UR triple that completed ~17:58 local (session-13 coordination note). Convert
+before comparing platform match times to coordination.md notes, tape rows, or `date`
+output — a "two-hour-stale" match list is usually current.
+
+**Replay-decode gotchas** (v68 read, 2026-08-07, research arm — the decode
+scripts died with that session; these are the two things a rebuild must know):
+
+- The engine **re-emits `placeEntity` with the same entity id when a gunner
+  rotates**. Naive placeEntity counting inflates gunner counts 2-5x — dedupe all
+  turret counts by entity id and report rotations separately. (The v68 walker
+  cross-validated against `tools/replay_census.py -v` with exact agreement on one
+  game, so census appears safe, but any fresh parser must dedupe.)
+- **Chain-wiredness is the delivery-continuity metric**: fraction of live
+  conveyors actually wired through to the core, plus cumulative delivered-Ti
+  per round (`core_deliv * 10 == titaniumCollected` holds and is a good parser
+  sanity check). This metric is what exposed v68's delivery-freeze defect
+  (e.g. 95 conveyors alive, 1/95 wired, delivery frozen from r59) — see
+  docs/research/v68-chokewall-first-read-2026-08-07.md for the reference
+  numbers.
+
 ## Generating maps offline
 
 `fcode starter` leaves `maps/` empty and tells you to log in and run `fcode maps sync` — the
@@ -139,3 +161,14 @@ and produces different replays on identical (map, seed, tle) — measured md5-di
 determinism reference for any harness. Use `bots/opp_v63` (no random import, measured
 byte-identical across repeat runs) as the deterministic opponent for replay-equivalence
 checks.
+
+## get_cpu_time_elapsed() is a stub under local `fcode run` (measured 2026-08-07, session 14)
+
+The local engine returns **0** from `ct.get_cpu_time_elapsed()` on every call —
+CPU metering exists only on the platform. Consequences: (1) any bot's CPU
+self-guard (e.g. a `CPU_BUDGET_US` bail-out) is dead code locally and cannot be
+smoke-tested; (2) local TLE behavior differences between versions are NOT
+evidence of code changes (confirmed the v67-vs-v68 TLE delta was platform
+variance, not a fix). To measure a routine's real cost locally, wrap it in
+`time.perf_counter()` inside the bot temporarily (example: the piece-KF
+live-gun scan measured median 13.7 µs / p95 18.2 µs per call this way).

@@ -131,6 +131,14 @@ early-game behavior (deterministic opponents re-seed on OUR version).
   research pulled directly (2s-paced) and spec'd the `--mine` fix.
 - Tooling footnote: zsh `nomatch` inside a background watcher loop burned a
   silent 30 minutes — poll with `ls | grep -q`, never bare globs.
+- Tooling footnote 2 (research, session 14): zsh does NOT word-split unquoted
+  variables — a watcher's `for id in $ids` (ids from a variable) looped ONCE
+  over the whole string and its grep never matched, producing a false
+  "nothing archived" warning 75 minutes later while every watched file was
+  present. In watcher scripts: iterate literal lists, or use `${=ids}` /
+  arrays. Detection false-negatives look identical to the watched event not
+  happening — verify a watcher's first positive detection manually before
+  trusting its silence.
 - Determinism assumed (research, session 13): the K-diag divergence read
   treated same-seed arena pairs as deterministic and called their r0
   spawn divergence a base-refactor defect; piece G's UNSEEDED spawn salt
