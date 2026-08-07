@@ -452,3 +452,20 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   comparability, v2 legs get added when frozen. CAVEAT recorded: the original
   probe's source replay is unrecoverable, so v56-vs-v62 attribution rests on a
   rating-matched proxy — version-tag v2's source ids at freeze.
+
+- **Thread 11 (seat TTFD) verdicts:** the opening-reorder hypothesis survives ONLY
+  on heart — seat-B first-delivery lags +26 rounds median, present directionally
+  for the field too, driven by CHAIN-COMPLETION time (harvester->core wiring), so
+  the play is a heart-specific pre-wire of the chain path (backlog, map-specific).
+  Atoll's 1-round gap is our own fixed build order (absent in the field) — not an
+  engine tax. Faster first delivery does not predict winning (4W/8L); the
+  atoll/lighthouse seat handicap must sit in combat/turn-order resolution — the
+  piece-D arc again, fifth convergence. Contested-tile interference ruled out
+  (first contact is seat-symmetric). Snowflake placed as combat-resolution-
+  concentrated, delivery data not collected (flagged in completeness).
+  SEPARATE BUG (real, v59 heart 2618b9b4 g1): our own conveyor chain routed a
+  titanium stack INTO THE OPPONENT'S CORE (resource-move id 131), crediting their
+  tiebreak #1 — a silent own-goal on the deciding tiebreak. ADDED TO PIECE F's
+  SCREEN CHECKLIST: decode one heart leg from the F screen and confirm zero
+  enemy-core terminations under the new trail-facing rule (F's pave gate aims
+  chains at OUR core by construction, but the claim gets verified, not assumed).
