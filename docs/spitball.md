@@ -469,3 +469,15 @@ Verdicts here are screen-level, not battery-level; the tape (results.tsv) has th
   SCREEN CHECKLIST: decode one heart leg from the F screen and confirm zero
   enemy-core terminations under the new trail-facing rule (F's pave gate aims
   chains at OUR core by construction, but the claim gets verified, not assumed).
+
+- **Wave-4 plant cross-check verdicts:** HUNT_BAND_DSQ=41 VINDICATED — 0/175
+  core-damaging enemy plants exceed dsq 41 (max observed exactly 41), and
+  _v72e2:1543-1546 already measures nearest-footprint distance (the earlier
+  "NW-corner artifact" relay was wrong at the code level — corrected by the
+  research session itself). Outer-shell audit DROPPED in priority (archipelago/
+  moonrise unexercised, noted). Kept for synthesis: 61.9% of enemy turret builds
+  in our losses could never threaten the core (reactive-deletion support);
+  sentinels convert to core damage 4.1x more per build than gunners →
+  counterbattery should prioritize sentinels (piece-J input). Ablation grid
+  results on the measuring tape (results.tsv): D flat on local instruments,
+  F owns eider+atoll+meander gains AND the hive collapse, heart is C's.
