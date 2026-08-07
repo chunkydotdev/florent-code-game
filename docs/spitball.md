@@ -989,6 +989,27 @@ now landed (sporks decode, family cross-check, this). Headlines:
 - New unclassified opponent surfaced: **Viktor5776 v1** (we beat them 4-1 in
   v65's second match) — queue a 1-match classification pass next cycle.
 
+## v65 first production read (~17:00) — research arm
+
+→ docs/research/v65-production-read-2026-08-07.md (Memtrace 3-2 W + Ouroboros
+0-5 L decoded; v65 window 4-2). **J VERIFIED** (counterbattery 1/7/11/4/0 per
+game vs baseline exactly-1). **I verified in 9/10 games, ONE BUG**: nordkap
+chase_battery config — 166 rotations/50 oscillations, 1,660 Ti burned in a
+tiebreak loss, starved H's bank to 243. **H half-alive**: core arm fired a
+single 14,634-Ti dump at exactly r960 (g2 W); builder harvester-spam arm
+NEVER fired in three r1000 games with builders alive (972 heals in g4 —
+heal-priority starvation = piece K's case, measured); design gap: the dump
+zeroes tiebreak #3. **Ouroboros leak survives v65** (0-5 seat B, J
+outnumbered 2-3 cb vs 20-40-turret swarms) — confirms Stage-3/denial/armor
+staging, not more counterbattery; contrast TWO r69 core kills vs Memtrace
+(thin-house battery teams lose the race to our siege). **Denial staleness
+confirmed twice**: fresh meander first-gunner r8@(8,6) matches neither prior
+row — exact-tile constants expire with OUR ships; re-extract post-ship or
+deny regions. **Lunds seat-B cell moved for the first time ever: 0-5 → 2-3**
+(their v42 — confounded with their ship). INFRA: archiver misses our own
+matches (global list, 8/cycle) — spec'd a --mine priority pass to the
+builder.
+
 ## Main-session decisions on the sporks/denial batch (~16:05, via board)
 
 - **J-WIDENING accepted as PIECE K, NOT retrofitted** — Eir 5's screens are
@@ -1084,3 +1105,21 @@ now landed (sporks decode, family cross-check, this). Headlines:
   designed prey). My match watcher surfaces completions; flag any OGE result
   under v65 the moment it lands.
 - Viktor5776 (new, 4-1'd under v65) queued next cycle.
+
+## Main-session actions on the v65 production read (~16:55, via board)
+
+- PIECE J: VERIFIED IN PRODUCTION, accepted (counterbattery 1/7/11/4/0 vs
+  baseline exactly-1; two r69 core kills vs the thin-house battery class;
+  outnumbered vs picket swarms exactly as the Thor staging predicts).
+- EIR 5.1 HOTFIX COMMISSIONED (bots/_v76e51): I's chase_battery oscillation
+  (rotation latch + no-return window) and H's dump cap (convert at most
+  consumable ammo — turrets x rounds x shot-cost x1.5 — the rest stays banked
+  for tiebreak #3). Builder-half non-firing is piece K's case, measured in
+  production (972 heal actions claiming every slot), untouched in the hotfix.
+- LOKI PIVOT ACCEPTED: exact-tile constants expire with OUR ships (meander
+  r8@(8,6) matches neither prior era) - Loki denies REGIONS/stable geometry,
+  or auto-re-extracts post-ship. Design doctrine, not a blocker.
+- ARCHIVER FIXED (43eb673): --mine pass first each cycle + dedupe; takes
+  effect on its next 30-min cycle without re-arm.
+- v65 window 4-2; Lunds seat-B cell moved for the FIRST time (0-5 lifetime ->
+  2-3, their-v42 confound noted); Ouroboros seat lock intact.
