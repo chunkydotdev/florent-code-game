@@ -1,6 +1,60 @@
-# Handover — updated mid-session 11 (2026-08-07, after the v55 ship and the team slot event)
+# Handover — session 11 close-of-coverage state (2026-08-07 ~11:00)
 
-## Session 11 headline state (prepend; original session-11-start notes below still valid)
+## FIRST ACTIONS for the next session
+1. Re-arm THREE monitors (they died with session 11): Elo logger 5-min
+   (appending, thresholded ±25/new-submission), match watcher 2-min (4+
+   streaks), opponent-version watcher 10-min (nemesis list; ids in the
+   operating notes' monitor bullet and in git history of the scratchpad
+   scripts — regenerate from the descriptions there, ~10 min).
+2. **LIVE: v61 "Eir 2" (`bots/_v72e2`)**, reactivated after Eir 3's
+   criteria-based revert. Read its rolling trajectory (baseline 1533@226;
+   it ran 3W-1L/+5 in its first window). Ladder ~1533/#28.
+3. Check `docs/spitball.md` for ideas Magnus's parallel research session may
+   have appended.
+
+## Where session 11 left the board
+- **Ship chain today:** v54 → v55 (medic+surge; kladde 71.2→81.9, opp_v50
+  66.5, clean) → v59 "Eir" (v79-absorption: escort disengage, footprint band
+  41 + corner floor, ammo latch/magazine, ore step-off, counterbattery
+  bleeding-waiver; beats x3r0's v79 AND v82 at 59.6 [55.1,63.9] each) →
+  v61 "Eir 2" (+eco-siege hunt mode) → v62 "Eir 3" (seat-B frontier
+  deferral) → REVERTED to Eir 2 same-day: pre-committed criteria (Lunds
+  seat-B re-leg still 0-5, Ouroboros = baseline). `_v73e3` kept as dev.
+- **Open problem #1 — the seat-B resolution-order tax** (scratchpad
+  seatB_diagnosis.md is gone with the session; key numbers preserved in
+  game-model.md + tape): seat A's actions resolve first → 19 vs 38 builder
+  deaths by r80 → 9/9 corpus tiebreaks to seat A. Frontier deferral was
+  production-flat; the tax needs a different counter (spitball has ideas).
+- **Open problem #2 — Ouroboros**: the biggest quantified per-team leak
+  (share .07 vs E~.40 in the portfolio, all-seat-B confounded). Pattern
+  undecoded (fast core kills @265/323, NOT grind). Audit next.
+- **Production portfolio table** (first ever, 6 nemeses × 15 maps): in
+  docs/opponents.md with seat annotations. Lunds is ABOVE expectation now
+  (.47 vs .40) — the morning nemesis story is closed.
+- **Instruments:** band/flotte probes current; kladde_probe STALE (they
+  shipped v62 ~1811); cad_probe (md5 6d0e955f96de1f0d11f93db573ade458)
+  current again after CAD's rollback to v107; opp_v50/opp_v56(v79)/
+  opp_v58(v82) local; teammate submissions downloadable via
+  `fcode submission download <n>`.
+- **Model discoveries (all in game-model.md):** Elo is game-share
+  Δ=32×(games/5−E); cost scale is ONE team-wide multiplier; seed
+  amplification (per-map rows ≈ 2 distinct games); unrated legs flip seats;
+  strike timing exceeds decoded samples.
+- **Process:** naming convention (Norse; Eir=heal line, Heimdall=insertion
+  guard reserved, Loki=trickster reserved, Thor=offense reserved);
+  docs/spitball.md idea board + parallel-session guardrails; unrated
+  portfolio sweep ritual (3 challenges × 5 maps per team; do BOTH seats =
+  6 challenges for a full read); ship-time reversion criteria (worked
+  today — write them on the tape at every ship).
+- **Dev branches parked:** `_v73e3` (seat-B deferral), `_v70cg` (Heimdall
+  pieces: body-block interceptor, siege respawn + converter reserve
+  agreement — cad-class value unproven), `_v70sm`/`_v70st` (ore denial,
+  blocked on own-farm survival), `_v70th`/`_v70cm` lineage heads.
+- **Queue suggestion:** Ouroboros decode → kladde probe refresh (their v62)
+  → seat-B counter round 2 (spitball) → v82's archipelago hole → backlog
+  (launcher exile, multi-scout via freed slot 9, in-match classifier).
+
+## Session-11 morning notes (superseded where they conflict with the above)
 
 - **v55 "v70-medic-surge" (`bots/_v70cm`) shipped clean** (kladde 71.2→81.9, opp_v50
   59.2→66.5, guards flat, 0 crashes/1920) — then **x3r0 activated v56 ("v79-lsq-eco…")
@@ -135,8 +189,11 @@ the flip-candidates list, and every game dragged to a winnable tiebreak pays a f
   (four trace-proven-but-game-flat variants in one night taught this).
 - **RETRO FIX 3 — threshold the monitors:** the appending Elo logger runs silent;
   wake the session only on new submission, |Δrating| > 25, or a 4+ streak. Re-arm
-  BOTH monitors at session start (Elo/submission logger 5-min; match watcher 2-min);
-  exactly one appending logger at a time.
+  THREE monitors at session start (Elo/submission logger 5-min; match watcher 2-min;
+  opponent-version watcher 10-min over the nemesis list — Lunds/CAD/Ouroboros/kladde/
+  Flotte/Powerpuff, wakes on version bumps, which invalidate A/B baselines and probe
+  fidelity for that team); exactly one appending logger at a time. (Watcher added
+  session 11 on Magnus's ask; opponent versions read from match-list JSON.)
 - **Ship policy:** local-battery-clean ships (Magnus, session 10); bar = improvement
   on a primary instrument, no clear regressions, guards green, 0 crashes; judgment
   trades (like v54's) get Magnus's call when present. Baseline row at every
@@ -183,3 +240,10 @@ the flip-candidates list, and every game dragged to a winnable tiebreak pays a f
 - Probes can be HARDER than their wild exemplars (kladde_probe's 3-sentinel strike vs
   wild kladde's 2) — a flat probe result doesn't kill a wild-pattern fix; weigh both.
 - fcode run syntax: map path is POSITIONAL (`fcode run A B maps/x.map26 --seed N`).
+- **Unrated legs FLIP SEATS between challenges** (measured session 11: same team+maps,
+  opposite team indices hours apart). Before/after leg comparisons are seat-confounded
+  unless the seat matches — check teamAId in the match JSON, and treat cross-seat legs
+  as different games, not regressions.
+- A nemesis class's strike timing can be far wider than its decoded sample (Lunds:
+  audited r150-900, then landed r69) — fixed round floors gate against the sample,
+  not the class.
