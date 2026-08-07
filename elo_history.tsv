@@ -180,3 +180,29 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T13:23	1560	238	v63	rank #26
 2026-08-07T13:28	1550	239	v63	rank #28
 2026-08-07T13:30	1550	239	v64	EIR 4 SHIPPED on Magnus's run-with-recommendations directive: v64 = _v74e4 (A+B siege solvency, C early medic, D duel discipline ON via mechanism-override, F pave trail hive-gated, G noise ON, E B8 off). Battery 0 crashes/1752: v89 bar 57.9 [53.5,62.3]/480, v79 61.7, kladde 75.0 (hive 0->16, eider 0->7), flotte 86.7, band 90.0, ouro-probe 72.5 (paired 67.2->81.2), opp_v50 trio 16/48->48/48. Baseline 1550 @ 239, rank 28. NOTE for all future local A/B: NOISE_ON ships true - paired-seed determinism is gone by design; use pooled Wilson reads or flip the toggle in local copies
+2026-08-07T13:33	1550	239	v64	rank #28
+2026-08-07T13:38	1534	240	v64	rank #29
+2026-08-07T13:43	1534	240	v64	rank #29
+2026-08-07T13:47	1532	243	v64	Eir 4 first window: rated 0-2 (2-3 Team48 seat A close; 0-5 Lunds-v37 seat B = the pre-existing portfolio cell vs a fresh rollback version). Sweep leg 1 vs Ouroboros drew seat B: 0-5 wild (probe gentleness confirmed; leg 2 fired for the seat flip). NOTE: ladder produced a seat-A Ouroboros game at 10:55Z under v63 - WON 3-2 - first counterexample to the 13/13 seat lock. L4 streak = 2xv63 + 2xv64; no rollback case, ~20-match check governs
+2026-08-07T13:48	1532	241	v64	rank #29
+2026-08-07T13:54	1532	241	v64	rank #29
+2026-08-07T13:59	1535	242	v64	rank #29
+2026-08-07T14:04	1535	242	v64	rank #29
+2026-08-07T14:09	1529	243	v64	rank #29
+2026-08-07T14:14	1529	243	v64	rank #29
+2026-08-07T14:19	1531	244	v64	rank #29
+2026-08-07T14:24	1531	244	v64	rank #29
+2026-08-07T14:29	1545	245	v64	rank #29
+2026-08-07T14:34	1545	245	v64	rank #29
+2026-08-07T14:39	1530	246	v64	rank #29
+2026-08-07T14:44	1530	246	v64	rank #29
+2026-08-07T14:49	1546	247	v64	rank #28
+2026-08-07T14:54	1546	247	v64	rank #28
+2026-08-07T14:59	1550	248	v64	rank #28
+2026-08-07T15:04	1550	248	v64	rank #28
+2026-08-07T15:09	1545	249	v64	rank #28
+2026-08-07T15:14	1545	249	v64	rank #28
+2026-08-07T15:19	1548	250	v64	rank #28
+2026-08-07T15:24	1548	250	v64	rank #28
+2026-08-07T15:29	1555	251	v64	rank #28
+2026-08-07T15:34	1555	251	v64	rank #28
