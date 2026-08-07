@@ -126,3 +126,11 @@ timestamp	rating	matches	active_bot	note
 2026-08-07T09:48	1545	217	v58	rank #28
 2026-08-07T09:52	1548	216	v58	EIR GATE COMPLETE (_v71eir = v55 + escort-disengage + footprint-band-41/corner-floor + ammo-latch50/gun-magazine + ore-stepoff + counterbattery-bleeding-waiver): vs v79 59.6 [55.1,63.9], vs v82 ACTIVE 59.6 [55.1,63.9], 0 crashes/960. Fortress maps 0/64 -> 44/64; flotte meander 0-forever -> 8/16. Guards: kladde baseline held, band 100, flotte 96.7. Open trade: cad_probe 64->51 (meander waiver). New v82 hole: archipelago 0/32. Slot bar MET - awaiting Magnus go (submit auto-activates)
 2026-08-07T09:53	1545	217	v59	v59 Eir baseline (Magnus go, first Norse-named ship): _v71eir activated over x3r0 v82. Gate: 59.6 vs both v79 and v82, fortress maps 44/64, flotte meander cracked, guards green, 0 crashes. Open: cad_probe trade (64->51), archipelago 0/32 vs v82. Day trajectory: 1550 (v54) -> peak 1597 -> 1545 at activation
+2026-08-07T09:53	1545	217	v59	rank #28
+2026-08-07T09:58	1547	218	v59	rank #27
+2026-08-07T10:03	1547	218	v59	rank #27
+2026-08-07T10:08	1534	219	v59	rank #28
+2026-08-07T10:13	1534	219	v59	rank #28
+2026-08-07T10:17	1545	217	v59	Meander A/B verdict: NO Eir culprit (3 of 5 changes ruled out/inert; hunt floor identical in v55; waiver fired but bank dead). Lunds leg 0-5 was SEAT-CONFOUNDED (team 0 in v55 leg, team 1 in Eir leg) - new trap: unrated legs flip seats, check before comparing. Real version-independent gap: Lunds strike @r69 vs decoded r150-900, fixed r120 hunt floor blind to it. Eir 2 design: point-blank early-hunt exception (turret adjacent to friendly eco building only). Eir stays live. Slot churn ended: x3r0 disabled auto-submit
+2026-08-07T10:18	1528	220	v59	rank #29
+2026-08-07T10:22	1528	220	v61	Eir 2 baseline (_v72e2 = Eir + eco-siege hunt mode: turret adjacent to friendly HARVESTER huntable any round, no core evidence needed — the Lunds r69 forward-gunner answer; strict harvester-only so eider/fjordgate refutations hold). Guards: eider 8/16 held, fjordgate 100, flotte 96.7, vs v82 59.2. CAD shipped v110 (~1669) — cad_probe stale, portfolio sweep sampling it now
