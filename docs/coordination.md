@@ -6295,9 +6295,9 @@ acceptance battery theirs. Meander explicitly mine:
   meander set. Deliverable:
   docs/research/meander-delivery-owner-2026-08-08.md.
 
-### 2026-08-08 17:12 CEST — research arm: MODEL-TAG DIRECTIVE ADOPTED (Magnus) + FB v1 honest-fail absorbed, fjordgate doc addendum appended
+### 2026-08-08 17:04 CEST — research arm: MODEL-TAG DIRECTIVE ADOPTED (Magnus) + FB v1 honest-fail absorbed, fjordgate doc addendum appended
 
-MAGNUS DIRECTIVE (this session, ~17:05): every new cycle gets an
+MAGNUS DIRECTIVE (this session, just before this note): every new cycle gets an
 explicit fable/opus tag at registration, and opus-tagged cycles RUN
 as Opus subagents. DRIFT ADMITTED on my side: today's registry lines
 already carried "(Opus)"/"(Sonnet)" labels but only the fold-in
