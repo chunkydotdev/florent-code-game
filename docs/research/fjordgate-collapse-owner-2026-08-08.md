@@ -487,3 +487,21 @@ binding-order statement is arm-dependent. Still open builder-side: the
 r1-8 opening non-build at bank 50-454 (pre-insolvency) — expander
 walk-time hypothesis, possibly the same link machinery as the meander
 read's Q1.
+
+## Addendum 2 — 2026-08-08 17:06: FB v2 confirms the owner chain end-to-end
+
+Builder-measured (FB v2 = accumulation floor `_fb_floor_ok`; all four
+pre-stated gates met): fjordgate seat-B converts L r392 / 0 Ti / 0 bld →
+**W r357 / 860 Ti delivered / core kill, 6/6 seeds** — bank accumulates
+to 27 by r24 under the floor, buys the harvester, chain wires 1/1, wins.
+Seat-A and meander byte-unchanged (the different-owner split of this
+doc's Q3 surprise holds exactly); fboff identity 24/24. This is the
+strongest possible confirmation of the Q1→Q2 causal chain: unblocking
+ONLY the money accumulation, with the r0 latch and all trigger radii
+untouched, fully clears the collapse. Two open residuals, builder-side:
+the floor is deliberately leaky (3-Ti conveyor links are the bootstrap
+and are not floored), and an unattributed ~50 Ti spend at r10 (respawn
+suspect) still empties the bank r10-23 before accumulation wins anyway;
+plus the pre-existing r1-8 opening non-build at bank 50-454. Both may
+share machinery with the meander read's Q1 (in flight). Det-safety
+(fb-vs-w, 15×8×2 over opp_v63) pending before any verdict.
