@@ -70,26 +70,45 @@ def main() -> None:
     except Exception:
         pass  # submission list fetch failed; keep old max
 
-    # Slot-swap rule (Magnus+x3r0 2026-08-08, revised same day): a live bot at
-    # <=0 net Elo over the rolling LAST 5 MATCHES is free to swap. Wake on the
-    # condition crossing in either direction; the rating five matches back is
-    # read from our own tape (latest row at matches <= now-5).
+    # Slot-swap rule (Magnus+x3r0 2026-08-08, REVISED 16:48 adoption): the
+    # rolling last-5 window (1) prices only the CURRENT holder's matches —
+    # tape rows are filtered by the live version tag, so a holder change
+    # resets the window naturally — and (2) arms only after the holder's 8th
+    # match. <=0 while armed frees the slot (never forces a swap). Wake on
+    # crossings both directions, and on arming directly into the free state.
     swappable = st.get("swappable")
     try:
         base = None
+        holder_start = None
+        tag = f"v{ver}"
         with open(os.path.abspath(HIST)) as f:
             for row in f:
                 parts = row.rstrip("\n").split("\t")
-                if len(parts) >= 3 and parts[2].isdigit() and int(parts[2]) <= matches - 5:
-                    base = float(parts[1])
-        if base is not None:
+                if len(parts) >= 4 and parts[2].isdigit() and parts[3] == tag:
+                    m = int(parts[2])
+                    if holder_start is None or m < holder_start:
+                        holder_start = m
+                    if m <= matches - 5:
+                        base = float(parts[1])
+        armed = holder_start is not None and matches - holder_start >= 8
+        if not armed:
+            swappable = None  # window not armed; no wake, no stale flag
+        elif base is not None:
             net5 = rating - base
             now_swappable = net5 <= 0
-            if swappable is not None and now_swappable != swappable:
+            if swappable is None and now_swappable:
+                print(
+                    f"SWAP RULE: window ARMED into SLOT FREE — v{ver} rolling "
+                    f"last-5 net {round(net5):+d} ({round(base)} -> "
+                    f"{round(rating)}), {matches} matches "
+                    f"(holder since @{holder_start})"
+                )
+            elif swappable is not None and now_swappable != swappable:
                 state_txt = "SLOT FREE (swap rule)" if now_swappable else "slot held again"
                 print(
                     f"SWAP RULE: {state_txt} — v{ver} rolling last-5 net "
-                    f"{round(net5):+d} ({round(base)} -> {round(rating)}), {matches} matches"
+                    f"{round(net5):+d} ({round(base)} -> {round(rating)}), "
+                    f"{matches} matches (holder since @{holder_start})"
                 )
             swappable = now_swappable
     except Exception:

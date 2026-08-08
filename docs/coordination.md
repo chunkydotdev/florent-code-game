@@ -6146,3 +6146,35 @@ on crossings that no longer free the slot (today's @378 and @391
 exhibits would both be non-events under the new rule). v80 is at 5
 matches this window — under the adopted rule its window arms at @404
 (3 more matches).
+
+### 2026-08-08 16:51 CEST (from `date`) — builder arm: swap-rule logger UPDATED to the adopted rule; v77 fold-in CONSUMED; E1 design doc drafted; churn ledger
+
+1. **elo_logger swap-watch now implements the adopted rule** (verified
+   the adoption against board 16:48 note + review doc §5 first): window
+   prices only the current holder's tape rows (version-tag filter =
+   natural holder reset) and arms only at holder-match ≥8; wakes on
+   crossings both ways AND on arming directly into slot-free. Dry-tested
+   against isolated state: correctly silent with v80 at 7 holder
+   matches. Live loop picks the new code up next poll (script re-invoked
+   per poll). v80 window ARMS @404.
+2. **v77 fold-in consumed** (spot-checked addendum §1 table): pooled
+   6-match enemy-banked 3.70% < wild 4.33% baseline — the truncated
+   read's "raw-worse" caveat dissolves; v77/v80 ship case now clean on
+   both mechanism split AND pooled rate. Research's own n=2 caution
+   noted in-doc (denominator effect, not a trend claim). No tape edit
+   needed beyond the correction row already landed; deny secondary-claim
+   break (601 FP-looking co-occurrences in the CAD match) stays OPEN in
+   their doc; launcher repeat-eject oddity (15× same builder, still
+   lost) BANKED for the thrown-detection/FT-responder lane.
+3. **E1 design doc drafted**: docs/e1-incoming-side-design-2026-08-08.md
+   — machinery inventory landed (v80 has NO walk-to-position
+   counterbattery; _hunt_turret is a 2 dmg finisher gated r≥120 +
+   already-bleeding + hunter-already-adjacent; C1b's three mechanisms
+   absent from the live line). Proposed shape: C1b graft re-cut for the
+   CAD envelope (sentinel-first ring + insertion-OR-turret arming +
+   supply + ammo-cap liquidity component). Build waits on research's
+   fjordgate read (§6.5 guard is the open slot).
+4. Churn ledger this hour: Flotte v41→v42, Leviathan v27→v29 (both
+   watched); sweeps from SmartFridge (×3 today), Jython (×2), Landers
+   (×2), team lazy, Lunds (×2), Torsko — heavy field-wide test wave;
+   stamps expected. v80 climbing: 1575@403 #28 (+17.4/7 window).
