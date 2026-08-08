@@ -7705,3 +7705,67 @@ ladder on one seat only. KCM is the best probe target on the board
 (launcher r1→destroy r6, 85/85 zero exceptions) with two things a probe
 must TABLE not derive (launcher tile does not mirror; v8 launcher
 on/off is not a pure map key).
+
+### 2026-08-08 22:09 CEST (from `date`) — builder arm: **WRAP ADDENDUM** (everything after the 21:49 retro; Magnus's wrap-call, first run of the new builder.md wrap checklist)
+
+The 21:49 retro covered 19:40–21:45. The last 25 minutes produced more than the
+four hours before them, all from Magnus asking three questions in a row. Adding
+them rather than leaving the retro stale.
+
+## THE THREE QUESTIONS AND WHAT THEY COST US TO HAVE NOT ASKED
+
+1. **"Don't you see elo change when you fetch games?"** — `eloDeltaA/B` sits on
+   every match row next to `teamAVersion`. I had been differencing ratings
+   across match-count gaps in elo_history.tsv, which averages within the gap AND
+   cannot attribute a match to a version. **That is exactly what forced three
+   tape corrections tonight** (v77, v79, my own v82 baseline). Summing eloDelta
+   keyed on version reproduces every hand-corrected figure with no correction
+   cycle. Row `exact-elo-delta-method`; rule in tooling.md.
+
+2. **"Can you inspect the data we pull so we don't miss data points that should
+   be pulled, not calculated?"** — `fcode match info --json` returns a `games[]`
+   array with **mapName · mapSeed · winnerSide · winCondition · turnsPlayed**
+   per game. **Every game-level fact this project has been decoding replay
+   binaries to derive.** Tonight's four silent parser traps (proto3 TEAM_A=0;
+   map identity needing tile content; int32 two's-complement deltas; rotate()
+   re-emitting placeEntity) were partly paid for data on a free endpoint —
+   `mapName` alone makes the map-identity collision moot. Row
+   `api-game-level-census`; tool `tools/game_census.py`.
+
+3. **MrSmith, via Magnus: "why don't we watch everyone's games and analyse
+   them?"** — Right instinct, no scraping tool needed: `match list` WITHOUT
+   `--mine` returns every team's matches and `match info` works on matches we
+   are not in. **This produced the session's most important number.** Row
+   `ladder-wide-census-THE-GAP`; tool `tools/ladder_census.py`.
+
+## THE FINDING THAT REORDERS THE PROJECT
+
+**Top tier (≥1750, 10 teams, 335 games): 97% of games end by CORE KILL at a
+median of 232 turns.** sporks/Lorem Ipsum/not adgato/Flotte are all at **100%**.
+**Us: 72% core-kill, median win 332 / loss 413, and 28% of games reach r1000.**
+
+**Nobody at the top grinds.** Our one measured edge — the titanium tiebreak at
+58% — operates in a game the strong field never enters, because they have
+resolved the match by turn ~250. It is how we beat Askar City 5-0 and why we
+are 0-for-17 against Lunds. **Our 44% core-kill rate is the ceiling metric and
+nobody has ever optimised it.** Every plank tonight was economy or defence.
+
+## ADDITIONAL PROCESS DELTAS (extending the 21:49 list)
+
+8. **I answered "what should we measure?" for four hours without auditing what
+   the API already returns.** Three of Magnus's questions each surfaced a free
+   instrument in under a minute. **CHANGE: audit the data surface BEFORE
+   building a measurement programme on top of it** — dump every field of every
+   endpoint once, and keep the dump.
+9. **A small sample gave me a confident wrong reading THREE times tonight**
+   (hive fix "decisive" at 4 seeds = 1 distinct game; rescope-vs-wholesale
+   decisive at n=120, null at n=600; "we are killed mid-game" at n=200,
+   reversed at n=500). Each was caught only by re-running larger.
+   **CHANGE: no directional claim from a sample that has not been re-run at
+   least 3x larger.** This is the experimental face of `leg-power-19pct`.
+10. **I verified two research claims and both were true-but-mis-scoped** (their
+    "0/19 on saga/snowflake/drumlin/archipelago, both seats, all versions" is
+    KCM-only — globally we are 62/154; their seat-linked aim gap has no global
+    counterpart at 48.7% vs 47.6% over 500 games). **CHANGE: a claim's SCOPE is
+    part of the claim.** Neither was wrong; both would have sent someone
+    chasing a global problem that does not exist.
