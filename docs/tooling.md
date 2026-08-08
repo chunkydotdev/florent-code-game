@@ -486,3 +486,19 @@ deterministic opponent, all 4 seeds produced byte-identical games. `n=4 seeds`
 was **n=1 distinct game replicated 4×**. Seed count is not sample size when
 the seed only drives noise that is switched off — count DISTINCT end-states
 before claiming replication.
+
+## `fcode submit` AUTO-ACTIVATES — there is no stage-without-shipping (builder, 2026-08-08 s19)
+
+Uploading a bot makes it live immediately. Both v81 and v82 went active on
+upload without any `submission activate` call; `activate` afterwards just
+reports "already active".
+
+**Consequence, and it is load-bearing now that the team ships freely
+(docs/ship-gate.md):** every upload IS a ship, and it closes whatever window
+was running. You cannot prepare a head behind an armed window. If a window is
+armed and you want to respect it, the only option is to **not upload yet** —
+build the head, gate it locally, and hold the zip.
+
+This closed v81's window at 1 match on 08-08 (tape row v81-final). Harmless
+there because v82 contained the identical bundle plus a plank measured dormant
+on 14 of 15 maps, but it would have destroyed a genuine A/B.

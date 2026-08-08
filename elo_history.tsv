@@ -546,3 +546,4 @@ timestamp	rating	matches	active_bot	note
 2026-08-08T19:48	1568	420	v81	rank #30
 2026-08-08T19:52	1559	421	v81	match 1 STAMP-VERIFIED v81 (02aa5ed0, created 19:42): L 1-4 vs Powerpuff Girls v45; window -9.4/1, arms at 8
 2026-08-08T19:53	1559	421	v81	rank #30
+2026-08-08T19:56	1559	421	v82	SHIP baseline — Eir 12 (= Eir 11 bundle + PIECE HV hive fix); v81 FINAL 1 match -9.4 (window closed by submit AUTO-ACTIVATION, not a choice)
