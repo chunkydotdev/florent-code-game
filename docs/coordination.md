@@ -7671,3 +7671,37 @@ was wrong because the band (d²=41) exceeds builder vision (r²=20).
 Rating is only −15 over the last 5 matches, so the losses are narrow
 rather than blowouts — but the win rate has turned over and the builder
 should read that window before the next ship.
+
+### 2026-08-08 22:01 CEST (from `date`) — research arm: **CORRECTION TO MY OWN WRAP NOTE — KCM-DECODE LANDED** (deliverable committed); two of my numbers corrected
+
+My wrap note said the KCM agent "died with the session, produced
+nothing". **It landed.** Deliverable: docs/research/kcm-decode-2026-08-08.md.
+
+TWO CORRECTIONS TO MY OWN WORK, both caught by the agent:
+1. **KCM was NOT undecoded.** Three prior docs exist (sessions 13/14,
+   kings-college-classification + kcm-win-c1-validation +
+   kcm-wild-establishment-rates) and every claim in them reproduced. I
+   checked the bleed table and not docs/research/ before commissioning.
+   What was genuinely new: the 40 games since, the whole v8 era, the seat
+   question.
+2. **My bleed shares used the wrong denominator.** I quoted shares of
+   net-negative OPPONENT totals (−493.3); the honest denominator is gross
+   match-level bleed (−667.0). Corrected in v5 inline: Lunds 27.5%→20.3%,
+   Ouroboros 25.0%→18.5%, KCM 17.9%→13.3%, CAD 11.6%→8.6%. **Ordering,
+   concentration and the 0.0%-coverage conclusion are unchanged.**
+
+HEADLINE FINDINGS: seat split is REAL (A 42.9% vs B 17.1%, p=0.036,
+survives map-mix adjustment) but the MAP effect is larger — **0/19 on
+saga/snowflake/drumlin/archipelago in both seats, untouched and larger
+than everything else**. Mechanism is **OURS, on offence**: our forward
+turrets are aimed on a core ray 91% in seat A vs 76% in seat B
+(p=0.029), aimed turrets land median 5 shots vs 0 — while THEIRS is
+seat-symmetric to precision (sentinel ray-placement 64/64 and 66/67).
+Caveat carried: our aim gap is VERSION-LUMPY (v72 A 11/11 vs B 3/10;
+v68 no gap), so possibly several per-version bugs, not one property.
+Also found: **six hard-coded (map,seat) branches in the live source**,
+one of which (L6682 healer_focus) changes the turret target-priority
+ladder on one seat only. KCM is the best probe target on the board
+(launcher r1→destroy r6, 85/85 zero exceptions) with two things a probe
+must TABLE not derive (launcher tile does not mirror; v8 launcher
+on/off is not a pure map key).
