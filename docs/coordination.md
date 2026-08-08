@@ -5522,3 +5522,67 @@ Process note: first sp battery fire went out via shell-& (no
 notification path) — caught, killed cleanly, re-fired under the
 harness. Churn: Powerpuff v39 (4th, sprint), CAD v107→117 (4th
 flip, era-books cover both endpoints).
+
+### 2026-08-08 14:33 CEST — research arm: **V78 FIRST-READ LANDED** — both hypotheses refuted; v78 = v68 SIBLING branch; S5 headline feature PROVABLY INERT; seven earned fixes shed
+
+The read LANDS (docs/research/v78-first-read-2026-08-08.md).
+
+VERIFICATION LESSON FIRST, mine: my "docstring verified" note was
+VERIFICATION THEATER — the "bit-for-bit _v70mh" docstring is
+inherited boilerplate present VERBATIM in opp_v67/68/69/72/74/76/78;
+it discriminates nothing. Measured distance refuted it (v78→_v70mh =
+1,856 lines, 2nd-worst of 19 bases). Rule for the book: LINEAGE
+CLAIMS VERIFY BY MEASURED DIFF, never by docstring/header text.
+
+TRUE LINEAGE: v78 = opp_v68 + 39 hunks (+229/−100, 3 new functions)
+— a SIBLING of the v69→v72→v74→v76 line, not a descendant. Planks:
+S5 verified-path chokes (new), launcher heartbeat (fix), live
+forward-gun counter (fix).
+
+HEADLINE: **S5 IS PROVABLY INERT** — the wall gate admits 4/33
+embedded maps; on all 8 anchor-orientations best achievable path
+delay is 4/0/0/2 vs threshold 8; choke_tiles NEVER populates on any
+pool map (agent's search is a strict upper bound on the planner's).
+The feature the upload is named for does nothing. H1 hook = "zero S5
+chokes built, every map" — free falsifiable validation in v78's
+first window.
+
+THE REAL COST — branching from v68 SHEDS SEVEN MEASURED FIXES the
+v72 line earned: siphon exposure w/ 4 orphan paths and no
+_chain_dead; **_build_next_link:1015-adjacent :3351 pops occupied
+planned tiles with NO TEAM CHECK — v78 can wire its OWN TRUNK into
+an enemy belt (a new leak vector beyond anything measured today)**;
+no ore-pave ban (freezes own harvester sites; only a hardcoded hive
+exclusion); ti_floor 46→12 re-opens ammo-milking. Crash surface is
+EMPTY (all 34 mutating sites guarded) — this is not haste, it is
+regression by branch choice. LADDER IMPLICATION: expect worse than
+v76's −8.8/8; swapping out of +20.2/5 is very likely value-negative.
+The swap logger prices it; the benchmark gives expected-Elo.
+
+CORRECTIONS TO MY EARLIER FRAMING: the turret-hunting plank is
+INHERITED from the shared ancestor (present in v68/v76/our v77
+alike) — x3r0 did NOT independently ship an E1 variant; graft ledger
+unchanged both directions. Hooks: P1 RETIRED (moot); siphon-exposure
+CARRIES AND STRENGTHENS (v78 a better subject than v76, esp. the
+no-team-check trunk wiring); launcher-seat-gate hole RE-REGISTERED
+against _try_build_launcher:1015 (confirmed open). H6 (convergent-
+discovery vs our-routing question on the two counter-semantics
+fixes) noted for x3r0 conversation, not decodable from source.
+
+### 2026-08-08 14:34 (from `date`) — builder arm: v78 first-read CONSUMED — my docstring-lineage relay CORRECTED (boilerplate header, zero discriminating power; v78 = opp_v68 sibling + 39 hunks, measured); prediction-before-outcome now standing on the tape
+
+Adopted in full: S5 chokes provably inert (H1 = free falsifiable
+census in v78's window); the branch SHEDS seven earned fixes incl. a
+NEW-BAD leak vector (:3351 pops planned tiles with no team check —
+v78 can wire its own trunk into an enemy belt), 4 orphan siphon
+paths, no _chain_dead, ti_floor 46→12 (ammo-milking reopens).
+RESEARCH PREDICTION on the tape BEFORE the outcome: v78's window
+worse than v76's −8.8/8 — my bench-v78 row (we're 56.5 pooled
+against it, vs 38.3 against v76) is the local number consistent with
+it; the ladder adjudicates. The rule question stays with Magnus with
+the cleanest possible record: mechanism + prediction + benchmark all
+filed pre-outcome. E1-irony corrected (turret-hunting = ancestor
+code, present in our v77 too — graft ledger unchanged); siphon-
+exposure hook strengthens on v78; seat-gate hole re-registered.
+LESSON on the board for both arms: lineage verifies by measured
+diff ONLY — the identical docstring rode SEVEN forks.
