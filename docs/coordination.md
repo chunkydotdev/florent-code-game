@@ -7181,3 +7181,57 @@ an explicit warning NOT to extract from the vs-OpenSverige series —
 baking our own behaviour into an instrument is precisely the cad
 failure mode. Caveat carried: v38 is 6 versions behind live v44, so
 a re-freeze off v38 is an improvement, not a validation.
+
+### 2026-08-08 19:29 CEST — research arm: **PROBE AUDIT B (GUARDS) LANDED — kladde reads 63-85 where WILD kladde reads 10%; turret mix NEVER faithful; today's kladde legs are caveated in LEVEL and, for line-of-sight variants, possibly in ORDERING**
+
+Audit B closed (docs/research/probe-fidelity-guards-2026-08-08.md;
+parser 320/320, launch instrument validated 120/120, no BotOutput
+dependency; one method bug caught and fixed mid-run — overlapping
+home/forward turret bands double-counted on small-gap maps and had
+produced a false finding, erased). Neither probe's extraction-source
+match is archived, so neither can be checked against its own source
+games — stated as a limit, not worked around.
+
+BAND: **CLASS-VALID (opening), CLASS-EXTENDED (tail).** The rush
+script is bit-faithful — convert_ammo(30) at r0 100%/100%, exactly
+1 launcher at r1 100%/100%, first turret a sentinel 75/75, ≥2 forward
+turrets by r45 83→88%. The guard mechanism is FULLY EXERCISED. What
+changed: v41 added a fallback economy (no-economy games 50%→20%,
+past-r200 13%→38%). Coverage gap only: our wild games split rush 87%
+(probe well calibrated) vs fallback-economy 70% (UNMODELLED) — and
+our only loss series to them today was in the unmodelled mode.
+Disposition: usable as a guard; caveat = covers rush mode only.
+
+KLADDE: **CLASS-VALID on shape, and yet the guard reading breaks.**
+All 10 shape predicates hold or strengthen; control cohort reproduces
+the docstring exactly (2-turret burst at 80% of game length, 57
+rounds before the core dies) so the method is validated. But:
+1. CLASS-DEFECT, turret composition — EXTRACTION DEFECT, never
+   faithful: the probe is 33% gunner (GUNNER if idx % 3 == 0,
+   sentinel-led); wild kladde is GUNNER-MAJORITY in BOTH cohorts
+   (62% control, 70% recent), including the era we froze from.
+   Gunner (r²13, dmg 7, BLOCKABLE) vs sentinel (r²32, dmg 18,
+   IGNORES OBSTACLES) — so any variant surviving by breaking a
+   firing line was scored against the wrong turret.
+2. ~70-POINT CALIBRATION GAP: probe reads 63.3-85.0; wild kladde
+   reads 10.0% (1-9 over 10 ladder games). Per wild game they kill
+   8.5 of our harvesters, force 398 heal actions, fire 178 shots and
+   convert 1,649 Ti — against probe caps HOME_TURRET_MAX=8,
+   STRIKE_TURRETS=3, AMMO_CEILING=220. The intensity spike is
+   OPPONENT-driven, not our version drift.
+**DO TODAY'S VERDICTS INHERIT A CAVEAT? YES, on every kladde leg.**
+Direction stands (predicates hold; the 21.7-pt spread shows it
+discriminates). Caveated: (a) the ABSOLUTE LEVEL of every kladde
+reading today — _v79e6c 63.3 through e1-bundle-h2h 81.7, including
+the 68.3 → 75.0 → 81.7 sequence that priced E1's supply tax and
+E1b's recovery — none is evidence about a 10% wild matchup;
+_v84g's old "instrument-side" honesty line now has a magnitude,
+~70 points. (b) Harder: any variant whose mechanism is
+LINE-OF-SIGHT-DEPENDENT (barriers, body-blocking, standoff geometry)
+was scored against 67% unblockable sentinel fire where wild is ~65%
+BLOCKABLE gunner fire — that can reverse an ORDERING, not merely a
+level. Re-freeze spec in-doc (from 98e2c1fc + 3de9f5e0, the only
+wild games of this class against our own bot; NOT from v79/v80
+alone). Also: no kladde-vs-us wild game since 08-08 03:06 (our v72,
+six versions ago) — the 10% is the last measured value, not
+necessarily current.
