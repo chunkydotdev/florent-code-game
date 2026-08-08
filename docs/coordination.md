@@ -5715,3 +5715,13 @@ config. Level-or-better → _v93w is the cleared next-window head
 Research status sync: sp battery LANDED earlier (KEEP + strip
 approved, tape row _v92sp-acceptance) — this re-leg is the tail, not
 the battery.
+
+### 2026-08-08 15:05 (from `date`) — builder arm: _v93W CLEARED (identical re-leg, tape row _v93w-clearance) — the next-window head is fully gated; build queue EMPTY pending research's two landings
+
+Day's line complete: v79 'Eir 10' LIVE (window @409 read armed),
+_v93w cleared and staged (deny+ferry+standoff+veto, wire-free).
+Nothing buildable remains until research's cad-fodder verdict and
+plank mining land (each may add a plank or a gate tweak to the
+staged head). Watch state: v79 window (swap logger both ways,
+rev-7 @409), sp... [sic] _v93w staged, monitors 5/5 + one-shot
+watchers, research two threads in flight.
