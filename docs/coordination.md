@@ -2832,3 +2832,39 @@ death — this is THE test), det-vs-hsd identity-dominant elsewhere,
 guard spots flat-or-better. Probe re-freeze order updated per the
 Elo table: OURO FIRST when the window opens (largest bleed class on
 the stalest instrument), then CAD.
+
+### 2026-08-08 09:14 (from `date`) — builder arm: HSE VERDICT (acceptance NOT MET, premise stale — hsd REMAINS candidate); WAKE: CAD ROLLBACK v117→v107 (probe-source era)
+
+HSE (tape row _v85hse-acceptance): the worker's build is exact
+(role_n==2 exemption, identification MEASURED — and the brief's
+preferred runtime link_queue test would have been 100% inert, their
+catch) but archipelago_1_b does NOT flip: the replay is
+BYTE-IDENTICAL to hsd's — the exemption is a genuine no-op on the
+target game. ROOT: the #8 seat-capture premise is an HSC-era
+observation; hsd's sticky tie-break ALREADY mitigated channel ii
+(#8 never seat-resident at hsd). hsd's residual archipelago-b loss
+has an UNIDENTIFIED owner (new decode question, det-single
+priority). hse PARKED (no measured value over hsd + unmeasured
+narrowing risk); **hsd remains the routing candidate**, liability
+line revised on the package. Worker's NOISE_ON finding → tooling.md
+(identity/ablation claims require NOISE_ON=False both sides).
+Future-hardening notes logged (hs_seek_seat lifecycle, exception-
+swallow diagnostics).
+
+WAKE — CAD v117→v107 ROLLBACK (09:14): returns CAD to the
+cad_probe/opening-constants source era. If v107 holds a quiet
+window: cad_probe fidelity RESTORED (no re-freeze needed), the
+map-keyed v107 opening rows become usable again, and the package's
+"thin cad leg" instrument caveat softens. Second probe-source
+rollback today (kladde v78→v65). Ouro re-freeze stays first in the
+queue — its staleness is unaffected. Elo-table note: the CAD −88
+bleed was measured vs v116/v117; vs v107 our historical record was
+materially better — if the rollback holds, the CAD bleed may soften
+without us shipping anything. Watcher re-armed.
+
+PACKAGE STATE after both: hsd is THE candidate; ship triggers
+unchanged — (a) v74 rolling window dips ≤0 (logger watches), or
+(b) Magnus/x3r0 conversation on the case's strength. The hse lane
+is closed; next builder lanes: ouro probe re-freeze when its window
+opens (~2h version-quiet), M1 don't-feed-rebuilds counter, C1c
+(proactive-coverage shaped per the 0033 omission finding).

@@ -241,3 +241,13 @@ produces false "fully blocked" verdicts — v72 L2's "free==0 everywhere"
 secondary trap had 1-10 truly spawnable tiles in every cited round and is
 retired as an artifact (bleed doc §10.4). The 18-spawn lifetime ceiling
 finding survives independently and was strengthened by the retraction.
+
+## NOISE_ON bots are not self-identical run-to-run — pin it OFF for any identity/ablation claim (hse worker, 2026-08-08)
+
+NOISE_ON=True seeds spawn_salt from a live random.Random(), so the same bot
+on the same (map, seed) produces different games across runs (measured: same
+binary vs itself, winners at turn 101 vs 77). Consequence: every toggle-off
+identity check, byte-identity claim, or A/B ablation in the Eir family is
+VOID unless BOTH sides are pinned NOISE_ON=False in scratch copies. The
+canonical bots keep NOISE_ON=True (the ladder wants the salt); the pin
+belongs in the test copies only.
