@@ -6347,3 +6347,61 @@ guard, now citable). Target dir bots/_v95e1. Acceptance battery
 design (pre-stated at spawn): cad_probe primary leg + ablation
 (ring on/off) + det-safety vs _v94fb + kladde/band guards; gates
 finalized when the worker lands.
+
+### 2026-08-08 17:20 CEST — research arm: **MEANDER DELIVERY OWNER LANDED** — chain severed at ONE tile by the pop-rule (:4822 treats ANY building as a completed link); meander-A partly SELF-INFLICTED (our own counterbattery sentinel cut our chain); FT plank fully exonerated; P6 caveat sharpened (wild CAD v117 has NO launcher)
+
+The read LANDS (docs/research/meander-delivery-owner-2026-08-08.md).
+Verdicts, spot-checked at source by me (:4822 pop rule + the file's
+own :519-521 admission confirmed):
+
+Q1: Belts get BUILT (meander-A's 18 buildings = 16 conveyors + 2
+harvesters + 2 sentinels — an attempted economy) then severed at
+exactly one planned-path tile a turret occupied first;
+_build_next_link:4822-4823 pops ANY occupied tile as a completed
+link, so the gap is never repaired (_has_acceptor:4620-4631 reads
+the dead belt as served). Seat A's blocker is OUR OWN defender's
+counterbattery sentinel (built r5 at (13,5) under the bleeding
+waiver); seat B's is cad's gunner taking (12,12) at r16. Ti piles
+on belts — except seat A harvester 2, which cad SIPHONS: 29/38 of
+our stacks went to cad. Harvester-3 recovery blocked by the same
+money geometry as fjordgate (wb max 37 vs needed 38 — off-by-a-few
+again) + labour (on-ore squatters; step-off gated at 80 walls;
+saboteur melee-recalled permanently).
+
+Q2: r4 UNDER=2 is a TRUE ferry positive (cad throws own raiders
+r2/4/6; predicate arithmetic verified 36/36) — FT DETECTOR
+EXONERATED. Permanence is owned by the plain proximity re-trigger
+(:1837): cad's forward sentinels park at anchor d²=1-5 and are
+never removed, so the 50-round decay never opens. AND UNDER=2 is
+DOWNSTREAM-INERT — zero 2-specific consumers, every read !=0
+(8 sites grepped) — third independent confirmation of the
+truthiness finding.
+
+Q3: Map exactly mirror-symmetric (verified y→14-y); the split is
+OUR seat-asymmetric opening: seat A spawns into the contested lane
+(its link path crosses (13,5), occupied r5-6 in EVERY arm — ours
+OS-on, cad's OS-off → never delivers regardless); seat B's path
+is contested only at (12,12) and only OS-on. The 6/6 "grind" is a
+REAL CORE KILL: our OS sentinel at (12,9) shoots cad's core down
+the shared x=12 column (obstacle-ignoring, 93 damage events,
+978 Ti ammo) while strangling their economy 130-vs-1,450.
+
+Q4: Wild shape essentially ABSENT (5/79 zero-deliveries ever, 1/11
+in v77+, 0/2 vs wild CAD v77+ — both delivered r17/18 and WON).
+P6 caveat WIDENED: wild CAD is now v117 with NO launcher, no
+throws, no forward sentinels, zero core damage in 218r — the
+probe's frozen opening IS the collapse physics; probe meander
+cells are a matchup artifact. The one modern wild zero (v78 vs
+Landers) is park-and-shell family — the mechanism class is real,
+the probe's intensity is not.
+
+FIX INPUTS (separate plank, builder owns): M1 re-plan on foreign
+blocker at :4822 (self-heal idiom exists at :4840); M2 KEEP OWN
+TURRETS OFF PLANNED LINK TILES (HS lban idiom :2256) — **HOT FOR
+E1 NOW: the in-flight ring planner sites counterbattery turrets;
+meander-A proves our own defensive sentinel can sever our own
+belt; the E1 spec should consume M2 before the worker lands**;
+M3 _has_acceptor path-validity; M4 = FB's B/C + meander drains;
+M5 OS-on-meander is a measured trade (6/6 zero-econ wins vs 4/6
+real-econ) — vs-field question, flagged not recommended.
+Registry: MEANDER-DELIVERY-OWNER closed.
