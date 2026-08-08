@@ -129,18 +129,9 @@ disk). Result:
 | deny / FP / exposure totals | 210 / 989 / 2,709 | **509 / 2,418 / 9,000** | **DIVERGES** |
 
 The divergences are **confined entirely to the four base-doc matches**. Every
-figure the doc's **Addendum** produced (CAD v107 and Memtrace v33 — the two
-matches computed after the addendum session caught and fixed the proto3
-`team` default bug) reproduces **bit-exactly, on three independent counters
-each**. That is not a coincidence a wrong implementation produces.
-
-Reading it plainly: the v77 base doc's four-match rows for **metric A**, the
-**mechanism split**, and the **deny census** came from the pre-fix
-implementation and should not be quoted. Its four-match rows for **leak
-volumes**, **harvester-rounds**, and **metric B** reproduce exactly and stand.
-The addendum's pooled tables mixed pre-fix and post-fix rows, so the
-published pooled 43.17% / 34.2-65.8 / 210-events figures are
-mixed-implementation aggregates.
+figure the doc's **Addendum** produced (CAD v107 and Memtrace v33) reproduces
+**bit-exactly, on three independent counters each**. That is not a
+coincidence a wrong implementation produces.
 
 **Corrected v77 6-match baselines** (one implementation, all 30 games):
 
@@ -153,14 +144,86 @@ mixed-implementation aggregates.
 | deny events / Ti / FP-looking / exposure | 210 / 420 / 989 / 2,709 | **509 / 1,018 / 2,418 / 9,000** |
 
 All v77-vs-v80 comparisons below use the **corrected** column. The published
-column is shown alongside wherever it matters.
+column is shown alongside wherever it matters. **The per-match, like-for-like
+corrected table (all six matches × mined / leaked / rate / mechanism /
+harvester-rounds / A / B / deny / Ti) is not restated here — it belongs to
+the v77-side correction, which is being published separately.**
 
-Confidence: **high.** Bit-exact agreement on seven independent post-fix
-counters, plus exact agreement on every pre-fix counter that the fix could
-not have touched (volumes, harvester-rounds, metric B), localizes the fault
-precisely. What would change the answer: recovering the base doc's original
-script (it lived in an ephemeral scratchpad and is gone from disk) and
-finding a definitional difference rather than a bug.
+### 0.3.1 Root cause: the proto3 `team`-default account is TESTED AND REFUTED
+
+The obvious candidate explanation is the bug the v77 Addendum itself names:
+proto3 omits `TEAM_A` (field value 0) on the wire, so a parser that defaults
+an unset `team` to `None` silently drops every friendly team-A entity from
+ownership lookups. The natural account — base four decoded with the `None`
+default, the addendum session caught and fixed it for matches 5-6 only,
+pooled tables therefore mix pre-fix and post-fix rows — was tested directly
+by **deliberately reintroducing the bug** in `parse_entity` only (map `cores`
+keep `team=0`, matching `replay_census.py`'s map parser; this is the bug
+exactly as the Addendum describes it) and re-running the v77 corpus.
+
+**It does not reproduce the published base-four numbers, and it fails in a
+structurally conclusive direction in both seats:**
+
+| row | seat | what `team=None` does | what was published |
+|---|:--:|---|---|
+| Askar City | A | **every our-side counter → 0** (mined 0, harvester-rounds 0, A 0, B 0, deny 0) | mined 840, harvester-rounds 3,774, B 564 — non-zero, and **equal to the correct-parser values** |
+| 0033 | A | same — all our-side counters → 0 | mined 2,069, leaked 187, harvester-rounds 13,531, B 6,338 — non-zero, **all equal to correct-parser** |
+| Ouroboros | B | our team-B entities survive; mined / leaked / harvester-rounds / B unchanged; only `exposure` moves (6,829 → **0**) | exposure 1,409 — matches **neither** value |
+| Banminary | B | as above; exposure 94 → **0** | exposure **94** = the **correct-parser** value exactly |
+
+- **Seat A**: the bug zeroes everything our-side. Askar and 0033 published
+  non-zero `mined`, `leaked`, `harvester-rounds` and `metric B` that agree
+  with the correct parser exactly. A decode carrying that bug could not have
+  produced them.
+- **Seat B**: the bug barely bites (our entities are team 1, present on the
+  wire). It changes only `exposure`, and it moves it *away* from the
+  published value in both matches — Banminary's published 94 is exactly the
+  correct-parser answer.
+
+So the mixed-implementation account is right in **shape** (base four and
+addendum two were produced by different code, and the pooled tables mix them)
+but **wrong in mechanism**. The `None` bug is real — the Addendum author
+found it in their own fresh implementation — but it is **not** what makes the
+base four diverge.
+
+**What the divergence pattern positively rules out:** any single global
+entity-ownership fault. The base four reproduce exactly on `mined`,
+`leaked`, per-game leak volumes, `harvester-rounds`, and **metric B** — and
+metric B is a per-round, facing-respecting, our-belt-dependent computation.
+Any bug corrupting our-side ownership would have broken metric B first. It
+did not.
+
+**What is left, marked uncertain:** the divergent quantities — metric A,
+mechanism split, deny events, FP-looking, exposure — each require
+harvester-vs-belt adjacency or hop-path ownership evaluated in a helper
+*separate* from the one that produced metric B. The evidence says those
+specific helpers differed; it does **not** say how. The mechanism is
+**unestablished and unreconstructable**: the base doc's script lived in a
+prior session's ephemeral scratchpad and is gone from disk (the doc says so
+itself). **Subsampled per-round scanning was tested as a unifying
+explanation and discarded** — the implied ratios are inconsistent (3.6×–7.6×
+across the divergent counters) and Banminary's exposure reproduces
+*exactly*, which a sampled scan cannot do.
+
+**Recommended wording for any correction that cites this:** *"the base-four
+figures for metric A, the mechanism split, and the deny census are not
+reproducible and are withdrawn; the specific fault is not established, and
+the proto3 team-default bug named in the Addendum has been tested and is not
+the cause."* Anything stronger overstates the evidence.
+
+**§2 caveat, carried explicitly:** the v77 read's time-to-first-wire
+distribution (n=124 harvesters, mean 23.14, **median 2.0, p90 11.8, max
+901**) and its **never-wired count 34/158 (21.5%)** were produced by the same
+base-four metric-A helper and inherit whatever it does. They were **not**
+recomputed here. Treat them as **UNVERIFIED — not corrected, and not
+withdrawn**.
+
+Confidence: **high** that the published base-four metric A, mechanism split
+and deny census are wrong and that the corrected column above replaces them
+(bit-exact agreement on seven independent post-fix counters, plus exact
+agreement on every pre-fix counter). **High** that the proto3 team-default
+account is not the cause (direct reintroduction test). **None offered** on
+what the actual cause was.
 
 ---
 
@@ -730,11 +793,14 @@ Confidence: **medium-high** on the class table (exact meta arithmetic),
    ladder cadence puts its creation ~4 minutes before the builder's "v80
    LIVE" note. Bound: one match, ±5.8 Elo on the window headline; zero effect
    on every mechanism check.
-2. **The v77 base doc's pre-fix figures cannot be traced to a specific bug**
-   — the original script is gone from disk. What is established is that they
-   are not reproducible by an implementation that reproduces every one of the
-   doc's post-fix figures bit-exactly. Bound: metric A, the mechanism split,
-   and the deny census for 4 of 6 v77 matches.
+2. **The v77 base doc's divergent figures cannot be traced to a specific
+   bug** — the original script is gone from disk. What is established is
+   that they are not reproducible by an implementation that reproduces every
+   one of the doc's post-fix figures bit-exactly, and that the obvious
+   candidate cause (the proto3 `team` default) is **tested and refuted**
+   (§0.3.1). Bound: metric A, the mechanism split, and the deny census for 4
+   of 6 v77 matches; plus §2's time-to-first-wire and never-wired figures,
+   which are unverified rather than corrected.
 3. **The FT counterfactual's latency gain carries a small upward bias** from
    modelling the ferry check without v79's core-scan `break` (§1). Bound:
    affects the core-scan path only; the builder scan has no break, and the
