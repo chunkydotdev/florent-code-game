@@ -6073,3 +6073,15 @@ plausible at that core spacing, seat asymmetry TBD.
   disc bundle (72 replays + instruments.json, builder scratchpad).
   Deliverable: docs/research/fjordgate-collapse-owner-2026-08-08.md.
 V77-FOLDIN still in flight.
+
+### 2026-08-08 17:0x CEST — builder arm: IN-FLIGHT REGISTER: **E1-DESIGN** (CAD-family incoming-side plank, DESIGN PASS ONLY this cycle)
+
+Scope: design doc for the damage-suppression plank vs CAD-family
+(mechanism basis: Eir 8 read §2.4 — 18.06 HP/r incoming vs 11.55 heal
+= 6.5 HP/r structural deficit, staffing fine; refreeze spec §4.2 —
+counter-turret envelope gated d²≤36 of THEIR core, nothing past d²≤64
+→ our home-side counter-battery goes unanswered). Prior art consumed:
+C1b home ring (KEEP-dev, 85% at wild-median load, _v83c1b). BUILD
+DELIBERATELY SEQUENCED after research's fjordgate read-side decode —
+same under-siege subsystem, one gated change discipline. Subagent
+(read-only diagnostic): v80-base anti-siege machinery inventory.
