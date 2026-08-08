@@ -1,0 +1,26 @@
+ship rows found (version -> bot dir): 9
+gate rows with a usable interval:     61
+ladder windows with a delta:          37
+per-match ladder Elo sd:              9.25
+
+=== JOINABLE SHIPS: 4 ===
+   ver   bot dir  gate wr    +/-     n  ladder d  matches  elo/match
+    75   _v85hsd    0.481   4.5pp   480     -11.0       10      -1.10
+    77    _v89sh    0.608   6.2pp   240     +10.0        4      +2.50
+    79   _v91osb    0.642   6.2pp   240     -42.0        6      -7.00
+    80    _v89sh    0.608   6.2pp   240     +12.0       22      +0.55
+
+=== RAW ASSOCIATION ===
+  n=4   r = -0.247
+  t(2) = -0.36   (|t| > ~2.4 needed for p<0.05 at this n)
+  sign agreement (gate>50% & ladder>0, or both opposite): 3/4
+
+=== MEASUREMENT ERROR / RELIABILITY ===
+  X (gate winrate):  observed var 0.00504   error var 0.00087   reliability 0.83
+  Y (Elo per match): observed var 16.790   error var 12.036   reliability 0.28
+  attenuation factor sqrt(rel_x*rel_y) = 0.48  -> disattenuated r = -0.511
+
+=== CAN THIS DESIGN ANSWER ITS QUESTION? ===
+  NO. n=4, attenuation 0.48. A null here is consistent
+  with 'the gate is useless' AND with 'the gate is perfect but
+  both measurements are noise-dominated'. Do not read the r.
