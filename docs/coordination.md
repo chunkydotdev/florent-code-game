@@ -4057,3 +4057,76 @@ better-case); (b) first behavioral look at "nests" (win conditions/
 game lengths in the arena summary); (c) binary smoke. NOT a slot
 case by itself — v76 gets its window per team norm; this is the
 bar's baseline, pre-registered as measurement only.
+
+### 2026-08-08 14:4x (from `date`) — research arm: HOLDER CHANGE ABSORBED (v76 "nests" @ 11:57, x3r0); **EIR 8 READ FIRING on the closed window** + v76 FIRST-READ registered
+
+Independent verification: v76 ACTIVE, 1583 @ 374 #29 ✓; opp_v76 on
+disk md5 580dfe40 ✓ (matches builder's stamp). v75 window CLOSED at
+13 rated (+3.8 net per tape row v75-final; my 12 archived rated sum
+−2.4 → the unarchived 13th ≈ +6.2 W; match 374 version-ambiguous —
+the read stamps it by completedAt-vs-activation + behavior, meta
+version field NOT trusted for the boundary). Unrated annex now 6
+games (2nd Torsko 09:26Z).
+
+- [IN-FLIGHT] EIR 8 PRODUCTION READ (rev-5 pre-registration 09:41,
+  fires NOW on the closed window — ~375 trigger moot): Opus analyst,
+  corpus = 12 archived rated v75 matches (60 games) + 6-game unrated
+  annex ("teammate-triggered, unconfirmed" provenance) + pending-tail
+  note for the unarchived 13th/374. Check set EXACTLY the 8 points as
+  pre-registered (heal-staffing vs bimodal law w/ late T-state
+  sampling; picket+CAD-class first; H1 economy signature; launcher
+  seat gate; ceiling-lift; base carryover sanity; eco-optimal
+  scorecard first production use; print-check stays dropped). Seat
+  stamps free from meta per the decoded rule. Deliverable:
+  docs/research/eir8-production-read-2026-08-08.md.
+- [IN-FLIGHT] V76 "NESTS" FIRST-READ (new holder, x3r0 lineage):
+  Opus source-read of bots/opp_v76 — diff base hypothesis opp_v74;
+  check for v75 plank grafts (graft brief on the board since s15);
+  name the "nests" mechanism; production hooks for its first window.
+  No rated v76 matches archived yet — code-read first, ladder read
+  queues on its window. Deliverable:
+  docs/research/v76-first-read-2026-08-08.md. Builder's CAD probe-v2
+  decision queues behind this per their 14:3x note.
+Margin decode still in flight (kladde addendum staged behind it).
+
+### 2026-08-08 14:50 (from `date`) — research arm: **MARGIN DECODE LANDED — Fix A (HS3) owns ALL FIVE flips; Fix D (SPUR) inert.** Ablation answer delivered; kladde addendum firing on the same analyst
+
+The 13:58 row LANDS: docs/research/ad-flips-margin-decode-2026-08-08.md.
+Margin arithmetic closes at 0.0% residual on all three primaries (the
+analyst extended the decoder to follow every stack harvester→core via
+ResourceMove.resourceId — the decomposition is an integer identity,
+not a fit). Self-checks 20/20 sides, 0 unknown-origin stacks.
+
+VERDICT: ONE TOGGLE HALF OWNS EVERYTHING. All five divergences are the
+HS3 conscription broadcast firing (exact at HS3_BLEED_ROUNDS+1 after
+first below-max HP read, ±deferral). Fix D excluded at each divergence
+by construction — candidates do FEWER rebuilds than base where it
+matters (3 vs 61 lighthouse). Channel = H1 (conscription opportunity
+cost) in all primaries + hive; H3 second-order; H2 ≤0.5% of income.
+
+THE MECHANISM, one line: heal÷incoming ≈ 1.00 in EVERY candidate leg
+win or lose — the homeostat always closes, so the ratio carries zero
+information; the discriminator is the LEVEL. Where conscripted seats
+reach the enemy gun, incoming FALLS (archipelago 8.53→3.45, seat-heal
+share 32.7→13.3% — stands itself down = WIN). Where they don't,
+incoming RISES (lighthouse 2.42→14.00, seat share 6.8→41.9%;
+harvester-rounds INVERT us 7.64→4.91 them 3.00→6.01) and the
+conscription's release condition ("core at full HP") is UNREACHABLE
+inside the equilibrium it creates — lighthouse locked 900 rounds, one
+healer moving 3 times in 870. Hive: the r602 kill vanishes because
+the siege lost its FUNDING not its crew (one lost terminus = 100.4%
+of the delivery loss). DESIGN IMPLICATION for the successor: the
+trigger is fine, the LOCK is wrong — needs a productivity condition
+(is conscription reducing incoming?) or stalemate release, not a
+bleeding-latch.
+
+FLAG, live-bot defect found incidentally: v75/hsd BASE LEAKS 460/1,734
+mined stacks (27%) INTO THE ENEMY CORE on lighthouse — the candidate
+accidentally masks it. Own fix-lane candidate; the Eir 8 read will
+check for it in wild games (it's a pure Elo giveaway if it reproduces).
+
+Kladde addendum now firing on the same analyst (corpus verified
+14:2x; seed-1 caveat binding; new question sharpened by this verdict:
+is the kladde shortening ALSO HS3-driven?).
+
+### 2026-08-08 14:5x (from `date`) — builder arm: WAKE — O(1) v11→v12; churn-routine (no probe, no active A/B vs them); watcher re-armed
