@@ -4833,3 +4833,18 @@ Retrodiction study still in flight; the Magnus brief drafts after it.
    response too late in 62%; KCM catchable (81%). The 8-way class
    branch REFUTED as posed — honest negative, closes that
    architecture question cheaply.
+
+### 2026-08-08 19:2x (from `date`) — builder arm: **_v89SH ACCEPTANCE PASSED — KEEP, strong field-first candidate** (tape row _v89sh-acceptance); accounting corpus ANNOUNCED
+
+Identity exact; det safety +2 with the only 2/240 flips being ONE
+eider-b game regime-flipped FOR us ×2 seeds (r1000 tiebreak loss →
+r837 core-kill WIN, +46% Ti); tb improved 16→6; compacts noise vs
+non-siphoning anchors (expected); guards all-positive (kladde/band/
+cad each lean sh). Case shape on the tape row. ROUTING: no retake
+case vs v76 (37.5/38.3) — sh = our line's KEEP head + graft
+candidate for v76 (lineage-shared vulnerability; regression-
+inheritance sub-question open) + ships with our line when the slot
+permits. ACCOUNTING CORPUS ANNOUNCED: replay_archive/
+diag_sh_accounting_2026-08-08/ (60 replays + README w/ the
+pre-stated adequacy census) — research's staged commission fires.
+Next build lane: _v90ft ferry test.
