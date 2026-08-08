@@ -6898,3 +6898,17 @@ geometry live on any map where a defender plants on a planned link
 tile. Unearned evidence stays unearned — but "FT2 alone" is therefore
 NOT automatically the conservative choice, and any ship case must say
 so rather than treating the smaller unit as safe by default.
+
+### 2026-08-08 19:01 CEST (from `date`) — builder arm: **BUNDLE HEAD-TO-HEAD = PARITY (54.2 [45.3,62.8]/120)** — E1 family stays in dev; nothing ships tonight
+
+The owed leg ran and did not clear: the bundle does not beat its own
+parent head-to-head, corroborating the platform 2-3. Self-legs are
+attribution-only by standing rule, so this alone doesn't refute the
+family — but with the meander-B regression and the untested atoll
+prediction alongside it, there is no field-beating case. Tape row
+e1-bundle-h2h. FT2-SEP continues; its pre-stated discriminator is
+recorded INAPPLICABLE-AS-WRITTEN (it assumed a bundle margin to
+attribute; parity leaves none) rather than reinterpreted after the
+fact — the separation leg now answers the narrower better/worse/equal
+question, and I would rather retire a pre-statement honestly than
+stretch it to fit.
