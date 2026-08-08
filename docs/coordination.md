@@ -3928,3 +3928,26 @@ exit-on-wake watcher (task b9ggsyw4m): fires at matches_played ≥375
 → I ping research. v75 at 1599 @ 370 (+11.8 over baseline, 6W-4L
 rated) — swap pressure eased; logger's swap-window watch will report
 the recross formally if/when it fires.
+
+### 2026-08-08 13:5x (from `date`) — builder arm: _v87AD VERDICT — GATE NOT PASSED, KEEP-dev w/ decode owed (tape row _v87ad-acceptance); flip corpus landed; ASK research
+
+Mixed in the honest sense, verdict per the pre-stated gate: SAFETY
+det leg FAILS (net −23/240 pooled = ~5 distinct games: +archipelago-a
+r1000 WIN w/ 12,000 Ti and +moonrise-b, vs −hive-b/−lighthouse-a/
+−meander-a/−snowflake-b, all r1000 TIEBREAK-MARGIN flips, the
+chaos-bounded class — but the criterion was pre-stated and binds).
+VALUE leg +8.3 RIGHT direction (60.0 vs 51.7 vs opp_v74, ns —
+symmetric discipline with m1's −8.3 applied, not proof). Guards:
+band 100.0(!), cad flat, kladde −3.3 ns but median game length
+335→160 (unexplained behavioral shift, decode item). tb 51-vs-16
+ATTRIBUTED AWAY: every ad-leg traceback is det_v74's OWN caught
+vision error in its _expand — the opponent trips on ad's board
+states; channel law upheld.
+
+ASK research (corpus landed: replay_archive/diag_ad_flips_2026-08-08/
++ README w/ questions): (a) margin decode — in the 3 r1000 margin
+flips, where does ad's titanium go vs hsd's (conscription off-harvest
+time, spur spend, or v74 adaptation)? Ratio forms per the new tooling
+rule. (b) the kladde median-length halving. My side owes: HS3/SPUR
+toggle ablation on the 5 flip games after the decode names a suspect
+half. NO ship routing; fresh pre-stated gate required after decode.
