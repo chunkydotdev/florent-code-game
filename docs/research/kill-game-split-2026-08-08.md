@@ -178,3 +178,91 @@ resolve.
 - **Archive floor does not apply** — this is API metadata, not replays, so the
   ~08-07-midday archive floor (workflow-analysis series rule 5) does not
   truncate it. The v72 floor here is the 100-match `match list` cap instead.
+
+---
+
+# ADDENDUM (22:5x CEST) — the per-version and per-seat cuts, run
+
+Same cache, same 500 games, still zero replay downloads. Run because the
+builder is live-testing whether the v75→v80 survival machinery (heal_seats,
+`_ring_*`, `SIEGE_HEAL_RESERVE_TI`, `HIVE_FREEZE`, `POP_FLOOR`) suppressed our
+core-kill rate.
+
+## A. hive is NOT a seat effect — that caveat closes
+
+```
+hive        seatA n=20 win 15% killed 70%    seatB n=14 win 14% killed 79%
+eider       seatA n=17 win 41% killed 59%    seatB n=10 win 40% killed 60%
+drumlin     seatA n=17 win 24% killed 59%    seatB n=19 win 32% killed 47%
+snowflake   seatA n=26 win 35% killed 50%    seatB n=10 win 50% killed 50%
+```
+
+hive is flat across seats to within 1pp on win rate. The KCM seat split is real
+in its own scope; it does not reach the map cells. **hive is a pure map
+property.**
+
+## B. hive looks like it got worse — and that read does not survive
+
+```
+v72-77:  n=18   win 22%   killed 67%
+v78-81:  n=15   win  7%   killed 87%      <- v80 alone: 1/12 win, 10/12 killed
+```
+
+Tempting, and it points straight at the survival-machinery era. **Do not spend
+it**: n=15 and n=18, and section C shows the same-shaped trend at the global
+level dissolving completely under an opponent-mix control.
+
+## C. The apparent decline in our kill-game rate is an OPPONENT-MIX ARTEFACT
+
+Kill-decided games against opponents ≥1550 (n=239), by our version era:
+
+```
+v72-76:  51/136 = 37.5%      mean opp rating 1642
+v77-81:  18/74  = 24.3%      mean opp rating 1644
+v82-84:  10/29  = 34.5%      mean opp rating 1629
+EARLY v72-76 37.5%  vs  LATE v77-84 27.2%    Fisher exact two-sided p = 0.098
+```
+
+Not significant, and mean opponent rating is flat — so it is not "we started
+facing harder teams." **Holding the opponent set fixed to the four bleed
+carriers (Lunds / KCM / Ouroboros / CtrlAltDefeat) removes it entirely:**
+
+```
+EARLY v72-76:  16/67 = 23.9%
+LATE  v77-84:  13/58 = 22.4%
+difference:    -1.5 pp     bootstrap 95% CI [-16.1, +13.4] pp
+```
+
+Flat. The whole era swing traces to one opponent leaving the pool:
+
+```
+v72-76 kill games:  Banminary 14/19 (74%)   <- present
+v77-84 kill games:  Banminary absent, replaced by Focalground 1/12, Ouroboros 0/11
+```
+
+### What this says about the live hypothesis
+
+**In production, the v75→v80 survival machinery did not suppress our core-kill
+rate against the opponents that matter.** Against a fixed opponent set the rate
+is 24% before and 22% after.
+
+Stated honestly, because the CI is wide: an effect **larger than ~16pp in
+either direction is excluded**; a small one is not. But the direction of the
+burden has moved. The ~24% kill-game rate against these four is not something
+the survival era introduced — **it is the number we have had for the entire
+v72–v84 window, and it is older than the floor of this data.** Removing the
+survival machinery is therefore unlikely to recover it.
+
+This does not touch the *local* leg's validity as a mechanism test — it says
+what the leg's result will mean if it lands non-null: a mechanism that fires
+locally against a ~3-effective-opponent det pool while production shows no
+corresponding movement across 125 kill games against the real carriers.
+
+## D. Per-version kill-game rate vs strong opposition, for the record
+
+```
+v72  9/19   v73  8/18   v74 10/32   v75 14/43   v76 10/24
+v77  8/12   v79  4/20   v80  5/32   v83  5/10   v84  4/16
+```
+Per-version n is too small to read individually; pooled into eras it is section
+C, and section C says flat.
