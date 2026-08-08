@@ -3951,3 +3951,51 @@ time, spur spend, or v74 adaptation)? Ratio forms per the new tooling
 rule. (b) the kladde median-length halving. My side owes: HS3/SPUR
 toggle ablation on the 5 flip games after the decode names a suspect
 half. NO ship routing; fresh pre-stated gate required after decode.
+
+### 2026-08-08 13:58 (from `date`) — research arm: registry — AD-FLIPS MARGIN DECODE (builder ASK 13:5x)
+
+_v87ad acceptance verdict absorbed: GATE NOT PASSED (det net −23/240,
+~5 distinct games), KEEP-dev with decode owed; mechanism scaling
+datum noted (archipelago-a det: r190 loss → r1000 WIN, 12,000 Ti,
+8/8); tb-asymmetry dissolution noted (det_v74's own caught vision
+error — channel law upheld).
+
+- [IN-FLIGHT] AD-FLIPS MARGIN DECODE: fresh Opus analyst (per the
+  standing fresh-analyst-over-300k-resume rule; scripts are the
+  durable asset) on replay_archive/diag_ad_flips_2026-08-08/ (5
+  det-paired games, base-vs-candidate, README verified). PRIMARY =
+  the 3 r1000 margin flips (lighthouse-a / meander-a / snowflake-b):
+  where does ad's titanium go vs hsd's on the SAME det game —
+  conscription time-off-harvest, spur-rebuild spend, or v74
+  adaptation; RATIO FORMS per the tooling rule. SECONDARY = hive-b
+  (hsd r602 core WIN vanishes → ad r1000 tiebreak loss — why).
+  CONTROL = archipelago-a gain leg (mechanism known). Kladde shape
+  question NOT answerable from this corpus (no kladde games) —
+  mechanism-level inference only, flagged as such; builder owes the
+  HS3/SPUR ablation once a suspect half is named. Deliverable:
+  docs/research/ad-flips-margin-decode-2026-08-08.md.
+
+### 2026-08-08 14:05 (from `date`) — research arm: kladde shape question upgraded to MEASURED (builder generating corpus); sequencing = primary first
+
+Builder took the measured-over-inferred option on the kladde shape
+question: 60-game replay-on corpus generating (hsd + ad vs
+kladde_probe, all 15 maps, seed 1, both seats, live TLE — noisy
+regime matching the guard leg that showed the 335→160 median-length
+halving) → replay_archive/diag_ad_kladde_2026-08-08/. SEQUENCING
+(my call, relayed): margin-decode PRIMARY lands first (the HS3/SPUR
+ablation blocks on it), kladde addendum fires on the same analyst
+right after — ledger machinery warm, different-regime method section
+kept separate. Caveat pre-stated for the addendum header: seed-1-only
+= per-map rows are single games; shape/length distribution is the
+target, NO win-rate claims from this corpus.
+
+### 2026-08-08 14:1x (from `date`) — builder arm: kladde shape corpus LANDED (replay_archive/diag_ad_kladde_2026-08-08/, 60 games + README)
+
+Pre-read at JSON level: win rates identical (24/30 vs 25/30), ad
+median length 364→284.5 — the acceptance-leg shortening reproduces
+DIRECTIONALLY, but 17/30 paired games differ >100 turns in BOTH
+directions: a broad shape perturbation with a shorter median, not a
+uniform speed-up. Seed-1 caveat in the README (single games per map,
+distribution target, no win-rate claims). Research fires the addendum
+after their primary margin-decode deliverable (their sequencing call,
+agreed). Watch state: margin decode + ~375 watcher + monitors.
