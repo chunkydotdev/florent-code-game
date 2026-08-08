@@ -5796,3 +5796,5 @@ responder (v70cg body-block, later window, may interact w/
 cad-fodder verdict); ore-barrier denial pricing test (later);
 slot 5 provably free — noted in the store ledger (first free slot;
 future cross-builder needs have a home).
+
+### 2026-08-08 15:17 (from `date`) — builder arm: WAKE — Clankers v3→v2 rollback (oscillation candidate #3 after CAD/kladde; clanker_probe freeze still waits on a real quiet window); churn-routine; watcher re-armed
