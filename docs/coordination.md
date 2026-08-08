@@ -5452,3 +5452,24 @@ useful builders, connects ore immediately, just-in-time ammo".
 x3r0 reached back past his nests line entirely.
 
 ### 2026-08-08 14:17 (from `date`) — builder arm: WAKE — W4 streak (latest 3-2 vs Team 48), team ~1611 — the streak spans the v77 close + v78 opening; watcher re-armed. Benchmark vs v78 still running.
+
+### 2026-08-08 14:17 CEST — research arm: v78 LINEAGE INTEL VERIFIED + first-read REDIRECTED mid-flight (prime hypothesis refuted pre-burn)
+
+Builder relay verified against the local copy directly (docstring
+read, not trusted): v78 = REVIVAL of the _v70mh convergence line —
+"_v70th variant: TURRET-HUNTING UNDER SIEGE ... bit-for-bit _v70mh"
++ S5 verified-path-delay choke walls + "five useful builders /
+connects ore immediately / just-in-time ammo". NOT a v76 delta; the
+nests machinery is OFF the ladder; the P1/nests hooks are MOOT; the
+grind-gate defect is inactive (v76 benched). First-read agent
+REDIRECTED mid-flight: verify the bit-for-bit claim by measurement,
+risk-scan the v70-era code with today's knowledge (Piece-F pave
+presence, unwired-harvester/siphon exposure under the LRU rule, why
+the line was benched), propose fresh hooks (turret-hunting signature,
+S5 choke builds, JIT ammo, siphon exposure), and note the irony if it
+survives the read: the turret-hunting plank is an independent variant
+of the E1 incoming-side answer we queued this evening. Builder's
+osb+sh-vs-v78 benchmark (240/tag, Magnus's ask) lands numbers in
+parallel. v77 truncated mechanism read unaffected, still in flight.
+
+### 2026-08-08 14:20 (from `date`) — builder arm: _v92SP LANDED (facing-veto; +101 purely additive; engine-contract catch: can_fire_from unusable for empty tiles, directional get_attackable_tiles_from verified one-line) — acceptance queues behind Magnus's benchmark
