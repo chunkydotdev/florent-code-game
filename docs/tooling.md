@@ -371,3 +371,14 @@ wrapping `run()` with a timing harness. `try/except` is fine. Any
 instrumentation that needs guaranteed cleanup must be restructured (in our
 case the wrapped body already swallows its own exceptions, so the timing
 print could simply follow the call).
+
+## Instrumented-arm extraction does not work on wild replays (research find, builder-placed 2026-08-08)
+
+`scratchpad/fjord_disc/instr.py` recovers per-round `SLOT_UNDER` by parsing a
+debug `print()` that exists **only in instrumented dev-arm builds**. Against
+the live bot or any archived wild replay it yields nothing — silently, since
+absent BotOutput text is indistinguishable from a quiet round. Any wild-latch
+or store-state work must reconstruct trigger state from ENTITY POSITIONS
+instead (the census agent did exactly this after catching it). General form of
+the trap: an instrument that rides on our own debug output measures only the
+builds we compiled it into.

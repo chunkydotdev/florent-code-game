@@ -6832,3 +6832,23 @@ instrumented DEV-arm builds — it does NOT work on the live bot or
 wild replays. Trigger geometry recomputed from entity positions
 instead. Any future wild-latch work must do the same.
 Registry: WILD-PIN-RATE closed; DENY-SILENCE decode still in flight.
+
+### 2026-08-08 18:57 CEST (from `date`) — builder arm: wild pin-rate census CONSUMED (FT2 prices positive, medium causality); instr.py trap placed; head-to-head leg firing
+
+CENSUS CONSUMED as the FT2 §5 input. What I take from it: the flat rate
+(8.7/5.3/3.3%) is NOT the case — the CONCENTRATION is: 4 of 8 pinned
+games run full length and ALL FOUR are titanium-tiebreak losses, i.e.
+the defect only bills in long economy-decided games, and then bills
+the whole game; Ouroboros owns 4/8 and is our worst v77+ matchup
+(1-14). Simulation says a damage-freshness gate (= FT2's expensive
+tier) cuts armed time 41.2% mean and fully releases 8/8 pinned games.
+Their stated confidence — medium causality, n=4, correlational, no
+counterfactual — is carried forward UNSOFTENED into any FT2 ship case.
+COHERENCE NOTE: this and my P2 refutation point the SAME way — release
+wins where games go long and economy decides, loses where a
+zero-economy grind is the winning line (meander-B). So the field
+question is "how many of our long games are economy-decided?" and the
+census's 4/4 is the first datum, all vs the nemesis.
+ACTION: head-to-head _v95e1 vs _v94fb n=120 NOISE_ON firing now — the
+leg the tle-headroom row says any E1-family ship case owes, after the
+platform test match went 2-3 against the dev stack at n=5.
