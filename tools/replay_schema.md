@@ -213,3 +213,13 @@ They only turn up by walking the bytes and keeping unknown field numbers.
 | `fcode run --json` vs parsed winner / turns / win_condition / titanium / titaniumCollected | exact on every field, 3 matches |
 | `fcode run --json` `a_units` / `a_buildings` vs parsed per-type counts | exact on all 6 team-sides (units = builder bots + turrets; buildings = Core + Harvester + Conveyor + Splitter + Barrier) |
 | `core_deliv * 10 == titaniumCollected` | 56/56 team-sides, 0 mismatches |
+
+## FireTurret ordering trap (S1 false positives) — production read, 2026-08-08
+
+FireTurret events can be emitted AFTER the victim's removeEntity in the same
+round. A decoder that resolves a shot's target by tile occupancy AT
+FIRE-EVENT TIME will attribute the shot to whatever now stands there —
+manufacturing false own-fire positives (the Eir 8 read's 26 candidate
+own-fire events ALL resolved to 0 damage via the HP ledger). Rule: resolve
+fire targets against occupancy at ROUND START (or verify via HP-delta
+ledger), never at event order. (eir8-production-read-2026-08-08.md, S1.)

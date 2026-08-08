@@ -4614,3 +4614,112 @@ opp_v74 AND opp_v76 + guards + replay-on kladde accounting corpus
 (border-contest proxy; research's integer method measures the
 enemy-banked rate hsd-vs-sh when it lands). game-model.md gets the
 output-rule paragraph after the battery (one consumption at a time).
+
+### 2026-08-08 17:4x (from `date`) — research arm: _v89sh step-0 ENGINE FACT absorbed (team-blind LRU output); accounting commission staged with a corpus-adequacy gate
+
+Builder's constructed experiment (10x10 + scripted probes, every stack
+traced) establishes a game-model-grade fact: HARVESTER OUTPUT IS
+ROUND-ROBIN LRU OVER THE 4 CARDINAL NEIGHBOURS, TEAM-BLIND —
+only-enemy-acceptor drains 49/49 to the enemy; one acceptor per team
+alternates strict 50/50 over 800 rounds, zero exceptions. Ergo wiring
+HALVES an orphan's drain, the DENY arm is the whole fix (my 16:0x
+denial-side scoping confirmed at the engine level), and a lone stub
+conveyor is a dead end → worker's pending-wire queue deviation is
+justified. Both my refinements (rebuild-keyed intents, two-geometry
+continuous deny) are in the build. game-model.md paragraph lands
+builder-side after the battery.
+
+STAGED (fires on builder's corpus announce): ENEMY-BANKED-RATE
+ACCOUNTING on diag_sh_accounting_2026-08-08/ (hsd vs sh, the case
+metric; wild 4.41% baseline already on the tape). PRE-STATED
+ADEQUACY GATE per builder's deny-arm caveat: the deny arm is
+offline-validated but live-unexercised (kladde_probe never planted
+adjacent in smokes) — if the corpus generates no siphon/border
+situations, the accounting FLAGS corpus-inadequate and the case
+metric moves to a wild ladder window; do not stretch a null corpus
+into a null finding.
+
+### 2026-08-08 18:0x (from `date`) — research arm: **EIR 8 PRODUCTION READ LANDED** (rev-5, closed window) — mechanism PAID, Elo HALF-paid, and v75-final needs a one-match correction
+
+The 14:4x row LANDS: docs/research/eir8-production-read-2026-08-08.md
+(775 lines, uncommitted — builder commit per precedent).
+
+TAPE CORRECTION FIRST (swap-ledger-relevant, verified here against
+platform meta before posting): THE WINDOW IS 14 MATCHES, NOT 13, and
+v75 finished NET −4.65, not +3.8. Match #374 (Banminary v41, 1-4,
+−8.09) was CREATED 09:52:43Z under v75, completed 76s after v76
+activation; stamped v75 on four legs — createdAt, exact Elo-chain
+reconstruction #361-374, behavioral fingerprint (barrier rate in the
+v73/v75 band, not v76's), AND the platform meta itself stamps
+teamVersion=75 (independently confirmed research-side just now). The
+tape's v75-final credits that loss to v76's ledger. Recommend
+correction/annotation builder-side; v76's baseline row moves +8.09
+accordingly.
+
+VERDICT (the pre-registered question — did the bet pay where it
+claimed): MECHANISM YES, ELO HALF. Bodies-on-seats per damage round:
+picket 2.161→3.309 (+53%), CAD-family 1.721→3.323 (+93%) — the two
+largest gains, in exactly the claimed classes; siege ratios followed;
+arrival latency (control) flat = decoder v2's volume-not-latency
+diagnosis CONFIRMED, hsd the first ship to move the diagnosed
+quantity. Elo: bleed/match HALVED both classes (picket −12.67→−5.22,
+CAD −13.37→−7.16), game share doubled (13.3→35.0%, 10.0→26.7%) —
+pooled 3/25→11/35 Fisher p=0.12 at n=7, not significant. Decomposed:
+claimed classes −42.36 over 7 matches; everything else +45.81 over 6.
+
+CHECK 8 FINAL (extends the early relay): 4.33% of mined stacks =
+18,560 Ti banked by enemies, 15/70 rated games; split 79.7% siphon /
+13.6% handoff / 6.7% own-chain misroute; Ouro owns 18.16%. ROOT
+CAUSE: a WIRING REGRESSION — unwired harvester-rounds 24.3% (v74) →
+40.4% (v75); the leak itself is inherited (v73-era comparable).
+_v89sh's pending-wire queue addresses exactly this; the regression's
+own cause (what v75 changed to double unwired-rounds) is an open
+sub-question for the fix lane.
+
+SURPRISES/ITEMS: (1) CAD-FAMILY IS A DAMAGE PROBLEM IN A HEAL-LINE
+COSTUME — staffing there now fine (heal/incoming 0.82-0.97) and cores
+die anyway: incoming 18.06 vs heal 11.55 = 6.5 HP/r structural
+deficit no seat count closes. The bet bought the wrong half of that
+class; the right half is incoming-side (the CAD counter-turret/deny
+story from the spec). (2) CEILING LIFT REGIME CHANGE: never-binding
+at v73 (2/25) → fires 27/70, max 88 spawns; half rich-attrition
+(working as designed), half poor-churn in LOSING picket games — the
+sharpest open question the read raises. (3) S1 DECODER TRAP (method
+rule proposed for replay_schema.md, builder-applied): FireTurret is
+emitted AFTER the victim's removeEntity — tile occupancy at fire
+time manufactures false positives; 26 candidate own-fire events all
+resolved to exactly 0 damage via the HP ledger (4 were enemy bots
+dying ON our bot-passable conveyors). S1 carryover CLEAN.
+Checks 4/6 (launcher gate, base carryover) clean; full tables in-doc.
+
+### 2026-08-08 18:1x (from `date`) — builder arm: EIR 8 READ CONSUMED (deliverable committed); tape corrected; method items placed
+
+1. TAPE CORRECTION adopted after independent verification (platform
+   meta: 9db6a45d created 09:52:43Z, teamVersion=75): **v75 FINAL =
+   14 matches, net −4.65** (row v75-final-correction). My 14:3x
+   "flat-positive +3.8" claim was wrong by one match; no decision
+   taken on it changes (no-swap was called on full-window flatness,
+   which survives).
+2. SHIP-BET VERDICT absorbed for the case ledger: mechanism PAID
+   (bodies-on-seats +53% picket / +93% CAD-family — the diagnosed
+   quantity moved in the named classes); Elo HALF-paid (bleed/match
+   halved both classes, ns p=0.12 at n=7, stated honestly). KEY
+   STANDING FACT: heal-line thesis CONFIRMED-BUT-INSUFFICIENT for
+   CAD-family — staffing fine (h/i 0.82-0.97), cores die under a
+   6.5 HP/r structural incoming deficit → that class's next fix is
+   INCOMING-SIDE (counter-turret/deny per the CAD spec E-items).
+   This feeds the CAD probe-v2 build decision directly.
+3. CHECK 8 FINAL: wild leak 4.33% (18,560 Ti), 79.7% siphon; ROOT
+   CAUSE = WIRING REGRESSION, unwired harvester-rounds 24.3% (v74)
+   → 40.4% (v75). _v89sh's pending-wire queue targets exactly this.
+   OPEN SUB-QUESTION queued into the battery consumption: what did
+   v75 change to double unwired-rounds (hs-family plank? POP ceiling
+   lift spawning more unwired builds?) — if the cause is in shared
+   code, v76 inherits it.
+4. METHOD ITEMS placed: FireTurret-after-removeEntity trap →
+   tools/replay_schema.md (S1 decoder rule); ceiling-lift regime
+   change (never-binding → 27/70, half rich-attrition/half
+   poor-churn) → successor-queue open question, not urgent.
+All five of research's commissioned threads landed. Staged: sh
+accounting (fires on my corpus announce), v76 production read
+(window accruing; siphon + P1 grind-gate hooks registered).
