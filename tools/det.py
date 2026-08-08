@@ -128,6 +128,34 @@ def main():
         print("    DIFF", d)
     print(f"  tracebacks across all games: {sum(r['tb'] for r in out)}")
 
+    # DISTINCT-SHAPE COUNT (added 2026-08-08 s19, after this trap bit two legs
+    # in one evening -- research's suggestion, and both bites were mine).
+    #
+    # SEED COUNT IS NOT SAMPLE SIZE. With NOISE_ON=False on both arms and a
+    # deterministic opponent, the seed drives nothing that is still switched on,
+    # so every seed on a given (map, seat) can produce the byte-identical game.
+    # A leg reported as "120 paired games" can be ONE game replicated four times
+    # per cell, and the header line looks exactly the same either way.
+    #
+    # Both bites tonight: the hive-fix effect leg read "4/4 seeds" on a 601-round
+    # swing that was 1 distinct game; then the rescope-vs-wholesale leg looked
+    # decisive at 4/4 seeds vs opp_v63 (1 shape) and evaporated at 15/16 shapes
+    # vs opp_v78. Read the two numbers together or not at all.
+    shapes = set()
+    for k in keys:
+        A = idx.get((ta,) + k)
+        B = idx.get((tb,) + k)
+        if not A or not B:
+            continue
+        shapes.add((k[0], k[2],
+                    A["turns"], A["ti"], A["units"], A["bld"], A["win"],
+                    B["turns"], B["ti"], B["units"], B["bld"], B["win"]))
+    print(f"  DISTINCT paired shapes: {len(shapes)}/{n}   <-- your real replication")
+    if len(shapes) * 2 < n:
+        print(f"    ** LOW REPLICATION: seeds are collapsing ({n} pairs -> {len(shapes)} "
+              f"distinct). Do NOT read effect size off this leg alone; add an "
+              f"opponent or turn noise on. **")
+
     # DELIVERED-TITANIUM DELTA (added 2026-08-08 s18, on a measured blind spot).
     # Flip accounting is blind to economy-only effects BY CONSTRUCTION: the
     # hive_freeze ablation doubled delivered titanium (5,260 -> 11,030) and 5x'd
