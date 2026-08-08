@@ -4765,3 +4765,5 @@ most holders' early windows (any two early losses do it). Possible
 refinements if wanted: arm the rolling window only after N matches
 (e.g. 8), or require magnitude ≤ −5, or both. The rule is the
 team's; flagging the measured behavior, decision is Magnus's/team's.
+
+### 2026-08-08 18:5x (from `date`) — builder arm: WAKE — Flotte v38→v39; churn-routine; flotte_probe (s10-era freeze) formally suspect; watcher re-armed
