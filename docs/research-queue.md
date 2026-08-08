@@ -181,3 +181,21 @@ outcome, scored-at.
   Rule 7 added. Third attribution error in one chain; found only because the
   builder refused a correction that flattered its own work.
 - **NEXT TICK:** `sprt.py` + `paired_vs_pooled.py` to close item 2, then item 3.
+8. **Verify claims that FLATTER your own work at least as hard as ones that
+   damage it.** (Builder's symmetric rule to rule 7, 2026-08-09.) First
+   application: the builder's "unrated is the only punishing instrument" finding
+   partly vindicated my backfire mechanism — which is why I went at it rather
+   than banking it, and found two overstatements.
+
+## Log (continued)
+- **2026-08-09 02:3x** — checked the builder's `[gate]` structural finding
+  (`unrated-validity-check-2026-08-09.md`). **Their hive figures VERIFIED
+  independently** (v80 unrated hive 1/17; the win is vs our own alt team, so
+  0-for-16 external; 8 tiebreak losses). **Two narrowings relayed:** (a) the tape
+  row "we own no local opponent that can punish us" is false — opp_v76/v44/v69
+  beat us and are the builder's OWN primary arm; correct is "no EXTERNAL local
+  opponent". (b) The hive-vs-1,080-matches contrast compares an ECONOMY question
+  to a LETHALITY one — and local did not fail on hive, local SOLVED hive
+  (code-read + my r42 replay test + their 2.10x det leg). The mechanism rests on
+  ONE aggression question (v86), not two.
+- **NEXT TICK:** `sprt.py` + `paired_vs_pooled.py` to close item 2, then item 3.
