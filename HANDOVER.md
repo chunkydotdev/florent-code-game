@@ -1,4 +1,61 @@
-# Session 19 FINAL (builder, wrapped 22:09 CEST on Magnus's call)
+# Session 20 IN PROGRESS (builder, booted 22:23 CEST). s19 block follows below.
+
+## ===== LIVE VERSION CORRECTION — THE s19 BLOCK BELOW IS WRONG ABOUT THIS =====
+## s19 says LIVE = v84 "Eir 14". **IT IS NOT, AND HAS NOT BEEN SINCE 22:15.**
+##
+##   LIVE = **v86 "Z2 fastfacing"** (x3r0, activated 22:15 CEST, submission
+##   a76400ec, md5 b0c908fd, staged locally as `bots/_v86z2`).
+##   Baseline at activation: 1572.6 @ 436, rank #29/113.
+##   Rollback = v84 (`bots/_v99mag`, md5 dab7766e) one click.
+##
+## **v86 IS A FORK OF OUR v76, NOT A DESCENDANT OF v84.** It is 128 diff-lines
+## from `bots/opp_v76`, so it REVERTS v77-v84 wholesale — the Eir E-family
+## bundle, the hive fix and PIECE MAG, ~2,400 lines, are OFF THE LADDER.
+## Verified against platform primaries: platform v84 == `_v99mag` and platform
+## v76 == `opp_v76`, both byte-identical. Its 128 lines are three named changes
+## (S1 SPEED table-snapshot, V1 FACINGFIX, W4 ti_floor retune).
+##
+## **TRAP THAT BIT BOTH ARMS: dev-dir numbers are NOT platform versions.**
+## `_v89sh`=v80 · `_v99mag`=v84 · `_v97e11`=v83 · `_v95e1`=v81. Mis-sorts by ~9.
+
+## ===== THE CEILING BATTERY (840 matches, tools/ceiling.py, s20) =====
+## Three binaries vs the SAME anchor, WIN RATE IDENTICAL (86.7-88.3%, all
+## pairwise p>0.8) so strength is controlled by construction:
+##
+##            win rate   kill-conversion   r1000 share
+##   v84        87.5%         77.1%          27.5%
+##   v76        86.7%         94.2%           9.2%
+##   v86        88.3%         97.2%           8.3%   <- LIVE
+##   v86-v84: conversion +20.0pp (p=1.3e-05), r1000 -19.2pp (p=0.00011),
+##            win rate +0.8pp (p=0.84). Strength axis (ouro): v76 beats v84
+##            +14.2pp (p=0.0014). Head-to-head: v76 beats v84 60-40.
+##
+## **THE TENSION IS BIGGER THAN THE RESULT.** Local says v76/v86 decisively
+## beats v84 across three independent opponents. The ladder says v77-v84 is
+## +0.7 Elo over n=54. Either (a) the ladder lacks the matches, or (b) **local
+## arena does not transfer at all**, which would make every A/B verdict this
+## project has issued suspect. **v86 going live IS the test** — this is the `v2`
+## queue item, long marked "unrunnable as specified". It is runnable now.
+##
+## **PRE-REGISTERED, do not read tea leaves later:** grind games are our ONLY
+## profitable population (+24 net, 58.2%, research) and v86 grinds a THIRD as
+## often. So v86 should GAIN vs strong teams and LOSE to the weak ones we farmed
+## in the tiebreak. Its 2nd ladder match was a LOSS to Askar City (-6.01), whom
+## s19 recorded us beating 5-0 on that exact tiebreak. **n=1, prediction not
+## evidence.** Net Elo could wash while core-kill rate rises — that would mean we
+## traded our only profitable regime for a ceiling we cannot yet cash.
+
+## ===== CORRECTION: THE s19 MAP TABLE BELOW IS OVER-READ =====
+## Bonferroni over the 15 maps we looked at leaves **hive (25/34=74%, p*15=0.002)
+## as the ENTIRE heterogeneity signal.** Maps do genuinely differ (chi-sq 40.2/14,
+## permutation p=0.00030) but the s19 "tier of bad maps" is NOT supported — read
+## it as **"hive, and then fourteen maps."** **"drumlin CONFIRMED" is WITHDRAWN by
+## its author; spend nothing on drumlin.** The hive defect PREDATES v77 (75%
+## killed v72-76 vs 72% v77-84, strong-only 75%/75%) so **it is live in v86**.
+##
+## Also retired: "our 44% core-kill rate is the ceiling metric" is a MIXTURE —
+## 69% of kill-decided games won vs opponents <1550, **33% vs >=1550**. There is
+## no single 44% to optimise; there are two regimes and only one loses matches.
 
 ## ===== READ THIS FIRST: THE FIELD PLAYS A DIFFERENT GAME =====
 ## Row `ladder-wide-census-THE-GAP`, measured on 335 games across 10 teams:
