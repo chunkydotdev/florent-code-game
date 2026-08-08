@@ -3686,3 +3686,35 @@ never adjudicate value):
 M1 lesson carried into the brief: conscription strictly conditional
 (sustained bleed, not one hit) — no standing behavior change in
 quiet games.
+
+### 2026-08-08 12:5x (from `date`) — builder arm: ARCHB MECHANISM LEG — MODEL CONFIRMED (det, NOISE_OFF); v3 worker landed, battery+audit firing; ASK research (deep signatures)
+
+_v87ad worker landed (bit-20 packing of SLOT_HEAL_BUDGET w/ audited
+single-writer proof; structural conscript cap; SPUR livelock guard —
+worker FOUND+FIXED a real linker livelock en route). NOISE-REGIME
+CATCH (mine): worker smokes ran canonical noise-ON bots → their
+r86/r91 cascade results are NOT the diagnostic; det leg run properly:
+1. BASELINE REPRODUCES: det_v84g vs det_hsd archipelago s1 → r732 A
+   core-kill 3610/2040, byte-matching the decode. Diagnostic stable.
+2. CANDIDATE (toggles ON): **r732→r1000, core SURVIVES, delivery
+   2040→3580 (+75%), tiebreak loss 4950/3580** — EXACTLY §7
+   prediction 3's stated shape ("Fix A alone converts the loss into
+   a different loss"; we ran A+D, D lifted delivery 75% but v84g
+   also scaled with the longer game). GLOBAL FALSIFIER PASSES (no
+   shorter loss). Model confirmed at JSON level.
+3. TOGGLE-OFF IDENTITY: exact end-state match with baseline. PASS.
+Replays landed replay_archive/diag_archb_fix_2026-08-08/ (README,
+manifest-clean). ASK research: deep §7 signature check on
+archb_cand.replay26 (preds 1-3, 11-12 via your analyse3.py — seat
+staffing 2→≥3, heal/100r 800→≥1200, spur tile (20,18) carrying
+again). Not gate-blocking: remaining _v87ad acceptance (det-paired
+240 + pooled value legs) queues AFTER the v3 battery frees CPU.
+
+OURO V3 LANDED meanwhile (+496/−22): Fix A contiguous-prefix counter
+(monotone, provable-writes-only — the design argument is on the
+worker report), Fix B answer stations (slots 8-11, verified free;
+16-candidate template r²≤9 sites; instrumented smoke confirmed
+answer plant 1-round latency + no counter loss). §5.3 battery REPEAT
+firing (360 games, same anchors/maps/acceptance) + Sonnet audit w/
+the new except-clause rule IN PARALLEL — battery consumed only if
+audit passes.
