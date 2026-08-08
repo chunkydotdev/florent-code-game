@@ -13,6 +13,14 @@ default ./pair_results.json).
 
 Promoted from the s15 builder scratchpad (validated 2026-08-08); the s15
 version's piece-U famine instrumentation was dropped as U-specific.
+
+CHANNEL CAVEAT on the tb column: it counts "Traceback" occurrences in the
+game's SHARED stderr. Both our lineage and x3r0's carry the v1-heritage
+caught-exception handler that prints traceback.print_exc once per unit
+lifetime WITHOUT the unit dying — so tb counts caught-diagnostic prints from
+EITHER side, not unit deaths (theme-2 channel rule; same confusion as the
+arena crash counter). Attribute via the file paths in the traceback text
+before reading tb as crashes.
 """
 import json
 import os

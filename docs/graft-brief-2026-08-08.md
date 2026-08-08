@@ -102,7 +102,15 @@ unless stated. Deep dives: `docs/research/v72-delta-read-2026-08-08.md`
    `_link_path` call site on detected breaks) with his two caps fixed
    (vision-local detection, 12-hop cap) and repair-from-the-break ordering.
 2. **Nothing else new at v72.** v71 orescreen is decoded-map-only six lines;
-   endgame is our own piece H coming home.
+   endgame is our own piece H coming home — **with a defect he inherits**
+   (rev-4 production read §C5, code-verified): H's r960 dump gate counts
+   turrets via the core's own vision (r²=36), but both lines plant turrets
+   forward, so the gate reads zero and H never fired in its only r1000
+   production game. The docstring even concedes it ("a forward siege gun out
+   of Core sight reads zero"). Merged-line fix: gate on a live-turret
+   registry (build-time count, decremented on observed death) instead of a
+   core-vision scan. Until then H is dead weight in both lines — thrice
+   unverified, now mechanism-refuted in production.
 
 ## 3. Do-not-graft list (refuted on our tape — save him the cycles)
 

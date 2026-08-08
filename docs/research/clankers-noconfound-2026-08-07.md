@@ -422,3 +422,146 @@ it explains their ceiling:
   Leviathan v26's reputation as a fast rush-family killer is **not** reproduced in
   these 5 games (it built zero sentinels, zero launchers and zero builder attacks,
   and killed nothing).
+
+---
+
+## Addendum (2026-08-08): 024d13d6 seat-mapping re-audit
+
+**Trigger.** `docs/research/v73-production-read-2026-08-08.md` measured Leviathan
+**v25** in a fresh ladder match as a clear forward-gunner rush (r9-r12 plants at
+d²≤5 of our core in 3/5 games, 100% of our core damage from gunners) and flagged
+this match's "Leviathan v26 = ZERO rush, 0 sentinels/launchers/builder-attacks"
+side finding as suspicious — a seat inversion would produce exactly that misread,
+crediting the aggressor's (Clankers') behaviour to the passive side's (Leviathan's)
+label.
+
+**Version-tag header.** Corpus:
+`replay_archive/024d13d6-e0f5-4d29-819f-b1d02bc15fa8_game_1..5.replay26` +
+matching `.meta.json` (all 6 files present, verified on disk before reading).
+Cross-reference: `docs/research/v73-production-read-2026-08-08.md` (today's
+Leviathan v25 read). Our live version: v73 "Eir 7" = `bots/_v84g/main.py`, md5
+`cbb0b8b449110f89be9765028fbf8c54` (re-verified on disk, unchanged) — not itself
+in this corpus (neither seat is OpenSverige here). No bot source directories
+were read for this audit; it is pure replay decode against
+`tools/replay_schema.md` + `tools/replay_census.py`, plus a scratch instrument
+script (`seat_audit.py`, read-only, discarded after use — not committed) that
+re-parses the wire format independently of any assumption in the original
+deliverable's (now-dead) scratchpad walkers. `meta.json`:
+`teamAId → Leviathan v26` (1674.48→1650.60, 479 matches),
+`teamBId → Clankers v1` (1694.90→1722.30, 36 matches), `scoreA:0 scoreB:5`,
+`winnerId == teamBId`.
+
+### (a) Verdict per game: **CORRECT in all 5 games — not inverted**
+
+Four independent instruments, all measured fresh from the raw replay wire
+format (no reliance on the original walker's output):
+
+1. **Score/winner match.** Replay `winner` field is **B** in all 5 games
+   (`core_destroyed` in all 5). `meta.json`: `scoreB:5`, `winnerId == teamBId`
+   (Clankers). Replay-B = winner = Clankers, all 5 games. ✔ agrees.
+2. **Clankers heal-tank-siege fingerprint, reproduced on replay-B to the exact
+   round and tile.** Team B's first forward sentinel and first d²=1 launcher
+   plants match the original deliverable's own §1.2 table **exactly**, digit
+   for digit, independently re-derived: g1 sentinel r10 @(2,8) [doc: r10
+   @(2,8)]; g2 r41 @(2,9) [r41 @(2,9)]; g3 r32 @(6,1) [r32 @(6,1)]; g4 r20
+   @(6,3) [r20 @(6,3)]; g5 r77 @(5,11) [r77 @(5,11)]. Launcher-at-d²=1 events:
+   g1 r114 @(6,3) and r181 @(5,4) [doc: identical]; g4 r293 @(10,3) [doc:
+   identical]. Team B: 0 barriers, 0 splitters, 100%-chain-wired end state, all
+   5 games. ✔ agrees.
+3. **Leviathan gunner-rush + TLE-on-builders fingerprint, found on replay-A.**
+   Team A plants a forward gunner at d²≤9 of the *enemy* (replay-B) core in
+   4/5 games — g2 r20 @(13,3) d²=1; g3 r33 @(13,13) d²=2; g4 **r8** @(12,9)
+   d²=1 (earlier than v25's fastest, r9); g5 r31 @(21,17) d²=5 — and at d²=20
+   in g1 (r15 @(4,8)). Team A never builds a sentinel or launcher in any of
+   the 5 games (0/5 each). The one game with any TLE activity, g4, shows
+   **8 TLE unit-rounds, all on entity #5, kind `builder_bot`, all on team A**
+   (r288-r292, r307-r309) — 0 on team B — matching the "TLE forfeits land on
+   builders" shape from the v25 read (n is far smaller here, 8 vs 335, but the
+   direction and target class agree). ✔ agrees.
+4. **Damage-ledger reproduction.** Re-attributing every `FireTurret` event to
+   the live gunner/sentinel entity standing on its `from` tile (0 unattributed
+   shots in any of the 5 games) and filtering to shots landing on the enemy
+   core footprint: team-A gunner hits on team-B's core total **0 / 3 / 75 / 1
+   / 61** shots × 7 dmg = **0 / 21 / 525 / 7 / 427 HP** — this reproduces the
+   original deliverable's own §1.1 sentence ("having taken 0 / 21 / 525 / 7 /
+   427 total damage") **exactly**, digit for digit, from an independent
+   re-parse. Team-B's damage to team-A's core is **100% sentinel** in every
+   game (68/54/41/47/43 core-landing sentinel shots; 0 gunner or builder-melee
+   hits on the core footprint from B in any game) — team B's own gunners fire,
+   but never land on A's core (consistent with the "reactive counterbattery"
+   role, not a siege role). ✔ agrees.
+
+All four instruments agree, in all five games: **replay-A = Leviathan v26,
+replay-B = Clankers v1, exactly as the original deliverable had it.** No
+inversion, no re-attribution needed.
+
+### (b) Consequence for the original CLANKERS findings: **all unaffected**
+
+Since the mapping is correct, every Clankers-attributed finding in §0-2 of
+this deliverable was measured on the right team. Explicitly, per claim:
+
+| Claim | Status | Basis |
+|---|---|---|
+| Heal-tank controller law (core heal tracks dmg to within 2%) | **UNAFFECTED** | Team B is confirmed Clankers; not independently re-measured here (out of this audit's scope), but the seat it was measured on is correct |
+| Standing forward sentinel siege, d²_enemy 16-25 | **UNAFFECTED, and independently re-confirmed** | Re-derived first-sentinel round+tile for team B matches the original's published table exactly in all 5 games (instrument 2 above) |
+| Income-gated launcher-ejection ring, launcher-at-d²=1-before-kill | **UNAFFECTED, and independently re-confirmed** | Re-derived launcher plants at d²=1 for team B match the original's published events exactly (g1, g4) |
+| Reactive counterbattery gunner siting (d²≤2 of a live enemy turret) | **UNAFFECTED** | Consistent with instrument 4: team B's gunner fire never lands on the enemy core, i.e. it is not being used as a siege weapon — behaviourally consistent with a counterbattery role, though the d²≤2-of-enemy-turret siting itself was not re-derived here |
+| Conveyor siphon (196 stacks, 100% into Clankers) | **UNAFFECTED (not independently re-verified this pass)** | Team identity underneath the claim is correct; the siphon *mechanism/direction* itself is outside this audit's scope (it concerns which team's ore feeds which team's network, not which replay-letter is which team) and was not re-derived here |
+| Zero barriers / zero splitters (10/10 games incl. the other match) | **UNAFFECTED, and independently re-confirmed for this match** | Team B: 0 barriers, 0 splitters, all 5 games (census) |
+| Delivered-titanium tiebreak/outcome pattern | **UNAFFECTED** | Team B wins all 5 by `core_destroyed`, matching `scoreB:5` |
+
+### Corrected — really, clarified — Leviathan v26 behavioural profile
+
+The seat mapping was never the problem; the **side-finding's framing** was too
+compressed and reads as a stronger claim ("ZERO rush behaviour") than the
+original deliverable's own body text supports. §1.1 of this document already
+reports "it planted only 1–2 forward gunners per game (r8, r15, r20, r31,
+r33/r36) at d² 1–9 from Clankers' core" — this audit reproduces those same
+round numbers independently (instrument 3) and confirms them. What v26
+actually does in these 5 games, stated precisely:
+
+- **A genuine but weak forward-gunner rush attempt, present in all 5 games**:
+  first forward gunner at **r8 (g4), r15 (g1), r20 (g2), r31 (g5), r33 (g3)**,
+  landing at **d²=1 (g2, g4), d²=2 (g3), d²=5 (g5), d²=20 (g1)** from the
+  enemy core — matching, and in g4's case (r8) *beating*, v25's r9-r12 timing
+  against a different opponent today.
+- It never escalates: **0 sentinels, 0 launchers, 0 builder attacks in all 5
+  games** (independently re-confirmed, not a decode artifact — team B's
+  corresponding counts are non-zero in every category, so this isn't a
+  parser blind spot). Total gunners built per game: 18/8/13/20/4, of which
+  only 1-2 per game are forward-sited; the rest sit at d²_own 9-41 as a home
+  picket.
+- **The rush is fully neutralized by Clankers' heal-tank, not absent.** Damage
+  delivered to Clankers' core: 0/21/525/7/427 HP across the 5 games — versus a
+  core with 500 HP and a heal controller that (per §0.2 of this doc) tracks
+  incoming damage to within 2% up to a titanium-gated ceiling. v26's peak
+  output, 2.81 dmg/round in g5, sits far under the "4× heal rate" kill
+  threshold this deliverable establishes elsewhere. So the *behaviour*
+  (forward gunner plant, early rounds) is the same shape as v25's; the
+  *outcome* (near-zero core damage, 0-5 result) is a function of the opponent,
+  not the absence of aggression.
+- v26 **lost all 5 games (0 wins, 0 core kills)** in this corpus, so the
+  family's "median 64-round kill" claim (from
+  `docs/research/wave-ghost-first-read-2026-08-07.md`) is **not tested here at
+  all** — it can only be measured on v26 wins, and none exist in this match.
+  This match cannot confirm or refute the family kill-speed claim either way.
+
+**One-line answer to the era question:** the zero-sentinel/zero-launcher/
+zero-builder-attack datum is **real, not a seat-mapping artifact** — the seat
+mapping was correct in all 5 games — but "ZERO rush behaviour" oversold it:
+v26 attempts the same forward-gunner opening as v25 (sometimes earlier: r8 vs
+r9-12), just with lower commitment (1-2 forward gunners vs v25's much heavier
+and more sustained pressure) and against a heal-tank opponent that fully
+absorbs it, producing a near-zero-damage line that looks passive by outcome
+but isn't passive by intent.
+
+**Surprise worth flagging to the next reader.** Re-deriving the exact
+round/tile/damage figures from the raw wire format and finding them match the
+original deliverable's own published numbers digit-for-digit (instruments 2
+and 4 above) is itself the strongest evidence available that the original
+walker's team/seat resolution was sound — the suspicion in the v73 read was
+reasonable to raise (a seat inversion is a real, previously-seen failure mode
+per the v73 doc's own "Seat-map verification" self-check), but it does not
+apply here. The lesson generalizes: a "does nothing" side-finding should be
+checked against the source document's own body text before it's treated as
+suspicious — here the body text already had the answer.

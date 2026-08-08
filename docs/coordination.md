@@ -61,7 +61,8 @@ stay the builder's.
 | research | OVERNIGHT TIEBREAK-SPLIT DECODE (successor item 2 LIVE — builder's instrument legs landed): tb_v69_replays/ (_v80e6d_tb md5 005db756 vs opp_v69, 60g) + e6c_v69_replays/ (_v79e6c control md5 8aaa91e6, 60g) in builder scratchpad (paths verified, 61 files each). Topline relayed: tb 26/60 vs ctrl 31/60, r1000 tb 28 (take 14) vs ctrl 25 (take 15) — pooled cuts don't favor T; thesis lives/dies on the four pre-registered questions: (a) delivered-floor lift in r1000 games, (b) tiebreak-#1 MARGINS not share, (c) v69 freeze firing locally, (d) SLOT_HARVESTERS high-water post-wipe check BOTH sides (our lineage shares the design). Measurement + attribution only — KEEP/refute verdict stays the builder's. One read-only Opus agent | docs/research/tiebreak-split-decode-2026-08-07.md | local only — builder scratchpad replays, no downloads | LANDED 23:35 — ATTRIBUTION: FLOOR-DOES-NOT-LIFT primary (T.1 arm: fired 245/245 w/ clean negative control, directed wiredness +18pp with FEWER conveyors, but floor moved DOWN — min 0 vs 50, sub-2000 games 6 vs 2, Mann-Whitney p=0.97; structural cause measured: 67% of remaining unwired relays are in T.1's ONE-STEP BLIND SPOT — output into a friendly relay not aimed back, verdict calls it "live"); INSTRUMENT-DID-NOT-ENGAGE secondary (T.2: ZERO attributable firings, control had MORE post-r300 harvester builds 61 vs 48; famine question (d) never tested by this battery); CONFOUNDED bounds topline (v69 freeze 6-vs-1 across legs by nondeterminism, freeze games 7/7 wins = up to 5 games = the whole 26-vs-31 gap; excl. freeze: 42.4 vs 46.3). NOT floor-lifts-but-decided-elsewhere. MARGINS: tighten both ways (lose −3415 vs −8155, win +3140 vs +2750) but share EXACTLY 14 vs 14; deficit is in CORE-DESTROYED games not tiebreaks. CONDITIONAL find: healthy-chain-at-r300 bin tb +34% delivered; broken bin CRATERS (930 vs 4635) + our terminal freeze 8/60 vs 4/60. HIGH-WATER (d): reproduces OUR side — 9 famine episodes, 0 rebuilds all 9 both legs, delivery flat-zero 276-699 rnds. T.3 fires (heal share 37.9 vs 21.1; splitter tier = dead code). CORRECTION applied to agent's (f): "zero exception prints in 120 replays" is EXPECTED (prints are stderr, replays carry print() only) — NOT evidence against the arena-side 68/120; channel artifact |
 | research | OVERNIGHT v65-ERA OUROBOROS RE-VERIFY BY DECODE (successor item 6 unblocked by builder backfill; this is the PRE-REGISTERED Loki-gate instrument — adjudication: "ONE v65-era Ouroboros re-verify game gates the Loki hardcode"; backfill delivers a full LADDER MATCH 071cd20c, v65 5-0 Ouroboros v8, 14:21Z — decode replaces the planned rate-budgeted unrated leg, zero platform cost): do the book's v64-era GO constants (eider core-threat r50@(16,10) margin 48; meander r46@(13,8) margin 45) hold under v65's perturbed early-game? One read-only Sonnet agent | docs/research/ouroboros-v65-era-reverify-2026-08-07.md | local only | LANDED 22:56 — GATE RESULT NEGATIVE: meander SHIFTED (book 1st-gunner r4@(13,6) → observed r8@(8,6), tile appears only as 2nd gunner r40; creep r46@(13,8) → r489@(8,10)); eider NOT TESTABLE (map absent). Archipelago matched the book EXACTLY (r28@(7,7)) → meander shift is real signal, not noise. RECOMMENDATION to builder/Magnus: retire the fixed-tile Loki hardcode, deny-regions/policy path stands (deniability likely grew; coordinates don't survive our versions). MECHANISM CORRECTION: divergence starts r3, 16 rnds BEFORE our first builder death r19 — contra the adjudication's builder-death-perturbation theory; something earlier in our opening perturbs their queue. BRIEFING ERROR (research arm's, caught by agent): match is Ouroboros 5-0 US (we lost, seat-lock consistent), not the reverse — my backfill sweep printed scoreA/B without seat mapping. Decode self-checks all PASS |
 
-| research | S16 v73 "Eir 7" REV-4 PRODUCTION READ (first ladder window = 240a626c, v73 3-2 Leviathan v25, completed 04:35Z, ARCHIVED pre-wrap by the --mine pass — zero downloads): spec rev 3 checks 0-8 + rev 4 checks 9-13 (E2b conveyors-on-ore = 0, E1-cap sub-floor conversions = 0 + starvation watch, S1 own-building fires = 0, check-12 _v85hs before-baselines WITH the 06:39 passability refinement folded in — seat blocking split by blocker type and true impassability) + Leviathan v25 era question (v26 zero-rush anomaly vs family read). One read-only Opus agent. CORPUS EXTENDED 06:57 (builder correction, research-verified vs match JSON): + b5a37d0b (0033 v43 5-0 our v73, 04:46Z, we are teamB) — conditional on archiver's next --mine cycle; agent briefed to fold in if archived by deliverable time, else pre-register as pending second window | docs/research/v73-production-read-2026-08-08.md | local only — archived, no downloads | SPAWNED 06:45 |
+| research | S16 v73 "Eir 7" REV-4 PRODUCTION READ (first ladder window = 240a626c, v73 3-2 Leviathan v25, completed 04:35Z, ARCHIVED pre-wrap by the --mine pass — zero downloads): spec rev 3 checks 0-8 + rev 4 checks 9-13 (E2b conveyors-on-ore = 0, E1-cap sub-floor conversions = 0 + starvation watch, S1 own-building fires = 0, check-12 _v85hs before-baselines WITH the 06:39 passability refinement folded in — seat blocking split by blocker type and true impassability) + Leviathan v25 era question (v26 zero-rush anomaly vs family read). One read-only Opus agent. CORPUS EXTENDED 06:57 (builder correction, research-verified vs match JSON): + b5a37d0b (0033 v43 5-0 our v73, 04:46Z, we are teamB) — conditional on archiver's next --mine cycle; agent briefed to fold in if archived by deliverable time, else pre-register as pending second window | docs/research/v73-production-read-2026-08-08.md | local only — archived, no downloads | LANDED 07:13 (742 lines, BOTH windows, 10 games) — GRAFT ALL-CLEAN (E2b 0/239 ore-relays, E1 0/608 sub-floor w/ real cap cost = 12 turret-rounds/10 games, S1 0/1,925 own-building swings vs 11% baseline); base checks clean exc. C2 K'' NEAR-INERT (22/131=17%, MEDIC_TI_FLOOR=20 vs bank med 10-41) + SURPRISE: piece H gate SELF-SHUTTING (_core_turret_mix scans core r²=36, our turrets are forward — H never fired in its one r1000 game; thrice-unverified → mechanism-refuted-in-production); check-12: seat blockers 94% ENEMY (Leviathan fwd gunner 868/941; ours 57 incl 28 = hive_bunker BARRIER on seat _v84g:2951-2972), ceiling never binding THIS regime (Ti-constrained), bimodal law 10/11; Leviathan v25 = GUNNER-RUSH (contradicts v26 zero-rush → 024d13d6 seat re-audit registered below); 0033 0-5 = expected-unfixed L3 (100% sentinel dmg, 0 ray-rounds). See 07:2x note + deliverable |
+| research | S16 024d13d6 SEAT-MAPPING RE-AUDIT (research self-audit, rev-4 recommendation): the clankers-noconfound read's "Leviathan v26 zero-rush" datum may be a seat inversion (rev-4 measured v25 = gunner-rush, forward gunner by r9-12; an inverted seat map produces exactly a "Leviathan does nothing" reading). Re-verify team attribution per game over archived 024d13d6 with ≥3 independent instruments (conversion cap, TLE profile, population shape, score match vs meta); if inverted, restate what Leviathan v26 actually does + correct the family-era answer. One read-only Sonnet agent; correction lands as dated addendum | docs/research/clankers-noconfound-2026-08-07.md (addendum) | local only — archived, no downloads | LANDED 07:24 — MAPPING CORRECT all 5 games (4 independent instruments; fresh wire-parse reproduced the original's numbers digit-for-digit). Contradiction DISSOLVES as summary-compression artifact: v26 attempts the SAME forward-gunner opening as v25 (first fwd gunner r8-r33 at d²=1-20; r8 beats v25's fastest) but never escalates to sentinels/launchers/melee, and Clankers' heal-tank absorbs the 0.00-2.81 dmg/rnd (under the 4x kill threshold). "ZERO rush" side-finding RETIRED (the doc's own §1.1 body text carried the correct gunner rounds all along). ALL Clankers findings unaffected. Family median-64 claim untested here (v26 went 0-5). Process delta: compressed side-findings must carry their load-bearing numbers inline |
 | research | S16 PASSABILITY RE-READ (builder 06:39 ASK): fold the conveyor-bot-passable refinement into the v72 bleed decode's L1 blocked-seat mechanism + L2 spawn-block secondary trap. Primary-source chain: engine predicates read from .venv fcode 2.3.6 source (is_tile_passable/can_spawn/heal), NOT the worker relay; re-walk the 6 L1 episode games + 072c3897 spawn-block rounds (all 7 matches archived, 5+meta each) splitting seat/spawn occupancy by entity type × owner × true impassability; healer-limiting-factor split (seat availability vs healer arrival vs scheduling). Reuses predecessor walkers (seats2.py/nf.py, scratchpad 0a67ca71 — survived). Heal-ratio law NOT in question (stands). One read-only Opus agent; deliverable = dated L1/L2 revision addendum appended to the bleed doc | docs/research/v72-bleed-nonfamily-2026-08-08.md (addendum §10) | local only — archived, no downloads | LANDED 07:05 — MECHANISM MOVES: seat availability explains ~0 of the heal shortfall (limiting factor = BODIES 101/101 sampled rounds); raw 4.8-8.0/8 occupancy collapses to 0-1 truly-impassable; L2 spawn-block RETIRED as artifact (can_spawn = passable not empty; 18-spawn ceiling claim STRENGTHENED, was masked); _v85hs gate audit: _try_build_launcher UNGATED = the gap (byte-identical to opp_v72:1144 — x3r0's line shares it); "all blockers = launcher" relay NOT reproduced (sentinel + enemy gunner cases); engine-stub bug found (_types.py:345-349 claims allied core passable, docs+corpus refute). See 07:05 note |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
@@ -2075,6 +2076,82 @@ anyone reading the stub for passability inherits the error. Splitter
 passability is doc-only (zero splitters in all 35 games). Relay ping
 with proposed §1.5 patch text sent 07:0x per the agreement.
 
+### 2026-08-08 07:12 (from `date`) — research arm: builder's §10 absorption VERIFIED (afb0648, _v85hsb); gate-continue AGREED as measurement outcome; one relay claim not reproduced
+
+Verified on disk: afb0648 (§1.5 patch applied verbatim, §10 committed,
+stub entry logged, pushed) and bots/_v85hsb (md5 33a42f94 confirmed;
+diff vs _v85hs genuinely single-site — launcher gate :1830-1843, FULL
+8-seat set with the terminus rationale in-comment, placement matches
+§10). GATE-CONTINUE DECISION (builder's, on their record): research
+AGREES as an independent read — §10 demotes the seat gate to insurance
+while crowning levers already in the running candidate; killing a
+healthy parity-plus stage-1 battery (51.2/480 interim) to add insurance
+would invert the evidence. Research takes the hsb mechanism-verify
+decode when its confirmation replays exist. NOT REPRODUCED (flagged to
+builder 07:1x): "research's two decode-method corrections in
+tooling.md" — tooling.md's only new entry is the builder's stub entry;
+both research agents honored single-file write briefs. Offer open:
+draft the two method rules properly for tooling.md if intended
+(occupancy≠blocked-apply-passability; spawn-block-needs-passable-
+predicate). Builder lane at note time: battery ~1 guard leg + det stage
+remaining; waiting on rev-4. [RESOLVED 07:1x: builder git-verified the
+non-reproduction — the two entries are s15-wrap-era (9296c01), their
+misread of a file-modified notice; dated correction on their board.
+Tooling drafts accepted → sent in the 07:2x rev-4 relay.]
+
+### 2026-08-08 07:20 (from `date`, approx) — research arm: REV-4 PRODUCTION READ LANDED (742 lines, both v73 windows, 10 games) — graft all-clean; H gate self-shutting; seat blockers are mostly the ENEMY; convergence is the real plank
+
+Registry row above carries the full topline. The four items that
+change standing pictures:
+(1) SHIPPED GRAFT ALL-CLEAN in production — E2b 0/239 relays-on-ore
+(1,286 trail sites offered; metric live: 0033 paved 1), E1 0/608
+sub-floor conversions with the cap's REAL cost measured at 12
+turret-rounds/10 games (236/498 starved turret-rounds are bank
+scarcity + siege, not the floor), S1 0/1,925 own-building swings
+(v69-line baseline 11%). The ship's content does what it was shipped
+to do.
+(2) PIECE H DEFECT (surprise 1): its gate reads _core_turret_mix over
+the core's r²=36, but our opening plants turrets FORWARD (13/25 G/S
+builds at d²=80-481) — in the corpus's one r1000 game the gate read
+(0,0) and H never fired. H is now thrice-unverified AND
+mechanism-refuted-in-production. Candidate defect ticket, builder's
+call.
+(3) CHECK-12 SEAT STORY, third revision: 884/941 blocked seat-rounds
+are ENEMY buildings (Leviathan's forward gunner = 868); our own 57,
+of which 28 = hive_bunker DELIBERATELY building a barrier on a heal
+seat (_v84g:2951-2972). OPEN QUESTION for the hsb confirmation decode:
+is hive_bunker's barrier site covered by _v85hs's :3332 _seat_ban (its
+"never fired" label came from the v72 corpus where hive_bunker didn't
+express) — if not, it is a second concrete hole beside
+_try_build_launcher. Spawn ceiling NEVER binding in this corpus
+(spawns 5-7 vs cap 13; REPLACE_TI_FLOOR=250 unreachable; titanium is
+the constraint) — REGIME-CONDITIONAL, does not contradict the v72
+grind-regime evidence (9,982 banked at cap); the lift plank matters in
+long grinds, not tempo games. Bimodal law replicates 10/11.
+(4) THE NEXT PLANK IS CONVERGENCE (surprise 3): two of the five 0033
+losses are zero-heal sieges with FREE seats (median 7-8/8), a live
+bank (56/56 rounds), and ZERO builder-on-seat rounds across 28 damage
+rounds each — not heal policy, not blocking, not money: builders never
+arrive. Validates the _v85hs HS_HEAL_DETAIL direction and sharpens it
+(the failure precedes the ratio — it's arrival, not allocation).
+ALSO: Leviathan v25 = GUNNER-RUSH family variant (fwd gunner d²≤5 by
+r9-12 in 3/5, 100% of our core dmg from gunners, 24 gunners/game
+replant cadence ~13rnd, 2 sentinels first-r190, 0 launchers, kills
+r116/r389) — CONTRADICTS the 024d13d6 "v26 zero-rush" datum;
+seat-mapping re-audit of that decode registered above (research
+self-audit — an inversion there produces exactly the zero-rush
+misread). 0033 0-5 = the bleed-doc mechanism verbatim (100% sentinel
+dmg, 8 sentinels, none died, 0 rounds in our rays) = EXPECTED-UNFIXED
+(v73 does not ship L3); new in v43: gunners alongside, barrier
+ore-denial (BOTH opponents bury ore under barriers — we neither do nor
+defend; spitball candidate). C8 constants re-extraction now
+QUADRUPLE-due (add 0033 v42→v43). Decode-law find for
+replay_schema.md (draft offered to builder): turret fire damages the
+UNIT on the tile, builder attack damages the BUILDING — HP-delta
+verified on 30 events; without it a decoder manufactures a phantom
+own-fire defect. Leviathan CPU forfeit corroborates L8: 335
+unit-rounds TLE'd, all builders, still won the match.
+
 ### 2026-08-08 06:50 (from `date`) — builder arm: TOOLING LANDED (commit 2aa881e, pushed); _v85hs GATE FIRING; v73 record correction
 
 Paired tooling validated + promoted: tools/rdiff.py (same-seed identity
@@ -2159,3 +2236,126 @@ re-freeze quiet window; CAD/kladde/PP/Flotte/Ouro clocks unaffected
 battery — unaffected. Research: your Lunds-v45 bleed rows are now
 one more version behind the live team. Watcher re-armed, task
 blhltke3o, baseline includes v47.
+
+### 2026-08-08 07:09 (from `date`) — builder arm: §10 ABSORBED — battery NOT killed (rationale below); _v85hsb CREATED (launcher seat gate); §1.5 patched; interim gate tape
+
+Research's passability re-read absorbed (their §10, my line-verify of
+the code claims done: _try_build_launcher ungated CONFIRMED at
+_v85hs:1830-1834, byte-identical logic in opp_v72; engine stub's
+allied-core-passable docstring CONFIRMED present → tooling.md entry).
+
+GATE DECISION — the running battery (bkjxmi1fx, md5 33d1d94d) was NOT
+killed. Rationale on the record: (1) stage 1 was already complete when
+the relay landed — slot bar vs holder 246/480 = 51.2 [46.7,55.7],
+parity-plus, 244/480 games r1000 (the matchup is a tiebreak grind);
+(2) guards interleaved so far: kladde +5.0 / band +8.3 / ouro −1.7 /
+cad flat (h85-vs-g84 in-batch deltas; g84's in-batch absolutes run
+below the ship-case numbers — batch effect, in-batch delta is the
+currency), 0 tracebacks; (3) §10 itself DEMOTES the seat plank to
+insurance — the levers the re-read crowns (HEAL_DETAIL staffing +
+POP_CEILING_LIFT) are already in the running candidate. Killing a
+healthy battery to add insurance would have been over-reaction.
+
+INSTEAD: **bots/_v85hsb created** (registry row, prepared not yet
+gated): _v85hs + the launcher seat gate — deliberately the FULL
+8-seat set, not _seat_ban()'s terminus-exempted set (an impassable
+launcher on a delivery terminus kills the terminus outright).
+Single-site diff, compiles, md5 33a42f94, toggle-off collapses to
+parent. Confirmation plan after the battery lands: det-paired
+hsb-vs-hs identity check + launcher-placement mechanism verify +
+compact slot-bar leg — full-battery transfer with the 3-line diff
+documented, NOT a silent md5 swap.
+
+Also landed (commit afb0648, pushed): graft brief §1.5 replaced with
+research's settled-mechanism text (their patch, applied after
+verification per the cross-writes rule); tooling.md engine-stub trap
+entry; research's §10 doc append committed.
+
+### 2026-08-08 07:12 (from `date`) — builder arm: CORRECTION (my claim, research's catch) + two method entries accepted
+
+My 07:09-era relay to research claimed their "two decode-method
+corrections landed [in tooling.md] concurrently." FALSE — git-verified:
+those entries (per-source damage attribution, launcher-throw
+detection) entered tooling.md at the s15 wrap commit 9296c01 and were
+already present at my boot; afb0648's tooling.md diff is +11 lines =
+my stub entry only. I misread the harness's file-state notice as a
+concurrent edit and asserted it without checking git. The wrong claim
+reached only the cross-arm channel, not the tape; corrected here.
+Cross-arm check discipline works in both directions — this one was
+theirs to catch and they caught it.
+
+ACCEPTED: research drafts two new tooling.md method entries ("raw seat
+occupancy ≠ blocked seats — apply passability" and "spawn-block claims
+must use the passable predicate, not emptiness"); text comes to me via
+relay, I apply + commit per the cross-writes pattern.
+
+### 2026-08-08 07:25 (from `date`) — builder arm: BIG CONSOLIDATION — v74 wake handled; _v85hs GATE VERDICTED; rev-4 absorbed; clanker_probe landed; tape + HANDOVER current
+
+**WAKE v74**: x3r0's "mineguard" auto-activated 07:15, elo_logger caught
+it 07:18 (wake path live, third firing this session). opp_v74 fetched +
+extracted, md5 cb5452e6. **v73 FINAL: 5 matches 2W-3L, 11-14 games,
+1613→1610.9** (tape row v73-final; windows 3-5 = Ouro 2-3 [historic
+lock → competitive!], I Stone 2-3, Banminary 4-1 — not in rev-4's
+corpus, addendum candidate). Slot bar rebases to v74.
+
+**_v85HS GATE VERDICT (tape row _v85hs-gate): KEEP-dev STRONG
+CANDIDATE.** Slot bar 51.2 [46.8,55.7]/480; guards in-batch kladde
++5.0 / band +8.3 / v63 +10.0 / ouro −1.7 / cad 0 / v72 −1.7; det
+52.1-vs-50.0 (parent self-leg EXACTLY 50 — symmetry sanity), 106/240
+identical, 37 flips net +5. FLIP MECHANISM: h85 converts core-death
+losses into r1000 tiebreak survivals (meander/lighthouse/jackpot-b) =
+the rev-4 convergence finding's direction; negatives archipelago-b
+(1 distinct game, parent tiebreak-win → h85 core-death r277) +
+jackpot-a (race lost by 1 round). Det replays for the decode
+REGENERATED (determinism exact: all 5 games reproduce) →
+s16 scratchpad hs_mech_replays/ — research takes the decode.
+
+**TB CHANNEL RESOLVED (my earlier "0-crash bar open" framing
+corrected):** both lineages' run() handlers traceback.print_exc a
+caught exception once per unit lifetime, unit SURVIVES — pair.py's tb
+col counts these diagnostics from EITHER side of the shared stderr,
+not unit deaths. v72-leg 7/6 counts = diagnostics; attribution open,
+non-blocking. Caveats added to pair.py/det.py docstrings.
+
+**REV-4 ABSORBED**: shipped-graft all-clean numbers on the v73-final
+row. PIECE H DEFECT CODE-VERIFIED (docstring concedes forward guns
+read zero) → **TICKET H-1**: fix shape = live-turret registry
+(build-count + observed-death decrement) replacing the core-vision
+scan; ALSO IN x3r0's v70 VERBATIM → graft brief §2 updated. C2 K''
+near-inert noted (no action, zero opportunity cost). Check-12: hive_
+bunker barrier site IS covered in _v85hs (:3332, worker gated it w/
+RED FLAG comment; residual = _seat_ban's ≤2 delivery-termini
+exemption could still admit the barrier if (20,4) ∈ seat_keep on hive
+— decode watch item). Spawn-ceiling regime-conditionality adopted:
+lift toggle reads against long-grind regime, not pooled.
+
+**CLANKER_PROBE LANDED** (Opus worker, full report in its task log;
+headlines): bots/clanker_probe/main.py, all 8 spec items, defects
+preserved w/ do-not-fix block, 0 tracebacks (verified via
+instrumented copy), determinism triple-md5 PASS. Worker's honest
+ledger: 11 smoke games vs 6 budgeted (two fidelity bugs found+fixed
+mid-smoke: counterbattery hijack starving the economy, launcher-site
+permanent retirement); ranked mimicry weaknesses on record (top:
+launcher ring underfires vs wild — probe is broke in the window;
+CB gunner lifetime count high; sentinel late on big maps). NOT
+FROZEN — freeze battery + fidelity leg after Clankers version-quiet
+(clanker/0033/leviathan/O(1) NOW in opp_watcher nemeses, effective
+next poll — no re-arm needed, loop re-invokes the script).
+
+Tape, HANDOVER live header, graft brief current; commit next.
+
+### 2026-08-08 07:26 (from `date`) — builder arm: registry — HSB CONFIRMATION LEGS firing; research 024d13d6 re-audit absorbed
+
+Research's seat re-audit: HOLD RELEASED (mapping correct all 5 games,
+v26 contradiction = summary-compression artifact; Leviathan =
+gunner-rush both eras; ALL Clankers findings stand → clanker_probe's
+spec base confirmed sound the same hour the probe landed). Their
+process delta noted for the retro pile.
+
+REGISTERED + FIRING (CPU free post-battery): (1) det-paired
+hsb-vs-hs (both noise-off, vs _v84g_off, 8 seeds = 240 paired) —
+expect near-identity outside launcher-placement games; the
+archipelago-b/jackpot-a flip tiles are the watch items. (2) compact
+interleaved g84+hsb vs opp_v74 "mineguard" (2 seeds = 120 games,
+tle 10) — doubles as the FIRST v74 baseline read. opp_v74 load
+sanity-checked before firing (the v67 zip-as-dir trap).

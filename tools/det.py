@@ -23,6 +23,11 @@ Env: DET_JOBS (default 6), DET_OUT (json dump path, default ./det_results.json).
 
 Promoted from the s15 builder scratchpad (validated 2026-08-08); the s15
 version's hardcoded dA/dU piece-U harness became this CLI.
+
+CHANNEL CAVEAT on the tb column: counts "Traceback" in SHARED stderr; both
+lineages' run() handlers print caught tracebacks without the unit dying, so
+tb = caught-diagnostic prints from either side, NOT unit deaths. Attribute
+via file paths in the traceback text before reading tb as crashes.
 """
 import json
 import os

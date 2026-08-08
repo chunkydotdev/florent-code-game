@@ -17,7 +17,8 @@ import json
 import os
 import sys
 
-NEMESES = ("lunds", "ctrlaltdefeat", "ouroboros", "kladde", "flotte", "powerpuff")
+NEMESES = ("lunds", "ctrlaltdefeat", "ouroboros", "kladde", "flotte", "powerpuff",
+           "clanker", "0033", "leviathan", "o(1)")
 STATE = os.path.join(os.environ.get("STATE_DIR", "."), "opp_watcher_state.json")
 
 

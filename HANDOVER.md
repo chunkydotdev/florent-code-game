@@ -1,3 +1,35 @@
+# Session 16 LIVE header (builder arm, booted 06:43 2026-08-08; supersedes
+# the s15-final block below where in conflict)
+
+## State at 07:25
+- LIVE: **v74 "mineguard" (x3r0)**, auto-activated 07:15 over our v73.
+  Local copy bots/opp_v74 (md5 cb5452e6). Detected in 3 min by the NEW
+  exit-on-wake monitors (wake path measured working: Lunds bump, v74
+  activation, both caught live). SLOT BAR REBASES to v74 (standing norm).
+- **v73 "Eir 7" FINAL: 5 matches, 2W-3L, 11-14 games, 1613→1610.9**
+  (tape row v73-final). Rev-4 production read: shipped content ALL-CLEAN
+  (E2b/E1/S1 doing exactly what they shipped to do) + PIECE H DEFECT
+  (never fires — core-vision gate vs forward turrets; ticket H-1, also
+  in x3r0's v70 verbatim; graft brief §2 updated).
+- **_v85hs GATE VERDICTED — KEEP-dev STRONG CANDIDATE** (tape row
+  _v85hs-gate): slot bar 51.2 [46.8,55.7]/480 vs _v84g; guards
+  field-positive lean (kladde +5.0, band +8.3, v63 +10.0 in-batch); det
+  52.1-vs-50.0, net +5 flips, mechanism = core-deaths converted to r1000
+  tiebreak survivals. **_v85hsb** (launcher seat gate, md5 33a42f94) =
+  the ship candidate; confirmation legs pending (det hsb-vs-hs + compact
+  v74 leg + research mechanism decode; replays staged).
+- Heal-seat MECHANISM SETTLED (research §10 + rev-4 §5): BODIES not
+  seats — arrival/staffing is the lever; seat gates are insurance.
+  Passability ground truth + 2 method rules in tooling.md.
+- clanker_probe BUILT (worker report in coordination 07:2x), NOT frozen —
+  freeze needs Clankers version-quiet (now watched: clanker/0033/
+  leviathan/O(1) added to opp_watcher nemeses).
+- Infra new this session: tools/{rdiff,pair,det}.py promoted (channel
+  caveats in docstrings); archiver priority hook (theme 5a closed);
+  monitors exit-on-wake.
+- Queue: hsb confirmation legs → v74 delta read (research ASK posted) →
+  probe freezes on quiet window → C1c/U2/d²=25 per the s15 queue below.
+
 # Session 15 FINAL (wrapped ~06:3x 2026-08-08 on Magnus's call; Magnus
 # restarting both arms — successor boots per /builder, which now carries a
 # stance block that BINDS ON BOOT)

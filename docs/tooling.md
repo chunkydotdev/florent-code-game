@@ -218,3 +218,26 @@ doc §10 ground-truth section). Conveyor/splitter passability is real and
 OWNERSHIP-BLIND (18,363 bot-rounds measured standing on ENEMY conveyors).
 Anyone reading the stub for movement/spawn logic inherits the core error;
 also note can_spawn requires PASSABLE, not EMPTY.
+
+## Raw occupancy ≠ blocked — apply the passability predicate before calling a tile denied (research, 2026-08-08)
+
+A tile holding a building is not necessarily unusable by builder bots:
+conveyors and splitters are bot-passable, EITHER TEAM'S (measured: 18,363
+bot-rounds standing on enemy conveyors in the v72 corpus, 7,075
+bot-on-conveyor observations in the v73 read, zero on any other building
+type), and builders act normally from atop them (89.3% of v72 episode
+core-heals fired from on a seat conveyor). Any decode counting
+"blocked"/"denied" tiles must split occupancy by the impassable set — other
+builders, walls, every building EXCEPT conveyor/splitter — or it overstates
+blocking by up to an order of magnitude (v72 L1: raw 4.8-8.0/8 seats →
+truly impassable 0-1; bleed doc §10).
+
+## Spawn-block claims must use the passable predicate, not emptiness (research, 2026-08-08)
+
+can_spawn requires a PASSABLE tile in the core's action range, not an EMPTY
+one (official docs :138; corroborated: 244/715 observed spawns = 34% landed
+on previously-paved tiles). A spawn-block measurement built on is_tile_empty
+produces false "fully blocked" verdicts — v72 L2's "free==0 everywhere"
+secondary trap had 1-10 truly spawnable tiles in every cited round and is
+retired as an artifact (bleed doc §10.4). The 18-spawn lifetime ceiling
+finding survives independently and was strengthened by the retraction.
