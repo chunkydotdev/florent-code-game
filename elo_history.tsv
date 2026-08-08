@@ -565,3 +565,5 @@ timestamp	rating	matches	active_bot	note
 2026-08-08T21:19	1589	430	v85	SLOT TO x3r0 — v85 "x3r0test" live (uploaded 19:18Z). v84 FINAL 1 match -3.6 (1593.0@429 -> 1589.4@430), L 2-3 Powerpuff. rank #29
 2026-08-08T21:24	1589	430	v84	SLOT BACK — x3r0 paused v85 (bot incomplete), v84 "Eir 14" re-activated. Last-10 display 0W10L is 9 unrated; LADDER-only last 10 = 5W-5L
 2026-08-08T22:09	1570	435	v84	SESSION 19 WRAP. v84 at wrap: 6 matches 2W-4L net -22.9 (exact eloDelta). Rank #30. MONITORS DIE WITH THIS SESSION — window unwatched until a successor re-arms
+2026-08-08T22:22	1573	436	v86	rank #29
+2026-08-08T22:27	1573	437	v86	rank #29

@@ -7769,3 +7769,70 @@ nobody has ever optimised it.** Every plank tonight was economy or defence.
     counterpart at 48.7% vs 47.6% over 500 games). **CHANGE: a claim's SCOPE is
     part of the claim.** Neither was wrong; both would have sent someone
     chasing a global problem that does not exist.
+
+### 2026-08-08 22:38 CEST (from `date`) — research arm: **NO BUILDER ARM IS ONLINE**; builder's THE-GAP prediction tested, half-refuted; **I withdraw my own boot claim**
+
+**BOOT/HANDSHAKE STATUS — the protocol's channel 1 is DOWN.** ListAgents
+shows exactly two live interactive florent sessions: `-cb [810952]` (me,
+research) and `-0b [dd7732]`. I pinged `-0b` as the builder. **It replied
+NEGATIVE: it is a third, non-arm session** (the workflow-analysis author,
+`docs/workflow-analysis/`, spawned on Magnus's ~20:40 workflow question). It
+correctly declined my (b)/(c) asks as not its call. Session `af1aa9a9` /
+`uds:64323` (the s19 builder) and `284161ab` / `uds:45424` (my predecessor)
+are both dead. **Nobody holds the builder lane: no verdicts, no ships, no
+tape, no arena, no monitors.** Magnus has been told. I am proceeding only
+on read-only work that is unambiguously mine.
+
+**AUDIT TRIGGER FIRES 2/4** (note:verdict 4.38, ship cadence 0.32/hr) — same
+as at the s19 wrap, unchanged because nothing has shipped since. Not spawning
+the audit session: rule 1 needs a builder to announce to, and the non-arm
+session made a point worth carrying — the metric descends from its 19%-power
+finding, and **the prescribed fix was raise leg size, not audit harder.** An
+audit session that does not change n re-measures the symptom.
+
+**DELIVERABLE COMMITTED:** `docs/research/kill-game-split-2026-08-08.md`.
+100 matches / 500 games, API only, **zero replay downloads**, v72–v84 pooled.
+
+**THE BUILDER'S PREDICTION, TESTED:** "hive and drumlin are where we are
+killed FASTEST." **drumlin CONFIRMED** (median death 212 turns, fastest of 15).
+**hive REFUTED** (246, rank 6 of 15, mid-pack). hive is where we are killed
+most *OFTEN* — 74% of games vs 59% for second-place eider. And rate is the
+variable that matters: corr(kill-rate, win%) = **−0.84**; corr(death-speed,
+win%) = +0.34. An instrument built to slow our time-to-death would optimise
+the weaker signal.
+
+Map effect is NOT opponent-mix: hive mean opp rating 1598, drumlin 1596,
+global 1595. Within strong opposition only (n=350) **hive is 12% win / 75%
+killed at n=24 — the worst cell on the board, and it is a MAP.**
+
+**TWO CORRECTIONS TO THE s19 WRAP BLOCK:**
+1. "Our 44% core-kill rate is the ceiling metric" — the 44% is arithmetically
+   right (158/354) but is a MIXTURE: **69% vs opponents <1550, 33% vs ≥1550.**
+   Two regimes; only one loses matches. STRONG n=350 win 38.9% / WEAK n=150
+   win 71.3%. Our whole 48.6% is carried by the sub-1550 band.
+2. "The tiebreak edge is in a game the strong field never enters" —
+   directionally right, materially overstated. r1000 share is 13% vs the
+   1650–1749 band but **36% vs 1550–1649, where 280 of our 500 games are**,
+   and we go 50/50 there. Grind game overall = 29% of games, **net +24 (85W/61L,
+   58.2%)** — the only population where we are above water. Correct narrower
+   statement: the TOP band resolves before the grind, so the edge cannot be
+   SPENT against them.
+
+**I WITHDRAW MY OWN 22:23 CLAIM** that THE GAP makes the per-opponent
+programme "the wrong SHAPE entirely." My own data refutes it. Lunds + KCM +
+Ouroboros + CAD carry **49.0% of all 196 kill-game losses** — the same four
+names as the bleed table. Same finding, two altitudes, not competitors.
+
+**WHAT THE GAP DOES LEGITIMATELY CHANGE — the OUTCOME VARIABLE, not the
+target.** Score instruments aimed at those four on **kill-game win rate**, not
+Elo. Elo mixes in grind games we already win and needs ~8 matches to say
+anything (and the swap rule on it is a coinflip). Kill-game rate is available
+per game and is where 100% of the deficit sits. Room to move, per opponent:
+Ouroboros 2/22, KCM 7/33, Lunds 11/41, CAD 9/29 — against Askar 20/25,
+Banminary 18/24, Team 48 19/29.
+
+Reusable API cache built (100 matches, game-level) — per-version and per-seat
+cuts of the hive cell are one query away and were NOT run. No mechanism in
+this doc: 500 games of outcome metadata cannot say WHY hive kills us at 75%.
+That needs replays and is the obvious next commission — announced here, not
+spawned, because there is no builder to announce it to.
