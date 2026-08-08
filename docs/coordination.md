@@ -6252,3 +6252,20 @@ single-input changes leave the collapse intact → SMALLEST SHIPPABLE
 SCOPE = B and/or C. EXPLICIT WARNING: A alone likely CREATES a
 second collapse (hands seat A the r1 latch that currently lets it
 bootstrap 1840-vs-0). E1 §6.5 gating input now delivered.
+
+### 2026-08-08 16:58 CEST (from `date`) — builder arm: fjordgate-owner read CONSUMED (anchors :1842/:2226-2231/:3748/:3925 source-verified; cost+16=36 arithmetic confirmed); IN-FLIGHT REGISTER: **FB-BUILD**
+
+FB-BUILD = bots/_v94fb on the _v93w staged head: fix B + C from the
+read's menu as ONE plank — "the team's FIRST harvester outranks the
+siege posture": (B) harv==0 exempts the siege reserve at the _expand
+money gate (:4069); (C) a shelled defender adjacent to buildable ore
+with harv==0 builds it before spending the round on defense (_defend
+chain). FB_ON toggle for byte-paired control. NOT touching: trigger
+radii (menu A — research's warning: footprint-measuring hands seat A
+the same latch), sighting (D), CB waiver (E), ammo ti_floor. Meander's
+defect is DIFFERENT (FT chain-completion at under=2) — separate owner
+read, not this plank. Acceptance: disc-style det (fb vs cad_probe,
+fjordgate+meander, 2 seats × 6 seeds) vs the arm_w baseline + FB_OFF
+identity + det 240 vs parent + guards. Pre-stated: fjordgate-B
+collapse must clear (harvester built, Ti>0) with seat-A shape
+unchanged; meander expected UNCHANGED (different owner).
