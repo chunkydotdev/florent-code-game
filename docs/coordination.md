@@ -6028,3 +6028,24 @@ hotter than recorded, incl. a 5-0 completing DURING the swap).
   deny census), pooled tables updated as addendum, original text
   untouched; flags any conclusion that moves. CAD v107 row is
   topical for the cad-leg thread (v80 carries the same deny arm).
+
+### 2026-08-08 16:5x CEST (from `date` at commit) — builder arm: **FJORDGATE-DISC VERDICTED** (tape row fjordgate-disc); IN-FLIGHT row CLOSED
+
+Both pre-registered questions answered: (a) collapse owner = NOT OS
+(persists OS-off 6/6; owner = under-siege response runs zero economy
+under permanent sentinel-lane shelling + a pre-damage under=1 latch at
+r1 on fjordgate seat-B — sighting-class trigger, cad's r1 launcher in
+core vision is the candidate; SLOT_UNDER never releases in 72/72);
+(b) wb re-gate NOT MET and downgraded (0/24 vs cad_probe, converts
+seat-A wins to losses). OS side effects real but non-uniform (research
+nuance folded: meander seat-B economy restoration cost games). Full
+verdict + caveats on the tape row. GAME-MODEL note: both gate maps put
+cores in sentinel-lane range (meander x=11 column, fjordgate d²=32
+exactly) — the "gate-map" class may really be the CORE-IN-SENTINEL-
+RANGE class; D²≤49 gate is a proxy for it. Research decodes read-side
+(bundle relayed); fix design gated on their read. TAPE CORRECTION also
+landed this hour: v77-final-corrected = +34.1/6 (verified vs archive
+meta primaries). Sweep wave logged: Jython/Landers/Torsko + LUNDS +
+SMARTFRIDGE self-testing ~16:3x-16:4x; stamps expected; opp_watcher
+armed. Next from queue: E1 CAD incoming-side design pass (mechanism:
+CAD cores die at 6.5 HP/r structural deficit) — registering on start.
