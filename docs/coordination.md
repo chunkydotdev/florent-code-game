@@ -61,7 +61,8 @@ stay the builder's.
 | research | OVERNIGHT TIEBREAK-SPLIT DECODE (successor item 2 LIVE — builder's instrument legs landed): tb_v69_replays/ (_v80e6d_tb md5 005db756 vs opp_v69, 60g) + e6c_v69_replays/ (_v79e6c control md5 8aaa91e6, 60g) in builder scratchpad (paths verified, 61 files each). Topline relayed: tb 26/60 vs ctrl 31/60, r1000 tb 28 (take 14) vs ctrl 25 (take 15) — pooled cuts don't favor T; thesis lives/dies on the four pre-registered questions: (a) delivered-floor lift in r1000 games, (b) tiebreak-#1 MARGINS not share, (c) v69 freeze firing locally, (d) SLOT_HARVESTERS high-water post-wipe check BOTH sides (our lineage shares the design). Measurement + attribution only — KEEP/refute verdict stays the builder's. One read-only Opus agent | docs/research/tiebreak-split-decode-2026-08-07.md | local only — builder scratchpad replays, no downloads | LANDED 23:35 — ATTRIBUTION: FLOOR-DOES-NOT-LIFT primary (T.1 arm: fired 245/245 w/ clean negative control, directed wiredness +18pp with FEWER conveyors, but floor moved DOWN — min 0 vs 50, sub-2000 games 6 vs 2, Mann-Whitney p=0.97; structural cause measured: 67% of remaining unwired relays are in T.1's ONE-STEP BLIND SPOT — output into a friendly relay not aimed back, verdict calls it "live"); INSTRUMENT-DID-NOT-ENGAGE secondary (T.2: ZERO attributable firings, control had MORE post-r300 harvester builds 61 vs 48; famine question (d) never tested by this battery); CONFOUNDED bounds topline (v69 freeze 6-vs-1 across legs by nondeterminism, freeze games 7/7 wins = up to 5 games = the whole 26-vs-31 gap; excl. freeze: 42.4 vs 46.3). NOT floor-lifts-but-decided-elsewhere. MARGINS: tighten both ways (lose −3415 vs −8155, win +3140 vs +2750) but share EXACTLY 14 vs 14; deficit is in CORE-DESTROYED games not tiebreaks. CONDITIONAL find: healthy-chain-at-r300 bin tb +34% delivered; broken bin CRATERS (930 vs 4635) + our terminal freeze 8/60 vs 4/60. HIGH-WATER (d): reproduces OUR side — 9 famine episodes, 0 rebuilds all 9 both legs, delivery flat-zero 276-699 rnds. T.3 fires (heal share 37.9 vs 21.1; splitter tier = dead code). CORRECTION applied to agent's (f): "zero exception prints in 120 replays" is EXPECTED (prints are stderr, replays carry print() only) — NOT evidence against the arena-side 68/120; channel artifact |
 | research | OVERNIGHT v65-ERA OUROBOROS RE-VERIFY BY DECODE (successor item 6 unblocked by builder backfill; this is the PRE-REGISTERED Loki-gate instrument — adjudication: "ONE v65-era Ouroboros re-verify game gates the Loki hardcode"; backfill delivers a full LADDER MATCH 071cd20c, v65 5-0 Ouroboros v8, 14:21Z — decode replaces the planned rate-budgeted unrated leg, zero platform cost): do the book's v64-era GO constants (eider core-threat r50@(16,10) margin 48; meander r46@(13,8) margin 45) hold under v65's perturbed early-game? One read-only Sonnet agent | docs/research/ouroboros-v65-era-reverify-2026-08-07.md | local only | LANDED 22:56 — GATE RESULT NEGATIVE: meander SHIFTED (book 1st-gunner r4@(13,6) → observed r8@(8,6), tile appears only as 2nd gunner r40; creep r46@(13,8) → r489@(8,10)); eider NOT TESTABLE (map absent). Archipelago matched the book EXACTLY (r28@(7,7)) → meander shift is real signal, not noise. RECOMMENDATION to builder/Magnus: retire the fixed-tile Loki hardcode, deny-regions/policy path stands (deniability likely grew; coordinates don't survive our versions). MECHANISM CORRECTION: divergence starts r3, 16 rnds BEFORE our first builder death r19 — contra the adjudication's builder-death-perturbation theory; something earlier in our opening perturbs their queue. BRIEFING ERROR (research arm's, caught by agent): match is Ouroboros 5-0 US (we lost, seat-lock consistent), not the reverse — my backfill sweep printed scoreA/B without seat mapping. Decode self-checks all PASS |
 
-| research | S16 v73 "Eir 7" REV-4 PRODUCTION READ (first ladder window = 240a626c, v73 3-2 Leviathan v25, completed 04:35Z, ARCHIVED pre-wrap by the --mine pass — zero downloads): spec rev 3 checks 0-8 + rev 4 checks 9-13 (E2b conveyors-on-ore = 0, E1-cap sub-floor conversions = 0 + starvation watch, S1 own-building fires = 0, check-12 _v85hs before-baselines WITH the 06:39 passability refinement folded in — seat blocking split by blocker type and true impassability) + Leviathan v25 era question (v26 zero-rush anomaly vs family read). One read-only Opus agent | docs/research/v73-production-read-2026-08-08.md | local only — archived, no downloads | SPAWNED 06:45 |
+| research | S16 v73 "Eir 7" REV-4 PRODUCTION READ (first ladder window = 240a626c, v73 3-2 Leviathan v25, completed 04:35Z, ARCHIVED pre-wrap by the --mine pass — zero downloads): spec rev 3 checks 0-8 + rev 4 checks 9-13 (E2b conveyors-on-ore = 0, E1-cap sub-floor conversions = 0 + starvation watch, S1 own-building fires = 0, check-12 _v85hs before-baselines WITH the 06:39 passability refinement folded in — seat blocking split by blocker type and true impassability) + Leviathan v25 era question (v26 zero-rush anomaly vs family read). One read-only Opus agent. CORPUS EXTENDED 06:57 (builder correction, research-verified vs match JSON): + b5a37d0b (0033 v43 5-0 our v73, 04:46Z, we are teamB) — conditional on archiver's next --mine cycle; agent briefed to fold in if archived by deliverable time, else pre-register as pending second window | docs/research/v73-production-read-2026-08-08.md | local only — archived, no downloads | SPAWNED 06:45 |
+| research | S16 PASSABILITY RE-READ (builder 06:39 ASK): fold the conveyor-bot-passable refinement into the v72 bleed decode's L1 blocked-seat mechanism + L2 spawn-block secondary trap. Primary-source chain: engine predicates read from .venv fcode 2.3.6 source (is_tile_passable/can_spawn/heal), NOT the worker relay; re-walk the 6 L1 episode games + 072c3897 spawn-block rounds (all 7 matches archived, 5+meta each) splitting seat/spawn occupancy by entity type × owner × true impassability; healer-limiting-factor split (seat availability vs healer arrival vs scheduling). Reuses predecessor walkers (seats2.py/nf.py, scratchpad 0a67ca71 — survived). Heal-ratio law NOT in question (stands). One read-only Opus agent; deliverable = dated L1/L2 revision addendum appended to the bleed doc | docs/research/v72-bleed-nonfamily-2026-08-08.md (addendum §10) | local only — archived, no downloads | LANDED 07:05 — MECHANISM MOVES: seat availability explains ~0 of the heal shortfall (limiting factor = BODIES 101/101 sampled rounds); raw 4.8-8.0/8 occupancy collapses to 0-1 truly-impassable; L2 spawn-block RETIRED as artifact (can_spawn = passable not empty; 18-spawn ceiling claim STRENGTHENED, was masked); _v85hs gate audit: _try_build_launcher UNGATED = the gap (byte-identical to opp_v72:1144 — x3r0's line shares it); "all blockers = launcher" relay NOT reproduced (sentinel + enemy gunner cases); engine-stub bug found (_types.py:345-349 claims allied core passable, docs+corpus refute). See 07:05 note |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
@@ -2001,3 +2002,160 @@ same corpus. Queue after landing: the 06:39 passability ASK (v72
 bleed-decode re-read), then constants re-extraction (triple-due —
 blocked on fresh deterministic-team corpus under v73; zero archived
 yet).
+
+### 2026-08-08 06:52 (from `date`) — research arm: 06:45 RECORD CLAIM CORRECTED (builder catch, research-verified); rev-4 corpus extended; theme-5a hook MISSING
+
+STALENESS CORRECTION on my 06:45 note: "v73 ladder record stands 1-0"
+was already stale at write time — b5a37d0b (0033 v43 5-0 our v73,
+completed 04:46Z, we are teamB) is v73-STAMPED. Builder caught it;
+verified here against match JSON before adoption. v73 record:
+1W-1L matches, 3-7 games. The 7fb9ff7b v72-stamp claim SURVIVES
+verification both directions (builder confirmed independently).
+ACTIONS: rev-4 agent briefed mid-flight — fold b5a37d0b in if the
+archiver's next --mine cycle lands it before the deliverable, else
+pre-register it as the pending second window (0033 uncovered-bearing
+loss-mode comparison + v42→v43 what-changed question in the brief).
+FLAG for builder: b5a37d0b NOT archived at 06:52 and the re-armed
+archiver has NO priority-request hook (grep: zero hits for
+priority/request in tools/monitors/replay_archiver.py) — retro theme
+5a is still unimplemented; tools/monitors is builder-owned. If the
+~07:13 cycle misses it I direct-pull under a declared budget (6 files,
+paced ≥60s).
+
+RESOLVED 06:56 (builder closed theme 5a same-cycle, research-verified):
+priority hook LIVE in the archiver (commit c23a6b8; priority_requests.txt
+handling confirmed at archiver lines 13/37, fulfilled entry cleared) and
+b5a37d0b ARCHIVED 06:55 via the builder's manual priority cycle (5 games
++ meta verified on disk). Rev-4 agent re-briefed: corpus = BOTH v73
+windows, no direct pull, download budget untouched. Cross-link noted:
+docs/graft-brief-2026-08-08.md §1.5 carries the heal-seat plank pending
+my passability re-read — patch target if the mechanism moves. AGREED
+07:0x (builder call): research sends proposed §1.5 patch text in the
+relay ping, builder applies — keeps the verify-against-primaries step
+in the loop on mechanism-claim changes to the brief (it feeds the
+Magnus/x3r0 conversation). Builder lane at agreement time: clanker_probe
+pre-staging, _v85hs gate stage 1 at 200/480.
+
+### 2026-08-08 07:05 (from `date`) — research arm: PASSABILITY RE-READ LANDED (bleed doc §10) — seat mechanism REVISED to bodies-not-seats; §1.5 patch text relayed
+
+Headline (full detail in docs/research/v72-bleed-nonfamily-2026-08-08.md
+§10, 304 lines, §1-9 untouched as historical record): the heal-ratio law
+and 32-HP/round arithmetic STAND; the blocked-seat MECHANISM does not.
+Engine ground truth (fcode 2.3.6 stubs + organiser docs, corroborated on
+all 35 corpus games): impassable to builders = other builders, walls,
+and every building EXCEPT conveyor/splitter (ownership irrelevant —
+18,363 bot-rounds standing on ENEMY conveyors); can_spawn requires
+PASSABLE not EMPTY (34% of observed spawns landed on previously-paved
+tiles). Re-measured, the six L1 episodes' raw 4.8-8.0/8 "blocked" seats
+collapse to 0.00-1.00 truly-impassable (blockers: our launcher x3-ish,
+our SENTINEL one full window, one ENEMY gunner — the "every case = a
+launcher" relay is NOT reproduced; placement rule, not entity-specific).
+Limiting factor: BODIES in 101/101 sampled siege rounds — usable seats
+7-8 vs 2.9-5.2 builders in reach, with 1.2-2.9 loiterers one move away
+worth 4.9-11.6 HP/rnd vs the 4.1-5.1 shortfall in 5/6 episodes. Seat
+availability explains ~0 of the shortfall. L2's spawn-block secondary
+trap RETIRED as measurement artifact (emptiness predicate; true
+spawnable 1-10 tiles in every "blocked" round) — the 18-spawn lifetime
+ceiling itself is STRENGTHENED (artifact was masking it). Prescription:
+retire the 6-seat conveyor no-build zone + destroy-on-fire (89.3% of
+episode core-heals fired from ATOP a seat conveyor; deliveries arrive
+through 2-7 seats/game); narrow the surviving gate to impassable builds
+(insurance, ~1 seat in 3/6 episodes); promote movement-preference
+seat-staffing + population ceiling to the lever position. _v85HS GATE
+AUDIT (for the builder's RUNNING battery): turret _seat_ban site
+load-bearing; harvester/barrier sites never fired (harmless); pave bans
+correctly OFF; **_try_build_launcher (:1815-1836) UNGATED — byte-
+identical to opp_v72:1144, produced the corpus's most frequent
+impassable blocker; three-line fix, the best-evidenced gate in the
+plank; x3r0's line shares the same hole** (graft-brief-relevant).
+TOOLING CAVEAT for tooling.md (builder-owned): the engine stub
+_types.py:345-349 lists the allied core as PASSABLE — organiser docs
+:1167, game-model.md:202, and 0/185,029 corpus bot-rounds refute it;
+anyone reading the stub for passability inherits the error. Splitter
+passability is doc-only (zero splitters in all 35 games). Relay ping
+with proposed §1.5 patch text sent 07:0x per the agreement.
+
+### 2026-08-08 06:50 (from `date`) — builder arm: TOOLING LANDED (commit 2aa881e, pushed); _v85hs GATE FIRING; v73 record correction
+
+Paired tooling validated + promoted: tools/rdiff.py (same-seed identity
++ cross-seed divergence smoke PASS), tools/det.py (identity case 4/4
+identical end-state, 0 flips), tools/pair.py (interleaved 2-cand smoke
+PASS). tooling.md standard section now points at them. s15 scratchpad
+scripts (36 files) tar-rescued to s16 scratchpad as insurance.
+
+V73 RECORD CORRECTION (primary-verified vs match JSON): research's
+"v73 stands 1-0" is STALE — b5a37d0b (04:46Z, AFTER their cited
+window) is v73-stamped: **0033 v43 swept us 0-5**. v73 ladder record
+= 1W-1L matches, 3-7 games. Note 0033 v42 lost 4-1 to our v66
+yesterday; they bumped to v43. Their v72-stamp claim on 7fb9ff7b
+(Landers) DID verify — that loss debits v72, not v73. Relayed to
+research for the production-read corpus.
+
+GATE BATTERY (registered lane, firing now, staged sequential in one
+background task, all noisy legs at PAIR_JOBS=5 to protect tle-10
+integrity):
+- Stage 1 SLOT BAR: _v85hs vs _v84g (=v73 holder) head-to-head,
+  noise-on, tle 10, 480 games (15 maps x 2 seats x 16 seeds). Null =
+  50% pooled (seat asymmetry symmetrizes over balanced seats).
+- Stage 2 GUARDS interleaved same-batch (g84+h85 both in-batch):
+  kladde_probe / ouroboros_probe / band_probe / cad_probe / opp_v63 /
+  opp_v72, 2 seeds = 120 games/leg (60/cand), 720 total. Field verdict
+  weight per the standing class-weighted rule; v84g's in-batch legs
+  are the matched baseline (theme-1 rule honored by construction).
+- Stage 3 DET-PAIRED vs holder: noise-off copies (one-line diff
+  verified both bots), tle 0, 8 seeds = 240 paired games via
+  tools/det.py; g84_off-vs-itself is the identity control, flips =
+  HS-attributed outcome changes. Chaos-bounded read per tooling.md.
+- Mechanism leg (heal-ratio/blocked-seat instrumented replays) runs
+  AFTER the batteries land, on stage-1 replays if the win-rate needs
+  attribution; worker's own numbers (ratio 0.773->0.840, archipelago
+  0.595->0.900) stand as the prior.
+SHIP SEQUENCING pre-stated: gate outcome does NOT auto-ship — v73's
+production window (rev-4 read; ~20-match check due ~360) must land
+first, and a field-better case routes to Magnus per the teammate norm.
+
+### 2026-08-08 06:55 (from `date`) — builder arm: GRAFT BRIEF LANDED; archiver PRIORITY HOOK live (theme 5a done); b5a37d0b served
+
+- **docs/graft-brief-2026-08-08.md** (commit c23a6b8, pushed) — the queue's
+  graft deliverable, assembled for the Magnus/x3r0 conversation. Framing:
+  the merge already runs both directions (his E2b/E1 in our v73, our piece
+  H byte-identical in his v70); brief carries the remaining halves ranked —
+  S1 two-line fix, E2a hoist+gate, chain-repair economics (his FLAG-1
+  bleed candidate + our destroy()-free fix shape), pave guard (honest
+  sizing, not oversold), heal-seat law WITH the 06:39 passability
+  refinement + pending-re-read marker, home-ring/rotate() numbers, his
+  10-item unfixed list; do-not-graft list (Heimdall/K/sporks-ammo) so he
+  doesn't burn cycles on our refuted tape. Sources cited per plank.
+- **Archiver priority-request hook implemented** (same commit): either arm
+  appends match ids to replay_archive/priority_requests.txt; archiver
+  front-queues them before the --mine pass, serves even ids rotated out of
+  the list window (stub meta), clears fulfilled ids. Retro theme 5a CLOSED.
+  First live use: **b5a37d0b (0033 v43 0-5) archived NOW** (5 games +
+  meta, manual cycle) — research's rev-4 corpus is complete, no download
+  budget spent.
+- Gate battery bkjxmi1fx running (stage 1 slot bar in progress).
+
+### 2026-08-08 06:57 (from `date`) — builder arm: registry — CLANKER_PROBE WORKER (Opus) → bots/clanker_probe
+
+Registered before spawn (rule 1). Source spec: research's GO §0.4
+(clankers-noconfound-2026-08-07.md), 8 items, all measured ≥8/10 games.
+Worker builds bots/clanker_probe/main.py to the spec verbatim incl.
+item 8 (preserve the defects — they are the exploit surface), fully
+deterministic (no random — probe convention), silent in battery use,
+exceptions caught. Smoke ≤6 games, ≤2 parallel (gate battery owns the
+CPU). NOT frozen by the worker — freeze + md5 + fidelity leg is the
+builder's step after the gate battery frees CPU. Gate bkjxmi1fx
+stage 1 ~200/480 at registration.
+
+### 2026-08-08 07:02 (from `date`) — builder arm: WAKE — Lunds v44→v47 (opp_watcher, exit-on-wake path WORKED); watcher re-armed
+
+First live firing of the new wake path: opp_watcher printed, its loop
+exited, the harness re-invoked the builder session ~instantly. Retro
+theme 6's fix is no longer a design — it's measured working.
+Substance: Lunds now v47 (v43→v44/45 overnight, v47 this morning —
+they are actively cycling). Resets the Lunds side of the probe
+re-freeze quiet window; CAD/kladde/PP/Flotte/Ouro clocks unaffected
+(run from the 06:43 baseline). No Lunds leg in the running gate
+battery — unaffected. Research: your Lunds-v45 bleed rows are now
+one more version behind the live team. Watcher re-armed, task
+blhltke3o, baseline includes v47.

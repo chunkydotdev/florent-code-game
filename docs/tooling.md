@@ -207,3 +207,14 @@ evidence of code changes (confirmed the v67-vs-v68 TLE delta was platform
 variance, not a fix). To measure a routine's real cost locally, wrap it in
 `time.perf_counter()` inside the bot temporarily (example: the piece-KF
 live-gun scan measured median 13.7 µs / p95 18.2 µs per call this way).
+
+## Engine stub lies about allied-core passability (research find, builder-verified 2026-08-08)
+
+The local fcode stub `.venv/.../fcode/_types.py` (is_tile_passable docstring,
+~:345-349) claims a builder can stand on "a conveyor, splitter, or the allied
+core". The allied-core clause is FALSE: organiser docs, game-model.md:202, and
+0/185,029 corpus bot-rounds standing on a core footprint all refute it (bleed
+doc §10 ground-truth section). Conveyor/splitter passability is real and
+OWNERSHIP-BLIND (18,363 bot-rounds measured standing on ENEMY conveyors).
+Anyone reading the stub for movement/spawn logic inherits the core error;
+also note can_spawn requires PASSABLE, not EMPTY.

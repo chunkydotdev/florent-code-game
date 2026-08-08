@@ -51,16 +51,29 @@ unless stated. Deep dives: `docs/research/v72-delta-read-2026-08-08.md`
    real and we should not oversell it: in his line `run()` swallows it for a
    one-round action loss; in ours it was a unit-kill class (0-vs-128
    crashes/480 after piece N). It's a free line; take it, don't headline it.
-5. **Heal-seat law (refined 06:39, pending research's re-read).** The bimodal
-   survival law is the strongest defensive number on the board: heal/dmg
-   ≥0.94 → 13/13 sieges survived, ≤0.86 → 16/16 died; the shortfall is 1-3
-   parked builders, not titanium (died with 9,557 banked). REFINEMENT from
-   in-engine measurement: conveyors do NOT block heal seats (bot-passable —
-   paved seats seated healers 8/8 in the eider check); the real seat blockers
-   are impassable buildings, in practice **launchers**. Actionable for his
-   line: never place launchers/barriers on the 8 core-orthogonal tiles; keep
-   a standing heal detail sized to incoming damage. Do NOT ban conveyors
-   from seats — forcing that cut delivery 23,930→270 in our test.
+5. **Heal-seat law (mechanism SETTLED by research's re-read — bleed doc §10;
+   supersedes the 06:39 refinement).** The bimodal survival law is untouched
+   and still the strongest defensive number on the board: heal/dmg ≥0.94 →
+   13/13 sieges survived, ≤0.86 → 16/16 died; shortfall 1-3 missing healers,
+   not titanium (died with 9,557 banked). But re-measurement of all six
+   core-death episodes shows seat AVAILABILITY explains ~0 of that
+   shortfall: raw "blocked" 4.8-8.0/8 collapses to 0-1 truly-impassable
+   (conveyors/splitters are bot-passable, either team's — 89.3% of our
+   episode core-heals fired from ON TOP of a seat conveyor), and the binding
+   constraint was BODIES in 101/101 sampled siege rounds (usable seats 7-8
+   vs 2.9-5.2 builders in reach, loiterers one move away worth 4.9-11.6
+   HP/rnd). Actionable for his line, in lever order: (a) a standing heal
+   detail with seat-seeking movement plus the population to staff it — THE
+   lever; (b) gate impassable builds on the 8 core-orthogonal tiles —
+   insurance (~1 seat in 3/6 episodes); the concrete hole is
+   `_try_build_launcher` (his main.py:1144; ours byte-identical) taking the
+   first legal adjacent tile from a builder standing beside the core — it
+   produced the corpus's most frequent impassable seat blocker (our sentinel
+   and an enemy gunner also held seats: placement rule, not
+   launcher-specific). Three-line gate. (c) Do NOT ban conveyors from seats
+   — forcing that cut delivery 23,930→270 in our test [builder-arm
+   in-engine measurement], and 100% of core deliveries in the bleed corpus
+   arrive through 2-7 distinct seats/game.
 6. **Home-ring discipline vs the snipe-counter class.** Three independent
    teams hard-counter forward snipe deployment (KCM farmed it 9-1; the CAD
    family's reactive counterbattery; Clankers killed our snipe gunner in 6
