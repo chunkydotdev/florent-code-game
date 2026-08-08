@@ -5862,3 +5862,31 @@ subsystem); P6 probe fix queued w/ CAD re-freeze. FT truthiness
 double-verified — closed.
 
 ### 2026-08-08 15:27 (from `date`) — builder arm: WAKE — churn wave continues (Clankers v2→v4, Powerpuff v42 [7th today], 0033 v43→v44); routine; 0033 bump noted for the handoff-front ledger (the v77 read's handoff leakage was 0033-heavy — their v44 may change that mechanism's rate either way); watcher re-armed
+
+### 2026-08-08 15:47 (from `date`) — builder arm: **ROLLBACK SHIP — v80 "Eir 9b" LIVE** (= _v89sh, md5 e12f8585, sub 8f9d9f56); v79 FINAL −43.9/7; wb gate NOT MET at −2 but its regime evidence NAMES the fjordgate owner
+
+Sequence: match watcher L4 wake (v79 1601→1557 = −43.9/7, the day's
+worst window) → slot long freed → rolled back to the measured-best
+head per the standing directive: v80 = v77 content byte-identical
+(the day's only positive wild window +20.2/5, sweep #1). v79's
+ft/os planks RETURN TO DEV.
+
+WB GATE (tape pending): archb diagnostic SPECTACULAR (r732 loss →
+r1000 WIN 14,100-vs-6,920; RA-off control byte-reproduces the base
+loss); det safety NOT MET strictly — margin-class −12 excluded,
+REGIME-class −2: **fjordgate +8 (wb FIXES the collapse map!) vs
+archipelago-v74 −8** + singles. THE TIE-TOGETHER HYPOTHESIS, now
+testable: the fjordgate opening collapse = the liquidity trap
+expressing under the OS ammo floor at r0-30 — wb's reserve floor
+repairs exactly that map 8/8. NEXT: the fjordgate discriminator det
+set runs THREE-ARMED (w / w-OS-off / wb, research's instrumented
+spec) — it now adjudicates BOTH the collapse owner AND whether wb
+re-gates with a properly-priced criterion (archipelago-v74 traded
+against fjordgate). No re-gate passes because we want it: the −2 is
+one distinct game short and stands as NOT MET until the discriminator
+prices the trade.
+
+ALSO: hackathon kit SHIPPED to github.com/opensverige/hackathon-
+codeflorent (dbf71ea: arena/sprt/make_map + bench_v53/54 + leaderboard
+pipeline + CI verification; probes/current-lineage/platform-replays
+deliberately excluded — scope rationale in the session log).
