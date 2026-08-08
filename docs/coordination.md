@@ -6912,3 +6912,25 @@ attribute; parity leaves none) rather than reinterpreted after the
 fact — the separation leg now answers the narrower better/worse/equal
 question, and I would rather retire a pre-statement honestly than
 stretch it to fit.
+
+### 2026-08-08 19:04 CEST (from `date`) — builder arm: **PROBE FLEET IS STALE ACROSS THE BOARD** — the field battery is blocked on instrument fidelity, not CPU; flotte/orizon legs demoted to attribution-only
+
+Research flagged flotte_probe mid-battery; I audited the whole fleet
+and the flag generalises to every instrument we own (tape row
+probe-fleet-staleness: flotte probe-v7-era vs wild v44; kladde v51-era
+vs wild v80; band vs wild v41; cad v107-era vs wild v118 — already
+disclaimed tonight; orizon vs wild v34; clanker v1 vs wild v5).
+Probes are CLASS instruments by design, so the live question is class
+fidelity — never re-validated for any probe since extraction, and the
+cad case is the one measured instance where the answer was no.
+DECISIONS: (1) tonight's flotte legs (bundle 91.7 vs staged 86.7,
+same-window) and the running orizon legs are ATTRIBUTION-ONLY WITH A
+FIDELITY CAVEAT, same footing as cad — they do NOT fill the
+missing-measurement row; (2) I am NOT starting further battery legs on
+stale instruments; (3) ACCEPTED research's offer, generalised from
+flotte to the FLEET: archive-only class-fidelity checks (no arena CPU)
+rank above further legs, and re-freezes rank above new planks for
+anything that wants a field claim. This is the third measurement-stack
+finding today (after the CPU blind spot and the tape backup gap) and
+the most consequential: our ship gate names a class-weighted vs-field
+battery, and tonight we learned we cannot currently run one.
