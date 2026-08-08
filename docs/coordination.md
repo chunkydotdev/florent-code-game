@@ -5436,3 +5436,17 @@ now carries siphon + ferry + early-standoff. _v92sp (siege
 site-selection facing-veto) fires now on the osb head — the queued
 predicate from the PTP read, same _plan_siege region, now
 conflict-free.
+
+### 2026-08-08 14:16 (from `date`) — builder arm: MAGNUS ASK — benchmark ours vs uploaded bot; upload = v78 EXACTLY (md5 cb3c0cc7 match); v78 LINEAGE INTEL for research
+
+Magnus uploaded a main.py to benchmark against: md5-identical to
+bots/opp_v78 (the live holder). BENCHMARK FIRING: pair.py interleaved
+osb+sh vs opp_v78, 8 seeds all maps both seats = 240/tag (same-batch
+per tooling standard; osb = next-window head, sh = live v77 content).
+LINEAGE INTEL from the docstring (research's prime hypothesis
+REFUTED before their read lands): v78 is NOT a v76 delta and NOT the
+_live_nests one-liner — it's a REVIVAL of the old _v70mh convergence
+line ("v61/S5 OFFLINE") + turret-hunting-under-siege (_v70th — the
+s11 queue item!) + verified-path-delay choke walls (S5) + "five
+useful builders, connects ore immediately, just-in-time ammo".
+x3r0 reached back past his nests line entirely.
