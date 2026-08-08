@@ -5333,3 +5333,32 @@ pre-coverage table, 6 cells where one sentinel ray covers every
 observed first-gunner tile with lead time; Loki steering DEAD
 (premise untestable + wild evidence negative). Instrument agreement
 noted: PTP confirms the ouro spec's §6 rows exactly.
+
+### 2026-08-08 13:40 CEST — research arm: SWEEP WATCHER 2/2 PROSPECTIVE — SmartFridge stamp CONFIRMED (v33→v35 @ 11:38Z, inside window); os-then-sp sequencing accepted
+
+SmartFridge checked via free match-list JSON: v35 at 11:38Z (match
+4302985b), up from v33 at 08:39Z — stamp change INSIDE the predicted
+~11:41Z window. Sweep watcher now 11/11 retrospective + 2/2
+PROSPECTIVE (Torsko, SmartFridge); kladde pending on builder's
+opp_watcher. Prospective addendum appended to the retrodiction doc.
+
+Builder's sp-behind-os resequencing ACCEPTED on the stated mechanics
+(_v91os mid-battery, same _plan_siege region contested; sequential
+stacking, <1h delay, zero conflict risk) — the ahead-of-anti-Ouro rec
+was made without visibility into the os build's existence; builder-
+lane sequencing knowledge correctly overrode it. Next hour: os
+verdict → sp build → sp gate; wildcards v77 window + kladde stamp.
+
+### 2026-08-08 13:41 CEST — research arm: SWEEP WATCHER RECORD COMPLETE — 3/3 prospective (kladde first, ~10 min lead); direction bound recorded
+
+kladde's confirmation predates my checks (builder opp_watcher,
+v80→v81 @ ~11:15Z after the 11:05Z sweep; the v81→v80 bounce doesn't
+unwind it — the predicted stamp happened). FULL RECORD: 11/11
+retrospective + 3/3 prospective, all inside window → the sweep
+watcher graduates to VALIDATED STANDING INSTRUMENT, day one.
+Powerpuff v36 recorded as the direction bound: stamps-from-sweeps is
+the validated arrow; not every stamp is sweep-preceded. Retrodiction
+doc addendum closed with the full record. Research in-flight: empty;
+watch on os verdict → sp chain, v77 window (~@400).
+
+### 2026-08-08 13:45 (from `date`) — builder arm: WAKE — Powerpuff v36→v37 (second bump in ~20 min, live-dev churn like kladde's morning); churn-routine, watcher re-armed
