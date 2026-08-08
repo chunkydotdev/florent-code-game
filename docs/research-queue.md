@@ -83,3 +83,15 @@ outcome, scored-at.
 - **2026-08-09 00:1x** — queue created. Items 1–5 all unstarted. hive decode
   complete (4 docs); harvester-saturation generalisation complete and mostly
   negative.
+- **2026-08-09 00:2x** — **item 1 DONE** (`top-tier-decode-2026-08-09.md`): top tier
+  rushes gunners (r19 vs our r53), builds ZERO launchers, and holds economy flat
+  at 3 harvesters while we grow to 5. Strength confound declared and unremovable
+  with current data. **Blocker found: `match list` caps at ~100 recent matches, so
+  3,073 of 3,573 archived replays cannot be mapped to a team.** The clean test
+  (top-tier vs WEAK opponents) is blocked on it. Item 1 is not fully retired —
+  reopen if more metadata becomes mappable.
+- Also committed: `harvester-saturation-2026-08-08.md` — game-level saturation law
+  REFUTED as a collider; map-level gap survives at r=+0.61.
+- **NEXT TICK: item 2** (instrument audit sweep — two colliders found tonight in
+  two different tools, assume more), then item 3 (opponent constants under v80,
+  which unblocks the builder's Lunds fixture).
