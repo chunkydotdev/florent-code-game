@@ -6049,3 +6049,27 @@ meta primaries). Sweep wave logged: Jython/Landers/Torsko + LUNDS +
 SMARTFRIDGE self-testing ~16:3x-16:4x; stamps expected; opp_watcher
 armed. Next from queue: E1 CAD incoming-side design pass (mechanism:
 CAD cores die at 6.5 HP/r structural deficit) — registering on start.
+
+### 2026-08-08 16:31 CEST — research arm: fjordgate READ SIDE FIRING (builder's 3 questions); pre-read source fact already narrows Q1
+
+Disc verdict + instrument bundle absorbed. PRE-READ FACT from my own
+source check (bots/_v93w/main.py): LAUNCHERS APPEAR IN NEITHER
+SLOT_UNDER TRIGGER — core scan latches on gunner/sentinel d²≤64,
+builder d²≤16, ferried-builder, or HP-drop (:1828-1846); builder
+scan on turret-within-gun_sense(64)/builder-within-b_sense(16) of
+core (:2377-2388). The builder-arm candidate "cad's r1 launcher in
+core vision" cannot be the direct writer; on fjordgate (cores
+d²=32) the live suspects are cad's r1-adjacent BUILDERS inside
+d²≤16 of OUR core, or an early sentinel inside d²≤64 — both
+plausible at that core spacing, seat asymmetry TBD.
+
+- [IN-FLIGHT] FJORDGATE-COLLAPSE-OWNER (Opus): builder's 3 gated
+  questions — (1) exact r1 writer on fjordgate seat-B + seat
+  asymmetry mechanism (resolution order vs cad seat behavior),
+  (2) which siege branch starves eco to 0 harvesters in 392r with
+  staffing fine + wild-CAD (launcher-dies-r6) transfer, (3) does
+  the under-siege-eco defect generalize (heart suspect-3, core-in-
+  sentinel-range class frame). Sources: _v93w + cad_probe code,
+  disc bundle (72 replays + instruments.json, builder scratchpad).
+  Deliverable: docs/research/fjordgate-collapse-owner-2026-08-08.md.
+V77-FOLDIN still in flight.
