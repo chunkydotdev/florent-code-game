@@ -120,12 +120,21 @@ capacity exceeds decision rate by 50-100x.**
    `_v96ft2-h2h`, `ft2-vs-bundle-direct`. At 19% power, "no separation" was
    never evidence of no separation. There may be shipped-but-unattributed
    planks already on the tape. **Cheapest high-value action available.**
-3. **Promote `det.py` from attribution-only to the screening gate.** NOISE_OFF
-   paired runs have *no* sampling variance — that is where sensitivity lives.
-   The butterfly caveat is correct about attributing *mechanism* from
-   individual flips, and wrong as a reason to refuse the *aggregate* paired
-   rate as a decision statistic. Screen deterministic → confirm stochastic at
-   n≈800.
+3. **Promote `det.py` from attribution-only to the screening gate — keyed on
+   DISTINCT SHAPES, not pair count.** ([Amended](#amendments) on the research
+   arm's correction, 2026-08-08 ~21:1x.) NOISE_OFF paired runs have no
+   *within-configuration* sampling variance, so the inferential unit becomes
+   the configuration and **effective n = the number of distinct game shapes,
+   not the number of matches run.** Two counterexamples the same night: a
+   4-seed leg that was one distinct game replicated four times, and an identity
+   control with 44 distinct shapes out of 120 matches. A gate keyed on pair
+   count inherits a *worse* version of the defect this entry diagnoses — it
+   reports n=120 while holding n=44. `det.py` now prints the distinct-shape
+   count; the gate must read it, and the power table in §2 must be computed on
+   that number. The butterfly caveat remains correct about attributing
+   *mechanism* from individual flips, and remains wrong as a reason to refuse
+   the *aggregate* paired rate as a decision statistic. Screen deterministic
+   (on distinct shapes) → confirm stochastic at n≈800.
 4. **Replace serial screen→confirm with racing.** F-Race / irace is the
    standard method for tuning against a noisy stochastic objective on a fixed
    budget. Its **elitist racing** structurally guarantees the returned best is
@@ -189,6 +198,73 @@ work at* — which is why item 6 is last, not first.
   https://arxiv.org/pdf/2606.05408 · https://arxiv.org/abs/2206.08896
 
 ---
+
+## Outcome — adopted same night
+
+Relayed to both arms ~20:5x; both replied within ~20 min. Builder = session
+`af1aa9a9`; research = `284161ab`.
+
+- **Both arms independently reproduced the power arithmetic before adopting
+  it** (builder: 19% / 50% / 81% / 93% at n=1200; research: 19.2% / 50.0% /
+  80.9%, matching to the decimal). Tape row `leg-power-19pct`.
+- **It corrected a live conclusion within the hour.** The builder had just
+  written `_v98hg-refuted` off an n=120 paired leg: 42 discordant, 20 toward /
+  22 against, difference −1.67pp, SE = √42/120 = 5.40pp, **CI [−12.3, +8.9],
+  15% power against +5pp.** A real +5pp effect sits comfortably inside. Row
+  corrected to *"no effect detected at 15% power"* and re-running at n=600.
+  **This is the entry's thesis happening in real time: a plank was closed on an
+  instrument that would have missed a real effect five times in six.**
+- Builder on the deadlock re-read: *"The gate was the symptom; you found the
+  cause"* — and noted it indicts a ship made the same night.
+- Item 2 reordered on the builder's reasoning, correctly: **HG first**, because
+  it is the only underpowered row where a real effect changes what gets built
+  next. The E-family rows are shipped-or-parked, so re-measuring them buys
+  attribution, not decisions. They take the caveat now and the re-run when cheap.
+- `paired_vs_pooled.py` promoted into `tools/` by the builder (their lane),
+  **with the refutation preserved alongside it** — a negative result that
+  prevents a build is worth as much as a positive one, and "pairing is cosmetic
+  because NOISE_ON reseeds spawn_salt from live entropy" is exactly what someone
+  re-derives from scratch in three weeks.
+
+## Amendments
+
+**A1 — item 3 must key on distinct shapes (research arm + builder, concurring;
+NOT adopted tonight).** See item 3 above, rewritten. Effective n for a
+deterministic gate is the distinct-shape count, not the pair count. Two live
+counterexamples the same evening: a 4-seed leg that was one distinct game
+replicated, and a 44/120 shape count on an identity control. A gate keyed on
+pair count reports n=120 while holding n=44 — a strictly worse version of the
+defect this entry diagnoses. Correct call to defer it: worth doing, not worth
+doing fast.
+
+**A2 — the distinct-shape correction makes §2's live example *stronger*, and
+propagates into the HG re-run.** SE scales as `1/√r` where `r` = distinct
+shapes / nominal pairs. If HG's leg runs at the identity control's r≈0.37, the
+planned n=600 delivers **~24% power, not 54%**, and n=1200 delivers ~43%, not
+83%. Stated narrowly: 44/120 came from an *identity* control, which has low
+shape diversity by construction, so a real-effect leg should do better —
+**measure r on the HG leg itself before trusting the 54%.** The general rule:
+any power figure on a deterministic leg is nominal until divided by its shape
+ratio.
+
+**A3 — `fcode submit` AUTO-ACTIVATES (builder's correction to my context).**
+There is no upload-without-shipping, so ladder windows are ~1h each, serial,
+and unparallelisable. This does not weaken the recommendations; it sharpens
+what they are *for*. Local eval is ~50-100x underused; ladder eval is fully
+saturated. **Therefore: do all discrimination locally at real power, and spend
+each scarce window on a head that is already resolved.** `ship-gate.md`'s
+"ship the biggest available change per window" was the right response to scarce
+windows *given an instrument that could not resolve one plank* — but bundling
+was a workaround for the underpowered instrument, not for the scarce window.
+At n=800 legs of 22 min you can resolve ~3 planks/hour locally and ship the one
+that won, getting attribution **and** a pre-validated head on the same window.
+
+**A4 — live instance of the adaptive-overfitting risk behind item 7** (research
+arm). The probe fleet was tuned against opponents it was then measured against,
+and two of five probes turned out class-invalid the same night. Item 7 (hold
+out maps; Blum & Hardt) should be on the record **before** item 4 (racing) ever
+runs — racing multiplies candidate volume against a fixed evaluation set, which
+is exactly the regime the Ladder result bounds.
 
 ## Falsifiable predictions from this entry
 
