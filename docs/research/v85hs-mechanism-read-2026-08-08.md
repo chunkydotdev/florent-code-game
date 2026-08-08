@@ -24,6 +24,15 @@ The KEEP/ship verdict is the builder's.
 Written against the routing question: *does the decode supply the MECHANISM leg
 of the hsb ship case (holder-parity + field-positive + mechanism)?*
 
+> **UPDATE 2026-08-08 — see the Addendum at the end of this document.** The
+> builder's hsc intervention (turret seat gate disarmed at the placement scan)
+> **refutes the remedy**: the ring sentinel *does* rebuild at (19,18) and
+> archipelago-b is *still* lost, 8/8, at r320. Disqualifier (a) stands and is
+> sharpened — the map is lost by two independent channels, the second being
+> `HS_HEAL_DETAIL`. Meander is upgraded to **mechanism-confirmed-by-removal**
+> (byte-identical reversion to the parent). Every §2 launcher-gate claim
+> survives intact.
+
 ## (a) DISQUALIFIER — hsb INHERITS the archipelago_1_b regression, cause and all
 
 **Statement: YES, hsb carries the regression's cause in full. The cause is
@@ -783,3 +792,304 @@ within `d² ≤ 2` of the origin tile.
    say so.
 6. **Bimodal law**: add the HP-buffer caveat (§3.3) before the threshold is
    used as a survival oracle on short sieges.
+
+---
+
+# Addendum (2026-08-08): the hsc intervention test
+
+**Intervention.** `bots/_v85hsc/main.py` md5 `2f468a5daebea9210be3bfa1bc6bb837`
+(**2f468a5d**) = `_v85hsb` + exactly **two** hunks (full diff verified, nothing
+else differs):
+
+| hunk | site | change |
+|---|---|---|
+| **H1 — tie-break fix** | `_seat_seek_target`, `_v85hsc:2814-2833` | a unit already standing on a seat returns `None` (stops seeking); a walker stores `self.hs_seek_seat` and **holds** its chosen seat while that seat stays free |
+| **H2 — turret-gate disarm** | placement scan, `_v85hsc:3254-3265` | `ban = self._seat_ban()` → **`ban = None`** at this site only; harvester `:3290`, barrier `:3332`, harvester `:3539` and the b-rev launcher gate keep their bans |
+
+**New corpus** (same dir, `.replay26` wire format, sidecars used only for the
+validation in §A.5): `hsc_archipelago_1_b`, `hsc_meander_1_a`, `hsc_antler_1_b`.
+Battery context from the builder's `hsc_acc.out`: det hsc-vs-hsb (vs
+`_v84g_off`) **hsb 141/240 = 58.8%, hsc 143/240 = 59.6%**, 158/240 identical
+end-state, **18 flips = +8 antler-b, +2 lighthouse-a, −8 meander-a**.
+
+## A.1 ARCHIPELAGO — branch **YES**: the sentinel DOES build, and we still die
+
+**The ring is re-armed.** `hsc_archipelago_1_b` r25, replay-events:
+
+```
+r25   PLACE B sentinel#69 @(19,18) hp40 dir=NW      # BAN seat — the exact tile the b-rev refused
+      BUILD #12 -> (19,18)                          # same builder, same id, same round as the parent
+r26   FIRE (19,18) -> (17,16)   HP #3 -18           # and it garrisons: same first shot as the parent
+```
+
+Identical to `g84_archipelago_1_b` r25-r26 in entity id, tile, facing, builder
+and firing round. **H2 does exactly what it was meant to do.** Outcome
+unchanged: core dead **r320** (was r277), our titanium **570** (was 1,280) —
+worse on the tiebreak axis, 8/8 across seeds per `hsc_acc.out`.
+
+**So the garrison story was INCOMPLETE — but it was not wrong.** Re-arming the
+ring moved every garrison metric in the predicted direction and simply was not
+sufficient:
+
+| replay-events, archipelago seat B, whole game | parent `g84` | `h85` (= hsb here) | **`hsc`** |
+|---|---|---|---|
+| sentinel @(19,18) | r25 ✔ | ✗ blocked | **r25 ✔** |
+| our impassable seat-tile-rounds | 965 | 0 | **172** |
+| enemy builder-bot seat-rounds | 21 | 194 | **141** (−27%) |
+| enemy builder attacks on our core | 0 | 189 | **122** (−35%) |
+| enemy turret planted **on** a seat | never | **(20,18) r175, 100 shots** | **never** (nearest (21,18), `d²=2`, r137, 30 shots) |
+| outcome | survives r1000 | dead r277 | dead r320 |
+
+The seat-planted gunner — the single worst item in §1.2 — is **completely
+denied**. The garrison mechanism is real and measurable. It is not what owns
+the loss once it is restored.
+
+### What owns the loss now: HS_HEAL_DETAIL captures the expansion builder
+
+**First divergences** (`tools/rdiff.py`): hsc vs **h85** at **r25** (the
+sentinel, i.e. H2); hsc vs **parent** at **r27** — and the parent has no
+heal-detail at all, so r27 is mechanism 2:
+
+```
+r27   hsc:    MOVE #8 (21,17)->(21,18)     # walking onto the seat ring
+      parent: MOVE #8 (21,17)->(20,17)     # continuing its patrol
+r28   hsc:    MOVE #8 (21,18)->(21,19)     # arrives on heal seat (21,19)
+```
+
+That is `_seat_seek_target` (`:2766`, called from `_defend`/come-home walks)
+redirecting builder `#8` to a free seat. What it costs, per-builder seat
+residency after r27 (replay-events, positions replayed each round):
+
+| builder `#8` | on-seat / alive rounds | fate |
+|---|---|---|
+| parent `g84` | **55 / 973 = 5.7%** | alive at r1000 |
+| `h85` | 19 / 275 = 5.6% | alive at r277 |
+| **`hsc`** | **149 / 175 = 96.7%** | **DIED r177 on heal seat (20,18), killed by turret fire from (21,18)** |
+
+**`#8` is the team's primary expansion builder.** Harvester authorship
+(`builderBuild` matched to the same round's `placeEntity`):
+
+* parent: `#8` builds harvesters at r9, **r192**, r284, r308, r330, r367 — the
+  **r192 build is the restart that reignites the whole economy** (17 harvesters,
+  delivery 480 → 1,390 between r150 and r300, population recovering 3 → 6 via
+  spawns at r217/268/276).
+* hsc: `#8` builds at r9 and then **never again**. Harvesters: **r9, r11, and
+  nothing else for 309 rounds.** Delivery flatlines: r50 180, r100 360, r150
+  480, r200 **570**, r250 **570**, r300 **570**. Zero post-opening spawns
+  (5 lifetime vs the parent's 14).
+
+And the ring then empties completely — the failure the plank exists to prevent:
+
+| mean builders-on-seat | r21-100 | r100-200 | r200-end |
+|---|---|---|---|
+| parent | 1.34 | 0.92 | **2.57** |
+| h85 | 0.84 | 1.06 | 0.99 |
+| **hsc** | 1.25 | 0.76 | **0.00** |
+
+hsc's fatal episode r21-r319: 1,163 damage, 167 heal actions, **ratio 0.57**,
+**0.55 builders on seat per damage round with a median of 7 of 8 seats FREE**.
+Seats open, no bodies — the v73 convergence signature, now produced *by* the
+convergence plank.
+
+**Chain, stated at the confidence the evidence supports (mechanism-plausible,
+one named channel, no unexplained jump):** r27 heal-detail parks `#8` on the
+ring → the ring sits inside the enemy fire envelope (enemy gunner (21,18) r137)
+→ `#8` dies on seat (20,18) at r177 → no expansion restart at r192 → economy
+flatlines at 570 → no bank, no replacement spawns → ring unstaffed 0.00 for the
+last 120 rounds → ratio 0.57 → core dead r320.
+
+**Correction to §1.2.** Archipelago seat B has **at least two independent
+sufficient channels**, and removing one exposes the other:
+
+* channel (i) **ring disarmament** — `HS_SEAT_PROTECT` turret gate; owns the
+  h85/hsb loss (§1.2).
+* channel (ii) **seat capture of the expansion builder** — `HS_HEAL_DETAIL`;
+  owns the hsc loss.
+
+§1.2's attribution was correct *for the b-rev* and incomplete *as an account of
+the map*. The disqualifier in gate summary (a) stands and is now sharper: **the
+turret-gate remedy is refuted, and the residual owner is mechanism 2.**
+
+**REV-SCOPE ANNOTATION (2026-08-08 09:1x, research arm, from the builder's
+hse acceptance worker — do not apply channel (ii) beyond the hsc family).**
+The #8 seat-capture above is measured AT THE HSC REV. The builder's hse
+worker instrumented the actual **hsd** game: the capture does NOT reproduce
+there — H1's sticky tie-break already changed the seek dynamics (#8 seeks
+only r22-r88, is never seat-resident, never dies on a seat), and hse's
+conscription exemption fired 45/45 while producing a **byte-identical**
+replay to hsd (NOISE_OFF). Status per rev: channel (ii) REAL at hsc,
+**ALREADY MITIGATED at hsd+** (by H1, incidentally, not by design), hse
+exemption a no-op on the det single. hsd's residual archipelago-b loss
+(r732) has an **UNIDENTIFIED owner** — open decode question, replays in the
+builder scratchpad. The channel-(ii) design lesson (role-aware heal
+conscription) remains valid as a defensive principle; its archipelago-b
+evidentiary base is hsc-only.
+
+## A.2 MEANDER — **CONFIRMED BY REMOVAL**, and it is total
+
+`hsc_meander_1_a.replay26` md5 `242be026f799c0cacd58e39629625c41` is
+**byte-identical to `g84_meander_1_a.replay26`** (`cmp` clean; `rdiff.py`:
+*"turns: 635 vs 635 — NO behavioral divergence"*). Not "converges back": **there
+is no divergence at any round.** The candidate-vs-parent game reproduces the
+parent-vs-parent mirror game digit for digit, 635 turns, same 140 Ti, same core
+death round.
+
+What that establishes, and it is the cleanest causal statement in the corpus:
+
+1. **The turret seat gate was the ENTIRE meander mechanism.** §1.3 called it
+   mechanism-plausible on a 365-round chain from an r6 divergence. Removing the
+   single gate at `:3254` removes the *whole* effect — not most of it, all of
+   it. **Upgrade: mechanism-CONFIRMED-BY-REMOVAL.**
+2. **Every other active toggle is inert on meander as a first cause.** hsc
+   still carries heal-detail, the tie-break fix, the ceiling lift, and the
+   launcher / harvester / barrier gates. If any of them could fire independently
+   on this map, hsc would diverge somewhere in 635 rounds. None does. So h85's
+   meander heal-detail effects (§1.6: on-seat 1.25 → 2.35) and its 49 spawns
+   were **downstream consequences of the r6 turret block**, not independent
+   contributions — exactly what §1.3 suspected about the ceiling lift ("a
+   passenger") and now proven for all of them.
+3. The det table agrees at scale: **meander seat a flips hsb-win → hsc-loss on
+   8 of 8 seeds**, every one landing on the parent's 140 Ti / r635.
+
+## A.3 ANTLER — the flip is the TIE-BREAK FIX, by elimination, with a falsifiable prediction
+
+`hsc_antler_1_b`: 14×18, our core (6,12) seat B, **win at r1000 with 14,250 Ti
+delivered vs the opponent's 3,660**. Baselines from the det tables: parent
+`g84` **3,540**, `h85`/hsb **5,020**, **hsc 14,250** — and the 8/8 flip
+(`hsc_acc.out`: 14,250 / 13,570 / 14,250 / 13,570 / 14,240 / 14,220 / 14,240 /
+14,220 across seeds 1-8) appears **only at the hsb→hsc step**.
+
+**Elimination argument for H1 over H2.** hsc's own turret and launcher
+placements in this game, all off the ring:
+
+```
+r4 sentinel (6,10)   r144 gunner (6,8)   r216 gunner (6,8)   r348 gunner (6,8)
+r370 gunner (7,8)    r379 launcher (8,15)  r641 sentinel (7,9)
+r643 sentinel (9,10) r645 sentinel (9,9)
+```
+
+Seats are {(5,12),(5,13),(6,11),(7,11),(8,12),(8,13),(6,14),(7,14)}. **Not one
+own turret ever lands on a heal seat.** H2 only changes behaviour when the
+placement scan's first viable tile *is* a banned seat; along hsc's trajectory
+that never happens, so **H2 is inert on antler and H1 owns the delta.**
+
+**What the economy actually does** (delivery into our core footprint,
+`distributeResources`, per 100 rounds):
+
+```
+r0-99 460 | 100-199 500 | 200-299 490 | 300-399 920 | 400-499 1870
+r500-599 2010 | 600-699 1980 | 700-799 2010 | 800-899 1990 | 900-999 2020
+```
+
+Harvesters r3, r7, r75, then the restart **r252, r359, r393, r456, r484**;
+spawns 0-4 then **r408, 417, 425, 448, 573, 581, 590, 600, 611, 621** (ceiling
+lift, bank-fed); population 5 → **14**. Single siege episode **r4-r162**: 1,026
+damage, 278 heal actions, **ratio 1.08**, latency **1**, **2.19 builders on seat
+per damage round** — survived on the right side of the bimodal law — and the
+core is **never shelled again for the remaining 838 rounds**.
+
+**Characterisation for the hsd read.** H1's second clause ("a unit already
+standing on a seat stops seeking") converts *shuffling* into *pinning*. Without
+it, a seated unit still calls `_seat_seek_target`, which cannot see its own seat
+as free and therefore returns some *other* free seat and walks the unit off —
+so seats keep re-opening and keep recruiting fresh seekers via the
+`seekers >= len(free)` cap. With it, seats fill, stay filled, `free` shrinks,
+the cap fires for everybody else, and the surplus builders are **released to
+expand**. Antler is where that pays (siege survived at 2.19 on-seat, then
+0.56 on-seat for r163-500 while the harvester restart runs); archipelago is
+where the same pinning kills the expansion builder (§A.1). Measured seat
+departures per 100 rounds on the one map where both variants exist
+(archipelago seat B): **h85 12 → hsc 6**, seat→seat hops **26 → 16** —
+stickier, as designed.
+
+**Falsifiable predictions for hsd (= hsb + H1, turret gate still armed):**
+
+1. **`hsd_antler_1_b` should be BYTE-IDENTICAL to `hsc_antler_1_b`** (md5
+   `3436ab7fe03a83ae377f4328f0e626b7`), because H2 is inert on antler. If it is
+   not, the elimination argument above is wrong and H2 matters on antler after
+   all. *This is the sharp test.*
+2. hsd should **keep hsb's meander win** (turret gate armed → the r6 sentinel
+   still blocked), i.e. **not** land on the parent's r635 / 140 Ti.
+3. hsd should **keep hsb's archipelago-b loss at ~r277**, since channel (i) is
+   still active there; if hsd instead lands at r320 / 570 Ti, then H1 dominates
+   channel (i) on that map too.
+
+**SCORECARD (builder's hsd det, relayed 08:3x, correction appended by the
+research arm same hour): 1 of 3.** Prediction 1 CONFIRMED — `hsd_antler_1_b`
+regenerated byte-identical (md5 `3436ab7f…`); the H1/antler elimination stands.
+Predictions 2 and 3 REFUTED: hsd LOSES meander 8/8 via a THIRD distinct game
+line (~4,200 Ti — neither hsb's win nor the parent's exact loss), and hsd's
+archipelago-b runs to r732. LESSON, scope-bounding §A.3's stability
+assumptions: the tie-break fix perturbs EVERY heal-detail-active map, and
+knife-edge det singles (meander/archipelago/jackpot) flip under ANY heal
+perturbation — the meander byte-identity finding and the hsd meander loss
+COMPOSE (the gate was the entire hs-vs-parent delta AND its win is fragile
+to heal perturbation). Det singles cannot adjudicate BETWEEN heal-perturbing
+candidates; only pooled noisy channels can (the standing butterfly/instrument
+note on the tape, re-confirmed here at prediction scale). Do not cite
+predictions 2-3 downstream.
+
+## A.4 What this does to the gate ledger
+
+| claim | status after the intervention |
+|---|---|
+| §1.3 **meander win = turret seat gate** | **UPGRADED — mechanism-confirmed-by-removal** (byte-identical reversion). Strongest causal evidence in the corpus. |
+| §1.2 **archipelago regression = ring disarmament** | **CORRECT BUT INCOMPLETE.** Garrison metrics all improve on re-arming (enemy seat-rounds −27%, builder attacks −35%, seat-planted gunner denied), yet the loss holds. Two sufficient channels; (ii) is heal-detail. |
+| Gate summary **(a) disqualifier** | **STANDS, and sharpened.** The remedy is refuted 8/8; hsc is worse on the tiebreak axis (570 vs 1,280 Ti). The disqualifier is now "the plank loses archipelago-b by two routes", not "by the turret gate". |
+| §1.4 / §1.6 **heal-detail is a liability, `_free_seats` is threat-blind** | **STRENGTHENED — second independent map, second failure mode.** jackpot: wrong seat, second healer lost (−25 heals). archipelago: right seat, wrong *builder* — 96.7% pinned, killed on the ring, expansion never restarts. |
+| §1.6 **heal-detail changes occupancy, not arrival** | **UNCHANGED and reinforced.** hsc's fatal episode: latency 2 (fine), on-seat **0.55** with 7 of 8 seats free. |
+| §1.3 **lighthouse = ceiling lift, mechanism-direct** | **UNTOUCHED** (hsc gains 2 more lighthouse-a wins; H1/H2 do not bear on it). |
+| **§2 — every hsb launcher-gate claim** | **SURVIVES INTACT.** hsc keeps the launcher gate and reproduces the archipelago seat-A kill: hsb 202 turns / 1,250 Ti → hsc **198 / 1,220**. The §2.2 chain is robust to both hsc hunks. |
+| §1.9 **`_try_siege_build` ungated** | **UNTOUCHED** — H2 disarms the *placement scan*, not the siege site. |
+
+**Aggregate read of the intervention: it is a wash that trades one map for
+another** — det hsb 58.8% → hsc 59.6% (+0.8pp), buying antler-b 8/8 and
+lighthouse-a 2/8 at the price of meander-a 8/8, and not buying archipelago-b at
+all. The two hunks are separable and should be judged separately: **H1 is the
+one carrying the gain** (antler), **H2 is the one carrying the loss** (meander)
+and it does **not** deliver the fix it was built for.
+
+*Channel caveat for the builder's own battery, not this decode:* `hsc_acc.out`
+records hsc guard legs **below** hsb (kladde 78.3% vs 88.3%, ouroboros 80.0% vs
+86.7%) and 13 vs 4 "tracebacks" in the compact v74 leg. Per the standing
+`pair.py`/`det.py` caveat that column counts caught-diagnostic prints in
+**shared** stderr from either side — attribute by file path before reading it
+as crashes.
+
+## A.5 Self-checks on the three new games
+
+**Parser / sidecar validation:** turns **3/3**, winner **3/3**, win condition
+**3/3**, and `core_deliv × 10 == titaniumCollected` **6/6 team-sides**
+(archipelago 1,550/570; meander 140/1,550; antler 3,660/14,250).
+
+**HP-delta ledger** — every negative `updateHp` matched in engine order with
+live positions and 2×2 core footprints:
+
+| game | neg HP | fire-attributed | attack-attributed | both | **unexplained** | dmg magnitudes | builder-attack → bot |
+|---|---|---|---|---|---|---|---|
+| `hsc_archipelago_1_b` | 548 | 236 | 312 | 0 | **0** | 2:312, 7:140, 18:96 | **0** |
+| `hsc_meander_1_a` | 481 | 321 | 160 | 0 | **0** | 2:160, 18:321 | **0** |
+| `hsc_antler_1_b` | 1,681 | 298 | 657 | 726 | **0** | 2:1013, 7:123, 18:545 | **0** |
+
+Magnitudes remain exactly {2, 7, 18} = builder attack / gunner / sentinel;
+`hsc_meander_1_a`'s ledger is identical to `g84_meander_1_a`'s in every cell, as
+byte-identity requires.
+
+**Determinism verification** (`tools/rdiff.py`, `updatePlayers` excluded):
+
+| comparison | identical through | diverges at |
+|---|---|---|
+| `hsc_meander_1_a` vs `g84_meander_1_a` | **all 635 turns** | **never** (files byte-identical, `cmp` clean) |
+| `hsc_meander_1_a` vs `h85_meander_1_a` | turns 0-5 | r6 |
+| `hsc_archipelago_1_b` vs `g84_archipelago_1_b` | turns 0-26 | **r27** |
+| `hsc_archipelago_1_b` vs `h85_archipelago_1_b` | turns 0-24 | **r25** |
+| `hsc_antler_1_b` | no paired partner staged — internal characterisation only (§A.3) | — |
+
+Cross-checks against the builder's det table: archipelago-b lands at 320 turns /
+570 Ti on **all 8 seeds**, antler-b at 13,570-14,250 on all 8, meander-a at
+140 Ti on all 8 — the three staged replays are representative, not outliers.
+
+**Channel discipline:** every count above is replay-events from `.replay26`,
+named with game and rounds. Zero `botOutput` stdout records in the three new
+games. No `placeEntity` re-emissions (no gunner rotations). Launcher throws
+identified as `moveBuilderBot` with `d² > 1`.

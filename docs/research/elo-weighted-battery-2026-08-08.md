@@ -389,3 +389,21 @@ more to the Elo case than another guard-leg rerun.
 - **Platform reads only:** `match list`/`match info` (unmetered per the shared
   budget rules), no replay downloads, no submissions/activations/arena runs,
   no writes outside this file.
+
+## Uncertainty register addendum (2026-08-08 09:1x, research arm)
+
+- **CAD-family −88.0 is era-mixed and may soften on its own:** the weight was
+  measured against CAD v116/v117-era play; CAD ROLLED BACK v117→v107 at
+  ~09:14 local — v107 is cad_probe's source era, so if the rollback holds a
+  quiet window, probe fidelity is RESTORED and the class's forward-looking
+  bleed rate may differ from the windowed measurement. Kladde is likewise
+  back on its probe-source version (v65) the same morning. Re-window the CAD
+  row after ~20 post-rollback matches before treating −88.0 as current.
+  **MOOTED 09:24 (builder relay): CAD bounced BACK v107→v117 after ~10
+  minutes — the re-window premise is void, cad_probe stays suspect, the
+  −88.0 stays as measured (v116/v117-era), CAD re-freeze stays queued behind
+  ouro. The A/B-churn reading of the family (rollbacks-as-experiments,
+  2026-08-07 spitball note) gains another data point; quiet windows this
+  morning are ~minutes, so probe re-freezes fire IMMEDIATELY on spec landing
+  rather than waiting for window comfort (builder process note, on their
+  board).**

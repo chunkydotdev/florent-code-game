@@ -161,7 +161,49 @@ byte-identity claims were det/NOISE_OFF, unaffected).
 
 | research | S16 OUROBOROS PROBE RE-FREEZE SPEC (builder ASK 09:1x; queue's top instrument item; quiet window OPEN ≥2.5h, v8 stable): clanker_probe pattern — decode → reproducible behavioral spec → builder worker builds → builder freeze battery. Corpus: 9 archived Ouro matches incl. FRESH 621b841e (v74 0-5 Ouro, 06:16Z, 6 files) + 4e0874d0 (v73-window) + bab61537 (v64/65-era reference) — the era-delta is the POINT: the spec must name what the OLD probe gets WRONG (the 93.3-probe vs 7.1%-wild 86-point gap), not just what v8 does; seat-lock history check (does the seat-A lock persist in v8-era games); opening rows per map + timings + gunner-mass picket mechanism as v8 plays under v74-era us + defects-to-preserve. Prior sources: ouroboros-v65-era-reverify (r3 queue divergence, opening-signature steering), v72-bleed picket profile, denial book. One read-only Opus agent | docs/research/ouro-probe-refreeze-spec-2026-08-08.md | local only — archived, no downloads | LANDED 09:43 (658 lines, 45 games, self-checks green 45/45; relayed → builder worker FIRING) — TOP WRONGS: R1 no home screen (wild 22.6% of gunners home, 179-rnd lives, builder losses 1-vs-12/game; the 93.3 measures "kill the walker"); R2 killer ~50 rnds late + solo (wild = 2-3-gunner BURST at d≤9 median r124, top-3 shooters = 100% of core shots); R3 targeting inversion + SHOT-SUPPRESSION BUG (bare-return; builder behind core suppresses the shot — 36-53% exposure when heal line staffed). Gunner mass CORRECT — don't touch. Instrument story: probe leg 72.5→93.3 while wild reality stayed 7/40 flat. SEAT-LOCK REFUTED (broke 07T16:47Z; B in 4/6 recent; A 15%/B 20% at n; seat×lineage collinear — NO seat-conditional branch; seat-A unrated legs no longer needed = budget freed). Kill condition: attrition-from-screen 12:1 → heal line dead r150-250 → burst kill; counter = EARLY standoff sentinel (r5-vs-r15 = the lever; their kit structurally can't answer it, D-CRITICAL preserved). Predictive acceptance gate (6 anchor binaries, Wilson-contain wild 76.7%); steering split stable/conditional; battery ≥3 lineages |
 
-### 2026-08-08 09:45 (from `date`, approx) — RESEARCH ARM STATE NOTE (wrap seam reached; mechanics on Magnus's confirm)
+### 2026-08-08 09:54 (from `date`) — S16 RETRO (research pen, both-arms scope, at Magnus's wrap-call — scorecard of the 06:3x retro's items + this cycle's new deltas)
+
+**The 06:3x retro's items, what landed:** Theme 6 (wake paths) LANDED
+DECISIVELY — exit-on-wake monitors were the session's backbone: the
+SLOT FREE wake shipped v75 within minutes of the condition, teammate
+uploads caught live, zero blind windows. Push-per-commit: held, origin
+in sync at every check. Theme 5a (archiver priority hook): implemented
+same-cycle after research flagged it missing, used immediately
+(b5a37d0b), session ran on ZERO replay downloads. Theme 2 (channels):
+the day's biggest earner — four channel catches (unmeasurable
+production print check dropped pre-spec; tb counts resolved as caught
+diagnostics; shared-stderr ambiguity stated-not-claimed; stale schema
+flag resolved as triple-confirmation) plus one new law (damage-target,
+scope-corrected same day) and one new rule (NOISE_ON self-nonidentity
+→ identity claims need NOISE_OFF). Theme 1 (baselines): the
+compact→bar regression hit a THIRD time (60.0→48.8) and the rule held
+— compact numbers never entered a case. Theme 4 (pre-staging): every
+build carried pre-stated acceptance (two REFUTED cheaply because of
+it); pre-registered predictions made even the misses informative (hsd
+scorecard 1/3 = the fragility discovery). Theme 3 (interlock): catches
+ran BOTH directions for the first time at volume — builder caught 2
+research errors (stale 1-0, hsd composition), research caught 4
+builder ones (tooling phantom, 4-1 miscount, freeze-fix hypothesis,
+print-rate check); zero reached a verdict or the routed package.
+
+**New deltas this cycle (for the evening's daily note):** (1) det
+singles adjudicate IDENTITY, never choice between heal-perturbing
+candidates — re-confirmed at prediction scale; pooled noisy decides.
+(2) Compressed side-findings must carry their load-bearing numbers
+inline (the zero-rush lesson — a summary contradicted its own body).
+(3) Mechanism claims are REV-SCOPED at write time (channel-ii applied
+one rev forward would have been wrong). (4) Probe acceptance gates
+must be PREDICTIVE (anchor-binary Wilson gate), not fidelity-only —
+the 72.5→93.3-vs-flat-reality instrument story is why. (5) Directives
+compound when recorded promptly: field-first → Elo-above-all →
+swap-rule → the ship, all inside three hours, each step consumable by
+the next because it was on the board within minutes. (6) Rule
+revisions need a propagation check: the slot-swap window revision
+crossed with an in-flight verification — no harm done, but the
+supersede-marking pattern (dated, in place, never deleted) is what
+made it safe.
+
+### 2026-08-08 09:45 (from `date`, approx) — RESEARCH ARM STATE NOTE (wrap seam reached; mechanics on Magnus's confirm) [CONFIRMED ~09:55 — Magnus's direct confirm to this session; research arm s16 CLOSED clean. Builder relayed; final commit+push is theirs.]
 
 Wrap-safe state: ZERO live subagents (all landed + relayed same-hour);
 ZERO replay downloads today (entire session ran on archive + builder
@@ -3056,3 +3098,20 @@ instrument drift 20pts, reality 0. Seat-lock REFUTED (broke
 branch, seat-A unrated challenges no longer needed — platform budget
 freed). If Magnus calls wrap mid-build: worker lands as parked dev
 head per the s15 pattern, freeze battery = successor item 1.
+
+### 2026-08-08 09:45 (from `date`) — builder arm: WAKE — kladde v65→v79 (the v65 hold lasted ~90 min); probe back on suspect list
+
+Routine churn row: kladde on a new high (v79). kladde_probe suspect
+again; re-freeze stays successor-queued under the short-window rule.
+No in-flight impact. Version-churn ledger this morning: Lunds full
+cycle + still moving, kladde v75→78→65→79, CAD v117→107→117. Ouro
+v8 remains the one stable nemesis (their probe v2 worker mid-build).
+Watcher re-armed.
+
+### 2026-08-08 09:55 (from `date`) — builder arm: kladde v79→v80 (5th move today) — churn-expected status
+
+kladde is in active live development (v75→78→65→79→80 inside ~2.5h);
+further kladde bumps are EXPECTED and carry no new information until
+they hold a version ≥2h — successor may treat kladde wakes as
+churn-routine until then (probe already suspect, re-freeze queued).
+Watcher re-armed.
