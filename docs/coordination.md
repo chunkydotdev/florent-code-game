@@ -91,6 +91,24 @@ team convention — how this directive interacts with the team norm for
 slot changes is Magnus/x3r0 conversation territory; internally it
 governs OUR ship-case construction and routing.
 
+### 2026-08-08 08:51 (from `date`) — research arm: SLOT-SWAP RULE absorbed; v74 condition INDEPENDENTLY VERIFIED (one sub-claim corrected); Elo table now decision-critical
+
+Builder relayed the new team rule (Magnus + x3r0, their 08:50 note +
+shared memory slot-swap-rule): live bot ≤0 net Elo after 3 matches
+frees the slot for a measured better-case swap. RESEARCH VERIFICATION
+vs platform (match JSON, 08:51): v74 = 9 ladder matches net −8.8
+(builder −8.7 ✓), first three ALL losses (−18.7 net after 3 → condition
+met at match 3 and still met), 1602 @ 355 #27 ✓, two 5-0 sweeps in the
+recent run ✓. ONE SUB-CLAIM CORRECTED: the strict last-5 is 3-2, not
+4-1 (corrected to builder; the package's recent-form line should state
+3-2 or define its window). Notable in the v74 tape: Ouroboros 0-5 loss
+(−16.9, the historic seat-lock biting v74) and a CAD-family loss —
+both bleed classes our candidates' guard legs measure directly.
+CONSEQUENCE: ship decision is now purely the measured expected-Elo
+case (builder's interleaved bar + the Elo-weighted class table in
+flight, registry 08:40) — the table upgraded from refinement to
+decision-critical input. Bar ETA ~10 min per builder.
+
 ### 2026-08-08 08:40 (from `date`) — MAGNUS DIRECTIVE SHARPENED: "our goal above all else is to gain ELO" + Elo-weighted battery table commissioned
 
 Verbatim from Magnus 08:4x, extending the 08:34 directive with its root:
@@ -2731,3 +2749,21 @@ Elo-weighted class table (in flight). Package decision under the
 rule: if the bar + weights favor a candidate, ship on the rule; if
 not, v74 keeps the slot on its recovering form and the case notes
 say so.
+
+### 2026-08-08 08:53 (from `date`) — builder arm: SWAP RULE REVISED by Magnus (rolling LAST-5, direct in my session) — v74 NOT currently swappable; logger now watches the window
+
+REVISION (Magnus direct, ~08:55): the window is the rolling LAST 5
+matches, not first-3-after-activation. Recomputed from the tape:
+v74's last 5 = CAD −10 / Ouro −17 / farming +1 / Askar +15 /
+Banminary +18 = **NET +7, form 3-2** (correcting BOTH my earlier
+lines: "condition met" was the old rule, and "4-1" mis-counted —
+research's 3-2 is right). v74 HOLDS the slot under the revised rule.
+Memory file updated (slot-swap-rule, revision noted + the
+window-spans-activation edge case flagged). ELO_LOGGER EXTENDED
+(compiles; live next poll, no re-arm needed): computes the rolling
+last-5 net from the tape each poll and WAKES on the condition
+crossing either direction ("SLOT FREE" / "slot held again") — the
+swap window is now a monitored event, not a manual check. Package
+consequence: the ship decision returns to (a) v74's window dipping
+≤0, or (b) the old teammate-norm conversation on the strength of the
+measured case. Bar + Elo table still decide whether the case exists.

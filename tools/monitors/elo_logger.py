@@ -70,8 +70,34 @@ def main() -> None:
     except Exception:
         pass  # submission list fetch failed; keep old max
 
+    # Slot-swap rule (Magnus+x3r0 2026-08-08, revised same day): a live bot at
+    # <=0 net Elo over the rolling LAST 5 MATCHES is free to swap. Wake on the
+    # condition crossing in either direction; the rating five matches back is
+    # read from our own tape (latest row at matches <= now-5).
+    swappable = st.get("swappable")
+    try:
+        base = None
+        with open(os.path.abspath(HIST)) as f:
+            for row in f:
+                parts = row.rstrip("\n").split("\t")
+                if len(parts) >= 3 and parts[2].isdigit() and int(parts[2]) <= matches - 5:
+                    base = float(parts[1])
+        if base is not None:
+            net5 = rating - base
+            now_swappable = net5 <= 0
+            if swappable is not None and now_swappable != swappable:
+                state_txt = "SLOT FREE (swap rule)" if now_swappable else "slot held again"
+                print(
+                    f"SWAP RULE: {state_txt} — v{ver} rolling last-5 net "
+                    f"{round(net5):+d} ({round(base)} -> {round(rating)}), {matches} matches"
+                )
+            swappable = now_swappable
+    except Exception:
+        pass  # tape unreadable this poll; keep old flag
+
     with open(STATE, "w") as f:
-        json.dump({"rating": rating, "active_version": ver, "max_version": max_ver}, f)
+        json.dump({"rating": rating, "active_version": ver, "max_version": max_ver,
+                   "swappable": swappable}, f)
 
 
 main()
