@@ -63,7 +63,16 @@ control, and it costs one click.
 - Unanimity between arms. Either arm may state a concern on the row; the
   builder decides.
 
-## The rollback rule (unchanged, now load-bearing)
+## The rollback rule — TEAM-WIDE, accepted by x3r0 2026-08-08 ~19:5x
+
+This is no longer just our internal norm. Magnus put it to x3r0 and he accepted
+it, so it now governs the shared slot for everyone: **anyone ships whenever
+they want, no ask**, on these two conditions.
+
+The measured case for free shipping, since it is counter-intuitive from inside
+our own line: over v70–v80, **x3r0 was net +7 elo across 6 windows and we were
+net −18 across 5**. There was never a case for gatekeeping him, and a
+permission step would only re-create the deadlock this document exists to end.
 
 The swap rule is what makes a loose gate safe, so it is the part that must not
 drift:
@@ -78,6 +87,11 @@ drift:
 - **Rolling last-5 ≤ 0 frees the slot.** Whoever notices it fire rolls back. No
   discussion required, and it cuts both directions — a teammate swapping our
   flat window is the system working, not a conflict.
+- **An armed positive window is left alone by everyone.** This is the half that
+  makes free shipping survivable: without it, two people ship into the same
+  open window and destroy both measurements. If your window is still armed and
+  positive, nobody touches the slot; if it has gone flat, nobody needs your
+  permission.
 
 ## Window budget — the actual scarce resource
 
