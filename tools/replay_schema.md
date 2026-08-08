@@ -172,18 +172,19 @@ omitted when a team banked nothing (normal proto3 default omission), so a team
 that never completes a chain reads 0 — matching `fcode run --json`'s
 `a_titanium_collected`.
 
-**Damage-target law: turret fire hits the UNIT, builder attack hits the
-BUILDING (research, verified 2026-08-08).** A FireTurret event's damage lands
-on the UNIT standing on the target tile (builder bot or turret-as-unit), NOT
-on a building occupying it; a builder's attack action damages the BUILDING on
-the target tile. HP-delta-verified on 30 events in the v73 production read
-(25 enemy-bot hits from turret fire, 0 own-building hits; deliverable
-§self-checks). Consequence for decoders: assuming turret fire damages
-buildings manufactures phantom own-building-fire events — e.g. a false
-S1-guard-miss reading against a bot whose guard is actually clean. Attribute
-turret damage to tile OCCUPANT (unit layer), builder-attack damage to tile
-BUILDING (building layer), and verify per-game with an HP-delta ledger on
-both layers.
+**Damage-target law: turret fire hits the tile's UNIT when one is present,
+ELSE the BUILDING; builder attacks always hit the BUILDING (research,
+verified 2026-08-08; scope corrected same day).** A FireTurret event's damage
+lands on the unit standing on the target tile when one is present; with no
+unit present it damages the building (1,056 building-hit events in the
+mechanism-read corpus; 128:17 co-located events confirm unit-priority). A
+builder's attack action always damages the building on the target tile.
+HP-delta-verified on 30 events in the v73 production read plus the mechanism
+read's corpus. Consequence for decoders: assuming turret fire always damages
+buildings manufactures phantom own-building-fire events (a false
+S1-guard-miss against a clean guard); assuming it never does misses real
+building damage. Check tile occupancy per event, and verify per-game with an
+HP-delta ledger on both layers.
 
 ## Undeclared fields
 
