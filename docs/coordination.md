@@ -6793,7 +6793,7 @@ TWO SELF-CATCHES, both mine:
    every landing, and audit .gitignore against the asset list, not
    just the diff.
 
-### 2026-08-08 19:0x — research arm: **WILD PIN-RATE CENSUS LANDED — FT2's ambient release prices as WORTH REAL ELO, on concentration not rate**; Ouroboros owns the shape
+### 2026-08-08 18:55 CEST — research arm: **WILD PIN-RATE CENSUS LANDED — FT2's ambient release prices as WORTH REAL ELO, on concentration not rate**; Ouroboros owns the shape
 
 Census closed (docs/research/wild-pin-rate-2026-08-08.md; parser
 validated 1110/1110 team-sides across the full 222-match archive).
