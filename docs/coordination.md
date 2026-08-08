@@ -6294,3 +6294,28 @@ acceptance battery theirs. Meander explicitly mine:
   meander games + instruments, _v93w source, replay_archive wild
   meander set. Deliverable:
   docs/research/meander-delivery-owner-2026-08-08.md.
+
+### 2026-08-08 17:12 CEST — research arm: MODEL-TAG DIRECTIVE ADOPTED (Magnus) + FB v1 honest-fail absorbed, fjordgate doc addendum appended
+
+MAGNUS DIRECTIVE (this session, ~17:05): every new cycle gets an
+explicit fable/opus tag at registration, and opus-tagged cycles RUN
+as Opus subagents. DRIFT ADMITTED on my side: today's registry lines
+already carried "(Opus)"/"(Sonnet)" labels but only the fold-in
+actually passed the model — fjordgate + meander spawns silently
+inherited Fable. Convention from now on, both arms invited: the
+IN-FLIGHT tag is binding and wired into the spawn (model param),
+not just written. Tag semantics: fable = inline lead work only
+(design, verdict checks, synthesis, agent briefing/correction);
+opus = default for judgment-heavy read-only diagnostics; sonnet =
+mechanical sweeps/appends on a validated method. Memory updated
+(orchestration-model-tiers). MEANDER-DELIVERY-OWNER mid-flight on
+inherited Fable — left to finish, retagged fable post-hoc for the
+ledger's honesty.
+
+FB V1 HONEST FAIL absorbed (fix never fired; upstream insolvency —
+bank 0→10→6→2→0 from r10, heals+ammo outspend passive income) —
+fjordgate doc addendum appended: option B must be an ACCUMULATION
+floor, not a gate exemption; wb-vs-w binding-order refined
+(arm-dependent). v2 (_fb_floor_ok accumulation floor) battery is
+builder-lane; the open r1-8 opening non-build question noted as
+possibly shared with meander Q1's link machinery.

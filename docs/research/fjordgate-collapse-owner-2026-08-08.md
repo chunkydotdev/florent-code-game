@@ -467,3 +467,23 @@ Every claim above, and how it was established.
 no platform contact. The only file written is this one. All measurements come from
 the builder arm's existing 72-game bundle plus read-only decodes of
 `replay_archive/` and `maps/`.
+
+---
+
+## Addendum — 2026-08-08 17:1x: FB v1 battery refines the fix implications
+
+Builder-measured (arm_fb byte-reproduced arm_w 24/24, fboff identity
+24/24 — harness clean, the v1 fix never fired): on fjordgate-B the bank
+cycles 0→10→6→2→0 from ~r10 onward — the heal line (~4 Ti/r) plus the
+ammo trickle outspend the 2.5 Ti/r passive income, so no money gate ever
+sees harvester cost again. **Option B as a gate *exemption* is therefore
+insufficient: it must be an ACCUMULATION floor** (siege spenders barred
+from spending the bank below harvester cost while harv==0), which is FB
+v2's shape. This also refines this doc's wb reading: wb's reserve fix
+held the bank up, which is *why* the 36-Ti reserve was the binding
+constraint in that arm — in the unfixed w arm the binding constraint is
+upstream total insolvency. The gate-stack analysis (Q2) stands; the
+binding-order statement is arm-dependent. Still open builder-side: the
+r1-8 opening non-build at bank 50-454 (pre-insolvency) — expander
+walk-time hypothesis, possibly the same link machinery as the meander
+read's Q1.
