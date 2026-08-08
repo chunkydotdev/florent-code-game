@@ -185,3 +185,66 @@ produce exactly the economy signature in section 1.
   ever worked mid-game (noted in the census tool's own docstring).
 - **Wins on hive are n=5.** Every within-hive win/loss contrast in this document
   rests on that and should be read as suggestive.
+
+---
+
+# ADDENDUM (23:2x) — two instruments agree on hive and disagree on why
+
+The builder's 720-match local battery (both binaries vs `kladde_probe`, 15 maps
+x 12 seeds x 2, uniform draw by construction) independently found hive to be the
+worst core-kill cell on the board — bottom-ranked in **both** legs, the only map
+that is. That is a second refutation of H4 from a direction I could not have
+reached: game share cannot explain a collapse in an arena that draws every map
+24 times.
+
+**But the two instruments report opposite signatures, and the difference
+matters.**
+
+```
+                     median turns    grind share    we are killed
+PRODUCTION hive          284             12%            74%
+PRODUCTION other maps    388             30%            37%
+
+LOCAL leg hive        501-595          (n/a)          12-46% kill rate
+LOCAL leg average     133-243
+```
+
+In production hive games are **shorter** than the field, grind **less**, and end
+with our core destroyed three times as often. Locally they are 2–4x longer with
+a low kill rate. Same map, inverted.
+
+### The reconciliation is opponent strength, and it makes both true
+
+A broken economy produces different failures depending on whether the opponent
+can punish it:
+
+- **`kladde_probe` cannot** — we beat it 87%. Starved economy against an
+  opponent that will not kill you is a stalemate: we cannot build enough to
+  close either. That is the 501–595 turns.
+- **Ladder opponents can** — they convert the same starvation into a core kill
+  by turn 284. That is the 74%.
+
+One mechanism, two surface phenomena. **The practical consequence: a hive fix
+validated on the local instrument would be scored on "did the grind shorten,"
+which is not the failure mode production has.** Score hive work on **our
+ti/round and harvester count** — the one variable both instruments agree on —
+not on game length or kill conversion, where they disagree.
+
+### And hive breaks the strength split
+
+Every other map obeys the strong/weak split from the parent document. hive does
+not:
+
+```
+                        n     win     killed    r1000
+hive  vs STRONG >=1550  24     12%      75%      12%
+hive  vs WEAK  <1550    10     20%      70%      10%
+other vs STRONG        326     41%      44%      33%
+other vs WEAK          140     75%      21%      24%
+```
+
+**On every other map a weak opponent is a 75% win. On hive they are a 20% win
+and they kill us 70% of the time.** hive is the only cell that is absolutely
+bad rather than conditionally bad — it is not explained by "we lose to strong
+teams." The weak cell is n=10 and should be held loosely, but it points the same
+way as every other measurement in this document.
