@@ -1499,9 +1499,23 @@ First complete production win-map. Game-share vs rating expectation (E from the
 measured Δ=32×(share−E) model); seat noted because the seat-B resolution-order
 tax (see game-model) confounds several rows.
 
+> **STALENESS MARKER, added 2026-08-08 s19 — this table misled the builder within
+> an hour of being read, so read the marker before the rows.** These are **15 UNRATED
+> games per team from a single 08-07 sweep**, not ladder history, and the per-seat
+> splits inside them are 5-game slices. They are ~40 of our versions old: the same
+> table calls the kladde probe current at their v62 and shows Ouroboros as all-seat-B.
+> Concretely refuted since: the Lunds row's "0-5 as seat B" was used as evidence of a
+> **seat-specific hole**, and the research arm's check of **17 archived ladder matches**
+> found no such hole — seat A 27.5% game share vs seat B 22.2%, a 5-point gap that is
+> noise at that n, with whitewashes on BOTH seats (v68 and v74 were 0-5 as seat A).
+> What the primaries do say is worse and was invisible here: **we have never beaten
+> Lunds — 0 match wins in 17** — and the outcome distribution is bimodal, 9× "2-3"
+> against 8× "0-5 or 1-4" with almost nothing between. Treat every row below as a
+> historical snapshot; re-derive from archived ladder primaries before acting.
+
 | team | their rating | score | share | E | read |
 |---|---|---|---|---|---|
-| Lunds Stallions | 1609 | 7-8 | .47 | ~.40 | **above expectation** — but 6-4 as seat A vs 0-5 as seat B |
+| Lunds Stallions | 1609 | 7-8 | .47 | ~.40 | **above expectation** — but 6-4 as seat A vs 0-5 as seat B *(seat split REFUTED — see marker above)* |
 | Powerpuff Girls | ~1560 | 8-7 | .53 | ~.51 | at expectation; won 4/5 as seat B (their chip doesn't tax builders) |
 | CtrlAltDefeat | 1658 | 5-10 | .33 | ~.32 | at expectation; our 5 wins all fast core kills r117-215 |
 | kladde | 1799 | 2-13 | .13 | ~.20 | slightly below; probe stale (they shipped v62 ~1811) |
