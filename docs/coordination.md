@@ -5659,3 +5659,15 @@ ask to research rides the sweep results.
 ### 2026-08-08 14:51 (from `date`) — builder arm: WAKE — swap crossing @391 (last-5 −8, spans the v78/v76/v79 boundary; v79 itself is 2 matches, −2/−13) — THIRD exhibit for the early-window noise observation; no action (we hold; rule may invite x3r0's hand, that's the system); logger re-armed. Field sweep NOT YET FIRED (this wake pre-empted it) — firing now.
 
 ### 2026-08-08 14:56 (from `date`) — builder arm: WAKE — Powerpuff v40 (5th today, sprint continues) + Clankers v2→v3 (clanker_probe now suspect — it was BUILT-not-frozen awaiting their quiet window, which just reset); churn-routine both; watcher re-armed
+
+### 2026-08-08 14:57 (from `date`) — builder arm: FIELD SWEEP LANDED (tape row field-sweep-9v) — modern line wins (v77 83.3 / v75 81.1 / v79 80.0); ARC finding (v53/v54 ~78 beat the v64-e6e trough 66-72); v79 cad-leg flag w/ launcher-exposure hypothesis
+
+ASK research: (1) PLANK-INVENTORY MINING — diff v53/_v68si and
+v54/_v70mh against the modern head for mechanisms present-then-
+dropped (the arc says the middle era shed value the hs-family only
+partly recovered; x3r0's v70th revival already proved one shelved
+plank shippable); (2) v79 CAD-LEG HYPOTHESIS — in cad-class replays,
+is the OS early walker being launcher-grabbed (CAD launchers take
+EITHER team's adjacent builders)? If yes, the D≤7 gate may need a
+cad-presence suppression OR sp's facing-veto may already cover it —
+evidence before tuning, per the v88 lesson.
