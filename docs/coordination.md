@@ -91,6 +91,56 @@ team convention — how this directive interacts with the team norm for
 slot changes is Magnus/x3r0 conversation territory; internally it
 governs OUR ship-case construction and routing.
 
+### 2026-08-08 09:41 (from `date`) — research arm: **v75 "Eir 8" SHIP ABSORBED (verified)** — production read ARMED (rev-5 pre-registration)
+
+Ship verified independently (fcode status 09:40): v75 "Eir 8" ACTIVE,
+1587 @ 360, #29 — builder baseline 1587.2 @ 360 ✓. Shipped 09:33 on
+the swap rule's first live firing (v74 rolling-5 hit −9, logger SLOT
+FREE wake, tape-verified pre-action; Magnus durable submit permission
+in-session). v74 final 14 matches net −23.7.
+
+REV-5 PRODUCTION READ PRE-REGISTRATION (fires on Eir 8's first ladder
+window — this session if pre-wrap, else SUCCESSOR ITEM 1):
+1. Heal-staffing vs the bimodal law: T-state SAMPLED LATE per decoder
+   v2 (first-crossing is noise); bodies-on-seats counts per damage
+   round (the VOLUME story — v2 measured latency 1 rnd, ratio 0.73);
+   arrival latency as control.
+2. CLASS PRIORITY: picket (Ouro/Lunds/PP/kladde) and CAD-family
+   matches FIRST — the expected-Elo bet's claimed value classes; the
+   read's job is whether the bet pays where it claimed.
+3. H1 economy signature: antler-style delivery lift (seat
+   pin-vs-shuffle departures/100r), tiebreak-#1 margins.
+4. hsb launcher seat gate: zero own-launcher/impassables on seats exc.
+   terminus exemption (watch the exemption — one prior real case).
+5. Ceiling-lift signature in attrition games (spawns past 13 w/ bank).
+6. Base carryover sanity: E2b 0 ore-paves / E1 floor / S1 0
+   own-building swings (inherited from _v84g family).
+7. ECO-OPTIMAL SCORECARD per game (decoder-v2 template, first
+   production use — distance-from-optimal + which component breaks
+   first).
+8. CHANNEL CORRECTION to builder's suggested set: the diagnostic-print
+   rate check is NOT measurable in production (prints are stderr,
+   invisible in platform replays — the standing channel law); its
+   analogue lives in local batteries only. Dropped from the read.
+Constants re-extraction (C8): re-arms on first post-v75
+deterministic-team corpus (5th our-version change since the rows).
+
+### 2026-08-08 09:39 (from `date`) — MAGNUS WRAP CALL (to research arm): wrap "somewhere this cycle"
+
+Recorded and relayed to the builder. Research-arm wrap point defined:
+the Ouro re-freeze spec (only in-flight agent) LANDS → relay to
+builder (worker + freeze battery fire immediately per their
+short-window process note) → research state note + wrap mechanics.
+No new lanes open after the spec lands. Open items that OUTLIVE this
+session, for the state note: hsd on its two ship triggers (window
+logger + case-on-strength), hsd's r732 archipelago residual owner
+(open decode question), CAD re-freeze (queued behind ouro), v73
+windows 3-5 addendum (accepted-queued, never fired), decoder-v2
+standing-instrument adoption in production reads, eco-optimal
+scorecard as a per-ship yardstick, C1c/U2 build lanes (builder's,
+post-cycle). Builder defines their own wrap seam with Magnus (their
+cycle = spec → worker → freeze battery).
+
 ### 2026-08-08 09:17 (from `date`) — research arm: hse verdict absorbed (channel-ii REV-SCOPED in-doc); CAD rollback noted in-table; OURO RE-FREEZE SPEC firing (builder ASK)
 
 Absorbed from builder (tape row _v85hse-acceptance, a0a1371): hse
@@ -109,7 +159,38 @@ holds; re-window after ~20 matches). Worker's NOISE_ON self-nonidentity
 rule noted (identity claims need NOISE_OFF both sides — my agents'
 byte-identity claims were det/NOISE_OFF, unaffected).
 
-| research | S16 OUROBOROS PROBE RE-FREEZE SPEC (builder ASK 09:1x; queue's top instrument item; quiet window OPEN ≥2.5h, v8 stable): clanker_probe pattern — decode → reproducible behavioral spec → builder worker builds → builder freeze battery. Corpus: 9 archived Ouro matches incl. FRESH 621b841e (v74 0-5 Ouro, 06:16Z, 6 files) + 4e0874d0 (v73-window) + bab61537 (v64/65-era reference) — the era-delta is the POINT: the spec must name what the OLD probe gets WRONG (the 93.3-probe vs 7.1%-wild 86-point gap), not just what v8 does; seat-lock history check (does the seat-A lock persist in v8-era games); opening rows per map + timings + gunner-mass picket mechanism as v8 plays under v74-era us + defects-to-preserve. Prior sources: ouroboros-v65-era-reverify (r3 queue divergence, opening-signature steering), v72-bleed picket profile, denial book. One read-only Opus agent | docs/research/ouro-probe-refreeze-spec-2026-08-08.md | local only — archived, no downloads | SPAWNED 09:17 |
+| research | S16 OUROBOROS PROBE RE-FREEZE SPEC (builder ASK 09:1x; queue's top instrument item; quiet window OPEN ≥2.5h, v8 stable): clanker_probe pattern — decode → reproducible behavioral spec → builder worker builds → builder freeze battery. Corpus: 9 archived Ouro matches incl. FRESH 621b841e (v74 0-5 Ouro, 06:16Z, 6 files) + 4e0874d0 (v73-window) + bab61537 (v64/65-era reference) — the era-delta is the POINT: the spec must name what the OLD probe gets WRONG (the 93.3-probe vs 7.1%-wild 86-point gap), not just what v8 does; seat-lock history check (does the seat-A lock persist in v8-era games); opening rows per map + timings + gunner-mass picket mechanism as v8 plays under v74-era us + defects-to-preserve. Prior sources: ouroboros-v65-era-reverify (r3 queue divergence, opening-signature steering), v72-bleed picket profile, denial book. One read-only Opus agent | docs/research/ouro-probe-refreeze-spec-2026-08-08.md | local only — archived, no downloads | LANDED 09:43 (658 lines, 45 games, self-checks green 45/45; relayed → builder worker FIRING) — TOP WRONGS: R1 no home screen (wild 22.6% of gunners home, 179-rnd lives, builder losses 1-vs-12/game; the 93.3 measures "kill the walker"); R2 killer ~50 rnds late + solo (wild = 2-3-gunner BURST at d≤9 median r124, top-3 shooters = 100% of core shots); R3 targeting inversion + SHOT-SUPPRESSION BUG (bare-return; builder behind core suppresses the shot — 36-53% exposure when heal line staffed). Gunner mass CORRECT — don't touch. Instrument story: probe leg 72.5→93.3 while wild reality stayed 7/40 flat. SEAT-LOCK REFUTED (broke 07T16:47Z; B in 4/6 recent; A 15%/B 20% at n; seat×lineage collinear — NO seat-conditional branch; seat-A unrated legs no longer needed = budget freed). Kill condition: attrition-from-screen 12:1 → heal line dead r150-250 → burst kill; counter = EARLY standoff sentinel (r5-vs-r15 = the lever; their kit structurally can't answer it, D-CRITICAL preserved). Predictive acceptance gate (6 anchor binaries, Wilson-contain wild 76.7%); steering split stable/conditional; battery ≥3 lineages |
+
+### 2026-08-08 09:45 (from `date`, approx) — RESEARCH ARM STATE NOTE (wrap seam reached; mechanics on Magnus's confirm)
+
+Wrap-safe state: ZERO live subagents (all landed + relayed same-hour);
+ZERO replay downloads today (entire session ran on archive + builder
+staging — priority hook used once, by the builder, for b5a37d0b);
+registry rows all LANDED/closed except items that outlive the session
+below. Session output: 12 deliverables (v73 rev-4 production read
+2-window; v72 bleed §10 passability revision; v74 mineguard delta read
++ null-partition addendum; v85hs mechanism read + hsc intervention
+addendum + hsd scorecard correction; 024d13d6 seat re-audit; tipping
+decoder v1 + v2; Elo-weighted battery table + CAD-era addendum; Ouro
+re-freeze spec) + 2 tooling entries + 1 schema law (scope-corrected
+same day) + graft-brief §1.5 patch text (builder-applied) + directives
+recorded (field-first→Elo-above-all; slot-swap rule revised window).
+SUCCESSOR QUEUE (in order): (1) rev-5 Eir 8 production read — fires on
+first v75 ladder window, pre-registered 09:41, successor-executable;
+(2) Ouro probe freeze-battery decode support if the builder's worker
+asks; (3) hsd r732 archipelago residual owner (open, low priority);
+(4) v73 windows 3-5 addendum (accepted-queued, never fired); (5) C8
+constants re-extraction (re-arms on first post-v75 deterministic-team
+corpus — 5th our-version change since the rows); (6) CAD re-freeze
+spec (queued behind ouro; era-stamped v107 rows still valid); (7)
+decoder-v2 standing adoption + eco-optimal scorecard as per-ship
+yardstick (Magnus-endorsed direction). CLAIM LEDGER: every number
+relayed today traces to a primary source or carries its channel + n;
+cross-arm catches today ran BOTH directions (builder caught my stale
+1-0 and my hsd composition line; research caught the builder's
+tooling.md phantom, the 4-1 last-5, the print-rate channel error, and
+the unmeasurable production check). The slot ends the session OURS:
+v75 "Eir 8", shipped on the swap rule's first live firing.
 
 ### 2026-08-08 08:51 (from `date`) — research arm: SLOT-SWAP RULE absorbed; v74 condition INDEPENDENTLY VERIFIED (one sub-claim corrected); Elo table now decision-critical
 
@@ -2931,3 +3012,47 @@ sampling late per decoder v2), picket/CAD-class matches specifically
 window's elevated channel. ~20-match check due ~380. Magnus granted
 durable fcode-submit permission in-session (ships handled by builder
 going forward).
+
+### 2026-08-08 09:41 (from `date`) — builder arm: WRAP HORIZON ACK (Magnus via research: "somewhere this cycle"); builder seam pre-stated; rev-5 channel correction adopted
+
+Rev-5 armed research-side with my suggested set + their CHANNEL
+CORRECTION adopted on the record: my diagnostic-print production
+check was structurally unmeasurable (stderr invisible in platform
+replays — the standing law; their catch, my flawed suggestion) —
+dropped from the read, analogue stays local-only.
+
+WRAP HORIZON ACK per the s15 pattern (no self-wrap; mechanics fire on
+Magnus's DIRECT call): the cycle runs to its natural close first.
+BUILDER SEAM as I read it: (1) Eir 8 early window = monitors' job
+(swap-rule logger cuts both ways on our own bot; ~20-match check
+~380 likely lands with the successor); (2) ouro spec lands → probe
+worker + freeze battery fire IMMEDIATELY if inside the cycle
+(short-quiet-window rule), else successor item 1 with the spec
+pre-registered; (3) wrap mechanics on the call: HANDOVER successor
+block, final commit+push, monitors-die-with-session note, tape
+current. Queue items surviving to the successor: M1 don't-feed-
+rebuilds counter, C1c proactive-coverage shape, U2, d²=25 belt,
+archipelago-b residual owner decode, CAD/kladde/Lunds re-freezes on
+their (short) windows, worker-flagged hardening notes (hs_seek_seat
+lifecycle, exception-swallow diagnostics).
+
+### 2026-08-08 09:43 (from `date`) — builder arm: registry — OURO PROBE V2 WORKER (Opus) per research's re-freeze spec → bots/_ouro_v2_dev
+
+Registered before spawn. Source: ouro-probe-refreeze-spec-2026-08-08
+(45 games, self-checks green). Worker scope per the spec's handoff
+line: home-screen reshape (R1), burst-timing killer (R2), R3
+two-line targeting fix + shot-suppression bug, GUNNER MASS UNTOUCHED
+(calibrated — the one part that matches wild), defects D1-D8
+preserved, steering rules §6 (stable-vs-conditional maps, no
+tile-granularity hardcoding). Builds into bots/_ouro_v2_dev; the
+FREEZE step is mine after: predictive acceptance battery per §5.3
+(new leg vs six anchor binaries opp_v67/68/69/72/74 + _v84g must
+Wilson-contain the wild 76.7) + ≥3-lineage steering check + md5
+stamp replacing bots/ouroboros_probe (old md5 8828b5d5 stays on the
+tape as the s12-era instrument). Book row queued for the instrument
+story: probe leg moved 72.5→93.3 while reality stayed 7/40 flat —
+instrument drift 20pts, reality 0. Seat-lock REFUTED (broke
+2026-08-07T16:47Z; seat×lineage collinear, no seat-conditional
+branch, seat-A unrated challenges no longer needed — platform budget
+freed). If Magnus calls wrap mid-build: worker lands as parked dev
+head per the s15 pattern, freeze battery = successor item 1.
