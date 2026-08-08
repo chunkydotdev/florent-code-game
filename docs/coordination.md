@@ -7836,3 +7836,147 @@ cuts of the hive cell are one query away and were NOT run. No mechanism in
 this doc: 500 games of outcome metadata cannot say WHY hive kills us at 75%.
 That needs replays and is the obvious next commission — announced here, not
 spawned, because there is no builder to announce it to.
+
+### 2026-08-08 22:4x CEST (from `date`) — builder arm: **SESSION 20 BOOT — THE SLOT CHANGED UNDER US, AND THE CEILING METRIC NOW HAS AN INSTRUMENT**
+
+Booted 22:23 on Magnus's `/builder`. Four monitors were DEAD (they died with s19);
+all four re-armed (elo_logger, match_watcher, opp_watcher, replay_archiver).
+`audit_trigger.py` FIRES 2/4 (note:verdict 4.38, ship cadence 0.32/hr) — audit
+session spawned per the new boot path, registered below.
+
+## 1. LIVE IS **NOT** WHAT HANDOVER SAYS — x3r0 SHIPPED v86 AT 22:15 CEST
+
+HANDOVER's top block says LIVE = v84 "Eir 14" (_v99mag). **It is not.** Active
+submission is **v86 "Z2 fastfacing", uploaded by x3r0 at 20:15Z = 22:15 CEST**,
+six minutes before this session booted. v85 "x3r0test" sits unactivated between.
+At boot v86 had **zero ladder matches** (last ladder match 20:12Z was still v84).
+
+**Ladder at boot: 1572.55 @ 436 matches, rank #29/113, recent 5W-5L.**
+
+## 2. WHAT v86 ACTUALLY IS — VERIFIED AGAINST PLATFORM PRIMARIES, NOT INFERRED
+
+I downloaded v86, v84 and v76 from the platform rather than trusting the repo.
+Two identity checks first, both clean:
+  - platform v84 == `bots/_v99mag/main.py` byte-identical (md5 dab7766e), 7,087 lines
+  - platform v76 == `bots/opp_v76/main.py` byte-identical, 4,690 lines
+
+**v86 is 4,794 lines and sits 128 diff-lines from `bots/opp_v76`.** It is not a
+descendant of v84. **x3r0 forked from OUR v76 and v86 therefore REVERTS v77-v84
+wholesale** — the entire Eir E-family bundle, the hive fix and PIECE MAG, ~2,400
+lines, are not in the live bot. This was not routed through this session and I am
+recording it as fact, not complaint: the slot is shared and `fcode submit`
+auto-activates, so there is no mechanism that would have stopped it.
+
+The 128 lines are three named changes, and they are competently argued in-file:
+  - **S1 SPEED** — snapshot `Direction.delta()` into a module-level `_DELTA`
+    table. Their measurement: `.add()` costs 1.675us because the engine rebuilds
+    a 9-entry dict literal per call (fcode/_types.py:133-145); a full-map BFS
+    makes ~2,400 of them = 4.0ms, and a two-BFS turn burns ~8ms of a 10ms budget.
+    Claimed 12x on the primitive, 7.4x end-to-end. Pure speed, no decision differs.
+  - **V1 FACINGFIX** — destroy-and-rebuild wrongly-faced conveyors, with a
+    `repaired_tiles` set bounding it to one destroy per tile (oscillation safety).
+  - **W4** — the `ti_floor` 46 has decayed: at our measured 241-261% cost scale a
+    harvester costs ~51 Ti, and AMMO_BANK is also 46, so the core converts until
+    the bank sits AT 46 while the thing it is saving for costs 51. Their measured
+    consequence: median bank 19 Ti, harvester affordable on 15% of turns.
+
+**ONE CORRECTION TO THE IMPLIED CPU STORY, from our own tape.** S1's framing
+points at a 9,312us p99 against a 10,000us TLE. Our decoded corpora say our
+platform TLE count is **zero** — "0 TLE/tracebacks/stdout all 20 games"
+(orekeeper v69 read), "zero TLEs" (opponents.md x2), "TLE: zero events, all
+corpora" (00:37 note), "platform TLE 0" (7439). So S1 buys **headroom, not a
+fixed bug**. That is still worth having at 7,087 lines and 93% of budget — but
+nobody should book Elo against it, and no verdict here will.
+
+## 3. THE TAPE ON v77-v84: THE EIR BUNDLE HAS NEVER BEATEN v76, AND CANNOT SAY IT HAS
+
+Per-version net Elo by the `eloDelta`-keyed-on-version method (s19's rule; never
+difference ratings), ladder-only, over the last 200 of our matches:
+
+    v75 n=10 net -11.6 | v76 n= 8 net -10.8 | v77 n= 6 net +34.1 | v78 n=2 net  -6.9
+    v79 n= 7 net -36.1 | v80 n=23 net  +4.9 | v81 n= 2 net -24.0 | v82 n=2 net +14.8
+    v83 n= 5 net +34.1 | v84 n= 7 net -20.2
+
+**v77-v84 pooled: +0.7 over n=54 (+0.01/match). v75-v76: -22.4 over n=18.**
+Using the s19 magnitude calibration (2sd = 41 at m=8, so per-match sd ~7.25),
+2sd at n=54 is **+/-106**. The observed +0.7 is not merely inside the interval,
+it is at its centre. **The entire v75->v84 arc is indistinguishable from zero.**
+
+So the honest verdict on x3r0's revert: **the tape neither supports nor refutes
+it.** I am not going to dress that up in either direction. The Eir bundle was
+never shown to beat v76; the revert is not shown to beat the Eir bundle. The only
+component of v86 with an argument that is not a coinflip is S1, and S1's argument
+is for headroom rather than for points.
+
+**SLOT DECISION: v86 KEEPS THE SLOT AND GETS A REAL WINDOW.** It needs 8 ladder
+matches (~80 min at the 6/hr cadence) before the swap rule can say anything, and
+the s19 finding stands that five ships got 2/2/5/1/7 matches and NONE reached 8.
+I will not ship over it tonight to make that six. If it trips the magnitude
+threshold the slot frees; otherwise it holds. Rollback target if needed: v84
+(_v99mag, md5 dab7766e), one click.
+
+## 4. NEW INSTRUMENT: `tools/ceiling.py` — THE CEILING METRIC IS NOW MEASURABLE LOCALLY
+
+s19's headline was that the top field ends ~97% of games by core kill at median
+232 turns while we grind. **Nobody checked whether we can measure that locally.
+We could not.** `arena.py` collects `win_condition` but prints it POOLED across
+both bots and never records `turns` at all; `det.py` records both but prices
+planks in flips and delivered titanium. So "did this plank make us kill cores
+faster?" has been locally unanswerable for the entire project.
+
+`tools/arena.py` is deny-listed for edits in `.claude/settings.json` — the shared
+instrument is deliberately frozen so every verdict on the tape stays comparable.
+I did not route around that guard. The ceiling metric lives in a **sibling**,
+`tools/ceiling.py`, which imports arena's `wilson` and carries a byte-for-byte
+copy of arena's `fcode run` invocation plus an explicit COUPLING WARNING, so the
+two tools play the same games. It reports, per bot and pooled: core-kill rate
+over ALL matches (not over wins — a bot that wins rarely but always by kill is a
+different animal), Wilson CI, median/fastest/slowest turns-to-kill, share of
+games reaching r1000, and a per-map breakdown. It does NOT adjudicate "is A
+better than B" and says so; read it alongside arena, never instead of it.
+
+**A CORRECTION TO OUR OWN HEADLINE, from re-running `ladder_census.py` at boot
+(n=100 matches / 70 teams).** The "97% / 10 teams / 335 games" figure is from a
+larger pull than the tool reproduces by default; at n=100 the top tier (>=1750)
+is only 2 teams / 45 games -> 91% core-kill, median 224. Direction confirmed,
+precise number sample-dependent — **quote the census with its n or not at all.**
+And the census contains a sharper framing than the one we shipped in the wrap:
+
+    LOWER TIER (<1650): 8 teams, 225 games -> 80% core-kill, median 350 turns
+    OpenSverige @1573:  30 games            -> 73% core-kill, median 312 turns
+
+**We are below the LOWER tier, not merely below the top one.** Powerpuff (1605)
+85%, Lunds (1619) 90%, KCM (1633) 85%, and even Torsko at 1472 runs 71%. Our
+core-kill rate is a low outlier for our rating, not a stylistic choice that pays
+for itself. That is a stronger claim than the wrap's and it survives the smaller n.
+
+## 5. IN-FLIGHT (rule 1)
+
+| arm | work | artefact | platform | status |
+|---|---|---|---|---|
+| builder | **AUDIT SESSION** (triggered, 2/4). Read-only, no stake in queue, told not to re-derive the 19%-power finding. Four questions: (1) can any instrument see core-kill rate, and what n would the cheapest one need; (2) is the ship-cadence collapse instrument-slowness / underpower / an unsatisfiable gate / or sessions choosing analysis; (3) at ~6 ladder matches/hr, what ship cadence is even compatible with an 8-match window; (4) dump every field of every `fcode` endpoint and report what else we compute that we could fetch | docs/workflow-analysis/instrument-audit-2026-08-08-late.md | read-only, no downloads, no submits | SPAWNED 22:3x, live at time of writing |
+| builder | **CEILING BATTERY**, 3 legs x 120 matches (15 maps x 4 seeds x 2 orderings): L1 v84 vs v76 — prices the Eir bundle in the ceiling metric and directly adjudicates x3r0's revert; L2 v84 vs kladde_probe (field); L3 v76 vs kladde_probe (same field opponent, so L2/L3 are comparable) | scratchpad/ceiling_legs.txt | local only | RUNNING, launched 22:4x |
+
+**SMOKE READING, AND WHY IT IS NOT A CLAIM.** The 6-match smoke of L1 (3 maps x
+1 seed) read v84 1/6 wins with **0 core kills** against v76 5/6 with 4 core kills
+at median 235. That is a startling number and I am explicitly **not** claiming it.
+s19 process delta 9 — "no directional claim from a sample that has not been
+re-run at least 3x larger" — was written after a small sample gave a confident
+wrong reading three times in one evening. The full leg is 20x larger and running.
+If it holds, it says the Eir bundle cost us the ceiling metric and x3r0 reverted
+into a real gain by an argument he did not make. If it does not hold, delta 9
+just paid for itself a fourth time.
+
+## 6. ASK: RESEARCH ARM
+
+**ASK-1 (highest value, and it is now cheap):** s19 closed with "500 games of
+outcome metadata cannot say WHY hive kills us at 75% — that needs replays and is
+the obvious next commission." It is still the obvious commission and there is now
+a builder to announce it to. Take it, with one addition: run it against the
+**core-kill framing**, not the economy framing — on the maps where we lose, are
+we losing because our core dies fast, or because we survive into a tiebreak we
+lose? Those have opposite fixes and every prior read has been economy-shaped.
+
+**ASK-2:** v86 is live and is a v76 fork. Every behavioural fact in docs/research/
+dated after v77 describes a bot that is **no longer on the ladder**. Flag which of
+your standing findings are v77+-specific before anyone builds on them tonight.

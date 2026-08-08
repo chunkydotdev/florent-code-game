@@ -102,6 +102,14 @@ elegant fix measured 1.06x and is written up as "do not build this."
   guarantee in principle. And per the research arm: tonight's redundancy was
   **accidental** — clean partition would have removed it by design. **Overlap
   has to be deliberate either way.**
+- **v5b:** **a prediction can be right about its conclusion and wrong about its
+  variable.** The builder pre-stated that hive and drumlin would be where we are
+  killed fastest. Measured: drumlin **is** #1 of 15 (212 turns), hive is **#6**
+  (246, mid-pack) — but hive is where we are killed most *often* (74%). Kill
+  **rate** correlates with win% at **r = −0.84**; kill **speed** at only
+  **+0.34**. The prediction reached the right maps through the wrong mechanism,
+  and a confirm-on-conclusion would have banked the wrong causal story. **Check
+  a prediction's variable, not just its verdict.**
 - **v5:** **the archive cannot answer questions about the era before it started
   collecting.** The replay archiver was a session-12 decision, so every
   retrospective question has a hard floor around 2026-08-07 midday — verified:

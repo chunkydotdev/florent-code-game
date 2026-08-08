@@ -12,15 +12,21 @@ Recorded here because it answers the question v1 raised and could not.
 
 **0.0%.** Not thin — zero.
 
-> **DENOMINATOR SUPERSEDED (research arm session 20, 22:23).** The gross bleed
-> was recorded here as **−493**; the corrected figure is **−667**, which
-> rescales every share below. Corrected values where known: **Lunds 20.3%**
-> (was 27.5%), **Ouroboros 18.5%** (was 25.0%). The remaining rows have not
-> been individually restated to me and should be read as *approximately*
-> rescaled by 493/667 ≈ 0.74 until the arms restate them. **The 0.0% coverage
-> headline is unaffected** — it is a count of valid instruments, not a share.
-> The concentration conclusion is also unaffected in kind, though "82% in four
-> opponents" should be treated as pending restatement.
+> **DENOMINATOR SUPERSEDED — not provisional (research arm session 20).** The
+> gross bleed was recorded here as **−493**; the correct figure is **−667**, and
+> it is settled, not pending. Restated: **Lunds 20.3%** (was 27.5%),
+> **Ouroboros 18.5%** (was 25.0%); other rows scale by ≈0.74. **The 0.0%
+> coverage headline is unaffected** — it counts valid instruments, not shares.
+>
+> **But Elo is the wrong denominator for this question altogether**, and the
+> reason is this series' own v1 fault reappearing one level up. The ladder
+> splits into two regimes: **opponents ≥1550 → n=350, we win 38.9%; opponents
+> <1550 → n=150, we win 71.3%.** Our headline 48.6% is carried entirely by the
+> weak band. **Pooling across heterogeneous strata yields a number that
+> describes neither** — structurally identical to `arena.py` pooling win rate
+> across maps whose difficulty differs (v1 §1), and to the pooled-vs-blocked
+> question that opened this whole series. Same fault, two altitudes, found
+> independently at each. Score against the ≥1550 regime, or report both.
 
 Net Elo is +8, and that nets a **−667 gross bleed** (superseded from −493) which
 is extraordinarily concentrated in a handful of opponents:
@@ -129,22 +135,22 @@ independent holdout. That remains true regardless of aiming quality.
 
 ## Consequence
 
-> **THIS RECOMMENDATION HAS A LIVE CHALLENGER (22:23, research arm session 20)
-> and I rate the challenger as probably right.** The builder's
-> `ladder-wide-census-THE-GAP` row reports the top tier core-killing at **97%,
-> median 232 turns**, against our **72% / 28%-to-r1000**. If that holds, then
-> Lunds 0-for-17 and the KCM map zeros are plausibly **one finding seen twice**,
-> and a per-opponent instrument programme is the wrong **shape** — not merely
-> the wrong order. A single structural deficit would explain the per-opponent
-> pattern without any per-opponent mechanism.
+> **CHALLENGE RAISED AND WITHDRAWN, 22:23 → 22:4x — the recommendation stands.**
+> The research arm (session 20) proposed that the builder's
+> `ladder-wide-census-THE-GAP` row (top tier core-kills at **97%, median 232
+> turns**; we manage **72% / 28%-to-r1000**) might make a per-opponent
+> instrument programme the wrong **shape** rather than the wrong order. I rated
+> that as probably right and flagged it here rather than defend my own ranking.
 >
-> That would supersede the recommendation below, which is the outcome I would
-> prefer: this entry's whole argument is that instruments should be aimed at
-> where the loss is, and "we lose because we cannot close games" is a better-
-> posed target than six separate opponent fixtures. There is a one-minute
-> read-only prediction on the tape that discriminates it (hive and drumlin
-> should be where we are killed fastest, via `tools/ladder_census.py`).
-> **Do not act on the ranking below until that check reports.**
+> **They then ran it and their own data refuted them**, and they withdrew it
+> unprompted: across 500 games (API only), **Lunds + KCM + Ouroboros +
+> CtrlAltDefeat carry 49.0% of all 196 of our core-kill losses** — the same four
+> names that carry the Elo bleed. **THE GAP and the per-opponent programme are
+> one finding at two altitudes, not competitors.**
+>
+> What THE GAP legitimately changes is **the outcome variable, not the target**:
+> score these instruments on **kill-game win rate**, not Elo. Room to move is
+> real — Ouroboros 2/22, KCM 7/33, Lunds 11/41, CAD 9/29.
 
 **Building a Lunds instrument outranks every plank in the queue.** 27.5% of
 bleed, 0 wins in 17, and tonight's decode already names two mechanisms — so the
