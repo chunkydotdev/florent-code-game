@@ -10,6 +10,14 @@
 ## 2. LIVE: **v80 "Eir 9b" (= bots/_v89sh, md5 e12f8585)** — held all
 ##    session. Baseline CORRECTED to 1562.9 @ 397 (see below); wrap read
 ##    1575.3 @ 419 #30. Rollback = v76 one click.
+## 2b. POST-WRAP EVENT (19:39, logger fired after the wrap note): **THE SLOT
+##    IS FREE AT HANDOVER** — v80's armed last-5 hit -12 (1580 -> 1568) at
+##    420 matches. NO ACTION TAKEN and none owed: free never means forced,
+##    and no candidate holds a measured better-case (the whole E1 family is
+##    at parity or worse vs the staged head — see item 8). Second crossing
+##    today; the first recovered on its own within an hour. x3r0 may swap
+##    per the rule; that is the system working, not a conflict. Successor:
+##    do NOT read "slot free" as "ship something".
 ## 3. **NOTHING SHIPPED THIS SESSION, deliberately.** Five planks reached
 ##    KEEP-dev and none earned a window. Read results.tsv rows
 ##    e1-bundle-h2h / e1-family-missing-measurement / ft2-vs-bundle-direct
