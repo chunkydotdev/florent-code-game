@@ -212,3 +212,20 @@ outcome, scored-at.
 - **NEXT TICK: ITEM 3** — opponent constants under v80 (Ouroboros denial tiles,
   Lunds r3 launcher insertion measured under v83, KCM launcher r1->destroy r6).
   Unblocks the builder's Lunds fixture. Archive-only, zero downloads.
+- **2026-08-09 03:0x** — **ITEM 3 DONE** (`opponent-constants-v80-2026-08-09.md`).
+  **BLOCKER REMOVED: the Lunds fixture is unblocked.** My own ~22:4x re-seeding
+  block is not supported. Lunds held v44 and Ouroboros v8 all day while we shipped
+  v74→v86, so their version was fixed and ours varied — the exact experiment.
+  Permutation tests on every opening constant: all p>=0.247 (Bonferroni needs
+  0.005). **Lunds builds its launcher at r1 in 40/40 games across six of our
+  versions — an exact invariant, not a null.**
+  **The KCM "signal" I nearly relayed (harvester r2 vs r7, map-controlled) was
+  entirely KCM's v1->v8 ship.** `match info` NULLS the opponent version; `match
+  list` carries it. Wrong axis entirely.
+  **Rule re-scoped:** pre-contact behaviour cannot depend on OUR version, only
+  theirs; post-contact behaviour can. The staleness axis is THEIR ship.
+  Remaining unverified: the Lunds insertion TILE (post-contact, and not
+  extractable from replay_census which reports builds not launches).
+- **QUEUE STATUS: items 1 (partial, metadata-capped), 2 (closed), 3 (done).**
+  Remaining: item 4 (eider, exploratory — does NOT survive Bonferroni), item 5
+  (prediction scoreboard). Both lower value than anything done tonight.
