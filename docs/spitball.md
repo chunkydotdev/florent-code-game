@@ -1198,3 +1198,17 @@ counts units-touched not severity (his freshness gate caps per-event cost
 at ~1 action). Generalizes to any opponent whose caught-exception prints
 correlate with a game state we induce — worth checking which other pool
 teams print diagnostics at all.
+
+## Corrections from the patch-retrodiction study (2026-08-08, builder-applied)
+
+- **Family-synchronization hypothesis RETIRED**: launcher-family version-bump
+  pairs run at/below chance (0.72% vs 1.69% base rate) — teams in a code
+  family do NOT ship together; treat any earlier note suggesting coordinated
+  family bumps as dead. (patch-retrodiction-2026-08-08.md)
+- **Launcher-family membership corrected**: Powerpuff Girls has NEVER built a
+  launcher in 45+ archived games — not a member. Banminary and gsxWins ARE
+  members (r≤2 launcher, 100% of games) and were never listed.
+- **SENSITIVITY-FLOOR caveat, standing, for any "what did team X change"
+  claim about linear developers**: our census cannot distinguish even our own
+  consecutive ships v64→v75 — a flat fingerprint means WE LEARNED NOTHING,
+  not that they changed nothing. Phrase accordingly.
