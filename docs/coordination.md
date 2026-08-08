@@ -5178,3 +5178,77 @@ now: anti-Ouro standoff plank + CAD E1 next (both need design
 passes), era-books operational. Watch state: v77 window
 (1573.8@381 baseline, rev-6 @400), SmartFridge sweep confirmation
 pending, monitors 5/5.
+
+### 2026-08-08 13:22 CEST — research arm: _v90ft KEEP absorbed — the recognition study's finding is now staged ship content
+
+_v90ft-acceptance absorbed: KEEP, stacked on the sh head as
+next-window candidate. Shape noted for the ledger: det 240/240
+IDENTITY vs det_v74 (provably inert absent a ferry — the physics
+gate behaving exactly as specified; inertness-as-safety is the
+cleanest det story a conditional plank can have) + all four value
+legs positive incl. compact vs opp_v76 +5.0, mechanism-plausible
+(nests IS a two-launcher ferry bot — the detected class). All ns
+individually; jointly-positive-lean + proven inertness, no oversell.
+Research-to-ship trace for the day's book: recognition study landed
+(real ~12:0x) → finding relayed → _v90ft registered, built, accepted
+same afternoon — the fastest research→staged-content path yet.
+Watch items unchanged: v77 window (rev-6 @~400), SmartFridge sweep
+confirmation pending, PTP feasibility in flight, Magnus's exploit-
+brief reaction for the anti-Ouro/E1 design passes.
+
+### 2026-08-08 13:23 CEST — research arm: MAGNUS DELEGATION RECORDED + the two held decisions taken
+
+Magnus (direct, this session): "You go for what you think is best,
+I'm just here to introduce ideas." Recorded to persistent memory as
+an extension of the run-with-recommendations directive — strategy
+and prioritization calls are now taken on measured evidence with the
+decision + trade-offs on the board, not routed for approval. Audit
+trail obligation unchanged.
+
+DECISIONS TAKEN under it (both were awaiting Magnus):
+1. EXPLOIT BRIEF: ordering stands AS-IS — the awaited "reaction" is
+   a green light. Builder may start the ANTI-OURO SENTINEL DESIGN
+   PASS (queue item 3) whenever their queue frees; gating per the
+   recognition study (map-geometry or unconditional). E1 (item 4)
+   behind it. If the in-flight PTP feasibility read returns a
+   positive answer-band rule, it folds into E1's design rather than
+   jumping the queue.
+2. TIEBREAK POSTURE (outlast-CAD / out-deliver-kladde): NOT built
+   now. Pre-registered decision criterion instead: rev-6 (~@400)
+   carries the first wild tiebreak-margin data under v77 (the
+   20-Ti-per-denied-stack thesis) — if v77's r1000 games show
+   margins moving but still losing, the posture plank gets priced
+   from that data; if v77's denial already flips them, the posture
+   is redundant. Cheap, measured, no guess.
+
+### 2026-08-08 13:24 (from `date`) — builder arm: registry — ANTI-OURO EARLY-STANDOFF worker (Opus) → bots/_v91os (base _v90ft); green light per the brief ordering (Magnus delegation relayed via research; item was already in-mandate)
+
+Registered before spawn. THE MEASURED CASE (ouro re-freeze spec
+D-CRITICAL + Elo table): our 3 core-kill wins vs wild Ouroboros all
+ran through an EARLY standoff sentinel strangling their economy
+(win-median first-standoff r5 vs loss-median r15); their entire kit
+answers an out-of-range turret only by walking a builder out to
+gunner-plant within r²=13 of it (median 1 builder lost/game = the
+excursion they hate); we ALREADY plant standoff sentinels in 39/40
+ouro games but LATE and they die (median lifespan 25rnds, 63/78
+dead). THE PLANK = timing + siting + funding, not a new mechanism:
+(a) investigate why the base's standoff plant lands r15-class not
+r5-class (spawn order? Ti gate? siting search cost?) and move the
+trigger earlier; (b) siting policy per the spec's honest bound —
+the tile must be OUTSIDE their gunner-plantable answer envelope
+where possible, approach-defended where not; (c) fund it (early
+convert_ammo budget — sentinel 10 ammo/shot; peacetime floor E1
+already exists in the base); (d) GATING per the recognition study:
+recognition CANNOT make the r5-15 window — map-geometry gate
+(core-separation D band measured in the spec: D≤9 small-map regime
+vs D≥17 screen regime) or unconditional, worker investigates both,
+toggle each.
+PRE-STATED ACCEPTANCE (the drop-probe verdict SHAPES this): value
+vs wild ouro is LOCALLY UNMEASURABLE — the gate is (1) toggle-off
+identity, (2) det-paired 240 vs det_v74 net ≥0 excl. margin-class,
+(3) guards kladde/band/cad + compact vs opp_v76 — ALL as harmlessness
+legs, (4) TIMING SIGNATURE in replays: first-standoff round moves
+r15-class → r5-8 on the gated maps (mechanism verification, research
+can measure), (5) old ouroboros_probe leg recorded ATTRIBUTION-ONLY
+(never value). SHIP CASE if all green: mechanism + wild decomposition
+(the sh precedent), priced on the ladder window.
