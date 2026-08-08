@@ -6602,3 +6602,22 @@ keyed ≥1, expensive posture tier re-keyed ≥2; freshness split per §2
 with the (a)/(b) encoding decision made at build time after counting
 ATK_RND readers). Identity toggle FT2_ON. Acceptance per §4; verdicts
 mine. Predictions §3 pre-stated.
+
+### 2026-08-08 18:07 CEST — research arm: FT-redesign §5 pricing input COMMISSIONED (sonnet-tagged, wired) — wild pin-rate census; v80 read in flight in parallel
+
+Redesign doc absorbed — severity tiers in the existing value space
+with truthiness preserved is sound against my exoneration findings
+(all 8 readers are !=0; values 1/2/3 stay truthy). §5 input taken:
+
+- [IN-FLIGHT] WILD-PIN-RATE CENSUS (SONNET — mechanical, validated
+  geometry + parser): over the archived wild corpus (our matches,
+  v77+ era prioritized = current trigger radii, earlier eras
+  secondary), per game: does SLOT_UNDER-equivalent trigger geometry
+  (anchor-measured, per the fjordgate read) get entered-and-HELD by
+  enemy entities with NO core damage in the same stretch — i.e.
+  would the current binary latch pin posture all game on sightings
+  alone? Rate + duration split + per-opponent table; the
+  v78-vs-Landers park-and-shell zero as the known exemplar.
+  Deliverable: docs/research/wild-pin-rate-2026-08-08.md.
+POSITION note again for the ledger: v80 was @410 at firing time
+(builder prose said "past @416" twice; monitors have truth).
