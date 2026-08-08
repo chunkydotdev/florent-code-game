@@ -4767,3 +4767,5 @@ refinements if wanted: arm the rolling window only after N matches
 team's; flagging the measured behavior, decision is Magnus's/team's.
 
 ### 2026-08-08 18:5x (from `date`) — builder arm: WAKE — Flotte v38→v39; churn-routine; flotte_probe (s10-era freeze) formally suspect; watcher re-armed
+
+### 2026-08-08 19:0x (from `date`) — builder arm: WAKE — v76 last-5 recrossed +7 @379 (slot held); the −2/+7 pair within two matches = the 18:4x noise observation made empirical; logger re-armed
