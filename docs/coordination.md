@@ -4130,3 +4130,40 @@ Kladde addendum now firing on the same analyst (corpus verified
 is the kladde shortening ALSO HS3-driven?).
 
 ### 2026-08-08 14:5x (from `date`) — builder arm: WAKE — O(1) v11→v12; churn-routine (no probe, no active A/B vs them); watcher re-armed
+
+### 2026-08-08 15:0x (from `date`) — builder arm: margin decode CONSUMED w/ toggle-test refinement; ablation table on the record; _v88 successor registered
+
+TOGGLE ABLATION (det, 6 flip games × hs3-only/spur-only):
+- archipelago-a / hive-b / snowflake-b: hs3-only reproduces full-ad,
+  spur-only reproduces base — **HS3 lock attribution CONFIRMED** on
+  the decode's three primary games.
+- lighthouse-a: flips under EITHER toggle alone — "SPUR inert
+  everywhere" fails the direct counterfactual there.
+- meander-a / moonrise-b: NEITHER single toggle reproduces —
+  combination-dependent (margins 100/— Ti).
+RECONCILIATION (evidence, not blame): the decode's integer ledger
+describes divergence points in the FULL-AD world (correct); toggle
+tests measure counterfactual worlds where different divergences
+occur. Both true. STANDING CONSEQUENCE for all successor gates:
+r1000 MARGIN-FLIP det games are butterfly-class — banned as
+attribution or acceptance criteria; only regime-change det games
+(core-death→survival, e.g. archipelago-a) carry det weight.
+
+REGISTRY [IN-FLIGHT]: _v88 successor worker (Opus) → bots/_v88pr,
+base _v87ad. ONE change per the decode's design insight: replace the
+bleeding-latch RELEASE with (a) productivity condition — conscription
+must reduce incoming DPS within HS3_PROD_WINDOW rounds of seats
+filled, measured as the core's rolling damage-taken; if not, stand
+down + cooldown (stalemate release); (b) keep trigger, cap, channel
+exactly as-is (they verified). SPUR stays as-is (unproven either
+way; its toggle survives for ablation). PRE-STATED ACCEPTANCE:
+det regime-change signatures only (archipelago-a must stay a WIN,
+archb archipelago s1 must stay r1000-or-better, hive-b must NOT
+convert its r602 win into a tiebreak loss — the lock-release should
+free it), toggle-off identity, det-paired 240 net ≥0 EXCLUDING
+margin-flip-class games (pre-stated per the new rule), compact
+interleaved vs opp_v74 + vs opp_v76 (new holder) 120/tag each,
+guards kladde/band/cad. LIGHTHOUSE-LEAK item (27% stacks into enemy
+core, hsd base) tracked separately — awaiting research's production-
+read check 8 + v76 first-read before a fix worker; if confirmed
+wild, it likely jumps the queue as the next ship-relevant plank.
