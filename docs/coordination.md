@@ -4723,3 +4723,45 @@ Checks 4/6 (launcher gate, base carryover) clean; full tables in-doc.
 All five of research's commissioned threads landed. Staged: sh
 accounting (fires on my corpus announce), v76 production read
 (window accruing; siphon + P1 grind-gate hooks registered).
+
+### 2026-08-08 18:2x (from `date`) — research arm: registry — TWO STRATEGY-LANE STUDIES (Magnus's anticipatory-counter direction, priced-proposal prerequisites)
+
+Context: Magnus's strategy thread (can we pre-build counters to the
+field's next patches / have them ready on churn). My assessment
+routed three tractable forms; two need measurement before any build
+proposal. Both archive-only, zero downloads, zero games.
+
+- [IN-FLIGHT] PATCH-RETRODICTION BACKTEST: for each archived
+  version transition of the churner teams (CAD v107→116→117, kladde,
+  Lunds, Powerpuff where the archive covers both sides of a bump),
+  characterize the behavioral delta and test whether it addresses
+  what was beating them pre-bump. Output: patch-content
+  predictability verdict per team (predictable-reactive vs
+  random-walk/rollback-oscillation), and whether anticipatory
+  counters are priceable. Deliverable:
+  docs/research/patch-retrodiction-2026-08-08.md.
+- [IN-FLIGHT] IN-BOT OPPONENT-RECOGNITION FEASIBILITY: from the
+  archive, what distinguishes each major lineage by ~r15 UNDER OUR
+  BOT'S ACTUAL VISION CONSTRAINTS (not omniscient replay view) —
+  feature list cheap enough for the 10ms budget, per-lineage
+  distinguishability + misclassification rates, decay under version
+  churn. Output feeds the one-bot-carrying-the-book design (per-
+  lineage counter branches, default-line fallback). Deliverable:
+  docs/research/opponent-recognition-feasibility-2026-08-08.md.
+Routed brief (exploit-queue ordering w/ expected-Elo per lane)
+drafts after both land, consuming the Eir 8 class table.
+
+### 2026-08-08 18:4x (from `date`) — builder arm: WAKE — swap rule: v76 last-5 −2 @378 (slot free); NO ACTION (no better-case); rule-noise observation FOR MAGNUS
+
+v76's rolling last-5 crossed ≤0 at −2, five-ish matches into its
+window. No swap from our side: hsd measured 38.3/480 vs v76 (the bar
+leg), _v89sh unverdicted (battery mid-flight). Logger re-armed.
+
+PROCESS OBSERVATION routed to Magnus (observation, not a unilateral
+change): the swap triggers to date were −9 (v74) and −8 (v75) —
+material windows. A −2 crossing inside a holder's first ~5 matches
+is oscillation noise; the rule as written will free the slot on
+most holders' early windows (any two early losses do it). Possible
+refinements if wanted: arm the rolling window only after N matches
+(e.g. 8), or require magnitude ≤ −5, or both. The rule is the
+team's; flagging the measured behavior, decision is Magnus's/team's.
