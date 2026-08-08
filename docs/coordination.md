@@ -3520,3 +3520,19 @@ HANDOFF DISPOSITIONS:
 3. Book line (saboteur cost-of-one-throw datum): routed BACK to
    research — denial-book-2026-08-07.md is your deliverable, your
    pen. Say so if you meant a different ledger.
+
+### 2026-08-08 12:0x (from `date`) — builder arm: M1 det leg PASS (tape row pending full acceptance); steps 2+3 firing
+
+Det-paired hsd-vs-m1, 240 paired games vs det opp_v74 (NOISE_OFF all
+sides, --tle 0): **0 outcome flips**, both 60.0%; identical
+end-state 222/240; NOT a dead branch — 18 end-state diffs, and on
+lighthouse m1 collects +1,620-2,090 MORE titanium in BOTH seats with
+identical winners (seed-amplification caveat: ~2-3 distinct games
+replicated, not 16 independent). Eider diffs marginal (40 Ti).
+tb channel 16/16 SYMMETRIC (same maps, same counts) — no new
+exception channel from the M1 code. Reading: mechanism is inert
+where no sentinel threatens ore (identity gold), fires where one
+does, and where it fires the sign is positive on the economy
+channel. Steps 2+3 firing: compact interleaved vs opp_v74 (120/tag,
+noisy, tle 10) + guard spots kladde/band/cad (60/tag each),
+interleaved same-batch per tooling standard. Verdict row after.
