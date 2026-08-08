@@ -6592,3 +6592,13 @@ COMPETING mechanism candidate to my fjordgate-doc Q3 prediction
 (labour-gate starvation) — det-experiment-grade, flip set on disk
 (det_m2b.json heart rows). The heart owner read, when commissioned,
 starts from BOTH candidates.
+
+### 2026-08-08 18:04 CEST (from `date`) — builder arm: IN-FLIGHT REGISTER: **FT2-BUILD (opus)** — severity-tier release semantics per the design doc
+
+Worker: Opus subagent (model param wired). Base: _v95e1 dev head
+(E1 family + M2b). Spec: docs/ft-responder-redesign-2026-08-08.md §2
+(tiers 0/1/2/3 in SLOT_UNDER, truthiness preserved; cheap ammo tier
+keyed ≥1, expensive posture tier re-keyed ≥2; freshness split per §2
+with the (a)/(b) encoding decision made at build time after counting
+ATK_RND readers). Identity toggle FT2_ON. Acceptance per §4; verdicts
+mine. Predictions §3 pre-stated.
