@@ -182,8 +182,11 @@ nondeterminism (x3r0-fork spawn salt; also the tb-decode's 6-vs-1 freeze
 incidence across legs, worth ~5 games alone) and batch conditions. Per-leg
 Wilson intervals stand; DELTAS between separately-run batches don't resolve
 10-15pp effects at n=120. Standard going forward: deterministic-paired runs
-(all-sides noise-off, paired seeds, protobuf turn-differ — builder-session
-tooling, promotion candidate) or interleave both variants in the same batch.
+(all-sides noise-off, paired seeds, protobuf turn-differ — **tools/det.py** +
+**tools/rdiff.py**, validated + promoted 2026-08-08 s16) or interleave both
+variants in the same batch (**tools/pair.py**). det caveat: per-map flips are
+chaos-bounded — identity results are gold, small flip counts are butterfly-
+sensitive; don't over-read them as attribution.
 
 ## Determinism references for local runs (2026-08-07, session 12)
 

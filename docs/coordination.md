@@ -61,6 +61,8 @@ stay the builder's.
 | research | OVERNIGHT TIEBREAK-SPLIT DECODE (successor item 2 LIVE — builder's instrument legs landed): tb_v69_replays/ (_v80e6d_tb md5 005db756 vs opp_v69, 60g) + e6c_v69_replays/ (_v79e6c control md5 8aaa91e6, 60g) in builder scratchpad (paths verified, 61 files each). Topline relayed: tb 26/60 vs ctrl 31/60, r1000 tb 28 (take 14) vs ctrl 25 (take 15) — pooled cuts don't favor T; thesis lives/dies on the four pre-registered questions: (a) delivered-floor lift in r1000 games, (b) tiebreak-#1 MARGINS not share, (c) v69 freeze firing locally, (d) SLOT_HARVESTERS high-water post-wipe check BOTH sides (our lineage shares the design). Measurement + attribution only — KEEP/refute verdict stays the builder's. One read-only Opus agent | docs/research/tiebreak-split-decode-2026-08-07.md | local only — builder scratchpad replays, no downloads | LANDED 23:35 — ATTRIBUTION: FLOOR-DOES-NOT-LIFT primary (T.1 arm: fired 245/245 w/ clean negative control, directed wiredness +18pp with FEWER conveyors, but floor moved DOWN — min 0 vs 50, sub-2000 games 6 vs 2, Mann-Whitney p=0.97; structural cause measured: 67% of remaining unwired relays are in T.1's ONE-STEP BLIND SPOT — output into a friendly relay not aimed back, verdict calls it "live"); INSTRUMENT-DID-NOT-ENGAGE secondary (T.2: ZERO attributable firings, control had MORE post-r300 harvester builds 61 vs 48; famine question (d) never tested by this battery); CONFOUNDED bounds topline (v69 freeze 6-vs-1 across legs by nondeterminism, freeze games 7/7 wins = up to 5 games = the whole 26-vs-31 gap; excl. freeze: 42.4 vs 46.3). NOT floor-lifts-but-decided-elsewhere. MARGINS: tighten both ways (lose −3415 vs −8155, win +3140 vs +2750) but share EXACTLY 14 vs 14; deficit is in CORE-DESTROYED games not tiebreaks. CONDITIONAL find: healthy-chain-at-r300 bin tb +34% delivered; broken bin CRATERS (930 vs 4635) + our terminal freeze 8/60 vs 4/60. HIGH-WATER (d): reproduces OUR side — 9 famine episodes, 0 rebuilds all 9 both legs, delivery flat-zero 276-699 rnds. T.3 fires (heal share 37.9 vs 21.1; splitter tier = dead code). CORRECTION applied to agent's (f): "zero exception prints in 120 replays" is EXPECTED (prints are stderr, replays carry print() only) — NOT evidence against the arena-side 68/120; channel artifact |
 | research | OVERNIGHT v65-ERA OUROBOROS RE-VERIFY BY DECODE (successor item 6 unblocked by builder backfill; this is the PRE-REGISTERED Loki-gate instrument — adjudication: "ONE v65-era Ouroboros re-verify game gates the Loki hardcode"; backfill delivers a full LADDER MATCH 071cd20c, v65 5-0 Ouroboros v8, 14:21Z — decode replaces the planned rate-budgeted unrated leg, zero platform cost): do the book's v64-era GO constants (eider core-threat r50@(16,10) margin 48; meander r46@(13,8) margin 45) hold under v65's perturbed early-game? One read-only Sonnet agent | docs/research/ouroboros-v65-era-reverify-2026-08-07.md | local only | LANDED 22:56 — GATE RESULT NEGATIVE: meander SHIFTED (book 1st-gunner r4@(13,6) → observed r8@(8,6), tile appears only as 2nd gunner r40; creep r46@(13,8) → r489@(8,10)); eider NOT TESTABLE (map absent). Archipelago matched the book EXACTLY (r28@(7,7)) → meander shift is real signal, not noise. RECOMMENDATION to builder/Magnus: retire the fixed-tile Loki hardcode, deny-regions/policy path stands (deniability likely grew; coordinates don't survive our versions). MECHANISM CORRECTION: divergence starts r3, 16 rnds BEFORE our first builder death r19 — contra the adjudication's builder-death-perturbation theory; something earlier in our opening perturbs their queue. BRIEFING ERROR (research arm's, caught by agent): match is Ouroboros 5-0 US (we lost, seat-lock consistent), not the reverse — my backfill sweep printed scoreA/B without seat mapping. Decode self-checks all PASS |
 
+| research | S16 v73 "Eir 7" REV-4 PRODUCTION READ (first ladder window = 240a626c, v73 3-2 Leviathan v25, completed 04:35Z, ARCHIVED pre-wrap by the --mine pass — zero downloads): spec rev 3 checks 0-8 + rev 4 checks 9-13 (E2b conveyors-on-ore = 0, E1-cap sub-floor conversions = 0 + starvation watch, S1 own-building fires = 0, check-12 _v85hs before-baselines WITH the 06:39 passability refinement folded in — seat blocking split by blocker type and true impassability) + Leviathan v25 era question (v26 zero-rush anomaly vs family read). One read-only Opus agent | docs/research/v73-production-read-2026-08-08.md | local only — archived, no downloads | SPAWNED 06:45 |
+
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
 (4-1 seat A, on the tape) — see the 17:35 wrap note.
 
@@ -1948,3 +1950,54 @@ launchers/barriers not conveyors. Worker flags ranked w/ measured
 remedies on its report (top: launcher placement ungated = the one
 real seat-blocker; pre-measured fix ready). PARKED, gate NOT fired,
 per Magnus's wrap horizon. THE next-cycle candidate.
+
+### 2026-08-08 06:43 (from `date`) — builder arm: SUCCESSOR BOOTED (s16); monitors 4/4 re-armed w/ NAMED WAKE PATH; registry
+
+Boot per /builder. Fresh `fcode status`: **v73 "Eir 7" LIVE and holding**
+(isActive verified), 1620.9 @ 342 #23 vs the 1613 @ 340 ship baseline —
+window 2 matches old, ~20-match check due ~360. No teammate uploads since
+v73 (04:23) — nothing missed during the arm restart. Git: origin in sync
+(predecessor's push rule honored).
+
+MONITORS 4/4 armed, NEW SHAPE per retro theme 6: each is an
+**exit-on-wake loop** — the loop EXITS when its monitor prints a wake
+line, and the harness re-invokes this session on background-task exit.
+That is the named, verified wake path (harness task-completion
+notification; no more wake-files nobody reads). Task ids this session:
+elo bvxwcajcg, match bu5jemwd7, opp b1dpmx5w6, archiver b2syltjf2.
+State dirs = s16 scratchpad; first polls are silent baselines.
+
+REGISTRY (opening before starting, rule 1):
+- [IN-FLIGHT] paired-tooling validation+promotion: rdiff.py/det.py/
+  pair.py RESCUED from the s15 scratchpad (still on disk, copied to s16
+  scratchpad) → validate against the tooling.md paired standard → 
+  tools/ → commit+push. Queue item 6, protects against tmp cleanup.
+- [IN-FLIGHT] _v85hs GATE per the pre-stated 06:12 design (guards +
+  det/noisy holder leg + heal-ratio instrumented replays w/ blocked-seat
+  count + heal/dmg vs the bimodal law). HOLDER NOTE: the 06:12 spec said
+  "vs opp_v72" — v72 no longer holds; the holder is OUR v73 = _v84g =
+  _v85hs's parent, so the holder leg and the parent-attribution leg
+  collapse into one det-paired leg vs _v84g. Field verdict weight stays
+  on the class-weighted guard battery per the standing ship-gate rule.
+
+ASK: research successor (not yet booted — no notes after 06:39): rev-4
+production read arms on v73's first ladder window per HANDOVER item 3;
+check 12 collects _v85hs before-baselines in the same pass.
+
+### 2026-08-08 06:45 (from `date`) — research arm: SUCCESSOR ONLINE (s16); rev-4 read FIRING — first v73 window already OPEN
+
+Boot per protocol (coordination + spitball tails, registry,
+docs/research/ inventory, handshake pinged to Builder). Independent
+status check 06:42: v73 live, 1621 @ 342, #23. FIRST v73 LADDER MATCH
+COMPLETE: 240a626c, v73 3-2 Leviathan v25 (04:35Z, +5.4) — archived
+pre-wrap by the --mine pass (5 replays + meta verified), read fires
+with ZERO downloads. Version-stamp note for the trajectory ledger:
+7fb9ff7b (04:25Z, 2-3 L vs Landers v93) is v72-STAMPED per match JSON —
+v73's ladder record stands 1-0. Registry row above (SPAWNED 06:45):
+rev-3 checks 0-8 + rev-4 9-13; check 12 collects _v85hs
+before-baselines WITH the 06:39 passability refinement (blocker type ×
+true bot-impassability). Leviathan v25-vs-v26 era question rides the
+same corpus. Queue after landing: the 06:39 passability ASK (v72
+bleed-decode re-read), then constants re-extraction (triple-due —
+blocked on fresh deterministic-team corpus under v73; zero archived
+yet).
