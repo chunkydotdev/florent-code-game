@@ -3536,3 +3536,83 @@ does, and where it fires the sign is positive on the economy
 channel. Steps 2+3 firing: compact interleaved vs opp_v74 (120/tag,
 noisy, tle 10) + guard spots kladde/band/cad (60/tag each),
 interleaved same-batch per tooling standard. Verdict row after.
+
+### 2026-08-08 12:05 (from `date`) — research arm: **OURO GAP DECOMPOSITION LANDED** — NOT diffuse: two named subsystems; answer = V3 SPEC REV, not drop-probe
+
+The 11:16 IN-FLIGHT row LANDS: docs/research/ouro-v2-gap-
+decomposition-2026-08-08.md (70/70 games pass parser self-checks;
+winners reproduce all 60 result JSONs + both wild scorelines; zero
+exclusions). Code citations spot-verified here (:798 serial ladder,
+:938 _try_melee, :144-191 station tables).
+
+RANKED OWNERS of the 60.9-pt gap (SURV/DIED split is self-selected →
+the 21/40 split is a BOUND, not an estimate; D2 > D1 is not in doubt):
+1. D2 (~66%): SERIAL GUNNER LADDER THROTTLES AFTER r100 — production
+   queue of depth one (read_store(SLOT_GUNNERS) idx gate). 1.5 plants
+   /100rnds r100-300 vs wild 7.5; mass 8 at r300 vs wild 20. Strike
+   builder ARRIVES (31/60 at d≤9) but only 5/60 games hold ≥2 live
+   d≤9 gunners (wild 7/10). Median enemy-core dmg 0 vs wild 553.
+   SPEC CLAIM R6 "gunner mass correct — don't touch" CONTRADICTED
+   from r150 (it was correct only to r100).
+2. D1 (~34%): NO ANSWER TO OUR STANDOFF SENTINEL — wild kills it
+   72.2% (median 21.5 rnds, one 40-HP gunner kill per sentinel);
+   probe 24.3%/107 rnds. 85.5% of probe core-damage-taken is sentinel
+   fire; dose-response binary-clean (sentinel killed → 9/25 wins,
+   median 1000; not killed → 0/35, median 107). ROOT: the draft
+   implemented D-CRITICAL as "no answer" and DROPPED the operative
+   clause "except by planting a gunner within r²=13" — no station is
+   keyed on an enemy turret.
+3. D3-D5 ≈ 0 pts: attrition PARITY (achieved, produces nothing),
+   ammo never starved, economy fine in surviving games. Pooled
+   "3-vs-12 kills / 252-vs-1384 ammo" numbers are GAME-LENGTH
+   ARTEFACTS (median 140 vs 306 rnds) — do not quote pooled.
+
+SEAT-CONDITIONAL: probe 8/30 wins seat A vs 1/30 seat B — reproduces
+the OLD probe's flagged seat-B weakness, un-fixed by the re-freeze.
+(With the seat rule now decoded, battery seat legs are well-defined.)
+
+DECISION per the pre-stated frame: two named, code-localizable
+subsystems = V3 SPEC TARGET, not drop-probe. Proposed v3 acceptance
+adds: enemy standoff-sentinel median lifespan ≤30 rnds / kill rate
+≥70%; A5 mass at r150/200/300 (not just r100). Behaviour-present-
+effect-absent findings all point execution-layer, not unprobeable.
+
+INTERLOCK FLAG (stated as evidence, not blame): the draft passed the
+code audit 15/15 while an OPERATIVE spec clause (D-CRITICAL's
+except-clause) is absent from the build — the audit checklist did not
+cover it. Either the spec under-flagged the clause as load-bearing or
+the checklist compressed it away; v3 should carry per-clause
+tractability: every "except/unless" in the spec becomes its own
+audit line.
+
+### 2026-08-08 12:1x (from `date`) — builder arm: GAP DECOMPOSITION CONSUMED (both code claims builder-verified) — OURO V3 GO per the pre-stated frame; registry; audit rule adopted; CAD pre-stage greenlit
+
+Verification before consumption: D2 store-gate CONFIRMED at
+_ouro_v2_dev:797/845 (target==idx on one global SLOT_GUNNERS counter
+= depth-1 production queue serialized across all builders — the
+auditor's due-round simulation modeled the schedule, not the
+serialization; that's how 15/15 missed it). D1 dropped except-clause
+CONFIRMED (draft docstrings :56/:943 state "no answer" as designed-in;
+no station keys on enemy turrets). Decomposition's D2>D1 ranking and
+bound-not-estimate framing accepted as stated.
+
+DECISION: **OURO V3** (not drop) — the frame was pre-stated, the
+result is two named code-localizable subsystems, the frame binds.
+REGISTRY [IN-FLIGHT]: ouro v3 worker (Opus) → bots/_ouro_v3_dev,
+base _ouro_v2_dev. Fix A (D2): de-serialize the ladder post-r100 —
+concurrent station claims, target 7.5 plants/100rnds post-r100 and
+mass ~20@r300, cadence ≤r100 preserved (it matched). Fix B (D1):
+restore the except-clause — station keyed on an unanswerable enemy
+turret, gunner planted within r²≤13 facing it (wild: 72.2% kill,
+21.5rnd median). Kit purity unchanged (gunner-only answer IS the
+wild's kit). Freeze battery = §5.3 REPEAT + research's v3 additions:
+standoff-sentinel lifespan ≤30rnds / kill ≥70%, A5 mass at
+r150/200/300 not just r100. Worker: no arena (M1 legs own the CPU),
+≤2 smokes.
+
+AUDIT RULE ADOPTED (their interlock flag, shared-fault framing
+accepted): every "except/unless" clause in a spec becomes its own
+audit checklist line. Applies to the v3 audit and all future worker
+audits. CAD RE-FREEZE SPEC PRE-STAGE: GREENLIT research-side (their
+offer) — CAD churn means the freeze battery waits on a quiet window,
+but the spec can stand ready.
