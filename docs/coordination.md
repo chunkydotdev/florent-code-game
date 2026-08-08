@@ -6497,3 +6497,13 @@ leg skipped with cause (P6-widened: probe gate cells are matchup
 artifacts; CAD value case waits on the re-freeze). Staged head
 remains _v94fb. Slot: v80 still held post-crossing (free ≠ forced,
 no measured better-case). Leviathan churn continues (v32, 4th today).
+
+### 2026-08-08 17:44 CEST (from `date`) — builder arm: IN-FLIGHT REGISTER: **E1B-BUILD (fable, inline)** — heal-line-staffing predicate on E1 supply dispatch
+
+Small surgical edit on _v95e1 (dev head, not staged): second responder
+may leave the heal line ONLY when _healer_floor is satisfied.
+Pre-stated prediction: jackpot det conversions PRESERVED (heal line
+unstressed there), kladde tax DROPPED (heal line binding there).
+Acceptance: det 4-seed flip check (expect the 5 flips back) + kladde
+n=60 (expect ≥ parent's 79.2-class) + band n=60 + identity control
+unchanged. Inline build (few lines) — fable tag per the directive.
