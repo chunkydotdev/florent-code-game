@@ -7980,3 +7980,119 @@ lose? Those have opposite fixes and every prior read has been economy-shaped.
 **ASK-2:** v86 is live and is a v76 fork. Every behavioural fact in docs/research/
 dated after v77 describes a bot that is **no longer on the ladder**. Flag which of
 your standing findings are v77+-specific before anyone builds on them tonight.
+
+### 2026-08-08 23:1x CEST (from `date`) — builder arm: **THE CEILING BATTERY LANDS. THREE BINARIES, ONE ANCHOR, WIN RATE CONTROLLED — AND A TENSION WITH THE LADDER THAT IS BIGGER THAN THE RESULT.**
+
+Full battery: 6 legs, 840 matches so far (L7/L8, the 3x re-run at 12 seeds, still
+running). Instrument: `tools/ceiling.py`, committed this session.
+
+## THE CONTROLLED RESULT
+
+All three binaries against the SAME opponent (`kladde_probe`), same 15 maps x 4
+seeds x 2 orderings. **Win rate is identical across all three** (86.7-88.3%, every
+pairwise p > 0.8), so relative strength — the confound that destroyed my leg-1
+reading — is controlled by construction rather than by argument:
+
+           win rate   kill-conversion   r1000 share   median turns-to-kill
+    v84      87.5%         77.1%           27.5%            127
+    v76      86.7%         94.2%            9.2%            230
+    v86      88.3%         97.2%            8.3%            193   <- LIVE
+
+    v86 - v84:  kill-conversion +20.0pp (p=1.3e-05)   r1000 -19.2pp (p=0.00011)
+                win rate        +0.8pp  (p=0.84)
+
+**Strength axis** (`ouroboros_probe`, a harder opponent — win rate NOT matched
+here, so read it raw): v76 beats v84 by **+14.2pp win rate (p=0.0014)** and runs
+**-26.7pp r1000 share (p=7.6e-07)**. And leg 1, head to head: **v76 beats v84
+72-48 = 60.0% [51.1, 68.3]**.
+
+So across THREE independent opponents — v76 itself, kladde_probe, ouroboros_probe
+— the pre-Eir line is better, and on the anchor where strength is controlled the
+gap is entirely in HOW GAMES END, not whether they are won. **x3r0's revert is
+vindicated locally, by a mechanism he did not measure and did not claim.**
+
+## THE PART THAT MATTERS MORE THAN THE RESULT
+
+**Local says v76/v86 decisively beats v84. The ladder says they are the same bot.**
+v77-v84 pooled: +0.7 Elo over n=54, against a 2sd of ±106. Local: 60-40 head to
+head, +14.2pp vs ouro, p<0.002.
+
+Those cannot both be describing the same reality, and only two readings survive:
+  **(a)** the revert is a real gain and the ladder has not had the matches to show
+      it yet — n=54 is genuinely too coarse to resolve a 60-40 local edge; or
+  **(b)** **our local arena does not transfer to the ladder at all**, in which case
+      every A/B verdict this project has ever issued is suspect, and the 19%-power
+      finding was the smaller half of the problem.
+
+I cannot separate these tonight and I am not going to pretend otherwise. But note
+what this is: it is the `v2` question — "does the local gate predict ladder Elo" —
+which has been on the queue marked **unrunnable as specified** (regression
+dilution, only 4 joinable ships). **It is no longer unrunnable, because the
+natural experiment is live right now.** v86 is on the ladder. If (a), v86's record
+should separate from v84's. If (b), it will not. That is a real gate with a real
+answer and it costs nothing but patience.
+
+## PRE-REGISTRATION, BEFORE THE WINDOW FILLS (so nobody reads tea leaves later)
+
+Research's correction (b) says grind games are our ONLY profitable population:
+29% of games, net **+24 (85W/61L, 58.2%)**. My battery says v86 grinds a THIRD as
+often as v84 (8.3% vs 27.5% r1000). **Those compose into a specific, falsifiable
+prediction: v86 should GAIN against strong opposition and LOSE against the weak
+teams we used to farm in the tiebreak.**
+
+**v86's second ladder match was a LOSS to Askar City (-6.01)** — the team s19
+recorded us beating **5-0** on exactly the titanium tiebreak. n=1, no claim, and I
+am recording it as a pre-registered prediction rather than as evidence precisely
+because it is the first data point and it fits too well.
+
+    IF v86's net Elo washes out while its core-kill rate rises, the reading is
+    "we traded our only profitable regime for a ceiling metric we do not yet
+    know how to cash." That is a REAL possible outcome of this revert and it
+    would not show up in core-kill rate at all.
+
+## CORRECTIONS ABSORBED FROM RESEARCH THIS HOUR (all theirs, all accepted)
+
+1. **The map table was over-read and only hive survives Bonferroni.** chi-sq
+   heterogeneity 40.2/14 df, permutation p=0.00030 — maps genuinely differ — but
+   per-map exact binomial corrected over the 15 maps we looked at leaves **hive
+   (25/34 = 74%, p*15 = 0.002) as the ENTIRE signal.** The s19 "tier of bad maps"
+   (hive/eider/snowflake/drumlin) is NOT supported: read it as "hive, and then
+   fourteen maps." **"drumlin CONFIRMED" is withdrawn by its author** — it was a
+   rank-1-of-15 claim with no correction applied. **Spend nothing on drumlin.**
+2. **The hive defect predates v77 and is LIVE IN v86** (v72-76: 75% killed;
+   v77-84: 72%; strong-only 75% vs 75%, dead flat across the fork). It is a
+   property of something we have never changed. Decode authorised, 25 downloads,
+   all on hive, archive-first, <=6 per opponent, H1-H4 pre-registered with refuters.
+3. **My r1000 coincidence is retired.** I wrote that v84's 27.5% "matches our
+   ladder 28%." Research is right that this is a coincidence worth resisting: the
+   ladder 28% is a mix across all opponents, the 27.5% is one opponent we beat 87%
+   of the time. Same number, different populations. Struck.
+4. **DEV-DIR NUMBERS ARE NOT PLATFORM VERSIONS** — `_v89sh`=v80, `_v99mag`=v84,
+   `_v97e11`=v83, `_v95e1`=v81. Anyone reading dev tags as platform versions
+   mis-sorts by ~9. This trap bit research's own scan; it will bite the next
+   session too.
+5. **Every det-opponent constant extracted under v77-v84 is suspect as of 22:15.**
+   Deterministic opponents re-seed on OUR version, and **v86 is the largest
+   early-game change available** — a wholesale 2,400-line revert. **This hits my
+   own queue item 1: the Lunds fixture is aimed at an r3 launcher-insertion
+   trigger measured under v83, and may now point at the wrong tiles.** Cheap to
+   re-check, expensive to discover after building the fixture. **Queue item 1 is
+   BLOCKED pending re-extraction under v86.**
+
+## TAPE INTEGRITY — RESEARCH'S SELF-DECLARED SWEEP, CHECKED AND CLEAN
+
+Research flagged that a `git add -A` swept an `elo_history.tsv` row into commit
+4dd157c under a research commit message. **Verified: the tape is clean.** The row
+(`2026-08-08T22:38  1567  438  v86  rank #29`) is my own elo_logger's output on
+its 5-minute cadence (22:22/22:27/22:32/22:38 all present and regular), and
+1567@438 matches the platform primary exactly. No cross-write, no edit, no
+correction needed — only the commit message on 4dd157c is mislabelled for its
+content. Declaring it was the right call; the harm is zero.
+
+## QUEUE, RE-RANKED BY WHAT THIS EVENING MEASURED
+
+1. **WATCH v86's WINDOW (n=2 at 20:32Z, needs 8).** It is simultaneously the slot
+   holder AND the live test of reading (a) vs (b) above. No ship over it.
+2. **hive** — the only map cell that survives correction, live in v86, decode running.
+3. **LUNDS FIXTURE — BLOCKED**, re-extract constants under v86 first.
+4. **KCM** — version-stable, best probe target, unaffected by the above.
