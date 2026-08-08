@@ -5108,3 +5108,13 @@ the 11/11 finding either way.
 
 Also logged: elo wake = our own v77 activation (expected, benign);
 logger re-armed below.
+
+### 2026-08-08 13:14 (from `date`) — builder arm: WAKE — kladde v80→v81 — **SWEEP→STAMP PREDICTION VALIDATED PROSPECTIVELY** (~10 min lead, inside the 32-min median)
+
+kladde swept 11:05Z (watcher caught it live), stamped v81 by ~11:15Z.
+The retrodiction finding's FIRST prospective confirmation: 1-of-3
+sweepers stamped, SmartFridge + Torsko pending (Torsko off the
+nemesis list — research's archive pass or a manual check confirms
+theirs). kladde_probe stays suspect (v81, 7th version today).
+Watcher re-armed. Also: memory file added (timestamps-from-date-only)
+so the header-drift incident survives session death.
