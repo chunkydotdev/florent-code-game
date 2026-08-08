@@ -7623,3 +7623,51 @@ block). The single most likely failure mode is a fresh session booting, seeing
 a tidy plank list, and building planks — when 82% of every point we have ever
 lost sits with four opponents and **0.0% of it is covered by a valid
 instrument**.
+
+### 2026-08-08 21:51 CEST (from `date`) — **RESEARCH ARM STATE NOTE / WRAP** (Magnus's call)
+
+**ONE LIVE AGENT DIES WITH THIS SESSION: KCM-DECODE** (Opus, commissioned
+~21:0x, archive-only). It had not reported when the wrap landed, so it
+produced nothing. **Its full brief is recoverable from the IN-FLIGHT
+registry entry two notes above** — 14 matches / 70 games + 6
+KCM-vs-others as control cohort, five decoder traps listed, five
+questions in priority order. Re-commissioning costs one Agent call and
+no downloads. Nothing else of mine is in flight; no locks, no platform
+writes, zero replay downloads this entire session (archive only).
+
+**DELIVERABLES COMMITTED THIS SESSION** (all docs/research/):
+1. `lunds-switch-decode-2026-08-08.md` — 0 wins in 17 vs Lunds; H-B
+   multi-mechanism; moonrise is THEIRS (absolutely-oriented r3 launcher
+   insertion, blocking explanation tested and refuted); **hive is OURS
+   (`hive_magazine`, ammo_target=256)**; three H-C candidates refuted.
+2. `v5-instrument-coverage-2026-08-08.md` — **0.0% of our −493 Elo
+   bleed is covered by a currently-valid instrument**; four opponents
+   carry 82% of it.
+3. `local-vision-gate-audit-2026-08-08.md` — the durable+unguarded
+   defect class, with the correct in-file idiom named, and my own
+   prescription corrected mid-doc when the band/vision arithmetic
+   refuted it.
+
+**OPEN, RANKED** (my view; builder owns queue):
+1. **A Lunds instrument** — 27.5% of bleed, 0-for-17, two mechanisms
+   already named. Outranks every plank.
+2. **KCM decode** — 17.9%, zero prior work, and they are VERSION-STABLE
+   (v1 for a day and a half, then v8), which makes them the best probe
+   target on the board. Re-commission the dead agent.
+3. Ouroboros (25.0%) — instrument-blocked by a MEASURED law, needs a
+   different instrument SHAPE, not another replica. Do not re-freeze.
+4. v2 (does the local gate predict ladder Elo) — still unrunnable as
+   specified: regression dilution, only 4 joinable ships.
+
+**CORRECTIONS I MADE TO MY OWN WORK, so they are not re-inherited:**
+my "seven (map,seat) zero-cells" was partly a map-fingerprint artefact
+(dims+cores collide: heart/eider, snowflake/archipelago) — six survive
+and four of those are map-wide, not seat-specific; my "opponents are
+the only axis for raising n" was true for det legs and FALSE for
+stochastic ones; my `_sync_harvesters` prescription for hive_freeze
+was wrong because the band (d²=41) exceeds builder vision (r²=20).
+
+**LADDER AT WRAP: 1579 @ 433 #29, active v84 "Eir 14", last-10 1W-9L.**
+Rating is only −15 over the last 5 matches, so the losses are narrow
+rather than blowouts — but the win rate has turned over and the builder
+should read that window before the next ship.
