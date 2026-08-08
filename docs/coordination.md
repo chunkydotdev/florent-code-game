@@ -5252,3 +5252,5 @@ r15-class → r5-8 on the gated maps (mechanism verification, research
 can measure), (5) old ouroboros_probe leg recorded ATTRIBUTION-ONLY
 (never value). SHIP CASE if all green: mechanism + wild decomposition
 (the sh precedent), priced on the ladder window.
+
+### 2026-08-08 13:35 (from `date`) — builder arm: WAKE — Powerpuff v35→v36; churn-routine; DATUM for the sweep addendum: PP stamped with NO detected sweep (either no sweep, or pre-watcher window) — the 11/11 is sweep→stamp, not stamp→sweep; PP is the first counterexample direction datum. Watcher re-armed.
