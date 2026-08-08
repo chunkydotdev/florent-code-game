@@ -5798,3 +5798,50 @@ slot 5 provably free — noted in the store ledger (first free slot;
 future cross-builder needs have a home).
 
 ### 2026-08-08 15:17 (from `date`) — builder arm: WAKE — Clankers v3→v2 rollback (oscillation candidate #3 after CAD/kladde; clanker_probe freeze still waits on a real quiet window); churn-routine; watcher re-armed
+
+### 2026-08-08 15:18 CEST — research arm: **CAD FODDER FEASIBILITY LANDED — verdict (c) IMPOSSIBLE BOTH; the dip's real structure named; two banked by-products**
+
+The read LANDS (docs/research/v79-cad-fodder-feasibility-2026-08-08
+.md). FODDER REFUTED three ways: (1) cad_probe CANNOT by
+construction (:1358-1361 team check; reads only its own raiders'
+SLOT_THROW_REQ) — so not verdict (b) either; (2) wild CAD NEVER did
+it — 0 cross-team throws in 95/95 games, all eras; all 215 throws
+own-raiders r2-5; (3) launcher lifecycle born-r1-dead-r6 extends to
+87/87 launcher games (0 second launchers; 8 no-launcher games
+cluster on 10×10s). The one wild opportunity (enemy builder in a
+live CAD ring, once in 95 games) was DECLINED. No det set needed —
+it would measure zero.
+
+BRIEF CORRECTION adopted: the cad leg is n=30 (16/30 vs 22/30,
+Fisher p=0.18) — a LEAN, not a fact; "53.3 vs 73-77" overstated
+certainty.
+
+THE DIP'S REAL STRUCTURE (from the sweep's own per-map JSON):
+- OS-gate maps (fjordgate/meander only — OS_D_SQ_MAX=49 arms on 2/15
+  pool maps = 4/30 leg games): v79 1/4 vs 4/4+3/4 → OS caps at ≤49%
+  of the gap even charged with all four.
+- FJORDGATE = TOTAL OPENING COLLAPSE unique to v79: both seats 0 Ti
+  delivered, 0-5 buildings, dead r194/305 (siblings: 4,510-10,790 Ti
+  wins). An opening that never happened — not a thrown walker.
+- HEART (gate OFF) lost both seats late (10,780/7,850 Ti, r922/633)
+  = a third, distinct late-defense failure OS cannot touch.
+NEXT STEP (builder lane, spec in-doc): fjordgate/meander 24-game
+replay-on det set w/ byte-exact OS_ON=False paired control,
+instrumented (first-harvester/first-delivery, role_n==0 position
+r0-40, SLOT_UNDER per round), pre-stated discriminator; plus a
+non-gate FT leg for the other half. Probe P6 fix (r6 self-destruct +
+4-throw cap) now at 95/95 confidence — queue with re-freeze work.
+
+TWO BANKED BY-PRODUCTS: (1) GAME-MODEL FACT — the launcher pickup
+ring is the FULL 8-NEIGHBOURHOOD (d²≤2), 1,471/1,472 events; any
+avoidance logic must use that, not orthogonal adjacency (builder →
+game-model.md). (2) V79 WALKER HAS NO THROWN-DETECTION (a teleport
+RESETS self.stuck, _v91osb:2427-2432) — harmless vs CAD, LIVE
+EXPOSURE vs the 12 opponent versions that DO ferry enemy builders;
+fix candidate pairs naturally with the ferry-test responder
+conversation (same subsystem, same physics detection applied to our
+own units). FT truthiness invariant: independently verified by BOTH
+today's agents (plank mining + this read) — cross-agent agreement,
+no further check needed.
+
+### 2026-08-08 15:18 (from `date`) — builder arm: _v93WB LANDED (reserve agreement; ordering fact: conversion starves spawn INTRA-TURN; smoke shows bank 11→37 across the harvester line); gate battery firing (archb det diagnostic + Fix-C falsifiers + det 240 + guards)
