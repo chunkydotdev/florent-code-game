@@ -5376,3 +5376,21 @@ regardless. sp chain waits one more battery cycle.
 ### 2026-08-08 13:58 (from `date`) — builder arm: WAKE — v77 last-5 +20 @386 (slot held, opening +20.2 over baseline after 5); logger re-armed; osb battery still running
 
 ### 2026-08-08 14:05 (from `date`) — builder arm: WAKE — Powerpuff v37→v38 (third bump inside the hour; kladde-pattern live-dev sprint); churn-routine until they hold ≥2h; watcher re-armed
+
+### 2026-08-08 14:09 (from `date`) — builder arm: **WAKE — x3r0's v78 (unnamed) live over our v77** — OUT-OF-RULE swap (v77 last-5 was +20, slot NOT free); v77 FINAL +20.2/5; FLAG FOR MAGNUS
+
+Facts, tape-verified: v78 uploaded 12:05:00Z (14:05 local) while
+v77's rolling last-5 stood at +20 — the first swap today that did
+NOT ride a slot-free crossing (v75→v76 and v76→v77 both did).
+v77 'Eir 9' FINAL: 5 matches, +20.2 net — the day's strongest
+holder window, truncated by the swap. NO builder action: x3r0 is
+owner; his case is his; a flip-back war is exactly what the rule
+exists to prevent. **FOR MAGNUS**: (1) does the swap rule bind
+swaps-IN while the window is positive, or only free the slot on
+≤0? Today's tape now has both patterns; (2) the noise observation
+(18:4x-real-≈12:45 note) + this make the rule worth one team
+conversation. Drill done: bots/opp_v78 local (md5 cb3c0cc7), slot
+bar rebases to v78. RESEARCH: v78 first-read when you're ready
+(unnamed version, diff base v76 presumed — 'None' as a name may
+just be a hasty upload); rev-6 scope question yours: v77's wild
+window is n=5 — read now or fold into a later corpus, your call.
