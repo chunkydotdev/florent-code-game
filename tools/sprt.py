@@ -171,7 +171,32 @@ def report(args, tickets, counted, pairs_done, sprt, decision, errors, discarded
         out(f"  bot occupied. This measures the noise floor: it should trend to 50% and the")
         out(f"  honest expected outcome is UNDECIDED. Crashes are not attributable.")
         out("")
-    out(f"  {a} (reference) win rate: {wins}/{n} = {wins/n:.1%}   Wilson 95% CI [{lo:.1%}, {hi:.1%}]")
+    # The DECISION above is unbiased — the Wald boundaries deliver their nominal
+    # 5%/5% error rates (verified by simulation, 6,000 runs per condition,
+    # 2026-08-09). This LINE is not. It is conditioned on the stop, and anyone
+    # reading an sprt.py report is by definition reading a run that stopped, so
+    # the sample is selected on the very quantity it reports.
+    #
+    #   TRUE 50%, H1 stop -> reports 56.6%   (+6.6pp)   Wilson covers truth 89.2%
+    #   TRUE 55%, H1 stop -> reports 58.4%   (+3.4pp)
+    #   TRUE 60%, H1 stop -> reports 63.1%   (+3.1pp)
+    #
+    # Same family as the ceiling.py collider: condition on an outcome, then read
+    # a statistic over the conditioned sample. The remedy already lives in the H1
+    # verdict string ("confirm with a fixed-480 arena run before shipping") — what
+    # was missing was any sign that this line itself is inflated, so a reader
+    # quoting it without re-running inherited the bias silently.
+    if decision in ("H1", "H0"):
+        out(f"  {a} (reference) win rate: {wins}/{n} = {wins/n:.1%}   "
+            f"** BIASED BY THE STOP — typically ~3pp AWAY FROM 50%, up to ~7pp when the "
+            f"true edge is small. NOT a shippable effect size. Wilson suppressed here "
+            f"(it undercovers, ~90% not 95%). Re-run fixed-480 for the real number. **")
+    else:
+        # Budget exhaustion is not conditioned on the statistic, so the sample is
+        # unselected and both figures mean what they say.
+        out(f"  {a} (reference) win rate: {wins}/{n} = {wins/n:.1%}   "
+            f"Wilson 95% CI [{lo:.1%}, {hi:.1%}]   (unbiased: stopped on budget, "
+            f"not on the boundary)")
     out(f"  llr {sprt.llr:+.3f}   boundaries [{sprt.lower:+.3f}, {sprt.upper:+.3f}]   "
         f"H0: p<={sprt.p0:.2f}   H1: p>={sprt.p1:.2f}")
 
