@@ -382,3 +382,37 @@ or store-state work must reconstruct trigger state from ENTITY POSITIONS
 instead (the census agent did exactly this after catching it). General form of
 the trap: an instrument that rides on our own debug output measures only the
 builds we compiled it into.
+
+## Field evidence about an UNSHIPPED head is structurally unobtainable (research argument, builder-verified against the CLI, 2026-08-08 s18)
+
+Enumerate every instrument that can be pointed at a head we have not shipped:
+
+| instrument | reaches a real third-party opponent? | why not |
+|---|---|---|
+| local self-play (`tools/arena.py`, `det.py`) | no | ours vs ours |
+| `bots/opp_vNN` | no | real byte-exact code, but `fcode submission download` lists/downloads **our own team's** submissions only (CLI-verified) — every opp_vNN is a teammate lineage. No fidelity problem; a **relevance** problem: class-of-one |
+| frozen probes | approximately, and unreliably | hand-extracted replicas; fidelity tested once and failed once (cad, 2026-08-08) — see probe-fleet-staleness |
+| `fcode match test` | no | takes two **local** bot dirs by construction |
+| unrated challenges | yes — but not for an unshipped head | runs our **ACTIVE** submission; no own-side selector exists (CLI-verified) |
+
+**Therefore: reaching the real field requires activating the head first.** Field
+evidence about an unshipped candidate is not expensive or blocked on probe
+maintenance — it is impossible by construction on this platform.
+
+**Consequence for the ship gate.** The gate as written (ship on a class-weighted
+vs-field battery) cannot be satisfied by any sequence of actions. What we
+actually do, and what the gate should say, is: gate on the best available
+**proxy** evidence — self-legs for attribution, `opp_vNN` for a real-code sanity
+check, probes for class diversity *with fidelity priced* — then **ship into a
+measured window and let the ladder be the field instrument, with rollback as the
+control.** That is what the swap rule formalises and what v79→v80 executed today.
+
+This does not loosen tonight's hold on the E1 family; it renames its reason.
+"No field-beating case" was true but unachievable pre-ship. The honest reason is
+**the proxy evidence is not strong enough to justify spending a window** — at
+parity against its own parent (e1-bundle-h2h), it plainly is not. Same decision,
+reason that can actually be acted on next time.
+
+**Carry to the retro** (Magnus): the gate currently asks for a measurement the
+platform cannot provide before the fact, which will recur every cycle until the
+wording changes.
