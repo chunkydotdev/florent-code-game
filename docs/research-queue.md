@@ -150,3 +150,17 @@ outcome, scored-at.
   Sweep status: `ceiling.py` clean · `pair.py` clean · band instrument broken+fixed.
 - **NEXT TICK:** `sprt.py` and `paired_vs_pooled.py` to finish item 2, then item 3
   (opponent constants under v80).
+- **2026-08-09 01:5x** — **`punishing-pool-2026-08-09.md`: the lethality leg IS
+  runnable.** 12 contested opponents (45-65%) + 3 we lose to (opp_v44 40.8%,
+  opp_v76 38.3%, band_probe 26.7%). The "~3 effective opponents, all dominated"
+  premise is not supported. **CORRECTED MY OWN §4**: ouroboros_probe is ~53%
+  (contested), NOT dominated — the 87-93% was kladde only. The builder's
+  strength-axis leg stands; my overbroad claim nearly retired it.
+  **Limitation:** every `opp_vNN` is our own lineage, so the non-dominated
+  self-play pool is our own code. Only band_probe/orizon_probe/ouroboros_probe are
+  external and non-dominated, one leg each.
+  **MY ERROR, recorded:** first pass pooled map-restricted legs and probe-FIDELITY
+  rows into one median and read kladde_probe at 43% (correct: 73%). Caught before
+  relay. Same class as rule 6 — it would have inverted the recommendation.
+- **NEXT TICK:** `sprt.py` + `paired_vs_pooled.py` to close item 2, then item 3
+  (opponent constants under v80, which unblocks the Lunds fixture).
