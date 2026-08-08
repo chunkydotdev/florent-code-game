@@ -232,6 +232,15 @@ builders, walls, every building EXCEPT conveyor/splitter — or it overstates
 blocking by up to an order of magnitude (v72 L1: raw 4.8-8.0/8 seats →
 truly impassable 0-1; bleed doc §10).
 
+Second measured instance with VERDICT-FLIPPING stakes (archb residual decode,
+2026-08-08): counting paved seats as blocked inverts a heal-seat free-count
+1-free vs 5-free (2,313 co-located tile-rounds in the two archipelago-b
+replays) — the archb owner verdict ("idle reserve", not seat starvation)
+depends on getting this right. Independently corroborated the same day by the
+ouro re-freeze spec's damage-target law (builders take hits while standing on
+conveyors). This is now a standing decoder self-check: any free-seat or
+denial count in a deliverable should state which impassable set it used.
+
 ## Spawn-block claims must use the passable predicate, not emptiness (research, 2026-08-08)
 
 can_spawn requires a PASSABLE tile in the core's action range, not an EMPTY
