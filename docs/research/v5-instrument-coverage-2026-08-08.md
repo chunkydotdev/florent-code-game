@@ -82,6 +82,24 @@ arsonist duck 5.7% — 51% of bleed combined) have never had an instrument at al
    (invalid) and `band_probe` (valid but rush-only, and its wild counterpart is
    one we beat by +78.7).
 
+## 4b. DENOMINATOR CORRECTION (added same session, after the KCM decode)
+
+Every share above is computed against **the sum of net-negative opponent totals
+(−493.3)**. That denominator silently excludes losses to opponents we net-beat,
+so it OVERSTATES each share. Against **gross match-level bleed (−667.0, the sum
+of all negative per-match deltas)** the same figures are:
+
+| opponent | of opp-net (as written above) | **of gross bleed (correct)** |
+|---|--:|--:|
+| Lunds | 27.5% | **20.3%** |
+| Ouroboros | 25.0% | **18.5%** |
+| Kings College Munich | 17.9% | **13.3%** |
+| CtrlAltDefeat | 11.6% | **8.6%** |
+
+**The ordering, the concentration, and the 0.0%-instrument-coverage conclusion
+are unchanged.** The percentages are not, and the gross-bleed column is the one
+to quote.
+
 ## 5. Limits
 
 Elo deltas are per-match and noisy (per-match sd ≈9.25); opponent totals over
