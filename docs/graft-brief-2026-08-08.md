@@ -73,7 +73,11 @@ unless stated. Deep dives: `docs/research/v72-delta-read-2026-08-08.md`
    launcher-specific). Three-line gate. (c) Do NOT ban conveyors from seats
    — forcing that cut delivery 23,930→270 in our test [builder-arm
    in-engine measurement], and 100% of core deliveries in the bleed corpus
-   arrive through 2-7 distinct seats/game.
+   arrive through 2-7 distinct seats/game. (d) UPDATE for v74: he already
+   wrote exactly this gate — `_mine_guard_site` (v74 :2769) excludes
+   core-adjacent cells with the comment "conveyor delivery / heal / battery
+   seats" [builder-verified in opp_v74]. The ask is one sentence now: apply
+   the exclusion his M1 sentinels already honor to his launcher build too.
 6. **Home-ring discipline vs the snipe-counter class.** Three independent
    teams hard-counter forward snipe deployment (KCM farmed it 9-1; the CAD
    family's reactive counterbattery; Clankers killed our snipe gunner in 6
@@ -122,6 +126,12 @@ unless stated. Deep dives: `docs/research/v72-delta-read-2026-08-08.md`
   mid-fight; the siege gate is load-bearing (s13 ablation).
 - **Sporks ammo policy as-ported** — refuted twice; his E1 floor + our cap is
   the surviving shape.
+- **M1 mine-guard as-built (v74)** — for OUR line, hold: the doctrine is
+  measured only against us so far (research's delta read ranks an inertness
+  prediction vs the rest of the pool — cap 2, per-unit counter,
+  visibility-gated), and its production read is pending. Revisit after the
+  v74 window; the SITE-PICKER's seat exclusion (see §1.5d) is the piece
+  worth taking regardless.
 
 ## 4. Slot context (so the conversation starts from the tape)
 

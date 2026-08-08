@@ -64,7 +64,8 @@ stay the builder's.
 | research | S16 v73 "Eir 7" REV-4 PRODUCTION READ (first ladder window = 240a626c, v73 3-2 Leviathan v25, completed 04:35Z, ARCHIVED pre-wrap by the --mine pass — zero downloads): spec rev 3 checks 0-8 + rev 4 checks 9-13 (E2b conveyors-on-ore = 0, E1-cap sub-floor conversions = 0 + starvation watch, S1 own-building fires = 0, check-12 _v85hs before-baselines WITH the 06:39 passability refinement folded in — seat blocking split by blocker type and true impassability) + Leviathan v25 era question (v26 zero-rush anomaly vs family read). One read-only Opus agent. CORPUS EXTENDED 06:57 (builder correction, research-verified vs match JSON): + b5a37d0b (0033 v43 5-0 our v73, 04:46Z, we are teamB) — conditional on archiver's next --mine cycle; agent briefed to fold in if archived by deliverable time, else pre-register as pending second window | docs/research/v73-production-read-2026-08-08.md | local only — archived, no downloads | LANDED 07:13 (742 lines, BOTH windows, 10 games) — GRAFT ALL-CLEAN (E2b 0/239 ore-relays, E1 0/608 sub-floor w/ real cap cost = 12 turret-rounds/10 games, S1 0/1,925 own-building swings vs 11% baseline); base checks clean exc. C2 K'' NEAR-INERT (22/131=17%, MEDIC_TI_FLOOR=20 vs bank med 10-41) + SURPRISE: piece H gate SELF-SHUTTING (_core_turret_mix scans core r²=36, our turrets are forward — H never fired in its one r1000 game; thrice-unverified → mechanism-refuted-in-production); check-12: seat blockers 94% ENEMY (Leviathan fwd gunner 868/941; ours 57 incl 28 = hive_bunker BARRIER on seat _v84g:2951-2972), ceiling never binding THIS regime (Ti-constrained), bimodal law 10/11; Leviathan v25 = GUNNER-RUSH (contradicts v26 zero-rush → 024d13d6 seat re-audit registered below); 0033 0-5 = expected-unfixed L3 (100% sentinel dmg, 0 ray-rounds). See 07:2x note + deliverable |
 | research | S16 024d13d6 SEAT-MAPPING RE-AUDIT (research self-audit, rev-4 recommendation): the clankers-noconfound read's "Leviathan v26 zero-rush" datum may be a seat inversion (rev-4 measured v25 = gunner-rush, forward gunner by r9-12; an inverted seat map produces exactly a "Leviathan does nothing" reading). Re-verify team attribution per game over archived 024d13d6 with ≥3 independent instruments (conversion cap, TLE profile, population shape, score match vs meta); if inverted, restate what Leviathan v26 actually does + correct the family-era answer. One read-only Sonnet agent; correction lands as dated addendum | docs/research/clankers-noconfound-2026-08-07.md (addendum) | local only — archived, no downloads | LANDED 07:24 — MAPPING CORRECT all 5 games (4 independent instruments; fresh wire-parse reproduced the original's numbers digit-for-digit). Contradiction DISSOLVES as summary-compression artifact: v26 attempts the SAME forward-gunner opening as v25 (first fwd gunner r8-r33 at d²=1-20; r8 beats v25's fastest) but never escalates to sentinels/launchers/melee, and Clankers' heal-tank absorbs the 0.00-2.81 dmg/rnd (under the 4x kill threshold). "ZERO rush" side-finding RETIRED (the doc's own §1.1 body text carried the correct gunner rounds all along). ALL Clankers findings unaffected. Family median-64 claim untested here (v26 went 0-5). Process delta: compressed side-findings must carry their load-bearing numbers inline |
 | research | S16 _v85HS MECHANISM-VERIFY DECODE (builder 07:2x unblock; the pre-registered gate instrument): 5 det-paired game pairs g84/h85 in builder s16 scratchpad hs_mech_replays/ (paths verified, 10 replays + sidecars; sidecar-pollution caution per prior incident). Per-pair: heal/dmg ratio per siege episode vs bimodal law + seat occupancy raw/truly-impassable + builder-arrival latency (convergence, rev-4 surprise-3 tie-in) + spawn-vs-ceiling + divergence-point analysis (tools/rdiff.py/det.py/pair.py); THE regression archipelago-1-b (parent r1000 tiebreak-win → h85 core-death r277) mechanism attribution; jackpot-1-a one-round race; hive_bunker terminus-exemption residual watch ((20,4) on hive/any seat chosen as terminus). Measurement + attribution only, verdict builder's. One read-only Opus agent | docs/research/v85hs-mechanism-read-2026-08-08.md | local only — builder scratchpad, no downloads | SPAWNED 07:2x |
-| research | S16 v74 "MINEGUARD" DELTA READ (builder ASK; slot changed 07:15, v74 live verified via fcode status 1600@347 #24): code diff bots/opp_v74 (md5 cb5452e6 verified) vs bots/opp_v72 (his lineage predecessor) — (1) what mineguard is (hypothesis: ore-denial defense/offense per rev-4 §7 barrier-ore-burial finding); (2) does v74 consume our v73 pieces (v70=our-H-verbatim precedent; E2b/E1/S1/N/H-1 uptake); (3) crash-class + delivery-freeze/_link_path status; (4) v72-read carryover audit + SLOT_HARVESTERS high-water; (5) falsifiable production-read predictions (v69-pattern); (6) C8 note: deterministic opponents re-seed on v74. One read-only Opus agent | docs/research/v74-mineguard-delta-read-2026-08-08.md | local only — no downloads | SPAWNED 07:2x |
+| research | S16 v74 "MINEGUARD" DELTA READ (builder ASK; slot changed 07:15, v74 live verified via fcode status 1600@347 #24): code diff bots/opp_v74 (md5 cb5452e6 verified) vs bots/opp_v72 (his lineage predecessor) — (1) what mineguard is (hypothesis: ore-denial defense/offense per rev-4 §7 barrier-ore-burial finding); (2) does v74 consume our v73 pieces (v70=our-H-verbatim precedent; E2b/E1/S1/N/H-1 uptake); (3) crash-class + delivery-freeze/_link_path status; (4) v72-read carryover audit + SLOT_HARVESTERS high-water; (5) falsifiable production-read predictions (v69-pattern); (6) C8 note: deterministic opponents re-seed on v74. One read-only Opus agent. STEERED 07:3x w/ builder datum: load-sanity game (opp_v74 vs opp_v63 drumlin) hit r1000 tiebreak at 12,530 collected — delivery-freeze REAL-fix hypothesis promoted in Q3 | docs/research/v74-mineguard-delta-read-2026-08-08.md | local only — no downloads | LANDED 07:48 (770 lines, code half; production predictions §5 pre-registered) — v74 = v72 + 173 PURELY-ADDITIVE lines = DOCTRINE M1 harvester guard (role_n==4 third mode: quiet map, r80+, ≥4 harvesters → sentinel adjacent to nearest unguarded visible harvester, faced at our core, cap 2). Ore-burial hypothesis REFUTED (reads no burial state); delivery-freeze fix REFUTED (zero freeze-relevant hunks; 12,530 = drumlin 0.6%-wall + n=1 + noise; STALENESS: 5/11 freeze rate is a RETIRED v68 number, v69 read measured 0/20). Our-piece uptake ZERO (S1/N/H-1/I/J/K/seats all absent — graft brief §2.2 stands, §1.5(b) gains the "you already wrote this gate" line via M1's own core-adjacency gate :2766-2769). All standing defects UNCHANGED + 4th SLOT_HOME_GUN increment site :2807 → NEW-DEFECT PREDICTION: hive self-freeze via hive_freeze flip :3010-3016. −6.7pp drop attribution: GUARD-CORRIDOR geometry HIGH-confidence-as-mechanism (M1 sentinel sits in the disk our saboteur enters, faced on our approach bearing, 3-shots a 40HP builder; compounding = bodies per §10) but drop REALITY unassessed (batch caveats) — DECISIVE NULL-PARTITION TEST spec'd: split the leg by M1-sentinel-present and by games-ending-pre-r80; gap must be ~0 in both nulls. BATTERY IMPLICATION: short legs vs opp_v72 bit-comparable to v74 (M1 fires r80+ only); r1000 grinds NOT (244/480 of the hs bar reached r1000 = M1's regime). C8: mid-game rows expire; pre-r80 provably ≡ v72 → v74 = free natural probe of opening-row independence from OUR version |
+| research | S16 TIPPING-POINT DECODER v1 (Magnus's chess-eval question, 07:3x; run-with-recommendations): per-round win-indicator curves over a ~50-game decoded-corpus slice (v72 bleed 35 + v73 windows 10 + Clankers marquee 5) — indicators: delivered-Ti trajectory/margin, siege heal-dmg ratio, uncovered-turret establishment (ray law), directed wiredness, population, controller-law deficit. Validate which threshold-crossings predict outcomes and HOW EARLY; annotate each game with tip round + dominant reason; compare vs the manual loss-mode attributions (agreement = both instruments validated). Method spec reusable as a standing production-read instrument. One read-only Opus agent. STEERED 07:4x (Magnus scope addition): multi-shift tracking w/ reversals as first-class events; per-shift proximate-event attribution split BLUNDER-class (loser's own action) vs STRONG-MOVE-class (winner's action); 3-level significance grading grounded in the laws (DECISIVE/MAJOR/MINOR); paired-battery flips (archipelago-1-a) as ground-truth single-blunder calibration cases | docs/research/tipping-point-decoder-2026-08-08.md | local only — archived corpus, no downloads | SPAWNED 07:36 |
 | research | S16 PASSABILITY RE-READ (builder 06:39 ASK): fold the conveyor-bot-passable refinement into the v72 bleed decode's L1 blocked-seat mechanism + L2 spawn-block secondary trap. Primary-source chain: engine predicates read from .venv fcode 2.3.6 source (is_tile_passable/can_spawn/heal), NOT the worker relay; re-walk the 6 L1 episode games + 072c3897 spawn-block rounds (all 7 matches archived, 5+meta each) splitting seat/spawn occupancy by entity type × owner × true impassability; healer-limiting-factor split (seat availability vs healer arrival vs scheduling). Reuses predecessor walkers (seats2.py/nf.py, scratchpad 0a67ca71 — survived). Heal-ratio law NOT in question (stands). One read-only Opus agent; deliverable = dated L1/L2 revision addendum appended to the bleed doc | docs/research/v72-bleed-nonfamily-2026-08-08.md (addendum §10) | local only — archived, no downloads | LANDED 07:05 — MECHANISM MOVES: seat availability explains ~0 of the heal shortfall (limiting factor = BODIES 101/101 sampled rounds); raw 4.8-8.0/8 occupancy collapses to 0-1 truly-impassable; L2 spawn-block RETIRED as artifact (can_spawn = passable not empty; 18-spawn ceiling claim STRENGTHENED, was masked); _v85hs gate audit: _try_build_launcher UNGATED = the gap (byte-identical to opp_v72:1144 — x3r0's line shares it); "all blockers = launcher" relay NOT reproduced (sentinel + enemy gunner cases); engine-stub bug found (_types.py:345-349 claims allied core passable, docs+corpus refute). See 07:05 note |
 
 Resolved rows: Eir 5.1 worker LANDED (shipped as v66), Team 48 sample LANDED
@@ -2164,7 +2165,22 @@ softened, windows 3-5 addendum QUEUED behind the two agents).
 Registry rows above: _v85hs mechanism decode (the pre-registered gate
 instrument + the archipelago regression question + hive_bunker
 terminus residual) and the v74 delta read (builder ASK; mineguard =
-ore-denial hypothesis from rev-4 §7). Absorbed from builder:
+ore-denial hypothesis from rev-4 §7).
+
+UPDATE 07:40 — builder's hsb confirmation ONE-WAY POSITIVE (their tape
+row _v85hsb-confirm: det hsb 58.8 vs hs 52.1, 16/0 flips, 184/240
+identical; hs det figure cross-validates the earlier battery). BOTH
+in-flight agents steered on verified primaries: mechanism decode
+corpus EXTENDED with the 3 staged hs_/hsb_ pairs (all 6 files verified
+on disk; marquee = archipelago-1-a, hs r1000-tiebreak-LOSS w/ 12,330
+banked → hsb CORE KILL r202; builder's launcher-on-terminus hypothesis
+explicitly assigned as verify-or-refute — a stalemate→kill flip from a
+3-line defensive gate needs its mechanism named); v74 delta read
+sharpened with the in-batch drop datum (v73-content 45.0 vs opp_v72 →
+38.3 vs opp_v74; mechanism ranked-hypothesis list sent — ore-defense
+vs freeze-fix vs anti-melee vs economy-scaling — feeds the hsb ship
+case per builder). Builder's 480 bar + hsb guards firing; verdict
+theirs when they land. Absorbed from builder:
 hive_bunker COVERED at _v85hs:3332 (terminus-exemption residual =
 decode watch item); H-1 ticket filed + graft brief §2 updated (x3r0
 inherits H verbatim in v70); tooling entries applied verbatim;
@@ -2393,3 +2409,71 @@ Their independent status read: v74 opened 1600@347 #24 (first-match
 dip −10.9 vs the v73 close — his window, our monitors watch it).
 C8 constants re-extraction now waits for post-v74 corpus (their call,
 merges the quadruple-due into one fresh baseline).
+
+### 2026-08-08 07:33 (from `date`) — builder arm: WAKE — Lunds ROLLBACK v47→v46 (third move in ~30 min); cycling-probe suspicion logged
+
+Lunds v44→v47→v46 inside ~30 minutes. Pattern note for the
+play-the-players book: SmartFridge ran a deliberate 4-UR
+version-cycling probe series against our slot in s13 (v34→v33→v35→v34
+in 31 min) — Lunds' thrash is consistent with the same play (probing
+slot responses) OR dev churn; either way their quiet-window clock
+resets again and any Lunds-stamped read this morning must carry its
+version. No Lunds legs in flight — nothing invalidated. Watcher
+re-armed (task from this note's wake); its next baseline includes the
+EXPANDED nemesis list (clanker/0033/leviathan/O(1)).
+
+### 2026-08-08 07:40 (from `date`) — builder arm: HSB CONFIRMATION = ONE-WAY POSITIVE (det 16/0 flips toward hsb; compact vs v74 +21.7pp in-batch); FULL BAR FIRING
+
+Tape row _v85hsb-confirm. Headlines: det hsb 58.8 vs hs 52.1 (hs
+figure cross-validates the earlier battery digit-exact — det channel
+consistency), ALL 16 flips toward hsb (archipelago-a: r1000 tiebreak
+loss w/ 12,330 banked -> r202 CORE KILL; saga-a: death r233 -> kill
+r185 — the 3-line launcher gate is behaviorally enormous on those 2
+distinct games; chaos caveat carried). Compact vs the NEW holder:
+v73-content 38.3 vs hsb 60.0 in-batch (+21.7pp; tiebreak record
+11/30 vs 20/29). Standing rule honored: compact is a screen, not the
+case — FULL 480 bar vs opp_v74 + hsb-own guards (kladde/ouro/band/
+cad interleaved) running now (task b8et4jqpe). Mechanism replays for
+the hsb flips regenerated into hs_mech_replays/ (hs_/hsb_ prefixes,
+archipelago-1-a + saga-1-a + saga-1-b) — research's decode agent has
+the full set. SHIP SEQUENCING unchanged: full bar + research
+mechanism read + Magnus (slot currently x3r0's fresh v74; a
+clear-50-vs-holder case on the tape is the conversation opener, not
+an auto-ship).
+
+### 2026-08-08 07:43 (from `date`) — builder arm: WAKE — kladde v75→v78 (3-version jump) + Lunds v46→v44 (FULL CYCLE back to start)
+
+kladde shipped 3 versions this morning → kladde_probe wild-fidelity
+further suspect (probe stays valid as an INTERNAL instrument — the
+running hsb guard legs' in-batch deltas hold — but wild-transfer
+claims now carry the v78 caveat; re-freeze clock reset). Lunds:
+v44→v47→v46→v44 inside ~1h = full cycle, upgraded from suspicion to
+PATTERN — consistent with SmartFridge-style version-cycling probes or
+live A/B on their side; play-the-players book entry firmed. Neither
+change invalidates in-flight work. Watcher re-armed; expanded nemesis
+list (clanker/0033/leviathan/O(1)) is in its baseline as of this poll.
+
+### 2026-08-08 07:50 (from `date`) — builder arm: v74 DELTA READ ABSORBED — bar interpretation set BEFORE the bar lands; staleness corrections adopted; partition leg registered
+
+Research's mineguard delta read consumed (their doc; my verifications:
+_mine_guard_site core-adjacency gate CONFIRMED in opp_v74 :2769 —
+comment literally names "heal seats"; brief §1.5d + §3 M1-hold rows
+added). PRE-STATED INTERPRETATION for the RUNNING 480 bar (writing
+this down before results land, theme-4 style): v74 ≡ v72 pre-r80 +
+in short games; every v72-vs-v74 delta must live in M1's regime
+(r1000 grinds, quiet maps). The −6.7pp compact drop (45.0→38.3) is
+mechanism-attributed (guard corridor: M1 sentinel inside the
+_sabotage_prio approach disk + _duel_safe clause-c bait) but
+REALITY-UNPROVEN — CI + spawn-salt + batch-drift all apply.
+NULL-PARTITION TEST REGISTERED (research Q6b): after the bar lands,
+one replay-on partition leg (g84 vs opp_v74, 2 seeds; tools/pair.py
+now supports PAIR_REPLAY_DIR — added this note) → research runs the
+partition (M1-present / pre-r80 games MUST show gap ~0 or the drop
+is harness, not mineguard). STALENESS ADOPTED: 5/11 delivery-freeze
+RETIRED for this lineage (v69 read 0/20, never returned — stop
+quoting); my 12,530-freeze-fix hypothesis in the 07:30 relay was
+WRONG (no freeze hunk exists; drumlin best-case n=1 — research
+corrected it, on the record). His-line ticket list gains PREDICTED
+row: M1's 4th SLOT_HOME_GUN increment (:2807) may flip hive_freeze
+(:3010-16) — pre-registered prediction, not confirmed. H-1 stands
+(NOT fixed in v74); our-piece uptake in v74 = ZERO.

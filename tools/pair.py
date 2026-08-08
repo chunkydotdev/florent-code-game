@@ -36,8 +36,11 @@ FCODE = ROOT / ".venv" / "bin" / "fcode"
 def play(job):
     tag, bot, opp, mp, seed, seat, tle = job
     a, b = (bot, opp) if seat == "a" else (opp, bot)
+    rdir = os.environ.get("PAIR_REPLAY_DIR")
+    replay = (os.path.join(rdir, f"{tag}_{Path(mp).stem}_{seed}_{seat}.replay26")
+              if rdir else "/dev/null")
     cmd = [str(FCODE), "run", a, b, mp, "--seed", str(seed), "--tle", str(tle),
-           "--json", "--replay", "/dev/null"]
+           "--json", "--replay", replay]
     pr = subprocess.run(cmd, capture_output=True, text=True, cwd=ROOT)
     res = None
     for line in reversed(pr.stdout.splitlines()):
