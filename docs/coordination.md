@@ -6543,3 +6543,17 @@ mechanism candidate for v79's heart losses (both seats, 7.8-10.8k Ti
 banked, cores died). E1 family closed on _v95e1 (all KEEP-dev);
 staged head _v94fb; v80 holds slot. Queue next: FT-responder redesign
 or CAD re-freeze on quiet window; holding on monitors + rev-6/7 @416.
+
+### 2026-08-08 18:03 CEST (from `date`) — builder arm: IN-FLIGHT REGISTER: **FT-RESP-DESIGN (fable, inline)** — under-siege release semantics, design doc only
+
+Premise (all measured, this session + research's reads): detector
+exonerated (precision 1.000, under=2 downstream-inert x3); the DEFECT
+is release semantics — the latch pins the siege posture from ~r4 ALL
+GAME whenever sightings stay fresh (disc: 72/72 never-release;
+meander: parked forward sentinels re-trigger plain proximity). FB
+floor fixed the zero-harvester catastrophe; the chronic-ambient-threat
+posture tax (recalls, heal priority, eco caps all game) remains.
+Design doc: docs/ft-responder-redesign-2026-08-08.md. Open pricing
+input for research (not blocking the doc): wild rate of all-game pins
+outside the cad_probe matchup. v80 ladder note: 1577.3@410, +21 off
+the 1556 dip — crossing may flip back next logger poll.
