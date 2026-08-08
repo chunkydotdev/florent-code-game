@@ -7340,3 +7340,82 @@ ship. Five planks in dev, five holes found in how we measure. The
 holes were the better haul.
 
 Builder out. Successor block at the top of HANDOVER.md.
+
+### 2026-08-08 19:36 CEST — research arm: POST-WRAP LANDING — **EXPLOIT FEASIBILITY LANDED AFTER ALL (the thread the state note said would die); BUCKET MINING IS BLOCKED-BY-RULE and GAME-MODEL.MD:246 IS WRONG**
+
+The thread I recorded as dying with the session finished before the
+session did (docs/research/exploit-triage-feasibility-2026-08-08.md).
+Correcting my own state note: it LANDED, it is committed, and one of
+its findings is a defect in our own authoritative reference.
+
+**ITEM 1 BUCKET MINING — BLOCKED-BY-RULE. The refund does not exist.**
+ct.destroy() on a loaded conveyor DESTROYS the 10 Ti — it credits
+neither the balance nor titaniumCollected. **docs/game-model.md:244-246
+is WRONG**, inherited verbatim from docs/reference/official-docs.md
+:1304 (verified by me just now — both texts read as quoted). Evidence:
+270 clean team-rounds whose only event was destroying one loaded
+conveyor → balance delta 0 in 191/191 non-passive cases, identical to
+82,007 idle team-rounds; POSITIVE CONTROL 40,427/40,427 clean delivery
+rounds credit +10, so the instrument detects the credit at 100% and it
+is simply absent on destroy; stack conservation closes it exactly
+(bc9f5409 g4: 1,801 stacks = 1,428 delivered + 68 live + 305 vanished,
+and vanished == the 305 loaded destroys). No arena run needed.
+MY ERROR, owned: I triaged this item as "model-supported" and relayed
+it to Magnus and the builder on the strength of that clause. The clause
+was DOCUMENTED, never measured — the probes named in game-model
+(probe_credit/probe_credit_nc) never tested destroy at all. I applied
+the [measured] weight to a [documented] line, which is the exact
+distinction I briefed the agent to preserve.
+BUILDER-LANE ITEM (game-model.md is builder-penned): strike the refund
+clause at :244-246 and mark it REFUTED with this evidence; the same
+correction is owed to any note citing it. Also worth carrying: WILD
+PRECEDENT — ArjunWorks (rating 1248) runs the tactic literally, 332
+conveyor placements on ONE tile in a single game, 305 loaded destroys
+= 3,050 Ti INCINERATED; sporks (2115) and Pantheon (2023) also destroy
+loaded belt while re-routing — a previously unmeasured leak in strong
+opponents.
+
+**ITEM 2 LAUNCHER RAIL — FEASIBLE, and the value is the MIRROR.**
+Mechanically confirmed wild: 695 multi-throw bot-rounds across 97
+games; the turn-order model made a falsifiable prediction (launcher ids
+must ASCEND along the path) and hit 192/192 with zero exceptions;
+0/694 need any launcher to fire twice (reload 1 confirmed); being
+thrown blocks nothing (569 of 24,627 throws also built/attacked/healed
+that round). Real rails move a builder 15.0-17.2 tiles in ONE round.
+Us building one is weak (the instant-Sentinel opening already reaches
+the spawn ring at r1-6 with one launcher). **THE ITEM IS DEFENSIVE:
+enemy launcher pairs rail OUR builders 173 times across 20 games —
+Memtrace 147 on the ladder, median displacement 10.0 tiles. Our
+exposure logic tests ONE launcher's d²≤2 disc; against a rail the
+exclusion set is the reachable UNION.** Cheap, physics-based,
+zero-decay, folds into the queued FT-responder/thrown-detection work.
+
+**ITEM 3 LIFECYCLE CHURN — FEASIBLE-BUT-DOMINATED**, and the rule is
+now MEASURED not documented: 9,689/9,689 clean single-build rounds
+match cost = floor(scale × base) with a single team-wide scale over
+CURRENTLY-LIVE entities; the cumulative model matched 0/4,310 on rows
+where they disagree. So there is nothing to "reset" — scale already IS
+live inventory. Break-even on builder churn needs 400-580 Ti built
+while the builder is dead; self-defeating. Also confirms our own
+SLOT_ROLE_N is a monotone counter with no decrement (:1950, :1971), so
+replacements fall into generic "expand" and single-occupancy seats
+never re-fill. SALVAGE: **scale hygiene** — our median live composition
+at r300 is 5 builders (100 pts) and 41 CONVEYORS (41 pts), 57.5 by
+r500; belt is our second-largest scale contributor and the cheapest to
+prune (0 Ti, no cooldown, chain_dir already defines "not
+contributing"). A third of a dead belt ≈ 6% off every later build.
+Must skip LOADED tiles — per item 1, a held stack dies with the belt.
+
+**TWO DECODER FACTS THAT CORRECT PAST WORK:** (1) `rotate()` RE-EMITS
+placeEntity with the new facing (1,315/1,915 gunner "places" in a
+40-game sample are re-emits; every other entity kind: 0) and costs
+exactly 10 Ti (1,773/1,773) — **anything built on replay_census.py's
+gunner build_rounds is INFLATED by rotations**, which is a correction
+owed to any past analysis counting gunner builds. (2) Passive income
+is +10 iff round % 4 == 3, 82,007/82,007 — clean phase confirmation.
+
+CLOSING NOTE FOR THE SUCCESSOR: the LLM brainstorm and the ORGANISERS'
+OWN DOCUMENTATION agreed with each other and were both wrong at the
+mechanism level. The only reason we know is that 2,415 instances of the
+primitive were already in the archive next to a validated positive
+control. Agreement between two unmeasured sources is not evidence.
