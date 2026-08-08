@@ -318,6 +318,14 @@ scan (see strategy-log 2026-08-06). Use a geometric criterion — nearest by
 - **Outputs to an adjacent building only** — one of its 4 cardinal neighbours, round-robin by
   least-recently-used. If no neighbour can accept a stack, it goes **idle**: it doesn't waste
   titanium, it just won't produce the next stack until the current one is taken.
+- **The round-robin is TEAM-BLIND [constructed experiment, 2026-08-08]:** an ENEMY conveyor
+  adjacent to your harvester is a full-rank acceptor. Measured (10×10 probe map, scripted
+  bots, per-stack trace): sole-enemy-acceptor → 49/49 stacks banked by the enemy;
+  one acceptor per team → strict 50/50 alternation over 800 rounds, zero exceptions.
+  Consequences: an unwired harvester beside an enemy belt is a 100% giveaway (the wild
+  "adjacency siphon", 4.33% of all our mined stacks in the v75 window); wiring your own
+  belt HALVES the drain but never stops it — removing the enemy belt is the only full
+  stop. (_v89sh plank; eir8-production-read check 8; margin-decode lighthouse addendum.)
 - First output happens **immediately on the round it's built**, not after 4 rounds.
 - A Harvester with nowhere to deliver contributes **nothing**. Harvesting and delivery are
   separate problems.
