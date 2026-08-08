@@ -111,7 +111,13 @@ notable **conflicts resolved to the newest doc**:
 | Class | Teams (this pool) | Instrument | Confidence |
 |---|---|---|---|
 | point-blank/orizon family | Orizon, Team 48, Memtrace, Askar City, gsxWins, SingleCore, Leviathan | `orizon_probe` | HIGH (Orizon/Team48/Askar/Memtrace/gsxWins); Leviathan is family-**adjacent** (adjacent-gunner rush, economy-optional — same mechanism, lighter commitment), not a core member |
-| creeping gunner picket | Ouroboros, Lunds Stallions, Powerpuff Girls | `ouroboros_probe` | HIGH |
+| creeping gunner picket | Ouroboros, ~~Lunds Stallions~~†, Powerpuff Girls | `ouroboros_probe` | HIGH |
+
+> † **CORRECTION 2026-08-08 (opponent-recognition study, builder-applied):
+> Lunds Stallions is MIS-CLASSED here — it ferries (launcher-throws) in 0.62
+> of games, stable v37→v45, corroborated by the v72-bleed r1-launcher decode.
+> Class tables using Lunds as a picket data point (including parts of the
+> Eir 8 read's class scoring) inherit this caveat.**
 | launcher-insertion/CAD family | CtrlAltDefeat, Kings College Munich | `cad_probe` | HIGH (KCM explicitly verified as "a CtrlAltDefeat-family launcher-ferry bot, byte-for-byte matching opening constants") |
 | economy-first/tiebreak | I Stone, 0033, OopsGotYourElo, Viktor5776, ArjunWorks | *none currently* | HIGH (I Stone, 0033, OopsGotYourElo); MEDIUM (Viktor5776, ArjunWorks — thin samples) |
 | all-in rush | Banminary, farming_200s, Cookie | `band_probe` | HIGH (Banminary, farming_200s); MEDIUM (Cookie — pre-taxonomy read) |

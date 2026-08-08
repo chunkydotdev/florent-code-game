@@ -4769,3 +4769,67 @@ team's; flagging the measured behavior, decision is Magnus's/team's.
 ### 2026-08-08 18:5x (from `date`) — builder arm: WAKE — Flotte v38→v39; churn-routine; flotte_probe (s10-era freeze) formally suspect; watcher re-armed
 
 ### 2026-08-08 19:0x (from `date`) — builder arm: WAKE — v76 last-5 recrossed +7 @379 (slot held); the −2/+7 pair within two matches = the 18:4x noise observation made empirical; logger re-armed
+
+### 2026-08-08 18:5x (from `date`) — research arm: **RECOGNITION STUDY LANDED — class-branching REFUTED; a precision threat-detector and a geometry-beats-identity finding fall out**
+
+The 18:2x row (study 2) LANDS: docs/research/opponent-recognition-
+feasibility-2026-08-08.md. VERDICT: IN-BOT CLASS RECOGNITION BY r15 =
+NO — 8-way accuracy 0.380 vs 0.309 majority baseline (match-split
+5-fold CV), 62% misroute; flat in time (0.459 @ r60) because the
+missing information is CATEGORICAL (every sharp lineage constant
+lives at THEIR core or behind nonexistent enemy-state APIs) — waiting
+can't fix a feature-set problem. Only cad-vs-economy separates
+(+28.5pp). My branch-selecting design proposal is REFUTED as posed;
+reported as such.
+
+WHAT WORKS INSTEAD — THREAT DETECTION, not identification: the
+physics-derived ferry test (enemy builder at manhattan > round+2 from
+their own core = provably launcher-thrown) scores PRECISION 1.000
+over 880 games, zero false alarms, recall 0.53 (vision-limited),
+fires median r5 — beating the shipped SLOT_UNDER latch by median 5
+rounds in 68% of co-firing games + 27 games where the shipped
+trigger never fires. ~10 lines in an existing loop, NO new store
+slot (SLOT_UNDER widens 0/1→0/1/2; all 8 read sites truthiness-only,
+verified). GRAFT CANDIDATE routed to builder.
+
+COUNTER-LEVER GATING CORRECTIONS: anti-Ouro standoff sentinel CANNOT
+be recognition-gated (Ouro ferries 0.00 in 45/45; r15-indistinguish-
+able from economy) → map-geometry gate or ship unconditional. Anti-
+CAD insertion guard: detection too late in 62% of CAD games (40%
+have a forward turret by r3); KCM the exception (81%). MAP PRIORS:
+nonexistent — map⊥opponent (CV 0.266 < baseline; ladder doesn't
+correlate them). But MAP GEOMETRY dominates identity anyway: Ouro's
+own first-gunner round swings r2-10 vs r19-57 on core separation
+alone — bigger than the whole between-class spread. Small maps are
+the WORST recognition case (short throws unprovable), not the best.
+
+STANDING-DOC CORRECTION (builder applies): Lunds Stallions is
+MIS-CLASSED as picket in the Elo-weighted battery — it ferries 0.62
+of games, stable v37→v45, corroborated by the v72-bleed r1-launcher
+decode. Note the meta-point: the class map decays faster than any
+measured behavior — itself an argument against class-branching.
+Retrodiction study still in flight; the Magnus brief drafts after it.
+
+### 2026-08-08 19:1x (from `date`) — builder arm: recognition study CONSUMED — ferry test QUEUED as next field-first plank; Lunds correction applied; gating facts adopted
+
+1. FERRY TEST → field-first queue, position directly behind _v89sh
+   (build name reserved: _v90ft): physics-derived thrown-builder
+   detector (enemy builder at manhattan > round+2 from their core =
+   provably launcher-thrown), measured precision 1.000/880 games,
+   zero false alarms, fires median r5, beats SLOT_UNDER by median 5
+   rounds in 68% of co-firing games + 27 games where SLOT_UNDER
+   never fires. ~10 lines in an existing loop, SLOT_UNDER widens
+   0/1→0/1/2 (all 8 read sites truthiness-only per the study — the
+   worker re-verifies that claim in-code before touching it).
+   Upgrades every insertion-defense trigger; acceptance will be
+   det-signature + guards shaped (CAD/KCM insertion classes).
+2. LUNDS CORRECTION APPLIED to elo-weighted-battery-2026-08-08.md
+   (ferries 0.62 of games — not picket; class tables inherit the
+   caveat, incl. parts of the Eir 8 class scoring).
+3. GATING FACTS adopted for the counter-lever ledger: anti-Ouro
+   standoff sentinel = map-geometry gate or unconditional (Ouro
+   r15-indistinguishable from economy teams; map⊥opponent so no
+   priors; geometry dominates identity anyway); anti-CAD insertion
+   response too late in 62%; KCM catchable (81%). The 8-way class
+   branch REFUTED as posed — honest negative, closes that
+   architecture question cheaply.
