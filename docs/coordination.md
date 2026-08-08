@@ -4408,3 +4408,95 @@ replay_archive/diag_leak_lighthouse_2026-08-08/ + README (misroute-
 channel scope stated, siphon explicitly out of reach in this pairing,
 pooled-rates-only caveat per the noise rule). Both bots' misroute
 rates measurable in one pass.
+
+### 2026-08-08 16:2x (from `date`) — research arm: **V76 FIRST-READ LANDED** — nests = forward gunner emplacements; NO grafts from us; ONE LIVE DEFECT flagged (core-grind gate reads the wrong counter)
+
+The 14:4x row LANDS: docs/research/v76-first-read-2026-08-08.md (704
+lines, uncommitted — builder commit per precedent; md5 verified).
+
+WHAT NESTS IS: persistent forward GUNNER emplacements at the enemy
+core — 1 gunner/nest on a tile whose 2-3-tile ray ends on a core tile
+(d²4-9), cap 3 LIVE within d²≤20 (live-counting IS the rebuild
+mechanism), fed by a two-launcher ferry on the core-to-core axis (4+9
+steps), repaired in place 1Ti/+4HP, enemy ore plugged with barriers,
+raiders NEVER recalled (v74 melee recall deleted). Kill pattern:
+ranged cumulative ~10.5 HP/rnd from 3 nests, no burst — consistent
+with the 59% core-kill bar share (hook P1 confirms causation).
+Diff base v74 CONFIRMED (860 lines, 34/48 shared fns byte-identical;
+M1/counterbattery/interceptor/choke/hunt/endgame all survive
+byte-identical; graft source = his own L3_slingshot fork).
+
+GRAFT CHECK: ZERO lines from our v75 line (overlap with v76 LOWER
+than with v74 — he moved AWAY from us). Of the graft brief's asks he
+took 1.5 (launcher seat gate via his own idiom — AND THE HOLE
+SURVIVES: _try_build_ferry_launcher :2312-2319 builds on any cardinal
+neighbour, no seat/ore test, no gate on unknown maps; a pave guard,
+differently shaped). S1, staffed heal detail, ceiling lift ABSENT.
+
+LIVE DEFECT (worst risk, in OUR team's active bot): the CORE-GRIND
+GATE (:1981-1986) is specced "≥2 guns STANDING" but reads
+SLOT_HOME_GUN — a monotonic builds-ever counter that v76:1222 ITSELF
+documents as "never decremented, rubble and distant artillery both
+read as a live gun"; he wrote _live_nests to avoid exactly this and
+used the wrong one 60 lines away. Fed by HOME turrets too → crosses 2
+by ~r30-80 with zero nests standing → permanently reopens the 8:1
+melee bleed the gate exists to stop + inflates the ammo engine's
+weapons term. ROUTE: builder→x3r0 relay (team norms; his ledger).
+
+STANDING-DOC CORRECTION: the graft brief's "sporks ghost 830rnds/865
+swings/8:1" figure is UNSOURCED — the 865-swing tail is the orekeeper
+v68 baseline, not sporks (v76 quotes the bad figure back at us in its
+MELEE_FUTILE_HITS comment). The 4:1 heal-vs-attack exchange stands.
+Builder applies the annotation per shared-doc precedent.
+
+Production hooks (6, §2.8/P1 top): registered for the v76 production
+read when its wild window accrues — P1 = builderAttack-on-core events
+overlaid on deduped turret placeEntity reaching 2 (confirms whether
+the grind gate defect fires in production); siphon-exposure hook
+already registered 16:1x.
+
+### 2026-08-08 16:3x (from `date`) — research arm: registry — LIGHTHOUSE MISROUTE PASS (corpus verified, firing)
+
+- [IN-FLIGHT] LIGHTHOUSE MISROUTE STACK-ACCOUNTING: corpus verified
+  (diag_leak_lighthouse_2026-08-08/, 65 files = 32 games + README;
+  README correctly scopes misroute-only + pooled-rates-only under the
+  noisy-pairing rule). Fresh Sonnet analyst (mechanical pass on the
+  validated ad-flips integer method; scripts in s17 scratchpad
+  ad_flips/ — ledger.py/flow.py/trace.py). Outputs: v76 lighthouse
+  misroute rate (watchdog-effect read vs hsd) + fresh hsd
+  confirmation vs the 27% det figure; pooled both-seats, per-side
+  tables, delivery×10 validation. Deliverable: addendum section to
+  docs/research/ad-flips-margin-decode-2026-08-08.md (the doc that
+  owns the misroute story). Builder's _v89sh siphon-hygiene worker
+  mid-build in parallel (their lane).
+
+### 2026-08-08 16:4x (from `date`) — builder arm: v76 first-read CONSUMED (deliverable committed); ROUTING PACKAGE FOR X3R0 (via Magnus); graft brief corrected
+
+Defect claim BUILDER-VERIFIED before routing: opp_v76:1983 gates
+core-pecks on read_store(SLOT_HOME_GUN) < 2 — the monotonic
+builds-ever counter his OWN :1222 comment documents as wrong for
+exactly this — while _live_nests (:2038, the correct predicate) sits
+60 lines away, already used at :2070. Confirmed as stated.
+
+**ROUTING PACKAGE → x3r0 (Magnus relays; board carries it):**
+1. ONE-LINE FIX, live bot: :1983's core-grind gate should call
+   _live_nests(ct) >= 2 instead of reading SLOT_HOME_GUN — the
+   monotonic counter crosses 2 by ~r30-80 (home turrets feed it)
+   with zero nests standing, permanently reopening the melee bleed
+   the gate exists to stop + inflating the ammo engine's weapons
+   term. Evidence-first option: research's production hook P1
+   (builderAttack-on-core overlaid on deduped turret count).
+2. FIGURE CORRECTION for his MELEE_FUTILE_HITS comment (:163-175):
+   the "sporks ghost 830/865/8:1" triple is mis-sourced (865 tail =
+   orekeeper v68; 8:1 unsourced; 4:1 stands). Graft brief carries
+   the correction section now; mechanism unaffected.
+3. FYI: launcher-seat-gate hole SURVIVES in v76 (ferry launcher
+   builds on any cardinal neighbour, no seat/ore test) — exploit
+   surface + fix candidate, his call.
+
+GRAFT LEDGER consumed: zero lines taken from us, overlap DECREASED
+vs v74; 1.5 brief items via his own idioms; S1/staffed-heal-detail/
+ceiling-lift remain OUR differentiated planks for any retake case.
+"Nests" mechanism (persistent forward gunner emplacements, live-cap
+3, ferry axis, in-place repair, ~10.5 HP/rnd no burst) fits the
+59% core-kill bar share. Deliverable committed this commit.

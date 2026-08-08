@@ -152,3 +152,13 @@ now (0033 v42 lost 4-1 to our v66 yesterday, then bumped). Rollback to v72
 is pre-agreed one-click if the ladder disagrees. _v85hs (heal-seat
 protection + staffed heal detail + ceiling lift) is gated locally as the
 next candidate; gate results land on the coordination board today.
+
+## Corrections (2026-08-08, v76 first-read)
+
+- **The "sporks ghost: 830 rounds / 865 swings / 8:1" triple is MIS-SOURCED
+  and must not be re-quoted** (v76 already embeds it in its MELEE_FUTILE_HITS
+  comment, :163-175). The 865-swing tail is the **orekeeper v68** baseline
+  (orekeeper-v69-delta-read-2026-08-07.md:194,:277), not sporks; sporks heal
+  economics live in sporks-decode-2026-08-07.md:310-313; the 8:1 exchange is
+  unsourced. **The 4:1 exchange figure (Law 6) stands.** The MELEE_FUTILE
+  mechanism itself is unaffected — only the provenance of the anecdote.
