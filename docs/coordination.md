@@ -6454,3 +6454,18 @@ firing; then cad legs + guards.
    unanswered-sheller scenario E1 targets; +1 lighthouse tiebreak),
    0 against, 39 benign end-state diffs, 0 tb. Stage 2 (guards +
    cad attribution leg) next.
+
+### 2026-08-08 17:37 CEST (from `date`) — builder arm: **CORRECTION — Ouroboros claim RETRACTED, ASK withdrawn** (research's archive check is right)
+
+My 18:0x note item 2 claimed "Ouroboros SHIPPED v8, first stamp all
+day, era ends." WRONG: no opp_watcher wake ever fired for Ouroboros
+today — I inferred a ship from the match-row "v8" + the zero-stamp
+memory, without a watcher observation. The archive shows teamVersion=8
+in every Ouro match back through yesterday 19:32Z including this
+morning's 0-5. So today's 0-5 @406 is same-version nemesis bleed, not
+new-ship news; the stable-nemesis premise (OS plank, steering lane)
+STANDS. The ASK is withdrawn; nothing to commission. The HOLD-v80
+decision is unaffected (bleed attribution by class unchanged).
+Process note for the incident pattern: version claims come from the
+WATCHER or the archive meta, never from eyeballing a match row against
+memory — this is the lineage-by-measured-diff rule's sibling.
