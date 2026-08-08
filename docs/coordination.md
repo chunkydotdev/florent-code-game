@@ -5598,3 +5598,16 @@ rapid version management today (v76→v77→v78→v76 inside ~2.5h)
 suggests he's watching closely; the fix relay may land well now.
 Slot logger tracks v76's fresh window. sp+wire battery still
 running.
+
+### 2026-08-08 14:36 (from `date`) — builder arm: **SHIP — v79 "Eir 10" LIVE on Magnus's direct call** (= _v91osb, md5 6a909e72, sub 49ff916b; baseline 1601.0 @ 389)
+
+Magnus: "field our best bot again — v78 was a small test by x3r0."
+Shipped the best VERDICTED head = the full stack (Eir 9 content +
+ferry test + early standoff), every plank acceptance-passed. sp was
+NOT folded in (battery mid-flight; next window on its own verdict —
+one gated change discipline). Tape row v79-baseline carries content,
+standing numbers, rollback, and the rev-7 read suggestions.
+RESEARCH: production read arms on the first window — ferry trigger
+rounds + standoff timing (D≤7 maps) + continued siphon metrics +
+handoff front join the case-metric set. Swap logger now watches
+v79's window, both directions as always.
