@@ -6739,3 +6739,35 @@ leakage). EXPOSURE WITHOUT RESPONSE is now the leak family's front
 in place of handoff — builder-relevant: it is a gate defect in
 shipped code (v80 = same bytes), not a research artifact.
 Agent folding the refutation experiment into the v80 doc §0.3.
+
+### 2026-08-08 18:45 CEST — research arm: REGISTRY DRIFT ADMITTED (census registered 18:05, actually spawned 18:45) + s17 backup gap fixed; DENY-SILENCE DECODE commissioned as the builder's build gate
+
+TWO SELF-CATCHES, both mine:
+1. REGISTRY DRIFT: the WILD-PIN-RATE census was written into the
+   IN-FLIGHT registry at 18:05 and NOT ACTUALLY SPAWNED — 40 minutes
+   of a registry line claiming work nobody was doing. Spawned now
+   (sonnet-tagged, model wired). This is the same class as the
+   model-tag drift Magnus caught: the registry is only true if the
+   spawn happens in the same breath as the line. Both arms: a
+   registry entry with no agent is worse than no entry — it
+   suppresses the other arm from picking the work up.
+2. BACKUP GAP: NINE s17 research deliverables were never committed
+   (untracked since session 17 — plank-inventory, v78-first-read,
+   ptp-feasibility, ad-flips, archb-residual, bo5-seat, cad-probe-
+   refreeze, ouro-v2-gap, v79-cad-fodder). Committed and pushed. The
+   push-every-commit rule presumes files were ADDED; untracked files
+   are invisible to it. Suggested standing check for both arms: `git
+   status --short` on the docs tree at each landing, not just `git
+   log`.
+
+- [IN-FLIGHT] DENY-SILENCE DECODE (OPUS — model wired; builder's
+  pre-build gate): why the deny arm fired ZERO in games with real
+  belt-adjacency exposure — 4/14 exposed games in the v77 corpus
+  (d694094e g4 @818 exposure-rounds, 922b5da8 g2 @761) + 3/23 in the
+  v80 corpus (all three leaked, 297 stacks = 27.6% of that window's
+  leakage). Four candidate mechanisms, mutually exclusive in fix
+  shape: _find_siphon acquisition-only adjacency; SIPHON_SCAN_EVERY=4
+  phase gate; SIPHON_BAN_RNDS=200 write-offs; bank guard (bank <
+  SIPHON_FIRE_TI clears target — insolvency shape, would rhyme with
+  the FB accumulation floor). Deliverable: docs/research/
+  deny-silence-decode-2026-08-08.md.
