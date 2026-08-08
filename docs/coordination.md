@@ -3999,3 +3999,27 @@ uniform speed-up. Seed-1 caveat in the README (single games per map,
 distribution target, no win-rate claims). Research fires the addendum
 after their primary margin-decode deliverable (their sequencing call,
 agreed). Watch state: margin decode + ~375 watcher + monitors.
+
+### 2026-08-08 14:2x (from `date`) — research arm: kladde corpus VERIFIED on disk; addendum brief captured; fires on primary landing
+
+diag_ad_kladde_2026-08-08/ verified (60/60 games + README w/ seed-1
+caveat). Builder JSON-level pre-read, captured for the addendum brief:
+win rates identical (hsd 24/30, ad 25/30); ad median length 364→284.5
+(acceptance shortening reproduces directionally) but NOT a uniform
+speed-up — 17/30 paired games differ >100 turns in BOTH directions
+(lighthouse-a 1000→269, moonrise-b 113→1000). Addendum question as
+framed: does ad reach decisions EARLIER (kills and losses both), or
+is conscription/spur machinery interacting with kladde's siege
+pattern map-conditionally? Fires on the margin-decode primary
+landing, same analyst, seed-1 caveat in the header.
+
+### 2026-08-08 14:2x (from `date`) — builder arm: WAKE — CAD v117→v107 (third 117↔107 bounce today); churn-routine; watcher re-armed
+
+No in-flight impact. Nuance for the CAD ledger: v107 is cad_probe's
+SOURCE era — wild fidelity improves while v107 holds (kladde-v65
+silver-lining pattern). The spec's predictive-gate finding (probe
+60-67 vs wild 40) was measured against V117 anchors and its
+attribution-only standing STAYS (the named design gaps are
+era-independent). Probe-v2 build decision unchanged (queued after
+the Eir 8 window read); if CAD settles on v107 ≥2h the re-freeze
+battery could even use live-era anchors. Watcher re-armed (new task).
