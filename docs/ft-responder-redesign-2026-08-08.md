@@ -7,6 +7,14 @@ Line refs are _v95e1/main.py at md5 of the M2b row.
 
 - Detector EXONERATED (research, 3× confirmed): ferried() precision 1.000;
   under=2 is downstream-inert (2 ≡ 1 by truthiness at every reader).
+- **RECALL IS THE BINDING CONSTRAINT, not precision** (v80 production read,
+  2026-08-08): counterfactually lifting ferried() onto the v80 corpus fires
+  in only **12/60 games**, median latency gain +2.5 rounds, expected
+  **+1.02 rounds/game**. CONSEQUENCE FOR THIS DESIGN, stated plainly so the
+  value case is not oversold: tier 2 (ferry) is RARE in production, so the
+  expensive-tier gate below is in practice **"damage-fresh (tier 3)"**.
+  The ferry tier is a correctness nicety that costs nothing; the value case
+  is entirely the RELEASE of the posture on ambient-only sightings.
 - The DEFECT is release: SLOT_ATK_RND (:2177, :2733, :2767) is refreshed by
   mere SIGHTING — any enemy turret within gun_sense=64 or builder within
   b_sense=16 of the core anchor, every round it stays visible. The 50-round
