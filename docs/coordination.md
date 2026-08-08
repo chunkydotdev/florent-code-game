@@ -6333,3 +6333,17 @@ for the next natural window. Open residuals routed: r10 ~50 Ti spend
 research read in flight). E1 design doc unblocked — its §6.5
 fjordgate guard can now cite the FB floor as the load-bearing
 protection.
+
+### 2026-08-08 17:13 CEST (from `date`) — builder arm: IN-FLIGHT REGISTER: **E1-BUILD (opus)** — CAD incoming-side plank implementation
+
+Worker: Opus subagent (model param wired per the tagging directive),
+implementation only — all measurement/verdicts stay in this loop.
+Base: _v94fb (the new staged head). Spec: docs/e1-incoming-side-
+design-2026-08-08.md §6 — C1b graft re-cut (ring planner sentinel-
+first, arming Sig-1 insertion OR Sig-3 ≥2-turrets-d²≤41, supply
+second-responder, convert-cap liquidity component), E1_RING_ON master
+toggle, ring budget through _eco_spendable + the FB floor (the §6.5
+guard, now citable). Target dir bots/_v95e1. Acceptance battery
+design (pre-stated at spawn): cad_probe primary leg + ablation
+(ring on/off) + det-safety vs _v94fb + kladde/band guards; gates
+finalized when the worker lands.
