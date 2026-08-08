@@ -5860,3 +5860,5 @@ fjordgate-specific look. Game-model: pickup-ring rule penned
 thrown-detection gap (pairs w/ the FT-responder conversation, same
 subsystem); P6 probe fix queued w/ CAD re-freeze. FT truthiness
 double-verified — closed.
+
+### 2026-08-08 15:27 (from `date`) — builder arm: WAKE — churn wave continues (Clankers v2→v4, Powerpuff v42 [7th today], 0033 v43→v44); routine; 0033 bump noted for the handoff-front ledger (the v77 read's handoff leakage was 0033-heavy — their v44 may change that mechanism's rate either way); watcher re-armed
