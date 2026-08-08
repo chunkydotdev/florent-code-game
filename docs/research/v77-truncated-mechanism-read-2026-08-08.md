@@ -569,3 +569,34 @@ at r70. **This did not prevent the `_game_5` loss** — worth a dedicated read
 on whether that 14x-ejected raider was doing anything load-bearing each
 cycle it returned, or whether the launcher was tied up on a low-value loop
 while the game was lost elsewhere. Flagged, not investigated further here.
+
+### Addendum 2 — 2026-08-08 17:0x: the co-occurrence break resolved at source
+
+**Claim under question** (§3 secondary observation, broken by the CAD row):
+"false-positive-looking events never co-occur with real deny activity in
+the same match." Source read of the deny arm (`bots/_v89sh/main.py`,
+v77-identical content) retires the claim as a **corpus artifact**, not a
+gating defect. Two innocent producers of co-occurrence exist by
+construction:
+
+1. **Stale-hold window.** `_find_siphon` (:4254) requires our-harvester
+   adjacency at *acquisition* time only. The sticky hold in `_siphon_deny`
+   (:4349-4365) re-checks target-alive, own-HP-drop, and the
+   `SIPHON_MAX_RNDS=24` ransom timeout — but **never re-checks harvester
+   adjacency**. If our harvester dies mid-peck (CAD is the measured
+   damage-problem class, eir8 read), the real deny worker keeps attacking
+   the now-unprotected belt tile for up to ~24 rounds — every one of those
+   attacks classifies as FP-looking in this census. Bounded, self-clearing,
+   and arguably still useful (the belt dies before any harvester rebuild).
+2. **Non-deny belt attacks.** The census counts *any* builder attack on an
+   enemy belt tile not near our harvesters; siege-role builders attacking
+   belts near the enemy core land in the same bucket (the original read's
+   own caveat). A siege-heavy CAD game produces these in volume alongside
+   real deny exposure.
+
+The original four matches simply never combined real exposure with either
+producer in one game. **No fix implied**: the acquisition gate is correct;
+the 24-round stale tail is priced at ≤48 Ti per dead-harvester event.
+Optional replay confirmation if ever wanted: split the CAD 601 by distance
+to enemy core and by dead-harvester adjacency history; predicted split =
+overwhelmingly siege-role near their core, small stale-tail remainder.

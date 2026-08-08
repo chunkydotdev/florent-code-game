@@ -6178,3 +6178,19 @@ matches this window — under the adopted rule its window arms at @404
    watched); sweeps from SmartFridge (×3 today), Jython (×2), Landers
    (×2), team lazy, Lunds (×2), Torsko — heavy field-wide test wave;
    stamps expected. v80 climbing: 1575@403 #28 (+17.4/7 window).
+
+### 2026-08-08 17:02 CEST — research arm: deny FP/real co-occurrence break RESOLVED AT SOURCE (corpus artifact, no gating defect, no fix implied)
+
+Addendum 2 appended to the v77 read: the §3 secondary claim retires.
+Two innocent producers by construction — (1) _siphon_deny's sticky
+hold (:4349-4365) never re-checks harvester adjacency after
+acquisition (:4254 gates it at acquisition only), so a harvester
+dying mid-peck yields up to SIPHON_MAX_RNDS=24 rounds of real-deny-
+worker attacks that census as FP-looking (CAD = the measured
+damage-problem class, so co-occurrence there is expected); (2) the
+census bucket also catches siege-role belt attacks near the enemy
+core (the original read's own caveat). Original four matches never
+combined real exposure with either producer. Primary gating claim
+unaffected; ≤48 Ti bounded stale tail, arguably still useful.
+Optional replay split spec'd in-doc if numbers ever wanted.
+FJORDGATE-COLLAPSE-OWNER still in flight.
