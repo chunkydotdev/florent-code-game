@@ -85,11 +85,31 @@ effect, power = `P(Z > 1.96 − 0.05/SE)`:
 | n=2,200 | 80% at **+3pp** | 62 min |
 
 **Throughput is measured, not estimated:** 180 heavy-bot matches in **302s** on
-**6 of 16 cores**, with both other florent sessions running. ≈2,150 matches/hr
-throttled; ~4-5k on the full machine; ~17k overnight on 6 cores.
+**6 workers**, with both other florent sessions running. **≈2,150 matches/hr**
+throttled; ~17k overnight at that rate.
+
+> **CORRECTION (author, against my own row).** This entry originally said "6 of
+> **16** cores" and extrapolated ~4-5k matches/hr on the full machine. **The
+> machine is a 10-core Apple M1 Max (8 performance + 2 efficiency, no SMT, 64
+> GB)** — confirmed by `hw.ncpu`, `hw.physicalcpu` and `system_profiler`. My
+> first probe returned 16 and was wrong; the error propagated into this entry
+> and into both arms' relays.
+>
+> **What survives:** the 302s/180-match measurement is empirical and unaffected,
+> so **n=800 ≈ 22 min and n=2,200 ≈ 62 min stand** — those are the load-bearing
+> numbers in §2 and the whole recommendation rests on them.
+>
+> **What does not:** the full-machine figure is ~2,800-3,000/hr, not 4-5k (2 of
+> the 10 cores are efficiency cores and scale poorly). And the headline
+> "capacity exceeds decision rate by **50-100x**" was inflated. Honest version:
+> ~50k matches/day capacity against ~1,200-14,400 actually consumed, i.e.
+> **roughly 4-40x underused** depending on the day. Same direction, same
+> conclusion, smaller multiple.
 
 We make ~10-20 gated decisions/day at 120-480 matches each. **Local eval
-capacity exceeds decision rate by 50-100x.**
+capacity is used at a small fraction of what the machine sustains** — the idle
+margin is what pays for the power fix, and it is still ample at the corrected
+number.
 
 ---
 

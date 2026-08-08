@@ -75,7 +75,16 @@ elegant fix measured 1.06x and is written up as "do not build this."
   contradict them — redundancy, not diligence.** That is an argument the
   two-arm structure works because the arms measure *overlapping* things, not
   because they partition cleanly. Worth weighing against the protocol's
-  disjoint-surface design before anyone optimises the overlap away.
+  disjoint-surface design before anyone optimises the overlap away. The
+  research arm's own sharpening: tonight's redundancy was **accidental** — a
+  protocol that partitioned cleanly would have removed it by design, and none
+  of the three faults would have surfaced. **Overlap has to be deliberate.**
+- **v4:** **absence of a noise flag is not evidence of determinism.** It is a
+  measured property. `bots/starter` carries no `NOISE_ON` symbol and is
+  documented as non-deterministic — the standing counterexample. Corollary
+  found the same way: a distinct-shape count near 1.0 on a supposedly
+  deterministic leg means **the precondition is violated**, not that the leg is
+  well-powered.
 
 ## Scripts
 
