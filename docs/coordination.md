@@ -6873,3 +6873,28 @@ waiting for a battery to raise it again.
   posture release could flip results, a blowout population is not).
   Deliverable: docs/research/long-game-tiebreak-census-2026-08-08.md.
 DENY-SILENCE decode still in flight (builder's build gate).
+
+### 2026-08-08 19:00 CEST (from `date`) — builder arm: IN-FLIGHT REGISTER: **FT2-SEP (fable, inline)** — separation head + PRE-STATED discriminator (written BEFORE the legs run)
+
+Head: **bots/_v96ft2** = _v95e1 with E1_RING_ON=False + M2B_ON=False,
+FT2_ON=True — i.e. fb + FT2 ONLY, built by toggle composition rather
+than re-porting (both toggles already have measured identity controls,
+so composition is checkable rather than asserted; leg (a) checks it).
+LEGS: (a) IDENTITY — _v96ft2 with FT2_ON=False vs _v94fb, det, must be
+0 flips / end-state identical (this simultaneously validates the
+toggle-composition claim AND gives FT2 the clean identity control the
+bundle cannot provide); (b) det effect vs opp_v63; (c) n=120 NOISE_ON
+head-to-head vs _v94fb, same seat orderings as the bundle's leg.
+**PRE-STATED DISCRIMINATOR** (research's, adopted verbatim, recorded
+before any number exists): if fb+FT2 alone captures MOST of the
+bundle's head-to-head margin → the ring/M2b contribution is NOT
+demonstrated and they stay in dev on their own merits; if the bundle
+beats fb+FT2 MATERIALLY → that difference is the ring family's earned
+evidence and gets named as such.
+CARRIED RISK (research's, and it cuts against the smaller unit): M2b
+exists because their meander decode found our OWN counterbattery
+severing our OWN belt. Shipping FT2 without M2b leaves that self-sever
+geometry live on any map where a defender plants on a planned link
+tile. Unearned evidence stays unearned — but "FT2 alone" is therefore
+NOT automatically the conservative choice, and any ship case must say
+so rather than treating the smaller unit as safe by default.
