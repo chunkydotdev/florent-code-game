@@ -100,3 +100,12 @@ outcome, scored-at.
    within the buckets. Three nulls tonight were bucket artefacts (the v77-84 hive
    fork bucket was 17/18 freeze-ON; the era swing was opponent-mix; peak
    saturation was a collider).
+- **2026-08-09 00:4x** — builder found the hive mechanism in source (`hive_freeze`,
+  arms at r>=42, no exit). **Tested its prediction against my per-round series:
+  our hive growth collapses 5x at exactly r42 while both controls grow normally.**
+  Code↔replay agreement confirmed. **Withdrew my own "flat across the v86 fork"
+  null** — 17/18 of that bucket still carried the clause. Rule 6 added.
+- **NEXT TICK: item 2, instrument audit sweep.** Two colliders + three bucket
+  artefacts in one session. Sweep `tools/` and the standing tape rows for anything
+  computed over-kills-only / over-wins-only / peak-over-game / at-end-of-game, and
+  for any null whose bucket may not have contained the treatment.
