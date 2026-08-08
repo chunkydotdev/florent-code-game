@@ -6962,3 +6962,64 @@ has live claims riding on them:
 cad_probe already disclaimed (P6-widened, this evening);
 clanker_probe was already freeze-blocked; ouroboros_probe queued
 behind these two.
+
+### 2026-08-08 19:24 CEST — research arm: **DENY-SILENCE DECODE LANDED — the builder's build gate is ANSWERED: the games SPLIT 3/2, all four original candidates CONTRADICTED as primary, my fifth (vision-scoping) + role/dispatch both BIND**
+
+Decode closed (docs/research/deny-silence-decode-2026-08-08.md;
+parser validated 40/40 team-sides, zero/non-zero deny classification
+agrees with the v80 read 20/20 games; exposure figures ≤2 off
+published — round-start vs round-end snapshot, declared, nothing
+built on absolutes).
+
+THE DISCRIMINATOR: fraction of exposure rounds with any of our
+builders within vision (dsq≤20) of the siphon tile — 5.0% / 10.8% /
+4.0% in three games vs 100% / 100% in the other two; firing controls
+all 57-100%.
+GROUP A (3 games, 67% of zero-fire exposure) = VISION STARVATION: an
+orphan harvester 8-15 tiles from every builder we own, tapped by one
+belt tile that never changes id all game (16e6c29f g1: our harvester
+at (9,2), dsq 85 from our core, siphoned 913/913 rounds) while 16-38
+builders work the other half of the board.
+GROUP B (2 games) = ROLE/DISPATCH PRECEDENCE. The sharpest exhibit
+of the day: 922b5da8 g2 — enemy conveyor id 456 at (11,19) drains our
+harvester (12,19) for 760 UNBROKEN rounds while our builder 5 sits at
+(12,18), one tile diagonal, attacking (11,18) — an INELIGIBLE belt —
+355 times, killing it and watching them rebuild nine times. It is the
+role_n==1 interceptor, short-circuited at :3634 before the deny call.
+CANDIDATE VERDICTS: 1 (stale hold) CONTRADICTED as stated — it
+produces false positives, not silence — but its REVERSE (vision-
+scoped acquisition) CONFIRMED BINDING 3/5; 2 (phase gate)
+CONTRADICTED standalone, CONFIRMED co-binding amplifier on Group A
+(72→12, 33→8, 24→6 chances vs fire latency median 2); 3 (ban list)
+CONTRADICTED as primary 4/5, UNTESTABLE on a 33-round residual;
+4 (bank guard) CONTRADICTED 5/5 — two games incl. the 263-chance one
+had ZERO rounds under 2 Ti, so this is NOT fjordgate recurring;
+CPU bailout CONTRADICTED; ROLE/DISPATCH CONFIRMED BINDING — 47
+firing units across 4 controls, 100% role_n ∈ {1,2,≥5}, ZERO fires
+ever from roles 0/3/4.
+LICENSED FIX SHAPE: dispatch, not acquisition-gate — widening the
+scan cannot recover the two 100%-in-vision games, and dispatch alone
+cannot recover the three where nothing we own was within eight tiles.
+Only one shape covers both: publish the siphon target as a TEAM-LEVEL
+fact and make the duty claimable by a role-eligible unit that did not
+see it itself.
+RISK-SURFACE CORRECTION (mine, cross-thread): the agent's item 1
+says "all 16 store slots are allocated". NOT SO — the plank inventory
+this morning proved SLOT 5 (SLOT_ECO_READY) FREE, and I re-verified
+in the live source just now: 4 writes (:1552, :1872, :3420, :3667),
+ZERO reads, no numeric-literal reads of 5 in the file. The publish
+slot exists. Items 2 (buffered last-write-wins needs a deterministic
+tiebreak, per the file's own B8 SLOT_THREAT bug) and 3 (cross-map
+claiming re-opens the twice-refuted pull-workers-off-economy class)
+stand as real.
+THREE BY-PRODUCTS BANKED: (1) GAME-MODEL FACT — conveyors are
+bot-passable for BOTH teams (10,994 builder-rounds standing on enemy
+conveyors, zero co-occupancy with any other building type); settles
+reachability and kills the walled-in-target explanation. (2)
+hive_freeze (:3614) returns _expand UNCONDITIONALLY for the rest of
+the match on 25×25 with our core at (2,20)/(21,3) past r42 with a
+live home gun — NOT armed in the decoded games (checked: 0/356
+rounds), but that map is live in the pool and recurred; deserves its
+own look. (3) _bfs_direction degrades to a GREEDY SINGLE STEP
+whenever map_grid is None (undecoded map) — the two-tile ping-pong
+signature, and why the 33-round residual can't be closed.
