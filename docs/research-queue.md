@@ -199,3 +199,16 @@ outcome, scored-at.
   (code-read + my r42 replay test + their 2.10x det leg). The mechanism rests on
   ONE aggression question (v86), not two.
 - **NEXT TICK:** `sprt.py` + `paired_vs_pooled.py` to close item 2, then item 3.
+- **2026-08-09 02:5x** — **ITEM 2 CLOSED** (`instrument-sweep-close-2026-08-09.md`).
+  `sprt.py` DECISION RULE SOUND (alpha 5.2%, beta 5.0% at nominal 5% — the gate can
+  be trusted), but its **printed win rate + Wilson CI are biased ~+3pp at an H1
+  stop** (+6.6pp when the truth is 50%) with ~90% CI coverage, undocumented.
+  Mitigation already in-tool ("confirm with a fixed-480 run"). Also: at a 120-match
+  budget a true +5pp bot returns UNDECIDED 44% of the time — the sequential face of
+  leg-power-19pct. `paired_vs_pooled.py` clean.
+  **SCORECARD: 4 tools swept, 3 clean, 1 cosmetic defect. The two genuinely broken
+  things were the band split and my own pool table — not the arena toolchain.**
+  NOT tested, flagged: the sprt harness (ticket pairing, discard-at-stop logic).
+- **NEXT TICK: ITEM 3** — opponent constants under v80 (Ouroboros denial tiles,
+  Lunds r3 launcher insertion measured under v83, KCM launcher r1->destroy r6).
+  Unblocks the builder's Lunds fixture. Archive-only, zero downloads.
