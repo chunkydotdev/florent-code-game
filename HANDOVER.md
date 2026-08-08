@@ -1,3 +1,87 @@
+# Session 19 UPDATE (builder, 21:4x) — supersedes the 19:50 block below
+
+## READ THESE FOUR ROWS BEFORE ANYTHING ELSE
+## They re-read the whole project and they compose:
+##   leg-power-19pct        our standard n=120 leg has 19% POWER. Four of five
+##                          genuinely good planks measure "no verdict".
+##   bleed-coverage-zero    0.0% of our Elo bleed is covered by a VALID
+##                          instrument. Net +8 nets a -493 GROSS bleed; Lunds
+##                          27.5% / Ouroboros 25.0% / KCM 17.9% / CAD 11.6%.
+##                          Both valid probes point at opponents we BEAT.
+##   swap-rule-is-a-coinflip  the rollback trigger fires on a NEUTRAL holder
+##                          73% by m=8, 100% by m=50. It cannot tell +60 from
+##                          -60. Fix adopted: threshold on MAGNITUDE (2 sd =
+##                          -41), never sign; a trigger FREES the slot, it
+##                          never FORCES a swap.
+##   mechanism-not-battery  every result tonight came from decoding real games
+##                          or reading real code. NOT ONE came from an A/B leg.
+##
+## THE COMPOSITION IS THE POINT: the battery is underpowered AND aimed at a
+## population contributing ~0% of our losses. Those faults MULTIPLY. Fixing
+## power alone buys precision about a question that does not decide matches.
+
+## STATE
+- LIVE: **v84 "Eir 14"** (bots/_v99mag, md5 dab7766e). Baseline 1593.0 @ 429.
+  Content = the E-family bundle + PIECE MAG (hive 256-ammo magazine retired).
+  Rollback = v83 (_v97e11) one click.
+- Five ships tonight: v81, v82, v84 (mine), v83 (peer), v85 (x3r0, paused).
+  **Windows got 2, 2, 5, 1 matches. NONE reached the 8 the swap rule needs.**
+  `fcode submit` AUTO-ACTIVATES — there is no stage-behind, so a session that
+  wants a real window must simply not upload.
+- Monitors: elo_logger + match_watcher + opp_watcher armed, exit-on-wake.
+
+## QUEUE, RE-RANKED BY BLEED SHARE (outranks the plank queue)
+1. **LUNDS INSTRUMENT (mine, designed not built)** — 27.5% of bleed, 0 wins in
+   17. Design decision on the tape (`lunds-instrument-design`): build a
+   **MECHANISM FIXTURE, not a behavioural replica** — a replica walks into the
+   drop-probe law that already refuted two ouro probes at 15.8% and 21.7%.
+   Fixture target: their **absolutely-oriented r3 launcher insertion** (fires
+   6/6 in our seat-B games, 0/4 in seat A, mirror landing tiles verified free,
+   so the trigger is in THEIR code not the geometry).
+2. **KCM** — 17.9% of bleed, ZERO prior work. Research has the decode.
+   Also the best probe target on the board because it is **version-stable**
+   (v1 for a day and a half while Flotte shipped six times) — drift is what
+   killed kladde/flotte/cad, and a stable subject cannot drift out from under
+   a replica. Their seat split is large: our A 42.9% vs B 17.1%.
+3. **Ouroboros** — 25.0% of bleed but instrument-BLOCKED by a measured law.
+   Needs a different instrument SHAPE, not another replica. Unrated probe
+   tonight: **0-5 on live v84, zero game share.**
+4. Replay-on battery (det/arena both pass `--replay /dev/null`, so redundancy
+   counting cannot run at all) — blocks resolving whether PIECE HG's mechanism
+   reduced redundancy without converting.
+
+## DEAD / DO NOT REDO
+- **PIECE HG: no separation at n=600, CI [-6.67, +2.67] — a true +5pp effect is
+  EXCLUDED.** Do not iterate it; the mechanism fires (0 flips on control vs 204
+  discordant) but does not convert.
+- **rescope-vs-wholesale (v82 vs v83 hive fix): NO SEPARATION.** Settled.
+- Paired-blocks CI tightening: refuted at 1.06x. NOISE_ON reseeds spawn_salt,
+  so a shared (map,seed) is NOT a shared opening — the blocking is cosmetic.
+
+## MEASUREMENT RULES ADDED TONIGHT (all in tooling.md)
+- **Seed count is NOT sample size.** det.py now prints `DISTINCT paired shapes`
+  with a low-replication warning. A leg reading 4/4 seeds can be ONE game.
+- **A shape ratio NEAR 1 on a "det" leg means the leg is STOCHASTIC**, not that
+  it is well-powered — the det ceiling is 15 maps x 2 seats x n_det_opponents.
+- **Determinism is MEASURED, not code-read.** opp_v39/v44 are stochastic with no
+  NOISE_ON symbol. Verified det pool: v45/v49/v50/v56/v58/v63 — but **v56, v58,
+  v63 are behaviourally IDENTICAL in all 8 cells tested**, so it is ~3 effective
+  opponents and the ceiling is ~105, not 180. All six are ONE codebase's
+  history: variance reduction, NOT opponent diversity.
+- **Delivered-Ti is confounded by game length** — read it only within a
+  win-condition class.
+- **`Last 10` MIXES UNRATED INTO LADDER FORM.** It read 0W-10L while ladder-only
+  was 5W-5L. Never read it as form.
+- **proto3 omits TEAM_A=0** — filter team with `.get(2, 0)`, never `.get(2)`.
+  Silently drops every seat-A entity; produced a plausible wrong table twice.
+- **Map identity needs TILE CONTENT** — heart/eider and snowflake/archipelago
+  share dims AND core positions.
+- **`fcode match unrated` is the FIDELITY instrument, not a power one** —
+  5 games / 10 min = 30/hr against local's ~2,150/hr. It buys ground truth and
+  on-demand replay corpora; it can never buy a verdict.
+- **Machine is 10 cores (8P+2E) at load ~10.7, NOT 16 idle ones.** Real headroom
+  ~1.3x. Ignore any "50-100x underused" claim, including mine.
+
 # Session 19 (builder, booted 2026-08-08 19:40 on Magnus's framework audit +
 # "ship it all and direct us in the right path"; supersedes s18 below)
 
