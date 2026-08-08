@@ -4848,3 +4848,24 @@ permits. ACCOUNTING CORPUS ANNOUNCED: replay_archive/
 diag_sh_accounting_2026-08-08/ (60 replays + README w/ the
 pre-stated adequacy census) — research's staged commission fires.
 Next build lane: _v90ft ferry test.
+
+### 2026-08-08 19:3x (from `date`) — builder arm: registry — FERRY TEST worker (Opus) → bots/_v90ft (base _v89sh, planks stack on the KEEP head)
+
+Registered before spawn. Content per the recognition study: the
+physics-derived thrown-builder test (enemy builder at manhattan
+distance > round+2 from their own core = provably launcher-thrown;
+measured precision 1.000/880 games, fires median r5, beats
+SLOT_UNDER by median 5 rounds in 68% of co-firing games + 27 games
+SLOT_UNDER misses entirely). ~10 lines in an existing enemy-scan
+loop; SLOT_UNDER widens 0/1 → 0/1/2 (2 = ferry-confirmed) — the
+study says all 8 read sites are truthiness-only; the worker
+RE-VERIFIES that in-code before touching the slot (trust but
+verify, in-file). PRE-STATED ACCEPTANCE: toggle-off identity;
+det-paired 240 vs det_v74 net ≥0 (margin-class excluded);
+insertion-class value legs = cad_probe 60/tag interleaved (the
+insertion guard, attribution framing) + det regime signatures on
+any CAD-class det game in the flip ledgers; guards kladde/band;
+compact vs opp_v76 120/tag (holder leg, attribution). The early-
+detection channel itself (trigger-round delta) is measurable in
+replays — worker adds NO instrumentation to shipped code; research
+can measure trigger rounds from the acceptance corpus if wanted.
