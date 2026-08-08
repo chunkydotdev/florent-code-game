@@ -49,6 +49,16 @@ elegant fix measured 1.06x and is written up as "do not build this."
    how a paper gets misapplied.
 7. **Relay, then let the arms decide.** This folder proposes. Builder ships.
 
+## The one-line summary of the whole series
+
+> **Tonight we took the deterministic opponent pool from 1 to 6 and the
+> screening ceiling from 30 to 180 — and all six are our own lineage. 180 more
+> observations of ourselves does nothing about a −493 Elo bleed concentrated in
+> four opponents we cannot instrument.**
+>
+> **The cheap axis and the valuable axis are different axes.** Every
+> measurement fix in v1–v4 is on the cheap one. v5 is the valuable one.
+
 ## Entries
 
 | # | date | question | headline |
@@ -72,14 +82,37 @@ elegant fix measured 1.06x and is written up as "do not build this."
   exception, no empty output, just a confidently wrong number. One would have
   published as "0% of archived games are on local-pool maps."
 
-  **All three were caught by having an independently-derived number to
-  contradict them — redundancy, not diligence.** That is an argument the
-  two-arm structure works because the arms measure *overlapping* things, not
-  because they partition cleanly. Worth weighing against the protocol's
-  disjoint-surface design before anyone optimises the overlap away. The
-  research arm's own sharpening: tonight's redundancy was **accidental** — a
-  protocol that partitioned cleanly would have removed it by design, and none
-  of the three faults would have surfaced. **Overlap has to be deliberate.**
+  **All were caught by having an independently-derived number to contradict
+  them — redundancy, not diligence.**
+
+  **Precise tally (research arm's own correction, and it is less flattering to
+  them than my first version):** five faults caught on 2026-08-08. **Four were
+  the research arm catching its own work** by cross-checking against its own
+  earlier measurements — that is redundancy *within* one arm. **Exactly one was
+  a genuine cross-arm catch** (the research arm catching this session's
+  selection-bias claim about the probe fleet). **None was caught by an author
+  re-reading their own work unaided.**
+
+  So the lesson is **not** "two arms". It is *"keep independently-derived
+  numbers around to contradict new ones"*, which one agent can do alone — and
+  four of five catches did. Two caveats keep the structure worth something:
+  within-arm redundancy dies with the session's context, and an agent with a
+  *systematic* error will reproduce it in both derivations, where a second arm
+  will not. Within-arm redundancy caught more here; between-arm is the stronger
+  guarantee in principle. And per the research arm: tonight's redundancy was
+  **accidental** — clean partition would have removed it by design. **Overlap
+  has to be deliberate either way.**
+- **v5:** **the archive cannot answer questions about the era before it started
+  collecting.** The replay archiver was a session-12 decision, so every
+  retrospective question has a hard floor around 2026-08-07 midday — verified:
+  the oldest archived file is 7 Aug 12:31, and `band_probe`/`flotte_probe` were
+  built 08-06, entirely outside the corpus. **Unlike the parser faults, this
+  produces no wrong number** — it silently answers a narrower question than the
+  one asked, with full confidence. Check the corpus floor against the question's
+  time range before running any "when did X start" study. (Minor caution: the
+  tape stamps local time and match metadata stamps UTC, so the exact boundary is
+  ambiguous by a couple of hours; `tooling.md` records a related `createdAt`
+  trap. The floor is real either way.)
 - **v4:** **absence of a noise flag is not evidence of determinism.** It is a
   measured property. `bots/starter` carries no `NOISE_ON` symbol and is
   documented as non-deterministic — the standing counterexample. Corollary

@@ -46,16 +46,76 @@ scoring different populations.
 
 ## The finding under the finding
 
-The probe fleet did not merely go stale. **It was built against the teams we
-were already beating or could most easily replicate.** The three hardest bleed
-sources — Lunds, KCM, arsonist duck, **51% of all bleed combined** — have never
-had an instrument at all.
+> **CORRECTION (author, against my own paragraph, before it reached Magnus).**
+> I first wrote that the fleet "was built against the teams we were already
+> beating or could most easily replicate" — a selection pathology. **That is
+> false, and the probes' own provenance headers refute it.** Checked directly:
+>
+> - `band_probe` — 1711-rated Banminary, *"which core-killed our live bot on round 42"*
+> - `kladde_probe` — 1718-rated kladde, *"which beat our live v51 by grinding it down over r381 and r284"*
+> - `flotte_probe` — 1776-rated Flotte, *"which beat our live v7 on meander"*
+> - `cad_probe` — *"from the 0-5 ladder sweep against team [CAD]… lost by `core_destroyed`"*
+>
+> Every one was replay-extracted **from a loss, against a team rated above us
+> at the time.** They were built at the sharp end. My framing inverted the
+> facts. (Raised by the research arm; verified here against `bots/*/main.py`.)
 
-That is the same selection pathology as A4: instruments constructed where
-construction was easy rather than where the loss was, then measured against
-themselves. It is worth stating plainly because it will recur — the next probe
-will be easiest to build against the opponent we understand best, which is by
-definition the one costing us least.
+**The real model has two mechanisms, and only one of them is a failure**
+(research arm's):
+
+1. **Obsoleted by success** — `band_probe` was extracted from a game where
+   Banminary core-killed us at round 42. We are now **+78.7 and 27-8** against
+   them. The probe worked, the class got fixed, and it now points at a solved
+   problem. `orizon_probe` is partly the same (+4.8). **An instrument obsoleted
+   by its own effect is not a defect.**
+2. **Drifted** — `cad_probe`, `kladde_probe`, `flotte_probe`. Target still
+   bleeding, instrument no longer resembles it. CAD is still **−57.0** to us
+   while its probe is disclaimed. This half *is* a failure.
+
+**This inverts how the 0.0% headline should be read.** It is not an indictment
+of negligence. Part of that zero is the fleet having *worked*; part is drift;
+and the never-instrumented 51% (Lunds, KCM, arsonist duck) is a genuine gap
+whose cause — neglect versus those teams only recently entering the bleed table
+— **the archive cannot fully decide.** Research ran it; the result splits:
+
+| never-instrumented | share | verdict |
+|---|--:|---|
+| Lunds + KCM | ~45% | **leans coverage, unproven** |
+| arsonist duck | ~6% | **cleanly cadence** (first appears 08-08, after every probe was built) |
+
+Lunds and KCM were already bleeding us on **08-07** — the same day
+kladde/cad/orizon were extracted — at −52 and −54, comparable to CAD's −37 that
+day. On the visible portion they were *contemporaneously* among the worst and
+did not get instruments. **But this must not be banked:** the day-1 windows are
+4-6 matches (sd ≈ 20 Elo, so those dailies are barely distinguishable), and the
+decision to build kladde/cad/orizon rested on evidence from *before the archive
+exists*. Lunds may simply not have surfaced in what the team was looking at.
+
+**The structural finding is the more useful output, and it is series rule 5:**
+the replay archiver was a session-12 decision, so the corpus has a hard floor
+around 2026-08-07 midday. Verified independently: the oldest archived file is
+7 Aug 12:31, and `band_probe`/`flotte_probe` were built 08-06 — entirely outside
+the corpus. **Unlike the parser faults, this produces no wrong number.** It
+answers a narrower question than the one asked, with full confidence, and will
+silently truncate any future "when did X start" study the same way.
+
+**The remedy therefore is not "name the hard target in advance"** — they did
+that. It is:
+
+> **The bleed table is the aiming spec, and it moves. Instruments need periodic
+> re-aiming at the *current* table, and a probe that starts working is on a
+> clock.**
+
+Falsifiable, and it should be stated before we build anything: **if a Lunds
+instrument works, it will obsolete itself for exactly the same reason — and
+that will be success, not failure.** Anyone auditing the fleet later should
+expect to find retired instruments and count them as wins.
+
+What *does* survive from my original paragraph is A4, which is a separate and
+still-live fault: the fleet was extracted from replays of the opponents it then
+scores, and re-frozen when it drifted, so it is a holdout constructed from the
+test distribution and periodically refitted to it. Blum & Hardt assumes a fixed
+independent holdout. That remains true regardless of aiming quality.
 
 ## Consequence
 
@@ -67,8 +127,11 @@ expensive part (decoding) is partly done.
 Highest-value blank space on the board.
 
 **Ouroboros is different in kind:** instrument-blocked by a *measured law*
-(drop-probe), not by neglect. Re-freezing it would repeat a refuted approach,
-so it needs a different instrument shape, not another probe.
+(drop-probe), not by neglect. The retired probe failed because **behavioural
+fidelity did not predict outcomes** — so the replacement is not "a better
+replica", it is something that captures whatever the replica missed. Calling it
+"another probe" invites repeating the refuted approach, and the word choice
+matters more than it looks.
 
 Note how this interacts with A7b: we just took the deterministic opponent pool
 from 1 to 6 and the det ceiling from 30 to 180 — but all six are our own
