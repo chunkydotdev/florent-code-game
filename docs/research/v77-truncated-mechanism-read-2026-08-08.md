@@ -600,3 +600,97 @@ the 24-round stale tail is priced at ≤48 Ti per dead-harvester event.
 Optional replay confirmation if ever wanted: split the CAD 601 by distance
 to enemy core and by dead-harvester adjacency history; predicted split =
 overwhelmingly siege-role near their core, small stale-tail remainder.
+
+---
+
+# CORRECTION — 2026-08-08 18:42 CEST: base-four figures partially WITHDRAWN
+
+**Status of this document:** the pooled tables in §§1-3 mix two
+implementations — the base-four rows (this doc's original decode) and the
+matches 5-6 rows (Addendum 1's fresh implementation). An independent
+third implementation (the v80 production read's decoder,
+`docs/research/v80-production-read-2026-08-08.md`) re-ran the full
+6-match corpus under one implementation. Results below supersede every
+figure they contradict.
+
+## What is withdrawn
+
+**The base-four figures for metric A, the mechanism split, and the deny
+census (events / Ti / FP-looking / exposure) are not reproducible and are
+withdrawn.** The specific fault is not established. The proto3
+team-default bug named in Addendum 1 **was tested and is NOT the cause** —
+reintroducing it in the entity parser zeroes every our-side counter on
+seat A (Askar, 0033), yet those matches' *published* mined / leaked /
+harvester-round / metric-B values are non-zero and match the correct
+parser exactly; on seat B it moves only `exposure`, and away from the
+published value (Banminary's published exposure of 94 IS the
+correct-parser answer). The divergence is confined to helpers evaluating
+harvester/belt adjacency and hop-ownership; the original script lived in
+a prior session's scratchpad and is gone, so the mechanism cannot be
+reconstructed. Subsampling was tested and discarded (inconsistent
+3.6-7.6× ratios; Banminary exact).
+
+**Also unverified (not corrected):** §2's time-to-first-wire distribution
+(n=124, median 2.0, p90 11.8, max 901) and the never-wired count 34/158
+come from the same base-four helper and inherit whatever it did.
+
+## Corrected 6-match table (one implementation, 30 games)
+
+| match | opponent | seat | mined | leaked | rate | S | H | M | harv-rnds | metric A | metric B | deny | Ti | FP | exposure |
+|---|---|:--:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `eb59c8bb` | Askar (73) | A | 840 | 0 | 0.00% | 0 | 0 | 0 | 3,774 | **105 (2.78%)** | 564 (14.94%) | 0 | 0 | **9** | 0 |
+| `83b0fd6d` | 0033 (43) | A | 2,069 | 187 | 9.04% | **182** | **5** | 0 | 13,531 | **791 (5.85%)** | 6,338 (46.84%) | **122** | **244** | **1,192** | **1,055** |
+| `d694094e` | Ouroboros (8) | B | 5,251 | 431 | 8.21% | **431** | **0** | 0 | 51,639 | **10,940 (21.19%)** | 32,495 (62.93%) | **243** | **486** | **85** | **6,829** |
+| `37e4f4ee` | Banminary (41) | B | 455 | 0 | 0.00% | 0 | 0 | 0 | 3,295 | **464 (14.08%)** | 1,708 (51.84%) | 0 | 0 | **306** | 94 |
+| `922b5da8` | CAD (107) | A | 3,491 | 32 | 0.92% | 32 | 0 | 0 | 22,422 | 1,402 (6.25%) | 8,977 (40.04%) | 135 | 270 | 601 | 1,007 |
+| `208e84f8` | Memtrace (33) | A | 5,467 | 0 | 0.00% | 0 | 0 | 0 | 39,419 | 355 (0.90%) | 11,603 (29.44%) | 9 | 18 | 225 | 15 |
+| **POOLED** | | | **17,573** | **650** | **3.70%** | **645 (99.2%)** | **5 (0.8%)** | **0** | **134,080** | **14,057 (10.48%)** | **61,685 (46.01%)** | **509** | **1,018** | **2,418** | **9,000** |
+
+Bold = differs from the published figure; unbolded reproduces it exactly.
+
+## What stands (quote unchanged)
+
+Every leak volume and per-match rate, all six matches. Ouroboros per-game
+leaks 14/390/27/0/0 and the "g2 carries 90.5%" reading. **Pooled mined
+17,573 / leaked 650 / rate 3.70%** — the headline case metric is
+untouched, including the below-the-4.33%-wild-baseline reversal. Every
+harvester-round count. **Metric B every match and pooled 46.01%**,
+including the "+5.6pt over the v75 40.4% baseline" reading. All CAD and
+Memtrace rows. Askar/Banminary deny counts (0, 0) and Banminary exposure
+(94).
+
+## What inverts — the loudest conclusion
+
+**Mechanism split 34.2% SIPHON / 65.8% HANDOFF → 99.2% / 0.8%.** §1's
+framing ("the pooled headline is now carried by HANDOFF, mostly 0033")
+**does not survive**, nor does its 0033 reading (0033 is **182 SIPHON /
+5 HANDOFF**, and the match drew **122** deny events, not zero). Supports
+beyond reproducibility: the classifier reproduces the post-fix CAD row
+(32/0/0) exactly — the only post-fix leak-bearing match available for
+comparison — and independently yields the identical 100%-SIPHON
+fingerprint on the v80-era Ouroboros match (404/0/0), consistent with
+Ouroboros's documented adjacency-siphon kit. Confidence: **high** that
+34.2/65.8 is wrong; **medium-high** that 99.2/0.8 is the right
+replacement.
+
+**Consequence: the HANDOFF DECODE FRONT is retired.** It was registered
+(14:24 note) as "the leak family's dominant open front" on the withdrawn
+figures. Nothing was built on it.
+
+## New defect the corrected census exposes
+
+The §3 "well-gated" claim **splits**. Zero-exposure→zero-deny still holds
+(16/16), but proportional firing does not: **4 of 14 games with non-zero
+exposure fired zero deny events** (`d694094e` g4 at 818 exposure-rounds,
+`922b5da8` g2 at 761, plus two trivial). This corroborates the v80 read's
+independent finding (3 of 23 exposed games fired zero deny, and all three
+leaked — 27.6% of that corpus's leakage). Two corpora, one defect:
+**exposure without response is a real and unfixed gate failure**, and it
+is now the leak family's live front in place of handoff.
+
+*Correction authored by the research arm on its own deliverable. Method:
+cross-implementation reproduction, then a controlled reintroduce-the-bug
+experiment to test the proposed cause. The lesson recorded on the board:
+when an agent reports fixing a decode bug mid-task, inherited figures in
+the same document are suspect until re-derived — and the proposed cause
+must itself be tested, not assumed.*
