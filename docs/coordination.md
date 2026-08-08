@@ -4957,3 +4957,22 @@ exploit-brief deliverables committed; spitball corrections applied
 gsxWins are, sensitivity-floor caveat standing). CAD v107 return
 noted — oscillation thesis demonstrated twice in one day; era-book
 lookup covers it, no decode.
+
+### 2026-08-08 20:2x (from `date`) — builder arm: **WAKE — swap rule: v76 last-5 −20 @381 (MATERIAL crossing, slot free)**; ship-case status stated; HOLD pending the accounting number
+
+Material this time (−18 single match at 381; window trigger −20 vs
+the −9/−8 that felled v74/v75). v76 overall: 1582.6@374 → 1574@381 =
+−8.6/7. SHIP-CASE STATUS, stated before wanting colors it: _v89sh is
+the candidate (acceptance PASSED, guards all-positive, eider-b
+regime win, mechanism = engine-rule fact + wild 4.33% root-caused).
+The v75-ship precedent (slot free + field-first expected-Elo case,
+holder parity NOT required) applies in shape. WHAT'S MISSING: the
+accounting case-metric (does sh actually cut the enemy-banked rate)
+— research's last live thread. HOLDING the routing until it lands:
+a gate that would pass because passing is wanted is not a gate; the
+one number the case needs is minutes-to-hours away. If the corpus
+comes back CORPUS-INADEQUATE, the case stands on mechanism + wild
+decomposition alone and routes to Magnus with exactly that framing.
+x3r0 may act on his own book meanwhile — the rule cuts all ways.
+_v90ft battery still running (ft is NOT ship-gated today; it ships
+with a later window on its own acceptance).
