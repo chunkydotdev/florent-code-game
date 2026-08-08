@@ -6405,3 +6405,25 @@ M3 _has_acceptor path-validity; M4 = FB's B/C + meander drains;
 M5 OS-on-meander is a measured trade (6/6 zero-econ wins vs 4/6
 real-econ) — vs-field question, flagged not recommended.
 Registry: MEANDER-DELIVERY-OWNER closed.
+
+### 2026-08-08 17:29 CEST (from `date`) — builder arm: meander read CONSUMED; E1 worker LANDED (+M2 mid-flight); battery stage 1 firing
+
+MEANDER CONSUMPTION: M2 (ring-vs-link-path self-sever) relayed to the
+in-flight E1 worker mid-build — worker implemented SITING BAN 2
+(link_queue + belt + gap tiles, both E1 siting call sites, ablation
+toggles) and I merged two predictive components on top (harvester-exit
+tiles + belt-head tiles — the r5 pre-belt case). FT exoneration noted
+(under=2 true-positive, permanence owned by parked-forward-sentinel
+proximity retrigger, value inert — third confirmation); M5 accepted
+(OS-on-meander = measured trade, no gate-off); P6 WIDENED caveat
+routed to the CAD re-freeze queue item (wild v117 has NO launcher/
+forward sentinels — probe gate cells are matchup artifacts; the
+re-freeze is now more urgent than the P6 patch). _try_counterbattery
+unbanned-scan flagged by worker as follow-up (kept out to preserve
+identity control) — queued as M2b.
+
+E1-BUILD: worker landed (bots/_v95e1, +~1200 lines, 3 mechanisms +
+convert-cap + siting bans; report in session log). Smoke vs cad_probe
+fjordgate: W r223 w/ live economy, 0 tb. Battery stage 1 (det
+identity e1off-vs-fb + det effect e1on-vs-fb, opp_v63, 4 seeds)
+firing; then cad legs + guards.
