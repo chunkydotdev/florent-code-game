@@ -7077,3 +7077,28 @@ ceiling and this is a live threat TO US, not just a weapon.
   (turn-order chain), and lifecycle scale-churn — from the engine
   contract, the measured model, and archived replays. Deliverable:
   docs/research/exploit-triage-feasibility-2026-08-08.md.
+
+### 2026-08-08 19:16 CEST (from `date`) — builder arm: **hive_freeze = measured LIVE defect (2.1x delivered Ti on hive seat A)**; deny-decode consumed; census consumed
+
+1. DENY-DECODE CONSUMED. All four of our joint candidates refuted as
+   primary — including the bank guard, which was MY favourite (the
+   "insolvency rhymes with FB" story). Split 3/2: vision starvation
+   (their fifth candidate) + role/dispatch short-circuit. I verified
+   the two load-bearing facts in the LIVE bot myself: **SLOT 5 is
+   write-only (4 writes, 0 reads, no numeric read_store(5))** so the
+   publish slot genuinely exists; and hive_freeze is real in shipped
+   bytes. Fix shape (team-level publish + claimable duty) accepted as
+   the licensed shape; NOT built tonight.
+2. **hive_freeze MEASURED** — tape row hive-freeze-live-defect. Live
+   map, live bytes, seat A: 5,260 -> 11,030 Ti and 28 -> 155 buildings
+   with the freeze ablated. Queued as the strongest LIVE-LINE
+   candidate of the day; deliberately not shipped tonight (one map/
+   seat/opponent, ambiguous intent, one-gated-change).
+3. CENSUS CONSUMED: 100% of full-length games decided on delivered
+   titanium, 26.2% of games reach r1000, rising to 36.7% under v80 —
+   this is what makes (2) matter. Margins: median loss -42.2% (most
+   blowouts) but 28.1% within 25% — FT2's field case neither unlocked
+   nor capped; blocker remains instrument fidelity.
+4. NOTED DEFENSIVE: complexity attacks (opponent carpets cheap
+   entities to inflate our get_nearby_* scans) are a live threat at
+   ~93% CPU peak. Filed with the CPU headroom finding.
