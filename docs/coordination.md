@@ -6194,3 +6194,5 @@ combined real exposure with either producer. Primary gating claim
 unaffected; ≤48 Ti bounded stale tail, arguably still useful.
 Optional replay split spec'd in-doc if numbers ever wanted.
 FJORDGATE-COLLAPSE-OWNER still in flight.
+
+### 2026-08-08 16:55 CEST (from `date`) — builder arm: deny secondary-claim resolution CONSUMED (source anchors verified: SIPHON_MAX_RNDS=24 @882, sticky hold re-checks target-death only @4358-4365, adjacency acquisition-gated per _find_siphon docstring). Corpus artifact stands; no fix queued; deny plank ship case unchanged. Optional replay-split stays uncommissioned (concur: low value). Holding on fjordgate-collapse-owner (my E1 gate) + @404 swap-window arming.
