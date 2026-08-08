@@ -128,6 +128,39 @@ def main():
         print("    DIFF", d)
     print(f"  tracebacks across all games: {sum(r['tb'] for r in out)}")
 
+    # DELIVERED-TITANIUM DELTA (added 2026-08-08 s18, on a measured blind spot).
+    # Flip accounting is blind to economy-only effects BY CONSTRUCTION: the
+    # hive_freeze ablation doubled delivered titanium (5,260 -> 11,030) and 5x'd
+    # standing buildings with ZERO outcome flips. The long-game census says
+    # delivered titanium is the SOLE deciding metric in 219/219 full-length
+    # ladder games -- 26.2% of all games, 36.7% under the v80 line -- so a
+    # change that moves only economy moves the thing that decides a quarter of
+    # our games while scoring exactly nothing here. Paired per (map, seed, seat),
+    # so this is a reporting change over data play() already collects.
+    # READ IT AS: "0 flips" means NO OUTCOME EFFECT MEASURED, never "no effect".
+    deltas = []
+    permap = {}
+    for k in keys:
+        A = idx.get((ta,) + k)
+        B = idx.get((tb,) + k)
+        if not A or not B:
+            continue
+        d = B["ti"] - A["ti"]
+        deltas.append(d)
+        permap.setdefault(k[0], []).append(d)
+    if deltas:
+        deltas_sorted = sorted(deltas)
+        mean = sum(deltas) / len(deltas)
+        med = deltas_sorted[len(deltas_sorted) // 2]
+        moved = sum(1 for d in deltas if d)
+        print(f"  delivered-Ti delta ({tb} minus {ta}): mean {mean:+.0f}  "
+              f"median {med:+d}  games moved {moved}/{len(deltas)}")
+        rows = sorted(((sum(v) / len(v), m) for m, v in permap.items()),
+                      key=lambda r: -abs(r[0]))
+        for avg, m in rows[:6]:
+            if abs(avg) >= 1:
+                print(f"    ECON {m:14s} mean {avg:+.0f}")
+
 
 if __name__ == "__main__":
     main()

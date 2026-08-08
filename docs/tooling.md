@@ -416,3 +416,29 @@ reason that can actually be acted on next time.
 **Carry to the retro** (Magnus): the gate currently asks for a measurement the
 platform cannot provide before the fact, which will recur every cycle until the
 wording changes.
+
+## "0 flips" means NO OUTCOME EFFECT MEASURED — never "no effect" (measurement-stack finding #5, 2026-08-08 s18)
+
+`tools/det.py` accounts GAME-LEVEL FLIPS. A change that alters economy without
+changing who dies first scores **exactly zero**, by construction. Measured
+instance: the hive_freeze ablation doubled delivered titanium (5,260 → 11,030)
+and 5×'d standing buildings (28 → 155) across 6/6 paired seeds with **0 outcome
+flips**. It surfaced only as a by-product of an unrelated decode.
+
+That blindness is expensive because of what the long-game census then measured:
+delivered titanium is the **sole** deciding metric in 219/219 full-length ladder
+games — 26.2% of all games, and 36.7% under the v80 line. So the det instrument
+was blind to the one metric that decides a quarter of our games and a rising
+share of them.
+
+**Fix shipped in `tools/det.py`**: every run now reports a paired
+delivered-titanium delta (mean / median / games-moved) plus the top per-map
+economy movers, computed over data `play()` already collected — a reporting
+change, not a new measurement. Validated against the known hive case: it prints
+`delivered-Ti delta (off minus on): mean +2885 median +5770 games moved 6/12`
+on the same leg whose flip count is 0.
+
+**Tape convention, standing:** a "0 flips / no effect" verdict must be written as
+"no OUTCOME effect measured" and paired with its economy delta. Older rows
+predating this change were written under the blind instrument — re-read them
+accordingly rather than trusting their silence on economy.
