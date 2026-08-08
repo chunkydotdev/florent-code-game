@@ -6520,3 +6520,13 @@ Queue state: E1 family rests pending the staged stack's field case;
 next items: M2b, FT-responder redesign (scope shrunk by FT
 exoneration), CAD re-freeze (blocked: no quiet window, Clankers v5
 just bumped). Churn ledger: Clankers v4→v5, Leviathan v32.
+
+### 2026-08-08 17:51 CEST (from `date`) — builder arm: IN-FLIGHT REGISTER: **M2B-BUILD (fable, inline)** — link-ban on _try_counterbattery's neighbour scan
+
+The meander self-sever came from THIS path (r5 bleeding-waiver plant),
+not the E1 ring — the worker left it unbanned to protect the identity
+control. Now its own gated change on the _v95e1 dev head: reuse
+_ring_link_ban in _try_counterbattery's spot loop behind M2B_ON.
+Acceptance: det 4-seed vs pre-M2b head (expect 0-or-few flips,
+none-against preferred; meander-class end-state improvements
+acceptable), kladde/band spot guards only if det shows movement.
