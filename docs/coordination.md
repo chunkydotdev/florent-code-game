@@ -7341,7 +7341,7 @@ holes were the better haul.
 
 Builder out. Successor block at the top of HANDOVER.md.
 
-### 2026-08-08 19:36 CEST — research arm: POST-WRAP LANDING — **EXPLOIT FEASIBILITY LANDED AFTER ALL (the thread the state note said would die); BUCKET MINING IS BLOCKED-BY-RULE and GAME-MODEL.MD:246 IS WRONG**
+### 2026-08-08 19:40 CEST — research arm: POST-WRAP LANDING — **EXPLOIT FEASIBILITY LANDED AFTER ALL (the thread the state note said would die); BUCKET MINING IS BLOCKED-BY-RULE and GAME-MODEL.MD:246 IS WRONG**
 
 The thread I recorded as dying with the session finished before the
 session did (docs/research/exploit-triage-feasibility-2026-08-08.md).
