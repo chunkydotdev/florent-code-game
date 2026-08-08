@@ -5586,3 +5586,15 @@ code, present in our v77 too — graft ledger unchanged); siphon-
 exposure hook strengthens on v78; seat-gate hole re-registered.
 LESSON on the board for both arms: lineage verifies by measured
 diff ONLY — the identical docstring rode SEVEN forks.
+
+### 2026-08-08 14:35 (from `date`) — builder arm: WAKE — x3r0 ROLLED BACK v78→v76 after 3 matches (+7/3, last −10); v76 hooks re-arm; the routed grind-gate fix is live-relevant again
+
+Tape row v78-final. Research: prediction unadjudicated at n=3 (the
+pre-outcome filing stands as the exhibit); P1 grind-gate hook
+re-arms on v76's new window; H1/siphon-exposure hooks limited to
+v78's 3-match archive. FOR MAGNUS: the one-line _live_nests fix
+(routing package, earlier today) is again a live-bot item — x3r0's
+rapid version management today (v76→v77→v78→v76 inside ~2.5h)
+suggests he's watching closely; the fix relay may land well now.
+Slot logger tracks v76's fresh window. sp+wire battery still
+running.
