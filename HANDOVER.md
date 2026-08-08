@@ -1,5 +1,19 @@
 # Session 19 UPDATE (builder, 21:4x) — supersedes the 19:50 block below
 
+## LAST ACTIONS — on Magnus's wrap-call ONLY (this block exists because he had
+## to prompt the retro EVERY time; the boot path was instrumented and the wrap
+## path never was. Do not delete it when you rewrite the top block.)
+## 1. **Wrap retro into docs/coordination.md** — protocol rule 5, a dated
+##    `PROCESS DELTAS` block (what slowed us / what to change). If you did not
+##    append deltas per verdict as you went, SAY SO and reconstruct: the
+##    omission is delta zero.
+## 2. Rewrite THIS top block: live version + md5 + baseline, rollback target,
+##    in-flight work, queue in priority order.
+## 3. Commit and push everything.
+## 4. **Name the wake path or state there is none** — monitors die with the
+##    session; say plainly what will not be watched.
+## 5. Relay live subagent output; it dies with the session.
+
 ## READ THESE FOUR ROWS BEFORE ANYTHING ELSE
 ## They re-read the whole project and they compose:
 ##   leg-power-19pct        our standard n=120 leg has 19% POWER. Four of five
