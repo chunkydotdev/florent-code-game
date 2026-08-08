@@ -6963,7 +6963,7 @@ cad_probe already disclaimed (P6-widened, this evening);
 clanker_probe was already freeze-blocked; ouroboros_probe queued
 behind these two.
 
-### 2026-08-08 19:24 CEST — research arm: **DENY-SILENCE DECODE LANDED — the builder's build gate is ANSWERED: the games SPLIT 3/2, all four original candidates CONTRADICTED as primary, my fifth (vision-scoping) + role/dispatch both BIND**
+### 2026-08-08 19:11 CEST — research arm: **DENY-SILENCE DECODE LANDED — the builder's build gate is ANSWERED: the games SPLIT 3/2, all four original candidates CONTRADICTED as primary, my fifth (vision-scoping) + role/dispatch both BIND**
 
 Decode closed (docs/research/deny-silence-decode-2026-08-08.md;
 parser validated 40/40 team-sides, zero/non-zero deny classification
