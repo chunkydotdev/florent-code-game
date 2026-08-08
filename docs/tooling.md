@@ -452,3 +452,37 @@ separately labelled median-over-moved.
 "no OUTCOME effect measured" and paired with its economy delta. Older rows
 predating this change were written under the blind instrument — re-read them
 accordingly rather than trusting their silence on economy.
+
+## The delivered-Ti delta is CONFOUNDED BY GAME LENGTH — read the win condition before reading the number (builder, 2026-08-08 s19)
+
+Measurement-stack finding #5 taught det.py to report delivered titanium
+because flip-counting was blind to the metric that decides 26.2% of games.
+The very first use of the new column would have caused a revert of a good fix
+if read at face value, so the column needs this caveat attached to it
+permanently.
+
+PIECE HV (the hive_freeze fix) reported **delivered-Ti delta mean −1200 on
+hive**, which reads as a straight economic regression. The win-condition
+breakdown says the opposite:
+
+| arm | turns | win condition | our Ti | their Ti | buildings |
+|---|---|---|---|---|---|
+| parent | 1000 | `titanium_collected` (tiebreak) | 5340 | 2670 | 27 |
+| hv | **399** | **`core_destroyed`** | 2940 | 960 | 54 |
+
+Both arms WIN. The fix converts a 1000-round tiebreak grind into a core kill
+601 rounds earlier. Delivered titanium is lower only because there were 60%
+fewer rounds in which to deliver it — the delivery RATE went 5.3 → 7.4
+Ti/round, and the opponent's collection was cut by 64%.
+
+**The rule:** delivered-Ti delta is only comparable between arms that ended
+the same way. Before reading it, split by `cond`. A negative delta on games
+that shortened is usually a faster win, and a positive delta on games that
+lengthened is usually a failure to close. The metric answers "who wins the
+tiebreak", so it is meaningful only among games that REACHED the tiebreak.
+
+**Second caveat, same leg:** with NOISE_ON=False on our side and a
+deterministic opponent, all 4 seeds produced byte-identical games. `n=4 seeds`
+was **n=1 distinct game replicated 4×**. Seed count is not sample size when
+the seed only drives noise that is switched off — count DISTINCT end-states
+before claiming replication.
