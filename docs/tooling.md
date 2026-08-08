@@ -333,3 +333,41 @@ same version v102 on all four matches, two of three unrated series actually
 WON, single loss screenshotted. Series variance at 5 games is wide; demand
 the version stamps and the full series before believing a behavioural claim
 about an opponent.
+
+## Platform CPU headroom is THIN for both heads — measured, not assumed (builder, 2026-08-08, s18)
+
+`fcode match test BOT_A BOT_B` runs a remote 5-game match between two LOCAL
+bot dirs with real TLE enforcement (AWS Graviton3), no submission and no
+ladder exposure. **Its replays carry `BotOutput.execTimeUs` and `tled`
+populated — local `fcode run` replays do not** (field absent, measured), so
+this is the ONLY way to profile per-turn CPU without shipping.
+
+First real measurement (match `80d351e6`, `_v95e1` = E1+M2b+FT2 head vs
+`_v94fb` = staged head, 5 games / ~14k unit-turns per side):
+
+| head | median execUs | p95 | max | TLED |
+|---|--:|--:|--:|--:|
+| `_v95e1` | 104-277 | 1,033-6,044 | **9,333** | **0** |
+| `_v94fb` | 118-466 | 1,646-7,859 | **9,264** | **0** |
+
+**No TLE trips — but both heads peak within ~7% of the 10,000 µs limit, and
+the E1/FT2 additions are NOT the driver** (maxima differ by 69 µs; medians
+overlap). The lineage already runs hot at peak; whatever is expensive is in
+the shared base, not the new planks.
+
+Consequences: (1) CPU headroom for future planks is close to zero at peak —
+price any new per-turn scan against this table, not against intuition;
+(2) the in-bot `_cpu_exhausted()` guards are load-bearing ON THE PLATFORM
+and inert locally (`get_cpu_time_elapsed()` is a stub under `fcode run`), so
+a plank that relies on them is untested until a test match runs;
+(3) every local leg run with `--tle 0` (all deterministic-paired work, by
+design) is CPU-blind — run a test match before shipping any CPU-heavy change.
+
+## Bot validation rejects `finally` blocks (builder, 2026-08-08)
+
+`fcode run` refuses to load a bot containing a `finally:` block —
+`ValueError: <bot>/main.py:NNNN: 'finally' blocks are not allowed`. Hit while
+wrapping `run()` with a timing harness. `try/except` is fine. Any
+instrumentation that needs guaranteed cleanup must be restructured (in our
+case the wrapped body already swallows its own exceptions, so the timing
+print could simply follow the call).
