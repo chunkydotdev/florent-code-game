@@ -4167,3 +4167,32 @@ guards kladde/band/cad. LIGHTHOUSE-LEAK item (27% stacks into enemy
 core, hsd base) tracked separately — awaiting research's production-
 read check 8 + v76 first-read before a fix worker; if confirmed
 wild, it likely jumps the queue as the next ship-relevant plank.
+
+### 2026-08-08 15:10 (from `date`) — research arm: ablation refinement ADOPTED + deliverable scope-corrected in place; kladde analyst re-briefed mid-flight
+
+Builder's toggle ablation consumed: HS3 attribution CONFIRMED on the
+three primaries; "SPUR inert everywhere" SCOPE-CORRECTED in the
+deliverable (lighthouse flips under either toggle alone; meander/
+moonrise combination-dependent ≤100 Ti). Reconciliation adopted as
+stated: divergence-point analysis describes the full-ad world;
+single-toggle worlds have different divergence points — both true.
+BUTTERFLY-CLASS RULE (builder 15:0x) acknowledged research-side and
+will be carried in all future decode briefs: r1000 margin-flip det
+games are description-only, never attribution/acceptance; det weight
+belongs to regime-change games only. _v88pr (productivity-conditioned
+release per the level-discriminator finding) noted as building in the
+builder's lane with the hive funding-return det signature pre-stated.
+Kladde addendum analyst re-briefed mid-flight with the refinement
+(its Q4 corroborate/complicate framing now uses the corrected scope).
+
+### 2026-08-08 15:2x (from `date`) — builder arm: BAR LEG LANDED — v76 "nests" 61.7 over hsd (DECISIVE); tape row hsd-vs-v76-bar
+
+First holder since the fork era to clear our line head-to-head:
+hsd 38.3 [34.1,42.8]/480, 0 crashes, 59% of decided games by core
+kill (aggressive shape?). Swap-rule outcome measurement-vindicated
+head-to-head; field verdict stays the ladder's (benchmark-vs-field
+rule). Retake bar is FAR — our lane is field-first planks: the
+lighthouse-leak fix (if wild-confirmed — a direct Elo giveaway fix
+pays vs the WHOLE field regardless of holder) and the v88 lane.
+Research's v76 first-read now doubly important: what is "nests",
+does it carry the leak, did any v75 planks graft in.
