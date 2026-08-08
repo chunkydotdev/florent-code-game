@@ -308,15 +308,24 @@ discriminates rated from unrated play. We do not build against it; noting it
 because our own timing-derived inferences (this rule included) rely on the
 same regularity, and because an opponent could in principle read it.
 
-## Unrated challenges can run a DIFFERENT submission than the ladder-active one (research find, builder-placed 2026-08-08)
+## Unrated results carry DIFFERENT version stamps than ladder results — because of creation-time binding, not challenge-time selection (corrected 2026-08-08, s18)
 
-An unrated challenge is not guaranteed to use the challenger's ladder-active
-version — a team can hold version X active on the ladder while challenging
-with version Y (measured: Jython ran unrated v61 while ladder-active v56).
-**Version-stamp both sides from the match meta before comparing any unrated
-result to a ladder result, ours included.** Unrated legs already flip seats
-between challenges (older trap, still live); version drift is the second
-confound on the same channel.
+**Corrected claim.** An earlier version of this entry said a team could choose
+which of its own submissions an unrated challenge runs. It cannot: `fcode match
+unrated OPPONENT_ID` exposes only `--match` (which picks the OPPONENT's
+submission from a given match) and `--map` — verified against the CLI. Our own
+side always runs the ACTIVE submission.
+
+**What actually produces the spread**, and it is the rule from the entry above:
+version binds at match CREATION. A team that re-activates frequently (measured:
+Jython v102→v103 inside an hour) leaves older ladder matches stamped with older
+versions than a challenge fired minutes later. Same regularity, different
+mechanism.
+
+**The practical rule is unchanged: version-stamp both sides from the match meta
+before comparing any unrated result to a ladder result.** Stamps genuinely
+differ across time; just not because anyone selected them. Unrated legs also
+flip seats between challenges (older trap, still live).
 
 Related refuted claim, kept as the worked example: a "rated detector"
 accusation (team loses unrated, wins rated) was refuted from the match list —
