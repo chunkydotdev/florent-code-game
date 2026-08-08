@@ -5271,3 +5271,65 @@ only, no reflection guessing). Smokes: sentinel r4 on meander
 OS_ON=False control clean. Acceptance battery firing: identity vs
 det_ft + det 240 + guards + v76 compact (geometry gate under test;
 "always" mode comparison deferred to a later window).
+
+### 2026-08-08 13:38 CEST — research arm: **PTP FEASIBILITY LANDED — both parked plays KILLED, both replaced by better ones** (decisions taken under the delegation)
+
+The read LANDS (docs/research/ptp-feasibility-2026-08-08.md; 135
+games parsed, 0 check failures, 0 unattributed damage into 202 dead
+siege turrets).
+
+Q1 ANSWER-BAND COVER: **KILLED.** Best single cover turret reaches
+20.5% CV-coverage of actual turret-killers (ceiling 24-28% — the
+distribution is the limit, not terrain; 50% needs 5 turrets). BUT the
+autopsy found a FREE replacement: 53% of killers were ALREADY ON THE
+BOARD at our plant time — a zero-Ti PRE-PLANT PREDICATE ("candidate
+tile is aligned + in range of a live enemy turret that ALREADY FACES
+it" — bare alignment without facing is worthless) flags 25% of our
+near-core plants, and flagged plants die 87% at median 5 rnds vs 23
+clean; 68/69 flagged plants had a clean in-band alternative. Holds
+14/15 matches, 4/5 opponents — OPPONENT-AGNOSTIC observed-structure
+gating, implementable with the existing API (can_fire_from /
+get_attackable_tiles_from at siege-plant time). NEW BUILD CANDIDATE
+routed to builder: "siege site-selection predicate" — my rec: ahead
+of the anti-Ouro pass (smaller, field-general, pure survival upgrade).
+
+Q2 OURO STEERING (Loki): **KILLED — premise untestable AND leans
+negative.** Zero same-cell repeats exist in the archive (structural:
+one game per map per our-version), and the wild evidence cuts against
+steerability: Ouro's first-gunner tile is IDENTICAL across different
+opponents/openings in 6/16 n≥2 cells, build queue byte-identical
+across opponents in 7/16 — their queue barely keys on us in the wild;
+"STABLE is anti-correlated with steerable" (a tile four openings
+can't move is a constant function). Loki retired from the queue.
+SALVAGE folds into the ANTI-OURO PLANK: 6 cells (archipelago/B,
+atoll/A, saga/A, snowflake/A, hive/B, drumlin/B) where ONE sentinel
+ray covers every observed first-gunner tile with lead time — static
+pre-coverage on known tiles, no steering needed; fjordgate/meander
+fail on timing (gunner r2-3). This becomes the anti-Ouro design
+pass's placement table.
+
+Exploit brief updated in place (supplement B/C statuses + queue:
+Loki removed, site-predicate inserted). Play-the-players postscript
+for the day: the players ARE playable — but through what they
+already do (facing, presence, known tiles), not what we hoped to
+make them do.
+
+### 2026-08-08 13:39 (from `date`) — builder arm: PTP consumed — SIEGE SITE PREDICATE queued (position: directly behind the os verdict, NOT ahead — sequencing rationale below); os placement-table salvage noted for a later rev
+
+Research's ordering rec (predicate ahead of anti-Ouro) arrived after
+_v91os was already built and in battery, and the predicate edits the
+SAME _plan_siege siting region os just touched — parallel branches
+would conflict in the one code area both care about. SEQUENCE
+DECISION: sp waits for the os verdict (~40 min) and stacks on the
+winning head (os if passed, ft if not). Registry row [QUEUED]:
+_v92sp worker — zero-Ti plant-time veto: candidate siege tile
+aligned-with + in-range-of a live enemy turret that ALREADY FACES it
+→ take the clean in-band alternative (existed 68/69; bare alignment
+without the facing test is WORTHLESS — the facing check carries
+everything; 4/5 opponents, never-decays row). Implementable via
+can_fire_from/get_attackable_tiles_from at plant time.
+ANTI-OURO SALVAGE noted for a later os rev (not now): static
+pre-coverage table, 6 cells where one sentinel ray covers every
+observed first-gunner tile with lead time; Loki steering DEAD
+(premise untestable + wild evidence negative). Instrument agreement
+noted: PTP confirms the ouro spec's §6 rows exactly.
