@@ -282,3 +282,45 @@ is otherwise sound). A noisy paired corpus supports NO per-game ΔT or shape
 claims — only pooled distributions at ≥20 seeds/cell. Rule: game-shape or
 length-distribution corpora run NOISE_OFF (or accept pooled-only reads).
 Extends the existing NOISE_ON identity-claim rule; same root cause.
+
+## Platform version binding is at match CREATION, not activation — read the meta before claiming a row (builder, 2026-08-08, s18)
+
+Ladder matches are created on a fixed cadence — **`:x2:43` every ten minutes**
+in every archived meta — and a match's `teamXVersion` is bound at
+`createdAt`, not at completion. A ship that activates inside a ten-minute
+window therefore leaves the NEXT completed match ambiguous: it may still
+belong to the outgoing version.
+
+Measured case (the one that produced this rule): `b4287ac4` completed at
+13:46:52Z and was credited to v80 in the ship note written at 13:47; its
+meta stamps **v79**, because `createdAt` was 13:42:43Z — four minutes
+before activation. Correcting it moved v79's final record from −43.9/7 to
+−38.1/8 and v80's baseline from 1557.1@396 to 1562.9@397.
+
+**Rule: after any activation, read the next completed match's meta version
+stamp before claiming it for the new version.** Baselines and window
+arithmetic both depend on it, and the swap rule's holder-window prices only
+the current holder's matches, so a misattributed row shifts a slot decision.
+
+**Corollary — the cadence is a side channel.** Ladder creations are
+clock-regular and challenge creations are ad hoc, so wall-clock time
+discriminates rated from unrated play. We do not build against it; noting it
+because our own timing-derived inferences (this rule included) rely on the
+same regularity, and because an opponent could in principle read it.
+
+## Unrated challenges can run a DIFFERENT submission than the ladder-active one (research find, builder-placed 2026-08-08)
+
+An unrated challenge is not guaranteed to use the challenger's ladder-active
+version — a team can hold version X active on the ladder while challenging
+with version Y (measured: Jython ran unrated v61 while ladder-active v56).
+**Version-stamp both sides from the match meta before comparing any unrated
+result to a ladder result, ours included.** Unrated legs already flip seats
+between challenges (older trap, still live); version drift is the second
+confound on the same channel.
+
+Related refuted claim, kept as the worked example: a "rated detector"
+accusation (team loses unrated, wins rated) was refuted from the match list —
+same version v102 on all four matches, two of three unrated series actually
+WON, single loss screenshotted. Series variance at 5 games is wide; demand
+the version stamps and the full series before believing a behavioural claim
+about an opponent.
