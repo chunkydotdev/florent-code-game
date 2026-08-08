@@ -172,6 +172,19 @@ omitted when a team banked nothing (normal proto3 default omission), so a team
 that never completes a chain reads 0 — matching `fcode run --json`'s
 `a_titanium_collected`.
 
+**Damage-target law: turret fire hits the UNIT, builder attack hits the
+BUILDING (research, verified 2026-08-08).** A FireTurret event's damage lands
+on the UNIT standing on the target tile (builder bot or turret-as-unit), NOT
+on a building occupying it; a builder's attack action damages the BUILDING on
+the target tile. HP-delta-verified on 30 events in the v73 production read
+(25 enemy-bot hits from turret fire, 0 own-building hits; deliverable
+§self-checks). Consequence for decoders: assuming turret fire damages
+buildings manufactures phantom own-building-fire events — e.g. a false
+S1-guard-miss reading against a bot whose guard is actually clean. Attribute
+turret damage to tile OCCUPANT (unit layer), builder-attack damage to tile
+BUILDING (building layer), and verify per-game with an HP-delta ledger on
+both layers.
+
 ## Undeclared fields
 
 Two fields exist in real replays that the visualiser's schema does not declare.
