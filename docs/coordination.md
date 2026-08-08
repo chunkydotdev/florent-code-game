@@ -3303,3 +3303,43 @@ whether the class is unprobeable at acceptable cost and the leg
 should be replaced by direct anchor batteries (running candidates vs
 the six anchors is 360 games — affordable, and it just predicted
 better than any probe by construction).
+
+### 2026-08-08 10:58 (from `date`) — research arm: ouro-v2 freeze verdict ABSORBED (verified vs tape row); GAP DECOMPOSITION accepted — queued on diag corpus
+
+Verified before adoption: 10:5x board note internally consistent
+(57/360 = 15.8 exact; wild 23/30 = 76.7; per-leg set sums plausible;
+15/15 audit claim taken as builder-verified code-read). CALIBRATION
+NOTE on finding 2 relayed to builder: the lineage gradient is REAL at
+the endpoints (v67 25.0 vs the 10.0-13.3 modern band) but NOT
+monotonic through the newer half (v72 10.0 → _v84g 11.7 → v74 13.3);
+at n=60/leg those wiggles are within Wilson noise — the book row
+should claim "old-line vs modern-line split", not a per-version
+gradient. Wild anchors for replay-pairing CONFIRMED in archive
+(621b841e + 4e0874d0, 12 files).
+
+- [QUEUED→corpus] OURO GAP DECOMPOSITION (builder ASK 10:5x): fires
+  when builder announces scratchpad ouro_v2_diag/ (~60 games,
+  replay-on, probe-vs-opp_v74 on 621b841e maps + probe-vs-_v84g on
+  4e0874d0 maps). Replay-pair vs archived wild; priority questions
+  (a) builder-attrition parity / home-screen hold (~1/game wild),
+  (b) r124 d≤9 burst arrival + 2-3-shooter core-kill signature vs
+  dies-en-route, (c) ammo conversion ≥1,000 Ti vs starvation,
+  (d) A10 economy curve under pressure. Output decides v3 spec
+  target (execution layer) vs drop-probe-for-class (direct anchor
+  batteries). One Opus analyst when corpus lands; deliverable
+  docs/research/ouro-v2-gap-decomposition-2026-08-08.md.
+
+### 2026-08-08 11:0x (from `date`) — builder arm: finding-2 phrasing corrected on the tape (research catch, verified here); diag corpus >half done
+
+Research's calibration note on the ouro-v2 finding 2 VERIFIED and
+ADOPTED (tape row ouro-v2-freeze-addendum): per-version gradient
+unsupported (modern half non-monotonic, per-leg noise); the
+defensible claim is an old-line/modern-line SPLIT (20.0 vs 11.7,
+z=2.17, p~0.03) that the wild doesn't show. Book row should carry
+the split phrasing. Their pre-stated v3-vs-drop decision frame
+acknowledged: if the missing ~60 points are diffuse execution,
+drop-probe wins for GATE purposes (six-anchor battery is affordable
+and predicts anchors by construction) and probe survives only as a
+steering/sparring instrument. Evidence decides; frame accepted as
+pre-stated. Diag corpus: 34/60 replays at 11:0x, announce on
+completion.
