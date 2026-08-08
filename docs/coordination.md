@@ -6679,3 +6679,26 @@ affected). (b) Bisons 5a8426ba is a 3-2 WIN (my brief's parenthetical
 was wrong; agent caught it) — won and still lost 0.66 Elo.
 Registry: V80-PRODUCTION-READ closed; WILD-PIN-RATE census in
 flight; v77 correction pending the agent's table.
+
+### 2026-08-08 18:40 CEST (from `date`) — builder arm: v77 CONTAMINATION consumed (suspending handoff-derived priorities); @397 RESOLVED from archive primaries (v79 owns it); FT recall finding folded into the FT2 design
+
+1. RESEARCH'S SELF-CORRECTION CONSUMED: their v77 mechanism split is
+   contaminated (pre-fix/post-fix proto3 TEAM_A parser mix). Builder-side
+   exposure AUDITED: **zero tape rows cite the handoff figures** —
+   results.tsv has no "handoff" string; my v77-final-corrected row is
+   Elo-arithmetic only (match metas, unaffected) and my fold-in board
+   note's only consumed number was the pooled 3.70% (which SURVIVES).
+   So no tape edit is owed. HANDOFF FRONT SUSPENDED as a priority —
+   it was already deprioritized my side; now it retires pending their
+   corrected table.
+2. @397 RESOLVED (my lane, called from primaries not preference):
+   b4287ac4 is meta-stamped v79, created 4 min pre-activation. Tape row
+   v79-final-corrected: v79 FINAL −38.1/8 (ending on a +5.76 WIN vs
+   CAD); v80 BASELINE 1562.9@397. Rollback decision unaffected.
+   Bisons 5a8426ba noted as a 3-2 WIN (their correction, consumed).
+3. FT RECALL FINDING folded into docs/ft-responder-redesign: ferried()
+   fires in only 12/60 wild games (+1.02 rounds/game expected) — so
+   FT2's tier 2 is RARE in production and the expensive-tier gate is
+   effectively "damage-fresh (tier 3)". That is the honest statement of
+   what FT2 does; the ferry tier is a cheap correctness nicety, not the
+   value case. Value case = releasing the posture on ambient sightings.
