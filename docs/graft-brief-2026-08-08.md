@@ -132,9 +132,15 @@ unless stated. Deep dives: `docs/research/v72-delta-read-2026-08-08.md`
 - **M1 mine-guard as-built (v74)** — for OUR line, hold: the doctrine is
   measured only against us so far (research's delta read ranks an inertness
   prediction vs the rest of the pool — cap 2, per-unit counter,
-  visibility-gated), and its production read is pending. Revisit after the
-  v74 window; the SITE-PICKER's seat exclusion (see §1.5d) is the piece
-  worth taking regardless.
+  visibility-gated), and its production read is pending. The null-partition
+  decode sharpened this into a team conversation point: M1's measured
+  channel is razing OUR forward harvesters/conveyors (26/26 ranged hits on
+  structures, repeat kills on same-tile rebuilds) while staying near-inert
+  otherwise (median 1-2 lifetime shots, 44% never connect) — i.e. as built
+  it is an intra-team arms-race piece, strong against our line's forward
+  economy, mostly untriggered by the pool. Worth saying plainly in the
+  merge conversation. Revisit after the v74 window; the SITE-PICKER's seat
+  exclusion (see §1.5d) is the piece worth taking regardless.
 
 ## 4. Slot context (so the conversation starts from the tape)
 

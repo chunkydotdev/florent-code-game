@@ -768,3 +768,321 @@ question strictly less answerable in a merged line.
   v70 or v72. v74 does not help split it, but it also does not contaminate the
   question — the pre-r80 window is unchanged, so a v74 corpus can still be
   pooled with v72 for opening-phase measurements.
+
+---
+
+## Addendum (2026-08-08): the null-partition test (Q6b resolved)
+
+**Version tags.** `bots/_v84g/main.py` (g84, our v73-content) md5
+`cbb0b8b449110f89be9765028fbf8c54` — **verified against the briefed
+`cbb0b8b4` prefix.** `bots/opp_v74/main.py` md5
+`cb5452e66c69a21d8aa1af340cdc37dd` — **verified against the briefed `cb5452e6`
+prefix**, matches Q6b's own version tag. Our live platform slot = v74 (x3r0)
+throughout.
+
+**Corpus.** `partition_g84_v74.json` (60 rows) joined to
+`partition_replays/*.replay26` (60 files) on `(map, seed, seat)`: 15 maps × 2
+seeds × 2 seats, g84 vs opp_v74. Parsed with a purpose-built extension of
+`tools/replay_census.py`'s wire-level helpers (`tools/replay_schema.md`
+gotchas applied throughout) that keeps full turn-by-turn entity state —
+position, HP, alive/dead, direction — rather than only the first-build
+summary the stock `Replay` class keeps; this was necessary for M1 detection,
+lifetime shot tracking and the damage ledger below. `print_counts.tsv` (60
+rows, ARENA-STDERR channel) joined on the same key. `hsb_v74_full_print_counts.tsv`
+(480 rows) and `hsb_v74_compact_print_counts.tsv` (120 rows) used for marginal
+context only — **no replays behind either, explicitly labelled below.**
+
+### 0. Self-checks
+
+| Check | Result |
+|---|---|
+| JSON-vs-replay outcome agreement (win/turns/cond), 60 games | **60/60** |
+| Delivery identity (`core_deliv × 10 == titaniumCollected`), 120 team-sides | **120/120** |
+| `print_counts.tsv` vs JSON's own `tb` column, 60 games | **60/60 agree** (cross-tool consistency) |
+| Corpus total tracebacks | **19** (matches the briefed 19/60 exactly) |
+
+**Damage-ledger spot check — run over all 60 games, not just 3.** For every
+`FireTurret` event where the source tile held a live gunner/sentinel, the
+target tile's live occupant (looked up in the running position index *at fire
+time*, not post-hoc) was checked for a matching same-round HP delta (−7
+gunner / −18 sentinel), pooled per `(round, id)` so multi-hit rounds are
+matched one-for-one rather than by round-wide value scanning (an earlier pass
+of this check used round-wide matching and produced false positives — fixed
+before any number below was trusted).
+
+- **23,608** gunner/sentinel `FireTurret` events, both teams, all 60 games.
+- **13,443 (56.9%) had no live occupant on the target tile at fire time** —
+  a miss, not a parser gap: `get_attackable_tiles()` is documented as
+  "ignores... occupancy," and the replay shows both bots routinely firing on
+  fixed or remembered tiles whether or not anything is standing there (walked
+  round-by-round in one case: a v74 sentinel at (9,3) on atoll fired at the
+  same empty tile (14,3) every second round for 30+ rounds straight).
+- **10,113 (42.8%) matched a same-round, same-id HP delta — a confirmed
+  hit.** Of those: **7,574 landed on a unit-layer entity** (builder bot,
+  gunner, sentinel, launcher, core) and **2,539 (25.1%) landed directly on a
+  building** (1,765 conveyor, 672 harvester, 102 barrier).
+
+**This corrects `tools/replay_schema.md`'s "damage-target law."** That note
+states turret fire "hits the UNIT... NOT on a building occupying it,"
+verified on 30 events in an earlier read (25 enemy-unit hits, 0 *own-building*
+hits — a narrower claim than the bolded headline, on inspection). This
+corpus's evidence is unambiguous and walked event-by-event: e.g. game
+`g84_atoll_2_a`, round 264 — `FIRE from=(1,11) to=(5,7)` is immediately
+followed by `HP id=483 delta=-18`, where id 483 is a v74 conveyor built the
+prior round at exactly (5,7), with no unit ever registered on that tile. The
+same conveyor is healed (+4, from an adjacent builder), fired on again two
+rounds later, and dies. This repeats on freshly-rebuilt conveyors at the same
+tile five more times over the game. **Turret fire damages whatever occupies
+the target tile, building or unit; the "NOT on a building" clause in the
+standing law does not hold.** Flagging this here rather than editing
+`replay_schema.md` directly — this addendum's write scope is this file only —
+but it should be corrected, since any future decode that assumes turret fire
+is building-immune will misattribute damage. It also matters directly for
+mechanism color below.
+
+### 1. M1-signature per game
+
+Pre-registered signature applied literally: a v74 sentinel built at round ≥
+80 within `dsq ≤ 8` of a live v74 harvester.
+
+- **23/60 games (38.3%) contain ≥ 1 M1-signature sentinel; 48 total across
+  the corpus.** First-build rounds range 81–974 (gate obeyed everywhere: 0
+  instances below r80). Lifetimes range 5–919 rounds (mean 517).
+- **Falsifier check (P2):** M1-signature sentinels in a game ending before
+  r80 — **0**, as required. But note the corpus caveat below: this corpus
+  cannot test the *complementary* falsifier (zero gap in games ending before
+  r80), because every game in it runs past r80.
+- **Hive cross-check:** 4/4 hive games, **0 M1-signature sentinels** —
+  matches the delta read's "exactly 0 on hive seat" prediction exactly (the
+  `hive_bunker` move-phase return blocks the walk half).
+- **Nordkap cross-check:** 4/4 nordkap games carry M1 (the only map at
+  100%), counts 2, 2, 3, 2 — consistent with the "double budget" prediction
+  (`role_n==3` promoted to defend alongside `role_n==4` on this seat); the
+  observed max in this n=4 sample is 3, not the predicted ceiling of 4 —
+  directionally confirmed, not fully saturated at this sample size.
+- **By map, games-with-M1/4 (total sentinels):** nordkap 4 (9), atoll 3 (7),
+  eider 3 (6), antler 2 (7), drumlin 2 (5), lighthouse 2 (3), moonrise 2 (3),
+  fjordgate 1 (2), jackpot 1 (1), meander 1 (2), saga 1 (1), snowflake 1 (2),
+  archipelago 0, heart 0, hive 0. Concentrated on quiet/open maps exactly as
+  M1's own gates predict (round≥80, ≥4 harvesters, no threat, the bank to
+  fund a sentinel) — archipelago/heart, both fast-resolving maps in this
+  corpus (median game length well under 400 rounds), never reach the
+  conditions.
+
+**Facing-corroboration caveat — this matters for how much to trust the
+"23/60" count itself.** M1's own site code always computes a *cardinal*
+facing (`nearest_cardinal(...)`); a diagonal facing is structurally
+impossible for a genuine M1 build. **10 of the 48 flagged sentinels (21%)
+have a diagonal facing** — these are provably **not** M1, they are ordinary
+threat-reactive/siege/counterbattery sentinels that happen to satisfy the
+round+distance geometric test by coincidence. Restricting to the 38
+cardinal-faced sentinels drops the game count to **21/60 (35%)** — only 2
+games (`g84_eider_2_a`, `g84_jackpot_1_a`, both wins for us) lose
+M1-present status under the stricter filter. Of the 38 cardinal-faced
+sentinels, 24 also match this addendum's own `nearest_cardinal`-toward-our-
+core recomputation exactly (a simplified tie-break heuristic, offered as
+corroboration only, not a claim of exact engine parity). **Bottom line: the
+geometric-only signature has a real but modest false-positive rate (~1 in 5
+sentinels, ~2 in 23 games); the qualitative story is unchanged by the
+correction, and — see §2 — the gap widens slightly, not shrinks, under the
+stricter filter.**
+
+**P3 cross-check (mechanism, "guards are mostly inert") — sharply
+confirmed.** Shots fired per M1-signature sentinel over its full lifetime,
+all 48: median **2.0** (cardinal-only 38: median **1.0**), against a
+pre-registered prediction of "≤ 2 median." Distribution is heavily
+right-skewed by two long-lived sentinels that racked up 83 and 448 lifetime
+shots by repeatedly firing on a fixed, mostly-empty tile for hundreds of
+rounds (the same miss-heavy pattern documented in §0). **27/48 (56%) landed
+at least one shot on an occupied tile across their entire lifetime; 21/48
+(44%) never connected with anything, the whole game.**
+
+### 2. The null-partition test
+
+**Honesty constraint first: every game in this 60-game corpus runs past
+round 80** (shortest game is 113 rounds). The delta read's single strongest
+proposed falsifier — "games ending before r80 must show zero gap" — **cannot
+be run against this corpus**; there is no pre-r80-ending partition to test.
+That is a genuine coverage gap in this batch, not a null result, and it means
+this addendum settles the *M1-present-vs-absent* half of the pre-registered
+test only, not the *game-length* half.
+
+**M1-present vs M1-absent, this batch (n=60):**
+
+| Split | Win rate | 95% Wilson |
+|---|---|---|
+| All 60 (batch reproduction) | 23/60 = 38.3% | [27.1, 51.0] |
+| M1-present (loose, geometric signature) | 7/23 = 30.4% | [15.6, 50.9] |
+| M1-absent (loose) | 16/37 = 43.2% | [28.7, 59.1] |
+| M1-present (strict, cardinal-faced only) | 5/21 = 23.8% | [10.6, 45.1] |
+| M1-absent (strict) | 18/39 = 46.2% | [31.6, 61.4] |
+
+Fisher's exact test (two-sided, computed directly — no scipy in this venv):
+loose split **p = 0.42**; strict split **p = 0.10**. **Neither clears
+conventional significance at this n.** The gap is in the predicted direction
+and gets *larger*, not smaller, when the two probable false-positive games
+are removed (both were wins for us, so removing them from the "present"
+bucket pulls that bucket's rate down and the "absent" bucket's rate up) — a
+mechanism-consistent, non-adversarial robustness signal, but still short of
+decisive.
+
+**Confounds, as pre-registered, checked directly:**
+
+1. **Game-length/map confound is real and visible.** M1-present games
+   concentrate on the same quiet/open/long maps that this matchup tends to
+   grind out to r1000 on anyway (nordkap, atoll, eider). Because every game
+   in the corpus is already ≥ 113 rounds, the "M1-eligible vs not" and "long
+   game vs short game" splits nearly coincide here — there is no clean
+   short-game control group inside this batch.
+2. **Turns-regime split, for context (not a clean M1 control on its own):**
+   r1000 grinds 13/32 = 40.6% [25.5, 57.7]; core-kill games (any length)
+   10/28 = 35.7% [20.7, 54.2]. Materially overlapping, unsurprising given
+   (1).
+3. **Map-level table (games-with-M1/total, win rate each half) — n is too
+   thin per cell (0–4) to read causally, included for completeness:**
+   nordkap withM1 2/4 noM1 0/0; atoll withM1 1/3 noM1 1/1; eider withM1 1/3
+   noM1 1/1; hive withM1 0/0 noM1 2/4; archipelago withM1 0/0 noM1 2/4;
+   heart withM1 0/0 noM1 2/4; jackpot withM1 1/1 noM1 0/3; saga withM1 0/1
+   noM1 2/3; snowflake withM1 0/1 noM1 2/3; antler withM1 0/2 noM1 1/2;
+   drumlin withM1 1/2 noM1 1/2; lighthouse withM1 1/2 noM1 1/2; moonrise
+   withM1 0/2 noM1 1/2; fjordgate withM1 0/1 noM1 0/3; meander withM1 0/1
+   noM1 0/3.
+
+### 3. Mechanism color (M1-present games only, n=23)
+
+**Channel A — the guard corridor (melee bait), as hypothesized in Q6b Rank
+1.** Our builder deaths within `dsq ≤ 32` of a live M1 guard at the moment of
+death: **72**, out of 190 total our-builder deaths across the 23 M1-present
+games. Of those 72:
+
+- **40 (56%) took zero confirmed hits from that specific guard** before
+  dying — died to something else (another turret, another builder, a
+  different guard) while merely in the vicinity. Proximity to a guard is not
+  by itself evidence of guard causation.
+- Hit-count-before-death distribution: 0→40, 1→11, 2→15, 3→6.
+- **6/72 (8%) match the predicted ~3-hit-kill signature** (18 dmg × 3 ≥ 40
+  HP) exactly.
+- **26/72 (36%) died on a tile that lies on the guard's fixed facing ray** —
+  used as a cheap proxy for "on the aimed corridor" in place of a full
+  per-round position replay of every builder (out of scope for this pass;
+  flagged rather than silently substituted). Example on-pattern death: game
+  `g84_antler_2_b`, builder #4, died round 225, took exactly 3 hits from the
+  guard before dying.
+
+**Channel B — direct building fire, NOT hypothesized in Q6b, found by the
+damage-ledger check in §0.** Of the corpus's 2,539 turret-on-building hits,
+**26 were fired by an M1-signature sentinel specifically, and all 26 (100%)
+landed on one of *our* buildings** — 14 harvesters, 12 conveyors, spread
+across 10/23 M1-present games (antler ×2, atoll, drumlin ×2, eider ×2,
+fjordgate, lighthouse, nordkap). Several are repeat kills on the same
+position: e.g. `g84_drumlin_1_a`, one M1 sentinel (#1537) kills our
+harvester #253 at (12,10) over rounds 417/419, then our harvester #156 at
+(13,10) over rounds 421/423, then a rebuilt conveyor at (11,10) over rounds
+516/518. **This is a second, previously undocumented M1 damage channel:**
+the guard's fixed facing ray does not just threaten a melee saboteur walking
+through it, it directly destroys any of our unattended forward
+harvesters/conveyors that fall on that line. Framed as mechanism-consistent
+with Rank 1/Rank 2 of Q6b (same underlying geometry — the ray points from
+his mine at our core, i.e. down our own approach bearing), not as a
+free-standing new hypothesis.
+
+**Bodies-drain proxy** (mean live our-builder-bot count at round
+checkpoints, games reaching that checkpoint only — not a paired measurement,
+different games contribute to different checkpoints):
+
+| Round | M1-present mean (n) | M1-absent mean (n) |
+|---|---|---|
+| 80 | 4.83 (23) | 5.00 (37) |
+| 200 | 5.23 (22) | 5.07 (29) |
+| 400 | 5.86 (21) | 5.30 (20) |
+| 600 | 5.90 (20) | 6.80 (15) |
+| 800 | 6.21 (19) | 7.33 (15) |
+| 999 | 6.65 (17) | 7.20 (15) |
+
+Early-game (r80–400) counts are comparable or slightly *higher* in
+M1-present games; a gap in the predicted direction (M1-present lower) opens
+only from r600 on. **Mechanism-consistent with a cumulative late-game drain
+once guards have been up for hundreds of rounds, but this is an unpaired,
+survivorship-biased read (only games that reach r600+ contribute to that
+row) — suggestive, not confirmatory.**
+
+**Attribution language, as instructed:** the guard-corridor and
+direct-building-fire channels are **mechanism-consistent** with the −6.7pp
+drop, not proof of it. Both are real, repeatable, corpus-verified game
+events; neither is large enough on its own, in this n, to certify the full
+size of the drop.
+
+### 4. Print-correlation (ARENA-STDERR channel)
+
+**Channel label, stated plainly:** `print_counts.tsv` counts Tracebacks
+captured on shared stderr from **both bots' uncaught-exception handlers** —
+it is not attributable to one side without further evidence, and none of
+what follows should be read as "v74 crashed more" without that caveat.
+
+- Joined 60/60 games. JSON's own `tb` column reproduces `print_counts.tsv`
+  exactly everywhere checked.
+- **Mean print_count, M1-present games: 0.74/game (17 tracebacks over 23
+  games). M1-absent: 0.05/game (2 over 37).** A roughly 15× difference.
+- **Open attribution, per the task's own framing:** the project has
+  historically found opponent-side diagnostic prints correlating with *our*
+  displacement of their builders (the "spitball entry" pattern). M1-present
+  games are also, by construction, games that ran long enough and quiet
+  enough to reach the M1 gates — i.e., games where our forward pressure
+  against v74's economy had time to accumulate. The elevated print rate in
+  M1-present games is therefore **at least as consistent with "these are the
+  games where we pushed hardest on his mines" as with "M1 itself throws
+  more exceptions."** This corpus cannot separate the two; both track the
+  same underlying variable (sustained forward contact with v74's economy).
+
+**Marginal-only context (no replays behind either table, stated per the
+task's channel-labelling instruction):**
+
+- `hsb_v74_full_print_counts.tsv`: 480 rows, 97 prints (0.202/game); r1000
+  subset (264 games) carries 95 of those 97 prints (0.360/game) — the
+  overwhelming majority of prints in the full marginal cluster in long
+  games, consistent with §3's late-game-accumulation read.
+- `hsb_v74_compact_print_counts.tsv`: 120 rows, 19 prints (0.158/game).
+- Task-briefed context reproduced: v74's marginal rate is ~4× v72's
+  (97/480 vs the briefed 13/120); this replay-joined 60-game partition shows
+  19/60 (0.317/game), the same order of magnitude.
+
+### Verdict
+
+**The −6.7pp drop is mechanism-consistent with M1, not decisively
+attributable to it at this n.** Three things are true at once:
+
+1. **Directionally, everything points the same way.** M1-present games win
+   at 30.4% vs 43.2% for M1-absent (widening to 23.8% vs 46.2% under the
+   stricter cardinal-faced filter, which if anything strengthens rather than
+   weakens the read since it drops two probable false positives that were
+   both wins for us). Two independent, real damage mechanisms exist and are
+   corpus-verified: melee bait near the guard (Channel A) and direct fire on
+   our unattended forward buildings (Channel B, previously undocumented).
+   P3's "mostly inert" prediction is sharply confirmed (median 1–2 lifetime
+   shots, 44% never connect) — consistent with a *small*, not large, per-
+   guard effect, which fits a −6.7pp-sized leg-level drop better than a
+   large one would.
+2. **Statistically, this batch cannot certify it.** Fisher's exact two-sided
+   p = 0.42 (loose) / 0.10 (strict) on the M1-present/absent split — neither
+   clears significance at n = 23–39 per arm. The wide, heavily overlapping
+   Wilson intervals ([15.6, 50.9] vs [28.7, 59.1]) say the same thing more
+   bluntly: this n cannot rule out that the entire M1-present/absent gap is
+   sampling noise on top of the map/length confound.
+3. **The corpus's single cleanest possible test is unavailable here.**
+   Every game in this batch runs past r80, so the "zero gap in games ending
+   before r80" falsifier — structurally the strongest test the delta read
+   proposed, because it requires no behavioral inference at all, only a
+   round count — cannot be run. This is a corpus-composition gap, not
+   evidence against M1.
+
+**For the ship case:** treat the −6.7 as **plausibly real and
+mechanism-supported**, price it as a modest tax concentrated in long, quiet
+games against this opponent (consistent with the delta read's own
+"field-neutral and specifically anti-us" framing), but do not treat this
+partition as statistical confirmation — it is a directionally-consistent,
+sub-significant result with a genuine mechanism behind it, not a closed
+case. **The next decisive step, cheap and specific:** a corpus (or a
+targeted pull from the existing 480/120-row marginal tables, if replays for
+any of those games can be located or regenerated) that includes games
+ending before r80, so the one falsifier this batch couldn't run can finally
+be run.
