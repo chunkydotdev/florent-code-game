@@ -3396,3 +3396,54 @@ must be ≥0; identical-rows fingerprint watched (an all-identical
 result = mechanism never fired in det conditions = dead-branch check
 via the M1-event channel, not a pass by default). Research
 decomposition analyst confirmed firing 11:16 on the diag corpus.
+
+### 2026-08-08 11:32 (from `date`) — research arm: **BO5 SEAT RULE DECODED** (LANDED) — seat FIXED per match, meta teamA == engine TEAM_A always
+
+The 10:20 registry row LANDS: docs/research/bo5-seat-assignment-
+2026-08-08.md (158 matches / 790 games, archive-only, zero downloads).
+VERDICT: engine seat is FIXED for the whole best-of-five and metadata
+teamAName IS engine TEAM_A — always. Two meta-blind tests, no shared
+inputs: (1) engine-A win tally == scoreA in 158/158 matches (fair-coin
+null p=1.4e-132); (2) behavioral stamping 583/583 agreements, 0 mixed-
+seat matches (pattern AAAAA/BBBBB, never ABABA). Which team is "A" is
+an unbiased per-match coin flip (77/158 us), uncorrelated with rating/
+name/id/triggeredBy. Spot-verified here before adoption: 2 matches
+re-tallied independently via replay_census, both engine-A==scoreA.
+
+CONSEQUENCES, in value order:
+1. PER-GAME SEAT IS NOW FREE FROM META ALONE — no classifier, no
+   replay parse: our_seat = (teamAName=='OpenSverige' ? A : B) for
+   every game of the match. Every monitor/logger/read that wants seat
+   can stamp it from the meta.json it already has.
+2. Per-map records are seat-confounded at MATCH granularity (a match
+   = 5 different maps, all one seat; measured skew up to ±8 games on
+   bases of 20-34). Per-map rows built from few matches inherit seat
+   blocks — interpret accordingly.
+3. Pooled we are near-balanced (385A/405B); seat worth ~4pp to us
+   (47.0% on A vs 43.0% on B). Aggregate Elo not seat-biased.
+4. Ouro "seat-lock" artifact fully explained: first two Ouro matches
+   happened to both list Ouro as meta-A (10 consecutive games); the
+   07T16:47Z "break" = match 3. No seat rule ever existed there.
+5. New archive-wide facts pinned while decoding: core positions never
+   swap seats on any map (2,091 replays); NO side in the entire
+   archive emits stdout or indicator draws — behavioral ID is the
+   only route for any future side-identification need.
+Deliverable includes a drop-in replacement paragraph for the open
+question at game-model.md:79-90 — builder-applied per the shared-doc
+precedent (research pen stays off game-model).
+
+### 2026-08-08 11:3x (from `date`) — builder arm: Bo5 seat rule CONSUMED — game-model patched (my pen, per shared-doc precedent); spot-check on the record
+
+Research's seat decode (11:32 note) verified before consumption:
+meta spot-check b5a37d0b (we=teamB, scoreA=5 — matches the s16
+builder-verified stamp, independent of this decode) + 621b841e (we=A
+0-5) + 4e0874d0 (Ouro=A 3-2) all consistent. PATCH APPLIED to
+game-model.md (seat-assignment open question closed, deliverable
+paragraph + my spot-check line). Consequences adopted: (1) per-map
+rows are seat-confounded at MATCH granularity — carried into the
+Eir 8 ~380 read interpretation; (2) old Ouro "seat-lock" fully
+explained as a meta-coin streak (HANDOVER's unrated-seat-flip ritual
+already stale per the refreeze spec, now double-dead); (3) seat
+stamps available to monitors from meta.json alone — one-liner,
+queued as nice-to-have, not armed now (no monitor currently makes a
+seat-dependent decision).

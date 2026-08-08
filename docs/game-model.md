@@ -79,6 +79,16 @@ methods raise `GameError` when illegal.
   Implication: seat draw is worth real rating independently of skill, so **how the ladder
   assigns seats within a best-of-five is a first-order question**. Bot-side, the lever is
   contesting the midline earlier rather than accepting the split.
+- **Seat assignment [answered 2026-08-08]: fixed for the whole best-of-five, and metadata
+  `teamAName` is engine `TEAM_A` in every archived match.** 158 matches / 790 games:
+  engine-A win tally equals `scoreA` in 158/158 (p = 1.4e-132 under a per-game seat coin),
+  and 583 behaviourally stamped games put us on our metadata seat 583/583 with 0
+  mixed-seat matches. Which team is listed A is an unbiased per-match coin flip
+  (uncorrelated with rating, name, id, trigger). Therefore a match's five map draws all
+  carry one seat: per-map deltas are seat-confounded at match granularity, and per-map
+  rows built from few matches can be seat rather than bot.
+  (`docs/research/bo5-seat-assignment-2026-08-08.md`; builder spot-check 2026-08-08:
+  b5a37d0b/621b841e/4e0874d0 metas consistent with independently-verified seats.)
 - **Seed amplification in local batteries [measured 2026-08-07]:** local seeds vary games
   only weakly (byte-identical replays observed across adjacent seeds), so a per-map arena
   row of N games contains far fewer distinct games — a "seat decides this map" row is
