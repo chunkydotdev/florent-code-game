@@ -266,3 +266,96 @@ v77  8/12   v79  4/20   v80  5/32   v83  5/10   v84  4/16
 ```
 Per-version n is too small to read individually; pooled into eras it is section
 C, and section C says flat.
+
+---
+
+# ADDENDUM 2 (23:0x CEST) — I over-read my own map table. Only hive survives.
+
+Run before accepting a 25-download budget aimed at map cells. It changes what
+that budget should be spent on.
+
+## The between-map spread is real, but it is ONE map
+
+Null: a single global killed-rate (196/500 = 39.2%) with binomial noise per map.
+
+```
+chi-square heterogeneity = 40.2 on 14 df
+permutation p (20,000 draws under one global rate) = 0.00030
+```
+
+So the maps genuinely differ — the s19 "59-point spread on a near-uniform draw"
+is not an illusion. But per-map exact binomial tests, Bonferroni-corrected over
+the 15 maps we actually looked at:
+
+```
+hive         25/34 = 74%   p=0.0001   p*15 = 0.002   *** SURVIVES
+meander       7/36 = 19%   p=0.0193   p*15 = 0.290
+eider        16/27 = 59%   p=0.0554   p*15 = 0.830
+antler        7/29 = 24%   p=0.1351   p*15 = 1.000
+drumlin      19/36 = 53%   p=0.1369   p*15 = 1.000
+snowflake    18/36 = 50%   p=0.2486   p*15 = 1.000
+...all remaining maps p*15 = 1.000
+```
+
+**hive is the only map distinguishable from the global rate once you correct
+for having looked at fifteen.** The entire heterogeneity signal is hive.
+
+### What this retracts, in my own doc above
+
+Section 2 presented a tier of bad maps — hive 75%, eider 71%, snowflake 61%,
+drumlin 56% against strong opposition. **That tier is not supported.** eider,
+snowflake and drumlin are consistent with the global rate. Read section 2 as
+"hive, and then fourteen maps," not as a ranking.
+
+Section 1's drumlin result is weaker still. "drumlin is the fastest death at
+212 turns" is a rank-1-of-15 claim with no correction applied, and drumlin's
+kill *rate* does not survive correction either. **I am withdrawing "drumlin
+CONFIRMED."** The honest statement: the builder's prediction named two maps —
+one (hive) is the single real cell on the board and was named for the wrong
+reason (speed, where it ranks 6th), and the other (drumlin) does not separate
+from noise on either variable.
+
+This also disposes of the s19 HANDOVER line "drumlin has never been examined by
+anyone." Correct, and there is no measured reason to start.
+
+## The same correction applies to the fork-split table
+
+Splitting each map at the v86 fork point (v72–76 vs v77–84), strong opponents
+only, produced per-map deltas from −31% (atoll) to +44% (jackpot) around a
+pooled delta of **−3%** (early 47% killed, n=180; late 44%, n=170). At n≈10–20
+per cell that is a noise fan, and the apparent improvement on
+eider/drumlin/snowflake does not survive:
+
+```
+three maps, fixed four carriers: killed 83% (n=24) -> 59% (n=17)
+bootstrap 95% CI on the change: [-52%, +3%]   does NOT exclude zero
+```
+
+**So I have no evidence that the v77–v84 era helped or hurt any map**, and I am
+not offering the builder one for the slot decision. hive is the internal control
+that makes this readable: 75% killed before the fork, 75% after, mean opponent
+rating 1629 vs 1635 — dead flat while everything around it wobbles.
+
+## What DOES survive, and it answers the gating question
+
+Hive, split at the v86 fork point (v86 = a 128-line diff from `opp_v76`):
+
+```
+v72-76  (the lineage v86 DESCENDS FROM):  n=16   win 12%   KILLED 75%
+v77-84  (what v86 REVERTED):              n=18   win 17%   KILLED 72%
+  strong opponents only:  v72-76  9/12 = 75%     v77-84  9/12 = 75%
+```
+
+**The hive defect predates v77. It did not leave the ladder with x3r0's revert —
+it is live in v86 right now.** That is the one map-scoped claim in this document
+that survives correction, and it is what the download budget should be spent on.
+All 25 on hive; nothing on drumlin.
+
+## Process note against myself
+
+Addendum 1 and section 2 both ranked fifteen cells and read the top of the
+ranking as a finding. That is the multiple-comparisons trap, and I walked into
+it twice in one document before testing for it. The test cost one query. The
+s19 delta "a claim's SCOPE is part of the claim" has a sibling: **a claim's
+SEARCH SPACE is part of the claim** — "worst of 15" is not a measurement until
+it is corrected for the 15.
