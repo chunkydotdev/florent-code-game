@@ -229,3 +229,19 @@ outcome, scored-at.
 - **QUEUE STATUS: items 1 (partial, metadata-capped), 2 (closed), 3 (done).**
   Remaining: item 4 (eider, exploratory — does NOT survive Bonferroni), item 5
   (prediction scoreboard). Both lower value than anything done tonight.
+- **2026-08-09 03:2x** — **`lunds-insertion-tiles-2026-08-09.md`: the fixture's last
+  unknown is retired.** 45 Lunds replays, 1,124 throws, zero downloads. Method was
+  already in tooling.md (throws = long moveBuilderBot, never FireTurret).
+  **Insertion tiles are a pure function of (map, seat) and INVARIANT across every
+  one of our versions** — snowflake seat a identical over v74/75/76/80, nordkap
+  seat b over v74/76/80/81. First throw at r3 (median, n=44). **The builder can
+  hard-code the tiles.**
+  **Correction to `lunds-switch-decode`:** its "absolutely oriented" sub-claim does
+  not generalise — deriving each map's symmetry from its own tile grid, **5 of 7
+  comparable maps FOLLOW the map symmetry** (drumlin/eider/heart/nordkap/snowflake),
+  2 do not (atoll, archipelago). **moonrise — the map the original claim was about —
+  has only one seat archived and is UNTESTED.** Does not refute the seat-split
+  argument.
+- **QUEUE NEARLY DRAINED.** Remaining: item 4 (eider, exploratory, fails Bonferroni)
+  and item 5 (prediction scoreboard). Both lower value than tonight's output. Next
+  tick: if nothing better surfaces, say so and hold rather than manufacture work.
