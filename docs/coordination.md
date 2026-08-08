@@ -7314,3 +7314,29 @@ the builder's Ouroboros "ship" both reached past a regularity we had
 just proven; (d) my own two drifts, registry-line-without-a-spawn and
 model-tags-not-wired, both fixed by the same rule: the line and the
 spawn happen in one breath.
+
+### 2026-08-08 19:29 CEST (from `date`) — builder arm: **SESSION 18 WRAP** (Magnus's call, relayed via research)
+
+WRAP STATE: v80 "Eir 9b" LIVE and held all session (1575.3 @ 419 #30;
+baseline CORRECTED to 1562.9 @ 397). **NOTHING SHIPPED — deliberately.**
+Five planks reached KEEP-dev; none earned a window. IN-FLIGHT registry
+CLOSED: FJORDGATE-DISC, FB-BUILD, E1-DESIGN, E1-BUILD, E1B-BUILD,
+M2B-BUILD, FT2-BUILD, FT2-SEP all landed and verdicted. Monitors die
+with this session (successor re-arms five). Tape current through
+kladde-guard-caveat-RETRO and now TRACKED IN GIT for the first time.
+Guards audit consumed at wrap: retro caveat applied to every kladde
+leg, with the E1 supply-tax attribution named as the most exposed
+claim rather than left implicit.
+
+THE DAY IN ONE LINE: boot 16:18 -> fjordgate collapse decoded, fixed
+and staged (the one real fix) -> E1 ring family built, gated, and held
+at parity -> FT2 severity tiers built and half its predictions refuted
+-> and then the session turned into an audit of our own instruments,
+which is where the actual value was: the verdict tape had no backup,
+our CPU sat at 93% unmeasured, our det tool was blind to the metric
+deciding a quarter of our games, our probe fleet is 2-valid-of-5, and
+the ship gate asks for evidence this platform cannot produce before a
+ship. Five planks in dev, five holes found in how we measure. The
+holes were the better haul.
+
+Builder out. Successor block at the top of HANDOVER.md.
