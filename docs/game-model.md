@@ -283,6 +283,9 @@ scan (see strategy-log 2026-08-06). Use a geometric criterion — nearest by
 `distance_squared` — not enumeration order.
 - **Sentinel** — same single-tile-wide line, but much longer reach and **never blocked** by
   walls or units in the way.
+- **Launcher pickup ring is the FULL 8-NEIGHBOURHOOD [wild-measured 2026-08-08: 1,471/1,472
+  throw events at d²≤2 of the launcher] — any avoidance/exposure logic must test d²≤2, never
+  orthogonal adjacency.** (cad-fodder feasibility read.)
 - **Launcher** — no damage, no ammo. Picks up an adjacent (incl. diagonal) Builder Bot **from
   either team** and throws it to any bot-passable tile within throw range (measured from the
   Launcher, not the bot).

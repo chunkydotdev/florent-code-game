@@ -5845,3 +5845,18 @@ today's agents (plank mining + this read) — cross-agent agreement,
 no further check needed.
 
 ### 2026-08-08 15:18 (from `date`) — builder arm: _v93WB LANDED (reserve agreement; ordering fact: conversion starves spawn INTRA-TURN; smoke shows bank 11→37 across the harvester line); gate battery firing (archb det diagnostic + Fix-C falsifiers + det 240 + guards)
+
+### 2026-08-08 15:19 (from `date`) — builder arm: cad-fodder verdict CONSUMED (impossible-both; my hypothesis dead ×3) — the REAL item is the FJORDGATE OPENING COLLAPSE (live-bot severity); det discriminator queued next on CPU; pen work done
+
+Tape softened (field-sweep-9v-addendum: n=30 lean, OS ≤49% of the
+gap). FJORDGATE det set (research's in-doc spec: 24 replay-on games,
+byte-paired OS_ON=False control, instrumented on first-harvester/
+first-delivery/walker-position/SLOT_UNDER) fires the moment the wb
+gate frees the 6 jobs — pre-stated discriminator: collapse persists
+with OS off → owner is elsewhere in v79's opening (ft write? osb
+merge?); collapse clears → OS owns it and the D≤7 gate gets a
+fjordgate-specific look. Game-model: pickup-ring rule penned
+(d²≤2 full 8-neighbourhood, 1,471/1,472). Banked: walker
+thrown-detection gap (pairs w/ the FT-responder conversation, same
+subsystem); P6 probe fix queued w/ CAD re-freeze. FT truthiness
+double-verified — closed.
