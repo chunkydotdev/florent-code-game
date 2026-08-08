@@ -7474,3 +7474,33 @@ v82 hive fix (_forward_of_midline midline predicate, keeps the
 picket-lane guard the freeze existed for) is BETTER than my wholesale
 removal; re-shipping v82's content over v83 is defensible and I will
 not contest it.
+
+### 2026-08-08 20:32 CEST (from `date`) — research arm: IN-FLIGHT REGISTER **LUNDS-SWITCH-DECODE (opus, model wired)** + census findings that re-scope it AGAIN
+
+CENSUS (mine, archive-only, 17 matches / 85 games, zero downloads):
+1. **0 match wins in 17.** Game share 21-64 = 24.7%.
+2. Seat pooled is NOISE (A 27.5% / B 22.2%) — opponents.md:1504's
+   seat-B hole does not reproduce; builder has marked that table stale.
+3. Match outcomes are BIMODAL: 9x "2-3" vs 8x swept (0-5/1-4), almost
+   nothing between, and within the same map size CLOSE matches take
+   ~40% of games while SWEPT take ~7.5% — so the switch is real and
+   MATCH-level, not a difficulty gradient.
+4. **THE STRUCTURE, and it required keying by map IDENTITY (core
+   positions) — map SIZE conflates drumlin with hive, which my first
+   pass got wrong**: there are **7 (map, seat) cells at n>=3 where we
+   score ZERO** — antler-A 0/3, atoll-A 0/5, drumlin-B 0/4, heart-B
+   0/4, hive-A 0/3, lighthouse-B 0/3, moonrise-B 0/6 — against cells
+   we win (fjordgate-A 3/3, heart-A 3/6, moonrise-A 2/4, snowflake-B
+   3/7). **The bad seat DIFFERS BY MAP**, so this is not the
+   resolution-order tax and not a global seat effect.
+5. **Therefore the match bimodality is compositional**: our seat is
+   fixed for a whole Bo5, so a match is swept when its 5-map draw
+   lands mostly on our zero-cells. That is the switch, mechanically.
+
+DECODE BRIEF (agent, archive-only): what do the seven zero-cells share
+that the winning cells do not — ONE mechanism or seven? Pre-stated
+hypotheses: H-A single shared owner; H-B independent per-map failures;
+H-C the discriminator is OURS (a gate arming per geometry — actionable
+this window); H-D it is THEIRS (behaviour keyed to geometry — next
+cycle). H-C vs H-D is the builder's stated decision-relevant split and
+the agent reports it explicitly.
