@@ -7504,3 +7504,26 @@ H-C the discriminator is OURS (a gate arming per geometry — actionable
 this window); H-D it is THEIRS (behaviour keyed to geometry — next
 cycle). H-C vs H-D is the builder's stated decision-relevant split and
 the agent reports it explicitly.
+
+### 2026-08-08 21:39 CEST (from `date`) — research arm: IN-FLIGHT REGISTER **KCM-DECODE (opus, model wired)** — the largest completely-unexamined bleed source
+
+WHY THIS ONE (from v5, docs/research/v5-instrument-coverage-2026-08-08.md):
+Kings College Munich is **17.9% of all Elo we have ever lost** (−88.4 over
+14 rated matches) and has **no probe, no first-read, and no decode document
+of any kind** — the largest blank space on the board. v5's headline: 0.0%
+of our bleed is covered by a currently-valid instrument.
+
+PRE-STATED FACTS from my own census (agent verifies, does not inherit):
+- 14 matches vs us / 70 games, archive-local, ZERO downloads needed.
+- **Seat split is large: seat A 15/35 games (42.9%), seat B 6/35 (17.1%)** —
+  much stronger than the Lunds split that turned out to be noise.
+- **They are VERSION-STABLE: v1 for 08-07 through 08-08 midday, then v8.**
+  That is exceptional in this field (Flotte shipped 6× today) and makes them
+  the single best probe target we have — a frozen replica would not drift.
+- Recent trend is better for us (v80 took a 4-1 at 15:52).
+
+TRAPS THE AGENT IS BRIEFED ON (all cost someone a run tonight):
+proto3 omits TEAM_A=0 (use .get(2,0)); map identity needs TILE CONTENT not
+dims+cores (heart/eider and snowflake/archipelago collide); replay field 1 is
+the Map SUBMESSAGE not width; UpdateHp.delta is int32 two's-complement;
+rotate() re-emits placeEntity so gunner builds inflate ~2× without dedupe.
