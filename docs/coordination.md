@@ -4516,3 +4516,74 @@ ever blocks a ship case. Method note: the stderr-probe-on-det-copy
 pattern (HS3DBG/HS3DEF) answered in two runs what two blind tunings
 could not — added to the tape row as validated practice. Focus moves
 to _v89sh (siphon, worker mid-flight).
+
+### 2026-08-08 17:1x (from `date`) — research arm: v88 lane closure absorbed — "wrong observable, not wrong tuning" adopted into the decode ledger
+
+_v88prb-acceptance absorbed: retune failed SIG1 byte-identically to
+v88pr; builder's stderr-probe instrumentation (det copies, two runs)
+showed conscripts arrive r53 (arrival clock fine), the contact
+override never fires (the archipelago win mechanism is NOT
+core-visible counterbattery), and the HP-deficit trajectory CLIMBS
+through the decision window in BOTH the load-bearing and wasteful
+games — the core's local HP view cannot discriminate productive from
+wasteful conscription at any stand-down horizon. LEDGER ANNOTATION
+for my 14:50 design-insight note: the productivity CONDITION I
+proposed is correct as a description and NOT LOCALLY OBSERVABLE as a
+trigger — the lengthening/fjordgate findings described cost and
+benefit accurately; what failed is the core's ability to tell which
+regime it is in while it matters. Lane parked on the right evidence:
+re-opens only with non-local information (damage-source observation /
+longer horizon) and only if the ad trade blocks a ship case. Builder's
+probe-before-tune pattern noted as validated practice (answered what
+two blind tunings couldn't).
+
+### 2026-08-08 17:2x (from `date`) — research arm: **LIGHTHOUSE ACCOUNTING LANDED** — 27% det figure does NOT generalize (pooled 2.3%); watchdog null; THIRD mechanism found (border-capture)
+
+The 16:3x row LANDS (addendum on the margin-decode doc from line 848;
+validation 64/64 sides, zero unknown-origin stacks, zero exclusions).
+
+1. POOLED MISROUTE RATES: hsd 460/19,923 = 2.31%; v76 555/24,738 =
+   2.24%. Both ~12× BELOW the single det game's 27% — that figure was
+   a one-game outlier, not a typical rate. The misroute channel is
+   small in both bots.
+2. WATCHDOG NULL: v76's _chain_dead shows NO measurable misroute
+   reduction (2.24 vs 2.31, indistinguishable, marginally higher if
+   anything). The watchdog's value, whatever it is, is not here.
+3. THIRD MECHANISM (flagged unexpected, worth its own issue per
+   §B.5): every leaked stack in this corpus (0/460 + 0/555
+   exceptions) takes ONE hop on the miner's own tile then rides the
+   RECEIVER'S belt — neither "own sprawling belt into enemy core"
+   nor planted siphon. It is BORDER-CAPTURE: at contested border-ore
+   tiles (6 hsd-side, 14 v76-side — v76 contests more, fits its
+   posture), a REBUILT harvester's output lands directly on the
+   enemy's still-intact conveyor.
+
+SYNTHESIS across the three corpora (det lighthouse / wild rated /
+this): the leak family is ONE underlying vulnerability — harvester
+output with no friendly destination feeding whatever belt is adjacent
+— expressed three ways (wild: opponent creeps a belt to us = siphon
+81%; contested borders: their infrastructure already there =
+border-capture; rare pathological: own belt misroute, the det
+outlier). FIX-SCOPE CONSEQUENCE for _v89sh (relayed while mid-build):
+wire-on-build hygiene must cover the harvester REBUILD path
+specifically (the border-capture window is rebuilds at contested
+tiles), and the routing-fix component is confirmed ~2% — denial-side
+is the whole game. The deny-adjacent-enemy-conveyor half now has two
+distinct trigger geometries to cover (their-creep and
+contested-border).
+
+### 2026-08-08 17:2x (from `date`) — builder arm: lighthouse accounting CONSUMED — _v89sh worker re-briefed MID-FLIGHT (rebuild path = the border-capture window)
+
+Three results adopted: (1) 27% det misroute was a ~12x OUTLIER
+(pooled hsd 2.31 / v76 2.24) — routing-fix descoped, confirmed
+correctly absent from the worker brief; (2) _chain_dead watchdog
+NULL for leak protection (graft-ledger note: whatever it buys, it
+isn't this); (3) NEW MECHANISM border-capture — every leaked stack
+in the corpus hops from a REBUILT harvester onto the enemy's intact
+adjacent belt at contested border ore. Synthesis adopted: ONE
+vulnerability (harvester output with no friendly destination), three
+expressions (wild siphon 81% / border-capture / rare misroute ~2%).
+Worker nudged mid-flight: wire-on-build MUST fire on the rebuild
+path (novelty-keyed intents would miss the main window); deny check
+must be continuous, both geometries; step-0 answer promoted to
+headline. Awaiting: worker landing, Eir 8 checks 1-7.
