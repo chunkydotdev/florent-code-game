@@ -7133,3 +7133,51 @@ by-product of an unrelated decode; (2) economy-only planks become
 gateable at all — today they can only be found by accident.
 Corollary for the tape: "0 flips" rows should be read as "no outcome
 effect measured", never as "no effect".
+
+### 2026-08-08 19:2x — research arm: **PROBE AUDIT A LANDED — orizon CLASS-VALID (the only instrument whose subject never shipped since extraction); flotte CLASS-DRIFTED with TWO PREDICATES NEVER VALID (extraction defect, not drift)**
+
+Audit A closed (docs/research/probe-fidelity-orizon-flotte-2026-08-08
+.md, 661 lines; parser 809/810 team-sides, the one exception
+diagnosed and on a non-subject team; no BotOutput dependency; control
+cohorts reproduce the extracted signature — that identity is what
+licenses "extraction defect" over "drift").
+
+ORIZON: **CLASS-VALID** (high on type/geometry, medium on magnitude).
+Orizon is v34 in EVERY archived game — extraction version AND current;
+the only probe we own whose subject has not shipped since we froze it.
+15 predicates derived from source; all core ones hold or strengthen
+control→recent (zero sentinels/launchers 100%, ≥2 point-blank alive
+87→100%, shots ≥100 77→100%).
+THE +11.6 ANSWER — same mechanism, inflated firing rate; real in kind,
+optimistic in degree. The probe's in-range plant purity is 1.00 BY
+CONSTRUCTION; wild Orizon's median in-range fraction is 0.46 (control)
+/0.62 (recent), below 0.50 in half its games — the measured rate of
+what the s14 family read described qualitatively as Orizon "failing to
+execute its own script". The probe never fails. Direction of bias is
+HARDER, not weaker, so our fix is not flattered by a straw opponent —
+but field value = probe margin × wild firing rate, so **+11.6
+discounts to ≈ +6 to +8**. Second qualification: gunner-healing is
+Orizon/team-lazy only (Team 48 2-8%, Leviathan 2%), so the probe
+overstates gun durability for half the class block; Team 48 v16 is a
+PURER plant-discipline instance (in-range 1.00 in 87/87 games) and
+would make a better second instrument.
+FLOTTE: **CLASS-DRIFTED**, and two predicates were NEVER VALID —
+an EXTRACTION DEFECT, not drift (they fail identically in both
+cohorts): (1) "1-2 forward gunners planted once" — wild runs a
+CONTINUOUS REBUILD program, median 13-15 built, ~2 alive at a time;
+the probe plants 2 and stops for the match; (2) "zero launchers" —
+wild builds ~2 at ~r10 in 84%/98% of games; the probe has NO launcher
+code at all. Genuine drift on top: turrets moved OFF the core toward
+lane screening (in-range 0.50→0.27, core-shot 0.44→0.31). What holds:
+the economy shape and the saboteur payload (harvester attacks ≥5
+44→80%, kills ≥1 42→71%).
+CONSEQUENCE FOR TONIGHT'S TAPE: the flotte leg run this evening
+(bundle 91.7 vs staged 86.7) measured an opponent that does not
+exist in two load-bearing respects. Attribution-only was already the
+right label; this says re-freeze before it is used again.
+RE-FREEZE SPEC in-doc, with the extraction sources named (47def9cd
+first, then 8e85d256/0ed69121, a7534d35, ae42843f for map spread) and
+an explicit warning NOT to extract from the vs-OpenSverige series —
+baking our own behaviour into an instrument is precisely the cad
+failure mode. Caveat carried: v38 is 6 versions behind live v44, so
+a re-freeze off v38 is an improvement, not a validation.
