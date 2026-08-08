@@ -1,4 +1,41 @@
-# Session 19 UPDATE (builder, 21:4x) — supersedes the 19:50 block below
+# Session 19 FINAL (builder, wrapped 22:09 CEST on Magnus's call)
+
+## ===== READ THIS FIRST: THE FIELD PLAYS A DIFFERENT GAME =====
+## Row `ladder-wide-census-THE-GAP`, measured on 335 games across 10 teams:
+##
+##   TOP TIER (>=1750): **97% of games end by CORE KILL, median 232 turns.**
+##                      sporks / Lorem Ipsum / not adgato / Flotte = 100%.
+##   US:                **72% core-kill, median win 332 / loss 413,
+##                      and 28% of our games reach r1000.**
+##
+## NOBODY AT THE TOP GRINDS. Our one measured edge — the titanium tiebreak at
+## 58% — is in a game the strong field never reaches, because they resolve by
+## turn ~250. It is how we beat Askar City 5-0 and why we are 0-for-17 vs Lunds.
+## **Our 44% CORE-KILL RATE IS THE CEILING METRIC AND NOBODY HAS OPTIMISED IT.**
+## Every plank shipped tonight was economy or defence.
+##
+## TESTABLE PREDICTION for whoever picks this up, answerable in one minute with
+## tools/ladder_census.py: hive (15% share) and drumlin (24%) should be the maps
+## where we are killed FASTEST.
+
+## ===== THREE FREE INSTRUMENTS BUILT AT THE END OF THE SESSION =====
+## Run these BEFORE deciding anything. All API-only, zero downloads, ~1 min.
+##   tools/game_census.py    — our per-game map / seat / winCondition / turns
+##   tools/ladder_census.py  — the SAME for every team on the ladder
+##   eloDelta method         — sum `eloDeltaA/B` keyed on `teamAVersion`.
+##                             NEVER difference ratings; that cannot attribute a
+##                             match to a version and cost 3 corrections tonight.
+## `fcode match info --json` returns games[] with mapName/mapSeed/winnerSide/
+## winCondition/turnsPlayed — every GAME-LEVEL fact we were decoding replays for.
+## Replays are still needed BELOW game level (builds, damage, titanium).
+
+## OUR MAP TABLE (n=500, game share): hive 15% | drumlin 24% | snowflake 41% |
+## eider 41% | archipelago 41% | atoll 45% | nordkap 48% | jackpot 50% |
+## saga 52% | lighthouse 58% | moonrise 58% | heart 59% | antler 59% |
+## fjordgate 59% | meander 74%.  A 59-POINT SPREAD on a near-uniform draw.
+## drumlin has never been examined by anyone.
+
+## ---- (earlier s19 block, 21:4x — still current except where the above supersedes) ----
 
 ## LAST ACTIONS — on Magnus's wrap-call ONLY (this block exists because he had
 ## to prompt the retro EVERY time; the boot path was instrumented and the wrap
