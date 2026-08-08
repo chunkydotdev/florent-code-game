@@ -167,3 +167,17 @@ outcome, scored-at.
 7. **A per-opponent claim requires a per-opponent figure.** Never attribute a
    pooled row's headline number to an entity merely named in its text. Three
    attribution errors in one chain (2026-08-09) came from exactly this.
+- **2026-08-09 02:1x** — **RETRACTION of the punishing-pool table.** Builder refused
+  my correction to its ceiling battery; I checked the primary and it refuted ME.
+  ouroboros_probe is **72.5%** (tape) / 79-93% (current head), not 53% — my figure
+  was a pooled row's headline attributed to an opponent named in its text. **The
+  whole §2 table was built that way; band_probe (88.3%) and orizon_probe (66.7%)
+  invert from "we lose"/"contested" to DOMINATED.**
+  **NET: every external replica is dominated. Arm 1 of my three-arm design does not
+  exist. The builder's original "may not be runnable locally" was right.** Only
+  self-play opponents (opp_v76 38.3, opp_v44 40.8, opp_v69 41.7) can punish, and
+  they share our code. Relayed in time to cancel the post-freeze re-measurement of
+  band/orizon, which would have burned a window.
+  Rule 7 added. Third attribution error in one chain; found only because the
+  builder refused a correction that flattered its own work.
+- **NEXT TICK:** `sprt.py` + `paired_vs_pooled.py` to close item 2, then item 3.
