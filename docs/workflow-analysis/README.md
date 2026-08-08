@@ -57,12 +57,24 @@ elegant fix measured 1.06x and is written up as "do not build this."
 | [v2](v2-2026-08-08-gate-vs-ladder.md) | 2026-08-08 | Does the local gate predict ladder Elo? | **Unanswerable on the current tape — 4 joinable ships, not 35.** Gate rows key on bot dir, ladder rows on version; the join was never recorded. One extra column fixes it. |
 | [v3](v3-2026-08-08-swap-rule.md) | 2026-08-08 | What are the slot-swap rule's error rates? | **It is a timer, not a control.** A truly neutral holder trips it 50.4% at match 8, 96.6% by 20. A genuinely +60-Elo bot still trips it 78.6%. Post-trigger Elo is **positive**. |
 
-### The two rules these bought
+### The three rules these bought
 
 - **v1:** when the measurement refutes the author's own leading hypothesis,
   that refutation is the headline.
 - **v2:** **state what a null would mean before running.** If "no signal" and
   "signal we cannot see" produce the same output, it is not yet a study.
+- **v3:** **state what a wrong parse would look like.** Three decoder faults in
+  one evening (proto3 omitting `TEAM_A=0`; map identity colliding on
+  dimensions; field 1 meaning `width` in `.map26` but a `Map` submessage in
+  `.replay26`) were each **silent, and each produced a plausible table** — no
+  exception, no empty output, just a confidently wrong number. One would have
+  published as "0% of archived games are on local-pool maps."
+
+  **All three were caught by having an independently-derived number to
+  contradict them — redundancy, not diligence.** That is an argument the
+  two-arm structure works because the arms measure *overlapping* things, not
+  because they partition cleanly. Worth weighing against the protocol's
+  disjoint-surface design before anyone optimises the overlap away.
 
 ## Scripts
 
