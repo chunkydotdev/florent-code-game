@@ -7235,3 +7235,82 @@ wild games of this class against our own bot; NOT from v79/v80
 alone). Also: no kladde-vs-us wild game since 08-08 03:06 (our v72,
 six versions ago) — the 10% is the last measured value, not
 necessarily current.
+
+### 2026-08-08 19:28 CEST — RESEARCH ARM STATE NOTE (s18 wrap, on Magnus's explicit call "let's wrap up after this cycle")
+
+LADDER AT WRAP (verified): v80 "Eir 9b" LIVE, 1575.3 @ 419 #30 —
+window +18.2 over the corrected 1557.1@396 baseline, positive and
+armed under the adopted rule. Staged head _v94fb (fjordgate floor,
+KEEP, cleared); E1 family (_v95e1: ring + arming + SITING BAN 2 +
+heal-line-gated supply + convert-cap + M2b-preference) and _v96ft2
+all KEEP-DEV, none staged. Nothing shipped this session.
+
+WRAP-SAFE STATE: ONE subagent still out — EXPLOIT-TRIAGE-FEASIBILITY
+(bucket mining / launcher rail / lifecycle scale-churn). It dies with
+the session; its full brief and my triage against game-model.md are
+in the 19:13 note, so a successor re-commissions in one step. Every
+other thread landed AND relayed same-hour. Zero replay downloads all
+session (archive + free status/match-list API only). All deliverables
+committed and pushed, including NINE s17 docs that had never been
+tracked.
+
+S18 RESEARCH OUTPUT (one line each): v77 window correction (+34.1/6,
+a 6th match found) → v77 fold-in (pooled rate reverses BELOW the wild
+baseline) → v77 CORRECTION (base-four figures withdrawn as
+non-reproducible; my own asserted cause tested and REFUTED; handoff
+front retired; exposure-without-response named instead) → fjordgate
+collapse owner (r0 latch = OUR anchor-measured d², money gate on a
+labour inversion; FB fix cleared it 6/6) → meander delivery owner
+(pop-rule severs the chain at one tile; meander-A partly
+self-inflicted; FT detector exonerated; P6 caveat widened) →
+deny-silence decode (games split 3/2: vision starvation + role
+dispatch; all four original candidates contradicted; slot 5 free) →
+v80 production read (FT void as posed; Ouro worse; new deny defect;
+wire arm retired) → wild pin-rate census (release prices positive on
+concentration: 4/4 full-length pins are tiebreak losses) → long-game
+tiebreak census (26.2% full-length, 100% level-1 delivered-Ti, losses
+span 14/23 opponents, 28% within 25%) → probe audits A+B (orizon
+valid/discounted; flotte drifted + never-valid predicates; kladde
+~70-pt gap caveats every kladde leg today; band rush-only) →
+swap-rule pack (ADOPTED by x3r0; first live arming and first shaped
+ship decision same day).
+
+FIVE MEASUREMENT-STACK FINDINGS, the day's real yield: (1) every
+local leg ran --tle 0, so no CPU enforcement — platform test shows
+93% peak in the SHARED BASE; (2) results.tsv, the verdict tape, was
+gitignored and unbacked-up; (3) the probe fleet's class fidelity had
+never been validated — 2 of 5 need re-freeze, 1 already disclaimed;
+(4) FIELD EVIDENCE ABOUT AN UNSHIPPED HEAD IS IMPOSSIBLE BY
+CONSTRUCTION (all five instruments enumerated; unrated runs the
+ACTIVE submission, match test takes two LOCAL bots, teammate
+submissions are the only downloadable real code) — our ship gate as
+written cannot be satisfied; (5) det flip-counting is BLIND to
+delivered titanium, the sole decider of 26.2% of our games — fixed
+in-tool this session, and the fix's own even-n median bug was caught
+and fixed too.
+
+SUCCESSOR QUEUE (research-side, ranked): (1) hive_freeze — builder's
+top LIVE-LINE candidate (5,260→11,030 Ti, 0 outcome flips; I read its
+rationale block at _v89sh:770-795/3605-3624 pre-wrap: it is the
+second half of the PIECE J gun-counter fix, guarding a confirmed
+economy self-freeze against picket classes, and can arm off our OWN
+forward gun — intent is recoverable from the comments, so the
+"ambiguous intent" flag is softer than it looked); (2) kladde +
+flotte re-freezes (specs and extraction sources named in both audit
+docs) — these gate every future guard and field claim; (3)
+re-commission the exploit feasibility read; (4) deny-dispatch fix
+pricing (publish-the-target shape, slot 5 verified free); (5) handoff
+front CLOSED, do not re-open; (6) v73 windows 3-5 + C8 constants,
+still corpus-blocked.
+
+PROCESS DELTAS for Magnus's retro: (a) cheap pre-commitments made
+tonight's reversals visible — the retired discriminator, the refused
+cross-batch read, the M2b risk stated before its evidence existed;
+(b) validate new instruments against KNOWN answers, never
+interesting ones (the det median bug was visible only because the
+hive case's true values were already measured); (c) the
+exotic-explanation reflex bit both arms — my parser-trap cause and
+the builder's Ouroboros "ship" both reached past a regularity we had
+just proven; (d) my own two drifts, registry-line-without-a-spawn and
+model-tags-not-wired, both fixed by the same rule: the line and the
+spawn happen in one breath.
