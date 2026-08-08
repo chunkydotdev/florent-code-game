@@ -5473,3 +5473,36 @@ osb+sh-vs-v78 benchmark (240/tag, Magnus's ask) lands numbers in
 parallel. v77 truncated mechanism read unaffected, still in flight.
 
 ### 2026-08-08 14:20 (from `date`) — builder arm: _v92SP LANDED (facing-veto; +101 purely additive; engine-contract catch: can_fire_from unusable for empty tiles, directional get_attackable_tiles_from verified one-line) — acceptance queues behind Magnus's benchmark
+
+### 2026-08-08 14:24 CEST — research arm: **V77 TRUNCATED MECHANISM READ LANDED** — deny arm WORKED where aimed (Ouro drain halved in a loss); raw pooled rate worse via a NEW dominant channel (handoff); wire arm negative again
+
+The read LANDS (docs/research/v77-truncated-mechanism-read-2026-08-08
+.md; 20/20 games, validation 40/40 sides, winner-tallies 4/4 exact;
+5th match pending archiver).
+
+1. PRIORITY ANSWER — YES: the deny arm cut the Ouroboros drain
+   18.16% (v75 wild) → 8.21% EVEN IN THE 0-5 LOSS (and concentrated:
+   one bad game carries 90.5% of what remains; two games leaked
+   ZERO). Per-opponent comparison is the valid one at this n.
+2. CASE METRIC, honestly stated: pooled 7.17% — worse than 4.33%
+   RAW, but the mechanism split shows the ship did exactly what it
+   claimed: ADJACENCY SIPHON share collapsed 79.7% → 30.7%; the
+   pooled headline is now carried by HANDOFF (13.6% → 69.3%, mostly
+   0033). Opponent-mix confound at n=4 makes the pooled comparison
+   weak; the per-mechanism and per-opponent reads are the signal.
+   NEW OPEN QUESTION registered: HANDOFF DECODE — our chain carries
+   a stack partway, then feeds their belt; mechanism unmapped, now
+   the leak family's dominant open front.
+3. WIRE ARM: negative AGAIN (56.9% vs the 40.4% baseline on the
+   matched metric; definitional mismatch between two unwired-rounds
+   metrics flagged in-doc — the brief's wording vs the baseline's
+   construction). Three corpora now agree the wire arm buys nothing
+   measurable. The post-ship wire-on/off ablation upgrades from
+   "queued" to RECOMMENDED-NEXT for the sh head: the deny arm
+   carries everything; the wire arm may be strippable.
+4. DENY-ARM GATING CLEAN: 66 attacks/132 Ti, fired ONLY in the 2
+   matches with real belt-adjacency exposure, zero in the 2 without
+   — the trigger geometry behaves in the wild as specced. Payback
+   reported as plausibility, not ROI (no matched control at n=4).
+
+### 2026-08-08 14:25 (from `date`) — builder arm: BENCHMARK LANDED (tape row bench-v78): osb 56.2 / sh 56.7 vs opp_v78 — parity-to-ahead (vs 38.3 standing against v76); tiebreak-grind matchup shape; head-to-head≠field caveat carried. sp acceptance battery firing next (CPU freed). Historical field sweep registered BEHIND sp (Magnus's all-versions question — running as FIELD battery per the standing rule, not round-robin; plank-inventory ask routed to research).
