@@ -260,3 +260,15 @@ identity check, byte-identity claim, or A/B ablation in the Eir family is
 VOID unless BOTH sides are pinned NOISE_ON=False in scratch copies. The
 canonical bots keep NOISE_ON=True (the ladder wants the salt); the pin
 belongs in the test copies only.
+
+## Predictions on homeostatic machinery must be stated as ratios (research method rule, builder-placed 2026-08-08)
+
+A fix to self-regulating machinery (heal loops, conscription, budget governors)
+changes the EQUILIBRIUM, not the throughput: a working conscription fix can
+show LOWER staffing and LOWER heal totals because the core stops bleeding and
+the machinery stands itself down. Absolute-form predictions ("staffing ≥3",
+"heal/100r ≥1200") produced 4 false FAILs in the archb signature check that a
+naive reader would have scored as model-refuted; the ratio forms (heal ÷
+incoming, rounds-at-full-HP) all PASSED. Rule: pre-stated replay signatures on
+homeostatic mechanisms use ratios or equilibrium observables, never absolute
+staffing/throughput. (archb-residual-owner addendum §A.)

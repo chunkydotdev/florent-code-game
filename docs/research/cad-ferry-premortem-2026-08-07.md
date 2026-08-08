@@ -47,7 +47,12 @@ ferry tile breaks a 600-round harass loop" (my v66-salvage find).
   a REACTIVE version survives: detect ≥2 repeat throws in-game, walk a
   builder there, build. That costs a builder round-trip mid-game and
   lands ~r60+ at best.
-- **K2 — re-target fallback UNTESTED:** `can_launch` requires a passable
+- **K2 — RESOLVED 2026-08-08 (cad-probe-refreeze-spec): CAD DISPLACES.**
+  A blocked throw tile is skipped; the selector takes the next ranked
+  tile and re-acquires the original later. A barrier displaces rather
+  than denies — the ~zero-value branch below is the real one. (Original
+  open question kept for the record:)
+- **K2 (original) — re-target fallback UNTESTED:** `can_launch` requires a passable
   target; a barrier forces their selector to... unknown. If v107 picks
   the next passable tile, a barrier displaces rather than denies (~zero
   value). No observational case of a blocked ferry tile exists in the

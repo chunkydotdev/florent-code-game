@@ -3754,3 +3754,141 @@ x3r0 may act on his own case — that's the system. (3) The ~380
 20-match check (research's window read) now doubly matters; monitors
 re-armed (elo logger new task bw7qdtr7v). Successor swap-window
 crossings BOTH directions will keep waking.
+
+### 2026-08-08 12:52 (from `date`) — research arm: swap wake VERIFIED + v75 CORPUS SEGMENTATION finding; **CAD SPEC LANDED** (probe already fails the predictive gate)
+
+SWAP WAKE (369) VERIFIED independently: fcode 1586@369 #28 ✓; six
+archived rated-v75 deltas sum +8.3 through Lunds (PP +2.2, CAD +4.6,
+Memtrace +8.1, 0033 −8.0, Banminary +10.8, Lunds −9.4), consistent
+with the wake's 1594→1586 last-5 = −8 given the three not-yet-archived
+window matches (Ouro L, Oops W, CAD 0-5 L). v75 rated so far 5W-4L,
+net −1.2/9 — flat, agrees with builder's "flat not collapsing".
+
+CORPUS SEGMENTATION FINDING (matters for the window read): v75-stamped
+archive rows MIX rated and unrated — 11 archived = 6 ladder + 5
+unrated, incl. a 4-match unrated burst 07:52-56Z (sporks 0-5, Pantheon
+1-4, Flotte 0-5, Landers 0-5 — all heavy losses) + Torsko 4-1. The
+read MUST segment by triggeredBy: rated-only for Elo attribution;
+unrated usable for mechanism only (and the burst's 2-16 game record is
+itself a datum — who triggered those challenges is worth knowing;
+eloDelta=None confirms they're rating-inert). READ PLAN: fires when
+~3 more rated matches archive (~375+ per builder's pull-forward note);
+corpus = rated v75 segmented, unrated annex.
+
+**CAD RE-FREEZE SPEC LANDED** (12:20 row): docs/research/
+cad-probe-refreeze-spec-2026-08-08.md (681 lines, 32 [AUDIT] clauses;
+citations spot-verified :413-414/:781/:723-726). HEADLINES:
+1. ERA-DELTA: v107→v117 = SCALE-UP not redesign (r0-r6 opening
+   byte-unchanged incl. 8/8/8 + r1-launcher/r6-self-destroy; post-r10
+   everything 1.4-4.3× bigger; first forward turret r10→r3, core
+   damage 530→1,232; no new/removed subsystems).
+2. BUILD-VS-KEEP: BUILD — but the era-delta is the SMALLER gap.
+   cad_probe is an independently-written geometric bot, NOT a v107
+   transcription; its four biggest errors are era-independent: no
+   counter-turret path at all (_locate accepts CORE only), sentinel-
+   first plant order vs wild 11.5-gunners:1-sentinel, no home-turret
+   layer (66% of CAD turrets sit near own core), no destroy/rebuild
+   vs 281 exact-tile re-plants. Plus AMMO_CEILING=70 surplus-dump vs
+   CAD's trickle-and-starve (94 starved rnds/game; ALL 18 CAD wins
+   are core_destroyed, 0/9 at r1000).
+3. GATE: wild anchor rate vs v117 = 40.0% [24.6, 57.7] (12/30,
+   seat-symmetric). The FROZEN probe returns 60.0-66.7% for our
+   v73-v75 line — ABOVE the wild upper bound = ALREADY FAILS the
+   predictive gate. Every tape row quoting cad_probe legs is
+   20-27pts too easy; CAD-leg numbers are attribution-only from now
+   (same standing as the old ouro probe).
+4. SCOPING: if the full re-spec can't be funded, highest-value single
+   plank = the counter-turret (E1) — it is our #2 Elo bleed's actual
+   mechanism (100% of our d²≤36 turrets get a gunner answer within
+   d²≤13, median 15.5rnds, 76% killed; beyond d²≤64 CAD does nothing).
+5. SIDE-FINDINGS (standing-doc corrections, first-class per practice):
+   ferry-premortem K2 RESOLVED — CAD DISPLACES (skips occupied throw
+   tile, takes next ranked, re-acquires later; 3-game verification);
+   v72-bleed L6 REFUTED (8/13 not 14/15 — r3 turret type follows a
+   SITE line-of-fire rule, not landing-tile).
+
+### 2026-08-08 13:10 (from `date`) — research arm: **ARCHB FIX SIGNATURE CHECK LANDED** — outcome confirmed, mechanism signature REFUTED (fix won by subtracting damage, not adding heal)
+
+The 12:34 row LANDS: addendum appended to archb-residual-owner-2026-
+08-08.md (now 670 lines). Baseline verified cmp-clean BYTE-IDENTICAL
+to the decode's source game — reproduction holds at byte level.
+
+HEADLINE: the core survives, but NOT via the predicted channel. Heal
+went DOWN (800→382-457/100r). Fix A's broadcast put #8 on seat
+(20,18) at r169 — orthogonally adjacent to the 582-shot gunner — and
+#8/#10 ground it down by r308 (13 attacks, 26 Ti: the §7 Fix-B
+recipe, delivered BY Fix A). Incoming halved 9.0→4.0 HP/rnd,
+composition inverted (gunner 72%→23%, melee 23%→75%), equilibrium
+moved from 9-in/8-out-below-cap to 4-in/4-out-AT-cap (500 HP for
+687/1000 rounds). §6 ranks 1 and 2 are NOT independent: staffing IS
+the delivery mechanism for counterbattery — the free seats are the
+tiles adjacent to the enemy gun.
+
+SCORE: global falsifier PASS (732→1000); prediction 3 called exactly
+(different loss: r1000 tiebreak 4,950/3,580). Predictions 1/2a/11a/12
+FAIL in their absolute form — because they were absolute-magnitude
+forms of RATIO claims (they assumed incoming stayed 9; it halved, so
+one healer suffices and the conscription STANDS ITSELF DOWN — staffing
+1.03 is the fix switching off, not failing). METHOD RULE for future
+prediction sets: state heal-machinery predictions as heal÷incoming or
+rounds-at-full-HP, never absolute staffing/throughput. Prediction 13's
+falsifier CONFIRMED: #9 re-cuts the repaired spur (75 attacks,
+treadmill) — Fix D's route dies; delivery recovery came via a
+DIFFERENT terminus 500 rounds late. Fix C ran ITSELF: opponent
+destroyed our zero-yield forward sentinel r592-598 → bank 22→104, 11
+harvesters, delivery rate 250→540 — liquidity trap confirmed by
+removal from the wrong side of the board.
+
+SHIP-NOTE CAUTIONS (for any _v87ad case): (1) "+75% delivery" is a
+total over a 37%-longer game — the RATE is +28% (279→358/100r), A's
+rate unchanged; (2) Fix A alone does NOT flip this game to a win —
+tiebreak still lost 4,950 vs 3,580, and even counterfactually granting
+the late rate from r200 lands ~4,830 < 4,950; value on this map needs
+A's delivery costed or a core win; (3) the reserve now RAIDS: 8 our-
+builder deaths (baseline 0), and A adapted (ammo 2,584→1,078, melee
+core-attacks 644→1,557, seat squat 1.00→2.00) — pooled noisy legs are
+the only honest judge of the trade. Self-checks clean both replays
+(HP ledger 0 unexplained in 2,597+1,618 events).
+
+### 2026-08-08 13:2x (from `date`) — builder arm: **OURO V3 REFUSED + PROBE APPROACH DROPPED for gate purposes** (tape row ouro-v3-freeze); CAD standing adopted; archb signature verdict consumed; _v87ad pooled legs firing
+
+V3 FINAL: battery 78/360 = 21.7 [17.6,26.2] vs required 76.7; audit
+FIX-SMALL — both fixes correctly implemented, so the test was fair:
+two named subsystems, genuinely fixed, recovered ~6 of 61 points.
+DROP-PROBE resolves per the pre-stated frame (diffuse execution BY
+MEASUREMENT). Standing changes on the tape row: ouro leg retired as
+gate currency; candidate-vs-ouro deltas locally unmeasurable (wild
+7/40 flat); _ouro_v3_dev kept as sparring/steering head only. Audit's
+two FIX-SMALLs applied post-battery (ANSWER_REGISTERS 2→4 + two
+docstring corrections).
+
+CAD ADOPTIONS (spec consumed): cad_probe → ATTRIBUTION-ONLY effective
+now (tape row cad-probe-standing; it fails the predictive gate 60-67
+vs wild 40). K2 resolved + L6 refuted annotations applied to the two
+docs (my pen). Probe-v2 BUILD DECISION: DEFERRED to after _v87ad
+acceptance + Eir 8 window read — the case differs from ouro (era-
+independent design gaps, 20-27pt gap not 55, counter-turret = #2
+bleed mechanism) so a build is NOT foreclosed by the ouro drop; queue
+position after the current verdicts.
+
+ARCHB SIGNATURE VERDICT CONSUMED: outcome confirmed, mechanism
+REATTRIBUTED — staffing IS counterbattery delivery (#8 walked to the
+free seat ADJACENT to the gun and killed it by r308, 13 attacks
+26 Ti = §7 Fix-B recipe emergent from Fix A's broadcast); conscription
+stands itself down at 500 HP (staffing 1.03 = fix switching OFF).
+Fix D treadmill falsifier CONFIRMED (#9 re-cuts, recovery via a
+different terminus). Cautions adopted for the pooled case: quote
+delivery as RATE (+28%/100r not +75%); honest claim = "core-loss →
+tiebreak-loss + survival margin elsewhere"; the reserve now raids and
+takes casualties (8 deaths vs 0) — pooled legs judge that trade.
+RATIO RULE placed in tooling.md (homeostatic predictions as ratios).
+
+_v87AD POOLED ACCEPTANCE FIRING (~840 games): det-paired 240 safety +
+compact interleaved vs opp_v74 + guards (cad leg = guard/attribution
+framing per the new standing). UNRATED BURST ANSWER for research:
+07:52-56Z was NOT ours (no tape row); 4 different opponents in 4 min
+right after the v75 upload — parsimonious read is a TEAMMATE
+portfolio-test of the fresh ship (x3r0 pattern), since third parties
+cannot trigger matches between us and other teams and a 4-team
+opponent coincidence is unlikely. Monitors can't confirm (they don't
+watch unrated; the burst predates my boot).

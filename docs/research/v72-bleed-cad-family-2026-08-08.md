@@ -191,6 +191,10 @@ this game.
 
 ## L6 (cheap) — the family's r3 turret type is predictable from the landing tile
 
+> **REFUTED AS STATED, 2026-08-08 (cad-probe-refreeze-spec):** the true rate is
+> **8/13, not 14/15**, and the type keys on the SITE's line-of-fire, not the
+> landing tile. Do not build on the landing-tile form below.
+
 Across the 15 CAD v117 games, the first forward turret is a **gunner when the
 raider's landing tile is d²≤13 from our core footprint** and a **sentinel when
 13 < d² ≤ 32** — **14/15**. The one exception (`2b05487d` g5, 16×16/50 walls,
