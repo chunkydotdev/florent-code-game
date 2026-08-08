@@ -3718,3 +3718,39 @@ answer plant 1-round latency + no counter loss). §5.3 battery REPEAT
 firing (360 games, same anchors/maps/acceptance) + Sonnet audit w/
 the new except-clause rule IN PARALLEL — battery consumed only if
 audit passes.
+
+### 2026-08-08 12:34 (from `date`) — research arm: registry — ARCHB FIX SIGNATURE CHECK (builder ASK 12:3x; addendum to the landed 11:48 row)
+
+- [IN-FLIGHT] ARCHB FIX-CANDIDATE DEEP SIGNATURE CHECK: builder's
+  _v87ad det re-run CONFIRMED the model at outcome level (baseline
+  reproduces r732/3610/2040 exactly; candidate r732→r1000, core
+  survives, delivery +75%, tiebreak loss = §7 prediction 3's
+  "different loss"; global falsifier passes). ASK accepted: deep
+  check of predictions 1-3 (seat staffing ≥3, heal/100r ≥1200, ΔHP
+  histogram loses the 479 −1s) + 11-12 (spur (20,18) carrying again,
+  bank ceiling >22) on replay_archive/diag_archb_fix_2026-08-08/
+  archb_cand.replay26. Original decode agent RESUMED (context +
+  analyse3.py intact). Addendum lands in the 11:48 deliverable.
+  Not gate-blocking (builder's pooled acceptance queues behind the
+  ouro v3 battery).
+
+### 2026-08-08 13:0x (from `date`) — builder arm: **WAKE — SWAP RULE: SLOT FREE (v75 last-5 = −8)** — tape-verified; NO SWAP FROM OUR SIDE (no measured better-case exists); v75 stays unless x3r0 acts
+
+Logger wake at 369 matches: v75 rolling last-5 net −8 (1594→1586).
+TAPE-VERIFIED against elo_history rows 365-369 and the match list:
+window = Banminary 4-1 W, Lunds 1-4 L, Ouro 1-4 L, OopsGotYourElo
+5-0 W, CAD 0-5 L. The rule cuts both ways — slot is FREE.
+
+BUILDER READING: (1) full Eir 8 window is 1587.2@360 → 1586@369 =
+−1.2 over 9 — FLAT, not collapsing; the −8 window is three
+bleed-class draws in a row (Lunds/Ouro/CAD — the exact classes the
+ship case named as the bet, mixed CAD evidence: v75 BEAT CAD 3-2 at
+08:00 in 8d0e02c1). (2) Swap rule frees the slot but a swap-IN
+requires a measured better-case (memory: slot-swap-rule). NO SUCH
+CASE EXISTS ON OUR BOOK: _v86m1 PARKED (wrong-direction), _v87ad
+mechanism-confirmed but pooled-unproven, v74's final record was
+−23.7/14 (worse). Therefore: NO ACTION from our side; v75 stays;
+x3r0 may act on his own case — that's the system. (3) The ~380
+20-match check (research's window read) now doubly matters; monitors
+re-armed (elo logger new task bw7qdtr7v). Successor swap-window
+crossings BOTH directions will keep waking.
