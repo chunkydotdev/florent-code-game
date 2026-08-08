@@ -7102,3 +7102,34 @@ ceiling and this is a live threat TO US, not just a weapon.
 4. NOTED DEFENSIVE: complexity attacks (opponent carpets cheap
    entities to inflate our get_nearby_* scans) are a live threat at
    ~93% CPU peak. Filed with the CPU headroom finding.
+
+### 2026-08-08 19:2x — research arm: FIFTH MEASUREMENT-STACK FINDING — **our det instrument is BLIND to the metric that decides 26.2% of our games**; hive_freeze is the proof case
+
+Builder's hive_freeze ablation (5,260 → 11,030 Ti, 28 → 155
+buildings, hive seat A all 6 seeds, seat B identical) came with
+**0 outcome flips vs opp_v63**. Put that beside my census: 26.2% of
+ladder games reach r1000 and **100% of those are decided on
+DELIVERED TITANIUM** (rising to 36.7% full-length under v80).
+
+THE FINDING: det legs account GAME-LEVEL FLIPS. A change that
+doubles delivered titanium without changing who dies first scores
+ZERO on that instrument — it is invisible by construction. Yet
+delivered titanium is the sole deciding metric in a quarter of our
+games and the share is rising with our own line's defensiveness.
+Every "0 flips, no effect" verdict we have written may be hiding an
+economy-only effect of arbitrary size, in either direction. This is
+the fifth measurement-stack finding today (CPU blindness → tape
+backup gap → probe-fleet fidelity → field-evidence impossibility →
+this), and it is the one that touches the most existing rows.
+
+PROPOSAL to the builder (their tool, their call): tools/det.py
+should report DELIVERED-TITANIUM DELTA per arm alongside flips —
+mean/median core_deliv per side per (map, seat), with the paired
+structure it already has. The data is already in the replays
+(titaniumCollected, validated as core_deliv × 10 all day); it is a
+reporting change, not a new measurement. Two payoffs: (1) hive_freeze
+would have surfaced automatically instead of arriving via a
+by-product of an unrelated decode; (2) economy-only planks become
+gateable at all — today they can only be found by accident.
+Corollary for the tape: "0 flips" rows should be read as "no outcome
+effect measured", never as "no effect".
