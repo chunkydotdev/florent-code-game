@@ -8096,3 +8096,56 @@ content. Declaring it was the right call; the harm is zero.
 2. **hive** — the only map cell that survives correction, live in v86, decode running.
 3. **LUNDS FIXTURE — BLOCKED**, re-extract constants under v86 first.
 4. **KCM** — version-stable, best probe target, unaffected by the above.
+
+### 2026-08-08 23:1x CEST (from `date`) — research arm: **HIVE DECODE LANDED — 0 of 25 downloads spent**; mechanism is ECONOMY, and my own lead hypothesis is refuted
+
+Deliverable: `docs/research/hive-decode-2026-08-08.md`. All 34 hive games were
+already in `replay_archive/` — **the entire decode cost ZERO downloads**. The
+25-download budget the builder granted is unspent and returned.
+
+**PRE-REGISTERED VERDICTS** (H1-H4 and their refuters were written to the
+builder BEFORE any replay was opened):
+- **H2 ore-topology/economy — CONFIRMED, this is the mechanism.**
+- **H1 opening/terrain — REAL BUT NOT THE CAUSE.**
+- **H3 chokepoint siege — NOT TESTED.** Declared, not refuted. Needs turret
+  geometry the census tool does not extract. Still the live alternative to H2,
+  and not exclusive with it.
+- **H4 not-hive-specific — REFUTED.** This was the one I said I most expected
+  to survive.
+
+**THE MECHANISM.** hive is our worst economy map of 15: **3.02 ti/round median,
+next-lowest heart 4.48, top snowflake 14.24.** The confound ("losing depresses
+economy") is controlled by comparing LOSSES TO LOSSES: hive core-kill losses
+2.72 ti/round (n=23) vs other-map core-kill losses 5.32 (n=57), **p=0.00043**.
+That is also what refutes H4 — it is not the generic shape of a loss.
+
+**AND IT IS ASYMMETRIC.** They lose ~29% of their economy on hive; we lose ~46%.
+End-of-game medians in hive core-kill losses: **we finish with 2 harvesters and
+1 working road; they finish with 6 and 4** — the same 6/4 they get on other
+maps. hive halves OUR harvester economy and leaves THEIRS intact. We do not
+start slow (1st harvester r6, 1st conveyor r8, identical to other maps) — **we
+never scale.**
+
+**H1 IS A TRUE DESCRIPTION AND A FALSE EXPLANATION, and I want that on the
+record because it is the trap I nearly shipped.** Our first sentinel is r28 on
+hive vs r15 elsewhere (p<0.00001), asymmetric (theirs 41 vs 36, p=0.216 n.s.) —
+a large, real, our-side map property. But it does NOT separate hive wins from
+hive losses (29 vs 28, **p=0.808**), and **saga has a LATER first sentinel than
+hive (43 vs 28) at a 52% win rate.** Late sentinels do not lose games. Anything
+built to pull our hive sentinel forward would optimise a variable measured not
+to move the outcome.
+
+**THE LIMIT THAT DECIDES THE FIX, stated because it is not resolved:** these are
+end-of-game snapshots. They cannot distinguish "we built few harvesters" from
+"we built enough and lost them" — and that distinction decides whether the fix
+is build-policy or defence. Resolving it needs a per-round pass over
+placeEntity/removeEntity that `replay_census.py` does not do. **It is free: the
+replays are already local.** Ranked next, with H3 ray-coverage second and hive's
+raw ore geometry third (readable straight out of the map message, no game
+needed, cheapest test on the list).
+
+Caveats carried: v72-v84 pooled (the hive KILLED-rate is fork-flat at 75%/75%,
+which is why this transfers to live v86, but the mechanism numbers are not
+individually fork-controlled); hive WINS are n=5 so every within-hive contrast
+is suggestive; opponent spread respected at ≤5 per opponent so this is not one
+team's habits.
