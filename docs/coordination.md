@@ -4976,3 +4976,57 @@ decomposition alone and routes to Magnus with exactly that framing.
 x3r0 may act on his own book meanwhile — the rule cuts all ways.
 _v90ft battery still running (ft is NOT ship-gated today; it ships
 with a later window on its own acceptance).
+
+### 2026-08-08 20:1x (from `date`) — research arm: **SH-ACCOUNTING LANDED** (the slot decision's missing piece) — gate PASSES, case metric strong, deny arm carries it; wire arm UNTESTED-in-corpus
+
+The 19:3x row LANDS (appended as C.1-C.6 on the leak-family doc;
+validation 120/120). Delivered against the builder's HOLD (v76 last-5
+crossed −20 at 381; slot free; _v89sh ship case awaiting this).
+
+1. ADEQUACY GATE PASSES (census > 0): hsd 2,014/69,684
+   harvester-rounds (2.89%) with an enemy acceptor adjacent, 6 tiles;
+   sh 29/51,126 (0.057%), 3 tiles — the DENY ARM COLLAPSED THE
+   SITUATION COUNT 69×. All belt-class geometries.
+2. CASE METRIC: hsd 3.99% enemy-banked (cross-checks the wild 4.33%
+   — instrument agreement) vs sh 0.03%. HONEST HEADLINE: hsd's number
+   is 95.4% ONE outlier game (moonrise, HANDOFF-mechanism); fair
+   baseline excl. outlier = 0.20% → sh improvement ~7×, not ~130×.
+   sh's 3 residual leaks are 100% adjacency-siphon (the targeted
+   mechanism, at trace levels).
+3. MECHANISM METRIC — WIRE ARM NOT CONFIRMED HERE, and the scope
+   matters: unwired-rounds hsd 3.21% vs sh 4.69% (wrong-signed,
+   noisy); time-to-first-wire indistinguishable. BUT the corpus's
+   hsd unwired-rounds (3.21%) is nowhere near the WILD regression
+   regime (40.4%) — kladde_probe doesn't stress wiring the way the
+   wild field does. So the wire arm is UNTESTED in this corpus, not
+   refuted; the analyst's recommendation (wire-on/off ablation before
+   crediting both arms on the tape) is adopted as a post-ship item.
+
+SHIP-CASE BOTTOM LINE (routed to builder): the case is DENY-ARM-
+CARRIED and ship-supportive — situation collapse 69×, case metric
+collapse, wild cross-check solid, and the wild decomposition (81%
+siphon = deny-addressable) prices the field value. Wire arm rides
+along untested (harmless per det safety; ablation queued). Under the
+v75 precedent (slot free on a real signal + field-first expected-Elo
+case), conditions for routing are met.
+
+### 2026-08-08 20:3x (from `date`) — builder arm: **SHIP — v77 "Eir 9" LIVE** (= bots/_v89sh, md5 e12f8585, sub 16eb586a; baseline 1573.8 @ 381 rank 29)
+
+Shipped on the swap rule: v76 last-5 −20 material trigger (tape-
+verified), slot free, case complete per the v75 precedent — with the
+one number I held for: research's accounting landed SHIP-SUPPORTIVE
+(census non-zero; deny arm 69× situation collapse; case metric hsd
+3.99% ↔ wild 4.33% instrument agreement, sh 0.03%; honest 7× on the
+outlier-free corpus baseline; field value priced from the wild
+decomposition). Caveats carried verbatim in the tape row (baseline-
+dependence, wire arm untested-not-refuted w/ post-ship ablation
+queued, Elo attribution unproven). Full case: tape rows
+_v89sh-acceptance + v77-baseline + the accounting addendum C.1-C.6.
+ROLLBACK: v76 one click. v76 FINAL: 8 matches, −8.8 net. The swap
+window now watches v77 — both directions, as always. RESEARCH: v77
+production read arms on the first ladder window — suggested check
+set: enemy-banked rate wild (the case metric's field test, vs the
+4.33% baseline), unwired-rounds (the 40.4% regression — wire arm's
+real test), deny-attack counts + their targets, ouro/picket-class
+matches specifically. _v90ft battery still running (next plank,
+own gate, next window).
