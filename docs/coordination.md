@@ -4869,3 +4869,91 @@ compact vs opp_v76 120/tag (holder leg, attribution). The early-
 detection channel itself (trigger-round delta) is measurable in
 replays — worker adds NO instrumentation to shipped code; research
 can measure trigger rounds from the acceptance corpus if wanted.
+
+### 2026-08-08 19:3x (from `date`) — research arm: _v89sh KEEP absorbed; SH-ACCOUNTING FIRING (staged 17:4x → in-flight)
+
+_v89sh-acceptance absorbed: KEEP on a clean shape (identity exact;
+det +2 net with the only flips ONE eider-b regime-flip in our favor
+both seeds — carries det weight under the butterfly rule; tb channel
+16→6; anchor compacts noise-with-opposite-signs as expected — the
+value channel isn't measurable vs non-siphoning x3r0 anchors; guards
+all-positive). Routing noted: KEEP head + v76 graft candidate (pave
+ancestry shared) + ships-when-slot-permits. Ferry test _v90ft next
+in builder queue (the recognition study's precision-1.000 finding
+consumed same-hour — the pipeline's fastest idea-to-build turnaround
+today).
+
+- [IN-FLIGHT] SH-ACCOUNTING (the case metric): corpus verified on
+  disk; Sonnet analyst on the validated stack-accounting. THREE
+  metrics, adequacy-gated separately: (1) situation census (how many
+  siphon/border geometries arose — decides adequacy transparently);
+  (2) enemy-banked rate hsd vs sh (CASE metric, wild baseline 4.33%
+  — reported only if census > 0, else CORPUS-INADEQUATE + route to
+  wild window per the pre-stated gate); (3) unwired-harvester-rounds
+  rate hsd vs sh (MECHANISM metric for the wire arm — measurable
+  regardless of siphon situations; v75's wild regression was
+  24.3%→40.4%, sh's pending-wire queue should cut it). Deliverable:
+  addendum on ad-flips-margin-decode-2026-08-08.md (the leak-family
+  doc of record).
+
+### 2026-08-08 19:5x (from `date`) — research arm: **RETRODICTION BACKTEST LANDED** — predicted-content counters REJECTED; era-stamped books SUPPORTED; sweep watcher = free 32-min leading indicator
+
+The 18:2x row (study 1) LANDS: docs/research/patch-retrodiction-
+2026-08-08.md (2,291/2,291 replays parsed; 72/160 transitions
+excluded thin-data, listed — incl. all kladde steps except v63→65).
+
+VERDICT: 3 REACTIVE of ~12 legible forward steps, direction-only
+(the one clean hit: 0033's post-0-25 hardening). Consecutive CAD
+steps CONTRADICT each other (v107→116 economy ×4, v116→117 cut
+back). PRE-BUILT PREDICTED-CONTENT COUNTERS: REJECT (unmeasurable,
+non-reactive where measurable, 4-7h lead < our build cycle).
+ERA-STAMPED BOOKS FOR OSCILLATORS: SUPPORT — 13/38 stamp-changing
+teams roll back, 27 rollback events in 24h, and EVERY stamp any team
+rolled back to is one we already hold games on (CAD both endpoints,
+PbSF all 9 states, kladde v65...). OPERATIONAL RULE adopted
+research-side: on a stamp change, LOOKUP BEFORE DECODE.
+
+THREE CARRYING FINDINGS: (1) SENSITIVITY FLOOR, measured on
+ourselves — our own v64→v75 consecutive ships are census-
+indistinguishable vs frozen Ouro v8; "flat fingerprint" means WE
+LEARNED NOTHING, not "they changed nothing" — patch content is
+below our instrument's floor for linear developers. (2) FAMILY
+SYNCHRONIZATION NOT SUPPORTED — launcher-family bump pairs at/below
+chance (0.72% vs 1.69% base); the spitball one-code-family
+sync hypothesis is RETIRED. Corrections: Powerpuff has NEVER built a
+launcher (not a family member); Banminary + gsxWins ARE launcher-r≤2
+teams and were never listed. (3) SELF-TEST SWEEP = FREE LEADING
+INDICATOR: ≥3 unrated matches ≤180s vs ≥3 distinct opponents →
+next stamp differs 11/11, median lead ~32 min, and sweep results
+1-15 predict a revert. Builder monitor candidate (sweep watcher).
+Note mid-study: CAD rolled back to v107 AGAIN at 10:25 — the
+oscillation thesis demonstrating itself; cad_probe is v107-sourced,
+so on v107 windows probe fidelity is restored by lookup, no decode.
+
+Both strategy studies now landed → drafting the routed exploit-queue
+brief (Magnus's ask) consuming: Eir 8 class table, CAD spec, ouro
+book, recognition study, retrodiction study.
+
+### 2026-08-08 20:0x (from `date`) — builder arm: _v90FT LANDED (worker closed a SECOND false-positive source beyond the brief); acceptance firing; SWEEP WATCHER built+armed; retrodiction consumed
+
+FT worker report highlights: anchor = CORE_PAIRS NW-tile convention
+(the study's own), slack 0 — justified against the ENGINE's
+spawn-ring wording (max honest manhattan = r+2 exactly); NEW
+core_anchor_exact guard closes the mirror-map reflection-fallback
+hole (unrecognized map → test silent — can miss, can never
+false-alarm); all 8 SLOT_UNDER read sites hand-re-verified
+truthiness-safe; writes no-downgrade (a 2 never overwritten by a 1);
+fired r3 vs cad_probe in both smokes. FERRY_ON=False reduces to
+_v89sh exactly. Acceptance battery firing (pre-stated 19:3x):
+identity refs vs det_sh + det 240 + cad insertion leg + guards +
+holder compact.
+
+SWEEP WATCHER: tools/monitors/sweep_watcher.py built per the
+retrodiction finding (≥3 unrated ≤180s vs ≥3 opponents → next stamp
+11/11, ~32min median lead), exit-on-wake shape, baseline poll run
+silent; arming as the 5th monitor. Retrodiction/recognition/
+exploit-brief deliverables committed; spitball corrections applied
+(family-sync retired, Powerpuff not launcher-family, Banminary/
+gsxWins are, sensitivity-floor caveat standing). CAD v107 return
+noted — oscillation thesis demonstrated twice in one day; era-book
+lookup covers it, no decode.
