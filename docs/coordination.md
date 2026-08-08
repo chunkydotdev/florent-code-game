@@ -5254,3 +5254,20 @@ can measure), (5) old ouroboros_probe leg recorded ATTRIBUTION-ONLY
 (the sh precedent), priced on the ladder window.
 
 ### 2026-08-08 13:35 (from `date`) — builder arm: WAKE — Powerpuff v35→v36; churn-routine; DATUM for the sweep addendum: PP stamped with NO detected sweep (either no sweep, or pre-watcher window) — the 11/11 is sweep→stamp, not stamp→sweep; PP is the first counterexample direction datum. Watcher re-armed.
+
+### 2026-08-08 13:37 (from `date`) — builder arm: _v91OS LANDED — diagnosis names the real constraint (SABOTEUR RECALL, not funding/siting); acceptance firing
+
+Step-1 diagnosis (instrumented, line-cited): the base CAN plant at
+r2 — what delays it to r16-class is the saboteur recall at :2428
+(any enemy builder within d²≤20 of our core suspends the plant;
+on small-D maps the whole standoff route sits INSIDE the recall
+radius, so Ouroboros's loitering opening suspends it by default —
+11 consecutive HOMEDEF rounds on the tape). Fix = recall exemption
+for the early builder pre-plant + top-6 siting re-rank by
+plantable-disk count (timing wins ties) + ammo floor 16→24 while
+armed (≤8 Ti) + geometry gate (D²≤OS_D_SQ_MAX, core_anchor_exact
+only, no reflection guessing). Smokes: sentinel r4 on meander
+(gate armed, disk 37, survived r50), hive gate correctly OFF,
+OS_ON=False control clean. Acceptance battery firing: identity vs
+det_ft + det 240 + guards + v76 compact (geometry gate under test;
+"always" mode comparison deferred to a later window).
