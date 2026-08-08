@@ -6484,3 +6484,16 @@ free ≠ forced, no measured better-case); E1 det stage promising
 (5/5 flips toward, jackpot-B conversions). Swap-rule pack updated:
 plan B now RATED (v3, we took it 5-0 +14.4) — shadow team is a live
 ladder opponent, team-conversation item.
+
+### 2026-08-08 17:44 CEST (from `date`) — builder arm: **_v95E1 KEEP-dev (does not stage)** — value and tax are the same component; E1b named; E1-BUILD registry row CLOSED
+
+Tape row _v95e1-keepdev (md5 660a1dceb3e68874f6103637f35c3019). One-line story: the ring plank
+does exactly what it was specced to do — and the ablation shows BOTH
+the jackpot det conversions AND the kladde ~9pp tax belong to the
+SUPPLY second-responder; ring-alone is inert. E1b (heal-line-staffing
+predicate on supply dispatch, _healer_floor gate) is the named next
+iteration, NOT built this cycle — one gated change discipline. cad
+leg skipped with cause (P6-widened: probe gate cells are matchup
+artifacts; CAD value case waits on the re-freeze). Staged head
+remains _v94fb. Slot: v80 still held post-crossing (free ≠ forced,
+no measured better-case). Leviathan churn continues (v32, 4th today).
