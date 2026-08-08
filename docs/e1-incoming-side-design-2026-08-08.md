@@ -68,13 +68,24 @@ Counter-battery math near our core:
 What v80 already has, and why it loses the 18 HP/r race anyway:
 
 - **_hunt_turret (3121-3303)** — builder-melee peck at enemy turrets,
-  2 dmg / 2 Ti. Reachable but structurally too slow AND too late:
-  core_siege mode gates on round ≥ HUNT_MIN_RND=120 AND the core already
-  visibly bleeding (_core_shelled, 3168); the hunter must ALREADY stand
-  within HUNT_DESIGNATE_DSQ=8 of the gun (no dispatch/recall); healer
-  floor (3274) blocks hunting below 2 standing healers. 2 dmg/r vs a
-  7-9 HP/r sheller is not a suppression mechanism — it's a finisher
-  (HUNT_FINISH_HP=8 exemption is the honest part of it).
+  2 dmg / 2 Ti, TWO modes (research spot-check correction, source-verified
+  3145-3175): CORE-SIEGE mode gates on round ≥ HUNT_MIN_RND=120 AND the
+  core already visibly bleeding (_core_shelled, 3168), band d²≤41 from
+  the core footprint; ECO-SIEGE mode runs at ANY round with NO core
+  evidence when an enemy turret sits orthogonally adjacent to a friendly
+  HARVESTER, any range from core (3193-3198) — prior art for "turret
+  qualifies by what it is doing, not where it is." BOTH modes require
+  the hunter ALREADY within HUNT_DESIGNATE_DSQ=8 of the gun (3209; no
+  dispatch/recall — the load-bearing gap for E1); healer floor (3274)
+  blocks hunting below the floor. 2 dmg/r vs a 7-9 HP/r sheller is not
+  a suppression mechanism — it's a finisher (HUNT_FINISH_HP=8 exemption
+  is the honest part of it).
+  MEASURED PRECEDENT IN ITS COMMENT BLOCK (3155-3159, directly relevant
+  to any ring re-cut): conveyor-adjacency triggering was REFUSED because
+  ambient early hunting cost eider 8/16→0/16 AND caused a fjordgate rush
+  regression — the same over-trigger risk class any E1 arming signature
+  must be ablated against, and a fjordgate failure mode already on file
+  pre-dating the collapse-owner read.
 - **_try_counterbattery (3305-3403)** — the only home turret-plant. Fires
   only from wherever a builder ALREADY stands with a legal ray to the
   SLOT_THREAT tile (3388-3394); no walk-to-firing-position. Bootstrap
@@ -122,9 +133,12 @@ CAD envelope**, NOT a new mechanism. Deltas vs C1b as-parked:
    branch (0/24 re-gate); just the cap.
 5. FJORDGATE GUARD (pending research's read): whatever arms the ring must
    not deepen the siege-first starvation — the disc showed the under-siege
-   latch already runs zero economy on gate maps. The ring build budget
-   must come from _eco_spendable's siege reserve mathematics, never from
-   the harvester-bootstrap budget. Final form waits on the read.
+   latch already runs zero economy on gate maps, AND the _hunt_turret
+   comment block records a measured fjordgate rush regression from ambient
+   early hunting (§5) — two independent fjordgate failure modes for the
+   arming gate to avoid. The ring build budget must come from
+   _eco_spendable's siege reserve mathematics, never from the
+   harvester-bootstrap budget. Final form waits on the read.
 
 ## 7. Acceptance sketch (to be finalized post-inputs)
 
