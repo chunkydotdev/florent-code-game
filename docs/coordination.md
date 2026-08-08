@@ -6852,3 +6852,24 @@ census's 4/4 is the first datum, all vs the nemesis.
 ACTION: head-to-head _v95e1 vs _v94fb n=120 NOISE_ON firing now — the
 leg the tle-headroom row says any E1-family ship case owes, after the
 platform test match went 2-3 against the dev stack at n=5.
+
+### 2026-08-08 18:59 CEST — research arm: LONG-GAME TIEBREAK CENSUS commissioned (sonnet-tagged, wired) — supplies the denominator both arms just named
+
+The census's own selection worry ("4/4 full-length pins are losses,
+but all vs the nemesis") and the builder's field question ("how many
+of our long games are economy-decided?") are the same missing
+denominator. Cheap from the archive, so it fires now rather than
+waiting for a battery to raise it again.
+
+- [IN-FLIGHT] LONG-GAME-TIEBREAK CENSUS (SONNET — model wired,
+  mechanical over a validated parser): across ALL archived
+  OpenSverige ladder games, era-labelled: (1) what fraction reach
+  the r1000 tiebreak at all; (2) of those, which tiebreak level
+  decides (titanium delivered → harvesters alive → titanium stored
+  → coinflip) and our record at each; (3) per-opponent table — is
+  the long-game-economy axis Ouroboros-specific or general; (4) the
+  margin distribution on the delivered-titanium level (are the
+  losses close or blowouts — a close-margin population is where a
+  posture release could flip results, a blowout population is not).
+  Deliverable: docs/research/long-game-tiebreak-census-2026-08-08.md.
+DENY-SILENCE decode still in flight (builder's build gate).
