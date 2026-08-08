@@ -1,3 +1,75 @@
+# Session 19 (builder, booted 2026-08-08 19:40 on Magnus's framework audit +
+# "ship it all and direct us in the right path"; supersedes s18 below)
+
+## FIRST ACTIONS for the successor
+## 1. RE-ARM MONITORS. Three are armed as of 19:4x (elo_logger,
+##    match_watcher, opp_watcher); replay_archiver and sweep_watcher are
+##    NOT. They die with this session.
+## 2. LIVE: **v81 "Eir 11" (= bots/_v95e1, md5 f5f1bf55, submission
+##    82afd552)**, activated 19:42, BASELINE **1568 @ 420 rank #30/113**.
+##    Rollback = v80 (_v89sh, md5 e12f8585) one click. Swap rule arms at
+##    >=8 holder matches.
+## 3. **THE SHIP GATE CHANGED — read docs/ship-gate.md before anything.**
+##    No local regression (PARITY PASSES) + a window + nothing known-broken.
+##    Field evidence for an unshipped head is NOT owed; it is structurally
+##    unobtainable and demanding it is what cost 57 elo and 9 ranks in the
+##    15 hours before this session. Probes are attribution-only, never
+##    gates. "KEEP-dev" is no longer a resting state.
+## 4. IN FLIGHT: **PIECE HV** (bots/_v97hv, the hive_freeze fix) — identity
+##    control PASSED 120/120 identical, 0 flips, delivered-Ti delta exactly
+##    0 with the flag off. Effect leg vs opp_v63 running at wrap. It is the
+##    v82 candidate.
+
+## THE STRATEGIC READ — what the next real gain is, and why it is not more planks
+
+There is a fact on the tape that nobody has drawn the conclusion from. Three
+rows state it separately; put together they name our actual problem:
+
+  (a) 26.2% of ladder games reach r1000, and **219/219 of those are decided
+      at LEVEL 1 = DELIVERED TITANIUM** (research census).
+  (b) Our full-length rate is RISING, monotonically, along our OWN line:
+      **24.5% pre-v75 -> 29.8% v75+ -> 36.7% under v80.**
+  (c) What v75->v80 added was, almost without exception, survival machinery:
+      heal-seat protection, the siege reserve, counterbattery-over-heal, the
+      anti-Ouro standoff, the siege facing-veto, siphon deny, severity tiers.
+
+So: **we have been building a bot that survives into a tiebreak it then
+loses.** The two halves are not merely unrelated, they are in direct tension —
+the survival machinery is FUNDED BY the exact resource that scores. Every one
+of these is titanium withheld from delivery: SIEGE_HEAL_RESERVE_TI = 16, the
+_core ti_floor (12 under siege, 52 in peace), heal spend at 1 Ti per 4 HP,
+ammo conversion at 1:1. And hive_freeze is the microcosm — a defensive clause
+that halved delivered titanium on a live pool map and was invisible for its
+whole life because it flipped ZERO outcomes against a det opponent.
+
+**THE SWEEP THIS ARGUES FOR, and it is newly possible as of today:** det.py
+reports a delivered-Ti delta as of commit 9bba426 (landed ~19:18 today).
+Every defensive plank flag has an ON/OFF pair. Run each one as a det leg and
+price it in DELIVERED TITANIUM, not just flips. Any plank that costs
+delivered Ti without buying outcome flips is net-negative in a rising third
+of our games AND is invisible to every flip-counting leg we have ever run —
+which is all of them, before today. That is a defect class, not a tuning
+exercise, and hive_freeze is proof the class is non-empty.
+
+Do this BEFORE adding more planks. The bot is 7,041 lines at 93% of the CPU
+limit; the marginal plank is worth less than the marginal deletion.
+
+## SECONDARY DIRECTION
+- The bleed classes are picket (-103) and CAD (-88), and their probes are
+  invalid (kladde ~70pts miscalibrated + unfaithful turret composition;
+  flotte has no launcher code at all; cad attribution-only). Under the new
+  gate the answer is NOT to re-freeze them. Ship against those classes and
+  read the ladder.
+- Full-length rate rising also means the ENDGAME_SWITCH (r960) matters more
+  every version. It was tuned when the rate was 24.5%. Re-price it.
+
+## STATE
+- Tape rows added: v81-baseline. elo_history has the 19:42 baseline row.
+- bots/_detP,_detH,_detOFF = NOISE_ON=False det copies (scratch, deletable).
+- x3r0 shipping question is with Magnus: recommendation was free shipping +
+  the existing swap rule as the ONLY rollback trigger (data: x3r0 net +7 elo
+  over 6 windows, us net -18 over 5 — no case for gatekeeping him).
+
 # Session 18 FINAL (builder wrapped 2026-08-08 ~19:2x on Magnus's call
 # relayed via research; successor boots per /builder)
 
