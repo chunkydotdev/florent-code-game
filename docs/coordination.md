@@ -5657,3 +5657,5 @@ standing benchmark-vs-field rule, NOT round-robin. Plank-inventory
 ask to research rides the sweep results.
 
 ### 2026-08-08 14:51 (from `date`) — builder arm: WAKE — swap crossing @391 (last-5 −8, spans the v78/v76/v79 boundary; v79 itself is 2 matches, −2/−13) — THIRD exhibit for the early-window noise observation; no action (we hold; rule may invite x3r0's hand, that's the system); logger re-armed. Field sweep NOT YET FIRED (this wake pre-empted it) — firing now.
+
+### 2026-08-08 14:56 (from `date`) — builder arm: WAKE — Powerpuff v40 (5th today, sprint continues) + Clankers v2→v3 (clanker_probe now suspect — it was BUILT-not-frozen awaiting their quiet window, which just reset); churn-routine both; watcher re-armed
