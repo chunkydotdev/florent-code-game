@@ -502,3 +502,37 @@ build the head, gate it locally, and hold the zip.
 This closed v81's window at 1 match on 08-08 (tape row v81-final). Harmless
 there because v82 contained the identical bundle plus a plank measured dormant
 on 14 of 15 maps, but it would have destroyed a genuine A/B.
+
+## proto3 omits default-valued fields — filter team with `.get(2, 0)`, NEVER `.get(2)` (research find, builder-placed 2026-08-08 s19)
+
+`Team.TEAM_A = 0` is the enum default, and proto3 **does not put default-valued
+fields on the wire**. So an entity belonging to team A carries **no field 2 at
+all**, and a hand-rolled parse that tests `if e.get(2) != our_team: continue`
+evaluates `None != 0` → True → **silently discards every seat-A entity**.
+
+The failure is what makes this dangerous rather than annoying:
+
+- **Silent.** No exception, no empty result — you get a smaller, plausible,
+  fully-populated table.
+- **One-sided.** It drops seat A and never seat B, so every derived rate is
+  wrong by a factor that looks like a real effect.
+- **Repeatable.** It produced a quotable wrong table **twice in one evening** —
+  first in the v77 leak accounting, then in the field-wide turret-redundancy run
+  (1.21 builds/game, against 4.19 measured on an overlapping corpus by a
+  correct script).
+
+**Rule: `e.get(2, 0)`. Always the default.** Same for any other field whose
+zero value is meaningful.
+
+**Swept 2026-08-08:** `tools/replay_census.py:142` already uses
+`d.get(1, 0), d.get(2, 0)` — correct. The remaining bare `.get(N)` uses there
+are `d.get(4)` as a tled truthiness test (absent == default == false, which is
+the right reading) and `entities.get(d.get(1))` for entity id (exposed only if
+an id is 0). **The contamination was confined to hand-rolled scripts; the
+shared library is clean.** Grep any new decoder before trusting its first table.
+
+**The meta-lesson, which is the transferable one:** the bug was caught only
+because an *independent prior measurement of an overlapping corpus* contradicted
+it. A field-wide number with nothing to check it against would have shipped, and
+been built against. Validate a new decoder against a known answer before
+pointing it at an interesting one.
