@@ -26,6 +26,7 @@ import csv
 import subprocess
 import sys
 from collections import Counter
+from datetime import datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -40,7 +41,7 @@ def note_verdict_ratio():
     Tonight's deadlock read 14 notes/caveats against 6 verdicts in the last 25
     rows — the project was documenting faster than it was deciding.
     """
-    rows = list(csv.reader((ROOT / "results.tsv").open(), delimiter="\t"))[1:]
+    rows = list(csv.reader((ROOT / "results.tsv").read_text().splitlines(), delimiter="\t"))[1:]
     tail = [r for r in rows if len(r) > 5][-WINDOW_ROWS:]
     c = Counter(r[5] for r in tail)
     analysis = c["note"] + c["caveat"] + c["info"]
@@ -80,16 +81,48 @@ def doc_code_churn():
 
 
 def ship_cadence():
-    """Ships per hour of active work, from the tape's own baseline rows."""
-    rows = list(csv.reader((ROOT / "results.tsv").open(), delimiter="\t"))[1:]
-    ships = [r for r in rows if len(r) > 6 and r[5] == "baseline" and "SHIP" in r[6][:60]]
+    """Activations per hour of active work, from elo_history's own timestamps.
+
+    FIXED 2026-08-08 s20, after the instrument audit caught this check firing on
+    itself. It used to prose-match results.tsv: `r[5] == "baseline" and "SHIP"
+    in r[6][:60]`. That predicate matched **6 rows in the project's entire
+    history** — v82, v84 and v86 all went live and matched none of them, because
+    whether a ship gets a "SHIP —" row or only a "... FINAL:" row depends on how
+    the writing session happened to word it. Worse, it had no time window at
+    all: `ships[-12:]` slices an all-time list, so `recent` was pinned at
+    min(12, 6) = 6 forever and the check tripped unconditionally past ~12 active
+    hours. The 2/4 FIRE that summoned the audit session was substantially this.
+
+    Now it counts active_bot TRANSITIONS in elo_history.tsv, which the elo_logger
+    writes with a real timestamp every 5 minutes. An activation is what we
+    actually mean by "a decision landed"; it is recorded by a monitor rather than
+    by prose, so it cannot drift with anyone's phrasing. 45 transitions are
+    visible where the old predicate saw 6.
+
+    STANDING CAUTION: every "analysis is outpacing decisions" reading taken
+    before this fix is suspect, including the ones both arms acted on tonight.
+    """
+    cutoff = datetime.now() - timedelta(hours=CHURN_HOURS)
+    rows = list(csv.reader((ROOT / "elo_history.tsv").read_text().splitlines(), delimiter="\t"))[1:]
+
+    ships, prev = 0, None
+    for r in rows:
+        if len(r) < 4 or not r[0]:
+            continue
+        try:
+            when = datetime.strptime(r[0][:16], "%Y-%m-%dT%H:%M")
+        except ValueError:
+            continue
+        if prev is not None and r[3] != prev and when >= cutoff:
+            ships += 1
+        prev = r[3]
+
     out = subprocess.run(
         ["git", "log", f"--since={CHURN_HOURS}.hours", "--pretty=format:%ad", "--date=format:%H"],
         capture_output=True, text=True, cwd=ROOT).stdout.split()
     active_hours = max(len(set(out)), 1)
-    recent = len([r for r in ships][-12:])          # ships still visible on the tape tail
-    rate = recent / active_hours
-    return rate, f"~{recent} recent ships over ~{active_hours} active hours"
+    rate = ships / active_hours
+    return rate, f"{ships} activations in the last {CHURN_HOURS}h over ~{active_hours} active hours"
 
 
 def stuck_planks():
@@ -98,7 +131,7 @@ def stuck_planks():
     docs/ship-gate.md: a plank is shipping, being fixed, or refuted. Anything
     that survives two windows in KEEP-dev is refuted by neglect.
     """
-    rows = list(csv.reader((ROOT / "results.tsv").open(), delimiter="\t"))[1:]
+    rows = list(csv.reader((ROOT / "results.tsv").read_text().splitlines(), delimiter="\t"))[1:]
     n = sum(1 for r in rows[-60:] if len(r) > 6 and "KEEP-dev" in r[6])
     return n, f"{n} KEEP-dev mentions in the last 60 tape rows"
 

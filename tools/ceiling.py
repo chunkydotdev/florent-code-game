@@ -79,11 +79,38 @@ def play(job):
     }
 
 
-def report_bot(name, rows, n_total):
-    """Core-kill rate and time-to-kill for one bot, over every match it played."""
+def metrics(name, rows):
+    """Every number this tool reports for one bot, as data rather than print().
+
+    Split out from report_bot so it is testable — see tests/test_instruments.py.
+    The collider fixed on 2026-08-08 lived in this arithmetic and shipped because
+    the arithmetic was welded to a print statement and could not be asserted on.
+    """
     wins = [r for r in rows if r["winner"] == name]
     kills = [r for r in wins if r["condition"] == "core_destroyed"]
-    n_w, n_k = len(wins), len(kills)
+    n = len(rows)
+    kill_ids = {id(r) for r in kills}
+    # Censored: turns if THIS bot killed, else 1000. Denominator is every match.
+    censored = sorted(r["turns"] if id(r) in kill_ids else 1000 for r in rows)
+    return {
+        "wins": wins,
+        "kills": kills,
+        "n_wins": len(wins),
+        "n_kills": len(kills),
+        "n_total": n,
+        "kill_rate": len(kills) / n if n else 0.0,
+        "conversion": len(kills) / len(wins) if wins else 0.0,
+        "censored_median": statistics.median(censored) if censored else 0.0,
+        # Conditional on having killed. A COLLIDER — never compare across bots.
+        "kills_only_median": statistics.median([r["turns"] for r in kills]) if kills else None,
+    }
+
+
+def report_bot(name, rows, n_total):
+    """Core-kill rate and time-to-kill for one bot, over every match it played."""
+    m = metrics(name, rows)
+    wins, kills = m["wins"], m["kills"]
+    n_w, n_k = m["n_wins"], m["n_kills"]
 
     lo, hi = wilson(n_k, n_total)
     print(f"  {name}")
@@ -109,12 +136,7 @@ def report_bot(name, rows, n_total):
     # Censoring at 1000 fixes the sign because the denominator is every match
     # either way. A bot that kills in under half its games reads 1000 — that is
     # honest, not a defect: its median game genuinely does not end in a kill.
-    censored = sorted(
-        r["turns"] if (r["winner"] == name and r["condition"] == "core_destroyed")
-        else 1000
-        for r in rows
-    )
-    med = statistics.median(censored)
+    med = m["censored_median"]
     tag = "  (censored — >=half its games are not kills)" if med >= 1000 else ""
     print(f"    censored kill-time  median {med:.0f}{tag}")
     if kills:
