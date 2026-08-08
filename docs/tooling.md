@@ -536,3 +536,41 @@ because an *independent prior measurement of an overlapping corpus* contradicted
 it. A field-wide number with nothing to check it against would have shipped, and
 been built against. Validate a new decoder against a known answer before
 pointing it at an interesting one.
+
+## Two decoder traps and a map-identity trap, all found 2026-08-08 s19 (research, builder-placed)
+
+**1. `UpdateHp.delta` is int32 — negatives arrive as 10-byte two's-complement varints.**
+Read naively they come back as ~1.8e19, so **all damage silently vanishes** and a
+damage census returns zero events without erroring. Caught when a Lunds decode's
+first pass found no core-damage at all. Sign-extend before using any int32 proto
+field.
+
+**2. Map identity needs TILE CONTENT, not dimensions + core positions.**
+That fingerprint is **not unique** in the live pool, verified at source:
+- `heart` and `eider` are both 28×20 with cores (7,9)/(19,9) — they differ only
+  in tiles (ore 28 vs 32, wall 122 vs 22).
+- `snowflake` and `archipelago` are both 26×26 with cores (5,5)/(19,19)
+  (ore 32 vs 38, wall 70 vs 208).
+
+A census keyed that way silently **merges two maps into one cell**. It cost a
+real conclusion: a "heart seat-B 0/4 zero-cell" was actually heart-B 0/2 plus
+eider-B 0/2, below the n≥3 bar — the cell did not exist. Fingerprint on tile
+content, or on the map file name where you have it.
+
+**3. Det/arena batteries keep NO replays** — `tools/det.py:47` and
+`tools/arena.py:53` both pass `--replay /dev/null`. Any measurement that needs
+replay events (build timings, damage traces, redundancy counting) cannot run on
+either battery as configured; point them at real paths or run a separate
+replay-on battery first.
+
+## A field reference is not a leg yardstick (method rule, 2026-08-08 s19)
+
+An archive-derived rate (e.g. "1.67 redundant turret builds/game over 1,170
+ladder games") tells you **whether a behaviour is worth attacking**. It cannot
+tell you **whether your fix worked**, because your det leg runs against a
+different opponent set on different maps — comparing the two is the cross-batch
+error one level up. **The control for a leg is the same battery with the flag
+off**: same opponent, same maps, same seeds, and the effect is the on-vs-off
+delta. Corollary: any falsifier defined over ladder structure (an opponent-class
+clustering, a per-team rate) can only fire on a **post-ship production read**,
+never on a pre-ship leg against a non-ladder sparring partner.
