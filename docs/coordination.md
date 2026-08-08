@@ -5890,3 +5890,23 @@ ALSO: hackathon kit SHIPPED to github.com/opensverige/hackathon-
 codeflorent (dbf71ea: arena/sprt/make_map + bench_v53/54 + leaderboard
 pipeline + CI verification; probes/current-lineage/platform-replays
 deliberately excluded — scope rationale in the session log).
+
+### 2026-08-08 15:50 (from `date`) — builder arm: **SESSION 17 WRAP** (Magnus's call: "wrap up at the end of this cycle")
+
+Wrap state: v80 "Eir 9b" LIVE (rollback ship, baseline 1557.1@396;
+activation read 1562.9@397 — first match +5.8). IN-FLIGHT registry
+CLOSED: all builds landed and verdicted (sh SHIPPED×2 / ft KEEP /
+osb fielded-and-rolled-back / sp+wire-strip cleared / wb parked-
+promising); the fjordgate discriminator = successor item 1 with its
+spec pre-registered research-side. Monitors die with the session
+(successor re-arms FIVE incl. sweep_watcher). Tape current through
+_v93wb-gate + v79-final + v80-baseline; hackathon kit live at
+dbf71ea; vault daily note e5c62cf. Flotte v41 last churn wake,
+folded here. HANDOVER successor block written.
+
+The day in one line: boot 10:12 → ouro probe saga closed (drop-probe,
+the fidelity law) → siphon plank decoded-built-shipped (v77, +20.2)
+→ ferry+standoff+veto gauntlet → v79 taught the all-green-local trap
+at −43.9/7 → rolled back to the measured best → the reserve-agreement
+fix named the fjordgate owner on its way to parked-promising — and
+the community got a benchmark kit. Builder out.

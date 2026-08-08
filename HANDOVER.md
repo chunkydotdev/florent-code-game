@@ -1,3 +1,69 @@
+# Session 17 FINAL (builder wrapped 2026-08-08 15:48 on Magnus's call "wrap up at the
+# end of this cycle"; successor boots per /builder)
+
+## FIRST ACTIONS for the successor
+## 1. RE-ARM FIVE MONITORS (die with this wrap; tools/monitors/, exit-on-
+##    wake shape, one-liners in docstrings). NEW today: sweep_watcher.py
+##    (self-test sweep → opponent stamp ~32min lead; validated 3/3
+##    prospective on day one; MAX_AGE_S stale filter in place). The
+##    elo_logger carries the swap-window watch both directions.
+## 2. LIVE: **v80 "Eir 9b" (= bots/_v89sh, md5 e12f8585)** — ROLLBACK
+##    ship after v79's −43.9/7 collapse window. Content = v77 "Eir 9"
+##    byte-identical (siphon-deny plank on the hsd base; v77's own wild
+##    window was +20.2/5, the day's only positive). Baseline 1557.1@396.
+##    ~20-match check ~416; research's REV-7 read re-arms on this window
+##    (pre-registered their side). Rollback-of-the-rollback = v76 one
+##    click (x3r0's).
+## 3. SUCCESSOR ITEM 1 — THE FJORDGATE DISCRIMINATOR (everything hinges
+##    on it): three-armed instrumented det set (w=_v93w / w-with-OS-off /
+##    wb=_v93wb) per research's in-doc spec (cad-fodder feasibility doc,
+##    fjordgate/meander section). It adjudicates BOTH open questions at
+##    once: (a) the v79 fjordgate OPENING COLLAPSE's owner — hypothesis
+##    on the tape: it's the ammo-converter liquidity trap expressing
+##    under the OS ammo floor at r0-30; (b) _v93wb's re-gate — wb FIXES
+##    fjordgate 8/8 but trades archipelago-vs-v74 −8 (tape row
+##    _v93wb-gate: NOT MET at regime −2, PARKED-PROMISING, no re-gate
+##    until the trade is priced). The archb diagnostic was spectacular
+##    (r732 loss → r1000 WIN); do not lose that thread.
+## 4. LINE STATE (all md5-stamped on their tape rows): _v89sh LIVE as
+##    v80; _v90ft KEEP (ferry test, perfect det identity); _v91osb KEEP
+##    local but FIELDED BADLY (v79: all-green acceptance → −43.9/7 wild;
+##    instrument-vs-wild lesson candidate — the fjordgate collapse never
+##    appeared in its battery because no fjordgate leg was gate-armed
+##    under noise); _v92sp KEEP + wire-strip cleared (=_v93w, the staged
+##    stack); _v93wb parked-promising. m1/v88pr/v88prb/hse family:
+##    parked per their rows.
+## 5. Queue after the discriminator: E1 CAD incoming-side design pass
+##    (mechanism: Eir 8 read — CAD cores die at 6.5 HP/r structural
+##    deficit with staffing FINE; spec E-items stand as acceptance);
+##    FT-responder body-block + walker thrown-detection (one subsystem,
+##    recognition-study + plank-inventory items); ore-barrier denial
+##    pricing test; handoff-front decode (research, corpus-gated, 0033
+##    bumped to v44 — rate may have moved); P6 probe fix + CAD re-freeze
+##    on a real quiet window (era-books cover the v107/v117 oscillation);
+##    kladde/Lunds/clanker freezes still wait on ≥2h holds.
+## 6. STANDING RULES ADDED TODAY (tape/tooling/memory): r1000 margin-
+##    flip det games are butterfly-class — banned as acceptance/
+##    attribution (regime-change only); OURO PROBE APPROACH DROPPED
+##    (behavioral fidelity ≠ predictive fidelity, twice measured; leg
+##    retired); cad_probe attribution-only; paired shape corpora need
+##    NOISE_OFF; homeostatic predictions in RATIO form; every spec
+##    "except/unless" clause = its own audit line; timestamps from
+##    `date` ONLY (7h drift incident, in memory); lineage by measured
+##    diff never docstrings (boilerplate rode 7 forks). GAME-MODEL facts
+##    added: Bo5 seat rule (meta teamA = engine A, per-match coin);
+##    harvester output = team-blind LRU (constructed experiment);
+##    launcher pickup ring = full 8-neighbourhood d²≤2; one Player
+##    instance PER UNIT; slot 5 provably free.
+## 7. HACKATHON KIT LIVE: github.com/opensverige/hackathon-codeflorent
+##    (dbf71ea) — arena/sprt/make_map + bench_v53/54 + leaderboard
+##    pipeline + CI. Community PRs maintain it; CI untested until the
+##    first real PR. Probes/current-lineage/platform-replays excluded
+##    by design (scope rationale on the board ~16:0x real).
+## 8. FOR MAGNUS (pending his call): swap-rule review — three noise
+##    exhibits (early-window crossings at n≤5) + the out-of-rule
+##    swap-in question (v78 over a +20 window) are on the tape; possible
+##    refinements logged (arm after N matches / magnitude floor).
 # Session 16 FINAL (builder wrapped ~10:00 2026-08-08 on Magnus's direct
 # call; research arm wrapped ~09:55; successor boots per /builder)
 
