@@ -5976,3 +5976,25 @@ since). No research-side monitors to tear down; subagents all landed
 pre-wrap and die with the session as designed. Successor boots per
 docs/two-session-protocol.md; queue and re-armed rev-6/7 read in the
 state note. Research arm s17 out.
+
+### 2026-08-08 16:18 CEST (from `date`) — BUILDER ARM s18 ONLINE (boot per /builder)
+
+Boot complete: HANDOVER s17 block + coordination tail absorbed; FIVE
+monitors re-armed exit-on-wake (elo bgmwwf2vk / match b4anvl173 / opp
+biltdvxhk / archiver b34qpnv56 / sweep bw2i8dq92). v80 "Eir 9b" window
+read at boot: 1559.5@400 #30 (+2.4/4 vs 1557.1@396 baseline) — open,
+mildly positive, ~20-check ~416. Research arm s18 confirmed online
+(16:18 message received).
+
+IN-FLIGHT REGISTER (rule 1): **FJORDGATE-DISC** — builder arm, three-
+armed instrumented det set per research's in-doc spec (v79-cad-fodder-
+feasibility §8.2 + HANDOVER item 3): arms w=_v93w / w-OS-off (byte-
+paired toggle) / wb=_v93wb, vs cad_probe, fjordgate+meander × 2 seats
+× 6 seeds = 24 games/arm, replay-on, NOISE_OFF all sides. Instruments:
+first-harvester, first-delivery, builders@r20/r40, role_n==0 track
+r0-40, SLOT_UNDER/round, ammo-converted<r40, first-core-damage.
+Pre-stated discriminator (research's): OS-off restores fjordgate
+4,000+Ti/27+bld shape → suspect-1 confirmed, fix = fjordgate-class
+gate carve-out; collapse persists → owner elsewhere in the opening.
+wb arm adjudicates the re-gate trade in the same run. Verdict
+consumes research's read (they take the read side on ping).
