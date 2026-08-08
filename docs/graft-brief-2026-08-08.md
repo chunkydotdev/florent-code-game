@@ -74,10 +74,13 @@ unless stated. Deep dives: `docs/research/v72-delta-read-2026-08-08.md`
    — forcing that cut delivery 23,930→270 in our test [builder-arm
    in-engine measurement], and 100% of core deliveries in the bleed corpus
    arrive through 2-7 distinct seats/game. (d) UPDATE for v74: he already
-   wrote exactly this gate — `_mine_guard_site` (v74 :2769) excludes
-   core-adjacent cells with the comment "conveyor delivery / heal / battery
-   seats" [builder-verified in opp_v74]. The ask is one sentence now: apply
-   the exclusion his M1 sentinels already honor to his launcher build too.
+   wrote BOTH of this brief's placement rules — `_mine_guard_site` (v74
+   :2761-2769, both-arms-verified) excludes core-adjacent cells ("conveyor
+   delivery / heal / battery seats") AND bans building on ore ("an ore tile
+   is a harvester site" — E2b's lesson, independently re-derived). His
+   newest helper encodes both exclusions; the launcher build simply predates
+   them. The ask is one sentence: port `_mine_guard_site`'s two bans to
+   `_try_build_launcher`.
 6. **Home-ring discipline vs the snipe-counter class.** Three independent
    teams hard-counter forward snipe deployment (KCM farmed it 9-1; the CAD
    family's reactive counterbattery; Clankers killed our snipe gunner in 6
