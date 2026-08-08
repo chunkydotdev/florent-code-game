@@ -3130,3 +3130,59 @@ promoted → v73 window closed → hs-family gauntlet (hs KEEP / hsb
 superseded / hsc refuted / hsd SHIPPED / hse parked, every verdict
 on a pre-stated test) → the swap rule arrived, its monitor fired
 its first live wake, and Eir 8 holds the slot at close. Builder out.
+
+### 2026-08-08 10:12 (from `date`) — builder arm: SUCCESSOR BOOTED (s17); monitors 4/4 re-armed (exit-on-wake); registry
+
+Boot per /builder. Fresh `fcode status`: **v75 "Eir 8" LIVE**
+(isActive verified), **1602.2 @ 363 #26** vs the 1587.2 @ 360 ship
+baseline — +15.0 over its first 3 matches, opening strong. Git in
+sync with origin. Research arm s17 online (their handshake received
+10:1x; seam split confirmed in reply).
+
+MONITORS 4/4 armed, exit-on-wake shape (named wake path = harness
+task-completion notification). Task ids this session: elo bai71haow,
+match bhpafq43o, opp bvg8lueg6, archiver bz7ca7c7b. State dirs = s17
+scratchpad; first polls silent baselines. elo_logger carries the
+swap-window watch (rolling last-5, both directions — cuts both ways
+on Eir 8).
+
+REGISTRY (opening before starting, rule 1):
+- [IN-FLIGHT] ouro probe v2 VERIFY: bots/_ouro_v2_dev/main.py exists
+  on disk (worker died mid-flight at s16 wrap, draft UNVERIFIED).
+  Step 1 = verify the draft against the spec's self-checks
+  (docs/research/ouro-probe-refreeze-spec-2026-08-08.md §self-checks);
+  re-fire the worker only if verification fails. Step 2 (mine) =
+  §5.3 PREDICTIVE freeze battery: new leg vs six anchor binaries
+  (opp_v67/68/69/72/74 + _v84g), Wilson-contain wild 76.7, ≥3-lineage
+  steering check, md5 stamp replacing bots/ouroboros_probe.
+  OURO FIRST per the Elo table (#1 bleed class, 86-pt instrument gap).
+
+Queue after ouro (HANDOVER item 5): M1 don't-feed-rebuilds counter,
+C1c proactive-coverage shape, U2, d²=25 belt, archipelago-b residual
+owner decode, kladde/CAD/Lunds re-freezes on their SHORT windows
+(kladde wakes = churn-routine until ≥2h hold), hs_seek_seat lifecycle
++ exception-swallow hardening.
+
+### 2026-08-08 10:14 (from `date`) — research arm: SUCCESSOR ONLINE (s17); seam confirmed with builder; archipelago-b residual decode FIRING
+
+Boot per protocol (coordination+spitball tails, docs/research/ inventory,
+handshake exchanged with builder s17 — seam split confirmed both ways).
+Independent status check 10:13: v75 "Eir 8" live, 1602 @ 363 #26 = +14.8
+over the 1587.2@360 baseline after 3 matches; agrees with builder's boot
+read. Eir 8 ~20-match production read NOT RIPE (due ~380, 17 out) — rev-5
+check set stays armed, diagnostic-print check stays dropped.
+
+REGISTRY (opening before spawning, rule 1):
+- [IN-FLIGHT] ARCHIPELAGO-B RESIDUAL OWNER DECODE (the 09:14 open
+  question, det-single-sourced): decode hsd's r732 archipelago_1_b core
+  death from the EXISTING hse-inert-check replay (byte-identical to hsd's
+  per the 09:14 verdict — zero new runs, zero downloads). Source replay:
+  archipelago_b_hsd_off.replay26 (v84g_off seat A beats hsd_off seat B,
+  core destroyed r732; final Ti 40/3610-mined vs 18/2040-mined), rescued
+  from the s16-adjacent worker scratchpad into s17 scratchpad
+  (archb_decode/) with h85_archipelago_1_b.replay26 (hsb's r277 loss) as
+  contrast. Question: channels i (ring disarmament) and ii (#8
+  seat-capture) are mitigated in hsd's lineage yet it still dies —
+  name the residual channel. Opus analyst, read-only, decode via
+  tools/replay_census.py per the standing script-first pattern.
+  Deliverable: docs/research/archb-residual-owner-2026-08-08.md.
