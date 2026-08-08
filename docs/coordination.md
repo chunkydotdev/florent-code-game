@@ -7023,3 +7023,57 @@ rounds), but that map is live in the pool and recurred; deserves its
 own look. (3) _bfs_direction degrades to a GREEDY SINGLE STEP
 whenever map_grid is None (undecoded map) — the two-tile ping-pong
 signature, and why the 33-round residual can't be closed.
+
+### 2026-08-08 19:15 CEST — research arm: MAGNUS RELAY — jaw_b's LLM-generated exploit list triaged against game-model.md; BUCKET MINING is model-supported and potentially strategy-level; feasibility read commissioned
+
+Magnus relayed a Discord list from jaw_b (ChatGPT-5.6-sol, PRO mode)
+of 8 "extreme/exploit" strategies. Triaged against the MEASURED
+doc (docs/game-model.md, not the organisers' CLAUDE.md):
+
+MODEL-SUPPORTED, NOVEL TO US:
+1. BUCKET MINING (skip the transport chain) — game-model.md:242-246
+   says ct.destroy() on a conveyor RETURNS RESOURCES IN TRANSIT ON
+   THAT TILE to the global balance, costs NO titanium, NO action
+   cooldown, and is UNLIMITED per round. So: 3 Ti conveyor beside a
+   harvester, catch the 10 Ti stack, destroy → +10 balance, rebuild.
+   No chain to the core at all. **CRITICAL CAVEAT I attach: the
+   FIRST tiebreak level is TITANIUM DELIVERED TO CORE, and balance
+   credits are NOT deliveries** (our v80 read validated core_deliv ×
+   10 == titaniumCollected as the delivery counter). Bucket mining
+   may win the economy and lose the tiebreak — and my long-game
+   tiebreak census, in flight, is exactly the instrument that prices
+   how often that matters.
+2. LIFECYCLE / SCALE-RESET — confirmed by :386-397: scale DECREASES
+   when an entity is destroyed, and destroy/self_destruct are free.
+   Builder churn (build +20%, use, self-destruct −20%) keeps unit
+   costs low by construction. Cheap to test, orthogonal to
+   everything staged.
+PLAUSIBLE, UNTESTED:
+3. LAUNCHER RAIL (multiple throws per round) — turn order is SPAWN
+   ORDER (:50-61) and later-spawned entities act after earlier ones,
+   so launchers built in travel order could each re-throw the same
+   bot in ONE round; throw range r²=26 each. The single-throw
+   version is already measured (:294 — 6-8 tiles turn 1). Costs: 20
+   Ti +10% scale and a unit-cap slot per link.
+4. SPAWN-LOCK — partially ALREADY OURS: :299 records that one enemy
+   body in the 12-tile spawn ring paralyses a bot with no answer,
+   for free. Full lock is the expensive extension.
+ALREADY IN OUR LINE: kidnapping/ejection (HD's 127-throw line);
+barriers as cheap HP (the parked ore-barrier denial plank).
+REFUTED BY THE MEASURED RULE: "barrier industrial warfare" as
+cost-inflation on the opponent — scale is PER-TEAM and DECREASES on
+destroy, so we cannot inflate their costs, and destroying their
+buildings makes their rebuilds CHEAPER. Strategic inversion worth
+carrying: killing their infrastructure lowers their prices.
+DEFENSIVE, URGENT: COMPLEXITY ATTACKS. Tonight's platform profile
+put both our heads at ~93% of the 10ms limit with the cost in the
+SHARED BASE. An opponent carpeting the board with 3 Ti entities
+inflates every get_nearby_* scan we run — we are close to the
+ceiling and this is a live threat TO US, not just a weapon.
+
+- [IN-FLIGHT] EXPLOIT-TRIAGE-FEASIBILITY (OPUS — model wired):
+  mechanical feasibility of bucket mining (incl. the delivery-vs-
+  balance tiebreak question and any wild precedent), launcher rail
+  (turn-order chain), and lifecycle scale-churn — from the engine
+  contract, the measured model, and archived replays. Deliverable:
+  docs/research/exploit-triage-feasibility-2026-08-08.md.
