@@ -95,12 +95,33 @@ def report_bot(name, rows, n_total):
           f"95% CI [{lo:.1%}, {hi:.1%}]")
     if n_w:
         print(f"      (= {n_k / n_w:.0%} of its own wins)")
+    # CENSORED kill-time: turns if THIS bot killed, else 1000. This is the
+    # number to compare across bots.
+    #
+    # Why not the median over kills only (which is what this tool printed until
+    # the instrument audit of 2026-08-08 caught it): conditioning on "we killed"
+    # makes the statistic a COLLIDER. A bot that converts MORE games to kills
+    # earns its extra kills on the hard, slow games, so improving kill rate
+    # DRAGS THE CONDITIONAL MEDIAN UP and the tool reports the improvement as a
+    # regression. Measured on a real leg: adding 3 slow kills moved kill rate
+    # 25%->30% while the conditional median read 24 turns WORSE.
+    #
+    # Censoring at 1000 fixes the sign because the denominator is every match
+    # either way. A bot that kills in under half its games reads 1000 — that is
+    # honest, not a defect: its median game genuinely does not end in a kill.
+    censored = sorted(
+        r["turns"] if (r["winner"] == name and r["condition"] == "core_destroyed")
+        else 1000
+        for r in rows
+    )
+    med = statistics.median(censored)
+    tag = "  (censored — >=half its games are not kills)" if med >= 1000 else ""
+    print(f"    censored kill-time  median {med:.0f}{tag}")
     if kills:
         turns = sorted(r["turns"] for r in kills)
-        print(f"    turns-to-kill       median {statistics.median(turns):.0f}   "
-              f"fastest {turns[0]}   slowest {turns[-1]}")
-    else:
-        print(f"    turns-to-kill       — (no core kills)")
+        # Kept for description only. NEVER compare this across bots — see above.
+        print(f"    (of kills alone     median {statistics.median(turns):.0f}   "
+              f"fastest {turns[0]}   slowest {turns[-1]}   COLLIDER, do not compare)")
 
 
 def main():
