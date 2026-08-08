@@ -435,8 +435,18 @@ share of them.
 delivered-titanium delta (mean / median / games-moved) plus the top per-map
 economy movers, computed over data `play()` already collected — a reporting
 change, not a new measurement. Validated against the known hive case: it prints
-`delivered-Ti delta (off minus on): mean +2885 median +5770 games moved 6/12`
-on the same leg whose flip count is 0.
+`delivered-Ti delta (off minus on): mean +2885  games moved 6/12  [median over
+MOVED games +5770; median over all +2885]` on the same leg whose flip count is 0.
+
+**Read the headline as mean + games-moved, not median.** Economy deltas are
+BIMODAL by construction — the maps a plank touches move, every other map sits at
+exactly 0 — so an overall median reports 0 whenever a plank touches fewer than
+half the maps (the common case), and a naive upper-middle median reports the
+moved population's value as if it were typical. Both failure modes were live in
+the first cut of this code: it printed "median +5770" for a set of six zeros and
+six +5770s, where the true median is +2885. Mean-with-moved-count reads correctly
+whether a plank touches one map or fifteen; per-affected-game magnitude is the
+separately labelled median-over-moved.
 
 **Tape convention, standing:** a "0 flips / no effect" verdict must be written as
 "no OUTCOME effect measured" and paired with its economy delta. Older rows

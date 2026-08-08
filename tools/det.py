@@ -149,12 +149,29 @@ def main():
         deltas.append(d)
         permap.setdefault(k[0], []).append(d)
     if deltas:
-        deltas_sorted = sorted(deltas)
+        def _median(xs):
+            # Average the two middle values on even n. The upper-middle pick is
+            # actively misleading here: economy deltas are BIMODAL by nature --
+            # the maps a plank touches move, every other map sits at exactly 0 --
+            # so upper-middle reports the moved population's value as if it were
+            # typical (measured: 6 zeros + 6 x +5770 printed "+5770", true +2885).
+            s = sorted(xs)
+            m = len(s) // 2
+            return s[m] if len(s) % 2 else (s[m - 1] + s[m]) / 2
+
         mean = sum(deltas) / len(deltas)
-        med = deltas_sorted[len(deltas_sorted) // 2]
-        moved = sum(1 for d in deltas if d)
-        print(f"  delivered-Ti delta ({tb} minus {ta}): mean {mean:+.0f}  "
-              f"median {med:+d}  games moved {moved}/{len(deltas)}")
+        moved_vals = [d for d in deltas if d]
+        moved = len(moved_vals)
+        # HEADLINE = mean + moved fraction. On a bimodal set the overall median
+        # is nearly uninformative (it reports 0 whenever a plank touches fewer
+        # than half the maps, which is the common case); mean-with-moved-count
+        # reads correctly whether a plank touches one map or all fifteen.
+        line = (f"  delivered-Ti delta ({tb} minus {ta}): mean {mean:+.0f}  "
+                f"games moved {moved}/{len(deltas)}")
+        if moved:
+            line += (f"  [median over MOVED games {_median(moved_vals):+.0f}; "
+                     f"median over all {_median(deltas):+.0f}]")
+        print(line)
         rows = sorted(((sum(v) / len(v), m) for m, v in permap.items()),
                       key=lambda r: -abs(r[0]))
         for avg, m in rows[:6]:
