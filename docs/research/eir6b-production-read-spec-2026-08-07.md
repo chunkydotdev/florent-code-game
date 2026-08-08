@@ -111,3 +111,33 @@ question and the contingent decode ASK becomes a **v63-specific** read (why
 does the K-line base underperform flooronly on the peer mirror), not the band
 census. Both decode shapes are pre-thought; the band census spec lives in the
 19:33-era ping and applies to either with the target leg swapped.
+
+## REV 4 (2026-08-08 ~06:2x, research arm) — retargeted to _v84g "graft" (6e + E2b + E1-capped + S1 guard), pre-staged BEFORE the 480 bar lands
+
+Fires on _v84g activating (ship rule or Magnus's field-better/holder-parity
+route). Rev 3's checks 1-8 stand for the 6e base; ADD:
+
+9. **E2b in production**: our conveyors-on-ore count = 0 across all archived
+   matches (local A/B was 0/1,595 vs control 163; any nonzero = gate/hoist
+   regression on unknown maps — check map-decode status per instance).
+10. **E1-capped in production**: zero sub-floor peacetime conversions AND no
+   ammo starvation under the cap (builder's ablation flag: scaled-to-149
+   variant capped; watch turret idle-with-target rounds vs the v69-era
+   baseline 0/1,190).
+11. **S1 guard**: own-building attack count = 0 (v69-line baseline: 11% of
+   melee swings; ours pre-guard measured via _intercept path). Any own-team
+   target in a fire() event = guard miss, cite round + chased-raider context.
+12. **Bleed-plank baselines for the NEXT worker** (heal-seat/population —
+   measure even though _v84g does NOT fix these): (a) heal-seats blocked at
+   every core-damage episode (our known habit: median 4/8, p90 8/8); (b)
+   spawn total vs the soft ceiling (~cap+8+surge) in any attrition game;
+   (c) heal/dmg ratio per siege episode vs the bimodal law (≥0.94 lives,
+   ≤0.86 dies) — production replication of the two-arm finding.
+13. **Class priority for first replays** (reweighted to the v72 bleed list):
+   CAD v117 / kladde v75-76 / Lunds v45 / Ouroboros / Leviathan v25 first,
+   then the rev-3 order. The candidate's case IS the bleed classes — the
+   read's job is confirming the planks fire against exactly them.
+
+Constants re-extraction (check 8) now triple-due: our-version change AND the
+family churn wave (CAD v117, Lunds v45-46?, kladde v75-76 thrash) AND the M1
+throw-destination unfreeze from the CAD-arm read.

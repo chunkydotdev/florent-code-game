@@ -19,6 +19,20 @@ ships/submissions/activations and the slot, the tape (`elo_history.tsv`,
 `results.tsv`), repo commits, the build queue and its priorities, the four
 monitors (arm/re-arm/fix), and HANDOVER.md.
 
+**Push on every commit (Magnus, 2026-08-08).** `git push` immediately after
+every commit, no batching — the repo is the backup and a 54-commit unpushed
+backlog was found the morning of 08-08. Either arm noticing `ahead of
+origin` pushes committed history on sight (pushing is backup, not a
+verdict/ownership act).
+
+**Watch state must have a verified wake path (Magnus retro point,
+2026-08-08).** Entering watch state requires naming what will actually wake
+the arm (a monitor that re-invokes the session, a message, a timer) — a
+monitor that only writes files nobody reads is a log, not a wake path. On
+the night of 08-07→08 both arms sat blind ~00:30-05:39 while three teammate
+versions shipped and the slot bled; teammate uploads are wake events with
+the same priority as opponent version bumps.
+
 **Research arm** owns: `docs/research/*` deliverables, replay decodes
 (including post-ship production reads), code-reads/specs/pre-mortems,
 read-only subagent fan-outs (research briefs), cross-thread synthesis, and

@@ -1,4 +1,51 @@
-# Session 15 LIVE header (builder arm, overnight autonomous run per Magnus's
+# Session 15 FINAL (wrapped ~06:3x 2026-08-08 on Magnus's call; Magnus
+# restarting both arms — successor boots per /builder, which now carries a
+# stance block that BINDS ON BOOT)
+
+## FIRST ACTIONS for the successor
+## 0. TOP PROCESS ITEM (retro theme 6, Magnus): the monitor→session WAKE PATH
+##    is broken by design — monitors write wake-files but nothing re-invokes
+##    a session (both arms blind 00:30-05:39 while v70-72 shipped and bled;
+##    protocol now requires NAMING the verified wake path before entering
+##    watch state; teammate uploads = wake events; fix candidates: monitor
+##    loops that exit-on-wake so the harness re-invokes, or a Monitor-tool
+##    condition). ALSO STANDING: push in the same breath as every commit
+##    (origin exists; 54-commit backlog incident on the tape).
+## 1. RE-ARM FOUR MONITORS (died with this wrap; tools/monitors/, one-liners
+##    in docstrings, explicit paths only — no bare globs in zsh loops).
+## 2. **LIVE: v73 "Eir 7" (= bots/_v84g, md5 cbb0b8b4)** — OUR lineage holds
+##    the slot (first since v66). Shipped 06:23 on Magnus's direct call:
+##    holder-parity accepted (49.0 [44.5,53.4]/480 vs v72), climb bet on the
+##    field improvements (kladde-probe 83.3 vs 74.2 base, ouro 83.3, band 95).
+##    Baseline 1613 @ 340 #22 (opened 1615 @ 341). ~20-match check due ~360.
+##    ROLLBACK STANCE (Magnus): ladder disagrees → re-activate v72, one click.
+## 3. Research's rev-4 PRODUCTION READ fires on v73's first ladder window
+##    (spec: eir6b-production-read-spec rev 4; check 12 collects _v85hs
+##    before-baselines in the same pass). Their wrap note + full-day RETRO
+##    (5 themes) are on the coordination board ~06:3x.
+## 4. bots/_v85hs = PARKED dev head (heal-seat protection + staffed heal
+##    detail + REPLACEMENT_MAX lift, on the _v84g base) — the cross-validated
+##    top plank from the v72 bleed decode. Gate NOT run (wrap horizon). Its
+##    worker report is in the s15 coordination notes; gate design pre-stated
+##    in the 06:12 registry row. THE candidate for next cycle.
+## 5. Content of Eir 7 = 6e + E2b ore-pave ban + E1 capped peacetime ammo
+##    floor + S1 intercept own-building guard (three measured defect fixes;
+##    ablation + flip-grid caveats on the tape row _v84g-slotbar).
+## 6. Measurement standards now standing (in tooling.md): deterministic-
+##    paired or interleaved-same-batch for holder comparisons (cross-batch
+##    120-game legs spread ~10pp); det per-map flips are chaos-bounded
+##    (butterfly sensitivity — identity tests gold, small-perturbation
+##    attribution over-reads); paired tooling in s15 scratchpad
+##    (rdiff.py/det.py/pair.py) — PROMOTE TO tools/ after validation.
+## 7. Queue after the production read: C1c (corpus-spec'd, behind its
+##    arming-frequency diagnostic), U2 (detector kept, response redesign),
+##    d²=25 belt (composes with C1c), probe re-freezes on a ≥2h version-
+##    quiet window (CAD v117, Lunds v45, kladde v75/76, PP v35, Flotte v38;
+##    opening rows exempt), clanker_probe GO spec, graft brief to x3r0
+##    (asymmetry framing + his S1/E2a/watchdog defect list + heal-seat law).
+
+# Session 15 overnight header below (superseded where in conflict)
+# (superseded) Session 15 LIVE header (builder arm, overnight autonomous run per Magnus's
 # 22:15 mandate; supersedes s14 blocks below where in conflict)
 
 ## State at 01:30 2026-08-08 — QUEUE DRAINED, WATCH STATE (no self-wrap; Magnus wraps)

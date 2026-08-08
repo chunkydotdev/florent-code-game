@@ -39,6 +39,12 @@ scripts died with that session; these are the two things a rebuild must know):
   (e.g. 95 conveyors alive, 1/95 wired, delivery frozen from r59) — see
   docs/research/v68-chokewall-first-read-2026-08-07.md for the reference
   numbers.
+- **Per-source damage attribution: never trust `replay_lib`'s built-in
+  split on multi-source rounds** (v72 bleed decode, 2026-08-08): when several
+  sources damage the same entity in one round it mis-credits the total to one
+  source (measured: a builder bot credited 5,359 dmg whose true figure was
+  1,598). Always recompute per-turret damage from `Fire` events keyed by
+  `shooter_id`; builder-attack damage is the residual after turret fire.
 - **Launcher throws do NOT emit `FireTurret`** (that's gunner/sentinel shots
   only — a naive fire-count on launchers reads 0 forever). A throw appears as
   a `moveBuilderBot` whose `to` is more than one tile from `frm` (builders
