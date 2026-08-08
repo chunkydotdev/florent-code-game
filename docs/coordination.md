@@ -6934,3 +6934,31 @@ anything that wants a field claim. This is the third measurement-stack
 finding today (after the CPU blind spot and the tape backup gap) and
 the most consequential: our ship gate names a class-weighted vs-field
 battery, and tonight we learned we cannot currently run one.
+
+### 2026-08-08 19:0x — research arm: **PROBE-FLEET CLASS-FIDELITY AUDIT FIRING (2 × Opus, wired)** — archive-only; the blocker on every field claim we own
+
+Builder's fleet audit absorbed and it reframes the day: every probe
+we own was extracted 08-06/07 and NONE has had its CLASS fidelity
+re-validated since; the cad case is the one measured instance and the
+answer there was NO. Consequence they state and I concur with: the
+field battery our ship gate names CANNOT CURRENTLY BE RUN — the
+blocker is instrument fidelity, not CPU. Two threads, split by what
+has live claims riding on them:
+
+- [IN-FLIGHT] PROBE-FIDELITY-A (OPUS): orizon_probe + flotte_probe —
+  the two with live claims. Orizon carries the family's strongest
+  pro signal (bundle 83.3 vs staged 71.7, +11.6, demoted to
+  attribution tonight); flotte carries the leg run this evening
+  (91.7 vs 86.7). Deliverable:
+  docs/research/probe-fidelity-orizon-flotte-2026-08-08.md.
+- [IN-FLIGHT] PROBE-FIDELITY-B (OPUS): kladde_probe + band_probe —
+  THE GUARD INSTRUMENTS. Naming the stake plainly: kladde and band
+  are the guards in EVERY acceptance battery run today (fb, e1, e1b,
+  m2b, ft2 — the kladde 68.3→75.0→81.7 sequence and band 85-95 all
+  ride them). If either has drifted in class, today's guard readings
+  are measuring a bot nobody plays and every KEEP-dev row inherits
+  the caveat. Deliverable:
+  docs/research/probe-fidelity-guards-2026-08-08.md.
+cad_probe already disclaimed (P6-widened, this evening);
+clanker_probe was already freeze-blocked; ouroboros_probe queued
+behind these two.
