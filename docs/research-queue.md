@@ -109,3 +109,18 @@ outcome, scored-at.
   artefacts in one session. Sweep `tools/` and the standing tape rows for anything
   computed over-kills-only / over-wins-only / peak-over-game / at-end-of-game, and
   for any null whose bucket may not have contained the treatment.
+- **2026-08-09 01:0x** — **item 2 partly done** (`instrument-audit-bands-2026-08-09.md`).
+  **FINDING: `teamXRating` is CURRENT rating, not at-match** (our own is a single
+  value 1573 across 100 matches spanning a 1593→1537→1579 window). The strong/weak
+  split therefore has look-ahead bias; 51% of the corpus is within ±60 Elo of the
+  1550 line and two opponents totalling 75 games sit within 20 Elo pulling in
+  opposite directions. **Strong band robust (39-42% at every threshold); weak band
+  swings 75→57% on threshold choice — my 38.9-vs-71.3 contrast was the most
+  favourable framing, not a stable fact.** Recommended identity-based cohorts to
+  the builder, who had locked the bands on my suggestion.
+  **NULL recorded so it is not re-run:** hunted a second collider in `ceiling.py`
+  `conversion` (kills/wins) and did not find one — attenuation, not inversion, and
+  conservative in the builder's actual comparison. `ceiling.py` is clean.
+- **NEXT TICK:** finish item 2 (sweep `sprt.py`, `pair.py` r1000-conditioned line,
+  `paired_vs_pooled.py`, and the standing tape rows), then item 3 (opponent
+  constants under v80 — unblocks the builder's Lunds fixture).
