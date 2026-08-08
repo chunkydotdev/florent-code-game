@@ -1,3 +1,84 @@
+# Session 18 FINAL (builder wrapped 2026-08-08 ~19:2x on Magnus's call
+# relayed via research; successor boots per /builder)
+
+## FIRST ACTIONS for the successor
+## 1. RE-ARM FIVE MONITORS (they die with this session; tools/monitors/,
+##    exit-on-wake shape, one-liners in each docstring). The elo_logger now
+##    implements the REVISED swap rule (arms at holder-match >=8, window
+##    prices only the current holder's tape rows) — verified firing both
+##    directions today.
+## 2. LIVE: **v80 "Eir 9b" (= bots/_v89sh, md5 e12f8585)** — held all
+##    session. Baseline CORRECTED to 1562.9 @ 397 (see below); wrap read
+##    1575.3 @ 419 #30. Rollback = v76 one click.
+## 3. **NOTHING SHIPPED THIS SESSION, deliberately.** Five planks reached
+##    KEEP-dev and none earned a window. Read results.tsv rows
+##    e1-bundle-h2h / e1-family-missing-measurement / ft2-vs-bundle-direct
+##    before re-opening any of them.
+##
+## 4. THE SINGLE BEST QUEUE ITEM — **hive_freeze** (row
+##    hive-freeze-live-defect): a measured defect in SHIPPED BYTES. On
+##    hive.map26 (live pool map), seat A, _expand returns unconditionally
+##    from r42 whenever a home gun stands (:3614-3624 in _v89sh). Ablation:
+##    delivered Ti 5,260 -> 11,030, buildings 28 -> 155, 6/6 seeds, ZERO
+##    outcome flips. Research's census: delivered titanium is the SOLE
+##    decider in 219/219 full-length games (26.2% of all games, 36.7% under
+##    v80). Ranked above the deny-dispatch fix on EV by both arms. NOT a
+##    finished fix: one map/seat/opponent, and the freeze's original intent
+##    is not documented — measure removal against the picket class it names
+##    before shipping.
+## 5. **RE-FREEZE KLADDE BEFORE RE-GATING ANY E1-FAMILY PLANK** (row
+##    kladde-guard-caveat-RETRO). The kladde probe is ~70 points
+##    mis-calibrated vs wild AND its turret composition was never faithful
+##    (33% gunner vs wild's 62-70% gunner-majority) — gunner fire is
+##    blockable, sentinel fire is not, so line-of-sight-dependent variants
+##    can have their ORDERING reversed, not just their level. E1's
+##    supply-tax attribution and E1b's recovery are the exposed claims.
+##    Spec in docs/research/probe-fidelity-guards-2026-08-08.md.
+## 6. FLEET STATE (row probe-fleet-staleness): orizon VALID (only probe
+##    whose subject has not shipped since extraction; its +11.6 discounts
+##    to ~+6-8 and the bias direction is HARDER, not flattering); band
+##    valid but RUSH-MODE ONLY (v41 added an unmodelled fallback economy —
+##    our only loss series to them today was in that mode); kladde and
+##    flotte need RE-FREEZE (flotte was never valid in two respects: wild
+##    builds 13-15 gunners and ~2 launchers at r10; the probe has no
+##    launcher code at all); cad disclaimed under P6-widened.
+## 7. FIVE MEASUREMENT-STACK FINDINGS today, all in docs/tooling.md — read
+##    them before trusting any older row: (a) the verdict tape results.tsv
+##    was GITIGNORED and unbacked-up for the project's whole life (now
+##    tracked); (b) platform CPU peaks at ~93% of the 10ms limit on BOTH
+##    heads and the driver is the SHARED BASE, not new planks — every
+##    local leg runs --tle 0 and is CPU-blind; (c) "0 flips" means NO
+##    OUTCOME EFFECT, never "no effect" — det.py was blind to delivered
+##    titanium and now reports it (the fix caught its own even-n median
+##    bug on re-validation); (d) version binds at match CREATION, so read
+##    the next match's meta stamp after any activation; (e) **field
+##    evidence about an unshipped head is structurally unobtainable** —
+##    submission download is own-team-only, match test takes two local
+##    dirs, unrated runs the ACTIVE submission. The ship gate as written
+##    cannot be satisfied; gate on proxy strength, ship into a measured
+##    window, let the ladder be the field instrument with rollback as the
+##    control. **RETRO ITEM for Magnus.**
+## 8. DEV HEADS: _v94fb (staged, fjordgate bootstrap — the one real fix,
+##    3-stage green); _v95e1 (E1 ring + M2b + FT2 bundle, all KEEP-dev);
+##    _v96ft2 (FT2 only, identity-validated). Bundle vs staged = PARITY
+##    (54.2 [45.3,62.8]/120); FT2-only vs staged = marginal (59.2
+##    [50.2,67.5]); FT2-only vs bundle = no separation, leans bundle
+##    (43.3 [34.8,52.3]). FT2 debts unpaid: meander-B regression measured,
+##    atoll magazine prediction UNTESTED (needs a 1000-round parked-
+##    harasser leg, not the 113-321-round games I ran).
+## 9. RESEARCH-SIDE OPEN: deny-silence fix is SPEC'D not built (vision
+##    starvation 3/5 + role/dispatch 2/5; licensed shape = publish the
+##    siphon target team-level via SLOT 5, which I verified write-only in
+##    the live bot, and make the duty claimable — tight claim radius, the
+##    pull-workers-off-economy class is twice-refuted); exploit
+##    feasibility thread (bucket mining / launcher rail / scale churn)
+##    died with their session, brief in their 19:13 note, cheap to
+##    re-commission.
+## 10. TAPE CORRECTIONS made today, both against our own prior record:
+##    v77 FINAL = +34.1/6 (not +20.2/5); **v79 FINAL = -38.1/8 ending on a
+##    WIN, and v80's baseline is 1562.9 @ 397** — the match I credited to
+##    v80 was created 4 min pre-activation and meta-stamps v79.
+
 # Session 17 FINAL (builder wrapped 2026-08-08 15:48 on Magnus's call "wrap up at the
 # end of this cycle"; successor boots per /builder)
 
