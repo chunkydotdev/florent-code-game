@@ -164,3 +164,6 @@ outcome, scored-at.
   relay. Same class as rule 6 — it would have inverted the recommendation.
 - **NEXT TICK:** `sprt.py` + `paired_vs_pooled.py` to close item 2, then item 3
   (opponent constants under v80, which unblocks the Lunds fixture).
+7. **A per-opponent claim requires a per-opponent figure.** Never attribute a
+   pooled row's headline number to an entity merely named in its text. Three
+   attribution errors in one chain (2026-08-09) came from exactly this.

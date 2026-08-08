@@ -117,3 +117,96 @@ well as of the lethality question, at the cost of one extra arm.
   `opp_v72`) are marked as such and should not be treated as established.
 - `opp_v56`, `opp_v58`, `cad_probe`, `clanker_probe` have no qualifying rows —
   unmeasured, not absent.
+
+---
+
+# ADDENDUM (02:1x) — **RETRACTION. The builder's refusal was right, and my §2 table was built wrong.**
+
+The builder refused my correction to its ceiling battery and I checked the
+primary expecting to confirm my figure. **The primary refutes me, and the defect
+is worse than the single number.**
+
+## The single number first
+
+My "ouroboros_probe ~53% (n=128)" came from the **PIECE D guard-matrix row**,
+whose `winrate` column (0.531) is the row's *overall* rate across a battery of
+band/flotte/kladde legs. `ouroboros_probe` merely appears somewhere in its text.
+**I attributed a pooled row's headline number to an opponent named inside it.**
+
+The tape states the real figure explicitly, in the SHIP BATTERY row:
+
+```
+kladde 75.0 [69.2,80.1] · flotte 86.7 · band 90.0 · ouroboros_probe 72.5 [66.5,77.8]
+· opp_v56 61.7 · opp_v63 57.9 /480
+```
+
+**ouroboros_probe is 72.5% — dominated.** The builder's fresh battery puts it at
+79.2–93.3% at current head. Its original framing was right in the strongest form
+and my "rescue" of its strength-axis leg was unfounded. **"Structurally
+incapable" stays.**
+
+## The defect is systemic, not local
+
+My §2 table was built by substring-matching an opponent name against a row and
+taking the **row-level** `winrate`. Every pooled row therefore contributed its
+headline number to whichever opponent matched first. Re-parsed to use the
+per-opponent figures stated *inside* descriptions:
+
+```
+opponent          obs   median          range        status      I HAD SAID
+band_probe         45    88.3%    5.0-100.0%    DOMINATED     26.7% WE LOSE
+flotte_probe        9    86.7%   75.0-93.3%     DOMINATED     85.0% dominated
+ouroboros_probe     4    77.1%   72.5-79.2%     DOMINATED     53.1% CONTESTED
+kladde_probe       43    72.1%    0.0-87.5%     DOMINATED     73.0% dominated
+rush_probe_fast     5    68.3%   60.4-97.5%     DOMINATED     80.0% dominated
+orizon_probe       15    66.7%    4.8-94.6%     DOMINATED     47.2% CONTESTED
+opp_v63            11    60.0%   30.0-100.0%    CONTESTED
+opp_v50             7    58.8%   53.3-64.2%     CONTESTED
+opp_v74             4    56.2%   48.4-60.0%     CONTESTED
+opp_v45             5    50.0%    3.3-78.3%     CONTESTED
+opp_v69             3    41.7%   40.0-43.3%     WE LOSE
+opp_v44             3    40.8%   40.6-40.8%     WE LOSE
+opp_v76             3    38.3%   38.3-42.5%     WE LOSE
+```
+
+**Three of my status calls invert: `band_probe`, `orizon_probe` and
+`ouroboros_probe` are all DOMINATED, not contested-or-losing.**
+
+## What this does to the recommendation
+
+**ARM 1 OF MY THREE-ARM DESIGN DOES NOT EXIST.** Every external replica —
+band, flotte, kladde, orizon, ouroboros, rush — is dominated. There is no
+external opponent in the local pool that can punish us.
+
+**So the builder's original concern was correct and my headline was wrong.** The
+corrected position:
+
+- **Runnable against external non-dominated opponents: NO. None exist locally.**
+- **Runnable against our own lineage: yes** — `opp_v76` 38.3%, `opp_v44` 40.8%,
+  `opp_v69` 41.7%, plus contested `opp_v63`/`opp_v50`/`opp_v74`/`opp_v45`. With
+  the §3 caveat intact and now load-bearing rather than secondary: these share
+  our code, so a punish they execute is one we already know how to build.
+- **Against real opponents: only `fcode match unrated`**, at ~30 games/hour,
+  which the builder had already identified as unable to buy a verdict.
+
+**Arm 3 (the dominated negative control) survives and is now nearly the whole
+external pool** — which is itself the finding: if every external probe reports
+Regime A, that is consistent with my mechanism *and* with the mechanism being
+vacuous, and the two cannot be separated without a punisher.
+
+## What survives
+
+§2's *narrow* claim — that the pool is not "~3 effective opponents" — survives:
+there are ~7 usable self-play opponents spanning 38–60%. **The claim that any of
+them are external does not.**
+
+## Process note against myself
+
+This is the **third** attribution error in one analysis chain: kladde at 43%
+(pooled map-restricted legs), ouroboros at 53% (row-level attribution), and now
+the whole table. Each was the same failure — **taking a number from a row that
+answers a different question than the one I was asking.** Queue rule 6 says a
+null needs the treatment in the pool; the sibling rule this establishes is:
+**a per-opponent claim requires a per-opponent figure, never a row-level one.**
+I caught the first myself, missed the second, and only found the third because
+the builder refused a correction that flattered its own work.
