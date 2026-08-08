@@ -6771,3 +6771,24 @@ TWO SELF-CATCHES, both mine:
   SIPHON_FIRE_TI clears target — insolvency shape, would rhyme with
   the FB accumulation floor). Deliverable: docs/research/
   deny-silence-decode-2026-08-08.md.
+
+### 2026-08-08 18:48 CEST (from `date`) — builder arm: **FT2 KEEP-dev** (tape row ft2-keepdev); FT2-BUILD registry CLOSED; **BACKUP GAP FOUND AND CLOSED ON THE TAPE ITSELF**
+
+1. FT2 verdicted — full scorecard on the tape row. Headline: identity
+   perfect, det 80.8-vs-65.0 (20/21 flips toward), guards up/flat,
+   **fjordgate both seats L->W with a real economy (5,820 Ti seat-A)**;
+   but **meander seat-B W->L** (the OS zero-eco grind win, research's
+   M5 trade) and the atoll magazine prediction is UNTESTED at these
+   game lengths, not passed. Two follow-ups named before any ship.
+2. **BACKUP GAP (found while acting on research's untracked-docs
+   catch — thank you, it generalised): `results.tsv` — THE VERDICT
+   TAPE, 234 rows, every ship case and verdict we have — is in
+   .gitignore and has NEVER been backed up.** No documented rationale
+   exists (grepped docs/, .gitignore history). This directly defeats
+   Magnus's push-every-commit durability rule: the most valuable
+   artifact in the repo was the one file the rule could not protect.
+   ACTION: removed from .gitignore and committed. Reversible in one
+   line if there was an unstated reason — flagging rather than
+   assuming. Process rule for both arms: `git status --short` at
+   every landing, and audit .gitignore against the asset list, not
+   just the diff.

@@ -934,11 +934,51 @@ FERRY_ON = True
 # collapsing (cad-family 0.79 -> 0.42) at a total margin of 4, i.e. FERRY_SLACK 2.
 FERRY_SLACK = 0
 
+# PIECE FT2 -- UNDER-SIEGE SEVERITY TIERS (design:
+# docs/ft-responder-redesign-2026-08-08.md).  The detector was exonerated and
+# the DEFECT is release: SLOT_ATK_RND is refreshed by mere SIGHTING, so the
+# 50-round decay never fires while anything is parked in vision (72/72 disc
+# games never released) and the whole siege posture -- recalls, heal-over-eco,
+# eco caps, map holds -- runs all game.  Measured cost: the fjordgate-B r1
+# builder-sighting latch opened siege-first with zero harvesters for 392
+# rounds.  The latch LENGTH is load-bearing the other way (atoll decode, the
+# comment at the decay branch): a harasser parking just outside every trigger
+# radius let a short latch expire between pokes and collapsed the ammo
+# magazine to 13 shots on 2,782 banked Ti.  The two lessons conflict only
+# while severity is binary, so severity is encoded in SLOT_UNDER's own value
+# space -- no new slot (16/16 assigned) and truthiness preserved, so every
+# reader that only asks "is anything happening" keeps working unmodified:
+#
+#   0 clear | 1 AMBIENT (sighting-fresh) | 2 INSERTION (ferry) | 3 DAMAGE.
+#
+# CHEAP consumers stay keyed >= 1 (the ammo target/floor keep their sighting
+# trigger -- that IS the atoll lesson).  EXPENSIVE consumers -- recalls,
+# convergence, heal-over-eco ordering, map-special holds, launchwait sabotage
+# -- are keyed >= 2 through _ft2_expensive, so a parked-but-idle turret or a
+# walking scout no longer pins them while a ferry or actual damage still does.
+FT2_ON = True
+# How long a SEVERE tier (2/3) holds without fresh severe evidence, in rounds.
+# Same 50 as the sighting latch: shorter re-opens the atoll hole for the
+# expensive tier, longer is indistinguishable from the all-game pin.
+FT2_SEVERE_RNDS = 50
+
+
+def _ft2_expensive(u):
+    """True when SLOT_UNDER value ``u`` warrants the EXPENSIVE siege posture.
+
+    One place so the master toggle is exact: with FT2_ON off this is the plain
+    truthiness test every one of those call sites shipped with.
+    """
+    return u >= 2 if FT2_ON else bool(u)
+
+
 SLOT_ROLE_N = 0
-# 0 = clear, 1 = insertion latched, 2 = FERRY-CONFIRMED insertion (PLANK FT).
-# 2 is a strictly stronger 1: every reader in this file is a truthiness test
-# (`!= 0` or bare), so 2 latches every existing response exactly as 1 does, and
-# no site may downgrade a 2 to a 1 -- only the ordinary decay to 0 clears it.
+# 0 = clear, 1 = insertion latched, 2 = FERRY-CONFIRMED insertion (PLANK FT),
+# 3 = DAMAGE observed (PIECE FT2).  Every value above 0 is a strictly stronger
+# 1: every legacy reader in this file is a truthiness test (`!= 0` or bare), so
+# 2 and 3 latch them exactly as 1 does.  No site may downgrade a severe tier to
+# a plain 1 while that tier is fresh; only the Core, which owns the decay, may
+# write one down (see the FT2 block in _core).
 SLOT_UNDER = 1
 SLOT_ATK_RND = 2
 SLOT_ENEMY_CORE = 3
@@ -1854,6 +1894,14 @@ class Player:
         self.c1b_armed = False
         self.c1b_threat = None
         self.last_hp = None
+        # PIECE FT2 severe-tier bookkeeping, CORE ONLY (see the FT2 block and
+        # the writer in _core).  The Core owns the decay, so it also owns the
+        # freshness clock for tiers 2/3: ft2_severe_rnd is the last round severe
+        # evidence was seen, and ft2_wrote is the value this unit wrote last
+        # round -- the only way to tell a builder's fresh ferry write from the
+        # Core's own echo of it, since the store carries no author.
+        self.ft2_severe_rnd = None
+        self.ft2_wrote = 0
         # PLANK SP (see SP_ON): enemy turrets this unit can see, refilled from
         # scratch by _builder's existing hostile scan every turn.  Never read
         # outside the turn that wrote it, so it cannot carry a stale sighting.
@@ -2166,14 +2214,40 @@ class Player:
                 ct.write_store(SLOT_THREAT, pack_pos(threat))
                 break
         hp = ct.get_hp()
-        if self.last_hp is not None and hp < self.last_hp:
+        dmg = self.last_hp is not None and hp < self.last_hp
+        if dmg:
             under = True
         self.last_hp = hp
+        # PIECE FT2 -- the Core owns the severity clock (see the FT2 block).
+        # The store carries no author, so a severe value read back is either a
+        # builder's fresh ferry write or this unit's own echo of an old one; the
+        # difference is exactly "does it match what I wrote last round".  The
+        # Core acts first every round (spawn order), so a builder that still
+        # sees its ferry re-writes 2 over any downgrade written here and the
+        # tier re-arms one round later -- which is why the downgrade is safe to
+        # take on the Core's word alone.
+        cur_u = ct.read_store(SLOT_UNDER)
+        severe_fresh = False
+        if FT2_ON:
+            if dmg or ferry or (cur_u >= 2 and cur_u != self.ft2_wrote):
+                self.ft2_severe_rnd = rnd
+            severe_fresh = (
+                self.ft2_severe_rnd is not None
+                and rnd - self.ft2_severe_rnd < FT2_SEVERE_RNDS
+            )
         if under:
             # No site may downgrade a ferry-confirmed 2 to a plain 1; only the
             # ordinary latch decay below clears it, to 0.
-            ct.write_store(
-                SLOT_UNDER, 2 if (ferry or ct.read_store(SLOT_UNDER) == 2) else 1)
+            if FT2_ON:
+                # Own evidence first, then the standing severe tier if it is
+                # still fresh: max() keeps 3 over 2 without letting either one
+                # outlive its window.
+                v = 3 if dmg else (2 if ferry else 1)
+                if severe_fresh and cur_u >= 2:
+                    v = max(v, cur_u)
+            else:
+                v = 2 if (ferry or cur_u == 2) else 1
+            ct.write_store(SLOT_UNDER, v)
             ct.write_store(SLOT_ATK_RND, rnd)
         else:
             last = ct.read_store(SLOT_ATK_RND)
@@ -2184,10 +2258,18 @@ class Player:
             # (measured: 13 shots fired in 1000 rounds on 2,782 banked Ti).
             under = bool(last and rnd - last < 50)
             if under:
-                ct.write_store(
-                    SLOT_UNDER, 2 if ct.read_store(SLOT_UNDER) == 2 else 1)
+                if FT2_ON:
+                    # Sighting-fresh but severe-stale is exactly the parked-
+                    # harasser state: hold the AMBIENT tier (the ammo magazine
+                    # keeps its trigger) and release the expensive posture.
+                    v = cur_u if (severe_fresh and cur_u >= 2) else 1
+                else:
+                    v = 2 if cur_u == 2 else 1
+                ct.write_store(SLOT_UNDER, v)
             else:
+                v = 0
                 ct.write_store(SLOT_UNDER, 0)
+        self.ft2_wrote = v
 
         harv = ct.read_store(SLOT_HARVESTERS)
         if harv >= ECO_NEED:
@@ -2729,6 +2811,10 @@ class Player:
                 ct.write_store(SLOT_ENEMY_CORE, pack_pos(ep))
             if et == EntityType.BUILDER_BOT and ferried(ep, _anchor, _rnd):
                 _ferry = True
+                # PIECE FT2: unchanged -- this IS the tier-2 writer, and it is
+                # also the only re-stamp the Core's severe clock gets from a
+                # ferry it cannot see itself, so it must keep firing every round
+                # the thrown bot stays visible.
                 ct.write_store(SLOT_UNDER, 2)
                 ct.write_store(SLOT_ATK_RND, _rnd)
             if _arm_scan:
@@ -2761,9 +2847,24 @@ class Player:
             ):
                 # 2 wins over 1 within this unit's own turn as well: a later
                 # proximity sighting must not walk back a ferry confirmation.
-                ct.write_store(
-                    SLOT_UNDER,
-                    2 if (_ferry or ct.read_store(SLOT_UNDER) == 2) else 1)
+                # PIECE FT2: a builder writes only what IT saw, and only when
+                # that raises the tier.  It must never echo a severe value back
+                # out of the store -- the Core writes its downgrade before any
+                # builder runs, but every builder still reads LAST round's
+                # value, so an echo would re-raise the tier the Core just
+                # released and the severe latch could never expire.  Ambient is
+                # therefore written only from 0; anything already standing is
+                # the Core's to level, and ATK_RND below still carries the
+                # sighting freshness the cheap tier runs on.
+                if FT2_ON:
+                    if _ferry:
+                        ct.write_store(SLOT_UNDER, 2)
+                    elif ct.read_store(SLOT_UNDER) == 0:
+                        ct.write_store(SLOT_UNDER, 1)
+                else:
+                    ct.write_store(
+                        SLOT_UNDER,
+                        2 if (_ferry or ct.read_store(SLOT_UNDER) == 2) else 1)
                 ct.write_store(SLOT_ATK_RND, ct.get_current_round())
                 if B8_ON:
                     if _threat_best is None or d < _threat_best_d:
@@ -3005,7 +3106,9 @@ class Player:
                 # it fires, the whole block stands down -- the defender needs
                 # the turn to reach _try_counterbattery, and a trunk patch
                 # would take it just as surely as the Core heal would.
-                under = ct.read_store(SLOT_UNDER) != 0
+                # FT2: expensive tier -- this is the heal-over-eco ordering, and
+                # a sighting-only latch is what pinned it all game.
+                under = _ft2_expensive(ct.read_store(SLOT_UNDER))
                 cb = under and self._cb_over_heal(ct)
                 if under and not cb and self._heal_core(ct):
                     return
@@ -3013,7 +3116,8 @@ class Player:
                     if self._heal_trunk(ct):
                         self.heal_spent += 1
                         return
-            elif ct.read_store(SLOT_UNDER) != 0:
+            # FT2: expensive tier (same ordering, K-off path).
+            elif _ft2_expensive(ct.read_store(SLOT_UNDER)):
                 if not self._cb_over_heal(ct) and self._heal_core(ct):
                     return
 
@@ -3033,7 +3137,8 @@ class Player:
         if snowflake_home_b and self.role_n == 5 and self.role == "defend":
             self.role = "expand"
         if (
-            ct.read_store(SLOT_UNDER)
+            # FT2: expensive tier -- a map-special hold parks whole seats.
+            _ft2_expensive(ct.read_store(SLOT_UNDER))
             and (
                 (hive_home_a and self.role_n in (1, 2, 3))
                 or (snowflake_home_b and self.role_n == 4)
@@ -3287,7 +3392,8 @@ class Player:
         mine = ct.get_id() + 1
         chosen = self._offer_launch(ct)
         if ct.get_action_cooldown() == 0:
-            if ct.read_store(SLOT_UNDER):
+            # FT2: expensive tier -- spends the staged raider's turn at home.
+            if _ft2_expensive(ct.read_store(SLOT_UNDER)):
                 self._sabotage_prio(ct)
 
         if ct.get_move_cooldown() != 0:
@@ -5214,6 +5320,12 @@ class Player:
                     ct.build_barrier(bp)
                     return
         under = ct.read_store(SLOT_UNDER) != 0
+        # PIECE FT2.  This seat reads BOTH tiers.  `under` stays the cheap one
+        # for the sites that carry their own damage evidence (`shelled`) or
+        # their own arming (the E1 ring); `under_x` gates the defence-over-eco
+        # ordering below, which is the posture that ran all game off a mere
+        # sighting.
+        under_x = _ft2_expensive(ct.read_store(SLOT_UNDER))
         # Proven shelling, observed directly off the Core's own HP bar rather
         # than read out of SLOT_UNDER -- see _core_shelled.  Conjoined with
         # `under` so it cannot fire on old unrepaired damage long after the
@@ -5248,7 +5360,8 @@ class Player:
                 and self._try_harvester(ct, harv)
             ):
                 return
-            if under:
+            # FT2: expensive tier -- the whole defence chain outranks eco here.
+            if under_x:
                 # HEAL BEATS SABOTAGE UNDER SHELLING.  On heart the defender
                 # stood beside both an enemy Gunner and our Core and spent the
                 # whole siege pecking the Gunner for 2 dmg a round (25 HP, at
@@ -5288,6 +5401,16 @@ class Player:
                     defended = True
                 elif not defended:
                     defended = self._heal_core(ct)
+            elif (
+                # PIECE FT2, E1 OVERLAP.  The ring keeps its cheap gate (its own
+                # arming is the real trigger) and the walk to the firing seat
+                # below is still keyed on `under`, so the BUILD arm has to stay
+                # reachable at AMBIENT too -- otherwise a defender walks to the
+                # approach tile and stands there unable to place the turret.
+                E1_RING_ON and under and self.role_n == 4
+                and self._try_homering_build(ct)
+            ):
+                defended = True
             if not defended:
                 if harv < 1 and ti >= ct.get_harvester_cost() and self._try_harvester(ct, harv):
                     return
@@ -5308,7 +5431,10 @@ class Player:
                 # any adjacent ore, any bank that covers the (scaled) cost.
                 if (endgame or harv < self._eco_cap(ct)) and ti >= ct.get_harvester_cost() and self._try_harvester(ct, harv):
                     return
-                if not under:
+                # FT2: expensive tier -- same local as the branch above by
+                # necessity, so the Core heal is still attempted exactly once
+                # per turn (there, or here as the fallback).
+                if not under_x:
                     self._heal_core(ct)
 
         # Action phase is over here and left nothing half-set (every branch
@@ -5596,7 +5722,10 @@ class Player:
         # universal heal in _builder fires before _expand is entered on every
         # round the action cooldown allows.  Stepping away on the rounds it
         # cannot would cost a round walking back for every round healed.
-        if (self.role_n == 2 or self.role_n >= 5) and ct.read_store(SLOT_UNDER) != 0 \
+        # FT2: expensive tier -- this is the builder recall, the single most
+        # expensive posture in the file (a working expander leaves its ore).
+        if (self.role_n == 2 or self.role_n >= 5) \
+                and _ft2_expensive(ct.read_store(SLOT_UNDER)) \
                 and self._core_shelled(ct):
             self.converging = True
             if ct.get_move_cooldown() == 0 and not any(
