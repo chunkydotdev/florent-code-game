@@ -5450,3 +5450,5 @@ line ("v61/S5 OFFLINE") + turret-hunting-under-siege (_v70th — the
 s11 queue item!) + verified-path-delay choke walls (S5) + "five
 useful builders, connects ore immediately, just-in-time ammo".
 x3r0 reached back past his nests line entirely.
+
+### 2026-08-08 14:17 (from `date`) — builder arm: WAKE — W4 streak (latest 3-2 vs Team 48), team ~1611 — the streak spans the v77 close + v78 opening; watcher re-armed. Benchmark vs v78 still running.
