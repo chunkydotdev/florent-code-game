@@ -5671,3 +5671,47 @@ is the OS early walker being launcher-grabbed (CAD launchers take
 EITHER team's adjacent builders)? If yes, the D≤7 gate may need a
 cad-presence suppression OR sp's facing-veto may already cover it —
 evidence before tuning, per the v88 lesson.
+
+### 2026-08-08 14:58 CEST — research arm: field-sweep absorbed (trough arc); TWO THREADS FIRING (plank-inventory mining + CAD fodder feasibility)
+
+Field sweep absorbed (tape row field-sweep-9v): modern line wins
+pooled (v77 83.3 / v75 81.1 / v79 80.0), nothing re-fields — but the
+ARC is the finding: v53 78.9 / v54 77.8 sit ABOVE the whole middle
+era (v64 71.1 / v66 72.2 / e6e 65.6) = a five-version value trough
+between the s10 heads and the hs recovery. x3r0's v70th revival
+already proved one shelved plank shippable.
+
+- [IN-FLIGHT] PLANK-INVENTORY MINING (Opus): diff _v68si (v53) and
+  _v70mh (v54) vs the modern head (_v91osb) for mechanisms
+  present-then-dropped; ranked list w/ the evidence each carried when
+  it existed (HANDOVER/strategy-log/tape archaeology) + a
+  revival-cost note per plank (what today's line would need to
+  re-absorb it). Deliverable:
+  docs/research/plank-inventory-2026-08-08.md.
+- [IN-FLIGHT] V79 CAD-LEG FODDER FEASIBILITY (Opus, archive-only,
+  evidence-before-tuning per the v88 lesson): the 53.3-vs-73-77
+  cad-leg dip. Hypothesis: OS walker = throw fodder for CAD-class
+  launchers on D≤7 maps. Archive answers the MECHANICAL POSSIBILITY
+  first: CAD launcher lifecycle in wild games (spec says born r1,
+  self-destroyed r6 — if all launchers die by r6, the fodder window
+  is r≤6 only), enemy-builder-throw events by round across all
+  archived CAD games, walker-arrival geometry on D≤7 maps (r4-8
+  class). Verdict: POSSIBLE (→ request builder det replay-on set for
+  confirmation) or IMPOSSIBLE-AS-POSED (→ hypothesis dies free, dip
+  needs another owner; sp's +6.7 cad facing-veto remains the staged
+  mitigation either way). Deliverable:
+  docs/research/v79-cad-fodder-feasibility-2026-08-08.md.
+V79 window open rough (−15/2); real read @409 per rev-7. sp+wire-off
+staged next window builder-side.
+
+### 2026-08-08 15:00 (from `date`) — builder arm: registry — _v93W = _v92sp + wire-strip (the evidence-approved config); pre-ship compact re-leg FIRING (the pre-stated discipline item)
+
+Named config head created (SIPHON_WIRE_ON=False on the sp base, md5
+below). The ONE remaining clearance item runs now: compact
+interleaved sp-vs-w vs opp_v76, 120/tag — det already proved 0 flips
+for the strip; this confirms the noisy channel on the exact ship
+config. Level-or-better → _v93w is the cleared next-window head
+(siphon-deny + ferry + standoff + facing-veto, wire queue stripped).
+Research status sync: sp battery LANDED earlier (KEEP + strip
+approved, tape row _v92sp-acceptance) — this re-leg is the tail, not
+the battery.
