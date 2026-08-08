@@ -5910,3 +5910,60 @@ the fidelity law) → siphon plank decoded-built-shipped (v77, +20.2)
 at −43.9/7 → rolled back to the measured best → the reserve-agreement
 fix named the fjordgate owner on its way to parked-promising — and
 the community got a benchmark kit. Builder out.
+
+### 2026-08-08 15:52 CEST — RESEARCH ARM STATE NOTE (wrap-ready; mechanics on Magnus's direct confirm per the standing rule)
+
+Builder's wrap relayed (Magnus: "wrap up at the end of this cycle");
+builder is out. This arm is WRAP-READY and holds watch until
+Magnus's direct confirm to this session (s16 precedent; no-self-wrap
+rule).
+
+WRAP-SAFE STATE: ZERO live subagents (all 12 commissioned threads
+landed AND relayed same-hour); ZERO replay downloads the entire
+session (archive + free match-list/status API only); registry all
+LANDED/closed; every claim relayed today traces to a primary source
+or carries its channel + n; timestamps under the restored date-call
+rule since the correction.
+
+V80 ABSORBED (verified): "Eir 9b" live, 1563 @ 397 #30 — byte-
+identical _v89sh content (md5 e12f8585) rolled back after v79's
+−43.9/7 bleed; my rev-6/7 hook set RE-ARMS on this window unchanged
+(same content it was built for), ~20-check ≈ @416 — successor
+research item alongside the queue below.
+
+S17 RESEARCH OUTPUT (one line each): seat rule decoded (fixed/match,
+meta==engine, 158/158); archb residual owner (idle reserve; fix
+confirmed by det + signature check, mechanism reattributed);
+ouro gap decomposition (D2 serial ladder + D1 except-clause → v3 →
+drop-probe resolution); CAD re-freeze spec (probe already fails
+gate; E1 counter-turret = #2 bleed mechanism); leak family
+(wild 4.33%, 81% siphon → mechanism-corrected fix scope → LRU
+engine fact → v77 ship + wild confirmation Ouro 18.16→8.21; handoff
+= new front); Eir 8 production read (mechanism paid/Elo half;
+v75-final corrected −4.65; CAD = damage problem); v76 first-read
+(nests decoded, grind-gate defect, zero grafts); retrodiction
+(predicted-content counters REJECTED; era-books SUPPORTED; sweep
+watcher 11/11+3/3 = validated instrument day one); recognition study
+(class-branching refuted; ferry test born → _v90ft shipped in v79/
+staged); exploit-queue brief + PTP supplement (Magnus's strategy
+frame, updated through feasibility); ptp feasibility (cover-rule
+killed → site-predicate born; Loki killed → 6-cell ray table
+salvaged); v77 truncated read (deny arm works, wire arm 3× negative);
+v78 first-read (v68 sibling, S5 provably inert, 7 fixes shed,
+docstring-lineage trap); plank inventory (trough premise refuted;
+LIVE v79 converter/refill defect; FT responder gap; slot 5 free);
+CAD fodder feasibility (refuted 3 ways; fjordgate collapse = real
+owner; launcher ring = 8-neighborhood; walker thrown-detection gap).
+
+SUCCESSOR QUEUE (concurring with builder's HANDOVER block, research
+items annotated): (1) fjordgate three-armed discriminator (w /
+w-OS-off / wb) — adjudicates collapse owner + wb re-gate in one run,
+my spec; (2) rev-6/7 read on v80's window @~416; (3) handoff decode
+(69.3% of v77-window leakage, mechanism unmapped); (4) E1 +
+FT-responder/thrown-detection + ore-barrier pricing (builder builds,
+research prices); (5) P6 probe fix + CAD re-freeze on a quiet window
+(95/95 evidence); (6) v73 windows 3-5 addendum + C8 constants
+(carried, still corpus-blocked); (7) swap-rule review staged for
+Magnus (three noise exhibits + out-of-rule swap-in question, tape-
+ready). Vault daily note (e5c62cf) read — covers the day; no
+duplicate retro written.

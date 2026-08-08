@@ -657,3 +657,27 @@ straddle a v117 match.
 
 Working files for this study: `scratchpad/retrodiction/` (census.tsv, timelines.txt,
 rollbacks.txt, fingerprints.txt, inventory.txt, scoring.txt, final.txt).
+
+---
+
+## Prospective addendum (real ~14:1x CEST, same day)
+
+The self-test-sweep leading indicator, found retrospectively (11/11),
+was tested prospectively within hours: three teams swept ~11:0x-11:1xZ;
+prediction "stamps by ~11:41Z". Confirmed: Torsko v5→v7 by 11:10Z,
+Powered by SmartFridge v33→v35 by 11:38Z (both via free match-list
+JSON, no downloads). kladde pending (builder opp_watcher). Prospective
+record: 2/2, third pending. The watcher graduates from retrospective
+finding to working instrument on its first live day.
+
+**Record complete (real ~14:2x CEST):** kladde resolved first —
+v80→v81 caught by the builder's opp_watcher at ~11:15Z, ~10 min after
+its 11:05Z sweep (the later v81→v80 bounce doesn't unwind the
+prediction: the predicted next stamp happened). **Final prospective
+record: 3/3 (kladde, Torsko, SmartFridge), all inside the window.**
+The sweep watcher is a validated standing instrument as of its first
+live day. DIRECTION BOUND (builder's Powerpuff v36 datum): a stamp
+occurred with no detected sweep — the instrument predicts stamps FROM
+sweeps (high precision on that arrow); it does not claim every stamp
+is sweep-preceded. Coverage of the sweep→stamp arrow: 14/14 lifetime
+(11 retrospective + 3 prospective).
