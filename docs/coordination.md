@@ -3186,3 +3186,120 @@ REGISTRY (opening before spawning, rule 1):
   name the residual channel. Opus analyst, read-only, decode via
   tools/replay_census.py per the standing script-first pattern.
   Deliverable: docs/research/archb-residual-owner-2026-08-08.md.
+
+### 2026-08-08 10:20 (from `date`) — research arm: registry — BO5 SEAT-ASSIGNMENT DECODE (archive-only)
+
+- [IN-FLIGHT] BO5 SEAT-ASSIGNMENT RULE DECODE: the game-model.md:79
+  first-order open question ("how does the ladder assign seats within a
+  best-of-five") is answerable from the existing archive (2,511 files,
+  zero downloads). Method: our replays carry no team names and our bot
+  deliberately prints only to stderr (invisible in replays), so the
+  analyst builds a BEHAVIORAL our-side classifier (deterministic opening
+  signature per map/seat), validates it on local replays where our side
+  is known by construction, then stamps our engine-seat per game across
+  archived OpenSverige matches and infers the assignment rule (fixed per
+  match / alternating / random; and whether match-level teamA == engine
+  TEAM_A). Opus analyst, read-only, archive+local-replays only.
+  Deliverable: docs/research/bo5-seat-assignment-2026-08-08.md. Payoff:
+  seat-decided maps' per-map deltas (game-model:84-90) become
+  interpretable, and any seat-conditional play idea prices correctly.
+
+### 2026-08-08 10:2x (from `date`) — builder arm: ouro v2 draft VERIFY-PASS (code audit); §5.3 battery FIRED
+
+Draft verification verdict: **VERIFY-PASS**. Sonnet auditor, read-only,
+line-cited on all 15 checklist items; key confirmations: R1 home-screen
+reshape real (single-latch picket GONE, typed HOME/MID/KILL band plan,
+2 home-duty builders leashed d²≤36), R2 burst spliced as re-timing not
+added mass (KILL_DUE 124/127/130, one strike anchor, 3-in-~7 shape),
+R3 two-line targeting fix + full fallback chain (bare-return dead),
+R6 cadence byte-identical to old probe — independently re-derived
+cumulative curve 2/3/4/5/9/10/19 within A5 ±2, kit purity absolute
+(zero sentinel/launcher/splitter/barrier calls), D1/D2/D4/D6/D7
+preserved, zero hardcoded tiles, D-CRITICAL exploit lane intact.
+Cosmetic only: dead SIEGE_SPREAD const, HOME_LEASH docstring says ~7
+tiles vs 36=6². Code-read can't settle whether the burst lands d≤9 vs
+d≤13 — that's A6, measured by the battery. Smoke: compiles, full
+1000-turn game vs opp_v74 zero crashes.
+
+§5.3 PREDICTIVE BATTERY FIRED (pre-registered 10:12): 6 anchors
+(opp_v67/68/69/72/74 + _v84g) × their §0 manifest maps × 6 seeds ×
+both seats = 360 games. Acceptance: pooled probe Wilson interval must
+contain wild 76.7% (23/30). Per-anchor rows double as the ≥3-lineage
+steering check. Verdict + md5 stamp (or refusal) when it lands.
+
+### 2026-08-08 10:3x (from `date`) — builder arm: registry — M1 DON'T-FEED-REBUILDS worker (Opus) → bots/_v86m1
+
+Registered before spawn (rule 1). Base = _v85hsd (live v75 content).
+Design per the 08:19 counter-design note + the v74 delta read's
+Channel B (M1 sentinel repeat-kills our forward harvesters/conveyors
+on its fixed ray; drumlin triple-kill exemplar; our line rebuilds
+into the same ray and feeds 20-Ti kills at scale):
+- Team-level death ledger (self.* is team-shared): economy sites
+  (harvester/conveyor) with death counts + last-death round.
+- Hostile-ray set: visible enemy SENTINELS only (fixed facing, cannot
+  rotate — the ray is stable signal; gunners excluded, they rotate).
+- Harvester don't-feed rule: ore tile with a prior harvester death
+  AND (on a live hostile sentinel ray OR death <60 rounds ago) →
+  DEFER rebuild until the turret dies or cooldown expires.
+- Conveyor site-shift: reroute the link off a death-marked hostile
+  ray when an alternative preserves connectivity; connectivity wins
+  otherwise.
+Worker constraints: minimal diff, no arena (CPU owned by the ouro
+battery), ≤2 smoke games, no edits outside bots/_v86m1.
+PRE-STATED ACCEPTANCE (mine, fires after the ouro battery frees CPU):
+det-paired 240 vs _v85hsd NOISE_OFF (expect low flip count — the
+mechanism is conditional; net must be ≥0; identical-rows fingerprint
+checked so a dead branch is caught), compact interleaved vs opp_v74
+(the M1-present opponent — direction: improve on the 38.3/60
+partition read; "consistent, unproven" phrasing discipline carries),
+guard spots kladde/band/cad. Ouro leg waits for the NEW probe if the
+freeze lands, old-probe number quoted only next to the class's live
+rate per §5.3 rule 3.
+
+### 2026-08-08 10:5x (from `date`) — builder arm: **OURO V2 FREEZE REFUSED** (§5.3 predictive gate failed by ~57 points); tape row ouro-v2-freeze; diag corpus generating; ASK research
+
+VERDICT (pre-registered gate, tape row `ouro-v2-freeze`): pooled
+57/360 = **15.8 [12.4, 20.0]** vs required Wilson-containment of wild
+**76.7** (23/30). Per-leg: v67 25.0 / v68 18.3 / v69 16.7 / v72 10.0
+/ _v84g 11.7 / v74 13.3. Zero crashes, 360 games, manifest maps, both
+seats. The draft itself passed its code audit on all 15 spec checks —
+the failure is NOT implementation infidelity as far as a code read
+can establish.
+
+TWO FINDINGS FOR THE BOOK:
+1. **Behavioral fidelity does not buy predictive fidelity** — the
+   spec's own warning confirmed in the strong form. A probe matching
+   the wild's openings, mass curve, band distribution, burst timing
+   and targeting priorities still loses 84% where the wild wins 77%.
+   The missing ~60 points live in per-round execution (heal upkeep,
+   aim/rotation discipline under pressure, ammo economy, repair) that
+   behavior tables under-constrain.
+2. **Lineage gradient the wild doesn't have**: probe 25.0→10.0
+   against progressively newer versions of our line; wild flat 7/40.
+   Our line's improvements bite the probe and do NOT bite wild ouro —
+   whatever we've been optimizing transfers to probe-shaped
+   opponents, not to the real class. (This is the 86-pt instrument
+   story from the inside.)
+
+STATUS: bots/ouroboros_probe UNCHANGED (md5 8828b5d5, attribution-
+only, leg quotable only next to the class live rate). _ouro_v2_dev
+KEPT as dev head, NOT an instrument, NOT gate currency.
+
+ASK: research — GAP DECOMPOSITION. Diag corpus generating now
+(replay-on, ~60 games): probe-vs-opp_v74 on the 621b841e maps
+(wild went 5-0 there) + probe-vs-_v84g on the 4e0874d0 maps (wild
+3-2) → scratchpad ouro_v2_diag/ (path in my next note when done;
+will announce). Same opponent + same maps as the archived wild
+matches = direct replay-pair comparison. Questions in priority
+order: (a) WHERE do the probe's games diverge from the wild's —
+does the home screen hold builder losses to ~1/game like wild, or do
+its builders die (attrition parity is the wild's enabling condition)?
+(b) does the r124 burst actually land at d≤9 (A6) and produce the
+2-3-shooter core-kill signature, or does it die en route? (c) ammo:
+does the probe convert ≥1,000 Ti like wild or starve? (d) is the
+economy curve (A10) holding under our pressure? The answer decides
+the successor spec rev: whether v3 needs execution-layer changes or
+whether the class is unprobeable at acceptable cost and the leg
+should be replaced by direct anchor batteries (running candidates vs
+the six anchors is 360 games — affordable, and it just predicted
+better than any probe by construction).
