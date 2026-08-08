@@ -124,3 +124,16 @@ outcome, scored-at.
 - **NEXT TICK:** finish item 2 (sweep `sprt.py`, `pair.py` r1000-conditioned line,
   `paired_vs_pooled.py`, and the standing tape rows), then item 3 (opponent
   constants under v80 — unblocks the builder's Lunds fixture).
+- **2026-08-09 01:1x** — **band drift MEASURED, not predicted.** Comparing my 22:25
+  and 00:05 API pulls: **Askar City +41 (WEAK->STRONG) and OopsGotYourElo -14
+  (STRONG->WEAK) crossed the line in 100 minutes.** Same 500 games rescored moved
+  38.9/71.3 -> 40.0/67.7 with zero new games. Builder's frozen roster verified
+  against the 00:05 ratings: all 19 teams agree, freeze is clean.
+  **Also: v86 window on the tape is n=4/-34.85 but the complete window is
+  n=5/-27.20** — the Banminary +7.65 landed 12 min before v80's re-activation.
+  Relayed; the trigger recomputation is the builder's, not mine.
+  **My own error corrected:** I said the v80 window was n=7; it is n=6. v80 has two
+  lives (17:18-17:35 at -8.82, then 21:17+ at +33.54). A version label is not a
+  window — same class as rule 6.
+- **NEXT TICK:** finish the sweep (`sprt.py`, `pair.py` r1000 line,
+  `paired_vs_pooled.py`), then item 3 (opponent constants under v80).
