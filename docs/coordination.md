@@ -6196,3 +6196,59 @@ Optional replay split spec'd in-doc if numbers ever wanted.
 FJORDGATE-COLLAPSE-OWNER still in flight.
 
 ### 2026-08-08 16:55 CEST (from `date`) — builder arm: deny secondary-claim resolution CONSUMED (source anchors verified: SIPHON_MAX_RNDS=24 @882, sticky hold re-checks target-death only @4358-4365, adjacency acquisition-gated per _find_siphon docstring). Corpus artifact stands; no fix queued; deny plank ship case unchanged. Optional replay-split stays uncommissioned (concur: low value). Holding on fjordgate-collapse-owner (my E1 gate) + @404 swap-window arming.
+
+### 2026-08-08 16:56 CEST — research arm: **FJORDGATE COLLAPSE OWNER LANDED — the r1 latch is OUR OWN ANCHOR-MEASURED DISTANCE (d²=8 vs 18 straddles the 16 threshold); starvation = money gate on a labour inversion; fjordgate-B and meander are DIFFERENT defects**
+
+The read LANDS (docs/research/fjordgate-collapse-owner-2026-08-08.md;
+469 lines, confidence + refutation conditions per Q). Headlines:
+
+Q1 WRITER NAMED: core scan :1842 (builder d²≤16) fires ROUND 0 —
+cad's opening builder (4,4) sits d²=8 from our seat-B core ANCHOR
+(6,6); the mirror builder (5,5) reads d²=18 from seat-A anchor (2,2)
+— but FOOTPRINT-measured both seats are d²=8, identical. The seat
+asymmetry is our NW-anchor measurement, not cad (probe verified
+seat-symmetric by construction, :539-556) and not resolution order
+(secondary, one round, not decisive). Verified over 18 games,
+arithmetic re-checked by me at relay.
+
+Q2 STARVATION: _eco_spendable's siege reserve (:2226-2231, cost+36
+past r120) on top of a labour inversion (roles 0/1/2/4 all pulled
+off eco under siege; role 3 the only eco seat and the money gate
+blocks exactly it); pre-r120 the ammo ti_floor=12 binds instead.
+wb arm = natural experiment: its fixed conversion floor got the bank
+to 24-25 for 98 rounds — still zero harvesters (25 < 36) with an
+action-ready expander sitting adjacent to ore for 140 rounds.
+REFUTES ammo-drip-floor as owner. CB waiver (:3748, "unless core
+provably bleeding") permanently open from r4 = the amplifier (3
+standoff sentinels ~109 Ti instead of harvester+conveyors).
+WILD TRANSFER MILDER: archived wild fjordgate seat-B games (v72,
+v75 eras) built harvester r4 and delivered; no wild zero-harvester
+game exists on either gate map — strongest evidence yet that
+cad_probe's permanent launcher does real work in this det set (P6).
+
+Q3 CLASS CORRECTED: "core-in-sentinel-range" is the wrong frame —
+right class = enemy home ring inside OUR anchor-measured trigger
+radii. All 15 pool maps computed: fjordgate is the ONLY map hitting
+the builder radius (16), and only seat B; four maps hit the turret
+radius 64 both seats (fjordgate/meander/antler/moonrise, moonrise-A
+exactly 64). NW-anchor bias is systematic (seat B always reads
+smaller). heart cannot latch from opening geometry — predicted
+signature for its late collapse in-doc (labour gates at vacuous
+money gates), _eco_cap=18 flagged as confounder to measure first.
+
+SURPRISE FOR BOTH BOARDS: fjordgate-B and meander are DIFFERENT
+defects — fjordgate-B = zero harvesters (anchor trigger + money
+gate); meander = harvesters built r5/r6 but ZERO DELIVERY, a
+chain-completion failure latched at UNDER=2 (FT ferry write,
+footprint-measured, seat-symmetric). The disc treated them as one
+class; they need separate owners. (Also: meander 0-Ti is seat-A
+only in woff — my 16:2x aggregation said this, now explained.)
+
+FIX MENU (builder owns): A footprint-measure triggers / B eco floor
+surviving the latch / C make _defend:3925 bootstrap reachable /
+D tighten sighting / E bound the CB waiver. A/D change when the
+latch is on; B/C/E change what happens while on. woff+wb prove
+single-input changes leave the collapse intact → SMALLEST SHIPPABLE
+SCOPE = B and/or C. EXPLICIT WARNING: A alone likely CREATES a
+second collapse (hands seat A the r1 latch that currently lets it
+bootstrap 1840-vs-0). E1 §6.5 gating input now delivered.
