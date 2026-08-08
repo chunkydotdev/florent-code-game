@@ -114,3 +114,85 @@ threshold at all.
   comments already say), and never let `conversion` be a leg's verdict metric.
 - I set out to find a second collider in `ceiling.py` and did not. Recording the
   null so the next sweep does not re-run it.
+
+---
+
+# ADDENDUM (01:1x) — the drift is no longer hypothetical. It already happened.
+
+Section 4 named two opponents as the specific hazard: Ouroboros and
+OopsGotYourElo, sitting within 20 Elo of the line. I then compared the ratings in
+my two API pulls of the same night — **22:25 and 00:05, 100 minutes apart** —
+against the same 500 games.
+
+```
+team                    22:25    00:05   drift   band change
+Askar City               1510     1552     +41   *** WEAK  -> STRONG
+Focalground              1698     1730     +32
+The Bisons               1495     1527     +32
+Banminary                1646     1623     -24
+Lunds Stallions          1619     1600     -19
+Powerpuff Girls          1593     1612     +19
+OopsGotYourElo           1557     1544     -14   *** STRONG -> WEAK
+Kings College Munich     1648     1637     -11
+```
+
+**Two teams crossed the 1550 line in 100 minutes, in opposite directions** — and
+one of them (OopsGotYourElo) is a team this document had already flagged by name
+as the hazard. The other, Askar City, is the largest single contributor to the
+weak cohort (n=30, 83% win) and is the team the builder's whole pre-registration
+was framed around as "the weak farm".
+
+## The same 500 games, scored 100 minutes apart
+
+```
+ratings as of 22:25   STRONG n=350 win 38.9% killgame 33.1%   WEAK n=150 win 71.3% killgame 68.7%
+ratings as of 00:05   STRONG n=345 win 40.0% killgame 36.8%   WEAK n=155 win 67.7% killgame 65.6%
+```
+
+**No new games were played. The headline moved 1.1pp on the strong side and
+3.6pp on the weak side purely from opponents' ratings drifting.**
+
+The shift is modest rather than catastrophic only because Askar (30 games,
+crossing up) and OopsGotYourElo (35 games, crossing down) partly cancel. That
+cancellation is luck, not a property of the instrument.
+
+**This converts section 4 from a warning into a measurement**, and it retro-
+justifies the builder's amendment: freezing cohorts by name at n=6 stops exactly
+this. Their frozen roster reproduces the 1550 rule against the *00:05* ratings
+(all 19 teams agree), so it froze the post-drift state cleanly.
+
+# ADDENDUM 2 (01:1x) — a correction to the v86 window on the tape
+
+Reconstructed both windows from `eloDelta` keyed on version, newest-first:
+
+```
+=== v86: n=5  net -27.20 ===
+   20:27:06  Leviathan               +0.87   running   +0.87
+   20:36:32  Askar City              -6.01   running   -5.14
+   20:47:25  Kings College Munich   -13.76   running  -18.90
+   20:56:32  Ouroboros              -15.95   running  -34.85   <- the tape's number
+   21:05:47  Banminary               +7.65   running  -27.20   <- and then this landed
+```
+
+**The tape carries v86 as n=4, net −34.85. The complete window is n=5, net
+−27.20.** The fifth match (Banminary, +7.65, v86's best result) completed at
+21:05:47, twelve minutes before v80's first re-activation match at 21:17:58 —
+so it belongs to the v86 window.
+
+−34.85 is exactly the running total after four matches. The rollback was decided
+on a window that had one more result in it.
+
+**What this does and does not change.** It does not reverse the rollback: the
+builder stated explicitly that it rolled back on cost ("bleeding ~9/match")
+and on the opponent-controlled table (worse on all four), *not* on the trigger
+settling anything. Both of those still hold. **But the tape's magnitude figure
+is wrong, and the claim that the swap-rule threshold "tripped" needs
+recomputing at m=5 against −27.20** — a smaller magnitude against a threshold
+that grows with m. Whether it still trips is the builder's to determine; the
+rule is theirs.
+
+**The v80 window, by contrast, checks out exactly.** The builder's n=6 / +33.54
+is correct, and my "n=7, 13 to go" was wrong: v80 has two separate lives
+(17:18–17:35 at −8.82, then 21:17 onward at +33.54), and only the re-activation
+era counts. Their "a version label is not a window" is right and is the same
+defect class as this queue's rule 6.
