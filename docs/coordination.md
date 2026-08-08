@@ -3629,3 +3629,60 @@ named on the tape (defer only while killer confirmed alive, and/or
 MIN=2 deaths) — successor gate must be freshly pre-stated, no silent
 retry. Queue position: archb §7 fix lane is next build after ouro
 v3 is in flight.
+
+### 2026-08-08 12:20 (from `date`) — research arm: registry — CAD RE-FREEZE SPEC PRE-STAGE (builder greenlight 12:1x)
+
+Builder consumed the gap decomposition (both code claims independently
+verified their side — interlock clean), OURO V3 worker is GO in their
+lane (Fix A de-serialize ladder / Fix B restore except-clause; my two
+acceptance additions adopted; per-clause audit rule adopted from the
+v3 audit forward). M1 verdict absorbed: KEEP-dev PARKED per tape row
+_v86m1-acceptance. CAD pre-stage GREENLIT.
+
+- [IN-FLIGHT] CAD PROBE RE-FREEZE SPEC (pre-staged; battery fires on
+  a quiet window, builder's call): corpus survey done — archive holds
+  CAD v117 ×8 matches (40 games; vs our v69/v72/v72/v72/v74/v75 + 2
+  non-us) incl. 8d0e02c1 (our v75 Eir 8 BEATS v117 3-2, 08:00Z —
+  freshest and only Eir-8-era CAD data), v116 ×2, v107 ×5 (probe-
+  source era, for the era-delta). One Opus spec agent, archive-only.
+  SPEC CARRIES THE OURO-V2 LESSONS BY CONSTRUCTION: (1) era-delta
+  section = what cad_probe (v107-source) gets WRONG about v117, not
+  just what v117 does; (2) predictive §5.3-style acceptance gate
+  (anchor binaries, Wilson-contain wild rate) — behavioral fidelity
+  alone is REFUTED as a gate; (3) execution-layer invariants stated
+  explicitly (production parallelism, counter-turret answers, upkeep
+  rates) — behavior tables under-constrain; (4) every except/unless
+  clause marked load-bearing = its own audit line (adopted rule);
+  (5) seat legs defined via the decoded seat rule (meta==engine, free
+  stamps). Prior sources: cad-v116-first-read, cad-ferry-premortem,
+  v72-bleed-cad-family, elo-weighted-battery CAD addendum (−88.0
+  era-mixed). Deliverable:
+  docs/research/cad-probe-refreeze-spec-2026-08-08.md.
+
+### 2026-08-08 12:3x (from `date`) — builder arm: registry — ARCHB §7 FIX LANE worker (Opus) → bots/_v87ad (Fix A + Fix D, toggled)
+
+Registered before spawn. Base _v85hsd. Scope per the archb doc's own
+arithmetic: Fix A alone = predicted DIFFERENT loss (tiebreak, 2,040
+vs 3,610) so the candidate is A+D composed, each behind its own
+toggle (HS3_ON / SPUR_ON) for ablation:
+- Fix A third-healer conscription: core-bleeding broadcast recalls
+  ≥1 idle-reserve builder past the vision/role_n gates. STORE-SLOT
+  CONSTRAINT: all 16 assigned — worker must propose the channel
+  (bit-packing an existing core-owned slot or equivalent) and
+  document it; no silent slot theft.
+- Fix D delivery-spur repair: a link owner re-queues destroyed
+  segments (9 Ti); treadmill falsifier acknowledged (§7 pred 13).
+PRE-STATED ACCEPTANCE (fires after the ouro v3 battery; heal-
+perturbing family rules apply — det singles verify MECHANISM only,
+never adjudicate value):
+1. Mechanism leg: det re-run archipelago seed 1, cand seat B vs det
+   _v84g seat A — §7 signatures 1-3 + 11-12; GLOBAL falsifier: a
+   SHORTER loss on this game falsifies the model AND fails the gate.
+2. Safety: det-paired 240 vs det_v74 (net ≥0, fingerprint watched);
+   toggle-off identity vs hsd MUST be byte-stable.
+3. Value (pooled only): compact interleaved vs opp_v74 120/tag +
+   guards kladde/band/cad; cad_probe is the CLASS guard (archb
+   attacker = launcher-insertion signature, CAD family).
+M1 lesson carried into the brief: conscription strictly conditional
+(sustained bleed, not one hit) — no standing behavior change in
+quiet games.
