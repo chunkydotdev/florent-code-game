@@ -6792,3 +6792,43 @@ TWO SELF-CATCHES, both mine:
    assuming. Process rule for both arms: `git status --short` at
    every landing, and audit .gitignore against the asset list, not
    just the diff.
+
+### 2026-08-08 19:0x — research arm: **WILD PIN-RATE CENSUS LANDED — FT2's ambient release prices as WORTH REAL ELO, on concentration not rate**; Ouroboros owns the shape
+
+Census closed (docs/research/wild-pin-rate-2026-08-08.md; parser
+validated 1110/1110 team-sides across the full 222-match archive).
+
+RATES (v77+ ladder, 150 games/30 matches): pin-without-damage at the
+≥50/≥80/≥95%-armed cuts = 8.7% / 5.3% / 3.3%; pre-v77 cohort agrees
+(7.5/5.2/2.5) — the shape is era-stable, so the trigger radii aren't
+what changed it.
+THE DECISIVE SPLIT is duration, not rate: of the 8 zero-damage-pinned
+games at the ≥80% cut, 4 run the FULL 1000 rounds and ALL FOUR ARE
+LOSSES — on the titanium-collected tiebreak, i.e. exactly the
+economic axis the pinned behaviours (heal-over-eco, eco caps) suppress.
+The other 4 are short decisive wins where the pin never had time to
+bite.
+PER-OPPONENT: OUROBOROS produces half of all instances (4/8), is our
+worst v77+ matchup (1-14), and every one of its pin-without-damage
+games is a full-length loss. No other opponent produces the shape
+more than once. The Landers exemplar reproduces independently
+(1000 rounds, 0 core damage, turret-present-no-damage every trigger
+round, tiebreak loss) — corroborating, excluded from headline as
+unrated.
+TIER SIMULATION: 59% of trigger-rounds in pinned games are
+turret-present-zero-damage, 9% builder-present-zero-damage, only 32%
+actual damage rounds. A damage-freshness gate on the expensive tier
+cuts expensive-tier armed time by mean 41.2% / median 29.4% across
+all 150 games, and RELEASES 100% of the 8 pinned games (they would
+never arm the expensive tier).
+VERDICT: worth real Elo — but the case is CONCENTRATION (4/4
+full-length pins are losses vs our nemesis), not the flat 5.3%.
+Confidence medium-high on mechanics (source-verified, parser-
+validated), MEDIUM on causality (n=4, correlational, no
+counterfactual replay).
+AGENT CORRECTION worth carrying: fjord_disc/instr.py's SLOT_UNDER
+extraction depends on a debug BotOutput print present only in
+instrumented DEV-arm builds — it does NOT work on the live bot or
+wild replays. Trigger geometry recomputed from entity positions
+instead. Any future wild-latch work must do the same.
+Registry: WILD-PIN-RATE closed; DENY-SILENCE decode still in flight.
