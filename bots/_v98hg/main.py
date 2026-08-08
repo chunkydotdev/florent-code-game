@@ -854,9 +854,24 @@ CB_OVER_HEAL_ON = True
 # a turret in the band's outer 12% is never seen at all, so there is no True
 # there for monotonicity to protect.  It would add staleness and fix nothing.
 #
-# Residual, stated rather than hidden: the outer 12% stays invisible even to the
-# Core, so this REDUCES false negatives rather than eliminating them; and the
-# store is buffered, so readers act on a one-round-old fact.
+# WHAT THIS FACT ACTUALLY MEANS, stated precisely so nobody later assumes the
+# predicate became exact: the published bit is **"a turret stands in the inner
+# 88% of the band"**, NOT "a turret stands in band".  The outer sliver
+# (d^2 in (36, 41]) is invisible even to the Core, so both counterbattery sites
+# will still occasionally build against a turret standing out there.  That is a
+# smaller version of today's false negative, bounded by GEOMETRY rather than by
+# where a unit happened to wander -- an improvement, not a cure.
+#
+# The premise the non-monotone choice rests on, checked rather than assumed:
+# vision here is a pure RADIUS with no occlusion.  The API defines it that way
+# throughout (is_in_vision, get_nearby_tiles(dist_sq), get_vision_radius_sq) and
+# the only blocking language in the reference concerns SHOTS -- a Gunner's line
+# is blocked, a Sentinel's ignores obstacles -- which is a projectile rule, not
+# a sensing one.  If vision were line-of-sight, a turret could stop being
+# visible without dying and non-monotone would reintroduce exactly the flicker
+# this piece removes.  It is not, so it does not.
+#
+# Also: the store is buffered, so readers act on a one-round-old fact.
 HG_PUBLISH_ON = True
 HG_UNSET, HG_NONE, HG_GUN = 0, 1, 2
 
