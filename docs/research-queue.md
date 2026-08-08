@@ -245,3 +245,29 @@ outcome, scored-at.
 - **QUEUE NEARLY DRAINED.** Remaining: item 4 (eider, exploratory, fails Bonferroni)
   and item 5 (prediction scoreboard). Both lower value than tonight's output. Next
   tick: if nothing better surfaces, say so and hold rather than manufacture work.
+- **2026-08-09 03:4x** — **throw-class split (builder ASK, cheap, done):** our
+  launcher is **93% DEFENSIVE disposal** (705/759 enemy builders thrown away);
+  only **7.1% offensive insertion** (54/759). Lunds is 31.5% offensive — 4.4x our
+  rate. **Consequence: the launcher-deletion leg is ~93% an economy/denial
+  question, locally gateable on delivered-Ti, and does NOT need a punishing pool.**
+  Only the 7% insertion half inherits the backfire constraint.
+  **Corrected my own incidental:** "we throw 2x more than Lunds" is a DEFENCE
+  number (705 disposals vs 250), not an aggression one. I offered it loosely and
+  the builder promoted it on the aggression reading; the deletion case still
+  stands on the top-tier evidence (0/20 top-tier games have a launcher, we build
+  one in 69%).
+
+## HOLDING (2026-08-09 03:4x)
+
+**Queue drained of anything worth more than the cost of running it.** Remaining
+items 4 (eider — exploratory, fails Bonferroni) and 5 (prediction scoreboard) are
+both worth less than tonight's output. Per the builder's agreement and this
+queue's own rule 1, **holding rather than manufacturing work.**
+
+Standing watch on the ~25min tick, no deliverables expected:
+- **new builder ASKs** — these get priority over everything here
+- **a Lunds ship** (v44 all day; a change invalidates every constant in
+  `lunds-insertion-tiles-2026-08-09.md` at once — visible in `match list`, and
+  `opp_watcher.py` already has `lunds` in NEMESES)
+- **KCM / Ouroboros ships** (v8 and v8; same staleness logic)
+- **the v80 window reaching n=20**, at which point the pre-registration scores
