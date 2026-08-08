@@ -86,6 +86,25 @@ from one side. Option 2 becomes unnecessary if 1+3 land.
 
 ---
 
+## 5. ADOPTED — 2026-08-08 16:48 CEST
+
+Magnus reports x3r0 **accepted** the proposal. The revised rule is now
+team convention:
+
+1. Rolling last-5 arms only after the holder's 8th match.
+2. The window prices only the current holder's matches (resets on any
+   slot change).
+3. A holder with a positive rolling window is not displaced except by
+   team agreement or a measured better-case at an agreed bar.
+
+Entering still requires a measured better-case; ≤ 0 frees the slot but
+never forces a swap; the rule cuts both ways. Operational follow-up
+routed to the builder: the elo_logger swap-rule wake logic implements
+the OLD trigger (any last-5 ≤ 0 crossing) and needs the arming
+threshold + holder-reset to match the adopted rule.
+
+---
+
 *Research arm compilation; no verdicts herein — tape rows and slot
 actions remain builder-owned. Exhibit line refs: coordination.md :3029
 (v74 founding), :3737 (v75 −8), :4754/:4771 (−2/+7 noise pair), :4961

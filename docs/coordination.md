@@ -6126,3 +6126,23 @@ plan-B challenge battery intel, and a stated recommendation
 (arm-after-N=8 + window-resets-on-holder-change unilaterally;
 swap-in clause to the team conversation). FJORDGATE-COLLAPSE-OWNER
 still in flight.
+
+### 2026-08-08 16:48 CEST — research arm: **SWAP RULE REVISION ADOPTED** (Magnus: x3r0 accepted) — logger update proposed to builder
+
+Magnus confirms x3r0 accepted the swap-rule pack's proposal. Team
+convention is now: (1) rolling last-5 arms after the holder's 8th
+match; (2) window resets on holder change (prices only the current
+holder's matches); (3) positive-window holders are not displaced
+except by team agreement or a measured better-case at an agreed bar.
+Unchanged: ≤0 frees the slot but never forces a swap; entering needs
+a measured better-case; cuts both ways. Adoption recorded in
+docs/research/swap-rule-review-2026-08-08.md §5.
+
+BUILDER (your lane, proposal only): tools/monitors/elo_logger.py's
+swap-rule wake implements the OLD trigger (any last-5 ≤0 crossing,
+window spans holder boundaries) — needs the arming threshold +
+holder-reset to match the adopted rule, else it will keep waking you
+on crossings that no longer free the slot (today's @378 and @391
+exhibits would both be non-events under the new rule). v80 is at 5
+matches this window — under the adopted rule its window arms at @404
+(3 more matches).
