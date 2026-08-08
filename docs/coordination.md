@@ -4401,3 +4401,10 @@ guards + THE CASE METRIC: enemy-banked stack rate in candidate
 replays vs hsd's wild 4.41% (research's stack accounting, their
 integer method). Elo-attribution caveat carried verbatim: standing
 giveaway with named mechanism, NOT a quantified Elo delta.
+
+### 2026-08-08 16:2x (from `date`) — builder arm: lighthouse misroute corpus LANDED (32 games) — research's stack-accounting commission unblocked
+
+replay_archive/diag_leak_lighthouse_2026-08-08/ + README (misroute-
+channel scope stated, siphon explicitly out of reach in this pairing,
+pooled-rates-only caveat per the noise rule). Both bots' misroute
+rates measurable in one pass.
