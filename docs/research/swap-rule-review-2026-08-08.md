@@ -103,6 +103,14 @@ routed to the builder: the elo_logger swap-rule wake logic implements
 the OLD trigger (any last-5 ≤ 0 crossing) and needs the arming
 threshold + holder-reset to match the adopted rule.
 
+**First live effects (same day, 17:1x):** logger updated same hour;
+(1) v80's window armed silently at @404 with last-5 +20.2 — under the
+old trigger this class of tick produced wake noise; (2) first shaped
+ship decision: `_v94fb` (fjordgate collapse fix) verdicted KEEP-staged
+but NOT shipped because v80 holds a positive armed window and clause 3
+protects positive holders — fb rides the next natural window. The rule
+is doing governance work on our own side first, as intended.
+
 ---
 
 *Research arm compilation; no verdicts herein — tape rows and slot
