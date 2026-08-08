@@ -1187,6 +1187,9 @@ C1B_SUPPLY_ON = True
 # PIECE E1b -- supply departs only over a standing heal line (see the gate in
 # _c1b_supply for the ablation numbers that priced both directions).
 E1B_HEAL_LINE_GATE_ON = True
+# PIECE M2b -- _try_counterbattery honours the delivery-chain link ban (the
+# meander r5 self-sever came from this scan; the ring planner already bans).
+M2B_ON = True
 # Establishment band -- the decode's own predictor radius, footprint-measured.
 C1B_SUPPLY_BAND_DSQ = 36
 # How far from home a builder may be and still be recruited.  The same 64 the
@@ -4221,6 +4224,13 @@ class Player:
         # below is the one site in the file that most reliably stands a builder
         # beside its own Core with a turret to place.
         ban = self._seat_ban()
+        # PIECE M2b -- the meander self-sever came from THIS scan, not the
+        # ring: the r5 bleeding-waiver sentinel that severed the chain was an
+        # adjacent-tile counterbattery plant on the planned link path (belt
+        # then grew to both sides of it and the stacks froze).  Same ban set
+        # the ring planner uses; same walk-vs-build asymmetry (the ban is
+        # build-only by construction).
+        lban = self._ring_link_ban(ct) if M2B_ON else None
         choices = (
             (
                 (EntityType.SENTINEL, ct.get_sentinel_cost()),
@@ -4232,10 +4242,21 @@ class Player:
                 (EntityType.SENTINEL, ct.get_sentinel_cost()),
             )
         )
+        # PIECE M2b (preference form): chain tiles are tried LAST, never
+        # refused.  The hard-filter form was refuted by det — heart seat-B
+        # x4: around a belt-carpeted high-economy core the scan found NO
+        # legal non-chain spot, the counterbattery never planted, and an
+        # r305 win became an r1000 tiebreak loss.  A dead Core loses now;
+        # a severed chain loses slowly — the ban must only break ties.
+        scan_dirs = list(DIRECTIONS)
+        if lban is not None:
+            scan_dirs.sort(key=lambda d0: (
+                (p.add(d0).x, p.add(d0).y) in lban
+            ))
         for turret_type, cost in choices:
             if ct.get_global_resources() < cost:
                 continue
-            for d in DIRECTIONS:
+            for d in scan_dirs:
                 # Nothing here is written to self/the store until a build
                 # actually succeeds a few lines down, so bailing between
                 # candidates is clean. Checked once per `d`, not per

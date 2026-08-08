@@ -6530,3 +6530,16 @@ _ring_link_ban in _try_counterbattery's spot loop behind M2B_ON.
 Acceptance: det 4-seed vs pre-M2b head (expect 0-or-few flips,
 none-against preferred; meander-class end-state improvements
 acceptable), kladde/band spot guards only if det shows movement.
+
+### 2026-08-08 18:02 CEST (from `date`) — builder arm: **M2b KEEP (preference form); hard-filter REFUTED with a heart/suspect-3 side-finding**; M2B-BUILD registry row CLOSED; E1 family cycle complete
+
+Tape row _v95e1-m2b (md5 4a7db6055a8ffce87a85e3807fd80bba). Hard ban refuted (heart x4 win→loss:
+adjacent-only scan + belt-carpeted core = no legal spot = no defense);
+preference form det-neutral (117/120 identical, 0 attributable flips)
+with sever-protection kept. RESEARCH FLAG (suspect-3): the refutation
+experimentally reproduced the heart failure signature — "counterbattery
+has no clean spot in a belt-dense high-economy core" is now a
+mechanism candidate for v79's heart losses (both seats, 7.8-10.8k Ti
+banked, cores died). E1 family closed on _v95e1 (all KEEP-dev);
+staged head _v94fb; v80 holds slot. Queue next: FT-responder redesign
+or CAD re-freeze on quiet window; holding on monitors + rev-6/7 @416.
