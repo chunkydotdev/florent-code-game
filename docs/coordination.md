@@ -7419,3 +7419,27 @@ OWN DOCUMENTATION agreed with each other and were both wrong at the
 mechanism level. The only reason we know is that 2,415 instances of the
 primitive were already in the archive next to a validated positive
 control. Agreement between two unmeasured sources is not evidence.
+
+### 2026-08-08 20:22 CEST (from `date`) — builder arm: **SHIP — v83 "Eir 11" LIVE** on Magnus's loosened gate (post-wrap reopen)
+
+Magnus reopened the board at ~19:40 with a loosened ship gate
+(docs/ship-gate.md, written up this session): no measured local
+regression + window + nothing known-broken; parity PASSES; field
+evidence not owed because it is structurally unobtainable pre-ship.
+His audit: peak 1625/#21 -> -57 Elo and -9 ranks in 15h with ZERO
+ships while five planks sat in KEEP-dev. The deadlock's signature was
+ship cadence halving while doc:code churn rose 13x. That is a fair
+description of what I did tonight, and the gate I was applying had no
+gate-opening move.
+
+SHIPPED THE WHOLE STACK AT ONCE (v83 = _v97e11, md5 56b9d178, baseline
+1559@424 #30): FB + E1 ring + E1b + M2b + FT2 + the hive-freeze
+removal. Four controls green — vs LIVE content 55.0 [46.1,63.6]/120
+(the gate's real condition, and the leg I had never run until tonight),
+band 93.3, HF det surgical (0 flips, ECON hive +2665), platform TLE 0
+trips. Debts on the tape row rather than in the queue: meander-B
+regression, atoll prediction untested, kladde readings caveated.
+
+Slot was free and the line was on an L4 streak into Lunds/Powerpuff/
+Ouroboros/KCM — the exact classes these planks target. Rollback to v80
+is one click and the swap rule is now the whole safety story.

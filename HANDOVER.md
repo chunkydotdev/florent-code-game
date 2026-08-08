@@ -70,6 +70,23 @@ limit; the marginal plank is worth less than the marginal deletion.
   the existing swap rule as the ONLY rollback trigger (data: x3r0 net +7 elo
   over 6 windows, us net -18 over 5 — no case for gatekeeping him).
 
+# Session 18 POST-WRAP SHIP (2026-08-08 ~19:5x) — Magnus reopened the board
+# with the LOOSENED SHIP GATE; the wrap block below is superseded on the
+# "nothing shipped" point and stands on everything else.
+
+## LIVE NOW: **v83 "Eir 11" (= bots/_v97e11, md5 56b9d178)**, baseline 1559
+## @ 424 rank #30. Content = the whole KEEP-dev stack shipped at once
+## (FB fjordgate bootstrap + E1 ring + E1b heal-line gate + M2b siting +
+## FT2 severity tiers + HF hive-freeze removal) on the v79-era staged base.
+## Gate legs all green: vs LIVE content 55.0 [46.1,63.6]/120 (parity passes,
+## no regression); band 93.3; HF det 0 flips / surgical / ECON hive +2665;
+## platform TLE 0 trips. Tape row v83-baseline carries the debts.
+## ROLLBACK = v80 (_v89sh) one click. Swap window arms ~@432; 20-match ~444.
+## NEW GATE IS IN docs/ship-gate.md — read it before holding anything.
+## Items 4 (hive_freeze) and 8 (dev heads) below are now SHIPPED, not queued.
+## Successor's first job: read v83's window, and if it bleeds, roll back to
+## v80 without ceremony — that is what the control is for.
+
 # Session 18 FINAL (builder wrapped 2026-08-08 ~19:2x on Magnus's call
 # relayed via research; successor boots per /builder)
 
