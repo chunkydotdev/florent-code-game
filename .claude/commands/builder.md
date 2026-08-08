@@ -4,7 +4,8 @@ Boot sequence:
 1. Read HANDOVER.md (top block = live version and state).
 2. Read the tail of docs/coordination.md — the IN-FLIGHT registry and every note since the last builder session; honor ship announcements and open items there.
 3. Verify the four monitors are alive (`ps aux | grep -E "elo_logger|match_watcher|opp_watcher|replay_archiver" | grep -v grep`); re-arm any dead one per tools/monitors/ docstrings.
-4. Continue the build queue from HANDOVER + coordination notes.
+4. **Run `.venv/bin/python tools/audit_trigger.py`** (~1s). If it FIRES, the project is producing analysis faster than decisions — spawn a short-lived AUDIT session with no stake in the queue, whose only job is to ask whether the instruments can support the decisions being made, and let it stop when it reports. Prior art: `docs/workflow-analysis/` (2026-08-08), where an outside session found our standard battery had **19% power** after both arms had missed it for fifteen hours. Nobody audits their own instrument.
+5. Continue the build queue from HANDOVER + coordination notes.
 
 Wrap sequence — **fires ONLY on Magnus's explicit wrap-call** (no self-initiated wrap; a drained queue means watch state, never a handover). Magnus has had to prompt the retro every single time because this file had a boot sequence and no wrap sequence, while research.md had both — that asymmetry is the bug, not anyone's memory:
 1. **Write the wrap retro into docs/coordination.md** — protocol rule 5 (two-session-protocol.md:62-67): the per-verdict "process delta" bullets you owed as each verdict settled, synthesised. Format: a dated `PROCESS DELTAS` block. **If you did not append deltas as you went, say so in the retro and reconstruct from the tape — the omission is itself delta zero.**

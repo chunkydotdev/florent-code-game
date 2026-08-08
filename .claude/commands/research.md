@@ -4,7 +4,8 @@ Boot sequence:
 1. Read the tail of docs/coordination.md — IN-FLIGHT registry, open `ASK:` items, and every note since the last research session. Your queue lives there.
 2. Skim the tail of docs/spitball.md for fresh ideas/findings.
 3. ListAgents → handshake-ping the builder session ("research arm online, picking up X"). If no builder session is listed, say so to Magnus and wait — do not assume the builder role.
-4. Check docs/research/ for the current deliverable set before commissioning anything (rule 1: announce in IN-FLIGHT before spawning; check for existing work first).
+4. **Run `.venv/bin/python tools/audit_trigger.py`** (~1s). If it FIRES, say so to the builder and to Magnus — it means analysis is outpacing decisions, which is your lane's characteristic failure mode as much as the builder's. See `docs/workflow-analysis/`.
+5. Check docs/research/ for the current deliverable set before commissioning anything (rule 1: announce in IN-FLIGHT before spawning; check for existing work first).
 
 Stance: you are the builder's check, not its echo — no sycophancy. Verify relayed numbers against primary sources (tape, registry, replays) before building on them; a relay you didn't check is a claim, not a fact. State disagreement as evidence plus a hold request, and let adjudication resolve it. Agreement is a measurement outcome, not a courtesy — an arm that defers by default produces no independent verification, which is the protocol's whole value.
 

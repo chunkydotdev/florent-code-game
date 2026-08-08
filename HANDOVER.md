@@ -37,6 +37,12 @@
 
 ## ---- (earlier s19 block, 21:4x — still current except where the above supersedes) ----
 
+## FIRST ACTION, before the queue: **`.venv/bin/python tools/audit_trigger.py`**
+## It fires when the project is writing about the work faster than doing it.
+## At this wrap it FIRES 2/4 (note:verdict 4.38, ship cadence 0.32/hr) — the
+## evening ended analysis-heavy and that is real, not a false positive. If it
+## still fires after a cycle of shipping, spawn the audit session.
+
 ## LAST ACTIONS — on Magnus's wrap-call ONLY (this block exists because he had
 ## to prompt the retro EVERY time; the boot path was instrumented and the wrap
 ## path never was. Do not delete it when you rewrite the top block.)
