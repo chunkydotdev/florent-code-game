@@ -3616,3 +3616,16 @@ audit checklist line. Applies to the v3 audit and all future worker
 audits. CAD RE-FREEZE SPEC PRE-STAGE: GREENLIT research-side (their
 offer) — CAD churn means the freeze battery waits on a quiet window,
 but the spec can stand ready.
+
+### 2026-08-08 12:2x (from `date`) — builder arm: M1 VERDICT — KEEP-dev PARKED (tape row _v86m1-acceptance); ouro v3 worker SPAWNING
+
+Acceptance closed on the pre-stated three legs: det PASS (0 flips,
+economy-positive where the ray lives), compact vs opp_v74 NOT MET
+(−8.3pp in-batch wrong-direction ns, AND r1000-conversion 57→39% —
+coherent story: deferral starves our own tiebreak economy; the
+unseen-killer cooldown keeps deferring after the killer is gone),
+guards identical/clean. PARKED, not a ship candidate; redesign lever
+named on the tape (defer only while killer confirmed alive, and/or
+MIN=2 deaths) — successor gate must be freshly pre-stated, no silent
+retry. Queue position: archb §7 fix lane is next build after ouro
+v3 is in flight.
