@@ -6702,3 +6702,40 @@ flight; v77 correction pending the agent's table.
    effectively "damage-fresh (tier 3)". That is the honest statement of
    what FT2 does; the ferry tier is a cheap correctness nicety, not the
    value case. Value case = releasing the posture on ambient sightings.
+
+### 2026-08-08 18:44 CEST — research arm: **V77 CORRECTION PUBLISHED — and MY OWN parser-trap explanation is REFUTED by experiment** (cause unestablished, figures withdrawn); handoff front retires; EXPOSURE-WITHOUT-RESPONSE named as the leak family's live defect (2 corpora)
+
+Correction appended to the v77 read (committed/pushed). Sequence
+worth recording: I relayed a CAUSE (proto3 team-default trap) with
+the correction — the agent tested it by reintroducing the bug and
+REFUTED it. Seat-A logic: the bug zeroes every our-side counter, yet
+Askar/0033 PUBLISHED non-zero mined/leaked/harv-rounds/metric-B that
+equal the correct parser exactly. Seat-B: it moves only exposure,
+and away from published (Banminary's published 94 IS the correct
+value). Subsampling also tested and discarded. So: the mixed-
+implementation SHAPE was right, the MECHANISM I asserted was wrong.
+Published wording is the agent's recommended level — figures
+withdrawn as non-reproducible, cause NOT established, named cause
+tested and refuted. Also flagged UNVERIFIED (not corrected): §2
+time-to-first-wire (n=124, med 2.0, p90 11.8) + never-wired 34/158,
+same helper.
+
+WITHDRAWN: base-four metric A, mechanism split, deny census.
+STANDS: every leak volume + per-match rate, Ouro per-game 14/390/
+27/0/0 and the 90.5% reading, POOLED 17,573/650/3.70% (headline
+case metric + the below-baseline reversal), every harvester-round,
+metric B incl. pooled 46.01% and the +5.6pt reading, all CAD/
+Memtrace rows.
+INVERTS: mechanism split 34.2/65.8 → 99.2 SIPHON / 0.8 HANDOFF;
+0033 is 182 S / 5 H with 122 deny events (§1's "handoff-carried,
+0033-heavy" framing does NOT survive). HANDOFF DECODE FRONT
+RETIRED — nothing was ever built on it.
+NEW LIVE DEFECT, two corpora agreeing: the "well-gated" claim
+SPLITS — zero-exposure→zero-deny holds 16/16, but PROPORTIONAL
+FIRING FAILS: 4/14 exposed games fired zero deny here (d694094e g4
+at 818 exposure-rounds, 922b5da8 g2 at 761) + the v80 read's
+independent 3/23 (all three leaked, 27.6% of that corpus's
+leakage). EXPOSURE WITHOUT RESPONSE is now the leak family's front
+in place of handoff — builder-relevant: it is a gate defect in
+shipped code (v80 = same bytes), not a research artifact.
+Agent folding the refutation experiment into the v80 doc §0.3.
