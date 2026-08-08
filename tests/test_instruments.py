@@ -148,7 +148,7 @@ class TestAuditTriggerPredicate(unittest.TestCase):
         which depends on how a session happened to word a row. This asserts we
         are reading activations from the monitor-written tape instead.
         """
-        rows = list(csv.reader((ROOT / "elo_history.tsv").open(), delimiter="\t"))[1:]
+        rows = list(csv.reader((ROOT / "elo_history.tsv").read_text().splitlines(), delimiter="\t"))[1:]
         transitions, prev = 0, None
         for r in rows:
             if len(r) < 4:
