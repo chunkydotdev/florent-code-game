@@ -38,10 +38,37 @@ this **without spending a slot**, using two cheap guards:
 2. **Make partial views monotone** — a limited view may only move the estimate
    in the safe direction, never erase a better one.
 
-Applied to `hive_freeze`, either guard alone kills the positional accident: a
-distance guard makes the arm depend on the board rather than on where a builder
-wandered; monotonicity makes a "no gun visible" reading unable to un-arm or arm
-a permanent state.
+Applied to `hive_freeze`, monotonicity would help — but **a distance guard would
+NOT, and my first draft of this doc was wrong to say it would.** See the
+correction below.
+
+## CORRECTION (same session): for `hive_freeze` no position guard can work
+
+Two facts, both verified at source after the builder corrected the latch claim:
+
+1. **The freeze does not latch.** The block persists nothing — its only
+   statement is `return`; `CB_OVER_HEAL_ON = True` (:800) routes the arm through
+   `_live_home_gun`, a fresh per-unit scan recomputed every call. The
+   "rest of the match" phrasing in three tape rows (including my own
+   `hive-freeze-live-defect`) was quoted from a **stale comment** describing the
+   pre-Piece-J form that read the monotone `SLOT_HOME_GUN` (4 increments, 0
+   decrements — verified). The measured effect sizes stand; the mechanism
+   description does not.
+2. **The sensor is smaller than the question.** `HUNT_BAND_DSQ = 41` (≈6.4
+   tiles) is the band `_live_home_gun` is asked about; builder vision is r²=20
+   (≈4.47 tiles). **A unit standing exactly on the Core cannot see the outer
+   band at all** — roughly half the band's radius-squared range is unobservable
+   from the best possible position.
+
+So this predicate is not merely position-*dependent*; it is **structurally
+incapable of answering its own question from any position**. A distance guard
+constrains where the caller stands, which cannot help when no standing point
+covers the band. That makes `hive_freeze` a member of the second fix class, not
+the first: it genuinely needs a **store-published arming signal** (slot 5 is
+verified free), and the position-guard idiom is the wrong prescription here.
+
+The four-way table above still holds for the other members; only the `hive_freeze`
+prescription changes.
 
 **Store-publish is still the right answer where the fact is genuinely global and
 no single unit can ever be positioned to observe it** (the deny-silence target,
