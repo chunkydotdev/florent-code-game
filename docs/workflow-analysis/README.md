@@ -55,7 +55,8 @@ elegant fix measured 1.06x and is written up as "do not build this."
 |---|---|---|---|
 | [v1](v1-2026-08-08-measurement-power.md) | 2026-08-08 | Can cheaper models build incrementally better bots? | Not yet — the standard n=120 leg has **19% power** at +5pp, on a machine that is ~95% idle. The blocked-estimator fix I expected to be the lever measured **1.06x**. |
 | [v2](v2-2026-08-08-gate-vs-ladder.md) | 2026-08-08 | Does the local gate predict ladder Elo? | **Unanswerable on the current tape — 4 joinable ships, not 35.** Gate rows key on bot dir, ladder rows on version; the join was never recorded. One extra column fixes it. |
-| [v3](v3-2026-08-08-swap-rule.md) | 2026-08-08 | What are the slot-swap rule's error rates? | **It is a timer, not a control.** A truly neutral holder trips it 50.4% at match 8, 96.6% by 20. A genuinely +60-Elo bot still trips it 78.6%. Post-trigger Elo is **positive**. |
+| [v3](v3-2026-08-08-swap-rule.md) | 2026-08-08 | What are the slot-swap rule's error rates? | **It is a timer, not a control.** A truly neutral holder trips it 50.4% at match 8, 96.6% by 20. A genuinely +60-Elo bot still trips it 78.6%. Post-trigger Elo is **positive**. Fix is a magnitude threshold at −1 sd, which keeps the one real rollback and kills both overridden ones. |
+| [v4](v4-2026-08-08-map-pool.md) | 2026-08-08 | Does our local map pool match the ladder's? *(measured by the research arm)* | **Clean null — 100% of 2,891 archived ladder games are on local maps, drawn near-uniformly.** Closes a v2/v5 hypothesis; discharges `program.md`'s maps-are-ours warning; and forces the **A6** split: raising n works for stochastic confirms, and cannot work for deterministic screens. |
 
 ### The three rules these bought
 
