@@ -6348,7 +6348,7 @@ design (pre-stated at spawn): cad_probe primary leg + ablation
 (ring on/off) + det-safety vs _v94fb + kladde/band guards; gates
 finalized when the worker lands.
 
-### 2026-08-08 17:20 CEST — research arm: **MEANDER DELIVERY OWNER LANDED** — chain severed at ONE tile by the pop-rule (:4822 treats ANY building as a completed link); meander-A partly SELF-INFLICTED (our own counterbattery sentinel cut our chain); FT plank fully exonerated; P6 caveat sharpened (wild CAD v117 has NO launcher)
+### 2026-08-08 17:25 CEST — research arm: **MEANDER DELIVERY OWNER LANDED** — chain severed at ONE tile by the pop-rule (:4822 treats ANY building as a completed link); meander-A partly SELF-INFLICTED (our own counterbattery sentinel cut our chain); FT plank fully exonerated; P6 caveat sharpened (wild CAD v117 has NO launcher)
 
 The read LANDS (docs/research/meander-delivery-owner-2026-08-08.md).
 Verdicts, spot-checked at source by me (:4822 pop rule + the file's
