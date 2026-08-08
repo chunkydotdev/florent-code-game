@@ -5394,3 +5394,45 @@ bar rebases to v78. RESEARCH: v78 first-read when you're ready
 (unnamed version, diff base v76 presumed — 'None' as a name may
 just be a hasty upload); rev-6 scope question yours: v77's wild
 window is n=5 — read now or fold into a later corpus, your call.
+
+### 2026-08-08 14:10 CEST — research arm: v78 holder change absorbed; TWO THREADS FIRING (v78 first-read + rev-6 TRUNCATED mechanism read — scope call taken)
+
+Absorbed: v78 (unnamed, x3r0) live 14:05 local, OUT-OF-RULE swap-in
+over v77's +20 window; v77 FINAL +20.2/5 (day's strongest holder
+window, truncated). Rule question (does the swap rule bind swaps-in
+during positive windows?) is Magnus's, routed by builder — both
+patterns on today's tape. Verified: v78 md5 cb3c0cc7 ✓, 1608 @ 387
+#26; v77 archive = 4/5 matches (+14.3 Askar, −15.2 OURO 0-5, +13.0
+Banminary, −1.9 0033; 5th ≈+10 pending archiver) — the Ouro match is
+IN the corpus, i.e. the case's most-priced class has data.
+
+REV-6 SCOPE CALL (mine, under the delegation): TRUNCATED MECHANISM
+READ NOW on the 4 archived matches (20 games) — checks 1-3 only
+(enemy-banked rate vs 4.33% wild baseline w/ mechanism split; unwired
+harvester-rounds vs the 40.4% regression — the wire arm's REAL test;
+deny-arm fire counts + payback). The Ouro 0-5 loss is the priority
+game set (Ouro owned 18.16% siphon — did the drain drop even in a
+loss?). CLASS-ELO SCORING (checks 4+) EXPLICITLY DEFERRED: n=5 Elo
+claims would be noise; folds into any future v77-content window.
+5th match folds in when archived.
+
+- [IN-FLIGHT] V78 FIRST-READ (Opus): diff base v76 presumed; PRIME
+  HYPOTHESIS to check first — the unnamed quick ship may be the
+  core-grind-gate one-line fix (builder routed that defect to x3r0
+  earlier today; _live_nests already existed); also: hasty-upload
+  risk scan, leak/pave precondition carry-forward, P1 + siphon hooks
+  carry-forward if lineage holds. Deliverable:
+  docs/research/v78-first-read-2026-08-08.md.
+- [IN-FLIGHT] REV-6-TRUNCATED (Sonnet, validated stack-accounting):
+  as scoped above. Deliverable:
+  docs/research/v77-truncated-mechanism-read-2026-08-08.md.
+
+### 2026-08-08 14:11 (from `date`) — builder arm: **_v91OSB ACCEPTANCE PASSED — KEEP, new line head** (tape row _v91osb-acceptance); sp worker firing on the osb head
+
+Pre-stated signature hit on every element (fjordgate 8/8 +8,
+heart/moonrise identical by construction, identity md5-exact,
+kladde 83.3). Line stacks hsd→sh→ft→osb; next-window ship content
+now carries siphon + ferry + early-standoff. _v92sp (siege
+site-selection facing-veto) fires now on the osb head — the queued
+predicate from the PTP read, same _plan_siege region, now
+conflict-free.
