@@ -1,5 +1,46 @@
-# Session 16 LIVE header (builder arm, booted 06:43 2026-08-08; supersedes
-# the s15-final block below where in conflict)
+# Session 16 FINAL (builder wrapped ~10:00 2026-08-08 on Magnus's direct
+# call; research arm wrapped ~09:55; successor boots per /builder)
+
+## FIRST ACTIONS for the successor
+## 1. RE-ARM FOUR MONITORS (died with this wrap) — tools/monitors/, arm
+##    one-liners in docstrings, EXIT-ON-WAKE loop shape (see the 06:43
+##    coordination note for the pattern; it fired correctly ~10x today,
+##    incl. the first live swap-rule SLOT FREE wake). elo_logger now also
+##    watches the rolling last-5 swap window (team rule, memory:
+##    slot-swap-rule) and wakes on crossings BOTH directions.
+## 2. LIVE: **v75 "Eir 8" (= bots/_v85hsd, md5 4a2aeb50)** — OUR ship
+##    (09:33, on the swap rule; baseline 1587.2@360; wrap read 1594.0@362
+##    #26, +6.8 open). ~20-match check ~380. Rollback = v74 one click.
+##    Swap rule cuts both ways — if Eir 8's last-5 goes ≤0, x3r0 may swap
+##    it; that's the system, not a conflict. fcode submit is PERMANENTLY
+##    ALLOWED (Magnus's permission rule, 09:31).
+## 3. Research's REV-5 production read is PRE-REGISTERED (their 09:41
+##    board note, successor-executable as written) — fires on Eir 8's
+##    window. Their s16 wrap note + retro on the board ~09:54.
+## 4. bots/_ouro_v2_dev = the ouro probe v2 worker's dir, UNVERIFIED
+##    (worker died mid-flight with this wrap; main.py exists on disk).
+##    Spec = docs/research/ouro-probe-refreeze-spec-2026-08-08.md
+##    (committed, the real asset). Successor: verify the draft against
+##    the spec's checks OR re-fire the worker (~20 min), then run the
+##    §5.3 PREDICTIVE freeze battery (six anchor binaries, Wilson-contain
+##    wild 76.7) + ≥3-lineage steering check + md5 stamp replacing
+##    bots/ouroboros_probe. OURO FIRST remains the probe order (Elo table:
+##    #1 bleed class, 86-pt instrument gap, they're the ONE stable nemesis).
+## 5. Queue after ouro: M1 don't-feed-rebuilds counter (anti-structure
+##    mechanism, v74 delta read), C1c (proactive-coverage shape per the
+##    0033 omission finding), U2, d²=25 belt, archipelago-b residual owner
+##    decode (det single, open), kladde/CAD/Lunds re-freezes on their
+##    SHORT windows (churn ledger in the 09:45/09:55 notes; kladde wakes
+##    = churn-routine until they hold ≥2h), hs_seek_seat lifecycle +
+##    exception-swallow hardening (hse worker's notes).
+## 6. Standing rules added TODAY (all in memory + board): Elo above all
+##    else (ship cases in expected-Elo terms); field-first extends to the
+##    holder leg; SLOT SWAP RULE (rolling last-5 ≤0 frees the slot);
+##    NOISE_ON=False both sides for any identity/ablation claim; det
+##    singles never adjudicate choice between heal-perturbing candidates;
+##    compact numbers are never the case (3rd mean-regression today).
+
+# Session 16 arc (kept for the record; superseded above where in conflict)
 
 ## State at 09:39 — **v75 "Eir 8" LIVE (OUR ship, 09:33)**
 - SHIPPED on the new TEAM SWAP RULE (rolling last-5 ≤0 frees the slot;

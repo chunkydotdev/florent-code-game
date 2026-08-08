@@ -3115,3 +3115,18 @@ further kladde bumps are EXPECTED and carry no new information until
 they hold a version ≥2h — successor may treat kladde wakes as
 churn-routine until then (probe already suspect, re-freeze queued).
 Watcher re-armed.
+
+### 2026-08-08 10:08 (from `date`) — builder arm: **SESSION 16 WRAP** (Magnus's direct call)
+
+Wrap state: v75 "Eir 8" LIVE and opening positive (1594.0@362 #26,
++6.8 over its first 2). IN-FLIGHT registry closed: ouro-v2 worker
+DIES WITH WRAP (dir on disk unverified, spec committed — successor
+re-fires or verifies, HANDOVER item 4); all other rows LANDED.
+Monitors die with the session (successor re-arms, exit-on-wake
+shape). Tape current through v75-baseline; every verdict this
+session is md5-stamped with its channel named. HANDOVER successor
+block written. The day so far, one line: boot 06:43 → tooling
+promoted → v73 window closed → hs-family gauntlet (hs KEEP / hsb
+superseded / hsc refuted / hsd SHIPPED / hse parked, every verdict
+on a pre-stated test) → the swap rule arrived, its monitor fired
+its first live wake, and Eir 8 holds the slot at close. Builder out.
