@@ -574,3 +574,27 @@ off**: same opponent, same maps, same seeds, and the effect is the on-vs-off
 delta. Corollary: any falsifier defined over ladder structure (an opponent-class
 clustering, a per-team rate) can only fire on a **post-ship production read**,
 never on a pre-ship leg against a non-ladder sparring partner.
+
+## Read per-version Elo from `eloDelta`, never by differencing ratings (builder, 2026-08-08 s19)
+
+Every ladder match row from `fcode match list --mine --json` carries
+**`eloDeltaA` / `eloDeltaB`** next to `teamAVersion` / `teamBVersion`.
+
+**Sum the delta, filtered by version.** Do not difference `rating` across
+`matchesPlayed` gaps in `elo_history.tsv` — that method:
+
+- **averages within the gap**, understating per-match variance, and
+- **cannot attribute a match to a version**, because version binds at match
+  *creation* and a match created before an activation belongs to the previous
+  head.
+
+That second failure cost three tape corrections in one evening
+(`v77-final-corrected`, `v79-final-corrected`, and the v82 baseline). The
+delta method is immune: the version is stamped on the same row as the delta.
+
+Validated against the hand-corrected rows — v77 +34.1/6, v81 −24.0/2,
+v82 +14.8/2, v83 +34.1/5, all reproduced without a correction cycle.
+
+Exact per-match distribution (n=100): **mean −0.353, sd 9.273, range
+−18.0…+18.3**, so a rolling-5 sum has sd **20.74** (see
+`swap-rule-is-a-coinflip`).
