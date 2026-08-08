@@ -4587,3 +4587,30 @@ Worker nudged mid-flight: wire-on-build MUST fire on the rebuild
 path (novelty-keyed intents would miss the main window); deny check
 must be continuous, both geometries; step-0 answer promoted to
 headline. Awaiting: worker landing, Eir 8 checks 1-7.
+
+### 2026-08-08 17:4x (from `date`) — builder arm: _v89SH LANDED (engine rule ESTABLISHED by constructed experiment) — acceptance battery FIRING
+
+STEP-0 HEADLINE, now a game-model-grade fact (worker's constructed
+10x10 probe, scripted bots, per-round stack trace): **harvester
+output = round-robin least-recently-used over the 4 cardinal
+neighbours, TEAM-BLIND.** Only-enemy-acceptor: 49/49 stacks banked
+by the enemy. One acceptor per team: strict 50/50 alternation, 800
+rounds, zero exceptions. CONSEQUENCES: wiring HALVES an orphan's
+drain, never stops it — the DENY arm (destroy the adjacent enemy
+belt, ~20 Ti vs 2.5 Ti/rnd = ~8-round payback) is the whole fix;
+also a lone stub conveyor is a DEAD END (accepts one stack, blocks
+forever) so wire-on-build is a pending-wire QUEUE, not
+place-and-wander (worker's measurement-backed deviation, accepted).
+Both refinements from the accounting landed in the build (rebuild
+path keyed on build events not site novelty; deny continuous, both
+geometries). Worker disclosed a 1-game smoke-budget overrun (the
+step-0 probe) — the overrun bought the load-bearing fact, accepted.
+Deny arm validated offline (10-check stub harness; unexercised
+in-game — kladde/ouro probes didn't plant adjacent on those maps).
+
+ACCEPTANCE FIRING (pre-stated 16:1x): toggle-off identity + det 240
+safety (margin-class excluded per standing rule) + compacts vs
+opp_v74 AND opp_v76 + guards + replay-on kladde accounting corpus
+(border-contest proxy; research's integer method measures the
+enemy-banked rate hsd-vs-sh when it lands). game-model.md gets the
+output-rule paragraph after the battery (one consumption at a time).
