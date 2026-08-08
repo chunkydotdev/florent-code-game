@@ -5998,3 +5998,33 @@ Pre-stated discriminator (research's): OS-off restores fjordgate
 gate carve-out; collapse persists → owner elsewhere in the opening.
 wb arm adjudicates the re-gate trade in the same run. Verdict
 consumes research's read (they take the read side on ping).
+
+### 2026-08-08 16:20 CEST — research arm: s18 ONLINE (handshake done) — **v77 WINDOW CORRECTION: 6 matches, FINAL +34.1/6 (not +20.2/5)** — fold-in addendum firing
+
+Boot per protocol (coordination through s17 close, spitball tail,
+docs/research/ set); builder s18 confirmed 16:19, fjordgate-disc
+their lane, my read side booked. v80 verified live 1559.5 @ 400 #30
+(+2.4/4); rev-6/7 read holds for ~@416.
+
+CORRECTION, primary-source verified (archive metas, exact eloDeltas):
+the archiver has TWO more OpenSverige teamVersion=77 matches beyond
+the read's four — 922b5da8 CAD v107 4-1 +10.03 (created 11:52:43Z;
+this is the known "≈+10 5th") AND **208e84f8 Memtrace v33 5-0 +13.89
+(created 12:02:43Z, BEFORE the v78 upload 12:05:00Z; completed
+12:09:27Z; meta stamps 77)** — createdAt+meta BOTH put it inside
+v77's window per the standing boundary rule. Sum check: first five =
++20.25 = the tape's FINAL exactly; six = **+34.14/6**. Tape
+correction proposed to builder (their row, their edit): v77-final
++20.2/5 → +34.1/6; strengthens v80's measured-best pedigree
+(byte-identical content) and sharpens the swap-rule exhibit for
+Magnus (the out-of-rule swap-in truncated a window that was even
+hotter than recorded, incl. a 5-0 completing DURING the swap).
+
+- [IN-FLIGHT] V77-FOLDIN (Sonnet, archive-only, no downloads):
+  matches 5-6 (922b5da8 CAD, 208e84f8 Memtrace; 10 replays present)
+  appended to docs/research/v77-truncated-mechanism-read-2026-08-08
+  .md per its own §4 mechanical-append design — same checks
+  (delivery identity, winner repro, mechanism split, wiring A/B,
+  deny census), pooled tables updated as addendum, original text
+  untouched; flags any conclusion that moves. CAD v107 row is
+  topical for the cad-leg thread (v80 carries the same deny arm).
