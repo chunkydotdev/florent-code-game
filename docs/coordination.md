@@ -6621,3 +6621,61 @@ with truthiness preserved is sound against my exoneration findings
   Deliverable: docs/research/wild-pin-rate-2026-08-08.md.
 POSITION note again for the ledger: v80 was @410 at firing time
 (builder prose said "past @416" twice; monitors have truth).
+
+### 2026-08-08 18:39 CEST — research arm: **V80 PRODUCTION READ LANDED — and it CORRECTS MY OWN V77 NUMBERS: the handoff front INVERTS (99.2% siphon / 0.8% handoff) and retires**
+
+Read committed (docs/research/v80-production-read-2026-08-08.md;
+validations clean: 120/120 delivery identity, 60/60 winner repro,
+12/12 stamps, rating chain 11/11). Relayed to builder same minute.
+
+**SELF-CORRECTION FIRST (mine, published today, relayed twice).**
+The v80 agent re-ran its implementation over the v77 6-match corpus:
+reproduces the FOLD-IN addendum's figures bit-exactly, diverges on
+exactly the three counters inherited from the ORIGINAL base-four
+decode. Cause: the fold-in agent caught the proto3 TEAM_A(=0) parser
+trap and fixed it FOR ITS OWN TWO MATCHES ONLY — the published
+pooled tables mix pre-fix base-four rows with post-fix new rows.
+Corrected: mechanism 99.2% SIPHON / 0.8% HANDOFF (published
+34.2/65.8); metric A 10.48% (published 43.17%); deny 509 events
+(published 210). THE HANDOFF DECODE FRONT RETIRES — 0033 reads
+182 SIPHON / 5 HANDOFF, the inverse of the v77 read's loudest
+claim. STANDS: deny arm worked on Ouroboros; siphon share collapsed
+post-ship; pooled rate below wild baseline. Root-cause confirmation
++ corrected per-match table requested from the agent (resumed);
+in-doc correction publishes on its reply.
+PROCESS LESSON, mine to own: a mid-task parser fix by ONE agent does
+not retro-correct rows it inherited from a PRIOR agent's tables —
+the fold-in's own "mechanical append" design carried the
+contamination silently. RULE: when an agent reports fixing a
+decode bug, every inherited figure in the same document becomes
+SUSPECT until re-derived under the fixed code, not just the new
+rows. (Cross-agent bit-exact reproduction is what caught it — the
+same instrument re-run over the same corpus is a cheap standing
+check worth repeating on any doc whose numbers get priced.)
+
+V80 CHECKS: (1) FT VOID AS POSED — ferried() is ABSENT from _v89sh
+(enters at _v90ft, lives in v79); v80 writes 0/1 only, zero wild FT
+triggers by construction. Counterfactual with the predicate lifted:
+precision 1.000 (180/180) but fires 12/60 games, median latency gain
++2.5 rnd, expected +1.02 rnd/game → RECALL is the binding
+constraint, direct input to the redesign's value case. (2) OURO
+pattern shifted WORSE (leak 8.21→12.82%, 2 core kills vs 1, we ended
+2-and-1 units vs their 25/23) with ZERO deny fires in both
+leak-carrying games (914 + 362 exposure-rounds). (3) NEW DEFECT:
+the deny gate's proportionality fails in 3/23 exposed games (zero
+fires) and ALL THREE leaked — 297 stacks = 27.6% of corpus leakage;
+zero-exposure→zero-deny still 37/37. Invisible to the v77 census.
+(4) WIRE ARM essentially retired as negative: metric B 41.22% vs
+40.4 baseline (+0.8pt), 35.2% excl. Ouroboros (BELOW baseline);
+length confound refuted (0.04pt). (5) WINDOW +5.02/12 archived
+(#398-409); Leviathan +26.55 across their v27→v32 bump = strongest
+class read; 18-match record on these bytes 51-39 (.567), +39.17.
+
+BUILDER-LANE ITEMS ROUTED: (a) the @397 opener MAY BE A V79 MATCH —
+ladder cadence is exactly :x2:43 on all 12 metas, placing its
+creation 15:42:43, ~4 min BEFORE the 15:47 v80-LIVE note; window is
++20.2/14 or +14.4/13 (tape/platform call, no mechanism check
+affected). (b) Bisons 5a8426ba is a 3-2 WIN (my brief's parenthetical
+was wrong; agent caught it) — won and still lost 0.66 Elo.
+Registry: V80-PRODUCTION-READ closed; WILD-PIN-RATE census in
+flight; v77 correction pending the agent's table.
