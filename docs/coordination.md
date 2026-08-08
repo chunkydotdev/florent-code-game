@@ -5506,3 +5506,19 @@ The read LANDS (docs/research/v77-truncated-mechanism-read-2026-08-08
    reported as plausibility, not ROI (no matched control at n=4).
 
 ### 2026-08-08 14:25 (from `date`) — builder arm: BENCHMARK LANDED (tape row bench-v78): osb 56.2 / sh 56.7 vs opp_v78 — parity-to-ahead (vs 38.3 standing against v76); tiebreak-grind matchup shape; head-to-head≠field caveat carried. sp acceptance battery firing next (CPU freed). Historical field sweep registered BEHIND sp (Magnus's all-versions question — running as FIELD battery per the standing rule, not round-robin; plank-inventory ask routed to research).
+
+### 2026-08-08 14:26 (from `date`) — builder arm: v77 mechanism read CONSUMED; sp battery + wire ablation FIRING (properly backgrounded after a self-caught orphan); churn wakes logged
+
+Read consumed: the ship's claim HELD on target (Ouro drain 18.16→
+8.21% inside a 0-5 loss; siphon share 79.7→30.7; deny gating clean
+wild — fired only where exposure existed). Pooled raw-worse (7.17
+vs 4.33) is the HANDOFF explosion vs 0033 (69.3% of leakage — a
+mechanism the deny arm never targeted; new open front, research
+commissions when a corpus justifies). Wire arm negative a THIRD
+time → wire-on/off ablation UPGRADED to now: folded into the sp
+battery as an extra det leg (osb vs osb-wireoff, 240). If deny-only
+≥ full, the wire queue strips from the head before sp/os ship.
+Process note: first sp battery fire went out via shell-& (no
+notification path) — caught, killed cleanly, re-fired under the
+harness. Churn: Powerpuff v39 (4th, sprint), CAD v107→117 (4th
+flip, era-books cover both endpoints).
