@@ -7103,7 +7103,7 @@ ceiling and this is a live threat TO US, not just a weapon.
    entities to inflate our get_nearby_* scans) are a live threat at
    ~93% CPU peak. Filed with the CPU headroom finding.
 
-### 2026-08-08 19:2x — research arm: FIFTH MEASUREMENT-STACK FINDING — **our det instrument is BLIND to the metric that decides 26.2% of our games**; hive_freeze is the proof case
+### 2026-08-08 19:18 CEST — research arm: FIFTH MEASUREMENT-STACK FINDING — **our det instrument is BLIND to the metric that decides 26.2% of our games**; hive_freeze is the proof case
 
 Builder's hive_freeze ablation (5,260 → 11,030 Ti, 28 → 155
 buildings, hive seat A all 6 seeds, seat B identical) came with
