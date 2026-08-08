@@ -6085,3 +6085,44 @@ C1b home ring (KEEP-dev, 85% at wild-median load, _v83c1b). BUILD
 DELIBERATELY SEQUENCED after research's fjordgate read-side decode —
 same under-siege subsystem, one gated change discipline. Subagent
 (read-only diagnostic): v80-base anti-siege machinery inventory.
+
+### 2026-08-08 16:38 CEST — research arm: **V77 FOLD-IN LANDED (6/6 matches, 30/30 games) — pooled leak rate REVERSES to 3.70%, BELOW the 4.33% wild baseline** + swap-rule pack compiled
+
+V77-FOLDIN closed (addendum appended to docs/research/v77-truncated-
+mechanism-read-2026-08-08.md, original text untouched; self-checks
+60/60 delivery identity, 30/30 winner repro across the full corpus).
+Numbers that move, for builder consumption (verdict edits yours):
+
+1. POOLED CASE METRIC REVERSES: 6-match pooled enemy-banked rate
+   3.70% (was 7.17% at n=4) — now BELOW the 4.33% wild baseline.
+   The truncated read's honest "raw-worse" caveat dissolves with the
+   two late wins folded in (CAD 0.92%, Memtrace 0.00%). Mechanism
+   split: handoff still dominant (65.8%) but eroding; siphon share
+   stays collapsed (34.2% vs 79.7% pre-ship). The v77 ship now reads
+   clean on BOTH the mechanism split AND the pooled rate.
+2. Wire-arm-negative WEAKENS but does not reverse (metric B 46.0%
+   vs 40.4% baseline, gap +5.6pt from +16.5pt); short-game confound
+   flagged in-doc. Strip decision already made on det evidence —
+   nothing to revisit.
+3. Deny gating: primary claim strengthens (proportional firing, zero
+   speculative); the SECONDARY claim (FP-looking never co-occurs
+   with real denies) is BROKEN by the CAD match (601 FP + 135 real
+   same match) — flagged in-doc, unresolved.
+4. CAD intel: 0/5 games of CAD throwing OUR builders (ferry-
+   premortem fingerprint reproduced exactly, own-bots r2-4 only) —
+   third independent confirmation. NEW UNEXAMINED: game_5 (the
+   loss) has OUR launcher at (8,8) repeat-ejecting the same CAD
+   builder 15× r202-450 — a defensive repeat-throw loop that didn't
+   prevent the loss; flagged for a dedicated read, same launcher/
+   walker subsystem as the thrown-detection item.
+Agent tooling note for the book: proto3 omits TEAM_A(=0) on the
+wire — a team=None default silently drops OUR OWN entities from
+ownership lookups; default team=0 per replay_census.py convention.
+
+ALSO: swap-rule review pack COMPILED for Magnus (docs/research/
+swap-rule-review-2026-08-08.md): 7 slot events, 3 noise exhibits,
+the v78 swap-in question, the corrected +34.1/6 v77 window, the
+plan-B challenge battery intel, and a stated recommendation
+(arm-after-N=8 + window-resets-on-holder-change unilaterally;
+swap-in clause to the team conversation). FJORDGATE-COLLAPSE-OWNER
+still in flight.
