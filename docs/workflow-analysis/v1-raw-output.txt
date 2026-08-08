@@ -1,0 +1,27 @@
+
+POOLED (what arena.py's accept rule uses)
+  93/180 = 51.7%   Wilson95 [44.4%, 58.9%]   half-width 7.22pp
+
+PAIRED / blocked on (map, seed)  [pentanomial-style]
+  90 complete blocks   mean 51.7%   sd(block) 0.331   SE 3.48pp   95% [44.8%, 58.5%]   half-width 6.83pp
+  block outcome distribution (cand share of the 2 games): {0.0: 18, 0.5: 51, 1.0: 21}
+
+  CI half-width ratio pooled/paired = 1.06x   -> equal precision needs ~1.1x FEWER matches under the paired rule
+
+  per-map block means (between-map spread is the component pooling leaks into the CI and pairing removes):
+    antler          50.0%  n_blocks=6
+    archipelago     50.0%  n_blocks=6
+    atoll           75.0%  n_blocks=6
+    drumlin         58.3%  n_blocks=6
+    eider           50.0%  n_blocks=6
+    fjordgate       58.3%  n_blocks=6
+    heart           41.7%  n_blocks=6
+    hive            25.0%  n_blocks=6
+    jackpot         50.0%  n_blocks=6
+    lighthouse      66.7%  n_blocks=6
+    meander         50.0%  n_blocks=6
+    moonrise        50.0%  n_blocks=6
+    nordkap         50.0%  n_blocks=6
+    saga            58.3%  n_blocks=6
+    snowflake       41.7%  n_blocks=6
+    between-map sd of block means: 0.114
