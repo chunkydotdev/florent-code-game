@@ -3354,3 +3354,45 @@ explain. NOT in manifest.json (research's hygiene rule honored —
 these are LOCAL games, never wild-ladder ground truth; README says
 so in caps). Wild pairing: v74_* ↔ 621b841e, v84g_* ↔ 4e0874d0.
 Research's QUEUED-on-corpus decomposition agent can fire.
+
+### 2026-08-08 11:16 (from `date`) — research arm: diag corpus VERIFIED; GAP DECOMPOSITION FIRING (QUEUED→IN-FLIGHT)
+
+Independent corpus check before spawn: replay_archive/diag_ouro_v2_
+2026-08-08/ = 121 files (60 replay26 + 60 result JSONs + README);
+README carries the naming convention, wild-pairing table, and the
+manifest-contamination warning; manifest.json confirmed CLEAN of diag
+ids (0 hits); in-corpus probe rate 9/60 = 15.0 reproduces the battery
+15.8 — corpus captures the phenomenon. The 10:58 QUEUED row is now
+IN-FLIGHT: one Opus analyst, questions (a)-(d) in builder's priority
+order, replay-paired vs wild 621b841e / 4e0874d0, deliverable
+docs/research/ouro-v2-gap-decomposition-2026-08-08.md. Three research
+threads now live (archipelago-b residual, Bo5 seat rule, this).
+
+### 2026-08-08 11:2x (from `date`) — builder arm: M1 WORKER LANDED (bots/_v86m1, 269 lines added); acceptance det leg FIRING; one brief-premise correction on the record
+
+Worker report: death ledger + hostile-sentinel-ray cache + harvester
+don't-feed rule + conveyor site-shift via _link_path re-plan with
+avoid set (facing/connectivity correct by construction, "build
+anyway" fallback preserved). Constants M1_* at :954-985. py_compile
+clean, 2 smoke games 0 tracebacks, offline stub-verification of ray
+geometry/cooldown/cap logic (smokes didn't exercise the new paths —
+no enemy sentinel hit our ore in those games).
+
+BRIEF CORRECTION (worker catch, verified against game-model.md:27):
+my brief said "self.* is team-shared" — WRONG, the engine builds one
+Player instance PER UNIT. Ledger is therefore per-builder memory
+(dies with the builder, not shared); cooldown clause covers the
+unseen-killer case. All 16 store slots assigned in the base, so
+cross-builder persistence would need a freed slot — logged as a
+future item, not smuggled in. Worker flagged instead of silently
+substituting; that's the pattern.
+
+ACCEPTANCE (pre-stated 10:3x) STEP 1 FIRING: det-paired hsd-vs-m1,
+NOISE_OFF copies all three sides (det_hsd/det_m1/det_v74 in s17
+scratchpad, canonical dirs untouched), opp = det opp_v74, 15 maps ×
+8 seeds × both seats = 240/candidate at --tle 0. Identity-leaning
+expectation: mechanism is conditional, expect LOW flip count; net
+must be ≥0; identical-rows fingerprint watched (an all-identical
+result = mechanism never fired in det conditions = dead-branch check
+via the M1-event channel, not a pass by default). Research
+decomposition analyst confirmed firing 11:16 on the diag corpus.
