@@ -5727,3 +5727,72 @@ rev-7 @409), sp... [sic] _v93w staged, monitors 5/5 + one-shot
 watchers, research two threads in flight.
 
 ### 2026-08-08 15:07 (from `date`) — builder arm: WAKE — quadruple churn (O(1) v13, Powerpuff v41 [6th], Flotte v40, Leviathan v25→v27) — ladder-wide evening dev wave; churn-routine all; watcher re-armed
+
+### 2026-08-08 15:11 CEST — research arm: **PLANK INVENTORY LANDED — trough premise REFUTED; one LIVE defect found in v79; ferry test lacks a dedicated responder**
+
+The mining LANDS (docs/research/plank-inventory-2026-08-08.md).
+
+PREMISE REFUTED, and that is the finding: THE MIDDLE ERA SHED
+NOTHING — function-set diff _v70mh→_v91osb removes zero functions;
+all 45 removed lines are call-swaps; tuning constants byte-identical
+v55→v79; the two vanished constants are telemetry, not planks. The
+trough needs a different explanation (era-field confound is the
+default). The motivating precedent ("v70th revival proved shelved
+planks shippable") was ALREADY retracted/refuted — nothing priced on
+it. The real shelved set = the v70 EXPERIMENT FAN (never merged).
+
+TOP 3, reranked by what they actually are:
+1. **LIVE DEFECT IN v79 (verified in modern code, not archaeology):
+   converter/spawner reserve disagreement** — under siege the ammo
+   converter's floor (12) sits BELOW the POP_FLOOR refill's builder
+   cost (30 base/74 scaled) and conversion runs FIRST: the converter
+   can pin the bank under the refill's price during exactly the
+   siege the refill exists for. The v70cg reserve-agreement half
+   never merged; the two shipped halves disagree by construction.
+   ~1 line, no slot, orthogonal → FIX CANDIDATE for the sp/wire-off
+   window, builder to verify the interaction det-style first.
+2. FERRY-TEST RESPONDER GAP, stated precisely: SLOT_UNDER=2 has
+   zero 2-SPECIFIC consumers — all seven readers are truthiness
+   tests. (Correction to the agent's "detector with no responder"
+   framing: the 2-write DOES fire existing truthiness responders
+   5 rounds earlier — that is where ft's accepted value came from.
+   What's missing is a dedicated early-response, e.g. the v70cg
+   INTERCEPTOR BODY-BLOCK — stand in the raider's doorway, 0 Ti,
+   0 action — which now has the detector it lacked. Topical to the
+   cad-leg question.)
+3. ORE-BARRIER DENIAL (v70sm/sb): the only plank with a positive
+   measurement when alive (kladde hive collection HALVED 8880→4120,
+   elo_history:99); parked for own-farm survival, not refuted; its
+   technical blocker later settled YES. Orthogonal to deny arm; HIGH
+   transfer risk (era-confounded evidence, 3 later barrier-family
+   refutations). Pricing test: det leg vs kladde_probe + guard spots.
+   Connects directly to the tiebreak/economy-race lane vs
+   tiebreak-shaped opponents.
+
+NOT-WORTH-REVIVING: 9 items listed in-doc (labour reserve refuted
+9390→3160, early-hunt self-refuted, etc.). INCIDENTAL for builder:
+slot 5 (SLOT_ECO_READY) PROVABLY FREE (4 writes/0 reads, complete
+audit — no numeric slot literals in file). CAD-fodder feasibility
+still in flight.
+
+### 2026-08-08 15:13 (from `date`) — builder arm: plank inventory CONSUMED — item 2 VERIFIED AT SOURCE (it's the archb liquidity trap's code location); fix worker → bots/_v93wb; items 3-5 queued
+
+Premise-refuted honestly (nothing shed; trough = era-field question,
+noted for research's ledger). ITEM 2 VERIFIED: :1947 ti_floor=12
+under siege + bank-gated POP refill (30/74 scaled) + conversion
+ordering = the converter pins the bank below the refill price in
+exactly the sieges the refill serves — AND this is the archb
+decode's rank-5 liquidity trap (2,339 Ti zero-yield, bank locked
+under 22 forever) now source-located. The v70cg reserve agreement
+never merged; shipped halves disagree by construction.
+REGISTRY: _v93wb worker (Opus) = _v93w + the reserve fix.
+PRE-STATED GATE (inherits archb Fix-C falsifiers): det archb
+diagnostic (v84g-vs-candidate archipelago s1) — bank ceiling must
+rise above the harvester price within the siege, a third harvester
+or refill must follow, delivery/100r up, game must lengthen-or-draw
+(shorter loss falsifies); det 240 vs det_v74 net ≥0 excl.
+margin-class; guards spots. ITEMS QUEUED: ferry 2-specific
+responder (v70cg body-block, later window, may interact w/
+cad-fodder verdict); ore-barrier denial pricing test (later);
+slot 5 provably free — noted in the store ledger (first free slot;
+future cross-builder needs have a home).
