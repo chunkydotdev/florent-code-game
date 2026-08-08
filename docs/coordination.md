@@ -5372,3 +5372,5 @@ band). PRE-STATED: heart/moonrise must go identical by construction,
 fjordgate keeps +8, det net ≥+8, kladde back ≥80, others level.
 Same battery. Placement-table salvage stays queued for later
 regardless. sp chain waits one more battery cycle.
+
+### 2026-08-08 13:58 (from `date`) — builder arm: WAKE — v77 last-5 +20 @386 (slot held, opening +20.2 over baseline after 5); logger re-armed; osb battery still running
