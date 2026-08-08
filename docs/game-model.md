@@ -241,9 +241,16 @@ units (harvesters, conveyors, splitters, barriers) don't count and consume no CP
   friendly Builder Bot on the same tile in one call.
 - `ct.destroy(pos)` — destroys an **allied** building on an orthogonally adjacent tile.
   Costs **no titanium and no action cooldown**, and is **unlimited per round** — the only
-  action in the game that's completely free. Destroying a Conveyor also **returns any
-  resources in transit on that tile** to your balance, and removes that entity's cost-scale
+  action in the game that's completely free. It removes that entity's cost-scale
   contribution.
+  **CORRECTED 2026-08-08 (s19): destroying a loaded Conveyor does NOT refund the stack —
+  it INCINERATES it.** This paragraph previously claimed the resources in transit are
+  returned to your balance, and that claim was false. Measured by the research arm:
+  `destroy()` on a loaded conveyor credited **0 titanium in 191/191 clean cases**, against
+  a positive control that credited 40,427/40,427. The false version made a
+  "bucket-mining" exploit look feasible (destroy loaded belts for instant credit); it is
+  not. Anything else in the docs or in a bot that cites the refund is wrong by the same
+  measurement — grep before trusting.
 - `ct.self_destruct()` — deals **zero** damage. Older docs claiming area damage are wrong.
   Only use: freeing unit-cap space or denying a bounty.
 

@@ -58,8 +58,11 @@ Everything previously listed here was answered by `docs/game-rules-builder-bot`,
       slope of exactly passive-only 2.5/round and `titanium_collected` 0 over 990 rounds.
       The starter bot's numbers reconcile because its walking-trail conveyors evidently do
       deliver. Now in game-model.md. *Residual sub-question:* is a stack sitting in a
-      dead-end chain recoverable via `destroy()`'s in-transit refund, or lost once pushed
-      off the chain's end?
+      dead-end chain recoverable via `destroy()`, or lost once pushed off the chain's end?
+      **ANSWERED 2026-08-08 (s19): LOST. There is no in-transit refund** — destroying a
+      loaded conveyor incinerates the stack (0 Ti in 191/191, positive control
+      40,427/40,427). The sub-question was built on a false premise this doc inherited from
+      game-model.md, now struck there too.
 
 ## Strategy questions we can answer ourselves offline
 

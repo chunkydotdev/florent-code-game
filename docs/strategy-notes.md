@@ -89,8 +89,10 @@ in the game, and four times a Harvester's.** That reframes everything:
   one Builder Bot.** Long delivery chains are cheap; the bots that build them aren't.
 - `ct.destroy()` gives the scale back, **costs nothing, has no cooldown, and is unlimited per
   round** — the only free action in the game. Demolishing a rerouted-around conveyor chain
-  cuts the tax on everything built afterward, and refunds any stack in transit. Nothing in the
-  tutorials or the starter bot does this.
+  cuts the tax on everything built afterward. Nothing in the tutorials or the starter bot
+  does this. **CORRECTED 2026-08-08 (s19): this bullet used to add "and refunds any stack in
+  transit". It does not — destroying a loaded conveyor INCINERATES the stack (0 Ti credited
+  in 191/191 measured cases, positive control 40,427/40,427). See game-model.md.**
 - A bot that scouts for 100 rounds and builds nothing pays **zero** scale tax in that window.
   The cost of building early is real but so is the compounding from an early harvester —
   worth measuring rather than assuming.

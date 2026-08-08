@@ -333,7 +333,21 @@ class Replay:
                             ent = parse_entity(ebuf, rnd)
                             if ent is None:
                                 continue
+                            # ROTATION RE-EMIT GUARD (research find, builder-fixed
+                            # 2026-08-08 s19).  rotate() re-emits placeEntity for an
+                            # entity that already exists, so counting every
+                            # placeEntity INFLATES build counts: 1,315 of 1,915
+                            # gunner "places" in a 40-game sample were rotations,
+                            # against 0 for every other entity kind (gunners are the
+                            # only rotatable type).  A genuine build is the FIRST
+                            # placeEntity carrying a given entity id; later ones are
+                            # state updates.  Every past analysis reading gunner
+                            # build_rounds or first_build off this parser is inflated
+                            # and must be re-run.
+                            seen_before = ent.id in entities
                             entities[ent.id] = ent
+                            if seen_before:
+                                continue
                             key = (ent.team, ent.kind)
                             if key not in first_build:
                                 first_build[key] = (rnd, ent.pos)
