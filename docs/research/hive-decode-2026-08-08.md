@@ -248,3 +248,107 @@ and they kill us 70% of the time.** hive is the only cell that is absolutely
 bad rather than conditionally bad — it is not explained by "we lose to strong
 teams." The weak cell is n=10 and should be held loosely, but it points the same
 way as every other measurement in this document.
+
+---
+
+# ADDENDUM 2 (23:4x) — #3 and #1, both run. It is BUILD POLICY, not defence.
+
+Builder picked #3 first then #1, on the reasoning that ore geometry might
+half-predict the harvester answer. It did exactly that. **Still zero downloads.**
+
+## #3 — hive is the most ore-poor map on the board
+
+Ore geometry read straight out of the `Map` message (no game required), all 15
+maps:
+
+```
+map            dims     ore   density   d_median_own   contested
+meander       25x15      24    0.064        6.0           42%
+saga          24x24      36    0.062        8.1           39%
+eider         28x20      32    0.057        4.5           12%
+archipelago   26x26      38    0.056        6.0           16%
+...
+drumlin       25x25      30    0.048        8.6           40%
+atoll         18x18       8    0.025        7.1           50%
+hive          25x25      12    0.019        8.6           33%   <<< LOWEST
+```
+
+**hive has 12 ore tiles on a 25×25 board — a 0.019 density against a field of
+0.042–0.064.** drumlin is the same dimensions with 30. And hive's ore is far:
+median distance 8.6 from a core, tied-second-worst.
+
+So hive imposes a hard cap of roughly six harvesters per side, and puts them at
+arm's length. **That alone is not the defect** — the cap is symmetric, the map
+is mirror-symmetric, and it applies to the opponent identically.
+
+## #1 — we never build them. They do not die.
+
+Per-round harvester tracking over `placeEntity` / `removeEntity`, medians:
+
+```
+cohort                    built  lost  peak   @r50  @r100  @r200   end
+hive OURS   (kill-loss)     3.0   0.0   3.0    3.0    3.0    3.0   2.0
+hive THEIRS (kill-loss)     6.0   0.0   6.0    3.0    4.0    5.0   6.0
+other-map OURS   (loss)     6.0   1.0   6.0    3.0    4.0    5.0   4.5
+other-map THEIRS (loss)     7.0   0.0   7.0    3.0    4.0    5.0   7.0
+```
+
+**The discriminator the builder asked for, answered:**
+
+```
+OF THE HARVESTERS WE BUILT, WHAT FRACTION DIED?
+  hive, our kill-losses    OURS  0% died (n=25)
+  other-map losses         OURS  9% died (n=59)
+```
+
+**Zero. Our hive harvesters do not die — we never build them.** This is a
+build-policy defect, not a defence defect. H3 (siege) cannot be the mechanism
+for the economy signature, because there is nothing being destroyed.
+
+### The shape of the failure, in one line
+
+Both sides sit at 3 harvesters at round 50. Then:
+
+```
+             r50    r100   r200   end
+  OURS        3       3      3      2      <- flat forever
+  THEIRS      3       4      5      6      <- keeps expanding
+```
+
+**We plateau at three by round 50 and never add another one for the rest of the
+game. They keep expanding into the same scarce ore field and finish with
+double.** On every other map our own policy reaches 6 — so this is not a
+global build cap, it is something specific to hive that stops us at 3.
+
+Peak saturation against the ~6/side cap:
+
+```
+hive, our kill-losses:   OUR peak 3.0/6 = 50%    THEIR peak 6.0/6 = 100%
+```
+
+And several opponents exceed six — Lunds 8, KCM 8, Powerpuff 9 — which means
+**they are taking the contested ore (33% of hive's tiles are roughly
+equidistant) and we are not contesting it.** hive is a race for twelve tiles
+and we stop running at three.
+
+## What this changes
+
+- **The fix is build-policy, not defence.** Whatever gate stops our harvester
+  expansion at 3 on hive is the target. Candidates worth a code-read: a
+  distance/reachability cutoff (hive's ore is at median 8.6, the joint-worst),
+  an ore-tiles-in-vision predicate, or a builder-count/economy gate that never
+  fires because our economy is already starved — which would be a self-
+  reinforcing loop and would explain the flat line from r50.
+- **H3 is now refuted as the mechanism for the economy signature**, not merely
+  untested — 0% harvester mortality leaves nothing for a siege to explain. It
+  could still be a *separate* contributor to the core kills themselves.
+- **H1's sentinel delay gets a plausible common cause.** A starved economy that
+  plateaus at r50 would also delay a 30-Ti sentinel. That would make H1 a
+  *symptom* of H2 rather than an independent property — consistent with H1
+  showing no win/loss separation. Not tested; offered as the reading that fits.
+
+**Caveat carried:** "built" counts first-placement per entity id (rotation
+re-emit guarded). Medians over n=25 hive kill-losses. The per-game table shows
+real spread — Ouroboros 7 built / 2 lost, one Powerpuff game 8 built / 7 lost —
+so the flat-at-3 median is the central tendency of a distribution with tails,
+not a law.
