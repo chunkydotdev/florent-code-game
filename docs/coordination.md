@@ -91,6 +91,26 @@ team convention — how this directive interacts with the team norm for
 slot changes is Magnus/x3r0 conversation territory; internally it
 governs OUR ship-case construction and routing.
 
+### 2026-08-08 09:17 (from `date`) — research arm: hse verdict absorbed (channel-ii REV-SCOPED in-doc); CAD rollback noted in-table; OURO RE-FREEZE SPEC firing (builder ASK)
+
+Absorbed from builder (tape row _v85hse-acceptance, a0a1371): hse
+acceptance NOT MET — the #8 seat-capture does NOT reproduce at the hsd
+rev (H1's sticky tie-break already changed seek dynamics; #8 seeks
+r22-88 only, never seat-resident; hse exemption fired 45/45 with a
+BYTE-IDENTICAL replay). ACTIONS TAKEN: channel-ii story REV-SCOPED in
+the mechanism read (annotation at §A.1 correction block: REAL at hsc /
+ALREADY-MITIGATED at hsd+ / design lesson survives as principle;
+evidentiary base hsc-only); my accepted hse mechanism-verify MOOT;
+hsd's residual archipelago-b owner (r732) = OPEN decode question,
+available not self-assigned. Elo table gains an uncertainty-register
+addendum: CAD −88.0 is v116/v117-era-mixed and CAD ROLLED BACK
+v117→v107 ~09:14 (probe-source era — fidelity restored if the window
+holds; re-window after ~20 matches). Worker's NOISE_ON self-nonidentity
+rule noted (identity claims need NOISE_OFF both sides — my agents'
+byte-identity claims were det/NOISE_OFF, unaffected).
+
+| research | S16 OUROBOROS PROBE RE-FREEZE SPEC (builder ASK 09:1x; queue's top instrument item; quiet window OPEN ≥2.5h, v8 stable): clanker_probe pattern — decode → reproducible behavioral spec → builder worker builds → builder freeze battery. Corpus: 9 archived Ouro matches incl. FRESH 621b841e (v74 0-5 Ouro, 06:16Z, 6 files) + 4e0874d0 (v73-window) + bab61537 (v64/65-era reference) — the era-delta is the POINT: the spec must name what the OLD probe gets WRONG (the 93.3-probe vs 7.1%-wild 86-point gap), not just what v8 does; seat-lock history check (does the seat-A lock persist in v8-era games); opening rows per map + timings + gunner-mass picket mechanism as v8 plays under v74-era us + defects-to-preserve. Prior sources: ouroboros-v65-era-reverify (r3 queue divergence, opening-signature steering), v72-bleed picket profile, denial book. One read-only Opus agent | docs/research/ouro-probe-refreeze-spec-2026-08-08.md | local only — archived, no downloads | SPAWNED 09:17 |
+
 ### 2026-08-08 08:51 (from `date`) — research arm: SLOT-SWAP RULE absorbed; v74 condition INDEPENDENTLY VERIFIED (one sub-claim corrected); Elo table now decision-critical
 
 Builder relayed the new team rule (Magnus + x3r0, their 08:50 note +
@@ -2868,3 +2888,46 @@ unchanged — (a) v74 rolling window dips ≤0 (logger watches), or
 is closed; next builder lanes: ouro probe re-freeze when its window
 opens (~2h version-quiet), M1 don't-feed-rebuilds counter, C1c
 (proactive-coverage shaped per the 0033 omission finding).
+
+### 2026-08-08 09:24 (from `date`) — builder arm: WAKE — CAD BOUNCED BACK v107→v117 in ~10 min; fidelity-restored hope dead
+
+The v107 rollback was TRANSIENT. cad_probe stays suspect; CAD
+re-freeze stays queued behind ouro; the v107 opening constants stay
+era-stamped-suspect; research's fresh uncertainty addendum
+("re-window after ~20 post-rollback matches") is mooted — the
+rollback lasted ~10 minutes. THREE teams now churning versions this
+morning (Lunds full cycle, kladde 13-back-hold, CAD bounce) — the
+version-cycling meta is a book pattern, and probe maintenance should
+assume SHORT quiet windows: fire freeze batteries the moment a
+window opens rather than waiting for comfort. Watcher re-armed.
+
+### 2026-08-08 09:30 (from `date`) — builder arm: SWAP TRIGGER FIRED + VERIFIED — SHIP BLOCKED ON PERMISSION, routed to Magnus
+
+The elo_logger's first live swap-rule wake: v74 rolling last-5 = −9
+(tape-verified: +18 −17 +9 −3 −16 across matches 355-359; Lunds v44
+0-5 the latest). v74: 13 matches, net −36.3, rank 23→30. SLOT FREE
+under the team rule; package trigger (a) met. fcode submit
+bots/_v85hsd --name "Eir 8" was BLOCKED by the session's permission
+classifier — not retrying around it; the ship command is with
+Magnus. Everything else is staged: md5 4a2aeb50 verdicted, rollback
+stance = v74 re-activation one click if the ladder disagrees,
+baseline row fires on activation (elo_logger catches it).
+
+### 2026-08-08 09:39 (from `date`) — builder arm: **SHIP — v75 "Eir 8" LIVE** (swap rule, trigger verified; Magnus granted durable submit permission)
+
+SHIPPED 09:33: bots/_v85hsd → platform v75 "Eir 8" (submission
+e1cf0167, md5 4a2aeb50, isActive verified). BASELINE 1587.2 @ 360
+rank 29. Shipped ON THE TEAM SWAP RULE: v74's rolling last-5 hit −9
+(logger wake, tape-verified against per-match deltas), slot free,
+package trigger (a) met. v74 FINAL: 14 matches, net −23.7 (its last
+match won +12.6 pre-switch — noted for x3r0's ledger). Content +
+full case: tape rows v75-baseline / _v85hsd-bar / _v85hsd-ablation /
+the 09:01 package. ROLLBACK: v74 one click; the rule cuts both ways.
+RESEARCH: production read arms on Eir 8's first ladder window —
+suggested check set: heal-staffing ratio vs the bimodal law (T-state
+sampling late per decoder v2), picket/CAD-class matches specifically
+(the case's claimed value classes), tie-break-fix economy signature
+(antler-style delivery gains), diagnostic-print rate vs the v74
+window's elevated channel. ~20-match check due ~380. Magnus granted
+durable fcode-submit permission in-session (ships handled by builder
+going forward).

@@ -1,7 +1,29 @@
 # Session 16 LIVE header (builder arm, booted 06:43 2026-08-08; supersedes
 # the s15-final block below where in conflict)
 
-## State at 07:25
+## State at 09:39 — **v75 "Eir 8" LIVE (OUR ship, 09:33)**
+- SHIPPED on the new TEAM SWAP RULE (rolling last-5 ≤0 frees the slot;
+  memory: slot-swap-rule): v74's window hit −9, logger wake tape-verified,
+  package trigger met, Magnus granted durable fcode-submit permission.
+  v75 = bots/_v85hsd (md5 4a2aeb50), baseline 1587.2 @ 360 rank 29.
+  v74 FINAL 14 matches net −23.7. Rollback = v74 one click; rule cuts
+  both ways. ~20-match check ~380. Case: tape rows v75-baseline /
+  _v85hsd-bar / _v85hsd-ablation + the 09:01 expected-Elo package.
+- Ship-adjacent verdicts this session: _v85hs KEEP-dev (51.2 slot bar),
+  _v85hsb superseded by hsd, _v85hsc REFUTED (garrison), _v85hse PARKED
+  (premise stale at hsd). Heal-detail role-aware design survives as
+  principle (hsc-only evidence); archipelago-b residual owner = open
+  decode question.
+- Elo-weighted battery table (research): picket −103 + CAD −88 = the
+  bleed classes; OURO PROBE RE-FREEZE FIRST (spec agent in flight),
+  ouro's 93.3 is attribution-only (86-pt wild gap). Version churn morning:
+  Lunds cycling, kladde →v65 (probe-source era), CAD v107 bounce (10 min).
+  Quiet windows are SHORT — freeze batteries fire immediately on window.
+- Magnus directives today (all in memory/board): Elo above all else
+  (expected-Elo ship cases), field-first incl. holder leg, swap rule
+  (revised rolling-5), durable submit permission.
+
+## Prior state at 07:25 (superseded above where in conflict)
 - LIVE: **v74 "mineguard" (x3r0)**, auto-activated 07:15 over our v73.
   Local copy bots/opp_v74 (md5 cb5452e6). Detected in 3 min by the NEW
   exit-on-wake monitors (wake path measured working: Lunds bump, v74
