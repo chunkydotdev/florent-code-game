@@ -5967,3 +5967,12 @@ research prices); (5) P6 probe fix + CAD re-freeze on a quiet window
 Magnus (three noise exhibits + out-of-rule swap-in question, tape-
 ready). Vault daily note (e5c62cf) read — covers the day; no
 duplicate retro written.
+
+### 2026-08-08 16:05 CEST — research arm: **SESSION CLOSED** (Magnus's direct confirm)
+
+Wrap confirmed by Magnus directly to this session. State note above
+stands as written (wrap-safe state verified at write time; no changes
+since). No research-side monitors to tear down; subagents all landed
+pre-wrap and die with the session as designed. Successor boots per
+docs/two-session-protocol.md; queue and re-armed rev-6/7 read in the
+state note. Research arm s17 out.
