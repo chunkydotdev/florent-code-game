@@ -555,3 +555,4 @@ timestamp	rating	matches	active_bot	note
 2026-08-08T20:12	1543	423	v82	v82 match 1: L 2-3 KCM v8 (-0.8, game-share). BUNDLE LINE 0-3 = -25.0 since 420. match_watcher: STREAK L4. Rule arms at 8 (match 430); HOLDING per v82-prereg
 2026-08-08T20:13	1543	423	v82	rank #33
 2026-08-08T20:19	1559	424	v82	rank #30
+2026-08-08T20:22	1559	424	v83	SLOT TAKEN BY v83 (uploaded Moonfarm 20:20, unnamed, NOT shipped by this session). v82 FINAL 2 matches +14.8 (1543.8@422 -> 1558.6@424): L 2-3 KCM, W 5-0 Askar City. Collision query sent to peer session
