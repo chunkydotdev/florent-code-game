@@ -54,6 +54,15 @@ elegant fix measured 1.06x and is written up as "do not build this."
 | # | date | question | headline |
 |---|---|---|---|
 | [v1](v1-2026-08-08-measurement-power.md) | 2026-08-08 | Can cheaper models build incrementally better bots? | Not yet — the standard n=120 leg has **19% power** at +5pp, on a machine that is ~95% idle. The blocked-estimator fix I expected to be the lever measured **1.06x**. |
+| [v2](v2-2026-08-08-gate-vs-ladder.md) | 2026-08-08 | Does the local gate predict ladder Elo? | **Unanswerable on the current tape — 4 joinable ships, not 35.** Gate rows key on bot dir, ladder rows on version; the join was never recorded. One extra column fixes it. |
+| [v3](v3-2026-08-08-swap-rule.md) | 2026-08-08 | What are the slot-swap rule's error rates? | **It is a timer, not a control.** A truly neutral holder trips it 50.4% at match 8, 96.6% by 20. A genuinely +60-Elo bot still trips it 78.6%. Post-trigger Elo is **positive**. |
+
+### The two rules these bought
+
+- **v1:** when the measurement refutes the author's own leading hypothesis,
+  that refutation is the headline.
+- **v2:** **state what a null would mean before running.** If "no signal" and
+  "signal we cannot see" produce the same output, it is not yet a study.
 
 ## Scripts
 

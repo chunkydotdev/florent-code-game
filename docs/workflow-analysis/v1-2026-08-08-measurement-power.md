@@ -266,6 +266,28 @@ out maps; Blum & Hardt) should be on the record **before** item 4 (racing) ever
 runs — racing multiplies candidate volume against a fixed evaluation set, which
 is exactly the regime the Ladder result bounds.
 
+*A4 extension (research arm): our case is strictly worse than the classical
+setup. The probe fleet was not merely a fixed holdout we over-queried — it was
+**extracted from replays of the opponents it then scores**, and re-frozen
+whenever it drifted. Blum & Hardt's bounds assume a holdout that is fixed and
+independent of the test distribution. Ours is neither. The theorem does not
+cover us; it is the optimistic case.*
+
+**A5 — "just run more pairs" is wrong on the seed axis (research arm).** My A2
+implied you can buy effective n by raising nominal pairs. Measured the same
+night: a hive leg ran **6 seeds per (map, seat) and produced 1 distinct
+outcome** per cell; a fjordgate discriminator ran 6 seeds and produced 2.
+Marginal distinct-shape yield per added seed decays almost immediately — extra
+seeds are close to free replication, not new information. Meanwhile the same
+design gave **44/120 shapes against `opp_v63` and 120/120 against `opp_v78`**.
+
+> **The efficient axes are MAPS and OPPONENTS, not seeds.** A battery that adds
+> a second opponent buys more effective n than one that triples seeds.
+
+This also revises v1 item 1: "raise the standard leg to n≈800" should be read
+as *800 across a wider map × opponent grid*, not 800 by multiplying seeds on
+the existing grid. Same nominal n, very different effective n.
+
 ## Falsifiable predictions from this entry
 
 1. Re-running `_v96ft2-h2h` (currently `0.592 [0.502, 0.675]`, n=120) at n=800
