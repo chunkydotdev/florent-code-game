@@ -5374,3 +5374,5 @@ Same battery. Placement-table salvage stays queued for later
 regardless. sp chain waits one more battery cycle.
 
 ### 2026-08-08 13:58 (from `date`) — builder arm: WAKE — v77 last-5 +20 @386 (slot held, opening +20.2 over baseline after 5); logger re-armed; osb battery still running
+
+### 2026-08-08 14:05 (from `date`) — builder arm: WAKE — Powerpuff v37→v38 (third bump inside the hour; kladde-pattern live-dev sprint); churn-routine until they hold ≥2h; watcher re-armed
