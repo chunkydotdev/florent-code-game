@@ -352,3 +352,93 @@ re-emit guarded). Medians over n=25 hive kill-losses. The per-game table shows
 real spread — Ouroboros 7 built / 2 lost, one Powerpuff game 8 built / 7 lost —
 so the flat-at-3 median is the central tendency of a distribution with tails,
 not a law.
+
+---
+
+# ADDENDUM 3 (23:5x) — H3 refuted. And the under-build is not just harvesters.
+
+**Version note:** live is now **v80 "Eir 9b"** (`bots/_v89sh`, rollback from v86
+at n=4). v80 sits inside this document's v72–v84 pool, so these numbers describe
+the live bot directly.
+
+H3 was the last live alternative. Two measures, still zero downloads.
+
+## (A) Their turrets do NOT live longer on hive
+
+Prior art (spitball ray-coverage law): a covered turret dies in 8–11 rounds, an
+uncovered one lives 81–105. If H3 were right, enemy turrets on hive would sit in
+the uncovered band and above their own other-map baseline.
+
+```
+                        turrets/game   median lifetime   killed   life-if-killed
+hive, our kill-losses
+  OURS                      1.0              91            9%          14
+  THEIRS                    7.0              70           25%          26
+other-map kill-losses
+  OURS                      3.0              96           56%          22
+  THEIRS                    9.0              73           30%          26
+```
+
+**Their turret lifetime on hive is 70 rounds against 73 on other maps.** No
+difference. H3 predicted a longer life and did not get one.
+
+## (B) Coverage at build time is negligible on every map
+
+```
+hive        ours    1/84  = 1.2%    theirs  11/285 = 3.9%
+other maps  ours   14/240 = 5.8%    theirs  30/716 = 4.2%
+```
+
+Almost nobody, on either side, on any map, builds a turret onto a live enemy
+firing line. **Ray coverage is not a lever anyone is pulling**, so it cannot be
+what distinguishes hive.
+
+**H3: REFUTED.** Not merely off the critical path — its predicted signature is
+absent on both measures.
+
+**Limit of measure (B), stated:** it tests coverage only at the instant of
+placement, against turrets alive at that instant. It does not model later
+rotation, later-built turrets, or a turret walking into a ray. It is a lower
+bound on coverage and it is not sensitive enough to detect a small effect. The
+lifetime measure (A) is the load-bearing one, and it is an outcome, not a proxy.
+
+## The finding that fell out instead: we under-build EVERYTHING on hive
+
+```
+turrets per game, median      OURS      THEIRS
+hive, our kill-losses          1.0        7.0
+other-map kill-losses          3.0        9.0
+```
+
+**We field ONE turret per game on hive against three on other maps. They field
+seven against nine.** Our turret production falls by two-thirds; theirs by
+about a fifth — the same asymmetry as the harvesters (we 3 vs 6, them 6 vs 7).
+
+And as with the harvesters, ours are not dying. **9% of our hive turrets are
+killed, against 56% on other maps.** We do not lose them. We never build them.
+
+### This unifies the whole decode
+
+hive is the most ore-poor map on the board (12 tiles, density 0.019). Our
+economy runs at 3.02 ti/round, lowest of 15. And **every downstream build
+collapses together** — harvesters 3 vs 6, turrets 1 vs 3 — while our loss rates
+go *down*, because you cannot lose what you never built. The opponent, on the
+same scarce map, out-builds us on both.
+
+That is one mechanism, not three:
+
+```
+  scarce, distant ore  ->  we stop expanding harvesters at r50 (3/6 of cap)
+                       ->  economy starves at 3.02 ti/round
+                       ->  we cannot fund turrets (1/game) or a timely sentinel (r28 vs r15)
+                       ->  they convert the deficit into a core kill by turn 284
+```
+
+H1 (the sentinel delay) and this turret deficit are both **symptoms of H2**, and
+that is now the reading I would defend: a single economic gate, not a family of
+independent map defects. It also explains why the plateau is flat from r50 — a
+starved economy cannot fund the expansion that would unstarve it.
+
+**What it does not tell us** is *why* the harvester expansion stops at 3 when
+6 tiles are reachable. That is in the source, not the replays, and the builder
+has taken that code-read on `_v89sh` (the live v80 line).
