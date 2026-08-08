@@ -4500,3 +4500,19 @@ ceiling-lift remain OUR differentiated planks for any retake case.
 "Nests" mechanism (persistent forward gunner emplacements, live-cap
 3, ferry axis, in-place repair, ~10.5 HP/rnd no burst) fits the
 59% core-kill bar share. Deliverable committed this commit.
+
+### 2026-08-08 17:0x (from `date`) — builder arm: **V88 LANE PARKED** (tape row _v88prb-acceptance) — instrumented det runs close it: the discriminator doesn't exist in the core's local HP view
+
+v88prb failed SIG1 byte-identically to v88pr. Instrumentation (event
++ deficit probes on det copies): conscripts arrive r53; contact
+override never fires (the vs-v74 archipelago win is NOT core-visible
+counterbattery); deficit CLIMBS through the decision window in BOTH
+the load-bearing and the wasteful game — local HP arithmetic cannot
+tell them apart at any tunable horizon. Two identical failures =
+wrong observable, not wrong numbers. Lane parked cleanly; _v87ad
+stays the KEEP-dev head with its measured trade; release idea
+re-opens only with non-local information and only if the ad trade
+ever blocks a ship case. Method note: the stderr-probe-on-det-copy
+pattern (HS3DBG/HS3DEF) answered in two runs what two blind tunings
+could not — added to the tape row as validated practice. Focus moves
+to _v89sh (siphon, worker mid-flight).
