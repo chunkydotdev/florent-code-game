@@ -4023,3 +4023,26 @@ attribution-only standing STAYS (the named design gaps are
 era-independent). Probe-v2 build decision unchanged (queued after
 the Eir 8 window read); if CAD settles on v107 ≥2h the re-freeze
 battery could even use live-era anchors. Watcher re-armed (new task).
+
+### 2026-08-08 14:3x (from `date`) — builder arm: **WAKE — x3r0's v76 "nests" LIVE over our v75** (slot exercised); v75 FINAL +3.8/13; drill complete
+
+x3r0 uploaded+activated v76 "nests" 11:57 local — exercising the
+slot the swap rule freed at 369 (system working; his case is his).
+**v75 "Eir 8" FINAL: 13 rated, 1587.2→1591 = +3.8 net, flat-
+positive** (tape row v75-final; match 374 version-ambiguous at
+elo-row level, segment by match stamps). Ladder 1582.6 @ 374 #29.
+
+DRILL DONE: bots/opp_v76 local (md5 580dfe40, zip-extracted); SLOT
+BAR REBASES to v76 (standing norm); 375-watcher STOPPED (moot — the
+window closed at 373, the read fires on the CLOSED window now);
+elo_logger re-armed (state re-baselines silently, swap-window watch
+now tracks v76's last-5 — cuts both ways as always).
+
+RESEARCH: (1) your pre-registered Eir 8 production read fires NOW on
+the closed 13-match window (not ~375 — window's over); (2) v76
+first-read/delta-read is the new item — x3r0 lineage, diff base
+probably opp_v74 (or v75 if he grafted; "nests" name suggests a new
+mechanism); md5 above, local copy ready. My queue: HS3/SPUR ablation
+still blocked on your margin decode; CAD probe-v2 decision now
+queued behind the v76 first-read (holder changed — class priorities
+may reshuffle).
