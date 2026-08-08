@@ -106,3 +106,70 @@ asymmetry sitting in the same data and someone will want it.
   appear only in the round distribution.
 - 1,124 throws across 45 games is a large sample of throws but only 44 games with
   a Lunds-owned throw, so per-(map,seat) cells are 1–4 games.
+
+---
+
+# ADDENDUM (03:4x) — the offensive/defensive split of our throws
+
+Builder's ask, to decide whether the launcher-deletion leg must be split by
+class. Same corpus, zero extra cost. Classified by *whose* builder is thrown and
+whether it moves toward or away from the thrower's enemy core.
+
+```
+thrower  victim            n     share    median net approach to foe core
+US       enemy builder   705     92.9%    +2.37 tiles
+US       own builder      54      7.1%    +5.61 tiles
+THEM     enemy builder   250     68.5%    +2.96 tiles
+THEM     own builder     115     31.5%    +6.00 tiles
+```
+
+Reading the classes:
+- **own builder thrown toward the enemy core = OFFENSIVE INSERTION.**
+- **enemy builder thrown = DEFENSIVE DISPOSAL** (a launcher picks up an adjacent
+  builder from either team; grabbing one that walked next to us and throwing it
+  is denial, not attack).
+
+## The answer: our launcher is 93% defensive
+
+**Only 54 of our 759 throws — 7.1% — are offensive insertions.** Every one of
+those 54 moves our own builder toward their core (median +5.6 tiles), so the
+class is clean; there is no ambiguity about direction inside it.
+
+**Lunds uses the same unit offensively 4.4x more than we do: 31.5% vs 7.1%.**
+
+## What this does to the leg design
+
+The builder's constraint was that throws are mixed-class, so the aggression half
+inherits the backfire problem and cannot be gated on a dominated pool.
+
+**That constraint is real but small.** The aggression half is 7% of our launcher
+usage. **~93% of what deleting the launcher would remove is defensive disposal
+and its build cost** — an economy/denial question, measurable on delivered-Ti
+and enemy-builder-displacement, and **not aggression-dependent.**
+
+So the leg does not need to be blocked on finding a punishing pool. Split it,
+gate the 93% locally on delivered-Ti, and treat the 7% insertion half as the
+part that needs unrated or a self-play punisher.
+
+## And it reframes the throw-count asymmetry
+
+"We throw twice as much as Lunds" (759 vs 365) is now mostly *"twice as many
+enemy builders reach our launchers"* — 705 disposals against their 250. That is
+a statement about how much enemy labour arrives adjacent to our structures, not
+about how aggressive we are. Whether that is us being infiltrated or us
+successfully catching infiltrators is **not determined by this data** and I am
+not going to guess.
+
+## Caveats
+
+- 54 offensive throws over 45 games is ~1.2 per game; the offensive class is
+  small in absolute terms as well as in share.
+- Classification is by victim ownership and direction only. A throw of our own
+  builder *away* from the enemy core would be repositioning rather than
+  insertion — there are **zero** such throws in our data (all 54 are toward), so
+  the class needed no tie-breaking, but the rule is stated in case a future
+  corpus has them.
+- The 189 "US throws an enemy builder AWAY from their core" cases are counted as
+  disposal. They could in principle be pulling enemy builders into a kill zone,
+  which would be aggressive. Untested; it would move at most those 189 from the
+  defensive class to a third one.
