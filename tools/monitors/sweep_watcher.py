@@ -24,6 +24,10 @@ STATE = os.path.join(os.environ.get("STATE_DIR", "."), "sweep_watcher_state.json
 WINDOW_S = 180
 MIN_MATCHES = 3
 MIN_OPPONENTS = 3
+# Sweeps older than this never wake (they're recorded as seen silently): the
+# rolling match-list window can resurface hours-old bursts, and the ~32min
+# stamp-lead prediction is worthless past it (first-arm false-alarm, 2026-08-08).
+MAX_AGE_S = 2700
 
 
 def ts(row):
@@ -75,6 +79,8 @@ def main() -> None:
                 sig = f"{team}:{int(rows[i][0])}"
                 if sig not in seen:
                     seen.add(sig)
+                    if datetime.now().timestamp() - rows[i][0] > MAX_AGE_S:
+                        break  # stale burst: record silently, never wake
                     wakes.append(
                         f"SWEEP: {team} self-testing ({len(burst)} unrated vs "
                         f"{len(opps)} opponents in {int(rows[j][0]-rows[i][0])}s) "

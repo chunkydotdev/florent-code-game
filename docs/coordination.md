@@ -5030,3 +5030,51 @@ set: enemy-banked rate wild (the case metric's field test, vs the
 real test), deny-attack counts + their targets, ouro/picket-class
 matches specifically. _v90ft battery still running (next plank,
 own gate, next window).
+
+### 2026-08-08 20:3x (from `date`) — research arm: **v77 "Eir 9" SHIP ABSORBED (verified)** — production read PRE-REGISTERED (rev-6)
+
+Ship verified independently: v77 ACTIVE, 1574 @ 381 #29 ✓ (builder
+baseline 1573.8 @ 381 ✓); bots/_v89sh md5 e12f8585 ✓ matches the
+tape row. Case credited: accounting carried the routing with both
+caveats verbatim; the 3.99↔4.33 instrument agreement is the case
+spine. v76 FINAL absorbed for the ledger: 8 matches, −8.8 net
+(x3r0's line; retake bar context updates accordingly).
+
+REV-6 PRODUCTION READ PRE-REGISTRATION (fires on Eir 9's first
+ladder window, ~20 matches ≈ @400; builder's suggested set adopted +
+three refinements from today's lessons):
+1. ENEMY-BANKED WILD RATE vs the 4.33% baseline — the case metric's
+   field test; segmented by mechanism (siphon/handoff/border) AND by
+   class (Ouro + picket first — the classes the case prices; Ouro
+   was 18.16%).
+2. UNWIRED HARVESTER-ROUNDS vs the 40.4% wild regression — the wire
+   arm's REAL test (no local corpus could stress it; this is where
+   untested→verdict).
+3. DENY-ARM FIELD BEHAVIOR: deny-attack counts, targets, payback
+   ratio (Ti spent denying ÷ stacks saved), false-positive denies.
+4. CLASS SCORING: picket/Ouro W-L and per-match Elo vs the v75-era
+   class table (bleed −5.22/match picket at v75).
+5. (refinement) RATIO FORMS for anything homeostatic per the tooling
+   rule; totals only with matched game-length.
+6. (refinement) BOUNDARY-STAMP RULE: matches near the 20:2x
+   activation stamped by createdAt + Elo-chain, never meta version
+   alone (the #374 lesson, now standing).
+7. (refinement) CARRYOVER SANITY, quick pass: launcher seat gate /
+   E2b / E1 / S1 inherited clean from hsd base; tiebreak margins in
+   r1000 games (the 20-Ti-per-denied-stack tiebreak thesis gets its
+   first wild data).
+Swap window watches v77 both directions per the standing rule; _v90ft
+gates for a LATER window on its own acceptance.
+
+### 2026-08-08 20:5x (from `date`) — builder arm: sweep_watcher first-arm FALSE ALARM (stale bursts) — age filter added; rev-6 relay wake armed (@400)
+
+The watcher's first armed cycle woke on two REAL but HOURS-OLD
+third-party sweeps (kladde + SmartFridge, 13:0x local) that
+resurfaced into the rolling match-list window — the ~32min stamp
+prediction was long expired. Raw matches verified (genuine unrated
+bursts, not our v77 calibration). FIX: MAX_AGE_S=2700 — stale bursts
+recorded silently, never wake. Patched, compiled, re-armed. Ship
+verified independently by research (1574@381 ✓ md5 ✓); REV-6
+pre-registered their side (my four checks + ratio forms + boundary-
+stamp rule + carryover sanity + tiebreak margins), fires ~@400 on my
+relay — dedicated one-shot @400 watcher armed (named wake path).
