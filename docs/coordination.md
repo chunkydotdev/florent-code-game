@@ -109,6 +109,20 @@ case (builder's interleaved bar + the Elo-weighted class table in
 flight, registry 08:40) — the table upgraded from refinement to
 decision-critical input. Bar ETA ~10 min per builder.
 
+SUPERSEDED 08:53 — RULE REVISED by Magnus (~08:55 to builder's
+session): window = ROLLING LAST 5 MATCHES, not first-3. The 08:51
+first-3 verification above is correct arithmetic on the OLD text,
+marked superseded. REVISED-RULE CHECK (research, independent, from my
+own verified deltas): v74 last-5 net = −9.6 −16.9 +0.4 +15.4 +18.3 =
++7.6 > 0 → NOT currently swappable (builder's +7 consistent ✓).
+Shared memory slot-swap-rule.md verified to carry the revision incl.
+the both-ways cut and the window-spans-activation edge case. Builder
+infra: elo_logger now monitors the rolling window and wakes on ≤0
+crossings ("SLOT FREE") — swap eligibility is a monitored event.
+Package framing reverts to: measured better-case + (window dip OR
+teammate conversation). My 3-2 form correction adopted; builder's
+"4-1" self-corrected on their board.
+
 ### 2026-08-08 08:40 (from `date`) — MAGNUS DIRECTIVE SHARPENED: "our goal above all else is to gain ELO" + Elo-weighted battery table commissioned
 
 Verbatim from Magnus 08:4x, extending the 08:34 directive with its root:
@@ -123,7 +137,7 @@ PAYOFF per opponent — computable from our own match history. If the
 Elo-weighted table reorders the class weights, the routing package
 should use it.
 
-| research | S16 ELO-WEIGHTED BATTERY TABLE (Magnus's Elo-above-all directive, 08:40): from our full ladder match history (fcode match list --mine, cheap channel; cross-checked vs elo_history.tsv) — per-opponent pairing frequency over a recent window, per-match Elo exchange, opponent current ratings + census class mapping (meta-census.md + classification docs) → expected-Elo-impact weight per battery class; compare against the census pool-mix weights the tape currently uses; flag any reordering that changes the hsb/hsd routing case. One read-only Sonnet agent | docs/research/elo-weighted-battery-2026-08-08.md | platform reads: match list/info only (unmetered per protocol) | SPAWNED 08:40 |
+| research | S16 ELO-WEIGHTED BATTERY TABLE (Magnus's Elo-above-all directive, 08:40): from our full ladder match history (fcode match list --mine, cheap channel; cross-checked vs elo_history.tsv) — per-opponent pairing frequency over a recent window, per-match Elo exchange, opponent current ratings + census class mapping (meta-census.md + classification docs) → expected-Elo-impact weight per battery class; compare against the census pool-mix weights the tape currently uses; flag any reordering that changes the hsb/hsd routing case. One read-only Sonnet agent | docs/research/elo-weighted-battery-2026-08-08.md | platform reads: match list/info only (unmetered per protocol) | LANDED 08:59 (391 lines; self-checks EXACT — 355-match Elo chain reconstructed to 1602.16 vs platform 1602, zero mismatches) — REORDERING REAL: CAD-family enters top tier FROM CENSUS-ZERO (CtrlAltDefeat + KCM were unclassified; now ~#3 share AND our #2 net-Elo bleeder −88.0); economy-first jumps to clear #2 share (0033/OGE reclassifications); point-blank keeps #1 but census overstates by a third; picket drops to #3 share but stays #1 NET BLEEDER (−102.7). PROBE CALIBRATION HEADLINE: ouroboros_probe SEVERELY over-confident — candidates score 93.3 on the probe while the wild class it represents (Ouro/Lunds/PP) wins us 7.1% of real matches, an 86-POINT GAP (the long-known stale-era gentleness, now Elo-priced: our #1 bleed class is measured by our most miscalibrated instrument → probe re-freeze priority jumps); cad_probe's modest 61.7/+1.7 likely UNDERCOUNTS (heal-staffing mechanism plausibly transfers better than the probe's imitation); band well-calibrated (95 vs 100 wild); orizon+econ legs ABSENT from the 4-leg routing package despite being #1/#2 classes (both currently pay, lower urgency). ROUTING IMPACT: the 85.0/93.3/95.0/61.7 field line must NOT be read as expected-Elo — the two swing questions (wild picket, wild CAD-family generalization) are the ones this battery is LEAST equipped to answer. SURPRISE: the census's 24.9% unclassified bucket hid signal BOTH directions (OGE +15.8/+17.8 net earner, econ-first; gsxWins +20.4, orizon-family) |
 
 ### 2026-08-08 08:08 (from `date`) — research arm: GATE VERDICT ABSORBED (builder 08:0x, commit 236e0f7) — routing STOPPED on disqualifier (a); c-rev cycle running; research queue state
 
@@ -2767,3 +2781,54 @@ swap window is now a monitored event, not a manual check. Package
 consequence: the ship decision returns to (a) v74's window dipping
 ≤0, or (b) the old teammate-norm conversation on the strength of the
 measured case. Bar + Elo table still decide whether the case exists.
+
+### 2026-08-08 09:01 (from `date`) — builder arm: **ROUTING PACKAGE COMPLETE — the swap case, expected-Elo terms** (all inputs landed: bar + mechanism ledger + Elo table); registry — HSE worker
+
+THE ASK (routes to Magnus/x3r0; v74 HOLDS under the revised rule at
++7 rolling, so this is a case, not a rule-swap): candidate _v85hsd
+("Eir 8" if shipped; md5 4a2aeb50) to take the slot.
+
+EXPECTED-ELO CORE (the case in one paragraph): the incumbent bleeds
+where the field bleeds us — v74's window losses are picket (Ouro
+0-5, −16.9) and CAD-family (−9.6), which the Elo table prices as the
+ladder's #1 and #2 net bleed classes (−102.7 / −88.0 over our 355
+matches, −190 combined); the candidate's mechanism ledger (heal
+staffing volume, garrison intact, launcher seat gate double-sourced,
+ceiling lift curing the L2 spawn freeze) targets exactly those
+classes' kill modes; AND the honest caveat is that our instruments
+for both under-measure (ouro probe: 86-point wild gap, stale era —
+its 93.3 is ATTRIBUTION ONLY; cad leg thin at 61.7/+1.7, likely
+undercounting the staffing mechanism's transfer). A fix-the-bleed
+bet with uncertainty explicit beats a false-precision 93.3 headline.
+
+SUPPORTING LEGS: holder = parity, batch-stable (hsb 48.8/49.4, hsd
+48.1 — attribution only per the field-first directive). Field: band
+95.0 (well-calibrated leg), kladde 85.0 (probe n=2 wild, stated).
+Candidate choice hsd over hsb: named-defect fixed, antler economy
+mechanism byte-proven, guard spots +6.7/+5.0, within-noise pooled
+everywhere else. KNOWN LIABILITIES (stated): archipelago two-channel
+det regression (channel ii = heal-detail conscripts the expansion
+builder — unfixed in BOTH candidates, designed fix below);
+diagnostic-print rate elevated vs v74 (channel-ambiguous);
+knife-edge det singles do-not-cite for choice.
+
+BUILDER RECOMMENDATION (executing the build half per standing
+directive): HOLD the ship + FIRE the role-aware fix now, ship on
+either trigger — (a) v74's rolling window dips ≤0 (logger wakes us
+within 5 min; ship hsd same hour), or (b) HSE gates clean and
+supersedes hsd with the liability closed (then the case routes on
+its own strength). Rationale: v74 is currently EARNING (+7 rolling,
+two 5-0s), so hold-cost is low; the candidate's one NAMED liability
+has a one-worker-cycle fix; and the case's value classes are
+mechanism-argued more than instrument-measured, which the hse test
+(archipelago flip = channel-ii cure) directly strengthens.
+
+REGISTRY — HSE WORKER (Opus, on _v85hsd base → bots/_v85hse):
+role-aware conscription exemption ONLY (one change: _seat_seek_target
+never conscripts the primary expansion builder — the #8 lesson;
+_free_seats threat-awareness explicitly OUT of scope, next change).
+PRE-STATED ACCEPTANCE: archipelago_1_b FLIPS (channel ii was #8's
+death — this is THE test), det-vs-hsd identity-dominant elsewhere,
+guard spots flat-or-better. Probe re-freeze order updated per the
+Elo table: OURO FIRST when the window opens (largest bleed class on
+the stalest instrument), then CAD.
