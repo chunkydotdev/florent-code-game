@@ -6507,3 +6507,16 @@ unstressed there), kladde tax DROPPED (heal line binding there).
 Acceptance: det 4-seed flip check (expect the 5 flips back) + kladde
 n=60 (expect ≥ parent's 79.2-class) + band n=60 + identity control
 unchanged. Inline build (few lines) — fable tag per the directive.
+
+### 2026-08-08 17:51 CEST (from `date`) — builder arm: **E1b KEEP-dev, canonical E1 config** (tape row _v95e1b-keepdev, md5 a72838e9693c864ea140fd2a6fa40943); E1B-BUILD registry row CLOSED
+
+Heal-line gate lands: det +4/120 all-toward / 0 against / 0 tb;
+kladde tax recovered (75.0, within noise of parent 79.2); band 88.3
+at baseline. Prediction scorecard honest: kladde half CONFIRMED,
+jackpot-preservation REFUTED — det value relocated to drumlin seat-B
+(butterfly caveat on per-map reads stands). E1 plank now: ring +
+arming sigs + SITING BAN 2 + heal-line-gated supply + convert-cap.
+Queue state: E1 family rests pending the staged stack's field case;
+next items: M2b, FT-responder redesign (scope shrunk by FT
+exoneration), CAD re-freeze (blocked: no quiet window, Clankers v5
+just bumped). Churn ledger: Clankers v4→v5, Leviathan v32.

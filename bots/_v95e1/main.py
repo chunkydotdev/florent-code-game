@@ -1184,6 +1184,9 @@ E1_ARM_SHELL_N = 2
 # the ring at 3 live.  A wasted walk is acceptable; wasted titanium is not, and
 # only the build spends.
 C1B_SUPPLY_ON = True
+# PIECE E1b -- supply departs only over a standing heal line (see the gate in
+# _c1b_supply for the ablation numbers that priced both directions).
+E1B_HEAL_LINE_GATE_ON = True
 # Establishment band -- the decode's own predictor radius, footprint-measured.
 C1B_SUPPLY_BAND_DSQ = 36
 # How far from home a builder may be and still be recruited.  The same 64 the
@@ -4672,6 +4675,37 @@ class Player:
         if fp_dsq(p, self.core) > C1B_SUPPLY_HOME_DSQ:
             self._c1b_drop()
             return False
+        # PIECE E1b -- THE HEAL LINE OUTRANKS THE SECOND RESPONDER.  The e1
+        # ablation grid priced mechanism B both ways: the SAME departure that
+        # converts jackpot seat-B (second threat answered, heal line
+        # unstressed) is the kladde-class tax (multi-sentinel barrage, heal
+        # line binding: pooled 70.0-vs-79.2/120, recovered to 85.0 with
+        # supply off).  So the helper may leave for the ring only when the
+        # repair line holds WITHOUT it: standing healers, not counting this
+        # unit, must meet the same _healer_floor the turret hunt respects.
+        # Counted here, after the cheap gates and before election, so a
+        # claim-holder also drops the claim the moment the line thins.
+        if E1B_HEAL_LINE_GATE_ON:
+            floor = self._healer_floor(ct)
+            others = 0
+            me = ct.get_id()
+            homes = core_tiles(self.core)
+            for uid in ct.get_nearby_units():
+                if others >= floor:
+                    break
+                try:
+                    if uid == me or ct.get_team(uid) != self.team:
+                        continue
+                    if ct.get_entity_type(uid) != EntityType.BUILDER_BOT:
+                        continue
+                    up = ct.get_position(uid)
+                except Exception:
+                    continue
+                if any(abs(up.x - c.x) + abs(up.y - c.y) == 1 for c in homes):
+                    others += 1
+            if others < floor:
+                self._c1b_drop()
+                return False
         threat = self.c1b_threat
         if threat is None:
             threat = self._c1b_find(ct)
