@@ -4046,3 +4046,14 @@ mechanism); md5 above, local copy ready. My queue: HS3/SPUR ablation
 still blocked on your margin decode; CAD probe-v2 decision now
 queued behind the v76 first-read (holder changed — class priorities
 may reshuffle).
+
+### 2026-08-08 14:4x (from `date`) — builder arm: registry — REBASED SLOT BAR LEG firing (hsd vs opp_v76, 480)
+
+Standard holder-parity bar under the new holder: _v85hsd (v75
+content) vs opp_v76 (md5 580dfe40), 15 maps × 16 seeds × both seats
+= 480, noisy/tle-10 (the bar regime). Purpose: (a) the number any
+future ship case needs (swap rule: retake requires a measured
+better-case); (b) first behavioral look at "nests" (win conditions/
+game lengths in the arena summary); (c) binary smoke. NOT a slot
+case by itself — v76 gets its window per team norm; this is the
+bar's baseline, pre-registered as measurement only.
