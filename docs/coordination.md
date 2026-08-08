@@ -5611,3 +5611,47 @@ RESEARCH: production read arms on the first window — ferry trigger
 rounds + standoff timing (D≤7 maps) + continued siphon metrics +
 handoff front join the case-metric set. Swap logger now watches
 v79's window, both directions as always.
+
+### 2026-08-08 14:37 CEST — research arm: **v79 "Eir 10" SHIP ABSORBED (verified)** — REV-7 PRE-REGISTERED
+
+Verified independently: v79 ACTIVE, 1599 @ 390 #29 (builder baseline
+1601.0 @ 389 ✓, one match played since); _v91osb md5 6a909e72 ✓.
+Content = the full verdicted stack: Eir 9 siphon deny + ferry test
+(_v90ft) + early standoff (os). sp rides the next window on its own
+verdict. Day's slot sequence for the ledger: v75(ours) → v76(x3r0)
+→ v77(ours, +20.2/5 truncated) → v78(x3r0 3-match test) → v76 →
+v79(ours, Magnus's direct "field our best bot" call).
+
+REV-7 PRE-REGISTRATION (fires on Eir 10's first window, ~20 matches
+≈ @409; builder's four suggestions adopted + continuing set):
+1. FERRY-TEST WILD DATA: trigger rounds + precision (claims median
+   r5, precision 1.000 from 880-game archive; first wild test) —
+   count triggers, false-positive check via the physics predicate
+   itself, and downstream response latency vs the old SLOT_UNDER.
+2. STANDOFF TIMING SIGNATURE on D≤7 maps (fjordgate/meander:
+   first-standoff round r4-8 class expected); vs-Ouro games get the
+   full kill-condition read (does the early sentinel force the
+   screen-attrition game their kit can't win?).
+3. LEAK FAMILY CONTINUES: per-mechanism split is the signal (siphon
+   share should stay collapsed; HANDOFF is the open front — v79
+   carries the same deny arm, so handoff share per opponent, esp.
+   0033-class, decides whether the handoff decode fires).
+4. WIRE-ARM METRIC carried once more (unwired-rounds vs the 40.4/
+   56.9 history) — evidence for the strip-the-wire-queue ablation.
+5. Boundary stamps by createdAt+meta both (standing rule); class-Elo
+   only at n≥13ish per the v75 precedent; ratio forms throughout.
+P1 stays retired unless v76 re-activates. Swap logger watches both
+directions; sp verdict pending builder-side.
+
+### 2026-08-08 14:50 (from `date`) — builder arm: **_v92SP PASSED (KEEP, next-window head) + WIRE-STRIP APPROVED** (tape row _v92sp-acceptance); HISTORICAL FIELD SWEEP firing (Magnus's all-versions question)
+
+sp: 0 det flips, cad +6.7 and v76-compact +7.5 (both its mechanism
+classes), identity exact. Wire ablation: 0 flips/240 → strip
+approved on the combined evidence; next-window candidate = sp
+w/ SIPHON_WIRE_ON=False, one compact re-leg on the exact config
+pre-stated before any ship. FIELD SWEEP: 9 surviving heads
+(_v68si/_v70mh/_v74e4/_v76e51/_v81e6e/_v84g/_v85hsd/_v89sh/_v91osb)
+interleaved SAME-BATCH per instrument (kladde/band/cad, 30
+games/version each, 810 total) — the class-weighted metric per the
+standing benchmark-vs-field rule, NOT round-robin. Plank-inventory
+ask to research rides the sweep results.
