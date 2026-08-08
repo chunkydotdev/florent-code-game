@@ -272,3 +272,13 @@ naive reader would have scored as model-refuted; the ratio forms (heal ÷
 incoming, rounds-at-full-HP) all PASSED. Rule: pre-stated replay signatures on
 homeostatic mechanisms use ratios or equilibrium observables, never absolute
 staffing/throughput. (archb-residual-owner addendum §A.)
+
+## Paired SHAPE corpora need NOISE_OFF, same as identity claims (research find, builder-placed 2026-08-08)
+
+NOISE_ON draws spawn_salt from OS entropy per process — paired-seed runs
+diverge at r0-r3 before any candidate mechanism can fire (kladde addendum:
+29/30 pairs diverged pre-r3; the 1/30 byte-identical pair confirms the harness
+is otherwise sound). A noisy paired corpus supports NO per-game ΔT or shape
+claims — only pooled distributions at ≥20 seeds/cell. Rule: game-shape or
+length-distribution corpora run NOISE_OFF (or accept pooled-only reads).
+Extends the existing NOISE_ON identity-claim rule; same root cause.
