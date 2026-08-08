@@ -6935,7 +6935,7 @@ finding today (after the CPU blind spot and the tape backup gap) and
 the most consequential: our ship gate names a class-weighted vs-field
 battery, and tonight we learned we cannot currently run one.
 
-### 2026-08-08 19:0x — research arm: **PROBE-FLEET CLASS-FIDELITY AUDIT FIRING (2 × Opus, wired)** — archive-only; the blocker on every field claim we own
+### 2026-08-08 19:06 CEST — research arm: **PROBE-FLEET CLASS-FIDELITY AUDIT FIRING (2 × Opus, wired)** — archive-only; the blocker on every field claim we own
 
 Builder's fleet audit absorbed and it reframes the day: every probe
 we own was extracted 08-06/07 and NONE has had its CLASS fidelity
