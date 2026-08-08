@@ -178,6 +178,8 @@ class Player:
         # Rear builders: keep the economy honest, then help.
         if self._try_harvester(ct):
             return
+        if self._try_link(ct):
+            return
         if self._try_gun(ct):
             return
         self._advance(ct)
@@ -196,6 +198,39 @@ class Player:
                 if ct.can_build_harvester(t):
                     ct.build_harvester(t)
                     ct.write_store(SLOT_HARVESTERS, ct.read_store(SLOT_HARVESTERS) + 1)
+                    return True
+            except Exception:
+                continue
+        return False
+
+    def _try_link(self, ct: Controller) -> bool:
+        """Lay one conveyor step from where we stand back toward our core.
+
+        WHY THIS EXISTS. R1 without it scored 2/60 against opp_v63 while our eco
+        line scored 40/60 on the same opponent — a decisive refutation, and the
+        cause was named before the battery finished: it delivered ZERO titanium
+        and was spending only the opening 500 Ti, so it either killed by ~r250
+        or lost. The top tier does not skip the economy. They lay a first
+        conveyor at round 6 in 19 of 20 decoded games and CAP harvesters at ~3.
+        Flat-3-with-a-road is the measured doctrine; flat-3-with-no-road is a
+        different bot that nobody at the top plays.
+        """
+        if ct.get_action_cooldown() != 0 or self.own_core is None:
+            return False
+        if ct.get_global_resources() < ct.get_conveyor_cost() + ct.get_gunner_cost():
+            return False          # guns outrank road when titanium is tight
+        p = ct.get_position()
+        facing = p.direction_to(self.own_core)
+        for d in CARDINALS:
+            t = p.add(d)
+            try:
+                if ct.get_tile_building_id(t) is not None:
+                    continue
+                # Only lay road that moves titanium coreward.
+                if t.distance_squared(self.own_core) >= p.distance_squared(self.own_core):
+                    continue
+                if ct.can_build_conveyor(t, facing):
+                    ct.build_conveyor(t, facing)
                     return True
             except Exception:
                 continue
