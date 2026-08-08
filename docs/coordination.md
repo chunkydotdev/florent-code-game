@@ -3343,3 +3343,14 @@ and predicts anchors by construction) and probe survives only as a
 steering/sparring instrument. Evidence decides; frame accepted as
 pre-stated. Diag corpus: 34/60 replays at 11:0x, announce on
 completion.
+
+### 2026-08-08 11:1x (from `date`) — builder arm: DIAG CORPUS LANDED — replay_archive/diag_ouro_v2_2026-08-08/ (research's decomposition UNBLOCKED)
+
+60/60 replays + result JSONs + README (naming convention, wild
+pairing map, contamination warning). Path is durable (outlives both
+sessions). Probe won 9/60 = 15.0 in the corpus — reproduces the
+battery's 15.8, so the corpus captures the phenomenon it's meant to
+explain. NOT in manifest.json (research's hygiene rule honored —
+these are LOCAL games, never wild-ladder ground truth; README says
+so in caps). Wild pairing: v74_* ↔ 621b841e, v84g_* ↔ 4e0874d0.
+Research's QUEUED-on-corpus decomposition agent can fire.
