@@ -69,6 +69,28 @@ stay the builder's.
 | research | S16 TIPPING-POINT DECODER v1 (Magnus's chess-eval question, 07:3x; run-with-recommendations): per-round win-indicator curves over a ~50-game decoded-corpus slice (v72 bleed 35 + v73 windows 10 + Clankers marquee 5) — indicators: delivered-Ti trajectory/margin, siege heal-dmg ratio, uncovered-turret establishment (ray law), directed wiredness, population, controller-law deficit. Validate which threshold-crossings predict outcomes and HOW EARLY; annotate each game with tip round + dominant reason; compare vs the manual loss-mode attributions (agreement = both instruments validated). Method spec reusable as a standing production-read instrument. One read-only Opus agent. STEERED 07:4x (Magnus scope addition): multi-shift tracking w/ reversals as first-class events; per-shift proximate-event attribution split BLUNDER-class (loser's own action) vs STRONG-MOVE-class (winner's action); 3-level significance grading grounded in the laws (DECISIVE/MAJOR/MINOR); paired-battery flips (archipelago-1-a) as ground-truth single-blunder calibration cases | docs/research/tipping-point-decoder-2026-08-08.md | local only — archived corpus, no downloads | LANDED 08:06 (749 lines) — HEADLINE: post-mortem solid, early prediction NOT possible with current laws (mechanism named 47/50 games, detector recall 85% vs manual reads, but median point-of-no-return = 34% into a game while the composite is only trustworthy from ~75% — "the laws fire on breakage: they date the wound and diagnose it late"). Best early caller: delivery dominance 89.3% @ 65-rnd median lead (misses the 90% bar by ONE game — and the 2:1 gate missed an economy loss by 10 Ti/9,290, reported NOT tuned). Heal/dmg first-crossing WORSE than chance 41.7% (both cores dip early) but 100% (24/24) sampled at 75% — production-instrument note. SHIFT CENSUS (Magnus steer): 9.2 crossings + 5.4 reversals/game, 14/50 one-shift vs 36/50 multi-swing; actor split STRONG-MOVE 49.8 / BLUNDER 35.8 / BLUNDER-OMISSION 11.1 / WINNER-SLIP 3.3 (729 shifts) — wins ~half earned half handed over; vs 0033 the OMISSION rate is 18.8% = corpus-max (their unmoved sentinel generates no event to react to — the shift is us NOT acting; reframes the 0-5). CALIBRATION PASSED + independent cross-validation of the mechanism decode: on archipelago-1-a the curves diverge r60/74 from exactly the launcher (5,7)-seat vs (5,8) event, heal/dmg 0.91→1.01 across the bimodal gap. 3 UNRESOLVED games each NAME a missing v2 indicator: tiebreak-terminal curve (240a626c g4: composite favors the LOSER of a tiebreak we won 640-0), offensive time-to-kill curve, healthy-economy discriminator — agent's recommendation: build those three, do NOT recombine existing laws (n=50 overfit). Composite-agreement caveat: v1 is a competent detector, poor prioritiser (ranks by temporal precedence not causality — fead7e71 g3/g4 case) |
 | research | S16 TIPPING-POINT DECODER V2 (Magnus's direct call 08:19): build the three v1-named missing indicators — TIEBREAK-TERMINAL curve (delivered-Ti r1000 projection + banked-Ti tb#3 + harvesters tb#2), OFFENSIVE TIME-TO-KILL curve (their-core HP vs our sustained dmg capacity — controller law mirrored offensively), HEALTHY-ECONOMY DISCRIMINATOR (income rate/ore headroom/wiredness quality — measured relationships only, NO fitted weights per v1 discipline). Same 50-game corpus for comparability. PRE-STATED ACCEPTANCE: the 3 v1-unresolved games (240a626c g4, fead7e71 g2, 072c3897 g4) must resolve with correct winners via the new indicators; strict agreement vs manual reads ≥ v1's 40%; v1 indicator numbers unchanged (laws not retuned — 2:1 gate stays hard-edged, near-misses reported); earliness curve measured honestly, improvement hoped not promised. PLUS: the ECO-OPTIMAL CURVE TEMPLATE (per the 08:1x Magnus thread — early delivery-dominance DECISIVE, flat breakage curves, sieges absorbed MINOR, zero omission shifts) + distance-from-optimal scoring demonstrated on our-side games in the corpus. One read-only Opus agent | docs/research/tipping-point-decoder-v2-2026-08-08.md | local only — archived corpus, no downloads | SPAWNED 08:19 |
 
+| research | S16 HSC FAILURE RE-VERIFY (builder ask 08:2x; hsc acceptance REFUTED — archipelago-1-b still lost w/ changed behavior death r277→r320 ti 1280→570; intervention breaks the simple chain "turret gate blocks ring sentinel → seat lost → death"): over staged hsc_archipelago_1_b/hsc_meander_1_a/hsc_antler_1_b (verified on disk 08:24) — (1) does the ring sentinel now BUILD at (19,18)? If yes-and-still-die: name what else changed (hsc ≠ parent — heal-detail/lift/other gates still active); if no: name the residual blocker (builder candidates: _core_shelled counterbattery waiver above the site, or different build path). (2) Confirm the meander intervention datum (death r635 = parent's exact round → turret gate was the ENTIRE meander mechanism — upgrades my "mechanism-plausible" to confirmed-by-removal). (3) Characterize antler-b economy flip persistence in hsc (tie-break-fix suspect; hsd isolates in builder's lane). CONTINUES the mechanism-decode agent (context intact) — addendum to its deliverable | docs/research/v85hs-mechanism-read-2026-08-08.md (addendum) | local only — builder scratchpad | LANDED 08:37 (~270-line addendum) — ARCHIPELAGO: sentinel DOES rebuild at (19,18) (identical id/tile/facing/round), garrison metrics all improved as predicted (enemy seat-rounds 194→141, core-attacks 189→122, enemy seat-plant DENIED) — and we STILL die r320 8/8: the map has TWO independent sufficient loss channels; removing ring-disarmament exposed SEAT-CAPTURE — HS_HEAL_DETAIL's _seat_seek_target (:2766) walks builder #8 (the PRIMARY EXPANSION BUILDER — parent's #8 builds 6 harvesters incl. the r192 restart that funds everything) onto the ring at r27, pins it 96.7% seat-residency, it DIES ON A SEAT r177; delivery flatlines 570, ring empties to 0.00-on-seat r200+ w/ 7/8 free = the v73 convergence signature PRODUCED BY the convergence plank. MEANDER: hsc BYTE-IDENTICAL to parent (md5/cmp clean, zero divergence any round) — turret gate was the ENTIRE mechanism, confirmed-by-removal, total; all other toggles inert-as-first-causes there. ANTLER: H1 tie-break fix owns the 14,250-Ti flip by elimination (stop-seeking converts shuffle→pin → seat cap fires → surplus builders RELEASED TO EXPAND; departures/100r 12→6); FALSIFIABLE hsd PREDICTIONS: hsd_antler_1_b byte-identical to hsc's (md5 3436ab7f...), hsd keeps hsb's meander win, hsd keeps hsb's archipelago loss ~r277. LEDGER: H1 carries the gain / H2 carries the loss and does NOT deliver its fix (disqualifier stands+sharpens, remedy refuted 8/8); heal-detail now a liability on TWO maps w/ TWO failure modes — _free_seats THREAT-BLINDNESS = highest-value fix target; launcher-gate §2 claims robust (hsc reproduces the seat-A kill 198/1,220); det wash 58.8→59.6 trading meander for antler — hunks separable, judge separately. Channel note: hsc guard legs BELOW hsb (kladde 78.3 vs 88.3, ouro 80.0 vs 86.7); 13-vs-4 tracebacks = shared-stderr, attribute by file path before reading as crashes. Self-checks clean (2,710 dmg events, 0 unexplained) |
+
+### 2026-08-08 08:34 (from `date`) — MAGNUS DIRECTIVE (via research arm, verbatim): holder head-to-head subordinated to field confidence
+
+Magnus, 08:3x, during the hsb deliberation: "beating our current bot in
+a head to head is of less significance than beating other teams with a
+high confidence." Research-arm reading, memory updated
+(benchmark-vs-field-not-self, strengthened section): this extends the
+existing field-first rule from self-legs to the SLOT-HOLDER
+head-to-head itself, including when the holder is x3r0's line —
+holder-parity does not block a ship whose class-weighted field battery
+is positive with high confidence; a holder win does not carry a weak
+field case. Holder legs remain informational/attributional. Direct
+consequence for the pending case: hsb's 48.8-parity-vs-v74 leg is NOT
+a blocker under this weighting; the case rides on the field battery
+(kladde 85.0 / ouro 93.3 / band 95.0 / cad 61.7) and its interval
+tightness — n-sizing for "high confidence" is the builder's design
+call. Team-norm note: the "beat the holder" slot bar is an OpenSverige
+team convention — how this directive interacts with the team norm for
+slot changes is Magnus/x3r0 conversation territory; internally it
+governs OUR ship-case construction and routing.
+
 ### 2026-08-08 08:08 (from `date`) — research arm: GATE VERDICT ABSORBED (builder 08:0x, commit 236e0f7) — routing STOPPED on disqualifier (a); c-rev cycle running; research queue state
 
 Builder's verdict (theirs, recorded here for the research thread):
@@ -2615,3 +2637,37 @@ expected unchanged-bad (it is hsb's known det regression, mechanism
 now OPEN). Failure replays staged for research re-verify:
 hsc_archipelago_1_b / hsc_meander_1_a / hsc_antler_1_b in
 hs_mech_replays/ (all reproduce).
+
+### 2026-08-08 08:37 (from `date`) — builder arm: MAGNUS FIELD-FIRST DIRECTIVE ADOPTED (case construction); re-verify absorbed w/ PREDICTION SCORECARD 1-of-3; hsd bar mid-run
+
+DIRECTIVE (Magnus via research 08:3x, shared memory updated 08:34,
+provenance noted): holder head-to-head parity no longer blocks a ship
+— the case is the class-weighted field battery at high confidence;
+the holder leg is informational/attributional. Adopted for the
+hsb/hsd package construction. Slot-change mechanics with x3r0 remain
+Magnus's conversation.
+
+RE-VERIFY ABSORBED: archipelago = TWO independent loss channels —
+garrison restoration WORKED (all metrics moved as predicted) and
+exposed SEAT-CAPTURE: heal-detail's seek conscripted builder #8 (the
+primary expansion builder) onto the ring r27; it died there r177;
+delivery flatlined; ring empty from r200 w/ 7/8 seats free = the v73
+convergence signature produced by the convergence plank itself.
+HEAL-DETAIL = measured liability on two maps, two failure modes.
+NEXT-CYCLE DESIGN (queued, not this cycle): role-aware exemption
+(never conscript the expansion builder) + _free_seats threat
+awareness. Meander: hsc byte-identical to parent (gate removal
+restored parent exactly).
+
+PREDICTION SCORECARD on research's three falsifiable hsd predictions
+(my det data + fresh replay): #1 CONFIRMED — hsd_antler_1_b
+BYTE-IDENTICAL to hsc's (md5 3436ab7f, regenerated + matched):
+antler H1 attribution SOLID. #2 REFUTED — hsd LOSES meander 8/8
+(gate intact; ~4,200-Ti line, distinct from both hsc's parent-exact
+loss and hsb's win). #3 REFUTED — hsd archipelago-b survival r732,
+not ~r277. SYNTHESIS: the tie-break fix is mechanism-solid where
+heal-detail is the active machinery AND its blast radius covers
+every heal-detail map — the knife-edge det games (meander/
+archipelago/jackpot) flip under ANY heal perturbation and cannot
+adjudicate; the pooled noisy channel is the judge (hsd guard spots
++6.7/+5.0; the 960-game interleaved bar decides).
