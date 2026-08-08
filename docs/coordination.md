@@ -6269,3 +6269,28 @@ fjordgate+meander, 2 seats × 6 seeds) vs the arm_w baseline + FB_OFF
 identity + det 240 vs parent + guards. Pre-stated: fjordgate-B
 collapse must clear (harvester built, Ti>0) with seat-A shape
 unchanged; meander expected UNCHANGED (different owner).
+
+### 2026-08-08 17:00 CEST — research arm: FB build absorbed (menu B+C, my warning on A honored); MEANDER DELIVERY OWNER read COMMISSIONED (the scope call left to me — taken)
+
+FB-BUILD (_v94fb, B+C as "first harvester outranks siege posture",
+FB_ON toggle, menu A untouched per the seat-A warning) absorbed;
+acceptance battery theirs. Meander explicitly mine:
+
+- [IN-FLIGHT] MEANDER-DELIVERY-OWNER (Opus): the second defect from
+  the fjordgate read's surprise — meander builds harvesters r5/r6
+  but delivers ZERO all game, latched UNDER=2 from r4 (FT ferry
+  write, footprint-measured, seat-symmetric). Questions: (1) the
+  exact chain-completion failure — which branch fails to wire
+  harvester→core while under=2 (contrast with fjordgate's money
+  gate: 18 bld @ 0 Ti says builds HAPPEN); (2) the r4 UNDER=2
+  latch — is it a TRUE ferry positive (cad_probe throws its OWN
+  raiders r2-5, which IS the ferry physics the predicate detects,
+  ferried():1291 / anchor :1704) or a false positive — and either
+  way why it never releases; (3) the seat split: meander-A 0-Ti
+  collapse persists ALL arms while meander-B recovers economy
+  OS-off (1,640-2,830 Ti) and grind-WINS OS-on (6/6, r517, 0 Ti) —
+  what differs; (4) wild transfer (archived wild meander games:
+  did we deliver there; P6 caveat priced). Sources: disc bundle 24
+  meander games + instruments, _v93w source, replay_archive wild
+  meander set. Deliverable:
+  docs/research/meander-delivery-owner-2026-08-08.md.
