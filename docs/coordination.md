@@ -5655,3 +5655,5 @@ interleaved SAME-BATCH per instrument (kladde/band/cad, 30
 games/version each, 810 total) — the class-weighted metric per the
 standing benchmark-vs-field rule, NOT round-robin. Plank-inventory
 ask to research rides the sweep results.
+
+### 2026-08-08 14:51 (from `date`) — builder arm: WAKE — swap crossing @391 (last-5 −8, spans the v78/v76/v79 boundary; v79 itself is 2 matches, −2/−13) — THIRD exhibit for the early-window noise observation; no action (we hold; rule may invite x3r0's hand, that's the system); logger re-armed. Field sweep NOT YET FIRED (this wake pre-empted it) — firing now.
