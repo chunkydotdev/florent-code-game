@@ -137,3 +137,16 @@ outcome, scored-at.
   window — same class as rule 6.
 - **NEXT TICK:** finish the sweep (`sprt.py`, `pair.py` r1000 line,
   `paired_vs_pooled.py`), then item 3 (opponent constants under v80).
+- **2026-08-09 01:3x** — **`pair.py` r1000 line CLEAN** (simulated across lethality;
+  the conditional rate tracks a fixed 58% truth at every level). **But the ARGUMENT
+  I built on our 58.2% is unsupported** (`grind-pocket-audit-2026-08-09.md`): the
+  58% is identical under both "pushing is safe" and "pushing backfires", so it
+  cannot support "trading away the grind is a cost". The deciding quantity is the
+  **BACKFIRE RATE**, which nothing here measures. Our data weakly favours the
+  regime my claim assumed (grind win rate exceeds kill-game win rate in every
+  cohort, +13.4pp vs strong), so the top-block claim stands WITH that assumption
+  stated. Candidate mechanism for the local/ladder split: backfire rate scales with
+  opponent strength, and a dominated probe pool has a near-zero one.
+  Sweep status: `ceiling.py` clean · `pair.py` clean · band instrument broken+fixed.
+- **NEXT TICK:** `sprt.py` and `paired_vs_pooled.py` to finish item 2, then item 3
+  (opponent constants under v80).
