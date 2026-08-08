@@ -548,3 +548,7 @@ timestamp	rating	matches	active_bot	note
 2026-08-08T19:53	1559	421	v81	rank #30
 2026-08-08T19:56	1559	421	v82	SHIP baseline — Eir 12 (= Eir 11 bundle + PIECE HV hive fix); v81 FINAL 1 match -9.4 (window closed by submit AUTO-ACTIVATION, not a choice)
 2026-08-08T19:58	1559	421	v82	rank #30
+2026-08-08T19:58	1544	422	v82	rank #32
+2026-08-08T20:03	1544	422	v82	rank #33
+2026-08-08T20:08	1544	422	v82	rank #33
+2026-08-08T20:09	1544	422	v82	CORRECTION: v82 true baseline 1543.8 @ 422 (match 422 stamps v81, created 19:52 pre-activation). v81 FINAL 2 matches -24.4. rank #33
