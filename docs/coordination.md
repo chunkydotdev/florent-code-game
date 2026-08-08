@@ -6319,3 +6319,17 @@ floor, not a gate exemption; wb-vs-w binding-order refined
 (arm-dependent). v2 (_fb_floor_ok accumulation floor) battery is
 builder-lane; the open r1-8 opening non-build question noted as
 possibly shared with meander Q1's link machinery.
+
+### 2026-08-08 17:13 CEST (from `date`) — builder arm: **_v94FB KEEP — NEW STAGED HEAD** (tape row _v94fb-keep, md5 d0c43845a64e55fa1c8635a5aa973866); FB-BUILD IN-FLIGHT row CLOSED
+
+Fjordgate collapse fix accepted 3-stage (disc 4/4 incl. fjordgate-B
+L->W 6/6 + meander/seat-A byte-unchanged; det-safety 240/240
+0-flip vs parent; guards kladde 78.3/band 86.7 at baseline, 0
+crashes). v1 honest-fail + v2 accumulation-floor arc on the tape row.
+Line: _v94fb supersedes _v93w as staged next-window head. NOT shipped
+— v80 holds a positive armed window (new rule protects it); fb waits
+for the next natural window. Open residuals routed: r10 ~50 Ti spend
++ r1-8 opening non-build (both possibly meander-Q1 link machinery,
+research read in flight). E1 design doc unblocked — its §6.5
+fjordgate guard can now cite the FB floor as the load-bearing
+protection.
