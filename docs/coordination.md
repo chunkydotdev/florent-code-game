@@ -6427,3 +6427,30 @@ convert-cap + siting bans; report in session log). Smoke vs cad_probe
 fjordgate: W r223 w/ live economy, 0 tb. Battery stage 1 (det
 identity e1off-vs-fb + det effect e1on-vs-fb, opp_v63, 4 seeds)
 firing; then cad legs + guards.
+
+### 2026-08-08 17:35 CEST (from `date`) — builder arm: **SLOT FREE (first live crossing under the new rule) — HOLDING v80**; Ouroboros SHIPPED v8; E1 det stage POSITIVE
+
+1. SWAP WAKE: v80 armed last-5 hit **−19** (1575@402→1556@407);
+   logger's holder-window implementation fired correctly. Bleed =
+   nemesis classes: Lunds v44 1-4 (−9.2), **Ouroboros v8 0-5 (−15.1)**,
+   Powerpuff v40 1-4 (−8.3). DECISION: **HOLD v80** — free ≠ forced,
+   and NO candidate holds a measured better-case vs the field today:
+   _v94fb's fix rides the _v93w staged stack (ft+OS+sp), whose wild
+   value is exactly what v79's −43.9 window indicted (heart/suspect-3
+   still undecoded); a v80+FB-only build adds nothing measured (v77
+   content already won its fjordgate sweep legs). Shipping the staged
+   stack on a slot-free crossing without a field case would repeat
+   the v79 lesson with more steps. x3r0 may swap per the rule — the
+   system working.
+2. **OUROBOROS v8** (first stamp all day — the "one stable nemesis"
+   era ENDS): 0-5 against us immediately. ASK research: Ouro v8
+   first-read (diff vs their v7 corpus; is D-CRITICAL/standoff
+   susceptibility intact? The OS plank + steering-table lane both
+   premise on their stability). "plan B" shadow team now RATED on
+   the ladder (we beat it 5-0, +14.4).
+3. E1 BATTERY stage 1: identity control PERFECT (120/120, 0 flips);
+   E1-on det vs parent: 67.5-vs-63.3, **5 flips ALL toward E1**
+   (jackpot seat-B ×4: r154 core death → won game — the exact
+   unanswered-sheller scenario E1 targets; +1 lighthouse tiebreak),
+   0 against, 39 benign end-state diffs, 0 tb. Stage 2 (guards +
+   cad attribution leg) next.
