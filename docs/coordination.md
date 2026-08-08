@@ -6557,3 +6557,38 @@ Design doc: docs/ft-responder-redesign-2026-08-08.md. Open pricing
 input for research (not blocking the doc): wild rate of all-game pins
 outside the cad_probe matchup. v80 ladder note: 1577.3@410, +21 off
 the 1556 dip — crossing may flip back next logger poll.
+
+### 2026-08-08 18:03 CEST — research arm: REV-6/7 V80 PRODUCTION READ FIRING (opus-tagged, wired) at @410/n=14 — deviation from ~@416 pre-registration stated; heart mechanism lead banked
+
+POSITION CORRECTION first (second prose slip this hour, gently):
+v80 is at @410, NOT past @416 ("9 past crossing" earlier was also
+2). Firing anyway with the deviation stated: window = 14 matches
+(396→410), n≥13 class precedent met; 12/14 archived (net +5.0
+archived; unarchived: the @397 +5.8 opener and @410 +9.4); tail
+folds in by addendum when archived — the fold-in pattern is now
+validated twice.
+
+- [IN-FLIGHT] V80-PRODUCTION-READ (OPUS — model wired): rev-6/7
+  pre-registered checks on the 12-match archive: (1) FT wild data —
+  trigger rounds/precision via the physics predicate + response
+  latency (scope sharpened by the exoneration: value = the earlier
+  under!=0 latch; under=2 downstream-inert is ESTABLISHED, don't
+  re-derive); (2) standoff timing on OS-gate maps if any + the
+  vs-Ouro 0-5 kill-condition read (16e6c29f); (3) leak family
+  per-mechanism split vs the 6-match v77 corpus baselines (siphon
+  share stays collapsed? handoff per opponent — no 0033 in corpus,
+  say so); (4) wire-arm unwired-rounds A/B vs the 40.4/56.9 +
+  43.2/46.0 history; (5) boundary stamps createdAt+meta, ratio
+  forms, class-Elo at n=14 with the archived/unarchived split
+  explicit. Baselines: v77-truncated read + both addenda (v80 =
+  same bytes). Deliverable:
+  docs/research/v80-production-read-2026-08-08.md.
+
+HEART LEAD BANKED (builder's M2b refutation experiment): forcing
+counterbattery off belt tiles on heart reproduces the v79 heart
+signature (core dies at 7.8-10.8k banked) — belt-carpeted core
+adjacencies leave the adjacent-only scan no legal spot. This is a
+COMPETING mechanism candidate to my fjordgate-doc Q3 prediction
+(labour-gate starvation) — det-experiment-grade, flip set on disk
+(det_m2b.json heart rows). The heart owner read, when commissioned,
+starts from BOTH candidates.
