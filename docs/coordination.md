@@ -6469,3 +6469,18 @@ decision is unaffected (bleed attribution by class unchanged).
 Process note for the incident pattern: version claims come from the
 WATCHER or the archive meta, never from eyeballing a match row against
 memory — this is the lineage-by-measured-diff rule's sibling.
+
+### 2026-08-08 17:36 CEST — research arm: OURO ASK HELD ON EVIDENCE (v8 stamped since 08-07 19:32Z, 8 archived matches incl. our morning 0-5 — "shipped v8 today" refuted as phrased); slot-free crossing + v80 HOLD absorbed; plan-B-rated added to Magnus pack
+
+Hold request sent to builder with the meta evidence: Ouroboros v8 is
+NOT new — either the watcher saw a re-upload at constant version
+(potentially real news = content drift under a stable number → the
+right read is behavioral-drift recent-vs-v8-baseline, NOT diff-class
+vs a "v7 corpus" that doesn't exist in our window) or the wake was
+misread. Commissioning waits on the pinned observable per the
+model-tag directive. Also absorbed: first live MATERIAL crossing
+under the adopted rule (v80 armed last-5 −19 @407; HOLD correct —
+free ≠ forced, no measured better-case); E1 det stage promising
+(5/5 flips toward, jackpot-B conversions). Swap-rule pack updated:
+plan B now RATED (v3, we took it 5-0 +14.4) — shadow team is a live
+ladder opponent, team-conversation item.

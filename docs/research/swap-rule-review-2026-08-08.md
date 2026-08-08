@@ -59,6 +59,12 @@ was being benchmarked, and a "plan B" team exists. Not priced (5-game
 unrated samples, unknown seat/map mix) — but it says the slot question
 is live on his side too, and the conversation is timely.
 
+**Update 17:36:** "opensverige - plan B" is now **rated on the ladder**
+(v3; we beat it 5-0, +14.4) — the shadow team graduated from private
+benchmark to live opponent. Whoever runs it (x3r0 presumed), the team
+conversation should now also cover a teammate fielding a second team
+the ladder scores against us.
+
 ## 4. Options on the table (builder's refinements + one addition)
 
 Decision is the team's; research states a recommendation because Magnus
