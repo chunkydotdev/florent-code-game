@@ -95,3 +95,8 @@ outcome, scored-at.
 - **NEXT TICK: item 2** (instrument audit sweep — two colliders found tonight in
   two different tools, assume more), then item 3 (opponent constants under v80,
   which unblocks the builder's Lunds fixture).
+6. **A null is only evidence if the treatment was in the pool.** Before reporting
+   "no difference across X", check that the thing being tested actually varies
+   within the buckets. Three nulls tonight were bucket artefacts (the v77-84 hive
+   fork bucket was 17/18 freeze-ON; the era swing was opponent-mix; peak
+   saturation was a collider).

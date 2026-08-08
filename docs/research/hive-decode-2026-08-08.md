@@ -442,3 +442,63 @@ starved economy cannot fund the expansion that would unstarve it.
 **What it does not tell us** is *why* the harvester expansion stops at 3 when
 6 tiles are reachable. That is in the source, not the replays, and the builder
 has taken that code-read on `_v89sh` (the live v80 line).
+
+---
+
+# ADDENDUM 4 (00:4x) — the code-read confirmed against the replays, and a correction to my own fork test
+
+The builder found the mechanism in the live source: a `hive_freeze` clause in
+`_expand`, hardcoded to hive's dimensions and core positions, **arming at
+`get_current_round() >= 42`** and returning unconditionally thereafter with no
+exit. I had no sight of the code when I measured the plateau.
+
+**That clause makes a sharp, falsifiable prediction: our hive harvester count
+should stop growing at round 42 and not resume.** Tested against the per-round
+series already in hand:
+
+```
+our hive harvester growth
+  r20 -> r42   :  +0.147 per 10 rounds
+  r42 -> r150  :  +0.030 per 10 rounds     <- 5x collapse, inside the clause window
+
+CONTROLS over the SAME r42->r150 window
+  THEIRS on hive        :  +0.188   (same map, same rounds, no clause)
+  OURS on other maps    :  +0.220   (same code, same rounds, clause cannot arm)
+```
+
+**Triple-controlled**: the flattening is specific to hive, specific to us, and
+begins at the round the clause names. Both controls keep growing at their normal
+rate straight through the window. The mean series shows it directly — ours sits
+at 2.85 at r40 and 3.03 at r100 while theirs climbs 2.76 → 4.06 over the same
+span.
+
+This upgrades the finding from "we stop expanding, cause unknown" to a mechanism
+with a matching inflection point. It is the tightest code↔replay agreement this
+decode produced, and neither half could have reached it alone.
+
+## Correction to my own fork test, which the builder caught
+
+Addendum 2 reported hive killed-rate **flat across the v86 fork — 75% before,
+75% after** — and I offered it as evidence the defect was version-independent.
+**That test could not have detected the fix.** `HIVE_FREEZE_ON = False` shipped
+only in v84, and:
+
+```
+hive games by our version: {72:2, 73:2, 74:4, 75:6, 76:2, 77:2, 79:3, 80:12, 84:1}
+my "late" bucket (v77-84) = 18 games, of which v84 = 1
+=> 17 of 18 games in the post-fork bucket STILL CARRIED THE CLAUSE
+```
+
+So the flat 75%/75% compares freeze-on against freeze-on. It is not evidence of
+version-independence; it is a null produced by a bucket that never contained the
+treatment. **The claim "the hive defect is flat across the fork" is withdrawn.**
+
+What survives from addendum 2 is narrower and still holds: the defect predates
+v77 (the v72–76 bucket is 16 games, all freeze-on, at 75% killed), so it is old —
+and since the live v80 predates the fix, **it is live right now**. That
+conclusion is unchanged; only the reasoning that got there was faulty.
+
+**Process note:** this is the third time tonight a null of mine turned out to be
+a bucket that could not see the effect. The pattern is the same each time —
+pooling versions or games without checking that the treatment is actually
+present in the pool. Added to the queue's rules as a standing check.
