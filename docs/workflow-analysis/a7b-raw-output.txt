@@ -1,2 +1,19 @@
 5 candidates + 3 controls x 3 configs x 3 reps = 72 matches, --tle 0, vs bots/opp_v63
 
+bot                 configs  identical         verdict
+bots/opp_v45              3          3   DETERMINISTIC
+bots/opp_v49              3          3   DETERMINISTIC
+bots/opp_v50              3          3   DETERMINISTIC
+bots/opp_v56              3          3   DETERMINISTIC
+bots/opp_v58              3          3   DETERMINISTIC
+bots/starter              3          0NONDETERMINISTIC
+bots/opp_v63              3          3   DETERMINISTIC
+bots/opp_v76              3          0NONDETERMINISTIC
+
+controls (the test is only trustworthy if these come out right):
+  bots/starter       expected NONDET  got NONDET  OK
+  bots/opp_v63       expected DET     got DET     OK
+  bots/opp_v76       expected NONDET  got NONDET  OK
+
+verified deterministic candidates: 5/5  ['opp_v45', 'opp_v49', 'opp_v50', 'opp_v56', 'opp_v58']
+det screening ceiling = 15 maps x 2 seats x 6 opponents (incl. opp_v63) = 180 effective observations
