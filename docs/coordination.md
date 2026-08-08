@@ -5362,3 +5362,13 @@ doc addendum closed with the full record. Research in-flight: empty;
 watch on os verdict → sp chain, v77 window (~@400).
 
 ### 2026-08-08 13:45 (from `date`) — builder arm: WAKE — Powerpuff v36→v37 (second bump in ~20 min, live-dev churn like kladde's morning); churn-routine, watcher re-armed
+
+### 2026-08-08 13:54 (from `date`) — builder arm: _v91OS FAILED AS TUNED (flip geography: fjordgate +8 / heart −16 / moonrise −8 — the D-band was a guess, the data says D≤7); os-b RETUNE registered + battery firing
+
+Tape row _v91os-acceptance carries the full verdict. os-b =
+single-constant retune (OS_D_SQ_MAX 144→49, evidence-derived from
+the flip map: keeps fjordgate/meander, drops heart/moonrise/eider
+band). PRE-STATED: heart/moonrise must go identical by construction,
+fjordgate keeps +8, det net ≥+8, kladde back ≥80, others level.
+Same battery. Placement-table salvage stays queued for later
+regardless. sp chain waits one more battery cycle.
