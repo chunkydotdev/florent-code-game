@@ -44,6 +44,44 @@
 ## s19 recorded us beating 5-0 on that exact tiebreak. **n=1, prediction not
 ## evidence.** Net Elo could wash while core-kill rate rises — that would mean we
 ## traded our only profitable regime for a ceiling we cannot yet cash.
+##
+## ### CAVEAT THE ABOVE DOES NOT CARRY ON ITS OWN — added s20 after research
+## ### audited their own claim. **"We win 58% of grinds" is TRUE and verified.
+## ### "THEREFORE losing a grind is a cost" is UNSUPPORTED.**
+## The inference needs to know what a marginal grind game WOULD OTHERWISE HAVE
+## BEEN, and the 58% cannot see that. Simulated with the tiebreak edge FIXED at
+## 58% by construction, the 58% comes out IDENTICAL in both worlds:
+##   REGIME A (pushing is safe):      close-steered 62.8% overall vs grind 46.1%
+##                                    -> closing wins; protecting the grind COSTS us
+##   REGIME B (pushing backfires 60%): close-steered 26.8% vs grind 34.0%
+##                                    -> grinding wins; protecting the grind is RIGHT
+## The deciding quantity is the **BACKFIRE RATE** — how often pressing for a kill
+## converts a game we would have drawn out into one we lose — and **NOTHING THIS
+## PROJECT OWNS HAS EVER MEASURED IT.** Two people can read the same 58% and reach
+## opposite decisions. The claim silently assumes Regime B.
+## WHICH REGIME OUR DATA FAVOURS (research's cut, INDEPENDENTLY REPRODUCED by
+## builder on a fresh pull, scored on the frozen roster):
+##   STRONG  kill-game 34.7% (n=245)  grind 52.2% (n=90)   **+17.5**
+##   WEAK    kill-game 70.1% (n=107)  grind 72.4% (n=58)   +2.3
+##   ALL     kill-game 45.5% (n=352)  grind 60.1% (n=148)  +14.7
+## Grind beats kill-game in EVERY cohort, widest against strong opposition. That
+## favours Regime B, so the claim may STAND — but it must always be quoted with
+## "assumes the marginal grind game would otherwise be a loss" attached. Two
+## conditional populations compared to each other is still not a counterfactual.
+##
+## ### AND THIS IS PROBABLY WHY LOCAL ARENA MISLEADS — a MECHANISM, not an excuse
+## Backfire rate should SCALE WITH OPPONENT STRENGTH. Against kladde_probe and
+## ouroboros_probe — which we beat 87-93% — nothing punishes an over-push, so
+## **a dominated pool has a near-zero backfire rate and therefore reports REGIME A
+## regardless of the truth.** That is exactly what my 1,080-match ceiling battery
+## did: it said the lethal lineage wins decisively, and then KCM and Ouroboros
+## killed v86. **This predicts WHICH LEGS WILL MISLEAD BEFORE YOU RUN THEM:** any
+## leg whose verdict depends on aggression, run against a pool we dominate, is
+## measuring Regime A by construction.
+## THE LEG THAT WOULD SETTLE IT (filed, NOT run — not before match 20): a
+## lethality dial scored on **OVERALL WIN RATE** against opponents that can
+## punish. Not conversion, not r1000 share, not grind win rate — all three are
+## flat across both regimes. **The opponent pool is the load-bearing part.**
 
 ## ===== CORRECTION: THE s19 MAP TABLE BELOW IS OVER-READ =====
 ## Bonferroni over the 15 maps we looked at leaves **hive (25/34=74%, p*15=0.002)
