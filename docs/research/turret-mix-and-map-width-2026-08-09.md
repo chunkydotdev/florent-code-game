@@ -1,5 +1,72 @@
 # Our home turrets are the best in the corpus. On wide maps we stop building them.
 
+> # ⛔ THE RECOMMENDATION IN THIS DOCUMENT WAS BUILT, GATED AND REFUTED — HARDEST OF FOUR
+>
+> **Read this before the analysis below. Every measurement in this document is
+> correct and was independently reproduced by the builder arm. The change it
+> licensed was the most harmful of the day.**
+>
+> The builder gated forward siege off above d² 81 — the subtraction §4 recommends:
+>
+> ```
+> OVERALL   96/150 -> 86/150   -6.7pp        <- largest effect of the day, NEGATIVE
+> band            control   site     delta   gate acts?
+> narrow <=81      24/40    24/40   +0.0pp   NO   <- exact zero where it cannot fire
+> mid 128-144      28/40    26/40   -5.0pp   yes
+> wide 288-392     36/60    28/60  -13.3pp   yes  <- most gated, most damage
+> ```
+>
+> **Dose-response, with a built-in null band, split by core separation exactly as I
+> asked.** Their independent reproduction of my table: HOME gaps
+> +3.9 / +11.3 / +14.7 / +31.4pp; wide FORWARD 18.9% vs 49.0%; forward share
+> 24.3% → 56.0% ours against 39.2% → 38.6% theirs. **We agreed to four significant
+> figures.**
+>
+> **SO: our forward turrets survive at 19% against the field's 49%, and removing
+> them costs 13.3pp on exactly the maps where they die most. The 19% is the PRICE OF
+> SOMETHING VALUABLE. Forward turrets earn their deaths.**
+>
+> ### The lesson, and it is not the same as the other four in this document
+>
+> §3 catalogues four cases where **a statistic stood in for a measurement** — a
+> pooled number hiding a conditional reversal. **This is a fifth error of a
+> different and worse kind: a statistic standing in for a PURPOSE.** The number was
+> not wrong. It was *true*, large, clean, confound-controlled, and independently
+> derived by two arms. **No amount of statistical care would have caught it**, because
+> there was nothing wrong with the statistic.
+>
+> **I optimised turret survival without ever asking what a turret is for.** Dying is
+> what a forward turret does; the question was never "does it live" but "what does it
+> produce before it dies, and have I measured that?" Sweep 7 said this in its closing
+> paragraph — *"stop optimizing turret survival and start measuring shots and damage
+> per titanium invested"* — and I relayed that sentence to the builder without
+> applying it to my own headline.
+>
+> **The check that generalises: before recommending that something be reduced,
+> measure what it produces, not whether it persists.**
+>
+> ### What still stands
+>
+> - Every measurement in §0-§2 and §4b. They were verified.
+> - **Our home turrets are genuinely the best in the corpus** (+31.4pp on hive).
+> - The **gate asymmetry** in §4b — home is threat-gated, forward is not — is a real
+>   structural fact about the bot, and it now reads as *why we get the forward guns
+>   we need*, not as a defect.
+> - The **escalation shape** this document contributes to (best in the easy regime,
+>   worst in the hard one) survives and is now the leading characterisation of v90.
+>
+> ### What is withdrawn
+>
+> **§4's recommendation in full**, and the framing that the forward bucket is waste.
+> Also: this does **not** license *"add support and go forward"* as the next build —
+> the builder is right that that is the composite rescue in a new costume, and the
+> forward road is closed on four instruments. **Live hypothesis, not a queue item.**
+>
+> *Scoreboard for the whole turret subsystem, so nobody re-opens it casually: four
+> planks built, gated and refuted — placement +0.0pp, price −2.0pp, production
+> −0.7pp, siting −6.7pp. **Every knob turned in both directions; none is a lever.***
+
+
 **Research arm, session 23, 2026-08-09.** Corpus only — free metadata and archived
 replays. **Zero downloads, zero arena, zero bot edits.**
 **Version tag:** live **v90 "Heimdall 1 (launcher relight)"** = `bots/_v104latch`,
