@@ -12020,3 +12020,65 @@ that).
   it 70-90%; per `builder-method.md:71` this is a **safety and mechanism**
   instrument, not a doctrine one. A win here licenses a ladder ship, **it does not
   establish the doctrine.**
+
+### 2026-08-09 09:41 CEST (from `date`) — research arm: **TOPIC 8 SWEPT — AND IT CLOSED AN ECONOMY ROAD INSTEAD OF OPENING ONE**
+
+Committed + pushed `3a8a0cd`. Doc:
+`docs/research/middle-game-hazard-and-economy-2026-08-09.md`, sweep at
+`tactics/2026-08-09-sweep-4.md`. Free metadata + archived replays only.
+
+**1. THE CURVE — a SIXTH independent instrument on the r150 boundary, reached from
+win/loss + win-condition metadata alone.** Conditional on a core kill, the chance
+it is **ours**:
+```
+r0-150   29.0%  (n=293)      r301-600   72.4%  (n=221)
+r151-300 55.2%  (n=259)      r601-999   76.0%  (n=104)
+```
+**Monotone across four buckets — a symmetric matchup sits at 50% in every row.**
+But **353 games reached r1000 and we won 57.2%**, delivery margin predicting the
+result **353/353**. **We win the opening and we win the clock; we lose the middle,
+by dying.** The 57.2% is **pooled lineage and does NOT rescue the grind
+hypothesis** — the builder's REFUTED-AT-PRECISION call stands.
+
+**2. I REFUTED MY OWN TACTIC FILE FROM THIS MORNING, using the corpus query that
+file itself specified.** Sweep 2's *"disengage and out-economy the static
+defence"*: paired across 1,230 games we already **are** that team — conveyors
+**+13** (lead in 71.7%), turrets **−3** (lead in only **20.1%**) — and it is our
+worst stratum (42.5% at turns ≥300). Amended in place to
+`transfers: NO — REFUTED AS A CHANGE`.
+
+**3. THE METHOD RESULT, and I nearly shipped a bad number off it.** In a fixed
+early window (r0-150, games ≥300 turns), **our own build medians are IDENTICAL in
+wins and losses** — harvesters 5/5, turrets 3/3, conveyors 36/36; means agree.
+**All the variance is the opponent's.** So the monotone "paired differential
+predicts winning" tables are an **opponent thermometer, not a strategy dial**. I
+had them written up as a finding before checking whether our side varied at all.
+**A differential whose variance lives on the other side of the subtraction is not
+a lever.**
+
+**4. VERIFIED (the sweep's least-confident load-bearing claim).** Across 6,454
+team-games, `ti_collected` is non-decreasing in **6,453 (99.9845%)** — the single
+exception is a *local battery* file, not a ladder replay — while `ti_end` falls in
+**56.9%**. **Delivered and stored are different counters; spending cannot cost us
+tiebreak key #1.** Our over-banking is dead weight, not caution.
+
+**5. ARITHMETIC, opposite to where I would have looked.** Harvester payback is **8
+rounds**; **cost scaling never binds on harvesters** (break-even ~2,482 additive /
+~100 multiplicative simultaneous, against a 900-tile map). **It binds hard on the
++20% categories** — the 20th builder bot costs 958 Ti multiplicatively.
+**`MAX_TEAM_UNITS=50` is not our ceiling; the cost curve is.**
+
+**6. TWO CHEAP CONDITIONALS** (not subsystems): a ~r940 branch dumping surplus into
+harvesters, because **tiebreak 2 is harvesters ALIVE — a snapshot, needing no
+conveyor**; and an ammo floor of **one volley** (`10×sentinels + 4×gunners`).
+
+**THE CONVERGENCE, which none of the four instruments was designed to produce:**
+the hazard curve (survival r150-r1000), the builder's fixed-horizon read (home
+defence is our one large edge), sweep 3 (the launcher's sourced winning use is
+defensive interception), and sweep 2 (nobody breaks a 2.2:1 edge by attacking) all
+point at the **same band the builder is already working in.** My recommendation is
+to open nothing else.
+
+**IN-FLIGHT:** one Opus sweep on **wheel topic 9 (opening theory)** — sharpened by
+§3: since our opening is a constant, *"is it the right constant?"* is a real
+question. Nothing on the CPU.
