@@ -362,6 +362,31 @@ binding constraint and this lane's synthesis is wrong on our deficit; if M4
 refuses to move while S4 is on, the screen is not clearable by point-blank
 gunners and the drain family (P-B) rises in priority.
 
+**METRIC AUDIT (after research sweep 8, `tactics/2026-08-09-sweep-8.md`):
+four independent podium eval functions price static defence in win-condition
+currencies (income, enemy-queen HP, objective delivered, denial) and NOT ONE
+includes the structure's own survival — survival metrics belong in no
+verdict, not merely demoted. Applied to this table: M5 (already diagnostic)
+and M8 (home builder deaths — a survival measure) are MECHANISM DIAGNOSTICS
+ONLY; verdict weight rests on M1 (output), M4 (denial), M7 (delivered
+defence), and F. Sweep 8 also documents self-play→field inflation of ~2×
+and sign flips ("amputation tests"): §0.5's SITE dose-response was a LOCAL
+battery — direction is supported by the dose-response shape, but the −6.7pp
+MAGNITUDE carries the local-arena caveat (local is refuted as a magnitude
+instrument in this project), and the builder is checking the pool. §0.5's
+causal claim should be read at that confidence.**
+
+**D1 STATUS (builder's ESCALATE build, same day): the mechanism FIRED as
+designed — local ring count, no store, 76-85 dispatches/game — and the r250
+gate came back UNMEASURED, NOT REFUTED: the local pool is our own lineage,
+which never sustains a late multi-attacker siege, so `n_atk >= 2` never
+occurs after r250 by construction. Measuring D1's payoff requires a pool
+that actually besieges (unrated/field, or the self-play punishers) — the
+dominated-pool law, again. Concrete store confirmation from the same build:
+`SLOT_UNDER` has THREE writers (~8 builders/round writing a bare 1) — the
+channel structurally could not have carried a magnitude; the local-read
+design was necessary, not just cleaner.**
+
 ## 4. Probes the builder should run BEFORE building (minutes each)
 
 1. ~~`self`-persistence probe~~ — ANSWERED, no probe needed (§1): `self` is
