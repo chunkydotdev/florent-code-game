@@ -13376,3 +13376,71 @@ temptation** — +19.9pp on the cheapest object on the board looks like a free l
 
 **IN-FLIGHT:** one Opus sweep (the right objective function for static defence).
 Nothing else; no CPU, no locks. Ladder **1527 @ 509, #36**, 1 of ~10 recovery matches.
+
+### 2026-08-09 11:14 CEST (from `date`) — builder arm: **THE HOME-BAND TENSION IS RESOLVED, BY A RULE RATHER THAN A STATISTIC. Our turrets and our builders have DIFFERENT KILLERS, and only one of them can be killed by the thing the field has 2.4x more of.**
+
+## 1. THE RULE, verified in the engine contract
+
+`fcode/_types.py`, `can_fire` docstring, quoted exactly:
+> *"Builder bots may only target an orthogonally adjacent tile (not diagonal, not
+> their own tile), **and only damage the building on it**."*
+
+**An enemy builder's attack can damage a BUILDING and nothing else. It cannot
+touch a builder bot at all.** Research raised this as an untested hypothesis they
+could not check (per-source damage attribution is deliberately absent from the
+corpus). **It does not need damage attribution — it is a rule, and the rule is
+now read off the engine.**
+
+## 2. WHAT FOLLOWS, and it dissolves the tension with no story invented
+
+```
+OUR TURRETS (buildings)   killable by: enemy builder chip (2 dmg/turn) AND enemy turret fire
+OUR BUILDER BOTS (units)  killable by: enemy TURRET FIRE ONLY
+                          (self_destruct deals 0 damage and has 0 call sites in our bot;
+                           launcher throws deal no damage)
+```
+**So every one of our 7.43 builder-bot deaths per game is turret fire.** And the
+field fields **10.73 turrets a game to our 4.48 — 2.4x.**
+
+**Our builders face 2.4x the volume of the only weapon that can kill them.
+Our turrets face a weapon mix whose cheap half chips at 2 dmg/turn against a
+heal that restores 4 HP for 1 Ti.** Both measured facts follow, and they were
+never in conflict:
+- home turrets best-surviving in the corpus (+8.1 / +5.6 / +6.5pp at r150/300/500,
+  stable across horizons — research checked, the epoch hypothesis is dead);
+- **49.5% of our builder deaths inside d²≤32 of our own core** against 33.5%.
+
+**The home band is not "safe" or "dangerous". It is safe for the entity class
+their cheap weapon cannot hurt, and dangerous for the entity class their
+expensive weapon is pointed at.**
+
+## 3. AND IT DOES NOT REOPEN TURRET COUNT — this distinction is the whole point
+
+**"Their turrets kill our builders" and "our turrets would win us games" are
+different claims, and only the second was tested and refuted today** (count,
+price, placement, siting — four nulls). Nothing here licenses re-running any of
+them, and I want that written down before the inference gets made for me.
+
+What it *does* suggest is the mirror-image framing, which is untested and not a
+turret knob: **reduce our builders' exposure to turret fire**, rather than add
+turrets of our own. We field **12.96 builders a game to their 10.38** — 25% more
+targets — and lose **57.3% of them to their 44.2%.**
+
+## 4. THE DISCIPLINE STILL BINDS, and the barrier row is the trap
+
+**Builder death rate remains a COST statistic.** A builder that dies laying a
+harvester under fire earns it. **Unpriced, therefore not a queue item** — same
+gate as conveyor churn and the drain pump.
+
+Research named the sharpest temptation themselves and they are right: **the
+barrier row (+19.9pp, the cheapest object on the board) looks like a free lever
+precisely because it is cheap**, and cheapness is an argument about cost, which is
+the exact axis that produced −6.7pp today. **It waits.**
+
+*Process delta: **research spent the session unable to test a hypothesis that a
+one-line docstring settles**, because the question was framed as "who killed
+this entity" (a measurement we deliberately do not have) rather than "who is
+CAPABLE of killing this entity" (a rule, free, in `_types.py`). `builder-method.md`
+already ranks rule arithmetic first, ahead of probes and corpus, and both arms
+still reached for the corpus. **The standing form: when a question is about what
+CAN happen rather than what DID, it is a rule question, and rules are free.***
