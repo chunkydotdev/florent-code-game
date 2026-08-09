@@ -20679,3 +20679,88 @@ pre-leg amendment with a disclosed clock keeps D5 intact. Also on the
 record: the gate-disjointness worry is REFUTED with data (facings cluster AT
 the core bearing, 2.9× random), and the 61.4%-vs-61.4% digit collision
 (opposite polarities, different populations) must never share a table.
+
+## 2026-08-10 00:1x CEST (from `date`) — RESEARCH ARM: **LUX GAP CLOSED (13 files, 119/119 spans) — and its top queued cut is ANSWERED: 94.1% of our r1000 games are decided on ONE key, and the engine settles the rules ambiguity itself**
+
+**17A's stated Lux gap is closed.** 13 tactic files + summary. **45 candidate strings checked
+against local raw bytes: 44 passed, 1 failed and was corrected. Then 119/119 spans in the
+sweep's own output machine-verified — 99 across the files, 20 in the summary, audited as a
+separate pass.** Nothing cut.
+
+**The one failure was the flagged glyph trap, and it was real:** ry_andy_'s headline quote
+uses a **curly `’`** in `opponent’s` while **other apostrophes in the same file are ASCII**,
+and `adamslay.md`'s `opponent's` is the opposite. **Per-string, confirmed empirically rather
+than assumed.**
+
+### **THE TOP QUEUED CUT IS ANSWERED, AND I ALREADY HAD THE DATA TWO HOURS AGO WITHOUT NOTICING**
+The sweep flagged a rules ambiguity as its highest-priority unrun cut, gating three of its
+files: **`official-docs.md` says the first tiebreak key is *"most titanium collected"*;
+`CLAUDE.md` says *"titanium delivered to core"*.** If those are different quantities,
+several library claims quietly assume opposite answers.
+
+**Sharper than the sweep put it: the PRIMARY IS INTERNALLY INCONSISTENT.**
+`official-docs.md` contains **both** phrasings — *"most titanium collected"* in the rules
+section and *"titanium delivered to core"* in an embedded summary. So this is not
+CLAUDE.md disagreeing with the primary; **it is the primary disagreeing with itself.**
+
+**AND THE ENGINE SETTLES IT, in its own vocabulary.** The win-condition string the engine
+emits is literally **`titanium_collected`**. From the r1000 cut I ran for 17A:
+
+| deciding key (engine's own `cond` string) | n | share | our WR |
+| --- | ---: | ---: | ---: |
+| **`titanium_collected`** | **993** | **94.1%** | **0.551** |
+| `harvesters` | 44 | 4.2% | 0.341 |
+| `titanium_stored` | 18 | 1.7% | 0.444 |
+| **total r1000** | **1,055** | | |
+
+**⇒ THE TIEBREAK IS EFFECTIVELY A SINGLE NUMBER.** Key 1 decides **94.1%** of our r1000
+games; keys 2 and 3 together decide **5.9%**. **Any doctrine built on harvesters-alive or
+titanium-stored is optimising a key that almost never gets read.** And the engine's term is
+**`collected`, not `delivered`** — matching the primary's rules section. **`CLAUDE.md`'s
+"delivered to core" is the loose paraphrase and should be corrected; that file is
+team-edited, so it is the builder's or Magnus's call, not mine.**
+
+*(Descriptive, not claimed: when a game does get past key 1 we do worse — 0.341 on
+harvesters, n=44. Underpowered, direction only.)*
+
+### THE SWEEP'S THREE DISAGREEMENTS WITH MY BRIEF — ALL SUBSTANTIVE, ALL ACCEPTED
+1. **"Lux S2 is the fix" OVERSTATES IT.** The same v2.0.0 block that changed collisions also
+   **removed weather** — the shared random shock that compressed strong-vs-weak. **Some of
+   S2's decisiveness is variance reduction, not a combat fix.** My framing attributed all of
+   it to the collision rule.
+2. **THE COUNTERWEIGHT IS A RATIO, NOT AN ITEM — AND THIS IS THE LINE THE PROGRAMME SHOULD
+   HOLD SOMEWHERE VISIBLE.** It is **two Lux patches** (v2.0.2 wood regrowth to weaken
+   scorched earth; v3.0.0's skill-discontinuity statement) **plus 17A's Battlecode map pool
+   and Halite II's veto**. **Four leagues where design pressure ran AGAINST decisiveness,
+   against one (BC2020) for it.**
+3. **The tiebreak wording** — above.
+
+### **THE MOST TRANSFERABLE ITEM, and it attacks our oldest standing complaint**
+**`shut-the-investment-down-when-payback-exceeds-the-clock`** (Philipp Kostuch, 6th, Lux S2):
+*"Ore production shuts down at 650 (as payback is 250 turns…)"*. **He DERIVES the constant
+rather than tuning it.** No new sensing, no opponent model. **It is a FOURTH independent
+instance of 17A's corrected clock rule — clock as DISARM, never as ARM** — and it attacks
+*"we bank and do not spend"*. **Killable by spreadsheet before any code:** if every
+category's payback is under ~50 rounds the gate never fires, **and sweep 8's "cost scaling
+never binds on harvesters" is evidence it may not.**
+
+### **5 OF 13 FILED `transfers: no`, AND ONE RULES FACT DISCOUNTS THE WHOLE S2 CORPUS**
+**Lux S2 kills by STARVATION. We have no upkeep and no documented ore depletion** — the
+sweep verified the reciprocal: `upkeep`/`starv`/`deplete`/`exhaust`/`runs out` are **0
+across all 80,439 characters of `official-docs.md`.** **So all four S2 competitors'
+"aggression" is ONE tactic — interpose units between a factory and its ice — not four
+convergent data points**, and **their denial IS the win condition where ours is a tiebreak
+adjustment.** The collision fix and lichen→power coupling are **designer levers we cannot
+pull**.
+
+**And the Lux S1 control case is now machine-countable rather than argued:** across the full
+S1 spec, `attack`/`damage`/`combat`/`kill`/`health`/`weapon`/`shoot`/`hp` are **all 0**, and
+the only unit-on-unit interaction **cancels the move**. **Same eight terms are 0 in the S2
+spec.**
+
+### A NEW METHOD RULE THE LIBRARY NEEDS
+**BAN ELISION INSIDE QUOTATION MARKS.** Three near-misses in the sweep's own drafts were
+**ellipses inside quotes** — which is a **silent opt-out from literal re-grep**, because a
+future auditor cannot distinguish an elided quote from a fabricated one. Quote the whole
+span or split it into two quotes. (The third was the sweep's own phrasing wearing quote
+styling.)

@@ -51,8 +51,9 @@ tiebreak lead as self-reinforcing.
 WHAT WOULD KILL IT — One unprobed engine fact decides how much of the above is real:
 whether titanium physically delivered to the core is the *same* quantity as the
 global pool that pays build costs, or a separate accounting line. `CLAUDE.md` says
-titanium *"moves physically through the map … separate from the global pool used to
-pay build costs"*, while `official-docs.md` names key 1 as *"most titanium
+*"Titanium also moves physically through the map in stacks of 10 via
+conveyors/splitters/harvesters, separate from the global pool used to pay build
+costs."*, while `official-docs.md` names key 1 as *"most titanium
 collected"*. If delivered titanium credits the pool, the coupling is tight and the
 paragraph above is right; if key 1 is a counter that is incremented independently,
 it is even more of a pure ledger. **Neither reading is verified here and neither is

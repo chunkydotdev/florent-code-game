@@ -36,9 +36,10 @@ resource, and no documented mechanism by which an ore tile is used up.
 **So denial here cannot kill anything.** Cutting an opponent's titanium slows their
 production; it does not begin a countdown. Their core sits at full HP indefinitely
 with zero income, and the game ends on the clock with them behind on key 1 rather
-than dead. That converts every Lux denial finding from *"how to win"* into *"how to
-win the tiebreak"* — a real thing, but a categorically different thing, and the
-conversion has to be made explicitly in every file or the claim inflates.
+than dead. That converts every Lux denial finding from **how to win** into **how to
+win the tiebreak** — a real thing, but a categorically different thing, and the
+conversion has to be made explicitly in every file or the claim inflates. (Those two
+phrases are mine, not quotations.)
 
 The second-order consequence is the one that bites the programme. Lux S2's denial
 strategies **raised decisiveness** because denial and killing were the same action

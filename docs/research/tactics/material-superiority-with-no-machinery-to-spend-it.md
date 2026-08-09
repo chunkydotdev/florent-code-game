@@ -14,10 +14,12 @@ holding a material lead he had no routine to convert:
 > *"I should in theory be able to focus fire a single factory overwhelming it with 6+ Heavy before turn 500 and maybe taking out a factory early"*
 
 The bullet's opening clause frames it as a standing advantage rather than a
-possibility — the preceding text describes an advantage held *"throughout the
-midgame"* which he says he *"should use … to create attackers"*. His writeup's own
-title concedes the same thing at the top level: *"lots of focus on domestic admin, not
-enough on fighting"*.
+possibility:
+
+> *"advantage throughout the midgame, should use this to create attackers to disrupt ore mining (maybe even ice mining)"*
+
+His writeup's own title concedes the same thing at the top level: *"lots of focus on
+domestic admin, not enough on fighting"*.
 
 **The structure is the finding.** The units were affordable. The advantage was
 persistent. The target was identified. The *"globalised attack code structure"* — his
