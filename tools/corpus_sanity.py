@@ -16,8 +16,32 @@ Usage:  .venv/bin/python tools/corpus_sanity.py [corpus_dir]
 import csv, sys
 from pathlib import Path
 
-KNOWN_DEAD = {("econ.tsv", "shots"): "replay_econ.py:109 `elif unum == 12: pass` "
-                                     "-- use build_agg.tsv metric=='shot'"}
+KNOWN_DEAD = {
+    ("econ.tsv", "shots"): "replay_econ.py:109 `elif unum == 12: pass` "
+                          "-- use build_agg.tsv metric=='shot'",
+    # s25 boot. Same bug shape as `shots`, found by this tool one run after the
+    # trap-7 fix taught it to look at string columns: `deliveries` is declared
+    # in COLS, allocated in cell(), and never incremented -- the
+    # distributeResources branch (`elif unum == 4`) iterates the message and
+    # `pass`es. Verified 0/33,672 nonzero.
+    ("econ.tsv", "deliveries"): "replay_econ.py `elif unum == 4` "
+                               "(distributeResources) loops and passes; never "
+                               "increments -- use econ.tsv:ti_collected_end "
+                               "(cumulative delivered, 28,925/33,672 nonzero)",
+    # s25 boot. NOT decoder bugs at this layer -- the ingest records the literal
+    # string "None" because the API rows carry no version. Verified by the
+    # research arm 2026-08-09 and re-verified here. The ONLY working version
+    # source is league_matches.tsv teamAVersion/teamBVersion joined on match id
+    # (236/271 of our matches, 85.7% of seeds). Do not join on these four.
+    ("join.tsv", "oppver"): "ingest writes literal 'None'; use "
+                            "league_matches.tsv teamAVersion/teamBVersion on match id",
+    ("ladder_games.tsv", "oppver"): "ingest writes literal 'None'; use "
+                                    "league_matches.tsv teamAVersion/teamBVersion on match id",
+    ("league_games.tsv", "verA"): "ingest writes literal 'None'; use "
+                                  "league_matches.tsv teamAVersion on match id",
+    ("league_games.tsv", "verB"): "ingest writes literal 'None'; use "
+                                  "league_matches.tsv teamBVersion on match id",
+}
 
 def main(d="corpus"):
     bad = 0
