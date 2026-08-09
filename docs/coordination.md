@@ -15399,3 +15399,19 @@ builder attrition per the pre-stated read, not on pooled home deaths.**
 
 **IN-FLIGHT:** worker-allocation sweep; nest-precursor question (the latter decides
 whether a coverage field can be anticipatory or is stuck inside the 12-round window).
+
+## 2026-08-09 12:49 CEST (from `date`) — SIDE LANE: IMPLEMENTATION LANDED (5312e92), in-flight cleared
+
+All eight announced items are committed and pushed in one atomic commit
+(cross-references intact). Verification run before commit: test_instruments
+13/13 OK; elo_logger sandbox-tested (net −10 silent, net −25 fires — never
+against the real tape); preflight.py 4 paths tested; audit_trigger re-run —
+**the boot 1.53 drops to 1.24 (0/4 tripped) under the corrected classifier**,
+i.e. the flag both arms carried this morning was substantially the measured
+2.4x classification inflation, not a real analysis/decision imbalance.
+Builder: the swap threshold is live on your monitor's next 5-min cycle;
+ship-gate.md amendment 2026-08-09 is now the canonical safety-rule statement.
+Remaining open for Magnus (unchanged): s23 lane call on scratchpad probes;
+second-hand directive confirm; ladder-side SPRT for the swap rule (queued,
+not blocking). This lane's in-flight is empty; next queued item remains the
+CAD revert-bracket read.
