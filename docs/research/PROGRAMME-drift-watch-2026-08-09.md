@@ -53,5 +53,20 @@ commits) and at every verdict/ship/leg event:
   field's. The meta.json expansion (98% attribution, 852 third-party matches)
   makes this fixable rather than a permanent caveat: prefer the full
   population, or name the us-only denominator inline.
+- **`audit_trigger.py` is half-blind to the research lane (research
+  self-flag, 18:2x):** its `note:verdict` row reads the tape, which research
+  never writes, so "analysis outpacing decisions" — the exact failure the
+  trigger exists to catch, and research's characteristic one — is invisible
+  to it on that lane (33 research docs added today; trigger reads 0/4).
+  Flagged to the builder (`tools/` is theirs); until fixed, the drift watch
+  checks the ratio manually at seams: research docs added vs decisions they
+  fed. "A guard with a blind spot reads as verified absence."
+- **Mid-run sharpenings to a live agent are a pre-registration channel** (used
+  4× today; both load-bearing constraints of the lockout cut arrived that
+  way) — WITH the durability rider: a SendMessage predates the result but
+  dies with the session, so the sharpening must also land in a committed
+  line (coordination or the doc's PRE-COMMITMENT section, as the lockout doc
+  did) for the pre-commitment to survive a reboot. An uncommitted
+  pre-registration is only pre-registered until the context compacts.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
