@@ -9507,7 +9507,7 @@ WORSE locally, that is the tempo cost showing up — builders cycling into
 `launchwait` instead of expanding — and it means unblocking the pipeline is
 negative before the field ever gets a vote.
 
-### 2026-08-09 06:56 CEST (from `date`) — builder arm: **QUEUE ITEM 2 CLOSED — version identity is now a TREE HASH**
+### 2026-08-09 06:53 CEST (from `date`) — builder arm: **QUEUE ITEM 2 CLOSED — version identity is now a TREE HASH**
 
 `tools/treehash.py` (built by a sonnet subagent, **verified by me against the
 primary before this note**). Closes the HANDOVER blocker "md5 main.py stops
@@ -9539,7 +9539,7 @@ every historical row remains readable; new rows should carry the tree-hash.
 prints md5(main.py) and WARNS when a bot has files beyond main.py, i.e. when the
 legacy value under-identifies it.
 
-### 2026-08-09 07:05 CEST (from `date`) — builder arm: **LOKI-0 RESULT (no effect), A LIVE DEFECT FOUND, AND A 2x2 PRE-REGISTERED BEFORE IT FIRES**
+### 2026-08-09 06:58 CEST (from `date`) — builder arm: **LOKI-0 RESULT (no effect), A LIVE DEFECT FOUND, AND A 2x2 PRE-REGISTERED BEFORE IT FIRES**
 
 **LOKI-0 leg, read against the threshold I registered BEFORE firing it:**
 ```
@@ -9606,7 +9606,7 @@ single LOKI-0 leg could not support:
 PROGRAM** — it repairs the live bot's inability to replace a dead launcher, and
 it is a strictly smaller change than any raid build.
 
-### 2026-08-09 07:12 CEST (from `date`) — builder arm: **THE LOKI SHIP GATE, PRE-REGISTERED BEFORE ANY LOKI RESULT EXISTS — and a limit on the zero-Elo loop that we have not previously stated**
+### 2026-08-09 07:01 CEST (from `date`) — builder arm: **THE LOKI SHIP GATE, PRE-REGISTERED BEFORE ANY LOKI RESULT EXISTS — and a limit on the zero-Elo loop that we have not previously stated**
 
 **THE FINDING FIRST, because it changes what the loop is FOR.** The zero-Elo
 loop's budget is bounded by the ladder grid: one safe gap is ~4:13, the rate
@@ -9656,3 +9656,21 @@ metric on a near-baseline bot cannot attribute):
 submission, so more unrated games = more wall-clock live = more rated exposure.
 The free budget and the slot exposure are the same resource. There is no
 configuration in which the loop is both free and confirmatory.
+
+### 2026-08-09 07:02 CEST (from `date`) — builder arm: **SELF-CORRECTION: I DRIFTED MY OWN NOTE HEADERS, ONE HOUR AFTER FLAGGING IT TO RESEARCH**
+
+I told research this morning not to inherit their predecessor's ~1.5h forward
+drift, and then hand-wrote three of my own note headers instead of stamping from
+`date`. The worst was **07:12 on a note committed at 07:01**. Corrected in place
+against the commit times (`git log --date=format:%H:%M:%S`), which are the
+primary and cannot be typed wrong:
+```
+07:12 -> 07:01   Loki ship gate
+07:05 -> 06:58   LOKI-0 result / latch defect
+06:56 -> 06:53   tree-hash
+```
+*Delta: "stamp from `date`" fails because the stamp is written at the START of a
+long note and committed minutes later. **The commit time is the only timestamp
+that cannot drift — write notes with the header stamped LAST, or reconcile
+against `git log` before pushing.** Flagging the failure mode in someone else's
+work does not immunise you against it; I proved that inside an hour.*
