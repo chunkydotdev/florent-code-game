@@ -197,6 +197,68 @@ exception permanently destroys that unit for the match.
 
 | **18** | **MULTI-STEP PLAN COMPOSITION — the first genuinely NEW row in a fully-swept wheel.** Magnus's oldest unanswered ask (*"bigger plans than that, more steps that might make a bad tactic actually a good tactic"*), which is the **converse** of 17A's *an economically-correct evaluator never finishes*. *(A) representation (B) commit/abort (C) did it beat reactive play, measured (D) where planning LOST* | **SWEPT** (s26). **25 files. 292 spans, 288 verbatim over 61 primary documents; summary audited separately (61/63).** **(C) IS A SURPRISE — the ablation exists.** 19 `yes` / 5 `partial` / 1 `no`. | 2026-08-09 | [sweep 18](2026-08-09-sweep-18.md) |
 
+| **19** | **NETWORK CORRECTNESS AND REPAIR** — aimed at *"85.2% of our binding tiles have no directed path to our core; we are BREAKAGE-bound where every big-economy team is SATURATION-bound."* *(A) build-time connectivity invariants (B) repair vs rebuild (C) how does anyone DETECT silent breakage (D) self-interference* | **SWEPT** (s26). **24 files + summary. 228 strings verbatim, 0 unverified.** **My "nobody solved this" prediction is REFUTED** — and it found an **arithmetic fault in the parent cut's regrouped table.** | 2026-08-10 | [sweep 19](2026-08-10-sweep-19.md) |
+
+### Sweep 19 (s26) — the negative is real and my prediction of it was still wrong, and (C) has a concrete answer
+
+**(A) IS NOT THIN — four distinct patterns, all in competitive code.** **AdmiralAI dry-runs
+the entire route under `AITestMode()` before laying a tile**, and logs *"pathfinding was ok,
+building failed"* as its own outcome. **Overmind returns on `ret.incomplete` and enforces it
+STRUCTURALLY** — the placement loop reads only from a map written on success, so a partial
+route cannot leak. **NoNoCAB builds and then RE-WALKS the tile list**, treating *"built but not
+connected"* as failure, **because its API has no reachability query, only adjacency — the
+IDENTICAL gap our `Controller` has.** Mindustry and the Factorio Learning Environment deleted
+hand-routing entirely.
+
+**(C) — THE SUB-QUESTION I EXPECTED TO BE EMPTY HAS THE SHARPEST ANSWER: NOBODY DETECTS A
+BROKEN NETWORK BY LOOKING AT IT.** **CluelessPlus never asks whether its road is connected** —
+it fires the repair pathfinder when **a route's income falls below half its EMA**, with a rate
+limiter and a deliberate post-repair damping of the baseline. **Factorio's wiki states the
+reason from the other side: a full belt and a working belt are visually identical.** Three
+cheaper detectors exist (stuck counter with reset-on-change, precondition timeout, model-based
+prediction). **And the expectation-setting finding: in Overmind, ChooChoo and FLE the exact
+check we want was WRITTEN, PRICED AND COMMENTED OUT** — Overmind's
+`// TODO: repath if you are not on expected next position` is still live in the file.
+
+**STRONGEST TRANSFERABLE ITEM — Overmind's `roadCoverage`: infrastructure completeness as ONE
+PERSISTED SCALAR that a DIFFERENT subsystem branches on.** **It compresses to one small
+non-negative integer — the single thing our 16-slot store is provably safe for** (all writers
+agree, one-round buffer is fine for a level, negative-write raise cannot fire). **We currently
+have no way to express "the network is broken" at all.**
+
+**THE BREADTH NEGATIVE IS REAL AND LARGER THAN EXPECTED — and my prediction was still wrong.**
+**Battlecode (all seasons), Halite I-III, Lux S1/S2, Terminal and CodinGame's 94-game catalogue
+contain NO player-built directed breakable transport.** Battlecode contributed nothing, as
+predicted. **But *"nobody solved this"* is REFUTED: OpenTTD NoAI is a real competitive league
+that answers all four sub-questions, and it has never appeared in eighteen prior sweeps.**
+**⚠ The field here is TWO LEAGUES WIDE — treat every convergence as a good SHAPE, not a
+distribution.**
+
+**⚠ AND IT FOUND AN ARITHMETIC FAULT IN THE PARENT CUT, IN EXACTLY THE ROWS THIS LIBRARY AND
+THE BUILDER QUOTED.** `binding-tile-cut-2026-08-10.md`'s **§1 class table is exact** (sums to
+100.000%, 7,767 Ti). **Its REGROUPED table sums to 120.5%**, and its note that the first three
+are sub-classes of the two `DEAD_END_*` rows cannot hold: **33.4 + 23.9 + 11.1 = 68.4% against
+a parent of 52.76%.** Three rows reconcile exactly (fix-facings, no-output, saturation);
+**all four over-counted rows are precisely the ones quoted as the prescription ranking — 39.6
+and 33.4, 23.9, and 11.1. They claim 74.5pp where their parents hold 53.50pp, a factor of
+1.393.** **The qualitative finding is untouched. The RELATIVE PRIORITY is not established at
+that precision and nothing should be sized on those numbers.**
+**Three further qualifications:** **39.6% is not all build-time** — the source splits it into
+never-built and destroyed; **the 74.3% opponent figure needs the 55.2% third-party number
+beside it**, without which it reads as a capability statement rather than a selection one; and
+**the 41% and 116-vs-34 figures come from the PARENT cut, with the 41% resting on the
+single-output-tile instrument the binding-tile cut explicitly supersedes.**
+
+**Three new method traps, each producing a false FAIL:** **ligature loss in old LaTeX PDFs**
+(`efficiency` → `eciency`), **page furniture injected mid-sentence** (the `\f` fix does not
+cover it), and hard-wrapped markdown. **The audit's first pass flagged 45 spans, of which 7
+were the sweep's OWN paraphrases sitting inside quotation marks — the library's recurring
+failure, in its drafts, in the same session it re-read the rule.**
+
+**Gaps: the Battlecode negative is LEG-REPORTED, not first-hand** (every spec URL 404'd, and
+one reported population looks short); **`tt-forums.net` is behind a bot wall so ~38 OpenTTD
+threads are unread; no corpus cut was run.**
+
 ### Sweep 18 (s26) — the answer to Magnus's ask is 27 years old, it fits our exact constraints, and my pre-stated expectation was wrong in a way that changes the plank
 
 **(C) THE EXPECTED NEGATIVE IS REFUTED, AND THE REASON IS A FINDING ABOUT THIS LIBRARY'S OWN
