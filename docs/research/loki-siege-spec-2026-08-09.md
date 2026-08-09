@@ -225,10 +225,33 @@ adjacent tiles + core-footprint stacking per the 8 HP/Ti rule; 3+ → full
 cut says the field's cores are 2.7× more killable by OUR 3-shooter chain
 regardless of map, which strengthens S2's replacement-chain sizing toward 3
 concurrent shooters where unit budget allows.
-**GATE (research arm's confound, correct): the 3+ collapse could be "already
-lost, builders dead" rather than "detail too small." Cut in flight in the
-side lane (live builders adjacent to the besieged core in 3+-attacker
-rounds). D1 waits on it; S1-S5 do not.**
+**GATE RESOLVED (`besieged-core-confound-2026-08-09.md`, decoder validated on
+7 independent checks): "already lost" REFUTED (5.02 live builders at 3+
+attackers, 0.9% zero-builder rounds); "mispositioned" REFUTED (our adjacency
+2.68 BEATS field 2.49 and TOP 1.99; utilisation on the field's curve; no
+per-builder efficiency deficit at fixed adjacency and damage). What survives
+is DETAIL SIZE against a heavier load: full cancellation of our 23.05
+dmg/round needs ~5.8 adjacent healers, we run 2.68 at 85% of its own cap
+with headroom available (≥1 spare live builder in 91.3% of 3+ rounds, ≥2 in
+63.8%). D1 IS UNBLOCKED and now precise:**
+- **Corrected cap: a 2x2 core has EIGHT ring tiles → 32 HP/round ceiling,
+  not 16.** (The 16 figure is the single-tile cap for 1x1 buildings.)
+- Target: grow the core guard with observed attacker count — 3+ attackers →
+  4-5 adjacent healers (the ≥1600-rated opponents run a hard-coded FIVE-healer
+  guard, 73.6% of their 3+ rounds at exactly adj 5 — an existence proof).
+- The when: the gap opens ENTIRELY at r251-500 (before r250 our detail
+  matches our opponents' 2.24 vs 2.30; in r251-500 they grow to 3.53, we stay
+  2.46) — same window as the forward-posture collapse. Reinforce the guard as
+  a function of round/threat, not as a fixed opening allocation.
+- Caveat that bounds the win: detail size is dominant but not sole —
+  incoming damage matters (Leviathan cancels 61.5% with a SMALLER detail by
+  absorbing only 13.6 dmg/round), and the opponent 3+ cell rests on ~50 long
+  games from five teams.
+- SCOPE correction inherited by the offensive math too: "the field scales
+  its detail" was an opponents-of-ours artifact — the BROAD field does NOT
+  (34.6% cancel at 3+; TOP 31.5%, both WORSE than our 39.4%). For S2/S4 this
+  is good news: a 3-shooter chain against most of the ladder faces a
+  defence that does not scale back.
 
 Falsifier logic: if M1-M3 move and F does not, persistence was not the
 binding constraint and this lane's synthesis is wrong on our deficit; if M4
