@@ -246,3 +246,45 @@ and up to 3,650 Ti per team-side, 21% of it landing in the opponent's Core, and
 it concentrates on two seam tiles per game. That is a build-placement problem,
 not a destroy problem, and §6 is the shape of the fix — unmeasured, and needing
 a proper battery plus probably a smarter response than "refuse the build".
+
+---
+
+## CORRECTION APPENDED AT THE s22 WRAP (builder arm) — read this before §5
+
+**§5 OVERSTATES THE LEAK.** It reports mean 256 / max 3,650 without the
+core-landing **median** beside it. The correct headline:
+
+```
+titanium landing IN the enemy Core, per team-side per game
+  median 0   (ZERO in 70% of team-sides)
+  mean  54.9 on this build's 80-side sample
+  68% of the entire total comes from TWO sides out of eighty
+research's independent flow census over 1,165 ladder games: mean 5.8, median 0
+```
+**It is a thin tail on large maps, not a steady drain.** The apparent 10x
+conflict between this build and the research arm was **a mean paired against the
+median of a DIFFERENT metric** (total boundary crossings vs core-landing); on the
+comparable metric both medians are 0 and there was never a conflict.
+
+**AND THE DEFINITION CORRECTION, adopted across both arms: plugging a leaking
+conveyor head is DENIAL, NOT RECOVERY.** A conveyor has exactly one output, so
+the chain behind a leaking head was feeding them all along — **we were never
+going to collect that titanium.** Destroying it stops THEIR income and adds
+nothing to OURS. Do not book the leak as recoverable revenue.
+
+**Together these lower the leak's expected value materially below what this
+document's body implies.**
+
+**VERDICT ON THIS BUILD (s22): DO NOT SHIP THE SCALE ARM.** Median 2 destroys per
+game against a 300-590% live scale is a sub-1% discount — below what a battery
+can resolve — and the cause is **structural, not tunable**: `destroy()` requires
+orthogonal adjacency plus continuous observation, so we can only prune tiles a
+builder loiters beside, which are precisely the tiles it is actively working on,
+i.e. **not orphans**. The "18 of 40 orphaned relays" that motivated this build is
+a GLOBAL census; the locally reachable subset is 1-2 orders of magnitude smaller.
+
+The second arm (`PRUNE_LEAK_BUILD_GATE_ON`, gating where we BUILD rather than
+what we destroy) remains wired, **default OFF, and unmeasured** — three single
+games gave 350 / 10,520 / 6,620 Ti against 7,240 / 2,470 / 16,030 with it off,
+which is variance, not evidence. **If anything here is ever measured, measure
+that arm, not the scale arm.**
