@@ -15097,3 +15097,53 @@ own s23 failure family, *a statistic standing in for a measurement*.
 
 **Still open for Magnus, unanswered since the s23 wrap:** the LANE CALL on scratchpad
 engine probes, and whether the second-hand "unrated/test games" directive was real.
+
+## 2026-08-09 12:35 CEST (from `date`) — RESEARCH ARM: **BUILDER'S CUT A AND CUT B, BOTH ANSWERED**
+
+**Landed:** `docs/research/cover-and-dodge-cuts-2026-08-09.md`. Scripts preserved at
+`docs/research/scripts/side-lane-2026-08-09/cutA.py` + `cutB2b.py` — **not left in a
+scratchpad**, which is the delta from the third lane's wrap.
+
+**Decoder re-validated before use.** `dc_decode.py` over 4,897 replays, 0 errors, 38s.
+Reproduces `builder-death-attribution`'s US HOME shape on an independent join
+(`join.tsv`, 1,130 files, vs their `league_matches.tsv`, 2,735): gunner **82.01%**
+(doc 83.22), sentinel **16.98%** (15.64), headline **63.2%** (65.3). **The attribution
+is sound.**
+
+**CUT A — COVER IS DEAD BY THE BUILDER'S OWN PRE-STATED GATE.** 27 cells, top-k
+killer tiles from train only, held-out coverage vs k-random-in-band:
+k=1 **−0.5**, k=2 **−1.1**, k=3 **−1.9**, k=5 **−2.2**, **k=8 −3.9**, k=12 **−8.4pp**.
+Negative at every k and monotonically worse — top-k picks up tiles that killed a lot
+**in one game**, which is exactly what does not repeat. Per-opponent: **Lunds −8.5**
+(only cell with usable n); Ouroboros +14.2 at **7 games / 67 held-out deaths**, not a
+lead; Powerpuff Girls has 1,010 home deaths and **no cell above the n floor**.
+
+**This is a different and MORE negative result than my plant-grain work** (+3.8pp on
+where turrets are planted vs **−3.9pp** on where they kill). The builder was right
+that the grains are separate questions.
+
+**CUT B — WORK SEATS, NOT TRANSIT.** US HOME n=4,169, scored against the band's own
+composition: **HEAL_SEAT lift 2.14**, HARVESTER 1.41, CONVEYOR 1.37, OWN_TURRET 1.00,
+**TRANSIT lift 0.07**. **I then broke my own number**: labelling tiles by all-time
+buildings inflates work seats, so the time-respecting re-run moves TRANSIT
+**2.6% → 5.9%** overall and **4.3% → 18.4%** for deaths by r100. **5.9% is the number
+to use.** DODGE is therefore **alive but small and mis-aimed** — a free opening fix,
+**and it must be read on early-game builder attrition; pooled home deaths guarantee a
+null.** The work-seat hard stop fired at the **heal seat**, i.e. declining the
+4.00 HP/Ti heal — ESCALATE in a new coat.
+
+**THE UNEXPECTED ONE, labelled an observation and not a verdict.** HEAL_SEAT is
+**symmetric with the field** (us 25.4%/2.14, them 26.1%/2.19) — the price of healing,
+not our defect. Everything else is asymmetric one way: **their home builders die next
+to their own turrets (32.3%, lift 5.04) where ours do so 2.7% of the time (lift
+1.00)**; forward, 42.2% vs 7.7%. **When the field's builders are exposed they are
+servicing defence; when ours are exposed they are servicing economy.** Consistent
+with both "we don't repair turrets" and "we have no turrets to stand next to" — this
+cut cannot separate them.
+
+**NOT DONE:** the builder's **Cut B(1)** (consecutive rounds inside the killer's
+envelope) needs a `bb_decode.py` join and is the only thing that would *price* DODGE
+rather than bound it. Held, because both planks are decided without it.
+
+**Two background subagents still out** (tactics sweep re-aimed at in-base planting;
+the 41.4% never-removed-plant tail). Will relay both — they die with this session.
