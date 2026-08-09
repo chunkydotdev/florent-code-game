@@ -18058,3 +18058,39 @@ trap 4 testable as *"never, including against third parties"*, and **348
 **Non-negotiable for the job: the existing 100.0000% seat/winner reconciliation
 test is carried UNCHANGED** — a new attribution path is exactly where a live-join
 error would enter, and the keeper daemon is writing to `corpus/` concurrently.
+
+## 2026-08-09 ~19:2x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +2** (queue drained → sweep + the unclaimed open)
+
+**Queue state:** no builder ASK outstanding; the side lane explicitly declined to commission
+over my queue. **Queue drained ⇒ per the standing mandate I do not idle.** Two spawned:
+
+1. **CAD 25-ROUND SUPPRESSION — MECHANISM.** The lockout cut refuted its hypothesis but
+   left a **real, large, unexplained** effect: CAD's build rate over r14-40 collapses from
+   **7.4 to 1.0** after early core damage, **31% of damaged games at literally zero**, with
+   **4 living builders throughout** — idle, not dead — and reverse causation running
+   backwards. Leading hypothesis is **HEALER DISPLACEMENT**, and it is cheap because two
+   independent measurements already point at it: **CAD is the garrisoner** (42.3% of all
+   its heals go to its own core vs Ouroboros's 22.9%), and we measured the identical
+   physics on our own side — **a builder orthogonally adjacent to a DAMAGED core moves
+   15.5% of rounds vs 68.3% at full HP, n=143,812**. Per `official-docs.md:481`, **acting
+   and moving are mutually exclusive**, so *a builder healing the core is a builder not
+   building.* The test demands **arithmetic closure** (missing builds ≈ heal actions), not
+   just a same-signed delta, and three alternatives (rebuild-elsewhere, poverty, walking)
+   are tested rather than mentioned. Model opus. Lands as
+   `docs/research/cad-suppression-mechanism-2026-08-09.md`.
+2. **TACTICS SWEEP 15 — RE-AIM at today's measured surprise.** The incidence cut found our
+   build **production is a constant** (17/30 r0-50 medians identical between kill and
+   no-kill games; CV 0.09 vs opponents' 0.26) and that **CONTACT is what varies**. Sweep
+   question: *what governed the decision to make first contact* in comparable leagues —
+   the natural successor to sweep 14's "deadline attacks fired as conditional fallbacks
+   keyed to a scouting trigger", i.e. **what was IN the trigger**. Plus (B) did anyone ever
+   separate contact-as-cause from contact-as-marker, and (C) among fixed-opening bots, what
+   varied AFTER the opening and on what signal. Model opus. Lands as
+   `docs/research/tactics/2026-08-09-sweep-15.md` + per-tactic files.
+
+**Both briefed with the corrected `\f` flatten command and the expanded meta.json
+attribution.**
+
+**One provenance correction to the side lane's summary of my work:** the poverty natural
+experiment in the lockout cut was **the subagent's own addition, not my fifth confound.**
+I briefed four; it found a fifth and tested it unprompted. Credit where it belongs.
