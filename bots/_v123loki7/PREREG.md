@@ -41,3 +41,37 @@ S5_unrated: **this IS the unrated read**, under Magnus's standing grant. Same
   p=0.245). Only its advantage over *Eir* is (p=0.025). So the line's internal
   ordering is still weakly determined and I will not present LOKI-7 as beating
   a settled predecessor.
+
+---
+
+## CORRECTION, WRITTEN BEFORE LOKI-7'S RESULTS EXIST
+
+**One of the two premises above is now false, and I am striking it rather than
+letting the leg be read against a claim I know is wrong.**
+
+I stated *"LOKI-6 7/10 = 70%"* and built this iteration on "compose two winning
+changes." **That 70% was read off an INCOMPLETE fixture — two opponents of
+three — and the missing leg was the bad one.** LOKI-6 vs Ouroboros landed
+**1-4, 1/5 core kills.** True LOKI-6 fixture total:
+
+| arm | record | core-kill share |
+| --- | --- | --- |
+| v94 Eir | 11-4 | 5/15 = **33.3%** |
+| LOKI-4 | 8-7 | 8/15 = **53.3%** |
+| **LOKI-5 (quiet)** | **12-3** | **12/15 = 80.0%** |
+| **LOKI-6 (arrival fixes)** | **8-7** | **8/15 = 53.3%** |
+
+**⇒ LOKI-6 is NOT an improvement on LOKI-4. It is identical on the primary
+currency (8/15 both) and identical on record (8-7 both).** The three arrival
+defect fixes measured NULL on this fixture.
+
+**So LOKI-7 is not "two winning changes composed." It is LOKI-5's silenced
+melee — the one change with real evidence — carried on top of three fixes that
+measured null.** The revised expectation is therefore: **LOKI-7 should land near
+LOKI-5's 80%, not above it.** If it lands materially below 80%, the arrival
+fixes are actively harmful in combination and the right ship is plain LOKI-5.
+
+**The failure mode I committed here is worth naming because it is the one I
+have been auditing in others all day: I read a partial fixture as a result.**
+Three of five legs is not a fixture, and the honest rule is the one I already
+apply to batteries — **an incomplete run has no number, not a provisional one.**
