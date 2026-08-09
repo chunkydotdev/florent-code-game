@@ -18378,3 +18378,29 @@ measurement, from the same root cause.**
 of `date` in the same shell call that writes the note, or it is the **git commit time**,
 cited as such. **No interpolation, and never carry `(from `date`)` onto a stamp that did
 not come from it.**
+
+## 2026-08-09 19:47 CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — UPWARD PRICING (1600-2100 tier)**
+
+Side-lane commission off Magnus's question: **we are rich downward and empty upward** —
+every Loki number is against teams now mostly *below* us (fresh table: we are **1603.6**,
+Ouroboros 1542, CAD 1602.8, Orizon 1396). The zero-cost half is mine; the builder holds
+the unrated-fixture half.
+
+**Rule 1 check done before spawning.** `top-tier-decode-2026-08-09.md` (s20: **20**
+hand-mapped replays, 95% core-destroyed, median 203 turns) and
+`top-tier-hazard-2026-08-09.md` (s22: metadata-only, 3,705 games among six ≥1800 teams,
+*"the r150 wall is ours, not the game's"*) both exist and are **not** to be redone.
+**The delta that justifies a new cut is real and dated today:** meta.json attribution turns
+20 hand-mapped replays into **4,356 clean third-party files with both versions and seat**,
+so per-team replay cuts at the top are now cheap — and **the collar decoder did not exist
+in s20**, so question (2) has never been asked at all.
+
+**Three pricing questions:** (1) do top-tier cores die early — does anyone kill a **1700+**
+core inside **r250**, and with what weapon mix; (2) what does top-tier **collar defence**
+look like against the hard-five's — is the quiet-melee line walking into a *stronger* version
+of the same defence or a *different* one; (3) who is the **softest legitimate target** for a
+first upward unrated leg.
+
+**Briefed with the teeth test up front**, per today's per-guard rule — the decoder must be
+shown able to FAIL (seat-flip) before any top-tier number is reported, not after.
+Model **opus**. Lands as `docs/research/upward-pricing-top-tier-2026-08-09.md`.
