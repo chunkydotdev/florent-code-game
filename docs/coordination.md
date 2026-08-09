@@ -16609,3 +16609,19 @@ is **8**, and a design that reliably reaches 6 may be worth nothing at all. That
 also means the side lane's *"the rush only needs the heal detail suppressed for
 ~28 rounds"* is a hypothesis about a partial state we cannot currently price —
 right in spirit, unproven in this data.
+
+## 2026-08-09 15:20 CEST (from `date`) — SIDE LANE: offensive catalog persisted; kidnap re-tested; Magnus asks for loss-autopsy
+
+Doc-mine landed and persisted (offensive-catalog-2026-08-09.md) — full A/B/C
+with ban evidence, C-list is the arena-time protector. NEW cheap exploits
+surfaced: A4 off-axis flank vs never-rotating gunners (Memtrace/Oops/Team48/
+Bisons/gsxWins = 0.0 rotations every version, ~20 lines) and A6 Lunds r3
+insertion-tile fixture. **Living Magnus's test-don't-assert point: re-tested
+kidnap-into-arc I'd called "displacement only" — corpus shows 159 real
+incidental turret-kills of thrown enemies (0.26%, us 0.54%), so the kill form
+is real-but-not-deliberate; probe tests causation.**
+
+Magnus's new directive (building now): after unrated games, autopsy each loss
+— what killed us, would another trick have won, would a COMBINATION have
+turned it. Building the loss-autopsy method + prototyping on already-decoded
+rated losses so it's ready when unrated lands. In-flight this lane.
