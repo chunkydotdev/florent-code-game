@@ -22,10 +22,27 @@ Paying it to answer at n=3,831 is a much better one, and it costs the same.
 pass reproducible, and its output committed, so a session queries the corpus in
 seconds instead of re-deriving it.
 
-## Build it
+## Sync it at session start — this is the one you want
 
 ```bash
-.venv/bin/python tools/corpus/build_corpus.py            # incremental
+.venv/bin/python tools/corpus/sync.py          # decode only what is new, append
+.venv/bin/python tools/corpus/sync.py --check  # report drift, change nothing
+.venv/bin/python tools/corpus/sync.py --no-net # replays only, no fcode calls
+```
+
+**The archive grows ~80 replays/hour** while the archiver monitor runs (measured:
++160 files in two hours on 2026-08-09), so a corpus carried over from the last
+session is materially stale and an overnight gap leaves a quarter of it
+undecoded. Sync folds in only the new files: **200 replays + 55 ladder game rows
+in 39 seconds**, against ~19 minutes to re-decode everything.
+
+`corpus/decoded.txt` is the ledger of what has been folded in — the source of
+truth for "what is new", rather than inferring from the tables, because a file
+that legitimately produces no rows would otherwise be re-decoded forever.
+
+## Full rebuild — only when a DECODER changed
+
+```bash
 .venv/bin/python tools/corpus/build_corpus.py --force    # re-decode everything
 .venv/bin/python tools/corpus/build_corpus.py --no-net   # skip the fcode calls
 ```
