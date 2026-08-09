@@ -9749,3 +9749,48 @@ they run 40.9%. **LOKI-1 has been re-aimed mid-build**; the from-scratch agent
 was sent the survival curve and told to justify its package rather than move a
 constant, and explicitly told that a well-argued "this direction is unsupported"
 is a more valuable return than a bot built to bad doctrine.
+
+### 2026-08-09 07:14 CEST (from `date`) — builder arm: **LATCH LEG READ: NO-EFFECT, AND THE LOCAL ARENA CANNOT ANSWER THIS QUESTION**
+
+```
+_v104latch 172 - 188 _v103split   (360 matches, 15 maps, both seat orderings)
+47.8%   Wilson 95% CI [42.7%, 52.9%]   crashes 0 / 0
+win conditions: titanium_collected 186 · core_destroyed 169 · harvesters 5
+```
+**Against the bar I pre-registered (WIN requires CI lower bound > 50%): NO-EFFECT.**
+Not a win. Also not a disqualifying loss by that same rule — the interval
+straddles 50 — but it is **nominally below parity** and I am recording that
+rather than rounding it to "fine".
+
+**WHY THIS LEG IS UNINFORMATIVE, AND I SHOULD HAVE SEEN IT BEFORE FIRING IT.**
+The latch only binds when **an enemy kills our launcher and then inserts
+raiders**. In the local arena the opponent is a copy of ourselves — and we are
+**~97% defensive** and barely insert. **The arena cannot exercise the defect the
+fix targets.** This is the dominated-pool problem (s21 delta #5) wearing new
+clothes: I pre-registered a threshold carefully and still pointed the instrument
+at a pool that cannot produce the signal. *Delta: pre-registering a THRESHOLD is
+not the same as checking the POOL CAN GENERATE THE EFFECT. Ask "what in this
+pool would make the number move?" before firing, not after reading a null.*
+
+**THERE IS ALSO A REAL COST TO THE FIX, which the nominal 47.8% may be showing.**
+Repairing the latch means we now **rebuild launchers** — 20 Ti base at +10%
+scale each. If launchers die often, that is repeated spend. "The mechanism is
+real" does not establish "the fix is beneficial", and I am not going to ship on
+the mechanism story.
+
+**WHAT WOULD SETTLE IT — INCIDENCE, measured from the archive, not from a leg.**
+Spawned (sonnet, registered here per rule 1): from `replay_archive/`, measure
+(1) how often we build a launcher at all, (2) how often one of ours is
+destroyed, (3) **whether we ever have a live launcher again afterwards** — under
+the defect this should be ~never, and if we DO rebuild then the defect does not
+bind and the fix is worthless — (4) rounds spent with zero launchers, and
+(5) **the same for opponents as a control**: if opponents also never replace a
+dead launcher, that is evidence the behaviour is normal or correctly costly
+rather than a defect worth shipping.
+
+**SHIP POSITION FOR NOW: HOLD.** The loosened gate says parity passes and the
+ladder is the field instrument — but that rule presumes a change with a
+plausible upside, and I currently have **no evidence of upside at all**, only a
+verified mechanism and a null. **A gate that would pass because passing is
+wanted is not a gate.** If incidence comes back low, the latch fix is shelved
+and that is the correct outcome.
