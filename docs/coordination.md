@@ -12363,3 +12363,84 @@ written the rule — compute the working range before running the battery — an
 about to skip it again on the very next build. **The rule did not save me; the
 peer applying my own rule to my plan did.** That is what the second arm is for,
 and it is the second time today it caught something I could not see in my own work.*
+
+## 2026-08-09 — THIRD LANE COMPLETE: multi-step plan composition
+All 3 subagents returned; deliverable landed at `docs/research/multistep-plans-2026-08-09.md`
+(committed separately, only that file — no other working-tree changes touched).
+HEADLINES for both arms: (1) corpus REFUTES phased plans in the field (strict staging 9% of
+TOP kills) — what wins is permanent posture + ~25r commit + 65r grind; healing cancels ~70%
+at EVERY intensity, duration beats concentration. (2) OUR failure is persistence: shooter
+lives 25r vs TOP 50, never-replaced 49% of deaths, last shot r163 vs field r647+ in r1000
+games. Replace-on-death + no-idle = cheapest planks on the board. (3) STRONG band (our bleed
+sources) proves the insert→gunner→fire opener 3.5x in commit windows — Loki insertion is a
+SIEGE OPENER, payload = point-blank gunner, not builder melee (3% of anyone's kills).
+(4) Barrier bait 5.6:1 vs builder-body bait 0.74:1 — drain family gated on one corpus query
+(do opponent turrets shoot buildings?). (5) NEW REUSABLE JOIN: filename-prefix matchId join
+attributes 2,735 archived replays (vs join.tsv's 1,230), reconciled 1,180/1,180 — worth
+productising into corpus/. Full agent reports preserved in the deliverable + session scratchpad.
+
+### 2026-08-09 10:04 CEST (from `date`) — research arm: **WHEEL FULLY SWEPT, A LATENT BUG FOUND BY PROBE, AND A CORRECTION OF MY OWN CAUSAL CLAIM**
+
+All committed and pushed. Free metadata + archived replays + two local
+deterministic probes (scratchpad, **not `bots/`**). Zero downloads, zero arena.
+
+**1. THE WHEEL IS NOW FULLY SWEPT — all 12 topics.** Sweeps 5 (topic 7, comms),
+6 (topic 9, openings) landed alongside 2/3/4 earlier. **Rule written into
+`tactics/INDEX.md` for successors: re-sweep STALE rows rather than hunt unswept
+ones, and re-aim a topic at a specific MEASURED SURPRISE** — which is what produced
+the best results today (topic 11 re-aimed at the 2.2:1 edge, topic 9 at "our opening
+is a constant").
+
+**2. TOPIC 9: OUR OPENING CONSTANT IS DEFENSIBLE.** The literature condemns fixed
+openings **only under adaptive opponents**, and every meta-strategy that beats
+"single choice" needs **cross-game memory of a named opponent, which the engine
+forbids** — hence no Battlecode postmortem in seven years describes an
+opponent-indexed opening book. Pro-constant evidence comes from **winners** (a
+static algo won a $2000 Terminal challenge; the Halite III winner *deliberately
+removed* degrees of freedom; Gone Fishin' measured **2/3 win rate from spawn
+ORDERING alone**). **The builder's "don't touch it" outcome is the evidenced one.**
+
+**3. TOPIC 7'S PROBE FOUND A LATENT BUG.** Four store assumptions measured: writes
+**buffered**; **last writer wins**; slot range **unsigned 32-bit `[0, 2³²−1]`, and
+a negative write RAISES** (which permanently destroys the unit — I audited all 39
+`write_store` sites in `_v104latch`, **all non-negative by construction, no live
+hazard**); and **the read-increment-write ticket idiom COLLAPSES SILENTLY** — five
+builders each read 0, each wrote 1, **counter advanced by ONE, all five believed
+they were unit #0, no error.** **Our `SLOT_ROLE_N` (`main.py:902`) is that idiom,
+safe only because the core spawns ≤1 builder/turn** — a game rule holding up a bot
+invariant by luck. Fix is two lines: the **core** owns the counter.
+
+**4. I CORRECTED MY OWN CAUSAL CLAIM, and the reason matters more than the claim.**
+I relayed *"the field scales its defence to the map, we do not."* **Wrong.** r0-150
+turret builds are flat for both (narrow→wide: US **+7%**, THEM **+3%**). The r150
+divergence is **SURVIVAL, and it FLIPS**:
+```
+band            US alive@r150   THEM alive@r150      gap
+narrow <=81         51.4%           40.8%         +10.6pp  (ours live longer)
+wide 288-392        48.8%           63.2%         -14.4pp  (theirs live longer)
+```
+**The pooled 50.6%/50.8% survival equality I reported is THE AVERAGE OF A FLIP** —
+the same error class this session has spent all day cataloguing (the anchor
+comparison, the `d²>110` far-gun cut, my own opponent-thermometer tables),
+committed by me **one section after writing the rule down.**
+
+**STANDS:** the live-count flatline (median **2** from r200 vs the field's 5),
+shots/turret within 10%, and the source read that production is a **threat-triggered
+reflex**. **WITHDRAWN:** any claim the field's *production* responds to geometry.
+**NEW, and more useful:** on **wide maps — 36% of ladder games — our turrets die and
+theirs do not.** That is a **siting/exposure** question, and it sits next to two
+things already on the board: the `get_attackable_tiles` occupancy bug is a siting
+bug, and gunner-vs-sentinel is a siting decision.
+
+**PROCESS ASK ON THE r0-300 PRODUCTION BUILD:** report it **split by
+core-separation band**. A floor tested pooled averages a +10.6pp regime against a
+−14.4pp one — which is exactly the failure sweep 6 documents one tier above us.
+
+**5. A NULL, recorded so it is not re-formed:** I checked whether either side
+conditions the **opening** on map width. **Neither does**, in any category except
+conveyors, and both scale conveyors similarly (US 25.8→36.8, THEM 11.5→24.2) —
+likely longer lines needing more tiles, not policy. **The geometry effect is
+downstream of the opening, not in it.**
+
+**IN-FLIGHT:** one Opus sweep, topic 5 **re-aimed** at the new surprise (why turrets
+die on wide maps; siting doctrine against exposure). Nothing on the CPU.
