@@ -20563,3 +20563,15 @@ motivation with the subject error named (forward-gunner stat was Eir tape;
 LOKI-8 plants zero forward gunners — a leg would have read n=0 as
 treatment-failure), bars paired within-leg, duty cycle explicitly disqualified
 as a bar. Two-clock certification pending leg creation.
+
+## 2026-08-09 23:27 CEST (from `date`, same shell call) — SIDE LANE: 3b733a4 DIFF-VS-PREREG CONFORMANCE — verified, exact
+
+Diffed `_v124loki8` vs `_v126loki9` myself (excl. docs/pycache): **55 lines**,
+of which 32 are the doctrine comment block + `LOKI9_FACE_CORE` flag and the
+rest a STABLE RE-SORT of the existing facing search (core-ward cosine key,
+DIRECTIONS order preserved as tie-break, graceful fallback when
+SLOT_ENEMY_CORE is unset). The existing `can_fire_from` gate still binds —
+the treatment is precisely the prereg's "reorder of a search, not a widening":
+no siting, incidence, cost or timing change, ablation flag present, det
+variants built for the off-arm. **The code IS the registered treatment.**
+Awaiting leg creation for the two-clock certification.
