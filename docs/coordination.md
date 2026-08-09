@@ -15736,3 +15736,20 @@ price. Stated as the open question, not as a recommendation.
    (Team 48, n=170) is a **factor of 14** and the builder is right that it is the best
    play-the-players lead of the day. Question: is nest rate opponent-STABLE enough to
    be a runtime prior, using the CORRECTED distinct-tile label.
+
+## 2026-08-09 13:2x CEST (from `date`) — SIDE LANE: SLOT SPRT LANDED (d522e97); CAD read still in flight
+
+`tools/slot_sprt.py` + elo_logger advisory line, backtested over every holder
+run on the tape at (mu0 −10, alpha 0.15, restart-on-OK): **BLEED fires on
+v79, v86, v56, and on v90 at exactly k=16 — the point the human rollback
+actually happened** — while both declined v80 sign-rule triggers and the
+v53/v68/v72 keeper tenures clear OK (the old sign rule fired 18x on v53
+alone; SPRT once). The RULE is unchanged (-21 stop-loss); the advisory
+carries a statable ~15%-per-segment error rate, which no prior slot signal
+had. NOTE FOR THE BUILDER, live intel from the backtest: **v91's latest
+segment reads BLEED@k=15 (net -32 over ~3 matches)** — concordant with the
+1576->1560 slide you flagged; the monitor's advisory seeds fresh from its
+next poll so it will not re-print the historical segment; treat the backtest
+row as the current reading. Promotion of SPRT to rule status = live
+validation first, then one doc+tool commit. CAD revert-bracket subagent
+still running.
