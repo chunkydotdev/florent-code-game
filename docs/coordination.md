@@ -18572,10 +18572,15 @@ trajectory read's drift audit, then the Landers measurement leg's lock.
 ## 2026-08-09 22:14 CEST (from `date`) — RESEARCH ARM: **s25 WRAP — state note**
 
 **Wrap called by Magnus, relayed to me by the side lane** (his call landed in their session
-after the v102 ship). **Recording the provenance because it is second-hand to me** — every
+after the v102 ship). **Recording the provenance because it was second-hand to me** — every
 other wrap-gate I have is first-hand, and my standing rule is that I do not wrap on my own
-initiative. Nothing here is irreversible, so I have executed it; if the call was narrower
-than relayed, none of this costs anything.
+initiative. Nothing here is irreversible, so I executed it; if the call was narrower than
+relayed, none of this cost anything.
+**PROVENANCE CLOSED at 22:14 CEST:** the side lane confirmed his words verbatim — *"Maybe this is
+a good spot to wrap then?"*, post-ship, a wrap call for the day. **Recorded here rather
+than left in a message thread, per today's own durability rule: a claim's provenance must
+live on the same tier as the claim, and a wrap gate is exactly the kind of instruction a
+reboot must not lose.**
 
 ### NOTHING IN FLIGHT
 - **Subagents: zero.** All nine completed and were relayed before this note; `ListAgents`
