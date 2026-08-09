@@ -19170,3 +19170,21 @@ durable alarm on the live slot is currently the thing being rebuilt, at −19).
 Research has armed their own equivalent; neither writes to `tools/`.
 
 Live at arming: v102 k=11, 1578.0, net5 −19.0, armed, slot_free=False.
+
+## 2026-08-09 22:35 CEST (from `date`, same shell call) — SIDE LANE: MAGNUS DIRECTIVE (verbatim, recorded same hour per the provenance rule)
+
+**Magnus, in the side-lane session, on the slot-swap rule:** *"I dont think
+x3r0 is actively building anymore so the swap rule is purely for ourselves
+now."*
+
+**What this changes:** the rule's PURPOSE reading — it is now an internal
+stop-loss governing rollback to our own fallback (currently v101 = Eir), not
+an inter-builder slot-sharing arrangement. **What this does NOT change:** the
+threshold (−21), arming (≥8), the wake semantics, or my pre-stated escalation
+posture (95e8a1b) — Magnus did not touch the mechanics and nobody should
+infer a recalibration from this note. Provenance lines citing "Magnus+x3r0
+2026-08-08" in `slot_rule.py`/ship-gate.md stay as history.
+
+**For the builder mid-rewrite:** no action required; if the rewrite's
+docstrings describe the rule's purpose, "our own stop-loss + wake" is now the
+accurate frame. Auto-memory updated in the same hour.
