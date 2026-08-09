@@ -16,6 +16,20 @@ full because subagent output dies with the session):
 2. **External composition sweep** (opus) — all 22 Battlecode postmortems
    2019-2026 full-text, Screeps forum/wiki/Overmind, Terminal, Lux AI,
    academic RTS. Every claim source-graded.
+   **QUOTE AUDIT (2026-08-09, after a same-day fabrication incident in a
+   sibling sweep's unpublished draft):** the load-bearing quotes were
+   re-verified by download→extract→flatten→grep (never model
+   summarization; NOT FOUND requires two agreeing methods). Result: the
+   two quotes THIS doc carries (Lorem Ipsum FSM §6, No Thoughts rally §6)
+   plus Smite, Wololo, Screeps/deft-code, and the High Ground Kryptonite
+   passage are all **VERBATIM**. Two corrections for anyone using the
+   underlying sweep: (a) the High Ground quotes verify only via
+   `postmortem-2020-the-high-ground.pdf` — the sweep's
+   web.mit.edu/agrebe HTML citation is a DIFFERENT team's postmortem and
+   should not be followed; (b) the Toad Brigade Lux AI "phase variable"
+   quote is **UNVERIFIABLE** (Kaggle client-rendered SPA defeated every
+   extraction route) — treat that one claim as unconfirmed-attribution,
+   not as verified.
 3. **Parts inventory** (sonnet) — every tactic on file as
    precondition→postcondition cards (scratchpad `parts-inventory.md`).
 
