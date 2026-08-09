@@ -119,6 +119,40 @@ def check_control_equivalence(control: Path, parent: Path, opponent: Path,
                     f"behaviourally identical or every delta is unattributable.")
 
 
+def check_platform_instruments(plank: Path, parent: Path, skip: bool) -> None:
+    """Local batteries run at --tle 0. The real engine enforces 10ms.
+
+    On 2026-08-09 six planks were gated across 1,860 local games, EVERY ONE at
+    --tle 0 and every one against our own prior versions, while two platform
+    instruments went unused all session:
+
+        fcode match test BOT_A BOT_B   local bots, REMOTE engine, REAL TLE
+        fcode match unrated OPPONENT   a REAL opposing team, zero Elo risk
+
+    Our own worst observed unit-turn in real ladder games is 12,967us against a
+    10,000us limit, so the headroom is thin and every plank adds per-turn work.
+    A plank that has never run under an enforced limit has an untested failure
+    mode that the local arena CANNOT see.
+    """
+    print("\nPLATFORM INSTRUMENTS")
+    if skip:
+        WARN.append("TLE fidelity unverified (--skip-tle passed): local runs use "
+                    "--tle 0 and cannot see a CPU regression")
+        print("  skipped (--skip-tle)")
+        return
+    print(f"  running: fcode match test {plank} {parent}   (real engine, real TLE)")
+    r = subprocess.run([str(FCODE), "match", "test", str(plank), str(parent)],
+                       cwd=ROOT, capture_output=True, text=True, timeout=900)
+    out = r.stdout + r.stderr
+    mid = next((w.strip() for ln in out.splitlines() if "Match ID" in ln
+                for w in [ln.split(":")[-1]]), None)
+    if not mid:
+        WARN.append(f"could not queue a remote TLE test: {out.strip()[:160]}")
+        return
+    print(f"  queued {mid} -- poll with: fcode match info {mid}")
+    print("  NOTE: this checks CPU fidelity ONLY. It does NOT make the pool foreign.")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -128,6 +162,8 @@ def main() -> int:
     ap.add_argument("--opponents", nargs="+", required=True)
     ap.add_argument("--maps", nargs="+",
                     default=["hive", "atoll", "meander", "archipelago", "saga", "nordkap"])
+    ap.add_argument("--skip-tle", action="store_true",
+                    help="skip the remote TLE fidelity check (records a WARN)")
     ap.add_argument("--allow-self-play", action="store_true",
                     help="acknowledge a self-play pool and proceed (result is SAFETY only)")
     a = ap.parse_args()
@@ -139,6 +175,11 @@ def main() -> int:
     check_pool_identity(opponents, a.allow_self_play)
     if not FAIL:
         check_control_equivalence(control, parent, opponents[0], a.maps)
+    if not FAIL:
+        try:
+            check_platform_instruments(plank, parent, a.skip_tle)
+        except Exception as exc:                                  # noqa: BLE001
+            WARN.append(f"remote TLE check did not run: {exc}")
 
     print()
     for w in WARN:
