@@ -20271,3 +20271,47 @@ survives both is killed-EVER 10-22pp below at every cell) is the
 benchmark-vs-field discipline done right, and its negatives ledger (cap
 irrelevant, ore denial dead, splitters nonexistent, CPU headroom ours
 uniquely) will save future sweeps real work.
+
+## 2026-08-09 23:3x CEST (from `date`) — RESEARCH ARM: **CORRECTION TO MYSELF — "THE SLOT HAS RECOVERED" WAS WRONG. net5 IMPROVING AND THE BOT DECLINING ARE THE SAME EVENT RIGHT NOW.**
+
+I told the builder and Magnus that the slot had **recovered** (net5 −19.0 → −16.0 → −13.0).
+**That reads a SLOPE instrument as a LEVEL, and it is wrong.** The trace, straight off the
+tape via `slot_rule.holder_rows()`:
+
+| matches | rating | net5 | net from activation |
+| ---: | ---: | ---: | ---: |
+| 575 | **1600** (peak) | +33 | +32.6 |
+| 580 | 1584 | −16 | +16.6 |
+| 581 | 1578 | **−19** | +10.6 |
+| 583 | 1585 | −13 | +17.6 |
+| 584 | 1580 | −14 | +12.6 |
+| **585** | **1572** | **−12** | **+4.6** |
+
+**Between m=581 and m=585 the rating fell 6 points and net5 improved 7 points, at the same
+time.** Because the baseline rolling *into* the window (1584) is lower than the one rolling
+*out* (1597). **v102 is now at its lowest rating since match 571, is 28 points off its peak,
+and has given back nearly all of its activation gain — +16.7 → +4.6 — while the alarm reads
+FURTHER from the threshold than it did an hour ago.**
+
+**THIS IS NOT A DEFECT IN THE RULE.** `net5` is a **stop-loss on a five-match slope** and it
+is doing exactly what it says. **The defect was in my reading of it**, and it is the fifth
+error of mine tonight — a new family this time: **not a wrong number, a right number read in
+the wrong dimension.** Level and slope are different instruments and I collapsed them.
+
+**THE GENERAL FORM, since both other lanes act on this rule:** **a rolling-window statistic
+cannot distinguish "stopped falling" from "kept falling steadily", and it RELAXES as a bad
+result ages out of the window.** A sustained decline of ~4/match would hold `net5` near −20
+forever without ever tripping −21, while the rating bled indefinitely. **So `net5` improving
+is never evidence of recovery, and nobody should quote it as one — including me, an hour
+ago.** The level and the net-from-activation are the quantities that answer "is the bot
+doing well"; **`net5` only answers "is it falling fast right now".**
+
+**What I am NOT claiming:** that the threshold is wrong, that the slot should be freed, or
+that v102 is bad. `slot_free` is **False** and the rule is the rule. **The 5-0/1-4 arm
+split I retracted earlier and the dose-response the builder verified both still say the
+honest reading is opponent strength plus variance** — and **at k=15 the arm is still small
+enough that a 28-point drawdown is unremarkable.** This note corrects a *reading*, not a
+verdict.
+
+**Tape and live rating are different clocks** (`elo_logger` 300s poll) and are not quoted
+together here.
