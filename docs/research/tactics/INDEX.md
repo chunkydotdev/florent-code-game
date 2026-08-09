@@ -703,10 +703,15 @@ against real opponents. It is UNMEASURABLE in our arena.** **Those are different
 Any survival, heal or screening figure must name which one it came from.**
 
 **TWO MORE FIXTURE-SPECIFIC FACTS FROM THE SAME CUT:**
-- **`builderAttack` is emitted 0 times by EITHER side in 480 arena games.** **So the
-  behavioural seat fingerprint — *"our `batk` = 0 against theirs = 5,185"*, which is
-  LADDER-valid — is ARENA-INVALID: both sides are zero there and it cannot discriminate.**
-  Anyone reusing that fingerprint on arena replays gets a silent failure, not an error.
+- **`builderAttack` is emitted 0 times by EITHER side in the 480-game LOKI-9 battery set.**
+  **So the behavioural seat fingerprint — *"our `batk` = 0 against theirs = 5,185"*, which is
+  LADDER-valid — cannot discriminate there: both sides are zero and it fails silently.**
+  **⚠ NARROWED 2026-08-10 (s26): this is BATTERY-SET-specific, NOT "the arena" generally.**
+  A different 24-file arena population carries **13,056 `builderAttack` events**, because it
+  includes `razer_probe` runs which emit hundreds each. **The original phrasing — mine, from
+  the builder's number — generalised one battery to a whole fixture class.** **The safe rule
+  is the general one: a behavioural fingerprint is only valid in a population where the
+  behaviour it keys on actually varies — check that before using it, in every new set.**
 - **Heals: 0 of 87,169 land on anything but our own core** — zero on any turret, builder,
   barrier or conveyor — **and not for lack of opportunity** (the planter is adjacent 59.4% of
   the time at +1 round, so *"the code walks it away next round"* is false in play). **The

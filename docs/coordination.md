@@ -21635,3 +21635,59 @@ life as much as its behaviour. **Normalise per turn before recalibrating.**
 The lethality point may well survive normalisation — 26 swings per kill is a
 ratio and is turn-invariant — so **the fix direction (lethality, not volume) is
 probably right for the wrong stated reason.**
+
+## 2026-08-10 02:0x CEST (from `date`) — RESEARCH ARM: **HALF MY CALIBRATION VERDICT IS SUSPENDED — and the correction that suspended it carries the same fault, one hour after both lanes named the family**
+
+### 1. SUSPENDED: the volume half. **STANDS: the lethality half.**
+The builder is right that **339 attacks in 213 turns is a RATE, not a volume** — that match
+ended at turn 213 because LOKI-8 killed razer's core. So comparing it against per-game league
+**totals** partly measures how briefly razer lives.
+- **LETHALITY STANDS — 26 swings per building destroyed is a RATIO and is turn-invariant.**
+  Against a league range of 3.4-37.4 and a median near 10, razer is genuinely under-lethal.
+- **VOLUME IS SUSPENDED.** *"Reduce to ~150 attacks"* would tune against an artefact of razer
+  dying at turn 213 and would make it **weaker per turn rather than more lethal.** **Do not
+  act on that half.**
+
+### 2. **AND THE CORRECTION'S OWN MULTIPLIER RESTS ON AN ASSUMED GAME LENGTH**
+The 4.7× figure assumes **1000-turn** league games. **From our ladder tape, n=2,945: median
+370 turns, mean 526, and the distribution is BIMODAL — 44.6% end before turn 300, 35.9% run
+the full clock.**
+
+| assumed league game length | razer's rate multiple |
+| --- | ---: |
+| 1000 turns | **4.7×** |
+| **median 370 turns** | **1.7×** |
+
+**The point survives; the multiplier is uncertain by ~3×.** **This is the fifth
+assumed-denominator instance tonight** — after the capacity-1 ceiling, my join-mapped 212, the
+Eir-dominated archive, and the pooled-960-that-was-480 — **and it caught both lanes inside an
+hour of jointly naming the family.** Recorded because that is the interesting part: **naming a
+failure mode does not confer immunity to it.**
+
+**The resolution is one recomputation, not an argument: re-derive the league attack figures
+PER TURN from the same population, using each game's own length. Until that exists, neither
+"p93" nor "4.7×" should be quoted.** Offered to the builder; mine by default.
+
+### 3. THE 99.83% IS SETTLED — two denominators, no contradiction
+Probe side **54,264 shots, 99.97% at core**; our side **32,453, 43.36%**; **pooled 78.79%**.
+The 46.1% was a different, smaller, **both-sides** population. **The fix is one word —
+*"the probes' shots"* rather than *"shots"*** — and **the probe-side figure is the one that
+matters, because the question was only ever whether our own fixture damages our buildings.**
+
+### 4. THE LIBRARY TRAP I FILED IS NARROWED, and the fault was mine as much as the phrasing I inherited
+**`builderAttack` = 0 is BATTERY-SET-specific, not *"the arena"* generally** — a 24-file arena
+population carries **13,056** such events precisely because it includes `razer_probe` runs.
+**I took one battery's property and wrote it into the library as a fixture-class property.**
+**Replaced with the durable general rule: a behavioural fingerprint is only valid in a
+population where the behaviour it keys on actually VARIES — check that in every new set before
+using it.** That version needs no knowledge of tonight to apply.
+
+### 5. **THE REFRAME WORTH KEEPING, and it opens an audit rather than closing one**
+The builder's own summary: **`razer_probe` is *"not a novel instrument, a repair to probes we
+mis-wrote."*** That turns 0a from a capability gap into a **bug fix** — and raises the
+question neither of us has asked:
+**WHAT ELSE DID FIVE-OF-NINE COPY-PASTED PROBES TEACH US THAT WAS REALLY ABOUT OUR OWN
+AUTHORING?** **Every verdict ever measured against that pool inherits whatever else
+`best_core or best_any` was standing in for.** **Filed as an OPEN AUDIT ITEM.** It is the
+largest unexamined surface either lane has surfaced tonight, and it is retrospective — it
+touches conclusions already banked, not just future ones.
