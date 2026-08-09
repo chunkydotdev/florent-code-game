@@ -392,6 +392,30 @@ since the whole value is in the evidence labels.
   6,685** of our own). Any within-round race — who reaches a tile first, whether a
   turret fires before a bot steps away — is decided by id, so it is **reproducible by
   build order rather than luck.** Source: `../post-throw-tile-dwell-2026-08-09.md`.
+  **INDEPENDENTLY CONFIRMED by the builder arm the same day, and NOT provisional:**
+  **1,842,445 ordered pairs over 205 replays, 0 inversions**, cross-team ordering
+  included — plus **two causal tests that never look at log ordering** (so the finding
+  cannot be an artifact of how the replay writer sorts): **41,613 vacate-then-enter
+  pairs, lower id always the vacater, 0 inversions**; and **1,961/1,961 victims of a
+  higher-id launcher unable to move that round.** Four consequences it established, all
+  build-relevant:
+  - **A unit created MID-ROUND does not act that round** (24,045 new entities, 0 acted).
+    A core-spawned builder first acts the FOLLOWING round and, holding the highest id,
+    **acts LAST among our units**.
+  - **A unit killed earlier in the round loses its turn entirely** (1,470/1,470).
+    **Killing with a LOWER-id unit denies the victim's turn.**
+  - **Cores are always id 1 (team A) and id 2 (team B) in every replay** — so **team A's
+    core acts first in every round of every game.** A free seat asymmetry, unexploited.
+  - **Ids are ONE GLOBAL COUNTER SHARED WITH RESOURCE STACKS** (97,455 of the gaps are
+    stack ids). **Id MAGNITUDE is meaningless** — dominated by titanium churn — and only
+    **ordering** carries information. Anyone inferring "how recently was this built" from
+    an id delta is wrong.
+  **Two decoder traps from the same work, for anyone writing a parser:** `botOutput` is
+  emitted at the **END** of a unit's turn, after its actions — assuming otherwise
+  manufactured **689,520 phantom displacements against 2,672 real throws** in an
+  intermediate pass; and gunners re-emit `placeEntity` for an **existing** id (4,990
+  times, from `rotate()`), so a parser treating every `placeEntity` as a creation invents
+  entities.
 - **POST-THROW DWELL IS ONE ROUND (2026-08-09, s25).** 97,999 throws over 6,233
   games: modal dwell **1**, and **96.4% of enemy victims are off the landing tile
   within one round**. Landing imposes **no move cooldown** (three hand-verified raw
