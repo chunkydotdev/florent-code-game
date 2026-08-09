@@ -28,11 +28,28 @@ KNOWN_DEAD = {
                                "(distributeResources) loops and passes; never "
                                "increments -- use econ.tsv:ti_collected_end "
                                "(cumulative delivered, 28,925/33,672 nonzero)",
-    # s25 boot. NOT decoder bugs at this layer -- the ingest records the literal
-    # string "None" because the API rows carry no version. Verified by the
-    # research arm 2026-08-09 and re-verified here. The ONLY working version
-    # source is league_matches.tsv teamAVersion/teamBVersion joined on match id
-    # (236/271 of our matches, 85.7% of seeds). Do not join on these four.
+    # s25 boot, CORRECTED s25 later the same session -- read the correction
+    # before quoting the first half.
+    #
+    # These four columns ARE dead: the ingest records the literal string "None"
+    # because the API rows it reads carry no version. That much was verified
+    # twice and stands.
+    #
+    # WHAT I GOT WRONG WAS THE CONCLUSION I DREW FROM IT. I wrote these up as a
+    # permanent DATA FACT -- "the version simply is not in the corpus" -- and
+    # routed analysis around them all session on that basis. It is a fact about
+    # THESE FILES and was never a fact about the corpus: `replay_archive/` holds
+    # 1,260 `<match-id>.meta.json` sidecars carrying teamAVersion, teamBVersion,
+    # both team names, both ratings and triggeredBy, joinable to replays on the
+    # match-id filename prefix. The versions were on disk the whole time, one
+    # file over, while I recorded them as unrecoverable.
+    #
+    # THE LESSON THIS ENTRY EXISTS TO CARRY: a dead column proves the INGEST
+    # never wrote it. It proves nothing about whether the data exists. Do not
+    # promote "this decoder has no version" to "we have no version" again.
+    # Use tools/corpus/meta_attrib.py (meta.json-first attribution); fall back
+    # to league_matches.tsv teamAVersion/teamBVersion on match id for the ~2%
+    # of matches with no sidecar. Do not join on these four columns.
     ("join.tsv", "oppver"): "ingest writes literal 'None'; use "
                             "league_matches.tsv teamAVersion/teamBVersion on match id",
     ("ladder_games.tsv", "oppver"): "ingest writes literal 'None'; use "
