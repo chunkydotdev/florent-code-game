@@ -21321,3 +21321,78 @@ crossed and that must be stated in the deliverable rather than assumed away.**
 **Model:** `opus`. **Read-only**; `bots/`, `tools/`, the arena, the prereg untouched.
 **Version tag:** live **v102 = LOKI-8**, tape k=21 / m=591 / **1596.0**, net from activation
 **+28.6**.
+
+## 2026-08-10 01:2x CEST (from `date`) — RESEARCH ARM: **THE 5,000 HAS A MECHANICAL CAUSE AND IT IS NOT WHERE I POINTED. HARVESTERS ARE BLOCKED, NOT IDLE — 41% of our emission never leaves the harvester, and fixing it flips 59.7% of our r1000 losses.**
+
+Deliverable: **`docs/research/stalled-stack-cut-2026-08-09.md`**. **8,399 replays / 16,798
+team-sides decoded.**
+
+### 1. MY DISCRIMINATOR ANSWERED — AND ITS SECOND BRANCH WAS MIS-SPECIFIED
+**Our stall rate matches the field.** Carriers whose max dwell ever hit 32 rounds: **20.71%
+(us, n=576 team-sides) vs 17.66% (third-party, n=2,905, meta.json-attributed)** — ratio
+**1.17**; our per-team median harvester-stall sits at the **52nd percentile of 63 field
+teams**. Mildly worse, and **it does not matter, because of the magnitude:** median titanium
+stranded on a carrier at r1000 in our losses is **150 Ti against a 5,780 Ti median margin —
+2.6%.** Zero stranded stacks flips **8/273 losses (2.9%)**.
+
+**⇒ The misrouted-line finding is REAL and SMALL — worth ~279 Ti/game.** I ranked it above the
+economy theory an hour ago. **That ranking was wrong.**
+
+**And the agent is right that my discriminator's second branch was badly written.** I wrote
+*"matches the field → the shortfall is genuinely economic"*, which quietly equates **universal**
+with **non-mechanical**. **This mechanism is universal, mechanical, and fixable.** The correct
+branch is *"a SHARED STRUCTURAL CONSTRAINT"* — still decision-grade, **not** something to file
+under doctrine. **A field median is not a floor.**
+
+### 2. THE ACTUAL MECHANISM IS ONE PIPE SEGMENT UPSTREAM — **HARVESTERS ARE BLOCKED, NOT IDLE**
+**41% of our theoretical emission — ~7,800 Ti/game — never leaves the harvester.**
+**Proven with its control, which is the part I care about:** of **731,023 missed 4-round
+emission slots, 94.1% had the harvester's output tile already occupied at r−1, against 24.7%
+on slots it HIT — a +69.4pp gap.** Field: **98.2% vs 24.5%. Same mechanism, universal.**
+
+**In our 273 r1000 titanium losses we build the same 10 harvesters onto the same 3 core-entry
+tiles as the winner and get 0.500 stacks/round to their 1.250.** **Fixing harvester
+back-pressure flips 163/273 = 59.7% of those losses**, and **our median in-harvester loss
+(6,210 Ti) alone exceeds the entire losing margin.**
+
+### 3. A NEW HARD ENGINE CEILING, NEVER MEASURED BEFORE
+**1 stack per core-entry tile per round — 0/3,582 violations, max exactly 1.000.** And
+**everyone, us and the field, runs those tiles at 25% utilisation.** The headline consequence:
+**Viktor5776 collects more titanium than us from 34 conveyors against our 116.** We are
+building **3.4× the network for less throughput** — which is the economic version of the
+same lesson this line keeps learning: **the gain is a removal.**
+
+### 4. FIVE CORRECTIONS TO MY BRIEF, AND THE FIRST IS THE ONE THAT MATTERS
+1. **I pointed at the wrong end of the pipe.** The diagonal-termination failure is real and
+   present and **28× smaller** than the harvester-output blockage, which is **equally silent**.
+2. **My discriminator's second branch was mis-specified** (above).
+3. **My emitted-side formula would have been wrong** — `harvester count × rounds alive ÷ 4 × 10`
+   ignores that harvester count changes constantly; it needs per-harvester build/death rounds
+   plus the "+1 on build" term. **And it was unnecessary: stack births are directly observable**
+   (first appearance of a resource id, `from` tile = the harvester, 100% archive-wide).
+4. **"Two orders of magnitude apart" undersold the healthy tail.** 87% of residencies are 1
+   round, **but 0.8% run ≥17 rounds in BOTH populations** — so a naive ≥N threshold flags a lot
+   of healthy traffic.
+5. **MY LOSS POPULATION DOES NOT REPRODUCE, AND MINE IS THE NARROW ONE.** I published **212
+   losses / 5,035 median margin**; the agent gets **273 / 5,780** from 577 such games.
+   **Checked: `join.tsv` maps only 1,675 files — those with a matched ladder game — and holds
+   just 484 r1000 `titanium_collected` rows.** My figures were a **join-mapped subset labelled
+   as if it were the population.** **The agent's numbers supersede mine.** No conclusion moves,
+   but **"n=212" was not the number of such games, it was the number I could see**, and I did
+   not say so.
+
+### 5. AND IT SETTLES TRAP 8's OPEN QUESTION
+**`titanium_collected` counts core deliveries only, passive income excluded — `deliveries × 10
+== titaniumCollected` in 16,798/16,798 team-sides.** (Their decoder's deliveries, not
+`econ.tsv`'s dead column, which remains dead.) **That independently confirms the builder's
+two engine probes from a third path.**
+
+### THE ONE THING NOT MEASURED, AND IT IS WHAT CONVERTS THIS INTO A BUILD CHANGE
+**Which downstream tile is actually binding.** The harvester's output conveyor is proven full;
+**core entry is only 25% utilised — so the constraint is INSIDE the network.** Locating it
+needs one more decoder: **walk each blocked conveyor's output chain to the first non-moving
+tile.** **That is the next cut and it is the highest-value thing left in my lane.**
+
+**Instruments:** two guards pass 16,798/16,798 **and both demonstrably fail under injected
+corruption** (frozen carrier tiles: stalls ×3.2, ti_ok 60/60 → 54/60). **Seat branch tested by
+swapping — the answer moves materially.** **Fixture: LADDER corpus throughout.**
