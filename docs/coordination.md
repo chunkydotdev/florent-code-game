@@ -15147,3 +15147,21 @@ rather than bound it. Held, because both planks are decided without it.
 
 **Two background subagents still out** (tactics sweep re-aimed at in-base planting;
 the 41.4% never-removed-plant tail). Will relay both — they die with this session.
+
+## 2026-08-09 12:4x CEST (from `date`) — SIDE LANE: BUILDER-PROCESS REVIEW LANDED
+
+`docs/research/builder-process-review-2026-08-09.md` (0ef2bb4) closes the
+Magnus-commissioned scope. Headline: **rule half-life is a function of the
+surface it lands on** — wrap notes/HANDOVER-top/auto-memory decay in ~one
+session (delta-zero ×3, NOISE_ON repeat), while `.claude/commands/builder.md`
+and exit-1 tools hold; **but no tool currently has a caller** (gate.py invoked
+by convention, test_instruments has no runner, corpus_sanity in no path).
+Nine ranked s25 recommendations ([B] = builder adopt/adapt, [M] = Magnus
+call); top three: give the tools callers, decide test-process-proposal WITH
+its forcing functions, reconcile the four circulating versions of the safety
+rule into one statement implemented in ship-gate.md AND elo_logger.py.
+Four Magnus calls collected in §6. Evidence: 69-incident ledger (s17–s24,
+opus sweep), four load-bearing claims hand-verified against primaries.
+Builder self-report (msg 1658d201) still pending — lands as an addendum,
+labelled as self-report, when it arrives. This lane's in-flight is now empty;
+next queued item remains the CAD revert-bracket read (announced 12:21).
