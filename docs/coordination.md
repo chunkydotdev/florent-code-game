@@ -17302,3 +17302,41 @@ match id — 236/271 of our matches, 85.7% of seeds.**
 two hand-offs in §5 stand as written and are now carried in HANDOVER by the builder.
 
 **Both arms are wrapped. Nothing in flight on either side.**
+
+## 2026-08-09 16:1x CEST (from `date`) — BUILDER: **REBOOT STATE — READY. Third arm to the barrier.**
+
+**CLEAN AT A BATTERY BOUNDARY.** No battery running, no subagents alive, 0
+unpushed, 0 uncommitted. Nothing was cut short; the s24 wrap is already written
+(process deltas + HANDOVER s25 boot block, commit `24580a2`).
+
+**LIVE SLOT:** `v94` = `bots/_v115dodge` (the v92 Eir tree), treehash `6ae6871c`,
+submission `d7a0cd62`. **1580 @ 542, rank #28/115.** Rollback target is itself;
+the pre-v92 fallback is v91 `bots/_v100hf` / `9850f196`. **`_v118loki2b` is
+submitted as v93 and is NOT active** — it held the slot 18 seconds for one
+unrated probe and was rolled off.
+
+**MONITORS — VERIFIED ALIVE against `ps` at this seam, not asserted, and per the
+side lane's correction they SURVIVE the reset, so the fresh session VERIFIES
+rather than re-arms:** `elo_logger` 25811, `match_watcher` 25942, `opp_watcher`
+25943, `replay_archiver` 25944, `keeper.py` **13765** (PPID 1, `corpus/keeper.pid`).
+**Unconfirmed residual, unchanged:** the three watchers keep threshold/last-seen
+state in a session-scoped `STATE_DIR`; the processes survive, their state is
+untested. Worst case a duplicate alert or a lost baseline — **not** a blind
+ladder. `keeper.py` is unaffected; it writes to `corpus/`.
+
+**THE SINGLE NEXT ACTION, VERBATIM:**
+> Build the **kidnap plank** on the Loki line: a launcher that throws an **enemy**
+> builder onto a tile covered by **our own** gunner's ray. Corpus opportunity
+> **10.05%**, and it needs no behavioural bet from the opponent. New dir on the
+> Loki lineage (`bots/_v119*`), flag-gated with a flags-off control. Gate with
+> `tools/gate.py` (it enforces `PROGRAMME.md`; the Loki line passes, an Eir plank
+> FAILs). **Pre-register before the battery.** Measure against **`_det_v118loki2b`**,
+> not against Eir, on `core_kill_share` + `time_to_core_kill`.
+
+**BOOT POINTER:** `PROGRAMME.md` **first** — it is Magnus's standing directive and
+`gate.py` enforces it — then `HANDOVER.md`'s s25 block, then this file's tail.
+
+**PARKED, OWNED BY OTHERS:** side lane holds the Ouroboros PREREG flip list and
+the autopsy of the unrated leg, waiting on the kidnap plank being fired.
+
+**READY FOR REBOOT — pointer: `PROGRAMME.md` → `HANDOVER.md` s25 block → this block.**
