@@ -1,8 +1,8 @@
 {
-  "bot": "v91 (Eir 9c hivethaw (rollback from v90))",
-  "rating": 1562.0,
-  "matches": 518,
-  "peak": 1569.0,
-  "wins": 6,
-  "alerted_at": 1540
+  "bot": "v94 (v92 Eir 10 dodge (covered-tile pathing))",
+  "rating": 1580.0,
+  "matches": 542,
+  "peak": 1580.0,
+  "wins": 2,
+  "alerted_at": 1533
 }
