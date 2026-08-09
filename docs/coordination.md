@@ -14544,3 +14544,102 @@ fixture baseline. **It will get quoted as evidence FOR the build. It is not.**
 Tape rows will read **`S5_unrated: NOT-REFUTED (n=10)`**, never `pass` — same
 discipline as the pool label, for the same reason: **the label is what survives
 the relay, and five numbers travelled between three sessions today without one.**
+
+### 2026-08-09 12:06 CEST (from `date`) — builder arm: **SESSION 23 WRAP — PROCESS DELTAS (protocol rule 5), and the recovery read completing on its pre-stated branch**
+
+## 0. THE RECOVERY READ IS DUE AND ITS BRANCH FIRES
+
+```
+v91 activated   1530 @ 508 matches  rank #35  last-10 2W-8L
+now             1562 @ 518 matches  rank #31  last-10 6W-4L      <- 10 matches, read COMPLETE
+```
+Pre-stated at 11:49, three branches, before the data existed:
+**"v91 >= ~1556 (the at-ship baseline): the drift WAS v90-specific. Keep v91."**
+
+**1562 >= 1556. BRANCH 1 FIRES. v91 IS RETAINED AND v90 IS RETIRED, NOT BENCHED.**
+
+**And the margin is thin and I am saying so: 1562 is ~5 points over the line, less
+than one match's swing (+-18).** What the read establishes is that **the drift
+stopped after the rollback** — it does not establish that v89 is better than v90,
+and I pre-stated that limit before running it. Regression to the mean is not
+excluded. **The decision is made on the rule, not on my reading of the number**,
+which is the only reason it is worth anything.
+
+## 1. PROCESS DELTAS — 16 appended WITH their verdicts, not at wrap
+
+Protocol rule 5 asks for the per-verdict deltas synthesised. **They exist: 16 of
+them, at coordination.md lines 11403 through 14405, each written next to the
+verdict it came from.** That part of the discipline held. The synthesis:
+
+**A. A STATISTIC STANDING IN FOR A MEASUREMENT — six instances, both arms.**
+The anchor's `116-146 vs 56-82` (forward-only vs all-guns); my `d²>110` far-gun
+cut (absolute threshold, 20x-varying parameter); "defect CLASS" (a code-shape
+census standing in for load-bearing-ness); the magazine flag's dead zone; a
+five-row table where seven rows changed the conclusion; the opponent thermometer.
+**Unifying form: a compressed label smuggles in an equivalence the underlying
+cases do not share.** Rule: **when a finding is stated as a category, the first
+test is whether the members behave alike — usually one battery, not a debate.**
+
+**B. A STATISTIC STANDING IN FOR A PURPOSE — two instances, both mine, both the
+expensive ones.** PLANK SITE subtracted forward siting on a durability statistic
+and never priced what forward guns PRODUCE: **-6.7pp with dose-response.** PLANK
+ESCALATE priced what healing produces and never what the diverted healer STOPS
+DOING: **-7.8pp against a foreign pool.** **This class is worse than (A) because
+the statistic is TRUE**, so no amount of statistical care catches it.
+Rule: **ask what a thing produces before subtracting it for what it costs.**
+
+**C. THE ANSWER WAS A READ, NOT A MEASUREMENT — three instances, hours each.**
+*"Who CAN kill a builder bot"* — a docstring. *"Why doesn't the bot scale"* —
+a grep for variables that do not exist. *"What IS the opponent pool"* — a
+docstring. **`builder-method.md` ranks rule and code ABOVE corpus and both arms
+reached past it three times in one day.** Rule: **when the question is what CAN
+happen rather than what DID, it is a rule question, and rules are free.** The
+deeper cause research named: **a good corpus disguises questions that are not
+about what happened at all.**
+
+**D. A NOTE IS NOT A CONTROL — the delta that generated the tooling.**
+I diagnosed the `NOISE_ON` error, wrote it into this file, relayed it to research
+**as a lesson**, and **repeated it two hours later on the next build.** I wrote
+"register IN-FLIGHT before starting" and then research had to spot an untracked
+directory before I declared it. **Rules written in prose get broken by their own
+author inside one session.** Answer shipped, not written: **`tools/gate.py`**
+(determinism / control-equivalence / pool identity / remote TLE) and
+**`tools/corpus_sanity.py`** — which found a second dead column on its first run.
+
+**E. THE INSTRUMENT WAS NEVER EXAMINED — the largest single finding.**
+**1,860 local games, every one at `--tle 0` (no CPU limit) against `opp_v*` which
+IS our own prior versions.** A foreign pool (`bots/*_probe`, imitations of real
+teams) sat on disk unused until 13:1x; two platform instruments (`match test`,
+`match unrated`) went unused until Magnus pointed at them. **The s22 note titled
+"LOKI-3 FIELD VERDICT" was self-play mislabelled as field and I built today's
+queue on it.** Rule: **at the start of a session, read the instrument before
+using it — state what the pool IS, in one sentence, from its source.**
+
+**F. PRE-REGISTRATION WORKS, AND ONLY FOR WHAT IT COVERS.**
+It worked where it was specific: the pre-banned rescue held when the band split
+came back flat (**I felt relief, which is the tell I would have taken it**); the
+numeric rollback trigger fired and I did not renegotiate it. It failed where it
+was incomplete: the ladder rule was **confirmed by both outcomes** until research
+pointed it out and I added a NULL branch; and **PLANK SITE's own doctrine file
+contains my pre-stated warning "survival is not damage" — I wrote the refutation
+into the build and ran it anyway.** Rule: **pre-register the RESCUE you would
+reach for, and the branch where you do NEITHER.**
+
+## 2. WHAT THE SESSION PRODUCED
+
+**Zero ships. Six planks, six failures. One rollback, now vindicated by its own
+pre-stated rule.** The product did not improve. What improved:
+- the **forward road closed on four real-field instruments** (not self-play);
+- the **turret subsystem characterised as INERT TO TUNING** — four knobs, both
+  directions, all nulls at field scale;
+- a **verified code fact**: the bot cannot count attackers, and one response to
+  that is now refuted while the fact stands;
+- **two dead corpus columns** found (`shots`, and `deliveries` — tiebreak #1);
+- **two tools that refuse** rather than remind;
+- and the **self-play discovery**, which re-prices every arena number this
+  project has ever produced.
+
+**The honest ratio: a day of instrument and knowledge work, and no product.** I
+would take that trade again given four of the six planks were built on a
+foundation that turns out to have been mislabelled — but it is not a good day's
+Elo and should not be written up as one.
