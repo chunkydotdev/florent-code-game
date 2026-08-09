@@ -123,3 +123,52 @@ and a 5-0 sweep of Orizon.
 **Loki leads on both bands, and its advantage NARROWS on long maps** (+46.7pp
 short, +20.0pp long). Consistent with the line's mechanism being about
 ARRIVAL: the longer the walk, the less a returned round is worth.
+
+---
+
+## UPWARD BAND — Magnus: *"Should we collect some data vs 1600+ opponents too?"*
+
+**The challenge was correct and it was the sharpest one aimed at these numbers.**
+Every figure above was earned against teams at or below us (live, from our own
+Elo log: Ouroboros 1542, KCM 1550, Lunds 1576, CAD 1603, us 1604) — plus Orizon
+at 1396. **Loki had zero upward data, so "86.7%" was consistent with harvesting
+weak collars.**
+
+**LOKI-8 and v94 Eir, MATCHED — same opponent, same five maps, n=5 per cell:**
+
+| opponent | Elo vs us | v94 Eir | **LOKI-8** |
+| --- | ---: | ---: | ---: |
+| Ouroboros | −62 | 1/5 | **4/5** |
+| CtrlAltDefeat | ~0 | 2/5 | **4/5** |
+| Lunds Stallions | −28 | 2/5 | **3/5** |
+| **Big O** | **+200** | 2/5 | **3/5** |
+| **Jython** | **+337** | 0/5 | **1/5** |
+| **pooled** | | **7/25 = 28.0%** | **15/25 = 60.0%** |
+
+**Fisher two-sided p = 0.045. LOKI-8 is ahead in 5 of 5 cells — no ties, no
+reversals — across a 540-Elo span.** The sign test alone is p = 0.0625.
+
+**⇒ The advantage is NOT confined to weaker opponents.** It survives at +200 and
+at +337, where both bots are losing overall: Eir goes 0-5 against Jython and
+Loki goes 1-4. **Loki does not beat stronger teams — it dies less totally, and
+takes a core with it.**
+
+**AND THE DOSE-RESPONSE IS REAL, which is the honest limit:**
+
+| band | LOKI-8 core-kill share |
+| --- | --- |
+| bracket (−62 … 0 Elo) | 15/20 = **75%** |
+| +200 Elo | 3/5 = **60%** |
+| +337 Elo | 1/5 = **20%** |
+
+**The kill advantage decays with opponent strength.** It does not vanish, but
+anyone quoting 75–86% should say which band it came from. **This is now the
+number I would carry into a ship decision, not the short-map 86.7%.**
+
+## LOKI-8 (raiders exempt from the home heal + melee recall) — VERDICT
+
+Across the bracket four: **15-5, 15/20 = 75%** core-kill share, matching LOKI-7
+on the two shared cells and extending cleanly to two opponents LOKI-7 never
+played. **It is the best-tested arm on the line and the one I would ship** —
+but LOKI-7 vs LOKI-8 has never been run head to head on the same fixture, and
+**at these n they are indistinguishable.** I am not claiming 8 > 7.
