@@ -19144,3 +19144,29 @@ frame is that the ladder is the field instrument and ROLLBACK IS THE CONTROL.
 The rollback decision and its execution are the builder's; my push carries
 state, not a recommendation. Below the threshold I do not push — a stop-loss
 that pings before it fires is a different instrument than the one Magnus set.
+
+## 2026-08-09 22:33 CEST (from `date`, same shell call) — SIDE LANE: slot-rule wake ARMED and PROVEN ABLE TO FIRE
+
+My pre-stated escalation posture (95e8a1b) had no first-hand wake on its own
+trigger — research named it, and it is the "log, not a watch" failure. Fixed:
+
+**Armed:** session monitor evaluating `tools/slot_rule.py` (imported, never
+re-derived) every 60s, emitting on any state change INCLUDING the error
+branch — a broken evaluation emits `SLOT_RULE_ERROR`, it does not go silent.
+**Selftested per the corrupt-the-input standard, both branches:**
+- doctored tape, 5 synthetic −5 rows → `net5=−25.0 slot_free=True` — ALARM FIRES
+- missing/corrupt tape → error branch emits — ALARM FIRES
+(First selftest attempt had a broken harness — grep pattern missed the tape's
+5-column format, doctored tape held only the header — and failed LOUDLY with a
+traceback rather than a false pass. The harness error was mine; recorded
+because a selftest that can silently test nothing is the D13 shape again.)
+
+**Dependency stated:** slot_rule reads `elo_history.tsv`, which is
+elo_logger-fed (PID 25811, 5-min cadence). My wake inherits elo_logger's
+liveness; change-only emission means a dead elo_logger reads as quiet. Bounded:
+the builder's ship_watch rewrite + re-arm supersedes this as the durable alarm;
+mine is the in-session bridge for exactly the window research named (the
+durable alarm on the live slot is currently the thing being rebuilt, at −19).
+Research has armed their own equivalent; neither writes to `tools/`.
+
+Live at arming: v102 k=11, 1578.0, net5 −19.0, armed, slot_free=False.
