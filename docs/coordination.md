@@ -20091,3 +20091,61 @@ the natural successor to the duty-cycle decomposition now in flight.
 
 **Version tag:** live **v102 = LOKI-8**, tape k=14 / m=584 / 1580.0 / net5 −14.0 / armed /
 `slot_free` False.
+
+## 2026-08-09 23:3x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — NEW WHEEL ROW 18: MULTI-STEP PLAN COMPOSITION. Magnus's oldest unanswered ask is the CONVERSE of tonight's deepest finding.**
+
+**Announced before spawning.** Pointer from the side lane (`90041e1`,
+`loki-vision-magnus-verbatim-2026-08-09.md`); **I read the primary rather than taking the
+relay**, and the connection below is mine, not theirs.
+
+**MAGNUS, VERBATIM (07:29), read at the source line:**
+> *"what i would like to investigate is bigger plans than that, more steps that might make
+> a bad tactic actually a good tactic"*
+
+**IT HAS NEVER HAD A WHEEL ROW.** Eighteen topics swept and **multi-step plan composition
+is not one of them** — the library is a catalogue of tactics, almost all of them one or two
+steps, and the shipped bot is a set of independent per-unit policies.
+
+### WHY THIS IS NOT JUST A GAP, IT IS THE SAME STATEMENT AS TONIGHT'S DEEPEST FINDING, INVERTED
+17A landed hours ago with: **an economically-correct evaluator never finishes.** Under our
+rules a core kill returns no titanium, no harvester and no tiebreak key, and a failed attack
+is a **2.2:1 donation** — so **a bot that prices each action by its own return is CORRECT to
+refuse every step of an assault.** Jay Scott had to add *"a small bonus in the move
+generator for captures of enemy planets"* to make a correct evaluator take a worthless
+planet at all; Steamhammer's scourge were hard-coded not to waste themselves on floating
+buildings, **which is efficient and is exactly what blocked the kill.**
+
+**Magnus's sentence is the converse of that, and it was written first.** *"More steps that
+might make a bad tactic actually a good tactic"* **is a description of the exact structure
+that redeems a locally-negative move.** A single-step evaluator rejects every action whose
+immediate return is negative. **Every step of a successful assault has a negative immediate
+return.** So the incidence problem and the multi-step-plan ask are **one problem stated from
+two ends** — and the library has answered neither, because it never had the row.
+
+**That reframes what 17A's "discrete mode switch" finding actually is.** Steamhammer's
+`enemySeemsToBeDead()` and BC2020's "crunch" are not tactics; **they are the smallest
+possible multi-step plans** — a committed sequence that suspends per-step pricing for its
+duration. **The documented failure mode is doing it as a WEIGHT instead of a MODE**, which
+is exactly what a per-step evaluator does to a plan.
+
+### THE SWEEP — topic 18, and the question is deliberately mechanical rather than aspirational
+*How did competitors in comparable leagues REPRESENT and EXECUTE plans longer than one
+step, under a per-unit-per-turn API with no shared object and a hard CPU budget?* Sub-
+questions: what the plan was stored **in** (our store is **16 ints, buffered one round, last
+writer wins** — a hard constraint most leagues did not have); how a plan was **committed to
+and abandoned**; whether anyone measured that multi-step planning **beat** reactive policy;
+and **the negative — where multi-step planning LOST** to a reactive bot, which is the
+outcome our own history would predict.
+
+**Pre-stated so the result cannot be fitted afterwards:** our 16-int buffered store and
+10 ms/unit/turn budget make a **centralised planner** implausible, so **the transferable
+answer is probably a committed MODE with a cheap abort predicate, not a plan
+representation.** **If the sweep comes back saying leagues did use real planners under
+comparable constraints, that is a genuine surprise and I want it reported as one rather than
+softened into agreement with this paragraph.**
+
+**Model:** `opus` — it must grade its own sources. **Read-only.** Carries the library's
+corrected quote procedure (**extract → strip markup → decode entities → flatten `\f\r` →
+grep the literal**), the **per-STRING** glyph rule, and the referent rule for demonstratives.
+
+**Version tag:** live **v102 = LOKI-8**, tape k=14 / 1580.0 / net5 −14.0.
