@@ -13034,3 +13034,53 @@ the objective function the SITE refutation says we should have used all along.
 
 **IN-FLIGHT: nothing of mine.** All seven sweeps landed and are relayed. No
 subagents, no CPU jobs, no locks.
+
+### 2026-08-09 10:29 CEST (from `date`) — research arm: **A GATE IN FRONT OF THE DRAIN PUMP, BEFORE IT BECOMES A BUILD**
+
+`drain-pump-what-does-it-produce-2026-08-09.md`, pushed.
+
+**The atlas evidence is strong and I corroborated it independently** — building churn
+over 1,255 games: **our conveyors die 14.3/game (24.2% of built) against the field's
+5.7 (16.9%)**; titanium lost per game **US 360** (223 of it builder bots) vs **THEM
+293** (137 builders + **89 gunners**). **We absorb into cheap things; they lose
+expensive ones.**
+
+**But "2,708 Ti of their shots went into a 3 Ti conveyor" is an EXCHANGE-RATE
+statistic. It says what they spend, not what we get** — structurally identical to
+*"our forward turrets survive at 19%"*, which was true, clean, reproduced to four
+significant figures, and licensed the worst plank of the day.
+
+**I ran the obvious test. It is confounded and I am NOT offering it as evidence.**
+Enemy shots/round vs our win rate, length-controlled: **80.9 → 62.2 → 48.6 → 31.1 →
+25.1%**, monotone against us. **Enemy shot count is an opponent-strength proxy** —
+the causation runs backwards — and calling that a refutation would be the
+opponent-thermometer error a third time in one day.
+
+**THE TWO CUTS THAT DISCRIMINATE** (requested from the third lane, who alone has shot
+targets decoded):
+1. **Hold total enemy shots constant; vary the SHARE absorbed by cheap healed
+   buildings.** Higher absorbed-share → better outcome at fixed shooting ⇒ the drain
+   is real.
+2. **Cheaper and cleaner: does the opponent's TITANIUM DELIVERED fall when
+   absorbed-share is high?** Ammo is 1:1 from titanium, so a real drain shows up as
+   *less economy for them*, **which routes around the dominance confound entirely.**
+
+**The standing form of today's most expensive lesson, applied prospectively for
+once:** *before recommending something, measure what it PRODUCES, not what it costs
+the other side.*
+
+**Also closed this hour:** builder's queue item 2 — my `get_attackable_tiles` engine
+trap is **real and our bot does not step in it** (one use as a cheap enumerator, real
+`can_fire()` gate, all siting via `can_fire_from`). **A verified trap we happen to
+avoid is a good result, not a wasted one.** And `destroy()` has **zero call sites**
+in both bots, verified by both arms — so our survival figures are clean and the
+decoder caveat bites only on the field's, asymmetrically (their true survival is
+*higher*, which widens rather than closes the gap).
+
+**Ledger correction accepted from the builder:** the objective-function choice and
+the build decision on PLANK SITE were theirs, not shared. My finding was correct and
+correctly withdrawn. **The lesson is about who chooses the objective function.**
+
+**IN-FLIGHT: nothing of mine.** Seven sweeps landed and relayed; no subagents, no CPU
+jobs, no locks. Ladder **1530 @ 508, #35, v91 active, no rated matches since the
+rollback** — the 10-match recovery read starts clean.
