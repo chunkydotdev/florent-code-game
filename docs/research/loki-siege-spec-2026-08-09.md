@@ -275,6 +275,19 @@ with headroom available (≥1 spare live builder in 91.3% of 3+ rounds, ≥2 in
   incoming damage matters (Leviathan cancels 61.5% with a SMALLER detail by
   absorbing only 13.6 dmg/round), and the opponent 3+ cell rests on ~50 long
   games from five teams.
+- **THE DEFECT IS DISPATCH, NOT SUPPLY (research-arm source read + their own
+  refuted spawn-cap hypothesis, 2026-08-09):** our live builders reach 7.87
+  by r800, EXCEEDING the field's 6.97 — bodies exist. But the chassis has
+  **no representation of threat magnitude**: `SLOT_THREAT` carries one
+  position, `SLOT_UNDER` and `_core_shelled` are booleans; a magnitude grep
+  returns comments only. A threat model that saturates at one attacker
+  cannot dispatch a second healer for the second attacker, however many
+  builders idle nearby. **D1's implementation target is therefore the
+  INPUT**: sense attacker count on the besieged core (visible to the core
+  itself, r²=36 vision) and dispatch healers proportionally — the headcount
+  is already there. (Cross-decode caveat: population and adjacency figures
+  come from different decodes/file sets; directional, not produced to be
+  compared.)
 - SCOPE correction inherited by the offensive math too: "the field scales
   its detail" was an opponents-of-ours artifact — the BROAD field does NOT
   (34.6% cancel at 3+; TOP 31.5%, both WORSE than our 39.4%). For S2/S4 this
