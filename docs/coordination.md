@@ -20416,3 +20416,78 @@ Also noted: 5a28ff5 (prereg amend, paired survival bar) audited — an
 improvement to the bar BEFORE leg creation is exactly what the amendment
 clause is for; my fde5701 audit's "42.8% anchor" sentence is superseded by
 the paired form, and obligation 7 holds a fortiori.
+
+## 2026-08-09 23:4x CEST (from `date`) — RESEARCH ARM: **DUTY-CYCLE DECOMPOSITION LANDED. THE PLANK SURVIVES, REDIRECTED — AND THERE IS A STRICTLY CHEAPER VERSION THAT MOVES NOTHING. 11.4% OF OUR HOME SENTINELS POINT AT OUR OWN CORE.**
+
+Deliverable: **`docs/research/sentinel-duty-cycle-decomposition-2026-08-09.md`**.
+**Population: OpenSverige only — 2,218 clean side-games, 5,456 sentinel emplacements,
+1,188,099 idle sentinel-rounds, full archive 7,829 files, 0 decode errors.**
+
+### THE THREE SHARES, against the discriminator I pre-stated before the agent ran
+| state | share |
+| --- | ---: |
+| **(a) NO TARGET** | **22.0%** |
+| **(b) WRONG FACING** | **64.4%** |
+| **(c) OTHER** | **13.6%** |
+
+**(c) is fully accounted, not a residual:** reload 6.5%, **ammo<10 6.4%**, TLE **0.00%**,
+no-`run()` 0.02%, **unexplained 0.7%**. Start-of-round sensitivity gives 22.6 / 64.8 / 12.6 —
+**same ordering.** Teeth on all four guards, both branches; the geometry guard goes
+**1.00000 → 0.00000** under a 90° facing corruption across all **452,496** fire events, and
+the census grain matches the shipped `replay_builds.py` at **12,246/12,246 = 100.000000%**.
+
+**⇒ (b)-DOMINANT. My pre-stated kill condition — (c)-dominance — did NOT fire. The plank
+survives, redirected exactly as pre-registered.**
+
+### THE CHEAPER PLANK, AND IT IS THE HEADLINE
+**`build_sentinel(pos, pos.direction_to(enemy_core))`.**
+**61.4% of our home sentinels violate that today.** It lifts target-on-line **13.2% →
+32.7% at ZERO siting change**, and — unlike forward siting — **it cannot trip the
+cost-to-destroy guard rail, because nothing moves.** Ceiling **58.6%**; the rest needs siting.
+
+**And the sentence that makes it unarguable: our home sentinels aim 0.9 pp WORSE THAN A
+RANDOM DRAW** (13.2% actual vs **14.2%** for a random pick among 8 facings, position held
+fixed). **11.4% of them point exactly at OUR OWN CORE**, and **13.7% never had an enemy on
+their line across a median 175-round life** — against **1.1% at ≥1900** and **0.3% for
+sporks**. **We are not choosing facings badly. We are choosing them worse than chance.**
+
+### THE INTERACTION I ASKED ABOUT IS ANSWERED, AND THE ANSWER INVERTS THE PLANK'S RATIONALE
+**Forward siting does not find targets — it makes facing STOP MATTERING.** Best-of-8
+on-line rises **58.6% (home) → 98.9% (forward)**. Clankers **+39.1 pp** over random; **our
+own forward-sited sentinels +37.5 pp / 77.6% on-line — already Clankers-class.**
+**⚠ And the agent refused to call that a treatment effect, correctly:** those are built
+**r30, live 22 rounds, 64.8% destroyed** — a survivorship-and-timing population, not
+evidence that moving a home sentinel forward would behave the same.
+
+### THE MIXTURE AGAIN — THIRD TIME TONIGHT, AND IT KILLS THE BAND COMPARISON ONE MORE TIME
+**TP ≥1900 (b) = 61.7% ≈ ours; (a) = 6.6% vs our 22.0%** → by my own pre-stated rule,
+*"siting is the whole story."* **Clankers (b) = 24.2%** → *"they aim better."*
+**And sporks — #1 in the league at 2079 — has (b) = 80.1% and fires at 11.9% of ceiling,
+BELOW our 13.6%.** Across 41 third-party teams: **`corr(rating, (a)) = −0.402`**,
+`corr(rating, (b)) = +0.067`, `corr(rating, duty cycle) = +0.270`.
+**⇒ The only quantity that tracks rating is (a) — HAVING SOMETHING TO SHOOT AT.**
+
+### THREE ERRORS IN MY BRIEF, AND THE FIRST ONE IS LOAD-BEARING
+1. **"AMMO IS ALREADY RULED OUT" — WRONG, AND IT WAS MY OWN AGGREGATE THAT MISLED ME.**
+   The 150.5-unspent-ammo figure is an **end-of-game** number. **Per round, `ammo < 10`
+   blocks 6.4% of our idle sentinel-rounds and 27.7% of our FORWARD-SITED ones** (Clankers
+   37.5%, 0033 53.6%). **Ammunition is what binds once duty cycle is high.** ⇒ **The plank
+   needs an ammo companion or it caps out.** This is a stock-vs-flow error — an end-state
+   balance says nothing about per-round availability — and it is the same family as tonight's
+   level-vs-slope error, four hours apart.
+2. **"13.5% of ceiling" IS NOT A DEFECT.** sporks sits at **11.9% at rating 2079.**
+   **Duty cycle is a mechanism reading, not a currency**, exactly as the builder insisted.
+3. **My "(b)-dominant ⇒ siting alone does not fix it" was right about mechanism and wrong
+   about direction.** Siting **does** fix (b) — it just is not the cheap way to.
+4. The **"passes through friendlies without harming them"** clause I asserted **remains
+   unsourced in the primary** (`:257` says only *"never blocked"*). The instrument does not
+   depend on it.
+
+### ONE THREAT THE AGENT TESTED RATHER THAN ASSUMED
+*"An empty line could be a DETERRED line"* — i.e. the enemy avoids it, so emptiness is
+success. **Tested and rejected for us**: 11.4% pointing at our own core and 13.7% never
+seeing an enemy in 175 rounds is not deterrence. **It remains untestable for the residual
+(b) and for sporks specifically**, and is stated as such.
+
+**Version tag:** live **v102 = LOKI-8**, tape k=15 / m=585 / 1572.0 / net5 −12.0 /
+`slot_free` False.
