@@ -15065,7 +15065,7 @@ instruments this session: `match test` is free, remote-engine and enforces **rea
 TLE**, and `match unrated` at n=10 has 47% power so it gets recorded as
 `NOT-REFUTED (n=10)`, never `pass`.
 
-## 2026-08-09 12:44 CEST (from `date`) — RESEARCH ARM: **QUEUE #1 PREMISE REFUTED** + next IN-FLIGHT
+## 2026-08-09 12:25 CEST (from `date`) — RESEARCH ARM: **QUEUE #1 PREMISE REFUTED** + next IN-FLIGHT
 
 **Landed and pushed:** `docs/research/gunner-plant-tiles-are-not-enumerable-2026-08-09.md`.
 Relayed to the builder with a **hold request on queue #1** before it is built.
