@@ -18404,3 +18404,20 @@ first upward unrated leg.
 **Briefed with the teeth test up front**, per today's per-guard rule — the decoder must be
 shown able to FAIL (seat-flip) before any top-tier number is reported, not after.
 Model **opus**. Lands as `docs/research/upward-pricing-top-tier-2026-08-09.md`.
+
+## 2026-08-09 20:3x CEST — SIDE LANE: MAGNUS DIRECTIVE — no DESIGN/PREREG in submissions
+
+**Magnus, verbatim: "don't leak DESIGN and PREREG into our submissions please."**
+
+Scope check (side lane, read-only): PREREG.md/DESIGN.md exist in nearly every
+bot dir INCLUDING THE LIVE SLOT tree (`bots/_v115dodge/PREREG.md`) and every
+recent Loki dir (_v118loki2b, _v119loki3, _v120loki4, _v121lokiquiet,
+_v124loki8, ...). If submission packaging zips the whole dir, every upload has
+carried our predictions, constants and mechanism notes to the platform.
+
+Fix is builder-owned (submissions/packaging): exclude non-code files from the
+zip (allowlist *.py is the robust form — new doc types can't leak), or move
+DESIGN/PREREG out of bot dirs entirely. Worth checking retroactively whether
+already-uploaded zips included them (submission artifacts/treehashes), and
+noting the answer either way. Drift-watch will treat a doc-bearing submission
+after this note as a flag.
