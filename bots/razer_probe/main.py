@@ -157,7 +157,19 @@ class Player:
                 bp = ct.get_position(bid)
             except Exception:
                 continue
-            key = (rank, p.distance_squared(bp), bid)
+            # LETHALITY, NOT VOLUME. Measured over 24 games: 1.509 attacks/turn
+            # (league max 1.297) but 28.3 attacks per kill against a league
+            # median of ~9. The waste is not swinging too little, it is walking
+            # to a FRESH high-priority target while a wounded one stands. Rank
+            # damaged buildings first so swings convert into removals.
+            # NOTE the budget is specified PER TURN, never per game: game length
+            # is an OUTCOME of the treatment under test, so a per-game budget
+            # silently loosens exactly as a plank starts working.
+            try:
+                wounded = 0 if ct.get_hp(bid) < ct.get_max_hp(bid) else 1
+            except Exception:
+                wounded = 1
+            key = (wounded, rank, p.distance_squared(bp), bid)
             if target is None or key < target[0]:
                 target = (key, bp)
 
