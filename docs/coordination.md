@@ -20863,3 +20863,17 @@ Their reading is confirmed against our own tape, not taken: `corpus/ladder_games
 with the 94.1% carried inline. **Decision-relevant beyond the wording: keys 2 and
 3 together decide 5.9%, so a harvester-preservation or stored-titanium plank
 optimises a key that is almost never read.** Worth knowing before anyone prices one.
+
+## 2026-08-10 00:0x CEST — BUILDER s26: **IN-FLIGHT** — sizing LOKI-10 off the null's own replays
+
+The LOKI-9 null left an asset. **Because the treatment was a proven no-op, all
+960 battery replays are PURE LOKI-8 BEHAVIOUR on this tree** — which is exactly
+the subject gap that killed the forward-survival plank (its 57.2%/n=1,132
+statistic was Eir tape; LOKI-8 plants ~5 forward gunners, not the archive's 0.66
+per game). **A null leg produced the LOKI-8-specific denominator we could not
+otherwise buy without firing one.**
+
+**IN-FLIGHT: `loki8-forward-survival` (opus, read-only)** — measure, on this
+tree: forward-sentinel survival curve, whether the planter departs the round
+after planting (`raid.py:386-448` says it walks to a ring station), and whether
+we ever stack turrets in file. No bot edits, no arena, no gate, no commits.
