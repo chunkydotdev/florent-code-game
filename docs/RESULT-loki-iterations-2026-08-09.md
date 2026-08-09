@@ -68,3 +68,58 @@ decode), so the melee was never load-bearing.
 **This is a hypothesis consistent with the results, not a demonstrated cause.**
 No ablation isolates "rounds returned to movement" from the other consequences
 of silencing melee (titanium saved, siphon income lost, cost-scale unchanged).
+
+---
+
+## ROBUSTNESS — MY HEADLINE p IS NOT ROBUST TO DROPPING ORIZON
+
+**Magnus reports Orizon has fallen below 1400. We are ~1595, so they are out of
+our matchmaking bracket** — a ladder-relevant verdict should weight them near
+zero, and they are one of the three opponents in the fixture above.
+
+Per-opponent core-kill wins, n=5 each:
+
+| arm | Ouroboros | Orizon | CAD | ALL | **ex-Orizon** |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| v94 Eir | 1 | 2 | 2 | 5/15 | **3/10 = 30%** |
+| LOKI-4 | 3 | 3 | 2 | 8/15 | 5/10 |
+| LOKI-5 | 4 | 5 | 3 | 12/15 | 7/10 = 70% |
+| LOKI-6 | 1 | 4 | 3 | 8/15 | 4/10 |
+| **LOKI-7** | **4** | **5** | **4** | **13/15** | **8/10 = 80%** |
+
+| comparison | with Orizon | **without Orizon** |
+| --- | --- | --- |
+| LOKI-7 vs Eir | 13/15 vs 5/15, **p = 0.0078** | 8/10 vs 3/10, **p = 0.070** |
+| LOKI-5 vs Eir | 12/15 vs 5/15, p = 0.025 | 7/10 vs 3/10, p = 0.179 |
+
+**⇒ The significance was leaning on games against a team we will not meet.
+Effect size holds (80% vs 30%); significance does not survive the n drop.**
+I am not going to quote p = 0.0078 again without this line attached.
+
+**What DOES survive, and it is the reassuring part: LOKI-7 beats Eir in EVERY
+opponent cell — 4 v 1, 5 v 2, 4 v 2 — three independent opponents, same
+direction each time.** Consistency across cells is weaker than a p-value but it
+is not nothing, and it is the kind of evidence a single lucky opponent cannot
+manufacture.
+
+**FIXTURE CHANGE, from here:** Orizon is dropped from verdict fixtures and
+replaced with bracket-relevant opponents (Lunds Stallions, Kings College
+Munich). `orizon_probe` is **kept** as an offline instrument — it has the best
+resolution in the pool (50% baseline, and it is what caught the rush costing
+share) — but it is a **calibrated measuring stick, not a ladder-representative
+opponent**, and D11 verdict wording should say so.
+
+## EIR ON THE LONG MAP BAND — the fair cross-band comparison
+
+v94 Eir, long band (saga, atoll, lighthouse, drumlin, hive), 3 opponents, n=15:
+**7-8, core-kill share 6/15 = 40.0%** — including an **0-5 wipe by Ouroboros**
+and a 5-0 sweep of Orizon.
+
+| | short band | long band |
+| --- | --- | --- |
+| v94 Eir | 33.3% (5/15) | 40.0% (6/15) |
+| LOKI-5 | 80.0% (12/15) | 60.0% (6/10, 2 opponents) |
+
+**Loki leads on both bands, and its advantage NARROWS on long maps** (+46.7pp
+short, +20.0pp long). Consistent with the line's mechanism being about
+ARRIVAL: the longer the walk, the less a returned round is worth.
