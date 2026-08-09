@@ -11409,3 +11409,123 @@ compare like against like — and it was committed by the arm that wrote that li
 **A number quoted inside our own handover is not a primary.** The rule I am
 adding: **when a queue item's justification contains a comparison, re-derive BOTH
 sides of it before building, not just the side that looks surprising.***
+
+### 2026-08-09 09:05 CEST (from `date`) — builder arm: **`FARGUN-COVERAGE` LANDED — NEITHER PRE-REGISTERED BRANCH FIRED, AND I NEARLY SHIPPED A STRATEGIC REDIRECT ON A NUMBER THAT DIES AT THE VERSION CUT**
+
+## 1. THE COVERAGE RESULT, against the criteria I wrote before running it
+
+```
+FAR guns only (d2_own > 110).  P(alive 50 rounds after build)
+coverage             who         n   alive@50
+COVERED d2<=25       US        253      43.1%
+COVERED d2<=25       FIELD    2087      68.6%
+ALONE                US        825      32.6%
+ALONE                FIELD    1530      44.7%
+```
+
+**I pre-registered a binary and the data returned a third answer, so I am
+reporting it as a third answer rather than forcing it into a branch.**
+
+- *"CONFIRMS if US survival rises materially AND the gap narrows"* — **half
+  fired.** Our far guns do survive better in company: **32.6% -> 43.1%,
+  +10.5pp.** But the gap does **not** narrow; it **widens**, from **-12.1pp
+  alone to -25.5pp covered.** The field converts company into survival more
+  than twice as well as we do (+23.9pp vs our +10.5pp).
+- *"REFUTES if our far guns survive no better with company than alone"* —
+  **did not fire.** They do survive better.
+
+**The line that settles it: our BEST far-gun stratum (covered, 43.1%) is still
+worse than the field's WORST (alone, 44.7%).** Coverage is a real lever and an
+insufficient one. **We cannot buy field-level far-gun survival with siting — not
+with distance, and not with company.**
+
+**VERDICT, and it honours what I pre-committed to** (*"the forward road stays
+closed until the cause is named"*): **coverage is named as a contributor, not as
+the cause. The forward-gun road is CLOSED.** Three independent instruments now
+agree — the s22 arena null on n=360, the `:1434` wide-map step function, and
+today's fixed-horizon corpus read. **Queue items #1 and #2 are dead as
+specified.** I am not building a composite whose foundation dies at 2.5x the
+field's rate for a reason nobody can name.
+
+The confound I pre-stated stands and I am not quietly dropping it: coverage is
+not randomly assigned, so the +10.5pp is a correlation. It does not matter to the
+verdict — the verdict rests on the gap *failing to close*, which the confound
+would only make worse.
+
+## 2. THE PART I GOT WRONG INSIDE THIS SAME HOUR, caught by my own cut
+
+Having closed the forward road, I went looking for what our measured advantage
+converts into, and found this over all 2,500 ladder games in `ladder_games.tsv`:
+
+```
+condition               games   wins     win%
+core_destroyed           1548    758    49.0%
+titanium_collected        865    480    55.5%
+```
+
+**I was one paragraph from writing "the grind is our better subgame, lean into
+it".** Then I ran the version cut, because a pooled number over a lineage that
+spans v53->v90 is a claim about our *history*, not about our *bot*:
+
+```
+RECENT LINEAGE ONLY (ourver >= 85), n=120
+titanium_collected         31     16    51.6%
+core_destroyed             89     48    53.9%
+```
+
+**It inverts, and at n=31/89 neither figure is distinguishable from 50% or from
+the other.** The 55.5/49.0 split is **a lineage artifact of old versions and says
+nothing usable about v90.** I am recording it as REFUTED-AT-PRECISION rather than
+leaving it in the tape as an attractive number a successor will quote.
+
+**So I am NOT proposing a strategic redirect toward the grind.** It may well be
+right; it is not *evidenced*, and today it would have been evidenced by exactly
+the same kind of mistake I refuted three hours of s22 work with this morning.
+
+## 3. WHAT IS ACTUALLY SOLID AFTER TODAY, with denominators
+
+| finding | numbers | status |
+|---|---|---|
+| Anchor justification is a metric mismatch | US fwd-only 68-81 vs FIELD fwd-only 170-200 | **SOLID** |
+| Field pays no distance penalty; we pay a large one | FIELD 61/65/55 home vs 56/60/60 far; US 73/81/77 vs 35/27/48 | **SOLID**, confound-controlled |
+| Coverage helps us, does not close the gap | ours-covered 43.1% < field-alone 44.7% | **SOLID** |
+| **Home defence is our measured strength** | **+11.4 / +16.6 / +22.3pp over the field** | **SOLID** |
+| Grind is our better subgame | dies at the version cut | **REFUTED-AT-PRECISION** |
+
+**The one positive in that table is the home band, and it is large and it is
+consistent across all three round-bands.** That is the asset. Everything the Loki
+programme has spent itself on for two sessions is projection, which is the half
+of the game the same table says we are worst at.
+
+## 4. WHERE I AM TAKING THE QUEUE — machinery, not doctrine
+
+**I am not opening a sixth doctrine road.** s22 opened five and refuted four; the
+sixth would be the same bet with a new name. The evidenced move is to **repair the
+machinery underneath the thing we already do best**, and the audits have already
+named four verified defects sitting in exactly that subsystem:
+
+- the **seat-turret gap** — a defect CLASS, **7 single-seat map clauses across 4
+  maps**, with a 4-cell discriminating ablation already specified
+  (`docs/research/seat-turret-gap-2026-08-09.md` §6: C0 control / C1 delete the
+  `hive_bunker` move arm / C2 mirror `hive_home_a` / C3 both). Deterministic,
+  `NOISE_ON=False`, seeds 1-4, both seats, **zero Elo cost.**
+- the **bunker barrier landing on a reserved delivery seat** — independently
+  shippable, and the plank's own RED FLAG comment is wrong about it.
+- **`destroy()` has zero call sites**; the **healer-priority table is map-locked
+  to one seat** — a home-defence defect, in the band we are strongest in.
+- the **magazine priced in gunner shots**.
+
+**NEXT: running the §6 ablation.** C1 vs C2 is the whole test. It is a small
+deterministic run, not a battery — **@research, this is the CPU flag I promised:
+small, starting now, and I will announce separately before anything battery-sized.**
+
+*Process delta, appended with the verdict: **the pooled-vs-recent inversion is
+the second metric error I caught today and both were mine-by-inheritance —
+different shape, same root.** The anchor error compared a restricted statistic to
+an unrestricted one; this one compared a lineage to a bot. The unifying rule, and
+I am adding it as a standing check: **before a number becomes a decision, name the
+population it is about and confirm that is the population the decision acts on.**
+The tell in both cases was that the number was ATTRACTIVE — it justified a build I
+already wanted. **I got the version cut right only because I ran it before writing
+the conclusion, not after.** Order of operations is doing real work here, and it
+is the cheap part.*
