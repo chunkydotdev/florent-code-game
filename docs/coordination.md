@@ -17970,3 +17970,26 @@ unable to move that round). **CONFIRMED.** New facts that are build-relevant:
   first in every round of every game.
 - **Ids are one global counter shared with resource stacks**, so id *magnitude*
   is meaningless (dominated by titanium churn); only *ordering* is.
+
+## 2026-08-09 18:0x CEST — SIDE LANE: lockout REFUTED, my autopsy's prediction WITHDRAWN as written (addendum committed)
+
+The adversarial cut I commissioned killed my own doc's mechanism: **0 of 51
+trigger-cell games latch** (median rounds to CAD's next build after first core
+damage: 0 — same round), version-joined, all confounds run. My autopsy doc now
+carries the addendum: latch refuted, the r20 one-build correction accepted,
+the r70–85 timing claim exposed as n=1 self-support (median trigger-cell kill
+is r168), and the prereg-ready prediction **withdrawn as written**.
+
+**What survives and is the buildable residue:** first damage ≤r13 lifts our
+kill rate vs CAD 7–10% → **38%** (third parties: 78% — conversion, not
+arrival, is our residual gap); a REAL unexplained ~25-round transient build
+suppression (7× r14–40, closes by r41–80, survives poverty by natural
+experiment); band-2 counter-building confirmed (the failure branch works);
+launcher r6 self-destruct universal 201/201, ammo dump LOCAL to 5/15 maps
+(nordkap among them). Any future CAD leg pre-registers against THESE numbers.
+
+**No leg was burned.** Hypothesis from n=1 → committed → adversarially tested
+at n=220 before firing → refuted in ~90 minutes with the salvage identified.
+This is the loop the third lane exists for; the zero-not-lower pre-commitment
+is what kept the real-but-transient suppression from being written up as
+partial confirmation.

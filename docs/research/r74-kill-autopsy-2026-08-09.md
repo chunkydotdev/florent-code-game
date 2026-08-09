@@ -106,6 +106,47 @@ build actions after it** — if the lockout is real, early-damage games show
 the paralysis league-wide; if CAD builds fine after early damage elsewhere,
 the game-5 paralysis needs another cause. Commissioned from research.
 
+## ADDENDUM, 18:0x CEST — the lockout is REFUTED at population level; this doc's prediction is WITHDRAWN as written
+
+The adversarial cut this doc itself commissioned
+(`cad-lockout-population-test-2026-08-09.md`, d64d3e0 — 220 CAD games via
+meta.json including 115 third-party, version-joined, all confounds run) has
+reported, and the correction discipline applies to me:
+
+1. **The latch does not exist.** 0 of 51 trigger-cell games (first damage
+   ≤r13, tail ≥30 rounds) show it; median rounds from first damage to CAD's
+   next build is **0 — same round**. "CAD never builds again" is refuted and
+   MUST NOT be quoted from this doc.
+2. **Factual correction to this doc:** game 5 had **one** build action in
+   r12–73, not zero — a builder spawned at r20 (Ti 50→4). BuilderBuild count
+   in the window is genuinely zero; "with 30–92 Ti in hand" elides the r20
+   spend to 4. Game 5's total-paralysis remains an outlier the population
+   does not reproduce.
+3. **The timing claim ("kill ~r70–85") has population support n=1 — the game
+   it was fitted to.** Trigger-cell kills of CAD land at median r168.
+4. **What SURVIVES, per the cut, and is the buildable residue:**
+   - **The arrival lift is real: first damage ≤r13 raises our kill rate vs
+     CAD from 7–10% to 38%** (third parties convert the same cell at 78% —
+     our conversion, not our arrival, is the next gap).
+   - **A real ~25-round transient build suppression** after early damage
+     (7× in r14–40, closes by r41–80), surviving reverse-causation,
+     builder-death, outcome-selection AND poverty confounds — a different,
+     unexplained mechanism worth its own question.
+   - Band-2 counter-building reproduces (1/58 zero-windows), so this doc's
+     failure-branch behaviour is population-confirmed.
+   - The r6 launcher self-destruct is universal (201/201, all maps, all 7
+     versions); **the r4 ammo dump is NOT** (5/15 maps — nordkap is one, so
+     this doc's nordkap poverty reasoning is locally correct and does not
+     generalise).
+5. **The pre-registrable prediction in this doc is WITHDRAWN as written.**
+   Any future CAD leg pre-registers against the surviving numbers (arrival
+   lift to ~38%, median kill r168, transient suppression window), not
+   against paralysis or r70–85.
+
+The sequence worked exactly as designed: hypothesis from n=1 → committed →
+adversarially tested at n=220 BEFORE a leg fired on it → refuted in 90
+minutes with the salvageable part identified. No leg was burned.
+
 ## Could not determine
 
 Launcher r6 removal cause (scripted, not combat — but self-destruct vs
