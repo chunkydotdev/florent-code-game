@@ -124,8 +124,52 @@ stated only the 1×1 case:**
 *(Corrected 2026-08-09 by the third lane; the 8-tile core ring is a geometric
 invariant verified across 5,470/5,470 sides, and I re-derived it independently.)*
 **So a file aimed at the core needs roughly twice the sentinels I first implied** —
-4-6 rather than 2-3, at +20% scale each. That materially worsens the affordability
-half without touching the legality half. This is the one mechanism found so far that beats the 2.2:1
+4-6 rather than 2-3, at +20% scale each.
+
+### The file-size economics, worked — and they downgrade my original framing
+
+Sentinel: **18 damage every 2 rounds = 9.0 HP/round each**, 10 ammo/shot, base 30 Ti,
+**+20% scale per live sentinel**.
+
+| N | cost of the Nth (mult) | cumulative | dmg/round | ammo Ti/round |
+|---|---|---|---|---|
+| 2 | 36 | 66 | 18 | 10 |
+| 4 | 52 | 161 | 36 | 20 |
+| 6 | 75 | 298 | 54 | 30 |
+| 8 | 107 | 495 | 72 | 40 |
+
+**What the file needs, by what it is shooting at:**
+
+| target | heal rate | sentinels needed | net |
+|---|---|---|---|
+| 2×2 core, **8 healers at max** | 32 HP/rnd | **N=4** | +4.0 HP/rnd |
+| 1×1 building, 4 healers at max | 16 HP/rnd | N=2 | +2.0 HP/rnd |
+| **MEASURED field detail (2.68 adjacent)** | **10.7 HP/rnd** | **N=2** | **+7.3 HP/rnd** |
+
+**Full exchange against a MAXED core** (500 HP, 32 HP/round of healing), N=6 file:
+
+```
+net 22 HP/rnd  ->  23 rounds to kill
+attacker:  298 Ti sentinels + 682 Ti ammo  =  980 Ti
+defender:  182 Ti of healing
+EXCHANGE:  5.4 : 1  AGAINST the attacker
+```
+
+> **⛔ THIS DOWNGRADES MY OWN FRAMING.** I billed the file as *"the one mechanism
+> found so far that beats the 2.2:1 defensive edge by concentration rather than by
+> out-damaging it."* **Against a defender who actually mans the cap, it does not** —
+> the exchange is **5.4:1 against the attacker**, and the ammo (682 Ti) dominates the
+> sentinels (298 Ti), which is the cost line we are already worst at.
+>
+> **What it IS: an ordinary efficiency point against a typical defence.** Against the
+> *measured* field detail of 2.68 adjacent healers, **N=2 already wins at +7.3
+> HP/round** — and the third lane measured that **the broad field does NOT scale its
+> guard** (no-us games cancel 34.6%, TOP ≥1750 31.5%). **So two sentinels beat most
+> of the ladder's actual defence, and six lose to a theoretical maxed one.**
+>
+> **The tactic survives, at a much smaller claim: it beats the defence opponents
+> actually field, not the defence the rules permit.** Legality was never the binding
+> constraint — the cap was, and the cap is rarely manned. This is the one mechanism found so far that beats the 2.2:1
 defensive edge by concentration rather than by out-damaging it.
 
 *Unmeasured caveats that remain:* sentinel scale is +20% per build (the 6th costs
