@@ -14469,3 +14469,78 @@ refuses is a control.**
 
 **IN-FLIGHT: nothing of mine.** No subagents, no CPU, no locks. Ladder **1543 @ 513,
 #33**, 5 of ~10 — which is what makes §3 time-sensitive.
+
+### 2026-08-09 13:52 CEST (from `date`) — builder arm: **MAGNUS IS RIGHT AND I OWN IT: I ran 1,860 local games today and used `fcode match test` for the FIRST TIME ten minutes ago, and `match unrated` not at all. Plus the first real-engine data on Loki, and a contamination guard on the recovery read.**
+
+## 1. THE CRITICISM, ACCEPTED WITHOUT QUALIFICATION
+
+Relayed via the third lane: *"the builder keeps forgetting unrated and test games
+— we need a test process so we use all tools available to us."*
+
+**Correct.** Today: **1,860 local arena games** across six planks, **all at
+`--tle 0`** (CPU limit disabled), **all against `opp_v*` = ourselves**. Two
+platform instruments existed the whole time and I used neither:
+```
+fcode match test BOT_A BOT_B   two LOCAL bots, REMOTE engine, REAL TLE enforcement
+fcode match unrated OPPONENT   a REAL opposing team, zero Elo risk
+```
+**I read `builder-method.md` at boot, which ranks the field last and highest, and
+then never left the arena.**
+
+## 2. WHAT THE INSTRUMENTS ACTUALLY DO — checked, not assumed
+
+```
+match test     BOT_A/BOT_B are local dirs. Runs on the real engine WITH TLE.
+               -> closes the CPU-FIDELITY gap. Does NOT close self-play.
+match unrated  OPTIONS ARE ONLY --match/--map/--json. THERE IS NO BOT SELECTOR.
+               -> it plays the ACTIVE SUBMISSION. Real opponents, but the
+                  variant must HOLD THE SLOT. Free in Elo, not free in exposure.
+               --match pins the opponent's submission from a given match id;
+               --map picks up to 5 maps. Both useful for a controlled leg.
+```
+**So the tape's "free and confirmatory are mutually exclusive" is confirmed at
+the CLI, not inherited.**
+
+**And the CPU gap was real and unmeasured:** from the corpus, our max observed
+unit-turn is **12,967 µs against a 10,000 µs limit** (we TLE 0.001% of unit-turns;
+the field 0.601%). **Every plank I built adds per-turn scans and none was ever run
+under an enforced limit.**
+
+## 3. FIRST REAL-ENGINE DATA ON LOKI, and it is not encouraging
+
+`fcode match test bots/_v107loki3 bots/_v100hf` — LOKI-3's five-flag composite
+against the live bot, real engine, real TLE:
+```
+status complete · scoreA 2 · scoreB 3 · errorMessage null
+LOKI-3 LOSES 2-3.  No crash, no error, TLE enforced.
+```
+**n=5, so this settles nothing** — but it is the first time LOKI-3 has ever run
+under an enforced CPU limit, and it did not blow up. **The build is
+platform-viable; its doctrine is still refuted on the four field-corpus
+instruments.**
+
+## 4. PRE-STATED NOW, BEFORE IT CAN HAPPEN: THE RECOVERY-READ CONTAMINATION GUARD
+
+Research raised the interaction and it is live. **An unrated challenge plays the
+ACTIVE submission, so opening the unrated loop means putting a variant in the
+slot — and a variant's RATED match would land inside the 10-match recovery read
+that decides whether v90 goes back up.** One contaminated match in ten is **10%
+of the only instrument deciding that question**, and afterwards it would be
+indistinguishable — a result with no way to know whose bytes produced it.
+
+**RULE, posted before any unrated work: the recovery read counts ONLY matches
+played by submission `9850f196` (v91). Any match attributed to another
+submission is EXCLUDED from the count and the read extends by one.** Costs
+nothing now; discovering it afterwards costs the read.
+
+**SEQUENCING DECISION: finish the recovery read first (currently 7-8 of ~10),
+then open the unrated loop.** Not caution — the read is nearly done and the
+information is worth more intact than three matches sooner.
+
+## 5. AND THE LABEL FIX, adopted from research
+
+An unrated leg that a build **passes** at n=10 has **47% power** against the
+fixture baseline. **It will get quoted as evidence FOR the build. It is not.**
+Tape rows will read **`S5_unrated: NOT-REFUTED (n=10)`**, never `pass` — same
+discipline as the pool label, for the same reason: **the label is what survives
+the relay, and five numbers travelled between three sessions today without one.**
