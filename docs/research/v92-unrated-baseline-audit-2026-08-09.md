@@ -78,9 +78,14 @@ crash or a forfeit.
 
 Why this matters more than the leg it sits in:
 
-- **It is the fastest core kill on our record, and it is deep inside `KILL_WINDOW_RND:
-  250`** — the PROGRAMME's own window. Of the ten unrated games examined across both
-  Ouroboros legs, exactly one landed inside r250 (the Loki-2b r211). This one is r74.
+- ~~**It is the fastest core kill on our record**~~ — **CORRECTED BY ME, ~20 minutes after
+  publishing, see §6. IT IS NOT.** It is the fastest core kill **against CAD** (ladder best
+  vs CAD is r103, n=15). On the ladder overall we have **827 core-kill wins with a median
+  of r151**, the fastest at **r58**, and we have killed **Ouroboros at r65**. The corrected
+  claim is scoped to CAD and is still worth the autopsy; the unscoped one was wrong.
+- It is nevertheless deep inside `KILL_WINDOW_RND: 250` — the PROGRAMME's own window. Of
+  the ten unrated games examined across both Ouroboros legs, exactly one landed inside r250
+  (the Loki-2b r211). This one is r74.
 - **It was produced by v92 — the Eir lineage — not by the Loki line.** The bot the Loki
   programme is trying to beat on `core_kill_share` has already killed a hard-five core
   inside a third of the window.
@@ -112,3 +117,61 @@ anything.
   the replay is local, nothing about how.
 - The 60-match `match list` window covers 2026-08-08T02:50Z onward; earlier unrated legs,
   if any, are not included.
+
+---
+
+## 6. AMENDMENT, ~20 MINUTES AFTER PUBLISHING — I OVERSTATED §4, AND THE CORRECTION IS A BIGGER FINDING THAN THE THING I CORRECTED
+
+**What I got wrong.** §4 called the r74 CAD kill *"the fastest core kill on our record."*
+**It is not.** I had checked it against the ten unrated games in front of me and never
+checked it against the ladder — the classic assumed-denominator error this project keeps
+logging, committed by me in the same session I caught two of them in other people's work.
+
+**The corrected claim, from the frozen `ladder_games.tsv` (2,715 game rows):**
+
+| | n | median | ≤250 | fastest |
+| --- | ---: | ---: | ---: | ---: |
+| **all our ladder core-kill wins** | **827** | **r151** | **615 (74.4%)** | **r58** |
+| vs Ouroboros | 9 | r95 | 8 | **r65** |
+| vs Lunds Stallions | 30 | r150.5 | 27 | r80 |
+| vs Kings College Munich | 13 | r132 | 11 | r83 |
+| vs CtrlAltDefeat | 15 | r194 | 9 | **r103** |
+| vs Powerpuff Girls | 20 | r219.5 | 13 | r115 |
+
+So r74 is **the fastest kill we have against CAD** — the ladder best against them is r103 —
+and that scoped claim still makes the autopsy worth running. **The unscoped claim was
+wrong and is struck.**
+
+### AND HERE IS WHY THE CORRECTION MATTERS MORE THAN THE ERROR
+
+**When we win by core kill, we ALREADY do it inside r250 — 74.4% of the time, median r151.
+And it does not depend on opponent strength:**
+
+| opponent rating at match time (`oppbef`) | our core-kill wins | median | ≤250 | ≤100 | **core_kill_share** |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 1600+ | 189 | r161 | 71.4% | 37 | **189/535 = 35.3%** |
+| 1550-1599 | 176 | r159 | 74.4% | 48 | 176/675 = 26.1% |
+| 1500-1549 | 278 | r137 | 77.0% | 90 | 278/680 = 40.9% |
+| <1500 | 184 | r161 | 73.4% | 47 | 184/825 = 22.3% |
+
+**`KILL_WINDOW_RND: 250` is not a binding constraint on us.** It is satisfied in roughly
+three of every four core-kill wins we already have, at every rating band including 1600+.
+What is scarce is **the kill happening at all** — `core_kill_share` runs 22–41%.
+
+**The sharpest case is Ouroboros, and it bears directly on the live Loki programme:** we
+have **9 core-kill wins in 155 ladder games (5.8%)**, and **8 of those 9 are inside r250,
+median r95.** Against Ouroboros we are already fast when we kill; we are simply almost
+never killing. **A plank that makes an Ouroboros kill FASTER is optimising the dimension
+that is already satisfied.** The LOKI-2b verdict's headline — median core-kill turn
+198→163 — moves `time_to_core_kill`, the SECONDARY currency, on a dimension where our
+median against that opponent was already r95.
+
+**This is data, not a verdict, and re-aiming the programme is Magnus's call, not mine.**
+But `PROGRAMME.md` names `core_kill_share` PRIMARY and `time_to_core_kill` SECONDARY, and
+the ladder says the primary is where all the missing value is.
+
+**Method note on my own error, recorded because it is the third instance of this family
+in two sessions:** I compared a number against the population I had just loaded rather
+than the population the claim was about. The corpus was already synced and one
+`csv.DictReader` away. **A superlative ("fastest", "most", "never") is a claim about a
+denominator, and it must name the denominator in the same sentence or not be made.**
