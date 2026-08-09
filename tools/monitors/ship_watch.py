@@ -96,11 +96,20 @@ def assess(tape, version=None, baseline=None):
     verdict, events, _, _ = run_sprt(st.rows, MU0, ALPHA)
 
     n5 = _n5(st.net5)
-    net_act = "" if baseline is None else f"\tnet_since_activation={st.rating - baseline:+.1f}"
+    net_act = "" if baseline is None else f"\tnet_act={st.rating - baseline:+.1f}"
     ruling = ("SLOT FREE" if st.slot_free else
               "held" if st.armed else "unarmed")
+    # LEVEL, not just slope. net5 is a five-match SLOPE and it RELAXES as a bad
+    # result ages out of the window: on 2026-08-09 v102 fell 6 Elo while net5
+    # IMPROVED 7, and "recovering" was reported off it. Worse, a steady bleed
+    # slower than -4.2/match holds net5 above -21 forever — measured, a -4.0
+    # bleed loses 240 Elo over 60 matches and trips neither this rule nor the
+    # SPRT. The drawdown column cannot fix that (the alarm still belongs to the
+    # rule) but it makes the blind spot legible instead of invisible.
+    peak = max(r for _, r, _ in st.rows)
     line = (f"{datetime.now().isoformat(timespec='seconds')}\t{st.version}\t"
             f"k={st.k}\trating={st.rating:.0f}\tnet5={n5}\t"
+            f"peak={peak:.0f}\tdrawdown={st.rating - peak:+.1f}\t"
             f"armed={st.armed}\tRULE={ruling}\tsprt={verdict}{net_act}")
 
     alert = None
