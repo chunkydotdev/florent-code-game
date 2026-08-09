@@ -9091,3 +9091,52 @@ ship can be net-negative — and a titanium-only read would never see it.**
 - 3 unrated hive matches, ids above, pre-registration in §4.
 - Four monitors alive. Research holds an independent 150s wake path.
 - No subagents, no locks.
+
+### 2026-08-09 07:2x CEST — research arm: **STATE DRIFT CAUGHT + OPPONENTS ROLL BACK (5 of 30)**
+
+Unprompted, off the match monitor. Free metadata only, zero downloads.
+
+**1. LIVE VERSION WAS NOT WHAT THE BUILDER RELAYED.** It relayed v88 "Thor 1
+gunline" `0fde5029` live @ 1524.026641/483. Verified via `fcode status`:
+**LIVE = v89 "Eir 9c hivethaw (rollback)" `847b8d9d`, uploaded 04:20:22.735Z,
+rating 1531.477933 @ 485, rank #35.** Relayed back for confirmation rather than
+inferred. Match-level evidence: our v87 = 3 ladder matches (03:58/04:08/04:18);
+**our v88 = 2 matches, BOTH `type=unrated`, ZERO ladder**, last 04:17:06Z; v89 =
+1 ladder match 04:25:29Z. **Thor never played a ladder game** — two unrated legs
+then a rollback three minutes later. Also: the v87 window closed at **n=3**, not
+n=2 (the 04:18 OopsGotYourElo 4-1 was STRONG band).
+**PROCESS GAP, named:** my monitor fires on MATCHES, not SUBMISSIONS, so a ship
+with no match behind it is invisible to me. I caught this by luck 5 minutes late.
+
+**2. LUNDS SHIPPED v50 — the insertion-tiles table is invalidated by the
+builder's own rule** (HANDOVER queue item 4: "a Lunds ship invalidates the table
+at once"). They held v44 for **14 consecutive matches**, 2026-08-08T05:44:35Z ->
+2026-08-09T03:07:32Z, then v50 at 04:25:29Z. Every constant in
+`lunds-insertion-tiles-2026-08-09.md` is measured on a binary not currently
+fielded. **Do not build against it.**
+
+**3. BUT THAT IS SUSPENSION, NOT DEATH — VERSION NUMBERS ARE NOT MONOTONE IN
+TIME FOR 5 OF 30 TEAMS** (>=6 matches each):
+```
+Lunds Stallions   39 -> 41 -> 37 -> 42 -> 45 -> 44 -> (50)
+CtrlAltDefeat    107 -> 116 -> 117 -> 107 -> 117 -> 118     <- forward, BACK, forward
+Ouroboros         33 -> 8
+Powerpuff Girls   12 -> 15 -> 18 -> 19 -> 21 -> 23 -> 25 -> 26 -> (back later)
+Banminary         41 -> 39 -> 41 -> 42
+```
+**(a) STANDING RULE PROPOSED: an opponent-constants table is SUSPENDED by a ship,
+not killed by one.** Lunds has already run v37 after v41 and v44 after v45; v44
+can return and the table would be live again unchanged. Re-file as
+suspended-pending-recurrence. Re-check is free — version is in every `match list`
+row.
+**(b) CtrlAltDefeat ran a rollback-as-control A/B on the ladder** (107 -> 116 ->
+117 -> **107** -> 117 -> 118) — the same pattern we use. Readable for free.
+Filed to spitball as a shaped observation, not chased.
+**(c) UNPLANNED VALIDATION OF CLASSIFIER B:** when a version returns,
+per-(name,version) keying returns it to its OWN cell. A recency/time-window
+classifier would have minted a fresh opponent for returning-v107.
+
+**ASKED THE BUILDER:** confirm the rollback (not inferred), and relay Thor's
+unrated numbers — **my kill-timing read concluded the gunline aims at the right
+variable, and a bad unrated leg is the first real evidence against that.** It
+belongs next to my conclusion, not buried.

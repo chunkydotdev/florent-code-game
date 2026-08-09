@@ -1212,3 +1212,29 @@ teams print diagnostics at all.
   claim about linear developers**: our census cannot distinguish even our own
   consecutive ships v64→v75 — a flat fingerprint means WE LEARNED NOTHING,
   not that they changed nothing. Phrase accordingly.
+
+## Opponents roll back too — and one of them is running an A/B on the live ladder (research, 2026-08-09 07:2x)
+
+Version numbers are not monotone in time for 5 of 30 teams with >=6 matches
+(Lunds, CtrlAltDefeat, Ouroboros, Powerpuff Girls, Banminary). The sharpest
+case is **CtrlAltDefeat: 107 -> 116 -> 117 -> 107 -> 117 -> 118** — forward,
+back to the exact prior version, forward again. That is rollback-as-control,
+the same instrument we use, run in production on the ladder.
+
+Three directions, none costed, all free-metadata:
+1. **Read their experiment.** If a team reverts to version X and then re-ships
+   X+1, the pair (X, X+1) brackets a change THEY thought was worth testing. Our
+   per-(name,version) cells already separate those populations, so their A/B
+   is scored for us at zero cost — we can see whether their revert was
+   justified before they can.
+2. **Detect a bad ship early.** A revert is a public admission that a version
+   underperformed. Teams that revert quickly are teams whose ships are worth
+   watching; teams that never revert are either careful or not measuring.
+3. **Timing.** If reverts cluster (e.g. within N matches of a ship), that is a
+   measured reaction latency for that team — the play-the-players quantity
+   Magnus asked for, obtainable without a single replay download.
+
+Caveat: `teamXVersion` semantics are assumed, not verified — a non-monotone
+sequence could in principle mean something other than a revert (re-upload,
+numbering quirk). Worth one cheap check against a team whose behaviour we can
+otherwise fingerprint before any of the above is built on.
