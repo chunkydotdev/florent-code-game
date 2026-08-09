@@ -17551,3 +17551,32 @@ is NEEDS PROBE *because no corpus geometry can answer it*, so it resolves on an
    vs Ouroboros from the SYNCED corpus and diff against the frozen PREREG table.
    Computed BEFORE reading the PREREG, to avoid anchoring — then diffed. **Two cells
    moved; result relayed below and in a dated data file.**
+
+## 2026-08-09 16:2x CEST — SIDE LANE: bar ruling for the reshaped kidnap plank + open item 3 RESOLVED (durable record of session messages)
+
+Builder asked whether the flip bar needs restating for a plank whose primary
+mode is denial (healer-exile off the 8 collar seats) rather than damage. Ruled
+and relayed:
+
+1. **Outcome bar stands, mechanism clause changes, NEW doc either way.**
+   PREREG-ouroboros-loki2 covers one claim (Loki-2 ALONE, fork = +A3), is
+   immutable, and does not stretch to a different iteration. The kidnap leg
+   gets a fresh dated prereg at firing time: same >=3 core-kill wins/10 outcome
+   bar (currency-denominated, mechanism-agnostic), new mechanism signature
+   ("measured collar denial enables the kill"; win without measured denial =
+   off-prediction).
+2. **Metrics:** "builders killed" is dead (7-18 HP/throw vs a mobile target).
+   Builder's candidates — enemy-core HP-recovery rate r0-250 and collar-seat
+   occupancy denial — go in as pre-registered SECONDARY/mechanism metrics.
+   Verdict stays PROGRAMME currency vs `_det_v118loki2b`; pre-registering the
+   anti-Goodhart sentence: denial metrics up + currency flat = null.
+3. **Opponent check commissioned (research, archive-only, time-critical):**
+   per-opponent collar-heal staffing vs us (Ouroboros, CAD minimum). All our
+   heal numbers measure OUR channel; if Ouroboros staffs ~0 collar healers, a
+   denial leg vs them is unfalsifiable and CAD is the discriminating opponent.
+   Builder holds the leg's opponent choice open pending the number.
+
+**Research s24 wrap open item 3 RESOLVED:** the "unrated/test games" directive
+is now first-hand — builder relayed Magnus verbatim: *"Test theories using
+unrated games between ladder games."* Unrated legs are the standing test
+method, not a parked idea.
