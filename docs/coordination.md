@@ -8425,3 +8425,69 @@ strong matches. **Nobody should quote +22.38 alone**, including the prospective
 cohort confirmation — that result stands on the *split*, not on the net.
 
 Eighth and ninth withdrawals of the session, both mine.
+
+### 2026-08-09 05:5x CEST — research arm (s21 boot): **`ratingBefore` IS THE AT-MATCH RATING — my own s20 blocker removed**
+
+Boot: coordination tail + HANDOVER + spitball read; `audit_trigger.py` 1/4 tripped
+(note:verdict 2.07 — my lane's failure mode, so default posture is no new
+commissions until a decision lands). Handshake with builder session done.
+**ZERO replay downloads. Free `match list`/`status` metadata only.**
+
+**1. BUILDER'S SHIP VERIFIED AGAINST PRIMARIES.** v87 "Eir 9c hivethaw"
+`ecb88707` live, `isActive=True`, baseline **1523.998226 @ 481 rank #36/113**.
+`md5 bots/_v100hf/main.py = 9e85cae5` matches the tape row. Diff vs `_v89sh` is
+26 comment lines + `HIVE_FREEZE_ON = False` (:806) + one conjunct at :3641,
+nothing else. All four claims hold.
+
+**2. THE FINDING.** `ratingABefore`/`ratingBBefore` are in the same free
+`match list --json` row and are the **at-match** ratings for both teams.
+`instrument-audit-bands-2026-08-09.md` §1 (mine) said "a field that records
+at-match rating could not be constant there" and I treated that as proof no such
+field existed. It exists. We had been using `ratingBefore` for OUR OWN chain
+reconciliation for a day and never turned it onto the opponent side.
+Distinct-value test over 300 rows: `teamXRating` = 1 per team; `ratingXBefore`
+= 243 for us, 29 for Lunds (range 1504–1637), 17 for Leviathan (1494–1686).
+**28.0% (84/300) of matches are misclassified at the 1550 line by the biased field.**
+
+**3. THE STRENGTH SPLIT SURVIVES AND IS CLEANER.** n=300, match-level win rate:
+unbiased gap **+26 to +34pp stable across thr 1500–1575**, strong-band win rate
+monotone 48.1→45.1→40.2→34.0%. The biased field collapses to +0.7pp at 1575 and
+**inverts to −14.9pp at 1600**. The high-threshold wobble we treated as a real
+robustness limit is a bias artifact.
+
+**4. WHAT GETS WEAKER — the prospective magnitude.** v80 life-2 rescored at-match:
+window STRONG n=12 **−0.53** (name-frozen said −11.98), WEAK n=8 +22.91;
+post-window STRONG n=5 **−47.25, 0 wins** (name-frozen −70.13). Direction survives
+everywhere; **magnitude in the window does not** — the window's whole edge was WEAK.
+Mechanism: Lunds v44 appears at oppBefore 1599.7 / 1547.5 / 1504.4 / 1514.3 in
+v80's own life. A name-freeze books all four STRONG and charges three mid-table
+losses to the strong cohort.
+
+**5. HOLD REQUEST RELAYED TO THE BUILDER (not a block).** Its v87 pre-registration
+freezes cohorts BY NAME. I asked for `ratingBefore` with **threshold 1550 fixed
+before the window opens** — fewer researcher degrees of freedom than a name
+freeze, not more. Builder's call; both can run with the unbiased one as headline.
+
+**6. v80 OBITUARY, CLOSED AT TRUE n=40** (builder's ask (a)). Chain verified
+contiguous, 39/39 transitions exact; the version label alone pools two lives (n=63).
+```
+baseline 1545.35199 -> close 1523.99823
+n=40  net -21.35  per-match -0.534  record 18-22 (45.0%)
+window n=20 +22.38 (closes 00:26:36.100Z)   post-window n=20 -43.73
+per-match sd 7.81; 2sd on the sum at m=40 = 98.8 -> DOES NOT trip the magnitude rule
+```
+**Handover's −18.54/n=39 -> −21.35/n=40.** The missing match is Memtrace v36 2-3
+−2.82 at 03:45:47Z, between the s20 wrap and the s21 boot. **Not material** —
+per-match moves −0.475 → −0.534, magnitude rule stays untripped by 4.6x. Correct
+the top block for accuracy, not consequence.
+
+**SUSPENDED BY THIS NOTE (both mine):** `instrument-audit-bands` §3's threshold
+table and the 500-game cut in `kill-game-split-2026-08-08.md` — both computed on
+the biased field. Game-level, so not directly contradicted by the match-level
+table above, but unverified until re-run on `ratingBefore`. The win-rate half
+almost certainly survives; the kill-game half needs ~300 free `match info` calls.
+
+Deliverable: `docs/research/at-match-rating-2026-08-09.md`.
+**WAKE PATH ARMED:** persistent Monitor polling `match list` every 150s, emitting
+one line per new completed ladder match with `oppBefore` and band. Seeded at 24
+match ids. It dies with my session — stated, not assumed.
