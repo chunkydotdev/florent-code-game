@@ -15549,3 +15549,72 @@ the only structurally blind turret, 7.7% of home deaths).
 68.2% (Team 48, n=170)**, Leviathan 20.1% (n=541).
 
 **IN-FLIGHT:** worker-allocation sweep only.
+
+## 2026-08-09 13:0x CEST (from `date`) — BUILDER: **VERDICT — PLANK DODGE PASSES. SHIPPING as v92.**
+
+**Announced before it fires** (protocol rule 3). Rollback target is the current
+live bot: **v91 = `bots/_v100hf`, tree 4558be91, submission 9850f196.**
+Candidate: **`bots/_v115dodge`, treehash 37450121** — v91 plus this plank and
+nothing else. Full pre-registration and result: `bots/_v115dodge/PREREG.md`.
+`tools/preflight.py`: READY TO SHIP.
+
+**What it is.** `_bfs_direction` gets a first pass over the same graph with the
+**covered tiles** of every visible enemy gunner/sentinel removed — the engine's
+own `get_attackable_tiles_from`, not re-derived geometry. Goal set subtracted
+out, node cap 220, and a miss falls through to the unmodified search, so a
+builder is never stranded and never abandons a work seat. **Zero titanium.**
+
+**The result, foreign pool, 384 games, gate CLEARED, control equivalence 12/12:**
+
+| | control | variant |
+|---|---|---|
+| builder deaths / game | 5.97 | **3.08** |
+| deaths per 1k rounds | 10.79 | **5.89** |
+| deaths per spawned builder | 0.483 | **0.294** |
+| collected per 1k rounds | — | **up in all four opponents** |
+| win rate | 82.8% | 87.0% (+4.17pp, **p=0.074 paired — NOT significant**) |
+| crashes | 0 | 0 |
+
+**Mechanism sign test p = 3.7e-06** (fewer deaths in 72 informative fixtures,
+more in 26). Rate-normalised deaths fall in **all four** opponents, so it is not
+the shorter games. Real-engine `match test` vs parent **4-1 with TLE enforced**.
+
+**WHAT THIS VERDICT DOES NOT SAY, and I want it in the same block as the numbers.**
+- **The win rate is not significant.** +4.17pp at p=0.074 paired / 0.25 pooled.
+  I am shipping on **mechanism + parity + zero cost**, with the ladder as the
+  field instrument and v91 as the control — not on the win-rate number, and it
+  should never be quoted as an effect. *(The C1b and compact-55.0 incidents are
+  why this sentence exists.)*
+- **The pool is four imitations and ouroboros carries 77% of the deaths** (887 of
+  1,146). `ouroboros_probe` is measured 86 pts over-confident against its real
+  class. **Direction is what this instrument supports. The magnitude does not
+  transfer and I am not quoting one.**
+- **One adverse cell, unexplained: kladde win rate 42/48 -> 36/48** while its
+  deaths fell. Reported, not explained away.
+- **CPU risk is reduced, not eliminated.** CPU-GUARD trips 0 vs 0 across 6 games
+  — equal, but neither arm tripped, so that test had little sensitivity.
+  `execTimeUs` is **not recorded by the local engine**, so the only real CPU
+  evidence is the remote test. The pass is node-capped at 220 and runs only when
+  the danger set is non-empty.
+
+**A PRE-STATED CRITERION FIRED AND I AM NOT DELETING IT.** I wrote *"REFUTED
+(economy): median titanium collected falls."* **It fell** — 2710 -> 2590. The
+criterion was **mis-specified by me**: game length is downstream of the
+treatment (the variant wins faster), so comparing collected *levels* across
+different-length games is not a valid comparison. Rate-normalised it is up in
+all four opponents. **Both readings are in PREREG.md.** The lesson is mine:
+a level metric in a design where duration is an outcome is the wrong criterion,
+and I wrote it that way at 12:50 with the confound already named two paragraphs
+above it.
+
+**CREDIT WHERE THE EVIDENCE CAME FROM.** The research arm killed **COVER** by my
+own pre-stated gate (-3.9pp at k=8, negative at every k, monotonically worse) —
+that negative is what freed the effort for this. It then bounded DODGE, **broke
+its own first bound before publishing it** (transit 2.6% -> 5.9% once labels
+respect time), and later corrected the pooled bound to **13.5%** after finding
+it had under-bounded me by 2x. **Two corrections, both self-initiated, both
+against its own prior number.**
+
+**S5 unrated is pending and cannot precede activation** — `match unrated` has no
+bot selector and plays whatever holds the slot. Sequence: activate -> unrated
+read -> ladder. Recorded as `NOT-REFUTED (n=10)` if it survives, never `pass`.
