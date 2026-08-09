@@ -300,6 +300,33 @@ with headroom available (≥1 spare live builder in 91.3% of 3+ rounds, ≥2 in
   count), not the existence of the count.** M7 stays the outcome metric.
   (Cross-decode caveat: population and adjacency figures come from
   different decodes/file sets; directional, not produced to be compared.)
+
+### D2 — DENY THE PLANT (added after `builder-death-attribution-2026-08-09.md`)
+The death cut relocated the home threat. The "healers shot by outranging
+sentinel lines" driver is real but small (**7.7%** of our home builder
+deaths). The dominant mechanism: **65.3% of our home builder deaths are an
+enemy GUNNER planted inside our own base** (killer median d²=20 from our
+core), and the plant sites are CONCENTRATED AND PREDICTABLE — tiles with ≥5
+kills carry 47.3% of home deaths, ≥10 kills 23.4% (max 45 kills from one
+tile). Our home turrets survive best-in-corpus but do not prevent the
+plant. Exposure-normalised, home is the SAFER band for both sides; what
+survives is that our hazard is 1.85× our opponents' EVERYWHERE — the gap
+is protection, not geography. D2, two cheap arms, both prevention:
+(a) **intercept the planter** — an enemy builder must stand orthogonally
+adjacent to build; that adjacency is the launcher-interception trigger
+(0 Ti/throw, already queue item #1 in the builder's 09:0x revised queue —
+this cut supplies its price tag);
+(b) **deny the repeat tiles** — the top plant tiles are knowable from our
+own replays per map/seat; a 3 Ti barrier on a ≥10-kill tile, or covering it
+with an existing home turret arc, denies a measured farm.
+Metric M8: US home builder deaths per 1k builder-rounds, baseline 1.968 →
+toward opponents' 1.063. Also feeds D1: healers live longer if the farmer
+is never planted.
+**Closed by the same cut: the crash hypothesis — US no-damage deaths are
+0.00% of 8,664 (the blanket try/except works; every US builder death is
+turret damage). No free bug-fix exists here. (The FIELD carries a 6.7%
+no-damage class, team-concentrated up to 97.7% — somebody self-destructs
+systematically; parked as an opponent-modeling curiosity, not our defect.)**
 - SCOPE correction inherited by the offensive math too: "the field scales
   its detail" was an opponents-of-ours artifact — the BROAD field does NOT
   (34.6% cancel at 3+; TOP 31.5%, both WORSE than our 39.4%). For S2/S4 this
