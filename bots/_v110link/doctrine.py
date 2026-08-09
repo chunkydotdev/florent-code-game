@@ -100,12 +100,40 @@ POP_FLOOR = 5
 POP_EXPAND_TI_RATE = 8
 # Round at which a waiting raider stops waiting for an insertion.  One name for
 # both the give-up and the re-recruit bound, so the two cannot disagree.
+#
+# LOKI-0 ABLATION (s22): was 180.  This constant binds BOTH the give-up
+# (main.py:1048) AND the only re-entry (main.py:1060), so at 180 the offensive
+# insertion pipeline was switched off entirely from r180 -- inside the r200-300
+# window where our measured conversion ratio vs STRONG is 0.52 and falling.
+# The comment below ("matches decided earlier never reached that bound") was
+# written under a belief the 2,410-game hazard corpus refutes: 753/1135 strong
+# games are still alive at r200 and 601 at r300.
+# LAUNCH_STALL_RNDS is deliberately LEFT AT 36 -- it is now the binding control
+# on wasted waiting, which is what bounds the tempo cost of this change.
 LAUNCH_GIVEUP_RND = 180
 # A launchwait unit that has made no launch progress for this many rounds
 # stops waiting, whatever the global clock says.  Bounds the waste that
 # LAUNCH_GIVEUP_RND only caps at round 180 -- matches decided earlier never
 # reached that bound at all.
 LAUNCH_STALL_RNDS = 36
+# Lifetime cap on insertions per match.  LOKI-0 ABLATION (s22): this was a bare
+# literal 3 at main.py:1061 and is now named so it is ablatable.  Three drops
+# per match cannot produce sustained late pressure by construction; 99 is
+# "effectively uncapped" while still bounding a runaway loop.
+RAID_DROP_CAP = 3
+# LOKI-0b: SLOT_LAUNCHER was a ONE-WAY LATCH.  It is written 1 in four places
+# and cleared in exactly one (the "build failed, release the claim" path), so
+# NOTHING cleared it when the launcher DIED.  Consequences, all live in v89:
+# _try_build_launcher returns False forever, so a destroyed launcher is NEVER
+# replaced; the main.py:1046 escape hatch ("no launcher -> stop waiting") is
+# dead code once latched; and builders keep entering launchwait for a ghost.
+# The repair: the slot now carries `round + 1` as a HEARTBEAT rather than a
+# bare flag -- the same idiom SLOT_LAUNCH_RND already uses -- so liveness is
+# observable and the latch cannot persist past a death.  All 16 store slots
+# were already occupied, so the freshness had to go INTO slot 6, not beside it.
+# A live launcher rewrites every round it runs; writes are buffered one round,
+# so a staleness of 1 is normal and 3 is the margin.
+LAUNCHER_STALE_RNDS = 3
 # Melee-before-repair for forward saboteurs is only worth it where a hostile
 # gun can actually be walked up to.  Measured wall fractions of the 15 pool
 # maps: drumlin 0.6%, meander 2.1%, eider 3.9%, hive 5.4%, atoll 5.6%,
@@ -1138,123 +1166,3 @@ EXTRA_MAP_CODES = (
     ((28, 20, 7, 9, 19, 9), "AAACAACAAAGAAAAAAGAAAAAAAAAAAAASAGAAASAAJBJBAACAAJBAMAAAAALTAGECAAAABAAJAAAAAAGICAAAAAAAAAAAAAAAAGGAAAAACAAAAAGAACASCIAACAAAOAAWAAAAAJAAJAAAAAAJADAAAGAAAAAAAAGAAACAGAAAAAAAAAAAAAAAAAAAAAA"),
     ((28, 20, 7, 9, 19, 9), "AAAAAAAAAAAAACSAAAAAAAAAAAAAAAAMAMAAAAAAMBJEAAAAANW0NEAAAJNNBNNEAAANNAANNAAADAAAAABAAAAAAAAAAAABAAAAJAACAAAAAAAGANNBAANNBAMNNBJNNEAJANWSNEJAATANCOBGBALAJBJBATAADAEAEABAASJEAJEGAYAGSGGCGAI"),
 )
-
-
-
-# ============================================================================
-# LOKI-4 -- ORE DENIAL  (new in _v108loki4; the mechanism lives in denial.py)
-# ============================================================================
-#
-# THE MECHANIC, engine-probed 2026-08-09 (bots/_probe_denial, fjordgate):
-#
-#     ore tile (6,0): is_tile_empty=True  can_build_harvester BEFORE=True
-#     can_build_barrier=True   barrier_cost=3   harvester_cost=24
-#     after our barrier stands:            can_build_harvester=FALSE
-#     after we destroy() our own barrier:  can_build_harvester=TRUE
-#
-# Harvesters may ONLY be built on ore, so a 3 Ti barrier removes a 24 Ti
-# harvester site.  ct.destroy() is ALLIED-ONLY, so the victim cannot undo it
-# cheaply: 30 HP at 2 dmg / 2 Ti a swing is 15 attacks, 30 Ti and 15
-# builder-turns to clear 3 Ti and one turn of ours.  ~10:1 in titanium.
-#
-# THIS BLOCK IS MOSTLY A RECORD OF WHAT WAS REFUTED.  Three larger versions of
-# this doctrine were designed and killed by measurement in the same session;
-# they are documented here so nobody rebuilds them.
-#
-# ---------------------------------------------------------------------------
-# REFUTED 1 -- PRE-EMPTIVE DENIAL (barrier the tile before they arrive).
-# Dead on a pincer, and neither jaw is an implementation problem:
-#   * The OPENING tile is predictable but unreachable.  First harvesters land
-#     r2-13 (p10 r6), 81.1% of them in the enemy's three nearest ore tiles, and
-#     the determinism is GEOMETRIC not behavioural -- we open on our nearest ore
-#     49.9% of the time ourselves.  Nobody crosses a 25x25 map in six rounds.
-#   * The LATE tile is reachable but unpredictable.  By r150+ only 9-15% of
-#     their picks are in the top-3 ranks; 82-86% are rank 4+, spread wide.
-# There is no window where both halves hold.  A per-opponent TILE BOOK was
-# specified and then deleted for the same reason: the apparent per-opponent
-# modal tile is just "nearest ore to that seat's core", so a book encodes
-# geometry we already derive and adds a staleness hazard for nothing.  (We have
-# a suspended hardcoded insertion-tile table from exactly this mistake.)
-#
-# ---------------------------------------------------------------------------
-# REFUTED 2 -- HOME-SIDE DENIAL (barrier our own tail ore before they take it).
-# The flow it targets is real: 448 of 3,073 censused harvesters (14.6%) were
-# built on the opponent's side, at median round r189.  But measured over 497
-# invasion events, at the moment an enemy harvester lands on our side the
-# victim still has a MEDIAN OF 5 UNCLAIMED ore tiles on that side, and 49.1% of
-# invasions happen with 6 or more free.  Median victim side size at those
-# moments is 13 tiles -- i.e. invasion is a phenomenon of ORE-RICH maps, which
-# are exactly the maps where denial is definitionally noise.  Barriering 3 of
-# 11 free tiles denies nothing.
-#
-# ---------------------------------------------------------------------------
-# REFUTED 3 -- DENYING MIDLINE / OUR-SIDE ORE AT ALL, on a simpler argument
-# that needs no census: on any tile we can economically work, A HARVESTER IS A
-# STRICTLY BETTER BARRIER.  It occupies the tile just as permanently, it denies
-# them the site just as completely, it has 30 HP instead of 30 HP, and it earns
-# 2.5 Ti/round instead of costing us the site.  Barriers are therefore only
-# ever correct on ore we CANNOT work -- ore too deep in their half to wire a
-# conveyor back from.  That is the entire remaining target set.
-#
-# ---------------------------------------------------------------------------
-# WHAT SURVIVED: REACTIVE DENIAL OF ENEMY-SIDE ORE.
-# A unit that is ALREADY standing orthogonally beside an unclaimed enemy-side
-# ore tile spends one turn and 3 Ti to remove the site.  No detour, no dedicated
-# trip, no prediction.  The only units that qualify are the role_n == 0 saboteur
-# and Launcher-dropped raiders, which walk into the enemy half already.
-#
-# THE KILL CRITERION, AND IT IS HALF-FAILED -- read this before shipping.
-# Pool ore census (15 maps, parsed from maps/*.map26): 314 ore tiles, mean 20.9
-# per map, MEAN 9.4 PER SIDE.  Replay census (250 games, 3,073 harvester
-# builds): a team consumes a MEDIAN OF 4 DISTINCT SITES (p75 7, p90 13).
-#   ==> On the median map they have five spare sites and denying two denies
-#       nothing.  This doctrine can only bind where sites are SCARCE.
-# Enemy-side ore per pool map:
-#   fjordgate 2 · atoll 3 · moonrise 3 · antler 6 · hive 6 · jackpot 6 ·
-#   lighthouse 6 · meander 7 | nordkap 10 · heart 11 · drumlin 13 ·
-#   eider 16 · snowflake 16 · saga 17 · archipelago 19
-# The meander(7)/nordkap(10) gap is the only clean break in the pool and it
-# splits it 8 deniable / 7 noise.  DENY_MAX_ENEMY_ORE sits in that gap and
-# turns the whole plank off on the other seven maps.
-DENY_MAX_ENEMY_ORE = 7
-#
-# COST 1: SCALE.  Cost scale is a SINGLE GLOBAL multiplier over ALL categories
-# tracking LIVE entities (scale = 100 + sum of live entities' category rates;
-# every cost is floor(scale * base)).  A barrier is +1% and it persists for as
-# long as the barrier stands -- which, since only we can remove it, is usually
-# the rest of the match.  Four barriers = +4 points on the price of every
-# harvester, gunner, sentinel and builder bought afterwards, about +0.8 Ti on a
-# 20-base harvester.  Small but not zero, and the reason this is capped rather
-# than opportunistic-unbounded.
-DENY_MAX_BARRIERS = 4
-#
-# COST 2: BUILDER-TURNS, the real currency (thor_r1 shipped zero harvesters,
-# delivered zero titanium, went 2/60).  This plank buys ZERO dedicated trips
-# and ZERO detours: placement requires the unit to be orthogonally adjacent
-# ALREADY.  Total cost is therefore exactly DENY_MAX_BARRIERS builder-turns per
-# unit per match, taken from the saboteur -- whose measured contribution after
-# r150 is ~zero -- and never from an expander.  No economy turn is touched, and
-# the economy is at field parity (452.9 vs 444.0 stacks delivered), which is an
-# asset to protect.
-#
-# Hard round cap.  A barrier planted later than this denies a site they take 3%
-# of the time (rank 9+, claimed r100+) while the +1% scale runs to the final
-# bell, so late placements are net negative.
-DENY_MAX_RND = 150
-# Titanium floor.  A barrier is 3 Ti, but the opening bank also has to buy five
-# builders and the first harvesters; never trade a harvester for a barrier.
-# Same shape as MEDIC_TI_FLOOR.
-DENY_TI_FLOOR = 60
-# A barrier BLOCKS MOVEMENT and LOS.  Planting one in a corridor pinch can wall
-# our own saboteur out of the half it is trying to reach, which costs far more
-# than the site is worth.  Require this many non-wall cardinal neighbours in
-# the decoded grid.
-DENY_MIN_OPEN_NBRS = 3
-#
-# THE MASTER FLAG and the ablation unit.  OFF reproduces _v103split exactly:
-# denial.py is imported but every entry point returns on its first line.
-ORE_DENIAL_ON = True
-#
-# Per-placement stderr trace for instrumentation legs.  Off in the shipped
-# build: print() lands in the replay and stderr costs CPU in the hot path.
-DENY_DEBUG = False

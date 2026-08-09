@@ -10583,3 +10583,68 @@ return, so it is a lower bound for the population.
 sort key — free is a good enough reason. If it has become a subsystem, six rounds
 does not justify it and it should be cut.** The threshold-flip and trigger
 conditions survive: a well-timed six is worth more than a random ten.
+
+### 2026-08-09 08:52 CEST (from `date`) — builder arm: **THREE PROBES: IMPRISONMENT REFUTED, SPAWN RING CONFIRMED, AND A DOC CONTRADICTION SETTLED FROM DATA**
+
+**1. THE IMPRISONMENT TACTIC IS REFUTED.** Research proposed the highest-value
+untested claim on the board: since `is_tile_empty` is *"no building and is not a
+wall"* and a builder bot is neither, a 3 Ti barrier might be buildable ON TOP of
+a 30 Ti enemy builder, permanently imprisoning it. **Probed
+(`bots/_probe_prison`) rather than argued:**
+```
+tile holding a builder bot:   is_tile_empty      = True    <-- "empty"
+                              can_build_barrier  = False   <-- but NOT buildable
+```
+**Build legality is STRICTER than `is_tile_empty`.** You cannot drop a barrier on
+a body. *Scope label: tested with FRIENDLY bodies (far easier to arrange — three
+maps produced no enemy contact). The occupancy check is almost certainly
+team-agnostic, but the enemy case is formally untested.*
+
+**2. AND IT IS A GENUINE API TRAP WORTH RECORDING: `is_tile_empty` IS NOT A
+BUILD-LEGALITY PREDICATE.** Any bot logic using it as a proxy for "can I build
+here" is wrong. **I checked our own chassis rather than assuming**: two sites use
+it (`main.py:3562`, `:3591`), both as a cheap PRE-FILTER with a real
+`can_build_conveyor` gate before the build (`:3603`). **Correct usage, not a bug.**
+
+**3. THE SPAWN RING IS 12 TILES — CONFIRMED EMPIRICALLY, AND CLAUDE.md IS WRONG.**
+```
+GameConstants: CORE_SPAWNING_RADIUS_SQ = 2   (separate from CORE_ACTION_RADIUS_SQ = 8)
+can_spawn probe, both seats: exactly 12 legal offsets = the Chebyshev-1 ring
+  [(-1,-1),(-1,0),(-1,1),(-1,2),(0,-1),(0,2),(1,-1),(1,2),(2,-1),(2,0),(2,1),(2,2)]
+```
+`CLAUDE.md:24/31` says the r²=8 action radius governs spawning; **it does not.**
+So a spawn-lock is **12 barriers ~ 36 Ti, not ~120** — verified against
+behaviour, not just against the constant.
+
+**4. BUT THE SAME PROBE GIVES THE COUNTER, AND IT INVERTS RESEARCH'S COROLLARY.**
+They wrote that if imprisonment were legal, "parking bots on our own spawn ring
+is no defence" against a spawn-lock. **Imprisonment is NOT legal — therefore
+parking a builder on a ring tile makes that tile UNBUILDABLE, and parking IS a
+complete defence against spawn-lock.** Which also means **anyone attempting a
+spawn-lock against a defended core will fail**, and we should not build one
+expecting it to work against a competent opponent.
+
+**5. A DOC CONTRADICTION SETTLED FROM DATA WE ALREADY HAD.**
+`docs/reference/official-docs.md:1091` says CPU overrun = **"Bot disqualified
+mid-match"**; `CLAUDE.md:13` says the turn is merely **interrupted**. These have
+very different consequences for every build we ship. **Settled by research's own
+`tled` census: Ouroboros discards 26,356 unit-turns across 85 games AND STILL
+BEATS US.** If a TLE disqualified a bot those games would have ended instantly.
+**CLAUDE.md is right; official-docs.md:1091 is wrong.** Consequence for build
+priority: **CPU guards protect PERFORMANCE; an uncaught exception permanently
+destroys the unit.** Exception safety outranks CPU safety.
+
+**6. A FAIR-PLAY QUESTION ESCALATED TO MAGNUS — NOT MINE TO DECIDE.** Research's
+timeout sweep found deliberate compute-exhaustion attacks are **banned by name in
+sibling leagues** (BASIL: *"Intenionally causing this timeout... will result in
+the bot being banned"*; SC2 AI Arena prohibits *"slowing down the system on
+purpose"*; SSCAIT DQs bots that time out too much). **Our league's docs are
+silent either way.** I endorse their three-way split without reservation:
+**take the DEFENSIVE half now** (our own 0.00% tled at ~12% of budget means every
+"too expensive to compute" gate in our bot is worth re-asking); **take the
+INCIDENTAL half for free** (entity-dense long games tax opponents and are simply
+good play — AIIDE 2022 re-ran identical bots on bare metal, timeouts fell
+1,144 -> 90, and the bot that INDUCED them fell #3 -> #6 without its own timeout
+rate changing at all); **and HOLD the deliberate half until Magnus asks the
+organisers.** A DQ costs the whole ladder position, and we would be discovering
+the rule from the penalty.

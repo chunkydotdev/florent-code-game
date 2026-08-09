@@ -979,7 +979,7 @@ LAUNCHER_RESERVE = 80
 # UNMEASURED AT WRITE TIME.  These weights are reasoned from the spec, not
 # fitted; the battery has not been run.  KIDNAP_ON = False restores the parent
 # byte-for-byte on the enemy branch.
-KIDNAP_ON = True
+KIDNAP_ON = False
 
 # Landing-tile score weights.  Scale note: within a sqrt(26) throw the walk-back
 # gain spans about -5..+5 tiles, so KIDNAP_W_KILLZONE at 100 outranks the whole
@@ -1050,7 +1050,16 @@ KIDNAP_V_UNDER_FIRE = 120
 # so the value 2 means "launcher alive AND kidnap window open" and is bit-for-bit
 # 1 to every existing reader.  The launcher rewrites 1 at the top of its next
 # turn, so the signal is exactly one round wide and the Core bursts once.
-KIDNAP_AMMO_SURGE_ON = True
+#
+# DEFAULT OFF, and that is a judgement, not an oversight.  The displacement a
+# throw buys was re-measured at a MEDIAN 6 ROUNDS (p25 4, p75 8; 66% of exiled
+# bots come back at all), not the 10 the design assumed, so the window this
+# surge feeds is half the size it was priced for.  Against that, at the ladder's
+# ~22 exile throws per game an ON surge could convert four figures of titanium
+# per game into ammunition -- which scores in NO tiebreak, while delivered
+# titanium decides 26% of our games outright.  Built, ablatable, one flag to
+# turn on once the targeting inversion itself has a measured sign.
+KIDNAP_AMMO_SURGE_ON = False
 KIDNAP_SURGE_TI = 60             # one round's conversion: 6 sentinel shots
 KIDNAP_SURGE_TI_FLOOR = 120      # never surge out of a bank the economy needs
 KIDNAP_SURGE_AMMO_CAP = 120      # stop topping up a magazine nobody is burning

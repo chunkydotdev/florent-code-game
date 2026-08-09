@@ -387,6 +387,12 @@ class Player:
         self.heal_run = 0
         self.heal_off_until = -10 ** 9
 
+        # RIDE-ALONG -- INTRUDER ECONOMY TARGETING (see TARGET_INTRUDER_ECON_ON).
+        # Our own Core anchor as a TURRET sees it: derived once from the stored
+        # enemy anchor, because a turret never runs _builder's Core-finding scan
+        # and a gunner's r^2=13 vision cannot reach the Core it defends anyway.
+        self.own_anchor = None
+
         # LOKI-3 -- AMMO BURN EVIDENCE, Core-only (see LATE_AMMO_EVIDENCE_RNDS).
         # ammo_prev is the team ammunition balance as the Core left it last
         # turn (i.e. AFTER its own conversions); a lower reading at the top of
@@ -4016,10 +4022,20 @@ class Player:
         p = ct.get_position()
         turret_type = ct.get_entity_type()
         enemy_anchor = unpack_pos(ct.read_store(SLOT_ENEMY_CORE))
-        healer_focus = (
+        # The original single-map plank, kept EXACTLY as measured so its own
+        # behaviour on snowflake seat B is never in question.
+        map_healer_focus = (
             ct.get_map_width() == 26 and ct.get_map_height() == 26
             and enemy_anchor is not None
             and enemy_anchor.x == 5 and enemy_anchor.y == 5
+        )
+        # HEALER-FIRST TARGETING, UNLOCKED (see HEALER_FOCUS_GLOBAL_ON).  The
+        # table already existed; this is the map lock coming off, late band only
+        # so the opening -- the one band where we already out-convert the field
+        # -- is bit-for-bit untouched.
+        healer_focus = map_healer_focus or (
+            HEALER_FOCUS_GLOBAL_ON
+            and ct.get_current_round() >= HEALER_FOCUS_MIN_RND
         )
         if turret_type == EntityType.GUNNER:
             tgt = ct.get_gunner_target()
@@ -4034,11 +4050,33 @@ class Player:
                     ct.fire(tgt)
                     return
 
+        # RIDE-ALONG -- INTRUDER ECONOMY TARGETING (see TARGET_INTRUDER_ECON_ON).
+        # Resolved once per turret and cached.  A turret has no self.core (only
+        # _builder runs the Core-finding scan, and a gunner's r^2=13 vision
+        # cannot reach a Core it stands 20 dsq from anyway), so our own anchor
+        # is derived from the enemy anchor -- enemy_core_for is symmetric over
+        # CORE_PAIRS, returning either side of a pair given the other.  On an
+        # unknown map it falls back to the rotational mirror, which is the same
+        # fallback every other consumer of that helper already accepts.
+        own_anchor = None
+        if (
+            TARGET_INTRUDER_ECON_ON and enemy_anchor is not None
+            and ct.get_current_round() >= TARGET_INTRUDER_MIN_RND
+        ):
+            try:
+                if getattr(self, "own_anchor", None) is None:
+                    self.own_anchor = enemy_core_for(
+                        ct.get_map_width(), ct.get_map_height(), enemy_anchor
+                    )
+                own_anchor = self.own_anchor
+            except Exception:
+                own_anchor = None
+
         # Sentinels pierce intervening units; scan their whole line and prefer
         # the Core, then combat units/builders, then economic infrastructure.
         try:
             best = None
-            best_prio = 99
+            best_prio = 999
             for t in ct.get_attackable_tiles():
                 bid = ct.get_tile_building_id(t)
                 bot = ct.get_tile_builder_bot_id(t)
@@ -4049,8 +4087,11 @@ class Player:
                     et = EntityType.BUILDER_BOT
                 if et is None or not ct.can_fire(t):
                     continue
+                # Base ranks DOUBLED so the intruder lift below can express a
+                # half-rank in integers; both orders are otherwise exactly what
+                # this file has always shipped.
                 if healer_focus:
-                    prio = {
+                    prio = 2 * {
                         EntityType.BUILDER_BOT: 0, EntityType.CORE: 1,
                         EntityType.SENTINEL: 2, EntityType.GUNNER: 3,
                         EntityType.LAUNCHER: 4, EntityType.HARVESTER: 5,
@@ -4058,13 +4099,30 @@ class Player:
                         EntityType.BARRIER: 7,
                     }.get(et, 8)
                 else:
-                    prio = {
+                    prio = 2 * {
                         EntityType.CORE: 0, EntityType.SENTINEL: 1,
                         EntityType.GUNNER: 2, EntityType.BUILDER_BOT: 3,
                         EntityType.LAUNCHER: 4, EntityType.HARVESTER: 5,
                         EntityType.CONVEYOR: 6, EntityType.SPLITTER: 6,
                         EntityType.BARRIER: 7,
                     }.get(et, 8)
+                # An enemy economy building standing in OUR half is capital that
+                # walked into an existing gun: 30 HP of harvester is 20 Ti of
+                # theirs plus its income plus a builder turn to replace, against
+                # a 40 HP builder that moves every round and is healed at
+                # 4 HP/Ti.  Composes with either table and never lifts above a
+                # hostile turret or a Core.  The measured single-map plank is
+                # excluded so its shipped behaviour is untouched.
+                if (
+                    not map_healer_focus and own_anchor is not None
+                    and et in (EntityType.HARVESTER, EntityType.CONVEYOR,
+                               EntityType.SPLITTER)
+                ):
+                    try:
+                        if t.distance_squared(own_anchor) < t.distance_squared(enemy_anchor):
+                            prio -= TARGET_INTRUDER_LIFT
+                    except Exception:
+                        pass
                 if prio < best_prio:
                     best_prio, best = prio, t
             if best is not None:

@@ -1266,6 +1266,99 @@ LATE_AMMO_TI_FLOOR = 140
 # consuming, the evidence goes stale, and the magazine reverts to Eir 5.1.
 LATE_AMMO_EVIDENCE_RNDS = 120
 
+# --- HEALER-FIRST TARGETING, UNLOCKED (independent flag) --------------------
+# WHAT WAS IN THE CHASSIS.  _turret carries TWO target tables.  The one that
+# shoots enemy BUILDERS first is hard-locked to a single seat of a single map:
+#
+#     healer_focus = (w == 26 and h == 26 and enemy_anchor == (5, 5))
+#
+# i.e. snowflake seat B and nothing else.  Everywhere else -- essentially
+# always -- our turrets shoot enemy turrets and Cores BEFORE enemy builders.
+#
+# WHY THAT ORDER LOSES, from the spec arithmetic:
+#
+#     builder heal   1 Ti -> +4 HP    4.00 HP/Ti   <-- best conversion in game
+#     sentinel shot 10 Ti -> 18 dmg   1.80 HP/Ti
+#     gunner  shot   4 Ti ->  7 dmg   1.75 HP/Ti
+#
+# Healing is 2.22x more titanium-efficient than the best damage source, so a
+# SCREENED target cannot be killed by attrition at all -- this file's own notes
+# already record that 2 builders out-heal a Gunner and 3 out-heal a Sentinel,
+# and the eider #415 case measured an escorted turret absorbing 630 damage and
+# healing back 630, net zero.  Shooting the screened Core while ignoring the
+# screen is spending at 1.8 HP/Ti against repair at 4.0 HP/Ti: a losing
+# exchange by construction, however many shots we buy.
+#
+# And a turret is one of only TWO things in the game that can remove a healer:
+# builder attack() damages BUILDINGS only, so a builder bot can never shoot an
+# enemy builder bot.  Turrets and Launchers are the whole answer.
+#
+# SCOPE, STATED HONESTLY.  This is a SENTINEL rule.  A Gunner never reaches
+# either table: its branch fires at get_gunner_target(), the nearest targetable
+# tile in its line, and since a Gunner ray is stopped by whatever it hits first
+# there is no choice to make.  Sentinels pierce, so the line scan and its
+# priority table are theirs -- and PRIMARY_SENTINEL means our home
+# counterbattery is exactly that, standing in exactly the half these screens
+# operate in.
+#
+# LATE BAND ONLY, and this is load-bearing.  Our measured r0-150 core-kill
+# hazard is 23.3% against the >=1800 field's 20.7% -- the opening is the one
+# band where we are already MORE decisive than the field, and a rush kills
+# through a screen before a screen exists.  HEALER_FOCUS_MIN_RND keeps this
+# entirely out of that window.
+#
+# PREREQUISITE, NOT A SUGGESTION: LATE_AMMO_ON.  A 40 HP enemy builder is 3
+# Sentinel shots = 30 ammunition, against a standing peacetime magazine of
+# AMMO_FLOOR = 16 whose per-gun term (4 * weapons) is priced at 4 = one GUNNER
+# shot while we actually fire Sentinels at 10.  Retargeting onto healers
+# without raising the magazine just buys shots we cannot pay for.
+HEALER_FOCUS_GLOBAL_ON = True
+HEALER_FOCUS_MIN_RND = 150
+
+# --- RIDE-ALONG: INTRUDER ECONOMY TARGETING (independent flag) --------------
+# THE FINDING (1,084 enemy harvester builds, banded): the fraction built NEARER
+# OUR Core than their own runs 3.7% at r0-30, 13.1% at r30-150 and 33.9% at
+# r150+.  By r150 a THIRD of their new harvesters stand on OUR side of the map:
+# 30 HP, 20 Ti plus +5% global scale to them, far from their own defences, and
+# already inside the band where our own turrets measurably sit at d^2 20-22
+# doing nothing.  A harvester is 2 sentinel shots or 5 gunner shots, and killing
+# it takes 20 Ti of their capital, their income off the board, and a builder
+# turn to replace.
+#
+# WHY THIS IS THE CHEAPEST SYMMETRY BREAK ON THE BOARD.  It moves nothing,
+# builds nothing, spends nothing and changes no turret's type or position -- it
+# only changes WHICH tile of a ray a turret that was already going to fire
+# shoots at.  It therefore carries none of Thor's risk by construction.
+#
+# WHAT THE FILE ALREADY DID, AND WHY IT WAS WRONG HERE.  _turret's line scan
+# ranks CORE 0, SENTINEL 1, GUNNER 2, BUILDER_BOT 3, LAUNCHER 4, HARVESTER 5,
+# CONVEYOR/SPLITTER 6, BARRIER 7.  So a gun whose ray covers both an enemy
+# builder and an enemy harvester shoots the BUILDER -- a 40 HP unit that moves
+# every round, is routinely healed at 4 HP/Ti, and is the definition of chip
+# damage we cannot convert -- and leaves the static 30 HP capital asset alone.
+#
+# THE CHANGE.  Base priorities are doubled (so a half-rank is expressible in
+# integers) and an enemy ECONOMY building standing in OUR half is lifted by
+# TARGET_INTRUDER_LIFT.  That places it between GUNNER and BUILDER_BOT: it
+# outranks mobile builders and launchers, and it NEVER outranks a hostile
+# turret or the enemy Core, which are the two things that can actually kill us.
+#
+# Two narrowings.  The healer_focus branch (a measured single-map plank that
+# deliberately ranks BUILDER_BOT first) is left untouched.  And "our half" is
+# decided against the Core anchors, with a turret that cannot resolve them
+# falling through to the unmodified ranking -- a forward turret out of sight of
+# home simply does not apply the rule.
+#
+# ON by default: a strictly better-aimed shot with no spend attached.  Its own
+# flag so it can still be lifted out of the matrix.
+TARGET_INTRUDER_ECON_ON = True
+# Band start, matching where the measurement says the intrusion becomes common
+# (13.1% -> 33.9% across the r150 line).
+TARGET_INTRUDER_MIN_RND = 150
+# Half-ranks to lift by, against DOUBLED base priorities.  5 puts a harvester
+# (base 5 -> 10) at 5, i.e. between GUNNER (4) and BUILDER_BOT (6).
+TARGET_INTRUDER_LIFT = 5
+
 # --- RIDE-ALONG: HEAL IDLE FLIP (fourth independent flag) -------------------
 # WHY THIS IS ON THE SAME PAGE AS THE GUNLINE.  Titanium efficiency, straight
 # off the spec:

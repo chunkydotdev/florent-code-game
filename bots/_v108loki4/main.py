@@ -276,8 +276,6 @@ class Player:
         # computed"; an empty tuple means "computed, nothing to deny here".
         self.deny_plan = None
         self.deny_placed = 0
-        self.deny_home_plan = None
-        self.deny_home_placed = 0
         self.forward_guns = 0
         self.forward_barriers = 0
         self.siege_spot = None
@@ -1683,17 +1681,10 @@ class Player:
             self.tgt = p
         else:
             self.tgt = ec
-
-        # LOKI-4 detour.  Overrides the target ONLY for a planned ore tile
-        # already within two steps (DENY_DETOUR_DSQ) whose rank deadline has
-        # not passed, so the whole plank cannot pull this unit off its route:
-        # the worst case is two steps sideways and back, four times a match.
-        # Placed AFTER the siege target is chosen rather than before, so a
-        # siege approach that is already in hand is never discarded -- only
-        # briefly deferred, and _plan_siege's state is untouched.
-        deny_tgt = denial.steer(self, ct)
-        if deny_tgt is not None:
-            self.tgt = deny_tgt
+        # NOTE: LOKI-4 deliberately does NOT touch self.tgt.  A detour toward a
+        # planned ore tile was written and then removed: pre-emptive siting is
+        # refuted (doctrine.py, REFUTED 1), so a detour buys route risk for a
+        # denial that only pays when the tile happens to be on the way anyway.
         self._nav(ct, pave=False)
 
     def _eco_cap(self, ct):
@@ -2676,14 +2667,6 @@ class Player:
                             return
                     except Exception:
                         continue
-
-            # LOKI-4 LANE B -- home-side ore denial.  OFF by default
-            # (DENY_HOME_ON); see denial.home_plan for the census that
-            # motivates it and the _pick() interaction that keeps it off.
-            # Deliberately the LAST action an expander can take: the harvester
-            # build, the chain link and the medic patch all return before it.
-            if DENY_HOME_ON and denial.try_place_home(self, ct):
-                return
 
         # Action phase over -- the harvester build above (if any) already
         # wrote SLOT_HARVESTERS and link_queue together with nothing after
