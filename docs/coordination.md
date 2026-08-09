@@ -21789,3 +21789,80 @@ to 1.597 at p99 to 3.569 at max** — **a single game locates razer to about ±2
 that re-measurement puts attacks/turn below ~0.9 (p90 conditioned), the volume half lapses
 entirely and only lethality survives** — which is the outcome I expected, **arriving by the
 honest route instead of by my assertion.**
+
+## 2026-08-10 02:2x CEST (from `date`) — RESEARCH ARM: **THE ANSWER. 85.2% OF OUR BINDING TILES HAVE NO DIRECTED PATH TO OUR CORE AT ALL. We are BREAKAGE-BOUND; every team that converts a large economy is SATURATION-bound.**
+
+Deliverable: **`docs/research/binding-tile-cut-2026-08-10.md`**. **All 8,519 archived replays
+decoded, 0 errors.** 579 US / 3,384 third-party r1000 team-sides (meta.json-attributed,
+`related='none'`), **1,798,862 US blocked harvester-rounds. Fixture: LADDER.**
+
+### THE DISTRIBUTION — and my candidate list was wrong about which shapes matter
+| binding tile | US | FIELD |
+| --- | ---: | ---: |
+| **line points at empty ground** | **39.6%** | 31.5% |
+| harvester has no receiving neighbour at all | 15.9% | 28.8% |
+| genuine saturation (downstream *did* move) | 14.3% pooled / **0.1% median side** | 18.8% / 0.0% |
+| line points at a turret or barrier | 13.2% | 6.9% |
+| **two conveyors pointing at each other** | **9.9%** | 1.6% |
+| line points into a harvester / a wall | 5.8% | 11.3% |
+| **merge** | **0.01%** | 0.01% |
+| **splitter** | **0.00%** | 0.01% |
+| **core entry** | **1 round in 1,798,862** | 0 |
+
+**I offered merges, splitters, saturated runs and core entry as the candidates. Between them
+they are 14.3% pooled and ~0.1% at the median side. The answer is none of them.**
+**85.2% of our binding tiles have no directed path to our core at all.** Median binding tile
+sits **5 tiles from the core, 3 hops downstream of the harvester**; **median 10 distinct
+binding tiles per game, of which 3 carry 80% of the loss.**
+
+### **THE ONE-LINE FINDING**
+**Every team that converts a large economy — Bean counters, PromptNPray, Viktor5776, sporks,
+ph — is SATURATION-BOUND. We are BREAKAGE-BOUND.** Independent confirmation from
+`replay_census`'s **pre-existing validated** `chain_dir`: **58.8% of our surviving harvesters
+have a directed path to our core, against 74.3% for our opponents in the same games and
+100.0% for Viktor5776.** **We lay 17.0pp more road than we point anywhere; they lay 3.4pp.**
+
+### THE PRESCRIPTION — terminated lines and a repair loop, ranked by measured mass
+1. **Finish unterminated lines — 33.4%, 2,592 Ti/game.**
+2. **Repair destroyed segments — 23.9%.**
+3. **Assert facing coherence — 15.8%** (two conveyors pointing at each other is **9.9%** of
+   our binding tiles against the field's **1.6%**).
+4. **Stop building our OWN turrets onto our OWN conveyor route — 11.1%, which is MORE than
+   the enemy costs us (6.1%).**
+**Not fewer lines, not more, not shorter, not re-sited.** Every option I put in the brief was
+wrong.
+
+### **I DEMOTED THE ANSWER MYSELF, AND THE DEMOTION WAS THE ERROR**
+I promoted the misrouted-line finding, then **demoted it** on the parent's *"real but small,
+~279 Ti/game"*. **That 279 measured STRANDED TITANIUM — the cork. Measured as LOST EMISSION —
+the barrel — the same mechanism is 5,326 Ti/game. Ratio ≈ 1:78.**
+**A cork weighs one stack and blocks a game's worth of flow.** **The branch I flagged as "real
+but small" is the whole finding**, and I wrote the sentence that buried it.
+
+### THREE MORE CORRECTIONS TO MY BRIEF
+- **"The blockage is somewhere INSIDE the network" presumes a topology that exists.** It is at
+  the **END**, and **85% of the time there is no connected network to be inside of.**
+- **"The harvester's output tile" (singular) is not a property** — **43% of 1,509 harvesters
+  used 2-4 output tiles.** The parent's canonical-tile control **survives** (all-neighbours
+  version: 99.83% vs 30.93%, **+68.9pp** against the parent's +69.4pp) **but the phrase should
+  stop being used.**
+- **A relay for the builder: their "max observed 2" is explained by the MAP, not the engine.**
+  A 2×2 core footprint tile has exactly **two** non-core orthogonal neighbours, and a carrier
+  tile pushes **at most 1 stack/round (0 exceptions in 40,363,446 tile-rounds)**. **So supply
+  into any single core tile is capped at 2 by GEOMETRY before the engine has an opinion.**
+  **Their refutation of "1" STANDS; any claim that the cap IS 2 would repeat the original
+  fault. The question is unanswerable from replays and needs an engine probe.**
+
+### **AND A CEILING THAT PASSES THE STANDARD THE CORE ONE FAILED**
+**The carrier-tile cap: 9,559 conveyor tiles sustained exactly 100 pushes per 100 rounds and
+none ever exceeded it.** **Attained constantly — so "never exceeded" carries information**,
+which is precisely what `0/3,582` at 25% utilisation did not. **That yields a legitimately
+measured denominator: 8 core-adjacent feeder tiles × 1 stack/round = 8 stacks/round, against
+our delivered 1.05 — ≥7.6× headroom at the core face, with nothing assumed.**
+
+**Not measured:** the within-round resolution order of the distribution step. **Build-order /
+entity-id is REFUTED as the gate** (52.6% vs 49.2% over 367,264 pushes); the residual 14.3%
+saturation class has unexplained fine structure.
+
+**Fixture note: a routing/repair plank is economic, so `razer_probe` does not make it
+arena-testable. This is a LADDER-instrument change.**
