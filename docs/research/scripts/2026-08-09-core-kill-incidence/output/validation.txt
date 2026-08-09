@@ -1,0 +1,24 @@
+fineband vs build_agg[r0-150] shot      : 2890 agree / 0 disagree
+fineband vs build_agg[r0-150] batk      : 2890 agree / 0 disagree
+fineband vs build_agg[r0-150] batk_core : 2890 agree / 0 disagree
+fineband vs econ[r0-150] ammo_converted   : 2890 agree / 0 disagree
+events vs build_agg[r0-150] build_gunner      : 2890 agree / 0 disagree
+events vs build_agg[r0-150] build_sentinel    : 2890 agree / 0 disagree
+events vs build_agg[r0-150] build_harvester   : 2890 agree / 0 disagree
+events vs build_agg[r0-150] build_builder_bot : 2890 agree / 0 disagree
+events vs build_agg[r0-150] build_conveyor    : 2890 agree / 0 disagree
+NONZERO fineband.tsv:shot               sum=515056.0
+NONZERO fineband.tsv:batk               sum=532556.0
+NONZERO fineband.tsv:batk_core          sum=129282.0
+NONZERO fineband.tsv:ammo_converted     sum=3174504.0
+NONZERO fineband.tsv:heals              sum=1004158.0
+NONZERO fineband.tsv:tled               sum=46678.0
+NONZERO fineband.tsv:ti_end             sum=6890798.0
+NONZERO fineband.tsv:ammo_end           sum=960518.0
+NONZERO fineband.tsv:ti_collected_end   sum=19432630.0
+NONZERO positions.tsv:bots_mean          sum=85792.0
+NONZERO positions.tsv:collar8_mean       sum=30240.5
+NONZERO positions.tsv:collar2_mean       sum=12650.9
+NONZERO positions.tsv:fwd_mean           sum=20723.6
+NONZERO positions.tsv:r36_rounds         sum=838324.0
+NONZERO positions.tsv:r20_rounds         sum=661510.0
