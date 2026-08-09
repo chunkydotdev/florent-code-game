@@ -11952,3 +11952,71 @@ anchor mismatch — a statistic about the code standing in for a measurement of
 behaviour.*
 
 **IN-FLIGHT:** one Opus sweep agent on wheel topic 8 (economy). Nothing on the CPU.
+
+### 2026-08-09 09:47 CEST (from `date`) — builder arm: **IN-FLIGHT REGISTER + PRE-REGISTERED GATE: PLANK "HOME" (`_v111home`), three machinery-audit defects in the one band we measurably win**
+
+**IN-FLIGHT:** `PLANK-HOME-GATE` (inline, no subagent). **Written and pushed
+BEFORE the battery runs.**
+
+**WHY THIS AND NOT ANOTHER DOCTRINE ROAD.** Today closed the forward road on
+three instruments and refuted the single-seat "defect class". What survived is
+one large positive: **our home band beats the field by +11.4 / +16.6 / +22.3pp on
+fixed-horizon turret survival.** The machinery audit lists four verified defects
+sitting in exactly that band. This plank is audit items **4 and 3**, built
+together because the audit's own sequencing says so: *"fixing what the guns shoot
+without fixing what they can afford just wastes shots."*
+
+**THE ONE NEW MEASUREMENT THIS RESTS ON.** `main.py:620` sizes the magazine as
+`min(48, 4 * weapons)`, where 4 is one **gunner** shot and the comment says so.
+From the corpus (1,225 joined files, our team, guns only):
+```
+              gunner            sentinel          blended ammo/shot
+US  home      1,133 (34.1%)     2,191 (65.9%)     8.0
+FIELD home    5,796 (89.0%)       713 (11.0%)     4.7
+```
+**The constant is correct for the field and wrong by 2x for us.** We are
+sentinel-heavy at 10 ammo/shot; they are gunner-heavy at 4. `doctrine.py:1025`
+already contains this exact criticism — written about a *disabled* block and
+never applied to the live one. Flag 4 prices at the measured 8 and moves the cap
+48 -> 96 to keep the original comment's stated intent ("a dozen shots of
+reserve") true at the real price.
+
+Flag 3 generalises the anti-healer target table, which today is live on **one
+seat of one map** (snowflake B), to **the home band under siege** — the snowflake
+clause is preserved so that seat stays bit-identical. Flag 3b replaces the
+first-wins tie-break (resolved by our own facing, `game-model.md:283-290`) with a
+`(prio, dsq)` compare.
+
+**COMPOSITE, NOT THREE LEGS — and the scope note that keeps it honest.** LOKI-3
+measured `HEALER_FOCUS` alone at an **exact null** and its five flags together at
+2.82; targeting is the last link in turret -> ammo -> targeting. **But LOKI-3's
+null was measured in the r200-300 FORWARD band where we had ~0 turrets for it to
+aim.** This fires in the HOME band, where we demonstrably have turrets. Different
+population, so "refuted alone" does not transfer — and I am stating that *before*
+the numbers, not after.
+
+**CONTROL EQUIVALENCE ALREADY VERIFIED:** `_v111off` (all three flags False) is
+**behaviourally identical to live across 6 maps x 2 seats, 12/12 exact matches**
+(winner, turns, win condition, both titanium totals). **The rollback is exact.**
+
+**GATE:** `_v111off` vs `_v111home`, **all 15 maps x 5 deterministic opponents x
+both seats = 150 games per cell, 300 total**, `--tle 0`, 1 seed (both sides
+deterministic, so extra seeds are not extra samples — the hive battery proved
+that).
+
+**PRE-STATED READ:**
+- **WIN** = plank ahead overall AND no single map losing >=3 of its 10 games.
+  A composite that buys 5 maps and craters one is a map-conditional flag, not a
+  ship.
+- **REFUTED** = plank behind overall, or any map craters. Then flag 4 goes back
+  to 4 and the honest reading is that **ammunition is not the binding constraint**.
+- **Any crash by our side is a hard fail.**
+- **PRE-STATED CONFOUND:** a fixed ammo floor has been refuted **twice** here
+  (45.3%, 46.1%) and both failures raised the target with **zero turrets alive**.
+  This raise is multiplied by `weapons`, so it is exactly 0 with no guns — the
+  case both refutations actually measured. **If it still loses, that excuse is
+  spent and I will not reach for it.**
+- **INSTRUMENT LIMIT, stated now:** the arena pool is our own lineage and we beat
+  it 70-90%; per `builder-method.md:71` this is a **safety and mechanism**
+  instrument, not a doctrine one. A win here licenses a ladder ship, **it does not
+  establish the doctrine.**
