@@ -106,6 +106,30 @@ target state at lock time. A prereg predicting change on cells already changed
 cannot fail honestly. (The LOCKED 15:37 file already satisfies this — it names
 "`core_destroyed` in OUR favour, not a tiebreak steal" — which is the template.)
 
+## Addendum 2, 16:4x CEST — obligation 3 sized with numbers; denominator rule; the r74 outlier
+
+From research's v92 unrated-baseline audit (`v92-unrated-baseline-audit-2026-08-09.md`,
+b9394ef), adopted into the obligations:
+
+**Obligation 3 is amended to carry its own numbers:** the 3/5→5/5
+core-decided movement is **Fisher one-sided p = 0.2222** (two-sided 0.4444) —
+a direction, not a result — and at fixed bot version v92's own core-decided
+share spans **0%→100% by opponent** (CAD 100%, KCM 75%, Ouroboros 60%, Lunds
+50%, Powerpuff 0%), wider than the 60%→100% the probe is read for. The
+same-opponent framing (Ouroboros vs Ouroboros) remains the right comparison;
+these numbers size it so no later reader inflates it.
+
+**Obligation 8 (denominator rule):** the 4-13 v92 unrated baseline is
+game-pooled from legs of **5/5/4/2/1** maps (verified fired-short, not
+truncated). Ouroboros and CAD carry 29% of it each, Powerpuff 6%. Any "LOKI
+delta vs baseline" compares **per-opponent or states the Ns**; the five teams
+are not five comparable cells.
+
+**Noted, not an obligation:** `f92f1ca2` game 5 (nordkap, seat a, unrated,
+v92) — **CAD core killed at r74**, resignMessage null, the fastest kill on our
+record, 3x faster than our ladder-kill median vs CAD (r217, plants from r125,
+n=11). Side-lane autopsy in flight; mechanism unknown until it lands.
+
 ## Authority
 
 Amendments: side lane (this lane owns the PREREG discipline). Data: research

@@ -17580,3 +17580,16 @@ and relayed:
 is now first-hand — builder relayed Magnus verbatim: *"Test theories using
 unrated games between ladder games."* Unrated legs are the standing test
 method, not a parked idea.
+
+## 2026-08-09 16:4x CEST — SIDE LANE IN-FLIGHT: r74 kill autopsy (announce before spawn)
+
+| arm | what | output | budget | status |
+|---|---|---|---|---|
+| side | autopsy of `f92f1ca2` game 5 (nordkap/a, unrated, v92 vs CAD, core kill r74 — fastest on record, 3x our ladder median vs them): mechanism, timeline, CAD failure-mode vs lucky-geometry, reproducibility read | docs/research/r74-kill-autopsy-2026-08-09.md | zero downloads — replay on disk | SPAWNING |
+
+Also committed: obligation 3 amended with research's sizing numbers (Fisher
+p=0.22; v92 fixed-version core-decided spread 0–100%) and obligation 8 (the
+4-13 baseline is game-pooled from 5/5/4/2/1 legs — per-opponent comparisons
+or stated Ns, never five equal cells). Checked for duplication first:
+`cad-core-kill-2026-08-09.md` is ladder-only (our kills median r217); the r74
+game is new ground.
