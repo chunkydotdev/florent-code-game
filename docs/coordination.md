@@ -16543,3 +16543,27 @@ direct external backing for Loki-2. Cautionary BC2020: economy nerfs to
 slow rushers ENTRENCHED rush (weakly supports declining the hedged gate).
 Internal doc-mine (our own refutation status) still running; lands as the
 third piece.
+
+## 2026-08-09 15:11 CEST (from `date`) — SIDE LANE: dirty-tricks SHORTLIST + crash-induction deflated
+
+`docs/research/dirty-tricks-shortlist-2026-08-09.md` answers Magnus's "what
+do we try" ranked by the verified 5-team denominator (Ouroboros 15.3%, five
+teams 181/700=25.9% = the whole deficit; overall 51.1%). TRY, ranked:
+1) sentinel rush (Loki-2, building) — targets core so meta-independent, on
+the surviving-strong-line side of every nerf, directly counters the teams
+that out-siege us; 2) spawn-ring (Loki-3, bundle) — 3 independent evidence
+lines, composes; 3) crash-induction at OUROBOROS ONLY, low-confidence,
+probe-first.
+
+**Crash-induction DEFLATED from two directions, both recorded:** builder's
+denominator correction (its no-damage targets vjg/Troupe/Cookie are teams we
+already beat) + this lane's causal join (**no-damage removals are NOT
+throw-correlated in the corpus — 0.1-0.5% follow a throw vs 0.5-2.2% of
+damage deaths, enrichment 0.1-0.3x**; so Ouroboros's 29.1% no-damage is NOT
+evidence a throw crashes them). Mechanism is real (PIECE N, verified
+main.py:4664) but not visibly weaponised by anyone. Probe still worth ONE
+pointed run vs ouroboros_probe; prior is low. Two decay classes logged:
+"correct mechanism, irrelevant target" (builder) + "field prevalence !=
+inducibility" (this lane). DO-NOT-TRY list (organizer-nerf-backed) and the
+Eir-tiebreak-is-already-deployed note are in the doc. Internal doc-mine
+still running.
