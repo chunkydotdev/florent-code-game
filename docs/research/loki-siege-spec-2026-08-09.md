@@ -142,6 +142,34 @@ only AFTER first core contact — demand-driven is the measured winning
 pattern. We hold more Ti than every opponent at r200-300 while buying 1/12th
 of Ouroboros's ammo; the titanium is already there.
 
+### ATLAS GATES RESOLVED (2026-08-09, `opponent-reaction-atlas-2026-08-09.md`)
+- **The drain pump is ALREADY HAPPENING inadvertently and works**: 97.9-99.4%
+  of opponent shots on a heavily-absorbing building of ours overlap a heal on
+  that tile — they keep firing at structures whose HP is not dropping. Extreme
+  case: one Ouroboros gunner put **677 shots = 2,708 Ti of ammo into a single
+  healed 3-Ti conveyor**. Powerpuff 634, OopsGotYourElo 531, Leviathan 446,
+  Lunds 428, KCM 427. Deliberate bait-siting (P-B) is live vs these seven+;
+  **dead vs Memtrace, Team 48, Askar, Banminary, Bisons, gsxWins, Focalground**
+  (1-7% non-core building shots — nothing of ours is ever in their line).
+- **Interceptor-saturation bait is DEAD**: observed min inter-throw gap is
+  1 round for every throwing opponent — launch cooldown 1, no capacity to
+  saturate.
+- **Insertion is UNCONTESTED against 6 of 9 priority opponents**: Ouroboros,
+  Powerpuff, Leviathan, Orizon build no launchers; KCM and CtrlAltDefeat
+  never throw enemy bots (0 across 170 sides). Contested (near-deterministic
+  interception, latency 0-1) vs Memtrace 92.7%, Lunds 98.6%, OopsGotYourElo
+  74.7%, Focalground 87.4% — S6 should be opponent-gated accordingly.
+- **Five teams NEVER rotate a gunner** (Memtrace, OopsGotYourElo, Team 48,
+  Bisons, gsxWins) — off-axis approach lanes are permanently safe vs them.
+  Rotate-on-sight is sharp vs Ouroboros (3.8x), I Stone (6.8x), KCM.
+- **Healer response splits the field**: CtrlAltDefeat median 38.5r latency,
+  Team 48 70.5r/17% response, The Bisons never heals — siege pressure vs
+  these compounds; Memtrace/Askar/0033 patch in 0-1 rounds.
+- Caveat: quantitative columns drift across opponent versions (Powerpuff
+  spans 10); qualitative gates (never-rotates, zero-enemy-throws) hold in
+  every version observed. Build-on-sight is UNMEASURED (instrument failure,
+  honestly flagged), not null.
+
 ### Optional opener — S6 INSERT (only after S1-S5 measure)
 The STRONG band (our bleed sources) proves insert→gunner→fire, spiking 3.5x
 in commit windows; TOP walks instead. So insertion is an ACCELERANT of a
