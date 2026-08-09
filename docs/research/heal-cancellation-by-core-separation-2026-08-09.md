@@ -96,6 +96,31 @@ survival, worst-in-corpus forward survival.
 - Damage-landing rounds only, so this says nothing about rounds where nothing lands.
 - **Correlational.** "We cancel less at 3+ attackers" could mean our heal detail is
   too small, or that games reaching 3+ attackers are already lost and our builders
-  are dead. **Those are distinguishable** — count *live builders adjacent to the
-  core* at the moment of a 3+-attacker round — and that measurement has not been
-  run.
+  are dead.
+
+> ## ✅ CONFOUND CLOSED (same session)
+>
+> Live builder count reconstructed from `tl.tsv` as running builds minus deaths, per
+> team per round, on the same damage-landing rounds:
+>
+> | attackers | who | dmg-rounds | cancel% | **mean live builders** |
+> |---|---|---|---|---|
+> | 1 | US | 93,710 | 65.2% | **5.62** |
+> | 1 | FIELD | 77,845 | 46.4% | 5.32 |
+> | 2 | US | 26,106 | 51.0% | **5.06** |
+> | 2 | FIELD | 23,071 | 66.8% | 5.36 |
+> | 3+ | US | 6,749 | **38.9%** | **5.02** |
+> | 3+ | FIELD | 6,093 | **68.6%** | 5.06 |
+>
+> **At 3+ attackers we have 5.02 live builders — statistically the same as at one
+> attacker (5.62), and the same as the field's 5.06.** The "our builders were
+> already dead" alternative is **refuted**. We have the builders. We do not apply
+> them.
+>
+> **So "our heal detail does not scale with the threat" survives its main
+> confound**, and it is now the strongest single characterisation of our defensive
+> failure: *the resource is present and unspent.*
+>
+> Residual: this is live builder **count**, not **adjacency to the besieged core** —
+> a builder alive across the map cannot heal. The stronger version still needs
+> per-round positions, which neither corpus carries.
