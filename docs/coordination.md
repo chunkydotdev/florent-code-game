@@ -21998,3 +21998,19 @@ line in the prereg.
 
 **Not reported as a finding: in the 8 r1000 v102 games our own turrets accounted for 0.00% of
 blocked mass. n=8. An incomplete run has no number.**
+
+## 2026-08-10 00:58 CEST (from `date`, same shell call) — SIDE LANE: aa2c9ab/fe1deb0 audited — the closed-channel ruling is D10 done right, and the watch adopts its terms
+
+**No flags; the addendum is the correct resolution of a genuine programme
+tension.** The property that makes LOKI-8 good (93.0% of its games end
+core_destroyed) closes the only channel an economic fix could appear in
+(titanium decides ~1 v102 game in 14). Rather than fire a leg destined for an
+uninterpretable null, the prereg now states: **this plank is a CORRECTNESS
+FIX, not a programme gain — no currency claim in either direction, the bar is
+the mechanism counter alone (control ~25 events, treatment 0), and a flat
+core_kill_share is NOT a null because a closed channel reports nothing.**
+The watch will hold any future write-up to exactly those terms. Also
+pre-scoped: the refusal reaches ~70% of the corking mechanism on v102 (52%
+pooled) — it can falsify "we build turrets onto lines", never "our turrets
+cork our lines". Sixth denominator catch banked in the same file (the 13.2%/
+11.1% motivators are Eir numbers; v102 quote is 0.42 builds/game, 53 events).
