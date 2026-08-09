@@ -94,10 +94,9 @@ Why this matters more than the leg it sits in:
   reasoning is about the *tiebreak being winnable*; it is not evidence their core is
   hard to reach. An r74 kill is direct evidence it is reachable, at least on nordkap/a.
 - **The replay is ALREADY ON DISK** — `replay_archive/f92f1ca2-19ea-44b7-8ba3-b19e93917e46_game_5.replay26`,
-  and all five games of the leg plus the `.meta.json`. **A no-download autopsy of the
-  single fastest kill we have is available right now.** Given that the whole programme is
-  `core_kill_share` + `time_to_core_kill` inside r250, this is the highest-value
-  unopened replay in the archive.
+  and all five games of the leg plus the `.meta.json`. **A no-download autopsy of our
+  fastest kill AGAINST CAD is available right now** (scope corrected per §6 — it is not
+  our fastest kill overall).
 
 **What it is not.** n=1, unrated, one map, one seat. It does not say CAD is rushable in
 general and it is not a proposal to re-aim the campaign. It says one specific thing:
