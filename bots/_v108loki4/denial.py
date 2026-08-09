@@ -227,6 +227,12 @@ def reclaim(bot, ct, tile):
         # can_build_harvester is False" would also match the defensive barrier
         # _defend plants beside our own Core (main.py:2403), and reclaim would
         # quietly dismantle the home wall.
+        # Fast reject first: the caller runs this over all eight neighbours of
+        # every expander every turn, and all but a handful are not ore at all.
+        # One frozenset lookup keeps the common case O(1) and also makes the
+        # unknown-map case (empty ore set) a hard no.
+        if (tile.x, tile.y) not in _ore_set(bot):
+            return False
         if tile not in plan(bot, ct) and (tile.x, tile.y) not in bot.deny_craters:
             return False
         bid = ct.get_tile_building_id(tile)

@@ -10770,3 +10770,62 @@ distance is **d² 116-146 from our own core against the field's 56-82** — a gu
 that far out sits outside every heal path we own and dies alone. The knob is
 `LATE_FORWARD_NUM/DEN = 3/5`; **2/5 would sit on the field's measured band.** If
 this battery is negative, that is the first thing to try before abandoning.
+
+### 2026-08-09 09:20 CEST (from `date`) — builder arm: **MAGNUS: "would any combination make the refuted strategies viable?" — HE IS RIGHT, AND LOKI-3 HAD ALREADY PROVED IT INSIDE ONE BUILD**
+
+**THE DEMONSTRATION WAS SITTING IN THE FLAG MATRIX I READ AN HOUR AGO:**
+```
+LATE_AMMO alone       ratio 0.38
+HEALER_FOCUS alone    ratio 0.17   <-- EXACT null, byte-identical to the parent
+LATE_TURRET alone     ratio 0.32
+turret + forward      ratio 1.96
+ALL FIVE              ratio 2.82   <-- 16x the parent
+```
+**Every component is individually near-worthless and one is a literal null — yet
+they compose to field parity.** Tested one at a time and discarded on their own
+merits, **the entire winning configuration would have been thrown away piece by
+piece.**
+
+**AND THERE IS A MECHANICAL REASON THAT GENERALISES: the dependency chain is
+TURRET -> AMMO -> TARGETING.** Targeting cannot pay without guns to obey it; ammo
+cannot pay without guns to fire it. **Anything at the END of a dependency chain
+measures as zero when tested alone.** That is a property of the test design, not
+of the idea.
+
+**SO TODAY'S REFUTATIONS SPLIT INTO TWO CLASSES, AND I HAVE BEEN TREATING THEM AS
+ONE:**
+```
+MECHANICALLY DEAD - no combination revives a rule violation
+  imprisonment      engine rejects build on an occupied tile (probe)
+  cost-scale churn  scale tracks LIVE entities (probe)
+  spawn-lock        parking a body on the ring makes the tile unbuildable (probe)
+
+REFUTED ONLY IN ISOLATION - these are Magnus's point
+  kidnapper      6 rounds alone, BUT its value is the THRESHOLD FLIP, which
+                 requires already shooting something the victim was repairing
+                 -> needs LIVE FORWARD GUNS
+  ore denial     pre-emption died on reachability, BUT LOKI-3 puts our units in
+                 their half late; you need not PREDICT a tile you stand on
+  crater play    needs BOTH: LOKI-3's guns kill the harvester, LOKI-4's barrier
+                 seals the site
+```
+**THEREFORE LOKI-3 IS NOT ONE OF THREE PARALLEL CANDIDATES — IT IS THE ENABLER
+THE OTHER TWO DEPEND ON.** I have been running them as independent experiments
+when two are downstream of the third.
+
+**METHOD CHANGE, effective now: COMPOSITE FIRST, THEN ABLATE DOWNWARD.** Test
+everything-on against the parent; only if it wins spend legs isolating what is
+load-bearing. **Bottom-up testing of a dependency chain systematically discards
+the useful pieces**, and with 2^N configs at ~90 matches each we cannot afford
+bottom-up anyway.
+
+*Delta, and it is the most transferable one of the session: **"refuted alone" is
+not "refuted".** Before retiring a plank, ask whether it sits at the end of a
+dependency chain — if it needs something we do not currently build, its solo
+null measures the ABSENCE OF THE PREREQUISITE, not the value of the plank. The
+LOKI-3 agent measured its own components AND the composite and reported both;
+that is the design to copy.*
+
+**WHAT DOES NOT CHANGE:** the composite still has to beat the parent on the
+FIELD, stratified by opponent crash count. A composite that wins locally and
+loses to the field is the LOKI-1 failure with more moving parts.

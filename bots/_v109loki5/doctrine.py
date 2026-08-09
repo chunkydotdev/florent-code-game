@@ -471,7 +471,7 @@ B8_ON = False
 # own offline batteries sample distinct games again, at the cost of exact
 # paired-seed reproducibility (the property the spawn-dispersion sort below was
 # written to preserve).  Default OFF so it is screened on its own leg.
-NOISE_ON = True
+NOISE_ON = False
 
 # PIECE F -- PAVE TRAIL.  The pave in _move lays a conveyor on the tile AHEAD
 # (nxt) facing nearest_cardinal(direction toward the Core anchor).
@@ -1059,7 +1059,7 @@ KIDNAP_V_UNDER_FIRE = 120
 # per game into ammunition -- which scores in NO tiebreak, while delivered
 # titanium decides 26% of our games outright.  Built, ablatable, one flag to
 # turn on once the targeting inversion itself has a measured sign.
-KIDNAP_AMMO_SURGE_ON = True
+KIDNAP_AMMO_SURGE_ON = False
 KIDNAP_SURGE_TI = 60             # one round's conversion: 6 sentinel shots
 KIDNAP_SURGE_TI_FLOOR = 120      # never surge out of a bank the economy needs
 KIDNAP_SURGE_AMMO_CAP = 120      # stop topping up a magazine nobody is burning
