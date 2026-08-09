@@ -113,6 +113,22 @@
 ##   **FIRST THING A SUCCESSOR SHOULD DO: `cat corpus/SHIP_ALERT` (absent = fine)
 ##   then `tail corpus/ship_watch.log`.** That line is only trustworthy as of
 ##   s26 — see the next block for why it was a lie before.
+##   **`ship_watch.log` HAS TWO SCHEMAS.** Pre-s26 lines read
+##   `net=.. k=.. llr=..` and came from the decorative single-segment test; do
+##   not compare them with post-s26 lines, which read
+##   `k=.. net5=.. armed=.. RULE=.. sprt=..`. **Any CLEARED line in that file is
+##   pre-s26 and means nothing.**
+##   **THE TAPE LAGS LIVE BY UP TO 5 MINUTES.** `slot_rule` reads
+##   `elo_history.tsv`, which `elo_logger` writes on a 300s poll, so net5 and a
+##   live `fcode status` rating are from different clocks. Fine at a 600s alarm
+##   cadence; do not put them in the same sentence as if simultaneous.
+##
+##   **LIVE PIDS AT WRITING (2026-08-09 22:5x CEST):** ship_watch **66915**,
+##   keeper **89444** (restarted s26 to pick up the log fix), elo_logger 25811,
+##   match_watcher 25942, opp_watcher 25943, replay_archiver 25944. All PPID 1.
+##   Verify with `ps -o pid,ppid,command -p <pid>`, and remember that **alive in
+##   `ps` is not a verified wake path** — the alarm must be shown able to fire
+##   (`ship_watch.py --selftest`).
 
 ## ===== THE ALARM WAS DECORATIVE UNTIL s26 — READ THIS BEFORE TRUSTING IT =====
 ##   `ship_watch` shipped with the SPRT's constants imported and its
