@@ -59,18 +59,37 @@
 ##   changed** — threshold, arming and wake semantics all stand.)
 
 ## ===== THE TRAJECTORY READ — DONE AT k=11, AND IT IS NOT THE HAPPY NUMBER =====
-##   **2026-08-09 22:3x CEST: 1578.0 @ 581 matches, rank 29/116, last-10 5W-5L.**
-##   Net vs the corrected baseline **+10.6 over 11 matches** — BUT the rolling
-##   last-5 is **-19.0** against a **-21** threshold, armed. **Two points from
-##   freeing the slot.** Peak was 1599.5 six matches ago.
+##   **2026-08-09 22:4x CEST: 1580.0 @ 582 matches, k=12, rank ~29/116.**
+##   Net vs the corrected baseline **+12.6 over 12 matches**. The rolling last-5
+##   touched **-19.0** against a **-21** threshold (two points off) and has since
+##   **recovered to -16.0**. Peak was 1599.5. **It went toward the edge and came
+##   back; it was never freed.**
 ##   **QUOTE BOTH NUMBERS OR NEITHER.** Net-since-activation is up; the last five
 ##   are down. Reporting only the first is the C1b oversell again.
-##   Research's exploratory read (s26, NOT pre-registered, n=10): first five
-##   matches 5-0, last five 1-4, Fisher p=0.0476, and mean opponent rating went
-##   *down* 7.5 between halves so matchmaking does not explain it. **Regression
-##   to the mean is the leading explanation and they said so themselves** — the
-##   1599.5 peak that net5 measures against was built BY the 5-0 run.
-##   **This is not evidence v102 is bad and must not be fed into the stop-loss.**
+##   **THE "v102 IS DECAYING" READ IS DEAD. Do not resurrect it.** An exploratory
+##   s26 finding (first five 5-0, last five 1-4, Fisher p=0.0476) was published
+##   with *"mean opponent rating went DOWN 7.5, so matchmaking does not explain
+##   it"*. **That sign was inverted** — an `awk '!seen[$1]++'` dedup over
+##   file-order input, never sorted by time. Research caught and retracted it
+##   (`4901b5a`); the side lane flagged that this HANDOVER still carried it.
+##   **Verified here against the live API primary, chronological, 12-match arm:**
+##     * first5 mean opp **1570.0**, last5 mean opp **1588.4** — **+18.4, they got
+##       STRONGER.** (Research's +37.8 was right for the 11-match arm; the arm
+##       grew by one while we were writing, which is the point: **"last five" is a
+##       moving window and the split dilutes as matches land** — last five is now
+##       **2-3, not 1-4.**)
+##     * **The real structure is DOSE-RESPONSE, not decay.** Wins came against a
+##       mean opponent of **1566.5**, losses against **1618.2** — a **+51.6 Elo
+##       gap, permutation p = 0.011** (one-sided, n=12, exact over all 792
+##       splits). We beat the field below us and lose above it. That is the
+##       *documented* Loki property (75% at bracket, 60% at +200, 20% at +337),
+##       not a new defect.
+##   A fixed bot does not decay, and the 1599.5 peak that net5 measures against
+##   was built BY the 5-0 run. **None of this is evidence v102 is bad, and none
+##   of it may be fed into the stop-loss.**
+##   **PROCESS NOTE: I put the retracted number in this file on a peer's word
+##   without checking it, and the primary was one command away.** A HANDOVER
+##   number outlives every coordination note that corrects it.
 ##
 ##   `tools/monitors/ship_watch.py` is ARMED, detached (PPID 1, 10-min cadence),
 ##   **re-armed s26 with the corrected baseline**. It appends every evaluation to
