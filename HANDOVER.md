@@ -1,3 +1,123 @@
+# Session 24 boot block (builder) — written at the s23 wrap, 2026-08-09 12:0x CEST
+
+## ===== READ `docs/builder-method.md` FIRST, THEN THIS =====
+## And before your first battery, run **`tools/gate.py`** (new this session). It
+## refuses runs that cannot produce a trustworthy answer. s23 learned every one
+## of its checks the expensive way.
+
+## ===== STATE =====
+##   LIVE: **v91 "Eir 9c hivethaw (rollback from v90)"** = `bots/_v100hf`,
+##   tree **4558be91**, submission **9850f196-362b-4017-a3b5-31e5cb5c75bd**.
+##   SINGLE FILE (main.py only).
+##   At wrap: **1562 @ 518 matches, rank #31/113, last-10 6W-4L.**
+##   ROLLBACK TARGET: **v89-era is what v91 IS.** To go the other way,
+##   v90 = `bots/_v104latch`, tree 2c6dbc17, submission b04c06fa (still `ready`).
+##   **v91 CARRIES THE `SLOT_LAUNCHER` LATCH DEFECT** (a destroyed launcher is
+##   never replaced; builders enter `launchwait` for a ghost). Known and accepted.
+##
+## ===== THE ROLLBACK, AND ITS READ IS CLOSED =====
+## v90 was rolled back at 1530 @ 508 when a PRE-STATED trigger fired (last-10
+## reached 2W). The 10-match recovery read is **COMPLETE**: 1530 -> **1562**,
+## rank #35 -> #31, last-10 2W-8L -> 6W-4L. Pre-stated branch: *">= ~1556 means
+## the drift was v90-specific; keep v91."* **BRANCH 1 FIRED. v91 RETAINED, v90
+## RETIRED.** Margin is thin (~5 pts, under one match's +-18 swing) and the read
+## **cannot** establish v89 > v90 — only that the drift stopped. Do not re-open it.
+##
+## ===== !!! THE THING THAT RE-PRICES EVERYTHING BEFORE IT !!! =====
+## **`bots/opp_v*` IS OUR OWN PRIOR VERSIONS.** Their docstrings say so
+## ("v89_open_ti_floor8 OFFLINE", "v61/S5 OFFLINE"); they carry 3-4 of our 4
+## signature identifiers. **Every arena battery this project has run was
+## SELF-PLAY**, including the s22 note titled "LOKI-3 **FIELD** VERDICT".
+## Published amputation results run ~2x self-play vs field with reported SIGN
+## FLIPS (direction supported; **the 2x is one figure from another game — do not
+## use it as a divisor**).
+##
+## **A FOREIGN POOL WAS ON DISK ALL ALONG: `bots/*_probe`** — imitations of real
+## teams (Orizon, Ouroboros, Clankers, kladde, Flotte, Banminary, CtrlAltDefeat)
+## built from replay analysis, carrying **0-1 of our 4 signatures**. USE THEM.
+##   `cad_probe` is the ONLY probe that calls `random.` — exclude from paired runs.
+##   Probes are IMITATIONS and miscalibrated (`ouroboros_probe` measured **86 pts**
+##   over-confident vs its real class). Better than self-play; **NOT field.**
+##
+## ===== PLATFORM INSTRUMENTS — s23 used neither until Magnus pointed =====
+##   `fcode match test BOT_A BOT_B`   local bots, REMOTE engine, **REAL TLE**.
+##       Free, no slot. s23 ran 1,860 games at `--tle 0` and never checked CPU.
+##       Our worst real unit-turn is **12,967us against a 10,000 limit.**
+##   `fcode match unrated OPPONENT_ID`  REAL opponents, zero Elo.
+##       **NO bot selector — it plays the ACTIVE SUBMISSION.** A variant must hold
+##       the slot. `--match` pins the opponent's submission, `--map` picks up to 5.
+##       At n=10 it has **47% power**: record `NOT-REFUTED (n=10)`, never `pass`.
+##
+## ===== SCOREBOARD: THE TURRET SUBSYSTEM IS INERT TO TUNING =====
+##   plank    knob        pool        result
+##   LOKI-3   placement   SELF-PLAY   +0.0pp  (mislabelled "FIELD" in the tape)
+##   HOME     price       SELF-PLAY   -2.0pp  not distinguishable from zero
+##   FLOOR    production  SELF-PLAY   -0.7pp  not distinguishable from zero
+##   SITE     siting      SELF-PLAY   -6.7pp  **REFUTED** dose-response + null band
+##   ESCALATE dispatch    **FOREIGN** **-7.8pp  REFUTED** — 360 games, both seats
+## **Four knobs, both directions, all nulls at field scale. Do not quote -2.0 or
+## -0.7 as effects. THE NEXT ATTEMPT MUST NOT BE ANOTHER TURRET KNOB.**
+##
+## ===== WHAT IS TRUE AND FIELD-MEASURED (corpus, real opponents, no pool caveat) =====
+## - **Forward insertion is refuted as DOCTRINE** on four instruments: fixed-horizon
+##   survival (field pays NO distance penalty, we pay a large one), raider life
+##   **43 -> 6 rounds at r150**, **2.34%** of r200+ forward throws ever touch a core,
+##   and **first turret at r17** field vs **r12** ours — *we start earlier and stop.*
+##   **The BUILDS were never field-tested. Two different sentences.**
+## - **The bot cannot count attackers.** `SLOT_THREAT`=one position,
+##   `SLOT_UNDER`=one boolean, `_core_shelled`=one boolean; a grep for any
+##   magnitude term returns comments only. `_core`'s sensing loop `break`s on the
+##   FIRST hostile. **Verified code fact. One RESPONSE to it (scale the heal
+##   detail) is refuted at -7.8pp; the fact stands and a better response is open.**
+## - **`SLOT_UNDER` has THREE writers** (`_core` x2 and EVERY builder at :2104
+##   writing a bare `1`). Last-writer-wins. **The store cannot carry a magnitude.**
+## - Home turrets are the **best-surviving in the corpus** (+11.4/+16.6/+22.3pp)
+##   **and irrelevant to what kills us**: 65.3% of home builder deaths are an enemy
+##   GUNNER planted inside our base, and **>=5-kill tiles carry 47.3%** of them.
+## - We lose a higher fraction of **everything** except the two static home units
+##   (sentinel -1.5pp, launcher -14.7pp). Broad attrition, not a subsystem.
+##
+## ===== QUEUE, IN PRIORITY ORDER =====
+## 1. **THE GUNNER-PLANT TILES.** The only item with a MEASURED TARGET rather than
+##    a hypothesis, and it is **enumerable, not behavioural**: name the >=5-kill
+##    tiles per map/seat and cover them (3 Ti barriers or a turret arc).
+##    One tile produced 45 kills. Specification, not doctrine.
+## 2. **`bots/_abl_c4`** — hive bunker-barrier deletion. **18/20 -> 20/20, kills
+##    4 -> 18, one converted loss, null-control seat byte-identical 20/20.** REAL,
+##    but hive seat B is **2.4% of games** — below the instrument. **Ship BUNDLED,
+##    never alone.** Built on v90's tree; needs rebasing onto v91 (see below).
+## 3. **`SLOT_ROLE_N` ticket bug** — read-increment-write at `main.py:880`/`:902`,
+##    probe-demonstrated to collapse silently (5 writers, counter +1, all believe
+##    they are unit #0, no error). Safe TODAY only because the core spawns <=1
+##    builder/turn — **a game rule holding up a bot invariant by luck.** Two lines.
+## 4. **Re-price PLANK SITE against the foreign pool.** Largest number on the
+##    board, and the literature makes a specific prediction (shrinks toward half,
+##    direction survives). **A pre-stated prediction that gets tested beats a
+##    fresh measurement.** Research's ordering, and it is right.
+## 5. **Escalation, a BETTER response.** The code fact stands; more healers is
+##    refuted. Untested: anything that is not "divert economy to defence".
+##
+## ===== A BLOCKER NOBODY WROTE DOWN WHEN THE SLOT MOVED =====
+## **Every Loki build (`_v104loki0/0b`, `_v105loki1`, `_v106loki2`, `_v107loki3`,
+## `_v108loki4`, `_v109loki5`) is MULTI-FILE on the v90 lineage.** LIVE is v91 =
+## single-file v89. **"The Loki builds are ready to bundle" is FALSE** — each needs
+## re-shipping v90 first or rebasing onto the v89 chassis. Same for `_abl_c4`,
+## `_v111home`, `_v112floor`, `_v113site`. `_v114esc/_v114off` ARE on v91.
+## First real-engine data on Loki: `match test _v107loki3 _v100hf` -> **loses 2-3**,
+## no crash, TLE enforced. n=5, settles nothing; the build is platform-viable.
+##
+## ===== TOOLS ADDED THIS SESSION =====
+## `tools/gate.py` — pre-flight: determinism (all arms), control-equivalence
+##   (flags-off MUST equal parent), **pool identity** (FAILs on self-play without
+##   `--allow-self-play`), and queues a **remote TLE test**. Verified against all
+##   three of s23's real failure modes.
+## `tools/corpus_sanity.py` — FAILs on all-zero columns. Found `econ.tsv:shots`
+##   (known) **and `econ.tsv:deliveries` (new, 28k rows, and delivery is
+##   TIEBREAK #1)**. Both declared and never incremented. Use `build_agg.tsv`
+##   `metric=='shot'` for shots; `flow.tsv` for delivery.
+##
+## ===== PRIOR STATE (s23 boot block) — superseded, kept for reasoning =====
+
 # Session 23 state block (builder) — LIVE VERSION CHANGED THIS SESSION
 
 ## ===== READ `docs/builder-method.md` FIRST ===== (unchanged, still correct)
