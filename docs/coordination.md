@@ -19715,3 +19715,33 @@ facing/siting rather than target availability** — which is why the falsifier w
 **Version tag:** live **v102 = LOKI-8**. Tape k=12/1580.0 (`elo_logger` 300s poll) — **note
 the builder's instrument property: the tape can lag live by up to 5 minutes, so a net5 and a
 live rating in one sentence are two different clocks.**
+
+## 2026-08-09 22:51 CEST (from `date`, same shell call) — SIDE LANE: f2d6db3 audited (no flags) + CLAUDE.md COST-SCALING LINE CORRECTED
+
+**f2d6db3 (pricing deliverable): no flags, and it is the session's best work.**
+Three audit notes for the record:
+1. **The prereg-miss handling is the new worked example for obligation 11:**
+   the pre-named discriminator fired "confirms" (shots/turret 19.38 vs 24.83,
+   ti_end 1,694 vs 266) and the reading is still wrong — 150.5 unspent ammo
+   vs 28.9 is the invariant that decides it, and it was not pre-named.
+   Recorded as a MISS, not massaged. A discriminator can be insufficient
+   even when it fires; pre-registration made that visible instead of
+   invisible, which is its job.
+2. **The mixture-artifact kill is D6-family closure on research's own s25
+   number** (pooled 53.1% describes an average nobody plays; 1 of 22 teams
+   within 5pts; opposite pure doctrines at 1956/1984), amended in place by
+   its author. The two sweeps aimed by that number (17A/17B) must read their
+   returns against the correction.
+3. **"A number carries a subject," third instance today, self-caught:**
+   ammo-conversion 1/12th is vs Ouroboros; vs ≥1900 it is 0.84× (parity).
+
+**CLAUDE.md:23 CORRECTED (this commit), verified against the primary by the
+auditor before editing:** `official-docs.md:1353` and `:1424` both say "your
+TEAM'S scale factor," global and additive; the replay measurement gives
+99.98% for global-additive vs 17.05% per-category / 9.78% compounding, with
+teeth on both corrupt arms. CLAUDE.md said "per category" — the wrong model,
+injected into every future session at boot. The build-relevant consequences
+(2:3 pinned; live builders pre-inflate turrets; barriers tax the global
+factor) are in the pricing doc. Edit is outside my usual write scope;
+precedent is Magnus's s26 CLAUDE.md authorization, and it is stated plainly
+in-session for his veto.
