@@ -1231,3 +1231,32 @@ LOKI_TELEPORT_DSQ = 4       # position jump per turn that proves a throw
 # --- raid navigation -------------------------------------------------------
 LOKI_RAID_RESCAN = 6        # rounds between full station rescans
 LOKI_APPROACH_DSQ = 100     # inside this the raider stops paving/exploring
+
+
+# ============================================================================
+# LOKI-1 RE-AIM (mid-build doctrine change).  The brief this bot was started
+# against told me to remove LAUNCH_GIVEUP_RND and target r200-300.  Two
+# instruments then refuted that premise:
+#   * the clock-unblocking ablation measured 49.4%, CI [42.2, 56.7], n=180 --
+#     no effect at all;
+#   * 11,895 genuine forward throws show median raider life after the throw
+#     collapsing 43 -> 6 rounds at exactly r150, and only 2.34% of r200+
+#     throws ever landing a single attack on the enemy Core.
+# What survived is the other half of the same corpus: of 528 raiders that DID
+# land attacks, 25 produced half of all 40,114 attacks and 319 were on the
+# winning team.  So the scarce resource is not the throw and not the timing --
+# it is SURVIVAL AT THE DESTINATION, and it is only purchasable early.
+#
+# LOKI-1 therefore separates two things the incumbent conflated:
+#   COLD INSERTION -- sending a fresh body on a long walk into undamaged
+#   defences.  Time-limited, because the measurement says it stops working.
+#   FOOTHOLD REINFORCEMENT -- feeding a position we already hold (a live
+#   barrier collar, a live forward Sentinel, a raider still acting at the
+#   ring).  NOT time-limited, because "established" is exactly the state the
+#   winning 319 were in.
+# ============================================================================
+
+LOKI_COLD_INSERT_RND = 150   # cold insertions stop here; footholds never do
+LOKI_FOOTHOLD_STALE = 15     # rounds a foothold heartbeat stays credible
+LOKI_ESTABLISH_DSQ = 40      # inside this of an enemy Core tile == established
+LOKI_BUDDY_HEAL_GAP = 8      # heal an adjacent raider this many HP below max

@@ -9674,3 +9674,78 @@ long note and committed minutes later. **The commit time is the only timestamp
 that cannot drift — write notes with the header stamped LAST, or reconcile
 against `git log` before pushing.** Flagging the failure mode in someone else's
 work does not immunise you against it; I proved that inside an hour.*
+
+### 2026-08-09 07:06 CEST (from `date`) — builder arm: **VERDICT — THE LATE-RAID MECHANISM IS REFUTED. I AM WITHDRAWING THE IMPLICATION OF MY OWN FINDING.**
+
+**WHAT I CLAIMED THIS MORNING, AND WHAT SURVIVES OF IT.** I found in code that
+the insertion pipeline is switched off from r180 (`LAUNCH_GIVEUP_RND` binding
+both the give-up and the only re-entry). **That is still true — it is code, and
+it is not in dispute.** What is refuted is the IMPLICATION I drew from it: that
+unblocking it would raise the r200-300 conversion ratio.
+
+**TWO INDEPENDENT INSTRUMENTS REFUTE IT, AND ONE OF THEM IS MINE.**
+1. **My own ablation.** `_v104loki0` (clock unblocked, 900/99) vs `_v103split`:
+   **89-91, 49.4%, CI [42.2%, 56.7%], n=180, 0 crashes. No effect.**
+2. **Research's replay corpus** (3,791 archived replays, 11,895 genuine forward
+   throws; corpus verified by me — `find` returns 3,831 `.replay26` now, the
+   archiver monitor is live and still adding, so the counts reconcile):
+```
+band        n      reached core   ATTACKED core   median raider life after throw
+r0-150    4,950      26.9%            7.0%              43 rounds
+r150-200    911      11.5%            4.3%               6 rounds
+r200-300  1,491       8.7%            2.8%               6 rounds
+r300+     4,543       6.6%            2.2%               6 rounds
+```
+**Median raider life collapses 43 -> 6 rounds at exactly r150.** A builder does
+2 dmg/attack into 500 HP, so six rounds is ~12 HP under perfect conditions.
+**Only 2.34% of r200+ forward throws ever land ONE attack on the enemy core.**
+
+**THEREFORE: `LAUNCH_GIVEUP_RND = 180` IS A CORRECT CONSTANT THAT OUR OWN SOURCE
+JUSTIFIED WITH A WRONG REASON.** The comment at doctrine.py:106 ("matches
+decided earlier never reached that bound") is false — half our games run past
+r180. The NUMBER is right anyway, because past r150 a raider is dead in six
+rounds. **I attacked the comment and assumed the constant inherited its error.
+It did not.** `_v104loki0` is hereby a CONTROL and never a ship candidate.
+
+**THE CONVERGENCE IS THE REAL RESULT, AND NEITHER ARM HAD IT ALONE.** I found a
+real mechanism by reading code and it was INERT. Research found the field
+behaviour that explains why. Had I shipped on my code read alone — which is
+exactly what the HANDOVER queue told me to build — **I would have shipped a raid
+pipeline into a window where the tactic is measurably dead.** The cheap
+refutation worked as designed, at the cost of one 180-game leg.
+
+**THE LATCH FIX IS NOT DEAD — IT IS REFRAMED, AND THE NEW EVIDENCE STRENGTHENS
+IT.** I found it while chasing offence; it is actually a **survival** fix:
+- Exile is **~70% of ALL launcher activity in the field** (40,540 of 58,251).
+- **OUR launcher is ~97% defensive** (e.g. vs Ouroboros 52 insert / 1,909 exile).
+- Enemies DO insert against us: Memtrace 1,187, Lunds 273, CtrlAltDefeat 159,
+  KCM 139 forward throws in archived games.
+- **An established raider wins games: 319 of the 528 core-attacking raiders were
+  on the winning team**, and 25 raiders account for 50.5% of all attack volume.
+So a launcher that dies and is **never replaced** (the latch) permanently
+surrenders our only tool against establishing enemy raiders. **That is an
+Elo-holding maintenance fix of exactly the kind Magnus asked be delegated**, and
+it is measured by the 2x2 already running.
+
+**PUSHBACK I OWE RESEARCH, and it matters for what a successor quotes.** Their
+§4 — that launcher use correlates negatively with late conversion — is
+**confounded by team strength across only 8 opponents**, and the archive is
+dominated by our own games. "Ouroboros kills us late and never throws" is fully
+compatible with "throwing is fine, but strong teams have better tools". **The
+survival curve (§2) is mechanism-level and strong; the correlation (§4) is weak
+and must not be quoted as though it carried the same weight.** Research hedged
+it correctly ("if anything, negative"); I am pinning the hedge down so it does
+not harden into doctrine by repetition.
+
+**WHERE LOKI GOES.** Current best candidate is research's read — **early
+insertion (< r150) with a SURVIVAL PACKAGE**, since survival at the destination
+is the scarce resource and is only purchasable before the cliff. **Note this is
+NOT the refuted rush:** the three failed rushes were early TURRET pushes from
+the home band (thor_r1, sporks, Thor-1 gunline), which is a different mechanism
+from an early raider with survival support and a kept economy. It is also
+consistent with the hazard table's other half — our r0-150 hazard is already
+**1.54x** theirs, so converting that edge ENDS games before the regime where
+they run 40.9%. **LOKI-1 has been re-aimed mid-build**; the from-scratch agent
+was sent the survival curve and told to justify its package rather than move a
+constant, and explicitly told that a well-argued "this direction is unsupported"
+is a more valuable return than a bot built to bad doctrine.
