@@ -10877,3 +10877,112 @@ the build is already flag-gated for it.
 n=180 with the two legs disagreeing in sign (+3.3 / -4.4), so the -1.1pp
 crash-free figure is not distinguishable from zero either. **This says "no
 effect", not "harmful".**
+
+### 2026-08-09 09:38 CEST (from `date`) — builder arm: **SESSION 22 WRAP — VERDICTS AND PROCESS DELTAS** (on Magnus's wrap-call)
+
+**DELTA-ZERO, AND THIS TIME IT IS GOOD NEWS: the per-verdict deltas were appended
+AS EACH VERDICT SETTLED, not reconstructed here.** 17 `*Delta:` bullets are in
+this file, each attached to the verdict that produced it. s21's wrap opened by
+confessing the opposite. **The `/builder` wrap sequence worked.**
+
+## LOKI-4 VERDICT — the kill criterion fired
+```
+314 ore tiles / 15 maps · mean 20.9 per map · mean 9.4 PER SIDE
+a team consumes a MEDIAN OF 4 distinct sites (p75 7, p90 13)
+=> on the median map they have FIVE SPARE SITES. Denying two denies nothing.
+its own gate (DENY_MAX_ENEMY_ORE=7) turns generic denial OFF on 7 of 15 maps
+realistic ceiling ~1 placement/game; measured 0.47/game
+```
+**Generic ore denial is LOW-CEILING; the agent recommended saying so and did.**
+Blanket home-side denial separately refuted: at the moment an enemy harvester
+lands on our side the victim still has a **median of 5 free ore tiles**, and
+49.1% of invasions have >=6 — invasion is an ore-RICH-map phenomenon, where
+denial is definitionally noise. **The per-opponent tile book was deleted** (modal
+opening tile is just nearest-ore-to-seat: geometric, not behavioural).
+**WHAT SURVIVES: the crater arm, and it is NOT a null** — it fired 3x in 26 games
+on exactly the maps where the generic arm is gated off, and **its upstream (the
+turret that kills the harvester) lives in `_v107loki3` and was deliberately not
+implemented there.** Per the dependency-chain finding, do not read 3-in-26 as a
+refutation. Ablation identity verified byte-identical 5/5 with the master flag off.
+
+## THE SESSION IN ONE LINE
+**Five roads opened, four refuted by measurement, one maintenance fix shipped,
+and ZERO positive field results.** That is the honest scoreboard and it is a good
+one: every refutation cost a leg, not a slot.
+
+## PROCESS DELTAS
+
+**1. A PRE-REGISTERED MECHANISM METRIC PROTECTS ATTRIBUTION, NOT VALIDITY.**
+LOKI-3's damage:repair ratio went **0.17 -> 2.82** (the field's own 2.79), turret
+count held constant, opening byte-identical, zero crashes — **and the field
+spread was +0.0pp on n=360.** *We chose that metric because it was "the one only
+this change can move", and it moved perfectly and bought nothing. Both gates are
+required and we had been treating the first as implying the second.*
+
+**2. "REFUTED ALONE" IS NOT "REFUTED".** LOKI-3's flags measured 0.38 / **0.17
+(an exact null)** / 0.32 individually and **2.82 together**. Tested one at a time
+and discarded on merit, the winning configuration would have been thrown away
+piece by piece. *Before retiring a plank, ask whether it sits at the END of a
+dependency chain — turret -> ammo -> targeting. A solo null on the last link
+measures the absence of the prerequisite. **Composite first, then ablate down.***
+
+**3. INFERRING IN-GAME BEHAVIOUR FROM SOURCE IS THE ERROR I MADE TWICE.** I found
+`LAUNCH_GIVEUP_RND=180` disables the raid pipeline and assumed unblocking it
+would help (measured 49.4%, no effect). Four hours later I closed forward-turret
+siege because `_plan_siege` places forward guns — the census said our median late
+turret sits at d² 20 from our own core and 178 from theirs. *Code tells you what
+CAN happen. Only the corpus tells you what DOES.*
+
+**4. THE POOL MUST BE ABLE TO GENERATE THE EFFECT.** I pre-registered a careful
+threshold for the launcher-latch leg and pointed it at a pool where the opponent
+is a copy of ourselves and never inserts raiders — so the arena saw the fix's
+cost and none of its benefit. *Pre-registering a THRESHOLD is not the same as
+checking the POOL. Ask "what in this pool would make the number move?" first.*
+
+**5. THE OPPONENT'S CRASH COUNT IS A CONFOUND AND WE READ IT FOR THE WHOLE
+PROJECT AS A PASS/FAIL ON OURSELVES.** LOKI-1: **+3.6pp pooled, +6.1pp on legs
+where the opponent crashed more against it, +1.1pp crash-free.** Its entire edge
+was the opponent self-destructing. *Stratify every paired leg. And I called that
+confound BEFORE the crash-free legs read out, which is the only reason it counts.*
+
+**6. ARENA RESULTS ARE LOAD-SENSITIVE AND THE DAMAGE IS INVISIBLE.** Under
+`--tle 10` an overrun turn is interrupted with **no crash and no traceback**, so
+contention degrades play without touching the crash counter. Measured a live
+collision at load 39-42 on 10 cores. *Run ONE battery at a time; "use fewer jobs"
+is the WRONG instruction to a subagent — the right one is "do not measure".
+Both arms and every subagent share one machine.*
+
+**7. WHEN TWO ANALYSTS DISAGREE, CONFIRM METRIC IDENTITY BEFORE THEORISING.** I
+built a comparison table pairing one analyst's **mean of metric A** against
+another's **median of metric B**, declared a 10x conflict, and we both went
+hunting explanations (map mix, local-vs-ladder sampling) that were both wrong.
+*On the comparable metric both medians were 0. Two numbers with the same NAME are
+not the same MEASUREMENT.*
+
+**8. A GLOBAL CENSUS COUNTS WHAT EXISTS; A DOCTRINE ACTS ON WHAT IS REACHABLE.**
+"18 of 40 orphaned relays" briefed LOKI-2; `destroy()` requires orthogonal
+adjacency plus continuous observation, so the reachable subset is **median 2 per
+game** — 1-2 orders smaller, and structural rather than tunable.
+
+**9. RE-VERIFY INHERITED "MEASURED EXPLOIT" LISTS.** **Two of three** entries on
+the HANDOVER's weaponisable list failed verification in one session — late
+launcher insertion and cost-scale churn — and both had already been corrected in
+our own docs. *A list of exploits is not a list of facts.*
+
+**10. I DRIFTED MY OWN NOTE HEADERS ONE HOUR AFTER FLAGGING THE SAME BUG IN
+SOMEONE ELSE'S WORK.** Worst case 11 minutes. *The stamp is written at the START
+of a long note and commits minutes later. **`git log` is the only timestamp that
+cannot drift.** Flagging a failure mode in review does not immunise you against
+it.*
+
+**11. THE BRIEF LINE THAT WORKS: "a well-evidenced negative is worth as much as a
+win."** Agents killed their own doctrines, deleted machinery they had built after
+measuring it misbehaving, raised their own confirm thresholds 25->40->100,
+flagged their own controls as unusable, and led with the bad number. *Reward the
+self-correction, not the clean record.*
+
+**12. AND THE ONE MAGNUS SUPPLIED: we were testing strategies serially and
+refuting them alone.** He asked whether combinations could make them viable —
+**and LOKI-3's own flag matrix had already proved it.** *The user asking a
+methodological question found a flaw in the method that the tape contained and
+neither arm had read.*
