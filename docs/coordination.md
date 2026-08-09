@@ -21009,3 +21009,64 @@ delivery semantics make late repair **strictly harder** than my model assumed. *
 harvester throughput ~5,000 Ti short over 1000 rounds" remains the live question**, and the
 check that **we already build later than the field** (r112 vs r69 median) makes it sharper:
 **we are already late, and late is not the fix.**
+
+## 2026-08-10 00:4x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — THE STALLED-STACK CUT. The builder's misrouting probe hands us a testable mechanism for the 5,035 throughput shortfall.**
+
+**Announced before spawning.** The builder's transit probe established three things and left
+the rate open. **Finding 2 is the one that matters to my redirect:**
+
+> A chain terminating **diagonally** to the core anchor scores **zero forever**. The core is
+> 2×2 and only **orthogonal** adjacency to a footprint tile delivers. Stack id 11 parked on
+> one tile from r5 to r1000, unchanged, while the harvester kept emitting.
+> **`collected` finished at 0. No evaporation, no reroute, no error, no signal of any kind.**
+
+**One tile of misalignment converts a working economy into a zero on the key that decides
+94.1% of our r1000 games — silently.**
+
+### WHY THIS OUTRANKS THE OPENING-ECONOMY THEORY I FILED AN HOUR AGO
+My redirect was *"our cumulative harvester throughput is ~5,000 Ti short over 1000 rounds;
+that is an opening/economy question."* **A partially misrouted or blocked line produces
+exactly that signature — a large cumulative shortfall alongside a HEALTHY-LOOKING HARVESTER
+COUNT** — and it is a **bug**, not a strategy gap. **A bug is cheaper to fix than a doctrine,
+so it must be excluded before anyone theorises about openings.** I filed the economy theory
+first; **this should have been the first hypothesis and I am reordering it.**
+
+### THE SIGNATURE IS UNMISTAKABLE AND THE BUILDER'S PROBE CALIBRATES IT
+Normal occupancy is **one stack per conveyor, present for about one distribution step,
+arriving every 4 rounds in step with emission.** **So a conveyor holding the SAME stack id
+across many consecutive rounds is a stalled line** — and the probe gives the pathological
+case as a fixed id held for **995 consecutive rounds**. **The healthy and the broken cases
+differ by two orders of magnitude, which is why this is worth a decode rather than a
+regression.**
+
+### THE CUT, and the discriminator stated before it runs
+Per file × team: **the distribution of consecutive-round dwell for stack ids on conveyors**,
+and the share of a team's conveyors that ever hold one id for **≥N** rounds. Then the
+question that decides whether it explains anything: **does per-game stalled-conveyor count
+predict the gap between titanium EMITTED and titanium COLLECTED?**
+- **If our stall rate is materially above the third-party rate → this is a live bug and the
+  5,000 shortfall has a mechanical cause.**
+- **If our stall rate matches the field's → the shortfall is genuinely economic and my
+  opening theory stands.**
+**Both outcomes are decision-grade. There is no "inconclusive" branch that costs nothing.**
+
+**Guards demanded up front, from tonight's own casualties:** corrupt the input and require
+the alarm (D1); **compute the same statistic on a complement group** — the control whose
+absence produced TRAP 8 four hours ago, when a constant column silently validated a
+hypothesis; and **prove the branch that selects OUR games separately from the third-party
+branch** (D2 — the untested branch is always the one covering the data you care about).
+**Decoder traps to carry:** entity ids share one global counter with **resource stack ids**
+so magnitude is meaningless and only ordering informs; `botOutput` is emitted at the END of a
+unit's turn; gunners re-emit `placeEntity` for existing ids.
+
+**Population discipline:** field claims from the **meta.json-attributed third-party**
+population, never field-in-our-games; ours labelled as ours, inline.
+
+**Model:** `opus` — it must build a novel decoder and grade its own signature. **Read-only**;
+`bots/`, `tools/`, the arena and the prereg untouched.
+
+**Also recorded, because it bears on any analysis of our own bot:** **`run()` does NOT share
+`Player` instance state across units** — an earlier probe printed `d2_core=-1` for a whole
+game because a builder read a value the core had set on `self`. **The comm store is the only
+supported channel and its writes land next round.** Anything of mine that assumed cross-unit
+instance state is wrong; I know of none, and I am recording the fact rather than the audit.
