@@ -146,8 +146,12 @@ class RaidMixin:
             # Cold-insertion window closed and no live foothold to reinforce.
             # The body goes back to the economy; it is NOT retired, so the
             # moment a teammate re-establishes, this rejoins on the next turn.
+            # The ferry ping is skipped with it, or the launcher would fling a
+            # stood-down body forward and re-open cold insertion by the back
+            # door -- which is the exact thing the corpus says stops working.
             self._expand(ct)
             return
+        self._raid_ferry_ping(ct)
 
         # EXILE DETECTION.  A launcher throws any adjacent builder from EITHER
         # team, so a position that jumped more than one step since our last
@@ -199,6 +203,9 @@ class RaidMixin:
             self.raid_station = None
             self.raid_rescan = rnd
             self.stuck = 0
+            # Rotate the far-phase assignment too, or an unreachable preassigned
+            # station would be re-chosen for the rest of the match.
+            self.raid_slot += 1
             self.raid_stalls += 1
             if self.raid_stalls >= 3:
                 self.raid_stalls = 0

@@ -393,12 +393,15 @@ class Player(EcoMixin, RaidMixin):
             if not self._cb_over_heal(ct) and self._heal_core(ct):
                 return
 
-        # ALL-HANDS MELEE.  An enemy builder inside the home band outranks
-        # everything: it is the r0-150 loss mode and this is what has kept our
-        # early survival where it is.
-        if near_home and ct.read_store(SLOT_UNDER):
+        # MELEE RECALL, RAIDERS ONLY.  A raider that has not left the home band
+        # yet is the cheapest body to spend on an intruder.  Deliberately NOT
+        # all-hands: an earlier revision recalled expanders too and it cost the
+        # whole economy -- the trunk chain stalled at r16 and the game finished
+        # with 0 titanium delivered, because SLOT_UNDER latches for 50 rounds
+        # and every chain builder sits inside the band.
+        if near_home and self.role == "raid" and ct.read_store(SLOT_UNDER):
             intruder = self._nearest_home_intruder(ct)
-            if intruder is not None and self.role != "defend":
+            if intruder is not None:
                 self._home_defend(ct, intruder)
                 return
 
@@ -410,7 +413,6 @@ class Player(EcoMixin, RaidMixin):
 
         self._wire_tick(ct)
         if self.role == "raid":
-            self._raid_ferry_ping(ct)
             self._raid(ct)
         elif self.role == "defend":
             self._defend(ct)

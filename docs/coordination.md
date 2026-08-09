@@ -9794,3 +9794,65 @@ plausible upside, and I currently have **no evidence of upside at all**, only a
 verified mechanism and a null. **A gate that would pass because passing is
 wanted is not a gate.** If incidence comes back low, the latch fix is shelved
 and that is the correct outcome.
+
+### 2026-08-09 07:22 CEST (from `date`) — builder arm: **A SECOND ROAD REFUTED BEFORE IT WAS BUILT, AND A THIRD OPENED. Magnus asked for a portfolio, not one bet.**
+
+**MAGNUS'S STEER:** if the evidence points Loki somewhere other than r200-300,
+go there — "we will not make a great bot without experimentation and testing
+different roads or combining different strategies".
+
+**ROAD B — "WEAPONISE THE COST-SCALE ATTACK" — IS REFUTED, AND THE HANDOVER
+CARRIES THE STALE VERSION.** The s21 block lists as a measured exploit: *"our own
+eider post-mortem measured forced conveyor churn putting +146% on everything the
+victim buys afterwards. We know it works because it was done TO US."*
+**That is the cumulative-vs-live error, and our own docs already corrected it:**
+- `docs/game-model.md:357-358` — **cost scale tracks LIVE entities.**
+- `docs/spitball.md:637` — the same correction applied in place: *"cost scale
+  tracks LIVE entities ... meander churn = +115% standing, not +201%."*
+Therefore forcing an enemy to rebuild imposes **NO permanent tax**: their scale
+DROPS when the conveyor dies (contribution removed) and RETURNS when they
+rebuild. **Churn is not a weapon.** Cost: one grep, instead of a build.
+*Delta: the HANDOVER's "measured exploits to weaponise" list was assembled from
+notes that predate their own corrections. **A list of exploits is not a list of
+facts — re-verify each against the doc that corrected it before spending a build
+on one.** Two of the three entries on that list have now failed this check
+(launcher insertion late, and cost-scale churn).*
+
+**THE SAME CHECK OPENED A REAL ONE, POINTED THE OTHER WAY — ROAD B' (LOKI-2).**
+Because scale tracks LIVE entities, **destroying OUR OWN standing dead weight
+immediately lowers the price of everything we build afterwards.** And:
+- **`ct.destroy()` is the only completely free action in the game** — allied
+  buildings, orthogonally adjacent, **no titanium, no cooldown, unlimited per
+  turn** (`game-model.md:242-245`).
+- **We have never called it — zero call sites across `_v72e2`, `_v73e3`,
+  `_v71eir`, `_v70cm`.**
+- We carry measured dead weight: **18 of 40 surviving relays connect to
+  nothing**, plus the pave-facing defect that strands a dead conveyor head at
+  every turn of a paved walk. Every orphan inflates our conveyor scale while
+  delivering zero titanium.
+**LOKI-2 registered (opus, `bots/_v106loki2`, fork of `_v103split`)** — briefed
+with BOTH stale claims explicitly stripped out (destroy does NOT refund
+in-transit stacks, it **INCINERATES** them, 0 Ti in 191/191; and no offensive
+cost-scale attack).
+
+**THE PORTFOLIO AS IT NOW STANDS:**
+```
+ROAD A  LOKI-1  early insertion (<r150) + SURVIVAL package   BUILDING (re-aimed mid-flight)
+ROAD B  cost-scale attack on the enemy                       REFUTED (live-vs-cumulative)
+ROAD B' LOKI-2  destroy doctrine / prune our own scale       BUILDING
+ROAD C  deny THEIR late kill mechanism                       BLOCKED on research Q2-positive
+ROAD D  forward sentinel siege                               NOT OPENED — `_plan_siege`
+        already places forward guns (cap 2-3), so this is not the unexploited
+        lever it looks like. Not spending a build on it without evidence.
+```
+**2x2 COMPLETE (clock x latch), and it is three nulls:**
+```
+_v104loki0  (clock)        49.4%  CI [42.2, 56.7]  n=180
+_v104latch  (latch)        47.8%  CI [42.7, 52.9]  n=360
+_v104loki0b (both)         50.3%  CI [45.1, 55.4]  n=360
+crashes 0 across ~900 matches
+```
+**~900 local matches established exactly one thing: no crashes.** Every doctrine
+answer today came from the replay corpus, not the arena. *Delta: **the local
+arena is a SAFETY instrument, not a doctrine instrument.** Budget it as
+regression testing and stop expecting verdicts from it.*

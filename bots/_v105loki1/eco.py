@@ -502,7 +502,6 @@ class EcoMixin:
         if not self.link_queue:
             self.link_source = bp
             self.link_queue = self._link_path(ct, bp)
-            import sys; print("WIRE r%d id%d harv=%s queue=%s" % (ct.get_current_round(), ct.get_id(), (bp.x,bp.y), [(t.x,t.y) for t in self.link_queue]), file=sys.stderr)
             return
         if not SIPHON_WIRE_ON or len(self.wire_pending) >= SIPHON_WIRE_QUEUE:
             return
@@ -576,7 +575,6 @@ class EcoMixin:
             f = Direction.NORTH
         if ct.can_build_conveyor(tile, f):
             ct.build_conveyor(tile, f)
-            import sys; print("LINK r%d id%d at %s face %s rest=%s" % (ct.get_current_round(), ct.get_id(), (tile.x,tile.y), f, [(t.x,t.y) for t in self.link_queue[1:]]), file=sys.stderr)
             self.link_queue.pop(0)
             return True
         return False
@@ -789,7 +787,6 @@ class EcoMixin:
                             if coreward_ok and facing is not None \
                                     and ct.can_build_conveyor(pp, facing):
                                 ct.build_conveyor(pp, facing)
-                                import sys; print("PAVE r%d id%d at %s face %s" % (ct.get_current_round(), ct.get_id(), (pp.x,pp.y), facing), file=sys.stderr)
                         except Exception:
                             pass
         if ct.can_move(d):

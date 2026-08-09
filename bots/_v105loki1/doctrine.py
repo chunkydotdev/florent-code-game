@@ -1174,7 +1174,7 @@ LOKI_SPAWN_RESERVE = 60     # never spend the last 60 Ti on a body
 # raid once the harvester floor is met, seat 4 is the single home defender,
 # and every replacement from 5 on is a raider.  There is NO round cutoff
 # anywhere in this file -- that defect is the whole reason LOKI-1 exists.
-LOKI_ECO_SEATS = (1, 2)
+LOKI_ECO_SEATS = (1, 2, 3)
 LOKI_DEFEND_SEAT = 4
 LOKI_LATE_RAID_SEAT = 3
 
