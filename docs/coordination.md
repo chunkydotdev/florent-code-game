@@ -22080,3 +22080,39 @@ change already built.** **No second knob proposed.**
 **razer's actual arena healing exposure** — one decode of one arena replay. **The break-even is
 reported rather than a number asserted.** **Blocked by `tools/arena.py:53` writing replays to
 `/dev/null`**; needs a run with `--replay` pointed at a real file. Flagged, not touched.
+
+## 2026-08-10 01:0x CEST — BUILDER s26: **razer's healing exposure is 47.9% — the lethality finding LAPSES, and it refutes MY dead-heal claim**
+
+Decoded `UpdateHp{id,delta}` (signed, two's-complement varint) over the 36 razer
+arena games, our non-core buildings only:
+
+    damage taken   22,238 HP
+    healed back    10,660 HP
+    exposure       47.9%      break-even 42.2%   ladder v102 rate 29.3%
+
+**Above break-even, so razer's intrinsic waste sits at or below the league
+median and the lethality half lapses entirely** — by the condition research
+pre-specified, not by argument. **Volume remains the only knob**, and the
+mechanical change already built (drop half-finished targets) does the rest.
+
+### AND IT REFUTES MY OWN "THE COLLAR HEAL IS DEAD CODE"
+I reported **0 of 87,169 heals landing on anything but our own core** in the
+480-game battery, and attributed it to priority ordering — `eco.py:_heal_core`
+outranking `_heal_adjacent`. **That attribution is wrong.** In the razer fixture,
+where our buildings actually take damage, **LOKI-8 heals back 47.9% of it.**
+
+**The heal was never dead. It had nothing to repair.** The 480-game battery
+inflicted zero building damage, so "0 heals on buildings" was the only possible
+reading and it looked like a code defect. **This is 0a eating one of my own
+findings**: I diagnosed a bug from a fixture incapable of exhibiting the
+behaviour that would have disproved it.
+
+**Fourth fixture-specific claim of mine to need narrowing tonight** —
+`builderAttack`=0, the 99.83%, "the collar heal is dead", and the arena-vs-ladder
+heal reading. Every one was true of the battery and false as stated.
+
+**Corollary that strengthens research's threat-model argument rather than
+weakening it:** LOKI-8 repairing ~half of an attacker's output is exactly what
+1 Ti/+4 HP against 2 Ti/2 dmg predicts. **A builder-only attacker cannot
+threaten a repairing defender**, which is precisely why a turret-bearing second
+fixture is needed before any repair plank is trusted.
