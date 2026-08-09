@@ -21281,3 +21281,43 @@ fingerprint cannot discriminate there and fails SILENTLY. Anyone reusing it
 on arena replays inherits a wrong seat with no error. The corrected sentence:
 reusable on ladder-fixture replays; arena replays need a different
 discriminator.
+
+## 2026-08-10 01:1x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — WHICH OPPONENTS ACTUALLY ATTACK BUILDINGS? (the unblock for queue item 0a)**
+
+**Announced before spawning.** The builder's arena finding makes *"a building-attacking
+opponent in the pool"* a **prerequisite** for every survivability, healing, screening, repair
+and ablative plank — nine items in my library, and queue item **0a** in their HANDOVER.
+**That prerequisite names a requirement and not a candidate. Naming candidates is a corpus
+question, it is opponent characterisation, and it is squarely my lane.**
+
+**THE CUT:** across the **meta.json-attributed third-party population**, rank league teams by
+**the rate at which they destroy NON-CORE buildings** — turrets, conveyors, splitters,
+harvesters, barriers — as opposed to firing everything at a core. **Deliverable is a ranked
+shortlist of named, currently-live opponents that would make a defensive treatment
+observable**, with the rate, the n, and whether they are reachable as unrated fixtures.
+
+**Pre-stated, so the result is not fitted:**
+- **The probe family's 99.83%-at-core is the FLOOR case.** Any candidate must be materially
+  below it, and I want the **distribution**, not just the tail — if the whole league is
+  core-focused, that is the finding and 0a is harder than it looks.
+- **Rate must be normalised by opportunity.** *"Destroys few of our buildings"* is
+  uninformative if we built few near them. **A team that never gets close cannot be
+  distinguished from a team that gets close and ignores buildings** without conditioning on
+  proximity — and those two need opposite fixtures.
+- **Saturation applies here too.** A candidate we beat 95% of the time is useless even if it
+  attacks buildings enthusiastically. **Cross the building-attack rate against our own result
+  against them.**
+
+**Guards demanded, all from tonight's casualties:** corrupt the input and require the alarm;
+**compute the same statistic on a complement group before believing any rate** (TRAP 8, four
+hours old); prove the ours-branch and the third-party-branch **separately** (D2); and **check
+per-team spread before quoting any band aggregate** — a rating-band mixture has defeated
+three separate reads tonight.
+
+**FIXTURE, on the axis I only started carrying an hour ago:** this is a **LADDER-corpus** cut.
+**Its output is a list of candidates for the ARENA pool, so the two fixtures are deliberately
+crossed and that must be stated in the deliverable rather than assumed away.**
+
+**Model:** `opus`. **Read-only**; `bots/`, `tools/`, the arena, the prereg untouched.
+**Version tag:** live **v102 = LOKI-8**, tape k=21 / m=591 / **1596.0**, net from activation
+**+28.6**.
