@@ -14847,3 +14847,11 @@ rebuildable from the method notes in each deliverable's provenance block.
    test-process-proposal exists because the pipeline lived in heads, not
    docs. Delta: measured instrument limits belong in one table the moment
    the second one is learned, not after the second incident.
+
+## 2026-08-09 12:2x CEST — THIRD LANE, post-wrap addendum (session restarting)
+Supersedes the wrap block's "decoders die with the session": the four validated
+decoders + aggregation examples are PRESERVED at
+`docs/research/scripts/side-lane-2026-08-09/` with their validation records
+(commit 1966026). Successor boot chain: auto-memory (third-lane pattern is in
+florent-two-session-protocol) → this file's tail → the 8 deliverables
+(`*-2026-08-09.md` in docs/research/). Everything else in the wrap block stands.
