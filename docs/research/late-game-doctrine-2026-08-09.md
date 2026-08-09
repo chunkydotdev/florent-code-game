@@ -10,6 +10,16 @@ metadata. **ZERO replay downloads.** Method and traps:
 
 ---
 
+> **AMENDED ONE HOUR AFTER PUBLICATION, by me, against my own §2.** This document
+> frames the r200-300 shot deficit (we fire 5.8/game, Ouroboros 103) as a TURRET
+> PRODUCTION problem. Turrets fire from a global ammo pool with no passive
+> income, so there were two candidate causes and I tested only one. **Ammo is a
+> real co-constraint: in r200-300 we convert 34.8 ammo per game to Ouroboros's
+> 441.6 while ENDING THE WINDOW ON MORE TITANIUM THAN THEY DO (635 vs 478).**
+> Production remains the larger term (~10x vs 4.7x) so §2-§4 stand, but "we have
+> no turrets" is an incomplete reading of §2 and the ammo half is much cheaper to
+> fix. See `docs/research/ammo-and-cpu-2026-08-09.md` §1.
+
 ## 0. TL;DR
 
 1. **Late offensive insertion is dead as a tactic.** Median raider life after a
