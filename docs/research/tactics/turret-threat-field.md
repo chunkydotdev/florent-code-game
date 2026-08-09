@@ -99,8 +99,15 @@ same getter useless for siting.
 WHAT WOULD KILL IT — four things, and the second is the one to check first:
 
 1. **Avoidance is not removal.** Routing around a planted gunner leaves it
-   grinding, and it is the 41.4% survive-to-end tail we actually lose to. This
-   buys builder lives, not the tile.
+   grinding, and it is the survive-to-end tail we actually lose to. This
+   buys builder lives, not the tile. **[Corrected by the research arm, s24: the
+   tail is ~25% censored, NOT the 41.4% raw figure this drafted against — 57.5%
+   of raw "survivors" simply had under 100 rounds of game left. And the tail is
+   specifically the FAR, SUPPORTED plants (62.9% survive 200+ rounds with 2+
+   friendly turrets within d²≤8, against 10.8% for a lone plant near our core),
+   which sharpens this objection: avoidance is worth most exactly where removal
+   is worth least.** See
+   [in-base plant tail](../in-base-plant-survival-tail-2026-08-09.md).]
 2. **The kill zone is our own economy.** 97.2% of tiles the enemy plants on are
    tiles we also build on. Marking d²≤13 around every planted gunner as impassable
    may disconnect our own conveyor network from the core, and a builder may
