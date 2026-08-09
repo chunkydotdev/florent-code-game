@@ -86,6 +86,18 @@
 ## - **`official-docs.md:1091` is wrong**: a CPU overrun does NOT disqualify.
 ##   Ouroboros discards 26,356 unit-turns across 85 games and still beats us.
 ##
+## ===== THERE *IS* A WAKE PATH — corrected at the s22 wrap =====
+## Both arms wrongly reported "nothing watches the ladder". **`tools/corpus/
+## keeper.py` runs as an ORPHANED daemon (PPID 1) and SURVIVES session end.**
+## 600s poll. Raises a real macOS notification on: **SHIP DETECTED** (active bot
+## changed), **RATING DROP** (>=25 below high-water), **LOSING STREAK** (last-10
+## <=2W). Also runs the archiver and decodes new replays into `corpus/`.
+##   Check it: `cat corpus/keeper.pid` then `ps -p <pid>`; log at corpus/keeper.log
+##   NOT covered: anything subtler than those thresholds, anything needing a
+##   decision, and **it cannot roll back — it detects, it does not act.**
+##   It dies on reboot or if the pid is killed.
+## **Verify it is still alive at boot before relying on it.**
+##
 ## ===== PRIOR STATE (s22 boot block) — superseded, kept for reasoning =====
 
 # Session 22 LIVE (builder, booted 06:40 CEST 2026-08-09)
