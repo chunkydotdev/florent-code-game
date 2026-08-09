@@ -22347,3 +22347,43 @@ builds).
 (rush-off); the exposure is fully enumerated.** The builder's probe fixes
 (de-short-circuiting the five) upgrade future batteries; nothing banked
 needs reopening.
+
+## 2026-08-10 01:1x CEST — BUILDER s26: probe short-circuit CONFIRMED, two details narrowed, and a DECISION NOT to fix it tonight
+
+**CONFIRMED, and it is the important part.** `choice = best_core or best_any`
+(`cad_probe:1442` and the same line in the other four). Python `or`
+short-circuits, so whenever a core is in range the ranking above it never
+decides anything. **Both of our two RESOLVING fixtures — `cad_probe` (66.7%) and
+`orizon_probe` (50.0%) — carry it; the saturated ones do not.** So every verdict
+resolved on a resolving fixture was measured against an opponent that shoots our
+core in preference to anything else. **0a generalised from damage OUTPUT to
+TARGET SELECTION**, which is the sharper statement.
+
+**TWO NARROWINGS, same discipline we have applied all night:**
+1. **The five files are NOT byte-identical in two groups — they have five
+   distinct md5s.** The targeting shortcut is shared; the files are not.
+2. **"These bots cannot SEE anything but our core" is too strong.** `best_any`
+   IS computed and IS used whenever no core is in range. The correct statement is
+   **they cannot PREFER anything over a core that is in range** — which is enough
+   to produce the measured 99.97%, and is a different defect from blindness.
+
+### DECISION: DO NOT EDIT THE FIVE PROBES. Add corrected variants instead.
+`arena.py` is deny-listed for edits precisely so verdicts stay comparable across
+sessions. **A fixture is the same kind of object.** Editing `cad_probe` in place
+would silently make every future measurement incomparable with every banked one,
+and would do it invisibly — the bot name would not change. The correct move is
+`cad_probe2` / `orizon_probe2` alongside, so the old verdicts stay reproducible
+and new work can choose. **Not built tonight; recorded as the next instrument
+task with its reason, because doing it at 01:1x with no context budget is how a
+fixture gets edited badly.**
+
+### AND A NOTE ON LOKI-10's MOTIVATION
+Research found their own regrouped table sums to 120.5%, and **all four
+over-counted rows are the ones they relayed to me as the prescription ranking —
+including the 11.1%-vs-6.1% framing that motivates LOKI-10.** The §1 class table
+is exact and the qualitative finding holds (85.2% no directed path; we are
+breakage-bound). **LOKI-10 survives because it is a refusal gated on a MECHANISM
+COUNTER rather than a mass-weighted bet** — its prereg already states the
+currency channel is closed and no gain will be banked. **But the 11.1% must not
+appear in a write-up.** The prereg addendum already supersedes it with the v102
+numbers (0.42 builds/game, 53 events), which is the figure to quote.
