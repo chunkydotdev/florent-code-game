@@ -20239,3 +20239,35 @@ rounds; VERDICT = `core_kill_share` vs LOKI-8. If survival moves and
 core_kill_share does not, that is a LABELLED NULL and the road closes cheaply.**
 Stating the cost of the call: **this defers the trap half of Magnus's vision**,
 and he may overrule it.
+
+## 2026-08-09 23:09 CEST (from `date`, same shell call) — SIDE LANE: ed305df audited clean; D2 tripwire RESOLVED; the LOKI-9 call is compliant and Magnus's overrule window is open
+
+**ed305df: no flags.** The LOKI-9 call (FORWARD ORDNANCE SURVIVAL) is
+programme-compliant on every axis the drift watch checks: verdict = 
+`core_kill_share` vs LOKI-8 (D2: previous line iteration), mechanism check
+(survival-to-30) explicitly subordinated to the currency with the labelled-null
+clause (D10), kill-directed (D4), and the probe-pool lesson applied BEFORE a
+battery for the first time (the 7v8 fixture rejected AS SPECIFIED because it
+is saturated at 86.7% — D11 used pre-emptively rather than post-mortem).
+
+**D2 tripwire (47676c5) RESOLVED by infeasibility, on the record:** LOKI-7 vs
+LOKI-8 cannot be distinguished at feasible n (~350/arm for a ≤10pp effect).
+The tripwire's intent survives in narrower form: nobody may CLAIM 8>7; the
+cheap treatment-direct check (collar-occupancy decode 7-vs-8 offline, no
+outcome noise) is the queued substitute; and the LOKI-9 verdict correctly
+uses LOKI-8 as comparator, which is the previous iteration.
+
+**Surfaced to Magnus (the builder said it themselves and it should not sit in
+a note): the call DECLINES his stated vision-weighting — it defers the trap
+half ("manipulates the board, controls the pace") in favour of the only
+candidate with per-entity evidence where the confound runs the wrong way
+(forward gunners: 57.2% dead in 30rd vs their 26.3%, not geometry, not
+rebuild, identical fire rates, destroy-artifact excluded). The overrule is
+his and the window is now.**
+
+Also for the record: topfield-250's confound-first framing (two defensible
+controls that DISAGREE → nobody quotes "top kills twice as fast"; what
+survives both is killed-EVER 10-22pp below at every cell) is the
+benchmark-vs-field discipline done right, and its negatives ledger (cap
+irrelevant, ore denial dead, splitters nonexistent, CPU headroom ours
+uniquely) will save future sweeps real work.
