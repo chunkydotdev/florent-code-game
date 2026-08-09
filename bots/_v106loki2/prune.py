@@ -1,19 +1,27 @@
 """prune.py -- LOKI-2: the DESTROY / COST-SCALE PRUNING doctrine.
 
 ABLATION UNIT.  Everything this doctrine adds lives in this file.  Its entire
-footprint in main.py is four marked edits (grep ``LOKI-2``):
+footprint in main.py is 14 non-comment lines across five marked sites (grep
+``LOKI-2``):
 
-  1. ``from prune import prune_condemned, prune_state_init, prune_sweep``
+  1. ``from prune import ...``
   2. ``prune_state_init(self)`` at the end of ``Player.__init__``
   3. ``prune_sweep(self, ct)`` in ``_builder``, right after ``_wire_tick``
-  4. three one-line ``prune_condemned()`` gates -- one in ``_build_next_link``
-     and one on each of ``_move``'s two pave sites -- that stop this unit
-     rebuilding a tile it just tore down (the R7 self-chase)
+  4. three ``prune_condemned()`` gates -- one in ``_build_next_link`` and one
+     on each of ``_move``'s two pave sites -- that stop this unit rebuilding a
+     tile it just tore down (the R7 self-chase)
+  5. three ``prune_leak_build_ok()`` gates at the same three build sites --
+     the SECOND ARM, and it is **DEFAULT OFF** (PRUNE_LEAK_BUILD_GATE_ON)
 
-Setting ``PRUNE_ON = False`` restores _v103split behaviour exactly: the sweep
-returns on its first line and both condemned gates read an empty dict.  (The
-flags are here rather than in doctrine.py, against that file's usual rule,
+Setting ``PRUNE_ON = False`` restores _v103split behaviour exactly: every hook
+returns on its first line and the condemned gates read an empty dict.  The two
+arms also ablate independently -- PRUNE_LEAK_BUILD_GATE_ON toggles arm 2 alone.
+(The flags are here rather than in doctrine.py, against that file's usual rule,
 precisely so the ablation is one file and one flag -- noted in doctrine.py.)
+
+STATUS: the destroy arm is BUILT AND INSTRUMENTED BUT NOT ARENA-MEASURED (the
+box was reserved for a field battery).  DESIGN.md next to this file carries the
+measurements that were possible, and the honest verdict, which is negative.
 
 
 WHY THIS EXISTS
@@ -232,7 +240,7 @@ PRUNE_LEAK_BUILD_GATE_ON = False
 # Per-unit stderr instrumentation.  print() goes to the replay; stderr is
 # console-only (docs/tooling.md), so this is safe to leave compiled in and
 # costs one branch when off.
-PRUNE_DEBUG = True
+PRUNE_DEBUG = False
 
 
 # ---------------------------------------------------------------------------

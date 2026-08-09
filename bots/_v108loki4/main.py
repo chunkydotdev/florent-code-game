@@ -24,13 +24,6 @@ from fcode import Direction, EntityType, Environment, Position
 # for the rule on adding new flags.
 from doctrine import *  # noqa: F401,F403
 
-# LOKI-2 (1/4): the DESTROY / COST-SCALE PRUNING doctrine.  Whole subsystem --
-# logic, flags, rationale -- lives in prune.py so it ablates as one unit; set
-# PRUNE_ON = False there to get _v103split back exactly.  See that file's
-# header for the mechanism, the engine-probed scale numbers, and the risks.
-from prune import (prune_condemned, prune_leak_build_ok, prune_state_init,
-                   prune_sweep)
-
 
 
 def enemy_core_for(w, h, own):
@@ -380,9 +373,6 @@ class Player:
         # lifetime so a bug that fires every round can't flood stderr or burn
         # the CPU budget formatting tracebacks.
         self.reported_error = False
-
-        # LOKI-2 (2/4): pruning state (prune_seen / prune_done / prune_kills).
-        prune_state_init(self)
 
     def run(self, ct):
         # An exception that escapes run() makes the engine PERMANENTLY delete
@@ -1261,19 +1251,6 @@ class Player:
         # gate above and ahead of every role, rather than being duplicated into
         # _expand and _defend (both of which build harvesters).
         self._wire_tick(ct)
-
-        # LOKI-2 (3/4): COST-SCALE PRUNING SWEEP.  Sits here, before every
-        # role, for three reasons.  (a) It is after the file's CPU boundary at
-        # the guard above, so it can never eat the emergency-defense paths.
-        # (b) destroy() consumes neither the action cooldown nor the move
-        # (engine-probed), so it competes with nothing the roles below do and
-        # needs no cooldown check -- putting it inside a role would only make
-        # it fire on fewer rounds.  (c) it runs for every builder role, which
-        # matters because the orphans are strewn along walking trails and the
-        # only unit that can destroy one is whoever happens to walk past it.
-        # Never raises: it carries its own blanket except in addition to
-        # run()'s, because an escaped exception deletes the unit permanently.
-        prune_sweep(self, ct)
 
         if self.role == "defend":
             self._defend(ct)
@@ -3365,15 +3342,6 @@ class Player:
         if ban is not None and (tile.x, tile.y) in ban:
             self.link_queue = []
             return False
-        # LOKI-2 (4a/4): never re-link a tile this unit just pruned.  Without
-        # it the sweep and the linker chase each other: destroy lowers the
-        # scale, which makes the conveyor cheaper, which makes the rebuild
-        # easier (R7).  Dropping the whole plan rather than skipping the tile
-        # is the same self-healing answer the seat ban above uses -- skipping
-        # one tile would leave the chain permanently severed at that gap.
-        if prune_condemned(self, tile):
-            self.link_queue = []
-            return False
         target = nearest_core_tile(tile, self.core)
         if len(self.link_queue) >= 2:
             f = tile.cardinal_direction_to(self.link_queue[1])
@@ -3383,10 +3351,6 @@ class Player:
             f = nearest_cardinal(tile.direction_to(target))
         if f == Direction.CENTRE:
             f = Direction.NORTH
-        # LOKI-2 (5a/5): leak gate (default OFF, see PRUNE_LEAK_BUILD_GATE_ON).
-        if not prune_leak_build_ok(self, ct, tile, f):
-            self.link_queue = []
-            return False
         if ct.can_build_conveyor(tile, f):
             ct.build_conveyor(tile, f)
             self.link_queue.pop(0)
@@ -3604,11 +3568,7 @@ class Player:
                 # undirected trail conveyor is the LEAST valuable thing that can
                 # ever stand on a heal seat, and this is the site the seat census
                 # blames for most of the paved seats it counts.
-                # LOKI-2 (4b/4): and never repave a tile this unit just pruned
-                # -- the trail pave is the orphan factory the sweep exists to
-                # clean up, so it is the site most likely to rebuild straight
-                # into a fresh destroy.  Same R7 argument as the linker gate.
-                ore_ban = pave_blocked(ct, pp, self._pave_ban()) or prune_condemned(self, pp)
+                ore_ban = pave_blocked(ct, pp, self._pave_ban())
                 if not ore_ban and ct.read_store(SLOT_HARVESTERS) >= 1 and self._eco_spendable(ct, ct.get_conveyor_cost()):
                     if dist_core(pp, self.core) > 0:
                         if dist_core(pp, self.core) == 1:
@@ -3626,10 +3586,7 @@ class Player:
                                 abs(p0.x - self.core.x) + abs(p0.y - self.core.y)
                                 < abs(pp.x - self.core.x) + abs(pp.y - self.core.y)
                             )
-                        # LOKI-2 (5b/5): leak gate (default OFF).
-                        if coreward_ok and facing is not None \
-                                and prune_leak_build_ok(self, ct, pp, facing) \
-                                and ct.can_build_conveyor(pp, facing):
+                        if coreward_ok and facing is not None and ct.can_build_conveyor(pp, facing):
                             ct.build_conveyor(pp, facing)
         elif pave and self.core and ct.is_tile_empty(nxt) and ct.get_action_cooldown() == 0:
             # PIECE E2B, next-step site (see E2B_ORE_PAVE_BAN_ON).  Same rule as
@@ -3637,17 +3594,13 @@ class Player:
             # cardinal step away so the vision test inside the predicate is
             # free here, but the predicate is shared so the two sites cannot
             # drift apart.
-            # LOKI-2 (4c/4): same condemned gate on the next-step pave site
-            # (the hive / PAVE_TRAIL_ON-off fallback path).
-            ore_ban = pave_blocked(ct, nxt, self._pave_ban()) or prune_condemned(self, nxt)
+            ore_ban = pave_blocked(ct, nxt, self._pave_ban())
             if not ore_ban and ct.read_store(SLOT_HARVESTERS) >= 1 and self._eco_spendable(ct, ct.get_conveyor_cost()):
                 if dist_core(nxt, self.core) > 0:
                     here = ct.get_position()
                     if abs(nxt.x - self.core.x) + abs(nxt.y - self.core.y) < abs(here.x - self.core.x) + abs(here.y - self.core.y):
                         card = nearest_cardinal(nxt.direction_to(nearest_core_tile(nxt, self.core)))
-                        # LOKI-2 (5c/5): leak gate (default OFF).
-                        if prune_leak_build_ok(self, ct, nxt, card) \
-                                and ct.can_build_conveyor(nxt, card):
+                        if ct.can_build_conveyor(nxt, card):
                             ct.build_conveyor(nxt, card)
         if ct.can_move(d):
             ct.move(d)

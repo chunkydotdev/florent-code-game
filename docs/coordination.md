@@ -10307,3 +10307,64 @@ healers (enemy builders adjacent to a damaged enemy entity).
 the grind pocket is 26-49% of games and real Elo. The question is whether we are
 past the point where more repair still buys wins — **that is an ablation, not an
 argument**, and no build is permitted to gut the heal line.
+
+### 2026-08-09 08:12 CEST (from `date`) — builder arm: **THE KIDNAP IS A THRESHOLD FLIP, AND IT COMBOS WITH THE UNSPENT BANK. Magnus's question, answered with arithmetic.**
+
+**HIS QUESTION:** "How do we use that we gain 10 rounds from launching their
+builders? Do we have a cheap preferred kill or damage that it opens up?"
+
+**FIRST, A LABEL ON MY OWN NUMBER: the "10 rounds" is MINE and it is
+HAND-WAVED**, derived from throw radius (r²=26, ~5 tiles) and builders moving
+one cardinal tile per round. **It is not measured.** I have asked research to
+measure the real return time of a displaced builder from the throw census
+(distance moved, and rounds until that builder is next adjacent to the same
+entity). **If it comes back at 3 rounds the kidnapper doctrine is worth much
+less than I have been saying.** Flagged before the build reads out, not after.
+
+**THE ARITHMETIC, verified from our own `strategy-log.md:721` ("2 builders
+out-heal a Gunner, 3 out-heal a Sentinel") -> one healer is ~2 HP/round:**
+```
+3 healers vs our sentinel   heal 6 HP/rd  vs  6 dmg/rd  ->  NET ZERO, target IMMORTAL
+kidnap ONE healer           heal 4 HP/rd  vs  6 dmg/rd  ->  +2/rd, target DIES
+```
+**A kidnap does not buy ~20 HP of chip damage. It converts an unwinnable
+exchange into a winnable one — a THRESHOLD FLIP, not a linear gain.** The
+consequence for the build is a trigger condition, not just a target rule:
+**a kidnap is worth almost nothing unless we are ALREADY shooting something the
+victim was repairing.** Sent to LOKI-5.
+
+**WHAT THE WINDOW ACTUALLY BUYS:**
+```
+harvester 30 HP -> 2 sentinel shots (20 Ti)     gunner 25 HP -> 2 shots (20 Ti)
+sentinel  40 HP -> 3 shots (30 Ti)              CORE 500 HP -> ~28 shots, OUT OF REACH
+```
+**A ~10-round window buys a TURRET or a HARVESTER, not a core** — and that is the
+right prize, since their forward turret line is what beats us late.
+
+**THE COMBO, and it is the trickster shape Magnus described — three separately
+measured facts that nobody had put together:**
+1. We hold **635 Ti unspent per game in r200-300** (research's flow census).
+2. **`convert_ammo` is uncapped, usable the SAME turn, and costs NO action
+   cooldown** — the entire bank converts in one round the moment a target appears.
+3. A kidnap opens an unhealed window on demand.
+> **Kidnap the healer -> the screen drops -> dump the bank into ammo that same
+> round -> burst the target inside the window.** The kidnap CREATES the window;
+> the banked titanium EXPLOITS it. That is a timing attack, which research
+> correctly noted we have never built.
+
+**THE NUMBER THAT REFRAMES THE WHOLE PROJECT: 635 Ti = 1,134 sentinel damage =
+MORE THAN TWO CORES.** We are sitting on more than twice a core's HP in unspent
+titanium and converting 34.8 of it per game.
+
+**AND THE BINDING CONSTRAINT IS NOT MONEY, IT IS FIRING RATE.** One sentinel
+manages ~3 shots in a 10-round window (18 dmg, reload 2). **So the unspent bank
+and LOKI-3's turret count are the SAME PROBLEM: we have the money and not the
+guns.** That is a stronger argument for LOKI-3 than the one I originally briefed
+it with.
+
+**ALSO SENT: LOKI-4 must build ore denial in TWO LAYERS** — generic siting from
+map symmetry and the enemy core (required, works with zero opponent knowledge),
+with any measured opponent tile book as an **optional preference overlay
+carrying a version stamp and an expiry**. If the overlay is stale the bot must
+degrade to generic denial, not to nothing. **This is the Lunds insertion-tiles
+lesson applied before we make the mistake rather than after.**

@@ -24,13 +24,6 @@ from fcode import Direction, EntityType, Environment, Position
 # for the rule on adding new flags.
 from doctrine import *  # noqa: F401,F403
 
-# LOKI-2 (1/4): the DESTROY / COST-SCALE PRUNING doctrine.  Whole subsystem --
-# logic, flags, rationale -- lives in prune.py so it ablates as one unit; set
-# PRUNE_ON = False there to get _v103split back exactly.  See that file's
-# header for the mechanism, the engine-probed scale numbers, and the risks.
-from prune import (prune_condemned, prune_leak_build_ok, prune_state_init,
-                   prune_sweep)
-
 
 
 def enemy_core_for(w, h, own):
@@ -380,9 +373,6 @@ class Player:
         # lifetime so a bug that fires every round can't flood stderr or burn
         # the CPU budget formatting tracebacks.
         self.reported_error = False
-
-        # LOKI-2 (2/4): pruning state (prune_seen / prune_done / prune_kills).
-        prune_state_init(self)
 
     def run(self, ct):
         # An exception that escapes run() makes the engine PERMANENTLY delete
@@ -1261,19 +1251,6 @@ class Player:
         # gate above and ahead of every role, rather than being duplicated into
         # _expand and _defend (both of which build harvesters).
         self._wire_tick(ct)
-
-        # LOKI-2 (3/4): COST-SCALE PRUNING SWEEP.  Sits here, before every
-        # role, for three reasons.  (a) It is after the file's CPU boundary at
-        # the guard above, so it can never eat the emergency-defense paths.
-        # (b) destroy() consumes neither the action cooldown nor the move
-        # (engine-probed), so it competes with nothing the roles below do and
-        # needs no cooldown check -- putting it inside a role would only make
-        # it fire on fewer rounds.  (c) it runs for every builder role, which
-        # matters because the orphans are strewn along walking trails and the
-        # only unit that can destroy one is whoever happens to walk past it.
-        # Never raises: it carries its own blanket except in addition to
-        # run()'s, because an escaped exception deletes the unit permanently.
-        prune_sweep(self, ct)
 
         if self.role == "defend":
             self._defend(ct)
@@ -3365,15 +3342,6 @@ class Player:
         if ban is not None and (tile.x, tile.y) in ban:
             self.link_queue = []
             return False
-        # LOKI-2 (4a/4): never re-link a tile this unit just pruned.  Without
-        # it the sweep and the linker chase each other: destroy lowers the
-        # scale, which makes the conveyor cheaper, which makes the rebuild
-        # easier (R7).  Dropping the whole plan rather than skipping the tile
-        # is the same self-healing answer the seat ban above uses -- skipping
-        # one tile would leave the chain permanently severed at that gap.
-        if prune_condemned(self, tile):
-            self.link_queue = []
-            return False
         target = nearest_core_tile(tile, self.core)
         if len(self.link_queue) >= 2:
             f = tile.cardinal_direction_to(self.link_queue[1])
@@ -3383,10 +3351,6 @@ class Player:
             f = nearest_cardinal(tile.direction_to(target))
         if f == Direction.CENTRE:
             f = Direction.NORTH
-        # LOKI-2 (5a/5): leak gate (default OFF, see PRUNE_LEAK_BUILD_GATE_ON).
-        if not prune_leak_build_ok(self, ct, tile, f):
-            self.link_queue = []
-            return False
         if ct.can_build_conveyor(tile, f):
             ct.build_conveyor(tile, f)
             self.link_queue.pop(0)
@@ -3604,11 +3568,7 @@ class Player:
                 # undirected trail conveyor is the LEAST valuable thing that can
                 # ever stand on a heal seat, and this is the site the seat census
                 # blames for most of the paved seats it counts.
-                # LOKI-2 (4b/4): and never repave a tile this unit just pruned
-                # -- the trail pave is the orphan factory the sweep exists to
-                # clean up, so it is the site most likely to rebuild straight
-                # into a fresh destroy.  Same R7 argument as the linker gate.
-                ore_ban = pave_blocked(ct, pp, self._pave_ban()) or prune_condemned(self, pp)
+                ore_ban = pave_blocked(ct, pp, self._pave_ban())
                 if not ore_ban and ct.read_store(SLOT_HARVESTERS) >= 1 and self._eco_spendable(ct, ct.get_conveyor_cost()):
                     if dist_core(pp, self.core) > 0:
                         if dist_core(pp, self.core) == 1:
@@ -3626,10 +3586,7 @@ class Player:
                                 abs(p0.x - self.core.x) + abs(p0.y - self.core.y)
                                 < abs(pp.x - self.core.x) + abs(pp.y - self.core.y)
                             )
-                        # LOKI-2 (5b/5): leak gate (default OFF).
-                        if coreward_ok and facing is not None \
-                                and prune_leak_build_ok(self, ct, pp, facing) \
-                                and ct.can_build_conveyor(pp, facing):
+                        if coreward_ok and facing is not None and ct.can_build_conveyor(pp, facing):
                             ct.build_conveyor(pp, facing)
         elif pave and self.core and ct.is_tile_empty(nxt) and ct.get_action_cooldown() == 0:
             # PIECE E2B, next-step site (see E2B_ORE_PAVE_BAN_ON).  Same rule as
@@ -3637,17 +3594,13 @@ class Player:
             # cardinal step away so the vision test inside the predicate is
             # free here, but the predicate is shared so the two sites cannot
             # drift apart.
-            # LOKI-2 (4c/4): same condemned gate on the next-step pave site
-            # (the hive / PAVE_TRAIL_ON-off fallback path).
-            ore_ban = pave_blocked(ct, nxt, self._pave_ban()) or prune_condemned(self, nxt)
+            ore_ban = pave_blocked(ct, nxt, self._pave_ban())
             if not ore_ban and ct.read_store(SLOT_HARVESTERS) >= 1 and self._eco_spendable(ct, ct.get_conveyor_cost()):
                 if dist_core(nxt, self.core) > 0:
                     here = ct.get_position()
                     if abs(nxt.x - self.core.x) + abs(nxt.y - self.core.y) < abs(here.x - self.core.x) + abs(here.y - self.core.y):
                         card = nearest_cardinal(nxt.direction_to(nearest_core_tile(nxt, self.core)))
-                        # LOKI-2 (5c/5): leak gate (default OFF).
-                        if prune_leak_build_ok(self, ct, nxt, card) \
-                                and ct.can_build_conveyor(nxt, card):
+                        if ct.can_build_conveyor(nxt, card):
                             ct.build_conveyor(nxt, card)
         if ct.can_move(d):
             ct.move(d)
@@ -3921,6 +3874,257 @@ class Player:
             self.rot_lock_d = 10 ** 9
             ct.rotate(want)
 
+    def _kidnap_probe(self, ct, tag, frm, to, covered, walk, sep, healer, tgt):
+        """One stderr row per enemy-bot throw.  Off in shipped bytes.
+
+        stderr, not print(): print() is captured into the replay rather than the
+        console (docs/tooling.md), and the analysis script joins these rows to
+        the replay's own RemoveEntity stream by round + position.
+        """
+        if not KIDNAP_PROBE:
+            return
+        try:
+            import sys
+            print(
+                "KIDNAP\t%s\tr=%d\tfrom=%d,%d\tto=%d,%d\tcov=%d\twalk=%d"
+                "\tsep=%d\theal=%d\ttgt=%d"
+                % (tag, ct.get_current_round(), frm.x, frm.y, to.x, to.y,
+                   int(covered), walk, sep, int(healer), tgt),
+                file=sys.stderr,
+            )
+        except Exception:
+            pass
+
+    def _kidnap_open(self, ct, pos):
+        """True if pos is currently empty of wall, building AND builder bot.
+
+        A Gunner's ray is stopped by all three (only empty tiles fail to block),
+        so this is the truncation test for its coverage line.  Out-of-vision
+        tiles raise on the tile getters, and an unknown tile is treated as
+        BLOCKING -- that under-claims coverage, which is the safe direction:
+        the rule's whole risk is claiming a killzone we do not have.
+        """
+        try:
+            if not ct.is_tile_empty(pos):
+                return False
+            return ct.get_tile_builder_bot_id(pos) is None
+        except Exception:
+            return False
+
+    def _kidnap_cover(self, ct):
+        """Tiles a LOADED friendly turret line already covers, as an (x, y) set.
+
+        Computed ONCE per launcher-turn from the turrets rather than per
+        candidate tile: each turret contributes at most 5 pattern tiles (gunner
+        r^2=13 -> 3 cardinal / 2 diagonal, sentinel r^2=32 -> 5 / 4), so this is
+        O(turrets) where the obvious formulation is O(candidates x turrets).
+
+        get_attackable_tiles_from is the RAW pattern and ignores occupancy and
+        walls -- exactly right for a Sentinel, whose line ignores obstacles, and
+        WRONG for a Gunner, whose ray is stopped by walls, bots and buildings
+        alike.  Gunner rays are therefore walked outward and truncated at the
+        first non-empty tile.  can_fire_from cannot substitute here: for gunners
+        it requires the TARGET tile to be occupied, and a landing tile is empty
+        until the throw lands.
+
+        Ammo is a precondition, not a detail -- a line the team cannot pay to
+        fire is decoration, and this bot starts every match at 0 ammunition.
+        """
+        cover = set()
+        ammo = ct.get_global_ammo()
+        seen = 0
+        for eid in ct.get_nearby_buildings():
+            if seen >= KIDNAP_MAX_TURRETS:
+                break
+            try:
+                if ct.get_team(eid) != self.team:
+                    continue
+                et = ct.get_entity_type(eid)
+                if et == EntityType.SENTINEL:
+                    if ammo < KIDNAP_MIN_AMMO_SENTINEL:
+                        continue
+                elif et == EntityType.GUNNER:
+                    if ammo < KIDNAP_MIN_AMMO_GUNNER:
+                        continue
+                else:
+                    continue
+                tp = ct.get_position(eid)
+                tiles = ct.get_attackable_tiles_from(tp, ct.get_direction(eid), et)
+            except Exception:
+                continue
+            seen += 1
+            if et == EntityType.SENTINEL:
+                for t in tiles:
+                    cover.add((t.x, t.y))
+                continue
+            # get_attackable_tiles* enumerates in ABSOLUTE row-major order, not
+            # along the ray (game-model.md) -- sort before truncating or the
+            # near/far preference flips with facing.
+            for t in sorted(tiles, key=lambda q: q.distance_squared(tp)):
+                cover.add((t.x, t.y))
+                if not self._kidnap_open(ct, t):
+                    break
+        return cover
+
+    def _kidnap_ours(self, ct):
+        """Neighbour-count map: (x, y) -> how many of our non-barrier buildings
+        touch that tile.  Built by walking OUR buildings and stamping their
+        8-rings, so it costs O(buildings) once instead of 8 lookups on each of
+        ~85 candidate landing tiles.  Barriers are excluded on purpose: a
+        hostile parked next to a 3 Ti wall costs nothing.
+        """
+        near = {}
+        for eid in ct.get_nearby_buildings():
+            try:
+                if ct.get_team(eid) != self.team:
+                    continue
+                et = ct.get_entity_type(eid)
+                if et == EntityType.BARRIER:
+                    continue
+                q = ct.get_position(eid)
+            except Exception:
+                continue
+            seats = core_tiles(q) if et == EntityType.CORE else (q,)
+            for s in seats:
+                for d in DIRECTIONS:
+                    k = (s.x + d.delta()[0], s.y + d.delta()[1])
+                    near[k] = near.get(k, 0) + 1
+        return near
+
+    def _kidnap_victim(self, ct, bp, dest):
+        """Score one hostile in the pickup ring; also flag it a probable healer.
+
+        WHY HEALERS RANK FIRST.  Per titanium: builder heal 4.00 HP/Ti, sentinel
+        1.80, gunner 1.75, builder attack 1.00.  Healing beats the best damage
+        source by 2.22x, so an attrition race at equal income is unwinnable --
+        and a builder bot's attack hits BUILDINGS ONLY, so the only two ways to
+        remove an enemy healer are a turret shot or this throw.  The throw costs
+        no ammunition.
+
+        The observable proxy is the heal's own precondition: heal targets a
+        friendly entity on an ORTHOGONALLY adjacent tile, so a hostile standing
+        cardinally next to a DAMAGED entity of its own team is a healer with a
+        job.  hp == max_hp next door is not evidence of anything.
+        """
+        score = 0
+        healer = False
+        target = -1
+        if dest is not None and dist_core(bp, dest) <= 1:
+            score += KIDNAP_V_CORE_ADJ
+        for d in CARDINALS:
+            q = bp.add(d)
+            try:
+                ids = (ct.get_tile_building_id(q), ct.get_tile_builder_bot_id(q))
+            except Exception:
+                continue
+            for oid in ids:
+                if oid is None:
+                    continue
+                try:
+                    tm = ct.get_team(oid)
+                    if tm == self.team:
+                        score += KIDNAP_V_ON_OUR_STUFF
+                        continue
+                    if ct.get_hp(oid) >= ct.get_max_hp(oid):
+                        continue
+                    et = ct.get_entity_type(oid)
+                except Exception:
+                    continue
+                if not healer:
+                    healer = True
+                    target = oid
+                    score += KIDNAP_V_HEALER
+                if et in (EntityType.CORE, EntityType.SENTINEL,
+                          EntityType.GUNNER, EntityType.LAUNCHER):
+                    score += KIDNAP_V_HEALER_HIGHVALUE
+                    target = oid
+        return score, healer, target
+
+    def _kidnap(self, ct, lp, w, h, dest, enemy_bots):
+        """PIECE KIDNAP.  Returns True iff a hostile was thrown.
+
+        THE RULE, in order:
+          1. Grab the most valuable hostile in the ring -- probable healer, then
+             one sitting on their Core's ring, then anything.
+          2. VETO any landing tile that is uncovered and inside our own home
+             band, and every tile within 2 of our own Core footprint.  An
+             uncovered hostile dropped at home is an imported saboteur, and that
+             is the one way this plank can be worse than the exile it replaces.
+          3. Among survivors maximise  killzone + walk-back + separation - our
+             own adjacent economy.
+          4. If nothing survives, return False and let the caller run the parent
+             exile unchanged.
+
+        DOMINANCE, so step 4 cannot make the common case worse: the parent's
+        pick is the tile FARTHEST from our Core, which by construction is never
+        inside the home band and so always survives the veto.  It is therefore
+        always a member of the set this maximises over, and the tile chosen here
+        scores at least as high as it under these weights.
+        """
+        if self._cpu_exhausted(ct):
+            return False
+        pick = None
+        pick_s = None
+        pick_heal = False
+        pick_tgt = -1
+        for _eid, bp in enemy_bots:
+            s, healer, tgt = self._kidnap_victim(ct, bp, dest)
+            if pick_s is None or s > pick_s:
+                pick, pick_s, pick_heal, pick_tgt = bp, s, healer, tgt
+        if pick is None:
+            return False
+
+        cover = self._kidnap_cover(ct)
+        near = self._kidnap_ours(ct)
+        # For a healer the payoff is SEPARATION AND TIME: every round it spends
+        # walking back is a round the thing it was repairing keeps taking
+        # damage, and unlike a raider it has a specific tile it must return to.
+        sep_w = KIDNAP_W_SEP_HEAL if pick_heal else KIDNAP_W_SEP
+        base_walk = dist_core(pick, dest) if dest is not None else 0
+        scored = []
+        for dx in range(-5, 6):
+            for dy in range(-5, 6):
+                if dx * dx + dy * dy > 26:
+                    continue
+                tx, ty = lp.x + dx, lp.y + dy
+                if not (0 <= tx < w and 0 <= ty < h):
+                    continue
+                t = Position(tx, ty)
+                covered = (tx, ty) in cover
+                if dist_core(t, self.core) <= 2:
+                    continue
+                if not covered and t.distance_squared(self.core) <= KIDNAP_HOME_VETO_DSQ:
+                    continue
+                score = KIDNAP_W_KILLZONE if covered else 0
+                walk = 0
+                if dest is not None:
+                    walk = dist_core(t, dest) - base_walk
+                    if walk > KIDNAP_WALK_CLAMP:
+                        walk = KIDNAP_WALK_CLAMP
+                    elif walk < -KIDNAP_WALK_CLAMP:
+                        walk = -KIDNAP_WALK_CLAMP
+                    score += KIDNAP_W_WALKBACK * walk
+                sep = max(abs(tx - pick.x), abs(ty - pick.y))
+                if sep > KIDNAP_SEP_CLAMP:
+                    sep = KIDNAP_SEP_CLAMP
+                score += sep_w * sep
+                n = near.get((tx, ty), 0)
+                if n > KIDNAP_NEAR_CAP:
+                    n = KIDNAP_NEAR_CAP
+                score -= KIDNAP_W_NEAR_OURS * n
+                scored.append((-score, tx, ty, covered, walk, sep))
+        if not scored:
+            return False
+        scored.sort()
+        for _neg, tx, ty, covered, walk, sep in scored:
+            site = Position(tx, ty)
+            if ct.can_launch(pick, site):
+                self._kidnap_probe(ct, "KIDNAP", pick, site, covered, walk,
+                                   sep, pick_heal, pick_tgt)
+                ct.launch(pick, site)
+                return True
+        return False
+
     def _launcher(self, ct):
         if self.team is None:
             self.team = ct.get_team()
@@ -3980,15 +4184,27 @@ class Player:
         cands.sort(key=lambda x: x[0])
 
         # A Launcher can also remove a hostile bot that walks into its pickup
-        # ring. Throw it to the legal tile farthest from our Core.
+        # ring.  PIECE KIDNAP (see doctrine.py) chooses WHICH one to grab and
+        # WHERE to put it; the legacy "farthest from our Core" exile below is
+        # kept verbatim as the fallback and is what runs with KIDNAP_ON off,
+        # so the ablation measures exactly this change and nothing else.
         enemy_bots = []
         for eid in ct.get_nearby_entities():
             if ct.get_entity_type(eid) != EntityType.BUILDER_BOT or ct.get_team(eid) == self.team:
                 continue
             bp = ct.get_position(eid)
             if bp.distance_squared(lp) <= 2:
-                enemy_bots.append(bp)
-        for bp in enemy_bots:
+                enemy_bots.append((eid, bp))
+        if enemy_bots and KIDNAP_ON:
+            # Blanket guard: anything escaping run() destroys this unit for the
+            # rest of the match, so a bug in the new rule costs one throw's
+            # quality, never the launcher.
+            try:
+                if self._kidnap(ct, lp, w, h, dest, enemy_bots):
+                    return
+            except Exception:
+                pass
+        for _eid, bp in enemy_bots:
             exile = []
             for dx in range(-5, 6):
                 for dy in range(-5, 6):
@@ -4000,6 +4216,7 @@ class Player:
             exile.sort(key=lambda t: t.distance_squared(self.core), reverse=True)
             for site in exile:
                 if ct.can_launch(bp, site):
+                    self._kidnap_probe(ct, "EXILE", bp, site, 0, 0, 0, False, -1)
                     ct.launch(bp, site)
                     return
 
