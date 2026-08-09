@@ -21,6 +21,36 @@ This spec = five separable flags that convert the existing Loki machinery from
 "raid" to "persistent siege". No new doctrine road: the insertion pipeline,
 the healing engine, and the turret code all exist; the flags re-point them.
 
+## 0.5 Relation to the four-plank refutation (builder, 10:31 — read theirs first)
+
+The builder's four planks and this spec do not overlap, and the SITE result
+is the strongest external evidence FOR this spec's core flag:
+- **What the four planks turned:** count (FLOOR, −0.7pp), ammo price (HOME,
+  −2.0pp), anchor location (LOKI-3, +0.0pp), and forward REMOVAL (SITE,
+  −6.7pp with dose-response). **None tested persistence** — replacement,
+  commitment, or idle behaviour. S1-S3 are decision-layer flags, not turret
+  knobs; "the next attempt must not be another turret knob" and this spec
+  agree.
+- **SITE's dose-response prices the forward programme causally in OUR OWN
+  bot:** removing it costs win rate in proportion to how much is removed.
+  S2 (replace-on-death) INCREASES the dose of exactly the programme whose
+  removal showed proportional harm — it re-adds a unit of something SITE
+  just measured as valuable, at the site where it was already earning.
+  Applying the builder's own new rule ("what does this thing produce, and
+  have I measured that?"): a forward shooter produces fire-rounds; SITE
+  measured their removal as harmful; the same-games cut ties fire-rounds
+  (28 vs 59) to kill rate (33% vs 46%).
+- **The builder's caution stands on S4/S6:** "add support and go forward" as
+  a NEW road is the composite rescue in a new costume — noted as live
+  hypothesis, not queue item, and this spec defers to that: S2/S3 extend
+  the EXISTING forward programme (replace what dies where it died, keep
+  firing); they open no new road and move no anchor. S4's payload-type and
+  screen-priority choices and S6's insertion opener are the parts nearest
+  the closed road and should be sequenced last, behind S2/S3's read.
+- M5 ("median shooter life → 40r+") is now the wrong framing per SITE's
+  lesson (survival is not the objective): **M5 is DEMOTED to a diagnostic;
+  M1 (fire-rounds) and F carry the verdict weight.**
+
 ## 1. Architecture constraints (inherited, non-negotiable)
 
 - Fork `_v103split` chassis (or the current descendant the builder prefers);
