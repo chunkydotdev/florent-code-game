@@ -14278,3 +14278,62 @@ verified, ready to bundle" should read this paragraph first.**
   next session disagrees with that call, it is a live road and I have not
   measured it.** I would rather record it as an untested judgement than let
   "Loki is dead" imply it was tested.
+
+### 2026-08-09 13:13 CEST (from `date`) — builder arm: **WE HAVE A FOREIGN OPPONENT POOL AND NOBODY USED IT TODAY. ESCALATE IS TESTABLE AFTER ALL — and the probes produce exactly the condition our own lineage could not.**
+
+## 1. THE SIGNATURE SCAN — the fix for the self-play problem was already on disk
+
+Scanning every candidate opponent for our four signature identifiers:
+```
+FOREIGN (0/4)   band_probe (Banminary all-in launcher rush) · cad_probe
+                (CtrlAltDefeat launcher-insertion) · rush_probe · starter
+PARTIAL (1/4)   orizon_probe (Orizon point-blank gunner) · ouroboros_probe
+                (Ouroboros gunner picket + creep) · clanker_probe (Clankers
+                HEAL-TANK SIEGE) · kladde_probe · flotte_probe
+OURS (3-4/4)    every opp_v* -- the pool all five planks were gated against
+```
+**The `*_probe` bots are imitations of REAL LADDER TEAMS, built from replay
+analysis, and they share none of our doctrine.** Every battery today used
+`opp_v*` and none used these. **The instrument fix was sitting in `bots/`.**
+
+## 2. AND THEY PRODUCE THE CONDITION `opp_v*` STRUCTURALLY COULD NOT
+
+The reason ESCALATE was "untestable" is that its gate — **does the response grow
+after r250?** — needs multi-attacker pressure late, and our own lineage does not
+apply it. Instrumented, same plank, same map, same seed:
+```
+opponent            recruits   max attackers   AFTER r250
+opp_v63 (OURS)            76         4               0
+orizon_probe          **2132**   **5**        **1625**
+cad_probe                652        13               0
+ouroboros_probe           84         3               0
+```
+**`orizon_probe` alone generates 1,625 post-r250 recruitments at up to five
+concurrent attackers.** `cad_probe` reaches **thirteen**. **The pre-registered
+gate is answerable — it was never unanswerable, it was pointed at the wrong pool.**
+
+## 3. IN-FLIGHT (rule 1, registered BEFORE the run this time)
+
+**`ESCALATE-PROBE-GATE`** — `_v114off` vs `_v114esc`, **6 foreign probes**
+(orizon, ouroboros, clanker, kladde, flotte, band), 15 maps, both seats,
+`--tle 0`. **360 games.** `cad_probe` EXCLUDED: it is the only probe that calls
+`random.`, so it is not deterministic and would break paired comparison.
+
+**Pre-flight cleared by `tools/gate.py`:** pool reported **foreign**, control
+equivalence **4/4 identical**, determinism warnings only (probes predate
+`NOISE_ON` and contain no `random.` calls).
+
+**THE GATE IS UNCHANGED FROM THE ONE POSTED BEFORE THE FIRST ATTEMPT** — research's
+question verbatim: **"does it grow after r250?"**, read as a response to load,
+**and the null to beat is "identical behaviour at 1 and 3 attackers", not "no
+change".** I am not moving the bar now that a better instrument is available.
+
+**PRE-STATED, so it cannot be rationalised afterwards:**
+- **These probes are IMITATIONS and are known to be miscalibrated.** The s16
+  Elo-weighted battery measured `ouroboros_probe` as **severely over-confident —
+  an 86-point gap** between probe score and real-world result for the class it
+  represents. **A win here is NOT a field result.** It is a better-than-self-play
+  result, which is a lower bar than it sounds.
+- **A loss here is much more informative than a win**, because the plank now
+  faces the condition it was built for; failing that is a real refutation.
+- **Whatever happens, this number carries its pool when quoted** (the label rule).
