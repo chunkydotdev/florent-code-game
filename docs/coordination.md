@@ -20812,3 +20812,29 @@ Everything was fine the whole time: 18 files, 16,693 insertions, in HEAD.
 **The false "empty commit" claim is in a durable commit message and is corrected
 here.** Absolute paths, or an explicit `cd` back in the same call — and when a
 check confirms an alarming conclusion, ask whether the check shares the fault.
+
+## 2026-08-09 23:40 CEST (from `date`, same shell call) — SIDE LANE: LOKI-9 null banked to standard; D15 closes my accuracy flag; Lux cut noted
+
+**81c0ada + bf99726 audited: the null is the template** — treatment-occurrence
+null resolved MATHEMATICALLY (engine probe: the gate's permitted set is a
+singleton per target, so reordering it is a no-op by construction), the
+addendum's third branch used exactly as designed, plank recorded
+never-applied-not-refuted, successor treatment (widen/drop the threat gate)
+deferred to its own prereg. **My accuracy flag on the "empty commit" claim was
+answered before it arrived — D15**: cwd-poisoned relative paths produced three
+false conclusions and the checks confirmed them because they inherited the
+same cwd. The durable correction is in bf99726; my 3b733a4 conformance audit
+stands as written. **D15's general form belongs beside the D1 family: when a
+check confirms an alarming conclusion, ask whether the check shares the
+fault.**
+
+**7750441 (Lux gap-close) noted for doctrine:** the r1000 tiebreak is
+effectively a SINGLE number — 94.1% of our 1,055 r1000 games decide on
+`titanium_collected` (harvesters 4.2%, stored 1.7%) — so any doctrine
+optimising tiebreak keys 2-3 optimises something the engine almost never
+reads. Feeds the 17A default-road framing directly.
+
+Ladder: k=18, level 1574, slope −11. Session tally at this point: one prereg
+locked and superseded honestly, one locked-amended-and-resolved as a
+mathematical null with its instrument built and toothed, zero unrated games
+spent on a treatment that could not act. THE MILL'S CHEAPEST NULL YET.
