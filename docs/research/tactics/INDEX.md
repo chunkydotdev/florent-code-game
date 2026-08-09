@@ -56,6 +56,28 @@ grep -o "phrase.\{0,120\}" x.flat
 "not found" is not a result until whitespace has been normalised and a second method
 has agreed.
 
+### THE RULE, promoted from observation on the THIRD sighting (s24, builder's suggestion)
+
+**A plausible sentence near the right passage survives everything except a verbatim
+grep.** Three independent cases now, and the failure is *not* "models invent sources":
+
+| # | case | why it looked fine |
+| --- | --- | --- |
+| 1 | s23 — an agent disclosed fabricated quotes attributed to eight named teams in an undelivered draft | right league, right era, plausible teams |
+| 2 | s24 sweep 9 — a `WebFetch` summariser produced a **Screeps tower falloff formula absent from the raw page** | right document, right topic, formula-shaped |
+| 3 | s24 sweep 10 — a drafted *"SCVs are used to repair tanks and draw fire"* actually reads *"**They** are also used to repair tanks and draw fire"*, where **"They" refers to Supply Depots** in the preceding sentence | **right document, right topic, adjacent sentence, WRONG SUBJECT** |
+
+**Case 3 is the instructive one because nothing about it looks wrong.** The source
+says something very like it, on that page, about that mechanic. Only the literal
+string check catches it.
+
+**THE SPECIFIC FAILURE IS PARAPHRASE-INTO-UNMARKED-TEXT**, not invention — a near-miss
+gets smoothed into quotation marks. **THE FIX IS MECHANICAL AND NON-NEGOTIABLE:**
+extract → **flatten whitespace** → grep the **literal** string. Never ask a model
+whether a string is present; never grep raw `pdftotext` output. If it does not verify
+**verbatim**, cut it or label it an explicit paraphrase — those are the only two
+outcomes.
+
 **Convention on minor edits:** sweeps silently correct source typos when quoting
 (Smite's *"suppourt"*, robostac's *"priortised"*, Agade's *"to more"*). That is
 acceptable and now stated; **anything beyond a typo must be marked as a paraphrase.**
