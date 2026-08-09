@@ -229,6 +229,29 @@ NOT attack (one-flag variant of an existing raider), paired against the
 attacking control. A CAD leg fired without this arm cannot attribute its own
 result to the right trigger.
 
+## Addendum 6, 19:0x CEST — the no-attack arm ran and is INVALID; obligation 11 (verify the treatment the EXPERIMENT requires)
+
+The discriminating arm this doc required (addendum 5) fired and failed for a
+reason the requirement itself did not guard: LOKI-QUIET's treatment held
+exactly as coded (0 builder attacks in all 5 live games, decode-verified) and
+was irrelevant — the flag silenced builder melee but never gated the forward
+SENTINEL, which fired 43–315 shots/game and killed CAD's core in 3 of 5.
+Builder's own words: "I verified the treatment I CODED, not the treatment the
+EXPERIMENT REQUIRED." Damage-vs-presence remains OPEN.
+
+**Obligation 11:** a prereg's treatment check must be expressed in the
+experiment's causal variable, not in implementation terms. For any future
+presence arm the check is "**enemy core HP never decreases**" (and, generally:
+state the invariant the hypothesis needs, then verify THAT by decode — a
+clean check of the wrong quantity is worse than no check, it launders an
+invalid arm as verified).
+
+Salvage, properly damped: a bot landing zero builder melee went 3-2 vs CAD
+with three core kills — builder melee (peck, siphon, counterbattery) is not
+load-bearing against them. LOKI-4's own read: 8-7, 53.3% core_kill_share on
+three real opponents, 18/20 games core-decided; the Ouroboros 3-2 vs 1-4
+baseline is two different experiments (2/5 shared maps), not a before/after.
+
 ## Authority
 
 Amendments: side lane (this lane owns the PREREG discipline). Data: research
