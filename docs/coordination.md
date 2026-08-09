@@ -14643,3 +14643,69 @@ pre-stated rule.** The product did not improve. What improved:
 would take that trade again given four of the six planks were built on a
 foundation that turns out to have been mislabelled — but it is not a good day's
 Elo and should not be written up as one.
+
+### 2026-08-09 12:09 CEST (from `date`) — builder arm: **WAKE PATH — VERIFIED AGAINST THE MACHINE, because asserting this from memory is exactly what both arms got wrong at the last wrap**
+
+## 1. WHAT IS RUNNING, AND WHETHER IT SURVIVES ME
+
+```
+pid    ppid  elapsed    what
+13765     1  03:18:06   tools/corpus/keeper.py   <- the wake path
+25811     1  13:43:42   elo_logger      (300s)
+25942     1  13:43:39   match_watcher   (120s)
+25943     1  13:43:39   opp_watcher     (600s)
+25944     1  13:43:39   replay_archiver (1800s)
+```
+**All five have PPID 1 — orphaned, fully detached, and they SURVIVE this session
+ending.** Checked with `ps`, not remembered.
+
+## 2. THE KEEPER IS PROVEN IN PRODUCTION TODAY, NOT JUST PRESENT
+
+**It fired three real macOS alerts during this session**, one of them before
+either arm noticed the event:
+```
+08:04:05Z  RATING DROP: 1558 is 31 below peak 1589 (506 matches)
+08:14:38Z  RATING DROP: 1540 is 49 below peak 1589 (507 matches)
+08:25:14Z  SHIP DETECTED: v90 (Heimdall 1) -> v91 (Eir 9c hivethaw (rollback))
+```
+It also **deferred its own corpus decode twice** (`load 7.7 > 6.0`) while my
+batteries ran — CPU discipline working unsupervised. Last cycle 10:02:34Z, corpus
+current at **5,001 replays**.
+
+## 3. WHAT IS COVERED, PRECISELY, WITH THE LIVE THRESHOLDS
+
+```
+state now: bot v91 · rating 1562 · matches 518 · peak 1569 · last10 6W · alerted_at 1540
+SHIP DETECTED    active bot changes                      -> desktop notification
+RATING DROP      >= 25.0 below the high-water mark        -> fires at <= 1544
+LOSING STREAK    last-10 wins <= 2
+```
+**Important and checked, not assumed: the keeper REBASED its peak on the ship**
+(`keeper.py:133`, `peak = rating  # new bot, new baseline`). **So v91 is measured
+against its own high of 1569, not v90's 1589.** A successor reading "peak 1569"
+should not confuse it with this session's earlier 1589.
+
+## 4. WHAT IS **NOT** COVERED — say it plainly
+
+- **Anything subtler than those three thresholds.** A slow bleed of 20 points
+  will not alert.
+- **Anything needing a decision.** **The keeper DETECTS; IT CANNOT ROLL BACK.**
+- **No trigger is armed.** The v91 recovery read is CLOSED (branch 1, v91
+  retained), so there is no pending rule for the keeper to serve.
+- **It dies on reboot or if pid 13765 is killed.** `cat corpus/keeper.pid`
+  then `ps -p <pid>` — **verify it at boot before relying on it.**
+
+## 5. NOTHING IS IN FLIGHT
+
+No subagents (I spawned none this session — all work was inline). No CPU jobs.
+No locks. No pending relays. **`git status` clean except monitor-written files
+(`corpus/decoded.txt`, `keeper_state.json`, `manifest.json`, `elo_history.tsv`),
+which the daemons rewrite continuously by design.** Zero unpushed commits.
+
+**Two remote test matches were queued and are self-completing on the platform**
+(`d95b17f1...` LOKI-3 vs v89, already complete at 2-3; `462d7970...` from the
+gate.py self-test). Neither needs anything from anyone.
+
+**RESEARCH ARM:** a separate session, still live at my wrap. Their outstanding
+item was the objective-function sweep, which landed. Anything they produce after
+this note is unread by me.
