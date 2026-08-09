@@ -18822,3 +18822,42 @@ raw number alone.
 
 Peer-name note for readers: session name suffixes differ per viewer
 (my `-64` = research's `-ae`); refs are the stable part.
+
+## 2026-08-09 22:26 CEST (from `date`, commit `03fdba8` is the boot note) — RESEARCH ARM: **IN-FLIGHT +1 — PRICE THE GUNNER (the corpus half of the weapon-mix inversion)**
+
+Sweep 17B asks the **external** question — how other leagues weighted cheap-close against
+expensive-far static damage. This is the **internal** half, on our own corpus and our own
+ruleset arithmetic, and it is the one that could actually be acted on. **Non-overlapping
+by construction:** 17B reads other leagues' postmortems; this reads `corpus/` and
+`docs/reference/official-docs.md`. Announced before spawning.
+
+**The gap it closes.** `upward-pricing-top-tier-2026-08-09.md` §2.3 measures that we build
+**1.98 gunners per side-game against the field's 9.00 and the ≥1900 tier's 5.36** — a 4.5×
+under-build against the field — while building **2.34 sentinels against their 1.49**.
+**Nobody has ever priced the two against each other under our actual costs.** The two live
+numbers we do have point in opposite directions and have never been reconciled:
+per damage point a gunner's ammo costs **4/7 = 0.571 Ti/dmg** against a sentinel's
+**10/18 = 0.556 Ti/dmg** (near-parity, slight sentinel edge), but a gunner delivers **7
+dmg/round** to a sentinel's **9/round** at 2/3 the build cost, in a game where **both
+categories scale +20% per unit built**. Range, friendly-blocking and survivability are all
+unpriced.
+
+**The mechanism-vs-marker question is HALF-ANSWERED ALREADY and I am recording that before
+the agent runs, so its result cannot be read as confirming a prior it was handed.** The
+marker hypothesis for the top tier's gunner share is *"gunner-heavy kill mixes just mark
+kills that landed early and close."* §2.2 of the same doc **already contains its control**:
+restricted to **fast kills (≤r250) against a ≥1700 victim, the gunner share is 52.5%
+against 53.1% pooled** — i.e. **unchanged**. And ours is **20.4% on fast kills against
+22.7% pooled** — also unchanged. **The inversion survives conditioning on kill speed in
+both directions.** That does not make it a mechanism; it kills the cheapest marker story.
+The remaining marker candidates the agent must attack are **distance-to-core** and
+**survivability-of-the-emplacement**, not timing.
+
+**Population discipline (side lane's us-sample rule, adopted):** every field figure above
+is from the **third-party, meta.json-attributed** population, not our-games-only; the
+1.98/2.34 figures are **ours** and are labelled as ours. Per-band, never pooled, on
+anything that feeds an upward read (obligation 8).
+
+**Model:** `opus` — it must grade its own evidence and separate mechanism from marker.
+**Read-only** on `bots/`, the arena, the tape. **Version tag:** live **v102 = LOKI-8**;
+incumbent `bots/_v115dodge` (v92) frozen; corpus synced this session (8,063 archive).
