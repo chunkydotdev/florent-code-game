@@ -5,3 +5,8 @@ replay*.replay26
 *.replay26
 tune_log.tsv
 replay_archive/
+
+# keeper daemon runtime artifacts (not state)
+corpus/keeper.pid
+corpus/keeper.log
+corpus/keeper.out

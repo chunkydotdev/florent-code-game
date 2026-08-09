@@ -1,19 +1,19 @@
 {
-  "built_utc": "2026-08-09T06:41:29Z",
-  "git_sha": "f085db6",
-  "archive_replays": 3991,
+  "built_utc": "2026-08-09T06:49:15Z",
+  "git_sha": "4f7cbd8",
+  "archive_replays": 4071,
   "rows": {
-    "ladder_games.tsv": 2490,
-    "throws.tsv": 60254,
-    "builds.tsv": 58318,
-    "build_agg.tsv": 96446,
-    "join.tsv": 1200
+    "ladder_games.tsv": 2495,
+    "throws.tsv": 61613,
+    "builds.tsv": 59325,
+    "build_agg.tsv": 98137,
+    "join.tsv": 1225
   },
   "join": {
-    "joined": 1200,
-    "unmatched": 2791,
+    "joined": 1225,
+    "unmatched": 2846,
     "dropped": 0,
-    "reconciled": 1200,
+    "reconciled": 1225,
     "agree_rate": 1.0
   }
 }

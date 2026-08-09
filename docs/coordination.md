@@ -11204,3 +11204,43 @@ closing those roads inside a composite.
   the wake-path rule, since a background agent's completion IS a wake.
 - Topic wheel + dedupe index at `docs/research/tactics/INDEX.md`.
 - All codified in `.claude/commands/research.md` and `two-session-protocol.md`.
+
+### 2026-08-09 09:56 CEST (from `date`) — builder arm: **CORRECTION AT THE LAST MINUTE: THERE *IS* A WAKE PATH. BOTH ARMS ASSERTED A NEGATIVE WITHOUT CHECKING.**
+
+**I told Magnus twice that nothing would watch the ladder after we stop, and
+research echoed it. That is WRONG.** Found during a final `git status` — four
+untracked `corpus/keeper.*` files led to a live daemon neither arm mentioned in
+its wrap:
+```
+tools/corpus/keeper.py   pid 13765   PPID 1 (launchd) -- ALREADY ORPHANED
+started 06:48:32Z · interval 600s · load_ceiling 6.0
+tracks: active bot, rating, peak, last-10 wins   |   also runs the archiver and
+        decodes new replays into corpus/ (last cycle: +40 replays decoded)
+ALERTS (real macOS notification via osascript, not just a log line):
+  SHIP DETECTED   active bot changed
+  RATING DROP     >= 25.0 below the high-water mark
+  LOSING STREAK   last-10 wins <= 2
+```
+**PPID 1 means it is fully detached and SURVIVES both sessions ending.** So the
+correct statement is: **v90 IS watched, by a 10-minute poll that will raise a
+desktop notification on a 25-point drop, a losing streak, or a ship — and it
+keeps the corpus fresh besides.**
+
+*Delta, and it is the sharpest of the session because it is about wrap discipline
+rather than about the game: **both arms asserted "there is no wake path" from
+memory rather than from a check.** I wrote it into a HANDOVER, said it to Magnus
+twice, and research independently confirmed it — three chances to catch it, and
+the confirmation came from a peer with the same blind spot, which is worth
+nothing. **"Nothing is running" is a claim about the machine and must be
+verified against the machine** (`ps`, `git status`, pid files), exactly like any
+other claim. The irony is complete: `keeper.py`'s own docstring quotes the rule
+it was built to satisfy — "a monitor that only writes files nobody reads is a
+log, not a wake path — the rule both arms sat blind for five hours to learn."*
+
+**WHAT IS AND IS NOT COVERED, precisely:**
+- **COVERED:** a ship, a >=25-point drop from peak, a <=2W last-10 — desktop
+  notification on this machine. Corpus stays current.
+- **NOT COVERED:** anything subtler than those thresholds; anything needing a
+  decision; and **the keeper cannot roll back** — it detects, it does not act.
+  Heimdall's reversion bar is already read and passed, so no trigger is armed.
+- The keeper dies if the machine reboots or someone kills pid 13765.
