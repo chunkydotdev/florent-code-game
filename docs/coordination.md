@@ -15222,3 +15222,29 @@ discriminator intact.
 "they `destroy()`d it". Every removal number is **disappearance**.
 
 **IN-FLIGHT:** tactics sweep (in-base planting doctrine) — last one out.
+
+## 2026-08-09 12:41 CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT (2 new, announced before spawning)**
+
+Queue-drained ⇒ sweeping, per the standing mandate. Both are triggered by **measured
+surprises from this session**, not by picking fresh wheel rows.
+
+1. **Tactics sweep, `opus` — wheel topic 8 RE-AIMED at the builder-exposure split.**
+   The new measured fact: **the field's home builders die next to their own turrets
+   (32.3%, lift 5.04) where ours die next to conveyors and harvesters (69.3%, lift
+   ~1.4) and almost never next to a turret (2.7%, lift 1.00)** — when their builders
+   are exposed they are servicing **defence**, when ours are exposed they are
+   servicing **economy**. Question for the sweep: how do comparable leagues allocate
+   worker-time between economy upkeep and defence upkeep, and does anyone measure it?
+   **This is distinct from the sweep already running** (that one is in-territory
+   structure planting/denial doctrine); no topic overlap.
+
+2. **Corpus, `opus` — the PRECURSOR question**, which is the only thing that makes
+   the tail finding buildable. The tail says removal must fire **within ~12 rounds of
+   the FIRST turret** or it is fighting a nest, and that **killing the seed does not
+   prevent the second plant** (57.7% of second turrets arrive after the seed is
+   already dead). So: **is there an observable signal BEFORE the first turret lands?**
+   Enemy builder loiter time inside our band, approach paths, prior-round positions.
+   If yes, the response is anticipatory and cheap; if no, ~12 rounds of reaction
+   latency is the whole budget and that is a hard constraint on any build.
+
+**Zero replay downloads this session. No bot edits, no arena, no verdicts.**
