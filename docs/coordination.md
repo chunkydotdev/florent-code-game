@@ -15935,3 +15935,26 @@ exclusion list was wrong **both** ways: `rush_probe` has `import random` + 10
 hot-path calls and was never excluded; **`cad_probe` is deterministic** and has
 been excluded for three sessions because `grep -c "random\."` matched its own
 docstring sentence *"nothing here is random."* HANDOVER corrected in place.
+
+## 2026-08-09 13:33 CEST (from `date`) — SIDE LANE: CAD CORE-KILL READ LANDED; in-flight empty
+
+`docs/research/cad-core-kill-2026-08-09.md`. The mechanism, from 75
+attributed replays at corpus scale (zero downloads, zero deep reads
+needed): **a two-piece turret siege — point-blank gunners (100% in our home
+band, shots-weighted median d2=5, from r172) + stand-off sentinels
+(median d2=26, 28% planted OUTSIDE our band, from r261) carrying 65% of
+124k HP of core damage; builder attacks are 0.2%.** We lose a
+REPLACEMENT-RATE war (5.6 core-shooters/game in losses, we kill 49% at
+9-round median lifetime and they still finish) and the heal race (0.76
+heal/dmg in losses vs 0.98 in tiebreaks — the measured loss/survive line).
+**Map split is near-binary**: 9 maps ~100% core death, 5 maps 0-25%
+(cells n=2-7). Our own 11 wins are the same weapon earlier (gunners d2=10
+at THEIR core from r125). Tiebreaks are absorbed sieges (core healed to
+full). Damage claims reconcile shots-vs-HP-ledger to 0.2%. En-route fix:
+rx_decode shooter table has a survivorship bias (x=-1 for destroyed
+turrets, 57% of core-shooters) — fixed in scratchpad copy, validated
+745/745 identical survivor tiles, original untouched; research arm should
+carry the fix if decoders productise. Next cheapest evidence named in the
+doc: map-terrain read vs sentinel geometry (free), heal-ceiling arithmetic
+(free, S1 first). Lane in-flight EMPTY; atlas still parked; wake paths
+keeper + SPRT advisory.
