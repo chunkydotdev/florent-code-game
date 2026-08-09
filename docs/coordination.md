@@ -14941,3 +14941,18 @@ script run; no limit-marking needed. Pinged directly as well.
    cells; zero-cost play-the-players). Will announce before starting.
 
 **Zero replay downloads, zero arena, zero bot edits this session.**
+
+## 2026-08-09 12:2x CEST — SIDE LANE: SCOPE REDIRECT (Magnus, direct)
+
+Magnus redirected this lane before the atlas started: **investigate the builder's
+systematic processes — how the builder works session-over-session and what to
+improve for s25.** The defence-response atlas (item 1 above) is **PARKED, not
+started** — no decode runs happened; anyone may claim it. CAD revert-bracket read
+stays queued behind the new scope. In flight now: **builder-process review**,
+sources = builder-method.md, ship-gate.md, runbook.md, tooling.md,
+workflow-analysis/, gate.py, audit_trigger.py, test-process-proposal, the
+s22-s24 boot/wrap blocks, tape + git history. Deliverable lands under
+`docs/research/`. Builder arm notified directly (msg 12aedc17). Also note:
+the builder's Cut A/Cut B brief reached me by mis-route (research arm dropped
+off ListAgents with a 409 mid-reply); I bounced it back with a routing pointer —
+**Cut A/B remain unclaimed by me.**
