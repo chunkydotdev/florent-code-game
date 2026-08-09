@@ -67,7 +67,7 @@ exception permanently destroys that unit for the match.
 | 4 | CPU/time-limit exploitation — inducing opponent timeouts | **SWEPT.** Effect is real & tournament-deciding (StarCraft natural experiment); deliberate induction **BANNED BY NAME in BASIL and SC2 AI Arena** — held pending an organiser ruling | 2026-08-09 | [cpu-timeout-induction](cpu-timeout-induction.md) |
 | 5 | Turret/tower placement doctrine and advancing a firing line (tower-defence + RTS theory) | **SWEPT** (Lanchester, LTD2, chokepoint/concave theory) | 2026-08-09 | [lanchester-commit-gate](lanchester-commit-gate.md), [sweep 1](2026-08-09-sweep-1.md) |
 | 6 | Cost-inflation attacks (making the opponent's buildings dearer) | **SWEPT** — and inverted: killing an enemy builder REFUNDS their scale; imprison instead | 2026-08-09 | [exchange-rates](../exchange-rates-2026-08-09.md) §6 |
-| 7 | Limited-bandwidth team coordination (our 16 ints) — patterns from Halite/Ants | unswept | — | — |
+| 7 | Limited-bandwidth team coordination (our 16 ints) | **SWEPT** — 15 BC postmortems 2019-2026. **Produced a probe that found a latent bug**: the read-increment-write ticket idiom collapses silently under our buffered store, and `SLOT_ROLE_N` is safe only because the core spawns ≤1 builder/turn | 2026-08-09 | [sweep 5](2026-08-09-sweep-5.md), [store semantics](../store-semantics-2026-08-09.md) |
 | 8 | Economy: harvest saturation, expansion timing, when to stop expanding | **SWEPT** — and it turned into a negative: **cost scaling never binds on harvesters** (break-even beyond any map's ore supply under both readings); it binds on the **+20% categories**. The corpus hooks then showed **the economy is not our constraint at all** | 2026-08-09 | [sweep 4](2026-08-09-sweep-4.md), [middle-game hazard](../middle-game-hazard-and-economy-2026-08-09.md) |
 | 9 | Opening theory and build-order steering in symmetric-map games | unswept | — | — |
 | 10 | Endgame/tiebreak play when the win condition is a score, not a kill | **SWEPT** (BC 2019 do-nothing, BC 2022 one-gold, Halite endgame flag, Spring'21 score+banked/3) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §4 |
@@ -121,6 +121,18 @@ since the whole value is in the evidence labels.
   defender's heal is adjacency-capped at ~16 HP/round per tile while the
   attacker's damage on that tile is capped only by titanium** — concentration,
   not more damage.
+- **MEASURED ENGINE FACTS (2026-08-09, s23 probes — stop assuming these).**
+  **Store**: writes are buffered to next round; **last writer wins**; the
+  read-increment-write ticket idiom **collapses silently** (5 writers → counter +1,
+  all five believe they are unit #0); slot range is **unsigned 32-bit `[0, 2³²−1]`
+  and a negative write RAISES**, which permanently destroys the unit.
+  **Turret lines**: a **gunner** line is blocked by our own bots and buildings; a
+  **sentinel** line passes through them (18 dmg landed through a friendly bot *and*
+  a friendly barrier). `get_attackable_tiles()` **ignores occupancy** and reports
+  the target as attackable in both cases.
+  **Build legality** is strictly stronger than `is_tile_empty`; **spawn ring is the
+  12-tile Chebyshev-1 ring** (`CORE_SPAWNING_RADIUS_SQ = 2`, not the r²=8 action
+  radius).
 - **THE MIDDLE GAME IS THE TARGET, NOT THE ECONOMY (2026-08-09, s23).** Conditional
   on a core kill, the chance it is **ours** rises monotonically **29% → 55% → 72% →
   76%** across r0-150 / r151-300 / r301-600 / r601-999 — but **353 games reached
