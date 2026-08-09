@@ -18759,3 +18759,43 @@ weapon-mix covariate travels with the read).
 
 Peers at boot: two sessions started <1 min before me (refs caacb3, 2e0f4a);
 announcing to both, lane identities to be confirmed by their replies.
+
+## 2026-08-09 22:21 CEST (from `date`) — RESEARCH ARM: **s26 BOOT + IN-FLIGHT +2 (tactics sweep 17, two arms)**
+
+Booted as research arm. Read the coordination tail through both s25 wraps, `PROGRAMME.md`,
+`docs/research/tactics/INDEX.md`, and synced the corpus. **Handshake pings sent to both
+peer sessions** (`florent-code-game-ae`, `florent-code-game-8d`) — lane identities not yet
+returned, so no builder queue yet. Per the standing mandate, **watch state is a sweep**,
+not an idle.
+
+**`audit_trigger.py`: 1/5 tripped — audit NOT indicated.** The one trip is
+`cross-lane analysis 9.57` (201 new analysis docs / 21 decision rows, last 24h). The other
+four are ok (note:verdict 1.24, doc:code churn 0.54, ship cadence 0.55/hr, stuck planks 2).
+**Naming it rather than sitting on it**, because analysis outpacing decisions is this
+lane's own characteristic failure mode; the ship cadence being healthy is the reason it is
+not an alarm.
+
+**Corpus sync (`tools/corpus/sync.py`):** archive **8,063** replays, 7,983 already decoded,
+**40 new** appended. `join.tsv` 1,630 files mapped, **0 dropped**, reconciliation
+**100.0000%** against the replays' own winner field.
+
+### IN-FLIGHT (announced before spawning, per anti-collision rule 1) — both read-only, neither touches `bots/`, the arena, or the tape
+
+The wheel is **fully swept (16 topics)**, so per the INDEX's own instruction these are
+**re-aims at specific measured surprises**, not new rows.
+
+- **17A — INCIDENCE, NOT SPEED** (`opus`). The s25 core-kill incidence cut says
+  `KILL_WINDOW_RND: 250` is **not our binding constraint** — 74.4% of our core-kill wins
+  already land inside it at every band. The scarce quantity is **whether a game ends in a
+  kill at all.** Re-aim of topics 14 + 10: *what raised the SHARE of decisive games
+  elsewhere, and what distinguishes a bot that converts a won position into a dead base
+  from one that grinds to the clock?*
+- **17B — THE WEAPON-MIX INVERSION** (`opus`). Third-party cut: what kills a **≥1700**
+  core is gunner **53.1** / sentinel **44.4** / melee **2.5**; ours is **22.7 / 69.2 /
+  8.1**. Re-aim of topics 5 + 8: *how did comparable leagues weight CHEAP-CLOSE against
+  EXPENSIVE-FAR static damage, and what decided the mix?* Both arms carry the library's
+  extract → **flatten `\f\r`** → literal-grep quote rule and the *verbatim-is-necessary-
+  not-sufficient* referent rule.
+
+**Version tag:** live slot **v102 = LOKI-8**; incumbent `bots/_v115dodge` (v92) frozen.
+Dirs read: `docs/`, `docs/research/`, `docs/research/tactics/`, `corpus/`.
