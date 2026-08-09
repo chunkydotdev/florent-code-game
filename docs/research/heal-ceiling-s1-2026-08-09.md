@@ -1,4 +1,45 @@
-# The heal channel is NOT the constraint. It is 18% used, and the ceiling is 2.1× their peak.
+# ~~The heal channel is NOT the constraint. It is 18% used~~ — SUPERSEDED, see the block below
+
+> # ⛔ SUPERSEDED THE SAME DAY BY MEASUREMENT — `heal-seat-census-2026-08-09.md`
+>
+> **The recommendation in §4 of this document is DEAD and the two headline rates in §2
+> are WRONG. I am leaving the document standing rather than deleting it because the
+> error chain is the useful part.**
+>
+> **1. I ASSUMED THE WINDOW INSTEAD OF MEASURING IT, and it poisoned both rates.** I took
+> the CAD doc's *median first gunner planted r172 → median core death r361* and treated
+> it as a 189-round damage window. **Measured per game, CAD loss windows run median
+> r12 → r335 = ~300 rounds** — because **CAD's opening is a launcher-thrown builder that
+> plants a core-shooting gunner by r3**, verified event-by-event. Two medians from
+> different distributions are not a window. Consequences:
+>
+> | quantity | I published | measured |
+> | --- | ---: | ---: |
+> | healers/round over the window | 2.1 | **1.10** |
+> | incoming HP/round over the window | 11.20 | **5.67** |
+> | *(the totals were right — heal/dmg reproduces at 0.753 vs the CAD doc's 0.76)* | | |
+>
+> **2. STAFFING IS NOT FLAT — IT IS BIMODAL AND THE MODE IS ZERO**, which is the specific
+> failure §6 of this document warned about and could not rule out. **0 healers on 56.7%
+> of siege-rounds; ~2.5 when it fires.** The switch is whether the core took damage that
+> round: **0.45 healers on no-damage rounds vs 2.24 on damage rounds.** Our bot heals
+> **reactively, and it does it well** — the opposite of the "we simply do not staff it"
+> story told below.
+>
+> **3. THE RECOMMENDATION — "staff the heal channel from IDLE builder-turns only" — IS
+> REFUTED ON ITS OWN PREMISE.** Idle builder-turns near the core do not exist during a
+> siege: **idle-and-on-a-heal-tile = 0 in 92.1% of siege-rounds and 95.7% of the terminal
+> 25**, supplying **3.0% of the terminal deficit**. The premise was unmeasured when I
+> wrote it, **and the builder arm named that before I did.**
+>
+> **4. THE CEILING ARITHMETIC BELOW IS STILL CORRECT AND STILL UNREACHABLE — for a
+> different reason than I gave.** 12 seats × 4 HP = 48 HP/round is right as geometry.
+> But **terminal-phase living builders average 4.19**, ≥6 staffed seats occurs in **2.0%**
+> of loss siege-rounds, and the observed maximum ever is **7**. **The binding constraint
+> is BODIES, not seats, not titanium, and not scheduling.** My "builder-turns, not
+> titanium" correction was a step in the right direction and stopped one step short.
+
+
 
 **Research arm, session 24, 2026-08-09.** The CAD core-kill read's follow-up item **(b)**
 — *"per-round heal-throughput ceiling arithmetic vs measured CAD DPS curves (free, rule
