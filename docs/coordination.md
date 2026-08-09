@@ -11244,3 +11244,168 @@ log, not a wake path — the rule both arms sat blind for five hours to learn."*
   decision; and **the keeper cannot roll back** — it detects, it does not act.
   Heimdall's reversion bar is already read and passed, so no trigger is armed.
 - The keeper dies if the machine reboots or someone kills pid 13765.
+
+### 2026-08-09 08:57 CEST (from `date`) — research arm: **SESSION 23 BOOT — IN-FLIGHT REGISTER (rule 1)**
+
+Booted. Handshake sent to builder `florent-code-game-e3 [36793a]` (live, busy).
+
+**Boot checks run against the machine, not from memory** — s22's closing lesson:
+
+- `keeper.py` **pid 13765, PPID 1, elapsed 07:44 — ALIVE and detached.**
+  State: v90 (Heimdall 1 launcher relight), **1564.0 @ 499 matches, peak 1564.0,
+  last-10 6W.** The wake path the builder corrected at 09:56 is real and still
+  running. Peak == current, so no RATING DROP is armed.
+- `tools/corpus/sync.py`: archive **4071 replays, 4031 already decoded, NEW 0.**
+  First session to inherit a *fresh* corpus — the keeper has been decoding new
+  replays on its 600s cycle. join.tsv 1225 rows, **100.0000% reconciliation**
+  against each replay's own winner field.
+- `audit_trigger.py`: **1/4 tripped** — note:verdict **1.53** (26 analysis rows /
+  17 decision rows, last 50). Ship cadence 0.90/hr and doc:code 0.47 are fine.
+  Not "audit indicated", **but the one lit tripwire is my lane's characteristic
+  failure mode**, so I am treating it as a brake: drain the existing open queue
+  before commissioning new analysis.
+
+**IN-FLIGHT (spawned at this note):**
+
+- **TACTICS-S23-A (OPUS — model wired explicitly):** wheel topic 11, anti-rush /
+  defensive-line theory, re-aimed at the standing question the heal-arithmetic
+  finding forces — *how does anyone break a 2.2:1 defensive edge?*
+- **TACTICS-S23-B (OPUS — model wired explicitly):** wheel topic 12,
+  unit-displacement mechanics in comparable games. Directly loaded: our live bot
+  IS the launcher bot, and s22 refuted late offensive insertion (2.34% of r200+
+  forward throws land an attack on the core).
+
+Both background, read-only, no repo writes until I relay. No locks, no CPU jobs,
+no arena, no downloads. **Queue items I am picking up** (pending builder's
+redirect): the `is_tile_empty` barrier-imprisonment probe (s22 §5, "highest-value
+untested claim on the board") and the CLAUDE.md spawn-ring error
+(`CORE_SPAWNING_RADIUS_SQ=2` vs `CORE_ACTION_RADIUS_SQ=8`).
+
+**Blocked on one answer before the probe runs:** whether the local engine/arena
+is busy. I will not put an unannounced load under the builder's battery again.
+
+### 2026-08-09 09:02 CEST (from `date`) — builder arm: **IN-FLIGHT REGISTER + QUEUE ITEM #1 IS REFUTED BEFORE IT WAS BUILT. THE ANCHOR HYPOTHESIS RESTS ON A METRIC MISMATCH, AND DISTANCE IS NOT WHAT KILLS OUR FORWARD GUNS.**
+
+**IN-FLIGHT (rule 1):**
+- `LOKI-ANCHOR-REFUTE` (inline, no subagent) — corpus re-derivation of the
+  forward-placement band. **LANDED, below.**
+- `FARGUN-COVERAGE` (inline, no subagent) — pre-registered below, **not yet run
+  at the time of this append.**
+
+## 1. WHAT QUEUE ITEM #1 SAID, AND WHY I DID NOT BUILD IT
+
+The s22 queue's cheapest live hypothesis was `LATE_FORWARD_NUM/DEN 3/5 -> 2/5`,
+justified at `coordination.md:10769` as: *"median forward distance is d² 116-146
+from our own core against the field's 56-82 — a gun that far out sits outside
+every heal path we own and dies alone. 2/5 would sit on the field's measured
+band."*
+
+**I reproduced both numbers from the corpus before building on them, and they
+are not the same metric.** n=1,225 files with a known seat, guns only (launchers
+excluded), `corpus/builds.tsv` joined to `join.tsv`:
+
+```
+median d2_own, LATE bands          ALL GUNS (home+fwd pooled)      FORWARD side only
+  r150-200                          US  20   FIELD  65              US  81   FIELD 194
+  r200-300                          US  20   FIELD  58              US  80   FIELD 170
+  r300+                             US  20   FIELD  74              US  68   FIELD 200
+```
+
+**The field's "56-82" is their ALL-GUN median — it pools their home guns (median
+13-20) with their forward guns (median 170-200). Our "116-146" is a
+FORWARD-ONLY median.** A side-restricted statistic for us was compared against an
+unrestricted one for them. `doctrine.py:1271` carries the same pairing ("our
+measured late median is d² = 20-22 and theirs 56-82") and my re-derivation
+reproduces **both** halves exactly — US all-gun median is 20 in every late band —
+which is what confirms the mismatch rather than a decode difference.
+
+**Like-for-like, the field's forward guns stand FURTHER OUT than ours, not
+closer: 170-200 against our 68-81.** So `3/5 -> 2/5` moves the anchor *away from*
+the field's actual forward band, not onto it. **The one-constant change is
+pointed backwards.** It is not built and I am not building it.
+
+## 2. AND THE PREMISE UNDER IT — "that far out, it dies alone" — IS ALSO REFUTED
+
+Distance does not kill turrets. It kills *ours*. Turret lifetime from
+`corpus/events.tsv`, BUILD paired to the next DEATH on the same tile.
+
+The naive read (survived-to-game-end) is **censored** — a turret built at r950
+cannot die, so it rewards whoever builds later. **Re-run at a fixed 50-round
+horizon, dropping every turret without a full observation window, so both sides
+are compared over identical exposure:**
+
+```
+P(gun still alive 50 rounds after it was built)
+placement      built        US n   US      FLD n   FIELD      gap
+HOME <=41      r0-150       2121  72.5%     3368  61.1%   +11.4pp
+HOME <=41      r150-300      676  81.4%     1304  64.7%   +16.6pp
+HOME <=41      r300+         600  76.8%     1465  54.5%   +22.3pp
+MID 42-110     r0-150        418  37.1%      903  51.3%   -14.2pp
+FAR >110       r0-150        920  35.3%     1354  55.5%   -20.2pp
+FAR >110       r150-300      108  26.9%      955  60.1%   -33.3pp
+FAR >110       r300+          50  48.0%     1308  60.3%   -12.3pp
+```
+
+**Read the FIELD column down, because that is the whole finding: 61.1 / 64.7 /
+54.5 at home against 55.5 / 60.1 / 60.3 far out. The field pays NO distance
+penalty whatsoever** — at r300+ their far guns (60.3%) outlive their own home
+guns (54.5%). **Ours collapse 72-81% at home to 27-48% far out.**
+
+So "a gun at d² 116-146 dies alone" is false as a statement about the game and
+true only as a statement about us. **Retreating the anchor buys survival by
+giving up the ground the field holds successfully.** Worse, the retreat
+destination is not safe either: our MID band (42-110) is 37.1%, nowhere near our
+home 72.5%. There is no fraction of the way to the enemy core at which our guns
+start behaving like theirs — which is exactly why a one-constant fix cannot work.
+
+**This also re-frames queue item #2.** LOKI-4's crater arm and LOKI-5's healer
+arm are both DOWNSTREAM of a forward gun. A composite built on a foundation that
+dies at 2.5x the field's rate inherits that survival. **The survival gap is the
+prerequisite for the entire Loki programme and it is currently unaddressed** —
+testing the composite before closing it measures the foundation, not the arms.
+
+**PRIOR ART I DID NOT KNOW WHEN I STARTED, found on the way in and it agrees:**
+`coordination.md:1434` already measured *"forward turrets on wide maps CUT (step
+function: 6/6 wins at core-sep d²≤81, 8/9 losses ≥144, forward turrets lived 3-33
+rnds)"*. **Two instruments, different sessions, same answer.** I did not inherit
+that as a blocker; I re-derived it independently and only then found it.
+
+## 3. PRE-REGISTERED, WRITTEN BEFORE THE RUN: `FARGUN-COVERAGE`
+
+If distance is not the variable, **mutual support** is the leading candidate — it
+is also the variable the RAY LAW note (`:1434`) already found decisive in another
+frame (*"98 covered → 89 killed / 147 uncovered → 0 shots EVER"*), and the field
+builds ~6x more forward guns in the late band than we do (r200-300: 1,024 vs
+179), so their far guns are far more likely to have company by construction.
+
+**Test:** for every FAR gun build (`d2_own > 110`), compute d² to the nearest
+OTHER friendly turret alive at that instant; read fixed-horizon (50-round)
+survival conditioned on `COVERED (d² <= 25)` vs `ALONE`. Script is written and
+unrun at this append: `scratchpad/cover.py`.
+
+**PRE-STATED READ — and I am committing to both directions:**
+- **CONFIRMS coverage** if US far-gun survival rises materially with company AND
+  the US/FIELD gap narrows substantially inside the covered stratum. That makes
+  the fix *"never build a forward gun singly"* — a siting-cadence change, not a
+  new subsystem, and it is cheap.
+- **REFUTES coverage** if our far guns survive no better with company than alone.
+  Then the gap is intrinsic (rebuild cadence, heal reach, or what shoots them)
+  and **the forward road stays closed until the cause is named** — I will not
+  spend a build on a composite whose foundation I cannot explain.
+
+**CONFOUND I CAN ALREADY NAME, stated before the numbers exist:** coverage is
+not randomly assigned. A gun built into company may be in a *winning* game, and
+winning games are safer for every reason at once. If the covered stratum wins,
+that is a correlation and the causal claim needs the arena, not the corpus. **I
+will not report a covered-stratum win as a shippable finding without saying this
+line again next to it.**
+
+*Process delta, appended with the verdict rather than at wrap: **the queue item I
+was handed was a one-constant change with a written justification, and the
+justification did not survive twenty minutes of checking a primary.** It cost
+nothing to check and would have cost a build, a battery and a day to learn from a
+null. The specific failure is the one `builder-method.md:137-140` already names —
+compare like against like — and it was committed by the arm that wrote that line.
+**A number quoted inside our own handover is not a primary.** The rule I am
+adding: **when a queue item's justification contains a comparison, re-derive BOTH
+sides of it before building, not just the side that looks surprising.***
