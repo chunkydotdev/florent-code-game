@@ -14337,3 +14337,76 @@ change".** I am not moving the bar now that a better instrument is available.
 - **A loss here is much more informative than a win**, because the plank now
   faces the condition it was built for; failing that is a real refutation.
 - **Whatever happens, this number carries its pool when quoted** (the label rule).
+
+### 2026-08-09 13:31 CEST (from `date`) — builder arm: **ESCALATE IS REFUTED — and it is the ONLY verdict today measured against FOREIGN opponents. The plank faced the exact condition it was built for and lost by 7.8pp.**
+
+## 1. THE RESULT
+
+```
+360 games, 0 failures, 0 tracebacks.  6 FOREIGN probes, 15 maps, both seats.
+OVERALL  control 157/180 (87.2%)   plank 143/180 (79.4%)   -7.8pp
+seat A   80/90 -> 74/90  (-6.7pp)   seat B  77/90 -> 69/90  (-8.9pp)
+worst maps: antler -33.3 · eider -25.0 · meander -25.0
+```
+**Both seats negative. Five maps flipped. Nothing positive anywhere.**
+
+**And the condition was present this time.** `orizon_probe` alone generated
+**1,625 post-r250 recruitments at up to five concurrent attackers**, against
+**zero** from our own lineage. **The plank was handed the escalation it was
+designed for and made us worse.**
+
+## 2. HONOURING THE PRE-REGISTRATION
+
+Posted before the run: *"A loss here is much more informative than a win, because
+the plank now faces the condition it was built for; failing that is a real
+refutation."*
+
+**ESCALATE MOVES FROM "UNMEASURED" TO "REFUTED".** I spent the afternoon
+insisting it must not be filed with the other four because it was untested. **It
+is now tested, against a better instrument than any of them got, and it fails
+harder than any of them.** Filing it with the other four.
+
+## 3. WHAT IS REFUTED, PRECISELY — the thesis is not the plank
+
+**REFUTED: "scale the heal detail with the attacker count."** Diverting expanders
+to home defence costs more economy than the extra healing saves. That is
+consistent with the heal arithmetic once the other side is priced: heal returns
+**4.00 HP/Ti**, but a diverted builder lays no harvester and no conveyor, and
+**that opportunity cost was never in the doctrine file.** I priced what healing
+produces and not what the healer stops doing — **the same error as PLANK SITE,
+committed by the same person, in the same session, after writing the rule down.**
+
+**NOT REFUTED: the escalation description itself.** The bot genuinely cannot
+count attackers (`SLOT_THREAT` = one position, `SLOT_UNDER` = one boolean,
+`_core_shelled` = one boolean; a grep for any magnitude term returns comments
+only). That remains a verified **code fact**. What is refuted is **one specific
+response to it**, and a badly-chosen one.
+
+## 4. THE INSTRUMENT LESSON, which outlives every plank today
+
+**Six planks. Five were gated against our own prior versions. One was gated
+against foreign bots, and it is the only one whose verdict I would defend.**
+```
+placement · price · production · siting          SELF-PLAY  (opp_v*)
+escalation, first attempt                        SELF-PLAY  -- gate unanswerable
+escalation, second attempt                       FOREIGN    -- gate answered, -7.8pp
+```
+**The foreign pool was on disk the whole time** (`*_probe`, imitations of real
+ladder teams built from replay analysis, 0-1/4 of our signature identifiers).
+**Nobody used it today until 13:1x.** `tools/gate.py` now prints pool identity
+before every battery and refuses a self-play run without an explicit flag.
+
+**Standing caveat, pre-stated and still binding: these probes are IMITATIONS and
+are known to be miscalibrated** (`ouroboros_probe` measured **86 points**
+over-confident against the real class it represents). **A −7.8pp against probes
+is a much stronger negative than a −7.8pp against ourselves, and still not a
+field result.** The label travels with the number.
+
+*Process delta: **the single highest-value action of the session cost four
+minutes and was a `grep` over `bots/` for our own identifiers.** It converted one
+plank from unmeasurable to refuted, re-priced five others, and invalidated the
+label on the Loki programme's foundational result. **Every expensive thing today
+was a measurement; every cheap thing was a read.** That is now three for three —
+"who can kill a builder bot" (a docstring), "why doesn't it scale" (variables
+that don't exist), and "what is the opponent pool" (a docstring). **The standing
+form: at the start of a session, read the instrument before using it.***
