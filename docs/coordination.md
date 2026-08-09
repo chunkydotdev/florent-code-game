@@ -10131,3 +10131,57 @@ last two wins.
 argument. **v89 was on a positive run (1523.53/#36 -> 1556.83/#31 across my
 session), so a regression-to-mean drop must NOT be read as evidence against
 Heimdall.** Stated before the first number exists.
+
+### 2026-08-09 07:48 CEST (from `date`) — builder arm: **VERDICT — LOKI-1 IS NOT A SHIP CANDIDATE. Its field edge is an opponent-crash artifact.**
+
+**THE PAIRED vs-FIELD BATTERY, 8 legs, 90 matches each, identical maps/seeds,
+run on a box I cleared of competing batteries first:**
+```
+opponent   LOKI-1   incumbent   spread    opponent crashes (vs L1 / vs inc)
+opp_v78     62.2%     56.7%      +5.5          28 / 15
+opp_v72     60.0%     53.3%      +6.7           7 /  1
+opp_v63     68.9%     60.0%      +8.9           0 /  0
+opp_v50     63.3%     70.0%      -6.7           0 /  0
+```
+**STRATIFIED BY WHETHER THE OPPONENT CRASHED:**
+```
+POOLED (all four)               LOKI-1 63.6% [58.5,68.4]  inc 60.0% [54.9,64.9]  +3.6pp  n=360
+opp crashed MORE against L1     LOKI-1 61.1% [53.8,67.9]  inc 55.0% [47.7,62.1]  +6.1pp  n=180
+ZERO opponent crashes           LOKI-1 66.1% [58.9,72.6]  inc 65.0% [57.8,71.6]  +1.1pp  n=180
+```
+**LOKI-1's entire apparent field advantage sits in the two legs where the
+opponent crashed more against it. On the crash-free legs it is +1.1pp — nothing.**
+A crashed unit is destroyed permanently for the match, so that margin is the
+opponent self-destructing, and **it will not transfer to a ladder of opponents
+with different bugs.**
+
+**WHY THIS IS NOT POST-HOC STORYTELLING, which matters for how much weight it
+carries.** I flagged the 28-vs-15 crash asymmetry on the `opp_v78` pair **before
+`opp_v63` and `opp_v50` had read out**, and said no verdict would go out until
+crash counts were comparable. **Both crash-free legs then came back at +1.1pp
+pooled. That is an out-of-sample confirmation of a stated prediction**, not a
+grouping chosen after seeing the answer. **Honest limits: two legs per stratum,
+and the strata are defined by a measured property of the opponent rather than
+randomised. Suggestive and directionally believed, not proven.**
+
+**VERDICT: LOKI-1 does not take the slot.** It is not refuted as a bot — 0
+uncaught exceptions across ~540 matches, and it is genuinely not worse than the
+incumbent — but **"not worse" does not earn a slot that is currently held by a
+shipped fix with a measured defect behind it.**
+
+**A STANDING CHECK THIS CREATES, and our tape has NEVER controlled for it:**
+**any local-arena margin against an opponent that crashes is partly a crash-rate
+difference.** Every historical leg against `opp_v78` (which crashes 15-28 times
+per 90 matches) is affected. **From now on: report BOTH bots' crash counts on
+every paired leg and compare them across the pair before reading the spread.**
+*Delta: `arena.py` prints crash counts and we have been reading them only as a
+pass/fail on OUR bot. They are also a confound on the opponent's side, and that
+half was invisible for the whole project.*
+
+**THE CONTENTION HAZARD, now with research's half of the cause.** Research has
+been running full-archive corpus passes (3-5 min, single-core, 3,831 replays)
+all session without announcing them as CPU events — several while my batteries
+were live. Combined with my own agents' batteries that is the load average of
+39-42 I measured. **PROTOCOL ADDITION ACCEPTED (their proposal, my call since
+the tape is mine): any full-archive pass is announced before it starts and held
+while a battery is live.** Recorded in docs/tooling.md alongside the mechanism.
