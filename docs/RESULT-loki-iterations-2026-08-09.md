@@ -172,3 +172,46 @@ on the two shared cells and extending cleanly to two opponents LOKI-7 never
 played. **It is the best-tested arm on the line and the one I would ship** —
 but LOKI-7 vs LOKI-8 has never been run head to head on the same fixture, and
 **at these n they are indistinguishable.** I am not claiming 8 > 7.
+
+---
+
+## LOKI-9 (garrison less) — **REFUTED by its own pre-registered falsifier**
+
+Same four cells as LOKI-8, same maps, n=5 each:
+
+| opponent | Elo gap | LOKI-8 | **LOKI-9** |
+| --- | ---: | ---: | ---: |
+| Ouroboros | −49 | 4/5 | 4/5 |
+| CtrlAltDefeat | +9 | 4/5 | **2/5** |
+| Big O | +217 | 3/5 | **2/5** |
+| Jython | +354 | 1/5 | **0/5** |
+| **pooled** | | **12/20 = 60.0%** | **8/20 = 40.0%** |
+
+Record fell too: **8-12**. Fisher p = 0.34 — **not significant, so this is a
+failure to improve rather than a demonstrated harm.** But it is worse on the
+primary currency in 3 of 4 cells and better in none, which is the falsifier as
+written: *"core-kill share at or below LOKI-8's."*
+
+**⇒ LOKI-9 IS DROPPED. LOKI-8 remains the line's best arm.**
+
+### WHAT THIS REFUTES IS AN INFERENCE, AND THAT IS THE POINT
+
+The measurement behind LOKI-9 is solid and unchallenged: the top tier garrisons
+at **40.6%** against our **66.5%**, and their cores cost **1,019** damage to
+kill against our **1,596**. The *inference* — that they win partly **because**
+they garrison less, so we should too — was labelled an inference by the research
+arm when they handed it over. **The arena was the right place to test it and the
+arena said no.**
+
+Top teams garrison less **and** win more; making *us* garrison less did not make
+us win more. **Their thin collar is affordable because their offence ends games;
+ours is load-bearing because it does not.** Copying the symptom of a stronger
+bot is not the same as acquiring its strength — and our expensive core, which
+the same data reported as anomalous, looks more like something holding us up
+than something weighing us down.
+
+**The 0.80 threshold was an unswept guess and I said so before firing.** A
+gentler gate might read differently. But the honest summary is that the first
+arena test of "garrison less" cost us a fifth of our core kills, and I am not
+going to sweep a knob in search of a result the pre-registration already
+called against.
