@@ -18,7 +18,10 @@ produces: **A SEPARATION THE CORPUS CANNOT MAKE.** Measured over 225 CAD games
   **But DAMAGE and INTRUDER-PRESENCE are the same event in that corpus.** This
   probe makes them different: the raider arrives and does **nothing hostile**.
 
-falsifier / the two outcomes, both useful:
+falsifier: **neither arm reproduces the CAD idle at all** — that kills the
+  exploit outright and is recorded as a result, not a failed run. The probe is
+  also refuted if the quiet raider never ARRIVES in their base, because then it
+  measured nothing. Full outcome table, all three useful:
   - **CAD still goes idle with a quiet raider present** ⇒ the trigger is
     **PRESENCE**. We never have to land a hit; arriving IS the exploit, and it
     costs no damage race. This is the cheap world.
