@@ -88,3 +88,62 @@ so "their own bot" is certain, but whether those throws are *forward ferries* or
   including the zeros — but a systematic undercount cannot manufacture 0 from 1,834.
 - Version columns are dead in this corpus; nothing here is stratified by opponent version,
   so a team that only recently added a launcher would appear diluted, not absent.
+
+---
+
+## ADDENDUM, same session — **the sweep-12 tension is RESOLVED, and it needed no new decode**
+
+I wrote above that whether CAD's and KCM's own-bot throws are *forward ferries* or
+*defensive repositioning* "needs the `d2_before`/`d2_after` columns and is not read here."
+**They were already read — by the decoder.** `tools/corpus/replay_throws.py:124-127`
+classifies every throw into `kind` from exactly those two columns, against the core
+opposite the **thrower's** team:
+
+```python
+ec = corepos[(1 - tteam) if tteam is not None else (1 - bteam)]
+before, after = d2(frm, ec), d2(to, ec)
+kind = ("UNATTRIB" if tteam is None else
+        "EXILE"   if tteam != bteam else
+        "INSERT"  if after < before else "RETREAT")
+```
+
+So `INSERT` **is** "own bot thrown closer to the enemy core" — the forward ferry — and it
+has been in `throws.tsv` all along. **A column I asked for already existed under a
+different name; I should have read the decoder before declaring the question unanswered.**
+
+| opponent | side | EXILE | INSERT | RETREAT | INSERT share of own-bot throws |
+| --- | --- | ---: | ---: | ---: | ---: |
+| **CtrlAltDefeat** | **THEM** | **0** | **185** | 12 | **93.9%** |
+| CtrlAltDefeat | US | 473 | 49 | 0 | 100% |
+| **Kings College Munich** | **THEM** | **0** | **153** | 21 | **87.9%** |
+| Kings College Munich | US | 2,143 | 61 | 0 | 100% |
+| Lunds Stallions | THEM | 1,833 | 304 | 0 | 100% |
+| Memtrace | THEM | 11,142 | 1,554 | 0 | 100% |
+| OopsGotYourElo | THEM | 866 | 47 | 0 | 100% |
+| Ouroboros | THEM | — | — | — | *(no throws at all)* |
+
+**CAD and KCM are forward-ferrying their own bots, and doing nothing else with the
+launcher. CAD: 185 forward inserts, ZERO exiles of our bots, in 85 games — ~2.2 ferried
+bodies per game aimed at our core.**
+
+### What this does and does not correct
+
+**It is NOT a correction to sweep 12's historical claim.** Sweep 12 said *BC2020's field*
+converged on grabbing the enemy's unit defensively and away from ferrying its own forward.
+That is a claim about BC2020, and nothing here touches it.
+
+**It IS a correction to how that sweep has been applied here.** The BC2020 doctrine has
+been read as describing *our* field. **It does not.** Two of the five hard teams use the
+launcher exclusively as an offensive ferry, and one of them — CAD — has never once used it
+on one of our bots. Our own policy (exile-first) matches the BC2020 read; **two of our
+opponents' policies do not.**
+
+### The playable consequence, stated as a lead not a finding
+
+**CAD delivers ~2.2 of its own builders per game into our half by launcher, and never
+uses the piece defensively.** A ferried body arrives on a cadence, at a bounded distance
+from a launcher we can see, and cannot be re-grabbed by a launcher CAD does not point at
+us. Whether that is worth punishing is a builder question and depends on what those
+inserted bots actually achieve — **`throws.tsv` already carries `life`, `core_atk`,
+`any_atk` and `reached` per throw, so the value of CAD's ferry is one more query, not a
+project.** Not run here; the incidence cut stays the top item.
