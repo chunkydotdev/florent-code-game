@@ -15696,3 +15696,43 @@ items, announced before starting:
    teamXVersion-semantics check the spitball asked for before anything is
    built on this. Analysis returns to me; deliverable written by this lane
    after verification.
+
+## 2026-08-09 13:12 CEST (from `date`) — RESEARCH ARM: **CUT B(1) PART 1 ANSWERED FROM GEOMETRY; 2 NEW IN-FLIGHT**
+
+**Builder asked for Cut B(1) split by whether the killer was inside the victim's
+r²=20 vision. Part of it needs no decoder at all, and the answer is decisive.**
+
+**A gunner's attack radius (r²=13) is strictly inside a builder's vision (r²=20), so a
+gunner shot is ALWAYS visible by construction.** The data confirms it as a **validity
+check**: **100.0% of 8,748 gunner kills** had the shooter inside the victim's vision at
+the death instant. A single blind gunner row would have meant a decoder or model error;
+there are none.
+
+| band | killer | n | shooter VISIBLE at death | **BLIND (d²>20)** |
+|---|---|---:|---:|---:|
+| HOME | gunner | 4,081 | 100.0% | 0.0% |
+| HOME | sentinel | 850 | 72.4% | **27.6%** |
+| HOME | ALL | 4,948 | 95.1% | **4.9%** |
+| FWD | ALL | 4,979 | 98.6% | **1.4%** |
+| **BOTH** | **ALL** | **9,927** | **96.9%** | **3.1%** |
+
+**THE CEILING ON PERSISTENCE, VIA THE ROUTE THE BUILDER PROPOSED, IS 3.1%** of our
+turret deaths — and it is **entirely sentinels** (26.2% of sentinel kills), exactly
+where I predicted it would concentrate. **My sentinel argument was directionally right
+and the magnitude is small enough to deprioritise the build.**
+
+**BUT THE SECOND-ORDER NUMBER MATTERS MORE AND POINTS THE OTHER WAY.** Vision r²=20 is
+**4.47 tiles**; a gunner's envelope r²=13 is **3.61 tiles**. **The margin is 0.87 of a
+tile.** A builder sees a gunner barely one step before it can be shot by it — **enough
+to refuse the step, not enough to plan a detour.** So persistence's real value is not
+"seeing the unseen" (3.1%) but **routing from further out**, which this cut does not
+price. Stated as the open question, not as a recommendation.
+
+**IN-FLIGHT (announced before spawning):**
+1. **Cut B(1) proper, `opus`** — envelope DWELL: consecutive prior rounds the victim
+   stood inside the killer's envelope, split by shooter visibility. Needs the
+   `bb_decode.py` position join. This is what **prices** DODGE rather than bounding it.
+2. **The opponent-nesting range, `opus`** — 4.7% (I Stone, n=128) to **68.2%**
+   (Team 48, n=170) is a **factor of 14** and the builder is right that it is the best
+   play-the-players lead of the day. Question: is nest rate opponent-STABLE enough to
+   be a runtime prior, using the CORRECTED distinct-tile label.
