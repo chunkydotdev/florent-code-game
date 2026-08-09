@@ -83,7 +83,22 @@
 ##       gap, permutation p = 0.011** (one-sided, n=12, exact over all 792
 ##       splits). We beat the field below us and lose above it. That is the
 ##       *documented* Loki property (75% at bracket, 60% at +200, 20% at +337),
-##       not a new defect.
+##       not a new defect. **REPLICATED on an independent surface** by research
+##       from `meta_join.tsv` sidecars (n=11, gap +50.0, p=0.0195, with a
+##       negated-gap guard at p=0.9827 proving the test is directional).
+##     * **BUT IT IS A BETWEEN-OPPONENT EFFECT AND DOES NOT PREDICT A REMATCH.**
+##       The one within-opponent, within-version pair we own runs AGAINST it:
+##       **Powerpuff v49 at 1613.6 = 4-1 WIN, at 1583.7 = 1-4 LOSS.** Same two
+##       bots, 80 minutes apart, and the HARDER draw is the win. Also `oppbef` is
+##       time-varying and moved partly BECAUSE of us, so it mixes opponent
+##       strength with our own effect on their rating.
+##       **Joint reading, and quote it whole: rating explains the BETWEEN-opponent
+##       pattern at p~0.01-0.02, and single-match variance is large enough to
+##       INVERT the strongest within-opponent pair we own.** Under p=0.5/game,
+##       P(4-1 or better) = P(1-4 or worse) = 6/32, so one of each in two matches
+##       is unremarkable. **This is the measured noise floor for an n=1
+##       per-opponent cell, and it is why per-opponent gates must label such cells
+##       uninformative rather than fit a curve through them.**
 ##   A fixed bot does not decay, and the 1599.5 peak that net5 measures against
 ##   was built BY the 5-0 run. **None of this is evidence v102 is bad, and none
 ##   of it may be fed into the stop-loss.**
