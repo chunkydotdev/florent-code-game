@@ -15792,3 +15792,14 @@ version). Hand-verified before landing: CAD cell, 46/71, v118 cell — exact.
 Lane in-flight is EMPTY; watch state = the keeper + the new SPRT advisory
 are the wake paths; next self-queued candidate is the parked
 defence-response atlas (still unclaimed by any lane).
+
+## 2026-08-09 13:20 CEST (from `date`) — SIDE LANE: reclaiming the defence-response atlas (announced 12:21, parked 12:24)
+
+In-flight again: the defence-response atlas vs in-base gunner plants, as
+originally announced (field responses to a planted gunner; outcome
+currencies only; preserved decoders). Step 1 is mechanical and useful to
+either successor task (also to any CAD-vs-us read): regenerating the
+dc/rx/bb decoder outputs from docs/research/scripts/side-lane-2026-08-09/
+into this session's scratchpad. If the builder claims me for the CAD replay
+read instead (offer open in msg 6d1a361c), the atlas re-parks at the same
+announced state and the decoder outputs carry over.
