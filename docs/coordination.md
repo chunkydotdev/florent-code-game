@@ -17675,3 +17675,83 @@ Ouroboros as a named underpowered cell, **designed against outcome-conditioning*
 (features must be measured in windows closing before the outcome is determined),
 multiple-comparison threshold reported, **negative result accepted as a deliverable**.
 Lands as `docs/research/core-kill-incidence-cut-2026-08-09.md`.
+
+## 2026-08-09 16:35 CEST (from `date`) — BUILDER: **VERDICT — LOKI-3 (the kidnap plank) is HELD BEFORE BATTERY. It failed its own pre-registered treatment bar, and the mechanism argument against it is stronger than the tuning.**
+
+**No battery fired. No slot touched.** `v94`/`_v115dodge` still live, 1580 @ 542.
+`bots/_v119loki3` is built, gated (**CLEARED**, control equivalence **identical
+12/12**), and **crash-free across 96 arena games**. It is not going to battery.
+
+### THE PRE-REGISTERED BAR, AND THE THREE AIMS MEASURED AGAINST IT
+Seat-attributed, one fixed 24-game fixture (6 maps × 2 seeds × 2 seats vs
+`ouroboros_probe`), 0 tracebacks throughout:
+
+| placement aim | forward launcher (bar ≥50%) | throws (bar ≥30%) |
+| --- | --- | --- |
+| aimed at a VISIBLE BUILDER | **50.0% PASS** | 8.3% FAIL |
+| aimed at the COLLAR SEATS | 33.3% FAIL | **0.0% FAIL** |
+| **both signals scored (kept)** | **50.0% PASS** | **16.7% FAIL** |
+
+`LOKI_KIDNAP_TI_FLOOR` 24 → 8 moved the median first forward launcher from
+**r241 to r118** — from outside `KILL_WINDOW_RND` to inside it. Instrumented
+gate counts (`bots/_probe_loki3gate`) had **`no_ti` binding on 115/125,
+242/250 and 367/375 calls**: money was the constraint, never geometry.
+
+### WHY I AM NOT SPENDING THE BATTERY, STATED AS A CEILING NOT A NULL
+1. **The kill mode is ~1 throw in 200.** Research measured post-throw tile
+   dwell over 12,064 of our throws of an enemy bot: **46.0% dwell 0, 51.5%
+   dwell 1, 96.4% off the tile within one round**, landing imposes **no move
+   cooldown**, and **death-on-landing-tile is 4/12,064 = 0.03%**. My
+   pre-registered spec arithmetic said this *before the number existed*; the
+   number confirmed it. `LOKI_KIDNAP_RAY_BONUS` cut 36 → 12 on that evidence.
+2. **The denial mode is duplicated by a cheaper mechanism WE ALREADY SHIP.**
+   This is the finding worth keeping. The seat-aimed cut is the *worst* of the
+   three because **LOKI seals those same seats with BARRIERS — 3 Ti, permanent
+   — and a sealed seat has no healer left to throw.** A launcher is **20 Ti
+   plus 10% launcher scale** and evicts **one body per round, which walks
+   back**. On this chassis the denial job already has a 6×-cheaper answer.
+3. **A 384-game battery on a 16.7%-dosage treatment with that ceiling returns
+   an uninterpretable null.** Our standard battery was measured at **19%
+   power** (docs/workflow-analysis/, 2026-08-08). Firing it would buy a number
+   nobody could read either way. **That is a decision, not a deferral.**
+
+**TAKEN ANYWAY, because it is five lines and strictly correct:** turn order is
+**GLOBAL ENTITY-ID ASCENDING** (research: 26,078 ordered pairs, **0
+inversions**; undocumented in the organisers' docs). A victim with a *lower* id
+has already acted when we throw it, so **P(still on the tile ≥1 round) = 99.64%
+for `launcher_id > victim_id` against 15.86% the other way** — and it is not
+already free, **48.79% of our throws land on the losing side**. Lower-id
+victims now rank first. It converts a coin-flip shot into one reliable 18 HP
+shot; it does not move the tails (≥7 rounds 0.71%, ≥11 rounds 0.47%).
+
+### WHAT THIS COST AND WHAT IT BOUGHT — the honest ledger
+Three instrument defects were found and fixed, **all before any verdict**:
+- **`can_fire_from` is FALSE on every EMPTY tile of a GUNNER's ray** and TRUE
+  the moment the tile is occupied (probe `bots/_probe_rayempty`, atoll seed 1);
+  a SENTINEL's is TRUE on empty tiles and TRUE *through* occupied ones. A throw
+  destination is empty by definition, so **the obvious implementation would
+  have scored ZERO gunner bonuses in every position of every game, silently.**
+  No arena battery would ever have named that.
+- `loki3_treatment.py` hand-rolled its entity decode (**kind read as an int
+  enum in field 3, position from field 4** — both wrong; kind is encoded by
+  *which field number is present*).
+- It then harvested cores from `placeEntity` and found **none** — cores live in
+  the **map buffer** and are never re-placed — so every launcher scored "not
+  forward" and it reported a confident **0/24 (0.0%)** for a plank that was
+  building forward launchers from **round 5**. **It now RAISES on a missing
+  core instead of returning zeros**, and attributes seat→team instead of
+  pooling us with the opponent.
+
+**Every one of those three would have produced a confident wrong answer.** The
+treatment-occurrence check is the only reason none of them reached a verdict.
+
+### THE THING THAT OUTRANKS THIS PLANK, AND IT IS A PROGRAMME QUESTION FOR MAGNUS
+Research's ladder cut (`v92-unrated-baseline-audit`, §6, amended): **`KILL_WINDOW_RND: 250` is not binding on us.** 827 core-kill wins, median **r151**, and **74.4% are already ≤250** — holding at **71.4% against 1600+**. Against Ouroboros we have **9 core-kill wins in 155 ladder games (5.8%)**, of which **8 are inside r250, median r95**. **When we arrive, we kill fast. We almost never arrive.**
+
+⇒ **The scarce quantity is INCIDENCE, not speed.** LOKI-2b's headline (median
+core-kill turn 198→163) improved the **secondary** currency on a dimension the
+ladder says was **already 74.4% satisfied**. I am not relitigating that verdict
+and I am not editing `PROGRAMME.md` — that is Magnus's call, and this note is
+the evidence plus a hold request. **Commissioned from research:** what
+distinguishes the 5.8% of Ouroboros games where we DO get the kill from the
+94.2% where we don't.
