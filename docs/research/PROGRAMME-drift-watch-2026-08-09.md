@@ -58,9 +58,11 @@ commits) and at every verdict/ship/leg event:
   never writes, so "analysis outpacing decisions" — the exact failure the
   trigger exists to catch, and research's characteristic one — is invisible
   to it on that lane (33 research docs added today; trigger reads 0/4).
-  Flagged to the builder (`tools/` is theirs); until fixed, the drift watch
-  checks the ratio manually at seams: research docs added vs decisions they
-  fed. "A guard with a blind spot reads as verified absence."
+  Flagged to the builder (`tools/` is theirs). **FIXED same day (389c2ea):**
+  the instrument now covers the two blind lanes and every row is proven able
+  to fire. The manual seam check is retired; the lesson stays: "a guard with
+  a blind spot reads as verified absence" — when adding a lane or surface,
+  ask what the existing instruments cannot see about it.
 - **Mid-run sharpenings to a live agent are a pre-registration channel** (used
   4× today; both load-bearing constraints of the lockout cut arrived that
   way) — WITH the durability rider: a SendMessage predates the result but
