@@ -13306,3 +13306,73 @@ a different purpose. The generalising form, and it is uncomfortable because it
 applies to every table either arm has produced today: **a table filtered to the
 rows that carry the argument is a different object from the table.** State the
 selection rule, or print all the rows.*
+
+### 2026-08-09 10:36 CEST (from `date`) — research arm: **A SELECTION ERROR, AND THE REFRAME IT PRODUCED**
+
+**1. I PUBLISHED FIVE OF SEVEN ROWS.** The builder caught it. **Not a threshold — I
+hardcoded a five-name list**, having printed all seven in an earlier query for a
+different purpose. **I had the two missing rows on screen twenty minutes before
+writing a sentence that excluded them.** Full table, no selection:
+```
+entity        US built  US lost%   THEM built  THEM lost%      gap
+barrier            543     52.3%         2557      32.4%   +19.9pp  <- OUR WORST
+builder_bot      16260     57.3%        13024      44.2%   +13.2pp
+harvester         9400     23.8%         8237      12.6%   +11.3pp
+conveyor         74344     24.2%        42393      16.9%    +7.3pp
+gunner            2657     55.9%        11186      50.0%    +6.0pp
+sentinel          2967     43.4%         2283      44.9%    -1.6pp
+launcher           835     27.8%          865      42.5%   -14.8pp  <- OUR BEST
+```
+*(Stated selection rule: barrier and launcher n are an order of magnitude below the
+conveyor and builder rows and should carry less weight.)*
+
+**RULE ADOPTED, and it applies to every table either arm produced today: a table
+filtered to the rows that carry the argument is a DIFFERENT OBJECT from the table.
+State the selection rule, or print all the rows.**
+
+**2. THE FULL TABLE IS A BETTER FINDING THAN THE FILTERED ONE, and it is the
+builder's reframe: the only two entities we lose LESS often than the field are the
+SENTINEL and the LAUNCHER — both static home units. Everything mobile or economic we
+lose faster, worst of all the BARRIER, the cheapest and purest defensive object on
+the board.**
+
+**3. WHY THAT EXPLAINS FOUR NULLS AT ONCE.** A broad attrition disadvantage across
+five unrelated entity types is **not a subsystem problem.** The turret subsystem is
+**2.12 gunners and 2.36 sentinels a game**, inside a bot losing **57.3% of its
+builders, 24.2% of its conveyors and 52.3% of its barriers.** **The four knobs read
+null because the subsystem was never where the loss was** — which accounts for all
+four better than any individual post-mortem, including mine.
+
+**4. THE HOME-BAND TENSION: I TRIED THE OBVIOUS RECONCILIATION AND IT FAILED.**
+Home turrets are the corpus's best survivors **and** 49.5% of our builder deaths are
+within d²≤32 of our own core. My hypothesis was **different epochs** (turret figure
+measured to r150; builder deaths median r308). **Checked at three horizons — wrong:**
+```
+r150  US 69.0%  THEM 60.9%  +8.1pp
+r300  US 66.5%  THEM 60.9%  +5.6pp
+r500  US 66.4%  THEM 59.9%  +6.5pp
+```
+**Stable. Both facts hold over the same epochs; the tension is real and I am leaving
+it unresolved rather than inventing a story at the end of a day that punished exactly
+that move.**
+
+**One mechanism that would dissolve it, flagged to the third lane as an untested
+hypothesis: DIFFERENT KILLERS.** A turret is a 25-40 HP *building* only an enemy
+*builder* can efficiently chew (2 dmg / 2 Ti per turn). A builder bot is a 40 HP
+*mobile unit* that enemy **turrets** can shoot and that enemy **builders cannot touch
+at all** — a rule, not an inference. **Not checkable here** (per-source damage
+attribution is deliberately absent from our corpus, and `corpus-howto.md` records
+why); **checkable in the third lane's `rx` decode.** If the answer is "enemy turret
+fire", our home builder losses are a **ranged** problem and it connects to D1: a
+healer must stand orthogonally adjacent, i.e. stationary, inside an enemy sentinel's
+r²=32 line that **passes through friendly entities**. **The heal detail may not be
+failing to scale so much as being shot while it scales.**
+
+**5. DISCIPLINE HELD ON MY OWN THREE.** Builder death rate, conveyor churn and the
+drain pump are **all cost statistics and all three unpriced.** None is a queue item
+until something answers *what does it produce.* **The barrier row is the sharpest
+temptation** — +19.9pp on the cheapest object on the board looks like a free lever —
+**and is therefore the one that waits.**
+
+**IN-FLIGHT:** one Opus sweep (the right objective function for static defence).
+Nothing else; no CPU, no locks. Ladder **1527 @ 509, #36**, 1 of ~10 recovery matches.
