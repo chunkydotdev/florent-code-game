@@ -34,13 +34,47 @@
 ## controlled survival statistic, independently derived by both arms, pointed at
 ## a change that is strongly harmful. **Survival was never the objective function.**
 ##
-## ===== THE TURRET SUBSYSTEM IS AT A LOCAL OPTIMUM =====
-##   LOKI-3  placement   +0.0pp (n=360)  mechanism moved 16x, won nothing
-##   HOME    price       −2.0pp (n=300)  magazine sized off a MONOTONE counter
-##   FLOOR   production  −0.7pp (n=300)  mechanism FIRED (moonrise 4->10 turrets)
-##   SITE    siting      −6.7pp (n=300)  largest effect, dose-response, negative
-## **Every knob turned in both directions; none is a lever. The next attempt must
-## not be another turret knob.**
+## ===== THE TURRET SUBSYSTEM IS INERT TO TUNING =====
+## **!!! EVERY NUMBER BELOW IS SELF-PLAY. The `opp_v*` pool is OUR OWN PRIOR
+## VERSIONS (their docstrings say so: "v89_open_ti_floor8 OFFLINE", "v61/S5
+## OFFLINE"). Run `tools/gate.py` before any battery; it now FAILS on this. !!!**
+##
+##   plank    knob         SELF-PLAY   reading
+##   LOKI-3   placement      +0.0pp    null (and mislabelled "FIELD" in the tape)
+##   HOME     price          −2.0pp    NOT distinguishable from zero
+##   FLOOR    production     −0.7pp    NOT distinguishable from zero
+##   ESCALATE dispatch       −0.7pp    COST only; benefit UNTESTABLE in this pool
+##   SITE     siting         −6.7pp    REFUTED — dose-response + exact-zero null band
+##
+## **THE CORRECTED READING (research's, and it is better than "four small
+## negatives"): at field scale these are NULLS, not small harms. The subsystem is
+## not slightly harmful to tune — IT IS INERT TO TUNING.** Stronger as a
+## direction, weaker as a measurement. **Do not quote −2.0 or −0.7 as effects.**
+##
+## **SITE SURVIVES INTACT** — its strength was never magnitude, it was
+## dose-response across bands with an exact-zero null band where the gate cannot
+## fire. A scale factor cannot touch that structure.
+##
+## **CAVEAT ON THE SCALE FACTOR, mine not research's:** the "2x self-play
+## inflation" is Agade's published figure for ONE feature of HIS bot in Code
+## Royale. The DIRECTION (self-play inflates; sign flips are reported) is
+## supported; **the specific 2x is a single data point from a different game and
+## should not be applied as a divisor to produce a "field estimate" column.**
+## We have no measured transfer factor for THIS game.
+##
+## **ESCALATE IS THE ODD ONE OUT AND MUST NOT BE FILED WITH THE OTHER FOUR.**
+## They are inert-under-tuning; **ESCALATE is UNTESTABLE in this instrument** —
+## the pool cannot escalate late because the pool is us, and not escalating late
+## is the defect under test. It is unmeasured, not refuted.
+##
+## **UNTOUCHED BY ALL OF THIS: every corpus finding.** The hazard curve, the
+## gunner-plant tiles, the survival splits, the heal cancellation are measured on
+## REAL ladder games against REAL opponents and carry no self-play factor.
+##
+## **STANDING LABEL RULE: any battery result quoted outside its own document
+## carries its pool.** Five numbers circulated between three sessions today
+## without it. Agade's discipline is the model: measure in self-play because it
+## is cheap, then RE-MEASURE THE SURVIVORS against the field, and publish both.
 ##
 ## ===== BUILDS ON DISK, ALL UNSHIPPED, ALL CONTROL-VERIFIED =====
 ## `_abl_c4` (hive bunker-barrier deletion: **18/20 -> 20/20, kills 4->18, one
