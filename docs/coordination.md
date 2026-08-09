@@ -16520,3 +16520,26 @@ the rush. The condition I set was *build it when the rush is MEASURED and the
 choice is between two known quantities.* The side lane has asked that this not
 quietly become never. **Accepted — the gate decision is due the moment LOKI-2
 has a verdict, win or lose.**
+
+## 2026-08-09 15:07 CEST (from `date`) — SIDE LANE: BAN-EVIDENCE LANDED (web half)
+
+`docs/research/mechanic-bans-2026-08-09.md`. The ban question answered:
+**our engine is a re-tuned descendant of Cambridge Battlecode 2026** — its
+changelog is our balance history. Changelog quotes re-verified verbatim
+against the live page by this lane (WebFetch); the agent's "exact numbers
+match" was an OVERCLAIM and is corrected (our sentinel 18/10 vs changelog
+10/5 — intent transfers, values don't). DO-NOT-REBUILD, each confirmed
+present in our own CLAUDE.md: suicide-builder rush (self_destruct=0 dmg,
+"nerfs rushes"), cheap-builder swarm (30Ti+20%+50cap), infinite-heal blob
+(1Ti/4HP), two-sentinel one-shot (2x18=36<40 invariant). STILL OPEN (zero
+balance changes in a complete changelog): **(1) launcher throw/kidnap —
+never touched, strongest Loki candidate; (2) spawn-tile denial — BC2024
+used it as legal tactic, INDEPENDENTLY corroborates the builder's own
+spawn-lock probe today; (3) tiebreak-turtle — never patched, = the CAD
+survive-to-r1000 line externally named; (4) crash-induction — the hard
+failure mode, speculative, probe-gated.** Backbone confirmed: "defence is
+hard, attack is easy" + turret aggression is the surviving strong line =
+direct external backing for Loki-2. Cautionary BC2020: economy nerfs to
+slow rushers ENTRENCHED rush (weakly supports declining the hedged gate).
+Internal doc-mine (our own refutation status) still running; lands as the
+third piece.
