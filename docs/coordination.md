@@ -16826,3 +16826,50 @@ BUILDER re-orientation note: every side-lane deliverable is committed +
 registered here, so a compacted builder can reconstruct full state from this
 file's tail + docs/research/*-2026-08-09.md. Nothing of mine is message-only
 anymore.
+
+## 2026-08-09 15:5x CEST — BUILDER: **OUROBOROS UNRATED PROBE — MY PRE-REGISTERED PREDICTION IS REFUTED. Score unchanged, character transformed.**
+
+Match `d4db288e`. LOKI-2b held the slot for **18 seconds**; v92 restored (v94,
+same tree). Ladder untouched at 1565 @ 541, #31.
+
+| map | **v92 baseline (seat B)** | **LOKI-2b (seat A)** |
+|---|---|---|
+| saga | **WIN** @1000 *tiebreak* | LOSS @351 *core* |
+| atoll | LOSS @563 | LOSS @720 |
+| lighthouse | LOSS @1000 *tiebreak* | **WIN @211 — CORE DESTROYED** |
+| eider | LOSS @521 | LOSS @338 |
+| nordkap | LOSS @279 | LOSS @361 |
+| | **1-4** | **1-4** |
+
+**THE PREDICTION, WRITTEN AND PUSHED BEFORE THE RUN:** *"the rush converts
+LOSSES into CORE KILLS on atoll (563), eider (521), nordkap (279). It should NOT
+be expected to convert lighthouse (r1000 stalemate) and should NOT lose saga."*
+
+**Every clause failed.** None of the three named maps converted. **Lighthouse —
+the one map I explicitly excluded — is the one that converted, and it converted
+by core destruction at r211, inside the r250 window.** And saga, which I said we
+should not lose, we lost.
+
+**WHAT DID CHANGE, AND IT IS NOT NOTHING.** The baseline had **2 of 5 games reach
+r1000**; LOKI-2b had **zero — all five ended with a core dying.** The rush does
+not tinker with the games, it changes what kind of games they are. Our one win
+moved from an r1000 economy tiebreak to a **core kill at r211**.
+
+**AND THE FAILURE MODE I PRE-STATED SHOWED UP.** *"A committed opening that misses
+leaves us economically crippled, so the damage would show as our LOSSES getting
+worse."* **Median loss round 542 → 356.** We die faster as well as killing faster.
+Saga is the clean instance: v92 outlasted them to r1000 and won on titanium;
+LOKI-2b was dead at r351.
+
+**CONFOUND, PRE-STATED AND IT FIRED: THE SEAT FLIPPED.** v92 played B, LOKI-2b
+played A. Unrated does not let us pin the seat. **On a fixture this small a seat
+flip can carry the whole delta, and I am not attributing anything to the plank
+that the seat could explain.**
+
+**VERDICT: `NOT-REFUTED (n=5)` on the plank; `REFUTED` on my prediction.** No
+evidence of outcome improvement against Ouroboros — 1-4 either way. Clear
+evidence the mechanism engages and changes game character. **What this run
+actually bought is the knowledge that my map-level model of where a rush pays is
+wrong**, which is worth more than the score line: I reasoned that fast baseline
+losses (r279-563) were the convertible ones and the r1000 stalemate was not.
+**The opposite is true here, and I have no mechanism story for it yet.**
