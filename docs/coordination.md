@@ -12958,3 +12958,79 @@ the confound's direction was checkable. **Both were faster to settle than to
 schedule.** Set against four batteries that cost 1,200 games and returned four
 negatives, the day's efficiency was entirely in the reading, not the running. The
 standing form: **before queueing a check, ask whether the answer is a grep.***
+
+### 2026-08-09 10:25 CEST (from `date`) — research arm: **MY SITING RECOMMENDATION WAS BUILT AND REFUTED. THE MEASUREMENTS WERE RIGHT.**
+
+**1. AMENDED IN PLACE, ABOVE THE ANALYSIS**, so nobody reaches the recommendation
+before the refutation (`turret-mix-and-map-width-2026-08-09.md`). The builder gated
+forward siege off above d² 81 — the subtraction my §4 recommended:
+```
+OVERALL   96/150 -> 86/150   -6.7pp
+narrow <=81   +0.0pp   (gate cannot fire — built-in null band)
+mid 128-144   -5.0pp
+wide 288-392 -13.3pp   (most gated, most damage)
+```
+**Every measurement in my document was correct and was independently reproduced to
+four significant figures.** Our forward turrets survive at 19% against the field's
+49%, and **removing them costs 13.3pp on exactly the maps where they die most. The
+19% is the price of something valuable — forward turrets earn their deaths.**
+
+**2. THE LESSON, and it is NOT the same as the four earlier ones today.** Those were
+**a statistic standing in for a MEASUREMENT** — a pooled number hiding a conditional
+reversal. **This is a statistic standing in for a PURPOSE, and it is worse, because
+the number was TRUE**: large, clean, confound-controlled, independently derived by
+two arms, and pointing at a strongly harmful change. **No statistical care would
+have caught it.**
+
+**I optimised turret survival without ever asking what a turret is for.** And the
+sharpest part: **sweep 7's closing paragraph told me to** — *"stop optimizing turret
+survival and start measuring shots and damage per titanium invested"* — **and I
+relayed that sentence to the builder without applying it to my own headline.**
+
+> **The check that generalises, now in the doc: before recommending that something
+> be REDUCED, measure what it PRODUCES, not whether it persists.**
+
+**3. WITHDRAWN:** §4's recommendation in full, and the framing that the forward
+bucket is waste. **This does not license "add support and go forward" either** —
+that is the composite rescue in a new costume, and the forward road is closed on
+four instruments.
+
+**4. TURRET SUBSYSTEM SCOREBOARD, recorded so it is not casually reopened: four
+planks built, gated and refuted — placement +0.0pp, price −2.0pp, production
+−0.7pp, siting −6.7pp. Every knob turned in both directions; none is a lever.**
+
+**5. THE SURVIVAL-METRIC WARNING LABEL, PARTIALLY CLOSED.** Sweep 7 flagged that our
+decoder cannot distinguish owner-`destroy()` from an enemy kill, and SPAARK (BC2025)
+documents demolishing idle defence deliberately. **Checked: `destroy()` has ZERO
+call sites in both `_v104latch` (v90) and `_v100hf` (v91).** So **our** survival
+figures are clean — every one of our turret deaths is an enemy kill. **The FIELD's
+are not verified**, so their 49.3% / 72.0% could be inflated by their own
+demolitions, which would make the gap *smaller* than measured and undercut my
+original framing further.
+
+**6. ROLLBACK ACKNOWLEDGED, and I will hold the tape to the builder's framing: v91
+is a STOP-LOSS, NOT A VERDICT.** 17 matches at ±18/match cannot establish v90 < v89.
+Their pre-stated 10-match recovery rule is what keeps it honest, and they executed
+the numeric trigger rather than renegotiating it when it fired. Ladder now **1530 @
+508, #35, last-10 2W-8L, v91 "Eir 9c hivethaw (rollback from v90)" active.**
+
+**7. THE ESCALATION FINDING IS HELD, correctly, pending the third lane's adjacency
+discriminator.** One observation that makes holding it cheaper: it is about **a
+resource that is present and unspent** — 5.02 live builders at 3+ attackers against
+the field's 5.06, while we cancel 38.9% to their 68.6%. **The trap that killed the
+siting recommendation was "the thing you want to remove is paying for itself";
+nothing is being spent here, so that specific trap has no analogue.** Not a reason
+to build — a reason the discriminator is the right gate rather than a general
+suspicion.
+
+**8. THIRD LANE: boundary question adjudicated** so the builder does not have to.
+**S3 (no-idle) is OUTSIDE the "no more turret knobs" boundary** — it changes what an
+existing turret does with time it already has, touching neither count nor placement
+nor price. **S2 (replace-on-death) is NOT clearly outside**: in steady state,
+replace-on-death **is** raising the live count, which is exactly what PLANK
+PRODUCTION turned at −0.7pp. **It becomes outside if it replaces only shooters that
+were FIRING when they died** — conditional on demonstrated productivity, which is
+the objective function the SITE refutation says we should have used all along.
+
+**IN-FLIGHT: nothing of mine.** All seven sweeps landed and are relayed. No
+subagents, no CPU jobs, no locks.
