@@ -16466,3 +16466,57 @@ BAN question (banned mechanic = unfakeable evidence it worked); (2) NEW
 web-research subagent on comparable-league mechanic bans (Battlecode first —
 engine is battlecode.* — then Screeps/Halite/Terminal/Lux/CodinGame). Both
 feed the offensive-mechanic catalog companion to the early-kill arsenal.
+
+## 2026-08-09 15:1x CEST — BUILDER: **PRE-REGISTRATION, LOKI-2 (the committed opening)** — pushed before the battery
+
+**Line:** loki (PROGRAMME.md). **Compared against LOKI-1**, per
+`COMPARE_AGAINST: previous_line_iteration` — NOT against Eir, which is frozen.
+
+**Build:** `bots/_v117loki2` (control `_v117off`), one flag `LOKI2_RUSH_ON`.
+Inside `rnd < 60`: the forward-sentinel arm waives `LOKI_FWD_MIN_HARV = 2`
+(*"do not open the siege before the economy exists"* — the gate that forbids the
+r14-r22 plant), drops the bank floor 40 -> 8, and sends seats **(0, 1)** forward
+at once instead of seat 0 alone. `LOKI_FWD_GUN_CAP` stays 3. Nothing else moves.
+
+**Why these three and not others:** corpus, 1,269 early core-kills, **99.3%
+turret fire**; sub-r80 recipe over 190 games is **3 turrets by r22 (p25 r11)**.
+We are already the league's **#1 early killer by volume** (309 early, 48 sub-r80)
+and we do it with **1 turret/game at d²=32, median kill r91**, against
+Banminary's **3 at d²=18, r52**. Rule floor: 3 sentinels = 18 dmg/rnd ≈ 28 rounds
+through 500 HP. **This is not a new doctrine; it is the opening we already
+half-run, committed to.**
+
+**PRIMARY CURRENCY (PROGRAMME.md): `time_to_core_kill`, then `core_kill_share`.
+WIN RATE IS NOT THE VERDICT.**
+
+**THRESHOLDS, before the numbers exist:**
+1. **PASS** — median turn count of games won by `core_destroyed` FALLS against
+   LOKI-1, and core-kill share does not fall.
+2. **REFUTED** — time-to-core-kill flat or up. The plank's entire claim is speed;
+   there is no consolation reading.
+3. **STOP** — any crash on the variant arm, or win rate down >5pp at
+   discordance ≥10% (an all-in opening that fails should be visible here).
+4. **THE FAILURE MODE I EXPECT IF IT FAILS, stated now:** a committed opening
+   that misses leaves us economically crippled, so the damage would show as our
+   LOSSES getting worse — longer, and lost from positions LOKI-1 held. I will
+   report loss-length and loss-count separately from the headline.
+
+**CONFOUND CARRIED FROM RESEARCH, and it applies to the primary currency this
+time, not just win rate:** the probe pool is dominated (both arms 87-90%).
+**Killing faster an opponent we already beat 9 times in 10 does not establish we
+can kill a real one.** The 205-vs-335 median from the LOKI-1 baseline has the
+same caveat. **Probe result = DIRECTION ONLY; the magnitude does not transfer
+and I will not quote one.**
+
+**METRIC CHANGE ADOPTED (side lane's, and it is better than mine).** The collar
+should be scored as **heal-tiles denied per round**, not "games fully sealed".
+My census reported 2.69/8 seats and 3/72 fully sealed, which measures our
+EFFORT; the rush does not need a perfect 12/12 lock, it needs the heal detail
+suppressed for the ~28 rounds a sentinel line needs. `tools/collar_census.py`
+gets that metric before LOKI-3 is measured.
+
+**Held to my own condition, on the record:** I declined the opponent/map gate on
+the rush. The condition I set was *build it when the rush is MEASURED and the
+choice is between two known quantities.* The side lane has asked that this not
+quietly become never. **Accepted — the gate decision is due the moment LOKI-2
+has a verdict, win or lose.**
