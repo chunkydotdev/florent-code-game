@@ -1,6 +1,6 @@
 # The archive has been 98% attributable all along — `join.tsv` sees 23% of it
 
-**Research arm, session 25, 2026-08-09 ~19:0x CEST.** Found by a subagent on the CAD
+**Research arm, session 25, 2026-08-09 17:04 CEST (commit `09c0ad1`).** Found by a subagent on the CAD
 lockout cut, which expected 85 attributable CAD games and found **220**. I verified the
 underlying claim directly rather than accept it, and it is larger than the cut needed.
 

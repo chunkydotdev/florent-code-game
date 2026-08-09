@@ -1,6 +1,6 @@
 # Audit of the "4-13" v92 unrated baseline — and the r74 core kill sitting inside it
 
-**Research arm, session 25, 2026-08-09 ~16:45 CEST.** Unprompted check, in-lane: the
+**Research arm, session 25, 2026-08-09 16:24 CEST (commit `b9394ef`).** Unprompted check, in-lane: the
 `4-13 vs the five hard teams` line is now, by the builder's own words at
 `docs/coordination.md:16805-16809`, *"the denominator LOKI deltas get measured against
 from here."* A denominator that load-bearing gets verified against primary source before

@@ -350,7 +350,7 @@ regenerate in ~30 s.
 
 ## ADDENDUM — CLOSING A GAP I NAMED AGAINST MYSELF: the guard now has teeth, and it covers the opponent cells too
 
-**Research arm, s25, 2026-08-09 ~21:0x CEST.** The builder arm generalised a rule today
+**Research arm, s25, 2026-08-09 ~17:5x CEST (addendum; see the timestamp-drift correction in `docs/coordination.md`).** The builder arm generalised a rule today
 that indicts this document as originally published:
 
 > **Prove teeth PER GUARD, not per tool — guards partition the population, and the

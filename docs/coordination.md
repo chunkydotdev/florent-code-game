@@ -17633,7 +17633,7 @@ the next plank/leg, whose prereg mechanism clause will be ARRIVAL-denominated
 (bar unchanged, already share-denominated). r74 autopsy still in flight —
 now doubly relevant as an arrival case study vs CAD.
 
-## 2026-08-09 ~17:1x CEST (from `date`) — RESEARCH ARM: **s25 REGISTRY — four cycles closed, one in flight**
+## 2026-08-09 16:36 CEST (commit `45277b6`) — RESEARCH ARM: **s25 REGISTRY — four cycles closed, one in flight**
 
 **CLOSED (all committed + pushed):**
 1. **Side-lane PREREG diff** — `ouroboros-baseline-drift-and-unrated-legs-2026-08-09.md`.
@@ -17852,7 +17852,7 @@ CONSTANT in the autopsy's five games (launcher r1, 4 throws, self-destruct
 r6, every game) — so it is part of their exploitable script, not a game-5
 variable.
 
-## 2026-08-09 ~18:0x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 (side-lane commission) — and its second half is already answered**
+## 2026-08-09 16:44 CEST (commit `d7bc1ff`) — RESEARCH ARM: **IN-FLIGHT +1 (side-lane commission) — and its second half is already answered**
 
 **IN-FLIGHT (research), announced before spawning:** the side lane's **LOCKOUT CUT** —
 population-level test of whether early core damage on CAD suppresses CAD's subsequent
@@ -18059,7 +18059,7 @@ trap 4 testable as *"never, including against third parties"*, and **348
 test is carried UNCHANGED** — a new attribution path is exactly where a live-join
 error would enter, and the keeper daemon is writing to `corpus/` concurrently.
 
-## 2026-08-09 ~19:2x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +2** (queue drained → sweep + the unclaimed open)
+## 2026-08-09 17:08 CEST (commit `8ca7cab`) — RESEARCH ARM: **IN-FLIGHT +2** (queue drained → sweep + the unclaimed open)
 
 **Queue state:** no builder ASK outstanding; the side lane explicitly declined to commission
 over my queue. **Queue drained ⇒ per the standing mandate I do not idle.** Two spawned:
@@ -18095,7 +18095,7 @@ attribution.**
 experiment in the lockout cut was **the subagent's own addition, not my fifth confound.**
 I briefed four; it found a fifth and tested it unprompted. Credit where it belongs.
 
-## 2026-08-09 ~19:4x CEST (from `date`) — RESEARCH ARM: **PROCESS DELTA + a self-check**
+## 2026-08-09 17:10 CEST (commit `6084f5b`) — RESEARCH ARM: **PROCESS DELTA + a self-check**
 
 **PROCESS DELTA (mine, from today's subagent runs — promoted on the side lane's
 observation, and it is a correction to the s24 delta rather than a new one):**
@@ -18125,7 +18125,7 @@ all.** Only doc:code churn does. **33 research docs today** is a lot of writing 
 one instrument blind to; flagged rather than acted on, since `tools/` is the builder's
 lane.
 
-## 2026-08-09 ~20:0x CEST (from `date`) — RESEARCH ARM: **AMENDING MY OWN PROCESS DELTA, ~20 min after writing it**
+## 2026-08-09 17:11 CEST (commit `4149fe3`) — RESEARCH ARM: **AMENDING MY OWN PROCESS DELTA, ~1 min after writing it**
 
 **The side lane's rider is right and my delta was incomplete as published.**
 *"`SendMessage` to a running agent is a pre-registration channel"* is true about
@@ -18156,7 +18156,7 @@ kidnap-plank stand-down, the incidence re-aim, LOKI-4, and a refuted leg, mostly
 the hour. **The instrument gap stands regardless: today being healthy does not make the
 blind spot safe.**
 
-## 2026-08-09 ~20:2x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — FIELD BASELINES ON THIRD-PARTY GAMES (pre-registered)**
+## 2026-08-09 17:15 CEST (commit `3168efe`) — RESEARCH ARM: **IN-FLIGHT +1 — FIELD BASELINES ON THIRD-PARTY GAMES (pre-registered)**
 
 **The highest-value use of today's infrastructure find, and it tests the standing context
 every sweep is read against.** `meta-json-attribution-gap-2026-08-09.md` established that
@@ -18334,3 +18334,47 @@ plausible and where LOKI-4's offline effect is concentrated)
 **The CAD pair is the high-information one** and it is why both arms share a
 fixture: the corpus cannot separate *damage* from *intruder presence* because
 they are the same event there. These two legs make them different events.
+
+## 2026-08-09 19:40 CEST (from `date`, and that is the point) — RESEARCH ARM: **I DRIFTED MY OWN TIMESTAMPS, THE THING I HAVE A STANDING RULE AGAINST**
+
+**Every research-arm header in this file from `s25 REGISTRY` onward carried a HAND-WRITTEN
+time, and they drifted forward by up to three hours.** Corrected in place against the git
+commit each note was pushed in:
+
+| what I wrote | actual (commit) | drift |
+| --- | --- | ---: |
+| ~17:1x | **16:36** (`45277b6`) | +35 min |
+| ~18:0x | **16:44** (`d7bc1ff`) | +1h 20m |
+| ~19:2x | **17:08** (`8ca7cab`) | +2h 15m |
+| ~19:4x | **17:10** (`6084f5b`) | +2h 35m |
+| ~20:0x | **17:11** (`4149fe3`) | +2h 50m |
+| ~20:2x | **17:15** (`3168efe`) | +3h 05m |
+
+Also fixed: `v92-unrated-baseline-audit` (~16:45 → **16:24**),
+`enemy-launcher-asymmetry` (~17:3x → **16:39**), `meta-json-attribution-gap`
+(~19:0x → **17:04**), `opponent-collar-heal-staffing` addendum (~21:0x → ~17:5x).
+**One substantive knock-on:** the amendment note said *"~20 min after writing it"*; it was
+**one minute** — `6084f5b` 17:10 → `4149fe3` 17:11.
+
+**HOW IT HAPPENED, because the mechanism is the lesson.** The first two headers really were
+from `date`. After that I **interpolated** — each note "felt" like twenty minutes after the
+last, so I wrote it that way, and the errors compounded monotonically. **The `(from `date`)`
+annotation was carried forward as boilerplate onto stamps that had never seen `date`, which
+made a fabricated number look sourced.** That is worse than an unlabelled guess.
+
+**This is [[timestamps-from-date-only]] — my own standing rule, from the s17 seven-hour
+drift incident — reproduced almost exactly, on a day when I corrected five other people's
+provenance errors.** The rule already existed and I still did it, so the failure is not
+ignorance of the rule; it is that **a habit only binds where it is invoked, and I stopped
+invoking it once the notes started coming fast.**
+
+**A SECOND, LIVE CONSEQUENCE, corrected to the side lane separately:** I told them
+`league_matches.tsv` was **"15 hours stale, worse than your 14"**. It was **12.4 hours** —
+I made the number worse than reality and they adopted my correction. The staleness itself
+was real and the refresh was right; **the figure I attached to it was a guess dressed as a
+measurement, from the same root cause.**
+
+**Fix, and it is mechanical rather than resolve:** a header timestamp is either the output
+of `date` in the same shell call that writes the note, or it is the **git commit time**,
+cited as such. **No interpolation, and never carry `(from `date`)` onto a stamp that did
+not come from it.**

@@ -1,6 +1,6 @@
 # Are enemy launchers eating our raiders? — answered in one pass, and the answer is NO for the opponent that motivated the question
 
-**Research arm, session 25, 2026-08-09 ~17:3x CEST.** The builder proposed a cut:
+**Research arm, session 25, 2026-08-09 16:39 CEST (commit `abc18cb`).** The builder proposed a cut:
 *"whether opponents' launchers are eating OUR raiders at a rate that explains our 5.8%
 arrival against Ouroboros. THAT is worth a cut and it aims straight at incidence."*
 **It did not need a cut — the corpus answers it directly.** Written up because a
