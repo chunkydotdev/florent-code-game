@@ -13798,3 +13798,52 @@ hypothesis says should point one way, checked for whether it points the other.**
 Research's own assessment is the argument: *both of my expensive errors today
 were observational verdicts with no placebo arm.* **Mine too — plank SITE cost
 6.7pp and had none.**
+
+### 2026-08-09 10:57 CEST (from `date`) — research arm: **DEATH ATTRIBUTION KILLS TWO OF MY HYPOTHESES, CORRECTS A THIRD, AND EXPOSES A GAP IN MY OWN PROBE**
+
+**1. THE REAL MECHANISM, and it is per-tile and enumerable.** My sentinel-line
+hypothesis is **refuted at 7.7% of home deaths.** The third lane's cut:
+**65.3% of our home builder deaths are an enemy GUNNER PLANTED INSIDE OUR BASE**
+(killer median **d²=20** from our core), **from concentrated tiles — ≥5-kill tiles
+carry 47.3% of home deaths, ≥10-kill 23.4%, one tile produced 45 kills.**
+**"Our home turrets survive but never prevent the plant."** Our best-in-corpus home
+turret survival is real *and* irrelevant to this.
+**Sequencing consequence: the countermeasure is PER-TILE, not a doctrine** — name the
+tiles per map/seat and cover them (3 Ti barriers or a turret arc). **It also gives the
+builder's queue item #1 (launcher-interception) a measured target: the planter.**
+
+**2. THE EXPOSURE CONTROL KILLED MY 49.5%, exactly as I flagged.** Normalised to
+deaths per 1k builder-rounds, **home is the SAFER band for BOTH sides** — ours
+**1.968**, opponents' **2.915**. **"Our builders die at home, theirs die away" was
+POPULATION, not danger.** What survives is the hazard ratio: **ours 1.85× at home,
+1.43× overall.** Their `FIELD_vsUS` 33.3% reproduces my 33.5% exactly — **the
+arithmetic was right and the interpretation was wrong, which is the shape of every
+error I made today.**
+
+**3. MY CRASH HYPOTHESIS IS DEAD, cleanly: US no-damage deaths 0.00% of 8,664.** The
+blanket `try/except` works; **there is no free bug-fix.** *(FIELD carries 6.7%,
+team-concentrated — vjg 97.7%, S 91.0%, Troupe 87.3% — opponent-modelling material.)*
+
+**4. A GAP IN MY OWN PROBE, SURFACED BY THEIR FRIENDLY-FIRE FINDING AND NOW CLOSED.**
+Turret shots hit whatever unit stands on the **target** tile, own team included. **I
+had confirmed a sentinel's shot LANDS through friendlies and never checked whether it
+HURTS them — while upgrading `sentinel-file-stacking` from `inference` to
+`documented` on that probe.** Re-run with HP recorded:
+```
+enemy core 500 -> 482 (-18)   BUILDER_BOT 40 -> 40 unharmed   BARRIER 30 -> 30 unharmed
+```
+**Pass-through friendlies take zero damage; the formation survives and the label
+holds.** Had it gone the other way I would have shipped a wrong verified-label into
+the tactics library. **Both facts are consistent: pass-through friendly unharmed,
+friendly ON the target tile hit.**
+
+**5. A CORRECTION THAT PROPAGATED FURTHER THAN EITHER ARM TRACKED IT.** I wrote that a
+sentinel file needs **2-3** sentinels to out-pace the heal. **That is the 1×1 case (4
+ring tiles, 16 HP/round). Against the 2×2 CORE it is 8 ring tiles = 32 HP/round, so
+4-6 sentinels** — at +20% scale each. **Legality unchanged; affordability materially
+worse.** Any arithmetic downstream that inherited my 2-3 is optimistic by half.
+
+**IN-FLIGHT:** objective-function sweep only — it reported *completed* without
+delivering a result and has been resumed. Nothing on the CPU. Ladder **1525 @ 511,
+#36, last-10 1W-9L**, 3 of ~10 and below both the rollback point and v89's own
+historical 1534.62.
