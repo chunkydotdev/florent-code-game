@@ -645,6 +645,49 @@ it drifted a second time). Sonnet for mechanical sweeps with a validated method;
 Opus for anything that must grade its own sources — which is most tactics work,
 since the whole value is in the evidence labels.
 
+## ⛔ PREREQUISITE — **OUR ARENA POOL CANNOT MEASURE A DEFENSIVE PLANK AT ALL** (2026-08-10, builder's LOKI-10 sizing; read this BEFORE proposing any defensive tactic)
+
+**Not one of our forward sentinels takes a single point of damage in 480 arena games.
+Survival is 100.0% at +10 / +20 / +30 / +50 rounds.** The cause is the opponent list:
+**the probe family fires 54,264 shots and 99.83% of them target our CORE.** They are
+single-target core-rushers.
+
+**THIS IS A THIRD KIND OF SATURATION AND IT IS THE WORST ONE.** The library already tracks
+*"the bar is too high to resolve"* (win rate 93-97% on clanker/ouroboros). **This is
+different: THE MECHANISM NEVER OCCURS.** Every **survivability, healing, screening, repair or
+ablative** plank measured against `cad_probe` / `orizon_probe` / the probe family is
+**measuring a treatment on an event that does not happen**, and **would return a clean null
+that means nothing.**
+
+**⇒ A BUILDING-ATTACKING OPPONENT IN THE POOL IS A PREREQUISITE FOR THAT WHOLE CLASS OF WORK,
+NOT AN IMPROVEMENT TO IT.**
+
+**Library items this gates — they are not wrong, they are UNTESTABLE HERE until the pool
+changes:** [`sentinel-file-stacking`](sentinel-file-stacking.md) · the **ablative barrier
+screen** (~8× HP/Ti, sentinel-only) · [`worker-fortified-turret-cell`](worker-fortified-turret-cell.md) ·
+[`marginal-healers-per-structure`](marginal-healers-per-structure.md) ·
+[`heal-cap-and-timeout`](heal-cap-and-timeout.md) · [`fortify-on-idle`](fortify-on-idle.md) ·
+[`preemptive-escort-turret-premortem`](preemptive-escort-turret-premortem.md) ·
+[`sustained-plant-removal-race`](sustained-plant-removal-race.md) ·
+[`the-defenders-reserve-and-what-defeats-it`](the-defenders-reserve-and-what-defeats-it.md).
+
+**AND THE FIXTURE DISTINCTION IS THE POINT, because it was conflated once already:**
+forward-ordnance survival is *"the sharpest number in the corpus"* — **in the LADDER corpus,
+against real opponents. It is UNMEASURABLE in our arena.** **Those are different fixtures.
+Any survival, heal or screening figure must name which one it came from.**
+
+**TWO MORE FIXTURE-SPECIFIC FACTS FROM THE SAME CUT:**
+- **`builderAttack` is emitted 0 times by EITHER side in 480 arena games.** **So the
+  behavioural seat fingerprint — *"our `batk` = 0 against theirs = 5,185"*, which is
+  LADDER-valid — is ARENA-INVALID: both sides are zero there and it cannot discriminate.**
+  Anyone reusing that fingerprint on arena replays gets a silent failure, not an error.
+- **Heals: 0 of 87,169 land on anything but our own core** — zero on any turret, builder,
+  barrier or conveyor — **and not for lack of opportunity** (the planter is adjacent 59.4% of
+  the time at +1 round, so *"the code walks it away next round"* is false in play). **The
+  cause is priority ordering, not absence.** This **reverses** an earlier read that *"the heal
+  exists, only presence is missing"*. It is **removal-shaped**, the only shape that has ever
+  worked on this line — **and unpriceable until the pool is fixed.**
+
 ## Standing context a sweep should know
 
 - **The field does not rush.** Only 12% of top-tier kills land by r100; median

@@ -21202,3 +21202,65 @@ same files — 4,054 removals, enemy losing 61.2% of its sentinels. A first-pass
 heal artifact (0.19% reading EMPTY_TILE) was an end-of-round occupancy read and
 went to zero when evaluated at the instant of the heal. Two independent ray-walk
 implementations agree to 0.2pp; it reported the lower and named the spread.
+
+## 2026-08-10 01:0x CEST (from `date`) — RESEARCH ARM: **THE ARENA CANNOT MEASURE A DEFENSIVE PLANK. That gates nine items in my own library, and it breaks one of my own instruments in one fixture.**
+
+The builder's LOKI-10 sizing produced the highest-order finding of the session and it is
+mostly a finding about **our instrument**, not our bot.
+
+### THE FINDING, AND IT IS A THIRD KIND OF SATURATION
+**Not one forward sentinel takes a single point of damage in 480 arena games. Survival is
+100.0% at +10/+20/+30/+50.** Cause: **the probe family fires 54,264 shots and 99.83% target
+our CORE.** They are single-target core-rushers.
+
+**The library already tracks *"the bar is too high to resolve"* (clanker 96.7%, ouroboros
+93.3%). This is different and worse: THE MECHANISM NEVER OCCURS.** A survivability, healing,
+screening, repair or ablative plank measured against that pool is **measuring a treatment on
+an event that does not happen**, and returns **a clean null that means nothing.**
+**⇒ A building-attacking opponent in the pool is a PREREQUISITE for that whole class of work,
+not an improvement to it.** Recorded at the top of `tactics/INDEX.md` as a ⛔ prerequisite,
+above the standing context, because it must be read **before** a sweep proposes a defensive
+tactic.
+
+### NINE OF MY OWN LIBRARY ITEMS ARE NOW UNTESTABLE-HERE — listed rather than left to be discovered
+`sentinel-file-stacking` · the ablative barrier screen (~8× HP/Ti) ·
+`worker-fortified-turret-cell` · `marginal-healers-per-structure` · `heal-cap-and-timeout` ·
+`fortify-on-idle` · `preemptive-escort-turret-premortem` · `sustained-plant-removal-race` ·
+`the-defenders-reserve-and-what-defeats-it`. **They are not refuted. They are unmeasurable in
+this fixture** — and the distinction between "we tested it and it did nothing" and "we cannot
+test it" is exactly what a null would have destroyed.
+
+### **THE FIXTURE DISTINCTION IS THE GENERAL LESSON, and it was conflated once already**
+Forward-ordnance survival is *"the sharpest number in the corpus"* — **in the LADDER corpus,
+against real opponents. It is UNMEASURABLE in our arena.** The builder named their own
+conflation of the two. **Standing rule added: any survival, heal or screening figure must
+name its FIXTURE, not just its population.** Population discipline has been the session's
+theme; **fixture is a second axis and I had not been carrying it.**
+
+### **ONE OF MY OWN INSTRUMENTS IS FIXTURE-DEPENDENT AND I DID NOT KNOW IT**
+My duty-cycle agent established our seat with a **behavioural fingerprint** — *"LOKI-8's
+silenced melee gives `batk` = 0 on our side against 3,517/5,185 on theirs"* — and I relayed
+that as a better instrument than any metadata join. **It is, on the LADDER.**
+**`builderAttack` is emitted 0 times by EITHER side in 480 ARENA games.** **So in the arena
+the fingerprint cannot discriminate at all, and it fails SILENTLY — both sides read zero, and
+a decoder would happily assign the wrong seat.** **Filed in the INDEX beside the finding.**
+**This is the fourth instrument tonight whose failure mode was invisible in the fixture it was
+validated on.**
+
+### AND A READ OF OURS IS REVERSED
+**Heals: 0 of 87,169 land on anything but our own core** — zero on any turret, builder,
+barrier or conveyor — **and not for lack of opportunity: the planter is adjacent 59.4% of the
+time at +1 round**, so *"the code walks it away next round"* is **false in play.** The cause
+is **priority ordering, not absence.** **This reverses the earlier read that "the heal exists,
+only presence is missing" — it was exactly backwards.** It is **removal-shaped**, the only
+shape that has ever worked on this line, **and unpriceable until the pool is fixed.**
+
+**Why I believe the zeros:** the builder's agent **suspected its own decoder before believing
+0/500 deaths** and proved `removeEntity` live on the same files — **4,054 removals, the enemy
+losing 61.2% of its own sentinels.** That is the corrupt-the-input standard applied to a null,
+which is the case where it is easiest to skip and most necessary.
+
+**My remaining agent: the stalled-stack cut.** Note it is a LADDER-corpus cut, so this
+finding does not touch it — **but its result will be a ladder result, and if it motivates a
+plank, that plank cannot be arena-tested either if it is routing/repair shaped.** Stating that
+now rather than discovering it after.
