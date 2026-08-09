@@ -138,10 +138,20 @@ def ship_cadence():
             ships += 1
         prev = r[3]
 
-    out = subprocess.run(
-        ["git", "log", f"--since={CHURN_HOURS}.hours", "--pretty=format:%ad", "--date=format:%H"],
-        capture_output=True, text=True, cwd=ROOT).stdout.split()
-    active_hours = max(len(set(out)), 1)
+    # `hours` is overridable for the same reason `elo` is: without it a test of
+    # this check is still half-live, and the assertion silently becomes "did the
+    # team commit much today". That is precisely how the sibling test rotted —
+    # it asserted rate > 0.5 against the LIVE tape, passed at 11 activations/20h
+    # = 0.55, and failed 16 minutes later at 10/20 = 0.50 when one aged out of
+    # the window. The instrument was correct at both readings (it trips at
+    # < 0.5, so 0.50 is fine); only the test was wrong.
+    if _OVERRIDE.get("hours"):
+        active_hours = _OVERRIDE["hours"]
+    else:
+        out = subprocess.run(
+            ["git", "log", f"--since={CHURN_HOURS}.hours", "--pretty=format:%ad", "--date=format:%H"],
+            capture_output=True, text=True, cwd=ROOT).stdout.split()
+        active_hours = max(len(set(out)), 1)
     rate = ships / active_hours
     return rate, f"{ships} activations in the last {CHURN_HOURS}h over ~{active_hours} active hours"
 

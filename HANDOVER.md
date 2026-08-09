@@ -40,23 +40,63 @@
 ##     OPTIMISTIC (~2x), not merely noisy. The ladder is the real read.
 
 ## ===== WATCH THE SHIP =====
-##   Rating at activation **1577.5 @ #30**. The slot-swap rule is the stop-loss:
-##   arms at >=8 matches, net <= -21 frees the slot. Monitors (elo_logger,
-##   match_watcher, opp_watcher, replay_archiver, keeper) are alive and survive
-##   session resets. **If it bleeds, roll to v101 — that is Eir, unchanged.**
+##   **ACTIVATION BASELINE IS 1567.44, NOT 1577.5** (corrected s26, D12). 1577.5
+##   is the rating before **v101's LAST game** — the platform's per-match
+##   `teamAVersion` says the 4-1 Kings College loss (-10.08) was v101's, created
+##   **18:32:43.700Z, 4m41s before v102 was uploaded at 18:37:25.097Z** (the
+##   load-bearing clock is createdAt vs uploadedAt; that match COMPLETED 18:37:47Z,
+##   22s AFTER the upload, which is exactly why completedAt is the wrong clock).
+##   Independently confirmed by research from `corpus/ladder_games.tsv` `ourbef`.
+##   **The tape row tagged v102 is not the first v102 MATCH.**
+##
+##   The slot rule is the stop-loss: arms at >=8 matches, **net5 <= -21 frees the
+##   slot**. It is now ONE importable statement in **`tools/slot_rule.py`** —
+##   `.venv/bin/python tools/slot_rule.py` prints the live verdict in one line.
+##   **`slot_free` is a permission and a WAKE, never an n=8 evaluation of the bot.**
+##   **If it bleeds, roll to v101 — that is Eir, unchanged.**
+##   (Purpose reframed by Magnus s26: x3r0 is not actively building, so the rule
+##   is purely our own stop-loss now, not a slot-share. **Nothing mechanical
+##   changed** — threshold, arming and wake semantics all stand.)
 
-## ===== THE TRAJECTORY READ — THE ONE OPEN ITEM =====
-##   At wrap: **1594.2 @ 579 matches, rank 28/116, last-10 7W-3L**, every game
-##   core-decided. Activation baseline **1577.5**, so **net +16.5 over 9
-##   matches**.
-##   **STOP-LOSS ALREADY SAYS CLEARED:** `slot_sprt --check 17 9` -> llr **+7.246**
-##   vs ±1.735. That is the sequential test TERMINATING on OK, not merely
-##   "not yet bleeding". It is 9 matches; read it again at ~20.
-##   `tools/monitors/ship_watch.py` is ARMED and detached (10-min cadence). It
-##   appends every evaluation to `corpus/ship_watch.log` and writes
-##   **`corpus/SHIP_ALERT`** only on a BLEEDING verdict, clearing it on recovery.
+## ===== THE TRAJECTORY READ — DONE AT k=11, AND IT IS NOT THE HAPPY NUMBER =====
+##   **2026-08-09 22:3x CEST: 1578.0 @ 581 matches, rank 29/116, last-10 5W-5L.**
+##   Net vs the corrected baseline **+10.6 over 11 matches** — BUT the rolling
+##   last-5 is **-19.0** against a **-21** threshold, armed. **Two points from
+##   freeing the slot.** Peak was 1599.5 six matches ago.
+##   **QUOTE BOTH NUMBERS OR NEITHER.** Net-since-activation is up; the last five
+##   are down. Reporting only the first is the C1b oversell again.
+##   Research's exploratory read (s26, NOT pre-registered, n=10): first five
+##   matches 5-0, last five 1-4, Fisher p=0.0476, and mean opponent rating went
+##   *down* 7.5 between halves so matchmaking does not explain it. **Regression
+##   to the mean is the leading explanation and they said so themselves** — the
+##   1599.5 peak that net5 measures against was built BY the 5-0 run.
+##   **This is not evidence v102 is bad and must not be fed into the stop-loss.**
+##
+##   `tools/monitors/ship_watch.py` is ARMED, detached (PPID 1, 10-min cadence),
+##   **re-armed s26 with the corrected baseline**. It appends every evaluation to
+##   `corpus/ship_watch.log` and writes **`corpus/SHIP_ALERT`** when the RULE
+##   frees the slot, clearing it on recovery.
 ##   **FIRST THING A SUCCESSOR SHOULD DO: `cat corpus/SHIP_ALERT` (absent = fine)
-##   then `tail corpus/ship_watch.log`.**
+##   then `tail corpus/ship_watch.log`.** That line is only trustworthy as of
+##   s26 — see the next block for why it was a lie before.
+
+## ===== THE ALARM WAS DECORATIVE UNTIL s26 — READ THIS BEFORE TRUSTING IT =====
+##   `ship_watch` shipped with the SPRT's constants imported and its
+##   SEGMENTATION hand-rolled: one (net,k) from activation to now, **no
+##   restart-on-OK**. Once it accepted OK it accepted OK forever. Measured:
+##   **v102 could have bled 1584 -> 1384 and every evaluation would have logged
+##   CLEARED.** Meanwhile `elo_logger`'s correct -21 wake is a **`print` to the
+##   stdout of a dead session** (its arming loop has no redirect). So the durable
+##   alarm could not fire and the firing rule was not durable.
+##   FIXED: `tools/slot_rule.py` (single statement of the rule) + ship_watch
+##   rewritten to use it + `slot_sprt.run_sprt` for the advisory.
+##   **`ship_watch.py --selftest` is mutation-tested against 5 mutations**
+##   (no-restart, dead threshold, ARM_AFTER=0, WINDOW 5->50, WINDOW->1) — all
+##   five make it fail. `tests/test_instruments.py` asserts ship_watch and
+##   elo_logger alarm on the SAME series in BOTH directions, so they cannot
+##   silently diverge. **Run the selftest after any edit to either.**
+##   **A wake path is verified when its alarm has been SHOWN ABLE TO FIRE, not
+##   when its process appears in `ps`** (side lane, s26 — committed as standing).
 
 ## ===== WAKE PATH — STATED PLAINLY, INCLUDING WHAT IS NOT WATCHED =====
 ##   **SURVIVES this wrap (detached, PPID 1):** elo_logger, match_watcher,
@@ -71,7 +111,19 @@
 ##   the rollback is one command (`fcode submission activate 101`).
 
 ## ===== QUEUE =====
-## 1. **Watch v102 on the ladder.** First real field read the Loki line has had.
+## 0. **v102 IS TWO POINTS FROM THE STOP-LOSS** (net5 -19.0 vs -21, armed). The
+##    alarm is now real and detached; `cat corpus/SHIP_ALERT` first. On SLOT FREE
+##    the call is roll-to-v101 or hold, and it is Magnus's or the builder's —
+##    the rule permits a swap, it does not order one.
+## 1. **`meta_join.tsv` NEVER REFRESHES ON SYNC** (research, s26). It is the only
+##    corpus surface carrying OPPONENT versions (6,324 rows, both sides 100%
+##    populated) and it is built ONLY by running `meta_attrib.py` by hand — it
+##    stops at 15:33Z and does not reach the v102 era. `ladder_games.tsv`/
+##    `join.tsv` are live but their `oppver` is universally `None`. **So no
+##    surface gives an opponent version for a current-era game.** Cost, concrete:
+##    we played Powerpuff Girls twice on v102 80 minutes apart (4-1 then 1-4) and
+##    **cannot tell whether they shipped between them.** `tools/` is the builder's
+##    lane; wiring meta_attrib into sync is the fix.
 ## 2. **Per-opponent gates, not pooled win rate.** Pooling hides everything:
 ##    every >=1750 team kills us at 0-12% while the 1660-1710 band runs 22-38%.
 ## 3. **LOKI-7 vs LOKI-8 head to head** — never run; the ship picked the

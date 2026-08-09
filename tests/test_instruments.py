@@ -185,13 +185,53 @@ class TestAuditTriggerPredicate(unittest.TestCase):
             self.mod.CHURN_HOURS = orig
 
     def test_does_not_fire_on_a_normal_shipping_day(self):
-        """Regression: the trigger summoned an audit session by reporting on itself."""
-        rate, _ = self.mod.ship_cadence()
-        self.assertGreater(
-            rate, 0.5,
-            "ship cadence trips on a tape with 19 activations in 24h. The check "
-            "is miscalibrated or blind again.",
+        """Regression: the trigger summoned an audit session by reporting on itself.
+
+        REWRITTEN 2026-08-09 s26. The original asserted `rate > 0.5` against the
+        LIVE tape. It passed at boot (11 activations / ~20 active hours = 0.55)
+        and failed 16 minutes later at 10/20 = 0.50, because an activation aged
+        out of the 24h window. Nothing was broken: the check trips at `< 0.5`,
+        so 0.50 reads `ok` — the TEST was stricter than the instrument it
+        guarded, and it was asserting a fact about how much we shipped today
+        rather than about the calibration of the check.
+
+        A test whose truth changes with the wall clock is an alarm on the team's
+        activity wearing a unit test's clothes. Both directions now run on
+        fixtures, and both are asserted, so it cannot pass vacuously.
+        """
+        def rate_for(activations, hours):
+            rows, tag = [], "v1"
+            for i in range(activations + 1):
+                rows.append([f"2026-08-09T{10 + i // 6:02d}:{(i % 6) * 10:02d}",
+                             "1500", str(i), tag])
+                tag = f"v{i + 2}"          # every row is a new activation
+            self.mod._OVERRIDE.clear()
+            self.mod._OVERRIDE.update({"elo": rows, "hours": hours})
+            try:
+                return self.mod.ship_cadence()[0]
+            finally:
+                self.mod._OVERRIDE.clear()
+
+        normal = rate_for(activations=12, hours=20)      # 0.60/hr
+        self.assertGreaterEqual(
+            normal, 0.5,
+            "a 12-activation, 20-hour day reads as a cadence STALL. The check "
+            "is miscalibrated: it would summon an audit on a normal day.",
         )
+        stalled = rate_for(activations=2, hours=20)       # 0.10/hr
+        self.assertLess(
+            stalled, 0.5,
+            "a 2-activation, 20-hour day does NOT trip the cadence check — the "
+            "alarm cannot fire, so its silence means nothing.",
+        )
+
+    def test_ship_cadence_reads_the_live_tape_without_raising(self):
+        """The live coupling that IS worth asserting: the real tape still parses
+        and yields a number. What that number IS depends on the day, and is the
+        instrument's business, not this test's."""
+        rate, detail = self.mod.ship_cadence()
+        self.assertGreaterEqual(rate, 0.0)
+        self.assertIn("activation", detail)
 
 
 class TestArenaCeilingCoupling(unittest.TestCase):
@@ -224,3 +264,134 @@ class TestArenaCeilingCoupling(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
+    """The stop-loss. Two implementations of one rule existed (2026-08-09,
+    s26): `elo_logger` had it inline and correct, `ship_watch` had something
+    else and durable. `tools/slot_rule.py` is now the single statement; these
+    tests exist so the two can never silently diverge again.
+
+    NON-VACUITY IS THE POINT. A test that only asserts "both silent" passes
+    when both are broken. Every case here asserts the ALARM STATE in BOTH
+    directions on the SAME series."""
+
+    import importlib as _il
+    slot_rule = _il.import_module("slot_rule")
+    sys.path.insert(0, str(ROOT / "tools" / "monitors"))
+    ship_watch = _il.import_module("ship_watch")
+    elo_logger = _il.import_module("elo_logger")
+
+    HDR = "ts\trating\tmatches\tversion\trank\n"
+
+    def _tape(self, rows, tag="v900"):
+        import tempfile
+        fh = tempfile.NamedTemporaryFile("w", suffix=".tsv", delete=False)
+        fh.write(self.HDR)
+        for i, (r, m) in enumerate(rows):
+            fh.write(f"2026-01-01T00:{i:02d}\t{r}\t{m}\t{tag}\trank #1\n")
+        fh.close()
+        return fh.name, rows[-1][0], rows[-1][1], tag
+
+    def _elo_logger_says_slot_free(self, tape, rating, matches, tag):
+        """Drive elo_logger's INLINE rule over the same tape and report whether
+        it announces SLOT FREE. Uses its real code path, not a reimplementation
+        — reimplementing it here would recreate the bug this test guards."""
+        import io, json, tempfile, contextlib, os
+        el = self.elo_logger
+        status = {"rating": {"rating": rating, "matches_played": matches},
+                  "rank": {"rank": 1},
+                  "active_submission": {"version": int(tag.lstrip("v")), "name": "t"}}
+        payload = json.dumps(status) + "---SPLIT---" + json.dumps(
+            [{"version": int(tag.lstrip("v")), "name": "t"}])
+        state = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False)
+        state.write("{}")
+        state.close()
+        old_hist, old_state, old_stdin = el.HIST, el.STATE, sys.stdin
+        buf = io.StringIO()
+        try:
+            el.HIST, el.STATE, sys.stdin = tape, state.name, io.StringIO(payload)
+            with contextlib.redirect_stdout(buf):
+                el.main()
+        finally:
+            el.HIST, el.STATE, sys.stdin = old_hist, old_state, old_stdin
+            os.unlink(state.name)
+        out = buf.getvalue()
+        # elo_logger APPENDS a row to the tape it is given; that is fine, the
+        # tape is a throwaway. We only read its announcement.
+        return "SLOT FREE" in out
+
+    def _both(self, rows, tag="v900"):
+        tape, rating, matches, tag = self._tape(rows, tag)
+        st = self.slot_rule.evaluate(tape)
+        _, _, _, _, alert = self.ship_watch.assess(tape)
+        return st, (alert is not None and "FREED THE SLOT" in (alert or "")), \
+            self._elo_logger_says_slot_free(tape, rating, matches, tag)
+
+    def test_a_bleeding_holder_alarms_in_BOTH_implementations(self):
+        """The non-vacuous direction: both MUST fire on the same series."""
+        rows = [(1500, 100 + i) for i in range(10)] + \
+               [(1500 - 8 * (i + 1), 110 + i) for i in range(5)]   # net5 -40
+        st, ship, elo = self._both(rows)
+        self.assertEqual(st.net5, -40)
+        self.assertTrue(st.slot_free, "slot_rule failed to free the slot at net5 -40")
+        self.assertTrue(ship, "ship_watch raised NO alert on a -40 window")
+        self.assertTrue(elo, "elo_logger announced NO slot-free on a -40 window")
+
+    def test_a_healthy_holder_alarms_in_NEITHER(self):
+        rows = [(1500 + 3 * i, 100 + i) for i in range(15)]
+        st, ship, elo = self._both(rows)
+        self.assertFalse(st.slot_free)
+        self.assertFalse(ship, "ship_watch cried wolf on a rising holder")
+        self.assertFalse(elo, "elo_logger cried wolf on a rising holder")
+
+    def test_the_two_agree_across_the_threshold_in_both_directions(self):
+        """Walk the window from healthy to bleeding. The two implementations
+        must flip on the SAME step — and the sweep must actually contain a
+        flip, or it proves nothing."""
+        seen = set()
+        for drop in (0, 2, 4, 5, 6, 8, 10):
+            rows = [(1500, 100 + i) for i in range(10)] + \
+                   [(1500 - drop * (i + 1), 110 + i) for i in range(5)]
+            st, ship, elo = self._both(rows)
+            self.assertEqual(ship, st.slot_free, f"ship_watch disagrees at drop={drop}")
+            self.assertEqual(elo, st.slot_free, f"elo_logger disagrees at drop={drop}")
+            seen.add(st.slot_free)
+        self.assertEqual(seen, {True, False},
+                         "the sweep never crossed the threshold — vacuous")
+
+    def test_unarmed_holder_cannot_free_the_slot_in_either(self):
+        rows = [(1500 - 100 * i, 100 + i) for i in range(7)]     # k=6, catastrophic
+        st, ship, elo = self._both(rows)
+        self.assertFalse(st.armed)
+        self.assertFalse(st.slot_free)
+        self.assertFalse(ship)
+        self.assertFalse(elo)
+
+    def test_ship_watch_selftest_passes(self):
+        """The selftest is itself an instrument; if it stops passing, the alarm
+        is unverified. Mutation-tested 2026-08-09 against 5 mutations
+        (no-restart, dead threshold, ARM_AFTER=0, WINDOW 5->50, WINDOW->1);
+        all five made it fail."""
+        import io, contextlib
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            rc = self.ship_watch.selftest()
+        self.assertEqual(rc, 0, "ship_watch --selftest FAILED:\n" + buf.getvalue())
+
+    def test_restart_on_OK_is_live_in_ship_watch(self):
+        """D13's exact regression: cleared early, then bleeds. A no-restart
+        design reads the CUMULATIVE llr as OK and never alarms."""
+        import slot_sprt
+        rows = [(1500 + 12 * i, 100 + i) for i in range(6)]
+        r, m = rows[-1]
+        rows += [(r - 8 * (i + 1), m + 1 + i) for i in range(10)]
+        tape, *_ = self._tape(rows)
+        _, verdict, _, _, _ = self.ship_watch.assess(tape)
+        cumulative = slot_sprt.llr(rows[-1][0] - rows[0][0],
+                                   rows[-1][1] - rows[0][1])
+        self.assertGreaterEqual(cumulative, slot_sprt.bound(),
+                                "fixture does not fool a no-restart design; "
+                                "this test would pass for the wrong reason")
+        self.assertEqual(verdict, "BLEED",
+                         "ship_watch missed a post-clear bleed — restart-on-OK is gone")

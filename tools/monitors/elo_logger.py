@@ -158,4 +158,10 @@ def main() -> None:
                    "swappable": swappable, "sprt": sprt}, f)
 
 
-main()
+# Guarded 2026-08-09 (s26). This was a bare `main()`, so IMPORTING the module
+# ran it and blocked forever on `sys.stdin.read()` — which meant the governing
+# slot rule living in here could not be tested by anything that imports it, and
+# it never was. The arming loop invokes this file as a script, so behaviour
+# there is unchanged; see tests/test_instruments.py for what the guard bought.
+if __name__ == "__main__":
+    main()
