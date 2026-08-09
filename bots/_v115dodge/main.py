@@ -4704,7 +4704,24 @@ class Player:
         Built from the engine's own `get_attackable_tiles_from`, not from
         re-derived geometry -- the two weapons differ (a gunner's line stops
         on obstacles, a sentinel's does not) and duplicating that here is how
-        the danger set silently stops matching the engine.  Launchers are
+        the danger set silently stops matching the engine.
+
+        WHICH RULE THIS ACTUALLY IS, because it is easy to get wrong and one
+        cross-lane doc already did: `get_attackable_tiles_from` returns the
+        RAW pattern, and its own API docstring says it "includes the full
+        firing line within range, EVEN BEHIND WALLS".  So this is the **RAY**
+        rule (facing, blocking ignored), NOT the exact LINE rule.  Measured
+        over 4,197,492 US builder-rounds: RAY forbids 5.93% of builder-time
+        and precedes 91.1% of deaths; exact LINE forbids 4.17% and precedes
+        89.4%; a RADIUS rule that ignores facing forbids **34.98%** for 99.3%.
+        We are on the middle option and slightly conservative -- 1.76pp more
+        blocked time than LINE buys 1.7pp more coverage.  The disc is the trap
+        (8x the blocked map-time for 10pp), and it is the trap precisely
+        because BC2020's net gun was omnidirectional and ours are facing
+        turrets.  Moving to exact LINE means one `can_fire_from` call per tile
+        instead of one call per turret; not obviously worth it.
+
+        Launchers are
         excluded on the rule, not on measurement: a throw deals no damage, and
         0 of 20,929 corpus builder deaths happened on a round the victim was
         thrown.
