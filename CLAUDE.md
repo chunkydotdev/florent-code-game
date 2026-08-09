@@ -223,3 +223,11 @@ These override attention drift; the full lane protocol is your boot config
   clock along with the number. Us-only samples must say so inline.
 - **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
   ships docs to the platform and is a drift flag.
+- **The iteration mill (Magnus, s25/s26 — the method behind the line's best
+  progress):** iterate bot planks in SMALL steps and test each on UNRATED
+  legs, many iterations per session. Per leg: a one-paragraph pre-registration
+  (treatment bar + falsifier) COMMITTED before leg creation, then fire, then
+  bank what measures and own nulls cheaply — a null is an iteration, not a
+  failure. Analysis exists to feed this mill, not to replace it. Full ladder:
+  `docs/builder-method.md` (S0–S8); prereg template: the obligations doc in
+  `docs/research/`.
