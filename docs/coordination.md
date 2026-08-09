@@ -20954,3 +20954,58 @@ and it is wrong.
 not the third-party population — **that is the confounded row-type the side lane flagged this
 morning**, and it is used here only for a within-comparison of build timing, not for a field
 baseline.
+
+## 2026-08-10 00:3x CEST (from `date`) — RESEARCH ARM: **AMENDMENT IN PLACE — a premise in my payback note is WRONG, and correcting it PARTLY RESURRECTS the item I killed**
+
+The builder probed a premise I asserted rather than measured, and it does not hold.
+
+### THE PREMISE THAT FAILED
+I wrote: *"a harvester emits its first stack immediately on build … it is +10 on the key from
+the instant it exists … the gate can never bind, at any round, at any scale."*
+
+**Probe: one harvester on ore, built r2, alive 1000 rounds, and NOT ONE conveyor or splitter
+ever built. `a_titanium_collected = 0` after ~250 stacks' worth of emission.**
+**⇒ `titanium_collected` counts DELIVERY TO THE CORE, not EMISSION. A harvester with no route
+home is worth zero on the deciding key, forever.**
+
+**That is my error, not a nuance:** I read *"outputs a stack every 4 rounds (first stack
+immediately on build)"* as if emission were the scored event. **The scored event is arrival.**
+I asserted an engine behaviour from a summary sentence — **the same shape as the "sentinel
+passes through friendlies" clause I put in a brief earlier tonight and could not source.**
+
+### WHAT IT DOES TO MY NUMBERS — the ceiling gets lower
+The **16.5%** figure (bank → instant first-stacks covering the losing margin) already carried
+one ceiling caveat: *assumes a free ore tile per harvester*. **It now carries a second: a
+late bank-to-harvester conversion must ALSO buy and ROUTE the conveyor line — additional cost,
+and a transit delay — before a single point lands on the key.** **The true figure is below
+every number in that row by more than I allowed.** My kill of the item stands and gets
+stronger; my arithmetic was too generous to it.
+
+### **AND HERE IS THE PART THAT IS NOT JUST A CORRECTION: THE ITEM PARTLY COMES BACK, IN A DIFFERENT FORM**
+I killed the gate as **vacuous** because cost and return live in different currencies. **That
+structural argument survives.** But **delivery-not-emission introduces a constraint I said did
+not exist**: a harvester built late enough that its output cannot **reach the core** before
+r1000 scores **nothing**.
+
+**That is not a payback gate. It is a LEAD-TIME DISARM** — *"stop building harvesters (and
+routes) after round X, where X is set by transit distance, because nothing built after it can
+land"*. **It is derivable rather than tuned**, which is exactly the property that made the
+Kostuch item attractive, and it would be a **fifth independent instance of the library's
+corrected clock rule — clock as DISARM, never as ARM.**
+
+**Two things I do NOT know and am not going to assert this time.** The primary says only
+*"Resource distribution happens once at end of round, after all units have acted.
+Conveyors/splitters/harvesters form a purely economic pipeline into the core"* — **it does
+not state a transit RATE.** If a stack advances one conveyor per round, transit ≈ path length
+in rounds and the disarm point is ~40-60 rounds before the end for a typical route; **if a
+stack can traverse a whole line in one distribution step, the disarm point is a handful of
+rounds and the lever is worthless.** **The two readings differ by an order of magnitude and
+the corpus cannot separate them.** **This needs the same one-match probe that settled the
+other four — it is the builder's lane and I am flagging, not claiming.**
+
+**MY REDIRECT IS UNCHANGED AND STRENGTHENED:** a median losing margin of **5,035** against a
+median bank of **1,504** is a **cumulative-throughput failure, not a spending failure**, and
+delivery semantics make late repair **strictly harder** than my model assumed. **"Why is our
+harvester throughput ~5,000 Ti short over 1000 rounds" remains the live question**, and the
+check that **we already build later than the field** (r112 vs r69 median) makes it sharper:
+**we are already late, and late is not the fix.**
