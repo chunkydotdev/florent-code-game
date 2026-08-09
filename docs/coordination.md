@@ -9605,3 +9605,54 @@ single LOKI-0 leg could not support:
 **IF THE LATCH LEG WINS, IT IS SHIPPABLE INDEPENDENTLY OF THE WHOLE LOKI
 PROGRAM** — it repairs the live bot's inability to replace a dead launcher, and
 it is a strictly smaller change than any raid build.
+
+### 2026-08-09 07:12 CEST (from `date`) — builder arm: **THE LOKI SHIP GATE, PRE-REGISTERED BEFORE ANY LOKI RESULT EXISTS — and a limit on the zero-Elo loop that we have not previously stated**
+
+**THE FINDING FIRST, because it changes what the loop is FOR.** The zero-Elo
+loop's budget is bounded by the ladder grid: one safe gap is ~4:13, the rate
+limit is 5 unrated matches / 10 min, and Thor's measured throughput was
+**2 matches x 5 games = 10 games per gap**. Against the fixture baseline
+(v80 0-16 · v87 1-15 · Thor 1-9, i.e. **p0 ~ 6.25%**), that budget buys:
+```
+ONE GAP, n=10        null alpha      power vs a truly-25% bot
+  >= 2 wins            0.126               0.76
+  >= 3 wins            0.021               0.47
+  >= 4 wins            0.002               0.22
+n=40 (~4 gaps)
+  >= 6 wins            0.037               0.96
+```
+**THE ZERO-ELO LOOP IS A REFUTATION INSTRUMENT, NOT A CONFIRMATION ONE.** At
+n=10 nothing clears a bot: the bar that is safe against the null (>=3, alpha
+2.1%) has **47% power** — a coin flip on a genuinely good bot. Confirmation
+needs n~40, which needs ~4 gaps, which means **the variant holds the slot across
+~4 rated matches.** So: **refutation is free; confirmation costs about four
+rated matches.** That is a real price and it should be paid deliberately, not
+discovered. Thor was *validly* refuted at n=10 — that direction works. Nothing
+has ever been *confirmed* by this loop, and I do not want a successor believing
+it can be.
+
+**THE GATE, and note the PRIMARY is a mechanism metric, not a win rate**
+(s21 delta #3: pre-register the metric only the change can move — a whole-bot
+metric on a near-baseline bot cannot attribute):
+
+- **PRIMARY (mechanism).** From free `match info` metadata: end round + win
+  condition + winner give the resolution round of every game directly. Compute
+  **our core-kills landing in r200-300 against theirs, among games still alive
+  at r200.** This IS the pre-registered objective (raise that ratio above 1.0
+  from 0.52) and it is measurable without a single replay download.
+- **SECONDARY.** Win count vs the fixture three.
+- **STAGE 1 (free, one gap, n=10): REFUTE-ONLY.** Loki is **REFUTED and rolled
+  back** if it produces **zero core-kills after r200 across the leg** — the
+  Thor-shaped failure, and the thing this build exists to prevent. A pass at
+  stage 1 is **NOT a pass**; it is only "not yet refuted".
+- **STAGE 2 (costs ~4 rated matches): CONFIRM.** Only entered if stage 1 does
+  not refute. The control is the **existing slot-swap rule** — <=0 net Elo after
+  3 matches frees the slot — which is exactly a bounded-downside confirmation
+  instrument and needs no new machinery.
+- **HARD FAIL at any stage:** any uncaught-exception crash (permanently destroys
+  that unit), or a local arena LOSS against the incumbent.
+
+**WHY NOT JUST A BIGGER FREE LEG:** because `unrated` plays the ACTIVE
+submission, so more unrated games = more wall-clock live = more rated exposure.
+The free budget and the slot exposure are the same resource. There is no
+configuration in which the loop is both free and confirmatory.
