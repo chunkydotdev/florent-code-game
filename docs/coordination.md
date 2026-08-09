@@ -15341,3 +15341,61 @@ so **no local battery in this project's history produced a decodable replay** an
 every mechanism question has had to go to the ladder corpus. `tools/mech_battery.py`
 (new) keeps the replay, decodes the mechanism, deletes the bytes, and prints
 mechanism **before** win rate on purpose.
+
+## 2026-08-09 12:51 CEST (from `date`) — RESEARCH ARM: **TACTICS SWEEP 9 — and it answers this session's own refutation**
+
+**Landed:** 10 files in `docs/research/tactics/` + INDEX row 5b. Sweep = topic 5
+**re-aimed** at the in-base-plant surprise (both sides: how leagues plant in enemy
+territory, and how they deny/remove).
+
+**THE RESULT THAT MATTERS.** I killed the per-map/seat killer-tile table this morning
+(−3.9pp at k=8, negative at every k). **Sweep 9 found, on an independent evidence
+path, that the BC2020 WINNER solved the same problem with a RUNTIME COVERAGE FIELD
+rather than a table** — a per-unit grid updated ±1 as turrets are reported/destroyed,
+routed on as a **binary obstacle**. **I re-fetched the PDF and grepped it myself**
+(curl → pdftotext → whitespace-flatten → grep): both quotes verbatim, plus the
+blind-spot line. **Not relayed on the agent's word.**
+
+**It is the builder's, specifically, because half of it already exists in our bot.**
+`_v100hf/main.py:4525` `_bfs_direction` blocks **the turret cell** with no range or
+line-of-fire term; BC2020 blocked **the covered cells**. Strictly larger set,
+maintained incrementally (CPU-cheap — relevant given our 12,967µs worst turn), and
+**needs no tile table, so this session's refutation does not touch it.** We also have
+an edge BC2020 lacked: builder vision r²=20 beats a gunner's r²=13 reach, so we can
+see the gun from outside its envelope; their drones had literal blind spots.
+
+**BC2024 gives the siting analogue** — score placements from **live** enemy density,
+the one form of "defend where attacks come from" that survives the enumerability
+refutation because it is computed at runtime, not fitted offline.
+
+**Two negatives that price the alternatives.** (a) **One escorting healer cancels two
+builder-attackers or a whole sentinel** — denial outprices removal, four leagues
+independently. **This corroborates the tail finding from the other side**: a supported
+plant is not worth shooting, which is why far-supported nests survive at 62.9%.
+(b) **Premortem on our own launcher doctrine**: BC2020's `confused` built essentially
+our interception plan and lost to a build order — the raider planted its turret
+*before* arriving, and `can_launch` is adjacency-gated, so our launcher must enter
+the kill zone to work.
+
+**A CORRECTION TO THE LIBRARY.** *"Attack the builder, not the structure"* is **NOT
+sourced doctrine**. Liquipedia calls a lone worker sent after the probe *responding
+too lightly*; Jay Scott says chasing it *"will be hard to catch"*. **Grepped — we do
+not currently assert it.** Recorded in INDEX so it cannot enter by repetition.
+
+**HONESTY NOTES, passed on rather than buried.** Terminal's official rules page is
+unretrievable (302 live and in every Wayback capture; `docs.c1games.com` DNS-dead) —
+every Terminal *rules* claim rests on Correlation One's starter-kit source and engine
+enforcement is **inference**; both files are labelled. **A WebFetch summariser
+fabricated a Screeps tower falloff formula absent from the raw page** — caught, unused,
+and this is the **second** observation of that failure mode in this library, so it is
+now recorded as a pattern. Non-coverage stated: Halite, Lux, CodinGame, AI Challenge
+were not searched for this topic.
+
+**MY SUGGESTION, in the builder's lane and not a verdict:** the coverage field is the
+only candidate today that survives the Cut A refutation, costs no titanium, is
+CPU-cheap, has a winner's implementation behind it, **and is strictly larger than
+DODGE** (which caps at 5.9% because it only fixes transit). **Measure it on early-game
+builder attrition per the pre-stated read, not on pooled home deaths.**
+
+**IN-FLIGHT:** worker-allocation sweep; nest-precursor question (the latter decides
+whether a coverage field can be anticipatory or is stuck inside the 12-round window).
