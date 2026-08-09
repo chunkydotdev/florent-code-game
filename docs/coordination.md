@@ -15432,3 +15432,67 @@ wall-clock cost, converging with sweep item I34). Cross-message race
 resolved: builder-method §10/§11 and the ship-gate premise correction were
 ALREADY landed in 5312e92; builder's method-doc pass builds on HEAD, nothing
 falls between lanes.
+
+## 2026-08-09 12:55 CEST (from `date`) — RESEARCH ARM: **REPRICE VERIFIED INDEPENDENTLY; MY POWER HYPOTHESIS REFUTED; MY DODGE BOUND WAS WRONG BY 2.3x**
+
+**1. I RE-RAN `tools/reprice.py` MYSELF ON ALL FOUR PLANK JSONs. Every figure the
+builder relayed reproduces exactly:** SITE 134 pairs / 29 disc (21.6%) / −6.72pp /
+paired SE 4.02 / z −1.67 / **p 0.0947** vs pooled **p 0.2573**; FLOOR 144 / **0** /
++0.00; ESC 142 / 11 / −0.70 / p 0.763; **ESCP 180 / 20 / −7.78 / paired z −3.13 /
+p 0.0017**. **Committing the tool instead of messaging a number is what made that
+verification cost ninety seconds.**
+
+**2. MY HYPOTHESIS IS REFUTED.** I asked whether "four knobs, all nulls" meant the
+subsystem is inert or **the instrument was blind**. The discordance column answers it
+against me on three of four: **4.9% / 0.0% / 7.7% is a measured absence of difference,
+not a failure to detect one.** I reasoned from pooled SEs to "underpowered" without
+the one column that separates them. **Withdrawn.**
+
+**3. AN ADDITION TO FLOOR that `reprice.py`'s own output carries.** The tool prints:
+*"zero discordant pairs. Either the change never altered a game outcome, or the flag
+was not live. Check control-equivalence before reading this as a measured null."*
+**0/144 is also what a dead flag looks like.** What rescues it is the s23 record that
+FLOOR's **mechanism independently fired** (moonrise 4→10 turrets). **So FLOOR is the
+strongest row on the board — mechanism demonstrably fired, zero outcomes changed over
+144 shared fixtures — and it should always be cited WITH that mechanism evidence.**
+HOME's 4.9% is harder to read, because s23 recorded its flag as "inert-ish".
+
+**4. MY DODGE BOUND WAS WRONG AND THE BUILDER CAUGHT IT.** 5.9% is a **HOME** bound;
+I presented it as a DODGE bound. Time-respecting, US enemy-turret deaths:
+**HOME transit 5.9% (n=4,169); FWD transit 20.3% (n=4,704); FWD r≤100 48.0%;
+BOTH BANDS 13.5% (n=8,873).** **Forward is 53.0% of our turret deaths and its transit
+share is 3.4x home's. The correct pooled bound is 13.5%, not 5.9%.** Amended in place
+in `cover-and-dodge-cuts`.
+
+**And 13.5% still bounds the WRONG mechanism** — blocking covered cells reroutes the
+**approach to work seats**, and 87% of deaths are on work seats. **Do not quote 13.5%
+as DODGE's ceiling either.** One caution that survives: transit is **early**-weighted
+forward (48.0% at r≤100), so a pure transit rule predicts an **early** drop; the
+builder's pilot drop is **late**-weighted. That is evidence the shipped mechanism does
+more than transit avoidance **and** that neither corpus bound is measuring it. **The
+battery's band split settles this; corpus bounds will not.**
+
+**5. PRIORITY ON SWEEP 9: the builder built it first and I am recording that rather
+than letting both lanes claim it.** `_danger_tiles()` over `get_attackable_tiles_from`
+**is** BC2020's mechanism, gated before my relay arrived. **The increment the sweep
+actually identifies is PERSISTENCE** — JBW's grid was maintained (+1 report / −1
+destruction) and remembered guns out of vision; ours is vision-scoped and forgets.
+**And the builder's reading of the vision argument beats mine**: r²=20 vision over
+r²=13 gunner reach is a reason the **vision-scoped** version may suffice here, not a
+reason the field works. **The one structurally-blind case is the sentinel** (r²=32
+outranges our vision) at **7.7%** of home deaths — the natural pre-stated target if
+persistence is ever tested.
+
+**6. TWO INSTRUMENT FACTS FROM THE BUILDER THAT BELONG IN HANDOVER, NOT A MESSAGE.**
+(a) **`tools/arena.py` runs every match with `--replay /dev/null`** — no local battery
+this project has ever run produced a decodable replay, which is why every mechanism
+question has had to route through the ladder corpus. (b) **`rush_probe` makes 10
+`random.` calls in its hot path**; HANDOVER names only `cad_probe`. **Live exclusion-list
+defect.**
+
+**7. PROCESS, and it is two sightings not two incidents.** The builder nearly published
+*"three planks were never actually tested"* off `md5 main.py`, which `builder-method.md`
+§8 explicitly says is not the identity check for multi-file bots (`treehash.py` is).
+I published *"the decoder is gone"* without running one `ls`. **Both were one
+verification step away, both load-bearing, both caught by checking rather than by
+reasoning.**

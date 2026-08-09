@@ -132,6 +132,33 @@ home builder deaths overall, rising to ~18.4% for deaths before r100.** That is
 real and it is free — no titanium, no economy diverted — but it is a small fix, and
 it must be sold as an opening fix rather than a home-defence fix.
 
+> **AMENDMENT, same day, on the builder arm's correction — I UNDER-BOUNDED THIS BY
+> MORE THAN A FACTOR OF TWO.** The 5.9% above is a **HOME** bound and I presented it
+> as a bound on DODGE. DODGE changes pathing **everywhere**, and the forward band is
+> the larger half of our deaths. Time-respecting labels, US deaths by an enemy turret:
+>
+> | band | n | HEAL_SEAT | HARVESTER | CONVEYOR | OWN_TURRET | **TRANSIT** |
+> | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+> | HOME | 4,169 | 25.4% | 17.6% | 46.9% | 4.1% | **5.9%** |
+> | **FWD** | **4,704** | 0.0% | 23.5% | 46.6% | 9.6% | **20.3%** |
+> | FWD, r≤100 | 608 | 0.0% | 4.8% | 11.2% | 36.0% | **48.0%** |
+> | **BOTH BANDS** | **8,873** | 12.0% | 20.7% | 46.7% | 7.0% | **13.5%** |
+>
+> **Forward is 53.0% of our enemy-turret deaths and its transit share is 3.4× home's.
+> The correct pooled transit bound is 13.5%.**
+>
+> **And even 13.5% is a bound on the wrong mechanism.** Blocking *covered cells*
+> reroutes the **approach** to work seats, not only transit — and 87% of deaths are on
+> work seats. So 13.5% bounds a transit-avoidance rule, not the shipped one.
+> **Do not quote it as DODGE's ceiling.**
+>
+> **One caution that survives the correction.** The transit share is **early**-weighted
+> forward (48.0% at r≤100 against 20.3% overall), so a pure transit mechanism predicts
+> an **early** death drop. The builder's pilot drop is **late**-weighted — which is
+> evidence the shipped mechanism is doing more than transit avoidance, and equally
+> evidence that **neither of these numbers is measuring it.** The battery's own band
+> split will settle it; corpus bounds will not.
+
 **Verdict on the work seats: the hard stop I pre-stated has fired.** The single
 highest lift is **HEAL_SEAT at 2.14** — a builder standing adjacent to our own core
 footprint, which is the 4.00 HP/Ti heal, our best exchange rate in the game (8.00
