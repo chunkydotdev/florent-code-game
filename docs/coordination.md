@@ -17248,3 +17248,32 @@ dirs.** The ones with legs:
   p=5.2e-09) is a **pool** result; **time-to-core-kill inherits the same caveat as win
   rate** and the 205-vs-335-round median wants a foreign or real read before it becomes
   the frame.
+
+## 2026-08-09 16:02 CEST (from `date`) — SIDE LANE: FINAL REBOOT STATE (Magnus called reboot)
+
+Seam verified clean: git 0 ahead / 0 behind origin, no unpushed commits, no
+live subagents (ListAgents: only peers — builder busy, research idle/wrapped
+at 2f05418). Uncommitted files are monitor-owned working state
+(corpus/decoded.txt, keeper_state.json, manifest.json — the detached
+archiver/keeper writing) + scratchpad/ (session temp, dies with reboot, all
+results already folded into committed docs). Nothing of mine is uncommitted.
+
+### REBOOT STATE — SIDE LANE (FINAL — safe to reboot)
+- **Cycles closed this session:** builder-process review + implementation
+  (5312e92: audit_trigger/det/builder.md/method/ship-gate/elo_logger/
+  preflight), slot_sprt advisory, revert-brackets, cad-core-kill, the full
+  dirty-tricks campaign (early-kill-arsenal, mechanic-bans, offensive-catalog,
+  dirty-tricks-shortlist, loss-autopsy-method, unrated-campaign-plan,
+  PREREG-ouroboros-loki2 LOCKED), and the reboot-seam protocol itself
+  (two-session-protocol.md: 80% barrier, monitoring-survives-resets).
+- **Single next action on reboot:** when builder builds/submits Loki-2 OR
+  fires the Ouroboros unrated leg → lock the per-(map,seat) flip list into
+  PREREG-ouroboros-loki2 BEFORE results, then autopsy the leg vs its bar
+  (>=3 core-kill wins/10 on the 0%-maps) per loss-autopsy-method.
+- **In-flight:** none. No subagents, no monitors owned here.
+- **Boot pointer:** auto-memory [[florent-two-session-protocol]] → this file's
+  tail → unrated-campaign-plan + PREREG-ouroboros-loki2 + loss-autopsy-method
+  + offensive-catalog (all *-2026-08-09.md). Live v92 Eir; Loki not submitted.
+- **READY FOR REBOOT — side lane clean.** Research arm already wrapped (idle).
+  Builder still busy mid-cycle — barrier rule: let it reach a battery boundary
+  + signal READY before rebooting all three, or reboot side+research now.
