@@ -14422,3 +14422,50 @@ forcing-function options (mandatory S5 tape fields; a tools/preflight.py spec �
 if adopted). Backlog it immediately applies to: ESCALATE r250 gate and SITE magnitude both
 need one unrated cycle each. Proposal per no-cross-writes: builder adopts/adapts; nothing
 of builder-method.md or ship-gate.md edited by this lane.
+
+### 2026-08-09 11:54 CEST (from `date`) — research arm: **TEST-PROCESS PROPOSAL REVIEWED — one endorsement, one framing fix, one LIVE interaction**
+
+Relayed to the builder with the directive's provenance stated: the third lane reports
+a **Magnus directive** (*"the builder keeps forgetting unrated and test games — we
+need a test process so we use all tools available to us"*). **I have not heard it
+from Magnus directly** and have labelled it as second-hand in the relay; **flagged to
+Magnus for confirmation.**
+
+**1. ENDORSED, and the case is stronger than the proposal knew.** I settled the pool
+question an hour earlier: **every plank battery today was self-play**, confirmed from
+the pool bots' own docstrings. That is not a caveat on the proposal — **it is the
+proposal's whole case.** The local arena cannot answer field questions *in principle*.
+**Unrated is the only field instrument short of the ladder**, and today upgrades that
+from a literature-borrowed caution to a **measured property of our own harness.**
+
+**2. FRAMING FIX — how a passed gate gets quoted.** Their §1 is right that unrated
+*"can refute, can never confirm"* (47% power at n=10). **But a build that PASSES S5
+will be quoted as evidence FOR it.** It is not: **at n=10 a pass is "not refuted"** —
+the same "no verdict = discard" distinction the interval rule already makes. **Record
+`S5_unrated: not-refuted (n=10)`, never `pass`.** The label is what survives the
+relay; that is today's lesson applied to tomorrow's instrument.
+
+**3. THE LIVE INTERACTION NOBODY RAISED.** Their §4 honestly states the residual
+risk: *"a blocked rollback leaves the variant live ~1 rated match."* Bounded in
+general — **but we are 5 matches into a 10-match recovery read on v91.**
+**One contaminated match is a 10% contamination of the only instrument deciding
+whether v90 goes back up, and it would be undetectable after the fact.**
+**Recommended: finish the recovery read, then open the unrated loop** — or pre-state
+that the read excludes any match the keeper attributes to a non-v91 submission, so
+contamination is **detectable rather than silent.** Two lines of pre-registration,
+costs nothing; discovering it afterwards costs the read.
+
+**4. BACKLOG RE-ORDER.** They list ESCALATE's r250 gate and SITE's re-pricing in
+parallel. **SITE is the higher-value unrated pass**: it re-prices the queue's largest
+number, the literature makes a *pre-stated directional prediction* (shrinks toward
+half, direction survives), and **a prediction that gets tested is worth more than a
+fresh measurement.** ESCALATE is a new measurement needing the besiegers;
+**SITE is a CALIBRATION of an instrument we will keep using. Calibrate first.**
+
+**5. FORCING FUNCTION — I'd take `tools/preflight.py` over tape fields**, on today's
+evidence: **the `NOISE_ON` error was written into the tape, relayed to me as a
+lesson, and repeated two hours later.** **A field in a row is a note. A tool that
+refuses is a control.**
+
+**IN-FLIGHT: nothing of mine.** No subagents, no CPU, no locks. Ladder **1543 @ 513,
+#33**, 5 of ~10 — which is what makes §3 time-sensitive.
