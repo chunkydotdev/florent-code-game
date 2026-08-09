@@ -12082,3 +12082,109 @@ to open nothing else.
 **IN-FLIGHT:** one Opus sweep on **wheel topic 9 (opening theory)** — sharpened by
 §3: since our opening is a constant, *"is it the right constant?"* is a real
 question. Nothing on the CPU.
+
+### 2026-08-09 10:03 CEST (from `date`) — builder arm: **PLANK "HOME" DOES NOT SHIP. It failed its pre-registered bar — and the mechanism check says flag 4 was INERT, which is a more useful answer than the win rate.**
+
+## 1. THE GATE, against the bar I posted before running it
+
+```
+300 games, 0 failures.  _v111off (control) vs _v111home (3 flags on)
+OVERALL   control  96/150 (64.0%)   plank  93/150 (62.0%)   -2.0pp
+seat A    control  49/ 75 (65.3%)   plank  45/ 75 (60.0%)   -5.3pp
+seat B    control  47/ 75 (62.7%)   plank  48/ 75 (64.0%)   +1.3pp
+worst map antler 6/10 -> 4/10       best map eider 7/10 -> 8/10
+```
+**My pre-stated WIN required the plank AHEAD overall. It is behind. IT DOES NOT
+SHIP.**
+
+**And I am not calling it "refuted" either, because that would oversell in the
+other direction.** −2.0pp is **3 games out of 150**, comfortably inside binomial
+noise (~±4pp at this n). **Eleven of fifteen maps moved by exactly 0.0pp.** The
+honest label is **a null that leans slightly negative**, and the C1b / compact-55.0
+tape is exactly about not dressing either sign up as a result.
+
+**Tracebacks attributed before the verdict, not after:** 39 across 300 games —
+**16 in the CONTROL (9 games) and 23 in the plank (10 games).** The control is
+byte-equivalent to live, so these are **pre-existing caught diagnostics, not
+something this plank introduced**, and they are not what produced −2.0pp.
+
+## 2. THE MECHANISM CHECK, WHICH IS THE ACTUAL FINDING
+
+Eleven maps at exactly 0.0pp is not what a live change looks like, so I checked
+whether flag 4 fires at all rather than accepting the null. **It mostly does
+not, and the code says why.**
+
+The magazine is `ammo_target = max(floor, min(cap, PRICE * weapons))` where the
+floor is **16 (24 under siege)**. So:
+```
+weapons   old (4x)          new (8x)          binds?
+   1      max(16, 4)  = 16  max(16, 8)  = 16  NO -- identical
+   2      max(16, 8)  = 16  max(16,16)  = 16  NO -- identical
+   3      max(16,12)  = 16  max(16,24)  = 24  yes
+   4      max(16,16)  = 16  max(16,32)  = 32  yes
+```
+**The flag is arithmetically inert below 3 live home guns, and below 4 under
+siege** (floor 24). From the corpus, our home gun mix is **3,324 home guns across
+1,225 files = ~2.7 built per game cumulative**, so the *live simultaneous* count
+is lower still. **The precondition for the flag to do anything is a gun count we
+do not have.**
+
+*(The r300+ ammo-conversion deltas in the replay econ — heart control 2,800 vs
+plank 88 — look dramatic and I am NOT reporting them as mechanism: those games
+have different lengths, so the comparison is confounded by game length and cannot
+be attributed. The early-band deltas, which are length-comparable, are small and
+mixed: antler +8, eider +35, heart −56.)*
+
+## 3. SO THE PRE-REGISTERED CONCLUSION NEEDS AMENDING, AND I AM AMENDING IT AGAINST MYSELF
+
+I pre-committed: *"if it still loses, the honest reading is that ammunition is not
+the binding constraint... that excuse is spent and I will not reach for it."*
+
+**I am not reaching for it. But the correct reading is narrower than the one I
+pre-wrote, and narrower is not the same as softer:** this leg did not test
+whether ammunition binds, because **the flag that was supposed to change
+ammunition did not change it in most games.** A null from an inert flag is not
+evidence about ammunition. **My pre-registration was wrong about what its own
+negative would mean** — I wrote the interpretation before checking that the
+change had a working range, which is the same error class as everything else
+today: **I specified the metric and not the flag's own precondition.**
+
+**What the leg DOES establish, and it is worth more:** the binding constraint in
+the home band is **the number of guns, not the price of their ammunition or the
+choice of what they shoot.** Flags 3 and 3b were live and moved nothing either —
+and that is the LOKI-3 chain a second time, in a new band: **targeting is
+downstream of a gun existing.**
+
+**This converges with research's independent census, which I did not have when I
+built this**: paired within game across 1,230 games, **turrets −3, and we lead
+the turret count in only 20.1% of games** (conveyors +13, we lead 71.7%). **Two
+instruments, built for different questions, both land on "we do not build guns."**
+
+## 4. WHAT I AM NOT DOING NEXT
+
+**I am not ablating the composite down.** `builder-method.md:96` says composite
+first, then ablate **only if it wins**. It did not win. Spending three more legs
+to find which inert flag was least inert is exactly the affordability trap that
+section exists to prevent.
+
+**`bots/_v111home` is kept on disk, unshipped, flags-off verified equivalent to
+live (12/12 exact across 6 maps x 2 seats).** If home gun count is ever raised,
+flag 4 becomes live for the first time and this plank should be re-gated **then**
+— it is a prerequisite, not a corpse.
+
+**LIVE REMAINS v90.** Ladder at this write: **1586 @ 502, rank #28**, +29 over 11
+rated matches since ship. Nothing has been submitted this session.
+
+*Process delta, appended with the verdict: **I pre-registered a threshold, a
+confound, and an instrument limit — and still missed that the flag had a dead
+zone covering most of its intended population.** Pre-registration disciplines the
+READ; it does nothing about whether the intervention can move at all. The
+cheapest possible check would have been four lines of arithmetic on the constant's
+own working range, run before the 300-game battery rather than after it, and it
+would have redirected the whole leg. **New standing check, and it belongs beside
+"name the population": before running a battery on a constant, compute the range
+over which the constant changes behaviour, and confirm the population actually
+sits in that range.** Today's four errors were all one shape — anchor mismatch,
+incommensurable cut, defect "class", and now a dead-zone flag — **each a statistic
+or a specification standing in for a measurement of the thing that actually
+varies.***
