@@ -35,6 +35,18 @@ I tested the premise before anyone builds on it.
 
 ## Method
 
+> **AMENDMENT, 2026-08-09 12:3x CEST, by the author.** As first published, this
+> document twice asserted that the kill-grain decoder `dc_decode.py` "died with the
+> third lane's scratchpad". **That is wrong.** The builder arm corrected me: it is
+> preserved at `docs/research/scripts/side-lane-2026-08-09/dc_decode.py` (commit
+> `1966026`), together with `rx_decode.py`, `bb_decode.py` and a README recording
+> each one's validation. I have verified the files exist. **The claim was mine, it
+> was checkable in one `ls`, and I did not check it before publishing.** The
+> corrected statements are marked below. Nothing else in this document depends on
+> it — every figure here comes from the committed corpus — but the practical
+> conclusion changes: **the kill-grain follow-up is cheap, not blocked**, and I am
+> running it rather than deferring it.
+
 Enemy turret **plants** are already a first-class corpus row, so this needed no
 decoder rebuild and no replay downloads. Confirmed against
 `tools/corpus/replay_builds.py:84-92` and `replay_events.py`:
@@ -171,8 +183,10 @@ lead, not a finding.** The problem is visibly in the **41.4% tail**, not in mean
 removal speed — and the 45-kill tile from the attribution doc is by construction a
 member of that tail. What separates a planted gunner that dies in 14 rounds from
 one that lives to round 1000 is not answerable from the plant/death grain alone;
-it needs the kill-attribution decoder, which died with the third lane's scratchpad
-and would have to be rebuilt.
+it needs the kill-attribution decoder — ~~which died with the third lane's
+scratchpad and would have to be rebuilt~~ **which is preserved and runnable at
+`docs/research/scripts/side-lane-2026-08-09/dc_decode.py` (see the amendment at the
+top). The follow-up is cheap and is in flight.**
 
 ---
 
@@ -201,5 +215,8 @@ and would have to be rebuilt.
 Corpus at `manifest.json` of 2026-08-09 12:15 CEST. All five tables above are
 reproducible from `corpus/events.tsv`, `corpus/builds.tsv` and `corpus/join.tsv`
 with the column semantics stated in the Method section. Nothing here consumes the
-kill-grain attribution beyond quoting its published figures, and no figure in this
-document depends on the third lane's deleted decoder.
+kill-grain attribution beyond quoting its published figures.
+
+**One correction has been applied to this document since first publication** — see
+the amendment block in the Method section. It was my error, caught by the builder
+arm, and it is recorded rather than silently edited.
