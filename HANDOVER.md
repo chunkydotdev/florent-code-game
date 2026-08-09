@@ -1,3 +1,88 @@
+# Session 23 state block (builder) — LIVE VERSION CHANGED THIS SESSION
+
+## ===== READ `docs/builder-method.md` FIRST ===== (unchanged, still correct)
+
+## ===== STATE (as of 2026-08-09 10:2x CEST) =====
+##   LIVE: **v91 "Eir 9c hivethaw (rollback from v90)"** = `bots/_v100hf`,
+##   tree **4558be91**, submission id **9850f196-362b-4017-a3b5-31e5cb5c75bd**.
+##   **THIS IS A ROLLBACK, NOT A SHIP.** v90 was reverted when a PRE-STATED
+##   trigger fired (last-10 reached 2W). At rollback: **1530 @ 508, rank #35**.
+##   ROLLBACK-OF-THE-ROLLBACK TARGET: **v90 = `bots/_v104latch`, tree 2c6dbc17**
+##   (submission b04c06fa, still listed `ready` — re-activate or re-upload).
+##   **v91 REINSTATES THE `SLOT_LAUNCHER` LATCH DEFECT** (a destroyed launcher is
+##   never replaced; builders enter `launchwait` for a ghost). Known, accepted,
+##   bounded — v90's repair fired hard (post-r100 launcher share 6.9% -> 32.7%)
+##   but total launchers/game barely moved (0.72 -> 0.75).
+##
+## ===== PRE-STATED, HONOUR IT =====
+## **If the ladder does not recover within ~10 rated matches of the rollback,
+## that is evidence the drift was NOT v90-specific and v90 should go back up.**
+## The rollback is a STOP-LOSS, NOT A VERDICT. v90 was never shown worse than
+## v89 — 17 matches at ±18/match cannot show that. Do not let the tape be read
+## later as "v90 was refuted".
+##
+## ===== THE SESSION IN ONE LINE =====
+## **Four planks built, gated and REFUTED; the forward road closed on four
+## instruments; turret count refuted on three knobs; one rollback. ZERO SHIPS.**
+##
+## ===== THE RESULT THAT MATTERS MOST =====
+## **PLANK SITE: −6.7pp with DOSE-RESPONSE and an exact-zero null band.**
+## Gating forward siting off above core-separation d²81 cost 0.0pp where the gate
+## cannot fire (narrow), −5.0pp at mid, **−13.3pp at wide**. **Forward turrets
+## survive at 18.9% (field 49.0%) AND REMOVING THEM COSTS 13.3pp — the 18.9% is
+## the price of something valuable, not waste.** A large, clean, confound-
+## controlled survival statistic, independently derived by both arms, pointed at
+## a change that is strongly harmful. **Survival was never the objective function.**
+##
+## ===== THE TURRET SUBSYSTEM IS AT A LOCAL OPTIMUM =====
+##   LOKI-3  placement   +0.0pp (n=360)  mechanism moved 16x, won nothing
+##   HOME    price       −2.0pp (n=300)  magazine sized off a MONOTONE counter
+##   FLOOR   production  −0.7pp (n=300)  mechanism FIRED (moonrise 4->10 turrets)
+##   SITE    siting      −6.7pp (n=300)  largest effect, dose-response, negative
+## **Every knob turned in both directions; none is a lever. The next attempt must
+## not be another turret knob.**
+##
+## ===== BUILDS ON DISK, ALL UNSHIPPED, ALL CONTROL-VERIFIED =====
+## `_abl_c4` (hive bunker-barrier deletion: **18/20 -> 20/20, kills 4->18, one
+##   converted loss, null-control seat byte-identical 20/20** — REAL but only
+##   **2.4% of ladder games**, below instrument; ship it BUNDLED, never alone)
+## `_v111home` (magazine/targeting, refuted) · `_v112floor` (production, refuted)
+## `_v113site` (siting subtraction, refuted hardest)
+## `_det_opp_v56/58/63/67/68/69/72/74/76/78` — **deterministic opponent copies;
+##   reuse these, `det.py` says flip NOISE_ON on ALL sides and I only did ours
+##   the first time and got a broken null control for it.**
+##
+## ===== METHOD THAT EARNED ITS KEEP TODAY =====
+## - **A map- or seat-gated change has a FREE NULL CONTROL: the seat/band it
+##   cannot reach.** Caught one broken battery, validated three others.
+## - **Compute a constant's WORKING RANGE before spending a battery on it.**
+## - **Pre-register the RESCUE you would reach for, not just the threshold.**
+## - **Ask what a thing PRODUCES before subtracting it for what it costs.**
+##
+## ===== QUEUE =====
+## 1. **Watch the rollback** — ~10 rated matches, then decide per the pre-stated
+##    rule above. **The keeper will alert on drops; it is proven (fired 08:04Z).**
+## 2. **`get_attackable_tiles` mis-scoring** — probe-confirmed BOTH ways this
+##    session: gunner lines block on friendly bots AND buildings; the raw pattern
+##    IGNORES occupancy. Any siting scored with it counts phantom coverage.
+##    **A defect with a probe behind it, not a doctrine bet.** Static check first.
+## 3. **`SLOT_ROLE_N` ticket bug** — read-increment-write at `main.py:880`/`:902`;
+##    probe-demonstrated to collapse silently (5 writers, counter +1, all believe
+##    they are unit #0, no error). Safe TODAY only because the core spawns <=1
+##    builder/turn — a game rule holding up a bot invariant by luck. Two-line fix.
+## 4. **Escalation response** — three instruments now show the same shape: best
+##    in the easy regime, worst in the hard one (home turrets 86.7% vs forward
+##    19.2%; 1-attacker heal cancellation 65% vs 3-attacker 30%; hazard 29%->76%).
+##    **That is the characterisation of this bot.** Confound NOT closed (are we
+##    heal-capped, or already dead?) — research has the discriminator queued.
+##
+## ===== CORPUS TRAP FOUND TODAY =====
+## **`corpus/econ.tsv` `shots` is 0 in ALL 25,530 rows** (`replay_econ.py:109`,
+## `elif unum == 12: pass`). Every other column is populated, so **the zero looks
+## like a finding, not a bug.** Use `corpus/build_agg.tsv`, `metric == 'shot'`.
+
+## ===== PRIOR STATE (s23 boot block) — superseded, kept for reasoning =====
+
 # Session 23 boot block (builder) — written at the s22 wrap, 2026-08-09 09:4x CEST
 
 ## ===== READ `docs/builder-method.md` FIRST =====
