@@ -16567,3 +16567,45 @@ pointed run vs ouroboros_probe; prior is low. Two decay classes logged:
 inducibility" (this lane). DO-NOT-TRY list (organizer-nerf-backed) and the
 Eir-tiebreak-is-already-deployed note are in the doc. Internal doc-mine
 still running.
+
+## 2026-08-09 15:2x CEST — BUILDER: **the collar is a STEP FUNCTION, not a gradient — and the middle of the curve is confounded**
+
+`tools/collar_census.py` now scores the side lane's metric — heal-tiles denied
+per round, dose-response — instead of my "games fully sealed", which scored our
+effort rather than the effect. Over the 144-game LOKI-1 battery:
+
+| seats denied (of 8) | rounds | enemy core heals / 100 rounds |
+|---|---|---|
+| 0 | 10,691 | 33.99 |
+| 1 | 5,370 | **153.26** |
+| 2 | 1,976 | 19.23 |
+| 3 | 2,947 | 20.97 |
+| 4 | 1,819 | 15.39 |
+| 5 | 331 | 7.25 |
+| 6 | 927 | 65.80 |
+| 7 | 581 | 33.73 |
+| **8** | **710** | **0.00** |
+
+**THE ENDPOINT IS THE RESULT: at 8/8 denied, the enemy heals its core ZERO times
+in 710 rounds.** The doctrine does exactly what it claims, completely, when it is
+complete.
+
+**THE MIDDLE IS NOT INTERPRETABLE AND I AM NOT GOING TO PRETEND IT IS.** One seat
+denied shows *more* healing than zero (153 vs 34), which is not a dose-response,
+it is a **confound: denial and heal-pressure are both caused by "a siege is
+happening".** Rounds at 0 denied are mostly the quiet opening before we arrive;
+rounds at 1 denied are rounds we are there and shooting. Research already
+measured that our own heal behaviour is reactive — 0.45 healers on quiet rounds
+against 2.24 on damage rounds — so the buckets differ in game phase, not just in
+denial. **The fix is to condition on "the core took damage this round", which
+needs the HP ledger; the next version of this census will, and until then only
+the endpoint travels.**
+
+**DESIGN CONSEQUENCE FOR LOKI-3, and it is the opposite of what I assumed.** I
+had been treating the collar as a gradient worth partial credit — get more
+seats, deny more healing. **The only evidence we have says it is a step
+function: 8/8 or nothing.** So LOKI-3's target is not "more than 2.69 seats", it
+is **8**, and a design that reliably reaches 6 may be worth nothing at all. That
+also means the side lane's *"the rush only needs the heal detail suppressed for
+~28 rounds"* is a hypothesis about a partial state we cannot currently price —
+right in spirit, unproven in this data.

@@ -91,10 +91,20 @@ def decode(path: Path):
     foot = {(cores[enemy][0] + dx, cores[enemy][1] + dy) for dx in (0, 1) for dy in (0, 1)}
 
     team_of, kind_of = {}, {}
+    pos_of = {}
     held = {}                       # seat -> round first held by OUR building
     seal_round = None
     heals_before = heals_after = 0
+    # DOSE-RESPONSE. "Games fully sealed" scores our EFFORT; what decides a
+    # siege is how much healing we actually deny, and the rush does not need a
+    # perfect 12/12 lock -- it needs the heal detail suppressed for the ~28
+    # rounds a sentinel line needs through 500 HP. So bucket every round by how
+    # many of the 8 orthogonal seats we deny that round, and record the enemy's
+    # own core-heal actions in it. A monotone curve is the claim; a flat one
+    # refutes the doctrine regardless of how many seats we hold.
+    dose = {}                       # denied-count -> [rounds, enemy core heals]
     for rnd, turn_buf in enumerate(turn_bufs):
+        round_heals = [0]
         for _n, _w, ub in fields(turn_buf):
             for unum, _uw, ubuf in fields(ub):
                 if unum == 1:
@@ -106,11 +116,28 @@ def decode(path: Path):
                             continue
                         team_of[e.id] = e.team
                         kind_of[e.id] = e.kind
+                        pos_of[e.id] = e.pos
                         if (e.team == our and e.kind != "builder_bot"
                                 and e.pos in seats and e.pos not in held):
                             held[e.pos] = rnd
                             if len(held) == len(seats) and seal_round is None:
                                 seal_round = rnd
+                elif unum == 2:                        # moveBuilderBot
+                    mid = to = None
+                    for mn, _mw, mv in fields(ubuf):
+                        if mn == 1:
+                            mid = mv
+                        elif mn == 2:
+                            to = read_pos(mv)
+                    if mid is not None and to is not None:
+                        pos_of[mid] = to
+                elif unum == 3:                        # removeEntity
+                    rid = None
+                    for rn, _rw, rv in fields(ubuf):
+                        if rn == 1:
+                            rid = rv
+                    if rid is not None:
+                        pos_of.pop(rid, None)
                 elif unum == 15:                       # builderHeal
                     hid = tgt = None
                     for hn, _hw, hv in fields(ubuf):
@@ -125,9 +152,19 @@ def decode(path: Path):
                             heals_before += 1
                         else:
                             heals_after += 1
+                        round_heals[0] += 1
+        # Denied = an ORTHOGONAL heal seat occupied by anything of ours this
+        # round, body or building. A body denies exactly as well as a barrier
+        # (verified: an enemy body makes can_spawn False, and a builder cannot
+        # heal from a tile it is not standing on).
+        ours_at = {pos_of[i] for i in pos_of if team_of.get(i) == our}
+        denied = len(seats & ours_at)
+        d = dose.setdefault(denied, [0, 0])
+        d[0] += 1
+        d[1] += round_heals[0]
     return (arm, len(seats), len(held), seal_round is not None,
             min(held.values()) if held else None,
-            heals_before, heals_after, len(turn_bufs))
+            heals_before, heals_after, len(turn_bufs), dose)
 
 
 def main() -> int:
@@ -141,11 +178,16 @@ def main() -> int:
         return 1
     agg = defaultdict(lambda: [0, 0, 0, 0, 0, 0])
     firsts = defaultdict(list)
+    dosed = defaultdict(lambda: defaultdict(lambda: [0, 0]))
     with Pool(args.jobs) as pool:
         for r in pool.map(decode, files):
             if r is None:
                 continue
-            arm, nseats, nheld, sealed, first, hb, ha, turns = r
+            arm, nseats, nheld, sealed, first, hb, ha, turns, dose = r
+            for k, (rr, hh) in dose.items():
+                d = dosed[arm][k]
+                d[0] += rr
+                d[1] += hh
             a = agg[arm]
             a[0] += 1
             a[1] += nheld
@@ -166,8 +208,20 @@ def main() -> int:
         med = sorted(f)[len(f) // 2] if f else float("nan")
         print(f"  {arm:9s} {g:6d} {held / g:16.2f} {sealed:19d} {med:16.0f} "
               f"{hb:27d} {ha:10d}")
-    print("\n  'seats held' counts OUR buildings standing on the enemy's 8 heal seats.")
-    print("  A collar that never reaches 8 has not tested the doctrine, only approximated it.")
+    print("\nDOSE-RESPONSE — the metric that actually decides a siege.")
+    print("  Every round bucketed by how many of the enemy's 8 heal seats WE deny that")
+    print("  round (body or building), against their own core-heal actions in it.")
+    print(f"  {'arm':9s} {'seats denied':>13s} {'rounds':>9s} {'enemy core heals':>17s} {'heals / 100 rnd':>16s}")
+    for arm in ("control", "variant"):
+        if arm not in dosed:
+            continue
+        for k in sorted(dosed[arm]):
+            rr, hh = dosed[arm][k]
+            if rr < 50:
+                continue
+            print(f"  {arm:9s} {k:13d} {rr:9d} {hh:17d} {100 * hh / rr:16.2f}")
+    print("\n  Monotone fall = the doctrine works and partial denial is worth building.")
+    print("  Flat = the collar is decoration and LOKI-1 wins on the forward sentinel.")
     return 0
 
 
