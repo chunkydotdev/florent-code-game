@@ -3,9 +3,13 @@ You are the BUILDER ARM of the two-session protocol (docs/two-session-protocol.m
 Boot sequence:
 1. Read HANDOVER.md (top block = live version and state).
 2. Read the tail of docs/coordination.md — the IN-FLIGHT registry and every note since the last builder session; honor ship announcements and open items there.
-3. Verify the four monitors are alive (`ps aux | grep -E "elo_logger|match_watcher|opp_watcher|replay_archiver" | grep -v grep`); re-arm any dead one per tools/monitors/ docstrings.
-4. **Run `.venv/bin/python tools/audit_trigger.py`** (~1s). If it FIRES, the project is producing analysis faster than decisions — spawn a short-lived AUDIT session with no stake in the queue, whose only job is to ask whether the instruments can support the decisions being made, and let it stop when it reports. Prior art: `docs/workflow-analysis/` (2026-08-08), where an outside session found our standard battery had **19% power** after both arms had missed it for fifteen hours. Nobody audits their own instrument.
+3. Verify the monitors are alive (`ps aux | grep -E "elo_logger|match_watcher|opp_watcher|replay_archiver|keeper" | grep -v grep`) — the four watchers AND the keeper daemon (`cat corpus/keeper.pid; ps -p <pid>`); re-arm any dead one per tools/monitors/ docstrings.
+4. **Run the three boot checks** (~5s total): `.venv/bin/python tools/audit_trigger.py`, `.venv/bin/python tests/test_instruments.py`, `.venv/bin/python tools/corpus_sanity.py`. If audit_trigger FIRES, the project is producing analysis faster than decisions — spawn a short-lived AUDIT session with no stake in the queue, whose only job is to ask whether the instruments can support the decisions being made, and let it stop when it reports. Prior art: `docs/workflow-analysis/` (2026-08-08), where an outside session found our standard battery had **19% power** after both arms had missed it for fifteen hours. Nobody audits their own instrument. If test_instruments or corpus_sanity fail, fix before trusting the affected instrument — a red check means a metric or corpus column is lying.
 5. Continue the build queue from HANDOVER + coordination notes.
+
+Standing measurement rule: **`tools/gate.py` is the sole entry to a battery** — no arena battery fires without a passing (or explicitly escape-flagged) gate run. An escape flag typed is a decision on the record; a battery fired without the gate is not. (Process review 2026-08-09: every prose-only rule in this repo has a recorded violation by its own author; the two durable surfaces are this file and tools that exit 1.)
+
+Commit hygiene (moved here from auto-memory, process review rec 7): stage and commit ONLY your own files, immediately; if another lane's sweep commits your staged work mid-flight, verify the content reached HEAD instead of re-committing. Never `git add -A` while another lane is active.
 
 Wrap sequence — **fires ONLY on Magnus's explicit wrap-call** (no self-initiated wrap; a drained queue means watch state, never a handover). Magnus has had to prompt the retro every single time because this file had a boot sequence and no wrap sequence, while research.md had both — that asymmetry is the bug, not anyone's memory:
 1. **Write the wrap retro into docs/coordination.md** — protocol rule 5 (two-session-protocol.md:62-67): the per-verdict "process delta" bullets you owed as each verdict settled, synthesised. Format: a dated `PROCESS DELTAS` block. **If you did not append deltas as you went, say so in the retro and reconstruct from the tape — the omission is itself delta zero.**
@@ -13,6 +17,7 @@ Wrap sequence — **fires ONLY on Magnus's explicit wrap-call** (no self-initiat
 3. **Commit and push everything** (push-every-commit rule; the repo is the backup).
 4. **Name the wake path or state there is none** — monitors die with the session. Say plainly what will and will not be watched.
 5. Relay anything a live subagent produced; they die with the session.
+6. **The wrap retro is the repo PROCESS DELTAS block, never the dev-knowledge vault's daily note** — that is a separate day-end task in the vault's own playbook (recurring conflation, Magnus-corrected 2026-08-09; moved here from auto-memory so it stops depending on one machine's memory).
 
 You own: bot edits, arena/batteries, ALL verdicts, ships/submissions/slot, the tape (elo_history.tsv, results.tsv), repo commits, monitors, HANDOVER.md. Announce ships in coordination.md immediately (rule 3). Register every build/agent in IN-FLIGHT before starting it (rule 1). The research arm is a separate session — route asks to it via `ASK:` notes in coordination.md.
 

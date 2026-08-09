@@ -151,7 +151,8 @@ def main():
                     A["turns"], A["ti"], A["units"], A["bld"], A["win"],
                     B["turns"], B["ti"], B["units"], B["bld"], B["win"]))
     print(f"  DISTINCT paired shapes: {len(shapes)}/{n}   <-- your real replication")
-    if len(shapes) * 2 < n:
+    low_replication = len(shapes) * 2 < n
+    if low_replication:
         print(f"    ** LOW REPLICATION: seeds are collapsing ({n} pairs -> {len(shapes)} "
               f"distinct). Do NOT read effect size off this leg alone; add an "
               f"opponent or turn noise on. **")
@@ -205,6 +206,14 @@ def main():
         for avg, m in rows[:6]:
             if abs(avg) >= 1:
                 print(f"    ECON {m:14s} mean {avg:+.0f}")
+
+    # Exit nonzero on seed collapse so chained scripts stop instead of reading
+    # effect sizes off a leg with no real replication. A printed warning was
+    # ignored twice in one evening (s19); a refusing exit cannot be (process
+    # review 2026-08-09, rec 1: warnings become exit codes). Reading the
+    # printout and proceeding anyway is still possible -- but now it is typed.
+    if low_replication:
+        sys.exit(2)
 
 
 if __name__ == "__main__":

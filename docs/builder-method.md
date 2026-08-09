@@ -81,6 +81,9 @@ that day came from the replay corpus.
   where the opponent was a copy of ourselves and never inserted raiders — the
   arena could see the fix's cost and none of its benefit.
 
+**Before any of this: identify the pool and enforce the limit — §10.** s23
+learned both the expensive way, after this section was written.
+
 **Two confounds that invalidate arena numbers outright:**
 
 - **CPU contention.** Under `--tle 10` an overrun turn is *interrupted* with **no
@@ -166,3 +169,57 @@ Before shipping anything, ask: **is the gap this closes the gap that decides the
 games?** A fix sized to the wrong gap does exactly what it claims and still
 loses. The matched fixture answers that *before* the ship for the same cost as
 after — and cheap evidence run in the wrong order is still the wrong order.
+
+## 10. The instrument is a claim too (s23 — the finding that re-priced everything before it)
+
+Every methodological rule above is aimed at the analysis. s23 learned that
+none of them ask what the instrument is, and paid for it three ways in one
+session:
+
+- **The pool.** `bots/opp_v*` is OUR OWN PRIOR VERSIONS — every arena battery
+  in project history was self-play, discoverable by a 4-minute grep of the
+  opponents' docstrings. Published literature puts ~2× inflation on self-play
+  amputation results, with reported sign flips. The foreign pool
+  (`bots/*_probe`, imitations of 7 real teams) was on disk unused the whole
+  time; pointed at it once, a "locally unmeasurable" plank refuted at −7.8pp.
+  **State what the pool IS, from its source, before measuring.**
+- **The limit.** 1,860 games ran at `--tle 0` while the real engine enforces
+  10ms and our worst measured unit-turn is 12,967µs. `fcode match test` (remote
+  engine, real TLE, free) exists. A plank that has never run under the enforced
+  limit has an untested failure mode the local arena cannot see.
+- **The enforcement.** Both of the above, plus determinism and control
+  equivalence, are now mechanical: **`tools/gate.py` is the sole entry to a
+  battery** (see `.claude/commands/builder.md`). `tests/test_instruments.py`
+  and `tools/corpus_sanity.py` run at boot. The reason these are tools and not
+  paragraphs: on this repo's record, rules written in prose get broken by their
+  own author inside one session (NOISE_ON, IN-FLIGHT-before-start, the
+  working-range check); rules that exit 1 do not.
+
+Instrument selection itself follows
+`docs/research/test-process-proposal-2026-08-09.md` (S0–S8): every build walks
+rule → probe → parity → local mechanism → **unrated fidelity (S5)** → ship →
+field window → production read, and skips are stated, never silent. **No ship
+decision, positive or negative, on local numbers alone.** Local magnitudes are
+labelled "local — direction only"; unrated refutes but never confirms
+(47% power at n=10 — record `NOT-REFUTED (n=10)`, never `pass`); only the
+ladder confirms.
+
+## 11. Scope rules (the s23 failure family — six instances in one day)
+
+The arithmetic was right every time it was checked; what failed was what the
+arithmetic was taken to MEAN. Four rules, each bought with a battery or worse:
+
+1. **Ask what a thing PRODUCES before subtracting it for what it costs.**
+   Survival/persistence metrics never carry verdict weight — output, denial,
+   delivered-objective, and win-condition currencies do. (PLANK SITE: −6.7pp
+   on a true, confound-controlled survival statistic; the doctrine file itself
+   pre-stated "survival is not damage".)
+2. **Compute a constant's working range before building a battery on it.**
+   Four lines of arithmetic would have redirected a 300-game battery whose
+   dead zone covered most of its population.
+3. **When a finding is stated as a category, first test whether the members
+   behave alike.** Five-of-seven-row tables invert conclusions; "defect class"
+   claims die at the version cut.
+4. **Name the population.** "The field" meant our opponents in one doc and
+   the league in another; a share of deaths is not a hazard rate until it is
+   normalised by exposure.

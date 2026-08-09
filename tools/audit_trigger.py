@@ -45,7 +45,11 @@ def note_verdict_ratio():
     tail = [r for r in rows if len(r) > 5][-WINDOW_ROWS:]
     c = Counter(r[5] for r in tail)
     analysis = c["note"] + c["caveat"] + c["info"]
-    decisions = c["verdict"] + c["keep"] + c["discard"] + c["refuted"] + c["gate"]
+    # baseline and ship ARE decisions — a baseline row records an activation.
+    # Excluding them inflated this ratio ~2.4x (instrument-audit-2026-08-08-late
+    # :203-210; fix adopted 2026-08-09 with the process review).
+    decisions = (c["verdict"] + c["keep"] + c["discard"] + c["refuted"] + c["gate"]
+                 + c["baseline"] + c["ship"])
     ratio = analysis / max(decisions, 1)
     return ratio, f"{analysis} analysis rows / {decisions} decision rows (last {len(tail)})"
 

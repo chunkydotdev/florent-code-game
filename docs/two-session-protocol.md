@@ -128,8 +128,19 @@ builder-only (unchanged from its rules of the road).
    (HANDOVER, tape, bots, monitors) in a note or ping; it never edits them.
    Same in reverse for `docs/research/*`.
 5. **One research arm at a time.** Wider parallelism = subagent fan-outs
-   commissioned by an arm (the research-brief pattern), never a third peer
-   session.
+   commissioned by an arm (the research-brief pattern), never a
+   *self-appointed* third peer session. **AMENDED 2026-08-09 (Magnus,
+   via the process-review adoption): a THIRD LANE is sanctioned when and
+   only when Magnus commissions it.** Its contract, from the pattern that
+   worked on 2026-08-09: boot from the coordination tail; announce lane +
+   scope there before doing anything (append-only — never edit the arms'
+   content); write ONLY new files under `docs/research/`; no bot edits, no
+   arena/unrated, no verdicts, no HANDOVER/tape writes; engine probes stay
+   with the builder; commit only its own named files (never `add -A`); push
+   every commit; relay subagent output before idling. Its high-value loop is
+   adversarial peer review with the research arm — discriminating cuts +
+   placebo arms exchanged BEFORE any observational finding becomes a build
+   input. A peer arm cannot widen the lane; only Magnus can.
 
 ## Post-ship division of labor
 

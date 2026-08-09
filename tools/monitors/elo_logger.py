@@ -70,12 +70,18 @@ def main() -> None:
     except Exception:
         pass  # submission list fetch failed; keep old max
 
-    # Slot-swap rule (Magnus+x3r0 2026-08-08, REVISED 16:48 adoption): the
-    # rolling last-5 window (1) prices only the CURRENT holder's matches —
-    # tape rows are filtered by the live version tag, so a holder change
-    # resets the window naturally — and (2) arms only after the holder's 8th
-    # match. <=0 while armed frees the slot (never forces a swap). Wake on
+    # Slot-swap rule (Magnus+x3r0 2026-08-08, REVISED 16:48; threshold
+    # recalibrated 2026-08-09, process-review adoption — ship-gate.md
+    # amendment 2 changes with this constant or not at all): the rolling
+    # last-5 window (1) prices only the CURRENT holder's matches — tape rows
+    # are filtered by the live version tag, so a holder change resets the
+    # window naturally — and (2) arms only after the holder's 8th match.
+    # net <= SWAP_THRESHOLD while armed frees the slot (never forces a swap).
+    # -21 = -1 sd of the rolling-5 sum (per-match sd 9.25, workflow-analysis
+    # v3); the old <=0 threshold sat at 0 sd of a 20.7-sd quantity and fired
+    # on a coin flip (50.4% on a neutral holder at match 8). Wake on
     # crossings both directions, and on arming directly into the free state.
+    SWAP_THRESHOLD = -21
     swappable = st.get("swappable")
     try:
         base = None
@@ -95,7 +101,7 @@ def main() -> None:
             swappable = None  # window not armed; no wake, no stale flag
         elif base is not None:
             net5 = rating - base
-            now_swappable = net5 <= 0
+            now_swappable = net5 <= SWAP_THRESHOLD
             if swappable is None and now_swappable:
                 print(
                     f"SWAP RULE: window ARMED into SLOT FREE — v{ver} rolling "
