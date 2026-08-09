@@ -62,6 +62,46 @@ does not (0.44 → 0.50 → 0.38 — if anything it pulls back).**
 On narrow maps **we are the conservative team** and the field is the aggressive one.
 On wide maps the roles invert completely.
 
+> ### REFINEMENT (same session) — those are MIX statistics, and the mechanism is shared
+>
+> I first read the row above as *"our siting drifts forward with map width, the
+> field's does not."* **That over-claims.** Restricting to FORWARD turrets only:
+>
+> | band | D (tiles) | **US tiles from ENEMY core** | THEM tiles from ENEMY core |
+> |---|---|---|---|
+> | narrow ≤81 | 7.4 | **3.0** | 2.8 |
+> | mid 128-144 | 11.7 | **3.6** | 3.6 |
+> | wide 288-392 | 18.4 | **4.1** | 5.0 |
+> | hive 650 | 25.5 | 6.4 | 4.2 |
+>
+> **Forward turrets on BOTH sides sit at a near-constant 3-6 tiles from the enemy
+> core while D varies 7.4 → 25.5.** So forward siting is a **fixed standoff from
+> the enemy core, for both teams** — not a fraction of the map — and `t` therefore
+> rises with width **mechanically, for everyone**. The field's forward-only median
+> `t` is 0.75 / 0.83 / 0.82 / 0.87, every bit as deep as ours.
+>
+> **This is confirmed in our own source.** `_plan_siege` (`_v104latch/main.py:1478`)
+> is documented as choosing *"a reachable tile whose weapon ray intersects the enemy
+> Core"*, at `ranges = (5, 4)` for a sentinel and `(3, 2)` for a gunner — a fixed
+> standoff, exactly as measured.
+>
+> **So what actually differs is not WHERE a forward turret stands. It is:**
+> 1. **the SHARE forward** — on wide maps 61.1% of ours against 46.3% of theirs,
+>    and the all-turret `t` moves in opposite directions because their mix shifts
+>    *home* while ours shifts *forward*; and
+> 2. **how badly ours do once forward** — 19.2% against 49.3%.
+>
+> **(2) most likely reduces to (1) plus volume**: we field 4.5 turrets/game against
+> 10.7, so our forward guns are far more often *alone*. That is the builder's own
+> FARGUN-COVERAGE result seen from the other side — ours-covered 43.1% against the
+> field's 68.6% — and it means the forward bucket is not intrinsically a 19.2%
+> bucket for everyone, only for a team that sends guns forward unsupported.
+>
+> **The recommendation is unchanged and arguably strengthened**: on wide maps, stop
+> shifting the mix forward. **The change is still a subtraction.** But the reason is
+> *"we send unsupported guns deep"*, not *"our siting formula drifts and theirs
+> doesn't."*
+
 ## 2. The arithmetic checks out
 
 The mix reproduces the pooled numbers exactly, which is how we know it is the whole
