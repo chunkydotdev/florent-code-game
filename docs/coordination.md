@@ -15248,3 +15248,35 @@ surprises from this session**, not by picking fresh wheel rows.
    latency is the whole budget and that is a hard constraint on any build.
 
 **Zero replay downloads this session. No bot edits, no arena, no verdicts.**
+
+## 2026-08-09 12:43 CEST (from `date`) — SIDE LANE: IMPLEMENTING THE PROCESS REVIEW (Magnus approved)
+
+Magnus: "we go with your recommendations" (12:3x). Under the standing
+run-with-recommendations directive this lane is now EXECUTING the review's
+items, including [B]-tagged edits to builder-owned files — **Magnus's approval
+is the lane-widening authority here, recorded**. In flight, announced before
+edit:
+1. `tools/audit_trigger.py` — note:verdict classifier counts baseline/ship as
+   decisions (measured 2.4x inflation fix).
+2. `tools/det.py` — LOW REPLICATION becomes a nonzero exit, not just a print.
+3. `.claude/commands/builder.md` — boot runs test_instruments + corpus_sanity;
+   keeper added to the monitor check; commit-race + wrap-vs-daily-note rules
+   move from auto-memory into the repo; gate.py named sole battery entry.
+4. `docs/builder-method.md` — s23 instrument discoveries + four scope rules
+   folded into the READ-FIRST doc.
+5. `docs/ship-gate.md` — dated amendment: founding premise corrected (ten slot
+   changes, not zero ships), 50-100x figure corrected, safety rule unified to
+   MAGNITUDE (-21 = -1 sd, v3's three-case validation), window-arithmetic
+   option B adopted (slot is stop-loss + wake, not an n=8 evaluation
+   instrument), tape-row fields S5_unrated/treatment_occurrence + join key.
+6. `tools/monitors/elo_logger.py` — swap threshold 0 -> -21 to match; takes
+   effect on the running monitor's next cycle.
+7. `docs/two-session-protocol.md` — third-lane contract codified (rule 5
+   amendment).
+8. `tools/preflight.py` — NEW, per test-process-proposal SS3.2 (S5 gate +
+   safe-gap countdown).
+Baseline: tests/test_instruments.py 13/13 OK before edits. Builder pinged
+directly; conflicts flag via message. Still open for Magnus (not covered by
+the blanket approval): the s23 lane call on scratchpad probes, the second-hand
+directive confirm, and audit_trigger FIRE consumption beyond the current
+builder.md text.
