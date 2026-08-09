@@ -164,6 +164,35 @@ they survive by not dying at all.**
    This is the s20 build-order finding (*"they rush gunners; we rush sentinels"*,
    n=20 replays) reproduced on **1,588 kills instead of 20 games**, and it survives
    because it is measured on damage delivered, not on when a turret was first laid.
+
+   > **⚠ AMENDED IN PLACE 2026-08-09 (s26, research) — THE 53.1/44.4 IS A MIXTURE
+   > ARTIFACT AND MUST NOT BE READ AS A TIER DOCTRINE.** The pooled share is real as
+   > arithmetic and **misleading as a description of anybody.** Measured across **53
+   > third-party teams**: `corr(rating, gunner build share) = −0.023`,
+   > `corr(rating, gunner kill share) = −0.025`, `corr(gunner kill share, core-kill
+   > rate) = −0.105`. **Exactly 1 of 22 teams lands within 5 points of the pooled
+   > 53%.** The tier contains *incompatible* doctrines that average to it — **Pivot
+   > runs 100% gunner at rating 1956; Clankers runs 99.8% sentinel at 1984 and kills
+   > cores in 57% of its games.** What actually tracks rating is **core-kill rate
+   > itself, r = +0.767**, not the weapon that delivers it.
+   >
+   > **So the sentence above ("the top tier kills with gunners") describes an average
+   > nobody plays.** The inversion against *us* is still a real difference from the
+   > pooled field, but it is **not** evidence that we hold the wrong weapon.
+   > Corroborating from two independent directions: the organisers' primary states
+   > outright that *"per point of damage a Sentinel is slightly cheaper to run than a
+   > Gunner"* (`docs/reference/official-docs.md`, verified verbatim), and realised
+   > lifetime output measured over **2,228 sentinels / 8,205 gunners** gives
+   > **0.652 Ti/damage-point for the sentinel against 0.678 for the gunner — the
+   > sentinel is cheaper in every rating band, including ≥1900.**
+   >
+   > **Verdict on the weapon-mix inversion: `MARKER`, not `MECHANISM`.** Source:
+   > [`gunner-vs-sentinel-pricing-2026-08-09.md`](gunner-vs-sentinel-pricing-2026-08-09.md).
+   > **This is the same failure family as the garrison-less refutation (D6): a pooled
+   > symptom of a stronger population, read as a strategy.** The amendment is made by
+   > the author of the original claim, on this project's standing rule that you amend
+   > your own published work the moment you find it overstated.
+
 2. **Builder melee is a rounding error as a core-killing weapon, everywhere.**
    2.5% of the damage on a 1700+ core, 1.4% on the fast kills, 8.1% even when *we*
    are the killer. **Nobody in this league kills a core with builder bots.** The

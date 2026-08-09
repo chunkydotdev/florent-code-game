@@ -19613,3 +19613,105 @@ than in the abstract.
 **Version tag:** live **v102 = LOKI-8**, k=12, m=582, rating 1580.0, net5 −16.0,
 `slot_free` False. Read: `corpus/meta_join.tsv` (auto-rebuilt by the builder's `30a592d`
 wiring — now carrying the 12th match), `corpus/join.tsv`.
+
+## 2026-08-09 22:5x CEST (from `date`) — RESEARCH ARM: **PRICING LANDED AND IT REFUTES MY OWN PREMISE. The 53.1/44.4 weapon mix is a MIXTURE ARTIFACT; the sentinel is the cheaper weapon; and the engine's COST-SCALING RULE IS NOT WHAT `CLAUDE.md` SAYS.**
+
+Deliverable: **`docs/research/gunner-vs-sentinel-pricing-2026-08-09.md`** (757 lines).
+**My own s25 doc is AMENDED IN PLACE** — `upward-pricing-top-tier-2026-08-09.md` §2.2 now
+carries the correction, written by the author of the original claim.
+
+### THE HEADLINE: WE ARE NOT WRONG ABOUT THE WEAPON. WE ARE WRONG ABOUT WHERE WE PUT IT.
+**Realised lifetime output, N=2,228 sentinels / 8,205 gunners, clean third-party
+population: the sentinel is 0.652 Ti per damage point against the gunner's 0.678 — cheaper
+in EVERY rating band including ≥1900.** And the organisers' primary says so outright:
+
+> `docs/reference/official-docs.md` — *"per point of damage a Sentinel is slightly cheaper
+> to run than a Gunner"* — **verified verbatim by me against the primary, flattened.**
+
+**What is actually wrong is siting.** Our sentinels sit at median **d²=18 from our own
+core, 30.7% forward, firing at 13.5% of reload ceiling**. Every other measured
+sentinel-builder sites them at **d²_own 53-181, 63-93% forward**. **Clankers (1984, 0.0%
+gunner kill share, 57% core-kill rate) runs 74.4% forward at 46.4% of ceiling, and 79.1% of
+its sentinels land a shot on an enemy core against our 41.4%.**
+
+**And the decisive row kills the under-build story entirely: `sporks`, #1 in the league at
+2082, builds 1.99 gunners per side-game. We build 1.95.** **We are at parity with the best
+team in the league on gunners.** The gap is sentinels — **4.06 vs our 2.46 — and forward.**
+
+### VERDICT ON THE WEAPON-MIX INVERSION: **`MARKER`, DECISIVELY** — and my own number was the artifact
+Across **53 third-party teams**: `corr(rating, gunner build share) = −0.023`,
+`corr(rating, gunner kill share) = −0.025`, `corr(gunner kill share, core-kill rate) =
+−0.105`. **What tracks rating is core-kill rate itself, r = +0.767.**
+
+**The pooled 53.1% is a mixture over incompatible doctrines and describes an average nobody
+plays** — **Pivot runs 100% gunner at 1956; Clankers runs 99.8% sentinel at 1984.**
+**Exactly 1 of 22 teams lands within 5 points of the pooled figure.**
+
+**This is the D6 family again — a pooled symptom of a stronger population read as a
+strategy** — and this time the pooled symptom was **mine**, published in s25 and used to
+aim two of this session's sweeps. Geometry and survivability markers are **refuted** (they
+do not explain it); affordability is **`UNSEPARATED`**.
+
+### MY PRE-REGISTRATION: THE DISCRIMINATOR FIRED "CONFIRMS" AND THE MECHANISM IS STILL REFUTED. **THAT IS A DEFECT IN MY PRE-REGISTRATION, NOT A LICENCE TO IGNORE THE RESULT.**
+I pre-committed at `4111640`: *confirms ammo-limited if shots-per-built-turret is materially
+below the ≥1900 tier's **while** `ti_end` is materially above theirs.* **Both fired** —
+shots/turret **19.38 vs 24.83**, `ti_end` **1,694 vs 266**.
+
+**And the reading is wrong anyway, on a quantity I did not pre-name: we end games holding
+150.5 UNSPENT AMMO against their 28.9.** You cannot be ammo-limited while sitting on
+five times the unspent ammunition. **We are emplacement-limited** — turret count accounts
+for 56% of the shot gap, duty cycle 44%. **The pre-registration was honest and its
+discriminator was insufficient**, which is exactly the failure the pre-registration format
+is supposed to make visible instead of invisible. **Recorded as a miss, not massaged into a
+hit.**
+
+**Also corrected, and it is my error again:** *"we buy a twelfth as much ammunition"* is
+**true of Ouroboros specifically** — against the ≥1900 tier we convert **0.84×**, i.e.
+essentially parity. **A number carries a subject**, for the third time today.
+
+### THE ENGINE FINDING — **`CLAUDE.md`'S COST-SCALING RULE IS WRONG, AND SO WAS MY BRIEF**
+Both my brief (`1.2^(N-1)`, compounding) and `CLAUDE.md` (*"per category"*) are wrong. The
+organisers' primary is **singular and additive**, and I verified both strings verbatim:
+
+> `official-docs.md` — *"Each conveyor/splitter/barrier built adds +1% to **your team's
+> scale factor**, each harvester +5%, each launcher +10%, and each builder bot/gunner/
+> sentinel +20%"* · *"The scale factor starts at 1.0 and increases **additively**"*
+
+**Measured from replay titanium balances on clean single-build rounds — one global additive
+team factor matches 5,050/5,051 = 99.98%**, against **17.05%** for per-category and
+**9.78%** for compounding. Teeth on both arms: `--corrupt=offset` collapses it to 16.78%,
+`--corrupt=live` to 50.66%. **Free byproduct: passive titanium lands on rounds ≡ 3 (mod 4).**
+
+**THREE BUILD-RELEVANT CONSEQUENCES:**
+1. **The gunner:sentinel price ratio is pinned at 2:3 at every scale, forever.** There is no
+   N at which either becomes uneconomic *relative to the other* — they inflate in lockstep.
+   **My brief's "where does each become uneconomic" question has no per-turret answer.**
+2. **Every builder bot you keep alive raises your next gunner by 4 Ti and your next sentinel
+   by 6 Ti.** At the ≥1900 tier's 5.59 live bots that is **+112% on the scale before a
+   single turret is bought.**
+3. **The barrier is re-priced.** +1% to the *global* factor means 20 barriers add **+6 Ti to
+   every subsequent sentinel and every subsequent builder bot.** The per-category model
+   hides that cost entirely. **The "~8× HP/Ti ablative screen" is a scale-1.0 figure; at
+   scale 2.6 a barrier is 4.3 HP/Ti.**
+
+**STATUS: REPLAY-BYTE INFERENCE, NOT AN ENGINE PROBE.** The agent did not probe the engine
+because protocol reserves that for the builder arm. **A five-minute builder probe should
+confirm it before anything is built on it** — and `CLAUDE.md` is a team-edited file, so
+whether its rule gets corrected is Magnus's and the builder's call, not mine.
+
+### ONE BRIEF CLAIM OF MINE THAT WAS UNSOURCED
+I told the agent the sentinel's line *"does not harm friendlies it passes through."* **The
+primary never says this** — it says only that the line is *"never blocked by walls or units
+in the way"*, and **blocking and damaging are different claims.** The agent settled it by
+measurement (one `fireTurret` = exactly one target, pred/obs 1.0002) rather than repeating
+me. **I asserted an engine fact from memory into a brief; it happened to be true.**
+
+### WHAT COULD NOT BE MEASURED, STATED
+**The duty cycle conflates "no ammo", "no target" and "wrong facing".** Ammo is ruled out;
+the other two are not separable, **and the builder hook rests entirely on it being
+facing/siting rather than target availability** — which is why the falsifier written is a
+*mechanism* check (duty cycle must move 0.068 → 0.114) rather than an outcome check.
+
+**Version tag:** live **v102 = LOKI-8**. Tape k=12/1580.0 (`elo_logger` 300s poll) — **note
+the builder's instrument property: the tape can lag live by up to 5 minutes, so a net5 and a
+live rating in one sentence are two different clocks.**
