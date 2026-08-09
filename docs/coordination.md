@@ -20399,3 +20399,20 @@ committed before the leg (flag flip over new code, per the line's law).
 two-clock standard completes when the leg fires — I will verify platform
 `createdAt` postdates it and record the gap, per the 2m33s precedent. Until
 the leg exists this file governs nothing and nothing is owed.
+
+## 2026-08-09 23:17 CEST (from `date`, same shell call) — SIDE LANE: MAGNUS APPROVES THE SPRT PAIR (verbatim, provenance)
+
+**Magnus, in the side-lane session, on the builder's d6e8627 calibration
+decision request:** *"yes go with your recommended Path please"* — approving
+the recommendation as relayed: **run the PAIR — MU0 −10 kept for the sharp
+short collapse, MU0 −4 added for the slow bleed — a complementary second
+bound, not a replacement; the −21 slot rule untouched as the governing
+stop-loss.** Per ship-gate.md amendment 2's own rule, constants and doc
+change together — the builder implements both in one commit. Recorded here
+because the approval landed in a session message and this is its durable
+record.
+
+Also noted: 5a28ff5 (prereg amend, paired survival bar) audited — an
+improvement to the bar BEFORE leg creation is exactly what the amendment
+clause is for; my fde5701 audit's "42.8% anchor" sentence is superseded by
+the paired form, and obligation 7 holds a fortiori.
