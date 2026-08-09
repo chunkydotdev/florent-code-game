@@ -21866,3 +21866,57 @@ saturation class has unexplained fine structure.
 
 **Fixture note: a routing/repair plank is economic, so `razer_probe` does not make it
 arena-testable. This is a LADDER-instrument change.**
+
+## 2026-08-10 02:3x CEST (from `date`) — RESEARCH ARM: **MY LETHALITY BENCHMARK IS WITHDRAWN — ~9 attacks/kill is BELOW THE ARITHMETIC FLOOR for a builder-only attacker. The volume half survives on a source-independent axis.**
+
+### 1. THE BENCHMARK WAS A CATEGORY ERROR
+A builder attack is **2 damage**. Conveyor 20 HP = **10 swings**, gunner 25 = **13**,
+barrier/harvester 30 = **15**, sentinel 40 = **20**. **Against razer's own observed kill mix
+the floor is 12.9 attacks per kill WITH ZERO WASTE AND ZERO HEALING. My ~9 target is
+unreachable by construction.**
+
+**The league ~9 pools TURRET FIRE and BUILDER ATTACKS as "attack events" — and a sentinel
+shot is 18 damage, so two of them kill a conveyor.** **The metric counts events of wildly
+different damage in one numerator, and razer is the only bot in the comparison with no access
+to the cheap half.** **Numerator-composition mismatch — the seventh instance of the
+denominator/numerator family tonight, and mine.**
+
+### 2. THE FIX IS A SOURCE-INDEPENDENT METRIC, NOT A DIFFERENT CONSTANT
+Judging razer against **13** instead of 9 swaps an unreachable benchmark for an **arbitrary**
+one. **The floor is a floor, not a target.**
+**⇒ Use the WASTE MULTIPLE OVER THE ARITHMETIC FLOOR: each team's actual attacks-per-kill
+divided by ITS OWN floor, derived from ITS OWN kill mix and weapon mix.** **razer is at
+24.1 / 12.9 = 1.87×.** **If the league runs ~1.2× its floor, razer is genuinely wasteful; if
+the league also runs ~1.9×, the lethality half lapses entirely.** Source-independent, needs no
+turrets, computable from what the agent already holds. **Damage-per-kill would be better still
+if per-event damage is recoverable.** **Taking it.**
+
+### 3. **AND THE REASON A TURRET-BEARING FIXTURE IS EVENTUALLY NEEDED IS NOT MIMICRY**
+**Healing is 1 Ti → +4 HP; a builder attack is 2 Ti → 2 damage. One healer out-repairs two
+attackers on titanium and 2:1 on throughput.** **Against 2-damage chip a repair line wins by
+construction. Against a sentinel at 9 damage/round it takes ~2.25 healers per sentinel to
+hold — and THAT is the regime where a defensive plank has to make a decision.**
+
+**⇒ A DEFENSIVE PLANK VALIDATED ONLY AGAINST razer IS VALIDATED AGAINST THE ONE THREAT MODEL
+IT IS ARITHMETICALLY GUARANTEED TO SURVIVE.** **This is the same "the mechanism never occurs"
+failure that produced 0a, one level up:** razer fixes *"nothing attacks our buildings"* and
+leaves *"nothing attacks our buildings HARD ENOUGH TO MATTER."*
+
+**Recommendation relayed: keep razer builder-only NOW (the controlled property is worth
+protecting), and add a turret-bearing SECOND fixture later as a separate instrument — because
+the two damage profiles test different claims and only one of them can falsify a repair
+plank.**
+
+### 4. MY PRE-STATED BRANCH RESOLVED AGAINST ME, ON n=24
+**1.509 attacks/turn median, and 23 of 24 games individually exceed the league MAXIMUM** —
+far above the **0.9** lapse threshold I set. **The volume half HOLDS**, and the builder's
+single-game 1.59 was **representative, not lucky** — which they could not have known when they
+quoted it, and which is exactly why binding the caveat to it was right rather than pedantic.
+**The volume axis is measured in attacks/turn, which is source-independent and unaffected by
+the benchmark withdrawal — so the 1.509 → ~0.55 cut stands.** **Recorded that the number came
+from an analysis whose other half just failed**, so it does not inherit unearned authority.
+
+### 5. THE MECHANICAL FIX IS MORE INFORMATIVE AS A SMALL RESULT
+*"Finish the wounded"* moved attacks/kill **28.3 → 24.1** and kills>0 from **22/24 → 12/12**.
+**Both lanes were implicitly expecting ~3×. The floor argument explains exactly why that was
+never available: the mechanism works and the headroom was never there.**
