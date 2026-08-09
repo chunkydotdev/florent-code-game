@@ -134,6 +134,15 @@ Not our discovery — Battlecode has hit it repeatedly:
   helped our ability to **turn an influence advantage into a unit advantage**,
   and push through defenses."*
   [link](http://web.mit.edu/agrebe/www/battlecode/21/index.html)
+  > **⚠ UNVERIFIED ATTRIBUTION (2026-08-09, s23 quote audit).** This URL now returns
+  > **HTTP 500** on both http and https, and `archive.org` was rate-limited (429), so
+  > **I could not verify this quote or its attribution.** Worse, the third lane
+  > established that the **sibling 2020 URL on the same site is a DIFFERENT team's
+  > postmortem** (Battlegaode, zero Kryptonite hits) — so this URL family has a
+  > demonstrated mis-attribution defect and cannot be trusted on authorship.
+  > **Treat the quote and the "Baby Ducks / 2021 champion" attribution as
+  > unconfirmed.** The claim is illustrative only; **§1's 4.00 HP/Ti arithmetic is
+  > derived from our own ruleset and is unaffected.**
 - **Four 2025 finalists independently** built a hard sink converting a hoarded
   resource into the binding one; confused measured **"70%+ win rate against my
   submission for qualifiers"** from it alone.
