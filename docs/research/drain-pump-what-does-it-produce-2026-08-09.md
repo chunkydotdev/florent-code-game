@@ -117,6 +117,49 @@ besieged core and dying there is earning it exactly as a forward gun does. **Thi
 still a cost statistic.** Recorded as the largest un-examined line in the ledger,
 **not as a queue item**, per the standing lesson.
 
+> ### ✅ THE HOME-BAND TENSION IS RESOLVED — BY A DOCSTRING, NOT A MEASUREMENT
+>
+> Our home turrets are the corpus's best survivors *and* half our builder deaths are
+> at home. I called that unresolved and proposed a damage-attribution cut. **Both
+> peers independently pointed out it needs no measurement at all.**
+>
+> `fcode/_types.py`, `can_fire`, verbatim: *"Builder bots may only target an
+> orthogonally adjacent tile … **and only damage the building on it**."*
+>
+> ```
+> OUR TURRETS (buildings)  killable by: enemy builder chip (2 dmg/turn) AND enemy turret fire
+> OUR BUILDERS (units)     killable by: enemy TURRET FIRE ONLY
+>                          (self_destruct deals 0 damage and has 0 call sites; throws deal none)
+> ```
+>
+> **Verified here:** the docstring above; `self_destruct(` = **0 call sites** in the
+> live bot; **7.43 of our builders die per game against the field's 4.58**; and the
+> field fields **11.42 turrets+launchers per game to our 5.15 — 2.22×.**
+>
+> **So every one of our builder deaths is turret fire, and our builders face 2.2× the
+> volume of the only weapon that can kill them.** Meanwhile our *turrets* face a mix
+> whose cheap half chips at 2 dmg/turn against a heal restoring 4 HP per 1 Ti.
+> **Both facts follow and were never in conflict. The home band is not "safe" or
+> "dangerous" — it is safe for the entity class their cheap weapon cannot hurt, and
+> dangerous for the entity class their expensive weapon is pointed at.**
+>
+> **THE PROCESS ERROR, and it is the one I'd most want carried forward.** I framed
+> the question as *"who killed this entity"* — a measurement we deliberately do not
+> have — instead of *"who is CAPABLE of killing this entity"*, **a rule, free, in a
+> docstring I had already read and quoted earlier in the same session.**
+> `docs/builder-method.md` ranks rule arithmetic **first**, ahead of probes and
+> corpus, and I reached past it.
+>
+> > **Standing form: when the question is what CAN happen rather than what DID, it is
+> > a rule question, and rules are free.**
+>
+> **Two caveats that survive the resolution:** (a) my 49.5%-of-deaths-at-home is a
+> **share whose denominator varies** — the exposure-controlled quantity is deaths per
+> builder-round in band, which needs per-round positions we do not have; and (b) this
+> explains the pattern, it does **not** price it. *"Their turrets kill our builders"*
+> and *"our turrets would win us games"* are different claims and **only the second
+> was tested, and refuted, today.**
+
 ## 3. Standing note
 
 **This document is a gate, not a finding.** The drain pump may well be real — the

@@ -1,5 +1,45 @@
 # Heal cancellation on a besieged core: it is not a map-width effect, and we invert under concentration
 
+> # ⛔ TWO CORRECTIONS (third lane, same session). THE HEADLINE IS BAND-SPECIFIC, AND ONE CONSTANT WAS WRONG.
+>
+> **(1) My "FIELD" is `join.tsv`-scoped, which means OUR OPPONENTS — not the league.**
+> The broad field does **not** scale its guard: **no-us games cancel 34.6% at 3+
+> attackers, and TOP (≥1750) cancels 31.5% — both WORSE than our 39.4%.**
+>
+> **So "their cancellation rises with pressure while ours falls" is true only of the
+> 1500-1650 band we actually play.** It is not a property of strong play, and it is
+> not a property of the league. **A scoped population presented as "the field" —
+> which is a selection rule I failed to state, the same error class as the five-row
+> table.**
+>
+> *It also flips the offensive read pleasantly: a multi-shooter chain against most of
+> the ladder faces a defence that does **not** scale back.*
+>
+> **(2) The heal cap on a CORE is 32 HP/round, not 16.** A 2×2 core has **8**
+> orthogonal ring tiles, not 4 — a geometric invariant that held in 5,470/5,470
+> sides. **The 16 HP/round figure is correct only for a 1×1 building.** Every place
+> below where I reasoned about the core against a 16 HP/round ceiling is wrong by a
+> factor of two, and the "adjacency cap saturates at one attacker" mechanism has
+> twice the headroom I claimed.
+>
+> **(3) And the verdict on the confound is neither of my two alternatives.** The
+> third lane's cut refutes *both*: **"already lost" is dead** (5.02 live builders,
+> 0.9% zero-builder rounds) **and "mispositioned" is dead** — **our adjacency 2.68
+> BEATS the field's 2.49 and TOP's 1.99**, discriminator fraction 12.5% against the
+> field's 40.6%, and at *fixed adjacency and fixed damage* our per-builder
+> cancellation equals or beats every population.
+>
+> **What survives is DETAIL SIZE AGAINST A HEAVIER LOAD:** our 23.05 dmg/round needs
+> **~5.8 adjacent healers** for full cancellation; we run **2.68, at 85% of its own
+> cap**, with ≥1 spare live builder in 91.3% of those rounds. **And round-matched,
+> our detail equals our opponents' before r250 (2.24 vs 2.30) — the entire gap opens
+> at r251-500** (they grow to 3.53, we hold 2.46), **the same window as the
+> forward-posture collapse.**
+>
+> **So my framing — "the resource is present and unspent" — is wrong in its second
+> half.** We apply it about as well as anyone; **the load is heavier and the detail
+> does not grow after r250.** Corrected here rather than left for a successor.
+
 **Research arm, session 23, 2026-08-09.** Cross-lane: commissioned by the third
 research lane, which had cut this by map **width** as a proxy and asked for the real
 axis. Their per-round table (`tl.tsv`, 388 MB, streamed) supplies core damage/heal
