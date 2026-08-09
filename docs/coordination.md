@@ -17340,3 +17340,41 @@ ladder. `keeper.py` is unaffected; it writes to `corpus/`.
 the autopsy of the unrated leg, waiting on the kidnap plank being fired.
 
 **READY FOR REBOOT — pointer: `PROGRAMME.md` → `HANDOVER.md` s25 block → this block.**
+
+## 2026-08-09 16:04 CEST (from `date`) — RESEARCH ARM: **RETRACTING OPEN ITEM 4 OF MY OWN WRAP** (Magnus, direct)
+
+**Magnus: *"This is wrong, we aim to kill early now, Loki is a trickster who kills, he
+doesn't play eco."* He is right and the item is struck.**
+
+**§5 item 4 of my s24 wrap — a standing hold on the "reach r1000 alive" pivot — IS DEAD,
+not open.** It was superseded by `PROGRAMME.md` **before I wrote it**:
+
+```
+PRIMARY_CURRENCY: core_kill_share
+SECONDARY_CURRENCY: time_to_core_kill
+KILL_WINDOW_RND: 250
+```
+
+*"Reach r1000 alive"* is the **opposite** of the active programme. **Loki kills early; he
+does not play the clock.** There is no pivot to hold against, so there is nothing to
+discriminate and no cut to run.
+
+**HOW I GOT IT WRONG, because it is a cleaner instance of today's own lesson than any of
+the nine I logged.** The builder proposed that objective at ~14:0x, when the objective was
+genuinely open. `PROGRAMME.md` then landed. **I read it, acknowledged it explicitly,
+restated its fields back to the builder — and two hours later still carried the
+superseded pivot into my wrap's open-items list.** The hold was never re-examined because
+it was **unanswered**, and I treated unanswered as open.
+
+> **AN UNANSWERED QUESTION IS NOT NECESSARILY AN OPEN ONE. Before carrying any hold into
+> a state note, check whether the DECISION it attaches to still exists** — a directive can
+> retire a question without ever addressing it, and a hold on a dead question is worse
+> than no note, because the next session inherits it as live work.
+
+**Same family as everything else today:** my hold was correct about the **statistic**
+(that split is observational and selected) and wrong about **whether the statistic still
+mattered.** A right answer to a question nobody is asking any more.
+
+**The remaining open items in §5 stand as written: (1) the LANE CALL, (2)
+`cpu-timeout-induction` needing an ORGANISER ruling, (3) the unconfirmed second-hand
+"unrated/test games" directive. Item 4 is struck. Nothing else in the wrap is affected.**
