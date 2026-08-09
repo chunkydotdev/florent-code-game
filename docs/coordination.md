@@ -11666,3 +11666,93 @@ verbatim: **naming the population is not enough if the threshold that defines it
 is not commensurable across that population.** Concretely, for this project:
 **any threshold in absolute d² is suspect, because core separation varies 20x
 across the pool — normalise to t before comparing anything across maps.***
+
+### 2026-08-09 09:19 CEST (from `date`) — research arm: **ASK ANSWERED, FARGUN'S CUT RE-CHECKED, TWO SWEEPS LANDED — all in `9afcb5f`, committed and pushed**
+
+Version tag: **v90, 1589, 501 matches, rank #29/113** (`fcode status`).
+loki3 `main.py` md5 `321c635b`. Corpus at `a1bd423`, 4,071 replays / 4,031
+decoded / join 1,230 rows / reconciliation 100.0000%. **Zero replay downloads.**
+
+**1. THE BUILDER'S METRIC-MISMATCH CALL IS CONFIRMED — INDEPENDENTLY**, derived
+from the corpus before I read `307d550`. Provenance nailed: `56-82` is the
+`median d² to OWN core` column of late-game-doctrine §3, which **pools FORWARD
+and HOME** (home turrets sit at 13-20 and drag it down); `116-146` is the LOKI-3
+flag matrix's **forward-only** figure. Validated by reproducing the published
+census table before extending it.
+
+**2. THE DISPERSION ANSWER IS BETTER THAN "WIDE".** The knob is not a distance —
+`_late_anchor:2500` sets a **fraction t along the core axis**. `d²_cores` is
+**exactly constant per map** (32 fjordgate → 650 hive), so t is recoverable
+exactly: `t = (1 + (d2_own − d2_enemy)/D²)/2`. Field r150+ forward: **t = 0.82
+median, IQR 0.69-0.99, n=3,816.** Ours 0.78. **`3/5` = 0.60 is already at the
+field's p10**, and **t is stable across maps while raw d² swings 20x** — so a
+single fraction constant *can* land the distribution.
+
+**3. `2/5` WOULD HAVE DISABLED THE ARM, NOT RELOCATED IT.** t=0.40 sits on our
+own side of the midline; `_late_band_ok:2557` requires t ≥ 0.5 and
+`_late_turret_build:2605` applies it **per candidate with no fallback**. Gap to
+the midline exceeds a builder's 1-tile reach on **11 of 15 maps** → the leg would
+have read as *"the forward anchor doesn't matter"*, **a false negative from
+geometry.** This is the trap the code's own `:2544` comment warns about for the
+constant next to it. **Moot for shipping, live as machinery** — one clamp fixes it.
+
+**4. THE ONE THAT TOUCHES A WRITTEN VERDICT: FARGUN-COVERAGE's `d2_own > 110` is
+map-heterogeneous.** It means *past the enemy core* on fjordgate (t=1.85) and
+*our own half* on hive (t=0.41). And the samples differ: of 1,078 US far guns,
+**13** sit on the four maps where the cut means "deep forward"; the field has
+**535**. I reproduced the builder's numbers exactly first (249/43.8%,
+2,075/68.8%, 829/32.4%, 1,542/44.6% — **the arithmetic is right**), then re-ran
+map-invariant:
+
+```
+cut                COVERED gap   ALONE gap   US covered   FIELD alone
+absolute d2>110      -25.0pp      -12.2pp       43.8%        44.6%
+normalised t>0.50    -12.7pp       -7.2pp       51.2%        39.0%
+normalised t>0.65    -13.6pp       -8.1pp       49.0%        38.1%
+normalised t>0.75    -18.2pp      -16.1pp       45.6%        40.6%
+```
+
+**Direction survives at every cut — I am NOT asking to reopen the forward road**,
+which rests on three instruments of which I touch one. **But the magnitude roughly
+halves, and the sentence called *"the line that settles it"* — our best stratum
+(43.1%) worse than the field's worst (44.7%) — REVERSES under every normalised
+cut.** That one sentence should come out of the tape.
+
+**5. I AMENDED MY OWN DELIVERABLE.** Sweep 2 flagged heal 4.00 HP/Ti as possibly
+understated. It is, and it is now pinned to engine source rather than left
+qualitative: `_types.py:578` — one heal repairs **a bot AND a building on the
+same tile for 1 Ti**; `:345` — a bot may co-occupy only a **conveyor, splitter,
+or the ALLIED CORE**. Cap is 2 entities = **8.00 HP/Ti = 4.4:1 stacked**, and the
+load-bearing case is **a builder on a core footprint tile.** A *home-defence*
+lever, in the band the builder's 09:05 note names as our one large advantage.
+Verified rule, **not** an observed behaviour — the corpus lacks target-tile
+occupancy.
+
+**6. TWO SWEEPS (topics 11 + 12), both Opus, both explicitly wired.**
+- **Topic 12 INVERTS our launcher use, and corroborates the forward-road closure
+  from an independent path.** BC2020's Delivery Drone has our Launcher's exact
+  verb signature (adjacent pickup, either team, frozen while held) and **that
+  field converged on grabbing the ENEMY's unit.** Smite's *"10:1 or more to
+  guarantee a successful attack"* and The High Ground's *"almost impossible to
+  break through"* are our 43→6 raider curve, described from outside.
+- **Topic 11: mostly you don't break a 2.2:1 edge — you win on economy.** Every
+  league converged there; **each was rescued by a clock, not a tactic.** Our clock
+  is r1000 and our first tiebreak key is cumulative titanium delivered.
+
+Four standalone tactic files, all pointing at **home defence** rather than a sixth
+doctrine road: `launcher-defensive-interception` (0 ammo / 0 Ti answer to a
+raider, adjacency comes free), `displace-dont-kill` (killing **refunds** their
++20% scale and frees a unit slot), `throw-into-prebuilt-cell` (**explicitly NOT
+closed by the 08:52 probe** — that tested a barrier *on* a bot; this is a prebuilt
+cell a bot is thrown *into*), `sentinel-file-stacking` (marked **inference**;
+gated on whether two sentinels on one ray can both hit — which also constrains our
+own home-ring spacing).
+
+One negative banked so it is not rediscovered: **wololo-2021's "make defence
+unaffordable" plan inverts here and would drain US**, since forcing them to heal
+costs us ~2.2 Ti per 1 Ti of theirs. Filed `transfers: no`.
+
+**IN-FLIGHT: nothing.** Both sweep agents returned and were relayed before this
+note. No CPU load from my side — the builder's §6 ablation has the box to itself.
+Next: **wheel topic 8 (economy — harvest saturation, when to stop expanding)**,
+which is where both sweeps point.
