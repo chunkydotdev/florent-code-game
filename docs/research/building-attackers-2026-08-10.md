@@ -18,6 +18,13 @@ game** where the old pool produced zero. So the first question this cut answers 
 no longer "which opponent do we need" but **"is 339/13 a threat model that
 exists?"** — §1. The shortlist survives as the second finding — §2.
 
+**REVISED AGAIN (per-turn).** razer's 339 came in a **213-turn** game, so the
+first placement compared a short-game total against totals over games of unknown
+length. Recomputed **per turn against each game's own measured length**, the
+correction runs the *opposite* way to expectation: **razer is p99–p100 on
+attacks/turn, above every team in the league**, and p70 on kills/turn. The
+lethality finding is unchanged and now also shown length-invariant. §1.2–§1.4.
+
 ---
 
 ## 0. THE HEADLINE IS AN INVERSION OF THE BRIEF'S PREMISE
@@ -68,11 +75,18 @@ opponent acquisition.
 
 ---
 
-## 1. CALIBRATING `razer_probe` AGAINST THE LEAGUE — in range on volume, OUT of range on lethality
+## 1. CALIBRATING `razer_probe` AGAINST THE LEAGUE — ABOVE the league on volume, BELOW it on lethality
 
-**The reassuring half first: 339 building attacks per game is not off the scale.**
-The league median is 114 and the max is 855. The worry in the reframe — "if the
-whole league sits nearer 3 than 339" — is not what the data says.
+**The reassuring half first: the threat model razer represents does exist.** The
+worry in the original reframe — "if the whole league sits nearer 3 than 339" — is
+not what the data says. Real teams attack buildings hard and often.
+
+**But razer is not a typical member of that class, and the per-turn recomputation
+made that stronger, not weaker.** On attacks per turn it sits **above every one of
+the 71 teams measured**; on buildings killed per turn it sits at **p70–p87**; and
+it needs **26 swings per kill against a league median of ~8**. Volume and outcome
+disagree, and the fix is to close that gap rather than to trim either number on
+its own. §1.2 places it, §1.4 says what the rates should be.
 
 ### 1.1 STATE THE DENOMINATOR (both of them)
 
@@ -86,37 +100,91 @@ assumed capacity:
 - **enemy non-core buildings killed / game** = `removeEntity` count of the
   **opponent's** non-core buildings ÷ the same game count.
 
-**Both are per-game, per-team-side, one direction only.** If the builder arm's
+**Both are per-game, per-team-side, one direction only — and both are SUPERSEDED
+by the per-turn forms in §1.2**, where the denominator is each game's own turn
+count, read from the replay's turn-buffer count (measured, not assumed; asserted
+equal for both team-sides of every file). If the builder arm's
 339/13 counts both sides, or counts attempted `fire()` calls rather than shots
 that landed on a building tile, or counts damage events rather than attack
 events, **the comparison below is invalid and I cannot detect that from here.**
 The definitions above are stated precisely so they can be checked against
 `razer_probe`'s instrumentation before anyone acts on §1.3.
 
-### 1.2 WHERE THE PROBE SITS
+### 1.2 WHERE THE PROBE SITS — PER TURN (supersedes the per-game placement)
 
-**FIELD scope — 71 teams, third-party platform matches, neither side is us:**
+**The per-game placement below was withdrawn** after the builder arm established
+that razer's 339 came in a **213-turn match** (razer's core died early), i.e. a
+total over a short game compared against totals over games of unknown length.
+Recomputed per turn from the **same population and the same decoder**, using each
+game's **own** turn count.
 
-| statistic | min | p10 | p25 | **median** | p75 | p90 | max | **probe** | **percentile** |
+**Game length in MY population is bimodal too, and differently from our ladder**
+— FIELD scope, 6,001 third-party games: **median 309, mean 474, 48.9% end before
+turn 300, 28.1% run the full 1000.** (Our own ladder tape reads median 370 /
+mean 526 / 44.6% / 35.9% — close but not the same, which is why I used mine.)
+**A single divisor would have been wrong; every rate below divides each game by
+its own length.**
+
+**Team-level, pooled (team total attacks ÷ team total turns), 71 teams:**
+
+| statistic | min | p10 | p25 | **median** | p75 | p90 | max | **razer** | **percentile** |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| building attacks / game | 0 | 9 | 29 | **114** | 161 | 252 | 855 | **339** | **p93** (5 of 71 above) |
-| enemy buildings killed / game | 1.1 | 4.5 | 6.7 | **10.6** | 17.6 | 26.7 | 55.1 | **13** | **p58** (30 of 71 above) |
+| building attacks / **turn** | 0.000 | 0.022 | 0.058 | **0.284** | 0.455 | 0.574 | **1.297** | **1.592** | **p100 — 0 of 71 teams above** |
+| enemy buildings killed / **turn** | 0.001 | 0.007 | 0.015 | **0.027** | 0.046 | 0.068 | 0.116 | **0.061** | **p87** |
 
-**VS-US scope — 24 teams, the same opponents attacking OUR buildings** (the
-scope-matched comparison if 339 was measured against our bot):
+**THE PER-TURN CORRECTION DOES NOT RESCUE THE VOLUME PLACEMENT — IT MAKES IT
+WORSE.** Per game razer was p93 and inside the league's range. **Per turn it
+exceeds the most aggressive team in the league (1.592 vs 1.297).** The expected
+outcome — "its volume is already reasonable per turn" — is **not** what the data
+says, and I am reporting that rather than the convenient version.
 
-| statistic | min | p25 | **median** | p75 | p90 | max | **probe** | **percentile** |
+### 1.2b THE CONDITIONED REFERENCE CLASS — and the n=1 problem
+
+**339/13 is ONE game.** A single observation belongs against the distribution of
+**per-game** rates, not against team-level pooled averages, and it belongs
+against games of comparable length, because **the coordinator's worry #1 is
+confirmed: short games really do carry higher per-turn attack rates.** Pooled by
+band, FIELD scope:
+
+| game length | game-sides | attacks/turn | kills/turn | attacks per kill | median len |
+|---|---:|---:|---:|---:|---:|
+| <300 | 5,872 | 0.379 | 0.0446 | 8.5 | 156 |
+| 300–599 | 2,108 | 0.441 | 0.0495 | 8.9 | 401 |
+| 600–999 | 648 | 0.399 | 0.0426 | 9.4 | 736 |
+| 1000 | 3,374 | 0.215 | 0.0217 | 9.9 | 1000 |
+
+Full-length games run at **half** the per-turn attack rate of short ones — so the
+conditioning was necessary. **Note the last column: attacks-per-kill is 8.5–9.9
+across every band. The ratio is invariant to game length as well as to turn
+count, which is why the lethality finding needed no rework.**
+
+**Properly conditioned — FIELD game-sides of length 150–299 turns, the same band
+as razer's 213-turn game, n = 3,130 game-sides:**
+
+| statistic | p25 | **median** | p75 | p90 | p99 | max | **razer** | **percentile** |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| building attacks / game | 2 | 21 | **130** | 218 | 235 | 995 | **339** | **p92** |
-| our buildings killed / game | 0.1 | 3.4 | **9.4** | 21.3 | 28.6 | 70.5 | **13** | **p67** |
+| attacks / turn | 0.133 | **0.348** | 0.614 | 0.896 | 1.597 | 3.569 | **1.592** | **p98.9** |
+| kills / turn | — | **0.0374** | — | 0.1137 | 0.2258 | 0.4485 | **0.0610** | **p69.6** |
+| attacks per kill | — | **7.9** | — | 21.9 | 84.3 | — | **26.1** | **p92.0** |
 
-**Both scopes agree.** The probe is a high-aggression but not unprecedented
-attacker on volume, and an unremarkable one on outcome.
+**Conditioning changes the answer only slightly, and in the same direction:
+attacks p98.9, kills p69.6.** So the finding is robust to the length confound
+rather than created by it.
 
-### 1.3 THE WARNING: the probe pokes like a p93 team and kills like a p58 team
+**But n=1 is the binding limitation on razer's own number, not on the league's.**
+Within this conditioned class the per-game spread is enormous — attacks/turn runs
+0.133 at p25 to 1.597 at p99 to 3.569 at max. **One game locates razer to
+roughly ±2 deciles.** Nobody should tune to a target until razer's rates are
+re-measured over **≥20 games**, and that measurement is cheap. Everything in
+§1.4 is conditional on the single game being representative.
 
-`339 / 13` = **26 attack events per building destroyed.** No real team is
-anywhere near that ratio:
+### 1.3 THE WARNING (UNCHANGED): razer swings like a p99 team and kills like a p70 team
+
+`339 / 13` = **26 attack events per building destroyed** — a ratio, therefore
+turn-invariant, therefore untouched by the correction above, and now also shown
+length-invariant by the band table. **Against the conditioned class it sits at
+p92: razer is worse at converting swings into kills than 92% of real game-sides.**
+No real team is near it:
 
 | team | attacks/game | kills/game | attacks per kill |
 |---|---:|---:|---:|
@@ -148,10 +216,44 @@ tuned green on `razer_probe` may be measuring its own best case.**
 
 **So: `razer_probe` unblocks measurement, and it should be trusted for
 "does the treatment do anything at all" and NOT for "how much".** It is a
-detection fixture, not a calibration fixture. The concrete fix is cheap — raise
-lethality, not volume: fewer targets, finished. Landing at ~150 attacks and
-~15 kills per game would put it at the league median on both axes instead of
-splitting p93/p58.
+detection fixture, not a calibration fixture.
+
+### 1.4 WHAT RAZER'S RATES SHOULD BE — the number the builder asked for
+
+**Specify the target PER TURN, never per game.** Game length is an **outcome of
+the treatment being tested**: if a survivability plank works, razer's games get
+longer, and any per-game attack budget silently loosens as the plank improves.
+A per-game budget is a moving target measured against itself.
+
+Two coherent targets, and they differ in what you want the fixture to be:
+
+| target | attacks/turn | kills/turn | attacks per kill | in a 213-turn game |
+|---|---:|---:|---:|---|
+| **razer today** | 1.592 (p99) | 0.061 (p70) | 26.1 (p92) | 339 atk / 13 kills |
+| **A — median fixture** | **0.348** | **0.037** | 9.3 | 74 atk / 8 kills |
+| **B — hold threat, fix mechanism (RECOMMENDED)** | **~0.55** | **~0.061** | **~9** | 117 atk / 13 kills |
+
+**Take B.** Target A puts razer at the league median on both axes but makes it
+*less* threatening than it is now (kills/turn 0.061 → 0.037), and a fixture built
+to make a defensive treatment observable should sit at or above median threat,
+not at it. **B holds lethality exactly where it is — p70, comfortably realistic —
+and removes only the wasted swings**, landing the ratio on the conditioned median
+of ~8–9. Mechanically that is "finish a target before moving to the next", not
+"attack less".
+
+**On my earlier "~150 attacks / ~15 kills per game": the derivation was invalid
+and the number was roughly right anyway.** At 213 turns it is 0.70 attacks/turn
+(p84 conditioned) and 0.070 kills/turn (p73) — close to target B and **not**
+weak. So the specific fear that it would make razer weaker per turn than the
+league is not supported. **But it was right by luck** — I anchored on the
+turn-invariant ratio, and the per-game framing that carried it is fragile for the
+reason above. A wrong instrument that returns a nearly-right answer is the
+hardest kind to catch, which this project already knows from TRAP 7. **Use the
+per-turn form.**
+
+**If razer's re-measurement over ≥20 games moves its attacks/turn below ~0.9
+(p90 conditioned), the volume half of this recommendation lapses entirely and
+only the lethality half survives.**
 
 ---
 
@@ -349,10 +451,11 @@ fixture.
 
 So the concrete path, **updated for `razer_probe` already existing**:
 
-1. **Re-tune `razer_probe` for lethality, not volume** (§1.3) — target ~150
-   attacks / ~15 kills per game, the league median on both axes, instead of the
-   current p93/p58 split. This is the highest-value single change and it costs
-   nothing to try.
+1. **Re-measure `razer_probe` over ≥20 games first** — 339/13 is a single game
+   and locates it to about ±2 deciles (§1.2b). Then re-tune **per turn, never
+   per game** (§1.4): hold kills/turn at ~0.061 and cut attacks/turn from 1.592
+   to ~0.55, landing attacks-per-kill on the league median of ~8–9. Mechanically
+   that is "finish a target before starting another", not "attack less".
 2. **Fix the five probes that hard-code `best_core or best_any`** so the *rest*
    of the pool stops sitting at the 0.17% floor. `razer_probe` alone makes the
    pool bimodal — one building-attacker and eight core-rushers — and a

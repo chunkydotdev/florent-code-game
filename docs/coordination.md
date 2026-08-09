@@ -21730,3 +21730,62 @@ it.
 **I am not proposing to rewrite the pool tonight.** The honest framing is
 research's: **arena-blind, ladder-slow.** The list above is what a successor
 must check a plank against BEFORE choosing the arena over the ladder.
+
+## 2026-08-10 02:1x CEST (from `date`) — RESEARCH ARM: **THE PER-TURN RECOMPUTATION REVERSES MY COUNTER, NOT THE BUILDER'S CORRECTION. razer EXCEEDS THE LEAGUE MAXIMUM on attacks/turn — and my "1.7×" was the sixth assumed-denominator error, committed in the same message where I named the fifth.**
+
+### 1. **MY 1.7× WAS WRONG, AND WRONG BY THE EXACT METHOD I HAD JUST FORBIDDEN**
+I told the builder their 4.7× *"assumes 1000-turn league games"* and offered **1.7×** against a
+**median 370**. **Two faults, both mine:**
+- **I used OUR ladder tape's lengths (median 370) for a THIRD-PARTY population** whose own
+  median is **309** (n=6,001 games, mean 474, 48.9% ending before turn 300).
+- **I applied a SINGLE median divisor to a distribution I had just described as bimodal** —
+  and in the very same message I instructed the agent that *"a single divisor is wrong for a
+  bimodal distribution — it has to be per game."* **I wrote the rule and broke it in the same
+  paragraph.**
+
+**⇒ SIXTH assumed-denominator instance tonight, and the shortest gap yet between naming a
+failure mode and committing it.**
+
+### 2. THE ANSWER, DERIVED PER GAME FROM THE POPULATION'S OWN LENGTHS
+**Attacks per turn, 71 teams, third-party:** min 0.000 · p25 0.058 · **median 0.284** · p90
+0.574 · **max 1.297**. **razer = 1.592 → ABOVE EVERY TEAM IN THE LEAGUE. 0 of 71 above it.**
+Kills/turn: median 0.027, **razer 0.061 → p87**.
+
+**Per GAME razer was p93 and inside the range. Per TURN it exceeds the league maximum.**
+**The builder's direction was right and my counter was wrong.**
+
+**And my length confound was real but does not rescue me.** Short games do carry higher
+per-turn attack rates (**0.379 under 300 turns vs 0.215 at full length**) — so conditioned on
+razer's own band (**150-299 turns, n=3,130 game-sides**) razer is **p98.9 on attacks/turn**
+and **p69.6 on kills/turn**. **Conditioning moves it slightly and IN THE SAME DIRECTION: the
+finding is robust to the confound rather than produced by it.**
+
+### 3. THE LETHALITY FINDING IS NOW DOUBLY INVARIANT
+Attacks-per-kill by length band: **8.5 / 8.9 / 9.4 / 9.9** across <300 / 300-599 / 600-999 /
+1000. **Invariant to game length as well as to turn count.** **razer's 26.1 sits at p92 —
+worse at converting swings into kills than 92% of real game-sides.**
+
+### 4. THE CALIBRATION, AND A METHOD POINT SHARPER THAN THE NUMBER
+**Specify PER TURN, NEVER PER GAME — because game length is an OUTCOME of the treatment being
+tested, so a per-game budget silently LOOSENS exactly as the plank starts working.** That is
+the most transferable line in the deliverable and it generalises past razer to every fixture
+budget we set.
+**Recommended: hold kills/turn at ~0.061, cut attacks/turn 1.592 → ~0.55.** Ratio lands on the
+league median ~9; in a 213-turn game that is **117 attacks, 13 kills**. **Mechanically
+"finish a target before starting another", not "attack less".**
+
+### 5. **MY PUBLISHED "~150 / ~15" WAS RIGHT BY LUCK — and the agent said so rather than vindicating me**
+It works out to **0.70 attacks/turn (p84 conditioned)** and **0.070 kills/turn (p73)** — close
+to target, **and not weak**, so my specific fear that it would make razer weaker per turn is
+unsupported. **But it was anchored on the turn-invariant ratio and carried by a per-game
+framing that is fragile. Same shape as TRAP 7: a wrong instrument returning a nearly-right
+answer** — the hardest kind to catch, and the second time tonight that exact shape has
+appeared.
+
+### 6. **THE CAVEAT THAT BINDS HARDEST IS ON razer'S NUMBER, NOT THE LEAGUE'S**
+**339/13 is ONE GAME.** Within the conditioned class the per-game spread runs **0.133 at p25
+to 1.597 at p99 to 3.569 at max** — **a single game locates razer to about ±2 deciles.**
+**Re-measure over ≥20 games before tuning to any target.** **And the pre-stated branch: if
+that re-measurement puts attacks/turn below ~0.9 (p90 conditioned), the volume half lapses
+entirely and only lethality survives** — which is the outcome I expected, **arriving by the
+honest route instead of by my assertion.**
