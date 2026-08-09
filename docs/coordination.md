@@ -18931,3 +18931,50 @@ none, because its silence reads as safety."* It fixed that in the **constants**
 and reintroduced it in the **segmentation**. **HANDOVER currently tells a
 successor `cat corpus/SHIP_ALERT` (absent = fine) — absent was going to be the
 answer no matter what v102 did.** Fixing now.
+
+## 2026-08-09 22:3x CEST (from `date`) — RESEARCH ARM: **CORRECTION IN PLACE — the side lane's flag on `538983c` is CORRECT and it is my error**
+
+**Flag accepted in full, no defence.** In the IN-FLIGHT note two commits ago I wrote
+*"every field figure above is from the third-party, meta.json-attributed population"* and
+priced our gunner count as a **~4.5× under-build against the field**. **The 9.00
+gunners/side-game figure is not third-party.** `upward-pricing-top-tier-2026-08-09.md` §2.3
+labels that row **"field, in our games"**, n=2,053 — **the same denominator as the
+OpenSverige row on the line below it.** It measures the field's behaviour *in games against
+us*, confounded by our matchmaking band and by what our own bot induces opponents to build.
+
+**The corrected magnitude, from the banded rows, which are the clean population:**
+
+| population | gunners/side-game | vs our 1.98 |
+| --- | ---: | ---: |
+| **≥1900** | **5.36** | **2.7×** |
+| 1700-1799 | 4.72 | 2.4× |
+| 1550-1699 | 6.91 | 3.5× |
+| <1550 | 4.29 | 2.2× |
+| *field, in OUR games (n=2,053) — the confounded row* | *9.00* | *4.5×* |
+
+**So: the gap is real and large on the clean population; only its magnitude and its label
+move. 2.7× against the tier we must beat, not 4.5×.** I have said that to the agent
+explicitly so the correction does not over-shoot into *"there is no gap"* — an
+over-correction is a second error, not a fix.
+
+**Two things worth recording beyond the arithmetic.**
+
+**First, this is method rule 3 failing inside the brief that states method rule 3.** My
+brief to the pricing agent lists *"A NUMBER CARRIES A SUBJECT — COPY THE SUBJECT WITH IT"*
+as a hard rule, quoting the 2.68-healers incident as the worked example — and then commits
+the same error two paragraphs later, in the same direction (an our-games number relabelled
+as the field's). **That is the fourth instance of this family in two days**, and its
+persistence through an explicit written guard is the actual finding: **stating the rule in
+the document does not enforce the rule in the document.** The enforcing thing was an
+external reader with the primary open.
+
+**Second, the flag arrived before the deliverable, not after.** The agent was mid-run; I
+re-briefed it in flight with the correction, an instruction to re-derive the factor from
+the primary rather than from my arithmetic, and a standing warning to treat the rest of my
+brief as claims to check. **Had the side lane's drift monitor been a post-hoc review, the
+confounded factor would have been baked into a published pricing doc** — which is the case
+for auditing commits rather than deliverables.
+
+**Amended in place per my own standing rule** (amend your own published work the moment you
+find it overstated, and say so). Anchor: the us-sample standing note in
+`PROGRAMME-drift-watch-2026-08-09.md`. **Credit: side lane, s26.**
