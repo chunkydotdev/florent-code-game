@@ -25,8 +25,38 @@ healed 3 Ti conveyor.**
 | gunner | 2.1 | 1.2 | 55.9% | 8.9 | **4.5** | 50.0% |
 
 Titanium value lost per game at base cost: **US 360 Ti** (223 of it *builder bots*,
-43 conveyors) against **THEM 293 Ti** (137 builders, **89 gunners**). **We absorb
-into cheap things; they lose expensive ones.** The drain is real as a description.
+43 conveyors) against **THEM 293 Ti** (137 builders, **89 gunners**).
+
+> ### ⛔ CORRECTION (builder arm, same hour) — my reading of that composition was wrong
+>
+> I wrote *"we absorb into cheap things; they lose expensive ones"*, on 89 Ti of their
+> gunners against 24 Ti of ours. **The field loses 89 Ti of gunners because it BUILDS
+> 8.91 gunners a game to our 2.12.** Loss *rates*: **theirs 50.0%, ours 55.9% — they
+> lose a SMALLER fraction, not a larger one.**
+>
+> **The 89-vs-24 gap is a production difference wearing a loss-composition costume.**
+> It is not evidence that we successfully bait expensive things; it is the
+> turret-count gap again, and that is refuted on three knobs. **Same error class as
+> four others today: a ratio between two quantities where only one of them varies.**
+>
+> **What survives:** the conveyor asymmetry is a genuine *rate* difference (24.2% vs
+> 16.9%), so we really do lose a larger share of our cheap buildings. **What does
+> not:** any claim that the field's losses are skewed expensive relative to ours.
+
+**And the rate table, which is the version that survives the correction:**
+
+| entity | US built | **US lost%** | THEM built | THEM lost% | rate gap |
+|---|---|---|---|---|---|
+| **builder_bot** | 16,260 | **57.3%** | 13,024 | 44.2% | **+13.2pp** |
+| harvester | 9,400 | 23.8% | 8,237 | 12.6% | **+11.3pp** |
+| conveyor | 74,344 | 24.2% | 42,393 | 16.9% | +7.3pp |
+| gunner | 2,657 | 55.9% | 11,186 | 50.0% | +6.0pp |
+| **sentinel** | 2,967 | 43.4% | 2,283 | 44.9% | **−1.6pp** |
+
+**We lose a higher fraction of everything we build except sentinels.** That is a
+broad attrition disadvantage, not a subsystem one — and **the single entity where we
+are at parity is the sentinel**, which is also the one that sits at home and whose
+line passes through friendlies.
 
 **But "2,708 Ti of their shots went into a 3 Ti object" is an EXCHANGE-RATE
 statistic. It says what they spend. It does not say what we get.** That is exactly
@@ -77,6 +107,37 @@ in the third lane's `rx` decode.** Both have been requested.
    of the fight. **This routes around the dominance confound entirely**, because
    delivery is not a function of who is winning the exchange in the way shot count
    is.
+
+## 2b. The largest un-examined line: builder bots
+
+The builder arm opened it and it is worth recording where it sits.
+**Builder-bot deaths are 222.9 Ti/game = 62% of ALL our losses**, at a loss rate of
+**57.3% against the field's 44.2% (+13.2pp)** — and builder bots are joint
+most-scale-expensive (+20% each), so every death is 30 Ti of replacement **plus** a
+permanently steeper cost curve.
+
+**A first cut on "what do those deaths buy" — where they die, relative to their own
+core:**
+
+| band | US | US % | THEM | THEM % |
+|---|---|---|---|---|
+| home d²≤8 | 1,877 | **20.1%** | 1,020 | 17.7% |
+| near 9-32 | 2,737 | **29.4%** | 910 | 15.8% |
+| mid 33-120 | 3,111 | 33.4% | 1,687 | 29.3% |
+| far >120 | 1,600 | **17.2%** | 2,134 | **37.1%** |
+
+**49.5% of our builder deaths are within d²≤32 of our own core, against 33.5% for the
+field. Only 17.2% of ours die far from home, against 37.1% of theirs.**
+Death rounds are near-identical (median 308 vs 319), so this is not a timing artifact.
+
+**Our builders die at home. Theirs die away.**
+
+**What this establishes and what it does not.** It constrains *what our dying builders
+were not doing*: a builder that dies at d²≤32 of our own core was not projecting.
+**It does not establish that those deaths were unproductive** — a builder healing a
+besieged core and dying there is earning it exactly as a forward gun does. **This is
+still a cost statistic.** Recorded as the largest un-examined line in the ledger,
+**not as a queue item**, per the standing lesson.
 
 ## 3. Standing note
 
