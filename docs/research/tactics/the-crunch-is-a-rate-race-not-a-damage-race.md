@@ -63,9 +63,11 @@ is the 2.2:1 donation.
 WHAT WOULD KILL IT — The rate argument only holds if the attacking bodies arrive
 **simultaneously**. Java Best Waifu's horde was spawned from a finished economy
 and flown in by drones; our equivalent has two hard rate caps the 2020 engine did
-not have. The core spawns **≤1 builder per turn** with **+20% cost scaling per
-builder**, so a "horde" is a *savings* problem measured in turns, not titanium —
-and turns are not purchasable. Second, our only long-range mover is the launcher
+not have. The core spawns **≤1 builder per turn**, and each builder adds **+20% to
+the team's ONE GLOBAL cost scale** (corrected s26 — the scale is a single additive
+team factor, not per-category, so every builder makes every *turret* dearer too).
+So a "horde" is a savings problem measured in turns, not titanium — and turns are
+not purchasable, while the bodies you buy inflate the guns you still need. Second, our only long-range mover is the launcher
 throw, and the library measured that **96.4% of enemy victims are off the landing
 tile within one round** and post-throw dwell is one round: throws displace, they
 do not deliver a standing force. If the bodies trickle in, the defender's heal

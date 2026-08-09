@@ -28,7 +28,7 @@ They also record the negative result on going *cheaper* — a rival meta got tra
 price via a unit upgrade, and copying it did not work:
 
 > *"Although this strategy allowed us to place more traps, these traps were much less
-> efficient, and it only did better against a few teams, so we got rid of i[t]"*
+> efficient, and it only did better against a few teams, so we got rid of it."*
 
 **Referent, since it carries a demonstrative:** *"this strategy"* is the preceding
 sentence's — teams that *"managed to quickly level up to get 3 level 6 builders and build

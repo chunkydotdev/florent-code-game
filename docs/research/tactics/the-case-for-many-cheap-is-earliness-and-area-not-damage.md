@@ -12,8 +12,12 @@ Asked why anyone builds many cheap towers instead of one strong structure, the l
 tower-defence-adjacent canon states the case in one place and enumerates it:
 
 > *"towers have several key advantages that can make them useful. First, they are often
-> available earlier than more powerful defensive structures. They can be much cheaper; for
-> example, in Age of Empires II, the [Watch Tower…]"*
+> available earlier than more powerful defensive structures. They can be much cheaper"*
+
+*(The quote is cut there because the next words wrap an inline hyperlink — the page reads
+"for example, in Age of Empires II, the [Watch Tower] costs less than…" — and a sentence
+containing a linked word never greps as one literal string. Same trap this library already
+recorded for Liquipedia.)*
 
 and the area argument, whose referent — *"one more powerful defensive structure"* — is
 established in the preceding sentence as the Castle/Fort/Keep:

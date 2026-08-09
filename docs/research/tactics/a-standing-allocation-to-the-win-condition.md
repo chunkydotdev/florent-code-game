@@ -62,8 +62,10 @@ still win. Both can be true — the resolution is that the allocation should be
 
 WHAT WOULD KILL IT — Three ducks out of a BC2024 duck population is a rounding
 error; three units out of ours is not. We are capped at **50 living units
-including the core**, our only mobile unit costs 30 Ti at **+20% scale per
-builder**, and every builder pulled off economy stops delivering titanium —
+including the core**, our only mobile unit costs 30 Ti and adds **+20% to the ONE
+GLOBAL cost scale** (s26 correction: the scale is a single additive team factor, so
+a standing squad of builders raises the price of the turrets it is meant to escort),
+and every builder pulled off economy stops delivering titanium —
 which is our **first tiebreak key**. So a standing allocation is charged twice
 here: once in titanium and once in the fallback we are currently winning 57.2% of.
 It would be defeated outright by a measurement showing that the marginal builder

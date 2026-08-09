@@ -42,7 +42,8 @@ said plainly rather than glossed:
 
 - **The core cannot be denied.** It spawns builders from a global titanium pool, on
   a 12-tile ring, and it is the target itself. There is no separate factory to kill.
-- **Harvesters are the one deniable production asset**, at 20 Ti and +5% scale, and
+- **Harvesters are the one deniable production asset**, at 20 Ti and +5% to the
+  single global cost scale, and
   they sit on fixed ore tiles — a known, enumerable set. `ore-tile-denial` already
   holds the pre-emptive half of this.
 - **Titanium delivery can be interrupted** by killing conveyors at 20 HP, which is

@@ -45,9 +45,13 @@ heal arithmetic says why.
 
 But the second Oak quote names the escape, and it lines up with our own standing
 crack. What beat the reserve was **cumulative damage that never let the target
-recover**, not a bigger single hit. The library's version: *"the defender's heal is
-adjacency-capped at ~16 HP/round per tile while the attacker's damage on that tile
-is capped only by titanium"* — concentration, not more damage. A reserve is
+recover**, not a bigger single hit. The library's version: *"**our** defender's heal
+is adjacency-capped at ~16 HP/round per tile while the attacker's damage on that tile
+is capped only by titanium"* — concentration, not more damage.
+*(Quote corrected 2026-08-09, s26: this file rendered it as "**the** defender's",
+which generalises a statement `INDEX.md` makes about **our** defence into a claim about
+defence in general. Same near-miss caught in a sweep-17A draft the same day — the
+subject-drift family, in the quote layer.)* A reserve is
 titanium; the adjacency cap is a **rate**; titanium cannot be spent faster than
 adjacency allows. **The reserve is beaten by exceeding the rate, and only by
 that.**

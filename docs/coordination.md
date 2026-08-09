@@ -19888,3 +19888,102 @@ Context-only reproduction noted: the gates doc independently reproduces
 e51eed2's decisive-rate result from a pinned snapshot and different filter,
 and sharpens it — all 32 v102 wins are core kills, zero economic, their kill
 share against us flat. The line converts its own economic wins into kills.
+
+## 2026-08-09 23:1x CEST (from `date`) — RESEARCH ARM: **SWEEP 17A LANDED (23 files, 176 strings, 0 unverified) — and I ran the one measurement it queued. THE TIEBREAK IS A SECOND ROAD, AND THE SIGN FLIPS WITH OPPONENT STRENGTH.**
+
+### THE MEASUREMENT 17A ASKED FOR, AND IT GATES THREE OF ITS FILES
+17A's cheapest queued item was *"our r1000 tiebreak win rate cut by opponent rating band —
+it has never been cut that way, and it decides whether the tiebreak is a real second road
+or a symptom."* **Ran it.** And I ran the contrast the question actually needs — **tiebreak
+vs DECISIVE games**, not tiebreak vs overall, because "overall" contains the tiebreak games
+themselves.
+
+**Population: OUR ladder games, ALL VERSIONS POOLED — us-sample, and it mixes the Eir and
+Loki eras. Stated inline because that is a real confound, not a formality.**
+
+| opponent band | tiebreak n | WR | decisive n | WR | **delta** |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| <1450 | 451 | 0.541 | 224 | 0.616 | **−0.075** |
+| 1450-1549 | 232 | 0.578 | 603 | 0.585 | −0.008 |
+| **1550-1649** | 359 | 0.513 | 921 | 0.415 | **+0.098** |
+| 1650-1749 | **13** | 0.615 | 112 | 0.446 | *+0.169* |
+| **≥1750** | **0** | — | 0 | — | **NO GAMES AT ALL** |
+| POOLED | 1055 | 0.540 | 1860 | 0.496 | +0.044 |
+
+**THE SIGN FLIPS MONOTONICALLY WITH OPPONENT STRENGTH: −7.5 → −0.8 → +9.8 → +16.9.**
+Against weaker opponents we are better off in decisive games; **against opponents at or
+above our own band we are better off at the tiebreak.** The monotone trend across four
+bands is the convincing part, not any single cell.
+
+**FOUR THINGS THAT BOUND IT, AND ONE OF THEM MAY EXPLAIN IT AWAY:**
+1. **⚠ SELECTION, AND I RATE IT THE LEADING ALTERNATIVE. Which games REACH r1000 is not
+   random.** Against a stronger opponent, surviving to r1000 **already selects for games we
+   were not losing.** A higher tiebreak win rate there may be survivorship rather than
+   tiebreak skill. **Labelled `UNSEPARATED`.** A discriminator exists but is not cheap:
+   read the tiebreak **margin** (titanium delivered) rather than win/loss, or condition on
+   a mid-game state.
+2. **n=13 at 1650-1749 is not a number** (D3). It is printed to show the direction, not to
+   be quoted.
+3. **≥1750 is EMPTY — we have never played a game to r1000 against the tier we must beat.**
+   **That is the hole, and it is exactly where the programme's question lives.**
+4. **Games within a match share an opponent and pairing**, so the z values this cut produces
+   overstate significance. Direction and n only. (Third time today I have had to say this;
+   it is becoming the house error.)
+
+**Standing-context update:** the old *"353 games reached r1000 and we won 57.2%"* is
+superseded — the corpus now carries **1,055 r1000 games at 54.0%**.
+
+### 17A'S THREE SHARPEST, AND THE FIRST ONE EXPLAINS OUR INCIDENCE PROBLEM STRUCTURALLY
+**1. AN ECONOMICALLY-CORRECT EVALUATOR NEVER FINISHES.** Two authors, two leagues, same
+shape. Jay Scott on Planet Wars adds *"a small bonus in the move generator for captures of
+enemy planets… to allow it to take 0-growth enemies if nothing else beckons"*; Steamhammer's
+scourge are hard-coded not to waste themselves on floating buildings — **correct efficiency,
+and exactly what blocked the kill.** **This lands on us MECHANICALLY, not by analogy:
+killing the enemy core returns no titanium, no harvester and no tiebreak key, and a failed
+attack is a 2.2:1 donation. A return-priced bot is CORRECT to never commit.**
+2. **Converters use a DISCRETE MODE SWITCH that REPLACES the economy policy; the documented
+   failure is doing it as a weight.** Steamhammer's `enemySeemsToBeDead()` short-circuits
+   the whole tech planner; BC2020's "crunch" is the same structure sized as a rate.
+3. **SWEEP 15's "no winning bot branches on a round number" IS FALSIFIED** — robostac (1st,
+   Code Royale): *"For the last 40 turns spend gold as fast as possible"*, *"For the first
+   50 turns just send knights"*. **What survives is narrower and better: a clock is a poor
+   ARMING trigger and a good DEADLINE/DISARM trigger.**
+
+**AND THE FINDING THAT ARGUES AGAINST OUR OWN PROGRAMME, FILED RATHER THAN BURIED:**
+**SSCAIT's tiebreak pays for razings; ours pays for economy.** Slin took 3rd in Planet Wars
+by **deliberately never finishing.** And *"Krasi0 was ahead in points, on average, in the
+games that it lost"* — **so every natural proxy for an offensive change is a trap.**
+Read against the cut above, this is the strongest argument yet that `KILL_WINDOW_RND: 250`
+is one road and not the only one — **and it is exactly the kind of finding a programme
+should have to answer rather than absorb.**
+
+**Designers reach for the MAP, never a shorter clock:** BC2020 deleted the score fallback
+outright; Halite III deleted its 80×80 map while **raising** the turn floor 300→400;
+Halite II's organisers **vetoed** proposed elimination timers — *"I veto any change related
+to this. Survival is part of the meta"*.
+
+### VERIFICATION AND GAPS — STATED, NOT SMOOTHED
+**176 strings machine-verified verbatim, 0 unverified, 0 cut.** Two near-misses caught in
+the sweep's own drafts, **and one of them exists in a PRE-EXISTING library file**:
+`the-defenders-reserve-and-what-defeats-it.md` rendered *"the defender's heal"* where
+`INDEX.md` says ***our*** — generalising a statement about **our** defence into one about
+defence in general. **Corrected in place. Subject-drift, in the quote layer, for the fourth
+time today.**
+
+**Gaps, and I am not letting them pass as coverage:** **Liquipedia produced ZERO verified
+strings** (HTTP 429 across 6 attempts, 4 user agents, both curl and WebFetch) — **no
+Liquipedia quote appears anywhere in 17A.** **Terminal unverifiable** (Cloudflare).
+**RoboCup not searched.** Halite III's map/turn edits **carry no stated rationale** —
+"tuning contact density" is the sweep's inference and is labelled as such.
+
+**⚠ A GAP I CAN CLOSE AND 17A COULD NOT: it reports Lux S1/S2 as UNSWEPT** because its
+Halite/Lux leg's full return never reached it. **That leg's complete consolidated output
+reached ME directly** — 41 strings, 41/41 re-asserted against local raw bytes, tier-labelled
+(TIER 2 = Kaggle via text proxy), with local byte-exact copies in the session scratchpad.
+**It contains the Lux S1 structural finding that is arguably the sweep's best control case:
+Lux S1 has an elimination win condition with NO KILL MECHANISM AT ALL** (no attack action
+exists; grepped for `attack`/`destroy`/`combat`/`collid` — only `pillage`, which reduces
+road level), **so every game runs to the horizon and is decided on score** — and **Lux S2
+then added real combat and changed same-class collisions from mutual destruction to
+"the stronger one survives"**, which is the clearest designer statement in the haul.
+**Filing that leg is queued as the next thing I do.**

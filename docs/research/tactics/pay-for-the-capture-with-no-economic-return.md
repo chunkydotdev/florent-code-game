@@ -61,8 +61,9 @@ advantage.
 
 WHAT WOULD KILL IT — Jay Scott's bonus was cheap because his losing move was
 cheap: ships that had nothing better to do. Our equivalent purchase is a sentinel
-at 30 Ti with **+20% scale on every subsequent one**, placed inside the enemy kill
-zone where it cannot retreat. A "small bonus if nothing else beckons" that buys a
+at 30 Ti, adding **+20% to the ONE GLOBAL cost scale** — which under the s26
+correction raises the price of *everything* we build afterwards, not just the next
+sentinel — placed inside the enemy kill zone where it cannot retreat. A "small bonus if nothing else beckons" that buys a
 sentinel is not small. So the honest transfer is not the magnitude, it is the
 **shape**: a term that exists at all, and that is not justified by return.
 

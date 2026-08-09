@@ -15,7 +15,7 @@ Steamhammer into exactly that kind of population — states the confound directl
 > *"But there is a reason that so many bots play turtle strategies. Turtling is strong
 > against bots which do not adapt, which is most of them. For Steamhammer, I added 1 base
 > and 2 base turtle openings which crush Wuli, an opponent that Steamhammer otherwise
-> struggl[es against]"*
+> struggles against. Wuli does not adapt."*
 
 He separately gives the *correct* valuation of static defence against an opponent that
 does adapt:
