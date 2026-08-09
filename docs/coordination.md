@@ -16343,3 +16343,50 @@ proposed to builder directly. NOTE for the record: this coexists with the
 CAD survive-to-r1000 adoption — early-kill doctrine and CAD-specific
 handling are different objectives until measured otherwise; the playbook
 will state the tension explicitly.
+
+## 2026-08-09 14:53 CEST (from `date`) — RESEARCH ARM: **PROGRAMME loki ACKNOWLEDGED; s22 "IMPRISONMENT REFUTED" RE-VERIFIED — and it HITS ARSENAL ITEM 1**
+
+Read `PROGRAMME.md`. Lane understood: **LINE loki, Eir/v92 frozen, compare against
+previous_line_iteration, currency core_kill_share + time_to_core_kill, win rate is NOT
+the verdict, kill window r250.**
+
+**THE BLOCKING RE-VERIFICATION THE BUILDER ASKED FOR — s22, coordination.md:10587.**
+What was actually probed (`bots/_probe_prison`) was **NOT the lock**. It was: *can a 3 Ti
+barrier be built ON TOP of an enemy builder body?*
+```
+tile holding a builder bot:  is_tile_empty = True   <-- "empty"
+                             can_build_barrier = False  <-- but NOT buildable
+```
+**Build legality is strictly stricter than `is_tile_empty`.** That is the refutation, and
+**its scope label is important and was recorded honestly at the time: tested with
+FRIENDLY bodies only — three maps produced no enemy contact — so the enemy case is
+formally untested.**
+
+**BUT §4 OF THAT SAME PROBE IS THE ONE THAT HITS ARSENAL ITEM 1, AND THE BUILDER ARM
+WROTE IT THEMSELVES:** *"parking a builder on a ring tile makes that tile UNBUILDABLE,
+and parking IS a complete defence against spawn-lock… anyone attempting a spawn-lock
+against a defended core will fail, and we should not build one expecting it to work
+against a competent opponent."*
+
+**⇒ THE FULL LOCK, AS 12 BARRIERS, IS ALREADY REFUTED BY OUR OWN PROBE.** The enemy
+defends it for free by standing a builder on each tile we need — and unlike us they are
+already there. **This is exactly the "do not rebuild a refuted thing" case the builder
+asked me to catch.**
+
+**THE DISTINCTION THAT SURVIVES, AND IT IS NOT SMALL: occupation by OUR OWN BODIES is a
+different mechanism from occupation by BARRIERS, and it was never probed.** A tile held
+by our builder cannot be built on by them **and** (untested) may not be spawnable onto.
+**That is the version of item 1 that is still open**, it needs no titanium, and it is
+what LOKI-1 already half-does at 2.69/8 collar seats. **Marking it NEEDS PROBE, not
+VERIFIED and not REFUTED.**
+
+**Also confirmed from the same probe, and it makes the geometry cheaper than CLAUDE.md
+says:** `CORE_SPAWNING_RADIUS_SQ = 2`, spawn ring is the **12-tile Chebyshev-1 ring**,
+not the r²=8 action radius. **CLAUDE.md:24/31 is wrong.**
+
+**IN-FLIGHT (2 agents, new output contract — they write the deliverable to disk and
+return a short verdict, to stop me re-typing 2,000-word docs into my own context):**
+1. **Arsenal pricing from the corpus** — items 1-6, each VERIFIED / NEEDS PROBE /
+   REFUTED, priced on what REAL opponents do, not on the dominated probe pool.
+2. **External-league DIRTY-TRICKS sweep** — denial, imprisonment, resource poisoning,
+   friendly-fire manipulation, unit theft. Wheel row 13.
