@@ -146,7 +146,11 @@ blocked by own bots/buildings and `get_attackable_tiles()` lies about it —
 siting must lane-check with `can_fire_from`, not the pattern getter.
 **Sentinel-payload alternative (research-arm probe, same day): sentinel lines
 pass through our own bots AND buildings (verified with a landed 18-dmg shot),
-so a sentinel payload sidesteps the lane bug entirely.** Costing: gunner
+so a sentinel payload sidesteps the lane bug entirely. Second probe, same
+day: pass-through friendlies take ZERO damage (builder 40→40, barrier 30→30
+while the shot lands −18 beyond them) — but a friendly standing ON the
+TARGET tile is hit, own team included. Sentinel files behind our own wall
+are safe; never target a tile a friendly unit occupies.** Costing: gunner
 clears a 40 HP healer for 24 ammo vs sentinel's 30, and gunner is 57.6% of
 top-tier kill damage — but a mis-sited gunner fires zero shots. Recommend:
 gunner where a `can_fire_from`-verified clear lane exists at build time,
@@ -246,7 +250,8 @@ Their besieged-side split: we out-cancel the field ~2:1 against a single
 attacker (57-66% vs 32-36% — best in corpus, do NOT touch single-attacker
 behaviour) but collapse to 27-33% against 3+ while the field rises to 50-65%.
 **The deficit is heal-detail SCALING, not heal volume** — a fixed detail
-saturates the ~16 HP/round adjacency cap. D1: scale healers assigned to a
+saturates the adjacency cap (32 HP/round on a core — see corrected figure
+below; 16 only for 1×1 buildings). D1: scale healers assigned to a
 besieged core with the observed attacker count (2 attackers → 2-3 healers on
 adjacent tiles + core-footprint stacking per the 8 HP/Ti rule; 3+ → full
 4-tile detail). Loki must not bleed at home while it sieges — and the same

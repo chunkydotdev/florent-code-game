@@ -60,7 +60,8 @@ The commissioning question (Magnus): the builder tests 1-2 step tactics —
    qualifier above is superseded. Bigger still, their besieged-side split:
    **vs one attacker WE cancel 57-66% (best in corpus, ~2× the field's
    32-36%); vs three+ we collapse to 27-33% while the field RISES to 50-65%.**
-   Likely mechanism: the ~16 HP/round adjacency cap saturates a fixed-size
+   Likely mechanism: the adjacency cap (32 HP/round on a 2×2 core — 8 ring
+   tiles; the oft-quoted 16 is the 1×1-building case) saturates a fixed-size
    heal detail; the field scales its detail with the threat, we do not.
    One confound blocks acting on the defensive half (their §5, correct to
    raise): 3+-attacker collapse could mean "detail too small" or "game
