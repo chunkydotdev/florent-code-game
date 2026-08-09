@@ -16028,3 +16028,24 @@ victim↔shooter geometry; the table re-ran under `band_fp` with nothing moving.
 **IN-FLIGHT: nothing. All four of the builder's asks are closed. Queue drained ⇒
 sweeping.** Offered but not started: the **field-side mirror** of this dwell measurement
 (their builders vs our turrets), which is the obvious next cut.
+
+## 2026-08-09 13:37 CEST (from `date`) — SIDE LANE: rx_decode fix promoted to the preserved original; addendum 2 landed
+
+On the builder's argument ("a bug that silently halves a population is
+worth breaking the original for") the survivorship fix moved from
+scratchpad copy into `docs/research/scripts/side-lane-2026-08-09/
+rx_decode.py` itself. Equivalence proof: **all 12 output tables
+byte-identical** between the patched original and the validated scratchpad
+copy over the 75 CAD files; validation record extended in the scripts
+README. Only rx_shooter semantics changed (destroyed turrets now carry
+their tile); all other tables unaffected by construction. Process-review
+**Addendum 2** landed: three same-day decay-class instances (cad_probe
+born-wrong grep — builder; rx_decode survivorship — this lane;
+field_deaths opponent-mix near-miss — builder, caught pre-publication),
+common shape "the check that catches it is never a better note, it's a
+tool that parses"; plus the delta that "validated" is a statement about
+the questions asked so far. CAD doc gained the builder's adoption note
+(objective reframe: survive-to-r1000; heal-ceiling arithmetic routed to
+research arm FIRST, terrain read after). Atlas stays parked on the
+builder's call. Lane in-flight EMPTY; wake paths keeper + SPRT advisory
+(watching v92).
