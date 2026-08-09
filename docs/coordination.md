@@ -10986,3 +10986,65 @@ refuting them alone.** He asked whether combinations could make them viable —
 **and LOKI-3's own flag matrix had already proved it.** *The user asking a
 methodological question found a flaw in the method that the tape contained and
 neither arm had read.*
+
+### 2026-08-09 09:44 CEST (from `date`) — builder arm: **LOKI-5 VERDICT + WAKE PATH (s22 close)**
+
+## LOKI-5 VERDICT: mechanism REAL and significant; opportunity rate UNKNOWN; ship only if CUT
+```
+victim died within 10 rounds of the throw:
+  landed on a tile our turrets COVER      6/16  = 37.5%
+  landed UNCOVERED                        0/35  =  0.0%
+  parent exile (control)                  2/105 =  1.9%
+Fisher: covered vs uncovered p=0.00044 · kidnap vs parent p=0.0153
+identity control: KIDNAP_ON=False byte-identical to parent, 16/16 legs
+```
+**The coverage term is the ONLY term with a measured effect** — walk-back gain is
+**-0.39 tiles** (we trade tempo for coverage) and the imported-saboteur fear is
+inverted, not realised (victims made 0.39 attacks/throw vs the parent's 0.89).
+**But it is a SUBSYSTEM (+180 shipping SLOC, 5 methods, 2 call sites), and by my
+own pre-stated rule that does not justify a 6-round payoff. Its agent
+recommended the cut itself: ~65 SLOC, one call site, coverage-only.**
+
+**THE FREQUENCY PROBLEM I COULD NOT RESOLVE AND AM NOT PAPERING OVER:** the build
+observed **0.7-3.3 throws/game in 6-7 of 32 games — not the ~22/game the ladder
+census implies.** A hostile is in the pickup ring on 0.21-0.85% of launcher-
+rounds. The local pool is our own lineage and does not insert the way ladder
+opponents do. **Neither population has been shown to be the right one, and this
+single number prices the entire doctrine.** Queued to research.
+
+**THE HEALER HALF IS STRUCTURALLY BLOCKED, and it names a gap worth more than the
+build:** 1 probable-healer victim in 51 throws, and the under-fire trigger
+**never fired once**. Reason: **our launcher sits on the home band while enemy
+healers stand next to THEIR damaged buildings. WE NEVER BUILD A FORWARD
+LAUNCHER.** That gap blocks the highest-value half of this doctrine and is now
+queue item 4.
+
+## WAKE PATH — **THERE IS NONE AFTER THIS SESSION STOPS, AND I AM STATING IT
+## RATHER THAN IMPLYING COVERAGE**
+All four monitors (`elo_logger`, `match_watcher`, `opp_watcher`,
+`replay_archiver`) are **alive right now and die with this session**. After both
+arms stop:
+- **v90 Heimdall keeps playing rated ladder matches with nobody watching.** If it
+  degrades, no one sees it until a human looks. Its reversion bar has already
+  been read and passed, so there is no armed trigger.
+- No battery, no agent, and no cron is scheduled. **Nothing is queued to fire.**
+- `replay_archive/priority_requests.txt` still holds queued top-tier ids; they
+  will be fetched only when someone restarts the archiver.
+**The named restart path for a successor: boot per `/builder`, re-arm the four
+monitors from their `tools/monitors/` docstrings, and read
+`docs/builder-method.md` before touching a bot.**
+
+## RELAYED FROM AGENTS THAT DIE WITH THIS SESSION (rule 5)
+- **LOKI-4:** ore census 314 tiles / 15 maps, **9.4 per side**, teams consume a
+  median of **4** — generic denial is low-ceiling and its own gate disables it on
+  **7 of 15 maps**. Crater arm fired 3x/26 games on exactly the maps where the
+  generic arm is off; **NOT a null — its upstream lives in `_v107loki3`.**
+  Warning: its legs 3-4 win/loss numbers are **unusable** (contention), and
+  **replays are not byte-comparable on a loaded box** (52KB vs 87KB, same seed).
+- **LOKI-5:** tree `7693584d`; ammo-surge built but **flagged OFF and never
+  exercised**; the comm-slot trick is verified (`SLOT_LAUNCHER` carrying a round
+  stamp reached the core 114x in one game — all 6 existing readers test
+  truthiness only, so it displaces nothing).
+- **LOKI-3:** `HEAL_IDLE_FLIP_ON` is built and **default OFF** — deliberately, so
+  an unmeasured change could not contaminate the pre-registered three-flag test.
+  One line to flip.
