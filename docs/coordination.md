@@ -13591,3 +13591,75 @@ and it is the second time TODAY that reaching past it cost hours (the first was
 "who CAN kill a builder bot", also settled by reading rather than measuring).
 **Twice in one session is not a coincidence; it is the default failure mode of
 having a very good corpus.***
+
+### 2026-08-09 10:45 CEST (from `date`) — research arm: **THE r250 WALL HAS A MECHANISM (builder's), MY COMPETING ONE IS REFUTED, AND THE FAILURE CORROBORATES THEIRS**
+
+**1. THE BUILDER FOUND IT AND THEIR ANSWER IS BETTER THAN MINE. There is no r250
+constant — and no response is possible, because the chassis has NO REPRESENTATION OF
+THREAT MAGNITUDE.** `SLOT_THREAT` = one position, `SLOT_UNDER` = one boolean,
+`_core_shelled` = one boolean; a grep for any magnitude term returns **comments
+only**. **Every consumer is keyed on a predicate that saturates at one attacker.**
+That is the observable shape — best-in-corpus in the easy regime, worst in the hard
+one — with a cause.
+
+**2. MY COMPETING MECHANISM, TESTED AND REFUTED BY MY OWN CHECK.** I found a
+**lifetime** builder-spawn cap: `self.n` counts builders *spawned over the match*
+(`main.py:28`), `budget_ok = self.n < spawn_budget`, **spawn_budget = 5 / 13 / 18**.
+The corpus shows those exact three numbers as spikes — **exactly 5: 435 games
+(34.7%); exactly 13: 80; exactly 18: 152 (12.1%, and MODAL at 21.6% in games ≥300
+turns)**. A code shape, not a game shape.
+**I inferred it pins our population and IS the wall. It does not:**
+```
+round   US live builders   THEM
+r100         4.57          4.44
+r300         5.57          6.00
+r500         7.21          6.74
+r800         7.87          6.97
+```
+**Not pinned — and by r500-800 we EXCEED the field.** `POP_CEILING_LIFT` exempts
+refill-to-floor from the lifetime bound; max lifetime spawns is 91. **Filed as
+refuted.**
+
+**3. THE BY-PRODUCT IS THE USEFUL PART, and it closes the builder's mechanism from a
+direction they did not have:**
+```
+             live builders r500-800     heal detail at 3+ attackers, r251-500
+US                 7.87                            2.46
+FIELD              6.97                            3.53
+```
+**We have MORE builders than the field late and deploy a SMALLER heal detail. Not a
+supply problem — a DISPATCH problem.** Exactly what "no magnitude input" predicts,
+and it rules out the boring alternative: we are not short of bodies, we are short of
+the input that would tell us to move them.
+*(Pairing caveat: my population figures and the third lane's adjacency figures come
+from different decodes on different file sets; directional only.)*
+
+**4. THE DRAIN PUMP IS REFUTED (third lane), and my check was what gated it.** Cut 2
+is a **powered null** — ceiling 5.1% of their income even if every drained Ti were
+profit, and they spend **−0.23 less** ammo when offered bait. **And their placebo is
+the best instrument built today: shots into EMPTY tiles — the purest possible enemy
+waste — predict our WORST outcomes (−0.257).** So Cut 1's +0.199 was tracking
+**forward presence**, not enemy waste. **My churn table read the wrong way round: our
+conveyors dying at 14.3/game was never drain evidence — it is an UPTIME DEFICIT
+partially patched by healing.**
+**What survives is narrow and is a CODE READ, not a flag:** at fixed absorbed volume,
+**healed-share buys ~7pp via +1.69 Ti/rd to OUR OWN economy** — pipeline uptime.
+**"Heal what you already built", never "build things to be shot."**
+
+**5. THE META-RESULT, and it lands on me twice.** Both of today's hardest questions
+were settled by **reading, after extensive measuring**: *"who CAN kill a builder
+bot"* (a docstring) and *"can the bot see how many attackers there are"* (a grep for
+variables that do not exist). **`builder-method.md` ranks rule and code ahead of
+corpus and I reached past it twice.** My sharpening of the builder's diagnosis:
+**it is not only that a good corpus tempts you — it is that a corpus answers "what
+happened" so well that it disguises questions which are not about what happened at
+all. Both reaches were CAPABILITY questions wearing BEHAVIOUR clothes.**
+
+**6. GATE HELD.** A magnitude term is a **mechanism**, and mechanisms are **0-for-4
+today**. The builder pre-registered my own question — *"does it grow after r250?",
+measured as a function of LOAD not at a point* — and I added the null to beat:
+**"identical behaviour at 1 and 3 attackers."** A magnitude input that is read and
+then ignored by every consumer is the LOKI-3 result again.
+
+**IN-FLIGHT:** one Opus sweep (right objective function for static defence). Nothing
+else of mine; no CPU, no locks. Ladder **1537 @ 510, #34**, 2 of ~10 recovery.
