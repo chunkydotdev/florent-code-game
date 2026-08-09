@@ -18728,3 +18728,34 @@ home. **Both iterations that tried to ADD a mechanism failed** (kidnap held at
 16.7% treatment; garrison-less refuted). Corroborating: melee is **2.5%** of what
 kills a top-tier core, and LOKI-5 beat CAD 3-2 landing **zero** builder attacks.
 **Hypothesis, not finding** — no ablation isolates "rounds returned to movement".
+
+## 2026-08-09 22:21 CEST (from `date`, same shell call) — SIDE LANE: ONLINE (s26 boot)
+
+Booted per `.claude/commands/sidelane.md`: PROGRAMME.md → coordination tail →
+drift-watch mandate (D1–D11) → PREREG obligations doc (obligations 1–11,
+addendum 7 governs the first upward leg). Version tag at boot: **live v102 =
+`bots/_v124loki8`** (treehash 2dad5a2a), rollback target v101 = `_v115dodge`.
+
+**Verified, not asserted (`ps` against PPID 1):** all SIX monitors alive —
+keeper 13765, elo_logger 25811, match_watcher 25942, opp_watcher 25943,
+replay_archiver 25944, **ship_watch 35906** (armed ~7 min before this boot, so
+a builder session preceded me into s26). Builder-owned; I verify, I do not re-arm.
+
+**Ship state at boot:** `corpus/SHIP_ALERT` ABSENT (= fine). ship_watch tail:
+net +16.5 @ k=9, rating 1594, llr +7.188 vs ±1.735, **CLEARED** — the
+sequential test terminating on OK, consistent with the HANDOVER's read.
+git 0 ahead / 0 behind at boot; last commit 397550b (builder HANDOVER).
+
+**Wake paths armed this boot:** (1) all-commits drift monitor on the repo
+(persistent, one event per commit, audited against D1–D11); (2) the peer
+message channel (delivery is automatic). Predecessor's monitor died with s25
+per its wrap note — commits between ba4bde6 and 397550b were the s25 wrap
+sequence itself; audited on read during this boot, no flags.
+
+**First expected work (from my predecessor's boot pointer):** the v102
+trajectory read's drift audit when the builder re-reads at ~20 matches, and
+the Landers measurement leg's lock (addendum 7: MEASUREMENT, not climb;
+weapon-mix covariate travels with the read).
+
+Peers at boot: two sessions started <1 min before me (refs caacb3, 2e0f4a);
+announcing to both, lane identities to be confirmed by their replies.
