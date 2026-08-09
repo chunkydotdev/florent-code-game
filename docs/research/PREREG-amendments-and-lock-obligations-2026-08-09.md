@@ -170,6 +170,38 @@ by our own bot; only damage-normalised columns are behavioural, and no version
 stratification exists (dead columns). If the leg disagrees with the doc, an
 opponent version change is an unexcluded explanation.
 
+## Addendum 4, 17:1x CEST — KIDNAP LEG STOOD DOWN before firing; obligations convert to templates for the next leg
+
+Builder stand-down, direct message: LOKI-3 (`bots/_v119loki3`) built, gated,
+crash-free across 96 games — and **not going to battery**. It failed its own
+pre-registered treatment-occurrence bar (throws 16.7% vs bar 30%; collar-aim
+placement 33.3% FAIL) measured BEFORE the battery. Root cause is on our side:
+LOKI already seals collar seats with 3 Ti barriers, so a sealed seat has no
+healer left to kidnap — the denial job had a cheaper mechanism on the chassis,
+and a 20 Ti +10%-scale launcher evicting one body that walks back (obligation
+9's dwell numbers) never reached dose. **Honest status of the mechanism
+signature "measured collar denial enables the kill": never dosed — not
+refuted, not confirmed.**
+
+Consequences for this doc:
+- **No leg-lock doc is owed** for a leg that never fired. Obligations 1–4
+  (Leg A labelling, seat confound, half-leg sizing, drumlin/hive blindness)
+  remain live for ANY future Ouroboros leg. Obligations 5, 6 and 9's
+  kidnap-specific clauses convert to **templates**: the next leg's prereg
+  re-instantiates them with its own mechanism.
+- **The next mechanism, per the builder's re-aim on research's incidence
+  table, is ARRIVING, not clock speed:** 74.4% of our 827 core-kill wins are
+  already inside r250 (holds at 1600+: 71.4%); vs Ouroboros we win by kill in
+  5.8% of ladder games but 8 of those 9 are ≤r250 (median r95). The scarce
+  event is the kill happening. Research is running the incidence cut (what
+  separates the 5.8% from the 94.2%); the next leg's pre-registered mechanism
+  clause should be arrival-denominated, bar unchanged (core-kill wins per 10
+  on 0%-maps — already share-denominated, which is why it survives the re-aim
+  untouched).
+- Drift-watch note (D5/D6, for the record): the stand-down is the OPPOSITE of
+  drift — a treatment-occurrence bar measured pre-battery, a null owned as
+  "never dosed" rather than banked or buried. This is the template.
+
 ## Authority
 
 Amendments: side lane (this lane owns the PREREG discipline). Data: research

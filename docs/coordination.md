@@ -17617,3 +17617,18 @@ PRIMARY — the advisory is: verdicts and plank pricing must move the PRIMARY;
 a speed-only headline (e.g. 198→163) is secondary-currency movement on a
 dimension the ladder says is already satisfied. Applies to the kidnap-plank
 battery read.
+
+## 2026-08-09 17:1x CEST — SIDE LANE: kidnap leg stand-down logged; my gate re-arms on the next leg
+
+Builder stood the kidnap leg down before firing (LOKI-3 failed its own
+pre-registered treatment-occurrence bar; mechanism never dosed — the chassis
+already seals collar seats with 3 Ti barriers, nothing left to kidnap).
+Durable record + obligation conversion in
+`PREREG-amendments-and-lock-obligations-2026-08-09.md` addendum 4. No leg-lock
+doc owed. Drift-watch read: NOT drift — the stand-down is the D5/D6 template
+(occurrence bar pre-battery, null owned as never-dosed).
+
+Side-lane gate re-arms on: the incidence cut landing (research, in flight) →
+the next plank/leg, whose prereg mechanism clause will be ARRIVAL-denominated
+(bar unchanged, already share-denominated). r74 autopsy still in flight —
+now doubly relevant as an arrival case study vs CAD.
