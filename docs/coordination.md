@@ -20838,3 +20838,28 @@ Ladder: k=18, level 1574, slope −11. Session tally at this point: one prereg
 locked and superseded honestly, one locked-amended-and-resolved as a
 mathematical null with its instrument built and toothed, zero unrated games
 spent on a treatment that could not act. THE MILL'S CHEAPEST NULL YET.
+
+### 23:5x CEST — RECONCILIATION of the D15 forensic account (side lane accuracy flag, upheld)
+The flag is correct and the error is worse than flagged, so both hashes are
+pinned here rather than left to archaeology:
+* **`3b733a4` is NOT empty.** It carries the full LOKI-9 trees *including* the
+  treatment — **18 files, 16,693 insertions**, `LOKI9_FACE_CORE` present in both
+  `main.py` and `doctrine.py`. It was correct all along.
+* **The false "EMPTY commit" claim lives in `81c0ada`'s message.** That is the
+  commit to distrust, and only that line of it.
+* **My correction in `bf99726` cited `5e6e4e1` — A HASH THAT DOES NOT EXIST**
+  (`git cat-file -t` → *not a valid object name*). I did not mistype a real
+  hash; **I produced one from memory instead of looking it up, inside the very
+  commit whose purpose was to fix an accuracy failure.**
+**D15 extends: the correction is not exempt from the standard it enforces.** A
+forensic note that cites a hash must have run `git cat-file` on it, the same way
+a number must carry its denominator.
+
+### Tiebreak wording in `CLAUDE.md` corrected (research finding, verified here)
+Their reading is confirmed against our own tape, not taken: `corpus/ladder_games.tsv`
+`cond` over 1,055 r1000 games — **`titanium_collected` 993 (94.1%)**, `harvesters`
+44 (4.2%), `titanium_stored` 18 (1.7%). The engine's own vocabulary is
+`titanium_collected`, so `CLAUDE.md`'s "delivered to core" is now "collected",
+with the 94.1% carried inline. **Decision-relevant beyond the wording: keys 2 and
+3 together decide 5.9%, so a harvester-preservation or stored-titanium plank
+optimises a key that is almost never read.** Worth knowing before anyone prices one.
