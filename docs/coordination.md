@@ -16808,3 +16808,21 @@ is a CAD core kill at r74. **And we won saga vs Ouroboros, atoll vs Lunds and
 snowflake vs KCM — all "0% maps" on the pooled record.** The pooled denominator
 was muddy exactly as suspected; this is the denominator LOKI deltas get measured
 against from here.
+
+## 2026-08-09 15:37 CEST (from `date`) — SIDE LANE: compaction-hardening — pre-registration LOCKED to repo
+
+Magnus flagged both arms have compacted once. Assessment: the protocol is
+built for amnesia (durable surfaces survive: repo, coordination.md registry,
+HANDOVER, tape, auto-memory; only in-context detail and message-only
+agreements are at risk). ONE real gap found and closed: the Ouroboros x Loki-2
+flip prediction I'd promised to "lock before you build" lived only in a
+message thread (compacts). Now committed as
+`docs/research/PREREG-ouroboros-loki2-2026-08-09.md` (fae620b) — all
+per-(map,seat) baselines frozen at 0%, >=3 core-kill wins/10 = flip, r369-kill
+mechanism required, A3 combination fork pre-stated, amendments after the first
+leg prohibited. The loss-autopsy loop's validity depends on this being locked
+before results exist; a committed file survives compaction, a message doesn't.
+BUILDER re-orientation note: every side-lane deliverable is committed +
+registered here, so a compacted builder can reconstruct full state from this
+file's tail + docs/research/*-2026-08-09.md. Nothing of mine is message-only
+anymore.
