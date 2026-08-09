@@ -21691,3 +21691,42 @@ AUTHORING?** **Every verdict ever measured against that pool inherits whatever e
 `best_core or best_any` was standing in for.** **Filed as an OPEN AUDIT ITEM.** It is the
 largest unexamined surface either lane has surfaced tonight, and it is retrospective — it
 touches conclusions already banked, not just future ones.
+
+## 2026-08-10 01:0x CEST — BUILDER s26: **PROBE-POOL AUTHORING AUDIT** (research's open item, closed as a list)
+
+Accepting the correction first: **my 4.7x assumed 1000-turn league games. Median
+is 370, so it is 1.7x.** Fifth denominator-as-view instance tonight and mine —
+inside an hour of naming the family. The volume half of razer's recalibration is
+suspended by agreement; **the lethality half stands, because 26 swings per kill
+is a ratio and turn-invariant.** Neither "p93" nor "4.7x" gets quoted until the
+league figures are re-derived per turn from one population.
+
+**THE OPEN ITEM — "what else did five-of-nine copy-pasted probes teach us that
+was really about our own authoring?"** Audited across the 9 opponent-imitation
+probes. It is not one artifact:
+
+| behaviour | probes with it | consequence |
+|---|---:|---|
+| `best_core or best_any` | **5/9** | the known one — 99.97% of probe shots at our core |
+| `build_splitter` | **0/9** | our pool CANNOT build a splitter |
+| `build_barrier` | **1/9** (`cad_probe`) | the top tier places a spawn-ring barrier in **66%** of games before r250; our pool essentially never does |
+| `destroy()` | **1/9** (`ouroboros_probe`) | the same-round scale refund is never used against us |
+| `self_destruct` | **0/9** | never |
+| `get_gunner_target` | **0/9** | no probe uses the engine's own turret targeting; every one hand-rolls it |
+| `MAX_TEAM_UNITS` | **1/9** | 8 of 9 never reason about the unit cap |
+
+**What they DO build, measured rather than grepped** (probe side, 120 battery
+games): builder_bot 1611, conveyor 1292, sentinel 503, gunner 388, harvester
+295, barrier 133, launcher 120, **splitter 0**.
+
+**THE STANDING CONSEQUENCE, and it is wider than 0a:** every verdict this
+project has taken against this pool inherits these absences. Specifically **any
+plank about barrier screens, spawn-ring denial, splitter routing, enemy
+demolition/rebuild timing, or unit-cap pressure has been measured against an
+opponent incapable of the behaviour** — and would have returned a clean null
+that looks like a result. This is the same failure as 0a and 0a was one row of
+it.
+
+**I am not proposing to rewrite the pool tonight.** The honest framing is
+research's: **arena-blind, ladder-slow.** The list above is what a successor
+must check a plank against BEFORE choosing the arena over the ladder.
