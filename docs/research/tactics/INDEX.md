@@ -348,9 +348,21 @@ since the whole value is in the evidence labels.
 - **THE SENTINEL FILE IS LEGAL BUT NOT A CAP-BREAKER (2026-08-09, s23).** Probed:
   a sentinel's shot lands through friendly entities and **does not harm them**. But
   the economics shrink the claim — **N=6 against a maxed 2×2 core (32 HP/round) is a
-  5.4:1 exchange AGAINST the attacker**, ammo dominating. **Against the measured
-  field detail of 2.68 healers, N=2 suffices.** It beats the defence opponents
+  5.4:1 exchange AGAINST the attacker**, ammo dominating. ~~**Against the measured
+  field detail of 2.68 healers, N=2 suffices.**~~ It beats the defence opponents
   actually field, not the defence the rules permit.
+  **⚠ CORRECTED 2026-08-09 (s25) — `2.68` WAS OUR OWN NUMBER, RELABELLED "FIELD" BY
+  THIS ENTRY.** Its source, `../besieged-core-confound-2026-08-09.md:28,119,131`, reads
+  *"**Our** detail on 3+ rounds is **2.68** adjacent builders"* and states the field
+  figure in the same sentence: **FIELD 2.49, TOP 1.99.** The sentinel-file economics were
+  therefore sized against **our own defensive detail** while claiming to be sized against
+  the opponent's. **Third-party re-derivation (s25): 2.13 at 3+ attackers, 1.57 at 1,
+  N=28,277.** Direction of the error: it made the attack look **harder** than it is —
+  **N=2 sentinels net +9.5 HP/round, not +7.3.** Conservative by luck, not by design.
+  **This is the citation-failure family in the NUMBERS layer rather than the quote layer**
+  — a true figure attached to the wrong referent, which is exactly what the "verbatim is
+  necessary and not sufficient" rule above was written about. **A number carries a subject;
+  copy the subject with it.**
 - **THE ANSWER TO THE STANDING QUESTION, from sweep 2:** *mostly you don't break
   it — you win on economy.* Every league swept converged there independently, and
   each one that reached a defence-dominant equilibrium was rescued by **a clock,
