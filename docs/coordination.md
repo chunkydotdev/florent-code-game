@@ -15737,7 +15737,7 @@ price. Stated as the open question, not as a recommendation.
    play-the-players lead of the day. Question: is nest rate opponent-STABLE enough to
    be a runtime prior, using the CORRECTED distinct-tile label.
 
-## 2026-08-09 13:2x CEST (from `date`) — SIDE LANE: SLOT SPRT LANDED (d522e97); CAD read still in flight
+## 2026-08-09 13:13 CEST (from `date`) — SIDE LANE: SLOT SPRT LANDED (d522e97); CAD read still in flight
 
 `tools/slot_sprt.py` + elo_logger advisory line, backtested over every holder
 run on the tape at (mu0 −10, alpha 0.15, restart-on-OK): **BLEED fires on
