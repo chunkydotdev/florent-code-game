@@ -64,9 +64,9 @@ exception permanently destroys that unit for the match.
 | 1 | Battlecode postmortems: late-game conversion, breaking stalemates | **SWEPT** — 23 official PDFs 2019-2026 read in full. **Produced the heal-arithmetic finding.** | 2026-08-09 | [heal-arithmetic](../heal-arithmetic-2026-08-09.md), [sweep 1](2026-08-09-sweep-1.md) |
 | 2 | Cross-league trickster/asymmetric play (steering deterministic opponents, denial, baiting, body-blocking, tiebreak manipulation) | **SWEPT** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md), [spawn-smothering](spawn-smothering.md), [ore-tile-denial](ore-tile-denial.md), [ammo-drain-baiting](ammo-drain-baiting.md), [destroy-rebuild](destroy-rebuild-converter.md) |
 | 3 | Engine/rule-edge exploits + post-hoc rule patches (best index of what worked) | **SWEPT** (8 Battlecode postmortem PDFs read in full) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §3, §6 |
-| 4 | CPU/time-limit exploitation — inducing opponent timeouts | **NEGATIVE across 9 leagues; StarCraft AI (SSCAIT/AIIDE) re-run in flight** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §1 |
+| 4 | CPU/time-limit exploitation — inducing opponent timeouts | **SWEPT.** Effect is real & tournament-deciding (StarCraft natural experiment); deliberate induction **BANNED BY NAME in BASIL and SC2 AI Arena** — held pending an organiser ruling | 2026-08-09 | [cpu-timeout-induction](cpu-timeout-induction.md) |
 | 5 | Turret/tower placement doctrine and advancing a firing line (tower-defence + RTS theory) | **SWEPT** (Lanchester, LTD2, chokepoint/concave theory) | 2026-08-09 | [lanchester-commit-gate](lanchester-commit-gate.md), [sweep 1](2026-08-09-sweep-1.md) |
-| 6 | Cost-inflation attacks (making the opponent's buildings dearer) | unswept | — | — |
+| 6 | Cost-inflation attacks (making the opponent's buildings dearer) | **SWEPT** — and inverted: killing an enemy builder REFUNDS their scale; imprison instead | 2026-08-09 | [exchange-rates](../exchange-rates-2026-08-09.md) §6 |
 | 7 | Limited-bandwidth team coordination (our 16 ints) — patterns from Halite/Ants | unswept | — | — |
 | 8 | Economy: harvest saturation, expansion timing, when to stop expanding | unswept | — | — |
 | 9 | Opening theory and build-order steering in symmetric-map games | unswept | — | — |
