@@ -17993,3 +17993,68 @@ at n=220 before firing → refuted in ~90 minutes with the salvage identified.
 This is the loop the third lane exists for; the zero-not-lower pre-commitment
 is what kept the real-but-transient suppression from being written up as
 partial confirmation.
+
+## 2026-08-09 17:2x CEST (from `date`) — BUILDER: **MY HEAL-PIN HYPOTHESIS IS REFUTED AND I ACCEPT IT. Plus an IN-FLIGHT corpus job in my own lane.**
+
+### THE REFUTATION, TAKEN PLAINLY
+I proposed the `main.py:408-410` heal-and-return as *the* explanation for our
+5.8% arrival against Ouroboros, and called it **"a defect by omission."**
+Research tested it properly and **I was wrong on every specific:**
+- **Threshold wrong.** Suppression tracks **orthogonal adjacency**, not `dsq 25`.
+  There is **no step at 25** — d² 21–25 shows −0.055 and 26–30 shows −0.082,
+  *more* suppression just outside the gate I blamed.
+- **Latch wrong.** Recovery completes in ~10 rounds. There is no 50-round
+  `SLOT_UNDER` persistence in the data.
+- **Premise wrong.** Our core is damaged in only **8.8%** of rounds against
+  Ouroboros, and our builders are **MORE** dispersed against them than the field
+  median. Dispersal↔core-kill correlates **−0.171** — the wrong sign entirely.
+- **And the framing was wrong, which is the part worth keeping.** The pin is
+  real and enormous (**15.5%** movement beside a damaged core vs **68.3%** at
+  full HP, n=143,812, opponent control −0.152 so it IS our code). But
+  `official-docs.md:481` — **acting and moving are mutually exclusive per round
+  for a builder bot.** So the 4.4× suppression is **the price of the heal,
+  charged by the engine, not a defect.** The question is not *"why are they
+  pinned"* but *"is the heal worth the move"*, and we pay it ~3.5× more often
+  than opponents (our collar occupancy 67.3% vs their ~39%).
+
+**A correction I would have missed and did not make myself:** the
+heal-and-return line exists **only** in `_v117loki2`/`_v118loki2b`/`_v119loki3`.
+In `_v100hf`/`_v115dodge` the `dsq 25` test is a *melee recall*, differently
+gated. **So no archived ladder game was ever played by a bot containing my
+line** — the corpus can refute my premise and my threshold, but it **cannot**
+test whether that line costs the Loki tree anything. That needs an arena leg,
+and I will not treat the refutation as covering a question it cannot reach.
+
+### THE INCIDENCE ANSWER, and the one number a bot can actually read
+64 features, Holm-adjusted, 6 robust under all four stratifications.
+- Best discriminator is **theirs and NOT runtime-readable** — opponent titanium
+  by r50 (AUC 0.325–0.342, Holm p 5.3e-06). No getter exists for enemy resources.
+- **Best runtime-FREE signal is OURS: `US_shot_w50`**, AUC 0.64–0.68, Holm
+  p 1.5e-07, and **the core can compute it alone as
+  `cumulative_converted − get_global_ammo()`** — no scout, no vision, no store.
+  Together with the enemy proxy, incidence spans **13.9% → 57.1%**.
+- **It is a MARKER, not a proven dial.** Only an arena A/B separates "we armed
+  and therefore killed" from "there was contact, which caused both." **I am not
+  building a trigger on it until that A/B exists.**
+- My "our opening is a constant" fact **held for production and broke for
+  contact**: every build counter identical and none discriminates (our
+  builder-bot CV 0.09 vs their 0.26). Enemy turret count, mix, forwardness and
+  collar occupancy **all died under opponent stratification** — three of those
+  were on my own candidate list.
+
+### IN-FLIGHT (announced before spawning, opus, read-mostly, my lane)
+**The corpus attribution gap.** VERIFIED MYSELF before commissioning:
+`replay_archive/` holds **1,260 `<match-id>.meta.json` sidecars**, each carrying
+**`teamAVersion`/`teamBVersion`**, both team names, ratings and `triggeredBy`.
+`corpus/join.tsv` attributes only ~23% of replay files.
+**⇒ THIS RETIRES MY OWN BOOT-TIME CONCLUSION.** At boot I documented
+`join.tsv:oppver`, `ladder_games.tsv:oppver` and `league_games.tsv:verA/verB` as
+a permanent **data fact** ("the ingest writes the literal string `None`"). That
+was true about those files and **wrong about the corpus** — the versions were on
+disk the whole time, one file over. Version-stratified analysis is possible.
+Also unlocks **852 third-party matches** (neither side us), which makes corpus
+trap 4 testable as *"never, including against third parties"*, and **348
+`triggeredBy: unrated`** rows that the `match list` channel was needed for.
+**Non-negotiable for the job: the existing 100.0000% seat/winner reconciliation
+test is carried UNCHANGED** — a new attribution path is exactly where a live-join
+error would enter, and the keeper daemon is writing to `corpus/` concurrently.
