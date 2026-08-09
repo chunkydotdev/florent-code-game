@@ -12593,3 +12593,84 @@ band split came back flat I felt relief — which is the tell that I would have
 been tempted by a favourable one. The rule that generalises: **pre-register the
 RESCUE you would reach for, not just the threshold.** A threshold constrains the
 number; only a pre-banned rescue constrains the story you tell about the number.*
+
+### 2026-08-09 10:14 CEST (from `date`) — builder arm: **THE REVERSION BAR IS TRIPPED. I am NOT auto-executing the rollback, and here is the evidence plus the reasoning, for Magnus to overrule if he disagrees.**
+
+## 1. THE NUMBERS
+
+```
+at-ship baseline   1556.83 @ 491   rank #31
+peak this session  1589.00 @ 501   rank #29
+now                1540    @ 507   rank #34   last-10 3W-7L
+NET SINCE SHIP:    -16.83 over 16 rated matches   ->  the <=0-net rule FIRES
+```
+**The slot-swap rule ("<=0 net Elo after 3 matches frees the slot") is tripped.**
+I flagged it as "not yet tripped" one note ago and it has now tripped. Recording
+that plainly rather than letting the earlier note stand as the last word.
+
+## 2. THE KEEPER FIRED, AND THE WAKE PATH IS PROVEN
+
+```
+2026-08-09T08:04:05Z  ALERT florent: RATING DROP: 1558 is 31 below peak 1589 (506 matches)
+```
+**A real desktop notification, from the orphaned daemon the s22 wrap corrected
+itself about.** The wake path is not theoretical any more — it detected this drop
+before I did. It also **deferred its own decode twice** (`load 7.7 > 6.0`,
+`load 7.8 > 6.0`) while my batteries ran, which is the CPU-contention discipline
+working without anyone supervising it.
+
+## 3. WHY I AM NOT ROLLING BACK, and I am aware this is the shape of a rationalisation
+
+**The rule has two clauses and only one has fired.** It reads: *"<=0 net Elo
+after 3 matches frees the slot; **measured better-case still required**."* The
+slot is freed. **There is no measured better case to put in it.** Three planks
+were built and gated today and all three failed their pre-registered bars —
+placement (+0.0pp), price (−2.0pp), production (−0.7pp).
+
+**And the rollback target is not better, it is differently worse:**
+- **v89 = `bots/_v100hf`, tree `4558be91`** carries the **verified `SLOT_LAUNCHER`
+  latch defect** — a destroyed launcher is never replaced for the rest of the
+  match, builders keep entering `launchwait` for a ghost. v90 exists *because*
+  that was found.
+- **v89's own rating while it held the slot was 1534.62 @ 487 — LOWER than v90 is
+  right now (1540).** Rolling back would be trading a null-measured bot for one
+  with a known defect and a worse observed number.
+
+**The statistical case, stated so it can be attacked:** nothing about v90 changed
+during this drift. **The same binary went +32 and then −49.** Per-match swings in
+today's tape are **±18** (1564 -> 1581 = +17; 1558 -> 1540 = −18). A −16.83 net
+over 16 matches is **less than one match's typical swing**. The bar was designed
+as a fast stop-loss at n=3; applying it after a **positive excursion to +32**
+produces exactly the whipsaw a fast stop-loss produces.
+
+**THE HONEST COUNTER, which I am writing myself rather than waiting for it:** that
+paragraph is a variance argument, and a variance argument is available to excuse
+*any* decline. The thing that makes it not a rationalisation here is **not** the
+statistics — it is that **the rule's second clause independently forbids the
+swap.** If a measured-better candidate existed I would ship it now regardless of
+the variance story. None does.
+
+## 4. WHAT WOULD CHANGE MY MIND, pre-stated so it is not decided after the fact
+
+- **Another −25 (to ~1515), or last-10 reaching 2W** -> roll back to v89 and eat
+  the latch defect, on the grounds that the drift is then too long to be a streak.
+- **Any candidate that beats its control on a pre-registered gate** -> ship it
+  immediately; the slot is already free.
+- **Evidence the drift is v90-specific** (e.g. the launcher latch repair
+  backfiring in production) -> roll back. **This is checkable and unchecked:**
+  the repair changed launcher rebuild behaviour, and I have not looked at a
+  single production replay of v90 to see whether it is rebuilding launchers into
+  bad positions. **That is the highest-value open question on the slot and I am
+  naming it rather than assuming variance.**
+
+**MAGNUS: this is a hold, not a clearance.** If you would rather take the rule
+literally and roll back now, say so and it is one `fcode submit` of
+`bots/_v100hf` — no `activate` needed, and the bytes are on disk and verified.
+
+*Process delta: **I wrote "not yet tripped" at 09:57 and the bar tripped at
+10:07**, which means my own note aged into being wrong inside ten minutes. The
+lesson is not about the ladder — it is that **a note asserting a threshold is
+untripped should carry the threshold and the current distance to it**, so a reader
+can re-evaluate without re-deriving. I wrote "4 points from the alert" in one
+place and "not tripped" in another about two different thresholds, which reads as
+one reassuring claim. **Separate the bars explicitly or they blur into a mood.***
