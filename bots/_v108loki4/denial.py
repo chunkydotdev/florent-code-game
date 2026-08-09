@@ -55,7 +55,6 @@ from doctrine import (  # noqa: F401
     DENY_MAX_RND,
     DENY_MIN_OPEN_NBRS,
     DENY_RANK_DEADLINE,
-    DENY_SKIP_RANKS,
     DENY_TI_FLOOR,
     DENY_TILE_BOOK,
     ORE_DENIAL_ON,
@@ -147,11 +146,13 @@ def forward_plan(bot, ct):
          is excluded on purpose: ore is symmetric, so a midline denial is a
          mutual denial, and the pool's contested ore sits on the two maps that
          have the most spare sites anyway.
-      3. RANK WINDOW -- skip their DENY_SKIP_RANKS nearest (claimed at median
-         r7 and r11; unreachable from our Core ring on any pool map) and stop
-         at DENY_MAX_RANK.  Ranks 3-8 are 44% of their harvester production and
-         are claimed between r28 and r113, which is a window a walking builder
-         can actually hit.
+      3. REACH TEST -- keep rank r only if our own Core is close enough that a
+         builder could stand beside the tile before the census median round at
+         which rank r is claimed.  This is what drops their doorstep ore on big
+         maps, and it is also what KEEPS it on fjordgate and moonrise, where
+         the enemy's nearest ore is 3-4 steps from our ring.  A fixed "skip the
+         first two ranks" did the opposite and was refuted by the pool dry-run.
+         Stop at DENY_MAX_RANK regardless.
       4. CORRIDOR GUARD -- the tile must have DENY_MIN_OPEN_NBRS open cardinal
          neighbours, so a barrier never seals a pinch our own units use.
     """
@@ -177,13 +178,32 @@ def forward_plan(bot, ct):
     ranked = []
     for i, t in enumerate(enemy_side):
         rank = i + 1
-        if rank <= DENY_SKIP_RANKS or rank > DENY_MAX_RANK:
-            continue
+        if rank > DENY_MAX_RANK:
+            break
         if _open_nbrs(bot, t) < DENY_MIN_OPEN_NBRS:
+            continue
+        # Reach test.  Manhattan from our own footprint is one round per tile
+        # for a builder that spawns on the ring at r0-1; if that already
+        # overshoots the census median claim round for this rank, the site is
+        # gone before we could be standing next to it.
+        reach = min(
+            abs(t.x - own.x) + abs(t.y - own.y),
+            abs(t.x - own.x - 1) + abs(t.y - own.y),
+            abs(t.x - own.x) + abs(t.y - own.y - 1),
+            abs(t.x - own.x - 1) + abs(t.y - own.y - 1),
+        )
+        if reach > _deadline(rank):
             continue
         ranked.append((t, rank))
     bot.deny_plan = _apply_book(bot, tuple(ranked))
     return bot.deny_plan
+
+
+def _deadline(rank):
+    """Census median round at which the rank-th nearest ore to a Core is
+    claimed by a harvester.  Clamped at both ends of the table."""
+    idx = rank if rank < len(DENY_RANK_DEADLINE) else len(DENY_RANK_DEADLINE) - 1
+    return DENY_RANK_DEADLINE[idx]
 
 
 def _live(rank, rnd):
@@ -191,10 +211,7 @@ def _live(rank, rnd):
     rank the tile is more likely taken than not, and walking to it is wasted
     builder-turns.  can_build_barrier() refuses an occupied tile regardless --
     this only stops the DETOUR."""
-    if rnd > DENY_MAX_RND:
-        return False
-    idx = rank if rank < len(DENY_RANK_DEADLINE) else len(DENY_RANK_DEADLINE) - 1
-    return rnd <= DENY_RANK_DEADLINE[idx]
+    return rnd <= DENY_MAX_RND and rnd <= _deadline(rank)
 
 
 # --- action phase -------------------------------------------------------------

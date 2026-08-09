@@ -1065,7 +1065,7 @@ KIDNAP_MAX_TURRETS = 8
 # stderr instrumentation for the throw ledger (KIDNAP= lines).  Off in the
 # shipped bytes: print() goes to the replay, stderr costs a syscall per throw,
 # and neither belongs in a rated match.
-KIDNAP_PROBE = False
+KIDNAP_PROBE = True
 # ============================================================================
 
 # PIECE E1 -- PEACETIME AMMO FLOOR = HARVESTER RESERVE (grafted from the

@@ -10434,3 +10434,74 @@ explicitly unmeasured — three single games gave 350 / 10,520 / 6,620 Ti agains
 must not be enabled without a full battery. The agent's own recommendation, which
 I accept: **if we measure anything here, measure the build-placement arm, not the
 scale arm.**
+
+### 2026-08-09 08:28 CEST (from `date`) — builder arm: **MY MAP-SIZE HYPOTHESIS REFUTED IN THE OPPOSITE DIRECTION; PRE-EMPTIVE ORE DENIAL KILLED BEFORE A BATTERY; AND THE TARGETS COME TO US**
+
+**1. THE 10x CONFLICT IS NOT RESOLVED, BUT IT IS NOW LOCATED — AND MY HYPOTHESIS
+WAS WRONG BACKWARDS.** I guessed the build agent's 40-replay sample was weighted
+to big maps. Research re-cut it:
+```
+maps >= 24x24   808 sides   mean 0.00 stacks  = 0.0 Ti   <-- EXACTLY ZERO
+maps <  20x20   992 sides   mean 0.66 stacks  = 6.6 Ti
+pooled         2237 sides   mean 0.394        median 0   max 199
+```
+**Big maps leak NOTHING into cores. Every enemy-core delivery in the archive
+lives on four maps: meander 2.95/side, heart 1.51, fjordgate 1.36, antler 0.16;
+snowflake/archipelago/hive/drumlin/saga/eider/nordkap are all exactly 0.00.** A
+big-map-weighted sample would have shown LESS, not more. **Only 0.6% of
+team-sides ever deliver a stack into an enemy core; the top 1% account for 100%
+of it.**
+**THE DISCRIMINATOR IS THE MEDIAN, NOT THE MEAN: theirs 55 Ti, ours 0.** A skewed
+tail explains different means; **it cannot make one median 55 and another 0.**
+That is two populations, not one measured badly. Research's leading candidate —
+**the 40 replays may be LOCAL games rather than ladder archive**, and our local
+map set is CHOSEN, with four of fifteen maps being exactly where leak lives.
+**Both questions put to the build agent: which files/maps, and whether a stack
+HOPPING along their network was counted as reaching the core.** Unit convention
+confirmed: 0.58 was stacks, so the gap is 9.5x and not 95x.
+*Delta: when two arms disagree, compare MEDIANS before means. The mean invites a
+tail story that will always sound plausible; the median tells you whether you are
+even looking at the same population.*
+
+**2. PRE-EMPTIVE ORE DENIAL IS DEAD, KILLED BY MEASUREMENT BEFORE IT COST A
+BATTERY — and it was the idea I was most excited about.**
+```
+first harvester on rank-0 (nearest ore to own core)   THEM 42.9%  US 49.9%
+first harvester in top-3 nearest                      THEM 81.1%  US 85.5%
+chance baseline (20.9 ore tiles/map)                          14.3%
+harvester build rounds: p10 = 6, median 66     ore-rank top-3 by band:
+                                                 r0-30 63-70% · r30-150 15-20%
+                                                 · r150+ 9-15% (rank>=4 is 82-86%)
+```
+**The determinism is GEOMETRIC, not behavioural — everyone opens on the nearest
+ore, us included**, so there is no per-opponent habit to encode and no tile book
+to go stale. Apparent per-opponent modal tiles were just "nearest ore to that
+seat's core". **And the strategy dies on a pincer: the opening tile is
+predictable but UNREACHABLE (first harvesters land r2-13; we cannot cross a
+25x25 map in six rounds), while the late tile is reachable but UNPREDICTABLE
+(rank>=4 is 82-86% by r150). No window where both halves hold.**
+**LOKI-4's optional overlay is CANCELLED** — the generic geometric siting I
+already required captures 100% of the signal. **Reactive denial, which the probe
+verified, is untouched and remains the build.**
+
+**3. THE SURVIVOR, AND IT POINTS THE OPPOSITE WAY TO DENIAL:**
+```
+enemy harvesters built NEARER OUR CORE than their own:
+   r0-30 3.7%   ·   r30-150 13.1%   ·   r150+ 33.9%
+```
+**By r150 a THIRD of their new harvesters are on OUR side** — 30 HP, 20 Ti plus
++5% scale each, far from their defences, and **already inside the home band
+where our turrets measurably sit doing nothing.** 2 sentinel shots or 4 gunner
+shots each.
+**THIS IS A CHEAPER SYMMETRY BREAK THAN FORWARD PLACEMENT AND CARRIES NONE OF
+THOR'S RISK** — it does not move or change a single turret, it only AIMS them.
+Sent to LOKI-3 as a separately-ablatable flag (`TARGET_INTRUDER_ECON_ON`), on top
+of the existing three. It also composes with the ammo half: **we hold ~635 Ti
+unspent and fire ~5.8 shots in r200-300, while these targets walk onto our own
+ground.**
+
+**4. RESEARCH ADOPTED THE DENIAL-NOT-RECOVERY CORRECTION** and is amending their
+flow doc, which had booked leaked stacks as "lost to us" — i.e. as recoverable
+revenue. **The LOKI-2 adjacency argument also retired the destroy-rebuild tactic
+they filed this morning**, and they are marking it refuted with the build agent's
+reasoning rather than their own.

@@ -544,6 +544,23 @@ class Player:
                     ti = ct.get_global_resources()
                     ammo = ct.get_global_ammo()
 
+        # PIECE KIDNAP -- AMMO SURGE (see KIDNAP_AMMO_SURGE_ON).  The launcher
+        # raised SLOT_LAUNCHER to 2 last round because a throw landed a hostile
+        # in a turret line, or pulled a healer off something we are shooting.
+        # convert_ammo is once per team per turn, so running FIRST is what makes
+        # this the turn's ammo policy; the ordinary magazine drip below then
+        # fails its own can_convert_ammo() gate and is a no-op, with no flag to
+        # thread.  Skipped entirely while the endgame dump owns the resource --
+        # ammunition scores in no tiebreak and stored titanium is tiebreak #3.
+        if (KIDNAP_AMMO_SURGE_ON and not endgame_dumped
+                and ct.read_store(SLOT_LAUNCHER) == 2):
+            amt = min(KIDNAP_SURGE_TI, ti - KIDNAP_SURGE_TI_FLOOR,
+                      KIDNAP_SURGE_AMMO_CAP - ammo)
+            if amt > 0 and ct.can_convert_ammo(amt):
+                ct.convert_ammo(amt)
+                ti = ct.get_global_resources()
+                ammo = ct.get_global_ammo()
+
         # SLOT_HOME_GUN is a monotone count of turrets this team has ever
         # built.  Hoisted above the ammo branch because RIDE-ALONG 2's
         # live-builder bound reads it too, whichever ammo policy is in force.
@@ -3885,11 +3902,17 @@ class Player:
             return
         try:
             import sys
+            import time
+            # ct.get_cpu_time_elapsed() is a stub under local `fcode run`
+            # (docs/tooling.md), so local CPU accounting has to come from
+            # process_time; the shipped guard still reads the engine counter.
+            t0 = getattr(self, "kidnap_t0", None)
+            us = -1 if t0 is None else int((time.process_time() - t0) * 1e6)
             print(
                 "KIDNAP\t%s\tr=%d\tfrom=%d,%d\tto=%d,%d\tcov=%d\twalk=%d"
-                "\tsep=%d\theal=%d\ttgt=%d"
+                "\tsep=%d\theal=%d\ttgt=%d\tus=%d"
                 % (tag, ct.get_current_round(), frm.x, frm.y, to.x, to.y,
-                   int(covered), walk, sep, int(healer), tgt),
+                   int(covered), walk, sep, int(healer), tgt, us),
                 file=sys.stderr,
             )
         except Exception:
@@ -4153,6 +4176,25 @@ class Player:
         if self.team is None:
             self.team = ct.get_team()
         ct.write_store(SLOT_LAUNCHER, 1)
+        if KIDNAP_PROBE:
+            import sys
+            _lp = ct.get_position()
+            _md = -1
+            _ring = 0
+            for _e in ct.get_nearby_entities():
+                try:
+                    if (ct.get_entity_type(_e) != EntityType.BUILDER_BOT
+                            or ct.get_team(_e) == self.team):
+                        continue
+                    _d = ct.get_position(_e).distance_squared(_lp)
+                except Exception:
+                    continue
+                if _md < 0 or _d < _md:
+                    _md = _d
+                if _d <= 2:
+                    _ring += 1
+            print("KLIFE\tr=%d\tmind=%d\tring=%d"
+                  % (ct.get_current_round(), _md, _ring), file=sys.stderr)
         if self.core is None:
             for eid in ct.get_nearby_buildings():
                 if ct.get_entity_type(eid) == EntityType.CORE and ct.get_team(eid) == self.team:
@@ -4219,6 +4261,9 @@ class Player:
             bp = ct.get_position(eid)
             if bp.distance_squared(lp) <= 2:
                 enemy_bots.append((eid, bp))
+        if KIDNAP_PROBE:
+            import time
+            self.kidnap_t0 = time.process_time()
         if enemy_bots and KIDNAP_ON:
             # Blanket guard: anything escaping run() destroys this unit for the
             # rest of the match, so a bug in the new rule costs one throw's

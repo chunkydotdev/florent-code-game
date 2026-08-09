@@ -1648,6 +1648,17 @@ class Player:
             # planned battery tile is occupied, clear hostile guns/economy.
             if self._try_siege_build(ct):
                 return
+            # LOKI-4 ORE DENIAL.  Ranked BELOW every measured-good saboteur
+            # duty above it -- the open-map melee, the siege repair and the
+            # siege build all return before this line is reached -- and ABOVE
+            # the fallback _sabotage_prio, which on a wall-heavy map is the
+            # low-value melee this file already calls "low-value".  Trading a
+            # 2 Ti / 2 damage peck into a 20 HP conveyor for a 3 Ti permanent
+            # denial of a 24 Ti harvester site is the whole plank in one line.
+            # Fires only when the unit is ALREADY orthogonally adjacent to a
+            # planned tile, so it never costs a walk.
+            if denial.try_place(self, ct):
+                return
             if not self.melee_first:
                 self._sabotage_prio(ct)
 
@@ -1672,6 +1683,17 @@ class Player:
             self.tgt = p
         else:
             self.tgt = ec
+
+        # LOKI-4 detour.  Overrides the target ONLY for a planned ore tile
+        # already within two steps (DENY_DETOUR_DSQ) whose rank deadline has
+        # not passed, so the whole plank cannot pull this unit off its route:
+        # the worst case is two steps sideways and back, four times a match.
+        # Placed AFTER the siege target is chosen rather than before, so a
+        # siege approach that is already in hand is never discarded -- only
+        # briefly deferred, and _plan_siege's state is untouched.
+        deny_tgt = denial.steer(self, ct)
+        if deny_tgt is not None:
+            self.tgt = deny_tgt
         self._nav(ct, pave=False)
 
     def _eco_cap(self, ct):
@@ -2654,6 +2676,14 @@ class Player:
                             return
                     except Exception:
                         continue
+
+            # LOKI-4 LANE B -- home-side ore denial.  OFF by default
+            # (DENY_HOME_ON); see denial.home_plan for the census that
+            # motivates it and the _pick() interaction that keeps it off.
+            # Deliberately the LAST action an expander can take: the harvester
+            # build, the chain link and the medic patch all return before it.
+            if DENY_HOME_ON and denial.try_place_home(self, ct):
+                return
 
         # Action phase over -- the harvester build above (if any) already
         # wrote SLOT_HARVESTERS and link_queue together with nothing after

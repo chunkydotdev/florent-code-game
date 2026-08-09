@@ -1182,13 +1182,25 @@ DENY_MAX_ENEMY_ORE = 7
 # rank measured in that team's own distance ladder):
 #   rank 1 r7 · rank 2 r11 · rank 3 r28 · rank 4 r30 · rank 5 r48 ·
 #   rank 6 r57 · rank 7 r85 · rank 8 r113 · rank 9 r100 · rank 10 r108
-# Their first harvester lands at median r6 (p90 r15).  Our builder cannot be
-# standing on their doorstep at r7 on any pool map (nearest enemy-side ore is
-# 3-18 walk steps from our Core ring; median 9).  So ranks 1-2 are conceded
-# outright -- 26.2% of all their harvesters -- and the window we CAN contest is
-# ranks 3-8, which is 44% of their harvester production and is claimed at
-# r28-r113.
-DENY_SKIP_RANKS = 2
+# Their first harvester lands at median r6 (p90 r15).
+#
+# The first cut of this file turned that into a blunt "skip ranks 1-2", and the
+# pool dry-run refuted it immediately: fjordgate has TWO enemy-side ore tiles
+# and moonrise THREE, so skipping the first two ranks turned the plank OFF on
+# exactly the two maps where site scarcity makes denial bite hardest -- and
+# both are small maps where the nearest enemy ore is 3-4 walk steps from our
+# Core ring, i.e. the two maps where rank 1 is genuinely reachable before r7.
+# A pooled median is not a per-map reachability claim.
+#
+# So the rank filter is a REACH TEST instead, and it is generic: keep rank r
+# only if we could plausibly stand beside that tile before the census median
+# claim round for that rank.  Reach is estimated as Manhattan distance from our
+# own Core footprint (the saboteur spawns on the ring at r0-1 and walks one
+# tile per round).  On a wall-heavy map Manhattan under-estimates, so the test
+# is biased toward attempting -- which is the cheap direction of the error,
+# because a tile we cannot reach simply never comes within DENY_DETOUR_DSQ and
+# costs nothing.  On big maps this drops ranks 1-2 by itself (reach 14-18 vs a
+# deadline of 10-20) without a hardcoded rank number.
 DENY_MAX_RANK = 8
 # Soft per-rank deadline (index = rank, 1-based; 0 slot unused).  Past this
 # round the tile is more likely than not already taken and a detour toward it
