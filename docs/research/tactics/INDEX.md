@@ -712,21 +712,31 @@ Any survival, heal or screening figure must name which one it came from.**
   the builder's number — generalised one battery to a whole fixture class.** **The safe rule
   is the general one: a behavioural fingerprint is only valid in a population where the
   behaviour it keys on actually varies — check that before using it, in every new set.**
-- **Heals: 0 of 87,169 land on anything but our own core** in the **480-game arena battery** —
-  zero on any turret, builder, barrier or conveyor — **and not for lack of opportunity** (the
-  planter is adjacent 59.4% of the time at +1 round, so *"the code walks it away next round"*
-  is false in play). **The cause is priority ordering, not absence.**
-  **⚠ CORRECTED 2026-08-10 (s26) — THIS IS ARENA-ONLY AND THE LADDER SHOWS THE OPPOSITE
-  EFFECT.** On the platform, most recent 100 archived games, **all v102: 8,870 of 23,772
-  `BuilderHeal` events land on a tile holding a NON-CORE building, and 30,037 HP is restored to
-  our non-core buildings against 102,614 taken — 29.3% of incoming damage healed away**, stable
-  at 29-54% across the window and rising.
-  **The reconciliation is a rules detail neither figure contradicts: `heal(position)` repairs
-  EVERY friendly entity on the tile, so heals aimed at builder bots standing on our own
-  conveyor lanes repair the lanes as a SIDE EFFECT. Intent is core-only; effect is not.**
-  **⇒ "Our bot does not repair its buildings" is FALSE ON THE LADDER and true only in the
-  arena battery.** Third fixture-specific claim of the night to need narrowing — **check the
-  fixture before quoting any of the three.**
+- **⚠ THE "OUR HEAL IS DEAD CODE" FINDING IS FULLY REFUTED (2026-08-10, s26). Recorded here in
+  its final form because it was published, propagated and corrected three times in one night,
+  and the CORRECTION IS MORE USEFUL THAN THE ORIGINAL CLAIM.**
+  **What was reported:** *"0 of 87,169 heals land on anything but our own core"* in a 480-game
+  arena battery, attributed to **priority ordering** (`_heal_core` outranking `_heal_adjacent`)
+  and filed as removal-shaped dead code.
+  **What is true:** **the heal was never dead — it had nothing to repair.** The battery
+  inflicted **zero** building damage, so *"0 heals on buildings"* was **the only possible
+  observation**, and it looked exactly like a code defect.
+  **Measured where damage exists:** on the platform, v102 heals **29.3%** of incoming damage to
+  its non-core buildings back (30,037 of 102,614 HP; 8,870 of 23,772 heal events land on a tile
+  holding a non-core building). **In the razer fixture, 47.9%** (10,660 of 22,238 HP).
+  **The mechanism, and it means intent cannot answer the question:** `heal(position)` repairs
+  **EVERY** friendly entity on the tile, so heals aimed at a builder standing on a conveyor lane
+  **repair the lane as a side effect.** **Intent is core-only; effect is not.** ⇒ *"Does our bot
+  repair its buildings"* **is not answerable from code reading at all — only from effect.**
+  **THE GENERAL LESSON, which is why this entry is long: a bug was diagnosed from a fixture
+  STRUCTURALLY INCAPABLE of exhibiting the behaviour that would have disproved it** — the 0a
+  failure consuming a finding written one hour after 0a itself. **Before attributing an absence
+  to a defect, ask whether the fixture could have shown the alternative.**
+  **AND IT IS THE MEASURED FORM OF THE THREAT-MODEL ARGUMENT ABOVE:** a defender repairing
+  **~48%** of an attacker's output is exactly what **1 Ti/+4 HP against 2 Ti/2 damage**
+  predicts. **A builder-only attacker cannot threaten a repairing defender.** **⇒ The
+  turret-bearing second fixture is a STANDING PREREQUISITE before any repair plank is trusted,
+  not an option.**
 
 ## Standing context a sweep should know
 

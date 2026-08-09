@@ -22116,3 +22116,52 @@ weakening it:** LOKI-8 repairing ~half of an attacker's output is exactly what
 1 Ti/+4 HP against 2 Ti/2 dmg predicts. **A builder-only attacker cannot
 threaten a repairing defender**, which is precisely why a turret-bearing second
 fixture is needed before any repair plank is trusted.
+
+## 2026-08-10 03:0x CEST (from `date`) — RESEARCH ARM: **BOTH HALVES OF THE RECALIBRATION ARE RESOLVED. The lethality half LAPSES on my own pre-stated condition; the heal finding is FULLY REFUTED and its correction is worth more than the claim.**
+
+### 1. THE FREE VARIABLE IS CLOSED AND MY LAPSE CONDITION FIRES
+**razer's arena healing exposure = 47.9%** (10,660 of 22,238 HP restored to our non-core
+buildings, decoded over 36 razer games already on disk — **no new run needed**).
+**47.9% is ABOVE the 42.2% break-even I pre-specified.** **⇒ razer's INTRINSIC waste sits at or
+below the league median and THE LETHALITY HALF LAPSES ENTIRELY — by the condition I stated in
+advance, not by argument.**
+
+**Both halves now resolved: VOLUME HOLDS** (1.509 attacks/turn against a league max of 1.297),
+**LETHALITY LAPSES.** **One knob, and the change already built does the rest.** **A
+pre-registration that fired against the person who wrote it is the cleanest outcome this
+session has produced.**
+
+### 2. **THE HEAL FINDING IS FULLY REFUTED — and the reason is the sharpest methodological
+result of the night**
+*"0 of 87,169 heals land on anything but our own core"*, attributed to priority ordering and
+filed as removal-shaped dead code. **The heal was never dead. It had nothing to repair.**
+**The 480-game battery inflicted ZERO building damage, so "0 heals on buildings" was the ONLY
+POSSIBLE OBSERVATION** — and it looked exactly like a code defect.
+
+**⇒ A BUG WAS DIAGNOSED FROM A FIXTURE STRUCTURALLY INCAPABLE OF EXHIBITING THE BEHAVIOUR THAT
+WOULD HAVE DISPROVED IT.** **That is the 0a failure consuming a finding written ONE HOUR after
+0a itself.** **Standing rule promoted from it: before attributing an absence to a defect, ask
+whether the fixture could have shown the alternative.**
+
+**Measured where damage exists: v102 heals 29.3% of incoming building damage back on the
+platform; 47.9% in the razer fixture.** **Mechanism: `heal(position)` repairs EVERY friendly
+entity on the tile, so heals aimed at a builder standing on a conveyor lane repair the lane as
+a side effect. Intent core-only; effect not.** **⇒ *"Does our bot repair its buildings"* is not
+answerable from code reading at all — only from effect.** **INDEX entry rewritten in final
+form** rather than layered with a third correction.
+
+### 3. **AND IT IS THE MEASURED FORM OF MY OWN THREAT-MODEL ARGUMENT**
+I argued from arithmetic that **a builder-only attacker cannot threaten a repairing defender**
+(1 Ti/+4 HP against 2 Ti/2 damage). **A defender repairing ~48% of the attacker's output is
+exactly that prediction, measured.** **⇒ The turret-bearing second fixture is a STANDING
+PREREQUISITE before any repair plank is trusted, not an option.** Recorded in the INDEX as such.
+
+### 4. THE TALLY BOTH LANES NOW SHARE
+**Four fixture-specific claims needed narrowing tonight** — `builderAttack`=0, the 99.83%, the
+arena-vs-ladder heal reading, and now the heal *diagnosis*. **Every one was TRUE OF THE BATTERY
+AND FALSE AS STATED.** **And two denominator catches in the final cut — 10.0% of removals being
+voluntary `destroy()` at full HP, and 40.0% of all league building damage healed away — would
+have silently inflated every lethality number either lane quoted.** **Both were found by
+measuring rather than assuming, which is the whole difference.**
+
+**Nothing in flight from either lane.**
