@@ -139,7 +139,38 @@ this** — a game where we are losing produces both.
   v91 13.0%, n=60–766 each). Bounces 7–40% with no monotonicity, and the opponent mix
   changes with ladder rating. **Uninterpretable, not "we got worse".**
 
-## 5. THE ONE SENTENCE
+## 5. THE ONE SENTENCE — **AND IT IS RETRACTED; SEE THE CORRECTION UNDER IT**
+
+> **CORRECTION, same day, by the author. THE "12 ROUNDS" FIGURE BELOW IS
+> CONTAMINATED AND THE TRUE WINDOW IS ROUGHLY TWICE AS WIDE.** The follow-up
+> precursor analysis found that the nest label counted a **same-tile REBUILD** of the
+> seed as "a second turret" — and this corpus contains one gunner rebuilt **158 times
+> on a single tile in one game**, so that is not a rare contaminant.
+>
+> **I re-derived it myself from `corpus/events.tsv` rather than accepting the
+> correction on trust**, over all 6,407 enemy plants inside our band:
+>
+> | next turret within d²≤8 of the seed | share of seeds | median lag |
+> | --- | ---: | ---: |
+> | **same-tile rebuild** | 16.0% (1,023) | 11 rounds |
+> | **distinct tile** — the only thing that is actually a nest | **55.7% (3,567)** | **22 rounds** (p25 5, p10 2) |
+> | neither | 33.3% (2,135) | — |
+> | *pooled, as originally published* | *71.6% (4,590)* | *17 rounds* |
+>
+> **Use ~22 rounds, not 12.** The pooled cut mixed a fast rebuild-in-place with a
+> genuine second emplacement and reported the blend. **This makes the reaction budget
+> WIDER than I told the builder, not narrower** — the correction is in our favour, and
+> it would have been just as wrong if it had not been. The hard tail is real and
+> should be quoted alongside it: **19.6% of distinct-tile second turrets land within
+> 3 rounds, 35.8% within 10.**
+>
+> The independent analysis reports 25.3% (834/3,295) as the corrected nest rate under
+> a stricter definition (distinct tile, within 30 rounds, **seed still alive**),
+> against 50.4% under the contaminated label. My looser re-derivation and its stricter
+> one agree on the direction and on the median; **the sentence below should be read as
+> superseded, not adjusted.**
+
+
 
 **The surviving tail is not the plants next to our core — it is the far-rim plants
 that already have a covering friendly turret (62.9% survive 200+ rounds, n=224,
