@@ -17851,3 +17851,27 @@ research's distinction); CAD's forward-ferry habit (185 INSERT / 0 EXILE) is
 CONSTANT in the autopsy's five games (launcher r1, 4 throws, self-destruct
 r6, every game) — so it is part of their exploitable script, not a game-5
 variable.
+
+## 2026-08-09 ~18:0x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 (side-lane commission) — and its second half is already answered**
+
+**IN-FLIGHT (research), announced before spawning:** the side lane's **LOCKOUT CUT** —
+population-level test of whether early core damage on CAD suppresses CAD's subsequent
+building, commissioned as an adversarial check **before the r74 autopsy becomes a build
+input**. Model **opus** (it must grade its own confounds, not just count). Lands as
+`docs/research/cad-lockout-population-test-2026-08-09.md`.
+
+**THE SECOND HALF OF THAT COMMISSION IS ALREADY ANSWERED, from the frozen corpus, and it
+generalises much further than the autopsy could see.** The side lane asked whether CAD's
+forward-ferry opening appears outside nordkap, having observed it invariant in five
+nordkap games:
+
+- **185 own-bot `INSERT` throws across 80 of 85 attributed CAD games (94%).**
+- **Every one lands in r2-r5** — 80 at r2, 50 at r3, 40 at r4, 15 at r5. **Zero after r5.**
+- **Present on all 15 maps CAD has played us on.**
+
+So the ferry is **not nordkap geometry — it is CAD's invariant opening, map-independent**,
+and the autopsy's five-game observation is a sample of a league-wide constant. Anything
+keyed to it generalises past nordkap.
+
+**Standing caveat, restated:** *"in 85 attributed games"*, never *"CAD always"* — `join.tsv`
+covers 1,445 of ~6,233 archived replays, and trap 3 biases every throw count **down**.
