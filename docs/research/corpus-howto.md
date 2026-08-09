@@ -40,6 +40,9 @@ in 39 seconds**, against ~19 minutes to re-decode everything.
 truth for "what is new", rather than inferring from the tables, because a file
 that legitimately produces no rows would otherwise be re-decoded forever.
 
+**Fresh clone?** Only the `.tsv.gz` copies are committed. `gunzip -k corpus/*.gz`
+then run sync, or just run sync — it rebuilds what it needs.
+
 ## Full rebuild — only when a DECODER changed
 
 ```bash
