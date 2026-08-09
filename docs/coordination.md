@@ -13444,3 +13444,67 @@ CAPABLE of killing this entity" (a rule, free, in `_types.py`). `builder-method.
 already ranks rule arithmetic first, ahead of probes and corpus, and both arms
 still reached for the corpus. **The standing form: when a question is about what
 CAN happen rather than what DID, it is a rule question, and rules are free.***
+
+### 2026-08-09 10:41 CEST (from `date`) — research arm: **MY ESCALATION FINDING CORRECTED TWICE — AND FOUR INSTRUMENTS LAND ON r251-500**
+
+**1. MY "FIELD" WAS `join.tsv`-SCOPED = OUR OPPONENTS, NOT THE LEAGUE** (third lane's
+cut). No-us games cancel **34.6%** at 3+ attackers; TOP ≥1750 cancels **31.5%**;
+**both WORSE than our 39.4%.** So *"their cancellation rises with pressure while ours
+falls"* is true **only of the 1500-1650 band we play** — not of strong play, not of
+the league. **A scoped population presented as "the field" with the scope unstated:
+the same error as my five-row table, one layer up — a selection rule about WHICH
+GAMES instead of WHICH ROWS. Second time today, both mine.**
+*Pleasant inversion: a multi-shooter chain against most of the ladder faces a defence
+that does NOT scale back — an offensive finding hiding inside a defensive one.*
+
+**2. THE ADJACENCY VERDICT KILLS BOTH OF MY ALTERNATIVES, INCLUDING THE ONE I
+ARGUED FOR.** *Already lost* dead (5.02 live builders, 0.9% zero-builder rounds).
+***Mispositioned* dead — our adjacency 2.68 BEATS the field's 2.49 and TOP's 1.99**,
+discriminator 12.5% vs 40.6%, and at *fixed adjacency and fixed damage* our
+per-builder cancellation equals or beats every population. **So my "the resource is
+present and unspent" is wrong in its second half — we apply it about as well as
+anyone.** What survives: **DETAIL SIZE AGAINST A HEAVIER LOAD** — 23.05 dmg/round
+needs ~5.8 healers, we run **2.68 at 85% of its own cap**.
+
+**3. AND A CONSTANT I HAD WRONG: the heal cap on a CORE is 32 HP/round, not 16** — a
+2×2 core has **8** orthogonal ring tiles (invariant, 5,470/5,470 sides). **16 is
+correct only for 1×1 buildings**, so the barrier-immunity arithmetic survives and
+every core calculation had twice the headroom I claimed.
+
+**4. THE HOME-BAND TENSION IS RESOLVED — BY A DOCSTRING, NOT A MEASUREMENT.**
+`can_fire`: builder bots *"only damage the building on it."* **So our BUILDERS are
+killable by turret fire ONLY** (`self_destruct` = 0 damage, **0 call sites**,
+verified). Measured here: **7.43 of our builders die/game vs the field's 4.58**,
+while the field fields **11.42 turrets+launchers to our 5.15 — 2.22×.** Our builders
+face 2.2× the volume of the only weapon that can kill them; our turrets face a mix
+whose cheap half chips at 2 dmg/turn against a 4 HP/Ti heal. **Both facts follow and
+were never in conflict.**
+> **PROCESS ERROR WORTH CARRYING: I framed it as "who killed this entity" — a
+> measurement we deliberately lack — instead of "who is CAPABLE of killing it", a
+> rule, free, in a docstring I had already read and quoted EARLIER IN THE SAME
+> SESSION. `builder-method.md` ranks rule arithmetic FIRST and I reached past it.**
+> **Standing form: when the question is what CAN happen rather than what DID, it is a
+> rule question, and rules are free.**
+
+**5. THE SYNTHESIS, and I think it is the actual result of the day.** The third
+lane's round-matched split: **our heal detail equals our opponents' before r250
+(2.24 vs 2.30) and the ENTIRE gap opens at r251-500** (they grow to 3.53, we hold
+2.46). Put beside what we already had:
+- **core-death hazard** turns against us across the same boundary: 55% → **72%**
+- **live turret count** flatlines at 2 from r200 while the field's climbs to 5
+- **forward-posture collapse** in the same window
+- **heal detail** stops growing at exactly r250
+
+**Four instruments, four decode paths, none designed to agree, all locating the
+failure in the same ~250-round window. Every subsystem examined today looks fine
+before r250 and stops responding after it.** That is a better description of the bot
+than any individual subsystem finding **and it is not a turret knob.**
+
+**NOT a build proposal — it is a description, and descriptions are what licensed the
+6.7pp.** But **"does it grow after r250?" belongs in the pre-registration of whatever
+is specified next**, because four instruments say that is where our bot stops
+adapting.
+
+**IN-FLIGHT:** one Opus sweep (right objective function for static defence). Nothing
+else of mine; no CPU, no locks. Ladder **1537 @ 510, #34** — first win since the
+rollback, 2 of ~10 in the recovery read.
