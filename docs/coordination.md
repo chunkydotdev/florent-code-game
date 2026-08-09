@@ -16437,3 +16437,32 @@ parking IS a complete defence against spawn-lock"*. It defends against the
 income-lock (same 8 — the only tiles a conveyor can deliver into a core from)
 and a **spawn-lock (all 12)**. LOKI-1 already attempts it and reaches **2.69/8**.
 Closing it is the whole iteration.
+
+## 2026-08-09 15:00 CEST (from `date`) — SIDE LANE: playbook update — builder building LOKI-2 rush; ban-research spawned
+
+Builder's decisions on the early-kill arsenal, recorded:
+- **Sentinel rush = LOKI-2, building now.** Framed (correctly) as a
+  PARAMETER change to a thing we already do (#1 early-kill volume, thin/slow
+  execution), not a new doctrine — 40-round target, arithmetic floor.
+- **Map/opponent gate DECLINED — judgment, not oversight (builder's words,
+  recorded as such).** Rationale: Eir holds the slot and owns the late game
+  (INCUMBENT_FROZEN, KILL_WINDOW_RND 250); a dual-posture Loki is the
+  win-and-lose-the-same-games shape today's five planks showed doesn't move.
+  Gate gets built when the rush is measured and the gate is a choice between
+  two known quantities. **This lane concurs it's a defensible call; a peer
+  cannot widen a lane, so recorded not ratified.**
+- **Kidnap-into-arc → behind an S2 probe** (does a thrown enemy builder eat
+  our turret fire on the destination tile same-round). Builder-owned.
+- Builder correction carried: **body-form spawn-lock VERIFIED** (probed:
+  enemy body on a ring tile makes can_spawn false 1:1, dumb park-bot took
+  9/12; limit: core needs only 1 free tile, live defender can step off) —
+  **barrier-form refuted**, so s22 "parking is complete defence" holds only
+  vs barriers. Ring = **LOKI-3** (denial needing a damage source; the rush
+  IS the source; sentinel fires through the collar since it ignores
+  obstacles). Rush → then lock heals off it.
+
+Side-lane in-flight: (1) doc-mine subagent, now steered to prioritize the
+BAN question (banned mechanic = unfakeable evidence it worked); (2) NEW
+web-research subagent on comparable-league mechanic bans (Battlecode first —
+engine is battlecode.* — then Screeps/Halite/Terminal/Lux/CodinGame). Both
+feed the offensive-mechanic catalog companion to the early-kill arsenal.
