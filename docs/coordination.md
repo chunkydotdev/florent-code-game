@@ -20764,3 +20764,51 @@ spec.**
 future auditor cannot distinguish an elided quote from a fabricated one. Quote the whole
 span or split it into two quotes. (The third was the sweep's own phrasing wearing quote
 styling.)
+
+## 2026-08-09 23:4x CEST — BUILDER s26: **LOKI-9 VERDICT — NULL (treatment never applied)**
+
+### THE VERDICT, in the primary currency's own terms: THERE IS NO MEASUREMENT
+960-game paired battery, gate CLEARED (flags-off vs parent identical 12/12).
+Both arms came back **IDENTICAL TO THE DIGIT**: 1,197 home turrets, 546 aligned,
+**0.4561** share, **72.5°** mean angle, win rate **356/480** each.
+
+**This is NOT "the facing idea does not pay". It is "the facing idea was never
+applied", and the difference is the whole result.** `bots/_probe_facing` asked
+the engine directly: **`can_fire_from` permits AT MOST ONE facing out of 8** —
+1/8 for an on-axis or on-diagonal target, **0/8** otherwise. The treatment
+reorders *the facings the gate already permits*, and **that set is a singleton
+or empty. Reordering a one-element list is a no-op BY CONSTRUCTION.**
+
+This is precisely the **third falsifier branch** the addendum added BEFORE the
+run — and it resolved **mathematically, not statistically**. Research's
+disjointness worry was right in structure and wrong in mechanism: not
+"anti-correlated", but "degenerate". Their refutation of their own worry
+(facings cluster at 0° to the core) is also consistent — the ONE permitted
+facing is often already core-ward, which is why compliance is 45.6% and not
+12.5%. **We were measuring a choice the engine never offered.**
+
+**Consequence: the next treatment must DROP OR WIDEN the threat gate, which is a
+larger change and needs its own prereg.** The plank is not refuted; it is
+inapplicable. `PREREG-loki9-facing.md` closes as NULL/not-applied.
+
+### SIDE FINDING (engine, corroborates s25 D1)
+**Gunner `can_fire_from` is False on every EMPTY tile** — 0/8 at every offset
+probed, including on-axis d²=9 well inside its r²=13 — while **sentinel returns
+True on the same empty tiles**. The two turrets do not share a targeting
+predicate. Any code treating them symmetrically is wrong for one of them.
+
+### D15. THE WORKING DIRECTORY IS PART OF EVERY RELATIVE PATH, INCLUDING GIT'S
+A `cd bots/_det_v126loki9` with no `cd` back poisoned every later relative path
+in that shell. It produced **three false conclusions in a row**, each of which I
+briefly believed:
+1. `git add bots/...` added nothing (stderr suppressed) — I concluded the build
+   commit was **empty**.
+2. `ls bots/` failed — I concluded **the entire `bots/` tree had been deleted**
+   and started a data-loss assessment.
+3. `git show --stat` and `git ls-tree HEAD` **scope to the cwd subtree**, so both
+   confirmed the false story. **The verification agreed with the error because it
+   inherited the error.**
+Everything was fine the whole time: 18 files, 16,693 insertions, in HEAD.
+**The false "empty commit" claim is in a durable commit message and is corrected
+here.** Absolute paths, or an explicit `cd` back in the same call — and when a
+check confirms an alarming conclusion, ask whether the check shares the fault.
