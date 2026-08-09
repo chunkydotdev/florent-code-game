@@ -18283,3 +18283,54 @@ was never at risk from it, and we only know that because someone looked.
 > conclusion looks too good.** Today's six instrument failures were all found by
 > a check or a peer, never by a result looking wrong. That is the argument for
 > keeping the checks rather than trusting the smell test.
+
+## 2026-08-09 18:5x CEST (from `date`) — BUILDER: **MAGNUS STANDING DIRECTIVE + a slot-protocol trap that cost real exposure**
+
+### THE DIRECTIVE, VERBATIM (2026-08-09)
+> *"You're always go for unrated legs, it's an essential tool, use as much as you want."*
+
+**Unrated legs no longer need per-leg approval from anyone.** They are the
+project's primary field instrument, and the standing bar is now the pre-reg and
+the gate, not a permission ask. This supersedes my own hold of the last hour.
+
+### THE TRAP, WHICH I HIT LIVE AND WHICH THE SWAP PROTOCOL DOES NOT STATE
+**`fcode submit` AUTO-ACTIVATES the new version.** There is no separate
+"upload but do not activate" step. I had assumed submit and activate were
+distinct, wrote an activate-then-fire-then-restore chain, and **the submit had
+already put an untested LOKI-4 on the live slot before my first command ran.**
+
+**And `fcode submission activate` takes a VERSION INTEGER, not a submission id.**
+Both of my id-based activate calls errored out — including the RESTORE — so the
+chain failed open with v95 live. `activate 94` is correct; `activate
+d7a0cd62-...` is a hard error.
+
+**Exposure was checked, not assumed:** `match list --mine` shows every recent
+ladder match at vA/vB = 94, so **no rated match ran on v95.** Rating went 1596.8
+-> 1612.7 across the window and rank 28 -> 25. **Clean by luck of timing, not by
+control** — the ladder fires at :X2:43 every 10 minutes and I happened to land
+between slots. Had it fired, an unmeasured bot would have taken a rated game.
+
+**⇒ CORRECT SEQUENCE, for successors:**
+```
+fcode submit bots/_vNNN         # THIS ACTIVATES. The slot is now live-swapped.
+fcode match unrated <team-id> --map ... (repeat as needed)
+fcode submission activate 94    # VERSION INT. Restore immediately.
+fcode status                    # VERIFY the restore landed.
+```
+**Verify the restore rather than trusting the command's exit** — mine printed an
+error and I would not have noticed from a chained `&&`.
+
+### FOUR LEGS FIRED, all unrated, all on the SAME five short maps
+(nordkap, eider, heart, moonrise, meander — short band, where arrival is
+plausible and where LOKI-4's offline effect is concentrated)
+
+| match | arm | opponent | question |
+| --- | --- | --- | --- |
+| `a3459155` | **LOKI-4 (v95)**, attacks normally | CtrlAltDefeat | discriminator CONTROL arm |
+| `7838610b` | **LOKI-QUIET (v96)**, 0 attacks | CtrlAltDefeat | does CAD idle on PRESENCE alone? |
+| `442cd494` | LOKI-4 (v95) | Ouroboros | field read, worst matchup (15.3%) |
+| `e4528eeb` | LOKI-4 (v95) | Orizon | field read, unsaturated offline |
+
+**The CAD pair is the high-information one** and it is why both arms share a
+fixture: the corpus cannot separate *damage* from *intruder presence* because
+they are the same event there. These two legs make them different events.
