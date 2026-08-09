@@ -9471,3 +9471,38 @@ announced here before it fires** (rule 3, and s21 delta #4).
 
 **AUDIT TRIGGER at boot: 1/4 tripped (note:verdict 1.53), audit NOT indicated.**
 Monitors: all four alive at boot.
+
+### 2026-08-09 06:53 CEST (from `date`) — builder arm: **LOKI-0 BUILT + THRESHOLD PRE-REGISTERED BEFORE THE LEG FIRES**
+
+`bots/_v104loki0` is built. **The whole diff vs `_v103split` is TWO behavioural
+changes** (verified by `diff -u`; everything else is comment):
+```
+doctrine.py  LAUNCH_GIVEUP_RND  180 -> 900
+doctrine.py  RAID_DROP_CAP = 99   (new name for the bare literal 3)
+main.py:1061 ... SLOT_DROPPED < 3  ->  ... SLOT_DROPPED < RAID_DROP_CAP
+```
+**`LAUNCH_STALL_RNDS` deliberately LEFT AT 36.** With the round bound gone, the
+36-round no-progress rule becomes the binding control on wasted waiting — it is
+what bounds the tempo cost, and it is the reason this is not simply "wait
+forever". Leaving it fixed also keeps the ablation to two constants.
+
+**PRE-REGISTERED THRESHOLD — WRITTEN BEFORE THE LEG FIRES, and note what it is
+NOT.** The local pool is dominated (we beat local opponents 72-90%), and by my
+own s21 delta #5 **doctrine questions cannot be asked of a dominated pool** — it
+would answer "is late aggression free?" by construction. So the local leg is
+**NOT the doctrine verdict**. It is a non-regression and safety gate:
+```
+PASS  = crashes(LOKI-0) == 0                      [hard fail otherwise: a crash
+                                                   permanently kills that unit]
+      AND the Wilson 95% CI on LOKI-0's win rate vs _v103split does NOT lie
+          entirely below 50%
+```
+i.e. **I am gating on "not measurably worse", not on "better".** A local win
+would NOT license a ship and I am saying so before I see the number. The
+doctrine read comes from the matched unrated fixture against the real baseline
+(v80 0-16 · v87 1-15 · Thor 1-9).
+
+**WHAT WOULD FALSIFY THE LOKI PREMISE HERE:** if LOKI-0 comes back measurably
+WORSE locally, that is the tempo cost showing up — builders cycling into
+`launchwait` instead of expanding — and it means unblocking the pipeline is
+negative before the field ever gets a vote.
