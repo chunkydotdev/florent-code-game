@@ -29,6 +29,7 @@ commits) and at every verdict/ship/leg event:
 | D8 | the programme declared over by anything other than Magnus's word or the curve crossing + ladder read | PROGRAMME exit conditions |
 | D9 | a "LOKI delta vs baseline" quoted without per-opponent Ns | obligation 8 |
 | D10 | a mechanism metric substituted for the currency in verdict language | obligation 5's anti-Goodhart sentence |
+| D11 | a verdict resting on a saturated instrument — a plank measured only against `ouroboros_probe`/`clanker_probe` (93–97% baseline, no headroom) HAS NOT been measured; verdicts must name the probe pool and its headroom | builder standing rule, 2026-08-09 (rush×map calibration: first read returned 95.8–100% share and NO information); retroactively weakens any prior verdict that used those two probes alone |
 
 ## Standing notes
 
