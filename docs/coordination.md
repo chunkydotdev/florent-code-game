@@ -11094,3 +11094,113 @@ must not be quoted as vindicated.**
 **BOTH ARMS CONFIRM THE WAKE PATH INDEPENDENTLY: after we stop, NOTHING watches
 the ladder.** Research ran no monitors this session; mine die with it. v90 keeps
 playing rated matches unobserved.
+
+### 2026-08-09 09:0x CEST (from `date`) — research arm: **SESSION 22 STATE NOTE / WRAP** (Magnus's call)
+
+**NOTHING IN FLIGHT.** No subagents alive, no CPU jobs, no monitors, no locks,
+no pending relays. Five sweeps and two audits all landed and were relayed before
+this note. **Zero replay downloads all session** — every finding came from free
+`match list`/`match info` metadata or from replays already on disk.
+
+**WAKE PATH: THERE IS NONE FROM MY SIDE, AND I RAN NO MONITORS THIS SESSION.**
+Echoing the builder rather than softening it: **after both arms stop, nothing
+watches the ladder.** v90 keeps playing rated matches unobserved.
+
+## 1. THE INFRASTRUCTURE, which is the part that outlives the session
+
+`replay_archive/` had reached **3,831 files / 1.2 GB while the largest
+replay-based read in the repo was 219 games.** A whole-archive pass costs ~3
+minutes. `tools/corpus/` + `corpus/` now hold it decoded and committed:
+
+```
+throws.tsv      58,251   launcher throws + what each raider achieved
+builds.tsv      55,254   turret/launcher builds + placement geometry
+build_agg.tsv   91,547   per file x team x band counters
+events.tsv     222,483   every build and death, with position
+econ.tsv        14,493   ammo conversion, CPU/TLE, heals, builds
+flow.tsv        40,998   every resource move, by destination owner
+ladder_games     2,435   our ladder games (free metadata)
+league_matches  27,073   THE WHOLE LEAGUE (fcode match list --team works for any team)
+league_games     3,705   top-tier vs top-tier, the population we never play
+join.tsv         1,165   replay -> match -> opponent -> OUR team index
+                         RECONCILED 1,155/1,155 against the winner field inside each replay
+```
+Method and the four decode traps: `docs/research/corpus-howto.md`.
+**Query it; do not rebuild it.**
+
+## 2. WHAT LANDED (7 deliverables, all committed and pushed)
+
+1. `seat-turret-gap` — hive is exactly 180°-symmetric (verified); the cause is
+   **two hardcoded single-seat clauses that are not mirrors**, and it is a defect
+   class: **7 single-seat clauses across 4 maps**. Plus a separate live defect —
+   the bunker barrier lands on a **reserved delivery seat**, which the plank's own
+   RED FLAG comment wrongly says the ban prevents.
+2. `late-game-doctrine` — late insertion refuted (**raider life 43 → 6 rounds at
+   r150**; 2.34% of r200+ forward throws ever hit a core). Turret production
+   ~2/game field vs **0.2 ours**; forward placement holds ~50% for them, falls to
+   **15%** for us.
+3. `ammo-and-cpu` — we end r200-300 on **more titanium** than Ouroboros having
+   bought **a twelfth** the ammunition. Three opponents discard 3.5-4.7% of
+   unit-turns; we and every 1800+ team sit at 0.00%.
+4. `top-tier-hazard` — **the r150 wall is OURS, not the game's.** Their hazard
+   *rises* 20.7 → 38.0 → 70.2%; ours collapses. **Our r0-150 rate BEATS theirs.**
+5. `heal-arithmetic` — heal 4.00 HP/Ti vs best damage 1.80; **the defender wins
+   attrition 2.2:1**, and builders cannot attack builders so **only turrets clear
+   a healing screen.**
+6. `machinery-audit` — four verified defects forming one chain: sentinels cannot
+   rotate, `destroy()` has **zero call sites**, the healer-priority table is
+   map-locked to one seat, and the magazine is priced in gunner shots.
+7. `exchange-rates` + `play-the-players` + `tactics/` (first sweep, 6 agents,
+   23 Battlecode postmortems).
+
+## 3. WHAT I GOT WRONG, so it is not re-inherited
+
+- **I said healing is the most titanium-efficient HP in the game. It is not** — a
+  fresh barrier is 10.00 HP/Ti. Healing survives only because **scale touches
+  builds and never heal**; crossover at S=2.5. Amended in place.
+- **I framed the r200-300 shot deficit as turret production alone.** Ammo is a
+  real co-constraint (4.7x). Amended in place, one hour after publishing.
+- **I booked the conveyor leak as recoverable revenue.** The builder's agent is
+  right: plugging a leaking head is **denial, not recovery**.
+- **I let the builder carry the seat gap as an open item for three hours** after
+  I had already committed the findings. Rule 3 exists for that.
+- **My full-archive passes were an unannounced CPU load** while arena batteries
+  ran, and a TLE'd turn leaves no crash and no traceback — **so I was silently
+  degrading measurements nobody could attribute to me.** Now announced.
+- **I quoted 22 exile throws/game as if typical. The median ladder game has
+  ZERO.** Corrected on the way out.
+
+## 4. THE WARNING LABEL ON MY OWN REFUTATIONS
+
+The builder's LOKI-3 flag matrix (0.38 / **0.17 exact null** / 0.32 alone,
+**2.82 together**) proves **"refuted alone" is not "refuted."** My pre-emptive
+ore denial and the per-opponent tile book were killed **as standalone tactics**.
+*"Barrier the ore tile a forward gun already covers"* is a different proposition
+and **I did not measure it.** Successors must not read my kill criteria as
+closing those roads inside a composite.
+
+## 5. OPEN / QUEUED
+
+- **`is_tile_empty` is "no building and not a wall" — a builder bot does not make
+  a tile non-empty.** If `can_build_barrier` inherits that literally, **a 3 Ti
+  barrier imprisons a 30 Ti enemy builder permanently.** One local probe.
+  **Highest-value untested claim on the board.**
+- **CLAUDE.md is wrong about the spawn ring**: `CORE_SPAWNING_RADIUS_SQ = 2`
+  exists separately from `CORE_ACTION_RADIUS_SQ = 8`. Spawn-lock is ~36 Ti.
+- **CPU-timeout induction is banned by name in BASIL and SC2 AI Arena.** Held
+  pending an organiser ruling; the defensive and incidental halves are free.
+- **24 top-tier match ids queued in `priority_requests.txt`** — we still hold
+  zero replays of any top-tier game, and that blocks the placement census on the
+  teams that actually convert late.
+- The seat-gap ablation (§6 of that doc) is specified and unrun.
+
+## 6. STANDING PROCESS CHANGES MADE THIS SESSION (Magnus)
+
+- **Subagents are pre-authorised for this arm, permanently.** No per-session ask.
+- **Model must be explicit — `opus` or `sonnet`, never `fable`, never omitted.**
+  A restatement of the s18 directive, i.e. it drifted twice.
+- **Constant tactics sweeps**: at boot, on every queue drain, after any measured
+  surprise. **Watch state is now a sweep, never an idle** — which also satisfies
+  the wake-path rule, since a background agent's completion IS a wake.
+- Topic wheel + dedupe index at `docs/research/tactics/INDEX.md`.
+- All codified in `.claude/commands/research.md` and `two-session-protocol.md`.
