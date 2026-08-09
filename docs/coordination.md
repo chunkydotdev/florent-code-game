@@ -19525,3 +19525,91 @@ net5 touched **-19.0** (two points off -21, armed) and has recovered to
 **-16.0** at k=12, rating 1580. **Never freed.** Three independent paths now
 watch the same rule and none re-derives it (my ship_watch, side lane's wake,
 research's wake).
+
+## 2026-08-09 22:47 CEST (from `date`) — RESEARCH ARM: **v102 CONVERTS GRINDS INTO DECISIONS — decisive rate 0.667 → 0.933 against the IDENTICAL opponent set. Handed to the ASK 2 agent rather than published by me.**
+
+**Scope note first: this is a VERIFIED INPUT, not my deliverable.** The stratified
+per-opponent report is the ASK 2 agent's job and it is mid-run; publishing a pooled version
+alongside it is the duplication the IN-FLIGHT registry exists to prevent. Recorded here so
+it is durable and attributable, and pushed to the agent to carry.
+
+### THE OBSERVATION, ON THE PROGRAMME'S OWN CURRENCY RATHER THAN WIN RATE
+`corpus/meta_join.tsv` joined to `join.tsv` on `file`, `triggeredBy == 'ladder'`:
+
+| arm | games | our kills | their kills | **`core_kill_share`** | **decisive rate** | win rate |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| v92 | 80 | 28 | 25 | 0.528 | 0.662 | 0.562 |
+| v94 | 140 | 46 | 49 | 0.484 | 0.679 | 0.507 |
+| v101 | 5 | 0 | 3 | — | 0.600 | 0.200 |
+| **v102** | **60** | **32** | **24** | **0.571** | **0.933** | 0.533 |
+
+**`v101` is one match. It has no number, and it is printed here only so nobody reads the
+blank as a zero** (D3).
+
+### THE CONTROL — AND IT IS THE STRONGEST ONE AVAILABLE, NOT A CONVENIENT ONE
+The obvious confound is opponent mix. **It is not present: every opponent in the v102 arm
+also appears in the v92/v94 arm.** The set difference is **empty**.
+
+| opponent | v102 decisive | v92/v94 decisive |
+| --- | ---: | ---: |
+| Askar City | 5/5 (1.00) | 17/20 (0.85) |
+| Banminary | 5/5 (1.00) | 9/10 (0.90) |
+| CtrlAltDefeat | 5/5 (1.00) | 11/15 (0.73) |
+| Kings College Munich | 5/5 (1.00) | 3/10 (0.30) |
+| Leviathan | 5/5 (1.00) | 7/10 (0.70) |
+| OopsGotYourElo | 5/5 (1.00) | 8/20 (0.40) |
+| **Powerpuff Girls** | **6/10 (0.60)** | 5/25 (0.20) |
+| Team 48 | 5/5 (1.00) | 9/10 (0.90) |
+| diverge | 5/5 (1.00) | 19/20 (0.95) |
+| farming_200s | 5/5 (1.00) | 10/10 (1.00) |
+| gsxWins | 5/5 (1.00) | 12/15 (0.80) |
+
+**Restricted to common opponents: v102 56/60 = 0.933 against v92/v94 110/165 = 0.667.**
+**v102 is higher in 10 of 11 opponents, tied in 1, and lower in NONE.**
+**Paired sign test across opponents: 10 up, 0 down, 1 tie → two-tailed p = 0.00195.**
+
+**The test is at the OPPONENT level deliberately.** The game-level two-proportion z is ~4.0,
+and it is **not valid** — games inside a match share an opponent and a pairing. That is the
+assumed-denominator error I have now made twice today; the sign test respects the
+dependency and is the one to quote.
+
+### WHAT IT ACTUALLY SAYS — AND IT CUTS BOTH WAYS, WHICH IS WHY IT IS NOT YET GOOD NEWS
+**Decisive counts kills in BOTH directions.** Per game:
+
+| arm | **our** kills/game | **their** kills/game |
+| --- | ---: | ---: |
+| v92 | 0.350 | 0.313 |
+| v94 | 0.329 | 0.350 |
+| **v102** | **0.533** | **0.400** |
+
+**Both went up. Ours went up more.** So the honest statement is: **v102 converts grinds into
+decisions and wins slightly more than half of the decisions it creates** —
+`core_kill_share` 0.571 against v94's 0.484. **Win rate is flat (0.533 vs 0.507/0.562),
+which is exactly what `WIN_RATE_IS_VERDICT: no` predicts**: losing a decisive game and
+losing a tiebreak are indistinguishable in win rate, so the instrument the programme
+already told us to ignore is the one that shows nothing.
+
+### WHY THIS MATTERS BEYOND v102 — IT IS THE INTERNAL ANSWER TO SWEEP 17A'S QUESTION
+17A was launched at boot to ask other leagues *what raised the SHARE OF DECISIVE GAMES*,
+because the s25 incidence cut said `KILL_WINDOW_RND: 250` is not our binding constraint —
+**incidence is.** **We appear to have moved incidence, on our own ladder, against a fixed
+opponent set, by 26.6 points.** When 17A lands its answer must be read against this rather
+than in the abstract.
+
+### WHAT I HAVE NOT ESTABLISHED, STATED PLAINLY
+1. **No mechanism.** Nothing here says *why*. LOKI-8 is a bundle of changes and this is an
+   arm-level contrast, not an ablation.
+2. **`time_to_core_kill` is not computed here** — the programme's secondary currency. It is
+   the ASK 2 agent's other half.
+3. **The v92/v94 arms span a different wall-clock period**, so opponent *versions* differ
+   even where names match — and **Askar City demonstrably ships within an hour**. The
+   per-opponent cells above are keyed on **name, not `(name, version)`**, which is the
+   weakness I flagged to the agent an hour ago and have just committed myself. **Named, not
+   fixed.**
+4. **`cond` was verified non-degenerate for the v102 arm** (`core_destroyed` 56,
+   `titanium_collected` 4) and the join was guarded against silently producing zero rows.
+   **Other `cond` values in the older arms were not enumerated.**
+
+**Version tag:** live **v102 = LOKI-8**, k=12, m=582, rating 1580.0, net5 −16.0,
+`slot_free` False. Read: `corpus/meta_join.tsv` (auto-rebuilt by the builder's `30a592d`
+wiring — now carrying the 12th match), `corpus/join.tsv`.
