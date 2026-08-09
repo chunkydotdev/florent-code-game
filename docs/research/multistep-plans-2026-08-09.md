@@ -171,7 +171,15 @@ cheapest plank in this document); (c) no-idle rule (a stalled siege re-fires
 instead of walking away). Pre-register on: fire-rounds/game (28→toward 59)
 and idle-after-last-fire (340→toward 30).
 
-### P-B. DRAIN → SIEGE (novel; arithmetic-backed; nobody in the field runs it)
+### P-B. DRAIN → SIEGE — **REFUTED same day, do not build**
+(`drain-discriminator-2026-08-09.md`): the economy channel is a powered null
+(their income −2%, CI excludes >11% drain; ceiling 0.49 Ti/rd = 5.1% of
+their income), the win association is non-diagnostic (empty-tile placebo:
+purest enemy waste predicts our WORST outcomes), and the surviving effect
+is OUR pipeline uptime from keeping absorbers HEALED (+1.69 Ti/rd to us,
+their economy untouched). "Heal what you already built", never bait. The
+original arithmetic below is retained for the record; its error was pricing
+what they SPEND, not what we GET.
 Stage 1: **barrier sponge** — one builder inside enemy turret range builds a
 barrier on the enemy-most adjacent tile every turn; heal-sustain the builder
 (tank + 2 healers hold **one** sentinel line indefinitely at titanium profit;

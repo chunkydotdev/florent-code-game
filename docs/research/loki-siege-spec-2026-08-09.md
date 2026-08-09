@@ -192,18 +192,23 @@ of Ouroboros's ammo; the titanium is already there.
   spans 10); qualitative gates (never-rotates, zero-enemy-throws) hold in
   every version observed. Build-on-sight is UNMEASURED (instrument failure,
   honestly flagged), not null.
-- **HOLD ON THE DRAIN PUMP (research-arm check, same day, correct): the
-  atlas resolved the MECHANISM gate (they do shoot healed buildings,
-  sustained), but "2,708 Ti into a 3-Ti conveyor" is an exchange-rate
-  statistic — what they SPEND, not what we GET. The naive outcome test is
-  confounded (enemy shots/round vs our win rate is monotone NEGATIVE — an
-  opponent thermometer, causation backwards). Discriminating cut in flight
-  in the side lane: absorbed-share vs outcome within shooting-level strata,
-  plus the economy channel (their ti_coll/round vs absorbed-share). NO
-  bait-siting build until it lands.** Corroboration meanwhile: our conveyors
-  die 14.3/game vs field 5.7, our losses are cheap things (223 Ti builders)
-  vs their expensive ones (89 Ti of gunners/game) — prima facie, not yet a
-  measurement of what it produces.
+- **DRAIN PUMP REFUTED (`drain-discriminator-2026-08-09.md`) — DO NOT BUILD
+  BAIT.** The discriminating cuts ran (598 games, 7 building-shooters):
+  (a) the economy channel is a POWERED NULL — their income delta −2%, CI
+  excludes any drain above ~11%; they do not shoot more per round when
+  offered bait (they spend LESS ammo); the theoretical ceiling of the whole
+  pump is 0.49 Ti/rd = 5.1% of their income. (b) The win association is
+  real (+0.199 length-controlled) but NON-DIAGNOSTIC — the placebo kills it:
+  shots into EMPTY tiles (purest enemy waste) predict our WORST outcomes
+  (−0.257), so the instrument ranks "our material alive and forward", not
+  baiting. (c) The 18× asymmetry: high absorbed-share adds +37% to OUR
+  ti_coll/rd and ~nothing to theirs. **The surviving effect is HEALED share
+  at fixed volume (+7pp win, p=0.045, via +1.69 Ti/rd to OUR economy):
+  pipeline UPTIME — "heal what you already built", never "build things to
+  be shot." Cheap-absorber composition buys nothing (+0.016, CI spans 0).**
+  Any resulting build is a pipeline-heal-uptime rule priced on OUR
+  ti_coll/round — and it may already largely exist in the Eir healing engine;
+  a code-read of conveyor-heal coverage beats a new flag.
 - destroy() closure (research arm + builder, independently verified):
   **zero call sites in our live bots — OUR removeEntity events are all
   enemy kills.** The owner-demolition label only bites on FIELD survival
