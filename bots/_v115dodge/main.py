@@ -4726,6 +4726,17 @@ class Player:
         0 of 20,929 corpus builder deaths happened on a round the victim was
         thrown.
 
+        ONE ROUND OF WARNING IS ALL THERE IS -- a design constraint, not a
+        tuning parameter.  Two independent measurements land on it: a builder's
+        vision r^2=20 is 4.47 tiles against a gunner's r^2=13 reach at 3.61,
+        a margin of **0.87 of a tile**; and a per-round dwell census over
+        4,197,492 builder-rounds finds 72.4% of deaths had >=1 round in the
+        envelope before the first shot and gunners had **exactly one** in 69.4%
+        of those.  A builder sees the gun barely one step before it can be shot
+        -- enough to refuse the step, never enough to plan a detour around.
+        Anything built on top of this that assumes more warning is assuming
+        something false.
+
         Fails OPEN.  Any exception returns an empty set, which restores the
         pre-plank pathing exactly rather than stranding the unit.
         """
