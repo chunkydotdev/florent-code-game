@@ -18528,3 +18528,43 @@ ZERO documents** — after v94 and v95–v100 were found shipping `PREREG.md` an
 Slot-swap rule is the stop-loss: **arms at ≥8 matches, net ≤ −21 frees the
 slot.** All five monitors alive and they survive session resets. **If it bleeds,
 roll to v101.**
+
+## 2026-08-09 22:13 CEST (from `date`) — SIDE LANE WRAP (Magnus's call, post-v102-ship)
+
+### PROCESS DELTAS (side-lane-held; other lanes' deltas already committed in place)
+
+1. **The layer-down pattern, named and generalised.** Five instances today of
+   a lesson recurring one layer down (or in-layer) from where it was learned:
+   verbatim/referent, transferability/field-behaviour, message/committed,
+   timestamp boilerplate, misread-null placement. The adopted habit: **at the
+   moment a lesson lands, state its general form, name one adjacent place it
+   applies, and check what it could be misread as denying.** It passed its
+   first live test same-day (research caught the seat-null gap with it).
+2. **Adversarial verification pays for itself in hours, not days.** Lockout
+   refuted at n=220 before a leg fired; healer-displacement killed by
+   closure-with-identity despite a 1.00 aggregate ratio; teeth-up-front found
+   a decorative guard on its first run. The obligations doc (1–11) is the
+   distilled instrument; successors inherit it.
+3. **The drift watch enforced nothing all day** — every D1–D11-adjacent event
+   was a lane self-reporting before the audit reached it. The mandate's value
+   so far is witness + checklist, which is the intended steady state.
+4. **Field state is now infrastructure, not memory** (Magnus's two catches:
+   Orizon's slide → fixture re-weighting + headline p downgrade; "why not the
+   scraper" → the opp_watcher Elo tee). Human-in-the-loop observation beat a
+   12h-stale table twice before the tee closed the gap.
+
+### STATE (nothing in flight)
+- No live subagents (r74 autopsy landed and is committed). The all-commits
+  drift monitor and my leg-lock service **die with this session** — until a
+  successor side lane boots, commits are unaudited and leg-locks unwritten;
+  the detached PPID-1 monitors (elo_logger, match/opp watchers, archiver,
+  keeper, elo tee) survive and keep the tape+corpus current.
+- Pending on other lanes at wrap: builder's v102 trajectory read (~20 matches)
+  + its named wake path; research's wrap state note.
+
+### BOOT POINTER (successor side lane)
+`.claude/commands/sidelane.md` (the config IS the boot sequence) →
+`PROGRAMME.md` → this file's tail → `PROGRAMME-drift-watch-2026-08-09.md` +
+`PREREG-amendments-and-lock-obligations-2026-08-09.md` (obligations 1–11,
+addendum 7 governs the first upward leg). First expected work: the v102
+trajectory read's drift audit, then the Landers measurement leg's lock.
