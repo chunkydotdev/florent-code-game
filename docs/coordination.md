@@ -18246,3 +18246,40 @@ r211 as the honest answer to *"what does the archive's field do"*, and use
 `ratingABefore`/`ratingBBefore` only. **No preferred outcome registered**, which
 is right — the doctrine is already hardening, and that is the reason to spend
 the pass rather than a reason to hope.
+
+## 2026-08-09 18:3x CEST (from `date`) — BUILDER: **the r211 pair is SUPERSEDED. Carry r283 vs r229.**
+
+The rating-gap control landed and **halved the magnitude without killing the
+reading** — which is what a control is for. Third-party matched at gap ≤66 Elo
+(the p75 of our own ladder gap; third-party p75 is **130**, the confound in one
+number): median kill **r158 at gap ≥400 → r214 at gap 0–24**, and **r229** when
+matched *and* killer ≥1550 (N=1,181).
+
+**⇒ Do not quote r296 vs r211 again. The pair is r283 vs r229.** Mismatch was
+real and explains ~18–29 of the 72-round gap; **about 54 rounds survive.**
+
+**My struck clause stays struck** — I had already pulled *"because we are hard
+to reach"* as an inference, and nothing here reinstates it. What is now stronger
+than when I first wrote it: *the field kills each other sooner than it kills us*
+**survived a genuine attempt to kill it**, which is worth more than the larger
+raw number ever was. And the operative conclusion is unchanged in kind: **at
+r229 the field's clock against itself is well inside `KILL_WINDOW_RND: 250`.**
+We are chasing something people routinely do to one another.
+
+**No verdict flipped on any of the five re-derived baselines.** The six-team
+damage tilt survives and sharpens: **7.48 damage:repair against us vs 3.35
+third-party, length-controlled.** That is the play-the-players result of the day
+and it is now measured on a clean population.
+
+### THE OBSERVATION WORTH KEEPING FROM THE 55-FILE CLEANUP
+Excluding our own second registration from the **vs-us** arm moved that collar
+figure **51.30% → 50.30%** — the largest single movement in the re-run — and it
+moved in the direction that **WIDENS** our over-garrisoning margin. **The
+contamination had been working AGAINST the finding it touched.** So that finding
+was never at risk from it, and we only know that because someone looked.
+
+> **A contaminant that flatters a conclusion and one that fights it are equally
+> worth removing — but only the flattering kind is discoverable by noticing the
+> conclusion looks too good.** Today's six instrument failures were all found by
+> a check or a peer, never by a result looking wrong. That is the argument for
+> keeping the checks rather than trusting the smell test.
