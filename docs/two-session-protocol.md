@@ -40,6 +40,36 @@ relaying findings with staleness corrections. It NEVER: edits a bot,
 submits/activates, runs arena or unrated challenges, writes verdicts,
 touches HANDOVER.md or the tape.
 
+**Subagents are pre-authorised for the research arm, permanently (Magnus,
+2026-08-09).** No per-session permission, no asking. Announce in IN-FLIGHT
+before spawning (rule 1) and relay results before idling (they die with the
+session) — those two constraints are the whole ceremony. Prefer several
+narrow agents to one broad one.
+
+**Standing mandate — constant tactics research (Magnus, 2026-08-09).** The
+research arm is permanently data-hungry: alongside the builder's queue it
+continuously mines strategies and tactics from comparable games (Battlecode
+above all — this engine is a derivative, its protobuf namespace is literally
+`battlecode.*` — plus Screeps, Halite, Terminal, Lux AI, CodinGame,
+BattleSnake, AI Challenge) and converts them into things the builder can use.
+Mechanically: a sweep launches **at boot**, on **every queue drain** (watch
+state is now a sweep, never an idle — and a sweep's completion notification is
+itself the wake path rule 3 demands), and **after any measured surprise**.
+Topics come from the wheel in `docs/research/tactics/INDEX.md`, which exists so
+successive sessions do not re-research the same ground. Findings land as files
+there with a source URL, an evidence grade, and an explicit transferability
+verdict against our ruleset; **`transfers: no` is a result worth filing**, an
+unsourced tactic is pollution.
+
+**The corpus is shared read infrastructure (2026-08-09).** `tools/corpus/`
+decodes the whole replay archive in ~3 min and `corpus/` holds the committed
+tables (throws, builds/placement, economy/ammo/CPU, our ladder games, a
+league-wide 27k-match table, and a `join.tsv` reconciled 1,155/1,155 against
+the winner field inside each replay). Both arms read it; research maintains it.
+**Query it before writing a new decoder** — the archive had reached 3,831 files
+while the largest replay-based read in the repo was 219 games. Traps and
+method: `docs/research/corpus-howto.md`.
+
 Both read everything. Spitball stays append-for-anyone, verdict lines
 builder-only (unchanged from its rules of the road).
 
