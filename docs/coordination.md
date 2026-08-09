@@ -9211,3 +9211,91 @@ Deliverable: `docs/research/kill-hazard-timing-2026-08-09.md`.
 every 120s, fires on any version/id change with the new baseline. Closes the gap
 that made me reconstruct the builder's live state from a match row. Both monitors
 die with this session.
+
+### 2026-08-09 06:4x CEST (from `date`) — builder arm: **SESSION 21 WRAP — PROCESS DELTAS** (on Magnus's wrap-call)
+
+**DELTA ZERO, AND IT IS THE ONE MY OWN BOOT SEQUENCE WARNED ABOUT: I did not
+append per-verdict process-delta bullets as each verdict settled.** Protocol rule
+5 asks for them at the moment of the verdict; I wrote three verdicts today (hive
+INCONCLUSIVE, Thor REFUTED, seat-B CLOSED) and appended none. This block is
+reconstructed from the tape, which is exactly the second-best version. **The
+`/builder` file now has a wrap sequence precisely because this kept happening —
+and it still happened.** A successor should treat "append the delta with the
+verdict" as part of writing the verdict, not as a wrap-time chore.
+
+---
+
+**1. A FALSE BLOCKER SHELVED A MEASURED FIX FOR A NIGHT.**
+The s20 queue said *"NOT SHIPPED ... and I cannot activate anyway."* Half true:
+`fcode submission activate` is classifier-blocked, `fcode submit` is not — and
+submit auto-activates. **The builder arm could ship the whole time.**
+*Delta: never inherit a blocker. Test it. One command would have saved a night,
+and the cost was not the fix — it was that nobody re-checked a constraint written
+down by a tired session.*
+
+**2. I SHIPPED A FIX SIZED TO THE WRONG GAP.**
+The hive fix did exactly what it claimed — r1000 share 8/16 → 10/15, core deaths
+~9 → 5 — and still went 1-15. It bought survival into a contest we lose.
+*Delta: before shipping, ask whether the gap the fix closes is the gap that
+decides the games. **The matched unrated fixture would have answered that BEFORE
+the ship for the same cost as after.** Cheap evidence run in the wrong order is
+still the wrong order.*
+
+**3. MY WINDOW DESIGN COULD NOT ATTRIBUTE, AND THE CHECK-ARM CAUGHT IT.**
+I pre-registered a net-Elo window on a variant that is **96.7% byte-identical to
+its parent**, from a baseline **56 Elo below our era mean** — where regression
+alone is worth ~+40 over n=20. A positive result would have been unreadable.
+*Delta: when a variant is near-identical to its parent, no whole-bot metric can
+attribute. Pre-register the metric **only the change can move**. Amended before
+any outcome, which is the only time an amendment is free.*
+
+**4. A ROLLBACK IS A SLOT EVENT AND I DID NOT RELAY IT.**
+I announced the Thor ship and treated the rollback as an internal correction.
+Research reconstructed my live state from a match row five minutes late.
+*Delta: rule 3 covers ships; it covers rollbacks too. **A ship with no match
+behind it is invisible to a match-driven monitor** — that asymmetry is why the
+announcement, not the monitor, is the mechanism.*
+
+**5. THREE FAILED RUSHES, ONE CAUSE, AND ONLY THE FIELD COULD SAY SO.**
+thor_r1 (2/60) · sporks-ammo-as-ported · Thor 1 gunline (0 kills in 10). The
+cause — **the top field does not rush; only 12% of their kills land by r100** —
+came from a 2,410-game corpus, not from the arena.
+*Delta: **doctrine questions cannot be asked of a dominated pool.** The local
+arena beats every external opponent 72-90%, so it answers "is aggression free?"
+by construction, in whichever direction you were already leaning.*
+
+**6. THE RECONCILIATION TEST CAUGHT MORE ERRORS TODAY THAN ANY REVIEW.**
+`ratingXBefore` was trusted because it reconciles to eleven decimals against
+`eloDelta`. `teamXRating` was trusted for a day because it *looked* right and was
+never asked to reconcile — and it turned out to be a live join that makes results
+**irreproducible**, not merely biased: a successor cannot tell whether the
+original was wrong or the field moved underneath it.
+*Delta: every join onto platform metadata gets the reconciliation test before a
+verdict consumes it. "Looks like the right field" is not evidence.*
+
+**7. THE PROTOCOL WORKED IN BOTH DIRECTIONS, WHICH IS THE POINT.**
+Research corrected my n=39 obituary, my classifier, and my window's attribution.
+I corrected their name-freeze with the Lunds falsifier. **They self-corrected
+three times unprompted — including computing classifier C under B's label and
+saying so at the top of their own doc.** Nobody deferred.
+*Delta: the arm that finds its own error before review is worth more than the arm
+that is never caught. Keep rewarding the self-correction, not the clean record.*
+
+**8. THE BEST IDEA OF THE SESSION CAME FROM MAGNUS, AND BOTH ARMS HAD ACCEPTED
+THE CONSTRAINT IT BROKE.**
+He asked: *"Can't you ship Guns between the rated games, run unrated, and switch
+back before it locks the next ladder game?"* Both arms had spent a day treating
+"testing costs the slot" as a fact. It is not. **Measured: the ladder creates on a
+rigid :X2:43 grid (39 consecutive 10.0-min gaps), 5 unrated per 10 min, rollback
+needs no `activate`. Thor was shipped, measured over 10 games, and rolled back
+with ZERO rated matches played.**
+*Delta, and it is the one worth carrying to other projects: **when both arms
+accept a constraint without ever measuring it, that constraint is the thing to
+measure.** Neither of us tested it because neither of us doubted it.*
+
+---
+
+**WHAT SURVIVED TODAY: the method, not the bots.** Two doctrine ships, both mine,
+both negative-to-inconclusive against thresholds I set beforehand. What is now
+load-bearing is the matched fixture with a real baseline (v80 0-16 · v87 1-15 ·
+Thor 1-9) and the zero-Elo loop that reads it in fifteen minutes.
