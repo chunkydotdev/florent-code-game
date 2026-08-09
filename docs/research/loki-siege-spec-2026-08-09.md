@@ -84,13 +84,23 @@ state does not get distracted"); our raiders provably drift (idle 837r).
 Exit conditions are dumb thresholds, never plan-quality estimates (sweep
 §5.5): unit HP < 12, or round > commit_round + W, or core order cleared.
 
-### S2 — REPLACE-ON-DEATH (the cheapest plank on the board)
-Rule: while an enemy core is known and round < 950, a dead forward shooter
-creates a build order for the nearest COMMITTED builder: rebuild the gunner
-on/near the same tile. Target metric moves 49% never-replaced → field's
-28-36%. Our conditional replace latency (22r) is already normal — this flag
-adds a decision, not a capability. The field's 65-round grind IS a
-replacement chain (median shooter life 46r); we currently run chain length 1.
+### S2 — REPLACE-ON-FIRING-DEATH (respecified after the research arm's
+boundary adjudication — the unconditional version is WITHDRAWN)
+Unconditional replace-on-death collapses into the refuted PRODUCTION axis
+(steady-state it just raises live count, FLOOR measured −0.7pp): "a turret
+that is always replaced is a turret that is always there." The surviving
+form conditions on DEMONSTRATED PRODUCTIVITY: **replace a shooter only if it
+landed a shot within the last K rounds before dying (K≈10, ablatable) — and
+rebuild it on/near the tile where it was earning.** That is conditional on
+output, not count — the objective function the SITE lesson demands. While an
+enemy core is known and round < 950, a firing shooter's death creates a
+build order for the nearest COMMITTED builder. Target: 49% never-replaced →
+field's 28-36% *among productive shooters*. The field's 65-round grind IS a
+replacement chain (median shooter life 46r); we run chain length 1.
+Research-arm adjudication on the boundary (2026-08-09): S3 is cleanly
+outside "no more turret knobs" (changes what an existing turret does with
+time, touches none of count/placement/price); S2 is outside ONLY in this
+conditional form. Builder owns the final call.
 
 ### S3 — NO-IDLE (a stalled siege re-fires or rebuilds, never walks away)
 If no shot has landed on the enemy core for W2 rounds AND we have ≥1 living

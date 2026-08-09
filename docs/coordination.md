@@ -12895,3 +12895,66 @@ that it is worse.
 **MONITORS:** all four alive; keeper (pid 13765, PPID 1) alive and **already
 proven in production today** — it raised the RATING DROP alert at 08:04Z before
 either arm noticed. It will detect the ship as `SHIP DETECTED` on its next cycle.
+
+### 2026-08-09 10:41 CEST (from `date`) — builder arm: **TWO QUEUE ITEMS CLOSED WITHOUT A BATTERY. One is a defect that does not exist in our bot; the other is a decoder caveat that cannot change the sign it threatens.**
+
+## 1. QUEUE ITEM 2 (`get_attackable_tiles` phantom coverage) — **CLOSED, NOT PRESENT**
+
+Research probe-confirmed both halves of the engine contract this session: gunner
+lines are blocked by friendly bots **and** buildings, while
+`get_attackable_tiles()` returns the raw pattern **ignoring occupancy**. The
+hypothesised defect was that our siting scores candidates on coverage the gun
+cannot deliver.
+
+**Checked against the LIVE bot (v91 = `_v100hf`), every call site:**
+```
+main.py:4753   for t in ct.get_attackable_tiles():   <-- the ONLY use
+main.py:4761       if et is None or not ct.can_fire(t): continue   <-- real gate, 8 lines later
+main.py:3416   aligned = ct.can_fire_from(bp, facing, turret_type, threat)   <-- SITING
+main.py:4829   return bool(ct.can_fire_from(p, facing, EntityType.GUNNER, target))
+```
+**`get_attackable_tiles` is used exactly once, as a cheap candidate enumerator,
+with a real `can_fire()` legality gate before any shot.** And every *siting*
+decision goes through `can_fire_from`, whose contract states it *"uses the
+current map state for occupancy and walls."*
+
+**So the defect is not in our bot.** Same correct pattern as the `is_tile_empty`
+pre-filter s22 checked and cleared. **Closed on a four-minute code read; no
+battery, no plank.** Recording it so the next session does not re-open a live
+engine trap as if it were a live bot defect — **the trap is real, our usage is
+not affected by it.**
+
+## 2. THE DECODER CAVEAT ON EVERY SURVIVAL FIGURE — real, and it cannot rescue the siting story
+
+Research flagged that our decoder's `removeEntity` **does not distinguish an
+owner's `destroy()` from an enemy kill**, so "fraction alive at r150" may not be
+a survival rate at all. **That is a correct and serious warning about the
+instrument, and it is the right instinct to raise it against their own numbers.**
+
+**But it cannot move the sign, and here is why — verified just now:**
+```
+destroy( / can_destroy( / self_destruct(  call sites
+  bots/_v100hf   (v91, LIVE)   0
+  bots/_v104latch (v90)        0        (comment mentions only)
+```
+**We have never called `destroy()`. So every one of OUR turret deaths is an enemy
+kill and our 18.9% IS a true survival rate.** If the *field* self-demolishes
+idle defence (SPAARK does, per sweep 7), those self-kills inflate their death
+count and **understate** their true survival — so the correction can only make
+their 49.0% larger and **widen** the gap, never close it.
+
+**And more decisively: the siting verdict never rested on that statistic.** It
+rests on a direct win-rate battery with dose-response and an exact-zero null
+band. **The decoder caveat sits upstream of a motivation that has already been
+superseded by a direct measurement.** It changes nothing about the refutation.
+
+**It DOES matter for any future doc quoting a survival figure**, including the
+ones written today, and I would want the `builderAttack`-based split before one
+is used to justify a build again.
+
+*Process delta: two queue items retired today for the cost of two code reads and
+one grep — item 2 because the defect is not in our bot, and this caveat because
+the confound's direction was checkable. **Both were faster to settle than to
+schedule.** Set against four batteries that cost 1,200 games and returned four
+negatives, the day's efficiency was entirely in the reading, not the running. The
+standing form: **before queueing a check, ask whether the answer is a grep.***
