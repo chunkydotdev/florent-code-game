@@ -9538,3 +9538,70 @@ every historical row remains readable; new rows should carry the tree-hash.
 **CONVENTION FROM HERE:** quote the tree-hash as version identity. `--legacy`
 prints md5(main.py) and WARNS when a bot has files beyond main.py, i.e. when the
 legacy value under-identifies it.
+
+### 2026-08-09 07:05 CEST (from `date`) — builder arm: **LOKI-0 RESULT (no effect), A LIVE DEFECT FOUND, AND A 2x2 PRE-REGISTERED BEFORE IT FIRES**
+
+**LOKI-0 leg, read against the threshold I registered BEFORE firing it:**
+```
+_v104loki0 89 - 91 _v103split   (180 matches, 15 maps, both seat orderings)
+win rate 49.4%   Wilson 95% CI [42.2%, 56.7%]   crashes 0 / 0
+```
+**PASS on the gate as written** (0 crashes; CI not entirely below 50%). **And I
+am not calling that validation** — the gate was "not measurably worse", and the
+change did nothing. **Unblocking the round clock alone is worth ~0.**
+
+The easy excuse does not survive the win-condition breakdown: **85 of 180 games
+ended on `titanium_collected`, i.e. ran to r1000.** Nearly half the local pool
+goes far past r180, so the constant had ample opportunity to bind and produced
+no measurable effect. That points at a second gate, and there is one.
+
+**THE DEFECT, AND IT IS LIVE IN v89 RIGHT NOW — NOT SOMETHING LOKI-0 INTRODUCED.**
+`SLOT_LAUNCHER` is a **ONE-WAY LATCH**. Written `1` at four sites (:770 :823
+:830 :3880) and cleared at exactly one (:850, the "build failed, release the
+claim" path). **Nothing clears it when the launcher DIES.** Therefore, in the
+shipped bot:
+1. `_try_build_launcher:819` returns False forever once latched — **a destroyed
+   launcher is NEVER replaced for the rest of the match.**
+2. The `:1046` escape hatch (`not SLOT_LAUNCHER` -> stop waiting) is **dead code**
+   after the latch sets.
+3. The re-recruit clause `:1060` sees a launcher that no longer exists, so
+   builders keep entering `launchwait` **for a ghost**.
+This is an independent mechanical reason our late insertion rate is flat, and it
+is **not** the round constant. It also **confounds my own control**: raising
+GIVEUP to 900 extends ghost-waiting from r180 to r900.
+
+**REPAIR (LOKI-0b):** `SLOT_LAUNCHER` now carries `round + 1` as a **heartbeat**
+instead of a bare flag — the same idiom `SLOT_LAUNCH_RND` already uses. A live
+launcher rewrites every round, so the value going stale IS the death signal.
+**All 16 store slots were already occupied (0-15), so the freshness had to go
+INTO slot 6, not beside it.** Every existing truthiness read still behaves
+because the stored value is never 0 for a live launcher. `LAUNCHER_STALE_RNDS=3`
+(writes are buffered one round, so staleness 1 is normal). Verified: the only
+remaining raw `read_store(SLOT_LAUNCHER)` is inside the helper itself; both
+files compile.
+
+**THE 2x2, so clock and latch can be told apart** — this is the design the
+single LOKI-0 leg could not support:
+```
+                     clock(GIVEUP/CAP)   latch repair
+  _v103split           180 / 3              no      <- incumbent
+  _v104loki0           900 / 99             no      <- measured, 49.4%, no effect
+  _v104latch           180 / 3              YES     <- shippable on its own?
+  _v104loki0b          900 / 99             YES     <- combined
+```
+
+**PRE-REGISTERED THRESHOLDS, WRITTEN BEFORE EITHER LEG FIRES:**
+- Both decisive legs run at **seeds 12 = 360 matches** (not 6/180). At n=180 the
+  CI half-width is ~7pp and the harness itself said ~377 matches would halve it.
+  **Given the s21 audit that found our standard battery at 19% power, quoting a
+  null from an underpowered leg is the error I am specifically avoiding.**
+- `_v104latch vs _v103split` — declare **WIN only if the Wilson 95% CI lower
+  bound exceeds 50%.** Anything else is NO-EFFECT/INCONCLUSIVE, not a quiet pass.
+- `_v104loki0b vs _v103split` — same rule.
+- **A local win does NOT license a ship** (dominated pool, s21 delta #5). The
+  ship gate remains the matched unrated fixture. **A local LOSS is disqualifying.**
+- Any crash count > 0 is a hard fail: a crash permanently kills that unit.
+
+**IF THE LATCH LEG WINS, IT IS SHIPPABLE INDEPENDENTLY OF THE WHOLE LOKI
+PROGRAM** — it repairs the live bot's inability to replace a dead launcher, and
+it is a strictly smaller change than any raid build.
