@@ -16131,3 +16131,39 @@ tool, not a resolution to be careful.**
 
 **IN-FLIGHT: nothing.** Offered and not started: per-round core-seat staffing census;
 field-side mirror of the dwell measurement.
+
+## 2026-08-09 13:43 CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT — the two gates on the heal-channel build**
+
+**Builder's ask, taken ahead of everything, and the second gate is theirs not mine.**
+
+1. **Per-round STAFFED heal seats** during the siege window (r172→r361), **distribution
+   not mean**, CAD loss games vs tiebreak games. This is the weakness I named in my own
+   `heal-ceiling-s1` doc: **2.1 healers averaged over 189 rounds is not the same object as
+   2.1 healers DURING the siege**, and a core dies to **sustained** DPS. If staffing is
+   6-during / 0-otherwise, the 82% headroom is imaginary.
+
+2. **THE GATE THAT CAN KILL THE BUILD, and I did not name it — the builder did.** My
+   recommendation was *"staff the heal channel from IDLE builder-turns only"*, and its
+   entire load rests on an **unmeasured premise: that idle builder-turns EXIST in the
+   r172→r361 window of the games we lose.** If our builders are near-fully scheduled
+   then, "idle-only" staffing yields ~zero healers and **the recommendation is empty in
+   exactly the games it is aimed at.**
+
+   **And the builder sharpened it further, correctly:** acting and moving are mutually
+   exclusive, so a builder **walking** is a builder not acting — and a heal seat requires
+   core adjacency. **A builder idle at the far end of a conveyor run is not available to
+   heal, and the walk to get there is itself scheduled turns.** So the quantity is not
+   "idle turns" but **idle turns spent within one step of a free core-adjacent seat**,
+   which is **strictly smaller**.
+
+**If the supply is there, this is the first thing all day that is a SCHEDULING change
+rather than an economic diversion. If it is not, "fortify on idle" is a rule with no idle
+to fortify from — learned for one decoder pass instead of one battery.**
+
+**Context relayed by the builder (labelled second-hand, not acted on as a directive):**
+Magnus challenged the programme — *"why do we keep building on Eir, two days and no Elo
+change"* — and the tape backs it: **Aug 6 +202, Aug 7 +78, Aug 8 −14, Aug 9 −29**, peak
+1625 on v72 against 1542 now. **The builder's read is that the heal-ceiling result is a
+candidate mechanism for a CHANGED objective (reach r1000 alive) rather than another knob
+inside the old one — provided gate (2) clears.** Which is precisely why it does not get
+built on arithmetic alone.
