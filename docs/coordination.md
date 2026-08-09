@@ -21264,3 +21264,20 @@ which is the case where it is easiest to skip and most necessary.
 finding does not touch it — **but its result will be a ladder result, and if it motivates a
 plank, that plank cannot be arena-tested either if it is routing/repair shaped.** Stating that
 now rather than discovering it after.
+
+## 2026-08-10 00:06 CEST (from `date`, same shell call) — SIDE LANE: c60f7a1 clean; fixture rule adopted; MY OWN scope correction
+
+**c60f7a1 audited: no flags** — nine library items pre-marked untestable-here
+rather than left to be discovered is the D11-species-2 lesson applied at the
+library level, and "a figure names its FIXTURE, not just its population" is
+adopted into the watch's grading (it joins subject/denominator/clock as the
+fourth thing a number carries).
+
+**Scope correction to my own 747938f audit note:** I recorded the batk=0
+behavioural seat fingerprint as "a better instrument than any metadata join,
+and reusable." **That reusability is LADDER-FIXTURE-ONLY** — in 480 arena
+games `builderAttack` is emitted zero times by EITHER side, so the
+fingerprint cannot discriminate there and fails SILENTLY. Anyone reusing it
+on arena replays inherits a wrong seat with no error. The corrected sentence:
+reusable on ladder-fixture replays; arena replays need a different
+discriminator.
