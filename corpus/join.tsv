@@ -1,0 +1,1166 @@
+file	match	game	opp	oppver	ourver	oppbef	map	cond	turns	won	our_team
+019771d2-2100-49ef-ba7e-b06be36e7cbf_game_1.replay26	019771d2-2100-49ef-ba7e-b06be36e7cbf	1	Powerpuff Girls	None	75	1566.074874009286	jackpot	titanium_collected	1000	0	0
+019771d2-2100-49ef-ba7e-b06be36e7cbf_game_2.replay26	019771d2-2100-49ef-ba7e-b06be36e7cbf	2	Powerpuff Girls	None	75	1566.074874009286	moonrise	titanium_collected	1000	1	0
+019771d2-2100-49ef-ba7e-b06be36e7cbf_game_3.replay26	019771d2-2100-49ef-ba7e-b06be36e7cbf	3	Powerpuff Girls	None	75	1566.074874009286	fjordgate	core_destroyed	659	0	0
+019771d2-2100-49ef-ba7e-b06be36e7cbf_game_4.replay26	019771d2-2100-49ef-ba7e-b06be36e7cbf	4	Powerpuff Girls	None	75	1566.074874009286	nordkap	core_destroyed	190	1	0
+019771d2-2100-49ef-ba7e-b06be36e7cbf_game_5.replay26	019771d2-2100-49ef-ba7e-b06be36e7cbf	5	Powerpuff Girls	None	75	1566.074874009286	hive	core_destroyed	462	1	0
+01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe_game_1.replay26	01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe	1	Kings College Munich	None	86	1616.3747479543113	antler	core_destroyed	671	0	0
+01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe_game_2.replay26	01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe	2	Kings College Munich	None	86	1616.3747479543113	hive	core_destroyed	759	0	0
+01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe_game_3.replay26	01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe	3	Kings College Munich	None	86	1616.3747479543113	atoll	core_destroyed	226	0	0
+01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe_game_4.replay26	01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe	4	Kings College Munich	None	86	1616.3747479543113	saga	core_destroyed	588	0	0
+01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe_game_5.replay26	01a5778f-b1b7-4c97-a5ce-7682fc8ae7fe	5	Kings College Munich	None	86	1616.3747479543113	lighthouse	core_destroyed	745	0	0
+01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45_game_1.replay26	01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45	1	Banminary	None	86	1636.9775559047187	antler	core_destroyed	177	1	1
+01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45_game_2.replay26	01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45	2	Banminary	None	86	1636.9775559047187	saga	core_destroyed	879	1	1
+01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45_game_3.replay26	01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45	3	Banminary	None	86	1636.9775559047187	nordkap	core_destroyed	130	1	1
+01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45_game_4.replay26	01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45	4	Banminary	None	86	1636.9775559047187	snowflake	core_destroyed	66	0	1
+01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45_game_5.replay26	01f3c8a4-5f77-4d72-9aaf-d2db3bbfbb45	5	Banminary	None	86	1636.9775559047187	fjordgate	core_destroyed	44	0	1
+02943fbd-16df-48ea-a4c0-4e6b1be486a3_game_1.replay26	02943fbd-16df-48ea-a4c0-4e6b1be486a3	1	Kings College Munich	None	68	1582.9672385664383	eider	core_destroyed	675	0	1
+02943fbd-16df-48ea-a4c0-4e6b1be486a3_game_2.replay26	02943fbd-16df-48ea-a4c0-4e6b1be486a3	2	Kings College Munich	None	68	1582.9672385664383	meander	core_destroyed	747	0	1
+02943fbd-16df-48ea-a4c0-4e6b1be486a3_game_3.replay26	02943fbd-16df-48ea-a4c0-4e6b1be486a3	3	Kings College Munich	None	68	1582.9672385664383	antler	core_destroyed	512	0	1
+02943fbd-16df-48ea-a4c0-4e6b1be486a3_game_4.replay26	02943fbd-16df-48ea-a4c0-4e6b1be486a3	4	Kings College Munich	None	68	1582.9672385664383	hive	core_destroyed	255	0	1
+02943fbd-16df-48ea-a4c0-4e6b1be486a3_game_5.replay26	02943fbd-16df-48ea-a4c0-4e6b1be486a3	5	Kings College Munich	None	68	1582.9672385664383	heart	core_destroyed	178	0	1
+02aa5ed0-8156-4e0f-a9b3-72358e9dfb60_game_1.replay26	02aa5ed0-8156-4e0f-a9b3-72358e9dfb60	1	Powerpuff Girls	None	81	1576.3961681016644	antler	titanium_collected	1000	0	0
+02aa5ed0-8156-4e0f-a9b3-72358e9dfb60_game_2.replay26	02aa5ed0-8156-4e0f-a9b3-72358e9dfb60	2	Powerpuff Girls	None	81	1576.3961681016644	fjordgate	core_destroyed	920	0	0
+02aa5ed0-8156-4e0f-a9b3-72358e9dfb60_game_3.replay26	02aa5ed0-8156-4e0f-a9b3-72358e9dfb60	3	Powerpuff Girls	None	81	1576.3961681016644	meander	titanium_collected	1000	1	0
+02aa5ed0-8156-4e0f-a9b3-72358e9dfb60_game_4.replay26	02aa5ed0-8156-4e0f-a9b3-72358e9dfb60	4	Powerpuff Girls	None	81	1576.3961681016644	jackpot	titanium_collected	1000	0	0
+02aa5ed0-8156-4e0f-a9b3-72358e9dfb60_game_5.replay26	02aa5ed0-8156-4e0f-a9b3-72358e9dfb60	5	Powerpuff Girls	None	81	1576.3961681016644	archipelago	titanium_collected	1000	0	0
+03af6569-bb1e-4d66-8bbb-d89aa0c2d263_game_1.replay26	03af6569-bb1e-4d66-8bbb-d89aa0c2d263	1	Team 48	None	67	1617.1392370219148	jackpot	core_destroyed	117	1	1
+03af6569-bb1e-4d66-8bbb-d89aa0c2d263_game_2.replay26	03af6569-bb1e-4d66-8bbb-d89aa0c2d263	2	Team 48	None	67	1617.1392370219148	atoll	core_destroyed	277	1	1
+03af6569-bb1e-4d66-8bbb-d89aa0c2d263_game_3.replay26	03af6569-bb1e-4d66-8bbb-d89aa0c2d263	3	Team 48	None	67	1617.1392370219148	lighthouse	core_destroyed	85	1	1
+03af6569-bb1e-4d66-8bbb-d89aa0c2d263_game_4.replay26	03af6569-bb1e-4d66-8bbb-d89aa0c2d263	4	Team 48	None	67	1617.1392370219148	heart	core_destroyed	105	1	1
+03af6569-bb1e-4d66-8bbb-d89aa0c2d263_game_5.replay26	03af6569-bb1e-4d66-8bbb-d89aa0c2d263	5	Team 48	None	67	1617.1392370219148	saga	core_destroyed	101	1	1
+03e63d07-fd8c-4933-b290-570be7e52c36_game_1.replay26	03e63d07-fd8c-4933-b290-570be7e52c36	1	Lunds Stallions	None	67	1548.7421160248168	antler	core_destroyed	750	0	0
+03e63d07-fd8c-4933-b290-570be7e52c36_game_2.replay26	03e63d07-fd8c-4933-b290-570be7e52c36	2	Lunds Stallions	None	67	1548.7421160248168	moonrise	titanium_collected	1000	1	0
+03e63d07-fd8c-4933-b290-570be7e52c36_game_3.replay26	03e63d07-fd8c-4933-b290-570be7e52c36	3	Lunds Stallions	None	67	1548.7421160248168	fjordgate	titanium_collected	1000	1	0
+03e63d07-fd8c-4933-b290-570be7e52c36_game_4.replay26	03e63d07-fd8c-4933-b290-570be7e52c36	4	Lunds Stallions	None	67	1548.7421160248168	lighthouse	titanium_collected	1000	0	0
+03e63d07-fd8c-4933-b290-570be7e52c36_game_5.replay26	03e63d07-fd8c-4933-b290-570be7e52c36	5	Lunds Stallions	None	67	1548.7421160248168	meander	core_destroyed	158	0	0
+047ea519-f6e8-4971-9534-9b5d7f3df263_game_1.replay26	047ea519-f6e8-4971-9534-9b5d7f3df263	1	Orizon	None	64	1514.178104754881	lighthouse	titanium_collected	1000	1	1
+047ea519-f6e8-4971-9534-9b5d7f3df263_game_2.replay26	047ea519-f6e8-4971-9534-9b5d7f3df263	2	Orizon	None	64	1514.178104754881	fjordgate	core_destroyed	550	0	1
+047ea519-f6e8-4971-9534-9b5d7f3df263_game_3.replay26	047ea519-f6e8-4971-9534-9b5d7f3df263	3	Orizon	None	64	1514.178104754881	moonrise	core_destroyed	493	0	1
+047ea519-f6e8-4971-9534-9b5d7f3df263_game_4.replay26	047ea519-f6e8-4971-9534-9b5d7f3df263	4	Orizon	None	64	1514.178104754881	jackpot	core_destroyed	95	0	1
+047ea519-f6e8-4971-9534-9b5d7f3df263_game_5.replay26	047ea519-f6e8-4971-9534-9b5d7f3df263	5	Orizon	None	64	1514.178104754881	antler	titanium_collected	1000	1	1
+067dcff2-0649-4a81-a003-387aeb7d6513_game_1.replay26	067dcff2-0649-4a81-a003-387aeb7d6513	1	Ouroboros	None	72	1584.9454444105447	lighthouse	core_destroyed	370	0	0
+067dcff2-0649-4a81-a003-387aeb7d6513_game_2.replay26	067dcff2-0649-4a81-a003-387aeb7d6513	2	Ouroboros	None	72	1584.9454444105447	drumlin	core_destroyed	232	0	0
+067dcff2-0649-4a81-a003-387aeb7d6513_game_3.replay26	067dcff2-0649-4a81-a003-387aeb7d6513	3	Ouroboros	None	72	1584.9454444105447	saga	titanium_collected	1000	0	0
+067dcff2-0649-4a81-a003-387aeb7d6513_game_4.replay26	067dcff2-0649-4a81-a003-387aeb7d6513	4	Ouroboros	None	72	1584.9454444105447	heart	titanium_collected	1000	0	0
+067dcff2-0649-4a81-a003-387aeb7d6513_game_5.replay26	067dcff2-0649-4a81-a003-387aeb7d6513	5	Ouroboros	None	72	1584.9454444105447	snowflake	titanium_collected	1000	0	0
+071cd20c-4eb3-4233-ab7e-a91c7361d97b_game_1.replay26	071cd20c-4eb3-4233-ab7e-a91c7361d97b	1	Ouroboros	None	65	1589.7677826818217	lighthouse	core_destroyed	377	0	1
+071cd20c-4eb3-4233-ab7e-a91c7361d97b_game_2.replay26	071cd20c-4eb3-4233-ab7e-a91c7361d97b	2	Ouroboros	None	65	1589.7677826818217	meander	core_destroyed	817	0	1
+071cd20c-4eb3-4233-ab7e-a91c7361d97b_game_3.replay26	071cd20c-4eb3-4233-ab7e-a91c7361d97b	3	Ouroboros	None	65	1589.7677826818217	archipelago	titanium_collected	1000	0	1
+071cd20c-4eb3-4233-ab7e-a91c7361d97b_game_4.replay26	071cd20c-4eb3-4233-ab7e-a91c7361d97b	4	Ouroboros	None	65	1589.7677826818217	atoll	core_destroyed	371	0	1
+071cd20c-4eb3-4233-ab7e-a91c7361d97b_game_5.replay26	071cd20c-4eb3-4233-ab7e-a91c7361d97b	5	Ouroboros	None	65	1589.7677826818217	fjordgate	core_destroyed	151	0	1
+072c3897-bf53-4e87-a7f3-31a15c22700f_game_1.replay26	072c3897-bf53-4e87-a7f3-31a15c22700f	1	Coreflood	None	72	1719.0881529212588	nordkap	core_destroyed	751	0	0
+072c3897-bf53-4e87-a7f3-31a15c22700f_game_2.replay26	072c3897-bf53-4e87-a7f3-31a15c22700f	2	Coreflood	None	72	1719.0881529212588	jackpot	titanium_collected	1000	0	0
+072c3897-bf53-4e87-a7f3-31a15c22700f_game_3.replay26	072c3897-bf53-4e87-a7f3-31a15c22700f	3	Coreflood	None	72	1719.0881529212588	lighthouse	core_destroyed	425	0	0
+072c3897-bf53-4e87-a7f3-31a15c22700f_game_4.replay26	072c3897-bf53-4e87-a7f3-31a15c22700f	4	Coreflood	None	72	1719.0881529212588	snowflake	titanium_collected	1000	1	0
+072c3897-bf53-4e87-a7f3-31a15c22700f_game_5.replay26	072c3897-bf53-4e87-a7f3-31a15c22700f	5	Coreflood	None	72	1719.0881529212588	archipelago	core_destroyed	105	1	0
+0ae5da15-7aeb-42f6-9d2f-245a0fc925d0_game_1.replay26	0ae5da15-7aeb-42f6-9d2f-245a0fc925d0	1	CtrlAltDefeat	None	75	1600.3390520728262	heart	core_destroyed	296	0	0
+0ae5da15-7aeb-42f6-9d2f-245a0fc925d0_game_2.replay26	0ae5da15-7aeb-42f6-9d2f-245a0fc925d0	2	CtrlAltDefeat	None	75	1600.3390520728262	snowflake	core_destroyed	981	0	0
+0ae5da15-7aeb-42f6-9d2f-245a0fc925d0_game_3.replay26	0ae5da15-7aeb-42f6-9d2f-245a0fc925d0	3	CtrlAltDefeat	None	75	1600.3390520728262	archipelago	core_destroyed	499	0	0
+0ae5da15-7aeb-42f6-9d2f-245a0fc925d0_game_4.replay26	0ae5da15-7aeb-42f6-9d2f-245a0fc925d0	4	CtrlAltDefeat	None	75	1600.3390520728262	saga	core_destroyed	427	0	0
+0ae5da15-7aeb-42f6-9d2f-245a0fc925d0_game_5.replay26	0ae5da15-7aeb-42f6-9d2f-245a0fc925d0	5	CtrlAltDefeat	None	75	1600.3390520728262	drumlin	core_destroyed	326	0	0
+0b83d04f-1903-4965-aa2d-1fd11ddf49bf_game_1.replay26	0b83d04f-1903-4965-aa2d-1fd11ddf49bf	1	Kleos	None	80	1418.905568802334	meander	core_destroyed	734	1	1
+0b83d04f-1903-4965-aa2d-1fd11ddf49bf_game_2.replay26	0b83d04f-1903-4965-aa2d-1fd11ddf49bf	2	Kleos	None	80	1418.905568802334	nordkap	titanium_collected	1000	1	1
+0b83d04f-1903-4965-aa2d-1fd11ddf49bf_game_3.replay26	0b83d04f-1903-4965-aa2d-1fd11ddf49bf	3	Kleos	None	80	1418.905568802334	fjordgate	titanium_collected	1000	1	1
+0b83d04f-1903-4965-aa2d-1fd11ddf49bf_game_4.replay26	0b83d04f-1903-4965-aa2d-1fd11ddf49bf	4	Kleos	None	80	1418.905568802334	lighthouse	titanium_collected	1000	1	1
+0b83d04f-1903-4965-aa2d-1fd11ddf49bf_game_5.replay26	0b83d04f-1903-4965-aa2d-1fd11ddf49bf	5	Kleos	None	80	1418.905568802334	drumlin	titanium_collected	1000	1	1
+0d8531b4-c6c3-4903-b9a3-5e1cc00cea26_game_1.replay26	0d8531b4-c6c3-4903-b9a3-5e1cc00cea26	1	Team 48	None	72	1587.209477869797	moonrise	core_destroyed	103	1	0
+0d8531b4-c6c3-4903-b9a3-5e1cc00cea26_game_2.replay26	0d8531b4-c6c3-4903-b9a3-5e1cc00cea26	2	Team 48	None	72	1587.209477869797	antler	core_destroyed	79	1	0
+0d8531b4-c6c3-4903-b9a3-5e1cc00cea26_game_3.replay26	0d8531b4-c6c3-4903-b9a3-5e1cc00cea26	3	Team 48	None	72	1587.209477869797	saga	core_destroyed	149	1	0
+0d8531b4-c6c3-4903-b9a3-5e1cc00cea26_game_4.replay26	0d8531b4-c6c3-4903-b9a3-5e1cc00cea26	4	Team 48	None	72	1587.209477869797	atoll	core_destroyed	79	0	0
+0d8531b4-c6c3-4903-b9a3-5e1cc00cea26_game_5.replay26	0d8531b4-c6c3-4903-b9a3-5e1cc00cea26	5	Team 48	None	72	1587.209477869797	lighthouse	core_destroyed	269	0	0
+0f9481bc-1598-4581-9c8e-ce309e3620e2_game_1.replay26	0f9481bc-1598-4581-9c8e-ce309e3620e2	1	The Bisons	None	87	1490.2145641200411	fjordgate	core_destroyed	684	1	1
+0f9481bc-1598-4581-9c8e-ce309e3620e2_game_2.replay26	0f9481bc-1598-4581-9c8e-ce309e3620e2	2	The Bisons	None	87	1490.2145641200411	heart	core_destroyed	87	1	1
+0f9481bc-1598-4581-9c8e-ce309e3620e2_game_3.replay26	0f9481bc-1598-4581-9c8e-ce309e3620e2	3	The Bisons	None	87	1490.2145641200411	saga	core_destroyed	102	1	1
+0f9481bc-1598-4581-9c8e-ce309e3620e2_game_4.replay26	0f9481bc-1598-4581-9c8e-ce309e3620e2	4	The Bisons	None	87	1490.2145641200411	antler	core_destroyed	281	0	1
+0f9481bc-1598-4581-9c8e-ce309e3620e2_game_5.replay26	0f9481bc-1598-4581-9c8e-ce309e3620e2	5	The Bisons	None	87	1490.2145641200411	lighthouse	core_destroyed	65	1	1
+126d9e1a-0b16-40a6-9ef5-e44457cf32e0_game_1.replay26	126d9e1a-0b16-40a6-9ef5-e44457cf32e0	1	Team 48	None	72	1615.1823616589766	nordkap	core_destroyed	70	1	0
+126d9e1a-0b16-40a6-9ef5-e44457cf32e0_game_2.replay26	126d9e1a-0b16-40a6-9ef5-e44457cf32e0	2	Team 48	None	72	1615.1823616589766	atoll	core_destroyed	305	0	0
+126d9e1a-0b16-40a6-9ef5-e44457cf32e0_game_3.replay26	126d9e1a-0b16-40a6-9ef5-e44457cf32e0	3	Team 48	None	72	1615.1823616589766	drumlin	core_destroyed	64	0	0
+126d9e1a-0b16-40a6-9ef5-e44457cf32e0_game_4.replay26	126d9e1a-0b16-40a6-9ef5-e44457cf32e0	4	Team 48	None	72	1615.1823616589766	fjordgate	core_destroyed	198	1	0
+126d9e1a-0b16-40a6-9ef5-e44457cf32e0_game_5.replay26	126d9e1a-0b16-40a6-9ef5-e44457cf32e0	5	Team 48	None	72	1615.1823616589766	moonrise	core_destroyed	65	1	0
+13fc7fef-82b3-44c3-b8ad-0e2231562ae4_game_1.replay26	13fc7fef-82b3-44c3-b8ad-0e2231562ae4	1	Leviathan	None	80	1542.827036498861	atoll	core_destroyed	288	0	0
+13fc7fef-82b3-44c3-b8ad-0e2231562ae4_game_2.replay26	13fc7fef-82b3-44c3-b8ad-0e2231562ae4	2	Leviathan	None	80	1542.827036498861	fjordgate	titanium_collected	1000	1	0
+13fc7fef-82b3-44c3-b8ad-0e2231562ae4_game_3.replay26	13fc7fef-82b3-44c3-b8ad-0e2231562ae4	3	Leviathan	None	80	1542.827036498861	snowflake	core_destroyed	144	0	0
+13fc7fef-82b3-44c3-b8ad-0e2231562ae4_game_4.replay26	13fc7fef-82b3-44c3-b8ad-0e2231562ae4	4	Leviathan	None	80	1542.827036498861	hive	core_destroyed	326	0	0
+13fc7fef-82b3-44c3-b8ad-0e2231562ae4_game_5.replay26	13fc7fef-82b3-44c3-b8ad-0e2231562ae4	5	Leviathan	None	80	1542.827036498861	lighthouse	core_destroyed	286	1	0
+154796a9-4ba6-413f-b26c-c1b4902518a8_game_1.replay26	154796a9-4ba6-413f-b26c-c1b4902518a8	1	The Bisons	None	80	1531.694344031015	moonrise	core_destroyed	598	0	1
+154796a9-4ba6-413f-b26c-c1b4902518a8_game_2.replay26	154796a9-4ba6-413f-b26c-c1b4902518a8	2	The Bisons	None	80	1531.694344031015	meander	core_destroyed	161	1	1
+154796a9-4ba6-413f-b26c-c1b4902518a8_game_3.replay26	154796a9-4ba6-413f-b26c-c1b4902518a8	3	The Bisons	None	80	1531.694344031015	fjordgate	core_destroyed	484	1	1
+154796a9-4ba6-413f-b26c-c1b4902518a8_game_4.replay26	154796a9-4ba6-413f-b26c-c1b4902518a8	4	The Bisons	None	80	1531.694344031015	nordkap	core_destroyed	62	1	1
+154796a9-4ba6-413f-b26c-c1b4902518a8_game_5.replay26	154796a9-4ba6-413f-b26c-c1b4902518a8	5	The Bisons	None	80	1531.694344031015	eider	core_destroyed	71	1	1
+167f3c58-c478-4962-adb1-e48455103776_game_1.replay26	167f3c58-c478-4962-adb1-e48455103776	1	Askar City	None	68	1530.4506742924414	meander	core_destroyed	91	1	0
+167f3c58-c478-4962-adb1-e48455103776_game_2.replay26	167f3c58-c478-4962-adb1-e48455103776	2	Askar City	None	68	1530.4506742924414	snowflake	core_destroyed	143	1	0
+167f3c58-c478-4962-adb1-e48455103776_game_3.replay26	167f3c58-c478-4962-adb1-e48455103776	3	Askar City	None	68	1530.4506742924414	antler	core_destroyed	117	1	0
+167f3c58-c478-4962-adb1-e48455103776_game_4.replay26	167f3c58-c478-4962-adb1-e48455103776	4	Askar City	None	68	1530.4506742924414	archipelago	core_destroyed	126	1	0
+167f3c58-c478-4962-adb1-e48455103776_game_5.replay26	167f3c58-c478-4962-adb1-e48455103776	5	Askar City	None	68	1530.4506742924414	jackpot	core_destroyed	69	0	0
+16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2_game_1.replay26	16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2	1	Ouroboros	None	80	1598.9481844973004	lighthouse	titanium_collected	1000	0	1
+16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2_game_2.replay26	16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2	2	Ouroboros	None	80	1598.9481844973004	saga	titanium_collected	1000	0	1
+16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2_game_3.replay26	16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2	3	Ouroboros	None	80	1598.9481844973004	hive	core_destroyed	356	0	1
+16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2_game_4.replay26	16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2	4	Ouroboros	None	80	1598.9481844973004	atoll	core_destroyed	572	0	1
+16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2_game_5.replay26	16e6c29f-92d5-42a3-b2a2-ac46cbf9cfb2	5	Ouroboros	None	80	1598.9481844973004	drumlin	titanium_collected	1000	0	1
+1758f1e4-f3d7-4b18-a920-d113a6028ea4_game_1.replay26	1758f1e4-f3d7-4b18-a920-d113a6028ea4	1	the one piece	None	68	1486.3906654846708	meander	core_destroyed	137	1	0
+1758f1e4-f3d7-4b18-a920-d113a6028ea4_game_2.replay26	1758f1e4-f3d7-4b18-a920-d113a6028ea4	2	the one piece	None	68	1486.3906654846708	snowflake	core_destroyed	189	0	0
+1758f1e4-f3d7-4b18-a920-d113a6028ea4_game_3.replay26	1758f1e4-f3d7-4b18-a920-d113a6028ea4	3	the one piece	None	68	1486.3906654846708	antler	core_destroyed	97	1	0
+1758f1e4-f3d7-4b18-a920-d113a6028ea4_game_4.replay26	1758f1e4-f3d7-4b18-a920-d113a6028ea4	4	the one piece	None	68	1486.3906654846708	jackpot	core_destroyed	230	1	0
+1758f1e4-f3d7-4b18-a920-d113a6028ea4_game_5.replay26	1758f1e4-f3d7-4b18-a920-d113a6028ea4	5	the one piece	None	68	1486.3906654846708	atoll	core_destroyed	124	1	0
+1a842021-fc66-452f-9d37-dc06f3346a9f_game_1.replay26	1a842021-fc66-452f-9d37-dc06f3346a9f	1	Kings College Munich	None	82	1587.0176080973372	archipelago	core_destroyed	566	0	0
+1a842021-fc66-452f-9d37-dc06f3346a9f_game_2.replay26	1a842021-fc66-452f-9d37-dc06f3346a9f	2	Kings College Munich	None	82	1587.0176080973372	moonrise	titanium_collected	1000	0	0
+1a842021-fc66-452f-9d37-dc06f3346a9f_game_3.replay26	1a842021-fc66-452f-9d37-dc06f3346a9f	3	Kings College Munich	None	82	1587.0176080973372	drumlin	core_destroyed	236	0	0
+1a842021-fc66-452f-9d37-dc06f3346a9f_game_4.replay26	1a842021-fc66-452f-9d37-dc06f3346a9f	4	Kings College Munich	None	82	1587.0176080973372	meander	core_destroyed	195	1	0
+1a842021-fc66-452f-9d37-dc06f3346a9f_game_5.replay26	1a842021-fc66-452f-9d37-dc06f3346a9f	5	Kings College Munich	None	82	1587.0176080973372	lighthouse	titanium_collected	1000	1	0
+1b24e13c-dea9-4070-940b-ed3d0f9a3dc4_game_1.replay26	1b24e13c-dea9-4070-940b-ed3d0f9a3dc4	1	Powerpuff Girls	None	65	1549.946793724686	atoll	titanium_collected	1000	1	0
+1b24e13c-dea9-4070-940b-ed3d0f9a3dc4_game_2.replay26	1b24e13c-dea9-4070-940b-ed3d0f9a3dc4	2	Powerpuff Girls	None	65	1549.946793724686	lighthouse	titanium_collected	1000	1	0
+1b24e13c-dea9-4070-940b-ed3d0f9a3dc4_game_3.replay26	1b24e13c-dea9-4070-940b-ed3d0f9a3dc4	3	Powerpuff Girls	None	65	1549.946793724686	hive	core_destroyed	259	1	0
+1b24e13c-dea9-4070-940b-ed3d0f9a3dc4_game_4.replay26	1b24e13c-dea9-4070-940b-ed3d0f9a3dc4	4	Powerpuff Girls	None	65	1549.946793724686	archipelago	titanium_collected	1000	0	0
+1b24e13c-dea9-4070-940b-ed3d0f9a3dc4_game_5.replay26	1b24e13c-dea9-4070-940b-ed3d0f9a3dc4	5	Powerpuff Girls	None	65	1549.946793724686	moonrise	titanium_collected	1000	0	0
+1b663ab0-e701-4d33-bc2c-f7a0c68b39c9_game_1.replay26	1b663ab0-e701-4d33-bc2c-f7a0c68b39c9	1	Powerpuff Girls	None	80	1606.792030380474	atoll	titanium_collected	1000	1	1
+1b663ab0-e701-4d33-bc2c-f7a0c68b39c9_game_2.replay26	1b663ab0-e701-4d33-bc2c-f7a0c68b39c9	2	Powerpuff Girls	None	80	1606.792030380474	moonrise	core_destroyed	963	0	1
+1b663ab0-e701-4d33-bc2c-f7a0c68b39c9_game_3.replay26	1b663ab0-e701-4d33-bc2c-f7a0c68b39c9	3	Powerpuff Girls	None	80	1606.792030380474	antler	titanium_collected	1000	1	1
+1b663ab0-e701-4d33-bc2c-f7a0c68b39c9_game_4.replay26	1b663ab0-e701-4d33-bc2c-f7a0c68b39c9	4	Powerpuff Girls	None	80	1606.792030380474	drumlin	titanium_collected	1000	0	1
+1b663ab0-e701-4d33-bc2c-f7a0c68b39c9_game_5.replay26	1b663ab0-e701-4d33-bc2c-f7a0c68b39c9	5	Powerpuff Girls	None	80	1606.792030380474	archipelago	core_destroyed	619	0	1
+1e8c4e1b-1aa0-4faa-943e-4f853cf2207f_game_1.replay26	1e8c4e1b-1aa0-4faa-943e-4f853cf2207f	1	Kings College Munich	None	80	1580.0930057593255	antler	titanium_collected	1000	0	1
+1e8c4e1b-1aa0-4faa-943e-4f853cf2207f_game_2.replay26	1e8c4e1b-1aa0-4faa-943e-4f853cf2207f	2	Kings College Munich	None	80	1580.0930057593255	fjordgate	core_destroyed	580	1	1
+1e8c4e1b-1aa0-4faa-943e-4f853cf2207f_game_3.replay26	1e8c4e1b-1aa0-4faa-943e-4f853cf2207f	3	Kings College Munich	None	80	1580.0930057593255	atoll	titanium_collected	1000	1	1
+1e8c4e1b-1aa0-4faa-943e-4f853cf2207f_game_4.replay26	1e8c4e1b-1aa0-4faa-943e-4f853cf2207f	4	Kings College Munich	None	80	1580.0930057593255	saga	core_destroyed	216	0	1
+1e8c4e1b-1aa0-4faa-943e-4f853cf2207f_game_5.replay26	1e8c4e1b-1aa0-4faa-943e-4f853cf2207f	5	Kings College Munich	None	80	1580.0930057593255	jackpot	core_destroyed	786	0	1
+1efa218a-c2e2-4656-8005-48077447196d_game_1.replay26	1efa218a-c2e2-4656-8005-48077447196d	1	Memtrace	None	80	1543.7400743122887	nordkap	core_destroyed	119	1	1
+1efa218a-c2e2-4656-8005-48077447196d_game_2.replay26	1efa218a-c2e2-4656-8005-48077447196d	2	Memtrace	None	80	1543.7400743122887	lighthouse	titanium_collected	1000	0	1
+1efa218a-c2e2-4656-8005-48077447196d_game_3.replay26	1efa218a-c2e2-4656-8005-48077447196d	3	Memtrace	None	80	1543.7400743122887	hive	titanium_collected	1000	0	1
+1efa218a-c2e2-4656-8005-48077447196d_game_4.replay26	1efa218a-c2e2-4656-8005-48077447196d	4	Memtrace	None	80	1543.7400743122887	fjordgate	core_destroyed	159	0	1
+1efa218a-c2e2-4656-8005-48077447196d_game_5.replay26	1efa218a-c2e2-4656-8005-48077447196d	5	Memtrace	None	80	1543.7400743122887	drumlin	titanium_collected	1000	1	1
+208e84f8-584c-4450-aedc-e85eb5ac5198_game_1.replay26	208e84f8-584c-4450-aedc-e85eb5ac5198	1	Memtrace	None	77	1548.0037872330286	saga	titanium_collected	1000	1	0
+208e84f8-584c-4450-aedc-e85eb5ac5198_game_2.replay26	208e84f8-584c-4450-aedc-e85eb5ac5198	2	Memtrace	None	77	1548.0037872330286	drumlin	titanium_collected	1000	1	0
+208e84f8-584c-4450-aedc-e85eb5ac5198_game_3.replay26	208e84f8-584c-4450-aedc-e85eb5ac5198	3	Memtrace	None	77	1548.0037872330286	heart	core_destroyed	83	1	0
+208e84f8-584c-4450-aedc-e85eb5ac5198_game_4.replay26	208e84f8-584c-4450-aedc-e85eb5ac5198	4	Memtrace	None	77	1548.0037872330286	snowflake	titanium_collected	1000	1	0
+208e84f8-584c-4450-aedc-e85eb5ac5198_game_5.replay26	208e84f8-584c-4450-aedc-e85eb5ac5198	5	Memtrace	None	77	1548.0037872330286	meander	core_destroyed	110	1	0
+20e5391f-2c00-4806-8709-4a80b11b0792_game_1.replay26	20e5391f-2c00-4806-8709-4a80b11b0792	1	Powerpuff Girls	None	80	1602.1490486077007	saga	core_destroyed	850	0	1
+20e5391f-2c00-4806-8709-4a80b11b0792_game_2.replay26	20e5391f-2c00-4806-8709-4a80b11b0792	2	Powerpuff Girls	None	80	1602.1490486077007	fjordgate	titanium_collected	1000	0	1
+20e5391f-2c00-4806-8709-4a80b11b0792_game_3.replay26	20e5391f-2c00-4806-8709-4a80b11b0792	3	Powerpuff Girls	None	80	1602.1490486077007	snowflake	titanium_collected	1000	0	1
+20e5391f-2c00-4806-8709-4a80b11b0792_game_4.replay26	20e5391f-2c00-4806-8709-4a80b11b0792	4	Powerpuff Girls	None	80	1602.1490486077007	heart	core_destroyed	448	0	1
+20e5391f-2c00-4806-8709-4a80b11b0792_game_5.replay26	20e5391f-2c00-4806-8709-4a80b11b0792	5	Powerpuff Girls	None	80	1602.1490486077007	lighthouse	titanium_collected	1000	1	1
+23a9d8e2-db29-4b79-bada-e27a6b930afc_game_1.replay26	23a9d8e2-db29-4b79-bada-e27a6b930afc	1	Team 48	None	74	1595.2359066248302	archipelago	core_destroyed	68	0	0
+23a9d8e2-db29-4b79-bada-e27a6b930afc_game_2.replay26	23a9d8e2-db29-4b79-bada-e27a6b930afc	2	Team 48	None	74	1595.2359066248302	nordkap	core_destroyed	454	0	0
+23a9d8e2-db29-4b79-bada-e27a6b930afc_game_3.replay26	23a9d8e2-db29-4b79-bada-e27a6b930afc	3	Team 48	None	74	1595.2359066248302	eider	core_destroyed	76	1	0
+23a9d8e2-db29-4b79-bada-e27a6b930afc_game_4.replay26	23a9d8e2-db29-4b79-bada-e27a6b930afc	4	Team 48	None	74	1595.2359066248302	meander	core_destroyed	257	1	0
+23a9d8e2-db29-4b79-bada-e27a6b930afc_game_5.replay26	23a9d8e2-db29-4b79-bada-e27a6b930afc	5	Team 48	None	74	1595.2359066248302	jackpot	core_destroyed	77	0	0
+240a626c-18a3-4c25-bd49-7b7cc28bf003_game_1.replay26	240a626c-18a3-4c25-bd49-7b7cc28bf003	1	Leviathan	None	73	1663.6948646354979	moonrise	core_destroyed	116	0	0
+240a626c-18a3-4c25-bd49-7b7cc28bf003_game_2.replay26	240a626c-18a3-4c25-bd49-7b7cc28bf003	2	Leviathan	None	73	1663.6948646354979	archipelago	core_destroyed	200	1	0
+240a626c-18a3-4c25-bd49-7b7cc28bf003_game_3.replay26	240a626c-18a3-4c25-bd49-7b7cc28bf003	3	Leviathan	None	73	1663.6948646354979	eider	core_destroyed	389	0	0
+240a626c-18a3-4c25-bd49-7b7cc28bf003_game_4.replay26	240a626c-18a3-4c25-bd49-7b7cc28bf003	4	Leviathan	None	73	1663.6948646354979	heart	titanium_collected	1000	1	0
+240a626c-18a3-4c25-bd49-7b7cc28bf003_game_5.replay26	240a626c-18a3-4c25-bd49-7b7cc28bf003	5	Leviathan	None	73	1663.6948646354979	saga	core_destroyed	134	1	0
+27435b40-4b15-40e2-a1a8-8dbfae29b9c9_game_1.replay26	27435b40-4b15-40e2-a1a8-8dbfae29b9c9	1	CtrlAltDefeat	None	68	1629.4173097789244	antler	titanium_collected	1000	0	1
+27435b40-4b15-40e2-a1a8-8dbfae29b9c9_game_2.replay26	27435b40-4b15-40e2-a1a8-8dbfae29b9c9	2	CtrlAltDefeat	None	68	1629.4173097789244	eider	core_destroyed	201	0	1
+27435b40-4b15-40e2-a1a8-8dbfae29b9c9_game_3.replay26	27435b40-4b15-40e2-a1a8-8dbfae29b9c9	3	CtrlAltDefeat	None	68	1629.4173097789244	heart	core_destroyed	370	0	1
+27435b40-4b15-40e2-a1a8-8dbfae29b9c9_game_4.replay26	27435b40-4b15-40e2-a1a8-8dbfae29b9c9	4	CtrlAltDefeat	None	68	1629.4173097789244	saga	core_destroyed	384	0	1
+27435b40-4b15-40e2-a1a8-8dbfae29b9c9_game_5.replay26	27435b40-4b15-40e2-a1a8-8dbfae29b9c9	5	CtrlAltDefeat	None	68	1629.4173097789244	jackpot	core_destroyed	600	0	1
+2874c55e-f549-46ba-bd01-5bb25df42958_game_1.replay26	2874c55e-f549-46ba-bd01-5bb25df42958	1	Memtrace	None	80	1550.621127928088	hive	titanium_collected	1000	0	0
+2874c55e-f549-46ba-bd01-5bb25df42958_game_2.replay26	2874c55e-f549-46ba-bd01-5bb25df42958	2	Memtrace	None	80	1550.621127928088	heart	core_destroyed	289	1	0
+2874c55e-f549-46ba-bd01-5bb25df42958_game_3.replay26	2874c55e-f549-46ba-bd01-5bb25df42958	3	Memtrace	None	80	1550.621127928088	meander	core_destroyed	110	1	0
+2874c55e-f549-46ba-bd01-5bb25df42958_game_4.replay26	2874c55e-f549-46ba-bd01-5bb25df42958	4	Memtrace	None	80	1550.621127928088	jackpot	titanium_collected	1000	1	0
+2874c55e-f549-46ba-bd01-5bb25df42958_game_5.replay26	2874c55e-f549-46ba-bd01-5bb25df42958	5	Memtrace	None	80	1550.621127928088	fjordgate	core_destroyed	358	1	0
+2876f21d-170f-4558-8eb0-701d0369aa85_game_1.replay26	2876f21d-170f-4558-8eb0-701d0369aa85	1	CtrlAltDefeat	None	70	1615.628999007819	jackpot	core_destroyed	336	0	1
+2876f21d-170f-4558-8eb0-701d0369aa85_game_2.replay26	2876f21d-170f-4558-8eb0-701d0369aa85	2	CtrlAltDefeat	None	70	1615.628999007819	archipelago	core_destroyed	279	0	1
+2876f21d-170f-4558-8eb0-701d0369aa85_game_3.replay26	2876f21d-170f-4558-8eb0-701d0369aa85	3	CtrlAltDefeat	None	70	1615.628999007819	eider	core_destroyed	194	1	1
+2876f21d-170f-4558-8eb0-701d0369aa85_game_4.replay26	2876f21d-170f-4558-8eb0-701d0369aa85	4	CtrlAltDefeat	None	70	1615.628999007819	nordkap	core_destroyed	258	0	1
+2876f21d-170f-4558-8eb0-701d0369aa85_game_5.replay26	2876f21d-170f-4558-8eb0-701d0369aa85	5	CtrlAltDefeat	None	70	1615.628999007819	heart	core_destroyed	223	0	1
+2b05487d-b689-45b5-abf1-cfefa9a0a3f9_game_1.replay26	2b05487d-b689-45b5-abf1-cfefa9a0a3f9	1	CtrlAltDefeat	None	72	1606.1512121441422	drumlin	core_destroyed	472	0	0
+2b05487d-b689-45b5-abf1-cfefa9a0a3f9_game_2.replay26	2b05487d-b689-45b5-abf1-cfefa9a0a3f9	2	CtrlAltDefeat	None	72	1606.1512121441422	fjordgate	titanium_collected	1000	1	0
+2b05487d-b689-45b5-abf1-cfefa9a0a3f9_game_3.replay26	2b05487d-b689-45b5-abf1-cfefa9a0a3f9	3	CtrlAltDefeat	None	72	1606.1512121441422	archipelago	core_destroyed	464	0	0
+2b05487d-b689-45b5-abf1-cfefa9a0a3f9_game_4.replay26	2b05487d-b689-45b5-abf1-cfefa9a0a3f9	4	CtrlAltDefeat	None	72	1606.1512121441422	antler	titanium_collected	1000	1	0
+2b05487d-b689-45b5-abf1-cfefa9a0a3f9_game_5.replay26	2b05487d-b689-45b5-abf1-cfefa9a0a3f9	5	CtrlAltDefeat	None	72	1606.1512121441422	jackpot	core_destroyed	211	0	0
+2b92b4fd-6656-4ad3-a91c-7e9641bd9001_game_1.replay26	2b92b4fd-6656-4ad3-a91c-7e9641bd9001	1	0033	None	67	1552.7946876857307	lighthouse	core_destroyed	119	1	1
+2b92b4fd-6656-4ad3-a91c-7e9641bd9001_game_2.replay26	2b92b4fd-6656-4ad3-a91c-7e9641bd9001	2	0033	None	67	1552.7946876857307	drumlin	core_destroyed	79	0	1
+2b92b4fd-6656-4ad3-a91c-7e9641bd9001_game_3.replay26	2b92b4fd-6656-4ad3-a91c-7e9641bd9001	3	0033	None	67	1552.7946876857307	eider	core_destroyed	165	1	1
+2b92b4fd-6656-4ad3-a91c-7e9641bd9001_game_4.replay26	2b92b4fd-6656-4ad3-a91c-7e9641bd9001	4	0033	None	67	1552.7946876857307	meander	core_destroyed	183	1	1
+2b92b4fd-6656-4ad3-a91c-7e9641bd9001_game_5.replay26	2b92b4fd-6656-4ad3-a91c-7e9641bd9001	5	0033	None	67	1552.7946876857307	jackpot	core_destroyed	172	1	1
+2dabf725-ff9a-40a2-8c12-e17de60178d2_game_1.replay26	2dabf725-ff9a-40a2-8c12-e17de60178d2	1	Ouroboros	None	80	1556.763014819979	eider	core_destroyed	624	0	1
+2dabf725-ff9a-40a2-8c12-e17de60178d2_game_2.replay26	2dabf725-ff9a-40a2-8c12-e17de60178d2	2	Ouroboros	None	80	1556.763014819979	saga	core_destroyed	539	0	1
+2dabf725-ff9a-40a2-8c12-e17de60178d2_game_3.replay26	2dabf725-ff9a-40a2-8c12-e17de60178d2	3	Ouroboros	None	80	1556.763014819979	atoll	core_destroyed	286	0	1
+2dabf725-ff9a-40a2-8c12-e17de60178d2_game_4.replay26	2dabf725-ff9a-40a2-8c12-e17de60178d2	4	Ouroboros	None	80	1556.763014819979	archipelago	titanium_collected	1000	0	1
+2dabf725-ff9a-40a2-8c12-e17de60178d2_game_5.replay26	2dabf725-ff9a-40a2-8c12-e17de60178d2	5	Ouroboros	None	80	1556.763014819979	meander	titanium_collected	1000	1	1
+2e284243-41b0-4494-a83a-8ab374b79ba8_game_1.replay26	2e284243-41b0-4494-a83a-8ab374b79ba8	1	OopsGotYourElo	None	72	1570.5300357347242	jackpot	titanium_collected	1000	1	1
+2e284243-41b0-4494-a83a-8ab374b79ba8_game_2.replay26	2e284243-41b0-4494-a83a-8ab374b79ba8	2	OopsGotYourElo	None	72	1570.5300357347242	moonrise	titanium_collected	1000	0	1
+2e284243-41b0-4494-a83a-8ab374b79ba8_game_3.replay26	2e284243-41b0-4494-a83a-8ab374b79ba8	3	OopsGotYourElo	None	72	1570.5300357347242	heart	core_destroyed	184	1	1
+2e284243-41b0-4494-a83a-8ab374b79ba8_game_4.replay26	2e284243-41b0-4494-a83a-8ab374b79ba8	4	OopsGotYourElo	None	72	1570.5300357347242	snowflake	core_destroyed	117	0	1
+2e284243-41b0-4494-a83a-8ab374b79ba8_game_5.replay26	2e284243-41b0-4494-a83a-8ab374b79ba8	5	OopsGotYourElo	None	72	1570.5300357347242	archipelago	titanium_collected	1000	1	1
+313d303f-ffa1-4581-a24f-5bbd3b8ca234_game_1.replay26	313d303f-ffa1-4581-a24f-5bbd3b8ca234	1	Ouroboros	None	68	1606.7513580076106	archipelago	titanium_collected	1000	0	0
+313d303f-ffa1-4581-a24f-5bbd3b8ca234_game_2.replay26	313d303f-ffa1-4581-a24f-5bbd3b8ca234	2	Ouroboros	None	68	1606.7513580076106	antler	titanium_collected	1000	1	0
+313d303f-ffa1-4581-a24f-5bbd3b8ca234_game_3.replay26	313d303f-ffa1-4581-a24f-5bbd3b8ca234	3	Ouroboros	None	68	1606.7513580076106	meander	titanium_collected	1000	1	0
+313d303f-ffa1-4581-a24f-5bbd3b8ca234_game_4.replay26	313d303f-ffa1-4581-a24f-5bbd3b8ca234	4	Ouroboros	None	68	1606.7513580076106	moonrise	core_destroyed	630	0	0
+313d303f-ffa1-4581-a24f-5bbd3b8ca234_game_5.replay26	313d303f-ffa1-4581-a24f-5bbd3b8ca234	5	Ouroboros	None	68	1606.7513580076106	atoll	core_destroyed	198	0	0
+31f73a38-447c-4cac-b039-257fcdcf036b_game_1.replay26	31f73a38-447c-4cac-b039-257fcdcf036b	1	Memtrace	None	80	1507.1610411687789	fjordgate	titanium_collected	1000	1	0
+31f73a38-447c-4cac-b039-257fcdcf036b_game_2.replay26	31f73a38-447c-4cac-b039-257fcdcf036b	2	Memtrace	None	80	1507.1610411687789	meander	core_destroyed	111	1	0
+31f73a38-447c-4cac-b039-257fcdcf036b_game_3.replay26	31f73a38-447c-4cac-b039-257fcdcf036b	3	Memtrace	None	80	1507.1610411687789	hive	titanium_collected	1000	0	0
+31f73a38-447c-4cac-b039-257fcdcf036b_game_4.replay26	31f73a38-447c-4cac-b039-257fcdcf036b	4	Memtrace	None	80	1507.1610411687789	moonrise	core_destroyed	102	1	0
+31f73a38-447c-4cac-b039-257fcdcf036b_game_5.replay26	31f73a38-447c-4cac-b039-257fcdcf036b	5	Memtrace	None	80	1507.1610411687789	jackpot	core_destroyed	155	1	0
+3311f968-730e-44fb-b58c-692d61da41af_game_1.replay26	3311f968-730e-44fb-b58c-692d61da41af	1	Banminary	None	75	1620.5663252265213	antler	core_destroyed	104	1	1
+3311f968-730e-44fb-b58c-692d61da41af_game_2.replay26	3311f968-730e-44fb-b58c-692d61da41af	2	Banminary	None	75	1620.5663252265213	meander	core_destroyed	400	1	1
+3311f968-730e-44fb-b58c-692d61da41af_game_3.replay26	3311f968-730e-44fb-b58c-692d61da41af	3	Banminary	None	75	1620.5663252265213	heart	core_destroyed	227	1	1
+3311f968-730e-44fb-b58c-692d61da41af_game_4.replay26	3311f968-730e-44fb-b58c-692d61da41af	4	Banminary	None	75	1620.5663252265213	archipelago	core_destroyed	71	1	1
+3311f968-730e-44fb-b58c-692d61da41af_game_5.replay26	3311f968-730e-44fb-b58c-692d61da41af	5	Banminary	None	75	1620.5663252265213	drumlin	core_destroyed	142	0	1
+3592a1fb-58fc-44c4-9e19-818e216aba4e_game_1.replay26	3592a1fb-58fc-44c4-9e19-818e216aba4e	1	Team 48	None	80	1542.6841757400173	saga	titanium_collected	1000	1	1
+3592a1fb-58fc-44c4-9e19-818e216aba4e_game_2.replay26	3592a1fb-58fc-44c4-9e19-818e216aba4e	2	Team 48	None	80	1542.6841757400173	hive	core_destroyed	227	1	1
+3592a1fb-58fc-44c4-9e19-818e216aba4e_game_3.replay26	3592a1fb-58fc-44c4-9e19-818e216aba4e	3	Team 48	None	80	1542.6841757400173	atoll	core_destroyed	74	1	1
+3592a1fb-58fc-44c4-9e19-818e216aba4e_game_4.replay26	3592a1fb-58fc-44c4-9e19-818e216aba4e	4	Team 48	None	80	1542.6841757400173	lighthouse	core_destroyed	75	0	1
+3592a1fb-58fc-44c4-9e19-818e216aba4e_game_5.replay26	3592a1fb-58fc-44c4-9e19-818e216aba4e	5	Team 48	None	80	1542.6841757400173	heart	core_destroyed	227	0	1
+35b80716-2af2-4319-bb48-405fa5834e13_game_1.replay26	35b80716-2af2-4319-bb48-405fa5834e13	1	opensverige - plan B	None	80	1539.799589819551	drumlin	titanium_collected	1000	0	0
+35b80716-2af2-4319-bb48-405fa5834e13_game_2.replay26	35b80716-2af2-4319-bb48-405fa5834e13	2	opensverige - plan B	None	80	1539.799589819551	hive	core_destroyed	848	0	0
+35b80716-2af2-4319-bb48-405fa5834e13_game_3.replay26	35b80716-2af2-4319-bb48-405fa5834e13	3	opensverige - plan B	None	80	1539.799589819551	antler	titanium_collected	1000	0	0
+35b80716-2af2-4319-bb48-405fa5834e13_game_4.replay26	35b80716-2af2-4319-bb48-405fa5834e13	4	opensverige - plan B	None	80	1539.799589819551	fjordgate	titanium_collected	1000	1	0
+35b80716-2af2-4319-bb48-405fa5834e13_game_5.replay26	35b80716-2af2-4319-bb48-405fa5834e13	5	opensverige - plan B	None	80	1539.799589819551	meander	core_destroyed	324	1	0
+37e4f4ee-841e-4d1d-86bf-328266efe1a0_game_1.replay26	37e4f4ee-841e-4d1d-86bf-328266efe1a0	1	Banminary	None	77	1646.3103362987285	eider	core_destroyed	360	1	1
+37e4f4ee-841e-4d1d-86bf-328266efe1a0_game_2.replay26	37e4f4ee-841e-4d1d-86bf-328266efe1a0	2	Banminary	None	77	1646.3103362987285	hive	core_destroyed	437	1	1
+37e4f4ee-841e-4d1d-86bf-328266efe1a0_game_3.replay26	37e4f4ee-841e-4d1d-86bf-328266efe1a0	3	Banminary	None	77	1646.3103362987285	archipelago	core_destroyed	85	1	1
+37e4f4ee-841e-4d1d-86bf-328266efe1a0_game_4.replay26	37e4f4ee-841e-4d1d-86bf-328266efe1a0	4	Banminary	None	77	1646.3103362987285	saga	core_destroyed	69	0	1
+37e4f4ee-841e-4d1d-86bf-328266efe1a0_game_5.replay26	37e4f4ee-841e-4d1d-86bf-328266efe1a0	5	Banminary	None	77	1646.3103362987285	heart	core_destroyed	493	1	1
+393088af-e99c-48aa-b648-7d0c419738e1_game_1.replay26	393088af-e99c-48aa-b648-7d0c419738e1	1	CtrlAltDefeat	None	76	1604.7038752766337	drumlin	core_destroyed	277	0	1
+393088af-e99c-48aa-b648-7d0c419738e1_game_2.replay26	393088af-e99c-48aa-b648-7d0c419738e1	2	CtrlAltDefeat	None	76	1604.7038752766337	archipelago	core_destroyed	924	0	1
+393088af-e99c-48aa-b648-7d0c419738e1_game_3.replay26	393088af-e99c-48aa-b648-7d0c419738e1	3	CtrlAltDefeat	None	76	1604.7038752766337	antler	core_destroyed	169	1	1
+393088af-e99c-48aa-b648-7d0c419738e1_game_4.replay26	393088af-e99c-48aa-b648-7d0c419738e1	4	CtrlAltDefeat	None	76	1604.7038752766337	moonrise	core_destroyed	251	1	1
+393088af-e99c-48aa-b648-7d0c419738e1_game_5.replay26	393088af-e99c-48aa-b648-7d0c419738e1	5	CtrlAltDefeat	None	76	1604.7038752766337	heart	core_destroyed	411	0	1
+39c40ef7-065d-4878-94c5-4fcba9a2d6ad_game_1.replay26	39c40ef7-065d-4878-94c5-4fcba9a2d6ad	1	OopsGotYourElo	None	68	1606.9072887307002	heart	core_destroyed	218	1	0
+39c40ef7-065d-4878-94c5-4fcba9a2d6ad_game_2.replay26	39c40ef7-065d-4878-94c5-4fcba9a2d6ad	2	OopsGotYourElo	None	68	1606.9072887307002	drumlin	titanium_collected	1000	1	0
+39c40ef7-065d-4878-94c5-4fcba9a2d6ad_game_3.replay26	39c40ef7-065d-4878-94c5-4fcba9a2d6ad	3	OopsGotYourElo	None	68	1606.9072887307002	snowflake	titanium_collected	1000	1	0
+39c40ef7-065d-4878-94c5-4fcba9a2d6ad_game_4.replay26	39c40ef7-065d-4878-94c5-4fcba9a2d6ad	4	OopsGotYourElo	None	68	1606.9072887307002	atoll	titanium_collected	1000	1	0
+39c40ef7-065d-4878-94c5-4fcba9a2d6ad_game_5.replay26	39c40ef7-065d-4878-94c5-4fcba9a2d6ad	5	OopsGotYourElo	None	68	1606.9072887307002	meander	titanium_collected	1000	1	0
+3a3dab98-fb04-440a-b6bd-fec2cc5578dc_game_1.replay26	3a3dab98-fb04-440a-b6bd-fec2cc5578dc	1	Hugging Farce	None	80	1512.609498188837	drumlin	core_destroyed	338	0	1
+3a3dab98-fb04-440a-b6bd-fec2cc5578dc_game_2.replay26	3a3dab98-fb04-440a-b6bd-fec2cc5578dc	2	Hugging Farce	None	80	1512.609498188837	antler	core_destroyed	84	1	1
+3a3dab98-fb04-440a-b6bd-fec2cc5578dc_game_3.replay26	3a3dab98-fb04-440a-b6bd-fec2cc5578dc	3	Hugging Farce	None	80	1512.609498188837	fjordgate	core_destroyed	609	1	1
+3a3dab98-fb04-440a-b6bd-fec2cc5578dc_game_4.replay26	3a3dab98-fb04-440a-b6bd-fec2cc5578dc	4	Hugging Farce	None	80	1512.609498188837	archipelago	core_destroyed	104	0	1
+3a3dab98-fb04-440a-b6bd-fec2cc5578dc_game_5.replay26	3a3dab98-fb04-440a-b6bd-fec2cc5578dc	5	Hugging Farce	None	80	1512.609498188837	eider	core_destroyed	112	0	1
+3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86_game_1.replay26	3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86	1	farming_200s	None	80	1548.9781654256738	jackpot	core_destroyed	270	0	1
+3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86_game_2.replay26	3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86	2	farming_200s	None	80	1548.9781654256738	drumlin	core_destroyed	397	1	1
+3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86_game_3.replay26	3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86	3	farming_200s	None	80	1548.9781654256738	lighthouse	core_destroyed	311	1	1
+3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86_game_4.replay26	3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86	4	farming_200s	None	80	1548.9781654256738	atoll	core_destroyed	223	0	1
+3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86_game_5.replay26	3ba9c9c6-03a8-413a-bb6b-7c73f55f0a86	5	farming_200s	None	80	1548.9781654256738	heart	core_destroyed	299	0	1
+3c4858e9-5564-4794-85fc-b5eef0dfbead_game_1.replay26	3c4858e9-5564-4794-85fc-b5eef0dfbead	1	Askar City	None	76	1523.5295293431157	saga	core_destroyed	185	1	0
+3c4858e9-5564-4794-85fc-b5eef0dfbead_game_2.replay26	3c4858e9-5564-4794-85fc-b5eef0dfbead	2	Askar City	None	76	1523.5295293431157	antler	core_destroyed	760	1	0
+3c4858e9-5564-4794-85fc-b5eef0dfbead_game_3.replay26	3c4858e9-5564-4794-85fc-b5eef0dfbead	3	Askar City	None	76	1523.5295293431157	archipelago	core_destroyed	88	1	0
+3c4858e9-5564-4794-85fc-b5eef0dfbead_game_4.replay26	3c4858e9-5564-4794-85fc-b5eef0dfbead	4	Askar City	None	76	1523.5295293431157	heart	core_destroyed	508	1	0
+3c4858e9-5564-4794-85fc-b5eef0dfbead_game_5.replay26	3c4858e9-5564-4794-85fc-b5eef0dfbead	5	Askar City	None	76	1523.5295293431157	meander	core_destroyed	401	1	0
+3cd88b65-5be9-40f7-92b1-b569e2a45930_game_1.replay26	3cd88b65-5be9-40f7-92b1-b569e2a45930	1	OopsGotYourElo	None	75	1601.2443351845236	meander	titanium_collected	1000	1	0
+3cd88b65-5be9-40f7-92b1-b569e2a45930_game_2.replay26	3cd88b65-5be9-40f7-92b1-b569e2a45930	2	OopsGotYourElo	None	75	1601.2443351845236	atoll	core_destroyed	296	1	0
+3cd88b65-5be9-40f7-92b1-b569e2a45930_game_3.replay26	3cd88b65-5be9-40f7-92b1-b569e2a45930	3	OopsGotYourElo	None	75	1601.2443351845236	saga	titanium_collected	1000	1	0
+3cd88b65-5be9-40f7-92b1-b569e2a45930_game_4.replay26	3cd88b65-5be9-40f7-92b1-b569e2a45930	4	OopsGotYourElo	None	75	1601.2443351845236	heart	titanium_collected	1000	1	0
+3cd88b65-5be9-40f7-92b1-b569e2a45930_game_5.replay26	3cd88b65-5be9-40f7-92b1-b569e2a45930	5	OopsGotYourElo	None	75	1601.2443351845236	moonrise	titanium_collected	1000	1	0
+3ced1189-112c-4b56-8b2a-ce59d4dddea4_game_1.replay26	3ced1189-112c-4b56-8b2a-ce59d4dddea4	1	Ouroboros	None	86	1554.7707955656172	lighthouse	core_destroyed	467	0	0
+3ced1189-112c-4b56-8b2a-ce59d4dddea4_game_2.replay26	3ced1189-112c-4b56-8b2a-ce59d4dddea4	2	Ouroboros	None	86	1554.7707955656172	meander	core_destroyed	399	0	0
+3ced1189-112c-4b56-8b2a-ce59d4dddea4_game_3.replay26	3ced1189-112c-4b56-8b2a-ce59d4dddea4	3	Ouroboros	None	86	1554.7707955656172	jackpot	titanium_collected	1000	0	0
+3ced1189-112c-4b56-8b2a-ce59d4dddea4_game_4.replay26	3ced1189-112c-4b56-8b2a-ce59d4dddea4	4	Ouroboros	None	86	1554.7707955656172	saga	core_destroyed	402	0	0
+3ced1189-112c-4b56-8b2a-ce59d4dddea4_game_5.replay26	3ced1189-112c-4b56-8b2a-ce59d4dddea4	5	Ouroboros	None	86	1554.7707955656172	eider	core_destroyed	296	0	0
+3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b_game_1.replay26	3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b	1	kladde chatte tville (och oss)	None	72	1741.1129628667802	archipelago	core_destroyed	390	0	0
+3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b_game_2.replay26	3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b	2	kladde chatte tville (och oss)	None	72	1741.1129628667802	heart	titanium_collected	1000	1	0
+3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b_game_3.replay26	3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b	3	kladde chatte tville (och oss)	None	72	1741.1129628667802	meander	core_destroyed	311	0	0
+3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b_game_4.replay26	3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b	4	kladde chatte tville (och oss)	None	72	1741.1129628667802	snowflake	core_destroyed	610	0	0
+3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b_game_5.replay26	3de9f5e0-6dd0-4d1e-bcac-f1f2ff28bd3b	5	kladde chatte tville (och oss)	None	72	1741.1129628667802	nordkap	core_destroyed	480	0	0
+3e8bd0bf-9442-4b67-b976-cda914ae7d4b_game_1.replay26	3e8bd0bf-9442-4b67-b976-cda914ae7d4b	1	CtrlAltDefeat	None	72	1599.3794829236756	antler	core_destroyed	181	1	1
+3e8bd0bf-9442-4b67-b976-cda914ae7d4b_game_2.replay26	3e8bd0bf-9442-4b67-b976-cda914ae7d4b	2	CtrlAltDefeat	None	72	1599.3794829236756	fjordgate	core_destroyed	381	1	1
+3e8bd0bf-9442-4b67-b976-cda914ae7d4b_game_3.replay26	3e8bd0bf-9442-4b67-b976-cda914ae7d4b	3	CtrlAltDefeat	None	72	1599.3794829236756	moonrise	core_destroyed	404	0	1
+3e8bd0bf-9442-4b67-b976-cda914ae7d4b_game_4.replay26	3e8bd0bf-9442-4b67-b976-cda914ae7d4b	4	CtrlAltDefeat	None	72	1599.3794829236756	archipelago	core_destroyed	173	0	1
+3e8bd0bf-9442-4b67-b976-cda914ae7d4b_game_5.replay26	3e8bd0bf-9442-4b67-b976-cda914ae7d4b	5	CtrlAltDefeat	None	72	1599.3794829236756	heart	core_destroyed	169	0	1
+3f024b23-d241-484e-b440-6ee5a883bb30_game_1.replay26	3f024b23-d241-484e-b440-6ee5a883bb30	1	Clankers	None	68	1636.3379147681194	lighthouse	core_destroyed	182	0	1
+3f024b23-d241-484e-b440-6ee5a883bb30_game_2.replay26	3f024b23-d241-484e-b440-6ee5a883bb30	2	Clankers	None	68	1636.3379147681194	fjordgate	core_destroyed	177	0	1
+3f024b23-d241-484e-b440-6ee5a883bb30_game_3.replay26	3f024b23-d241-484e-b440-6ee5a883bb30	3	Clankers	None	68	1636.3379147681194	snowflake	core_destroyed	177	0	1
+3f024b23-d241-484e-b440-6ee5a883bb30_game_4.replay26	3f024b23-d241-484e-b440-6ee5a883bb30	4	Clankers	None	68	1636.3379147681194	meander	core_destroyed	690	1	1
+3f024b23-d241-484e-b440-6ee5a883bb30_game_5.replay26	3f024b23-d241-484e-b440-6ee5a883bb30	5	Clankers	None	68	1636.3379147681194	archipelago	core_destroyed	315	0	1
+3f3ff944-8d89-4695-8908-b3ca9cac7064_game_1.replay26	3f3ff944-8d89-4695-8908-b3ca9cac7064	1	I Stone	None	71	1553.764588371487	snowflake	titanium_collected	1000	1	0
+3f3ff944-8d89-4695-8908-b3ca9cac7064_game_2.replay26	3f3ff944-8d89-4695-8908-b3ca9cac7064	2	I Stone	None	71	1553.764588371487	atoll	titanium_collected	1000	1	0
+3f3ff944-8d89-4695-8908-b3ca9cac7064_game_3.replay26	3f3ff944-8d89-4695-8908-b3ca9cac7064	3	I Stone	None	71	1553.764588371487	meander	core_destroyed	308	0	0
+3f3ff944-8d89-4695-8908-b3ca9cac7064_game_4.replay26	3f3ff944-8d89-4695-8908-b3ca9cac7064	4	I Stone	None	71	1553.764588371487	nordkap	titanium_collected	1000	0	0
+3f3ff944-8d89-4695-8908-b3ca9cac7064_game_5.replay26	3f3ff944-8d89-4695-8908-b3ca9cac7064	5	I Stone	None	71	1553.764588371487	eider	titanium_collected	1000	1	0
+41f6513a-66b7-4837-94d5-b8876e301756_game_1.replay26	41f6513a-66b7-4837-94d5-b8876e301756	1	Banminary	None	73	1666.8096270567394	heart	core_destroyed	374	1	1
+41f6513a-66b7-4837-94d5-b8876e301756_game_2.replay26	41f6513a-66b7-4837-94d5-b8876e301756	2	Banminary	None	73	1666.8096270567394	snowflake	core_destroyed	60	0	1
+41f6513a-66b7-4837-94d5-b8876e301756_game_3.replay26	41f6513a-66b7-4837-94d5-b8876e301756	3	Banminary	None	73	1666.8096270567394	atoll	core_destroyed	101	1	1
+41f6513a-66b7-4837-94d5-b8876e301756_game_4.replay26	41f6513a-66b7-4837-94d5-b8876e301756	4	Banminary	None	73	1666.8096270567394	moonrise	core_destroyed	127	1	1
+41f6513a-66b7-4837-94d5-b8876e301756_game_5.replay26	41f6513a-66b7-4837-94d5-b8876e301756	5	Banminary	None	73	1666.8096270567394	meander	core_destroyed	332	1	1
+422bf54c-896a-4eb2-a8cc-7c163612115b_game_1.replay26	422bf54c-896a-4eb2-a8cc-7c163612115b	1	Jacobs Code	None	69	1502.747960230283	moonrise	core_destroyed	236	0	0
+422bf54c-896a-4eb2-a8cc-7c163612115b_game_2.replay26	422bf54c-896a-4eb2-a8cc-7c163612115b	2	Jacobs Code	None	69	1502.747960230283	archipelago	core_destroyed	230	1	0
+422bf54c-896a-4eb2-a8cc-7c163612115b_game_3.replay26	422bf54c-896a-4eb2-a8cc-7c163612115b	3	Jacobs Code	None	69	1502.747960230283	eider	titanium_collected	1000	0	0
+422bf54c-896a-4eb2-a8cc-7c163612115b_game_4.replay26	422bf54c-896a-4eb2-a8cc-7c163612115b	4	Jacobs Code	None	69	1502.747960230283	jackpot	core_destroyed	157	1	0
+422bf54c-896a-4eb2-a8cc-7c163612115b_game_5.replay26	422bf54c-896a-4eb2-a8cc-7c163612115b	5	Jacobs Code	None	69	1502.747960230283	nordkap	core_destroyed	101	1	0
+444942c2-1856-4be6-9826-caeb3454d562_game_1.replay26	444942c2-1856-4be6-9826-caeb3454d562	1	Focalground	None	80	1551.1447365439615	moonrise	core_destroyed	277	1	0
+444942c2-1856-4be6-9826-caeb3454d562_game_2.replay26	444942c2-1856-4be6-9826-caeb3454d562	2	Focalground	None	80	1551.1447365439615	hive	core_destroyed	237	0	0
+444942c2-1856-4be6-9826-caeb3454d562_game_3.replay26	444942c2-1856-4be6-9826-caeb3454d562	3	Focalground	None	80	1551.1447365439615	nordkap	titanium_collected	1000	1	0
+444942c2-1856-4be6-9826-caeb3454d562_game_4.replay26	444942c2-1856-4be6-9826-caeb3454d562	4	Focalground	None	80	1551.1447365439615	eider	core_destroyed	198	0	0
+444942c2-1856-4be6-9826-caeb3454d562_game_5.replay26	444942c2-1856-4be6-9826-caeb3454d562	5	Focalground	None	80	1551.1447365439615	lighthouse	core_destroyed	169	0	0
+4479f68d-94e4-414a-9d39-64fe7fdc9af2_game_1.replay26	4479f68d-94e4-414a-9d39-64fe7fdc9af2	1	Powerpuff Girls	None	64	1541.7194280060323	meander	core_destroyed	156	1	0
+4479f68d-94e4-414a-9d39-64fe7fdc9af2_game_2.replay26	4479f68d-94e4-414a-9d39-64fe7fdc9af2	2	Powerpuff Girls	None	64	1541.7194280060323	moonrise	core_destroyed	178	0	0
+4479f68d-94e4-414a-9d39-64fe7fdc9af2_game_3.replay26	4479f68d-94e4-414a-9d39-64fe7fdc9af2	3	Powerpuff Girls	None	64	1541.7194280060323	antler	core_destroyed	853	0	0
+4479f68d-94e4-414a-9d39-64fe7fdc9af2_game_4.replay26	4479f68d-94e4-414a-9d39-64fe7fdc9af2	4	Powerpuff Girls	None	64	1541.7194280060323	heart	core_destroyed	432	1	0
+4479f68d-94e4-414a-9d39-64fe7fdc9af2_game_5.replay26	4479f68d-94e4-414a-9d39-64fe7fdc9af2	5	Powerpuff Girls	None	64	1541.7194280060323	atoll	core_destroyed	178	1	0
+447e336c-7266-4188-95ff-a67cbaf06d18_game_1.replay26	447e336c-7266-4188-95ff-a67cbaf06d18	1	Lunds Stallions	None	72	1577.393813615103	heart	core_destroyed	334	0	0
+447e336c-7266-4188-95ff-a67cbaf06d18_game_2.replay26	447e336c-7266-4188-95ff-a67cbaf06d18	2	Lunds Stallions	None	72	1577.393813615103	meander	core_destroyed	461	1	0
+447e336c-7266-4188-95ff-a67cbaf06d18_game_3.replay26	447e336c-7266-4188-95ff-a67cbaf06d18	3	Lunds Stallions	None	72	1577.393813615103	atoll	core_destroyed	680	0	0
+447e336c-7266-4188-95ff-a67cbaf06d18_game_4.replay26	447e336c-7266-4188-95ff-a67cbaf06d18	4	Lunds Stallions	None	72	1577.393813615103	snowflake	core_destroyed	97	1	0
+447e336c-7266-4188-95ff-a67cbaf06d18_game_5.replay26	447e336c-7266-4188-95ff-a67cbaf06d18	5	Lunds Stallions	None	72	1577.393813615103	moonrise	titanium_collected	1000	0	0
+45729fe9-6c3b-40cf-824c-45c3a764236d_game_1.replay26	45729fe9-6c3b-40cf-824c-45c3a764236d	1	Team 48	None	80	1564.341410750023	nordkap	core_destroyed	207	1	1
+45729fe9-6c3b-40cf-824c-45c3a764236d_game_2.replay26	45729fe9-6c3b-40cf-824c-45c3a764236d	2	Team 48	None	80	1564.341410750023	snowflake	core_destroyed	110	0	1
+45729fe9-6c3b-40cf-824c-45c3a764236d_game_3.replay26	45729fe9-6c3b-40cf-824c-45c3a764236d	3	Team 48	None	80	1564.341410750023	heart	core_destroyed	936	1	1
+45729fe9-6c3b-40cf-824c-45c3a764236d_game_4.replay26	45729fe9-6c3b-40cf-824c-45c3a764236d	4	Team 48	None	80	1564.341410750023	eider	core_destroyed	174	1	1
+45729fe9-6c3b-40cf-824c-45c3a764236d_game_5.replay26	45729fe9-6c3b-40cf-824c-45c3a764236d	5	Team 48	None	80	1564.341410750023	meander	core_destroyed	161	1	1
+4613dafe-b185-4082-a42f-d42ab8c0151c_game_1.replay26	4613dafe-b185-4082-a42f-d42ab8c0151c	1	Powered by SmartFridge	None	80	1675.3824293126238	lighthouse	core_destroyed	280	0	1
+4613dafe-b185-4082-a42f-d42ab8c0151c_game_2.replay26	4613dafe-b185-4082-a42f-d42ab8c0151c	2	Powered by SmartFridge	None	80	1675.3824293126238	meander	core_destroyed	310	1	1
+4613dafe-b185-4082-a42f-d42ab8c0151c_game_3.replay26	4613dafe-b185-4082-a42f-d42ab8c0151c	3	Powered by SmartFridge	None	80	1675.3824293126238	nordkap	core_destroyed	68	0	1
+4613dafe-b185-4082-a42f-d42ab8c0151c_game_4.replay26	4613dafe-b185-4082-a42f-d42ab8c0151c	4	Powered by SmartFridge	None	80	1675.3824293126238	snowflake	core_destroyed	123	1	1
+4613dafe-b185-4082-a42f-d42ab8c0151c_game_5.replay26	4613dafe-b185-4082-a42f-d42ab8c0151c	5	Powered by SmartFridge	None	80	1675.3824293126238	antler	core_destroyed	137	0	1
+49f64c82-6aaa-4042-b691-784a6d35386b_game_1.replay26	49f64c82-6aaa-4042-b691-784a6d35386b	1	Banminary	None	80	1607.621312930565	eider	core_destroyed	107	1	0
+49f64c82-6aaa-4042-b691-784a6d35386b_game_2.replay26	49f64c82-6aaa-4042-b691-784a6d35386b	2	Banminary	None	80	1607.621312930565	lighthouse	core_destroyed	427	1	0
+49f64c82-6aaa-4042-b691-784a6d35386b_game_3.replay26	49f64c82-6aaa-4042-b691-784a6d35386b	3	Banminary	None	80	1607.621312930565	snowflake	core_destroyed	232	1	0
+49f64c82-6aaa-4042-b691-784a6d35386b_game_4.replay26	49f64c82-6aaa-4042-b691-784a6d35386b	4	Banminary	None	80	1607.621312930565	meander	core_destroyed	109	1	0
+49f64c82-6aaa-4042-b691-784a6d35386b_game_5.replay26	49f64c82-6aaa-4042-b691-784a6d35386b	5	Banminary	None	80	1607.621312930565	hive	core_destroyed	287	1	0
+4aa0b763-18ec-49b5-bb72-803fc6d70d66_game_1.replay26	4aa0b763-18ec-49b5-bb72-803fc6d70d66	1	Lunds Stallions	None	68	1559.7663581891402	jackpot	titanium_collected	1000	1	1
+4aa0b763-18ec-49b5-bb72-803fc6d70d66_game_2.replay26	4aa0b763-18ec-49b5-bb72-803fc6d70d66	2	Lunds Stallions	None	68	1559.7663581891402	antler	core_destroyed	164	0	1
+4aa0b763-18ec-49b5-bb72-803fc6d70d66_game_3.replay26	4aa0b763-18ec-49b5-bb72-803fc6d70d66	3	Lunds Stallions	None	68	1559.7663581891402	nordkap	core_destroyed	340	0	1
+4aa0b763-18ec-49b5-bb72-803fc6d70d66_game_4.replay26	4aa0b763-18ec-49b5-bb72-803fc6d70d66	4	Lunds Stallions	None	68	1559.7663581891402	snowflake	titanium_collected	1000	0	1
+4aa0b763-18ec-49b5-bb72-803fc6d70d66_game_5.replay26	4aa0b763-18ec-49b5-bb72-803fc6d70d66	5	Lunds Stallions	None	68	1559.7663581891402	drumlin	core_destroyed	169	0	1
+4be472d8-b19b-4759-ac68-cce11a38146c_game_1.replay26	4be472d8-b19b-4759-ac68-cce11a38146c	1	Leviathan	None	87	1549.9973548107455	fjordgate	core_destroyed	177	0	0
+4be472d8-b19b-4759-ac68-cce11a38146c_game_2.replay26	4be472d8-b19b-4759-ac68-cce11a38146c	2	Leviathan	None	87	1549.9973548107455	archipelago	core_destroyed	150	0	0
+4be472d8-b19b-4759-ac68-cce11a38146c_game_3.replay26	4be472d8-b19b-4759-ac68-cce11a38146c	3	Leviathan	None	87	1549.9973548107455	heart	titanium_collected	1000	1	0
+4be472d8-b19b-4759-ac68-cce11a38146c_game_4.replay26	4be472d8-b19b-4759-ac68-cce11a38146c	4	Leviathan	None	87	1549.9973548107455	moonrise	core_destroyed	481	0	0
+4be472d8-b19b-4759-ac68-cce11a38146c_game_5.replay26	4be472d8-b19b-4759-ac68-cce11a38146c	5	Leviathan	None	87	1549.9973548107455	hive	titanium_collected	1000	0	0
+4d5fcf04-492d-4353-af25-0ee777ddbd4f_game_1.replay26	4d5fcf04-492d-4353-af25-0ee777ddbd4f	1	I Stone	None	69	1533.8263373805787	archipelago	core_destroyed	429	1	0
+4d5fcf04-492d-4353-af25-0ee777ddbd4f_game_2.replay26	4d5fcf04-492d-4353-af25-0ee777ddbd4f	2	I Stone	None	69	1533.8263373805787	drumlin	core_destroyed	327	1	0
+4d5fcf04-492d-4353-af25-0ee777ddbd4f_game_3.replay26	4d5fcf04-492d-4353-af25-0ee777ddbd4f	3	I Stone	None	69	1533.8263373805787	atoll	titanium_collected	1000	1	0
+4d5fcf04-492d-4353-af25-0ee777ddbd4f_game_4.replay26	4d5fcf04-492d-4353-af25-0ee777ddbd4f	4	I Stone	None	69	1533.8263373805787	lighthouse	core_destroyed	61	1	0
+4d5fcf04-492d-4353-af25-0ee777ddbd4f_game_5.replay26	4d5fcf04-492d-4353-af25-0ee777ddbd4f	5	I Stone	None	69	1533.8263373805787	meander	core_destroyed	113	0	0
+4e0874d0-a6c0-43b1-8cc9-023c9dab8589_game_1.replay26	4e0874d0-a6c0-43b1-8cc9-023c9dab8589	1	Ouroboros	None	73	1581.90420170755	eider	core_destroyed	275	0	1
+4e0874d0-a6c0-43b1-8cc9-023c9dab8589_game_2.replay26	4e0874d0-a6c0-43b1-8cc9-023c9dab8589	2	Ouroboros	None	73	1581.90420170755	moonrise	core_destroyed	95	1	1
+4e0874d0-a6c0-43b1-8cc9-023c9dab8589_game_3.replay26	4e0874d0-a6c0-43b1-8cc9-023c9dab8589	3	Ouroboros	None	73	1581.90420170755	hive	core_destroyed	337	0	1
+4e0874d0-a6c0-43b1-8cc9-023c9dab8589_game_4.replay26	4e0874d0-a6c0-43b1-8cc9-023c9dab8589	4	Ouroboros	None	73	1581.90420170755	meander	core_destroyed	155	1	1
+4e0874d0-a6c0-43b1-8cc9-023c9dab8589_game_5.replay26	4e0874d0-a6c0-43b1-8cc9-023c9dab8589	5	Ouroboros	None	73	1581.90420170755	saga	titanium_collected	1000	0	1
+4f431112-3245-47cb-a887-3c229a0a766d_game_1.replay26	4f431112-3245-47cb-a887-3c229a0a766d	1	Memtrace	None	80	1531.6745261931665	archipelago	titanium_collected	1000	1	0
+4f431112-3245-47cb-a887-3c229a0a766d_game_2.replay26	4f431112-3245-47cb-a887-3c229a0a766d	2	Memtrace	None	80	1531.6745261931665	nordkap	core_destroyed	213	0	0
+4f431112-3245-47cb-a887-3c229a0a766d_game_3.replay26	4f431112-3245-47cb-a887-3c229a0a766d	3	Memtrace	None	80	1531.6745261931665	antler	core_destroyed	70	1	0
+4f431112-3245-47cb-a887-3c229a0a766d_game_4.replay26	4f431112-3245-47cb-a887-3c229a0a766d	4	Memtrace	None	80	1531.6745261931665	meander	core_destroyed	221	0	0
+4f431112-3245-47cb-a887-3c229a0a766d_game_5.replay26	4f431112-3245-47cb-a887-3c229a0a766d	5	Memtrace	None	80	1531.6745261931665	heart	core_destroyed	65	1	0
+504f88d8-c12e-4c74-8627-caea7de4f2de_game_1.replay26	504f88d8-c12e-4c74-8627-caea7de4f2de	1	Memtrace	None	80	1535.1403896625961	meander	core_destroyed	96	1	1
+504f88d8-c12e-4c74-8627-caea7de4f2de_game_2.replay26	504f88d8-c12e-4c74-8627-caea7de4f2de	2	Memtrace	None	80	1535.1403896625961	moonrise	core_destroyed	157	0	1
+504f88d8-c12e-4c74-8627-caea7de4f2de_game_3.replay26	504f88d8-c12e-4c74-8627-caea7de4f2de	3	Memtrace	None	80	1535.1403896625961	antler	core_destroyed	147	1	1
+504f88d8-c12e-4c74-8627-caea7de4f2de_game_4.replay26	504f88d8-c12e-4c74-8627-caea7de4f2de	4	Memtrace	None	80	1535.1403896625961	hive	titanium_collected	1000	0	1
+504f88d8-c12e-4c74-8627-caea7de4f2de_game_5.replay26	504f88d8-c12e-4c74-8627-caea7de4f2de	5	Memtrace	None	80	1535.1403896625961	drumlin	core_destroyed	168	0	1
+50ca5e87-5aad-4f4b-aa05-ebb564038679_game_1.replay26	50ca5e87-5aad-4f4b-aa05-ebb564038679	1	Orizon	None	69	1488.6284870735496	meander	core_destroyed	174	1	1
+50ca5e87-5aad-4f4b-aa05-ebb564038679_game_2.replay26	50ca5e87-5aad-4f4b-aa05-ebb564038679	2	Orizon	None	69	1488.6284870735496	eider	core_destroyed	322	0	1
+50ca5e87-5aad-4f4b-aa05-ebb564038679_game_3.replay26	50ca5e87-5aad-4f4b-aa05-ebb564038679	3	Orizon	None	69	1488.6284870735496	nordkap	core_destroyed	81	1	1
+50ca5e87-5aad-4f4b-aa05-ebb564038679_game_4.replay26	50ca5e87-5aad-4f4b-aa05-ebb564038679	4	Orizon	None	69	1488.6284870735496	heart	titanium_collected	1000	1	1
+50ca5e87-5aad-4f4b-aa05-ebb564038679_game_5.replay26	50ca5e87-5aad-4f4b-aa05-ebb564038679	5	Orizon	None	69	1488.6284870735496	snowflake	core_destroyed	201	1	1
+50f00a69-3521-49de-a33f-20d97fa56a14_game_1.replay26	50f00a69-3521-49de-a33f-20d97fa56a14	1	Ouroboros	None	69	1568.5229810220535	heart	titanium_collected	1000	1	1
+50f00a69-3521-49de-a33f-20d97fa56a14_game_2.replay26	50f00a69-3521-49de-a33f-20d97fa56a14	2	Ouroboros	None	69	1568.5229810220535	fjordgate	core_destroyed	321	0	1
+50f00a69-3521-49de-a33f-20d97fa56a14_game_3.replay26	50f00a69-3521-49de-a33f-20d97fa56a14	3	Ouroboros	None	69	1568.5229810220535	meander	core_destroyed	321	0	1
+50f00a69-3521-49de-a33f-20d97fa56a14_game_4.replay26	50f00a69-3521-49de-a33f-20d97fa56a14	4	Ouroboros	None	69	1568.5229810220535	eider	core_destroyed	193	0	1
+50f00a69-3521-49de-a33f-20d97fa56a14_game_5.replay26	50f00a69-3521-49de-a33f-20d97fa56a14	5	Ouroboros	None	69	1568.5229810220535	jackpot	titanium_collected	1000	1	1
+52eecec2-cd33-489b-b2f9-5445a12e6235_game_1.replay26	52eecec2-cd33-489b-b2f9-5445a12e6235	1	Team 48	None	72	1589.39944784276	drumlin	core_destroyed	99	1	1
+52eecec2-cd33-489b-b2f9-5445a12e6235_game_2.replay26	52eecec2-cd33-489b-b2f9-5445a12e6235	2	Team 48	None	72	1589.39944784276	hive	core_destroyed	98	0	1
+52eecec2-cd33-489b-b2f9-5445a12e6235_game_3.replay26	52eecec2-cd33-489b-b2f9-5445a12e6235	3	Team 48	None	72	1589.39944784276	meander	core_destroyed	586	1	1
+52eecec2-cd33-489b-b2f9-5445a12e6235_game_4.replay26	52eecec2-cd33-489b-b2f9-5445a12e6235	4	Team 48	None	72	1589.39944784276	atoll	core_destroyed	106	1	1
+52eecec2-cd33-489b-b2f9-5445a12e6235_game_5.replay26	52eecec2-cd33-489b-b2f9-5445a12e6235	5	Team 48	None	72	1589.39944784276	heart	core_destroyed	303	0	1
+54107b82-c56c-4712-bd6d-611254395cfb_game_1.replay26	54107b82-c56c-4712-bd6d-611254395cfb	1	Powerpuff Girls	None	69	1560.5440376725246	hive	core_destroyed	594	0	1
+54107b82-c56c-4712-bd6d-611254395cfb_game_2.replay26	54107b82-c56c-4712-bd6d-611254395cfb	2	Powerpuff Girls	None	69	1560.5440376725246	eider	core_destroyed	396	0	1
+54107b82-c56c-4712-bd6d-611254395cfb_game_3.replay26	54107b82-c56c-4712-bd6d-611254395cfb	3	Powerpuff Girls	None	69	1560.5440376725246	heart	core_destroyed	162	1	1
+54107b82-c56c-4712-bd6d-611254395cfb_game_4.replay26	54107b82-c56c-4712-bd6d-611254395cfb	4	Powerpuff Girls	None	69	1560.5440376725246	nordkap	core_destroyed	905	0	1
+54107b82-c56c-4712-bd6d-611254395cfb_game_5.replay26	54107b82-c56c-4712-bd6d-611254395cfb	5	Powerpuff Girls	None	69	1560.5440376725246	meander	core_destroyed	263	1	1
+565e223f-41ea-44bd-a843-1f4d55627c7a_game_1.replay26	565e223f-41ea-44bd-a843-1f4d55627c7a	1	Askar City	None	66	1550.2275871896654	saga	core_destroyed	91	1	1
+565e223f-41ea-44bd-a843-1f4d55627c7a_game_2.replay26	565e223f-41ea-44bd-a843-1f4d55627c7a	2	Askar City	None	66	1550.2275871896654	nordkap	core_destroyed	113	1	1
+565e223f-41ea-44bd-a843-1f4d55627c7a_game_3.replay26	565e223f-41ea-44bd-a843-1f4d55627c7a	3	Askar City	None	66	1550.2275871896654	archipelago	core_destroyed	69	1	1
+565e223f-41ea-44bd-a843-1f4d55627c7a_game_4.replay26	565e223f-41ea-44bd-a843-1f4d55627c7a	4	Askar City	None	66	1550.2275871896654	drumlin	core_destroyed	100	1	1
+565e223f-41ea-44bd-a843-1f4d55627c7a_game_5.replay26	565e223f-41ea-44bd-a843-1f4d55627c7a	5	Askar City	None	66	1550.2275871896654	heart	core_destroyed	144	1	1
+56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1_game_1.replay26	56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1	1	Askar City	None	86	1511.7155257594425	saga	core_destroyed	260	1	0
+56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1_game_2.replay26	56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1	2	Askar City	None	86	1511.7155257594425	lighthouse	core_destroyed	233	0	0
+56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1_game_3.replay26	56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1	3	Askar City	None	86	1511.7155257594425	antler	core_destroyed	502	0	0
+56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1_game_4.replay26	56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1	4	Askar City	None	86	1511.7155257594425	hive	titanium_collected	1000	0	0
+56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1_game_5.replay26	56bb6298-e36e-42b2-aa12-b1f6f9b0c7b1	5	Askar City	None	86	1511.7155257594425	moonrise	core_destroyed	265	1	0
+57dc3a41-ac74-43cd-a47f-231cc442342d_game_1.replay26	57dc3a41-ac74-43cd-a47f-231cc442342d	1	OopsGotYourElo	None	80	1534.3372089119453	drumlin	titanium_collected	1000	0	1
+57dc3a41-ac74-43cd-a47f-231cc442342d_game_2.replay26	57dc3a41-ac74-43cd-a47f-231cc442342d	2	OopsGotYourElo	None	80	1534.3372089119453	hive	core_destroyed	252	0	1
+57dc3a41-ac74-43cd-a47f-231cc442342d_game_3.replay26	57dc3a41-ac74-43cd-a47f-231cc442342d	3	OopsGotYourElo	None	80	1534.3372089119453	meander	core_destroyed	244	1	1
+57dc3a41-ac74-43cd-a47f-231cc442342d_game_4.replay26	57dc3a41-ac74-43cd-a47f-231cc442342d	4	OopsGotYourElo	None	80	1534.3372089119453	fjordgate	titanium_collected	1000	1	1
+57dc3a41-ac74-43cd-a47f-231cc442342d_game_5.replay26	57dc3a41-ac74-43cd-a47f-231cc442342d	5	OopsGotYourElo	None	80	1534.3372089119453	archipelago	titanium_collected	1000	1	1
+58dd40a1-4b1a-4e5e-bd16-006aff336197_game_1.replay26	58dd40a1-4b1a-4e5e-bd16-006aff336197	1	Team 48	None	80	1543.5117373409296	eider	core_destroyed	94	1	0
+58dd40a1-4b1a-4e5e-bd16-006aff336197_game_2.replay26	58dd40a1-4b1a-4e5e-bd16-006aff336197	2	Team 48	None	80	1543.5117373409296	hive	core_destroyed	147	1	0
+58dd40a1-4b1a-4e5e-bd16-006aff336197_game_3.replay26	58dd40a1-4b1a-4e5e-bd16-006aff336197	3	Team 48	None	80	1543.5117373409296	archipelago	core_destroyed	66	1	0
+58dd40a1-4b1a-4e5e-bd16-006aff336197_game_4.replay26	58dd40a1-4b1a-4e5e-bd16-006aff336197	4	Team 48	None	80	1543.5117373409296	saga	core_destroyed	99	0	0
+58dd40a1-4b1a-4e5e-bd16-006aff336197_game_5.replay26	58dd40a1-4b1a-4e5e-bd16-006aff336197	5	Team 48	None	80	1543.5117373409296	meander	core_destroyed	95	1	0
+5a57ba6e-5c87-4c31-bc3d-72b875144619_game_1.replay26	5a57ba6e-5c87-4c31-bc3d-72b875144619	1	Leviathan	None	80	1598.8420214772575	moonrise	core_destroyed	275	1	1
+5a57ba6e-5c87-4c31-bc3d-72b875144619_game_2.replay26	5a57ba6e-5c87-4c31-bc3d-72b875144619	2	Leviathan	None	80	1598.8420214772575	saga	core_destroyed	130	1	1
+5a57ba6e-5c87-4c31-bc3d-72b875144619_game_3.replay26	5a57ba6e-5c87-4c31-bc3d-72b875144619	3	Leviathan	None	80	1598.8420214772575	drumlin	titanium_collected	1000	1	1
+5a57ba6e-5c87-4c31-bc3d-72b875144619_game_4.replay26	5a57ba6e-5c87-4c31-bc3d-72b875144619	4	Leviathan	None	80	1598.8420214772575	snowflake	titanium_collected	1000	1	1
+5a57ba6e-5c87-4c31-bc3d-72b875144619_game_5.replay26	5a57ba6e-5c87-4c31-bc3d-72b875144619	5	Leviathan	None	80	1598.8420214772575	nordkap	core_destroyed	817	1	1
+5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5_game_1.replay26	5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5	1	Ouroboros	None	75	1590.7184335651093	antler	core_destroyed	356	0	0
+5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5_game_2.replay26	5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5	2	Ouroboros	None	75	1590.7184335651093	heart	core_destroyed	621	0	0
+5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5_game_3.replay26	5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5	3	Ouroboros	None	75	1590.7184335651093	saga	titanium_collected	1000	0	0
+5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5_game_4.replay26	5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5	4	Ouroboros	None	75	1590.7184335651093	meander	titanium_collected	1000	1	0
+5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5_game_5.replay26	5a6a1a8f-ff00-44a7-a8e7-802b8b03c1b5	5	Ouroboros	None	75	1590.7184335651093	eider	core_destroyed	989	0	0
+5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e_game_1.replay26	5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e	1	The Bisons	None	80	1489.6467040274065	hive	core_destroyed	85	1	0
+5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e_game_2.replay26	5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e	2	The Bisons	None	80	1489.6467040274065	nordkap	core_destroyed	62	1	0
+5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e_game_3.replay26	5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e	3	The Bisons	None	80	1489.6467040274065	lighthouse	core_destroyed	121	0	0
+5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e_game_4.replay26	5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e	4	The Bisons	None	80	1489.6467040274065	eider	core_destroyed	69	1	0
+5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e_game_5.replay26	5a8426ba-9bbd-46b5-af66-a7dd7cc15d1e	5	The Bisons	None	80	1489.6467040274065	fjordgate	core_destroyed	103	0	0
+5f2d6d1a-a3da-4faf-bf64-48c90f8c1025_game_1.replay26	5f2d6d1a-a3da-4faf-bf64-48c90f8c1025	1	Team 48	None	89	1556.0148340893165	nordkap	core_destroyed	71	1	0
+5f2d6d1a-a3da-4faf-bf64-48c90f8c1025_game_2.replay26	5f2d6d1a-a3da-4faf-bf64-48c90f8c1025	2	Team 48	None	89	1556.0148340893165	drumlin	core_destroyed	66	1	0
+5f2d6d1a-a3da-4faf-bf64-48c90f8c1025_game_3.replay26	5f2d6d1a-a3da-4faf-bf64-48c90f8c1025	3	Team 48	None	89	1556.0148340893165	snowflake	core_destroyed	69	1	0
+5f2d6d1a-a3da-4faf-bf64-48c90f8c1025_game_4.replay26	5f2d6d1a-a3da-4faf-bf64-48c90f8c1025	4	Team 48	None	89	1556.0148340893165	saga	core_destroyed	266	0	0
+5f2d6d1a-a3da-4faf-bf64-48c90f8c1025_game_5.replay26	5f2d6d1a-a3da-4faf-bf64-48c90f8c1025	5	Team 48	None	89	1556.0148340893165	eider	core_destroyed	93	1	0
+621b841e-c4b9-43dd-b8bb-489ab2130747_game_1.replay26	621b841e-c4b9-43dd-b8bb-489ab2130747	1	Ouroboros	None	74	1565.9779800866838	atoll	core_destroyed	354	0	0
+621b841e-c4b9-43dd-b8bb-489ab2130747_game_2.replay26	621b841e-c4b9-43dd-b8bb-489ab2130747	2	Ouroboros	None	74	1565.9779800866838	eider	core_destroyed	215	0	0
+621b841e-c4b9-43dd-b8bb-489ab2130747_game_3.replay26	621b841e-c4b9-43dd-b8bb-489ab2130747	3	Ouroboros	None	74	1565.9779800866838	snowflake	core_destroyed	476	0	0
+621b841e-c4b9-43dd-b8bb-489ab2130747_game_4.replay26	621b841e-c4b9-43dd-b8bb-489ab2130747	4	Ouroboros	None	74	1565.9779800866838	drumlin	core_destroyed	271	0	0
+621b841e-c4b9-43dd-b8bb-489ab2130747_game_5.replay26	621b841e-c4b9-43dd-b8bb-489ab2130747	5	Ouroboros	None	74	1565.9779800866838	antler	titanium_collected	1000	0	0
+646e8a3a-a4a9-4a56-b3d3-8fa977719455_game_1.replay26	646e8a3a-a4a9-4a56-b3d3-8fa977719455	1	Orizon	None	65	1518.6587357331491	drumlin	core_destroyed	119	1	1
+646e8a3a-a4a9-4a56-b3d3-8fa977719455_game_2.replay26	646e8a3a-a4a9-4a56-b3d3-8fa977719455	2	Orizon	None	65	1518.6587357331491	lighthouse	core_destroyed	261	0	1
+646e8a3a-a4a9-4a56-b3d3-8fa977719455_game_3.replay26	646e8a3a-a4a9-4a56-b3d3-8fa977719455	3	Orizon	None	65	1518.6587357331491	antler	titanium_collected	1000	1	1
+646e8a3a-a4a9-4a56-b3d3-8fa977719455_game_4.replay26	646e8a3a-a4a9-4a56-b3d3-8fa977719455	4	Orizon	None	65	1518.6587357331491	nordkap	core_destroyed	107	0	1
+646e8a3a-a4a9-4a56-b3d3-8fa977719455_game_5.replay26	646e8a3a-a4a9-4a56-b3d3-8fa977719455	5	Orizon	None	65	1518.6587357331491	snowflake	core_destroyed	106	1	1
+64a88e55-38b3-493b-ab14-4da9ad9a2c7b_game_1.replay26	64a88e55-38b3-493b-ab14-4da9ad9a2c7b	1	Leviathan	None	69	1650.5960074910456	drumlin	core_destroyed	620	0	0
+64a88e55-38b3-493b-ab14-4da9ad9a2c7b_game_2.replay26	64a88e55-38b3-493b-ab14-4da9ad9a2c7b	2	Leviathan	None	69	1650.5960074910456	heart	titanium_collected	1000	1	0
+64a88e55-38b3-493b-ab14-4da9ad9a2c7b_game_3.replay26	64a88e55-38b3-493b-ab14-4da9ad9a2c7b	3	Leviathan	None	69	1650.5960074910456	saga	core_destroyed	196	1	0
+64a88e55-38b3-493b-ab14-4da9ad9a2c7b_game_4.replay26	64a88e55-38b3-493b-ab14-4da9ad9a2c7b	4	Leviathan	None	69	1650.5960074910456	atoll	core_destroyed	375	0	0
+64a88e55-38b3-493b-ab14-4da9ad9a2c7b_game_5.replay26	64a88e55-38b3-493b-ab14-4da9ad9a2c7b	5	Leviathan	None	69	1650.5960074910456	nordkap	titanium_collected	1000	1	0
+677b257b-ee90-47db-949d-e2c34d31c60b_game_1.replay26	677b257b-ee90-47db-949d-e2c34d31c60b	1	Memtrace	None	80	1545.1272107412433	nordkap	core_destroyed	112	1	1
+677b257b-ee90-47db-949d-e2c34d31c60b_game_2.replay26	677b257b-ee90-47db-949d-e2c34d31c60b	2	Memtrace	None	80	1545.1272107412433	saga	titanium_collected	1000	0	1
+677b257b-ee90-47db-949d-e2c34d31c60b_game_3.replay26	677b257b-ee90-47db-949d-e2c34d31c60b	3	Memtrace	None	80	1545.1272107412433	eider	titanium_collected	1000	1	1
+677b257b-ee90-47db-949d-e2c34d31c60b_game_4.replay26	677b257b-ee90-47db-949d-e2c34d31c60b	4	Memtrace	None	80	1545.1272107412433	hive	titanium_collected	1000	0	1
+677b257b-ee90-47db-949d-e2c34d31c60b_game_5.replay26	677b257b-ee90-47db-949d-e2c34d31c60b	5	Memtrace	None	80	1545.1272107412433	archipelago	titanium_collected	1000	0	1
+6a7552c9-fab5-4420-8bdc-b24e2e92f12c_game_1.replay26	6a7552c9-fab5-4420-8bdc-b24e2e92f12c	1	I Stone	None	68	1535.3689122350065	atoll	titanium_collected	1000	1	0
+6a7552c9-fab5-4420-8bdc-b24e2e92f12c_game_2.replay26	6a7552c9-fab5-4420-8bdc-b24e2e92f12c	2	I Stone	None	68	1535.3689122350065	archipelago	core_destroyed	269	1	0
+6a7552c9-fab5-4420-8bdc-b24e2e92f12c_game_3.replay26	6a7552c9-fab5-4420-8bdc-b24e2e92f12c	3	I Stone	None	68	1535.3689122350065	jackpot	core_destroyed	405	1	0
+6a7552c9-fab5-4420-8bdc-b24e2e92f12c_game_4.replay26	6a7552c9-fab5-4420-8bdc-b24e2e92f12c	4	I Stone	None	68	1535.3689122350065	heart	titanium_collected	1000	1	0
+6a7552c9-fab5-4420-8bdc-b24e2e92f12c_game_5.replay26	6a7552c9-fab5-4420-8bdc-b24e2e92f12c	5	I Stone	None	68	1535.3689122350065	antler	core_destroyed	124	1	0
+6b080cfb-b654-4d70-a1b8-363f6afd3c53_game_1.replay26	6b080cfb-b654-4d70-a1b8-363f6afd3c53	1	The Bisons	None	80	1497.383183887287	nordkap	core_destroyed	81	0	0
+6b080cfb-b654-4d70-a1b8-363f6afd3c53_game_2.replay26	6b080cfb-b654-4d70-a1b8-363f6afd3c53	2	The Bisons	None	80	1497.383183887287	eider	core_destroyed	69	1	0
+6b080cfb-b654-4d70-a1b8-363f6afd3c53_game_3.replay26	6b080cfb-b654-4d70-a1b8-363f6afd3c53	3	The Bisons	None	80	1497.383183887287	fjordgate	titanium_collected	1000	1	0
+6b080cfb-b654-4d70-a1b8-363f6afd3c53_game_4.replay26	6b080cfb-b654-4d70-a1b8-363f6afd3c53	4	The Bisons	None	80	1497.383183887287	antler	core_destroyed	66	1	0
+6b080cfb-b654-4d70-a1b8-363f6afd3c53_game_5.replay26	6b080cfb-b654-4d70-a1b8-363f6afd3c53	5	The Bisons	None	80	1497.383183887287	moonrise	core_destroyed	73	1	0
+6cd1a9a3-55f3-4830-b33c-b6604f27d65f_game_1.replay26	6cd1a9a3-55f3-4830-b33c-b6604f27d65f	1	0033	None	72	1612.405871696282	drumlin	core_destroyed	284	1	0
+6cd1a9a3-55f3-4830-b33c-b6604f27d65f_game_2.replay26	6cd1a9a3-55f3-4830-b33c-b6604f27d65f	2	0033	None	72	1612.405871696282	nordkap	core_destroyed	113	0	0
+6cd1a9a3-55f3-4830-b33c-b6604f27d65f_game_3.replay26	6cd1a9a3-55f3-4830-b33c-b6604f27d65f	3	0033	None	72	1612.405871696282	fjordgate	core_destroyed	806	0	0
+6cd1a9a3-55f3-4830-b33c-b6604f27d65f_game_4.replay26	6cd1a9a3-55f3-4830-b33c-b6604f27d65f	4	0033	None	72	1612.405871696282	meander	core_destroyed	453	0	0
+6cd1a9a3-55f3-4830-b33c-b6604f27d65f_game_5.replay26	6cd1a9a3-55f3-4830-b33c-b6604f27d65f	5	0033	None	72	1612.405871696282	antler	titanium_collected	1000	1	0
+6f6976dd-ebb6-4caf-b0d9-dbdf8f064855_game_1.replay26	6f6976dd-ebb6-4caf-b0d9-dbdf8f064855	1	Landers	None	84	1642.3383517798034	lighthouse	core_destroyed	143	1	1
+6f6976dd-ebb6-4caf-b0d9-dbdf8f064855_game_2.replay26	6f6976dd-ebb6-4caf-b0d9-dbdf8f064855	2	Landers	None	84	1642.3383517798034	drumlin	core_destroyed	115	1	1
+6f6976dd-ebb6-4caf-b0d9-dbdf8f064855_game_3.replay26	6f6976dd-ebb6-4caf-b0d9-dbdf8f064855	3	Landers	None	84	1642.3383517798034	meander	core_destroyed	161	1	1
+6f6976dd-ebb6-4caf-b0d9-dbdf8f064855_game_4.replay26	6f6976dd-ebb6-4caf-b0d9-dbdf8f064855	4	Landers	None	84	1642.3383517798034	saga	core_destroyed	101	0	1
+6f6976dd-ebb6-4caf-b0d9-dbdf8f064855_game_5.replay26	6f6976dd-ebb6-4caf-b0d9-dbdf8f064855	5	Landers	None	84	1642.3383517798034	moonrise	titanium_collected	1000	0	1
+6fda11c0-2857-490c-af99-a4bd29f6937b_game_1.replay26	6fda11c0-2857-490c-af99-a4bd29f6937b	1	I Stone	None	73	1607.5042618789466	antler	core_destroyed	353	1	0
+6fda11c0-2857-490c-af99-a4bd29f6937b_game_2.replay26	6fda11c0-2857-490c-af99-a4bd29f6937b	2	I Stone	None	73	1607.5042618789466	saga	core_destroyed	429	0	0
+6fda11c0-2857-490c-af99-a4bd29f6937b_game_3.replay26	6fda11c0-2857-490c-af99-a4bd29f6937b	3	I Stone	None	73	1607.5042618789466	atoll	core_destroyed	778	0	0
+6fda11c0-2857-490c-af99-a4bd29f6937b_game_4.replay26	6fda11c0-2857-490c-af99-a4bd29f6937b	4	I Stone	None	73	1607.5042618789466	jackpot	core_destroyed	358	1	0
+6fda11c0-2857-490c-af99-a4bd29f6937b_game_5.replay26	6fda11c0-2857-490c-af99-a4bd29f6937b	5	I Stone	None	73	1607.5042618789466	archipelago	titanium_collected	1000	0	0
+6feb244d-9721-4dcf-b5e6-feabf37d7760_game_1.replay26	6feb244d-9721-4dcf-b5e6-feabf37d7760	1	Viktor5776	None	65	1495.9002839214863	moonrise	titanium_collected	1000	1	1
+6feb244d-9721-4dcf-b5e6-feabf37d7760_game_2.replay26	6feb244d-9721-4dcf-b5e6-feabf37d7760	2	Viktor5776	None	65	1495.9002839214863	archipelago	core_destroyed	131	1	1
+6feb244d-9721-4dcf-b5e6-feabf37d7760_game_3.replay26	6feb244d-9721-4dcf-b5e6-feabf37d7760	3	Viktor5776	None	65	1495.9002839214863	snowflake	core_destroyed	635	1	1
+6feb244d-9721-4dcf-b5e6-feabf37d7760_game_4.replay26	6feb244d-9721-4dcf-b5e6-feabf37d7760	4	Viktor5776	None	65	1495.9002839214863	saga	core_destroyed	148	1	1
+6feb244d-9721-4dcf-b5e6-feabf37d7760_game_5.replay26	6feb244d-9721-4dcf-b5e6-feabf37d7760	5	Viktor5776	None	65	1495.9002839214863	hive	core_destroyed	357	0	1
+70cb1415-a185-4748-afc7-65b39e1e91c6_game_1.replay26	70cb1415-a185-4748-afc7-65b39e1e91c6	1	CtrlAltDefeat	None	80	1627.0312494060029	drumlin	core_destroyed	553	0	0
+70cb1415-a185-4748-afc7-65b39e1e91c6_game_2.replay26	70cb1415-a185-4748-afc7-65b39e1e91c6	2	CtrlAltDefeat	None	80	1627.0312494060029	lighthouse	titanium_collected	1000	1	0
+70cb1415-a185-4748-afc7-65b39e1e91c6_game_3.replay26	70cb1415-a185-4748-afc7-65b39e1e91c6	3	CtrlAltDefeat	None	80	1627.0312494060029	nordkap	core_destroyed	559	0	0
+70cb1415-a185-4748-afc7-65b39e1e91c6_game_4.replay26	70cb1415-a185-4748-afc7-65b39e1e91c6	4	CtrlAltDefeat	None	80	1627.0312494060029	archipelago	core_destroyed	644	0	0
+70cb1415-a185-4748-afc7-65b39e1e91c6_game_5.replay26	70cb1415-a185-4748-afc7-65b39e1e91c6	5	CtrlAltDefeat	None	80	1627.0312494060029	eider	core_destroyed	123	0	0
+70ce8cb2-ff59-4077-960a-ef893d2f4b85_game_1.replay26	70ce8cb2-ff59-4077-960a-ef893d2f4b85	1	Lunds Stallions	None	80	1586.4524170845	snowflake	core_destroyed	251	0	0
+70ce8cb2-ff59-4077-960a-ef893d2f4b85_game_2.replay26	70ce8cb2-ff59-4077-960a-ef893d2f4b85	2	Lunds Stallions	None	80	1586.4524170845	heart	titanium_collected	1000	1	0
+70ce8cb2-ff59-4077-960a-ef893d2f4b85_game_3.replay26	70ce8cb2-ff59-4077-960a-ef893d2f4b85	3	Lunds Stallions	None	80	1586.4524170845	nordkap	titanium_collected	1000	1	0
+70ce8cb2-ff59-4077-960a-ef893d2f4b85_game_4.replay26	70ce8cb2-ff59-4077-960a-ef893d2f4b85	4	Lunds Stallions	None	80	1586.4524170845	antler	core_destroyed	553	0	0
+70ce8cb2-ff59-4077-960a-ef893d2f4b85_game_5.replay26	70ce8cb2-ff59-4077-960a-ef893d2f4b85	5	Lunds Stallions	None	80	1586.4524170845	hive	core_destroyed	250	0	0
+72fac47f-05b9-4b78-bea2-547c0ba6dbbb_game_1.replay26	72fac47f-05b9-4b78-bea2-547c0ba6dbbb	1	Focalground	None	79	1524.497821652263	nordkap	core_destroyed	237	0	0
+72fac47f-05b9-4b78-bea2-547c0ba6dbbb_game_2.replay26	72fac47f-05b9-4b78-bea2-547c0ba6dbbb	2	Focalground	None	79	1524.497821652263	fjordgate	titanium_collected	1000	1	0
+72fac47f-05b9-4b78-bea2-547c0ba6dbbb_game_3.replay26	72fac47f-05b9-4b78-bea2-547c0ba6dbbb	3	Focalground	None	79	1524.497821652263	drumlin	core_destroyed	308	0	0
+72fac47f-05b9-4b78-bea2-547c0ba6dbbb_game_4.replay26	72fac47f-05b9-4b78-bea2-547c0ba6dbbb	4	Focalground	None	79	1524.497821652263	heart	core_destroyed	469	0	0
+72fac47f-05b9-4b78-bea2-547c0ba6dbbb_game_5.replay26	72fac47f-05b9-4b78-bea2-547c0ba6dbbb	5	Focalground	None	79	1524.497821652263	archipelago	core_destroyed	206	0	0
+7371bd72-c238-456c-a9b5-370f3c67a049_game_1.replay26	7371bd72-c238-456c-a9b5-370f3c67a049	1	Leviathan	None	80	1538.5510156994935	jackpot	core_destroyed	610	1	1
+7371bd72-c238-456c-a9b5-370f3c67a049_game_2.replay26	7371bd72-c238-456c-a9b5-370f3c67a049	2	Leviathan	None	80	1538.5510156994935	antler	titanium_collected	1000	1	1
+7371bd72-c238-456c-a9b5-370f3c67a049_game_3.replay26	7371bd72-c238-456c-a9b5-370f3c67a049	3	Leviathan	None	80	1538.5510156994935	nordkap	core_destroyed	356	1	1
+7371bd72-c238-456c-a9b5-370f3c67a049_game_4.replay26	7371bd72-c238-456c-a9b5-370f3c67a049	4	Leviathan	None	80	1538.5510156994935	moonrise	core_destroyed	366	0	1
+7371bd72-c238-456c-a9b5-370f3c67a049_game_5.replay26	7371bd72-c238-456c-a9b5-370f3c67a049	5	Leviathan	None	80	1538.5510156994935	saga	core_destroyed	123	1	1
+73e3bd26-54d3-423d-8c6a-17181b3e2705_game_1.replay26	73e3bd26-54d3-423d-8c6a-17181b3e2705	1	Orizon	None	80	1457.3794502569842	archipelago	titanium_collected	1000	1	0
+73e3bd26-54d3-423d-8c6a-17181b3e2705_game_2.replay26	73e3bd26-54d3-423d-8c6a-17181b3e2705	2	Orizon	None	80	1457.3794502569842	snowflake	core_destroyed	114	1	0
+73e3bd26-54d3-423d-8c6a-17181b3e2705_game_3.replay26	73e3bd26-54d3-423d-8c6a-17181b3e2705	3	Orizon	None	80	1457.3794502569842	meander	titanium_collected	1000	1	0
+73e3bd26-54d3-423d-8c6a-17181b3e2705_game_4.replay26	73e3bd26-54d3-423d-8c6a-17181b3e2705	4	Orizon	None	80	1457.3794502569842	heart	titanium_collected	1000	1	0
+73e3bd26-54d3-423d-8c6a-17181b3e2705_game_5.replay26	73e3bd26-54d3-423d-8c6a-17181b3e2705	5	Orizon	None	80	1457.3794502569842	hive	titanium_collected	1000	0	0
+74cf5d01-9d61-4209-a8e8-88326667daff_game_1.replay26	74cf5d01-9d61-4209-a8e8-88326667daff	1	0033	None	72	1644.7454859515565	antler	titanium_collected	1000	1	0
+74cf5d01-9d61-4209-a8e8-88326667daff_game_2.replay26	74cf5d01-9d61-4209-a8e8-88326667daff	2	0033	None	72	1644.7454859515565	lighthouse	core_destroyed	205	0	0
+74cf5d01-9d61-4209-a8e8-88326667daff_game_3.replay26	74cf5d01-9d61-4209-a8e8-88326667daff	3	0033	None	72	1644.7454859515565	saga	core_destroyed	109	1	0
+74cf5d01-9d61-4209-a8e8-88326667daff_game_4.replay26	74cf5d01-9d61-4209-a8e8-88326667daff	4	0033	None	72	1644.7454859515565	meander	core_destroyed	126	1	0
+74cf5d01-9d61-4209-a8e8-88326667daff_game_5.replay26	74cf5d01-9d61-4209-a8e8-88326667daff	5	0033	None	72	1644.7454859515565	drumlin	core_destroyed	98	0	0
+74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2_game_1.replay26	74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2	1	Memtrace	None	75	1561.7720768313366	meander	core_destroyed	137	1	0
+74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2_game_2.replay26	74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2	2	Memtrace	None	75	1561.7720768313366	snowflake	titanium_collected	1000	1	0
+74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2_game_3.replay26	74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2	3	Memtrace	None	75	1561.7720768313366	archipelago	titanium_collected	1000	0	0
+74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2_game_4.replay26	74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2	4	Memtrace	None	75	1561.7720768313366	saga	titanium_collected	1000	1	0
+74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2_game_5.replay26	74f3e7a3-0ca7-4c1e-9d47-8d08a7a16dc2	5	Memtrace	None	75	1561.7720768313366	heart	core_destroyed	64	1	0
+763dc1f8-eb30-459a-b5cc-418cd41833a6_game_1.replay26	763dc1f8-eb30-459a-b5cc-418cd41833a6	1	Kings College Munich	None	80	1632.6787771787663	drumlin	core_destroyed	220	0	1
+763dc1f8-eb30-459a-b5cc-418cd41833a6_game_2.replay26	763dc1f8-eb30-459a-b5cc-418cd41833a6	2	Kings College Munich	None	80	1632.6787771787663	nordkap	core_destroyed	323	0	1
+763dc1f8-eb30-459a-b5cc-418cd41833a6_game_3.replay26	763dc1f8-eb30-459a-b5cc-418cd41833a6	3	Kings College Munich	None	80	1632.6787771787663	lighthouse	core_destroyed	413	0	1
+763dc1f8-eb30-459a-b5cc-418cd41833a6_game_4.replay26	763dc1f8-eb30-459a-b5cc-418cd41833a6	4	Kings College Munich	None	80	1632.6787771787663	meander	core_destroyed	352	0	1
+763dc1f8-eb30-459a-b5cc-418cd41833a6_game_5.replay26	763dc1f8-eb30-459a-b5cc-418cd41833a6	5	Kings College Munich	None	80	1632.6787771787663	archipelago	core_destroyed	778	0	1
+7769008c-e88c-4c0a-a5db-8f73f67e4792_game_1.replay26	7769008c-e88c-4c0a-a5db-8f73f67e4792	1	opensverige - plan B	None	80	1538.5708951425154	fjordgate	titanium_collected	1000	1	0
+7769008c-e88c-4c0a-a5db-8f73f67e4792_game_2.replay26	7769008c-e88c-4c0a-a5db-8f73f67e4792	2	opensverige - plan B	None	80	1538.5708951425154	jackpot	core_destroyed	129	1	0
+7769008c-e88c-4c0a-a5db-8f73f67e4792_game_3.replay26	7769008c-e88c-4c0a-a5db-8f73f67e4792	3	opensverige - plan B	None	80	1538.5708951425154	drumlin	titanium_collected	1000	1	0
+7769008c-e88c-4c0a-a5db-8f73f67e4792_game_4.replay26	7769008c-e88c-4c0a-a5db-8f73f67e4792	4	opensverige - plan B	None	80	1538.5708951425154	snowflake	core_destroyed	123	1	0
+7769008c-e88c-4c0a-a5db-8f73f67e4792_game_5.replay26	7769008c-e88c-4c0a-a5db-8f73f67e4792	5	opensverige - plan B	None	80	1538.5708951425154	nordkap	titanium_collected	1000	1	0
+77ec4c2b-4dd2-4529-8691-ab23f092118e_game_1.replay26	77ec4c2b-4dd2-4529-8691-ab23f092118e	1	Ouroboros	None	80	1570.481972204141	atoll	core_destroyed	296	0	1
+77ec4c2b-4dd2-4529-8691-ab23f092118e_game_2.replay26	77ec4c2b-4dd2-4529-8691-ab23f092118e	2	Ouroboros	None	80	1570.481972204141	fjordgate	titanium_collected	1000	0	1
+77ec4c2b-4dd2-4529-8691-ab23f092118e_game_3.replay26	77ec4c2b-4dd2-4529-8691-ab23f092118e	3	Ouroboros	None	80	1570.481972204141	antler	core_destroyed	682	0	1
+77ec4c2b-4dd2-4529-8691-ab23f092118e_game_4.replay26	77ec4c2b-4dd2-4529-8691-ab23f092118e	4	Ouroboros	None	80	1570.481972204141	moonrise	core_destroyed	78	1	1
+77ec4c2b-4dd2-4529-8691-ab23f092118e_game_5.replay26	77ec4c2b-4dd2-4529-8691-ab23f092118e	5	Ouroboros	None	80	1570.481972204141	saga	titanium_collected	1000	0	1
+78dd80a3-6a83-4f08-87fc-0355cf95f77e_game_1.replay26	78dd80a3-6a83-4f08-87fc-0355cf95f77e	1	Ouroboros	None	79	1604.1041440179697	lighthouse	core_destroyed	688	0	1
+78dd80a3-6a83-4f08-87fc-0355cf95f77e_game_2.replay26	78dd80a3-6a83-4f08-87fc-0355cf95f77e	2	Ouroboros	None	79	1604.1041440179697	snowflake	titanium_collected	1000	1	1
+78dd80a3-6a83-4f08-87fc-0355cf95f77e_game_3.replay26	78dd80a3-6a83-4f08-87fc-0355cf95f77e	3	Ouroboros	None	79	1604.1041440179697	saga	titanium_collected	1000	0	1
+78dd80a3-6a83-4f08-87fc-0355cf95f77e_game_4.replay26	78dd80a3-6a83-4f08-87fc-0355cf95f77e	4	Ouroboros	None	79	1604.1041440179697	atoll	titanium_collected	1000	0	1
+78dd80a3-6a83-4f08-87fc-0355cf95f77e_game_5.replay26	78dd80a3-6a83-4f08-87fc-0355cf95f77e	5	Ouroboros	None	79	1604.1041440179697	archipelago	titanium_collected	1000	0	1
+7b532aea-6414-4159-8ff7-a5748f138786_game_1.replay26	7b532aea-6414-4159-8ff7-a5748f138786	1	0033	None	75	1637.3653922712815	atoll	core_destroyed	421	0	0
+7b532aea-6414-4159-8ff7-a5748f138786_game_2.replay26	7b532aea-6414-4159-8ff7-a5748f138786	2	0033	None	75	1637.3653922712815	fjordgate	core_destroyed	195	0	0
+7b532aea-6414-4159-8ff7-a5748f138786_game_3.replay26	7b532aea-6414-4159-8ff7-a5748f138786	3	0033	None	75	1637.3653922712815	eider	core_destroyed	189	0	0
+7b532aea-6414-4159-8ff7-a5748f138786_game_4.replay26	7b532aea-6414-4159-8ff7-a5748f138786	4	0033	None	75	1637.3653922712815	snowflake	core_destroyed	145	0	0
+7b532aea-6414-4159-8ff7-a5748f138786_game_5.replay26	7b532aea-6414-4159-8ff7-a5748f138786	5	0033	None	75	1637.3653922712815	archipelago	core_destroyed	901	1	0
+7bcba428-c6f7-4b49-b002-6d5393871e1f_game_1.replay26	7bcba428-c6f7-4b49-b002-6d5393871e1f	1	Lunds Stallions	None	75	1609.972282893989	moonrise	core_destroyed	688	0	0
+7bcba428-c6f7-4b49-b002-6d5393871e1f_game_2.replay26	7bcba428-c6f7-4b49-b002-6d5393871e1f	2	Lunds Stallions	None	75	1609.972282893989	hive	core_destroyed	370	0	0
+7bcba428-c6f7-4b49-b002-6d5393871e1f_game_3.replay26	7bcba428-c6f7-4b49-b002-6d5393871e1f	3	Lunds Stallions	None	75	1609.972282893989	fjordgate	core_destroyed	191	1	0
+7bcba428-c6f7-4b49-b002-6d5393871e1f_game_4.replay26	7bcba428-c6f7-4b49-b002-6d5393871e1f	4	Lunds Stallions	None	75	1609.972282893989	snowflake	core_destroyed	314	0	0
+7bcba428-c6f7-4b49-b002-6d5393871e1f_game_5.replay26	7bcba428-c6f7-4b49-b002-6d5393871e1f	5	Lunds Stallions	None	75	1609.972282893989	archipelago	titanium_collected	1000	0	0
+7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa_game_1.replay26	7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa	1	Lunds Stallions	None	74	1576.647311389914	eider	core_destroyed	488	0	0
+7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa_game_2.replay26	7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa	2	Lunds Stallions	None	74	1576.647311389914	atoll	core_destroyed	966	0	0
+7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa_game_3.replay26	7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa	3	Lunds Stallions	None	74	1576.647311389914	snowflake	core_destroyed	294	0	0
+7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa_game_4.replay26	7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa	4	Lunds Stallions	None	74	1576.647311389914	meander	core_destroyed	247	0	0
+7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa_game_5.replay26	7bd8bf8e-6085-4d09-8a2b-edb72ad2abfa	5	Lunds Stallions	None	74	1576.647311389914	drumlin	core_destroyed	606	0	0
+7beb69d8-fd78-46fb-ba3e-b87605042baa_game_1.replay26	7beb69d8-fd78-46fb-ba3e-b87605042baa	1	Lunds Stallions	None	80	1599.692651131237	saga	core_destroyed	231	1	1
+7beb69d8-fd78-46fb-ba3e-b87605042baa_game_2.replay26	7beb69d8-fd78-46fb-ba3e-b87605042baa	2	Lunds Stallions	None	80	1599.692651131237	lighthouse	titanium_collected	1000	1	1
+7beb69d8-fd78-46fb-ba3e-b87605042baa_game_3.replay26	7beb69d8-fd78-46fb-ba3e-b87605042baa	3	Lunds Stallions	None	80	1599.692651131237	drumlin	titanium_collected	1000	1	1
+7beb69d8-fd78-46fb-ba3e-b87605042baa_game_4.replay26	7beb69d8-fd78-46fb-ba3e-b87605042baa	4	Lunds Stallions	None	80	1599.692651131237	nordkap	core_destroyed	560	0	1
+7beb69d8-fd78-46fb-ba3e-b87605042baa_game_5.replay26	7beb69d8-fd78-46fb-ba3e-b87605042baa	5	Lunds Stallions	None	80	1599.692651131237	fjordgate	titanium_collected	1000	1	1
+7d2234bf-e507-4f07-9281-c29e8a5e83d8_game_1.replay26	7d2234bf-e507-4f07-9281-c29e8a5e83d8	1	Lunds Stallions	None	80	1504.3651209559218	archipelago	core_destroyed	116	1	0
+7d2234bf-e507-4f07-9281-c29e8a5e83d8_game_2.replay26	7d2234bf-e507-4f07-9281-c29e8a5e83d8	2	Lunds Stallions	None	80	1504.3651209559218	hive	titanium_collected	1000	0	0
+7d2234bf-e507-4f07-9281-c29e8a5e83d8_game_3.replay26	7d2234bf-e507-4f07-9281-c29e8a5e83d8	3	Lunds Stallions	None	80	1504.3651209559218	moonrise	core_destroyed	342	0	0
+7d2234bf-e507-4f07-9281-c29e8a5e83d8_game_4.replay26	7d2234bf-e507-4f07-9281-c29e8a5e83d8	4	Lunds Stallions	None	80	1504.3651209559218	lighthouse	titanium_collected	1000	0	0
+7d2234bf-e507-4f07-9281-c29e8a5e83d8_game_5.replay26	7d2234bf-e507-4f07-9281-c29e8a5e83d8	5	Lunds Stallions	None	80	1504.3651209559218	drumlin	titanium_collected	1000	0	0
+7f79ff9f-f7ea-4c06-9082-f1ce9f810e23_game_1.replay26	7f79ff9f-f7ea-4c06-9082-f1ce9f810e23	1	Askar City	None	82	1543.2309688696466	nordkap	core_destroyed	867	1	1
+7f79ff9f-f7ea-4c06-9082-f1ce9f810e23_game_2.replay26	7f79ff9f-f7ea-4c06-9082-f1ce9f810e23	2	Askar City	None	82	1543.2309688696466	atoll	titanium_collected	1000	1	1
+7f79ff9f-f7ea-4c06-9082-f1ce9f810e23_game_3.replay26	7f79ff9f-f7ea-4c06-9082-f1ce9f810e23	3	Askar City	None	82	1543.2309688696466	moonrise	core_destroyed	703	1	1
+7f79ff9f-f7ea-4c06-9082-f1ce9f810e23_game_4.replay26	7f79ff9f-f7ea-4c06-9082-f1ce9f810e23	4	Askar City	None	82	1543.2309688696466	lighthouse	core_destroyed	213	1	1
+7f79ff9f-f7ea-4c06-9082-f1ce9f810e23_game_5.replay26	7f79ff9f-f7ea-4c06-9082-f1ce9f810e23	5	Askar City	None	82	1543.2309688696466	antler	core_destroyed	125	1	1
+7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1_game_1.replay26	7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1	1	Landers	None	72	1731.836855623202	nordkap	core_destroyed	151	1	0
+7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1_game_2.replay26	7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1	2	Landers	None	72	1731.836855623202	meander	core_destroyed	657	0	0
+7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1_game_3.replay26	7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1	3	Landers	None	72	1731.836855623202	saga	core_destroyed	572	1	0
+7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1_game_4.replay26	7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1	4	Landers	None	72	1731.836855623202	snowflake	core_destroyed	621	0	0
+7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1_game_5.replay26	7fb9ff7b-0e3f-4bdb-8885-3d47d9a769c1	5	Landers	None	72	1731.836855623202	eider	core_destroyed	251	0	0
+80c6f036-1765-4879-bb96-2deee9a9c897_game_1.replay26	80c6f036-1765-4879-bb96-2deee9a9c897	1	Leviathan	None	86	1521.5901962322573	atoll	core_destroyed	217	1	1
+80c6f036-1765-4879-bb96-2deee9a9c897_game_2.replay26	80c6f036-1765-4879-bb96-2deee9a9c897	2	Leviathan	None	86	1521.5901962322573	heart	core_destroyed	226	0	1
+80c6f036-1765-4879-bb96-2deee9a9c897_game_3.replay26	80c6f036-1765-4879-bb96-2deee9a9c897	3	Leviathan	None	86	1521.5901962322573	hive	core_destroyed	261	0	1
+80c6f036-1765-4879-bb96-2deee9a9c897_game_4.replay26	80c6f036-1765-4879-bb96-2deee9a9c897	4	Leviathan	None	86	1521.5901962322573	archipelago	core_destroyed	213	1	1
+80c6f036-1765-4879-bb96-2deee9a9c897_game_5.replay26	80c6f036-1765-4879-bb96-2deee9a9c897	5	Leviathan	None	86	1521.5901962322573	meander	core_destroyed	275	1	1
+8147dea7-72e1-46b0-9457-c8fd73983751_game_1.replay26	8147dea7-72e1-46b0-9457-c8fd73983751	1	Hugging Farce	None	80	1502.5541418971159	antler	core_destroyed	118	1	1
+8147dea7-72e1-46b0-9457-c8fd73983751_game_2.replay26	8147dea7-72e1-46b0-9457-c8fd73983751	2	Hugging Farce	None	80	1502.5541418971159	archipelago	core_destroyed	92	0	1
+8147dea7-72e1-46b0-9457-c8fd73983751_game_3.replay26	8147dea7-72e1-46b0-9457-c8fd73983751	3	Hugging Farce	None	80	1502.5541418971159	moonrise	core_destroyed	555	1	1
+8147dea7-72e1-46b0-9457-c8fd73983751_game_4.replay26	8147dea7-72e1-46b0-9457-c8fd73983751	4	Hugging Farce	None	80	1502.5541418971159	eider	core_destroyed	133	0	1
+8147dea7-72e1-46b0-9457-c8fd73983751_game_5.replay26	8147dea7-72e1-46b0-9457-c8fd73983751	5	Hugging Farce	None	80	1502.5541418971159	jackpot	titanium_collected	1000	0	1
+825873f0-a2cd-4b99-afe7-4fa14c18649d_game_1.replay26	825873f0-a2cd-4b99-afe7-4fa14c18649d	1	OopsGotYourElo	None	70	1568.0674582168929	lighthouse	titanium_collected	1000	1	0
+825873f0-a2cd-4b99-afe7-4fa14c18649d_game_2.replay26	825873f0-a2cd-4b99-afe7-4fa14c18649d	2	OopsGotYourElo	None	70	1568.0674582168929	snowflake	core_destroyed	884	1	0
+825873f0-a2cd-4b99-afe7-4fa14c18649d_game_3.replay26	825873f0-a2cd-4b99-afe7-4fa14c18649d	3	OopsGotYourElo	None	70	1568.0674582168929	meander	titanium_collected	1000	1	0
+825873f0-a2cd-4b99-afe7-4fa14c18649d_game_4.replay26	825873f0-a2cd-4b99-afe7-4fa14c18649d	4	OopsGotYourElo	None	70	1568.0674582168929	heart	core_destroyed	252	1	0
+825873f0-a2cd-4b99-afe7-4fa14c18649d_game_5.replay26	825873f0-a2cd-4b99-afe7-4fa14c18649d	5	OopsGotYourElo	None	70	1568.0674582168929	archipelago	titanium_collected	1000	0	0
+83b0fd6d-2cf9-4dea-ad91-be751aae39fb_game_1.replay26	83b0fd6d-2cf9-4dea-ad91-be751aae39fb	1	0033	None	77	1615.9821166814406	hive	core_destroyed	342	1	0
+83b0fd6d-2cf9-4dea-ad91-be751aae39fb_game_2.replay26	83b0fd6d-2cf9-4dea-ad91-be751aae39fb	2	0033	None	77	1615.9821166814406	nordkap	titanium_collected	1000	0	0
+83b0fd6d-2cf9-4dea-ad91-be751aae39fb_game_3.replay26	83b0fd6d-2cf9-4dea-ad91-be751aae39fb	3	0033	None	77	1615.9821166814406	lighthouse	core_destroyed	208	0	0
+83b0fd6d-2cf9-4dea-ad91-be751aae39fb_game_4.replay26	83b0fd6d-2cf9-4dea-ad91-be751aae39fb	4	0033	None	77	1615.9821166814406	jackpot	core_destroyed	669	1	0
+83b0fd6d-2cf9-4dea-ad91-be751aae39fb_game_5.replay26	83b0fd6d-2cf9-4dea-ad91-be751aae39fb	5	0033	None	77	1615.9821166814406	moonrise	core_destroyed	130	0	0
+86e91e86-1608-43b2-8b79-5bc4b7027014_game_1.replay26	86e91e86-1608-43b2-8b79-5bc4b7027014	1	Banminary	None	72	1664.977164866846	nordkap	core_destroyed	309	1	0
+86e91e86-1608-43b2-8b79-5bc4b7027014_game_2.replay26	86e91e86-1608-43b2-8b79-5bc4b7027014	2	Banminary	None	72	1664.977164866846	hive	core_destroyed	90	1	0
+86e91e86-1608-43b2-8b79-5bc4b7027014_game_3.replay26	86e91e86-1608-43b2-8b79-5bc4b7027014	3	Banminary	None	72	1664.977164866846	atoll	core_destroyed	112	1	0
+86e91e86-1608-43b2-8b79-5bc4b7027014_game_4.replay26	86e91e86-1608-43b2-8b79-5bc4b7027014	4	Banminary	None	72	1664.977164866846	drumlin	core_destroyed	94	1	0
+86e91e86-1608-43b2-8b79-5bc4b7027014_game_5.replay26	86e91e86-1608-43b2-8b79-5bc4b7027014	5	Banminary	None	72	1664.977164866846	moonrise	core_destroyed	109	1	0
+8704178a-45a0-48d6-8afa-8585f627ea0d_game_1.replay26	8704178a-45a0-48d6-8afa-8585f627ea0d	1	CtrlAltDefeat	None	74	1594.540345699968	meander	core_destroyed	413	0	1
+8704178a-45a0-48d6-8afa-8585f627ea0d_game_2.replay26	8704178a-45a0-48d6-8afa-8585f627ea0d	2	CtrlAltDefeat	None	74	1594.540345699968	moonrise	titanium_collected	1000	1	1
+8704178a-45a0-48d6-8afa-8585f627ea0d_game_3.replay26	8704178a-45a0-48d6-8afa-8585f627ea0d	3	CtrlAltDefeat	None	74	1594.540345699968	antler	core_destroyed	608	0	1
+8704178a-45a0-48d6-8afa-8585f627ea0d_game_4.replay26	8704178a-45a0-48d6-8afa-8585f627ea0d	4	CtrlAltDefeat	None	74	1594.540345699968	heart	core_destroyed	362	0	1
+8704178a-45a0-48d6-8afa-8585f627ea0d_game_5.replay26	8704178a-45a0-48d6-8afa-8585f627ea0d	5	CtrlAltDefeat	None	74	1594.540345699968	nordkap	core_destroyed	208	0	1
+873cfde7-3b19-484f-9504-6feda7ae8bff_game_1.replay26	873cfde7-3b19-484f-9504-6feda7ae8bff	1	Team 48	None	75	1647.1783065707239	moonrise	core_destroyed	143	1	1
+873cfde7-3b19-484f-9504-6feda7ae8bff_game_2.replay26	873cfde7-3b19-484f-9504-6feda7ae8bff	2	Team 48	None	75	1647.1783065707239	hive	core_destroyed	217	1	1
+873cfde7-3b19-484f-9504-6feda7ae8bff_game_3.replay26	873cfde7-3b19-484f-9504-6feda7ae8bff	3	Team 48	None	75	1647.1783065707239	heart	core_destroyed	291	0	1
+873cfde7-3b19-484f-9504-6feda7ae8bff_game_4.replay26	873cfde7-3b19-484f-9504-6feda7ae8bff	4	Team 48	None	75	1647.1783065707239	jackpot	core_destroyed	329	1	1
+873cfde7-3b19-484f-9504-6feda7ae8bff_game_5.replay26	873cfde7-3b19-484f-9504-6feda7ae8bff	5	Team 48	None	75	1647.1783065707239	nordkap	core_destroyed	75	1	1
+8768b36d-8afc-4113-b33b-7c78eab51c80_game_1.replay26	8768b36d-8afc-4113-b33b-7c78eab51c80	1	Askar City	None	71	1571.8537302120228	antler	titanium_collected	1000	0	1
+8768b36d-8afc-4113-b33b-7c78eab51c80_game_2.replay26	8768b36d-8afc-4113-b33b-7c78eab51c80	2	Askar City	None	71	1571.8537302120228	drumlin	core_destroyed	142	1	1
+8768b36d-8afc-4113-b33b-7c78eab51c80_game_3.replay26	8768b36d-8afc-4113-b33b-7c78eab51c80	3	Askar City	None	71	1571.8537302120228	saga	core_destroyed	96	1	1
+8768b36d-8afc-4113-b33b-7c78eab51c80_game_4.replay26	8768b36d-8afc-4113-b33b-7c78eab51c80	4	Askar City	None	71	1571.8537302120228	heart	core_destroyed	490	1	1
+8768b36d-8afc-4113-b33b-7c78eab51c80_game_5.replay26	8768b36d-8afc-4113-b33b-7c78eab51c80	5	Askar City	None	71	1571.8537302120228	nordkap	core_destroyed	402	0	1
+8996dfc2-edbc-4734-9969-96dac1c29558_game_1.replay26	8996dfc2-edbc-4734-9969-96dac1c29558	1	Leviathan	None	72	1685.4171944648074	nordkap	core_destroyed	227	1	1
+8996dfc2-edbc-4734-9969-96dac1c29558_game_2.replay26	8996dfc2-edbc-4734-9969-96dac1c29558	2	Leviathan	None	72	1685.4171944648074	antler	core_destroyed	353	0	1
+8996dfc2-edbc-4734-9969-96dac1c29558_game_3.replay26	8996dfc2-edbc-4734-9969-96dac1c29558	3	Leviathan	None	72	1685.4171944648074	hive	titanium_collected	1000	1	1
+8996dfc2-edbc-4734-9969-96dac1c29558_game_4.replay26	8996dfc2-edbc-4734-9969-96dac1c29558	4	Leviathan	None	72	1685.4171944648074	heart	core_destroyed	275	1	1
+8996dfc2-edbc-4734-9969-96dac1c29558_game_5.replay26	8996dfc2-edbc-4734-9969-96dac1c29558	5	Leviathan	None	72	1685.4171944648074	eider	core_destroyed	126	0	1
+8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7_game_1.replay26	8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7	1	Banminary	None	80	1643.7381007750914	saga	core_destroyed	793	1	1
+8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7_game_2.replay26	8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7	2	Banminary	None	80	1643.7381007750914	heart	core_destroyed	361	1	1
+8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7_game_3.replay26	8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7	3	Banminary	None	80	1643.7381007750914	eider	core_destroyed	897	0	1
+8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7_game_4.replay26	8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7	4	Banminary	None	80	1643.7381007750914	moonrise	core_destroyed	561	0	1
+8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7_game_5.replay26	8b0bf249-a0f5-4a6e-bda5-3c1f05c4a9b7	5	Banminary	None	80	1643.7381007750914	drumlin	core_destroyed	179	1	1
+8b16f7fa-831e-4ae9-9816-c1380e140b3a_game_1.replay26	8b16f7fa-831e-4ae9-9816-c1380e140b3a	1	OopsGotYourElo	None	71	1568.1148715365896	hive	core_destroyed	224	1	0
+8b16f7fa-831e-4ae9-9816-c1380e140b3a_game_2.replay26	8b16f7fa-831e-4ae9-9816-c1380e140b3a	2	OopsGotYourElo	None	71	1568.1148715365896	heart	titanium_collected	1000	1	0
+8b16f7fa-831e-4ae9-9816-c1380e140b3a_game_3.replay26	8b16f7fa-831e-4ae9-9816-c1380e140b3a	3	OopsGotYourElo	None	71	1568.1148715365896	meander	core_destroyed	400	1	0
+8b16f7fa-831e-4ae9-9816-c1380e140b3a_game_4.replay26	8b16f7fa-831e-4ae9-9816-c1380e140b3a	4	OopsGotYourElo	None	71	1568.1148715365896	jackpot	titanium_collected	1000	0	0
+8b16f7fa-831e-4ae9-9816-c1380e140b3a_game_5.replay26	8b16f7fa-831e-4ae9-9816-c1380e140b3a	5	OopsGotYourElo	None	71	1568.1148715365896	drumlin	titanium_collected	1000	1	0
+8baadb5a-4a53-4ee4-b075-374e49a0fd70_game_1.replay26	8baadb5a-4a53-4ee4-b075-374e49a0fd70	1	0033	None	66	1562.5316587436828	moonrise	core_destroyed	120	1	1
+8baadb5a-4a53-4ee4-b075-374e49a0fd70_game_2.replay26	8baadb5a-4a53-4ee4-b075-374e49a0fd70	2	0033	None	66	1562.5316587436828	lighthouse	core_destroyed	177	1	1
+8baadb5a-4a53-4ee4-b075-374e49a0fd70_game_3.replay26	8baadb5a-4a53-4ee4-b075-374e49a0fd70	3	0033	None	66	1562.5316587436828	atoll	core_destroyed	73	1	1
+8baadb5a-4a53-4ee4-b075-374e49a0fd70_game_4.replay26	8baadb5a-4a53-4ee4-b075-374e49a0fd70	4	0033	None	66	1562.5316587436828	archipelago	core_destroyed	118	1	1
+8baadb5a-4a53-4ee4-b075-374e49a0fd70_game_5.replay26	8baadb5a-4a53-4ee4-b075-374e49a0fd70	5	0033	None	66	1562.5316587436828	snowflake	core_destroyed	127	0	1
+8c430a07-ca8c-4de4-997c-836fd15e1a0a_game_1.replay26	8c430a07-ca8c-4de4-997c-836fd15e1a0a	1	Askar City	None	80	1542.1095481074333	archipelago	core_destroyed	301	0	1
+8c430a07-ca8c-4de4-997c-836fd15e1a0a_game_2.replay26	8c430a07-ca8c-4de4-997c-836fd15e1a0a	2	Askar City	None	80	1542.1095481074333	saga	titanium_collected	1000	1	1
+8c430a07-ca8c-4de4-997c-836fd15e1a0a_game_3.replay26	8c430a07-ca8c-4de4-997c-836fd15e1a0a	3	Askar City	None	80	1542.1095481074333	jackpot	core_destroyed	307	0	1
+8c430a07-ca8c-4de4-997c-836fd15e1a0a_game_4.replay26	8c430a07-ca8c-4de4-997c-836fd15e1a0a	4	Askar City	None	80	1542.1095481074333	drumlin	core_destroyed	212	0	1
+8c430a07-ca8c-4de4-997c-836fd15e1a0a_game_5.replay26	8c430a07-ca8c-4de4-997c-836fd15e1a0a	5	Askar City	None	80	1542.1095481074333	heart	titanium_collected	1000	1	1
+8d0e02c1-54db-43c7-bb42-93520034bb21_game_1.replay26	8d0e02c1-54db-43c7-bb42-93520034bb21	1	CtrlAltDefeat	None	75	1619.262182823642	fjordgate	core_destroyed	316	1	1
+8d0e02c1-54db-43c7-bb42-93520034bb21_game_2.replay26	8d0e02c1-54db-43c7-bb42-93520034bb21	2	CtrlAltDefeat	None	75	1619.262182823642	moonrise	titanium_collected	1000	1	1
+8d0e02c1-54db-43c7-bb42-93520034bb21_game_3.replay26	8d0e02c1-54db-43c7-bb42-93520034bb21	3	CtrlAltDefeat	None	75	1619.262182823642	lighthouse	titanium_collected	1000	1	1
+8d0e02c1-54db-43c7-bb42-93520034bb21_game_4.replay26	8d0e02c1-54db-43c7-bb42-93520034bb21	4	CtrlAltDefeat	None	75	1619.262182823642	hive	core_destroyed	317	0	1
+8d0e02c1-54db-43c7-bb42-93520034bb21_game_5.replay26	8d0e02c1-54db-43c7-bb42-93520034bb21	5	CtrlAltDefeat	None	75	1619.262182823642	eider	core_destroyed	559	0	1
+8f853f5f-8683-4ca8-95a5-f936e4dd9da2_game_1.replay26	8f853f5f-8683-4ca8-95a5-f936e4dd9da2	1	Powerpuff Girls	None	80	1573.4758670232914	antler	core_destroyed	502	0	1
+8f853f5f-8683-4ca8-95a5-f936e4dd9da2_game_2.replay26	8f853f5f-8683-4ca8-95a5-f936e4dd9da2	2	Powerpuff Girls	None	80	1573.4758670232914	drumlin	core_destroyed	856	0	1
+8f853f5f-8683-4ca8-95a5-f936e4dd9da2_game_3.replay26	8f853f5f-8683-4ca8-95a5-f936e4dd9da2	3	Powerpuff Girls	None	80	1573.4758670232914	snowflake	titanium_collected	1000	0	1
+8f853f5f-8683-4ca8-95a5-f936e4dd9da2_game_4.replay26	8f853f5f-8683-4ca8-95a5-f936e4dd9da2	4	Powerpuff Girls	None	80	1573.4758670232914	lighthouse	titanium_collected	1000	0	1
+8f853f5f-8683-4ca8-95a5-f936e4dd9da2_game_5.replay26	8f853f5f-8683-4ca8-95a5-f936e4dd9da2	5	Powerpuff Girls	None	80	1573.4758670232914	meander	titanium_collected	1000	0	1
+90ac1f51-6f39-4cbb-bc0d-42791bb5e223_game_1.replay26	90ac1f51-6f39-4cbb-bc0d-42791bb5e223	1	arsonist duck	None	78	1596.131415905775	archipelago	core_destroyed	157	1	0
+90ac1f51-6f39-4cbb-bc0d-42791bb5e223_game_2.replay26	90ac1f51-6f39-4cbb-bc0d-42791bb5e223	2	arsonist duck	None	78	1596.131415905775	fjordgate	core_destroyed	901	0	0
+90ac1f51-6f39-4cbb-bc0d-42791bb5e223_game_3.replay26	90ac1f51-6f39-4cbb-bc0d-42791bb5e223	3	arsonist duck	None	78	1596.131415905775	jackpot	core_destroyed	120	0	0
+90ac1f51-6f39-4cbb-bc0d-42791bb5e223_game_4.replay26	90ac1f51-6f39-4cbb-bc0d-42791bb5e223	4	arsonist duck	None	78	1596.131415905775	drumlin	core_destroyed	121	0	0
+90ac1f51-6f39-4cbb-bc0d-42791bb5e223_game_5.replay26	90ac1f51-6f39-4cbb-bc0d-42791bb5e223	5	arsonist duck	None	78	1596.131415905775	saga	core_destroyed	141	0	0
+922b5da8-9d0d-456b-8bd9-501cb9f3355a_game_1.replay26	922b5da8-9d0d-456b-8bd9-501cb9f3355a	1	CtrlAltDefeat	None	77	1593.397048035773	lighthouse	core_destroyed	275	1	0
+922b5da8-9d0d-456b-8bd9-501cb9f3355a_game_2.replay26	922b5da8-9d0d-456b-8bd9-501cb9f3355a	2	CtrlAltDefeat	None	77	1593.397048035773	heart	titanium_collected	1000	1	0
+922b5da8-9d0d-456b-8bd9-501cb9f3355a_game_3.replay26	922b5da8-9d0d-456b-8bd9-501cb9f3355a	3	CtrlAltDefeat	None	77	1593.397048035773	meander	core_destroyed	103	1	0
+922b5da8-9d0d-456b-8bd9-501cb9f3355a_game_4.replay26	922b5da8-9d0d-456b-8bd9-501cb9f3355a	4	CtrlAltDefeat	None	77	1593.397048035773	atoll	titanium_collected	1000	1	0
+922b5da8-9d0d-456b-8bd9-501cb9f3355a_game_5.replay26	922b5da8-9d0d-456b-8bd9-501cb9f3355a	5	CtrlAltDefeat	None	77	1593.397048035773	drumlin	titanium_collected	1000	0	0
+92d2e09a-819b-4c5a-ac45-b9d1e0aec04d_game_1.replay26	92d2e09a-819b-4c5a-ac45-b9d1e0aec04d	1	Powerpuff Girls	None	67	1549.8623155470555	jackpot	titanium_collected	1000	1	0
+92d2e09a-819b-4c5a-ac45-b9d1e0aec04d_game_2.replay26	92d2e09a-819b-4c5a-ac45-b9d1e0aec04d	2	Powerpuff Girls	None	67	1549.8623155470555	saga	core_destroyed	519	0	0
+92d2e09a-819b-4c5a-ac45-b9d1e0aec04d_game_3.replay26	92d2e09a-819b-4c5a-ac45-b9d1e0aec04d	3	Powerpuff Girls	None	67	1549.8623155470555	drumlin	titanium_collected	1000	0	0
+92d2e09a-819b-4c5a-ac45-b9d1e0aec04d_game_4.replay26	92d2e09a-819b-4c5a-ac45-b9d1e0aec04d	4	Powerpuff Girls	None	67	1549.8623155470555	antler	core_destroyed	150	1	0
+92d2e09a-819b-4c5a-ac45-b9d1e0aec04d_game_5.replay26	92d2e09a-819b-4c5a-ac45-b9d1e0aec04d	5	Powerpuff Girls	None	67	1549.8623155470555	atoll	titanium_collected	1000	1	0
+93ddc940-ab33-433c-b226-680abda4c5e7_game_1.replay26	93ddc940-ab33-433c-b226-680abda4c5e7	1	gsxWins	None	72	1703.8583907134237	saga	core_destroyed	86	1	1
+93ddc940-ab33-433c-b226-680abda4c5e7_game_2.replay26	93ddc940-ab33-433c-b226-680abda4c5e7	2	gsxWins	None	72	1703.8583907134237	atoll	core_destroyed	161	1	1
+93ddc940-ab33-433c-b226-680abda4c5e7_game_3.replay26	93ddc940-ab33-433c-b226-680abda4c5e7	3	gsxWins	None	72	1703.8583907134237	nordkap	core_destroyed	294	1	1
+93ddc940-ab33-433c-b226-680abda4c5e7_game_4.replay26	93ddc940-ab33-433c-b226-680abda4c5e7	4	gsxWins	None	72	1703.8583907134237	snowflake	core_destroyed	72	0	1
+93ddc940-ab33-433c-b226-680abda4c5e7_game_5.replay26	93ddc940-ab33-433c-b226-680abda4c5e7	5	gsxWins	None	72	1703.8583907134237	eider	core_destroyed	590	0	1
+94082c29-765e-4edb-aa5b-c0defb4aeb71_game_1.replay26	94082c29-765e-4edb-aa5b-c0defb4aeb71	1	Team 48	None	80	1538.218193264557	eider	core_destroyed	94	1	0
+94082c29-765e-4edb-aa5b-c0defb4aeb71_game_2.replay26	94082c29-765e-4edb-aa5b-c0defb4aeb71	2	Team 48	None	80	1538.218193264557	hive	core_destroyed	117	1	0
+94082c29-765e-4edb-aa5b-c0defb4aeb71_game_3.replay26	94082c29-765e-4edb-aa5b-c0defb4aeb71	3	Team 48	None	80	1538.218193264557	drumlin	core_destroyed	73	1	0
+94082c29-765e-4edb-aa5b-c0defb4aeb71_game_4.replay26	94082c29-765e-4edb-aa5b-c0defb4aeb71	4	Team 48	None	80	1538.218193264557	atoll	core_destroyed	308	0	0
+94082c29-765e-4edb-aa5b-c0defb4aeb71_game_5.replay26	94082c29-765e-4edb-aa5b-c0defb4aeb71	5	Team 48	None	80	1538.218193264557	nordkap	core_destroyed	72	1	0
+9449b97c-b217-4dc7-b692-0a8505cd04c0_game_1.replay26	9449b97c-b217-4dc7-b692-0a8505cd04c0	1	opensverige - plan B	None	80	1550.2165287917246	archipelago	core_destroyed	131	1	0
+9449b97c-b217-4dc7-b692-0a8505cd04c0_game_2.replay26	9449b97c-b217-4dc7-b692-0a8505cd04c0	2	opensverige - plan B	None	80	1550.2165287917246	snowflake	core_destroyed	109	1	0
+9449b97c-b217-4dc7-b692-0a8505cd04c0_game_3.replay26	9449b97c-b217-4dc7-b692-0a8505cd04c0	3	opensverige - plan B	None	80	1550.2165287917246	nordkap	titanium_collected	1000	1	0
+9449b97c-b217-4dc7-b692-0a8505cd04c0_game_4.replay26	9449b97c-b217-4dc7-b692-0a8505cd04c0	4	opensverige - plan B	None	80	1550.2165287917246	heart	core_destroyed	233	0	0
+9449b97c-b217-4dc7-b692-0a8505cd04c0_game_5.replay26	9449b97c-b217-4dc7-b692-0a8505cd04c0	5	opensverige - plan B	None	80	1550.2165287917246	meander	titanium_collected	1000	0	0
+94a8c05c-268b-423a-a4e3-773ceb086128_game_1.replay26	94a8c05c-268b-423a-a4e3-773ceb086128	1	OopsGotYourElo	None	74	1604.6864454215458	archipelago	titanium_collected	1000	0	1
+94a8c05c-268b-423a-a4e3-773ceb086128_game_2.replay26	94a8c05c-268b-423a-a4e3-773ceb086128	2	OopsGotYourElo	None	74	1604.6864454215458	nordkap	titanium_collected	1000	0	1
+94a8c05c-268b-423a-a4e3-773ceb086128_game_3.replay26	94a8c05c-268b-423a-a4e3-773ceb086128	3	OopsGotYourElo	None	74	1604.6864454215458	drumlin	titanium_collected	1000	1	1
+94a8c05c-268b-423a-a4e3-773ceb086128_game_4.replay26	94a8c05c-268b-423a-a4e3-773ceb086128	4	OopsGotYourElo	None	74	1604.6864454215458	lighthouse	titanium_collected	1000	1	1
+94a8c05c-268b-423a-a4e3-773ceb086128_game_5.replay26	94a8c05c-268b-423a-a4e3-773ceb086128	5	OopsGotYourElo	None	74	1604.6864454215458	hive	titanium_collected	1000	0	1
+95b96a5b-dd00-46d6-a607-74f72af5d2df_game_1.replay26	95b96a5b-dd00-46d6-a607-74f72af5d2df	1	Memtrace	None	76	1548.5062752511149	hive	core_destroyed	174	0	0
+95b96a5b-dd00-46d6-a607-74f72af5d2df_game_2.replay26	95b96a5b-dd00-46d6-a607-74f72af5d2df	2	Memtrace	None	76	1548.5062752511149	saga	titanium_collected	1000	1	0
+95b96a5b-dd00-46d6-a607-74f72af5d2df_game_3.replay26	95b96a5b-dd00-46d6-a607-74f72af5d2df	3	Memtrace	None	76	1548.5062752511149	fjordgate	core_destroyed	448	0	0
+95b96a5b-dd00-46d6-a607-74f72af5d2df_game_4.replay26	95b96a5b-dd00-46d6-a607-74f72af5d2df	4	Memtrace	None	76	1548.5062752511149	archipelago	core_destroyed	562	1	0
+95b96a5b-dd00-46d6-a607-74f72af5d2df_game_5.replay26	95b96a5b-dd00-46d6-a607-74f72af5d2df	5	Memtrace	None	76	1548.5062752511149	eider	core_destroyed	463	1	0
+963990ec-5d62-4de5-aed4-42fe53471014_game_1.replay26	963990ec-5d62-4de5-aed4-42fe53471014	1	Kings College Munich	None	76	1604.2995908997757	fjordgate	core_destroyed	132	1	0
+963990ec-5d62-4de5-aed4-42fe53471014_game_2.replay26	963990ec-5d62-4de5-aed4-42fe53471014	2	Kings College Munich	None	76	1604.2995908997757	moonrise	core_destroyed	223	1	0
+963990ec-5d62-4de5-aed4-42fe53471014_game_3.replay26	963990ec-5d62-4de5-aed4-42fe53471014	3	Kings College Munich	None	76	1604.2995908997757	archipelago	core_destroyed	388	0	0
+963990ec-5d62-4de5-aed4-42fe53471014_game_4.replay26	963990ec-5d62-4de5-aed4-42fe53471014	4	Kings College Munich	None	76	1604.2995908997757	heart	titanium_collected	1000	0	0
+963990ec-5d62-4de5-aed4-42fe53471014_game_5.replay26	963990ec-5d62-4de5-aed4-42fe53471014	5	Kings College Munich	None	76	1604.2995908997757	snowflake	core_destroyed	541	0	0
+96b6373a-c2bb-44e8-ba90-2023c1a7d390_game_1.replay26	96b6373a-c2bb-44e8-ba90-2023c1a7d390	1	opensverige - plan B	None	84	1510.9666523754884	saga	core_destroyed	175	1	1
+96b6373a-c2bb-44e8-ba90-2023c1a7d390_game_2.replay26	96b6373a-c2bb-44e8-ba90-2023c1a7d390	2	opensverige - plan B	None	84	1510.9666523754884	moonrise	titanium_collected	1000	1	1
+96b6373a-c2bb-44e8-ba90-2023c1a7d390_game_3.replay26	96b6373a-c2bb-44e8-ba90-2023c1a7d390	3	opensverige - plan B	None	84	1510.9666523754884	drumlin	core_destroyed	177	0	1
+96b6373a-c2bb-44e8-ba90-2023c1a7d390_game_4.replay26	96b6373a-c2bb-44e8-ba90-2023c1a7d390	4	opensverige - plan B	None	84	1510.9666523754884	meander	core_destroyed	291	0	1
+96b6373a-c2bb-44e8-ba90-2023c1a7d390_game_5.replay26	96b6373a-c2bb-44e8-ba90-2023c1a7d390	5	opensverige - plan B	None	84	1510.9666523754884	antler	titanium_collected	1000	1	1
+98791564-d4dc-431a-95c6-d42f60f70702_game_1.replay26	98791564-d4dc-431a-95c6-d42f60f70702	1	Memtrace	None	74	1574.09010804452	hive	core_destroyed	230	0	1
+98791564-d4dc-431a-95c6-d42f60f70702_game_2.replay26	98791564-d4dc-431a-95c6-d42f60f70702	2	Memtrace	None	74	1574.09010804452	atoll	core_destroyed	100	1	1
+98791564-d4dc-431a-95c6-d42f60f70702_game_3.replay26	98791564-d4dc-431a-95c6-d42f60f70702	3	Memtrace	None	74	1574.09010804452	meander	core_destroyed	140	1	1
+98791564-d4dc-431a-95c6-d42f60f70702_game_4.replay26	98791564-d4dc-431a-95c6-d42f60f70702	4	Memtrace	None	74	1574.09010804452	archipelago	titanium_collected	1000	0	1
+98791564-d4dc-431a-95c6-d42f60f70702_game_5.replay26	98791564-d4dc-431a-95c6-d42f60f70702	5	Memtrace	None	74	1574.09010804452	antler	core_destroyed	65	1	1
+98e2c1fc-1670-459d-87f8-79702054fc29_game_1.replay26	98e2c1fc-1670-459d-87f8-79702054fc29	1	kladde chatte tville (och oss)	None	72	1727.4595623372613	lighthouse	core_destroyed	595	0	1
+98e2c1fc-1670-459d-87f8-79702054fc29_game_2.replay26	98e2c1fc-1670-459d-87f8-79702054fc29	2	kladde chatte tville (och oss)	None	72	1727.4595623372613	nordkap	core_destroyed	201	0	1
+98e2c1fc-1670-459d-87f8-79702054fc29_game_3.replay26	98e2c1fc-1670-459d-87f8-79702054fc29	3	kladde chatte tville (och oss)	None	72	1727.4595623372613	atoll	core_destroyed	797	0	1
+98e2c1fc-1670-459d-87f8-79702054fc29_game_4.replay26	98e2c1fc-1670-459d-87f8-79702054fc29	4	kladde chatte tville (och oss)	None	72	1727.4595623372613	jackpot	core_destroyed	349	0	1
+98e2c1fc-1670-459d-87f8-79702054fc29_game_5.replay26	98e2c1fc-1670-459d-87f8-79702054fc29	5	kladde chatte tville (och oss)	None	72	1727.4595623372613	eider	core_destroyed	242	0	1
+9a279d70-417c-438a-8337-45653c17dd0d_game_1.replay26	9a279d70-417c-438a-8337-45653c17dd0d	1	Team 48	None	68	1590.8825480503945	lighthouse	core_destroyed	62	0	1
+9a279d70-417c-438a-8337-45653c17dd0d_game_2.replay26	9a279d70-417c-438a-8337-45653c17dd0d	2	Team 48	None	68	1590.8825480503945	meander	core_destroyed	381	0	1
+9a279d70-417c-438a-8337-45653c17dd0d_game_3.replay26	9a279d70-417c-438a-8337-45653c17dd0d	3	Team 48	None	68	1590.8825480503945	nordkap	core_destroyed	77	1	1
+9a279d70-417c-438a-8337-45653c17dd0d_game_4.replay26	9a279d70-417c-438a-8337-45653c17dd0d	4	Team 48	None	68	1590.8825480503945	drumlin	core_destroyed	77	0	1
+9a279d70-417c-438a-8337-45653c17dd0d_game_5.replay26	9a279d70-417c-438a-8337-45653c17dd0d	5	Team 48	None	68	1590.8825480503945	fjordgate	core_destroyed	417	0	1
+9a32a859-74b2-4c4b-97d1-a19054e569e3_game_1.replay26	9a32a859-74b2-4c4b-97d1-a19054e569e3	1	Kings College Munich	None	68	1584.7566824496948	drumlin	core_destroyed	663	0	1
+9a32a859-74b2-4c4b-97d1-a19054e569e3_game_2.replay26	9a32a859-74b2-4c4b-97d1-a19054e569e3	2	Kings College Munich	None	68	1584.7566824496948	eider	core_destroyed	127	0	1
+9a32a859-74b2-4c4b-97d1-a19054e569e3_game_3.replay26	9a32a859-74b2-4c4b-97d1-a19054e569e3	3	Kings College Munich	None	68	1584.7566824496948	atoll	titanium_collected	1000	1	1
+9a32a859-74b2-4c4b-97d1-a19054e569e3_game_4.replay26	9a32a859-74b2-4c4b-97d1-a19054e569e3	4	Kings College Munich	None	68	1584.7566824496948	saga	core_destroyed	445	0	1
+9a32a859-74b2-4c4b-97d1-a19054e569e3_game_5.replay26	9a32a859-74b2-4c4b-97d1-a19054e569e3	5	Kings College Munich	None	68	1584.7566824496948	snowflake	core_destroyed	228	0	1
+9cf2b956-8625-468f-8908-0e6a51f9a26c_game_1.replay26	9cf2b956-8625-468f-8908-0e6a51f9a26c	1	farming_200s	None	74	1505.8111926751926	antler	titanium_collected	1000	0	0
+9cf2b956-8625-468f-8908-0e6a51f9a26c_game_2.replay26	9cf2b956-8625-468f-8908-0e6a51f9a26c	2	farming_200s	None	74	1505.8111926751926	heart	core_destroyed	189	1	0
+9cf2b956-8625-468f-8908-0e6a51f9a26c_game_3.replay26	9cf2b956-8625-468f-8908-0e6a51f9a26c	3	farming_200s	None	74	1505.8111926751926	archipelago	core_destroyed	399	0	0
+9cf2b956-8625-468f-8908-0e6a51f9a26c_game_4.replay26	9cf2b956-8625-468f-8908-0e6a51f9a26c	4	farming_200s	None	74	1505.8111926751926	saga	core_destroyed	276	1	0
+9cf2b956-8625-468f-8908-0e6a51f9a26c_game_5.replay26	9cf2b956-8625-468f-8908-0e6a51f9a26c	5	farming_200s	None	74	1505.8111926751926	snowflake	core_destroyed	189	1	0
+9d2b38bb-2e44-4794-8cb8-b3f473814a77_game_1.replay26	9d2b38bb-2e44-4794-8cb8-b3f473814a77	1	CtrlAltDefeat	None	68	1631.5515902704049	snowflake	core_destroyed	314	0	0
+9d2b38bb-2e44-4794-8cb8-b3f473814a77_game_2.replay26	9d2b38bb-2e44-4794-8cb8-b3f473814a77	2	CtrlAltDefeat	None	68	1631.5515902704049	saga	core_destroyed	257	0	0
+9d2b38bb-2e44-4794-8cb8-b3f473814a77_game_3.replay26	9d2b38bb-2e44-4794-8cb8-b3f473814a77	3	CtrlAltDefeat	None	68	1631.5515902704049	lighthouse	core_destroyed	582	0	0
+9d2b38bb-2e44-4794-8cb8-b3f473814a77_game_4.replay26	9d2b38bb-2e44-4794-8cb8-b3f473814a77	4	CtrlAltDefeat	None	68	1631.5515902704049	drumlin	core_destroyed	324	0	0
+9d2b38bb-2e44-4794-8cb8-b3f473814a77_game_5.replay26	9d2b38bb-2e44-4794-8cb8-b3f473814a77	5	CtrlAltDefeat	None	68	1631.5515902704049	moonrise	titanium_collected	1000	1	0
+9db6a45d-e76d-4fce-9965-2a9194eab18e_game_1.replay26	9db6a45d-e76d-4fce-9965-2a9194eab18e	1	Banminary	None	75	1623.5117747292632	saga	core_destroyed	968	0	1
+9db6a45d-e76d-4fce-9965-2a9194eab18e_game_2.replay26	9db6a45d-e76d-4fce-9965-2a9194eab18e	2	Banminary	None	75	1623.5117747292632	hive	core_destroyed	66	0	1
+9db6a45d-e76d-4fce-9965-2a9194eab18e_game_3.replay26	9db6a45d-e76d-4fce-9965-2a9194eab18e	3	Banminary	None	75	1623.5117747292632	meander	core_destroyed	373	1	1
+9db6a45d-e76d-4fce-9965-2a9194eab18e_game_4.replay26	9db6a45d-e76d-4fce-9965-2a9194eab18e	4	Banminary	None	75	1623.5117747292632	eider	core_destroyed	322	0	1
+9db6a45d-e76d-4fce-9965-2a9194eab18e_game_5.replay26	9db6a45d-e76d-4fce-9965-2a9194eab18e	5	Banminary	None	75	1623.5117747292632	lighthouse	titanium_collected	1000	0	1
+9eb8f87a-18eb-4415-b2d7-2f856139a8cf_game_1.replay26	9eb8f87a-18eb-4415-b2d7-2f856139a8cf	1	Kings College Munich	None	72	1575.6340660467201	lighthouse	titanium_collected	1000	1	1
+9eb8f87a-18eb-4415-b2d7-2f856139a8cf_game_2.replay26	9eb8f87a-18eb-4415-b2d7-2f856139a8cf	2	Kings College Munich	None	72	1575.6340660467201	moonrise	titanium_collected	1000	0	1
+9eb8f87a-18eb-4415-b2d7-2f856139a8cf_game_3.replay26	9eb8f87a-18eb-4415-b2d7-2f856139a8cf	3	Kings College Munich	None	72	1575.6340660467201	nordkap	core_destroyed	165	0	1
+9eb8f87a-18eb-4415-b2d7-2f856139a8cf_game_4.replay26	9eb8f87a-18eb-4415-b2d7-2f856139a8cf	4	Kings College Munich	None	72	1575.6340660467201	atoll	core_destroyed	87	1	1
+9eb8f87a-18eb-4415-b2d7-2f856139a8cf_game_5.replay26	9eb8f87a-18eb-4415-b2d7-2f856139a8cf	5	Kings College Munich	None	72	1575.6340660467201	eider	titanium_collected	1000	1	1
+9f457fb1-7897-4954-9f24-4e05963dfe90_game_1.replay26	9f457fb1-7897-4954-9f24-4e05963dfe90	1	Orizon	None	68	1538.1255312845656	antler	core_destroyed	294	0	0
+9f457fb1-7897-4954-9f24-4e05963dfe90_game_2.replay26	9f457fb1-7897-4954-9f24-4e05963dfe90	2	Orizon	None	68	1538.1255312845656	drumlin	titanium_collected	1000	1	0
+9f457fb1-7897-4954-9f24-4e05963dfe90_game_3.replay26	9f457fb1-7897-4954-9f24-4e05963dfe90	3	Orizon	None	68	1538.1255312845656	atoll	core_destroyed	77	1	0
+9f457fb1-7897-4954-9f24-4e05963dfe90_game_4.replay26	9f457fb1-7897-4954-9f24-4e05963dfe90	4	Orizon	None	68	1538.1255312845656	moonrise	titanium_collected	1000	1	0
+9f457fb1-7897-4954-9f24-4e05963dfe90_game_5.replay26	9f457fb1-7897-4954-9f24-4e05963dfe90	5	Orizon	None	68	1538.1255312845656	nordkap	core_destroyed	569	0	0
+a1f4f5d0-443f-490c-a805-784611a0c61f_game_1.replay26	a1f4f5d0-443f-490c-a805-784611a0c61f	1	Lunds Stallions	None	80	1514.3274926506535	snowflake	core_destroyed	84	1	1
+a1f4f5d0-443f-490c-a805-784611a0c61f_game_2.replay26	a1f4f5d0-443f-490c-a805-784611a0c61f	2	Lunds Stallions	None	80	1514.3274926506535	eider	core_destroyed	285	0	1
+a1f4f5d0-443f-490c-a805-784611a0c61f_game_3.replay26	a1f4f5d0-443f-490c-a805-784611a0c61f	3	Lunds Stallions	None	80	1514.3274926506535	meander	core_destroyed	182	0	1
+a1f4f5d0-443f-490c-a805-784611a0c61f_game_4.replay26	a1f4f5d0-443f-490c-a805-784611a0c61f	4	Lunds Stallions	None	80	1514.3274926506535	antler	core_destroyed	438	0	1
+a1f4f5d0-443f-490c-a805-784611a0c61f_game_5.replay26	a1f4f5d0-443f-490c-a805-784611a0c61f	5	Lunds Stallions	None	80	1514.3274926506535	atoll	core_destroyed	956	0	1
+a1fc1139-c3f0-4f81-916c-4d8ab86a40d4_game_1.replay26	a1fc1139-c3f0-4f81-916c-4d8ab86a40d4	1	Powerpuff Girls	None	76	1549.1920315608822	eider	core_destroyed	177	1	0
+a1fc1139-c3f0-4f81-916c-4d8ab86a40d4_game_2.replay26	a1fc1139-c3f0-4f81-916c-4d8ab86a40d4	2	Powerpuff Girls	None	76	1549.1920315608822	saga	titanium_collected	1000	0	0
+a1fc1139-c3f0-4f81-916c-4d8ab86a40d4_game_3.replay26	a1fc1139-c3f0-4f81-916c-4d8ab86a40d4	3	Powerpuff Girls	None	76	1549.1920315608822	jackpot	titanium_collected	1000	0	0
+a1fc1139-c3f0-4f81-916c-4d8ab86a40d4_game_4.replay26	a1fc1139-c3f0-4f81-916c-4d8ab86a40d4	4	Powerpuff Girls	None	76	1549.1920315608822	archipelago	titanium_collected	1000	1	0
+a1fc1139-c3f0-4f81-916c-4d8ab86a40d4_game_5.replay26	a1fc1139-c3f0-4f81-916c-4d8ab86a40d4	5	Powerpuff Girls	None	76	1549.1920315608822	meander	core_destroyed	268	1	0
+a2b35e19-d998-444e-ac1d-336a792fe08d_game_1.replay26	a2b35e19-d998-444e-ac1d-336a792fe08d	1	gsxWins	None	72	1690.4725945333928	hive	titanium_collected	1000	0	0
+a2b35e19-d998-444e-ac1d-336a792fe08d_game_2.replay26	a2b35e19-d998-444e-ac1d-336a792fe08d	2	gsxWins	None	72	1690.4725945333928	fjordgate	core_destroyed	362	1	0
+a2b35e19-d998-444e-ac1d-336a792fe08d_game_3.replay26	a2b35e19-d998-444e-ac1d-336a792fe08d	3	gsxWins	None	72	1690.4725945333928	atoll	core_destroyed	217	0	0
+a2b35e19-d998-444e-ac1d-336a792fe08d_game_4.replay26	a2b35e19-d998-444e-ac1d-336a792fe08d	4	gsxWins	None	72	1690.4725945333928	antler	core_destroyed	887	0	0
+a2b35e19-d998-444e-ac1d-336a792fe08d_game_5.replay26	a2b35e19-d998-444e-ac1d-336a792fe08d	5	gsxWins	None	72	1690.4725945333928	heart	core_destroyed	612	1	0
+a450ea25-0e48-4523-8eba-ad1768538101_game_1.replay26	a450ea25-0e48-4523-8eba-ad1768538101	1	Memtrace	None	65	1504.7797387525272	eider	core_destroyed	69	1	0
+a450ea25-0e48-4523-8eba-ad1768538101_game_2.replay26	a450ea25-0e48-4523-8eba-ad1768538101	2	Memtrace	None	65	1504.7797387525272	snowflake	titanium_collected	1000	1	0
+a450ea25-0e48-4523-8eba-ad1768538101_game_3.replay26	a450ea25-0e48-4523-8eba-ad1768538101	3	Memtrace	None	65	1504.7797387525272	nordkap	titanium_collected	1000	0	0
+a450ea25-0e48-4523-8eba-ad1768538101_game_4.replay26	a450ea25-0e48-4523-8eba-ad1768538101	4	Memtrace	None	65	1504.7797387525272	antler	titanium_collected	1000	0	0
+a450ea25-0e48-4523-8eba-ad1768538101_game_5.replay26	a450ea25-0e48-4523-8eba-ad1768538101	5	Memtrace	None	65	1504.7797387525272	archipelago	core_destroyed	69	1	0
+a63a2f73-9a60-4013-bb38-f721e04ef5b7_game_1.replay26	a63a2f73-9a60-4013-bb38-f721e04ef5b7	1	Lunds Stallions	None	76	1627.6546481398314	nordkap	core_destroyed	200	1	1
+a63a2f73-9a60-4013-bb38-f721e04ef5b7_game_2.replay26	a63a2f73-9a60-4013-bb38-f721e04ef5b7	2	Lunds Stallions	None	76	1627.6546481398314	atoll	titanium_collected	1000	0	1
+a63a2f73-9a60-4013-bb38-f721e04ef5b7_game_3.replay26	a63a2f73-9a60-4013-bb38-f721e04ef5b7	3	Lunds Stallions	None	76	1627.6546481398314	drumlin	titanium_collected	1000	0	1
+a63a2f73-9a60-4013-bb38-f721e04ef5b7_game_4.replay26	a63a2f73-9a60-4013-bb38-f721e04ef5b7	4	Lunds Stallions	None	76	1627.6546481398314	snowflake	core_destroyed	503	0	1
+a63a2f73-9a60-4013-bb38-f721e04ef5b7_game_5.replay26	a63a2f73-9a60-4013-bb38-f721e04ef5b7	5	Lunds Stallions	None	76	1627.6546481398314	meander	core_destroyed	201	1	1
+a7aa49ec-3456-4f88-bc4a-9cea2e07164b_game_1.replay26	a7aa49ec-3456-4f88-bc4a-9cea2e07164b	1	CtrlAltDefeat	None	66	1625.9659142278738	moonrise	core_destroyed	393	1	0
+a7aa49ec-3456-4f88-bc4a-9cea2e07164b_game_2.replay26	a7aa49ec-3456-4f88-bc4a-9cea2e07164b	2	CtrlAltDefeat	None	66	1625.9659142278738	archipelago	core_destroyed	262	0	0
+a7aa49ec-3456-4f88-bc4a-9cea2e07164b_game_3.replay26	a7aa49ec-3456-4f88-bc4a-9cea2e07164b	3	CtrlAltDefeat	None	66	1625.9659142278738	drumlin	core_destroyed	672	0	0
+a7aa49ec-3456-4f88-bc4a-9cea2e07164b_game_4.replay26	a7aa49ec-3456-4f88-bc4a-9cea2e07164b	4	CtrlAltDefeat	None	66	1625.9659142278738	saga	core_destroyed	240	0	0
+a7aa49ec-3456-4f88-bc4a-9cea2e07164b_game_5.replay26	a7aa49ec-3456-4f88-bc4a-9cea2e07164b	5	CtrlAltDefeat	None	66	1625.9659142278738	hive	core_destroyed	803	0	0
+a91f29ce-0c7d-4629-88eb-71e9c6960987_game_1.replay26	a91f29ce-0c7d-4629-88eb-71e9c6960987	1	opensverige - plan B	None	80	1549.5451794958794	archipelago	core_destroyed	86	1	0
+a91f29ce-0c7d-4629-88eb-71e9c6960987_game_2.replay26	a91f29ce-0c7d-4629-88eb-71e9c6960987	2	opensverige - plan B	None	80	1549.5451794958794	hive	core_destroyed	332	0	0
+a91f29ce-0c7d-4629-88eb-71e9c6960987_game_3.replay26	a91f29ce-0c7d-4629-88eb-71e9c6960987	3	opensverige - plan B	None	80	1549.5451794958794	heart	core_destroyed	303	1	0
+a91f29ce-0c7d-4629-88eb-71e9c6960987_game_4.replay26	a91f29ce-0c7d-4629-88eb-71e9c6960987	4	opensverige - plan B	None	80	1549.5451794958794	antler	core_destroyed	274	1	0
+a91f29ce-0c7d-4629-88eb-71e9c6960987_game_5.replay26	a91f29ce-0c7d-4629-88eb-71e9c6960987	5	opensverige - plan B	None	80	1549.5451794958794	meander	core_destroyed	223	0	0
+a9e1331f-5dfb-48b6-8859-ab18e3d11636_game_1.replay26	a9e1331f-5dfb-48b6-8859-ab18e3d11636	1	arsonist duck	None	76	1548.9140915779374	moonrise	core_destroyed	161	0	1
+a9e1331f-5dfb-48b6-8859-ab18e3d11636_game_2.replay26	a9e1331f-5dfb-48b6-8859-ab18e3d11636	2	arsonist duck	None	76	1548.9140915779374	atoll	core_destroyed	299	0	1
+a9e1331f-5dfb-48b6-8859-ab18e3d11636_game_3.replay26	a9e1331f-5dfb-48b6-8859-ab18e3d11636	3	arsonist duck	None	76	1548.9140915779374	snowflake	core_destroyed	214	0	1
+a9e1331f-5dfb-48b6-8859-ab18e3d11636_game_4.replay26	a9e1331f-5dfb-48b6-8859-ab18e3d11636	4	arsonist duck	None	76	1548.9140915779374	fjordgate	core_destroyed	373	0	1
+a9e1331f-5dfb-48b6-8859-ab18e3d11636_game_5.replay26	a9e1331f-5dfb-48b6-8859-ab18e3d11636	5	arsonist duck	None	76	1548.9140915779374	nordkap	core_destroyed	116	0	1
+aa8ef0eb-443f-4535-ad90-298277d14d73_game_1.replay26	aa8ef0eb-443f-4535-ad90-298277d14d73	1	gsxWins	None	75	1641.3838875130884	drumlin	core_destroyed	115	0	1
+aa8ef0eb-443f-4535-ad90-298277d14d73_game_2.replay26	aa8ef0eb-443f-4535-ad90-298277d14d73	2	gsxWins	None	75	1641.3838875130884	antler	core_destroyed	138	1	1
+aa8ef0eb-443f-4535-ad90-298277d14d73_game_3.replay26	aa8ef0eb-443f-4535-ad90-298277d14d73	3	gsxWins	None	75	1641.3838875130884	heart	core_destroyed	501	1	1
+aa8ef0eb-443f-4535-ad90-298277d14d73_game_4.replay26	aa8ef0eb-443f-4535-ad90-298277d14d73	4	gsxWins	None	75	1641.3838875130884	snowflake	core_destroyed	190	1	1
+aa8ef0eb-443f-4535-ad90-298277d14d73_game_5.replay26	aa8ef0eb-443f-4535-ad90-298277d14d73	5	gsxWins	None	75	1641.3838875130884	nordkap	core_destroyed	168	0	1
+ad29da75-ced1-47f8-8b6c-981e62afeff4_game_1.replay26	ad29da75-ced1-47f8-8b6c-981e62afeff4	1	Focalground	None	74	1500	snowflake	core_destroyed	497	1	0
+ad29da75-ced1-47f8-8b6c-981e62afeff4_game_2.replay26	ad29da75-ced1-47f8-8b6c-981e62afeff4	2	Focalground	None	74	1500	saga	titanium_collected	1000	1	0
+ad29da75-ced1-47f8-8b6c-981e62afeff4_game_3.replay26	ad29da75-ced1-47f8-8b6c-981e62afeff4	3	Focalground	None	74	1500	lighthouse	core_destroyed	321	1	0
+ad29da75-ced1-47f8-8b6c-981e62afeff4_game_4.replay26	ad29da75-ced1-47f8-8b6c-981e62afeff4	4	Focalground	None	74	1500	moonrise	titanium_collected	1000	1	0
+ad29da75-ced1-47f8-8b6c-981e62afeff4_game_5.replay26	ad29da75-ced1-47f8-8b6c-981e62afeff4	5	Focalground	None	74	1500	drumlin	core_destroyed	999	1	0
+ae1b86af-c11c-4665-8fd0-0034f6d7436d_game_1.replay26	ae1b86af-c11c-4665-8fd0-0034f6d7436d	1	Powerpuff Girls	None	79	1540.5370959417212	nordkap	core_destroyed	459	0	0
+ae1b86af-c11c-4665-8fd0-0034f6d7436d_game_2.replay26	ae1b86af-c11c-4665-8fd0-0034f6d7436d	2	Powerpuff Girls	None	79	1540.5370959417212	lighthouse	titanium_collected	1000	1	0
+ae1b86af-c11c-4665-8fd0-0034f6d7436d_game_3.replay26	ae1b86af-c11c-4665-8fd0-0034f6d7436d	3	Powerpuff Girls	None	79	1540.5370959417212	meander	core_destroyed	323	0	0
+ae1b86af-c11c-4665-8fd0-0034f6d7436d_game_4.replay26	ae1b86af-c11c-4665-8fd0-0034f6d7436d	4	Powerpuff Girls	None	79	1540.5370959417212	drumlin	titanium_collected	1000	0	0
+ae1b86af-c11c-4665-8fd0-0034f6d7436d_game_5.replay26	ae1b86af-c11c-4665-8fd0-0034f6d7436d	5	Powerpuff Girls	None	79	1540.5370959417212	hive	core_destroyed	769	0	0
+b03c50c5-ac56-4c25-a055-aba413363146_game_1.replay26	b03c50c5-ac56-4c25-a055-aba413363146	1	OopsGotYourElo	None	80	1559.3146477756804	meander	titanium_collected	1000	0	1
+b03c50c5-ac56-4c25-a055-aba413363146_game_2.replay26	b03c50c5-ac56-4c25-a055-aba413363146	2	OopsGotYourElo	None	80	1559.3146477756804	eider	titanium_collected	1000	1	1
+b03c50c5-ac56-4c25-a055-aba413363146_game_3.replay26	b03c50c5-ac56-4c25-a055-aba413363146	3	OopsGotYourElo	None	80	1559.3146477756804	saga	titanium_collected	1000	0	1
+b03c50c5-ac56-4c25-a055-aba413363146_game_4.replay26	b03c50c5-ac56-4c25-a055-aba413363146	4	OopsGotYourElo	None	80	1559.3146477756804	lighthouse	titanium_collected	1000	1	1
+b03c50c5-ac56-4c25-a055-aba413363146_game_5.replay26	b03c50c5-ac56-4c25-a055-aba413363146	5	OopsGotYourElo	None	80	1559.3146477756804	atoll	titanium_collected	1000	1	1
+b1ae56d0-1911-4042-95e6-ed5e6c82301d_game_1.replay26	b1ae56d0-1911-4042-95e6-ed5e6c82301d	1	Kings College Munich	None	72	1598.0583878464652	jackpot	core_destroyed	102	1	0
+b1ae56d0-1911-4042-95e6-ed5e6c82301d_game_2.replay26	b1ae56d0-1911-4042-95e6-ed5e6c82301d	2	Kings College Munich	None	72	1598.0583878464652	meander	core_destroyed	196	1	0
+b1ae56d0-1911-4042-95e6-ed5e6c82301d_game_3.replay26	b1ae56d0-1911-4042-95e6-ed5e6c82301d	3	Kings College Munich	None	72	1598.0583878464652	hive	core_destroyed	439	0	0
+b1ae56d0-1911-4042-95e6-ed5e6c82301d_game_4.replay26	b1ae56d0-1911-4042-95e6-ed5e6c82301d	4	Kings College Munich	None	72	1598.0583878464652	heart	core_destroyed	252	0	0
+b1ae56d0-1911-4042-95e6-ed5e6c82301d_game_5.replay26	b1ae56d0-1911-4042-95e6-ed5e6c82301d	5	Kings College Munich	None	72	1598.0583878464652	snowflake	titanium_collected	1000	0	0
+b27d2cb2-2be9-4505-ae5e-9e5b1db975dd_game_1.replay26	b27d2cb2-2be9-4505-ae5e-9e5b1db975dd	1	farming_200s	None	66	1513.2719162799356	lighthouse	core_destroyed	76	1	0
+b27d2cb2-2be9-4505-ae5e-9e5b1db975dd_game_2.replay26	b27d2cb2-2be9-4505-ae5e-9e5b1db975dd	2	farming_200s	None	66	1513.2719162799356	drumlin	core_destroyed	84	1	0
+b27d2cb2-2be9-4505-ae5e-9e5b1db975dd_game_3.replay26	b27d2cb2-2be9-4505-ae5e-9e5b1db975dd	3	farming_200s	None	66	1513.2719162799356	atoll	core_destroyed	85	1	0
+b27d2cb2-2be9-4505-ae5e-9e5b1db975dd_game_4.replay26	b27d2cb2-2be9-4505-ae5e-9e5b1db975dd	4	farming_200s	None	66	1513.2719162799356	meander	core_destroyed	390	0	0
+b27d2cb2-2be9-4505-ae5e-9e5b1db975dd_game_5.replay26	b27d2cb2-2be9-4505-ae5e-9e5b1db975dd	5	farming_200s	None	66	1513.2719162799356	antler	core_destroyed	341	1	0
+b2c92a34-e048-4599-9f11-b375fda9ec84_game_1.replay26	b2c92a34-e048-4599-9f11-b375fda9ec84	1	Lunds Stallions	None	70	1637.1194948336235	fjordgate	titanium_collected	1000	1	0
+b2c92a34-e048-4599-9f11-b375fda9ec84_game_2.replay26	b2c92a34-e048-4599-9f11-b375fda9ec84	2	Lunds Stallions	None	70	1637.1194948336235	nordkap	core_destroyed	324	0	0
+b2c92a34-e048-4599-9f11-b375fda9ec84_game_3.replay26	b2c92a34-e048-4599-9f11-b375fda9ec84	3	Lunds Stallions	None	70	1637.1194948336235	atoll	core_destroyed	284	0	0
+b2c92a34-e048-4599-9f11-b375fda9ec84_game_4.replay26	b2c92a34-e048-4599-9f11-b375fda9ec84	4	Lunds Stallions	None	70	1637.1194948336235	jackpot	core_destroyed	367	0	0
+b2c92a34-e048-4599-9f11-b375fda9ec84_game_5.replay26	b2c92a34-e048-4599-9f11-b375fda9ec84	5	Lunds Stallions	None	70	1637.1194948336235	moonrise	titanium_collected	1000	1	0
+b3656fe7-f278-41e3-8b21-53ff0b6db7b9_game_1.replay26	b3656fe7-f278-41e3-8b21-53ff0b6db7b9	1	Kings College Munich	None	67	1587.038547467269	saga	core_destroyed	275	0	1
+b3656fe7-f278-41e3-8b21-53ff0b6db7b9_game_2.replay26	b3656fe7-f278-41e3-8b21-53ff0b6db7b9	2	Kings College Munich	None	67	1587.038547467269	jackpot	titanium_collected	1000	0	1
+b3656fe7-f278-41e3-8b21-53ff0b6db7b9_game_3.replay26	b3656fe7-f278-41e3-8b21-53ff0b6db7b9	3	Kings College Munich	None	67	1587.038547467269	fjordgate	core_destroyed	455	0	1
+b3656fe7-f278-41e3-8b21-53ff0b6db7b9_game_4.replay26	b3656fe7-f278-41e3-8b21-53ff0b6db7b9	4	Kings College Munich	None	67	1587.038547467269	nordkap	core_destroyed	124	0	1
+b3656fe7-f278-41e3-8b21-53ff0b6db7b9_game_5.replay26	b3656fe7-f278-41e3-8b21-53ff0b6db7b9	5	Kings College Munich	None	67	1587.038547467269	archipelago	core_destroyed	157	0	1
+b38a86d5-2c33-462d-9f63-e06cdd5bdd9e_game_1.replay26	b38a86d5-2c33-462d-9f63-e06cdd5bdd9e	1	Ouroboros	None	84	1573.4385392340744	nordkap	core_destroyed	257	0	0
+b38a86d5-2c33-462d-9f63-e06cdd5bdd9e_game_2.replay26	b38a86d5-2c33-462d-9f63-e06cdd5bdd9e	2	Ouroboros	None	84	1573.4385392340744	drumlin	core_destroyed	768	0	0
+b38a86d5-2c33-462d-9f63-e06cdd5bdd9e_game_3.replay26	b38a86d5-2c33-462d-9f63-e06cdd5bdd9e	3	Ouroboros	None	84	1573.4385392340744	hive	titanium_collected	1000	0	0
+b38a86d5-2c33-462d-9f63-e06cdd5bdd9e_game_4.replay26	b38a86d5-2c33-462d-9f63-e06cdd5bdd9e	4	Ouroboros	None	84	1573.4385392340744	atoll	core_destroyed	385	0	0
+b38a86d5-2c33-462d-9f63-e06cdd5bdd9e_game_5.replay26	b38a86d5-2c33-462d-9f63-e06cdd5bdd9e	5	Ouroboros	None	84	1573.4385392340744	lighthouse	core_destroyed	566	0	0
+b398b5e3-0dc8-4358-b2f0-8adbce56a57a_game_1.replay26	b398b5e3-0dc8-4358-b2f0-8adbce56a57a	1	Ouroboros	None	80	1588.8478929462478	snowflake	core_destroyed	331	0	1
+b398b5e3-0dc8-4358-b2f0-8adbce56a57a_game_2.replay26	b398b5e3-0dc8-4358-b2f0-8adbce56a57a	2	Ouroboros	None	80	1588.8478929462478	meander	titanium_collected	1000	1	1
+b398b5e3-0dc8-4358-b2f0-8adbce56a57a_game_3.replay26	b398b5e3-0dc8-4358-b2f0-8adbce56a57a	3	Ouroboros	None	80	1588.8478929462478	jackpot	titanium_collected	1000	0	1
+b398b5e3-0dc8-4358-b2f0-8adbce56a57a_game_4.replay26	b398b5e3-0dc8-4358-b2f0-8adbce56a57a	4	Ouroboros	None	80	1588.8478929462478	moonrise	core_destroyed	284	0	1
+b398b5e3-0dc8-4358-b2f0-8adbce56a57a_game_5.replay26	b398b5e3-0dc8-4358-b2f0-8adbce56a57a	5	Ouroboros	None	80	1588.8478929462478	eider	titanium_collected	1000	0	1
+b3dfa660-022a-4d29-b3b4-286653c86593_game_1.replay26	b3dfa660-022a-4d29-b3b4-286653c86593	1	Kings College Munich	None	75	1590.950173988872	atoll	titanium_collected	1000	1	0
+b3dfa660-022a-4d29-b3b4-286653c86593_game_2.replay26	b3dfa660-022a-4d29-b3b4-286653c86593	2	Kings College Munich	None	75	1590.950173988872	saga	core_destroyed	608	0	0
+b3dfa660-022a-4d29-b3b4-286653c86593_game_3.replay26	b3dfa660-022a-4d29-b3b4-286653c86593	3	Kings College Munich	None	75	1590.950173988872	heart	core_destroyed	784	0	0
+b3dfa660-022a-4d29-b3b4-286653c86593_game_4.replay26	b3dfa660-022a-4d29-b3b4-286653c86593	4	Kings College Munich	None	75	1590.950173988872	snowflake	core_destroyed	253	0	0
+b3dfa660-022a-4d29-b3b4-286653c86593_game_5.replay26	b3dfa660-022a-4d29-b3b4-286653c86593	5	Kings College Munich	None	75	1590.950173988872	hive	core_destroyed	231	0	0
+b4287ac4-8cbb-45fd-b90e-ee41cf446ea2_game_1.replay26	b4287ac4-8cbb-45fd-b90e-ee41cf446ea2	1	CtrlAltDefeat	None	79	1613.1956749939714	atoll	titanium_collected	1000	0	0
+b4287ac4-8cbb-45fd-b90e-ee41cf446ea2_game_2.replay26	b4287ac4-8cbb-45fd-b90e-ee41cf446ea2	2	CtrlAltDefeat	None	79	1613.1956749939714	snowflake	core_destroyed	222	0	0
+b4287ac4-8cbb-45fd-b90e-ee41cf446ea2_game_3.replay26	b4287ac4-8cbb-45fd-b90e-ee41cf446ea2	3	CtrlAltDefeat	None	79	1613.1956749939714	meander	core_destroyed	218	1	0
+b4287ac4-8cbb-45fd-b90e-ee41cf446ea2_game_4.replay26	b4287ac4-8cbb-45fd-b90e-ee41cf446ea2	4	CtrlAltDefeat	None	79	1613.1956749939714	eider	titanium_collected	1000	1	0
+b4287ac4-8cbb-45fd-b90e-ee41cf446ea2_game_5.replay26	b4287ac4-8cbb-45fd-b90e-ee41cf446ea2	5	CtrlAltDefeat	None	79	1613.1956749939714	lighthouse	core_destroyed	167	1	0
+b4938be6-bae7-41a7-bcd7-ed79a77f5a44_game_1.replay26	b4938be6-bae7-41a7-bcd7-ed79a77f5a44	1	Kings College Munich	None	79	1596.561051991693	drumlin	core_destroyed	189	0	0
+b4938be6-bae7-41a7-bcd7-ed79a77f5a44_game_2.replay26	b4938be6-bae7-41a7-bcd7-ed79a77f5a44	2	Kings College Munich	None	79	1596.561051991693	meander	titanium_collected	1000	1	0
+b4938be6-bae7-41a7-bcd7-ed79a77f5a44_game_3.replay26	b4938be6-bae7-41a7-bcd7-ed79a77f5a44	3	Kings College Munich	None	79	1596.561051991693	archipelago	core_destroyed	182	0	0
+b4938be6-bae7-41a7-bcd7-ed79a77f5a44_game_4.replay26	b4938be6-bae7-41a7-bcd7-ed79a77f5a44	4	Kings College Munich	None	79	1596.561051991693	hive	core_destroyed	224	0	0
+b4938be6-bae7-41a7-bcd7-ed79a77f5a44_game_5.replay26	b4938be6-bae7-41a7-bcd7-ed79a77f5a44	5	Kings College Munich	None	79	1596.561051991693	eider	core_destroyed	589	0	0
+b4add3ad-b984-42cf-8232-37c6c88fd1a8_game_1.replay26	b4add3ad-b984-42cf-8232-37c6c88fd1a8	1	Powerpuff Girls	None	68	1545.3477319301087	jackpot	titanium_collected	1000	1	1
+b4add3ad-b984-42cf-8232-37c6c88fd1a8_game_2.replay26	b4add3ad-b984-42cf-8232-37c6c88fd1a8	2	Powerpuff Girls	None	68	1545.3477319301087	lighthouse	core_destroyed	779	0	1
+b4add3ad-b984-42cf-8232-37c6c88fd1a8_game_3.replay26	b4add3ad-b984-42cf-8232-37c6c88fd1a8	3	Powerpuff Girls	None	68	1545.3477319301087	snowflake	core_destroyed	242	0	1
+b4add3ad-b984-42cf-8232-37c6c88fd1a8_game_4.replay26	b4add3ad-b984-42cf-8232-37c6c88fd1a8	4	Powerpuff Girls	None	68	1545.3477319301087	archipelago	titanium_collected	1000	0	1
+b4add3ad-b984-42cf-8232-37c6c88fd1a8_game_5.replay26	b4add3ad-b984-42cf-8232-37c6c88fd1a8	5	Powerpuff Girls	None	68	1545.3477319301087	atoll	titanium_collected	1000	1	1
+b4e7c2e6-3f8b-495b-b96d-0a897b3192de_game_1.replay26	b4e7c2e6-3f8b-495b-b96d-0a897b3192de	1	0033	None	69	1545.0217716697682	drumlin	core_destroyed	92	1	0
+b4e7c2e6-3f8b-495b-b96d-0a897b3192de_game_2.replay26	b4e7c2e6-3f8b-495b-b96d-0a897b3192de	2	0033	None	69	1545.0217716697682	saga	core_destroyed	121	1	0
+b4e7c2e6-3f8b-495b-b96d-0a897b3192de_game_3.replay26	b4e7c2e6-3f8b-495b-b96d-0a897b3192de	3	0033	None	69	1545.0217716697682	eider	core_destroyed	139	1	0
+b4e7c2e6-3f8b-495b-b96d-0a897b3192de_game_4.replay26	b4e7c2e6-3f8b-495b-b96d-0a897b3192de	4	0033	None	69	1545.0217716697682	heart	core_destroyed	218	1	0
+b4e7c2e6-3f8b-495b-b96d-0a897b3192de_game_5.replay26	b4e7c2e6-3f8b-495b-b96d-0a897b3192de	5	0033	None	69	1545.0217716697682	lighthouse	core_destroyed	269	1	0
+b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad_game_1.replay26	b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad	1	0033	None	70	1573.6465153946203	eider	core_destroyed	174	1	1
+b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad_game_2.replay26	b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad	2	0033	None	70	1573.6465153946203	antler	core_destroyed	199	1	1
+b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad_game_3.replay26	b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad	3	0033	None	70	1573.6465153946203	saga	core_destroyed	109	0	1
+b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad_game_4.replay26	b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad	4	0033	None	70	1573.6465153946203	nordkap	core_destroyed	227	1	1
+b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad_game_5.replay26	b578ff6b-e7d1-4c07-8e32-838a4bf6c6ad	5	0033	None	70	1573.6465153946203	archipelago	core_destroyed	99	1	1
+b5a37d0b-87f5-46c6-968b-ef19099d90f9_game_1.replay26	b5a37d0b-87f5-46c6-968b-ef19099d90f9	1	0033	None	73	1632.3301037674225	saga	core_destroyed	236	0	1
+b5a37d0b-87f5-46c6-968b-ef19099d90f9_game_2.replay26	b5a37d0b-87f5-46c6-968b-ef19099d90f9	2	0033	None	73	1632.3301037674225	moonrise	core_destroyed	133	0	1
+b5a37d0b-87f5-46c6-968b-ef19099d90f9_game_3.replay26	b5a37d0b-87f5-46c6-968b-ef19099d90f9	3	0033	None	73	1632.3301037674225	fjordgate	core_destroyed	109	0	1
+b5a37d0b-87f5-46c6-968b-ef19099d90f9_game_4.replay26	b5a37d0b-87f5-46c6-968b-ef19099d90f9	4	0033	None	73	1632.3301037674225	hive	core_destroyed	129	0	1
+b5a37d0b-87f5-46c6-968b-ef19099d90f9_game_5.replay26	b5a37d0b-87f5-46c6-968b-ef19099d90f9	5	0033	None	73	1632.3301037674225	lighthouse	core_destroyed	155	0	1
+b8a10d95-4d33-443e-8616-90717e2eb721_game_1.replay26	b8a10d95-4d33-443e-8616-90717e2eb721	1	Lunds Stallions	None	80	1597.1202730535108	nordkap	core_destroyed	151	0	1
+b8a10d95-4d33-443e-8616-90717e2eb721_game_2.replay26	b8a10d95-4d33-443e-8616-90717e2eb721	2	Lunds Stallions	None	80	1597.1202730535108	saga	core_destroyed	150	0	1
+b8a10d95-4d33-443e-8616-90717e2eb721_game_3.replay26	b8a10d95-4d33-443e-8616-90717e2eb721	3	Lunds Stallions	None	80	1597.1202730535108	jackpot	core_destroyed	228	1	1
+b8a10d95-4d33-443e-8616-90717e2eb721_game_4.replay26	b8a10d95-4d33-443e-8616-90717e2eb721	4	Lunds Stallions	None	80	1597.1202730535108	moonrise	core_destroyed	444	0	1
+b8a10d95-4d33-443e-8616-90717e2eb721_game_5.replay26	b8a10d95-4d33-443e-8616-90717e2eb721	5	Lunds Stallions	None	80	1597.1202730535108	heart	core_destroyed	444	0	1
+b9a1e632-ee17-4937-ab05-76898464f9f7_game_1.replay26	b9a1e632-ee17-4937-ab05-76898464f9f7	1	Askar City	None	65	1572.3257558462424	nordkap	core_destroyed	120	0	1
+b9a1e632-ee17-4937-ab05-76898464f9f7_game_2.replay26	b9a1e632-ee17-4937-ab05-76898464f9f7	2	Askar City	None	65	1572.3257558462424	meander	core_destroyed	109	1	1
+b9a1e632-ee17-4937-ab05-76898464f9f7_game_3.replay26	b9a1e632-ee17-4937-ab05-76898464f9f7	3	Askar City	None	65	1572.3257558462424	heart	core_destroyed	144	1	1
+b9a1e632-ee17-4937-ab05-76898464f9f7_game_4.replay26	b9a1e632-ee17-4937-ab05-76898464f9f7	4	Askar City	None	65	1572.3257558462424	fjordgate	titanium_collected	1000	1	1
+b9a1e632-ee17-4937-ab05-76898464f9f7_game_5.replay26	b9a1e632-ee17-4937-ab05-76898464f9f7	5	Askar City	None	65	1572.3257558462424	antler	titanium_collected	1000	1	1
+ba007b91-831d-4d39-86a9-e275241adb71_game_1.replay26	ba007b91-831d-4d39-86a9-e275241adb71	1	OopsGotYourElo	None	67	1613.2032345624957	nordkap	titanium_collected	1000	1	1
+ba007b91-831d-4d39-86a9-e275241adb71_game_2.replay26	ba007b91-831d-4d39-86a9-e275241adb71	2	OopsGotYourElo	None	67	1613.2032345624957	jackpot	core_destroyed	82	0	1
+ba007b91-831d-4d39-86a9-e275241adb71_game_3.replay26	ba007b91-831d-4d39-86a9-e275241adb71	3	OopsGotYourElo	None	67	1613.2032345624957	drumlin	core_destroyed	405	0	1
+ba007b91-831d-4d39-86a9-e275241adb71_game_4.replay26	ba007b91-831d-4d39-86a9-e275241adb71	4	OopsGotYourElo	None	67	1613.2032345624957	atoll	core_destroyed	279	0	1
+ba007b91-831d-4d39-86a9-e275241adb71_game_5.replay26	ba007b91-831d-4d39-86a9-e275241adb71	5	OopsGotYourElo	None	67	1613.2032345624957	eider	titanium_collected	1000	1	1
+bfd8cd46-fded-4bdd-89bd-c0fece5129c0_game_1.replay26	bfd8cd46-fded-4bdd-89bd-c0fece5129c0	1	Team 48	None	80	1560.4084287239289	drumlin	core_destroyed	456	0	1
+bfd8cd46-fded-4bdd-89bd-c0fece5129c0_game_2.replay26	bfd8cd46-fded-4bdd-89bd-c0fece5129c0	2	Team 48	None	80	1560.4084287239289	archipelago	core_destroyed	58	0	1
+bfd8cd46-fded-4bdd-89bd-c0fece5129c0_game_3.replay26	bfd8cd46-fded-4bdd-89bd-c0fece5129c0	3	Team 48	None	80	1560.4084287239289	atoll	core_destroyed	81	1	1
+bfd8cd46-fded-4bdd-89bd-c0fece5129c0_game_4.replay26	bfd8cd46-fded-4bdd-89bd-c0fece5129c0	4	Team 48	None	80	1560.4084287239289	fjordgate	titanium_collected	1000	0	1
+bfd8cd46-fded-4bdd-89bd-c0fece5129c0_game_5.replay26	bfd8cd46-fded-4bdd-89bd-c0fece5129c0	5	Team 48	None	80	1560.4084287239289	hive	core_destroyed	110	0	1
+c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f_game_1.replay26	c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f	1	Team 48	None	68	1606.7937874656616	hive	core_destroyed	90	0	1
+c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f_game_2.replay26	c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f	2	Team 48	None	68	1606.7937874656616	atoll	core_destroyed	85	1	1
+c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f_game_3.replay26	c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f	3	Team 48	None	68	1606.7937874656616	saga	core_destroyed	108	0	1
+c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f_game_4.replay26	c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f	4	Team 48	None	68	1606.7937874656616	fjordgate	core_destroyed	223	1	1
+c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f_game_5.replay26	c2b2b94c-dcb7-4afc-8669-0268c9ff7a8f	5	Team 48	None	68	1606.7937874656616	antler	core_destroyed	94	1	1
+c618984a-e93a-4fde-b9b9-5ec0cd3abadf_game_1.replay26	c618984a-e93a-4fde-b9b9-5ec0cd3abadf	1	Lunds Stallions	None	65	1560.5495966010278	moonrise	core_destroyed	402	0	1
+c618984a-e93a-4fde-b9b9-5ec0cd3abadf_game_2.replay26	c618984a-e93a-4fde-b9b9-5ec0cd3abadf	2	Lunds Stallions	None	65	1560.5495966010278	saga	titanium_collected	1000	0	1
+c618984a-e93a-4fde-b9b9-5ec0cd3abadf_game_3.replay26	c618984a-e93a-4fde-b9b9-5ec0cd3abadf	3	Lunds Stallions	None	65	1560.5495966010278	fjordgate	titanium_collected	1000	1	1
+c618984a-e93a-4fde-b9b9-5ec0cd3abadf_game_4.replay26	c618984a-e93a-4fde-b9b9-5ec0cd3abadf	4	Lunds Stallions	None	65	1560.5495966010278	drumlin	core_destroyed	512	0	1
+c618984a-e93a-4fde-b9b9-5ec0cd3abadf_game_5.replay26	c618984a-e93a-4fde-b9b9-5ec0cd3abadf	5	Lunds Stallions	None	65	1560.5495966010278	archipelago	core_destroyed	271	1	1
+c6381df7-19b0-4a6d-8524-5f33a2c0ab38_game_1.replay26	c6381df7-19b0-4a6d-8524-5f33a2c0ab38	1	Leviathan	None	70	1662.1879181382844	atoll	core_destroyed	792	0	0
+c6381df7-19b0-4a6d-8524-5f33a2c0ab38_game_2.replay26	c6381df7-19b0-4a6d-8524-5f33a2c0ab38	2	Leviathan	None	70	1662.1879181382844	antler	core_destroyed	116	0	0
+c6381df7-19b0-4a6d-8524-5f33a2c0ab38_game_3.replay26	c6381df7-19b0-4a6d-8524-5f33a2c0ab38	3	Leviathan	None	70	1662.1879181382844	lighthouse	core_destroyed	155	0	0
+c6381df7-19b0-4a6d-8524-5f33a2c0ab38_game_4.replay26	c6381df7-19b0-4a6d-8524-5f33a2c0ab38	4	Leviathan	None	70	1662.1879181382844	heart	core_destroyed	215	1	0
+c6381df7-19b0-4a6d-8524-5f33a2c0ab38_game_5.replay26	c6381df7-19b0-4a6d-8524-5f33a2c0ab38	5	Leviathan	None	70	1662.1879181382844	meander	core_destroyed	908	1	0
+c6383349-36c8-48ce-a7be-86c2798adc73_game_1.replay26	c6383349-36c8-48ce-a7be-86c2798adc73	1	CtrlAltDefeat	None	72	1604.0398618912363	eider	core_destroyed	231	0	0
+c6383349-36c8-48ce-a7be-86c2798adc73_game_2.replay26	c6383349-36c8-48ce-a7be-86c2798adc73	2	CtrlAltDefeat	None	72	1604.0398618912363	atoll	core_destroyed	672	0	0
+c6383349-36c8-48ce-a7be-86c2798adc73_game_3.replay26	c6383349-36c8-48ce-a7be-86c2798adc73	3	CtrlAltDefeat	None	72	1604.0398618912363	moonrise	titanium_collected	1000	1	0
+c6383349-36c8-48ce-a7be-86c2798adc73_game_4.replay26	c6383349-36c8-48ce-a7be-86c2798adc73	4	CtrlAltDefeat	None	72	1604.0398618912363	heart	core_destroyed	269	0	0
+c6383349-36c8-48ce-a7be-86c2798adc73_game_5.replay26	c6383349-36c8-48ce-a7be-86c2798adc73	5	CtrlAltDefeat	None	72	1604.0398618912363	antler	titanium_collected	1000	1	0
+c67dae59-4f92-476f-878c-4ba5da62676a_game_1.replay26	c67dae59-4f92-476f-878c-4ba5da62676a	1	Leviathan	None	72	1686.3869453966574	moonrise	core_destroyed	393	1	1
+c67dae59-4f92-476f-878c-4ba5da62676a_game_2.replay26	c67dae59-4f92-476f-878c-4ba5da62676a	2	Leviathan	None	72	1686.3869453966574	drumlin	core_destroyed	334	0	1
+c67dae59-4f92-476f-878c-4ba5da62676a_game_3.replay26	c67dae59-4f92-476f-878c-4ba5da62676a	3	Leviathan	None	72	1686.3869453966574	lighthouse	titanium_collected	1000	1	1
+c67dae59-4f92-476f-878c-4ba5da62676a_game_4.replay26	c67dae59-4f92-476f-878c-4ba5da62676a	4	Leviathan	None	72	1686.3869453966574	eider	core_destroyed	124	1	1
+c67dae59-4f92-476f-878c-4ba5da62676a_game_5.replay26	c67dae59-4f92-476f-878c-4ba5da62676a	5	Leviathan	None	72	1686.3869453966574	saga	titanium_collected	1000	0	1
+c758475a-f2ab-484b-b78a-660f8870d47d_game_1.replay26	c758475a-f2ab-484b-b78a-660f8870d47d	1	Askar City	None	79	1520.1244038310758	fjordgate	core_destroyed	331	1	1
+c758475a-f2ab-484b-b78a-660f8870d47d_game_2.replay26	c758475a-f2ab-484b-b78a-660f8870d47d	2	Askar City	None	79	1520.1244038310758	drumlin	core_destroyed	116	1	1
+c758475a-f2ab-484b-b78a-660f8870d47d_game_3.replay26	c758475a-f2ab-484b-b78a-660f8870d47d	3	Askar City	None	79	1520.1244038310758	lighthouse	core_destroyed	82	1	1
+c758475a-f2ab-484b-b78a-660f8870d47d_game_4.replay26	c758475a-f2ab-484b-b78a-660f8870d47d	4	Askar City	None	79	1520.1244038310758	hive	core_destroyed	117	0	1
+c758475a-f2ab-484b-b78a-660f8870d47d_game_5.replay26	c758475a-f2ab-484b-b78a-660f8870d47d	5	Askar City	None	79	1520.1244038310758	nordkap	core_destroyed	402	0	1
+c7ab9400-5b1c-4c15-83c7-0745c211828f_game_1.replay26	c7ab9400-5b1c-4c15-83c7-0745c211828f	1	OopsGotYourElo	None	74	1585.6260440083292	drumlin	titanium_collected	1000	0	1
+c7ab9400-5b1c-4c15-83c7-0745c211828f_game_2.replay26	c7ab9400-5b1c-4c15-83c7-0745c211828f	2	OopsGotYourElo	None	74	1585.6260440083292	saga	titanium_collected	1000	0	1
+c7ab9400-5b1c-4c15-83c7-0745c211828f_game_3.replay26	c7ab9400-5b1c-4c15-83c7-0745c211828f	3	OopsGotYourElo	None	74	1585.6260440083292	moonrise	titanium_collected	1000	1	1
+c7ab9400-5b1c-4c15-83c7-0745c211828f_game_4.replay26	c7ab9400-5b1c-4c15-83c7-0745c211828f	4	OopsGotYourElo	None	74	1585.6260440083292	atoll	titanium_collected	1000	0	1
+c7ab9400-5b1c-4c15-83c7-0745c211828f_game_5.replay26	c7ab9400-5b1c-4c15-83c7-0745c211828f	5	OopsGotYourElo	None	74	1585.6260440083292	heart	core_destroyed	87	0	1
+c7ca0048-57a8-469c-9ce3-6843c15f4684_game_1.replay26	c7ca0048-57a8-469c-9ce3-6843c15f4684	1	Kings College Munich	None	74	1577.2432414544976	drumlin	core_destroyed	67	0	1
+c7ca0048-57a8-469c-9ce3-6843c15f4684_game_2.replay26	c7ca0048-57a8-469c-9ce3-6843c15f4684	2	Kings College Munich	None	74	1577.2432414544976	heart	core_destroyed	194	0	1
+c7ca0048-57a8-469c-9ce3-6843c15f4684_game_3.replay26	c7ca0048-57a8-469c-9ce3-6843c15f4684	3	Kings College Munich	None	74	1577.2432414544976	antler	core_destroyed	511	0	1
+c7ca0048-57a8-469c-9ce3-6843c15f4684_game_4.replay26	c7ca0048-57a8-469c-9ce3-6843c15f4684	4	Kings College Munich	None	74	1577.2432414544976	hive	core_destroyed	118	0	1
+c7ca0048-57a8-469c-9ce3-6843c15f4684_game_5.replay26	c7ca0048-57a8-469c-9ce3-6843c15f4684	5	Kings College Munich	None	74	1577.2432414544976	eider	core_destroyed	232	0	1
+c815d866-4522-49ff-bba8-2d4596b40b0e_game_1.replay26	c815d866-4522-49ff-bba8-2d4596b40b0e	1	OopsGotYourElo	None	80	1533.5445465358778	archipelago	titanium_collected	1000	0	0
+c815d866-4522-49ff-bba8-2d4596b40b0e_game_2.replay26	c815d866-4522-49ff-bba8-2d4596b40b0e	2	OopsGotYourElo	None	80	1533.5445465358778	snowflake	titanium_collected	1000	1	0
+c815d866-4522-49ff-bba8-2d4596b40b0e_game_3.replay26	c815d866-4522-49ff-bba8-2d4596b40b0e	3	OopsGotYourElo	None	80	1533.5445465358778	lighthouse	core_destroyed	144	1	0
+c815d866-4522-49ff-bba8-2d4596b40b0e_game_4.replay26	c815d866-4522-49ff-bba8-2d4596b40b0e	4	OopsGotYourElo	None	80	1533.5445465358778	drumlin	titanium_collected	1000	1	0
+c815d866-4522-49ff-bba8-2d4596b40b0e_game_5.replay26	c815d866-4522-49ff-bba8-2d4596b40b0e	5	OopsGotYourElo	None	80	1533.5445465358778	saga	titanium_collected	1000	1	0
+c821193d-88a5-4a4a-bdee-c749a9a45b0e_game_1.replay26	c821193d-88a5-4a4a-bdee-c749a9a45b0e	1	Kings College Munich	None	68	1577.771083537587	atoll	core_destroyed	97	1	0
+c821193d-88a5-4a4a-bdee-c749a9a45b0e_game_2.replay26	c821193d-88a5-4a4a-bdee-c749a9a45b0e	2	Kings College Munich	None	68	1577.771083537587	nordkap	titanium_collected	1000	1	0
+c821193d-88a5-4a4a-bdee-c749a9a45b0e_game_3.replay26	c821193d-88a5-4a4a-bdee-c749a9a45b0e	3	Kings College Munich	None	68	1577.771083537587	hive	core_destroyed	114	1	0
+c821193d-88a5-4a4a-bdee-c749a9a45b0e_game_4.replay26	c821193d-88a5-4a4a-bdee-c749a9a45b0e	4	Kings College Munich	None	68	1577.771083537587	saga	core_destroyed	659	0	0
+c821193d-88a5-4a4a-bdee-c749a9a45b0e_game_5.replay26	c821193d-88a5-4a4a-bdee-c749a9a45b0e	5	Kings College Munich	None	68	1577.771083537587	snowflake	core_destroyed	458	0	0
+c8479d42-f9bb-42b6-9953-adbb7e2103f3_game_1.replay26	c8479d42-f9bb-42b6-9953-adbb7e2103f3	1	SingleCore	None	64	1473.565399470728	archipelago	titanium_collected	1000	1	1
+c8479d42-f9bb-42b6-9953-adbb7e2103f3_game_2.replay26	c8479d42-f9bb-42b6-9953-adbb7e2103f3	2	SingleCore	None	64	1473.565399470728	eider	core_destroyed	85	1	1
+c8479d42-f9bb-42b6-9953-adbb7e2103f3_game_3.replay26	c8479d42-f9bb-42b6-9953-adbb7e2103f3	3	SingleCore	None	64	1473.565399470728	atoll	core_destroyed	85	0	1
+c8479d42-f9bb-42b6-9953-adbb7e2103f3_game_4.replay26	c8479d42-f9bb-42b6-9953-adbb7e2103f3	4	SingleCore	None	64	1473.565399470728	fjordgate	core_destroyed	273	1	1
+c8479d42-f9bb-42b6-9953-adbb7e2103f3_game_5.replay26	c8479d42-f9bb-42b6-9953-adbb7e2103f3	5	SingleCore	None	64	1473.565399470728	snowflake	titanium_collected	1000	1	1
+cd9ae34c-a359-495e-83d1-5fa0034a4287_game_1.replay26	cd9ae34c-a359-495e-83d1-5fa0034a4287	1	Lunds Stallions	None	79	1612.1995587682022	moonrise	core_destroyed	602	0	1
+cd9ae34c-a359-495e-83d1-5fa0034a4287_game_2.replay26	cd9ae34c-a359-495e-83d1-5fa0034a4287	2	Lunds Stallions	None	79	1612.1995587682022	snowflake	core_destroyed	80	1	1
+cd9ae34c-a359-495e-83d1-5fa0034a4287_game_3.replay26	cd9ae34c-a359-495e-83d1-5fa0034a4287	3	Lunds Stallions	None	79	1612.1995587682022	eider	core_destroyed	439	0	1
+cd9ae34c-a359-495e-83d1-5fa0034a4287_game_4.replay26	cd9ae34c-a359-495e-83d1-5fa0034a4287	4	Lunds Stallions	None	79	1612.1995587682022	saga	core_destroyed	200	1	1
+cd9ae34c-a359-495e-83d1-5fa0034a4287_game_5.replay26	cd9ae34c-a359-495e-83d1-5fa0034a4287	5	Lunds Stallions	None	79	1612.1995587682022	antler	core_destroyed	459	0	1
+cfa63f42-7212-4ae5-94e3-e58a7b2debcb_game_1.replay26	cfa63f42-7212-4ae5-94e3-e58a7b2debcb	1	Kings College Munich	None	84	1600.090245208481	lighthouse	titanium_collected	1000	1	0
+cfa63f42-7212-4ae5-94e3-e58a7b2debcb_game_2.replay26	cfa63f42-7212-4ae5-94e3-e58a7b2debcb	2	Kings College Munich	None	84	1600.090245208481	eider	core_destroyed	136	0	0
+cfa63f42-7212-4ae5-94e3-e58a7b2debcb_game_3.replay26	cfa63f42-7212-4ae5-94e3-e58a7b2debcb	3	Kings College Munich	None	84	1600.090245208481	archipelago	core_destroyed	540	0	0
+cfa63f42-7212-4ae5-94e3-e58a7b2debcb_game_4.replay26	cfa63f42-7212-4ae5-94e3-e58a7b2debcb	4	Kings College Munich	None	84	1600.090245208481	drumlin	core_destroyed	164	0	0
+cfa63f42-7212-4ae5-94e3-e58a7b2debcb_game_5.replay26	cfa63f42-7212-4ae5-94e3-e58a7b2debcb	5	Kings College Munich	None	84	1600.090245208481	snowflake	core_destroyed	163	0	0
+cfb0faf5-641d-4593-8adf-6a27040c5ebd_game_1.replay26	cfb0faf5-641d-4593-8adf-6a27040c5ebd	1	Lunds Stallions	None	81	1585.4258001177277	archipelago	titanium_collected	1000	0	1
+cfb0faf5-641d-4593-8adf-6a27040c5ebd_game_2.replay26	cfb0faf5-641d-4593-8adf-6a27040c5ebd	2	Lunds Stallions	None	81	1585.4258001177277	nordkap	core_destroyed	370	0	1
+cfb0faf5-641d-4593-8adf-6a27040c5ebd_game_3.replay26	cfb0faf5-641d-4593-8adf-6a27040c5ebd	3	Lunds Stallions	None	81	1585.4258001177277	moonrise	core_destroyed	426	0	1
+cfb0faf5-641d-4593-8adf-6a27040c5ebd_game_4.replay26	cfb0faf5-641d-4593-8adf-6a27040c5ebd	4	Lunds Stallions	None	81	1585.4258001177277	heart	core_destroyed	139	0	1
+cfb0faf5-641d-4593-8adf-6a27040c5ebd_game_5.replay26	cfb0faf5-641d-4593-8adf-6a27040c5ebd	5	Lunds Stallions	None	81	1585.4258001177277	lighthouse	core_destroyed	670	0	1
+d1dc4b84-6fab-4ec1-9981-5d90be1af986_game_1.replay26	d1dc4b84-6fab-4ec1-9981-5d90be1af986	1	Kings College Munich	None	80	1563.2680562277355	heart	titanium_collected	1000	1	0
+d1dc4b84-6fab-4ec1-9981-5d90be1af986_game_2.replay26	d1dc4b84-6fab-4ec1-9981-5d90be1af986	2	Kings College Munich	None	80	1563.2680562277355	fjordgate	core_destroyed	89	1	0
+d1dc4b84-6fab-4ec1-9981-5d90be1af986_game_3.replay26	d1dc4b84-6fab-4ec1-9981-5d90be1af986	3	Kings College Munich	None	80	1563.2680562277355	atoll	titanium_collected	1000	1	0
+d1dc4b84-6fab-4ec1-9981-5d90be1af986_game_4.replay26	d1dc4b84-6fab-4ec1-9981-5d90be1af986	4	Kings College Munich	None	80	1563.2680562277355	hive	core_destroyed	367	0	0
+d1dc4b84-6fab-4ec1-9981-5d90be1af986_game_5.replay26	d1dc4b84-6fab-4ec1-9981-5d90be1af986	5	Kings College Munich	None	80	1563.2680562277355	antler	titanium_collected	1000	1	0
+d2dfd6e0-ef32-4f40-ab45-39218b639dc3_game_1.replay26	d2dfd6e0-ef32-4f40-ab45-39218b639dc3	1	farming_200s	None	65	1512.4062857648412	jackpot	core_destroyed	82	1	0
+d2dfd6e0-ef32-4f40-ab45-39218b639dc3_game_2.replay26	d2dfd6e0-ef32-4f40-ab45-39218b639dc3	2	farming_200s	None	65	1512.4062857648412	fjordgate	core_destroyed	530	1	0
+d2dfd6e0-ef32-4f40-ab45-39218b639dc3_game_3.replay26	d2dfd6e0-ef32-4f40-ab45-39218b639dc3	3	farming_200s	None	65	1512.4062857648412	drumlin	core_destroyed	84	1	0
+d2dfd6e0-ef32-4f40-ab45-39218b639dc3_game_4.replay26	d2dfd6e0-ef32-4f40-ab45-39218b639dc3	4	farming_200s	None	65	1512.4062857648412	lighthouse	core_destroyed	68	1	0
+d2dfd6e0-ef32-4f40-ab45-39218b639dc3_game_5.replay26	d2dfd6e0-ef32-4f40-ab45-39218b639dc3	5	farming_200s	None	65	1512.4062857648412	moonrise	core_destroyed	181	1	0
+d2e44dd3-3da1-4641-b4f7-59476631d486_game_1.replay26	d2e44dd3-3da1-4641-b4f7-59476631d486	1	OopsGotYourElo	None	80	1518.2770209166654	fjordgate	core_destroyed	323	0	1
+d2e44dd3-3da1-4641-b4f7-59476631d486_game_2.replay26	d2e44dd3-3da1-4641-b4f7-59476631d486	2	OopsGotYourElo	None	80	1518.2770209166654	moonrise	titanium_collected	1000	1	1
+d2e44dd3-3da1-4641-b4f7-59476631d486_game_3.replay26	d2e44dd3-3da1-4641-b4f7-59476631d486	3	OopsGotYourElo	None	80	1518.2770209166654	drumlin	titanium_collected	1000	0	1
+d2e44dd3-3da1-4641-b4f7-59476631d486_game_4.replay26	d2e44dd3-3da1-4641-b4f7-59476631d486	4	OopsGotYourElo	None	80	1518.2770209166654	antler	titanium_collected	1000	1	1
+d2e44dd3-3da1-4641-b4f7-59476631d486_game_5.replay26	d2e44dd3-3da1-4641-b4f7-59476631d486	5	OopsGotYourElo	None	80	1518.2770209166654	eider	titanium_collected	1000	1	1
+d318ad37-39ba-47df-9a47-d7f1def60223_game_1.replay26	d318ad37-39ba-47df-9a47-d7f1def60223	1	Lunds Stallions	None	80	1547.5414799696794	eider	core_destroyed	387	0	1
+d318ad37-39ba-47df-9a47-d7f1def60223_game_2.replay26	d318ad37-39ba-47df-9a47-d7f1def60223	2	Lunds Stallions	None	80	1547.5414799696794	fjordgate	titanium_collected	1000	1	1
+d318ad37-39ba-47df-9a47-d7f1def60223_game_3.replay26	d318ad37-39ba-47df-9a47-d7f1def60223	3	Lunds Stallions	None	80	1547.5414799696794	hive	core_destroyed	120	0	1
+d318ad37-39ba-47df-9a47-d7f1def60223_game_4.replay26	d318ad37-39ba-47df-9a47-d7f1def60223	4	Lunds Stallions	None	80	1547.5414799696794	jackpot	core_destroyed	100	1	1
+d318ad37-39ba-47df-9a47-d7f1def60223_game_5.replay26	d318ad37-39ba-47df-9a47-d7f1def60223	5	Lunds Stallions	None	80	1547.5414799696794	archipelago	titanium_collected	1000	0	1
+d540fe5a-b907-47aa-b255-4bbdcf397c0f_game_1.replay26	d540fe5a-b907-47aa-b255-4bbdcf397c0f	1	Powerpuff Girls	None	80	1592.12707710213	lighthouse	titanium_collected	1000	0	0
+d540fe5a-b907-47aa-b255-4bbdcf397c0f_game_2.replay26	d540fe5a-b907-47aa-b255-4bbdcf397c0f	2	Powerpuff Girls	None	80	1592.12707710213	snowflake	titanium_collected	1000	0	0
+d540fe5a-b907-47aa-b255-4bbdcf397c0f_game_3.replay26	d540fe5a-b907-47aa-b255-4bbdcf397c0f	3	Powerpuff Girls	None	80	1592.12707710213	eider	core_destroyed	818	0	0
+d540fe5a-b907-47aa-b255-4bbdcf397c0f_game_4.replay26	d540fe5a-b907-47aa-b255-4bbdcf397c0f	4	Powerpuff Girls	None	80	1592.12707710213	hive	core_destroyed	246	0	0
+d540fe5a-b907-47aa-b255-4bbdcf397c0f_game_5.replay26	d540fe5a-b907-47aa-b255-4bbdcf397c0f	5	Powerpuff Girls	None	80	1592.12707710213	archipelago	titanium_collected	1000	1	0
+d61337ce-b406-4474-9081-bc07a7d4fe3f_game_1.replay26	d61337ce-b406-4474-9081-bc07a7d4fe3f	1	Powerpuff Girls	None	75	1573.4769682835142	snowflake	titanium_collected	1000	0	0
+d61337ce-b406-4474-9081-bc07a7d4fe3f_game_2.replay26	d61337ce-b406-4474-9081-bc07a7d4fe3f	2	Powerpuff Girls	None	75	1573.4769682835142	nordkap	titanium_collected	1000	1	0
+d61337ce-b406-4474-9081-bc07a7d4fe3f_game_3.replay26	d61337ce-b406-4474-9081-bc07a7d4fe3f	3	Powerpuff Girls	None	75	1573.4769682835142	eider	titanium_collected	1000	1	0
+d61337ce-b406-4474-9081-bc07a7d4fe3f_game_4.replay26	d61337ce-b406-4474-9081-bc07a7d4fe3f	4	Powerpuff Girls	None	75	1573.4769682835142	archipelago	titanium_collected	1000	0	0
+d61337ce-b406-4474-9081-bc07a7d4fe3f_game_5.replay26	d61337ce-b406-4474-9081-bc07a7d4fe3f	5	Powerpuff Girls	None	75	1573.4769682835142	saga	core_destroyed	623	0	0
+d694094e-018d-4d85-8201-2ac9befc162c_game_1.replay26	d694094e-018d-4d85-8201-2ac9befc162c	1	Ouroboros	None	77	1604.157834842527	saga	titanium_collected	1000	0	1
+d694094e-018d-4d85-8201-2ac9befc162c_game_2.replay26	d694094e-018d-4d85-8201-2ac9befc162c	2	Ouroboros	None	77	1604.157834842527	meander	titanium_collected	1000	0	1
+d694094e-018d-4d85-8201-2ac9befc162c_game_3.replay26	d694094e-018d-4d85-8201-2ac9befc162c	3	Ouroboros	None	77	1604.157834842527	drumlin	titanium_collected	1000	0	1
+d694094e-018d-4d85-8201-2ac9befc162c_game_4.replay26	d694094e-018d-4d85-8201-2ac9befc162c	4	Ouroboros	None	77	1604.157834842527	archipelago	titanium_collected	1000	0	1
+d694094e-018d-4d85-8201-2ac9befc162c_game_5.replay26	d694094e-018d-4d85-8201-2ac9befc162c	5	Ouroboros	None	77	1604.157834842527	lighthouse	core_destroyed	684	0	1
+d811a80c-f614-4bed-bd39-dbacca85787f_game_1.replay26	d811a80c-f614-4bed-bd39-dbacca85787f	1	OopsGotYourElo	None	84	1559.9513427382246	nordkap	titanium_collected	1000	1	1
+d811a80c-f614-4bed-bd39-dbacca85787f_game_2.replay26	d811a80c-f614-4bed-bd39-dbacca85787f	2	OopsGotYourElo	None	84	1559.9513427382246	atoll	titanium_collected	1000	1	1
+d811a80c-f614-4bed-bd39-dbacca85787f_game_3.replay26	d811a80c-f614-4bed-bd39-dbacca85787f	3	OopsGotYourElo	None	84	1559.9513427382246	meander	titanium_collected	1000	0	1
+d811a80c-f614-4bed-bd39-dbacca85787f_game_4.replay26	d811a80c-f614-4bed-bd39-dbacca85787f	4	OopsGotYourElo	None	84	1559.9513427382246	archipelago	titanium_collected	1000	0	1
+d811a80c-f614-4bed-bd39-dbacca85787f_game_5.replay26	d811a80c-f614-4bed-bd39-dbacca85787f	5	OopsGotYourElo	None	84	1559.9513427382246	drumlin	titanium_collected	1000	1	1
+d82f5a24-5570-416e-9d60-72e792db7797_game_1.replay26	d82f5a24-5570-416e-9d60-72e792db7797	1	I Stone	None	65	1502.4704890103558	meander	core_destroyed	85	1	1
+d82f5a24-5570-416e-9d60-72e792db7797_game_2.replay26	d82f5a24-5570-416e-9d60-72e792db7797	2	I Stone	None	65	1502.4704890103558	lighthouse	core_destroyed	85	1	1
+d82f5a24-5570-416e-9d60-72e792db7797_game_3.replay26	d82f5a24-5570-416e-9d60-72e792db7797	3	I Stone	None	65	1502.4704890103558	archipelago	titanium_collected	1000	0	1
+d82f5a24-5570-416e-9d60-72e792db7797_game_4.replay26	d82f5a24-5570-416e-9d60-72e792db7797	4	I Stone	None	65	1502.4704890103558	jackpot	titanium_collected	1000	0	1
+d82f5a24-5570-416e-9d60-72e792db7797_game_5.replay26	d82f5a24-5570-416e-9d60-72e792db7797	5	I Stone	None	65	1502.4704890103558	heart	core_destroyed	63	1	1
+dc44df0f-819f-4186-8f7d-745de444aac5_game_1.replay26	dc44df0f-819f-4186-8f7d-745de444aac5	1	Team 48	None	78	1612.0030878966832	antler	core_destroyed	76	1	1
+dc44df0f-819f-4186-8f7d-745de444aac5_game_2.replay26	dc44df0f-819f-4186-8f7d-745de444aac5	2	Team 48	None	78	1612.0030878966832	moonrise	core_destroyed	347	1	1
+dc44df0f-819f-4186-8f7d-745de444aac5_game_3.replay26	dc44df0f-819f-4186-8f7d-745de444aac5	3	Team 48	None	78	1612.0030878966832	drumlin	core_destroyed	63	0	1
+dc44df0f-819f-4186-8f7d-745de444aac5_game_4.replay26	dc44df0f-819f-4186-8f7d-745de444aac5	4	Team 48	None	78	1612.0030878966832	atoll	core_destroyed	109	0	1
+dc44df0f-819f-4186-8f7d-745de444aac5_game_5.replay26	dc44df0f-819f-4186-8f7d-745de444aac5	5	Team 48	None	78	1612.0030878966832	jackpot	core_destroyed	191	1	1
+de631aea-8208-4542-b4e1-efdca6f47de3_game_1.replay26	de631aea-8208-4542-b4e1-efdca6f47de3	1	Powerpuff Girls	None	80	1581.9063059899381	hive	titanium_collected	1000	0	1
+de631aea-8208-4542-b4e1-efdca6f47de3_game_2.replay26	de631aea-8208-4542-b4e1-efdca6f47de3	2	Powerpuff Girls	None	80	1581.9063059899381	meander	titanium_collected	1000	0	1
+de631aea-8208-4542-b4e1-efdca6f47de3_game_3.replay26	de631aea-8208-4542-b4e1-efdca6f47de3	3	Powerpuff Girls	None	80	1581.9063059899381	fjordgate	core_destroyed	175	0	1
+de631aea-8208-4542-b4e1-efdca6f47de3_game_4.replay26	de631aea-8208-4542-b4e1-efdca6f47de3	4	Powerpuff Girls	None	80	1581.9063059899381	heart	titanium_collected	1000	1	1
+de631aea-8208-4542-b4e1-efdca6f47de3_game_5.replay26	de631aea-8208-4542-b4e1-efdca6f47de3	5	Powerpuff Girls	None	80	1581.9063059899381	antler	titanium_collected	1000	0	1
+de674ded-6727-4f7f-9c54-f038a7e2b432_game_1.replay26	de674ded-6727-4f7f-9c54-f038a7e2b432	1	Lunds Stallions	None	74	1569.2192982192082	nordkap	core_destroyed	343	0	1
+de674ded-6727-4f7f-9c54-f038a7e2b432_game_2.replay26	de674ded-6727-4f7f-9c54-f038a7e2b432	2	Lunds Stallions	None	74	1569.2192982192082	eider	core_destroyed	225	0	1
+de674ded-6727-4f7f-9c54-f038a7e2b432_game_3.replay26	de674ded-6727-4f7f-9c54-f038a7e2b432	3	Lunds Stallions	None	74	1569.2192982192082	antler	core_destroyed	82	1	1
+de674ded-6727-4f7f-9c54-f038a7e2b432_game_4.replay26	de674ded-6727-4f7f-9c54-f038a7e2b432	4	Lunds Stallions	None	74	1569.2192982192082	fjordgate	core_destroyed	324	0	1
+de674ded-6727-4f7f-9c54-f038a7e2b432_game_5.replay26	de674ded-6727-4f7f-9c54-f038a7e2b432	5	Lunds Stallions	None	74	1569.2192982192082	snowflake	core_destroyed	80	1	1
+dfdcee4b-0613-4d96-9a91-25d4b26eee32_game_1.replay26	dfdcee4b-0613-4d96-9a91-25d4b26eee32	1	Ouroboros	None	80	1620.5448892194922	nordkap	core_destroyed	214	0	0
+dfdcee4b-0613-4d96-9a91-25d4b26eee32_game_2.replay26	dfdcee4b-0613-4d96-9a91-25d4b26eee32	2	Ouroboros	None	80	1620.5448892194922	jackpot	titanium_collected	1000	0	0
+dfdcee4b-0613-4d96-9a91-25d4b26eee32_game_3.replay26	dfdcee4b-0613-4d96-9a91-25d4b26eee32	3	Ouroboros	None	80	1620.5448892194922	lighthouse	core_destroyed	581	0	0
+dfdcee4b-0613-4d96-9a91-25d4b26eee32_game_4.replay26	dfdcee4b-0613-4d96-9a91-25d4b26eee32	4	Ouroboros	None	80	1620.5448892194922	meander	titanium_collected	1000	1	0
+dfdcee4b-0613-4d96-9a91-25d4b26eee32_game_5.replay26	dfdcee4b-0613-4d96-9a91-25d4b26eee32	5	Ouroboros	None	80	1620.5448892194922	moonrise	core_destroyed	636	0	0
+dfe503b5-c2fd-4508-97f0-f99b8bb67821_game_1.replay26	dfe503b5-c2fd-4508-97f0-f99b8bb67821	1	Lunds Stallions	None	64	1537.6709778485993	lighthouse	core_destroyed	668	0	1
+dfe503b5-c2fd-4508-97f0-f99b8bb67821_game_2.replay26	dfe503b5-c2fd-4508-97f0-f99b8bb67821	2	Lunds Stallions	None	64	1537.6709778485993	nordkap	titanium_collected	1000	0	1
+dfe503b5-c2fd-4508-97f0-f99b8bb67821_game_3.replay26	dfe503b5-c2fd-4508-97f0-f99b8bb67821	3	Lunds Stallions	None	64	1537.6709778485993	drumlin	core_destroyed	833	0	1
+dfe503b5-c2fd-4508-97f0-f99b8bb67821_game_4.replay26	dfe503b5-c2fd-4508-97f0-f99b8bb67821	4	Lunds Stallions	None	64	1537.6709778485993	moonrise	core_destroyed	238	0	1
+dfe503b5-c2fd-4508-97f0-f99b8bb67821_game_5.replay26	dfe503b5-c2fd-4508-97f0-f99b8bb67821	5	Lunds Stallions	None	64	1537.6709778485993	jackpot	core_destroyed	168	0	1
+e055de81-3fe2-465f-aa55-6994584048e7_game_1.replay26	e055de81-3fe2-465f-aa55-6994584048e7	1	Banminary	None	74	1633.4803456157	antler	core_destroyed	123	1	0
+e055de81-3fe2-465f-aa55-6994584048e7_game_2.replay26	e055de81-3fe2-465f-aa55-6994584048e7	2	Banminary	None	74	1633.4803456157	snowflake	core_destroyed	157	1	0
+e055de81-3fe2-465f-aa55-6994584048e7_game_3.replay26	e055de81-3fe2-465f-aa55-6994584048e7	3	Banminary	None	74	1633.4803456157	moonrise	core_destroyed	72	1	0
+e055de81-3fe2-465f-aa55-6994584048e7_game_4.replay26	e055de81-3fe2-465f-aa55-6994584048e7	4	Banminary	None	74	1633.4803456157	archipelago	core_destroyed	283	1	0
+e055de81-3fe2-465f-aa55-6994584048e7_game_5.replay26	e055de81-3fe2-465f-aa55-6994584048e7	5	Banminary	None	74	1633.4803456157	saga	core_destroyed	98	1	0
+e14bb335-9fd3-492f-974f-9fbb2ca0fbb1_game_1.replay26	e14bb335-9fd3-492f-974f-9fbb2ca0fbb1	1	Lunds Stallions	None	72	1594.6910612893487	snowflake	core_destroyed	805	0	1
+e14bb335-9fd3-492f-974f-9fbb2ca0fbb1_game_2.replay26	e14bb335-9fd3-492f-974f-9fbb2ca0fbb1	2	Lunds Stallions	None	72	1594.6910612893487	atoll	core_destroyed	571	0	1
+e14bb335-9fd3-492f-974f-9fbb2ca0fbb1_game_3.replay26	e14bb335-9fd3-492f-974f-9fbb2ca0fbb1	3	Lunds Stallions	None	72	1594.6910612893487	lighthouse	core_destroyed	338	0	1
+e14bb335-9fd3-492f-974f-9fbb2ca0fbb1_game_4.replay26	e14bb335-9fd3-492f-974f-9fbb2ca0fbb1	4	Lunds Stallions	None	72	1594.6910612893487	antler	core_destroyed	382	0	1
+e14bb335-9fd3-492f-974f-9fbb2ca0fbb1_game_5.replay26	e14bb335-9fd3-492f-974f-9fbb2ca0fbb1	5	Lunds Stallions	None	72	1594.6910612893487	moonrise	titanium_collected	1000	0	1
+e15a5194-95ce-4737-bbfd-4c43d84e1756_game_1.replay26	e15a5194-95ce-4737-bbfd-4c43d84e1756	1	OopsGotYourElo	None	87	1559.8182919108654	meander	titanium_collected	1000	1	0
+e15a5194-95ce-4737-bbfd-4c43d84e1756_game_2.replay26	e15a5194-95ce-4737-bbfd-4c43d84e1756	2	OopsGotYourElo	None	87	1559.8182919108654	snowflake	titanium_collected	1000	1	0
+e15a5194-95ce-4737-bbfd-4c43d84e1756_game_3.replay26	e15a5194-95ce-4737-bbfd-4c43d84e1756	3	OopsGotYourElo	None	87	1559.8182919108654	fjordgate	core_destroyed	438	1	0
+e15a5194-95ce-4737-bbfd-4c43d84e1756_game_4.replay26	e15a5194-95ce-4737-bbfd-4c43d84e1756	4	OopsGotYourElo	None	87	1559.8182919108654	moonrise	titanium_collected	1000	1	0
+e15a5194-95ce-4737-bbfd-4c43d84e1756_game_5.replay26	e15a5194-95ce-4737-bbfd-4c43d84e1756	5	OopsGotYourElo	None	87	1559.8182919108654	saga	titanium_collected	1000	0	0
+e3c986b2-2d37-493a-8af8-76164df97068_game_1.replay26	e3c986b2-2d37-493a-8af8-76164df97068	1	Coreflood	None	72	1698.4678511680352	saga	titanium_collected	1000	0	1
+e3c986b2-2d37-493a-8af8-76164df97068_game_2.replay26	e3c986b2-2d37-493a-8af8-76164df97068	2	Coreflood	None	72	1698.4678511680352	moonrise	core_destroyed	357	0	1
+e3c986b2-2d37-493a-8af8-76164df97068_game_3.replay26	e3c986b2-2d37-493a-8af8-76164df97068	3	Coreflood	None	72	1698.4678511680352	lighthouse	titanium_collected	1000	1	1
+e3c986b2-2d37-493a-8af8-76164df97068_game_4.replay26	e3c986b2-2d37-493a-8af8-76164df97068	4	Coreflood	None	72	1698.4678511680352	archipelago	core_destroyed	117	1	1
+e3c986b2-2d37-493a-8af8-76164df97068_game_5.replay26	e3c986b2-2d37-493a-8af8-76164df97068	5	Coreflood	None	72	1698.4678511680352	nordkap	core_destroyed	439	0	1
+e3fb3488-1c67-4a2c-b98b-be285a25570e_game_1.replay26	e3fb3488-1c67-4a2c-b98b-be285a25570e	1	Leviathan	None	80	1538.0260855666045	jackpot	titanium_collected	1000	1	1
+e3fb3488-1c67-4a2c-b98b-be285a25570e_game_2.replay26	e3fb3488-1c67-4a2c-b98b-be285a25570e	2	Leviathan	None	80	1538.0260855666045	heart	titanium_collected	1000	1	1
+e3fb3488-1c67-4a2c-b98b-be285a25570e_game_3.replay26	e3fb3488-1c67-4a2c-b98b-be285a25570e	3	Leviathan	None	80	1538.0260855666045	drumlin	core_destroyed	158	0	1
+e3fb3488-1c67-4a2c-b98b-be285a25570e_game_4.replay26	e3fb3488-1c67-4a2c-b98b-be285a25570e	4	Leviathan	None	80	1538.0260855666045	nordkap	titanium_collected	1000	1	1
+e3fb3488-1c67-4a2c-b98b-be285a25570e_game_5.replay26	e3fb3488-1c67-4a2c-b98b-be285a25570e	5	Leviathan	None	80	1538.0260855666045	snowflake	core_destroyed	112	0	1
+e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9_game_1.replay26	e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9	1	Team 48	None	69	1602.3804820289874	moonrise	core_destroyed	64	1	0
+e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9_game_2.replay26	e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9	2	Team 48	None	69	1602.3804820289874	jackpot	core_destroyed	761	1	0
+e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9_game_3.replay26	e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9	3	Team 48	None	69	1602.3804820289874	archipelago	core_destroyed	118	1	0
+e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9_game_4.replay26	e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9	4	Team 48	None	69	1602.3804820289874	hive	core_destroyed	102	1	0
+e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9_game_5.replay26	e4ebc28b-888b-4a7c-8dda-5f4e7ad15ac9	5	Team 48	None	69	1602.3804820289874	snowflake	core_destroyed	200	0	0
+e541c733-1e04-41c6-a2ef-6a61861d3f1d_game_1.replay26	e541c733-1e04-41c6-a2ef-6a61861d3f1d	1	Kings College Munich	None	89	1567.4279740144962	jackpot	core_destroyed	469	0	1
+e541c733-1e04-41c6-a2ef-6a61861d3f1d_game_2.replay26	e541c733-1e04-41c6-a2ef-6a61861d3f1d	2	Kings College Munich	None	89	1567.4279740144962	moonrise	titanium_collected	1000	1	1
+e541c733-1e04-41c6-a2ef-6a61861d3f1d_game_3.replay26	e541c733-1e04-41c6-a2ef-6a61861d3f1d	3	Kings College Munich	None	89	1567.4279740144962	snowflake	core_destroyed	209	0	1
+e541c733-1e04-41c6-a2ef-6a61861d3f1d_game_4.replay26	e541c733-1e04-41c6-a2ef-6a61861d3f1d	4	Kings College Munich	None	89	1567.4279740144962	saga	core_destroyed	502	0	1
+e541c733-1e04-41c6-a2ef-6a61861d3f1d_game_5.replay26	e541c733-1e04-41c6-a2ef-6a61861d3f1d	5	Kings College Munich	None	89	1567.4279740144962	archipelago	core_destroyed	821	0	1
+e55f9c06-e097-46b2-a4d8-cc8d8ca34470_game_1.replay26	e55f9c06-e097-46b2-a4d8-cc8d8ca34470	1	gsxWins	None	72	1675.3110090700843	jackpot	core_destroyed	92	1	1
+e55f9c06-e097-46b2-a4d8-cc8d8ca34470_game_2.replay26	e55f9c06-e097-46b2-a4d8-cc8d8ca34470	2	gsxWins	None	72	1675.3110090700843	drumlin	core_destroyed	107	1	1
+e55f9c06-e097-46b2-a4d8-cc8d8ca34470_game_3.replay26	e55f9c06-e097-46b2-a4d8-cc8d8ca34470	3	gsxWins	None	72	1675.3110090700843	archipelago	core_destroyed	79	1	1
+e55f9c06-e097-46b2-a4d8-cc8d8ca34470_game_4.replay26	e55f9c06-e097-46b2-a4d8-cc8d8ca34470	4	gsxWins	None	72	1675.3110090700843	heart	core_destroyed	273	1	1
+e55f9c06-e097-46b2-a4d8-cc8d8ca34470_game_5.replay26	e55f9c06-e097-46b2-a4d8-cc8d8ca34470	5	gsxWins	None	72	1675.3110090700843	nordkap	core_destroyed	325	0	1
+e64c3327-2ed7-4352-8d1b-8ea0ed1f436c_game_1.replay26	e64c3327-2ed7-4352-8d1b-8ea0ed1f436c	1	Lunds Stallions	None	76	1619.4535945121218	heart	core_destroyed	136	1	0
+e64c3327-2ed7-4352-8d1b-8ea0ed1f436c_game_2.replay26	e64c3327-2ed7-4352-8d1b-8ea0ed1f436c	2	Lunds Stallions	None	76	1619.4535945121218	snowflake	core_destroyed	427	0	0
+e64c3327-2ed7-4352-8d1b-8ea0ed1f436c_game_3.replay26	e64c3327-2ed7-4352-8d1b-8ea0ed1f436c	3	Lunds Stallions	None	76	1619.4535945121218	hive	core_destroyed	714	0	0
+e64c3327-2ed7-4352-8d1b-8ea0ed1f436c_game_4.replay26	e64c3327-2ed7-4352-8d1b-8ea0ed1f436c	4	Lunds Stallions	None	76	1619.4535945121218	eider	core_destroyed	164	1	0
+e64c3327-2ed7-4352-8d1b-8ea0ed1f436c_game_5.replay26	e64c3327-2ed7-4352-8d1b-8ea0ed1f436c	5	Lunds Stallions	None	76	1619.4535945121218	atoll	core_destroyed	741	0	0
+e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e_game_1.replay26	e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e	1	Powerpuff Girls	None	70	1572.2694117038484	snowflake	titanium_collected	1000	1	0
+e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e_game_2.replay26	e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e	2	Powerpuff Girls	None	70	1572.2694117038484	atoll	titanium_collected	1000	1	0
+e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e_game_3.replay26	e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e	3	Powerpuff Girls	None	70	1572.2694117038484	hive	core_destroyed	319	0	0
+e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e_game_4.replay26	e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e	4	Powerpuff Girls	None	70	1572.2694117038484	saga	core_destroyed	413	0	0
+e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e_game_5.replay26	e6f5b4c3-bc7c-4cd2-b48f-5557ac43199e	5	Powerpuff Girls	None	70	1572.2694117038484	moonrise	titanium_collected	1000	1	0
+e7730656-d59f-40cc-b213-01c7e1243715_game_1.replay26	e7730656-d59f-40cc-b213-01c7e1243715	1	Askar City	None	74	1555.1804202983676	lighthouse	core_destroyed	889	1	1
+e7730656-d59f-40cc-b213-01c7e1243715_game_2.replay26	e7730656-d59f-40cc-b213-01c7e1243715	2	Askar City	None	74	1555.1804202983676	nordkap	titanium_collected	1000	1	1
+e7730656-d59f-40cc-b213-01c7e1243715_game_3.replay26	e7730656-d59f-40cc-b213-01c7e1243715	3	Askar City	None	74	1555.1804202983676	meander	core_destroyed	370	1	1
+e7730656-d59f-40cc-b213-01c7e1243715_game_4.replay26	e7730656-d59f-40cc-b213-01c7e1243715	4	Askar City	None	74	1555.1804202983676	moonrise	core_destroyed	250	1	1
+e7730656-d59f-40cc-b213-01c7e1243715_game_5.replay26	e7730656-d59f-40cc-b213-01c7e1243715	5	Askar City	None	74	1555.1804202983676	saga	core_destroyed	180	1	1
+e9a40d9d-3772-46b2-92a2-70aac39443f3_game_1.replay26	e9a40d9d-3772-46b2-92a2-70aac39443f3	1	Askar City	None	72	1572.8441550981	atoll	core_destroyed	109	1	1
+e9a40d9d-3772-46b2-92a2-70aac39443f3_game_2.replay26	e9a40d9d-3772-46b2-92a2-70aac39443f3	2	Askar City	None	72	1572.8441550981	archipelago	core_destroyed	75	1	1
+e9a40d9d-3772-46b2-92a2-70aac39443f3_game_3.replay26	e9a40d9d-3772-46b2-92a2-70aac39443f3	3	Askar City	None	72	1572.8441550981	lighthouse	core_destroyed	215	1	1
+e9a40d9d-3772-46b2-92a2-70aac39443f3_game_4.replay26	e9a40d9d-3772-46b2-92a2-70aac39443f3	4	Askar City	None	72	1572.8441550981	heart	core_destroyed	219	1	1
+e9a40d9d-3772-46b2-92a2-70aac39443f3_game_5.replay26	e9a40d9d-3772-46b2-92a2-70aac39443f3	5	Askar City	None	72	1572.8441550981	antler	core_destroyed	465	1	1
+eacd53c6-14df-47ca-9ea4-f952a677c264_game_1.replay26	eacd53c6-14df-47ca-9ea4-f952a677c264	1	CtrlAltDefeat	None	80	1598.234054945626	lighthouse	titanium_collected	1000	1	1
+eacd53c6-14df-47ca-9ea4-f952a677c264_game_2.replay26	eacd53c6-14df-47ca-9ea4-f952a677c264	2	CtrlAltDefeat	None	80	1598.234054945626	atoll	core_destroyed	842	0	1
+eacd53c6-14df-47ca-9ea4-f952a677c264_game_3.replay26	eacd53c6-14df-47ca-9ea4-f952a677c264	3	CtrlAltDefeat	None	80	1598.234054945626	meander	core_destroyed	857	0	1
+eacd53c6-14df-47ca-9ea4-f952a677c264_game_4.replay26	eacd53c6-14df-47ca-9ea4-f952a677c264	4	CtrlAltDefeat	None	80	1598.234054945626	antler	titanium_collected	1000	1	1
+eacd53c6-14df-47ca-9ea4-f952a677c264_game_5.replay26	eacd53c6-14df-47ca-9ea4-f952a677c264	5	CtrlAltDefeat	None	80	1598.234054945626	hive	core_destroyed	195	0	1
+eb59c8bb-df28-48e5-800f-59b8c90132b6_game_1.replay26	eb59c8bb-df28-48e5-800f-59b8c90132b6	1	Askar City	None	77	1536.6189482612142	nordkap	core_destroyed	115	1	0
+eb59c8bb-df28-48e5-800f-59b8c90132b6_game_2.replay26	eb59c8bb-df28-48e5-800f-59b8c90132b6	2	Askar City	None	77	1536.6189482612142	fjordgate	core_destroyed	97	1	0
+eb59c8bb-df28-48e5-800f-59b8c90132b6_game_3.replay26	eb59c8bb-df28-48e5-800f-59b8c90132b6	3	Askar City	None	77	1536.6189482612142	heart	core_destroyed	107	1	0
+eb59c8bb-df28-48e5-800f-59b8c90132b6_game_4.replay26	eb59c8bb-df28-48e5-800f-59b8c90132b6	4	Askar City	None	77	1536.6189482612142	saga	core_destroyed	121	1	0
+eb59c8bb-df28-48e5-800f-59b8c90132b6_game_5.replay26	eb59c8bb-df28-48e5-800f-59b8c90132b6	5	Askar City	None	77	1536.6189482612142	atoll	titanium_collected	1000	1	0
+ebd900b1-2dd7-4178-a3a6-42ddae660958_game_1.replay26	ebd900b1-2dd7-4178-a3a6-42ddae660958	1	Banminary	None	71	1669.1781871071826	meander	core_destroyed	359	1	1
+ebd900b1-2dd7-4178-a3a6-42ddae660958_game_2.replay26	ebd900b1-2dd7-4178-a3a6-42ddae660958	2	Banminary	None	71	1669.1781871071826	jackpot	core_destroyed	245	1	1
+ebd900b1-2dd7-4178-a3a6-42ddae660958_game_3.replay26	ebd900b1-2dd7-4178-a3a6-42ddae660958	3	Banminary	None	71	1669.1781871071826	fjordgate	core_destroyed	793	0	1
+ebd900b1-2dd7-4178-a3a6-42ddae660958_game_4.replay26	ebd900b1-2dd7-4178-a3a6-42ddae660958	4	Banminary	None	71	1669.1781871071826	saga	core_destroyed	431	1	1
+ebd900b1-2dd7-4178-a3a6-42ddae660958_game_5.replay26	ebd900b1-2dd7-4178-a3a6-42ddae660958	5	Banminary	None	71	1669.1781871071826	snowflake	core_destroyed	218	1	1
+ef083fa9-904d-4f6d-a533-6a7b923c410a_game_1.replay26	ef083fa9-904d-4f6d-a533-6a7b923c410a	1	Memtrace	None	74	1571.7908721940616	meander	core_destroyed	111	1	1
+ef083fa9-904d-4f6d-a533-6a7b923c410a_game_2.replay26	ef083fa9-904d-4f6d-a533-6a7b923c410a	2	Memtrace	None	74	1571.7908721940616	saga	titanium_collected	1000	1	1
+ef083fa9-904d-4f6d-a533-6a7b923c410a_game_3.replay26	ef083fa9-904d-4f6d-a533-6a7b923c410a	3	Memtrace	None	74	1571.7908721940616	jackpot	titanium_collected	1000	1	1
+ef083fa9-904d-4f6d-a533-6a7b923c410a_game_4.replay26	ef083fa9-904d-4f6d-a533-6a7b923c410a	4	Memtrace	None	74	1571.7908721940616	fjordgate	core_destroyed	135	1	1
+ef083fa9-904d-4f6d-a533-6a7b923c410a_game_5.replay26	ef083fa9-904d-4f6d-a533-6a7b923c410a	5	Memtrace	None	74	1571.7908721940616	hive	core_destroyed	179	0	1
+ef7f11f0-da6d-4f46-a933-99a440a22d54_game_1.replay26	ef7f11f0-da6d-4f46-a933-99a440a22d54	1	Lunds Stallions	None	84	1626.954389196134	jackpot	titanium_collected	1000	0	0
+ef7f11f0-da6d-4f46-a933-99a440a22d54_game_2.replay26	ef7f11f0-da6d-4f46-a933-99a440a22d54	2	Lunds Stallions	None	84	1626.954389196134	archipelago	core_destroyed	120	1	0
+ef7f11f0-da6d-4f46-a933-99a440a22d54_game_3.replay26	ef7f11f0-da6d-4f46-a933-99a440a22d54	3	Lunds Stallions	None	84	1626.954389196134	lighthouse	titanium_collected	1000	1	0
+ef7f11f0-da6d-4f46-a933-99a440a22d54_game_4.replay26	ef7f11f0-da6d-4f46-a933-99a440a22d54	4	Lunds Stallions	None	84	1626.954389196134	heart	core_destroyed	647	0	0
+ef7f11f0-da6d-4f46-a933-99a440a22d54_game_5.replay26	ef7f11f0-da6d-4f46-a933-99a440a22d54	5	Lunds Stallions	None	84	1626.954389196134	snowflake	titanium_collected	1000	0	0
+f11aa340-348c-40c0-9e81-52050b4e44b1_game_1.replay26	f11aa340-348c-40c0-9e81-52050b4e44b1	1	Lunds Stallions	None	89	1522.4262036448827	eider	core_destroyed	318	0	0
+f11aa340-348c-40c0-9e81-52050b4e44b1_game_2.replay26	f11aa340-348c-40c0-9e81-52050b4e44b1	2	Lunds Stallions	None	89	1522.4262036448827	hive	core_destroyed	173	0	0
+f11aa340-348c-40c0-9e81-52050b4e44b1_game_3.replay26	f11aa340-348c-40c0-9e81-52050b4e44b1	3	Lunds Stallions	None	89	1522.4262036448827	moonrise	core_destroyed	249	1	0
+f11aa340-348c-40c0-9e81-52050b4e44b1_game_4.replay26	f11aa340-348c-40c0-9e81-52050b4e44b1	4	Lunds Stallions	None	89	1522.4262036448827	snowflake	core_destroyed	483	0	0
+f11aa340-348c-40c0-9e81-52050b4e44b1_game_5.replay26	f11aa340-348c-40c0-9e81-52050b4e44b1	5	Lunds Stallions	None	89	1522.4262036448827	archipelago	core_destroyed	109	1	0
+f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6_game_1.replay26	f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6	1	Lunds Stallions	None	68	1542.3901016659886	eider	titanium_collected	1000	0	0
+f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6_game_2.replay26	f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6	2	Lunds Stallions	None	68	1542.3901016659886	atoll	core_destroyed	228	0	0
+f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6_game_3.replay26	f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6	3	Lunds Stallions	None	68	1542.3901016659886	nordkap	titanium_collected	1000	0	0
+f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6_game_4.replay26	f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6	4	Lunds Stallions	None	68	1542.3901016659886	antler	core_destroyed	165	0	0
+f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6_game_5.replay26	f2ea3ff4-eeb6-41b1-9a6c-c3b225ea3fe6	5	Lunds Stallions	None	68	1542.3901016659886	archipelago	core_destroyed	129	0	0
+f62d1798-9778-4fbf-98ea-7d6226486469_game_1.replay26	f62d1798-9778-4fbf-98ea-7d6226486469	1	Askar City	None	68	1515.1564543997952	saga	core_destroyed	94	1	1
+f62d1798-9778-4fbf-98ea-7d6226486469_game_2.replay26	f62d1798-9778-4fbf-98ea-7d6226486469	2	Askar City	None	68	1515.1564543997952	jackpot	core_destroyed	109	1	1
+f62d1798-9778-4fbf-98ea-7d6226486469_game_3.replay26	f62d1798-9778-4fbf-98ea-7d6226486469	3	Askar City	None	68	1515.1564543997952	archipelago	core_destroyed	97	1	1
+f62d1798-9778-4fbf-98ea-7d6226486469_game_4.replay26	f62d1798-9778-4fbf-98ea-7d6226486469	4	Askar City	None	68	1515.1564543997952	snowflake	core_destroyed	94	1	1
+f62d1798-9778-4fbf-98ea-7d6226486469_game_5.replay26	f62d1798-9778-4fbf-98ea-7d6226486469	5	Askar City	None	68	1515.1564543997952	fjordgate	core_destroyed	134	0	1
+f9a0f66d-def5-4ef3-a912-36fba74157f9_game_1.replay26	f9a0f66d-def5-4ef3-a912-36fba74157f9	1	I Stone	None	70	1516.5282248570893	meander	core_destroyed	589	1	0
+f9a0f66d-def5-4ef3-a912-36fba74157f9_game_2.replay26	f9a0f66d-def5-4ef3-a912-36fba74157f9	2	I Stone	None	70	1516.5282248570893	atoll	titanium_collected	1000	1	0
+f9a0f66d-def5-4ef3-a912-36fba74157f9_game_3.replay26	f9a0f66d-def5-4ef3-a912-36fba74157f9	3	I Stone	None	70	1516.5282248570893	lighthouse	titanium_collected	1000	1	0
+f9a0f66d-def5-4ef3-a912-36fba74157f9_game_4.replay26	f9a0f66d-def5-4ef3-a912-36fba74157f9	4	I Stone	None	70	1516.5282248570893	archipelago	titanium_collected	1000	0	0
+f9a0f66d-def5-4ef3-a912-36fba74157f9_game_5.replay26	f9a0f66d-def5-4ef3-a912-36fba74157f9	5	I Stone	None	70	1516.5282248570893	hive	titanium_collected	1000	1	0
+fa9834b1-6a48-4c96-bc29-c047180ff215_game_1.replay26	fa9834b1-6a48-4c96-bc29-c047180ff215	1	Kings College Munich	None	71	1582.4776413276538	drumlin	core_destroyed	88	0	1
+fa9834b1-6a48-4c96-bc29-c047180ff215_game_2.replay26	fa9834b1-6a48-4c96-bc29-c047180ff215	2	Kings College Munich	None	71	1582.4776413276538	lighthouse	core_destroyed	228	0	1
+fa9834b1-6a48-4c96-bc29-c047180ff215_game_3.replay26	fa9834b1-6a48-4c96-bc29-c047180ff215	3	Kings College Munich	None	71	1582.4776413276538	antler	core_destroyed	432	0	1
+fa9834b1-6a48-4c96-bc29-c047180ff215_game_4.replay26	fa9834b1-6a48-4c96-bc29-c047180ff215	4	Kings College Munich	None	71	1582.4776413276538	nordkap	titanium_collected	1000	0	1
+fa9834b1-6a48-4c96-bc29-c047180ff215_game_5.replay26	fa9834b1-6a48-4c96-bc29-c047180ff215	5	Kings College Munich	None	71	1582.4776413276538	atoll	core_destroyed	809	0	1
+fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970_game_1.replay26	fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970	1	I Stone	None	68	1498.1421367963808	meander	core_destroyed	131	1	0
+fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970_game_2.replay26	fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970	2	I Stone	None	68	1498.1421367963808	fjordgate	core_destroyed	126	0	0
+fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970_game_3.replay26	fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970	3	I Stone	None	68	1498.1421367963808	saga	core_destroyed	139	1	0
+fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970_game_4.replay26	fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970	4	I Stone	None	68	1498.1421367963808	snowflake	core_destroyed	66	1	0
+fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970_game_5.replay26	fad5dc1c-e0ec-4d9a-9fb9-34d4dcc14970	5	I Stone	None	68	1498.1421367963808	lighthouse	titanium_collected	1000	0	0
+fb23a610-2f87-4e1e-a15c-65d0e793b26d_game_1.replay26	fb23a610-2f87-4e1e-a15c-65d0e793b26d	1	Ouroboros	None	67	1574.8962281465958	antler	core_destroyed	355	0	0
+fb23a610-2f87-4e1e-a15c-65d0e793b26d_game_2.replay26	fb23a610-2f87-4e1e-a15c-65d0e793b26d	2	Ouroboros	None	67	1574.8962281465958	jackpot	titanium_collected	1000	0	0
+fb23a610-2f87-4e1e-a15c-65d0e793b26d_game_3.replay26	fb23a610-2f87-4e1e-a15c-65d0e793b26d	3	Ouroboros	None	67	1574.8962281465958	meander	core_destroyed	258	1	0
+fb23a610-2f87-4e1e-a15c-65d0e793b26d_game_4.replay26	fb23a610-2f87-4e1e-a15c-65d0e793b26d	4	Ouroboros	None	67	1574.8962281465958	saga	titanium_collected	1000	0	0
+fb23a610-2f87-4e1e-a15c-65d0e793b26d_game_5.replay26	fb23a610-2f87-4e1e-a15c-65d0e793b26d	5	Ouroboros	None	67	1574.8962281465958	eider	core_destroyed	216	0	0
+fb335c41-253a-4129-8613-e6b09c164a9f_game_1.replay26	fb335c41-253a-4129-8613-e6b09c164a9f	1	OopsGotYourElo	None	69	1596.2144628192893	lighthouse	core_destroyed	121	0	1
+fb335c41-253a-4129-8613-e6b09c164a9f_game_2.replay26	fb335c41-253a-4129-8613-e6b09c164a9f	2	OopsGotYourElo	None	69	1596.2144628192893	atoll	core_destroyed	205	0	1
+fb335c41-253a-4129-8613-e6b09c164a9f_game_3.replay26	fb335c41-253a-4129-8613-e6b09c164a9f	3	OopsGotYourElo	None	69	1596.2144628192893	fjordgate	titanium_collected	1000	1	1
+fb335c41-253a-4129-8613-e6b09c164a9f_game_4.replay26	fb335c41-253a-4129-8613-e6b09c164a9f	4	OopsGotYourElo	None	69	1596.2144628192893	eider	titanium_collected	1000	0	1
+fb335c41-253a-4129-8613-e6b09c164a9f_game_5.replay26	fb335c41-253a-4129-8613-e6b09c164a9f	5	OopsGotYourElo	None	69	1596.2144628192893	drumlin	core_destroyed	742	0	1
+fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb_game_1.replay26	fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb	1	Leviathan	None	80	1541.010693625947	hive	core_destroyed	256	1	1
+fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb_game_2.replay26	fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb	2	Leviathan	None	80	1541.010693625947	meander	core_destroyed	219	1	1
+fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb_game_3.replay26	fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb	3	Leviathan	None	80	1541.010693625947	lighthouse	titanium_collected	1000	1	1
+fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb_game_4.replay26	fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb	4	Leviathan	None	80	1541.010693625947	archipelago	core_destroyed	165	0	1
+fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb_game_5.replay26	fc2b2e89-392a-449d-9f06-5aa7ba2cb0bb	5	Leviathan	None	80	1541.010693625947	moonrise	core_destroyed	374	1	1
+fd0baeba-5f70-46d0-8964-06f2619bf8dc_game_1.replay26	fd0baeba-5f70-46d0-8964-06f2619bf8dc	1	Powerpuff Girls	None	80	1596.8680812862403	atoll	titanium_collected	1000	1	0
+fd0baeba-5f70-46d0-8964-06f2619bf8dc_game_2.replay26	fd0baeba-5f70-46d0-8964-06f2619bf8dc	2	Powerpuff Girls	None	80	1596.8680812862403	lighthouse	titanium_collected	1000	1	0
+fd0baeba-5f70-46d0-8964-06f2619bf8dc_game_3.replay26	fd0baeba-5f70-46d0-8964-06f2619bf8dc	3	Powerpuff Girls	None	80	1596.8680812862403	eider	core_destroyed	564	0	0
+fd0baeba-5f70-46d0-8964-06f2619bf8dc_game_4.replay26	fd0baeba-5f70-46d0-8964-06f2619bf8dc	4	Powerpuff Girls	None	80	1596.8680812862403	hive	core_destroyed	619	0	0
+fd0baeba-5f70-46d0-8964-06f2619bf8dc_game_5.replay26	fd0baeba-5f70-46d0-8964-06f2619bf8dc	5	Powerpuff Girls	None	80	1596.8680812862403	snowflake	titanium_collected	1000	0	0
+fd27da52-b290-4296-ab3d-15c8040e415e_game_1.replay26	fd27da52-b290-4296-ab3d-15c8040e415e	1	Leviathan	None	80	1524.4375575443808	archipelago	core_destroyed	308	1	1
+fd27da52-b290-4296-ab3d-15c8040e415e_game_2.replay26	fd27da52-b290-4296-ab3d-15c8040e415e	2	Leviathan	None	80	1524.4375575443808	heart	core_destroyed	311	0	1
+fd27da52-b290-4296-ab3d-15c8040e415e_game_3.replay26	fd27da52-b290-4296-ab3d-15c8040e415e	3	Leviathan	None	80	1524.4375575443808	fjordgate	core_destroyed	230	1	1
+fd27da52-b290-4296-ab3d-15c8040e415e_game_4.replay26	fd27da52-b290-4296-ab3d-15c8040e415e	4	Leviathan	None	80	1524.4375575443808	antler	core_destroyed	131	0	1
+fd27da52-b290-4296-ab3d-15c8040e415e_game_5.replay26	fd27da52-b290-4296-ab3d-15c8040e415e	5	Leviathan	None	80	1524.4375575443808	saga	core_destroyed	125	1	1
+fe045ae6-472d-4e14-bc20-7cae029fa51b_game_1.replay26	fe045ae6-472d-4e14-bc20-7cae029fa51b	1	I Stone	None	64	1477.9043553415888	snowflake	titanium_collected	1000	0	1
+fe045ae6-472d-4e14-bc20-7cae029fa51b_game_2.replay26	fe045ae6-472d-4e14-bc20-7cae029fa51b	2	I Stone	None	64	1477.9043553415888	heart	core_destroyed	81	1	1
+fe045ae6-472d-4e14-bc20-7cae029fa51b_game_3.replay26	fe045ae6-472d-4e14-bc20-7cae029fa51b	3	I Stone	None	64	1477.9043553415888	fjordgate	titanium_collected	1000	1	1
+fe045ae6-472d-4e14-bc20-7cae029fa51b_game_4.replay26	fe045ae6-472d-4e14-bc20-7cae029fa51b	4	I Stone	None	64	1477.9043553415888	archipelago	titanium_collected	1000	0	1
+fe045ae6-472d-4e14-bc20-7cae029fa51b_game_5.replay26	fe045ae6-472d-4e14-bc20-7cae029fa51b	5	I Stone	None	64	1477.9043553415888	meander	core_destroyed	153	1	1
+fe0c595f-a734-4200-a2ba-a0650db22b49_game_1.replay26	fe0c595f-a734-4200-a2ba-a0650db22b49	1	Memtrace	None	80	1553.5436404684729	moonrise	core_destroyed	476	0	0
+fe0c595f-a734-4200-a2ba-a0650db22b49_game_2.replay26	fe0c595f-a734-4200-a2ba-a0650db22b49	2	Memtrace	None	80	1553.5436404684729	heart	core_destroyed	75	1	0
+fe0c595f-a734-4200-a2ba-a0650db22b49_game_3.replay26	fe0c595f-a734-4200-a2ba-a0650db22b49	3	Memtrace	None	80	1553.5436404684729	saga	titanium_collected	1000	1	0
+fe0c595f-a734-4200-a2ba-a0650db22b49_game_4.replay26	fe0c595f-a734-4200-a2ba-a0650db22b49	4	Memtrace	None	80	1553.5436404684729	snowflake	titanium_collected	1000	1	0
+fe0c595f-a734-4200-a2ba-a0650db22b49_game_5.replay26	fe0c595f-a734-4200-a2ba-a0650db22b49	5	Memtrace	None	80	1553.5436404684729	hive	core_destroyed	560	0	0
+fe2f4fb1-ee2d-4868-a1ff-08c29376f268_game_1.replay26	fe2f4fb1-ee2d-4868-a1ff-08c29376f268	1	Kings College Munich	None	80	1570.4556853865693	heart	titanium_collected	1000	0	1
+fe2f4fb1-ee2d-4868-a1ff-08c29376f268_game_2.replay26	fe2f4fb1-ee2d-4868-a1ff-08c29376f268	2	Kings College Munich	None	80	1570.4556853865693	drumlin	core_destroyed	306	0	1
+fe2f4fb1-ee2d-4868-a1ff-08c29376f268_game_3.replay26	fe2f4fb1-ee2d-4868-a1ff-08c29376f268	3	Kings College Munich	None	80	1570.4556853865693	meander	titanium_collected	1000	1	1
+fe2f4fb1-ee2d-4868-a1ff-08c29376f268_game_4.replay26	fe2f4fb1-ee2d-4868-a1ff-08c29376f268	4	Kings College Munich	None	80	1570.4556853865693	eider	core_destroyed	269	0	1
+fe2f4fb1-ee2d-4868-a1ff-08c29376f268_game_5.replay26	fe2f4fb1-ee2d-4868-a1ff-08c29376f268	5	Kings College Munich	None	80	1570.4556853865693	archipelago	titanium_collected	1000	0	1
+fead7e71-4efc-4300-93a1-8abf6a38bd8a_game_1.replay26	fead7e71-4efc-4300-93a1-8abf6a38bd8a	1	Leviathan	None	72	1678.191525741739	jackpot	core_destroyed	102	0	1
+fead7e71-4efc-4300-93a1-8abf6a38bd8a_game_2.replay26	fead7e71-4efc-4300-93a1-8abf6a38bd8a	2	Leviathan	None	72	1678.191525741739	moonrise	core_destroyed	221	1	1
+fead7e71-4efc-4300-93a1-8abf6a38bd8a_game_3.replay26	fead7e71-4efc-4300-93a1-8abf6a38bd8a	3	Leviathan	None	72	1678.191525741739	heart	core_destroyed	417	0	1
+fead7e71-4efc-4300-93a1-8abf6a38bd8a_game_4.replay26	fead7e71-4efc-4300-93a1-8abf6a38bd8a	4	Leviathan	None	72	1678.191525741739	meander	core_destroyed	142	0	1
+fead7e71-4efc-4300-93a1-8abf6a38bd8a_game_5.replay26	fead7e71-4efc-4300-93a1-8abf6a38bd8a	5	Leviathan	None	72	1678.191525741739	snowflake	core_destroyed	130	1	1
+fee874ab-d977-43d4-98dd-1f8b70e4ad4b_game_1.replay26	fee874ab-d977-43d4-98dd-1f8b70e4ad4b	1	Team 48	None	70	1582.4032658056242	atoll	core_destroyed	74	0	1
+fee874ab-d977-43d4-98dd-1f8b70e4ad4b_game_2.replay26	fee874ab-d977-43d4-98dd-1f8b70e4ad4b	2	Team 48	None	70	1582.4032658056242	meander	titanium_collected	1000	0	1
+fee874ab-d977-43d4-98dd-1f8b70e4ad4b_game_3.replay26	fee874ab-d977-43d4-98dd-1f8b70e4ad4b	3	Team 48	None	70	1582.4032658056242	archipelago	core_destroyed	85	1	1
+fee874ab-d977-43d4-98dd-1f8b70e4ad4b_game_4.replay26	fee874ab-d977-43d4-98dd-1f8b70e4ad4b	4	Team 48	None	70	1582.4032658056242	snowflake	core_destroyed	91	0	1
+fee874ab-d977-43d4-98dd-1f8b70e4ad4b_game_5.replay26	fee874ab-d977-43d4-98dd-1f8b70e4ad4b	5	Team 48	None	70	1582.4032658056242	saga	core_destroyed	97	0	1
+ffe8b5a7-d171-4a4f-9837-0b202f7c89c0_game_1.replay26	ffe8b5a7-d171-4a4f-9837-0b202f7c89c0	1	Focalground	None	80	1623.0781069073685	saga	core_destroyed	229	0	0
+ffe8b5a7-d171-4a4f-9837-0b202f7c89c0_game_2.replay26	ffe8b5a7-d171-4a4f-9837-0b202f7c89c0	2	Focalground	None	80	1623.0781069073685	heart	core_destroyed	318	0	0
+ffe8b5a7-d171-4a4f-9837-0b202f7c89c0_game_3.replay26	ffe8b5a7-d171-4a4f-9837-0b202f7c89c0	3	Focalground	None	80	1623.0781069073685	hive	core_destroyed	247	0	0
+ffe8b5a7-d171-4a4f-9837-0b202f7c89c0_game_4.replay26	ffe8b5a7-d171-4a4f-9837-0b202f7c89c0	4	Focalground	None	80	1623.0781069073685	atoll	titanium_collected	1000	1	0
+ffe8b5a7-d171-4a4f-9837-0b202f7c89c0_game_5.replay26	ffe8b5a7-d171-4a4f-9837-0b202f7c89c0	5	Focalground	None	80	1623.0781069073685	snowflake	core_destroyed	138	0	0

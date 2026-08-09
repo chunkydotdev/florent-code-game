@@ -35,20 +35,34 @@ it.  18 damage on a 2-round reload is 6 HP/round against a defender who can no
 longer repair -- 500 HP in ~84 rounds.  Opened at the median kill-attempt round
 of r148 that lands inside r200-300, which is the window we are trying to move.
 
-WHAT IS DELIBERATELY ABSENT.  No round cutoff anywhere in this file.  The
-incumbent gated its insertion pipeline four ways (one staged raider at a time,
-three insertions per match lifetime, and off entirely from r180 in both the
-give-up and the only re-entry), which is precisely why its offensive machinery
-does not run at all in the window we are losing.  Give-up here is state-based
-only: no known enemy anchor, or a navigation stall.
+COLD INSERTION vs FOOTHOLD REINFORCEMENT.  This file was first written with no
+round gate at all, on a brief that turned out to rest on a refuted premise.
+The corpus that refuted it (11,895 forward throws) shows median raider life
+after a throw collapsing 43 -> 6 rounds at exactly r150 and only 2.34% of
+r200+ throws ever landing one attack -- so sending a FRESH body on a long walk
+into intact defences is measurably dead late, and the incumbent's r180 cutoff
+was a correct constant justified by a wrong reason.  The other half of the same
+corpus is why this module still exists: of the 528 raiders that did land
+attacks, 25 produced half of all 40,114 attacks and 319 were on the WINNING
+team.  Establishment wins games; the throw does not.
+
+So the two are separated.  COLD INSERTION -- a raider that holds nothing
+walking at an undamaged ring -- is open only until LOKI_COLD_INSERT_RND.
+FOOTHOLD REINFORCEMENT -- any round in which some raider is still acting at the
+ring, published as a heartbeat in SLOT_RAID_LIVE -- has no cutoff at all,
+because that is precisely the state the winning raiders were in.  Everything
+this file does at the destination is a survival package for that state:
+barriers deposited on the first action after landing (value that outlives the
+body), those same barriers as LOS cover against Gunner rays, arrival spread
+across twelve stations rather than one, stations covered by a visible enemy
+Launcher scored down and banned after a throw, mutual healing between adjacent
+raiders, and a forward Sentinel -- a 40 HP BUILDING that keeps firing after
+every body in the raid is dead.
 """
 from fcode import Direction, EntityType, Position
 
 from doctrine import *  # noqa: F401,F403
-from eco import (
-    core_corners, core_tiles, enemy_core_for, heal_seats, nearest_core_tile,
-    unpack_pos,
-)
+from eco import core_corners, core_tiles, enemy_core_for, heal_seats, unpack_pos
 
 
 class RaidMixin:
@@ -87,17 +101,53 @@ class RaidMixin:
 
     # --- the turn ----------------------------------------------------------
 
+    def _foothold_live(self, ct, rnd):
+        """Is some raider still ACTING at the enemy ring right now?
+
+        The heartbeat is written below by any raider inside LOKI_ESTABLISH_DSQ
+        of an enemy Core tile.  It is the one signal that separates the state
+        the winning 319 raiders were in ("established") from the state the
+        r200+ corpus says is dead ("thrown, six rounds to live").
+        """
+        beat = ct.read_store(SLOT_RAID_LIVE)
+        return bool(beat) and rnd - (beat - 1) <= LOKI_FOOTHOLD_STALE
+
+    def _raid_open(self, ct, rnd, established):
+        """May THIS raider be on the raid this round?
+
+        Three ways in, and only the first is time-limited:
+          * COLD INSERTION, open until LOKI_COLD_INSERT_RND;
+          * this raider is itself established at the ring -- never withdrawn,
+            because a raider that is still acting there is the asset;
+          * a teammate's foothold is live, so this body is reinforcement into
+            a position we already hold rather than a fresh six-round throw.
+        """
+        if established:
+            return True
+        if rnd < LOKI_COLD_INSERT_RND:
+            return True
+        return self._foothold_live(ct, rnd)
+
     def _raid(self, ct):
         E = self._enemy_anchor(ct)
         rnd = ct.get_current_round()
         if E is None or rnd < self.raid_pause_until:
-            # STATE-BASED stand-down, never a round cutoff: with no anchor
-            # there is nothing to raid, and a raider that cannot reach the ring
-            # is worth more on ore than oscillating against a wall.
+            # STATE-BASED stand-down: with no anchor there is nothing to raid,
+            # and a raider that cannot reach the ring is worth more on ore than
+            # oscillating against a wall.
             self._expand(ct)
             return
 
         p = ct.get_position()
+        established = min(p.distance_squared(c) for c in core_tiles(E)) <= LOKI_ESTABLISH_DSQ
+        if established:
+            ct.write_store(SLOT_RAID_LIVE, rnd + 1)
+        elif not self._raid_open(ct, rnd, established):
+            # Cold-insertion window closed and no live foothold to reinforce.
+            # The body goes back to the economy; it is NOT retired, so the
+            # moment a teammate re-establishes, this rejoins on the next turn.
+            self._expand(ct)
+            return
 
         # EXILE DETECTION.  A launcher throws any adjacent builder from EITHER
         # team, so a position that jumped more than one step since our last
@@ -121,7 +171,9 @@ class RaidMixin:
             self.pave_rnd = -2
         self.raid_prev = p
 
-        near = min(p.distance_squared(c) for c in core_tiles(E)) <= LOKI_APPROACH_DSQ
+        near = established or (
+            min(p.distance_squared(c) for c in core_tiles(E)) <= LOKI_APPROACH_DSQ
+        )
 
         if ct.get_action_cooldown() == 0 and self._raid_act(ct, E, near):
             return
@@ -203,9 +255,35 @@ class RaidMixin:
         if self._try_forward_sentinel(ct, E):
             return True
 
-        # 4. HOLD THE COLLAR.  +4 HP for 1 Ti against their 2 dmg for 2 Ti: a
+        # 4. BUDDY HEAL -- the survival half of the package.  heal(pos) repairs
+        # every friendly entity standing on pos, a friendly BUILDER BOT
+        # included, at +4 HP for 1 Ti.  Against a Gunner's 7 damage on a
+        # 1-round reload (3.5 HP/round) a single neighbour healing a wounded
+        # raider more than cancels it, and the measured failure mode is exactly
+        # this: median raider life after a throw is six rounds.  Gated on a
+        # real wound (LOKI_BUDDY_HEAL_GAP) so it never outbids sealing or a
+        # peck for cosmetic damage.
+        if near:
+            for d in CARDINALS:
+                t = p.add(d)
+                if not (0 <= t.x < self.mw and 0 <= t.y < self.mh):
+                    continue
+                try:
+                    oid = ct.get_tile_builder_bot_id(t)
+                    if (
+                        oid is not None and ct.get_team(oid) == self.team
+                        and ct.get_hp(oid) <= ct.get_max_hp(oid) - LOKI_BUDDY_HEAL_GAP
+                        and ct.can_heal(t)
+                    ):
+                        ct.heal(t)
+                        return True
+                except Exception:
+                    continue
+
+        # 5. HOLD THE COLLAR.  +4 HP for 1 Ti against their 2 dmg for 2 Ti: a
         # raider parked beside its own barriers out-repairs a pecker two to one
-        # on HP and eight to one on titanium, so the seal does not decay.
+        # on HP and eight to one on titanium, so the seal does not decay -- and
+        # the same barriers are the raider's own LOS cover against Gunner rays.
         if near:
             for d in CARDINALS:
                 t = p.add(d)
@@ -223,7 +301,7 @@ class RaidMixin:
                 except Exception:
                     continue
 
-        # 5. Otherwise clear whatever is in the way.
+        # 6. Otherwise clear whatever is in the way.
         if ti >= LOKI_PECK_TI_FLOOR and self._raid_peck(ct, seatkeys):
             return True
         return False

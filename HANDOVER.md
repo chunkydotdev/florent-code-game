@@ -1,13 +1,72 @@
-# Session 21 LIVE (builder, booted 05:47 CEST 2026-08-09)
+# Session 22 LIVE (builder, booted 06:40 CEST 2026-08-09)
 
 ## ===== STATE =====
-##   LIVE: **v89 "Eir 9c hivethaw (rollback)"** = `bots/_v100hf`, md5 **9e85cae5**,
-##   submission id 847b8d9d. **Identical bytes to v87** — this is the Thor
-##   rollback, not a new head. = v80 + `HIVE_FREEZE_ON = False`, nothing else.
-##   Ladder at 06:2x CEST: **1531.48 @ 485, rank #35/113.**
-##   Rollback target: `bots/_v89sh` (v80, md5 e12f8585), re-upload as a new version.
+##   LIVE: **v89 "Eir 9c hivethaw (rollback)"** = `bots/_v100hf`, submission id
+##   847b8d9d. **UNCHANGED this session — s22 has not touched the slot.**
+##   **Version identity is now a TREE HASH: `4558be91`** (`tools/treehash.py`,
+##   matched to `fcode`'s real zip file set). Legacy md5(main.py) `9e85cae5`
+##   still cross-walks old tape rows via `--legacy`. **md5-of-main.py no longer
+##   identifies a multi-file bot — do not quote it alone.**
+##   Ladder at 07:0x CEST: **1534.62 @ 487, rank #34/113** (was 1531.48/#35).
+##   Rollback target: `bots/_v89sh` (v80, tree `52c6c574`), re-upload as new.
 ##   Cohort classifier for any band read: opponent `ratingBefore` per
 ##   **(opponent, VERSION)**, threshold **1550**, no sweep.
+##
+## ===== !!! THE s21 QUEUE'S #1 ITEM IS REFUTED — DO NOT BUILD IT !!! =====
+## **s21 told you to BUILD LOKI to raise the r200-300 conversion ratio via the
+## launcher-insertion pipeline. THAT BUILD IS DEAD. Do not start it.**
+## The r180 cutoff I found in code is REAL (`LAUNCH_GIVEUP_RND` binds both the
+## give-up at main.py:1048 and the only re-entry at :1060, so the pipeline is
+## off from r180). **The INFERENCE from it was wrong**, refuted by two
+## independent instruments on 2026-08-09:
+##   1. **My own ablation.** `_v104loki0` = that cutoff removed (900/99) vs
+##      `_v103split`: **89-91, 49.4%, CI [42.2%, 56.7%], n=180, 0 crashes.**
+##      **NO EFFECT.**
+##   2. **3,791-replay corpus, 11,895 forward throws.** Median raider life after
+##      a throw collapses **43 -> 6 rounds at exactly r150**. Only **2.34% of
+##      r200+ forward throws ever land ONE attack on the enemy core.** A builder
+##      does 2 dmg into 500 HP; six rounds is ~12 HP under perfect conditions.
+## **CONCLUSION: `LAUNCH_GIVEUP_RND = 180` IS A CORRECT CONSTANT THAT OUR OWN
+## SOURCE JUSTIFIED WITH A WRONG REASON.** doctrine.py:106 claims "matches
+## decided earlier never reached that bound" — false, half our games pass r180.
+## The number is right anyway. **I attacked the comment and wrongly assumed the
+## constant inherited its error.** `_v104loki0` is a CONTROL, never a ship.
+##
+## ===== WHAT REPLACED IT =====
+## **Survival at the destination is the scarce resource, and it is only
+## purchasable before r150.** The payoff is real and brutally concentrated: of
+## raiders that established, **25 produced 50.5% of ALL core-attack volume**,
+## and **319 of the 528 core-attacking raiders were on the winning team.**
+## Current Loki direction: **early insertion (< r150) + a SURVIVAL PACKAGE.**
+## **This is NOT the refuted rush** — the three dead rushes (thor_r1, sporks,
+## Thor-1 gunline) were early TURRET pushes from the home band. Different
+## mechanism, and the economy is kept (thor_r1 went 2/60 on zero titanium).
+##
+## ===== A LIVE DEFECT IN v89 RIGHT NOW: THE SLOT_LAUNCHER LATCH =====
+## `SLOT_LAUNCHER` is written `1` at four sites (:770 :823 :830 :3880) and
+## cleared at exactly ONE (:850, the build-failure path). **Nothing clears it
+## when the launcher DIES.** Therefore, in the SHIPPED bot:
+##   - `_try_build_launcher:819` returns False forever -> **a destroyed launcher
+##     is NEVER replaced for the rest of the match**
+##   - the `:1046` escape hatch (`not SLOT_LAUNCHER` -> stop waiting) is **dead
+##     code** once latched
+##   - builders keep entering `launchwait` **for a ghost**
+## **This is a SURVIVAL defect, not an offence one:** exile is ~70% of all
+## launcher activity in the field, **ours is ~97% defensive**, and enemies do
+## insert against us (Memtrace 1,187 · Lunds 273 · CtrlAltDefeat 159 · KCM 139).
+## Repair built in `_v104latch` / `_v104loki0b`: slot 6 now carries `round + 1`
+## as a **heartbeat** (all 16 slots were already occupied, so freshness had to go
+## INTO it). Measurement was in flight at this writing — **read the tape, do not
+## assume it passed.**
+##
+## ===== THE INSTRUMENT LIMIT THAT BOUNDS EVERY SHIP DECISION =====
+## **The zero-Elo unrated loop can REFUTE but can NEVER CONFIRM.** One ladder gap
+## buys ~10 games; against the fixture baseline (p0 ~ 6.25%) the bar that is safe
+## against the null (>=3 wins) has **47% power**. Confirmation needs n~40 ~ four
+## gaps, and since `unrated` plays the ACTIVE submission, that means the variant
+## **holds the slot across ~4 rated matches.** Free and confirmatory are mutually
+## exclusive. Thor was validly refuted at n=10; **nothing has ever been confirmed
+## by this loop.**
 ##
 ## ===== READ THIS FIRST: THE GOAL CHANGED TODAY, AND THE REASON IS MEASURED =====
 ## **We have spent this project buying SURVIVAL. It worked, and it is nearly

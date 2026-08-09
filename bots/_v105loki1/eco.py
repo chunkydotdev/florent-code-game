@@ -602,7 +602,11 @@ class EcoMixin:
     # --- ore selection and navigation --------------------------------------
 
     def _pick(self, ct):
-        if self.map_ores and self.role == "expand":
+        # Static role partitions keep four builders off one deposit.  A raider
+        # standing down to the economy (raid.py's state-based fallback) is a
+        # full expander for this purpose; only the home defender is excluded,
+        # so its local scan keeps it near the Core.
+        if self.map_ores and self.role != "defend":
             small = self.mw * self.mh <= 220
             workers = 2 if small else 4
             worker = max(0, self.role_n - 1) % workers

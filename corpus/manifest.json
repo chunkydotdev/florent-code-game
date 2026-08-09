@@ -1,0 +1,19 @@
+{
+  "built_utc": "2026-08-09T05:08:03Z",
+  "git_sha": "5353bd3",
+  "archive_replays": 3831,
+  "rows": {
+    "ladder_games.tsv": 2435,
+    "throws.tsv": 58251,
+    "builds.tsv": 55254,
+    "build_agg.tsv": 91547,
+    "join.tsv": 1165
+  },
+  "join": {
+    "joined": 1165,
+    "unmatched": 2666,
+    "dropped": 0,
+    "reconciled": 1155,
+    "agree_rate": 1.0
+  }
+}
