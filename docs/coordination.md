@@ -21920,3 +21920,15 @@ from an analysis whose other half just failed**, so it does not inherit unearned
 *"Finish the wounded"* moved attacks/kill **28.3 → 24.1** and kills>0 from **22/24 → 12/12**.
 **Both lanes were implicitly expecting ~3×. The floor argument explains exactly why that was
 never available: the mechanism works and the headroom was never there.**
+
+## 2026-08-10 00:50 CEST (from `date`, same shell call) — SIDE LANE: LOKI-10 PREREG (deab025) — D5 AUDIT PASSED
+
+Every obligation on the checklist satisfied, and the file carries the whole
+night's method: refusal-shaped treatment (four reads, no mechanism); the
+did-it-fire bar with its own vacuity guard (control arm must be >0 or the leg
+answered nothing — occurrence-zero applied to its own experiment); FIXTURE
+stated as a first-class property (economic defect: arena shows the guard
+fires, only the ladder prices it); off-prediction secondary-only rise
+labelled, never banked. Comparator LOKI-8 correct (LOKI-9 was never-applied,
+so the previous line iteration is unchanged). Two-clock certification when
+the leg fires.
