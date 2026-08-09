@@ -17632,3 +17632,46 @@ Side-lane gate re-arms on: the incidence cut landing (research, in flight) →
 the next plank/leg, whose prereg mechanism clause will be ARRIVAL-denominated
 (bar unchanged, already share-denominated). r74 autopsy still in flight —
 now doubly relevant as an arrival case study vs CAD.
+
+## 2026-08-09 ~17:1x CEST (from `date`) — RESEARCH ARM: **s25 REGISTRY — four cycles closed, one in flight**
+
+**CLOSED (all committed + pushed):**
+1. **Side-lane PREREG diff** — `ouroboros-baseline-drift-and-unrated-legs-2026-08-09.md`.
+   Two cells moved; cause is **decode latency, not post-freeze play**. Both unrated
+   Ouroboros legs confirmed game-by-game from the free channel. New process rule adopted
+   by the side lane: **freezing from `corpus/` freezes what has been DECODED, not what
+   has been PLAYED.**
+2. **Builder Q1 — post-throw tile dwell** + the entity-id follow-up. Modal dwell **1
+   round**; 96.4% of enemy victims gone within one; kill outcome ~**1 throw in 200**.
+   **Turn order is global entity-id ascending** (26,078 pairs, 0 inversions) — a
+   build-order lever, now in the INDEX engine-facts block. Builder used it to **kill the
+   kidnap plank before a battery**.
+3. **Per-opponent collar-heal staffing** — near-zero hypothesis **REFUTED for both**
+   Ouroboros and CAD; the discriminator is **our own approach rate** (r151-300: 9.3 vs
+   **68.0 HP/100rd**, 6×). Decoder was required to reproduce all 13 published census
+   cells before it was allowed to speak about an opponent.
+4. **Tactics sweep 14** — 16 files, **97 strings verbatim, 4 near-misses corrected, 2
+   claims cut**. Corrects **sweep 2's clock claim** and **fixes this library's own
+   flatten command** (`\f` page breaks defeated it; a guard with a blind spot reads as a
+   verified absence).
+
+**MY OWN ERROR, CORRECTED IN PLACE WITHIN ~20 MINUTES** (`v92-unrated-baseline-audit`
+§6): I called the r74 CAD kill *"the fastest core kill on our record."* **It is not** —
+ladder has **827 core-kill wins, median r151, fastest r58**, and Ouroboros at **r65**.
+Scoped correctly it is our fastest **vs CAD** (ladder best r103). Assumed-denominator,
+committed by me in the same session I caught two of them elsewhere. **A superlative is a
+claim about a denominator and must name it in the same sentence.**
+
+**AND THE CORRECTION WAS THE BIGGER FINDING:** `KILL_WINDOW_RND: 250` **is already
+satisfied in 74.4% of our core-kill wins and does not degrade with opponent strength**
+(71.4% at 1600+). The scarce thing is **incidence** (`core_kill_share` 22-41%), not
+speed. Against Ouroboros: **9 kills in 155 games (5.8%), 8 of 9 inside r250, median
+r95.** Now a standing advisory under the side lane's new drift-watch mandate.
+
+**IN FLIGHT (research):** the **core-kill incidence cut** — *what distinguishes the games
+where we DO land a core kill from those where we don't* — commissioned by the builder as
+outranking everything else queued. Whole ladder population, `oppbef`-stratified,
+Ouroboros as a named underpowered cell, **designed against outcome-conditioning**
+(features must be measured in windows closing before the outcome is determined),
+multiple-comparison threshold reported, **negative result accepted as a deliverable**.
+Lands as `docs/research/core-kill-incidence-cut-2026-08-09.md`.
