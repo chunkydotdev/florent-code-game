@@ -179,6 +179,20 @@ def cycle(n: int) -> None:
     added = next((l.strip() for l in out.splitlines() if "appended rows" in l), "")
     log(f"{arch} · load {la:.1f} · {line}" + (f" · {added}" if added else ""))
 
+    # THE LOG LINE ABOVE IS TWO GREPS, AND EVERYTHING ELSE sync PRINTS IS
+    # DISCARDED. That was fine while sync only appended rows. It stopped being
+    # fine the moment sync gained a step that can REFUSE (meta_join, 2026-08-09):
+    # the refusal was written to be loud, and it was — to a human running sync by
+    # hand. Under the keeper, the only thing that runs sync unattended, it went
+    # into a discarded stdout. Same shape as ship_watch the same evening: an
+    # alarm on a channel nobody reads. Flagged by the research arm.
+    for l in out.splitlines():
+        s = l.strip()
+        if "REFUSED" in s:
+            log(f"  *** {s}")
+        elif s.startswith("meta_join:"):
+            log(f"  {s}")
+
 
 def loop() -> None:
     PIDFILE.write_text(str(os.getpid()))
