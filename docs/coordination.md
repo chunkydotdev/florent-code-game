@@ -10648,3 +10648,59 @@ good play — AIIDE 2022 re-ran identical bots on bare metal, timeouts fell
 rate changing at all); **and HOLD the deliberate half until Magnus asks the
 organisers.** A DQ costs the whole ladder position, and we would be discovering
 the rule from the penalty.
+
+### 2026-08-09 09:04 CEST (from `date`) — builder arm: **MAGNUS'S SPITBALL, PRICED: "kill all enemy builders" is a wash; "kill the harvester and barrier the crater" is the strongest compound on the board**
+
+**HIS TWO IDEAS: focus on killing all enemy builders, and disrupt enemy harvest
+lines.** Both priced against measured arithmetic rather than accepted or
+dismissed.
+
+**1. "KILL ALL ENEMY BUILDERS" — BREAK-EVEN, AND IT REBATES THEIR ECONOMY.**
+A 40 HP builder costs us **6 gunner shots = 24 Ti of ammo**; they replace it for
+~30 Ti at the core's capped **1 spawn/round**. Roughly a wash — **and worse,
+scale tracks LIVE entities (my probe), so every builder we kill hands back
+-20% of their global scale, making everything they buy next cheaper.** Against a
+large remaining build plan that rebate can exceed the 30-Ti body destroyed.
+**Straight builder attrition does not win.**
+**BUT THE INSTINCT IS RIGHT ABOUT *WHICH* BUILDERS.** A builder is 2 HP/round of
+repair and three of them make a sentinel-target immortal, so killing them **at
+the moment they are screening something we are already shooting** is worth the
+whole target: **96 Ti to clear four healers versus 780-2,500 Ti to grind through
+them.** That is not "kill all builders", it is "kill the screen" — and it is
+already LOKI-3's `HEALER_FOCUS_GLOBAL_ON` flag.
+
+**2. "DISRUPT HARVEST LINES" — DO NOT SHOOT THE LINE.** Research's exchange table
+measures **conveyor-cutting at 4:1 AGAINST us** (~12 Ti of ammo to cut, 3 Ti for
+them to repair). And killing a harvester alone is ~**1:1**, because the
+replacement's first stack lands immediately on rebuild.
+
+**3. THE COMPOUND THAT WORKS, AND IT IS MAGNUS'S IDEA SHARPENED:**
+```
+kill harvester (30 HP)      ~2 sentinel shots     ~20 Ti
+barrier the freed ore tile                          3 Ti
+their cost to undo: 15 attacks = 30 Ti + 15 builder-turns, or lose the site forever
+```
+A harvester sits ON an ore tile; when it dies the tile reverts to empty ore,
+which **my probe confirms is barrierable** (`is_tile_empty=True`,
+`can_build_barrier=True`, and once the barrier stands `can_build_harvester=False`
+— with destroying our own barrier restoring it as the control). **Three extra
+titanium converts a 1:1 trade into permanent site denial**, and `destroy()` being
+allied-only means they cannot clear it cheaply.
+
+**AND IT IS REACHABLE, WHICH IS WHAT MAKES IT PRACTICAL:**
+```
+enemy harvesters built NEARER OUR CORE than their own:
+   r0-30 3.7%  ·  r30-150 13.1%  ·  r150+ 33.9%
+```
+**By r150 a third of their new harvesters are on OUR side** — inside our own
+territory, far from their defences, in the band where our turrets measurably sit
+idle. **We do not go anywhere: the targets come to us, we kill them, and we seal
+the ground behind them.** It composes three separately measured facts (idle home
+turrets, harvester drift, probe-verified ore denial) and needs no new subsystem.
+
+**ROUTED, NOT OPENED AS A NEW BUILD.** The denial half went to LOKI-4 as
+`DENY_CRATER_ON` — deliberately specified to fire whenever an enemy-held ore tile
+inside our half becomes free, **regardless of what freed it**, so it does not
+depend on the turret half. The turret half is LOKI-3's existing targeting work.
+**Two independently ablatable flags in two existing builds, composable later —
+rather than a sixth build opened at the keyboard.**

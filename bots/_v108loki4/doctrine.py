@@ -1241,10 +1241,28 @@ DENY_MAX_BARRIERS = 4
 # of the time (rank 9+, claimed r100+) while the +1% scale runs to the final
 # bell, so late placements are net negative.
 DENY_MAX_RND = 150
-# Titanium floor.  A barrier is 3 Ti, but the opening bank also has to buy five
-# builders and the first harvesters; never trade a harvester for a barrier.
-# Same shape as MEDIC_TI_FLOOR.
-DENY_TI_FLOOR = 60
+# Titanium floor.  MEASURED, and it was the whole plank: at 60 this line alone
+# suppressed essentially every placement.  Two instrumented 32-game legs put
+# denial at 0.16 and 0.12 barriers/game against ~10 adjacency-rounds/game, and
+# the DENY_DEBUG trace named the reason on every single miss -- `why=ti_floor`,
+# with the live bank reading 5-45 Ti at lighthouse r40-54 and jackpot r58-69.
+# This chassis spends its bank to the floor continuously; a 60 Ti gate is never
+# open during the window when a builder is standing next to enemy ore.
+#
+# 15 is five barriers of headroom and is below MEDIC_TI_FLOOR (20), which is
+# the right ordering: a 3 Ti barrier that permanently removes a 24 Ti site is a
+# better use of a starving bank than a 1 Ti +4 HP patch.  The "never trade a
+# harvester for a barrier" property does NOT come from this number -- it comes
+# from call-site ordering plus the action-cooldown gate (the harvester branch
+# runs first and consumes the cooldown when it fires).
+DENY_TI_FLOOR = 15
+# Reclaim.  ct.destroy() on our own building is free, has no cooldown and is
+# unlimited per turn, and the probe confirmed can_build_harvester() returns to
+# True in the SAME turn the barrier comes down.  So an expander that later
+# wants a tile it once denied simply takes its own barrier back.  This is the
+# asymmetry the doctrine rests on, used in our own favour: the denial is
+# permanent for them and free to undo for us.
+DENY_RECLAIM_ON = True
 # A barrier BLOCKS MOVEMENT and LOS.  Planting one in a corridor pinch can wall
 # our own saboteur out of the half it is trying to reach, which costs far more
 # than the site is worth.  Require this many non-wall cardinal neighbours in

@@ -979,7 +979,7 @@ LAUNCHER_RESERVE = 80
 # UNMEASURED AT WRITE TIME.  These weights are reasoned from the spec, not
 # fitted; the battery has not been run.  KIDNAP_ON = False restores the parent
 # byte-for-byte on the enemy branch.
-KIDNAP_ON = False
+KIDNAP_ON = True
 
 # Landing-tile score weights.  Scale note: within a sqrt(26) throw the walk-back
 # gain spans about -5..+5 tiles, so KIDNAP_W_KILLZONE at 100 outranks the whole
@@ -1070,6 +1070,13 @@ KIDNAP_SURGE_AMMO_CAP = 120      # stop topping up a magazine nobody is burning
 # part -- turret coverage -- is computed ONCE per launcher-round from at most
 # KIDNAP_MAX_TURRETS turret patterns of <=5 tiles each, not per candidate.
 KIDNAP_MAX_TURRETS = 8
+
+# The 8-neighbourhood as raw int deltas.  Direction.delta() allocates a tuple
+# per call and this is stamped once per friendly building per throw; names with
+# a leading underscore are not exported by `from doctrine import *`, hence the
+# prefix.
+KIDNAP_RING8 = ((-1, -1), (0, -1), (1, -1), (-1, 0),
+                (1, 0), (-1, 1), (0, 1), (1, 1))
 
 # stderr instrumentation for the throw ledger (KIDNAP= lines).  Off in the
 # shipped bytes: print() goes to the replay, stderr costs a syscall per throw,

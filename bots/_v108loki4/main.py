@@ -2606,7 +2606,21 @@ class Player:
                     bp = p.add(d)
                     if seat_ban is not None and (bp.x, bp.y) in seat_ban:
                         continue
-                    if 0 <= bp.x < self.mw and 0 <= bp.y < self.mh and ct.can_build_harvester(bp):
+                    if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
+                        continue
+                    # LOKI-4 RECLAIM.  If this ore tile is blocked by OUR OWN
+                    # denial barrier, take it back: destroy() is free, has no
+                    # cooldown and is unlimited per turn, and the probe showed
+                    # can_build_harvester() returns True in the SAME turn.  So
+                    # a tile denied at r40 (when the bank could not afford a
+                    # harvester) is a free option for us later and still a
+                    # permanent loss to them -- destroy() is allied-only.
+                    # Ordered so the ordinary can_build_harvester path below is
+                    # untouched on every tile that never carried our barrier.
+                    ok = ct.can_build_harvester(bp)
+                    if not ok and DENY_RECLAIM_ON and denial.reclaim(self, ct, bp):
+                        ok = ct.can_build_harvester(bp)
+                    if ok:
                         ct.build_harvester(bp)
                         ct.write_store(SLOT_HARVESTERS, ct.read_store(SLOT_HARVESTERS) + 1)
                         if ct.read_store(SLOT_HARVESTERS) >= ECO_NEED:
@@ -2667,6 +2681,26 @@ class Player:
                             return
                     except Exception:
                         continue
+
+            # LOKI-4 ORE DENIAL, expander arm.  Measured reason this exists:
+            # with the hook on the saboteur alone the plank fired 0.16 times
+            # per game over 32 instrumented games, while the replays showed
+            # 15.7 adjacency-rounds per team-game against an unclaimed
+            # enemy-side plan tile -- i.e. the opportunity was almost entirely
+            # in the hands of units that never called it.  Expanders do cross
+            # the midline in this chassis (_pick's partitions sweep the whole
+            # map once the near ore is gone).
+            #
+            # Ranked LAST in the expander's action phase, strictly below the
+            # link build, the harvester build and the medic patch, and only for
+            # ENEMY-SIDE ore: on any tile we could work, a harvester is a
+            # strictly better barrier (same permanence, same denial, plus 2.5
+            # Ti/round).  The harvester branch above runs first and sets the
+            # action cooldown when it fires, so try_place's cooldown gate makes
+            # "never trade a harvester for a barrier" structural rather than a
+            # promise.
+            if denial.try_place(self, ct):
+                return
 
         # Action phase over -- the harvester build above (if any) already
         # wrote SLOT_HARVESTERS and link_queue together with nothing after

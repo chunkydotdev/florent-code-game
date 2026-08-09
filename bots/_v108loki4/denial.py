@@ -34,6 +34,8 @@ This file is the ablation unit: with ORE_DENIAL_ON False every entry point
 returns on its first line and the bot is _v103split.
 """
 
+from fcode import EntityType
+
 from doctrine import (  # noqa: F401
     CARDINALS,
     DENY_DEBUG,
@@ -41,6 +43,7 @@ from doctrine import (  # noqa: F401
     DENY_MAX_ENEMY_ORE,
     DENY_MAX_RND,
     DENY_MIN_OPEN_NBRS,
+    DENY_RECLAIM_ON,
     DENY_TI_FLOOR,
     ORE_DENIAL_ON,
 )
@@ -119,23 +122,60 @@ def plan(bot, ct):
     return bot.deny_plan
 
 
+def _miss(bot, ct, rnd, why):
+    """DENY_DEBUG-only: why a unit standing beside a plan tile did not place.
+
+    Dead code in the shipped build (DENY_DEBUG is False), and the only reason
+    it exists is that the first instrumented leg placed 0.16 barriers per game
+    against ~10 adjacency-rounds per game -- the conversion gap, not the
+    opportunity, is what this plank lives or dies on, and guessing at it is how
+    the r180 error was made.
+    """
+    if not DENY_DEBUG:
+        return
+    try:
+        p = ct.get_position()
+        for t in bot.deny_plan or ():
+            if abs(t.x - p.x) + abs(t.y - p.y) == 1:
+                import sys
+                print(f"DENYMISS r{rnd} at=({p.x},{p.y}) ore=({t.x},{t.y}) "
+                      f"role={bot.role} why={why} ti={ct.get_global_resources()}",
+                      file=sys.stderr)
+                return
+    except Exception:
+        return
+
+
 def try_place(bot, ct):
     """Spend this unit's action on a denial barrier.  True if one was built.
 
     Fires only on a tile the unit is ALREADY orthogonally adjacent to, so the
     plank costs exactly one builder-turn per barrier and never a step of
-    walking.  Called from the saboteur's action phase below the siege work, so
-    nothing measured-good is displaced.
+    walking.
+
+    Two call sites, both at the BOTTOM of their action phase: the saboteur
+    (below the open-map melee, the siege repair and the siege build) and the
+    expander (below the link build, the harvester build and the medic patch).
+    The expander arm exists because measurement demanded it -- with the hook on
+    the saboteur alone this fired 0.16 times per game across 32 instrumented
+    games, while the same replays carried 15.7 adjacency-rounds per team-game
+    against unclaimed enemy-side plan tiles.
+
+    The cooldown check on the first line is what makes "never trade a harvester
+    for a barrier" structural: any higher-priority action already consumed the
+    action cooldown before control reaches here.
     """
     if not ORE_DENIAL_ON or bot.deny_placed >= DENY_MAX_BARRIERS:
         return False
     try:
-        if ct.get_action_cooldown() != 0:
-            return False
         rnd = ct.get_current_round()
+        if ct.get_action_cooldown() != 0:
+            _miss(bot, ct, rnd, "cooldown")
+            return False
         if rnd > DENY_MAX_RND:
             return False
         if ct.get_global_resources() < DENY_TI_FLOOR:
+            _miss(bot, ct, rnd, "ti_floor")
             return False
         tiles = plan(bot, ct)
         if not tiles:
@@ -147,6 +187,7 @@ def try_place(bot, ct):
             # can_build_barrier is the only occupancy test needed: it is False
             # on a tile that already carries anything, theirs or ours.
             if not ct.can_build_barrier(t):
+                _miss(bot, ct, rnd, f"cant_build({t.x},{t.y})")
                 continue
             ct.build_barrier(t)
             bot.deny_placed += 1
@@ -161,3 +202,45 @@ def try_place(bot, ct):
     except Exception:
         return False
     return False
+
+
+def reclaim(bot, ct, tile):
+    """Take our own denial barrier back off an ore tile so a harvester can go
+    there.  True if a barrier was removed (the caller may then build).
+
+    ct.destroy() is free, carries no cooldown and is unlimited per turn, and
+    the probe confirmed can_build_harvester() flips back to True in the SAME
+    turn -- so the caller does not have to wait a round.
+
+    This is the answer to the one way this plank can hurt us: an expander
+    denies an enemy-side tile at r40 because the bank could not afford a
+    harvester, and at r300 the bank can.  Because destroy() is allied-only, the
+    tile is a permanent loss to them and a free option for us.
+    """
+    if not (ORE_DENIAL_ON and DENY_RECLAIM_ON):
+        return False
+    try:
+        # Only ever removes a barrier on a tile THIS DOCTRINE could have
+        # denied.  Without this test the caller's "adjacent tile where
+        # can_build_harvester is False" would also match the defensive barrier
+        # _defend plants beside our own Core (main.py:2403), and reclaim would
+        # quietly dismantle the home wall.
+        if tile not in plan(bot, ct):
+            return False
+        bid = ct.get_tile_building_id(tile)
+        if bid is None or ct.get_team(bid) != bot.team:
+            return False
+        if ct.get_entity_type(bid) != EntityType.BARRIER:
+            return False
+        if not ct.can_destroy(tile):
+            return False
+        ct.destroy(tile)
+        if bot.deny_placed > 0:
+            bot.deny_placed -= 1
+        if DENY_DEBUG:
+            import sys
+            print(f"DENYRECLAIM r{ct.get_current_round()} tile=({tile.x},{tile.y})",
+                  file=sys.stderr)
+        return True
+    except Exception:
+        return False

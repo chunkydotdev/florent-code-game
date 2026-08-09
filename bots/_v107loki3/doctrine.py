@@ -1140,6 +1140,72 @@ SPORKS_AMMO_TI_FLOOR = 12
 #     already past the point where +20 is affordable.
 #   - Per-unit budget and cadence: the arm cannot run away even if both above
 #     stay satisfied for 800 rounds.
+# WHAT WAS MEASURED (2026-08-09, s21).  Mechanism only -- NO win rate is
+# claimed here and none should be read off these games.  Deterministic paired
+# legs: NOISE_ON=False in local copies of both sides, --tle 0 (so CPU
+# contention cannot perturb anything), ONE GAME AT A TIME, opponent
+# ouroboros_probe / kladde_probe, maps drumlin/jackpot/atoll/eider(/heart/
+# meander).  n is small (6-8 games per config in the flag matrix, 48 paired
+# games in the parent leg) -- this is a smoke that proves the flags DO what
+# they say, not a verdict on whether it wins.
+#
+# 1. BAND SCOPING IS EXACT.  Across 48 paired games vs _v103split, the r0-150
+#    and r150-200 census rows are BIT-IDENTICAL (turrets, shots, ammo Ti,
+#    builder attacks, heals, median d^2 -- every column), and no game that
+#    ended before r200 diverged at all (22 of 48 pairs byte-identical outcomes;
+#    the 26 that differed all ran past r350).  The opening is untouched, which
+#    matters because r0-150 is the one band where our core-kill hazard (23.3%)
+#    already BEATS the >=1800 field's (20.7%).
+#
+# 2. THE FLAG MATRIX, r200-300, per game.  "ratio" is damage capacity over HP
+#    repaired: (7 x gunner shots + 18 x sentinel shots + 2 x builder attacks) /
+#    (4 x heals).  Field reference 2.79, ours 1.11.
+#
+#      config          turrets  shots  ammoTi  heals  ratio  med d2_own
+#      off (=parent)      0.00    3.3    12.7   34.0   0.17        --
+#      LATE_AMMO only     0.00    6.3    41.0   29.3   0.38        --
+#      HEALER_FOCUS only  0.00    3.3    12.7   34.0   0.17        --
+#      + INTRUDER too     0.00    6.3    41.0   29.3   0.38        --
+#      LATE_TURRET only   2.67    6.0    26.0   32.5   0.32      20.5
+#      + FORWARD          3.17   27.3   115.3   24.8   1.96     116.0
+#      ALL FIVE           2.83   31.7   172.3   20.0   2.82     116.0
+#
+#    THE HEADLINE, AND IT IS A PLACEMENT RESULT, NOT A PRODUCTION ONE.  Turret
+#    COUNT is held constant by construction between the home and forward arms
+#    (same recruits, same budget, same cadence, same gates -- only the anchor
+#    differs), and it measured 2.67 vs 3.17.  On that near-identical count,
+#    shots went 6.0 -> 27.3 and the ratio 0.32 -> 1.96.  A late turret standing
+#    at home does not fire.  The home arm reproduced Thor exactly: median d^2
+#    20.5 from our own Core, which is the archive's 20-22 signature to the
+#    decimal, and 0% of those builds were FORWARD by the census's own test.
+#
+# 3. TWO PRE-REGISTERED PREDICTIONS, SCORED HONESTLY.
+#    - "LATE_TURRET alone (home band) -> no effect or negative": HELD in
+#      direction (0.17 -> 0.32 is the smallest move of any live flag, and it is
+#      the same size as ammo alone with none of ammo's cost), but it is not
+#      NOTHING and it is not negative.
+#    - "LATE_AMMO alone -> no effect": REFUTED, mildly.  Ammunition alone
+#      roughly doubled shots (3.3 -> 6.3) and the ratio (0.17 -> 0.38) with
+#      turret count unchanged at 0.00, i.e. it fed guns that already existed.
+#      It remains far short of the field's 2.79 on its own, so the prediction's
+#      SPIRIT -- that ammo is not the binding constraint -- survives.
+#
+# 4. THE ECONOMY IS NOT THE CASUALTY, and this was the failure mode to fear
+#    (a prior gunline attempt shipped zero harvesters and delivered zero Ti).
+#    Whole-game, per config: delivered titanium PER ROUND runs 15.01 (parent),
+#    15.66 (ammo), 14.62 (turret-home), 15.34 (turret-forward), 16.57 (all) --
+#    flat to slightly UP.  Harvesters BUILT rise 12.38 -> 15.38; conveyors are
+#    flat (121 -> 117).  Total delivered falls 11,678 -> 9,784 for one reason
+#    only: the games get 24% SHORTER (778 -> 591 rounds).  Titanium held at the
+#    end falls 8,766 -> 6,312 (-28%), which is the idle-bank number this piece
+#    set out to spend.
+#
+# 5. CPU AND SAFETY.  0 crashes and 0 engine TLE interrupts (BotOutput.tled)
+#    for our side across --tle 10 games on four maps, for both parent and this
+#    file.  Wall clock 7.13s -> 7.38s on a matched 1000-round game.  NOTE: the
+#    replay's execTimeUs reads 0 locally, exactly as ct.get_cpu_time_elapsed()
+#    does (docs/tooling.md), so the tled flag is the only usable local CPU
+#    signal and real headroom is unverified off-ladder.
 LATE_TURRET_ON = True
 FORWARD_PLACEMENT_ON = True
 LATE_AMMO_ON = True

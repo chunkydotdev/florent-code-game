@@ -3934,13 +3934,14 @@ class Player:
         except Exception:
             return False
 
-    def _kidnap_cover(self, ct):
-        """Tiles a LOADED friendly turret line already covers, as an (x, y) set.
+    def _kidnap_scan(self, ct):
+        """One pass over our own buildings, returning (cover, near).
 
-        Computed ONCE per launcher-turn from the turrets rather than per
-        candidate tile: each turret contributes at most 5 pattern tiles (gunner
-        r^2=13 -> 3 cardinal / 2 diagonal, sentinel r^2=32 -> 5 / 4), so this is
-        O(turrets) where the obvious formulation is O(candidates x turrets).
+        cover -- tiles a LOADED friendly turret line already reaches, as an
+        (x, y) set.  Built from the TURRETS, not from the candidate tiles: each
+        turret contributes at most 5 pattern tiles (gunner r^2=13 -> 3 cardinal
+        / 2 diagonal, sentinel r^2=32 -> 5 / 4), so this is O(turrets) where the
+        obvious formulation is O(candidates x turrets).
 
         get_attackable_tiles_from is the RAW pattern and ignores occupancy and
         walls -- exactly right for a Sentinel, whose line ignores obstacles, and
@@ -3948,30 +3949,48 @@ class Player:
         alike.  Gunner rays are therefore walked outward and truncated at the
         first non-empty tile.  can_fire_from cannot substitute here: for gunners
         it requires the TARGET tile to be occupied, and a landing tile is empty
-        until the throw lands.
+        until the throw lands.  Ammo is a precondition, not a detail -- a line
+        the team cannot pay to fire is decoration, and we start at 0 ammunition.
 
-        Ammo is a precondition, not a detail -- a line the team cannot pay to
-        fire is decoration, and this bot starts every match at 0 ammunition.
+        near -- (x, y) -> how many of our non-barrier buildings touch that tile,
+        stamped from the buildings so it costs O(buildings) once instead of 8
+        lookups on each of ~85 candidates.  Barriers are excluded on purpose: a
+        hostile parked next to a 3 Ti wall costs nothing.
+
+        The two share this loop because the per-building getters are the
+        expensive part -- three engine calls each, and the branch measured
+        612 us median with the scans separate.
         """
         cover = set()
+        near = {}
         ammo = ct.get_global_ammo()
         seen = 0
         for eid in ct.get_nearby_buildings():
-            if seen >= KIDNAP_MAX_TURRETS:
-                break
             try:
                 if ct.get_team(eid) != self.team:
                     continue
                 et = ct.get_entity_type(eid)
-                if et == EntityType.SENTINEL:
-                    if ammo < KIDNAP_MIN_AMMO_SENTINEL:
-                        continue
-                elif et == EntityType.GUNNER:
-                    if ammo < KIDNAP_MIN_AMMO_GUNNER:
-                        continue
-                else:
-                    continue
                 tp = ct.get_position(eid)
+            except Exception:
+                continue
+            if et != EntityType.BARRIER:
+                seats = core_tiles(tp) if et == EntityType.CORE else (tp,)
+                for s in seats:
+                    sx, sy = s.x, s.y
+                    for ddx, ddy in KIDNAP_RING8:
+                        k = (sx + ddx, sy + ddy)
+                        near[k] = near.get(k, 0) + 1
+            if seen >= KIDNAP_MAX_TURRETS:
+                continue
+            if et == EntityType.SENTINEL:
+                if ammo < KIDNAP_MIN_AMMO_SENTINEL:
+                    continue
+            elif et == EntityType.GUNNER:
+                if ammo < KIDNAP_MIN_AMMO_GUNNER:
+                    continue
+            else:
+                continue
+            try:
                 tiles = ct.get_attackable_tiles_from(tp, ct.get_direction(eid), et)
             except Exception:
                 continue
@@ -3987,32 +4006,7 @@ class Player:
                 cover.add((t.x, t.y))
                 if not self._kidnap_open(ct, t):
                     break
-        return cover
-
-    def _kidnap_ours(self, ct):
-        """Neighbour-count map: (x, y) -> how many of our non-barrier buildings
-        touch that tile.  Built by walking OUR buildings and stamping their
-        8-rings, so it costs O(buildings) once instead of 8 lookups on each of
-        ~85 candidate landing tiles.  Barriers are excluded on purpose: a
-        hostile parked next to a 3 Ti wall costs nothing.
-        """
-        near = {}
-        for eid in ct.get_nearby_buildings():
-            try:
-                if ct.get_team(eid) != self.team:
-                    continue
-                et = ct.get_entity_type(eid)
-                if et == EntityType.BARRIER:
-                    continue
-                q = ct.get_position(eid)
-            except Exception:
-                continue
-            seats = core_tiles(q) if et == EntityType.CORE else (q,)
-            for s in seats:
-                for d in DIRECTIONS:
-                    k = (s.x + d.delta()[0], s.y + d.delta()[1])
-                    near[k] = near.get(k, 0) + 1
-        return near
+        return cover, near
 
     def _kidnap_victim(self, ct, bp, dest, cover):
         """Score one hostile in the pickup ring; also flag it a probable healer.
@@ -4100,7 +4094,7 @@ class Player:
             return False
         # Coverage first: victim selection needs it for the under-fire trigger,
         # and it is one scan either way.
-        cover = self._kidnap_cover(ct)
+        cover, near = self._kidnap_scan(ct)
         pick = None
         pick_s = None
         pick_heal = False
@@ -4113,7 +4107,6 @@ class Player:
         if pick is None:
             return False
 
-        near = self._kidnap_ours(ct)
         # For a healer the payoff is SEPARATION AND TIME: every round it spends
         # walking back is a round the thing it was repairing keeps taking
         # damage, and unlike a raider it has a specific tile it must return to.
