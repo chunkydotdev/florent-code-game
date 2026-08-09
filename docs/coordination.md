@@ -9856,3 +9856,65 @@ crashes 0 across ~900 matches
 answer today came from the replay corpus, not the arena. *Delta: **the local
 arena is a SAFETY instrument, not a doctrine instrument.** Budget it as
 regression testing and stop expecting verdicts from it.*
+
+### 2026-08-09 07:33 CEST (from `date`) — builder arm: **I STOPPED ASSUMING AND RAN THE EXPERIMENT. Cost-scale settled by engine probe — plus a correction to my own overclaim.**
+
+**MAGNUS'S STEER: "we experiment and document real results, we dont assume."**
+It landed on two live assumptions of mine, and both needed fixing.
+
+**ASSUMPTION 1 — I CLOSED ROAD D BY READING CODE.** I wrote that forward
+sentinel siege "is not the unexploited lever it looks like, because `_plan_siege`
+already places forward guns (cap 2-3)". **That is an inference from source to
+in-game behaviour, which is EXACTLY the error I made this morning on the r180
+launcher gate.** I have no measurement of whether we actually field forward
+turrets, where they stand, or what they hit. **Road D is re-opened as UNKNOWN,
+not closed.**
+
+**ASSUMPTION 2 — LOKI-2'S ENTIRE PREMISE CAME FROM A DOC, NOT A MEASUREMENT.**
+I verified "cost scale tracks LIVE entities" against `game-model.md` and briefed
+a build on it. A doc is not an experiment. **So I built `bots/_probe_scale` and
+asked the engine.**
+
+**RESULT — LIVE, CONFIRMED, 1:1:**
+```
+built 44 -> scale 164.000     destroy -> 42 -> 162.000
+built 12 -> scale 132.000     destroy -> 10 -> 130.000 -> 7 -> 127.000
+```
+Scale falls the moment an entity dies. **Road B (weaponising churn against the
+enemy) is now refuted by EXPERIMENT, not by document** — their scale simply
+falls back when the conveyor dies.
+
+**AND THE SCALE IS ONE GLOBAL MULTIPLIER OVER ALL CATEGORIES:**
+```
+rnd=1    0 conveyors  scale 120  harv 24 gun 24 sent 36 bot 36 launch 24
+rnd=53  39 conveyors  scale 159  harv 31 gun 31 sent 47 bot 47 launch 31
+```
+Building ONLY conveyors raised every other price. Each getter is exactly
+`floor(scale x base)` (sentinel `floor(1.59*30)=47`, harvester
+`floor(1.59*20)=31`). Scale = `100 + sum over LIVE entities of the category
+rate`; the Core contributes 0 (rnd=1 shows 120 = 100 + one builder bot's 20).
+
+**CORRECTION TO MY OWN CLAIM, MADE MINUTES AGO — I OVERSOLD THIS.** I told
+Magnus this was "the biggest finding of the session" and a correction to our
+model. **It is not new: `docs/game-model.md:393-395` already states it
+correctly** ("scale rises with how much your team has built ... decreases again
+when an entity is destroyed") with the right contribution table. The doc that is
+wrong is the organisers' `CLAUDE.md` ("more of that category"), a file already
+flagged as containing known errors. **What actually changed is that the claim is
+now MEASURED rather than inherited** — which is worth something, because LOKI-2
+is being built on it and Road B's refutation now rests on an experiment. That is
+a smaller claim than the one I made and it is the true one.
+*Delta: I corrected a doc I had not read carefully enough, and announced it as a
+discovery before checking whether we already knew it. **Check whether the
+finding is new BEFORE presenting it as new** — the measurement was still worth
+running; the framing was not.*
+
+**THE IMPLICATION THAT MAY NOT HAVE BEEN DRAWN, and it is testable:** because
+the scale is global, **our conveyor network silently taxes our ARMY.** At 39
+live conveyors a sentinel costs 47 instead of 30. Late game we run large
+networks, so replacing a lost turret costs us ~1.6-2x base while a lean opponent
+pays near base. **That is a candidate mechanism for their 40.9% r300+ hazard
+against our 9.8%** — they can afford to replace late losses and we cannot.
+Related prior: `spitball.md:248` ("price the cost-scale externality forward"), so
+the idea exists; the LATE-GAME ARMY-REPLACEMENT framing is what I have not seen
+stated. **Routed to research as a testable hypothesis. Not a finding yet.**
