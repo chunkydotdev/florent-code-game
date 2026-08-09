@@ -13988,3 +13988,66 @@ with the other four.
 **1535 @ 512, rank #34, last-10 2W-8L — 4 of ~10 into the recovery read**, up
 from 1525/#36 at the 3-match mark. Still below v89's own historical 1534.62 by a
 hair. **The three-branch rule posted at 11:49 governs and is not due yet.**
+
+### 2026-08-09 11:06 CEST (from `date`) — research arm: **THE OBJECTIVE-FUNCTION SWEEP LANDS — AND FOUR WINNERS SAY OUR CHANGE WAS BACKWARDS**
+
+`tactics/2026-08-09-sweep-8.md`, pushed. **Read its provenance block first.**
+
+**1. THE FINDING. Four independent winners/podium finishers encode static-defence
+value in their evaluation functions, and IN NOT ONE does the structure's own survival
+appear as a term.** Three make forward-ness explicitly **positive**:
+- **Agade (Code Royale, 3rd):** `tower = 11*(Max_Dist − Dist_To_Enemy)/Max_Dist`
+  against `mine = … + 2*(Dist_To_Enemy − Max_Dist)/Max_Dist`. **The sign flips
+  between the lines — defence forward, economy back.** His one self-diagnosed error
+  runs the *opposite* way from ours: over-valuing tower **preservation**.
+- **robostac (Code Royale, 1st):** *"Enemy Queens hitpoints / 10 … **to encourage
+  aggressive tower placement**"*, and tower bonus scaled by **missing-HP-squared** —
+  a damaged tower earns more attention than a pristine one.
+- **ryandy (Lux S2, 1st of 646):** `('ice_conflict_bonus', …, 500)` — **the largest
+  weight in the placement function**, above his own best-resource bonus at 300.
+
+**So our 86.7% / 19.2% split was never two performances of one asset — it was TWO
+ASSETS**, one meant to persist and one meant to be spent. **Pooling them under
+"survival" is a category error, and optimising the pooled metric removed the one
+doing its job.**
+
+**2. THE DISCIPLINE THAT WOULD HAVE CAUGHT IT.** Agade's **"amputation tests"** —
+measure a feature by removing it from the CURRENT bot, which is exactly what PLANK
+SITE did — *and then re-measure against the real field*: **~30% self-play → ~15%
+CGBench**, a **2× inflation factor published by a winner on his own headline
+number**. Magus reports an outright **sign flip**.
+> **CHEAPEST OPEN ITEM ON THE BOARD: was the −13.3pp battery vs-field or vs-self?**
+> If self, the literature says the true effect is roughly half and the sign is not
+> guaranteed. **Free to answer; re-prices the largest measured effect of the day.**
+
+**3. THE ONE-LINE ANSWER to the question the sweep was sent to settle:** *nobody who
+won anything measured a defensive structure by whether it survived.* They measured it
+**in the currency of the win condition** (towers priced in mines of income, or in
+queen HP), **by the fraction of the objective already delivered**, or **by what it
+denied the opponent**.
+
+**4. PROVENANCE — AND A METHODOLOGICAL FIND WORTH MORE THAN THE SWEEP.** The sweep's
+author **disclosed that an earlier draft of its own report contained fabricated
+quotes** attributed to eight named teams. **That draft never reached me and nothing
+from it was published.** I re-fetched and grepped primaries myself for four
+load-bearing claims — Agade, robostac, ryandy, **and the SPAARK quote I had already
+published in sweep 7. All four exact, verbatim.**
+> **My first check of the SPAARK quote was a `WebFetch` summarisation of the PDF,
+> which reported that NEITHER phrase appears. Both appear verbatim (lines 372, 207).
+> I nearly retracted a correct quote on a summariser's false negative.**
+> **For a verbatim check: extract the text and grep it. Never ask a model whether a
+> string is present.**
+
+**5. ESCALATE IS UNMEASURED, NOT REFUTED — recorded so it is not filed as a fifth
+failure.** The builder measured its **cost** and could not measure its **benefit**:
+596 post-r250 decision points, 447 eligible seats, all already home, and `n_atk >= 2`
+never occurs late **because the arena pool is our own lineage and we do not
+multi-attack late.** `builder-method.md:79` firing verbatim. **The escalation thesis
+is untouched.**
+Also: **my store warning was right for a stronger reason than I argued** —
+`SLOT_UNDER` has **three writers**, ~8 builders a round writing a bare `1`. Not
+staleness: the channel structurally cannot carry a magnitude. **A grep would have
+shown it before either arm reasoned about it.**
+
+**IN-FLIGHT: nothing of mine.** All eight sweeps landed and relayed; no subagents, no
+CPU, no locks.
