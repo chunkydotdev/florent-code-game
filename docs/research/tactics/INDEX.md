@@ -68,7 +68,7 @@ exception permanently destroys that unit for the match.
 | 5 | Turret/tower placement doctrine and advancing a firing line (tower-defence + RTS theory) | **SWEPT** (Lanchester, LTD2, chokepoint/concave theory) | 2026-08-09 | [lanchester-commit-gate](lanchester-commit-gate.md), [sweep 1](2026-08-09-sweep-1.md) |
 | 6 | Cost-inflation attacks (making the opponent's buildings dearer) | **SWEPT** — and inverted: killing an enemy builder REFUNDS their scale; imprison instead | 2026-08-09 | [exchange-rates](../exchange-rates-2026-08-09.md) §6 |
 | 7 | Limited-bandwidth team coordination (our 16 ints) — patterns from Halite/Ants | unswept | — | — |
-| 8 | Economy: harvest saturation, expansion timing, when to stop expanding | unswept | — | — |
+| 8 | Economy: harvest saturation, expansion timing, when to stop expanding | **SWEPT** — and it turned into a negative: **cost scaling never binds on harvesters** (break-even beyond any map's ore supply under both readings); it binds on the **+20% categories**. The corpus hooks then showed **the economy is not our constraint at all** | 2026-08-09 | [sweep 4](2026-08-09-sweep-4.md), [middle-game hazard](../middle-game-hazard-and-economy-2026-08-09.md) |
 | 9 | Opening theory and build-order steering in symmetric-map games | unswept | — | — |
 | 10 | Endgame/tiebreak play when the win condition is a score, not a kill | **SWEPT** (BC 2019 do-nothing, BC 2022 one-gold, Halite endgame flag, Spring'21 score+banked/3) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §4 |
 | 11 | Anti-rush and defensive-line theory — **re-aimed at "how does anyone break a 2.2:1 defensive edge?"** | **SWEPT** — 8 BC postmortem PDFs read in full + Screeps/Terminal/RTS theory. **Answer: mostly you don't, you win on economy; every league converged there independently.** | 2026-08-09 | [sweep 2](2026-08-09-sweep-2.md), [sentinel-file](sentinel-file-stacking.md) |
@@ -121,6 +121,17 @@ since the whole value is in the evidence labels.
   defender's heal is adjacency-capped at ~16 HP/round per tile while the
   attacker's damage on that tile is capped only by titanium** — concentration,
   not more damage.
+- **THE MIDDLE GAME IS THE TARGET, NOT THE ECONOMY (2026-08-09, s23).** Conditional
+  on a core kill, the chance it is **ours** rises monotonically **29% → 55% → 72% →
+  76%** across r0-150 / r151-300 / r301-600 / r601-999 — but **353 games reached
+  r1000 and we won 57.2%**. We win the opening and we win the clock; we die in the
+  middle. **`disengage and out-economy` (sweep 2) is REFUTED as a change**: paired,
+  we already out-build the field on conveyors (+13) and under-build turrets (−3,
+  leading in only 20.1% of games). It is our status quo, not a lever.
+- **METHOD WARNING from the same work: our opening is a near-constant** — r0-150
+  build medians are *identical* in wins and losses; all the variance is the
+  opponent's. **A paired differential whose variance lives on the other side of the
+  subtraction is an opponent thermometer, not a strategy dial.**
 - **THE FORWARD ROAD IS CLOSED (builder, 2026-08-09 09:05)** on three
   instruments, and sweep 3 corroborates it from an independent evidence path.
   Research amended the magnitude of one of those instruments — see
