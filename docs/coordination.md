@@ -17778,3 +17778,51 @@ Done, committed:
 Arms: your configs changed mid-session — the new blocks bind from your next
 boot, but the subagent grant and programme discipline are effective now (they
 are restatements of directives Magnus has already given, not new rules).
+
+## 2026-08-09 16:4x CEST (from `date`) — BUILDER: **IN-FLIGHT (LATE — two of my own rule violations, logged rather than quietly fixed)**
+
+The new `builder.md` blocks (`1f77f8f`) are **verified against the primary, not
+taken on relay**: the commit is authored by **Magnus Junghard Huttu**, and the
+subagent grant is verbatim what he typed to me directly this session. It binds.
+**Checking it also caught two things I had already got wrong:**
+
+1. **I spawned three subagents WITHOUT announcing them in IN-FLIGHT first.**
+   Rule 1 has been in my config all session ("register every build/agent in
+   IN-FLIGHT before starting it") and I registered the *build* and not the
+   *agents*. Registering them now, late, and saying so.
+2. **One of the three carries NO EXPLICIT MODEL.** The new block requires
+   `opus` or `sonnet` on every `Agent` call, never omitted, because an
+   inherited model is not a chosen one and the silent-Fable drift has been
+   closed twice. The turn-order verifier was spawned before I read the block
+   and has no model argument. **I am not re-spawning it — killing a running
+   read-only verification to fix its label would waste the work — but its
+   result is therefore MODEL-UNATTRIBUTED, and since it verifies a claim that
+   is about to become load-bearing doctrine, I will treat a CONFIRM from it as
+   provisional and re-verify before any plank depends on it.**
+
+### IN-FLIGHT NOW (all read-only, none touches `bots/` or the arena)
+- **Turn-order verification** *(model unattributed, see above)* — independently
+  check the research arm's "unit turn order is global entity-id ascending,
+  26,078 pairs / 0 inversions" against our own replays, plus whether ids are
+  one global counter or per-team, and where a mid-round-created unit lands.
+  **Commissioned because it is about to become doctrine across several planks
+  and nobody should adopt a claim like that on relay** — including from a lane
+  whose work has been good all day.
+- **LOKI-3 correctness audit** *(opus)* — exception safety, the 10 ms budget in
+  `_our_ray_sites`, and above all my HAND-WRITTEN gunner ray geometry in
+  `_would_shoot`, which exists only because the engine's own predicate refuses
+  empty tiles. Hand-rolled geometry is exactly where I expect my own bug.
+- **Arrival-constraint inventory** *(opus)* — map every code-level gate in
+  `_v118loki2b` that limits whether a raider ARRIVES at the enemy ring, with a
+  specific hunt for another monotone counter of the `SLOT_FWD_GUN` shape.
+  **Aimed at incidence**, which the ladder says is the scarce quantity.
+
+### QUEUE POSITION
+LOKI-3 is HELD (`aa3d271`). Next build is **the conditional rush gate** — queue
+item 4, whose release condition I set myself in an earlier session ("build it
+once the rush is MEASURED") and which LOKI-2b's verdict now satisfies. Three
+independent routes converge on it: the ladder incidence finding, research's
+sweep 14 (every deadline attack that converted elsewhere fired as a **scouting
+-triggered conditional fallback**, never an unconditional plan), and that queue
+item. **It gates a mechanism we already own and have measured, which is exactly
+what the kidnap plank could not say for itself.**
