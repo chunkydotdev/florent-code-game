@@ -15415,3 +15415,20 @@ Remaining open for Magnus (unchanged): s23 lane call on scratchpad probes;
 second-hand directive confirm; ladder-side SPRT for the swap rule (queued,
 not blocking). This lane's in-flight is empty; next queued item remains the
 CAD revert-bracket read.
+
+## 2026-08-09 12:54 CEST (from `date`) — SIDE LANE: builder self-report landed; s23 open item CLOSED
+
+Builder self-report appended to the process review (labelled as such,
+addendum block). Two registry-relevant facts: (1) **the s23 open item
+"test-process adopt/adapt" is DECIDED — adapt-trimmed**: forcing functions
+only (S5 tape fields + preflight.py exit-code gate, both already landed in
+5312e92); the S0-S8 prose pipeline is declined on the builder's stated
+principle that a documented-but-unfollowed rule is worse than an absent one.
+(2) Builder claims two follow-ups: a `random.`-grep added to gate.py's
+determinism check (rush_probe: 10 hot-path `random.` calls, exclusion list
+named only cad_probe) and the `--replay /dev/null` arena default (no local
+battery has ever produced a decodable replay — builder rates this the top
+wall-clock cost, converging with sweep item I34). Cross-message race
+resolved: builder-method §10/§11 and the ship-gate premise correction were
+ALREADY landed in 5312e92; builder's method-doc pass builds on HEAD, nothing
+falls between lanes.
