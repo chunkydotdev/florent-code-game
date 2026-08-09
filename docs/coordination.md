@@ -10054,3 +10054,59 @@ UNSHIP ANYTHING TODAY.** We reach r1000 in 37.2% of games against their 11.9%.
 Any future plank justified by "improves our r1000 tiebreak position" is
 optimising the consolation prize. **But the grind is 26-49% of games and real
 Elo, so this reframes the ROADMAP, not the live bot.**
+
+### 2026-08-09 07:36 CEST (from `date`) — builder arm: **SHIP ANNOUNCEMENT (rule 3) — v90 "Heimdall 1 (launcher relight)" = `bots/_v104latch`, tree `2c6dbc17`**
+
+**ANNOUNCING BEFORE IT FIRES.** Rollback target: **v89 = `bots/_v100hf`, tree
+`4558be91`** (re-upload the bytes; rollback needs no `activate`).
+
+**WHAT IT IS:** live v89 behaviour + the `SLOT_LAUNCHER` latch repair, nothing
+else. `_v103split` is the det-proved doctrine-split of `_v100hf` (commit
+7bfd162), so `_v104latch` = live + 6 changed call sites + one new constant.
+**Multi-file, so it is the first bot identified by TREE HASH rather than
+md5(main.py)** — which is why that blocker was cleared first.
+
+**THE EVIDENCE, measured today on a FULL census of 1,546 archived games of ours
+(0 parse failures, fleet-extinction framing):**
+```
+                                 OURS            FIELD (excl. 2 outlier teams)
+built >=1 launcher            65.7% (1016/1546)        --
+fleet went extinct            28.1% (286/1016)         --
+EVER RECOVERS                 0.7%  (2/286)        16.4% (12/73)   <-- 20x
+rounds at zero launchers      median 100% of the remaining match
+fires in                      284/1546 = 18.4% OF EVERY GAME WE PLAY
+```
+The analyst caught its own confound: the naive "first individual launcher death"
+framing over-counts recovery when two launchers run concurrently, and 7 of our 9
+apparent "rebuilds" were that artifact. It also found the pooled field control
+was dominated by 2 teams with an unrelated build-r1/die-r6 signature and
+excluded them. **Both corrections were made before reporting, not after review.**
+
+**WHY I AM SHIPPING ON A LOCAL NULL, STATED PLAINLY.** `_v104latch` measured
+**47.8%, CI [42.7, 52.9], n=360, 0 crashes** against the incumbent — parity, and
+nominally below it. **That leg is biased AGAINST the fix and cannot be read as
+an unbiased estimate:** the latch only bites when an enemy kills our launcher
+and then inserts raiders, and our local opponent is a copy of ourselves, which
+is ~97% defensive and barely inserts. **The arena sees the fix's titanium cost
+and none of its defensive benefit.** So 47.8% is approximately "the cost alone",
+and it is within noise of zero.
+
+**A COST I WAS WRONG ABOUT, CORRECTED BY MY OWN PROBE.** I earlier worried that
+rebuilding launchers would compound a scale tax. **It does not.** Scale tracks
+LIVE entities: the launcher's death subtracts its 10 points and the rebuild adds
+them back, so replacing it RESTORES the prior scale rather than stacking. The
+only cost is the titanium. **That materially strengthened the case and it came
+from an experiment, not an argument.**
+
+**PRE-REGISTERED REVERSION CRITERIA (the standing slot-swap rule, written before
+the first match):** **<=0 net Elo after 3 rated matches frees the slot** and I
+roll back to v89 without further argument. Baseline at ship: **1551.64 @ 489,
+rank #32/113** — note v89 has been CLIMBING (1523.53/#36 at my boot), so I am
+replacing a bot on a positive run and a regression-to-mean drop must NOT be
+read as evidence against Heimdall. **That confound is stated now, before any
+number exists, because afterwards it would be an excuse.**
+
+**WHAT THIS SHIP IS NOT:** it is maintenance, not the climb. It repairs a
+measured defect that fires in 18.4% of our games. **Loki remains the climbing
+bet and the slot returns to it the moment a Loki variant clears the field
+battery.**

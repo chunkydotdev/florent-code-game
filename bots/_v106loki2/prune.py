@@ -202,7 +202,7 @@ PRUNE_CONDEMN_RNDS = 250
 # Per-unit stderr instrumentation.  print() goes to the replay; stderr is
 # console-only (docs/tooling.md), so this is safe to leave compiled in and
 # costs one branch when off.
-PRUNE_DEBUG = True
+PRUNE_DEBUG = False
 
 
 # ---------------------------------------------------------------------------
