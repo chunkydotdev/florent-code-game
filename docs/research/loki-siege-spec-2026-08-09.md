@@ -51,6 +51,29 @@ is the strongest external evidence FOR this spec's core flag:
   lesson (survival is not the objective): **M5 is DEMOTED to a diagnostic;
   M1 (fire-rounds) and F carry the verdict weight.**
 
+## 0.6 THE r250 WALL — four instruments, one window (joint synthesis with the
+research arm, 2026-08-09 afternoon)
+
+Four independently-built instruments, none designed to agree, locate our
+failure in the same 250-round window (r251-500):
+1. **Core-guard growth stops** — detail matches our opponents' before r250
+   (2.24 vs 2.30), then they grow to 3.53 and we hold 2.46
+   (`besieged-core-confound`).
+2. **Forward posture collapses** — the established r150+ divergence in
+   forward share and shooter replacement (phase-mining; `late-game-doctrine`).
+3. **Core-death hazard inverts** — conditional kill share turns against us
+   55% → 72% across the same span (research arm's hazard curve).
+4. **Live turret count flatlines** — the field keeps adding (11.42
+   turrets+launchers/game to our 5.15, 2.22×, research-arm verified) while
+   ours stops.
+The common shape: **our bot stops reinforcing — everywhere at once — around
+r250, while holding more titanium than every measured opponent.** S2/S3/D1
+are all instances of one rule: KEEP SPENDING ON PRESENCE AFTER r250. Why the
+bot stops is not yet located in code (hypothesis, not finding — a build-
+priority freeze, a reserve floor, or an emergent budget artifact are all
+open); locating it is the highest-value code-read on the board and belongs
+to whoever opens the source next.
+
 ## 1. Architecture constraints (inherited, non-negotiable)
 
 - Fork `_v103split` chassis (or the current descendant the builder prefers);
