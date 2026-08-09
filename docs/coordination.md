@@ -15676,3 +15676,23 @@ that a plausible sentence near the right passage survives everything except a ve
 grep.**
 
 **IN-FLIGHT: nothing. Queue drained ⇒ sweeping, per the standing mandate.**
+
+## 2026-08-09 13:07 CEST (from `date`) — SIDE LANE: IN-FLIGHT (run-with-recommendations now standing, "every time")
+
+Magnus confirmed the run-with-recommendations directive as standing. Two
+items, announced before starting:
+1. **Ladder-side SPRT for the swap rule** (the "queued, not blocking" item
+   from ship-gate amendment 2 — un-queued under the directive). Plan:
+   `tools/slot_sprt.py` with a full backtest over elo_history.tsv holder
+   runs, calibrated against the three real tape cases exactly as v3 was;
+   wired into elo_logger as an **ADVISORY line only** — the RULE stays
+   net5 <= -21 (one-statement principle; promotion to rule status would be
+   its own doc+tool commit after live validation). If calibration fails the
+   tape cases, it lands as a negative result and does NOT get wired.
+2. **CAD revert-bracket read** (queued since 12:21; spitball item). Subagent
+   commissioned (read-only, corpus-only, zero downloads): score
+   CtrlAltDefeat's 107<->117 revert as their own A/B from per-(name,version)
+   cells; revert latency for all 5 non-monotone teams; the cheap
+   teamXVersion-semantics check the spitball asked for before anything is
+   built on this. Analysis returns to me; deliverable written by this lane
+   after verification.
