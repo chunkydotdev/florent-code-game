@@ -22262,3 +22262,50 @@ this file.
 **And the near-miss is worth more than the drift:** **I nearly reported a healthy monitor as
 stalled**, on my own miscounted clock, an hour after both lanes agreed that *"alive is not
 working"* needs checking. **The check was right and the checker's clock was wrong.**
+
+## commit `1046cd0`+1 (git time is the authority; see the drift note above) — RESEARCH ARM: **THE PROBE-AUTHORING AUDIT, SCOPED. Both of our two "RESOLVING" FIXTURES are in the contaminated set.**
+
+I filed *"what else did five-of-nine copy-pasted probes teach us that was really about our own
+authoring?"* as an open audit item and then left it open. **Scoping it now, because it is
+retrospective — it touches conclusions already banked, not just future ones.**
+
+### 1. THE CONTAMINATED SET IS EXACTLY FIVE, IN TWO IDENTICAL VARIANTS
+`grep -l "best_core or best_any" bots/*/main.py`:
+**`band_probe` · `cad_probe` · `flotte_probe` · `kladde_probe` · `orizon_probe`.**
+**Not copy-pasted loosely — byte-identical in two groups:** `band` / `cad` / `orizon` share one
+hash, `flotte` / `kladde` share another. **Five bots, two authorings.**
+**The other four (`clanker`, `ouroboros`, `razer`, `rush`) do not use the idiom** — `clanker`,
+`razer` and `rush` have **zero** `best_core` references.
+
+### 2. WHAT THE LINE DOES, and it is worse than a preference
+`choice = best_core or best_any` — **Python `or` SHORT-CIRCUITS.** So **whenever a core is in
+range at all, it is selected, regardless of the scoring key computed for every other
+candidate.** The elaborate `key`-ranking above it **is dead code whenever a core is visible.**
+**It is not "these bots prefer cores"; it is "these bots cannot see anything else once a core
+is in range."**
+
+### 3. **AND THE TWO FIXTURES WE CALL "RESOLVING" ARE BOTH IN IT**
+The battery's saturated fixtures are `clanker` (96.7%) and `ouroboros` (93.3%); **the two we
+rely on to actually resolve a verdict are `cad_probe` (66.7%) and `orizon_probe` (50.0%).**
+**Both are in the contaminated five.**
+
+**⇒ EVERY VERDICT THIS PROJECT HAS RESOLVED ON `cad_probe` OR `orizon_probe` WAS MEASURED
+AGAINST AN OPPONENT THAT CANNOT TARGET ANYTHING BUT OUR CORE WHEN OUR CORE IS IN RANGE.**
+
+**What that makes invisible, by construction:** defence of non-core buildings · turret survival
+· economy protection · anything that draws fire away from the core · any treatment whose effect
+runs through the opponent's target selection. **What it flatters:** anything that protects the
+core specifically. **This is the 0a finding generalised from the arena's damage OUTPUT to the
+battery's target SELECTION — and 0a was only ever stated about the former.**
+
+### 4. WHAT I AM **NOT** CLAIMING
+**I have not re-examined any specific banked verdict.** **No conclusion is retracted here.**
+This note establishes **scope and mechanism only**: which fixtures, what the line does, and
+which class of claim inherits it. **Naming five bots is not the same as showing a verdict was
+wrong, and I would rather hand over a bounded audit than an alarm.**
+
+**The cheap next step, for whoever takes it: list the verdicts whose resolving leg was
+`cad_probe` or `orizon_probe`, and check each against the class in §3.** Verdicts about rush
+timing, core-kill speed or our own economy are probably untouched; **verdicts about defence,
+turret placement or survivability are the ones to look at first.** **`bots/` is the builder's
+lane — this is a read and a flag, not a fix.**
