@@ -115,15 +115,18 @@
 ##    alarm is now real and detached; `cat corpus/SHIP_ALERT` first. On SLOT FREE
 ##    the call is roll-to-v101 or hold, and it is Magnus's or the builder's —
 ##    the rule permits a swap, it does not order one.
-## 1. **`meta_join.tsv` NEVER REFRESHES ON SYNC** (research, s26). It is the only
-##    corpus surface carrying OPPONENT versions (6,324 rows, both sides 100%
-##    populated) and it is built ONLY by running `meta_attrib.py` by hand — it
-##    stops at 15:33Z and does not reach the v102 era. `ladder_games.tsv`/
-##    `join.tsv` are live but their `oppver` is universally `None`. **So no
-##    surface gives an opponent version for a current-era game.** Cost, concrete:
-##    we played Powerpuff Girls twice on v102 80 minutes apart (4-1 then 1-4) and
-##    **cannot tell whether they shipped between them.** `tools/` is the builder's
-##    lane; wiring meta_attrib into sync is the fix.
+## 1. ~~`meta_join.tsv` never refreshes on sync~~ **FIXED s26.** It was the only
+##    corpus surface carrying OPPONENT versions and was built ONLY by running
+##    `meta_attrib.py` by hand, so it was the stalest file in `corpus/` while the
+##    drift-watch told every lane to prefer it (`ladder_games`/`join` refresh but
+##    their `oppver` is universally `None`). Now wired into `sync.py`, which the
+##    keeper runs every 600s — ~7s per rebuild, three attribution checks, and a
+##    LOUD refusal if they fail (failure = stale table, the very state this ends).
+##    **Opponent versions now live: 2258/2258.** First thing it answered:
+##    **Powerpuff Girls was v49 in BOTH v102 matches** (4-1 then 1-4, 80 min
+##    apart) — they did NOT ship in between, so the reversal is ours, not theirs.
+##    Askar City went **v82 -> v83 in four minutes** the same evening, so
+##    mid-session opponent ships are real and this surface sees them.
 ## 2. **Per-opponent gates, not pooled win rate.** Pooling hides everything:
 ##    every >=1750 team kills us at 0-12% while the 1660-1710 band runs 22-38%.
 ## 3. **LOKI-7 vs LOKI-8 head to head** — never run; the ship picked the

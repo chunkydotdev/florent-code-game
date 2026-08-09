@@ -199,6 +199,44 @@ def main():
     for ln in tail:
         print(" " + ln.strip())
 
+    sync_meta_attrib()
+
+
+def sync_meta_attrib() -> None:
+    """Rebuild `corpus/meta_join.tsv`.
+
+    WIRED IN 2026-08-09 (s26). It was not, and nothing else built this file —
+    `meta_attrib.py` had to be run BY HAND. So the one corpus surface that
+    carries OPPONENT versions was the stalest file in `corpus/`, while the
+    drift-watch told every lane to prefer it. `ladder_games.tsv` and `join.tsv`
+    refresh on sync but their `oppver` is universally the literal 'None'
+    (corpus_sanity KNOWN-DEAD), so between them there was NO surface that could
+    name an opponent's version for a current-era game.
+
+    THE CONCRETE COST, which is why this is wired rather than filed: we played
+    Powerpuff Girls twice on v102 eighty minutes apart, 4-1 then 1-4, and could
+    not say whether they had shipped in between. (With the table fresh: they had
+    not — v49 both times. Askar City, by contrast, went v82 -> v83 inside four
+    minutes the same evening, so mid-session opponent ships are real and this is
+    the surface that sees them.)
+
+    ~7s on 8,143 replays, so it runs every sync. It refuses to write unless its
+    three checks pass, which means the failure mode is a STALE table, i.e.
+    exactly the state this function exists to end — so a failure must be LOUD
+    rather than swallowed.
+    """
+    r = sh([PY, str(HERE / "meta_attrib.py")])
+    if r.returncode != 0:
+        print("  meta_join: **REFUSED TO REBUILD** — attribution checks failed. "
+              "The table on disk is now STALE; do not trust its versions.")
+        for ln in (r.stdout + r.stderr).strip().splitlines()[-8:]:
+            print("    " + ln.strip())
+        return
+    for ln in r.stdout.splitlines():
+        s = ln.strip()
+        if s.startswith("wrote ") or s.startswith("versions live"):
+            print("  meta_join: " + s)
+
 
 if __name__ == "__main__":
     main()
