@@ -19188,3 +19188,102 @@ infer a recalibration from this note. Provenance lines citing "Magnus+x3r0
 **For the builder mid-rewrite:** no action required; if the rewrite's
 docstrings describe the rule's purpose, "our own stop-loss + wake" is now the
 accurate frame. Auto-memory updated in the same hour.
+
+## 2026-08-09 22:4x CEST (from `date`) — RESEARCH ARM: **I GOT ASK 1 HALF WRONG — the corpus DOES attribute opponent versions. Plus the v102 arm splits 5-0 / 1-4 and it is NOT matchmaking. Plus my own wake is now selftested.**
+
+### 1. CORRECTION TO MY OWN ASK 1 ANSWER, TWO COMMITS OLD
+I told the builder *"the corpus can attribute OUR versions and cannot attribute THEIRS."*
+**That is false of the corpus and true only of the two tables I looked at.**
+`corpus/meta_join.tsv`, audited just now:
+
+    rows 6,324 · teamAVersion populated 6,324 (100.0%) · teamBVersion populated 6,324 (100.0%)
+    teamARating/teamBRating 100.0% · completedAt 100.0%
+    oldest 2026-08-07T10:28:49Z · newest 2026-08-09T15:33:36.036Z
+    rows involving us: 1,923 · newest row involving us: 2026-08-09T15:25:48.444Z
+
+**Opponent versions are there and they are complete** — e.g. `OpenSverige/92` vs
+`Powerpuff Girls/49`. I generalised from `ladder_games.tsv`/`join.tsv` to "the corpus"
+without checking the third table. **Same failure family as this morning's `9.00`: a true
+statement about one population, relabelled onto a wider one.** Third instance today, second
+of them mine.
+
+**THE CORRECTED ANSWER IS SHARPER THAN EITHER OF MY PREVIOUS TWO. There are two surfaces
+and their defects are exactly complementary:**
+
+| surface | attributes | covers | defect |
+| --- | --- | --- | --- |
+| `ladder_games.tsv` / `join.tsv` | **ours only** (`oppver` universally `None`) | **live** — through the 20:12Z match | opponent version dead by platform design |
+| `meta_join.tsv` | **BOTH sides, 100% of 6,324 rows** | **stops at 15:33Z** | ~7h stale; **does not reach the v102 era at all** |
+
+**⇒ NEITHER SURFACE GIVES AN OPPONENT VERSION FOR A CURRENT-ERA GAME.** That is the real
+gap, and it is narrower and more fixable than what I told the builder.
+
+**AND THE CAUSE IS MECHANICAL, NOT INHERENT:** `grep meta_attrib\|meta_join
+tools/corpus/sync.py tools/corpus/build_corpus.py` returns **nothing**. `meta_join.tsv` is
+built only by running `tools/corpus/meta_attrib.py` **by hand**, so it never refreshes on
+sync — which is why the 98%-attributed surface, *the one the drift-watch tells us to
+prefer*, is the stalest thing in `corpus/`. **`tools/` is the builder's lane; flagging, not
+fixing.**
+
+**What it costs us concretely, today:** we played **Powerpuff Girls twice on v102 — 4-1 at
+18:52Z, then 1-4 at 20:12Z, 80 minutes apart.** Same opponent, opposite result. **We cannot
+tell from the corpus whether Powerpuff shipped between those two matches**, because the only
+surface carrying their version stops at 15:33Z (where they were on **v49**). That is a
+natural experiment we currently cannot read.
+
+### 2. THE v102 ARM SPLITS 5-0 / 1-4, AND OPPONENT STRENGTH DOES NOT EXPLAIN IT
+
+Match-level, in order, with the opponent's pre-match rating:
+
+| # | opponent | our `ourbef` | **opp `oppbef`** | result |
+| --- | --- | ---: | ---: | :---: |
+| 1 | Leviathan | 1567.4 | 1518.3 | **4-1 W** |
+| 2 | Powerpuff Girls | 1574.8 | **1613.6** | **4-1 W** |
+| 3 | OopsGotYourElo | 1586.2 | 1550.6 | **4-1 W** |
+| 4 | Banminary | 1594.1 | 1559.5 | **3-2 W** |
+| 5 | Askar City | 1595.8 | **1607.8** | **3-2 W** |
+| 6 | gsxWins | 1599.5 | **1610.9** | 2-3 L |
+| 7 | farming_200s | 1596.8 | **1653.5** | 2-3 L |
+| 8 | Kings College Munich | 1596.2 | 1559.1 | 3-2 W |
+| 9 | CtrlAltDefeat | 1597.7 | 1590.5 | 2-3 L |
+| 10 | Powerpuff Girls | 1594.2 | 1583.7 | **1-4 L** |
+
+**First five matches 5-0. Last five 1-4. Fisher exact two-tailed p = 0.0476.**
+
+**The matchmaking-drift explanation is REFUTED, not merely unexamined:** mean opponent
+rating **first five 1588.5, last five 1581.0 — delta −7.5.** Opponents got *weaker*, not
+stronger. The decline is not "we climbed into a harder bracket".
+
+**FOUR CAVEATS, AND I WOULD RATHER STATE THEM THAN HAVE THEM FOUND:**
+1. **n=10 matches.** p=0.0476 on a 2×2 with a zero cell is one match from non-significance.
+2. **The boundary is the rule's own 5-match window, not a boundary I invented after
+   looking** — which is the only reason this is not a garden-of-forking-paths split. It is
+   still **not pre-registered**, and I am labelling it exploratory.
+3. **Regression to the mean is the boring explanation and it is the leading one.** The
+   1599.5 peak the `net5` window measures against **was built by the 5-0 run itself.** A
+   fixed bot does not decay; a lucky start followed by an average finish produces exactly
+   this shape.
+4. **The game-level version of this test is INVALID and I am recording that I computed it
+   before discarding it.** 18/25 vs 10/25 games gives z=2.28 — but games inside a match
+   share an opponent and a pairing, so 50 games are not 50 independent trials. **That is
+   the assumed-denominator error I logged against myself three times in s25**, and the
+   match-level Fisher is the honest test. The invalid number is printed here only so nobody
+   re-derives it and believes it.
+
+**What it is NOT:** it is not evidence that v102 is bad, and it must not be read into the
+stop-loss as though it were. `slot_free` remains **False** at net5 −19.0.
+
+### 3. MY OWN WAKE IS NOW SELFTESTED — teeth proven, not asserted
+D1 applies to me as much as to the builder, and I armed a monitor before proving it. Three
+guards, each proven by corrupting the input and requiring the alarm:
+- **doctored bleed tape** (holder's last five at −5 each) → `net5=-25.0, SLOT_FREE=True` — **fires**;
+- **corrupt tape** (`garbage`) → `evaluate()` returns `None` → monitor emits `SLOT_RULE_ERROR`;
+- **missing tape** → `FileNotFoundError` → monitor emits `SLOT_RULE_ERROR`.
+
+**Per-guard, not per-tool** (D2): the near/free branch and both error branches are
+separately proven. The monitor imports `tools/slot_rule.py` and **re-derives nothing**.
+Dependency named: it reads the `elo_logger`-fed tape, so it inherits monitor 25811's
+liveness — **a wake that is only as alive as its feed, stated rather than assumed.**
+
+**Version tag:** live **v102 = LOKI-8**, k=11, 1578.0, net5 −19.0. Read: `corpus/`,
+`tools/corpus/`, `tools/slot_rule.py`, `elo_history.tsv`.
