@@ -205,6 +205,16 @@ def main(argv: list[str]) -> int:
     # healthy. So the flips are wired in permanently: deliberately corrupt the
     # derived seat or winner and REQUIRE the checks to catch it. Exit 1 if they
     # do not, because a silent check is worse than no check.
+    # THREE modes, and the third exists because the first two were not enough.
+    # seat/winner corrupt what CHECK 1 consumes -- but CHECK 1 compares against
+    # join.tsv, which exists ONLY for our own games (all 1,445 rows are ours).
+    # The 4,331 THIRD-PARTY files -- the entire reason this table was built --
+    # are guarded by CHECK 2 alone. So proving only CHECK 1's teeth proves the
+    # teeth of the leg covering the population we already had, and leaves the
+    # leg covering the NEW population unproven. `tally` corrupts the replay-
+    # decoded winners that CHECK 2 consumes and requires CHECK 2 to collapse.
+    # Caught by the research arm running the selftest rather than trusting it,
+    # which is the whole point of shipping it.
     selftest = ""
     argv = list(argv)
     for a in list(argv):
@@ -282,8 +292,8 @@ def main(argv: list[str]) -> int:
         for r in rows:
             if r["our_won"] != "":
                 r["our_won"] = str(1 - int(r["our_won"]))
-    elif selftest:
-        print(f"unknown --selftest mode {selftest!r} (seat|winner)", file=sys.stderr)
+    elif selftest and selftest != "tally":     # tally is applied at CHECK 2 below
+        print(f"unknown --selftest mode {selftest!r} (seat|winner|tally)", file=sys.stderr)
         return 2
 
     # ---- check 1: seat + winner against the API-first table --------------
@@ -307,6 +317,10 @@ def main(argv: list[str]) -> int:
           f"{len(seat_bad)} seat, {len(win_bad)} winner disagreements")
     for f, a, b in (seat_bad + win_bad)[:20]:
         print(f"    DISAGREE {f}: meta={a} join={b}")
+
+    if selftest == "tally":
+        for mid, games in per_match_games.items():
+            per_match_games[mid] = [(f, 1 - w if w in (0, 1) else w) for f, w in games]
 
     # ---- check 2: sidecar tally against the replays themselves ------------
     tallied = tally_ok = skipped = 0
@@ -342,14 +356,18 @@ def main(argv: list[str]) -> int:
         print(f"    WINNER {mid}: sidecar winnerId {got}, tally says {want}")
 
     if selftest:
-        caught = len(seat_bad) + len(win_bad)
+        if selftest == "tally":
+            caught, tot, got, leg = (len(tally_bad) + len(winner_bad), tallied,
+                                     tally_ok, "CHECK 2")
+        else:
+            caught, tot, got, leg = len(seat_bad) + len(win_bad), overlap, agree, "CHECK 1"
         if caught == 0:
-            print(f"SELFTEST {selftest}: FAILED — corrupted the {selftest} on every "
-                  f"row and CHECK 1 still agreed {agree}/{overlap}. The check is "
-                  f"vacuous and its 100% means nothing.", file=sys.stderr)
+            print(f"SELFTEST {selftest}: FAILED — corrupted every row and {leg} still "
+                  f"agreed {got}/{tot}. That check is vacuous and its 100% means "
+                  f"nothing.", file=sys.stderr)
             return 1
-        print(f"SELFTEST {selftest}: PASS — corruption caught on {caught}/{overlap} "
-              f"rows, agreement collapsed to {agree}/{overlap}. The check has teeth.")
+        print(f"SELFTEST {selftest}: PASS — corruption caught on {caught}/{tot} "
+              f"({leg}), agreement collapsed to {got}/{tot}. That check has teeth.")
         return 0
 
     if seat_bad or win_bad or tally_bad or winner_bad:
