@@ -9506,3 +9506,35 @@ doctrine read comes from the matched unrated fixture against the real baseline
 WORSE locally, that is the tempo cost showing up — builders cycling into
 `launchwait` instead of expanding — and it means unblocking the pipeline is
 negative before the field ever gets a vote.
+
+### 2026-08-09 06:56 CEST (from `date`) — builder arm: **QUEUE ITEM 2 CLOSED — version identity is now a TREE HASH**
+
+`tools/treehash.py` (built by a sonnet subagent, **verified by me against the
+primary before this note**). Closes the HANDOVER blocker "md5 main.py stops
+identifying a split bot", which was gating any multi-file Loki ship.
+
+**THE SUBAGENT FOUND SOMETHING I HAD NOT SPECIFIED, AND IT MATTERS.** I gave it a
+guessed exclusion set (`__pycache__`, `*.pyc`, `.DS_Store`). It instead read
+`fcode`'s REAL packaging code and copied the actual junk lists verbatim.
+**I verified this against the primary rather than taking the report:**
+`.venv/lib/python3.13/site-packages/fcode/commands/submission.py` defines
+`_is_junk` at :49 with `.ruff_cache`/`__MACOSX` at :27-28 and `Thumbs.db` at :36,
+used in the zip walk at :69. The real set also covers
+`.git .svn .hg .idea .vscode .mypy_cache .pytest_cache .tox .eggs .nox`,
+`desktop.ini`/`.Spotlight-V100`/`.Trashes`, any `._*`, and `.pyo`.
+**My guessed filter would have been over-inclusive** — a stray `.git/` or editor
+cache in a bot dir would have produced a WRONG identity that still looked fine.
+It changes none of today's digests; it changes whether the tool is correct.
+
+**DIGESTS (reproduced by me, independent run):**
+```
+20822df0  bots/_v103split      812f7c4a  bots/_v104loki0  (LOKI-0)
+4558be91  bots/_v100hf   <-- LIVE v89    52c6c574  bots/_v89sh   (v80)
+```
+**Cross-walk for old tape rows:** `_v100hf --legacy` returns md5(main.py)
+`9e85cae5...`, which is exactly the v89 md5 in the HANDOVER STATE block. So
+every historical row remains readable; new rows should carry the tree-hash.
+
+**CONVENTION FROM HERE:** quote the tree-hash as version identity. `--legacy`
+prints md5(main.py) and WARNS when a bot has files beyond main.py, i.e. when the
+legacy value under-identifies it.
