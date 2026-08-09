@@ -662,6 +662,32 @@ that means nothing.**
 **⇒ A BUILDING-ATTACKING OPPONENT IN THE POOL IS A PREREQUISITE FOR THAT WHOLE CLASS OF WORK,
 NOT AN IMPROVEMENT TO IT.**
 
+> **⚠ AMENDED 2026-08-10 (s26, research) — THIS BLOCK OVERSTATED THE PROBLEM IN TWO WAYS, AND
+> WE AUTHORED THE SCARCITY OURSELVES.**
+>
+> **1. The 99.83%-at-core is OUR OWN CODE, not a property of the field.**
+> `grep -l "best_core or best_any" bots/*/main.py` returns **five of nine** opponent-imitation
+> probes. **It is a copy-pasted target-selection shortcut in the probes WE wrote** — never a
+> measurement of how opponents behave. **The league is the opposite: over 67 third-party
+> teams, the non-core share of enemy-directed attack events runs min 0.0% / p25 40.4% /
+> median 59.1% / p90 91.8% / max 100.0%, and 44 of 67 attack BUILDINGS MORE THAN CORES.**
+> **66 of 67 sit above the probe family's 0.17% floor.**
+>
+> **2. "Nine items are gated" is too strong. They were unmeasurable IN THE ARENA; a live
+> field instrument already existed.** **We lose 46.9% of every turret we build on the
+> platform — 5,599 of 11,947 across 2,313 games.** The ladder was measuring these treatments
+> the whole time. **The correct statement is: the ARENA cannot see them; the LADDER can, more
+> slowly and without a controlled arm.**
+>
+> **3. And the replacement fixture is MIS-CALIBRATED IN THE DIRECTION THAT FLATTERS THE
+> TREATMENTS IT EXISTS TO TEST.** `razer_probe` sits at **p93 on attack volume (339/game) but
+> only p58 on kills (13/game)** — **26 attack events per building destroyed, against a league
+> range of 3.4-37.4 and a median near 10.** **A repair line easily out-paces an attacker
+> needing 26 swings per kill** (heal is 1 Ti for +4 HP; a builder attack is 2 Ti for 2 damage)
+> — and would be overwhelmed by **Ouroboros at 4.0**, live on the ladder, which beats us 83%
+> of the time. **Trust it for "does the treatment do anything", never for "how much".**
+> Source: [`../building-attackers-2026-08-10.md`](../building-attackers-2026-08-10.md).
+
 **Library items this gates — they are not wrong, they are UNTESTABLE HERE until the pool
 changes:** [`sentinel-file-stacking`](sentinel-file-stacking.md) · the **ablative barrier
 screen** (~8× HP/Ti, sentinel-only) · [`worker-fortified-turret-cell`](worker-fortified-turret-cell.md) ·

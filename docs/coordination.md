@@ -21510,3 +21510,84 @@ and simply never extracted.** TRAP 8 was a decoder omission, not a missing signa
 even with `razer_probe` — the probe fixes the DEFENSIVE class, not the economic one.**
 
 **Version tag:** live **v102 = LOKI-8**, tape k=22 / m=592 / 1591.0.
+
+## 2026-08-10 01:5x CEST (from `date`) — RESEARCH ARM: **THE REPLACEMENT FIXTURE IS MIS-CALIBRATED IN THE DIRECTION THAT FLATTERS THE TREATMENTS IT EXISTS TO TEST — and my "prerequisite" framing was wrong because WE AUTHORED THE SCARCITY**
+
+Deliverable: **`docs/research/building-attackers-2026-08-10.md`**. **INDEX prerequisite block
+amended in place.**
+
+### 1. `razer_probe` IS p93 ON VOLUME AND p58 ON KILLS, AND THAT SPLIT IS THE PROBLEM
+**339 attacks/game = p93 of the league. 13 kills/game = p58.** That is **26 attack events per
+building destroyed, against an observed league range of 3.4-37.4 and a median near 10.**
+A real team swinging 339 times a game kills **30-40** buildings, not 13.
+
+**The error has a DIRECTION and it flatters exactly the family the probe exists to test.**
+Heal is **1 Ti for +4 HP**; a builder attack is **2 Ti for 2 damage**. **A repair line easily
+out-paces an attacker needing 26 swings per kill — and is overwhelmed by Ouroboros at 4.0**,
+live on the ladder, which beats us **83%** of the time.
+**⇒ Trust `razer_probe` for "does the treatment do anything", NEVER for "how much".**
+**Fix is cheap and it is lethality, not volume: ~150 attacks / ~15 kills lands on the league
+median on both axes.**
+
+**Caveat neither lane can resolve alone, stated rather than assumed away:** the comparison
+presumes the builder's 339/13 is counted the same way as the league figures (denominators
+written out in §1.1). **If theirs counts both sides, or counts `fire()` calls rather than
+shots landing on a building tile, the comparison is invalid and neither side can detect that
+from its own data.**
+
+### 2. **MY PREREQUISITE FRAMING WAS WRONG: WE AUTHORED THE SCARCITY**
+`grep -l "best_core or best_any" bots/*/main.py` returns **five of nine** opponent-imitation
+probes. **The 99.83%-at-core is a copy-pasted target-selection shortcut in the probes WE
+WROTE. It was never a measurement of the field.**
+
+**The league is the opposite.** Non-core share of enemy-directed attack events, **67
+third-party teams**: **min 0.0% · p25 40.4% · median 59.1% · p90 91.8% · max 100.0%.**
+**44 of 67 attack buildings MORE than cores. 66 of 67 sit above the probe family's 0.17%
+floor.** **I filed a scarcity that exists only inside our own `bots/` directory.**
+
+### 3. **"NINE LIBRARY ITEMS ARE GATED" WAS TOO STRONG — and that one is entirely mine**
+**We lose 46.9% of every turret we build on the platform — 5,599 of 11,947 across 2,313
+games.** **The ladder has been measuring these treatments all along.** The correct statement
+is **the ARENA cannot see them; the LADDER can** — more slowly and without a controlled arm.
+**I turned "our arena is blind" into "we cannot measure this", which is a different and
+larger claim, and it would have parked nine items that were never actually unmeasurable.**
+
+### 4. THE SHORTLIST, and the confound that nearly picked the wrong team
+**Counterbattery: Leviathan** (n=105, our WR **54.3%** — resolving; **69.9% of our turrets
+die against only 7.8% of our econ**; 98% of games lose a turret), then OopsGotYourElo (n=120,
+65.8%). **Economic denial: Powerpuff Girls** (n=140, 38.6%) and **Ouroboros** (n=105,
+**17.1%** — the biggest headroom on the ladder). **Controls reproducing the old null: Team 48**
+(0.3% turret loss over 307 turrets) and **Albert And Einstein** (0.00% non-core, the only real
+team at the probe floor).
+
+**The confound: we build 149,431 econ pieces to 11,947 turrets — 12.5:1 — so target-type share
+measured AGAINST US is our own build mix talking. Lunds Stallions reads 64.7% turret in field
+scope and 20.0% against us, same team, same window.** That is what promotes Leviathan
+(turret-selective in **both** scopes) over Lunds.
+
+### 5. **TWO OF MY BRIEF'S PRIORITIES WERE INVERTED**
+**Requirement 2 (opportunity normalisation), which I called *"the single most important
+methodological requirement in this brief"*, DID NOT BIND** — opportunity share is >90% for 55
+of 67 teams and reorders almost nothing. **Requirement 4 (target-type) was the one that bit.**
+I ranked my own methodology requirements and got the order wrong.
+
+### 6. TWO FLAGS AGAINST THINGS ALREADY IN THE RECORD — including one I wrote
+- **The 99.83% could not be reproduced**: over the **24 arena replays on disk**, 46.1% core /
+  38.5% non-core. **Much smaller and different population than the 480 — refutes nothing**,
+  but the two should be reconciled before 99.83% is quoted again.
+- **`builderAttack` is NOT zero in those 24 replays — 13,056 events** — which contradicts the
+  trap **I filed in the INDEX** off the 480-game read (*"0 for both sides in arena, so the seat
+  fingerprint is arena-invalid"*). **Same population caveat. But I wrote it as a standing trap
+  on someone else's number, and if it is population-specific rather than fixture-specific the
+  trap as written is wrong.** Flagged to the builder; not silently corrected, because I do not
+  yet know which population is representative.
+- **`fcode match unrated` has no own-side selector and always runs our CURRENTLY-ACTIVE
+  submission**, so it **cannot evaluate a candidate bot at all — it is a confirmation channel,
+  not a fixture.** That was requirement 4 of my brief ("reachable as an unrated fixture") and
+  it was the wrong reachability question.
+
+**Killer attribution remains unmeasurable** — `removeEntity` carries an id and nothing else, so
+every loss rate pools enemy fire, enemy builder attacks and our own `destroy()`. **Bounded
+rather than assumed: our turret loss is 0.3% against Team 48, and self-inflicted removal would
+be a floor present against every opponent, so self-`destroy()` contributes ≤~0.3pp of the
+46.9% pooled figure.**
