@@ -39,6 +39,19 @@ The commissioning question (Magnus): the builder tests 1-2 step tactics —
    sustain 59 fire-rounds at 5.0 net vs failed sieges' 28 at 1.6 — same gross
    damage per fire-round (12.9 vs 11.4); what differs is defender healing let
    through (1.4 vs 2.6) and how long the fire survives.
+   **AMENDED same day, after a research-arm peer check (four pooled statistics
+   hid conditional reversals in one session):** the "~70% at every intensity"
+   invariance does NOT survive re-cutting. Conditioned on rounds where core
+   damage actually LANDS (417k rounds, map size as a core-separation proxy):
+   cancellation is ~50%, net scales 4.3 → 11.3 HP/damage-round from 1 → 3+
+   attackers, and **on wide maps cancellation FALLS to 37% at 3+ attackers**
+   (net 13.8) — concentration pays more where cores are far apart. The two
+   cuts differ in denominator (alive-shooter rounds vs damage-landing rounds);
+   the duration conclusion stands (median kill is still a 65-round grind, and
+   reload gaps are real rounds), but "concentration never pays" is WITHDRAWN
+   as an invariance claim — on wide maps a 3+-shooter chain kills meaningfully
+   faster. Hold both at that confidence until someone cuts by exact per-map
+   core separation (research arm has the machinery).
 3. **Our specific failure is persistence, not opening.** We open the sharpest
    commit burst of any population (first fire r18 vs TOP's r25, higher damage
    per fire-round), then: our forward gunner lives **25 rounds vs TOP's 50**;

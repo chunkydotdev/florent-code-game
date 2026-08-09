@@ -141,13 +141,17 @@ standing rule is no longer sufficient as stated; the working version is:
 
 **The forward road being closed is not a reason to relax — we are still driving down
 it on wide maps.** 61.1% of our early turrets on wide maps are forward, at 19.2%
-survival, and nobody chose that: it is emergent from siting logic anchored on a
-fraction of the distance to the enemy, which necessarily walks outward as the map
-widens.
+survival. Per the refinement in §1, the standoff itself is *fixed* and the field uses
+the same one; what nobody chose is the **share** — `_plan_siege` fires whenever a
+reachable ray onto the enemy core exists, and on a wide map more of our turret budget
+ends up satisfying that condition than the home path's threat trigger.
 
-**The cheapest available change is a subtraction, not an addition:** gate forward
-turret siting on core separation, so that on wide maps turrets stay home. It needs no
-new subsystem, and it moves investment from a 19.2% bucket into an 86.7% bucket.
+**The cheapest available change is a subtraction, not an addition:** gate the forward
+share on core separation, so that on wide maps the budget stays home. It needs no new
+subsystem, and it moves investment from a 19.2% bucket into an 86.7% bucket. **Note
+the asymmetry that makes this cheap: the home path is gated on a threat appearing
+(`_try_counterbattery`), while the forward path is gated only on a ray existing —
+so on a quiet wide map the forward path is the only one that fires at all.**
 
 **And it interacts with the production build already in flight.** Adding production
 without fixing the mix would add turrets into the forward bucket on exactly the maps
