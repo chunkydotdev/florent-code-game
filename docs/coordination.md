@@ -13508,3 +13508,86 @@ adapting.
 **IN-FLIGHT:** one Opus sweep (right objective function for static defence). Nothing
 else of mine; no CPU, no locks. Ladder **1537 @ 510, #34** — first win since the
 rollback, 2 of ~10 in the recovery read.
+
+### 2026-08-09 11:27 CEST (from `date`) — builder arm: **THE ESCALATION FAILURE HAS A MECHANISM IN SOURCE, AND IT IS REPRESENTATIONAL. OUR BOT CANNOT COUNT ATTACKERS. Not a tuning gap — the number is not in the program.**
+
+## 1. I WENT LOOKING FOR A CONSTANT AT r250 AND THERE ISN'T ONE
+
+Research's synthesis put four independent instruments — core-death hazard, live
+turret count, forward-posture collapse and heal-detail growth — all at the same
+~r250 boundary. So I looked for the switch. **Every round-keyed constant in the
+live bot:**
+```
+LAUNCH_GIVEUP_RND 180 · SIPHON_BAN_RNDS 200 · MEDIC_MIN_RND 150
+SURGE_MIN_RND 300 · ESCORT_BAN_RNDS 400 · (REPLACE_TI_FLOOR 250 is TITANIUM, not a round)
+```
+**Nothing at 250.** So the boundary is emergent, not a flag anyone can flip. Which
+made the better question available: **not "what switches at r250" but "what does
+the bot do differently when pressure doubles" — and the answer is nothing,
+because it cannot see that pressure doubled.**
+
+## 2. THE ENTIRE THREAT MODEL, verified at every site in the live bot
+
+```
+SLOT_THREAT  = pack_pos(threat)   -> ((x+1) << 16) | (y+1)   ONE POSITION
+SLOT_UNDER   = 0 or 1                                        ONE BOOLEAN (50-round latch)
+_core_shelled(ct) -> bool          (is the Core below max HP)  ONE BOOLEAN
+```
+**One position and two booleans. That is all of it.** Grepping the live chassis
+for any magnitude term — `n_attack`, `attacker`, `threat_count`, `len(threat`,
+`incoming`, `dmg_rate` — returns **comments only, no code.**
+
+**Our bot has no representation of HOW MANY. It cannot distinguish one attacker
+from three, and therefore cannot respond differently to them.** Every consumer
+downstream — the heal detail, the counterbattery trigger, the defender role, the
+siege planner — is keyed on a predicate that **saturates at one**.
+
+## 3. WHY THIS EXPLAINS THE WHOLE SHAPE, and it is the first mechanism that does
+
+Research's measured shape all session: **best-in-corpus in the easy regime,
+worst-in-corpus in the hard one.** Home turrets 86.7% vs forward 19.2%.
+One-attacker heal cancellation 65% vs three-attacker 30%. Hazard 29% -> 76%.
+Heal detail equal to opponents before r250 (2.24 vs 2.30) and frozen after
+(2.46 vs 3.53).
+
+**A bot whose threat model saturates at one attacker is exactly a bot that is
+excellent at the one-attacker case and has no answer to three.** The r250
+boundary is not a property of round 250; it is where opponents' pressure
+typically crosses the point our representation stops resolving. **Four
+instruments agreed because they were all measuring the same saturation.**
+
+And it explains the four nulls a second way: **every knob I turned took a
+magnitude I chose (a floor of 4 turrets, a price of 8, a separation threshold)
+and applied it unconditionally, because the bot has no threat magnitude to
+condition on.** I was tuning constants in a system whose problem is that its
+inputs are booleans.
+
+## 4. WHAT THIS IS AND IS NOT
+
+**It IS a different category from today's other three open findings.** Builder
+death rate, conveyor churn and the drain pump are all **cost statistics** —
+unpriced, silent on what they produce, correctly parked. **This is a CODE FACT:
+a capability that is absent.** Absence of a capability does not have to be
+priced to be established; it has to be priced to be worth *adding*.
+
+**It is NOT a licence to build.** Whether a bot that can count attackers wins
+more games is **entirely unmeasured**, and four planks today are the argument for
+saying that out loud. The nearest cautionary tape is exact: **LOKI-3 moved its
+pre-registered mechanism metric 16x and won +0.0pp on n=360.** A better threat
+model is a mechanism, and mechanisms have been worth nothing all day.
+
+**PRE-REGISTERED NOW, for whoever specifies it (adopting research's question
+verbatim):** the gate is **"does it grow after r250?"** — the response must be
+measured as a FUNCTION of load, not at a point. A magnitude term that produces
+the same behaviour at one and three attackers has changed nothing, and would be
+this session's fifth mechanism-fired-nothing-won result.
+
+*Process delta: **the finding came from asking a question about the CODE that
+four sessions of measurement could not answer.** Research had the phenomenon
+pinned by four instruments and could not say why; the answer was a grep for
+variables that do not exist, costing under a minute. That is `builder-method.md`'s
+order of operations working exactly as written — rule and code before corpus —
+and it is the second time TODAY that reaching past it cost hours (the first was
+"who CAN kill a builder bot", also settled by reading rather than measuring).
+**Twice in one session is not a coincidence; it is the default failure mode of
+having a very good corpus.***
