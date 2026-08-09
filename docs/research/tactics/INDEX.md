@@ -47,10 +47,17 @@ extraction breaks sentences across lines.
 
 ```bash
 curl -sL "<url>" -o x.pdf && pdftotext x.pdf x.txt
-tr -s ' 
-	' ' ' < x.txt > x.flat     # <-- THE STEP THAT MATTERS
+tr -s ' \n\t\f\r' ' ' < x.txt > x.flat     # <-- THE STEP THAT MATTERS
 grep -o "phrase.\{0,120\}" x.flat
 ```
+
+**METHOD BUG FOUND AND FIXED IN SWEEP 14 (s25):** the command as previously written
+here flattened only space/newline/tab and **left `\f` (form feed) in place**.
+`pdftotext` emits `\f` at every page break, so **any quote straddling a page boundary
+still failed the literal grep** — the exact false negative this procedure exists to
+prevent, hiding inside the fix for it. The `\f\r` above is the correction. **A guard
+that has a blind spot is more dangerous than no guard**, because a "not found" from it
+reads as a verified absence.
 
 **Two false negatives in one audit, in opposite tools.** A quote check that returns
 "not found" is not a result until whitespace has been normalised and a second method
@@ -178,6 +185,27 @@ exception permanently destroys that unit for the match.
 | 12 | Unit-displacement mechanics elsewhere (our launcher throws EITHER team's bots) | **SWEPT — and it INVERTS our current use.** BC2020's Delivery Drone has our Launcher's exact verb signature; that field converged on grabbing the **enemy's** unit defensively, never on ferrying their own forward | 2026-08-09 | [sweep 3](2026-08-09-sweep-3.md), [defensive-interception](launcher-defensive-interception.md), [displace-dont-kill](displace-dont-kill.md), [throw-into-prebuilt-cell](throw-into-prebuilt-cell.md) |
 
 | **13** | **DIRTY TRICKS — denial/smothering, imprisonment, resource poisoning, friendly-fire manipulation, unit theft** (the PROGRAMME `loki` re-aim: enemy core dead inside r250) | **SWEPT** (s24). **12 files, 75 quoted strings, 0 unverified.** Produced the **library correction** above. | 2026-08-09 | [blind-their-gun-with-their-own-body](blind-their-gun-with-their-own-body.md), [ratnapping-ignores-hp](ratnapping-ignores-hp.md), [press-them-onto-their-own-spawn](press-them-onto-their-own-spawn.md), [import-a-hazard-into-their-base](import-a-hazard-into-their-base.md), [score-the-throw-destination](score-the-throw-destination.md), [pin-against-terrain](pin-against-terrain.md), [minimum-cost-blockading-body](minimum-cost-blockading-body.md), [the-blockade-blanks-your-own-guns](the-blockade-blanks-your-own-guns.md), [comms-jamming-and-spoofing](comms-jamming-and-spoofing.md), [body-blocking-was-patched-out-elsewhere](body-blocking-was-patched-out-elsewhere.md), [manner-pylon-and-what-the-rules-permit](manner-pylon-and-what-the-rules-permit.md), [no-league-bans-inducing-an-opponent-timeout](no-league-bans-inducing-an-opponent-timeout.md) |
+
+| **14** | **RE-AIM of topics 1 + 11 at the PROGRAMME's own tension** — `KILL_WINDOW_RND: 250` demands the one thing every prior sweep concluded you mostly cannot do. *What CONVERTED a deadline attack into a dead base elsewhere, and what KILLED the ones that failed?* | **SWEPT** (s25). 16 files + summary. **97 strings verified verbatim, 4 near-misses corrected, 2 claims CUT unverified.** **Corrects sweep 2's clock claim** (see standing context) and **found a bug in this library's own quote-verification command** (see method block above). | 2026-08-09 | [sweep 14](2026-08-09-sweep-14.md), [rush-as-fallback-when-the-opening-is-denied](rush-as-fallback-when-the-opening-is-denied.md), [the-all-in-is-a-counter-strategy-not-a-strategy](the-all-in-is-a-counter-strategy-not-a-strategy.md), [the-rush-cost-budget-gate](the-rush-cost-budget-gate.md), [one-cheap-interceptor-decides-the-matchup](one-cheap-interceptor-decides-the-matchup.md), [reactive-spawn-is-the-sufficient-anti-rush](reactive-spawn-is-the-sufficient-anti-rush.md), [the-rush-that-cannot-transition](the-rush-that-cannot-transition.md), [the-attack-that-arrives-too-late-or-at-nothing](the-attack-that-arrives-too-late-or-at-nothing.md), [spawn-the-attack-at-the-target-not-a-march](spawn-the-attack-at-the-target-not-a-march.md), [map-size-decides-whether-the-rush-is-legal](map-size-decides-whether-the-rush-is-legal.md), [late-rush-beats-the-anti-rush-reflex](late-rush-beats-the-anti-rush-reflex.md), [no-lose-engagement-geometry](no-lose-engagement-geometry.md), [the-defenders-reserve-and-what-defeats-it](the-defenders-reserve-and-what-defeats-it.md), [retreat-and-return-under-the-counter-unit](retreat-and-return-under-the-counter-unit.md), [wall-off-the-forward-plant-and-leave-a-rebuild-gap](wall-off-the-forward-plant-and-leave-a-rebuild-gap.md) |
+
+### Sweep 14 (s25) — the one sentence a builder should take from it
+
+**Every deadline attack that converted elsewhere fired as a CONDITIONAL FALLBACK keyed
+to a scouting trigger — never as an unconditional plan.** BC2025 The Kragle rushed only
+when scouting found the economic opening denied; BC2020 confused encoded commitment as a
+**price, not a mode** — a virtual surcharge on all non-rush spending before a deadline,
+abortable by a store signal. **Both are cheap in our ruleset.** The matching structural
+opening: the field's documented-as-sufficient anti-rush is **reactive unit production**,
+and our engine rate-caps that at **≤1 builder per turn with +20% scaling** — turns are
+not purchasable. Bounded by the fact that our field's real counter is *healing*, which is
+not rate-capped.
+
+**The strongest failure mode, and we should assume opponents can run it on us:** one
+cheap mobile interceptor decides the matchup. Java Best Waifu: *"Our games against
+Kryptonite depended almost uniquely if our initial drone was able to repel or capture
+their rush miner or not."* **Our field's version of that interceptor is the LAUNCHER** —
+20 Ti, +10% scale, no ammo, facing-independent, grabs either team's builder — and
+sweep 12 independently found the field already prefers it defensively.
 
 **Why topic 4 is not merely academic:** we measured (2026-08-09,
 `docs/research/ammo-and-cpu-2026-08-09.md`) that Ouroboros discards **26,356
@@ -326,7 +354,17 @@ since the whole value is in the evidence labels.
 - **THE ANSWER TO THE STANDING QUESTION, from sweep 2:** *mostly you don't break
   it — you win on economy.* Every league swept converged there independently, and
   each one that reached a defence-dominant equilibrium was rescued by **a clock,
-  not a tactic.** Our clock is round 1000 and our first tiebreak key is
+  not a tactic.**
+  **QUALIFIED BY SWEEP 14 (s25) — the second clause is FALSE across Battlecode
+  seasons.** BC2020 and BC2023 were **offence-dominant seasons in this engine's own
+  family**; BC2023 don't @ me report launcher rushing *"often deciding the fate of the
+  game in less than 200 rounds"*, and what ended BC2020's rush era was a defensive
+  counter-unit plus organiser map choices — **a tactic and a map pool, not a clock.**
+  So a deadline attack CAN be dominant here-adjacent. **The precondition both seasons
+  had and we lack: cheap, mobile, continuously-producible damage.** Our only mobile
+  unit deals 2 dmg for 2 Ti and **cannot target enemy builders at all**; all real
+  damage is immobile, must be paid for, placed inside the enemy kill zone, and cannot
+  retreat. This does not contradict `THE FORWARD ROAD IS CLOSED` — **it explains it.** Our clock is round 1000 and our first tiebreak key is
   cumulative titanium delivered. **The crack that does exist is that our
   defender's heal is adjacency-capped at ~16 HP/round per tile while the
   attacker's damage on that tile is capped only by titanium** — concentration,
@@ -343,6 +381,26 @@ since the whole value is in the evidence labels.
   **Build legality** is strictly stronger than `is_tile_empty`; **spawn ring is the
   12-tile Chebyshev-1 ring** (`CORE_SPAWNING_RADIUS_SQ = 2`, not the r²=8 action
   radius).
+- **UNIT TURN ORDER IS GLOBAL ENTITY-ID ASCENDING (2026-08-09, s25, research —
+  measured, and it is documented NOWHERE in `official-docs.md`).** 26,078 ordered
+  pairs, **0 inversions**; ids come from a single global creation-order counter.
+  **This is a lever, not trivia: we choose our units' ids by choosing when we build
+  them.** Demonstrated consequence — whether a thrown builder escapes its landing
+  tile in the *same round* is decided entirely by this: `dwell = 0` in **84.14%** of
+  throws where `launcher_id < victim_id` versus **1.83%** where `launcher_id >
+  victim_id` (only **4 self-steps in 60,555** on the favourable side, and **0 in
+  6,685** of our own). Any within-round race — who reaches a tile first, whether a
+  turret fires before a bot steps away — is decided by id, so it is **reproducible by
+  build order rather than luck.** Source: `../post-throw-tile-dwell-2026-08-09.md`.
+- **POST-THROW DWELL IS ONE ROUND (2026-08-09, s25).** 97,999 throws over 6,233
+  games: modal dwell **1**, and **96.4% of enemy victims are off the landing tile
+  within one round**. Landing imposes **no move cooldown** (three hand-verified raw
+  traces; a victim keeps its 1-move-per-round cadence straight through the throw).
+  Share of throws lasting the **11 rounds a gunner needs: 0.42%**; the **7 a sentinel
+  needs: 0.61%**. **Throwing an enemy into your own turret's ray is DISPLACEMENT plus
+  at most one shot — never a kill** (~1 throw in 200). Also: **33.5% of throws land
+  on an OCCUPIED tile** — always a conveyor or splitter, either team, never a turret
+  or bot — so any "empty landing tiles only" count undercounts by about half again.
 - **THE MIDDLE GAME IS THE TARGET, NOT THE ECONOMY (2026-08-09, s23).** Conditional
   on a core kill, the chance it is **ours** rises monotonically **29% → 55% → 72% →
   76%** across r0-150 / r151-300 / r301-600 / r601-999 — but **353 games reached
