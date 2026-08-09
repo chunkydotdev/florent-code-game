@@ -134,3 +134,49 @@ The `hive` loss is consistent with the offline LONG-band null.
 **Standing caveat unchanged:** this is still our own tree against our own tree.
 It says the rush costs share *relative to LOKI-2b*. It does not say LOKI-4 is
 better against the field, and only the ladder can say that.
+
+---
+
+## CALIBRATION ADDENDUM — HALVE THESE NUMBERS BEFORE CARRYING THEM INTO A DECISION
+
+Added after a survey of 22 official Battlecode postmortems (2019–2026) plus
+Halite / Lux / CodinGame / Terminal, which supplies something this project has
+been asserting on intuition: **a sourced deflator for self-play results.**
+
+**One competitor published the same feature measured on BOTH instruments:**
+amputating their opponent-modelling module cost **~30% win rate in self-play**
+against **~15% on a real-field benchmark**. **Roughly 2×, same sign.** The
+mechanism is named by the same author — in the limit *"you'll play a bot against
+itself, minus a mistake, and win all the time."* Halite II's winner independently
+reports local testing *"became increasingly inaccurate and pointless over time."*
+
+**EVERY NUMBER IN THIS DOCUMENT IS OUR TREE AGAINST OUR TREE OR AGAINST OUR OWN
+IMITATIONS OF OTHER TEAMS.** The `*_probe` opponents are foreign in *design* and
+ours in *authorship*. So:
+
+| reading | as measured | carried into a decision |
+| --- | ---: | ---: |
+| orizon core-kill share, ALL | −15.6pp | **≈ −8pp** |
+| cad core-kill share, ALL | −18.9pp | **≈ −9pp** |
+| real-engine leg | 4–1 | **directionally corroborative only, n=5, p=0.1875** |
+
+**The sign is what replicates; the magnitude is what inflates.** Both sign tests
+(p = 0.0201, p = 0.0033) survive halving because they are computed on paired
+flips, not on the deltas.
+
+**AND THE CALIBRATION CUTS BOTH WAYS, which is the part that would be convenient
+to omit.** The BC2025 winner **overrode their own A/B twice and won**, reasoning
+verbatim: *"When we performed AB testing against our past bots, and using
+defense towers did not seem to be very good… Against our past bots it usually
+went even in wins, or even slightly lost. But our bot wasn't super aggressive,
+and we believed that this, in theory, SHOULD be better against the teams that we
+have the worst matchups against."* **A self-play NULL is therefore not evidence
+of no effect either** — our pool cannot contain opponent behaviour our own tree
+never exhibits, and our opening is a near-constant (CV **0.09** against the
+field's **0.26**) in a pool we dominate 87–90%.
+
+**⇒ What this does NOT change:** the recommendation to test LOKI-4 on the ladder.
+**What it DOES change:** the size of the effect I am claiming in support of it.
+**The honest statement is "a replicated directional result worth roughly half of
+what the offline deltas say, whose only real test is the field."** Anything
+stronger would be the C1b "tax" and compact-55.0 incidents repeating.
