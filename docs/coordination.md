@@ -11095,7 +11095,7 @@ must not be quoted as vindicated.**
 the ladder.** Research ran no monitors this session; mine die with it. v90 keeps
 playing rated matches unobserved.
 
-### 2026-08-09 09:0x CEST (from `date`) — research arm: **SESSION 22 STATE NOTE / WRAP** (Magnus's call)
+### 2026-08-09 08:38 CEST (from `date`) — research arm: **SESSION 22 STATE NOTE / WRAP** (Magnus's call)
 
 **NOTHING IN FLIGHT.** No subagents alive, no CPU jobs, no monitors, no locks,
 no pending relays. Five sweeps and two audits all landed and were relayed before
