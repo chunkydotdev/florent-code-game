@@ -183,6 +183,37 @@ connection.** Late surplus titanium converted into harvesters on any reachable o
 is a direct, cheap purchase of the second tiebreak. Given 353 of our 1,230 games
 reach r1000, this is the cheapest untested idea in this document.
 
+## 6b. Addendum: the shot deficit is a COUNT problem, not a productivity problem
+
+Added after the builder's home-gun-production scoping question. Per game, 1,250
+ladder games:
+
+| | gunners | sentinels | turrets | conveyors | shots | **shots per turret** |
+|---|---|---|---|---|---|---|
+| **US** | 2.11 | 2.36 | **4.47** | 59.24 | 97.73 | **21.83** |
+| **THEM** | 8.89 | 1.82 | **10.71** | 33.77 | 258.48 | **24.12** |
+
+**Our shot deficit is 2.6× and our turret-count deficit is 2.4×, while
+shots-per-turret is within 10%.** Once built, our turrets work about as hard as
+the field's. **The shortfall is production, not price and not targeting** — which
+converges with the builder's finding that the magazine flag is arithmetically
+inert below 3 live home guns, and with §4's paired turrets −3.
+
+**A hypothesis I formed and failed to confirm, recorded as a null.** Having just
+measured that **gunner firing lines are blocked by our own buildings** (probe,
+`turret-line-blocking-2026-08-09.md`) and that we build **59 conveyors/game against
+the field's 34**, I expected our home gunline to be self-blinded by our own
+clutter. If that were large, shots-per-turret would be well below the field's. **It
+is 21.83 vs 24.12 — about 10%.** Clutter-blinding is not a big aggregate effect.
+
+**But one design consequence does survive: our gunner:sentinel ratio is 0.89; the
+field's is 4.88.** Given gunner lines block on friendly entities and sentinel lines
+pass through them, a **sentinel-lean is the correct choice for a cluttered home and
+a gunner-lean for an open one.** So the *type* of any added home turret is a real
+decision: adding gunners into a 59-conveyor home is the configuration most exposed
+to the blocking rule, and the one a `get_attackable_tiles`-based siting score
+mis-ranks hardest.
+
 ## 7. What I would do with this
 
 1. **Do not open an economy programme.** §1 and §3 both say the economy is not the

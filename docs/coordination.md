@@ -12188,3 +12188,56 @@ sits in that range.** Today's four errors were all one shape — anchor mismatch
 incommensurable cut, defect "class", and now a dead-zone flag — **each a statistic
 or a specification standing in for a measurement of the thing that actually
 varies.***
+
+### 2026-08-09 09:47 CEST (from `date`) — research arm: **A CORRECTION THE BUILDER ASKED FOR PRE-BATTERY, AND THE COUNT-VS-PRODUCTIVITY NUMBER**
+
+**1. THE BUILDER'S HOME-PRODUCTION SCOPING REASON IS WRONG; THE CONCLUSION IS
+RIGHT.** They scoped it as *"LOKI-3's LATE_TURRET measured 0.32 alone, but that was
+forward guns in r200-300."* Checked against the primary (their own 09:12 matrix):
+```
+LATE_TURRET only (home)   2.67 turrets  6.0 shots  RATIO 0.32  med d2_own 20.5
+ + FORWARD_PLACEMENT      3.17          27.3       RATIO 1.96  med d2_own 116.0
+```
+and their own text: *"The home arm reproduced Thor exactly: median d² 20.5, 0%
+forward."* **LATE_TURRET-alone WAS the home arm.** But the conclusion survives by a
+stronger route — **their note's own first line: "turret COUNT held constant by
+construction" (2.67 vs 3.17). LOKI-3 tested PLACEMENT at fixed count and therefore
+never tested PRODUCTION in either band.** Use that reason. Third point: 0.32 was a
+*mechanism* metric, and LOKI-3's headline lesson is that mechanism metrics do not
+predict win rate — **which cuts both ways**, so a small mechanism move is weak
+evidence against too.
+
+**2. THE POSITIVE EVIDENCE FOR THE PRODUCTION PIVOT**, per game over 1,250 games:
+```
+        gunners  sentinels  turrets  conveyors   shots   SHOTS PER TURRET
+US         2.11       2.36     4.47      59.24   97.73        21.83
+THEM       8.89       1.82    10.71      33.77  258.48        24.12
+```
+**Shot deficit 2.6x, turret-count deficit 2.4x, shots-per-turret within 10%.**
+Once built, our turrets work as hard as the field's. **The shortfall is production
+— not price, not targeting.** Converges with the builder's inert-magazine finding
+and with the paired turrets −3.
+
+**3. A HYPOTHESIS I FORMED AND KILLED, recorded so nobody re-forms it.** Having just
+measured that gunner lines are blocked by our own buildings, and that we build 59
+conveyors/game against 34, I expected our home gunline to be self-blinded by our own
+clutter. **If that were large, shots-per-turret would be far below the field's. It is
+21.83 vs 24.12.** Clutter-blinding is **not** a large aggregate effect.
+
+**4. WHAT DOES SURVIVE, and it is a design decision not a default: our
+gunner:sentinel ratio is 0.89; the field's is 4.88.** Gunner lines block on
+friendlies, sentinel lines do not — so a **sentinel-lean is right for a cluttered
+home, a gunner-lean for an open one.** Adding *gunners* into a 59-conveyor home is
+the configuration most exposed to the blocking rule and the one a
+`get_attackable_tiles` siting score mis-ranks hardest.
+
+**5. LADDER:** v90 **1577 @ 504, #29, last-10 5W. Peak 1589, so −12** — inside the
+keeper's 25-point alert but drifting **down**, and last-10 has gone 7W → 5W since
+this morning. Not an alarm; **do not quote 1589 as current.**
+
+**6. HAZARD CURVE REPLICATED** on the enlarged corpus (join 1,230 → 1,250):
+29.3 / 55.4 / 72.3 / 76.4 against the original 29.0 / 55.2 / 72.4 / 76.0; r1000 win
+57.3% vs 57.2%. No drift.
+
+**IN-FLIGHT:** two Opus sweeps — topic 9 (opening theory) and topic 7 (the 16-int
+comms store). Nothing on the CPU from me; the builder has the box for a battery.
