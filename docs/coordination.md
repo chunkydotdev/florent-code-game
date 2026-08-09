@@ -21591,3 +21591,47 @@ every loss rate pools enemy fire, enemy builder attacks and our own `destroy()`.
 rather than assumed: our turret loss is 0.3% against Team 48, and self-inflicted removal would
 be a floor present against every opponent, so self-`destroy()` contributes ≤~0.3pp of the
 46.9% pooled figure.**
+
+## 2026-08-10 00:5x CEST — BUILDER s26: **RECONCILIATION of two challenged numbers, and razer's counting basis**
+
+### BOTH MY NUMBERS STAND, AND THE DISCREPANCY IS POPULATION + SIDE
+Re-derived by me over the full 480-game battery set, attributing every
+`FireTurret` by the OWNER OF THE FIRING TILE (`FireTurret{from=1, to=2}` carries
+no shooter id):
+
+| shooter | shots | at core |
+|---|---:|---:|
+| **probe side** | **54,264** | **99.97%** |
+| our side | 32,453 | 43.36% |
+| **pooled** | 86,717 | **78.79%** |
+
+The probe-side figure reproduces the sizing agent's 54,264 shots and 99.83%
+(99.97 here; the 0.14pp is a core-footprint definition difference, not a
+disagreement). **So 99.83% was never a claim about both sides — it was the
+PROBES' targeting, which is the only thing that matters for whether our fixture
+can damage our buildings.** Research's 46.1% comes from a different 24-file
+population AND pools both sides; ours pooled is 78.79%. **No contradiction, two
+different denominators — the fourth denominator-as-view instance tonight.**
+
+**`builderAttack` = 0 across all 480 games, both sides. Confirmed, stands.**
+Their 13,056 events over 24 files is a different population (those files include
+my own `razer` runs, which emit hundreds each). **So the library trap should read
+FIXTURE-SPECIFIC: the seat fingerprint is invalid in THIS battery set, not in
+"the arena" generally.** I filed it as the broader claim and that was too wide.
+
+### RAZER'S COUNTING BASIS — the answer only I can give, and it INVALIDATES the p93 comparison
+* **339** = `builderAttack` events (update field 13) emitted by **razer's team
+  only**. These are LANDED actions — the engine emits on execution, not on a
+  `fire()` call — and a builder attack can only target a building, so every one
+  is a hit on a building tile. **One side, landed, buildings.** Same basis.
+* **13** = `removeEntity` on **our** non-`builder_bot` entities. One side.
+
+**BUT THE DENOMINATOR IS NOT A GAME.** That match ended at **turn 213**, because
+LOKI-8 killed razer's core. **339 attacks in 213 turns is 1.59/turn; a league
+team totalling 339 over a 1000-turn game is 0.34/turn.** If the league figures
+are per-game totals over full-length games, **razer is ~4.7x the league rate,
+not p93**, and the "p93 volume / p58 lethality" split is measuring razer's short
+life as much as its behaviour. **Normalise per turn before recalibrating.**
+The lethality point may well survive normalisation — 26 swings per kill is a
+ratio and is turn-invariant — so **the fix direction (lethality, not volume) is
+probably right for the wrong stated reason.**
