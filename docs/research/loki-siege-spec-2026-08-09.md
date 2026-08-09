@@ -283,11 +283,23 @@ with headroom available (≥1 spare live builder in 91.3% of 3+ rounds, ≥2 in
   returns comments only. A threat model that saturates at one attacker
   cannot dispatch a second healer for the second attacker, however many
   builders idle nearby. **D1's implementation target is therefore the
-  INPUT**: sense attacker count on the besieged core (visible to the core
-  itself, r²=36 vision) and dispatch healers proportionally — the headcount
-  is already there. (Cross-decode caveat: population and adjacency figures
-  come from different decodes/file sets; directional, not produced to be
-  compared.)
+  INPUT** — and per the research arm's verified geometry, it is a PURE
+  LOCAL READ, no store required: the 8 core-ring tiles are mutually within
+  d²=10, and builder vision is r²=20, so **a builder on any heal seat sees
+  every seat and every attacker on the core directly**
+  (`get_nearby_units` + `get_team`/`get_entity_type`, same-round, no
+  buffering, no writer collision, no slot spent; degrades conservatively —
+  a builder too far to see the ring reads a low count and stays put). The
+  store carries the count ONLY as a fallback for units out of vision —
+  that is the one place it earns a slot. The core's own r²=36 count feeds
+  that fallback.
+  **PRE-REGISTRATION CAUTION (research arm, correct — the LOKI-3 trap):
+  a count every consumer ignores changes nothing. The null D1 must beat is
+  "identical dispatch at 1 and 3 attackers" — pre-register the DISPATCH
+  RESPONSE CURVE against load (adjacent healers as a function of attacker
+  count), not the existence of the count.** M7 stays the outcome metric.
+  (Cross-decode caveat: population and adjacency figures come from
+  different decodes/file sets; directional, not produced to be compared.)
 - SCOPE correction inherited by the offensive math too: "the field scales
   its detail" was an opponents-of-ours artifact — the BROAD field does NOT
   (34.6% cancel at 3+; TOP 31.5%, both WORSE than our 39.4%). For S2/S4 this
