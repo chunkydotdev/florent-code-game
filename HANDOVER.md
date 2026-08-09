@@ -122,6 +122,28 @@
 ##   the rollback is one command (`fcode submission activate 101`).
 
 ## ===== QUEUE =====
+## 0a. **OUR ARENA POOL CANNOT MEASURE A DEFENSIVE PLANK. FIX THIS FIRST.**
+##    Measured s26 over 480 games: **not one of our forward sentinels takes one
+##    point of damage**, because the probe family fires 54,264 shots and
+##    **99.83% of them target our CORE**. Survival reads 100.0% at every horizon.
+##    Saturation of a NEW kind — not "the bar cannot resolve" but **"the
+##    mechanism never occurs"**. Any survivability, healing, screening or repair
+##    plank measured on `cad_probe`/`orizon_probe`/the probe family is measuring
+##    an event that does not happen. **A building-attacking opponent in the pool
+##    is a PREREQUISITE for that whole class of work.**
+## 0b. **THE SITING NUMBER, on THIS tree (74,723 gunner-rounds, LOKI-8):**
+##    **79.95% of gunner-rounds have NO ENEMY ON THE RAY AT ALL.** Friendly
+##    blocking is frequent but nearly free — own conveyor in front 48.71% of
+##    rounds, yet only **1.70%** have an enemy on the ray behind a friendly.
+##    **"Never stack gunners" is a 1.7% problem; aiming at nothing is an 80%
+##    one.** LOKI-9 proved facing is NOT the lever (`can_fire_from` permits at
+##    most one facing of 8), so this is a SITING road.
+## 0c. **The collar heal is dead code: 0 of 87,169 heals land on anything but our
+##    own core.** Presence is not the problem (planter adjacent 59.4% at +1);
+##    `eco.py:_heal_core` outranks `_heal_adjacent` at `main.py:411` and
+##    `raid.py` steps 4-5 never fire. REMOVAL-shaped, the only shape that has
+##    worked on this line — but unpriceable until 0a is fixed. Also:
+##    **`builderAttack` is emitted 0 times by either side** in 480 games.
 ## 0. **v102 IS TWO POINTS FROM THE STOP-LOSS** (net5 -19.0 vs -21, armed). The
 ##    alarm is now real and detached; `cat corpus/SHIP_ALERT` first. On SLOT FREE
 ##    the call is roll-to-v101 or hold, and it is Magnus's or the builder's —
