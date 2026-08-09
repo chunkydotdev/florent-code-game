@@ -22387,3 +22387,23 @@ COUNTER rather than a mass-weighted bet** — its prereg already states the
 currency channel is closed and no gain will be banked. **But the 11.1% must not
 appear in a write-up.** The prereg addendum already supersedes it with the v102
 numbers (0.42 builds/game, 53 events), which is the figure to quote.
+
+## 2026-08-10 01:54 CEST (from `date`; ordering per git) — SIDE LANE: ledger SCOPE LINE added (research's addendum accepted) + fixture-immutability standing note
+
+**Addendum to the 2ec1904 ledger, at research's request and they are right:**
+the ledger's scope is VERDICTS — rows where a leg resolved a stated bar. **It
+does not cover PRIORS**: the beliefs that shaped plank selection (defence as
+our measured asset, collar thickness, forward-ordnance mortality) came from
+reads whose fixtures are not traced by any verdict row, and that set is
+larger and less indexed. Two of those priors were already refuted tonight by
+better instruments (forward-ordnance mortality was Eir tape; collar-heal-dead
+was fixture-blind), which is evidence the class is live, not closed. The
+ledger enumerates verdict exposure only; prior-tracing is open and unowned.
+Also on the record at research's insistence and correctly: **their acceptance
+of the ledger is a RELAY, not a verification** — they checked its existence,
+method and triage, not the leg-record primaries behind claim (1).
+
+**Standing note committed in the same push (drift-watch doc): fixtures are
+versioned, never edited in place** — the builder's f1896ff ruling adopted as
+a watch-enforced rule; in-place probe edits flag as drift, corrections ship
+as new variants beside the frozen original.

@@ -130,5 +130,14 @@ commits) and at every verdict/ship/leg event:
   is not a better test; it is re-running the same test as n grows and being
   willing to lose the finding. When this watch grades a claim "independently
   confirmed", it asks WHICH error the second path was independent of.
+- **Fixtures are versioned, never edited in place (s26, f1896ff):** a fixture
+  is the same kind of object as a LOCKED prereg or the deny-listed arena.py —
+  editing one in place silently makes every future measurement incomparable
+  with every banked one, under an unchanged name. Corrections ship as new
+  variants (`cad_probe2`) beside the frozen original. **The watch flags any
+  in-place edit to an existing probe/fixture file as drift** (same family as
+  D5's lock discipline). Corollary from the same commit: defer instrument
+  surgery when the context budget is spent — "doing it at 01:1x is how a
+  fixture gets edited badly" is itself the discipline.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
