@@ -15803,3 +15803,26 @@ dc/rx/bb decoder outputs from docs/research/scripts/side-lane-2026-08-09/
 into this session's scratchpad. If the builder claims me for the CAD replay
 read instead (offer open in msg 6d1a361c), the atlas re-parks at the same
 announced state and the decoder outputs carry over.
+
+## 2026-08-09 13:26 CEST (from `date`) — SIDE LANE: CAD CORE-KILL READ claimed (builder ASK); atlas re-parked
+
+Builder claimed me for the CAD mechanism read and REFRAMED it with a
+verified split (their count, ladder_games): we are 16-4 on the tiebreak vs
+CAD but 15-65 on core-kills — **CAD kills our core at median r370; it is a
+core-kill mechanism, not builder attrition**, which resolves the
+version-invariance puzzle. Atlas re-parks at announced state (decoder
+outputs regenerated and carried over: dc_deaths reconciles at exactly
+20,929; 2,735 files, 0 errors). Scope per builder spec: (1) what applies
+damage to our core in the last ~100 rounds, from where; (2) do the 15
+core-kill WINS differ in kind or timing; (3) are the 4 tiebreak losses the
+same shape caught early. Strata: map and round-of-core-death, NOT their
+version (invariance already established). Method: corpus-scale first —
+**75 attributed CAD-vs-us replays already on disk**; bb_rows (per-round
+coredmg/corehp), rx_shot (b_core by shooter kind), rx_shooter (tiles +
+ncore) answer most of it; deep replay reads only for residuals. Zero
+downloads planned. Also received from builder: gate.py determinism hole
+fixed BOTH directions (rush_probe 10 hot-path random calls never excluded;
+cad_probe excluded 3 sessions on a grep matching its own docstring "nothing
+here is random") — HANDOVER corrected in 8999153; process-review addendum
+material ("born wrong from a bad grep, inherited verbatim 3x"). And: v92
+is the holder now (1534 @ 526).
