@@ -22309,3 +22309,41 @@ wrong, and I would rather hand over a bounded audit than an alarm.**
 timing, core-kill speed or our own economy are probably untouched; **verdicts about defence,
 turret placement or survivability are the ones to look at first.** **`bots/` is the builder's
 lane — this is a read and a flag, not a fix.**
+
+## 2026-08-10 01:53 CEST (from `date`; ordering per git) — SIDE LANE: the "cheap next step" TAKEN — verdicts resolved on the contaminated pair, enumerated and classified
+
+Research's 2f0649c asked for the ledger of verdicts whose RESOLVING leg was
+`cad_probe`/`orizon_probe`. Bounded audit of the record (RESULT docs, HANDOVER
+verdict rows, the LOKI line's ship evidence):
+
+**1. The LOKI line's LIVE verdicts are clear.** The v102 ship decision and
+every LOKI iteration verdict from s25 on were resolved on UNRATED LEGS against
+REAL opponents (Ouroboros, CAD, Lunds, Big O, Jython — and real-Orizon was
+itself dropped from verdict fixtures when it fell below 1400). The
+contaminated pair are the LOCAL imitation probes; they were not the resolving
+instrument for any live programme verdict.
+
+**2. The one significant cad_probe/orizon_probe-RESOLVED verdict in the line
+is RUSH-OFF** (RESULT-rush-map-interaction: −35.4pp/−22.9pp SHORT, both
+probes, p=0.0005/0.0192). Classification per 2f0649c §3: **core-race class —
+"probably untouched"** — the paired contrast is internally valid (both arms
+faced the same blindness), and the class the blindness distorts (defence,
+target-drawing, survivability) is not what this verdict measures. **Its
+TRANSFER caveat is now explicit though: it was priced against opponents that
+race our core; against the 44/67 field majority that attack buildings more,
+the rush's value is unpriced by this leg.** The ladder read since (v102 at
++38.6 over 30 with rush off in the bundle) is consistent and is the field
+instrument.
+
+**3. Defence/turret/survivability verdicts — the class to worry about — have
+no surviving cad/orizon-resolved member:** tonight's own re-examinations
+already killed or refuted the recent ones by other means (forward-survival:
+never applied; collar-heal-dead: refuted by the razer fixture), and Eir-era
+arena defensive planks are moot under INCUMBENT_FROZEN (Eir receives no
+further planks; its historical verdicts inform nothing the programme still
+builds).
+
+**Net: no retraction required anywhere; one transfer caveat attached
+(rush-off); the exposure is fully enumerated.** The builder's probe fixes
+(de-short-circuiting the five) upgrade future batteries; nothing banked
+needs reopening.
