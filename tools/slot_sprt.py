@@ -47,6 +47,44 @@ MU0 = -10.0          # H_bleed: bleeding rate in Elo/match (v3's suggested bound
 ALPHA = 0.15         # = beta; log((1-b)/a) bound. 0.15 chosen by backtest —
                      # 0.05 misses the v79 true positive (see --grid).
 
+# ===== THE SLOW BOUND (Magnus, 2026-08-09 s26 — "go with your recommended
+# Path", the PAIR, added as a second bound and NOT a replacement) =====
+#
+# WHY A SECOND BOUND EXISTS. MU0 = -10 answers "is this collapsing?" and is
+# blind to a slow bleed. Measured: the -21 rolling-5 rule trips only at
+# <= -4.2 Elo/match (5r <= -21), and this SPRT at MU0 = -10 needs worse than
+# -5/match, so a STEADY -4.0/match decline trips NOTHING, EVER — 240 Elo over
+# 60 matches, silent on every instrument we own. That hole was found the day a
+# "recovery" was reported off net5 improving while the rating fell: net5 is a
+# five-match SLOPE and it RELAXES as a bad result ages out of the window.
+#
+# WHY -4 RATHER THAN A TIGHTER -10. Tightening MU0 makes this test fire LESS,
+# not more — MU0 enters the statistic itself (llr ∝ net - k*MU0/2), not just
+# the bound. Backtested over all 47 holder runs on the tape:
+#
+#     MU0    BLEED on real history                     slow bleed   v79 collapse
+#     -10    8  incl. v53(net +43), v94(net +13)       missed       CAUGHT
+#      -6    6  incl. v53(+43), v72(+16), v91(+3)      -4 only      CAUGHT
+#      -4    0                                          CAUGHT      missed
+#
+# So the two are COMPLEMENTARY, NOT ORDERED: -10 catches the sharp short
+# collapse and misses the slow bleed; -4 does the reverse and costs ZERO false
+# positives on our entire recorded history. Hence both, reported separately.
+# Note in passing that the live -10 setting fires on four holders that ended
+# NET POSITIVE (v53 at +43 over 45 matches) — that is on the record as a
+# suspected false-positive rate, not silently accepted.
+MU0_SLOW = -4.0
+
+BOUNDS = (("fast", MU0), ("slow", MU0_SLOW))
+
+
+def run_both(rows, alpha: float = ALPHA):
+    """Both bounds over the same holder run. Returns {name: verdict}.
+
+    Reported SEPARATELY and never merged into one word: they answer different
+    questions, and collapsing them would hide which one fired."""
+    return {name: run_sprt(rows, mu0, alpha)[0] for name, mu0 in BOUNDS}
+
 
 def llr(net: float, k: int, mu0: float = MU0) -> float:
     return (0.0 - mu0) / (SD * SD) * (net - k * mu0 / 2.0)

@@ -125,6 +125,36 @@ It is NOT the rule — the −21 stop-loss above is. Promotion to rule status
 requires live validation across a few tenures and would be its own doc+tool
 commit.
 
+**AMENDMENT 2026-08-09 s26 — A SECOND, COMPLEMENTARY BOUND (Magnus: "go with
+your recommended Path", approving the PAIR).** `MU0_SLOW = −4.0` is added
+alongside `MU0 = −10.0`; both run, both are reported, neither replaces the
+other, and **the −21 rolling-5 rule remains the governing stop-loss**.
+Doc and constant change in this commit, per the rule above.
+
+*Why.* The −21 rule trips only at ≤ −4.2 Elo/match (5r ≤ −21) and the −10 SPRT
+needs worse than −5/match, so **a steady −4.0/match decline trips NOTHING,
+EVER — −240 Elo over 60 matches, silent on every instrument we owned.** The
+hole surfaced when a "recovery" was reported off net5 improving while the
+rating fell: **net5 is a five-match SLOPE and it RELAXES as a bad result ages
+out of the window.** `ship_watch` now also logs `peak` and `drawdown` so the
+level is legible next to the slope.
+
+*Why −4 and not a tighter −10.* Tightening MU0 makes this test fire **less**,
+not more — MU0 enters the statistic (`llr ∝ net − k·MU0/2`), not just the
+bound. Backtested over all 47 holder runs on the tape: **−10 → 8 BLEED
+(including v53 at net **+43** and v94 at **+13**, four holders that ended net
+positive); −6 → 6; −4 → 0.** The two are **complementary, not ordered**: −10
+catches the sharp short collapse and misses the slow bleed, −4 does the reverse
+at **zero** false positives on our recorded history. The suspected
+false-positive rate of the live −10 setting is recorded here rather than
+silently accepted.
+
+*Teeth.* `ship_watch.py --selftest` carries a dedicated slow-bleed fixture that
+asserts the RULE stays silent (net5 = −20, never −21), the **fast bound reads
+OK** — so the fixture cannot pass for the wrong reason — and only the slow
+bound fires. Mutation-tested: setting `MU0_SLOW = −10` (making the pair
+redundant) fails the selftest.
+
 **3. The slot is a STOP-LOSS and a WAKE PATH, not an evaluation instrument.**
 The audit's arithmetic: 46 slot runs, mean 6.9 matches, median 5, 27% ever
 reached 8; an 8-match window resolves ≥9.2 Elo/match against an all-version

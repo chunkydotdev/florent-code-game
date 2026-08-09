@@ -93,6 +93,10 @@ def assess(tape, version=None, baseline=None):
     if st is None or st.k <= 0:
         return None, None, None, None, None
 
+    # BOTH bounds, reported separately and never merged into one word — they
+    # answer different questions (fast = collapsing now, slow = bleeding
+    # steadily) and collapsing them would hide which one fired.
+    pair = slot_sprt.run_both(st.rows, ALPHA)
     verdict, events, _, _ = run_sprt(st.rows, MU0, ALPHA)
 
     n5 = _n5(st.net5)
@@ -110,7 +114,8 @@ def assess(tape, version=None, baseline=None):
     line = (f"{datetime.now().isoformat(timespec='seconds')}\t{st.version}\t"
             f"k={st.k}\trating={st.rating:.0f}\tnet5={n5}\t"
             f"peak={peak:.0f}\tdrawdown={st.rating - peak:+.1f}\t"
-            f"armed={st.armed}\tRULE={ruling}\tsprt={verdict}{net_act}")
+            f"armed={st.armed}\tRULE={ruling}\t"
+            f"sprt_fast={pair['fast']}\tsprt_slow={pair['slow']}{net_act}")
 
     alert = None
     if st.slot_free:
@@ -122,13 +127,21 @@ def assess(tape, version=None, baseline=None):
             "permits a swap, it does not order one.\n"
             "ROLLBACK: .venv/bin/fcode submission activate <rollback version>\n"
             "See HANDOVER.md for the current rollback target.\n")
-    elif verdict == "BLEED":
+    elif "BLEED" in pair.values():
+        which = [k for k, v in pair.items() if v == "BLEED"]
+        why = {"fast": f"a COLLAPSE (MU0={slot_sprt.MU0:+.0f}/match)",
+               "slow": f"a STEADY BLEED (MU0={slot_sprt.MU0_SLOW:+.0f}/match) — the "
+                       "hole net5 cannot see"}
         alert = (
             line + "\n\n"
-            f"SPRT ADVISORY accepted BLEED for {st.version} (llr <= -{BOUND:.2f}).\n"
+            f"SPRT ADVISORY accepted BLEED for {st.version} on the "
+            f"{'/'.join(which)} bound: " + "; ".join(why[k] for k in which) + ".\n"
             f"The -21 rolling-5 rule has NOT freed the slot (net5 {n5}); the rule\n"
             "is the rule. This is the statable-error-rate read, raised because a\n"
-            "sequential test accepting bleed is worth a human look.\n")
+            "sequential test accepting bleed is worth a human look.\n"
+            "NOTE the slow bound exists because a steady bleed slower than\n"
+            "-4.2/match holds net5 above -21 FOREVER: -4.0/match is -240 Elo over\n"
+            "60 matches with the rule silent throughout. Check DRAWDOWN, not net5.\n")
     return st, verdict, events, line, alert
 
 
@@ -222,6 +235,27 @@ def selftest() -> int:
     _, _, _, _, a_wrong = assess(t, baseline=99999.0)
     check("a wrong SHIP_BASELINE cannot silence the rule",
           (a_none is not None) and (a_wrong is not None))
+
+    # 7. THE SLOW BOUND (Magnus-approved pair, s26). A steady -4.0/match bleed:
+    #    net5 sits at -20 and NEVER reaches -21, so the RULE is silent forever,
+    #    and the fast bound (MU0=-10) reads OK. Only the slow bound (MU0=-4)
+    #    sees it. This fixture is the whole reason the second bound exists, and
+    #    it asserts the fast bound stays OK so it cannot pass for the wrong
+    #    reason — if the fast bound ever caught this, the pair would be
+    #    redundant rather than complementary.
+    rows = [(1580 - 4.0 * i, 900 + i) for i in range(61)]
+    t = tape(rows)
+    st, _, _, _, alert = assess(t)
+    pair = slot_sprt.run_both(st.rows, ALPHA)
+    check("slow bleed -4/match: the RULE is silent (net5 never reaches -21)",
+          not st.slot_free, f"net5={_n5(st.net5)} over k={st.k}, "
+          f"total {rows[-1][0] - rows[0][0]:+.0f} Elo")
+    check("...the FAST bound reads OK (so the fixture is not redundant)",
+          pair["fast"] == "OK", f"fast={pair['fast']}")
+    check("...the SLOW bound CATCHES it", pair["slow"] == "BLEED",
+          f"slow={pair['slow']}")
+    check("...and an alarm is raised naming the slow bound",
+          alert is not None and "slow bound" in alert)
 
     print(f"\n{'SELFTEST PASSED' if not fails else 'SELFTEST FAILED: ' + ', '.join(fails)}")
     return 1 if fails else 0
