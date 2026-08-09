@@ -3991,7 +3991,7 @@ class Player:
                     near[k] = near.get(k, 0) + 1
         return near
 
-    def _kidnap_victim(self, ct, bp, dest):
+    def _kidnap_victim(self, ct, bp, dest, cover):
         """Score one hostile in the pickup ring; also flag it a probable healer.
 
         WHY HEALERS RANK FIRST.  Per titanium: builder heal 4.00 HP/Ti, sentinel
@@ -4005,9 +4005,18 @@ class Player:
         friendly entity on an ORTHOGONALLY adjacent tile, so a hostile standing
         cardinally next to a DAMAGED entity of its own team is a healer with a
         job.  hp == max_hp next door is not evidence of anything.
+
+        AND THE TRIGGER (KIDNAP_V_UNDER_FIRE).  One healer is ~2 HP/round and
+        three of them exactly cancel a Sentinel, so the kidnap flips an
+        unwinnable exchange to a winnable one -- but ONLY while we are already
+        shooting the thing being repaired.  `cover` is the set of tiles our
+        loaded turret lines reach, so "the damaged entity stands on a covered
+        tile" is the cheapest honest proxy for that, and it costs one set lookup
+        on a value we computed anyway.
         """
         score = 0
         healer = False
+        under_fire = False
         target = -1
         if dest is not None and dist_core(bp, dest) <= 1:
             score += KIDNAP_V_CORE_ADJ
@@ -4038,7 +4047,10 @@ class Player:
                           EntityType.GUNNER, EntityType.LAUNCHER):
                     score += KIDNAP_V_HEALER_HIGHVALUE
                     target = oid
-        return score, healer, target
+                if (q.x, q.y) in cover and not under_fire:
+                    under_fire = True
+                    score += KIDNAP_V_UNDER_FIRE
+        return score, healer, under_fire, target
 
     def _kidnap(self, ct, lp, w, h, dest, enemy_bots):
         """PIECE KIDNAP.  Returns True iff a hostile was thrown.
@@ -4063,18 +4075,21 @@ class Player:
         """
         if self._cpu_exhausted(ct):
             return False
+        # Coverage first: victim selection needs it for the under-fire trigger,
+        # and it is one scan either way.
+        cover = self._kidnap_cover(ct)
         pick = None
         pick_s = None
         pick_heal = False
+        pick_fire = False
         pick_tgt = -1
         for _eid, bp in enemy_bots:
-            s, healer, tgt = self._kidnap_victim(ct, bp, dest)
+            s, healer, fire, tgt = self._kidnap_victim(ct, bp, dest, cover)
             if pick_s is None or s > pick_s:
-                pick, pick_s, pick_heal, pick_tgt = bp, s, healer, tgt
+                pick, pick_s, pick_heal, pick_fire, pick_tgt = bp, s, healer, fire, tgt
         if pick is None:
             return False
 
-        cover = self._kidnap_cover(ct)
         near = self._kidnap_ours(ct)
         # For a healer the payoff is SEPARATION AND TIME: every round it spends
         # walking back is a round the thing it was repairing keeps taking
@@ -4122,6 +4137,15 @@ class Player:
                 self._kidnap_probe(ct, "KIDNAP", pick, site, covered, walk,
                                    sep, pick_heal, pick_tgt)
                 ct.launch(pick, site)
+                # THE WINDOW SIGNAL.  2 == "launcher alive AND a kidnap window
+                # is open"; every existing reader of this slot tests truthiness
+                # only, so this is bit-for-bit 1 to all of them (see
+                # KIDNAP_AMMO_SURGE_ON).  Raised only when the throw actually
+                # bought something to shoot: a covered landing tile, or a healer
+                # pulled off something we are already firing at.  The launcher
+                # rewrites 1 next turn, so the Core bursts exactly once.
+                if KIDNAP_AMMO_SURGE_ON and (covered or pick_fire):
+                    ct.write_store(SLOT_LAUNCHER, 2)
                 return True
         return False
 

@@ -24,6 +24,11 @@ from fcode import Direction, EntityType, Environment, Position
 # for the rule on adding new flags.
 from doctrine import *  # noqa: F401,F403
 
+# LOKI-4 ORE DENIAL (see denial.py and doctrine.py's LOKI-4 block).  The whole
+# plank is behind ORE_DENIAL_ON; with it False every entry point below returns
+# immediately and this file behaves as _v103split.
+import denial
+
 
 
 def enemy_core_for(w, h, own):
@@ -262,6 +267,17 @@ class Player:
         self.b_sense = 16
         self.map_ores = []
         self.ore_cursor = 0
+
+        # LOKI-4 ORE DENIAL state, per unit instance -- no store slot, because
+        # all 16 are occupied and because nothing here needs to be shared: the
+        # plan is a pure function of the decoded map plus the two Core
+        # positions, so every unit that computes it gets the same answer, and
+        # the counters bound THIS unit's own spending.  None means "not yet
+        # computed"; an empty tuple means "computed, nothing to deny here".
+        self.deny_plan = None
+        self.deny_placed = 0
+        self.deny_home_plan = None
+        self.deny_home_placed = 0
         self.forward_guns = 0
         self.forward_barriers = 0
         self.siege_spot = None

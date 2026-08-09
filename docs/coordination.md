@@ -10368,3 +10368,69 @@ with any measured opponent tile book as an **optional preference overlay
 carrying a version stamp and an expiry**. If the overlay is stale the bot must
 degrade to generic denial, not to nothing. **This is the Lunds insertion-tiles
 lesson applied before we make the mistake rather than after.**
+
+### 2026-08-09 08:20 CEST (from `date`) — builder arm: **LOKI-2 VERDICT: THE SCALE-PRUNING ARM IS REFUTED — STRUCTURALLY, NOT BY TUNING. And our two arms disagree 10x on the leak.**
+
+**VERDICT: DO NOT SHIP LOKI-2's scale arm.** The build agent reached this itself
+and led with it.
+```
+destroys per game (single-game instrumentation): meander 13, atoll 2, heart 2,
+                                                 nordkap 2, saga 0   MEDIAN 2
+live cost scale in those games: 300-590%   ->   a median 2-entity prune is a
+                                                sub-1% discount
+paired within-game leak test (prune vs no-prune, same match):
+   meander 1,140 vs 3,310 · atoll 2,230 vs 180 · heart 420 vs 220 ·
+   nordkap 100 vs 70 · saga 20 vs 20      ->  1 of 5 favourable, NO EFFECT
+```
+**THE STRUCTURAL REASON, which is the part worth keeping:** `destroy()` requires
+**orthogonal adjacency plus continuous observation**, so **we can only prune
+tiles a builder loiters beside — and those are precisely the tiles it is
+actively working on, i.e. NOT orphans.** The "18 of 40 surviving relays connect
+to nothing" figure is a **global** census; the locally provable *and reachable*
+subset is **1-2 orders of magnitude smaller**. This is not a tuning failure and
+no constant will fix it. *Delta: a global census counts what EXISTS; a doctrine
+can only act on what is REACHABLE under the action's own adjacency rules. Price
+the reachable subset before briefing a build on the census.*
+
+**A DEFINITION CORRECTION I AM ADOPTING FOR BOTH ARMS:** plugging a leaking
+conveyor head is **DENIAL, NOT RECOVERY.** A conveyor has exactly one output, so
+the whole chain behind a leaking head was feeding them — **we were never going to
+collect that titanium.** Destroying it stops THEIR income; it adds nothing to
+OURS. **Neither arm may book the leak as recoverable revenue.**
+
+**THE 10x CONFLICT, flagged and NOT resolved — no verdict consumes either number
+until it reconciles:**
+```
+titanium landing IN the enemy Core, per team-side per game
+  research flow census (1,165 joined games)     0.58 stacks = ~5.8 Ti
+  LOKI-2 agent (40 replays, 80 team-sides)      ~54.9 Ti  (4,390 / 80)
+```
+Both parsers pass the same validation (`own_core_moves x 10 ==
+titaniumCollected`; theirs 40/40 both sides, plus 0/12 entity cross-check vs
+`replay_census.py`). **Leading hypothesis is MAP-SIZE MIX**: the agent measured
+leak scaling with area (26x26 mean 500 Ti, 24x24 462, 16x16 117, small ~0) on a
+brutally skewed distribution (median 55, mean 256, **max 3,650**; one team-side
+leaked 10,000 with 6,730 into the enemy Core). A 40-replay sample weighted to big
+maps would inflate the mean by about this factor. **Also asked research to
+confirm the unit convention — if their 0.58 was already titanium rather than
+stacks, the gap is 95x, not 9.5x, which is a different problem.**
+*Delta: this is the `teamXRating` lesson recurring. Two arms measuring "the same"
+quantity on different samples with different denominators will agree on a story
+and disagree on a number. **Reconcile the number before the story is used.***
+
+**PROCESS NOTE WORTH KEEPING: the agent ran ZERO arena legs** after I retracted
+the `--jobs 4` guidance — it killed its in-flight battery immediately and
+reported entirely from single games and offline parsing. It also **self-corrected
+twice mid-build**: built a cascade accelerator, measured it driving a three-unit
+destroy relay across two tiles at r426-446, and deleted it; and raised its
+confirm threshold 25 -> 40 -> 100 after observing teammates rebuild pruned tiles.
+It further flagged its own `_v103split` control as **unusable** (those games
+ended r146-281 on core kills, so far less time to leak) so nobody reuses the rows.
+
+**WHAT SURVIVES OF LOKI-2:** the second arm (`PRUNE_LEAK_BUILD_GATE_ON`, gating
+where we BUILD rather than what we destroy) is wired, **DEFAULT OFF**, and
+explicitly unmeasured — three single games gave 350 / 10,520 / 6,620 Ti against
+7,240 / 2,470 / 16,030 with it off. **That is variance, not evidence**, and it
+must not be enabled without a full battery. The agent's own recommendation, which
+I accept: **if we measure anything here, measure the build-placement arm, not the
+scale arm.**

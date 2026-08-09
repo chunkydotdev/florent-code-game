@@ -380,6 +380,13 @@ class Player:
         self.late_ban = -10 ** 9
         self.late_tgt = None
 
+        # RIDE-ALONG -- HEAL IDLE FLIP (see HEAL_IDLE_FLIP_ON).  heal_run is
+        # this unit's run of consecutive rounds spent on the universal Core-heal
+        # PRIORITY block; heal_off_until the round its stand-down expires.  Per
+        # unit instance, no store slot, same locality as every other ledger here.
+        self.heal_run = 0
+        self.heal_off_until = -10 ** 9
+
         # LOKI-3 -- AMMO BURN EVIDENCE, Core-only (see LATE_AMMO_EVIDENCE_RNDS).
         # ammo_prev is the team ammunition balance as the Core left it last
         # turn (i.e. AFTER its own conversions); a lower reading at the top of
@@ -1250,8 +1257,25 @@ class Player:
                 # would take it just as surely as the Core heal would.
                 under = ct.read_store(SLOT_UNDER) != 0
                 cb = under and self._cb_over_heal(ct)
-                if under and not cb and self._heal_core(ct):
+                # RIDE-ALONG -- HEAL IDLE FLIP (see HEAL_IDLE_FLIP_ON).  A duty
+                # cycle on this ONE priority block, never on the ability to
+                # heal: the unit stands down from claiming the turn, and every
+                # other heal path in the file (the trunk arm below, _expand's
+                # chain medic, _defend's fallbacks) still runs exactly as it
+                # does today.  Defender exempt, late band only.
+                flip = False
+                if HEAL_IDLE_FLIP_ON and self.role_n != 4 and rnd >= HEAL_IDLE_MIN_RND:
+                    if rnd < self.heal_off_until:
+                        flip = True
+                    elif self.heal_run >= HEAL_IDLE_RNDS:
+                        flip = True
+                        self.heal_run = 0
+                        self.heal_off_until = rnd + HEAL_IDLE_OFF_RNDS
+                if under and not cb and not flip and self._heal_core(ct):
+                    self.heal_run += 1
                     return
+                if not flip:
+                    self.heal_run = 0
                 if not cb and self._heal_budget_left(ct) > 0:
                     if self._heal_trunk(ct):
                         self.heal_spent += 1

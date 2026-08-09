@@ -1266,6 +1266,58 @@ LATE_AMMO_TI_FLOOR = 140
 # consuming, the evidence goes stale, and the magazine reverts to Eir 5.1.
 LATE_AMMO_EVIDENCE_RNDS = 120
 
+# --- RIDE-ALONG: HEAL IDLE FLIP (fourth independent flag) -------------------
+# WHY THIS IS ON THE SAME PAGE AS THE GUNLINE.  Titanium efficiency, straight
+# off the spec:
+#
+#     builder heal     1 Ti -> +4 HP     4.00 HP/Ti   <-- best in the game
+#     sentinel shot   10 Ti -> 18 dmg    1.80 HP/Ti
+#     gunner shot      4 Ti ->  7 dmg    1.75 HP/Ti
+#     builder attack   2 Ti ->  2 dmg    1.00 HP/Ti
+#
+# Healing is 2.22x more titanium-efficient than the best damage source, so in a
+# titanium-SYMMETRIC attrition race the defender always wins and nobody can kill
+# anybody by out-economising them.  Measured over 1,165 of our archived games:
+# we spend 426.9 heals/game (1,708 HP repaired) against 826.6 Ti of ammunition
+# (1,900 damage capacity) -- a 1.11:1 damage-to-repair ratio.  The field runs
+# 243.7 heals (975 HP) against 1,357.6 Ti of ammunition (2,720 capacity) --
+# 2.79:1.  They out-damage their own repair by nearly 3:1; we barely break even.
+#
+# TWO CHAMPIONS FIXED THIS SYMPTOM WITH TINY MECHANISMS.  5 Musketeers (BC2022)
+# shipped a heal cap/timeout after units waited 1000+ rounds to be healed; Baby
+# Ducks (BC2021) shipped a 10-round idle timer flipping defenders into
+# attackers and reported it "greatly helped our ability to turn an influence
+# advantage into a unit advantage, and push through defenses".
+#
+# WHAT THIS IS AND IS NOT.  It is NOT "heal less" -- healing is genuinely the
+# most efficient titanium on the board and the grind pocket it wins is real
+# Elo.  It is a duty-cycle cap on ONE call site: the universal adjacent Core
+# heal's absolute PRIORITY in _builder, which claims a turn before role
+# dispatch is ever reached.  After HEAL_IDLE_RNDS consecutive rounds of a unit
+# taking that priority, that unit stands down from it for HEAL_IDLE_OFF_RNDS
+# rounds and its turn falls through to role dispatch -- where the late gunline
+# or ordinary expansion can use it -- then re-arms automatically.  Three
+# deliberate narrowings:
+#   - THE role_n == 4 DEFENDER IS EXEMPT.  Holding a seat and repairing is
+#     literally its job, and _defend's own heal fallbacks would defeat the flip
+#     anyway.  The units this frees are the converged expanders, which is
+#     exactly the population LATE_TURRET_ON recruits from.
+#   - LATE BAND ONLY (HEAL_IDLE_MIN_RND).  The rush window r0-150 is where the
+#     heal line is measured load-bearing -- the heal/damage >= 0.94 survival law
+#     came from 29 games there -- and this must not go near it.
+#   - Only the PRIORITY block is capped.  _expand's chain medic, _defend's heal
+#     fallbacks and PIECE K's trunk arm are untouched; all three are already
+#     ordered last in their action phase and cannot pre-empt anything.
+#
+# DEFAULT OFF, DELIBERATELY.  A pre-registered prediction is riding on the
+# three gunline flags, and defaulting an unmeasured heal-line change ON inside
+# the same candidate would contaminate exactly that test.  This is one line to
+# flip for its own screening leg.
+HEAL_IDLE_FLIP_ON = False
+HEAL_IDLE_RNDS = 25
+HEAL_IDLE_OFF_RNDS = 10
+HEAL_IDLE_MIN_RND = 200
+
 # CPU budget bail-out threshold, in microseconds. Ported from bots/ladder1:
 # the engine allows 10 ms CPU per unit per round and interrupts run()
 # mid-statement, with no cleanup, if that is exceeded -- wasting the round

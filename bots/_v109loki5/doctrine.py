@@ -1022,6 +1022,39 @@ KIDNAP_V_HEALER_HIGHVALUE = 40   # ...and the damaged thing is their core/turret
 KIDNAP_V_CORE_ADJ = 60           # sitting on their core footprint's ring
 KIDNAP_V_ON_OUR_STUFF = 25       # orthogonally adjacent to something of ours
 
+# THE TRIGGER, and it is the whole reason this plank is worth more than a chip.
+# Our own strategy log (docs/strategy-log.md:721) measured "2 builders out-heal a
+# Gunner, 3 out-heal a Sentinel" -- one healer is ~2 HP/round.  Against a
+# sentinel at 6 dmg/round, three healers is 6 HP/round: NET ZERO, the protected
+# thing is IMMORTAL.  Remove one and the exchange goes +2/round and the thing
+# dies.  So a kidnap is a THRESHOLD FLIP, not ~20 HP of chip damage -- and it is
+# worth almost nothing unless we are ALREADY shooting what the victim repairs.
+# The observable proxy for "we are shooting it" is: the damaged same-team entity
+# next to the victim stands on a tile one of our LOADED turret lines covers.
+KIDNAP_V_UNDER_FIRE = 120
+
+# What a ~10-round unhealed window actually buys, at sentinel 18 dmg/shot:
+#   harvester 30 HP -> 2 shots ·  gunner 25 -> 2 ·  sentinel 40 -> 3
+#   CORE 500 HP -> ~28 shots, OUT OF REACH.
+# So the prize is their forward turret or a harvester, never a core.  Priced
+# here only as a comment: the rule does not need to know, but the next person
+# reading these weights does.
+
+# --- KIDNAP AMMO SURGE (the trickster combo) -------------------------------
+# convert_ammo is uncapped, usable the SAME turn and costs no action cooldown,
+# and we sit on ~635 unspent titanium per game across r200-300 (measured).  So
+# the moment a kidnap opens a window the whole bank can become damage in one
+# round.  Signalled to the Core through SLOT_LAUNCHER without displacing any
+# slot: that slot is read at six sites and EVERY ONE of them tests truthiness
+# (:762 `1 if ... else 0`, :766/:819/:1060 bare `if`, :1046 `not`, :2554 `!= 0`),
+# so the value 2 means "launcher alive AND kidnap window open" and is bit-for-bit
+# 1 to every existing reader.  The launcher rewrites 1 at the top of its next
+# turn, so the signal is exactly one round wide and the Core bursts once.
+KIDNAP_AMMO_SURGE_ON = True
+KIDNAP_SURGE_TI = 60             # one round's conversion: 6 sentinel shots
+KIDNAP_SURGE_TI_FLOOR = 120      # never surge out of a bank the economy needs
+KIDNAP_SURGE_AMMO_CAP = 120      # stop topping up a magazine nobody is burning
+
 # Cap on landing tiles scored per throw.  The candidate set is the 81-tile
 # bounding box filtered to d^2 <= 26 (81 -> 81 within the box, ~85 in-disc
 # tiles), and each survivor costs one set lookup plus arithmetic; the expensive

@@ -1269,3 +1269,26 @@ DENY_HOME_MIN_RND = 40
 # Per-placement stderr trace for instrumentation legs.  Off in the shipped
 # build: print() lands in the replay and stderr costs CPU in the hot path.
 DENY_DEBUG = False
+#
+# LAYER 2 -- OPPONENT TILE BOOK.  Additive preference ordering only; see
+# denial.py's _apply_book for the structural argument that it cannot break
+# generic siting.  EMPTY, and OFF, because no measured book exists yet.
+#
+# The rule this exists to obey: we already had a hardcoded insertion-tile table
+# keyed to ONE opponent's measured behaviour, and it invalidated overnight when
+# that opponent shipped a new version.  It is currently suspended.  A tile book
+# is therefore NEVER the source of the candidate list -- generic siting always
+# produces the candidates, and the book may only reorder them.
+#
+# Shape: {(w, h, our_core_x, our_core_y, enemy_core_x, enemy_core_y):
+#         ((x, y), ...)}.  The mirrored key is also tried, so one entry covers
+# both seats.  Tiles not already approved by generic siting are ignored.
+#
+# DENY_BOOK_STAMP records WHAT the book was measured against and WHEN, because
+# a bot cannot self-expire at runtime -- it cannot see the date and cannot
+# identify its opponent.  Expiry is therefore a SESSION obligation: before
+# turning DENY_BOOK_ON on, re-measure against the opponent version named in the
+# stamp, and if the stamp is not the live version, leave it off.
+DENY_BOOK_ON = False
+DENY_BOOK_STAMP = ""          # e.g. "Ouroboros tree 1a2b3c4d, measured 2026-08-09"
+DENY_TILE_BOOK = {}
