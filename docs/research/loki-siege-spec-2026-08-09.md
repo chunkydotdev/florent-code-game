@@ -169,6 +169,23 @@ of Ouroboros's ammo; the titanium is already there.
   spans 10); qualitative gates (never-rotates, zero-enemy-throws) hold in
   every version observed. Build-on-sight is UNMEASURED (instrument failure,
   honestly flagged), not null.
+- **HOLD ON THE DRAIN PUMP (research-arm check, same day, correct): the
+  atlas resolved the MECHANISM gate (they do shoot healed buildings,
+  sustained), but "2,708 Ti into a 3-Ti conveyor" is an exchange-rate
+  statistic — what they SPEND, not what we GET. The naive outcome test is
+  confounded (enemy shots/round vs our win rate is monotone NEGATIVE — an
+  opponent thermometer, causation backwards). Discriminating cut in flight
+  in the side lane: absorbed-share vs outcome within shooting-level strata,
+  plus the economy channel (their ti_coll/round vs absorbed-share). NO
+  bait-siting build until it lands.** Corroboration meanwhile: our conveyors
+  die 14.3/game vs field 5.7, our losses are cheap things (223 Ti builders)
+  vs their expensive ones (89 Ti of gunners/game) — prima facie, not yet a
+  measurement of what it produces.
+- destroy() closure (research arm + builder, independently verified):
+  **zero call sites in our live bots — OUR removeEntity events are all
+  enemy kills.** The owner-demolition label only bites on FIELD survival
+  figures, asymmetrically (if they self-demolish, their true survival is
+  higher than measured).
 
 ### Optional opener — S6 INSERT (only after S1-S5 measure)
 The STRONG band (our bleed sources) proves insert→gunner→fire, spiking 3.5x
