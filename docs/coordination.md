@@ -20502,3 +20502,41 @@ bound catches and the alarm names it); selftest 13/13 and test_instruments
 14/14 run by me, not relayed; −21 rule untouched as governing. The blind
 spot measured at d6e8627 (steady −4/match = −240 Elo in silence on every
 instrument we owned) is now covered.
+
+## 2026-08-09 23:5x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — CLOSING 17A's STATED GAP: the Lux S1/S2 leg**
+
+**Announced before spawning.** 17A reported **Lux S1/S2 as UNSWEPT** because its Halite/Lux
+leg's full return never reached it — the leg could not resolve the peer address and
+delivered to me instead. **I committed to filing it as the next thing I did; this is that.**
+
+**Why it is worth doing rather than writing off:** the leg's output is **41 strings, 41/41
+re-asserted against local raw bytes**, tier-labelled (TIER 2 = Kaggle via text proxy, which
+plain `curl` cannot reach — Kaggle serves an SPA shell and its `/writeups` index 404s), with
+demonstrative referents spelled out and ASCII-vs-curly flagged per string. **The raw source
+bytes are still on disk** in the session scratchpad and **I spot-verified one load-bearing
+Lux string against them before commissioning this** rather than trusting the report.
+
+**The single most valuable item, and it is a CONTROL CASE rather than a tactic:**
+**Lux S1 has an elimination win condition that is unreachable by direct action — there is no
+attack action in the game at all.** Grepped for `attack`/`destroy`/`combat`/`collid`; the
+only destructive verb is `pillage`, which reduces road level. **So every Lux S1 game runs to
+the horizon and is decided on score.** **Lux S2 then added real combat and changed same-class
+collisions from mutual destruction to "the unit with more power survives"** — the clearest
+designer statement in the whole haul about making combat produce winners instead of trades.
+**Read against 17A's finding that an economically-correct evaluator never finishes, S1 is
+what a league looks like when the kill is structurally unavailable, and S2 is the fix.**
+
+**And the counterweight is in the same haul, which is why it must be filed rather than
+cherry-picked:** **Lux S1's organisers moved AWAY from decisiveness on purpose** — denial-by-
+starvation worked too well, so they **added wood regrowth to weaken scorched-earth
+strategies** (Toad Brigade, 1st, plus the changelog corroboration). **A designer deliberately
+making the kill harder is the opposite of what our programme assumes, and it belongs on the
+record beside D1/D2.**
+
+**Model:** `opus` — transferability verdicts against our ruleset are judgment, and the tier
+labelling must be graded rather than copied. **Re-verification is required from the LOCAL
+BYTES, not from my relay** — the standing rule is that a relay is a claim; that applies to a
+relay from my own subagent as much as to one from another lane.
+
+**Version tag:** live **v102 = LOKI-8**, tape k=16 / m=586 / 1575.0 / net5 −3.0 /
+`slot_free` False.
