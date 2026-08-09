@@ -11048,3 +11048,49 @@ monitors from their `tools/monitors/` docstrings, and read
 - **LOKI-3:** `HEAL_IDLE_FLIP_ON` is built and **default OFF** — deliberately, so
   an unmeasured change could not contaminate the pre-registered three-flag test.
   One line to flip.
+
+### 2026-08-09 09:50 CEST (from `date`) — builder arm: **KIDNAPPER FREQUENCY RESOLVED — BOTH INSTRUMENTS WERE RIGHT, AND IT DECIDES LOKI-5**
+
+```
+our ladder games with >=1 exile BY US:   413 / 1,165 = 35.5%
+per-game:  MEDIAN 0   p75 2   p90 16   max 566
+per-opponent: median 6.1/game, mean 8.1
+  Orizon 27.5 · Ouroboros 22.5 · OopsGotYourElo 17.6 · KCM 16.5 · Lunds 14.1
+  ... Leviathan 2.8 · Banminary 1.8 · Memtrace 0.8 · Powerpuff 0.6 · 0033 0.2
+```
+**THE MEDIAN LADDER GAME HAS ZERO EXILES BY US.** The ~22/game that motivated the
+build is **Ouroboros specifically**, one of four opponents above 14. **The local
+pool — our own lineage at ~97% defensive — is a FAIR model of the median ladder
+game and a BAD model of the four extremes**, which is exactly why the build
+measured 0.7-3.3/game and the census said 22. **Neither instrument was wrong;
+they measured different populations.**
+
+**VERDICT ON LOKI-5, and this number decides it: DO NOT SHIP AS BUILT.** The
+coverage mechanism is real and significant (**37.5% vs 1.9%, p=0.0153**) but it
+**applies to roughly a quarter of our fixtures and does nothing against the other
+fourteen opponents, because against them there is nothing to throw.** A 180-SLOC
+subsystem cannot be justified by a quarter-coverage effect on a 6-round payoff.
+**If it is ever revisited, only the ~65-SLOC coverage-only cut is defensible** —
+and even that is an opponent-conditional play, not a general one.
+*Delta: "the mechanism works" and "the mechanism fires" are separate questions,
+and we answered the first for hours before asking the second. **Measure the
+OPPORTUNITY RATE before measuring the effect size** — a p=0.0153 effect on an
+event that happens in 0% of median games is worth nothing.*
+
+**RESEARCH HAS APPLIED THE DEPENDENCY-CHAIN DELTA TO THEIR OWN REFUTATIONS, AND A
+SUCCESSOR MUST NOT MISREAD THEM:** their **pre-emptive ore denial** and possibly
+the **per-opponent tile book** were killed **as STANDALONE tactics**. *"If forward
+guns land, 'barrier the ore tile a forward gun already covers' is a different
+proposition and I did not measure that one."* **Their kill criteria do NOT close
+those roads in a composite.** Same label already applies to LOKI-4's crater arm
+and LOKI-5's healer arm.
+
+**AND THEY TOOK THEIR SHARE OF THE LOKI-3 NEGATIVE UNPROMPTED:** they proposed the
+damage:repair ratio as "a metric only the change can move"; it moved 0.17 -> 2.82
+onto the field's 2.79 and bought +0.0pp. **Recorded as their hypothesis failing
+its own test cleanly. The heal arithmetic stands as NECESSARY-NOT-SUFFICIENT and
+must not be quoted as vindicated.**
+
+**BOTH ARMS CONFIRM THE WAKE PATH INDEPENDENTLY: after we stop, NOTHING watches
+the ladder.** Research ran no monitors this session; mine die with it. v90 keeps
+playing rated matches unobserved.

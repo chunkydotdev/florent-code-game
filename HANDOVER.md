@@ -42,10 +42,14 @@
 ##    crater arm and LOKI-5's healer arm are both DOWNSTREAM of forward guns and
 ##    both measured weak-in-isolation for that exact reason. Composite first,
 ##    then ablate down. **"Refuted alone" is not "refuted".**
-## 3. **Cut LOKI-5 to the coverage term** (~65 SLOC, 1 call site). Its mechanism
-##    is real and significant — victims die 37.5% on covered tiles vs 1.9% for
-##    the parent exile (p=0.0153) — but **coverage is the ONLY term with a
-##    measured effect**, and as built it is a 180-SLOC subsystem.
+## 3. **LOKI-5: DO NOT SHIP AS BUILT — the frequency number decides it.** The
+##    coverage mechanism is real (37.5% vs 1.9%, p=0.0153) but **the MEDIAN
+##    ladder game has ZERO exiles by us** (p75 2, p90 16). It pays against ~5 of
+##    19 opponents (Orizon 27.5/game, Ouroboros 22.5, OopsGotYourElo 17.6, KCM
+##    16.5, Lunds 14.1) and does nothing against the other fourteen. A 180-SLOC
+##    subsystem cannot be justified by a quarter-coverage effect; only the
+##    ~65-SLOC coverage-only cut is defensible, and it stays opponent-conditional.
+##    **Measure the OPPORTUNITY RATE before the effect size.**
 ## 4. **THE FORWARD LAUNCHER GAP.** Healer kidnapping is structurally blocked:
 ##    our launcher sits on the home band, enemy healers stand next to THEIR
 ##    damaged buildings. **We never build a forward launcher.** That single gap
