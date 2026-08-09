@@ -10505,3 +10505,81 @@ flow doc, which had booked leaked stacks as "lost to us" — i.e. as recoverable
 revenue. **The LOKI-2 adjacency argument also retired the destroy-rebuild tactic
 they filed this morning**, and they are marking it refuted with the build agent's
 reasoning rather than their own.
+
+### 2026-08-09 08:36 CEST (from `date`) — builder arm: **HEIMDALL'S BAR READS (slot retained, NOT vindicated) + THE 10x CONFLICT WAS MY OWN METRIC MIX-UP**
+
+## 1. v90 HEIMDALL — REVERSION BAR READS AT 3 MATCHES
+```
+at-ship baseline  1556.83 @ 491, rank #31
+now               1575.17 @ 494, rank #29     net +18.34 over 3 rated matches
+PRE-REGISTERED BAR: "<=0 net Elo after 3 rated matches frees the slot"  -> NOT TRIPPED
+```
+**VERDICT: Heimdall RETAINS the slot.** And I am applying the same strictness in
+its favour that I promised against it: **per-match sd is 7.81, so over 3 matches
+sd is ~13.5 and +18.34 is 1.36 sd. NOT SIGNIFICANT.** The bar was a **stop-loss,
+not a proof of benefit.** **The latch fix is retained on its 18.4%-incidence
+census evidence, NOT on these three matches**, and nobody should later quote
+"+18.34 over 3" as evidence the fix works. I pre-registered that a
+regression-to-mean drop would not count against it; symmetry requires that a
+1.36-sd rise does not count for it.
+
+## 2. THE 10x LEAK CONFLICT IS RESOLVED — AND THE ERROR WAS MINE
+**BOTH hypotheses were wrong.** Not map-size mix (mine — research showed big maps
+leak exactly 0.00). Not local-arena games (theirs — **all 40 files verified
+present in `replay_archive/`**, zero local replays in the sample). The real cause:
+```
+                                   mean    median   nonzero
+agent, total cross-team leak      255.75    55.0    65/80
+agent, landed in enemy Core        54.88     0.0    24/80   <-- the comparable one
+research, landed in enemy Core       5.8     0.0
+```
+**I built the comparison table and paired a MEAN of one metric with the MEDIAN of
+a DIFFERENT metric.** I wrote "their median is 55, mine is 0" and made that my
+whole discriminator — but **55 was the median of total boundary crossings, not of
+core-landing.** On the metric that matters **both medians are 0. There was never
+a median conflict.** The agent's original report did label the two distinctly; I
+conflated them when constructing the comparison.
+
+**THE RESIDUAL 9x IN MEANS IS A PURE TAIL + SAMPLE-SIZE ARTEFACT:** two sides of
+80 carry **3,000 of 4,390 Ti (68%)**; drop them and the mean falls to 17.8. At
+n=80 against n~2,330, two extreme games move one mean 3x and cannot move the
+other. **Research's figure is the better population estimate. The agent's reads
+as "the tail is real and can reach ~1,900 Ti in a single side", not as a central
+tendency.**
+
+**Q2 also cleared:** the agent counted **strictly a move whose destination is one
+of the four static enemy Core footprint tiles** (`leak_census.py:232-234`), with
+**no hop-counting anywhere** — its metric is strictly smaller in kind than
+research's `ENEMY_NET`, not larger.
+
+*Delta, and it is the sharpest process lesson of the day: **when two analysts
+disagree, confirm METRIC IDENTITY before comparing statistics.** I moved straight
+to explanations (map mix, sampling, populations) for a gap that existed only in
+my own table. Two numbers with the same NAME are not the same MEASUREMENT — check
+what each one counts, and compare like against like, before theorising about
+why they differ. My "compare medians before means" delta from an hour ago was
+right in spirit and I then applied it to the wrong pair of medians.*
+
+**NET EFFECT ON THE LEAK: materially lower than either report implied.**
+Core-landing is **zero in 70% of team-sides**; the whole effect is a thin tail on
+large maps; and per the correction both arms adopted, **plugging it is DENIAL,
+NOT RECOVERY** — we were never going to collect that titanium. **The leak is not
+a priority. Filed, not chased.**
+
+## 3. KIDNAPPER PRICED DOWN BY MEASUREMENT
+```
+rounds between consecutive exiles of the SAME bot (2,468 of 3,755 bots, 66% return):
+   p10 4  ·  p25 4  ·  MEDIAN 6  ·  p75 8  ·  p90 17
+   back within 5 rounds 46.4%  ·  within 10 rounds 82.3%
+```
+**My hand-waved "~10 rounds" was generous; the measured median is 6**, and the
+throw radius (~5 tiles) means inverting the sort key roughly **doubles** a
+six-round walk rather than creating a long absence. **And a framing of mine was
+simply wrong: we are not the "polite bouncer" — we exile 10,519 times to their
+11,945, ratio 0.88. We do it LESS than they do.** Selection effect noted in our
+favour: median 6 is measured on bots exiled twice, i.e. survivors that chose to
+return, so it is a lower bound for the population.
+**DECISION SENT TO LOKI-5: ship it only if it is a small flag on the existing
+sort key — free is a good enough reason. If it has become a subsystem, six rounds
+does not justify it and it should be cut.** The threshold-flip and trigger
+conditions survive: a well-timed six is worth more than a random ten.
