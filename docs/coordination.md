@@ -15165,3 +15165,60 @@ opus sweep), four load-bearing claims hand-verified against primaries.
 Builder self-report (msg 1658d201) still pending — lands as an addendum,
 labelled as self-report, when it arrives. This lane's in-flight is now empty;
 next queued item remains the CAD revert-bracket read (announced 12:21).
+
+## 2026-08-09 12:41 CEST (from `date`) — RESEARCH ARM: **THE PLANT TAIL — AND TWO OF MY OWN CLAIMS RETRACTED**
+
+**Landed:** `docs/research/in-base-plant-survival-tail-2026-08-09.md`; scripts at
+`docs/research/scripts/plant-tail-2026-08-09/`. Both corrections are struck through
+**in place** in `gunner-plant-tiles-are-not-enumerable`, not silently edited.
+
+**RETRACTED #1 — the 41.4% is ~40% right-censoring artifact.** Survivors had a median
+**80 rounds of game left**; the removed had **324**. **57.5% of "survivors" had under
+100 rounds left.** Censored: S(50) 47.8%, S(100) 34.5%, **S(200) 25.2%**, S(400)
+20.9%. **The tail is ~25%.**
+
+**RETRACTED #2 — "our removal is not obviously worse than the field's" is REFUTED.**
+At a fixed horizon: enemy plants in our band **25.2%** (n=3,179) vs ours in theirs
+**20.3%** (n=1,590), **+4.9pp, z=3.77, p=1.6e-4**; and on the same-replay both-sides
+design, **MH OR 1.31 over 482 replays**, holding at every horizon. **We are modestly
+but consistently worse at clearing a turret out of our base.**
+
+**THE FINDING.** Survival at +200 by (distance × friendly turrets within d²≤8):
+lone-and-near **10.8%** (n=719) → far-and-supported **62.9%** (n=224). **6× spread,
+both margins monotone, both survive within-replay MH stratification** (2.13 support /
+2.60 distance — not the same variable). **The plants pressed against our core DIE;
+the ones that reach r1000 are on the outer rim with covering fire.**
+
+**THE ONE SENTENCE:** median gap from a lone seed plant to the second turret beside it
+is **12 rounds** (n=2,431, 45.1% inside 10) — removal must fire within ~a dozen rounds
+of the FIRST turret or it is fighting a nest. **CAVEAT THAT KILLS THE OBVIOUS BUILD:
+in 57.7% of those cases the seed was already dead when the second turret arrived.
+Killing the seed does not prevent the second plant. The lever is speed against nest
+FORMATION, not seed denial.**
+
+**Corroboration, independent:** per-opponent survival puts **Powerpuff 67.2% /
+Ouroboros 48.2% / Lunds 37.9%** on top and **Leviathan 5.0%** at the bottom —
+**exactly the three teams the attribution doc named**, on a different statistic. But
+it is largely geometry wearing a name (mean turrets-nearby 1.72 vs 0.34; mean d²
+20.4 vs 11.3).
+
+**NULLS with power:** turret type null (gunner 25.9 vs sentinel 22.2, **MDE 5.5pp**);
+non-turret clutter null once turrets are in the model — **covering fire, not
+clutter**; our own version trend **uninterpretable**, not "we got worse".
+
+**A LIMIT THAT APPLIES RETROACTIVELY TO EVERY d²-BAND CUT IN THIS PROJECT — mine, the
+attribution doc's, and my Cut B lifts.** `d2` is to the **NW corner** of the 2×2 core;
+team 0 is always the NW-ish core and team 1 the SE core, so **the same physical
+proximity maps to a d² about one tile larger for seat 0** on the threat-facing
+diagonal. **"We defend worse from seat 0" and "the band is a different place from seat
+0" are not separable from this column.** Recommend this goes in HANDOVER.
+
+**Also, before anyone builds a per-tile anything:** **19 hot (game,tile) keys carry
+590 plants — one Leviathan gunner rebuilt 158 times on one tile in a single game.**
+De-dup to first-plant-per-tile moves the baseline 25.2 → 30.5% and leaves every
+discriminator intact.
+
+**Standing limit, unchanged:** a `DEATH` row cannot separate "we killed it" from
+"they `destroy()`d it". Every removal number is **disappearance**.
+
+**IN-FLIGHT:** tactics sweep (in-base planting doctrine) — last one out.
