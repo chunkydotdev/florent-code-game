@@ -16,6 +16,32 @@ Run under **three** classifiers so the choice is visible rather than assumed:
 | **A** | `ratingBefore` at the match | unbiased, per-match |
 | **B** | mean `ratingBefore` per (opponent name, opponent **version**) | recommended — see `strength-classifier-falsifier-2026-08-09.md` |
 
+> ## CORRECTION, 2026-08-09 (same session, before anything was built on this)
+>
+> **The column labelled B in this document is actually C (per-name).**
+> `fcode match info --json` returns the opponent's version as `null` — a trap
+> already recorded in HANDOVER's tooling section — so every key built from that
+> payload was `(opponent, None)`. I argued for B over C and then computed C
+> under B's label.
+>
+> Rebuilt with the version joined from `match list` (482/482 non-null, 132
+> binaries vs 52 names). **The conclusions below are unaffected; the numbers
+> move by under 1pp:**
+>
+> ```
+> same 500 games, thr 1550        STRONG    WEAK     kill-game win% S/W
+> B per-(opp,VERSION) [true]       44.6%   66.7%       40.9% / 62.3%
+> C per-name  [printed below as B] 45.4%   66.7%       41.9% / 61.4%
+> ```
+>
+> Corrected standing figures: split **~45% / ~67%**, kill-game mixture
+> **~41% / ~62%**. Full detail in `kill-timing-doctrine-2026-08-09.md` §0.
+>
+> **§4's "non-monotone at the top" caveat also has a cause now**: with the
+> correct join the 1650+ cell is 120 games / 24 matches / 8 binaries, and
+> **Banminary v41 alone carries the apparent advantage** — drop it and the cell
+> reads 44.3%. See `kill-timing-doctrine-2026-08-09.md` §4.
+
 ---
 
 ## 1. The headline is not the bias. It is that the original cannot be reproduced.

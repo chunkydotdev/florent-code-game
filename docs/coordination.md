@@ -8872,3 +8872,85 @@ turret gap is queued to me, after this.
 v87 window so far (monitoring only, no verdict): n=2, Leviathan v35 1-4 -8.40
 (oppBefore 1549.997, WEAK under both A and B), The Bisons v2 4-1 +8.43
 (oppBefore 1490.2, WEAK). Rating 1524.03. Wake path still armed.
+
+### 2026-08-09 07:0x CEST — research arm: **COMMISSION LANDED (kill timing) + A LABELLING ERROR OF MINE, CORRECTED**
+
+**0. MY ERROR FIRST.** `fcode match info --json` returns **the opponent's version
+as `null`** — a trap already on the tape in HANDOVER's tooling section. I built
+classifier B from that payload, so every key was `(opponent, None)` = **classifier
+C (per-name)**. **I argued for B over C on principle in the falsifier doc and then
+computed C under B's label in item (ii).** Caught by my own confound check, not by
+review. Rebuilt joining version from `match list` (482/482 non-null, 132 binaries
+vs 52 names). **Conclusions unaffected, numbers move <1pp:**
+```
+same 500 games, thr 1550        STRONG   WEAK    kill-game S/W
+B per-(opp,VERSION) [true]      44.6%   66.7%    40.9% / 62.3%
+C per-name [what I shipped]     45.4%   66.7%    41.9% / 61.4%
+```
+Standing figures updated to **~45% / ~67%** split and **~41% / ~62%** mixture.
+A correction block is now at the top of `kill-game-split-recompute-2026-08-09.md`.
+
+**1. THE COMMISSION REFRAMES ITS OWN PREMISE.** 2,410 games, classifier B, zero
+new API calls:
+```
+BINARY   STRONG >=1550  n=1135   WE kill 29.8%   THEY kill 44.1%   r1000 26.1%
+         WEAK  <1550    n=1275   WE kill 29.8%   THEY kill 20.9%   r1000 49.3%
+```
+**Our core-kill production is 29.8% against strong and 29.8% against weak —
+identical. What varies is how often THEY kill US (20.9% -> 44.1%).** The grind
+share collapses against strong teams *because they kill us*, not because either
+side converts faster. "We may be optimising for a state the best rarely enter" is
+arithmetically right and attributed backwards.
+
+**2. WHEN DO THEY KILL? LATE. THEY DO NOT RUSH.** Strong band, n=507 kills on us:
+median **r296** (q1 166, q3 475). Ours: median **r148**. Share of their kills
+landing by r100 **12%**, r150 22%, r200 32%, r300 51%. **Consistent with the
+top-tier decode (gunners at r19) — they invest in military early and convert
+LATE. Early guns and early kills are different claims; only the first is
+supported.** If timing is copied, copy r200-300, not a rush. Selection caveat
+recorded: "they r296 vs we r148" compares our slow losses to our fast wins and is
+NOT a bot speed gap.
+
+**3. Q4 — MIX-CONTROLLED, 7 opponents present in all three lineages, 770 games:**
+```
+lineage        games  WEkill%  medrnd  THEYkill%  medrnd  r1000%   WIN%
+v53-70           320   20.0%     163     52.2%     280    27.8%   33.8%
+v71-76           185   23.8%     179     47.0%     343    29.2%   37.8%
+v77-84 Eir E     250   17.6%     132     38.8%     387    43.6%   39.6%
+```
+**Every plank from v53 to v84 bought SURVIVAL, none bought kills.** Their kill
+rate on us 52.2->38.8%, their median kill round 280->387 (we survive 107 rounds
+longer), grind share 27.8->43.6%, win rate **33.8->37.8->39.6% (+5.8pp)**. Our own
+kill production 20.0->23.8->17.6% — **no trend, ends below where it started.**
+Confound stated: opponents shipped too (13/9/14 binaries). For THEIR falling kill
+rate the confound pushes against the observed direction, so that half is robust.
+**It does NOT clear our flat kill production** — "their defence improved" is a
+live alternative and this data cannot separate it.
+
+**4. THE 1650+ CELL IS ONE OPPONENT — do not read a top-band advantage.** Reads
+52.5% win, above the band below (42.4%). 120 games = **24 matches, 8 binaries**,
+and **Banminary v41 alone (6 matches, 77%) carries it — drop it and the cell reads
+44.3%**. z=+2.12 also overstates (5 games per match, not independent). Supersedes
+my earlier "thin cell" caveat with a named cause. **Report the >=1550 binary.**
+
+**5. WHAT IT SUPPORTS / DOES NOT.** Supports: kill production is the untouched
+lever; copy r200-300 timing not a rush; the v88 gunline aims at the right
+variable. Does NOT support: "we are bad at killing cores" (29.8% band-invariant at
+median r148, EARLIER than the field); "the top band is easier"; "delivered
+titanium is wasted" (grind is still 26%/49% of games and the grind-pocket caveat
+is untouched). **Unresolved tension left explicit rather than picked: §3 says the
+survival lever is near exhausted, §1 says the death rate still decides the games.
+Compatible only if remaining survival is cheaper to buy through offence than more
+defence — a build question, the builder's to answer.**
+
+Deliverable: `docs/research/kill-timing-doctrine-2026-08-09.md`.
+Builder relays recorded, NOT verified by me (its lane): v88 "Thor 1 gunline"
+`0fde5029` live at 1524.026641 @ 483 (two flags flipped, no new code); hive verdict
+**INCONCLUSIVE on its own pre-registration** (1 of 10 vs threshold >=2) with the
+mechanism firing but the deficit larger than the fix; unrated rate limit measured
+at **5 matches / 10 min**.
+
+Ladder note from my monitor: **v87 played a THIRD match** — 04:18:36Z vs
+OopsGotYourElo v21, 4-1, +11.24, oppBefore 1559.8 (**STRONG band**), rating ->
+1535.27. The v87 window closed at n=3 not n=2, and its only STRONG-band game was a
+win. No verdict implied — net Elo on that window is demoted to monitoring.
