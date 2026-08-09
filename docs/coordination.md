@@ -10829,3 +10829,51 @@ that is the design to copy.*
 **WHAT DOES NOT CHANGE:** the composite still has to beat the parent on the
 FIELD, stratified by opponent crash count. A composite that wins locally and
 loses to the field is the LOKI-1 failure with more moving parts.
+
+### 2026-08-09 09:34 CEST (from `date`) — builder arm: **LOKI-3 FIELD VERDICT: +0.0pp. THE MECHANISM MOVED 16x AND BOUGHT NOTHING.**
+
+```
+opponent    LOKI-3   incumbent   spread    opponent crashes (L3 / inc)
+opp_v50      68.9%     65.6%     +3.3pp          0 / 0
+opp_v63      67.8%     72.2%     -4.4pp          0 / 0
+opp_v72      54.4%     52.2%     +2.2pp         19 / 9
+opp_v78      52.2%     53.3%     -1.1pp         38 / 27
+POOLED n=360  LOKI-3 60.8% [55.7,65.7]  incumbent 60.8% [55.7,65.7]  SPREAD +0.0pp
+crash-free legs only: -1.1pp (n=180)      crashy legs: +1.1pp (n=180)
+```
+**VERDICT: NOT A SHIP CANDIDATE.** Measured against the threshold I pre-registered
+and pushed before the leg fired.
+
+**AND THIS IS THE FINDING OF THE SESSION, because it is a negative that cost us a
+belief rather than a bot.** The pre-registered mechanism metric — chosen
+precisely because it was *"the metric only this change can move"* — **moved from
+0.17 to 2.82 and landed on the field's own 2.79.** Turret count was held constant
+by construction, shots went 6.0 -> 27.3, the opening stayed byte-identical, zero
+crashes, zero TLE interrupts. **Everything we asked for happened, and the field
+win rate moved by exactly zero.**
+
+**WHAT THAT REFUTES: that the damage-to-repair ratio is the causal lever.** It is
+at most necessary and clearly not sufficient. **A perfect mechanism result is not
+evidence of a win, and we now have the cleanest possible demonstration of it.**
+*Delta, and it is the one I would carry to any other project: **pre-registering
+"the metric only the change can move" protects attribution, NOT validity.** It
+tells you the change did what you designed; it says nothing about whether the
+design wins. Both gates are needed and we have been treating the first as though
+it implied the second.*
+
+**THE LEADING EXPLANATION, and it was written down BEFORE the result** (so it is
+a standing hypothesis, not a post-hoc rescue): **our forward guns sit at median
+d² 116-146 from our own core against the field's 56-82.** That is outside every
+heal path we own — **a gun that far forward dies alone**, and what the ratio
+gains the isolation gives back. **Games also ran 24% shorter (778 -> 591) at
+identical win rate**, which is consistent with resolving faster in BOTH
+directions — more decisive and dying faster, cancelling.
+
+**THE NEXT TEST IS ALREADY SPECIFIED AND CHEAP: `LATE_FORWARD_NUM/DEN = 3/5 ->
+2/5`**, which lands the anchor on the field's measured band. One constant, and
+the build is already flag-gated for it.
+
+**HONEST LIMITS:** four opponents, 90 matches each; the crash-free strata are
+n=180 with the two legs disagreeing in sign (+3.3 / -4.4), so the -1.1pp
+crash-free figure is not distinguishable from zero either. **This says "no
+effect", not "harmful".**

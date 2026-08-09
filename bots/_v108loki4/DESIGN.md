@@ -79,13 +79,55 @@ Cost accounting:
 
 - **Scale.** Cost scale is one global multiplier over all categories tracking
   *live* entities. A barrier is +1% while it stands, and since only we can
-  remove it, that is usually the rest of the match. Capped at 4 + 4 barriers.
-  Measured end-of-game scale ours vs opponent: 348.9 / 338.8 — a +10 point
-  gap, ≈ +2 Ti on a 20-base harvester.
+  remove it, that is usually the rest of the match. Capped at 4 + 4 barriers
+  per unit. Measured end-of-game scale, ours vs opponent: **348.9 / 338.8**
+  (generic arm, 32 games) and **405.0 / 406.5** (both arms, 26 games) — i.e.
+  within noise of the parent, because the arms place well under their caps.
+  At the observed rate (<1 barrier/game) the scale tax is ≈ +1 point, under
+  +0.3 Ti on a 20-base harvester.
 - **Builder-turns.** Zero dedicated trips and zero detours: placement requires
   the unit to be adjacent already. Cost is exactly one builder-turn per
   barrier, taken from units whose alternative action was the low-value melee
-  peck. No expander turn is diverted from ore.
+  peck. No expander turn is diverted from ore. **Measured harvesters and
+  delivered titanium moved the right way, not the wrong way:** 5.66 built /
+  5.12 alive and 5,313 Ti delivered against the parent's 4.84 / 4.34 and
+  4,334 (32 games) — the economy is not being traded away.
+- **CPU** (local `time.process_time()`, since `get_cpu_time_elapsed()` is inert
+  under the local runner): `try_place` 1.08 µs, `try_crater` 0.12 µs, `reclaim`
+  ×4 neighbours 1.52 µs, `note_enemy` 0.33 µs → **~2.7 µs added per
+  builder-turn against a 10,000 µs budget.** Real verification still needs
+  `fcode match test` on Graviton3, which this build has not had.
+
+## Measured, and the caveat that bounds it
+
+| leg | config | barriers on ore / game |
+|---|---|---|
+| 1 | saboteur hook only, `DENY_TI_FLOOR = 60` | 0.16 |
+| 2 | + expander hook, `DENY_TI_FLOOR = 60` | 0.12 |
+| 3 | `DENY_TI_FLOOR = 15` (generic arm, 8 gate-ON maps, 32 games) | **0.47** |
+| 4 | + crater arm (all 15 maps, 26 games) | **0.31** |
+
+Zero crashes in 90 instrumented games across all legs.
+
+**`DENY_TI_FLOOR` was the whole plank.** At 60 it suppressed essentially every
+placement: the `DENY_DEBUG` trace named `why=ti_floor` on every single miss,
+with the live bank reading 5-45 Ti at lighthouse r40-54 and jackpot r58-69.
+This chassis spends its bank to the floor continuously, so a 60 Ti gate is
+never open during the window when a builder stands beside enemy ore. Guessing
+at a conversion gap instead of tracing it is how the r180 error was made.
+
+**Opportunity study** (replay movement stream, 32 games): our builders stood
+orthogonally adjacent to an unclaimed enemy-side plan tile for ~10
+adjacency-rounds per game, but only ~1.1 *distinct builders* per team-game ever
+had such an adjacency. So the realistic ceiling on the generic arm is roughly
+**one placement per game**, and leg 3's 0.47 is about half of it.
+
+**CAVEAT ON EVERY WIN/LOSS NUMBER IN THESE LEGS: do not use them.** Other
+sessions had 8+ concurrent `fcode run` batteries live on this box during legs
+3 and 4. Under `--tle 10` a contended turn is interrupted silently — no crash,
+no traceback — so win rates are not interpretable and the barrier counts above
+are a **lower bound**. Leg 4 was stopped at 26/60 games for this reason rather
+than adding load to another session's verdict work.
 
 ---
 

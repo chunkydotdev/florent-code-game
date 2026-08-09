@@ -4161,11 +4161,18 @@ class Player:
                 if n > KIDNAP_NEAR_CAP:
                     n = KIDNAP_NEAR_CAP
                 score -= KIDNAP_W_NEAR_OURS * n
-                scored.append((-score, tx, ty, covered, walk, sep))
+                # Tie-break on the PARENT'S OWN criterion, distance from our
+                # Core descending.  That is not decoration: with every KIDNAP_W_
+                # and KIDNAP_V_ weight set to 0 this rule then degenerates to
+                # exactly the exile it replaces, so each weight is a clean
+                # one-constant ablation instead of collapsing into row-major
+                # tile order.
+                scored.append((-score, -(ex * ex + ey * ey), tx, ty,
+                               covered, walk, sep))
         if not scored:
             return False
         scored.sort()
-        for _neg, tx, ty, covered, walk, sep in scored:
+        for _neg, _far, tx, ty, covered, walk, sep in scored:
             site = Position(tx, ty)
             if ct.can_launch(pick, site):
                 self._kidnap_probe(ct, "KIDNAP", pick, site, covered, walk,

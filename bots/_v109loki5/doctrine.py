@@ -471,7 +471,7 @@ B8_ON = False
 # own offline batteries sample distinct games again, at the cost of exact
 # paired-seed reproducibility (the property the spawn-dispersion sort below was
 # written to preserve).  Default OFF so it is screened on its own leg.
-NOISE_ON = False
+NOISE_ON = True
 
 # PIECE F -- PAVE TRAIL.  The pave in _move lays a conveyor on the tile AHEAD
 # (nxt) facing nearest_cardinal(direction toward the Core anchor).
@@ -1081,7 +1081,7 @@ KIDNAP_RING8 = ((-1, -1), (0, -1), (1, -1), (-1, 0),
 # stderr instrumentation for the throw ledger (KIDNAP= lines).  Off in the
 # shipped bytes: print() goes to the replay, stderr costs a syscall per throw,
 # and neither belongs in a rated match.
-KIDNAP_PROBE = True
+KIDNAP_PROBE = False
 # ============================================================================
 
 # PIECE E1 -- PEACETIME AMMO FLOOR = HARVESTER RESERVE (grafted from the
