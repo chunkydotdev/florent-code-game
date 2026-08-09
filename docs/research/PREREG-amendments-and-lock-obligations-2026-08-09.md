@@ -130,6 +130,43 @@ v92) — **CAD core killed at r74**, resignMessage null, the fastest kill on our
 record, 3x faster than our ladder-kill median vs CAD (r217, plants from r125,
 n=11). Side-lane autopsy in flight; mechanism unknown until it lands.
 
+## Addendum 3, 16:5x CEST — obligation 6's premise REFUTED, conclusion survives on a different mechanism; obligation 9 added (denial must be priced in seat-rounds)
+
+From `opponent-collar-heal-staffing-2026-08-09.md` (a21e742; decoder validated by
+reproducing all 13 census cells to the digit, with genuine zeros — The Bisons,
+0 core heals in 35 games — proving the detection floor):
+
+**Obligation 6 as originally written carried a premise the data refutes.** The
+near-zero hypothesis is DEAD for both teams: Ouroboros staffs its collar on
+40.7% of rounds and recovers **53.7%** of the core damage we inflict (CAD:
+39.3%, 40.3%). "A denial leg vs Ouroboros is unfalsifiable because there is
+nothing to deny" is false and must not appear in the leg-lock doc — the first
+opened replay would refute it.
+
+**The conclusion — fire the denial leg at CAD — survives on the correct
+mechanism:** the discriminating variable is OUR approach rate, not their heal
+policy. In the r151–300 band we inflict **68.0 HP/100rd** on CAD's core vs
+**9.3** on Ouroboros's (6× the denial volume) while their per-damage heal
+reflex is near-identical (11.1 vs 13.5 per 100 HP). Against Ouroboros the leg
+would measure our own approach rate, not denial. Identity read agrees: CAD
+spends **42.3%** of all heals on its own core (garrisoner), Ouroboros **22.9%**
+(field healer). **The leg-lock doc states THIS rationale, not the refuted one.**
+
+**Obligation 9 (denial is priced in seat-rounds, not throws):** post-throw
+dwell (`post-throw-tile-dwell-2026-08-09.md`) measures modal dwell **1 round**
+(96.4% of enemy victims gone within one) and the throw→gunner-kill outcome at
+~1 in 200. So one throw ≠ one denied healer; a throw buys roughly (1 + walk-back
+distance) seat-rounds of absence. The leg-lock doc's mechanism metric must be
+**collar-seat-rounds denied** (and heals/100HP suppressed in-window vs the CAD
+baseline of 11.1), with throws/game recorded so a null decomposes into "few
+throws" vs "throws that didn't deny". A claim of caused denial without
+seat-round accounting is off-prediction.
+
+Matchup caveat carried from the source doc: all opponent rates are confounded
+by our own bot; only damage-normalised columns are behavioural, and no version
+stratification exists (dead columns). If the leg disagrees with the doc, an
+opponent version change is an unexcluded explanation.
+
 ## Authority
 
 Amendments: side lane (this lane owns the PREREG discipline). Data: research
