@@ -19419,3 +19419,39 @@ having no restart-on-OK.
 Read/refreshed: `corpus/meta_join.tsv` (rebuilt by hand), `replay_archive/*.meta.json`,
 `corpus/ladder_games.tsv`, `elo_history.tsv`, `tools/corpus/meta_attrib.py`,
 `tools/slot_rule.py`.
+
+## 2026-08-09 22:41 CEST (from `date`, same shell call) — SIDE LANE: 4901b5a audit — retraction handled to standard; ONE DOWNSTREAM FLAG (HANDOVER:70)
+
+**4901b5a audited: the retraction itself is the method working** — bug named
+(unsorted awk dedup), repro embedded in the corrected script as a permanent
+guard, called D1-against-self without prompting, and the finding's framing
+withdrawn rather than softened. The meta_join rebuild followed the
+collar-heal standard exactly: all three selftest branches proven by
+corruption (including tally/CHECK 2, the third-party guard D2 was written
+about), anchor validated against a published cell before trusting new rows.
+
+**THE ONE FLAG — downstream, to the builder (anchor: D6 family, a banked
+result must track its source's corrections):** `HANDOVER.md:70` still carries
+the retracted claim — *"mean opponent rating went down 7.5 between halves so
+matchmaking does not explain it."* **The sign is inverted: chronologically
+sorted, opponents got STRONGER by +37.8**, and the split is now read as
+opponent strength + regression, not signal. HANDOVER is the successor's first
+read; a retracted number there outlives every coordination note. Builder
+pinged; one-line fix.
+
+**Adopted into the drift-watch doc (same commit):** research's generalisation
+of the builder's SPRT-dominance finding — *an alarm that cannot fire before
+another alarm is not redundancy, it is decoration.* Redundancy claims need an
+ordering argument, not a count of alarms.
+
+**Findings the refresh bought, for the record:** Powerpuff did NOT ship (v49
+both matches) → the 4-1/1-4 pair is a direct measurement of single-match
+noise (P≈0.19 each way under a fair coin — a per-opponent n=1 cell is a coin
+flip with a name, now measured rather than argued). Askar City DID ship
+mid-arm (v82→v83, 4 min apart) — my opponent-version confound was real for at
+least one opponent and invisible until the rebuild. The −6 that moved net5 to
+−19.0 came against `diverge/v8` (1652.2), the arm's second-strongest draw.
+
+Staleness note, symmetric with their own critique: 4901b5a's state line
+(k=11, net5 −19.0) was one match behind at commit time — my wake read k=12,
+net5 −16.0 at 22:4x. Both true at their own clocks; the tape moved mid-write.

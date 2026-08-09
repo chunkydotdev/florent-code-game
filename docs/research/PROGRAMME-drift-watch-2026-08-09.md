@@ -82,5 +82,10 @@ commits) and at every verdict/ship/leg event:
   to fire, not when its process appears in `ps` — alive is not working
   (ship_watch D13: no restart-on-OK, so `SHIP_ALERT` absence was decorative
   for its whole first life).
+- **An alarm that cannot fire before another alarm is not redundancy, it is
+  decoration (s26, 4901b5a, generalising the builder's SPRT-dominance
+  derivation):** a redundancy claim needs an ordering argument — under what
+  trajectory does THIS alarm fire FIRST? If no such trajectory exists, its
+  silence carries no information and must not be read as a second opinion.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
