@@ -18978,3 +18978,52 @@ for auditing commits rather than deliverables.
 **Amended in place per my own standing rule** (amend your own published work the moment you
 find it overstated, and say so). Anchor: the us-sample standing note in
 `PROGRAMME-drift-watch-2026-08-09.md`. **Credit: side lane, s26.**
+
+## 2026-08-09 22:3x CEST (from `date`) — RESEARCH ARM: **PRE-REGISTRATION — the alternative reading of the gunner under-build, committed BEFORE the result lands**
+
+The side lane is right that this was living in a `SendMessage` and nowhere durable, and
+that a message thread is not a pre-registration. **The two-clock standard is that the file
+predates the event it predicts**, so this is committed now, with the pricing agent still
+running and no result in hand.
+
+**THE PRIMARY HYPOTHESIS the agent was sent at:** we under-build gunners **2.7× against the
+≥1900 tier** (1.98 vs 5.36 per side-game, banded third-party population), and the top
+tier's gunner-heavy core-kill mix (53.1% of damage on a ≥1700 core, N=1,588) is a
+**MECHANISM** — gunners are the efficient way to kill a core under our costs and we are
+simply wrong about the weapon.
+
+**THE ALTERNATIVE I EXPECT TO BE LIVE, stated now so it cannot be adopted after the fact:**
+**we are AMMO-LIMITED, not EMPLACEMENT-limited**, and the gunner count is the **MARKER**
+while the mechanism is a **spending policy**.
+
+The standing finding it rests on: *"we bank and do not spend — we end r200-300 holding more
+titanium than Ouroboros while buying a twelfth as much ammunition"*
+(`tactics/INDEX.md`, standing context). Ammunition has **no passive income**: the only
+source is the core converting titanium 1:1. So **every turret we own is a paperweight
+until a separate, independent decision converts titanium into ammo**, and a gunner firing
+every round burns **4 Ti/round** against a sentinel's **10 per two rounds = 5 Ti/round**.
+
+**What would confirm it, and I am naming the surface in advance:** `corpus/econ.tsv`
+carries `ammo_converted`, `n_convert`, `shots`, `ti_end`, `ammo_end` per file × team ×
+band. **If our shots-per-turret-built is materially below the ≥1900 tier's while our
+`ti_end` is materially above theirs, the under-build is downstream of the spending
+policy** — building more gunners would then buy nothing, because we would not feed them
+either, and the builder hook changes completely: from *"build more gunners"* to *"convert
+more aggressively"*.
+
+**What would refute it:** our shots-per-built-turret at or above the top tier's, or
+`ti_end` at or below theirs. In that case the emplacement count is the binding constraint
+and the primary hypothesis stands.
+
+**A third outcome I will accept as the honest one:** `econ.tsv` may not separate gunner
+shots from sentinel shots, in which case **the discriminator is unavailable and the answer
+is `UNSEPARATED`** — not a lean toward whichever reading the aggregate happens to flatter.
+**An incomplete run has no number** (D3), and that applies to this pre-registration as much
+as to the agent's.
+
+**Why this matters enough to commit mid-run rather than note afterwards:** the two readings
+imply *opposite* builds and both are consistent with the same headline gap. If I only write
+this down after seeing `econ.tsv`, whichever one I then endorse is unfalsifiable — I would
+have had the freedom to pick. **Committing it now costs one paragraph and is the only thing
+that makes the eventual verdict mean anything.** Prompted by the side lane's mid-run-
+sharpening standing note; the reading and the wording are mine.
