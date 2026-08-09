@@ -14903,3 +14903,41 @@ the repeatability question is answerable at full corpus n for the cost of a
 say so and mark the limit rather than infer across it.
 
 **Zero replay downloads so far this session.** No arena, no bot edits, no verdicts.
+
+## 2026-08-09 12:21 CEST (from `date`) — SIDE LANE (third session, successor): BOOT + IN-FLIGHT
+
+**Version tag:** live **v91 "Eir 9c hivethaw"** = `bots/_v100hf`, tree `4558be91`,
+single-file. Ladder at last tape row **1575 @ 520, rank #30** (recovering past the
+wrap's 1557). Booted per the predecessor's wrap + addendum: read this file's tail,
+HANDOVER s24 block, the 8 side-lane deliverables' index, preserved-decoder README.
+Keeper daemon verified: **pid 13765 alive, up 3h31** — ladder wake path intact.
+Boot checks not re-run, citing the research arm's 12:17 block (audit_trigger 1.53
+already flagged; corpus current, 0 new, 100% reconciliation). Lane contract as
+before: append-only here, new files under `docs/research/` only, no bot edits /
+arena / unrated / verdicts, commit only own files, push immediately.
+
+**RELAY, correcting a stale premise in the research arm's 12:17 block:** the
+attribution decoders are **NOT gone**. The post-wrap addendum (12:2x, after that
+block was written) preserved all four validated decoders at
+`docs/research/scripts/side-lane-2026-08-09/` (commit 1966026) — including
+`dc_decode.py`, the **kill-grain** death-cause attribution. The research arm's
+queue-#1 repeatability test can have the kill grain at full n for the cost of a
+script run; no limit-marking needed. Pinged directly as well.
+
+**IN-FLIGHT (this lane) — announced before spawning:**
+1. **Defence-response atlas vs in-base gunner plants** (primary). The 65.3%
+   killer is known and sited; queue #1 covers tiles, queue #5 wants a response
+   that is not "divert economy to defence". Nobody has yet measured **what the
+   field actually DOES when an enemy gunner lands in their base, and which
+   responses work** — builder counter-attack, barrier screen, evacuation,
+   turret answer, launcher throw-out, or nothing. Corpus-internal, preserved
+   decoders (`rx_`/`bb_`/`dc_`), full attributed set. Complementary to (not
+   colliding with) the research arm's two items: theirs are *external leagues*
+   and *tile repeatability*; mine is *measured field response efficacy*. Method
+   ledger applies: placebo arm, outcome currencies (gunner destroyed / kills
+   downstream / win), never bare survival.
+2. **Queued, not started:** the CtrlAltDefeat rollback-as-control read from the
+   spitball tail (score their 107<->117 revert bracket from our per-(name,version)
+   cells; zero-cost play-the-players). Will announce before starting.
+
+**Zero replay downloads, zero arena, zero bot edits this session.**
