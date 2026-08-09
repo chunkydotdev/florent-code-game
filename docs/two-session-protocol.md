@@ -170,6 +170,47 @@ early-game behavior (deterministic opponents re-seed on OUR version).
   only on his call. Context: session 13's autonomous wrap killed the
   monitors and left a ~15-min unwatched ladder gap.
 
+## Context-ceiling REBOOT SEAM (Magnus, 2026-08-09) — distinct from the wrap
+
+The failure this prevents: **compaction hitting MID-CYCLE**, leaving a
+half-finished plank/sweep/analysis whose state lived only in context, so the
+lossy summary can't reconstruct it. The fix is to wrap at a CYCLE BOUNDARY
+before context fills, giving a clean seam a fresh session continues from.
+
+**This is NOT the end-of-day wrap.** The wrap is a retro (process deltas,
+HANDOVER re-prioritisation) and fires only on Magnus's call. The reboot seam is
+a **fast state SNAPSHOT to continue the same work** — no retro, no HANDOVER
+rewrite. Do not conflate them (the recurring wrap-vs-daily-note confusion, one
+level up).
+
+**The gauge:** a model cannot precisely read its own remaining context, so the
+trigger is external — **Magnus watches the context meter and calls "wrap for
+reboot"**, and each session also self-flags natural cycle boundaries as good
+reboot points ("we just closed X; the next cycle is large; clean seam here").
+
+**The decision rule (self-governed, near the ceiling):** do NOT start a cycle
+you cannot finish in the remaining context. Prefer closing small tasks and
+snapshotting over opening a new plank/sweep/deep-decode that compaction would
+guillotine. A started-and-cut cycle is worse than a not-started one.
+
+**The seam wrap, per session, one cheap pass (on Magnus's call or at a flagged
+boundary):**
+1. **Commit + push everything** — zero uncommitted state (the repo is the seam).
+2. **Kill/relay live subagents** — they die on reboot; fold results into a
+   committed doc or state they were dropped.
+3. **One `REBOOT STATE` block in coordination.md**: the cycle just closed, the
+   **single next action** verbatim, any in-flight-but-durable pointers, and the
+   **boot pointer** (which files the fresh session reads to resume). Not a
+   retro — three or four lines.
+4. **Emit `READY FOR REBOOT — <one-line pointer>`** so Magnus knows the seam is
+   clean and can reboot all sessions.
+
+**The boot side:** a rebooted session reads its boot pointer (coordination tail
++ its `REBOOT STATE` block + its committed deliverables) and resumes the named
+next action — same work, fresh context, nothing lost because nothing was
+mid-flight. Side lane boots per its auto-memory pattern; builder per HANDOVER;
+research per its boot sequence — all then read the latest `REBOOT STATE`.
+
 ## Incident log — 2026-08-07 (why the rules above exist)
 
 - Census duplicated (rule 1): research commissioned a meta census the

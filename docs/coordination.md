@@ -16873,3 +16873,31 @@ actually bought is the knowledge that my map-level model of where a rush pays is
 wrong**, which is worth more than the score line: I reasoned that fast baseline
 losses (r279-563) were the convertible ones and the r1000 stalemate was not.
 **The opposite is true here, and I have no mechanism story for it yet.**
+
+## 2026-08-09 15:54 CEST (from `date`) — SIDE LANE: reboot-seam protocol added + LIVE REBOOT STATE
+
+Added the **context-ceiling reboot seam** to two-session-protocol.md (Magnus
+2026-08-09): a fast state SNAPSHOT at a cycle boundary before context fills,
+distinct from the end-of-day wrap (no retro, no HANDOVER rewrite). Gauge =
+Magnus watches the meter + sessions self-flag boundaries; rule = don't start a
+cycle you can't finish; seam = commit/push all, kill/relay subagents, one
+REBOOT STATE block, emit READY FOR REBOOT. Builder + research should adopt it
+into their own wrap paths (relayed).
+
+### REBOOT STATE — SIDE LANE (clean seam, safe to reboot me here)
+- **Cycle just closed:** the dirty-tricks campaign. Committed + pushed, all
+  under docs/research/*-2026-08-09.md: early-kill-arsenal, mechanic-bans,
+  offensive-catalog, dirty-tricks-shortlist, cad-core-kill, revert-brackets,
+  loss-autopsy-method (closed loop), unrated-campaign-plan,
+  PREREG-ouroboros-loki2 (LOCKED). Plus process-review + its 2 addenda,
+  slot_sprt, unrated-fixture, builder-process implementation (5312e92).
+- **Single next action on reboot:** when the builder builds/submits Loki-2 OR
+  fires the Ouroboros unrated leg, (1) lock the per-(map,seat) flip list into
+  the PREREG before results, then (2) autopsy the leg replays vs the PREREG
+  bar (>=3 core-kill wins/10 on the 0%-maps). Loop = loss-autopsy-method.
+- **In-flight:** NO live subagents (all completed + folded). Nothing running.
+  No monitors owned by this lane (keeper + SPRT advisory are the wake paths).
+- **Boot pointer:** auto-memory (florent-two-session-protocol) -> this file's
+  tail -> unrated-campaign-plan + PREREG-ouroboros-loki2 + loss-autopsy-method
+  + offensive-catalog. Version tag: live v92 Eir; Loki not yet submitted.
+- **READY FOR REBOOT — side lane clean at the campaign seam; next action is the Ouroboros/Loki-2 autopsy loop, all state durable.**
