@@ -74,6 +74,20 @@ per-map special case (hive/snowflake/nordkap/atoll), the siege planner, the
 `raid.py` is ablatable: delete its four call sites in `main.py` and what remains
 is a plain economy bot.
 
+## Measured (local arena, `--tle 10`, both seat orderings)
+
+| leg | result | crashes |
+| --- | --- | --- |
+| vs `_v103split`, 15 maps × 4 seeds | **61.7%** [52.7, 69.9], n=120 | 0 / 0 |
+| vs `opp_v78`, 15 maps × 2 seeds | **48.3%** [36.2, 60.7], n=60 | 0 / 17 |
+| `_v103split` vs `opp_v78`, same battery | 60.0% [47.4, 71.4], n=60 | 0 / 16 |
+
+**Non-transitive, and the vs-field leg is the one that counts.** LOKI-1 beats the
+incumbent head-to-head but sits ~12 points *behind* it against the field proxy.
+Same direction in a contaminated earlier pass (50.0 vs 70.0). On the project's
+own rule — ship verdicts weigh the vs-field battery, self-legs are for
+attribution — **this is not a ship candidate as it stands.**
+
 ## Known weak points
 
 - The full 4-corner collar is a *model*, never observed holding. Measured games

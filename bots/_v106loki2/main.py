@@ -24,6 +24,12 @@ from fcode import Direction, EntityType, Environment, Position
 # for the rule on adding new flags.
 from doctrine import *  # noqa: F401,F403
 
+# LOKI-2 (1/4): the DESTROY / COST-SCALE PRUNING doctrine.  Whole subsystem --
+# logic, flags, rationale -- lives in prune.py so it ablates as one unit; set
+# PRUNE_ON = False there to get _v103split back exactly.  See that file's
+# header for the mechanism, the engine-probed scale numbers, and the risks.
+from prune import prune_condemned, prune_state_init, prune_sweep
+
 
 
 def enemy_core_for(w, h, own):
@@ -373,6 +379,9 @@ class Player:
         # lifetime so a bug that fires every round can't flood stderr or burn
         # the CPU budget formatting tracebacks.
         self.reported_error = False
+
+        # LOKI-2 (2/4): pruning state (prune_seen / prune_done / prune_kills).
+        prune_state_init(self)
 
     def run(self, ct):
         # An exception that escapes run() makes the engine PERMANENTLY delete
@@ -1251,6 +1260,19 @@ class Player:
         # gate above and ahead of every role, rather than being duplicated into
         # _expand and _defend (both of which build harvesters).
         self._wire_tick(ct)
+
+        # LOKI-2 (3/4): COST-SCALE PRUNING SWEEP.  Sits here, before every
+        # role, for three reasons.  (a) It is after the file's CPU boundary at
+        # the guard above, so it can never eat the emergency-defense paths.
+        # (b) destroy() consumes neither the action cooldown nor the move
+        # (engine-probed), so it competes with nothing the roles below do and
+        # needs no cooldown check -- putting it inside a role would only make
+        # it fire on fewer rounds.  (c) it runs for every builder role, which
+        # matters because the orphans are strewn along walking trails and the
+        # only unit that can destroy one is whoever happens to walk past it.
+        # Never raises: it carries its own blanket except in addition to
+        # run()'s, because an escaped exception deletes the unit permanently.
+        prune_sweep(self, ct)
 
         if self.role == "defend":
             self._defend(ct)
@@ -3342,6 +3364,15 @@ class Player:
         if ban is not None and (tile.x, tile.y) in ban:
             self.link_queue = []
             return False
+        # LOKI-2 (4a/4): never re-link a tile this unit just pruned.  Without
+        # it the sweep and the linker chase each other: destroy lowers the
+        # scale, which makes the conveyor cheaper, which makes the rebuild
+        # easier (R7).  Dropping the whole plan rather than skipping the tile
+        # is the same self-healing answer the seat ban above uses -- skipping
+        # one tile would leave the chain permanently severed at that gap.
+        if prune_condemned(self, tile):
+            self.link_queue = []
+            return False
         target = nearest_core_tile(tile, self.core)
         if len(self.link_queue) >= 2:
             f = tile.cardinal_direction_to(self.link_queue[1])
@@ -3568,7 +3599,11 @@ class Player:
                 # undirected trail conveyor is the LEAST valuable thing that can
                 # ever stand on a heal seat, and this is the site the seat census
                 # blames for most of the paved seats it counts.
-                ore_ban = pave_blocked(ct, pp, self._pave_ban())
+                # LOKI-2 (4b/4): and never repave a tile this unit just pruned
+                # -- the trail pave is the orphan factory the sweep exists to
+                # clean up, so it is the site most likely to rebuild straight
+                # into a fresh destroy.  Same R7 argument as the linker gate.
+                ore_ban = pave_blocked(ct, pp, self._pave_ban()) or prune_condemned(self, pp)
                 if not ore_ban and ct.read_store(SLOT_HARVESTERS) >= 1 and self._eco_spendable(ct, ct.get_conveyor_cost()):
                     if dist_core(pp, self.core) > 0:
                         if dist_core(pp, self.core) == 1:
@@ -3594,7 +3629,9 @@ class Player:
             # cardinal step away so the vision test inside the predicate is
             # free here, but the predicate is shared so the two sites cannot
             # drift apart.
-            ore_ban = pave_blocked(ct, nxt, self._pave_ban())
+            # LOKI-2 (4c/4): same condemned gate on the next-step pave site
+            # (the hive / PAVE_TRAIL_ON-off fallback path).
+            ore_ban = pave_blocked(ct, nxt, self._pave_ban()) or prune_condemned(self, nxt)
             if not ore_ban and ct.read_store(SLOT_HARVESTERS) >= 1 and self._eco_spendable(ct, ct.get_conveyor_cost()):
                 if dist_core(nxt, self.core) > 0:
                     here = ct.get_position()

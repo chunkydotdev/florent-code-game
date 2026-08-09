@@ -3,12 +3,12 @@
 ABLATION UNIT.  Everything this doctrine adds lives in this file.  Its entire
 footprint in main.py is four marked edits (grep ``LOKI-2``):
 
-  1. ``from prune import *`` next to the doctrine import
+  1. ``from prune import prune_condemned, prune_state_init, prune_sweep``
   2. ``prune_state_init(self)`` at the end of ``Player.__init__``
   3. ``prune_sweep(self, ct)`` in ``_builder``, right after ``_wire_tick``
-  4. two one-line ``prune_condemned()`` gates -- one in ``_build_next_link``,
-     one in ``_move``'s trail pave -- that stop this unit rebuilding a tile it
-     just tore down (the R7 self-chase)
+  4. three one-line ``prune_condemned()`` gates -- one in ``_build_next_link``
+     and one on each of ``_move``'s two pave sites -- that stop this unit
+     rebuilding a tile it just tore down (the R7 self-chase)
 
 Setting ``PRUNE_ON = False`` restores _v103split behaviour exactly: the sweep
 returns on its first line and both condemned gates read an empty dict.  (The
@@ -25,20 +25,50 @@ per turn** (docs/game-model.md:242-245; engine-probed, docs/open-questions.md
 ``ct.destroy(`` has **zero call sites** in _v103split (the eight ``destroy``
 hits in that tree are all prose in comments).
 
-The cost scale is ONE team-wide multiplier -- there is a single
-``get_scale_percent()`` and every ``get_*_cost()`` multiplies by it
-(bots/cad_probe/main.py:749-751) -- and it tracks **live** entities, not
-cumulative builds: it "decreases again when an entity is destroyed"
-(docs/game-model.md:357-358, docs/reference/official-docs.md:1424).  So
-``destroy()`` is the only downward hand we have on the price of everything we
-build afterwards, and every point shaved stays shaved.
+The cost scale is ONE GLOBAL multiplier, not a per-category one, and it tracks
+**live** entities.  Engine-probed 2026-08-09 (bots/_probe_scale on hive):
+
+    built 44 -> scale 164.000    destroy -> 42 -> 162.000
+    built 12 -> scale 132.000    destroy -> 10 -> 130.000 -> 7 -> 127.000
+    rnd=1    0 conveyors  scale 120  harv 24 gun 24 sent 36 bot 36 launch 24
+    rnd=53  39 conveyors  scale 159  harv 31 gun 31 sent 47 bot 47 launch 31
+
+i.e. ``scale = 100 + sum over LIVE entities of their category rate`` (Core
+contributes 0), every getter is exactly ``floor(scale x base)``, and a destroy
+drops the scale the SAME round.  So one orphaned conveyor does not merely make
+conveyors 1% dearer -- it taxes every future harvester, gunner, sentinel,
+launcher and builder bot by 1%.  ``destroy()`` is the only downward hand we
+have on that number, and every point shaved stays shaved.
 
 Measured target set: **18 of 40 surviving relays on heart connect to nothing**
-(docs/v79-analysis.md:187).  At a live scale of ~4.05 that sweep is 4.05 ->
-3.87, a 4.4% discount worth ~165 Ti over a back-half build sequence
-(thread10_destroy_doctrine.md:258-294).  Stated honestly: this is a
-SECOND-ORDER lever.  Live builder bots (+20% each) dominate the multiplier;
-18 conveyor points off a 405% scale is single-digit percent, not a doubling.
+(docs/v79-analysis.md:187).  Eighteen points off a live scale of ~4.05 is
+4.05 -> 3.87: a sentinel drops 121 -> 116 Ti, a harvester 81 -> 77, a builder
+bot 121 -> 116.  Over a back-half spend of ~2,500 Ti that is ~110-165 Ti
+(thread10_destroy_doctrine.md:258-294).
+
+STATED HONESTLY, BECAUSE THE BRIEF ASKED FOR IT: this is a SECOND-ORDER lever
+even with the global-multiplier correction.  The discount is ~4-5% of future
+spend, not a doubling, because the live builder-bot population (+20% each,
+5-10 alive = +100-200%) dominates the multiplier and this doctrine will not
+touch it.  The honest expected value is one or two extra purchases per match.
+
+UNPROVEN, AND FLAGGED AS SUCH: late game we run large networks, so replacing a
+lost turret may cost us ~1.6-2x base while a lean opponent pays near base --
+which would be a second reason the doctrine pays, via late-game replacement
+tempo rather than via total titanium.  Nothing here is built on that; it is
+recorded so a later measurement knows where to look.
+
+WHY THE SWEEP IS NOT CONDITIONAL ON AN IMPENDING PURCHASE.  It is tempting to
+prune harder just before buying a sentinel, since that is where the scale
+bites hardest in absolute Ti.  It is not actionable: ``destroy()`` requires
+the builder to be orthogonally adjacent to the target, so which orphans are
+reachable is decided by where the builder happens to be walking, not by what
+the Core wants to buy.  Deferring a provably-safe destroy until a purchase is
+pending would only shorten the window in which we enjoy a discount that is
+permanent and free.  The correct policy for a free, permanent, monotone lever
+is: take it the moment it is provably safe, and never give it back.  The only
+condition kept is a scale FLOOR (PRUNE_MIN_SCALE) -- below it there is nothing
+worth discounting.
 
 
 TWO STALE CLAIMS THIS FILE DOES NOT BUILD ON
@@ -65,9 +95,24 @@ is already standing there -- so there is no wiredness flood, no BFS, and no
 map-wide scan anywhere in this file.
 """
 
-from fcode import Direction, EntityType, Position
+from fcode import EntityType
 
-from doctrine import CARDINALS, dist_core
+from doctrine import CARDINALS
+
+
+def _dist_core(pos, o):
+    """Chebyshev distance to the nearest tile of the 2x2 Core footprint.
+
+    A local copy of main.py's ``dist_core``: importing it from main would be
+    circular (main imports this file).  Three lines, and keeping them here is
+    what lets the whole doctrine be one deletable file.  0 means "pos IS a
+    footprint tile"; 1 means "orthogonally or diagonally touching it".
+    """
+    ox, oy = o.x, o.y
+    return min(
+        max(abs(pos.x - cx), abs(pos.y - cy))
+        for cx, cy in ((ox, oy), (ox + 1, oy), (ox, oy + 1), (ox + 1, oy + 1))
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -104,13 +149,20 @@ PRUNE_CONFIRM_RNDS = 40
 # instantly destroyable off one stale sighting.
 PRUNE_GAP_RNDS = 8
 
-# A conveyor whose output tile holds an ENEMY conveyor/splitter/Core is a
-# different animal: it is not ambiguous (an enemy building is never going to
-# become our next lane segment) and it is actively PAYING THEM -- a heart
-# replay has one of our chains delivering a stack into the opponent's Core,
-# scoring their tiebreak #1 (docs/spitball.md T11).  Every round of confirm
-# there is pure loss, so it gets its own short clock.
-PRUNE_ENEMY_CONFIRM_RNDS = 4
+# SHORT CLOCK, for the two dead-head classes that carry no ambiguity at all.
+# The long clock exists solely because an empty output tile might be a lane
+# still growing.  Two cases cannot be that:
+#   (a) the output tile holds an ENEMY conveyor/splitter/Core.  An enemy
+#       building is never going to become our next lane segment, and this
+#       conveyor is actively PAYING THEM -- a heart replay has one of our
+#       chains delivering a stack into the opponent's Core, scoring their
+#       tiebreak #1 (docs/spitball.md T11).  Every round of confirm is loss.
+#   (b) the output tile is one THIS UNIT already tore down and still holds
+#       condemned.  It was dead the instant that tile died, and our own
+#       rebuild gates stop the lane growing back into it.  This is what lets
+#       a dead chain unravel backwards at a useful rate instead of one tile
+#       per PRUNE_CONFIRM_RNDS.
+PRUNE_SHORT_CONFIRM_RNDS = 4
 
 # Per-unit lifetime cap on destroys, and per-round cap.  These bound the blast
 # radius of any misjudgement to a number we can price: worst case 20 conveyors
@@ -147,7 +199,7 @@ PRUNE_CONDEMN_RNDS = 250
 # Per-unit stderr instrumentation.  print() goes to the replay; stderr is
 # console-only (docs/tooling.md), so this is safe to leave compiled in and
 # costs one branch when off.
-PRUNE_DEBUG = False
+PRUNE_DEBUG = True
 
 
 # ---------------------------------------------------------------------------
@@ -164,6 +216,8 @@ def prune_state_init(player):
     # the condemned set the two rebuild gates read.
     player.prune_done = {}
     player.prune_kills = 0
+    # Last round the sweep ran; the condemn window is measured from it.
+    player.prune_rnd = -10 ** 9
     # Instrumentation only; stays empty unless PRUNE_DEBUG.
     player.prune_obs = set()
 
@@ -247,7 +301,7 @@ def _sweep(player, ct):
             player.prune_seen[key] = [rnd, rnd]
             continue
         seen[1] = rnd
-        need = PRUNE_ENEMY_CONFIRM_RNDS if verdict == 2 else PRUNE_CONFIRM_RNDS
+        need = PRUNE_SHORT_CONFIRM_RNDS if verdict == 2 else PRUNE_CONFIRM_RNDS
         if rnd - seen[0] < need:
             continue
 
@@ -269,7 +323,7 @@ def _sweep(player, ct):
             print(
                 "PRUNE destroy uid=%d rnd=%d tile=%s kind=%s kills=%d obs=%d"
                 % (ct.get_id(), rnd, key,
-                   "enemy-fed" if verdict == 2 else "dead-head",
+                   "unambiguous" if verdict == 2 else "dead-head",
                    player.prune_kills, len(player.prune_obs)),
                 file=sys.stderr,
             )
@@ -286,7 +340,8 @@ def _sweep(player, ct):
 
 
 def _dead_head(player, ct, n):
-    """0 = keep, 1 = dead head, 2 = dead head feeding the ENEMY.
+    """0 = keep, 1 = dead head (long clock), 2 = dead head with no ambiguity
+    left in it (short clock: feeding the enemy, or feeding a tile we condemned).
 
     EVERY unreadable answer returns 0.  ``get_tile_building_id`` raises for an
     in-bounds tile outside vision with the same message as an off-map tile, so
@@ -295,7 +350,7 @@ def _dead_head(player, ct, n):
     """
     # Never touch the delivery ring: those tiles aim into the footprint and a
     # gap there severs whatever is behind them.
-    if dist_core(n, player.core) <= 1:
+    if _dist_core(n, player.core) <= 1:
         return 0
     # Never destroy a tile this unit is itself about to build on / has planned.
     # link_queue is a short list of Positions (path length, tens at most).
@@ -333,7 +388,7 @@ def _dead_head(player, ct, n):
     out = n.add(f)
     if not (0 <= out.x < player.mw and 0 <= out.y < player.mh):
         return 1                      # faces off the map: provably dead
-    if dist_core(out, player.core) == 0:
+    if _dist_core(out, player.core) == 0:
         return 0                      # outputs into our own Core footprint
     if not ct.is_in_vision(out):
         return 0                      # cannot prove it -> keep
@@ -345,6 +400,10 @@ def _dead_head(player, ct, n):
         # Empty output tile.  This is the pave orphan and the abandoned-lane
         # head, i.e. the volume target -- and also exactly what a lane under
         # construction looks like, which is what PRUNE_CONFIRM_RNDS is for.
+        # UNLESS the empty tile is one WE condemned: then it is provably not a
+        # lane growing, and the chain may unravel on the short clock.
+        if (out.x, out.y) in player.prune_done:
+            return 2
         return 1
     try:
         oteam = ct.get_team(obid)
@@ -354,7 +413,15 @@ def _dead_head(player, ct, n):
     if oteam == player.team:
         if otype in (EntityType.CONVEYOR, EntityType.SPLITTER, EntityType.CORE):
             return 0                  # wired onward
-        return 1                      # outputs into a wall of our own turrets
+        if otype == EntityType.HARVESTER:
+            # A conveyor pointing INTO a harvester almost certainly delivers
+            # nothing (harvesters are sources), but "almost certainly" is not
+            # the standard for an irreversible action and the case is rare.
+            return 0
+        # Barrier / gunner / sentinel / launcher: turrets "never hold or accept
+        # resources" and a barrier has no function at all, so this conveyor is
+        # provably terminal.
+        return 1
     if otype in (EntityType.CONVEYOR, EntityType.SPLITTER, EntityType.CORE):
         return 2                      # WE ARE FEEDING THEM
     return 1

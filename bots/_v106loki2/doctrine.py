@@ -15,6 +15,12 @@ grep was the cost of not splitting and it was paid every session.
 RULE FOR ANYONE ADDING A FLAG: it goes HERE, with its rationale comment and with
 the measurement that justified it.  A flag whose comment does not say what was
 measured is a flag nobody can ever retire.
+
+ONE DOCUMENTED EXCEPTION (LOKI-2, s21): the PRUNE_* flags live in prune.py, not
+here.  That subsystem is built to be ABLATED AS A UNIT -- one file, one master
+switch (PRUNE_ON) -- and splitting its flags away from its logic would defeat
+the point.  Every PRUNE_* flag still carries its rationale and its measurement,
+per the rule above; `grep -n PRUNE_ prune.py` is the index.
 """
 import math
 import random

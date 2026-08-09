@@ -9918,3 +9918,75 @@ against our 9.8%** — they can afford to replace late losses and we cannot.
 Related prior: `spitball.md:248` ("price the cost-scale externality forward"), so
 the idea exists; the LATE-GAME ARMY-REPLACEMENT framing is what I have not seen
 stated. **Routed to research as a testable hypothesis. Not a finding yet.**
+
+### 2026-08-09 07:45 CEST (from `date`) — builder arm: **LOKI-1 IS BUILT AND IS NOT A SHIP CANDIDATE; LOKI-3 OPENED ON RESEARCH'S Q2, WHICH CORRECTED A ROAD I HAD CLOSED BY ASSUMPTION**
+
+**LOKI-1 (`bots/_v105loki1`, from scratch per Magnus, 805+616+1069 lines,
+main + raid + eco):**
+```
+vs incumbent _v103split   61.7%  CI [52.7, 69.9]  n=120   crashes 0 / 0
+vs field proxy opp_v78    48.3%  CI [36.2, 60.7]  n=60    crashes 0 / 17*
+   incumbent, same field  60.0%  CI [47.4, 71.4]  n=60    (*opp_v78's own)
+```
+**It beats the incumbent head-to-head and trails it against the field. By the
+standing rule — ship verdicts weigh the class-weighted vs-FIELD battery,
+self-legs are attribution only — THIS IS NOT A SHIP CANDIDATE.** The building
+agent reached that conclusion itself and led with it rather than with the 61.7%,
+which is the behaviour worth keeping. **Zero crashes across all 180 matches.**
+**But n=60 with intervals that overlap this heavily refutes nothing either** — a
+paired vs-field battery over `opp_v78/v72/v63/v50` (8 legs, 120 matches each,
+identical maps and seeds, per-opponent SPREAD as the quantity of interest) is
+running to settle it. Non-transitivity is the whole reason that rule exists.
+
+**THE MOST USEFUL THING IN THE LOKI-1 REPORT IS A BUG IT CAUSED AND CAUGHT:** it
+first made the melee recall all-hands; `SLOT_UNDER` latches 50 rounds and every
+chain builder sits inside the home band, so the trunk stalled at r16 and the
+game ended with **0 titanium delivered — thor_r1's exact failure mode.** The
+incumbent restricts that recall to forward roles. **Any future edit near that
+gate must re-check delivered-Ti immediately.**
+
+**RESEARCH'S Q2 LANDED AND IT CORRECTED ME ON A ROAD I HAD CLOSED BY READING
+CODE.** Their 11,784-turret-build census:
+```
+band       who     n     med d2 to OWN core   med d2 to ENEMY core
+r0-150     THEM  3449          25                    45
+r0-150     US    1711          25                    37   <-- we are MORE forward early
+r200-300   THEM  1346          56                    51
+r200-300   US     267          20                   113
+r300+      THEM  2894          82                    58
+r300+      US     380          22                   178
+gunners built / shots fired per game, r200-300: Ouroboros 4.18/103.3 vs US 0.12/5.8
+ammo converted per game, r200-300: Ouroboros 441.6 vs US 34.8, and WE end holding
+  635.1 Ti against their 478.6
+```
+**There is NO early doctrine gap — before r150 we place MORE forwardly than they
+do.** Everything opens at r150: their median turret walks outward from their own
+core, ours stays pinned. **I had closed "forward turret siege" as a road on the
+grounds that `_plan_siege` already places forward guns (cap 2-3). That was an
+inference from SOURCE to IN-GAME BEHAVIOUR — the identical error I made on the
+r180 gate this morning, made again four hours later.**
+
+**I VERIFIED THE AMMO HALF IN OUR OWN SOURCE BEFORE SPENDING A BUILD ON IT:**
+`doctrine.py:949 AMMO_FLOOR = 16`; `_core` drips toward a target of 16 (24 under
+siege). **A gunner shot is 4 ammo, so the floor is FOUR SHOTS**, and the measured
+5.8 shots/game is ~23 ammo. `SPORKS_AMMO_ON = False` disables the cap-60 policy.
+**The 441.6-vs-34.8 gap has a named constant behind it.**
+
+**LOKI-3 REGISTERED** (opus, `bots/_v107loki3`, fork of `_v103split`): late
+turret production + **forward placement** + ammo policy, **each behind its own
+flag** (`LATE_TURRET_ON` / `FORWARD_PLACEMENT_ON` / `LATE_AMMO_ON`) so the three
+can be measured apart. Briefed with both cautionary tapes: **Thor** (type swap on
+the home band, 0 cores killed in 10) and **my own r180 null**. **Raising
+AMMO_FLOOR alone would be r180 again — ammo is worthless without turrets alive
+to fire it.** Also briefed with the cost it must pay: **each late gunner is +20
+points of GLOBAL scale on everything bought afterwards** (measured by probe
+today).
+
+**INSTRUMENT NOTE THAT CHANGES HOW I USE THE ARENA:** three 360-match legs
+returned nulls today because the local pool is dominated. **But the arena CAN
+verify that a change does what it CLAIMS** — turrets built after r200, shots
+fired after r200, median distance of late turret builds, titanium held at end.
+LOKI-3 is required to report those four mechanism numbers, not a win rate.
+*Delta: separate "does the bot now DO the thing" (local, cheap, answerable) from
+"does the thing WIN" (field only). We have been asking one instrument both
+questions all project.*
