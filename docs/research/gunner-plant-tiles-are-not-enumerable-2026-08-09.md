@@ -171,7 +171,21 @@ Plants are a whole-game phenomenon, not an opening: median round **154**, p10 11
 p90 547. **26.3% land by r50, 38.3% by r100, 49.2% by r150, 74.0% by r300.** Any
 pre-placed cover must be down early to catch even a quarter of them.
 
-Removal is already happening and is **not obviously worse than the field's**:
+> **AMENDMENT 2, 2026-08-09, by the author — THE SENTENCE BELOW IS WRONG AND THE
+> TABLE IS CENSORED.** Follow-up analysis
+> (`in-base-plant-survival-tail-2026-08-09.md`) shows (a) the 41.4% is roughly 40%
+> **right-censoring artifact** — 57.5% of "survivors" had under 100 rounds of game
+> left, and the honest censored tail is **~25%**, not 41.4%; and (b) **"not obviously
+> worse than the field's" does not survive the censoring fix.** Matched at a fixed
+> horizon, enemy plants in our band survive **25.2%** (n=3,179) against our plants in
+> theirs at **20.3%** (n=1,590) — **+4.9pp, z=3.77, p=1.6e-4**, and **MH odds ratio
+> 1.31 across 482 same-replay both-sides comparisons.** **We remove enemy plants
+> modestly WORSE than the field removes ours, at every horizon tested.** The raw
+> table is retained below only so the correction is legible; **use the follow-up
+> document's numbers, not these.**
+
+Removal is already happening and is ~~**not obviously worse than the field's**~~
+**worse than the field's once censoring is handled — see Amendment 2**:
 
 | | n | died in game | survived to end | median lifetime of those that died |
 | --- | ---: | ---: | ---: | ---: |
@@ -179,7 +193,9 @@ Removal is already happening and is **not obviously worse than the field's**:
 | **our** turret planted inside **their** band | 2,610 | 65.1% | 34.9% | 12 rounds |
 
 **This is the one place I would spend the next effort, and I am labelling it a
-lead, not a finding.** The problem is visibly in the **41.4% tail**, not in mean
+lead, not a finding.** *(It was spent — see Amendment 2 and the follow-up doc; the
+lead was right about where to look and wrong about the size and the sign.)* The
+problem is visibly in the ~~41.4%~~ **~25% censored** tail, not in mean
 removal speed — and the 45-kill tile from the attribution doc is by construction a
 member of that tail. What separates a planted gunner that dies in 14 rounds from
 one that lives to round 1000 is not answerable from the plant/death grain alone;
