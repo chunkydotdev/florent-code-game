@@ -16049,3 +16049,85 @@ the questions asked so far. CAD doc gained the builder's adoption note
 research arm FIRST, terrain read after). Atlas stays parked on the
 builder's call. Lane in-flight EMPTY; wake paths keeper + SPRT advisory
 (watching v92).
+
+## 2026-08-09 13:43 CEST (from `date`) — RESEARCH ARM: **v92 SHIPS RAY NOT LINE (my mislabel); CAD ITEM (b) DONE**
+
+**1. CORRECTION TO MY OWN DWELL DOC, on the builder's catch.** I labelled the exact-LINE
+row *"what v92 ships"*. **It ships RAY.** `_danger_tiles()` calls
+`get_attackable_tiles_from`, and **I verified the docstring against the installed engine**
+(`.venv/lib/python3.13/site-packages/fcode/_types.py:693-696`): *"raw attack pattern…
+**For gunners this includes the full firing line within range, even behind walls**."*
+Blocking ignored. **Live figures are 5.93% of builder-time forbidden / 91.1% coverage**,
+not 4.17% / 89.4%. **And the headline multiplier moves with it: "8x" was against LINE
+(34.98/4.17 = 8.39). Against the shipped rule it is 34.98/5.93 = 5.90x for 8.2pp.**
+Title, headline and conclusion all corrected in place. **The builder's own restatement
+carried my 8x forward; flagged back.**
+
+**Credit note, recorded as the builder stated it rather than as I framed it:** they used
+the engine's own pattern function because **re-deriving geometry is how a danger set
+silently desyncs** — they did not reason past the disc, they never considered building
+one. **That generalises; a good judgement call does not.**
+
+**2. CAD FOLLOW-UP ITEM (b) — `docs/research/heal-ceiling-s1-2026-08-09.md`.
+THE DEFENSIVE CLASS IS NOT REFUTED AT THE SPEC LEVEL.**
+
+**Constants read from the engine, because one could have halved the answer.** `heal()`:
+*"Costs 1 titanium and one action cooldown"*; `GUNNER_FIRE_COOLDOWN = 1` for a turret the
+docs call *"7 every round"* ⇒ cooldown N = acts once every N rounds ⇒ **a healer heals
+every round.**
+
+**Geometric cap:** core is 2x2 and **ONE entity**, so healing any footprint tile heals it.
+**8 outside seats + 4 on-footprint = 12 healers = 48 HP/rd for 12 Ti/rd.** The 4
+on-footprint rest on **the s23 co-occupation probe — my own lane's prior result, and the
+LANE CALL IS STILL OPEN WITH MAGNUS** — so stated both ways: **12 → 48, or 8 seats only
+→ 32. Nothing depends on the disputed four.**
+
+| | HP/round |
+|---|---:|
+| loss-game NOMINAL max (5.6 turrets all firing every round) | 44.0 |
+| **peak siege DPS ever measured** (`_v100hf:554`) | **23.22** |
+| mean incoming, CAD losses (2,117 over r172→r361) | **11.20** |
+| **what we actually heal** | **8.53 = 2.1 healers** |
+| **ceiling** | **48 (32 seats-only)** |
+
+**Ceiling is 2.1x the highest DPS ever measured against us; 1.4x on safe seats alone. We
+run the channel at 2.1 of 12 — 18% — in the games we lose.** Exchange 0.556–0.571 Ti/HP
+theirs vs **0.250 ours = 2.2:1**, re-derived from a new direction.
+
+**3. THE ACTUAL FINDING — WHY ESCALATE STILL LOST 7.8pp. The constraint is not titanium
+and not geometry; it is BUILDER-TURNS.** A healer costs **1 Ti** — nothing against a bank
+we sit on. It costs **its ACTION that round**: acting and moving are mutually exclusive,
+so a healer is a builder not building, not harvesting, not linking, not walking.
+**12 Ti/round is a rounding error; 12 builder-turns/round is the entire cost, and the Ti
+arithmetic never priced it.**
+
+**THREE INDEPENDENT LINES CONVERGE:** (1) this arithmetic — 82% headroom, negligible Ti;
+(2) **ESCALATE −7.8pp** — paying with **scheduled** turns loses; (3) **sweep 10's
+`fortify-on-idle`** (Overmind/Screeps) — fortify **only on idle time**, *zero scheduled
+builder-turns*. **⇒ STAFF THE HEAL CHANNEL FROM IDLE BUILDER-TURNS ONLY.** Not "more
+healers" — "healers when the builder had nothing else to do". **A scheduling change, not
+an economic diversion.**
+
+**4. WHAT IT DOES NOT SAY, and I do not want these dropped.** It does **not** say a heal
+build will work — only that a failure would be a failure of the **response**, not the
+class, which is what item (b) existed to establish. It does **not** touch the sentinel
+geometry: **65% of CAD's core damage is stand-off sentinels at median d²=26, 28% outside
+our band** — healing answers the damage, not the source, and tile denial cannot reach
+d²=26. **Both pieces still need pricing.**
+
+**5. I WOULD NOT BUILD ON IT YET, AND SAID SO.** The 2.1-healer figure is a game total
+over an assumed 189-round window — **an average, and the core dies to SUSTAINED DPS.**
+If staffing is 2.1 flat the headroom is real; **if it is 6 during the siege and 0
+otherwise, the whole document measures the wrong thing.** `bb_decode.py` already tracks
+core-ring adjacency and heal attribution, so the per-round staffed-seat distribution is
+**one decoder pass away**. Offered to the builder.
+
+**6. FROM THE BUILDER, filed as the same family as the tactics quote rule:** a field
+instrument showed **v92 at 1.250 vs v91 at 19.257 deaths/1k — a 15x artifact from ONE
+match against Team 48.** Opponent held constant: 1.250 / 1.572 / 1.958 / 0.000, effect
+gone. **"A plausible number near the right measurement survives everything except a
+stratification."** Same shape as the quote rule, same fix: **a mechanical guard in the
+tool, not a resolution to be careful.**
+
+**IN-FLIGHT: nothing.** Offered and not started: per-round core-seat staffing census;
+field-side mirror of the dwell measurement.
