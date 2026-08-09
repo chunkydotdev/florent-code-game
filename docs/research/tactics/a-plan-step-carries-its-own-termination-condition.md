@@ -45,8 +45,8 @@ building on Cohen & Levesque's Joint Persistent Goal:
 
 **Referent check.** `p` is the team task; `JPG` is the Joint Persistent Goal the paper builds
 on. **The commitment is defined by its termination test, not by a duration** —
-achieved / unachievable / irrelevant — and the *"maintain … at least until"* clause is what
-makes a locally-bad step survivable.
+achieved / unachievable / irrelevant — and the clause *"maintain the team activity at least
+until one of these conditions arises"* is what makes a locally-bad step survivable.
 
 **3. Screeps — the same object, as code.** Overmind's `Task` base class documents itself as
 this exact generalisation (**note: the doc comment wraps, so each fragment below is a separate
@@ -111,8 +111,8 @@ needs to know when it is done.
 - **It is the constructive complement to the goal stack the library already holds.**
   [`the-goal-stack-beats-the-mode-flag`](the-goal-stack-beats-the-mode-flag.md) documents
   BC2021 and BC2025 pushing and popping goals but records no *validity* test; that file's own
-  "WHAT WOULD KILL IT" says **"A stack that is never popped is a memory leak with extra
-  steps"**. Overmind's `isValid()` is the missing pop condition, and it recurses to the
+  "WHAT WOULD KILL IT" section warns that a stack which is never popped is a memory leak with
+  extra steps (an internal library statement, not a source quote). Overmind's `isValid()` is the missing pop condition, and it recurses to the
   parent, so a dead child cannot pin the stack.
 - **Re-validation on resume is required here for a reason the sources do not have.** A tile
   that was a good seat 40 rounds ago may now sit inside an enemy sentinel's line (r²=32,

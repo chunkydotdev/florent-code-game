@@ -195,6 +195,83 @@ exception permanently destroys that unit for the match.
 | **17A** | **RE-AIM at the incidence cut** — `KILL_WINDOW_RND: 250` is **not** our binding constraint (74.4% of our core-kill wins already land inside it). *What raised the SHARE OF DECISIVE GAMES elsewhere; what separates a bot that converts from one that grinds; the commit/abort decision; and did organisers change rules to raise decisiveness?* | **SWEPT** (s26). **23 files. 176 strings verbatim, 0 unverified, 0 cut.** **Falsifies sweep 15's round-number claim.** Queued one measurement which I then ran — see below. | 2026-08-09 | [sweep 17A](2026-08-09-sweep-17a.md), [pay-for-the-capture-with-no-economic-return](pay-for-the-capture-with-no-economic-return.md) |
 | **17B** | **RE-AIM of topics 5 + 8 at the weapon-mix inversion** — ≥1700 cores die to gunner 53.1 / sentinel 44.4 / melee 2.5; ours is 22.7 / 69.2 / 8.1. *Cheap-close vs expensive-far; what decided the mix; superlinear costs; friendly line-blocking; and **is the top tier's gunner share a mechanism or a marker?*** | **SWEPT** (s26). **21 files + summary. 92/94 spans verbatim** (2 are quotations of the brief, labelled); **summary separately audited, 1 corrected.** **Verdict: mostly MARKER** — independently agreeing with the corpus-side pricing deliverable. **Corrects sweep 8.** | 2026-08-09 | [sweep 17B](2026-08-09-sweep-17b.md), [the-turret-mix-is-not-a-cost-decision](the-turret-mix-is-not-a-cost-decision.md) |
 
+| **18** | **MULTI-STEP PLAN COMPOSITION — the first genuinely NEW row in a fully-swept wheel.** Magnus's oldest unanswered ask (*"bigger plans than that, more steps that might make a bad tactic actually a good tactic"*), which is the **converse** of 17A's *an economically-correct evaluator never finishes*. *(A) representation (B) commit/abort (C) did it beat reactive play, measured (D) where planning LOST* | **SWEPT** (s26). **25 files. 292 spans, 288 verbatim over 61 primary documents; summary audited separately (61/63).** **(C) IS A SURPRISE — the ablation exists.** 19 `yes` / 5 `partial` / 1 `no`. | 2026-08-09 | [sweep 18](2026-08-09-sweep-18.md) |
+
+### Sweep 18 (s26) — the answer to Magnus's ask is 27 years old, it fits our exact constraints, and my pre-stated expectation was wrong in a way that changes the plank
+
+**(C) THE EXPECTED NEGATIVE IS REFUTED, AND THE REASON IS A FINDING ABOUT THIS LIBRARY'S OWN
+METHOD.** I pre-registered *"expect not to find a published planner-vs-reactive-ablation;
+these leagues essentially never separate cause from marker."* **Wrong.** **Stone & Veloso,
+RoboCup 1999, ran one with populations: teams *"otherwise identical"*, 38 games of 10
+minutes, set-plays alone → 28 wins to 5, 187 goals to 108** — and they entered their own
+ablation in a live tournament and beat it **6-0**.
+
+**⇒ SWEEP 15'S HARD NEGATIVE MUST BE RE-SCOPED. It is true of GAME COMPETITIONS and false of
+the adjacent ACADEMIC literature — which sat in an unswept row (RoboCup) this whole time.**
+The library was searching where the negative is real. **Battlecode remains a clean negative;
+the generalisation to "nobody, anywhere" does not survive.**
+**Boundary that must travel with the result: the baseline is RIGID-SCRIPTED, not reactive.
+The claim is *stored plans beat NO stored plans*, not *deliberation beats reaction*.**
+
+**(A) THE REPRESENTATION THAT FITS OUR CONSTRAINTS IS ROBOCUP'S "LOCKER-ROOM AGREEMENT",
+AND IT IS FREE FOR US.** **The plan is never transmitted.** It is pre-agreed and **identical
+in every agent**; the channel carries only a **formation index and a timestamp**.
+**We already have the whole mechanism: the same `main.py` runs in every unit, so a
+module-level mode table is shared at ZERO bandwidth.** The 16-int store then needs to carry
+**one small nonnegative int** — at which point **every measured hazard of that store becomes
+harmless**: last-writer-wins is fine when all writers agree, the one-round buffer is fine for
+a mode index, and the negative-write raise cannot fire.
+**And plans must name ROLES, NOT UNITS** — our ids are one global counter shared with
+resource stacks, and raider lifetime at r150 is **6 rounds**.
+
+**The modal WINNING representation elsewhere is no stored plan at all** — Halite III's 1st/
+6th/7th recompute a score per unit × tile every turn, Lux S1's winner is a stateless net,
+PurpleWave rebuilds its production timeline every tick. **Commitment is bought with a shaped
+score or ONE CONSTANT**, not with a queue.
+
+**(B) "A CHEAP ABORT PREDICATE" IS THREE PREDICATES DOING THREE JOBS**, and the third is the
+one we lack:
+- **VALIDITY** — Overmind splits it in two: `isValidTask` (about the actor) vs
+  `isValidTarget` (about the world). **Ours is `can_build_*`.**
+- **PROGRESS** — Steamhammer's `ProductionJamFrameLimit = 360`; PurpleWave's is
+  state-conditional (45 s before the plan pays, 90 s absolute).
+- **GRANULARITY** — **replanning from scratch on every disruption produced an INFINITE
+  RESTART LOOP and lost the matchup; classifying disruptions and patching in place won it.**
+**Commitment itself is one constant added to last round's answer** — Steamhammer `+= 13/11/4`
+under a comment reading `// Hysteresis.`, PurpleWave 1.5×, UAlbertaBot's asymmetric 100-frame
+lockout, Stardust's 120-frame belief dwell. **Cheapest item in the sweep: `goToState` vs
+`goToStateTemporary`, one line apart — a resumable interrupt with no stack.**
+
+**(D) AND THE NEGATIVE IS BRUTAL, WHICH IS WHY THE SHAPE MATTERS MORE THAN THE IDEA.**
+MicroRTS 10-agent round robin, 60 starting positions per matchup, **100 ms/cycle — 10× our
+budget**: the **AHTN planner scores 24.0**, NaïveMCTS **13.3, last of ten**, against
+LightRush's **55.3** — and **three separate hand-coded scripts each beat the HTN planner
+100.0%, 60 of 60.** Runner-up: **PurpleWave deleted 8,596 lines / 221 files of declarative
+gameplan DSL in two days** and went 82.29% → 82.95%. Deepest: Steamhammer's maintainer calls
+plan latency a **design** defect, not an implementation one.
+
+**⇒ THE SYNTHESIS, AND IT DECIDES WHAT THE NEXT PLANK BUILDS.** **What lost everywhere is a
+SEQUENCE. What won is a MODE.** My own brief drew the line as *"a committed mode rather than
+a plan representation"* — **that is wrong: a mode table IS the plan representation, just not
+the one people picture.** The two literatures converge independently. **So: build a table of
+indices, not a queue.**
+
+**⚠ AND THE LIMIT, STATED BY THE SWEEP ITSELF: none of this answers whether such a mode
+converts games HERE. It licenses the SHAPE, not the content.**
+
+**THREE MORE METHOD TRAPS, each of which produced a FALSE FAIL in this sweep:** JSDoc `` * ``
+continuation markers survive whitespace flattening; `pdftotext` emits `\x0f` bullet controls
+**inside** sentences; inline `<code>` injects spaces into surrounding prose. **Plus a data
+trap: MicroRTS tables must be read with `pdftotext -layout` — the default extraction reorders
+them column-wise and yields real numbers attached to the WRONG AGENT.**
+**Nine near-misses caught in the sweep's own drafts**, including **three of its own phrasings
+written inside quotation marks** — the recurring one.
+
+**Gaps:** the AI Magazine MicroRTS competition paper is unfetchable (4 routes); Kaggle
+writeups are SPA-only (Lux S2 sourced from code, not prose); **Halite I unsearched**; two
+MIT-hosted Battlecode postmortems 500 on every attempt; **RoboCup is now only PARTLY swept**.
+**No corpus cut was run.**
+
 ### Sweeps 17A + 17B (s26) — the weapon-mix question is answered MARKER by two independent paths, and the incidence question turns structural
 
 **⚠ FIRST, THE CORRECTION THAT REACHES BACKWARDS INTO THIS INDEX.** The **53.1 / 44.4 / 2.5**

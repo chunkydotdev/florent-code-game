@@ -24,9 +24,9 @@ agreements; the definition of a general team member agent architecture structure
 defining a flexible teamwork structure; the facilitation of smooth transitions among roles
 and entire formations; a method for using roles to define pre-compiled multi-step,
 multi-agent plans; and techniques for dealing with the obstacles to inter-agent
-communication during the low-communication periods of PTS domains with single-channel,
-low-bandwidth, unreliable communication during the "on-line" periods."* So *"pre-compiled
-multi-step, multi-agent plans"* is the authors' own description of their set-play mechanism,
+communication during the low-communication periods of PTS domain"* — the verified span stops
+there because the continuation contains the source's curly quotation marks around *on-line*.
+So *"pre-compiled multi-step, multi-agent plans"* is the authors' own description of their set-play mechanism,
 not a reader's gloss.
 
 **The mechanism is that the plan is not communicated at all.** It is agreed before the game
@@ -43,9 +43,13 @@ And the problem it is solving is stated in the same words we would use:
 > uncoordinated"*
 
 **Referent check.** That clause is item 3 of a list of open problems the architecture must
-answer — *"how to ensure that all agents are using the same formation; and how to ensure
-that all roles in a formation are filled: since the agents are autonomous and do not share
-memory, they could easily become uncoordinated."* The subject is the team's own agents, not
+answer. The list item before it reads *"how to ensure that all agents are using the same
+formation; and"*, and the item this clause closes reads *"how to ensure that all roles in a
+formation are filled: since the agents are autonomous and do not share memory, they could
+easily become uncoordinated."* **The two are quoted as separate spans because `pdftotext`
+emits a list numeral and a `\x0f` bullet control character between them, and that control
+character survives whitespace flattening** — see the method note in the sweep summary. The
+subject is the team's own agents, not
 the opponent's.
 
 **The runtime channel then carries only an index.** In their protocol the live message
@@ -87,8 +91,9 @@ reason is that **our version of the locker-room agreement is free.**
   only by game phase and not by map width/ore layout reproduces exactly the error our own
   width gradient already is. The trigger conditions must read geometry.
 - **Stone's agents have real memory between decisions; ours have 16 ints.** The paper's
-  agents also keep an *internal state* per agent (*"the agent's role within a team behavior
-  could be stored as part of the internal state"*). We can hold per-unit state on the
+  agents also keep an *internal state* per agent (*"role within a team behavior could be stored as
+  part of the internal state"* — the verified span starts there because the source writes
+  `agent’s` with a curly apostrophe). We can hold per-unit state on the
   `Player` instance keyed by `ct.get_id()` — this works, and
   [`the-goal-stack-beats-the-mode-flag`](the-goal-stack-beats-the-mode-flag.md) already
   documents it — but it is **not** durable across a unit's death and cannot be read by

@@ -28,8 +28,8 @@ and then ran the ablation:
 
 **Referent check.** *"the two teams"* are (i) the flexible team with changeable positions and
 set-plays and (ii) the *"default team"* with rigid positions and no set-plays; both used a
-4-4-2 formation. *"Otherwise identical"* is the authors' own single-difference claim, and it
-is the sentence that makes this an ablation rather than a matchup.
+4-4-2 formation. The phrase *"otherwise identical"* is the authors' own single-difference claim, and it
+is what makes this an ablation rather than a matchup.
 
 **Combined result, 38 games of 10 simulated minutes each:**
 
@@ -75,14 +75,16 @@ of 49"* — 49–4 across its first four games. CMUnited beat it **6–0**.
 `transfers: partial`, and the partiality is the whole point of the file.
 
 - **What transfers is the existence proof and the methodology, not the effect size.** The
-  library's standing bound — *"the library cannot adjudicate cause versus marker for us; the
-  arena is the only instrument"* — is a statement about the game-competition literature. It
+  library's standing bound — that this library cannot adjudicate cause versus marker for us
+  and the arena is the only instrument (an internal INDEX statement, paraphrased, not a source
+  quote) — is a statement about the game-competition literature. It
   survives. What changes is that **an adjacent literature does run ablations, publishes the
   populations, and states in so many words that tournament results are not validation.** The
   next time a sweep needs a controlled comparison, RoboCup is where to look first, not last.
-- **The set-play is the closest published object to what our project lead asked for** —
-  *"bigger plans than that, more steps that might make a bad tactic actually a good tactic"*
-  — and it was measured in isolation and it paid. That is a real answer to a question the
+- **The set-play is the closest published object to what our project lead asked for.** His
+  standing ask — quoted from the sweep brief, not from any external source — is *"what i would
+  like to investigate is bigger plans than that, more steps that might make a bad tactic
+  actually a good tactic"*, and the set-play was measured in isolation and it paid. That is a real answer to a question the
   library has held open since before it existed.
 - **The mechanism that made it work is cheap in our engine.** A set-play is trigger +
   behaviour + termination condition, stored in code shared by all agents. See
@@ -93,9 +95,9 @@ of 49"* — 49–4 across its first four games. CMUnited beat it **6–0**.
 ## WHAT WOULD KILL IT
 
 - **The baseline is rigid-scripted, not reactive.** Nobody here ablated against a memoryless
-  reactive agent. The measured claim is *"stored multi-step plans beat no stored plans, roles
-  held constant"*, **not** *"deliberation beats reaction"*. Anyone quoting this file must
-  quote that boundary with it.
+  reactive agent. The measured claim is **stored multi-step plans beat no stored plans, roles
+  held constant** — not *deliberation beats reaction*. Anyone quoting this file must quote that
+  boundary with it.
 - **Soccer is not our game, and the disanalogy is exactly our unifying fact.** Set-plays are
   passing sequences among mobile attackers. Our attackers are immobile, bought, and cannot
   retreat; healing beats the best damage source 2.2:1 (4.4:1 on a stacked core tile). **A

@@ -21070,3 +21070,76 @@ population, never field-in-our-games; ours labelled as ours, inline.
 game because a builder read a value the core had set on `self`. **The comm store is the only
 supported channel and its writes land next round.** Anything of mine that assumed cross-unit
 instance state is wrong; I know of none, and I am recording the fact rather than the audit.
+
+## 2026-08-10 00:5x CEST (from `date`) — RESEARCH ARM: **SWEEP 18 LANDED — MY PRE-STATED EXPECTATION WAS WRONG AND THE ANSWER TO MAGNUS'S OLDEST ASK IS 27 YEARS OLD. Plus: my dose-response "replication" was not one, and I am correcting that in place.**
+
+### 1. MY "REPLICATION" OF THE DOSE-RESPONSE WAS NOT A REPLICATION — CORRECTING MY OWN CLAIM
+I wrote, of the builder's dose-response: *"Two surfaces, two n's… That is a real replication,
+not an echo — different data path, same answer."* **That is wrong in a way that matters, and
+the builder found it by re-running at k=20 rather than by arguing:**
+
+    k=12 (published):  wins 1566.5 | losses 1618.2 | gap +51.6 | p = 0.011
+    k=20 (same test):  wins 1573.1 | losses 1601.0 | gap +27.9 | p = 0.0500
+
+**The effect HALVED as n grew and landed exactly on the conventional line.** My independent
+**+50.0 at p=0.0195** was computed **on the same 11-match window** from a different data path.
+**⇒ A DIFFERENT DATA PATH OVER THE SAME SAMPLE CONTROLS FOR DECODER ERROR, NOT FOR SAMPLING
+ERROR.** It cannot detect an estimate inflated at small n, because it inherits the sample.
+**I called it independent confirmation; it confirmed the path and reproduced the
+over-estimate.** Anyone quoting **+51.6** — or my **+50.0** — is quoting a superseded number.
+
+**The shape is new for tonight's list and it is not the "check inherited the fault" family:
+AN ESTIMATE PUBLISHED AT THE n WHERE IT LOOKED LARGEST.** The defence is not a better test —
+**it is re-running the same test as n grows and being willing to lose the finding.**
+
+### 2. SWEEP 18 — **(C) IS A SURPRISE AND IT RE-SCOPES SWEEP 15'S HARD NEGATIVE**
+I pre-registered *"expect not to find a published planner-vs-reactive ablation."* **Wrong.**
+**Stone & Veloso, RoboCup 1999: teams "otherwise identical", 38 games, set-plays alone →
+28 wins to 5, 187 goals to 108**, and they beat their own ablation **6-0** in a live
+tournament.
+
+**⇒ Sweep 15's *"nobody, anywhere, separated cause from marker"* is TRUE OF GAME COMPETITIONS
+AND FALSE OF THE ADJACENT ACADEMIC LITERATURE — which sat in an unswept row (RoboCup) the
+whole time.** The library was searching where the negative is real. **Battlecode remains a
+clean negative; the generalisation does not survive.** **Boundary that must travel with it:
+the baseline is RIGID-SCRIPTED, not reactive — the claim is *stored plans beat NO stored
+plans*, not *deliberation beats reaction*.**
+
+### 3. THE ANSWER TO MAGNUS'S ASK FITS OUR CONSTRAINTS EXACTLY, AND IT IS FREE
+**RoboCup's "locker-room agreement": the plan is NEVER TRANSMITTED.** It is pre-agreed and
+**identical in every agent**; the channel carries only a **formation index and a timestamp**.
+**We already have the entire mechanism — the same `main.py` runs in every unit, so a
+module-level mode table is shared at ZERO bandwidth.** The 16-int store then carries **one
+small nonnegative int**, at which point **every measured hazard of that store becomes
+harmless**: last-writer-wins is fine when all writers agree, the one-round buffer is fine for
+a mode index, and the negative-write raise cannot fire. **Plans must name ROLES, NOT UNITS** —
+ids are one global counter shared with resource stacks, and raider lifetime at r150 is 6 rounds.
+
+### 4. **MY BRIEF'S EXPECTED ANSWER WAS WRONG IN THE WAY THAT DECIDES THE PLANK**
+I wrote *"a committed MODE with a cheap abort predicate, rather than a plan representation."*
+**A mode table IS the plan representation — just not the one people picture.**
+**What lost everywhere is a SEQUENCE. What won is a MODE.** MicroRTS, at **10× our CPU
+budget**: **AHTN planner 24.0, NaïveMCTS 13.3 (last of ten)** against LightRush's **55.3**,
+and **three hand-coded scripts each beat the HTN planner 100.0%, 60 of 60.** PurpleWave
+**deleted 8,596 lines / 221 files** of declarative gameplan DSL and went 82.29% → 82.95%.
+**⇒ Build a TABLE OF INDICES, not a queue.** Two literatures converge on it independently.
+
+**And "a cheap abort predicate" is THREE predicates doing three jobs** — **VALIDITY**
+(Overmind splits actor from world: `isValidTask` vs `isValidTarget`), **PROGRESS**
+(Steamhammer `ProductionJamFrameLimit = 360`), and **GRANULARITY**, the one we lack:
+**replanning from scratch on every disruption produced an INFINITE RESTART LOOP and lost the
+matchup; classifying disruptions and patching in place won it.** Commitment itself is **one
+constant added to last round's answer** — Steamhammer `+= 13/11/4` under `// Hysteresis.`
+
+**⚠ THE SWEEP'S OWN LIMIT, kept: none of this answers whether such a mode converts games
+HERE. It licenses the SHAPE, not the content.**
+
+**Verification: 292 spans, 288 verbatim over 61 primary documents; summary audited separately
+61/63; the 4 non-matching are labelled internal quotations. Nine near-misses corrected in the
+sweep's own drafts, three of them its own phrasings written inside quotation marks.**
+**Three new method traps, each of which produced a FALSE FAIL** (JSDoc `*` continuations
+survive flattening; `pdftotext` emits `\x0f` bullet controls *inside* sentences; inline
+`<code>` injects spaces) **plus a data trap: MicroRTS tables need `pdftotext -layout` or the
+default extraction attaches real numbers to the WRONG AGENT.**
+**Gaps: Halite I unsearched; RoboCup only PARTLY swept; two Battlecode postmortems 500 on
+every attempt; no corpus cut run.** `INDEX.md` updated in the same commit, per the contract.

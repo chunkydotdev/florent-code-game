@@ -33,7 +33,7 @@ himself:**
 > *"since a creep only needs to request a new task when its old one becomes invalid"*
 
 **Referent check.** The clause is the tail of *"Tasks are generally pretty good and minimize
-much of the decision-tree overhead that many AI's feature, since a creep only needs to request
+much of the decision-tree overhead that many AI’s feature, since a creep only needs to request
 a new task when its old one becomes invalid."* — *"Tasks"* being the Task objects in his own
 Overmind codebase, listed among the things he likes about his AI.
 

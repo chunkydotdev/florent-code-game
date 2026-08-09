@@ -85,7 +85,8 @@ one choice point — not constructing a plan.**
 ## WHY IT MIGHT TRANSFER
 
 - **This is the direct empirical answer to sub-question (D), with populations, in an RTS.**
-  Nothing else in the library comes close to *"the planner lost 0–60 to a script"*.
+  Nothing else in the library comes close to a scripted policy winning 60 of 60 starting
+  positions against a planner.
 - **The budget comparison points the wrong way for us.** These results were measured at
   **100 ms per decision cycle for the whole army**. We get **10 ms per unit per turn**, and
   exceeding it silently discards that unit's turn. We are an order of magnitude below the

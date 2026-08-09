@@ -10,7 +10,7 @@ transfers: yes
 
 BOSS is a real planner: it searches for a *sequence* of builds that achieves a stated goal
 and returns it. Steamhammer inherited it from UAlbertaBot. In 2017 its maintainer wrote a
-post titled *"Doing away with the BOSS"* laying out why he wanted it gone, and the argument
+post titled *"doing away with the BOSS"* — lower-case `d` in the source — laying out why he wanted it gone, and the argument
 is structural rather than about tuning:
 
 > *"BOSS also works more effectively with long build orders, which means that bots tend to
@@ -23,10 +23,10 @@ players and Steamhammer forks that use BOSS; *"BOSS"* is introduced in the first
 The crux, and it is the sentence worth carrying:
 
 > *"If you say you want an observer, BOSS promises that by the end of the build order you
-> will have an observer; that's the only promise."*
+> will have an observer; that"*[’s the only promise.]
 
-**(Glyph note: the source renders `that's` with a curly `’`; the ASCII form does not appear
-on the page. The verified string ends at `that`.)**
+**(Glyph note: the source renders `that’s` with a curly `’`. The bracketed tail is the
+source's continuation, shown for sense; the verified literal span ends at `that`.)**
 
 **And the enumeration of what a bot holding a long plan can do when it learns something new**
 — four options, each with a named cost. Option 2 verbatim:
@@ -36,7 +36,8 @@ on the page. The verified string ends at `that`.)**
 > occurs."*
 
 **Referent check.** *"It"* is *"the bot"* — the preceding sentence reads *"When the bot makes
-a discovery … it has four choices."* The other three are: insert the reaction into the plan
+a discovery (“uh oh, we need detection” or “that’s too many tanks, I should make zealots
+instead of dragoons”), it has four choices."* The other three are: insert the reaction into the plan
 (no overlap with regular production), cancel and replan including the reaction (slow, because
 BOSS has no priorities), or cancel and replan with only the reaction (fast, everything else
 stops).
@@ -107,7 +108,7 @@ build,** and it is made by someone who shipped one for years.
 ## BUILDER HOOK
 
 Not a build — a **design rule to apply to the next plank that proposes a sequence**: any
-multi-round commitment we add must be able to answer *"what do I want this round?"* without
+multi-round commitment we add must be able to answer the question *what do I want this round* without
 reference to how far through it we are. If the only way to know is "step 4 of 7", it has
 BOSS's defect. The cheapest concrete form that passes the test is a mode index recomputed
 each round from world state, with the *content* of each mode in code. If a plank proposes a

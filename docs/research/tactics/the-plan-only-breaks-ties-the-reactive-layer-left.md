@@ -82,8 +82,8 @@ precedence rule assigns each to the layer where it won.
 ## WHAT WOULD KILL IT
 
 - **A tie-breaking plan can never redeem a locally-bad step, which is the thing our project
-  lead actually asked about.** *"more steps that might make a bad tactic actually a good
-  tactic"* requires the plan to sometimes **beat** the reactive layer, not defer to it.
+  lead actually asked about.** his ask for *"more steps that might make a bad tactic actually a good
+  tactic"* (quoted from the sweep brief, not from a source) requires the plan to sometimes **beat** the reactive layer, not defer to it.
   **This file is explicitly the conservative option and should not be sold as the answer to
   that question.** The answer to that question, if there is one, is
   [`the-plan-lives-in-the-code-and-the-store-carries-its-index`](the-plan-lives-in-the-code-and-the-store-carries-its-index.md)
@@ -91,7 +91,7 @@ precedence rule assigns each to the layer where it won.
 - **wololo placed 7th, not 1st, and reports no ablation.** He describes the design and his
   reason for it; there is no comparison against a version without the macro step. Evidence is
   `documented` for the architecture.
-- **"Ties in most cases" is his game, not ours.** If our move scoring is fine-grained enough
+- **Ties being the common case is his game, not ours.** If our move scoring is fine-grained enough
   that ties are rare, the plan layer never gets to act and this buys nothing. **That is
   measurable before anything is built.**
 - **Jay Scott's own corroboration is explicitly hedged** (*"it seems to me"*) and carries no

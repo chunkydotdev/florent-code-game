@@ -67,8 +67,8 @@ what the world does.
 > *"// Start to defend when enemy comes within baseDefenseRadius."*
 > *"// Stop defending when enemy leaves baseDefenseRadius + baseDefenseHysteresis."*
 
-A Schmitt trigger on a spatial threshold, with the only state being *"does the squad already
-exist"*.
+A Schmitt trigger on a spatial threshold, with the only state being whether the defence squad
+already exists.
 
 **6. A low-pass filter instead of a threshold — Steamhammer's engage decision.** From
 `Steamhammer/Source/Micro.h`:
