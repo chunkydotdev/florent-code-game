@@ -188,6 +188,83 @@ exception permanently destroys that unit for the match.
 
 | **14** | **RE-AIM of topics 1 + 11 at the PROGRAMME's own tension** — `KILL_WINDOW_RND: 250` demands the one thing every prior sweep concluded you mostly cannot do. *What CONVERTED a deadline attack into a dead base elsewhere, and what KILLED the ones that failed?* | **SWEPT** (s25). 16 files + summary. **97 strings verified verbatim, 4 near-misses corrected, 2 claims CUT unverified.** **Corrects sweep 2's clock claim** (see standing context) and **found a bug in this library's own quote-verification command** (see method block above). | 2026-08-09 | [sweep 14](2026-08-09-sweep-14.md), [rush-as-fallback-when-the-opening-is-denied](rush-as-fallback-when-the-opening-is-denied.md), [the-all-in-is-a-counter-strategy-not-a-strategy](the-all-in-is-a-counter-strategy-not-a-strategy.md), [the-rush-cost-budget-gate](the-rush-cost-budget-gate.md), [one-cheap-interceptor-decides-the-matchup](one-cheap-interceptor-decides-the-matchup.md), [reactive-spawn-is-the-sufficient-anti-rush](reactive-spawn-is-the-sufficient-anti-rush.md), [the-rush-that-cannot-transition](the-rush-that-cannot-transition.md), [the-attack-that-arrives-too-late-or-at-nothing](the-attack-that-arrives-too-late-or-at-nothing.md), [spawn-the-attack-at-the-target-not-a-march](spawn-the-attack-at-the-target-not-a-march.md), [map-size-decides-whether-the-rush-is-legal](map-size-decides-whether-the-rush-is-legal.md), [late-rush-beats-the-anti-rush-reflex](late-rush-beats-the-anti-rush-reflex.md), [no-lose-engagement-geometry](no-lose-engagement-geometry.md), [the-defenders-reserve-and-what-defeats-it](the-defenders-reserve-and-what-defeats-it.md), [retreat-and-return-under-the-counter-unit](retreat-and-return-under-the-counter-unit.md), [wall-off-the-forward-plant-and-leave-a-rebuild-gap](wall-off-the-forward-plant-and-leave-a-rebuild-gap.md) |
 
+| **15** | **RE-AIM at the incidence cut's surprise** — our build PRODUCTION is a constant (17/30 r0-50 medians identical between kill and no-kill games; CV **0.09** vs the field's **0.26**) and **CONTACT is what varies**. *(A) What was IN the trigger? (B) Did anyone ever separate contact-as-CAUSE from contact-as-MARKER? (C) Among fixed-opening bots, what varied after the opening and on what signal?* | **SWEPT** (s25). **19 files. 128 external verbatim + 7 internal, 8 near-misses corrected, 2 claims CUT.** **(B) is a clean measured negative.** | 2026-08-09 | [sweep 15](2026-08-09-sweep-15.md), [nobody-separated-cause-from-marker](nobody-separated-cause-from-marker.md), [self-play-inflates-the-effect-by-about-2x](self-play-inflates-the-effect-by-about-2x.md), [self-play-ab-has-the-wrong-population](self-play-ab-has-the-wrong-population.md), [branch-on-a-milestone-not-a-round-number](branch-on-a-milestone-not-a-round-number.md), [the-field-warns-against-early-contact](the-field-warns-against-early-contact.md), [infer-their-bank-from-their-spending](infer-their-bank-from-their-spending.md), [the-scout-that-pays-for-itself](the-scout-that-pays-for-itself.md), [the-trigger-rides-on-a-unit-already-going-there](the-trigger-rides-on-a-unit-already-going-there.md), [local-force-count-is-the-engage-gate](local-force-count-is-the-engage-gate.md), [arm-and-disarm-on-different-thresholds](arm-and-disarm-on-different-thresholds.md), [the-goal-stack-beats-the-mode-flag](the-goal-stack-beats-the-mode-flag.md), [defenders-advantage-has-exactly-two-mechanisms](defenders-advantage-has-exactly-two-mechanisms.md) |
+
+### Sweep 15 (s25) — the negative is the finding, and it bounds this whole library
+
+**(B) NOBODY, ANYWHERE, SEPARATED CAUSE FROM MARKER — and that is measured, not asserted.**
+Across all **22 official Battlecode postmortems 2019-2026**, these strings appear **zero
+times in every document**: `correlat`, `causal`, `confound`, `ablat`, `regression`,
+`hypothes`, `sample size`, `noise`, `misleading`, `coincidence`, `p-value`, `random seed`,
+`number of games`. Halite, Lux, CodinGame and Terminal return the same negative
+independently. **The question is not answered badly — it is not asked.**
+
+**⇒ THE LIBRARY'S EVIDENCE CLASS IS NOW BOUNDED, and this is the most important line in
+the index.** Every "what converted a rush" finding in sweep 14 and every finding in sweep
+15 rests on **winners describing their own winning games.** Since nobody ever separated
+cause from marker, **the library cannot adjudicate that question for us. The arena is the
+only instrument — and that is now a SOURCED conclusion rather than a default.**
+
+**What the field has instead is a literature on the LIMITS OF SELF-PLAY A/B, and it is
+directly load-bearing on how we test.** The **BC2025 winner overrode its own A/B twice and
+won**, on the stated ground that *"our bot wasn't super aggressive, and we believed that
+this, in theory, SHOULD be better against the teams that we have the worst matchups
+against."* **That defect is exactly ours** — the self-play pool does not contain the
+opponent behaviour the feature is designed to read, and our own opening is a near-constant
+(CV 0.09) in a pool we dominate 87-90%. And one competitor **published the same feature
+measured on both instruments**: *"Locally, in self-play, amputating this opponent modelling
+causes a loss of ~30% in winrate"* against *"~15% seen with CGBench"* — **roughly 2×
+inflation, same sign**, with a usable mitigation (amputate, during the self-play leg, the
+module whose accuracy is inflated by the opponent being a copy of you). Halite II's winner
+independently: local testing *"became increasingly inaccurate and pointless over time."*
+
+**Three qualifications to standing context, all narrowing rather than reversing:**
+1. **Sweep 14's trigger is filled in, and it is ECONOMIC.** Our own corpus cut says the
+   enemy-side signal is *their economy failing*; Java Best Waifu and Shummie independently
+   keyed on **enemy economic state**. *"Commit when their economy has not come up"* is
+   **doubly sourced**; *"rush when they look aggressive"* is sourced by **nobody**.
+2. **`KILL_WINDOW_RND: 250` is a round number, and NO winning bot in this sweep branches
+   on a round number.** Every branch found is on an achievement, a structure count, a
+   resource threshold, or map geometry. **This does not contradict the PROGRAMME — the
+   window is a target, not a trigger — but the IMPLEMENTATION of a commitment should
+   probably not be a clock.**
+3. **The RTS leg landed after the summary was written and only the re-verifiable part was
+   published. HOLDING IT WAS RIGHT, AND THE HELD CLAIM TURNED OUT TO BE WRONG.** The
+   unpublished item was *"PurpleWave branches at ~1:32 off a single enemy
+   building-completion timestamp"*, which would have **superseded** the earliest branch
+   point published under (C). **Its own author then corrected it before anyone published
+   it: the strings verify but the framing did not. `1:32` is a REFERENCE CONSTANT recording
+   the fastest-observed 4-pool, not a decision boundary.** The threshold the fingerprint
+   actually tests is **1:55** (derived as `NinePool_PoolCompleteBy` 1:58 minus 3 s), and the
+   earliest window opening anywhere in the fetched code is **1:30**, on a *negative-evidence*
+   "Main empty" rule. **And what the fingerprint switches TO is unverified** — it sets a
+   label; the consequent lives in gameplan code never fetched. **This is the strongest
+   argument in the library for the hold-what-you-cannot-re-verify rule: the held claim was
+   a true string with an invented referent, and holding it is the only reason it never
+   entered.** **New URL trap: BW `liquipedia.net/starcraft/Rush` is a PLAYER PROFILE, not
+   the strategy article.**
+
+**OUTSTANDING FROM SWEEP 15 — relayed to me but NOT verified by me, therefore claims and
+not findings.** The RTS leg's full packet (24 re-verified strings) could not be routed
+peer-to-peer and reached me only as a summary. Recorded so the next session can close it
+rather than re-derive it:
+- **Question (B)'s hard negative is reported to SURVIVE two challenges** — a "Microwave
+  confounder" that is about *scouting* and self-hedged, and a "Facebook control run" that
+  controls **build-order switching on/off, not aggression**. A 49-paper grep is reported to
+  find nothing on attack-timing causality. **If true this strengthens (B); I have not seen
+  the strings.**
+- **No FORCE-RATIO threshold for first contact is reported to exist anywhere in the RTS
+  corpus** — the closest being UAlbertaBot's `bool retreat = score < 0;`, *a simulated
+  outcome, not a ratio*. **Note this does NOT conflict with
+  [`local-force-count-is-the-engage-gate`](local-force-count-is-the-engage-gate.md)**, which
+  documents a **signed count**, not a ratio — if the UAlbertaBot string verifies it is a
+  *fifth* league independently converging on a **sign**, which would strengthen that file.
+- **A GLYPH TRAP for anyone re-grepping these sources:** Liquipedia and source code use
+  **ASCII `'`**; satirist.org and PDF-extracted text use **curly `’`**. Combined with the
+  `\f` flatten fix above, a literal grep needs the right apostrophe *and* collapsed
+  whitespace. Two Liquipedia quotes (Rush, Cheese) are **truncated mid-sentence because
+  `scouting`/`All-In` are inline hyperlinks**, so the full sentences will never grep.
+
 ### Sweep 14 (s25) — the one sentence a builder should take from it
 
 **Every deadline attack that converted elsewhere fired as a CONDITIONAL FALLBACK keyed
