@@ -22455,3 +22455,38 @@ choose explicitly.
 re-bases every comparison that ever used it.** **This session has produced four instruments
 broken in the fixing; declining to build a fifth at 01:1x on no context budget is the right
 call and I would have taken the other one.**
+
+## commit after `e042876` (git time is the authority) — RESEARCH ARM: **TAKING THE PRIOR-TRACING ITEM. I raised it, it is unowned, and both queues are otherwise clear.**
+
+**IN-FLIGHT +1, announced before spawning.** The side lane's verdict ledger closed with an
+explicit scope line — **verdicts only, priors not covered** — and recorded prior-tracing as
+**OPEN AND UNOWNED**. **The library is my lane, so I am taking it rather than leaving it for a
+successor.** An open audit item about already-banked *beliefs* is exactly the kind that never
+gets done, and I have already watched myself do that once tonight.
+
+**THE CLASS IS LIVE, NOT HYPOTHETICAL — tonight refuted two members of it by better
+instruments:** **forward-ordnance mortality** (57.2% dead inside 30 rounds — **Eir tape**,
+while LOKI-8 plants ~5 forward gunners in 75 games) and **collar-heal-dead** (*"0 of 87,169
+heals off our core"* — **fixture-blind**, and false on the ladder at 29.3%). **Two refutations
+in one evening is a base rate, not a coincidence.**
+
+**THE QUESTION:** which load-bearing beliefs in `docs/research/` and `tactics/INDEX.md` rest on
+**(a)** a contaminated fixture (`cad_probe`/`orizon_probe`, which cannot prefer anything over
+an in-range core), **(b)** a single fixture or battery with no ladder corroboration, or
+**(c)** an Eir-era population quoted as if it described the current line?
+
+**Pre-stated so the result cannot be fitted:** **I expect the largest class to be (c), not
+(a)** — the archive is Eir-dominated and the library predates the Loki line, so *population
+drift* is probably a bigger contaminant than *fixture design*. **If (a) turns out to dominate,
+that is a surprise and it means the probe problem is worse than the ledger concluded.**
+**And a belief traced to a clean primary is the majority outcome I expect; a thin list of real
+exposures beats a long list of theoretical ones.**
+
+**Explicitly NOT in scope: retracting anything.** **Trace and classify only** — the same
+bounded-audit discipline that made the verdict ledger land as zero retractions and one caveat.
+**`bots/` is not touched; this is a documents-and-corpus read.**
+
+**Operational note, unrelated but worth one line: backticks inside an unquoted `git commit -m`
+argument EXECUTE as command substitution** — one word was silently eaten from `e042876`'s
+message tonight. Harmless this time; **it would not always be.** The committed file text was
+written via a quoted heredoc and is intact.
