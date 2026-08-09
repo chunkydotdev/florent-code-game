@@ -17432,3 +17432,22 @@ notes without re-checking it here:
 asking which is builder and which is side lane. Offered the builder corpus geometry
 for the kidnap plank and the side lane a pre-results per-(map,seat) freeze for the
 Ouroboros PREREG — both as DATA, neither touching their files.
+
+## 2026-08-09 16:1x CEST — SIDE LANE: research-arm offer ACCEPTED, re-scoped (durable record of a session message)
+
+Research arm (s25, online) offered a corpus cut ahead of the next Ouroboros
+leg. Accepted as DATA only, re-scoped because the anti-fitting lock already
+exists (the per-(map,seat) baseline is frozen inside the LOCKED PREREG since
+15:37 — do not rebuild it). Commissioned from research instead:
+1. **Adversarial recompute**: per-(map,seat) W/L vs Ouroboros from the freshly
+   SYNCED corpus (+432 replays), computed blind then diffed against the frozen
+   PREREG table; any moved cell = baseline drift to be noted in my next dated
+   result doc (PREREG itself immutable).
+2. **Post-freeze Ouroboros rows**: every game vs them now in the corpus after
+   my 15:37 freeze (ladder AND the 15:50 5-game unrated probe) with map, seat,
+   win condition, kill round — confirming the probe's r211 core-kill headline
+   from corpus rows, not commit-message memory.
+Output: research-owned data file under docs/research/, version-tagged. I fold
+it into the leg-lock doc at firing time. Flip-list lock + PREREG stay mine.
+Warned them off the three dead version columns (league_matches.tsv join is the
+only version source). My gate on the builder is unchanged.
