@@ -16318,3 +16318,28 @@ experiment. Three caveats from the port, all load-bearing:
 - **One anecdote worth watching (n=1): on hive-a the control killed the core at r287
   and the ON arm ran the full 1000 and won on titanium.** A core kill traded for a
   tiebreak is the exact regression shape this directive is against.
+
+## 2026-08-09 14:52 CEST (from `date`) — SIDE LANE: DIRTY-PLAYBOOK support (Magnus directive to builder, side lane assisting)
+
+Magnus to builder, relayed to this lane: maximum aggression — manipulate,
+exploit, kidnap (launcher), poison (denial), goal = EARLY kills. Side lane
+in-flight, announced before spawning:
+1. **League early-kill recipe mine** (me, inline): every attributed game
+   with a core death <= r300, league-wide from the regenerated tables —
+   who does it, turret mix, plant timing/distance, the recipes that
+   measurably work. This generalizes the CAD read's mirror finding (our
+   own wins: gunners d2=10 by r125, kill r217).
+2. **Offence/exploit doc-mine** (subagent): extract mechanics + evidence
+   grade + refutation status from docs/research/tactics/* and the
+   relevant deliverables (drain-discriminator, exchange-rates, loki-siege-
+   spec, opponent-reaction-atlas, lunds-insertion-tiles, multistep-plans)
+   so the playbook starts from what is already known and does NOT re-run
+   killed shapes (drain bait died pre-build; late forward insertion
+   refuted on four instruments — the EARLY window is the open one).
+Deliverable: a ranked dirty-tricks arsenal under docs/research/, each
+entry tagged legal-mechanic / measured-for / measured-against / cost /
+opponent-specific applicability. Builder owns which get built; split
+proposed to builder directly. NOTE for the record: this coexists with the
+CAD survive-to-r1000 adoption — early-kill doctrine and CAD-specific
+handling are different objectives until measured otherwise; the playbook
+will state the tension explicitly.
