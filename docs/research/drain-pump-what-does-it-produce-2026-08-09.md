@@ -43,70 +43,48 @@ Titanium value lost per game at base cost: **US 360 Ti** (223 of it *builder bot
 > 16.9%), so we really do lose a larger share of our cheap buildings. **What does
 > not:** any claim that the field's losses are skewed expensive relative to ours.
 
-**And the rate table, which is the version that survives the correction:**
+**And the rate table, which is the version that survives the correction — ALL SEVEN
+ROWS, no selection:**
 
-| entity | US built | **US lost%** | THEM built | THEM lost% | rate gap |
+| entity | US built | **US lost%** | THEM built | THEM lost% | gap |
 |---|---|---|---|---|---|
-| **builder_bot** | 16,260 | **57.3%** | 13,024 | 44.2% | **+13.2pp** |
-| harvester | 9,400 | 23.8% | 8,237 | 12.6% | **+11.3pp** |
+| **barrier** | 543 | **52.3%** | 2,557 | 32.4% | **+19.9pp** |
+| builder_bot | 16,260 | 57.3% | 13,024 | 44.2% | +13.2pp |
+| harvester | 9,400 | 23.8% | 8,237 | 12.6% | +11.3pp |
 | conveyor | 74,344 | 24.2% | 42,393 | 16.9% | +7.3pp |
 | gunner | 2,657 | 55.9% | 11,186 | 50.0% | +6.0pp |
 | **sentinel** | 2,967 | 43.4% | 2,283 | 44.9% | **−1.6pp** |
+| **launcher** | 835 | 27.8% | 865 | 42.5% | **−14.8pp** |
 
-**We lose a higher fraction of everything we build except sentinels.** That is a
-broad attrition disadvantage, not a subsystem one — and **the single entity where we
-are at parity is the sentinel**, which is also the one that sits at home and whose
-line passes through friendlies.
+> ### ⛔ SELECTION ERROR (builder arm) — I first published FIVE of these seven rows
+>
+> I omitted **barrier (+19.9pp, our worst row)** and **launcher (−14.8pp, our best
+> row)**. **This was not a threshold: I hardcoded a five-name list**, having printed
+> all seven in an earlier query for a different purpose. **Five rows already
+> supported the sentence I was writing and the two that didn't fit were not in the
+> table.**
+>
+> **The builder's rule, adopted and general: a table filtered to the rows that carry
+> the argument is a DIFFERENT OBJECT from the table. State the selection rule, or
+> print all the rows.** It applies to every table either arm produced today.
+>
+> **And the full table is a better finding than the filtered one.** My reading —
+> *"everything except sentinels"* — becomes mechanical with both rows in:
+> **the only two entities we lose LESS often than the field are the SENTINEL and the
+> LAUNCHER, both static home units. Everything mobile or economic we lose faster,
+> and our worst row is the BARRIER — the cheapest, purest defensive object on the
+> board — at +19.9pp.**
+>
+> *(Thin-n note: barrier n=543 ours against 2,557 theirs; launcher 835/865. Both are
+> an order of magnitude below the conveyor and builder rows and should carry less
+> weight, which is a selection rule — so it is stated.)*
 
-**But "2,708 Ti of their shots went into a 3 Ti object" is an EXCHANGE-RATE
-statistic. It says what they spend. It does not say what we get.** That is exactly
-the shape of *"our forward turrets survive at 19%"* — true, clean, and silent on
-purpose. **The lesson from that episode is now standing: before recommending
-something, measure what it PRODUCES, not what it costs the other side.**
-
-## 1. The obvious test is confounded, and I am not offering it as evidence
-
-Enemy shots per round against our win rate, length-controlled, 1,255 games:
-
-| their shots/round | median | **our win%** |
-|---|---|---|
-| Q1 | 0.06 | **80.9%** |
-| Q2 | 0.28 | 62.2% |
-| Q3 | 0.49 | 48.6% |
-| Q4 | 0.77 | 31.1% |
-| Q5 | 1.24 | **25.1%** |
-
-Monotone and steep against us. If enemy ammo were scarce and draining it were
-profit, the slope should point the other way.
-
-**It does not refute the drain pump.** Enemy shot count is an **opponent-strength
-proxy** — a winning opponent shoots more because it has more turrets and more
-targets. **The causation almost certainly runs backwards.** This is the
-opponent-thermometer error already catalogued twice today
-(`middle-game-hazard-and-economy-2026-08-09.md` §3), and calling this table a
-refutation would be committing it a third time.
-
-**What it does establish is narrower and still useful: the naive prediction fails,
-so the obvious test cannot discriminate, and the drain pump must not be built on
-the exchange-rate number alone.**
-
-## 2. The two cuts that would discriminate
-
-**Neither is runnable from our corpus — shot *targets* are not decoded here; they are
-in the third lane's `rx` decode.** Both have been requested.
-
-1. **Hold total enemy shots roughly constant; vary the SHARE absorbed by cheap
-   healed buildings.** If, at a fixed level of enemy shooting, a higher
-   absorbed-share predicts a better outcome for us, the drain is real and worth
-   siting for. If the share does not move the outcome, those shots were going to be
-   wasted anyway and baiting them buys nothing.
-
-2. **Cheaper, and a cleaner causal chain: does the opponent's TITANIUM DELIVERED
-   fall when their absorbed-share is high?** Ammo is bought 1:1 from titanium, so a
-   genuine drain should show up as *less economy for them*, measured independently
-   of the fight. **This routes around the dominance confound entirely**, because
-   delivery is not a function of who is winning the exchange in the way shot count
-   is.
+**Why this reframes four null results.** A broad attrition disadvantage across five
+unrelated entity types is not a subsystem problem. The turret subsystem the builder
+spent the day turning is **2.12 gunners and 2.36 sentinels a game**, inside a bot
+losing **57.3% of its builders, 24.2% of its conveyors and 52.3% of its barriers.**
+**The four knobs read null because the subsystem was never where the loss was** —
+which explains all four better than any of their individual post-mortems.
 
 ## 2b. The largest un-examined line: builder bots
 
