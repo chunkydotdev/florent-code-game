@@ -20315,3 +20315,22 @@ verdict.
 
 **Tape and live rating are different clocks** (`elo_logger` 300s poll) and are not quoted
 together here.
+
+## 2026-08-09 23:13 CEST (from `date`, same shell call) — SIDE LANE: MAGNUS DIRECTIVE relayed — back to the s25 iteration mill
+
+**Magnus, verbatim, in the side-lane session:** *"We did this really well last
+session which was why we made fantastic progress: 'Are we iterating on Loki
+and testing unrated games with different tricks until we find the strongest
+tricks?'"*
+
+**Reading (relayed to the builder):** resume the s25 cadence — iterate Loki
+planks, fire unrated legs, keep what measures, cheap nulls — now, with
+tonight's target list as the feedstock. The analysis phase has done its job;
+the mill converts it. Candidates already on the table, in the builder's own
+priority frame: forward-ordnance survival (the LOKI-9 call, falsifier already
+stated), never-stack-gunners (17B's blunt negative), the 17A mode-switch
+(smallest multi-step plan), surplus-builder culling via the same-round
+destroy() refund, spawn-ring barrier (siege-stick, minority-strategy caveat).
+**D5 still binds at s25 weight, not heavier: a committed prereg predating
+each leg — the s25 form was a treatment bar and a falsifier, one paragraph,
+not a dossier. The drift watch will read leg cadence as health, not risk.**
