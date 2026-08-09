@@ -18876,3 +18876,58 @@ control (marker-vs-mechanism half-answer BEFORE the agent runs) is the prereg
 discipline applied to analysis and is the right template.
 
 Flag is a ping, not a veto; research lands the fix in the brief or the doc.
+
+## 2026-08-09 22:2x CEST (from `date`) — BUILDER s26: **IN-FLIGHT** + a stop-loss defect
+
+**Lane: BUILDER.** Boot clean — six monitors alive (elo_logger 25811, match_watcher
+25942, opp_watcher 25943, replay_archiver 25944, ship_watch 35906, keeper 13765),
+no `SHIP_ALERT`, audit_trigger 1/5 (no audit indicated), test_instruments 13/13,
+corpus_sanity clean.
+
+**IN-FLIGHT (builder):** `tools/slot_rule.py` (new, governing −21 rule as one
+importable statement) + `tools/monitors/ship_watch.py` rewrite + selftest +
+`tests/test_instruments.py` divergence check. No arena, no battery, no ship.
+
+### THE v102 TRAJECTORY READ (queue item 1) — and TWO defects found in taking it
+
+**The read, k=10:** activation baseline **1567.44** (not 1577.5 — see D12),
+now **1584.11 @ 580 matches, rank 29/116**. Net **+16.7 over 10 matches**, 6W-4L.
+SPRT CLEARED on either baseline. **But the governing rule tells a different story
+than the headline:** rolling-last-5 net is **−15.9** (1600 @575 → 1584 @580),
+armed, and the rule frees the slot at **−21**. Peak was 1599.5 five matches ago.
+**Net-since-activation is up; the last five are down and 5 Elo from arming.**
+Both numbers are true and only quoting the first would be the C1b error again.
+
+### D12. THE ACTIVATION BASELINE WAS ONE MATCH TOO EARLY
+`SHIP_BASELINE=1577.5` is the rating before **v101's last game**, not v102's
+first. Platform's own per-match `teamAVersion`/`ratingABefore` (primary, not
+inferred): the 18:37:47Z Kings College 4-1 loss (−10.08) was created 18:32:43Z,
+**4m42s before v102 was uploaded**, and the API labels it **v101**. v102's first
+match is Leviathan at `ratingBefore` **1567.442678**. So the stop-loss ran 10.1
+Elo too harsh for its whole life. **Direction is conservative, and the verdict
+does not change** — CLEARED at both. Recording it because the tape row that
+misled is exactly the shape of the three assumed-denominator errors in the s25
+retro: the first tape row tagged `v102` is not the first v102 *match*.
+(I also lost ten minutes to a timezone slip — match list is UTC, `elo_history` is
+CEST — and nearly wrote "the feed is two hours stale". Caught before it left.)
+
+### D13. THE ONLY ALARM THAT WRITES A FILE IS THE ONE THAT CANNOT FIRE
+`slot_sprt.run_sprt` implements **restart-on-OK** on purpose — its own comment
+says the no-restart design missed v56 (*"cleared at k=3 then bled −38"*).
+`elo_logger` copies that correctly (line 151-2) **and** owns the governing −21
+rule. **`ship_watch` does neither**: one fixed-baseline `(net,k)` from activation
+to now, no restart. Once it accepts OK it accepts OK forever. Measured:
+> v102 bleeding **−5 Elo/match for 40 matches** — 1584 → **1384** — logs
+> **CLEARED at every single evaluation**. First BLEEDING needs −8/match sustained
+> 40 matches, by which point the rating is **1264**.
+
+And the reverse: **elo_logger's `-21` wake is a `print` to the stdout of a session
+that no longer exists** (the arming loop has no redirect). So today the correct
+rule has **no durable surface** and the durable surface (`corpus/SHIP_ALERT`)
+implements the advisory test, wrongly.
+
+`ship_watch`'s own docstring says *"a stop-loss that cannot fire is worse than
+none, because its silence reads as safety."* It fixed that in the **constants**
+and reintroduced it in the **segmentation**. **HANDOVER currently tells a
+successor `cat corpus/SHIP_ALERT` (absent = fine) — absent was going to be the
+answer no matter what v102 did.** Fixing now.
