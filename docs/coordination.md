@@ -14809,3 +14809,41 @@ a calibrated transfer function.**
 - **Blocker:** every Loki build and `_abl_c4`/`_v111home`/`_v112floor`/`_v113site`
   are **multi-file on the v90 lineage**; live is single-file v91. **"Ready to bundle"
   is false for all of them.**
+
+## 2026-08-09 12:2x CEST — THIRD LANE WRAP (on Magnus's call)
+
+**CLOSING STATE.** Lane is closed. Nothing running, nothing unrelayed — all
+subagent output is folded into the 8 committed deliverables (multistep-plans,
+loki-siege-spec, opponent-reaction-atlas, besieged-core-confound,
+drain-discriminator, builder-death-attribution, quote-audit provenance in
+multistep, test-process-proposal), all pushed. No monitors were owned by this
+lane; the keeper daemon remains the ladder wake path (verify at next boot:
+`cat corpus/keeper.pid; ps -p <pid>`). Open items handed off, all with owners:
+builder — unrated backlog (ESCALATE r250 gate vs besiegers, SITE re-pricing),
+the two S2 engine probes (scale-decrement, can_launch-into-cell), the
+r250-wall code-read, test-process adopt/adapt decision; research arm — nothing
+pending (all eight sweeps landed, their side closed). Session scratchpad
+artifacts (decoders rx_*/bb_*/drain-cut, quoteverify cache) die with the
+session — methods and results are in the committed docs; the decoders are
+rebuildable from the method notes in each deliverable's provenance block.
+
+**PROCESS DELTAS (third lane, whole run):**
+1. **Cross-lane adversarial review before build is the day's standing win** —
+   two harmful builds killed pre-build (drain bait; the siting-subtraction
+   class), two of the research arm's hypotheses killed cleanly in return.
+   Cost: message latency. Keep: every observational verdict crossing lanes
+   gets a discriminating cut + placebo arm before anyone builds on it.
+2. **Commit races with the arms' add-all sweeps slowed every landing** — my
+   staged files were repeatedly swept into their commits mid-flight ("1 file
+   changed" surprises). Fix adopted mid-session and now in auto-memory: stage
+   own files immediately, then verify content reached HEAD instead of
+   re-committing.
+3. **Wrap-retro vs vault-daily-note conflation (Magnus correction, recurring
+   across wraps):** the wrap step is THIS block — the repo PROCESS DELTAS —
+   never the dev-knowledge playbook; the vault file is a separate day-end
+   "daily note". Naming fix + rule now in auto-memory so it stops recurring.
+4. **Instrument selection was ad hoc until it cost us twice in one day**
+   (ESCALATE unmeasurable-locally, SITE local-magnitude) — the
+   test-process-proposal exists because the pipeline lived in heads, not
+   docs. Delta: measured instrument limits belong in one table the moment
+   the second one is learned, not after the second incident.
