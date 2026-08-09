@@ -1,0 +1,124 @@
+seeds 3465; opponent VERSION recovered from league_matches.tsv for 2970 (85.7%)
+
+=== nest rate by OPPONENT VERSION, within opponent ===
+(m = distinct matches on that version; a version is one bot submission)
+Askar City               pooled 18.6% (n=97)  v73:22%(n=79,m=10)  v75:6%(n=18,m=3)
+Banminary                pooled 29.8% (n=161)  v41:29%(n=96,m=6)  v42:31%(n=54,m=3)
+CtrlAltDefeat            pooled 25.6% (n=262)  v117:27%(n=140,m=7)  v107:17%(n=60,m=4)  v116:29%(n=31,m=2)  v120:41%(n=17,m=1)
+I Stone                  pooled 5.4% (n=129)  v18:2%(n=45,m=1)  v17:0%(n=44,m=1)  v19:19%(n=27,m=2)
+Kings College Munich     pooled 30.4% (n=276)  v1:28%(n=161,m=10)  v8:34%(n=115,m=9)
+Leviathan                pooled 26.3% (n=373)  v25:32%(n=206,m=6)  v35:25%(n=72,m=4)  v32:12%(n=50,m=2)  v33:12%(n=16,m=1)  v27:7%(n=15,m=1)
+Lunds Stallions          pooled 17.0% (n=358)  v44:14%(n=232,m=14)  v42:14%(n=50,m=4)  v45:31%(n=45,m=3)  v50:31%(n=16,m=1)  v37:20%(n=15,m=1)
+Memtrace                 pooled 12.0% (n=125)  v33:9%(n=56,m=7)  v36:21%(n=48,m=5)
+OopsGotYourElo           SINGLE VERSION   21  n=113
+Orizon                   SINGLE VERSION   34  n=69
+Ouroboros                SINGLE VERSION    8  n=286
+Powerpuff Girls          pooled 36.5% (n=74)  v46:35%(n=20,m=4)  v18:25%(n=16,m=3)
+Team 48                  SINGLE VERSION   16  n=152
+The Bisons               SINGLE VERSION    2  n=84
+farming_200s             pooled 5.1% (n=175)  v7:4%(n=97,m=2)  v8:2%(n=59,m=1)  v9:21%(n=19,m=1)
+
+mean within-opponent BETWEEN-VERSION variance = 0.00573
+between-MATCH variance within (opponent,version) = 0.01140   <- the noise floor
+BETWEEN-OPPONENT variance (opponents with n>=60)   = 0.01816
+
+=== MAP ===
+  antler        34.5%  n=226    matches=85
+  eider         32.6%  n=193    matches=66
+  lighthouse    30.1%  n=173    matches=64
+  hive          30.0%  n=160    matches=69
+  nordkap       28.5%  n=263    matches=80
+  drumlin       28.4%  n=243    matches=76
+  saga          27.8%  n=158    matches=66
+  fjordgate     27.6%  n=286    matches=72
+  meander       27.5%  n=378    matches=100
+  snowflake     23.1%  n=208    matches=78
+  heart         21.2%  n=217    matches=78
+  jackpot       20.8%  n=96     matches=47
+  atoll         19.9%  n=316    matches=75
+  archipelago   17.8%  n=163    matches=71
+  moonrise      16.4%  n=385    matches=80
+
+  map concentration per big opponent (share of seeds on top map):
+    Askar City                14 maps, top nordkap 16%
+    Banminary                 15 maps, top meander 13%
+    CtrlAltDefeat             15 maps, top drumlin 18%
+    I Stone                   10 maps, top atoll 69%
+    Kings College Munich      15 maps, top heart 11%
+    Leviathan                 15 maps, top moonrise 34%
+    Lunds Stallions           15 maps, top snowflake 13%
+    Memtrace                  12 maps, top hive 27%
+    OopsGotYourElo            15 maps, top meander 32%
+    Orizon                    14 maps, top lighthouse 16%
+    Ouroboros                 15 maps, top meander 14%
+    Powerpuff Girls           14 maps, top moonrise 12%
+    Team 48                   15 maps, top atoll 13%
+    The Bisons                10 maps, top fjordgate 69%
+    farming_200s              12 maps, top meander 42%
+
+  opponent rate OBSERVED vs EXPECTED-from-map-mix (indirect standardisation):
+    Team 48                  obs  66.5%  exp  25.6%  O/E  2.59   n=176
+    Orizon                   obs  49.3%  exp  27.0%  O/E  1.82   n=69
+    Powerpuff Girls          obs  40.4%  exp  25.9%  O/E  1.56   n=89
+    Banminary                obs  33.2%  exp  27.1%  O/E  1.23   n=205
+    OopsGotYourElo           obs  32.3%  exp  26.2%  O/E  1.23   n=127
+    Kings College Munich     obs  30.4%  exp  25.6%  O/E  1.19   n=312
+    CtrlAltDefeat            obs  25.1%  exp  25.6%  O/E  0.98   n=299
+    Ouroboros                obs  22.8%  exp  26.5%  O/E  0.86   n=324
+    Leviathan                obs  19.7%  exp  23.3%  O/E  0.84   n=554
+    Askar City               obs  18.3%  exp  25.7%  O/E  0.71   n=104
+    Lunds Stallions          obs  17.8%  exp  24.9%  O/E  0.72   n=398
+    Memtrace                 obs  15.1%  exp  27.6%  O/E  0.55   n=146
+    The Bisons               obs  14.6%  exp  27.0%  O/E  0.54   n=89
+    I Stone                  obs   5.4%  exp  22.2%  O/E  0.24   n=129
+    farming_200s             obs   5.1%  exp  26.2%  O/E  0.20   n=175
+
+  WITHIN-MAP opponent spread (maps with >=4 big opponents present):
+    moonrise    n=385   CtrlAltDef:50%(n=18)  Banminary:47%(n=15)  Lunds:20%(n=44)  Ouroboros:9%(n=23)  Leviathan:6%(n=191)
+    meander     n=378   Team:79%(n=19)  Kings:55%(n=20)  Lunds:40%(n=15)  OopsGotYou:34%(n=41)  Ouroboros:27%(n=45)  Banminary:22%(n=27)  I:19%(n=26)  Leviathan:17%(n=35)  Memtrace:13%(n=15)  farming_20:0%(n=73)
+    atoll       n=316   Team:57%(n=23)  Leviathan:47%(n=34)  Kings:28%(n=29)  Ouroboros:23%(n=39)  Lunds:10%(n=39)  CtrlAltDef:7%(n=15)  I:0%(n=89)
+    fjordgate   n=286   Kings:59%(n=17)  Team:47%(n=17)  Banminary:40%(n=15)  Lunds:40%(n=30)  Ouroboros:40%(n=25)  Memtrace:20%(n=15)  Leviathan:19%(n=26)  The:7%(n=61)
+    nordkap     n=263   Team:81%(n=16)  CtrlAltDef:33%(n=15)  Ouroboros:29%(n=17)  Kings:29%(n=21)  Leviathan:23%(n=56)  Lunds:12%(n=33)  Askar:0%(n=17)  Memtrace:0%(n=20)
+    drumlin     n=243   Memtrace:39%(n=18)  OopsGotYou:38%(n=16)  Kings:27%(n=22)  Lunds:23%(n=31)  Leviathan:21%(n=28)  CtrlAltDef:16%(n=55)
+    antler      n=226   Leviathan:44%(n=39)  Banminary:42%(n=19)  CtrlAltDef:42%(n=19)  Ouroboros:40%(n=15)  Kings:35%(n=20)  Lunds:26%(n=27)  farming_20:0%(n=26)
+    heart       n=217   Banminary:47%(n=15)  Lunds:18%(n=22)  Leviathan:15%(n=53)  CtrlAltDef:15%(n=34)  Kings:9%(n=34)
+
+=== SEAT (our_team index; 0 = NW-ish core) ===
+  seat 0: 24.3%  n=1593  matches=129
+  seat 1: 26.4%  n=1872  matches=139
+  z = -1.41
+  per-opponent seat split:
+    Askar City               seat0  25.0%(n=36)  seat1  14.7%(n=68)  -10.3pp
+    Banminary                seat0  37.8%(n=82)  seat1  30.1%(n=123)   -7.7pp
+    CtrlAltDefeat            seat0  22.4%(n=170)  seat1  28.7%(n=129)   +6.3pp
+    Kings College Munich     seat0  31.0%(n=145)  seat1  29.9%(n=167)   -1.1pp
+    Leviathan                seat0  32.3%(n=186)  seat1  13.3%(n=368)  -18.9pp
+    Lunds Stallions          seat0  18.4%(n=179)  seat1  17.4%(n=219)   -1.1pp
+    Memtrace                 seat0   6.9%(n=72)  seat1  23.0%(n=74)  +16.0pp
+    OopsGotYourElo           seat0  30.8%(n=39)  seat1  33.0%(n=88)   +2.2pp
+    Orizon                   seat0  47.8%(n=23)  seat1  50.0%(n=46)   +2.2pp
+    Ouroboros                seat0  22.5%(n=138)  seat1  23.1%(n=186)   +0.7pp
+    Powerpuff Girls          seat0  35.9%(n=39)  seat1  44.0%(n=50)   +8.1pp
+    Team 48                  seat0  61.0%(n=82)  seat1  71.3%(n=94)  +10.3pp
+
+=== OUR bot version (confounded with ladder time and opponent mix) ===
+  ourver 65:  23.7%  n=97    matches=9
+  ourver 66:   6.5%  n=108   matches=4
+  ourver 67:  34.3%  n=70    matches=7
+  ourver 68:  25.5%  n=231   matches=19
+  ourver 69:  24.2%  n=165   matches=8
+  ourver 70:  28.1%  n=135   matches=8
+  ourver 71:  26.2%  n=65    matches=5
+  ourver 72:  37.9%  n=346   matches=27
+  ourver 73:  27.9%  n=68    matches=5
+  ourver 74:  19.1%  n=199   matches=13
+  ourver 75:  27.9%  n=172   matches=14
+  ourver 76:  21.2%  n=85    matches=8
+  ourver 79:  14.4%  n=90    matches=7
+  ourver 80:  24.0%  n=707   matches=63
+  ourver 84:  19.7%  n=76    matches=6
+  ourver 86:  30.6%  n=62    matches=5
+  ourver 87:  11.8%  n=76    matches=3
+  ourver 89:  37.5%  n=96    matches=7
+  ourver 90:  30.6%  n=157   matches=16
+  ourver 91:  20.3%  n=320   matches=17

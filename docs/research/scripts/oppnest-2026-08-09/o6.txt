@@ -1,0 +1,59 @@
+nest rate by round band (reproduces the published gradient):
+  r0-50       39.0%  n=1129
+  r51-150     21.4%  n=824
+  r151-300    21.8%  n=724
+  r301+       13.6%  n=788
+
+opponent OBSERVED vs EXPECTED-from-round-composition:
+opponent                    obs    exp   O/E     n   share of seeds by band
+Team 48                   66.5%  34.2%  1.94   176   r0-50:73% r51-150:14% r151-300:11% r301+:2%
+Orizon                    49.3%  27.1%  1.82    69   r0-50:38% r51-150:33% r151-300:16% r301+:13%
+Powerpuff Girls           40.4%  26.0%  1.55    89   r0-50:37% r51-150:25% r151-300:13% r301+:25%
+Banminary                 33.2%  30.4%  1.09   205   r0-50:57% r51-150:11% r151-300:20% r301+:13%
+OopsGotYourElo            32.3%  25.1%  1.28   127   r0-50:34% r51-150:18% r151-300:19% r301+:29%
+Kings College Munich      30.4%  25.2%  1.21   312   r0-50:29% r51-150:30% r151-300:21% r301+:19%
+CtrlAltDefeat             25.1%  24.7%  1.01   299   r0-50:27% r51-150:29% r151-300:25% r301+:19%
+Ouroboros                 22.8%  22.4%  1.02   324   r0-50:15% r51-150:30% r151-300:32% r301+:23%
+Leviathan                 19.7%  21.4%  0.92   554   r0-50:16% r51-150:26% r151-300:20% r301+:38%
+Askar City                18.3%  34.5%  0.53   104   r0-50:75% r51-150:17% r151-300:7% r301+:1%
+Lunds Stallions           17.8%  26.2%  0.68   398   r0-50:37% r51-150:19% r151-300:21% r301+:23%
+Memtrace                  15.1%  26.8%  0.56   146   r0-50:32% r51-150:51% r151-300:15% r301+:2%
+The Bisons                14.6%  24.3%  0.60    89   r0-50:34% r51-150:6% r151-300:21% r301+:39%
+I Stone                    5.4%  18.2%  0.30   129   r0-50:15% r51-150:9% r151-300:3% r301+:74%
+farming_200s               5.1%  23.0%  0.22   175   r0-50:15% r51-150:23% r151-300:47% r301+:15%
+
+WITHIN round band, per opponent (n>=25 cells only):
+opponent                             r0-50           r51-150          r151-300             r301+
+Team 48                         69%(n=129)                 -                 -                 -
+Orizon                          85%(n=26 )                 -                 -                 -
+Powerpuff Girls                 52%(n=33 )                 -                 -                 -
+OopsGotYourElo                  37%(n=43 )                 -                 -        24%(n=37 )
+Kings College Munich            43%(n=92 )        27%(n=94 )        27%(n=66 )        20%(n=60 )
+Banminary                       38%(n=116)                 -        44%(n=41 )        15%(n=26 )
+Ouroboros                       47%(n=49 )        18%(n=96 )        25%(n=104)        11%(n=75 )
+CtrlAltDefeat                   31%(n=81 )        19%(n=86 )        30%(n=74 )        21%(n=58 )
+Leviathan                       37%(n=91 )        20%(n=145)        20%(n=110)        12%(n=208)
+Lunds Stallions                 25%(n=147)        17%(n=75 )        14%(n=85 )        10%(n=91 )
+The Bisons                      40%(n=30 )                 -                 -         3%(n=35 )
+Memtrace                         7%(n=46 )        21%(n=75 )                 -                 -
+Askar City                      19%(n=78 )                 -                 -                 -
+I Stone                                  -                 -                 -         1%(n=95 )
+farming_200s                    35%(n=26 )         0%(n=41 )         0%(n=82 )         0%(n=26 )
+
+field rate in that band:              39%(n=1129)        21%(n=824)        22%(n=724)        14%(n=788)
+
+=== split-half on the BAND-STANDARDISED ratio O/E ===
+opponent                  h1 O/E   h1 n   h2 O/E   h2 n
+Askar City                  0.57     50     0.49     54
+Banminary                   1.09    117     1.09     88
+CtrlAltDefeat               1.07    146     0.96    153
+I Stone                     0.26     58     0.34     71
+Kings College Munich        1.31    159     1.11    153
+Leviathan                   0.79    384     1.18    170
+Lunds Stallions             0.85    186     0.53    212
+Memtrace                    0.37     82     0.81     64
+OopsGotYourElo              1.52     72     0.96     55
+Ouroboros                   1.14    171     0.91    153
+Powerpuff Girls             1.46     49     1.67     40
+Team 48                     1.92     89     1.97     87
+  Pearson r = 0.817  (n=12 opponents, interleaved match split)
