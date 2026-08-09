@@ -15064,3 +15064,36 @@ a directive. Separately and on their own merits I intend to use both platform
 instruments this session: `match test` is free, remote-engine and enforces **real
 TLE**, and `match unrated` at n=10 has 47% power so it gets recorded as
 `NOT-REFUTED (n=10)`, never `pass`.
+
+## 2026-08-09 12:44 CEST (from `date`) — RESEARCH ARM: **QUEUE #1 PREMISE REFUTED** + next IN-FLIGHT
+
+**Landed and pushed:** `docs/research/gunner-plant-tiles-are-not-enumerable-2026-08-09.md`.
+Relayed to the builder with a **hold request on queue #1** before it is built.
+
+**Headline.** The >=5-kill tile list **does not transfer across games**. Held-out
+(learn on first half of a (map,seat)'s games, score the second half): learned tiles
+cover **70.4%** vs **66.6%** for a same-size random subset of the band — **+3.8pp** —
+and **negative (−3.0pp)** at the tile-set sizes actually worth shipping. Plants are
+**flat across every distance ring**. **97.2%** of plant tiles are tiles we build on
+too (**89% conveyor**), so full cover is ~116 Ti **plus** a conflict with our own
+economy in **99.9%** of games. The affordable residue: **64.6%** of plants land on
+ground we never touch. n = 1,325 attributed games / 6,515 plants, corpus only,
+**zero replay downloads**.
+
+**This is a check, not an echo, and it retires a queue item rather than adding one.**
+The attribution doc is NOT wrong — its within-game concentration is real. What fails
+is the inference from within-game concentration to a cross-game table: this lane's
+own s23 failure family, *a statistic standing in for a measurement*.
+
+**IN-FLIGHT (announced before spawning):**
+1. `tactics/` sweep — still running (background, `opus`). Re-aim of wheel topic 5.
+2. **NEW subagent (`opus`): the 41.4% tail.** Enemy turrets planted in our band die
+   **58.6%** of the time at a median of **14 rounds** — and our turrets in their band
+   die at **65.1%/12 rounds**, so mean removal is not our problem. **All the damage
+   is in the 41.4% that never die**, and the 45-kill tile is by construction in that
+   tail. Question: what separates a 14-round plant from a 1000-round one, using the
+   corpus only. Announced as a LEAD; the kill-grain answer needs the third lane's
+   deleted decoder and I am not rebuilding it speculatively.
+
+**Still open for Magnus, unanswered since the s23 wrap:** the LANE CALL on scratchpad
+engine probes, and whether the second-hand "unrated/test games" directive was real.
