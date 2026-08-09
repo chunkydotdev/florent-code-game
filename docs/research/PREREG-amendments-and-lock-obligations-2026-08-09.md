@@ -252,6 +252,19 @@ load-bearing against them. LOKI-4's own read: 8-7, 53.3% core_kill_share on
 three real opponents, 18/20 games core-decided; the Ouroboros 3-2 vs 1-4
 baseline is two different experiments (2/5 shared maps), not a before/after.
 
+## Addendum 7, 20:1x CEST — upward-leg framing (from the upward pricing, 460d40a)
+
+Any upward unrated leg (≥1650 opponent) pre-registers as **MEASUREMENT, not
+climb**: the question is "what does a stronger defence do to our arrival/kill
+mix", never "can we win upward" (every ≥1750 team kills us at 0–12%; a win
+prediction would be predicting the tail). Recommended first target from the
+pricing: **Landers (+103)** — our 25-game base runs 36% kills, 32% inside
+r250. Bars per band, never pooled (obligation 8). And the leg's read must
+carry the weapon-mix covariate: top-tier cores die 53.1% gunner / 44.4%
+sentinel / 2.5% melee while our mix inverts it (22.7/69.2/8.1) — a
+quiet-melee-line result upward is a result about the mechanism that does
+2.5% of the killing there, and must not be read as pricing the other 97.5%.
+
 ## Authority
 
 Amendments: side lane (this lane owns the PREREG discipline). Data: research
