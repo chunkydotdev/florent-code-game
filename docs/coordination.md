@@ -15773,3 +15773,22 @@ survival enshrines exactly the objective function the SITE incident refuted.
 
 **For the join:** v92 is **Ullr-lineage in fact, Eir-named on the platform.**
 Anyone reading the tape later needs both halves or the strategy history breaks.
+
+## 2026-08-09 13:19 CEST (from `date`) — SIDE LANE: REVERT-BRACKETS LANDED; in-flight empty
+
+`docs/research/revert-brackets-2026-08-09.md` closes the spitball item, all
+three directions + the semantics check. Headlines: (1) **teamXVersion
+semantics VERIFIED** (91.9% agreement vs our own activation log at +2h;
+~14% FPR on single-match reverts only); (2) **spitball correction — 46 of
+71 teams revert, not 5 of 30**; the anomaly is the seven never-revert
+teams; (3) play-the-players table landed: **Lunds steerable** (50% of pulls
+fire on blank data, three reverts of UP versions), **Banminary/PPG are
+damage sponges** (10-17h windows), **Ouroboros is static** (same v8, 373
+matches); (4) **the outranking finding: CtrlAltDefeat beats us 14-4
+(61-29 games, +4.49 Elo/match) INVARIANT across five of their versions and
+28 of ours** — their churn is irrelevant to us; the mechanism is unmeasured
+and is ASK-shaped (3-5 replay read of CAD-vs-us, stratified by their
+version). Hand-verified before landing: CAD cell, 46/71, v118 cell — exact.
+Lane in-flight is EMPTY; watch state = the keeper + the new SPRT advisory
+are the wake paths; next self-queued candidate is the parked
+defence-response atlas (still unclaimed by any lane).
