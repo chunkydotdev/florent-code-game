@@ -55,3 +55,60 @@ The other 74% of the mass — unterminated lines 33.4%, destroyed segments 23.9%
 facing coherence 15.8% — is larger and needs real routing logic. **This is the
 smallest shippable slice**, chosen because it is a pure refusal and because it
 is the one item where **we cost ourselves more than the enemy costs us.**
+
+---
+
+## ADDENDUM — PRE-LEG, NO LEG HAS FIRED. Three bars change and one is a programme problem.
+
+Research's pre-leg check on the **v102** population (125 our-side ladder games,
+not the ~75 either of us estimated). Written before any leg exists.
+
+### 1. THE MOTIVATION NUMBERS IN THIS FILE ARE EIR NUMBERS. Superseded.
+**Do not quote 13.2% or 11.1% for v102.** They are Eir figures on an Eir
+denominator, and v102 moves in **opposite directions depending on the
+denominator**: **38% HIGHER per game** (0.424 vs 0.307) but **2.7x LOWER as a
+share of turret builds** (1.95% vs 5.36%), because **v102 builds 3.8x more
+turrets and barriers** (21.70/game vs 5.72).
+**Quote 0.42 builds/game and 53 events.** Sixth denominator-as-view catch
+tonight, and it is on my own motivating figure.
+
+### 2. THE n=0 TRAP DOES NOT APPLY — the leg can fire.
+53 events across 125 games; a 60-game control arm expects **25.4**, P(zero)
+~7e-8. The did-it-fire bar stands as written.
+
+### 3. BUT THE VERDICT CHANNEL IS STRUCTURALLY CLOSED, AND THAT IS A PROGRAMME
+### PROBLEM RATHER THAN A DESIGN FLAW.
+**Only 8 of 115 attributed v102 games reach round 1000. 93.0% end in
+`core_destroyed`**, against 73.3% for every other version — independently
+reproduced from a different filter and a pinned snapshot (93.3% vs the Eir era's
+67.6%). **The motivating 11.1% mass figure is round-1000-only, so the instrument
+that produced it is structurally unavailable for v102**, and **titanium decides
+roughly one v102 game in fourteen.**
+
+**⇒ THE VERY PROPERTY THAT MAKES LOKI-8 GOOD — it ends games decisively — CLOSES
+THE CHANNEL AN ECONOMIC FIX COULD SHOW UP IN.**
+
+So `core_kill_share` **cannot** move on this treatment at any feasible n, and
+**PROGRAMME.md is explicit that a mechanism metric never substitutes for the
+currency.** The honest consequence, stated now rather than discovered in a null:
+
+* **THIS PLANK CANNOT BE BANKED AS A PROGRAMME GAIN.** It is a CORRECTNESS FIX —
+  we spend our own titanium corking our own lines — and it will be reported as
+  one. **No currency claim will be made for it, in either direction.**
+* **The bar is the MECHANISM COUNTER ALONE: control ~25 events, treatment 0.**
+* **A flat `core_kill_share` is NOT evidence against the plank** and must not be
+  written up as a null. The channel is closed; a closed channel reports nothing.
+* The leg's remaining value is a **safety check** — that the refusal costs
+  nothing measurable — which is cheap and worth having.
+
+### 4. AND THE REFUSAL COVERS ONLY PART OF THE MECHANISM.
+The reverse case — **a conveyor built LATER, aimed at an existing friendly
+turret** — is **23 events against this treatment's 53 in v102, so the refusal
+reaches ~70%**; pooled across the archive it is **607 vs 658, barely 52%**.
+**This treatment cannot falsify "our own turrets cork our lines". It can only
+falsify "we build turrets onto lines."** Stated so a null is not over-read.
+
+### 5. VARIANCE, for whoever reads the arm.
+**76.0% of v102 games contain ZERO such builds** (95 of 125); dispersion index
+2.01, twice Poisson. **Any per-game outcome metric is dominated by games where
+the treatment was inert.** Report the event counter, not a per-game average.
