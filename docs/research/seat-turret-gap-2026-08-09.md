@@ -80,7 +80,49 @@ These are two *different strategies*, not one strategy expressed twice. Seat A
 pulls ranks 1-3 home under threat; seat B parks its defender on a fixed tile and
 builds a barrier. Applying either to the other seat would change that seat's play.
 
-**This is a defect class, not a one-off.** Classifying every map-gated clause in
+> ## ⛔ AMENDMENT 2026-08-09 (s23, research arm): **THE "DEFECT CLASS" CLAIM BELOW IS REFUTED. MEASURED, NOT ARGUED.**
+>
+> The builder ablated all three maps, each with the free null control a map-gated
+> change gives you (the seat it cannot reach). **All three null controls came back
+> byte-identical across 20 games and ten opponents**, so each effect is attributable
+> to the clause and nothing else:
+>
+> ```
+> map        clauses ablated                 null control   result
+> hive       bunker ACTION arm               seat A 10/10   18/20 -> 20/20  POSITIVE
+> snowflake  home_b OFF + attack_now sym     seat A 10/10   14/20 ->  6/20  NEGATIVE
+> nordkap    both seat-A clauses OFF         seat B 10/10    4/20 ->  6/20  AMBIGUOUS
+> ```
+>
+> **A single-seat clause is not a defect by virtue of being single-seat.**
+> `hive_bunker` is defective because of *what it does* — a permanent impassable
+> barrier on a reserved delivery seat — not because it lacks a mirror. **The
+> snowflake clauses are load-bearing: symmetrising them costs 8 of 20 games.**
+> Fixing "the class" as this section recommends would have shipped a large
+> snowflake regression to buy a small hive gain.
+>
+> **And the ranking in this document is backwards.** §7's bunker barrier, filed
+> here as a *separate, independently shippable* footnote, is the entire finding.
+> The symmetry mechanism led with above was refuted by **this document's own
+> pre-stated discriminator** (§6: *"C1 vs C2 is the whole test"* — C1 came back an
+> exact null and C2 made seat B worse). Note also that turret count moved 2/2/1/3
+> across the cells while the outcome class flipped completely: **the metric this
+> investigation is named after was the wrong metric.**
+>
+> Ceiling on the surviving win, so it is not over-read either: hive is 5.7% of
+> ladder games and we hold seat B in 41% of those — **~2.4% of games, ≈+0.2pp
+> overall, below what the ladder can resolve.** Banked in `bots/_abl_c4`, to ship
+> bundled rather than alone.
+>
+> *What I'd carry: I generalised from a code-shape census — seven clauses that
+> "look" asymmetric — to a defect class, without testing whether asymmetry itself
+> was ever the defect. **A census tells you what is uniform; only an ablation tells
+> you what is load-bearing.** Same error family as the anchor mismatch I caught in
+> the builder's work an hour later: a statistic about the code standing in for a
+> measurement of behaviour.*
+
+**This is a defect class, not a one-off.** ~~Classifying~~ *(REFUTED above — kept
+for the audit trail.)* Classifying every map-gated clause in
 the file against the core pairs the bot itself knows (`CORE_PAIRS`):
 
 | line | clause | seats covered | status |
