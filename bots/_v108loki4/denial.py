@@ -34,7 +34,7 @@ This file is the ablation unit: with ORE_DENIAL_ON False every entry point
 returns on its first line and the bot is _v103split.
 """
 
-from fcode import EntityType
+from fcode import EntityType, Position
 
 from doctrine import (  # noqa: F401
     CARDINALS,
@@ -42,6 +42,8 @@ from doctrine import (  # noqa: F401
     DENY_MAX_BARRIERS,
     DENY_MAX_ENEMY_ORE,
     DENY_MAX_RND,
+    DENY_CRATER_MAX,
+    DENY_CRATER_ON,
     DENY_MIN_OPEN_NBRS,
     DENY_RECLAIM_ON,
     DENY_TI_FLOOR,
@@ -225,7 +227,7 @@ def reclaim(bot, ct, tile):
         # can_build_harvester is False" would also match the defensive barrier
         # _defend plants beside our own Core (main.py:2403), and reclaim would
         # quietly dismantle the home wall.
-        if tile not in plan(bot, ct):
+        if tile not in plan(bot, ct) and (tile.x, tile.y) not in bot.deny_craters:
             return False
         bid = ct.get_tile_building_id(tile)
         if bid is None or ct.get_team(bid) != bot.team:
@@ -244,3 +246,88 @@ def reclaim(bot, ct, tile):
         return True
     except Exception:
         return False
+
+
+# --- CRATER ARM (see DENY_CRATER_ON) -----------------------------------------
+
+def _ore_set(bot):
+    """(x, y) of every ore tile on the decoded map, built once per unit."""
+    s = bot.deny_ore_set
+    if s is None:
+        s = bot.deny_ore_set = frozenset((t.x, t.y) for t in bot.map_ores)
+    return s
+
+
+def note_enemy(bot, ct, eid, etype, epos):
+    """Record that an ENEMY HARVESTER is standing on an ore tile in our half.
+
+    Called from _builder's existing hostile-entity loop, so it costs no extra
+    engine call and no extra scan -- the loop has already paid for
+    get_entity_type and get_position on this id.
+
+    "Our half" is `<=`, i.e. our side plus the contested midline: a midline
+    tile an enemy harvester is actually standing on is not speculative, which
+    is the whole point of this arm.
+    """
+    if not (ORE_DENIAL_ON and DENY_CRATER_ON):
+        return
+    if etype != EntityType.HARVESTER:
+        return
+    try:
+        if bot.core is None or bot.enemy is None or not bot.map_ores:
+            return
+        key = (epos.x, epos.y)
+        if key not in _ore_set(bot):
+            return
+        if _dfoot(epos, bot.core) > _dfoot(epos, bot.enemy):
+            return          # their half -- the generic arm owns that ground
+        bot.deny_craters.add(key)
+    except Exception:
+        return
+
+
+def try_crater(bot, ct):
+    """Seal a remembered enemy-held ore tile that has since been freed.
+
+    Deliberately exempt from the generic arm's two gates.  DENY_MAX_ENEMY_ORE
+    measures scarcity on THEIR side and says nothing about a tile in ours;
+    DENY_MAX_RND excludes r150+, which is exactly when a third of their
+    harvesters are built in our territory.  What replaces both gates is
+    evidence: this tile carried an enemy harvester, so we are not guessing that
+    they want it.
+
+    Ranked ABOVE the generic arm and BELOW everything the chassis already does,
+    including our own harvester build -- so a crater we can afford to work is
+    worked, not sealed.
+    """
+    if not (ORE_DENIAL_ON and DENY_CRATER_ON):
+        return False
+    if bot.deny_crater_placed >= DENY_CRATER_MAX or not bot.deny_craters:
+        return False
+    try:
+        if ct.get_action_cooldown() != 0:
+            return False
+        if ct.get_global_resources() < DENY_TI_FLOOR:
+            return False
+        p = ct.get_position()
+        for d in CARDINALS:
+            dx, dy = d.delta()
+            key = (p.x + dx, p.y + dy)
+            if key not in bot.deny_craters:
+                continue
+            t = Position(key[0], key[1])
+            if _open_nbrs(bot, t) < DENY_MIN_OPEN_NBRS:
+                continue
+            if not ct.can_build_barrier(t):
+                continue      # still held, or we cannot pay -- try again later
+            ct.build_barrier(t)
+            bot.deny_crater_placed += 1
+            if DENY_DEBUG:
+                import sys
+                print(f"DENYCRATER r{ct.get_current_round()} tile=({t.x},{t.y}) "
+                      f"cost={ct.get_barrier_cost()} n={bot.deny_crater_placed}",
+                      file=sys.stderr)
+            return True
+    except Exception:
+        return False
+    return False

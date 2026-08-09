@@ -10704,3 +10704,69 @@ inside our half becomes free, **regardless of what freed it**, so it does not
 depend on the turret half. The turret half is LOKI-3's existing targeting work.
 **Two independently ablatable flags in two existing builds, composable later —
 rather than a sixth build opened at the keyboard.**
+
+### 2026-08-09 09:12 CEST (from `date`) — builder arm: **LOKI-3 MECHANISM RESULT + BATTERY THRESHOLD PRE-REGISTERED BEFORE IT FIRES**
+
+**THE RESULT IS A PLACEMENT RESULT, NOT A PRODUCTION ONE — turret COUNT held
+constant by construction (same recruits, budget, cadence, gates; only the anchor
+differs):**
+```
+config                        turrets  shots  ammoTi  heals  RATIO  med d2_own
+off (= parent _v103split)       0.00    3.3    12.7    34.0   0.17     --
+LATE_AMMO only                  0.00    6.3    41.0    29.3   0.38     --
+HEALER_FOCUS only               0.00    3.3    12.7    34.0   0.17     --
+LATE_TURRET only (home)         2.67    6.0    26.0    32.5   0.32    20.5
+ + FORWARD_PLACEMENT            3.17   27.3   115.3    24.8   1.96   116.0
+all five                        2.83   31.7   172.3    20.0   2.82   116.0
+```
+**On a matched turret count (2.67 vs 3.17), shots went 6.0 -> 27.3 and the ratio
+0.32 -> 1.96. A LATE TURRET STANDING AT HOME DOES NOT FIRE.** The home arm
+reproduced **Thor exactly**: median d² 20.5, 0% forward. **The pre-registered
+target (damage-capacity : HP-repaired, 1.11 -> field 2.79) was hit at 2.82.**
+
+**MY PRE-REGISTERED PREDICTIONS, SCORED HONESTLY:**
+1. *"LATE_TURRET alone at home -> no effect or negative"* — **held in direction
+   only.** It is the smallest live move (0.17 -> 0.32) but it is **not nothing
+   and not negative.** My Thor explanation survives; my phrasing was too strong.
+2. *"LATE_AMMO alone -> no effect"* — **REFUTED.** It doubled shots and the ratio
+   with turret count unchanged at 0.00, i.e. **it fed guns that already existed.**
+   I was wrong, and the r180 analogy I reasoned from did not apply.
+3. *"turret + forward is the only combination that moves it"* — **CONFIRMED**,
+   with count controlled.
+
+**A STRUCTURAL FINDING THAT EXPLAINS TWO EXACT NULLS:** `HEALER_FOCUS_GLOBAL_ON`
+alone is **byte-identical to the parent**, and `TARGET_INTRUDER_ECON_ON` on top of
+ammo is byte-identical to ammo alone. Cause is mechanical: **both are SENTINEL
+line-scan rules**; a Gunner returns at `get_gunner_target()` and never reaches
+the priority table, and without `LATE_TURRET_ON` we build 0.00 turrets in the
+band. **The dependency chain is turret -> ammo -> targeting, and targeting is the
+LAST link.** So my "healer targeting is the highest-value flag" read was wrong
+about ORDER: it cannot pay until there are live sentinels to obey it.
+
+**SAFETY: 0 crashes, 0 engine TLE interrupts (`BotOutput.tled`), `--tle 10`, four
+maps. Opening untouched — 6/6 games ending before r150 byte-identical to
+`_v103split`, and no game in the 48-pair leg diverged before r200.**
+
+**=== BATTERY THRESHOLD, WRITTEN BEFORE THE LEG FIRES ===**
+`_v107loki3` vs `_v103split`, paired across `opp_v78/v72/v63/v50`, seeds 3
+(90 matches per leg, 8 legs, identical maps and seeds), on a box I have kept
+quiet.
+- **PRIMARY: the pooled paired SPREAD** (LOKI-3 win% minus incumbent win% against
+  the same opponent). **WIN requires the spread's interval to exclude 0.**
+- **MANDATORY STRATIFICATION BY OPPONENT CRASH COUNT** — the LOKI-1 lesson: its
+  entire apparent +3.6pp edge was an opponent-crash artifact (+6.1pp on crashy
+  legs, **+1.1pp on crash-free legs**). **No verdict until the spread is read on
+  crash-free legs.**
+- **THE QUESTION THE MECHANISM DATA CANNOT ANSWER, and the reason this battery
+  exists: games ran 24% SHORTER (778 -> 591 rounds).** That is either "more
+  decisive" or "dying faster" and **only win rate plus win-condition breakdown
+  separates them.** I am pre-committing: **if the spread is negative AND games
+  are shorter, the honest reading is that we are dying faster** and the forward
+  anchor is too aggressive.
+- Any crash by our bots is a hard fail.
+
+**KNOWN RISK I AM NOT RESOLVING IN THIS LEG, stated now:** median forward
+distance is **d² 116-146 from our own core against the field's 56-82** — a gun
+that far out sits outside every heal path we own and dies alone. The knob is
+`LATE_FORWARD_NUM/DEN = 3/5`; **2/5 would sit on the field's measured band.** If
+this battery is negative, that is the first thing to try before abandoning.

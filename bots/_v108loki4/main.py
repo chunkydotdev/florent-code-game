@@ -276,6 +276,15 @@ class Player:
         # computed"; an empty tuple means "computed, nothing to deny here".
         self.deny_plan = None
         self.deny_placed = 0
+        # CRATER ARM state.  deny_craters is this unit's sightings of ore tiles
+        # in our own half that an ENEMY HARVESTER was standing on; per unit
+        # because all 16 store slots are occupied and there is nowhere to
+        # publish it.  That undercounts opportunities (only the builder that
+        # personally saw the harvester can seal its crater) and never
+        # miscounts them.
+        self.deny_craters = set()
+        self.deny_crater_placed = 0
+        self.deny_ore_set = None
         self.forward_guns = 0
         self.forward_barriers = 0
         self.siege_spot = None
@@ -946,6 +955,11 @@ class Player:
                 continue
             et = ct.get_entity_type(eid)
             ep = ct.get_position(eid)
+            # LOKI-4 CRATER ARM sighting.  Free: this loop has already paid for
+            # get_entity_type and get_position on this id, and note_enemy
+            # returns on its first line for everything that is not an enemy
+            # harvester standing on ore in our half.
+            denial.note_enemy(self, ct, eid, et, ep)
             if et == EntityType.CORE:
                 self.enemy = ep
                 ct.write_store(SLOT_ENEMY_CORE, pack_pos(ep))
@@ -1655,7 +1669,7 @@ class Player:
             # denial of a 24 Ti harvester site is the whole plank in one line.
             # Fires only when the unit is ALREADY orthogonally adjacent to a
             # planned tile, so it never costs a walk.
-            if denial.try_place(self, ct):
+            if denial.try_crater(self, ct) or denial.try_place(self, ct):
                 return
             if not self.melee_first:
                 self._sabotage_prio(ct)
@@ -2699,7 +2713,7 @@ class Player:
             # action cooldown when it fires, so try_place's cooldown gate makes
             # "never trade a harvester for a barrier" structural rather than a
             # promise.
-            if denial.try_place(self, ct):
+            if denial.try_crater(self, ct) or denial.try_place(self, ct):
                 return
 
         # Action phase over -- the harvester build above (if any) already

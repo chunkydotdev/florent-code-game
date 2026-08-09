@@ -1378,6 +1378,32 @@ LATE_AMMO_EVIDENCE_RNDS = 120
 # AMMO_FLOOR = 16 whose per-gun term (4 * weapons) is priced at 4 = one GUNNER
 # shot while we actually fire Sentinels at 10.  Retargeting onto healers
 # without raising the magazine just buys shots we cannot pay for.
+#
+# MEASURED, AND THE RESULT IS A NULL WITH A MECHANICAL EXPLANATION.  In the
+# r200-300 flag matrix (see the LOKI-3 header) HEALER_FOCUS_GLOBAL_ON alone is
+# byte-identical to the parent (ratio 0.17, 3.3 shots, 34.0 heals -- every
+# column), and adding it on top of LATE_AMMO_ON is byte-identical to
+# LATE_AMMO_ON alone.  It changed nothing, and the reason is structural rather
+# than a tuning problem:
+#
+#   THIS RULE HAS NO EFFECT UNLESS A SENTINEL IS ALIVE IN THE BAND.  A Gunner
+#   never reaches the priority table (it returns at get_gunner_target()), and
+#   without LATE_TURRET_ON we build 0.00 turrets in r200-300.  Retargeting
+#   nothing is nothing.
+#
+# So the dependency chain is LATE_TURRET_ON -> a live turret -> LATE_AMMO_ON ->
+# ammunition to fire -> HEALER_FOCUS/INTRUDER -> what to fire AT, and the
+# targeting flags are the LAST link, not the first.  They are shipped ON
+# because they are free when inert and correct when they bite, but on this
+# evidence they are not where the prize is, and anyone screening them must do
+# it on a config that has live sentinels or they will measure this same null.
+# One further lever if they are to be given a fair test: our late line defaults
+# to Gunners (LATE_TURRET_PREFER_SENTINEL = False), which bypass the table
+# entirely -- flipping that to True is what puts the forward line under these
+# rules.  Measured with sentinels preferred: r200-300 ratio 2.65 against the
+# gunner line's 2.82 on the same games, at 17.0 shots against 31.7 (same damage
+# capacity, 222 vs 225 -- an 18-damage shot against a 7), and 6.2 enemy economy
+# buildings removed per game after r300 against the gunner line's 3.5.
 HEALER_FOCUS_GLOBAL_ON = True
 HEALER_FOCUS_MIN_RND = 150
 
@@ -1417,6 +1443,19 @@ HEALER_FOCUS_MIN_RND = 150
 #
 # ON by default: a strictly better-aimed shot with no spend attached.  Its own
 # flag so it can still be lifted out of the matrix.
+#
+# MEASURED: the same null, and the same explanation -- adding it on top of
+# LATE_AMMO_ON + HEALER_FOCUS_GLOBAL_ON was byte-identical in every r200-300
+# column.  Same cause: it is a SENTINEL line-scan rule and there are no
+# sentinels alive in the band without LATE_TURRET_ON.  There is a second reason
+# it may stay quiet even then, and it is worth stating because it argues
+# AGAINST this flag rather than for it: with FORWARD_PLACEMENT_ON our late guns
+# stand in the ENEMY half (median d^2 116-146 from our own Core), so the enemy
+# economy they remove is their HOME farm, not the intruder farm on our ground
+# -- measured 2.0-3.5 enemy economy buildings removed per game after r150, of
+# which ~0 were in our own half.  The population this flag exists to shoot is
+# reached by our HOME counterbattery sentinels, and those are built only when
+# something is already shelling us.
 TARGET_INTRUDER_ECON_ON = True
 # Band start, matching where the measurement says the intrusion becomes common
 # (13.1% -> 33.9% across the r150 line).

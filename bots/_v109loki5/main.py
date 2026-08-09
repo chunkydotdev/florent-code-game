@@ -560,6 +560,9 @@ class Player:
                 ct.convert_ammo(amt)
                 ti = ct.get_global_resources()
                 ammo = ct.get_global_ammo()
+                if KIDNAP_PROBE:
+                    import sys
+                    print("KSURGE\tr=%d\tamt=%d\tti=%d\tammo=%d" % (rnd, amt, ti, ammo), file=sys.stderr)
 
         # SLOT_HOME_GUN is a monotone count of turrets this team has ever
         # built.  Hoisted above the ammo branch because RIDE-ALONG 2's
@@ -4181,7 +4184,7 @@ class Player:
                 # looser trigger would convert four figures of titanium a game
                 # into a resource that does not score.  The launcher rewrites 1
                 # next turn, so the Core bursts exactly once.
-                if KIDNAP_AMMO_SURGE_ON and pick_fire:
+                if KIDNAP_AMMO_SURGE_ON:
                     ct.write_store(SLOT_LAUNCHER, 2)
                 return True
         return False

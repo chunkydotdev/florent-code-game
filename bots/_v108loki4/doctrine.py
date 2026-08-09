@@ -1276,3 +1276,59 @@ ORE_DENIAL_ON = True
 # Per-placement stderr trace for instrumentation legs.  Off in the shipped
 # build: print() lands in the replay and stderr costs CPU in the hot path.
 DENY_DEBUG = False
+#
+# ---------------------------------------------------------------------------
+# CRATER DENIAL -- the one arm with a real exchange rate behind it.
+#
+# Killing an enemy harvester is measured at roughly 1:1: their replacement's
+# first stack lands immediately on rebuild, so ~20 Ti of ammo buys almost no
+# delay.  But a harvester stands ON an ore tile, and when it dies the tile
+# reverts to plain ore -- probe-confirmed barrierable (is_tile_empty True,
+# can_build_barrier True, and can_build_harvester False once the barrier
+# stands).  Sealing the crater turns that 1:1 trade into permanent site denial
+# for 3 Ti:
+#
+#     kill harvester (30 HP)  ~2 sentinel shots   ~20 Ti
+#     barrier the freed tile                        3 Ti
+#     their cost to undo: 15 attacks, 30 Ti, 15 builder-turns -- or the site
+#     is gone for the rest of the match (destroy() is allied-only)
+#
+# WHY THIS ARM IS REACHABLE WHEN NOTHING ELSE IN THIS FILE IS.  Enemy
+# harvesters built nearer OUR Core than their own: r0-30 3.7%, r30-150 13.1%,
+# r150+ 33.9%.  By r150 a third of their new harvesters are in our territory.
+# We do not travel; the targets come to us.
+#
+# AND IT RESOLVES THE CONTRADICTION THAT KILLED HOME-SIDE DENIAL (REFUTED 2).
+# Blanket home denial fails because at the moment of an invasion the victim
+# still has a median of 5 free ore tiles on that side and invasions cluster on
+# ore-rich maps (median victim side size 13) -- so barriering our own tail ore
+# on spec denies nothing.  A CRATER is not spec: an enemy harvester standing
+# there is demonstrated proof that this specific tile is one they want.  That
+# evidence is why this arm is exempt from DENY_MAX_ENEMY_ORE (which measures
+# scarcity on THEIR side, irrelevant here) and from DENY_MAX_RND (the flow it
+# targets is a r150+ phenomenon).
+#
+# ORDERING KEEPS THE ECONOMY WHOLE.  This arm sits at the bottom of the same
+# action phase as the harvester build, so on any crater we can afford to
+# harvest we build the harvester instead -- REFUTED 3, a harvester is a
+# strictly better barrier.  A crater is only sealed when we could not or would
+# not work it, and DENY_RECLAIM_ON gives the tile back to us for free later.
+#
+# NOT IMPLEMENTED HERE, ON PURPOSE: killing the harvester.  The turret half
+# lives in the sibling build _v107loki3, so the two compose without either
+# depending on the other.  This arm fires whenever an enemy-held ore tile in
+# our half becomes free, whatever freed it -- our turrets, our builders'
+# attacks, or their own teardown.
+#
+# ALSO MEASURED, AND IT IS A DO-NOT: cutting conveyors runs 4:1 AGAINST us
+# (~12 Ti of ammo to cut, 3 Ti for them to relay).  The correct denial
+# primitive is a barrier on the ore tile, never damage on the line.
+DENY_CRATER_ON = True
+# Separate budget from the generic arm: the evidence behind a crater is far
+# stronger, but each barrier is still +1% global scale for as long as it
+# stands, so the arm is capped rather than open-ended.
+DENY_CRATER_MAX = 4
+# Sighting memory is PER UNIT, not team-wide: all 16 store slots are occupied,
+# so there is nowhere to publish it.  Consequence to keep in mind when reading
+# the numbers: only a builder that personally saw the enemy harvester can seal
+# its crater.  That undercounts opportunities and never miscounts them.
