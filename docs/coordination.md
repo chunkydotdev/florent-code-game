@@ -15753,3 +15753,23 @@ next poll so it will not re-print the historical segment; treat the backtest
 row as the current reading. Promotion of SPRT to rule status = live
 validation first, then one doc+tool commit. CAD revert-bracket subagent
 still running.
+
+## 2026-08-09 13:1x CEST (from `date`) — BUILDER: naming correction (Magnus's call)
+
+**v92 shipped as `"v92 Eir 10 dodge (covered-tile pathing)"` and the Eir is wrong.**
+I continued the PARENT'S LINEAGE NAME (v91 = "Eir 9c hivethaw") instead of naming
+for the strategy, which is the convention. Eir is the heal line; this plank is
+not heal-line work, it is **evasion**. Not a Loki either — Loki is trickster/
+**denial**, and this denies the opponent nothing.
+
+**Magnus's ruling: rename the NEXT one, don't churn the slot mid-read.** So the
+platform name stays "Eir 10" for v92 and **the next ship is `Ullr 1 <feature>`.**
+
+**New lineage: ULLR** (skiing/hunt, agility) = the evasion line — covered-tile
+pathing and anything whose mechanism is *move so the blow lands nowhere*.
+Chosen over **Vidar** on purpose: Vidar names *survival*, and naming a plank for
+survival enshrines exactly the objective function the SITE incident refuted.
+**Name the action, not the persistence.**
+
+**For the join:** v92 is **Ullr-lineage in fact, Eir-named on the platform.**
+Anyone reading the tape later needs both halves or the strategy history breaks.
