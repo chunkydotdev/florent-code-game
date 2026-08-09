@@ -109,9 +109,31 @@ Over **4,197,492 US builder-rounds** (every live builder, every round, 1,355 fil
 
 | envelope rule | builder-rounds in envelope | P(die next round \| in) | P(die \| not in) | hazard | share of all deaths preceded by an in-envelope round |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| **LINE (exact — what v92 ships)** | 174,850 (**4.17%**) | **5.37%** | 0.028% | **195×** | **89.4%** |
-| RAY (facing, blocking ignored) | 248,966 (5.93%) | 3.84% | — | — | 91.1% |
+| LINE (exact — blocking respected) | 174,850 (**4.17%**) | **5.37%** | 0.028% | **195×** | **89.4%** |
+| **RAY (facing, blocking IGNORED) — what v92 actually ships** | 248,966 (**5.93%**) | 3.84% | — | — | **91.1%** |
 | **RADIUS (facing ignored — upper bound)** | 1,468,307 (**34.98%**) | 0.71% | — | — | 99.3% |
+
+> **CORRECTION, same day, on the builder arm's catch: I MISLABELLED WHICH ROW IS THE
+> SHIPPED ONE.** I wrote *"LINE (exact — what v92 ships)"*. **v92 ships RAY.**
+> `_danger_tiles()` calls `ct.get_attackable_tiles_from(...)`, and I verified that
+> method's docstring against the installed engine
+> (`.venv/lib/python3.13/site-packages/fcode/_types.py:693-696`) rather than taking the
+> correction on trust — it reads, verbatim: *"Return all in-bounds tiles in a
+> hypothetical turret's raw attack pattern. This ignores ammo, cooldown, occupancy, and
+> other target-specific legality checks. **For gunners this includes the full firing
+> line within range, even behind walls.**"* **Raw pattern, blocking ignored — that is
+> the RAY row.**
+>
+> **So the live figures are 5.93% of builder-time forbidden for 91.1% coverage**, not
+> 4.17% / 89.4%. v92 sits on the middle option: **1.76pp more blocked builder-time than
+> exact LINE, buying 1.7pp more coverage** — slightly conservative, roughly a wash, and
+> moving to exact LINE would cost one `can_fire_from` call **per tile** instead of one
+> call **per turret**, which is a real CPU multiplier for a 1.7pp trade.
+>
+> **AND THE HEADLINE MULTIPLIER MOVES WITH IT.** The "8×" below was computed against
+> LINE (34.98 / 4.17 = 8.39×). **Against the row v92 actually ships it is
+> 34.98 / 5.93 = 5.90×, for 8.2pp of coverage** (99.3% − 91.1%). **The design
+> conclusion is unchanged and the number is smaller; use 5.9×.**
 
 **In-envelope is rare and it is lethal: 4.17% of builder-time carrying a 195× hazard
 ratio, and 89.4% of all our builder deaths have an in-envelope round immediately before
@@ -122,8 +144,9 @@ and infrequent, not ambient.
 
 > **THE RADIUS ROW IS THE TAX WARNING, AND IT SETTLES A DESIGN QUESTION.** A
 > radius-based rule forbids **35% of all builder-rounds** to catch 99.3% of deaths. The
-> exact-line rule forbids **4.2%** and still catches **89.4%**. **An 8× difference in
-> blocked map-time for 10pp of coverage.**
+> rule v92 ships forbids **5.9%** and still catches **91.1%**. **A 5.9× difference in
+> blocked map-time for 8.2pp of coverage.** (Against the exact-LINE variant it would be
+> 8.4× for 9.9pp — but that is not the shipped rule; see the correction above.)
 >
 > This is the measured version of what tactics sweep 9 predicted from BC2020 —
 > *"a disc rule is likely fatal here; the facing-line rule may not be"* — and of my own
@@ -137,8 +160,9 @@ and infrequent, not ambient.
 1. **Do not build persistence.** Own-bot memory reaches **1.65%** of turret deaths;
    nearly half of the blind cases need team-shared state instead. **My own argument for
    it is withdrawn on the measurement.**
-2. **v92's exact-line envelope is the right design and now has a number behind it** —
-   8× less blocked map-time than the radius alternative for 10pp less coverage.
+2. **v92's facing-ray envelope is the right design and now has a number behind it** —
+   **5.9× less blocked map-time than the radius alternative for 8.2pp less coverage.**
+   (It is the *ray*, not the exact line — blocking is ignored. See §4's correction.)
 3. **DODGE is a one-round-reaction mechanism.** Confirmed twice, independently. Any
    future tuning that assumes more warning is available is assuming something false.
 4. **The hard floor on pathing avoidance is ~1%**, not the 12.7% dwell-0 share. **The
