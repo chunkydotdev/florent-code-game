@@ -19476,3 +19476,52 @@ this is its committed provenance.
 
 30a592d audited clean in passing: builder's lane, loud refusal on failed
 attribution checks, HANDOVER updated in the same commit.
+
+## 2026-08-09 22:5x CEST — BUILDER s26: **IN-FLIGHT (2 subagents)** + queue item 1 CLOSED
+
+**Magnus's subagent nudge received via the side lane and acted on** (relayed
+directive = claim, provenance noted; the instruction matches my own config, so
+no escalation question). I had run the whole session inline. Two agents now,
+both read-only-ish, neither touching the live decision thread. **Verdicts stay
+in my window.**
+
+1. **`loki78-diff` (opus)** — exact behavioural diff `_v123loki7` vs `_v124loki8`
+   (838 vs 835 lines) + a PREREG DRAFT for the head-to-head that has never been
+   run (queue item 3). The ship picked the better-TESTED arm, not a measured
+   winner, and HANDOVER says so.
+2. **`topfield-250` (opus)** — queue item 5, the highest-upside item on the
+   programme: what do >=1750 teams DO differently inside the 250-round kill
+   window, read off the 1,131 top-tier replays we already hold. Mechanism, on
+   the primary currency, never win rate.
+
+### CLOSED: `meta_join.tsv` now rebuilds every sync (commit before f57de66)
+`meta_attrib.py` was wired into nothing — the only surface carrying OPPONENT
+versions existed only when someone remembered to run it. Now in `sync.py`;
+keeper cycles 600s, ~7s/rebuild, three attribution checks, **loud REFUSED** on
+failure because the failure mode is a stale table. Opponent versions 2258/2258.
+Research found the gap and stayed out of `tools/`; correct call.
+
+### MY OWN ERROR THIS BLOCK — D14. A HANDOVER NUMBER OUTLIVES ITS RETRACTION
+I banked research's *"opponents got WEAKER by 7.5, so matchmaking does not
+explain the split"* into **HANDOVER** without checking it. The sign was inverted
+(an `awk` dedup over file-order input, never time-sorted). They retracted; the
+**side lane** caught that HANDOVER still carried it. **The primary was one
+command away and I had already run it earlier in the session for a different
+purpose.** My config says a research finding is a claim until a verdict checks
+it; I let one into a successor's FIRST READ, which is the worst place for it.
+
+**Verified replacement, live API, chronological, 12-match arm:**
+* first5 opp mean **1570.0** -> last5 **1588.4** = **+18.4, STRONGER.**
+  Research's +37.8 was right for the 11-match arm — **the arm grew while we were
+  writing.** "Last five" is a MOVING WINDOW: the 1-4 is now **2-3**. The whole
+  5-0/1-4 framing had a shelf life of ~40 minutes.
+* **The structure is DOSE-RESPONSE, not decay.** Wins vs mean opponent
+  **1566.5**, losses vs **1618.2**: **+51.6 Elo, permutation p = 0.011**
+  (one-sided, exact over all 792 splits). That is the *documented* Loki curve,
+  not a new defect. **A fixed bot does not decay.**
+
+### SLOT: went to the edge and came back
+net5 touched **-19.0** (two points off -21, armed) and has recovered to
+**-16.0** at k=12, rating 1580. **Never freed.** Three independent paths now
+watch the same rule and none re-derives it (my ship_watch, side lane's wake,
+research's wake).
