@@ -19455,3 +19455,24 @@ least one opponent and invisible until the rebuild. The −6 that moved net5 to
 Staleness note, symmetric with their own critique: 4901b5a's state line
 (k=11, net5 −19.0) was one match behind at commit time — my wake read k=12,
 net5 −16.0 at 22:4x. Both true at their own clocks; the tape moved mid-write.
+
+## 2026-08-09 22:43 CEST (from `date`, same shell call) — SIDE LANE: two standing-note adoptions + a MAGNUS NUDGE relayed
+
+**Adopted into the drift-watch doc (this commit):** (1) research's freshness
+rider on the prefer-attributed-population rule — check the surface's newest
+`completedAt` against the claim's era; the guidance was right for 7h while
+the surface was silently behind it; 30a592d bounds but does not retire the
+check. (2) The label-vs-function corollary from the awk retraction:
+discipline attaches to labels, not function — anything whose output gets
+published is an instrument, whatever it is called.
+
+**Magnus, in the side-lane session, verbatim:** *"Please nudge them to use
+subagents as stated by their config."* Relayed to the builder — their session
+has run the trajectory read, the stop-loss rebuild, and the sync wiring all
+inline; the lane configs carry standing permission (opus/sonnet, model always
+explicit) precisely to keep context low on long builds. Research is already
+running four agents. Recorded here because a relayed directive is a claim and
+this is its committed provenance.
+
+30a592d audited clean in passing: builder's lane, loud refusal on failed
+attribution checks, HANDOVER updated in the same commit.

@@ -52,7 +52,14 @@ commits) and at every verdict/ship/leg event:
   held 51. Same failure both times — our experience of an opponent is not the
   field's. The meta.json expansion (98% attribution, 852 third-party matches)
   makes this fixable rather than a permanent caveat: prefer the full
-  population, or name the us-only denominator inline.
+  population, or name the us-only denominator inline. **Freshness rider
+  (s26, from research after the meta_join incident): "prefer the attributed
+  population" pointed for ~7h at a table that did not reach the current era —
+  the guidance was right and the surface was silently behind it. Before using
+  the preferred surface, check its newest `completedAt` against the era of
+  the claim.** (sync.py now rebuilds it every keeper cycle, 30a592d, which
+  bounds but does not retire the check — the keeper is a process, and alive
+  is not working.)
 - **`audit_trigger.py` is half-blind to the research lane (research
   self-flag, 18:2x):** its `note:verdict` row reads the tape, which research
   never writes, so "analysis outpacing decisions" — the exact failure the
@@ -81,7 +88,13 @@ commits) and at every verdict/ship/leg event:
   lane (e4f71d6): a wake path is verified when its alarm has been shown able
   to fire, not when its process appears in `ps` — alive is not working
   (ship_watch D13: no restart-on-OK, so `SHIP_ALERT` absence was decorative
-  for its whole first life).
+  for its whole first life). Second corollary (s26, research's awk retraction,
+  4901b5a): **discipline attaches to labels, not to function** — the guard
+  written for the thing called "monitor" and the guard not written for the
+  thing called "quick check" were minutes apart, by the same lane, in the
+  session it was teaching the standard. Anything whose output gets published
+  is an instrument, whatever it is called; a one-liner that feeds a claim
+  gets the same corrupt-the-input treatment as a monitor.
 - **An alarm that cannot fire before another alarm is not redundancy, it is
   decoration (s26, 4901b5a, generalising the builder's SPRT-dominance
   derivation):** a redundancy claim needs an ordering argument — under what
