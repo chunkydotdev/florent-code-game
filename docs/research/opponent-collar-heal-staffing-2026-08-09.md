@@ -345,3 +345,59 @@ Scripts at `docs/research/scripts/collar-heal-2026-08-09/` — `collar_decode.py
 (`collar_rounds.tsv`, 1,443,480 rows, 177 MB; `collar_games.tsv`, 2,890 rows) were left
 in the session scratchpad, **not** committed — re-run the two commands in §3 to
 regenerate in ~30 s.
+
+---
+
+## ADDENDUM — CLOSING A GAP I NAMED AGAINST MYSELF: the guard now has teeth, and it covers the opponent cells too
+
+**Research arm, s25, 2026-08-09 ~21:0x CEST.** The builder arm generalised a rule today
+that indicts this document as originally published:
+
+> **Prove teeth PER GUARD, not per tool — guards partition the population, and the
+> untested one is usually the one covering the new data.**
+
+**The gap:** this cut's validation required the decoder to reproduce all 13 cells of the
+published `heal-seat-census`, and I cited that as the reason to trust it. **But that
+guard sits on OUR cell. The opponent cells — Ouroboros 40.7%, CAD 39.3%, the numbers that
+decided which opponent the next leg goes to — were guarded by nothing**, beyond the
+Bisons genuine-zero control, which is a *partial* cover and I had not said *partial*.
+
+**THE TEST, and it needed no change to the decoder.** `collar_decode.py` takes `our_team`
+from a join file. So: build a **seat-flipped** join (`our_team` 0↔1), re-decode the CAD
+subset under both, and require the published-cell reproduction to **collapse**. This tests
+the shipped artifact exactly as it runs.
+
+**RESULT: PASS. The seat flip destroys the validation.**
+
+| validation cell | published | **true seat** | **FLIPPED seat** |
+| --- | ---: | ---: | ---: |
+| loss games | 54 | 57 | **12** |
+| siege-rounds | 19,393 | 20,529 | **2,134** |
+| healers/round | 1.10 | 1.09 | **0.28** |
+| share-0 | 56.7% | 56.8% | **72.4%** |
+| damage-round healers | 2.24 | 2.25 | **0.36** |
+| incoming HP/rd | 5.67 | 5.65 | **3.85** |
+| ledger: healed | 70.5% | 70.7% | **25.5%** |
+| ledger: idle | 9.7% | 9.3% | **42.8%** |
+
+**AND THE PART THAT ACTUALLY CLOSES THE GAP.** Under the flip, the per-opponent table does
+not degrade — **it SWAPS exactly**: CAD `THEM` 39.2% / 0.543 seats/rd becomes CAD `US`
+39.2% / 0.543, and our 59.5% / 1.215 becomes `THEM`. **So the opponent cells are the exact
+complement of the guarded partition, computed from the same `our_team` value by the same
+code path.** The guard that proves our cell therefore **transitively covers** the opponent
+cells: if `our_team` were wrong or ignored, the validation could not reproduce, and it
+does — 13 cells to the digit.
+
+**What this does NOT prove**, stated so the next reader does not over-claim it: it proves
+the **seat** is consumed correctly. It does not independently prove the collar geometry or
+heal detection *for opponents specifically* — those are the same `decode(path, side_team)`
+code path exercised by the validation, which is why the transitive argument holds, but a
+geometry error would be symmetric and invisible to a seat flip.
+
+**Drift note:** re-run on today's archive gives **90 CAD files / 57 loss games** against
+the published 85 / 54 — the archive grew during the session. Every cell reproduces within
+rounding at the larger N, and **CAD collar occupancy re-derives at 39.2% against the 39.3%
+reported above.**
+
+**Reproduce:** flip `our_team` in a join copy, run `collar_decode.py` against both, diff
+section A of `analyse.py`. ~3 minutes on the CAD subset.
