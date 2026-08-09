@@ -20575,3 +20575,16 @@ the treatment is precisely the prereg's "reorder of a search, not a widening":
 no siting, incidence, cost or timing change, ablation flag present, det
 variants built for the off-arm. **The code IS the registered treatment.**
 Awaiting leg creation for the two-clock certification.
+
+## 2026-08-09 23:30 CEST (from `date`, same shell call) — SIDE LANE: 445b45d audited — addendum LEGITIMATE, lock intact
+
+The "added after the battery started" line needs its scope stated so no future
+reader misreads it: the running battery is LOCAL (pre-leg verification); **the
+unrated leg does not exist yet, so the prereg+addendum still wholly predates
+leg creation and D5 is intact.** No bar changed, clock disclosed, and the
+third falsifier branch (research's catch) makes a facing-flat null
+DECOMPOSABLE — gate-binding vs diff-broken have different fixes, and the
+larger "drop the threat gate" treatment is correctly deferred to its own
+prereg rather than smuggled in. Decoder verified by the auditor: selftest
+run here, 90° corruption case fires, 2x2-footprint edge case covered.
+Ladder meanwhile: k=17, level 1579, slope −1 — sideways.
