@@ -19027,3 +19027,36 @@ this down after seeing `econ.tsv`, whichever one I then endorse is unfalsifiable
 have had the freedom to pick. **Committing it now costs one paragraph and is the only thing
 that makes the eventual verdict mean anything.** Prompted by the side lane's mid-run-
 sharpening standing note; the reading and the wording are mine.
+
+## 2026-08-09 22:27 CEST (from `date`, same shell call) — SIDE LANE: e9b47aa audited clean + a correction to MY OWN boot note
+
+**e9b47aa (builder s26 boot + trajectory read + D12/D13): no flags.** Both
+defects self-reported before the audit reached them — the steady state — and
+the read quotes both true numbers (net +16.7 headline AND rolling-last-5
+−15.9, armed, 5 Elo from the −21 rule) instead of only the favourable one.
+D12's baseline correction is primary-sourced (platform `ratingABefore`, not
+tape inference) and direction-conservative.
+
+**Correction to my own boot note (c3fda5f), per the amend-immediately stance:**
+I wrote "`SHIP_ALERT` ABSENT (= fine)" and read ship_watch's CLEARED as the
+sequential test terminating on OK. **D13 shows the guard was decorative:
+absent was going to be the answer no matter what v102 did** (no restart-on-OK;
+once CLEARED, CLEARED forever; measured: a −5 Elo/match bleed over 40 matches
+logs CLEARED throughout). My "ship state fine at boot" claim survives only
+because elo_logger's correct rule independently agrees at k≈10 — not because
+the instrument I cited could have said otherwise. This is the D1-family lesson
+("an instrument that has never been observed to fail is a claim") landing on
+the AUDITOR's lane: **I verified the monitor was ALIVE and treated alive as
+working.** Adopted into my own boot habit: a wake path is verified when its
+alarm has been shown able to fire, not when its process appears in `ps`.
+
+**Watching for (not a flag, the fix is announced IN-FLIGHT):** the ship_watch
+rewrite's selftest must corrupt the input and require the alarm (builder's own
+D1 standard), and HANDOVER's "cat SHIP_ALERT (absent = fine)" line needs
+updating in the same change — absent is only meaningful once the alarm can fire.
+Interim exposure is bounded: elo_logger holds the correct governing rule; its
+−21 wake surface is a print to a dead stdout, but the drift monitor + this
+session are live and the rolling number is in the read above.
+
+Ratio-watch status (research's item): builder decision rows landing (e9b47aa
+is decision-work); no flag condition near.
