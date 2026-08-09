@@ -139,6 +139,43 @@ absent as a term**. See [sweep 8](2026-08-09-sweep-8.md) — and read its **prov
 block first**, because its author disclosed fabricated quotes in an undelivered
 draft and I re-verified four load-bearing claims against primaries before publishing.
 
+| 5b | **RE-AIM of topic 5 at the in-base plant surprise** — how leagues both PLANT structures in enemy territory and DENY/REMOVE them, on both sides | **SWEPT** (s24). BC2020 (3 postmortems), BC2024, BC2025 (2), Terminal (starter-kit code + Wayback forum + 3 competitor writeups), Screeps docs/wiki, Jay Scott, Liquipedia SC2. **10 files.** Quotes re-verified by the research arm on the load-bearing source. | 2026-08-09 | [escorted-forward-plant](escorted-forward-plant.md), [turret-threat-field](turret-threat-field.md), [gunner-line-blinding](gunner-line-blinding.md), [sustained-plant-removal-race](sustained-plant-removal-race.md), [runtime-density-siting](runtime-density-siting.md), [preemptive-escort-turret-premortem](preemptive-escort-turret-premortem.md), [retake-the-vacated-tile](retake-the-vacated-tile.md), [standoff-removal-outranging](standoff-removal-outranging.md), [yield-and-reroute](yield-and-reroute.md), [funnel-not-seal](funnel-not-seal.md) |
+
+### Sweep 9 (topic 5b) — what it settles, and one correction it makes to this library
+
+**It arrived at the constructive answer to a refutation made the same session.**
+`docs/research/cover-and-dodge-cuts-2026-08-09.md` killed the per-map/seat killer-tile
+table (−3.9pp at k=8 out of sample, negative at every k). Sweep 9 independently found
+that **the 2020 Battlecode winner solved the same problem with a RUNTIME field, not a
+table** — a ±1 coverage grid maintained per unit, with covered tiles treated as
+**binary obstacles**. Verified verbatim by the research arm against the primary PDF:
+
+> *"every time a Net Gun is reported they would add +1 to all cells at distance 15 or
+> less, and every time a Net Gun is destroyed they would add −1 …"* and
+> *"A Drone considers all locations with value > 0 as obstacles"*
+
+That is the same shape as the builder's live code fact (`_v100hf/main.py:4525`,
+`_bfs_direction` already puts turret tiles in `blocked` with **no** range or
+line-of-fire term) — **so we have half of the winner's mechanism already and are
+missing the coverage half.** BC2024 supplies the same idea for *siting*: score
+placements from **live** enemy density rather than a fitted map table.
+
+**CORRECTION MADE BY THIS SWEEP, and it is the kind this library exists to catch:**
+*"attack the builder, not the structure"* is **NOT sourced doctrine** as the counter
+to a cannon/proxy rush. Liquipedia calls a single worker sent after the probe
+*responding too lightly*; Jay Scott says chasing it *"will be hard to catch"*.
+**Grepped: this library does not currently assert it.** If any future note does, it
+must be labelled inference. Recorded so the claim cannot enter by repetition.
+
+**Non-coverage, stated rather than implied:** Halite, Lux AI, CodinGame and AI
+Challenge were **not** searched for this topic — the sweep stopped after BC2020 and
+Terminal proved far richer on it. **Terminal's official rules page is unretrievable**
+(302 live and in every Wayback capture; `docs.c1games.com` is DNS-dead), so every
+Terminal *rules* claim rests on Correlation One's own starter-kit source, and
+engine-side enforcement is inference. **A WebFetch summariser fabricated a Screeps
+tower falloff formula that is absent from the raw page; it was caught and not used** —
+the same failure mode as the documented incident above, now observed twice.
+
 **THE WHEEL IS NOW FULLY SWEPT (all 12 topics, 2026-08-09).** Successive sessions
 should re-sweep STALE rows rather than pick unswept ones — and prefer re-aiming a
 topic at a specific measured surprise, which is what produced the best results here
