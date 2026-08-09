@@ -46,6 +46,22 @@ if B8_ON and min(t.distance_squared(threat) for t in core_tiles(self.core)) > HU
 inside that band ⇒ no home turret is built, ever, by the only path that builds
 them.**
 
+> **SHARPER STILL (builder arm, same hour; I verified it at `main.py:2321-2324`).**
+> The gate is not merely "a threat is in the band" — the candidate tile *and
+> facing* must be able to shoot **that specific threat, this turn**:
+> ```python
+> aligned = ct.can_fire_from(bp, facing, turret_type, threat)
+> if not aligned:
+>     continue
+> ```
+> **A home gun is only ever built if it can fire at a currently-visible threat from
+> that exact tile and facing. Nothing in the bot builds a turret because turrets are
+> good.** The builder's phrasing is the right one and I am adopting it:
+> **we do not have a turret production policy, we have a reflex.**
+>
+> That is what §6c's trajectory looks like plotted against a policy — our median 2
+> from r200 and never moving, theirs 2 → 3 → 4 → 5 → 5.
+
 **4. Plus an early economy gate** (`main.py:2264`): if `SLOT_HARVESTERS < ECO_NEED`
 (=3) **and** a live home gun already stands, the path returns — waived only if
 `_core_shelled` shows the core actually taking damage. This one stops binding once
@@ -104,7 +120,19 @@ not a ceiling.**
 - I have not traced every writer of `SLOT_THREAT`, so "how often is a threat
   published inside the band" is bounded by the corpus proxy above, not read off the
   publication logic.
-- Whether proactive production would *win* is entirely unmeasured. LOKI-3 held
-  turret count constant by construction and therefore never tested production in
-  either band — which is the correct reason home production is open, and it remains
-  open after this read.
+- **Scoping correction (builder arm), and my replacement reason was also slightly
+  wrong.** I said "count was held constant so production was never tested". Count
+  was held constant **between the home and forward arms** (2.67 vs 3.17) — but
+  **against the parent it went 0.00 → 2.67**, so LOKI-3 *did* add and test a home
+  production path. It tested it **in r200-300 only, surplus-gated**
+  (`MIN_RND=200`, `TI_FLOOR=250`, `MAX_SCALE=520`). **The correct scope is that
+  home production is untested across r0-300** — which is where §6c shows the field
+  already **1.6× ahead by r100**.
+- **And the gap is not first-turret timing.** Our median first turret is **r12**
+  against the field's **r17**. **We start earlier and then stop.** That is a better
+  sentence than either arm had separately.
+- Whether proactive production would *win* is entirely unmeasured, and the honest
+  prior is not encouraging: LOKI-3's home arm moved its mechanism metric only
+  0.17 → 0.32 against a field reference of 2.79, and its composite returned
+  **+0.0pp on n=360**. **Four instruments agreeing that we build fewer turrets is a
+  description of what we do, not proof that doing more wins.**

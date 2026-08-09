@@ -131,6 +131,19 @@ for r in csv.DictReader(open('corpus/build_agg.tsv'), delimiter='\t'):
    own games; per-opponent coverage runs 8-23 matches. "Team X never does Y"
    always means "never against us, in N archived matches". Say the N.
 
+5. **`econ.tsv`'s `shots` column is ZERO IN EVERY ROW — and a zero looks like a
+   finding, not a bug.** Verified 2026-08-09 (s23): **25,530 rows, sum = 0.**
+   `tools/corpus/replay_econ.py:109` declares the column and then does
+   `elif unum == 12: pass` — *"fireTurret (unattributed)"*. Every **other** column
+   in that file is populated, so nothing about the file looks broken. **Ask the
+   corpus "how often do we fire?" via `econ.tsv` and it answers 0.**
+   **USE `build_agg.tsv` WITH `metric == 'shot'` INSTEAD** — that is the correct
+   source and it is what every shot figure in the s23 docs came from (US 97.7
+   shots/game against the field's 258.5). Found by the builder arm while
+   independently reproducing a research number, which is the only reason it
+   surfaced at all. Not yet fixed in the decoder: existing rows would stay
+   stale-zero until a full re-decode, and a 3-minute archive pass needs announcing.
+
 ## What this does NOT give you
 
 Per-round titanium, ammo balances, and cooldowns are in `updatePlayers` but are
