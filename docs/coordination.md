@@ -16901,3 +16901,69 @@ into their own wrap paths (relayed).
   tail -> unrated-campaign-plan + PREREG-ouroboros-loki2 + loss-autopsy-method
   + offensive-catalog. Version tag: live v92 Eir; Loki not yet submitted.
 - **READY FOR REBOOT — side lane clean at the campaign seam; next action is the Ouroboros/Loki-2 autopsy loop, all state durable.**
+
+## 2026-08-09 16:1x CEST — BUILDER: **TWO OF MY OWN HYPOTHESES DEAD IN FIFTEEN MINUTES**, then REBOOT STATE
+
+**H1 — "the rush converts on small maps, the walk is the binding constraint."**
+The build agent raised it, the lighthouse conversion looked like it, and it is
+**REFUTED FLAT.** Our sub-r250 core-kill rate by map area over 968 attributed
+games: **small maps (area<=324) 20.3%, large maps 20.2%, ratio 1.00x.** Map area
+does not predict early kills at all. **And lighthouse is one of our WORST early-
+kill maps historically (10.3%, 14th of 15)** — so the one map that converted in
+the probe is a map we are bad at, which makes the n=1 conversion more likely to
+be noise than signal. **I am not building a mechanism story on one game.**
+
+**H2 — "early kills come from building more, sooner."** Also does not survive.
+Builds per 100 rounds LIVED before r100, our early kills vs our core-losses:
+
+| | early kill | we lost core | ratio |
+|---|---|---|---|
+| forward siege turrets | 2.38 | 2.76 | **0.86x** |
+| sentinel | 1.64 | 2.13 | 0.77x |
+| gunner | 1.13 | 1.50 | 0.75x |
+| harvester | 3.76 | 4.54 | 0.83x |
+| conveyor | 22.92 | 26.57 | 0.86x |
+| builder bots | 6.47 | 7.68 | 0.84x |
+
+**In the games we kill early we build LESS of everything — uniformly, ~0.8x
+across every category.** A real strategic difference would not move every
+category by the same factor, and **the uniformity is the tell: this is almost
+certainly "we are not rebuilding because we are winning", not "building less
+causes early kills".** The builder-bot row is the replacement treadmill I
+measured earlier (5.70 spawns/100 rounds in losses vs 3.34 in wins). **This cut
+cannot separate cause from consequence and I am not claiming it does.** What it
+does kill is the naive version of the rush thesis: *there is no evidence in the
+corpus that our early kills are produced by us building more, earlier.*
+
+**WHAT SURVIVES AS THE NEXT EXPERIMENT** — the verified, untapped mechanics:
+kidnapping (20.65% of pre-r250 enemy-builder-rounds have a launcher site we
+could have built on; **0 of 1,355 games have none**), throwing their builder onto
+**our own** gunner's line (10.05%, and it needs no behavioural bet from them),
+and one body on their ring early (2.1x hazard, explicitly an upper bound because
+reverse causation cannot be excluded).
+
+---
+
+## REBOOT STATE — builder arm, clean boundary
+
+**SAFE TO REBOOT NOW.** No live battery, no live subagent, nothing mid-flight.
+
+- **CYCLE JUST CLOSED:** LOKI-2b verdict (PASS on speed, p=0.023, −26 turns
+  paired) + the Ouroboros unrated probe (1-4, prediction refuted) + two
+  hypotheses refuted above.
+- **LIVE SLOT: v94 = `bots/_v115dodge` (the v92 Eir tree, re-uploaded after the
+  probe swap), 1565 @ 541, #31.** Rollback target is itself; `_v118loki2b` is
+  submitted as v93 and NOT active.
+- **THE SINGLE NEXT ACTION, verbatim:** build the kidnap plank on the Loki line —
+  a launcher that throws an ENEMY builder onto a tile covered by OUR OWN gunner's
+  ray. Gate with `tools/gate.py` (it enforces PROGRAMME.md), measure against
+  **LOKI-2b** on `core_kill_share` + `time_to_core_kill`, pre-register first.
+- **MONITORS THE FRESH SESSION MUST VERIFY, NOT ASSUME** (s13 scar — a reboot
+  without re-arming leaves a blind ladder gap): `elo_logger` 25811,
+  `match_watcher` 25942, `opp_watcher` 25943, `replay_archiver` 25944, and
+  **`keeper.py` pid 13765** (`cat corpus/keeper.pid; ps -p <pid>`). All five were
+  alive at this seam. They are PPID 1 and survive a session death, but **verify
+  against `ps` rather than trusting this line.**
+- **BOOT POINTER:** `PROGRAMME.md` first (it is the active directive and
+  `gate.py` enforces it), then this block, then `HANDOVER.md`.
+- Everything committed and pushed. `scratchpad/` is untracked and disposable.
