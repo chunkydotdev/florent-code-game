@@ -11881,3 +11881,74 @@ label ("class", "the field's band", "far") smuggles in an equivalence that the
 underlying cases do not share.** The rule I am taking forward: **when a finding is
 stated as a category, the first test is whether the members behave alike — and
 that test is usually one battery, not a debate.***
+
+## 2026-08-09 — THIRD LANE (Magnus-commissioned, side research): multi-step plan composition
+A separate Fable session, spawned by Magnus alongside the two arms. Scope: research ONLY —
+what 3+-step tactic COMPOSITIONS could beat the measured walls (2.2:1 heal edge, r150 cliff,
+r200-300 conversion 0.52), where a step that measured bad alone is an enabler. NO bot edits,
+NO arena, NO unrated, NO downloads, NO verdicts, no edits to existing files. Deliverable:
+NEW file `docs/research/multistep-plans-2026-08-09.md`.
+IN-FLIGHT (this lane): 3 read-only subagents — [opus] corpus phase-structure mining of strong
+opponents; [opus] external sweep on timing-attack/tempo-sacrifice composition literature;
+[sonnet] parts-inventory extraction from docs/research/tactics/* as precondition→postcondition
+cards. Synthesis stays inline in the Fable session.
+
+### 2026-08-09 09:33 CEST (from `date`) — research arm: **TWO ENGINE PROBES RUN (announced per the builder's condition), AND I RETRACT MY OWN "DEFECT CLASS" CLAIM**
+
+**RUN ANNOUNCEMENT, because a successor should not find an unexplained probe and
+wonder which arm owns it.** Two local deterministic matches, `--tle 0`, seed 1,
+`maps/fjordgate.map26`, idle opponent. Probe sources live in the **s23 scratchpad,
+deliberately NOT in `bots/`**. Zero arena, zero downloads, zero bot edits.
+Lane check was asked before running, not after; builder concurred on the narrow
+reading (instrumentation, not arena) and **any widening is Magnus's call.**
+
+**1. SENTINEL IGNORES FRIENDLY ENTITIES — real shot, not just a predicate.**
+Gunner used as a POSITIVE CONTROL, since its case is documented and the sentinel's
+never is:
+```
+LINE CLEAR    can_fire_from GUNNER = True    SENTINEL = True
+LINE BLOCKED  can_fire_from GUNNER = False   SENTINEL = True   <- control PASSED
+real shot: sentinel (3,6) EAST, line = our BOT (4,6) + our BARRIER (5,6) -> core
+           HP 500 -> 482   delta -18  ( = SENTINEL_DAMAGE )
+```
+`sentinel-file-stacking` moves **inference → probe-documented**. **Legal is not
+affordable** — +20% scale, the 50-unit cap and reload-2 all still bind.
+
+**2. GUNNER LINES ARE BLOCKED BY OUR OWN BUILDINGS — within-subject before/after
+on one gunner**, blocker placed from beside the line so bot and barrier are not
+confounded:
+```
+CLEAR    can_fire=True    HP 500 -> 493   delta -7  ( = GUNNER_DAMAGE )
+BLOCKED  can_fire=False   no shot possible
+```
+
+**3. THE RESULT NEITHER QUESTION ASKED FOR, and the one that matters most:
+`get_attackable_tiles()` returned the target in BOTH phases.** The raw pattern
+advertises coverage the gunner cannot deliver. **Siting logic scored with it is
+scoring phantom coverage.** 41,921 gunner builds vs 13,298 sentinel, and it sits in
+the **home band — the one place we measure better than the field.** Builder owns
+the fix (bot source). **Corollary for the design: gunners and sentinels want
+OPPOSITE geometry** — a gunner needs a clear lane, a sentinel can sit behind our own
+wall. A ring placing both by one rule is wrong for one of them.
+
+Limits, stated: one map, one seed, one geometry each; enemy blockers untested; a
+friendly *turret* as blocker untested; the gunner's blocked case is "can_fire False
+so no shot", not a fired-and-absorbed shot.
+
+**4. RETRACTION — `seat-turret-gap-2026-08-09.md` §"defect class" is REFUTED and
+amended in place.** The builder ablated all three maps with the free null control a
+map-gated change provides; **all three controls came back byte-identical over 20
+games.** A single-seat clause is **not** a defect by virtue of being single-seat —
+`hive_bunker` is defective for *what it does*, and **snowflake's clauses are
+load-bearing: symmetrising them costs 8 of 20 games.** Fixing "the class" as I
+recommended would have shipped a snowflake regression to buy a small hive gain.
+**The doc's ranking was backwards:** its §7 footnote was the entire finding and its
+headline mechanism was refuted by **its own pre-stated discriminator**.
+
+*What I'd carry: I generalised from a code-shape census to a defect class without
+testing whether asymmetry was ever the defect. **A census tells you what is
+uniform; only an ablation tells you what is load-bearing.** Same family as the
+anchor mismatch — a statistic about the code standing in for a measurement of
+behaviour.*
+
+**IN-FLIGHT:** one Opus sweep agent on wheel topic 8 (economy). Nothing on the CPU.
