@@ -17451,3 +17451,80 @@ Output: research-owned data file under docs/research/, version-tagged. I fold
 it into the leg-lock doc at firing time. Flip-list lock + PREREG stay mine.
 Warned them off the three dead version columns (league_matches.tsv join is the
 only version source). My gate on the builder is unchanged.
+
+## 2026-08-09 16:11 CEST (from `date`) — BUILDER: **IN-FLIGHT — the kidnap plank (`bots/_v119kidnap`), and why it is not the plank the queue described**
+
+**REGISTERED BEFORE BUILDING (rule 1).** Owner: builder. Base: `_v118loki2b`
+(LOKI-2b, treehash `ac1e70c3`). Flag-gated with a flags-off control. No battery
+fired, no gate run yet, slot untouched — `v94`/`_v115dodge` still live.
+
+### Boot checks
+`audit_trigger` 0/4 (no audit). `test_instruments` 13/13. **`corpus_sanity` was
+RED (exit 1) and is now GREEN** — commit `1c21930`, see its message. My earlier
+runs piped it through `tail`, which swallowed the exit code; the check had been
+reporting failure into a pipe that discarded it. Five dead columns now
+documented, two distinct causes, both verified against primaries: `econ.tsv:
+deliveries` is a **decoder bug** of the same shape as `shots` (declared in COLS,
+allocated in `cell()`, never incremented — the `distributeResources` branch
+iterates and passes; 0/33,672 nonzero; live substitute `ti_collected_end`,
+28,925/33,672 nonzero), and the four version columns are a **data fact** (ingest
+writes the literal string `None`), as research established and I re-verified.
+
+### I AM RESHAPING THE PLANK. THE ARITHMETIC SAYS THE BRIEF WAS THE WRONG SHAPE.
+
+The queue's verbatim next action was *"a launcher that throws an ENEMY builder
+onto a tile covered by OUR OWN gunner's ray."* **Two facts, both cheap, both
+established before writing any code (builder-method §1: rule → probe → code):**
+
+- **CODE FACT.** Our turrets already fire at enemy builder bots — `main.py:660`
+  (gunner fires a hostile bot from `get_gunner_target()`) and `main.py:687`
+  (sentinel priority map, `BUILDER_BOT` at prio 3). **The our-side half of
+  research's §3 conversion is already built.** Throwing onto our own line
+  carries no behavioural bet on either side. That part of the brief holds.
+- **SPEC ARITHMETIC, free and unconfoundable.** Gunner 7 dmg / 4 ammo / reload 1
+  → **6 shots, ~11 rounds** to kill a 40 HP builder. Sentinel 18 dmg / 10 ammo /
+  reload 2 → **3 shots, ~7 rounds**. **A thrown builder that can move steps off
+  the ray in ONE round.** So kidnap-into-our-ray is worth **~7–18 HP per throw**
+  unless the target is pinned. **It is not self-evidently a kill play, and
+  nothing in the corpus work claimed it was** — research labelled the conversion
+  **NEEDS PROBE** and I am not going to launder an opportunity rate into a kill.
+
+**s22 refuted imprisonment, so I am not re-opening pinning.** What survives is
+the half research itself ranked FIRST (§7 item 1): **PLACEMENT.** We build 0.64
+launchers/game and **none of them forward**; 20.65% of enemy-builder-rounds
+before r250 sit beside a tile we could have built a launcher on, and **0 of
+1,355 games have zero opportunity**. Combined with LOKI-1's own collar doctrine
+— the defender's **heal line** is why cores survive, raw hits-to-kill spread
+**28 → 1206** across 14 decoded games — the mechanism that connects a launcher
+to `core_kill_share` is **exiling their healers off the 8 collar seats**, not
+killing a builder with a gunner.
+
+**⇒ The plank: forward launcher PLACEMENT + a throw-target SCORER.** First mode
+is collar exile (pure denial, no bets at all); kidnap-into-our-own-turret-line
+is a **scored bonus** taken when the geometry is free. Same code path, one
+scorer, two flags.
+
+### Consequence for the pre-registered metric — flagged now, before numbers exist
+**"Enemy builders killed" is the wrong metric and I will not pre-register it.**
+It does not connect to the programme's currency. Candidates: enemy-core
+**HP-recovery rate** in r0–250, and **collar-seat occupancy denial**. Asked the
+side lane for a view since it holds the autopsy bar.
+
+### Asks out (both sent, neither blocking)
+- **RESEARCH — Q1, decisive:** after a launch, **how many rounds does the thrown
+  builder remain on its landing tile** (distribution, split by thrower)? Is its
+  move cooldown reset on landing? **This one number decides whether the plank is
+  a kill play or a displacement play**, and it is a 20-minute corpus query
+  against a 3-hour arena battery. Q2 (non-blocking): rounds until a collar seat
+  is re-occupied after an exile, and whether enemy core HP-recovery drops in the gap.
+- **SIDE LANE:** plank is in build, not firing; will DM at firing time before
+  results so the flip list locks first.
+
+### MAGNUS DIRECTIVE, 2026-08-09, VERBATIM
+> *"Test theories using unrated games between ladder games."*
+
+**This is now the standing test method and it is recorded here so it does not
+live only in one session's context.** It fits this plank exactly: the conversion
+is NEEDS PROBE *because no corpus geometry can answer it*, so it resolves on an
+**unrated leg against a turret-heavy opponent** (Orizon / gsxWins / The Bisons /
+0033 — 16–19% opportunity per research's per-opponent table), not local arena.
