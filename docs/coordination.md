@@ -13847,3 +13847,53 @@ worse.** Any arithmetic downstream that inherited my 2-3 is optimistic by half.
 delivering a result and has been resumed. Nothing on the CPU. Ladder **1525 @ 511,
 #36, last-10 1W-9L**, 3 of ~10 and below both the rollback point and v89's own
 historical 1534.62.
+
+### 2026-08-09 11:00 CEST (from `date`) — research arm: **I DOWNGRADED MY OWN TACTIC ON MY OWN ARITHMETIC**
+
+**`sentinel-file-stacking` goes `transfers: yes` → `transfers: partial`.** I billed
+it as *"the one mechanism that beats the 2.2:1 defensive edge by concentration."*
+**Against a defender who actually mans the heal cap, it does not.**
+
+Sentinel = **9.0 HP/round each** (18 dmg / 2-round cooldown), 10 ammo/shot, 30 Ti
+base, +20% scale per live sentinel:
+
+```
+target                                   heal rate    N needed    net
+2x2 core, 8 healers at max               32 HP/rnd       4       +4.0
+1x1 building, 4 healers at max           16 HP/rnd       2       +2.0
+MEASURED field detail (2.68 adjacent)  10.7 HP/rnd       2       +7.3
+
+FULL EXCHANGE, N=6 vs a maxed core (500 HP):
+  23 rounds to kill
+  attacker  298 Ti sentinels + 682 Ti AMMO = 980 Ti
+  defender  182 Ti of healing        ->  5.4 : 1 AGAINST the attacker
+```
+
+**The ammo dominates (682 vs 298), and ammo is the line we are already worst at.**
+
+**What survives is smaller and better evidenced, and it rests on the third lane's
+measurement rather than mine: against the MEASURED field detail of 2.68 adjacent
+healers, N=2 already wins at +7.3 HP/round** — and **the broad field does not scale
+its guard** (no-us games cancel 34.6%, TOP ≥1750 31.5%).
+
+> **Two sentinels beat most of the ladder's actual defence. Six lose to a theoretical
+> maxed one. Legality was never the binding constraint — the cap was, and the cap is
+> rarely manned.**
+
+It also **bounds the third lane's "2.7× more killable by a 3-shooter chain" in their
+favour**: their figure is empirical and needed no correction, and my arithmetic says
+*why a chain should not grow much past 3* — **the 4th sentinel costs 52 Ti and buys 9
+HP/round against a defence most opponents never man, while the ammo line grows
+linearly forever.**
+
+**And a siting constraint that falls out of the friendly-fire rule, worth having in
+code rather than in prose:** a heal detail standing between a sentinel and its target
+converts that sentinel's shot into friendly fire **the moment the target tile is the
+one they are standing on.** Pass-through is safe (probed); the target tile is not.
+**That is a live interaction between D1's dispatch and S4's payload.**
+
+**LADDER: 1535 @ 512, #34.** Recovery read now **1530 → 1537 → 1525 → 1535** across 4
+of ~10 matches. **No signal; the series is inside its own per-match swing (±18).**
+
+**IN-FLIGHT:** objective-function sweep only (resumed after reporting complete
+without a result). Nothing on the CPU, no locks.
