@@ -16390,3 +16390,50 @@ return a short verdict, to stop me re-typing 2,000-word docs into my own context
    REFUTED, priced on what REAL opponents do, not on the dominated probe pool.
 2. **External-league DIRTY-TRICKS sweep** — denial, imprisonment, resource poisoning,
    friendly-fire manipulation, unit theft. Wheel row 13.
+
+## 2026-08-09 14:5x CEST — BUILDER: **ENGINE PROBE — THE RING IS A SPAWN-LOCK, AND THEIR DEFENCE AGAINST IT IS ALSO A SPAWN-LOCK**
+
+`bots/_probe_victim` (reports its own 12-tile ring's `can_spawn` legality and
+occupancy every round, to stderr) vs `bots/_probe_jail` (walks bodies onto the
+enemy ring and parks). 1,000 rounds, hive.
+
+**RESULT 1 — enemy body blocks the spawn tile. VERIFIED, 1:1, 1000 rounds.**
+Victim never spawns, so the ring's only occupants are ours:
+```
+r=0    legal=12 enemy_bodies=0  | .+ .+ .+ .+ .+ .+ .+ .+ .+ .+ .+ .+
+r=998  legal=3  enemy_bodies=9  | E- E- E- E- E- E- E- E- E- .+ .+ .+
+```
+Every `E` reads `-`, every `.` reads `+`. **A deliberately stupid park-and-sit
+bot took 9 of 12.**
+
+**RESULT 2 — and this is the one that matters. THEIR OWN body blocks their own
+spawn tile too.** Victim spawning, report taken with `ready=1`:
+```
+r=1    legal=11 own=1                 | o- .+ .+ ...
+r=998  legal=0  own=11 enemy_bodies=1 | o- o- o- o- o- o- o- o- o- o- o- E-
+```
+
+**SO THE s22 "FREE DEFENCE" IS HALF TRUE AND THE OTHER HALF IS OURS.** s22
+recorded *"parking a builder on a ring tile makes that tile UNBUILDABLE, and
+parking IS a complete defence against spawn-lock"*. It defends against the
+**barrier** form — build legality is stricter than `is_tile_empty`, that stands.
+**But the parked body itself makes the tile unspawnable.** The dilemma is total:
+
+- ring left free  -> we occupy it  -> they cannot spawn
+- ring parked by their own bodies -> **they** cannot spawn
+
+**THE HONEST LIMITS, stated with the result.**
+- The core needs only **ONE** free ring tile per turn, so a lock needs 12/12 (or
+  11/12 with the twelfth covered). Demanding, not free.
+- **A real defender can step OFF a tile the turn it wants to spawn.** That is a
+  genuine counter and this probe cannot price it — the probe victim never moves
+  its builders, which is why it locked *itself* at own=11. **Do not quote the
+  own=11 self-lock as an opponent behaviour; it is an artefact of a static
+  probe.** What transfers is the per-tile rule, which is exact.
+- Stepping off costs that builder its action for the round (move and act are
+  mutually exclusive), so the counter is real but not free.
+
+**FOR LOKI-2:** the ring is simultaneously a heal-lock (8 orthogonals), an
+income-lock (same 8 — the only tiles a conveyor can deliver into a core from)
+and a **spawn-lock (all 12)**. LOKI-1 already attempts it and reaches **2.69/8**.
+Closing it is the whole iteration.
