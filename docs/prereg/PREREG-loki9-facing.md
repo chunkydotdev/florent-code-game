@@ -109,3 +109,55 @@ I will report the n rather than the direction.
 **LOKI-7 vs LOKI-8 has never been run** and is underpowered at feasible n
 (~350/arm). So LOKI-9 is measured against a baseline with **no line-internal
 predecessor read behind it**. Stated, not fixed.
+
+---
+
+## ADDENDUM, 23:2x CEST — added AFTER the battery started. NO BAR IS CHANGED.
+
+Recording the clock explicitly: the local battery was already running when this
+was written. **Not one bar above is altered** — changing a bar mid-run is how a
+prereg becomes decoration. This adds a *diagnostic branch* to the falsifier and
+sharpens one argument.
+
+### A THIRD BRANCH THE FALSIFIER WAS MISSING (research, and they are right)
+
+The treatment reorders facings **among those the existing gate already
+permits**, and that gate is `can_fire_from(bp, facing, kind, SLOT_THREAT)`.
+`SLOT_THREAT` is typically **a raider inside our own collar** — which is
+geometrically close to the OPPOSITE of the enemy-core direction. **So the
+permitted set and the enemy-core direction may rarely intersect, the fallback
+fires nearly every time, and facing compliance barely moves.**
+
+That outcome is **indistinguishable, from the bars alone, from "the diff is
+broken"** — and the two have different fixes. So the falsifier now reads:
+
+* facing moves, currency doesn't -> **LABELLED NULL**, road closes. (unchanged)
+* facing moves, currency moves -> gain, reported with its interval. (unchanged)
+* **facing does NOT move -> DO NOT conclude "diff at fault". Disambiguate
+  first:** measure, per home-turret build, whether an enemy-core-ward facing
+  was even *in* the permitted set. If it usually was not, **the gate is the
+  binding constraint, not the diff** — and the honest next treatment is "prefer
+  core-ward, and drop the threat gate when it forbids it", which is a LARGER
+  change needing its own prereg. It is not this plank failing; it is this plank
+  never having been applied.
+
+**This is cheap here because `mech_battery --keep-replays` is already retaining
+both arms**, so the control arm supplies the permitted-set baseline directly.
+
+### SHARPENING: the defect is ANTI-CORRELATION, not absence of choice
+
+The file argued the choice "is not being made on the relevant axis at all".
+**That under-claims it, and predicts compliance EQUAL to chance, not below it.**
+The truth is the choice **is** made on an axis that is *anti-correlated* with
+the target one: we aim where a raider **was seen** (inward), and targets
+subsequently arrive from **outward**. **The 11.4%-aimed-at-our-own-core figure
+is the direct evidence**, and only the anti-correlation reading explains
+compliance landing *below* random.
+
+### A POWER NOTE ON THE BAR, so it is not read as more than it is
+
+45° over 8 facings admits the target direction plus its two neighbours — **3 of
+8, so RANDOM compliance is already ~37.5%**. The pre-registered +30pp therefore
+lands near **68%**, comfortably inside what the treatment can deliver **if the
+gate permits it**. The bar is well set; the branch above decides whether it was
+ever reachable.
