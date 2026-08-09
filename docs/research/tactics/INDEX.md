@@ -61,7 +61,7 @@ exception permanently destroys that unit for the match.
 
 | # | topic | status | swept | files |
 |---|---|---|---|---|
-| 1 | Battlecode postmortems: late-game conversion, breaking stalemates | partial (agent died on quota) — **re-run in flight** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) |
+| 1 | Battlecode postmortems: late-game conversion, breaking stalemates | **SWEPT** — 23 official PDFs 2019-2026 read in full. **Produced the heal-arithmetic finding.** | 2026-08-09 | [heal-arithmetic](../heal-arithmetic-2026-08-09.md), [sweep 1](2026-08-09-sweep-1.md) |
 | 2 | Cross-league trickster/asymmetric play (steering deterministic opponents, denial, baiting, body-blocking, tiebreak manipulation) | **SWEPT** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md), [spawn-smothering](spawn-smothering.md), [ore-tile-denial](ore-tile-denial.md), [ammo-drain-baiting](ammo-drain-baiting.md), [destroy-rebuild](destroy-rebuild-converter.md) |
 | 3 | Engine/rule-edge exploits + post-hoc rule patches (best index of what worked) | **SWEPT** (8 Battlecode postmortem PDFs read in full) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §3, §6 |
 | 4 | CPU/time-limit exploitation — inducing opponent timeouts | **NEGATIVE across 9 leagues; StarCraft AI (SSCAIT/AIIDE) re-run in flight** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §1 |
@@ -100,3 +100,10 @@ since the whole value is in the evidence labels.
   2.34% of forward throws at r200+ ever land a single attack on the enemy core.
 - **We bank and do not spend.** We end r200-300 holding more titanium than
   Ouroboros while buying a twelfth as much ammunition.
+- **THE UNIFYING FACT (2026-08-09, `heal-arithmetic-2026-08-09.md`): healing is
+  4.00 HP/Ti and the best damage source is 1.80 HP/Ti, so the defender wins any
+  titanium-symmetric attrition race 2.2:1 — and builder attacks cannot touch
+  enemy BUILDERS, so only turrets clear a healing screen.** We run a
+  damage-to-repair ratio of 1.11:1 against the field's 2.79:1. Every sweep
+  should be read against this: the question is never "how do we do more damage"
+  but "how does anyone break a 2.2:1 defensive edge".
