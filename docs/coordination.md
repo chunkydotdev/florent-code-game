@@ -9299,3 +9299,101 @@ measure.** Neither of us tested it because neither of us doubted it.*
 both negative-to-inconclusive against thresholds I set beforehand. What is now
 load-bearing is the matched fixture with a real baseline (v80 0-16 · v87 1-15 ·
 Thor 1-9) and the zero-Elo loop that reads it in fifteen minutes.
+
+### 2026-08-09 ~08:0x CEST (from `date`) — research arm: **STATE NOTE / WRAP** (Magnus's call)
+
+**NOTHING OF MINE IS IN FLIGHT.** No subagents spawned this entire session, no
+locks, no pending relays. Everything I produced is committed and pushed.
+**ZERO replay downloads.** Every deliverable ran on free `fcode status` /
+`match list` / `match info` metadata. The one paced pull was 482 `match info`
+calls (482/482 clean) for the 2,410-game corpus, cached in scratchpad — that
+cache dies with the session and is cheap to rebuild (~2 min).
+
+**VERIFIED STATE AT WRAP** (pulled myself, not relayed):
+```
+LIVE  v89 "Eir 9c hivethaw (rollback)" id 847b8d9d, isActive=True
+      = bots/_v100hf, md5 9e85cae5 — BYTE-IDENTICAL TO v87, not a new head
+      rating 1531.477933  n=485  rank #35/113   recent 2-8 of 10
+last ladder match 04:25:29Z v89 vs Lunds Stallions v50, 2-3, -3.79
+```
+No window is armed on v89 (builder's call, and correct — same bytes as v87).
+
+---
+
+## 1. WHAT LANDED (6 deliverables, all committed and pushed)
+
+1. `at-match-rating-2026-08-09.md` — **`ratingABefore`/`ratingBBefore` is the
+   at-match rating**, in the same free payload as the live-join `teamXRating`.
+   Removes the look-ahead bias my own s20 audit declared unfixable.
+2. `strength-classifier-falsifier-2026-08-09.md` — the builder's falsifier
+   **succeeds**: within a fixed opponent binary, `ratingBefore` predicts nothing
+   in the current era. The split survives because **84% of its variance is
+   BETWEEN opponent binaries**. Also: `eloDelta` is mechanically coupled to
+   `oppBefore`, so **no per-band net-Elo figure is a performance statistic**.
+3. `v80-obituary-2026-08-09.md` — closed at true **n=40, net -21.35**, chain
+   contiguous 39/39. Handover's -18.54/n=39 corrected; **immaterial**.
+4. `kill-game-split-recompute-2026-08-09.md` — **the original is IRREPRODUCIBLE**,
+   not merely biased: the doc's own field on the doc's own games no longer
+   returns its result (49.1/46.7 today vs 38.9/71.3 as published).
+5. `kill-timing-doctrine-2026-08-09.md` — Magnus's question. **Our core-kill
+   production is 29.8% against strong AND weak — identical.** What varies is how
+   often they kill us. **They do not rush**: 12% of their kills by r100, half
+   after r300.
+6. `kill-hazard-timing-2026-08-09.md` — **the conversion wall is at r150-200.**
+   Our edge is 1.54 before r150, exactly 1.00 at r150-200, inverts to 0.24 by
+   r300. Forty versions bought r150-200 (0.73 -> 1.38) and nothing after it.
+
+## 2. WHAT I GOT WRONG, so it is not re-inherited
+
+- **I argued for classifier B over C and then computed C under B's label.**
+  `match info --json` returns the opponent version as `null` — a trap already on
+  our own tape. **Caught by my own confound check, not by review.** Rebuilt;
+  conclusions unaffected, numbers moved <1pp.
+- **I handed over a scalar (29.8%) when the SHAPE was the finding**, and the
+  builder pre-registered it as the Loki target. Withdrawn and replaced with
+  "r200-300 conversion ratio vs >=1550 above 1.0" (currently 0.52).
+- **"At-match is cleaner at high thresholds" was overstated** — it beats
+  current-rating there, not the other unbiased classifiers.
+- **My kill-timing §5 said the gunline "aims at the right variable."** On Thor's
+  matched unrated legs it aims at the right variable and misses (0 -> 0 cores
+  killed by us; 3 -> 5 times core-killed).
+
+## 3. STANDING NUMBERS TO CARRY (supersede earlier figures)
+
+```
+strength split       ~45% / ~67%, gap ~+21pp     (NOT 38.9 / 71.3)
+kill-game mixture    ~41% / ~62%                 (NOT 33 / 69)
+our kill production  29.8%, BAND-INVARIANT, median r148
+conversion ratio     r0-150 1.54 | r150-200 1.00 | r200-300 0.62 | r300+ 0.24
+r1000 share 1650+    13-14%      grind pocket 58.2-58.5%   (both unchanged)
+```
+**Classify opponents by per-(name, VERSION) mean `ratingBefore`. Never
+`teamXRating` — results computed on it cannot be recovered later.**
+
+## 4. OPEN / QUEUED
+
+- **The 7-vs-2 seat-dependent home-turret gap on a symmetric map** — queued to
+  me, **UNSTARTED**. Builder's read: the hive clause is unreachable on seat B
+  because `_live_home_gun` fails there. Bigger than the defect we shipped a fix
+  for, and live.
+- **Lunds shipped v50** after 14 consecutive matches on v44. The insertion-tiles
+  table is **SUSPENDED-PENDING-RECURRENCE, not dead** — 5 of 30 teams run
+  non-monotone versions and Lunds has already re-run older ones.
+- **CtrlAltDefeat ran rollback-as-control on the ladder** (107->116->117->107->
+  117->118). Filed to spitball, not chased.
+- Builder's Loki build is in flight against the re-specified target.
+
+## 5. RELAYED BUT **NOT VERIFIED BY ME** — do not inherit as checked
+
+The seat-B det legs; the Thor unrated numbers; the hive verdict legs; the
+`_offer_launch` :2561 single-insertion-slot read; the unrated rate limit
+(5 matches / 10 min); the v88 flag pairing argument. **All local-arena or
+challenge work — the builder's lane. Recorded as relayed.**
+
+## 6. WAKE PATH — **THERE IS NONE FROM MY SIDE**
+
+I ran two monitors this session (matches every 150s; **submissions every 120s**,
+added after I reconstructed a rollback from a match row five minutes late).
+**Both are stopped as of this note.** The builder's monitors are its own and I
+cannot verify them from here — **stating that rather than assuming coverage**,
+which is the rule the 02:31-05:40 incident bought.
