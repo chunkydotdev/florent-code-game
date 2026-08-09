@@ -18568,3 +18568,72 @@ roll to v101.**
 `PREREG-amendments-and-lock-obligations-2026-08-09.md` (obligations 1–11,
 addendum 7 governs the first upward leg). First expected work: the v102
 trajectory read's drift audit, then the Landers measurement leg's lock.
+
+## 2026-08-09 22:14 CEST (from `date`) — RESEARCH ARM: **s25 WRAP — state note**
+
+**Wrap called by Magnus, relayed to me by the side lane** (his call landed in their session
+after the v102 ship). **Recording the provenance because it is second-hand to me** — every
+other wrap-gate I have is first-hand, and my standing rule is that I do not wrap on my own
+initiative. Nothing here is irreversible, so I have executed it; if the call was narrower
+than relayed, none of this costs anything.
+
+### NOTHING IN FLIGHT
+- **Subagents: zero.** All nine completed and were relayed before this note; `ListAgents`
+  shows only the two peers. **No orphans.**
+- **Background commands: none running.** The league sweep completed at 19:43 CEST.
+- **git: 0 ahead / 0 behind origin.** Every deliverable committed and pushed.
+- **Uncommitted files are not mine:** `corpus/decoded.txt`, `keeper_state.json`,
+  `manifest.json`, `elo_history.tsv` (monitor-owned working state), `tools/monitors/
+  ship_watch.py` + its logs (builder's, new), `scratchpad/`, `.DS_Store`.
+- **Monitors verified against `ps`, not asserted:** keeper **13765**, plus **25811 /
+  25942 / 25943 / 25944** — all five alive.
+
+### WHAT LANDED (all committed; the docs carry the detail, this is the index)
+**Decode cuts:** post-throw tile dwell + the entity-id follow-up · per-opponent collar-heal
+staffing (+ its seat-flip teeth test) · CAD lockout population test · CAD suppression
+mechanism · core-kill incidence cut · field baselines on third-party games (+ REVISION 2)
+· enemy-launcher asymmetry · meta.json attribution gap · v92 unrated baseline audit ·
+Ouroboros PREREG drift + both unrated legs · league Elo refresh + trajectory script ·
+upward pricing of the 1600-2100 tier.
+**Tactics:** sweeps **14, 15, 16** — 56 files, INDEX wheel updated in the same commits.
+
+### THE FOUR THINGS I WOULD WANT READ FIRST NEXT SESSION
+1. **`KILL_WINDOW_RND: 250` is not our binding constraint** — 74.4% of our core-kill wins
+   are already inside it at every rating band. **Incidence is scarce, speed is not.**
+2. **Our weapon mix is INVERTED against the tier we must beat** — melee is **2.5%** of what
+   kills a ≥1700 core (gunner 53.1 / sentinel 44.4); ours is 22.7 / 69.2 / **8.1**. And
+   **our core costs 1,596 damage to kill against their 1,019** while we sit 400-500 Elo
+   below them.
+3. **A weak test pool biases OPTIMISTIC, not merely noisy** — ~2× self-play inflation
+   (sweep 15) and *"overestimated Microwave's success"* against stronger opponents
+   (sweep 16). **Two independent sources, same sign.**
+4. **The archive is 98% attributable** via meta.json — 4,356 clean third-party files, both
+   versions live. **Corpus trap 4 and trap 7 are largely retired.**
+
+### PROCESS DELTAS — committed in place today, pointed at rather than restated
+Brief confounds as a **stance**, not a list · the mid-run agent channel is
+pre-registration **for ordering only, and needs a committed line for durability** · a
+header timestamp is `date` output in the same shell call **or** a cited git time, never
+interpolated · **prove teeth PER GUARD** (builder's, and it found a decorative guard on its
+first use) · **audit the SUMMARY, not only the files** (14 of 18 sweep-16 near-misses were
+there) · **a number carries a subject; copy the subject with it.**
+
+### MY OWN ERRORS TODAY, all corrected in place and all the same family
+**Three assumed-denominator errors** — the r74 "fastest kill on our record" (it was fastest
+**vs CAD**), a staleness figure I made **worse** than the side lane's (12.4h, not 15h), and
+**116 registered teams read as 116 active** (72 active; the old table covered 98.6%, not
+61%). **Plus timestamp drift of up to three hours**, the exact s17 failure my own standing
+rule exists to prevent. **The common shape: a count or a clock was available and I did not
+ask what it counted.**
+
+### OPEN, FOR WHOEVER BOOTS NEXT
+- **CAD's builders go IDLE** after early core damage — solvent, unblocked, cooldown-free —
+  and **the corpus cannot separate "reacts to damage" from "reacts to a raider in its
+  base."** That distinction sets the price of the exploit and needs the no-attack-raider arm.
+- **No target above 1650 is soft.** **Landers** is the one worth firing, **as measurement,
+  not as a climb.**
+- **Per-opponent gates instead of a pooled win rate** (VirtualAtom, sweep 16) is the
+  cheapest buildable answer to the weak-pool problem, and **reverse-engineering the 1,131
+  top-tier replays we already hold** is the other.
+- The **league-sweep cadence + roster snapshots** proposal is with the builder; `tools/` is
+  their lane.
