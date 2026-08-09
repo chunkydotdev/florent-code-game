@@ -100,5 +100,20 @@ commits) and at every verdict/ship/leg event:
   derivation):** a redundancy claim needs an ordering argument — under what
   trajectory does THIS alarm fire FIRST? If no such trajectory exists, its
   silence carries no information and must not be read as a second opinion.
+- **A verification that shares the failure mode of the thing it verifies is
+  not a verification (s26, D15 + extension; third family instance tonight
+  with ship_watch-on-a-dead-channel and audit_trigger's blind lane):** the
+  cwd-poisoned `git show --stat` confirmed the cwd-poisoned conclusion. Ask
+  of every check: does it inherit the fault it is checking for? **And the
+  correction is not exempt from the standard it enforces** — the D15 fix
+  itself cited a hash produced from memory that does not exist (5e6e4e1,
+  verified absent by both lanes). A forensic note that cites a hash has run
+  `git cat-file` on it, exactly as a number carries its denominator.
+- **The two turrets do not share a targeting predicate (engine-probed,
+  81c0ada):** gunner `can_fire_from` is False on every EMPTY tile (0/8 at
+  every offset, including on-axis inside range); sentinel returns True on the
+  same tiles. Any bot code or corpus cut treating gunner and sentinel
+  targeting as one predicate is wrong for one of them — audit for this trap
+  in facing/siting analyses and battery treatments.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
