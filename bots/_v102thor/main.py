@@ -467,7 +467,7 @@ B8_ON = False
 # own offline batteries sample distinct games again, at the cost of exact
 # paired-seed reproducibility (the property the spawn-dispersion sort below was
 # written to preserve).  Default OFF so it is screened on its own leg.
-NOISE_ON = False
+NOISE_ON = True
 
 # PIECE F -- PAVE TRAIL.  The pave in _move lays a conveyor on the tile AHEAD
 # (nxt) facing nearest_cardinal(direction toward the Core anchor).
@@ -780,6 +780,32 @@ ROTATE_COOLDOWN_RNDS = 8
 # monotone counter.
 CB_OVER_HEAL_ON = True
 
+# PIECE HF -- the hive economy self-freeze in _expand (2026-08-08, s20).
+#
+# WHAT IT DOES WHEN True (the v80 behaviour): past round 42, on hive only, with
+# a live home gun standing, _expand returns UNCONDITIONALLY for the rest of the
+# match.  Harvester expansion, link building and the chain medic all stop and
+# never resume -- the clause has no exit.
+#
+# WHY IT IS OFF HERE.  Two independent measurements, taken by different arms
+# from different data, describe the same defect:
+#   - our own tape, 2026-08-08 19:16: "hive_freeze = measured LIVE defect,
+#     2.1x delivered Ti on hive seat A".  v84 shipped HIVE_FREEZE_ON = False
+#     for exactly this reason; the v86 fork and this v80 rollback both lost it.
+#   - the hive replay decode, same day, 34 games and no knowledge of this code:
+#     our harvesters plateau at 3 of a 6 cap "by r50 and never resume", 0% of
+#     them die (n=25), and our turret production falls to 1/game against their
+#     7.  The freeze arms at r >= 42.  That is the plateau, and the round
+#     matches.
+# It was invisible for its whole life because it flips ZERO outcomes against a
+# deterministic opponent -- it costs delivered titanium, which no flip-counting
+# leg this project ran before today could see.
+#
+# The clause is a defensive response to picket classes, so removing it is not
+# free by assumption: it must be measured, not argued.  Kept as a flag so the
+# removal stays ablatable and det-testable in both directions.
+HIVE_FREEZE_ON = False
+
 # PIECE H -- ENDGAME SPEND-SWITCH.  Tiebreak order after round 1000 is
 # titanium DELIVERED -> harvesters ALIVE -> titanium STORED -> coinflip, so a
 # bank held past ~r960 is the one resource that scores nothing: stored Ti only
@@ -917,7 +943,39 @@ SLOT_THREAT = 14
 SLOT_SIEGE = 15
 
 AMMO_FLOOR = 16
-PRIMARY_SENTINEL = True
+# PIECE TG -- THE GUNLINE DOCTRINE (Thor 1, 2026-08-09, s21).  Two existing
+# flags flipped together, NO new code, because they are the same decision.
+#
+# WHAT THE TOP TIER DOES (top-tier decode, 20 games): first gunner ~r19 against
+# our ~r53, ZERO launchers, harvesters capped at ~3, conveyor still laid at r6.
+# They are a GUNNER army.  We are a SENTINEL army.
+#
+# WHY THE TWO FLAGS ARE ONE DECISION, and this is the whole argument:
+# SPORKS_AMMO_ON was measured-REFUTED as ported, and the refutation names its
+# own cause -- "our mix is sentinel-heavy (10 ammo a shot against their 4) and
+# a 4/round top-up therefore trails a single firing sentinel while still
+# charging the till every round."  The policy was not wrong; it was fed the
+# wrong army.  PRIMARY_SENTINEL = False removes exactly the stated cause: at
+# 4 ammo a shot the measured cap of 60 is fifteen shots rather than six, and
+# the 4/round top-up leads a firing gunner instead of trailing a sentinel.
+# Flipping either flag alone reproduces a known failure -- sporks-ammo alone is
+# the refuted port, gunner-mix alone starves a cheaper gun of the magazine that
+# makes it worth having.  So they ship together or not at all.
+#
+# WHAT THIS IS NOT: not thor_r1.  That was a REWRITE that shipped zero
+# harvesters and delivered zero titanium (refuted 2/60).  This is a two-flag
+# change on the working bot -- the r6 conveyor, the harvester line, the heal
+# line and the eco cap are all bit-for-bit untouched.  The handover's own rule:
+# a doctrine test belongs as a FLAG on the working bot, not a rewrite.
+#
+# WHY NOW: v87's hive fix doubled delivered titanium in the lab and returned
+# 1 win in 15 unrated hive games against real opponents, with 5 of those games
+# lost to core_destroyed.  Economy was not the binding constraint; being
+# out-fought was.
+#
+# FALSIFIABLE AND CHEAP TO REVERT: both flags are single booleans.  Reverting
+# is re-uploading _v100hf.
+PRIMARY_SENTINEL = False
 LAUNCHER_RESERVE = 80
 
 # PIECE E1 -- PEACETIME AMMO FLOOR = HARVESTER RESERVE (grafted from the
@@ -1009,7 +1067,7 @@ E1_RESERVE_CAP = 23
 # place, untouched and toggled off, so a retune of the four constants for the
 # heavier shot cost can be screened on its own leg later; with the toggle off
 # the Eir 5.1 working-magazine block below owns ammunition bit-for-bit.
-SPORKS_AMMO_ON = False
+SPORKS_AMMO_ON = True  # PIECE TG: re-armed WITH PRIMARY_SENTINEL=False; see the pairing argument above.
 SPORKS_AMMO_OPEN = 17
 SPORKS_AMMO_CAP = 60
 SPORKS_AMMO_TOPUP = 4
@@ -3611,14 +3669,9 @@ class Player:
         # the intended question ("a home turret is standing here"); the two
         # cheap tests are ordered ahead of it so the scan only runs on hive,
         # past round 42.
-        if self.mw == 25 and self.mh == 25 and ct.get_current_round() >= 42:
-            import sys as _s
-            print("HFARM r=%d id=%d core=%s live=%s store=%d" % (
-                ct.get_current_round(), ct.get_id(),
-                (self.core.x, self.core.y) if self.core else None,
-                self._live_home_gun(ct), ct.read_store(SLOT_HOME_GUN)), file=_s.stderr)
         hive_freeze = (
-            self.mw == 25 and self.mh == 25
+            HIVE_FREEZE_ON
+            and self.mw == 25 and self.mh == 25
             and (self.core.x, self.core.y) in ((2, 20), (21, 3))
             and ct.get_current_round() >= 42
             and (

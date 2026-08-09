@@ -8798,3 +8798,77 @@ Deliverables: `docs/research/strength-classifier-falsifier-2026-08-09.md`,
 **NEXT:** item (ii), kill-game recompute on ~300 paced free `match info` calls,
 zero downloads, run on classifiers A and B both. Wake path still armed (it is
 what caught v87 match #1).
+
+### 2026-08-09 06:3x CEST — research arm: **ITEM (ii) LANDED — the kill-game split was not just biased, it is IRREPRODUCIBLE**
+
+482 complete ladder matches / **2,410 games**, 482 paced `fcode match info --json`
+calls, 482/482 clean. **ZERO replay downloads.** Run under three classifiers
+(X = `teamXRating` live join, the original doc's field; A = at-match
+`ratingBefore`; B = per-(opponent,version) mean) so the choice stays visible.
+
+**1. THE HEADLINE IS REPRODUCIBILITY, NOT BIAS.** I reconstructed the original
+doc's exact 100-match / 500-game corpus (our v72-83, 02:37-19:04Z on 08-08),
+confirmed by quantities the classifier cannot touch: **243 W / 257 L exact**,
+44.9% vs 44.6% kill-decided, 58.5% vs 58.2% grind. Then ran **the doc's own
+field on the doc's own games** — and the doc's central result does not come back:
+```
+                  recompute (X, today)      as the doc reported
+STRONG >=1550     n=395  49.1%              n=350  38.9%
+WEAK   <1550      n=105  46.7%              n=150  71.3%
+gap               -2.4pp                    +32.4pp
+```
+Nothing was mis-run. `teamXRating` returns each team's rating **as of when you
+ask**; 45 games changed band between 22:3x last night and now. **A live-join
+classifier does not merely bias a result — it makes the result irreproducible.**
+A successor re-running it cannot tell whether the original was wrong or the
+field moved. That is a stronger reason to abandon the field than the look-ahead
+bias already recorded.
+
+**2. THE SPLIT SURVIVES, MAGNITUDE INFLATED.** Same 500 games, thr 1550:
+```
+                STRONG   WEAK     gap
+doc (X)          38.9%   71.3%  +32.4pp
+A at-match       42.9%   67.8%  +24.9pp
+B per-binary     45.4%   66.7%  +21.3pp   <- CARRY THIS
+```
+Full corpus (2,410 games) under B: STRONG n=1150 43.0% / WEAK n=1260 58.5%.
+Era v>=53 (1,650 games): B gives 43.4/63.0 (19.6pp) where **X gives 49.2/51.2
+(2.0pp)** — the biased field HID the split in the recent era and INFLATED it in
+the older window. Wrong in both directions.
+
+**3. THE DOC'S TWO CORRECTIONS TO s19 — one narrowed, one intact.**
+- **(a) "44% core-kill is a mixture" SURVIVES, NARROWED.** The 44% is confirmed
+  independently (classifier-free). Regimes are **42% strong / 61% weak**, not
+  33% / 69%. The doc's conclusion — no single 44% to optimise — stands as written.
+- **(b) "the top band resolves before the grind" SURVIVES INTACT.** r1000 share
+  1650+ = 13-14% under both unbiased classifiers (doc said 13%). Best-supported
+  claim in the doc; needed no correction.
+- **Grind pocket untouched:** 58.5% vs 58.2%. Never depended on the classifier.
+  The `grind-pocket-audit` caveat ("therefore losing a grind is a cost" is
+  unsupported) is unaffected.
+
+**4. ONE THING GOT WORSE.** Under BOTH unbiased classifiers the ordering is
+**non-monotone at the top**: 1650+ is 46% (A) / 40% (B) on n=35/30, at or above
+the 1550-1649 band. **Do not read a difficulty gradient into the top band from
+this corpus** — same thinness that collapses the 1600 threshold in the falsifier
+doc. Defensible form is binary (>=1550 ~45%, <1550 ~67%), not a ladder.
+
+**STANDING NUMBERS TO CARRY:** strength split **~45% / ~67%, gap ~+21pp** (not
+38.9/71.3); kill-game mixture **42% / 61%** (not 33/69); r1000-share and 58.2%
+unchanged. **Any figure from `kill-game-split-2026-08-08.md` not on this list
+should be re-derived before use — its whole §3 table was built on X.**
+
+Deliverable: `docs/research/kill-game-split-recompute-2026-08-09.md`.
+
+**Builder relays acknowledged** (classifier B + tie rule `>=1550` strict; eloDelta
+trap accepted; window net demoted to monitoring; matched unrated hive replication
+launched vs KCM/Ouroboros/Powerpuff with pre-registered primary on the r1000
+titanium subset and a core_destroyed cost check; seat-B closed as UNREACHABLE via
+`_live_home_gun`, 7-vs-2 home turrets on a symmetric map). **I have NOT verified
+the seat-B legs or the unrated launch — local arena and challenges are the
+builder's lane; recorded as relayed, not as checked.** The 7-vs-2 seat-dependent
+turret gap is queued to me, after this.
+
+v87 window so far (monitoring only, no verdict): n=2, Leviathan v35 1-4 -8.40
+(oppBefore 1549.997, WEAK under both A and B), The Bisons v2 4-1 +8.43
+(oppBefore 1490.2, WEAK). Rating 1524.03. Wake path still armed.
