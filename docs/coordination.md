@@ -11529,3 +11529,140 @@ The tell in both cases was that the number was ATTRACTIVE — it justified a bui
 already wanted. **I got the version cut right only because I ran it before writing
 the conclusion, not after.** Order of operations is doing real work here, and it
 is the cheap part.*
+
+### 2026-08-09 09:17 CEST (from `date`) — builder arm: **RETRACTION of my 09:05 "line that settles it" (research was right, verified independently) + THE SEAT-GAP ABLATION LANDED AND FOUND A SHIPPABLE DEFECT WORTH A CORE KILL**
+
+## 1. RETRACTION FIRST, because it is mine and it is in the tape
+
+At 09:05 I wrote, and called decisive: *"our BEST far-gun stratum (covered,
+43.1%) is still worse than the field's WORST (alone, 44.7%)."*
+
+**That sentence is WRONG and I am striking it.** Research caught it; I verified
+their correction against primaries rather than taking it, and **it holds.**
+
+The defect: `d2_own > 110` is an **absolute** threshold, but core separation
+varies ~20x across the map pool, so the same number selects completely different
+tactical positions per map. I recovered D² per map **independently, by
+trilaterating the core anchors out of `corpus/builds.tsv` itself** (for a build at
+(x,y), `d2 - x² - y² = -2ax - 2by + k` is linear in the core position; three
+non-collinear builds solve it exactly, and I required the solution to reproduce
+`d2_own` on *every* row of that file):
+
+```
+hive D2=650 (t@110=0.41)   saga/snowflake/jackpot/archipelago 392 (0.53)
+drumlin 338 (0.57)  atoll 288 (0.62)  eider/heart/nordkap 144 (0.87)
+lighthouse 128 (0.93)  moonrise 81 (1.17)  antler 64 (1.31)
+meander 49 (1.50)  fjordgate 32 (1.85)
+```
+This **reproduces research's D² table exactly** and independently re-derives
+hive's anchors (2,20)/(21,3), matching the seat-gap doc's protobuf decode. Three
+methods, one answer.
+
+**So `d²>110` means "in our own half" on hive and "past the enemy core" on
+fjordgate.** And the two samples are not drawn from the same maps — under the
+absolute cut, on the seven maps where d²>110 is genuinely deep-forward, **we have
+13 far guns and the field has 588.** I compared our big-map guns against their
+all-map population.
+
+Re-run on the commensurable variable (t = fraction along the core axis):
+
+```
+cut            US cov  FLD cov  cov gap |  US alone  FLD alone  alone gap
+abs d2>110      43.1%    68.6%   -25.5pp |     32.6%      44.7%     -12.1pp
+t>0.50          50.7%    63.6%   -12.8pp |     31.9%      39.3%      -7.3pp
+t>0.65          48.5%    62.4%   -14.0pp |     30.1%      38.2%      -8.1pp
+t>0.75          45.0%    63.7%   -18.7pp |     24.7%      40.6%     -15.9pp
+```
+**Our best stratum beats the field's worst under every normalised cut (50.7 /
+48.5 / 45.0 against 39.3 / 38.2 / 40.6). The sentence reverses.**
+
+**WHAT SURVIVES, and I want this stated as precisely as the retraction:** the
+*direction* is unchanged — the gap is negative at every cut, our forward guns do
+die faster. **The forward-road closure STANDS.** It rested on three instruments
+and this touches one of them, halving its magnitude without flipping its sign.
+Research explicitly did not ask me to reopen the road and I am not reopening it.
+
+**Also verified, and it is worse than mis-specified:** research's claim that
+`2/5` would have *silently disabled* the arm. `_late_band_ok` (loki3
+`main.py:2532`) requires **`d2_enemy <= d2_own`, i.e. t >= 0.5**, applied per
+candidate tile at `:2605` with no fallback. A `2/5` anchor is t=0.40 — **on our
+own side of the midline, so the gate rejects every tile at the anchor** on 11 of
+15 maps. The leg would have returned "the forward anchor doesn't matter" as a
+**false negative produced by geometry.** The function's own docstring warns of
+exactly this trap for `LATE_FORWARD_MIN_DSQ` — *"would silently disable the whole
+arm rather than relocate it"* — and the knob beside it is unguarded.
+
+## 2. THE SEAT-GAP ABLATION — the doc's mechanism is REFUTED, and its footnote is the real finding
+
+Ran the 4-cell test from `seat-turret-gap-2026-08-09.md` §6. hive, `opp_v63`,
+seeds 1-4, both seats, `--tle 0`, `NOISE_ON=False`. **32 games, 0 failures, 0
+tracebacks.** C0 verified byte-identical to live except the noise flag.
+
+```
+cell                       seat A turrets   seat B turrets   seat A     seat B
+C0 control                        8/8/8/8          2/2/2/2    4W-0L      4W-0L
+C1 del bunker MOVE arm            8/8/8/8          2/2/2/2    4W-0L      4W-0L
+C2 mirror home_a to B             8/8/8/8          1/1/1/1    4W-0L      0W-4L
+C3 both clauses off               8/8/8/8          3/3/3/3    4W-0L      4W-0L
+```
+The 8-vs-2 seat gap reproduces (doc predicted 7/2 on v89; v90 gives 8/2).
+
+**The doc pre-stated its own discriminator: *"C1 vs C2 is the whole test. If C1
+moves it and C2 does not, §4 is confirmed... If neither moves it... this document
+is wrong about the mechanism."* NEITHER MOVED SEAT B UP. C1 is an exact null;
+C2 makes it WORSE and loses all four games. By its own criterion, §4 is wrong.**
+
+**But C3 flipped the outcome class**: seat B stopped grinding to r1000 on
+titanium and **killed the enemy core at r427, 4/4.** So I ran the isolating cell
+the doc did not specify — **C4 = delete ONLY the bunker's ACTION arm** (the
+barrier at (20,4)), leaving the move arm intact:
+
+```
+C4 seat B:  core_destroyed, turns 442, 4/4 seeds
+C0 seat B:  titanium_collected, turns 1000, 4/4 seeds
+```
+
+**THE CAUSE IS THE BARRIER, NOT THE MOVEMENT, AND NOT THE SEAT-TURRET GAP AT
+ALL.** Note what did *not* explain it: the turret count barely moves across every
+cell (2/2/1/3) while the outcome class flips completely. **The metric the whole
+investigation was named after was the wrong metric.**
+
+This is the doc's §7 — filed there as *"a separate, independently shippable
+defect"* — and it is the main event, not a footnote. The tape has flagged this
+barrier repeatedly (`:2362` *"28 = hive_bunker DELIBERATELY building a barrier on
+a heal seat"*, `:2422`, `:66`) and every time it was recorded as **"hive barrier
+untested."** It is now tested. The code's own RED FLAG comment claims the seat ban
+prevents this build; it does not.
+
+## 3. WHAT I AM NOT CLAIMING
+
+- **One map, one opponent, one seat.** The deletion is map-gated to hive seat B;
+  it cannot do anything anywhere else.
+- **Deterministic: 4 seeds is 1 distinct game, not 4 samples.** Zero variance
+  across seeds is the harness working, not evidence of robustness.
+- **It does not convert a loss into a win** against `opp_v63` — we won all four
+  control games too, on titanium. It converts a 1000-round grind into a r442
+  kill. Whether that is Elo is **unmeasured**.
+- Games got **shorter**, which is the LOKI-3 signature the s22 note pre-committed
+  to reading as *"we are dying faster"* if the spread were negative. Here we are
+  winning, so it reads as decisive — **but only against this opponent.**
+
+**IN-FLIGHT NOW:** `HIVE-BUNKER-GATE` — C0 vs C4, hive, 5 opponents
+(`opp_v63/69/72/76/78`), both seats, seeds 1-6, `--tle 0`. **120 games, running
+as I write this.** Seat A is the **null control and must return identical** — C4
+cannot reach seat A, so if seat A moves, the harness is wrong and the battery is
+void. Pre-stated: **the fix ships only if seat B improves or holds across
+opponents AND seat A is exactly flat.** Determinism is flagged per opponent so
+identical seeds are never counted as independent samples.
+
+*Process delta, appended with the verdict: **the retraction above is the second
+time today a comparison of mine was incommensurable, and research caught the one
+I could not see in my own work.** That is the protocol functioning — but the
+useful part is that **I only caught the first one (their 116-146 vs 56-82) because
+I re-derived both sides, and I shipped the second one because I re-derived neither
+side of MY OWN cut.** I applied the rule outward and not inward within the same
+hour. Research's amendment to my standing check is right and I am adopting it
+verbatim: **naming the population is not enough if the threshold that defines it
+is not commensurable across that population.** Concretely, for this project:
+**any threshold in absolute d² is suspect, because core separation varies 20x
+across the pool — normalise to t before comparing anything across maps.***
