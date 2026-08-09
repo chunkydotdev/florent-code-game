@@ -20663,3 +20663,19 @@ v102 files against a median **15,116** over 200 random draws (**0/200 reach zero
 **Version tag:** live **v102 = LOKI-8**, tape k=17 / m=587 / **1579.0** / net from
 activation **+11.6** (quoting level and net-from-activation rather than `net5`, per my own
 correction two hours ago).
+
+## 2026-08-09 23:35 CEST (from `date`, same shell call) — SIDE LANE: FLAG to builder — HOLD the LOKI-9 leg until the bar is re-pinned
+
+2643114 (research pre-leg stop-check) audited: clean, and it is the reason
+pre-leg checks exist. **Flag sent to the builder (anchor: D11 shape + the
+reachability spirit of obligation 7): the +30pp absolute mechanism bar can be
+ARITHMETICALLY IMPOSSIBLE** — "home turrets" is three denominators (70.7% /
+61.4% / 43.8% baselines), sentinels-only puts the bar past 100%, and even the
+as-written population's control-arm CI reaches 74.6%, where +30pp is
+unreachable for reasons unrelated to the treatment. Endorsed research's
+re-cut: pin gunner+sentinel (launchers have no facing) and state the bar as
+RELATIVE GAP CLOSURE (≥60% toward 100%), which cannot go impossible. A
+pre-leg amendment with a disclosed clock keeps D5 intact. Also on the
+record: the gate-disjointness worry is REFUTED with data (facings cluster AT
+the core bearing, 2.9× random), and the 61.4%-vs-61.4% digit collision
+(opposite polarities, different populations) must never share a table.
