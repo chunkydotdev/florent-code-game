@@ -15618,3 +15618,61 @@ against its own prior number.**
 **S5 unrated is pending and cannot precede activation** — `match unrated` has no
 bot selector and plays whatever holds the slot. Sequence: activate -> unrated
 read -> ladder. Recorded as `NOT-REFUTED (n=10)` if it survives, never `pass`.
+
+## 2026-08-09 13:06 CEST (from `date`) — RESEARCH ARM: **SWEEP 10 — the 5.04 explained, and a stale number closed**
+
+**Landed:** 6 files + INDEX row 8b. Topic 8 (economy) **re-aimed** at this session's
+builder-exposure surprise. **All three of my agents are now in; queue drained.**
+
+**A STALE NUMBER FOUND, CHECKED AGAINST THE BOT, AND CLOSED — not handed over as a
+warning.** `docs/v79-analysis.md` (proposal B0b): *"a gunner is ~3.5/rd and a sentinel
+~9/rd."* **The gunner figure is 2× low** — `docs/reference/official-docs.md:257` says
+*"18 every 2 rounds against 7 every round"*, so `reload N` = fires once every N rounds:
+**gunner 7/rd**, sentinel 9/rd (right). **I checked whether it sized anything shipped:
+it did not.** `MEDIC_TI_FLOOR/MIN_RND/EARLY_MIN_DMG/TYPES` carry **no damage-rate**,
+and the heal-seat arithmetic at `_v100hf/main.py:550-560` uses a **measured** siege DPS
+(max 23.22). **Latent, not live — it becomes live the moment anyone builds B0b.** It
+doubles that proposal's healer count: **one healer (4 HP/rd) does NOT out-heal a gunner
+(7); two do (8).** Corrected in place at the source line. **No queue item.**
+
+**THE SUBSTANTIVE RESULT: the field's 32.3% / lift-5.04 turret-adjacent deaths are a
+MUTUAL-PROTECTION CELL**, and it closes **harder** here than in the games it came from,
+because **builder attacks cannot touch builder bots at all**. The reading is *forced*
+rather than one of two, by the file filed `transfers: no`: the canonical RTS answer to
+*"when does a worker switch to defence"* is **it starts shooting**, impossible here —
+so those deaths **cannot** be a worker pull.
+
+**The arithmetic is small integers.** **2 builders holding 2 of a turret's 4 orthogonal
+tiles make it un-chippable by builder attacks forever**; **2 healers strictly out-heal
+one enemy gunner** (8 HP/rd vs 7) at **2 Ti/rd of ours against 4 Ti/rd of theirs.**
+A favourable exchange we currently do not take.
+
+**COUNTER-EVIDENCE FILED BESIDE IT, NOT BURIED, and it aims at our known weakness.**
+BC2022's 5 Musketeers ran this exact arithmetic and watched the repair queue pull
+*"nearly a dozen soldiers out of commission"* and lose *"the clash in the middle"*.
+**The middle game is where we die.** Their Figure 5 huddle is our 25.4% / lift-2.14
+heal seat. **Any build toward the 5.04 needs a CAP and a TIMEOUT, not just a trigger.**
+
+**The safe form is `fortify-on-idle`** (Overmind): fortify **only on idle time** — a
+strictly-dominated-time change costing **zero scheduled builder-turns**, i.e. no
+economy diverted, which is precisely what killed ESCALATE at −7.8pp. **The untested
+rule is latency, not stock**: keep builders loitering where the gun will be needed and
+build on sight, with High Ground's one-line rail (at least as many economy buildings as
+guns) and their documented stall trap + unconditional r400 resume.
+
+**NEGATIVES, stated:** **no league instruments the economy-vs-defence worker-time
+split** — every rule found is a build-order ratio or a trigger, none reports realised
+worker-rounds by task. **No published repair-vs-rebuild return measurement exists
+anywhere**; our 4.00 HP/Ti comparison appears **original**. Lux S1/S2 and Halite III:
+nothing quantified. **Terminal dropped rather than transferred — it has no workers at
+all.** One CodinGame claim is **in no file** because it could not be verified on-page.
+
+**THIRD SIGHTING OF THE QUOTE FAILURE MODE — now a pattern, not incidents.** A drafted
+quote *"SCVs are used to repair tanks and draw fire"* actually reads *"They are also
+used to repair tanks and draw fire"*, where **"They" is Supply Depots**. Wrong subject,
+cut rather than paraphrased. With this morning's fabricated Screeps formula and s23's
+disclosure, that is **three**. **The failure is not "models lie about sources" — it is
+that a plausible sentence near the right passage survives everything except a verbatim
+grep.**
+
+**IN-FLIGHT: nothing. Queue drained ⇒ sweeping, per the standing mandate.**
