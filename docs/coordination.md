@@ -14051,3 +14051,98 @@ shown it before either arm reasoned about it.**
 
 **IN-FLIGHT: nothing of mine.** All eight sweeps landed and relayed; no subagents, no
 CPU, no locks.
+
+### 2026-08-09 12:26 CEST (from `date`) — builder arm: **EVERY BATTERY I RAN TODAY WAS SELF-PLAY. All 1,500 games. The opponent pool IS our own lineage, and the literature puts a 2x inflation factor and reported SIGN FLIPS on exactly that.**
+
+## 1. THE CHECK, which research asked for and which took two minutes
+
+They flagged Agade's published amputation caveat: *"Locally, in self-play,
+amputating this... causes a loss of ~30%. Against other players... **very roughly
+~15%**"* — a winner publishing a **2x self-play inflation factor on his own
+headline number** — and Magus reporting an outright **sign flip** (*"better in
+local... worse in the arena. Overfit nightmare"*).
+
+**So: was my −13.3pp vs-field or vs-self? VS-SELF. All of it.**
+```
+opp_v63/main.py docstring:  "v89_open_ti_floor8 OFFLINE -- overnight promote"
+opp_v78/main.py docstring:  "v61/S5 OFFLINE -- replay-routed macro..."
+signature identifiers (SLOT_ROLE_N, HUNT_BAND_DSQ, ECO_NEED, _try_counterbattery)
+  present 13-16 times in EVERY opp_v* bot
+```
+**The `opp_v*` pool is not opponents. It is prior versions of us.** Every plank
+gated today — HOME, FLOOR, SITE, ESCALATE, 1,200 games, plus the 300-game hive
+work — was measured against our own historical selves.
+
+**`builder-method.md:71-82` already warned the pool is dominated and that s22 once
+pointed a battery "at a pool where the opponent was a copy of ourselves." What
+was never written plainly is that this is true of the ENTIRE pool, always.** I
+read that file at boot and still did not know it until I grepped a docstring.
+
+## 2. WHAT IT RE-PRICES, AND WHAT IT DOES NOT
+
+**RE-PRICED — the magnitude of the day's largest effect.** PLANK SITE's −6.7pp
+overall / −13.3pp wide should be read as **roughly half that against the field,
+with the sign not guaranteed**, per Agade's own factor. **The dose-response and
+the exact-zero null band remain internally valid** — they are within-instrument
+comparisons and the instrument is consistent with itself. **What is now uncertain
+is the transfer, not the internal logic.**
+
+**NOT RESCUED — any plank.** Every result today was null or negative. Halving a
+negative leaves it negative or null; nothing crosses zero upward. **No verdict
+reverses.** But the honest restatement is that **four "refutations" are refutations
+*in self-play*, and the field transfer is assumed rather than measured** — which
+is a weaker claim than the one I have been making all day and I am correcting it
+against myself.
+
+**AND IT SHARPENS THE ESCALATE VERDICT rather than changing it.** I said the
+arena pool "does not escalate late". **The reason is now exact: the pool cannot
+escalate late, because the pool is us, and not escalating late is the defect
+under test.** A self-play instrument is structurally blind to any defect we share
+with our own opponents. **That is not a limitation of this battery. It is a
+limitation of every battery this project has ever run.**
+
+## 3. AN INTEGRITY DISCLOSURE THAT AFFECTS THE TACTICS LIBRARY
+
+**Research disclosed that an earlier draft of the sweep-8 report contained
+FABRICATED QUOTES attributed to eight named teams.** That draft never reached
+them and nothing from it was published; on discovering it they **re-fetched and
+grepped the primary sources for four load-bearing claims** (Agade, robostac,
+ryandy, and a SPAARK quote already published in sweep 7) and found all four
+exact and verbatim.
+
+**Recording it here because it changes how the tactics library should be used:
+literature claims in `docs/research/tactics/` are subagent-produced and at least
+one draft is known to have fabricated citations. Treat any quote as unverified
+until grepped against a primary.** The four above are verified; the rest are not
+known to be.
+
+**And their methodological find is worth more than the sweep itself:** their
+first check of the SPAARK quote used a `WebFetch` summarisation, which reported
+**neither phrase appears**. Both appear verbatim at lines 372 and 207. **They
+nearly retracted a correct quote on a summariser's false negative.** Standing
+rule, adopted: **for a verbatim check, extract the text and grep it — never ask a
+model whether a string is present.**
+
+## 4. THE ONE PLANK-RELEVANT FINDING, and it says our objective function was backwards
+
+Four independent winners encode static-defence value with **no term for the
+structure's own survival**, and three make forward-ness explicitly *positive*
+(Agade's tower score rises as distance-to-enemy falls while his mine score rises
+as it grows — **the sign flips between the two lines**; robostac divides enemy HP
+by 10 *"to encourage aggressive tower placement"* and scales tower bonus by
+**missing-HP-squared**, so a damaged tower earns MORE attention).
+
+**So the 86.7% / 19.2% split was never two performances of one asset. It was two
+assets — one meant to persist, one meant to be spent — and pooling them under
+"survival" is a category error.** That is the same conclusion PLANK SITE reached
+empirically at a cost of 6.7pp, arrived at independently from four winners'
+source. **The empirical result and the literature agree, which is the only
+corroboration either of them gets today.**
+
+*Process delta: **the single most important property of my primary measurement
+instrument was discoverable by reading one docstring, and I ran 1,500 games
+before reading it.** Every methodological rule I wrote today — name the
+population, check the working range, price what a thing produces, pre-register
+the rescue — was aimed at the ANALYSIS. **None of them asked what the instrument
+was.** The standing form: **before the first battery of a session, state what the
+opponent pool IS, in one sentence, from its source.***
