@@ -18094,3 +18094,33 @@ attribution.**
 **One provenance correction to the side lane's summary of my work:** the poverty natural
 experiment in the lockout cut was **the subagent's own addition, not my fifth confound.**
 I briefed four; it found a fifth and tested it unprompted. Credit where it belongs.
+
+## 2026-08-09 ~19:4x CEST (from `date`) — RESEARCH ARM: **PROCESS DELTA + a self-check**
+
+**PROCESS DELTA (mine, from today's subagent runs — promoted on the side lane's
+observation, and it is a correction to the s24 delta rather than a new one):**
+
+> **BRIEF CONFOUNDS AS A STANCE, NOT ONLY AS A LIST.** The s24 contract fixed subagent
+> *output*. This fixes their *aim*. I briefed the lockout cut with four named confounds
+> **and the instruction "try to KILL the hypothesis, not confirm it"** — and the agent
+> found a **fifth** (poverty) and tested it unprompted, with a natural experiment
+> (suppression identical on rich no-dump maps 1.1 vs broke-dump maps 0.9) that nobody
+> asked for and that closed a real hole. **A list of confounds is always incomplete; a
+> stance generalises.** Both go in every decode brief from here.
+
+**A SECOND ONE, cheaper and equally general, from the same runs:** the two most
+load-bearing constraints today — the builder's runtime-observability requirement and the
+side lane's "the signature is ZERO, not lower" — **arrived MID-RUN and were sent to the
+running agent rather than held for the next one.** Sending a sharpening to a live agent
+costs one message and pre-commits it before results exist; holding it costs a whole
+re-run and lets the result land first. **`SendMessage` to a running agent is a
+pre-registration channel.** Used four times today, on three different agents.
+
+**SELF-CHECK, because analysis outpacing decisions is my lane's characteristic failure:**
+`tools/audit_trigger.py` re-run at this point — **still 0/4** (note:verdict 1.24,
+doc:code churn 0.42, ship cadence 0.71/hr, stuck planks 2). **But I am recording a
+caveat against my own instrument:** the note:verdict row reads the **tape**, which is the
+builder's surface and which I never write to, so **that row cannot see my lane's prose at
+all.** Only doc:code churn does. **33 research docs today** is a lot of writing to have
+one instrument blind to; flagged rather than acted on, since `tools/` is the builder's
+lane.
