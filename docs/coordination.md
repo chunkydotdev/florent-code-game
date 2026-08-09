@@ -9140,3 +9140,74 @@ classifier would have minted a fresh opponent for returning-v107.
 unrated numbers — **my kill-timing read concluded the gunline aims at the right
 variable, and a bad unrated leg is the first real evidence against that.** It
 belongs next to my conclusion, not buried.
+
+### 2026-08-09 07:4x CEST — research arm: **THE CONVERSION WALL IS AT r150-200, AND IT RE-SPECIFIES THE LOKI TARGET**
+
+Builder asked: does the r200-300 conversion window show up in OUR kills too, or
+only theirs? **Answer: only theirs.** Zero new API calls, ran on the (ii) cache.
+Live verified myself: **v89 `847b8d9d`, 1531.478 @ 485, rank #35.**
+
+**1. INSTRUMENT CHANGE.** Medians are the wrong statistic for "when does a
+capability exist" — games that end early cannot contribute to late buckets. Used
+a **discrete hazard**: among games still alive at a window's start, what fraction
+resolve inside it and by whose kill.
+```
+STRONG >=1550 (n=1135)   alive   our haz   their haz   ratio
+r0-150                    1135    15.1%      9.8%      1.54
+r150-200                   853     5.9%      5.9%      1.00
+r200-300                   753     7.7%     12.5%      0.62
+r300-1000                  601     9.8%     40.9%      0.24
+WEAK <1550 (n=1275)              1.90 / 1.20 / 1.31 / 1.05  <- edge ALL GAME
+```
+**Our conversion edge against strong opposition lives entirely before r150, hits
+exact parity at r150-200, then inverts to 0.24 by r300.** 83% of our kills against
+them land by r300 vs 51% of theirs. **The strength split re-expressed as timing,
+and far more actionable than the win-rate form: we CAN kill strong teams — only
+early. Past r150 they take the game over.**
+
+**2. WHAT FORTY VERSIONS BOUGHT — the crossover moved ONCE and stopped.**
+```
+              r0-150  r150-200  r200-300  r300+
+v53-70         1.40     0.73      0.72     0.20
+v71-76         1.85     1.45      0.62     0.29
+v77-84 Eir E   1.65     1.38      0.52     0.24
+```
+**We bought r150-200 (0.73 -> 1.38) and nothing after it.** r200-300 went
+BACKWARDS, r300+ flat at ~0.24. **Crossover moved ~r150 -> ~r200 and stopped. The
+wall is located to a 50-round window.**
+
+**3. WARNING ON SIEGE DESIGNS.** "The field does not rush" correctly implies siege
+over rush, but: as games lengthen, **their hazard 9.8% -> 40.9% while ours 15.1%
+-> 9.8%. TIME IS THEIR ASSET.** A siege that trades tempo for position trades INTO
+the window where they convert 4x better. **A siege must RAISE our r200-300 hazard,
+not merely survive to reach it** — different builds, only the first wins.
+
+**4. I AM WITHDRAWING MY OWN TARGET NUMBER.** The builder pre-registered "kill
+share above 29.8%" from my band-invariant scalar. **That is the wrong target and
+the scalar was my error** — 29.8% averages over a distribution whose SHAPE is the
+finding, and can be satisfied entirely by converting more before r150, the window
+we already win. **Proposed replacement: r200-300 conversion ratio vs B-rating
+>=1550 above 1.0 (currently 0.52, declining 0.72 -> 0.62 -> 0.52).** Same matched
+unrated fixture; cannot be satisfied by doing more of what already works.
+
+**5. THOR — recorded against my own conclusion.** My kill-timing §5 said the
+gunline "aims at the right variable"; on the builder's matched unrated legs it
+**aims at the right variable and misses** (cores killed by us 0 -> 0; times we
+were core-killed 3 -> 5). Its type-vs-placement explanation is reasonable and
+probably right, **but it was generated after seeing the result and carries that
+label** — nothing in the Thor legs distinguishes it from "gunners are simply worse
+here". The hazard table is a better reason to believe it than Thor is: our deficit
+is LATE conversion and Thor changed nothing late. Its `_offer_launch`
+single-insertion-slot read (:2561) is the most promising item on the board
+precisely because it is a late-game RATE LIMIT — the right shape for a flat late
+hazard. **Code claim, relayed not verified.**
+
+Limits recorded in the doc: hazard denominators, non-independence (5 games/match,
+no significance quoted), opponent-ship confound clears r300+ flatness but not the
+r200-300 decline, and this locates a deficit without identifying a mechanism.
+
+Deliverable: `docs/research/kill-hazard-timing-2026-08-09.md`.
+**SECOND MONITOR ARMED: submissions, not just matches** — polls `fcode status`
+every 120s, fires on any version/id change with the new baseline. Closes the gap
+that made me reconstruct the builder's live state from a match row. Both monitors
+die with this session.
