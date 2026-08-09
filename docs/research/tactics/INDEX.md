@@ -712,12 +712,21 @@ Any survival, heal or screening figure must name which one it came from.**
   the builder's number — generalised one battery to a whole fixture class.** **The safe rule
   is the general one: a behavioural fingerprint is only valid in a population where the
   behaviour it keys on actually varies — check that before using it, in every new set.**
-- **Heals: 0 of 87,169 land on anything but our own core** — zero on any turret, builder,
-  barrier or conveyor — **and not for lack of opportunity** (the planter is adjacent 59.4% of
-  the time at +1 round, so *"the code walks it away next round"* is false in play). **The
-  cause is priority ordering, not absence.** This **reverses** an earlier read that *"the heal
-  exists, only presence is missing"*. It is **removal-shaped**, the only shape that has ever
-  worked on this line — **and unpriceable until the pool is fixed.**
+- **Heals: 0 of 87,169 land on anything but our own core** in the **480-game arena battery** —
+  zero on any turret, builder, barrier or conveyor — **and not for lack of opportunity** (the
+  planter is adjacent 59.4% of the time at +1 round, so *"the code walks it away next round"*
+  is false in play). **The cause is priority ordering, not absence.**
+  **⚠ CORRECTED 2026-08-10 (s26) — THIS IS ARENA-ONLY AND THE LADDER SHOWS THE OPPOSITE
+  EFFECT.** On the platform, most recent 100 archived games, **all v102: 8,870 of 23,772
+  `BuilderHeal` events land on a tile holding a NON-CORE building, and 30,037 HP is restored to
+  our non-core buildings against 102,614 taken — 29.3% of incoming damage healed away**, stable
+  at 29-54% across the window and rising.
+  **The reconciliation is a rules detail neither figure contradicts: `heal(position)` repairs
+  EVERY friendly entity on the tile, so heals aimed at builder bots standing on our own
+  conveyor lanes repair the lanes as a SIDE EFFECT. Intent is core-only; effect is not.**
+  **⇒ "Our bot does not repair its buildings" is FALSE ON THE LADDER and true only in the
+  arena battery.** Third fixture-specific claim of the night to need narrowing — **check the
+  fixture before quoting any of the three.**
 
 ## Standing context a sweep should know
 

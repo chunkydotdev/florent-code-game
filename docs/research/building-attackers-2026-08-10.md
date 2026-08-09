@@ -75,18 +75,18 @@ opponent acquisition.
 
 ---
 
-## 1. CALIBRATING `razer_probe` AGAINST THE LEAGUE — ABOVE the league on volume, BELOW it on lethality
+## 1. CALIBRATING `razer_probe` AGAINST THE LEAGUE — clearly above it on volume, marginally above it on waste
 
 **The reassuring half first: the threat model razer represents does exist.** The
 worry in the original reframe — "if the whole league sits nearer 3 than 339" — is
 not what the data says. Real teams attack buildings hard and often.
 
-**But razer is not a typical member of that class, and the per-turn recomputation
-made that stronger, not weaker.** On attacks per turn it sits **above every one of
-the 71 teams measured**; on buildings killed per turn it sits at **p70–p87**; and
-it needs **26 swings per kill against a league median of ~8**. Volume and outcome
-disagree, and the fix is to close that gap rather than to trim either number on
-its own. §1.2 places it, §1.4 says what the rates should be.
+**But razer is not a typical member of that class.** On attacks per turn it sits
+**above every one of the 71 teams measured** (§1.2). On buildings killed per turn
+it sits at p70–p87. On waste it is **league-typical by the raw measure and above
+the league maximum by the heal-adjusted one** — the lethality question turned out
+to hinge entirely on who repairs, and §1.3–§1.3b rebuild it on damage after the
+events-per-kill metric was withdrawn as non-comparable. §1.4 gives the targets.
 
 ### 1.1 STATE THE DENOMINATOR (both of them)
 
@@ -154,9 +154,11 @@ band, FIELD scope:
 | 1000 | 3,374 | 0.215 | 0.0217 | 9.9 | 1000 |
 
 Full-length games run at **half** the per-turn attack rate of short ones — so the
-conditioning was necessary. **Note the last column: attacks-per-kill is 8.5–9.9
-across every band. The ratio is invariant to game length as well as to turn
-count, which is why the lethality finding needed no rework.**
+conditioning was necessary. The last column (attacks-per-kill, 8.5–9.9 across
+every band) shows the ratio is invariant to game length as well as to turn count
+— **but that metric was subsequently withdrawn as non-comparable across bots
+with and without turret support; see §1.3.** Its length-invariance carries over
+to the damage-based replacement.
 
 **Properly conditioned — FIELD game-sides of length 150–299 turns, the same band
 as razer's 213-turn game, n = 3,130 game-sides:**
@@ -165,7 +167,7 @@ as razer's 213-turn game, n = 3,130 game-sides:**
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | attacks / turn | 0.133 | **0.348** | 0.614 | 0.896 | 1.597 | 3.569 | **1.592** | **p98.9** |
 | kills / turn | — | **0.0374** | — | 0.1137 | 0.2258 | 0.4485 | **0.0610** | **p69.6** |
-| attacks per kill | — | **7.9** | — | 21.9 | 84.3 | — | **26.1** | **p92.0** |
+| ~~attacks per kill~~ | — | ~~7.9~~ | — | ~~21.9~~ | ~~84.3~~ | — | ~~26.1~~ | ~~p92.0~~ **WITHDRAWN — §1.3** |
 
 **Conditioning changes the answer only slightly, and in the same direction:
 attacks p98.9, kills p69.6.** So the finding is robust to the length confound
@@ -178,78 +180,136 @@ roughly ±2 deciles.** Nobody should tune to a target until razer's rates are
 re-measured over **≥20 games**, and that measurement is cheap. Everything in
 §1.4 is conditional on the single game being representative.
 
-### 1.3 THE WARNING (UNCHANGED): razer swings like a p99 team and kills like a p70 team
+### 1.3 LETHALITY, REBUILT ON DAMAGE — the events metric is withdrawn, the finding survives on a different one
 
-`339 / 13` = **26 attack events per building destroyed** — a ratio, therefore
-turn-invariant, therefore untouched by the correction above, and now also shown
-length-invariant by the band table. **Against the conditioned class it sits at
-p92: razer is worse at converting swings into kills than 92% of real game-sides.**
-No real team is near it:
+**The events-per-kill comparison is withdrawn, and the withdrawal is correct.**
+A sentinel shot is 18 damage and a builder swing is 2, so "attack events per
+kill" is not comparable across bots with and without turret support, and razer
+is the only bot in the comparison with no access to the cheap half. **That was a
+property of the metric, not of razer.** My earlier "26 vs a league median of ~9"
+should not be quoted again.
 
-| team | attacks/game | kills/game | attacks per kill |
-|---|---:|---:|---:|
-| **`razer_probe`** | **339** | **13** | **26.1** |
-| league median (FIELD) | 114 | 10.6 | **~11** |
-| league median (VS-US) | 130 | 9.4 | **9.5** |
-| Powerpuff Girls | 252 | 32.8 | 7.7 |
-| ph | 370 | 35.1 | 10.5 |
-| Jython | 283 | 34.0 | 8.3 |
-| Besvikomat | 613 | 54.9 | 11.2 |
-| Kleos | 855 | 55.1 | 15.5 |
-| Ouroboros | 138 | 34.1 | **4.0** |
-| observed range, all 71 teams | | | **3.4 – 37.4** |
+**Refinement 1 was available, so I took it: per-event damage IS recoverable.**
+`updateHp{id, delta}` gives signed damage per event, so no floor derivation and
+no kill-mix weighting are needed at all:
 
-**A real team that swings 339 times per game destroys 30–40 buildings, not 13.**
-The probe's attack volume is calibrated to the league's top decile while its
-lethality is calibrated to the league's middle. It spreads damage instead of
-concentrating it — plausibly attacking whatever is adjacent rather than
-finishing a target.
+> **WASTE MULTIPLE = total damage dealt to the enemy's non-core buildings ÷
+> total max-HP of the enemy non-core buildings actually destroyed.**
+> 1.00 is a perfect attacker. Source-independent — turret fire and builder
+> swings both enter as damage. **The denominator IS the observed kill mix**, at
+> each team's own composition, measured rather than assumed.
 
-**Why this matters and is not pedantry: the error has a DIRECTION, and it
-systematically flatters exactly the treatment family it was built to test.**
-Heal costs 1 Ti for +4 HP; a builder attack costs 2 Ti for 2 damage. Against an
-attacker that needs 26 swings per kill, a repair or heal line comfortably
-out-paces the incoming damage and will read as a strong plank. Against Ouroboros
-at **4.0 swings per kill** — a real, live, currently-ladder opponent we already
-lose to 83% of the time — the same line is overwhelmed. **A survivability plank
-tuned green on `razer_probe` may be measuring its own best case.**
+**Two denominator faults had to be fixed first, both found by measuring rather
+than assuming:**
 
-**So: `razer_probe` unblocks measurement, and it should be trusted for
-"does the treatment do anything at all" and NOT for "how much".** It is a
-detection fixture, not a calibration fixture.
+1. **10.0% of all building removals are VOLUNTARY** — removed at full HP by the
+   owner's own free `destroy()` (17,926 of 179,600 removals; 9.9% of kill-HP).
+   Crediting the enemy with those deflates every waste multiple. Denominator is
+   now damaged-only.
+2. **40.0% of ALL damage dealt to non-core buildings in this league is HEALED
+   AWAY** (2,857,468 of 7,142,190 HP, FIELD pooled). Residual damage on
+   survivors is only 1.7%. **Defender repair, not attacker inefficiency, is what
+   the raw metric is mostly measuring.**
 
-### 1.4 WHAT RAZER'S RATES SHOULD BE — the number the builder asked for
+**FIELD pooled, 6,001 third-party games:**
+
+| metric | value |
+|---|---:|
+| (a) raw, all removals | 1.691 |
+| **(b) damaged-only denominator** | **1.877** |
+| **(c) heal-adjusted, intrinsic** — `(dmg − healed − residual) / killHP_damaged` | **1.094** |
+
+**LEAGUE DISTRIBUTION, 69 teams (FIELD, ≥40 games, ≥3,000 kill-HP):**
+
+| metric | min | p10 | p25 | **median** | p75 | p90 | max | **razer 1.87** |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| (b) damaged-only | 1.28 | 1.47 | 1.64 | **1.80** | 2.28 | 3.12 | 4.67 | **p55 — 31 of 69 WORSE. LAPSES.** |
+| (c) intrinsic | 1.01 | 1.03 | 1.06 | **1.08** | 1.12 | 1.21 | **1.29** | see §1.3b |
+
+**On the raw metric razer is dead average and the lethality finding lapses
+exactly as you specified.** The league runs ~1.8, razer runs 1.87. If the story
+ended here, razer would need no lethality change.
+
+### 1.3b THE HEALING CHECK — run, not assumed, and it inverts your confound
+
+You asked me to check whether defender healing biases the comparison **against**
+razer. **It runs the other way, and the premise it rests on is contradicted by
+the tape.**
+
+**"0 of 87,169 of our heals land on anything but our own core" is not what the
+platform shows for the currently shipped bot.** OpenSverige, **most recent 100
+archived games, all version 102**:
+
+| channel | value |
+|---|---:|
+| `BuilderHeal` events landing on a tile holding a non-core building | **8,870 of 23,772 (37.3%)** |
+| on the core | 14,449 |
+| **HP actually restored to our non-core buildings** (positive `updateHp` deltas — unambiguous) | **30,037** |
+| damage those buildings took | 102,614 |
+| **share of incoming damage healed away** | **29.3%** |
+
+Both channels agree and the second is not intent-ambiguous. Over the whole
+platform window the rate is stable at 29–54% and rising (2026-08-07: 43.2% →
+2026-08-09: 54.4%). **A plausible reconciliation is that `heal(position)` heals
+every friendly entity on the tile, so heals aimed at builder bots standing on our
+own conveyor lanes repair the lanes as a side effect — intent core-only, effect
+not.** Whatever the intent, **the effect is real and razer's targets are being
+repaired.**
+
+**So the like-for-like comparison is razer's INTRINSIC waste against the
+league's intrinsic distribution**, and razer's intrinsic figure depends on the
+healing it actually faces:
+
+| razer's healing exposure | razer intrinsic waste | vs league (c): min 1.01 / med 1.08 / **max 1.29** |
+|---|---:|---|
+| 0% (your premise) | **1.87** | worse than every team, by a wide margin |
+| **29.3% (our measured v102 rate)** | **1.32** | **still above the league MAXIMUM of 1.29** |
+| 35.3% | 1.21 | equals league p90 |
+| **42.2%** | 1.08 | **equals the league median — the break-even point** |
+
+**THE LETHALITY FINDING SURVIVES, on a source-independent metric, unless our bot
+heals more than ~42% of razer's incoming damage in the arena specifically.** Our
+measured platform rate is 29.3%; your arena measurement suggests ~0%. Both are
+below the break-even.
+
+**But note what changed: the raw metric lapses and the intrinsic one survives,
+because the league's raw waste is inflated by an effect razer is PARTLY EXEMPT
+FROM.** Your confound was real in mechanism and backwards in direction — it
+biases in razer's favour, not against it. **razer looks average on raw waste only
+because everyone else is fighting defenders who repair harder than ours does.**
+
+**Note also that 1.87 is usable as-is precisely because razer is builder-only.**
+Every one of its attack events is 2 damage, so its events-waste and its
+damage-waste are the same number. That is the one thing the discarded metric got
+right.
+
+### 1.4 WHAT RAZER'S RATES SHOULD BE — the numbers the builder asked for
 
 **Specify the target PER TURN, never per game.** Game length is an **outcome of
 the treatment being tested**: if a survivability plank works, razer's games get
 longer, and any per-game attack budget silently loosens as the plank improves.
-A per-game budget is a moving target measured against itself.
 
-Two coherent targets, and they differ in what you want the fixture to be:
+| axis | razer today | target | verdict |
+|---|---:|---:|---|
+| **attacks / turn** | **1.592** (p99–p100, above every team) | **~0.55** (p78 conditioned) | **CUT — the volume finding held at n=24** |
+| **kills / turn** | 0.061 (p70) | **hold at ~0.061** | **KEEP — already above league median 0.027** |
+| **waste multiple, raw** | 1.87 | — | **no action; p55, league-typical** |
+| **waste multiple, intrinsic** | **1.32–1.87** | **≤1.21** (league p90) | **SMALL cut — ~10–20% less wasted damage** |
 
-| target | attacks/turn | kills/turn | attacks per kill | in a 213-turn game |
-|---|---:|---:|---:|---|
-| **razer today** | 1.592 (p99) | 0.061 (p70) | 26.1 (p92) | 339 atk / 13 kills |
-| **A — median fixture** | **0.348** | **0.037** | 9.3 | 74 atk / 8 kills |
-| **B — hold threat, fix mechanism (RECOMMENDED)** | **~0.55** | **~0.061** | **~9** | 117 atk / 13 kills |
+**The lethality change is real but much smaller than I first implied.** Not
+"26 swings → 9" — that comparison was invalid. It is "stop about 10–20% of the
+damage that currently lands on things razer never finishes". Concretely: at our
+measured 29.3% healing, razer should deal roughly **1.5 × killHP** of damage
+rather than its current **1.87 ×**.
 
-**Take B.** Target A puts razer at the league median on both axes but makes it
-*less* threatening than it is now (kills/turn 0.061 → 0.037), and a fixture built
-to make a defensive treatment observable should sit at or above median threat,
-not at it. **B holds lethality exactly where it is — p70, comfortably realistic —
-and removes only the wasted swings**, landing the ratio on the conditioned median
-of ~8–9. Mechanically that is "finish a target before moving to the next", not
-"attack less".
+**Cutting attacks/turn from 1.592 to ~0.55 does most of this work by itself** if
+the cut comes from dropping half-finished targets rather than from attacking
+less often — the two fixes are the same mechanical change ("finish a target
+before starting another"), which is why I am not proposing separate knobs.
 
-**On my earlier "~150 attacks / ~15 kills per game": the derivation was invalid
-and the number was roughly right anyway.** At 213 turns it is 0.70 attacks/turn
-(p84 conditioned) and 0.070 kills/turn (p73) — close to target B and **not**
-weak. So the specific fear that it would make razer weaker per turn than the
-league is not supported. **But it was right by luck** — I anchored on the
-turn-invariant ratio, and the per-game framing that carried it is fragile for the
-reason above. A wrong instrument that returns a nearly-right answer is the
-hardest kind to catch, which this project already knows from TRAP 7. **Use the
-per-turn form.**
+**My earlier "~150 attacks / ~15 kills per game" was right by luck and should
+still not be used** — the per-game framing is fragile because game length is
+endogenous. Use the per-turn form.
 
 **If razer's re-measurement over ≥20 games moves its attacks/turn below ~0.9
 (p90 conditioned), the volume half of this recommendation lapses entirely and
@@ -454,8 +514,9 @@ So the concrete path, **updated for `razer_probe` already existing**:
 1. **Re-measure `razer_probe` over ≥20 games first** — 339/13 is a single game
    and locates it to about ±2 deciles (§1.2b). Then re-tune **per turn, never
    per game** (§1.4): hold kills/turn at ~0.061 and cut attacks/turn from 1.592
-   to ~0.55, landing attacks-per-kill on the league median of ~8–9. Mechanically
-   that is "finish a target before starting another", not "attack less".
+   to ~0.55. Lethality needs only a ~10–20% cut in wasted damage (§1.3b), not the
+   large change the withdrawn events metric implied. Mechanically both are the
+   same change — "finish a target before starting another", not "attack less".
 2. **Fix the five probes that hard-code `best_core or best_any`** so the *rest*
    of the pool stops sitting at the 0.17% floor. `razer_probe` alone makes the
    pool bimodal — one building-attacker and eight core-rushers — and a
@@ -504,6 +565,23 @@ Also unmeasured:
   its real class (`HANDOVER.md:232-241`). A Leviathan probe will be wrong too;
   what it will not be is 0.17%-at-core.
 - **I could not reproduce the 99.83% figure.** See §8.1.
+- **Damage is not attributed to a shooter either.** The waste multiple (§1.3)
+  reads damage on the VICTIM's buildings, so it credits the whole of a team's
+  incoming building damage to its opponent. Own-turret fire onto own buildings
+  is real but small (1.86% of shots hit an own turret, 2.47% an own econ piece),
+  and it inflates every team's waste multiple slightly and roughly equally.
+- **razer's own healing exposure in the arena is not measured here.** §1.3b uses
+  our platform rate (29.3%, v102) and reports the break-even (42.2%) rather than
+  asserting a single number. **Measuring the actual arena figure would close the
+  last open variable in the lethality question**, and it is one decode of one
+  arena replay — but arena replays are written to `/dev/null` by default
+  (`tools/arena.py:53`), so it needs a run with `--replay` pointed at a file,
+  which is the builder arm's call and not mine.
+- **Whether our non-core healing is intentional.** `heal(position)` repairs every
+  friendly entity on the tile, so heals aimed at builder bots standing on our own
+  conveyor lanes repair the lanes for free. I can measure the effect (30,037 HP)
+  but not the intent, and the two have different implications for whether the
+  behaviour survives the next version.
 
 ---
 
@@ -543,6 +621,25 @@ present, else the BUILDING.
    28.4% pooled rate but a **median of 0.0%** and only 44% of games above 5% —
    a bimodal team whose pooled number describes no actual game. **I Stone is
    excluded from the shortlist for that reason,** not for its rate.
+
+### 8.0 The damage decoder (§1.3) and its teeth
+
+`dmg.py`, second pass over the same 8,663 files, **0 errors**. Sums signed
+`updateHp` deltas per entity, tracks max-HP, and splits removals by whether the
+building had ever been damaged.
+
+- **Trap-2 guard proven, not assumed.** Forcing the delta read to UNSIGNED — the
+  documented failure mode — collapses damage from 259 to **0** and inflates
+  healing to 6.8e20 on the test replay. **ALARM.** An exact zero is the known
+  bug signature, so this guard now has an observed failure.
+- **Two independent channels cross-validate on healing.** On the smoke-test
+  replay, 11 `BuilderHeal` events landing on non-core buildings × 4 HP = **44 HP
+  restored**, exactly matching the summed positive `updateHp` deltas. The event
+  channel and the HP channel are decoded from different Update types.
+- **Denominator hygiene measured, not assumed:** 10.0% of building removals are
+  voluntary full-HP `destroy()` calls, and excluding them moves the pooled waste
+  multiple from 1.691 to 1.877 — a 11% correction that would otherwise have been
+  invisible.
 
 ### 8.1 I could not reproduce the 99.83%-at-core probe figure
 

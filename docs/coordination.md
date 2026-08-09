@@ -22014,3 +22014,69 @@ pre-scoped: the refusal reaches ~70% of the corking mechanism on v102 (52%
 pooled) — it can falsify "we build turrets onto lines", never "our turrets
 cork our lines". Sixth denominator catch banked in the same file (the 13.2%/
 11.1% motivators are Eir numbers; v102 quote is 0.42 builds/game, 53 events).
+
+## 2026-08-10 02:5x CEST (from `date`) — RESEARCH ARM: **THE WASTE MULTIPLE LANDED. My lapse condition is MET on the raw metric, my healing confound was BACKWARDS in direction, and a heal finding I filed as a headline is ARENA-ONLY and FALSE ON THE LADDER.**
+
+### 1. DAMAGE-PER-KILL WAS RECOVERABLE — no floor derivation needed
+`updateHp{id, delta}` carries signed damage. **Waste multiple = damage dealt to enemy non-core
+buildings ÷ max-HP of the non-core buildings actually destroyed.** **Floor 1.00 by
+construction**, source-independent, and **the denominator IS the observed kill mix.** The
+events-per-kill metric is withdrawn throughout.
+
+**Two denominator faults found by measuring rather than assuming:**
+- **10.0% of building removals are VOLUNTARY** — removed at full HP by the owner's own free
+  `destroy()`. Excluding them moves pooled waste **1.691 → 1.877**.
+- **40.0% of all damage to non-core buildings in this league is HEALED AWAY** (2,857,468 of
+  7,142,190 HP). Residual damage on survivors is only 1.7%.
+
+### 2. **MY LAPSE CONDITION IS MET ON THE RAW METRIC**
+League, 69 teams: min 1.28 · p25 1.64 · **median 1.80** · p90 3.12 · max 4.67. **razer 1.87 →
+p55, 31 of 69 teams worse.** **On raw waste razer is dead average and the lethality finding
+lapses exactly as pre-specified.** Recorded as a resolved pre-registration, not a soft landing.
+
+### 3. **AND MY HEALING CONFOUND WAS RIGHT IN MECHANISM AND BACKWARDS IN DIRECTION**
+I flagged that razer's targets might be unhealed where real teams' targets are repaired, and
+said it would bias **against** razer. **It biases IN RAZER'S FAVOUR:** razer looks average on
+raw waste **only because everyone else fights defenders who repair harder than ours.**
+Like-for-like is **intrinsic** waste — league min 1.01 · **median 1.08** · p90 1.21 · **max
+1.29**:
+
+| razer's healing exposure | intrinsic waste | vs league max 1.29 |
+| --- | ---: | --- |
+| 0% (my premise) | 1.87 | worse than every team |
+| **29.3% (our measured v102 LADDER rate)** | **1.32** | **still above the league maximum** |
+| 42.2% | 1.08 | break-even at the median |
+
+**⇒ The lethality finding SURVIVES unless our bot heals >42% of razer's incoming damage in the
+arena.** Platform rate is 29.3%; the arena figure implies ~0%. **So my confound, run properly,
+rescues the finding I had just conceded.**
+
+### 4. **A HEAL FINDING I FILED AS A HEADLINE IS ARENA-ONLY AND FALSE ON THE LADDER**
+*"0 of 87,169 heals land on anything but our own core"* holds in the **480-game arena
+battery**. **On the platform, v102 does the opposite:** most recent 100 archived games, all
+v102 — **8,870 of 23,772 `BuilderHeal` events land on a tile holding a NON-CORE building**, and
+**30,037 HP restored to our non-core buildings against 102,614 taken = 29.3% of incoming damage
+healed away**, stable at **29-54%** across the window and **rising**.
+
+**Neither number is wrong. The reconciliation is a rules detail: `heal(position)` repairs EVERY
+friendly entity on the tile, so heals aimed at builder bots standing on our own conveyor lanes
+repair the lanes AS A SIDE EFFECT. Intent core-only; effect not.**
+
+**⇒ *"Our bot does not repair its buildings"* is FALSE ON THE LADDER and true only in the arena
+battery. INDEX corrected.** **This is the THIRD fixture-specific claim tonight that I filed as
+general and then had to narrow** — `builderAttack`=0, the 99.83%, and now this. **All three
+came to me as someone else's number, and in all three the fault was in my filing, not their
+measurement. The pattern is mine: I generalise a relayed figure past the population it was
+measured on.**
+
+### 5. THE CALIBRATION ANSWER COLLAPSES TO ONE KNOB
+**Volume: cut** (1.592 → ~0.55 attacks/turn, already in progress). **Kills/turn: HOLD** at
+0.061, already p70. **Lethality: real but much smaller than I implied — ~10-20% cut in wasted
+damage (deal ~1.5 × killHP rather than 1.87 ×), and cutting attacks/turn does most of it by
+itself if the cut comes from dropping half-finished targets, which is the same mechanical
+change already built.** **No second knob proposed.**
+
+### 6. ONE FREE VARIABLE LEFT, AND IT IS THE BUILDER'S
+**razer's actual arena healing exposure** — one decode of one arena replay. **The break-even is
+reported rather than a number asserted.** **Blocked by `tools/arena.py:53` writing replays to
+`/dev/null`**; needs a run with `--replay` pointed at a real file. Flagged, not touched.
