@@ -60,6 +60,35 @@ def check_determinism(bots: list[Path]) -> None:
                         f"(tools/det.py says ALL sides, and s23 got this wrong twice)")
         elif "NOISE_ON" not in s:
             WARN.append(f"{b.name}: no NOISE_ON constant (older lineage; assumed deterministic)")
+        # NOISE_ON is OUR lineage's determinism switch and says nothing about a
+        # foreign bot. The probes have no such constant, so the branch above
+        # waves every one of them through on "assumed deterministic" -- and
+        # s24 found `rush_probe` making TEN `random.` calls in its hot path
+        # (spawn choice, three direction shuffles, target choice) while
+        # HANDOVER's exclusion list named only `cad_probe`. A determinism gate
+        # that passes a bot calling random.shuffle three times per turn is not
+        # gating determinism. Check the actual source, not our own idiom.
+        calls = sorted({
+            name for ln in s.splitlines()
+            if "random." in ln and not ln.lstrip().startswith("#")
+            for name in (ln.split("random.")[1].split("(")[0].strip(),)
+            if name.isidentifier()
+        })
+        if not calls:
+            continue
+        if "NOISE_ON = False" in s:
+            # Our own lineage declares determinism with the switch, and its one
+            # `random.Random()` sits on the False side of a conditional that is
+            # never evaluated. Source presence is not execution -- downgrade,
+            # don't block, or the gate fails every battery we ever run.
+            WARN.append(f"{b.name}: random.{{{', '.join(calls)}}} present but "
+                        f"NOISE_ON = False is declared; assumed gated.")
+        else:
+            FAIL.append(
+                f"{b.name}: calls random.{{{', '.join(calls)}}} and declares no "
+                f"NOISE_ON switch -- paired fixtures do not pair against a bot "
+                f"that reseeds. Exclude it from the pool, or pin its seed in a "
+                f"COPY before measuring.")
 
 
 def check_pool_identity(opponents: list[Path], allow: bool) -> None:

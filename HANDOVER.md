@@ -35,7 +35,15 @@
 ## **A FOREIGN POOL WAS ON DISK ALL ALONG: `bots/*_probe`** — imitations of real
 ## teams (Orizon, Ouroboros, Clankers, kladde, Flotte, Banminary, CtrlAltDefeat)
 ## built from replay analysis, carrying **0-1 of our 4 signatures**. USE THEM.
-##   `cad_probe` is the ONLY probe that calls `random.` — exclude from paired runs.
+##   **EXCLUSION LIST CORRECTED (s24), IT WAS WRONG IN BOTH DIRECTIONS:**
+##   `rush_probe` is the ONLY probe that calls `random.` — `import random` plus
+##   **10 hot-path calls** (choice/random/randrange/shuffle: spawn choice, three
+##   direction shuffles, target choice). **EXCLUDE `rush_probe` from paired runs.**
+##   **`cad_probe` is DETERMINISTIC** and was excluded for three sessions on a
+##   `grep -c 'random\.'` that matched its own docstring sentence *"nothing here
+##   is random."* — it says *"Deterministic: no random anywhere"* two lines later.
+##   `tools/gate.py` now parses identifiers instead of substrings and FAILs on any
+##   opponent that calls `random.` without declaring a `NOISE_ON` switch.
 ##   Probes are IMITATIONS and miscalibrated (`ouroboros_probe` measured **86 pts**
 ##   over-confident vs its real class). Better than self-play; **NOT field.**
 ##
