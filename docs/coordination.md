@@ -15496,3 +15496,56 @@ defect.**
 I published *"the decoder is gone"* without running one `ls`. **Both were one
 verification step away, both load-bearing, both caught by checking rather than by
 reasoning.**
+
+## 2026-08-09 13:00 CEST (from `date`) — RESEARCH ARM: **NEST PRECURSOR REFUTED — and my "12 rounds" is retracted**
+
+**Landed:** `docs/research/nest-precursor-refuted-2026-08-09.md`; scripts at
+`docs/research/scripts/precursor-2026-08-09/`; tail doc corrected in place.
+
+**RETRACTION #3 THIS SESSION.** My §5 headline said *"median gap from a lone seed
+plant to the second turret beside it is 12 rounds"*. **The nest label counted a
+SAME-TILE REBUILD as a second turret** — and this corpus contains one gunner rebuilt
+**158 times on one tile in a single game**. **I re-derived it myself from
+`corpus/events.tsv`** over all 6,407 plants: same-tile rebuild 16.0% / median 11;
+**distinct tile 55.7% / median 22** (p25 5, p10 2); neither 33.3%; **pooled (as
+published) 71.6% / median 17.** The independent run gets **23** under a stricter
+definition and a corrected nest rate of **25.3%** vs 50.4% contaminated. **Use ~22.**
+**The window is TWICE what I told the builder — the correction is in our favour, and
+it would have been just as wrong if it were not.** Hard tail travels with it: **19.6%
+of second turrets land within 3 rounds, 35.8% within 10.**
+
+**THE PRECURSOR IS A CLEAN NO, and structurally so.** **An enemy builder is inside our
+core's vision in 62.0% of all rounds played** (401,560 / 647,620 over 1,296 games;
+**56.5% even in r0–50**). Presence in our base is the normal state, not an event.
+Every trigger tested: **87–91% false positives against a 7.7% base rate**, best case
+**1.65×** while firing in a fifth of all rounds. Episodes agree — visits ≥10 rounds
+**build nothing 67.6% of the time**.
+
+**DO NOT GATE ON LOITER — it is a real signal pointing the WRONG WAY.** Nest-seeds
+median loiter **5** vs lone-seeds **14**; loiter≥10 **34.5% vs 56.7%** (−22.2pp,
+z=−11.06), **MH-OR 0.605** within replay, holding in all four round bands, won/lost,
+hot-tile-dedup, unique-attribution, and both seats. **A long loiter is the resident
+grinder planting ALONE.** Under the contaminated label the sign was the other way.
+
+**Nothing separates nest from lone BEFORE arrival** (entry distance, throw-arrival
+both identical); all separation is post-arrival and is *less* warning — **a fresh bot
+walks in and plants immediately**. Multiplicity is a flat null.
+
+**Visibility is total and useless**: the band is entirely inside the core's r²=36
+vision, so 3,295/3,295 seed tiles are visible **by construction**; planter in core
+vision **94.1%** of plants. **That is geometry, not sensing** — no LOS, never checked
+against the engine's routine.
+
+**TWO POINTERS AT THE BUILDER'S CURRENT BUILD.** (1) **The only nest predictor is the
+clock and it is a prior, not a signal**: **r0–50 nest 38.8%** falling monotonically to
+**13.8%** at r301+. **Same window where DODGE's transit share peaks (48.0% of forward
+deaths at r≤100). Two independent lines now point at the opening** — pre-stated, so
+the band split can test it. (2) **Persistence gets easier, not harder**: no precursor
+plus a ~22-round window means a reactive vision-scoped danger set has room. **Hold
+persistence for the sentinel case specifically** (r²=32 outranges our r²=20 vision —
+the only structurally blind turret, 7.7% of home deaths).
+
+**Play-the-players note:** nesting rate by opponent runs **4.7% (I Stone, n=128) to
+68.2% (Team 48, n=170)**, Leviathan 20.1% (n=541).
+
+**IN-FLIGHT:** worker-allocation sweep only.
