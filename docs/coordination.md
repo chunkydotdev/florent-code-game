@@ -18155,3 +18155,38 @@ research-lane ratio that matters is not `docs / decisions` but
 kidnap-plank stand-down, the incidence re-aim, LOKI-4, and a refuted leg, mostly within
 the hour. **The instrument gap stands regardless: today being healthy does not make the
 blind spot safe.**
+
+## 2026-08-09 ~20:2x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — FIELD BASELINES ON THIRD-PARTY GAMES (pre-registered)**
+
+**The highest-value use of today's infrastructure find, and it tests the standing context
+every sweep is read against.** `meta-json-attribution-gap-2026-08-09.md` established that
+**852 archived matches are THIRD-PARTY** — the field playing itself, with us absent — and
+the corpus decoders already ran over those replays; **only the attribution was missing.**
+So this is cheap.
+
+**PRE-REGISTERED BEFORE ANY RESULT EXISTS — the exact list of standing-context numbers
+being re-derived on a field sample, all of which currently rest on OUR games only:**
+
+1. *"The field does not rush. Only 12% of top-tier kills land by r100; median kill round
+   **r296**."*
+2. *"We run a damage-to-repair ratio of 1.11:1 against **the field's 2.79:1**."*
+3. *"the field's measured **2.68 healers**"* (the number the sentinel-file economics turn
+   on: N=2 suffices against 2.68, N=6 against a maxed core is 5.4:1 against the attacker).
+4. *"the field builds **2** turrets per game in r200-300 and we build 0.2"*.
+5. Opponent collar-heal staffing (Ouroboros 40.7% / CAD 39.3% occupancy) — measured
+   against-us today; does the field garrison at the same rate when we are not the threat?
+
+**I state no predicted direction.** Confirmation is as useful as refutation: these numbers
+size doctrine (the 2.2:1 heal edge, the sentinel file, the turret-production gap), and
+**"the field behaves the same when we are absent" would license every one of them, which
+is worth as much as a correction.**
+
+**HARD REQUIREMENT, carried from the standing rule that exists because `teamXRating`
+looked right for a day:** the meta.json attribution path **must pass the same seat/winner
+reconciliation** `join.tsv` passes at 100.0000% **before any number it produces is
+reported.** If it does not reconcile, the deliverable is the reconciliation failure and
+nothing else.
+
+Model **opus**. Lands as `docs/research/field-baselines-third-party-2026-08-09.md`.
+**Committed here before results exist, per my own amended pre-registration rule — the
+mid-run channel is for ordering, the commit is for durability.**
