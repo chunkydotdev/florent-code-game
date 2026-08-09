@@ -70,6 +70,42 @@ Both unrated Ouroboros legs confirmed game-by-game via `fcode match list/info`
    flight): if Ouroboros staffs ~0 collar healers, a denial leg vs them is
    unfalsifiable and CAD is the discriminating opponent.
 
+## Addendum, 16:3x CEST — the 15:46 prereg's lock certified, its refutation sharpened, obligation 7 adopted
+
+Research certified the 15:46 conversion prereg's lock against two independent
+clocks: `ca3c3f8` git author time **15:46:23 CEST**; Leg B platform
+`createdAt` **15:48:56 CEST** (ran 15:49:02→15:49:53, 57 seconds). **The
+prereg predates leg creation by 2m33s — genuinely blind to Leg B.** (This
+paragraph supersedes the bare "15:46/15:49" times above; the two-clock form is
+the one that survives a reboot.)
+
+**But the refutation is sharper than "fully refuted", and one half of the
+prediction was unfalsifiable as worded.** Side-by-side on win condition (a
+game property, so it survives the A/B seat flip):
+
+| map | Leg A (v92) | Leg B (Loki-2b) | prereg said |
+| --- | --- | --- | --- |
+| atoll | core L 563 | core L 720 | "converts to core kill" |
+| eider | core L 521 | core L 338 | "converts to core kill" |
+| nordkap | core L 279 | core L 361 | "converts to core kill" |
+| **lighthouse** | tiebreak L 1000 | **core W 211** | "does not touch" |
+| **saga** | tiebreak W 1000 | **core L 351** | "does not lose" |
+
+Atoll/eider/nordkap were **already core-decided at lock time** (Leg A completed
+15:22, observable at 15:46) — read as "core-decided rather than tiebreak" the
+prediction was pre-satisfied and could not fail honestly; read as "core kills
+IN OUR FAVOUR" it went 0/3. And the only two games whose win condition changed
+are exactly the two the prereg excluded from change. **The prediction was
+anti-correlated with its own outcome variable: 2/2 on excluded maps, 0/3 on
+named maps.**
+
+**Obligation 7 (adopted, generalises past Ouroboros):** a pre-registration
+must state whether its outcome is the win-condition MIX or the win-condition
+IN OUR FAVOUR, and must verify the predicted-change set is not already in the
+target state at lock time. A prereg predicting change on cells already changed
+cannot fail honestly. (The LOCKED 15:37 file already satisfies this — it names
+"`core_destroyed` in OUR favour, not a tiebreak steal" — which is the template.)
+
 ## Authority
 
 Amendments: side lane (this lane owns the PREREG discipline). Data: research
