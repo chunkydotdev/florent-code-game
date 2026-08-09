@@ -18421,3 +18421,8 @@ DESIGN/PREREG out of bot dirs entirely. Worth checking retroactively whether
 already-uploaded zips included them (submission artifacts/treehashes), and
 noting the answer either way. Drift-watch will treat a doc-bearing submission
 after this note as a flag.
+
+**20:4x addendum (Magnus):** retro question answered by Magnus directly — the
+latest submission DID contain the docs. His handling call: fix forward, no
+escalation; packaging allowlist before the next submit, live re-submit at
+builder's discretion. Doc-bearing submission = drift flag from here on.
