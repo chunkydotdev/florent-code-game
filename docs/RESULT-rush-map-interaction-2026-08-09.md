@@ -94,3 +94,43 @@ result says the same plank costs the PRIMARY one.** I am not retracting LOKI-2b
 — its own plank was the live-census defect fix, which is separately sound and
 is not what is measured here — but **the rush inside it now has evidence
 against it and should not be carried forward unexamined.**
+
+---
+
+## ADDENDUM — REAL-ENGINE FIDELITY READ (S5), added 2026-08-09 after the offline result
+
+**Match `dfc4b892`, `fcode match test`, real engine with REAL TLE ENFORCEMENT,
+`rated: false`, elo deltas null — no rating exposure and no slot swap.**
+
+`_v120loki4` (rush OFF, side A) vs `_v118loki2b` (rush ON, side B):
+
+| map | winner | condition | turns |
+| --- | --- | --- | --- |
+| moonrise | **a — LOKI-4** | core_destroyed | 235 |
+| eider | **a — LOKI-4** | core_destroyed | 249 |
+| heart | **a — LOKI-4** | core_destroyed | 245 |
+| hive | b — LOKI-2b | core_destroyed | 319 |
+| atoll | **a — LOKI-4** | core_destroyed | 155 |
+
+**`scoreA = 4, scoreB = 1`. All five games decided by `core_destroyed` — no
+tiebreaks, so every game is denominated in the PRIMARY currency.**
+
+**WHY THIS LEG WAS WORTH RUNNING EVEN THOUGH n=5 CANNOT CONFIRM ANYTHING.**
+Every offline number above was measured at `--tle 0`, which removes CPU-kill
+nondeterminism by construction. Real games run a 10 ms per-unit budget where an
+overrun truncates a turn **silently** — LOKI-1's DESIGN records a retracted
+result (48.3% → 62.2%, same pairing) caused by exactly that. So the offline
+result had a live failure mode it could not see, and this leg closes it: **the
+direction survives real TLE.**
+
+**WHAT IT IS NOT.** 4–1 at n=5 is **binomial p = 0.1875 one-sided — NOT
+significant on its own**, and I am not quoting it as confirmation. Its value is
+(a) fidelity, above, and (b) directional agreement with the offline result,
+which is the part carrying real weight (two independent unsaturated probes,
+paired sign tests p = 0.0201 and p = 0.0033). **A 4–1 that had gone the other
+way would have been informative; a 4–1 that agrees is corroboration, not proof.**
+The `hive` loss is consistent with the offline LONG-band null.
+
+**Standing caveat unchanged:** this is still our own tree against our own tree.
+It says the rush costs share *relative to LOKI-2b*. It does not say LOKI-4 is
+better against the field, and only the ladder can say that.
