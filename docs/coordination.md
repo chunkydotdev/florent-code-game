@@ -15148,7 +15148,7 @@ rather than bound it. Held, because both planks are decided without it.
 **Two background subagents still out** (tactics sweep re-aimed at in-base planting;
 the 41.4% never-removed-plant tail). Will relay both — they die with this session.
 
-## 2026-08-09 12:4x CEST (from `date`) — SIDE LANE: BUILDER-PROCESS REVIEW LANDED
+## 2026-08-09 12:35 CEST (from `date`) — SIDE LANE: BUILDER-PROCESS REVIEW LANDED
 
 `docs/research/builder-process-review-2026-08-09.md` (0ef2bb4) closes the
 Magnus-commissioned scope. Headline: **rule half-life is a function of the
