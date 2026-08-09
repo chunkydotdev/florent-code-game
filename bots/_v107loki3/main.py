@@ -363,6 +363,33 @@ class Player:
         self.rot_prev_dir = None
         self.rot_lock_d = 10 ** 9
 
+        # LOKI-3 -- LATE FORWARD GUNLINE (see LATE_TURRET_ON).  All per-unit
+        # instance state and no store slot, for two reasons: all 16 slots are
+        # occupied, and this is the same locality the file already relies on for
+        # forward_guns / hunting / siphon_* -- only this builder's own
+        # _late_gunline reads or writes any of it, so there is no last-write-wins
+        # hazard and nothing to reset when a turret dies.
+        #   late_guns   turrets this recruit has added (its whole-match budget)
+        #   late_rnd    round of its last late build, for the cadence gate
+        #   late_since  round it engaged the arm, for the walk timeout
+        #   late_ban    round before which it will not engage again
+        #   late_tgt    the anchor tile it is walking to, or None when idle
+        self.late_guns = 0
+        self.late_rnd = -10 ** 9
+        self.late_since = -10 ** 9
+        self.late_ban = -10 ** 9
+        self.late_tgt = None
+
+        # LOKI-3 -- AMMO BURN EVIDENCE, Core-only (see LATE_AMMO_EVIDENCE_RNDS).
+        # ammo_prev is the team ammunition balance as the Core left it last
+        # turn (i.e. AFTER its own conversions); a lower reading at the top of
+        # the next Core turn is proof a turret fired, since nothing else in the
+        # engine removes ammunition.  The Core is a single unit with a
+        # persistent Player instance and no writer to race with, so this needs
+        # no store slot either.
+        self.ammo_prev = None
+        self.ammo_fired_rnd = -10 ** 9
+
         # Whether we've already reported a CPU-guard trip for this unit to
         # stderr. One line per unit lifetime so a chronically slow unit
         # can't flood the log (ported from bots/ladder1).
@@ -491,6 +518,17 @@ class Player:
 
         ti, ammo = ct.get_global_resources(), ct.get_global_ammo()
 
+        # LOKI-3 -- AMMO BURN EVIDENCE (see LATE_AMMO_EVIDENCE_RNDS).  Read
+        # BEFORE any conversion this turn, and compared against the balance the
+        # Core left behind last turn, so the only thing that can have lowered it
+        # is a turret firing.  This is the one signal available that a FORWARD
+        # gun is alive and shooting: SLOT_HOME_GUN is monotone and counts rubble
+        # forever, and the Core's r^2=36 vision cannot see a midfield picket at
+        # all.  Cheap (two integer compares) and unconditional, so the evidence
+        # is already warm whenever LATE_AMMO_ON is flipped on.
+        if self.ammo_prev is not None and ammo < self.ammo_prev:
+            self.ammo_fired_rnd = rnd
+
         # PIECE H, CORE HALF -- ENDGAME SPEND-SWITCH (see ENDGAME_SWITCH_ON).
         # Past ENDGAME_RND a banked titanium is the only resource on the board
         # that scores nothing: the tiebreak reads delivered, then harvesters
@@ -612,14 +650,57 @@ class Player:
             # because the no-turret floor is already 52 and must not drop.
             if E1_AMMO_FLOOR_ON and not under:
                 ti_floor = max(ti_floor, min(ct.get_harvester_cost(), E1_RESERVE_CAP) + E1_HARV_RESERVE_MARGIN)
+            # LOKI-3 -- LATE AMMO POLICY (see LATE_AMMO_ON).  Everything above
+            # is Eir 5.1 untouched; this raises the TARGET, the per-turn STEP
+            # and the peacetime bank FLOOR together, inside the late band only,
+            # and only on evidence that something is actually drinking the
+            # magazine.  The three move together on purpose: a bigger target
+            # with a 16/turn drip refills too slowly to keep a firing line fed,
+            # and a bigger step without a bigger floor would let the magazine
+            # eat the harvester-rebuild reserve PIECE E1 exists to protect.
+            #
+            # Evidence, cheapest test first: a recent ammunition DROP (proof of
+            # a live gun with a target, and the only signal that reaches a
+            # forward picket), else a friendly turret the Core can actually see
+            # standing -- the dry-statue case, which is the failure this policy
+            # is meant to end rather than a reason to withhold.
+            step = 16
+            late_ammo = (
+                LATE_AMMO_ON
+                and not endgame_dumped
+                and rnd >= LATE_AMMO_MIN_RND
+                and rnd < ENDGAME_RND
+                and weapons > 0
+            )
+            if late_ammo:
+                late_ammo = (
+                    rnd - self.ammo_fired_rnd <= LATE_AMMO_EVIDENCE_RNDS
+                    or any(self._core_turret_mix(ct))
+                )
+            if late_ammo:
+                ammo_target = max(
+                    ammo_target, min(LATE_AMMO_CAP, LATE_AMMO_PER_GUN * weapons)
+                )
+                step = LATE_AMMO_STEP
+                # Peacetime only.  With `under` latched the Eir 5.1 12-floor
+                # stands: during the assault the bank belongs to whatever can
+                # fire this round, not to a rebuild that may never happen.
+                if not under:
+                    ti_floor = max(ti_floor, LATE_AMMO_TI_FLOOR)
             if not endgame_dumped and (under or weapons or harv >= 2) and ammo < ammo_target and ti > ti_floor:
-                amt = min(16, ammo_target - ammo, ti - ti_floor)
+                amt = min(step, ammo_target - ammo, ti - ti_floor)
                 if amt >= 4 and ct.can_convert_ammo(amt):
                     ct.convert_ammo(amt)
                     # Ammo conversion is action-free; keep evaluating the
                     # Core's spawn/build priorities with the updated balance.
                     ti = ct.get_global_resources()
                     ammo = ct.get_global_ammo()
+
+        # LOKI-3: record the balance this Core turn is leaving behind, so next
+        # turn's read can attribute any shortfall to turret fire.  Placed after
+        # BOTH ammo policies (sporks and Eir 5.1) and before the spawn block's
+        # early returns, so it runs on every Core turn regardless of branch.
+        self.ammo_prev = ammo
 
         snowflake_home_b = (
             w == 26 and h == 26 and p.x == 19 and p.y == 19
@@ -1251,6 +1332,18 @@ class Player:
         # gate above and ahead of every role, rather than being duplicated into
         # _expand and _defend (both of which build harvesters).
         self._wire_tick(ct)
+
+        # LOKI-3 -- LATE FORWARD GUNLINE (see LATE_TURRET_ON).  Ranked LAST of
+        # everything that can claim a turn and immediately above ordinary role
+        # work, which is the whole of its ranking argument: every survival duty
+        # in this file -- the universal Core heal, the turret hunt, the map-gated
+        # _rank2_hold, the near-Core melee recall and the CPU gate -- has already
+        # returned before this line is reached, so the arm can only ever spend a
+        # turn that was about to be spent walking to more ore.  It is also
+        # deliberately BELOW _wire_tick: a harvester left unwired is a permanent
+        # income leak and outranks a gun.
+        if LATE_TURRET_ON and self._late_gunline(ct):
+            return
 
         if self.role == "defend":
             self._defend(ct)
@@ -2317,6 +2410,288 @@ class Player:
                         ct.write_store(SLOT_HOME_GUN, ct.read_store(SLOT_HOME_GUN) + 1)
                         return True
         return False
+
+    # ------------------------------------------------------------------
+    # LOKI-3 -- THE LATE FORWARD GUNLINE (see LATE_TURRET_ON in doctrine.py)
+    # ------------------------------------------------------------------
+
+    def _late_gunline(self, ct):
+        """Spend this recruit's turn buying a late-band turret.  True == turn used.
+
+        Blanket-guarded: an exception anywhere in this arm degrades it to "the
+        arm did nothing this round" and hands the turn straight back to the
+        role machine, rather than propagating into run()'s handler -- where it
+        would cost the unit its whole turn, and where a bug that fires every
+        round would spend the CPU budget formatting a traceback.
+        """
+        try:
+            return self._late_gunline_inner(ct)
+        except Exception:
+            self._late_clear()
+            return False
+
+    def _late_clear(self):
+        """Drop any engagement and hand a CLEAN state back to _expand.
+
+        Same falling-edge convention _intercept's disengage and _expand's
+        `converging` reset already use: self.tgt holds an anchor tile that the
+        ore picker would never have chosen and self.stuck counted rounds
+        walking to it, so both are cleared and the next _expand turn re-picks.
+        link_queue is positional and is deliberately left alone.
+        """
+        if self.late_tgt is not None:
+            self.tgt = None
+            self.stuck = 0
+            self.wall = None
+        self.late_tgt = None
+
+    def _late_anchor(self, ct):
+        """The tile this recruit walks to before building, or None.
+
+        FORWARD_PLACEMENT_ON picks WHICH anchor, and that single choice is the
+        whole of the placement ablation: LATE_FORWARD_NUM/DEN puts it past the
+        midpoint toward the enemy Core, LATE_HOME_NUM/DEN a short step out from
+        our own.  Both arms therefore pay a walk and both build the same number
+        of turrets under the same budget -- only the band differs, which is
+        what makes "does placement matter" answerable at all.
+
+        Pure arithmetic over the decoded grid: no engine calls, computed once
+        per unit and cached, so an engaged recruit re-reads it for free.
+        """
+        if self.core is None or self.enemy is None or not (self.mw and self.mh):
+            return None
+        cached = getattr(self, "late_anchor_cache", None)
+        if cached is not None:
+            return cached
+        if FORWARD_PLACEMENT_ON:
+            num, den = LATE_FORWARD_NUM, LATE_FORWARD_DEN
+        else:
+            num, den = LATE_HOME_NUM, LATE_HOME_DEN
+        ax = self.core.x + (self.enemy.x - self.core.x) * num // den
+        ay = self.core.y + (self.enemy.y - self.core.y) * num // den
+        ax = max(0, min(self.mw - 1, ax))
+        ay = max(0, min(self.mh - 1, ay))
+        best = Position(ax, ay)
+        # A wall (or ore) anchor is unreachable / unbuildable, so slide to the
+        # nearest plain tile.  map_grid is the decoded terrain, a list of
+        # strings, so this is a few dozen character reads and no engine calls;
+        # on an undecoded map the anchor is used as-is and _nav's own stuck
+        # counter is what gives up.
+        if self.map_grid is not None and self.map_grid[ay][ax] != ".":
+            found = None
+            for r in (1, 2, 3):
+                for dy in range(-r, r + 1):
+                    for dx in range(-r, r + 1):
+                        if max(abs(dx), abs(dy)) != r:
+                            continue
+                        nx, ny = ax + dx, ay + dy
+                        if not (0 <= nx < self.mw and 0 <= ny < self.mh):
+                            continue
+                        if self.map_grid[ny][nx] == ".":
+                            found = Position(nx, ny)
+                            break
+                    if found is not None:
+                        break
+                if found is not None:
+                    break
+            if found is not None:
+                best = found
+        self.late_anchor_cache = best
+        return best
+
+    def _late_band_ok(self, bp):
+        """Is bp in the band this build is allowed to stand in?
+
+        Distances are taken to the Core ANCHOR positions rather than to the
+        nearest footprint tile, deliberately: that is exactly how the placement
+        census measured the 25/56/82 and 20/22 medians this piece is aimed at,
+        so the gate and the metric are the same number.
+
+        FORWARD is expressed as the census expresses it -- d2_enemy <= d2_own,
+        the same test its `side` column applies -- plus a standoff from home so
+        the arm cannot satisfy itself with a gun on our own doorstep.  The
+        standoff is scaled down on maps whose Cores are close together, where
+        LATE_FORWARD_MIN_DSQ would exceed anything reachable and would silently
+        disable the whole arm rather than relocate it.
+        """
+        if self.core is None:
+            return False
+        do = bp.distance_squared(self.core)
+        if not FORWARD_PLACEMENT_ON:
+            return do <= LATE_HOME_MAX_DSQ
+        if self.enemy is None:
+            return False
+        dcores = self.core.distance_squared(self.enemy)
+        if do < min(LATE_FORWARD_MIN_DSQ, max(8, dcores // 4)):
+            return False
+        return bp.distance_squared(self.enemy) <= do
+
+    def _late_turret_build(self, ct):
+        """Place one turret on a legal orthogonally adjacent tile.  True == built.
+
+        Every mutating call is gated by its own can_build_*.  Two extra
+        refusals on top of the engine's:
+          - the PLANK HS heal seats (a turret is impassable, so one on a seat
+            costs +4 HP/round for the rest of the match), and
+          - any tile that is not EMPTY terrain, which bans ore for the same
+            reason E2B bans paving it: a harvester may ONLY be built on ore, so
+            a turret there costs that mine permanently, and a late gunline that
+            eats its own economy is the measured way this doctrine fails.
+        """
+        p = ct.get_position()
+        ban = self._seat_ban()
+        ti = ct.get_global_resources()
+        # Nearest visible hostile, used only to aim.  A facing is free to
+        # choose and permanent once built (only Gunners can rotate, at 10 Ti),
+        # so it is worth one cheap scan.
+        aim, best_d = None, 10 ** 9
+        for eid in ct.get_nearby_entities():
+            try:
+                if ct.get_team(eid) == self.team:
+                    continue
+                ep = ct.get_position(eid)
+                d = p.distance_squared(ep)
+                if d < best_d:
+                    best_d, aim = d, ep
+            except Exception:
+                continue
+        choices = (
+            (
+                (EntityType.SENTINEL, ct.get_sentinel_cost()),
+                (EntityType.GUNNER, ct.get_gunner_cost()),
+            )
+            if LATE_TURRET_PREFER_SENTINEL else
+            (
+                (EntityType.GUNNER, ct.get_gunner_cost()),
+                (EntityType.SENTINEL, ct.get_sentinel_cost()),
+            )
+        )
+        for d in CARDINALS:
+            bp = p.add(d)
+            if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
+                continue
+            if ban is not None and (bp.x, bp.y) in ban:
+                continue
+            if not self._late_band_ok(bp):
+                continue
+            try:
+                if ct.get_tile_env(bp) != Environment.EMPTY:
+                    continue
+            except Exception:
+                continue
+            facings = []
+            for target in (aim, self.enemy):
+                if target is None:
+                    continue
+                f = bp.direction_to(target)
+                if f != Direction.CENTRE and f not in facings:
+                    facings.append(f)
+            if not facings:
+                continue
+            for turret_type, cost in choices:
+                # Affordability only.  The reserve that keeps this arm from
+                # emptying the bank -- the thor_r1 failure, zero harvesters and
+                # zero titanium delivered -- is LATE_TURRET_TI_FLOOR, checked
+                # before the unit ever engaged and re-checked every round of the
+                # walk, so a build that gets this far always leaves the floor
+                # minus one turret standing (~155 Ti at measured late scale).
+                if ti < cost:
+                    continue
+                for f in facings:
+                    if turret_type == EntityType.SENTINEL and ct.can_build_sentinel(bp, f):
+                        ct.build_sentinel(bp, f)
+                        ct.write_store(SLOT_HOME_GUN, ct.read_store(SLOT_HOME_GUN) + 1)
+                        return True
+                    if turret_type == EntityType.GUNNER and ct.can_build_gunner(bp, f):
+                        ct.build_gunner(bp, f)
+                        ct.write_store(SLOT_HOME_GUN, ct.read_store(SLOT_HOME_GUN) + 1)
+                        return True
+        return False
+
+    def _late_gunline_inner(self, ct):
+        rnd = ct.get_current_round()
+        if rnd < LATE_TURRET_MIN_RND:
+            return False
+        # PIECE H owns the last forty rounds outright: a turret bought at r970
+        # cannot pay for itself before the bell and its +20 scale raises the
+        # price of the harvesters that DO score in tiebreak 2.
+        if ENDGAME_SWITCH_ON and rnd >= ENDGAME_RND:
+            return False
+        if self.core is None or self.enemy is None:
+            return False
+        if self.late_guns >= LATE_TURRET_PER_UNIT:
+            return False
+        # WHO.  Plain expanders only, and never the single-occupancy seats:
+        # role_n 0/3 are saboteurs (already forward, already served by
+        # _plan_siege, which this piece deliberately does not touch), role_n 1
+        # is the sole interceptor and role_n 4 the sole defender.
+        if self.role != "expand" or self.role_n < LATE_TURRET_MIN_ROLE_N:
+            return False
+        # Never abandon a half-built chain: a lone stub conveyor is a dead end
+        # that accepts one stack and blocks forever (see SIPHON_WIRE_ON).
+        if self.link_queue or self.converging:
+            return False
+
+        p = ct.get_position()
+        if self.late_tgt is None:
+            if rnd < self.late_ban or rnd - self.late_rnd < LATE_TURRET_EVERY:
+                return False
+            # A builder standing in the home band while the siege latch is set
+            # belongs to the defense, not to this arm.  A builder already out
+            # in the field is not going to get home in time to matter and is
+            # exactly the unit that should be planting a gun instead.
+            if ct.read_store(SLOT_UNDER) and p.distance_squared(self.core) <= HUNT_BAND_DSQ:
+                return False
+            # SURPLUS ONLY (see LATE_TURRET_TI_FLOOR).
+            if ct.get_global_resources() < LATE_TURRET_TI_FLOOR:
+                return False
+            # THE COST SCALE, PRICED (see LATE_TURRET_MAX_SCALE).  One global
+            # multiplier over live entities, +20 per turret, applied to every
+            # later purchase -- so past the ceiling the gun costs more in
+            # forgone harvesters and bodies than it can return.
+            try:
+                if ct.get_scale_percent() > LATE_TURRET_MAX_SCALE:
+                    return False
+            except Exception:
+                pass
+            anchor = self._late_anchor(ct)
+            if anchor is None:
+                return False
+            self.late_tgt = anchor
+            self.late_since = rnd
+
+        # Engaged.  Re-check the bank every round -- income can collapse while
+        # this unit walks -- and bound the walk itself, because the walk IS the
+        # economy cost of this piece; the build is one action.
+        if (
+            ct.get_global_resources() < LATE_TURRET_TI_FLOOR
+            or rnd - self.late_since > LATE_TURRET_WALK_MAX
+        ):
+            self._late_clear()
+            self.late_ban = rnd + LATE_TURRET_BAN_RNDS
+            return False
+        # Out of budget: hold the engagement (so the walk is not restarted next
+        # round) but spend nothing this turn.
+        if self._cpu_exhausted(ct):
+            return True
+
+        if ct.get_action_cooldown() == 0 and self._late_turret_build(ct):
+            self.late_guns += 1
+            self.late_rnd = rnd
+            self._late_clear()
+            return True
+
+        if ct.get_move_cooldown() != 0:
+            return True
+        # Arrived, or wedged, without a legal tile: give the turn back to the
+        # economy rather than loiter.  self.stuck is maintained by _builder.
+        if p == self.late_tgt or self.stuck >= 5:
+            self._late_clear()
+            self.late_ban = rnd + LATE_TURRET_BAN_RNDS
+            return False
+        self.tgt = self.late_tgt
+        self._nav(ct, pave=False)
+        return True
 
     def _try_harvester(self, ct, harv):
         p = ct.get_position()

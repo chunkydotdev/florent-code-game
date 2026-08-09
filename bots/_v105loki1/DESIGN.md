@@ -76,17 +76,28 @@ is a plain economy bot.
 
 ## Measured (local arena, `--tle 10`, both seat orderings)
 
+**Matched vs-field pair, clean machine, 15 maps × 3 seeds, n=90 each:**
+
 | leg | result | crashes |
 | --- | --- | --- |
-| vs `_v103split`, 15 maps × 4 seeds | **61.7%** [52.7, 69.9], n=120 | 0 / 0 |
-| vs `opp_v78`, 15 maps × 2 seeds | **48.3%** [36.2, 60.7], n=60 | 0 / 17 |
-| `_v103split` vs `opp_v78`, same battery | 60.0% [47.4, 71.4], n=60 | 0 / 16 |
+| `_v105loki1` vs `opp_v78` | **62.2%** [51.9, 71.5] — clears 50% | 0 / 28 |
+| `_v103split` vs `opp_v78` | 56.7% [46.4, 66.4] — no verdict | 0 / 15 |
 
-**Non-transitive, and the vs-field leg is the one that counts.** LOKI-1 beats the
-incumbent head-to-head but sits ~12 points *behind* it against the field proxy.
-Same direction in a contaminated earlier pass (50.0 vs 70.0). On the project's
-own rule — ship verdicts weigh the vs-field battery, self-legs are for
-attribution — **this is not a ship candidate as it stands.**
+LOKI-1 is **+5.5 pts** on the incumbent against this proxy. Intervals overlap
+heavily and the legs are unpaired, so this is "not worse, plausibly better" —
+**not** a demonstrated improvement. One opponent only; the wider battery
+(`opp_v72`, `opp_v63`, `opp_v50`) is the instrument that decides.
+
+**Retracted:** an earlier revision of this file reported 48.3% vs `opp_v78` and
+concluded LOKI-1 was ~12 pts *behind* the incumbent. Those legs (and the
+61.7%/n=120 self-leg) were run while a second session was running its own
+batteries on the same machine. Under `--tle 10` a unit's turn is truncated when
+it overruns 10 ms, so arena results are **load-sensitive and CPU contention
+silently degrades play without producing a crash**. Same pairing, same bot, clean
+machine: 62.2%. Never measure while another battery is running.
+
+Zero uncaught exceptions for LOKI-1 across every leg (~360 matches), and zero
+CPU-guard trips observed in a full instrumented game.
 
 ## Known weak points
 

@@ -1048,6 +1048,224 @@ SPORKS_AMMO_TOPUP = 4
 # pecks draw on, and a 4 Ti top-up is never worth emptying it.
 SPORKS_AMMO_TI_FLOOR = 12
 
+# ===========================================================================
+# LOKI-3 -- THE LATE FORWARD GUNLINE, FED.  (_v107loki3, 2026-08-09, s21)
+#
+# THE MEASURED GAP.  11,784 turret builds censused over ~3,800 archived
+# replays.  Per game, rounds 200-300, THEM vs US:
+#
+#     Ouroboros      4.18 / 0.12 gunners built     103.3 / 5.8 shots fired
+#     Powerpuff      2.11 / 0.22                    59.9 / 8.1
+#     CtrlAltDefeat  2.00 / 0.35                    47.2 / 13.2
+#     KCM            2.01 / 0.18                    39.9 / 8.9
+#     Lunds          1.94 / 0.17                    66.3 / 8.1
+#
+# We fight the late game with 2-damage builder melee while they fight it with
+# 7s and 18s.  Our builder-ATTACK counts are usually HIGHER than theirs.
+#
+# THERE IS NO EARLY DOCTRINE GAP.  Median squared distance of turret builds:
+#
+#     band       who    n      to OWN core    to ENEMY core
+#     r0-150     THEM  3449         25              45
+#     r0-150     US    1711         25              37   <-- we are MORE forward
+#     r200-300   THEM  1346         56              51
+#     r200-300   US     267         20             113
+#     r300+      THEM  2894         82              58
+#     r300+      US     380         22             178
+#
+# Everything diverges at r150.  Their median turret WALKS OUTWARD from their
+# own core (25 -> 56 -> 82); ours stays pinned at home (25 -> 20 -> 22).
+#
+# And the band is where the league is actually decided.  Hazard of a core kill
+# among games still alive at each band, 3,705 games between teams rated >=1800
+# against our own 2,435:
+#
+#     r0-150     TOP 20.7%   OURS 23.3%   <-- we are MORE decisive early
+#     r150-200   TOP 18.7%   OURS 10.3%
+#     r200-300   TOP 38.0%   OURS 16.6%
+#     r300+      TOP 70.2%   OURS 34.4%
+#     reaching r1000: TOP 11.9%   OURS 37.2%
+#
+# The late-conversion wall is OURS, not a property of the ruleset.
+#
+# WHAT THIS PIECE IS NOT.  Two prior builds died on this ground and both
+# lessons are encoded in the flag split below:
+#
+#  1. NOT A CONSTANT RAISE.  LAUNCH_GIVEUP_RND=180 was found switching off the
+#     raid pipeline after r180; unblocking it measured 49.4%, CI [42.2,56.7],
+#     n=180 -- no effect.  The constant was correctly sized for what was
+#     downstream of it.  So this does NOT merely raise AMMO_FLOOR: ammo without
+#     a live turret to fire it is nothing, and a turret without ammo is a
+#     30-Ti statue.  Production, placement and ammo are three separate flags
+#     precisely because each may be independently binding.
+#  2. NOT THOR.  A previous build swapped turret TYPE (sentinel -> gunner)
+#     while the turrets still stood on the HOME band: zero cores killed in 10
+#     matched games and MORE core deaths than the bot it replaced.  WHERE THE
+#     TURRET STANDS IS THE DOCTRINE, NOT WHICH TYPE IT IS.
+#
+# THE FLAG SPLIT, AND WHY IT ISOLATES CLEANLY.  A pre-registered prediction is
+# riding on these three being genuinely independent, so the design holds the
+# turret COUNT invariant across the placement flag:
+#
+#   LATE_TURRET_ON       -- the late-band production arm exists at all.  Same
+#                           eligibility, same per-unit budget, same cadence and
+#                           the same titanium/scale gates whatever the
+#                           placement flag says.
+#   FORWARD_PLACEMENT_ON -- ONLY where those same turrets go.  ON: the recruit
+#                           walks to a forward anchor and may build only on a
+#                           tile the census would label FORWARD.  OFF: it never
+#                           walks and may build only inside the home band --
+#                           i.e. deliberately reconstructs Thor.
+#   LATE_AMMO_ON         -- core-side ammunition policy only.  Touches no
+#                           builder path and no placement.
+#
+# `_plan_siege` / `_try_siege_build` -- the saboteur's EXISTING forward battery
+# -- are deliberately NOT touched by any of the three.  They are a proven
+# pipeline, and folding them in would make the forward flag change the turret
+# count as well as the placement, confounding exactly the comparison this split
+# exists to make.
+#
+# THE COST, PRICED.  The cost scale is a SINGLE GLOBAL multiplier over LIVE
+# entities: scale = 100 + sum of each live entity's category rate, and every
+# cost is floor(scale x base).  Turrets are +20 each, so four late turrets put
+# +80 points of scale on everything bought afterwards -- harvesters, conveyors
+# and builder bodies included.  Measured scale at r200-300 in our own games
+# runs ~310-340% median, so a gunner already costs ~62-67 Ti and a sentinel
+# ~93-100.  A from-scratch attempt at a gunline that ignored this shipped zero
+# harvesters, delivered zero titanium and went 2/60.  Three guards, all here:
+#   - LATE_TURRET_TI_FLOOR: build only out of demonstrably SURPLUS bank.  We
+#     end r200-300 holding a median 635 Ti while Ouroboros holds 478 AND
+#     converts 441 into ammunition; the money is provably idle.
+#   - LATE_TURRET_MAX_SCALE: refuse outright once the global multiplier is
+#     already past the point where +20 is affordable.
+#   - Per-unit budget and cadence: the arm cannot run away even if both above
+#     stay satisfied for 800 rounds.
+LATE_TURRET_ON = True
+FORWARD_PLACEMENT_ON = True
+LATE_AMMO_ON = True
+
+# --- LATE_TURRET_ON: production ---------------------------------------------
+# Band start.  r150 is where the placement census says the two doctrines part
+# and r200 is where the hazard gap opens (38.0% vs 16.6%); 200 is chosen over
+# 150 because the r150-200 band is the one where our own hazard is LOWEST
+# (10.3%) and pulling builders off ore there has no measured prize.
+LATE_TURRET_MIN_RND = 200
+# Surplus-only bank gate.  A late gunner is ~65 Ti and a sentinel ~95 at the
+# measured r200-300 scale, so this leaves >= ~155 Ti standing after any single
+# build -- above LATE_AMMO_TI_FLOOR, so the ammo arm is never starved by the
+# turret arm.
+LATE_TURRET_TI_FLOOR = 250
+# Global cost-scale ceiling, in percent (ct.get_scale_percent()).  Our own
+# r200-300 scale distribution is roughly median ~336, p75 ~441, p95 ~575, so
+# this refuses the top decile of already-bloated economies -- the games where
+# +20 per turret is genuinely unaffordable -- and passes the rest.
+LATE_TURRET_MAX_SCALE = 520
+# Turrets one recruit may add over the whole match, and rounds between them.
+# Per-unit instance state, no store slot: all 16 are occupied, and the file's
+# existing forward_guns / hunting / siphon_* ledgers use exactly this pattern.
+# Two or three eligible bodies x 3 is the 2-4 turrets/game the census says the
+# field builds, not more.
+LATE_TURRET_PER_UNIT = 3
+LATE_TURRET_EVERY = 20
+# Which builders may be recruited.  role_n 0 and 3 are saboteurs (already
+# forward, already served by _plan_siege), role_n 1 is the single interceptor
+# and role_n 4 the single defender -- all four are single-occupancy seats whose
+# loss is measured elsewhere in this file.  role_n >= 2 that are STILL plain
+# expanders is what is left: the pure economy hands and the replacement/surge
+# bodies, i.e. exactly the seats the LATE LABOR SURGE block says are surplus.
+LATE_TURRET_MIN_ROLE_N = 2
+# Rounds a recruit may spend walking to its anchor before giving up and going
+# back to ore, and how long it then stays out of the arm.  The walk IS the
+# economy cost of this piece -- the build itself is one action -- so it is
+# bounded explicitly rather than left to the nav machinery.
+LATE_TURRET_WALK_MAX = 60
+LATE_TURRET_BAN_RNDS = 120
+# Sentinel (r^2=32, dmg 18, 10 ammo, line shot ignores obstacles) or Gunner
+# (r^2=13, dmg 7, 4 ammo, blocked by obstacles, can rotate for 10 Ti)?
+# Gunner-first, and the reason is ammunition rather than doctrine: the metric
+# this piece has to move is SHOTS FIRED, the same conversion budget buys 2.5x
+# as many gunner shots, and a forward turret has no engineer standing by to
+# re-plan it -- only a gunner can re-aim itself.  The field builds gunners
+# (the census column is "gunners built") and Ouroboros' 103.3 shots at 4 ammo
+# is 413 ammo against its 441.6 Ti converted, which is a gunner line exactly.
+# Left as a flag because sentinel reach is the better fit for a midfield
+# picket and this is an untested call, not a measured one.
+LATE_TURRET_PREFER_SENTINEL = False
+
+# --- FORWARD_PLACEMENT_ON: placement ----------------------------------------
+# The forward anchor sits this fraction of the way from our own Core to the
+# enemy's.  3/5 puts it past the midpoint: at that point d^2 to the enemy is
+# 0.16 D^2 against 0.36 D^2 to home, so a turret built there is FORWARD by the
+# census's own definition (d2_enemy < d2_own) with margin to spare, while
+# staying short of the enemy's own defended ring where _plan_siege already
+# operates.
+LATE_FORWARD_NUM = 3
+LATE_FORWARD_DEN = 5
+# Minimum standoff from our own Core footprint for a forward build.  Our
+# measured late median is d^2 = 20-22 and theirs 56-82; 36 is the floor that
+# excludes the home band outright without demanding the full 56.
+LATE_FORWARD_MIN_DSQ = 36
+# THE ABLATION CONTROL.  With FORWARD_PLACEMENT_ON off the recruit walks to a
+# HOME anchor instead -- one fifth of the way to the enemy Core, i.e. a few
+# tiles out from our own footprint -- and may build only within LATE_HOME_MAX_DSQ
+# of home.  The arm is thereby turned deliberately into Thor: the same recruits,
+# the same per-unit budget, the same cadence, the same titanium and scale gates
+# and a comparable walk, differing ONLY in the band the gun ends up standing in.
+# That is what makes "does placement matter" a real question rather than a
+# comparison between building turrets and not building them.  41 is
+# HUNT_BAND_DSQ, this file's existing twice-validated "home band" constant.
+#
+# HONEST ASYMMETRY: the forward walk is longer than the home walk, so under a
+# fixed LATE_TURRET_WALK_MAX the forward arm may complete slightly FEWER builds
+# per unit of time.  If the forward arm wins, that asymmetry works against it
+# and the result is conservative; if the home arm wins, some of the margin may
+# be walk length rather than band.  Report both turret counts, not only the
+# outcome.
+LATE_HOME_NUM = 1
+LATE_HOME_DEN = 5
+LATE_HOME_MAX_DSQ = 41
+
+# --- LATE_AMMO_ON: ammunition -----------------------------------------------
+# THE MONEY IS SITTING IDLE.  Per game in r200-300, Ouroboros converts 441.6
+# titanium into ammunition and still ends the band holding 478.6 Ti; we convert
+# 34.8 and end holding 635.1.  convert_ammo costs NO action cooldown, is once
+# per team per turn and is uncapped in amount -- there is no mechanism reason
+# for the gap, only policy.  The Eir 5.1 working-magazine block drips toward
+# AMMO_FLOOR = 16, which is four gunner shots or ONE sentinel shot plus change;
+# our measured 5.8 shots/game is ~23 ammo, so the floor is plausibly binding.
+LATE_AMMO_MIN_RND = 200
+# Magazine per turret ever built (SLOT_HOME_GUN), and its ceiling.  14 is
+# three gunner shots or one sentinel shot plus a reload; the cap is a dozen
+# sentinel shots' worth and stops a monotone counter from inflating the
+# magazine forever late in a long game.
+LATE_AMMO_PER_GUN = 14
+LATE_AMMO_CAP = 96
+# Titanium converted per Core turn while topping up, replacing the Eir 5.1
+# drip's 16.  The drip refuses to spend below ti_floor and only ever tops up
+# toward the target, so this raises the RATE of refill, not the total: total
+# lifetime spend is still (ammo actually burned) + the standing magazine.
+LATE_AMMO_STEP = 48
+# Peacetime bank floor the late policy will not convert through.  Ouroboros
+# ends the band holding 478 Ti, so a floor here is not what separates us from
+# them; it exists so the harvester-rebuild reserve (PIECE E1) and the heal line
+# are never the thing that pays for a magazine.  UNDER SIEGE THIS IS NOT
+# APPLIED -- the existing 12-floor siege path is left exactly as it is, because
+# a gun that cannot fire during the assault does not get to bank for later.
+LATE_AMMO_TI_FLOOR = 140
+# HOW THE ARM KNOWS THE MAGAZINE IS BEING DRUNK, and why that matters more than
+# any constant here.  `weapons` (SLOT_HOME_GUN) is monotone -- it counts rubble
+# forever -- and the Core's own vision is r^2 = 36, so a FORWARD turret is
+# invisible to it and _core_turret_mix reads zero for exactly the guns this
+# doctrine builds.  Neither can answer "is there something alive out there
+# firing".  Ammunition itself can: nothing but a turret shot removes ammo from
+# the team balance, so a DROP between two Core turns is direct proof of a live
+# gun with a target.  The arm escalates only on that evidence (or on a live
+# turret the Core can actually see), which makes it self-bootstrapping -- the
+# base 16-ammo magazine pays for the first shot, the drop arms the policy, and
+# the policy then feeds whatever fired -- and self-limiting: guns that die stop
+# consuming, the evidence goes stale, and the magazine reverts to Eir 5.1.
+LATE_AMMO_EVIDENCE_RNDS = 120
+
 # CPU budget bail-out threshold, in microseconds. Ported from bots/ladder1:
 # the engine allows 10 ms CPU per unit per round and interrupts run()
 # mid-statement, with no cleanup, if that is exceeded -- wasting the round

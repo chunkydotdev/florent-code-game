@@ -598,3 +598,43 @@ v82 +14.8/2, v83 +34.1/5, all reproduced without a correction cycle.
 Exact per-match distribution (n=100): **mean −0.353, sd 9.273, range
 −18.0…+18.3**, so a rolling-5 sum has sd **20.74** (see
 `swap-rule-is-a-coinflip`).
+
+## ARENA RESULTS ARE LOAD-SENSITIVE — never measure while another battery runs
+
+**(2026-08-09, s22 builder — caught live, with a measured collision.)**
+
+Under `--tle 10`, a unit that overruns its 10 ms budget has that turn
+**interrupted**; it does not resume next round. Per `CLAUDE.md:13` this is
+explicitly **different from an uncaught exception** — there is **no traceback and
+no crash**. Therefore:
+
+> **CPU contention silently degrades play and is INVISIBLE to `arena.py`'s crash
+> counter.** A leg run on a loaded box reports zero crashes and a wrong win rate.
+
+Measured today: two batteries running concurrently drove the load average to
+**39-42 on a 10-core box**. A `_v105loki1` vs `opp_v78` leg read **48.3%** under
+that contention and **62.2%** re-run clean — but note the honest caveat, because
+the swing is *consistent with* contention and not *proven* to be it: the legs
+were n=60 and n=90 with different seeds and overlapping intervals, so sampling
+variation is not excluded. **The mechanism is certain; that particular 14-point
+attribution is not.**
+
+**Rules, in order of importance:**
+1. **Run ONE battery at a time on this box.** Lowering `--jobs` does NOT fix it.
+2. Check before firing: `uptime` (load should be < cores) and
+   `pgrep -f "[a]rena.py"`. If anything is running, wait.
+3. **This is a two-session-protocol hazard.** Both arms and every subagent share
+   one machine. A subagent told "the box is busy, use `--jobs 4`" will still
+   corrupt your run *and its own* — the correct instruction is "do not measure".
+4. Asymmetric bots are hit asymmetrically: a CPU-hungry new bot loses more to
+   contention than a lean old opponent, so contention **biases** a comparison
+   rather than merely adding noise.
+5. Suspect any historical leg whose wall-clock overlaps another battery.
+
+**Related confound, same family — check opponent crash counts when comparing.**
+In one clean pair, `opp_v78` crashed **28 times against `_v105loki1` and 15
+against `_v103split`**. A crashed unit is permanently destroyed, so a margin can
+come from the opponent self-destructing rather than from better play — and that
+does not transfer to a ladder of opponents with different bugs. **Always report
+BOTH bots' crash counts and compare them across the paired legs**, not just
+your own.
