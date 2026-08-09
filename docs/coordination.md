@@ -20149,3 +20149,93 @@ corrected quote procedure (**extract → strip markup → decode entities → fl
 grep the literal**), the **per-STRING** glyph rule, and the referent rule for demonstratives.
 
 **Version tag:** live **v102 = LOKI-8**, tape k=14 / 1580.0 / net5 −14.0.
+
+## 2026-08-09 23:0x CEST — BUILDER s26: **AGENT RELAY** (both landed) + two engine probes + LOKI-9 call
+
+### RELAY 1 — `loki78-diff`: **DO NOT RUN THE LOKI-7 v LOKI-8 HEAD TO HEAD AS SPECIFIED**
+The queue item is real but **the fixture is saturated at 86.7%** (15/15 vs 13/15,
+**p=0.483**). Required n for a <=10pp effect is **~350/arm**. Headline is that a
+head-to-head at feasible n cannot distinguish these two bots — which is a more
+useful answer than a null we could not interpret. Also:
+* **Delta-2 (raid bodies pulled into a chase `LOKI_QUIET_ON` had already stripped
+  of its attack) is the LARGER removal, not a footnote** — its gate is live on
+  **57.6% of rounds in 95.7% of games** (n=70 v102 ladder games / 21,030 rounds).
+  HANDOVER's phrasing understates it.
+* **A free pre-battery check nobody has run:** collar occupancy is **41.1% on
+  v102 vs 66.3% pooled v64-v102**. Decode LOKI-7 and LOKI-8 offline replays and
+  compare collar occupancy head to head — **measures the treatment directly with
+  no outcome noise**. Confounded as it stands (whole Loki-vs-Eir difference,
+  70-game single day); not attribution.
+* **Stale-dates a live exclusion:** `core-kill-incidence-cut-2026-08-09.md` §4a
+  says no corpus game was played by a bot with this code path. **True when
+  written, false now** — v102 has 70 archived ladder games. `_v1NN` build numbers
+  are NOT ladder version numbers.
+
+### RELAY 2 — `topfield-250`: **THE SHARPEST NUMBER IN THE CORPUS**
+Population 11,087 ladder team-games, 1,825 top-tier, 1,640 ours; `corpus_sanity`
+run first; two decoder traps hit and worked around (`build_agg` has no
+`builder_attack`, it is `batk`/`batk_core`; gunner-lifetime medians shift under
+the censoring horizon).
+* **THE CONFOUND FIRST: top teams' opponents are top teams 89% of the time; ours
+  never are.** Control on absolute opponent strength -> TOP kills inside 250 at
+  40.0% vs our 21.8%. Control on rating DIFFERENTIAL -> the gap mostly closes.
+  **Both controls defensible, they disagree — so nobody quotes "top teams kill
+  twice as fast".** What survives both: **our killed-ever rate is 10-22 points
+  below theirs in every cell. We initiate at their rate and fail to convert.**
+* **FINDING 1 — FORWARD GUNNER SURVIVAL.** Gunners built within `d2<=13` of the
+  enemy core: **57.2% of ours dead within 30 rounds (n=1,132) vs 26.3% of theirs
+  (n=2,529)**; median lifetime **18 vs 62 rounds**. **Not geometry** (ours die in
+  17-18 rounds at EVERY distance band, theirs live 60-68 at every band). **Not a
+  rebuild artifact** (immediate re-place 10.0% us / 8.2% them). **Per-gunner
+  firing rate is identical, 63 vs 62 shots.** The opponent-strength confound runs
+  **against** the finding. **We already place these in 38% of games — we are not
+  missing the idea, we are missing the outcome.**
+  **CAVEAT RESOLVED BY ME, and it could have inverted the finding:** the agent
+  could not tell our "deaths" from our own `destroy()` calls. **`_v124loki8`
+  contains ZERO `ct.destroy()`/`ct.self_destruct()` calls.** Enemy action.
+* **FINDING 2 — spawn-ring barriers.** 66% of top-tier games place one before
+  r250 vs our 15%. Ore-denial reading **killed** (only 4.5% sit on ore). Victim
+  builder production **-59%** in the 40 rounds after, against a placebo arm of
+  untouched victims at **+0.06** (n=9,037). **But barriers barely move kill-by-250
+  (36.3->39.4); they move killed-ever (51.9->71.5).** They make a siege stick,
+  they do not speed a kill. **Minority strategy: 6 of 19 top teams, Pantheon is a
+  third of all instances, `sporks` at 2078 barely uses it.**
+* **FINDING 3 — we are the economy bot in a shooting league.** We out-deliver the
+  top tier (930 vs 820 Ti by r200) and hold 29 conveyors at r250 to their 16;
+  they fire **59 shots by r150 to our 31**. First gunner **r21 theirs, r54 ours**.
+* **NEGATIVES, so nobody re-runs them:** 50-unit cap irrelevant to everyone
+  (median 8-9 alive at r250, 0.0% reach 45); ore denial dead; splitters
+  effectively do not exist (250 events in 1.33M); opening build order universal
+  through r10 in all tiers; economy is not our deficit; **CPU is not our
+  constraint — we TLE 0.5% vs the top tier's 6.1%, we have headroom nobody else
+  has.** Launcher: we build one in 64% of games, they 12%, corpus silent on
+  whether that is an edge or a dead end.
+
+### TWO ENGINE PROBES RUN (my lane; research flagged both and refused to price them)
+1. **Cost scale is ONE GLOBAL ADDITIVE team factor — CONFIRMED ON THE ENGINE.**
+   `bots/_probe_scale` spawns ONLY builder bots: scale 100->200%, and conveyor
+   3->6, harvester 20->40, launcher 20->40 rose with it **though none was ever
+   built**. `observed == floor(scale x base)` for all 8 types every round.
+   Per-category is dead. Additive, not compounding.
+2. **`destroy()` refunds the scale SAME-ROUND.** `bots/_probe_refund`:
+   `SCALE 205.000 -> 204.000` with the cost getters moving inside the same
+   `run()` call. **Magnitude honestly:** a barrier/conveyor is +1% of BASE, so
+   0.3 Ti off a sentinel — negligible. It only pays on the **+20%** entities:
+   culling one surplus builder at scale 2.0 takes a sentinel **60 -> 54**, and the
+   discount is global for the window. **`_v124loki8` uses destroy() zero times —
+   unused, not under-used.**
+
+### THE LOKI-9 CALL, and it declines Magnus's stated weighting
+The side lane put the fork plainly: Magnus's verbatim vision weights the **trap**
+("manipulates the board, controls the pace"), the line's measured law weights
+**removal** (every gain was a removal; both additions failed).
+**I am choosing neither: LOKI-9 = FORWARD ORDNANCE SURVIVAL**, because it is the
+only candidate with per-entity evidence where the confound runs the WRONG way and
+the artifact was tested. **It is not an added mechanism — we already place the
+forward gunner in 38% of games; it dies in 18 rounds.** The plank changes only
+what happens AFTER a placement we already make.
+**Falsifier, per PROGRAMME: mechanism check = forward-gunner survival to 30
+rounds; VERDICT = `core_kill_share` vs LOKI-8. If survival moves and
+core_kill_share does not, that is a LABELLED NULL and the road closes cheaply.**
+Stating the cost of the call: **this defers the trap half of Magnus's vision**,
+and he may overrule it.
