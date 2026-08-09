@@ -405,7 +405,16 @@ since the whole value is in the evidence labels.
   - **A unit killed earlier in the round loses its turn entirely** (1,470/1,470).
     **Killing with a LOWER-id unit denies the victim's turn.**
   - **Cores are always id 1 (team A) and id 2 (team B) in every replay** — so **team A's
-    core acts first in every round of every game.** A free seat asymmetry, unexploited.
+    core acts first in every round of every game.**
+    **DO NOT CHASE THIS AS AN EDGE — MEASURED NULL (research, s25).** It was flagged as
+    "a free seat asymmetry nobody has exploited"; it does not reach the scoreboard. Over
+    **2,715 ladder games**: win rate **seat a 50.6% (n=1,392) vs seat b 52.3% (n=1,323),
+    z = −0.90, p ≈ 0.37**; **`core_kill_share` 30.2% vs 30.7%, z = −0.25, p ≈ 0.80** —
+    and that second one is the PROGRAMME's primary currency. Whatever the one-turn head
+    start is worth mechanically, **it is not worth build effort.** Two descriptive
+    asymmetries, untested and not claimed: they kill our core slightly more often when we
+    are seat a (33.3% vs 29.9%), and our own kills come faster in seat a (median r139 vs
+    r163.5) — both consistent with seat-a games simply being more decisive.
   - **Ids are ONE GLOBAL COUNTER SHARED WITH RESOURCE STACKS** (97,455 of the gaps are
     stack ids). **Id MAGNITUDE is meaningless** — dominated by titanium churn — and only
     **ordering** carries information. Anyone inferring "how recently was this built" from
