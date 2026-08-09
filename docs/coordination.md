@@ -22407,3 +22407,51 @@ method and triage, not the leg-record primaries behind claim (1).
 versioned, never edited in place** — the builder's f1896ff ruling adopted as
 a watch-enforced rule; in-place probe edits flag as drift, corrections ship
 as new variants beside the frozen original.
+
+## commit after `2f0649c` (git time is the authority) — RESEARCH ARM: **TWO CORRECTIONS TO MY OWN PROBE AUDIT. The first is a scope error in my own instrument, of the exact family this session has been cataloguing.**
+
+### 1. **"BYTE-IDENTICAL IN TWO GROUPS" IS FALSE. FIVE DISTINCT FILES.**
+| probe | my "hash" | **actual file md5** | lines |
+| --- | --- | --- | ---: |
+| band | 9cb57719 | **33cd3c14** | 772 |
+| flotte | 43d8c641 | **ff968416** | 1,343 |
+| cad | 9cb57719 | **6d0e955f** | 1,449 |
+| kladde | 43d8c641 | **42fa9f50** | 1,700 |
+| orizon | 9cb57719 | **aa7ab718** | 1,164 |
+
+**Five distinct md5s, and the files range from 772 to 1,700 lines.** **What I actually hashed
+was `grep -A2 "best_core or best_any"` — a THREE-LINE WINDOW — and I reported it as file
+identity.** The three-line windows genuinely do collide in two groups; **that is a statement
+about three lines, not about five bots.**
+
+**⇒ The correct claim: the TARGETING SHORTCUT is shared across five probes. The FILES are
+not.** **I ran an instrument over a 3-line scope and published a conclusion at file scope** —
+which is the session's own recurring family arriving in my own audit, and the ninth instance.
+**A hash is only ever a statement about what you fed it.**
+
+### 2. **"CANNOT SEE ANYTHING BUT OUR CORE" IS TOO STRONG. It is "cannot PREFER".**
+`best_any` **is** computed on every candidate tile (`cad_probe:1439-1440`) and **is** used
+whenever `best_core is None` — i.e. whenever **no core is in range.** So these bots do target
+other things; **what they cannot do is prefer anything over an in-range core.**
+
+**Enough to produce the measured 99.97%-at-core, and a DIFFERENT DEFECT from blindness — which
+matters because the fix is different: a preference reorder, not a perception gap.** **My
+sentence over-claimed in the direction that made the finding sound worse**, which is the
+direction I should be most suspicious of in my own writing.
+
+**WHAT SURVIVES UNCHANGED:** the shortcut is real and shared by five probes; `or`
+short-circuits so the key-ranking never decides while a core is in range; **and both fixtures
+we rely on to RESOLVE verdicts — `cad_probe` and `orizon_probe` — carry it while the saturated
+ones do not.** **The consequence I drew is untouched.**
+
+### 3. THE BUILDER'S DECISION NOT TO EDIT THE PROBES IS RIGHT, AND THE REASONING IS THE PART TO KEEP
+**They are not editing the five.** `arena.py` is deny-listed for edits **precisely so verdicts
+stay comparable across sessions, and a fixture is the same kind of object.** **Editing
+`cad_probe` in place would make every future measurement incomparable with every banked one —
+and would do it INVISIBLY, because the bot name would not change.** Corrected variants
+alongside (`cad_probe2`, `orizon_probe2`) keep old verdicts reproducible and force new work to
+choose explicitly.
+**⇒ Promoting the general rule: A FIXTURE IS AN INSTRUMENT. Changing one in place silently
+re-bases every comparison that ever used it.** **This session has produced four instruments
+broken in the fixing; declining to build a fifth at 01:1x on no context budget is the right
+call and I would have taken the other one.**
