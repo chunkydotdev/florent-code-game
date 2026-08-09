@@ -16242,3 +16242,79 @@ but the pivot now has support that does not rely on that split at all.**
 **IN-FLIGHT: nothing.** Offered: the discriminating cut on the tiebreak split (the last
 thing I would want checked before the frame changes); field-side mirror of the dwell
 measurement.
+
+## 2026-08-09 14:0x CEST — BUILDER: **PROGRAMME CHANGE (Magnus). LOKI IS THE MAIN LINE. EIR HOLDS THE SLOT AND GETS NO MORE PLANKS.**
+
+**Magnus's call, recorded verbatim in substance so it survives session death:** *"Loki
+should be our main focus now, leave Eir behind to hold the lines while we build
+something that has a shot at actually ranking high"* and *"Eir is what, iteration 50+,
+Loki v1 was never supposed to be shippable... we need a lot of iterations to make
+Loki stand a chance."*
+
+**THE METHODOLOGICAL ERROR THIS CORRECTS, and it is in our own record.** s22 measured
+LOKI-1 against the incumbent and wrote **"VERDICT — LOKI-1 IS NOT A SHIP CANDIDATE"**
+(coordination.md:10135). That was right as a SLOT decision and was then read as
+closing the ROAD. **Eir is v46→v92: forty-six shipped versions plus dozens of gated
+variants. LOKI-1 was one build, from scratch, in one afternoon.** Judging a v1 against
+a v50 answers a question we already knew the answer to. And the number it was closed
+on was **self-play** — `opp_v*` is our own prior versions, unknown until this morning.
+
+**THE NEW LOOP:**
+1. **v92 holds the slot and receives NO further planks.** It defends the rating.
+2. **Loki iterates offline against the FOREIGN pool, each iteration measured against
+   the PREVIOUS LOKI**, never against Eir. That is the only comparison that shows a
+   trajectory.
+3. **The ship gate does not apply to Loki iterations.** "Does it beat the incumbent"
+   is the wrong instrument for a line under development.
+4. Eir is displaced only when the Loki curve crosses it.
+
+---
+
+### FIRST POINT ON THE LOKI CURVE — `_det_v105loki1` vs `_det_v115dodge` (v92), foreign pool, 384 paired games, 0 crashes both arms
+
+| | v92 (Eir, 46 iterations) | **LOKI-1 (iteration ONE)** |
+|---|---|---|
+| win rate | 87.0% | **90.1%** (+3.12pp, paired **p=0.22 — NOT significant**) |
+| **core-kill share** | **61%** | **91%** |
+| core-kill WINS | 108 | **159** |
+| median turns | 335 | **205** |
+| builder deaths/game | 3.08 | **1.89** |
+
+**The win rate is a null and I am not claiming otherwise.** The result is the
+mechanism: **paired, LOKI-1 takes a core-kill win where v92 does not in 65 fixtures;
+v92 does where LOKI-1 does not in 14. Sign test p = 5.2e-09.** Core-kill share rises
+in **all four** opponents (52→94, 75→83, 58→94, 58→94) and win rate falls in **none**
+(two up, two identical).
+
+**So: at iteration one, on a pool that has never seen it, LOKI-1 matches a
+forty-six-iteration Eir on win rate and beats it decisively on the thing Magnus has
+directed us at — killing the core, 130 rounds sooner.**
+
+**LIMITS, stated with the result.**
+- **The pool is dominated** — both arms win 87–90%, so builder-method §4 applies: this
+  answers *"is aggression free?"*, not *"is the doctrine right"*. **A ceiling that high
+  cannot show a win-rate edge**, which is the most likely reason win rate is flat while
+  the mechanism is enormous. It is also why **core-kill share and time-to-kill are the
+  right currencies for the Loki line until it meets the ladder.**
+- Probes are imitations, miscalibrated (`ouroboros_probe` 86 pts over-confident).
+- **The s22 crash confound is ABSENT here** — 0 crashes both arms, so unlike the
+  self-play battery this edge is not the opponent self-destructing.
+- Median collected halves (2660→1220) because games are 130 rounds shorter. Not an
+  economy regression; do not read it as one.
+
+### ALSO BUILT AND GATED, but re-classified under the directive: `bots/_v116thor`
+
+LOKI-3's `LATE_TURRET` + `LATE_AMMO` ported onto the v92 chassis (single-file),
+control `_v116off`. **Gate CLEARED, control equivalence 12/12, 0 crashes.** Verified
+firing by direct replay decode: **16 turrets built at r200+ in the ON arm against 0 in
+the control**, 8 of them in the forward band. **But this is an EIR iteration, not a
+Loki one**, so under the directive it is not the main line. Kept as a mechanism
+experiment. Three caveats from the port, all load-bearing:
+- **It is not a clean two-factor cell**: `LATE_TURRET` increments `SLOT_HOME_GUN`,
+  which is the gate `LATE_AMMO` reads. Turning on the gunline mechanically arms the
+  ammo policy. Attribution between them is impossible from this pair.
+- **Count forward-band builds, not turrets** — most of the extra turrets are the
+  chassis's existing arms firing more because the games ran longer.
+- **One anecdote worth watching (n=1): on hive-a the control killed the core at r287
+  and the ON arm ran the full 1000 and won on titanium.** A core kill traded for a
+  tiebreak is the exact regression shape this directive is against.

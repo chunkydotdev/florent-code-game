@@ -97,7 +97,7 @@ def decode_deaths(path: Path):
 
 
 def play(job):
-    arm, arm_path, opp, map_path, seed, seat, tle, outdir = job
+    arm, arm_path, opp, map_path, seed, seat, tle, outdir, keep_replays = job
     a, b = (arm_path, opp) if seat == "a" else (opp, arm_path)
     stem = f"{arm}__{Path(opp).name}__{Path(map_path).stem}__{seed}__{seat}"
     rp = Path(outdir) / "replays" / f"{stem}.replay26"
@@ -138,7 +138,8 @@ def play(job):
             row[f"deaths_{nm}"] = deaths[ours][nm]
         row["deaths_total"] = sum(deaths[ours].values())
         row["spawns"] = spawns[ours]
-    rp.unlink(missing_ok=True)      # decoded; the bytes are not the deliverable
+    if not keep_replays:
+        rp.unlink(missing_ok=True)  # decoded; the bytes are not the deliverable
     return row
 
 
@@ -152,6 +153,9 @@ def main() -> int:
     ap.add_argument("--jobs", type=int, default=5)
     ap.add_argument("--tle", type=int, default=10)
     ap.add_argument("-o", "--out", default="scratchpad/mech")
+    ap.add_argument("--keep-replays", action="store_true",
+                    help="keep the decoded replays for a second pass "
+                         "(tools/dodge_capture.py reads them)")
     args = ap.parse_args()
 
     maps_dir = ROOT / "maps"
@@ -159,7 +163,7 @@ def main() -> int:
             else sorted(maps_dir.glob("*.map26")))
     arms = [("variant", args.variant), ("control", args.control)]
     jobs = [
-        (arm, path, opp, str(mp), seed, seat, args.tle, args.out)
+        (arm, path, opp, str(mp), seed, seat, args.tle, args.out, args.keep_replays)
         for arm, path in arms
         for opp in args.opponents
         for mp in maps
@@ -179,7 +183,8 @@ def main() -> int:
                 print(f"  {i}/{len(jobs)}", file=sys.stderr)
     outp = Path(args.out) / "full.json"
     outp.write_text(json.dumps(rows, indent=1))
-    shutil.rmtree(Path(args.out) / "replays", ignore_errors=True)
+    if not args.keep_replays:
+        shutil.rmtree(Path(args.out) / "replays", ignore_errors=True)
     print(f"{len(rows)} games -> {outp}", file=sys.stderr)
 
     # Mechanism first, win rate second -- deliberately in that order.
