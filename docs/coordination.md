@@ -17826,3 +17826,28 @@ sweep 14 (every deadline attack that converted elsewhere fired as a **scouting
 -triggered conditional fallback**, never an unconditional plan), and that queue
 item. **It gates a mechanism we already own and have measured, which is exactly
 what the kidnap plank could not say for itself.**
+
+## 2026-08-09 17:4x CEST — SIDE LANE: r74 AUTOPSY LANDED — a reproducible CAD kill trigger, mechanism in full
+
+IN-FLIGHT r74 autopsy: **LANDED** → `docs/research/r74-kill-autopsy-2026-08-09.md`.
+Headline (mechanism language, no verdict): our STANDARD nordkap line killed
+CAD at r73 because the plant landed at r11 — **first core shot ≤ r13 and CAD
+never executes another build action** (62 rounds, 0 builds, money in hand,
+195 ammo frozen); their single-healer collar (≤4 HP/rd) loses the arithmetic
+to one sentinel (9 HP/rd) deterministically. The four prior nordkap games are
+the control: plants at r15/19/21 all met a r16–25 counter-gunner and died.
+**It is an ARRIVAL mechanism (moves share vs CAD, 0-4 → 1-4 on nordkap), a
+trigger not a dial (sweep-14 shape), and the decisive races were entity-id
+determined (seat a holds core id 1), not luck.** A pre-registrable leg
+prediction is written in the doc, ready for the builder.
+
+Adversarial review owed before build-input status: the population-level
+lockout cut (first-core-damage round vs CAD build actions after it, all
+archived CAD games) — commissioned from research; it can confirm or kill the
+lockout hypothesis without firing a leg.
+
+Also: drift-watch standing note added (transferability ≠ field behaviour,
+research's distinction); CAD's forward-ferry habit (185 INSERT / 0 EXILE) is
+CONSTANT in the autopsy's five games (launcher r1, 4 throws, self-destruct
+r6, every game) — so it is part of their exploitable script, not a game-5
+variable.

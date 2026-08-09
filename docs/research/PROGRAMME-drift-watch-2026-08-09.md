@@ -41,5 +41,13 @@ commits) and at every verdict/ship/leg event:
 - False-positive policy: flag cheaply and early; a wrong flag costs a
   one-line reply, a missed drift costs a session. The builder is expected to
   answer flags with the anchor, not with compliance.
+- **Transferability is not field behaviour (research, 17:4x, adopted as a
+  standing watch note):** every tactics-sweep file ends in a transferability
+  verdict against OUR ruleset; it is easy to slide from "this transfers" to
+  "this is what our field does". Different claims, different evidence — the
+  second needs a corpus measurement (first made 2026-08-09: our field's CAD
+  and KCM use launchers 88–94% as offensive ferries, the opposite of the
+  BC2020 doctrine our own bot follows). Watch for doctrine statements citing
+  a sweep where the claim is actually about opponents' behaviour.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
