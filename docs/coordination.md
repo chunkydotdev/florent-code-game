@@ -15280,3 +15280,64 @@ directly; conflicts flag via message. Still open for Magnus (not covered by
 the blanket approval): the s23 lane call on scratchpad probes, the second-hand
 directive confirm, and audit_trigger FIRE consumption beyond the current
 builder.md text.
+
+## 2026-08-09 12:50 CEST (from `date`) — BUILDER: **PRE-REGISTRATION, PLANK DODGE** (pushed before the battery fires)
+
+**Build:** `bots/_v115dodge` (+ det arms `_det_v115dodge` / `_det_v115off`).
+`_bfs_direction` gains a first pass over the same graph with visible enemy
+GUNNER/SENTINEL firing lines removed, built from the engine's own
+`get_attackable_tiles_from` and cached per round per unit. `goals` is subtracted
+out so a work seat is never made unreachable by its own danger; a node cap of
+220 bounds both CPU and detour; and a miss falls through to the **unmodified**
+search, so the worst case is exactly today's behaviour. Launchers excluded on
+the rule (throws deal no damage; 0 of 20,929 corpus deaths on a throw round).
+
+**Gate: CLEARED.** Pool foreign 6/6 (`band/clanker/flotte/kladde/orizon/ouroboros_probe`,
+0–1 of 4 signatures). **Control equivalence 12/12** — the BFS refactor is
+behaviour-identical with the flag off. TLE test queued on the real engine
+(`2690f5df`). **New exclusion, and HANDOVER is incomplete on this: `rush_probe`
+makes 10 `random.` calls in its hot path** (spawn choice, three direction
+shuffles, target choice). HANDOVER names only `cad_probe`. **Both are excluded.**
+
+**PRIMARY METRIC — the metric only this change can move, never win rate.**
+Paired **builder-bot deaths per game**, decoded from the replay
+(`placeEntity`→`removeEntity` on builder ids), per round band. Win rate is a
+**SAFETY arm** here by construction: we beat this pool ~90%, so it answers "is
+aggression free?" not "is the doctrine right" (builder-method §4).
+
+**THRESHOLDS, stated before the numbers exist:**
+1. **PASS (mechanism):** on informative fixtures (those with any death in either
+   arm), variant deaths lower by a sign test at p<0.05, mean paired delta negative.
+2. **REFUTED (length confound):** if deaths-per-1k-builder-rounds is flat once
+   game length is divided out, the drop is shorter games, not safer pathing.
+3. **REFUTED (economy):** median titanium collected falls.
+4. **STOP:** any crash on the variant arm; or win rate down >5pp with discordance ≥10%.
+
+**CONFOUNDS, stated now so they cannot be excuses later.**
+- The pool is **six imitations**, and only **two of six generate the effect at
+  all** (pilot n=96: ouroboros 18.12→8.38 deaths, kladde 5.12→2.25; band and
+  orizon produce **zero** deaths in either arm). So this is a **2-opponent**
+  instrument wearing a 6-opponent coat, and I will say so in the verdict.
+- **Length pulls both ways and that is the useful part:** ouroboros games get
+  *shorter* (1000→644) and kladde *longer* (335→682), and deaths fall in both.
+  A pure length artefact cannot do that.
+- **LOCAL, DIRECTION ONLY.** Probes are miscalibrated (`ouroboros_probe` measured
+  86 pts over-confident). **The magnitude does not transfer and I will not quote
+  it as a field effect.**
+
+**PRE-STATED, and this is the one that matters — my reading disagrees with the
+corpus bound and I am recording that BEFORE the run.** Research's kill-grain cut
+prices transit at **5.9% of home deaths (18.4% pre-r100)**, and on that basis
+pre-stated the read as *early-game* attrition. **The pilot's effect is late, not
+early** (r500p 1.92→0.40; r0_99 0.60→0.50). Those are reconcilable in exactly one
+way I can see: **research bounded HOME transit only, and roughly half our builder
+deaths are FORWARD, which nobody has bounded.** If the full battery reproduces a
+late/forward-weighted effect, that is the explanation I am committing to now. **If
+it instead shows the effect is early and home, research's read was right and mine
+was wrong** — recorded so it can be scored either way.
+
+**Instrument note:** `tools/arena.py` runs every match with `--replay /dev/null`,
+so **no local battery in this project's history produced a decodable replay** and
+every mechanism question has had to go to the ladder corpus. `tools/mech_battery.py`
+(new) keeps the replay, decodes the mechanism, deletes the bytes, and prints
+mechanism **before** win rate on purpose.
