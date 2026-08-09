@@ -112,6 +112,56 @@ the win-rate question is untouched by any of this. What I am claiming is narrowe
 and checkable: **the flatline has a named mechanism in source, and it is a trigger,
 not a ceiling.**
 
+## The prediction the reflex makes, and it holds
+
+A reflex and a policy diverge in a specific, testable way: **on a wider map the
+enemy arrives later and less often, so a threat-triggered producer builds less —
+while a proactive producer builds *more*, because a bigger map needs more covered.**
+
+Win rate by core separation, three lineage cuts, all monotone:
+
+| core sep | ALL lineage (n=2,525) | recent v85+ (n=145) | v90 only (n=65) |
+|---|---|---|---|
+| narrow d²≤81 | **64.2%** | 61.4% | 61.9% |
+| mid 128-144 | 53.6% | 51.5% | 41.2% |
+| wide 288-392 | 47.5% | 48.3% | 40.0% |
+| hive 650 | **33.6%** | 12.5% (n=8) | — (n=2) |
+
+**A ~30-point gradient, stable across cuts.** This independently reproduces the
+`:1434` v72-bleed step function already in the tape (*"6/6 wins at core-sep d²≤81,
+8/9 losses ≥144"*) at 2,525 games instead of 15.
+
+**And the turret counts show the predicted divergence:**
+
+| core sep | **US live @r150** | THEM live @r150 | US @r300 | THEM @r300 | ratio @r300 |
+|---|---|---|---|---|---|
+| narrow ≤81 | 1.55 | 2.16 | 1.76 | 3.53 | 2.01× |
+| mid 128-144 | 1.90 | 2.80 | 2.31 | 4.28 | 1.85× |
+| wide 288-392 | **1.64** | **3.57** | 2.59 | 5.91 | **2.29×** |
+| hive 650 | **1.14** | **2.70** | 1.89 | 5.41 | **2.86×** |
+
+**At r150 our live turret count is essentially flat across map width — 1.55 / 1.90 /
+1.64 / 1.14 — while the field's climbs 2.16 → 2.80 → 3.57.** The field scales its
+defence to the map. We do not. The ratio widens from 1.39× on narrow maps to 2.36×
+on hive.
+
+First-turret timing scales with width for *both* sides (ours 4 / 7 / 21 / 28;
+theirs 5 / 10 / 24 / 32) — **so both start later on a wide map, and then they
+accelerate and we don't.** That is the reflex-vs-policy signature, not a
+first-turret-timing problem.
+
+**Design consequence, and it is specific: a proactive production floor should be
+map-width-scaled** (a function of `core.distance_squared(enemy)`), not a constant.
+A flat floor tuned on narrow maps would leave the widest maps — **36% of ladder
+games** at 288-392, plus hive — exactly as under-defended as they are now.
+
+**Causal honesty:** the width gradient is correlational and has other plausible
+contributors — conveyor lines are longer and more exposed (we build 59/game),
+raiders travel further, and a compact base makes the heal screen cheaper to
+maintain. **What is measured here is that our turret production specifically fails
+to scale with width while the field's does, which is the behaviour the source read
+predicts.** That is consistency, not proof.
+
 ## Limits
 
 - Read of `_v104latch` only. Other build paths exist for **forward/siege** guns
