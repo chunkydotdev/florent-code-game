@@ -16756,3 +16756,55 @@ atoll, eider, drumlin, hive}, pre-registered to flip core losses (baseline
 team (CAD/Lunds) as a SEPARATE experiment (A1+A3 combination). Do NOT spread
 all 5 (rate limit dilutes n, two-weapon finding says one trick can't win all).
 Firing is builder's; this lane owns the autopsy + pre-registered flip list.
+
+## 2026-08-09 16:0x CEST — BUILDER: **VERDICT — LOKI-2b PASSES. Second point on the Loki curve.**
+
+Measured against **LOKI-1**, per `COMPARE_AGAINST: previous_line_iteration`.
+Gate CLEARED, control equivalence 12/12, foreign pool, 384 paired games, **0 crashes**.
+
+**THE PLANK IS A DEFECT FIX, NOT A TUNING KNOB.** LOKI-2 (the committed opening)
+moved the first forward plant from r120 to r21 and still delivered **one turret,
+not the corpus recipe's three** — and the build agent found why: **`SLOT_FWD_GUN`
+is written only as `read + 1` and is never decremented. It counts every forward
+sentinel we have EVER built, alive or dead. Three destroyed turrets close the
+forward-sentinel arm permanently for the rest of the match.** The rush made it
+bind *harder*, because reaching the enemy sooner spends the cap sooner. LOKI-2b
+replaces the rubble counter with a **live census** — a raider at the ring can see
+the siege band (builder vision r²=20) and counts live friendly sentinels; the
+Core cannot, which is why the monotone counter existed. Falls back to the store
+when blind, so it never reads "blind" as "cap free".
+
+**PRIMARY CURRENCY — PASSED.**
+
+| | LOKI-1 | LOKI-2b |
+|---|---|---|
+| **median core-kill turn** | **198** | **163** |
+| median game length | 205 | 173 |
+| builder deaths/game | 1.89 | 1.34 |
+| win rate | 90.1% | 88.0% |
+| crashes | 0 | 0 |
+
+**Paired on the 122 fixtures BOTH arms won by core kill: LOKI-2b faster in 74,
+slower in 48, sign test p = 0.0232, median paired delta −26 turns.**
+
+**MY OWN GATE, SCORED HONESTLY INCLUDING THE CLAUSE THAT WOBBLED.** I
+pre-registered *"median turn count of core-kill wins FALLS **and core-kill share
+does not fall**"*. Speed fell decisively. **Share fell numerically, 82.8% → 79.2%
+(−3.65pp) — and paired it is 30 vs 37 discordant, p = 0.464, a null.** So the
+clause is not violated at any level this data can support, but it *did* fall and
+I am recording that rather than reporting the half that suits me. Win rate
+−2.08pp, p = 0.618, null, well inside the ±5pp stop.
+
+**WHAT IT DOES NOT SAY.** Dominated pool (88–90% both arms), so per PROGRAMME.md
+this is **direction only** — killing faster an opponent we beat nine times in ten
+is not evidence we can kill a real one. **No magnitude transfers.**
+
+### THE CLEAN CURRENT-VERSION BASELINE (Magnus's point: unrated is free and we never use it)
+
+Live **v92** vs the five hard teams, unrated, on the maps where our POOLED
+history (80+ versions) says 0%: **4-13.** Ouroboros 1-4, Lunds 1-1, KCM 1-3,
+CAD 1-4, Powerpuff 0-1. **Three of the four wins came at r1000**; the exception
+is a CAD core kill at r74. **And we won saga vs Ouroboros, atoll vs Lunds and
+snowflake vs KCM — all "0% maps" on the pooled record.** The pooled denominator
+was muddy exactly as suspected; this is the denominator LOKI deltas get measured
+against from here.
