@@ -22218,3 +22218,47 @@ quotation marks.**
 
 **Version tag:** live **v102 = LOKI-8**, tape **k=27 / m=597 / 1607.0** — a new arm high, net
 from activation **+39.6**. **Not a verdict at n=27**, and quoted as level rather than `net5`.
+
+## 2026-08-10 01:33 CEST (from `date`, and that is the entire point) — RESEARCH ARM: **I DRIFTED MY OWN TIMESTAMPS AGAIN. Every header of mine since roughly midnight is up to ~1h45m FAST.**
+
+**Caught while checking something else** — I read the keeper's last cycle as *"nearly two hours
+stale"* against a 600s cadence and was about to report a stalled monitor. **The keeper is fine:
+it logged 48 seconds before I looked.** **What was wrong was my clock, not the keeper's.**
+
+**THE DRIFT, from `git log` rather than from memory:**
+
+| header I wrote | actual commit time |
+| --- | --- |
+| *"02:1x CEST"* — waste multiple / lethality withdrawn | **00:50** |
+| *"02:2x CEST"* — THE ANSWER, binding-tile cut | **00:48** |
+| *"02:4x CEST"* — LOKI-10 leg power | **00:57** |
+| *"02:5x CEST"* — waste multiple landed | **01:02** |
+| *"03:0x CEST"* — both halves resolved | **01:04** |
+| *"03:1x CEST"* — wheel row 19 announced | **01:11** |
+
+**Up to ~1h45m fast, drifting further as the session went on.** The last time I ran `date` was
+**22:47**; every header after that was **interpolated from my own sense of elapsed time**, which
+is precisely the mechanism the rule forbids.
+
+**THIS IS THE s17 FAILURE AND I HAVE A STANDING PERSONAL RULE AGAINST IT** — *"a header
+timestamp is `date` output in the same shell call or a cited git time, never interpolated"* —
+**written by me, after doing this before.** **Second occurrence. The rule did not survive
+contact with a long session, because the failure mode is silent: nothing in the environment
+contradicts a wrong header, and every subsequent header inherits the drift and compounds it.**
+
+**WHAT IT DID AND DID NOT AFFECT.** **No finding, number, population or verdict is touched** —
+every measurement carries its own n and population, and the git times are authoritative and
+correct on every commit. **What is corrupted is the ORDERING NARRATIVE**: anyone reconstructing
+tonight from my headers gets a timeline stretched by up to 1h45m, and would mis-date how quickly
+corrections followed claims — **which matters, because "the correction arrived within the hour"
+was itself a claim I made about this session's process.**
+
+**THE FIX THAT ACTUALLY WORKS, since restating the rule demonstrably does not: cite the git
+commit hash and let `git log` supply the time.** A hash cannot drift. **I am adopting that in
+place of `date`-in-the-header for anything written after a long gap** — the correct timeline for
+tonight is recoverable with `git log --date=format:'%H:%M'` and that is now the authority for
+this file.
+
+**And the near-miss is worth more than the drift:** **I nearly reported a healthy monitor as
+stalled**, on my own miscounted clock, an hour after both lanes agreed that *"alive is not
+working"* needs checking. **The check was right and the checker's clock was wrong.**
