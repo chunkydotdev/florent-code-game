@@ -141,9 +141,50 @@ Win rate by core separation, three lineage cuts, all monotone:
 | hive 650 | **1.14** | **2.70** | 1.89 | 5.41 | **2.86×** |
 
 **At r150 our live turret count is essentially flat across map width — 1.55 / 1.90 /
-1.64 / 1.14 — while the field's climbs 2.16 → 2.80 → 3.57.** The field scales its
-defence to the map. We do not. The ratio widens from 1.39× on narrow maps to 2.36×
-on hive.
+1.64 / 1.14 — while the field's climbs 2.16 → 2.80 → 3.57.** The ratio widens from
+1.39× on narrow maps to 2.36× on hive.
+
+> ## ⚠️ CORRECTION, same session — I first wrote *"the field scales its defence to the map. We do not."* **That is wrong, and the real mechanism is more interesting.**
+>
+> **Neither side scales turret PRODUCTION with map width.** r0-150 turret builds,
+> means (medians are too coarse at these counts):
+>
+> | band | US builds | THEM builds |
+> |---|---|---|
+> | narrow ≤81 | 2.80 | 4.80 |
+> | mid 128-144 | 3.29 | 5.20 |
+> | wide 288-392 | 3.01 | 4.93 |
+> | hive 650 | 1.93 | 4.33 |
+>
+> **narrow → wide: US +7%, THEM +3%. Both flat.** If anything our spread across
+> bands (1.36) is *larger* than theirs (0.87).
+>
+> **The r150 live-count divergence is a SURVIVAL effect, and it FLIPS with width.**
+> Turrets built before r150, fraction still alive at r150:
+>
+> | band | US alive | THEM alive | gap |
+> |---|---|---|---|
+> | narrow ≤81 | **51.4%** | 40.8% | **+10.6pp (ours live longer)** |
+> | mid 128-144 | 52.7% | 49.0% | +3.7pp |
+> | wide 288-392 | 48.8% | **63.2%** | **−14.4pp (theirs live longer)** |
+> | hive 650 | 54.1% | 57.3% | −3.2pp |
+>
+> **Our survival is flat (51.4 / 52.7 / 48.8 / 54.1). Theirs rises with width
+> (40.8 → 49.0 → 63.2).** On narrow maps our turrets outlive theirs; on wide maps
+> theirs outlive ours by 14 points.
+>
+> **And this is why the pooled number concealed it.** §6b reported turret survival
+> as 50.6% vs 50.8% — *"we do not lose turrets faster than the field"*. That pooled
+> equality is **the average of a flip**, and it is exactly the error class this
+> session has been cataloguing: a pooled statistic hiding a map-conditional
+> reversal. The pooled claim is true and the causal reading I drew from it was not.
+>
+> **What survives unchanged:** the live-count flatline (median 2 from r200 while
+> the field reaches 5), shots-per-turret within 10%, and the source read showing
+> production is a threat-triggered reflex. **What is withdrawn:** any claim that
+> the field's *production* responds to map geometry. **What is new:** on wide maps
+> — 36% of ladder games — **our turrets die and theirs do not**, and that is a
+> siting/exposure question, not a production one.
 
 First-turret timing scales with width for *both* sides (ours 4 / 7 / 21 / 28;
 theirs 5 / 10 / 24 / 32) — **so both start later on a wide map, and then they

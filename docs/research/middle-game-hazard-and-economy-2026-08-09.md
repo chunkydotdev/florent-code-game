@@ -240,7 +240,15 @@ THEM   built 13,398   died  6,586   survival 50.8%
 ```
 
 **Turret survival is 50.6% against 50.8%.** We do not lose turrets faster than the
-field. **We stop building them.** Together with §6b (shots-per-turret within 10%)
+field. **We stop building them.**
+
+> **CORRECTION (same session): the pooled equality above is the AVERAGE OF A FLIP,
+> and must not be read as "our turrets are as safe as theirs everywhere".** Split by
+> core separation, turrets built before r150 and still alive at r150: **narrow
+> US 51.4% vs THEM 40.8% (+10.6pp for us); wide 288-392 US 48.8% vs THEM 63.2%
+> (−14.4pp against us).** Our survival is flat across width; theirs rises. See
+> `home-turret-production-gate-2026-08-09.md`. **The production finding stands; the
+> "attrition is fine" reading holds only on narrow and mid maps.** Together with §6b (shots-per-turret within 10%)
 that is three independent instruments saying the same thing: **production, not
 price, not targeting, not attrition.**
 
