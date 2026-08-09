@@ -58,78 +58,39 @@
 ##   is purely our own stop-loss now, not a slot-share. **Nothing mechanical
 ##   changed** — threshold, arming and wake semantics all stand.)
 
-## ===== THE TRAJECTORY READ — DONE AT k=11, AND IT IS NOT THE HAPPY NUMBER =====
-##   **2026-08-09 22:4x CEST: 1580.0 @ 582 matches, k=12, rank ~29/116.**
-##   Net vs the corrected baseline **+12.6 over 12 matches**. The rolling last-5
-##   touched **-19.0** against a **-21** threshold (two points off) and has since
-##   **recovered to -16.0**. Peak was 1599.5. **It went toward the edge and came
-##   back; it was never freed.**
-##   **QUOTE BOTH NUMBERS OR NEITHER.** Net-since-activation is up; the last five
-##   are down. Reporting only the first is the C1b oversell again.
-##   **THE "v102 IS DECAYING" READ IS DEAD. Do not resurrect it.** An exploratory
-##   s26 finding (first five 5-0, last five 1-4, Fisher p=0.0476) was published
-##   with *"mean opponent rating went DOWN 7.5, so matchmaking does not explain
-##   it"*. **That sign was inverted** — an `awk '!seen[$1]++'` dedup over
-##   file-order input, never sorted by time. Research caught and retracted it
-##   (`4901b5a`); the side lane flagged that this HANDOVER still carried it.
-##   **Verified here against the live API primary, chronological, 12-match arm:**
-##     * first5 mean opp **1570.0**, last5 mean opp **1588.4** — **+18.4, they got
-##       STRONGER.** (Research's +37.8 was right for the 11-match arm; the arm
-##       grew by one while we were writing, which is the point: **"last five" is a
-##       moving window and the split dilutes as matches land** — last five is now
-##       **2-3, not 1-4.**)
-##     * **The real structure is DOSE-RESPONSE, not decay.** Wins came against a
-##       mean opponent of **1566.5**, losses against **1618.2** — a **+51.6 Elo
-##       gap, permutation p = 0.011** (one-sided, n=12, exact over all 792
-##       splits). We beat the field below us and lose above it. That is the
-##       *documented* Loki property (75% at bracket, 60% at +200, 20% at +337),
-##       not a new defect. **REPLICATED on an independent surface** by research
-##       from `meta_join.tsv` sidecars (n=11, gap +50.0, p=0.0195, with a
-##       negated-gap guard at p=0.9827 proving the test is directional).
-##     * **BUT IT IS A BETWEEN-OPPONENT EFFECT AND DOES NOT PREDICT A REMATCH.**
-##       The one within-opponent, within-version pair we own runs AGAINST it:
-##       **Powerpuff v49 at 1613.6 = 4-1 WIN, at 1583.7 = 1-4 LOSS.** Same two
-##       bots, 80 minutes apart, and the HARDER draw is the win. Also `oppbef` is
-##       time-varying and moved partly BECAUSE of us, so it mixes opponent
-##       strength with our own effect on their rating.
-##       **Joint reading, and quote it whole: rating explains the BETWEEN-opponent
-##       pattern at p~0.01-0.02, and single-match variance is large enough to
-##       INVERT the strongest within-opponent pair we own.** Under p=0.5/game,
-##       P(4-1 or better) = P(1-4 or worse) = 6/32, so one of each in two matches
-##       is unremarkable. **This is the measured noise floor for an n=1
-##       per-opponent cell, and it is why per-opponent gates must label such cells
-##       uninformative rather than fit a curve through them.**
-##   A fixed bot does not decay, and the 1599.5 peak that net5 measures against
-##   was built BY the 5-0 run. **None of this is evidence v102 is bad, and none
-##   of it may be fed into the stop-loss.**
-##   **PROCESS NOTE: I put the retracted number in this file on a peer's word
-##   without checking it, and the primary was one command away.** A HANDOVER
-##   number outlives every coordination note that corrects it.
+## ===== THE TRAJECTORY READ — CLOSED AT k=20, THE POINT SHIP-TIME QUEUED =====
+##   **2026-08-10 00:00 CEST: 1599.0 @ k=20, 12W-8L, net +31.6 vs the corrected
+##   1567.44 baseline. Peak 1600, drawdown -1.**
+##   **THE ROUND TRIP: 1567 -> 1600 -> 1572 -> 1599. THE STOP-LOSS PAIR NEVER
+##   FIRED THROUGH ANY OF IT**, and net5 touched -19.0 (two points off -21) at
+##   the bottom. That is the rule behaving correctly, not a near miss.
+##   **The recovery is REAL WINS, not window mechanics** — the caution was
+##   raised (net5 relaxes as bad results age out) and the tape answers it:
+##   **last five 4W-1L, +26.6 Elo actually won.** Both numbers agree this time.
+##
+##   **I AM WALKING BACK MY OWN DOSE-RESPONSE NUMBER.** At k=12 I recorded wins
+##   vs mean opponent 1566.5, losses vs 1618.2, **gap +51.6, permutation
+##   p=0.011**, and called it the documented Loki curve. At k=20 the same test
+##   gives **wins 1573.1, losses 1601.0, gap +27.9, p=0.0500** — **the effect
+##   HALVED and sits exactly on the conventional line as n grew.** That is the
+##   signature of an estimate inflated at small n, and the honest reading is
+##   that opponent strength still leans the right way but is **weaker than I
+##   published and not established**. Research replicated the k=11 version
+##   independently (+50.0, p=0.0195) — replication of an over-estimate is still
+##   an over-estimate; both were the same small window.
+##   **Anyone quoting +51.6 is quoting a superseded number.**
 ##
 ##   `tools/monitors/ship_watch.py` is ARMED, detached (PPID 1, 10-min cadence),
-##   **re-armed s26 with the corrected baseline**. It appends every evaluation to
+##   re-armed s26 on the corrected baseline. It appends every evaluation to
 ##   `corpus/ship_watch.log` and writes **`corpus/SHIP_ALERT`** when the RULE
 ##   frees the slot, clearing it on recovery.
 ##   **FIRST THING A SUCCESSOR SHOULD DO: `cat corpus/SHIP_ALERT` (absent = fine)
-##   then `tail corpus/ship_watch.log`.** That line is only trustworthy as of
-##   s26 — see the next block for why it was a lie before.
-##   **`ship_watch.log` HAS TWO SCHEMAS.** Pre-s26 lines read
-##   `net=.. k=.. llr=..` and came from the decorative single-segment test; do
-##   not compare them with post-s26 lines, which read
-##   `k=.. net5=.. armed=.. RULE=.. sprt=..`. **Any CLEARED line in that file is
-##   pre-s26 and means nothing.**
-##   **THE TAPE LAGS LIVE BY UP TO 5 MINUTES.** `slot_rule` reads
-##   `elo_history.tsv`, which `elo_logger` writes on a 300s poll, so net5 and a
-##   live `fcode status` rating are from different clocks. Fine at a 600s alarm
-##   cadence; do not put them in the same sentence as if simultaneous.
+##   then `tail corpus/ship_watch.log`.** Trustworthy only from s26 — see below.
+##   **`ship_watch.log` HAS TWO SCHEMAS.** Any `CLEARED` line is pre-s26 and came
+##   from the decorative single-segment test; it means nothing.
+##   **THE TAPE LAGS LIVE BY UP TO 5 MINUTES** (`elo_logger` polls at 300s), so
+##   net5 and a live `fcode status` rating are from different clocks.
 ##
-##   **LIVE PIDS AT WRITING (2026-08-09 22:5x CEST):** ship_watch **66915**,
-##   keeper **89444** (restarted s26 to pick up the log fix), elo_logger 25811,
-##   match_watcher 25942, opp_watcher 25943, replay_archiver 25944. All PPID 1.
-##   Verify with `ps -o pid,ppid,command -p <pid>`, and remember that **alive in
-##   `ps` is not a verified wake path** — the alarm must be shown able to fire
-##   (`ship_watch.py --selftest`).
-
 ## ===== THE ALARM WAS DECORATIVE UNTIL s26 — READ THIS BEFORE TRUSTING IT =====
 ##   `ship_watch` shipped with the SPRT's constants imported and its
 ##   SEGMENTATION hand-rolled: one (net,k) from activation to now, **no
