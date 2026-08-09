@@ -13084,3 +13084,83 @@ correctly withdrawn. **The lesson is about who chooses the objective function.**
 **IN-FLIGHT: nothing of mine.** Seven sweeps landed and relayed; no subagents, no CPU
 jobs, no locks. Ladder **1530 @ 508, #35, v91 active, no rated matches since the
 rollback** — the 10-match recovery read starts clean.
+
+### 2026-08-09 10:52 CEST (from `date`) — builder arm: **CHURN NUMBERS VERIFIED EXACTLY — and the biggest line in our loss ledger is one neither arm has been looking at. Recording it as a DESCRIPTION, not a lever, because that is the whole lesson of today.**
+
+## 1. RESEARCH'S CHURN FIGURES REPRODUCE TO THE DECIMAL
+
+Independently derived from `corpus/events.tsv`, n=1,255 joined games:
+```
+kind          US built/g  US died/g  loss% |  FLD built/g  FLD died/g  loss%
+conveyor          59.24      14.34   24.2% |       33.78        5.72   16.9%
+builder_bot       12.96       7.43   57.3% |       10.38        4.58   44.2%
+harvester          7.49       1.79   23.8% |        6.56        0.83   12.6%
+gunner             2.12       1.18   55.9% |        8.91        4.45   50.0%
+sentinel           2.36       1.03   43.4% |        1.82        0.82   44.9%
+```
+Their relayed values were conveyors **14.3 / 24.2% vs 5.7 / 16.9%**, losses
+**360 vs 293 Ti**, composition **223 builders ours / 137 + 89 gunners theirs**.
+**Mine: 14.34 / 24.2% vs 5.72 / 16.9%; 360.5 vs 292.6 Ti; 222.9 / 137.5 + 89.1.
+Exact.** Their instrument is sound and I am no longer spot-checking it.
+
+## 2. ONE OF THEIR READINGS NEEDS CORRECTING, AND IT WEAKENS THE DRAIN STORY
+
+They wrote: *"we absorb into cheap things; they lose expensive ones"* — ours 223
+Ti of builder bots, theirs 137 builders **plus 89 Ti of gunners**.
+
+**But the field loses 89 Ti of gunners because it BUILDS 8.91 gunners a game to
+our 2.12.** Their gunner loss *rate* is **50.0% against our 55.9% — they lose a
+smaller fraction, not a larger one.** The 89-vs-24 Ti gap is a production
+difference wearing a loss-composition costume. **It is not evidence that we
+successfully bait expensive things; it is the turret-count gap again, which is
+already refuted as a lever on three knobs.**
+
+## 3. THE LINE NOBODY IS LOOKING AT
+
+```
+BUILDER BOTS: 222.9 Ti/game = 62% of ALL our losses.
+  our loss rate 57.3%  vs the field's 44.2%   (+13.1pp)
+  and builder bots are the joint most scale-expensive entity (+20% each),
+  so every death is 30 Ti of replacement PLUS a permanently steeper cost curve.
+```
+**Our single largest expense is not turrets, not conveyors, and not ammunition.
+It is builder bots dying, and we lose them at a materially worse rate than the
+field.** Neither arm has examined this line all session, in a day spent entirely
+inside the turret subsystem.
+
+## 4. AND I AM EXPLICITLY NOT CALLING IT A LEVER
+
+**"We lose 223 Ti of builders per game" is a COST statistic. It is silent on what
+those deaths buy.** That is structurally identical to *"our forward turrets
+survive at 19%"* — which was true, clean, independently derived, and licensed the
+most harmful change built today. A builder that dies laying a harvester under
+fire may be earning it exactly as a forward gun does.
+
+**The question that must be answered before this becomes a build, and it is the
+one that would have saved plank SITE: what do those builder deaths PRODUCE, and
+has anyone measured it?** Right now the answer is no. **Logged as the largest
+un-examined line in the ledger, not as a queue item.**
+
+## 5. AGREED IN ADVANCE ON THE DRAIN PUMP
+
+Research's warning is correct and I am adopting it as the acceptance test:
+*"2,708 Ti of their shots went into a 3 Ti object"* is an **exchange-rate**
+statistic — **it says what THEY spend, not what WE get.** Same shape as the
+survival number. Their proposed discriminator is the right one and better than
+win rate: **does the opponent's titanium DELIVERED fall when absorbed-share is
+high?** Ammunition is bought 1:1 from titanium, so a genuine drain must show as
+less economy for them — a causal chain that routes around the dominance confound
+entirely. **I will not build a drain pump on an exchange-rate number.**
+
+They also ran the obvious win-rate cut, found it monotone against us, and
+**declined to relay it as a refutation** because enemy shot count is an
+opponent-strength proxy. **That is the opponent-thermometer error caught before
+transmission rather than after** — the third time that class has appeared today
+and the first time it was stopped upstream.
+
+*Process delta: **I verified a peer's numbers for the fourth time today and they
+were exact for the fourth time.** Continuing to spot-check at that hit rate is
+now itself a cost. Switching to: **verify the numbers a VERDICT will consume,
+and stop verifying numbers that only inform a direction.** The failures today were
+never in their arithmetic — they were in what the arithmetic was taken to mean,
+and re-running the sums does not test that.*
