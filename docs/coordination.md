@@ -9397,3 +9397,77 @@ added after I reconstructed a rollback from a match row five minutes late).
 **Both are stopped as of this note.** The builder's monitors are its own and I
 cannot verify them from here — **stating that rather than assuming coverage**,
 which is the rule the 02:31-05:40 incident bought.
+
+### 2026-08-09 06:49 CEST (from `date`) — builder arm: **IN-FLIGHT REGISTER: LOKI-0 + LOKI-1 (both inline, no subagents)** — and the discussion phase is CLOSED
+
+**MAGNUS CLOSED THE DISCUSSION PHASE AT ~06:50.** His decision, which **overrides
+the HANDOVER's "fork `_v103split`, NOT a from-scratch rewrite"**: do not guess
+between the two candidate builds — **build BOTH and test hard**; **Loki is a
+from-scratch bot, not a small pivot off the current main bot**; it lives on
+**unrated until it is actually viable**; use every evidence source we have
+(local games, tape, replays of similar strategies). Made with the thor_r1
+evidence in front of him.
+
+**REGISTERED (rule 1), both inline in the builder session, no subagents — this
+session is under a standing instruction not to spawn them:**
+- **LOKI-0** = `bots/_v104loki0`, fork of `_v103split`. Constants-only ablation.
+  The **attribution control**, not a ship candidate.
+- **LOKI-1** = from-scratch raid bot. Ship candidate.
+
+**WHAT I VERIFIED IN CODE BEFORE ANY EDITOR OPENED** (primary, `bots/_v103split`;
+supersedes the relayed `_offer_launch` single-slot framing). The insertion
+throttle is **four gates, and the single slot is the smallest of them**:
+```
+_offer_launch:1452     one staged raider at a time   (relayed claim: TRUE)
+LAUNCH_GIVEUP_RND=180  doctrine.py:103 — binds BOTH the give-up (main.py:1048)
+                       AND the only re-entry (main.py:1060)
+SLOT_DROPPED < 3       main.py:1061 — THREE insertions per match, lifetime
+role_n >= 3            main.py:1059 — only late builder seats eligible
+```
+**The insertion pipeline is switched OFF ENTIRELY from r180.** After that the
+launcher's only live branch is the enemy-bot exile at :3937-3957, which is
+purely defensive — a mechanical explanation for the measured "93% defensive",
+not an inference. So the r200-300 window where our conversion ratio is
+**0.52 and declining** is a window in which our offensive insertion machinery
+**does not run at all**.
+
+Our own source says why, at `doctrine.py:106`:
+> `# ... matches decided earlier never reached that bound at all.`
+
+That constant was set under the belief that games are decided before r180.
+The hazard corpus refutes exactly that belief: **753/1135 strong games alive at
+r200, 601 at r300.**
+
+**THE LABEL, because this is the moment the last two builds went wrong.** That
+the pipeline is off after r180 is **code**. That *turning it on* raises the
+r200-300 hazard is **a hypothesis** — a raider dropped beside a defended core at
+r250 may simply die, which is "gunners are simply worse here" in a new suit. And
+it is not free: raising the bound keeps builders cycling into `launchwait`
+(waiting, not expanding) for longer, which is precisely the "trade tempo into
+the window where they convert 4x better" failure the HANDOVER warns about.
+**LOKI-0 exists to measure that, and it is why a control is worth building even
+though Magnus asked for the from-scratch bot.**
+
+**PRIOR FINDING THAT COULD KILL THE WHOLE PREMISE, carried in deliberately**
+(`docs/tooling.md`, CAD ferry re-check): every long-game throw loop examined
+belonged to the **DEFENDER disposing of the attacker's raiders — same tiles,
+same counts, inverted ownership.** If that generalises, late insertion is a way
+to feed bots to an enemy launcher. **Re-scoped to research as their #1** ahead of
+the seat-turret gap, with the decode rule (throws emit no `FireTurret`; they are
+a `moveBuilderBot` with `to` >1 tile from `frm`; thrower = launcher at d²≤2
+incl. diagonals).
+
+**HOW "FROM SCRATCH" AND "KEEP THE ECONOMY BIT-FOR-BIT" RECONCILE** — they are
+not in conflict and I do not want a successor reading them as one. LOKI-1 is a
+new bot with a **raid-first architecture**; the **economy opening is ported
+deliberately as a known-good subsystem** rather than reinvented blind.
+**thor_r1 shipped zero harvesters, delivered zero titanium, and went 2/60** —
+porting the opening is exactly what prevents repeating it.
+
+**STATE AT REGISTER** (pulled, not relayed): live **v89 `847b8d9d`**, isActive,
+**1523.53 @ 486, rank #36/113, recent 2-8** — slid from 1531.48/#35 in the
+HANDOVER block. Nothing of mine on the slot. **Any Loki ship or rollback gets
+announced here before it fires** (rule 3, and s21 delta #4).
+
+**AUDIT TRIGGER at boot: 1/4 tripped (note:verdict 1.53), audit NOT indicated.**
+Monitors: all four alive at boot.
