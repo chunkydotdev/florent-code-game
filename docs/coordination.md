@@ -21452,3 +21452,61 @@ the highest-value item left in my lane. **Fixture: LADDER corpus** — and state
 routing-shaped.** **Model: `opus`. Read-only.**
 
 **Version tag:** live **v102 = LOKI-8**, tape k=22 / m=592 / 1591.0.
+
+## 2026-08-10 01:4x CEST (from `date`) — RESEARCH ARM: **THE CEILING IS REFUTED, NOT MERELY OPEN — and it takes the 25% utilisation figure with it. Both running agents re-briefed mid-flight.**
+
+### THE REFUTATION, AND THE METHOD IS THE LESSON
+The builder measured the ceiling **without the engine**, by doing the thing the original claim
+was missing: **conditioning on OPPORTUNITY instead of counting violations.** Every
+`ResourceMove` read, then *"how many landed on the SAME core footprint tile in the SAME
+round?"* — 60 games, 87,933 moves, 13,706 into a core tile:
+
+    1 entry  : 12,642 tile-rounds
+    2 entries:    532 tile-rounds   (4.0% of core-tile-rounds)
+    max observed: 2
+
+**Two is common. The ceiling is not 1.** **And they refuse to claim it is 2** — max observed
+is 2, and whether 3 is forbidden or merely never supplied is unknown. **"Not 1, at least 2,
+upper bound unknown"** is the honest form, and **it is the same reasoning that made the
+original claim unsafe, applied to their own.**
+
+### **THE CONSEQUENCE I DID NOT SEE AND THEY DID: THE 25% FIGURE IS PROBABLY NOT A UTILISATION**
+It almost certainly **inherits the capacity-1 assumption** — in which case it is **a measured
+rate divided by an ASSUMED ceiling**, not a measured utilisation. **Against the measured
+capacity of ≥2 the same rate is at most 12.5%.**
+
+**I relayed "25% utilisation" three times tonight as an established measurement.** It is a
+**hidden denominator** — the fourth family member of tonight's denominator problems, and the
+first where the denominator was not a wrong population but **a number nobody had measured at
+all.** **New rule: a rate divided by an assumed capacity is not a measurement. State what you
+divided by, or publish the raw rate and let it stand without a ceiling.**
+
+**AND IT STRENGTHENS THE CUT RATHER THAN DENTING IT:** if entry tiles run at **≤12.5%**
+rather than 25%, then **"the binding constraint is INSIDE the network" gets stronger and
+"build more core-entry tiles" gets weaker.** The inside-network cut is aimed correctly and
+its motivation improved.
+
+### A DECODER FACT THAT EXPLAINS TRAP 8 AT SOURCE
+`tools/core_entry.py` is **the first decoder in this repo to read update field 4**.
+**`replay_econ.py` loops over that field and passes — which is exactly why
+`econ.tsv:deliveries` is all-zero.** So the delivery data **was in the replay the whole time
+and simply never extracted.** TRAP 8 was a decoder omission, not a missing signal.
+
+### BOTH RUNNING AGENTS RE-BRIEFED MID-FLIGHT, rather than corrected after they publish
+- **Inside-network cut:** told the ceiling is refuted, told **not to quote 25% as a
+  utilisation** but to re-derive it or publish a **raw rate with no denominator assumption**,
+  and told the "core-entry tile after all" branch now has the **strongest prior against it**
+  and is therefore where a positive result would be **most** informative.
+- **Building-attackers cut: REFRAMED, not cancelled.** `razer_probe` is built and produces
+  **339 building attacks and 13 building deaths per game where the old pool produced zero**,
+  so 0a is satisfied **synthetically**. **The cut's value is now CALIBRATION: a synthetic
+  probe proves a treatment can be OBSERVED; it does not tell us whether 339/game resembles
+  anything real.** If the league sits nearer 3 than 339, a plank tuned against the probe is
+  tuned against a threat model that does not exist — **we would have replaced "cannot measure"
+  with "measuring the wrong thing."** Asked to **mark the probe's rate on the league
+  distribution** and report it as a **warning** if it lands off the scale.
+
+**Fixture note carried forward: a routing/back-pressure plank still cannot be arena-tested
+even with `razer_probe` — the probe fixes the DEFENSIVE class, not the economic one.**
+
+**Version tag:** live **v102 = LOKI-8**, tape k=22 / m=592 / 1591.0.
