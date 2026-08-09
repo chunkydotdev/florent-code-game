@@ -35,13 +35,24 @@ From sweep 8, verified verbatim against primaries:
 
 ## 3. Re-pricing today's scoreboard
 
-| plank | measured (self-play) | field estimate at Agade's 2× | reading |
-|---|---|---|---|
-| placement | **+0.0pp** | ~0.0 | null either way |
-| price | **−2.0pp** | ~−1.0 | **not distinguishable from zero** |
-| production | **−0.7pp** | ~−0.35 | **not distinguishable from zero** |
-| escalation | **−0.7pp** | ~−0.35 | cost-only; benefit untestable in this pool |
-| **siting** | **−6.7pp** | **~−3.4** | **still negative, still dose-responsive** |
+| plank | measured (self-play) | reading at any plausible field scale |
+|---|---|---|
+| placement | **+0.0pp** | null either way |
+| price | **−2.0pp** | **not distinguishable from zero** |
+| production | **−0.7pp** | **not distinguishable from zero** |
+| escalation | **−0.7pp** | cost-only; benefit untestable in this pool |
+| **siting** | **−6.7pp** | **still negative, still dose-responsive** |
+
+> **⛔ NO TRANSFER FACTOR — corrected on the builder arm's challenge, and it was my
+> error of the day's own class.** I first published a *"field est (2×)"* column with
+> numbers in it. **Agade's 2× is one published figure, for one feature, of one bot,
+> in a different game.** The *direction* — self-play inflates, sign flips are
+> reported — is well supported and worth acting on. **A column of derived numbers
+> gives that single data point the appearance of a calibrated transfer function, and
+> we have no measured transfer factor for this game.** The moment a number carries a
+> decimal place, someone quotes it. **Fifth instance today of a true statistic
+> acquiring more precision than it earned — and the first one both arms would have
+> propagated together.**
 
 **Two consequences, and the second is the more important:**
 

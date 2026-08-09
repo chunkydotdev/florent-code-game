@@ -283,7 +283,7 @@ compared them against the field's all-map population.
 ### What I am and am not claiming
 
 **I am not claiming the forward road should reopen.** The verdict rests on three
-instruments; the arena null (n=360) and the `:1434` wide-map step function are
+instruments; the arena null (n=360) — **now known to be a SELF-PLAY pool mislabelled FIELD, so it is unmeasured rather than null** — and the `:1434` wide-map step function are
 untouched by this and both point the same way. **The honest amendment is: the
 third instrument shows a gap about half the stated size, and its headline line is
 a cut artifact.**

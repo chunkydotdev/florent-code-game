@@ -144,6 +144,17 @@ for r in csv.DictReader(open('corpus/build_agg.tsv'), delimiter='\t'):
    surfaced at all. Not yet fixed in the decoder: existing rows would stay
    stale-zero until a full re-decode, and a 3-minute archive pass needs announcing.
 
+6. **`econ.tsv`'s `deliveries` column is ZERO IN EVERY ROW — and it is TIEBREAK #1.**
+   Verified 2026-08-09 (s23): **28,026 rows, sum = 0.** Declared at
+   `tools/corpus/replay_econ.py:35` and never incremented — **the same shape as trap
+   5**, found by the builder arm's new `tools/corpus_sanity.py`, which fails on
+   all-zero columns. **Titanium delivered to core is the FIRST tiebreak key**, so a
+   silent zero here points at the single most decision-relevant quantity in the game.
+   **Use `flow.tsv`, or `econ.tsv`'s `ti_collected_end`** (which IS populated and is
+   verified cumulative — see `middle-game-hazard-and-economy-2026-08-09.md` §6).
+   *Two dead columns found in one day means the class is not rare: **run
+   `corpus_sanity.py` before trusting any column you have not personally used.***
+
 ## What this does NOT give you
 
 Per-round titanium, ammo balances, and cooldowns are in `updatePlayers` but are

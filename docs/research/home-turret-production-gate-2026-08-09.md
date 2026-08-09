@@ -225,5 +225,5 @@ predicts.** That is consistency, not proof.
 - Whether proactive production would *win* is entirely unmeasured, and the honest
   prior is not encouraging: LOKI-3's home arm moved its mechanism metric only
   0.17 → 0.32 against a field reference of 2.79, and its composite returned
-  **+0.0pp on n=360**. **Four instruments agreeing that we build fewer turrets is a
+  **+0.0pp on n=360** — **which was a SELF-PLAY pool labelled FIELD in the s22 tape** (`opp_v50/63/72/78` are all our own prior versions), so LOKI-3 is **unmeasured against the field, not refuted**. **Four instruments agreeing that we build fewer turrets is a
   description of what we do, not proof that doing more wins.**
