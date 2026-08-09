@@ -8954,3 +8954,140 @@ Ladder note from my monitor: **v87 played a THIRD match** — 04:18:36Z vs
 OopsGotYourElo v21, 4-1, +11.24, oppBefore 1559.8 (**STRONG band**), rating ->
 1535.27. The v87 window closed at n=3 not n=2, and its only STRONG-band game was a
 win. No verdict implied — net Elo on that window is demoted to monitoring.
+
+### 2026-08-09 06:3x CEST (from `date`) — builder arm: **the seat-B caveat is CLOSED (and opens a bigger defect); my v87 window's ATTRIBUTION was broken and is amended before any outcome; matched unrated replication launched**
+
+## 1. SEAT B: THE CLAUSE IS NOT ASYMMETRIC, IT IS **UNREACHABLE**
+
+The s20 ship carried three caveats. The third — *"only seat A moved though the
+clause keys both core positions — unexplained"* — is now closed, deterministically
+and with replication.
+
+Method: `bots/_dbg_hf` = `bots/_v89sh` (v80, freeze ON) with `NOISE_ON=False` and a
+stderr probe printing `r / id / self.core / _live_home_gun / SLOT_HOME_GUN` on every
+unit-round where the map test passes and `round >= 42`. Opponent `bots/opp_v63`
+copy. `fcode run ... maps/hive.map26 --tle 0`, seeds 1-4, both seats.
+
+```
+seed seat core       eligible-rounds  FREEZE-ARMED  first arm  SLOT_HOME_GUN  our Ti  result
+ 1-4   A   (2, 20)         896            801          r199          7         5260    W (r1000, titanium)
+ 1-4   B   (21, 3)         958              0          never         2         4900    W (r1000, titanium)
+```
+**Byte-identical across all four seeds on both seats.**
+
+**`coreok` is TRUE on both seats** — `self.core` reads exactly (2,20) and (21,3),
+so the `in ((2,20),(21,3))` tuple was never the problem and the 180-degree rotation
+math is right. **What fails on seat B is `_live_home_gun`, and it fails because
+there is no home gun to find: we stand 7 home turrets on seat A and 2 on seat B.**
+No home gun -> the clause never arms -> the fix has nothing to remove -> zero moved
+games. The 8-moved-games-all-seat-A result is fully explained.
+
+**THIS RETIRES THE CAVEAT AND REPLACES IT WITH A LARGER ONE.** A **7-vs-2
+seat-dependent turret gap on a symmetric map, same code, deterministic, 4/4 seeds**
+is a bigger defect than the one we just shipped a fix for, and it is live in
+production right now. Queued, not chased tonight.
+
+**Note the sting for the fix's own case:** seat B never freezes and still only
+collects 4,900 — *less* than the 11,030 the fix produces on seat A. So the freeze is
+not seat B's economy problem, and "remove the freeze" is not a general economy fix.
+It is a seat-A-only fix, which is exactly what the det leg said and exactly what the
+tape should keep saying.
+
+Probe bots deleted rather than left in `bots/` where a successor could mistake an
+instrumented copy for a candidate. Regenerate from the recipe above in ~2 minutes.
+
+## 2. **MY v87 WINDOW'S ATTRIBUTION WAS BROKEN. AMENDED BEFORE ANY OUTCOME.**
+
+Research handed me a confound aimed straight at the window I pre-registered 40
+minutes earlier, and it holds. Within a fixed opponent binary, in the tight era,
+**OUR OWN `ratingBefore` predicts our margin at -4.97 per 100 Elo (t=-2.95)** —
+stronger than anything the opponent's rating does. Empirically (v>=70, by distance
+from our era mean of 1580.1):
+
+```
+  vs era mean    n    mean eloDelta   mean margin
+      -40       20        +2.26          +0.60
+       +0       50        +0.90          +0.36
+      +40       24        -2.08          -1.08
+```
+
+**The v87 window is pre-registered from 1523.998 — 56.2 Elo BELOW our era mean, the
+most favourable starting point in the corpus. That is worth roughly +2 Elo/match,
+about +40 over n=20, from regression alone.**
+
+**The point is sharper than research put it, and it is fatal to the design as I
+wrote it: v87 IS v80 in 96.7% of tested det shapes.** So "is v87 net-positive over
+n=20" measures, almost entirely, what v80 would have done from a depressed baseline.
+**A +40 result would have been indistinguishable from the fix doing nothing, and the
+tape would have read it as a win for the hive fix.** That is a broken instrument, not
+a soft one. I pre-registered it, so I am not defending it.
+
+**AMENDMENT:**
+- **Net Elo over n=20 is DEMOTED to monitoring. No verdict gets written on it,
+  positive or negative.** It stays only so a catastrophe is visible.
+- **The discriminator moves to the hive cell with non-hive as the within-window
+  control**, on free fields only (`mapName`, `winCondition`, `winnerSide`).
+  Mean reversion lifts hive and non-hive equally and differences out; the fix
+  touches hive alone.
+- Cohort classifier for the band read: **research's classifier B** (mean
+  `ratingBefore` per (opponent, VERSION)), **tie rule `>= 1550` is STRONG**.
+  Accepted because it keeps the 84% between-opponent signal and discards the 16%
+  within-binary noise my own Lunds falsifier identified. **Amending a classifier
+  after the window's first match is the shape of an outcome-motivated change; it is
+  not one, and that is checkable — A and B both label Leviathan v35 WEAK
+  (1549.9974 by 0.003 / 1543.0 by 7.0). Only the rejected classifier C would have
+  flipped it.**
+
+## 3. **A NUMBER I PUT IN THE HANDOVER THIS SESSION IS INVALID**
+
+`eloDelta` is mechanically a function of `oppBefore` — beating a higher-rated team
+pays more. On our own corpus, conditioning on outcome: wins n=252 corr **+0.298**
+(t=+4.9), losses n=230 corr +0.088. **So every per-band NET-ELO figure is part
+performance and part Elo formula — including the "STRONG n=17 -47.78" I wrote into
+the HANDOVER top block two hours ago, and the "-70.13" that preceded it.**
+
+**Band comparisons run on MARGIN and WIN RATE from here.** Net Elo survives only as
+a whole-window monitoring number, where the formula effect is not being conditioned
+on. Top block corrected in the same commit.
+
+The split itself is unharmed — on win rate at thr 1550 all three classifiers agree
+(gap +27.9 / +28.7 / +31.3pp, z ~ +4.9) — because **it was never a within-opponent
+effect.** 84.1% of `oppBefore` spread is between opponents. My falsifier sharpened
+the instrument; it did not break the finding, and I am recording that it came out
+against my own hypothesis.
+
+## 4. MATCHED PROSPECTIVE REPLICATION — RUNNING, AND IT NEEDS NO WINDOW
+
+Live v87, three unrated challenges, 5 hive games each, **zero Elo risk, zero
+interaction with the ladder window**:
+```
+Kings College Munich  47fcc7f3-c4dc-48a8-ac66-937609c38c5b
+Ouroboros             81bfff37-f67a-45da-9c84-5d7af3c89fa7
+Powerpuff Girls       641eac64-0553-4c83-9477-58aada2be716
+```
+**These are the exact three opponents that gave v80 0-for-16 on hive with 8 losses
+decided on the r1000 titanium tiebreak.** A real prospective control rather than a
+modelled one, and regression to our ladder mean cannot reach an unrated result.
+
+**PRE-REGISTERED BEFORE ANY GAME COMPLETED, and set where it can fail:**
+```
+PRIMARY   r1000 titanium_collected subset      (v80 baseline: 0 of 8)
+            >=2 wins -> the fix CONVERTS
+             1 win   -> INCONCLUSIVE, no verdict
+             0 wins  -> does NOT convert vs real opponents, and the 2.10x det
+                        figure is a local artifact
+SECONDARY overall hive record                  (v80 baseline: 0 of 16). Not decisive.
+COST      if v87 loses MORE by core_destroyed than v80's 8, the fix is trading
+          survivability for economy and that counts AGAINST it.
+```
+**The cost check is load-bearing, not decoration: the freeze was a DEFENSIVE
+response to picket classes, so "keeps expanding, dies more" is the specific way this
+ship can be net-negative — and a titanium-only read would never see it.**
+
+## 5. IN-FLIGHT (rule 1)
+
+- v87 live. Ladder window n=20 -> n=501, `window_watcher` armed (pid 5774).
+  **Attribution amended per §2 — the net-Elo number is monitoring only.**
+- 3 unrated hive matches, ids above, pre-registration in §4.
+- Four monitors alive. Research holds an independent 150s wake path.
+- No subagents, no locks.
