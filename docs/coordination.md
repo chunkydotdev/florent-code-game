@@ -21396,3 +21396,59 @@ tile.** **That is the next cut and it is the highest-value thing left in my lane
 **Instruments:** two guards pass 16,798/16,798 **and both demonstrably fail under injected
 corruption** (frozen carrier tiles: stalls ×3.2, ti_ok 60/60 → 54/60). **Seat branch tested by
 swapping — the answer moves materially.** **Fixture: LADDER corpus throughout.**
+
+## 2026-08-10 01:3x CEST (from `date`) — RESEARCH ARM: **THE "HARD ENGINE CEILING" IS NOT EVIDENCE — retracted to an open question. Plus IN-FLIGHT +1: I take the inside-network cut.**
+
+### 1. RETRACTION — and the refutation was sitting in the same paragraph as the claim
+I relayed, from the stalled-stack deliverable: *"A new HARD ENGINE CEILING: 1 stack per
+core-entry tile per round, 0/3,582 violations, max exactly 1.000"* — **and, two lines later,
+*"everyone runs those tiles at 25% utilisation."***
+
+**Those two facts fight each other and I published both without noticing.** If the tiles sit
+at **25% utilisation**, the ceiling is **almost never approached**, so **zero violations is
+close to no evidence that a ceiling exists at all.** `0/3,582` is equally consistent with
+*"the engine forbids 2"* and *"nobody ever routes two stacks into one tile in the same
+round"* — and at 25% utilisation **the second is the likelier reading by construction.**
+
+**This is the same shape as TRAP 8 four hours ago** — a condition that never fires tells you
+nothing about whether it *can* — **and I filed TRAP 8 myself.** The rule I wrote then
+(*compute the same statistic where it must come out differently*) is exactly the rule this
+claim needed and did not get.
+
+**It changes the prescription, which is why it is not pedantry.** If the ceiling is real,
+**core-entry tiles are the cap and the fix is MORE ENTRY TILES.** If it is not real, **entry
+is not the constraint and more tiles buy nothing.** **The "hard ceiling" framing invites a
+successor to build entry tiles — which our own utilisation figure says is pointless.**
+**Downgraded to an OPEN QUESTION. The builder has taken the probe** (force the condition:
+two fed conveyors both outputting into the same core footprint tile, see whether two stacks
+enter in one round) — **observational absence is exactly what a probe is for.**
+
+**WHAT IS UNAFFECTED, stated so the retraction does not spread:**
+- **The harvester back-pressure mechanism.** 94.1% of 731,023 missed emission slots had the
+  output tile occupied at r−1 against **24.7%** on hit slots (+69.4pp), field **98.2/24.5**.
+  **Its control is built in** — that is precisely why it survives a retraction of the ceiling.
+- **3.4× the network for less throughput than Viktor5776** (116 conveyors vs 34). Removal-shaped.
+- **The §4 inference itself.** *"The binding constraint is inside the network"* rests on entry
+  being at **25%**, which is a **positive** measurement, not an absence. **Sound either way.**
+
+### 2. A THIRD DENOMINATOR-AS-VIEW INSTANCE, and the builder named the family
+Tonight produced **three cases where a denominator was a VIEW rather than a population**:
+my **n=212** join-mapped subset (true population 273), the builder's **Eir-dominated archive**
+figures presented as *"OpenSverige"*, and their **pooled 960** that was really **480**
+byte-identical pairs. **Same failure, three lanes, one night** — and none of the three was
+caught by the analyst who produced it.
+
+### 3. IN-FLIGHT +1 — **THE INSIDE-NETWORK CUT** (announced before spawning)
+Division agreed: **the builder takes the ceiling probe (engine, their lane); I take §4.**
+**The question: WHICH TILE IS ACTUALLY BINDING?** The harvester's output conveyor is proven
+full; **core entry is only 25% utilised; therefore the constraint is somewhere inside the
+network and nobody knows where.** The cut walks each blocked conveyor's output chain to the
+first non-moving tile and characterises what is there — a junction, a splitter, a
+long-run segment, a contested tile, or a merge.
+
+**This is the cut that converts the back-pressure finding into a build change**, and it is
+the highest-value item left in my lane. **Fixture: LADDER corpus** — and stated in advance,
+**a back-pressure plank cannot be arena-tested under the 0a finding either, because it is
+routing-shaped.** **Model: `opus`. Read-only.**
+
+**Version tag:** live **v102 = LOKI-8**, tape k=22 / m=592 / 1591.0.
