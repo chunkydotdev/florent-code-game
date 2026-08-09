@@ -87,13 +87,30 @@ PROTECTED = {"join.tsv", "keeper_state.json", "manifest.json", "decoded.txt",
 
 FILE_RE = re.compile(r"^(?P<match>.+)_game_(?P<game>\d+)\.replay26$")
 
+# TEAMS THAT ARE NOT US BUT ARE NOT THE FIELD EITHER.
+# `opensverige - plan B` is a separate team id (b7cafd9f...) carrying our own
+# name. It appears in 100 archived files, and 45 of them land in the
+# THIRD-PARTY bucket -- i.e. counted as "the field playing itself" when one
+# side is almost certainly us under another registration. A field baseline that
+# silently includes our own second entry is measuring us and calling it them,
+# and third-party matches exist precisely to remove us from the sample.
+#
+# Deliberately a SEPARATE column rather than folding it into `us_side`: the
+# field-baseline work is consuming `us_side` right now and changing its
+# semantics underneath a running analysis would be the worse error. Consumers
+# building a clean field sample should filter `us_side == "none" AND
+# related == "none"`. Whether plan B is literally our team is not certain from
+# the archive -- what IS certain is that it is not an independent field team,
+# and that is the property the baseline needs.
+RELATED_TEAM_IDS = {"b7cafd9f-265f-4932-b8b2-f5ba80a6a5ba": "opensverige - plan B"}
+
 COLS = ["file", "match", "game", "us_side",
         "teamAId", "teamAName", "teamAVersion",
         "teamBId", "teamBName", "teamBVersion",
         "teamARating", "teamBRating", "ratingABefore", "ratingBBefore",
         "match_winner_id", "match_winner_side",
         "game_winner_side", "game_winner_id", "our_won",
-        "scoreA", "scoreB", "triggeredBy", "completedAt"]
+        "scoreA", "scoreB", "triggeredBy", "completedAt", "related"]
 
 
 # --------------------------------------------------------------------------
@@ -268,8 +285,12 @@ def main(argv: list[str]) -> int:
         mws = "a" if wid and wid == meta.get("teamAId") else \
               "b" if wid and wid == meta.get("teamBId") else ""
 
+        rel = ("a" if meta.get("teamAId") in RELATED_TEAM_IDS else
+               "b" if meta.get("teamBId") in RELATED_TEAM_IDS else "none")
+
         rows.append({
             "file": p.name, "match": mid, "game": game, "us_side": us,
+            "related": rel,
             "teamAId": s(meta.get("teamAId")), "teamAName": s(meta.get("teamAName")),
             "teamAVersion": s(meta.get("teamAVersion")),
             "teamBId": s(meta.get("teamBId")), "teamBName": s(meta.get("teamBName")),
