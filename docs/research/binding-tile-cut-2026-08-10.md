@@ -445,3 +445,108 @@ Scripts are session-scratch and die with the session (~450 lines against
 - **Entity ids and resource stack ids share one global counter** (TRAP 1). Only identity and
   ordering are used; the one place magnitude was tested — the build-order hypothesis in §5 —
   compared ids *within* the building space only, and returned a null.
+
+---
+
+## 8. Follow-up: can the LOKI-10 leg see its own treatment? (appended, same session)
+
+**Question from the coordinator:** LOKI-10 refuses to emplace a turret or barrier on a tile a
+friendly conveyor faces — the §1 `DEAD_END_BUILDING` row. The prereg requires the **control arm
+to show >0 such builds** before a null is interpretable. **Does v102 (LOKI-8) ever do it?**
+
+**Denominator, stated first (tonight has produced seven numerator/denominator failures).** The
+unit is **one `placeEntity` that is the FIRST appearance of an entity id** (TRAP 3 — gunner
+rotations re-emit) **of a gunner, sentinel, launcher or barrier, on our side, in a ladder game
+with a local replay and `related='none'`**. The predicate is evaluated **against the tile map
+as of immediately before that build**: does a *friendly* conveyor at an orthogonal neighbour
+have a facing whose output tile is the build target? **Population: 125 v102 our-side games**
+(more than the ~75 estimated), **2,143 our-side games on all other versions.** Every game is
+included whatever its length — this count does not need round-1000.
+
+### 1. The opportunity count — the leg CAN fire
+
+| | **v102 (LOKI-8)** | all other versions (Eir-dominated) |
+| --- | --- | --- |
+| our-side games | 125 | 2,143 |
+| our turret/barrier builds | 2,713 (**21.70/game**) | 12,268 (5.72/game) |
+| **…onto a friendly-conveyor-faced tile** | **53 (0.424/game)** | 658 (0.307/game) |
+| as a share of our turret/barrier builds | **1.95%** | 5.36% |
+| by kind (v102) | sentinel 25, gunner 19, launcher 7, barrier 2 | — |
+
+**It is not ~0. 53 events across 125 games.** The prereg's gate passes with room:
+
+```
+  control arm of  30 games: expected 12.7 events   P(zero) ~ 2.7e-04
+  control arm of  60 games: expected 25.4 events   P(zero) ~ 7.1e-08
+  control arm of 100 games: expected 42.4 events   P(zero) ~ 1.2e-12
+```
+
+**A v102 control arm of any realistic size will show the treatment firing.** The `n=0` trap
+that killed the forward-gunner plank does not apply here.
+
+### 2. Variance — it is the bad case, and it is exactly the one you named
+
+```
+  0 events: 95 games      3 events:  2 games
+  1 event : 15 games      4 events:  1 game
+  2 events: 11 games      6 events:  1 game
+  mean 0.424   variance 0.852   dispersion index 2.01  (Poisson would be 1.0)
+```
+
+**76.0% of games contain zero opportunities and the rest are clustered.** This is "a mean of
+0.42 with most games at 0", twice-overdispersed. **The event count is fine; the per-game effect
+is concentrated in a quarter of games**, so any per-game outcome metric will be dominated by
+games where the treatment was inert.
+
+### 3. Does v102 differ from the pooled rate? Yes — in opposite directions on the two denominators
+
+- **Per game: v102 is 38% HIGHER** (0.424 vs 0.307).
+- **As a share of its turret/barrier builds: v102 is 2.7× LOWER** (1.95% vs 5.36%).
+- **Because v102 builds 3.8× more turrets and barriers** (21.70/game vs 5.72). LOKI-8 is much
+  safer per build and does it so much more often that the absolute count still rises.
+
+**Consequence for the brief that motivates the leg: quote the per-game count (0.42/game, 53
+events), never the 13.2% or 11.1% share.** Those are Eir figures on an Eir denominator and
+they overstate v102's per-build rate by 2.7×.
+
+### 4. The thing the prereg does NOT gate on, and it is the real risk
+
+**The 13.2% / 11.1% mass figures are round-1000-only. Only 8 of 115 attributed v102 games reach
+round 1000 — 93.0% end in `core_destroyed`, against 73.3% for every other version.**
+
+| v102, 8 round-1000 games | share of blocked mass |
+| --- | --- |
+| `DEAD_END_BUILDING`, **our own** turret/barrier | **0.00%** |
+| `DEAD_END_BUILDING`, enemy building | 11.26% |
+| `DEAD_END_GROUND` | 75.54% |
+| `HEAD_TO_HEAD` | 0.00% |
+
+**I am not reporting that 0.00% as a finding. n = 8. An incomplete run has no number.** What it
+does establish is that **the instrument which produced 11.1% is structurally unavailable for
+v102** — there is no round-1000 population to measure it on.
+
+**And the outcome channel is narrower still. LOKI-8 decides 93% of its games by core kill;
+titanium tiebreakers settle 7%.** A perfectly firing refusal recovers titanium, and titanium
+decides roughly one v102 game in fourteen. **If the leg's endpoint is win rate or Elo, it is
+underpowered by construction — not because the treatment cannot fire, but because the channel
+from the treatment to the endpoint is closed in 93% of games.**
+
+**Recommendation: gate this leg on a mechanism counter, not an outcome.** The interpretable
+endpoint is *"turret/barrier builds onto a friendly-conveyor-faced tile: control ≈ 25, treatment
+= 0"* — a direct, high-powered check that the refusal does what it says. Treat any Elo movement
+as unresolvable at this n and do not read a null on it as evidence against the mechanism.
+
+### 5. The refusal catches only part of the mechanism — needed to read a null
+
+The co-occurrence "our own turret sits on a tile our conveyor faces" arises **two** ways, and
+the refusal addresses one:
+
+| | v102 | all other versions |
+| --- | --- | --- |
+| turret/barrier built onto an already-faced tile (**refusal catches this**) | 53 | 658 |
+| conveyor built later, aimed at an existing friendly turret/barrier (**it cannot**) | **23** | **607** |
+| share of the mechanism the refusal can reach | **70%** | **52%** |
+
+**A null on this leg would not falsify "our own turrets cork our own lines."** It would test the
+forward half only — 70% of the events in v102, and barely half of them in the Eir archive where
+the motivating 11.1% was measured.

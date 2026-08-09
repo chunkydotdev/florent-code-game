@@ -21941,3 +21941,60 @@ neighbours, only conveyors queried, inside the CPU guard), and the rejection
 at the candidate-site filter. No siting, incidence or timing change. The code
 IS the registered treatment. Awaiting battery + leg for two-clock
 certification.
+
+## 2026-08-10 02:4x CEST (from `date`) — RESEARCH ARM: **LOKI-10's LEG CAN FIRE, BUT ITS OUTCOME CHANNEL IS CLOSED IN 93% OF GAMES — and it is closed by LOKI-8's own strength**
+
+Appended as **§8** of `docs/research/binding-tile-cut-2026-08-10.md`.
+
+### 1. THE GATE PASSES — the `n=0` trap does not apply here
+**0.424 builds/game, 53 events across 125 v102 our-side ladder games** (**125**, not the ~75
+both lanes assumed). A 60-game control arm expects **25.4 events, P(zero) ≈ 7e-8.**
+
+### 2. **BUT THE MOTIVATING FIGURES MUST NOT BE QUOTED FOR THIS LEG**
+**13.2% and 11.1% are Eir figures on an Eir denominator**, and v102 differs **in opposite
+directions depending on the denominator**:
+- **per game, v102 is 38% HIGHER** (0.424 vs 0.307);
+- **as a share of its turret/barrier builds, v102 is 2.7× LOWER** (1.95% vs 5.36%);
+- because **v102 builds 3.8× more turrets/barriers** (21.70/game vs 5.72).
+**Quote 0.42/game and 53 events. The 11.1% overstates v102's per-build rate by 2.7×.**
+**Eighth denominator instance tonight — and the first where the SAME comparison flips sign
+depending on which denominator is chosen.**
+
+### 3. THE VARIANCE IS THE BAD CASE
+**76.0% of v102 games have ZERO such builds** (95/125); 15 have one, 11 two, 4 have ≥3, max 6.
+**Dispersion index 2.01 — twice Poisson.** The count is fine; **the effect is concentrated in
+a quarter of games, so any per-game outcome metric is dominated by games where the treatment
+was inert.**
+
+### 4. **THE DECISIVE PROBLEM, WHICH THE PREREG DOES NOT GATE ON**
+**Only 8 of 115 attributed v102 games reach r1000. 93.0% end in `core_destroyed`, against
+73.3% for every other version.** **So the round-1000-only instrument that produced the 11.1%
+motivation is STRUCTURALLY UNAVAILABLE for v102.**
+
+**And the outcome channel is worse than the instrument: the refusal recovers TITANIUM, and
+titanium decides about ONE v102 GAME IN FOURTEEN.** **If the endpoint is win rate or Elo the
+leg is underpowered BY CONSTRUCTION — not because the treatment cannot fire, but because the
+path from treatment to endpoint is closed in 93% of games.**
+
+**This independently reproduces my own decisive-rate result from `e51eed2` earlier tonight —
+v102 93.3% core-decided against the Eir era's 67.6% — on a different filter and a pinned
+snapshot. Two paths, same number.** **The implication is uncomfortable and worth stating
+plainly: the very property that makes LOKI-8 good, that it ends games decisively, CLOSES THE
+CHANNEL through which an economic fix could ever show up.** **Any economic plank on this line
+inherits that, not just this one.**
+
+**⇒ Recommended: gate on a MECHANISM COUNTER, not an outcome** — *"builds onto a
+conveyor-faced tile: control ≈ 25, treatment = 0"* — **and state in the prereg that Elo
+movement is unresolvable at this n, rather than discovering it in a null.** Same discipline
+the builder insisted on for LOKI-9, except **here the verdict channel itself is what is
+unavailable.**
+
+### 5. A NULL WOULD NOT FALSIFY THE HYPOTHESIS — the refusal is half the mechanism
+The reverse case — **a conveyor built LATER, aimed at an EXISTING friendly turret** — is
+**23 events against the 53 forward ones in v102**, so the refusal reaches **70%**; **pooled
+across the archive it is 607 vs 658 — barely 52%.** **So the treatment cannot falsify *"our
+own turrets cork our lines"*; it can only falsify *"we build turrets onto lines"*.** Worth one
+line in the prereg.
+
+**Not reported as a finding: in the 8 r1000 v102 games our own turrets accounted for 0.00% of
+blocked mass. n=8. An incomplete run has no number.**
