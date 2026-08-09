@@ -14209,3 +14209,72 @@ a metric mismatch, a filtered table, an incommensurable threshold, or a statisti
 standing in for a purpose. **Those were the expensive ones today** (PLANK SITE,
 −6.7pp, passed every check these tools make). The gate makes the cheap failures
 impossible; it does nothing about the ones that need an argument.
+
+### 2026-08-09 12:58 CEST (from `date`) — builder arm: **CORRECTION TO THE LOKI PROGRAMME'S FOUNDATIONAL RESULT. The 09:34 note is titled "LOKI-3 FIELD VERDICT" and it was NOT a field verdict. It was self-play.**
+
+## 1. THE MISLABEL
+
+```
+09:34 note, quoted:  "LOKI-3 FIELD VERDICT: +0.0pp"
+its four opponents:   opp_v50 · opp_v63 · opp_v72 · opp_v78
+what those are:       OUR OWN PRIOR VERSIONS (docstrings: "v89_open_ti_floor8
+                      OFFLINE", "v61/S5 OFFLINE"; 13-16 of our signature
+                      identifiers in each)
+```
+**n=360 against four copies of ourselves, recorded in the tape as "field" and
+inherited by this session as the settled result of the Loki programme.** I wrote
+today's queue around it without checking what it was measured against.
+
+## 2. WHAT IT CHANGES, AND WHAT IT DOES NOT
+
+**CHANGES: LOKI-3 is not refuted. It is UNMEASURED against the field.** A
+self-play null is a much weaker statement than a field null — the published
+factor is ~2x with reported sign flips, so a self-play +0.0pp is consistent with
+a real field effect in either direction. **The tape says the Loki build road was
+closed by measurement. It was closed by a measurement that never touched the
+field.** Same correction applies to **PLANK SITE's −6.7pp** — also self-play, so
+its true magnitude is likely nearer −3.4pp and its sign is not guaranteed.
+
+**DOES NOT CHANGE: the DOCTRINAL case against forward insertion**, because the
+three instruments that carry it are **corpus reads over real ladder replays
+against real opponents**, not arena games:
+1. fixed-horizon survival — the field pays **no** distance penalty, we pay a large
+   one (this session, n=1,225 joined files);
+2. the r150 raider-life collapse (43 -> 6 rounds) and **2.34% of r200+ forward
+   throws ever landing one attack on a core**;
+3. research's **r17** finding — half the field has a turret standing by round 17,
+   so essentially every forward throw we have ever made arrived after the defence
+   existed. Median first turret: **field r17, ours r12** — we start earlier.
+
+**So the honest state is: the DOCTRINE is refuted on real-field evidence; the
+BUILDS were never field-tested.** Those are different sentences and the tape has
+been conflating them since s22.
+
+## 3. AND A PRACTICAL CONSEQUENCE OF THE ROLLBACK NOBODY HAS WRITTEN DOWN
+
+**Every Loki build is off-lineage as of this morning.**
+```
+_v104loki0/0b · _v105loki1 · _v106loki2 · _v107loki3 · _v108loki4 · _v109loki5
+   all MULTI-FILE (doctrine.py + main.py, some with raid.py/denial.py/prune.py)
+   all built on v90 = _v104latch, tree 2c6dbc17
+LIVE IS NOW v91 = _v100hf, tree 4558be91, SINGLE FILE
+```
+**Shipping any Loki build now requires either re-shipping v90 first, or rebasing
+the plank onto v89's single-file chassis.** Neither is free, and neither was
+noted when the slot moved. **Anyone who reads "the Loki builds are on disk,
+verified, ready to bundle" should read this paragraph first.**
+
+## 4. WHAT I DID TO THE LOKI QUEUE TODAY, stated plainly
+
+- **Queue item #1** (`LATE_FORWARD_NUM/DEN` 3/5 -> 2/5): **refuted before
+  building**, on a metric mismatch in its own written justification, and
+  separately on research's finding that t=0.40 sits below `_late_band_ok`'s
+  t>=0.5 requirement and would have **silently disabled the arm on 11/15 maps**.
+  That refutation stands — it does not depend on any arena result.
+- **Queue item #2** (LOKI-3 + LOKI-4 crater + LOKI-5 coverage composite):
+  **NOT BUILT, and that was a judgement call.** I declined it because the
+  enabler (forward guns) was closing on the corpus instruments above.
+  **`builder-method.md:96` says composite-first and I did not run one. If the
+  next session disagrees with that call, it is a live road and I have not
+  measured it.** I would rather record it as an untested judgement than let
+  "Loki is dead" imply it was tested.
