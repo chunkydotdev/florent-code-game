@@ -45,6 +45,31 @@
 ##   match_watcher, opp_watcher, replay_archiver, keeper) are alive and survive
 ##   session resets. **If it bleeds, roll to v101 — that is Eir, unchanged.**
 
+## ===== THE TRAJECTORY READ — THE ONE OPEN ITEM =====
+##   At wrap: **1594.2 @ 579 matches, rank 28/116, last-10 7W-3L**, every game
+##   core-decided. Activation baseline **1577.5**, so **net +16.5 over 9
+##   matches**.
+##   **STOP-LOSS ALREADY SAYS CLEARED:** `slot_sprt --check 17 9` -> llr **+7.246**
+##   vs ±1.735. That is the sequential test TERMINATING on OK, not merely
+##   "not yet bleeding". It is 9 matches; read it again at ~20.
+##   `tools/monitors/ship_watch.py` is ARMED and detached (10-min cadence). It
+##   appends every evaluation to `corpus/ship_watch.log` and writes
+##   **`corpus/SHIP_ALERT`** only on a BLEEDING verdict, clearing it on recovery.
+##   **FIRST THING A SUCCESSOR SHOULD DO: `cat corpus/SHIP_ALERT` (absent = fine)
+##   then `tail corpus/ship_watch.log`.**
+
+## ===== WAKE PATH — STATED PLAINLY, INCLUDING WHAT IS NOT WATCHED =====
+##   **SURVIVES this wrap (detached, PPID 1):** elo_logger, match_watcher,
+##   opp_watcher (now with the league Elo tee -> `corpus/league_elo_log.tsv`,
+##   72 teams/pull, ~10-min freshness), replay_archiver, keeper, **ship_watch**.
+##   **DIES with the session:** every subagent, and the side lane's drift-watch
+##   commit monitor.
+##   **NOTHING WAKES A SESSION.** The monitors LOG and will raise `SHIP_ALERT`,
+##   but no process boots a session to act on it. **The trajectory read happens
+##   at the next boot, whenever Magnus starts one.** If v102 bleeds overnight it
+##   will be recorded and NOT acted on until then. That is the honest answer;
+##   the rollback is one command (`fcode submission activate 101`).
+
 ## ===== QUEUE =====
 ## 1. **Watch v102 on the ladder.** First real field read the Loki line has had.
 ## 2. **Per-opponent gates, not pooled win rate.** Pooling hides everything:
