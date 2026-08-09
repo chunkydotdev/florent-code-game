@@ -17875,3 +17875,98 @@ keyed to it generalises past nordkap.
 
 **Standing caveat, restated:** *"in 85 attributed games"*, never *"CAD always"* — `join.tsv`
 covers 1,445 of ~6,233 archived replays, and trap 3 biases every throw count **down**.
+
+## 2026-08-09 16:5x CEST (from `date`) — BUILDER: **RUSH×MAP = NO VERDICT (saturated instrument). And the arrival-suppressor map, which is the real find of the session.**
+
+### 1. RUSH × MAP DISTANCE — **NO VERDICT (pre-registered falsifier 3)**
+Battery ran after `19b8da3` (prereg committed first, two-clock clean). Gate
+CLEARED, control equivalence 12/12, `_det_v118lokinorush` vs `_det_v118loki2b`,
+15 maps × 3 seeds × 2 seats vs `ouroboros_probe`, **0 tracebacks**.
+
+| band | rush ON | rush OFF |
+| --- | --- | --- |
+| SHORT (≤16) | **95.8%** share, median r109 | 85.4%, r176 |
+| LONG (≥24) | **100.0%** share, median r138.5 | 92.9%, r171 |
+
+**Rush ON is ahead in BOTH bands, which looks like falsifier 1 ("no
+interaction, queue item 4 dies"). I am NOT reading it that way, because the
+instrument is SATURATED: at 100.0% core-kill share in the long band there is no
+headroom in which an interaction could appear.** That is falsifier 3 —
+underpowered, NO VERDICT — and the leg's own output flagged it independently
+(**90 pairs → 42 distinct shapes, "seeds are collapsing, do NOT read effect
+size off this leg"**). **Queue item 4 is NOT dead; it is untestable against a
+pool we beat ~100% of the time and needs a harder opponent.** The secondary
+(time-to-core-kill, faster in both bands) is **not** a pass on its own (D10).
+
+### 2. THE ARRIVAL-SUPPRESSOR MAP — commissioned against `_v118loki2b`, aimed at INCIDENCE
+The ladder says incidence is the scarce quantity. A read of our own code found
+**three defects and one absorbing latch that consume raider turns before they
+ever arrive.** Each is a code fact with a file:line, not a hypothesis:
+
+1. **`LOKI_COLD_INSERT_RND = 150` is an ABSORBING latch, not a window.**
+   Re-opening it needs a `SLOT_RAID_LIVE` heartbeat, written only by a raider
+   already inside dsq 40 — and getting inside 40 requires the walking the gate
+   forbids. **Once the last established raider dies and 15 rounds pass, arrival
+   incidence is exactly ZERO for the rest of the match.** The bot gets ONE
+   attempt at the ring, r0–150, and no retry. The corpus that justifies the
+   constant measured *launcher throws*; the gate is applied to *walked*
+   insertions, and the equivalence was asserted, never measured.
+2. **The heal-pin (`main.py:408-410`) — likely THE Ouroboros answer.** A raider
+   within dsq 25 of a damaged home Core heals and `return`s **before `_raid` is
+   ever called** — no move, no raid, that round. `SLOT_UNDER` is a 50-round
+   latch re-armed by any enemy turret near our Core. **Against Ouroboros, whose
+   entire game is 7,831 gunner shots into our Core, that latch is effectively
+   always on and our raiders never leave.** We arrive in 5.8% of games against
+   them. The comment justifies the heal on *titanium* grounds and never
+   considers the move it costs.
+3. **`_raid_peck` is ungated by proximity.** Steps 1–5 are distance-gated;
+   step 6 is not. A raider that brushes any enemy conveyor (20 HP = 10 pecks)
+   stops walking for that many rounds. Enemy conveyor lines fan out across the
+   approach corridor. Its only comment — *"clear whatever is in the way"* — is
+   an assumption the code does not implement.
+4. **The stall detector reads a conflated counter and can stand the WHOLE TEAM
+   down permanently.** `self.stuck` is incremented both by genuine nav failure
+   *and* by every round the unit productively acted without moving, so a raider
+   that pecks for 8 rounds trips the ban on its first real block. The pause then
+   returns **before** the heartbeat write, so a paused raider sitting at the ring
+   stops publishing `SLOT_RAID_LIVE` — which after 15 rounds stands the entire
+   team down via (1), permanently past r150.
+5. **More `SLOT_FWD_GUN`-shaped counters, as suspected:** `SLOT_HOME_GUN` never
+   decremented; `SLOT_HARVESTERS` monotone; **`SLOT_LAUNCHER` is a one-way latch
+   never cleared on death — one launcher loss permanently removes the ferry and
+   our cheapest home defence.** `SLOT_THREAT` is never cleared, spending bank on
+   turrets against a ghost. `SLOT_FWD_GUN`'s rubble still ratchets the ammo
+   target, draining the same bank that pays for arrival.
+
+### 3. LOKI-3 AUDIT — the hold is vindicated, and the gate has a weakness
+Independent audit of my own kidnap plank found **5 confirmed defects**, two of
+which would have silently corrupted a battery: the forward launcher **latches
+`SLOT_LAUNCHER` and permanently kills the HOME defensive launcher** (trading
+away the ~97%-defensive use of the piece via a flag that claims only to add),
+and **the "opportunity gate" does not exist** — collar seats are permanent
+geometry so the score is ≥2 always and it builds with no enemy in sight, which
+falsifies my own written justification for its ranking. My hand-written gunner
+geometry **ignores WALLS** (`Environment` is not even imported) — precisely
+where I predicted my own bug. **LOKI-3 must not be revived without fixing all
+five.**
+
+**AND A WEAKNESS IN MY OWN INSTRUMENT, which matters beyond this plank:** the
+flags-off control is **not pure** — the entity-id victim sort is not gated by
+`LOKI_KIDNAP_ON`. **`gate.py` reported control equivalence identical 12/12
+anyway**, because 12 paired games never happened to hit the divergent state.
+**Control equivalence at n=12 can pass a genuinely impure control.**
+
+### 4. TURN ORDER — CONFIRMED, far past the claim, plus four facts nobody had
+Independent verification: **1,842,445 ordered pairs, 0 inversions**, across 205
+replays — and two *causal* tests that never look at log order (41,613
+vacate-then-enter pairs, 0 inversions; 1,961/1,961 high-id-launcher victims
+unable to move that round). **CONFIRMED.** New facts that are build-relevant:
+- **A unit created mid-round does NOT act that round** (24,045 new entities,
+  0 acted). A core-spawned builder first acts the following round, and holding
+  the highest id, acts LAST among our units.
+- **A unit killed earlier in the round loses its turn entirely** (1,470/1,470).
+  Killing with a lower-id unit denies the victim's turn.
+- **Cores are always id 1 (team A) and id 2 (team B)** — team A's core acts
+  first in every round of every game.
+- **Ids are one global counter shared with resource stacks**, so id *magnitude*
+  is meaningless (dominated by titanium churn); only *ordering* is.
