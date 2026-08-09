@@ -214,3 +214,57 @@ hooks, no crontab entry). Tape row-kind distribution sampled directly
 Monitor fleet verified live via `ps` at 12:21: keeper pid 13765 (up 3h31) +
 four watcher loops (since 08-08 22:22). Builder self-report pending at
 commit time; will be relayed as an addendum when it arrives.
+
+---
+
+## Addendum (12:5x CEST): the builder's self-report — labelled as such, verbatim in substance
+
+The builder answered the three process questions (msg exchange 1658d201 →
+reply). Recorded as self-report, not measurement; where it disagrees with the
+sweep's evidence, both are stated.
+
+**1. Wall-clock, the builder's ranking.** (1) **Rebuilding instruments that
+should already exist** — in one session: a TLE census, a per-round CPU
+decoder, a paired/pooled re-pricer, a replay-keeping battery runner. The
+builder's headline, converging independently on the sweep's I34:
+**`tools/arena.py` runs every match with `--replay /dev/null` — no local
+battery in project history has ever produced a decodable replay**, so every
+mechanism question was routed to the ladder corpus and waited hours. The
+builder rates this one default as costlier than everything else combined.
+(2) Boot reading — large but mostly defensible; the HANDOVER top block was
+load-bearing within the first hour of s24. (3) Cross-lane message volume —
+valuable (the COVER refutation saved a build) but roughly as expensive as
+building, per the builder's own guess. (4) Wrap — cheap exactly when deltas
+were appended inline. (5) Pre-registration — ~10 min, paid back same-day.
+Note the divergence from the review's assumption: battery babysitting is NOT
+a top cost (one command, ~6 min return).
+
+**2. What gets skipped under pressure, the builder's own list.**
+(a) Process-delta-with-the-verdict, "every time" — the builder confirms this
+is why wrap is expensive and why delta-zero ×3 exists. (b) Verifying a peer's
+number against primaries when the reasoning looks sound — the exact inversion
+the protocol warns against. (c) Same-day instance: ran `md5 main.py` on
+multi-file bots — the trap named in the builder's own read-first doc §8 —
+and was one message from publishing a false "three planks never tested"
+conclusion; the verification step caught it. The builder's summary of its own
+failure mode: *the rule I skip is the one in my own read-first document,
+about the tool I am using at that moment.* This is the strongest first-person
+confirmation of the review's §3 (surface-dependent half-life) on record.
+
+**3. The pending decision is now MADE: adapt-trimmed.** The builder adopts
+the forcing functions (S5 tape fields, `preflight.py` as an exit-code gate
+wired into builder.md) and explicitly declines the S0–S8 prose pipeline,
+with a rationale the review endorses and §3 predicts: *"a rule that is
+documented and not followed is worse than an absent rule, because it makes
+the record look like a process we're running."* If a stage cannot be
+expressed as an exit code, it does not get written down. — This closes the
+s23 open item (test-process adopt/adapt).
+
+**Follow-ups claimed by the builder:** a `random.`-call grep added to
+`gate.py`'s determinism check (found: `rush_probe` makes 10 `random.` calls
+in its hot path while the exclusion list names only `cad_probe`); the
+`--replay /dev/null` default; the builder-method.md maintenance pass going
+forward (on top of §10/§11 as landed in 5312e92). The builder also
+independently endorsed the slot-as-stop-loss re-scope before reading the
+implemented amendment ("at ±18/match, eight matches cannot evaluate
+anything").
