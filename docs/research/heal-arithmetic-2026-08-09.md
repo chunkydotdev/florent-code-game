@@ -39,6 +39,34 @@ game.** Two consequences, and the second is the one that bites:
 The heal is even better than 4.00 in practice: it heals **all** friendly entities
 on the target tile, so a stacked tile multiplies it.
 
+> **AMENDMENT 2026-08-09 09:1x CEST (research arm, s23) — the stacking set is now
+> pinned to engine source, not left qualitative.** The line above was written
+> without saying *which* tiles can actually be stacked, which made it unusable.
+> From `fcode/_types.py`:
+>
+> - `heal` (:578): *"Heal all friendly entities on an orthogonally adjacent tile
+>   … by 4 HP. **If both a friendly builder bot and a friendly building are on the
+>   target tile, both are healed.**"* Cost is 1 Ti for the tile, not per entity.
+> - `is_tile_passable` (:345): a builder bot may stand on a tile only if it *"has
+>   no building on it or has a **conveyor, splitter, or the allied core**"*.
+>
+> **So the stack is exactly one builder bot + one of {conveyor, splitter, allied
+> core}, and the ceiling is 2 entities = 8.00 HP/Ti — not unbounded.** The
+> defender's edge over the best damage source (1.80 HP/Ti) is therefore **4.4:1
+> on a stacked tile**, against 2.2:1 on a bare one.
+>
+> **The load-bearing case is the core.** A friendly builder standing on a core
+> footprint tile, healed by an adjacent builder, repairs the **core and the bot
+> together for 1 Ti**. The core is 2×2, so up to four such tiles exist. This is a
+> **home-defence** lever, which is the band the builder's 09:05 note measures as
+> our one large advantage (+11.4 / +16.6 / +22.3pp over the field).
+>
+> Not yet measured: whether we ever actually do this, and whether the field does.
+> `flow.tsv`/`econ.tsv` carry heal counts but not the target tile's occupancy, so
+> this needs a decoder change and is **not** claimed as an observed behaviour —
+> only as a verified rule. Found via tactics sweep 2 (topic 11), which flagged the
+> 4.00 figure as possibly understated; it was, but only on this restricted set.
+
 ## 2. THE TEST — who actually spends their titanium on what
 
 Per game, 1,165 of our archived ladder games:

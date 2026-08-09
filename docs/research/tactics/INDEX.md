@@ -71,8 +71,8 @@ exception permanently destroys that unit for the match.
 | 8 | Economy: harvest saturation, expansion timing, when to stop expanding | unswept | — | — |
 | 9 | Opening theory and build-order steering in symmetric-map games | unswept | — | — |
 | 10 | Endgame/tiebreak play when the win condition is a score, not a kill | **SWEPT** (BC 2019 do-nothing, BC 2022 one-gold, Halite endgame flag, Spring'21 score+banked/3) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §4 |
-| 11 | Anti-rush and defensive-line theory (what makes a line hold) | unswept | — | — |
-| 12 | Unit-displacement mechanics elsewhere (our launcher throws EITHER team's bots) | unswept | — | — |
+| 11 | Anti-rush and defensive-line theory — **re-aimed at "how does anyone break a 2.2:1 defensive edge?"** | **SWEPT** — 8 BC postmortem PDFs read in full + Screeps/Terminal/RTS theory. **Answer: mostly you don't, you win on economy; every league converged there independently.** | 2026-08-09 | [sweep 2](2026-08-09-sweep-2.md), [sentinel-file](sentinel-file-stacking.md) |
+| 12 | Unit-displacement mechanics elsewhere (our launcher throws EITHER team's bots) | **SWEPT — and it INVERTS our current use.** BC2020's Delivery Drone has our Launcher's exact verb signature; that field converged on grabbing the **enemy's** unit defensively, never on ferrying their own forward | 2026-08-09 | [sweep 3](2026-08-09-sweep-3.md), [defensive-interception](launcher-defensive-interception.md), [displace-dont-kill](displace-dont-kill.md), [throw-into-prebuilt-cell](throw-into-prebuilt-cell.md) |
 
 **Why topic 4 is not merely academic:** we measured (2026-08-09,
 `docs/research/ammo-and-cpu-2026-08-09.md`) that Ouroboros discards **26,356
@@ -107,3 +107,24 @@ since the whole value is in the evidence labels.
   damage-to-repair ratio of 1.11:1 against the field's 2.79:1. Every sweep
   should be read against this: the question is never "how do we do more damage"
   but "how does anyone break a 2.2:1 defensive edge".
+  **AMENDED 2026-08-09 (s23), from engine source:** one heal repairs *both* a
+  friendly builder bot and a friendly building on the same tile for 1 Ti, and a
+  bot may co-occupy only a **conveyor, splitter, or the allied core**. So the
+  stack caps at 2 entities = **8.00 HP/Ti → 4.4:1 on a stacked tile**, and the
+  load-bearing case is **a builder standing on a core footprint tile.** The
+  defender's edge is larger than the headline, not smaller.
+- **THE ANSWER TO THE STANDING QUESTION, from sweep 2:** *mostly you don't break
+  it — you win on economy.* Every league swept converged there independently, and
+  each one that reached a defence-dominant equilibrium was rescued by **a clock,
+  not a tactic.** Our clock is round 1000 and our first tiebreak key is
+  cumulative titanium delivered. **The crack that does exist is that our
+  defender's heal is adjacency-capped at ~16 HP/round per tile while the
+  attacker's damage on that tile is capped only by titanium** — concentration,
+  not more damage.
+- **THE FORWARD ROAD IS CLOSED (builder, 2026-08-09 09:05)** on three
+  instruments, and sweep 3 corroborates it from an independent evidence path.
+  Research amended the magnitude of one of those instruments — see
+  [`loki3-anchor-and-fargun-recheck`](../loki3-anchor-and-fargun-recheck-2026-08-09.md)
+  — without disturbing the verdict. **Home defence is the measured asset**
+  (+11.4 / +16.6 / +22.3pp over the field), and the launcher tactics above are
+  the ones that reinforce it rather than opening a sixth doctrine road.
