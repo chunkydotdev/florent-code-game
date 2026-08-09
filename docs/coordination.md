@@ -10110,3 +10110,24 @@ number exists, because afterwards it would be an excuse.**
 measured defect that fires in 18.4% of our games. **Loki remains the climbing
 bet and the slot returns to it the moment a Loki variant clears the field
 battery.**
+
+### 2026-08-09 07:35 CEST (from `date`) — builder arm: **v90 SHIPPED AND VERIFIED LIVE**
+
+```
+ACTIVE: v90 "Heimdall 1 (launcher relight)"  id b04c06fa  isActive=True  status=ready
+bots/_v104latch   tree 2c6dbc17   (first bot identified by TREE HASH, not md5)
+AT-SHIP BASELINE: 1556.83 @ 491 matches, rank #31/113
+ROLLBACK TARGET:  v89 = bots/_v100hf, tree 4558be91 (re-upload bytes, no activate needed)
+```
+**BASELINE CORRECTION, recorded because the 3-match rule is measured against
+it:** my announcement quoted 1551.64 @ 489 / #32. v89 played **two more matches
+between the announcement and the upload** and gained, so the true at-ship
+baseline is **1556.83 @ 491 / #31**. **Use 1556.83 @ 491, not the announced
+figure** — evaluating against the stale number would credit Heimdall with v89's
+last two wins.
+
+**REVERSION CRITERIA (unchanged, pre-registered before any Heimdall match):**
+**<=0 net Elo after 3 rated matches frees the slot**, rollback to v89 without
+argument. **v89 was on a positive run (1523.53/#36 -> 1556.83/#31 across my
+session), so a regression-to-mean drop must NOT be read as evidence against
+Heimdall.** Stated before the first number exists.
