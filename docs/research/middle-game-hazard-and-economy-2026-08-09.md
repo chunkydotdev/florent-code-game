@@ -214,6 +214,40 @@ decision: adding gunners into a 59-conveyor home is the configuration most expos
 to the blocking rule, and the one a `get_attackable_tiles`-based siting score
 mis-ranks hardest.
 
+## 6c. Addendum: our LIVE turret count flatlines at 2 — theirs keeps growing
+
+Cost scaling keys on the **live** count, not on cumulative builds, so the live
+trajectory is the number that matters. Counting BUILD − DEATH up to each round,
+over games that reached it:
+
+| round | US n | US med | US mean | THEM n | THEM med | THEM mean | gap |
+|---|---|---|---|---|---|---|---|
+| r100 | 1,106 | 1 | 1.41 | 1,096 | 2 | 2.25 | 1.60× |
+| r200 | 852 | **2** | 1.93 | 844 | 3 | 3.60 | 1.87× |
+| r300 | 688 | **2** | 2.23 | 681 | 4 | 4.78 | 2.14× |
+| r500 | 511 | **2** | 2.75 | 505 | 5 | 6.50 | 2.37× |
+| r800 | 399 | **2** | 3.04 | 393 | 5 | 7.12 | **2.34×** |
+
+**Our median live turret count is 2 from r200 onward and never moves again.
+Theirs goes 2 → 3 → 4 → 5 → 5.** The gap widens monotonically with the round —
+the same shape, and the same boundary, as the core-death hazard in §1.
+
+**And the losses are identical, which isolates the cause:**
+
+```
+US     built  5,595   died  2,762   survival 50.6%
+THEM   built 13,398   died  6,586   survival 50.8%
+```
+
+**Turret survival is 50.6% against 50.8%.** We do not lose turrets faster than the
+field. **We stop building them.** Together with §6b (shots-per-turret within 10%)
+that is three independent instruments saying the same thing: **production, not
+price, not targeting, not attrition.**
+
+*Caveat on the strength split: the `opp≥1650` cell shows 2.87 live at r300 against
+5.63 for the 1550-1650 tier, but n=47 and that cell is selected on games where a
+top team did **not** kill us early. Do not read a strength gradient off it.*
+
 ## 7. What I would do with this
 
 1. **Do not open an economy programme.** §1 and §3 both say the economy is not the
