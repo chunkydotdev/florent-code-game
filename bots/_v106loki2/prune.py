@@ -138,11 +138,14 @@ PRUNE_MIN_SCALE = 150.0
 
 # Rounds a tile must be CONTINUOUSLY observed dead-headed before it may be
 # destroyed.  The thread-10 spec proposed 25 as "longer than any realistic
-# lane build time"; 40 is used here because a lane build is not the only way a
-# head sits dead -- a builder that gets pulled into a heal or a chase leaves
-# its half-built chain stalled, and that stall is bounded by nothing.  Waiting
-# is nearly free (we have r150..r1000 to prune in); a wrong destroy is not.
-PRUNE_CONFIRM_RNDS = 40
+# lane build time".  MEASURED AND RAISED TWICE: at 40, heart seed 3 destroyed
+# 7 distinct tiles and several were rebuilt by a teammate within a few rounds,
+# i.e. 40 rounds does not separate "orphan" from "lane whose builder got
+# pulled into a heal or a chase" -- and that stall is bounded by nothing.
+# 100 rounds still leaves r150..r1000 to prune in, and the asymmetry is stark:
+# waiting costs a few rounds of a ~1% discount, a wrong destroy costs a
+# rebuild plus a scale flap plus whatever the chain was carrying.
+PRUNE_CONFIRM_RNDS = 100
 
 # The confirm clock resets if the tile went unobserved for longer than this.
 # Without it, walking away for 300 rounds and coming back makes a tile
@@ -400,10 +403,15 @@ def _dead_head(player, ct, n):
         # Empty output tile.  This is the pave orphan and the abandoned-lane
         # head, i.e. the volume target -- and also exactly what a lane under
         # construction looks like, which is what PRUNE_CONFIRM_RNDS is for.
-        # UNLESS the empty tile is one WE condemned: then it is provably not a
-        # lane growing, and the chain may unravel on the short clock.
-        if (out.x, out.y) in player.prune_done:
-            return 2
+        # A cascade accelerator lived here and was REMOVED after measurement:
+        # "output tile is one I condemned -> unambiguous, use the short clock".
+        # Its premise was that our own rebuild gates stop the lane growing back
+        # into a condemned tile -- but those gates are PER UNIT, so a teammate's
+        # linker or trail pave rebuilds it freely.  Measured on heart seed 3:
+        # the rule produced 13 of 16 destroys and drove a three-unit relay on
+        # tiles (13,16)/(14,16) -- destroy at r426, r430, r435, r439, r443,
+        # r446.  Deleted rather than tuned; a dead chain still unravels here,
+        # one tile per PRUNE_CONFIRM_RNDS, on evidence rather than on inference.
         return 1
     try:
         oteam = ct.get_team(obid)

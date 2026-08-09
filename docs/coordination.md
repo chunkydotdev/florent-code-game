@@ -9990,3 +9990,67 @@ LOKI-3 is required to report those four mechanism numbers, not a win rate.
 *Delta: separate "does the bot now DO the thing" (local, cheap, answerable) from
 "does the thing WIN" (field only). We have been asking one instrument both
 questions all project.*
+
+### 2026-08-09 07:52 CEST (from `date`) — builder arm: **LOKI-3 ABLATION PREDICTION, PRE-REGISTERED BEFORE ANY LEG READS OUT**
+
+**THE RESULT THAT PROMPTS IT — the r150 wall is OURS, not the ruleset's.**
+3,705 top-vs-top games (six teams >=1800) against our 2,435, same measure:
+```
+band        TOP-vs-TOP    OURS         reach r1000: 11.9% vs 37.2%
+r0-150         20.7%      23.3%  <-- WE ARE MORE DECISIVE EARLY
+r150-200       18.7%      10.3%
+r200-300       38.0%      16.6%
+r300+          70.2%      34.4%
+```
+**Nothing in this ruleset prevents late conversion.** This is the first Loki
+direction today with a POSITIVE field result behind it rather than only a
+refutation of the alternative.
+
+**MY PREDICTION, WRITTEN BEFORE THE BATTERY — and it is SHARPER than research's,
+which is the point of writing it down now.** Research predicts `LATE_TURRET_ON`
+moves the metric and `LATE_AMMO_ON` alone does not. I accept the second half and
+**split the first**, because Thor already ran the experiment research's version
+does not distinguish:
+```
+LATE_AMMO_ON alone                      -> NO EFFECT.  Ammo without turrets to
+                                           fire it is r180 again (I made that
+                                           exact error this morning).
+LATE_TURRET_ON alone (home band)        -> NO EFFECT, and possibly NEGATIVE.
+                                           THIS IS THOR: turrets on the home
+                                           band bought zero cores killed in 10
+                                           matched games and MORE core deaths.
+                                           Each is also +20 pts of GLOBAL scale.
+LATE_TURRET_ON + FORWARD_PLACEMENT_ON   -> THE ONLY COMBINATION THAT SHOULD MOVE
+                                           IT. "Where the turret stands is the
+                                           doctrine, not what it is."
+all three                               -> best, if the economy carries the scale
+```
+**If `LATE_TURRET_ON` alone moves it, my Thor explanation was wrong and I want
+that on the record as a failed prediction.** If forward placement is required,
+the placement census is confirmed causally and not just correlationally.
+
+**COST METRIC ADOPTED (research's suggestion, and it is a good one):** the
+ablation reports **harvester and conveyor counts and delivered titanium** as
+COSTS, not only turret counts. Each late gunner is **+20 points of GLOBAL scale
+on everything bought afterwards** (my probe today), so **LOKI-3's own economy is
+the most likely thing to kill it** — that is thor_r1's failure mode wearing a
+gunline.
+
+**ONE METHODOLOGICAL PUSHBACK, offered as a refinement not a blocker.** Research
+states the confound (top-vs-top has two strong teams; our games at most one) and
+argues the r0-150 row is an internal control. **There is an alternative that
+explains BOTH rows at once: our early hazard may be inflated by WEAK opponents
+dying fast, while the games surviving to r200 are disproportionately the strong
+ones we cannot kill.** That is a mixture artifact, not a doctrine gap, and the
+league table alone cannot separate them. **What rescues it is this morning's
+STRENGTH-CONTROLLED table**, which shows the same shape entirely within
+opponents >=1550 (ratio ours/theirs: 1.54 -> 1.00 -> 0.62 -> 0.24). Two
+independent analyses agreeing on the shape is much stronger than either alone.
+**Asked for the clean version: our games restricted to >=1800 opponents, same
+hazard measure, against top-vs-top.**
+
+**"THE GRIND POCKET IS A SYMPTOM, NOT A STRATEGY" — ACCEPTED, AND IT DOES NOT
+UNSHIP ANYTHING TODAY.** We reach r1000 in 37.2% of games against their 11.9%.
+Any future plank justified by "improves our r1000 tiebreak position" is
+optimising the consolation prize. **But the grind is 26-49% of games and real
+Elo, so this reframes the ROADMAP, not the live bot.**
