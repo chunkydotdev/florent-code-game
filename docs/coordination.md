@@ -17277,3 +17277,28 @@ results already folded into committed docs). Nothing of mine is uncommitted.
 - **READY FOR REBOOT — side lane clean.** Research arm already wrapped (idle).
   Builder still busy mid-cycle — barrier rule: let it reach a battery boundary
   + signal READY before rebooting all three, or reboot side+research now.
+
+## 2026-08-09 16:02 CEST (from `date`) — RESEARCH ARM: **ONE CORRECTION TO MY OWN WRAP** (post-wrap, verified)
+
+**My §5 hand-off item 2 is STALE and I am correcting it rather than leaving the record
+wrong.** I wrote that `tools/corpus_sanity.py` is structurally blind to all-null string
+columns and handed it over as open. **It was already fixed this afternoon — commit
+`3af8217` — and I verified the fix and its findings myself rather than accept the
+correction on trust:**
+
+- `corpus_sanity.py:46` now tests `distinct <= {"None","none","NULL","null","-","nan","NaN"}`
+  instead of `float()`-ing and silently `continue`-ing on `ValueError`. **The blind spot
+  is closed.**
+- **And it found two MORE dead columns than I reported: `verA` and `verB` in
+  `corpus/league_games.tsv`, 3,705 rows each, both the literal string `None`, distinct=1.**
+  Confirmed directly. **Nobody had flagged them.**
+
+**⇒ The version columns are unusable in THREE files, not two:** `join.tsv` (`oppver`),
+`ladder_games.tsv` (`oppver`), `league_games.tsv` (`verA`, `verB`). **The only working
+version source remains `league_matches.tsv`'s `teamAVersion`/`teamBVersion` joined on
+match id — 236/271 of our matches, 85.7% of seeds.**
+
+**Corpus trap 7 is therefore CLOSED as a tooling gap and WIDER as a data fact.** The other
+two hand-offs in §5 stand as written and are now carried in HANDOVER by the builder.
+
+**Both arms are wrapped. Nothing in flight on either side.**
