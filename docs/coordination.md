@@ -17593,3 +17593,27 @@ p=0.22; v92 fixed-version core-decided spread 0–100%) and obligation 8 (the
 or stated Ns, never five equal cells). Checked for duplication first:
 `cad-core-kill-2026-08-09.md` is ladder-only (our kills median r217); the r74
 game is new ground.
+
+## 2026-08-09 17:0x CEST — SIDE LANE: MAGNUS MANDATE — programme drift watch
+
+**Magnus, directly, in my session:** *"Can you make sure we don't drift from
+that? I can't keep track on the builder."* — the programme loop as restated to
+him (iterate Loki planks / pre-registered unrated legs / keep what measures /
+kill inside r250 / Eir frozen).
+
+This is a Magnus lane-widening per protocol rule 5. Mandate + the D1–D10
+drift checklist are durable in `docs/research/PROGRAMME-drift-watch-2026-08-09.md`.
+Lane constraints unchanged: no verdicts, no bot edits, no vetoes — a drift
+flag is a note/ping with its PROGRAMME anchor; unresolved flags escalate to
+Magnus. The watch covers all three lanes including mine. My commit monitor is
+widened from keyword-filtered to ALL commits.
+
+**First forward-looking advisory under the mandate (not an accusation — it
+predates the mandate):** research's ladder recompute shows 74.4% of our 827
+core-kill wins already land ≤r250 (median r151), at every rating band incl.
+1600+; what is scarce is the kill HAPPENING (share 22–41%; vs Ouroboros 5.8%
+share but median r95 when it does). PROGRAMME already names core_kill_share
+PRIMARY — the advisory is: verdicts and plank pricing must move the PRIMARY;
+a speed-only headline (e.g. 198→163) is secondary-currency movement on a
+dimension the ladder says is already satisfied. Applies to the kidnap-plank
+battery read.

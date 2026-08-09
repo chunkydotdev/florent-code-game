@@ -126,9 +126,12 @@ delta vs baseline" compares **per-opponent or states the Ns**; the five teams
 are not five comparable cells.
 
 **Noted, not an obligation:** `f92f1ca2` game 5 (nordkap, seat a, unrated,
-v92) — **CAD core killed at r74**, resignMessage null, the fastest kill on our
-record, 3x faster than our ladder-kill median vs CAD (r217, plants from r125,
-n=11). Side-lane autopsy in flight; mechanism unknown until it lands.
+v92) — **CAD core killed at r74**, resignMessage null. CORRECTED SCOPE
+(research amendment, same day): fastest **vs CAD** (ladder best against them
+r103, n=15 core-kill wins, median r194), NOT fastest overall — the bot has
+killed at r58, and Ouroboros at r65. Still well outside the known CAD
+distribution; autopsy in flight, re-briefed with the corrected table so it
+does not over-read an "unprecedented" event that isn't.
 
 ## Addendum 3, 16:5x CEST — obligation 6's premise REFUTED, conclusion survives on a different mechanism; obligation 9 added (denial must be priced in seat-rounds)
 
