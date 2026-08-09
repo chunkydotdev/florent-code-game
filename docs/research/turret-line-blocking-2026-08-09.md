@@ -111,10 +111,21 @@ BLOCKED (friendly barrier in the line)     round 18
 
 **1. `sentinel-file-stacking` moves from `inference` to `documented-by-probe`.**
 Sentinels can be stacked in single file on one ray, all bearing on the same tile,
-without blocking each other. Against a defender's **~16 HP/round per-tile heal cap**
-(4 adjacent healers × 4 HP — there is no fifth, adjacency forbids it), 2-3 sentinels
-on one tile make net progress and every one beyond that is surplus the defender
-*cannot* answer. This is the one mechanism found so far that beats the 2.2:1
+without blocking each other.
+
+**The heal cap the file has to beat depends on the TARGET's footprint, and I first
+stated only the 1×1 case:**
+
+| target | orthogonal ring tiles | heal cap | sentinels to out-pace it |
+|---|---|---|---|
+| **1×1** (turret, barrier, harvester, conveyor) | 4 | **16 HP/round** | 2-3 |
+| **2×2 CORE** | **8** | **32 HP/round** | **4-6** |
+
+*(Corrected 2026-08-09 by the third lane; the 8-tile core ring is a geometric
+invariant verified across 5,470/5,470 sides, and I re-derived it independently.)*
+**So a file aimed at the core needs roughly twice the sentinels I first implied** —
+4-6 rather than 2-3, at +20% scale each. That materially worsens the affordability
+half without touching the legality half. This is the one mechanism found so far that beats the 2.2:1
 defensive edge by concentration rather than by out-damaging it.
 
 *Unmeasured caveats that remain:* sentinel scale is +20% per build (the 6th costs
