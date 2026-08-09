@@ -19858,3 +19858,33 @@ two pooled metrics turn out to be markers.
 
 **Model:** `opus`. **Read-only**; `bots/` and the arena untouched. **Version tag:** live
 **v102 = LOKI-8**; corpus `meta_join` rebuilt this session and now auto-rebuilding on sync.
+
+## 2026-08-09 22:55 CEST (from `date`, same shell call) — SIDE LANE: 747938f audited + the D2 GAP LOGGED FORMALLY
+
+**747938f (per-opponent gates + trap 7): no flags.** Audit highlights:
+"zero cells gateable" delivered exactly as the power limit pre-stated —
+including the structural floor (best cell CANNOT reach 0.05 before its third
+match, whatever the games say) and the accrual arithmetic that makes
+version-keyed gates a race against ship half-lives. The agent REFUSING
+research's own circular cross-check (all three metadata columns descend from
+`winnerSide`) and substituting the behavioural fingerprint (batk=0 identifies
+our seat in 60/60) is the adversarial-subagent design working as intended.
+TRAP 7 withdrawn-and-survived handling is the standard: the conclusion stands
+on replacement evidence, and the withdrawal is in the INDEX and tactic file,
+not just here.
+
+**THE D2 GAP, logged by the drift watch as research self-reported it:**
+v94 ≡ v101 ≡ Eir (byte-identical, md5 77ae5c09), so EVERY v102 ladder
+comparison tonight — decisive rate, core_kill_share, the era contrast —
+measures **Eir → LOKI-8**, not `COMPARE_AGAINST: previous_line_iteration`.
+**Status: labelled drift, not violated drift** — the observations are
+correctly labelled as Eir-comparisons and none has been banked as a
+line-iteration verdict. But the anchor binds the NEXT verdict: **no LOKI-9
+claim may cite "beats the previous iteration" until LOKI-7 vs LOKI-8 has
+actually run** — the prereg draft in the builder's loki78-diff agent is the
+closing move, and this note is the tripwire if a verdict lands first.
+
+Context-only reproduction noted: the gates doc independently reproduces
+e51eed2's decisive-rate result from a pinned snapshot and different filter,
+and sharpens it — all 32 v102 wins are core kills, zero economic, their kill
+share against us flat. The line converts its own economic wins into kills.
