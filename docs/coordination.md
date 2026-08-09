@@ -14855,3 +14855,51 @@ decoders + aggregation examples are PRESERVED at
 (commit 1966026). Successor boot chain: auto-memory (third-lane pattern is in
 florent-two-session-protocol) → this file's tail → the 8 deliverables
 (`*-2026-08-09.md` in docs/research/). Everything else in the wrap block stands.
+
+## 2026-08-09 12:17 CEST (from `date`) — RESEARCH ARM: **S24 BOOT + IN-FLIGHT**
+
+**Version tag:** live **v91 "Eir 9c hivethaw"** = `bots/_v100hf`, tree `4558be91`,
+single-file. Ladder at last tape row 1557 @ 519. Read this session:
+`docs/coordination.md` (tail), `docs/spitball.md` (tail), `HANDOVER.md` (s24 block),
+`docs/research/tactics/INDEX.md`, `docs/research/corpus-howto.md`,
+`docs/research/builder-death-attribution-2026-08-09.md`, `corpus/*.tsv`.
+
+**BOOT CHECKS, run not relayed.**
+- `tools/audit_trigger.py`: **1/4 tripped — note:verdict 1.53** (26 analysis / 17
+  decision rows of the last 50). Same tripwire, same value class as s23 boot, where
+  it was retrospectively judged **right**. Flagged to builder and to Magnus per the
+  boot contract. **Not retuning it** — s23 open item #3 says neither arm unilaterally.
+- `tools/corpus/sync.py`: archive **5081** replays, **5041** already decoded,
+  **0 new** — the corpus is current, not stale. +5 ladder_games rows.
+  Reconciliation **1325/1325 = 100.0000%** against the replays' own winner field.
+- Peers listed: `florent-code-game-e3` (handshake sent) and one Remote Control
+  agent (`Research multi-step tactics for Loki optimization`) that is not mine.
+
+**IN-FLIGHT (this lane) — announced before spawning, per anti-collision rule 1:**
+1. **`tactics/` sweep, background subagent, model `opus`** — wheel is fully swept, so
+   per the INDEX rule this is a **re-aim of topic 5 at a measured surprise**: the
+   enemy gunner planted inside our base (65.3% of our home builder deaths). Question:
+   how do comparable leagues treat an *offensive structure planted in your own
+   territory*, on both sides of it. Lands in `docs/research/tactics/`.
+2. **The repeatability test behind HANDOVER queue #1**, done by me, inline, from
+   `corpus/builds.tsv` + `join.tsv` — **no decoder rebuild, no replay downloads.**
+
+**WHY #2 IS A CHECK AND NOT AN ECHO.** Queue #1 is stated as *"enumerable, not
+behavioural: name the >=5-kill tiles per map/seat and cover them."* That sentence
+has an unstated premise: **that the tile set REPEATS across games on the same map and
+seat.** The published attribution counts 1,559 distinct **(game, side, shooter tile)**
+killers — a *per-game* grain, which cannot establish cross-game repeatability either
+way. If the tiles repeat, the builder gets a literal table and the "specification, not
+doctrine" framing holds. **If they do not repeat, queue #1 is behavioural after all
+and a hardcoded tile list would be a fitted constant** — the exact shape that has
+burned this project before. I am testing the premise before anyone builds on it.
+
+**Note on provenance:** the attribution deliverable's decoder lived in the third
+lane's session scratchpad and **is gone**. I am deliberately NOT rebuilding it —
+enemy gunner **plants** are already a first-class corpus row (`builds.tsv`, with
+`d2_enemy` = distance to the core that is ours when the builder is the opponent), so
+the repeatability question is answerable at full corpus n for the cost of a
+`csv.DictReader`. Where I need the *kill* grain rather than the *plant* grain I will
+say so and mark the limit rather than infer across it.
+
+**Zero replay downloads so far this session.** No arena, no bot edits, no verdicts.
