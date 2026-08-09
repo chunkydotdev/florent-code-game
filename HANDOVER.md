@@ -1,78 +1,59 @@
-# Session 25 boot block (builder) — written at the s24 wrap, 2026-08-09 16:0x CEST
+# LIVE: **v102 = LOKI-8** — the first Loki ship. 2026-08-09 ~20:4x CEST.
 
-## ===== READ `PROGRAMME.md` FIRST. IT IS A DIRECTIVE AND `tools/gate.py` ENFORCES IT. =====
+## ===== READ `PROGRAMME.md` FIRST. `tools/gate.py` ENFORCES IT. =====
 ## Then `docs/builder-method.md`, then this. Before any battery: `tools/gate.py`.
 ## Before any ship row: `tools/preflight.py <dir>`.
-
-## ===== THE PROGRAMME CHANGED TODAY. THIS IS THE MOST IMPORTANT LINE IN THE FILE. =====
-## **LINE: LOKI. Eir is FROZEN on the slot and gets NO MORE PLANKS.**
-## Magnus, 2026-08-09: *"Loki should be our main focus now, leave Eir behind to
-## hold the lines while we build something that has a shot at actually ranking
-## high"* / *"Eir is what, iteration 50+, Loki v1 was never supposed to be
-## shippable... we need a lot of iterations to make Loki stand a chance"* /
-## *"Loki is supposed to be an entirely separate bot from Eir"* / *"the absolutely
-## nastiest and dirtiest tricks... kill the other team early."*
-## **Loki iterations are measured against the PREVIOUS LOKI, never against Eir.
-## Win rate is NOT the verdict — core-kill share and time-to-core-kill are.**
-## `gate.py` FAILS an off-line battery; `--off-programme` overrides with a trace.
+## **SUBMIT ONLY VIA `tools/submit_clean.py`** — bare `fcode submit` zips the whole
+## dir and shipped `PREREG.md`/`DESIGN.md` to the platform on v94 and v95-v100.
+## A doc-bearing submission is a drift flag (Magnus, 2026-08-09).
 
 ## ===== STATE =====
-##   LIVE: **v94 = `bots/_v115dodge`** (the v92 "Eir 10 dodge" tree, re-uploaded
-##   after a slot swap), **treehash 6ae6871c**, submission `d7a0cd62`.
-##   **1580 @ 542, rank #28/115** at wrap — up from 1531 @ 525 when it shipped.
-##   ROLLBACK TARGET: itself. The pre-v92 fallback is v91 `bots/_v100hf`,
-##   tree 4558be91, submission `9850f196`.
-##   **`bots/_v118loki2b` is submitted as v93 and is NOT ACTIVE.** It held the
-##   slot for 18 seconds for one unrated probe and was rolled off.
-##   **Last-10 read 2W-8L at wrap while the rating rose — do not read the W/L
-##   strip as a trend; the tape and the keeper are the instruments.**
+##   LIVE: **v102 = `bots/_v124loki8`**, treehash **2dad5a2a**, submission
+##   `ff270a6c`. Activated at **1577.5 @ rank 30/116**.
+##   **ROLLBACK TARGET: v101 (`0eccbedf`) = `bots/_v115dodge`** — byte-identical
+##   to the retired v94 (`md5 77ae5c09`) but doc-free. Eir is the fallback.
+##   Magnus approved the ladder explicitly after nine iterations benchmarked
+##   unrated: *"alright, lets get loki on the ladder"*.
 
-## ===== THE LOKI CURVE, WHICH IS THE WHOLE PROGRAMME NOW =====
-##   LOKI-1  `bots/_v105loki1`  (multi-file: main/raid/eco/doctrine)
-##       vs v92, foreign pool, 384 paired: win rate NULL (+3.1pp, p=0.22),
-##       **core-kill share 91% vs 61%, paired sign test p=5.2e-09, median game
-##       205 vs 335.** At iteration ONE against a 46-iteration line.
-##   LOKI-2  `bots/_v117loki2`  committed opening. First forward plant r120 -> r21,
-##       but delivered ONE turret, not the recipe's three.
-##   LOKI-2b `bots/_v118loki2b` **CURRENT BEST ON THE LINE.** treehash ac1e70c3.
-##       vs LOKI-1: median core-kill turn **198 -> 163**, paired 74 faster /
-##       48 slower, **p=0.023**, -26 turns. Win rate -2.1pp (null), 0 crashes.
-##       **It is a DEFECT FIX:** `SLOT_FWD_GUN` was written only as `read+1` and
-##       counted rubble, so three destroyed forward sentinels closed the arm
-##       PERMANENTLY. Replaced with a live census by a raider at the ring.
-##
-##   **UNRATED PROBE vs OUROBOROS (match `d4db288e`): 1-4, same as v92's 1-4 —
-##   but 5/5 games core-decided against v92's 3/5, and our win moved from an
-##   r1000 tiebreak to a CORE KILL AT r211.** My pre-registered map prediction
-##   failed on every clause. **Median loss round 542 -> 356: we die faster too.**
-##   Seat flipped (v92 seat B, Loki seat A) so nothing is cleanly attributable.
+## ===== WHY IT SHIPPED — the number is core_kill_share, NOT win rate =====
+##   MATCHED vs v94 Eir (same opponent, same 5 short maps, n=5/cell), five
+##   opponents spanning 540 Elo:
+##     Ouroboros -62   Eir 1/5   LOKI-8 4/5
+##     CtrlAltDefeat 0 Eir 2/5   LOKI-8 4/5
+##     Lunds -28       Eir 2/5   LOKI-8 3/5
+##     Big O +200      Eir 2/5   LOKI-8 3/5
+##     Jython +337     Eir 0/5   LOKI-8 1/5
+##   **POOLED 7/25 = 28.0% vs 15/25 = 60.0%, Fisher p = 0.045, ahead in 5 of 5
+##   cells, no ties, no reversals.**
+##   **EVERY GAIN ON THIS LINE WAS A REMOVAL:** rush off (LOKI-4), all builder
+##   melee silenced (LOKI-5), three arrival defects fixed (LOKI-6), raiders
+##   exempt from the home heal + melee recall (LOKI-8).
 
-## ===== QUEUE, IN PRIORITY ORDER =====
-## 1. **THE KIDNAP PLANK.** A launcher that throws an ENEMY builder onto a tile
-##    covered by OUR OWN gunner's ray. **Opportunity VERIFIED from the corpus:
-##    10.05%, and it needs no behavioural bet from the opponent** (unlike
-##    throwing them into *their* turret's line, which needs them to fire).
-##    Kidnapping generally: 20.65% of pre-r250 enemy-builder-rounds have a
-##    launcher site we could have built on, and **0 of 1,355 games have none.**
-##    The field uses ~70% of all throws for defensive disposal; nobody attacks
-##    with it. Measure vs **LOKI-2b**.
-## 2. **ONE BODY ON THEIR RING, EARLY.** Corpus hazard peaks at ONE hostile body
-##    (2.24% -> 4.77%, 2.1x, CIs disjoint) and DECLINES after. **Do NOT build
-##    "close the ring" — our 2.69/8 may already be past the productive point,
-##    and the field's all-time record is 6 bodies, four times.** Research's own
-##    caveat travels: reverse causation cannot be excluded, so **2.1x is an
-##    upper bound, and the round-matched control is NULL at R=50.**
-## 3. **The r211 lighthouse conversion has no mechanism story.** Map size is
-##    refuted (1.00x) and lighthouse is one of our worst early-kill maps (10.3%).
-##    Either find the mechanism or treat the win as noise. **Do not build on it.**
-## 4. **The map/opponent gate on the rush.** I declined it and set the condition
-##    myself: build it once the rush is MEASURED so it is a choice between two
-##    known quantities. **LOKI-2b now has a verdict, so this is DUE.** The side
-##    lane is holding me to it so it does not quietly become never.
-## 5. **Loss-autopsy loop** (side lane, `docs/research/loss-autopsy-method-*`):
-##    unrated fixture -> decode -> pre-registered per-map/seat flip list -> build
-##    -> re-run the SAME fixture -> did the predicted games flip. **The non-flips
-##    are the combination answer, empirically.**
+## ===== CAVEATS THAT MUST TRAVEL WITH THE 60% =====
+##   * **Dose-response is real: 75% at bracket, 60% at +200, 20% at +337.** The
+##     advantage DECAYS with opponent strength. Never quote 60-86% without the band.
+##   * **Short-map fixture only.** LOKI-5 fell 80% -> 60% on the long band.
+##   * **n=5 per cell**, seats varied per leg but were NOT controlled.
+##   * **LOKI-8 vs LOKI-7 was never run head to head** and at these n they are
+##     indistinguishable. This is the best-TESTED arm, not the best arm.
+##   * Two independent sources say our-tree-vs-our-tree numbers are biased
+##     OPTIMISTIC (~2x), not merely noisy. The ladder is the real read.
+
+## ===== WATCH THE SHIP =====
+##   Rating at activation **1577.5 @ #30**. The slot-swap rule is the stop-loss:
+##   arms at >=8 matches, net <= -21 frees the slot. Monitors (elo_logger,
+##   match_watcher, opp_watcher, replay_archiver, keeper) are alive and survive
+##   session resets. **If it bleeds, roll to v101 — that is Eir, unchanged.**
+
+## ===== QUEUE =====
+## 1. **Watch v102 on the ladder.** First real field read the Loki line has had.
+## 2. **Per-opponent gates, not pooled win rate.** Pooling hides everything:
+##    every >=1750 team kills us at 0-12% while the 1660-1710 band runs 22-38%.
+## 3. **LOKI-7 vs LOKI-8 head to head** — never run; the ship picked the
+##    better-tested arm, not a measured winner.
+## 4. **The long band.** The whole line is tuned and measured on short maps.
+## 5. Reverse-engineer the 1,131 top-tier replays we already hold (documented
+##    path: BC2026 2nd place got its constants exactly this way).
 
 ## ===== DO NOT REBUILD — backed by the ORGANISERS' OWN PATCH NOTES =====
 ## **Our engine is a re-tuned descendant of Cambridge Battlecode 2026; its

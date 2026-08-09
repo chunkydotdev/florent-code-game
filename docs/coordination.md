@@ -18467,3 +18467,64 @@ invisible because nothing ever looked at it.** The others were instruments that
 could not fail; this one was an artifact nobody had opened. **The fix is the
 same in both cases — open the box and print what is inside** — which is why the
 tool prints its manifest on every run rather than only on request.
+
+## 2026-08-09 20:4x CEST (from `date`) — BUILDER: **SHIP ANNOUNCEMENT — v102 = LOKI-8 IS LIVE. The first Loki ship.**
+
+**Magnus, verbatim: *"alright, lets get loki on the ladder"*** — after nine
+iterations benchmarked entirely on unrated legs.
+
+**LIVE: `v102` = `bots/_v124loki8`, treehash `2dad5a2a`, submission `ff270a6c`.
+Activated at 1577.5 @ rank 30/116.**
+**ROLLBACK TARGET: `v101` (`0eccbedf`) = `bots/_v115dodge`** — byte-identical to
+the retired v94 (`md5 77ae5c09`), doc-free. **Eir is the fallback and it is
+unchanged.**
+
+### THE VERDICT IS DENOMINATED IN THE PRIMARY CURRENCY
+Matched against v94 Eir — **same opponent, same five short maps, n=5 per cell**,
+five opponents spanning **540 Elo**:
+
+| opponent | Elo gap | Eir | **LOKI-8** |
+| --- | ---: | ---: | ---: |
+| Ouroboros | −62 | 1/5 | **4/5** |
+| CtrlAltDefeat | ~0 | 2/5 | **4/5** |
+| Lunds Stallions | −28 | 2/5 | **3/5** |
+| Big O | +200 | 2/5 | **3/5** |
+| Jython | +337 | 0/5 | **1/5** |
+| **pooled** | | **7/25 = 28.0%** | **15/25 = 60.0%** |
+
+**Fisher two-sided p = 0.045, ahead in 5 of 5 cells, no ties, no reversals.**
+Win rate is **not** the verdict (`WIN_RATE_IS_VERDICT: no`).
+
+### WHAT SHIPPED, AND THE PATTERN IS THE FINDING
+**Every gain on this line was a REMOVAL:** rush OFF (LOKI-4), **all builder
+melee silenced** (LOKI-5), three arrival defects fixed (LOKI-6), raiders exempt
+from the home heal and melee recall (LOKI-8). **The two iterations that tried to
+ADD something both failed** — LOKI-3 (kidnap) held at 16.7% treatment against a
+30% bar, LOKI-9 (garrison less) refuted at 40% vs 60%.
+
+Mechanism, **as a hypothesis and labelled so**: acting and moving are mutually
+exclusive, so every removed action returns a **move**, and the ladder says
+**arrival** is the scarce quantity. Corroborating: melee is **2.5%** of what
+kills a top-tier core, and LOKI-5 went 3-2 vs CAD landing **zero** builder
+attacks. **No ablation isolates "rounds returned to movement" from the titanium
+saved.**
+
+### CAVEATS THAT TRAVEL WITH THE 60%, AND MUST NOT BE DROPPED
+- **Dose-response: 75% at bracket, 60% at +200, 20% at +337.** It decays with
+  opponent strength. **Never quote 60–86% without naming the band.**
+- **Short-map fixture only** — LOKI-5 fell 80% → 60% on the long band.
+- **n=5 per cell**; seats varied per leg but were not controlled.
+- **LOKI-8 vs LOKI-7 was never run head to head.** The ship picked the
+  **best-tested** arm, not a measured winner.
+- Two independent sources now say our-tree-vs-our-tree numbers are biased
+  **optimistic (~2×), not merely noisy.** The ladder is the real read.
+
+### SHIPPED CLEAN
+Via `tools/submit_clean.py`. **Artifact verified after upload: 4 `.py` files,
+ZERO documents** — after v94 and v95–v100 were found shipping `PREREG.md` and
+`DESIGN.md` to the platform. **Bare `fcode submit` is now a drift flag.**
+
+### THE WATCH
+Slot-swap rule is the stop-loss: **arms at ≥8 matches, net ≤ −21 frees the
+slot.** All five monitors alive and they survive session resets. **If it bleeds,
+roll to v101.**
