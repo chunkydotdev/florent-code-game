@@ -192,6 +192,128 @@ exception permanently destroys that unit for the match.
 
 | **16** | **RE-AIM at Magnus's asymmetry question — "we are rich downward and empty upward."** We sit at **1603.6**; our whole evidence base is against teams at or below us, while the top runs **2102 / 2040 / 2000 / 1977 / 1966**. *(A) How did competitors beat opponents STRONGER than themselves? (B) Did a league's top tier separate itself by doing MORE of the same, or something DIFFERENT IN KIND? (C) What did teams do when their own test pool was too weak?* | **SWEPT** (s25). **21 files. 150 verbatim, 18 near-misses corrected, 2 cut/held.** **(C)'s expected negative is REFUTED.** | 2026-08-09 | [sweep 16](2026-08-09-sweep-16.md) |
 
+| **17A** | **RE-AIM at the incidence cut** — `KILL_WINDOW_RND: 250` is **not** our binding constraint (74.4% of our core-kill wins already land inside it). *What raised the SHARE OF DECISIVE GAMES elsewhere; what separates a bot that converts from one that grinds; the commit/abort decision; and did organisers change rules to raise decisiveness?* | **SWEPT** (s26). **23 files. 176 strings verbatim, 0 unverified, 0 cut.** **Falsifies sweep 15's round-number claim.** Queued one measurement which I then ran — see below. | 2026-08-09 | [sweep 17A](2026-08-09-sweep-17a.md), [pay-for-the-capture-with-no-economic-return](pay-for-the-capture-with-no-economic-return.md) |
+| **17B** | **RE-AIM of topics 5 + 8 at the weapon-mix inversion** — ≥1700 cores die to gunner 53.1 / sentinel 44.4 / melee 2.5; ours is 22.7 / 69.2 / 8.1. *Cheap-close vs expensive-far; what decided the mix; superlinear costs; friendly line-blocking; and **is the top tier's gunner share a mechanism or a marker?*** | **SWEPT** (s26). **21 files + summary. 92/94 spans verbatim** (2 are quotations of the brief, labelled); **summary separately audited, 1 corrected.** **Verdict: mostly MARKER** — independently agreeing with the corpus-side pricing deliverable. **Corrects sweep 8.** | 2026-08-09 | [sweep 17B](2026-08-09-sweep-17b.md), [the-turret-mix-is-not-a-cost-decision](the-turret-mix-is-not-a-cost-decision.md) |
+
+### Sweeps 17A + 17B (s26) — the weapon-mix question is answered MARKER by two independent paths, and the incidence question turns structural
+
+**⚠ FIRST, THE CORRECTION THAT REACHES BACKWARDS INTO THIS INDEX.** The **53.1 / 44.4 / 2.5**
+figure that aimed 17B — from `../upward-pricing-top-tier-2026-08-09.md`, **my own s25
+deliverable** — **is a MIXTURE ARTIFACT.** Across 53 third-party teams,
+`corr(rating, gunner kill share) = −0.025` and **exactly 1 of 22 teams lands within 5 points
+of the pooled 53%**: the tier contains incompatible doctrines that average to it (**Pivot
+100% gunner at 1956; Clankers 99.8% sentinel at 1984**). **What tracks rating is core-kill
+rate itself, r = +0.767.** The source doc is amended in place.
+**⇒ Any earlier claim in this library premised on "the top tier prefers gunners" does not
+survive. Doctrine-conditional claims — what a Clankers-like sentinel doctrine does forward —
+do.**
+
+**AND THE SENTINEL IS THE CHEAPER WEAPON, three ways.** The organisers' primary says it
+outright — *"per point of damage a Sentinel is slightly cheaper to run than a Gunner"*
+(`../reference/official-docs.md`, verified verbatim). Realised lifetime output over **2,228
+sentinels / 8,205 gunners**: **0.652 vs 0.678 Ti per damage point, cheaper in every band
+including ≥1900.** And 17B's independent arithmetic: **ammo 0.5714 vs 0.5556 Ti/damage — a
+2.9% gap**, with the **sentinel the higher-DPS unit at 9/round against 7** (*"18 every 2
+rounds against 7 every round"*). **Build cost for equal firepower: 9 gunners 324 Ti vs 7
+sentinels 336 Ti.** Everything is within ~10% and the two biggest gaps point opposite ways.
+**⇒ If the gunner mix is a mechanism it is GEOMETRIC, not economic.**
+
+**THE ONE SURVIVING MECHANISM, and it is a siting predicate rather than a quota.** A
+gunner's line *"stops at the first targetable tile (a builder bot or a building) in its
+facing direction"* and reaches **3 tiles cardinally** — so a gunner core-kill **requires a
+≤3-tile stand with a totally clear axis.** It measures the approach, not the weapon.
+**At ≤3 tiles with a clear line, the sentinel's premium is property you are not using.**
+
+**WHAT WE ARE ACTUALLY WRONG ABOUT IS SITING, and the numbers are not close.** Our sentinels
+sit at median **d²=18 from our own core, 30.7% forward, firing at 13.5% of reload ceiling**;
+comparable builders site them at **d²_own 53-181, 63-93% forward**; **Clankers runs 74.4%
+forward at 46.4% of ceiling.** And the under-build story dies on one row: **`sporks`, #1 at
+2082, builds 1.99 gunners per side-game — we build 1.95.**
+
+**(D) FRIENDLY LINE-BLOCKING IS A CLEAN NEGATIVE IN EVERY COMPETITIVE LEAGUE** — Screeps,
+Terminal, Code Royale, 22 Battlecode postmortems, the RTS canon. The only two precedents are
+colony sims (Dwarf Fortress staggering 3×3 siege engines; RimWorld's wall/barricade mix).
+**⇒ Our gunner's self-blocking is close to unique, and the transferable consequence is
+blunt: two gunners in file are one gunner and one 20 Ti barrier.**
+
+**(C) NOBODY PRICES THE Nth STRUCTURE HIGHER** — Screeps uses per-RCL count caps with flat
+towers, Terminal is flat, Battlecode uses spend caps or upgrade tiers. **One new build idea
+falls out of our own rule instead:** our scale *"decreases again when an entity is
+destroyed"*, so **demolish before you build** — a replacement sentinel prices at
+`floor(1.8×30) = 54` instead of `60`, and the discount applies to **every** build in the
+window. **⚠ Rests on one unprobed fact: whether `destroy()` updates scale within the same
+round.** Builder probe, not a library claim.
+
+**(B) FOUR DECIDING VARIABLES, AND RANGE IS NOT ONE.** Lanchester (AIIDE-15): *"the squared
+law has nothing to do with range – what is really important is the rate of acquiring new
+targets."* Its default α = dmg × HP gives **gunner 175, sentinel 360 — the sentinel 1.37×
+better per titanium, CONDITIONAL ON BOTH FIRING**, which is exactly the condition our 13.5%
+duty cycle fails.
+
+**17A'S STRUCTURAL FINDING, and it is the deepest thing either sweep produced.**
+**AN ECONOMICALLY-CORRECT EVALUATOR NEVER FINISHES.** Jay Scott adds *"a small bonus in the
+move generator for captures of enemy planets… to allow it to take 0-growth enemies if
+nothing else beckons"*; Steamhammer's scourge are hard-coded not to waste themselves on
+floating buildings — **correct efficiency, and exactly what blocked the kill.**
+**This lands on our ruleset mechanically: killing the enemy core returns no titanium, no
+harvester and no tiebreak key, and a failed attack is a 2.2:1 donation. A return-priced bot
+is CORRECT to never commit.** The documented converter is a **discrete mode switch that
+REPLACES the economy policy** (Steamhammer's `enemySeemsToBeDead()` short-circuits the whole
+tech planner; BC2020's "crunch" is the same structure sized as a rate) — **and the
+documented failure is doing it as a weight.**
+
+**SWEEP 15'S "NO WINNING BOT BRANCHES ON A ROUND NUMBER" IS FALSIFIED.** robostac, 1st in
+Code Royale: *"For the last 40 turns spend gold as fast as possible"*, *"For the first 50
+turns just send knights"*. **What survives is narrower and better: a clock is a poor ARMING
+trigger and a good DEADLINE/DISARM trigger.**
+
+**DESIGNERS REACH FOR THE MAP, NEVER A SHORTER CLOCK.** BC2020 deleted the score fallback
+outright; **Halite III deleted its 80×80 map while RAISING the turn floor 300→400**; Halite
+II's organisers **vetoed** proposed elimination timers — *"I veto any change related to this.
+Survival is part of the meta"*.
+
+**AND THE FINDING THAT ARGUES AGAINST OUR OWN PROGRAMME, FILED RATHER THAN BURIED.**
+SSCAIT's tiebreak pays for razings; **ours pays for economy.** Slin took 3rd in Planet Wars
+by **deliberately never finishing**. *"Krasi0 was ahead in points, on average, in the games
+that it lost"* — **so every natural proxy for an offensive change is a trap.** Measured on
+our own tape the same evening: **our r1000 tiebreak win rate beats our decisive-game win
+rate by +9.8pp against 1550-1649 opponents and trails it by −7.5pp against <1450 — the sign
+flips monotonically with opponent strength.** **Bounded: selection is the leading
+alternative** (reaching r1000 against a stronger opponent already selects for games we were
+not losing) — **`UNSEPARATED`** — and **≥1750 is EMPTY: we have never played a game to r1000
+against the tier we must beat.**
+
+**A CORRECTION 17B MAKES TO SWEEP 8, which this INDEX calls "the most decision-relevant of
+the set".** Sweep 8 presents **Agade's** site-scoring formulas as the encoding of his
+doctrine. The formulas are genuine and re-verified — **but they sorted WHICH SITES, and that
+branch was *"very often this was overridden"* by a "Knight danger" fallback that could only
+build towers**, which Shingy (9th) wrote counters to (*"This was mainly for Agade's strategy
+of covering the map with towers."*). **"Forward-ness positive" stands as a site-choice
+weight; it must NOT be upgraded into why his bot was tower-heavy.** Sweep 8's other sources
+are untouched.
+
+**THREE NEW METHOD TRAPS — the quote procedure needs two more steps.**
+1. **The glyph trap is per-STRING, not per-document.** JWU's BC2025 PDF has ASCII `'` in
+   *"that's"* and curly `’` in *"wasn't"* **in the same file.**
+2. **Markup inside numerals defeats the literal grep even after whitespace flattening** —
+   CodinGame writes *size `<const>1</const>` tree*; the Screeps wiki stores *'centered'* as
+   `&#x27;`. **The procedure is now: extract → strip markup → decode entities → flatten
+   `\f\r` → grep the literal.**
+3. **JSON-escaped punctuation is a third variant** — Wayback's Kore capture escapes every `+`.
+Plus two auditor artifacts: text between two *adjacent* inline code spans reads as a quote,
+and **two blockquotes with no blank `>` between them concatenate into a string that can never
+match** — indistinguishable from a real failure until inspected.
+
+**GAPS, STATED RATHER THAN PASSED OFF AS COVERAGE.** **Liquipedia produced ZERO verified
+strings in 17A** (HTTP 429 across 6 attempts, 4 user agents, both curl and WebFetch) — **no
+Liquipedia quote appears anywhere in 17A.** **Terminal remains unverifiable** (Cloudflare;
+and its shipped config and the engine's hardcoded fallback are **two different balance
+patches, both live at HEAD**). **RoboCup, Warcraft III tower doctrine, and CodinGame's wider
+catalogue were not swept.** **17B ran NO corpus cut** — the decisive test (distance and
+line-clearance of the killing turret at the killing shot, ours vs theirs) **is not run and
+is not claimed.** Halite III's map/turn edits **carry no stated rationale**; "tuning contact
+density" is 17A's inference and is labelled as such.
+
 ### Sweep 16 (s25) — at a 400-Elo gap, opponent modelling bought nothing and only variance scored
 
 **(A) THE RESULT, and it is the sharpest single data point the library holds on our actual

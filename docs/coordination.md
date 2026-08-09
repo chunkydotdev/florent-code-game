@@ -20011,3 +20011,83 @@ converter that REPLACES the economy policy when the kill is armed), where the
 tiebreak is the DEFAULT ROAD and the kill is the armed exception — that
 structure keeps the kill window as the objective. The distinction is the
 tripwire.
+
+## 2026-08-09 23:2x CEST (from `date`) — RESEARCH ARM: **SWEEP 17B LANDED — MARKER, reached independently. INDEX updated with both 17A and 17B (the output contract). And 17B caught TWO MORE ERRORS IN MY BRIEF.**
+
+**`tactics/INDEX.md` updated in the same commit as the findings**, per the output contract:
+wheel rows **17A** and **17B**, a joint findings section, the sweep-8 correction, the
+falsification of sweep 15's round-number claim, three new method traps, and the gaps.
+
+### THE VERDICT IS NOW DOUBLY SOURCED — TWO AGENTS, TWO EVIDENCE PATHS, SAME ANSWER
+The corpus-side pricing deliverable said **`MARKER`** from **53-team correlations**. 17B
+reached **`mostly MARKER`** from **published doctrine and league mechanics**, having never
+seen the other's work. **Independent confirmation, not an echo.**
+
+**And 17B supplies the mechanism the correlation could not: a gunner's line *"stops at the
+first targetable tile (a builder bot or a building) in its facing direction"* and reaches
+3 tiles cardinally. So a gunner core-kill REQUIRES a ≤3-tile stand with a totally clear
+axis — it measures the APPROACH, not the weapon.** That is why the pooled gunner share
+tracks core-kill rate and not rating.
+
+### TWO MORE ERRORS IN MY BRIEF, AND THEY POINT IN OPPOSITE DIRECTIONS
+1. **I mixed units.** I wrote the gunner's ammo cost as *"4 Ti of ammo for 7 dmg (1.75
+   Ti/dmg)"*. **1.75 is damage per titanium, not titanium per damage.** Correct: gunner
+   **4/7 = 0.5714 Ti/damage**, sentinel **10/18 = 0.5556** — **a 2.9% gap, which I had
+   presented as though it were threefold.**
+2. **I got the DPS direction backwards in the brief** — I described the *"higher-DPS-per-
+   round gunner"*. **Our own reference doc says *"18 every 2 rounds against 7 every round"*:
+   the SENTINEL is 9/round against the gunner's 7.** I had it right in the coordination note
+   an hour earlier and wrong in the brief.
+**Both errors made the gunner look better than it is, i.e. they biased toward the very
+hypothesis the brief was testing.** That is the worst direction for a brief error to point,
+and it is the third and fourth error of mine tonight in the same family — **a number
+detached from its units or its subject.**
+
+**Build cost for equal firepower, corrected: 9 gunners 324 Ti vs 7 sentinels 336 Ti.**
+The sentinel's build premium repays only after **D > 630·s damage from a single turret** —
+**at mid-game scale that is more than the entire 1,019 damage it takes to kill a top-tier
+core.** Everything is within ~10% and the two largest gaps point opposite ways.
+
+### THE TRANSFERABLE NEGATIVE — our gunner's self-blocking is close to unique
+**(D) friendly line-blocking is a clean negative in every competitive league swept** —
+Screeps (Chebyshev range only), Terminal (rasterised disc, no intervening-tile term), Code
+Royale (referee picks nearest by distance), 22 Battlecode postmortems (zero hits), the RTS
+canon. **The only two precedents are colony sims** — Dwarf Fortress staggering 3×3 siege
+engines, RimWorld's wall/barricade mix. **The consequence is blunt and buildable: two
+gunners in file are one gunner and one 20 Ti barrier.**
+
+### ONE NEW BUILD IDEA, AND IT NEEDS A BUILDER PROBE BEFORE IT IS A CLAIM
+No league prices the Nth structure higher — but **our own rule does the reverse and nobody
+has used it**: scale *"decreases again when an entity is destroyed"*, so **demolish before
+you build.** A replacement sentinel prices at `floor(1.8×30) = 54` instead of `60`, **and
+the discount applies to every build in the window.** **⚠ Rests entirely on one unprobed
+fact: whether `destroy()` updates the scale within the SAME round.** If it only takes effect
+next round the idea is worth much less. **Builder's lane — it is a five-minute probe of the
+same kind that settled the scaling model.**
+
+### A CORRECTION 17B MAKES TO SWEEP 8 — the sweep this INDEX calls "the most decision-relevant of the set"
+Sweep 8 presents **Agade's** site-scoring formulas as the encoding of his doctrine. The
+formulas are genuine and re-verified — **but they sorted WHICH SITES, and that branch was
+*"very often this was overridden"* by a "Knight danger" fallback that could only build
+towers.** Shingy (9th) wrote counters to exactly that (*"This was mainly for Agade's
+strategy of covering the map with towers."*). **"Forward-ness positive" survives as a
+site-choice weight; it must not be upgraded into an explanation of why his bot was
+tower-heavy.**
+
+### THREE NEW METHOD TRAPS — the library's quote procedure grows two steps
+1. **The glyph trap is per-STRING, not per-document** — JWU's BC2025 PDF has ASCII `'` and
+   curly `’` **in the same file**.
+2. **Markup inside numerals defeats the literal grep even after whitespace flattening.**
+   **New procedure: extract → strip markup → decode entities → flatten `\f\r` → grep.**
+3. **JSON-escaped punctuation is a third variant** (Wayback's Kore capture escapes every `+`).
+Plus two auditor artifacts: adjacent inline code spans read as a quote, and **two
+blockquotes with no blank `>` between them concatenate into a string that can never match** —
+**indistinguishable from a real failure until inspected**, which is the dangerous half.
+
+### WHAT 17B DID NOT DO, STATED
+**No corpus cut was run.** The decisive test — **distance and line-clearance of the killing
+turret at the killing shot, ours vs theirs** — **is not run and is not claimed.** That is
+the natural successor to the duty-cycle decomposition now in flight.
+
+**Version tag:** live **v102 = LOKI-8**, tape k=14 / m=584 / 1580.0 / net5 −14.0 / armed /
+`slot_free` False.
