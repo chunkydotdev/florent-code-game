@@ -203,6 +203,31 @@ view of it, which is new, and it is measured on both sides of the same instrumen
 * Everything here is our ladder games only (`corpus/join.tsv`, 1,130 attributed
   files). It is **field data, not pool data** — no self-play caveat applies.
 
+## 5. APPENDIX — the band-definition sensitivity, run against my own numbers
+
+A parallel analysis (`in-base-plant-survival-tail-2026-08-09.md` §6) found that **`d2`
+is measured to the NW corner of the 2×2 core**, and that team index 0 is always the
+NW-ish core while team 1 is the SE core — so **the same physical proximity maps to a
+d² about one tile larger for seat 0** on the threat-facing diagonal. That
+contaminates every d²-band cut in this project, **including the tables above**. So I
+re-ran Cut B under the decoder's alternative band column (`band_fp`, measured from the
+**nearest core-footprint tile** rather than the NW corner), with the time-respecting
+labelling throughout:
+
+| population | band definition | n | HEAL_SEAT | HARVESTER | CONVEYOR | OWN_TURRET | TRANSIT |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| **US** | NW corner (published) | 4,169 | 25.4% | 17.6% | 46.9% | 4.1% | **5.9%** |
+| **US** | nearest footprint tile | 4,744 | 22.4% | 18.9% | 48.3% | 4.2% | **6.2%** |
+| **FIELD_vsUS** | NW corner (published) | 1,535 | 26.1% | 4.8% | 22.7% | **31.7%** | 14.8% |
+| **FIELD_vsUS** | nearest footprint tile | 1,770 | 22.6% | 5.3% | 21.9% | **29.8%** | 20.3% |
+
+**Every conclusion in §2 survives.** The heal seat stays symmetric (22.4% vs 22.6%);
+our own-turret share stays about **7× below** the field's (4.2% vs 29.8%); our transit
+share stays low (6.2%) and DODGE's ceiling is unchanged. The one number that moves
+materially is **the field's transit share, 14.8% → 20.3%**, which narrows but does not
+reverse the transit gap. **The band definition is not load-bearing for anything I
+concluded, and I would rather show that than assert it.**
+
 ## Provenance
 
 Scripts (scratchpad, session-scoped): `dc/cutA.py`, `dc/cutB2b.py`, plus the
