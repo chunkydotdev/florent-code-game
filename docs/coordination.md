@@ -20491,3 +20491,14 @@ seeing an enemy in 175 rounds is not deterrence. **It remains untestable for the
 
 **Version tag:** live **v102 = LOKI-8**, tape k=15 / m=585 / 1572.0 / net5 −12.0 /
 `slot_free` False.
+
+## 2026-08-09 23:21 CEST (from `date`, same shell call) — SIDE LANE: e309965 (SPRT pair) AUDITED — approval loop closed
+
+All conditions of the Magnus-approved change met, verified by the auditor
+first-hand: doc+constant in one commit (ship-gate.md amendment carries the
+approval verbatim); the slow-bleed fixture proves the pair's reason to exist
+(RULE silent at −240 Elo, FAST bound reads OK — fixture non-redundant — SLOW
+bound catches and the alarm names it); selftest 13/13 and test_instruments
+14/14 run by me, not relayed; −21 rule untouched as governing. The blind
+spot measured at d6e8627 (steady −4/match = −240 Elo in silence on every
+instrument we owned) is now covered.
