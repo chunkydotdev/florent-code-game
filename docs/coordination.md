@@ -20877,3 +20877,21 @@ otherwise buy without firing one.**
 tree: forward-sentinel survival curve, whether the planter departs the round
 after planting (`raid.py:386-448` says it walks to a ring station), and whether
 we ever stack turrets in file. No bot edits, no arena, no gate, no commits.
+
+## 2026-08-09 23:46 CEST (from `date`, same shell call) — SIDE LANE: TRAP-8 check answered; the four-instance family gets its general form (both surfaces updated)
+
+**Finding 3 provenance (my flag, builder's answer, recorded):** topfield's
+930-vs-820 came from `ti_collected_end` (live, 28,925/33,672 nonzero), NOT
+the dead `deliveries` column — the agent ran corpus_sanity FIRST and used
+its documented substitute. Standing caveat carried verbatim: this is the
+agent's own account relayed, agent gone; **whoever builds a plank on the
+"economy bot in a shooting league" frame recomputes 930/820 first.**
+
+**Standing-note upgrade (drift-watch doc + CLAUDE.md instruments bullet):**
+the check-inherits-the-fault family closed at four instances tonight
+(ship_watch dead channel · D15 cwd-scoped verification · the fixture the
+broken design also passed · TRAP 8's constant column meeting a threshold
+TRIVIALLY). General fix, superseding the bare corrupt-the-input phrasing:
+**run every check against a case where it MUST come out the other way.** A
+check that has never produced the other verdict has not been seen to check.
+Credit: builder's synthesis over research's TRAP 8 control-arm move.

@@ -101,14 +101,21 @@ commits) and at every verdict/ship/leg event:
   trajectory does THIS alarm fire FIRST? If no such trajectory exists, its
   silence carries no information and must not be read as a second opinion.
 - **A verification that shares the failure mode of the thing it verifies is
-  not a verification (s26, D15 + extension; third family instance tonight
-  with ship_watch-on-a-dead-channel and audit_trigger's blind lane):** the
-  cwd-poisoned `git show --stat` confirmed the cwd-poisoned conclusion. Ask
-  of every check: does it inherit the fault it is checking for? **And the
-  correction is not exempt from the standard it enforces** — the D15 fix
-  itself cited a hash produced from memory that does not exist (5e6e4e1,
-  verified absent by both lanes). A forensic note that cites a hash has run
-  `git cat-file` on it, exactly as a number carries its denominator.
+  not a verification — FOUR instances s26, and the family now has its
+  general fix (supersedes the bare "corrupt the input" phrasing, which
+  remains the usual construction):** ship_watch's alarm on a dead channel;
+  the cwd-poisoned `git show` confirming the cwd-poisoned conclusion (D15);
+  the first restart-on-OK fixture that the broken design also passed; and
+  TRAP 8, where a constant-zero column met a threshold TRIVIALLY rather than
+  wrongly — a constant column validates anything. **The general fix: run
+  every check against a case where it MUST come out the other way** (the
+  complement-group control; the mutation test; the corrupted tape). A check
+  that has never been seen to produce the other verdict has not been seen to
+  check. **And the correction is not exempt from the standard it enforces** —
+  the D15 fix itself cited a hash produced from memory that does not exist
+  (5e6e4e1, verified absent by both lanes); a forensic note that cites a
+  hash has run `git cat-file` on it, exactly as a number carries its
+  denominator.
 - **The two turrets do not share a targeting predicate (engine-probed,
   81c0ada):** gunner `can_fire_from` is False on every EMPTY tile (0/8 at
   every offset, including on-axis inside range); sentinel returns True on the

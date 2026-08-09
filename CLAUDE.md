@@ -215,10 +215,13 @@ These override attention drift; the full lane protocol is your boot config
   54-commit backlog once already.
 - **Timestamps** come from `date` in the same shell call, or a cited git time.
   Never hand-written, never interpolated.
-- **Instruments:** anything whose output gets published is an instrument.
-  Corrupt the input and require the alarm — per guard, per branch — before
-  trusting it. Alive in `ps` is not verified; a green selftest that cannot
-  fail proves nothing.
+- **Instruments:** anything whose output gets published is an instrument —
+  including one-liners and "quick checks". Before trusting one, run it
+  against a case where it MUST come out the other way (corrupt the input,
+  compute the complement-group control, mutation-test the fixture) — per
+  guard, per branch. A check that has never produced the other verdict has
+  not been seen to check; a constant column validates anything; alive in
+  \`ps\` is not verified.
 - **Numbers carry subjects.** Copy the denominator, the population, and the
   clock along with the number. Us-only samples must say so inline.
 - **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
