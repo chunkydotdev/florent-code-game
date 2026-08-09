@@ -69,7 +69,7 @@ exception permanently destroys that unit for the match.
 | 6 | Cost-inflation attacks (making the opponent's buildings dearer) | **SWEPT** — and inverted: killing an enemy builder REFUNDS their scale; imprison instead | 2026-08-09 | [exchange-rates](../exchange-rates-2026-08-09.md) §6 |
 | 7 | Limited-bandwidth team coordination (our 16 ints) | **SWEPT** — 15 BC postmortems 2019-2026. **Produced a probe that found a latent bug**: the read-increment-write ticket idiom collapses silently under our buffered store, and `SLOT_ROLE_N` is safe only because the core spawns ≤1 builder/turn | 2026-08-09 | [sweep 5](2026-08-09-sweep-5.md), [store semantics](../store-semantics-2026-08-09.md) |
 | 8 | Economy: harvest saturation, expansion timing, when to stop expanding | **SWEPT** — and it turned into a negative: **cost scaling never binds on harvesters** (break-even beyond any map's ore supply under both readings); it binds on the **+20% categories**. The corpus hooks then showed **the economy is not our constraint at all** | 2026-08-09 | [sweep 4](2026-08-09-sweep-4.md), [middle-game hazard](../middle-game-hazard-and-economy-2026-08-09.md) |
-| 9 | Opening theory and build-order steering in symmetric-map games | unswept | — | — |
+| 9 | Opening theory and build-order steering in symmetric-map games | **SWEPT** — **our constant is DEFENSIBLE** (fixed openings are the league norm; the anti-constant result needs cross-game memory the engine forbids). **The one qualification — an opening unconditional on MAP GEOMETRY — is a documented failure mode, and our own width gradient is it.** | 2026-08-09 | [sweep 6](2026-08-09-sweep-6.md) |
 | 10 | Endgame/tiebreak play when the win condition is a score, not a kill | **SWEPT** (BC 2019 do-nothing, BC 2022 one-gold, Halite endgame flag, Spring'21 score+banked/3) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §4 |
 | 11 | Anti-rush and defensive-line theory — **re-aimed at "how does anyone break a 2.2:1 defensive edge?"** | **SWEPT** — 8 BC postmortem PDFs read in full + Screeps/Terminal/RTS theory. **Answer: mostly you don't, you win on economy; every league converged there independently.** | 2026-08-09 | [sweep 2](2026-08-09-sweep-2.md), [sentinel-file](sentinel-file-stacking.md) |
 | 12 | Unit-displacement mechanics elsewhere (our launcher throws EITHER team's bots) | **SWEPT — and it INVERTS our current use.** BC2020's Delivery Drone has our Launcher's exact verb signature; that field converged on grabbing the **enemy's** unit defensively, never on ferrying their own forward | 2026-08-09 | [sweep 3](2026-08-09-sweep-3.md), [defensive-interception](launcher-defensive-interception.md), [displace-dont-kill](displace-dont-kill.md), [throw-into-prebuilt-cell](throw-into-prebuilt-cell.md) |
@@ -80,6 +80,12 @@ unit-turns across 85 games** — median 0 per game, mean 310, **max 3,508**, fir
 in 44% of games. Leviathan 4.40%, The Bisons 4.65%. Every 1800+ team and we
 ourselves sit at 0.00%. A conditional compute blow-up in three opponents is the
 most exploitable shape a weakness can have, and we do not yet know the trigger.
+
+**THE WHEEL IS NOW FULLY SWEPT (all 12 topics, 2026-08-09).** Successive sessions
+should re-sweep STALE rows rather than pick unswept ones — and prefer re-aiming a
+topic at a specific measured surprise, which is what produced the best results here
+(topic 11 re-aimed at the 2.2:1 edge; topic 9 re-aimed at "our opening is a
+constant").
 
 ## Model rule for sweeps
 
