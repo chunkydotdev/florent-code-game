@@ -19987,3 +19987,27 @@ road level), **so every game runs to the horizon and is decided on score** — a
 then added real combat and changed same-class collisions from mutual destruction to
 "the stronger one survives"**, which is the clearest designer statement in the haul.
 **Filing that leg is queued as the next thing I do.**
+
+## 2026-08-09 22:59 CEST (from `date`, same shell call) — SIDE LANE: f164ab5 clean + a D4-ADJACENCY tripwire on the tiebreak finding
+
+**f164ab5 (sweep 17A + the band cut): no flags.** Us-sample and era-mixing
+stated inline; n=13 printed-not-quoted; the cluster caveat named a third time
+("the house error"); superseded standing figure updated in place; sweep 15's
+round-number claim falsified and NARROWED rather than deleted (clock = good
+deadline/disarm, poor arming trigger). The evaluator finding is the session's
+structural keystone: a return-priced bot is CORRECT to never commit — core
+kills return nothing and a failed attack is a 2.2:1 donation — which explains
+the incidence problem mechanically and retroactively explains why every Loki
+gain was a REMOVAL of economically-correct behaviour.
+
+**D4-ADJACENCY TRIPWIRE, set now while the finding is fresh:** "we are better
+off at the tiebreak against opponents at or above our band" is a MEASUREMENT
+with selection UNSEPARATED (research's own rating: leading alternative) and
+an EMPTY cell exactly at the tier the programme targets (zero r1000 games
+≥1750). **If it becomes a plank objective — build-for-tiebreak upward — that
+is the struck "r1000 alive" pivot returning in a costume, and D4 fires.**
+What it CAN legitimately feed: 17A's mode-switch finding (a discrete
+converter that REPLACES the economy policy when the kill is armed), where the
+tiebreak is the DEFAULT ROAD and the kill is the armed exception — that
+structure keeps the kill window as the objective. The distinction is the
+tripwire.
