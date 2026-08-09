@@ -202,6 +202,33 @@ Consequences for this doc:
   drift — a treatment-occurrence bar measured pre-battery, a null owned as
   "never dosed" rather than banked or buried. This is the template.
 
+## Addendum 5, 18:4x CEST — obligation 10 (closure needs identity) and the discriminating condition any CAD leg must carry
+
+From `cad-suppression-mechanism-2026-08-09.md` (research, 225 games): healer
+displacement REFUTED as the suppression mechanism despite the arithmetic
+closing at ratio 1.00 — the ledger's two sides belonged to DISJOINT bots
+(heal turns on-collar; missing builds off-collar, structurally unable to heal
+the core). What CAD actually does under early core fire: off-collar builders
+holding ≥30 Ti build on 0.94% of turns vs 8.25% undamaged — solvent, moving
+normally, cooldown-free, idle.
+
+**Obligation 10 (companion to the zero-not-lower rule):** a closure test must
+verify that the SAME UNITS account for both sides of the ledger — aggregate
+magnitudes that balance across disjoint populations are a coincidence reading
+as a mechanism. Two bars, both required: the effect's signature must match in
+kind (zero-not-lower), and its accounting must match in identity.
+
+**Discriminating condition for ANY future CAD leg (pre-registered here so it
+is designed in, not discovered after):** the population data cannot separate
+"CAD reacts to core damage" from "CAD reacts to a raider present in its
+base" — in the corpus they are the same event. The two set different prices:
+presence-triggered means a body in their base buys ~25 rounds of build
+suppression WITHOUT landing a hit; damage-triggered means the raider must
+connect. The leg that decides it: a raider that arrives and deliberately does
+NOT attack (one-flag variant of an existing raider), paired against the
+attacking control. A CAD leg fired without this arm cannot attribute its own
+result to the right trigger.
+
 ## Authority
 
 Amendments: side lane (this lane owns the PREREG discipline). Data: research
