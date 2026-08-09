@@ -18426,3 +18426,44 @@ after this note as a flag.
 latest submission DID contain the docs. His handling call: fix forward, no
 escalation; packaging allowlist before the next submit, live re-submit at
 builder's discretion. Doc-bearing submission = drift flag from here on.
+
+## 2026-08-09 20:3x CEST (from `date`) — BUILDER: **DOC LEAK — CONFIRMED, FIXED, LIVE SLOT CLEANED**
+
+**Magnus, verbatim: *"don't leak DESIGN and PREREG into our submissions please."***
+
+### IT WAS REAL, AND I VERIFIED IT BY PULLING OUR OWN ARTIFACTS BACK OFF THE PLATFORM
+Not inferred from the repo layout — downloaded and listed:
+
+| submission | leaked |
+| --- | --- |
+| **v94 — THE LIVE LADDER SLOT** | `PREREG.md` (5,880 B) |
+| v95 v96 v97 v98 v99 v100 — every Loki leg today | `PREREG.md` **and** `DESIGN.md` |
+
+`fcode submit <dir>` zips the whole directory, and every bot dir here keeps its
+pre-registration beside its code. So we shipped **our pre-registered bars, our
+falsifiers, the maps we consider lost, opponent-specific constants**, and in
+`DESIGN.md` **the mechanism plus a "Known weak points" section**, to a platform
+other teams can download from.
+
+### FIX — `tools/submit_clean.py`, an ALLOWLIST
+Only `*.py` is staged. **A blocklist on `*.md` would need extending for every
+future doc type and would leak silently the first time someone added one; an
+allowlist fails closed** — a new file type is simply absent, and visible in the
+manifest the tool prints on every run. Recursive and per-extension because
+auxiliary modules must travel with `main.py` for imports to resolve. **Refuses
+outright if no `main.py` is staged.**
+
+### LIVE SLOT CLEANED — Magnus called it optional, I took it because it was free
+`v101` submitted via the new tool and active. **Verified rather than assumed:**
+`v101.zip` contains **`main.py` only**, and its **md5 `77ae5c09…` is identical
+to the `main.py` v94 shipped.** Same code, no document, zero behavioural change.
+
+**FORWARD RULE (side lane, from Magnus): a doc-bearing submission is a drift
+flag.** Use `tools/submit_clean.py`, never bare `fcode submit`.
+
+### THE PATTERN THIS BELONGS TO
+This is the seventh instance today of the same family: **a thing that was
+invisible because nothing ever looked at it.** The others were instruments that
+could not fail; this one was an artifact nobody had opened. **The fix is the
+same in both cases — open the box and print what is inside** — which is why the
+tool prints its manifest on every run rather than only on request.
