@@ -70,5 +70,17 @@ commits) and at every verdict/ship/leg event:
   line (coordination or the doc's PRE-COMMITMENT section, as the lockout doc
   did) for the pre-commitment to survive a reboot. An uncommitted
   pre-registration is only pre-registered until the context compacts.
+- **Stating a rule in a document does not enforce it in that document (s26,
+  40a2f75, fourth instance of the number-carries-subject family in two days):**
+  research's pricing brief listed "a number carries a subject" as a hard rule
+  with the 2.68 worked example, then relabelled an our-games number as the
+  field's two paragraphs later. The enforcing thing was an external reader
+  with the primary open. Consequence for this watch: an audit verifies the
+  NUMBERS against their primaries; checking that the right rules are CITED
+  verifies nothing. Corollary from the same session, on the auditor's own
+  lane (e4f71d6): a wake path is verified when its alarm has been shown able
+  to fire, not when its process appears in `ps` — alive is not working
+  (ship_watch D13: no restart-on-OK, so `SHIP_ALERT` absence was decorative
+  for its whole first life).
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
