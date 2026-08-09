@@ -33,6 +33,27 @@ def main(d="corpus"):
             try:
                 nums = [float(v) for v in vals]
             except ValueError:
+                # TRAP 7 (s24). This tool was built from traps 5 and 6, which
+                # were both NUMERIC all-zero columns, so a non-numeric column
+                # fell straight through this `continue` and was never checked.
+                # `oppver` is the literal string "None" in every row of
+                # join.tsv (1,355) and ladder_games.tsv (2,625) -- the filter
+                # above only drops None and "", so "None" passes it, and then
+                # float("None") lands here and the column is silently skipped.
+                # A string column with exactly one null-ish value is as dead as
+                # an all-zero numeric one and needs the same alarm.
+                distinct = set(vals)
+                if distinct <= {"None", "none", "NULL", "null", "-", "nan", "NaN"}:
+                    key = (f.name, col)
+                    note = KNOWN_DEAD.get(key)
+                    tag = "KNOWN-DEAD" if note else "*** UNDOCUMENTED DEAD COLUMN ***"
+                    print(f"{tag}  {f.name}:{col}  ({len(vals)} rows, all "
+                          f"{sorted(distinct)[0]!r} -- non-numeric, so the "
+                          f"all-zero check never saw it)")
+                    if note:
+                        print(f"            cause: {note}")
+                    else:
+                        bad += 1
                 continue
             if any(n != 0 for n in nums):
                 continue
