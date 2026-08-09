@@ -79,17 +79,48 @@ off how we actually died, and we test the indicated trick (or combination) in
 the next free unrated cycle. The autopsy makes the free tool *directed* instead
 of a fishing trip.
 
-## Honest limits
+## We don't simulate the counterfactual — we BUILD trick X and re-run it
 
-- The counterfactual is an **indication, not a simulation** — we cannot replay
-  the game with trick X inserted (no local engine that mutates a live game).
-  "Would trick X have won" is answered as "trick X targets the measured cause
-  of death and the economy state says survival converts," which is a testable
-  hypothesis, not a proof. The test is the next unrated cycle.
-- Combination claims inherit that limit doubled — "A1+A3 would have won 18
-  games" means both target the two-piece cause, not that we simulated it.
-- Small per-opponent n on unrated (47% power at n=10) — the autopsy tells you
-  *what to try*, the ladder confirms *whether it worked*.
+The autopsy's counterfactual is an indication, not a proof — but we never need
+it to be a proof, because **building trick X and re-firing the same unrated
+fixture is the actual experiment, and it is cheaper than a simulation would be
+worth.** So the autopsy's job is not to *estimate* whether X would have won; it
+is to emit a **falsifiable prediction the re-run tests**:
+
+> "These N specific losses (this opponent, these maps/seats) were caused by
+> mechanism M. Trick X targets M. **Building X should flip these N games and
+> not the others.** Pre-registered before the re-run."
+
+Then the loop is a clean matched before/after, at zero Elo, in the gaps:
+
+**autopsy → build X → same fixture re-run → re-autopsy → did the predicted
+games flip?**
+
+Three consequences that make this a real experiment, not a vibe:
+
+1. **Pre-register the specific games.** The autopsy names *which* losses X
+   should convert (by map+seat+opponent) before X is built — so the re-run
+   confirms or refutes a stated list, not a moving target. Same discipline as
+   every gate we built today.
+2. **The NON-flips are the combination answer, empirically.** If we build X and
+   some predicted games still lose, those games had a *second* cause X didn't
+   address — that is "would a combination have turned it?" answered by the
+   data instead of by my inference. The 18 sentinel-led CAD losses predict
+   exactly this: build the gunner-rush alone and they should NOT flip; add the
+   sentinel-rush + collar and they should. The re-run tells us which.
+3. **Seat-match the before/after.** Unrated flips seats between challenges, so
+   pre-register per seat or hold the seat constant — a cross-seat before/after
+   is a different game, not a trick effect (HANDOVER trap).
+
+## Honest limits (what survives)
+
+- Small per-opponent n on unrated (47% power at n=10): a re-run that flips the
+  predicted games is **NOT-REFUTED (n=10)**, never `pass` — the ladder confirms.
+  The autopsy tells you *what to build*; the unrated re-run tells you *it
+  plausibly worked*; the ladder tells you *it worked*.
+- One build+re-run tests one trick (or one pre-declared combination). Resist
+  bundling untested tricks into the same re-run — a flip you can't attribute is
+  the bundle problem the ship-gate amendment removed.
 
 ## Provenance
 
