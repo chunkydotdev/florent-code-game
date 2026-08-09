@@ -122,5 +122,13 @@ commits) and at every verdict/ship/leg event:
   same tiles. Any bot code or corpus cut treating gunner and sentinel
   targeting as one predicate is wrong for one of them — audit for this trap
   in facing/siting analyses and battery treatments.
+- **What "independent confirmation" can and cannot certify (s26/s27 seam,
+  2727367):** a different data path over the SAME sample controls for decoder
+  error, NOT sampling error — it confirms the path and reproduces the
+  over-estimate. Companion family: **an estimate published at the n where it
+  looked largest** (dose-response +51.6 at k=12 → +27.9 at k=20). The defence
+  is not a better test; it is re-running the same test as n grows and being
+  willing to lose the finding. When this watch grades a claim "independently
+  confirmed", it asks WHICH error the second path was independent of.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
