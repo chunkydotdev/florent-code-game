@@ -18642,3 +18642,89 @@ ask what it counted.**
   top-tier replays we already hold** is the other.
 - The **league-sweep cadence + roster snapshots** proposal is with the builder; `tools/` is
   their lane.
+
+## 2026-08-09 22:1x CEST (from `date`) — BUILDER: **WRAP — PROCESS DELTAS (s25)**
+
+**Wrap called by Magnus VIA THE SIDE LANE, not directly to me.** Recording that
+because I logged earlier today that a relayed claim is a claim; wrapping is safe
+and reversible so I executed it, but the provenance is on the record.
+**I did not append deltas as I went** — protocol rule 5 says say so and
+reconstruct from the tape. This is reconstructed.
+
+### THE SESSION IN ONE LINE
+Two planned builds both ended as **negatives**; a flag flip I would have ranked
+last became **the first Loki ship**. Nine iterations, all benchmarked on unrated
+legs, ending with **v102 = LOKI-8 live**.
+
+### D1. AN INSTRUMENT THAT HAS NEVER BEEN OBSERVED TO FAIL IS A CLAIM, NOT EVIDENCE
+**Seven instances in one day**, and only one was found by a result looking wrong:
+1. `can_fire_from` is **False on every empty tile** of a gunner's ray → the ray
+   bonus would have scored **zero forever**, silently.
+2. `loki3_treatment.py` decoded entity kind and position from the wrong fields.
+3. …then found **zero cores** (they live in the map buffer) and reported a
+   confident **0/24** for a plank that was working.
+4. `teamXRating` — a live join that looked right for a day.
+5. `meta_attrib` CHECK 2's teeth were never proven while CHECK 1's were.
+6. A `--selftest` mode **rejected by its own argument validator**.
+7. `ship_watch`'s first cut **re-derived** a calibrated LLR and could not fire.
+**The fix is always the same: corrupt the input, require the alarm.** Shipped as
+`--selftest` in `meta_attrib.py` and `audit_trigger.py`.
+
+### D2. PROVE TEETH **PER GUARD**, NOT PER TOOL
+Caught by the research arm on my own tool: my selftest proved CHECK 1, which
+guards **our** games — while the 4,331 **third-party** files, the entire reason
+the table was built, were guarded by CHECK 2 alone, untested. **Guards partition
+the population, and the untested guard is usually the one covering the NEW data.**
+The research arm then applied it to their own collar decoder and found the same
+shape. Three artifacts, one evening.
+
+### D3. AN INCOMPLETE RUN HAS NO NUMBER, NOT A PROVISIONAL ONE
+I reported LOKI-6 at **"70%"** off two opponents of three. The missing leg came
+back **1-4** and the true figure was 53.3% — identical to its parent, i.e. null.
+**I had already written an iteration on top of the wrong number.**
+
+### D4. A NUMBER CARRIES A SUBJECT; COPY THE SUBJECT WITH IT
+The "2.68 field healers" sizing our sentinel economics was **our own** number —
+the source says *"OUR detail is 2.68"* and gives the field figure (2.49) in the
+same sentence. Citation failure in the **numbers** layer rather than the quote
+layer. That it happened to be conservative was **luck, and luck is not a control**.
+
+### D5. A SATURATED INSTRUMENT MEASURES NOTHING — now **D11** on the drift list
+My first rush battery returned **NO VERDICT** because I chose `ouroboros_probe`,
+which we beat 93.3%. Calibrating the pool: clanker 96.7% and ouroboros 93.3% are
+**saturated**; cad 66.7% and orizon 50.0% resolve. **A plank measured only
+against the first two has not been measured** — and that retroactively weakens
+older verdicts.
+
+### D6. THE ARENA IS WHERE AN OBSERVATIONAL INFERENCE GOES TO DIE
+Top teams garrison at 40.6% to our 66.5%; their cores cost 1,019 damage to our
+1,596. The inference *"so we should garrison less"* was labelled an inference
+when handed to me — **and LOKI-9 refuted it, 40% vs 60%.** Their thin collar is
+affordable **because their offence ends games**. Copying a stronger bot's symptom
+is not acquiring its strength.
+
+### D7. VERIFY THE TREATMENT THE **EXPERIMENT** NEEDS, NOT THE ONE YOU **CODED**
+LOKI-QUIET verified **0 builder attacks** — true, decoded, and irrelevant: it
+still fired 43–315 turret shots and killed CAD's core in 3 of 5. The quantity
+that mattered was *enemy core HP never decreasing*. **The discriminator was
+invalid and the leg answered nothing.**
+
+### D8. ALLOWLIST, NEVER BLOCKLIST, FOR ANYTHING THAT LEAVES THE BUILDING
+`fcode submit` zips the whole dir: **v94 (live slot) shipped `PREREG.md`; v95–v100
+shipped `PREREG.md` AND `DESIGN.md`** — our bars, falsifiers, opponent constants
+and a *"Known weak points"* section, to a platform others download from. Fixed
+with `tools/submit_clean.py` (**`*.py` only**, manifest printed every run).
+**Bare `fcode submit` is now a drift flag.**
+
+### D9. `fcode submit` **AUTO-ACTIVATES**, and `submission activate` takes a **VERSION INT**
+My activate-then-fire-then-restore chain was already too late, and **both**
+id-based restore calls errored — the chain **failed open** with an untested bot
+live. No rated match caught it, **by luck of the 10-minute slot cadence**.
+Correct sequence and a *verify the restore* step are in the record.
+
+### D10. EVERY GAIN ON THE LOKI LINE WAS A **REMOVAL**
+Rush off, melee off, three self-imposed blocks removed, raiders stopped going
+home. **Both iterations that tried to ADD a mechanism failed** (kidnap held at
+16.7% treatment; garrison-less refuted). Corroborating: melee is **2.5%** of what
+kills a top-tier core, and LOKI-5 beat CAD 3-2 landing **zero** builder attacks.
+**Hypothesis, not finding** — no ablation isolates "rounds returned to movement".
