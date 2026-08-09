@@ -1,3 +1,89 @@
+# Session 23 boot block (builder) — written at the s22 wrap, 2026-08-09 09:4x CEST
+
+## ===== READ `docs/builder-method.md` FIRST =====
+## New this session, written on Magnus's ask: **how the builder arm works**, so
+## you do not rediscover it. Order of operations (rule -> probe -> code -> corpus
+## -> arena -> field), pre-registration discipline, what the arena can and cannot
+## answer, the two confounds that silently invalidate arena numbers, and the
+## delegation brief that makes agents refute their own work.
+##
+## ===== STATE =====
+##   LIVE: **v90 "Heimdall 1 (launcher relight)"** = `bots/_v104latch`,
+##   tree **2c6dbc17**, submission id **b04c06fa**. (= live v89 + the
+##   SLOT_LAUNCHER latch repair, nothing else.)
+##   **VERSION IDENTITY IS NOW A TREE HASH** (`tools/treehash.py`) — md5 of
+##   main.py stops identifying a multi-file bot. `--legacy` cross-walks old rows.
+##   At-ship baseline **1556.83 @ 491, rank #31**. At wrap: **~1567.5 @ 497,
+##   rank #30, net +10.67 over 6 rated matches.**
+##   Reversion bar (<=0 net after 3) **NOT tripped -> slot retained.** But
+##   **+18.34 at the 3-match read was 1.36 sd — NOT significant.** Heimdall is
+##   retained on its 18.4%-incidence census evidence, NOT on its Elo.
+##   ROLLBACK TARGET: **v89 = `bots/_v100hf`, tree 4558be91** (re-upload bytes;
+##   rollback needs no `activate`).
+##
+## ===== THE SESSION IN ONE LINE =====
+## **Five roads opened, FOUR refuted by measurement, one maintenance fix shipped,
+## and ZERO positive field results.** Every refutation cost a leg, not a slot.
+##
+## ===== THE RESULT THAT MATTERS MOST, AND IT IS A NEGATIVE =====
+## **LOKI-3 moved its pre-registered mechanism metric 16x and won nothing.**
+## damage-capacity:HP-repaired **0.17 -> 2.82** (the field's own 2.79), turret
+## count held constant by construction, opening byte-identical, 0 crashes.
+## **Field spread: +0.0pp on n=360** (per-opponent +3.3 / -4.4 / +2.2 / -1.1).
+## **A pre-registered mechanism metric protects ATTRIBUTION, NOT VALIDITY.**
+## Leading (pre-stated) explanation: our forward guns sit at median **d² 116-146
+## from our own core against the field's 56-82** — outside every heal path we
+## own, so they die alone. Games ran **24% shorter at identical win rate**.
+##
+## ===== QUEUE, IN PRIORITY ORDER =====
+## 1. **LOKI-3 anchor `LATE_FORWARD_NUM/DEN` 3/5 -> 2/5.** ONE CONSTANT, already
+##    flag-gated, lands on the field's measured band. Cheapest live hypothesis.
+## 2. **TEST THE COMPOSITE, NOT THE PARTS.** LOKI-3 is the ENABLER; LOKI-4's
+##    crater arm and LOKI-5's healer arm are both DOWNSTREAM of forward guns and
+##    both measured weak-in-isolation for that exact reason. Composite first,
+##    then ablate down. **"Refuted alone" is not "refuted".**
+## 3. **Cut LOKI-5 to the coverage term** (~65 SLOC, 1 call site). Its mechanism
+##    is real and significant — victims die 37.5% on covered tiles vs 1.9% for
+##    the parent exile (p=0.0153) — but **coverage is the ONLY term with a
+##    measured effect**, and as built it is a 180-SLOC subsystem.
+## 4. **THE FORWARD LAUNCHER GAP.** Healer kidnapping is structurally blocked:
+##    our launcher sits on the home band, enemy healers stand next to THEIR
+##    damaged buildings. **We never build a forward launcher.** That single gap
+##    blocks the highest-value half of LOKI-5.
+## 5. Open questions handed back by research: the seat-turret gap ablation
+##    (`docs/research/seat-turret-gap-2026-08-09.md` §6 specifies a 4-cell test in
+##    OUR lane, unrun); and **7 single-seat map clauses across 4 maps** — a defect
+##    CLASS, not a one-off.
+## 6. **Magnus owes the organisers one question** before anyone builds CPU
+##    exhaustion: sibling leagues ban it by name; ours is silent.
+##
+## ===== BUILDS ON DISK, ALL UNSHIPPED =====
+## `_v107loki3` (5 flags, field +0.0pp) · `_v108loki4` (ore denial; generic arm
+## LOW-CEILING — median map leaves them 5 spare sites; crater arm untested in
+## composite) · `_v109loki5` (kidnapper; tree 7693584d; coverage term works) ·
+## `_v110link` (fork of live + the `_link_path` team-test fix, **INCOMPLETE**) ·
+## `_v104loki0`/`_v104loki0b` (controls, never ship) · `_v105loki1` (closed:
+## field edge was an opponent-crash artifact).
+## **All three Loki builds verified byte-identical to their parent with their
+## master flag OFF, so every rollback is exact.**
+##
+## ===== TRAPS THAT COST US TIME TODAY =====
+## - **ARENA RESULTS ARE LOAD-SENSITIVE AND THE DAMAGE IS INVISIBLE.** Under
+##   `--tle 10` an overrun turn is interrupted with **no crash, no traceback**.
+##   Run ONE battery at a time. Tell subagents "**do not measure**", never "use
+##   fewer jobs". Documented in `docs/tooling.md`.
+## - **Stratify every paired leg by the OPPONENT's crash count.** LOKI-1 showed
+##   +3.6pp pooled and **+1.1pp on crash-free legs** — its edge was the opponent
+##   self-destructing.
+## - **`is_tile_empty` is NOT a build-legality predicate.** True on a tile holding
+##   a builder bot, yet `can_build_barrier` is False.
+## - **`CLAUDE.md` is wrong on the spawn ring**: `CORE_SPAWNING_RADIUS_SQ = 2`
+##   (12-tile ring), not the r²=8 action radius. Probe-confirmed both seats.
+## - **`official-docs.md:1091` is wrong**: a CPU overrun does NOT disqualify.
+##   Ouroboros discards 26,356 unit-turns across 85 games and still beats us.
+##
+## ===== PRIOR STATE (s22 boot block) — superseded, kept for reasoning =====
+
 # Session 22 LIVE (builder, booted 06:40 CEST 2026-08-09)
 
 ## ===== STATE =====
