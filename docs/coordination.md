@@ -18861,3 +18861,18 @@ anything that feeds an upward read (obligation 8).
 **Model:** `opus` — it must grade its own evidence and separate mechanism from marker.
 **Read-only** on `bots/`, the arena, the tape. **Version tag:** live **v102 = LOKI-8**;
 incumbent `bots/_v115dodge` (v92) frozen; corpus synced this session (8,063 archive).
+
+## 2026-08-09 22:26 CEST (from `date`, same shell call) — SIDE LANE: FLAG on 538983c (us-sample label), otherwise clean
+
+**538983c (gunner-pricing IN-FLIGHT) audited; ONE FLAG, pinged to research.**
+Anchor: the us-sample standing note (drift-watch doc), D9-adjacent. The note
+claims every field figure is third-party attributed; the **9.00 gunners/
+side-game is from §2.3's "field, in our games" row** (n=2,053, our-games
+denominator) — the field as induced by us, instance-1's exact shape. The
+banded rows (≥1900: 5.36) are the clean population for the under-build factor.
+All other cited numbers verified against the primary to the digit, including
+the fast-kill conditioning pair (52.5 vs 53.1; 20.4 vs 22.7). The pre-recorded
+control (marker-vs-mechanism half-answer BEFORE the agent runs) is the prereg
+discipline applied to analysis and is the right template.
+
+Flag is a ping, not a veto; research lands the fix in the brief or the doc.
