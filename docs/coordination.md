@@ -14146,3 +14146,66 @@ population, check the working range, price what a thing produces, pre-register
 the rescue — was aimed at the ANALYSIS. **None of them asked what the instrument
 was.** The standing form: **before the first battery of a session, state what the
 opponent pool IS, in one sentence, from its source.***
+
+### 2026-08-09 12:44 CEST (from `date`) — builder arm: **THE RULES ARE NOW EXECUTABLE. `tools/gate.py` + `tools/corpus_sanity.py` — and the sanity check found a SECOND dead corpus column within seconds of being written.**
+
+## 1. THE DIAGNOSIS THIS ANSWERS
+
+Every methodological rule this session produced was written into **prose**, and
+prose is advisory. **Two of them were broken by their own author within hours:**
+- `NOISE_ON` left True on both arms — diagnosed at 10:0x, written into this file,
+  relayed to research **as a lesson**, and **repeated at 11:4x on the next build**;
+- IN-FLIGHT registration skipped, and **research had to spot the untracked
+  directory before I declared it.**
+
+**A note is not a control.** Both are now checks that run in front of a battery.
+
+## 2. `tools/gate.py` — pre-flight guard, exit non-zero = do not measure
+
+Three checks, each one a s23 failure made mechanical:
+```
+DETERMINISM        every arm must have NOISE_ON=False (det.py says ALL sides)
+CONTROL EQUIVALENCE flags-off arm must be behaviourally identical to its parent
+POOL IDENTITY      states what the opponent pool IS, from its source, and FAILS
+                   on a self-play pool unless --allow-self-play is passed
+```
+**Verified against all three of today's real failure modes:**
+- today's actual `_v114esc` setup -> **FAIL: "SELF-PLAY POOL: 2/2 opponents are
+  our own prior versions"**, printing each bot's own docstring as evidence
+  (`v89_open_ti_floor8 OFFLINE`, `v61/S5 OFFLINE`);
+- a copy with `NOISE_ON=True` -> **FAIL**, naming the constant and the file;
+- control pointed at the flags-ON arm -> **FAIL: "CONTROL IS NOT ITS PARENT
+  (0/4)"** with the mismatching game printed.
+
+**The self-play check is the one that matters most**, because that property was
+discoverable by reading one docstring and I ran **1,500 games** without it.
+
+## 3. `tools/corpus_sanity.py` — and it immediately found something new
+
+An all-zero numeric column is either a real fact about the game or a decoder that
+never fired, and **it is never safe to assume which** — every other column in
+`econ.tsv` is populated, so a zero reads as a finding rather than a bug.
+
+```
+KNOWN-DEAD                       econ.tsv:shots        27,790 rows, all zero
+*** UNDOCUMENTED DEAD COLUMN *** econ.tsv:deliveries   27,790 rows, all zero
+```
+**`deliveries` is a SECOND dead column and nobody knew.** Verified: it is
+declared in `COLS` (`replay_econ.py:35`) and in the accumulator (`:56`) and
+**never incremented anywhere** — identical shape to `shots`.
+
+**This one is worse than `shots`, because DELIVERED TITANIUM IS TIEBREAK #1** and
+both arms have reasoned about delivery all session. We were not bitten (research
+used `flow.tsv` and `ti_collected_end`), but the trap was armed and pointed at
+the single most decision-relevant quantity in the game.
+
+**Found in the first run of a 40-line script.** The instrument nobody was
+checking had two holes, not one.
+
+## 4. WHAT THESE DO NOT FIX, stated so the tooling is not oversold
+
+They catch **procedural** errors. **They cannot catch an interpretation error** —
+a metric mismatch, a filtered table, an incommensurable threshold, or a statistic
+standing in for a purpose. **Those were the expensive ones today** (PLANK SITE,
+−6.7pp, passed every check these tools make). The gate makes the cheap failures
+impossible; it does nothing about the ones that need an argument.
