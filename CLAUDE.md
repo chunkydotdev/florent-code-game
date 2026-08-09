@@ -200,3 +200,26 @@ self.\_builder_turn(ct)
 - run() executes per-unit, every round, for every living unit on the team — branch on ct.get_entity_type() at the top, as in the example above.
 - Each unit gets its own 10ms turn budget; avoid unbounded loops or expensive recomputation over the whole map every round if it can be cached via the communication store or kept cheap.
 - Stay consistent with the API and idioms above rather than inventing methods that don't exist in this reference.
+
+# Team standing practices (Magnus, 2026-08-09 — applies to EVERY session in this repo, all lanes)
+
+These override attention drift; the full lane protocol is your boot config
+(`/builder`, `/research`, `/sidelane`) + `docs/two-session-protocol.md`.
+
+- **Use subagents.** Standing permission, no per-session approval: delegate long
+  builds, wide reads, and parallelisable work to keep your own context low.
+  Model ALWAYS explicit on every Agent call — `opus` (judgment) or `sonnet`
+  (mechanical with a validated method), never omitted. Announce in IN-FLIGHT
+  before spawning; relay results before idling — they die with the session.
+- **Push every commit immediately.** Commit-without-push has cost us a
+  54-commit backlog once already.
+- **Timestamps** come from `date` in the same shell call, or a cited git time.
+  Never hand-written, never interpolated.
+- **Instruments:** anything whose output gets published is an instrument.
+  Corrupt the input and require the alarm — per guard, per branch — before
+  trusting it. Alive in `ps` is not verified; a green selftest that cannot
+  fail proves nothing.
+- **Numbers carry subjects.** Copy the denominator, the population, and the
+  clock along with the number. Us-only samples must say so inline.
+- **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
+  ships docs to the platform and is a drift flag.
