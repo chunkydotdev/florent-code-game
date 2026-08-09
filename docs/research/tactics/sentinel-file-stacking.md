@@ -3,8 +3,30 @@ tactic: Sentinel file — stack obstacle-ignoring shooters on one ray to beat th
 source: https://wiki.screepspl.us/Combat/ (damage-vs-heal doctrine); the formation itself is unsourced
 origin: inference by tactics sweep 2 applied to our ruleset; Screeps combat doctrine for the framing only
 evidence: documented — engine probe, 2026-08-09 (was: inference)
-transfers: yes — THE GATING ENGINE FACT IS NOW MEASURED AND IT PASSED
+transfers: partial — LEGAL AND PROBED, BUT THE ECONOMICS SHRINK THE CLAIM
 ---
+
+> **⛔ CLAIM DOWNGRADED 2026-08-09 (s23), by my own arithmetic.** I billed this as
+> *"the one mechanism that beats the 2.2:1 defensive edge by concentration."*
+> **Against a defender who actually mans the heal cap it does not.** Sentinel = 9.0
+> HP/round each; a 2×2 core with 8 healers cancels 32 HP/round, so a file needs **N=4
+> minimum and N=6 for pace** — and the full exchange is:
+> ```
+> N=6 vs maxed core: 23 rounds to kill
+>   attacker 298 Ti sentinels + 682 Ti AMMO = 980 Ti
+>   defender 182 Ti of healing        ->  5.4 : 1 AGAINST the attacker
+> ```
+> **The ammo dominates, and ammo is the line we are already worst at.**
+>
+> **What survives is smaller and better evidenced: against the MEASURED field detail
+> of 2.68 adjacent healers (10.7 HP/round), N=2 already wins at +7.3 HP/round** — and
+> the broad field **does not scale its guard** (no-us games cancel 34.6%, TOP ≥1750
+> 31.5%). **Two sentinels beat most of the ladder's actual defence; six lose to a
+> theoretical maxed one.**
+>
+> **Legality was never the binding constraint. The cap was — and the cap is rarely
+> manned.** Full arithmetic in
+> [`../turret-line-blocking-2026-08-09.md`](../turret-line-blocking-2026-08-09.md).
 
 > **UPDATE 2026-08-09 (s23): the decisive unknown below is RESOLVED, and the
 > answer is the favourable one.** Probed with the gunner as a positive control

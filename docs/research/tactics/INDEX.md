@@ -119,6 +119,12 @@ since the whole value is in the evidence labels.
   stack caps at 2 entities = **8.00 HP/Ti → 4.4:1 on a stacked tile**, and the
   load-bearing case is **a builder standing on a core footprint tile.** The
   defender's edge is larger than the headline, not smaller.
+- **THE SENTINEL FILE IS LEGAL BUT NOT A CAP-BREAKER (2026-08-09, s23).** Probed:
+  a sentinel's shot lands through friendly entities and **does not harm them**. But
+  the economics shrink the claim — **N=6 against a maxed 2×2 core (32 HP/round) is a
+  5.4:1 exchange AGAINST the attacker**, ammo dominating. **Against the measured
+  field detail of 2.68 healers, N=2 suffices.** It beats the defence opponents
+  actually field, not the defence the rules permit.
 - **THE ANSWER TO THE STANDING QUESTION, from sweep 2:** *mostly you don't break
   it — you win on economy.* Every league swept converged there independently, and
   each one that reached a defence-dominant equilibrium was rescued by **a clock,

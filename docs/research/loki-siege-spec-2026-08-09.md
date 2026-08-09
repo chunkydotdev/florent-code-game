@@ -337,6 +337,25 @@ systematically; parked as an opponent-modeling curiosity, not our defect.)**
   (34.6% cancel at 3+; TOP 31.5%, both WORSE than our 39.4%). For S2/S4 this
   is good news: a 3-shooter chain against most of the ladder faces a
   defence that does not scale back.
+- **CHAIN SIZING BOUND (research-arm exchange arithmetic, 2026-08-09,
+  `turret-line-blocking`): cap the chain at ~3. Against a theoretically
+  maxed core guard (32 HP/round manned) a 6-sentinel file loses the exchange
+  5.4:1 — ammo dominating (682 Ti ammo vs 298 Ti sentinels, exactly our
+  worst cost line). Against the MEASURED field detail (2.68 adjacent,
+  10.7 HP/round) N=2 already nets +7.3 HP/round. "Two sentinels beat most
+  of the ladder's actual defence; six lose to a theoretical maxed one —
+  the cap, not legality, is the binding constraint, and the cap is rarely
+  manned."** The 4th shooter costs 52+ Ti against a defence most opponents
+  never field while the ammo line grows linearly forever. If a specific
+  opponent DOES man the cap (D1-style), the answer is screen suppression
+  (S4), never a bigger file.
+- **D1×S4 IMPLEMENTATION CONSTRAINT (friendly-fire interaction, cheap to
+  get wrong in code): turret shots hit whatever unit stands on the TARGET
+  tile, own team included. A heal detail dispatched onto or adjacent to a
+  tile our own sentinel is targeting converts our shot into friendly fire.
+  Dispatch (D1) and payload targeting (S4) must share a do-not-target set;
+  pass-through tiles are safe (probe-verified zero damage), target tiles
+  are not.**
 
 Falsifier logic: if M1-M3 move and F does not, persistence was not the
 binding constraint and this lane's synthesis is wrong on our deficit; if M4
