@@ -1,5 +1,18 @@
 # Five field baselines re-derived with us absent — on 4,331 replays our archiver happened to download
 
+> **⚠ PENDING REVISION (added 2026-08-09 ~21:3x CEST, before any reader acts on this).**
+> **The third-party population below (4,331 files / 867 matches) is CONTAMINATED** by
+> **45 files** of `opensverige - plan B` (team id `b7cafd9f`) — a second registration
+> almost certainly of us, sitting in the "field playing itself" bucket. The tool now
+> emits a `related` column; the **clean filter is `us_side == "none" AND related ==
+> "none"` → 4,356 files / 872 matches** (verified by me against a re-run:
+> CHECK 1 1,480/1,480, CHECK 2 1,268/1,268, all negative controls PASS).
+> **A re-run on the clean population is in flight.** ~1% of the sample, so most numbers
+> should barely move — **but no verdict here should be quoted as final until the
+> POPULATION CORRECTION section exists.** Separately: **55 files are OUR games against
+> plan B** (us-vs-us) sitting in the vs-us bucket, and are being handled explicitly.
+
+
 **Research arm, session 25, 2026-08-09.** Every "the field does X" number this project
 owns was measured on games we played in (corpus trap 4). `replay_archive/` turns out to
 carry a `<match-id>.meta.json` sidecar for 98.0% of archived matches, and **4,331 of the
