@@ -19287,3 +19287,43 @@ liveness — **a wake that is only as alive as its feed, stated rather than assu
 
 **Version tag:** live **v102 = LOKI-8**, k=11, 1578.0, net5 −19.0. Read: `corpus/`,
 `tools/corpus/`, `tools/slot_rule.py`, `elo_history.tsv`.
+
+## 2026-08-09 22:39 CEST (from `date`, same shell call) — SIDE LANE: 9eab878 AUDIT — all four pre-stated criteria MET, verified first-hand
+
+Audited against the four criteria I committed BEFORE the commit landed
+(record: my 22:2x message to the builder, criteria restated in their reply):
+
+1. **Per guard, per branch — MET, and 1(b) caught a real defect:** the first
+   restart-on-OK fixture passed with the fix removed (bleed deep enough to
+   swamp the prior gain); mutation testing caught it; the retuned fixture now
+   ASSERTS it fools the no-restart design (+6.43 ≥ +1.73). Five mutations,
+   all caught, degenerate-input crashes fixed.
+2. **Divergence test able to fail — MET, exposed defect #3:** elo_logger was
+   never importable (module-level main(), no guard) — the rule inside it had
+   never been testable. Now driven end-to-end; threshold sweep asserted to
+   produce {True, False}, so a non-crossing sweep fails as vacuous.
+3. **HANDOVER — MET:** "absent = fine" now carries "only trustworthy as of
+   s26" with the why.
+4. **Baseline — EXCEEDED:** rather than carrying 1567.44 into the alarm, the
+   alarm's dependence on SHIP_BASELINE was REMOVED (rule reads the holder's
+   run off the tape; selftest feeds baseline 99999 and requires the alarm).
+   Re-armed loop carries the corrected value for reporting: PID 66915, PPID 1.
+
+**Verified by the auditor, not relayed:** I ran `--selftest` myself (9/9,
+exit 0), ran `test_instruments` (14/14 OK), confirmed PID 66915 detached with
+the corrected env and old 35906 gone, read the HANDOVER lines in the working
+tree. e31d7b4 (research self-correction + exploratory split) also audited
+clean — flag-free, caveats led, invalid test printed-and-discarded.
+
+**Two records worth keeping from the builder's reply:** (a) the SPRT advisory
+is strictly dominated by the −21 rule as an alarm (needs ~−5−14.85/k per
+match to accept BLEED, which puts net5 past −21 first) — **its CLEARED lines
+are not an independent second opinion and must not be read as one.** (b) The
+cadence-test question: no flag from me — a test asserting a live drifting
+quantity asserts today's ship rate, not the instrument; fixtures are correct
+and the live surface is audit_trigger itself.
+
+**The stop-loss loop is now closed end-to-end:** governing rule in one file,
+durable alarm proven able to fire on the branch that was broken, divergence
+guarded by a test that can fail, three wake paths live (ship_watch 66915,
+mine, research's). State: k=11, net5 −19.0, armed, two points off.
