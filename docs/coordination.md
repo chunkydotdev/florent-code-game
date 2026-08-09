@@ -19745,3 +19745,79 @@ injected into every future session at boot. The build-relevant consequences
 factor) are in the pricing doc. Edit is outside my usual write scope;
 precedent is Magnus's s26 CLAUDE.md authorization, and it is stated plainly
 in-session for his veto.
+
+## 2026-08-09 23:0x CEST (from `date`) — RESEARCH ARM: **PER-OPPONENT GATES LANDED — ZERO CELLS GATEABLE, and it found a CORPUS TRAP that invalidated a PUBLISHED finding of ours**
+
+Deliverable: **`docs/research/per-opponent-gates-v102-2026-08-09.md`**. Snapshot-pinned
+(`meta_join` md5 `91e2ba8b`, 7,834 rows, max `completedAt` 20:44:31.840Z) — **because the
+arm grew twice mid-analysis**, which is itself a finding about reading a live ladder.
+
+### THE ANSWER TO THE BUILDER'S ASK 2: **ZERO CELLS ARE GATEABLE, and the floor is structural rather than merely small**
+12 rated matches / 60 games / 11 distinct opponents. **After keying on `(opponent,
+opponent_version)` — which the Askar finding forced — only 7 of 11 cells have any
+comparison arm at all, and every one has k₁ = 1 or 2 matches.**
+**The best cell (Powerpuff Girls/v49, k₁=2 vs k₂=4) has an exact cluster-permutation FLOOR
+of p = 0.067. It cannot reach 0.05 until it gains a third match, whatever the games say.**
+**Measured era ICC = 0.278 ⇒ a 5-game match is worth 2.37 independent games.** Unclustered
+Fisher makes three cells look significant (p = 0.0018 / 0.022 / 0.031); **deflated by the
+measured DEFF all three go to p ≥ 0.077**, and at k₁=1 no valid clustered test exists.
+
+**Accrual, cadence derived not assumed (121/121 intervals at 9-10 min, zero gaps ⇒ 6
+matches/hour):** first gateable cell ≈ **+1 Powerpuff match ≈ 2.3 h**, and that is only a
+floor-touching gate. **All five shortlist opponents simultaneously capable ≈ 55 matches ≈
+9.1 h — which at the field's measured ship rates is at the edge of unreachable, because
+version-keyed cells have a half-life.**
+
+**The five-name shortlist is what SURVIVES the criterion, not a choice:** Powerpuff
+Girls/v49 (1599) · gsxWins/v22 (1611) · OopsGotYourElo/v21 (1551) · Kings College
+Munich/v8 (1559) · farming_200s/v9 (1654). Span 1551-1654. Reserve **I Stone/v22 (1630)**
+— zero ships all day, clean 40% baseline, excluded only because v102 has not drawn it.
+
+### **A CORPUS TRAP THAT INVALIDATED A PUBLISHED FINDING — corrected in three places**
+**`ladder_games.tsv`'s column named `seat` is the WINNER's side, not ours.** Read at
+source: `tools/corpus/ladder_meta.py` → `seat=(g.get("winnerSide") or "")`. **I verified it
+at the source line rather than by statistic**, which is the only reason it is decisive —
+the marginal split is ~50/50 either way, so nothing looks wrong.
+
+**It invalidated our own s25 seat-asymmetry evidence.** That finding computed *"win rate by
+seat"* off this column over 2,715 ladder games. On a loss the column names the
+**opponent's** side, so the statistic is near-circular — closer to *"how often are we team
+A"*, ~50% by construction. **Withdrawn in place in `tactics/INDEX.md` and
+`tactics/optimise-the-win-condition-action-itself.md`.**
+
+**THE CONCLUSION SURVIVES ON REPLACEMENT EVIDENCE: still no seat effect, p = 0.48 / 0.29**,
+computed against the **in-replay `DEATH`/`core` team index**. **So "do not chase the seat
+edge" was right for the wrong reason for a day — and that is precisely why it went
+unnoticed. A wrong instrument that returns the right answer is the hardest kind to catch.**
+Used as "our seat" on the v102 arm the bad column manufactures *"seat B 87.5% vs seat A
+26.9%, p = 1.7e-05"* out of nothing. **Filed as TRAP 7 in `corpus-howto.md`.**
+
+**And my own cross-check suggestion was CIRCULAR and the agent refused it:** I proposed
+validating seat/winner attribution against `meta_join.us_side` — but that, `join.our_team`
+and `ladder_games.won` **all descend from the same `winnerSide`.** The agent established
+attribution independently instead: in-replay `DEATH`/`core` team index (1,149/1,149; 46/46
+v102 and 98/98 era separately) **plus a behavioural identification — LOKI-8's silenced
+melee gives `batk = 0` on our side across all 60 v102 games against 3,517 on theirs.**
+**The bot's own fingerprint identifying its seat is a better instrument than any metadata
+join, and it is reusable.**
+
+### **A PROGRAMME-COMPLIANCE GAP, and it is the most important line here**
+**`v94 ≡ v101 ≡ `bots/_v115dodge` = Eir, byte-identical (md5 `77ae5c09`).** Pooling them is
+legitimate — **but it means every v102 comparison we have made tonight measures
+`Eir → LOKI-8`, not `COMPARE_AGAINST: previous_line_iteration`.**
+**LOKI-7 vs LOKI-8 HAS NEVER BEEN RUN.** The programme's own comparator is unmeasured.
+
+### CONTEXT-ONLY, EXPLICITLY NOT A VERDICT (the agent's labelling, kept)
+v102 rated arm **`core_kill_share` 53.3% vs era 31.7%**; **93.3% of games core-decided vs
+67.6%** — which **independently reproduces the decisive-rate result I committed at
+`e51eed2`** from a different filter and a pinned snapshot. **And the sharper form of it:
+all 32 v102 wins are core kills, ZERO economic wins, against 26 economic wins in the era
+arm.** Their kill share against us is **flat (40.0% vs 35.9%)**. **So the line is not
+trading defence for offence — it is converting its own economic wins into core kills.**
+
+**What could not be computed, stated:** a **map-matched** per-opponent comparison. Maps are
+uncontrolled between arms (Powerpuff overlaps on 8 maps, gsxWins on only 4). It is the
+analysis the question actually wants; at k₁=1 it would shrink an already-untestable cell.
+
+**Version tag:** live **v102 = LOKI-8**. Tape and live rating are different clocks
+(`elo_logger` 300s poll) — not quoted together here.

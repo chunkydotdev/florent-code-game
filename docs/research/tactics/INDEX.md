@@ -544,10 +544,24 @@ since the whole value is in the evidence labels.
   - **Cores are always id 1 (team A) and id 2 (team B) in every replay** — so **team A's
     core acts first in every round of every game.**
     **DO NOT CHASE THIS AS AN EDGE — MEASURED NULL (research, s25).** It was flagged as
-    "a free seat asymmetry nobody has exploited"; it does not reach the scoreboard. Over
-    **2,715 ladder games**: win rate **seat a 50.6% (n=1,392) vs seat b 52.3% (n=1,323),
-    z = −0.90, p ≈ 0.37**; **`core_kill_share` 30.2% vs 30.7%, z = −0.25, p ≈ 0.80** —
-    and that second one is the PROGRAMME's primary currency. Whatever the one-turn head
+    "a free seat asymmetry nobody has exploited"; it does not reach the scoreboard.
+    ~~Over **2,715 ladder games**: win rate **seat a 50.6% (n=1,392) vs seat b 52.3%
+    (n=1,323), z = −0.90, p ≈ 0.37**; **`core_kill_share` 30.2% vs 30.7%, z = −0.25,
+    p ≈ 0.80**.~~
+    **⚠ THAT EVIDENCE IS INVALID — WITHDRAWN 2026-08-09 (s26, research). THE CONCLUSION
+    SURVIVES ON REPLACEMENT EVIDENCE; THE NUMBERS ABOVE DO NOT.** `ladder_games.tsv`'s
+    column named **`seat` is not our seat — it is the WINNER's side**
+    (`tools/corpus/ladder_meta.py`: `seat=(g.get("winnerSide") or "")`, read at source).
+    So *"win rate by seat"* computed off it is **near-circular**: on a loss the column
+    names the **opponent's** side, so the statistic is close to *"how often are we team
+    A"*, which is ~50% by construction and cannot measure a seat effect at all.
+    **Replacement evidence, on a seat variable established against the in-replay
+    `DEATH`/`core` team index rather than `winnerSide`: still no seat effect, p = 0.48
+    and p = 0.29** (`../per-opponent-gates-v102-2026-08-09.md`). **So "do not chase it"
+    stands — it was right for the wrong reason for a day.**
+    **The trap is live for anyone else reading that column** and the same deliverable
+    shows it manufacturing *"v102 seat B 87.5% vs seat A 26.9%, p = 1.7e-05"* out of
+    nothing. Whatever the one-turn head
     start is worth mechanically, **it is not worth build effort.** Two descriptive
     asymmetries, untested and not claimed: they kill our core slightly more often when we
     are seat a (33.3% vs 29.9%), and our own kills come faster in seat a (median r139 vs

@@ -163,3 +163,36 @@ v72 bleed decode measured `replay_lib`'s built-in split mis-crediting a builder
 with 5,359 damage whose true figure was 1,598. If you need damage, recompute it
 from `fireTurret` keyed by shooter position, and treat builder attacks as the
 residual.
+
+## TRAP 7 — `ladder_games.tsv`'s `seat` column is the WINNER's side, not ours (found 2026-08-09, s26)
+
+**Read it at source before arguing with this:** `tools/corpus/ladder_meta.py` writes
+`seat=(g.get("winnerSide") or "")`. The column is named for our seat and populated with
+the winner's.
+
+**Why it survives casual inspection:** the marginal split is ~50/50 either way, so nothing
+looks wrong. On a **win** the column happens to name our side; on a **loss** it names the
+**opponent's**. Any "by seat" statistic computed off it is therefore near-circular — it is
+closer to *"how often are we team A"* (≈50% by construction) than to a seat effect.
+
+**It has already produced two bad results.**
+1. **A published null was right for the wrong reason.** The s25 seat-asymmetry finding
+   (2,715 ladder games, win rate 50.6% vs 52.3%, p ≈ 0.37) measured nothing. Corrected
+   evidence on a properly-derived seat variable agrees there is no effect
+   (p = 0.48 / 0.29) — so the *conclusion* held, which is exactly why the error went a day
+   unnoticed. **A wrong instrument that returns the right answer is the hardest kind to
+   catch.**
+2. **It manufactures significance.** Used as "our seat" on the v102 arm it yields
+   *"seat B 87.5% vs seat A 26.9%, p = 1.7e-05"* — pure artefact.
+
+**How to get the real seat:** derive it from the **in-replay `DEATH`/`core` team index**,
+not from any winner-derived field. Note that `meta_join.us_side`, `join.our_team` and
+`ladder_games.won` **all descend from the same `winnerSide`**, so cross-checking them
+against each other is circular and proves nothing. A **behavioural** check is the
+independent one — e.g. LOKI-8's silenced melee gives `batk = 0` on our side across all 60
+v102 games against 3,517 on theirs, which identifies the seat from the bot's own
+fingerprint.
+
+**Same class as the known-dead `econ.tsv` columns and `oppver`: a column whose NAME states
+a semantic its CONTENT does not carry.** Source and full working:
+`per-opponent-gates-v102-2026-08-09.md`.
