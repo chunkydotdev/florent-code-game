@@ -16691,3 +16691,53 @@ bet from the opponent. **If I were choosing LOKI-2's plank I would choose that o
 ring** — builder's call, builder's lane.
 
 **IN-FLIGHT:** dirty-tricks league sweep (wheel row 13).
+
+## 2026-08-09 15:30 CEST (from `date`) — RESEARCH ARM: **SWEEP 13 (DIRTY TRICKS) — and it corrects OUR OWN library**
+
+**Landed:** 12 files + INDEX wheel row 13. **75 quoted strings, 0 unverified.** Wheel row
+13 was the one topic never swept, and the PROGRAMME `loki` re-aim is what surfaced it.
+
+**THE LIBRARY CORRECTION, re-verified by me against the primary rather than relayed.**
+`cpu-timeout-induction.md` claims *"deliberately inducing an opponent's compute overrun is
+banned by name in at least two comparable leagues."* **It is not.** The BASIL quote is
+genuine and **passed our own 16/16 quote audit**. In full context:
+
+> *"Real-time limit is 30 minutes - after that a game will be killed. Neither bot gets a
+> win or loss. Bots that seem to cause this very often will be disabled. **Intenionally
+> causing this timeout to avoid losing will result in the bot being banned.**"*
+
+**"This timeout" is the 30-MINUTE REAL-TIME GAME CLOCK; the banned act is stalling *"to
+avoid losing"*.** Nothing to do with a per-turn compute budget. SC2 AI Arena's clause
+bans harming **the ladder and the engine**, not the opposing bot, and aiarena's taxonomy
+**awards the win with Elo when an opponent times out.**
+
+**A NEW FAILURE MODE, AND IT DEFEATED THE GUARD BUILT THIS MORNING.** The quote audit
+passed that string **correctly** — it *is* verbatim. **Nothing checked the REFERENT.**
+New INDEX rule added: **when a quote carries a demonstrative ("this timeout", "that rule",
+"such bots") the referent must be quoted too, or the claim is not sourced.** This is the
+project's standing failure — *the arithmetic was right, what it was taken to MEAN was
+wrong* — **arriving in the citation layer instead of the statistics layer.** Fourth
+sighting; the only one to get past a working guard.
+
+**THE ITEM STAYS HELD, AND I AM NOT TREATING THE CORRECTION AS A LEAD.** No other league
+banning it is **not permission from ours**. The organisers' rules govern; our own docs
+still conflict on what a CPU overrun does (`official-docs.md:1091` disqualified vs
+`CLAUDE.md:13` turn merely interrupted). **The correction narrows a false claim; it does
+not open a road.** Next step if Magnus wants it is **asking the organisers**, not building.
+
+**THE BOUNDARY FILE WORTH READING:** `manner-pylon-and-what-the-rules-permit` — AIIDE
+**whitelists the Manner Pylon by name** while forbidding *gas walk*. The field's line is
+**"blocking is legal; phasing through a block is a DQ"**, and **every denial tactic in
+this sweep sits on the permitted side.** Sourced, not assumed — useful for the whole Loki
+programme.
+
+**DISCIPLINE, recorded because it is why the rest is trustworthy.** The sweep **refused to
+publish one quote** (Liquipedia 429 across every endpoint — the concept survives only
+because AIIDE names it verbatim in text that WAS verified, and **no Liquipedia wording
+appears in any file**); **discarded four SC2 entries** resting on unrenderable wikitext;
+and **threw out its one named friendly-fire technique** because Irradiate "Eraser" runs the
+**wrong direction** (the caster splashes his own unit deliberately). **Still not found
+after both arms: any documented case of baiting an opponent into splashing his own army.
+CodinGame and AI Challenge are UNSEARCHED, not searched-and-empty.**
+
+**IN-FLIGHT: nothing.**
