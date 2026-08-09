@@ -16167,3 +16167,78 @@ change"* — and the tape backs it: **Aug 6 +202, Aug 7 +78, Aug 8 −14, Aug 9 
 candidate mechanism for a CHANGED objective (reach r1000 alive) rather than another knob
 inside the old one — provided gate (2) clears.** Which is precisely why it does not get
 built on arithmetic alone.
+
+## 2026-08-09 14:05 CEST (from `date`) — RESEARCH ARM: **BOTH GATES ANSWERED — MY OWN RECOMMENDATION IS REFUTED**
+
+**Landed:** `docs/research/heal-seat-census-2026-08-09.md`; `heal-ceiling-s1` **marked
+SUPERSEDED in place with the error chain intact**; scripts at
+`docs/research/scripts/seat-census-2026-08-09/`. Inputs **frozen** (join md5
+`f3bc78bc`, 1,355 rows; manifest git sha `56eceae`). 85 CAD replays → 43,684 round rows
+in 2.0 s; 1,355 files → 682,011 rows in 27 s; **0 errors both runs.**
+
+**GATE 2 — THE BUILDER'S GATE — KILLS THE BUILD.** Per siege-round in CAD losses:
+**(a) idle AND on a heal-capable tile: mean 0.15, ZERO in 92.1% of rounds**; (b) one step
+away 0.06 / 94.4%; (c) two-three steps 0.04 / 96.2%. **Terminal 25 rounds (where the core
+dies): (a)=0 in 95.7%.** Terminal deficit **10.83 HP/rd**; **tier (a) supplies 0.32 =
+3.0%.** Idle turns exist (12.8% of builder-turns) but **62% are >3 steps from the core**
+while **9.48 of 12 seats sit free.** Generalises: (a)=0 in **91.4%** of all 511 loss
+siege-windows league-wide.
+
+**The builder's REFINEMENT was the whole thing.** Measuring plain "idle turns" gives
+12.8% and reads as free capacity. **"Idle turns within one step of a free core-adjacent
+seat" turns 12.8% into 3.0%.**
+
+**I MUST RETRACT TWO HEADLINE RATES, AND THE CAUSE IS WORSE THAN THE RESULT.** I took the
+CAD doc's *median first gunner r172* and *median core death r361* and treated the
+difference as a 189-round window. **Two medians from different distributions are not a
+window.** Measured per game: **median r12 → r335, ~300 rounds** — **CAD's opening is a
+launcher-thrown builder planting a core-shooting gunner by r3**, traced event-by-event.
+
+| | published | measured |
+|---|---:|---:|
+| healers/round | 2.1 | **1.10** |
+| incoming HP/round | 11.20 | **5.67** |
+| heal ÷ damage | 0.76 | **0.753** ✓ |
+
+**Totals right, denominator invented; both rates shared it.**
+
+**GATE 1 INVERTS MY STORY. Staffing is BIMODAL with mode ZERO** — 0 healers on **56.7%**
+of siege-rounds, ~2.5 when it fires — and the switch is **whether the core took damage
+that round**: 0.45 quiet vs **2.24 on damage rounds**, 1.99 in the terminal 25.
+**OUR BOT HEALS REACTIVELY AND DOES IT WELL.** My "18% utilisation" was an artefact of
+averaging a reactive behaviour over rounds with nothing to react to. **Seat ledger: of
+30,109 turns standing on a heal tile, 70.5% healed — 90% in the terminal 25. THERE IS NO
+SCHEDULING SLACK TO HARVEST.**
+
+**THE REAL CONSTRAINT IS BODIES — my THIRD answer in one day** (titanium → builder-turns →
+bodies). **Terminal-phase living builders average 4.19** (4.06 league-wide); **≥6 staffed
+seats occurs in 2.0% of loss siege-rounds; observed max ever is 7.** The 12-seat ceiling
+is unreachable **because we do not have 12 builders alive when the siege peaks**, not
+because we decline to staff it. **Any heal response must say where the bodies come from —
+which is the ESCALATE cost already refuted at −7.8pp.**
+
+**Lead, NOT a recommendation:** 17.2% of seat-turns are builders on a heal tile who
+**walked away** (5,183 turns) — convertible for a move rather than a scheduled builder,
+but worth **0.37 HP/rd (3.4%)** in the terminal 25. **Same size as the idle channel. Both
+rounding errors.**
+
+**CONFOUNDS RULED OUT, NOT ASSUMED AWAY.** Cooldowns reconstructed: **every builder
+cooldown set in all 1,355 games is `1`**, so "idle because on cooldown" is impossible
+across rounds. **0 TLE builder-turns in the CAD set; 0 tracebacks**; `botOutput` present
+for 99.86% of builder-rounds. **THE s23 CO-OCCUPATION PRIOR IS NOT LOAD-BEARING HERE** —
+standing on the footprint essentially never happens (max 1 builder, 4 of 85 games), so
+ring-only seats give identical numbers. **Relevant because the LANE CALL IS STILL OPEN
+WITH MAGNUS and nothing on this thread now depends on it.**
+
+**ON THE PROPOSED PIVOT:** the heal result is **no longer a candidate mechanism** for
+*reach r1000 alive* — it is refuted. **But what refuted it points the same way:** we die
+with **4.19 builders alive**. That is a **population** problem, upstream of every knob on
+the turret scoreboard, and it is what **v92 already moves** (deaths/game 5.97 → 3.08).
+**My hold on the 56.9%/46.4% tiebreak split stands — it is observational and selected —
+but the pivot now has support that does not rely on that split at all.**
+
+**Cost of the whole exercise: one decoder pass, 27 s, instead of a battery.**
+
+**IN-FLIGHT: nothing.** Offered: the discriminating cut on the tiebreak split (the last
+thing I would want checked before the frame changes); field-side mirror of the dwell
+measurement.
