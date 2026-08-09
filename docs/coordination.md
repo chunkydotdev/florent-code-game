@@ -21143,3 +21143,62 @@ survive flattening; `pdftotext` emits `\x0f` bullet controls *inside* sentences;
 default extraction attaches real numbers to the WRONG AGENT.**
 **Gaps: Halite I unsearched; RoboCup only PARTLY swept; two Battlecode postmortems 500 on
 every attempt; no corpus cut run.** `INDEX.md` updated in the same commit, per the contract.
+
+## 2026-08-10 00:1x CEST — BUILDER s26: **LOKI-10 SIZING — the forward-survival plank is DEAD, and our arena pool cannot price defence at all**
+
+Measured on the LOKI-9 null's replays, which are pure LOKI-8 behaviour on this
+tree. **Denominator correction first, from the agent and it is not cosmetic:
+all 480 `control__` files are BYTE-IDENTICAL to their `variant__` counterparts**
+(`cmp`, 0 of 480 differing). The no-op is total — the treatment changed not one
+engine event in one game — so **n = 480, not 960**, and pooling would have
+doubled every n while adding nothing. Also: the d²<=50 census band is
+contaminated (249 of 749 in-band sentinels are ALSO inside our own
+`HUNT_BAND_DSQ=41`), so the subject is the **500** that pass raid.py's own gate
+across 335 games.
+
+### 1. THE PLANK IS ALREADY HALF SHIPPED — THE CODE COMMENT IS WRONG
+`raid.py`'s "walks to a ring station next round" is **false in play**: the
+planter is still adjacent **59.4% at +1 round** (n=500), and 73.9% at +10.
+"Make the planter stay" is therefore not the missing half of anything.
+
+### 2. AND IT CANNOT BE PRICED ON OUR FIXTURE — EXPOSURE IS LITERALLY ZERO
+**Not one forward sentinel takes one point of damage in 480 games.** Survival is
+**100.0%** at +10/+20/+30/+50. The cause is the opponent list, not our defence:
+the probes fire **54,264 shots and 99.83% of them target our CORE.** They are
+single-target core-rushers.
+**⇒ OUR ARENA POOL CANNOT MEASURE ANY DEFENSIVE PLANK.** This is a NEW kind of
+saturation and it is worse than the win-rate kind we already track: not "the bar
+is too high to resolve", but **"the mechanism never occurs"**. Every defensive
+or survivability plank measured against `cad_probe`/`orizon_probe`/the probe
+family is measuring a treatment on an event that does not happen. **Adding a
+building-attacking opponent to the pool is now a prerequisite, not an
+improvement.** (Premise did hold: 500/500 forward sentinels fired, mean 23.1
+shots. The ordnance works; nothing shoots back.)
+
+### 3. THE COLLAR HEAL IS DEAD CODE IN PRACTICE — 0 of 87,169
+**Every single heal — 100.00% of 87,169 — lands on our own core.** Zero on any
+friendly turret, builder, barrier or conveyor. **Not for lack of opportunity:**
+the planter is adjacent 59% of the time. The cause is priority —
+`eco.py:_heal_core` outranks `_heal_adjacent` at `main.py:411`, and `raid.py`
+steps 4-5 never fire once. The prior agent's read that "the heal exists, only
+presence is missing" was **exactly backwards**: presence exists, the heal is
+outranked. **This is REMOVAL-shaped, which is the only shape that has ever
+worked on this line** — but see §2: it cannot be priced on the current pool.
+Also: **`builderAttack` is emitted 0 times by either side.** The LOKI-8 core
+peck never happens in this battery.
+
+### 4. THE REAL NUMBER, AND IT IS ON THIS TREE RATHER THAN THE EIR ARCHIVE
+Over **74,723 gunner-rounds**: **79.95% have NO ENEMY ON THE RAY AT ALL.**
+Friendly blocking is common but nearly costless — own conveyor in front 48.71%
+of rounds, yet **only 1.70%** of gunner-rounds have an enemy on the ray with a
+friendly in front. **So "never stack gunners" is a 1.7% problem and pointing
+them at nothing is an 80% problem.** That is the siting road the LOKI-9 prereg
+already named as the later, riskier decision — now sized on LOKI-8 itself.
+
+### DECODE DISCIPLINE (the agent's, and it is the reason I believe the zeros)
+Hand-walked one plant at raw-wire level. **When 0/500 deaths came back it
+suspected the decoder before the world** and proved `removeEntity` live on the
+same files — 4,054 removals, enemy losing 61.2% of its sentinels. A first-pass
+heal artifact (0.19% reading EMPTY_TILE) was an end-of-round occupancy read and
+went to zero when evaluated at the instant of the heal. Two independent ray-walk
+implementations agree to 0.2pp; it reported the lower and named the spread.
