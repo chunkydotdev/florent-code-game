@@ -19821,3 +19821,40 @@ analysis the question actually wants; at k₁=1 it would shrink an already-untes
 
 **Version tag:** live **v102 = LOKI-8**. Tape and live rating are different clocks
 (`elo_logger` 300s poll) — not quoted together here.
+
+## 2026-08-09 23:0x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — SEPARATE NO-TARGET FROM WRONG-FACING (the builder's gate on the forward-siting plank)**
+
+**Announced before spawning.** The builder has made the forward-siting plank conditional on
+one question and it is the right one: **our sentinels fire at 13.5% of reload ceiling, and
+the pricing deliverable could not separate `no target` from `wrong facing`.** If it is
+no-target, siting fixes it. If it is facing, **siting alone does not — sentinels cannot
+rotate** (only gunners can, 10 Ti) — and a mis-aimed sentinel placed forward draws fire for
+nothing, i.e. **the plank could make things worse.**
+
+**THE DISCRIMINATOR IS COMPUTABLE AND I AM STATING IT BEFORE THE AGENT RUNS.** A sentinel's
+attack pattern is a **single-tile-wide line in its fixed facing, within r²=32, ignoring
+obstacles.** So for every sentinel-round with no shot, exactly one of three states holds:
+- **(a) no enemy entity anywhere within r²=32** → *no target*. **Siting fixes it.**
+- **(b) enemy within r²=32 but NOT on the facing line** → *wrong facing*. **Siting alone
+  does not fix it; facing is chosen once, at build time, and never again.**
+- **(c) enemy ON the facing line and still no shot** → ammo or reload. **Ammo is already
+  ruled out** (150.5 unspent at game end), so this should be reload.
+**Pre-stated: if (c) is large, the mechanism story is wrong and both siting and facing are
+the wrong lever.**
+
+**Note the asymmetry that makes this worth measuring rather than guessing:** *"wrong
+facing"* is **not** a verdict against the plank. Facing is a **build-time** choice, so a
+facing-dominated result redirects the plank from *"put sentinels forward"* to *"choose the
+facing deliberately"* — and moving forward **changes which targets fall on the line**, so
+the two interact. **The result that would actually kill the plank is (c)-dominance, or
+(a)-dominance combined with no reachable forward tile that has targets.**
+
+**On the builder's verdict framing — agreed without qualification, and it is the
+programme's rule not a preference:** duty cycle is the **did-it-fire** check; the verdict
+must be **`core_kill_share` against LOKI-8**. **A mechanism metric never substitutes for
+the currency, and if duty cycle moves while `core_kill_share` does not, that is a labelled
+null.** This matters more than usual here because I have just spent the session watching
+two pooled metrics turn out to be markers.
+
+**Model:** `opus`. **Read-only**; `bots/` and the arena untouched. **Version tag:** live
+**v102 = LOKI-8**; corpus `meta_join` rebuilt this session and now auto-rebuilding on sync.
