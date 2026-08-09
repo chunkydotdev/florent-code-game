@@ -15826,3 +15826,60 @@ cad_probe excluded 3 sessions on a grep matching its own docstring "nothing
 here is random") — HANDOVER corrected in 8999153; process-review addendum
 material ("born wrong from a bad grep, inherited verbatim 3x"). And: v92
 is the holder now (1534 @ 526).
+
+## 2026-08-09 13:28 CEST (from `date`) — RESEARCH ARM: **OPPONENT-NESTING PRIOR — STABLE AND WORTHLESS; + CORPUS TRAP 7**
+
+**Landed:** `docs/research/opponent-nesting-prior-2026-08-09.md`; scripts at
+`docs/research/scripts/oppnest-2026-08-09/`. **Version tag: live v92 `_v115dodge`
+(`7b1d8d73`), v91 `_v100hf` the rollback control.**
+
+**THE LEAD THE BUILDER CALLED THE BEST OF THE DAY IS DEAD, AND NOT FOR THE REASON I
+EXPECTED.** I expected the spread to be noise. **It is not.** Split-half by interleaved
+match rank **r = 0.888** (chronological 0.782); cluster-permutation 4,000 reps,
+between-opponent variance **0.01811 vs null 0.00365, p = 0.0002**; leave-one-match-out
+opponent prior **Brier 0.1759 vs 0.1902 = +7.5% skill**. **It reproduces better than
+almost anything measured in this corpus.**
+
+**It dies on the outcome linkage.** r(nest rate, **our win rate**) = **−0.074**;
+r(nest rate, **our home builder deaths / 1k builder-rounds**) = **−0.003**.
+**The nesting leaders are not the teams beating us.** The attribution doc's named three
+are the harm leaders — Ouroboros 4.16/1k (we win **15%**), Lunds 4.02 (28.5%),
+Powerpuff 2.13 (35.0%) — **and two nest BELOW the 25.4% field average.** The top nester
+**Team 48 (66.5%) is a team we beat 62% of the time.**
+
+**And it dissolves under the obvious within-game control.** By seeds planted: 1 seed
+0.87 vs 2.92 home deaths/1k; 2 seeds 1.16 vs 1.80; 3–4 1.85 vs 2.20; **5+ 1.95 vs
+1.89.** **The harm tracks plant COUNT, not nest formation** — which read back against
+my own tail doc means the far-supported-nest survival result is about **which plants
+persist**, not about nests being the harm mechanism.
+
+**CORRECTION TO HOW I QUOTED IT.** "Factor of fourteen" was plant grain. **ICC 0.148
+within match / 0.249 within game, design effect 2.76 ⇒ plant-level intervals are ~1.7×
+too narrow.** Honest quotation: **66.5% [60.8–72.3] vs 5.4% [1.3–16.9]** — ordering
+real, **at the interval edges a factor of ~4.** Team 48's "n=170 plants" is 20 matches
+/ 97 games.
+
+**If ever revisited, the key is opponent × ROUND BAND** (OOS Brier 0.1896 global →
+0.1803 round band → 0.1775 opponent → **0.1750 opponent × band**) — **and it would be
+stale the day they ship**: Ouroboros, Team 48, OopsGotYourElo, Orizon and The Bisons
+each appear in our corpus on **exactly one version**, so for the extreme nester
+opponent and version are perfectly confounded.
+
+**CORPUS TRAP 7 — and a gap in the tool built for traps 5 and 6. Both verified by me.**
+**`oppver` is NULL in every row of `join.tsv` (1,355) and `ladder_games.tsv` (2,625)** —
+one distinct value, the literal string `None`. `ourver` is fully populated, so it is
+not a join failure. **`tools/corpus_sanity.py` cannot catch it**: line 30 filters
+`not in (None, "")` — the *string* `"None"` passes — then line 33's `float("None")`
+raises `ValueError`, caught and `continue`d. **The tool silently skips every
+non-numeric column.** It catches all-zero **numeric** columns and is blind to all-null
+**string** columns. Both prior traps were numeric, so the tool was built to the shape of
+its examples. **Substitute: `league_matches.tsv` `teamAVersion`/`teamBVersion` on match
+id — 236/271 matches, 85.7% of seeds.** `tools/` is the builder's lane; flagged, not
+edited.
+
+**OPERATIONAL HAZARD, new since the keeper auto-syncs:** the keeper appended live
+during this analysis and grew `join.tsv` **1,350→1,355 mid-run**, producing one
+inconsistent count before it was caught. **Everything published is off a frozen 13:18
+snapshot** (join md5 `f3bc78bc`, events 882,645 rows). **Freeze before analysing.**
+
+**IN-FLIGHT:** the Cut B(1) dwell measurement — the one that PRICES DODGE.
