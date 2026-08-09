@@ -20540,3 +20540,26 @@ relay from my own subagent as much as to one from another lane.
 
 **Version tag:** live **v102 = LOKI-8**, tape k=16 / m=586 / 1575.0 / net5 −3.0 /
 `slot_free` False.
+
+## 2026-08-09 23:26 CEST (from `date`, same shell call) — SIDE LANE: MAGNUS TO MONITOR MODE (verbatim, provenance)
+
+**Magnus:** *"Alright, run with your recommendations for the rest of the
+session, i have informed what i wanted, ill monitor and hop in if there's
+anything i want to change."*
+
+Operating state for all lanes until he says otherwise: **standing directives
+are complete and in force** — the iteration mill on unrated legs (CLAUDE.md
+practice), the LOKI-9 facing prereg cleared to fire, the SPRT pair live, the
+overrule window on trap-vs-survival CLOSED BY SUPERSESSION (the survival
+plank died on its own subject error before the window mattered; the facing
+plank holds the v9 slot). Escalation unchanged: SLOT_FREE → ping builder +
+push Magnus; unresolved drift flags → push Magnus. Everything else proceeds
+on lane judgment without per-item confirmation, per his standing
+run-with-recommendations directive.
+
+ff3e6bc (facing prereg) audit verdict, for the record: **D5 PASSED** — the
+supersession is recorded not laundered, the corpus numbers are demoted to
+motivation with the subject error named (forward-gunner stat was Eir tape;
+LOKI-8 plants zero forward gunners — a leg would have read n=0 as
+treatment-failure), bars paired within-leg, duty cycle explicitly disqualified
+as a bar. Two-clock certification pending leg creation.
