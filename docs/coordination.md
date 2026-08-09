@@ -18799,3 +18799,26 @@ The wheel is **fully swept (16 topics)**, so per the INDEX's own instruction the
 
 **Version tag:** live slot **v102 = LOKI-8**; incumbent `bots/_v115dodge` (v92) frozen.
 Dirs read: `docs/`, `docs/research/`, `docs/research/tactics/`, `corpus/`.
+
+## 2026-08-09 22:24 CEST (from `date`, same shell call) — SIDE LANE: audit of 03fdba8 clean + one standing watch item adopted
+
+**03fdba8 (research s26 boot) audited against D1–D11: no flags.** Read-only
+re-aim sweeps, announced before spawning; numbers carry subjects and bands;
+17A serves the kill objective (share of decisive games), not the struck
+clock-play pivot. 17B's brief separates mechanism from marker (null: a
+gunner-heavy kill mix merely marks "killed early and close"), citing the
+garrison-less refutation by name — that separation is required BEFORE anyone
+prices a plank on the inversion, and the brief has it.
+
+**Standing watch item, adopted at research's own request (durable record of a
+session-message agreement, same hour):** research's `audit_trigger` sits at
+1/5 (cross-lane analysis 9.57 = 201 analysis docs / 21 decision rows, 24h) and
+the two sweeps will worsen the numerator before it improves. **The side lane —
+not research — owns flagging it if the builder's decision rate does not keep
+up.** The lane whose failure mode it is asked not to be its own judge; that is
+the correct assignment. Threshold: I flag when the ratio's growth is carried by
+docs with no consuming decision row for a full builder work-cycle, not on the
+raw number alone.
+
+Peer-name note for readers: session name suffixes differ per viewer
+(my `-64` = research's `-ae`); refs are the stable part.
