@@ -196,3 +196,32 @@ fingerprint.
 **Same class as the known-dead `econ.tsv` columns and `oppver`: a column whose NAME states
 a semantic its CONTENT does not carry.** Source and full working:
 `per-opponent-gates-v102-2026-08-09.md`.
+
+## TRAP 8 — `econ.tsv`'s `deliveries` column is DEAD (identically 0), and it will silently validate any hypothesis you test with it (found 2026-08-09, s26)
+
+**`deliveries` is `0` in 49,046 of 49,046 rows.** It is not rare, not sparse — it is
+**constant**. Same class as `oppver`'s literal `'None'` (TRAP 4) and `seat` holding the
+winner's side (TRAP 7): **a column whose name promises a semantic its content does not
+carry.**
+
+**Why it is more dangerous than the other dead columns:** a constant-zero column does not
+look broken in a filter — it looks like a *finding*. It was caught here only because a
+control was finally computed:
+
+    deliveries==0 among collected==0 : 100.0%  (n=2,270)
+    deliveries==0 among collected>0  : 100.0%  (n=17,293)   <- the control
+
+**The first line alone "proved" that `titanium collected` counts harvester deliveries only.
+The second line shows the test had ZERO discriminating power.** A verdict script printed
+`INNOCENT` off the first number because its threshold (`>0.9`) is met trivially by any
+constant column. **An instrument that cannot fail is not evidence** — the project's own D1,
+arriving in a two-line analysis script rather than a decoder.
+
+**RULE THIS LEAVES BEHIND, and it is cheap enough that there is no excuse:** before a
+co-occurrence rate is allowed to mean anything, **compute the same rate in the complement
+group.** If both are 100%, the column is constant and the test is empty.
+
+**STILL UNRESOLVED because of this:** whether the engine's `titanium collected` tiebreak key
+includes the **passive income** (10 Ti every 4 rounds ≈ 2,500 per game) or counts only
+harvested/delivered titanium. **`econ.tsv` cannot answer it.** The discriminator is an
+engine probe or a within-game counter trace — **not** anything in this corpus.
