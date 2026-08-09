@@ -14410,3 +14410,15 @@ was a measurement; every cheap thing was a read.** That is now three for three �
 "who can kill a builder bot" (a docstring), "why doesn't it scale" (variables
 that don't exist), and "what is the opponent pool" (a docstring). **The standing
 form: at the start of a session, read the instrument before using it.***
+
+## 2026-08-09 — THIRD LANE (Magnus directive): TEST PROCESS PROPOSAL
+Magnus: "the builder keeps forgetting unrated and test games — build a test process so we
+use all tools available to us." Landed: `docs/research/test-process-proposal-2026-08-09.md`
+— the 8-stage pipeline (pre-register → rules → probe → parity → local mechanism → UNRATED
+GATE → ship gate → field window → production read) with skip-rules, the instrument table
+with each tool's measured limits, the zero-Elo unrated loop operationalized (4 commands in
+the ~4:13 safe gap), a treatment-occurrence check that names the ESCALATE trap, and two
+forcing-function options (mandatory S5 tape fields; a tools/preflight.py spec — builder-owned
+if adopted). Backlog it immediately applies to: ESCALATE r250 gate and SITE magnitude both
+need one unrated cycle each. Proposal per no-cross-writes: builder adopts/adapts; nothing
+of builder-method.md or ship-gate.md edited by this lane.
