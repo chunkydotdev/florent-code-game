@@ -176,6 +176,55 @@ engine-side enforcement is inference. **A WebFetch summariser fabricated a Scree
 tower falloff formula that is absent from the raw page; it was caught and not used** —
 the same failure mode as the documented incident above, now observed twice.
 
+| 8b | **RE-AIM of topic 8 (economy) at the builder-exposure split** — how leagues allocate WORKER TIME between economy upkeep and defence upkeep | **SWEPT** (s24). BC2020 (3), BC2022, Liquipedia BW/SC2, Screeps docs + Overmind, Halite II. **6 files, 38 quote-strings all verified.** | 2026-08-09 | [worker-fortified-turret-cell](worker-fortified-turret-cell.md), [marginal-healers-per-structure](marginal-healers-per-structure.md), [heal-cap-and-timeout](heal-cap-and-timeout.md), [fortify-on-idle](fortify-on-idle.md), [defence-production-pegged-to-economy](defence-production-pegged-to-economy.md), [worker-pull-does-not-exist-here](worker-pull-does-not-exist-here.md) |
+
+### Sweep 10 (topic 8b) — it explains the field's 5.04 lift, and it found a stale number
+
+**The measured surprise it was sent at:** the field's home builders die next to *their
+own turrets* (32.3%, lift **5.04**) where ours do so 2.7% of the time (lift 1.00) —
+their exposed workers service **defence**, ours service **economy**.
+
+**The sweep's answer is that the field's number is the signature of a mutual-protection
+cell**, and it closes *harder* in our ruleset than in the games it came from, because
+**builder attacks cannot touch builder bots at all** — so workers holding a turret's
+orthogonal tiles out-repair the chip while the turret kills the only thing that could
+remove the workers. `worker-pull-does-not-exist-here` is the control that makes the
+reading forced rather than one of two: the canonical RTS answer to *"when does a worker
+switch to defence"* is **it starts shooting**, which is impossible here — so the
+field's turret-adjacent deaths **cannot** be a worker pull.
+
+**And the counter-evidence is filed beside it, not buried:** BC2022's 5 Musketeers ran
+our exact heal arithmetic and watched the repair queue pull *"nearly a dozen soldiers
+out of commission"* and lose *"the clash in the middle"* — **and the middle game is
+exactly where we die.** Anyone building toward the 5.04 must read
+`heal-cap-and-timeout` first.
+
+**A STALE NUMBER FOUND, CHECKED IN THE BOT, AND CORRECTED.** `docs/v79-analysis.md`
+(proposal B0b) said *"a gunner is ~3.5/rd and a sentinel ~9/rd"*. The gunner figure is
+**2× low**: `docs/reference/official-docs.md:257` says *"18 every 2 rounds against 7
+every round"*, so a gunner is **7/rd**. **Before flagging it I checked whether it sized
+anything shipped — it did not.** `MEDIC_TI_FLOOR/MIN_RND/EARLY_MIN_DMG/TYPES` carry no
+damage-rate, and the heal-seat arithmetic at `_v100hf/main.py:550-560` uses a
+**measured** siege DPS (max 23.22) instead. **The error is latent, not live — it would
+have become live the moment anyone built B0b.** It doubles the healer count that
+proposal implies: one healer (4 HP/rd) does **not** out-heal a gunner; two do.
+Corrected in place at the source line.
+
+**Non-coverage and negatives, stated:** **no league instruments the economy-vs-defence
+worker-time split** — every rule found is a build-order ratio or a trigger, and not one
+source reports realised worker-rounds by task. **No published repair-vs-rebuild return
+measurement exists anywhere**; our 4.00 HP/Ti comparison appears to be original. Lux
+(S1/S2) and Halite III gave nothing quantified. Terminal was dropped rather than
+transferred — **it has no workers at all**, so its repair economics are a resource
+decision, not a worker-time one. One CodinGame claim was found only as a search snippet
+and **is in no file** because it could not be verified on-page.
+
+**Quote discipline, recorded because it is the third data point on this failure mode:**
+one drafted quote — *"SCVs are used to repair tanks and draw fire"* — turned out to
+read *"They are also used to repair tanks and draw fire"* with **"They" referring to
+Supply Depots**. Wrong subject, not verbatim. **Cut, not paraphrased into unmarked
+text**, and replaced with a labelled paraphrase.
+
 **THE WHEEL IS NOW FULLY SWEPT (all 12 topics, 2026-08-09).** Successive sessions
 should re-sweep STALE rows rather than pick unswept ones — and prefer re-aiming a
 topic at a specific measured surprise, which is what produced the best results here
