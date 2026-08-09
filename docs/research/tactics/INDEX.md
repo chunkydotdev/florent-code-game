@@ -61,16 +61,16 @@ exception permanently destroys that unit for the match.
 
 | # | topic | status | swept | files |
 |---|---|---|---|---|
-| 1 | Battlecode postmortems: late-game conversion, breaking stalemates | **in flight** | 2026-08-09 | — |
-| 2 | Cross-league trickster/asymmetric play (steering deterministic opponents, denial, baiting, body-blocking, tiebreak manipulation) | **in flight** | 2026-08-09 | — |
-| 3 | Engine/rule-edge exploits + post-hoc rule patches (best index of what worked) | **in flight** | 2026-08-09 | — |
-| 4 | CPU/time-limit exploitation — inducing opponent timeouts | unswept | — | — |
-| 5 | Turret/tower placement doctrine and advancing a firing line (tower-defence + RTS theory) | unswept | — | — |
+| 1 | Battlecode postmortems: late-game conversion, breaking stalemates | partial (agent died on quota) — **re-run in flight** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) |
+| 2 | Cross-league trickster/asymmetric play (steering deterministic opponents, denial, baiting, body-blocking, tiebreak manipulation) | **SWEPT** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md), [spawn-smothering](spawn-smothering.md), [ore-tile-denial](ore-tile-denial.md), [ammo-drain-baiting](ammo-drain-baiting.md), [destroy-rebuild](destroy-rebuild-converter.md) |
+| 3 | Engine/rule-edge exploits + post-hoc rule patches (best index of what worked) | **SWEPT** (8 Battlecode postmortem PDFs read in full) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §3, §6 |
+| 4 | CPU/time-limit exploitation — inducing opponent timeouts | **NEGATIVE across 9 leagues; StarCraft AI (SSCAIT/AIIDE) re-run in flight** | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §1 |
+| 5 | Turret/tower placement doctrine and advancing a firing line (tower-defence + RTS theory) | **SWEPT** (Lanchester, LTD2, chokepoint/concave theory) | 2026-08-09 | [lanchester-commit-gate](lanchester-commit-gate.md), [sweep 1](2026-08-09-sweep-1.md) |
 | 6 | Cost-inflation attacks (making the opponent's buildings dearer) | unswept | — | — |
 | 7 | Limited-bandwidth team coordination (our 16 ints) — patterns from Halite/Ants | unswept | — | — |
 | 8 | Economy: harvest saturation, expansion timing, when to stop expanding | unswept | — | — |
 | 9 | Opening theory and build-order steering in symmetric-map games | unswept | — | — |
-| 10 | Endgame/tiebreak play when the win condition is a score, not a kill | unswept | — | — |
+| 10 | Endgame/tiebreak play when the win condition is a score, not a kill | **SWEPT** (BC 2019 do-nothing, BC 2022 one-gold, Halite endgame flag, Spring'21 score+banked/3) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §4 |
 | 11 | Anti-rush and defensive-line theory (what makes a line hold) | unswept | — | — |
 | 12 | Unit-displacement mechanics elsewhere (our launcher throws EITHER team's bots) | unswept | — | — |
 
@@ -80,6 +80,14 @@ unit-turns across 85 games** — median 0 per game, mean 310, **max 3,508**, fir
 in 44% of games. Leviathan 4.40%, The Bisons 4.65%. Every 1800+ team and we
 ourselves sit at 0.00%. A conditional compute blow-up in three opponents is the
 most exploitable shape a weakness can have, and we do not yet know the trigger.
+
+## Model rule for sweeps
+
+**Every subagent gets an explicit `model:` — `opus` or `sonnet`, never `fable`,
+never omitted** (Magnus 2026-08-09, restating the 2026-08-08 s18 directive after
+it drifted a second time). Sonnet for mechanical sweeps with a validated method;
+Opus for anything that must grade its own sources — which is most tactics work,
+since the whole value is in the evidence labels.
 
 ## Standing context a sweep should know
 
