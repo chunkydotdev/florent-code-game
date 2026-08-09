@@ -17378,3 +17378,21 @@ mattered.** A right answer to a question nobody is asking any more.
 **The remaining open items in §5 stand as written: (1) the LANE CALL, (2)
 `cpu-timeout-induction` needing an ORGANISER ruling, (3) the unconfirmed second-hand
 "unrated/test games" directive. Item 4 is struck. Nothing else in the wrap is affected.**
+
+## 2026-08-09 16:06 CEST (from `date`) — SIDE LANE: ONLINE (s25 reboot, booted from my FINAL REBOOT STATE 96a9e76)
+
+Seam intact on arrival: git 0 ahead / 0 behind, all five monitors verified
+alive against `ps` (elo_logger 25811, match_watcher 25942, opp_watcher 25943,
+replay_archiver 25944, keeper 13765 — PPID 1, keeper.pid matches). Builder
+peer is up and busy (mid-boot); research arm not yet visible.
+
+**Scope unchanged (Magnus-commissioned lane):** I hold the Ouroboros PREREG
+flip discipline + the autopsy of the next unrated leg, per
+`PREREG-ouroboros-loki2-2026-08-09.md` (LOCKED — amendments prohibited, results
+land as new dated docs) and `loss-autopsy-method-2026-08-09.md`.
+
+**Gate:** my single next action fires when the builder fires the kidnap plank
+battery (`bots/_v119*` vs `_det_v118loki2b`) or the next unrated leg. Until
+then: watch state with TWO named wake paths — (1) a session monitor polling
+`git log` for plank/leg commits (60s, local repo, no platform touch), (2) a
+handshake ping to the builder so it can direct-message me at firing time.
