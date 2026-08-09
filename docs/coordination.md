@@ -16625,3 +16625,69 @@ Magnus's new directive (building now): after unrated games, autopsy each loss
 — what killed us, would another trick have won, would a COMBINATION have
 turned it. Building the loss-autopsy method + prototyping on already-decoded
 rated losses so it's ready when unrated lands. In-flight this lane.
+
+## 2026-08-09 15:28 CEST (from `date`) — RESEARCH ARM: **ARSENAL PRICED, AND THE RING RESULT RE-CUT AFTER I REFUSED THE FIRST VERSION**
+
+**Landed:** `docs/research/loki-arsenal-pricing-2026-08-09.md` (556 lines, §1.3 amended in
+place), scripts at `docs/research/scripts/arsenal-2026-08-09/`. Inputs frozen with md5s;
+decoder extends `dwell_decode.py`; 1,355 files, 0 errors, 34 s, 10 validation checks.
+
+**THE METHOD NOTE FIRST, because it is the reusable part.** The agent's first §1.3 said
+heavily-ringed cores die inside r250 **a third as often** as base — a refutation of the
+doctrine the builder is mid-build on. **I did not relay it.** Reaching high ring occupancy
+takes rounds, so a side cannot be heavily ringed by r250 unless it survived long enough to
+be ringed: **the cut conditioned on survival on one arm and not the other.** Sent back for
+a time-conditioned re-run rather than forwarded. **It flipped.** At k=3, **147 of 393
+sides achieved the ring AFTER r250 and scored 0.00% by construction.**
+
+**CORRECTED — per-round hazard, right-censored (a round counts only if the outcome is
+observable within the horizon), which is also the quantity a bot can act on.** Before
+r250, P(enemy core dies ≤25 rounds):
+
+| hostile ring occupancy j | ALL occupant types | **BODIES ONLY (what we can build)** |
+|---|---:|---:|
+| 0 | 1.99% | 2.24% |
+| **1** | — | **4.77%  ← 2.1x, CIs disjoint** |
+| 2 | — | 4.01% |
+| 3 | — | 2.91% |
+| 4 | 8.07% | — |
+| 8 | **12.62%  (6.3x)** | — |
+
+**THE 6.3x IS HOSTILE BUILDINGS. THE BODY EFFECT PEAKS AT ONE AND DECLINES.** Pooled over
+all rounds the hazard falls to 0.00% at j=11 — **the original table averaged the early and
+late regimes and reported the late one.** Round-matched control: 2.03–2.28x by R=250,
+**null at R=50.**
+
+**⇒ THE CORPUS SUPPORTS "ONE BODY ON THEIR RING, EARLY". IT DOES NOT SUPPORT "CLOSE THE
+RING".** Relayed to the builder as a re-aim of LOKI-2, with the note that 2.69/8 may
+already be past the productive point and the three fully-sealed games are the configuration
+with the worst measured fast-kill rate.
+
+**THE CAVEAT I AM NOT BURYING, raised by the agent itself: the 2x is partly REVERSE
+CAUSATION and cannot be separated from this data.** A core about to die is a core whose
+defenders are already dead — exactly when a body can stand on its ring. **The
+round-matched control being NULL at R=50 is consistent with that and is the most
+uncomfortable number in the set. Treat 2.1x as an UPPER BOUND, not an effect size.**
+
+**REST OF THE ARSENAL.** **1a body-blocks-a-spawn VERIFIED** — 2,405,604 body ring-tile-
+rounds, **0 spawns** (394,970 enemy) — the observational twin of the builder's live probe.
+**1b "12 occupied = locked" REFUTED — a CONVEYOR DOES NOT BLOCK: 40.1% of all 31,913
+spawns landed on a conveyor/splitter tile.** Only 8 of 14 occupant classes block. **1c
+own-bodies full lock NEEDS PROBE — never occurred; max hostile bodies ever is 6/12, four
+times in 2,710 sides.** **2 kidnapping VERIFIED** — 20.65% of enemy-builder-rounds before
+r250 have a launcher site, **0 of 1,355 games have none**. **3 kidnap-into-friendly-fire
+opportunity VERIFIED 10.06%**, conversion needs a probe — **and the sharper variant,
+throwing onto OUR OWN gunner's line, is 10.05% and needs no behavioural bet.** **4 ore
+poisoning REFUTED** — median 5 tiles used, **11 spare**, top-1 worth 25%; **reachability is
+fine after r15, so s22 blamed the wrong cause.** **5 partial spawn starvation REFUTED
+HARDER** — 50-round bins show the rate **flat across all blocking levels from r50 onward;
+phase was not the confounder.** **6 siphon real but off-currency** — they bank only
+**1,160 Ti by r250.**
+
+**MY RECOMMENDATION, stated plainly rather than as a menu:** the ring is worth **one body
+early**, not a seal; **kidnapping is the only VERIFIED item with headroom**; and
+**friendly-fire via OUR OWN gunner's line** is the one mechanism that needs no behavioural
+bet from the opponent. **If I were choosing LOKI-2's plank I would choose that over the
+ring** — builder's call, builder's lane.
+
+**IN-FLIGHT:** dirty-tricks league sweep (wheel row 13).
