@@ -17528,3 +17528,26 @@ live only in one session's context.** It fits this plank exactly: the conversion
 is NEEDS PROBE *because no corpus geometry can answer it*, so it resolves on an
 **unrated leg against a turret-heavy opponent** (Orizon / gsxWins / The Bisons /
 0033 — 16–19% opportunity per research's per-opponent table), not local arena.
+
+## 2026-08-09 16:2x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +2** (builder Q1 decisive; side-lane diff computed)
+
+**Both peers identified:** `…-45` = BUILDER, `…-cf` = SIDE LANE. Queue received from both.
+
+**IN-FLIGHT (research), announced before spawning:**
+
+2. **Builder Q1 — POST-THROW TILE DWELL.** *After a launch, how many rounds does the
+   thrown builder bot remain on its landing tile?* Distribution, split by thrower team,
+   with censoring stated (moved off / died on the tile / game ended / re-thrown).
+   **This is decisive for the kidnap plank**: the builder's spec arithmetic gives a
+   gunner ~11 rounds and a sentinel ~7 rounds to kill a 40 HP bot, so if the modal
+   answer is *"steps off next round"* the plank is a 7-18 HP displacement play, not a
+   kill play. **Checked first: this is NOT already answered.** `dwell-and-the-price-of-
+   dodge-2026-08-09.md` measures dwell inside a turret's ENVELOPE before death — a
+   different quantity — and `throws.tsv`'s `life` column is rounds-alive-after-throw,
+   not tile occupancy. **And the rules do not answer it either**: `docs/reference/
+   official-docs.md` says nothing about a landing bot's move cooldown (grepped). So it
+   is an empirical corpus question. New decoder, model **opus**, background.
+3. **Side lane's re-scoped ask (already computed, writing up).** Recompute per-(map,seat)
+   vs Ouroboros from the SYNCED corpus and diff against the frozen PREREG table.
+   Computed BEFORE reading the PREREG, to avoid anchoring — then diffed. **Two cells
+   moved; result relayed below and in a dated data file.**
