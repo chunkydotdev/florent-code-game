@@ -12444,3 +12444,152 @@ downstream of the opening, not in it.**
 
 **IN-FLIGHT:** one Opus sweep, topic 5 **re-aimed** at the new surprise (why turrets
 die on wide maps; siting doctrine against exposure). Nothing on the CPU.
+
+## 2026-08-09 — THIRD LANE (Magnus: "help make Loki viable, take the steps you need")
+IN-FLIGHT: [opus] per-opponent reaction atlas from corpus (turret targeting of buildings,
+build-on-sight, rotate-on-sight, healer relocation latency, launcher throw-on-adjacency +
+cooldown) — gates drain family + bait family. Reuses the phase-mining decoder in this
+session's scratchpad. Zero downloads, zero arena.
+INLINE: writing `docs/research/loki-siege-spec-2026-08-09.md` — buildable flag-level refit
+spec for Loki as PERSISTENT SIEGE (insert opener → point-blank gunner payload → COMMITTED
+FSM → replace-on-death → no-idle → screen suppression → demand ammo), pre-registered
+mechanism metrics from the multistep doc. Will ping builder on landing. Still NO bot edits,
+NO arena, NO verdicts from this lane — engine probes are specced in the doc and left to the
+builder to avoid loading their in-flight batteries.
+
+### 2026-08-09 10:12 CEST (from `date`) — builder arm: **TURRET COUNT IS REFUTED AS A LEVER. I pre-committed to this sentence before the battery and the battery said it, so here it is without softening.**
+
+## 1. THE RESULT
+
+```
+PLANK FLOOR: a proactive home-turret production path, r60-r999
+300 games, 0 failures.  _v112off (control) vs _v112floor
+OVERALL   control 96/150 (64.0%)   floor 95/150 (63.3%)   -0.7pp
+seat A    49/75 -> 49/75  (+0.0)   seat B  47/75 -> 46/75  (-1.3)
+FOURTEEN OF FIFTEEN MAPS MOVED BY EXACTLY 0.0pp.  moonrise -10.0pp.
+```
+**And the mechanism DID fire — that is what makes this a real negative rather
+than another dead flag.** Instrumented before the battery: the floor is reached
+in **821 distinct rounds (r62-r999)**, its target climbs to 4 as designed, and on
+moonrise it took turret production **from 4 to 10 per game** — past the field's
+10.72 average. **On that exact map the win rate went DOWN, 9/10 -> 8/10.**
+
+**Split by core separation, at research's request, because pooling across a 20x
+parameter is the error we have both made repeatedly today:**
+```
+narrow <=81    24/40 -> 23/40   -2.5pp
+mid 128-144    28/40 -> 28/40   +0.0pp
+wide 288-392   36/60 -> 36/60   +0.0pp
+hive 650        8/10 ->  8/10   +0.0pp
+```
+**No band favours it.** I am glad it came back flat, because a favourable band
+would have been the rescue I pre-banned, and I would have had to refuse it.
+
+## 2. HONOURING THE PRE-COMMITMENT
+
+Written in `doctrine.py` and in the 09:57 note **before** the run: *"if a
+proactive r0-300 production path does not beat its control, turret count is
+REFUTED as a lever and I will say so plainly — four converging instruments
+notwithstanding."*
+
+**It did not beat its control. TURRET COUNT IS REFUTED AS A LEVER.**
+
+Placement (LOKI-3, +0.0pp on n=360) · price (plank HOME, −2.0pp) · **production
+(this, −0.7pp with the mechanism firing)**. **Three nulls on three different
+knobs of the same subsystem is not three unlucky experiments.** The reach I
+pre-banned — *"the mechanism fired but the composite masked it"* — is exactly
+the LOKI-3 rescue, and I am not taking it.
+
+**What the four "converging instruments" were actually worth, and research
+insisted on this line before the result was known:** survival-identical,
+shots-identical, count-flatlining and magazine-inert are **four views of one
+number** — we build 4.5, the field builds 10.7. One well-measured fact, and a
+**descriptive** one. It said what we do. It never said that doing more wins.
+**Today it was tested directly and it does not.**
+
+## 3. WHAT THE BUILD ESTABLISHED ANYWAY, and it is not nothing
+
+**The reactive-gating diagnosis is confirmed by construction, and it is worse
+than either arm first read.** Home turret production sits behind **three**
+reactive gates, not one:
+```
+main.py:2412   if under:                    <- the SIEGE LATCH wraps the whole block
+main.py:2238   if threat is None: return    <- a threat must be published
+main.py:2321   aligned = can_fire_from(...) <- and the gun must hit THAT threat from THAT tile
+```
+**I found this by measurement, not by reading.** My first hook removed gates 2
+and 3 and sat *inside* gate 1 — and the instrumented build showed the floor
+reached **only between r62 and r244** of a 1000-round game, target never climbing
+past 2. **That is a precise mechanical explanation of research's corpus finding
+that our live count flatlines at exactly 2 from r200 onward.** Two instruments,
+opposite directions, same number.
+
+*(Correcting research on the way: they quoted the `HUNT_BAND_DSQ` band test as a
+live gate. It is wrapped in `if B8_ON` and **B8_ON = False** in v90, so it is dead
+code. The binding gate is the unconditional `threat is None` above it.)*
+
+**So the chassis genuinely cannot build home turrets except under siege — and
+making it able to does not help.** That is a much stronger statement than "we
+build few turrets", and it is only sayable because the fix was built and failed.
+
+## 4. WHERE THE EVIDENCE NOW POINTS: SITING, NOT COUNT
+
+Research withdrew their "the field scales defence to map width" claim today
+(neither side scales production with width; **our** spread is if anything larger)
+and replaced it with something that survives and matters more — **turret survival
+FLIPS with map width**:
+```
+band            US alive at r150   THEM alive     gap
+narrow <=81          51.4%            40.8%     +10.6pp   OURS live longer
+wide 288-392         48.8%            63.2%     -14.4pp   THEIRS live longer
+```
+**Their pooled 50.6% vs 50.8% was the average of a flip** — and they flagged that
+against themselves, one section after writing the rule.
+
+**On wide maps — 36% of ladder games — our turrets die and theirs do not, at
+equal production.** That is a **siting/exposure** question. It lands beside two
+things already on the board: the **`get_attackable_tiles` occupancy bug** (raw
+pattern ignores occupancy, so any candidate scored with it is scored on phantom
+coverage — probe-confirmed both ways this session) and the **gunner-vs-sentinel
+choice** (gunner lines block on friendly bodies and buildings, sentinel lines
+pass through — probe-confirmed with a real −18 HP shot through two friendlies).
+
+**NEXT: siting, not production.** Specifically the `get_attackable_tiles`
+mis-scoring, because it is a *defect* with a probe behind it rather than a
+doctrine bet, and it is the one whose failure mode (phantom coverage) predicts
+exactly the wide-map exposure gap above.
+
+## 5. A LATENT BUG IN THE LIVE BOT, verified in our source
+
+Research's store probe demonstrated that the read-increment-write ticket idiom
+collapses silently — five writers, counter advances by one, all five believe they
+are unit #0, **no error of any kind**. **`SLOT_ROLE_N` is that idiom**, verified
+by me at `main.py:880` (`n = ct.read_store`) and `:902`
+(`ct.write_store(SLOT_ROLE_N, n + 1)`), with no other writers.
+
+**It is safe today only because the core spawns <=1 builder per turn — a GAME
+RULE holding up a BOT INVARIANT by luck.** Anything that re-tickets outside that
+path collapses roles silently. Also verified from their probe: `write_store` with
+a negative value **raises**, and an uncaught exception permanently destroys the
+unit; they audited all 39 write sites in `_v104latch` as non-negative by
+construction — **no live hazard, and now known to have been checked.**
+
+## 6. LADDER, AND A DECISION POINT RATHER THAN A REACTION
+
+**1568 @ 505, rank #30, last-10 4W-6L. Peak 1589 -> -21.** Three indicators
+drifting one way this session: rating −21, rank #28 -> #30, last-10 7W -> 5W ->
+4W. **Net still +11 over 14 rated matches since ship, so the reversion bar is NOT
+tripped and the slot is retained.** The keeper's 25-point alert is 4 points away.
+
+**Nothing has been submitted this session and nothing will be on this evidence.**
+Every plank built today either failed its bar or is below the instrument's
+resolution. **Shipping something unmeasurable into a downward drift would destroy
+the only clean baseline we have for reading that drift.** LIVE REMAINS v90.
+Rollback target unchanged: **v89 = `bots/_v100hf`, tree `4558be91`.**
+
+*Process delta: **the pre-registration worked this time, and the reason it worked
+is that I wrote the ban on the rescue BEFORE I knew I would want it.** When the
+band split came back flat I felt relief — which is the tell that I would have
+been tempted by a favourable one. The rule that generalises: **pre-register the
+RESCUE you would reach for, not just the threshold.** A threshold constrains the
+number; only a pre-banned rescue constrains the story you tell about the number.*

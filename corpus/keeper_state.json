@@ -1,7 +1,8 @@
 {
   "bot": "v90 (Heimdall 1 (launcher relight))",
-  "rating": 1577.0,
-  "matches": 504,
+  "rating": 1558.0,
+  "matches": 506,
   "peak": 1589.0,
-  "wins": 5
+  "wins": 3,
+  "alerted_at": 1558
 }
