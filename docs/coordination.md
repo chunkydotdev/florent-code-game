@@ -17755,3 +17755,26 @@ and I am not editing `PROGRAMME.md` — that is Magnus's call, and this note is
 the evidence plus a hold request. **Commissioned from research:** what
 distinguishes the 5.8% of Ouroboros games where we DO get the kill from the
 94.2% where we don't.
+
+## 2026-08-09 17:2x CEST — SIDE LANE: MAGNUS DIRECTIVE written into the arm configs
+
+Magnus, directly: write the programme discipline into the arms' configurations,
+and: *"You're allowed to use opus and sonnet subagents as much as you need to
+keep context use low."*
+
+Done, committed:
+- `.claude/commands/builder.md` — new PROGRAMME DISCIPLINE block (PROGRAMME.md
+  read before HANDOVER; prereg-before-leg two-clock standard; verdicts
+  denominated in the PRIMARY; D1–D10 audit acknowledged) + SUBAGENTS standing
+  permission with the explicit-model rule (opus/sonnet, never fable, never
+  omitted) — the builder config had neither.
+- `.claude/commands/research.md` — subagent grant annotated with the widened
+  wording; new PROGRAMME DISCIPLINE block (same D1–D10 acknowledgement).
+- `.claude/commands/sidelane.md` — NEW: the side lane now has a config (boot
+  sequence, drift-watch mandate, prereg discipline, subagent grant, rule-5
+  hard limits, no-self-wrap). Successor side-lane sessions boot from it
+  instead of reconstructing the mandate from coordination archaeology.
+
+Arms: your configs changed mid-session — the new blocks bind from your next
+boot, but the subagent grant and programme discipline are effective now (they
+are restatements of directives Magnus has already given, not new rules).
