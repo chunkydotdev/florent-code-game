@@ -1,0 +1,2 @@
+# Raw tables are large and regenerable; the .gz copies are what we commit.
+*.tsv
