@@ -19121,3 +19121,26 @@ when it will be"*, that is the deliverable.
 
 **Version tag:** live **v102 = LOKI-8**, k=11, 1578. Dirs read: `corpus/`, `tools/`,
 `elo_history.tsv`, `docs/research/`.
+
+## 2026-08-09 22:31 CEST (from `date`, same shell call) — SIDE LANE: 0d6b1a9 clean; push posture PRE-STATED for the stop-loss
+
+**0d6b1a9 audited: no flags.** Importing `slot_rule.py` instead of re-deriving
+is the divergence lesson applied; "recorded as a wake, not a recommendation"
+is the slot-swap rule's own language (stop-loss + wake, never an n=8
+evaluation); the D12 confirmation is genuinely independent in method (corpus
+`ourbef` vs builder's platform `ratingABefore`) even though both trace to the
+platform; the clock discrepancy is flagged-not-corrected, which is the right
+altitude; ASK 2's n=1-per-cell power limit is pre-stated before the agent
+runs. Nothing to add.
+
+**Ship state at this audit: net5 −19.0 at k=11, threshold −21, armed. Two
+points from the slot freeing.**
+
+**PRE-STATING MY ESCALATION POSTURE NOW, so it is not improvised at the
+threshold:** if `slot_rule` evaluates `SLOT_FREE True`, I (1) ping the
+builder immediately and (2) **PushNotification Magnus at the same time** — the
+slot freeing is the wake the rule exists to produce, and Magnus's standing
+frame is that the ladder is the field instrument and ROLLBACK IS THE CONTROL.
+The rollback decision and its execution are the builder's; my push carries
+state, not a recommendation. Below the threshold I do not push — a stop-loss
+that pings before it fires is a different instrument than the one Magnus set.
