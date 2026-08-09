@@ -78,6 +78,36 @@ whether a string is present; never grep raw `pdftotext` output. If it does not v
 **verbatim**, cut it or label it an explicit paraphrase — those are the only two
 outcomes.
 
+### THE SECOND RULE — verbatim is necessary and NOT sufficient (s24, and it defeated the first rule)
+
+**A correctly-copied sentence can still be pointed at the wrong object, and the quote
+audit cannot see that.**
+
+Sweep 13 found that `cpu-timeout-induction.md`'s headline — *"deliberately inducing an
+opponent's compute overrun is banned by name in at least two comparable leagues"* — is
+**not supported by the sources it cites.** The BASIL quote is genuine and **passed the
+16/16 quote audit**. Read in full context, *"this timeout"* is the **30-minute real-time
+GAME limit** and the banned act is stalling *"to avoid losing"* — nothing to do with an
+opponent's per-turn compute budget. **The string was right; the referent was invented by
+the reader.**
+
+**So the checklist grows by one step, and it is a different step:**
+
+| check | catches | misses |
+| --- | --- | --- |
+| extract → flatten → grep the literal | fabrication, paraphrase-as-quote, wrong subject | **a true quote about a different thing** |
+| **quote the sentences AROUND it and state the referent explicitly** | scope errors | — |
+
+**Rule: when a quote carries a demonstrative — "this timeout", "that rule", "such bots" —
+the referent must be quoted too, or the claim is not sourced.** This is the same family
+as the project's standing failure — *the arithmetic was right, what it was taken to MEAN
+was wrong* — arriving in the citation layer instead of the statistics layer.
+
+**And the standing caution it does NOT relax:** a tactic no other league bans is **not
+thereby permitted here**. Our organisers' rules govern. `cpu-timeout-induction` remains
+**HELD pending an organiser ruling** — the correction narrows a claim, it does not open a
+road.
+
 **Convention on minor edits:** sweeps silently correct source typos when quoting
 (Smite's *"suppourt"*, robostac's *"priortised"*, Agade's *"to more"*). That is
 acceptable and now stated; **anything beyond a typo must be marked as a paraphrase.**
@@ -146,6 +176,8 @@ exception permanently destroys that unit for the match.
 | 10 | Endgame/tiebreak play when the win condition is a score, not a kill | **SWEPT** (BC 2019 do-nothing, BC 2022 one-gold, Halite endgame flag, Spring'21 score+banked/3) | 2026-08-09 | [sweep 1](2026-08-09-sweep-1.md) §4 |
 | 11 | Anti-rush and defensive-line theory — **re-aimed at "how does anyone break a 2.2:1 defensive edge?"** | **SWEPT** — 8 BC postmortem PDFs read in full + Screeps/Terminal/RTS theory. **Answer: mostly you don't, you win on economy; every league converged there independently.** | 2026-08-09 | [sweep 2](2026-08-09-sweep-2.md), [sentinel-file](sentinel-file-stacking.md) |
 | 12 | Unit-displacement mechanics elsewhere (our launcher throws EITHER team's bots) | **SWEPT — and it INVERTS our current use.** BC2020's Delivery Drone has our Launcher's exact verb signature; that field converged on grabbing the **enemy's** unit defensively, never on ferrying their own forward | 2026-08-09 | [sweep 3](2026-08-09-sweep-3.md), [defensive-interception](launcher-defensive-interception.md), [displace-dont-kill](displace-dont-kill.md), [throw-into-prebuilt-cell](throw-into-prebuilt-cell.md) |
+
+| **13** | **DIRTY TRICKS — denial/smothering, imprisonment, resource poisoning, friendly-fire manipulation, unit theft** (the PROGRAMME `loki` re-aim: enemy core dead inside r250) | **SWEPT** (s24). **12 files, 75 quoted strings, 0 unverified.** Produced the **library correction** above. | 2026-08-09 | [blind-their-gun-with-their-own-body](blind-their-gun-with-their-own-body.md), [ratnapping-ignores-hp](ratnapping-ignores-hp.md), [press-them-onto-their-own-spawn](press-them-onto-their-own-spawn.md), [import-a-hazard-into-their-base](import-a-hazard-into-their-base.md), [score-the-throw-destination](score-the-throw-destination.md), [pin-against-terrain](pin-against-terrain.md), [minimum-cost-blockading-body](minimum-cost-blockading-body.md), [the-blockade-blanks-your-own-guns](the-blockade-blanks-your-own-guns.md), [comms-jamming-and-spoofing](comms-jamming-and-spoofing.md), [body-blocking-was-patched-out-elsewhere](body-blocking-was-patched-out-elsewhere.md), [manner-pylon-and-what-the-rules-permit](manner-pylon-and-what-the-rules-permit.md), [no-league-bans-inducing-an-opponent-timeout](no-league-bans-inducing-an-opponent-timeout.md) |
 
 **Why topic 4 is not merely academic:** we measured (2026-08-09,
 `docs/research/ammo-and-cpu-2026-08-09.md`) that Ouroboros discards **26,356

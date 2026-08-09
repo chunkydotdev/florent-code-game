@@ -8,11 +8,47 @@ transfers: partial — AND SEE THE NORMS SECTION BEFORE BUILDING
 
 ## NORMS — read this first
 
-**Deliberately inducing an opponent's compute overrun is banned by name in at
-least two comparable leagues.**
+> # ⚠ CORRECTED 2026-08-09 (s24) — THE CITATION WAS VERBATIM AND THE READING WAS WRONG
+>
+> **The sentence below — "banned by name in at least two comparable leagues" — is not
+> supported by the sources it cites, and I re-fetched BASIL myself rather than accept the
+> correction on trust.** The quote is genuine; **its referent is not what we took it to
+> be.** In full context:
+>
+> > *"Real-time limit is 30 minutes - after that a game will be killed. Neither bot gets
+> > a win or loss. Bots that seem to cause this very often will be disabled.
+> > **Intenionally causing this timeout to avoid losing will result in the bot being
+> > banned.**"*
+>
+> **"This timeout" is the 30-minute REAL-TIME GAME limit, not an opponent's per-turn
+> compute budget** — and the banned act is *"to avoid losing"*, i.e. stalling out a game
+> you are behind in to force a no-result. **That is a different act from inducing an
+> opponent's per-turn overrun, and BASIL does not address the latter at all.** The
+> SC2 AI Arena clause likewise bans harming *the ladder and the game engine*, not the
+> opposing bot; aiarena's own taxonomy **awards the win, with Elo, when an opponent
+> crashes or times out.**
+>
+> **THIS IS A NEW FAILURE MODE FOR THIS LIBRARY AND IT DEFEATED THE EXISTING GUARD.**
+> The 2026-08-09 quote audit checked this string and passed it — correctly, because it
+> **is** verbatim. **Nothing in the audit checked what the quote referred to.** Verbatim
+> is necessary and not sufficient; a correctly-copied sentence can still be pointed at
+> the wrong object. **See the rule added to INDEX.md.**
+>
+> **WHAT DOES NOT CHANGE: this stays HELD.** *No other league banning it is not
+> permission from ours.* The organisers' rules govern, our own docs contain an unresolved
+> internal conflict about what a CPU overrun even does (see below), and the item does not
+> move until **Magnus has asked the organisers.** The correction narrows a claim; it does
+> not open a road.
+
+~~**Deliberately inducing an opponent's compute overrun is banned by name in at
+least two comparable leagues.**~~ **← RETRACTED, see above. The accurate statement is:
+no league surveyed bans inducing an opponent's per-turn compute overrun; the clauses
+found ban stalling the game clock and harming the ladder infrastructure.**
 
 - **BASIL ladder**: *"Intenionally causing this timeout to avoid losing will
   result in the bot being banned."* [sic] — https://www.basil-ladder.net/rules.html
+  **— refers to the 30-minute real-time game limit, NOT a per-turn budget. Re-fetched
+  and read in full context by the research arm, 2026-08-09.**
 - **SC2 AI Arena**: prohibits *"Slowing down the system on purpose."* —
   https://aiarena.net/wiki/rules/
 - **SSCAIT**: exceeding the frame budget is an immediate loss; bots that
