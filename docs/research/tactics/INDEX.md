@@ -9,6 +9,57 @@ permission needed.**
 This index exists so successive sessions **do not re-research the same ground.**
 Update it in the same commit as any findings.
 
+## ✅ QUOTE AUDIT — 2026-08-09, and the method matters as much as the result
+
+**Why it happened:** one sweep agent disclosed that an earlier draft of its own report
+contained **fabricated quotes attributed to eight named teams**. That draft was never
+delivered and nothing from it was published — but **every sweep in this library was
+produced by agents of the same class**, so the library had to be checked rather than
+trusted.
+
+**Result: 16 of 16 load-bearing quotes verified VERBATIM against primary sources.**
+
+| sweep | claim checked | verdict |
+|---|---|---|
+| 2 | Kragle *"the counter to static defense is to disengage…"* | ✅ verbatim |
+| 2 | 5 Musketeers tiebreak passage (full, ~90 words) | ✅ verbatim |
+| 3 | High Ground *"every top team… now had a drone harass"* | ✅ verbatim |
+| 3 | High Ground *"pick up and drown their rushing miner"* | ✅ verbatim |
+| 3 | Smite *"10:1 or more… to guarantee a successful attack"* | ✅ verbatim |
+| 3 | Smite *"as soon as a drone sees the gun, its dead"* | ✅ verbatim |
+| 5 | Gone Fishin' *"140 bits: a total of 10 enemies…"* | ✅ verbatim |
+| 6 | Gone Fishin' *"wins about 2/3 of the game…"* | ✅ verbatim |
+| 6 | Tavares single-choice **28.1%** / reply-last **60.9%** | ✅ both present |
+| 7 | SPAARK disintegrate-after-**30 turns**; **sqrt(35)** build condition | ✅ verbatim |
+| 8 | Agade tower/mine formulas + *"4.25 queen HP… way too high"* | ✅ verbatim |
+| 8 | robostac *"hitpoints / 10 … encourage aggressive tower placement"* | ✅ verbatim |
+| 8 | ryandy Lux `ice_conflict_bonus` **500** above `ice1_bonus` **300** | ✅ verbatim |
+
+### THE METHOD — and the trap that nearly produced two false retractions
+
+**Do NOT ask a model whether a string is present.** My first check of the SPAARK
+quote was a `WebFetch` summarisation of the PDF; it reported that **neither phrase
+appears.** Both appear verbatim.
+
+**And do not grep raw `pdftotext` output either.** My first pass over four Battlecode
+PDFs returned **zero hits on three quotes that are all genuine** — because PDF
+extraction breaks sentences across lines.
+
+```bash
+curl -sL "<url>" -o x.pdf && pdftotext x.pdf x.txt
+tr -s ' 
+	' ' ' < x.txt > x.flat     # <-- THE STEP THAT MATTERS
+grep -o "phrase.\{0,120\}" x.flat
+```
+
+**Two false negatives in one audit, in opposite tools.** A quote check that returns
+"not found" is not a result until whitespace has been normalised and a second method
+has agreed.
+
+**Convention on minor edits:** sweeps silently correct source typos when quoting
+(Smite's *"suppourt"*, robostac's *"priortised"*, Agade's *"to more"*). That is
+acceptable and now stated; **anything beyond a typo must be marked as a paraphrase.**
+
 ## How a sweep runs
 
 1. Pick the next **unswept** or **stale** row from the wheel below.
