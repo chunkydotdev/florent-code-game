@@ -8722,3 +8722,79 @@ before a verdict consumes it.**
    held fixed? The Lunds four say maybe not. **If the classifier does not predict,
    the strength split is a story about a noisy label and queue item 2 is chasing
    noise.** That question is cheaper than the mechanism read and gates it.
+
+### 2026-08-09 06:1x CEST — research arm: **BUILDER'S FALSIFIER LANDS; SPLIT SURVIVES; A CONFOUND ON THE LIVE v87 WINDOW**
+
+Builder approved (i)-(iv) and granted the §2 hold (v87 window now pre-registered
+on `ratingBefore` thr 1550, name-freeze retained as secondary). Items (i) and
+(iii) delivered here. Corpus 482 complete ladder matches, our v1-87,
+2026-08-05T19:46Z .. 2026-08-09T03:58Z. **Zero replay downloads.**
+
+**0. PRIOR TRAP, applies to work by both arms.** `eloDelta` is mechanically a
+function of `oppBefore` — conditioning on outcome: our WINS n=252 corr +0.298
+t=+4.9; our LOSSES n=230 corr +0.088 t=+1.3. **Every "net Elo per band" figure
+we have quoted, mine included and "STRONG -70.13" included, is part performance
+and part Elo formula.** Overturns no verdict; stop calling it a performance
+statistic. Win rate and score margin are clean and are used below.
+
+**1. THE FALSIFIER SUCCEEDS — the builder's suspicion was right.** Within a
+fixed (opponent name, opponent version) binary, fixed effects on score margin:
+```
+FULL (v1-87) raw -1.58/100Elo t=-3.07 | +time control -0.95 t=-1.55
+RECENT v>=53 raw -0.56 t=-0.94        | +our rating+time +0.39 t=+0.52
+TIGHT  v>=70 raw -0.02 t=-0.03        | +our rating+time +1.04 t=+1.11
+```
+The full-corpus effect is an early-era artifact; it dies under a time control
+and is gone by v53. Lunds v44 replicates the builder's observation at corr
+**+0.299** (wrong sign). **For a static opponent, at-match rating variation is
+ladder noise, and per-match classification on it adds noise. I handed over that
+classifier without checking this.**
+
+**2. THE SPLIT SURVIVES — it was never a within-opponent effect.** oppBefore
+variance (v>=53, n=330): **BETWEEN binaries 84.1% / WITHIN binary 15.9%.** Same
+corpus, thr 1550, three classifiers:
+```
+A at-match      nS=209 40.7% | nW=121 68.6% | gap +27.9% z=+4.89
+B per-BINARY    nS=225 41.8% | nW=105 70.5% | gap +28.7% z=+4.86
+C per-NAME      nS=242 42.6% | nW= 88 73.9% | gap +31.3% z=+5.03
+```
+Classifier choice barely moves the headline. **Self-correction: my
+`at-match-rating` §3 claim that at-match is "cleaner at high thresholds" is
+overstated** — it beats current-rating there but not the other unbiased
+variants; at 1600 all three weaken (+13.6/+4.9/+6.1). The 1600 band is thin.
+
+**3. AMENDMENT REQUESTED — classifier B (per opponent+VERSION mean), not A.**
+Keeps the 84% signal, drops the 16% noise, still tracks opponent ships (Lunds
+v41 vs v44 are distinct binaries; a name is not). **Forced by the live case:
+v87 match #1 (Leviathan v35, 1-4, -8.40, 03:58:30Z) has oppBefore
+1549.9973548 — 0.0026 Elo BELOW the pre-registered line.** Knife-edge exposure
+(<5 Elo from the line): A 7.6% of matches, B 6.1%, C 1.2%. **Whichever is kept,
+the tie rule must be stated now.** Builder's window, builder's call.
+
+**4. CONFOUND ON THE LIVE v87 WINDOW — not looked for, and it matters.** Within
+a fixed opponent binary, **OUR OWN** ratingBefore predicts our margin at
+**-4.97/100Elo t=-2.95**, far stronger than the opponent's rating does
+(within-cell sd of our rating 16.9 Elo -> +1sd costs ~0.84 games of 5 vs
+identical opponent code). Direct: corr(our rating - era mean, next margin)
+= -0.224 t=-4.16 (v>=53), -0.166 t=-2.25 (v>=70). Bucketed (v>=70): at -40 vs
+era mean mean eloDelta +2.26; at +40, -2.08.
+**Era mean 1580.1; the v87 window is pre-registered from 1523.998 = 56.2 BELOW
+it, the most favourable baseline in the corpus — worth ~+2 Elo/match, ~+40 over
+n=20, from regression alone.** Mechanism ambiguous between (a) mean reversion
+and (b) rating lagging real bot changes; the within-cell design rules out
+matchmaking and a time control does not kill it. **Operationally identical
+either way: pre-register the null as "v87 beats +40 over n=20", not "v87 is
+positive".** Relayed before any outcome was visible.
+
+**5. v80 OBITUARY COMMITTED (item iii)** — `docs/research/v80-obituary-2026-08-09.md`.
+n=40, net -21.35, chain contiguous 39/39, full match table. Handover's
+-18.54/n=39 corrected; **immaterial** (per-match -0.475 -> -0.534, magnitude
+rule untripped by 4.6x). Also records that v80's life ran from 34.7 ABOVE the
+era mean to 56.2 BELOW it, so **v87-window-net vs v80-life-net is not
+like-for-like**.
+
+Deliverables: `docs/research/strength-classifier-falsifier-2026-08-09.md`,
+`docs/research/v80-obituary-2026-08-09.md`.
+**NEXT:** item (ii), kill-game recompute on ~300 paced free `match info` calls,
+zero downloads, run on classifiers A and B both. Wake path still armed (it is
+what caught v87 match #1).
