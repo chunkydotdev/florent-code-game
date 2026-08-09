@@ -67,12 +67,88 @@
 ##   hive, 5 games each vs KCM `dfa9be96` / Ouroboros `a5631594` / Powerpuff `0c1fea85`
 ##   **v80 0-16 · v87 1-15 · Thor 1-9.** Pre-register the threshold BEFORE firing.
 ##
+## ===== QUEUE FOR THE NEXT SESSION, IN PRIORITY ORDER =====
+## 0. **DISCUSSION PHASE ON LOKI FIRST — Magnus asked for it explicitly.** Do not
+##    open an editor before the four open questions at the bottom of this block
+##    are answered. The last two builds both failed because the doctrine was
+##    decided at the keyboard.
+## 1. **BUILD LOKI** against the re-specified target below. `bots/_v103split`
+##    (doctrine.py split, det-proved identical, packaging verified) is the
+##    chassis to fork — NOT a from-scratch rewrite. thor_r1 is why.
+## 2. **MOVE VERSION IDENTITY TO A TREE HASH** before any multi-file bot ships.
+##    Currently every tape row and pre-ship check quotes `md5 main.py`, which
+##    stops identifying a split bot. This is a blocker on shipping Loki, not a
+##    nicety.
+## 3. **THE 7-vs-2 HOME-TURRET SEAT GAP** — queued to research, unstarted. Same
+##    code, symmetric map, deterministic, 4/4 seeds. Larger than the defect we
+##    shipped a fix for, and live.
+## 4. Lunds fixture — **SUSPENDED, not dead** (they shipped v50). Their versions
+##    are non-monotone (v37 after v41, v44 after v45), so v44 can return and the
+##    table with it. Re-check is free from any `match list` row.
+##
 ## ===== NEXT BUILD: "LOKI" — CONVERSION, NOT RUSH =====
-## Target, pre-registered: **raise core-kill share above 29.8%**, the
-## band-invariant number fifteen planks failed to move. **Kill share, not win
-## rate.** Stays on unrated until it clears the fixture baseline; **it does not
-## take the slot on promise** (we win 67% vs the weak band and a pure kill bot
-## risks exactly that).
+## **TARGET RE-SPECIFIED — the "kill share above 29.8%" I first pre-registered is
+## WITHDRAWN, and research is right that it was the wrong target.** 29.8% is an
+## average over a distribution whose SHAPE is the finding; it could be hit purely
+## by converting more before r150, the window we already win, and teach us
+## nothing. **THE TARGET IS: raise the r200-300 conversion ratio against STRONG
+## opponents above 1.0. It currently sits at 0.52 and has DECLINED across three
+## lineages.**
+##
+## THE HAZARD TABLE — the most actionable thing either arm produced today. Among
+## games still alive at the start of each window, fraction resolving inside it.
+## Ratio = our hazard / theirs; **>1 means we out-convert them.**
+## ```
+##                    r0-150   r150-200   r200-300   r300+
+##   STRONG >=1550      1.54      1.00       0.62      0.24   (n=1135)
+##   WEAK   <1550       1.90      1.20       1.31      1.05   (n=1275)
+##   strong raw: alive 1135/853/753/601 · ours 15.1/5.9/7.7/9.8% · theirs 9.8/5.9/12.5/40.9%
+##   by lineage (strong): v53-70 1.40/0.73/0.72/0.20 · v71-76 1.85/1.45/0.62/0.29
+##                        v77-84 1.65/1.38/0.52/0.24
+## ```
+## **We can only kill strong teams EARLY. Parity at r150-200, then it inverts to
+## 0.24 by r300. Forty versions bought the r150-200 window (0.73 -> 1.38) and
+## NOTHING after it — r200-300 went BACKWARDS (0.72 -> 0.52). The wall is located
+## to a 50-round window.**
+##
+## **THE WARNING THAT MUST SURVIVE INTO THE BUILD: TIME IS THEIR ASSET, NOT OURS.**
+## Their hazard runs 9.8% -> 40.9% across the game; ours runs 15.1% -> 9.8%.
+## "Sustained siege" follows correctly from "the field does not rush", **but any
+## siege that trades tempo for position is trading INTO the window where they
+## convert four times better. A siege must RAISE our r200-300 hazard, not merely
+## extend the game to reach it — those are different builds and only the first
+## one wins. If Loki lengthens games without moving that ratio, the hazard table
+## predicts it loses MORE than a rush does.**
+##
+## Stays on unrated until it clears the fixture baseline; **it does not take the
+## slot on promise** (we win 67% vs the weak band and a pure kill bot risks
+## exactly that).
+##
+## **LABEL ON MY OWN THOR EXPLANATION, because research was right to flag it:**
+## "type-vs-placement" (we downgraded defence rather than bought offence) was
+## generated AFTER seeing the result. Nothing in the Thor legs separates it from
+## "gunners are simply worse here" — both predict what we saw. **It is a
+## hypothesis, not a finding.** The better reason to believe it is the hazard
+## table, which says the deficit is LATE and Thor changed nothing about late
+## conversion.
+##
+## ===== THE FOUR OPEN QUESTIONS FOR THE DISCUSSION PHASE =====
+## 1. **What actually raises the r200-300 hazard?** The `_offer_launch` throttle
+##    is the best candidate on the board precisely because it is a LATE-GAME rate
+##    limit — one raider staged for a whole match produces exactly the flat
+##    ~4-10% hazard we observe from r150 while theirs compounds. But that is a
+##    hypothesis and it needs a mechanism, not a flag.
+## 2. **Does Loki keep the economy?** thor_r1 shipped zero harvesters and
+##    delivered zero titanium (2/60). The bootstrap is what keeps us alive to
+##    r148 to attempt a kill at all. Recommendation: keep it bit-for-bit.
+## 3. **How much of the chassis does Loki fork?** doctrine.py is split and proved.
+##    Recommendation: fork `_v103split` + ONE new module (`raid.py`), not a
+##    rewrite, so the new offensive code is ablatable as a unit.
+## 4. **What is the CPU budget for a multi-raider pipeline?** 10ms/unit/turn is a
+##    live limit — the chassis already guards it in the turret scan. **A `run()`
+##    that raises anything except a timeout PERMANENTLY DESTROYS that unit for
+##    the rest of the match.** `raid.py` ships with its own CPU guard and a
+##    blanket try/except or it does not ship.
 ## THE LEVER, already located in code: **`_offer_launch` (:2561) claims "the
 ## single insertion slot" — at most ONE raider is ever staged. That is why our
 ## launcher measures 93% DEFENSIVE.** The insertion machinery already exists and
