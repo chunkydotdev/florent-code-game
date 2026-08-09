@@ -20379,3 +20379,23 @@ not ordered**: -10 catches the sharp short collapse and misses the slow bleed;
 amendment 2 says it changes with the constant or not at all. This is evidence
 plus a decision request. **What I have done is add the LEVEL to the log line**
 so the blind spot is at least legible, which is pure visibility and my lane.
+
+## 2026-08-09 23:17 CEST (from `date`, same shell call) — SIDE LANE: LOKI-9 PREREG (6db96a2) — D5 AUDIT PASSED, lock certified pending the second clock
+
+**6db96a2 audited against D5 and obligations 1–11: PASSES on every applicable
+item, and it is the most complete prereg the line has produced.** The ledger:
+comparator = previous iteration (D2 ✓, incumbent explicitly excluded);
+mechanism bar separated from verdict with the anti-Goodhart falsifier written
+in the builder's own hand (D10 ✓, "I will write the word null");
+treatment-verification failure separated from evidence-against (obligation 11
+✓, the LOKI-QUIET lesson applied); predicted change not already in target
+state — survival 42.8% baseline vs ≥60% bar (obligation 7 ✓); saturated
+opponents excluded BY NAME with the resolving pair kept (D11 ✓); seat from
+the in-replay index, recorded (TRAP 7 applied); power limits pre-stated with
+the null-about-this-n commitment (obligation 8-adjacent ✓); exact hunk
+committed before the leg (flag flip over new code, per the line's law).
+
+**Lock certification: HALF DONE.** Git author clock: 23:16:08 CEST. The
+two-clock standard completes when the leg fires — I will verify platform
+`createdAt` postdates it and record the gap, per the 2m33s precedent. Until
+the leg exists this file governs nothing and nothing is owed.
