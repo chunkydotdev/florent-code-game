@@ -20334,3 +20334,48 @@ destroy() refund, spawn-ring barrier (siege-stick, minority-strategy caveat).
 **D5 still binds at s25 weight, not heavier: a committed prereg predating
 each leg — the s25 form was a treatment bar and a falsifier, one paragraph,
 not a dossier. The drift watch will read leg cadence as health, not risk.**
+
+## 2026-08-09 23:1x CEST — BUILDER s26: reading correction + an SPRT calibration DECISION REQUEST (not a change)
+
+### I TOLD MAGNUS v102 WAS "RECOVERING". IT IS NOT. Research is right.
+Verified on the tape myself. **net5 is a SLOPE; I read it as a LEVEL.**
+
+    m=575 rating 1600  net5 +33  net_from_activation +32.6   <- peak
+    m=581 rating 1578  net5 -19  net_from_activation +10.6
+    m=585 rating 1572  net5 -12  net_from_activation  +4.6   <- lowest since 571
+
+Between m=581 and m=585 **the rating fell 6 points while net5 improved 7**,
+because the baseline rolling INTO the window is lower than the one rolling out.
+**Drawdown -28 from peak; the activation gain has gone +32.6 -> +4.6.**
+**net5 improving is never evidence of recovery.** `slot_free` is still False and
+this corrects a READING, not a verdict.
+
+### THE HOLE THIS EXPOSES, MEASURED
+A steady decline evades BOTH instruments. net5 trips only at <= -4.2/match
+(5r <= -21); SPRT BLEED needs worse than -5/match. Simulated, k=60 from 1580:
+
+    rate -2.0/match  ->  -120 Elo   RULE never free   SPRT OK
+    rate -3.0/match  ->  -180 Elo   RULE never free   SPRT OK
+    rate -4.0/match  ->  -240 Elo   RULE never free   SPRT OK      <- 240 Elo, silent
+    rate -4.2/match  ->  -252 Elo   RULE frees        SPRT OK
+
+### THE CALIBRATION RESULT, WHICH IS NOT WHAT I EXPECTED
+Tightening MU0 makes the SPRT fire **less**, not more (it shifts the whole
+statistic, not just the bound). Backtested over all 47 holder runs:
+
+| MU0 | BLEED on real history | catches -4/mo | catches -3/mo | catches v79 (k=6, net-42) |
+|---|---|---|---|---|
+| **-10 (current)** | **8** — incl. v53 (net **+43**), v80 (+5), v91 (+3), v94 (+13) | no | no | **yes** |
+| -6 | 6 — incl. v53 (+43), v72 (+16), v91 (+3) | yes | no | yes |
+| **-4** | **0** | **yes** | **yes** | **no** |
+
+**Two things worth Magnus's attention.** First, the CURRENT setting fires on four
+holders that ended NET POSITIVE (v53 at +43 over 45 matches) — those look like
+false positives in the live calibration. Second, **-10 and -4 are complementary,
+not ordered**: -10 catches the sharp short collapse and misses the slow bleed;
+-4 does the reverse. So the honest proposal is **a PAIR, not a replacement.**
+
+**I AM NOT CHANGING IT.** The threshold is Magnus+x3r0's and ship-gate.md
+amendment 2 says it changes with the constant or not at all. This is evidence
+plus a decision request. **What I have done is add the LEVEL to the log line**
+so the blind spot is at least legible, which is pure visibility and my lane.
