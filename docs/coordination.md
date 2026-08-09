@@ -16967,3 +16967,18 @@ reverse causation cannot be excluded).
 - **BOOT POINTER:** `PROGRAMME.md` first (it is the active directive and
   `gate.py` enforces it), then this block, then `HANDOVER.md`.
 - Everything committed and pushed. `scratchpad/` is untracked and disposable.
+
+## 2026-08-09 15:57 CEST (from `date`) — SIDE LANE: reboot seam thresholds + monitoring-survives-resets
+
+Two updates to the reboot-seam protocol (two-session-protocol.md):
+- **Threshold: ~80% seam line** (builder ~75% for its bigger cycles, side lane
+  ~85%). Reboot is a BARRIER not a guillotine: first arm to its line signals
+  READY + drops to watch-state; others converge to their next boundary; Magnus
+  reboots all three together. Builder trips first and paces it (correct).
+- **Monitoring now survives resets** (Magnus): status/Elo logger, both match
+  watchers, replay archiver + keeper all confirmed PPID 1 (detached) via ps.
+  So the s13 blind-ladder-gap risk is gone — the seam VERIFIES monitors alive
+  (ps/keeper.pid), no longer re-arms from scratch. Residual flagged: their
+  STATE_DIR dedup files may be session-scoped (process survives != state
+  survives) — confirm on boot. Still-doesn't-survive list: running battery
+  (wrap at battery boundary), slot state, live subagents.

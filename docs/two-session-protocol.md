@@ -183,10 +183,31 @@ a **fast state SNAPSHOT to continue the same work** — no retro, no HANDOVER
 rewrite. Do not conflate them (the recurring wrap-vs-daily-note confusion, one
 level up).
 
-**The gauge:** a model cannot precisely read its own remaining context, so the
-trigger is external — **Magnus watches the context meter and calls "wrap for
-reboot"**, and each session also self-flags natural cycle boundaries as good
-reboot points ("we just closed X; the next cycle is large; clean seam here").
+**The gauge and threshold:** a model cannot precisely read its own remaining
+context, so the trigger is external — **Magnus watches the three meters**.
+**~80% is the seam line** (leaves headroom to execute the seam before the
+harness auto-compacts, and it is roughly the "can't fit another full cycle"
+line — below ~75% wastes headroom, above ~85% risks compaction mid-seam).
+Per-role: the **builder trips ~75%** (biggest cycles — a whole battery — and
+the most dangerous mid-cycle state, so it needs the most margin); the **side
+lane can run ~85%** (cheap snapshots, no monitors). Each session also
+self-flags natural boundaries as good reboot points.
+
+**Reboot as a BARRIER, not a guillotine:** the first arm to its line signals
+`READY FOR REBOOT` and drops to watch-state (no new cycles, only tiny closeable
+tasks); the other two finish their CURRENT cycle to a boundary, snapshot, and
+signal; once all three have signalled, Magnus reboots all together. This keeps
+reboots synchronised (no cross-session staleness, one clean seam) without
+yanking anyone mid-cycle. In practice the builder trips first and paces it,
+which is correct — it is the session you most want caught at a boundary.
+
+**Monitoring survives resets (2026-08-09):** the status/Elo logger, both match
+watchers, the replay archiver, and the keeper all run detached (PPID 1), so a
+reboot no longer creates the session-13 blind ladder gap. The seam therefore
+does NOT re-arm monitors from scratch — it only **verifies the persistent
+monitors are alive** (`ps`/keeper.pid) and names any that died. (Residual to
+confirm: their STATE_DIR dedup files may be session-scoped — a process
+surviving is not the same as its threshold state surviving; check on boot.)
 
 **The decision rule (self-governed, near the ceiling):** do NOT start a cycle
 you cannot finish in the remaining context. Prefer closing small tasks and
@@ -209,7 +230,15 @@ boundary):**
 + its `REBOOT STATE` block + its committed deliverables) and resumes the named
 next action — same work, fresh context, nothing lost because nothing was
 mid-flight. Side lane boots per its auto-memory pattern; builder per HANDOVER;
-research per its boot sequence — all then read the latest `REBOOT STATE`.
+research per its boot sequence — all then read the latest `REBOOT STATE`, and
+verify the detached monitors are alive.
+
+**What still does NOT survive a reset** (so the seam must respect it): a
+running arena BATTERY (the builder wraps at a battery boundary, never
+mid-battery), the active-submission SLOT state, and any live SUBAGENT (fold its
+result into a committed doc or state it was dropped). Monitoring is now the
+exception, not the rule — everything else is either committed to the repo or
+lost.
 
 ## Incident log — 2026-08-07 (why the rules above exist)
 
