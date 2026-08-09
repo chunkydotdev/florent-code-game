@@ -12674,3 +12674,51 @@ untripped should carry the threshold and the current distance to it**, so a read
 can re-evaluate without re-deriving. I wrote "4 points from the alert" in one
 place and "not tripped" in another about two different thresholds, which reads as
 one reassuring claim. **Separate the bars explicitly or they blur into a mood.***
+
+### 2026-08-09 10:12 CEST (from `date`) — research arm: **THE SLOT'S OPEN QUESTION, CHECKED — plus the siting answer to the turret-count refutation**
+
+**1. THE BUILDER'S NAMED OPEN QUESTION IS NOW CHECKED** (`v90-launcher-drift-check-2026-08-09.md`).
+Repair **fires hard**: launcher builds after r100 went **6.9% (v85-89) → 32.7% (v90)**.
+**Placement is FINE and the "rebuilding into bad positions" hypothesis is REFUTED** —
+median d²_own **5** (vs the long-run 5, and *better* than v85-89's 10), only **6.1%
+forward**. **The real delta is TIMING: median launcher build round r14 → r47**, with
+launchers/game flat at 0.72 → 0.75, implying **fewer opening launchers and more late
+replacements.** Matters because raider lifetime is 43 rounds at r0 against 6 at r150.
+**n=65 games — suggestive, not conclusive, and it points at ONE REPLAY, not a battery.**
+
+**2. THE SITING ANSWER to the builder's turret-count refutation**
+(`turret-mix-and-map-width-2026-08-09.md`, landed ~10 min before their commit):
+```
+                  US HOME   THEM HOME  |  US FORWARD  THEM FORWARD
+wide maps (36%)    86.7%      72.0%    |    19.2%       49.3%
+pooled             69.0%      60.9%    |    25.8%       41.4%
+```
+**Our HOME turrets are the best-surviving turrets in the corpus in EVERY band**, and
+the edge **grows** with map width (+4.1/+11.3/+14.7/+31.4pp). **Our FORWARD turrets
+are the worst.** And **on wide maps we place 61.1% of early turrets forward against
+23.9% on narrow** while the field does not shift. The mix reproduces the pooled
+figures exactly (48.8% / 63.2%), so **it is the whole explanation.**
+**The implied change is a SUBTRACTION: gate forward siting on core separation.**
+It also explains the production null without rescuing it — **adding turrets on wide
+maps adds them into a 19.2% bucket.**
+
+**3. FOURTH POOLED-STATISTIC REVERSAL OF THE DAY, and three of the four were mine.**
+Working rule now written into the deliverable: **before a pooled number becomes a
+belief, split it by the parameter that varies most across the population** — here
+core separation, which varies **20×**.
+
+**4. THIRD LANE ACKNOWLEDGED.** A Magnus-commissioned Remote Control session is
+writing to `docs/research/`. I have identified myself, sent a dedupe list of what
+I have already landed, saved them one probe (**`self` does NOT persist across
+units** — each unit gets its own `Player`; I hit this directly), given them the
+gunner-lane and store facts before they specify S4, and flagged one invariance claim
+of theirs ("healing cancels ~70% at every intensity") as needing a core-separation
+split before it is trusted. **The doc tree now has three writers.**
+
+**5. LADDER:** **1540 @ 507, #34, last-10 3W-7L, −49 from peak 1589.** The builder's
+pre-stated rollback triggers were "another −25 (to ~1515) or last-10 reaching 2W" —
+**we are at 1540 and 3W; both bars are closer than when written.** Keeper alert fired
+08:04Z at 1558/−31, so **the wake path is proven in production.**
+
+**IN-FLIGHT:** one Opus sweep (topic 5 re-aimed at turret exposure/siting doctrine).
+Nothing on the CPU.
