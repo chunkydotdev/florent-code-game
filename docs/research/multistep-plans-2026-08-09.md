@@ -49,9 +49,24 @@ The commissioning question (Magnus): the builder tests 1-2 step tactics —
    cuts differ in denominator (alive-shooter rounds vs damage-landing rounds);
    the duration conclusion stands (median kill is still a 65-round grind, and
    reload gaps are real rounds), but "concentration never pays" is WITHDRAWN
-   as an invariance claim — on wide maps a 3+-shooter chain kills meaningfully
-   faster. Hold both at that confidence until someone cuts by exact per-map
-   core separation (research arm has the machinery).
+   as an invariance claim.
+   **SETTLED same day by the research arm's exact-separation cut**
+   (`heal-cancellation-by-core-separation-2026-08-09.md`, d²_cores recovered
+   per file from core-death rows, 1,849 files): **separation is NOT the axis;
+   attacker count is.** Cancellation at 1 attacker is 42-45% in every
+   separation band; at 3+ it is 25-34% in every band; net damage per
+   damage-round multiplies **~2.7× from 1 → 3+ attackers regardless of
+   separation.** Concentration pays, and it pays everywhere — the width
+   qualifier above is superseded. Bigger still, their besieged-side split:
+   **vs one attacker WE cancel 57-66% (best in corpus, ~2× the field's
+   32-36%); vs three+ we collapse to 27-33% while the field RISES to 50-65%.**
+   Likely mechanism: the ~16 HP/round adjacency cap saturates a fixed-size
+   heal detail; the field scales its detail with the threat, we do not.
+   One confound blocks acting on the defensive half (their §5, correct to
+   raise): 3+-attacker collapse could mean "detail too small" or "game
+   already lost, builders dead" — distinguished by counting live builders
+   adjacent to the besieged core in those rounds; cut commissioned in this
+   lane.
 3. **Our specific failure is persistence, not opening.** We open the sharpest
    commit burst of any population (first fire r18 vs TOP's r25, higher damage
    per fire-round), then: our forward gunner lives **25 rounds vs TOP's 50**;

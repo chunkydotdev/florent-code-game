@@ -12722,3 +12722,113 @@ pre-stated rollback triggers were "another −25 (to ~1515) or last-10 reaching 
 
 **IN-FLIGHT:** one Opus sweep (topic 5 re-aimed at turret exposure/siting doctrine).
 Nothing on the CPU.
+
+### 2026-08-09 10:31 CEST (from `date`) — builder arm: **PLANK SITE IS REFUTED, HARDEST OF THE FOUR — and it is the most informative result of the day because it has DOSE-RESPONSE and a built-in null band. FORWARD TURRETS EARN THEIR DEATHS.**
+
+## 1. THE RESULT
+
+```
+300 games, 0 failures.  _v113off (control) vs _v113site (forward siege gated off above d2 81)
+OVERALL  control 96/150 (64.0%)   site 86/150 (57.3%)   -6.7pp
+seat A   49/75 -> 49/75 (+0.0)    seat B  47/75 -> 37/75 (-13.3)
+```
+**The largest effect measured today, and it is negative.**
+
+**AND THE BAND SPLIT IS A BUILT-IN NULL CONTROL, because the gate only acts above
+d² 81:**
+```
+band            control    site      delta    gate acts?
+narrow <=81      24/40    24/40     +0.0pp    NO   <-- exact zero where it cannot fire
+mid 128-144      28/40    26/40     -5.0pp    yes
+wide 288-392     36/60    28/60    -13.3pp    yes  <-- most gated, most damage
+hive 650          8/10     8/10     +0.0pp    yes  (n=10, uninformative)
+```
+**Exactly zero where the gate is inert, and the damage scales with how much of
+the forward programme it removes.** That is dose-response, which is the strongest
+attribution shape available in this harness, and it is pointing at me.
+
+## 2. THE PRE-STATED RISK FIRED, VERBATIM
+
+From `_v113site/doctrine.py`, written before the run: *"forward guns may earn
+their deaths. Survival is not damage, and this measurement does not price what a
+forward gun does before it dies... **THE GATE MUST THEREFORE BE READ ON WIN RATE,
+NOT ON TURRET SURVIVAL** — moving the survival metric is guaranteed by
+construction and proves nothing."*
+
+**It is now measured: our forward turrets survive at 18.9% on wide maps against
+the field's 49.0%, and removing them costs 13.3pp on exactly those maps. The
+18.9% is the PRICE OF SOMETHING VALUABLE, not evidence of waste.**
+
+**This is the sharpest methodological result of the session.** A survival
+statistic — large, clean, confound-controlled, agreed by two arms deriving it
+independently — pointed at a change that is **strongly harmful**. Durability was
+never the objective function. **We spent the day treating "our turrets die" as
+the problem when dying is what forward turrets are for.**
+
+## 3. FOUR PLANKS, FOUR FAILURES, AND WHAT THAT ACTUALLY MEANS
+
+```
+LOKI-3   placement    +0.0pp (n=360 field)   mechanism moved 16x, won nothing
+HOME     price        -2.0pp (n=300)         flag inert-ish, magazine off a monotone counter
+FLOOR    production   -0.7pp (n=300)         mechanism fired (moonrise 4->10 turrets)
+SITE     siting       -6.7pp (n=300)         dose-response, largest effect, negative
+```
+**Every knob on the turret subsystem has now been turned in both directions and
+none of them is a lever.** Adding turrets does nothing. Pricing their ammunition
+does nothing. Moving them home actively hurts. Moving them forward was already
+refuted at the doctrine level by four instruments.
+
+**The honest synthesis: the turret subsystem as currently built is at a local
+optimum, and every single-knob move off it is neutral-to-negative.** That is a
+real finding and it is worth more than another null. It also means **the next
+attempt must not be another turret knob.**
+
+## 4. WHAT I NOW BELIEVE ABOUT THE SURVIVAL ASYMMETRY, revised
+
+Research's own refinement (verified in our source) dissolves my causal story:
+`_plan_siege` sites at a **fixed standoff** — `ranges = (5,4)` sentinel, `(3,2)`
+gunner — *"a reachable tile whose weapon ray intersects the enemy Core"*, and the
+corpus shows **both** teams sit 3-6 tiles from the enemy core regardless of map
+width. **It is not a fraction, and it does not drift.** My doctrine comment in
+`_v113site` claiming the anchor "walks outward as the map widens" is **WRONG for
+this path** and is superseded here rather than left to be inherited.
+
+What is real: **the SHARE forward differs** (ours 56.0% on wide against their
+38.6%, mine; research 61.1/46.3 on a slightly different window — same shape), and
+our forward guns are **more often alone** because we field 4.5 turrets against
+10.7. That is the FARGUN-COVERAGE result from the other side. **The forward
+bucket is not a 19% bucket for everyone; it is a 19% bucket for a team that sends
+guns forward unsupported.**
+
+**Which does NOT license "so add support and go forward" as the next build.** That
+is the composite rescue in a new costume, and the forward road is closed on four
+instruments. **Noting it as a live hypothesis, not a queue item.**
+
+## 5. LADDER AND SLOT — unchanged decision, worse numbers
+
+**1540 @ 507, rank #34, last-10 3W-7L.** Ship baseline 1556.83 @ 491 ->
+**−16.83 net over 16 rated matches; the reversion bar remains tripped.**
+
+**Still holding v90**, on the rule's own second clause: *measured better-case
+still required*, and **four gated planks today produced no better case.** My
+pre-stated rollback triggers were **"another −25 (to ~1515) or last-10 reaching
+2W"** — we are at **1540 and 3W**, so neither has fired, but both are closer than
+when I wrote them.
+
+**The v90-specific branch is no longer unchecked.** Research tested my own
+hypothesis and **refuted it**: v90's launchers sit at median d²=5 from our core
+(the long-run baseline, and *closer* than v85-89's 10), only 6.1% forward — they
+are **not** being rebuilt into bad positions. The repair fires hard (post-r100
+launcher share **6.9% -> 32.7%**, 4.7x) and sites them at home. A real timing
+delta remains (median build round **r14 -> r47**, n=65 games) and is the cheapest
+remaining thread, but it is suggestive, not conclusive.
+
+*Process delta: **I built a subtraction on a durability statistic without ever
+pricing what the thing being subtracted DOES.** The survival table was correct,
+independently derived, confound-controlled and agreed by both arms — and it was
+the wrong objective function, which no amount of statistical care would have
+caught. **The check that would have caught it is one question asked before the
+build: "what does this thing produce, and have I measured that?"** I asked
+"does it survive?" and shipped a battery off the answer. Today's four errors were
+all a statistic standing in for a measurement; **this fifth one is a statistic
+standing in for a PURPOSE**, which is worse, because the statistic was true.*

@@ -126,6 +126,24 @@ protect attribution, the class-weighted field battery decides shipping
 | M5 | median forward-shooter life | 25r | → 40r+ | S1+S4 |
 | M6 | gunner share of our core damage | 25.9% | rise | S4 |
 | F | r200-300 hazard ratio vs ≥1550 | 0.52 | > 1.0 | all |
+| M7 | our heal-cancellation vs 3+ attackers on OUR core | 27-33% | rise toward field's 50-65% | D1 |
+
+### D1 (defensive companion, added after the research arm's separation cut)
+Their besieged-side split: we out-cancel the field ~2:1 against a single
+attacker (57-66% vs 32-36% — best in corpus, do NOT touch single-attacker
+behaviour) but collapse to 27-33% against 3+ while the field rises to 50-65%.
+**The deficit is heal-detail SCALING, not heal volume** — a fixed detail
+saturates the ~16 HP/round adjacency cap. D1: scale healers assigned to a
+besieged core with the observed attacker count (2 attackers → 2-3 healers on
+adjacent tiles + core-footprint stacking per the 8 HP/Ti rule; 3+ → full
+4-tile detail). Loki must not bleed at home while it sieges — and the same
+cut says the field's cores are 2.7× more killable by OUR 3-shooter chain
+regardless of map, which strengthens S2's replacement-chain sizing toward 3
+concurrent shooters where unit budget allows.
+**GATE (research arm's confound, correct): the 3+ collapse could be "already
+lost, builders dead" rather than "detail too small." Cut in flight in the
+side lane (live builders adjacent to the besieged core in 3+-attacker
+rounds). D1 waits on it; S1-S5 do not.**
 
 Falsifier logic: if M1-M3 move and F does not, persistence was not the
 binding constraint and this lane's synthesis is wrong on our deficit; if M4
