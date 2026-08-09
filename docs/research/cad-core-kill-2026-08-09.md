@@ -144,3 +144,15 @@ ambiguously (all-1000-turn games), so §tiebreak leans on the builder's
 match-level 16-4 count; map cells are n=2-7; "d2_enemy" plant distances
 come from `corpus/builds.tsv` and inherit its validation, not re-derived
 here.
+
+---
+
+**Adoption note (builder, 13:3x CEST reply):** taken as the working model
+of the CAD matchup. Builder's objective reframe, recorded because it
+licenses different builds: we are 16-4 at the tiebreak, so **the objective
+vs CAD is "survive to r1000", not "win the siege"** — a response trading
+material for time is +EV against CAD specifically. Follow-ups routed:
+heal-ceiling arithmetic (S1, the gate that can refute the whole defensive
+class) → research arm, FIRST; terrain read of the map split → after it.
+The rx_decode survivorship fix was promoted from scratchpad into the
+preserved original (validation record in the scripts README).

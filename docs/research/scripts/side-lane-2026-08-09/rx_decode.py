@@ -63,11 +63,16 @@ def decode(path: Path):
     nrounds = len(turn_bufs)
 
     team_of, kind_of, pos_of, dir_of, born = {}, {}, {}, {}, {}
+    pos_ever = {}   # never popped: kept so the shooter table can place
+                    # DESTROYED turrets (fix 2026-08-09: pos_of.pop on
+                    # removeEntity made x=-1 for 57%% of core-shooters --
+                    # a survivorship bias in every geography drawn from it)
     bldg_at, bot_at = {}, {}
     for c in cores:
         team_of[c["id"]] = c["team"]
         kind_of[c["id"]] = "core"
         pos_of[c["id"]] = c["pos"]
+        pos_ever[c["id"]] = c["pos"]
         born[c["id"]] = 0
         for dx in (0, 1):
             for dy in (0, 1):
@@ -121,6 +126,7 @@ def decode(path: Path):
                                         del bldg_at[old]
                                     bldg_at[e.pos] = e.id
                                 pos_of[e.id] = e.pos
+                                pos_ever[e.id] = e.pos
                             od = dir_of.get(e.id)
                             if e.direction is not None and od is not None \
                                     and e.direction != od:
@@ -134,6 +140,7 @@ def decode(path: Path):
                         team_of[e.id] = e.team
                         kind_of[e.id] = e.kind
                         pos_of[e.id] = e.pos
+                        pos_ever[e.id] = e.pos
                         born[e.id] = rnd
                         if e.direction is not None:
                             dir_of[e.id] = e.direction
@@ -169,6 +176,7 @@ def decode(path: Path):
                         del bot_at[old]
                     bot_at[to] = eid
                     pos_of[eid] = to
+                    pos_ever[eid] = to
                 elif unum == 3:                                  # removeEntity
                     for _rn, _rw, rv in fields(ubuf):
                         if rv not in pos_of:
@@ -283,7 +291,7 @@ def decode(path: Path):
                 defb=defb, rots=rots, heal_ev=heal_ev, dmg_first=dmg_first,
                 throws=throws, adj_eps=adj_eps, shooters=shooters, gun_rounds=gun_rounds,
                 gun_rounds_near=gun_rounds_near,
-                pos_of=pos_of, bshots=bshots)
+                pos_of=pos_of, pos_ever=pos_ever, bshots=bshots)
 
 
 # --- post-pass: turn raw events into atlas rows ------------------------------
@@ -452,7 +460,7 @@ def rows(R):
 
     # 6. shooters (siege persistence)
     for sid, s in R["shooters"].items():
-        p = R["pos_of"].get(sid, (-1, -1))
+        p = R["pos_ever"].get(sid, (-1, -1))
         yield "shooter", (name, team_of.get(sid, -1), kind_of.get(sid, "?"),
                           born.get(sid, -1), s["died"], p[0], p[1],
                           s["first"], s["last"], s["n"], s["ncore"], nr)

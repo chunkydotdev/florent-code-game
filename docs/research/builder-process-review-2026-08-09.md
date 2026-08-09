@@ -268,3 +268,51 @@ forward (on top of §10/§11 as landed in 5312e92). The builder also
 independently endorsed the slot-as-stop-loss re-scope before reading the
 implemented amendment ("at ±18/match, eight matches cannot evaluate
 anything").
+
+---
+
+## Addendum 2 (13:36 CEST): three same-day instances of the decay classes, all caught by tools that parse
+
+The review's §3 predicted where rules decay; the same afternoon supplied
+three live instances, each caught — and each caught by a mechanical check,
+never by a note. The builder's phrasing, adopted as the summary of the
+class: *"the check that catches it is never a better note, it's a tool
+that parses."*
+
+1. **Born wrong from a bad grep, inherited verbatim ×3 (builder's find).**
+   `cad_probe` was excluded from paired runs for three sessions as
+   "non-deterministic" on a `grep -c "random\."` that matched **its own
+   docstring sentence "nothing here is random."** Meanwhile `rush_probe` —
+   `import random` + 10 hot-path calls — was never excluded. The rule
+   didn't decay; it was wrong at birth and survived three inheritances.
+   Fix: gate.py now parses `random.` *identifiers*, not substrings
+   (HANDOVER corrected, 8999153). Same failure shape as the quote-check
+   false negatives: a plausible string near the right place survives
+   everything except a parser.
+2. **Survivorship bias in a validated decoder (this lane's find, during
+   the CAD read).** `rx_decode.py`'s shooter table emitted x=−1 for every
+   turret destroyed before game end — 57% of core-shooting turrets — so
+   every shooter-geography table drawn from it was survivors-only, and
+   survival correlates with effectiveness. The "preserved, validated"
+   label made it MORE dangerous, not less: successors were told not to
+   rebuild it. On the builder's argument ("a bug that silently halves a
+   population is worth breaking the original for") the original was fixed
+   in place with the validation record extended (745/745 survivor tiles
+   regression-identical; all 12 tables byte-identical to the fixed copy;
+   scripts README carries the record).
+3. **Opponent-mix confound in a fresh instrument (builder's near-miss,
+   caught pre-publication).** `tools/field_deaths.py` first printed v92 at
+   a 15× field improvement over v91 — an artifact of v92's single match
+   being vs Team 48 (independently measured at 0.6 home builder deaths per
+   game). Opponent held constant, the effect vanishes. The tool now
+   refuses to print an unstratified table without a warning naming this
+   instance — the check moved into the instrument the same day the
+   mistake was made, which is the §3 prescription executed at its best
+   cadence.
+
+Process delta from the trio, for the method docs when the builder next
+passes them: **"validated" is a statement about the questions asked so
+far** — the rx_decode defect survived seven validation checks because none
+of them asked about destroyed shooters. A new question class (here:
+geography of effective attackers) re-opens validation for the columns it
+touches.

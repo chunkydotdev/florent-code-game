@@ -13,6 +13,19 @@ direction verified 495/495 on sweep matches).
   placeEntity re-emits, gunner-only verified), heal overlap per target.
   Validation: shot counts agree 5,470/5,470 sides with the independent
   phase-mining decoder. Fed: opponent-reaction-atlas, drain-discriminator.
+  **FIXED IN PLACE 2026-08-09 (successor side lane): the shooter table
+  emitted x=-1 for any turret destroyed before game end (`pos_of.pop` on
+  removeEntity) — a SURVIVORSHIP BIAS covering 57% of core-shooting
+  turrets in the CAD read; any shooter-geography drawn from the old column
+  was survivors-only, and survival correlates with effectiveness. Fix:
+  `pos_ever` dict, never popped. Validation of the fix: 745/745 surviving-
+  shooter tiles byte-identical to the pre-fix output, 0 residual x=-1,
+  full-population join covers 333/333 vs builds.tsv with shot totals
+  matching the independent rx_shot aggregate exactly; all 12 output tables
+  byte-identical between the fixed original and the scratchpad copy it was
+  validated in (cad-core-kill-2026-08-09.md § methods). Tables OTHER than
+  rx_shooter are unaffected by construction (pos_ever feeds only the
+  shooter emit).**
 - `bb_decode.py` — builder-bot position tracker (spawn/move/death/throw)
   + core-ring adjacency + heal attribution. Validation: 7 checks incl.
   heal×4HP vs UpdateHp stream (median ratio 0.9941, 0 sides >1.0),
