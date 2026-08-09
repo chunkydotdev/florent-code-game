@@ -43,7 +43,11 @@
 ##   LOKI-3   placement      +0.0pp    null (and mislabelled "FIELD" in the tape)
 ##   HOME     price          −2.0pp    NOT distinguishable from zero
 ##   FLOOR    production     −0.7pp    NOT distinguishable from zero
-##   ESCALATE dispatch       −0.7pp    COST only; benefit UNTESTABLE in this pool
+##   ESCALATE dispatch       −0.7pp    self-play: cost only, gate unanswerable
+##   ESCALATE **vs FOREIGN** **−7.8pp**  **REFUTED — 360 games vs 6 real-team
+##            probes, both seats negative, and the escalation condition WAS
+##            present (orizon_probe: 1,625 post-r250 multi-attacker events vs
+##            ZERO from our own lineage). The only verdict today I would defend.**
 ##   SITE     siting         −6.7pp    REFUTED — dose-response + exact-zero null band
 ##
 ## **THE CORRECTED READING (research's, and it is better than "four small
@@ -62,10 +66,23 @@
 ## should not be applied as a divisor to produce a "field estimate" column.**
 ## We have no measured transfer factor for THIS game.
 ##
-## **ESCALATE IS THE ODD ONE OUT AND MUST NOT BE FILED WITH THE OTHER FOUR.**
-## They are inert-under-tuning; **ESCALATE is UNTESTABLE in this instrument** —
-## the pool cannot escalate late because the pool is us, and not escalating late
-## is the defect under test. It is unmeasured, not refuted.
+## **ESCALATE WAS THE ODD ONE OUT AND NO LONGER IS.** It was untestable against
+## `opp_v*`; re-gated against the FOREIGN probe pool it is **REFUTED at −7.8pp**.
+## **What is refuted is ONE RESPONSE — "scale the heal detail with attacker
+## count" — not the thesis.** Diverting expanders to heal costs more economy than
+## the healing saves; the doctrine file priced what healing PRODUCES and never
+## what the healer STOPS DOING. **The code fact stands: the bot cannot count
+## attackers** (SLOT_THREAT = one position, SLOT_UNDER = one boolean, and a grep
+## for any magnitude term returns comments only). A better response is open.
+##
+## ===== !!! USE THE FOREIGN POOL. IT WAS ON DISK ALL ALONG !!! =====
+## `bots/*_probe` are imitations of REAL ladder teams (Orizon, Ouroboros,
+## Clankers, kladde, Flotte, Banminary, CtrlAltDefeat), built from replay
+## analysis, carrying **0-1 of our 4 signature identifiers**. Five planks were
+## gated against `opp_v*` (= us) before anyone looked.
+##   `cad_probe` is the ONLY probe that calls `random.` — exclude it from paired runs.
+##   Probes are IMITATIONS and miscalibrated (`ouroboros_probe` measured **86
+##   points** over-confident vs its real class). Better than self-play; NOT field.
 ##
 ## **UNTOUCHED BY ALL OF THIS: every corpus finding.** The hazard curve, the
 ## gunner-plant tiles, the survival splits, the heal cancellation are measured on
