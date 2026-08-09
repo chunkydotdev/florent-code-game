@@ -122,6 +122,13 @@ def _dist_core(pos, o):
 # Master ablation switch.  False == _v103split.
 PRUNE_ON = True
 
+# LEAK CLASS ONLY: the round from which a conveyor feeding an ENEMY network
+# may be pruned.  Much earlier than PRUNE_MIN_RND because the ambiguity that
+# gate exists for -- "is this a lane still under construction?" -- cannot
+# apply: an enemy building is standing on the output tile, and our lane is not
+# going to grow through it.  Every round of delay here is titanium gifted.
+PRUNE_LEAK_MIN_RND = 40
+
 # Nothing is pruned before this round.  Same class as MEDIC_MIN_RND = 150 and
 # HUNT_MIN_RND = 120.  Before ~r150 every dead head is a lane under
 # construction: lanes are built harvester-first, core-last (_link_path walks
@@ -199,10 +206,33 @@ PRUNE_SPARE_HARVESTER_ADJ = True
 # cannot run more than once per unit per tile.
 PRUNE_CONDEMN_RNDS = 250
 
+# ---------------------------------------------------------------------------
+# SECOND ARM -- LEAK PREVENTION AT BUILD TIME.  DEFAULT OFF, UNMEASURED.
+# ---------------------------------------------------------------------------
+# Refuse to lay a conveyor whose output tile already holds an ENEMY relay or
+# the ENEMY CORE.  Costs 3 engine calls per conveyor build, never fires on a
+# tile we cannot see, and can only ever REFUSE a build -- it destroys nothing.
+#
+# WHY IT IS HERE.  The destroy arm can only reach a leaking conveyor if a
+# builder stands orthogonally adjacent to it for the whole confirm window, and
+# leaking conveyors live on the contested seam where our builders pass through
+# rather than loiter.  Measured: 2-13 destroys per game (see DESIGN.md), which
+# did not move the replay-measured leak.  Refusing to CREATE the leak has no
+# adjacency requirement at all -- the builder is by definition standing next
+# to the tile it is about to build on.
+#
+# WHY IT IS OFF.  Two reasons, both honest.  (1) It is unmeasured: no arena leg
+# has been run on it, and the box was reserved when it was written.  (2) It
+# only addresses the half of the leak where WE build into THEM; the other half
+# is the enemy extending their network onto the tile our conveyor already
+# faces, and this gate is blind to that by construction.  Which half dominates
+# is not known.  Flip to True and run the leg to find out.
+PRUNE_LEAK_BUILD_GATE_ON = False
+
 # Per-unit stderr instrumentation.  print() goes to the replay; stderr is
 # console-only (docs/tooling.md), so this is safe to leave compiled in and
 # costs one branch when off.
-PRUNE_DEBUG = False
+PRUNE_DEBUG = True
 
 
 # ---------------------------------------------------------------------------
@@ -223,6 +253,7 @@ def prune_state_init(player):
     player.prune_rnd = -10 ** 9
     # Instrumentation only; stays empty unless PRUNE_DEBUG.
     player.prune_obs = set()
+    player.prune_leak_obs = set()
 
 
 def prune_condemned(player, pos):
@@ -259,7 +290,10 @@ def prune_sweep(player, ct):
 def _sweep(player, ct):
     rnd = ct.get_current_round()
     player.prune_rnd = rnd
-    if rnd < PRUNE_MIN_RND:
+    # The LOWER of the two gates: the leak class (verdict 2) opens at
+    # PRUNE_LEAK_MIN_RND, the ambiguous class (verdict 1) at PRUNE_MIN_RND,
+    # which is re-checked per candidate below.
+    if rnd < PRUNE_LEAK_MIN_RND:
         return 0
     if player.core is None or player.team is None:
         return 0
@@ -289,6 +323,8 @@ def _sweep(player, ct):
             continue
 
         verdict = _dead_head(player, ct, n)
+        if verdict == 1 and rnd < PRUNE_MIN_RND:
+            verdict = 0
         if verdict == 0:
             # Alive, or unprovable.  Forget any partial confirm -- the clock
             # only ever runs on continuous evidence.
@@ -298,6 +334,8 @@ def _sweep(player, ct):
 
         if PRUNE_DEBUG:
             player.prune_obs.add(key)
+            if verdict == 2:
+                player.prune_leak_obs.add(key)
 
         seen = player.prune_seen.get(key)
         if seen is None or rnd - seen[1] > PRUNE_GAP_RNDS:
@@ -334,8 +372,9 @@ def _sweep(player, ct):
     if PRUNE_DEBUG and rnd % 250 == 0:
         import sys
         print(
-            "PRUNE census uid=%d rnd=%d observed_orphan_tiles=%d destroyed=%d scale=%.1f"
-            % (ct.get_id(), rnd, len(player.prune_obs), player.prune_kills,
+            "PRUNE census uid=%d rnd=%d observed_orphan_tiles=%d leak_tiles=%d destroyed=%d scale=%.1f"
+            % (ct.get_id(), rnd, len(player.prune_obs),
+               len(player.prune_leak_obs), player.prune_kills,
                ct.get_scale_percent()),
             file=sys.stderr,
         )
@@ -380,14 +419,32 @@ def _dead_head(player, ct, n):
         # a gun is not a relay (R8).
         if ct.get_entity_type(bid) != EntityType.CONVEYOR:
             return 0
-        if not PRUNE_LOADED_ON and ct.get_stored_resource(bid) is not None:
-            return 0
+        loaded = ct.get_stored_resource(bid) is not None
         f = ct.get_direction(bid)
     except Exception:
         return 0
     if f is None:
         return 0
 
+    verdict = _out_verdict(player, ct, n, f)
+    # THE LOADED RULE, and why it is asymmetric.  destroy() INCINERATES the
+    # stack (0 Ti returned in 191/191 measured cases), so for an ordinary dead
+    # head we simply refuse: 10 Ti burned to shave 1 scale point is a bad
+    # trade, and the tile will still be there when it is empty.
+    #   But for verdict 2 -- a conveyor whose output is an ENEMY relay or the
+    # ENEMY CORE -- the stack's only future is the opponent's balance, and
+    # 21% of measured cross-team leak lands directly in their Core, scoring
+    # their tiebreak #1.  Incinerating a stack that was about to be GIFTED is
+    # a strict improvement over delivering it.  Refusing to prune the loaded
+    # ones would also select exactly against the conveyors that are actively
+    # leaking, which is the opposite of what this class exists to do.
+    if verdict == 1 and loaded and not PRUNE_LOADED_ON:
+        return 0
+    return verdict
+
+
+def _out_verdict(player, ct, n, f):
+    """Classify the tile a conveyor at ``n`` facing ``f`` outputs into."""
     out = n.add(f)
     if not (0 <= out.x < player.mw and 0 <= out.y < player.mh):
         return 1                      # faces off the map: provably dead
@@ -433,6 +490,36 @@ def _dead_head(player, ct, n):
     if otype in (EntityType.CONVEYOR, EntityType.SPLITTER, EntityType.CORE):
         return 2                      # WE ARE FEEDING THEM
     return 1
+
+
+def prune_leak_build_ok(player, ct, tile, facing):
+    """False if a conveyor at ``tile`` facing ``facing`` would feed the ENEMY.
+
+    Fail-safe direction is the opposite of the sweep's: an unreadable answer
+    returns True (allow the build), because refusing builds on unprovable
+    evidence would starve the economy, which is the one failure this bot
+    cannot afford.  Never raises.
+    """
+    if not PRUNE_ON or not PRUNE_LEAK_BUILD_GATE_ON:
+        return True
+    try:
+        if facing is None or player.team is None:
+            return True
+        out = tile.add(facing)
+        if not (0 <= out.x < player.mw and 0 <= out.y < player.mh):
+            return True
+        if not ct.is_in_vision(out):
+            return True
+        obid = ct.get_tile_building_id(out)
+        if obid is None:
+            return True
+        if ct.get_team(obid) == player.team:
+            return True
+        return ct.get_entity_type(obid) not in (
+            EntityType.CONVEYOR, EntityType.SPLITTER, EntityType.CORE
+        )
+    except Exception:
+        return True
 
 
 def _touches_harvester(player, ct, n):

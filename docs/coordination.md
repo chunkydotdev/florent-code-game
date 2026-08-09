@@ -10242,3 +10242,68 @@ a good outcome.
 so ten denial barriers put +10 points on every harvester/gunner/sentinel we buy
 afterwards; and builder-turns spent walking to enemy ore are turns not spent on
 an economy that is currently at field parity — **thor_r1's failure mode.**
+
+### 2026-08-09 08:04 CEST (from `date`) — builder arm: **THE HEAL ARITHMETIC IS THE FINDING OF THE DAY, AND IT RETROACTIVELY JUSTIFIED A BUILD I HAD ALREADY SPAWNED**
+
+**VERIFIED BY ME AGAINST THE SPEC, not taken on report** (`CLAUDE.md` entity table
++ the builder-action list):
+```
+builder heal     1 Ti -> +4 HP  (ALL friendly entities on the tile)   4.00 HP/Ti
+sentinel shot   10 ammo = 10 Ti -> 18 dmg                             1.80 HP/Ti
+gunner shot      4 ammo =  4 Ti ->  7 dmg                             1.75 HP/Ti
+builder attack   2 Ti           ->  2 dmg                             1.00 HP/Ti
+```
+**Healing is 2.22x more titanium-efficient than the best damage source in the
+game.** In a titanium-symmetric attrition race the defender always wins — you
+cannot out-economise anyone into death. **And the structural half checks out
+too: `attack` damages BUILDINGS ONLY, so builders cannot attack enemy builder
+bots. ONLY A TURRET OR A LAUNCHER CAN REMOVE A HEALER.**
+
+Measured on 1,165 of our archived games: **we heal 1.75x more than the field and
+buy 0.61x the ammunition**; damage-capacity : HP-repaired is **1.11:1 for us and
+2.79:1 for them.** They out-damage their own repair 3:1; we barely break even.
+
+**WHY THIS ONE MATTERS MORE THAN THE OTHERS: it explains BOTH halves of our
+record.** Every prior hypothesis today explained the failure and left our
+strengths unaccounted for. This says our survival and our stalemate are **the
+same choice** — we are not being stupid, we are being optimal on the axis that
+does not end games. **And it collapses five instruments into one threshold:**
+before r150 cores are unhealed and unscreened so 1.0-1.8 HP/Ti suffices; after
+r150 the screen is up and the arithmetic inverts. Raider survival 43->6,
+conversion 0.61, turrets 0.2/game, ammo a twelfth — **one cause, not four
+problems.** The lineage is called **Eir**, after the healing goddess. We named it
+correctly and then optimised the defensive side of an asymmetry that already
+favoured defence.
+
+**IT ALSO RETROACTIVELY JUSTIFIED LOKI-5, WHICH I HAD SPAWNED MINUTES EARLIER ON
+A DIFFERENT ARGUMENT.** I opened the kidnapper because our launcher throws
+captured enemy builders *"to the tile farthest from OUR core"* — inside a 5-tile
+radius that is the tile most toward THEIR side, i.e. **we catch their raider and
+ferry it home**, ~22 times a game. The heal arithmetic then says the launcher is
+**one of only two ways to remove a healer, and the only FREE one** (launchers use
+no ammo). **A healing screen beats every ammo-based approach on arithmetic; a
+throw sidesteps the arithmetic entirely by removing the healer instead of
+out-damaging it.** LOKI-5's targeting was re-briefed to prioritise probable
+healers (enemy builders adjacent to a damaged enemy entity).
+
+**ACTIONS TAKEN:**
+- **LOKI-3's primary pre-registered metric is now the r200-300
+  damage-capacity-to-HP-repaired ratio moving from 1.11 toward 2.79** — a metric
+  only that change can move, and better than counting turrets.
+- Heal-cap / idle-flip offered to LOKI-3 as a **cheap fourth ablatable flag,
+  only if it is genuinely a few lines** (Baby Ducks 2021 fixed our exact symptom
+  with a 10-round idle timer flipping defenders to attackers; 5 Musketeers 2022
+  used a heal cap after units waited 1000+ rounds for a heal).
+- **RESEARCH RE-TASKED ON MAGNUS'S DIRECT ASK: hunt more trickster plays**, with
+  the search template drawn from the three we have (an ARITHMETIC ASYMMETRY in
+  the ruleset, or MACHINERY WE ALREADY OWN POINTED THE WRONG WAY — neither
+  needed a new subsystem). Axes: exchange-rate hunting, **measured opponent
+  reaction latency as a timeable blindness window**, our own defensive-only
+  capabilities, and pace control (`convert_ammo` is uncapped, same-turn, and
+  costs no action cooldown — we have never built a timing attack).
+
+**THE CAVEAT CARRIED VERBATIM INTO BOTH BUILD BRIEFS: this is a RATIO claim, not
+"heal less".** Healing is genuinely the most efficient titanium in the game and
+the grind pocket is 26-49% of games and real Elo. The question is whether we are
+past the point where more repair still buys wins — **that is an ablation, not an
+argument**, and no build is permitted to gut the heal line.
