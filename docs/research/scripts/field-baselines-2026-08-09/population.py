@@ -12,6 +12,7 @@ in each population (from `ratingABefore`/`ratingBBefore`, never the live-join
 from __future__ import annotations
 
 import csv
+import os
 import statistics
 import sys
 from collections import Counter, defaultdict
@@ -20,10 +21,27 @@ from pathlib import Path
 OURS = "379a5d80-9921-4c9e-949b-f9b1dcba16be"
 
 
+KEEP_RELATED = os.environ.get("FB_KEEP_RELATED") == "1"
+
 def main(argv):
     fz, outp = Path(argv[0]), Path(argv[1])
-    rows = list(csv.DictReader((fz / "meta_join.tsv").open(), delimiter="\t"))
+    allrows = list(csv.DictReader((fz / "meta_join.tsv").open(), delimiter="\t"))
+    # POPULATION FILTER — see the header comment in q124.py.  `related != "none"`
+    # marks a match involving `opensverige - plan B`, a second registration almost
+    # certainly of us: in the third-party bucket it is us wearing another name, and
+    # in the ours bucket it is us versus us.  Neither is a field observation.
+    rows = [r for r in allrows if r.get("related", "none") == "none" or KEEP_RELATED]
+    excl = [r for r in allrows if r.get("related", "none") != "none"]
     out = []
+    out.append("# Population")
+    out.append("")
+    out.append(f"**EXCLUDED as `related`:** {len(excl)} files / "
+               f"{len({r['match'] for r in excl})} matches — "
+               f"{len([r for r in excl if r['us_side']=='none'])} that were in the "
+               f"THIRD-PARTY bucket (plan B vs a real field team) and "
+               f"{len([r for r in excl if r['us_side']!='none'])} in the OURS bucket "
+               f"(us versus plan B). Retained population: {len(rows)} files.")
+    out.append("")
 
     def f(v):
         try:
@@ -47,8 +65,6 @@ def main(argv):
             if rb is not None:
                 sides[pop].append(rb)
 
-    out.append("# Population")
-    out.append("")
     out.append(f"- replay FILES: VS_US **{files['VS_US']}**, THIRD_PARTY **{files['THIRD_PARTY']}**")
     out.append(f"- distinct MATCHES: VS_US {len({r['match'] for r in rows if r['us_side']!='none'})}, "
                f"THIRD_PARTY {len({r['match'] for r in rows if r['us_side']=='none'})}")

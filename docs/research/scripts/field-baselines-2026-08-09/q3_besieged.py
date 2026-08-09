@@ -18,15 +18,29 @@ the same (file, round) — the confound doc's own conditioning.
 from __future__ import annotations
 
 import csv
+import os
 import statistics
 import sys
 from collections import defaultdict
 from pathlib import Path
 
 
+KEEP_RELATED = os.environ.get("FB_KEEP_RELATED") == "1"
+
 def load_meta(fz: Path):
     M = {}
     for r in csv.DictReader((fz / "meta_join.tsv").open(), delimiter="\t"):
+        # POPULATION FILTER (2026-08-09 correction).  `opensverige - plan B`
+        # (team id b7cafd9f) is a second registration almost certainly of us, so a
+        # match it plays is NOT the field playing itself, and OUR match against it
+        # is not a real opponent game either.  `meta_attrib.py` marks both with
+        # `related`; the clean field is `us_side == "none" AND related == "none"`
+        # and the clean vs-us cell is `us_side != "none" AND related == "none"`.
+        # Set FB_KEEP_RELATED=1 to reproduce the pre-correction population, which
+        # is how the movement in the deliverable's POPULATION CORRECTION section
+        # is isolated from the archive having grown at the same time.
+        if r.get("related", "none") != "none" and not KEEP_RELATED:
+            continue
         def f(v):
             try:
                 return float(v)
