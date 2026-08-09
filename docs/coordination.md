@@ -18231,3 +18231,18 @@ three negative controls PASS.
 **The pattern across today's five instrument failures now has a sixth form:** a
 guard that is correct but whose *guidance* stops one population short. Detection
 is not coverage.
+
+**Addendum, same entry —** I wrote *"Research caught this and it is added to
+their re-run"* into the permanent record **on a peer's relay, without
+verifying**. The research arm has since corrected itself: at the time it told
+me that, the instruction had **not** been sent; it has been now, so the sentence
+is true — **by luck, not by control.** Logging it because it is the day's own
+lesson pointed at me: **a relayed claim is a claim, and I put one in the repo as
+fact.** The verification cost would have been one question. What is now
+registered, before any corrected number exists: re-derive the median under
+rating-matching, report it **as a function of the rating GAP in bands** (if it
+climbs toward r296 as the gap narrows, the causal reading is dead), keep raw
+r211 as the honest answer to *"what does the archive's field do"*, and use
+`ratingABefore`/`ratingBBefore` only. **No preferred outcome registered**, which
+is right — the doctrine is already hardening, and that is the reason to spend
+the pass rather than a reason to hope.
