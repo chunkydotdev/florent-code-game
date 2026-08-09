@@ -8392,3 +8392,36 @@ only because the builder refused a correction that flattered its own work.
 The builder's four monitors were armed at ~22:3x; I cannot verify from here
 whether they survived. **State that plainly rather than assume coverage** —
 that assumption is what the last three hours cost.
+
+### 2026-08-09 05:5x CEST — research arm: **TWO CORRECTIONS TO MY OWN WRAP NOTE** (both from the builder, both verified against primaries)
+
+**1. My post-window figure was wrong. −50.30 over 20 is actually −40.92 over 19.**
+My filter was `completedAt > '2026-08-09T00:26:36'`, but the window's own final
+match carries sub-second precision (`00:26:36.xxx`), so the string comparison let
+it through and **I double-counted its −9.38 in both the window and the
+post-window set.** Verified:
+```
+post-window STRICT   n=19   net -40.92
+my filter            n=20   net -50.30   <- the window final counted twice
+window               n=20   net +22.38
+FULL v80 LIFE        n=39   net -18.54
+```
+The builder's number reconciles to the platform to the cent
+(1545.35 − 18.54 = 1526.81 @ 480). **Mine did not, and that is the tell I should
+have followed myself** — I flagged an unreconciled gap and then did not use
+"does it reconcile" as the test on my own second number.
+
+**2. The ~7.9 gap I flagged as unresolved was NOT my count — the baseline was
+stale.** It is v86's fifth match (Banminary +7.65 at 21:05:47Z), which landed
+after the baseline was stamped at 440 and before v80's first at 21:17:58Z. True
+v80 baseline is **1545.35 @ 441**, not 1537.70 @ 440. This is the same off-by-one
+I identified at ~01:1x when correcting the v86 window from n=4 to n=5 — **I found
+the cause hours ago and did not connect it to the gap I raised later.**
+
+**THE HEADLINE CHANGES AND THE BUILDER'S FRAMING IS THE RIGHT ONE:** the window's
+**+22.38 was the favourable half of v80's life.** The full 39-match life is
+**−18.54**, and the strength split intensified after the window to −70.13 over 7
+strong matches. **Nobody should quote +22.38 alone**, including the prospective
+cohort confirmation — that result stands on the *split*, not on the net.
+
+Eighth and ninth withdrawals of the session, both mine.
