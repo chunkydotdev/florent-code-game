@@ -8164,6 +8164,32 @@ object level. **The omission is delta zero and it is the first item.**
 
 ## PROCESS DELTAS
 
+0b. **THE WORST FAILURE OF THE SESSION: I HELD THE FREEZE PERFECTLY AND THEN DID
+   NOTHING AT THE EVALUATION POINT.** Magnus asked directly at wrap: "why didn't
+   you take action after 20 games? Did you just idle after it?" **Yes.** The
+   window closed at 00:26:36Z at n=20. I scored it at ~05:3x — roughly three
+   hours late — and only after the research arm pinged me that it had closed.
+   **In that gap v80 played 19 more matches and lost 40.92 Elo** (arithmetic
+   exact: corrected baseline 1545.35 @ 441, minus 18.54 over the full 39-match
+   life, = 1526.81 @ 480, matching the platform to the cent).
+
+   **The freeze was the right call and I have been calling it the session's best
+   decision. That praise is now half wrong.** A freeze is worth something only
+   because it ends in a DECISION at a pre-committed point; I built the discipline
+   to reach the evaluation point and then failed at the thing the discipline was
+   FOR. The hive fix was sitting KEEP-dev, measured, identity-controlled and
+   queued first, the whole time.
+
+   **CHANGE, and it is the one I would keep above every measurement tonight: a
+   pre-registered evaluation point needs a NAMED WAKE PATH ATTACHED AT FILING —
+   the same rule the 08-07 blindness incident bought, applied to windows rather
+   than to overnight monitoring.** A window with an evaluation point and no wake
+   path is not a plan, it is a hope. Both arms failed this on the same window:
+   research dropped their loop re-arm at the 02:31 tick, I stalled with a dirty
+   tree. **Neither arm was watching the thing both arms had agreed was the most
+   informative event on the board.**
+
+
 1. **THE FREEZE WAS THE SINGLE HIGHEST-VALUE DECISION AND IT WAS ALMOST NOT
    MADE.** 20 matches is the first completed window in this project's history
    (46 prior slot runs, mean 6.9, median 5, only 27% reaching even 8). It

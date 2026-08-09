@@ -1,4 +1,103 @@
-# Session 20 IN PROGRESS (builder, booted 22:23 CEST). s19 block follows below.
+# Session 20 FINAL (builder, wrapped 05:4x CEST 2026-08-09 on Magnus's call)
+
+## ===== STATE =====
+##   LIVE: **v80 "Eir 9b"** = `bots/_v89sh`, md5 e12f8585, activated by Magnus's
+##   hand (`fcode submission activate` is BLOCKED for me by the permission
+##   classifier — SLOT CHANGES NEED HIM).
+##   Ladder at wrap: **1526.81 @ 480, rank #35/113.**
+##   Rollback target: v86 (`bots/_v86z2`, md5 b0c908fd) or v84 (`_v99mag`,
+##   md5 dab7766e). Neither is measurably better — see below.
+##
+## ===== READ THIS BEFORE YOU TRUST THE WINDOW RESULT =====
+## The v80 20-match window settled at **+22.38**, and I settled it honestly. But
+## v80 KEPT PLAYING after the window closed:
+##   WINDOW      n=20  net **+22.38**
+##   POST-WINDOW n=19  net **-40.92**  (STRONG -70.13 / WEAK +21.52)
+##   FULL LIFE   n=39  net **-18.54**  (-0.48/match; 2sd at m=39 is 90.6, so it
+##                                      DOES NOT trip the magnitude rule)
+## **The window was the favourable half of v80's life.** Nothing was gamed — the
+## evaluation point was pre-registered at n=20 and I did not choose it after the
+## fact — but a successor quoting "+22.38" without "-18.54 over its full life"
+## is quoting the good half. **The strength split INTENSIFIED post-window: -70.13
+## over 7 strong matches. That is the real story of v80 and it is not a good one.**
+##
+## ===== THE FINDING THAT SURVIVES EVERYTHING ELSE =====
+## **The strength-conditional split REPRODUCES PROSPECTIVELY.** Cohorts were
+## frozen BY NAME at n=6, before any outcome was visible:
+##   window     STRONG n=10 **-11.98**  WEAK n=9 **+32.84**
+##   post-window STRONG n=7 **-70.13**  WEAK n=8 **+21.52**
+## We are not a mediocre bot. We are a bot that farms weak opponents and is
+## dismantled by strong ones, and the effect got worse over 39 matches.
+##
+## ===== TWO INSTRUMENT VERDICTS THAT CONSTRAIN ALL FUTURE WORK =====
+## 1. **LOCAL ARENA IS REFUTED AS A MAGNITUDE INSTRUMENT.** It asserted the v76
+##    lineage beats the Eir lineage DECISIVELY (60-40 h2h, +14.2pp vs ouro,
+##    kill-conversion 97% vs 77% at p=1.3e-05). The ladder contradicts the SIGN
+##    (v80 +1.12/match vs v86 -5.44/match, p=0.070). A claim made at p=1e-11 that
+##    cannot reproduce its own direction is refuted regardless of the field's own
+##    error bars. **Local remains GOOD FOR MECHANISM** — it found hive_freeze and
+##    its det legs are surgical. Use it to find WHAT, never HOW MUCH.
+## 2. **EVERY EXTERNAL LOCAL OPPONENT IS DOMINATED** (band 90.0%, flotte 86.7%,
+##    ouro 72.5%, kladde 72.1%, orizon 71.7%). A dominated pool reports
+##    "aggression is free" BY CONSTRUCTION. **`fcode match unrated` is the ONLY
+##    instrument we own whose opponents can punish us** — 30 games/hr, cannot buy
+##    a verdict, and is the only thing that can answer an aggression question
+##    honestly. 16 unrated hive games (0-for-16, 8 tiebreak losses) beat 1,080
+##    local matches for decisiveness. Three self-play punishers exist
+##    (opp_v76 38.3%, opp_v44 40.8%, opp_v69 41.7%) but share our code.
+##
+## ===== QUEUE, IN PRIORITY ORDER =====
+## 1. **SHIP THE HIVE FIX** — `bots/_v100hf`, md5 9e85cae5 (v80 + HIVE_FREEZE_ON
+##    = False). **NOT SHIPPED and that is deliberate: I will not ship minutes
+##    before a wrap with no monitors to watch it, and I cannot activate anyway.**
+##    Evidence: identity control 120/120 identical / 0 flips / delivered-Ti delta
+##    exactly 0 with the flag ON; effect leg 232/240 identical, 8 games moved,
+##    ALL hive seat A, **delivered Ti 5,260 -> 11,030 = 2.10x**, zero collateral
+##    on 14 other maps. Unrated ground truth: **v80 is 0-for-16 on hive vs real
+##    opponents with 8 losses on the titanium tiebreak the fix doubles.** hive is
+##    15% game share and research's ladder cell has v80 at 1 win in 12.
+##    THREE CAVEATS, all on the tape: the 8 moved games are ONE distinct shape
+##    replicated 8x; zero outcome flips vs the det opponent; only seat A moved
+##    though the clause keys both core positions (unexplained).
+## 2. **RE-EXAMINE THE STRENGTH SPLIT AS THE PRIMARY PROBLEM.** -70.13 over 7
+##    strong matches is larger than anything a plank has ever moved.
+## 3. Lethality dial — design on the tape; needs self-play punishers + unrated,
+##    NOT a dominated pool.
+## 4. Lunds fixture — **fully unblocked**, every constant measured: launcher at
+##    r1 40/40, insertion tiles invariant across our versions and hard-codeable.
+##    Lunds held v44 all night; a Lunds ship invalidates the table at once.
+##
+## ===== DEAD — DO NOT REDO =====
+## - **Launcher deletion (`_v101nl`): REFUTED.** 16 gains / 14 losses across only
+##   FOUR distinct shapes, +2 net wins in 240. Diffuse (97/240 identical) where
+##   hive was surgical (232/240). The motivating evidence stands and is still
+##   unexplained: 0 of 20 top-tier games contain a launcher, we build one in 69%.
+##   The right question is "what do they field INSTEAD", not "is ours worth it".
+## - **thor_r1 (gunner rush): REFUTED at 2/60.** Delivered ZERO titanium — the
+##   top tier caps harvesters at ~3 but still lays a conveyor at r6. Kept as the
+##   control. A doctrine test belongs as a FLAG on the working bot, not a rewrite.
+## - `LAUNCHER_RESERVE = 80` is dead code (defined line 921, referenced nowhere).
+##
+## ===== TOOLING TRAPS FOUND TONIGHT =====
+## - `fcode match info --json` returns **`games` as a TOP-LEVEL key, sibling of
+##   `match`** — NOT nested. Parsing `d['match']['games']` reads as "0 games".
+## - The same call returns **the opponent's version as `null`**. `match list` has
+##   both. Join on the wrong one and every opponent looks static forever.
+## - `teamARating`/`teamBRating` is **CURRENT rating, not at-match** — a live
+##   join. Classifying historical games by it is look-ahead bias.
+## - **A version label is not a window.** v80 shipped twice today; filtering on
+##   version alone pools two separate lives.
+## - Write tape rows with a **Python heredoc, never `printf`** — backticks get
+##   shell-interpreted and silently delete code identifiers.
+##
+## ===== TESTS NOW EXIST =====
+## `.venv/bin/python -m unittest discover -s tests` — 25 tests, 0.06s, no deps.
+## Covers the ceiling collider, the arena/ceiling coupling, wilson, and
+## audit_trigger's windowing. `tests/test_bot_helpers.py` runs against any bot
+## via `BOT=bots/_vNN`. **Stateful turn logic is NOT unit-testable — use
+## `tools/det.py` identity runs (0 flips = proof) instead.**
+
+
 
 ## ===== LIVE VERSION CORRECTION — THE s19 BLOCK BELOW IS WRONG ABOUT THIS =====
 ## s19 says LIVE = v84 "Eir 14". **IT IS NOT, AND HAS NOT BEEN SINCE 22:15.**
