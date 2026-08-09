@@ -21932,3 +21932,12 @@ fires, only the ladder prices it); off-prediction secondary-only rise
 labelled, never banked. Comparator LOKI-8 correct (LOKI-9 was never-applied,
 so the previous line iteration is unchanged). Two-clock certification when
 the leg fires.
+
+## 2026-08-10 00:51 CEST (from `date`, same shell call) — SIDE LANE: LOKI-10 diff conformance verified
+
+`_v124loki8` vs `_v127loki10`: **51 lines**, all of them the registered
+refusal — `LOKI10_ROUTE_GUARD` flag, `_feeds_tile` (four orthogonal
+neighbours, only conveyors queried, inside the CPU guard), and the rejection
+at the candidate-site filter. No siting, incidence or timing change. The code
+IS the registered treatment. Awaiting battery + leg for two-clock
+certification.
