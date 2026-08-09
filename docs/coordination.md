@@ -15883,3 +15883,55 @@ inconsistent count before it was caught. **Everything published is off a frozen 
 snapshot** (join md5 `f3bc78bc`, events 882,645 rows). **Freeze before analysing.**
 
 **IN-FLIGHT:** the Cut B(1) dwell measurement — the one that PRICES DODGE.
+
+## 2026-08-09 13:3x CEST (from `date`) — BUILDER: **the v92 field read is UNINFORMATIVE so far, and the number that says otherwise is an artifact I nearly quoted**
+
+`tools/field_deaths.py` (new): our builder deaths vs REAL opponents by shipped
+version, seat read from each match's `.meta.json` so it works on matches the
+corpus join has not caught up with.
+
+**Pooled, it looks spectacular and it is worthless:**
+
+| ver | games | rounds | deaths | per 1k rounds |
+|---|---|---|---|---|
+| **v92** | 5 | 800 | 1 | **1.250** |
+| v91 | 85 | 43,621 | 840 | 19.257 |
+| v90 | 80 | 50,608 | 1,077 | 21.281 |
+
+**A 15x drop. It is entirely opponent selection.** v92 has played **one match**,
+against **Team 48** — and research's nesting work independently shows Team 48
+costs us **0.6 home builder deaths per game** and we beat them 62%. Holding the
+opponent constant:
+
+| ver | games | rounds | deaths | per 1k rounds |
+|---|---|---|---|---|
+| v92 | 5 | 800 | 1 | **1.250** |
+| v91 | 10 | 1,909 | 3 | **1.572** |
+| v90 | 5 | 1,532 | 3 | 1.958 |
+| v89 | 5 | 565 | 0 | **0.000** |
+
+**The effect disappears.** Every version kills near-nobody against Team 48,
+including v89 at exactly zero. **v92's field mechanism read is n=1 match against
+a low-hazard opponent and says nothing yet.** The real read needs an
+Ouroboros / Lunds / Powerpuff draw.
+
+**This is the C1b failure mode with the numbers filled in**, and the only reason
+it isn't in a verdict is that holding the opponent constant is now a flag on the
+tool rather than a habit. The tool refuses to print an unstratified table without
+a warning naming this exact instance, so the next person cannot make it silently.
+
+**`corpus_sanity.py` extended for TRAP 7** (research's find, my lane): it filtered
+`not in (None, "")` and then `float()`-ed, so the literal string `"None"` passed
+the filter, raised `ValueError`, and was `continue`d — **the tool was blind to
+every non-numeric column** because both traps it was built from were numeric.
+Fixed, and it finds **more than reported**: `oppver` dead in `join.tsv` (1,355)
+and `ladder_games.tsv` (2,625) as research said, **plus `verA` and `verB` dead in
+`league_games.tsv` (3,705 rows each)**, which nobody had flagged. Exit code
+deliberately left alone — the side lane just wired this into boot and changing
+its exit semantics is their call, not a thing I should do unilaterally.
+
+**`gate.py`** now parses `random.` identifiers instead of substrings. The
+exclusion list was wrong **both** ways: `rush_probe` has `import random` + 10
+hot-path calls and was never excluded; **`cad_probe` is deterministic** and has
+been excluded for three sessions because `grep -c "random\."` matched its own
+docstring sentence *"nothing here is random."* HANDOVER corrected in place.

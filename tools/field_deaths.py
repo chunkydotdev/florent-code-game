@@ -75,6 +75,8 @@ def main() -> int:
     ap.add_argument("--versions", nargs="+", type=int, required=True)
     ap.add_argument("--archive", default="replay_archive")
     ap.add_argument("--jobs", type=int, default=5)
+    ap.add_argument("--opponent", help="hold the opponent constant -- without "
+                                       "this the version rows are not comparable")
     args = ap.parse_args()
 
     want = set(args.versions)
@@ -91,6 +93,8 @@ def main() -> int:
         else:
             continue
         if ver not in want or m.get("triggeredBy") != "ladder":
+            continue
+        if args.opponent and opp != args.opponent:
             continue
         for g in sorted(Path(args.archive).glob(f"{m['id']}_game_*.replay26")):
             jobs.append((g, seat))
@@ -119,9 +123,17 @@ def main() -> int:
         g, r, d, s = agg[ver]
         print(f"  v{ver:<3d} {g:6d} {r:8d} {d:7d} {1000 * d / max(1, r):14.3f} "
               f"{d / max(1, s):10.3f}")
-    print("\nNOTE: ladder opponents are NOT held constant across versions. This is a "
-          "\n  descriptive field read, not a controlled comparison -- a version that "
-          "\n  happened to draw gentler opponents will look better for that reason alone.")
+    if args.opponent:
+        print(f"\nOpponent held constant ({args.opponent}). Version rows are "
+              f"comparable, subject to n.")
+    else:
+        print("\n*** OPPONENT NOT HELD CONSTANT -- these rows are NOT comparable. ***"
+              "\n  Builder-death hazard varies ~7x across opponents (Ouroboros 4.16 vs"
+              "\n  Team 48 0.6 per game), so a version that happened to draw gentle"
+              "\n  opponents looks better for that reason alone. Measured instance, s24:"
+              "\n  v92's first ladder match read 1.250/1k against v91's pooled 19.257 --"
+              "\n  a 15x 'improvement' that vanished to 1.250 vs 1.572 the moment the"
+              "\n  opponent was fixed. Re-run with --opponent before quoting anything.")
     return 0
 
 
