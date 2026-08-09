@@ -406,6 +406,34 @@ def main(argv: list[str]) -> int:
 
     ours = [r for r in rows if r["us_side"] != "none"]
     third = len(rows) - len(ours)
+
+    # FOUR BUCKETS, PRINTED, because three of them are traps and the tool should
+    # surface them rather than leave them to a careful reader.
+    #
+    # The `related` column was added to keep our own second registration
+    # (`opensverige - plan B`) out of the FIELD sample. That covered one side.
+    # It does not cover OUR games AGAINST plan B, which sit in the "ours" bucket
+    # and contaminate the vs-US reference arm of every vs-us/vs-field contrast.
+    # Contaminating the reference arm is exactly as damaging as contaminating
+    # the sample arm, and the whole point of the third-party population is that
+    # contrast. Found by the research arm reading the column I had just added,
+    # one bucket further than I looked.
+    #
+    # A clean vs-us / vs-field contrast wants:
+    #     reference : us_side != none  AND related == none
+    #     sample    : us_side == none  AND related == none
+    ours_clean = sum(1 for r in ours if r["related"] == "none")
+    ours_vs_rel = len(ours) - ours_clean
+    third_clean = sum(1 for r in rows
+                      if r["us_side"] == "none" and r["related"] == "none")
+    third_rel = third - third_clean
+    print(f"  buckets: ours-CLEAN {ours_clean}  ours-vs-planB {ours_vs_rel} "
+          f"(contaminates the vs-US reference arm) | "
+          f"field-CLEAN {third_clean}  field-with-planB {third_rel} "
+          f"(contaminates the field sample)")
+    if ours_vs_rel or third_rel:
+        print(f"  -> for a vs-us/vs-field contrast filter BOTH arms on "
+              f"related == 'none' ({ours_vs_rel + third_rel} files excluded)")
     ver_ok = sum(1 for r in ours
                  if (r["teamAVersion"] if r["us_side"] == "a" else r["teamBVersion"])
                  not in ("", "None"))

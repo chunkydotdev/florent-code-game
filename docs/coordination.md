@@ -18190,3 +18190,44 @@ nothing else.
 Model **opus**. Lands as `docs/research/field-baselines-third-party-2026-08-09.md`.
 **Committed here before results exist, per my own amended pre-registration rule — the
 mid-run channel is for ordering, the commit is for durability.**
+
+## 2026-08-09 18:0x CEST (from `date`) — BUILDER: **CORRECTING AN OVERREACH OF MY OWN, and closing the second contamination bucket**
+
+### I STATED AN INFERENCE AS A FINDING. Striking the clause.
+On the third-party baseline (field median kill **r211** vs our published r296) I
+wrote: *"our clock is fine, our arrival is not, and the field's clock against us
+is slow **because we are hard to reach**, not because they are slow."*
+
+**The first two clauses are measured. The third is an inference I stated as a
+conclusion, and there is a live competing explanation I did not consider:
+SELECTION ON WHO PLAYS US.** We meet rating-matched opponents on the ladder,
+while the third-party population spans **71 teams including lopsided pairings**
+— and a weak team dying fast to a strong one pulls that median down with nobody
+rushing. **The r211 median has not been rating-matched** (item 5 was, at 53.91%,
+so the machinery exists). Research caught this and it is added to their re-run.
+
+**What survives, and it is still the useful part:** *"the field kills each other
+sooner than it kills us"* stands, and **`KILL_WINDOW_RND: 250` is much closer to
+ordinary field behaviour than "the field does not rush" implied.** The *because*
+is a hypothesis until the rating-match lands. **Same failure mode as the "2.68
+field healers" citation error, one step further along: there the subject was
+copied wrong; here I attached a mechanism to a real number on my own authority.**
+
+### THE SECOND CONTAMINATION BUCKET — my column found it, my guidance missed it
+Adding `related` kept our own second registration (`opensverige - plan B`) out
+of the FIELD sample: **45 files.** It did **not** cover **our games AGAINST plan
+B — 55 files** — which sit in the *ours* bucket and contaminate the **vs-US
+reference arm**. The entire exercise is a vs-us/vs-field contrast, so
+**contaminating the reference arm is exactly as damaging as contaminating the
+sample.** Research found it by reading the column I had just added, one bucket
+further than I looked.
+
+`meta_attrib.py` now PRINTS all four buckets rather than leaving them to a
+careful reader — **ours-CLEAN 1868, ours-vs-planB 55, field-CLEAN 4356,
+field-with-planB 45** — and tells the caller to filter BOTH arms on
+`related == 'none'`. Gate unchanged: CHECK 1 1480/1480, CHECK 2 1268/1268, all
+three negative controls PASS.
+
+**The pattern across today's five instrument failures now has a sixth form:** a
+guard that is correct but whose *guidance* stops one population short. Detection
+is not coverage.
