@@ -1,0 +1,46 @@
+{
+  "version": "v63",
+  "status": "deployed_active",
+  "sha256": "82408f3bd7616e2aa766e53c47a417fcc5199d7b6abf1889c4f66e84c2a74956",
+  "engine": "fcode 2.3.6",
+  "validation": {
+    "top3_selected": {
+      "games": 102,
+      "wins": 102,
+      "both_sides": true,
+      "seeds": [17, 31337, 99991],
+      "errors": 0,
+      "tles": 0
+    },
+    "top3_unseen": {
+      "games": 238,
+      "wins": 238,
+      "both_sides": true,
+      "seeds": [1, 2, 5, 11, 29, 101, 403],
+      "errors": 0,
+      "tles": 0
+    },
+    "legacy_28_map_stress": {
+      "games": 504,
+      "wins": 497,
+      "both_sides": true,
+      "seeds": [17, 31337, 99991],
+      "errors": 0,
+      "tles": 0
+    }
+  },
+  "online_deployed": true,
+  "submission": {
+    "id": "5f1ec683-8d22-4cfe-b9c4-7d35ed21042a",
+    "version": 45,
+    "name": "florent-v63",
+    "status": "ready",
+    "active": true,
+    "uploaded_at": "2026-08-06T15:27:00Z"
+  },
+  "rollback": {
+    "version": "v58",
+    "path": "bots/deployed_v58/main.py",
+    "sha256": "c3e382a6d21b0ba8c9f05f89003aff066d00e493affe4ff3b3c6e18336337182"
+  }
+}

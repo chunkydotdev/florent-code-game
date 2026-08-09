@@ -11756,3 +11756,128 @@ costs us ~2.2 Ti per 1 Ti of theirs. Filed `transfers: no`.
 note. No CPU load from my side — the builder's §6 ablation has the box to itself.
 Next: **wheel topic 8 (economy — harvest saturation, when to stop expanding)**,
 which is where both sweeps point.
+
+### 2026-08-09 09:27 CEST (from `date`) — builder arm: **THE SINGLE-SEAT-CLAUSE "DEFECT CLASS" IS REFUTED. Three maps, three different answers, three perfect null controls. One fix banked, one road closed, and the class framing was wrong.**
+
+## 1. THE HEADLINE
+
+Research's seat-gap doc called the single-seat map clauses *"a defect CLASS, not a
+one-off"* and my 09:05 note took that framing into the queue. **I tested all
+three maps that carry them. The framing does not survive.**
+
+```
+map        clauses ablated              where change lives   NULL CONTROL   RESULT
+hive       hive_bunker ACTION arm       seat B               A: 10/10 ok    18/20 -> 20/20   POSITIVE
+snowflake  home_b OFF + attack_now sym  seat B               A: 10/10 ok    14/20 ->  6/20   NEGATIVE
+nordkap    both seat-A clauses OFF      seat A               B: 10/10 ok     4/20 ->  6/20   AMBIGUOUS
+```
+
+**Every one of the three null controls came back byte-identical across all 20
+games** (same wins, same kills, same turn counts, all ten opponents). The harness
+is sound and every effect below is attributable to the clause and nothing else.
+
+**A single-seat clause is not a defect by virtue of being single-seat.**
+`hive_bunker` is a defect because of **what it does** — plant a permanent
+impassable barrier on a reserved delivery seat — not because it lacks a mirror.
+The snowflake clauses are **load-bearing**: symmetrising them costs **8 of 20
+games.** Had I "fixed the class" as queued, I would have shipped a large
+regression on snowflake to buy a small gain on hive.
+
+## 2. THE METHOD THAT MADE THIS READABLE, because it is reusable
+
+A map-gated change has a **free null control: the seat it cannot reach.** Running
+both seats turns every battery into its own falsification test at double the
+cost and no extra thinking. **It caught a broken battery today** (§3) and it is
+what makes the three results above trustworthy rather than suggestive.
+
+**Detail that matters:** the opponents must be made deterministic too. `det.py`'s
+docstring says to flip `NOISE_ON=False` in local copies of **all** sides; **I did
+it for our cells and not for the opponents**, and my first hive battery came back
+with the null control moving 2 wins on a change that provably cannot execute on
+that seat. `opp_v63` has no `NOISE_ON` at all — which is why it was the only
+opponent whose control held, and why `det.py` calls it the reference. **I read
+that file and did half of what it said.** Rebuilt as `bots/_det_opp_v*` (10
+opponents), and the controls went from 0/10 to 10/10 identical.
+
+That broken battery did leave one useful number behind: with noisy opponents the
+seat-A control wandered **±2/30 ≈ ±7pp**, which is this design's noise floor, and
+the first battery's seat-B headline (+1 win) sat inside it. **A control that fails
+tells you the size of what you cannot see.**
+
+## 3. HIVE — the one positive, and its ceiling is small
+
+```
+hive seat B, 10 deterministic opponents, 2 seeds, --tle 0, 0 crashes
+              C0 (live)          C4 (bunker barrier deleted)
+wins            18/20                   20/20
+core kills       4/20                   18/20
+opp_v76           0/2  (lost r454)       2/2  (survived to r1000, won)
+8 of 10 opponents: 1000-turn titanium grind  ->  core kill at r327-442
+seat A null control: 10/10 IDENTICAL
+```
+**C4 deletes one 29-line action arm.** The move arm is untouched — `C1`, which
+deleted only the move arm, was an exact null, so the movement was never the
+problem. The barrier was.
+
+**AND THE CEILING, stated before anyone quotes the table:** hive is **5.7% of
+ladder games and we hold seat B in 41% of those — 2.4% of games.** Even a large
+effect there is **~+0.2pp overall, far below what the ladder can resolve.**
+Deterministic play also means 2 seeds is 1 distinct game; the effective n is
+**~6 distinct opponent behaviours, not 20 games.**
+
+**SHIP DECISION: NOT SHIPPING IT ALONE, and the reason is the baseline, not the
+fix.** v90 is live at **1586 @ 502, rank #28** — up from **1556.83 @ 491** at ship,
+**+29 over 11 rated matches.** Replacing a performing bot with a near-identical
+one to chase 2.4% of games would **burn a clean baseline read for a change the
+instrument cannot see.** The fix is verified, diffed, and banked in
+`bots/_abl_c4`; it goes out bundled with the next substantive change. **Rollback
+target is unchanged: v89 = `bots/_v100hf`, tree `4558be91`.**
+
+## 4. WHAT THE NEGATIVES ARE WORTH
+
+**Snowflake (14/20 → 6/20)** is the most valuable result of the three. It says
+the asymmetries in this codebase are, at least sometimes, **measured behaviour
+someone earned** — and the tape agrees: `hive_bunker` was flagged three times
+(`:2362`, `:2422`, `:66`) and each time recorded as *"hive barrier untested"*,
+whereas the snowflake clauses have production history behind them. **"It looks
+asymmetric" is a hypothesis about tidiness, not about the game.**
+
+**Nordkap (4/20 → 6/20)** is not a win. +2 wins, but `v72/v74` collapses from
+**surviving to r1000 into dying at r134**, and three other pairings lose ~2x
+faster. **We are 4/20 on nordkap seat A in the control** — a genuinely bad seat
+that neither variant repairs. Filed as ambiguous, not shipped, not closed.
+
+**Honest residue:** 3 tracebacks in the snowflake run and 4 in nordkap, out of 80
+games each. I re-ran the three decisive snowflake pairings individually and got
+**0 tracebacks**, so the flips are clean — but the 7 are **unattributed** and I am
+recording that rather than rounding it to zero.
+
+## 5. QUEUE, REVISED
+
+1. **`launcher-defensive-interception`** (research's sweep, item 1) — **next
+   build.** The argument that moves it to the front is geometric: an enemy builder
+   attacking our building **must** be orthogonally adjacent, which is exactly the
+   adjacency a launcher needs, so the targeting problem is free. Turret answer to
+   a 40 HP builder costs **24-30 Ti of converted ammo**; a throw costs **0**. And
+   it lands in the **home band — the one place today's corpus work says we are
+   large and consistently better than the field (+11.4/+16.6/+22.3pp)**. Same
+   launcher verb as the whole Loki programme, pointed at the half we win.
+2. **`get_attackable_tiles` may be scoring coverage we cannot deliver** —
+   research's source read: for gunners, *"builder bots and buildings are both
+   targetable and blocking"*, while `get_attackable_tiles` returns the raw pattern
+   **ignoring occupancy**. Our home ring is mostly gunners (**41,921 gunner builds
+   vs 13,298 sentinel** in the corpus). **Statically checkable against our siting
+   code, no battery needed.** Possible live defect in the band we are strongest in.
+3. Clamp `LATE_FORWARD_NUM/DEN >= 1/2` or assert — a t<0.5 anchor silently
+   disables the whole arm on 11/15 maps (verified §1 of the 09:17 note).
+4. Bundle-and-ship: hive `C4` + whichever of the above lands.
+
+*Process delta, appended with the verdict: **I inherited "defect CLASS" from a
+research doc and carried it into my own queue at 09:05 without testing whether the
+class was a class.** It was one defect, one load-bearing feature, and one
+ambiguity. The pattern is now three-for-three today — the anchor justification,
+my own coverage cut, and this — and it is always the same shape: **a compressed
+label ("class", "the field's band", "far") smuggles in an equivalence that the
+underlying cases do not share.** The rule I am taking forward: **when a finding is
+stated as a category, the first test is whether the members behave alike — and
+that test is usually one battery, not a debate.***
