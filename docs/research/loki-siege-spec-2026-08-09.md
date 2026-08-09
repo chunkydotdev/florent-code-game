@@ -28,16 +28,19 @@ the healing engine, and the turret code all exist; the flags re-point them.
   Economy bit-for-bit (thor_r1 is why). Byte-identical with master flag OFF.
 - Every siege unit's run() wrapped: blanket try/except (uncaught = permanent
   unit death) + CPU guard (10ms; the chassis turret scan already guards).
-- **The store is FULL (16/16, slot 6 = heartbeat).** Two options, in order:
-  (a) PROBE: does `self` persist across units/rounds? (one line: increment
-  `self._probe` in run(), print twice). If yes — role tables, siege state,
-  target memory all live in `self` at zero store cost. External sweep found
-  the pattern shipped (BC2026 "Generalized Strokes Theorem"). CAVEAT the
-  builder must verify: same `self` may not be shared across processes if the
-  engine sandboxes per unit — the probe answers this too.
-  (b) if no: pack siege state into a reclaimed slot (2 bytes target xy, 4 bits
-  state, writer = core only). **Single-writer rule regardless** — buffered
-  last-write-wins makes any multi-writer slot a race (live risk today).
+- **The store is FULL (16/16, slot 6 = heartbeat).** ~~Probe `self`
+  persistence~~ — **ANSWERED by the research arm (2026-08-09,
+  `store-semantics-2026-08-09.md`): `self` does NOT persist across units;
+  each unit gets its own `Player` instance** (their sentinel probe silently
+  no-oped on exactly this). So: shared siege state MUST go through the store
+  — pack into a reclaimed slot (2 bytes target xy, 4 bits state, writer =
+  core only). Store semantics per the same doc: buffered to next round,
+  last-writer-wins, **unsigned 32-bit [0, 2^32−1]; writing a negative raises
+  OverflowError, which permanently destroys the unit** — clamp before every
+  write. Per-unit persistent state (e.g. COMMITTED flags) is fine in `self`
+  keyed implicitly by the unit's own instance. **Single-writer rule for every
+  shared slot** — multi-writer under last-write-wins is a race (live risk
+  today).
 
 ## 2. The five flags
 
@@ -78,6 +81,19 @@ through 1.4 HP heal per fire-round; we let through 2.6 — this flag is the
 mechanism aimed at that number. NOTE the known engine trap: gunner lines are
 blocked by own bots/buildings and `get_attackable_tiles()` lies about it —
 siting must lane-check with `can_fire_from`, not the pattern getter.
+**Sentinel-payload alternative (research-arm probe, same day): sentinel lines
+pass through our own bots AND buildings (verified with a landed 18-dmg shot),
+so a sentinel payload sidesteps the lane bug entirely.** Costing: gunner
+clears a 40 HP healer for 24 ammo vs sentinel's 30, and gunner is 57.6% of
+top-tier kill damage — but a mis-sited gunner fires zero shots. Recommend:
+gunner where a `can_fire_from`-verified clear lane exists at build time,
+sentinel otherwise; instrument M6 tracks the realized mix.
+**Shell-matched survival (this lane's cut, answering the research arm's
+siting question): the persistence gap is NOT a siting-mix artifact within
+core-shooters — at the SAME point-blank shell (d²≤13) TOP shooters live 47r
+vs ours 25r, and our death rate is 62-63% in EVERY shell vs TOP's 37-42%.
+Siting explains where home turrets survive (research arm's result); it does
+not explain away the forward support/replacement deficit. Both planks stand.**
 
 ### S5 — DEMAND AMMO (no banking stage)
 Maintain ammo ≥ (next 2 rounds of planned shots) via same-turn convert_ammo;
@@ -118,7 +134,8 @@ gunners and the drain family (P-B) rises in priority.
 
 ## 4. Probes the builder should run BEFORE building (minutes each)
 
-1. `self`-persistence probe (§1) — decides the whole state-plumbing design.
+1. ~~`self`-persistence probe~~ — ANSWERED, no probe needed (§1): `self` is
+   per-unit; shared state goes through the store.
 2. Scale-decrement probe: `get_builder_bot_cost()` before/after a
    `self_destruct()` — CLAUDE.md says scale decrements on destroy;
    CLAUDE.md is known-unreliable. Gates the S6 wave-costing math and the
