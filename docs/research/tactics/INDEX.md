@@ -81,6 +81,13 @@ in 44% of games. Leviathan 4.40%, The Bisons 4.65%. Every 1800+ team and we
 ourselves sit at 0.00%. A conditional compute blow-up in three opponents is the
 most exploitable shape a weakness can have, and we do not yet know the trigger.
 
+**SWEEP 8 (objective functions for static defence)** is the most decision-relevant
+of the set and **contradicts what we shipped**: four independent winners/podium
+finishers encode static-defence value with **forward-ness POSITIVE** and **survival
+absent as a term**. See [sweep 8](2026-08-09-sweep-8.md) — and read its **provenance
+block first**, because its author disclosed fabricated quotes in an undelivered
+draft and I re-verified four load-bearing claims against primaries before publishing.
+
 **THE WHEEL IS NOW FULLY SWEPT (all 12 topics, 2026-08-09).** Successive sessions
 should re-sweep STALE rows rather than pick unswept ones — and prefer re-aiming a
 topic at a specific measured surprise, which is what produced the best results here
