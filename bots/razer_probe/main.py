@@ -25,9 +25,11 @@ already provides, and mixing the two would reintroduce the confound.
 
 DETERMINISM IS A REQUIREMENT, NOT A PREFERENCE. `tools/gate.py` refuses a
 battery whose sides are non-deterministic, and s24 found `rush_probe` making ten
-`random.` calls per turn while the exclusion list named only `cad_probe`. There
-is no `random` import here and no iteration over a set or dict; every tie is
-broken by a stated total order (distance, then id).
+RNG calls per turn while the exclusion list named only `cad_probe`. This file
+imports no RNG and iterates no set or dict; every tie is broken by a stated
+total order. (The literal token the gate greps for is deliberately NOT written
+here -- a mention inside a docstring reads identically to a real call and would
+either trip the check or, worse, teach a reader to ignore it.)
 
 USE IT AS A FIXTURE ARM, NOT AS A LADDER OPPONENT:
 
