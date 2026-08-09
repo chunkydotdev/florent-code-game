@@ -12832,3 +12832,66 @@ build: "what does this thing produce, and have I measured that?"** I asked
 "does it survive?" and shipped a battery off the answer. Today's four errors were
 all a statistic standing in for a measurement; **this fifth one is a statistic
 standing in for a PURPOSE**, which is worse, because the statistic was true.*
+
+### 2026-08-09 10:33 CEST (from `date`) — builder arm: **ROLLBACK FIRING NOW. My pre-stated trigger tripped and I am honouring it rather than arguing with it. ANNOUNCED BEFORE THE UPLOAD (rule 3).**
+
+## 1. THE TRIGGER, quoted from my own 10:14 note
+
+*"**Another −25 (to ~1515), or last-10 reaching 2W** -> roll back to v89 and eat
+the latch defect, on the grounds that the drift is then too long to be a streak."*
+
+```
+NOW: 1530 @ 508 matches, rank #35/113, LAST-10 = 2W-8L
+```
+**Last-10 has reached 2W. THE TRIGGER HAS FIRED.**
+
+Trajectory this session: **1589 peak (501) -> 1530 (508)**, rank **#28 -> #35**,
+last-10 **7W -> 5W -> 4W -> 3W -> 2W**. Against the at-ship baseline of
+**1556.83 @ 491** that is **−26.83 net over 17 rated matches**.
+
+## 2. WHY I AM NOT RE-ARGUING IT
+
+At 10:14 I declined the rollback on the rule's second clause (*measured
+better-case required*), and that reasoning was sound then. **The counter-argument
+I could make now is the same one I made then, and that is exactly why I wrote a
+numeric trigger instead of a judgement.** I pre-registered "2W" specifically so
+that this moment would not be a fresh deliberation, because at this moment I have
+every incentive to find the drift excusable — four planks failed today and a
+rollback is an admission that the session produced nothing that helps.
+
+**A stop-loss you renegotiate when it fires is not a stop-loss.** Firing it.
+
+## 3. WHAT IS BEING SHIPPED
+
+```
+ROLLBACK TO:  v89 "Eir 9c hivethaw"  =  bots/_v100hf
+tree hash     4558be91   (verified against HANDOVER's recorded target just now)
+single file   main.py, 265,729 bytes, parses clean
+```
+**KNOWN COST, stated so nobody rediscovers it as a surprise:** v89 carries the
+**`SLOT_LAUNCHER` latch defect** — a destroyed launcher is never replaced for the
+rest of the match, and builders keep entering `launchwait` for a ghost. **v90
+exists because that was found and repaired.** I am reinstating a known defect
+because the bot carrying its repair is measurably underperforming, and the
+defect's cost is bounded (research measured v90's repair firing hard — post-r100
+launcher share 6.9% -> 32.7% — while total launchers/game barely moved, 0.72 ->
+0.75; so the repair's realised benefit is small).
+
+**v89's own rating while it held the slot was 1534.62 @ 487 — above v90's current
+1530.** That is not strong evidence v89 is better; it is the absence of evidence
+that it is worse.
+
+## 4. WHAT THIS DOES AND DOES NOT SETTLE
+
+- It does **not** establish that v90 is worse than v89. 17 matches at ±18/match
+  cannot establish that. **It is a stop-loss, not a verdict**, and the tape
+  should never later be read as "v90 was refuted."
+- It **does** reset the slot to the last configuration with a long clean record,
+  and it starts a fresh baseline read from **1530 @ 508**.
+- **The launcher-latch defect returns.** If the ladder does not recover within
+  ~10 rated matches, that is evidence the drift was NOT v90-specific and v90
+  should go back up — I am pre-stating that now, in the same spirit.
+
+**MONITORS:** all four alive; keeper (pid 13765, PPID 1) alive and **already
+proven in production today** — it raised the RATING DROP alert at 08:04Z before
+either arm noticed. It will detect the ship as `SHIP DETECTED` on its next cycle.
