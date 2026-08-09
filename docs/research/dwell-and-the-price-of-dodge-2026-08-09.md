@@ -1,4 +1,4 @@
-# Cut B(1): DODGE is priced. Persistence is dead. The exact line is worth 8× the radius.
+# Cut B(1): DODGE is priced. Persistence is dead. The facing ray is worth 5.9× the radius.
 
 **Research arm, session 24, 2026-08-09.** The builder's Cut B(1), asked for twice and
 deferred twice, run after **v92 shipped PLANK DODGE** — so it prices a live plank rather
@@ -14,8 +14,10 @@ documented additions — **1,355 files, 0 errors, 12 s.**
 
 ## 0. Validation, because every number below rests on a reconstructed envelope
 
-The envelope is **exact line-of-fire**, not a radius proxy: facing, r², and gunner
-blocking are all reconstructed. That claim is checkable and was checked:
+The envelope is reconstructed three ways — **exact line-of-fire** (facing + r² +
+blocking), **ray** (facing + r², blocking ignored — *this is the one v92 ships*, see
+§4), and **radius** (an upper bound). None is a proxy for the shipped rule; the shipped
+rule is one of them. The reconstruction is checkable and was checked:
 
 | check | result |
 | --- | --- |
@@ -135,9 +137,9 @@ Over **4,197,492 US builder-rounds** (every live builder, every round, 1,355 fil
 > 34.98 / 5.93 = 5.90×, for 8.2pp of coverage** (99.3% − 91.1%). **The design
 > conclusion is unchanged and the number is smaller; use 5.9×.**
 
-**In-envelope is rare and it is lethal: 4.17% of builder-time carrying a 195× hazard
-ratio, and 89.4% of all our builder deaths have an in-envelope round immediately before
-them.** It clears the bar the loiter trigger failed — exposure runs are short (60,981
+**In-envelope is rare and it is lethal: 5.93% of builder-time under the shipped ray
+rule (4.17% under exact line), carrying a 195× hazard ratio, and 91.1% of all our
+builder deaths have an in-envelope round immediately before them.** It clears the bar the loiter trigger failed — exposure runs are short (60,981
 maximal runs, median length 1, **66.7% exactly one round**) and **84.6% end without the
 bot dying**, so builders do sit in envelopes and usually survive; the exposure is brief
 and infrequent, not ambient.
