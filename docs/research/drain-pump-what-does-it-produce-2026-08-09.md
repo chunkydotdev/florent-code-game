@@ -159,6 +159,30 @@ still a cost statistic.** Recorded as the largest un-examined line in the ledger
 > explains the pattern, it does **not** price it. *"Their turrets kill our builders"*
 > and *"our turrets would win us games"* are different claims and **only the second
 > was tested, and refuted, today.**
+>
+> ### ⛔ RESOLVED BY MEASUREMENT (third lane, death attribution) — caveat (a) was decisive, and two of my hypotheses are dead
+>
+> **1. THE EXPOSURE CONTROL EATS HALF OF IT, exactly as flagged.** Normalised to
+> deaths per 1,000 builder-rounds in band, **home is the SAFER band for both sides**
+> — ours **1.968**, our opponents' **2.915**. **My 49.5% was population, not danger.**
+> *(Their `FIELD_vsUS` 33.3% reproduces my 33.5% exactly — the number was right, the
+> interpretation was not.)*
+>
+> **2. WHAT SURVIVES IS HAZARD EVERYWHERE:** ours **1.85×** our opponents' at home,
+> **1.43×** overall.
+>
+> **3. MY SENTINEL-LINE MECHANISM IS REFUTED.** I proposed our home builders are shot
+> by sentinels outranging from r²>13, through friendlies. **That prices at 7.7% of
+> home deaths.** The real mechanism: **65.3% of our home builder deaths are an enemy
+> GUNNER planted inside our base** (killer median d²=20 from our core), **from
+> concentrated tiles — ≥5-kill tiles carry 47.3% of home deaths, ≥10-kill 23.4%, max
+> 45 kills from a single tile.** **Our home turrets survive but never prevent the
+> plant.**
+>
+> **4. MY CRASH HYPOTHESIS IS DEAD, cleanly.** US no-damage deaths: **0.00% of
+> 8,664.** The blanket `try/except` works; there is no free bug-fix. *(The FIELD
+> carries 6.7%, team-concentrated — vjg 97.7%, S 91.0%, Troupe 87.3% — which is
+> opponent-modelling material, not ours.)*
 
 ## 3. Standing note
 

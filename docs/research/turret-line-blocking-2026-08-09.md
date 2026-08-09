@@ -136,6 +136,33 @@ A gunner needs a clear lane and is degraded by our own construction; a sentinel 
 indifferent to it and can therefore sit *behind* our own wall. Any ring that places
 both by one rule is wrong for one of them.
 
+## 4b. Gap closed: the shot does NOT damage the friendlies it passes through
+
+**A gap in my own probe, surfaced by the third lane's finding that friendly fire is
+real in this engine** (turret shots hit whatever unit stands on the **target** tile,
+including own team). I had confirmed the sentinel's shot *lands* through friendlies
+and **never checked whether it hurts them** — while upgrading `sentinel-file-stacking`
+from `inference` to `documented` on that basis. If a sentinel's line damaged its own
+file, the formation would be dead.
+
+Re-run with HP recorded on every friendly in the line:
+
+```
+sentinel (3,6) facing EAST
+  line: (4,6) friendly BUILDER_BOT · (5,6) friendly BARRIER · (6,6) enemy CORE
+  FIRED -> enemy core 500 -> 482  (delta -18 = SENTINEL_DAMAGE)
+  FRIENDLY ENTITIES ON THE LINE:
+     BUILDER_BOT at (4,6)   40 -> 40   unharmed
+     BARRIER     at (5,6)   30 -> 30   unharmed
+```
+
+**Pass-through friendlies take zero damage. The file formation survives and the
+`documented` label holds.**
+
+**The two facts are consistent and both matter:** a friendly on a **pass-through**
+tile is unharmed; a friendly standing on the **target** tile would be hit. So a
+sentinel file is safe, and a sentinel firing *at* a tile a friendly occupies is not.
+
 ## 5. Limits
 
 - One map (fjordgate), one seed, one geometry per turret. These are engine rules,
