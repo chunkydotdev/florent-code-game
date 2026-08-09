@@ -14709,3 +14709,103 @@ gate.py self-test). Neither needs anything from anyone.
 **RESEARCH ARM:** a separate session, still live at my wrap. Their outstanding
 item was the objective-function sweep, which landed. Anything they produce after
 this note is unread by me.
+
+### 2026-08-09 12:09 CEST (from `date`) — research arm: **SESSION 23 STATE NOTE / WRAP** (Magnus's call, received directly)
+
+**NOTHING IN FLIGHT.** No subagents, no CPU jobs, no locks, no unrelayed results.
+**Zero replay downloads all session.** Eight tactics sweeps launched, landed, relayed
+**and quote-audited**; the wheel is fully swept.
+
+**Note on the wrap trigger:** the builder relayed *"Magnus called the wrap"* and I did
+**not** act on it — a peer reporting a directive is not the directive. I verified the
+wake path and held until **Magnus said it to me directly.** Same reason I labelled
+the earlier *"test process"* directive as second-hand when relaying it. **Worth
+keeping: second-hand instructions get relayed, never executed.**
+
+## 1. WAKE PATH — verified against `ps`, not asserted
+
+```
+keeper.py       pid 13765  PPID 1  elapsed 03:19:52   ALIVE, DETACHED
+status/submission watcher  pid 25811  PPID 1  13:45
+match_watcher.py           pid 25942  PPID 1  13:45
+opp_watcher.py             pid 25943  PPID 1  13:45
+keeper state: v91, 1562 @ 518, peak 1569, alerted_at 1540, last-10 6W
+alerts fired today: 3  (incl. the rating drop, before either arm saw it)
+```
+**ONE FRAGILITY I FOUND AND NOBODY HAS FLAGGED: the three watchers write their state
+into `STATE_DIR=/private/tmp/claude-501/.../fe6bb47d-…/scratchpad` — a
+SESSION-SCOPED scratchpad belonging to a session that is not mine and may be gone.**
+The processes survive (PPID 1); **whether their state survives depends on a temp
+directory nobody owns.** `keeper.py` is unaffected — it writes to `corpus/`.
+**Untested; flagged rather than asserted.**
+
+## 2. WHAT LANDED (all committed and pushed)
+
+11 research docs + 7 tactics files. The ones with legs:
+- **The r250 wall** — four instruments (hazard 29→76%, turret count, forward posture,
+  heal detail) locate the failure in the same window. **The builder found its
+  mechanism: the chassis has NO representation of threat magnitude.**
+- **The gunner-plant tiles** — **65.3% of our home builder deaths are an enemy gunner
+  planted inside our base; ≥5-kill tiles carry 47.3%, one tile produced 45 kills.**
+  **Queue #1: enumerable, not behavioural.**
+- **Engine facts, probed:** sentinel shoots through friendlies **and does not harm
+  them**; gunner lines block on our own buildings; store is unsigned 32-bit,
+  last-writer-wins, and **the ticket idiom collapses silently** (a latent
+  `SLOT_ROLE_N` bug); **build legality ≠ `is_tile_empty`.**
+- **Every battery today was self-play** — confirmed from the pool bots' own
+  docstrings. **The four turret nulls are not small harms; they are indistinguishable
+  from zero. The subsystem is inert to tuning.**
+- **Corpus traps 5 and 6** — `shots` and `deliveries` are dead columns, and
+  **delivery is tiebreak #1.**
+
+## 3. WHAT I GOT WRONG — the honest list, because it is the session's real output
+
+**Ten of my own claims died, five by my own hand before anyone saw them.** The
+expensive one: **a true, confound-controlled, independently-reproduced survival
+statistic licensed the day's worst change (−6.7pp, dose-response).** Also withdrawn:
+"field scales defence to the map"; the loss-composition reading; a **five-of-seven-row
+table** (I hardcoded the list; the two omitted rows inverted the conclusion); "field"
+meaning **our opponents, not the league**; the spawn-cap mechanism; the sentinel-line
+death mechanism; the crash hypothesis; the 49.5% share (**population, not danger**);
+and a **"field est (2×)" column that gave one data point from another game the look of
+a calibrated transfer function.**
+
+> **The pattern, and it is the deliverable: the arithmetic was right every time it was
+> checked — four times by the builder, 16/16 on citations. Everything that failed,
+> failed in what the arithmetic was taken to MEAN.**
+> Two families: **a statistic standing in for a MEASUREMENT** (pooled numbers hiding
+> conditional reversals) and **a statistic standing in for a PURPOSE** (measuring
+> whether a thing persists when it exists to be spent). **Both are in the vault.**
+
+## 4. OPEN, FOR MAGNUS
+
+1. **THE LANE CALL.** I ran two throwaway engine probes in the **scratchpad, not
+   `bots/`**, reading "never edit bots / never run arena" as protecting the
+   submission and the arena rather than instrumentation. **The builder concurred, but
+   a peer cannot widen my lane.** Confirm or reverse — the probes produced four of
+   the session's load-bearing engine facts.
+2. **THREE SESSIONS WRITE TO `docs/research/` WITH NO LOCK.** It held all day on
+   message-passing discipline alone. **One push race occurred and was resolved by
+   rebase.**
+3. **`audit_trigger` THRESHOLD (the builder's item, and I agree).** It tripped at
+   **note:verdict 1.53** at boot and was read as not-indicated because only 1 of 4
+   fired. **On today's evidence the tripwire was right** — findings arrived faster
+   than they could be interpreted, and that is exactly what the 1.53 measured.
+   **Neither arm should retune it unilaterally.**
+4. **A directive was attributed to you second-hand** (*"the builder keeps forgetting
+   unrated and test games"*). Relayed **labelled as second-hand**; worth confirming.
+
+## 5. FOR WHOEVER BOOTS NEXT
+
+- **LIVE v91** = `bots/_v100hf`, tree `4558be91`, **single-file**. Ladder **1557 @
+  519, #31, last-10 6W-4L.**
+- **`bots/opp_v*` IS US.** Any battery against it is self-play; **label every result
+  with its pool.**
+- **Sync the corpus first** (`tools/corpus/sync.py`), then **run
+  `tools/corpus_sanity.py` before trusting any column you have not personally
+  used** — two dead columns were found in one day.
+- **Verbatim-quote checks: extract text, flatten whitespace, THEN grep.** I hit two
+  false negatives in opposite tools and nearly retracted correct material twice.
+- **Blocker:** every Loki build and `_abl_c4`/`_v111home`/`_v112floor`/`_v113site`
+  are **multi-file on the v90 lineage**; live is single-file v91. **"Ready to bundle"
+  is false for all of them.**
