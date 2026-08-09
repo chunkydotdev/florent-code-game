@@ -15958,3 +15958,73 @@ carry the fix if decoders productise. Next cheapest evidence named in the
 doc: map-terrain read vs sentinel geometry (free), heal-ceiling arithmetic
 (free, S1 first). Lane in-flight EMPTY; atlas still parked; wake paths
 keeper + SPRT advisory.
+
+## 2026-08-09 13:34 CEST (from `date`) — RESEARCH ARM: **CUT B(1) PRICES DODGE — persistence dead at 1.65%, exact line worth 8x the radius**
+
+**Landed:** `docs/research/dwell-and-the-price-of-dodge-2026-08-09.md`; decoder
+committed at `docs/research/scripts/side-lane-2026-08-09/dwell_decode.py`
+(`dc_decode.py` + six documented additions; 1,355 files, 0 errors, 12 s).
+**Version tag: live v92 `_v115dodge` (`7b1d8d73`, treehash 37450121).**
+
+**VALIDATION — the envelope is EXACT LINE-OF-FIRE, not a radius proxy.** `fireTurret`
+target tiles land on the reconstructed ray for **368,134/368,167 gunner (99.991%)** and
+**117,758/117,758 sentinel (100.000%)** across **485,925 real shots**; the 33 misses are
+the S1 ordering trap. Death classification reproduces `dc_decode` at **0 mismatches**
+over 10,015 keyed rows.
+
+**1. PERSISTENCE IS DEAD, BY A WIDER MARGIN THAN MY OWN ESTIMATE.** **97.6% of
+pre-death exposure (28,473 / 29,161 dwell-rounds) had the killer inside the victim's own
+vision**; 2.4% blind, all sentinel, **0 of 25,589 gunner dwell-rounds.** Of the 293
+deaths containing any blind round, **157 (53.6%)** had the killer visible to that bot
+earlier (own-memory reaches them) and **136 (46.4%) never saw it at all** — those need
+**team-shared state**, not persistence. **Own-bot persistence's ceiling is
+157/9,495 = 1.65%.** I argued for persistence this morning, revised to 3.1% this
+afternoon; measured is **half that again. Closed.**
+
+**2. THE AVOIDANCE WINDOW IS ONE ROUND — corroborated independently.** 57.7% of
+dwell-rounds are rounds the bot was **already being shot**; p90 dwell 6 is the **damage
+clock** (7/rd into 40 HP), not a loiter tail; 99.7% of deaths take **zero heal rounds**.
+Silent window: **72.4% of deaths had ≥1 pre-shot round in the envelope, almost always
+exactly one** (gunner 69.4% at exactly 1). **This is the same answer as the 0.87-tile
+vision margin, by a completely different route — a radius subtraction and a per-round
+dwell census agreeing. DODGE is a one-round-reaction mechanism by construction.**
+
+**3. THE DWELL-0 FLOOR IS ~1%, NOT 12.7% — and it is good news.** **0.0%** were a turret
+built onto a standing bot; **90.7% of gunner dwell-0 victims MOVED into the line that
+round** (sentinel 100.0%); 95.9% were already inside the killer's radius at r−1, just
+off the line. Only **92 cases (0.97%)** stood still with a blocker that vanished.
+**Headroom above v92 is much larger than the naive read.**
+
+**4. THE CONTROL SETTLES A DESIGN QUESTION — 4,197,492 US builder-rounds.**
+
+| rule | in-envelope builder-rounds | P(die next rnd) | hazard | deaths preceded |
+|---|---:|---:|---:|---:|
+| **LINE (what v92 ships)** | **4.17%** | **5.37%** | **195x** | **89.4%** |
+| RAY | 5.93% | 3.84% | — | 91.1% |
+| **RADIUS** | **34.98%** | 0.71% | — | 99.3% |
+
+**A radius rule forbids 35% of builder-time for 99.3%; the exact line forbids 4.2% for
+89.4% — 8x the blocked map-time for 10pp of coverage.** **This is the measured version
+of sweep 9's prediction** (*"a disc rule is likely fatal here"*) **and of my
+plant-coverage finding that the band IS our conveyor network. BC2020 blanked a disc
+because their net gun was omnidirectional; ours are FACING turrets. The disc was the
+trap and v92 did not step in it.** **My sweep-9 relay framed the coverage field as the
+thing to build; the correct framing was that the builder had already built the RIGHT
+version and the disc was the hazard.**
+Exposure also clears the loiter bar: 60,981 maximal runs, **median length 1, 66.7%
+exactly one round, 84.6% end without a death.**
+
+**WHAT THIS CANNOT ANSWER:** what fraction of the ~89% headroom v92 actually captures.
+**Everything here is a CEILING, not a measurement of the shipped code** — that needs the
+battery's own instrumentation.
+
+**BIASES, each stated:** envelope membership evaluated at **END of round**, so a bot
+entering and leaving within one round is uncounted — **dwell is a mild UNDER-count**;
+**875 multi-shooter deaths (8.4%) excluded, not guessed** (skew would be toward longer
+dwell); **vision treated as pure radius d²≤20 unblocked — not verified**, and if the
+engine blocks vision the 97.6% is optimistic. The NW-corner contamination does not touch
+victim↔shooter geometry; the table re-ran under `band_fp` with nothing moving.
+
+**IN-FLIGHT: nothing. All four of the builder's asks are closed. Queue drained ⇒
+sweeping.** Offered but not started: the **field-side mirror** of this dwell measurement
+(their builders vs our turrets), which is the obvious next cut.
