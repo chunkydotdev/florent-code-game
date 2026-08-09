@@ -165,6 +165,42 @@ merely "our measured strength" — it is the best in the corpus, and it gets bet
 wider the map.** Everything that moves titanium from forward to home is moving it
 from our worst asset to our best.
 
+## 4b. The gate asymmetry makes a falsifiable prediction, and it holds
+
+The two paths have radically different trigger conditions:
+
+- **HOME** (`_try_counterbattery`) needs a **published threat within d²≤41** of the
+  core footprint **and** a tile+facing that can shoot *that threat, this turn*.
+- **FORWARD** (`_plan_siege`) needs only that **a reachable ray onto the enemy core
+  exists**. No threat required.
+
+**Prediction: in games where no enemy ever enters our home band, the home path never
+fires, so a much larger SHARE of our turrets should be forward.**
+
+Enemy builder deaths within d²≤41 of our core as the intrusion proxy, 1,255 games:
+
+| enemy intrusions (d²≤41) | games | our turrets | **FORWARD share** |
+|---|---|---|---|
+| **0** | 596 | 1,712 | **61.2%** |
+| 1-2 | 292 | 1,296 | 37.7% |
+| 3+ | 367 | 2,616 | **25.5%** |
+
+**Monotone, and steep: 61.2% → 37.7% → 25.5%.** And **596 of 1,255 games — 47% —
+have zero intrusion into that band**, so in nearly half our games the home path may
+never fire at all while the forward path sends the majority of our turrets into the
+19.2%-survival bucket.
+
+Win rate across the same strata, for context: 52.7% / 50.3% / 43.9%.
+
+> **THE CONFOUND, and it is real and runs the wrong way for me:** more forward
+> turrets could *cause* fewer intrusions, by killing raiders before they arrive.
+> Then the correlation is reversed causation and this table proves nothing on its
+> own. **What keeps the mechanism standing is that it is established in SOURCE
+> independently of this table** — `_try_counterbattery` demonstrably requires a
+> threat and `_plan_siege` demonstrably does not. The table is *consistent with* the
+> mechanism, not proof of it. **A clean test would gate the forward path and observe
+> whether the home path's firing rate rises**, which is a build, not a query.
+
 ## 5. Limits
 
 - Survival is measured to **r150 only**, for turrets built before r150. Later-band
