@@ -24,8 +24,14 @@ preferred to new code and the exact hunk is committed before the leg.
 ## Bars, stated before the leg
 
 * **DID-IT-FIRE (mechanism, NOT the verdict):** forward-turret **survival to 30
-  rounds** must rise from the measured **42.8%** baseline to **>=60%**. Computed
-  offline from our own leg replays, per-turret, distance held fixed.
+  rounds**, computed offline from the leg's own replays, per-turret, distance
+  held fixed. **The baseline is LOKI-8's survival ON THE CONTROL ARM OF THIS
+  LEG, not the 42.8% corpus figure** — that 42.8% (100 − 57.2% dead inside 30,
+  n=1,132) is **pooled across our ladder versions v64–v102**, so it is a
+  different subject from LOKI-8 and cannot anchor a paired bar. Bar: **LOKI-9's
+  survival must exceed LOKI-8's on the same opponents and maps by >=15pp**, with
+  both arms' raw counts reported. The corpus 42.8% is context for why the plank
+  exists, and is **not** the comparator.
 * **VERDICT (the currency, `PROGRAMME.md: PRIMARY_CURRENCY`): `core_kill_share`
   vs LOKI-8**, both arms on the same opponents, same maps, same n. Bar: LOKI-9
   **must not be below** LOKI-8, and to be called a gain must exceed it with the
