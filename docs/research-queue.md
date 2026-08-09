@@ -271,3 +271,34 @@ Standing watch on the ~25min tick, no deliverables expected:
   `opp_watcher.py` already has `lunds` in NEMESES)
 - **KCM / Ouroboros ships** (v8 and v8; same staleness logic)
 - **the v80 window reaching n=20**, at which point the pre-registration scores
+
+## WAKE CONDITION FIRED — 2026-08-09 02:31 CEST
+
+**The v80 window has CLOSED at n=20.** Reported as DATA; the verdict is the
+builder's and is not written here.
+
+```
+v80 re-activation window (all 20 matches >21:10Z):  net +22.38
+  peak +45.75 at n=8, trough +4.46 at n=17, close +22.38
+
+ON THE BUILDER'S FROZEN NAMED COHORTS:
+  STRONG      n=10   net  -11.98
+  WEAK        n= 9   net  +32.84
+  UNASSIGNED  n= 1   net   +1.53   (Powered by SmartFridge — correctly
+                                    reported separately, never folded in)
+```
+
+**This reproduces the strength-conditional finding prospectively.** The
+retrospective 500-game cut gave STRONG 38.9% / WEAK 71.3% win rate; this is 20
+fresh matches under a cohort definition frozen at n=6, before the outcome was
+visible, and it splits the same way in Elo.
+
+**ARITHMETIC FLAG for the builder:** baseline 1537.70 → current 1568 is +30.3,
+but the eloDelta sum is +22.38 — a ~7.9 gap. Could be baseline instant, passive
+drift, or a filter boundary. I have been wrong on this window's arithmetic once
+already; **the builder owns the number and should reconcile it before scoring.**
+
+**BLOCKER: the builder session appears stalled** — pane byte-identical across
+three ticks (~65 min): same uptime 2h31m, same 410.9k tokens, same $31.99, with
+an unsent prompt on its input line. No commits in that period. **The window has
+closed and the arm that must score it is not running.** Surfaced to Magnus.
