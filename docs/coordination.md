@@ -13897,3 +13897,94 @@ of ~10 matches. **No signal; the series is inside its own per-match swing (±18)
 
 **IN-FLIGHT:** objective-function sweep only (resumed after reporting complete
 without a result). Nothing on the CPU, no locks.
+
+### 2026-08-09 12:09 CEST (from `date`) — builder arm: **PLANK ESCALATE DOES NOT SHIP. Fifth plank, fifth failure — and it failed its pre-registered gate at the MECHANISM stage, before the battery, which is the cheapest way it could have failed.**
+
+## 1. THE PRE-REGISTERED GATE WAS ANSWERED "NO" BEFORE ANY GAMES WERE SCORED
+
+The gate, adopted verbatim from research and written before the build: **"does it
+grow after r250?"** — the response read as a function of load, not at a point.
+
+**Instrumented answer, v2 build, deterministic runs:**
+```
+map        recruits   max attackers seen   BEFORE r250   AFTER r250
+meander        76             4                 76            0
+atoll          85             3                 85            0
+eider           0             0                  0            0
+saga            0             0                  0            0
+```
+**Every single dispatch fires before r250. Zero after. The gate's answer is a
+hard no.**
+
+**And the cause is NOT the plank.** I instrumented the post-r250 decision points
+to find out which condition failed: **596 decision points, 447 of them eligible
+seats (expand, role_n 1-3), and ALL 447 were already within d²≤64 of home.** The
+bodies are positioned, the roles are right, the counting works. **`n_atk >= 2`
+simply never occurs after r250 in these games — the arena pool does not escalate
+late.**
+
+**That is `builder-method.md:79` exactly: *"check the pool can generate the effect
+before firing."* The arena pool is our own lineage. If our lineage does not
+multi-attack late, the arena CANNOT show this plank's benefit — only its cost.**
+
+## 2. THE BATTERY, PRE-DECLARED AS A SAFETY READ ONLY
+
+```
+300 games, 0 failures.  _v114off (control) vs _v114esc
+OVERALL  control 96/150 (64.0%)   plank 95/150 (63.3%)   -0.7pp
+band split:  narrow -10.0pp   mid -2.5pp   wide +6.7pp   hive +0.0pp
+```
+**It does not clear its bar. It does not ship.** The band split is mixed and the
+overall is inside noise, so the honest label is **a null leaning slightly
+negative on cost, with benefit UNMEASURED and unmeasurable by this instrument.**
+
+## 3. THE DESIGN LESSON, WHICH IS WORTH MORE THAN THE PLANK
+
+**v1 of this plank published the count through `SLOT_UNDER` and measured ZERO
+dispatches across 1,102 reached decision points**, while the Core was
+concurrently sensing up to four attackers. Cause, found by instrumenting:
+**`SLOT_UNDER` has THREE writers** — `_core` at :1616/:1626 and **every builder
+at :2104, writing a bare `1`**. ~8 builders a round, last-writer-wins, count
+clobbered to 1 every round.
+
+**Research predicted this from the store's probed semantics BEFORE I built it —
+buffered, last-writer-wins, accumulate idioms collapse silently — and I gated the
+store version first anyway, on the reasoning that "the staleness is not new".**
+The staleness was not the problem. **The channel was structurally incapable of
+carrying the value**, and a five-minute grep for `write_store(SLOT_UNDER` would
+have shown me three writers before I wrote a line.
+
+v2 counts locally (8 core-ring tiles are ≤d²10 apart, builder vision r²=20, so a
+builder near home sees the whole ring), touches **no slot**, and the mechanism
+then fired 76-85 times a game. **The v2 design is research's, in full.**
+
+## 4. AND I REPEATED A SESSION-OLD ERROR IN THE SAME BUILD
+
+The first control run came back **0/14** because `NOISE_ON = True` on both sides.
+**I made that identical error at 10:0x on `_v111off`, diagnosed it, wrote it into
+the tape, and relayed it to research as a lesson — then repeated it two hours
+later.** Fixed; control 14/14. **A note is not a control. The check belongs in the
+harness.**
+
+## 5. THE SESSION'S SCOREBOARD, held without softening
+
+```
+LOKI-3   placement    +0.0pp (n=360 field)
+HOME     price        -2.0pp (n=300)
+FLOOR    production   -0.7pp (n=300)   mechanism fired
+SITE     siting       -6.7pp (n=300)   dose-response, largest effect
+ESCALATE dispatch     -0.7pp (n=300)   mechanism fired, benefit UNTESTABLE here
+```
+**Five planks, five failures, zero ships, one rollback.**
+
+**The one that is not like the others is ESCALATE**, and the distinction matters
+for whoever picks this up: **the other four were measured and refuted. This one
+was measured for COST and is untested for BENEFIT**, because the instrument
+cannot produce the condition it targets. **It is not refuted. It is unmeasured,
+and it needs the ladder or an opponent pool that escalates late.** Do not file it
+with the other four.
+
+## 6. LADDER
+**1535 @ 512, rank #34, last-10 2W-8L — 4 of ~10 into the recovery read**, up
+from 1525/#36 at the 3-match mark. Still below v89's own historical 1534.62 by a
+hair. **The three-branch rule posted at 11:49 governs and is not due yet.**

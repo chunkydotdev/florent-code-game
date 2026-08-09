@@ -913,51 +913,47 @@ SIPHON_BAN_RNDS = 200
 SLOT_ROLE_N = 0
 SLOT_UNDER = 1
 # ============================================================================
-# PLANK "ESCALATE" (s23).  THE BOT CANNOT COUNT ATTACKERS -- verified across the
-# whole chassis: the entire threat model is SLOT_THREAT (ONE packed position),
-# SLOT_UNDER (ONE boolean) and _core_shelled (ONE boolean).  A grep for any
-# magnitude term (n_attack / threat_count / incoming / dmg_rate) returns
-# comments only, no code.  The Core's own sensing loop `break`s on the FIRST
-# hostile it finds, which is the saturation written down literally.
+# PLANK "ESCALATE" v2 (s23).  THE BOT CANNOT COUNT ATTACKERS.  Verified across
+# the whole chassis: the threat model is SLOT_THREAT (ONE position), SLOT_UNDER
+# (ONE boolean) and _core_shelled (ONE boolean); a grep for any magnitude term
+# returns comments only.  _core's own sensing loop `break`s on the FIRST hostile.
 #
-# CONSEQUENCE, measured by the research arm across four independent decode
-# paths, none designed to agree: our bot is best-in-corpus in the one-attacker
-# regime and worst-in-corpus in the three-attacker one.  Heal cancellation
-# 65% at one attacker, 30% at three.  Heal detail matches opponents before
-# r250 (2.24 vs 2.30) and freezes after (2.46 vs 3.53).
+# MEASURED CONSEQUENCE (research arm, four independent decode paths): heal
+# cancellation 65% at one attacker and 30% at three; heal detail matches
+# opponents before r250 (2.24 vs 2.30) and freezes after (2.46 vs 3.53).
+# AND IT IS NOT SUPPLY -- live builders r500 US 7.16 / FIELD 6.74, r800 US 8.05 /
+# FIELD 7.12 (verified independently).  MORE BODIES, SMALLER DETAIL.  Dispatch.
 #
-# AND IT IS NOT A SUPPLY PROBLEM -- which is what makes it a DISPATCH problem.
-# Live builder population, verified independently by me:
-#     r100  US 4.57  FIELD 4.44        r500  US 7.16  FIELD 6.74
-#     r300  US 5.58  FIELD 6.01        r800  US 8.05  FIELD 7.12
-# WE HAVE MORE BUILDERS THAN THE FIELD LATE AND DEPLOY A SMALLER HEAL DETAIL.
-# The bodies are standing there. The bot cannot see that it needs them.
+# ===== WHY v2 EXISTS, AND IT IS THE WHOLE DESIGN LESSON =====
+# v1 published the count through SLOT_UNDER and MEASURED ZERO DISPATCHES on
+# 1,102 reached decision points, while the Core was concurrently sensing up to
+# FOUR attackers.  Cause, found by instrumenting rather than reasoning:
+# SLOT_UNDER HAS THREE WRITERS -- _core (:1616/:1626) and EVERY BUILDER at
+# :2104, which writes a bare `1` whenever it sees a hostile near the Core.
+# ~8 builders a round, LAST WRITER WINS, and the count is clobbered to 1 every
+# single round.  The research arm predicted exactly this from the store's
+# probed semantics before I built it; I gated the store version first anyway.
 #
-# The defend seat is single-occupancy BY DESIGN (main.py:1986 says so) and that
-# design is keyed on nothing -- one defender whether one enemy arrives or four.
+# So the store is not merely STALE for this input (buffered to next round), it
+# is STRUCTURALLY INCAPABLE of carrying it without rewriting every writer.
 #
-# WHAT THIS PLANK DOES, in two parts:
-#   1. SENSING: count hostiles instead of breaking at the first, and store the
-#      COUNT in SLOT_UNDER. Every existing consumer tests `!= 0` or truthiness,
-#      so a count >= 1 is byte-compatible with the old boolean -- no consumer
-#      needs to change to keep working.
-#   2. DISPATCH: recruit one extra home defender per attacker beyond the first,
-#      taking expander seats in descending order (3, then 2, then 1).
+# v2 COUNTS LOCALLY AND TOUCHES NO SLOT.  Geometry, computed not assumed: the 8
+# core-ring tiles are at most d^2 = 10 apart and builder vision is r^2 = 20, so
+# a builder near home sees the whole ring and can count for itself, THIS ROUND.
+# It also degrades correctly -- a builder too far away to see the ring gets a
+# low count and does not self-dispatch, which is the conservative answer.
 #
-# THE PRE-REGISTERED GATE (research's question, adopted verbatim): "DOES IT GROW
-# AFTER r250?" -- the response must be read as a FUNCTION OF LOAD, not at a
-# point. THE NULL TO BEAT IS NOT "no change"; IT IS "identical behaviour at 1 and
-# 3 attackers." A magnitude input that is read and then ignored by every consumer
-# would move a mechanism metric and win nothing -- which is the LOKI-3 result
-# exactly, and mechanisms are 0-for-4 today.
+# THE PRE-REGISTERED GATE (research's question, verbatim): "DOES IT GROW AFTER
+# r250?"  Read the response as a FUNCTION OF LOAD, not at a point.  THE NULL TO
+# BEAT IS NOT "no change" -- IT IS "identical behaviour at 1 and 3 attackers."
+# Mechanisms are 0-for-4 today and a magnitude input every consumer ignores is
+# LOKI-3 again.
 ESCALATE_ON = False
-# Attackers before a second body is recruited. 1 = never (parity with today).
-ESCALATE_MIN_ATK = 2
-# Most extra defenders, on top of the standing seat-4 defender.
-ESCALATE_MAX_EXTRA = 3
-# Recruits must already be near home; an expander across the map abandoning its
-# chain to walk back is the meander failure mode, not a heal detail.
-ESCALATE_HOME_DSQ = 64
+ESCALATE_MIN_ATK = 2        # attackers before a second body is recruited
+ESCALATE_MAX_EXTRA = 3      # cap on extra defenders above the standing seat-4
+ESCALATE_HOME_DSQ = 64      # recruits must already be near home
+ESCALATE_GUN_DSQ = 64       # same radii the Core's own sensing loop uses
+ESCALATE_BOT_DSQ = 16
 SLOT_ATK_RND = 2
 SLOT_ENEMY_CORE = 3
 SLOT_HARVESTERS = 4
@@ -1586,26 +1582,20 @@ class Player:
 
         under = False
         threat = None
-        n_atk = 0
         for eid in ct.get_nearby_entities():
             if ct.get_team(eid) == ct.get_team():
                 continue
             d = p.distance_squared(ct.get_position(eid))
             et = ct.get_entity_type(eid)
-            hostile = (
-                (et in (EntityType.GUNNER, EntityType.SENTINEL) and d <= 64)
-                or (et == EntityType.BUILDER_BOT and d <= 16)
-            )
-            if not hostile:
-                continue
-            n_atk += 1
-            if threat is None:
-                # FIRST hostile still wins SLOT_THREAT, exactly as before, so
-                # every existing consumer of that slot is untouched.
+            if et in (EntityType.GUNNER, EntityType.SENTINEL) and d <= 64:
                 under = True
                 threat = ct.get_position(eid)
                 ct.write_store(SLOT_THREAT, pack_pos(threat))
-            if not ESCALATE_ON:
+                break
+            if et == EntityType.BUILDER_BOT and d <= 16:
+                under = True
+                threat = ct.get_position(eid)
+                ct.write_store(SLOT_THREAT, pack_pos(threat))
                 break
         rnd = ct.get_current_round()
         hp = ct.get_hp()
@@ -1613,7 +1603,7 @@ class Player:
             under = True
         self.last_hp = hp
         if under:
-            ct.write_store(SLOT_UNDER, max(1, n_atk) if ESCALATE_ON else 1)
+            ct.write_store(SLOT_UNDER, 1)
             ct.write_store(SLOT_ATK_RND, rnd)
         else:
             last = ct.read_store(SLOT_ATK_RND)
@@ -2414,24 +2404,35 @@ class Player:
         # _expand and _defend (both of which build harvesters).
         self._wire_tick(ct)
 
-        # PLANK ESCALATE, dispatch half.  The defend seat is single-occupancy by
-        # design (see :1986) and that design is keyed on nothing -- one defender
-        # whether one enemy arrives or four.  Recruit one extra body per attacker
-        # beyond the first, from the expander seats, descending 3 -> 2 -> 1.
-        # Seat 0 (saboteur) is never taken: it is the only offence we have.
+        # PLANK ESCALATE v2.  The defend seat is single-occupancy BY DESIGN
+        # (:1986 says so) and that design is keyed on nothing -- one defender
+        # whether one enemy arrives or four.  Count attackers on our own Core
+        # LOCALLY (no slot, no staleness, no last-writer-wins) and recruit one
+        # extra body per attacker beyond the first, from expander seats
+        # descending 3 -> 2 -> 1.  Seat 0 (saboteur) is never taken: it is the
+        # only offence we have.
         if (
             ESCALATE_ON and self.role == "expand" and self.core is not None
             and 1 <= self.role_n <= 3
+            and ct.get_position().distance_squared(self.core) <= ESCALATE_HOME_DSQ
         ):
             try:
-                n_atk = ct.read_store(SLOT_UNDER)
+                n_atk = 0
+                for eid in ct.get_nearby_units():
+                    if ct.get_team(eid) == self.team:
+                        continue
+                    et = ct.get_entity_type(eid)
+                    d = self.core.distance_squared(ct.get_position(eid))
+                    if (
+                        (et in (EntityType.GUNNER, EntityType.SENTINEL) and d <= ESCALATE_GUN_DSQ)
+                        or (et == EntityType.BUILDER_BOT and d <= ESCALATE_BOT_DSQ)
+                    ):
+                        n_atk += 1
                 if n_atk >= ESCALATE_MIN_ATK:
                     extra = min(n_atk - 1, ESCALATE_MAX_EXTRA)
-                    # n_atk=2 recruits seat 3; 3 recruits 3,2; 4 recruits 3,2,1
                     if self.role_n >= 4 - extra:
-                        if ct.get_position().distance_squared(self.core) <= ESCALATE_HOME_DSQ:
-                            self._home_defend(ct)
-                            return
+                        self._home_defend(ct)
+                        return
             except Exception:
                 pass
 

@@ -2411,6 +2411,10 @@ class Player:
         # extra body per attacker beyond the first, from expander seats
         # descending 3 -> 2 -> 1.  Seat 0 (saboteur) is never taken: it is the
         # only offence we have.
+        if ESCALATE_ON and self.core is not None and ct.get_current_round() >= 250:
+            import sys as _s9
+            print(f"LATE role={self.role} n={self.role_n} "
+                  f"d2home={ct.get_position().distance_squared(self.core)}", file=_s9.stderr)
         if (
             ESCALATE_ON and self.role == "expand" and self.core is not None
             and 1 <= self.role_n <= 3
@@ -2431,6 +2435,8 @@ class Player:
                 if n_atk >= ESCALATE_MIN_ATK:
                     extra = min(n_atk - 1, ESCALATE_MAX_EXTRA)
                     if self.role_n >= 4 - extra:
+                        import sys as _s
+                        print(f"ESCrecruit seat{self.role_n} n_atk={n_atk} rnd={ct.get_current_round()}", file=_s.stderr)
                         self._home_defend(ct)
                         return
             except Exception:
