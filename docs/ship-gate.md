@@ -115,8 +115,15 @@ statements are void: s19's "2 sd = −41" (announced adopted, implemented
 nowhere) and "≤0 after 3 matches" (a misquote that circulated at s23).
 Known residual defect, accepted: re-testing every match with no multiplicity
 correction still drives P(fire)→1 on long tenures — the real fix is a
-ladder-side SPRT (`tools/sprt.py` has the machinery, bounds like [−10, 0]);
-queued, not blocking.
+ladder-side SPRT. **Implemented 2026-08-09 13:1x as `tools/slot_sprt.py` +
+an ADVISORY line in elo_logger (same commit as this sentence)**: sequential
+test, H_bleed −10 Elo/match vs H_ok 0, α=β=0.15, restart-on-OK. Backtested
+over every holder run on the tape: fires on v79, v86 and **v90 at exactly
+the k=16 point the human rollback happened**, clears both declined v80
+sign-rule triggers and the long keeper tenures the old rule fired 18× on.
+It is NOT the rule — the −21 stop-loss above is. Promotion to rule status
+requires live validation across a few tenures and would be its own doc+tool
+commit.
 
 **3. The slot is a STOP-LOSS and a WAKE PATH, not an evaluation instrument.**
 The audit's arithmetic: 46 slot runs, mean 6.9 matches, median 5, 27% ever

@@ -17,6 +17,9 @@ import os
 import sys
 from datetime import datetime
 
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+import slot_sprt  # noqa: E402  (single source of truth for the SPRT constants)
+
 HIST = os.path.join(os.path.dirname(__file__), "..", "..", "elo_history.tsv")
 STATE = os.path.join(os.environ.get("STATE_DIR", "."), "elo_logger_state.json")
 
@@ -120,9 +123,39 @@ def main() -> None:
     except Exception:
         pass  # tape unreadable this poll; keep old flag
 
+    # SPRT advisory (2026-08-09, process-review follow-through; tools/slot_sprt.py
+    # is canonical for model + constants). ADVISORY ONLY — the RULE is the -21
+    # stop-loss above. Sequential test with restart-on-OK: each OK acceptance
+    # clears the holder so far and restarts the segment; BLEED acceptance wakes
+    # once and latches until the holder changes. Backtested 2026-08-09 over all
+    # holder runs: fires on v79/v86/v90 at the points humans acted, clears both
+    # declined v80 sign-rule triggers.
+    sprt = st.get("sprt") or {}
+    try:
+        if sprt.get("holder") != ver:
+            sprt = {"holder": ver, "seg_m": matches, "seg_r": rating, "fired": False}
+        else:
+            k = matches - sprt["seg_m"]
+            net = rating - sprt["seg_r"]
+            if k > 0 and not sprt["fired"]:
+                s = slot_sprt.llr(net, k)
+                b = slot_sprt.bound()
+                if s <= -b:
+                    sprt["fired"] = True
+                    print(
+                        f"SLOT SPRT (advisory, not the rule): BLEED accepted — "
+                        f"v{ver} segment net {round(net):+d} over {k} matches "
+                        f"(llr {s:+.2f} <= -{b:.2f}). The -21 stop-loss remains "
+                        f"the rule; this is the statable-error-rate read."
+                    )
+                elif s >= b:
+                    sprt["seg_m"], sprt["seg_r"] = matches, rating
+    except Exception:
+        pass  # advisory must never break the logger
+
     with open(STATE, "w") as f:
         json.dump({"rating": rating, "active_version": ver, "max_version": max_ver,
-                   "swappable": swappable}, f)
+                   "swappable": swappable, "sprt": sprt}, f)
 
 
 main()
