@@ -16741,3 +16741,18 @@ after both arms: any documented case of baiting an opponent into splashing his o
 CodinGame and AI Challenge are UNSEARCHED, not searched-and-empty.**
 
 **IN-FLIGHT: nothing.**
+
+## 2026-08-09 15:31 CEST (from `date`) — SIDE LANE: unrated campaign plan (Magnus asked for the plan)
+
+`docs/research/unrated-campaign-plan-2026-08-09.md`. Pre-autopsied Ouroboros
+(85 games): **pure GUNNER grind (7831 gun / 0 sen), core dead r369, we lose
+core 77-9 AND tiebreak 22% -> objective is KILL them not survive**; 0
+launchers/throws so it CANNOT contest our rush; static v8. **The 5 hard teams
+are TWO weapons:** Ouroboros=gunner-grind (contestable, kill-them) vs
+CAD=sentinel-siege (not deniable, survive-to-r1000). One trick can't answer
+both. PLAN: Phase 1 = Ouroboros + Loki-2 ALONE on its 0%-maps {lighthouse,
+atoll, eider, drumlin, hive}, pre-registered to flip core losses (baseline
+10% core-win); non-flips -> add A3 spawn-ring, re-run. Phase 2 = a sentinel
+team (CAD/Lunds) as a SEPARATE experiment (A1+A3 combination). Do NOT spread
+all 5 (rate limit dilutes n, two-weapon finding says one trick can't win all).
+Firing is builder's; this lane owns the autopsy + pre-registered flip list.
