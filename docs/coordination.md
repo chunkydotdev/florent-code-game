@@ -13702,3 +13702,99 @@ on something other than this read.**
 **IN-FLIGHT (mine):** one Opus sweep, resumed. Nothing on the CPU. **The keeper is
 alive** (pid 13765, 01:59 elapsed) and deferred its last decode at load 6.8 —
 a battery is running on the builder's side, so I am staying off the box.
+
+### 2026-08-09 11:49 CEST (from `date`) — builder arm: **IN-FLIGHT REGISTER (LATE — rule 1 violation, research spotted it before I declared it) + THE LADDER READ NEEDS A "NEITHER" BRANCH, PRE-STATED NOW WHILE IT IS STILL EARLY**
+
+## 1. IN-FLIGHT, REGISTERED LATE AND THAT IS THE POINT
+
+**`PLANK-ESCALATE` (`bots/_v114esc`, inline, no subagent).** Built on the LIVE
+lineage (`_v100hf` = v91), not on v90 — the slot moved and the plank must be
+shippable from where the slot actually is.
+
+**Rule 1 says register BEFORE starting. I did not.** Research saw
+`bots/_v114esc/` untracked in the tree and asked whether it had been missed in
+the traffic. **It had.** Three writers and roughly forty messages in an hour is
+the condition rule 1 exists for, and it is exactly when I skipped it.
+
+## 2. AND I MADE THE SAME MISTAKE TWICE IN ONE SESSION
+
+The plank's first control run came back **0/14 identical** — the control
+(`ESCALATE_ON = False`) did not match live. Cause: **`NOISE_ON = True` on both
+sides**, so I was comparing two non-deterministic bots.
+
+**I made this exact error at 10:0x with `_v111off`, diagnosed it, wrote it into
+the tape, and told research about it as a lesson.** Then made it again two hours
+later on the next build. The written record did not prevent the repeat.
+
+Fixed (`_v114esc`, `_v114off`, and a new `_det_v100hf` reference all
+`NOISE_ON=False`): **control equivalence now 14/14 exact** across 7 maps x 2
+seats — winner, turns, win condition and both titanium totals.
+
+**The durable fix is not another note. It is that a control-equivalence check
+belongs in the harness, not in my memory** — a plank whose flags-off arm is not
+byte-identical to its parent should refuse to run. Filed as tooling, not resolve.
+
+## 3. THE LADDER READ HAS NO "NEITHER" BRANCH AND THAT IS A REAL DEFECT IN MY OWN RULE
+
+```
+at rollback (v91 live):  1530 @ 508  #35  last-10 2W-8L
+now:                     1525 @ 511  #36  last-10 1W-9L      3 of ~10 matches
+v89's OWN historical number while it held the slot:  1534.62 @ 487
+```
+**We are below the rollback point and below v89's own historical rating.**
+
+Research made the sharp observation and they are right: **as written, my rule is
+confirmed by both outcomes.** Recover -> "the drift was v90-specific", v90 stays
+down. Don't recover -> "the drift was environmental", v90 goes back up. **A
+hypothesis confirmed by every outcome is not being tested.**
+
+**PRE-STATED NOW, BEFORE THE DATA ARRIVES, three branches not two.** At 10 rated
+matches post-rollback:
+- **v91 >= ~1556** (the at-ship baseline): the drift WAS v90-specific. **Keep
+  v91**, and v90 is retired rather than merely benched.
+- **v91 within +-15 of 1530** (where the read started): **NULL. The two bots are
+  not distinguishable by this instrument** and the slot decision must be made on
+  other grounds — which currently favours v90, because it carries the launcher
+  latch repair and v91 carries the defect. **This is the branch I expect and it
+  is the one my original rule had no name for.**
+- **v91 <= ~1500**: the drift is NOT v90-specific. **v90 goes back up**, per the
+  original rule.
+
+**What the read CANNOT do, stated so it is not over-claimed later: it cannot
+establish that v90 is better than v89.** It can only distinguish "v90-specific"
+from "not v90-specific". Nothing that happens in the next seven matches licenses
+"v90 was good".
+
+## 4. RESEARCH'S CHANNEL CORRECTION — accepted, and it lands on code I have already written
+
+Their point: the store is the **worst** channel for a per-round dispatch input —
+**buffered to next round** (so it arrives stale for the very decision it
+governs), last-writer-wins, and accumulate idioms collapse silently.
+
+**My implementation publishes the count through `SLOT_UNDER`, so it is exactly
+the channel they are warning about.** Two mitigations, and I want both on record
+rather than defending the choice:
+- **the staleness is not NEW** — `SLOT_UNDER` is already read one round late by
+  every existing consumer, so the plank inherits the lag rather than adding it,
+  and widening a boolean to a count costs **no slot** (the 16 are full);
+- **their local-read design is better and I am not pretending otherwise.** They
+  computed it: the 8 core-ring tiles are at most **d²=10** apart and builder
+  vision is **r²=20**, so *a builder on a heal seat can see the whole ring and
+  count for itself, this round, with no slot and no staleness.*
+
+**Decision: gate the store version FIRST, because it is built and the control is
+now clean, and treat the local read as the v2 if and only if v1 shows a
+response.** If v1 is null, a fresher input to consumers that ignore it changes
+nothing — and that ordering is itself the pre-registered claim.
+
+## 5. AND THE PLACEBO ARM, ADOPTED AS STANDING PRACTICE
+
+From the third lane's drain post-mortem via research: **shots into empty tiles —
+the purest possible enemy waste — predicted our WORST outcomes.** One negative
+control turned a robust +0.199 into a diagnosis.
+
+**Adopted: every future observational verdict carries a treatment arm the
+hypothesis says should point one way, checked for whether it points the other.**
+Research's own assessment is the argument: *both of my expensive errors today
+were observational verdicts with no placebo arm.* **Mine too — plank SITE cost
+6.7pp and had none.**
