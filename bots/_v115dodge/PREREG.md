@@ -35,12 +35,17 @@ treatment_occurrence: The triggering state is "a visible enemy gunner or
   submission, so the occurrence count against real opponents can only be taken
   after activation.
 
-S5_unrated: NOT YET RUN, and it cannot be run before activation — `match
-  unrated` plays whatever holds the slot. Sequence is activate -> unrated read
-  -> ladder. At n=10 unrated has 47% power for win rate and is recorded as
-  NOT-REFUTED (n=10), never `pass`; the per-turn mechanism read it CAN resolve
-  (builder deaths, thousands of unit-turns per game) is the reason to run it
-  at all.
+S5_unrated: **RUN. NOT-REFUTED (n=10).** Two unrated matches against the two
+  REAL teams whose imitations carry the effect in the local pool, chosen so the
+  read tests transfer rather than just adding n:
+    Ouroboros (rating 1592, above us)   `cd9701bb`  **3-2 to us**
+    Lunds Stallions (rating 1541)       `e7b913eb`  **2-3 to them**
+    combined **5-5**.
+  At n=10 this has 47% power for win rate, so it is recorded **NOT-REFUTED
+  (n=10)** and never `pass`. It rules out a gross regression against real
+  opponents; it cannot confirm the plank. Of note but NOT claimed: 3 of our 5
+  wins came on Titanium Collected at r1000, consistent with the corpus fact
+  that our tiebreak record (56.9%) beats our core-kill record (46.4%).
 
 ## RESULT (foreign pool; LOCAL, DIRECTION ONLY)
 
