@@ -88,31 +88,34 @@ def analyse(path: Path) -> dict:
     if map_buf is None:
         return {}
 
+    # Core records are map field 4, with team=2 and pos=3 (matching the shipped
+    # replay_events.py). My first cut read field 5 with pos=2 and silently found
+    # nothing across 960 replays -- see the decode guard in --selftest.
     cores = {}
     for num, wire, value in fields(map_buf):
-        if num == 5 and wire == WIRE_LEN:          # CorePosition entries
+        if num == 4 and wire == WIRE_LEN:
             team, pos = 0, None
             for cn, cw, cv in fields(value):
-                if cn == 1:
+                if cn == 2:
                     team = cv
-                elif cn == 2 and cw == WIRE_LEN:
+                elif cn == 3 and cw == WIRE_LEN:
                     pos = read_pos(cv)
             if pos is not None:
-                cores[team] = (pos.x, pos.y) if hasattr(pos, "x") else tuple(pos)
+                cores[team] = tuple(pos)
     if len(cores) < 2:
         return {}
 
     out = {t: {"built": 0, "aligned": 0, "angles": []} for t in cores}
     seen_ids = set()
+    # NOTE the THREE levels: turn -> update-list -> update -> entity. My first
+    # cut collapsed one and matched nothing.
     for rnd, tb in enumerate(turn_bufs):
-        for num, wire, value in fields(tb):
-            if num != 1 or wire != WIRE_LEN:       # updates
-                continue
-            for un, uw, uv in fields(value):
-                if un != 1 or uw != WIRE_LEN:      # placeEntity
+        for _n, _w, ub in fields(tb):
+            for un, _uw, uv in fields(ub):
+                if un != 1:                        # placeEntity
                     continue
-                for en, ew, ev in fields(uv):
-                    if en != 1 or ew != WIRE_LEN:
+                for en, _ew, ev in fields(uv):
+                    if en != 1:
                         continue
                     ent = parse_entity(ev, rnd)
                     if ent is None or ent.kind not in TURRETS:
@@ -123,7 +126,7 @@ def analyse(path: Path) -> dict:
                     team = ent.team
                     if team not in cores:
                         continue
-                    pos = (ent.position.x, ent.position.y)
+                    pos = tuple(ent.pos)
                     own, foe = cores[team], cores[1 - team]
                     if _dsq_to_core(pos, own) > HUNT_BAND_DSQ:
                         continue                   # TRAP 2: not the home path
