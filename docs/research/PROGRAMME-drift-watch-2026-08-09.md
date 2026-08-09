@@ -42,13 +42,16 @@ commits) and at every verdict/ship/leg event:
 - False-positive policy: flag cheaply and early; a wrong flag costs a
   one-line reply, a missed drift costs a session. The builder is expected to
   answer flags with the anchor, not with compliance.
-- **Transferability is not field behaviour (research, 17:4x, adopted as a
-  standing watch note):** every tactics-sweep file ends in a transferability
-  verdict against OUR ruleset; it is easy to slide from "this transfers" to
-  "this is what our field does". Different claims, different evidence — the
-  second needs a corpus measurement (first made 2026-08-09: our field's CAD
-  and KCM use launchers 88–94% as offensive ferries, the opposite of the
-  BC2020 doctrine our own bot follows). Watch for doctrine statements citing
-  a sweep where the claim is actually about opponents' behaviour.
+- **Us-sample claims about the field (generalised 18:1x from two same-day
+  instances; supersedes the narrower transferability note):** whenever a claim
+  about an opponent or the field rests on a sample containing only OUR games,
+  the sentence must say so. Instance 1: sweep-12 doctrine read as describing
+  our field when our field's CAD/KCM launcher use (88–94% offensive ferries)
+  is the opposite. Instance 2: the side lane predicted an empty ≤r13 trigger
+  cell from OUR arrival rate; the 220-game population (third parties included)
+  held 51. Same failure both times — our experience of an opponent is not the
+  field's. The meta.json expansion (98% attribution, 852 third-party matches)
+  makes this fixable rather than a permanent caveat: prefer the full
+  population, or name the us-only denominator inline.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
