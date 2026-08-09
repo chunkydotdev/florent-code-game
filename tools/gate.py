@@ -32,7 +32,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
+from fnmatch import fnmatch
 import sys
 from pathlib import Path
 
@@ -89,6 +91,46 @@ def check_determinism(bots: list[Path]) -> None:
                 f"NOISE_ON switch -- paired fixtures do not pair against a bot "
                 f"that reseeds. Exclude it from the pool, or pin its seed in a "
                 f"COPY before measuring.")
+
+
+def check_programme(plank: Path, allow_off: bool) -> None:
+    """Refuse a battery that is not on the ACTIVE PROGRAMME.
+
+    WHY THIS IS A GATE AND NOT A NOTE. The s22 LOKI-3 result was recorded in
+    prose, inherited wrong by three successive sessions, and the road was closed
+    on it for two days while every plank went into the line the directive had
+    already deprioritised. The measured half-life of a wrap note in this repo is
+    about one session; the only surfaces that hold are builder.md and a tool
+    that exits non-zero. So the programme is enforced here, in front of the
+    battery, where it cannot be forgotten.
+
+    Reads PROGRAMME.md. Edit that file only on Magnus's directive.
+    """
+    prog = ROOT / "PROGRAMME.md"
+    if not prog.exists():
+        WARN.append("no PROGRAMME.md -- no active line is being enforced")
+        return
+    fields = dict(re.findall(r"^\s{4}([A-Z_]+):\s*(.+?)\s*$", prog.read_text(), re.M))
+    line = fields.get("LINE", "?")
+    pats = fields.get("LINE_DIRS", "").split()
+    print("ACTIVE PROGRAMME")
+    print(f"  line: {line}   incumbent {fields.get('INCUMBENT','?')} "
+          f"(frozen: {fields.get('INCUMBENT_FROZEN','?')})")
+    print(f"  verdict currency: {fields.get('PRIMARY_CURRENCY','?')} "
+          f"| win rate is a verdict: {fields.get('WIN_RATE_IS_VERDICT','?')}")
+    # Normalise BOTH sides the same way, or a deterministic copy of an
+    # on-line bot fails its own line: `_det_v105loki1` must match `_v105loki1`.
+    def norm(x):
+        return Path(x).name.lstrip("_").removeprefix("det_").lstrip("_")
+    on_line = any(fnmatch(norm(plank.name), norm(pat)) for pat in pats)
+    if on_line:
+        print(f"  {plank.name}: ON the {line} line")
+        return
+    msg = (f"OFF PROGRAMME: {plank.name} is not on the active '{line}' line "
+           f"({fields.get('LINE_DIRS','')}). The incumbent is frozen and Loki is a "
+           f"SEPARATE BOT, not a flag on the Eir chassis. Pass --off-programme "
+           f"with a reason, or change PROGRAMME.md on Magnus's directive.")
+    (WARN if allow_off else FAIL).append(msg)
 
 
 def check_pool_identity(opponents: list[Path], allow: bool) -> None:
@@ -193,12 +235,16 @@ def main() -> int:
                     default=["hive", "atoll", "meander", "archipelago", "saga", "nordkap"])
     ap.add_argument("--skip-tle", action="store_true",
                     help="skip the remote TLE fidelity check (records a WARN)")
+    ap.add_argument("--off-programme", action="store_true",
+                    help="run a battery outside the active PROGRAMME.md line")
     ap.add_argument("--allow-self-play", action="store_true",
                     help="acknowledge a self-play pool and proceed (result is SAFETY only)")
     a = ap.parse_args()
 
     plank, control, parent = Path(a.plank), Path(a.control), Path(a.parent)
     opponents = [Path(o) for o in a.opponents]
+
+    check_programme(plank, a.off_programme)
 
     check_determinism([plank, control, parent] + opponents)
     check_pool_identity(opponents, a.allow_self_play)
