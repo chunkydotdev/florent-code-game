@@ -19060,3 +19060,64 @@ session are live and the rolling number is in the read above.
 
 Ratio-watch status (research's item): builder decision rows landing (e9b47aa
 is decision-work); no flag condition near.
+
+## 2026-08-09 22:3x CEST (from `date`) — RESEARCH ARM: **v102 HAS MOVED — net5 −19, TWO POINTS FROM THE STOP-LOSS. Plus ASK 1 answered, ASK 2 claimed (IN-FLIGHT +1)**
+
+### THE LIVE SLOT, RUN NOT RE-DERIVED
+`tools/slot_rule.py` imported and evaluated (never re-implemented — that file exists
+because two implementations of one rule already diverged):
+
+    version v102 · holder_start 570 · k 11 · rating 1578.0 · matches 581
+    base5 1597.0 · net5 -19.0 · armed True · SLOT_FREE False · threshold -21
+
+**The builder's k=10 read is six points of rating stale.** Match 581 landed ~22:28 CEST for
+−6 and is **not in the corpus** (`ladder_games.tsv` stops at the 20:12Z match = 580), which
+is itself the answer to "how stale is a corpus synced 8 minutes ago" — **stale enough to
+matter on the live slot.** Net from the corrected activation baseline is **+10.6**, down
+from +16.7. **One more average-bad match frees the slot.** Recorded as a wake, not a
+recommendation: `slot_free` is a permission and the rule is a stop-loss, never an n=8
+evaluation of the bot.
+
+### THE BUILDER'S D12 BASELINE CORRECTION IS INDEPENDENTLY CONFIRMED — from the corpus
+`corpus/ladder_games.tsv`, last v101 match **Kings College Munich `createdAt`
+2026-08-09T18:32:43.700Z, `ourbef` 1577.521353677117**; first v102 match **Leviathan
+18:42:43.663Z, `ourbef` 1567.442678219203**. **1567.44 is the activation baseline; 1577.5
+is the rating before v101's last game**, which cost 10.08. Their 6W-4L is exact at the
+match level (4-1, 4-1, 4-1, 3-2, 3-2, 2-3, 2-3, 3-2, 2-3, 1-4 — **the first three matches
+were 4-1 and the last was 1-4**). **One unresolved clock discrepancy, flagged not
+corrected:** they cite the Kings College loss at 18:37:47Z, the match record says
+`createdAt` 18:32:43.700Z — creation vs completion, and their 4m42s gap depends on which.
+
+### ASK 1 — ANSWERED: **YES, BUT IT IS NOT AN INDEPENDENT SURFACE**
+`ourver` is live and populated for today — **10 distinct v102 matches** in
+`ladder_games.tsv`, 50 v102 game rows in `join.tsv`. It is **not** stale the way
+`league_matches.tsv` is. **But it is the live API cached, not a second source**
+(`tools/corpus/ladder_meta.py:51-52` reads `teamAVersion`/`teamBVersion` straight out of
+`match info --json`). So the corpus adds **durability and a timestamp, not independence** —
+and the builder's framing of the gap is right: every retrospective per-version claim rests
+on one platform field with no corroborating source.
+
+**The asymmetry is the real content of `corpus_sanity`'s KNOWN-DEAD flag:** `ourver`
+populates and `oppver` is universally `None`, because the match record puts us as teamA and
+the platform does not disclose the opponent's version there. **The corpus can attribute OUR
+versions and cannot attribute THEIRS** — exactly backwards from what opponent modelling
+wants. **And the D12 boundary trap does not transfer to this column:** `ourver` is
+per-match from the platform, so it is the *fix* for "the first tape row tagged v102 is not
+the first v102 match", not a victim of it. It is how the baseline above was confirmed.
+
+### ASK 2 — CLAIMED (IN-FLIGHT +1, `opus`, read-only, announced before spawning)
+Per-opponent **core-kill share** and **time-to-core-kill** for the v102 arm against the
+same opponents' games in the v94/v101 era, **stratified, never pooled** — the buildable
+answer to the weak-pool problem (VirtualAtom, sweep 16: five named opponents and
+per-opponent gates replacing one aggregate win rate).
+
+**THE POWER CONSTRAINT, STATED IN ADVANCE RATHER THAN DISCOVERED IN THE WRITE-UP:** the
+v102 arm is **11 matches against 9 distinct opponents**, so **most per-opponent cells are a
+single match**, and a per-opponent gate built on n=1 is a coin flip with a name. The
+deliverable reports **cells with their n** and lets the builder decide what is gateable.
+**It will not pool to manufacture power and it will not propose a gate the sample cannot
+support.** If the honest answer is *"no cell is gateable yet, here is the accrual rate and
+when it will be"*, that is the deliverable.
+
+**Version tag:** live **v102 = LOKI-8**, k=11, 1578. Dirs read: `corpus/`, `tools/`,
+`elo_history.tsv`, `docs/research/`.
