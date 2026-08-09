@@ -10185,3 +10185,60 @@ were live. Combined with my own agents' batteries that is the load average of
 39-42 I measured. **PROTOCOL ADDITION ACCEPTED (their proposal, my call since
 the tape is mine): any full-archive pass is announced before it starts and held
 while a battery is live.** Recorded in docs/tooling.md alongside the mechanism.
+
+### 2026-08-09 07:56 CEST (from `date`) — builder arm: **MAGNUS ASKED "WHAT ARE WE DOING THAT MAKES OUR BOT A TRICKSTER?" — THE HONEST ANSWER IS ALMOST NOTHING, AND HE IS RIGHT TO ASK**
+
+**AUDIT OF THE WHOLE PORTFOLIO AGAINST ITS OWN NAME:**
+```
+LOKI-0  raise a constant                    conventional
+LOKI-1  raid insertion + survival package   aggression, not trickery
+LOKI-2  prune our own conveyors             housekeeping
+LOKI-3  build turrets, place forward, buy ammo   COPYING the top tier
+Heimdall(v90) fix a latch defect            maintenance
+```
+**We named the programme Loki and then built Thor-shaped things.** The only
+genuine trick attempted was LOKI-1's collar (seal the 8 tiles orthogonally
+adjacent to the enemy core — simultaneously their conveyor delivery points and
+8 of their 12 spawn tiles), and **its own agent reported the mechanism never
+executed: games ended with 1-3 barriers alive, not 8.** So we have never once
+seen a trick actually run. Meanwhile the standing mandate on the tape is
+"play the players — unreasonable variants welcome".
+
+**SO I PROBED THE STRONGEST UNTRIED TRICK RATHER THAN ASSERTING IT FROM THE
+RULEBOOK** (`bots/_probe_denial`, `fcode run` on hive):
+```
+ore tile (1,17)  is_tile_empty=True   can_build_harvester BEFORE = True
+                 can_build_barrier    = True    barrier 3 Ti vs harvester 24 Ti
+AFTER our barrier stands:              can_build_harvester = FALSE
+AFTER we destroy our own barrier:      can_build_harvester = TRUE  (restored)
+```
+**ORE DENIAL IS LEGAL AND IT WORKS.** The Q4 restore is the control — it proves
+the denial is caused by the barrier and not by some other gate.
+
+**THE EXCHANGE, and it is lopsided because `destroy()` is ALLIED-ONLY:** the
+enemy cannot cheaply remove our barrier. They must chew 30 HP at 2 dmg / 2 Ti =
+**15 attacks, 30 Ti and 15 builder-turns to clear 3 Ti of ours**, or spend
+turret ammo they are measurably short of. **~10:1 in titanium, ~15:1 in
+builder-turns.**
+
+**WHY IT IS AIMED WHERE WE ARE STRONG, all measured today:**
+- **Our economy already MATCHES the field** (452.9 vs 444.0 delivered stacks/game
+  — research's flow census). **We do not need more ore; we can afford to spend
+  on denial.** This is the first time a build has been justified by an economy
+  result that says "stop optimising the economy".
+- **Their late engine is FUNDED by that economy** — 441.6 ammo converted/game in
+  r200-300 vs our 34.8. Starving the economy starves the engine.
+- **Our one strength is EARLY** (r0-150 hazard 1.54x theirs; we already place
+  MORE forward than they do before r150). Denial is an opening play and we are
+  good at openings.
+
+**LOKI-4 REGISTERED** (opus, `bots/_v108loki4`). **The pre-stated kill criterion
+is in its brief: count the ore tiles per side on the pool maps — if a side has
+12 ore tiles, denying 2 is noise, and the agent is instructed to say so and
+recommend abandoning.** Told explicitly that a fourth well-evidenced negative is
+a good outcome.
+
+**ALSO PRICED IN THE BRIEF:** every barrier is **+1% GLOBAL scale** (my probe),
+so ten denial barriers put +10 points on every harvester/gunner/sentinel we buy
+afterwards; and builder-turns spent walking to enemy ore are turns not spent on
+an economy that is currently at field parity — **thor_r1's failure mode.**
