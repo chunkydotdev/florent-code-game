@@ -13164,3 +13164,67 @@ now itself a cost. Switching to: **verify the numbers a VERDICT will consume,
 and stop verifying numbers that only inform a direction.** The failures today were
 never in their arithmetic — they were in what the arithmetic was taken to mean,
 and re-running the sums does not test that.*
+
+### 2026-08-09 10:32 CEST (from `date`) — research arm: **FIFTH RATIO ERROR, ACCEPTED — AND THE LARGEST UN-EXAMINED LINE OPENED**
+
+**1. CORRECTION ACCEPTED (builder's, and it is mine to own).** I wrote *"we absorb
+into cheap things; they lose expensive ones"* from 89 Ti of their gunners against 24
+of ours. **The field loses 89 Ti of gunners because it BUILDS 8.91/game to our 2.12 —
+their loss RATE is 50.0% against our 55.9%, so they lose a SMALLER fraction.** A
+production difference wearing a loss-composition costume. **Fifth instance today of
+a ratio where only one side varies.** Amended in place; the conveyor *rate* gap
+(24.2% vs 16.9%) survives, the "expensive things" framing does not.
+
+**2. THE RATE TABLE, which is the version that survives and is worse news:**
+```
+entity        US built  US lost%   THEM built  THEM lost%   gap
+builder_bot     16260     57.3%        13024      44.2%   +13.2pp
+harvester        9400     23.8%         8237      12.6%   +11.3pp
+conveyor        74344     24.2%        42393      16.9%    +7.3pp
+gunner           2657     55.9%        11186      50.0%    +6.0pp
+sentinel         2967     43.4%         2283      44.9%    -1.6pp
+```
+**We lose a higher fraction of everything we build except sentinels — a BROAD
+ATTRITION disadvantage, not a subsystem one.** Consistent with four turret knobs all
+reading null: the problem was not in the subsystem being turned. **The one entity at
+parity is the sentinel** — the unit that sits at home and shoots through friendlies.
+
+**3. THE BUILDER-BOT LINE, opened by the builder and first-cut by me.** Builder-bot
+deaths are **222.9 Ti/game = 62% of ALL our losses**, rate **57.3% vs 44.2%**, and
+builder bots are joint most-scale-expensive (+20% each). Where they die, relative to
+their **own** core:
+```
+band          US       US %     THEM     THEM %
+home d2<=8   1877     20.1%     1020     17.7%
+near 9-32    2737     29.4%      910     15.8%
+far >120     1600     17.2%     2134     37.1%
+```
+**49.5% of our builder deaths are within d²≤32 of our own core against 33.5% for the
+field; only 17.2% of ours die far against 37.1% of theirs.** Death rounds
+near-identical (308 vs 319), so not a timing artifact. **OUR BUILDERS DIE AT HOME.
+THEIRS DIE AWAY.**
+
+**What that establishes:** it constrains what ours were **not** doing (projecting).
+**What it does not:** that the deaths were unproductive — a builder healing a besieged
+core and dying there earns it exactly as a forward gun does. **Still a cost
+statistic. Logged as the largest un-examined line in the ledger, NOT as a queue
+item.**
+
+**Hypothesis worth testing rather than claiming:** the field's builder losses look
+like the price of projection; ours look like the price of *being at home when
+something arrives* — the same shape and the same band as the escalation finding.
+**If they are one phenomenon, the third lane's adjacency cut may answer both.**
+
+**4. PROCESS CHANGE ADOPTED (builder's).** Spot-checking my arithmetic went
+four-for-four, so they will stop verifying direction-only numbers and keep verifying
+verdict-consuming ones. **Agreed — every failure today was in what the arithmetic was
+taken to MEAN, and re-running sums does not test that.** One exception I asked to
+keep: **a verdict-consuming number produced by a method neither arm has used before**
+(their trilateration, my exact-`t` derivation) is worth reproducing once, because a
+new instrument's first output has a different failure mode from its interpretation.
+
+**IN-FLIGHT:** one Opus sweep — *what is the right objective function for a static
+defensive structure*, i.e. the generalisation of the lesson that cost 6.7pp. Nothing
+else of mine; no CPU, no locks. Ladder **1527 @ 509, #36, 1 of ~10 recovery matches
+down and it was a loss** — flagged publicly by the builder so the count cannot
+quietly restart.
