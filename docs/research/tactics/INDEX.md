@@ -190,6 +190,54 @@ exception permanently destroys that unit for the match.
 
 | **15** | **RE-AIM at the incidence cut's surprise** — our build PRODUCTION is a constant (17/30 r0-50 medians identical between kill and no-kill games; CV **0.09** vs the field's **0.26**) and **CONTACT is what varies**. *(A) What was IN the trigger? (B) Did anyone ever separate contact-as-CAUSE from contact-as-MARKER? (C) Among fixed-opening bots, what varied after the opening and on what signal?* | **SWEPT** (s25). **19 files. 128 external verbatim + 7 internal, 8 near-misses corrected, 2 claims CUT.** **(B) is a clean measured negative.** | 2026-08-09 | [sweep 15](2026-08-09-sweep-15.md), [nobody-separated-cause-from-marker](nobody-separated-cause-from-marker.md), [self-play-inflates-the-effect-by-about-2x](self-play-inflates-the-effect-by-about-2x.md), [self-play-ab-has-the-wrong-population](self-play-ab-has-the-wrong-population.md), [branch-on-a-milestone-not-a-round-number](branch-on-a-milestone-not-a-round-number.md), [the-field-warns-against-early-contact](the-field-warns-against-early-contact.md), [infer-their-bank-from-their-spending](infer-their-bank-from-their-spending.md), [the-scout-that-pays-for-itself](the-scout-that-pays-for-itself.md), [the-trigger-rides-on-a-unit-already-going-there](the-trigger-rides-on-a-unit-already-going-there.md), [local-force-count-is-the-engage-gate](local-force-count-is-the-engage-gate.md), [arm-and-disarm-on-different-thresholds](arm-and-disarm-on-different-thresholds.md), [the-goal-stack-beats-the-mode-flag](the-goal-stack-beats-the-mode-flag.md), [defenders-advantage-has-exactly-two-mechanisms](defenders-advantage-has-exactly-two-mechanisms.md) |
 
+| **16** | **RE-AIM at Magnus's asymmetry question — "we are rich downward and empty upward."** We sit at **1603.6**; our whole evidence base is against teams at or below us, while the top runs **2102 / 2040 / 2000 / 1977 / 1966**. *(A) How did competitors beat opponents STRONGER than themselves? (B) Did a league's top tier separate itself by doing MORE of the same, or something DIFFERENT IN KIND? (C) What did teams do when their own test pool was too weak?* | **SWEPT** (s25). **21 files. 150 verbatim, 18 near-misses corrected, 2 cut/held.** **(C)'s expected negative is REFUTED.** | 2026-08-09 | [sweep 16](2026-08-09-sweep-16.md) |
+
+### Sweep 16 (s25) — at a 400-Elo gap, opponent modelling bought nothing and only variance scored
+
+**(A) THE RESULT, and it is the sharpest single data point the library holds on our actual
+situation.** AIIDE 2020: **Microwave finished #6 at 54.47% overall and scored 1% against
+#1 Stardust.** Its published opening table was re-parsed by the sweep itself — **47
+openings, 150 games, exactly ONE nonzero row: `3HatchLingBust 9 11%`, an all-in.** Its
+most-tried opening went `3HatchMuta 36 0%`.
+
+**And the obvious alternative explanation dies in the same source: Microwave predicted
+Stardust correctly in 127 of 150 games — *"Not that it helped."*** So at a 400+ Elo gap,
+**perfect opponent modelling bought nothing and only maximum variance scored anything at
+all.** We are 400-500 Elo below our own top tier, which makes this the closest documented
+analogue to our position that any sweep has found.
+
+**The counterweight is filed beside it, not buried:** Jay Scott traded upset-proneness for
+strength **deliberately** and rose. So variance is the *underdog's* instrument, not a
+strategy — it buys single games against a wall, and it costs you the games you should win.
+
+**(B) IS ANSWERED BOTH WAYS, and both readings are published with the disagreement
+stated.** This matters because our own measurement says our defence is *more of the same*
+(collar 66.5% against a field 53.2%) while the top tier is **thinner** (40.6% at ≥1900) —
+see [`../upward-pricing-top-tier-2026-08-09.md`](../upward-pricing-top-tier-2026-08-09.md).
+
+**(C) THE EXPECTED NEGATIVE IS REFUTED — five leagues solved it explicitly.** The brief
+held open *"if nobody solved it, that is a bound on what local testing can tell us."*
+**Nobody's problem; they solved it:**
+- **wololo, in our exact position** — *"my new strategy demolished the locally ranked
+  competition"* — *"had to test purely by requesting scrimmages against high-ranked teams."*
+- **BC2026's 2nd place got its magic numbers by reverse-engineering replays of teams above
+  it**, corroborated independently in Halite III and CodinGame.
+- **VirtualAtom replaced one aggregate win-rate with FIVE NAMED OPPONENTS and per-opponent
+  gates.** That is the directly buildable one for us.
+- **And the errors have a direction:** training data *"overestimated Microwave's success"*
+  against stronger opponents — i.e. a weak pool does not merely add noise, **it biases
+  optimistic**, which is the same sign as sweep 15's ~2× self-play inflation.
+
+**METHOD FINDING, and it is a guard gap in this library's own process:** of 18 near-misses
+corrected, **14 were compressions in the SUMMARY document — which had never been
+machine-audited before.** Per-tactic files were being verbatim-checked; the summary that
+most readers actually read was not. **Audit the summary, not only the files.**
+
+**A CORRECTION THE SWEEP MADE TO ITS OWN BRIEF:** *"the ladder is the field instrument"*
+is **not in this INDEX** — it is a session-memory directive (Magnus, 2026-08-08) that was
+being cited as though it were library standing context. Recorded so it is not quoted from
+here.
+
 ### Sweep 15 (s25) — the negative is the finding, and it bounds this whole library
 
 **(B) NOBODY, ANYWHERE, SEPARATED CAUSE FROM MARKER — and that is measured, not asserted.**
