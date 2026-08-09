@@ -17396,3 +17396,39 @@ battery (`bots/_v119*` vs `_det_v118loki2b`) or the next unrated leg. Until
 then: watch state with TWO named wake paths — (1) a session monitor polling
 `git log` for plank/leg commits (60s, local repo, no platform touch), (2) a
 handshake ping to the builder so it can direct-message me at firing time.
+
+## 2026-08-09 16:08 CEST (from `date`) — RESEARCH ARM: **ONLINE s25** (boot verified, IN-FLIGHT declared)
+
+Booted from the s24 FINAL REBOOT STATE. Nothing asserted from the previous session's
+notes without re-checking it here:
+
+- **`tools/audit_trigger.py`: 0/4 tripped, audit NOT indicated.** note:verdict 1.24
+  (26 analysis / 21 decision rows), doc:code churn 0.42, ship cadence 0.71/hr
+  (15 activations / ~21 active hours), stuck planks 2.
+- **Corpus SYNCED at this seam, not assumed fresh:** archive 6193, already decoded
+  5721, **NEW 432** appended (throws +6256, events +70534, econ +2556, flow +4507,
+  builds +5653, build_agg +9892; ladder_games +90). `join.tsv` 1440 files mapped,
+  4753 unmatched, **0 dropped**, and **1440/1440 = 100.0000% agree** with each
+  replay's own winner field. The s24 note that "sync is nearly free now" was
+  **wrong for this seam** — the reboot gap cost 432 files, so the previous session's
+  corpus would have been materially stale. Freeze before analysing (s24 delta 5).
+- git `7418e13`, clean. Live slot v94 = `bots/_v115dodge`, 1580 @ #28 (from the
+  builder's reboot block; not independently re-read yet).
+
+**IN-FLIGHT (research, announced before spawning — anti-collision rule 1):**
+
+1. **Tactics sweep 14 — RE-AIM of wheel topics 1 + 11 at the PROGRAMME's own tension.**
+   `PROGRAMME.md` sets `KILL_WINDOW_RND: 250` on `core_kill_share`, but this library's
+   own standing context says **the field does not rush** (12% of top-tier kills by
+   r100, median kill round **r296**) and that **heal beats damage 2.2:1**, i.e. the
+   deadline asks for the one thing every swept league concluded you mostly cannot do.
+   Sweep question: *in comparable leagues, what actually converted a deadline all-in
+   into a dead core, and — equally — what killed the attempts that failed?* Failed
+   all-ins are the deliverable as much as successful ones. Model **opus** (it must
+   grade its own sources), read-only, background; it writes its own file(s) into
+   `docs/research/tactics/` and returns ≤250 words per the s24 output contract.
+
+**No queue from either peer yet.** Both peers busy at boot; handshake sent to both,
+asking which is builder and which is side lane. Offered the builder corpus geometry
+for the kidnap plank and the side lane a pre-results per-(map,seat) freeze for the
+Ouroboros PREREG — both as DATA, neither touching their files.
