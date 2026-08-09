@@ -198,6 +198,10 @@ def scan(path: Path):
                         tteam, amb = cand[0].team, ("one" if len(cand) == 1 else "same_team")
                     else:
                         tteam, amb = None, "both_teams"
+                    # Thrower entity id, but ONLY when exactly one launcher was in
+                    # range — with two candidates the id is a guess, and the
+                    # turn-order test below is worthless on a guessed id.
+                    tid = cand[0].id if len(cand) == 1 else -1
                     bteam = e.team
                     ec = corepos[(1 - tteam) if tteam is not None else (1 - bteam)]
                     rel = ("unattrib" if tteam is None else
@@ -209,7 +213,7 @@ def scan(path: Path):
                     others = [ents[i] for i in occ.get(to, ()) if i != eid and i in ents]
                     rec = dict(file=path.name, rounds=nrounds, rnd=rnd, bot=eid,
                                bteam=bteam, tteam=-1 if tteam is None else tteam,
-                               amb=amb, rel=rel, lx=to[0], ly=to[1],
+                               tid=tid, amb=amb, rel=rel, lx=to[0], ly=to[1],
                                occ=len(others),
                                occ_what=",".join(sorted(
                                    f"{o.kind}:{'own' if o.team == bteam else 'foe'}"

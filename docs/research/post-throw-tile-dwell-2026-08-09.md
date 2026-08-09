@@ -388,6 +388,167 @@ of the plank; it does not change the dwell arithmetic above.
 
 ---
 
+---
+
+# FOLLOW-UP PASS — 2026-08-09T14:29Z: is `dwell = 0` CONTROLLABLE?
+
+**Second pass, same session, same frozen file list (6,233 paths, corpus sha
+`7418e13`), so every number below is commensurable with the tables above.** The
+decoder gained one column, `tid` = the thrower launcher's entity id, recorded
+**only when exactly one launcher was in range** (`amb == "one"`); with two
+candidate launchers the id would be a guess and a guessed id makes this test
+worthless. Everything else is unchanged.
+
+## The answer
+
+**Yes. It separates, and it separates hard: turn order is entity-id ascending,
+and `dwell = 0` is not a coin — it is `launcher_id < victim_id`.**
+
+| all attributed throws (unique launcher), N = 95,900 | N | `dwell = 0` | rate |
+| --- | ---: | ---: | ---: |
+| `launcher_id < victim_id` (launcher acts first) | 35,345 | 29,740 | **84.14%** |
+| `launcher_id > victim_id` (victim already acted) | 60,555 | 1,106 | **1.83%** |
+
+And the 1.83% is almost entirely **not** the victim escaping. Of those 1,106
+same-round exits, **933 were a rethrow by a second launcher, 149 were the game
+ending, 20 were the bot dying, and only 4 were the victim stepping off under its
+own power** — 4 in 60,555, **0.0066%**.
+
+**For our own throws it is exactly zero.** US, `launcher_id > victim_id`,
+N = 6,685: 22 `dwell = 0` events, of which `end` 14, `rethrow` 7, `died` 1,
+**`step` 0**. Across the entire archive, a builder bot has never once been seen to
+step off its landing tile in the same round when our launcher's id was the higher
+one.
+
+## Cross-tab by population
+
+| population | N | 0 | 1 | 2 | 3 | 4 | 5 | 6-10 | 11+ |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| US throws **enemy** bot, `L < V` | 5,886 | 93.8% | 4.4% | 0.5% | 0.2% | 0.1% | 0.1% | 0.4% | 0.5% |
+| **US throws enemy bot, `L > V`** | **6,177** | **0.4%** | **96.4%** | 1.8% | 0.2% | 0.2% | 0.1% | 0.4% | 0.5% |
+| US throws own bot, `L < V` | 80 | 58.8% | 3.8% | 1.2% | 5.0% | 3.8% | 6.2% | 6.2% | 15.0% |
+| US throws own bot, `L > V` | 508 | 0.0% | 78.0% | 9.6% | 1.2% | 0.8% | 0.6% | 1.6% | 8.3% |
+| THEM throws enemy bot, `L < V` | 7,338 | 92.1% | 5.7% | 1.4% | 0.3% | 0.1% | 0.1% | 0.2% | 0.1% |
+| THEM throws enemy bot, `L > V` | 8,670 | 2.2% | 93.4% | 3.4% | 0.3% | 0.1% | 0.1% | 0.1% | 0.3% |
+| THEM throws own bot, `L < V` | 2,081 | 39.0% | 49.3% | 6.3% | 1.9% | 1.9% | 0.3% | 0.4% | 0.9% |
+| THEM throws own bot, `L > V` | 1,159 | 0.9% | 71.4% | 17.3% | 4.7% | 0.6% | 1.7% | 1.1% | 2.2% |
+
+**US throws enemy bot with `launcher_id > victim_id`, N = 6,177:**
+`P(on tile ≥ 1 round) = 99.64%`, `≥ 2 = 3.24%`, `≥ 3 = 1.39%`, `≥ 7 = 0.71%`,
+`≥ 11 = 0.47%`.
+
+**So the plank's yield becomes exactly one round of ray exposure, reliably** —
+one gunner shot (7 HP) or one sentinel shot (18 HP), at 99.6%, instead of the
+54/46 coin in the headline tables. It does **not** become a kill: the `≥ 7` and
+`≥ 11` tails are unchanged (0.71% / 0.47%), because whether the victim *keeps*
+moving after round 1 has nothing to do with turn order.
+
+## Does the own/enemy asymmetry vanish under conditioning? — PARTLY. Say so.
+
+The prediction was that the raw 8.0% (US throws own bot) vs 46.0% (US throws
+enemy bot) `dwell = 0` gap should disappear once conditioned on id order.
+
+| | US throws own bot | US throws enemy bot |
+| --- | ---: | ---: |
+| raw `dwell = 0` rate | 8.0% | 46.0% |
+| **exposure**: share with `L < V` | **13.61%** (N=588) | **48.79%** (N=12,063) |
+| `dwell = 0` given `L > V` | **0.0%** | **0.4%** |
+| `dwell = 0` given `L < V` | **58.8%** | **93.8%** |
+
+- **On the `L > V` side the asymmetry vanishes completely** (0.0% vs 0.4%) — as
+  predicted, and that is the confirming half.
+- **Most of the raw gap is exposure**, not behaviour: own-bot throws land on the
+  `L < V` side only 13.6% of the time against 48.8% for enemy-bot throws. That is
+  itself an id fact — a team's own launcher is usually built *after* the raider
+  bots it ferries, so `L > V` by construction.
+- **A residual survives on the `L < V` side: 58.8% vs 93.8%, and the id hypothesis
+  does not explain it.** The honest reading is that id order governs whether the
+  victim *gets a turn* after the throw, not what it does with it. An enemy victim
+  handed a turn walks off 93.8% of the time; a bot thrown by its **own** team was
+  put where it wanted to be, and 41% of the time it spends that turn on something
+  else — plausibly building or attacking, which are mutually exclusive with moving.
+  **That is a behavioural explanation, offered as a hypothesis and not tested
+  here.** The id rule is complete for "can it move"; it is silent on "will it".
+
+## Sign distribution — is this already free, or is it a change?
+
+Attributed throws with a unique launcher:
+
+| | `launcher_id < victim_id` (bad: victim escapes same round) | `launcher_id > victim_id` (good: one guaranteed round) |
+| --- | ---: | ---: |
+| **US, all throws** (N=12,651) | 47.16% | 52.84% |
+| **US, enemy victims** (N=12,063) | **48.79%** | **51.21%** |
+| US, own-bot throws (N=588) | 13.61% | 86.39% |
+| THEM, all throws (N=19,248) | 48.93% | 51.07% |
+| THEM, enemy victims (N=16,008) | 45.84% | 54.16% |
+
+**This is a change, not something we already get for free.** Just under half
+(48.79%) of the enemy bots we currently throw are on the losing side of the id
+comparison, and every one of those escapes the same round with ~94% probability.
+Filtering targets to `victim_id < ct.get_id()` converts that half from ~0 shots
+to 1 shot — **roughly a 2× improvement on the plank's only remaining value**, at
+the cost of declining about half the throws.
+
+Both ids are readable at runtime: `ct.get_id()` for the launcher, and the victim's
+id comes straight out of `get_nearby_units()` / `get_tile_builder_bot_id(pos)`.
+The rule is a single integer comparison, not a model.
+
+## Corollary — ids are a global creation-order counter, so this is a build-timing lever
+
+Verified directly, not assumed: over the **first 300 files of the frozen list**,
+taking every pair of consecutively-created entities that were created in
+*different* rounds, **26,078 pairs, 0 with a non-increasing id (0.0000%)**; of
+those, **8,802 were cross-team pairs, also 0 inversions.** Entity ids come from a
+**single global counter shared by both teams**, assigned in creation order.
+
+Therefore `victim_id < launcher_id` means exactly **"this enemy bot existed before
+we built this launcher"**, and it follows that:
+
+- A kidnap launcher built **late** has a high id and so is favourably ordered
+  against every enemy bot already on the map.
+- A launcher built **early** is unfavourably ordered against every enemy bot
+  spawned afterwards — and the enemy spawns bots continuously, so an early
+  launcher's favourable pool only shrinks.
+
+That corollary follows from the counter behaviour plus the turn-order law; it is
+**not separately measured against build round**, and should be treated as a
+prediction to check rather than a result.
+
+## Validation of this pass
+
+- **Row-for-row identical to the first pass.** Adding the `tid` column changed
+  nothing else: 97,999 throw rows, 96,185 distinct `(file, rnd, bot)` keys,
+  **100.0000% of `corpus/throws.tsv`'s 96,181 keys reproduced**, same 4 known
+  extras, `dwell ≤ life` 24,085/24,085.
+- **N stated everywhere; the excluded set is stated too.** 2,099 of 97,999 throws
+  (2.14%) have no unique launcher id and are dropped from this section only:
+  1,120 `same_team` (two friendly launchers in range) and 979 `both_teams`. They
+  are not guessed at.
+- **The finding is not an artefact of the exclusion**: the `both_teams` rows were
+  already `UNATTRIB` in the headline tables, and the `same_team` rows are 1.1% of
+  the corpus.
+- **No exact zero was accepted without a cause.** The 0.0% cell (US throws own
+  bot, `L > V`, `dwell = 0`, N=508) and the `step`-count of 0 in the US `L > V`
+  exception set are both *predicted* by the id law rather than surprising, and the
+  neighbouring populations are non-zero (4 self-steps do exist across all
+  attributed `L > V` throws), so the branch demonstrably fires.
+
+## Limits specific to this pass
+
+1. **`amb == "one"` only.** The id test needs an unambiguous thrower; 2.14% of
+   throws are excluded.
+2. **Within-round ordering among entities created in the same round is untested** —
+   the corollary check deliberately skipped same-round pairs. It does not affect
+   the turn-order law, which is tested on the ids themselves.
+3. **The `L < V` residual (58.8% vs 93.8%) is unexplained by ids.** A behavioural
+   hypothesis is offered; it is not measured. Do not price anything off it.
+4. **The 1-round yield does not become a kill.** `P(≥ 7)` and `P(≥ 11)` are
+   unchanged by conditioning. Everything in the first pass's LIMITS section still
+   applies, in particular the trap-3 one-tile-throw undercount and the `join.tsv`
+   coverage limit.
+
+---
+
 ## Files
 
 - Decoder: `docs/research/scripts/post-throw-dwell-2026-08-09/throw_dwell.py`
@@ -395,5 +556,8 @@ of the plank; it does not change the dwell arithmetic above.
   (1,445 rows), `corpus/throws.tsv` (97,995 rows), `corpus/decoded.txt`
   (6,193 basenames), corpus git sha `7418e13`.
 - Intermediate table: 97,999 rows, one per throw, columns
-  `file rounds rnd bot bteam tteam amb rel lx ly occ occ_what dwell exit
+  `file rounds rnd bot bteam tteam tid amb rel lx ly occ occ_what dwell exit
   d2_before d2_after`. Regenerable in 31 seconds by the command in Method.
+  (`tid` = thrower launcher entity id, `-1` unless exactly one launcher was in
+  range; added by the 14:29Z follow-up pass, which re-ran the same frozen list and
+  reproduced the first pass row-for-row.)
