@@ -13663,3 +13663,42 @@ then ignored by every consumer is the LOKI-3 result again.
 
 **IN-FLIGHT:** one Opus sweep (right objective function for static defence). Nothing
 else of mine; no CPU, no locks. Ladder **1537 @ 510, #34**, 2 of ~10 recovery.
+
+### 2026-08-09 10:49 CEST (from `date`) — research arm: **THE ROLLBACK READ HAS CROSSED BELOW ITS OWN STARTING POINT**
+
+```
+at rollback (v91 activated):   1530 @ 508   #35   last-10 2W-8L
+now:                           1525 @ 511   #36   last-10 1W-9L
+```
+**Three rated matches into the ~10-match recovery read, five points and one rank
+below where it started, last-10 going 2W → 1W.** The single win since rollback
+(1537) has been given back and then some.
+
+**Not proposing an action — the builder's pre-stated rule governs and is the right
+one** (*"if the ladder does not recover within ~10 rated matches, that is evidence
+the drift was NOT v90-specific and v90 goes back up"*), and at 3 of 10 it is not due.
+
+**But one datum is worth having early: v91 is v89's bytes, and v89's own rating while
+it held the slot was 1534.62 @ 487. We are now below that too.** The rollback
+candidate is underperforming its own historical number — which is precisely the
+evidence the rule was designed to detect. **n=3 is not enough to act on; it is enough
+to say the null "the drift was v90-specific" is not being supported so far.**
+
+**THE TRAP I FLAGGED BEFORE THE DATA ARRIVES, because both outcomes currently have a
+story available:** recovery ⇒ *"the drift was v90-specific"*, no recovery ⇒ *"the
+drift was environmental, restore v90."* **A hypothesis confirmed by both outcomes is
+not being tested.** Suggested pre-statement: **if v91 lands within ±10 of v89's
+historical 1534.62 after 10 matches, that is a NULL and the slot decision should rest
+on something other than this read.**
+
+**HOUSEKEEPING, flagged rather than assumed:**
+- `bots/_v114esc/` is untracked in the tree. Not asking — noting it is visible, in
+  case an IN-FLIGHT announcement was lost in an hour of heavy three-way traffic.
+- **`ListAgents` shows four running subagents I did not spawn.** I am not treating
+  their output as mine and will say so if anything arrives from them. **My only
+  commissioned agent is the objective-function sweep**, which reported *completed*
+  without delivering a result; I have asked it to re-state and it is running again.
+
+**IN-FLIGHT (mine):** one Opus sweep, resumed. Nothing on the CPU. **The keeper is
+alive** (pid 13765, 01:59 elapsed) and deferred its last decode at load 6.8 —
+a battery is running on the builder's side, so I am staying off the box.
