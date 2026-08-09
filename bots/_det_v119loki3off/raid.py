@@ -498,7 +498,22 @@ class RaidMixin:
         live = self._live_fwd_launchers(ct, E)
         if live is None or live >= LOKI_KIDNAP_FWD_CAP:
             return False
-        # Enemy builders we can actually see, once.
+        # SCORE BOTH SIGNALS.  Two cuts measured before this one, on the same
+        # 24-game fixture, both below the pre-registered bars:
+        #   aimed at a VISIBLE BUILDER  -> placement 50.0%, throws  8.3%
+        #   aimed at the COLLAR SEATS   -> placement 33.3%, throws  0.0%
+        # The seat-only cut is worse for a reason worth writing down: LOKI
+        # SEALS those seats with BARRIERS, 3 Ti and permanent, so the tiles a
+        # seat-aimed launcher wants are the tiles our own collar is already
+        # taking -- and a sealed seat has no healer on it to throw.  A launcher
+        # is 20 Ti plus 10% launcher scale and evicts ONE body per round, which
+        # walks back.  On this chassis the cheaper mechanism already exists.
+        # This cut is the strongest form of the plank: a seat is worth more
+        # than a transient body (it recurs, ~40% occupancy against both
+        # measured opponents) but a body in range is worth something now, so
+        # both count and neither gates the other.
+        self._ring(E)          # populates raid_seats; cheap and cached per anchor
+        seats = self.raid_seats
         foes = []
         try:
             for eid in ct.get_nearby_units():
@@ -508,19 +523,16 @@ class RaidMixin:
                     continue
                 foes.append(ct.get_position(eid))
         except Exception:
-            return False
-        if not foes:
-            return False
-        # A site is worth it only if it already covers a live enemy builder.
-        # Prefer the site covering the MOST of them -- a launcher throws once a
-        # round, so a site beside two defenders is two rounds of denial.
+            foes = []
         best, best_n = None, 0
         for d in CARDINALS:
             bp = p.add(d)
             if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
                 continue
-            n = sum(1 for f in foes
-                    if bp.distance_squared(f) <= LOKI_KIDNAP_PICKUP_DSQ)
+            n = 2 * sum(1 for s in seats
+                        if bp.distance_squared(s) <= LOKI_KIDNAP_PICKUP_DSQ)
+            n += sum(1 for f in foes
+                     if bp.distance_squared(f) <= LOKI_KIDNAP_PICKUP_DSQ)
             if n <= best_n:
                 continue
             try:

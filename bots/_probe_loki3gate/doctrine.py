@@ -1412,23 +1412,12 @@ LOKI2_RUSH_SEATS = (0, 1)  # seats that leave for the raid AT ONCE, not just sea
 # claims otherwise.
 # ============================================================================
 
-LOKI_KIDNAP_ON = False        # master flag.  False == LOKI-2b exactly.
+LOKI_KIDNAP_ON = True        # master flag.  False == LOKI-2b exactly.
 
 # --- placement -------------------------------------------------------------
 LOKI_KIDNAP_FWD_ON = True    # raiders may plant a launcher at the enemy ring
 LOKI_KIDNAP_FWD_CAP = 2      # live forward launchers, by CENSUS not by counter
-LOKI_KIDNAP_TI_FLOOR = 8     # bank left after paying for one.  WAS 24, and 24
-                             # was the binding constraint: instrumented on
-                             # eider/nordkap the gate rejected `no_ti` on
-                             # 115/125, 242/250 and 367/375 calls, and the
-                             # median first forward launcher landed at round
-                             # 241 -- AFTER the KILL_WINDOW_RND of 250 it
-                             # exists to act inside.  8 matches
-                             # LOKI2_RUSH_TI_FLOOR so the launcher competes on
-                             # the same terms as the rush sentinel, while
-                             # staying ranked BELOW it in _raid_act so the
-                             # sentinel keeps first call on the money (99.3%
-                             # of 1,269 early core kills are turret fire).
+LOKI_KIDNAP_TI_FLOOR = 24    # bank left after paying for one
 LOKI_KIDNAP_CENSUS_DSQ = 50  # "forward" == within this of an enemy Core tile
 LOKI_KIDNAP_PICKUP_DSQ = 2   # launcher pickup range, V5-verified (1471/1472)
 
@@ -1446,16 +1435,7 @@ LOKI_KIDNAP_PICKUP_DSQ = 2   # launcher pickup range, V5-verified (1471/1472)
 # unchanged.  A FORWARD launcher is a different weapon pointed the other way:
 # the enemy builders beside it are DEFENDERS, and the useful direction is away
 # from THEIR Core.  One scorer, switched by which Core the launcher stands near.
-LOKI_KIDNAP_RAY_BONUS = 12   # score bonus for a site on one of OUR live turret lines.
-                             # WAS 36.  CUT ON MEASUREMENT, not taste: post-throw
-                             # tile dwell over 12,064 of our throws of an enemy bot
-                             # is 46.0% dwell-0 and 51.5% dwell-1 -- 96.4% are off
-                             # the tile within a round, landing imposes NO move
-                             # cooldown, and death-on-landing-tile is 4/12,064 =
-                             # 0.03%.  So the ray is worth ONE shot at best (18 HP
-                             # sentinel / 7 HP gunner) and often zero.  It must
-                             # break near-ties only and must never outbid the
-                             # displacement term, which is the plank's real value.
+LOKI_KIDNAP_RAY_BONUS = 36   # score bonus for a site on one of OUR live turret lines
 LOKI_KIDNAP_MIN_AMMO = 4     # below this the ray bonus is decorative -- a Gunner
                              # shot costs 4.  Gate it rather than pretend.
 LOKI_KIDNAP_RAY_CONFIRMS = 6 # can_fire_from confirmations per turn (CPU bound).

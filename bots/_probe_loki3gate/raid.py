@@ -484,36 +484,29 @@ class RaidMixin:
         the same token a launcher cannot throw the round it is built, so the
         builder we can see now is a bet on the builder being there next turn.
         """
-        if not (LOKI_KIDNAP_ON and LOKI_KIDNAP_FWD_ON):
+        import sys as _s
+        _G = globals().setdefault("_GATE", {})
+        def _rej(why):
+            _G[why] = _G.get(why, 0) + 1
+            if sum(_G.values()) % 250 == 0:
+                print(f"GATE {sorted(_G.items())}", file=_s.stderr)
             return False
+        _G["CALLS"] = _G.get("CALLS", 0) + 1
+        if not (LOKI_KIDNAP_ON and LOKI_KIDNAP_FWD_ON):
+            return _rej("flag_off")
         cost = ct.get_launcher_cost()
         if ct.get_global_resources() < cost + LOKI_KIDNAP_TI_FLOOR:
-            return False
+            return _rej("no_ti")
         p = ct.get_position()
         tiles = core_tiles(E)
         if min(p.distance_squared(c) for c in tiles) > LOKI_KIDNAP_CENSUS_DSQ:
-            return False
+            return _rej("too_far")
         if self._cpu_exhausted(ct):
-            return False
+            return _rej("cpu")
         live = self._live_fwd_launchers(ct, E)
         if live is None or live >= LOKI_KIDNAP_FWD_CAP:
-            return False
-        # SCORE BOTH SIGNALS.  Two cuts measured before this one, on the same
-        # 24-game fixture, both below the pre-registered bars:
-        #   aimed at a VISIBLE BUILDER  -> placement 50.0%, throws  8.3%
-        #   aimed at the COLLAR SEATS   -> placement 33.3%, throws  0.0%
-        # The seat-only cut is worse for a reason worth writing down: LOKI
-        # SEALS those seats with BARRIERS, 3 Ti and permanent, so the tiles a
-        # seat-aimed launcher wants are the tiles our own collar is already
-        # taking -- and a sealed seat has no healer on it to throw.  A launcher
-        # is 20 Ti plus 10% launcher scale and evicts ONE body per round, which
-        # walks back.  On this chassis the cheaper mechanism already exists.
-        # This cut is the strongest form of the plank: a seat is worth more
-        # than a transient body (it recurs, ~40% occupancy against both
-        # measured opponents) but a body in range is worth something now, so
-        # both count and neither gates the other.
-        self._ring(E)          # populates raid_seats; cheap and cached per anchor
-        seats = self.raid_seats
+            return _rej("cap_or_blind")
+        # Enemy builders we can actually see, once.
         foes = []
         try:
             for eid in ct.get_nearby_units():
@@ -523,16 +516,19 @@ class RaidMixin:
                     continue
                 foes.append(ct.get_position(eid))
         except Exception:
-            foes = []
+            return _rej("foes_exc")
+        if not foes:
+            return _rej("no_foes")
+        # A site is worth it only if it already covers a live enemy builder.
+        # Prefer the site covering the MOST of them -- a launcher throws once a
+        # round, so a site beside two defenders is two rounds of denial.
         best, best_n = None, 0
         for d in CARDINALS:
             bp = p.add(d)
             if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
                 continue
-            n = 2 * sum(1 for s in seats
-                        if bp.distance_squared(s) <= LOKI_KIDNAP_PICKUP_DSQ)
-            n += sum(1 for f in foes
-                     if bp.distance_squared(f) <= LOKI_KIDNAP_PICKUP_DSQ)
+            n = sum(1 for f in foes
+                    if bp.distance_squared(f) <= LOKI_KIDNAP_PICKUP_DSQ)
             if n <= best_n:
                 continue
             try:
@@ -542,11 +538,13 @@ class RaidMixin:
                 continue
             best, best_n = bp, n
         if best is None:
-            return False
+            return _rej("no_site")
         try:
             ct.build_launcher(best)
         except Exception:
-            return False
+            return _rej("build_exc")
+        _G["BUILT"] = _G.get("BUILT", 0) + 1
+        print(f"GATE BUILT fwd launcher at {best} rnd={ct.get_current_round()}", file=_s.stderr)
         return True
 
     def _live_fwd_launchers(self, ct, E):
