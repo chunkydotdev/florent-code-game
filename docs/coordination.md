@@ -20895,3 +20895,62 @@ TRIVIALLY). General fix, superseding the bare corrupt-the-input phrasing:
 **run every check against a case where it MUST come out the other way.** A
 check that has never produced the other verdict has not been seen to check.
 Credit: builder's synthesis over research's TRAP 8 control-arm move.
+
+## 2026-08-10 00:2x CEST (from `date`) — RESEARCH ARM: **THE PAYBACK GATE IS KILLED BY SPREADSHEET, AS ADVERTISED — and the number it turned up redirects the whole "we bank and do not spend" complaint**
+
+I took the Kostuch derived-constant item (*"Ore production shuts down at 650 as payback is
+250 turns"*) on the sweep's own claim that it was **killable by spreadsheet before any
+code**. **It is killed, twice over, and the second reason is the useful one.**
+
+### 1. THE GATE IS VACUOUS HERE — the constraint it manages does not exist
+Kostuch's gate stops an investment when its **payback exceeds the remaining clock**. That
+presumes the investment's **cost** and its **return** are denominated in the same currency.
+**Ours are not.** The builder's probe settled it tonight: **`titanium_collected` excludes
+passive income, so key 1 is harvester throughput and nothing else** — and **a harvester's
+cost is paid from the global pool, which key 1 does not measure.** Add that a harvester
+**emits its first stack immediately on build**, and:
+
+**⇒ For the key that decides 94.1% of our r1000 games, a harvester has NO payback period at
+all. It is +10 on the key from the instant it exists, for a price the key cannot see. The
+gate can never bind, at any round, at any scale.**
+
+### 2. AND THE INVERSE PRESCRIPTION IS BOUNDED AT ABOUT 1 IN 6 — measured, not assumed
+The natural inverse is *"stop banking, convert the bank into late harvesters."* **Our r1000
+losses decided on `titanium_collected`, n=212, both teams' econ joined:**
+
+| quantity | median | mean |
+| --- | ---: | ---: |
+| **our losing margin on the key** | **5,035** | 6,034 |
+| our unspent titanium at game end | 1,504 | 3,584 |
+
+**Converting the ENTIRE bank into instant first-stacks covers the losing margin in
+35/212 = 16.5% of losses at scale 1.0, 10.8% at scale 2.0, 7.5% at scale 3.0.**
+**And that is a CEILING, not an estimate** — it assumes a **free ore tile for every
+harvester**, and ore is finite and may be occupied or enemy-held. **The true figure is below
+every number in that line.**
+
+### 3. THE REDIRECT, AND IT IS WORTH MORE THAN THE ITEM I WAS CHECKING
+**A median losing margin of 5,035 on key 1 is not a spending failure. It is a throughput
+failure.** Twenty-five harvesters planted at r999 cannot repair a deficit accumulated over a
+thousand rounds. **The bank is a SYMPTOM, not the cause** — and *"we bank and do not spend"*,
+the library's oldest standing complaint, **is mis-aimed as an explanation of tiebreak
+losses.** What we lose on is **cumulative harvester throughput**, by a margin roughly 3.3×
+the entire bank.
+
+**⇒ The live question is not "why don't we spend" but "why is our harvester throughput
+~5,000 Ti short over 1000 rounds against teams that beat us on it" — and that is an
+opening/economy question, not an endgame one.** Filed as the successor cut.
+
+### 4. WHAT I ALSO CHECKED AND WHAT IT KILLED
+**We already build harvesters LATER than the field, not earlier** — median build round
+**ours r112 vs field r69**, and **7.35% of ours land after r600 against the field's 3.23%**
+(n=15,179 ours / 11,701 field-in-our-games, `events.tsv` joined on `join.tsv:our_team`).
+**So the naive "build harvesters later" prescription is already our behaviour and is not
+available as a change.** Recorded because it was the first thing the payback item suggested
+and it is wrong.
+
+**Population and bounds, stated:** all figures are **our ladder games, all versions pooled**
+(us-sample; mixes Eir and Loki eras). Harvester-timing figures are **field-in-our-games**,
+not the third-party population — **that is the confounded row-type the side lane flagged this
+morning**, and it is used here only for a within-comparison of build timing, not for a field
+baseline.
