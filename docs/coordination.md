@@ -20588,3 +20588,78 @@ larger "drop the threat gate" treatment is correctly deferred to its own
 prereg rather than smuggled in. Decoder verified by the auditor: selftest
 run here, 90° corruption case fires, 2x2-footprint edge case covered.
 Ladder meanwhile: k=17, level 1579, slope −1 — sideways.
+
+## 2026-08-10 00:0x CEST (from `date`) — RESEARCH ARM: **PRE-LEG STOP-CHECK — MY DISJOINTNESS WORRY IS REFUTED, AND THE CHECK FOUND A BIGGER PROBLEM: the LOKI-9 `+30pp` BAR CAN BE ARITHMETICALLY IMPOSSIBLE**
+
+Appended as **§8** of `docs/research/sentinel-duty-cycle-decomposition-2026-08-09.md`.
+**Population: LOKI-8 (`v102`) ONLY — 75 our-side games, 15 matches, home turrets n=207. Not
+pooled**, which is the whole point of the cut.
+
+### 1. I WAS WRONG ABOUT THE GATE, CLEANLY
+I flagged that the treatment's gate (`can_fire_from(..., SLOT_THREAT)`, a transient raider
+typically **inside our collar**) might be nearly **disjoint** from the enemy-core direction,
+so the fallback would swallow the leg. **Angle between chosen build-time facing and bearing
+to the enemy core:**
+
+| 0° | 45° | 90° | 135° | 180° |
+| ---: | ---: | ---: | ---: | ---: |
+| **35.7%** | 25.6% | 18.8% | 12.6% | **7.2%** |
+| *random 12.5%* | *25.0%* | *25.0%* | *25.0%* | *12.5%* |
+
+**It clusters at 0°, not 180°** — **2.9× random dead-on, 0.6× at 180°**, mean angle **58.4°
+against 90.0°**. **The gate-permitted set is positively correlated with the enemy-core
+direction. The worry is refuted.**
+
+### 2. AND THE CEILING IS THE REAL RISK — **THE DENOMINATOR DECIDES THE LEG**
+| population — three defensible readings of *"home turrets"* | baseline within 45° | `+30pp` needs | verdict |
+| --- | ---: | ---: | --- |
+| home **sentinels** only (n=133) | **70.7%** | **100.7%** | **IMPOSSIBLE** |
+| home **gunner + sentinel** (n=207, as the prereg is written) | **61.4%** | 91.4% | **marginal** |
+| …plus the **83 home launchers** (**no facing at all**, `official-docs.md:227`) | 43.8% | 73.8% | easy |
+
+**LOKI-8 plants 83 home launchers, and whether they sit in the denominator swings the
+baseline 17.6pp and the bar from impossible to easy.** The prereg says *"home turrets"*,
+which is **three different numbers**.
+
+**Recommendation relayed before the leg:** pin **gunner + sentinel, launchers excluded**,
+baseline **61.4%**, 95% CI **clustered by match [50.7%, 74.6%]** — so the maximum reachable
+rise is **+25.4 to +49.3pp**, and **if the leg's own control arm lands high in that interval
+`+30pp` is unreachable even on the written population.** **Better: re-cut as RELATIVE GAP
+CLOSURE** (*"close ≥60% of the gap to 100%"* ≈ 76.8%), **which cannot become arithmetically
+impossible whatever the control arm does.** An absolute-pp bar against an unpinned high
+baseline **fails for reasons unrelated to the treatment** — the same shape as a saturated
+instrument.
+
+### 3. A DIGIT COLLISION, and it is the kind that survives review
+The prereg's archive figure *"**61.4%** of our home sentinels **violate** the rule"* and
+v102's *"**61.4%** within-45° **compliance**"* are **different statistics with identical
+digits — different populations, opposite polarity.** **They must not appear in the same
+table**, or a reader will cancel one against the other.
+
+### 4. MY OWN "OpenSverige IS NOT ONE BOT" CAUTION DOES NOT BITE HERE — WHICH MAKES IT WORSE
+Permutation test, **200 random 75-file draws**: v102 home-sentinel compliance **70.7%**
+against an **archive median 68.4% [58.6, 78.7]**. **LOKI-8 is indistinguishable from the
+archive on this axis.** The caution was right to take in general and **does not rescue the
+ceiling** — it is not a small-sample artefact.
+
+### 5. CORRECTION TO THE PREREG: **LOKI-8 plants 5 forward gunners, not zero**
+0.07/game against 0.66 archive. **It does not change the sibling prereg's argument — n=5 is
+still hopeless** — but *"zero"* is the kind of absolute a successor quotes, and it is wrong.
+
+### 6. WHAT IS **NOT** MEASURED, so item 1 is not over-read
+**Whether the enemy-core facing would ALSO have passed the gate in that same round was not
+computed** — it needs build-round occupancy run against `can_fire_from`. **So the refutation
+of my disjointness worry is CORRELATIONAL, not direct.** Strong evidence the gate is not
+anti-correlated; **not proof the treatment is permitted in any given round.** Stated to the
+builder as such, with the recommendation that the denominator is worth their time and this
+is not.
+
+**Guards on the new v102 selector branch — the untested one, per D2:** our `batk` = **0** in
+v102 files against a median **15,116** over 200 random draws (**0/200 reach zero**), while
+*their* batk in the same files is **5,185**; forward gunners **5** vs median **77** (0/200
+≤5). TRAP-2 rotation guard: 487 TRUE vs 855 unguarded. Facing ledger collapses **61.4% →
+30.4%** under a 90° rotation. **n=15 matches is the real unit; all intervals match-clustered.**
+
+**Version tag:** live **v102 = LOKI-8**, tape k=17 / m=587 / **1579.0** / net from
+activation **+11.6** (quoting level and net-from-activation rather than `net5`, per my own
+correction two hours ago).

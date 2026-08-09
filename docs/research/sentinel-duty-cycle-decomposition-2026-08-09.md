@@ -532,3 +532,142 @@ measurable per replay by this decoder.
   Filing that as the adjacent issue rather than doing it here.**
 - **I did not run the arena, submit, activate, probe the engine, or edit anything
   under `bots/` or `tools/`. No git commit.**
+
+---
+
+# 8. ADDENDUM — IS THE `PREREG-loki9-facing` TREATMENT REACHABLE? (LOKI-8 / `v102` ONLY)
+
+**Added after the main deliverable, on the coordinator's follow-up.** The
+question: the treatment prefers, *among facings the existing gate already
+permits*, the one pointing at the enemy core. If the gate
+(`can_fire_from(bp, facing, turret_type, SLOT_THREAT)`) typically fires on a
+raider **inside our own collar**, the permitted set could be near-disjoint from
+the enemy-core direction and the fallback would trigger almost every time.
+
+**Population: LOKI-8 (`v102`) ONLY — 75 our-side games, 15 matches. Not pooled
+with the archive.** LOKI-8's chosen facing satisfies the gate *by construction*,
+so the observed facing is a readout of where `SLOT_THREAT` was.
+
+## 8.1 THE ANSWER: the gate is ALIGNED with the enemy-core direction, not opposed to it
+
+Angle between the **chosen build-time facing** and the **bearing to the enemy
+core**, our side only, first-`placeEntity` per entity id (TRAP 2 guarded):
+
+| population | N builds | games | matches | 0° | 45° | 90° | 135° | **180°** | **within 45°** |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| **HOME turrets (gunner + sentinel) — the bar's population** | **207** | 51 | 15 | 35.7% | 25.6% | 18.8% | 12.6% | **7.2%** | **61.4%** |
+| — home sentinels only | 133 | 46 | 15 | 47.4% | 23.3% | 18.0% | 5.3% | **6.0%** | **70.7%** |
+| — home gunners only | 74 | 33 | 15 | 14.9% | 29.7% | 20.3% | 25.7% | **9.5%** | **44.6%** |
+| FORWARD turrets | 280 | 58 | 15 | 90.4% | 6.4% | 1.1% | 1.1% | 1.1% | 96.8% |
+| ALL facing turrets | 487 | 71 | 15 | 67.1% | 14.6% | 8.6% | 6.0% | 3.7% | 81.7% |
+| *random draw over 8 facings* | — | — | — | *12.5%* | *25.0%* | *25.0%* | *25.0%* | *12.5%* | *37.5%* |
+
+> ### `REFUTED` — the hypothesis that the gate points inward.
+>
+> The distribution is **monotone decreasing in angle** and mass-loaded at **0°**.
+> Home turrets sit at **35.7% dead-on against a 12.5% random expectation (2.9×)**
+> and at **7.2% at 180° against a 12.5% expectation (0.6×)**. Mean angle **58.4°**
+> against **90.0°** under a random draw.
+>
+> **The gate-permitted set is not disjoint from the enemy-core direction; it is
+> positively correlated with it.** The threat the gate fires on is, more often
+> than not, already roughly *between* the turret and the enemy core.
+> **The treatment is reachable. It will be permitted, not fall through to
+> fallback.**
+
+## 8.2 BUT THE SECOND THING YOU ASKED ABOUT BITES — AND IT IS WORSE THAN THE FIRST
+
+The control-arm baseline is **already high**, and the `+30pp` bar has to fit
+underneath 100%.
+
+| bar population, as it could legitimately be read | baseline within 45° | 95% CI (cluster-bootstrap by match, n=15) | **`+30pp` bar requires** | verdict |
+| --- | ---: | --- | ---: | --- |
+| **home sentinels only** | **70.7%** | [56.7%, 85.1%] | **100.7%** | **ARITHMETICALLY IMPOSSIBLE** |
+| **home gunner + sentinel** (as written: "turrets") | **61.4%** | [50.7%, 74.6%] | **91.4%** | reachable only at near-total compliance |
+| home turrets **including the 83 home launchers** as non-compliant | **43.8%** | — | 73.8% | comfortably reachable |
+
+> ### **THE DENOMINATOR DECIDES THE LEG, AND IT IS NOT PINNED DOWN.**
+>
+> LOKI-8 plants **83 home launchers** alongside 133 home sentinels and 74 home
+> gunners. **A Launcher has no facing at all** (`official-docs.md:227` — *"The
+> Launcher has no facing direction at all"*). Whether the bar's *"newly-built
+> home turrets"* denominator includes them changes the baseline from **43.8% to
+> 61.4%**, and restricting to sentinels moves it to **70.7%** — **three defensible
+> readings of the bar's own wording, giving "easy", "marginal", and
+> "impossible".** This must be fixed in writing **before** the leg, not
+> adjudicated from the results afterwards.
+>
+> **And the interval is wide enough to swallow the bar on its own.** At n=15
+> matches the baseline CI on the written population is **[50.7%, 74.6%]**. If the
+> leg's own control arm lands at the top of that, `+30pp` is unreachable **even
+> for the gunner+sentinel reading**. Max reachable rise from the observed
+> baseline: **+25.4pp to +49.3pp**.
+
+**A numerical collision worth naming before it causes an error.** The prereg
+correctly labels the archive's **61.4% violation** figure as a different subject
+and context only. **v102's home-turret within-45° *compliance* is also 61.4%.**
+Two different statistics, two different populations, same digits, one of them a
+violation rate and the other its complement's cousin. **Do not let those meet in
+a results table.**
+
+## 8.3 Does the archive figure transfer to LOKI-8? — permutation test
+
+The prereg demotes the corpus figures because *"OpenSverige is not one bot"*.
+**Correct in principle; on this particular statistic it does not bite.** Drawing
+200 random 75-file samples from our 2,218 our-side games and recomputing the
+home-**sentinel** within-45° share:
+
+```
+random 75-file draws : median 68.4%, 2.5-97.5% [58.6%, 78.7%]
+v102 (LOKI-8) TRUE   : 70.7%
+```
+
+**LOKI-8 is statistically indistinguishable from the archive average on facing
+compliance.** So the caution was right to take but the archive was, here, a fair
+proxy — and that is itself bad news for the leg, because it means the ceiling is
+not an artefact of a small v102 sample.
+
+## 8.4 GUARDS — including the new, previously untested v102 selector branch
+
+| guard | statistic | TRUE | CORRUPTED | verdict |
+| --- | --- | ---: | ---: | --- |
+| **G-V1** version selector | **our** builder attacks in the selected files | **0** | median **15,116** over 200 random 75-file draws (min 8,442); **0 / 200 draws reach zero** | **PASS** |
+| G-V1b contrast | *their* builder attacks, same files | **5,185** | — | selector is not just selecting quiet games |
+| **G-V2** version selector | our **forward gunner** plants | **5** | median **77** (min 48); **0 / 200 draws ≤ 5** | **PASS** |
+| **G-B1** TRAP-2 rotation re-emit guard | our-side facing-turret builds | **487** | **855** (guard removed) | **PASS** (1.76× inflation) |
+| **G-B2** facing ledger | home within-45° share | **61.4%** | **30.4%** (facings rotated 90°) | **PASS** |
+
+The v102 selector is the new filter and therefore the untested one, so it gets
+**two independent behavioural fingerprints**, neither derived from `winnerSide`:
+LOKI-8's silenced melee (`batk = 0` on our side, against 5,185 on theirs in the
+same files) and its near-absent forward-gunner path.
+
+**One small correction to the prereg while I am here.** It states LOKI-8 *"plants
+zero forward gunners"* from a code reading. The tape says **5 across 75 games**
+(0.07/game, against a 0.66/game archive average) — consistent with a rare path or
+with a midfield gunner tipping over the `d²_enemy < d²_own` boundary that defines
+FORWARD. **Not a contradiction of the argument** (a leg filtering on forward
+gunners would still be hopeless at n=5), but "zero" is now "5" and the sibling
+prereg's n=0 claim should say so.
+
+## 8.5 WHAT I WOULD DO WITH THIS
+
+1. **Fix the bar's denominator in writing first** — my recommendation: **home
+   gunner + sentinel, launchers excluded and said so**, baseline **61.4%**.
+2. **Re-cut the bar as a relative closure, not an absolute `+30pp`.** *"Close
+   ≥60% of the gap to 100%"* is scale-free, cannot become arithmetically
+   impossible, and at the 61.4% baseline demands ~76.8% — a real bar that the
+   fallback cannot cheaply satisfy.
+3. **If `+30pp` is kept, keep it only on the gunner+sentinel population and
+   record now that it is unreachable on sentinels alone.** Otherwise the leg can
+   fail its own mechanism bar while the diff works perfectly, which is exactly
+   the D7 misread the prereg is trying to avoid.
+
+**Limits of this addendum.** n = 75 games / **15 matches**, and matches are the
+independent unit — every interval above is quoted from a match-clustered
+bootstrap for that reason. `SLOT_THREAT` is inferred from the *observed* facing
+under the assumption that LOKI-8's gate is the only thing setting it; if any
+other code path sets a facing, that path is silently folded in. And 8.1 measures
+where the gate *pointed*, not whether the enemy-core facing would also have
+**passed** the gate in the same round — that needs the round's full occupancy at
+build time against `can_fire_from`, which I did not compute.
