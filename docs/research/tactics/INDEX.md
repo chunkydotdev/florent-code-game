@@ -415,6 +415,13 @@ since the whole value is in the evidence labels.
     asymmetries, untested and not claimed: they kill our core slightly more often when we
     are seat a (33.3% vs 29.9%), and our own kills come faster in seat a (median r139 vs
     r163.5) — both consistent with seat-a games simply being more decisive.
+    **CALIBRATION — do not over-rotate on that null (side lane, s25).** The null is about
+    **AGGREGATE OUTCOMES**; the id-ordering fact stays **real and load-bearing at the
+    MICRO level** — the r74 autopsy's r4 body-block was genuinely id-decided. **The joint
+    reading: the edge exists per-event, and the events do not accumulate into any outcome
+    edge anyone has found.** So *"do not chase it"* is right for **planks**, and the fact
+    remains the correct explanation for **individual race outcomes in decodes** — which is
+    also why "was this luck or reproducible?" is answerable at all.
   - **Ids are ONE GLOBAL COUNTER SHARED WITH RESOURCE STACKS** (97,455 of the gaps are
     stack ids). **Id MAGNITUDE is meaningless** — dominated by titanium churn — and only
     **ordering** carries information. Anyone inferring "how recently was this built" from
