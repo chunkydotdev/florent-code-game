@@ -22165,3 +22165,56 @@ have silently inflated every lethality number either lane quoted.** **Both were 
 measuring rather than assuming, which is the whole difference.**
 
 **Nothing in flight from either lane.**
+
+## 2026-08-10 03:1x CEST (from `date`) — RESEARCH ARM: **IN-FLIGHT +1 — NEW WHEEL ROW 19: NETWORK CORRECTNESS AND REPAIR. Aimed at tonight's largest measured finding.**
+
+**Announced before spawning. Both lanes' queues are drained, and watch state is a sweep.**
+
+**THE SURPRISE IT IS AIMED AT — measured tonight over 8,519 replays:**
+**85.2% of our binding tiles have NO DIRECTED PATH to our core.** **58.8% of our surviving
+harvesters reach the core, against 74.3% for our opponents in the same games and 100.0% for
+Viktor5776.** **Every team that converts a large economy — Bean counters, PromptNPray,
+Viktor5776, sporks, ph — is SATURATION-bound. We are BREAKAGE-bound.** **And we run 116
+conveyors to Viktor5776's 34 and collect less titanium.**
+
+**WHY THIS IS A NEW ROW AND NOT A RE-AIM OF TOPIC 8.** Topic 8 swept **economy** — harvest
+saturation, expansion timing, when to stop expanding — and concluded *"cost scaling never binds
+on harvesters"* and *"the economy is not our constraint at all."* **That conclusion is now
+narrowed by measurement: the economy is not our constraint, but the TRANSPORT NETWORK is, and
+nobody has ever swept network CORRECTNESS.** **This is a construction-and-maintenance question,
+not an allocation question, and the library has no row for it.**
+
+### THE QUESTION
+*How do competitors in comparable leagues build a transport or logistics network CORRECTLY, and
+keep it intact under damage?*
+- **(A) CONNECTIVITY INVARIANTS AT BUILD TIME.** Does anyone check, before placing a segment,
+  that the thing being built actually connects to a sink? **Our top failure class is "line
+  points at empty ground" — 39.6% — which is a build-time validity failure, not a strategy
+  error.**
+- **(B) REPAIR VERSUS REBUILD.** Our second class is destroyed segments (23.9%). What did
+  leagues with damageable infrastructure do — repair in place, rebuild, or reroute? **And did
+  anyone measure which pays?**
+- **(C) DETECTION.** A broken line is **silent** here: no error, no signal, and the stack simply
+  parks forever. **How did anyone DETECT that their own infrastructure had broken?** This is the
+  sub-question I expect to be thinnest and it is the most useful if it exists.
+- **(D) SELF-INTERFERENCE.** We block our own routes with our own turrets **more than the enemy
+  blocks them (11.1% vs 6.1%)**, and lay two conveyors pointing at each other **6× more often
+  than the field (9.9% vs 1.6%)**. **Does anyone else record self-interference in their own
+  construction, and how did they stop it?**
+
+**PRE-STATED, so the result cannot be fitted:** I expect **(A) and (C) to be thin or absent** —
+most comparable leagues have no player-built transport at all (Battlecode, Halite, Lux have no
+conveyor analogue), so **the honest answer may be that the closest analogues are Screeps,
+Factorio-adjacent theory and RoboCup's formation-repair, and that Battlecode contributes
+nothing.** **If the sweep returns "no league builds a fragile directed network, so nobody solved
+this", that is a genuine and publishable negative** — it would mean our failure mode is
+**structural to our ruleset** and has no external prior art, which changes who has to solve it.
+**A thin sweep honestly reported beats a padded one.**
+
+**Model:** `opus`. **Read-only.** Carries the corrected quote procedure (extract → strip markup
+→ decode entities → flatten `\f\r` → grep the literal), the **per-STRING** glyph rule, the
+referent rule for demonstratives, and the **new** rule from sweep 17A-lux: **no elision inside
+quotation marks.**
+
+**Version tag:** live **v102 = LOKI-8**, tape **k=27 / m=597 / 1607.0** — a new arm high, net
+from activation **+39.6**. **Not a verdict at n=27**, and quoted as level rather than `net5`.
