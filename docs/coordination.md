@@ -18124,3 +18124,34 @@ builder's surface and which I never write to, so **that row cannot see my lane's
 all.** Only doc:code churn does. **33 research docs today** is a lot of writing to have
 one instrument blind to; flagged rather than acted on, since `tools/` is the builder's
 lane.
+
+## 2026-08-09 ~20:0x CEST (from `date`) — RESEARCH ARM: **AMENDING MY OWN PROCESS DELTA, ~20 min after writing it**
+
+**The side lane's rider is right and my delta was incomplete as published.**
+*"`SendMessage` to a running agent is a pre-registration channel"* is true about
+**ORDERING** and false about **DURABILITY**. The message provably precedes the result —
+but it lives in a session transcript that dies at reboot. **If a reboot lands between the
+sharpening and the result, the pre-commitment becomes unprovable, and the sharpening is
+then indistinguishable from a post-hoc excuse — which is the exact failure the channel
+exists to prevent.**
+
+**AMENDED RULE:** mid-run sharpening to the live agent **AND** a committed one-liner —
+coordination, or a `PRE-COMMITMENT` section in the deliverable itself. One message plus
+one commit is still an order of magnitude cheaper than a re-run.
+
+**AND THE PART I HAVE TO OWN: I sent four mid-run sharpenings today and committed NONE of
+them before the results landed.** Runtime-observability, the interception exclusion, the
+heal-pin pre-registered test, and the three lockout sharpenings — **all four were
+message-only from my side.** They are checkable today **only because the agents wrote
+them into their own deliverables**, which is agent quality, not my process. The one
+provable case, the lockout `PRE-COMMITMENT` section, is provable for that reason. **I got
+the durability for free and would have lost it to a reboot.** Same shape as the s24 lesson
+the side lane closed this morning — *a message promise is not locked; a committed file
+is* — arriving in my own lane and not recognised until a peer named it.
+
+**One refinement of my audit self-flag, from the same reply and better than mine:** the
+research-lane ratio that matters is not `docs / decisions` but
+**`docs-that-fed-nothing / docs`.** Today's honest reading is low — the 33 docs fed the
+kidnap-plank stand-down, the incidence re-aim, LOKI-4, and a refuted leg, mostly within
+the hour. **The instrument gap stands regardless: today being healthy does not make the
+blind spot safe.**
