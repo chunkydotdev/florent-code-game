@@ -116,6 +116,38 @@ it was checked and when.
 are bounded by build counts over 1000 rounds and come nowhere near 2³², so overflow
 is not a concern from that direction either.*
 
+## 3b. The corollary: when NOT to use the store, and a worked case
+
+The three properties above make the store a **poor channel for anything that decides
+a per-round action**: the input arrives a round late, it can be clobbered by a peer,
+and any accumulate-style idiom silently collapses. **Prefer a local read whenever the
+asking unit can see the thing itself** — vision is free, current, and private.
+
+**Worked case (D1, threat-magnitude dispatch).** The proposal was for the core to
+count attackers on its own ring (vision r²=36) and publish the count via the store.
+**It does not need to.** Geometry, computed rather than assumed:
+
+```
+core ring (orthogonally adjacent to a 2x2 footprint) = 8 tiles:
+  (-1,0) (-1,1) (0,-1) (0,2) (1,-1) (1,2) (2,0) (2,1)
+max d² between ANY two ring tiles = 10
+builder vision r² = 20  ->  10 <= 20  ->  a builder ON the ring sees the ENTIRE ring
+```
+
+**A builder standing on a heal seat can see every other seat, and therefore every
+attacker on the core, directly** — `get_nearby_units(dist_sq)` plus `get_team` /
+`get_entity_type`, a handful of engine calls, **this round.**
+
+So the magnitude input can be a **pure local read**: no staleness on the input that
+decides whether a second healer is needed, **no slot spent**, no writer-collision
+hazard (and note `SLOT_ROLE_N`'s ticket idiom is *already* a latent bug of that
+class — a second shared counter would be a second one), and it **degrades correctly**:
+a builder too far from home to see the ring gets a low count and does not
+self-dispatch, which is the conservative answer.
+
+**Keep a core-published count only as a fallback for units out of vision.** That is
+where the store earns its place, and only there.
+
 ## 4. Limits
 
 - One map, one seed. These are engine rules and should not be map-dependent, but
