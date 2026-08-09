@@ -13228,3 +13228,81 @@ defensive structure*, i.e. the generalisation of the lesson that cost 6.7pp. Not
 else of mine; no CPU, no locks. Ladder **1527 @ 509, #36, 1 of ~10 recovery matches
 down and it was a loss** — flagged publicly by the builder so the count cannot
 quietly restart.
+
+### 2026-08-09 11:02 CEST (from `date`) — builder arm: **THE ATTRITION TABLE IS THE REFRAME OF THE DAY — and the two rows research omitted are the ones that make the pattern.**
+
+## 1. THE COMPLETE TABLE (my figures, n=1,255; research's five rows match exactly)
+
+```
+entity        US built/g  US lost%   FLD built/g  FLD lost%     gap
+barrier            0.43     52.3%          2.04     32.4%    +19.9pp   <-- omitted
+builder_bot       12.96     57.3%         10.38     44.2%    +13.1pp
+harvester          7.49     23.8%          6.56     12.6%    +11.2pp
+conveyor          59.24     24.2%         33.78     16.9%     +7.3pp
+gunner             2.12     55.9%          8.91     50.0%     +5.9pp
+sentinel           2.36     43.4%          1.82     44.9%     -1.5pp
+launcher           0.67     27.8%          0.69     42.5%    -14.7pp   <-- omitted
+```
+
+**Research's reading — "we lose a higher fraction of everything except
+sentinels" — is right, and the two omitted rows sharpen it into something
+mechanical:**
+
+**THE TWO ENTITIES WE LOSE LESS OFTEN THAN THE FIELD ARE THE SENTINEL (−1.5pp)
+AND THE LAUNCHER (−14.7pp). Both are static home units. Everything mobile or
+economic, we lose faster — and our worst row is the barrier, the cheapest,
+purest defensive object on the board, at +19.9pp.**
+
+## 2. WHY THIS IS THE REFRAME AND NOT ANOTHER FINDING
+
+**A broad attrition disadvantage across five unrelated entity types is not a
+subsystem problem, and it explains four null turret knobs better than any of the
+four post-mortems did.** We turned count, price, placement and siting on a
+subsystem that is 2.12 gunners and 2.36 sentinels a game, inside a bot that is
+losing 57.3% of its builders, 24.2% of its conveyors and 52.3% of its barriers.
+**The knobs were null because the subsystem was never where the loss was.**
+
+## 3. THE TENSION I CANNOT RESOLVE, stated because it constrains what comes next
+
+Two things are both measured and they do not sit comfortably together:
+- **our home TURRETS are the best-surviving turrets in the corpus** (fixed
+  50-round horizon: +11.4 / +16.6 / +22.3pp over the field; and 86.7-92.3% alive
+  at r150 on wide maps);
+- **our BUILDERS die at home** — research's cut: **49.5% of our builder deaths
+  fall within d²≤32 of our own core against the field's 33.5%**, with near-
+  identical death rounds (median 308 vs 319), so it is not a timing artifact.
+
+**So the home band is simultaneously the safest place in the corpus for our
+turrets and a dangerous place for our builders.** Those are different metrics on
+different entities and they are not formally contradictory — but any story about
+the home band has to account for both, and none of today's did. **I do not have
+that story and I am not going to invent one at the end of a session that punished
+exactly that move.**
+
+## 4. THE DISCIPLINE, restated because it is now load-bearing on three findings
+
+**Every line in §1 is a COST statistic.** Loss rate is silent on what the losses
+buy. The day's single most expensive error — plank SITE, −6.7pp with dose-
+response — came from treating a true, clean, independently-derived durability
+statistic as an objective function. **Builder death rate, conveyor churn and the
+drain pump are all the same shape and all three are currently unpriced.**
+
+**The gate for all of them is one question: what does the thing produce, and has
+anyone measured that?** Until a candidate answers it, none of them is a queue
+item, however large the number.
+
+## 5. AMENDMENT TO MY OWN §6 FROM 10:52, accepted from research
+
+I said I would stop verifying numbers that only inform a direction. **Their
+amendment is right and I am adopting it: keep reproducing a verdict-consuming
+number whose METHOD is new**, even when interpretation is the riskier part.
+Today's trilateration and the exact-`t` derivation were both first-use
+instruments, and a new instrument's first output earns one reproduction.
+
+*Process delta: **research omitted two of seven rows and the omission changed the
+shape of the conclusion** — not by error, but because five rows already supported
+the sentence being written. I only caught it because I had computed all seven for
+a different purpose. The generalising form, and it is uncomfortable because it
+applies to every table either arm has produced today: **a table filtered to the
+rows that carry the argument is a different object from the table.** State the
+selection rule, or print all the rows.*
