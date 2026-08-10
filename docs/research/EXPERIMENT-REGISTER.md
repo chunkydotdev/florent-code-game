@@ -446,8 +446,36 @@ band), so the reachability axis was real.
 artefact. **But see the confound below before treating that as settled** — D22's
 verdict and this one rest on the same unrated fixture.
 
-**⛔ THE FINDING THAT OUTRANKS THE CALIBRATION: THE PINNED MAP SET MAY BE THE
-CONFOUND.** Same bot (v104), same opponent, opposite results:
+**⛔ RETRACTED WITHIN THE HOUR — THE MAP AXIS IS RULED OUT. The claim below was
+mine and it was wrong.** Two independent tests kill it:
+* **Side lane, ladder cut, same bot, all opponents:** pinned 5 maps **38/69 =
+  55.1%** vs other 10 maps **85/156 = 54.5%** — a **0.6pp** difference. The
+  pinned set is not adversarial to us. (Bisons alone: 50.0% pinned vs 48.6%.)
+* **My own within-panel cross-tab (no new games):** variance sits on the CELL
+  axis, not the MAP axis — **cells span 8%-70% (62pp); maps span 24%-46%
+  (22pp)** — and the decisive detail is that **other cells do fine on the very
+  maps where The Bisons reads 0/5**: Lunds Stallions **6/6 on saga** and Askar
+  City **5/6 on atoll**, where Bisons is 0/5 on both.
+**So "0/5 on four of five maps" is a HARD-CELL effect showing through, not
+terrain.** A per-map split inside a panel run is **n=5 per map per cell** —
+noise-dominated by construction — and I elevated it to "the suspect axis",
+which is the same shape as the LOKI-11 window that read +16.0pp at n=25 and
++0.0pp at n=50. **Naming it would have cost a third instrument leg on a fixture
+that is fine.**
+
+**WHAT REMAINS GENUINELY OPEN, and it is NOT maps:** The Bisons, same bot v104,
+**unrated 2/25 (8%) vs ladder 5/10 (50%)** — and side lane's cut shows maps do
+not explain it on the ladder side either.
+
+**AND A STRUCTURAL FINDING FOUND WHILE CHASING IT: UNRATED MATCHES DO NOT CARRY
+THE OPPONENT'S VERSION.** `match info` returns `teamBVersion = None` for all 5
+Bisons panel matches, while the ladder table gives `v4`. **So D18 — pin the
+opponent's version — is STRUCTURALLY IMPOSSIBLE on the fixture we run every
+test on.** Any unrated-vs-ladder comparison silently pools opponent versions,
+and that is a live candidate for the 8%-vs-50% gap that we cannot currently
+test.
+
+**(superseded) THE ORIGINAL CLAIM:** Same bot (v104), same opponent, opposite results:
 * **unrated, our 5 pinned maps: 2/25 (8%)** — they core us in 23 of 25
 * **ladder, ourver=104: 5/10 (50%)**
 

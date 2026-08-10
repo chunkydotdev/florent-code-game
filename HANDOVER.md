@@ -10,7 +10,12 @@
 ##   Askar City 53.3% · farming_200s 28.6% · SmartFridge 26.7%.**
 ##   Floors: **0033 17.1% · The Bisons 8.0%.** Effective n 125/185 = 68%.
 ##   **The Bisons re-derivation resolved at the full n=25: FLOOR, D22 STANDS.**
-##   **⛔ BUT: same bot, same opponent, opposite results — unrated on our 5
+##   **⛔ MAP-AXIS CLAIM RETRACTED (mine, within the hour).** Ladder cut: pinned
+##   5 maps **55.1%** vs other 10 **54.5%** (n=69/156). Within-panel cross-tab:
+##   variance is on the CELL axis (8%-70%) not the MAP axis (24%-46%), and
+##   **Lunds is 6/6 on saga where Bisons is 0/5.** A per-map cell split is n=5
+##   — noise by construction. **Do NOT rebuild the panel a third time.**
+##   **STILL OPEN, and not maps: same bot, unrated on our 5
 ##   pinned maps 2/25 (8%), LADDER ourver=104 5/10 (50%). Per map vs Bisons:
 ##   atoll 0/5, fjordgate 0/5, saga 0/5, snowflake 0/5, jackpot 2/5.**
 ##   **We lose every game on 4 of 5 pinned maps; the ladder rotates all 15.**
