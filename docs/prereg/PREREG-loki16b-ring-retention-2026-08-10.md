@@ -121,3 +121,51 @@ holder-verified, and will read exactly as well tomorrow.
    first". **Not chosen after seeing the estimate.**
 3. **`oppver_window.py` re-run over the treatment window**, since the control's
    Askar and Lunds cells already straddled a version boundary.
+
+---
+
+# MEASUREMENT — NOT A VERDICT. The decoder now exists; the n decision does not.
+
+**`tools/ring_retention.py` built and selftested** (12 on open terrain, 5 in a
+corner, walls reduce it). It decodes the pre-registered primary directly:
+longest unbroken run of rounds with one of our builders on an enemy-ring tile,
+over game length, game-mean, 12-ring stratum.
+
+| arm | 12-ring stratum | clipped (jackpot) |
+|---|---|---|
+| **LOKI-16b (v106)** | **0.782** (n=40 games) | 0.598 (n=10) |
+| **control v104 (PANEL-3)** | **0.765** (n=148 games) | 0.647 (n=37) |
+| **difference** | **+0.017** | −0.049 |
+
+## ⛔ NO VERDICT IS DECLARED, AND THE REASON IS PROCEDURAL, NOT THE NUMBER
+
+**This prereg fixed no n.** By the time the control was read I had already seen
+the treatment arm, **so any sample-size rule chosen from here is chosen with
+partial data in hand.** That position was written down BEFORE the control was
+run, not after — the sequence is in the session transcript and in this file's
+ordering.
+
+**So this is recorded as a MEASUREMENT.** Against a bar of **≥ +0.15**, the
+observed difference is **+0.017** — an order of magnitude short — but *"the
+plank missed"* is a verdict, and the discipline that makes a verdict worth
+anything is exactly the discipline that says I cannot write one here.
+
+**What a successor needs to close it:**
+1. **A pre-committed n and interval**, decided by someone who has not seen these
+   arms, or a bootstrap CI computed under a rule fixed in advance.
+2. **Match-clustered resampling** — the prereg names MATCH as the clustering
+   unit and these are game-means; 40 games are 10 matches.
+3. **`oppver_window.py` on the treatment window**, since the control's Askar and
+   Lunds cells already straddled version boundaries.
+
+## AND THE HONEST READ OF WHAT +0.017 PROBABLY MEANS
+
+**Both arms sit at ~0.77-0.78, i.e. a body is on the enemy ring for roughly
+three quarters of the game in BOTH.** That is consistent with D30's finding that
+ring presence is **already implemented in the incumbent** — the margin LOKI-16
+was built to attack was RETENTION, and on this decoder the incumbent already
+retains about as well as the treatment.
+
+**If that survives a proper reading, the plank's mechanism is not absent — it is
+already ours**, which is the cheapest possible null and the third time today a
+plank has died to *"grep the incumbent first"*.
