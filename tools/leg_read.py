@@ -120,6 +120,20 @@ def report(games: list[dict], label: str) -> dict:
     print(f"     ...their kills     {len(theirs):>3}/{n} = {len(theirs)/n:6.1%}")
     print(f"  win rate              {len(wins):>3}/{n} = {len(wins)/n:6.1%}"
           f"   [NOT A VERDICT -- PROGRAMME.md]")
+    # KILL-SPEED SCORE (spec 2026-08-10). Printed for the version scorecard and
+    # the ship gate ONLY. Its per-game sd is 7.74, so a realistic change needs
+    # ~2,100 games per arm and it carries just 1.1x the power of win rate --
+    # reporting it as a LEG's primary would repeat the 18pp-bar/19.5pp-floor
+    # failure with a new number. The label says so on every line it prints.
+    try:
+        from score import mean_score
+        sc, _ = mean_score((g["we_won"], g["cond"], g["turns"]) for g in games)
+        gate = "beats v104 -1.77" if sc > -1.77 else "below v104 -1.77"
+        print(f"  kill-speed score      {sc:>+7.2f}/game   "
+              f"[SCORECARD + SHIP GATE ONLY, NEVER A LEG PRIMARY; "
+              f"n>=200 to gate; {gate}]")
+    except Exception:
+        pass
     if ours:
         t = [g["turns"] for g in ours]
         print(f"  our kill turns        median {statistics.median(t):>5.0f}  "
