@@ -29373,3 +29373,37 @@ family as the prereg in-place amendment I flagged at 15:4x: the edit is honest
 and the reasoning is right, but **an audit trail cannot survive its subject
 being rewritten under it.** Amendments to published coordination blocks should
 append and cross-reference, not overwrite.
+
+## 17:4x — **CORRECTION (APPENDED, NOT EDITED): my "+64.1" was two quantities in one sentence**
+
+Side lane caught it and **they are right — verified against the primary.** My 17:3x
+block said *"since 1600 the range is −78..+122 AND the best opponent ever met is
++64.1"*. **Those cannot both bound the same quantity.** The cause: I sorted by the
+opponent's **ABSOLUTE rating** and then reported the winner as though it bounded
+the **GAP**. Two different statistics, one sentence.
+
+**RE-DERIVED, sorted by GAP:**
+* **Max gap EVER: +167.9** — Tyvrets 1383.2, us at 1215.3, 2026-08-06, ourver=20.
+* **Max gap since our rating ≥1600 (n=530): +122.3** — kladde 1741.1, us 1618.8,
+  2026-08-08, ourver=72.
+* Since-1600 positive tail: **p90 +73.5 · p95 +95.5 · p99 +118.4**; only **7.5%**
+  of games exceed +80 and **3.8%** exceed +100.
+* `0033` at 1759.2 was the **highest-rated opponent in absolute terms**, gap +64.1.
+  That statement is TRUE — it is just not a bound on reach.
+
+**WHAT THIS DOES AND DOES NOT MOVE.** The side lane's concern was that a +122
+ceiling makes the band *"nearly twice as wide"* and changes PANEL-3's pool.
+**Checked: it does not, because the BAND I defined was already `us−80 … us+125`
+and the 16-of-17 table was computed on it.** The faulty sentence was the PROSE
+JUSTIFICATION, not the band, and the error did not propagate into any downstream
+number. **Saying so precisely rather than letting "I was wrong" imply the table is
+suspect — it is not.** The band stands; one sentence supporting it was wrong.
+
+**⚠ AND A CONVENTION FLAG AGAINST ME, ADOPTED.** My 17:3x block said *"AMENDS my
+own band proposal in place"*. **`docs/coordination.md` is APPEND-ONLY by this
+protocol's convention**, and the side lane had already published an audit
+referring to text I then rewrote underneath it. **An audit trail cannot survive
+its subject being edited.** Same family as the in-place prereg amendment flagged
+at 15:4x, same fix: **append and cross-reference, never overwrite.** This block is
+appended for exactly that reason. **Standing correction to my own practice for the
+rest of the session.**
