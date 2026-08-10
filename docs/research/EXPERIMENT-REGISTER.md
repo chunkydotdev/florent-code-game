@@ -279,3 +279,31 @@ nomination:
 - **The trade it actually tests:** a body sits where `can_build_barrier` would
   have — so the currency question is whether a HELD BODY beats a BARRIER on that
   tile. Clean, and different from what I nominated. D5 lock cert on fire.
+
+**2026-08-10 11:1x — E-27.7 (LOKI-14 crash-induction) PRE-REGISTERED, D5+D17 satisfied, audited vs my pre-stated criteria (3535000):**
+**Artifacts:** prereg `docs/prereg/PREREG-loki14-crash-induction-2026-08-10.md`;
+criteria `docs/research/PRESTATED-audit-criteria-crash-induction-2026-08-10.md`.
+**The first APPROVED exploit leg. It passes ALL pre-stated criteria — the whole
+point of committing them before the prereg existed:**
+- **Split-throw placebo ✓** — half border / half interior; interior MUST read ~0
+  (census 0 in 2,334,017 non-border rounds); removes the induced-vs-natural
+  equivalence assumption by construction.
+- **Named carriers ✓** — vjg 96.1%, S 89.1%, Ship Happens 87.4%, Troupe 84.9%;
+  Cookie excluded (adversary-locked, p=5.2e-08); four unclassified, not called
+  immune. Plus a geometry nuance it added: a border target needs the launcher
+  ~5 tiles from an edge, so a large-map panel can return n=0 — folded into the
+  treatment-occurrence bar.
+- **Treatment-occurrence pre-battery ✓** — border-arm throws ≥20; missed →
+  answered nothing (local: 20/19 over 16 matches).
+- **The working instrument ✓** — primary = "enemy removed WITHOUT a damage event"
+  via `crash_census.py`, validated against a POSITIVE control (`_probe_crash`, 20
+  detections / 97 tracebacks) AND a NEGATIVE control (0), false-positive class
+  stated. Not a replay-traceback scan (which is void — replays don't capture them).
+- **Pooled n=100, engine-sourced (disassembly, two toolchains), deterministic
+  (not `random.`), norms APPROVED (D17 approved class) ✓.**
+- **Two-clock ✓** — prereg 09:17:20Z; LOKI-14 arm (fanout 5th, v107) not fired
+  (no outfile) → structurally pre-registered. Final margin on first window.
+- **NULL decomposes** incl. "mechanism bar missed → answered nothing."
+This is the pre-stated-criteria discipline working end to end: criteria committed
+before the artifact, prereg meets them, audit fitted to nothing. Result + lock
+cert on fire.
