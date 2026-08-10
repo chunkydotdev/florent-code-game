@@ -22529,3 +22529,54 @@ direction for an audit and I would rather have it than the opposite.**
 
 **Net: zero library contradictions. Three flags closed.** **`game-model.md:95`'s Wilson caution
 is real and unopposed; the other two flags dissolve on reading the surrounding sentence.**
+
+## commit after `2768506` (git time is the authority) — RESEARCH ARM: **CHALLENGE RESOLVED WITH ARITHMETIC — the third change-condition is genuine, and the builder narrowed their own claim in the process. Plus: IN-FLIGHT +1, and NOT a wrap.**
+
+### 1. THE CHALLENGE WAS RIGHT TO MAKE AND THE ANSWER IS THAT THE CONDITION IS GENUINE
+I flagged that the rollback pre-commitment's third condition — *the slow SPRT bound accepting
+BLEED* — might be the instrument the builder had already shown me was **strictly dominated** by
+the −21 rule. **It is not. It is a different bleed hypothesis on the same test, and the
+arithmetic settles it:**
+
+| k | `MU0=−10` needs | implied net5 | `MU0=−4` needs | implied net5 | fires first? |
+| ---: | ---: | ---: | ---: | ---: | :--- |
+| 10 | −6.48/match | −32.4 | −5.71/match | −28.6 | no |
+| 20 | −5.74 | −28.7 | **−3.86** | **−19.3** | **YES** |
+| 50 | −5.30 | −26.5 | **−2.74** | **−13.7** | **YES** |
+| 100 | −5.15 | −25.7 | **−2.37** | **−11.9** | **YES** |
+
+**From k=20 the slow bound accepts BLEED at rates whose implied net5 sits well above −21** — at
+k=75 it fires at −2.49/match while net5 reads −12.5. **So it can fire first, and the region
+where it does is exactly the region the rolling window is blind to: a slow sustained drift.**
+**`MU0=−10` IS dominated, exactly as stated five hours ago; `MU0=−4` asymptotes to ~−2/match.
+Same test, different hypothesis, not interchangeable — which is why they were approved as a
+PAIR and why the pair is not redundancy even though one member of it is.**
+
+### 2. **AND THE BUILDER NARROWED THEIR OWN CLAIM WITHOUT BEING ASKED TO**
+They had written that it was the condition they *"trust most"*. Their correction: **at v102's
+current k=34 the slow bound needs about −3.1/match — reachable but not gentle.** The accurate
+claim is **narrower: it is the condition immune to WINDOW MECHANICS, which is a real and unique
+property among the three, but it is NOT the most SENSITIVE at our current k. At k=34 the −21
+rule is still the faster trigger for a sharp decline; the slow bound overtakes it as k grows.**
+**Both statements were true and only the flattering half had been stated.**
+
+**⇒ The pre-commitment stands with THREE LIVE CONDITIONS. Nothing struck.** **But the check
+that established it took one command, and it was run after being asked rather than before
+"trust most" was written — which is the same ordering fault as publishing an estimate at the n
+where it looks largest.**
+
+### 3. **THIS IS NOT A WRAP AND I AM NOT TREATING IT AS ONE**
+The builder called it *"a fitting place to stop"*. **Magnus has not called a wrap, and my
+standing instruction is explicit: never wind down, write wrap notes, or hand over on my own
+initiative because the queue looks drained or the session feels long.** **Watch state is a
+sweep, not an idle.** Recording this so the absence of a wrap note is legible as a decision
+rather than an omission.
+
+### 4. IN-FLIGHT +1 — **RE-DERIVE THE REST OF THE STANDING CONTEXT ON v102**
+**Aimed at the tension I created for myself:** I argued against launching a twentieth sweep on
+the ground that *"adding material to a library that is 92% dated is worth less than verifying
+what is already there"*, and the mandate says never idle. **Those reconcile in one direction:
+sweep the corpus, not the literature.** The prior-tracing cut re-ran **four** standing-context
+instruments on the v102 subset and **all four inverted**. **The remaining standing-context
+claims have not been re-run**, and each one is a figure a successor could size a plank on
+within minutes. **`opus`, read-only, LADDER fixture, paired within-era where the data allows.**
