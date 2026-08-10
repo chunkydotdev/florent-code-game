@@ -81,3 +81,62 @@ fixture change on its own authority.
 
 It tests no trick, changes no bot, and is not evidence for or against any plank.
 It is a ruler, cut before the thing it measures.
+
+---
+
+## ADDENDUM — **METHOD CORRECTION FROM MAGNUS, AFTER THE FIRST 25 GAMES FIRED**
+
+> *"Previously we ran tests against opponents but for 5 specific maps until
+> something interesting happened on those, and sometimes we rotated the maps
+> when we wanted to try something else."*
+
+**He is right and the leg I just fired is defective as a control.** I omitted
+`--map`, so the platform chose 5 random maps PER MATCH. The 25 games span
+**13 distinct maps**, and no two opponents played the same set. Consequences,
+stated plainly rather than buried:
+
+* **This leg is a FIELD READ, not a paired control.** A later treatment leg with
+  its own random maps would differ from it by map as much as by treatment, and
+  map is the dominant term here — our kill turns range 99-524 and track map size.
+* **It is not worthless** — the aggregate rates below are real and were measured
+  on real opponents. It just cannot be the denominator the prereg promised.
+* **It cost nothing** (v102 was already active), so the correction is cheap.
+
+**THE TESTBED IS NOW PINNED**, and every leg from here uses it unless a rotation
+is recorded as a deliberate act:
+
+    MAPS (fixed, size-ordered so kill-distance is a controlled axis):
+      fjordgate 10x10 · jackpot 16x16 · atoll 18x18 · saga 24x24 · snowflake 26x26
+
+    PANEL (fixed): The Bisons 1626 · I Stone 1617 · Leviathan 1603 ·
+                   gsxWins 1594 · CtrlAltDefeat 1581
+
+    ONE LEG = 5 opponents x 5 pinned maps = 25 games = ONE 10-minute window,
+    because the platform enforces **max 5 test/unrated matches per 10 minutes**.
+
+Residual confound left on the record: `mapSeed` still varies per game, so the
+pinning controls terrain but not spawn seed.
+
+## RESULT OF THE UNPINNED BASELINE (n=25, 5 live teams, v102)
+
+| metric | value | note |
+|---|---|---|
+| wins | 14/25 = 56.0% | not a verdict (PROGRAMME) |
+| **r1000 rate (= DEFEAT rate)** | **0/25 = 0.0%** | **95% CI 0-13.3%** |
+| core_destroyed | 25/25 = 100% | every game ended in a dead core |
+| our core-kill share | 14/25 = 56.0% | primary currency |
+| our kills inside 250 rounds | 10/14 | median 151, range 99-524 |
+| THEIR kills against us | 11, median 162 | range 49-393 |
+
+**THE PRE-REGISTERED CHECK CAME OUT DIFFERENT AND THAT IS THE POINT.** The
+prereg predicted ~7% r1000 from the ladder tape. **Live-unrated gave 0/25.** The
+two populations are not interchangeable, as pre-committed — and the direction is
+favourable: against real teams our games are decisive, so `R1000_IS_DEFEAT` is
+currently costing us almost nothing. **The bottleneck is not that we stall to
+r1000; it is that we lose the kill race 11 times in 25.**
+
+**THE SURPRISE, recorded before it is explained away (directive point 4):**
+**The Bisons beat us 4-1 and killed our core in 74, 66, 92 and 49 turns.** That
+is our own sub-250 doctrine executed on us, roughly twice as fast as we execute
+it. They are rank 25, 27 points above us. **A live opponent already does the
+thing this programme is trying to learn**, and their replays are downloadable.
