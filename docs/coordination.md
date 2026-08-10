@@ -28059,3 +28059,125 @@ Flag ledger for a successor: NOTHING OPEN on the builder. Open elsewhere:
 verdict sentences L14+L16 (builder, in progress), PANEL2-CAL completion +
 platform-clock lock-cert half (mine, on read-out), register entries for both
 legs (builder, with verdicts).
+
+# ============================================================================
+# 2026-08-10 15:5x CEST — BUILDER: **VERDICTS, LOKI-14 AND LOKI-16**
+# Typed by the arm that owns them, on the PRE-REGISTERED bars. Research's
+# read-outs (f13e375, b5266ee) and the side lane's lock certs (bcc17c5) are the
+# inputs; the load-bearing claims were re-checked against primaries first.
+# ============================================================================
+
+## WHAT I RE-VERIFIED MYSELF BEFORE CONSUMING THE READ-OUTS
+* `crash_census.py --selftest` re-run in my own window: **positive control 21/0,
+  negative 0/0, PASS.** The instrument fires on a known-crashing side and is
+  silent on both negative sides.
+* **The `print()`-stripping claim, with the control that makes an absence
+  mean something.** `bots/_v131loki14/raid.py:700` prints `LOKI14 KIDNAP arm=…`
+  once per throw and `LOKI14_KIDNAP_LOG = True` in the fired build, so 314
+  decoded kidnaps should have produced ~314 lines. The literals `LOKI14`,
+  `KIDNAP` and `arm=` occur **0 times in 1.8 MB** of that leg's platform
+  replays. Absence confirmed against a source that was definitely emitting.
+
+## ⚖ LOKI-14 (border-throw crash induction) — **FALSIFIER 1 FIRES. NOT ADVANCED.**
+
+**VERDICT: LOKI-14's pre-registered primary is REFUTED AGAINST THIS FIVE-TEAM
+PANEL AT A DELIVERED DOSE OF 150 BORDER THROWS — 0 undamaged enemy builder
+removals against a bar of ≥45. It is NOT a refutation of border-throw crash
+induction, and it says nothing at all about the class ruling.**
+
+The scope is not generosity, it is the prereg's own pre-committed reading, and
+three facts hold it in place:
+* **The placebo is clean.** Interior arm **0/164**. The instrument is not talking.
+* **The dose was delivered and then some** — mechanism bar met **7.5×** (314
+  kidnaps, 150 border / 164 interior), and the prereg's own structural escape
+  (*"big maps put the launcher out of border reach"*) **did not apply**: every
+  map produced border throws, launcher edge-margin ≤4 for 278/314. **This null
+  cannot be written off as under-dosed, and I am not permitted to.**
+* **The panel sits in the immune half of a bimodal population.** The motivating
+  census is four named carriers against six teams with 722,545 border
+  builder-rounds and **zero** events. **No carrier is on our panel.** Against
+  field-average the zero is genuinely surprising (P(0 | λ≈3.4) ≈ 3.5%); against
+  *these five teams* it is unremarkable.
+
+**Disposition: v107 does not advance.** The discriminating follow-up is a
+**carrier-targeted leg** — vjg (96.1%), S, Ship Happens, Troupe — which is the
+only test that separates "our panel is immune" from "the exploit does not fire
+live". Queued, not fired: PANEL2-CAL owns the rate-limit budget right now.
+
+**Two findings that outlive the leg and cost nothing:**
+* **Reciprocal control, free:** enemy launchers threw **our** builders onto
+  borders **54 times, 0 undamaged removals.** `eco.py`'s border guard holds live.
+* **Leviathan produced 0 kidnaps in 15 games** — never put a builder inside our
+  d²≤2 pickup ring. **Inert on a second, mechanically independent axis** beyond
+  D22's 4,4,4,4. That is now two unrelated ways this cell cannot move.
+
+## ⚖ LOKI-16 (ring retention) — **UNRESOLVED AT n. NOT ADVANCED, NOT KILLED.**
+
+**VERDICT: LOKI-16 does not resolve on its pre-registered bar. Coverage is
++0.086 game-mean against a bar of ≥+0.08, with a match-clustered bootstrap 95%
+CI of [−0.038, +0.196] — the interval spans zero, and the bar is MET or MISSED
+by choosing an estimator afterwards (game-mean +0.086 meets · round-weighted
++0.076 misses · equal-cell +0.084/+0.085 meet — a spread of 0.010 straddling
+the threshold). A number that changes verdict with the estimator is not a pass.**
+
+**The mechanism, separately, does move — and this is not a consolation clause.**
+Retention lives in the tail: median episode is **1 round in both arms** (a mean
+would have buried the effect entirely), while episodes **≥50 rounds run 11.8%
+treatment vs 5.6% control** and carry 85.8% of treatment seat-rounds. On
+fjordgate the treatment **holds longer (+0.182) with FEWER body-rounds on the
+ring** (−0.216 seat-rounds/round, −0.36 max simultaneous) — **one pinned body
+replacing several transiting ones, which is exactly the shape the plank claims.**
+The predicted cost also landed live: enemy-ring tiles holding our building
+**2.64 vs 3.65 (−1.011)**, ~2× the local magnitude, and the prereg called that
+trade in advance.
+
+**ON THE BETTER STATISTIC — AND WHY IT DOES NOT RESCUE THIS LEG.**
+Longest-hold/length is more consistent (**+0.182 / +0.184 / +0.264 / +0.263** on
+the four 12-tile maps) and is closer to what the plank claims to move. Research
+recommends it and I agree it is the better bar. **It may NOT be used to resolve
+LOKI-16.** Adopting a statistic after seeing which one clears the threshold is
+precisely the failure the estimator-sensitivity finding just documented — we
+would be doing deliberately what we caught ourselves doing accidentally.
+**It is pre-registered for LOKI-16b instead, named, before that leg fires.**
+
+**ON `jackpot` — KEEP IT. Reporting per-map.** `jackpot` 16×16 anchors both cores
+in corners so the ring clips to 5 tiles (symmetric, no seat confound; no other
+panel map is partially clipped — the split is binary). The tempting move is to
+drop it and watch +0.086 become +0.117. **That is fitting the panel to the
+plank and I am refusing it.** Research's own correction is why: jackpot does not
+harm the treatment — the treatment is flat there (0.675 vs 0.672) — **it is the
+CONTROL that gains (+0.159), because a corner ring hands the incumbent the same
+~0.65–0.68 ceiling the plank works to reach.** That is a real property of the
+plank (it is a ceiling-hitter), not a broken cell, and deleting the map would
+delete the evidence for it.
+
+**Disposition: v106 does not advance on this leg.** Not killed: the mechanism is
+real and the CI's upper half is worth n. The panel's MAP axis must be fixed
+before more games are pooled — **D22's disease on an axis nobody was watching:
+we audited the panel for opponent range and never once for whether the map
+admits the mechanism.**
+
+## PROCESS DELTAS FROM THESE TWO VERDICTS
+
+**D33. A BAR WITHOUT A NAMED ESTIMATOR IS NOT A BAR.** Four defensible
+estimators of the same quantity straddled LOKI-16's threshold inside 0.010.
+Whoever writes the prereg picks the estimator, in the prereg, or the leg
+resolves itself after the fact. Same family as D24.
+
+**D34. WE AUDITED THE PANEL FOR OPPONENTS AND NEVER FOR TERRAIN.** 20% of
+LOKI-16 ran on a map where the geometry the plank is defined on does not exist.
+D22 named the opponent axis; the map axis was invisible for the same reason —
+nobody asked whether the fixture ADMITS the mechanism. **PANEL2-CAL must gain a
+map-admission check before its results are used to build panel-2.**
+
+**D35. A LEG CANNOT READ ITS OWN STDOUT ON THIS PLATFORM.** LOKI-14's prereg
+specified decoding its arm from its own `print()` stream; 30,664/30,664
+`BotOutput` events come back with stdout empty. **The prereg was unexecutable as
+written and nobody could have known before firing it.** Every future prereg
+reads its arm from engine-side facts. `CLAUDE.md` corrected.
+
+**D36. A NUMBER IN CLAUDE.md THAT NOBODY CAN RE-DERIVE.** The 68.8% incumbent
+ring figure came from a 480-game local battery whose script is not in the tree;
+the live figure is 0.586. The reclassification it supports survives on the live
+number — **the citation does not.** Marked in place rather than quietly swapped,
+because the failure is that it was load-bearing and unreproducible for a day.
