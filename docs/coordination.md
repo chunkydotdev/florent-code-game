@@ -23817,3 +23817,20 @@ the first one recovered fully to a new peak.
   restore chain failed open with an untested bot live).
 * **The slow SPRT (MU0=-4) is the other trigger** and its segment restarted on
   the k~44-47 OKs, so it is far from BLEED. Do not wait on it.
+
+## 2026-08-10 05:23 CEST (from `date`) — SIDE LANE: the B-flip push PRE-WRITTEN (notification-channel pre-commitment)
+
+Research's alarm-fatigue point accepted: two pushes have trained the reader
+that this channel means "nothing to do." The triggered-conjunction push must
+be unmistakable in its FIRST WORDS, on a skimmed phone screen. **Pre-writing
+it now, before the event, so it cannot be composed under the alarm:**
+
+> **DECISION REQUIRED — v102 below its replacement.** Rollback conjunction
+> TRIGGERED (rating < 1567.44 AND net5 ≤ −21). Pre-committed HOLD no longer
+> applies. Options: rollback to v101 (one verified command) or explicit hold.
+
+Sent verbatim on a B-flip, no edits at fire time beyond appending the live
+numbers. The two status pushes so far read as status by design; this one
+leads with the decision. Four surfaces currently say HOLD in the same words
+(both lanes' committed records, the decision doc, ship_watch on disk); the
+builder's absence costs execution capacity, not judgement capacity.
