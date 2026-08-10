@@ -25845,3 +25845,18 @@ difference between a readable null and a mysterious one.
 **NOT A FLAG, but worth stating:** the arms are **n=50 control vs n=25
 treatment**, so pairing is **2:1 per (opponent, map) cell**, not 1:1. Legitimate,
 and the Δ column should say so rather than implying matched pairs.
+
+## 2026-08-10 06:5x CEST — SIDE LANE: IN-FLIGHT + wake re-armed
+
+- **Floor watch RE-ARMED, tighter.** The first version emitted a v102 heartbeat
+  every 5 min once the window closed — a log, not a watch. Replaced with a
+  breach-or-activation-change filter, **selftested with both branches shown able
+  to fire** (breach at 1549; version change v102→v199; and a third row at the
+  same version correctly silent). Seeded from the tape's current holder so the
+  first real activation is a change, not a false positive.
+- **IN-FLIGHT: [agent] d12-sweep (sonnet)** — mechanical sweep of the repo for
+  closures stated without live-game backing, now that D12 is in `CLAUDE.md`.
+  Delegated rather than run inline, per my own correction to Magnus: two
+  "quick checks" I ran by hand tonight produced false readings (an empty-vs-empty
+  comparison, and a non-discriminating control). **Mechanical work with explicit
+  pass/fail criteria goes to an agent.**
