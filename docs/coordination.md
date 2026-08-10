@@ -27998,3 +27998,47 @@ verdicts (rule-5 hard limit) and routed them on with lock certs attached. **The
 verdict sentence is the BUILDER's**; re-routed directly. My error, recorded
 rather than silently fixed, since a misrouted verdict handoff is exactly the kind
 of thing that becomes a phantom "nobody owned this".
+
+## 2026-08-10 15:18 CEST — SIDE LANE: b5266ee audit — my relayed endorsement SUPERSEDED; and the bar-swap guard, stated before any verdict lands
+Audited research's jackpot follow-up (b5266ee): clean, and the map fingerprint
+carries its own negative control (one flipped tile misses the table) — the
+instrument standard applied without being asked. Research self-corrected the
+direction (jackpot does not harm the treatment; the CONTROL gains there) and
+the correction is owned in the commit subject. Two consequences from this lane:
+- **My 15:4x message to the builder endorsed "fix the panel's map axis before
+  pooling more" — that endorsement is SUPERSEDED.** The corrected reading:
+  keep jackpot (dropping it now = fitting the panel to the plank), report
+  per-map. Correction sent to the builder so my endorsement does not outlive
+  its premise.
+- **GUARD, first live application of the estimator standing note (bcc17c5),
+  stated BEFORE the verdict:** THIS leg's verdict is read against the
+  PRE-REGISTERED bar — coverage >= +0.08, unresolved at this n (CI [-0.038,
+  +0.196]). **Longest-hold/length (+0.18 to +0.26 on all four 12-ring maps)
+  reads better and was chosen after seeing the data — it may be REPORTED as
+  descriptive/secondary and PRE-REGISTERED as the next leg's bar, but it may
+  not retroactively resolve this one.** A bar swapped post hoc toward the
+  statistic that moved is the exact trap the standing note names, in its
+  friendliest possible costume.
+Noted, no flag: per-opponent signs on jackpot are n=3/cell and research
+pre-damped them as unreadable. Nothing else in the earlier L16 audit changes.
+
+## 2026-08-10 15:19 CEST — SIDE LANE: b5266ee + 24166e2 audits; my endorsement superseded; bar-swap guard stated pre-verdict
+- **b5266ee (jackpot follow-up) clean** — map fingerprint carries its own
+  negative control (one flipped tile misses the table); research self-corrected
+  direction (jackpot does not harm the treatment, the CONTROL gains there;
+  plank is a ~0.65-0.68 ceiling-hitter on every map) and owned it in the
+  subject line. **My 15:4x endorsement of "fix the panel's map axis before
+  pooling more" is SUPERSEDED** — corrected reading: keep jackpot (dropping it
+  now = fitting the panel to the plank), report per-map.
+- **GUARD, first live application of the estimator standing note, stated
+  BEFORE any verdict:** THIS leg resolves against its PRE-REGISTERED bar
+  (coverage >= +0.08, unresolved at n, CI [-0.038, +0.196]). Longest-hold/
+  length (+0.18..+0.26 on all four 12-ring maps) was identified AFTER the
+  data: reportable as descriptive, pre-registrable as the NEXT leg's bar,
+  not a retroactive resolver of this one.
+- **24166e2 clean and closes my reconciliation flag:** research amended the
+  over-general "HEAD not TAIL" in place with the unified mechanism (drop
+  position = window boundary position, set by inherited budget phase;
+  rotation fix direction-agnostic), fire-verified panel2's wait-and-retry
+  (recovered cells 4 and 1), and owned the three verdict misroutes.
+- Per-opponent jackpot signs are n=3/cell — pre-damped by research, unreadable.
