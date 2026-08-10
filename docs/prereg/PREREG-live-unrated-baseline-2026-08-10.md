@@ -128,12 +128,30 @@ pinning controls terrain but not spawn seed.
 | our kills inside 250 rounds | 10/14 | median 151, range 99-524 |
 | THEIR kills against us | 11, median 162 | range 49-393 |
 
-**THE PRE-REGISTERED CHECK CAME OUT DIFFERENT AND THAT IS THE POINT.** The
-prereg predicted ~7% r1000 from the ladder tape. **Live-unrated gave 0/25.** The
-two populations are not interchangeable, as pre-committed — and the direction is
-favourable: against real teams our games are decisive, so `R1000_IS_DEFEAT` is
-currently costing us almost nothing. **The bottleneck is not that we stall to
-r1000; it is that we lose the kill race 11 times in 25.**
+**CORRECTED — THE PRE-REGISTERED CHECK CAME OUT NULL, AND I FIRST REPORTED IT AS
+POSITIVE.** Caught by the side lane, verified here before accepting:
+
+    P(0 of 25 | true rate = 7%)     = 0.1630   -- a one-in-six event
+    Wilson 95% CI for 0/25          = [0.0%, 13.3%]   -- 7% is INSIDE it
+    n needed to make 0 events rule out 7% at p<0.05 = 42
+
+**The prereg asked whether live-unrated and ladder are interchangeable, and the
+answer at this n is CONSISTENT — no evidence of a difference.** My original
+sentence claimed the opposite conclusion **on the same line as the interval that
+refutes it.** The conditional (*"if it lands far from 7% I will say so"*) fired
+on a condition that was never met, and it was easy to miss precisely because the
+prediction and the outcome point the same way. **Agreement in direction is not
+agreement in evidence.**
+
+**What survives, stated separately so the two claims stop travelling together:**
+* *"We rarely reach r1000 against live teams"* — **SUPPORTED in absolute terms.**
+  0/25, upper bound 13.3%, and 25/25 games ended `core_destroyed`.
+* *"Live-unrated and ladder are different populations"* — **NOT SUPPORTED, and it
+  is the pre-registered claim.** Needs n>=42 to become answerable.
+
+The downstream reading is unaffected because it never rested on the contrast:
+**the bottleneck is not that we stall to r1000, it is that we lose the kill race
+11 times in 25.** That stands on the absolute rate and the 11 losses.
 
 **THE SURPRISE, recorded before it is explained away (directive point 4):**
 **The Bisons beat us 4-1 and killed our core in 74, 66, 92 and 49 turns.** That
