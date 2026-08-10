@@ -585,3 +585,62 @@ vulnerabilities are systematically discoverable *downward* — the "rich downwar
 empty upward" asymmetry the tactics sweeps found independently — then the exploit
 hunt may be mining a seam that does not pay for climbing. **That is a question
 about the LOKI line's premise and it is Magnus's to answer, not a lane's.**
+
+---
+
+# AMENDMENT 7 — THE INTERPRETATION AT THE STOPPED DOSE. **THE BAR DOES NOT MOVE.**
+
+**Committed before the first accepted challenge decodes.** ADD-only: it forbids
+sentences, it does not touch the **≥5 CONFIRMED** bar, which stands exactly as
+written.
+
+Amendment 6 cut the dose. **I did not compute what that does to the evidence
+behind the bars, and it changes it a lot.** Re-derived by the builder at the
+STRICT rate (215.57/10k, Amendment 3) with the one-round-exposure floor:
+
+| throws | λ | P(0) | P(≥1) | P(≥3) | **P(≥5)** | mode |
+|---:|---:|---:|---:|---:|---:|---:|
+| 250 (body's projection) | 5.39 | **0.46%** | 99.5% | 90.5% | **62.5%** | 5 |
+| 150 (Amendment 6's gate) | 3.23 | **3.94%** | 96.1% | 62.7% | **22.5%** | **3** |
+| 160 (4 cycles, expected) | 3.45 | 3.18% | 96.8% | 67.0% | 26.5% | **3** |
+
+## 7a. A zero is an **8.6× weaker** refutation than the body advertised
+
+**The read-out must quote P(0) = 3.94% at the delivered dose and must NOT
+inherit the body's 0.46%.** The bars are unchanged; **the evidence behind them
+is not**, and that distinction is exactly what made the MDE finding matter this
+afternoon. A number that was true at one dose, quoted at another, is the same
+fault in a new place.
+
+## 7b. ⚠ THE ≥5 BAR IS ACTIVELY MISLEADING AT THIS DOSE — AND THE FIX IS A WORD, NOT A THRESHOLD
+
+**At λ≈3.2–3.5 the MODAL outcome is 3.** So the single most likely result, *even
+if the mechanism works exactly as the census measured it*, is **1–4 removals:
+below the pre-registered bar, while being overwhelming evidence the mechanism
+EXISTS** (P(≥1 | working) = 96%; and against a dead mechanism the interior arm's
+0/164 makes P(≥3) ≈ 0).
+
+**Writing that as "not confirmed" would be the D23 failure — a plank nulling on
+its own resolution floor rather than on the plank — committed KNOWINGLY, with
+the arithmetic in hand beforehand.** This project catalogued D23 this morning;
+repeating it after computing the numbers would be worse than the original.
+
+**BINDING INTERPRETATION, fixed before any result exists:**
+
+| result | how it MUST be written |
+|---|---|
+| **0** | the **only** outcome licensing refutation language — and still only in the scoped form Amendments 3b/4 require |
+| **1–4** | **"MECHANISM DEMONSTRATED; pre-registered bar not met at the delivered dose."** The phrase **"not confirmed" is FORBIDDEN** for this range |
+| **≥5** | CONFIRMED, carrying its rating range per Amendment 4, and **not a ship licence** |
+
+**Why this is an ADD and not a loosening:** the ≥5 bar keeps its full force —
+nothing below it may be called CONFIRMED. What is forbidden is the *opposite*
+error: reporting a 96%-likely-under-the-hypothesis result as though it were
+evidence against the mechanism. **A bar constrains what you may CLAIM; it was
+never a licence to mis-describe what you SAW.**
+
+**Credit and process note:** flagged by the side lane, arithmetic re-derived
+independently by the builder before adoption. **The cut that made this necessary
+was mine (Amendment 6), and I made it without computing its effect on the
+evidence** — the same class of omission as quoting an MDE from the wrong
+denominator, caught by another lane on the same day I catalogued it.
