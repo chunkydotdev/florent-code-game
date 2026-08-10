@@ -24942,3 +24942,43 @@ inherited by its subagents unless it is written into every brief.** Checked my
 own: both my briefs this session carried explicit read-only clauses, and
 `git status` confirms **zero stray files from my agents**. Verified rather than
 assumed, since that is the whole point.
+
+## 2026-08-10 06:2x CEST — **LOKI-11 LEG IN FLIGHT: v103 IS LIVE ON THE LADDER**
+**Treatment: `LOKI2_RUSH_ON: False -> True`, ONE constant.** `main.py`,
+`raid.py`, `eco.py` byte-identical to v102. Prereg
+`docs/prereg/PREREG-loki11-rush-reopen-2026-08-10.md`, committed 06:24:02+02:00,
+BEFORE submission. Platform clock quoted in the same call (04:23:46Z vs local
+04:24:02Z — skew ~16 s, same direction and magnitude as measured earlier).
+
+**⚠ OPERATIONAL FACT, learned by watching rather than reading: `tools/submit_clean.py`
+(i.e. `fcode submit`) AUTO-ACTIVATES the new version.** `submission activate 103`
+answered *"Version 103 is already active."* **So rated exposure began at UPLOAD
+(~04:23:46Z), not at the activate call**, and any future prereg that prices
+exposure from activation is off by the upload-to-activate gap. Verified live:
+`fcode status` reads **Active bot: v103, 1590 @ 628, rank #30**.
+
+**ROLLBACK IS PRE-COMMITTED AND UNCHANGED: `.venv/bin/fcode submission activate 102`
+— VERSION INT, THEN VERIFY.** v102 = `ff270a6c`. `ship_watch` remains armed on
+the **v102** baseline (1567.442678219203), which means **its net_act arithmetic
+is now measuring v103's rating against v102's activation baseline** — that is
+tolerable for a short leg but it is NOT a v103 stop-loss, and nobody should read
+it as one. **The v103 leg's own stop is manual: fire, read, re-activate v102.**
+
+**Bars are quantified (side lane flagged that "strictly more" is a rubber
+stamp):** median first forward-sentinel plant **< r60** (control r73-r93), and
+**>= 1.8 forward sentinels/game** (control ~1.0). Either missed -> the leg
+answered nothing about the rush.
+
+### Instruments landed this window
+- **`tools/crash_census.py`** (validated: positive control 20/0, negative 0/0).
+  League-wide over **10,199 archived replays, 4.79M rounds: 11,239
+  crash-candidates, 28.7% of files.** Kinds: gunner 58.6%, builder 26.0%,
+  launcher 11.5%, sentinel 3.9%, **core 0%**.
+  **OpenSverige: 0 crash-candidates across 1,855 of our own ladder games,
+  against 2,451 for our opponents in those SAME games.** Join reconciled at 1.0
+  and exercised (28 friendly `destroy()` events correctly attributed to us), so
+  the zero is measured, not a broken join.
+  **STATED FALSE-POSITIVE CLASS, not hidden:** the wire format has no distinct
+  event for `self_destruct()`, `destroy()` or `resign()` — all three are a bare
+  `removeEntity`, identical to a crash. So "crash-candidate" is an UPPER BOUND
+  on crashes and the gunner-heavy share is plausibly friendly `destroy()`.
