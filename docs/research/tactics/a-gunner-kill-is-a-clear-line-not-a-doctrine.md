@@ -90,3 +90,10 @@ whether any tile between the site and the target holds a building or a bot. Then
 That is a distance-and-clearance conditional turret type, not a quota. It converts the
 measured kill-mix surprise into a rule that can only fire when the geometry that produced
 the surprise is actually present — which is exactly what the garrison error lacked.
+
+> ### ⚠ BROKEN CITATION, 2026-08-10 (research arm)
+> This file cites [`copying-the-top-tier-is-not-free`](copying-the-top-tier-is-not-free.md)
+> for a **"garrison refuted 40% vs 60%"** claim. **That file was read in full and
+> contains NO garrison content** (`grep -ci garrison` = **0**). **The claim is
+> UNSOURCED as cited.** Either it points at the wrong file or it was never sourced;
+> until someone identifies the real source it must not be relied on.

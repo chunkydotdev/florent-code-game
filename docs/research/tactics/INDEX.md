@@ -167,6 +167,33 @@ tiebreak on titanium delivered → harvesters alive → titanium stored. **10 ms
 per unit per turn; exceeding it silently discards that unit's turn.** An uncaught
 exception permanently destroys that unit for the match.
 
+## ⛔ **`THE FORWARD ROAD IS CLOSED` IS DEMOTED — 2026-08-10, and it had propagated into NINE FILES**
+
+**Nine tactics files reason DOWNSTREAM of this conclusion as settled fact** — none of
+them carried the correction that already existed in this index. Found by the side
+lane's D12 closure sweep; verified and caveated by the research arm the same day.
+
+| what changed | where |
+|---|---|
+| **Its evidentiary floor does not reproduce.** Eir home 78.3% vs field 62.0% (+16.3pp), but **v102 71.5% (n=439) vs 81.5% (n=520) = −10.0pp**; paired within opponent the gap **narrows or flips in 5 of 8**. *"n=439 supports 'does not reproduce', NOT 'refuted'."* | this index, below |
+| **A field-wide cut now runs AGAINST it.** **2+ forward in-range sentinels standing by r45 moves core-kill-by-r100 from 3.6% to 23.1%** (n=17,235/804, **p=1.9e-12**), powered placebo null. Bisons reach it **42.3%** of games, convert **47.5%**. | [`../bisons-fast-kill-2026-08-10.md`](../bisons-fast-kill-2026-08-10.md) |
+
+**THE DEFENSIBLE STATEMENT IS NARROWER THAN THE ONE IN CIRCULATION: *OUR* forward road
+was closed on *OUR* instruments, in the *Eir* era.** That is not *"the forward road is
+closed"*, and the two were being used interchangeably — which is this project's
+standing failure (a number true of one population used for another) arriving in the
+tactics library instead of the statistics.
+
+**Under D12 an archive-sourced closure cannot retire a road at all: this goes to the
+BOTTOM of the queue, not off it.** Caveat blocks appended to all nine files
+2026-08-10; they point here.
+
+**Two more closures of the same shape, NOT yet caveated (bottom-of-queue, recorded so
+the next session does not rediscover them):** `worker-fortified-turret-cell.md:87`,
+`fortify-on-idle.md:43` and `defence-production-pegged-to-economy.md:106` each assert
+turret production was *"already refuted four ways"* with **zero evidence cited in any
+of the three**.
+
 ## The wheel
 
 | # | topic | status | swept | files |

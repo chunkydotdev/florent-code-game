@@ -94,3 +94,10 @@ somewhere a sentinel could not have gone (see
 [`a-gunner-kill-is-a-clear-line-not-a-doctrine`](a-gunner-kill-is-a-clear-line-not-a-doctrine.md)).
 If their gunners sit where either turret would work, the mix is an artefact of something
 else and copying the ratio buys nothing.
+
+> ### ⚠ BROKEN CITATION, 2026-08-10 (research arm)
+> This file cites [`copying-the-top-tier-is-not-free`](copying-the-top-tier-is-not-free.md)
+> for a **"garrison refuted 40% vs 60%"** claim. **That file was read in full and
+> contains NO garrison content** (`grep -ci garrison` = **0**). **The claim is
+> UNSOURCED as cited.** Either it points at the wrong file or it was never sourced;
+> until someone identifies the real source it must not be relied on.

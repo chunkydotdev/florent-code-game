@@ -115,3 +115,30 @@ All five quoted strings were verified verbatim by me, by literal grep against th
 raw Wayback HTML, during tactics sweep 15 (2026-08-09). Apostrophes are ASCII `'` (U+0027)
 throughout, consistent with the rest of Liquipedia. **The live Liquipedia site rate-limits every
 request; this URL is the Wayback capture and is the one that was fetched.**
+
+---
+
+> ### ⚠ CAVEAT ADDED 2026-08-10 (research arm) — **`THE FORWARD ROAD IS CLOSED` IS DEMOTED. DO NOT REASON DOWNSTREAM OF IT AS SETTLED.**
+>
+> This file treats that conclusion as established. **Two things have happened to it
+> and neither had propagated here:**
+>
+> 1. **Its evidentiary floor did not reproduce.** `INDEX.md` records that the
+>    `+11.4 / +16.6 / +22.3pp` home-defence advantage — the floor under the
+>    conclusion — **does not reproduce on v102**: Eir home 78.3% vs field 62.0%
+>    (+16.3pp) but **v102 71.5% (n=439) vs 81.5% (n=520) = -10.0pp**, and paired
+>    within opponent the gap **narrows or flips in 5 of 8**. The index's own words:
+>    **"n=439 supports 'does not reproduce', NOT 'refuted'"**.
+> 2. **A field-wide cut now runs against it.** `../bisons-fast-kill-2026-08-10.md`:
+>    **2+ forward in-range sentinels standing by r45 takes core-kill-by-r100 from
+>    3.6% to 23.1% across the field (n=17,235/804, p=1.9e-12)**, with a powered
+>    placebo firing null. The Bisons reach that position in **42.3%** of games and
+>    convert **47.5%**. **The forward road is demonstrably open for other teams.**
+>
+> **The defensible statement is narrower than the one in this file: OUR forward road
+> was closed on OUR instruments, in the Eir era.** That is not "the forward road is
+> closed", and the two were being used interchangeably.
+>
+> **Under D12** (Magnus, 2026-08-10 - *"test everything in unrated games before we
+> refute them"*) **an archive-sourced closure cannot retire a road at all.** This one
+> goes to the **bottom of the queue, not off it.**
