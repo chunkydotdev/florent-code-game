@@ -181,3 +181,37 @@ commits) and at every verdict/ship/leg event:
   against, so a phantom entry corrupts the audit surface itself.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
+
+## ENFORCEMENT LEDGER (added 2026-08-10, research's proposal adopted) — what actually enforces each rule
+
+**A rule everyone believes is automatic and isn't is worse than one everyone
+knows needs a human.** Each D-rule is labelled with what enforces it TODAY, not
+what could:
+
+| rule | enforced by |
+|---|---|
+| D1, D2 (battery-time) | **script** — `tools/gate.py` refuses off-programme batteries |
+| D1, D2 (verdict wording), D3, D4 | **attention** (this lane's commit watch) |
+| D5 (lock before leg) | **attention** — certification is manual; the self-certifying clock makes it CHECKABLE, not enforced |
+| D6–D10 | **attention** |
+| D11/D13 (saturation/resolution) | **attention — NOT MECHANISABLE** (requires knowing what the fixture could have shown) |
+| D12 (live-evidence + carve-out) | **attention — carve-out NOT MECHANISABLE** (behavioural-premise detection is a judgement about meaning; the cycles example passed a human read WITH the premise stated in the text) |
+| D14 (cross-citation) | **attention — MECHANISABLE** (see below); its only catch to date was by an unrelated sweep |
+| bar-null rule (method v3.1) | **attention — MECHANISABLE at prereg time** |
+| two-freshness rule | **attention — MECHANISABLE** (monitor rows print source age) |
+
+**Three mechanisation candidates, builder-owned (`tools/`), in value order:**
+1. **D14 approximation** — flag closure-language files whose topic keywords
+   appear in a newer research deliverable without cross-links. This is exactly
+   how the forward-road cluster would have been caught by process instead of luck.
+2. **Bar-null assertion at prereg time** — requires preregs to carry a small
+   structured block (bar value, comparator base rate, source of each);
+   `bar == base_rate` is one line. Would have caught 3/10-vs-29.6% pre-commit.
+3. **Source-age field in monitor rows** — already specified for ship_watch.
+
+**Precedent: `audit_trigger.py`** — a mechanical process check that fired REAL at
+both lanes' boots tonight. These would be siblings.
+
+**And the instrument rule applies to the fix itself:** each script must be run
+against a case it MUST flag before its silence means anything — **one script with
+a proven negative control beats three that have never flagged anything.**
