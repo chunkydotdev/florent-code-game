@@ -25515,3 +25515,67 @@ rule an hour before that. **An auditor's own output is not audited by the act of
 auditing others**, and this lane has no external reader. The only available guard
 is to run the checklist against my own docs at the moment I invoke it against
 someone else's.
+
+# ============================================================================
+# 2026-08-10 06:4x CEST — **MAGNUS: THE LIVE-EVIDENCE STANDARD.** Verbatim, and
+# it raises the bar on REFUTATIONS, not just on claims. Watch item D12 added.
+# ============================================================================
+
+> *"Every statement needs backup from real games so we need to test everything
+> in unrated games before we refute them, we never know if we will be surprised
+> by something because only playing on our Chambers is an echo loop, out there
+> is the truth"*
+
+**THIS IS NOT A RESTATEMENT OF `FIXTURE_OF_RECORD: live_unrated`. IT IS STRICTLY
+STRONGER, AND IT POINTS AT THE OPPOSITE END OF THE PIPELINE.** The existing field
+governs how a plank is CONFIRMED. This governs how a road is CLOSED. *"Test
+everything in unrated games BEFORE WE REFUTE THEM."*
+
+**D12 (new watch item): A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS,
+NOT A REFUTATION.** Any claim that a road is closed — mechanism dead, price too
+high, treatment does not bind — must name the live-unrated games that closed it.
+Arena batteries, corpus statistics, source reads and engine probes may
+PRIORITISE, and may establish rules-level impossibility, but they may not RETIRE
+a road. Anchor: this directive.
+
+**A carve-out I am stating so the rule is usable rather than absolute:** a
+**rules-level impossibility** established on the engine ("`self_destruct` deals 0
+damage"; "conveyors have out-degree 1, so cycles cannot exist") is not an echo
+loop — it is the game's own definition, and no number of live games can overturn
+it. **The echo loop is behavioural inference from opponents we WROTE or from our
+own history. That is what needs live backing.** Where a closure mixes both — an
+engine fact plus a behavioural inference from it — **the inference half needs the
+live test**, which is exactly how the barrier-form spawn lock failed (an engine
+fact about friendly bodies, plus an untested inference about enemy behaviour).
+
+### IMMEDIATE CONSEQUENCE: MY OWN NIGHT'S WORK IS RELABELLED
+
+**Every refutation this lane published today rests on the archive or on source
+reads. Under D12 none of them are refutations.** Relabelling, unprompted:
+
+| my claim today | what it actually rests on | status under D12 |
+|---|---|---|
+| pre-empting a scripted plant tile is dead | archive (41 Bisons signatures) | **untested hypothesis** |
+| "we plant furthest from the enemy core" | archive, Eir-dominated, sub-100-kill conditioned | **untested hypothesis** |
+| the six roads' verdicts (REOPEN / REPRICE / CLOSED) | archive + source archaeology | **PRIORITISATION ONLY** |
+| siphon STAYS CLOSED | archive + arithmetic | **downgraded** — no live games ever tested it |
+| launcher throws are not the fast-kill mechanism | archive covered zeros | **untested hypothesis** |
+
+**The six-roads audit's own headline was that not one of the six rested on a live
+leg. D12 says the audit's own verdicts do not either.** The audit remains useful
+for exactly what Magnus's directive permits it to be — **a queue order** — and it
+must not be cited as having closed or reopened anything on its own authority.
+
+### AND THE OBJECTION TO THIS DIRECTIVE JUST DIED, MEASURED TONIGHT
+
+The standing reason to prefer analysis over legs was cost: a live leg was priced
+at **~2–3 rated ladder matches** of exposure. **Measured on the LOKI-11 window:
+the true cost was ZERO** — all eight surrounding ladder matches were `ourver=102`,
+v103 never played a rated game, because ladder pairings land ~10 minutes apart and
+the activation window was shorter than one interval.
+
+**So "test everything live" is not expensive. The binding constraint is
+THROUGHPUT, not rating:** 5 matches per 10 minutes = **150 games/hour**, shared
+across `unrated` and `test`. **That makes prioritisation MORE important, not
+less** — the audit's queue order is the scarce good now, and the cost argument
+against firing legs is gone.
