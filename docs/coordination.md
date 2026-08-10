@@ -28317,9 +28317,19 @@ established — `ship_watch` printing `RULE=held` off a 45-minute-stale tape,
 one is worse in kind: **the others misreport a fact, this one misreports whether
 any other fact is knowable.** A wrong currency number is one bad row; a wrong
 resolution claim silently validates every row on the page. Computed now
-(`2.802*sqrt(0.25*(1/n1+1/n2))` on LIVE cells): this fixture's real MDE is
-**21.7pp**, so **every 18pp-class claim fired today sat below the panel's own
+(`2.802*sqrt(0.25*(1/n1+1/n2))`): this fixture's worst-case MDE on **ALL cells**
+is **19.5pp**, so **every 18pp-class claim fired today sat below the panel's own
 resolution.** p=0.303 was the expected output, not bad luck.
+**⚠ CORRECTED WITHIN THE SESSION: this delta first published 21.7pp, computed on
+"live cells" — a denominator selected by the leg's OWN OUTCOMES**, which is the
+same select-on-the-dependent-variable fault the line exists to catch. Research
+caught it, the side lane confirmed it, and both of us had published the number.
+**The claim survives; the margin is 1.5pp, not 3.7pp.** `leg_read.py` now takes
+the live-cell set as an input and labels the derived path POST-HOC in its output.
+**The delta about the delta: a fix for a fault can carry the fault. The
+replacement for a hardcoded resolution claim was a computed one whose
+denominator was chosen by the outcome — better, and still wrong in the same
+family.**
 *(Framing owed to the research arm, who named it as the same family before I did.)*
 
 **D38. MOVING A CHECK EARLIER CONVERTS IT INTO A SELECTION, AND A SELECTION NEEDS

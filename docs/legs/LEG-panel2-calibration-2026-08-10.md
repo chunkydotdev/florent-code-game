@@ -170,8 +170,27 @@ banked arms rather than asserted:
 | **no bar given** | *(omitted)* | neither verdict | `(pass --bar <pp> to check the leg ...)` ✅ |
 
 **The finding that fell out of the demonstration, and it is the audit's central
-claim made concrete:** the LOKI-14 arm against the control reads
-**MDE 21.7pp on live cells (n=60/135)**. **An 18pp bar is BELOW that.** So the
+claim made concrete** — ⚠ **CORRECTED, see below**: the arm against the control
+reads **MDE 19.5pp worst-case on ALL cells (n=75/165)**. **An 18pp bar is BELOW
+that**, by **1.5pp**.
+
+> **CORRECTION (s28, same session).** This section first published **21.7pp**,
+> computed on "live cells" — **and that denominator was chosen by THIS LEG'S OWN
+> OUTCOMES.** Selecting the denominator of a resolution claim on the dependent
+> variable is the same fault this line exists to catch, caught by the research
+> arm and confirmed by the side lane. **The quotable figure is the ALL-cells
+> 19.5pp; the claim survives and its margin shrinks from 3.7pp to 1.5pp.**
+> The obvious escape was checked and is not there: at the arm's observed share
+> (~0.52) the worst-case `p(1-p)=0.25` bound is essentially tight (19.4pp at
+> 0.45, 18.6pp at 0.35), so the true MDE is not materially below the bound.
+> `leg_read.py` now takes the live-cell set as an INPUT (`--live-cells`, from
+> PANEL2-CAL's admission verdict) and **labels the derived path POST-HOC in its
+> own output** when none is supplied.
+> One point the tool cannot see, in the original figure's favour: the cell it
+> dropped was The Bisons at 13.3%, independently inert across four prior windows
+> (0,0,0,0) — so that particular exclusion was not purely outcome-driven. **The
+> tool cannot know that, which is exactly why the set must come from the
+> calibration rather than from the leg.** So the
 18pp-class claims this project has been firing all day sit *underneath* the
 resolution of the fixture they were fired at — which is why p=0.303 was the
 expected output rather than a surprise, and why the same p-value has now been
