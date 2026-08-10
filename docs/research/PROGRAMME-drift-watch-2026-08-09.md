@@ -181,3 +181,16 @@ commits) and at every verdict/ship/leg event:
   against, so a phantom entry corrupts the audit surface itself.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
+
+- **D14 — A CLOSURE AND A POSITIVE RESULT ON THE SAME QUESTION MUST BE FORCED TO
+  CITE EACH OTHER, or the library holds both indefinitely (research arm's
+  formulation, 2026-08-10, adopted into this checklist at their suggestion).**
+  Tonight the tactics library asserted *"THE FORWARD ROAD IS CLOSED"* across nine
+  files while the same repo held a field-wide result running directly against it
+  (**3.6% → 23.1%, p=1.9e-12**, `9f8280a`). **Neither document was wrong about its
+  own population. What was missing was any mechanism that makes two documents on
+  one question meet.** The index is that mechanism and it failed — the correction
+  to the closure's evidentiary floor was IN the index, and the nine files never
+  consulted it. **It took an unrelated D12 sweep to notice, which is luck, not
+  process.** Watch form: when a positive result lands, ask what closure it
+  contradicts; when a closure is cited, ask what result would embarrass it.
