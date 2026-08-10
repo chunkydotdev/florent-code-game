@@ -115,14 +115,31 @@ Size is not anti-correlated with their speed; it barely matters to it.
 | heart | **UNSTATED** | **92** | THEM |
 | moonrise | **UNSTATED** | 99 | US |
 
-**The Bisons are SIZE-INSENSITIVE and uniformly fast: 4 for 4 under 92 turns
-across maps spanning 16×16 to 26×26.** Our own kill turns in the same block span
-**99–524** with no clean size relationship at all. **Map size costs them almost
-nothing and costs us a great deal** — that asymmetry is real, survives both
-corrections, and is what makes the lead worth studying rather than dismissing as
-a small-map artifact. **Explicit: moonrise and heart are NOT in the pinned set and
-their sizes are unstated — the table is only partially size-controlled and must
-not be read as a size-controlled series.**
+**THE FINDING IS FLATNESS, NOT SLOPE** (sharpened by the builder, whose
+correction crossed with this retraction — we converged on the same fix
+independently, from different arithmetic):
+
+    BISONS: 49-92 turns across a 4.0x map-AREA range (jackpot 256 -> snowflake 676)
+            corr(area, turns) = +0.62 over their 4 kills -- n=4, means nothing alone
+    US    : 118-524 turns, median 151, corr(area, turns) = -0.04 (n=14)
+
+**Map size does not anti-explain them. It does not explain them either.** What is
+anomalous is that kill time barely responds to a 4× area change **when
+distance-to-core scales with map size** — so whatever they do is **not
+distance-limited**. And the blunt comparison: **their SLOWEST kill (92) is faster
+than our MEDIAN (151).** Our own times on the same terrain are 118, 132, 140, 147,
+148, 154, 215, 248, 260, 261, 298, 524 — **we are not slow-and-consistent, we are
+slow and enormously variable, where they are fast and flat.**
+
+**Explicit: moonrise and heart are NOT in the pinned set and their sizes are
+unstated — the table is only partially size-controlled and must not be read as a
+size-controlled series.**
+
+**METHOD NOTE, banked because this is the hour's third instance across two lanes**
+(my `scoreA`/`scoreB` seat flip; the builder's 0/25 conditional; this
+size claim): **all three were a correct number attached to the wrong subject** —
+D16's fault, still live. **The guard that catches it costs thirty seconds: sort
+the table by the axis you are claiming a relationship on, and look at it.**
 
 **THIRD, THE CROSS-OPPONENT RATIOS ARE WITHDRAWN.** "Snowflake: 66 (Bisons kill
 us) vs 148 (us kill Leviathan)" shares **only the map**. Attacker AND defender
