@@ -121,6 +121,36 @@
 ##   will be recorded and NOT acted on until then. That is the honest answer;
 ##   the rollback is one command (`fcode submission activate 101`).
 
+## ===== PRE-COMMITTED ROLLBACK DECISION — written at k=34 BEFORE the rule fired =====
+##   Written 2026-08-10 02:2x CEST with `slot_free` **False** and net5 **-18.0**
+##   against a **-21** threshold, deliberately BEFORE any alarm, so the decision
+##   is not fitted to the moment it is needed. Rollback target **v101 confirmed
+##   `ready` on the platform** (v100, v99 also ready).
+##
+##   **IF `corpus/SHIP_ALERT` APPEARS, THE ANSWER IS: HOLD, AND HERE IS WHY.**
+##   1. **`slot_free` is a PERMISSION AND A WAKE, never a verdict** — ship-gate
+##      amendment, and the rule's own docstring. It permits a swap; it does not
+##      order one.
+##   2. **The arm has run 1567 -> 1600 -> 1572 -> 1616 -> 1593.** It has already
+##      made one full round trip through a **-28** drawdown and a net5 of
+##      **-19.0** — two points from the threshold — and recovered to a new peak
+##      without intervention. A stop-loss that fires on the second such excursion
+##      is firing on variance we have already watched reverse once tonight.
+##   3. **Level, not slope: +25.6 from the corrected activation baseline.** v102
+##      is well above where it started. Rolling to v101 would give that up.
+##   4. **The Powerpuff pair is the standing calibration**: same two bots, same
+##      versions, 4-1 then 1-4 eighty minutes apart. Single-match swings of this
+##      size occur with NOTHING changed on either side.
+##
+##   **WHAT WOULD CHANGE THE ANSWER, stated now so it cannot be invented later:**
+##   a **sustained** decline — net5 at or past -21 **and** net-from-activation
+##   turning **negative** (i.e. below 1567.4), **or** the slow SPRT bound
+##   (MU0=-4) accepting BLEED, which is the instrument built tonight precisely to
+##   catch a drift the -21 window cannot see. **Any one of those is a roll.**
+##   **Rollback command: `.venv/bin/fcode submission activate 101`** — takes a
+##   VERSION INT, not an id, and VERIFY it afterwards (s25 D9: an id-based
+##   restore chain failed open with an untested bot live).
+##
 ## ===== ⛔ THE STANDING CONTEXT DESCRIBES EIR, NOT THE BOT YOU ARE RUNNING =====
 ##   The replay archive is **~92% Eir** (1,580 Eir games vs 130 LOKI-8), so every
 ##   figure in the tactics library and in this file's older blocks is an EIR
