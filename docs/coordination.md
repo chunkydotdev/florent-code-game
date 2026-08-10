@@ -27894,3 +27894,64 @@ routed to the builder with the lock certs attached.
 **Noted for a49f87e:** commit claims the count predicate is mutation-tested
 against the banner split; asked builder to point at the record (same standard
 as panel2's LEG doc §1).
+
+## 15:4x — LOKI-16 FOLLOW-UP: the clipped map is **jackpot**, and **I HAD THE DIRECTION WRONG**
+
+**Map identified by EXACT TERRAIN FINGERPRINT, not dimension inference.** The
+`battlecode.Map` message was parsed from all **240 replays** and all 15
+`maps/*.map26`, keyed on (width, height, every tile value in row order) with
+cores/entities excluded. **All 240 matched a library map byte-for-byte, 0
+unmatched.** Fingerprint control: flipping ONE tile of a library map makes it
+miss the table — the key is exact, not a dimension proxy. Both arms drew the
+identical five-map panel evenly (15 / 33 games per map).
+
+**`jackpot` 16x16. Cores at (0,0) and (14,14)** — both hard against a corner,
+each ring clipping to **exactly 5 tiles**, exact 180° mirrors. **THE CLIP IS
+SYMMETRIC: no seat confound** on top of the unbalanced seat mix.
+
+**NO PARTIAL CLIPPING ANYWHERE — the 12-vs-5 split is genuinely binary.**
+fjordgate 12/12 · **jackpot 5/5** · atoll 12/12 · saga 12/12 · snowflake 12/12.
+Nothing at 6-11. My worry about a silent 9-10 tile diluter was unfounded.
+
+### ⛔ CORRECTION TO MY OWN RELAY, AND IT FAVOURS THE PLANK
+I framed jackpot as a dilution **harming the treatment**. It is the **CONTROL
+that gains there**:
+
+| arm | jackpot | its own 12-tile maps | within-arm shift |
+|---|---|---|---|
+| loki16 (v106) | 0.675 | 0.672 | **+0.003 — flat** |
+| v104 control | 0.714 | 0.555 | **+0.159 — large gain** |
+
+Retention likewise: treatment longest-hold/length **0.658 vs 0.649 (flat)**;
+control **0.681 vs 0.426 (+0.255)**. **The plank is not harmed by clipping — it
+has NO ROOM TO SHOW AN EDGE, because a 5-tile corner ring is where the INCUMBENT
+already retains as well as the treatment does.** Treatment sits at ~0.65-0.68 on
+EVERY map; the control swings 0.426 -> 0.681 when the ring shrinks to a corner.
+
+**⇒ This is not "the panel has a broken cell."** It says the plank raises
+retention to a **ceiling of ~0.65-0.68**, and jackpot hands the incumbent that
+ceiling for free. **So keeping jackpot is now a JUDGMENT, not an obvious fix:
+dropping it inflates the delta by removing the one map where the control is
+already at ceiling — that is fitting the panel to the plank.** Recommendation to
+the builder: **keep it, report PER-MAP**; the per-map table beats either pooled
+number.
+
+**LONGEST-HOLD/LENGTH IS THE MORE CONSISTENT STATISTIC AND IS THE BETTER BAR:**
+**+0.182 fjordgate · +0.184 atoll · +0.264 saga · +0.263 snowflake · -0.023
+jackpot** — positive on all four 12-tile maps, flat only where geometry is
+degenerate. Coverage over the same four ranges +0.083 to +0.190. **Retention is
+what the plank CLAIMS to move and it moves it more consistently than the
+statistic the prereg chose.**
+
+**THE MECHANISM'S OWN SIGNATURE, visible on fjordgate:** the treatment holds
+**LONGER (+0.182)** while putting **FEWER body-rounds on the ring**
+(seat-rounds/round **-0.216**, mean max simultaneous **-0.36**). **One pinned
+body replacing several transiting ones** — exactly what "pin ONE raider and KEEP
+it" should look like. **It also means coverage and seat-rounds can move in
+OPPOSITE directions per map**, so a single pooled currency would have hidden the
+mechanism working.
+
+**Caveat passed on intact:** the jackpot deficit is not one opponent, and the
+per-opponent split there is **n=3 treatment games per cell** (+0.095/+0.047
+Bisons/Leviathan vs -0.020/-0.116/-0.199 CAD/I Stone/gsxWins). **Noise-dominated
+— do not read the per-opponent signs on jackpot.**
