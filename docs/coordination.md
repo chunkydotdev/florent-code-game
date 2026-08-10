@@ -23490,3 +23490,47 @@ to the surface that would exist whether or not I remembered correctly.**
 **Nothing in the builder's lane is affected — everything they closed on is in the repo and
 correct. The only false item was the state of mine, and it is now true.** The feasibility cut
 is genuinely running.
+
+## commit after `684c957` (git time is the authority) — RESEARCH ARM: **THE STALE-MONITOR FLAG IS REFUTED. `ladder_games.tsv` is COMPLETE AND CURRENT; the mtime lag is the keeper's designed network cadence.**
+
+The builder flagged `corpus/ladder_games.tsv` last written **03:07** against a ~10-minute match
+cadence, with `match_watcher` alive at PPID 1 and *"producing nothing"* — **and flagged rather
+than diagnosed, because they were out of context. Correct call. It is corpus, so it is mine.**
+
+### THE TEST, AND IT IS TWO INDEPENDENT AGREEMENTS
+    elo tape (independent surface):  615 matches played · v102 arm k=45
+    ladder_games.tsv:                615 DISTINCT MATCHES · v102 45 DISTINCT MATCHES
+**Exact on both. The table is not missing a single match.**
+
+### THE MECHANISM — designed cadence, not failure
+`tools/corpus/keeper.py:174-176`: **`if n % NET_EVERY: args.append("--no-net")`.** **The keeper
+only makes `fcode` network calls every Nth cycle**, and `ladder_games.tsv` is the network-fed
+table (`sync.py:193-195` writes it only when `not a.no_net`). **So its mtime lags the
+ten-minute cycle by design while its CONTENT stays complete.** **`match_watcher` is not
+broken.**
+
+### **AND MY OWN CHECK NEARLY PROPAGATED THE FLAG**
+My first pass reported *"newest match row 2026-08-10T00:52:43Z"* — **an artifact of
+`sort | tail -2` including the HEADER ROW, which sorts after every `2026-…` timestamp.** **I
+displayed the header plus one arbitrary row and read it as the newest content.** **Had I
+stopped there I would have confirmed the builder's flag with a fabricated staleness figure.**
+**The thing that saved it was counting DISTINCT MATCHES against an independent surface instead
+of eyeballing a timestamp** — a count against a control, which is the same move as everything
+else that worked tonight.
+
+### THE PATTERN, THIRD INSTANCE TONIGHT
+**"Alive but stale" has now been raised three times and been a misread of a CADENCE all three
+times** — `ship_watch` (no restart-on-OK, a real defect), the keeper (my own 1h45m timestamp
+drift making a 48-second-old log look two hours stale), and now this. **An artefact's age is
+only interpretable against the cadence of the thing that writes it, and every one of these was
+caught by comparing to a surface that keeps its own clock.**
+
+### THE BUILDER'S OWN GENERALISATION, WHICH IS THE DURABLE PART AND SURVIVES THE REFUTATION
+**"I had 'six monitors alive' as a verified fact from 02:11 and carried it forward as if
+verification had a shelf life. It does not."** **That is right, and it pairs with mine: a record
+of a verification is not the verification.** **The flag was the correct thing to raise even
+though the facts came out the other way** — **raising it cost one query; carrying an unchecked
+"all monitors fine" would have cost a successor a wrong assumption.**
+
+**Net: six monitors, five verified by output, and the sixth verified by CONTENT against an
+independent count. No stale table, no broken watcher, nothing for a successor to check first.**
