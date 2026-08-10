@@ -24253,3 +24253,17 @@ failed, which is worth knowing and off the critical path.
 
 **ALL THREE LANES ARE NOW DOWN.** Only the six detached monitors remain, and
 nothing wakes a session.
+
+# ============================================================================
+# 2026-08-10 05:5x CEST — **s27 BUILDER BOOT** — IN-FLIGHT REGISTRY
+# ============================================================================
+- Boot verified: 6 detached monitors alive (elo_logger 25811, match_watcher
+  25942, opp_watcher 25943, replay_archiver 25944, keeper 89444, ship_watch
+  66915 armed on baseline 1567.442678219203). `corpus/SHIP_ALERT` ABSENT.
+  test_instruments 14/14 OK; corpus_sanity clean (6 known-dead columns only).
+- **`audit_trigger` FIRES 2/5** (ship cadence 0.35/hr; cross-lane analysis
+  15.05 = 316 analysis docs / 21 decision rows in 24h). Spawning the mandated
+  short-lived AUDIT subagent (opus, no stake in the queue).
+- IN-FLIGHT: [agent] audit-instruments (opus) — instrument audit, reports once.
+- IN-FLIGHT: [builder] LOKI-10 wiring pass (queue item 1) — call the route
+  guard at raid.py + launcher emplacement sites, then the mirror predicate.
