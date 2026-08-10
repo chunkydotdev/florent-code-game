@@ -27429,3 +27429,29 @@ and cost scale cannot be inflated by an enemy.**
 five-cell fixture where three cells cannot move. `PREREG-panel2-calibration`
 is committed and its arm has **fired 0 matches** — it is the first thing to run,
 and until it does, every currency verdict inherits a two-cell denominator.
+
+### WRAP ADDENDUM — two things surfaced at the final verification
+
+**1. `slot_free` FIRED AT WRAP AND THE ANSWER IS HOLD.**
+`v104 k=32 rating=1664 net5=-31.0 armed=True slot_free=True`. The
+pre-committed rule is a **CONJUNCTION**: `net5 <= -21` **AND** `net_act < 0`.
+**net_act is +49.0** (1664 against the 1615 activation baseline), so the
+conjunction is **FALSE** and the standing decision is **HOLD**. `slot_free` is a
+**PERMISSION AND A WAKE, NEVER A VERDICT** — v104 is 49 points above the rating
+it was handed. Recorded here so a successor seeing `slot_free=True` does not
+read it as an instruction.
+
+**2. FIXING THE TEST RUNNER EXPOSED A TEST THAT HAD BEEN FAILING ALL ALONG.**
+`test_does_not_fire_on_a_normal_shipping_day` **FAILS**: a 12-activation,
+20-hour day reads as a cadence STALL, i.e. **`audit_trigger`'s ship-cadence
+signal would summon an audit on a normal working day.**
+**It was inside the 18 tests the boot procedure silently skipped**, so it has
+been red for an unknown length of time while every boot block recorded
+"14/14 OK".
+**AND IT BEARS ON THIS SESSION DIRECTLY: `audit_trigger` FIRED 2/5 at my boot,
+one of the two being ship cadence.** The audit it summoned found real defects
+(19%-power prior art, the currency with three denominators), so this does not
+retract the audit — **but one of the two signals that summoned it is
+miscalibrated, and the test that says so was hidden by the very defect I fixed
+an hour later.** Left RED deliberately: a red check that names its own
+miscalibration is worth more than a green one that was never run.
