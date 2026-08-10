@@ -27041,3 +27041,35 @@ nothing.** Flagged to builder: commit the prereg (n=100, single confirmatory
 test declared, v3.2 live-derived, two-clock) BEFORE the arm's first window.
 State note: v104 is k=6, still in break-in as fanout's control — fine for the
 panel core_kill_share comparison; break-in watches stay up until k≥8.
+
+## 2026-08-10 10:5x CEST — SIDE LANE: LOKI-16 (ring-body denial) PREPARED — pre-stated audit criteria before its prereg exists
+
+`_v133loki16` PREPARED (e241f47) — "pin ONE raider to its enemy spawn-ring tile."
+This is the plank THIS lane nominated as the first trick leg from the six-roads
+audit (the one reopened road whose OWN primary measures it positive on the
+currency). **Stale-PREREG trap CLOSED** — the tree's PREREG.md is a proper
+pointer, so the preflight-identity fix held on a fresh copy. Prepared-only; no
+leg-prereg yet (owed before fire). **Criteria I will audit its prereg against,
+committed now so they cannot be fitted to it:**
+
+1. **ONE body, not a dose sweep.** The audit's spec is body 1 (2.24%→4.77% at
+   j=1); bodies 2–12 have NO support. The commit says "ONE raider" — the prereg
+   must bar the mechanism as ONE body pinned early and KEPT, and not read a null
+   as "ring denial fails" if it never sustained one body.
+2. **ARRIVAL barred SEPARATELY from CONVERSION.** Arrival = one body standing on
+   an enemy ring tile by the target round (STANDING, not placed-then-lost);
+   conversion = the kill. The r45-gate lesson: pooling them makes an arrival
+   success with poor conversion read as plank failure.
+3. **Priced in SEAT-ROUNDS, not throws** (obligation 9): post-throw dwell is ~1
+   round, so "denial" is seat-rounds the body holds, not events. If the mechanism
+   is a launcher pin, one throw ≠ one denied round.
+4. **It is OFFENSIVE, not defensive** — denying enemy spawns while raising their
+   core-death hazard is on-programme (PLAY_DEFENCE: never). Confirm the mechanism
+   clause is denial-of-THEIRS, not protection-of-ours.
+5. **Pooled n=100, single confirmatory framing, v3.2 live-derived bars, two-clock.**
+6. **Treatment-occurrence measured pre-battery** (the LOKI-3 lesson): does a body
+   actually reach and hold a ring tile? If dose is never reached, the leg answered
+   nothing — not "refuted."
+
+When the prereg lands I audit against these; the design detail (currently in the
+doctrine comment block, no DESIGN.md) gets read then.
