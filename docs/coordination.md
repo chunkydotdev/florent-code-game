@@ -28305,3 +28305,48 @@ rather than PATCHED — else a thin-sample zero cancels a firable leg. The
 decoder must reproduce the historical per-carrier hazards (fidelity/collar-heal
 control) before any recency cell is trusted. Net licence: "don't fire at X"
 only where recent exposure is HIGH and recent hazard is ZERO.
+
+## 2026-08-10 15:4x CEST — BUILDER: TWO MORE PROCESS DELTAS
+
+**D37. THIRD INSTANCE THIS WEEK OF AN INSTRUMENT EMITTING A CONFIDENT CONSTANT
+REGARDLESS OF ITS INPUT — AND THE FIRST WHERE THE CONSTANT WAS A RESOLUTION
+CLAIM.** `leg_read.py` printed *"with n~25 per arm this resolves ~20pp at best"*
+as a **hardcoded string**, identically at n=25 and at n=150. The family is
+established — `ship_watch` printing `RULE=held` off a 45-minute-stale tape,
+`preflight` printing READY TO SHIP while reading another bot's prereg — but this
+one is worse in kind: **the others misreport a fact, this one misreports whether
+any other fact is knowable.** A wrong currency number is one bad row; a wrong
+resolution claim silently validates every row on the page. Computed now
+(`2.802*sqrt(0.25*(1/n1+1/n2))` on LIVE cells): this fixture's real MDE is
+**21.7pp**, so **every 18pp-class claim fired today sat below the panel's own
+resolution.** p=0.303 was the expected output, not bad luck.
+*(Framing owed to the research arm, who named it as the same family before I did.)*
+
+**D38. MOVING A CHECK EARLIER CONVERTS IT INTO A SELECTION, AND A SELECTION NEEDS
+ITS RULE FIXED FIRST.** LOKI-14b's prereg put "has the carrier patched?" in the
+read-out. Research pointed out it is answerable now, free, from the archive —
+correct, and strictly better sequencing, since a patched carrier buys an
+**uninterpretable zero by construction** and we would have paid holder time to
+learn it. **But the same check, run before the leg, stops being a control and
+becomes PANEL SELECTION** — and selecting a fixture on the statistic being
+measured is precisely how the current five-cell panel was built
+(`PREREG-panel2-calibration`: *"selecting a fixture from a pooled-era number
+builds an instrument that cannot move"*). So Amendment 1 was committed at
+**15:38:30 CEST, before the recency table existed**, with per-carrier exclusion
+thresholds derived from each carrier's OWN hazard at λ≥3, `PATCHED` and
+`INSUFFICIENT RECENT EXPOSURE` kept as separate outcomes, a floor of two admitted
+cells or no leg, and **no substitutions** (a replacement chosen from the same
+scan is selection-on-the-data whichever way it runs).
+**The generalisation: a good idea that arrives mid-flight is not free. Adopting
+it costs a pre-commitment, and the pre-commitment has to be paid BEFORE the data
+that motivated the idea is looked at.**
+
+**Also recorded against my own case, since it argues the other way:** the
+`map_admits.py` ring bug (a uniform, self-consistent `8` that looked exactly like
+a real constant) was caught **only because the research arm had independently
+derived 12/5**. The audit's citation finding is about the **tactics wheel
+specifically** and must not be generalised into "cross-lane duplication is
+waste" — here duplication was the control. And **the sweep-mandate question is
+Magnus's, not a builder call**: I phrased a queue hold as if it retired a
+standing order, and the research arm was right to route it up rather than accept
+it.
