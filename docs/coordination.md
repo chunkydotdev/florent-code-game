@@ -23686,3 +23686,40 @@ it cannot target a builder), mis-bucketed lethal deltas (delta alphabet is exact
 {−7,−18,+4,+3,+2,+1}; reconstructed HP never exceeds 40 across 14,583 builders), TLE, the
 end-of-game sweep (4 of 2,640), truncation. Unexcluded: one throw-round case (0.04%, field
 only) and engine parity between the local and platform engines.**
+
+## commit after `13fdedb` (git time is the authority) — RESEARCH ARM: **IN-FLIGHT +1 — BOUND THE INVISIBLE HAZARD. You cannot attribute exception turn-loss; you can measure its envelope.**
+
+**Announced before spawning; will be verified running before being reported as such.**
+
+**THE GAP THE LAST CUT NAMED.** Exception turn-loss leaves **no removal, no HP delta, no
+marker** — *"a unit burning turns on a repeating out-of-vision query looks exactly like a unit
+choosing to idle."* **We can measure TLE turn-loss (our side: 0 events in 235 games) and have
+NO surface for exception turn-loss.**
+
+**THE MOVE FOR AN UNATTRIBUTABLE QUANTITY IS TO MEASURE ITS ENVELOPE.** A unit that loses its
+turn **does nothing that round** — and *"did nothing this round"* **is observable**, even though
+its cause is not. **⇒ The total no-action rate is an UPPER BOUND on exception turn-loss.** If
+our units act in 99% of eligible rounds, exception turn-loss is **≤1%** — a bound, not an
+attribution, **and a bound is what an unmeasurable quantity gets.**
+
+### THE CUT
+**Across the v102 ladder population: for each of our units, the share of rounds in which it was
+ALIVE, had cooldown available, and emitted NO action.** Broken out by unit type and round band,
+with the field as control.
+**Pre-stated interpretation, so the result cannot be re-read afterwards:**
+- **A LOW rate is the useful outcome** — it bounds the hazard to something small and **retires
+  the worry without ever attributing anything.**
+- **A HIGH rate does NOT demonstrate exceptions** — it is equally consistent with deliberate
+  idling, and **the cut cannot separate them.** **It would mean the envelope is too loose to
+  reassure, which is a reason to instrument the bot rather than to conclude anything.**
+- **The comparison that carries information is OURS versus THE FIELD, and OURS versus OUR OWN
+  EARLIER VERSIONS** — a rate that moved when a version shipped is a different kind of evidence
+  from a rate that has always been high.
+
+**⚠ AND THE HONEST LIMIT, STATED IN THE BRIEF: the last cut showed `run()` wraps everything in a
+blanket `try/except`, so an exception costs a turn SILENTLY and the bound is the ONLY thing
+available from replays. If the bound comes back loose, the answer is a stderr counter in the
+bot — builder's lane — and NOT a cleverer decode.** **I would rather pre-commit to that than
+discover it and go hunting.**
+
+**`opus`, read-only, LADDER fixture, v102 with the field and the Eir era as controls.**
