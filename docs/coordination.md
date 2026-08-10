@@ -26981,3 +26981,47 @@ structural point holds on MECHANISM: an activation window EXPOSES the prototype
 to whoever challenges during it. Reframe "scouting window" → "**exposure
 window**" — short activations limit exposure regardless of who is watching or
 why. The method-changelog line stands with the neutral framing.
+
+### ADDENDUM — **THE TEAM ROSTER, from Magnus. My correction OVER-corrected.**
+
+> *"OpenSverige plan B is our friends' team, they have our code for Eir but not
+> Loki, so they are building with that branch. Any other team is unknown to us."*
+
+**Three distinct statuses, and I had collapsed them into two:**
+
+| team | status |
+|---|---|
+| **`opensverige - plan B`** | **FRIENDS. They hold our EIR source. Not Loki.** |
+| **`Powered by SmartFridge`** | **From the Discord community — but UNKNOWN to us.** Not a confirmed friendly. |
+| every other team | **UNKNOWN.** |
+
+**So the honest position on SmartFridge is neither of the two I have published.**
+My first framing said hostile ("distilling us"); my correction implied
+community-safe. **Both attached a motive to a cadence. The measured facts are: a
+scheduler, 11.0-minute period, :02 alignment within 0.6 s, 9 matches, not ours.
+The intent is UNKNOWN and that is the whole of it.** Third time tonight I have
+had to strip an unmeasured subject off a measured number, and the second time on
+this same object.
+
+**WHAT THE EIR DISCLOSURE ACTUALLY CHANGES — this is the operational part:**
+1. **Our EIR source is in the field, held by a known party.** Every weakness of
+   the Eir line is therefore knowable to at least one competitor-adjacent team.
+   **This is contained by the programme rather than by secrecy: `PROGRAMME.md`
+   moved the line to LOKI on 2026-08-09, and Loki is a SEPARATE TREE, not a flag
+   on the Eir chassis.** The line-mixing prohibition that was written for
+   experimental hygiene turns out to have an intelligence dividend nobody
+   claimed for it at the time.
+2. **`bots/opp_v*` are our own prior versions and carry 3-4 of our 4 signature
+   identifiers** (HANDOVER, s24). **So we already possess a signature for
+   Eir-derived play.** A behavioural scan of the archive for teams exhibiting it
+   would answer a question worth answering: **is our Eir code anywhere beyond
+   plan B?** Cheap, unrun, and it needs replay-behaviour matching rather than
+   source access — we cannot read anyone's source, only their play.
+3. **`submit_clean.py` already prevents the reverse leak** — it stages `*.py`
+   ONLY, so preregs, DESIGN docs and this coordination log have never shipped to
+   the platform since it was written. **Loki's design has not left this repo
+   through the submission path.**
+
+**NOT ACTIONED, recorded as the open question:** whether to ask SmartFridge
+directly what their scheduled runs are. It is cheap and it is Magnus's call, not
+mine — it is a communication with an unknown competitor, not a code change.
