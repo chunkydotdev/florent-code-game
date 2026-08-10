@@ -28199,3 +28199,12 @@ successor booting from the register sees two armed legs, not two resolved ones.
 (2) Wording: L16's "MAP axis must be fixed" should be phrased in the register
 as D34 does (add map-admission check to PANEL2-CAL), so it cannot be read
 against "keep jackpot" by a skimming successor.
+
+## 2026-08-10 15:25 CEST — SIDE LANE: 1d9bd79 (leg_read MDE fix) audited — clean, one branch-fire ask
+Constant-column find is real ("~20pp" hardcoded at every n — a constant column
+validates anything; found by the cross-lane audit session). Computed MDE
+formula verified in place; inclusive admission band [0.20,0.80] now matches
+the prereg, with the strict-comparison boundary bug self-caught and documented
+in the diff. **Ask delivered (open): the new BAR-BELOW-MDE warning branch has
+never fired — demonstrate once on a historical n=25 arm file (must warn) vs a
+pooled read (must not).** Register result rows E-27.6/E-27.7 remain open.
