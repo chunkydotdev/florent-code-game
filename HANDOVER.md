@@ -75,7 +75,19 @@
 ##   Magnus already approved, so it delegates EXECUTION, not judgement.
 ##   **MORNING: read `corpus/SHIP_ALERT` and `tail corpus/ship_watch.log` FIRST.**
 ##
-## ===== ⭐ OVERNIGHT: START THIS ONE COMMAND, THEN NOTHING ELSE =====
+## ===== ✅ OVERNIGHT COLLECTOR IS ALREADY RUNNING — DO NOT START IT AGAIN =====
+##   Launched 21:03Z by the builder. **Holder verified `v104 (Loki v2)` on the
+##   PLATFORM 60 s after launch, and again at 21:06Z. Rating 1686.**
+##   `tools/night_collector.sh 40` · log `scratchpad/night_run.log` ·
+##   outfile `scratchpad/arm_night.txt`. **NON-ACTIVATING** (grep-verified zero
+##   `submission activate` calls) so it cannot leak and there is nothing to roll
+##   back. Pacing off the live meter, retry floored at 300 s so it cannot spend
+##   the budget it is waiting for.
+##   **MORNING: STOP IT AND WAIT ONE FULL 20-MINUTE WINDOW BEFORE ANY LEG.**
+##   `.venv/bin/python tools/rate_budget.py` must read `a slot is free NOW`
+##   AFTER it is stopped.
+##
+## ===== (reference) THE COMMAND, IF IT EVER NEEDS RESTARTING =====
 ##   ```
 ##   cd /Users/junghard/Projects/Work/florent-code-game
 ##   nohup zsh tools/night_collector.sh 40 >> scratchpad/night_run.log 2>&1 &
@@ -92,6 +104,17 @@
 ##   **⚠ MORNING: STOP IT AND WAIT ONE FULL 20-MINUTE WINDOW BEFORE ANY LEG.**
 ##   Rejected attempts count against the limit; `rate_budget.py` must read
 ##   `a slot is free NOW` AFTER the collector is stopped.
+##
+## ===== LOKI-16b: BANKED AND UNREAD (not abandoned, not null) =====
+##   Ran its own schedule to completion — 8 cycles, exited cleanly, **holder
+##   verified v104 on the platform**. **10 challenges / 50 games**, spread
+##   3·3·2·2 (farming_200s, SmartFridge, Askar City, Lunds Stallions).
+##   **NO VERDICT WRITTEN, and the reason is the instrument, not the data:** the
+##   primary (longest-hold/length, game-mean, match-clustered) needs a RETENTION
+##   DECODER that does not exist. Both halves exist to build it —
+##   `map_admits` for ring geometry, `replay_census.parse_entity` for positions.
+##   **⚠ AND THE PREREG NEVER FIXED AN n** — a defect recorded in the document.
+##   Decide n explicitly BEFORE reading the number, not after.
 ##
 ## ===== ⛔ NO OTHER UNRATED RUNNER SHOULD BE FIRING OVERNIGHT =====
 ##   Verified: no `panel3_cal`/`panel2_cal`/`loki14b`/`fanout` processes.
