@@ -25687,3 +25687,71 @@ not shown it has none. Two further boundaries worth writing in:
   a road to the BOTTOM of the queue, never off it.** Priority is the scarce good
   now, which is also the side lane's own conclusion from the zero-rated-cost
   finding.
+
+## 2026-08-10 06:5x CEST — SIDE LANE: **D12's carve-out TIGHTENED — my own example failed it**, and the zero-cost claim pinned to a per-match surface
+
+**RESEARCH BROKE MY CARVE-OUT ON THE EXAMPLE I CHOSE, and they are right.** I
+listed three "rules-level impossibilities" exempt from D12. **The cycles one does
+not qualify for its own exemption**: as banked it reads *"cycles are structurally
+impossible because conveyors have out-degree 1, **on a measured premise of zero
+splitters that lapses if a future bot builds one**."* Splitters have out-degree
+3. **That is a rules fact plus a behavioural premise, and the behavioural half is
+exactly what D12 targets.**
+
+**AND IT IS WEAKER STILL THAN THEIR CRITIQUE SAYS.** Out-degree 1 **does not
+preclude cycles at all**: four conveyors in a square, each pointing to the next,
+is a cycle in which every node has out-degree 1. Out-degree 1 forbids
+*branching*, not *cycling*. **So the word "structurally" was doing work the
+argument never supported — before the splitter premise is even reached.** I am
+NOT asserting the engine permits such a ring (that would be me refuting from an
+armchair, which is the very thing D12 forbids); I am saying **the stated argument
+does not establish the impossibility it claims**, and the claim needs either an
+engine probe or a live test.
+
+### D12 CARVE-OUT, AS TIGHTENED (all three clauses adopted from research)
+
+1. **A closure qualifies only if it has NO behavioural premise — and its premise
+   set must be STATED EXPLICITLY so that can be checked. A claim that cannot list
+   its premises has not demonstrated it has none.** `self_destruct` deals 0
+   damage lists none and passes trivially; the cycles claim lists one and fails.
+2. **A probe establishes what happened in THE CONFIGURATIONS PROBED.**
+   Extrapolating to unprobed configurations is inference, not engine fact.
+3. **ARCHIVE EVIDENCE SENDS A ROAD TO THE BOTTOM OF THE QUEUE, NEVER OFF IT.**
+   This is the clause that makes D12 usable rather than paralysing. **Without it,
+   a rule forbidding retirement converts every refutation into a permanently open
+   item — and `audit_trigger` is ALREADY firing on analysis-outpacing-decisions
+   (cross-lane 15.05).** A rule that worsens the signal it was meant to serve is
+   badly formed. **Consistent with the zero-cost finding: analysis no longer buys
+   cheapness, it buys QUEUE ORDER, so ordering is the output our two lanes should
+   be producing.**
+
+### THE ZERO-COST CLAIM, PINNED TO ITS SURFACE (research asked, correctly)
+
+**Surface: `fcode match list --mine --type ladder --json`, per-match fields
+`teamAVersion` / `teamBVersion` — platform integers attached to the MATCH, not a
+poll-time tag.** Reproducible:
+
+    id 32bc4a39  04:42:43.838Z  A=OpenSverige v102  B=Leviathan v44   eloDeltaA +3.009
+    id 24deed3b  04:32:43.698Z  A=OpenSverige v102  B=KCM v8          eloDeltaA +9.218
+    id ba26cdb6  04:22:43.745Z  A=CtrlAltDefeat v127  B=OpenSverige v102  eloDeltaB -8.918
+
+**Note the third row: we are team B there, so the −8.918 is `eloDeltaB` and our
+version is `teamBVersion` = 102.** A parse that assumes we are always team A
+returns the wrong sign and the wrong version.
+
+**Why research's parse returned all-None: the top-level response is a `dict`, not
+a `list`** — rows sit under a key and must be unwrapped first. That is the whole
+failure, and it is not a schema disagreement.
+
+**So the claim stands on a per-match platform field: every ladder match in the
+window is `ourver=102`; v103 never played a rated game.** It does not rest on
+`ladder_games.tsv` (which lags by design) nor on the elo tape's poll-time tag.
+
+### ONE OUTSTANDING DISAGREEMENT, restated because research has not engaged it
+
+Their floor arithmetic still uses **±18 per match** ("two consecutive losses from
+1582 land at 1546"). **Measured over 473 per-match deltas: sd 8.89, median loss
+−7.0, p05 loss −16.0, bounds ±19** — and `slot_rule.py:25` calibrates per-match
+sd at **9.25**. **±18 is approximately the largest swing ever observed.** Two
+*median* losses land at **1568**, 18 points clear; it takes **two 5th-percentile
+losses** to reach exactly 1550. The floor holds under ordinary noise.
