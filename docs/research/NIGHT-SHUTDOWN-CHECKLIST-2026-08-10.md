@@ -131,6 +131,39 @@ decided to hold" look identical at 06:00, and only one of them is a decision.
 
 ---
 
+## MAGNUS'S HYPOTHESIS — pre-registered 2026-08-10, TO BE TESTED AT 06:00
+
+**Magnus, verbatim:** *"No we dont need a rollback script, i think it's fine"* →
+*"store it as my hypothesis, it can be broken and next night we will do
+something different."*
+
+**H1: an unguarded overnight window costs us nothing we would have prevented.**
+Stated so it can lose: over ~24 unattended rated matches with no agent able to
+act, v104 will not reach the state an armed rollback would have fired on.
+
+**ANCHOR at close (`ship_watch` 22:19:27, the row this is pinned to):**
+`rating 1671 · k=54 · net5 +10.0 · net_act +56.0 · drawdown −27 · peak 1698`
+Rollback line **1615**; headroom **56 points**.
+
+**FALSIFIER — primary, binary, and checkable from the tape alone:**
+> **H1 IS BROKEN if ANY `corpus/ship_watch.log` row between close and 06:00 has
+> `net5 <= -21` AND `net_act < 0` simultaneously** — that is the conjunction an
+> armed rollback would have acted on, so its truth means the guard was needed
+> and absent.
+
+**SECONDARY, recorded whether or not the primary fires** (magnitude, not verdict):
+overnight net rating change; lowest rating reached; max drawdown from 1698.
+
+**PRE-COMMITTED RESPONSE, decided now so it is not re-argued at 06:00:**
+* **Falsifier fires →** arm the auto-rollback tomorrow night. Not a debate.
+* **Falsifier does not fire →** H1 **survives one night. It is not established.**
+  n=1, and the exposure is conditional on tonight's specific state (+56 net_act,
+  56 points of headroom, a recovering trajectory). **A quiet night at +56 says
+  nothing about a night that starts at +5.** Re-test nightly against that
+  night's anchor; the hypothesis is only as good as the headroom it was set at.
+
+---
+
 ## MORNING — 30 SECONDS, BEFORE ANYTHING ELSE
 
 ```bash
@@ -138,6 +171,12 @@ decided to hold" look identical at 06:00, and only one of them is a decision.
 tail -3 elo_history.tsv                                  # overnight trajectory
 ls corpus/SHIP_ALERT 2>/dev/null && cat corpus/SHIP_ALERT # did the stop-loss fire?
 pgrep -fl '_cal.sh|_leg.sh'                              # collector still up?
+
+# TEST MAGNUS'S HYPOTHESIS H1 — did the conjunction EVER go true overnight?
+awk -F'\t' '$0 ~ /net5=/ {n=$0; sub(/.*net5=/,"",n); sub(/\t.*/,"",n)+0;
+  a=$0; sub(/.*net_act=/,"",a);
+  if (n+0 <= -21 && a+0 < 0) print "H1 BROKEN: " $1 " " n " " a}' corpus/ship_watch.log
+# no output = H1 survived the night (n=1, not established)
 ```
 
 **Then, before firing any leg: STOP THE COLLECTOR AND WAIT 20 MINUTES.** The
