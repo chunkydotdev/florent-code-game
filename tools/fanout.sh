@@ -52,10 +52,51 @@ fire(){ local n=0; local ids; ids=($PANEL)
           printf '%s fanout arm %s aborted: holder v%s expected, saw %s\n' "$(date -u +%H:%M:%SZ)" "$2" "$want" "$live" >> corpus/FANOUT_ABORT
           return 1
         fi
+        # DEFICIT-FIRST ORDERING (s28). The rate limit is 5 per 20 MINUTES, not
+        # 10 (measured off the CLI 2026-08-10), so an arm can be rejected partway
+        # through its window. The old loop retried 3x at 25s, gave up, printed
+        # "fired 3/5" and moved on -- and because it always walked $ids in the
+        # same order, the drop was SYSTEMATIC and always landed on the TAIL.
+        # In this leg's own cycle 1 the two dropped cells were exactly the two
+        # RETAINED controls, i.e. the panel starved its own linkage.
+        #
+        # WHY NOT panel2_cal.sh's FIX (wait out the window, retry the same cell):
+        # that runner activates NOTHING. A fanout arm has a PROTOTYPE LIVE while
+        # it fires, so waiting 5+ minutes mid-window extends rated and scouting
+        # exposure -- the header's "never longer than it takes to fire" is a
+        # safety property, not an efficiency one. So this arm does not wait; it
+        # makes the drop UNBIASED instead, by firing the cells it owes first.
+        #
+        # The deficit is read from the arm's OWN outfile -- fewest banked first
+        # -- so it is self-healing and needs no state file to drift out of sync.
+        #
+        # COUNT ON "^$id ", NOT ON matchId. The fcode CLI now prints an
+        # "Update available: 2.3.6 -> 2.3.7" banner, so a record lands as TWO
+        # lines: "<id> Update available..." then "{"matchId": ...}". A predicate
+        # of "^$id .*matchId" therefore matches NOTHING and returns a constant 0
+        # for every cell -- an ordering that looks like it works and never
+        # reorders. Only the *matchId* branch appends, so one line starting with
+        # the id IS one banked challenge. (Caught by inspecting the outfile
+        # before trusting the count; the same banner already inflated two
+        # recorded n's via `wc -l`.)
+        if [[ -s "$1" ]]; then
+          ids=(${(f)"$(for id in $ids; do
+                        printf '%s %s\n' "$(grep -c "^$id " $1)" "$id"
+                      done | sort -n | cut -d' ' -f2)"})
+        fi
         for id in $ids; do for t in 1 2 3; do
           r=$(.venv/bin/fcode match unrated "$id" $MAPS --json 2>&1)
-          case "$r" in *matchId*) echo "$id $r" >> $1; n=$((n+1)); break;; *) sleep 25;; esac
-        done; done; echo "$(date -u +%H:%M:%SZ) $2: fired $n/5"; }
+          case "$r" in
+            *matchId*)     echo "$id $r" >> $1; n=$((n+1)); break;;
+            *Rate\ limit*) echo "$(date -u +%H:%M:%SZ) $2: rate-limited on ${id:0:8}, deferring to next window"; break;;
+            *)             sleep 25;;
+          esac
+        done; done
+        if [[ $n -lt 5 ]]; then
+          echo "$(date -u +%H:%M:%SZ) $2: fired $n/5 -- ${#ids} cells owed, deficit-first next window"
+        else
+          echo "$(date -u +%H:%M:%SZ) $2: fired $n/5"
+        fi; }
 
 # ARM TABLE:  label:version:outfile   ("-" version = incumbent, no activation)
 ARMS=(
