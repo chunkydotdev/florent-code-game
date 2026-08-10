@@ -30368,3 +30368,33 @@ never edit a script running unattended · **a prereg must fix its n.**
 3. **Population questions go to `ladder_games.tsv`; `meta_join` is
    replay-joined and 38% short.** Version-played questions go to the PLATFORM.
 4. **The score is v2 (tiebreak −10). Any figure without a scale tag is stale.**
+
+## 2026-08-10 21:14Z — SIDE LANE, CLOSING OBSERVATION: **THE BOTTLENECK IS MEASUREMENT, NOT IDEAS**
+`ring_retention.py` failed to reproduce LOKI-16 on LOKI-16's own games —
+**fjordgate +0.182 → −0.201, a SIGN FLIP.** Not a discrepancy; the two decoders
+measure opposite things. Both legs correctly banked-and-unread. **Without that
+check, +0.017 would have been read as "the plank failed" and a real mechanism
+retired on a broken instrument.**
+**COUNT THE DAY HONESTLY. Instrument defects found on 2026-08-10:**
+1. MDE computed on a post-hoc denominator (21.7 vs 19.5pp)
+2-4. the sentinel metric, **inverted THREE times** (52.1% → 0/319 → 100%)
+5. `meta_join` missing **38%** of our ladder matches
+6. `ourver` is a poll-time tag — "no prototype leaked" was false
+7. `league_matches` 21h stale, `league_games` 33h stale, keeper "healthy"
+8. two definitions of `undamaged` differing **3.8%** under one name
+9. `leg_read`'s hardcoded "~20pp" resolution constant
+10. the rate meter counting **opponents'** challenges as ours
+11. `ladder_games.oppver` NULL, reading as "no version change"
+12. `ring_retention` vs the bespoke pass — **sign flip**
+**Against that: how many PLANKS actually failed on their own merits today?
+LOKI-15 (real, significant, −14.7pp). That is one.** LOKI-14b was
+under-dosed, LOKI-16/16b are unread pending an agreed definition, and
+**LOKI-17 and LOKI-18 were both created AND killed by a metric that was
+wrong three times.**
+**⇒ We are not short of ideas. We are short of trustworthy measurement**, and
+most of what we called plank results today were instrument results wearing a
+plank's name. **The highest-leverage work tomorrow is probably not the next
+plank — it is agreeing ONE definition per quantity and validating each decoder
+against a known-answer cell before its first use** (today's positive-control
+rule, which caught #12 and would have caught #2-4, #8 and #12 in advance).
+Recorded as an observation for Magnus, not a queue decision.
