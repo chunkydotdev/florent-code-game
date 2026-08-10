@@ -29648,3 +29648,74 @@ pins or even reads THEIR version at analysis time.**
    story, it is a permanent property of how we generate data, and **it will keep
    manufacturing false fixture defects until it is written down.** The Bisons
    "floor" is its first casualty and will not be its last.
+
+# ============================================================================
+# 2026-08-10 18:1x CEST — **MAGNUS: "Do we need a new version of the
+# methodology?"** — PROPOSAL v3.3, four items, each a MEASURED failure today
+# ============================================================================
+
+**THE CASE FOR A BUMP, stated as the day's own evidence:** the crash-induction leg
+passed **every** existing check — pre-registered before the fact, 8 ADD-only
+amendments, a placebo that read **exactly 0/164**, the dose delivered **150
+times**, every control run to the other verdict, lock cert two-clock clean. **And
+it was aimed at teams 550-860 points below us, where a win pays 0.2 rating points.**
+**THE METHOD INSPECTS THE EXPERIMENT AND NEVER ASKS WHETHER THE QUESTION IS WORTH
+ANSWERING.** That is the hole, and no amount of additional rigour INSIDE a leg
+reaches it.
+
+## PROPOSED v3.3 — one new gate, three line-level corrections
+
+**1. NEW: TARGET-VALUE GATE, before pre-registration. One line.**
+*"What rating band does this plank pay in, and is that band REACHABLE?"*
+Measured constraint: **94.0% of 678 ladder matches are within ±100**; max gap ever
+**+167.9**, max since 1600 **+122.3**. **Anything outside ~`us−80 … us+125` cannot
+be met.** Cost: thirty seconds. **It would have redirected this entire session.**
+
+**2. CURRENCY: GAME SHARE, NOT WIN RATE.** `delta = 32 x (S − E)`, S = games/5,
+**residual sd 0.0000 over 678 matches**, independently re-derived by the builder
+(max |residual| 0.000000 on 100 matches). **A 3-2 win can be NEGATIVE; 20/678
+deltas oppose the match result.** Every verdict written on match win rate measured
+a proxy, invisibly. `PROGRAMME.md` already said `WIN_RATE_IS_VERDICT: no` — **this
+is the arithmetic reason, and it goes further: even MATCH win rate is a proxy.**
+
+**3. PIN THE OPPONENT'S VERSION — now D18 on the drift checklist (side lane).**
+**Two firings in four hours, two opponents, two lanes:** Ouroboros (my retraction)
+and The Bisons (side lane's, killed by me — **their v4 shipped 40 minutes before
+our v102's first game; perfectly collinear, unattributable**). **We pin `ourver`,
+assert the holder, and verify `teamAVersion` on the platform for every leg — and
+NOTHING pins or reads THEIR version at analysis time.** Sub-finding:
+**`ladder_games.tsv.oppver` is NULL for all 100 Bisons games**, and a null column
+reads as *"no version change"* to any cut that trusts it — a constant column
+validating anything, in the exact field that would have caught it.
+**Use `league_matches.tsv` for the opponent's version timeline.**
+
+**4. NAME THE SURFACE A DENOMINATOR CAME FROM.** Our two surfaces disagree in
+OPPOSITE directions: **`meta_join` silently pools RATED + UNRATED** (so it counted
+our own prototype legs as opponent record — the defect that corrupted the PANEL-3
+pool I supplied), while **`meta_join` is also missing 38% of our ladder matches**
+(side lane). Standing split: **`ladder_games.tsv` for any population/denominator
+question about our RATED record; `meta_join` for per-replay attribution where the
+archived subset IS the intended scope; NEVER `meta_join` for a win-rate
+denominator.** And the durable form of it: **unrated pools PROTOTYPES, ladder pools
+SHIPPED BOTS — an unrated-vs-ladder comparison is a prototype-vs-shipped comparison
+wearing a fixture-vs-fixture costume**, and will keep manufacturing false fixture
+defects until written down (it produced the Bisons "floor").
+
+## ⛔ A CAUTION AGAINST MY OWN PROPOSAL, ON THE RECORD
+**D25: a rule born from a failure has ZERO firings at birth by construction**, and
+`audit_trigger` is **currently FIRING on analysis-outpacing-decisions**. So: **add
+item 1 as a gate** (it would have prevented a day's misdirection and is one line);
+**treat 2-4 as line-level corrections to existing rules, not new machinery.**
+Adding four rules today and testing none is the failure mode this very proposal
+is meant to reduce.
+
+## AND THE PART THAT IS PROBABLY NOT A RULE AT ALL
+**The two interventions that actually redirected this session were Magnus asking
+*"what's vjg? I can't see that team"* and *"the game only pits us against people
+within ±60"*.** Neither is methodology. **Both are someone looking at the BOARD
+instead of at the EXPERIMENT.** I do not know how to write that as a checklist
+item and I would rather record the gap than invent one that sounds good.
+**Related, and it now has three independent instances: errors run in the direction
+of the work you want to do next** — the builder said it of themselves, the side
+lane said it of themselves (*"I wanted a climb-band target to exist"*), and my
+"flat" compression of a rising quartile is the third.
