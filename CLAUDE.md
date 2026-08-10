@@ -275,7 +275,45 @@ Four consequences, each of which closes a road that was open before it:
    before explaining it away.
 
 **Never balance-changed by the organisers, therefore still open:** launcher
-throw/kidnap (we may pick up an ENEMY builder and throw it anywhere passable,
-for no ammo), spawn-tile denial, crash-induction. **Retired by this directive:**
-tiebreak-turtle. **Already refuted, do not re-derive:** ore poisoning, partial
-spawn starvation, siphon, barrier-form spawn lock, CPU denial, heal-idle staffing.
+throw/kidnap, spawn-tile denial, crash-induction. **Retired by this directive:**
+tiebreak-turtle (a r1000 win is a loss).
+
+**Launcher kidnap, read off the ENGINE BINARY** (`docs/research/engine-source-crash-and-launcher-2026-08-10.md`):
+`can_launch` and every `can_*` predicate has **zero vision guards**; **no team
+check** on the picked-up builder; **pickup d² ≤ 2, throw 1 ≤ d² ≤ 26 measured
+from the launcher, 0 ammo, cooldown +=1, position-only mutation.** An uncaught
+exception from `run()` destroys that unit permanently (`0x1ac5c` →
+`Game::destroy_entity`) and **`SystemExit`/`KeyboardInterrupt` are the ONLY
+exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
+
+**THE "ALREADY REFUTED" LIST WAS WRONGLY ANCHORED AND IS CORRECTED HERE.** Audited
+2026-08-10 (`docs/research/AUDIT-the-six-refuted-roads-2026-08-10.md`): **not one
+of the six rested on a leg where we deployed the trick against a live team** —
+the bases are our own engine probes, archive statistics, and in one case a
+measurement whose result was never reported. The block as first written also
+contradicted itself, listing spawn-tile denial as open two lines above closing
+two of its three forms. **Every entry now says WHAT was refuted (mechanism or
+price) and on what basis:**
+
+| road | status |
+|---|---|
+| **siphon** | **CLOSED** — off-currency by construction. Stays closed. |
+| **partial spawn starvation** | **REOPEN.** What was refuted is *"partial occupancy is a LOCK"* — a rules fact (the core needs exactly one free tile). The hostile treatment was **never dosed**: max ever seen on an *enemy* ring is 6 of 12, four times in 2,710 sides, and the source table is teams walling **themselves** in. Same primary measures **one hostile body on the ring DOUBLES the 25-round core-death hazard, 2.24%→4.77%, CIs disjoint.** |
+| **barrier-form spawn lock** | **NEVER TESTED as a lock.** The s22 probe was FRIENDLY bodies only; three maps produced no enemy contact. Its "they defend for free" inference was overturned in-repo by our own s24 probe (a parked body makes the tile unspawnable for its owner too). |
+| **CPU denial** | **REOPEN on evidence** — the only statement of the refutation in the repo is one clause in a wrap, with no number, denominator, n, or script output; the 201,469 rows sit in an untracked scratch dir. **Separately, CPU-timeout *induction* is HELD ON NORMS, not evidence** — Magnus owes the organisers one question first. Do not merge the two. |
+| **ore poisoning** | **REPRICE.** The mechanism is engine-confirmed with a control; what died was a PRICE (throughput vs redundancy) computed under the retired currency. Clearing a 3 Ti barrier costs them ~30 Ti and 15 builder-turns — a tempo weapon nobody priced as one. A carve-out both primaries preserved was dropped here: *"barrier an ore tile a forward gun already covers"* remains unmeasured. |
+| **heal-idle staffing** | Reopen on evidence, but **off-programme under PLAY_DEFENCE: never** — do not spend a leg. |
+
+**A price refutation computed under the retired currency is void even if the
+fixture was clean.** So is any survival/screening refutation resolved on
+`orizon`/`cad` — see the fixture warning in point 3 above.
+
+**Also open, verified, and closed by no document:** harvester round-robin is
+**team-blind** — an enemy conveyor adjacent to your harvester is a full-rank
+acceptor, so an unwired harvester beside an enemy belt gives ~half its output
+away (measured 49/49), and titanium is credited to whoever owns the DESTINATION
+core. Distinct from the refuted siphon.
+
+**Closed by construction, do not spend a leg:** the sandbox freezes
+`time.*`/`datetime.now` to a constant, so any strategy keyed to wall-clock or
+submission age cannot work.

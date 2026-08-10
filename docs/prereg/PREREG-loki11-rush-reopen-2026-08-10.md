@@ -107,3 +107,55 @@ baseline throughout and the slot rule is untouched by this leg.
 Facing search (parked as `_v129loki12`, unfired), plant distance (SUSPENDED
 pending subject resolution, not refuted), economy suppression, ring-body denial,
 launcher kidnap.
+
+---
+
+## ⚠ CORRECTION, MID-LEG — **THE STOP-LOSS CANNOT FIRE DURING THIS WINDOW**
+
+The section above says *"The slot rule is untouched by this leg and `ship_watch`
+stays armed on the v102 baseline throughout."* **Both halves are wrong, and the
+second is wrong in the dangerous direction.** Flagged by the side lane, verified
+here against the source before accepting:
+
+    tools/monitors/ship_watch.py:50   SHIP_BASELINE / SHIP_VERSION are REPORTING-ONLY
+    tools/monitors/ship_watch.py:280  "the rule follows whoever the tape says is live"
+    tools/slot_rule.py:42             ARM_AFTER = 8
+    tools/slot_rule.py:88             armed = (matches - holder_start) >= ARM_AFTER
+    elo_history.tsv                   06:25 -> 1590  628  v103   (the tape has flipped)
+
+**`SHIP_VERSION=v102` in the daemon's environment does NOT pin it to v102.** The
+rule segments the tape by the live version tag, so a holder change resets the
+window: **v103 starts at k=0, and this leg costs ~2-3 rated matches. 3 < 8, so
+`armed` is False for the entire window and `slot_free` is False BY CONSTRUCTION.
+v103 could lose every rated match in the window and `ship_watch` would log
+`RULE=held` throughout.**
+
+**This is the fault its own docstring was written against — *"a stop-loss that
+cannot fire is worse than none"* — arriving through the SEGMENTATION rather than
+the constants, which is exactly how it arrived last time.** The process is alive
+and healthy; the rule is disarmed. **Alive is not working.**
+
+**IT GENERALISES TO EVERY TRICK LEG THIS PROGRAMME WILL FIRE.** The directive
+makes live-unrated the fixture of record, `fcode match unrated` plays the ACTIVE
+submission, so every prototype leg is a short activation. **Any activation
+shorter than 8 rated matches is structurally unprotected by the slot rule.**
+That is a permanent property of the instrument under the new method.
+
+### THE ABSOLUTE FLOOR, pre-committed now, while it is still cheap and honest
+
+Since the rolling rule cannot wake up inside a leg, the stop is a fixed number
+checked by hand:
+
+    ROLL BACK TO v102 IMMEDIATELY IF RATING < 1550 AT ANY POINT IN THIS WINDOW.
+
+1550 is ~40 below v102's 1590 at handover and ~17 below the 1567.44 activation
+baseline v102 has held all night — i.e. **roughly two lost matches' worth of
+swing beyond normal noise**, chosen because a single match is +-18 and two
+consecutive losses must NOT trip it.
+
+    ROLLBACK: .venv/bin/fcode submission activate 102   # VERSION INT, THEN VERIFY
+
+**The real protection during this window is that command and lane attention, NOT
+the slot rule.** A successor reading the original paragraph would have believed
+otherwise, which is the reason this correction is written into the prereg rather
+than only into the coordination log.
