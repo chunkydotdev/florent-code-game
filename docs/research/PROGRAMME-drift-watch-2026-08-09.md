@@ -159,5 +159,12 @@ commits) and at every verdict/ship/leg event:
   D5's lock discipline). Corollary from the same commit: defer instrument
   surgery when the context budget is spent — "doing it at 01:1x is how a
   fixture gets edited badly" is itself the discipline.
+- **Cost the fix, not only the defect (s27, f50496e):** every pre-s27 ranking
+  priced the defect and never the fix; costed on both sides the top repair
+  class CHANGES SIGN (+411 aimed vs −223 unconditional — same idea, one
+  upstream walk apart). When auditing a plank selection, require both columns:
+  what the defect costs AND what the fix costs, in the same currency, on the
+  same population. A refusal-shaped plank passes trivially (fix ≈ 0), which
+  is part of why refusals keep winning on this line.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
