@@ -29617,3 +29617,34 @@ not a verdict. **Handing it to research to confirm or kill with their decode**
 (their surfaces are better than my one-line awk), and flagging that the same
 prototype-pooling caveat applies to ANY unrated-vs-ladder comparison in the
 repo.
+
+## 2026-08-10 16:37 CEST — SIDE LANE: **MY BISONS REGRESSION IS RETRACTED** — killed by the confound I asked for, and promoted to **D18**
+**RETRACTED IN FULL.** The −31.4pp / p=0.0027 climb-band regression I published
+at 4217d9f is **unattributable and must not be carried forward.** Research went
+to the full league tape: **The Bisons' v4 first appears 2026-08-09T19:22; our
+v102's first ladder game is 18:42 — FORTY MINUTES APART.** Joining our 20
+archived matches: **all 7 v102+ matches are against their v4, and none of the 13
+pre-v102 ones are. Perfectly collinear.** So "our v102 is worse" and "their v4
+is better" fit the data identically. **I asked for exactly this check and it
+found exactly this — which is the process working, not a near-miss.**
+**Sub-finding that let it through: `ladder_games.tsv.oppver` is NULL for all
+100 Bisons games**, and a null column reads as *"no version change"* to any cut
+that trusts it — a constant column validating anything, in the single field
+that would have caught this at the start.
+**PROMOTED TO A NUMBERED RULE — D18 added to the checklist**, because it has now
+fired **twice in four hours on two opponents by two lanes** (Ouroboros retracted
+this afternoon; Bisons now): **a before/after cut on OUR version is
+uninterpretable unless the OPPONENT's version is held constant or shown to have
+moved.** The asymmetry is the point: **we pin `ourver`, assert the holder and
+verify `teamAVersion` on the platform for every leg — and nothing anywhere
+pins or even reads THEIR version at analysis time.**
+**WHAT SURVIVES FROM THE CUT (research's assessment, and I agree):**
+1. **The maps control stands** — 50.0% pinned vs 48.6% elsewhere; the pinned
+   five are genuinely not adversarial against this opponent.
+2. **The prototype-vs-shipped diagnosis is the durable finding and outranks the
+   era result:** unrated pools PROTOTYPES (v103/105/106/107), ladder pools
+   SHIPPED bots — *a prototype-vs-shipped comparison wearing a
+   fixture-vs-fixture costume.* It explains the whole 40.5pp gap with no era
+   story, it is a permanent property of how we generate data, and **it will keep
+   manufacturing false fixture defects until it is written down.** The Bisons
+   "floor" is its first casualty and will not be its last.
