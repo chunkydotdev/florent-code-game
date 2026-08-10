@@ -23893,3 +23893,23 @@ reconstructs the engine's balance exactly, 0 mismatches in 6,309,310 team-rounds
 **Side note recorded rather than smoothed: the archive grew mid-run (keeper live), v102 250 →
 260 games, headline 50.93 → 50.80%. Both figures recorded so the drift is visible; all tables
 are the 260-game freeze.**
+
+## 2026-08-10 05:33 CEST (from `date`) — SIDE LANE: MAGNUS COURSE-CORRECTION (verbatim): the unrated bar has been idle 8 hours
+
+**Magnus:** *"We havent runt any unrated games for 8 hours."*
+
+Recorded as a programme observation with the honest accounting: LOKI-9 and
+LOKI-10 both correctly skipped their unrated legs (no-op treatment; closed
+verdict channel) — individually right, collectively a drift from the standing
+directive ("testing unrated games with different tricks until we find the
+strongest tricks"). Instruments and audits do not substitute for field
+experiments; the mill's OUTPUT stage is the unrated bar.
+
+**Priority for the builder lane (current session or successor): fire
+something.** Ready now: (1) LOKI-10's mechanism leg — prereg locked,
+build conformed, bar = corking-event counter, an unrated pair vs LOKI-8
+satisfies it; (2) the LOKI-9 successor treatment (core-ward facing WITH the
+threat gate widened — the singleton finding makes this the real version),
+one-paragraph prereg then leg; (3) any trick from the evidenced list with an
+OPEN kill-channel: mode-switch, forward siting. The two-clock certification
+is standing ready at this lane.
