@@ -29269,3 +29269,71 @@ derivations, same conclusion, and **the band would have caught it BEFORE the leg
 rather than at cycle 2.** The leg still runs to its dose gate: stopping it now
 would leave it under 150 throws, i.e. "ANSWERED NOTHING" — **the one outcome
 that spends the holder time and buys nothing.**
+
+## 17:3x — **MAGNUS IS RIGHT: THE LADDER PAIRS ±60. MY BAND PROPOSAL WAS WRONG AND IS AMENDED**
+
+Magnus: *"the game also only pits us against people within +-60 ELO from what i
+can see"*. **Measured on our own 3,405 ladder games** (`ladder_games.tsv`,
+`oppbef` vs `ourbef`):
+
+| \|gap\| | share |
+|---|---|
+| **≤ 60** | **81.2%** |
+| ≤ 100 | 94.0% |
+| ≤ 150 | 97.4% |
+
+**Since we passed 1600 (530 games) the gap range is −78.1 … +122.3. That is the
+WHOLE range.** The highest-rated opponent we have **ever** met on the ladder is
+`0033` at **1759.2, gap +64.1**; a single outlier at +122 (`kladde`). The huge
+negative gaps (−848, −885 vs `arsonist duck` at 351) are all 2026-08-06 at our
+~1200 against a provisional team — not a current risk.
+
+**⇒ THE REACHABLE LADDER BAND IS `us−80 … us+125`.**
+**⛔ MY 17:2x PROPOSAL IS AMENDED IN PLACE: "CLIMB BAND = us..us+400, 22 teams" is
+WRONG as a LADDER target — 19 of those 22 cannot be met.** Clankers at +396 is
+**not a target, it is a destination.** **Climbing is a RATCHET: beat the ±60
+neighbours, rating rises, new neighbours appear. There is no leapfrogging.**
+The three-zone Elo arithmetic (a win 900 below pays +0.18, a loss costs −31.8)
+**stands unchanged** — it still governs which opponents are worth ATTACKING. What
+was wrong was the reach of the top zone.
+
+**AND THE DISTINCTION THAT MAKES THE POLICY WORK: LADDER PAIRING IS ±60, BUT
+UNRATED CHALLENGES ARE UNCONSTRAINED — we chose vjg at −863 freely.** So our
+EXPERIMENTS can target anyone, and therefore **they should target the band our
+RATING actually comes from.**
+
+**⚠ WHICH CONDEMNS PANEL-2, MID-RUN.** All five candidate cells sit outside the
+reachable band, and the new ones are **further out than the ones they replace**:
+
+| cell | live | gap | |
+|---|---:|---:|---|
+| **Banminary** | 1464.9 | **−204** | new |
+| **OopsGotYourElo** | 1484.3 | **−185** | new |
+| Team 48 | 1569.9 | −99 | new |
+| gsxWins | 1572.3 | −97 | retained |
+| I Stone | 1580.7 | −88 | retained |
+
+It drops **The Bisons (+32, the ONLY reachable-band cell we had)**, CtrlAltDefeat
+and Leviathan. **AND IT PREDICTS THE FAILURE THE CALIBRATION EXISTS TO PREVENT:**
+D13's admission band is [0.20, 0.80], and at −185/−204 the Elo-expected win rate
+is **~0.75–0.77 before any skill gap** — so the two new low cells are **the most
+likely of the five to return as inert CEILINGS.** That is D22 repeating one panel
+later, with selection made on availability rather than movability.
+
+**THE REACHABLE BAND ABOVE US IS TWELVE TEAMS AND NOT ONE HAS EVER BEEN IN A
+PANEL:** Big O +119 · 0033 +111 · Coreflood +89 · team lazy +81 · HTTP 418 +77 ·
+arsonist duck +66 · kladde +47 · farming_200s +35 · The Bisons +32 · Askar City
++18 · Besvikomat +13 · **Powered by SmartFridge +5**. (Inside-band below:
+Focalground −10, diverge −10, Lunds Stallions −30, Landers −39, Powerpuff Girls
+−66, Leviathan −71.)
+**`0033` beat us 3–2 at +64 in our most recent meeting — a cell that demonstrably
+MOVES, in the band that pays. And `Powered by SmartFridge` (+5) has been
+scrimmaging us on an 11-minute timer all day: a live, adjacent opponent we hold
+extensive replays of and have NEVER put in a panel.**
+
+**⚠ CAVEAT AGAINST MY OWN POINT, so it is weighed not adopted: a panel's job is to
+RESOLVE, not to mirror the ladder.** A reachable team that beats us every time is
+a **FLOOR** and equally useless — **The Bisons at +32 read 0,0,0,0 in D22, and it
+is inside the reachable band.** **So the rule is the INTERSECTION: a cell must be
+in `us−80…us+125` AND clear [0.20, 0.80].** PANEL2-CAL's METHOD is correct; only
+its CANDIDATE POOL is wrong. Calibrate the reachable band.
