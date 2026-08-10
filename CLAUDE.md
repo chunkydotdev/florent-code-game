@@ -222,6 +222,21 @@ These override attention drift; the full lane protocol is your boot config
   guard, per branch. A check that has never produced the other verdict has
   not been seen to check; a constant column validates anything; alive in
   \`ps\` is not verified.
+- **EXIT CODE IS NOT A HEALTH SIGNAL ON THIS PLATFORM.** Measured during the
+  2026-08-10 07:1x outage: `fcode status` **exits 0 while printing `Error: True`
+  to stdout** and returning a body whose `active_submission` is null; `fcode
+  match list` **exits 1** in the same outage. Two failure conventions on one
+  CLI. **A degraded response also parses as valid JSON**, so parseability and
+  non-emptiness are equally worthless as gates. **Gate on the PRESENCE OF THE
+  LOAD-BEARING FIELD** — for activation that is `active_submission` (equivalently
+  the `Active bot:` line in `fcode status`), never on `$?`. This invalidates
+  exit-code checking in every tool we write against `fcode`.
+- **A monitor that reads a file must report that file's FRESHNESS.** When the
+  elo tape stalled in that same outage, `ship_watch` kept printing
+  `rating=1599 armed=True RULE=held` from rows seven minutes stale — **a healthy
+  line and a blind line were byte-identical**. Its own docstring guards an alarm
+  that cannot FIRE; this is an alarm that cannot tell it is BLIND. Emit the age
+  of the newest row, or refuse to print a verdict past ~2 cadences.
 - **Numbers carry subjects.** Copy the denominator, the population, and the
   clock along with the number. Us-only samples must say so inline.
 - **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
