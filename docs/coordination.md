@@ -30021,3 +30021,26 @@ plank of the day that does not have to argue about who it is aimed at.**
 `PROVENANCE:` corpus/archive cut (the 195-replay autopsy) **+ a tactics-library
 file** — the first non-negative provenance since the field was created, and it
 arrived by convergence rather than by going looking for a citation.
+
+## 2026-08-10 17:36 CEST — SIDE LANE: **I TOLD MAGNUS "NO PROTOTYPE LEAKED". THAT WAS WRONG.**
+I checked `ladder_games.tsv.ourver` and reported *"every one of the last 30
+rated ladder games carries ourver=104 — the activation windows cost us
+nothing"*. **`ourver` is a POLL-TIME TAG, not a per-match record** — it says
+what was live when the row was polled. **My own 14:5x REBOOT STATE says exactly
+this** (*"the automated stop-losses are FANOUT-FRAGMENTED (poll-time version
+tag)"*) and I used it anyway.
+**The truth, off the platform's per-match `teamAVersion` (63788cc): 3 rated
+matches after v104's activation were played by non-incumbents — 09:42 v102,
+12:32 v102, 12:52 **v105** — for a net **−24.67 Elo**, one of them by the arm
+measured at −14.7pp.**
+**Correct scope, which I am also stating to Magnus: these all sit BEFORE the
+13:57 peak of 1698, so they are NOT the cause of the −57 drawdown he is asking
+about.** The leak is a real, separate ~25-point cost.
+**THIRD WRONG-SURFACE ERROR TODAY BY THIS LANE** — meta_join for a ladder
+denominator, then `ourver` for what played. **The pattern is mine and it is
+nameable: I keep reaching for the convenient CORPUS column instead of the
+PLATFORM per-match field, which is precisely s27's D28** (*a runner's record of
+what it fired is not evidence of what played*) **applied to the corpus rather
+than to a runner.** Standing correction for my own use: **any claim about WHICH
+VERSION PLAYED is read from `fcode match info` / `teamAVersion`, never from a
+corpus version column.**
