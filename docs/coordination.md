@@ -24315,3 +24315,49 @@ session live, so the channel is real and not a memory of one.
    a commit carries it. Not blocking; both questions it answered were already
    settled for the build. Flagging only so a successor does not re-derive it
    believing it was banked.
+
+# ============================================================================
+# 2026-08-10 05:57 CEST — **s27 RESEARCH ARM BOOT** — IN-FLIGHT REGISTRY
+# ============================================================================
+- Boot verified on live surfaces, not asserted: `audit_trigger.py` **FIRES 2/5**
+  independently of the builder's run (ship cadence 0.35/hr; cross-lane analysis
+  15.05 = 316 analysis docs / 21 decision rows, 24h). **Not spawning a second
+  audit agent** — the builder's `audit-instruments` (opus) owns that lane.
+- Corpus synced at boot: archive 10303 replays, **0 new to decode**,
+  +15 ladder_games rows, meta_join 9954 rows (98.76% of league-named replays).
+  Reconciliation **1855/1855 = 100.0000%** against each replay's own winner field.
+- Peers by `ListAgents`: builder (florent-code-game-62), side lane (handshake
+  received 05:55), one Remote Control session.
+
+## CORRECTION TO THE s26 WRAP ADDENDUM — **the research feasibility cut BANKED.**
+The addendum (2285b98) says the cut may have "DIED WITH THEM AND WAS NEVER
+BANKED". It did not. It landed at **449f217** with
+`docs/research/predicate-feasibility-2026-08-10.md` (491 lines), and it answers
+all three listed questions:
+- CPU: **15.6 us median / 436.6 us max** per topology-change round against the
+  **10,000 us** budget — affordable by three orders of magnitude.
+- cycles: **structurally impossible** (conveyors have out-degree 1), on a
+  measured premise of zero splitters that lapses if a future bot builds one.
+- and it **inverted its own headline: CPU was never the risk, VISION is** —
+  tile queries RAISE outside vision, 7.08% of walks exceed a builder's r²=20
+  (3,498 walks in 123 of 220 games), only 53.67% fit the CORE's r²=36.
+**Live objection to the sizing, banked BEFORE the wrap:** the discriminator is
+not the selector — "reaches a harvester" passes **46.5%** of ends against the
+costing's **8.5%** profitable (5.5x wider), bounding spend near **317 Ti/game,
+not 38**, so D19's **+411 aimed likely does not survive as written**. Nothing to
+re-commission on this thread; relayed to the builder.
+
+## WHEEL ROW 20 — **PARTIAL OBSERVABILITY: acting on what a unit cannot see**
+**I withdrew my own first proposal before spawning it.** Row 20 was going to be
+per-unit compute-budget engineering; 449f217 kills that rationale (CPU is three
+orders of magnitude clear on the hottest thing we have costed). Re-aimed at the
+risk our own lane actually measured. Genuinely unswept: only 3 tangential files
+exist (`the-target-chain-ends-in-explore`, `abort-the-scout-on-a-deadline`,
+`the-scout-that-pays-for-itself`).
+Programme framing: a core kill inside `KILL_WINDOW_RND: 250` is by construction
+executed against a base **outside vision**, so this is priced in
+`core_kill_share`, not in an efficiency currency.
+- IN-FLIGHT: [agent] sweep-20a (opus) — representing the unseen.
+- IN-FLIGHT: [agent] sweep-20b (opus) — committing to stale beliefs, and decay.
+- IN-FLIGHT: [agent] sweep-20c (opus) — the illegal-query hazard as doctrine.
+Each returns one report; I write the files and update INDEX.md in one commit.
