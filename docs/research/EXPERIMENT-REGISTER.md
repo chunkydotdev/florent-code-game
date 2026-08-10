@@ -20,11 +20,22 @@ currency, as pre-registered) · result vs each bar · surprises (recorded before
 explanation) · method faults found · anchors.** Missing fields are written
 `UNKNOWN`, never inferred.
 
+**THIS REGISTER IS THE CANONICAL SPINE (Magnus, 2026-08-10).** Every experiment's
+full record is reachable from its entry. Each entry carries an **Artifacts:**
+line linking its prereg / result / cert / match-ids / audit — so "everything
+about experiment X" is ONE lookup, not a file hunt. The entry is the durable
+record for EVERY experiment; the elaborate prose verdict lives in the linked
+RESULT doc and is written ONLY for legs that produced a decision or a method
+fault (proportionality rule, method changelog) — a null that answered nothing
+needs its entry, not an essay. **Join on the bot dir (`_v1xx…`), never the LOKI
+number** (the label is not unique). Corrections are dated addenda, never edits.
+
 ---
 
 ## 2026-08-10 (session s27) — the live-unrated era begins
 
 ### E-27.1 — UNPINNED LIVE BASELINE (v102, no treatment)
+**Artifacts:** prereg `docs/prereg/PREREG-live-unrated-baseline-2026-08-10.md` · cert `docs/research/LOCK-CERT-live-unrated-baseline-2026-08-10.md` · read `docs/research/AUDIT-baseline-read-2026-08-10.md` · match-ids `docs/legs/LEG-MATCH-IDS-2026-08-10.md` (unpinned baseline section)
 - **Prereg:** `5a5ca55`, author 03:58:40 UTC. **Legs:** created 03:58:55–57 UTC.
   **Lock margin: 15.4 s** — certified, but on argument (no creation-dependent
   surface; population-shrink ratchet) rather than margin. `LOCK-CERT-live-unrated-baseline-2026-08-10.md`.
@@ -44,6 +55,7 @@ explanation) · method faults found · anchors.** Missing fields are written
 - **Status: superseded as a control by E-27.2; stands as a field read.**
 
 ### E-27.2 — PINNED TESTBED CONTROL (v102, no treatment), windows 1+2
+**Artifacts:** prereg `docs/prereg/PREREG-pinned-testbed-control-2026-08-10.md` · match-ids `docs/legs/LEG-MATCH-IDS-2026-08-10.md` (pinned control n=50) · panel-saturation analysis in `docs/coordination.md` (07:0x, e63a6f8)
 - **Prereg:** `3c9400a`, author 04:07:13 UTC — **first self-certifying clock**
   (platform reading quoted in the commit; skew bound measured [−13.4 s, +1.9 s]).
   **Legs:** w1 04:15:22 (margin 489 s), w2 04:44–:45. **Certified on clocks alone.**
@@ -61,6 +73,7 @@ explanation) · method faults found · anchors.** Missing fields are written
   window required before any treatment touches the new panel.**
 
 ### E-27.3 — LOKI-11 "RUSH RE-OPEN" (`LOKI2_RUSH_ON = False → True`), windows 1+2
+**Artifacts:** prereg `docs/prereg/PREREG-loki11-aimed-plant-2026-08-10.md` (rescoped pre-fire, 33f7e5e) · result `docs/research/RESULT-loki11-rush-reopen-2026-08-10.md` · match-ids `docs/legs/LEG-MATCH-IDS-2026-08-10.md` (LOKI-11 n=50)
 - **Prereg:** originally the *facing-search* plank (`aba28f3`); **rescoped
   PRE-FIRE** (`33f7e5e`) when a 90-second paired local run showed the mechanism
   could not bind (both arms: 1 sentinel, same tile; treatment 20 rounds LATER) —
@@ -94,6 +107,7 @@ explanation) · method faults found · anchors.** Missing fields are written
   builder's call. LOKI-12 (facing) parked unfired.**
 
 ### E-27.4 — LOKI-13 "ECONOMY SUPPRESSION" (`PAVE_TRAIL_ON off`) — SUBMITTED, UNFIRED
+**Artifacts:** prereg `docs/prereg/PREREG-loki13-economy-suppression-2026-08-10.md` (+ pre-leg amendment 6d734f7) · result `docs/research/RESULT-loki13-economy-suppression-2026-08-10.md` · match-ids `docs/legs/LEG-MATCH-IDS-2026-08-10.md` (LOKI-13) · cert + result + pooled-audit in the dated addenda below. **NOTE: authorized to SHIP by Magnus 2026-08-10 (see final addendum).**
 - **Prereg:** `e9135e5`, author 06:51:12 +0200, **amended PRE-LEG** (`6d734f7`):
   mechanism-A bar re-derived from the flag's own paired-seed action (51→33,
   61→41, 75→32; bar ≤27 conveyors/game = 0.70× control) after the original ≤25
@@ -211,3 +225,14 @@ suppression fails"; it was not.
   ammo was added to Bar B — so the worry could die on data. It did.
 - **SURPRISE (channel): conveyors −14% but `titanium_collected` −38%** — a
   disproportionate economy hit for a small conveyor cut. Unattributed, recorded.
+
+**2026-08-10 09:20 — E-27.4 (LOKI-13) SHIPPED (addendum):** **v104 "Loki v2" is
+LIVE on the rated ladder (Magnus's call, `792cdb7`).** The ship record carries
+the caveats intact: **ships on CURRENCY ALONE** (+18.0pp core_kill_share held
+n=100/100), **honest significance ~0.05 family-wise not 0.016** (multiplicity +
+asymmetric stopping), **mechanism bar FAILED** so the +18pp is NOT attributed to
+economy suppression — we ship a currency effect whose cause is unknown. This is
+the line's **first ship to the rated ladder** (prior ladder bot was v102 =
+LOKI-8; the frozen Eir incumbent `_v115dodge` is a separate concept). A fresh
+pre-registered PAVE_TRAIL_ON=False confirmatory leg at n=100 remains the clean
+way to nail 0.016 vs ~0.05; LOKI-15 tests the mechanism, not this effect.

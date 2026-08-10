@@ -249,3 +249,24 @@ FIRED, and correctly.** Protocol self-evidence: 2 rules fired of ~19.
 (the ammo rule) fired usefully — the pre-leg ammo worry was measured (conversion
 1.10×, shots flat) and KILLED. A rule that lets a worry die on data is working;
 ammo is not our kill constraint at this economy level.
+
+---
+
+## ADDENDUM 2026-08-10 (side lane) — PROPORTIONALITY RULE (register is the canonical spine)
+
+Magnus made `EXPERIMENT-REGISTER.md` the canonical spine. The documentation rule
+that keeps it from feeding the analysis-outpacing-decisions drift:
+
+- **EVERY experiment gets a register entry** (bars, result-vs-bar, method-faults,
+  surprises, and an **Artifacts:** link block to prereg/result/cert/match-ids).
+  That entry IS the durable record. One lookup reaches everything.
+- **The elaborate PROSE verdict (a RESULT doc) is written ONLY for legs that
+  produced a DECISION or a METHOD FAULT.** A null that answered nothing needs its
+  entry and one line of why — not an essay. LOKI-13 earned a full result doc (it
+  produced v3.2 and a ship); a leg that just misses its dose bar does not.
+- **Corrections are dated addenda, never edits** — the sequence of what we knew
+  is itself the versioning (E-27.4 ran unfired → fired → null → answered-nothing
+  → pooled-significant → shipped, each a dated addendum, none erased).
+- **This bounds documentation the way the boot-load audit bounds reads:** the
+  register is complete and the prose is proportionate to the decision, so the
+  record stays a spine, not a swamp.
