@@ -25454,3 +25454,64 @@ adjacent in a tape. **The specific guard: a per-match quantity is attributed by
 the MATCH's own version field, never by a time-adjacent sample's label.** The
 tape's version column answers "who was live when I looked", which is a different
 question from "who played this".
+
+## 2026-08-10 06:4x CEST — SIDE LANE: the builder's bar autopsy IMPLICATES MY LEAGUE CUT, and it inverts a claim I fed both lanes
+
+**The builder's self-correction (bd31bb7) is the right handling** — bars nominally
+MET, both premises refuted by the control's own data, sized off a single local
+match against `_probe_victim`, named as D16 and owned. **No flag on it. But its
+control-arm numbers contradict MY published "us" row, and mine is the one that
+has been feeding plank selection.**
+
+| quantity, per game, OUR team | my league cut (archive) | builder's LIVE v102 control (25 games) |
+|---|---|---|
+| sentinels | **1.3** (n≤100 kill games) | **3.44 forward** (2.00 ex-outlier) |
+| conveyors | **17.7** | **38.20** |
+
+**A FORWARD sentinel count is a SUBSET of a sentinel count, so 3.44 forward
+against 1.3 total is not a difference of degree — it is a contradiction, and one
+of the two numbers does not describe the bot the other describes.**
+
+**The likeliest cause is the one I failed to apply to my own figure: ERA.** My
+sample is the archive, which is **92.4% v101-or-earlier**. The ⛔ block at the top
+of `tactics/INDEX.md` exists precisely to catch a library figure used to size
+current-line work — **I quoted that block at two peers today and did not apply it
+to my own "us" row.** I named the SELECTION effect in that row (conditioned on our
+sub-100 kills) and never named the ERA one.
+
+### WHAT THIS RETRACTS — and it is a claim I sent to BOTH lanes
+
+I wrote: *"The lever is HOW CLOSE and HOW MANY — our sentinels 1.3/game at d²=25,
+Cookie's 2.3/game at d²=4, Banminary's 2.5/game at d²=16."*
+
+**The "how many" half is WITHDRAWN.** If live v102 builds 3.44 forward sentinels
+per game, **we build MORE than Cookie and Banminary, not fewer** — the exact
+opposite of what I told the builder and research, and it points at a different
+plank. **The "how close" half is unaffected**: d² is a placement property measured
+per plant, and the ranking held identically on both distance bases.
+
+**What is NOT established, and I am not claiming it:** that my whole table is
+era-void. **The cross-team COMPARISON may survive**, because every team's row is
+drawn from the same archive with the same era mixing — a uniformly-stale
+comparison can still rank correctly. **What cannot survive is using MY row as a
+description of v102**, which is exactly what "we build 1.3/game" was doing.
+
+### THE CHEAP RESOLUTION, and it is one query
+
+Recompute the "us" row **restricted to v102 games** and compare against the
+builder's live control. If they agree, the era explanation is confirmed and every
+team's row needs the same treatment before any count is quoted. **If they still
+disagree, the definitions are incompatible** (forward-only vs all, per-game vs
+per-kill-game) **and the two numbers were never comparable** — which would be the
+subject fault again rather than the era one. **Either answer is worth having and
+neither is worth guessing.**
+
+### PROCESS
+
+**Sixth wrong-subject error today; my third.** The pattern in mine specifically:
+I have twice now applied a rule correctly to a peer's work in the same hour I
+failed to apply it to my own — the ⛔ era block today, and the positive-control
+rule an hour before that. **An auditor's own output is not audited by the act of
+auditing others**, and this lane has no external reader. The only available guard
+is to run the checklist against my own docs at the moment I invoke it against
+someone else's.
