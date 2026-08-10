@@ -50,6 +50,22 @@ sub-100 kills:
 *inside* range — Cookie at d²=8 is 2.8 tiles from the core. **We plant at d²=32,
 exactly at the sentinel's edge, and at d²=16 on gunners.**
 
+> ### ⚠ MEASUREMENT BASIS IS UNSTATED — DO NOT SPEND A PROBE UNTIL IT IS SETTLED
+> **The core is 2×2, so "d²(turret → enemy core)" is ambiguous exactly where it
+> decides the verdict** (research arm, and the objection is load-bearing):
+> distance to the core's **centre/anchor tile** versus to the **nearest of its
+> four occupied tiles** differ by up to ~1 tile per axis. **A gunner at d²=16 to
+> centre can be at d²≈9 to nearest tile — comfortably INSIDE r²=13. Same number,
+> opposite conclusion.** The engine's own predicates (`can_fire`,
+> `get_attackable_tiles`) operate on TILES, so nearest-occupied-tile is the basis
+> that decides "in range".
+> **It cuts both ways:** if the extractor used nearest-tile throughout, the
+> comparison stands AND the out-of-range reading is real; if it used centre, all
+> rows shift together and the *ranking* may survive while the *absolute range
+> verdict* does not. **Query sent back to the agent; both columns to be published
+> side by side.** Until then the ranking claim is provisional and the
+> in-range/out-of-range claim is NOT established.
+
 > **THE SINGLE HIGHEST-VALUE THING TO CHECK, flagged as a lead and NOT asserted:**
 > **d²=16 is outside gunner range (r²=13).** If that median is right, the typical
 > forward gunner we build cannot reach the core it was built to shoot. It is a
