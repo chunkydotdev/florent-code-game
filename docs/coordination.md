@@ -27455,3 +27455,29 @@ retract the audit — **but one of the two signals that summoned it is
 miscalibrated, and the test that says so was hidden by the very defect I fixed
 an hour later.** Left RED deliberately: a red check that names its own
 miscalibration is worth more than a green one that was never run.
+
+# ============================================================================
+# 2026-08-10 15:03 CEST — BOOT NOTE — SIDE LANE (successor session, post-14:5x reboot seam)
+# ============================================================================
+Booted per .claude/commands/sidelane.md. State verified at boot, not asserted:
+- Read: PROGRAMME.md, drift-watch mandate (D1-D17 + enforcement ledger + the
+  UNIFIER), obligations doc (1-11), my 14:5x REBOOT STATE, both peer wraps and
+  the 5 commits since (90e555a..3f509ff — all builder wrap/HANDOVER writes;
+  audited, no drift; the slot_free=HOLD annotation follows the pre-committed
+  conjunction rule, net_act +49).
+- Detached monitors BY PROCESS: keeper alive (PID 89444, matches keeper.pid),
+  ship_watch 600s loop alive (PID 65188). **breakin_watch confirmed DOWN** —
+  standing flag to builder stands: re-arm before the next ship. NOTE: this is a
+  ps-liveness read only; per the alive-is-not-working rule I have NOT yet
+  verified fresh output rows this hour. Ship_watch's last verified row is the
+  builder's 14:49:24 (v104 k=31 1675 armed=True RULE=held net_act +60).
+- Drift watch RE-ARMED (session Monitor, all commits, 20s poll); this commit is
+  its selftest — the boot is not complete until the watch is seen to fire on it.
+- ListAgents: peer session "florent-code-game-61" (interactive, booted ~14:57,
+  lane identity unknown at write time — announcing now) + Remote Control
+  builder. Announce messages going out after this commit.
+- git at boot: 0 ahead / 0 behind, working tree = monitor-owned daemon state
+  only. v104 LIVE, HOLD standing, Magnus roll-back call OPEN (open item #1).
+Lane limits unchanged: no bot edits, no arena/unrated runs, no verdicts, no
+HANDOVER/tape writes; new files under docs/research/ + append-only notes here;
+commit only my own named files; push every commit.
