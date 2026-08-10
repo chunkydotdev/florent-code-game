@@ -24781,3 +24781,75 @@ so the name ambiguity the side lane flagged ((16,16) = jackpot or lighthouse or
 crossfire) does not block it. **Residual risk worth checking in the same pass:
 two maps sharing (w,h) AND our anchor but differing in the ENEMY anchor would
 make the table silently wrong** — that is a correctness question, not a tuning one.
+
+## 2026-08-10 06:2x CEST — SIDE LANE: **LOKI-11 prereg audited (aba28f3) — PASSES, two flags**; and the d² basis question RESOLVED
+
+**PREREG AUDIT — `PREREG-loki11-aimed-plant-2026-08-10.md`. This is the best-formed
+prereg the programme has produced.** Checked against D1–D11 and the obligations:
+
+- **D2 PASS** — comparator is LOKI-8 = v102, the previous LINE iteration, on the
+  pinned control fired one window earlier. Not Eir, not the incumbent.
+- **D3 PASS** — verdict is `core_kill_share`; time-to-kill is secondary and
+  explicitly "never substituted".
+- **D4 PASS** — mechanism is a forward turret aimed at their core. Offensive.
+- **D6/obligation 11 PASS, and this is the part worth naming:** the MECHANISM bar
+  is stated separately from the VERDICT bar, and a mechanism-bar failure is
+  pre-declared as **"the leg answered nothing"** rather than as evidence against
+  the idea. **That is precisely the fault LOKI-10 died of** (a bar written against
+  an implementation assumption), corrected one leg later, in advance.
+- **Falsifier: three branches plus the one that hurts.** OFF-PREDICTION is
+  pre-labelled "not banked". And the adverse branch is named: if THEIR kill time
+  against us gets faster, the widening bought plants at the cost of raider
+  survival. Reported either way.
+- **Cost priced before payment**, with a named rollback target and `ship_watch`
+  left armed on the v102 baseline throughout.
+- **Scope limits explicit** — does NOT test economy suppression, ring-body denial,
+  kidnap, or plant distance. One plank, one leg.
+
+**FLAG 1 (cheap, fixable before firing): the mechanism bar has no effect size.**
+*"LOKI-11 must build strictly more forward sentinels per game than the control"* —
+against a control of ~1/game over 25 games, **"strictly more" is satisfied by a
+single extra sentinel across the whole leg, which is noise.** A bar that any
+non-zero difference clears is not a bar. Recommend stating a count or a
+per-game delta before firing; it costs one line and it is the difference between
+a mechanism check and a rubber stamp.
+
+**FLAG 2 (not blocking this leg, but a plank was retired on it): two of OUR OWN
+measurements disagree, and the prereg's rationale rests on one of them.** The
+prereg states *"we were already planting closer than they do"* and *"distance was
+never the variable"*, sourced from the Bisons autopsy (our sentinels Chebyshev
+1–3, theirs modally 5).
+**My league cut disagrees**, on the nearest-occupied-tile basis, n=198 of our
+sentinel plants in sub-100 kills: **our median d²=25 (Chebyshev 5) against the
+Bisons' d²=16 (Chebyshev 4)** — i.e. **we plant FURTHER, and we rank last of every
+team in the table on both bases.**
+**Both cannot be true of the same quantity.** The discriminating question, offered
+as a question and not an answer: **does the autopsy's Chebyshev column measure
+distance to OUR core or to THEIRS?** If ours, it is counting home defensive
+sentinels and the two findings are consistent — they build FORWARD, we build HOME
+— and *"we were already planting closer"* is false. Populations differ too: 5
+losses vs 198 plants in wins.
+**Consequence: the DISTANCE plank should be recorded as SUSPENDED pending subject
+resolution, not as refuted.** The prereg is right that LOKI-11 does not depend on
+it, and correct to fire while it is open — this flag is about the retired plank,
+not this leg.
+
+**THE d² BASIS QUESTION IS RESOLVED, and my own headline is RETRACTED** (d760ae1).
+Research was right. The extractor used a **single anchor tile, no 2×2 accounting**
+(`tools/corpus/replay_events.py:65,69,87-90`). Footprint then established
+empirically three independent ways — **1 exception in 19,005 placements** — anchor
+is the NW tile, so the anchor basis **overstates** distance from the east and
+south: a directional bias, not a constant.
+- **DEAD:** "our forward turrets sit outside/at the edge of their firing envelope."
+  On the tile basis our gunners are at **d²=9 inside r²=13** (read 16 = outside on
+  the anchor basis — the verdict inverts) and our sentinels at **d²=25 inside
+  r²=32**. **No engine probe should be spent on it.**
+- **SURVIVES:** the ranking, identically on both bases — we plant furthest of any
+  team, for both turret types. The lever is HOW CLOSE and HOW MANY, not whether
+  they can shoot at all.
+- **Upper-bound caveat:** gunners are LOS-blocked and the corpus stores no
+  per-plant line of sight, so our 91.6% in-range gunner figure is a ceiling.
+  Sentinels ignore obstacles and carry no such caveat.
+- **CORPUS DEFECT FILED (builder owns `tools/`):** `d2_own`/`d2_enemy` carry this
+  bias in every number ever sourced from them. **A column whose NAME promises a
+  semantic its CONTENT does not carry** — the s26 trap family exactly.
