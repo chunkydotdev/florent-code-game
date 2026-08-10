@@ -27632,3 +27632,37 @@ unmeasured consequence welded to it (therefore the archive is blind).
 `leg_read.py` **safe** (scans for `matchId`, slices from `{`); `panel2_cal.sh`
 **safe** (`grep -c matchId`); **`wc -l` on an arm file now reads ~2× the true
 match count.** No fix owed here — flagged so no lane manufactures a phantom n.
+
+### 15:2x — ARCHIVE COVERAGE OF EVERY FANOUT LEG, and the `wc -l` inflation REALISED
+
+**Every leg read-out in this fanout costs ZERO downloads.** Counted with
+`grep -c matchId` + a glob per id (read-only):
+
+| arm | matches | archived | missing | game replays |
+|---|---|---|---|---|
+| loki14 | 15 | 15 | 0 | 75 |
+| loki15 | **32** | 30 | **2** | 150 |
+| loki16 | 15 | 15 | 0 | 75 |
+| v102confirm | 20 | 20 | 0 | 100 |
+| v104 control | **33** | 33 | 0 | 165 |
+| panel2 | 3 | 3 | 0 | 15 |
+
+**116/118 matches, 580 game replays on disk**; PANEL2-CAL's are archiving live as
+it fires. The 2 missing are the newest loki15 pair and the archiver is alive.
+
+**THE `wc -l` INFLATION IS REALISED, NOT HYPOTHETICAL — it has already moved two
+n's.** loki15 is **39 lines but 32 matches**; the v104 control is **36 lines but
+33 matches**. loki14/loki16/v102confirm are unaffected (15/15/20 either way),
+**because the CLI banner started partway through the run** — which is what makes
+this the dangerous shape: **it is inconsistent ACROSS arms, so spot-checking one
+arm certifies the wrong thing for another.** Any sizing or stopping statement
+written off `wc -l` for loki15 is overstated by ~7 matches. Flagged to the
+builder to confirm the banked LOKI-15 result used `leg_read.py`'s count (32) and
+not a hand count (39) — its p=0.0149 is close enough to 0.05 that the denominator
+should be confirmed rather than assumed.
+
+**METHOD NOTE, recorded because it is the session's own standing rule biting:**
+my FIRST pass at this table returned `archived=0` for all six arms — zsh did not
+word-split the id list. It self-caught only because I had verified loki14 at 15/15
+minutes earlier and 0 was absurd. **A check that produced an absurd verdict is
+the one to trust least when it later produces a plausible one.** Redone in Python.
