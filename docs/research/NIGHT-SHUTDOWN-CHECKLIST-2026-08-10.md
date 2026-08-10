@@ -173,10 +173,12 @@ ls corpus/SHIP_ALERT 2>/dev/null && cat corpus/SHIP_ALERT # did the stop-loss fi
 pgrep -fl '_cal.sh|_leg.sh'                              # collector still up?
 
 # TEST MAGNUS'S HYPOTHESIS H1 — did the conjunction EVER go true overnight?
-awk -F'\t' '$0 ~ /net5=/ {n=$0; sub(/.*net5=/,"",n); sub(/\t.*/,"",n)+0;
+# DRIVEN TO BOTH VERDICTS BEFORE BEING PUT HERE (2026-08-10): fires on a
+# synthetic net5=-31/net_act=-15 row, stays SILENT on a one-sided near-miss
+# (net5=-31 but net_act=+26), silent on the real log. No output = H1 survived.
+awk -F'\t' '$0 ~ /net5=/ {n=$0; sub(/.*net5=/,"",n); sub(/\t.*/,"",n);
   a=$0; sub(/.*net_act=/,"",a);
-  if (n+0 <= -21 && a+0 < 0) print "H1 BROKEN: " $1 " " n " " a}' corpus/ship_watch.log
-# no output = H1 survived the night (n=1, not established)
+  if (n+0 <= -21 && a+0 < 0) print "H1 BROKEN: " $1 " net5=" n " net_act=" a}' corpus/ship_watch.log
 ```
 
 **Then, before firing any leg: STOP THE COLLECTOR AND WAIT 20 MINUTES.** The
