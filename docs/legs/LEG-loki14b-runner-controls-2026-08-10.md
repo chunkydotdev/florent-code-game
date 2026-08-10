@@ -196,3 +196,51 @@ including a successor session that did not arm it. Default remains 4 when no
 argument is given. **Same rule as gating on the `Active bot:` field rather than
 an exit code: if a parameter is load-bearing it has to be OBSERVABLE, not
 merely correct.**
+
+---
+
+## THE AMENDMENT WINDOW CLOSED AT 14:10:40.033Z
+
+**Recorded HERE and deliberately NOT in the prereg** — writing "the window is
+closed" into `PREREG-loki14b` would itself be a post-data edit to that file, and
+would be the first violation of the rule it states. Side-lane guard, s28.
+
+Eight amendments, all blind against the first accepted challenge
+(**2026-08-10T14:10:40.033Z**, vs vjg, `ourver=v107` read off the platform's
+per-match version field). **A8 cleared it by ONE MINUTE**, and that thinness is
+the signal rather than a near-miss to be relieved about: **the window shut the
+instant the leg's first data existed.**
+
+**FROM 14:10:40.033Z, ANY FURTHER CHANGE TO `PREREG-loki14b` IS POST-DATA, AND
+UNDER THE CONVENTION THAT IS NOT AN AMENDMENT AT ANY STRENGTH — INCLUDING A
+TIGHTENING ONE.** The ADD-only carve-out earns its keep precisely because a
+pre-data addition *cannot* have been selected on the result. After the first
+challenge that guarantee is gone, and **a tightening chosen with data in hand is
+still a choice made with data in hand.** Anything further is a NEW
+pre-registration and must say so.
+
+Flagged now rather than when it happens, because three live sources of
+temptation are converging on that file: the library consumption pass, cycles 3–5
+landing in the log, and the inverted cut's follow-ups. **Each could plausibly
+generate "one more clarifying clause". None of them may.**
+
+## ⚠ CORRECTION: THE DISPLACEMENT TRIGGER IS NOT "UNTOUCHED"
+
+Amendment 8 and the first HANDOVER entry for it both said the displacement /
+stale-plan trigger is **untouched** by the observational cut. That is an
+overstatement and it was mine, repeated to Magnus.
+
+**LOKI-14's INTERIOR arm was 164 displacement throws against the five-team
+near-peer panel — i.e. at the climbing band — and returned ZERO undamaged
+removals.**
+
+That is not a closure: **a short throw may leave the victim's cached plan
+valid**, and the interior arm was never dosed *as* a displacement treatment —
+it was built as a placebo, with no requirement that the destination invalidate
+anything. **But it is not nothing, and "untouched" was the wrong word.**
+
+**BINDING ON THE NEXT PREREG:** a displacement leg (LOKI-14c) **must answer
+those 164 in its `PROVENANCE:` line** — what distinguishes its treatment from
+the interior arm that already returned zero at the band we care about. If the
+answer is "throw distance", that is a dose parameter and it has to be
+pre-registered as one.

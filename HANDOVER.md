@@ -144,10 +144,17 @@
 ##    NEGATIVE closes the road on an interventional test rather than an archive
 ##    cut. **8 amendments, ALL blind vs the first accepted challenge
 ##    14:10:40.033Z**; v107 exposure per cycle: **10 SECONDS**.
-##    **THE ROAD THAT IS STILL OPEN: the DISPLACEMENT / stale-plan trigger.**
-##    Every number above is OBSERVATIONAL (builders that WALKED to a border); a
-##    thrown builder stands on a tile its own cached plan never chose. Same
-##    approved class (D17), untested by all of it. That is LOKI-14c.
+##    **THE ROAD STILL OPEN: the DISPLACEMENT / stale-plan trigger** — but
+##    **"UNTOUCHED" WAS AN OVERSTATEMENT AND IS RETRACTED.** Every number in the
+##    cut is OBSERVATIONAL (builders that WALKED to a border), so it says
+##    nothing about displacement — **however LOKI-14's INTERIOR arm was 164
+##    displacement throws AT THE CLIMBING BAND and returned ZERO.** Not a
+##    closure (a short throw may leave the cached plan valid, and that arm was
+##    built as a PLACEBO, never dosed as a displacement treatment) — but not
+##    nothing. **LOKI-14c must answer those 164 in its PROVENANCE line**: what
+##    distinguishes its treatment from an interior arm that already read zero
+##    where we care. If the answer is throw DISTANCE, that is a dose parameter
+##    and must be pre-registered as one.
 ##    **AND THE CONFOUND IS ONLY PARTIAL** — immune teams sit in the SAME low
 ##    band as carriers (S 1093.7 vs Tyvrets 1098.6: **4.9 Elo apart, >=891x
 ##    apart in hazard**). Vulnerability is a property of border-handling CODE,
