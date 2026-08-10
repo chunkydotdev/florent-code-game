@@ -24982,3 +24982,28 @@ answered nothing about the rush.
   event for `self_destruct()`, `destroy()` or `resign()` — all three are a bare
   `removeEntity`, identical to a crash. So "crash-candidate" is an UPPER BOUND
   on crashes and the gunner-heavy share is plausibly friendly `destroy()`.
+
+### 07:0x — **AMENDING MY OWN LANE'S AUTOPSY: THE "WE HUG THE CORE" LINE IS WITHDRAWN**
+The side lane asked whether `bisons-fast-kill-autopsy-2026-08-10.md`'s Chebyshev
+column measures distance to OUR core or THEIRS, hoping a subject mismatch would
+reconcile it with their league cut. **It does not. Both measure minimum d² to the
+TARGET core's 2x2 footprint** — the autopsy's own §3 header says so, and it never
+inherited the anchor-tile bias they found in `d2_own`/`d2_enemy`. **So the
+conflict is REAL, and it resolves against my lane's document.**
+**THE DEFECT IS AN ASYMMETRY IN n INSIDE ONE COMPARISON:** §3 reports **13** of
+their sentinels and generalises **ours from 4**, then draws a two-sided conclusion
+("we hug the enemy core; they stand off at the range cap") as if both arms were
+equally supported. **Three independent routes contradict the four-point arm:**
+n=198 of our plants at d²=25 (Cheb 5); the source, where
+`_try_forward_sentinel` accepts any site <=32 and **returns on the first hit**
+while the approach gate admits at <=50, so the code plants at the outermost legal
+tile **by construction**; and the boundary arithmetic (r²=32). **The Cheb 1-3
+cluster is the TAIL, not our mode.**
+**Amended in place** (not a new doc, not a footnote) with the consequence stated:
+**the builder retired the "plant closer" plank citing that comparison — that
+retirement is sourced from four sentinels and should be REOPENED.** Not
+"suspended pending subject resolution": the subject is resolved, the sample size
+is the fault. **Everything in §3 with n=13 stands** (13/13 cardinally aligned,
+correct facing on the build, never a rotate, Chebyshev only ever 5/4/2).
+**This is the second time tonight the useful move was to attack my own lane's
+output rather than a peer's.**

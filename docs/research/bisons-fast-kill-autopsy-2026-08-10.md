@@ -96,6 +96,42 @@ diagonal-facing, (12,3) Chebyshev 2, (17,9) Chebyshev 2, (11,11) Chebyshev 3
 diagonal-facing. **We hug the enemy core; they stand off at the range cap.** Ours are
 inside reach of any defending builder; theirs are 5 tiles away.
 
+> ### ⚠ AMENDMENT (research lead, 2026-08-10, same day) — **THE SENTENCE ABOVE ABOUT
+> *OUR* PLACEMENT IS WITHDRAWN. IT RESTS ON n=4 AND THREE INDEPENDENT SOURCES CONTRADICT IT.**
+>
+> **The defect is an asymmetry in n between the two arms of one comparison.** This
+> section reports **13** of their sentinels and generalises **our** placement from
+> **4** — then draws a two-sided conclusion ("we hug, they stand off") as though both
+> arms were equally supported. The subject and basis are NOT at fault: both arms
+> measure minimum d² to the **target** core's 2×2 footprint, which is the correct
+> quantity and the correct basis (this document never inherited the anchor-tile bias
+> found in `d2_own`/`d2_enemy`).
+>
+> **What contradicts it, by three separate routes:**
+> 1. **n=198 of our own plants** (side lane league cut, nearest-tile basis) puts us at
+>    **d²=25 = Chebyshev 5** — at the standoff distance, not hugging.
+> 2. **The source explains why**: `_try_forward_sentinel` (`raid.py:425-445`) accepts
+>    ANY site with `bp.distance_squared(target) <= 32` and **returns on the first
+>    hit**, while the approach gate already admits the builder at d²≤50. **The code
+>    plants at the outermost legal tile by construction.** See
+>    `plant-distance-from-source-2026-08-10.md`.
+> 3. **The boundary arithmetic agrees**: sentinel range is r²=32, and a
+>    first-legal-site rule lands on its edge.
+>
+> **So the Chebyshev 1-3 cluster here is the TAIL — what happens when a builder is
+> already deep before a legal site appears — not our mode.** The four points are real;
+> the generalisation from them is not.
+>
+> **CONSEQUENCE, and it is why this amendment is urgent rather than tidy:** the builder
+> retired the "plant closer" plank citing this comparison (*"we were already planting
+> closer than they do"*). **That retirement is sourced from four sentinels and should be
+> reopened.** Not "suspended pending subject resolution" — the subject IS resolved; the
+> sample size is the problem.
+>
+> **Everything else in this section stands and is unaffected**, because it is the arm
+> with n=13: 13/13 cardinally aligned with a footprint tile, correct facing on the
+> build, never a rotate, Chebyshev only ever 5/4/2 and never diagonal.
+
 ---
 
 ## 4. Build timelines, first 50 rounds
