@@ -40,6 +40,32 @@ first reader — quite reasonably — scores 3/10 as a null. **And name the quan
 the treatment is claimed to move: it is BORDER-STANDING EVENTS CAUSED, not
 removal rate.**
 
+### ⇒ SUPERSEDED BY A BETTER DESIGN — adopt the research arm's split-throw control
+
+**My reframe fixes how ≥30% reads. It does NOT fix how anything BELOW 30% reads,
+because it smuggles an assumption: that an induced border-standing is equivalent
+to a natural one.** The 29.6% population is builders that walked to a border
+under their own navigation, plausibly while running the very routine (paving,
+routing, edge-following) that performs the fatal off-map query. **A thrown builder
+arrives in a different state and may never run it.** So under my version, **any
+result strictly between 0 and ~30% is ambiguous** — it cannot separate *"the
+mechanism is weaker when induced"* from *"thrown builders are in a different
+mode"* — and **0/10 does not cleanly refute either.**
+
+**THE FIX, at zero extra cost, same leg: SPLIT THE THROWS — half to BORDER tiles,
+half to INTERIOR tiles.**
+- **Holds "being thrown" constant and varies only the border property**, which is
+  the causal variable — obligation 11 expressed in the right quantity.
+- **The interior arm is a within-treatment placebo that MUST read ~0**, since the
+  census gives **0 events in 2,334,017 non-border builder-rounds**.
+- **It removes the equivalence assumption entirely:** if thrown builders are in a
+  different mode, *both arms are*, so the contrast still isolates the border.
+- **And it gives the instrument its own negative control inside the leg** —
+  which is what criterion 4 below demands of every instrument here.
+
+**This supersedes my consistency framing as the required design. Adopted from the
+research arm.**
+
 ## THE CRITERIA — what I will check when it lands
 
 ### 1. OPPONENT-CONDITIONALITY MUST BE PRE-DECLARED, WITH NAMES
