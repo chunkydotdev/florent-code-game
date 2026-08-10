@@ -24523,3 +24523,57 @@ cut plus §1 of the parent doc go with it — check that FIRST.
 Honest limit stated up front: this cannot see turn-loss in either arm, so it can
 retire the UNIT-loss channel only. It must not be read as pricing crash-induction.
 - IN-FLIGHT: [agent] crash-target-discriminator (opus) — read-only corpus cut.
+
+## 2026-08-10 06:0x CEST — SIDE LANE: two AMENDMENTS TO MY OWN BOOT NOTE, and the baseline leg certified
+
+**AMENDMENT 1 — my boot note's item 3 was WRONG, and the fault is mine, not the
+builder's.** I wrote that research's s26 feasibility cut "died with that session
+unless a commit carries it". **It banked**, at `449f217`
+(`docs/research/predicate-feasibility-2026-08-10.md`, 04:25) — verified by
+`git cat-file -t` and `git log -1` on the hash before accepting the correction,
+not by trusting the peer's sentence. I carried a peer's wrap-time knowledge state
+forward as a claim about the REPO without running one `git log`. **That is the
+unifier's exact shape — a statement true of what the builder knew, published as
+a statement about what exists — committed by the lane whose job is to catch it.**
+The correction came from research, unprompted, within two minutes of their boot.
+
+**And it carries a live objection I am adopting into my audit criterion for the
+LOKI-10 wiring pass** (per research, from that same banked cut): **the
+discriminator is not the selector.** "Reaches a harvester" passes **46.5%** of
+ends against the costing's **8.5%** profitable — 5.5x wider — bounding spend near
+**317 Ti/game, not 38**, so D19's headline **+411 aimed** likely does not survive
+as written. It was costed on the tighter rule (one end/game carries 91% of the
+loss) while the shipped predicate is the looser one. **If the wiring pass or any
+successor plank is sized off +411, that is D16's shape — a number true of the
+costing's rule used for the implementation's rule.** Anchor raised, not a veto;
+the builder owns the pricing.
+
+**AMENDMENT 2 — I misaddressed the lane.** My boot message told the peer at
+`florent-code-game-85` that "the first open-channel leg is yours to fire". That
+peer is the RESEARCH arm, which never fires legs. I assumed the single peer
+visible at my boot was the builder instead of reading the row. Research flagged
+it themselves with the right reason: **a directive addressed to the lane that
+cannot execute it is how an open item goes stale while both lanes believe it is
+covered.** Re-aimed at the builder. **Generalising for the watch: an audit that
+names the wrong lane is not a weaker audit, it is an unowned one** — the same
+species as a phantom IN-FLIGHT entry (2ea05ce), since both corrupt the map of who
+holds what.
+
+**BASELINE LEG CERTIFIED** — `LOCK-CERT-live-unrated-baseline-2026-08-10.md`
+(this commit). Headlines: lock **CERTIFIED** (prereg 03:58:40Z precedes earliest
+leg 03:58:55.362Z) but the **margin is 15.4 s against two clocks whose offset we
+have never measured** — one-tenth of the 2m33s precedent; recommendation is to
+quote a platform-clock reading inside future preregs, which makes them
+self-certifying. **Population SHRANK from its pre-registration**: 5 teams / 25
+games delivered against 6 / 30 registered, Ouroboros truncated by the platform's
+5-per-10-min unrated rate limit — so the control is **/25**, seats are unbalanced
+3A/2B, and the probe-imitation secondary is at half coverage because the missing
+team is one of the two that carried it. **No currency figure is quoted and none
+should be taken from that doc**; `r1000_rate` needs per-game win conditions that
+`match list` does not expose.
+
+**One promise logged as OWED while it is still cheap:** the prereg commits to
+checking live-unrated `r1000_rate` against the ~7% ladder figure (8/115
+attributed v102 games) and to reporting if the populations are not
+interchangeable. Unanswered. Logged before the interesting numbers arrive,
+because that is when promises like it evaporate.
