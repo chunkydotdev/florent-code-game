@@ -25947,3 +25947,53 @@ cannot produce by construction (we are 4 of 2,508 team-sides).
 that is cheap in rating and expensive in throughput — 150 games/hour is the
 binding constraint, so a duplicated leg costs a leg we could have spent on
 crash-induction or ring-body denial.
+
+### **I PROPOSED A PLANK THAT HAD ALREADY FIRED. IT WAS LOKI-11.**
+Verified myself across the trees, not taken on relay:
+`_v124loki8` (v102, live) **False** · `_v127loki10` **False** ·
+**`_v128loki11` TRUE** · `_v130loki13` **False**. Control: the token appears
+**2x** in the v102 tree, so a broken searcher would have shown itself.
+**AND THE FACT WAS ON LINE 12 OF A PREREG I OPENED TWICE TONIGHT** —
+`docs/prereg/PREREG-loki11-rush-reopen-2026-08-10.md:12`:
+`bots/_v128loki11 = bots/_v124loki8 with LOKI2_RUSH_ON: False -> True`.
+**The filename alone said `rush-reopen`.**
+**HOW BOTH READS MISSED IT, because this is a sharper variant of tonight's
+pattern:** I read that file with `sed -n '95,160p'` (for the rollback section)
+and grepped it for `rollback|revert|abort`. **Both were CORRECT for their
+immediate question and STRUCTURALLY INCAPABLE of surfacing line 12.**
+**A targeted read is an instrument, and its blind spot is everything outside the
+target.** Fourth instance tonight of verifying one layer and never seeing the
+adjacent one — and the first where the miss was caused by the *precision* of the
+read rather than by trusting someone else's number. **Rule: opening the same
+document twice for two different narrow questions is the signal to read its head.**
+
+### **THE REFRAME IS RIGHT, AND LOKI-11's OWN DATA ANSWERS MY OPEN QUESTION**
+I flagged as load-bearing that I had not established whether NAVIGATION binds
+rather than the gates. **LOKI-11 settles it empirically — no source trace needed:**
+| quantity | treatment | control |
+|---|---|---|
+| median round of FIRST forward sentinel | **32** | 43 |
+| forward sentinels per game | **2.08** | **3.44** |
+**The flag BOUND — arrival moved 11 rounds earlier.** Read out +16.0pp
+core_kill_share, **p=0.393, NULL at n=25 vs a pooled n=50 control.**
+**BUT NEITHER BAR MEASURED MY GATE.** Bar A was the round of the FIRST plant (one
+sentinel, half the games); bar B was sentinels built **per game**, not **2+
+STANDING at r45**. So r32-median-first-plant does not establish the gate.
+**AND THE COUNT MOVED THE WRONG WAY: 2.08 vs 3.44.**
+
+### **MY ADDITION: THE COUNT DROP IS NOT NOISE, IT IS THE FLAG'S OWN MECHANISM**
+`LOKI2_RUSH_MIN_HARV = 0` and `LOKI2_RUSH_TI_FLOOR = 8` **buy tempo by spending
+the economy that funds later emplacements.** Planting before harvesters exist
+means fewer harvesters, so the bank that would have paid for sentinels 3 and 4
+never accrues. **Earlier first plant and a lower total count are the SAME
+transaction, not two results.**
+**This is the identical shape I pre-registered as the falsifier for the
+plant-closer plank** ("a tighter gate can produce FEWER forward sentinels rather
+than closer ones") — **appearing now for a different treatment.** Two independent
+treatments both trading count for position suggests the binding resource is
+**builder-turns and bank, not the gates**, and that we sit on a frontier where
+buying one costs the other.
+**⇒ THE DOSE PLANK MUST BUY COUNT WITHOUT SELLING THE ECONOMY** — e.g. keep the
+window but fund it from a raised cap or a different sink — or it will keep
+re-purchasing the same trade. **Under D12 this is a hypothesis; it prioritises
+and closes nothing.**
