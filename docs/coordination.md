@@ -24135,3 +24135,103 @@ consolidates, it does not reconstruct.
 obligations doc. First expected work: re-arm both wakes (selftest them per
 the standing note), audit whatever the builder successor fired, certify the
 first unrated leg's two clocks.
+
+# ============================================================================
+# 2026-08-10 05:4x CEST — **WRAP s26 (BUILDER): PROCESS DELTAS**
+# Wrap called by Magnus directly. Deltas WERE appended as they occurred this
+# session (D12-D15 and the unnumbered ones inline above); this is the synthesis
+# protocol rule 5 asks for, not a reconstruction.
+# ============================================================================
+
+## THE SESSION IN ONE LINE
+**Nine of my own published numbers died, none of them by my own re-reading** —
+and the night's output is not a plank but the discovery that the measuring
+apparatus was wrong in five independent places.
+
+## D16. THE NINE FAILURES WERE ONE FAULT: A NUMBER TRUE *SOMEWHERE*, USED *SOMEWHERE ELSE*
+| measured on | used as |
+|---|---|
+| a join-mapped view (n=212) | the population (273) |
+| an assumed capacity (1/tile) | a measured utilisation (25%) |
+| an assumed 1000-turn game | a per-turn rate (4.7x -> 1.7x -> wrong again) |
+| a 480-file battery | a fixture class ("the arena") |
+| pooled turret+builder events | a builder-only benchmark (unreachable by arithmetic) |
+| an Eir-dominated archive (92%) | the current line |
+| one vivid probe observation | a rate (misrouted lines: 2.6%, not the 5,000) |
+| a three-line region | a file ("byte-identical") |
+| ONE code path | the whole bot (LOKI-10's bar) |
+**THE FIX IS THE SAME IN ALL NINE: measure both sides of the comparison INSIDE
+the thing you are testing.** A paired within-arm control is immune to era drift
+by construction. **Successor rule, now at the top of HANDOVER: use a stored
+figure to choose WHAT to test, never HOW MUCH to expect.**
+
+## D17. FOUR INSTRUMENTS BROKE *IN THE FIXING*, AND NONE BY CARELESSNESS
+1. **ship_watch** — its own docstring said *"a stop-loss that cannot fire is
+   worse than none"*, then reintroduced the fault in the SEGMENTATION after
+   fixing it in the CONSTANTS. It could not have fired at all: v102 could have
+   bled 1584 -> 1384 logging `CLEARED` throughout.
+2. **My first selftest fixture** — the BROKEN design passed it too. Only
+   mutation testing found that.
+3. **My git verification** — `git show --stat` and `ls-tree` scope to the cwd,
+   so the check inherited the poisoned cwd it was checking and CONFIRMED a
+   false conclusion (that `bots/` had been deleted).
+4. **A constant column** (research's `deliveries`) — a threshold met TRIVIALLY.
+**ONE SHAPE: THE CHECK INHERITED THE FAILURE MODE OF THE THING IT CHECKED.**
+The general fix is one move — **run the check against a case where it MUST come
+out differently** (a mutation, a complement group). **That supersedes "corrupt
+the input" as the standard.**
+
+## D18. A MEASUREMENT YOU DO NOT NEED IMPORTS ITS POPULATION
+I justified a visited-set with a 9.9% cycle rate measured on a DIFFERENT
+population. The correct argument was **asymmetric payoff** — three lines against
+an infinite loop inside a 10 ms budget — and needed **no measurement at all**.
+**Reaching for evidence you do not need is not free.** The only rule tonight
+that says to measure LESS.
+
+## D19. COST THE FIX, NOT ONLY THE DEFECT
+Class-1 routing: **defect 464 Ti/game either way. Aimed: fix 38, net +411.
+Unconditional: fix 681, net -223.** Same idea, opposite sign, and **a
+defect-only ranking cannot express the difference** — which is the ranking
+LOKI-10 was built from. **And the ORDERING is not stable across pricings**
+(411/182/130/102 by net; exactly reversed by return-on-spend), so a ranking that
+does not say which question it answers has not ranked anything.
+
+## D20. AN ANNOUNCEMENT IS NOT AN ACTION, IN EITHER DIRECTION
+Research announced an agent in IN-FLIGHT, never spawned it, told me twice it was
+running — then wrote *"correction sent"* before sending it. **Composing a
+sentence about an action feels like performing it.** Caught only by reading a
+LIVE surface instead of their own prior sentence. **This evaded every guard in
+the rule-list: no denominator, no population, no fixture.** My own version:
+I carried "six monitors alive" forward from a 02:11 check **as if verification
+had a shelf life.**
+
+## D21. THE FIXTURE IS A SEPARATE AXIS FROM THE POPULATION, AND OURS IS SELF-AUTHORED
+Zero damage to our forward turrets in 480 games — **not a property of the field
+but of five probes WE wrote**, sharing `best_core or best_any`, which
+short-circuits. **Both RESOLVING fixtures (cad 66.7%, orizon 50.0%) carry it;
+the saturated ones do not.** So every verdict we ever *resolved* faced an
+opponent that prefers our core over anything else. **Not "the arena is blind" —
+"the arena is blind because of what we wrote", and the ladder CAN see these
+treatments** (46.9% of our turrets die there). **Standing: any survival, heal or
+screening figure must name its FIXTURE, not just its population.**
+
+## WHAT SHIPPED, AND WHAT DID NOT
+**Shipped:** `slot_rule.py` (the rule as one importable statement) · ship_watch
+rebuilt with restart-on-OK, peak/drawdown, a mutation-tested selftest and the
+Magnus-approved **paired SPRT bound** · `meta_attrib` wired into sync (opponent
+versions were hand-built only) · keeper's discarded-log fix · **five engine
+probes** (global additive scale · same-round destroy refund · `can_fire_from`
+permits <=1 facing and is False on empty tiles for gunners not sentinels ·
+`titanium_collected` excludes passive AND counts delivery not emission ·
+conveyor delivery is lossless but a misrouted line scores zero forever) ·
+`razer_probe` · `core_entry.py`.
+**Not shipped, deliberately:** the corrected fixture variants, the mirror
+predicate, the forward-gate revert, LOKI-10's coverage fix. **All specified with
+their arithmetic attached.** Three were declined at low context because of D17.
+
+## THE ONE I WOULD PUT FIRST
+**LOKI-9 was a proven-INAPPLICABLE null, not a failed plank** — `can_fire_from`
+permits at most one facing of eight, so reordering a singleton is a no-op **by
+construction**. That was resolved mathematically rather than statistically, and
+only because a third falsifier branch was added BEFORE the run. **It cost one
+leg instead of two.**
