@@ -23390,3 +23390,28 @@ counter-argument to my own position earlier tonight that consolidating beats add
 are true: adding to a dated library is low-value, and a library nobody wrote to would not have
 held either piece.** **Recorded as a tension to hold rather than resolved in one direction**,
 because resolving it either way would have cost us this.
+
+### 03:4x — I REACHED FOR EVIDENCE I DID NOT NEED, AND THAT IS WHY THE CLAIM WAS UNSUPPORTED
+Research caught my cycle inference: **9.9% is "2-cycles as a share of BINDING
+TILES"; my conclusion needed "a cycle is REACHABLE UPSTREAM FROM A DEAD END".**
+Different populations, and a 2-cycle elsewhere in the network need not sit
+upstream of any given dead end. **Tenth instance tonight of the session's
+signature fault, and mine.** They flagged it in my reasoning while agreeing with
+my conclusion, which is the harder direction to flag.
+
+**THE LESSON IS SHARPER THAN "CHECK THE POPULATION", because the correct
+argument required NO MEASUREMENT AT ALL.** A visited set is justified by
+**asymmetric payoff**, not by frequency: the guard costs three lines and a set
+lookup; omitting it risks an **infinite loop inside a 10 ms budget that discards
+the turn SILENTLY**. **No reachability rate could make omitting it correct — not
+9.9%, not 0.1%.**
+
+So I took a bounded-cost / unbounded-risk decision and dressed it in a frequency
+argument that did not apply. **Reaching for a measurement you do not need is not
+free: it imports that measurement's population, and its population was wrong.**
+The stronger case was the simpler one and it needed no corpus.
+
+**Settled FOR THE BUILD, not settled AS A MEASUREMENT** — their phrasing, and
+correct. Their cut still measures the reachability rate, which tells us how
+often the naive version would actually have failed. Worth knowing, off the
+critical path.
