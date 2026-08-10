@@ -29217,3 +29217,55 @@ directive.** So one of two things is needed and neither is a lane's to assume:
 **Until one lands, "ROBUSTNESS ONLY" is an unreconciled category** and a
 successor could read it as licence for exactly the planks D4 exists to catch.
 **Flagged to the builder; escalating to Magnus since only he can move the field.**
+
+## 2026-08-10 16:2x CEST — BUILDER: TARGET-BAND FLAGS, AND ONE ATTRIBUTION CORRECTION
+
+**Attribution first, because it changes who may act.** The side lane's audit
+addresses the target-band framework as mine ("your own table", "your text").
+**It is not mine.** It entered at `dc2fd27`, message prefixed `MAGNUS:` — it is
+Magnus's directive, transcribed by the research lane. I did not derive the Elo
+arithmetic and I am not claiming the K-independence strengthening offered with
+it. **Whoever transcribed it should confirm it, and a successor should not read
+the builder as its author.** (Lane authorship is not recoverable from
+`git log --format=%an`: every lane commits as the same git user, so the commit
+message prefix is the only signal and it is a convention, not a control.)
+
+**FLAG 1 — the zone labels invert the risk the table reports. UPHELD, and it is
+a labelling defect, not an arithmetic one.** Loss cost is monotone increasing as
+the opponent weakens: −16.0 at parity, −27.2 at −300, **−31.8 at −900**. So *"make
+sure we do not LOSE"* is worth **MOST** in the DEAD ZONE and **least** in the
+CLIMB BAND, while the labels put ROBUSTNESS ONLY on the middle band and
+"NOTHING" on the 66 teams where a single loss is the most expensive on the board.
+**"Nothing OFFENSIVE" is the correct reading of the text; "DEAD ZONE / 66 teams /
+NOTHING" is what a successor retains.** Operational reading recorded here:
+**robustness obligations extend MONOTONICALLY DOWNWARD and are strongest at the
+bottom; only OFFENSIVE work is banned below `us − 300`.** The framework is
+Magnus's to rename.
+
+**FLAG 2 — `ROBUSTNESS ONLY` vs `PLAY_DEFENCE: never`. WORKING DEFINITION
+ADOPTED, AND IT IS AN INTERPRETATION, NOT AN EDIT.** `PROGRAMME.md` carries
+`PLAY_DEFENCE: never`, is machine-readable, enforced by `tools/gate.py`, and
+**may only be edited on an explicit Magnus directive.** I am not editing it.
+
+**Working definition, available today and I believe it is what the directive
+means:** *robustness* is **NOT LOSING BY MECHANISMS THAT ARE NOT IN-GAME
+DEFENCE** — faster kills, crash-avoidance, correctness fixes, not timing out,
+not throwing an uncaught exception, not mis-reading our own state. **None of
+those is survival, screening, home turrets or heal-uptime**, which is what D4
+and `PLAY_DEFENCE: never` actually prohibit. Under this reading the two
+documents do not collide.
+
+**If Magnus means in-game defence, the working definition is wrong and
+`PROGRAMME.md` must change — and only he can do that.** Surfaced, not assumed.
+**Until one lands, `ROBUSTNESS ONLY` is an UNRECONCILED CATEGORY and no plank
+may be gated in under it**; a successor must not read it as licence for exactly
+the planks D4 exists to catch.
+
+**AND THE FRAMEWORK VALIDATES AMENDMENT 8 FROM AN INDEPENDENT DIRECTION.** A8
+closed the border road for climbing on a *hazard* argument (zero carriers at or
+above us). The band closes it on an *Elo* argument: LOKI-14b's carriers sit
+560–863 below, where **a win pays ~0.2–1.0 and a loss costs ~31**. Two unrelated
+derivations, same conclusion, and **the band would have caught it BEFORE the leg
+rather than at cycle 2.** The leg still runs to its dose gate: stopping it now
+would leave it under 150 throws, i.e. "ANSWERED NOTHING" — **the one outcome
+that spends the holder time and buys nothing.**

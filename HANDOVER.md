@@ -120,6 +120,17 @@
 ## leaves **4 durable activations in 24h = 0.19/hr**. Counting logic deliberately
 ## LEFT UNCHANGED while the audit session evaluates that instrument.
 
+## ===== A STANDING SELF-CHECK FOR WHOEVER HOLDS THE VERDICTS =====
+## **MY ERRORS RUN IN THE DIRECTION OF THE WORK I WANT TO DO NEXT.** Three in
+## one session, all narrowing claims I had made about roads I wanted OPEN:
+## the LOKI-14 null's scope, the MDE denominator (I checked only the direction
+## that could embarrass me), and "the displacement trigger is untouched" (it
+## was 164 interior throws at the climbing band, reading zero).
+## **None was a calculation error; each was a check I did not run because its
+## result would have been inconvenient.** The countermeasure that actually
+## worked all three times was another lane re-deriving the ARITHMETIC rather
+## than reviewing the REASONING. Ask for that on any verdict you want to be true.
+
 ## ===== QUEUE, IN PRIORITY ORDER (rewritten s28) =====
 ## 0. **THE FIXTURE CANNOT RESOLVE AN 18pp CLAIM. THIS IS THE FRAME FOR
 ##    EVERYTHING BELOW.** `tools/leg_read.py` now computes it instead of printing
