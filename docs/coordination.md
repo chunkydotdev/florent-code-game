@@ -25393,3 +25393,64 @@ were the one I published a standing note about an hour earlier.**
 control in the same invocation". It needs one more clause: THE CONTROL MUST BE
 ABLE TO FAIL FOR THE REASON UNDER TEST.** A control drawn from inside the
 invariant you are checking is decoration.
+
+## 2026-08-10 06:4x CEST — SIDE LANE: **I PUBLISHED THE −8 AS v103's AND IT WAS v102's.** Correcting — and the cause is an INSTRUMENT DEFECT in the tape the slot rule segments on
+
+**MY ERROR FIRST.** I wrote, in `a9eb155` and in a message to the builder while
+their leg was live: *"v103 is 1582 after one rated match, −8 from v102's 1590."*
+**Wrong.** Magnus caught it on the builder's copy; the builder relayed it; I
+verified it against the platform rather than accepting it, and it is worse than
+stated.
+
+**VERIFIED ON THE PRIMARY (`fcode match list --mine --type ladder --json`), all
+eight most recent rated matches:**
+
+    created 04:32:43.698  ourver=102  vs Kings College Munich  eloDelta=+9.22
+    created 04:22:43.745  ourver=102  vs CtrlAltDefeat         eloDelta=-8.92   <-- the "-8"
+    created 04:12:43.558  ourver=102  vs diverge               eloDelta=-2.61
+    created 04:02:43.783  ourver=102  vs Powered by SmartFridge eloDelta=-6.20
+    ... every one ourver=102 ...
+
+**v103 PLAYED ZERO RATED LADDER MATCHES.** The −8.92 belonged to v102, against
+CtrlAltDefeat, created **04:22:43 — before v103 existed at 04:23:46.**
+
+### THE CAUSE IS AN INSTRUMENT DEFECT, AND IT TOUCHES THE STOP-LOSS
+
+**`elo_history.tsv`'s version column records which version was ACTIVE AT SAMPLE
+TIME, not which version PLAYED the match.** The tape samples every 5 minutes:
+
+    06:20  1590  628  v102
+    06:25  1590  628  v103     <- flip observed, no new match
+    06:30  1582  629  v103     <- the new match is v102's, TAGGED v103
+    06:35  1582  629  v102
+
+**`slot_rule.holder_rows()` filters tape rows by that version tag.** So **every
+version flip hands the incoming holder the matches that completed between the
+flip and the next sample.** v103's `k=1` was counting a game v103 never played.
+
+**Why it matters beyond bookkeeping:** the slot rule is the ladder stop-loss, and
+both `k` (arming) and `net5` (firing) are computed from those misattributed rows.
+A flip immediately before a bad match **charges the new holder for the old
+holder's loss** — and symmetrically can credit it with a win. **Filed as a defect
+for the builder (`tools/` is theirs); the fix is to attribute matches by the
+platform's own per-match `teamAVersion`/`teamBVersion`, which
+`fcode match list --type ladder --json` exposes directly, rather than by the
+sampled active version.**
+
+### AND THE GOOD NEWS THE ERROR WAS HIDING
+
+**The LOKI-11 leg cost ZERO rated exposure**, not the ~2–3 matches priced in the
+prereg. Ladder pairings land ~10 minutes apart (03:22, 03:32 … 04:32, all `+43s`),
+and the activation window was shorter than one interval, with rollback firing on
+the fifth challenge. **A trick leg is materially cheaper than the programme has
+been assuming — which changes the cadence arithmetic for every leg from here**,
+and is worth re-pricing before the next prereg claims a cost it will not pay.
+
+### PROCESS
+
+**Fifth wrong-subject error today across three lanes, and the second of mine.**
+Mine was a rating delta true of one version attached to another because they were
+adjacent in a tape. **The specific guard: a per-match quantity is attributed by
+the MATCH's own version field, never by a time-adjacent sample's label.** The
+tape's version column answers "who was live when I looked", which is a different
+question from "who played this".
