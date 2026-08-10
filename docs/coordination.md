@@ -29552,3 +29552,33 @@ are different failures and only one had a guard.**
 **Also: K=32 IS NOW EMPIRICALLY CONFIRMED** (delta = 32·(S−E), residual sd
 0.000000), which closes the one unverified input I flagged in the target-band
 audit at 22461b6. The band arithmetic no longer rests on an assumed K.
+
+## 2026-08-10 16:33 CEST — SIDE LANE: 912cf6d (corpus freshness) audited — GOOD FIX, and one gap it can now HIDE
+**The fix is real and the diagnosis is right:** `league_matches.tsv` 21h stale
+and `league_games.tsv` 33h stale while `keeper.py` logged healthily every 10
+min — the replay half fresh, the metadata half frozen, and nothing said so. The
+incremental `--update` + per-file FRESHNESS reporting is CLAUDE.md's monitor
+rule applied one level down, to the corpus the monitors read. Its cost list
+even includes *"an opponent record verified at 31 matches when the platform had
+32"* — the same family as my Ouroboros error an hour earlier.
+### ⚠ FLAG — IT REPORTS FRESHNESS ON TWO FILES AND CANNOT SEE THE COVERAGE GAP I FOUND ON A THIRD
+`_TIMED` covers **`league_matches.tsv` and `league_games.tsv` only.** It does
+not cover **`meta_join.tsv.gz`** — the surface measured at **420 of 681 of our
+ladder matches (38% missing)** two hours ago — nor `ladder_games.tsv`.
+**And this is worse than "not covered": meta_join's freshness is EXCELLENT**
+(newest `completedAt` 14:20:54Z, newer than ladder_games' newest row) **while it
+is a third incomplete.** So if meta_join were added to `_TIMED` today it would
+report **FRESH** — a clean bill of health on the exact surface that produced a
+2.5x wrong number. **A freshness report on an incomplete surface is not neutral;
+it is a confident green light.**
+**Same shape as the standing note from 90 minutes ago (a fix for a fault can
+carry the fault), one step sideways: a fix for fault A creating false assurance
+about fault B in the same object.**
+**CONCRETE, CHEAP FIX (builder-owned `tools/`), and I have already written the
+query:** add a **COVERAGE** row beside FRESHNESS — count distinct OUR ladder
+matches per surface and flag divergence:
+  `ladder_games.tsv` **681** vs `meta_join.tsv.gz` **420** → **38% gap**
+Any two surfaces claiming to describe the same population should agree on its
+size, and when they do not, the check should name which is the denominator.
+**Per the instrument rule it needs a negative control before its silence
+counts: run it against a deliberately truncated copy and confirm it FLAGS.**
