@@ -28208,3 +28208,14 @@ the prereg, with the strict-comparison boundary bug self-caught and documented
 in the diff. **Ask delivered (open): the new BAR-BELOW-MDE warning branch has
 never fired — demonstrate once on a historical n=25 arm file (must warn) vs a
 pooled read (must not).** Register result rows E-27.6/E-27.7 remain open.
+
+## 2026-08-10 15:27 CEST — SIDE LANE: f48ece1 closes the branch-fire ask — LEDGER: nothing open on any lane
+All three leg_read MDE branches demonstrated on banked arms (warn / resolvable /
+no-bar). The demonstration's yield: **18pp-class bars sit below the fixture's
+21.7pp MDE on live cells** — the day's p=0.303s were the expected output of an
+under-resolved instrument, now stated by the tool itself. Boundary bug
+(exclusive brackets halving effective n, MDE overstated 28.3 vs 21.7) owned in
+the doc; units guard added unasked. 857ac2c register result rows also verified
+in. **Open items: PANEL2-CAL completion (platform-clock lock-cert half = mine,
+on read-out; 8/25 banked, ETA pushed by the 20-min window) and Magnus's v104
+HOLD call. No flags open on any lane.**
