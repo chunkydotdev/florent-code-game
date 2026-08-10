@@ -1,159 +1,107 @@
-# LIVE: **v102 = LOKI-8**. Session 26 wrap, 2026-08-10 05:4x CEST.
+# LIVE: **v104 = "Loki v2"**. Session 27 wrap, 2026-08-10 ~14:5x CEST.
 
 ## ===== READ `PROGRAMME.md` FIRST, THEN THIS. `tools/gate.py` ENFORCES IT. =====
-## Before any battery: `tools/gate.py`. Before any ship row: `tools/preflight.py`.
-## **SUBMIT ONLY VIA `tools/submit_clean.py`** — bare `fcode submit` ships docs.
+## Then read **`CLAUDE.md` POINT 0** — the exploit hunt is the standing brief.
+## Before any ship row: `tools/preflight.py`. **SUBMIT ONLY VIA
+## `tools/submit_clean.py`** — bare `fcode submit` ships our docs to the platform.
 
-## ===== STATE, VERIFIED AT WRAP (not recalled) =====
-##   LIVE: **v102 = `bots/_v124loki8`**, submission `ff270a6c`, py-tree md5
-##   **72a3baf6**. **1586.2 @ 624 matches, rank 30/116, last-10 4W-6L.**
-##   **ACTIVATION BASELINE = 1567.44** (NOT the 1577.5 in older blocks — that is
-##   the rating before v101's LAST game; the platform's per-match `teamAVersion`
-##   settles it). **Net +18.8 over 54 matches.**
-##   **ROLLBACK TARGET: v101, verified `ready` on the platform at wrap.**
-##   `.venv/bin/fcode submission activate 101` — **VERSION INT, NOT ID — then
-##   VERIFY** (s25 D9: an id-based restore chain failed open with an untested
-##   bot live).
+## ===== STATE, VERIFIED AT WRAP ON THE PLATFORM (not recalled) =====
+##   LIVE: **v104 "Loki v2" = `bots/_v130loki13`**, py-tree md5 **bb4140f5**.
+##   **1675 @ 677 matches, rank #23/116, last-10 5W-5L.** Peak this session 1698.
+##   **ACTIVATION BASELINE = 1615** (captured 07:18:15Z). **net_act +60.0.**
+##   The treatment is ONE CONSTANT vs its parent: `PAVE_TRAIL_ON: True -> False`.
 ##
-## ===== THE SLOT: FIRED TWICE TONIGHT, HELD BOTH TIMES, CURRENTLY CLEAR =====
-##   At wrap: **k=54, net5 -3.0, `slot_free` False, no `SHIP_ALERT`.**
-##   The arm ran **1567 -> 1600 -> 1572 -> 1616 -> 1585 -> 1599 -> 1580 -> 1586**.
-##   **`SLOT_FREE` fired at k=36 and k=52. HOLD both times, per a decision
-##   PRE-COMMITTED at k=34 while the alarm was still silent.**
-##   **THE PRE-COMMITMENT IS A CONJUNCTION AND IT STILL GOVERNS:**
-##   **`net5 <= -21` AND `net_act < 0`.** net_act is **+18.8** — v102 is still
-##   ABOVE the rating v101 handed it, which is the whole test: **hold while the
-##   ship beats its replacement.** The other trigger is the **slow SPRT
-##   (MU0=-4)** accepting BLEED. **At 1567.4 or below with net5 <= -21, ROLL.**
-##   **`slot_free` is a PERMISSION AND A WAKE, NEVER A VERDICT.**
+##   **ROLLBACK TARGET: v102 = `bots/_v124loki8`**, md5 **e8697ffa**, submission
+##   `ff270a6c`. `.venv/bin/fcode submission activate 102` —
+##   **VERSION INT, THEN VERIFY WITH `fcode status`.**
 ##
-## ===== WAKE PATH — WHAT IS AND IS NOT WATCHED AFTER THIS SESSION =====
-##   **SURVIVES (detached, PPID 1, all verified BY OUTPUT at wrap, not by `ps`):**
-##   elo_logger 25811 · match_watcher 25942 · opp_watcher 25943 ·
-##   replay_archiver 25944 · keeper 89444 · **ship_watch 66915** (armed on the
-##   CORRECTED 1567.44 baseline). All five owned files written within ~7 min of
-##   wrap. *(An earlier flag that `match_watcher` was stale was a quiet ladder
-##   hour; it is writing.)*
-##   **DIES WITH THIS SESSION:** every subagent (all relayed, none live).
-##   **NOTHING WAKES A SESSION.** `ship_watch` will write `corpus/SHIP_ALERT`
-##   and clear it on recovery — **observed doing all three tonight** — but no
-##   process boots a session to act. **FIRST THING AT NEXT BOOT:
-##   `cat corpus/SHIP_ALERT` (absent = fine), then `tail corpus/ship_watch.log`.**
-##   **Any `CLEARED` line in that log is PRE-s26 and means nothing** — two
-##   schemas. **The tape lags live by up to 5 min** (elo_logger polls at 300s).
+##   **⚠ v104 SHIPPED ON EVIDENCE THAT LATER FAILED ITS OWN CONFIRMATION.**
+##   The pre-registered confirmatory test returned **-7.0pp, p=0.303** against a
+##   predicted -18pp. **NOT CONFIRMED.** Magnus chose **HOLD AND KEEP MEASURING**
+##   — rolling back on p=0.30 would act on evidence no stronger than what
+##   shipped it. **"Not confirmed" is NOT "refuted"**: the direction still
+##   favours v104 by 7pp and its ladder run is +60. See
+##   `docs/research/RESULT-confirm-pavetrail-2026-08-10.md`.
 
-## ===== ⛔ THE STANDING CONTEXT DESCRIBES EIR, NOT THE BOT YOU ARE RUNNING =====
-##   The replay archive is **~92% Eir** (1,580 Eir games vs 130 LOKI-8), so every
-##   figure in the tactics library and in this file's older blocks is an EIR
-##   figure unless it says otherwise. Re-run on the v102 subset, **four standing
-##   claims INVERT** (research, s26):
-##
-##   | standing claim | Eir, as published | v102, SAME instrument |
-##   |---|---|---|
-##   | "we bank and do not spend" (Ti held r200-300) | us 506 / field 348 | **us 96 / field 210 — INVERTED** |
-##   | "we under-build turrets" (r200-300) | us 0.64 / field 2.22 | **us 2.15 / field 1.18 — we OUT-build** |
-##   | "everything breaks at r150" (ammo Ti/100r) | 212 -> 156 -> 130 | **209 -> 300 -> 253: 43% MORE after r150** |
-##   | "353 games reached r1000, we won 57.2%" | 30.2% reach r1000 | **6.9% — 1 in 9. No current denominator.** |
-##
-##   **"We bank and do not spend" is the library's oldest complaint and it is
-##   FALSE OF THE LIVE BOT.** Both arms reasoned from it repeatedly this session.
-##   **Also does not reproduce:** the home-defence advantage under "the forward
-##   road is closed" — Eir **+16.3pp**, v102 **-10.0pp** (n=439). That is
-##   "does not reproduce", NOT "refuted" — but a headline conclusion is no longer
-##   standing on its published number.
-##
-##   **RULE FOR A SUCCESSOR, and it is the sharpest form we reached:
-##   USE A STORED FIGURE TO CHOOSE *WHAT* TO TEST, NEVER *HOW MUCH* TO EXPECT.**
-##   Nine failures tonight across two lanes were one fault in different clothes —
-##   **a number true SOMEWHERE, used SOMEWHERE ELSE**: a view used as a
-##   population, an assumed capacity used as a measured utilisation, an assumed
-##   game length used as a per-turn rate, a 480-file battery used as "the arena",
-##   an Eir archive used as the current line.
-##
-##   **THE FIX IS THE SAME IN ALL NINE: MEASURE BOTH SIDES OF THE COMPARISON
-##   INSIDE THE THING YOU ARE TESTING.** A paired within-arm control is immune to
-##   era drift BY CONSTRUCTION — both arms are the same bot on the same day, so
-##   what the archive is made of cannot matter. A control arm in the same fixture
-##   is immune to fixture contamination — a probe that cannot see your buildings
-##   cannot see them for EITHER arm.
-##
-##   **THE DEMONSTRATION, because it is better than the argument:** three planks
-##   were sized in one evening. **Two died of era drift before firing.** The third
-##   (LOKI-10) survived **not because anyone foresaw the era problem** but because
-##   its prereg pinned every bar to a paired within-leg control and pre-declared
-##   its currency channel closed. **Subject hygiene, applied for unrelated
-##   reasons, turned out to be the same defence.**
+## ===== THE FIRST THING TO DO, AND IT IS NOT A PLANK =====
+## **THE PANEL IS A TWO-CELL INSTRUMENT.** Across four windows: The Bisons
+## **0,0,0,0**; Leviathan **4,4,4,4** — range ZERO, inert constants.
+## CtrlAltDefeat is a third ceiling. **Only I Stone and gsxWins ever move**, so
+## every currency number on record is a read on two cells wearing a five-cell
+## denominator. **Two separate 18pp claims have now failed to resolve on it.**
+##   **`docs/prereg/PREREG-panel2-calibration-2026-08-10.md` is committed and its
+##   arm has fired ZERO matches. RUN IT FIRST.** It measures 5 candidate cells on
+##   the live fixture (admission band 0.20-0.80) before any plank is measured on
+##   them. Candidates: OopsGotYourElo `f61d19c1-…`, Team 48 `48340ad8-…`,
+##   Banminary `0774b1b2-…`, plus retained I Stone and gsxWins.
+##   **The old panel was picked on RATING PROXIMITY, which does not predict
+##   whether a cell can MOVE.** Do not repeat that.
 
-
-## ===== QUEUE, IN PRIORITY ORDER (s26 wrap) =====
-## **MAGNUS'S STANDING CORRECTION, 05:3x: "We havent runt any unrated games for
-## 8 hours."** Each leg-skip was individually defensible and collectively the
-## mill stopped producing. **THE OUTPUT STAGE IS A LEG. Fire one early.**
+## ===== SIX ARMS, PRE-REGISTERED, PARTIALLY FILLED — ALL STOPPED AT WRAP =====
+## `tools/fanout.sh` rotates arms through the free windows. **IT IS STOPPED AND
+## MUST NOT BE LEFT RUNNING UNATTENDED** — see the wake path below.
+## Match ids: `docs/legs/LEG-MATCH-IDS-2026-08-10.md` + `scratchpad/arm_*.txt`.
 ##
-## 1. **FINISH LOKI-10 — it is one commit from meeting its bar.** The leg fired
-##    (480 games, gate cleared): builds onto a conveyor-faced tile went
-##    **control 58 -> variant 11, an 81% cut, but the bar was ZERO. NOT MET.**
-##    Cause is named: `_feeds_tile` is wired into `_try_counterbattery` ONLY,
-##    while emplacements also come from raid.py (forward sentinel, barriers) and
-##    the launcher. **Call the same predicate at those sites, re-run, re-read.**
-##    **Then add the MIRROR predicate** (prereg addendum 2): refuse a CONVEYOR
-##    whose facing points at an existing friendly turret/barrier — that is
-##    **66 Ti/game against the forward pairs' 36**, so the plank goes from ~35%
-##    of its class to all of it. **No currency claim either way: the prereg
-##    pre-declares the channel closed (93% of v102 games end core_destroyed).**
-## 2. **CLASS-1-AIMED ROUTING — the best-specified unbuilt plank we have.**
-##    +411 Ti/game net, 11.9x return, fires in **59% of games** and least
-##    tail-carried. **The discriminator: walk upstream from a dead end; if the
-##    chain reaches a friendly harvester, finish it.** That predicate is the
-##    entire difference between **+411 and -223** — unconditional completion is
-##    NEGATIVE. **Two things settled for the build: a visited set is MANDATORY
-##    (cycles are ~1 in 10 of our binding tiles), and DO NOT walk per builder
-##    per turn** — topology changes only on build/destroy, so use the
-##    `roadCoverage` shape: one unit walks and writes a small non-negative
-##    integer to the store, every builder reads it. We currently have no way to
-##    express "the network is broken" at all.
-## 3. **THE FORWARD-GATE REVERT.** v102 gates on a LIVE census
-##    (`_live_fwd_guns`) which sits below cap in 96-100% of rounds — **a cap
-##    that is never approached is not a cap.** Eir still uses a CUMULATIVE
-##    per-builder budget and shows a hard cliff at 3. **Revert the LOKI-2b
-##    conversion.** Costed: fires in 11.9% of games, 42% excess share, but
-##    **88.1% of games bit-identical and 77% of the mass in FOUR games** —
-##    so **ship it bundled, never as its own leg.**
-## 4. **CORRECTED FIXTURE VARIANTS — `cad_probe2` / `orizon_probe2`, ALONGSIDE,
-##    NEVER IN PLACE.** Both resolving fixtures carry `best_core or best_any`,
-##    which short-circuits. Editing them in place would make future measurements
-##    incomparable with every banked one, INVISIBLY. Also classify
-##    `ouroboros_probe:1053` as a possible sixth member.
-## 5. **Per-opponent gates** and **the 79.95%-of-gunner-rounds-with-no-enemy-on-
-##    the-ray siting road** (LOKI-9 proved facing is NOT the lever).
+## | arm | n | reading |
+## |---|---|---|
+## | CONTROL v104 | 30 matches (150g, cleaned) | the denominator |
+## | LOKI-15 quota v105 | 32 | **-14.7pp, p=0.0149 — SIGNIFICANTLY WORSE** |
+## | CONFIRM v102 | 20 (n=100, **COMPLETE**) | **-7.0pp, p=0.303, NOT CONFIRMED** |
+## | LOKI-16 ring-hold v106 | 15 (75g of 100) | interim -0.7pp, p=1.00 |
+## | LOKI-14 kidnap v107 | 15 (75g of 100) | interim -2.0pp, p=0.78 |
+## | PANEL2 calibration | **0** | **not started — run first** |
+##
+## **LOKI-14's PRIMARY bar is NOT currency** — it is undamaged enemy removals
+## within 3 rounds of a BORDER throw vs an INTERIOR throw (the within-leg
+## placebo). **That decode has not been run.** Its currency reading says nothing
+## about the exploit.
 
-## ===== DO NOT REBUILD — backed by the ORGANISERS' OWN PATCH NOTES =====
-## **Our engine is a re-tuned descendant of Cambridge Battlecode 2026; its
-## changelog is our balance history.** Deliberately killed there: suicide-builder
-## rush, cheap-builder swarm, infinite-heal blob, two-sentinel one-shot.
-## **Values do NOT transfer (our sentinel is 18/10 vs their 10/5) — intent does.**
-## Four mechanics were NEVER balance-changed: launcher throw/kidnap, spawn-tile
-## denial, tiebreak-turtle, crash-induction.
-## **Also refuted THIS session:** ore poisoning (median 5 ore tiles used, 11
-## spare), partial spawn starvation (only 12/12 is clean), siphon (off-currency),
-## the barrier-form spawn lock, CPU denial, and heal-idle staffing (3.0%).
-## **CPU-timeout induction stays HELD** — our own doc claimed two leagues ban it
-## by name; re-verification shows the quote is about a 30-minute game clock.
-## The false claim is corrected; **that does not open the road.**
+## ===== ⚠ THE TWO SAFETY FAULTS THAT BIT TODAY =====
+## 1. **A fanout arm's rollback failed and left v102 live for ~5 minutes**, then
+##    the next arm — CONTROL, which activates nothing and so asserted nothing —
+##    fired **10 games into the wrong bot**, contaminating the denominator.
+##    **FIXED**: `fire()` now asserts the holder before every challenge and
+##    writes `corpus/FANOUT_ABORT`. Mutation-tested both ways.
+##    Quarantine record: `docs/legs/QUARANTINE-2026-08-10.md`.
+## 2. **`elo_history.tsv` tags rows by the version ACTIVE AT POLL TIME, not by
+##    the version that PLAYED the match.** `slot_rule` and `ship_watch` both
+##    segment on that tag, so every arm flip fragments the incumbent's window.
+##    **Documented in `tools/slot_rule.py`, NOT patched** (four instruments broke
+##    IN the fixing in s26). **Durable fix: attribute by per-match
+##    `teamAVersion`/`teamBVersion` from `match list --type ladder`.**
+##    With fanout stopped the tag settles and the rule reads correctly again —
+##    verified at wrap: `v104 k=31 armed=True slot_free=False`.
 
-## ===== INSTRUMENTS ADDED THIS SESSION =====
-## `PROGRAMME.md` + `gate.py` programme lock · `tools/mech_battery.py` (keeps
-## replays, prints mechanism BEFORE win rate) · `tools/reprice.py` (paired vs
-## pooled, both estimators) · `tools/field_deaths.py` (refuses unstratified
-## output) · `tools/collar_census.py` (dose-response) · `tools/tle_census.py` ·
-## `tools/cpu_lag_probe.py` · `bots/_probe_victim` + `bots/_probe_jail`.
+## ===== QUEUE, IN PRIORITY ORDER =====
+## 1. **PANEL-2 CALIBRATION.** Nothing else is trustworthy until it runs.
+## 2. **LOKI-14's crash-mechanism decode** — border vs interior undamaged
+##    removals, via `tools/crash_census.py`. The exploit's actual bar, unread.
+## 3. **Finish LOKI-16 and LOKI-14 to their pre-registered n=100**, on a panel
+##    that can resolve them.
+## 4. **Generalised throw-to-stale-state** — RULED IN-CLASS (`CLAUDE.md` point 0);
+##    no new organiser question needed. Build after LOKI-14 reads out.
+## 5. **A fresh pre-registered confirmation of v104 at larger n**, on panel-2.
+## **OFF-PROGRAMME, do not re-open:** economy suppression (LOKI-15 is
+## significantly worse; LOKI-13's mechanism bar failed), and the four exploit
+## roads the guard-matrix sweep closed (`CLAUDE.md` point 0's road list).
 
+## ===== WAKE PATH — WHAT IS AND IS NOT WATCHED =====
+## **SURVIVES (detached, verified BY OUTPUT at wrap):** elo_logger 25811 ·
+## match_watcher 25942 · opp_watcher 25943 · replay_archiver 25944 ·
+## keeper 89444 · **ship_watch** (armed, `RULE=held net_act +60.0`).
+## `slot_rule` reads **v104 k=31 armed=True slot_free=False**.
+## **`breakin_watch` correctly STOOD DOWN** at k=64 >= 8 — by design, it hands
+## back to the slot rule.
+## **STOPPED DELIBERATELY: `tools/fanout.sh`.** A rotation that activates
+## experimental bots must not run unattended — **twice today a rollback failed
+## and left a non-incumbent live**, and one of those was v105, which measures
+## **-14.7pp worse**. **Restart it only with a session watching.**
+## **NOTHING WAKES A SESSION.** First actions at next boot: `fcode status`
+## (confirm `Active bot: v104`), `cat corpus/SHIP_ALERT` (absent = fine),
+## `cat corpus/FANOUT_ABORT`, `tail corpus/ship_watch.log`.
 
 ## ===== PRIOR STATE — ARCHIVED, NOT DELETED =====
-## Session blocks s24 and earlier (1,956 lines, ~32k tokens) moved to
-## **`docs/archive/HANDOVER-prior-blocks-through-s26.md`** on 2026-08-10.
-## They are superseded reasoning, kept because this project has twice recovered
-## a live fact from an old block — but they were being read WHOLE at every
-## builder boot, which is ~32k tokens of context spent on state that is 93%
-## dead before the session starts.
-## **Read them deliberately when you need them. Do not read them by default.**
+## s26 block: `docs/archive/HANDOVER-s26-block.md`.
+## s24 and earlier: `docs/archive/HANDOVER-prior-blocks-through-s26.md`.
+## **Read them deliberately. Do not read them by default** — they were costing
+## ~32k tokens of every builder boot on 93%-superseded state.
