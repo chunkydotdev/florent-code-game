@@ -1,10 +1,17 @@
 ---
-tactic: The organiser ruling that cpu-timeout-induction was held on — nobody bans degrading the OPPONENT BOT
+tactic: "Norms survey for cpu-timeout-induction. CORRECTED 2026-08-10 (s28): the filename and the original headline claim ('NOBODY bans degrading the opponent bot') are FALSE AS WRITTEN — see the narrowing block below. Accurate statement: AIIDE / BASIL / SC2 AI Arena protect the ENGINE and the LADDER, not the opponent's bot; BATTLESNAKE bans interference with another person's bot BY NAME, on an intent test, reaching engine-and-API-level exploitation. Most comparable leagues do not ban it; exactly one does."
 source: https://davechurchill.ca/starcraft/aiide/
-origin: AIIDE StarCraft AI Competition rules (2026); SC2 AI Arena (aiarena.net) wiki rules and result taxonomy
+origin: AIIDE StarCraft AI Competition rules (2026); SC2 AI Arena (aiarena.net) wiki rules and result taxonomy; Battlesnake Code of Conduct (sweep 21)
 evidence: documented
 transfers: partial
 ---
+
+> ⛔ **READ THE NARROWING BLOCK AT THE BOTTOM BEFORE CITING THIS FILE.** The filename
+> is now wrong and cannot be changed without breaking inbound links, so the
+> correction lives here. **Do not cite this file for the proposition that no league
+> bans it — one does.** Corrected s28, 2026-08-10, after an audit found the title and
+> frontmatter falsified by this file's own appended block.
+
 
 WHAT IT IS — **[[cpu-timeout-induction]] is filed as "BANNED BY NAME in BASIL and
 SC2 AI Arena — held pending an organiser ruling". Sweep 11 went and read the

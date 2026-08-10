@@ -107,8 +107,14 @@ our own 0.00% at ~12% of budget is headroom we are not spending.
 Battlecode 2009, team "little": reverse-engineered `Arrays.hashCode` and crafted
 **hash-preserving corrupted broadcasts**, so opponents *"would often resize the
 array to be gigantic, and throw an out-of-memory exception and die."*
-Independently corroborated by a Battlecode engine developer. It won a
-*"message warfare"* award. — https://realgl.blogspot.com/2013/08/battlecode.html
+It won a *"message warfare"* award. — https://realgl.blogspot.com/2013/08/battlecode.html
+
+> ⛔ **CLAIM STRUCK, s28 2026-08-10.** This passage previously read *"Independently
+> corroborated by a Battlecode engine developer."* **That corroboration cites
+> nothing** — the only source on this entry is the single blog post above, which is
+> the participant's own account. **The account is single-sourced and self-reported;
+> do not repeat the corroboration claim.** The substantive transfer verdict below is
+> unaffected (it rests on our own engine facts, not on this anecdote).
 
 **Does not transfer directly** — our comms store is team-private, so there is no
 injection channel. **But it validates the direction: crash induction, not timeout

@@ -62,7 +62,7 @@ Read it as the errata attached to
   guarantee. The `finally` is load-fatal and buys nothing here.
 - **The ban on `BaseException` is a feature, not an obstacle.** Battlecode arrived at the
   same width deliberately from the other direction — see
-  [`the-death-signal-must-outrank-your-blanket-catch`](the-death-signal-must-outrank-your-blanket-catch.md).
+  `the-death-signal-must-outrank-your-blanket-catch` -- **⛔ THIS FILE DOES NOT EXIST (verified s28, 2026-08-10). Link removed rather than left live; the sibling note at the bottom of this file already records the gap.**
 - **A `finally` anywhere in the zip kills the whole submission, not one unit.** This is a
   whole-team, round-negative-one failure. Any future agent that "helpfully" adds a cleanup
   block to `eco.py`, `raid.py` or `doctrine.py` bricks the submission. `tools/submit_clean.py`
