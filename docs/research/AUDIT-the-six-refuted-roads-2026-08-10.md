@@ -224,3 +224,25 @@ already push ≥1 hop onto the enemy network by accident.**
    directory the repo calls disposable, as the only trace of a refutation stated
    with no denominator. **And CPU-timeout induction is a question Magnus owes the
    organisers — a norms decision, not a research finding.**
+
+---
+
+## ADDENDUM 2026-08-10 10:5x — CORRECTION to the ring-body verdict (this audit's own #1 recommendation)
+
+This audit's #1 recommendation was: *"ring-body denial deserves the first
+live-unrated trick leg — the one reopened road whose own primary measures it
+positive on the currency (2.24%→4.77% at j=1)."* **Building it corrected that.**
+Per LOKI-16's prereg (2755aca), **our incumbent ALREADY places >1 body on the
+enemy ring — "both arms already exceed the prescription's ONE body."** So the
+one-body lever the observational evidence measured is **not an untested reopened
+road; it is already implemented.** The 2.24%→4.77% finding describes something
+our bot already does, not a new thing to add.
+
+**Reclassify:** ring-body (one body) → **ALREADY-IMPLEMENTED**, not REOPEN. The
+open margin is **RETENTION** (hold a body vs trade it for a barrier), which is a
+different mechanism and is what LOKI-16 (E-27.6) actually tests. **Method note:
+"reopen this road" was itself an archive-sourced claim (D12) — and the way it got
+checked was by building it and finding the bot already did it, which is the
+live-evidence standard working: the prescription met reality and reality already
+had it.** The other five roads' verdicts stand; this is the one where
+construction, not analysis, delivered the correction.
