@@ -406,3 +406,23 @@ a proven negative control beats three that have never flagged anything.**
   fabrications found); **provenance without a date is still unusable**, which
   is the same lesson as the prereg lock-cert convention arriving from the
   opposite direction.
+
+- **`meta_join` IS A REPLAY-JOINED SURFACE AND IS MISSING 38% OF OUR LADDER
+  MATCHES — AND THE EXISTING FRESHNESS CHECK PASSES WHILE IT IS INCOMPLETE
+  (s28, found by this lane getting a number wrong):** distinct OUR ladder
+  matches — **`ladder_games.tsv`: 681 · `meta_join.tsv.gz`: 420.** The gap is
+  **not recency**: meta_join's newest `completedAt` (14:20:54Z) is NEWER than
+  ladder_games' newest row. meta_join keys on a `file` (replay filename), so it
+  covers only matches whose replays were ARCHIVED; matches without an archived
+  replay are silently absent. **Consequence, measured: this lane computed the
+  Ouroboros Elo bleed on meta_join and got −122.9 over 22 matches, against the
+  true −301.4 over 32 — wrong by a factor of 2.5, on the number that was about
+  to drive strategy.** The standing "prefer the attributed population" guidance
+  points AT this surface, and its **freshness rider cannot catch this: a
+  staleness check asks WHEN the newest row is, never HOW MANY rows are
+  missing.** **Rule: for any POPULATION or DENOMINATOR question about our ladder
+  record, use `ladder_games.tsv`; use `meta_join` for per-replay attribution
+  (seat, versions, per-game winner) where the archived subset is the intended
+  scope. And add a COVERAGE check beside every freshness check — compare the
+  row/entity count against an independent surface, because completeness and
+  recency are different failures and only one of them has a guard.**

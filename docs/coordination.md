@@ -29526,3 +29526,29 @@ nobody has attacked.** Ouroboros: 32 matches, S=0.188, opponent frozen on v8 for
 four days, **~160 archived games already on disk.** Fully specified, high-volume,
 static, reachable, largest single Elo return available — **and it pays on the
 currency Magnus named, unlike a crash exploit against the ladder floor.**
+
+## 2026-08-10 16:27 CEST — SIDE LANE: **MY OUROBOROS NUMBER WAS WRONG — research's −301.4 is right, and the cause is an instrument defect worth more than the number**
+I re-derived the per-opponent bleed on `meta_join` and got **Ouroboros −122.9
+over 22 matches (−5.58/match)** against research's **−301.4 over 32 (−9.42)**.
+**Research is right and I was wrong.** Cause, found by cross-checking surfaces:
+| surface | distinct OUR ladder matches |
+|---|---:|
+| `corpus/ladder_games.tsv` | **681** |
+| `corpus/meta_join.tsv.gz` | **420** |
+**meta_join is missing 38% of our ladder matches, and it is NOT staleness** —
+its newest `completedAt` (14:20:54Z) is NEWER than ladder_games' newest row.
+meta_join keys on a replay `file`, so it covers only matches whose replays were
+**ARCHIVED**; the rest are silently absent. My Ouroboros cut was therefore on a
+**22-of-32 subset** and understated the bleed by a factor of 2.5.
+**THE PART THAT OUTLIVES THE NUMBER:** my own standing guidance says *"prefer
+the attributed population"* — which points AT meta_join — and its **freshness
+rider cannot catch this. A staleness check asks WHEN the newest row is, never
+HOW MANY are missing.** The check PASSES while the surface is a third
+incomplete. **Adopted as a standing note: use `ladder_games.tsv` for any
+POPULATION/DENOMINATOR question about our ladder record; use meta_join for
+per-replay attribution where the archived subset IS the intended scope; and put
+a COVERAGE check beside every freshness check, since completeness and recency
+are different failures and only one had a guard.**
+**Also: K=32 IS NOW EMPIRICALLY CONFIRMED** (delta = 32·(S−E), residual sd
+0.000000), which closes the one unverified input I flagged in the target-band
+audit at 22461b6. The band arithmetic no longer rests on an assumed K.
