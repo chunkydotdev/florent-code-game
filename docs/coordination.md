@@ -22934,3 +22934,67 @@ standard binds in the flattering direction too.**
 realised volatility at k=38 is high enough that a -31 drawdown AND a fired
 stop-loss are both inside its normal range.** That is a fact about the
 instrument's operating environment and a successor should have it.
+
+## commit after `4d8ad24` (git time is the authority) — RESEARCH ARM: **TREADMILL REFUTED — and the fix we both preferred is ALREADY SHIPPED, the trees were inverted in my brief, and there is a SOURCE-VS-TAPE CONTRADICTION that suspends all `forward_guns` reasoning**
+
+Deliverable: **`docs/research/forward-census-treadmill-2026-08-10.md`**. Ladder fixture, our
+side, gunner+sentinel, forward = `d2_enemy < d2_own`. **n = 185 v102 / 700 Eir, 885 files, 0
+decode errors.**
+
+### 1. THE PREDICTION FAILS — Eir's census is NOT at cap
+| r400+ | v102 | Eir |
+| --- | ---: | ---: |
+| mean live forward census | **0.243** | **0.248** |
+| rounds strictly below cap(3) | 99.7% | **96.7%** |
+| rounds at ZERO | — | **87.2%** |
+**Indistinguishable, and Eir spends MORE time at zero.**
+**The census instrument was PROVEN to decrement** — four-arm synthetic check with a corruption
+arm showing the census never falling. **28,775 gunner rotation re-emits suppressed on the real
+corpus; counting them would have spuriously CONFIRMED the hypothesis.** **That was the trap I
+named in the brief and it was live at scale.**
+
+### 2. **NEITHER TREE CAPS ON A LIVE CENSUS — AND THE FIX WE BOTH PREFERRED IS ALREADY SHIPPED**
+`self.forward_guns` is written **exactly twice**: `= 0` in `__init__`, `+= 1` on plant. With
+**one `Player` per unit**, that is a **PER-BUILDER-BOT CUMULATIVE BUILD BUDGET.**
+**⇒ *"Make the cap count builds rather than live units"* — the two-line removal-shaped refusal
+both lanes preferred — IS THE SHIPPED BEHAVIOUR, and has been since Eir.**
+
+### 3. **MY BRIEF HAD THE TWO TREES INVERTED**
+`doctrine.py:1205-1225` documents `SLOT_FWD_GUN` as counting **rubble** and **locking the arm
+out permanently** — and **LOKI-2b added `_live_fwd_guns` to convert it INTO a live census.**
+**The Loki line deliberately moved TOWARD the live census we were about to propose moving away
+from.** **I wrote the brief that asserted the opposite, from a code fact I did not check.**
+
+### 4. THE COROLLARY, and it should govern any future cap work
+**Converting a cap to a live census effectively REMOVES it.** A live forward census sits below
+3 in **96-100% of rounds in every era and against every opponent.** **A cap that is never
+approached is not a cap** — the same shape as the retracted core-entry ceiling, arriving in
+the bot's own logic rather than in an analysis.
+
+### 5. **THE REAL ANOMALY IS A SOURCE-VS-TAPE CONTRADICTION AND IT SUSPENDS THE WHOLE THREAD**
+**Eir: a hard cliff at exactly 3 per builder — 99.4% ≤ 3, the budget working as written.**
+**v102: no cliff at all — 9.7% exceed 3, tailing to 68 forward builds from ONE builder.**
+Traced to `4ff97967…_game_2`: **builder 2569 planted 19 forward sentinels, 18 of them on the
+SINGLE TILE (17,16), each living exactly 2 rounds.** **The source has no uncapped path**
+(`_try_counterbattery` geometrically excluded; `self.core` resolves to our own core at
+`main.py:2031`).
+**⇒ DOCS, SOURCE AND REPLAY CANNOT ALL BE RIGHT. Until one is shown wrong, NO reasoning from
+`forward_guns` is safe — including the treadmill story, my brief, and everything either lane
+said about the forward path in the last hour.** **Settleable in one local game printing
+`id(self)` and `forward_guns` to stderr; the agent correctly declined it as out of scope.**
+
+### 6. THE SURVIVAL PREMISE IS RIGHT AND DOES NONE OF THE WORK
+**v102 forward turrets 12.6% alive at 50 rounds vs Eir 35.8%; mean life 8.9 vs 30.8 rounds.**
+**But a 2.8× survival gap cannot move a census that is zero in 78-87% of rounds in BOTH arms.**
+**A real difference, doing none of the work we assigned to it** — which is the night's whole
+lesson in one line.
+
+### 7. TWO QUALIFICATIONS TO NUMBERS I SUPPLIED
+- **Concentration: all 219 v102 r400+ forward builds come from 15 of 27 games; top three games
+  = 65%; one opponent = 11 of 27.** **The r400+ figure must be re-quoted with that tail.**
+- **Their denominator is better than mine.** Seat/version from `.meta.json` rather than
+  `join.tsv:our_team`, **which is circular under TRAP 7** — **185 v102 games against my 160**,
+  so **my `/game` figures read ~10% HIGH.** Eir identical under both.
+
+**The plank as specified is dead. The question that replaces it is sharper: why does one
+builder plant 18 sentinels on one tile in a tree whose source says it cannot.**
