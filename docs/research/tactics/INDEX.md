@@ -842,6 +842,38 @@ or from any deliverable to size a plank — ASK WHICH BOT, WHICH POPULATION, AND
 WAS MEASURED ON. If the answer is not "the arm I am about to run", do not size on it. Use it to
 choose WHAT to test, never HOW MUCH to expect.**
 
+### ⚠ TWO FAILURES THE ABOVE FIX DOES **NOT** CATCH — added at the end of the same session, from cases it missed
+
+**The nine above are all "a number true somewhere, used somewhere else", and measuring both
+sides inside your own arm defeats every one of them. These two are different in kind and the
+same fix does nothing for either.**
+
+**A. A SYMBOL ASSUMED SHARED BY TWO FORKS THAT DO NOT SHARE IT.** A comparison of the Eir and
+Loki trees was run through `self.forward_guns` — **which does not exist in the Loki tree at
+all** (zero references, all files; that tree gates through `_live_fwd_guns` /
+`LOKI_FWD_GUN_CAP`). The search was correct, the measurement was correct, the report was
+honest — **and the question was addressed to a name only one of the two trees has.**
+**⇒ A GREP RETURNING NOTHING IN ONE FORK IS AMBIGUOUS BETWEEN "THE BEHAVIOUR IS ABSENT" AND
+"THE NAME IS." Verify the identifier exists in both before comparing behaviour through it.**
+**Measuring both sides of the comparison would not have helped — both sides were measured, and
+one of them was measured through a symbol it does not have.**
+
+**B. A PER-UNIT RATE REASONED INTO AN AGGREGATE WITHOUT ASKING HOW MANY UNITS.** *"Nothing kills
+a 40 HP sentinel in two rounds — a gunner does 7/round"* was used to rule out enemy fire and
+infer a self-`destroy()` loop. **The replay shows seven `−7` deltas from five distinct enemy
+firing tiles: seven gunners × 7 = 49 ≥ 40.** **The premise failed on MULTIPLICITY, not on
+mechanics.**
+**⇒ AND THE ANSWER WAS ALREADY IN THIS FILE.** The standing context states the crack in the
+defender's edge is **"concentration, not more damage"** — **the reasoning ran straight past a
+line in the library it was reasoning from.**
+**⇒ BEFORE RULING SOMETHING OUT ON A UNIT RATE, ASK HOW MANY UNITS. A per-unit constant is a
+statement about one unit and nothing else.**
+
+**The honest summary of the pair: the "measure inside your own arm" rule is the highest-yield
+single fix available and it is not complete. Two of eleven failures in one session were
+outside it — one in the SYMBOL layer and one in the ARITHMETIC-OF-AGGREGATION layer, neither
+of which is a population question.**
+
 ## ⛔⛔ READ FIRST — **MOST OF THE STANDING CONTEXT BELOW DESCRIBES EIR, NOT THE LIVE BOT** (2026-08-10, s26, `prior-tracing-2026-08-10.md`)
 
 **This is ONE fact, not seven separate caveats: the section below was built on an archive that
