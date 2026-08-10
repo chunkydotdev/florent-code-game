@@ -22805,3 +22805,52 @@ why.**
 **This is the shape the whole session has been converging on: a SHARE rose, and the share
 could rise two ways. Counting both terms separated "the denominator fell" from "the numerator
 rose" — and the answer was BOTH, in different bands, with only one of them being the change.**
+
+## commit after `90a3a6e` (git time is the authority) — RESEARCH ARM: **A CODE READ MADE A GEOMETRIC PREDICTION AND THE GEOMETRY REFUTED IT. Eir's deep-forward behaviour is real; only the code differs.**
+
+**The builder's code fact is correct and I accept it:** `bots/_v115dodge` is a single `main.py`
+with **zero** references to `_try_forward_sentinel` or any `LOKI_FWD` constant. **The forward
+path lives in `raid.py`, which exists only in the Loki tree.**
+
+**The inference they drew from it was that Eir's 1.36 forward-classified builds per game are
+home builds that merely tipped over a midline on a short map. That predicts they sit NEAR THE
+MIDLINE. They do not.**
+
+| | n | median `d2_enemy/d2_own` | p25 | share deeper than 0.25 |
+| --- | ---: | ---: | ---: | ---: |
+| **v102** | 685 | **0.063** | 0.020 | **80.9%** |
+| **Eir** | 1,188 | **0.113** | 0.059 | **70.4%** |
+
+*(1.0 = equidistant; 0.0 = on the enemy core.)*
+
+**Eir's median forward build sits at 0.113 and 70.4% are deeper than a quarter — 1,188 turrets
+planted deep in enemy territory, not marginal builds tipping over a line.** v102 is deeper
+(0.063 / 80.9%) but **the difference is degree, not kind.**
+
+**⇒ THE BEHAVIOUR EXISTS IN BOTH ERAS; ONLY THE CODE DIFFERS.** Eir plants deep-forward under
+some path that is not `raid.py`, **early (1.36/game in r0-149) and then STOPS (0.06/game by
+r400+, −96%). v102 plants early and never stops.** **So "Eir had an effective brake" is
+supported BEHAVIOURALLY, whatever the code is called** — not the same code with a constant
+removed, but **the same behaviour class, present in both, arrested in one.**
+
+**Why it matters for the plank even though both framings converge on the same build:** *"nothing
+was removed, a path was added"* **closes** the question of what arrests it; *"the behaviour is
+arrested in Eir"* **keeps Eir as a usable reference for what an arrested version looks like.**
+**That reference would have been discarded.**
+
+**WHAT THIS DOES NOT ESTABLISH, and I am not overclaiming twice in one hour:** I have shown the
+**geometry** of Eir's deep builds, **not the code path that produced them.** **It could be a
+different mechanism that stops for unrelated reasons** — an economy path running out of
+qualifying tiles rather than a brake. **Whether Eir's arrest is COPYABLE is a code question in
+the builder's lane, not a corpus one in mine.**
+
+### THE GENERAL SHAPE, third costume tonight
+**A code read is an inference, and when an inference from source makes an EMPIRICAL PREDICTION,
+the cheap move is to check the prediction rather than argue about the source.** It cost one
+query. **Tonight: an engine probe beat a replay inference on cost scaling; a corpus count beat
+a gate-condition inference on the forward share; and now a geometry check beat a code-structure
+inference on Eir's behaviour. Three times, in both directions between the lanes — the winner
+was never the more authoritative-looking source, it was whichever side made a prediction that
+could be tested cheaply.**
+
+**Slot: k=37, 1596, net5 −11.0, `slot_free` back to False. net_act +28.6. HOLD unchanged.**
