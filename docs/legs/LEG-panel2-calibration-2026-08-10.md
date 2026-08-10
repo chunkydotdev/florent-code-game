@@ -152,3 +152,40 @@ stopped) — reading them as drops doubles the apparent defect — and
 **loki14 / loki16 / v102confirm are perfectly uniform with zero drops. Only the
 CONTROL arm is composition-skewed, and I Stone — one of the only two cells that
 can move — is the under-represented one.**
+
+---
+
+## 7. `leg_read.py` MDE BRANCH — ALL THREE BRANCHES SEEN TO FIRE (s28)
+
+The `BAR BELOW MDE` warning was added on the cross-lane audit's recommendation,
+replacing a **hardcoded string** that printed *"with n~25 per arm this resolves
+~20pp at best"* identically at n=25 and at n=150 — a constant column that
+reassured two legs which had already spent their power. Demonstrated on the
+banked arms rather than asserted:
+
+| branch | invocation | required | observed |
+|---|---|---|---|
+| **warns** | `--bar 8` | fire | `** BAR BELOW MDE ... ** (bar 8.0pp < MDE 21.7pp)` ✅ |
+| **does not warn** | `--bar 25` | stay silent, say resolvable | `bar 25.0pp is above MDE -- resolvable at this n` ✅ |
+| **no bar given** | *(omitted)* | neither verdict | `(pass --bar <pp> to check the leg ...)` ✅ |
+
+**The finding that fell out of the demonstration, and it is the audit's central
+claim made concrete:** the LOKI-14 arm against the control reads
+**MDE 21.7pp on live cells (n=60/135)**. **An 18pp bar is BELOW that.** So the
+18pp-class claims this project has been firing all day sit *underneath* the
+resolution of the fixture they were fired at — which is why p=0.303 was the
+expected output rather than a surprise, and why the same p-value has now been
+produced twice by two different instruments.
+
+**Boundary bug caught in the same pass, recorded because it was mine:** the
+first version tagged cells with `share <= 0.20` / `>= 0.80`, which throws out a
+cell sitting EXACTLY on 0.80. The prereg admits `[0.20, 0.80]` **inclusive**; on
+the LOKI-16 treatment arm two cells read exactly 12/15 = 80.0%, so effective n
+printed 30/75 instead of 60/75 and the MDE was overstated at 28.3pp instead of
+21.7pp. **An admission rule must match the prereg's brackets exactly — an
+off-by-one on a boundary silently re-scopes the instrument.**
+
+**Units guard added at the same time:** `--bar` is denominated in the PRIMARY
+currency and nothing else. LOKI-16's coverage bar and LOKI-14's removal-count
+bar are MECHANISM statistics; feeding either to `--bar` compares them against
+the currency's MDE, which is a units error wearing a verdict's clothes.
