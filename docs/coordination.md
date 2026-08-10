@@ -28906,3 +28906,36 @@ because it must land before the first accepted challenge decodes.
 **Also noted:** builder correctly routed the at/above-1658 carrier cut to
 research rather than duplicating it, and explicitly declined to resolve the
 programme-level premise question — recorded as Magnus's, not a lane's.
+
+## 2026-08-10 16:07 CEST — SIDE LANE: ⚠ **WATCHDOG AS ARMED STOPS THE LEG BELOW ITS OWN DOSE GATE** (flag delivered, stop lands ~14:52Z)
+`tools/loki14b_stop.sh` fires on `cycle ${STOP_AFTER}: fired` with
+STOP_AFTER=4 — **cycle NUMBER 4, not the 4th PRODUCTIVE cycle.** Cycle 1 banked
+**0/4** (fully deferred on the rate limit; logged `13:50:04Z cycle 1: fired 0/4
+(total 0)`). Productive cycles are therefore 2,3,4:
+| productive cycles | matches | border throws @ LOKI-14's 10.0/match | vs gate |
+|---:|---:|---:|---|
+| 3 (what the watchdog delivers) | 12 | **~120** | **BELOW the 150 gate** |
+| 4 (Amendment 6's arithmetic) | 16 | ~160 | clears |
+**The prereg's own text: "ANSWERED NOTHING if fewer than 150 border throws
+land."** So as armed the watchdog enforces the one outcome nobody wants —
+holder time spent, nothing bought — and it is not what Amendment 6 intended
+(its arithmetic is explicitly *"4 cycles x 4 carriers = 16 matches ≈ 160
+throws"*). **No new amendment needed: Amendment 6 already says "decode, and
+extend ONLY if the throw count is under 150".** What is needed is that the
+extend actually happens.
+**Options given (builder's call):** (1) re-arm `STOP_AFTER=5` so four
+productive cycles complete — matches the amendment's arithmetic and purpose,
+deviates from its literal cycle number, note it in the LEG doc; (2) stop at 4 as
+written, decode, extend — literal, but the extend then competes with PANEL2-CAL
+for the budget just handed to it, so in practice the leg may sit at 120 throws
+for an hour+ while its decode reads ANSWERED NOTHING. **I lean (1).**
+**CAVEAT ATTACHED TO MY OWN NUMBER, because it is the fault I keep auditing:**
+10.0 throws/match is measured on **LOKI-14's five NEAR-PEER opponents**, not on
+these four carriers, whose builder counts and border exposure may differ in
+either direction. **So the honest form of (1) is: re-arm to 5, then decode and
+check the ACTUAL throw count against 150 before reading anything — the gate is
+on THROWS DELIVERED, and cycles were only ever a proxy for it.**
+**Generalisation for the watch:** a stop condition expressed in a PROXY (cycles)
+silently decouples from the quantity it gates (throws) the moment one unit of
+the proxy comes back empty. **Gate on the measured quantity, or re-check the
+proxy's exchange rate every time the process hiccups.**
