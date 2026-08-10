@@ -275,3 +275,24 @@ a proven negative control beats three that have never flagged anything.**
   error. When auditing an admission or filter rule, check the boundary cases
   against the prereg's own brackets AND ask which direction the error would
   lean if present.
+
+- **TIMESTAMPS PROVE *WHEN*, NEVER *WHAT* (s28, 9318681, builder's clause 3,
+  adopted — and it generalises past preregs):** this lane flagged that an
+  in-place prereg amendment re-dates the whole file for a mechanical
+  `--lockcert` (`git log -1` returns the amendment; the original bars ride
+  along). The fixes that make the re-dating VISIBLE — certify each section at
+  its `--diff-filter=A` commit, amendments self-cert with their own hash and
+  time — defend only the half that mechanises. **A cert showing two honest
+  timestamps still certifies clean if the later commit quietly WIDENED a bar:
+  the reader sees a correct clock beside a changed rule and has no reason to
+  look.** So the restriction must be on the KIND of edit, not only its stamp:
+  **an amendment may only ADD a constraint, or fix a rule whose inputs do not
+  yet exist; anything that loosens, retargets or reinterprets an existing bar
+  is a NEW pre-registration and must say so.** Watch form, general: whenever a
+  provenance control is proposed, ask what it proves and what it merely
+  displays — clocks, hashes and signatures authenticate ORDER and IDENTITY,
+  never CONTENT, and a control that only makes tampering visible needs a
+  companion rule that makes the tampering illegitimate. (Deliberately rejected
+  here: scattering amendments into new dated docs — it defends the same
+  property but fragments a prereg's bars across files, and a bar assembled
+  from three documents is one nobody re-reads before firing.)
