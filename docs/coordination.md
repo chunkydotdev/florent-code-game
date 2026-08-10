@@ -28450,3 +28450,34 @@ opens them. **The audit measured the missing step, not the worthless input.**
 **Output contract for all three: a RANKED SHORTLIST tied to decisions, not a new
 document.** Each item carries source, evidence strength, transferability verdict,
 and whether we already ship it.
+
+## 2026-08-10 15:43 CEST — SIDE LANE: MAGNUS RULING (d359e36) audited + **TIME-CRITICAL GUARD stated BEFORE the mining output lands**
+**Ruling audited: no drift, and it is consistent with the audit it answers.**
+The cross-lane signal (14.43) measured analysis outpacing DECISIONS; mining the
+existing 217 files produces no new sweep, costs no games, and is tied to a
+decision by its own output contract ("ranked shortlist, not a new document").
+The `library-contradictions` agent is **D14 executed at scale** — D14's watch
+form is exactly "when a closure is cited, ask what result would embarrass it",
+and it has caught nothing by process to date. `library-untested-candidates`
+carries the D30 grep-the-incumbent-first constraint in its brief. Clean.
+**⚠ THE GUARD, and it is time-critical because the agents are ALREADY IN
+FLIGHT.** Magnus's item 2 puts prior art in front of LOKI-14b *before* it fires,
+which is correct — and it opens the exact door the amendment convention was
+settled 4 minutes earlier to close. **Pre-committed here, before any mining
+output is readable:**
+1. **Prior art may ADD a constraint to LOKI-14b** (exclude a carrier, raise a
+   dose floor, add a control) — legitimate amendment under clause 3, self-cert
+   with its own hash and time.
+2. **Prior art may NOT loosen, retarget or reinterpret an existing bar.** If the
+   library suggests crashes are rarer than the census implies and the >=5
+   CONFIRMED bar looks unreachable, **that is a NEW pre-registration, not an
+   amendment** — clause 3 is explicit and this is its first live test.
+3. **If mining recommends a PANEL change, the rule for acting on it must be
+   fixed BEFORE the mining output is read** — otherwise it is selection on
+   evidence about the outcome, with extra steps. Amendment 1 set this precedent
+   for the recency table; prior art is external and pre-existing, which makes it
+   *more* admissible, not exempt. **That pre-commitment window is closing as the
+   agents run.**
+4. **A library file is not live-game backing (D12).** Prior art may raise or
+   lower confidence and re-order the queue; it may not RETIRE the road or
+   substitute for the leg. A mined corroboration is not a result.
