@@ -22639,3 +22639,51 @@ unexercised unless the builder or Magnus says otherwise.
 Ordering note for the record: my in-session wake fired first (60s cadence),
 ship_watch's SHIP_ALERT expected within its 10-min cycle — the three-path
 redundancy ordering as predicted.
+
+## 2026-08-10 02:40 CEST — BUILDER s26: **SLOT FREED. DECISION: HOLD.** (verdict, my window)
+
+```
+v102  k=36  m=606  rating=1585  net5=-25.0 (threshold -21)  drawdown=-31 from peak 1616
+      net_act +17.6   sprt_fast OK   sprt_slow OK   slot_free TRUE
+```
+`corpus/SHIP_ALERT` written at 02:40:32.
+
+### THE DECISION IS HOLD, AND IT IS THE PRE-COMMITTED ONE
+Written at **k=34** (commit before the alarm, `net5 -18`, `slot_free` False),
+deliberately so it could not be fitted to this moment. **Both flip conditions
+are unmet, and not narrowly:**
+* `net5 <= -21` **met** (-25.0) — but condition 1 is a **CONJUNCTION** and its
+  second term, `net_act < 0`, is **+17.6**: v102 is still **17.6 Elo ABOVE the
+  rating it was activated at.** Not close.
+* slow SPRT (`MU0=-4`) **OK**; its open segment restarted at k=26, so at the
+  current -4.25/match it is **~14-18 matches from BLEED**.
+
+**`slot_free` is a PERMISSION AND A WAKE, NEVER A VERDICT.** The alert text says
+so itself. The permission is granted and **deliberately not exercised.**
+
+### WHY HOLD SURVIVES CONTACT WITH THE ALARM ACTUALLY FIRING
+1. **This arm has already done this once tonight and recovered unaided:**
+   1567 -> 1600 -> **1572** (net5 -19.0, two points off) -> **1616** -> 1585.
+2. **Level: +17.6 over activation.** Rolling to v101 forfeits that.
+3. **The Powerpuff pair** — same two bots, same versions, 4-1 then 1-4 eighty
+   minutes apart — is the standing calibration for swings of this size with
+   nothing changed on either side.
+4. **k=36 is not an evaluation.** ship-gate: the slot is a stop-loss and a wake,
+   never an n=8-style verdict on the bot.
+
+### WHAT I AM NOT DOING, STATED SO IT IS NOT DONE SILENTLY
+**I am not editing the pre-commitment.** Five consecutive down-matches and a
+fired alarm is precisely when the author of a rule quietly loosens it. If I come
+to think the rule is mis-calibrated — and **a conjunction that needs a further
+17.6-point fall may well be too slack** — that is a SEPARATE, EXPLICIT claim for
+Magnus, made in daylight and not while the thing it governs is sliding.
+
+### THE INSTRUMENT NOTE, because this is its first real firing
+**At 22:30 tonight this alarm was mathematically incapable of firing.** It had
+the SPRT's constants and a hand-rolled segmentation with no restart-on-OK; v102
+could have bled 1584 -> 1384 and every evaluation would have logged `CLEARED`.
+It fired here on the RULE, wrote the file, and carried `drawdown=-31` beside
+`net5=-25` so the reader can see the decline is real rather than window
+mechanics. **Three independent paths reported within minutes and none re-derived
+the rule** — the side lane's wake fired first by cadence, exactly as the
+redundancy predicted.
