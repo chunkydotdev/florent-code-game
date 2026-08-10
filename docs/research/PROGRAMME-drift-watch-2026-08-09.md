@@ -454,3 +454,23 @@ a proven negative control beats three that have never flagged anything.**
   rows describing *other* maps, not errors at all. **Check a table's own
   structure before testing its contents**, and when auditing a record against a
   generalisation, state which one you are treating as the authority.
+
+- **YOUR OWN CODE IS A FREE POSITIVE CONTROL FOR YOUR MEASUREMENT (s28,
+  06bbe7e — the strongest instance of the check-it-both-ways rule found yet,
+  and the control was sitting in the repo unused):** an exact-ray metric
+  reported **0 of 319** forward sentinels shootable-on-build, and that number
+  retired LOKI-17 and launched LOKI-18 on a new premise. **It was the METRIC
+  that was wrong.** `raid.py` builds a sentinel **only after `can_fire_from`
+  passes**, and 287 of 528 sentinels were beyond `main.py`'s reach so they came
+  from that path — i.e. a large subpopulation is shootable **BY CONSTRUCTION**,
+  and any predicate scoring them ~0 is **falsified by the code itself**.
+  **A code path with a guard is a known-answer cell**: whatever it guarantees,
+  your measurement must reproduce on its output, or the measurement is broken.
+  **Check form, and it costs nothing: before trusting a new metric, find a code
+  path whose guard forces the metric's answer and run the metric on it.** This
+  generalises the collar-heal standard from "validate against a known published
+  cell" to "validate against a cell your own source code makes known".
+  Sequence worth preserving: the side lane flagged the fork (**dead path or
+  broken guard?**) *because two observations admitted opposite readings and
+  they had opposite consequences* — the builder ran the attribution and the
+  answer inverted two decisions (LOKI-18 premise invalid, LOKI-17 un-retired).
