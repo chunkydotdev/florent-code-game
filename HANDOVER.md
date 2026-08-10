@@ -131,7 +131,30 @@
 ## worked all three times was another lane re-deriving the ARITHMETIC rather
 ## than reviewing the REASONING. Ask for that on any verdict you want to be true.
 
-## ===== ⭐ QUEUE HEADLINE, s28 16:2x: THE CLIMB IS GATED ON ONE MATCHUP =====
+## ===== ⛔ RETRACTED 16:3x — "THE CLIMB IS GATED ON OUROBOROS" WAS WRONG =====
+## **MAGNUS CHALLENGED IT AND HE IS RIGHT.** *"we don't need to bother with
+## Ouroboros anymore right? The ladder will keep kicking them down and we are
+## trying to climb it."* Checked rather than agreed, and the data backs him:
+## **the matchup is IMPROVING and we are pulling away.** Game share by OUR
+## version era (`ladder_games.tsv`, 160 games): v5-v59 **14.3%** · v60-v79
+## **18.5%** · v80-v89 **11.4%** · **v90+ 36.0%**. Last 4 matches 40.0%, last
+## match (v102) **80.0%**. Rating gap +28.1 at first contact -> **-111 today**.
+## **The -301 lifetime figure is REAL but dominated by the v53-v86 era.**
+## **THE WORD THAT CAUSED IT: "flat".** The research arm relayed the matchup as
+## "flat -- nothing we shipped touched it", compressing quartiles of
+## **0.150 -> 0.175 -> 0.100 -> 0.314** whose own source said "flat-to-slightly-up".
+## **A RISING FINAL QUARTILE COMPRESSED INTO ONE WORD IS WHAT MADE IT LOOK LIKE
+## A STATIC COUNTER WORTH REORDERING THE QUEUE AROUND** -- and I reordered it
+## without asking to see the quartiles.
+## **The one part that survives, against Magnus's mechanism:** their rating ROSE
+## 1469.7 -> 1558 (+89); **we simply climbed faster (1441 -> 1669, +228)**. So the
+## separation is us improving, not them declining, **and it reverses if we
+## stall.** 36% still sits under the ~48% Elo expectation (n=25, +-10pp), so a
+## residual exists -- it is just not the largest thing on the board.
+## **=> NOT the queue headline. No dedicated counter-plank.** The five-bleeder
+## history stands; the Ouroboros-specific urgency does not.
+##
+## ===== (superseded) THE FIVE-BLEEDER FINDING, AS HISTORY =====
 ## **We are net-POSITIVE against everyone above us (+183.6) and everyone well
 ## below us (+416.7), and we BLEED to the teams just beneath: ranks 25-40 are
 ## -438.6 Elo and 58% of our match diet (72% recently).**

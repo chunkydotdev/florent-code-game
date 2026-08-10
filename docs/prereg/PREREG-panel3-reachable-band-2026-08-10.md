@@ -45,9 +45,53 @@ which is *precisely* D22's failure mode: CtrlAltDefeat read **0.45 pooled but
 0.66 against v102**, and the panel was built from the era-mixed figure.
 **The table PRIORITISES a pool. It cannot ADMIT a cell.**
 
+## ⛔ CORRECTION BEFORE ANY CHALLENGE: THE FIRST TABLE POOLED RATED AND UNRATED
+
+**No data exists for this leg** — it has fired nothing — so this is a revision of
+an unfired body, not an amendment, and it is marked rather than silently swapped.
+
+The original pool table came from `corpus/meta_join.tsv`, which **covers every
+archived replay and therefore pools our LADDER games with our UNRATED games —
+i.e. with our own panel legs.** So the contaminated cells were partly measuring
+**whatever prototype we happened to be running**, not the opponent. **That is a
+self-referential denominator inside the table meant to select an unbiased
+panel.** Re-run on `ladder_games.tsv` (rated only), several cells move a lot:
+
+| opponent | gap | meta_join (mixed) | **ladder only** |
+|---|---:|---:|---:|
+| **The Bisons** | +32 | 230g / 21.3% | **100g / 49.0%** |
+| arsonist duck | +66 | 30g / 30.0% | **45g / 62.2%** |
+| Leviathan | −71 | 285g / 69.1% | **195g / 52.8%** |
+| **SmartFridge** | +5 | 220g / 36.4% | **25g / 44.0%** |
+| Coreflood | +89 | 20g / 40.0% | 15g / 53.3% |
+| farming_200s | +35 | 65g / 44.6% | 95g / 52.6% |
+| Lunds Stallions | −30 | 197g / 37.6% | 220g / 30.9% |
+| 0033 | +111 | 60g / 55.0% | 85g / 57.6% |
+
+**Pooled 635/1,345 = 47.2%** (was 44.1%). **`Big O`, `HTTP 418` and `team lazy`
+have ZERO rated games against us** — Big O's 15g/46.7% was entirely unrated, so
+it is dropped from the pool for want of a rated prior.
+
+**STANDING RULE ADOPTED FROM THIS:** `ladder_games.tsv` for any population or
+denominator question about our **RATED** record; `meta_join` only for per-replay
+attribution where the archived subset IS the intended scope. **Never `meta_join`
+for a win-rate denominator — it silently pools rated and unrated.**
+
+### ⭐ AND IT CHANGES THE BISONS RE-DERIVATION — THE TEST SURVIVES, THE INPUT DID NOT
+
+**On the ladder we are 49/100 = 49.0% against The Bisons. Nowhere near a floor.**
+D22's `0,0,0,0` came from **unrated panel windows**, and the 21.3% figure offered
+in support of re-deriving it was **itself unrated-contaminated**.
+
+**So the live hypothesis is now that The Bisons is a NORMAL cell on the ladder,
+and something about our UNRATED PANEL CONFIGURATION produced the floor** — a
+finding about our fixture, not about them. **The pre-committed two-way test
+below is unchanged and now adjudicates exactly that.**
+
 ## Candidate pool (six), and what each is for
 
-Record from `corpus/meta_join.tsv`, joined per-game on `us_side`:
+Record originally from `corpus/meta_join.tsv` — **see the correction above; use
+the ladder-only column**:
 
 | candidate | gap | games | win% | why this one |
 |---|---:|---:|---:|---|
