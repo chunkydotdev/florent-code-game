@@ -26453,3 +26453,15 @@ a visibly-stale one.
 
 **Standing rule this earns:** *a monitor that reads a file must report that
 file's freshness, or its silence and its confidence are indistinguishable.*
+
+### 07:2x — **INCIDENT RESOLVED ON THE SAFETY AXIS. `Active bot: v102 (Loki)`,
+### verified on a live read at 05:20:29Z, not assumed.**
+The retry loop's completion condition was VERIFICATION, not a command returning
+0 — which is the only reason this is a fact rather than a hope. Endpoint is
+still flapping (`status` now intermittently answers *"Could not fetch live
+data"*), so **the platform is unreliable, but the slot is not at risk**: the
+incumbent holds it and the pre-committed floor (1550) is 48 points away.
+
+**LOKI-13 IS BUILT, SUBMITTED (v104) AND PRE-REGISTERED BUT HAS NOT FIRED.**
+Nothing about it is invalidated — the prereg predates everything and the two
+clocks are comfortable. It re-fires when the platform is stable.
