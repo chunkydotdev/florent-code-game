@@ -27683,3 +27683,35 @@ instrument: my first verification loop printed "hits: 1 misses: 0" against 15
 ids — internally inconsistent output (zsh SH_WORD_SPLIT; the loop ran once) —
 caught because the arithmetic didn't close, redone with per-id splitting.
 A check whose totals don't sum to its population hasn't checked.
+
+## 2026-08-10 15:14 CEST — SIDE LANE: c347ec7 audit — all three flags RESOLVED; one propagation flag OPEN (HANDOVER)
+Audited c347ec7 against the checklist; verified, not adopted:
+- **Flag 1 (mutation test) RESOLVED:** LEG-panel2-calibration §1 records all
+  three branches seen to fire (abort: INCUMBENT=999 -> ABORT/exit 1/nothing
+  fired, FANOUT_ABORT written then deliberately deleted so a live monitor
+  cannot read a test as a real alert — the LEG doc is the durable artifact;
+  pass + rate-limit branches exercised live). Ordering defect (comment ahead
+  of record) owned in the doc, not defended.
+- **Flag 2 (uncommitted tree) RESOLVED:** batch pushed; CLAUDE.md rate limit
+  corrected 10->20 min (ceiling ~75/hr), fanout.sh patched with do-not-restart
+  warning (still drops on retry exhaustion — builder's own caveat stands).
+- **Read-out item RESOLVED:** regime split is LEG doc §3 (cycle 1 old cadence
+  3/5 with BOTH RETAINED cells dropped — the leg had begun starving its own
+  link to panel-1; cycles 2+ backoff/rotation, START=3).
+- **audit_trigger reversal INDEPENDENTLY VERIFIED:** I ran the suite —
+  test_instruments.py 20/20 green including the previously-red test. Fixture
+  rot (literal dates aged out of now()-24h), not check miscalibration; the
+  check reads 0.60/hr ok / 0.10/hr trips on pinned clocks. s27's "would summon
+  an audit on a normal working day" is RETRACTED by the builder. Adopted into
+  the drift-watch standing notes: a red test is evidence of a defect, not of
+  WHICH defect.
+- **OPEN FLAG (D14 family, delivered to builder):** HANDOVER.md (~lines 82-89)
+  still carries the retracted reading as a boot-loud block ("LEFT RED ON
+  PURPOSE... would summon an audit on a normal working day... fix the
+  calibration"). A successor booting from HANDOVER inherits the wrong
+  instrument fact and an expectation (one red test) that now contradicts the
+  observable suite. The retraction must reach the boot surface.
+- Noted: audit FIRE is real on both signals under the vindicated check (raw
+  0.38/hr; 4 durable activations/24h = 0.19/hr net of fanout round-trips);
+  builder correctly holding counting logic stable while the audit session
+  evaluates the instrument.

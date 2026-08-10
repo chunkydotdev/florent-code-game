@@ -218,3 +218,20 @@ both lanes' boots tonight. These would be siblings.
 **And the instrument rule applies to the fix itself:** each script must be run
 against a case it MUST flag before its silence means anything — **one script with
 a proven negative control beats three that have never flagged anything.**
+
+- **A red test is evidence of a defect, not evidence of WHICH defect (s28,
+  c347ec7, builder's formulation, adopted):** `test_does_not_fire_on_a_normal_
+  shipping_day` went red because its FIXTURE rotted (literal dates aged out of
+  the check's now()-24h window), and the red was read as proof the CHECK was
+  miscalibrated — then promoted into HANDOVER as an instrument fact and into
+  an audit brief as scoping grounds. Pinned to a fixed clock the check was
+  correct in both directions all along (0.60/hr ok / 0.10/hr trips). Same
+  family as preflight.py validating structure-not-identity, except the false
+  certification travelled through a DOCUMENT. Watch form: when a red test is
+  cited as evidence about the thing it tests, ask what else could be red —
+  fixture, harness, clock — before the component named in the test's title is
+  convicted. Corollary applied same-commit: the de-live-ification repair of
+  s26 pinned `hours` and row contents but left timestamps live — a fix for
+  wall-clock coupling that reintroduced it one layer down; a repair against a
+  failure class is verified against the CLASS, not the instance that prompted
+  it.
