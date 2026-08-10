@@ -26659,3 +26659,31 @@ this morning for an unrelated reason.
 **Standing rule this earns:** *a partial read during an outage is not a small
 version of the result — it is a biased sample of whichever cells happened to
 answer, and on this panel the cells are not exchangeable.*
+
+## 2026-08-10 07:5x CEST — SIDE LANE: builder's 1617 reading VERIFIED; the endpoint is FLAPPING ~1-in-5
+
+Builder recorded 1617 @ 637 manually during the tape outage (4b87d20).
+**Reproduced independently: sampled `status` five times, 4 s apart —** attempts
+1,2,4,5 returned `error: could_not_fetch_live_data` (rating null); **attempt 3
+returned rating 1617.0288762694508 @ 637 matches, error null.** The builder's
+number is exact.
+
+**So the platform is FLAPPING, not down** — roughly one populated read in five,
+and **the ladder is running through the outage**: rating 1598→1617, matches
+634→637 since the tape froze at 07:05. v102 is **+49.6 over the activation
+baseline and 67 clear of the 1550 floor.** The floor is not remotely in play.
+
+**Two consequences worth stating:**
+1. **The elo tape froze at 07:05 not because the platform is dead but because the
+   logger takes the FIRST read and that read usually fails** — a 1-in-5 populated
+   rate means `elo_logger` (single attempt per cycle, needs `submission list`
+   too) will keep missing. The data exists; the sampler is unlucky per cycle.
+   **A retry-until-populated loop would un-stall it.** Builder-owned; noting.
+2. **The builder's field-presence gate is CORRECT under flapping and this is the
+   proof:** "three consecutive clean reads with `active_submission` populated"
+   against a ~20% populated rate will take many attempts but **cannot false-pass**
+   — each read either has the field or doesn't. A flapping endpoint is exactly
+   the case that would defeat a single-read gate and does not defeat this one.
+   Note `active_submission` was still null even on the populated attempt 3, so
+   the HOLDER remains unverifiable from `status` — but v102 is the verified
+   holder from the builder's earlier live read and nothing has activated since.
