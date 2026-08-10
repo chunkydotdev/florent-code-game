@@ -229,3 +229,38 @@ table above** before its recency split is used for anything. **A mismatch is the
 headline, not a detail to reconcile quietly** — the hazards are the entire basis
 for this leg's target selection, and a decoder that cannot re-derive them is not
 measuring what the census measured.
+
+---
+
+# AMENDMENT 2 — HOW PRIOR ART MAY AND MAY NOT TOUCH THIS LEG
+
+**SELF-CERT: committed 2026-08-10 ~15:5x CEST, BEFORE any library-mining output
+was read.** Commit hash and author time are recoverable from
+`git log --format="%h %aI" -- <this file>` for the commit that added this
+section; the ordering claim is that it predates the mining results, and the
+mining agents were in flight when it was written.
+
+**This amendment only ADDS constraints, which is the only thing the convention
+in the lock-cert block permits an amendment to do.** It is that clause's first
+live test, and it arrived within the hour of the clause being written.
+
+Prior art (a mined library, an archived analysis, an external write-up) is
+**more admissible than our own inference because it is external and pre-existing
+— but it is not exempt from the rules that govern any other input.**
+
+1. **Prior art MAY add a constraint**: exclude a carrier, raise a dose floor,
+   add a control, tighten a bar. Legitimate, self-certified as above.
+2. **Prior art MAY NOT loosen, retarget or reinterpret an existing bar.** If the
+   library says border crashes are rarer than the census implies and the
+   **≥5 CONFIRMED** bar starts to look unreachable, **that is a NEW
+   pre-registration, not an amendment.** The temptation is precisely the case
+   the rule exists for: an unreachable bar is exactly when moving it feels most
+   reasonable.
+3. **If prior art recommends a PANEL change, the rule for acting on it is fixed
+   BEFORE its output is read** — the same structure as Amendment 1 and the
+   recency table. Recorded now even if the mining returns nothing, because the
+   window in which a pre-commitment is possible closes the moment the output is
+   readable.
+4. **A library file is not live-game backing** (`CLAUDE.md` point 6 / D12).
+   Prior art may re-order the queue and move confidence; **it cannot retire this
+   road or substitute for the leg. A mined corroboration is not a result.**

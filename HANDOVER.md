@@ -5,10 +5,19 @@
 ## Before any ship row: `tools/preflight.py`. **SUBMIT ONLY VIA
 ## `tools/submit_clean.py`** — bare `fcode submit` ships our docs to the platform.
 
-## ===== STATE, VERIFIED AT WRAP ON THE PLATFORM (not recalled) =====
+## ===== STATE, VERIFIED ON THE PLATFORM (not recalled) =====
 ##   LIVE: **v104 "Loki v2" = `bots/_v130loki13`**, py-tree md5 **bb4140f5**.
-##   **1675 @ 677 matches, rank #23/116, last-10 5W-5L.** Peak this session 1698.
-##   **ACTIVATION BASELINE = 1615** (captured 07:18:15Z). **net_act +60.0.**
+##   **REFRESHED s28 2026-08-10 13:44Z: 1658 @ 680 matches, rank #25/116,
+##   last-10 7W-3L.** Peak 1698 (s27). **ACTIVATION BASELINE = 1615.**
+##   **net_act +43.0.** `slot_rule`: `k=34 net5=-31.0 armed=True slot_free=True`
+##   -> **still HOLD**: the conjunction needs `net_act < 0` and it is +43.
+##   **43 points of headroom to 1615, and ship_watch's conjunction goes TRUE
+##   exactly at that crossing, so the alarm is armed for it.**
+##   Trajectory 1698 -> 1658 over ~1h40 (drawdown -40) against a v102 control of
+##   -36 over a longer run: **top of range, not a regime change.**
+##   (s27 wrap block read 1675 / net_act +60 and was 17 points stale within two
+##   hours. **A STATE BLOCK THAT SAYS "VERIFIED AT WRAP" IS AN EXPIRY DATE, NOT
+##   A GUARANTEE — re-read it live at boot before acting on it.**)
 ##   The treatment is ONE CONSTANT vs its parent: `PAVE_TRAIL_ON: True -> False`.
 ##
 ##   **ROLLBACK TARGET: v102 = `bots/_v124loki8`**, md5 **e8697ffa**, submission
