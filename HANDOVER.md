@@ -1,5 +1,35 @@
 # LIVE: **v104 = "Loki v2"**. s28 state, 2026-08-10 17:31 CEST (15:31Z).
 
+## ===== ⭐ TOMORROW'S BEST-CORROBORATED CANDIDATE: TURRET MIX =====
+##   **212,563 builds, third-party matches included. Us vs the 23 teams at or
+##   above 1683:**  gunner **56.4% / 69.8%** · sentinel **32.8% / 23.2%** ·
+##   launcher **10.8% / 7.0%**. **We build the expensive turret; they build the
+##   cheap one 2:1.**
+##   **It independently reproduces a finding already in CLAUDE.md FROM THE KILL
+##   SIDE** — top-tier cores die 53.1% gunner / 44.4% sentinel while our kill mix
+##   inverts it at 22.7 / 69.2. **Two different measurements (built vs
+##   killed-with), same direction. More corroboration than anything else queued.**
+##
+##   **⭐ D30 GREP DONE — AND IT IS A ONE-CONSTANT CHANGE, exactly like LOKI-16:**
+##   `main.py:544` — the choice is a FIXED TUPLE ORDER, not a costed decision:
+##   ```
+##   choices = ((EntityType.SENTINEL, cost), (EntityType.GUNNER, cost))
+##   for turret_type, cost in choices:   # takes the FIRST affordable one
+##   ```
+##   **And `raid.py` builds ONLY sentinels — zero `build_gunner` calls — so our
+##   entire forward siege is sentinel by construction.** Nothing weighs 6 dps and
+##   r2=32 against 20 Ti vs 30 with **46.9% of our turrets dying on the ladder**.
+##   **THE PUZZLE A PREREG MUST NAME RATHER THAN ASSUME:** the sentinel dominates
+##   on paper (6 dps vs 3.5, r2 32 vs 13, ignores obstacles) and better teams
+##   build the weaker-looking turret anyway. Candidate mechanisms: cheap turrets
+##   lose less per death at a 46.9% death rate; a gunner ROTATES for 10 Ti while a
+##   sentinel's single-tile line must be sited right first time.
+##   **STATUS: PRIORITISES, DOES NOT ESTABLISH (D12)** — observational, our own
+##   archive, build mix is not effectiveness, and `builds.tsv` cannot see
+##   conveyors/harvesters/barriers.
+##   **It fits the race frame below**: turret mix moves kill TIME, and our losses
+##   are races lost by margin.
+##
 ## ===== ⭐ THE FRAME FOR TOMORROW: OUR LOSSES ARE RACES, NOT ROUTS =====
 ##   Independently re-derived by the builder from `ladder_games.tsv`, v104 only:
 ##   **107 of 109 losses are CORE DEATHS — only 2 tiebreaks.** Timings overlap
