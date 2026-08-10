@@ -269,3 +269,81 @@ Prior art (a mined library, an archived analysis, an external write-up) is
 4. **A library file is not live-game backing** (`CLAUDE.md` point 6 / D12).
    Prior art may re-order the queue and move confidence; **it cannot retire this
    road or substitute for the leg. A mined corroboration is not a result.**
+
+---
+
+# AMENDMENT 3 — ESTIMATOR ARITHMETIC, AND THE LIMIT ON HOW A ZERO MAY BE WRITTEN
+
+**Committed BEFORE the leg's first challenge.** Hash and author time stamped by
+the follow-up commit named at the end of this section, per clause 2.
+**Both clauses below TIGHTEN. Neither moves the ≥5 CONFIRMED bar** — stated
+explicitly because Amendment 2 clause 2 forbids an amendment that loosens one,
+and an unreachable-looking bar is exactly when moving it feels reasonable.
+
+## 3a. The body's expected-dose arithmetic cites a rate its own estimator will not produce
+
+There are **two definitions of "undamaged" in this repo** and they differ by
+**91 events (3.8%)**:
+
+* **LOOSE** — reconstructed HP at removal > 0, so a builder damaged earlier and
+  healed back still counts. **2,401 events, 224.06/10k.** This is the census
+  doc's rule and it is what the body's panel table and dose arithmetic quote.
+* **STRICT** — never had an `updateHp` event at all. **2,310 events,
+  215.57/10k.** This is `tools/crash_census.py`, i.e. **the pre-registered leg
+  estimator.**
+
+The 91-event gap reproduces the census's own §1 note exactly (52 of vjg's
+1,517 carry a negative delta somewhere in life; 1,517 − 1,465 = 52).
+
+**CORRECTED EXPECTATION, on the estimator the leg will actually run:** at 250
+border throws and the one-round-exposure floor, **λ ≈ 5.4, P(0) ≈ 0.45%**
+(the body says 5.6 / 0.4%). **The ≥5 CONFIRMED bar is UNCHANGED.**
+
+## 3b. AN UNDAMAGED REMOVAL IS INDISTINGUISHABLE FROM `self_destruct()` ON THE WIRE
+
+**This is the load-bearing caveat on the whole control and it constrains the
+write-up, not the measurement.** The natural-crash control establishes that the
+carriers' **border-locked removal PHENOMENON is live today**. It does **NOT**
+establish that the cause is an uncaught exception.
+
+**So if the leg returns 0 with natural crashes > 0:**
+
+* **LICENSED:** *"the throw does not reproduce the state their own pathing
+  does."*
+* **NOT LICENSED:** *"their bot crashes."*
+
+Those are different sentences and the second is supported by nothing we can
+decode. **Any read-out that writes the second one is wrong on this
+pre-registration's own terms.**
+
+## 3c. Denominator heterogeneity — read event counts, not rates
+
+Border builder-rounds are dominated by games where a builder **parks** on a
+border for hundreds of rounds; one that steps on and vanishes contributes ~1.
+That is why S reads 20 events in 403 recent border-rounds against 293 in 27,888
+historically — **a shift in how much parking is in the denominator, not a change
+in the mechanism.** **Robust statistics for the read-out: event counts and the
+fraction of games with ≥1 event. The /10k figures are the census's metric
+reproduced, not a stable rate.**
+
+## Carrier admission verdict under Amendment 1 — ALL FOUR ADMITTED
+
+Fidelity gate **PASSED to the digit** (all four rows' events, hazards and both
+denominators reproduced independently; population rebuilt from
+`corpus/meta_join.tsv` and matched the census's game counts before any event was
+decoded; 990 files, 0 errors).
+
+| carrier | last natural border event | border b-rounds since | trailing-20 exposure vs threshold | verdict |
+|---|---|---:|---:|---|
+| vjg | 12:59:17Z | 0 | 1,216 vs 67 = **18×** | **ADMITTED** |
+| Troupe | 12:59:17Z | 0 | 3,421 vs 205 = **16×** | **ADMITTED** |
+| S | 12:59:56Z | 0 | 403 vs 286 = **1.4×** | **ADMITTED** |
+| Ship Happens | 13:25:28Z | 0 | 3,789 vs 269 = **13.6×** | **ADMITTED** |
+
+**Every carrier's last natural border crash sits in its most recently archived
+match**, 20–46 minutes before the analysis. **The INSUFFICIENT branch never had
+to arbitrate — no cell rests on an occurrence-zero**, and the two-carrier floor
+clears with margin. **Version column flat for all four** (vjg v4, Troupe v1,
+S v2, Ship Happens v1) against **56 of 72 teams changing version in the same
+window** — so the flatness is a signal, not a dead column. **vjg's hazard is
+RISING** (recent-20 ~1,060/10k vs 450 historical): highest-yield cell.
