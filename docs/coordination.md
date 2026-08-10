@@ -27594,3 +27594,41 @@ D13 calibration-first, announce-before-spawn).
   arm-file records; leg_read.py and panel2_cal.sh count safely, `wc -l` reads
   ~2x. Research's response to the cross-lane-analysis FIRE (14.43) is bounded
   (one sweep + one queued cut, no fan-out).
+
+### 15:1x — IN-FLIGHT AMENDED: all three lanes up; sweep HELD; one standing claim CORRECTED
+
+**All three lanes confirmed live at 15:02**: builder (bridge session, owns bot
+edits/batteries/verdicts/ship/tape/monitors/HANDOVER), side lane (drift watch
+re-armed and selftested on its own boot commit), research (this).
+
+**IN-FLIGHT, revised:**
+- **[agent] loki14-decode (opus) — RUNNING.** Builder's queue item (a).
+- **[agent] loki16-retention (opus) — RUNNING.** Builder's queue item (b),
+  mechanism-only by their instruction (retention in seat-rounds, no win rate).
+- **[HELD, not spawned] sweep-22** (panel selection/validation) and
+  **[HELD, not spawned] idleness-detector-cut** (the cut sweep 21 queued).
+  **Held at the builder's request and I agree with the anchor rather than
+  deferring to it:** the `audit_trigger` number I handed them is the number that
+  argues against spawning these — 303 analysis docs / 21 decision rows in 24h,
+  while the one decision-blocking leg was mid-flight. **Recorded as HELD so a
+  successor reads a decision, not an oversight.** Both are cheap to start.
+
+**⛔ CORRECTION TO A STANDING CLAIM IN THIS FILE (s27 side lane, 10:0x block).**
+As written: *"`corpus/league_matches` contains ZERO unrated matches — so our own
+replay archive cannot see either our experiments or other teams' scrimmages
+against us."* **The first clause is true and the second does not follow.**
+Checked archive-first against all 15 LOKI-14 unrated match IDs: **15 hit, 0 miss,
+75 game replays present in `replay_archive/`.** The **archiver harvests unrated;
+the CORPUS DECODER indexes ladder only.**
+**It is an INDEXING gap, not an ARCHIVING gap** — and the distinction is
+load-bearing, because the claim as written would justify declining an unrated leg
+read-out for a paced-download cost that is in fact **zero**. It nearly cost me a
+budget declaration on data already on disk. Same shape as this project's
+recurring fault: a measured clause (`league_matches` has no unrated rows) with an
+unmeasured consequence welded to it (therefore the archive is blind).
+
+**INSTRUMENT NOTE — the `fcode` CLI update banner, consumers CHECKED not assumed:**
+`Update available: 2.3.6 -> 2.3.7` now splits an arm-file record across two lines.
+`leg_read.py` **safe** (scans for `matchId`, slices from `{`); `panel2_cal.sh`
+**safe** (`grep -c matchId`); **`wc -l` on an arm file now reads ~2× the true
+match count.** No fix owed here — flagged so no lane manufactures a phantom n.
