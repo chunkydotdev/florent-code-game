@@ -82,3 +82,42 @@ retention. That is a different plank and this prereg names it as the fork.
 **Requires activating v106.** Measured rated cost of a leaked ladder match is
 **~−8 Elo** (3 leaks today, −24.67 total). v104 sits at ~1659 with the rollback
 line at 1615. **Attended only; roll back and VERIFY before the session closes.**
+
+---
+
+# CLOSING NOTE — WHAT THE LEG BANKED, AND WHY NO VERDICT IS WRITTEN TONIGHT
+
+**The runner completed its own schedule** (8 cycles, exited cleanly, holder
+verified `v104` on the platform — not from the runner's log). **Banked: 10
+challenges / 50 games**, spread 3·3·2·2 across farming_200s, SmartFridge,
+Askar City, Lunds Stallions. Prototype exposure ~10 s per cycle.
+
+**⚠ THIS PRE-REGISTRATION NEVER FIXED AN n, AND THAT IS A DEFECT IN IT.**
+It named the bar, the estimator, the clustering unit, the stratum and the
+falsifier — and **no sample size**. So there is no pre-committed line to say
+whether 50 games is enough, which means **I could argue it either way after
+seeing the data, which is exactly what a prereg exists to prevent.**
+Recorded as a defect in the document rather than resolved in my favour.
+
+**NO VERDICT IS WRITTEN TONIGHT, for a reason that is not the n:**
+**the primary — longest-hold/length, game-mean, match-clustered — requires a
+replay decode that does not exist yet.** Retention episodes are not in any
+current tool; LOKI-16's figures came from a bespoke pass. **A bar cannot be read
+by a decoder nobody has written.**
+
+**DISPOSITION: BANKED AND UNREAD, not abandoned and not null.** The distinction
+matters. LOKI-14b was ABANDONED because it was stopped below its own explicit
+dose gate and no bar could attach. **This leg ran its schedule to completion;
+what is missing is the instrument, not the data.** The 50 games are clean,
+holder-verified, and will read exactly as well tomorrow.
+
+**OWED BEFORE ANY READ-OUT, in order:**
+1. **The retention decoder** — longest unbroken occupancy of an enemy-ring tile,
+   per game, from `replay_archive`. Both `map_admits` (ring geometry) and
+   `replay_census.parse_entity` (positions per round) already exist; this is
+   assembly.
+2. **An n decision made explicitly**, on the record, before the number is read —
+   either "50 games is what we have and here is its interval" or "fire more
+   first". **Not chosen after seeing the estimate.**
+3. **`oppver_window.py` re-run over the treatment window**, since the control's
+   Askar and Lunds cells already straddled a version boundary.
