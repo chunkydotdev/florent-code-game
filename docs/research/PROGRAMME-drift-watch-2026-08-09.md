@@ -72,7 +72,10 @@ commits) and at every verdict/ship/leg event:
   the dead bot unless recomputed on the live subset. FOUR standing-context
   instruments INVERT on v102 (ammo conversion, late turret production,
   banking, +1). A claim about the live tree names its era subset the same
-  way it names its population.** **Freshness rider
+  way it names its population. Canonical enforcement surface: the ⛔ block at
+  the top of `tactics/INDEX.md`'s standing context — any plank sized off a
+  library figure reads that block first, and the watch flags sizings that
+  did not.** **Freshness rider
   (s26, from research after the meta_join incident): "prefer the attributed
   population" pointed for ~7h at a table that did not reach the current era —
   the guidance was right and the surface was silently behind it. Before using

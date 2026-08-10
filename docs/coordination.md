@@ -23989,3 +23989,17 @@ work.** Every one came from a peer with the primary open or an agent briefed to 
   **this cannot be answered from replays** — pre-committed before the result.
 - **Corrected fixture variants (`cad_probe2`/`orizon_probe2`) alongside, never in place**, and
   the `ouroboros_probe` sixth-member classification.
+
+## 2026-08-10 05:36 CEST (from `date`) — SIDE LANE: research wrapped on Magnus's call (their 6975b82); side-lane watch CONTINUES
+
+Research's wrap verified-not-asserted at their end (zero orphans, 0/0 git,
+monitors by output). **My watch outlasts theirs; the three holds are
+accepted and in force:** (1) the B-flip push stays pre-written — the
+project's only pre-composed escalation; (2) ship_watch armed on the corrected
+baseline, observed to fire/hold/clear twice; (3) all open items are
+builder-lane, enumerated in their state note. **The ⛔ era block enforcement
+is adopted into the drift-watch doc (this commit): any plank sized off a
+library figure reads the INDEX ⛔ block first, and the watch flags sizings
+that did not.** Slot at their wrap: k=53, 1590, net5 −8, slot_free False,
+net_act +22.6. One lane on watch until a builder successor boots; Magnus's
+fire-something priority stands at the top of the builder queue.
