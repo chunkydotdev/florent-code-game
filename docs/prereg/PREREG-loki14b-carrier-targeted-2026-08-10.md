@@ -1,7 +1,36 @@
 # PREREG — LOKI-14b: BORDER-THROW CRASH INDUCTION, AGAINST MEASURED CARRIERS
 
-**Committed BEFORE this leg's first match.** Two-clock standard: git author time
-of this file vs the platform `createdAt` of the first challenge.
+## LOCK CERT — READ THIS BEFORE CERTIFYING THIS DOCUMENT
+
+**Each section is certified by the commit that ADDED IT, not by the file's
+latest touch.**
+
+| section | commit | git author time | what it fixed |
+|---|---|---|---|
+| body (panel, bars, falsifiers) | `ce12795` | **2026-08-10T15:29:57+02:00** | the bars |
+| Amendment 1 (carrier admission) | `6463741` | **2026-08-10T15:38:30+02:00** | the admission rule |
+
+Platform `createdAt` of the first challenge is the second clock and is owed at
+read-out. **The leg is unfired as of both commits, so both are blind.**
+
+**WHY THIS BLOCK EXISTS — a side-lane flag on this very file (s28), and it is
+about a MECHANISM, not about this document.** An in-place amendment makes a
+mechanical cert ambiguous: `git log -1` returns **15:38:30**, and a naive
+`--lockcert` would certify the WHOLE document — original bars included —
+against that later time. Harmless here because both commits predate any data.
+**The mechanism is not harmless: a genuinely post-hoc edit to a prereg would
+silently re-date the original bars and still certify clean, which is precisely
+what the two-clock standard exists to make impossible.**
+
+**CONVENTION SETTLED HERE, before `--lockcert` is written, because whatever is
+picked becomes what it implements:**
+1. **The body is certified at `git log --diff-filter=A`** — the commit that
+   created the file — never at its latest touch.
+2. **Every amendment carries its own hash and author time in its header**, so it
+   self-certifies independently of the file's mtime.
+3. **An amendment may only ADD a constraint or fix a rule whose inputs do not
+   yet exist.** Anything that loosens, retargets or reinterprets an existing bar
+   is **not an amendment** — it is a new pre-registration, and it says so.
 
 **THE BOT DOES NOT CHANGE. THE FIXTURE DOES.** Treatment is `v107` =
 `bots/_v131loki14`, byte-identical to the build that fired LOKI-14. This is the
@@ -132,9 +161,10 @@ are quoting a number this document pre-committed to ignoring.
 
 # AMENDMENT 1 — CARRIER ADMISSION, PRE-COMMITTED BEFORE THE RECENCY DATA EXISTS
 
-**Committed 2026-08-10 ~15:4x CEST, BEFORE the research arm relays its per-carrier
-recency split.** Timestamped by commit, and that ordering is the whole point of
-this amendment.
+**SELF-CERT: commit `6463741`, git author time `2026-08-10T15:38:30+02:00`,
+committed BEFORE the research arm's per-carrier recency table existed.** That
+ordering is the whole point of this amendment, so it is stamped here rather than
+inferred from the file.
 
 ## Why this is being written now and not after
 

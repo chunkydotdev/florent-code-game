@@ -85,6 +85,23 @@ def collect(mids: list[str]) -> tuple[list[dict], list[str]]:
     return games, pending
 
 
+def _ring_sizes() -> dict[str, int]:
+    """map name -> min ring size, from tools/map_admits.py. Empty dict if that
+    tool cannot resolve them; a missing annotation must degrade to "?" rather
+    than to a confident 12."""
+    try:
+        sys.path.insert(0, str(ROOT / "tools"))
+        import map_admits as MA
+        out = {}
+        for name, path in MA.sample_replays(MA.PINNED).items():
+            f = MA.map_facts(path)
+            if f:
+                out[name] = min(f["rings"])
+        return out
+    except Exception:
+        return {}
+
+
 def report(games: list[dict], label: str) -> dict:
     n = len(games)
     if not n:
@@ -152,11 +169,37 @@ def report(games: list[dict], label: str) -> dict:
     if live_n < n:
         print(f"    EFFECTIVE n = {live_n}/{n} games sit on cells that can move"
               f"  ({live_n/n:.0%} of the denominator carries the information)")
+    # PER MAP, ANNOTATED WITH THE MAP'S RING GEOMETRY (s28, D34). LOKI-16 ran
+    # 20% of its games on terrain where the plank's own geometry does not exist
+    # (jackpot's ring clips to 5 of 12), which moved its headline across its bar.
+    # The panel had been audited exhaustively on the OPPONENT axis and never
+    # once on the MAP axis. Printing the stratum next to the map means a pooled
+    # number across strata is now a visible choice instead of an accident.
+    rings = _ring_sizes()
     print("  per map:")
     for mp in sorted({g["map"] for g in games}):
         mm = [g for g in games if g["map"] == mp]
         ok = [g for g in mm if g["we_won"] and g["cond"] == "core_destroyed"]
-        print(f"    {mp:<12} kills {len(ok)}/{len(mm)}  turns {sorted(g['turns'] for g in mm)}")
+        r = rings.get(mp)
+        rtag = f"ring {r:>2}/12" if r is not None else "ring    ?"
+        if r is not None and r < 12:
+            rtag += " **CLIPPED"
+        print(f"    {mp:<12} {rtag:<16} kills {len(ok)}/{len(mm)}  "
+              f"turns {sorted(g['turns'] for g in mm)}")
+    strata = {}
+    for g in games:
+        r = rings.get(g["map"])
+        if r is not None:
+            strata.setdefault(r, []).append(g)
+    if len(strata) > 1:
+        print("  BY RING STRATUM (a ring-hold plank is UNDEFINED below 12):")
+        for r in sorted(strata, reverse=True):
+            gg = strata[r]
+            ok = [g for g in gg if g["we_won"] and g["cond"] == "core_destroyed"]
+            print(f"    ring {r:>2}/12   {len(ok):>3}/{len(gg):<4} = "
+                  f"{len(ok)/len(gg):6.1%}   ({len(gg)/n:.0%} of the leg)")
+        print("    ** DO NOT POOL A RING-HOLD RESULT ACROSS THESE STRATA "
+              "without saying so -- see D34.")
     return {"n": n, "r1000": len(r1000)/n, "cks": len(ours)/n,
             "win": len(wins)/n, "kills": len(ours),
             "cells": cells, "live_n": live_n}
