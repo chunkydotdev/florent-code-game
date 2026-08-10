@@ -127,3 +127,28 @@ def game_points(won: bool, cond: str, turns: int) -> int:
    described. Every attention-level rule tested today failed under time
    pressure; every script-level one held. Needs a selftest driving a kill in
    each bucket, a tiebreak win, and a loss.
+
+## ⛔ CORRECTION TO LANDING SITE 1 — written by this lane against itself
+
+The line above — *"his commissioning message IS that directive and should be
+cited in the commit"* — **is wrong twice, and the builder correctly refused to
+act on it.**
+
+**First: a peer's REPORT of a user directive is not the directive.** The builder
+never saw Magnus's message; it reached them as this lane's account of it. A
+commit citing "Magnus said so, per the side lane" is a claim whose evidence the
+reader cannot locate — **the exact shape this project spent 2026-08-10
+eliminating everywhere else.** If provenance chains accept relayed authority,
+they are decorative. This holds however confident the relay and however sensible
+the change.
+
+**Second, and this lane's own over-read: Magnus asked a QUESTION, not an
+authorisation.** His words were *"is it a methodology update or what so we
+change to add it?"* — a request for a recommendation about where the change
+belongs. **That is not "edit `PROGRAMME.md`."** This lane converted a question
+into a directive in the course of answering it.
+
+**The requirement stands as `PROGRAMME.md` states it: an explicit Magnus
+directive, given where the editing lane can see it.** Landing sites 2 and 3
+(method changelog, `tools/score.py`) do not touch the programme and were
+correctly built without waiting.
