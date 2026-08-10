@@ -265,6 +265,42 @@ the directive verbatim so no lane can boot without it.
 > that beats our own calculations every time, and sometimes you find things
 > that surprise you. Those are of fantastic importance for our growth."*
 
+**0. THE EXPLOIT HUNT IS THE JOB, NOT A SIDE QUEST.** Magnus, 2026-08-10, on
+approving crash-induction: *"That's the entire reason we are named Loki — find
+these and use them."* **This is the standing brief and it outranks tidiness,
+elegance, and every instinct toward "playing the game properly".**
+
+**WHAT AN EXPLOIT LOOKS LIKE HERE:** a sequence of individually LEGAL, DOCUMENTED
+API calls whose combined effect is something the opponent's code cannot survive.
+The worked example, approved and built as `bots/_v131loki14`: our launcher picks
+up an **enemy** builder (`can_launch` has **no team check and no vision guard**)
+and throws it to a legal **map-border** tile, where that bot's own code queries
+an off-map neighbour, raises, and **the engine permanently destroys that unit for
+the rest of the match** (`0x1ac5c` → `Game::destroy_entity`; `SystemExit` and
+`KeyboardInterrupt` are the only exemptions). We spend 0 ammo and one throw; they
+lose a unit forever, to their own error handling.
+
+**HOW TO FIND MORE — the three moves that produced this one:**
+1. **READ THE ENGINE BINARY, NOT THE ORGANISERS' DOC.** The doc is known-wrong in
+   places; the `.so` is not. Every load-bearing fact above came from disassembly
+   with two toolchains intersected —
+   `docs/research/engine-source-crash-and-launcher-2026-08-10.md`.
+2. **LOOK FOR ASYMMETRIC GUARDS.** `can_launch` has no team check. Every `can_*`
+   predicate lacks a vision guard while `get_tile_*` raises off-map. **A guard
+   present on one path and absent from its neighbour is where exploits live.**
+3. **MINE OUR OWN BUG FIXES FOR THEIR BUGS.** `eco.py` carries a guard added
+   because a launcher throw teleported OUR builder and made `is_tile_empty`
+   raise. **We patched it; most teams have not.** `tools/crash_census.py`
+   measures the field: **2,451 unexplained unit removals by opponents across
+   1,855 of our games, against 0 by us.**
+
+**STANDING PERMISSION, AND ITS ONE LIMIT.** Build and fire these without asking.
+**The only thing still needing Magnus is a norms question to the ORGANISERS** —
+not because an exploit is wrong, but because a league can declare a whole class
+out of bounds and we would rather know before we rank on it. **Crash-induction
+was asked and is APPROVED.** Ask again for a genuinely new CLASS, never per
+instance.
+
 Four consequences, each of which closes a road that was open before it:
 
 1. **A ROUND-1000 GAME IS A DEFEAT, INCLUDING WHEN WE WIN IT.** The tiebreak
