@@ -293,5 +293,156 @@ the difference lives.
 
 ---
 
+# ADDENDUM — 2026-08-10T01:17:42Z — prize size for reverting LOKI-2b
+
+## 0. Corrections to §1-§2 above, supplied by the coordinator and accepted
+
+Two things in the main body are wrong and are corrected here rather than silently
+edited, because both were load-bearing in how I reported them.
+
+- **There is no source-vs-tape contradiction (§2, §7).** `self.forward_guns` does
+  **not exist in the Loki-8 tree** — zero references. v102 gates on
+  `(live if live is not None else SLOT_FWD_GUN) >= LOKI_FWD_GUN_CAP`, with `live`
+  from `_live_fwd_guns`. My grep was for the Eir symbol and the two trees do not
+  share it, so "no uncapped path exists" was a search over the wrong name. **v102
+  gates on a LIVE CENSUS after all**, and §2's "the cap is being exceeded 22x" is
+  not an anomaly — it is `_live_fwd_guns`' own documented failure mode: a census
+  read as zero is read as "the cap is free".
+- **`Player` is one instance per unit** (probed directly by the builder arm, not
+  inferred). So **Eir's `self.forward_guns` is a cumulative budget of 3 per
+  BUILDER**, which is exactly why Eir's tape shows the hard cliff at 3.
+  **Consequence for §1 and the headline: my Eir live-census measurement is correct
+  as a measurement but does not bear on Eir's brake, because Eir does not gate on
+  a live census at all.** Do not later read *"Eir's census is not at cap"* as
+  evidence about Eir's cap. The REFUTED verdict stands on its own terms — the
+  prediction was about censuses and the censuses are 0.243 vs 0.248 — but the
+  mechanism story attached to it was mine and it was wrong.
+
+**What survives unchanged:** every measured number in §1, §3, §4, §5, §6, and the
+per-builder distributions in §2 (which are now correctly read as *v102's live-cap
+gate failing open*, against *Eir's per-builder budget holding*).
+
+## 1. The (17,16) signature — answered, in one line, because it fell out free
+
+**Not our own `destroy()`. Enemy gunner fire.** Per-delta ledger for a sample of
+the tile-(17,16)/(17,20) sentinels in `4ff97967…_game_2`:
+
+```
+id 3063: (840,-7) (840,-7) (840,-7) (840,+4) (840,-7) (841,-7) (841,-7) (841,-7)
+id 2044: (500,-7) (500,-7) (500,-7) (500,-7) (501,-7) (501,+4) (501,-7) (501,-7)
+```
+
+Every one of the 78 forward turrets in that game reads `hp0 = 40`, **7 negative
+deltas of exactly −7**, one `+4` (our own heal), ledger ending below zero. Every
+negative `updateHp.delta` in the whole replay is one of `{−7: 768, −2: 617,
+−18: 82}` — gunner, builder attack, sentinel — so **−7 is unambiguously gunner
+fire**, and 7 gunners × 7 dmg = 49 ≥ 40 HP. Five distinct enemy firing tiles
+cover (17,16) over r839-875. The premise that "nothing kills a sentinel in two
+rounds" assumed *one* gunner; it fails on multiplicity, not on mechanics. **The
+turrets were planted into a standing kill zone** — which is the upstream point,
+and it is the same point the live-cap gate's docstring already makes.
+
+Distinct-id check: **78 forward turrets, 78 distinct entity ids, 0 re-emits** of
+an already-seen forward-turret id in that game. Sentinels do not rotate, and the
+tape agrees.
+
+## 2. Prize size — population, fixture, denominator
+
+**Population: all 185 v102 ladder games** (seat + version from
+`replay_archive/*.meta.json`; identical to §5). **Fixture: LADDER.** Subject: our
+side, forward gunner + sentinel. **Excess := builds beyond the 3rd by the same
+builder bot** — the excess Eir's per-builder cliff would eliminate.
+
+**736 forward builds, 736 distinct entity ids, 100.0 % attributed to a builder**
+via `builderBuild{id,target}` matched in the same round — no unattributed
+residual, so the excess denominator is the whole population, not a view. 14
+rotation re-emits of forward-gunner ids were detected and excluded (923 in the
+Eir arm); counting them would have inflated the excess.
+
+### Q1 — how often does the failure mode fire?
+
+**22 of 185 games = 11.9 %** contain at least one builder planting ≥ 4 forward
+turrets.
+
+Eir control: **7 of 700 = 1.0 %**.
+
+### Q2 — how much spend is the excess?
+
+| | v102 | Eir (control) |
+|---|---:|---:|
+| forward builds | 736 | 1,188 |
+| **excess builds** | **309** | **30** |
+| **excess as share of all forward builds** | **42.0 %** | **2.5 %** |
+| titanium, **lower bound** (base cost, unscaled) | 9,260 Ti | 660 Ti |
+| … per game across the whole population | 50.1 Ti | 0.9 Ti |
+| … per *affected* game | 421 Ti | 94 Ti |
+
+Titanium is a **floor**: base cost only (30 Ti sentinel / 20 Ti gunner), and cost
+scaling only ever raises it, steeply, for the 40th sentinel of a game. I did not
+model the live scale — that needs the engine's category rule, which I could not
+establish from the replay.
+
+**As a mechanism the revert is strong: it takes the excess share from 42.0 % to
+2.5 %, a 17x reduction.** That is the effect size, measured on Eir's own tape
+rather than assumed.
+
+### Q3 — concentrated or general? **CONCENTRATED. Plainly.**
+
+**22 of 185 games (11.9 %) carry any excess at all. 163 games (88.1 %) would be
+bit-identical under the revert.**
+
+Excess per affected game, all 22 values:
+`1 1 1 1 1 1 2 2 2 2 3 3 4 4 4 11 11 16 45 64 65 65`
+
+- **top 1 game = 21.0 % of all excess; top 3 = 62.8 %; top 5 = 82.5 %; top 10 = 93.5 %.**
+- **Four games (45, 64, 65, 65) carry 239 of 309 = 77 % of the excess.**
+- **Median affected game saves 3 builds** — about 90 Ti at base cost.
+- Drop the three heaviest games and the excess share falls **42.0 % → 22.3 %**.
+- Games where the revert changes more than 10 builds: **7 of 185 = 3.8 %.**
+
+**This is a headline percentage carried by four games.** The 42 % figure is real
+and correctly computed, but it must never be quoted without "in 11.9 % of games,
+77 % of it in four" attached — it is exactly the shape the main body warned about
+for the r400+ build rate, and it is the same handful of games (`4a762d9c…_game_3`,
+`4ff97967…_game_2`, `dcb80e2e…_game_4`, `a2b7c76f…_game_4`).
+
+### Outcome check — does the excess cost us games?
+
+Game winner read from **the replay's own `winner` field**, so this does not route
+through `ladder_games.seat` or `join.our_team` (TRAP 7):
+
+| set | games | won |
+|---|---:|---:|
+| carry excess | 22 | 50.0 % |
+| no excess | 163 | 52.8 % |
+| all v102 ladder | 185 | 52.4 % |
+
+**No separation at n = 22.** A 2.8-point gap on 22 games is far inside noise; this
+is "cannot detect", not "no effect". The top-3 excess games went W-L-L.
+
+## 3. What I would tell the builder
+
+**The mechanism works and the population does not.** Reverting to a cumulative
+per-builder budget demonstrably removes 17x of the excess (Eir's own tape proves
+the brake holds), but it would change behaviour in **1 game in 8**, change it
+*materially* in **1 game in 26**, and the aggregate prize is a four-game tail.
+
+- A ladder leg powered on **overall win rate is underpowered by construction** —
+  88 % of games are untouched, so the treatment is diluted ~8x before it starts.
+- If the leg is run anyway, **pre-register the affected-game subset** (games where
+  any builder reaches 4 forward plants) as the analysis population and state the n
+  in advance, or the result will be a null that means nothing.
+- **The cheaper read may be the titanium, not the Elo**: 421 Ti per affected game
+  is a large, directly measurable quantity that does not need 400 games to see.
+- **What I could not measure and would want before committing a leg:** the true
+  scaled titanium cost of the excess (needs the engine's cost-category rule), and
+  whether those four pathological games share a map or an opponent posture that
+  would make a narrower fix cheaper than a tree-wide revert.
+
+---
+
 Scripts (scratchpad, not committed): `fwd_census.py` (census pass),
-`test_instrument.py` (four-arm instrument check), `lifetimes.py`, `analyse.py`.
+`test_instrument.py` (four-arm instrument check), `lifetimes.py`, `analyse.py`,
+`hp_trace.py` + `test_hp.py` (HP forensics; the instrument check covers damaged /
+undamaged / healed removals plus an unsigned-delta corruption arm that must and
+does blow up), `excess.py`, `trim.py`.

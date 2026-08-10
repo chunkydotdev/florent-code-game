@@ -23087,3 +23087,53 @@ measured beats a large one that is three games wearing a percentage.**
 **Seventh TRAP 7 instance also recorded: my `/game` figures read ~10% high because
 `.meta.json` gives 185 v102 games against `join.tsv`'s 160 — the trap biting a DENOMINATOR
 rather than a seat.**
+
+## commit after `67c1f63` (git time is the authority) — RESEARCH ARM: **PRIZE MEASURED — 17× mechanism effect, 88% of games bit-identical, and 77% of the headline in FOUR GAMES**
+
+185 v102 ladder games, our side, forward gunner+sentinel. **736 forward builds, 736 distinct
+entity ids, 100% attributed to a builder via `builderBuild`, 14 rotation re-emits excluded
+(923 in the Eir arm).**
+
+| | v102 | Eir control |
+| --- | ---: | ---: |
+| games where the failure fires | **22 / 185 = 11.9%** | 7 / 700 = **1.0%** |
+| excess forward builds (beyond the 3rd per builder) | **309 / 736 = 42.0%** | 30 / 1,188 = **2.5%** |
+
+**A 17× reduction in excess share, measured on Eir's own tape.** Titanium **lower bound**
+9,260 Ti (base cost, unscaled — live scale not modelled, so the real figure is higher):
+**50.1 Ti/game population-wide, 421 Ti per affected game.**
+
+### **CONCENTRATED, AND THE HEADLINE MUST NEVER TRAVEL ALONE**
+    163 of 185 games (88.1%) would be BIT-IDENTICAL under the revert
+    excess per affected game: 1 1 1 1 1 1 2 2 2 2 3 3 4 4 4 11 11 16 45 64 65 65
+    top 1 = 21.0%   top 3 = 62.8%   top 5 = 82.5%
+    FOUR GAMES CARRY 239 of 309 = 77%
+    median affected game saves 3 builds (~90 Ti); >10 builds changed in 3.8% of games
+**Trimming the three heaviest drops 42.0% → 22.3%.** **The 42% is correct and must always
+carry "in 11.9% of games, 77% of it in four".** **Recorded explicitly because that is precisely
+the number that reaches a HANDOVER with its tail stripped off** — and this session has already
+watched a 4.5× under-build figure, a 25% utilisation and a p93 percentile each travel without
+theirs.
+
+### **THE OUTCOME LEG IS UNDERPOWERED BY CONSTRUCTION**
+**No separation at n=22** — excess games 50.0% won, no-excess 52.8%, all v102 52.4%. **Cannot
+detect, not no effect.** **The treatment is diluted ~8× before the leg starts, because 88% of
+games are bit-identical under it.**
+**⇒ RECOMMENDED: skip the outcome leg. Measure the 421 Ti per affected game directly** — it is
+a mechanism quantity, needs no 400 games, and **`PROGRAMME.md` already says win rate is not a
+verdict.** The alternative (pre-registering the affected-game subset) is honest but hunts a
+subset defined by the treatment firing, which needs care the cheap read does not.
+
+### **AND THE HP QUESTION REFUTES MY OWN PREMISE, FROM MY OWN LIBRARY**
+**Not `destroy()` — ENEMY GUNNER FIRE.** All 78 forward turrets in that game read **hp0=40
+with seven negative deltas of exactly −7**, plus one +4 heal from us. The replay's whole
+negative-delta spectrum is `{−7: 768, −2: 617, −18: 82}`, so **−7 is unambiguously gunner;
+seven gunners × 7 = 49 ≥ 40; five distinct enemy firing tiles cover (17,16).**
+
+**My "nothing kills a sentinel in two rounds" assumed ONE gunner. It fails on MULTIPLICITY,
+not mechanics.** **And the standing context I maintain says the crack in the defender's edge is
+*"concentration, not more damage"* — I had the answer in my own library and reasoned past it.**
+**Eleventh of mine tonight, and the first that was already written down.**
+
+**Both corrections to the agent are recorded in its addendum rather than silently applied**,
+including the warning that its Eir census measurement **does not bear on Eir's brake.**
