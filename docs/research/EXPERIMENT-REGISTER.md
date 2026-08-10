@@ -469,9 +469,38 @@ not explain it on the ladder side either.
 
 **AND A STRUCTURAL FINDING FOUND WHILE CHASING IT: UNRATED MATCHES DO NOT CARRY
 THE OPPONENT'S VERSION.** `match info` returns `teamBVersion = None` for all 5
-Bisons panel matches, while the ladder table gives `v4`. **So D18 — pin the
-opponent's version — is STRUCTURALLY IMPOSSIBLE on the fixture we run every
-test on.** Any unrated-vs-ladder comparison silently pools opponent versions,
+Bisons panel matches, while the ladder table gives `v4`.
+
+**⛔ I WROTE "SO D18 IS STRUCTURALLY IMPOSSIBLE ON OUR MAIN FIXTURE". TOO STRONG,
+AND THE SIDE LANE WAS RIGHT TO PUSH BACK.** The first half is true; the second
+does not follow. **The opponent's version is RECOVERABLE BY TIMESTAMP JOIN**,
+because our panel cells play the rated ladder too and `league_matches.tsv`
+carries versions league-wide. **The route was already proven before it was
+named** — it is the same join that killed the Ouroboros "frozen v8" finding.
+"Structurally impossible" would have conceded our FIXTURE_OF_RECORD as
+permanently unattributable when it is a join we already knew how to do.
+
+**BUILT: `tools/oppver_window.py`, and it fired on PANEL-3 — this leg — on its
+first real use:**
+```
+LEG WINDOW 2026-08-10T15:43:53 -> 18:21:40   (6 cells)
+     0033                   CLEAN      v50 throughout
+  ** Askar City             STRADDLED  was v87; shipped v90@18:12 INSIDE window
+  ** Lunds Stallions        STRADDLED  was v62; shipped v63@16:52 INSIDE window
+     Powered by SmartFridge CLEAN      v65 throughout
+     The Bisons             CLEAN      v4  throughout
+     farming_200s           CLEAN      v12 throughout
+```
+**QUALIFICATION ON THIS LEG'S OWN VERDICT, and it hits the two TOP cells:**
+Lunds Stallions (70.0%) and Askar City (53.3%) each pool two opponent builds.
+**Their ADMISSION still stands — a cell that produces intermediate results
+demonstrably can move — but their measured VALUES are not a property of any one
+opponent build and must not be quoted as one.** The two floors (Bisons 8.0%,
+0033 17.1%) and the two lower admits (SmartFridge 26.7%, farming_200s 28.6%) are
+**CLEAN**, so **the Bisons re-derivation is unaffected** and the panel retains
+**2 clean admitted + 2 straddled admitted**.
+**Lunds shipped SIX versions in under eighteen hours** — so this is a live
+confound on any leg longer than about two hours, not a corner case. Any unrated-vs-ladder comparison silently pools opponent versions,
 and that is a live candidate for the 8%-vs-50% gap that we cannot currently
 test.
 
