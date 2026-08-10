@@ -346,3 +346,14 @@ windows.)
   than the CONFIRM showed** — mildly supporting the HOLD recommendation, not
   undercutting it. The fix (assert holder before EVERY challenge, incumbent arms
   included) is the mechanism behind the v102 tape-pollution flagged at 14:2x.
+
+**2026-08-10 14:4x — E-27.5 CAVEAT RESOLVED, CLEAN (5e3287b):** verified independently:
+contaminants created **12:32:08Z**; CONFIRM banked **12:20:32Z** — all 150 control
+games completed ≥12 min BEFORE the contamination existed, so it could not be in
+the CONFIRM control. **CONFIRM needs no recomputation; "NOT CONFIRMED" is fully
+clean, not just robust.** The 10 games are removed from `arm_v104.txt` (control
+restored to 30 clean matches) and durably quarantined
+(`docs/legs/QUARANTINE-2026-08-10.md`, "do not re-ingest"). Found by auditing
+every arm against the platform's own timestamps — the right instrument. My bias
+analysis stands as the counterfactual (would have been ~−9pp if contaminated,
+still short of the bar). **E-27.5 caveat closed.**
