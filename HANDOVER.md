@@ -47,14 +47,21 @@
 ## | CONTROL v104 | 30 matches (150g, cleaned) | the denominator |
 ## | LOKI-15 quota v105 | 32 | **-14.7pp, p=0.0149 — SIGNIFICANTLY WORSE** |
 ## | CONFIRM v102 | 20 (n=100, **COMPLETE**) | **-7.0pp, p=0.303, NOT CONFIRMED** |
-## | LOKI-16 ring-hold v106 | 15 (75g of 100) | interim -0.7pp, p=1.00 |
-## | LOKI-14 kidnap v107 | 15 (75g of 100) | interim -2.0pp, p=0.78 |
-## | PANEL2 calibration | **0** | **not started — run first** |
+## | LOKI-16 ring-hold v106 | 15 (75g) | **s28 VERDICT: UNRESOLVED — not advanced, not killed** |
+## | LOKI-14 kidnap v107 | 15 (75g) | **s28 VERDICT: FALSIFIER 1 FIRES — refuted vs THIS PANEL only** |
+## | PANEL2 calibration | **RUNNING s28** | own runner `tools/panel2_cal.sh`, no activation |
 ##
-## **LOKI-14's PRIMARY bar is NOT currency** — it is undamaged enemy removals
-## within 3 rounds of a BORDER throw vs an INTERIOR throw (the within-leg
-## placebo). **That decode has not been run.** Its currency reading says nothing
-## about the exploit.
+## **BOTH DECODES ARE DONE AND BOTH VERDICTS ARE TYPED** (`b1ca257`; register
+## rows `857ac2c`; read-outs `f13e375` + `b5266ee`).
+## * **LOKI-14: 0 undamaged removals from 150 border throws** (bar >=45), placebo
+##   clean (interior 0/164), mechanism bar met 7.5x, under-dosing RULED OUT.
+##   **Scope is pre-committed: refuted against THESE FIVE TEAMS, not as a class.**
+##   The census is bimodal and **no carrier is on our panel.**
+## * **LOKI-16: coverage +0.086 vs a >=+0.08 bar, bootstrap 95% CI
+##   [-0.038, +0.196]** — and the bar is met or missed by choosing an estimator
+##   afterwards (four estimators inside 0.010). Mechanism DOES move in the tail.
+##   **jackpot KEPT on the panel** — dropping it would be fitting the panel to
+##   the plank (the CONTROL gains there, +0.159; the treatment is flat).
 
 ## ===== ⚠ THE TWO SAFETY FAULTS THAT BIT TODAY =====
 ## 1. **A fanout arm's rollback failed and left v102 live for ~5 minutes**, then
@@ -104,15 +111,31 @@
 ## leaves **4 durable activations in 24h = 0.19/hr**. Counting logic deliberately
 ## LEFT UNCHANGED while the audit session evaluates that instrument.
 
-## ===== QUEUE, IN PRIORITY ORDER =====
-## 1. **PANEL-2 CALIBRATION.** Nothing else is trustworthy until it runs.
-## 2. **LOKI-14's crash-mechanism decode** — border vs interior undamaged
-##    removals, via `tools/crash_census.py`. The exploit's actual bar, unread.
-## 3. **Finish LOKI-16 and LOKI-14 to their pre-registered n=100**, on a panel
-##    that can resolve them.
-## 4. **Generalised throw-to-stale-state** — RULED IN-CLASS (`CLAUDE.md` point 0);
-##    no new organiser question needed. Build after LOKI-14 reads out.
-## 5. **A fresh pre-registered confirmation of v104 at larger n**, on panel-2.
+## ===== QUEUE, IN PRIORITY ORDER (rewritten s28) =====
+## 0. **THE FIXTURE CANNOT RESOLVE AN 18pp CLAIM. THIS IS THE FRAME FOR
+##    EVERYTHING BELOW.** `tools/leg_read.py` now computes it instead of printing
+##    a hardcoded "~20pp at best" at every n: **MDE 21.7pp on live cells.**
+##    Every 18pp-class claim fired on 2026-08-10 sat BELOW the panel's own
+##    resolution, which is why p=0.303 was the expected output. **Do not fire
+##    another currency leg on this panel without checking `--bar` against MDE.**
+## 1. **PANEL-2 CALIBRATION — RUNNING.** `tools/panel2_cal.sh` (5 cycles,
+##    n=25/cell, no activation, zero rated cost). Admission band [0.20, 0.80]
+##    INCLUSIVE. Read out with `leg_read.py`'s per-opponent split.
+##    **Add the map-admission check to it** — `tools/map_admits.py` (D34).
+## 2. **LOKI-14b, CARRIER-TARGETED — PRE-REGISTERED AND CLEARED, NOT FIRED.**
+##    `docs/prereg/PREREG-loki14b-carrier-targeted-2026-08-10.md` (15:29:57 CEST;
+##    Amendment 1 at 15:38:30). Same bot (v107), **fixture varied** — the four
+##    boundary carriers (vjg/Troupe/S/Ship Happens), whose border hazard is
+##    224/10k pooled against **ZERO** off-border (HR >= 17,432x).
+##    **BLOCKED ON:** research's per-carrier recency table, gated by Amendment
+##    1's pre-committed thresholds (PATCHED vs INSUFFICIENT kept distinct;
+##    **<2 carriers admitted = the leg does not fire**; no substitutions).
+##    **Needs a real v107 activation** — D26 holder-verify on rollback applies.
+## 3. **LOKI-16b** — same plank, bar changed to **longest-hold/length**, named in
+##    the prereg BEFORE firing (it was refused for LOKI-16 as post-hoc), reported
+##    **per ring-stratum** (12-tile maps vs jackpot's 5).
+## 4. **Generalised throw-to-stale-state** — RULED IN-CLASS (`CLAUDE.md` point 0).
+## 5. **A fresh confirmation of v104 at an n the fixture can actually resolve.**
 ## **OFF-PROGRAMME, do not re-open:** economy suppression (LOKI-15 is
 ## significantly worse; LOKI-13's mechanism bar failed), and the four exploit
 ## roads the guard-matrix sweep closed (`CLAUDE.md` point 0's road list).
