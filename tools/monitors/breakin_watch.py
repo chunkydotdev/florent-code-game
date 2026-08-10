@@ -80,5 +80,56 @@ def main():
         time.sleep(120)
 
 
+def selftest():
+    """Show this watch producing BOTH verdicts, and its blind branch too.
+
+    A monitor whose silence has never been contrasted with its alarm has not
+    been seen to check. ship_watch logged RULE=held for 45 minutes today off a
+    stalled tape and looked exactly like a healthy monitor doing its job.
+    """
+    import io, contextlib
+    ok = True
+    tag = rows()[-1][3] if rows() else None
+    if tag is None:
+        print("SELFTEST INCONCLUSIVE: tape unreadable"); return 1
+
+    def run(env):
+        buf = io.StringIO()
+        old = dict(os.environ); os.environ.update(env)
+        try:
+            with contextlib.redirect_stderr(buf):
+                globals()["FLOOR"] = float(os.environ["BREAKIN_FLOOR"])
+                globals()["VERSION"] = os.environ["BREAKIN_VERSION"]
+                globals()["STALE_S"] = float(os.environ["BREAKIN_STALE_S"])
+                r = rows(); mine = [x for x in r if x[3] == VERSION]
+                age = time.time() - TAPE.stat().st_mtime
+                if age > STALE_S:
+                    alert(f"BLIND: tape unwritten for {age/60:.0f} min.")
+                elif mine and float(mine[-1][1]) < FLOOR:
+                    alert(f"*** BREAK-IN FLOOR BREACHED *** {VERSION} "
+                          f"{float(mine[-1][1]):.0f} < {FLOOR:.0f}")
+        finally:
+            os.environ.clear(); os.environ.update(old)
+        return buf.getvalue()
+
+    breach = run({"BREAKIN_FLOOR": "99999", "BREAKIN_VERSION": tag, "BREAKIN_STALE_S": "999999"})
+    quiet  = run({"BREAKIN_FLOOR": "1",     "BREAKIN_VERSION": tag, "BREAKIN_STALE_S": "999999"})
+    blind  = run({"BREAKIN_FLOOR": "1",     "BREAKIN_VERSION": tag, "BREAKIN_STALE_S": "0"})
+    for name, out, want in (("breach", breach, "BREACHED"),
+                            ("blind",  blind,  "BLIND")):
+        good = want in out
+        print(f"  [{'ok' if good else 'FAIL'}] {name}: {out.strip()[:80] or '(silent)'}")
+        ok &= good
+    good = quiet.strip() == ""
+    print(f"  [{'ok' if good else 'FAIL'}] no-breach: {quiet.strip()[:80] or '(silent, correct)'}")
+    ok &= good
+    if ALERT.exists():
+        ALERT.unlink()
+    print("SELFTEST PASS" if ok else "SELFTEST FAIL")
+    return 0 if ok else 1
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
     sys.exit(main())
