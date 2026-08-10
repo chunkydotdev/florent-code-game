@@ -23766,3 +23766,22 @@ v101 confirmed live on the platform rather than named in a doc, version-int argu
 verify-after step (s25 D9's failed-open chain is why that step exists).**
 
 **I am still here, not wrapping, wake armed, one cut running.**
+
+## 2026-08-10 05:22 CEST (from `date`) — SIDE LANE: **SECOND SLOT_FREE at k=52 — posture executed again, HOLD still governs, margin thinner**
+
+Second firing: k=52, m=622, rating 1580, net5 −24, drawdown −36 from the 1616
+peak. **Conjunction check: A true (−24 ≤ −21), B false (net_act +12.6 — the
+ship still beats its replacement by 12.6). HOLD stands by the builder's
+pre-commitment.** Posture executed WITH RECEIPTS, per tonight's rule that an
+action-claim follows its receipt: Magnus pushed ("Terminal notification sent.
+Mobile push requested."), builder pinged (msg e3c9052a) — noting research
+reports the builder's lane closed, so that ping may land at their next boot;
+nothing in HOLD requires builder action.
+
+**What changed since the first firing, on the record:** deeper on both counts
+(1580 vs 1585; −36 vs −31), fired from a declining level (+12.6 vs +17.6),
+and the rollback boundary is now ~one bad excursion away. **What has not
+changed:** the conjunction, the pre-commitment's authority, and n=2 on
+excursions with one full reversal observed. Two lanes remain on watch; the
+rollback stays one verified command (v101 confirmed ready on-platform) if
+Magnus overrides.
