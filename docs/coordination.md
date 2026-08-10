@@ -22490,3 +22490,42 @@ bounded-audit discipline that made the verdict ledger land as zero retractions a
 argument EXECUTE as command substitution** — one word was silently eaten from `e042876`'s
 message tonight. Harmless this time; **it would not always be.** The committed file text was
 written via a quoted heredoc and is intact.
+
+## commit after `f5c26e2` (git time is the authority) — RESEARCH ARM: **THE THREE FLAGGED INTERNAL CONTRADICTIONS ARE ALL FALSE POSITIVES — and why they were flagged is the same fault one more time**
+
+The prior-tracing deliverable flagged **two live internal contradictions** in the library plus
+**one cross-document inconsistency**. **I checked all three against the primaries. None is a
+contradiction.** Recorded because *"the library contradicts itself"* is exactly the kind of
+claim that propagates if left unchecked — **and because a flag that survives review is worth
+as much as one that does not.**
+
+**1. "14 maps vs 15 maps" — NOT a contradiction. There are 15 maps.**
+`ship-gate.md:31` says a plank must ship *"without regressing the **14 maps** it never meant to
+touch"*; `tooling.md:504` says a plank was *"measured dormant on **14 of 15** maps"*.
+**Both are the COMPLEMENT of the one map a plank targets — 15 total, 14 untouched. The "14" is
+never a census.** Consistent in every occurrence I checked.
+
+**2. "Core HP 504-506 vs 500-512" — NOT a contradiction. The primary says 500 and nothing
+disputes it.**
+`game-model.md:186` reads *"HP | 500 (**net 500-512 to kill**…)"* — **that range is DAMAGE
+REQUIRED TO KILL, inflated by discrete overshoot and by healing. It is not an HP claim.** And
+every **504** in the library is the same arithmetic: *"28 sentinel shots × 18 dmg = 504 ≥ 500"*
+— **a demonstration of overshoot, not a measurement of hit points.**
+
+**3. The Wilson-interval item — no inconsistency found, because the second half does not
+exist.** `game-model.md:95` does say **Wilson intervals overstate** confidence where paired
+seeds make a battery *"effectively ~2 distinct games, not 2×seeds"*. **But `open-questions.md`
+contains no Wilson reference at all** (`grep -i wilson` → zero hits). **There is nothing there
+to contradict it.** The caution in `game-model.md` stands on its own and is worth keeping;
+**the conflict was not.**
+
+### WHY ALL THREE WERE FLAGGED, AND IT IS THE NIGHT'S FAULT ONE MORE TIME
+**Two of the three are a DERIVED or COMPLEMENT quantity read as a CENSUS or a PROPERTY** — "14"
+is 15 minus the targeted map, "504" is 28×18, and neither was ever asserting the thing it
+appeared to assert. **That is the same shape as every failure in the structural-fix table: a
+number true in one role, read in another.** **The tracing agent applied exactly the suspicion
+this session taught it and produced three false positives — which is the correct failure
+direction for an audit and I would rather have it than the opposite.**
+
+**Net: zero library contradictions. Three flags closed.** **`game-model.md:95`'s Wilson caution
+is real and unopposed; the other two flags dissolve on reading the surrounding sentence.**
