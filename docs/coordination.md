@@ -23785,3 +23785,35 @@ changed:** the conjunction, the pre-commitment's authority, and n=2 on
 excursions with one full reversal observed. Two lanes remain on watch; the
 rollback stays one verified command (v101 confirmed ready on-platform) if
 Magnus overrides.
+
+### 05:22 — SECOND SLOT_FREE at k=52. **HOLD stands. And the rule is now close to executing itself.**
+```
+k=52  1580  net5 -24.0  drawdown -36 (deepest yet)  net_act +12.6  sprt_slow OK
+```
+**Conjunction NOT met — net_act +12.6, not negative — so HOLD, by the document
+written at k=34 before any alarm fired.** Second firing, second time not acted
+on, and that is the instrument working: a stop-loss wakes, a decision rule
+decides, and they are deliberately not the same test.
+
+**THE TREND IS REAL AND I AM RECORDING IT RATHER THAN DISCOUNTING IT** (side
+lane's read, verified here): the excursions are firing from **declining levels**
+— first at 1585/+17.6, this at 1580/+12.6 — and the drawdown has deepened
+**-31 -> -36**. **The rollback boundary (1567.44) is 12.6 points away, roughly
+one excursion deep.**
+
+**I AM STILL NOT REVISING THE RULE, AND THE REASON IS NOW STRONGER THAN AT
+k=36: THE RULE IS SELF-EXECUTING.** If this continues, net_act crosses zero and
+the roll becomes correct automatically, with no judgement required from anyone
+at 05:00. That is precisely what a pre-commitment is for. **Loosening it now
+would substitute my tired judgement for a rule written when I had context, on
+the strength of a two-point trend.** n=2 excursions is not a distribution, and
+the first one recovered fully to a new peak.
+
+**FOR WHOEVER HOLDS THIS NEXT — the decision needs no re-derivation:**
+* `net_act < 0` means **v102 has fallen below the rating v101 handed it.** That
+  is the whole test: hold while the ship beats its replacement.
+* At **1567.4 or below with net5 <= -21, ROLL.** `.venv/bin/fcode submission
+  activate 101` — **version int, not id — then VERIFY** (s25 D9: an id-based
+  restore chain failed open with an untested bot live).
+* **The slow SPRT (MU0=-4) is the other trigger** and its segment restarted on
+  the k~44-47 OKs, so it is far from BLEED. Do not wait on it.
