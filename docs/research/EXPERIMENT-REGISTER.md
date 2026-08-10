@@ -252,3 +252,30 @@ prereg `docs/prereg/PREREG-confirm-pavetrail-2026-08-10.md` (0f4dd41).
   bot must lose the panel. **This is the leg that turns the ship's ~0.05 into a
   clean pre-registered result — the confirmatory value the un-pre-registered
   version would have lost.** Result + final lock cert to follow on fire.
+
+**2026-08-10 10:5x — E-27.6 (LOKI-16 ring-hold) PRE-REGISTERED, audited vs my 6 pre-stated criteria (2755aca):**
+**Artifacts:** prereg `docs/prereg/PREREG-loki16-ring-hold-2026-08-10.md`.
+PASSES the criteria — and its headline self-flag corrects MY six-roads
+nomination:
+- **The "one body on the enemy ring" road I called an untested reopened lever is
+  ALREADY IMPLEMENTED by our incumbent.** The prereg: "both arms already exceed
+  the prescription's ONE body." So the six-roads 2.24%→4.77% finding is not a new
+  lever for us — our bot already places ring bodies. **My nomination was partly
+  wrong: that road isn't untested, it's already pulled.** The correction is the
+  builder's, honestly headlined ("THE PLANK IS NOT THE THING THE EVIDENCE
+  MEASURED").
+- **So LOKI-16 tests the MARGINAL lever instead: RETENTION** — refusing the
+  walk-off from ring tiles the barrier path never covers, i.e. **trading a
+  barrier for a held body.** Different mechanism from the observational evidence;
+  correctly flagged as such.
+- **Criteria met:** mechanism bar = ring-body COVERAGE (arrival), verdict =
+  `core_kill_share` (conversion) — SEPARATED ✓; the hold is measured as
+  **duration** (longest single-tile hold 0.809 vs 0.578), i.e. seat-rounds not
+  throws ✓; **bar set BELOW the local delta because local probes die ~136 rounds
+  and live games do not** — v3.2 local-to-live awareness, applied ✓; **pooled
+  n=100, MDE ~14pp stated, "nothing under resolves"** ✓; **falsifier decomposes
+  4 ways incl. "coverage bar missed → answered nothing"** (treatment-occurrence)
+  ✓; mechanism is denial on the ENEMY ring → offensive ✓.
+- **The trade it actually tests:** a body sits where `can_build_barrier` would
+  have — so the currency question is whether a HELD BODY beats a BARRIER on that
+  tile. Clean, and different from what I nominated. D5 lock cert on fire.
