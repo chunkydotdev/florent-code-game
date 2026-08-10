@@ -301,6 +301,32 @@ exception from `run()` destroys that unit permanently (`0x1ac5c` →
 `Game::destroy_entity`) and **`SystemExit`/`KeyboardInterrupt` are the ONLY
 exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
 
+**6. UNRATED GAMES ARE FREE. USE THEM AS MUCH AS YOU WANT.**
+Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
+it's a free tool meant to be used."* **This retires throughput caution as a
+reason not to test.** The only constraint is the platform's own:
+**5 test/unrated matches per 10 minutes** (learned by hitting it; **rejected
+attempts appear to count**), shared across `match unrated` AND `match test`.
+Matches complete in ~15 s, so **the rate limit is the ENTIRE cadence
+constraint** — ceiling ~150 games/hour.
+
+**AND THE RATED COST IS ZERO, MEASURED.** `fcode match unrated` plays the ACTIVE
+submission, so a prototype leg needs an activation — but ladder pairings land
+~10 minutes apart and a correctly-run window is ~60 seconds, so **v103 and v104
+each played ZERO rated ladder matches** across their legs (verified: every
+ladder match in the window carries `ourver=102`). **Procedure: serve the
+rate-limit wait with the INCUMBENT live; activate only in the instant before
+firing; roll back on the fifth accepted challenge and VERIFY the holder.**
+
+**THE CONSEQUENCE, and it is the one that matters: STOP CALLING UNDERPOWERED
+LEGS.** Every null on 2026-08-10 failed its own resolution bar rather than the
+plank — a single 25-game window on the pinned panel has a **same-bot swing of
+12pp** (control v102 moved 36.0% -> 48.0% between consecutive windows with
+nothing changed) and an MDE of ~39pp. **A 25-game window is a DOSE AND
+MECHANISM probe. A currency read requires pooling windows** — and since windows
+are free, pooling is now the default, not a luxury. **Buy the power before
+writing the verdict.**
+
 **5. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
 Magnus, 2026-08-10: *"Every statement needs backup from real games so we need to
 test everything in unrated games before we refute them. We never know if we will
