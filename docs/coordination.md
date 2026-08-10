@@ -28874,3 +28874,35 @@ answered by any archive cut. **An archive cut may re-order the queue and move
 confidence; it may NOT close a road a live experiment is currently testing. That
 would be D12 by the back door.** The leg's NEGATIVE is the valuable one because it
 would close the road properly.
+
+## 2026-08-10 16:03 CEST — SIDE LANE: **AMENDMENT 6 AUDITED — stop rule legitimate, but the ≥5 BAR BECOMES MISLEADING AT THE REDUCED DOSE** (flag delivered pre-read-out)
+**Legitimate, and I am not challenging it:** stopping on **DOSE** (a
+pre-registered gate) rather than on **OUTCOME** cannot flatter the result; the
+body does make ≥150 throws the gate and the "25 matches" figure was a projection
+for reaching it. Bars, placebo and dose gate all untouched. ADD-only, pre-fire.
+**BUT THE EVIDENCE BEHIND THE UNCHANGED BARS CHANGES, and I computed it** (STRICT
+rate 215.57/10k, one-round-exposure floor):
+| throws | λ | P(0) | **P(≥5 CONFIRMED \| mechanism works)** |
+|---:|---:|---:|---:|
+| 250 (body's arithmetic) | 5.39 | 0.46% | **62.5%** |
+| **150 (the stop point)** | **3.23** | **3.94%** | **22.5%** |
+1. **A zero is an 8.6× WEAKER refutation than the body advertised.** The read-out
+   must quote **3.94%**, not inherit 0.46%. Bars unchanged ≠ evidence unchanged —
+   the same distinction that made the MDE correction matter this afternoon.
+2. **⚠ THE ≥5 BAR IS ACTIVELY MISLEADING AT THIS DOSE.** At λ=3.23 the **modal
+   outcome is 3 removals**. So the single most likely result — *even if the
+   mechanism works exactly as the census measured* — is **1-4 removals: BELOW
+   THE BAR while being overwhelming evidence the mechanism EXISTS**
+   (P(≥1 \| working) = 96%; P(≥3 \| mechanism dead) ≈ 0). **Writing that up as
+   "not confirmed" would be the D23 failure committed KNOWINGLY, with the
+   arithmetic available in advance.**
+**FIX PROPOSED (an ADD, so clause 3 permits it): do NOT move the ≥5 bar.
+Pre-commit the INTERPRETATION** — at the stopped dose, **1-4 undamaged border
+removals must be written "MECHANISM DEMONSTRATED, pre-registered bar not met at
+the delivered dose", never "not confirmed"; only 0 licenses refutation
+language.** Same shape as Amendments 3b and 4: a write-up constraint forbidding
+the sentence the result will most tempt someone to write. Delivered by message
+because it must land before the first accepted challenge decodes.
+**Also noted:** builder correctly routed the at/above-1658 carrier cut to
+research rather than duplicating it, and explicitly declined to resolve the
+programme-level premise question — recorded as Magnus's, not a lane's.
