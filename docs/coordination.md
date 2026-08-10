@@ -23632,3 +23632,57 @@ dependency is the reason this is worth a cut rather than a note.**
 **`opus`, read-only, LADDER fixture. Discriminator: undamaged removal, our side, builder bots,
 excluding `destroy()` and self-destruct and end-of-game. Guards: prove the control fires — the
 opponents' side must show a different rate, and injected damage must move the classification.**
+
+## commit after `0f8eee4` (git time is the authority) — RESEARCH ARM: **ZERO undamaged builder deaths — and my interpretation of the null was BACKWARDS. The real hazard is TURN LOSS, and it is invisible in the tape.**
+
+Deliverable: **`docs/research/undamaged-builder-deaths-2026-08-10.md`**. **235 frozen v102 ladder
+games (`pop_v102.tsv`, sha256 `178a5ddc…`), 1,677 spawns, 539 builder removals.**
+
+### THE RESULT: **0 of 539.** Zero before and after the final-round filter — **no exclusion did any work.**
+
+### **THE CONTROL FIRES FOUR WAYS — this is the part that makes the zero mean anything**
+1. **The bug was BUILT: a local match whose builders raise an uncaught out-of-vision
+   `get_tile_env()` gives 96/96 detected**, idle arm 0/0.
+2. **Field: 2,636 / 25,466 = 10.35%** across 4,870 third-party ladder games.
+3. **`strip_hp` on OUR OWN tapes takes us 0 → 539/539 (100%)** — **the direct answer to the
+   constant-column trap that produced a false conclusion earlier tonight: the classifier is not
+   structurally unable to fire on our rows.**
+4. `tools/field_deaths.py` reproduces the denominator exactly (539 = 539).
+**Power: 0/539 excludes ≥1% at p<0.005; BELOW 0.5% IS NOT EXCLUDED.**
+**And our zero is the MODAL outcome, not a distinction — 33 of 43 field teams with ≥200
+removals are also at exactly zero, and the field rate is 57.5% top-1 concentrated (`vjg` alone
+is 1,517 of 2,636).**
+
+### **1. MY PRE-STATED INTERPRETATION OF THE NULL WAS WRONG, AND BACKWARDS**
+I wrote that zero would mean *"our shipped paths are vision-safe in practice — a constraint the
+current bot happens to respect, which is exactly what a new graph walk would violate."*
+**No. We are at zero because `run()` wraps `_dispatch` in a blanket `try/except Exception`
+(`_v124loki8/main.py:116`).** **A new graph walk under that handler would ALSO measure zero.**
+**⇒ THE NULL MEASURES THE HANDLER, NOT THE PATHS** — and my reading would have licensed exactly
+the inference it cannot support.
+
+### **2. THE REAL HAZARD IS TURN LOSS, NOT UNIT LOSS — AND IT IS INVISIBLE IN THE TAPE**
+**An exception under that handler costs the unit its WHOLE ROUND with no removal, no HP delta,
+no marker**, and one stderr line per unit lifetime (`reported_error` latches). **A unit burning
+turns on a repeating out-of-vision query looks EXACTLY like a unit choosing to idle.**
+**⇒ The per-builder build budget is SAFE from the failure mode I was worried about and
+UNPROTECTED against the one that actually bites — and this instrument cannot read it at all.**
+**Note the asymmetry we already hold: we can measure TLE turn-loss** (Ouroboros discards 26,356
+unit-turns across 85 games; our side has **0 TLE events in 235 games**) **but we have NO surface
+for exception turn-loss.** That is a real gap in the corpus, not a gap in this cut.
+
+### **3. `self_destruct()` AND AN EXCEPTION KILL PRODUCE BYTE-IDENTICAL REPLAYS**
+**Two matches differing in one source line: `cmp` says equal, 1000/1000 turns.** The traceback
+never reaches `BotOutput.stdout` (`b''`, `tled=0`).
+**⇒ FROM REPLAYS ALONE THIS QUESTION IS UNANSWERABLE.** It became answerable **for us only** via
+a source fact: the shipped v102 tree (`bots/_v124loki8`, treehash `2dad5a2a`, matching HANDOVER)
+has **zero call sites for `self_destruct()`, `destroy()` or `resign()`.**
+**⇒ TWO STANDING CONSEQUENCES: the 2,636 field control events must NEVER be reported as
+crashes** — they are undamaged removals of unknown cause — **and a future version that adds
+`self_destruct()` BREAKS THIS INSTRUMENT PERMANENTLY.**
+
+**Also ruled out: `destroy()` (probed — `can_destroy` is False on every friendly-builder tile;
+it cannot target a builder), mis-bucketed lethal deltas (delta alphabet is exactly
+{−7,−18,+4,+3,+2,+1}; reconstructed HP never exceeds 40 across 14,583 builders), TLE, the
+end-of-game sweep (4 of 2,640), truncation. Unexcluded: one throw-round case (0.04%, field
+only) and engine parity between the local and platform engines.**
