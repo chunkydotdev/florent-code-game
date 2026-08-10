@@ -27301,3 +27301,131 @@ repair** — `THE FORWARD ROAD IS CLOSED` demoted across **nine files** whose
 correction had been sitting unread in the index they should have been checked
 against, **while our own strongest result of the night contradicted it.**
 **Under D12 none of these CLOSE anything. They prioritise.**
+
+# ============================================================================
+# 2026-08-10 ~14:5x CEST — **WRAP s27 (BUILDER): PROCESS DELTAS**
+# Wrap called by Magnus. Deltas were appended as they occurred through the
+# session; this is the synthesis protocol rule 5 asks for.
+# ============================================================================
+
+## THE SESSION IN ONE LINE
+**We shipped a bot on evidence that then failed its own pre-registered
+confirmation — and the machinery caught it, in public, at our own expense.**
+
+## WHAT MOVED
+* **SHIPPED `v104 "Loki v2"`** (Magnus). **1615 -> 1675, rank #28 -> #23**, peak
+  1698. `net_act +60.0`.
+* **Six pre-registered live-unrated experiments** fired concurrently at **zero
+  rated cost**, on a fixture that did not exist at boot.
+* **The exploit hunt became doctrine** — `CLAUDE.md` point 0, Magnus:
+  *"That's the entire reason we are named Loki — find these and use them."*
+* **Crash-induction approved, built, fired** (`v107`), and a **guard-matrix
+  sweep of the engine binary** closed most of the remaining exploit roads.
+
+## THE RESULT THAT MATTERS AND ITS VERDICT
+**CONFIRM-v102, the single pre-registered confirmatory test at fixed n:
+-7.0pp, p=0.303, against a predicted -18pp. NOT CONFIRMED.**
+**"The ship's evidence did not replicate"** is written in the result doc because
+the prereg pre-committed me to write it. **Not confirmed is not refuted** — the
+direction still favours v104 by 7pp — and Magnus chose **HOLD AND KEEP
+MEASURING** over rollback, correctly, since rolling back on p=0.30 acts on
+evidence no stronger than what shipped it.
+
+**And the mechanism died from the other side too: LOKI-15 (hard conveyor quota)
+is -14.7pp, p=0.0149 — SIGNIFICANTLY WORSE.** Cutting economy hard hurts. So
+v104 is better for reasons that are now positively **not** economy suppression.
+
+## D22. WE REBUILT, IN THE LIVE FIXTURE, THE EXACT DEFECT WE DIAGNOSED IN THE ARENA
+The pinned panel is a **two-cell instrument**: The Bisons 0,0,0,0 and Leviathan
+4,4,4,4 across four windows — **range zero, inert constants, not noise sources.**
+CtrlAltDefeat is a third ceiling. **Every currency number this project produced
+today is a read on I Stone and gsxWins wearing a five-cell denominator.**
+That is D11 saturation, diagnosed for the self-authored arena in s26 and
+reproduced in the live fixture **in the same session in which we wrote the rule.**
+**MAKING A FIXTURE LIVE DOES NOT FIX THE FIXTURE AXIS.** And the cause is
+nameable: **the panel was selected on RATING PROXIMITY, which does not predict
+whether a cell can MOVE** — CtrlAltDefeat reads 0.45 pooled but 0.66 against
+v102, so it was picked from an era-mixed number and came out a ceiling.
+
+## D23. THE NULLS WERE MINE, NOT THE PLANKS'
+Three planks nulled on their **own resolution floor** rather than on the plank:
+LOKI-11 (+16.0pp at n=25 -> **+0.0pp** at n=50), LOKI-13, and the ship's
+confirmation. **Measured same-bot window noise on this panel is 12pp** (control
+v102 went 36.0% -> 48.0% between consecutive windows with nothing changed) and
+the MDE at n=25 is **39pp**. **I was rationing a free resource.** Magnus:
+*"You are free to use unrated games as much as you want."* **The rated cost of a
+prototype leg is ZERO, measured** — v103, v104 and v107 each played 0 rated
+ladder matches across their legs. **An n=25 window is a dose-and-mechanism probe.
+A currency read requires pooling, and pooling is now the default.**
+
+## D24. A BAR DERIVED FROM THE FLAG'S OWN ACTION STILL DOES NOT TRANSFER
+LOKI-13's first bar was rejected as "a constant column wearing a threshold's
+clothes" and rebuilt from **the flag's own paired-seed local action** (0.43-0.67x).
+**Live, the same flag produced 0.86x and the bar failed.** Local games against
+our probes run 500+ turns so the pave trail dominates; live games are short and
+contested so deliberate line-building does. **"The ratio transfers, the absolute
+does not" was an assumption wearing the clothes of a measurement.** The fix that
+worked: **LOKI-15's bar rests on ARITHMETIC that transfers** (conveyors <=
+CONV_MAX x builders spawned), not on a ratio measured anywhere.
+
+## D25. AN INSTRUMENT THAT VALIDATES STRUCTURE BUT NOT IDENTITY
+`preflight.py` printed **READY TO SHIP** for `_v132loki15` while reading
+`_v124loki8`'s pre-registration — every required field present, because they
+were the SOURCE bot's fields. **Copying a bot directory copies its prereg**, and
+emptying each copy by hand is whack-a-mole. **Fixed at the gate** (asserts the
+prereg names the tree) **and mutation-tested against the exact failure.**
+Same family as `ship_watch` reading a stalled tape: **confirms the shape of its
+input, never its identity, emits a confident GO either way.**
+
+## D26/D27. TWO INSTRUMENT FACTS NOW IN `CLAUDE.md`
+* **Exit code is not a health signal on this platform.** `fcode status` exits
+  **0** while printing `Error: True` with `active_submission` null; `match list`
+  exits **1** in the same outage; a degraded body **parses as valid JSON**.
+  **Gate on the load-bearing FIELD.** This invalidates exit-code checking in
+  every tool we write against `fcode`.
+* **A monitor that reads a file must report that file's FRESHNESS**, or its
+  silence and its confidence are indistinguishable. `ship_watch` printed
+  `RULE=held` off a 45-minute-stale tape and looked exactly like a healthy
+  monitor.
+
+## D28/D29. THE CONTAMINATION, AND HOW IT WAS FOUND
+A CONFIRM window failed to roll back; the next arm was **CONTROL, which activates
+nothing and therefore asserted nothing**, and fired into a live v102.
+**10 games entered the denominator every other arm is measured against.**
+**AN ARM THAT ACTIVATES NOTHING MUST STILL ASSERT WHAT IS ACTIVE** — now enforced
+and mutation-tested. Quarantined durably (`docs/legs/QUARANTINE-2026-08-10.md`),
+and the banked CONFIRM settled clean **on timestamps**: contaminants created
+12:32:08Z, control read 12:18-12:20Z.
+**Found by auditing every arm against the platform's per-match
+`teamAVersion`, not by trusting my own runner's outfile.
+A RUNNER'S RECORD OF WHAT IT FIRED IS NOT EVIDENCE OF WHAT PLAYED.**
+
+## D30. AN AUDIT OF THE EVIDENCE IS NOT AN AUDIT OF THE CODEBASE
+"One hostile body on the enemy ring" was nominated as an untested reopened
+lever. **We already do it** — the incumbent holds the ring **68.8% of rounds**,
+arriving ~r22. Found only by going to BUILD it. **The open margin is RETENTION,
+not presence**, which is what LOKI-16 actually tests. **Grep the incumbent before
+pre-registering: the cheapest possible null is a leg testing a feature we ship.**
+
+## D31. MOTIVE ATTACHED TO A CADENCE — TWICE, ON THE SAME OBJECT
+`Powered by SmartFridge` fires at us on an 11.0-minute period, every match at
+**:02 past the minute within 0.6 s**. That is a scheduler and it is measured.
+**I published "we are being distilled" (hostile), then corrected to
+community-safe — both attached a MOTIVE to a CADENCE.** The timing proves
+automation and nothing about intent. **Third occasion this session of a measured
+number carrying an unmeasured subject**, and the only one I committed twice.
+
+## D32. THE THING THAT ACTUALLY PRODUCED VALUE
+**Reading the engine binary rather than the organisers' doc.** It retains full
+Rust symbols. It gave us: the destruction path and its two exemptions, the
+launcher's absent team check, `can_fire` returning true at 0 ammo, and the
+closure of four exploit roads that would otherwise have cost legs — **pushing
+resources into the enemy core is a GIFT (the core credits its owner), destroying
+enemy buildings LOWERS THEIR cost scale, the comms store is genuinely private,
+and cost scale cannot be inflated by an enemy.**
+
+## WHAT I WOULD PUT FIRST FOR A SUCCESSOR
+**The panel, not a plank.** Two 18pp claims have now failed to resolve on a
+five-cell fixture where three cells cannot move. `PREREG-panel2-calibration`
+is committed and its arm has **fired 0 matches** — it is the first thing to run,
+and until it does, every currency verdict inherits a two-cell denominator.
