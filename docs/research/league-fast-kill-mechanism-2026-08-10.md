@@ -246,7 +246,54 @@ that the economic plank can be abandoned outright rather than merely demoted.
 For contrast, our own profile is **conv17.7 buil5.1 harv3.2** — we build the most
 economy of any bot in the table and plant the furthest out.
 
-## 3. THE FAST KILLERS ARE DETERMINISTIC — AND THAT IS THE DIRTY TRICK
+## 3. DETERMINISM — **OVERGENERALISED BY ME; REFUTED FOR THE BISONS; NARROWED TO WHAT THE EVIDENCE ACTUALLY COVERS**
+
+> **CORRECTION (research's Bisons cut, `9f8280a`).** I wrote *"the fast killers are
+> deterministic"* and drew a 3 Ti barrier pre-empt from it. **The generalisation was
+> not warranted and the pre-empt does not apply to the Bisons.**
+>
+> **What my evidence actually was: TWO PAIRS OF GAMES** — SingleCore vs Jacobs Code
+> and Powered by SmartFridge vs CtrlAltDefeat — distinct files, distinct md5s,
+> hours apart, identical build order and kill round. **Neither pair was a Bisons
+> game.** I generalised from two pairs to a class.
+>
+> **Measured for the Bisons: 41 DISTINCT first-40-build signatures across 41 fast
+> kills**, 36/41 distinct at first-20, kill rounds 38–99 with no mode above 3.
+> **Their TIMING is rigid** (build #1 at r0 in 41/41; build #6 median r4, IQR 3–6)
+> **but their PLACEMENT is reactive.**
+>
+> ### THE PRECISE FAULT WAS THE INFERENCE, NOT THE OBSERVATION — and the two findings are COMPATIBLE
+> Research asked which teams carried my claim. **Answer: rows 16/17 are SingleCore
+> vs Jacobs Code (28×20) and rows 18/19 are Powered by SmartFridge vs
+> CtrlAltDefeat (20×26). Two pairs, two teams, neither of them the Bisons, and
+> crucially each pair is the SAME MATCHUP ON THE SAME MAP.**
+>
+> **So the two measurements are not in conflict at all — they measure different
+> things:**
+> - **Mine:** identical input (same matchup, same map) → **identical output**. That
+>   is *reproducibility*, and it is a property of the engine plus two deterministic
+>   bots.
+> - **Research's:** 41 **different** games — different maps, different opponents →
+>   41 different build signatures. That is *reactivity to input*.
+>
+> **A deterministic policy that reacts to its inputs produces both results. Both
+> are true.**
+>
+> **What was wrong is the step I took between them:** I inferred *"a rush is a
+> scripted opening, therefore the plant tile is knowable in advance"*. **Fixity
+> under identical input does not give fixity ACROSS games, and cross-game fixity is
+> what a pre-placed barrier needs.** I never measured it; research has now refuted
+> it for the Bisons. **The pre-empt is dead, and it was dead on an inference I did
+> not check, not on a measurement that failed.**
+>
+> **What survives, and it is worth keeping:** these bots are **reproducible given
+> identical inputs**, which is why the builder's paired local run (`_probe_victim`,
+> saga, **seed 7**) could kill the LOKI-11 facing plank in 90 seconds with n=1 and
+> still be sound. **Reproducibility is a property we exploit in the TEST HARNESS,
+> not on the battlefield** — we cannot run their bot, so we cannot precompute their
+> opening. That is the honest scope of the observation.
+
+## 3b. (superseded framing, kept for the record) THE PRE-EMPT CLAIM AS FIRST PUBLISHED
 
 §C rows 16/17 and 18/19 are **distinct files, distinct md5s, distinct match ids,
 hours apart** — with **identical build order and identical kill round.** The same
