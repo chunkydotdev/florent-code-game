@@ -26629,3 +26629,33 @@ flagged not edited.
 
 **No other flag.** When the leg is created its prereg is owed in `docs/prereg/`
 with both clocks, and I certify then.
+
+### 07:5x — **MANUAL RATING READINGS, because the tape is not recording them**
+`elo_history.tsv` is frozen at **07:05 / 1599 / 633** — `elo_logger` needs the
+still-broken `submission list` endpoint. `fcode status` HAS been returning a
+populated rating throughout (it is `active_submission` specifically that is
+null), so these are platform reads taken by hand and written here so the climb
+is not lost to the outage:
+
+    07:17  1598 @ 634
+    07:39  1611 @ 636
+    07:50  1617 @ 637     <- best of the session; +49.6 over the 1567.44 baseline
+
+**All of it is v102's.** v104 (LOKI-13) held the slot for **66 seconds** at
+05:40:41-05:41:00Z and v103 (LOKI-11) never played a rated match at all.
+**Every point of this climb belongs to the incumbent**, which is the correct
+reading and also the one that would be easiest to misattribute later — the
+version tag on the tape is a SAMPLE TIME, not an attribution
+(`tools/slot_rule.py`, documented defect).
+
+**LOKI-13's leg is fired and unreadable.** A poller is waiting for all 25 games
+to become readable and **will not accept a partial read**. During the flapping,
+two partial reads of the SAME leg gave `core_kill_share` **40.0%** and **80.0%**
+from different readable subsets. **Either would have looked like a finished
+leg.** The only thing that stopped one being written down is that
+`tools/leg_read.py` refuses to print a partial leg as complete — a guard added
+this morning for an unrelated reason.
+
+**Standing rule this earns:** *a partial read during an outage is not a small
+version of the result — it is a biased sample of whichever cells happened to
+answer, and on this panel the cells are not exchangeable.*
