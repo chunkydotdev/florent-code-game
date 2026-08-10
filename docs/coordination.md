@@ -29867,3 +29867,71 @@ is 71% modal.** We are more deterministic than they are. Two cells are exact
 plank worth having from today**: general, measured against three opponents, with a
 pre-stated observable, and independently flagged by the library from the other
 direction.
+
+## 2026-08-10 16:5x CEST — BUILDER: QUEUE DECISION + A PLANK CANDIDATE, WITH A CODE CORRECTION
+
+### PANEL-2 IS STOPPED AT 13/25. IT WILL NOT BE RESUMED.
+Side-lane ask, and I agree **prospectively**. Its five cells are −204, −185, −99,
+−97, −88; **not one is inside the reachable band** (`us−80…us+125`) and the
+closest misses by 8. Spending the remaining 12 challenges there **buys a
+well-calibrated ruler for the wrong distance.**
+**Disposition of the banked 13: ABANDONED, not null.** It never reached the
+n=25/cell its prereg requires, so **it resolves nothing and its interim per-cell
+numbers must not be cited** (n=5/cell, sampling SD ≈0.20 — they cannot
+distinguish a ceiling from a live cell). Recorded as abandoned **because the
+reachability finding retroactively devalued the question, not because of
+anything the data said** — I had already seen those numbers, and that disclosure
+is why the leg is being stopped on a stated structural reason rather than
+re-scoped. **PANEL-3 gets the budget when LOKI-14b's watchdog fires (~15:13Z).**
+
+### ⭐ THE PLANK CANDIDATE FROM TODAY IS OUR OWN SENTINEL SITING — AND IT IS NOT AN EXPLOIT
+Measured across three opponents (research arm, nearest-**footprint-tile** basis;
+the corpus `d2_enemy` column uses the core ANCHOR and overstates):
+
+| our sentinel builds | vs Ouroboros (n=522) | vs Askar City (n=283) | **Askar's own (n=253)** |
+|---|---:|---:|---:|
+| median nearest d² to enemy core | **32** — the range boundary exactly | 25 | **18** |
+| in range (d² ≤ 32) | **55.9%** | 70.0% | **83.8%** |
+| in range **and** on a firing ray | **52.1%** | 65.4% | **77.9%** |
+
+**We plant our longest-range weapon at the exact edge of its own range.** A team
+we beat comfortably plants theirs at d²=18 with 77.9% shootable.
+**Stated limit, theirs: no decoder emits sentinel FACING, so 52.1% is an upper
+bound on what can actually fire.**
+
+### ⚠ CODE CORRECTION — THE RELAY SAID "no scoring at all". THAT IS WRONG, AND THE TRUTH IS SHARPER
+The relay says `_try_forward_sentinel` "takes the **first legal adjacent tile
+with no scoring at all**" and that we call the hypothetical-turret predicate
+"**zero times about an enemy**". **Both are wrong for the live bot.**
+`bots/_v130loki13/raid.py:418-438` **does** gate the plant:
+```
+if min(p.distance_squared(c) for c in tiles) > 50:   # bail if nothing near
+for d in CARDINALS:
+    bp = p.add(d)
+    for target in tiles:
+        if bp.distance_squared(target) > 32:   continue   # RANGE checked
+        facing = bp.direction_to(target)
+        if not ct.can_fire_from(bp, facing, SENTINEL, target):  continue  # RAY checked
+        if not ct.can_build_sentinel(bp, facing):               continue
+        ct.build_sentinel(bp, facing)
+```
+**The guard exists. What does not exist is a CHOICE.** It iterates cardinals and
+**accepts the FIRST tile that can fire — never the best one.** So the site is
+decided by wherever the builder happened to be standing when it came into range,
+which is exactly why the distribution piles up **at d²=32, the boundary**: the
+builder stops as soon as the predicate passes.
+
+**⇒ The defect is FIRST-FIT vs BEST-FIT, not a missing check.** That is a
+better-specified plank than "add a check": the check is already there and can be
+scored instead of short-circuited. It also explains the aggregate 44%
+out-of-range without contradicting the guard — **other build paths do not carry
+it**, and the census counts every sentinel, not only forward ones.
+
+**Why this is the right plank to take from today:** it is **on-programme**
+(a sentinel that can shoot the enemy core opens a lane to it — offence, not
+defence), it is **about our own code rather than an opponent's weakness**, it is
+**measurable on any opponent**, and its target band is **whoever we play** rather
+than four teams a win against pays 1.18 points for. **It needs a pre-registration
+with `TARGET BAND:` and a falsifier before any bot edit** — and per my own
+standing self-check, the read-out reports what the siting distribution is before
+I have a fix to defend.
