@@ -23028,3 +23028,62 @@ that conversion deliberately. **The candidate is to revert it: gate the forward
 path on a cumulative per-builder budget, as Eir still does.** Removal-shaped,
 undoing one prior iteration, which is the only shape that has gained on this
 line. **Not built tonight.**
+
+## commit after `47813ae` (git time is the authority) — RESEARCH ARM: **NO CONTRADICTION — A SYMBOL WAS ASSUMED SHARED BY TWO TREES THAT DO NOT SHARE IT. New species, and it corrects the MEANING of one of my own measurements.**
+
+### 1. THE RESOLUTION
+**`self.forward_guns` DOES NOT EXIST IN THE LOKI-8 TREE — zero references, all files.** v102
+gates on **`(live if live is not None else SLOT_FWD_GUN) >= LOKI_FWD_GUN_CAP`**, with `live`
+from `_live_fwd_guns` under `LOKI2B_LIVE_CAP_ON`.
+
+**So the agent's search was correct and the SYMBOL was wrong for that tree.** It looked for
+`forward_guns`, correctly found no uncapped path, and reported the contradiction honestly.
+**The fault was in my brief, which assumed a symbol shared across two trees that do not share
+it.** **Docs, source and replay were all right the whole time.**
+
+**And the 19 sentinels on tile (17,16) are that gate's OWN DOCUMENTED FAILURE MODE** —
+`_live_fwd_guns`' docstring warns about reading *"a census of zero as 'the cap is free' and
+spamming turrets from across the map"*. **The answer to "what killed them" was upstream of the
+killing: they should not have been planted.**
+
+**`Player` is ONE INSTANCE PER UNIT (probed directly, `bots/_probe_ident`).** **So Eir's
+`self.forward_guns` is a cumulative budget of 3 PER BUILDER, not per team — which is exactly
+why Eir's tape shows a hard cliff at 3 with 99.4% at or below it.**
+
+### 2. **A NEW SPECIES FOR THE NIGHT'S LIST, AND IT IS NOT A DENOMINATOR**
+Every earlier instance was **a number true in one context used in another**. **This one is a
+SYMBOL assumed common to two codebases that share a lineage but not that symbol.** **The
+measurement was right, the search was right, the report was right — and the question was
+addressed to a name that only one of the two trees has.**
+**Generalised: when comparing two forks, verify the IDENTIFIER exists in both before comparing
+behaviour through it.** **A grep that returns nothing in one tree is ambiguous between "the
+behaviour is absent" and "the name is."**
+
+### 3. **AND IT CORRECTS THE MEANING — NOT THE VALUE — OF ONE OF MY OWN NUMBERS**
+My REFUTED verdict **was right about the builder's claim** and killed it correctly.
+**But the Eir live-census measurement was measuring a quantity Eir DOES NOT GATE ON.** **So
+*"Eir's census is not at cap"* is a correct measurement and is NOT evidence about Eir's brake.**
+**Eir's brake is the cumulative counter and its tape shows it working perfectly.** **Both are
+true at once, and neither lane could have seen it without the other half.**
+
+### 4. **THE PLANK SURVIVES AND IS AT ITS SHARPEST OF THE SESSION**
+**LOKI-2b deliberately converted the gate to a live census, and a live census sits below 3 in
+96-100% of rounds — a cap that is never approached is not a cap.**
+**⇒ THE CANDIDATE IS TO REVERT THAT CONVERSION: gate the forward path on a cumulative
+per-builder budget, as Eir still does.** **Removal-shaped, undoing exactly one prior
+iteration's change — the only shape that has ever gained on this line.**
+**AND IT NEEDS NO EIR FIGURE TO JUSTIFY IT: the argument is v102's own gate against v102's own
+tape**, which makes it **immune to the era-drift problem that killed two other planks tonight.**
+
+### 5. IN-FLIGHT — REDIRECTED RATHER THAN CANCELLED: **THE PRIZE SIZE**
+The follow-up agent's original question is answered upstream, so I have redirected it to what
+now decides whether the revert is worth a leg: **how many v102 games contain a builder planting
+≥4 forward turrets; what share of all v102 forward builds are the excess beyond the 3rd by the
+same builder; and whether that excess is CONCENTRATED or GENERAL.**
+**Pre-stated: if the excess is three pathological games the prize is small and the leg is
+underpowered; if it is spread across a third of games it is real. A small prize honestly
+measured beats a large one that is three games wearing a percentage.**
+
+**Seventh TRAP 7 instance also recorded: my `/game` figures read ~10% high because
+`.meta.json` gives 185 v102 games against `join.tsv`'s 160 — the trap biting a DENOMINATOR
+rather than a seat.**
