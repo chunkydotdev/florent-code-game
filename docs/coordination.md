@@ -26312,3 +26312,43 @@ have no `teamAId`/`teamBId` because they appear only in `ladder_games.tsv`, whic
 carries opponent NAME and no id column. `1337` is otherwise the best-shaped cell
 in the corpus — 10 matches, **100% in the 1–4 band**, never a 0/5 or 5/5 — and has
 simply never met v102.
+
+### **LIBRARY REPAIR: `THE FORWARD ROAD IS CLOSED` DEMOTED IN NINE FILES (015dc31)**
+The side lane's D12 sweep found it asserted as settled fact across the tactics
+library. **Verified all three claims before touching anything**, then repaired:
+- **The floor had already collapsed IN THE INDEX those files should have been
+  checked against** (`INDEX.md`): the `+11.4/+16.6/+22.3pp` home-defence
+  advantage **does not reproduce on v102** — Eir home 78.3% vs field 62.0%
+  (+16.3pp) against **v102 71.5% (n=439) vs 81.5% (n=520) = -10.0pp**, paired
+  within opponent **narrowing or flipping in 5 of 8**. **The correction existed
+  and never travelled.**
+- **NINE files carry the claim** (not seven — grep found `escorted-forward-plant`
+  and `2026-08-09-sweep-16` as well). All nine now carry a caveat block pointing
+  at the index. **Control ran: a file that should NOT have the caveat returns 0.**
+- **`copying-the-top-tier-is-not-free.md` contains ZERO garrison content**
+  (`grep -ci garrison` = 0) yet is cited by two files for a *"garrison refuted
+  40% vs 60%"* claim. Both now flagged as **UNSOURCED as cited**.
+**AND TONIGHT'S OWN CUT RUNS AGAINST THE CONCLUSION**, which is why this was worth
+doing now rather than queueing: **2+ forward in-range sentinels standing by r45
+moves core-kill-by-r100 from 3.6% to 23.1% field-wide (n=17,235/804, p=1.9e-12)**
+with a powered placebo null, and the Bisons reach that position in **42.3%** of
+games. **The forward road is demonstrably OPEN for other teams.**
+**THE DEFENSIBLE STATEMENT IS NARROWER: *OUR* forward road was closed on *OUR*
+instruments in the *Eir* era.** That is not "the forward road is closed" — and the
+two were used interchangeably, which is this project's standing failure (a figure
+true of one population used for another) **arriving in the tactics library instead
+of in the statistics.**
+
+### **I HIT THE ZSH UNQUOTED-VARIABLE TRAP ONE MESSAGE AFTER BEING WARNED ABOUT IT**
+The side lane's sweep hit it (a multi-path variable collapsing, silently returning
+0) and reported it as the night's third instance, caught by a positive control.
+**My very next command hit the same trap** — `for f in $FILES` with an unquoted
+multi-line variable, which zsh does not word-split, producing
+`file name too long`. **Fourth instance, and the fastest recurrence of the night.**
+**What saved it was checking the WRITE STATE before assuming the failure was
+harmless:** `git status` clean, no stray filename, `grep -rl` for the caveat = 0.
+**The command had printed "caveat appended to 9 files" — from `wc -w` on the
+error string — while writing nothing.** A success message computed from the wrong
+quantity is exactly the constant-column shape, in a shell one-liner. Redone with
+a `while IFS= read -r` loop and verified with both a positive count (9) and a
+negative control (0 on an unrelated file).
