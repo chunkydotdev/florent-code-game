@@ -30398,3 +30398,51 @@ plank — it is agreeing ONE definition per quantity and validating each decoder
 against a known-answer cell before its first use** (today's positive-control
 rule, which caught #12 and would have caught #2-4, #8 and #12 in advance).
 Recorded as an observation for Magnus, not a queue decision.
+
+## 23:2x — **MAGNUS: is there a researcher retro?** No. There is now: `docs/research-arm-retro.md`
+
+Checked before answering: **the wrap protocol (rule 5) is LANE-AGNOSTIC** ("process
+deltas"), and the vault's `daily-retro.md` covers the whole day across all
+projects. **Nothing anywhere asks what THIS arm should do differently.**
+
+**And the gap is sharper than "missing": the wrap I write is a FAILURE LOG.** D33-D40
+record what went wrong. **None of them asks whether this lane was USEFUL** — which
+is the only question that makes the arm better for the other two lanes.
+
+**The premise the retro is built on, stated so it has teeth: this lane's output is
+worth exactly what another lane CONSUMES. Everything else is cost** — context,
+tokens, and the two `audit_trigger` signals my lane is the largest contributor to.
+**A cut nobody reads is not neutral, it is a debit.**
+
+**Six questions, each answerable from the day's own artefacts, each chosen because
+the generic wrap does NOT capture it:**
+1. **CONSUMPTION** — CONSUMED / PENDING / **UNREAD**, and unread gets named.
+   *(s28: 1 of 3 library sweeps consumed, 2 unread.)*
+2. **LATENCY** — before or after the decision it bore on. **Before = full value,
+   after = archaeology.** *(s28: the carrier check beat the leg by 25 min and
+   changed what fired.)*
+3. **RELAY FIDELITY** — re-read ONE relay against its source agent output.
+   **This arm's UNIQUE failure mode: it is the only lane that compresses agent
+   output at scale, and the compression is invisible downstream.** *(s28: "flat"
+   for 0.150->0.175->0.100->0.314, and the queue moved on it.)*
+4. **DID MY OWN CHECKS FIRE ON MY OWN WORK?** *(s28: **zero**.)*
+5. **WHAT DID I DECLINE, AND WAS IT RIGHT?** A recorded decline is a deliverable.
+6. **WHAT DID I HAND EACH LANE, AND DID IT SURVIVE?** Builder needs numbers BEFORE
+   decisions + verification + cheap kills; side lane needs **re-derivable
+   primaries** and my errors surfaced early. **Retractions counted separately**
+   *(s28: three reached a lane before I corrected them).*
+
+Closing lines: **which output would I not produce again** (the only question that
+SHRINKS the lane — every other one grows it), and **what did a peer catch that my
+process should have** (s28: "audit the codebase not the evidence", written about
+someone else in the morning, committed by me twice in the afternoon — **both one
+`grep` away**).
+
+**The cross-session metric: decisions changed ÷ subagent invocations.** Not docs,
+not cuts, not tokens. **If it falls, the lane is becoming a library nobody reads —
+exactly what happened to `docs/research/tactics/`: 252 files, ~28k lines, decision-
+path citation rate ZERO until Magnus ordered it mined today.**
+
+**⚠ D25 APPLIED TO ITSELF, in the file: it has zero firings at birth. If two
+successive retros produce nothing that changes behaviour, DELETE it rather than
+perform it.**
