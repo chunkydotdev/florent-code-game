@@ -131,7 +131,29 @@
 ##    n=25/cell, no activation, zero rated cost). Admission band [0.20, 0.80]
 ##    INCLUSIVE. Read out with `leg_read.py`'s per-opponent split.
 ##    **Add the map-admission check to it** — `tools/map_admits.py` (D34).
-## 2. **LOKI-14b, CARRIER-TARGETED — PRE-REGISTERED AND CLEARED, NOT FIRED.**
+## 2. **LOKI-14b — ⚑ FIRING NOW. Its CEILING IS ALREADY KNOWN: the border road
+##    is DEAD FOR CLIMBING.** The inverted cut (archive-only, fidelity gate
+##    passed to the digit) found **ZERO carriers among the 23 teams at or above
+##    our rating** — pooled 4 events / 400,852 border rounds, **>=460x below the
+##    weakest carrier**, and IMMUNE not under-observed (smallest denominator
+##    16.8x the detection threshold). **The escape hatch is closed by
+##    measurement: top teams stand on borders MORE than carriers do** (Pivot
+##    9.78%, sporks 7.53% vs vjg 5.66%) and do not die there.
+##    **=> No result licenses shipping border-throwing; no further leg on this
+##    trigger after 14b** (PREREG amendment 8). It finishes anyway because its
+##    NEGATIVE closes the road on an interventional test rather than an archive
+##    cut. **8 amendments, ALL blind vs the first accepted challenge
+##    14:10:40.033Z**; v107 exposure per cycle: **10 SECONDS**.
+##    **THE ROAD THAT IS STILL OPEN: the DISPLACEMENT / stale-plan trigger.**
+##    Every number above is OBSERVATIONAL (builders that WALKED to a border); a
+##    thrown builder stands on a tile its own cached plan never chose. Same
+##    approved class (D17), untested by all of it. That is LOKI-14c.
+##    **AND THE CONFOUND IS ONLY PARTIAL** — immune teams sit in the SAME low
+##    band as carriers (S 1093.7 vs Tyvrets 1098.6: **4.9 Elo apart, >=891x
+##    apart in hazard**). Vulnerability is a property of border-handling CODE,
+##    not of weakness. Supports the legality-mask explanation (amendment 5a).
+##
+## 2b. **(superseded) LOKI-14b as originally queued — PRE-REGISTERED, NOT FIRED.**
 ##    `docs/prereg/PREREG-loki14b-carrier-targeted-2026-08-10.md` (15:29:57 CEST;
 ##    Amendment 1 at 15:38:30). Same bot (v107), **fixture varied** — the four
 ##    boundary carriers (vjg/Troupe/S/Ship Happens), whose border hazard is
