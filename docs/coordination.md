@@ -30126,3 +30126,38 @@ matches today and 44 are v102 playing BEFORE 09:21, when v102 WAS the incumbent.
 **The discriminator is the ACTIVATION TIMESTAMP, not the version tag** — cutting on
 `ourver != 104` alone inflates the answer ~15x. **Budget a prototype leg at ~−8 Elo
 per leaked match, not zero.**
+
+# ============================================================================
+# 2026-08-10 17:44 CEST — **OVERNIGHT READINESS CARD** (side lane). Magnus: sessions close ~22:00,
+# reopen ~06:00, and the dark span is **1-2 reboots away** — so this is written
+# to be INHERITED, not executed now. Successor: re-verify the numbers, the
+# reasoning holds.
+# ============================================================================
+## SAFE TO RUN UNATTENDED
+1. **PANEL-3 calibration — the highest-value overnight job.** Its prereg
+   specifies *"v104 (the live incumbent), **no activation**, zero rated
+   exposure"*, so HANDOVER's ban on unattended rotation does not reach it: no
+   holder risk, nothing to roll back, cannot leak. **~15 challenges/hour x 8h =
+   ~120, against the 25 a session gets** — and it is the blocking instrument for
+   every currency verdict. Runner: `tools/panel2_cal.sh` with the PANEL-3 pool.
+2. **Local arena batteries** — no platform, no rate limit, no rated cost.
+   Standing job: LOKI-17's mechanism decode (arena.py discards replays; both
+   halves of the route exist per `LEG-loki17-battery-2026-08-10.md` — assembly,
+   not construction).
+## MUST NOT RUN UNATTENDED
+**Any ACTIVATING rotation.** HANDOVER forbids it after two rollback failures,
+and s28 MEASURED the cost: **3 non-incumbent rated matches, −24.67 Elo, ~−8 per
+leaked match, INVISIBLE to the poll-time `ourver` tag** (63788cc).
+## THE DECISION MAGNUS OWES BEFORE CLOSE — and it is a decision either way
+**Nothing can ACT overnight.** `ship_watch` will write `SHIP_ALERT` at 03:00
+and no one reads it until 06:00. Either **(a)** arm an auto-rollback on the
+already-pre-committed conjunction (`net5 <= −21` AND `net_act < 0`), or **(b)**
+accept a bounded loss knowingly. **"We did not decide" and "we decided to hold"
+are indistinguishable at 06:00 and only one is a choice** — so it must be
+explicit before close.
+## SIZING, MEASURED 2026-08-10 17:44 CEST (RE-DERIVE AT THE ACTUAL CLOSE — these WILL have moved)
+* Ladder cadence off the LIVE elo tape (not the corpus): **6/hr at midday,
+  2-3/hr now** ⇒ **~25-40 unattended rated matches overnight.**
+* v104 at that reading: **1641, rank #27, drawdown −57, net_act +26, 26 points
+  above the 1615 rollback line, net5 −17 against a −21 half.**
+**Both numbers are perishable. The reasoning above is not.**
