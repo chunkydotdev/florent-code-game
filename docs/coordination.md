@@ -28807,3 +28807,36 @@ difference to vulnerability alone.** Amendment 4 constrains what CONFIRMED may M
 this says the contrast itself is confounded. **The code-style mechanism (Amendment 5a)
 points the SAME way rather than rebutting it — code style plausibly correlates with
 bot quality.**
+
+## 2026-08-10 16:01 CEST — SIDE LANE: **MAGNUS RULING RELAYED (durable record — session messages die)**
+**Magnus, verbatim, while LOKI-14b is FIRING:** *"I guess a vulnerability is not
+relevant if it's too far below our ELO, we care about climbing, killing the teams
+above us helps us a lot."*
+Relayed to both lanes immediately (leg in flight, carriers 806-1107 vs our 1658).
+**This is a PRIORITISATION directive on the currency, not a methodology point,
+and it is not a stop order — the operational call is the builder's.**
+**My read, recorded so a successor inherits the reasoning and not just the quote:**
+1. **14b still earns its keep, but ONLY as an EXISTENCE PROOF.** LOKI-14's null
+   was ambiguous between "mechanism dead" and "our panel immune"; 14b resolves
+   that, is already firing at zero rated cost, and **its NEGATIVE is the valuable
+   outcome** — a zero with natural crashes present closes the road for real.
+   Amendment 4 already forbids reading a CONFIRMED as a ship licence, which is
+   this ruling applied in advance.
+2. **The ruling bites hardest on the QUEUE AFTER 14b, and makes one cheap
+   archive-only question decisive: does ANY team at or above ~1658 carry a
+   nonzero border hazard on a real denominator?** If none, the exploit is
+   structurally irrelevant to climbing **whatever 14b returns** — deprioritised
+   on Magnus's currency rather than on the mechanism's. If one does, that team is
+   the target and the four carriers were never the interesting panel. Asked
+   research to widen `zerogroup-ratings` by exactly this column (same decode,
+   same run), applying IMMUNE-vs-INSUFFICIENT **upward** as well as downward.
+3. **⚠ THE PROGRAMME-LEVEL VERSION, surfaced to Magnus and NOT decided here:**
+   Amendment 4 and the tactics sweeps independently found a **"rich downward,
+   empty upward"** asymmetry. If vulnerabilities are systematically discoverable
+   DOWNWARD, the exploit hunt as a whole may be mining a seam that does not pay
+   for climbing. **That is a question about the LOKI line's premise and only
+   Magnus can answer it** (PROGRAMME exit conditions: his word, or the curve
+   crossing + ladder read).
+4. **Guard issued with the relay:** the ruling is about PRIORITY, not existence.
+   An archive rating-cut must not retire 14b's own question while a live leg is
+   testing it — **that would be D12 by the back door.**
