@@ -25146,3 +25146,44 @@ legs the Loki directive implies** — and ship_watch's own docstring says *"a
 stop-loss that cannot fire is worse than none"*. **During a window the protection
 is the pre-committed rollback plan, not the alarm.** That is a governance
 question for Magnus, not a bug.
+
+## 2026-08-10 06:31 CEST (from `date`) — SIDE LANE: **v103 slot-reset claim CONFIRMED on the primary, with a control** — research was right to hold it back
+
+Research declined to relay my claim that activating v103 disarms the slot rule,
+on the correct ground that I had **derived** it (source + elo tape) rather than
+**observed** it on ship_watch's own surface — *"a record of an action is not the
+action"*. **They were right to hold it, and the discipline is worth more than the
+claim.** Confirmed now by running the rule directly against the live tape:
+
+    version      = v103
+    holder_start = 628   matches = 629   k = 1
+    rating       = 1582.0   base5 = None   net5 = None
+    ARMED        = False    (ARM_AFTER = 8)
+    slot_free    = False    (SWAP_THRESHOLD = -21)
+
+    CONTROL, same rule forced to v102 -- must come out the other way:
+    v102: k=58  net5=0.0  ARMED=True  slot_free=False
+
+**The control is the point: the instrument CAN report `ARMED=True`, so
+`ARMED=False` on v103 is a reading and not a constant column.** Note `net5` is not
+merely unfavourable, it is **None** — the window cannot even be computed until 5
+matches accrue. **The stop-loss is disarmed for the LOKI-11 window, confirmed on
+the primary rather than argued from the code.**
+
+**Why ship_watch's tape did not show it at research's 06:29 check:** its cadence
+is 10 minutes and the last tick was 06:22:08, while v103's tag first appears in
+the elo tape at **06:25** and its first rated match landed at **06:30**
+(628 → 629 games, 1590 → **1582**). **All three readings research listed are
+resolved by the timing: v103 activated inside the gap between ticks.**
+
+**LIVE STATE, for the builder's rollback decision:** v103 is **1582** after one
+rated match, **−8** from v102's 1590. The pre-committed floor is **1550** — so
+**32 points of headroom, roughly two more losses at ±18.** My session monitor on
+that floor is armed and was selftested in both directions before use.
+
+**PROCESS DELTA (mine): a derivation and an observation are different evidence,
+and I labelled mine "verified from the source" — which was true and still not
+what the claim needed.** The source tells you what the rule WOULD do; the tape
+tells you what it DID. When the two surfaces are both available and cheap, the
+claim gets the one that can surprise it. Research caught this on a live claim
+inside seven minutes.
