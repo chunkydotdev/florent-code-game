@@ -1,16 +1,12 @@
-# What this game is
-
-Two teams each control a fleet of robots on a rectangular grid (8x8 to 30x30, symmetric by reflection or rotation). A competitor writes a single Python class:
-
-class Player:
-def run(self, ct: Controller) -> None:
-...
-
-`run()` is called once per round for every living unit on the team (the core and every builder bot, gunner, sentinel, launcher — turrets included). `ct` (a `Controller`) is unit-scoped: all of its methods act on or query relative to "this unit" unless an explicit entity `id` is passed. There is no shared game-object; all state is read through `Controller` getters.
-
-Win condition: destroy the enemy core, or have the better tiebreakers after round 1000 (titanium **collected** → harvesters alive → titanium stored → coinflip). **"collected", not "delivered to core"** — the organisers' primary is internally inconsistent (it uses both phrasings) and the ENGINE settles it: the `cond` string it emits is literally `titanium_collected`. **And key 1 decides almost everything** — over our own 1,055 r1000 games: `titanium_collected` 993 (94.1%), `harvesters` 44 (4.2%), `titanium_stored` 18 (1.7%). **`titanium_collected` EXCLUDES passive income** (engine-probed: a bot that builds no harvester finishes 1000 rounds holding 2,892 Ti of accrued passive with `titanium_collected` = **0** — the same match then tied key 1 at 0-0, tied key 2 at 0-0, and was decided on `titanium_stored`, demonstrating the cascade). **And it counts DELIVERY TO THE CORE, not emission** (engine-probed: one harvester built at r2, alive all game, ~250 stacks' worth emitted over 998 rounds, NO conveyor ever built -> `titanium_collected` = **0**; that match tied key 1 at 0-0 and stopped at key 2, `win_condition: harvesters`). **So the deciding key is harvester throughput THAT REACHES THE CORE — a harvester with no route home is worth zero on it, forever, and any late bank-to-harvester conversion must buy the conveyor line too.** Read this the right way round: **harvesters matter MAXIMALLY, via key 1** — what is nearly worthless is keeping a harvester ALIVE as a countable unit at r1000 (key 2, 4.2%). Cumulative delivery is decisive; late preservation is not. Those are different planks and only the first is worth buying.
-
-Bot file requirements: entry point must be main.py (at the zip root, or inside exactly one top-level directory) containing a top-level `class Player`. Bots are Python only. Auxiliary modules may be imported from other files in the same zip. Each unit gets 10ms CPU time per turn (with a small rolling 5% buffer) — if exceeded, that turn's run() is interrupted and does not resume next turn. This is different from an uncaught exception: if run() raises anything besides that timeout, the engine prints the traceback and permanently destroys that unit — it will never run again for the rest of the match.
+<!-- GENERATED FILE — DO NOT EDIT BY HAND.
+     AGENTS.md is the entry point for non-Claude agents (Codex, Cursor).
+     It was once a hand-forked snapshot of CLAUDE.md and by 2026-08-10 carried
+     TWO rules we had since disproved on the engine (win condition "delivered to
+     core"; cost scale rising "per category"). A fork of a living document is a
+     slow-motion correctness bug: the corrections landed in CLAUDE.md and never
+     reached anyone booting on the fork.
+     REGENERATE WITH:  cp CLAUDE.md AGENTS.md   (then restore this header)
+-->
 
 # What this game is
 
@@ -278,6 +274,42 @@ the directive verbatim so no lane can boot without it.
 > building prototypes and putting them against live teams in unrated games —
 > that beats our own calculations every time, and sometimes you find things
 > that surprise you. Those are of fantastic importance for our growth."*
+
+**0. THE EXPLOIT HUNT IS THE JOB, NOT A SIDE QUEST.** Magnus, 2026-08-10, on
+approving crash-induction: *"That's the entire reason we are named Loki — find
+these and use them."* **This is the standing brief and it outranks tidiness,
+elegance, and every instinct toward "playing the game properly".**
+
+**WHAT AN EXPLOIT LOOKS LIKE HERE:** a sequence of individually LEGAL, DOCUMENTED
+API calls whose combined effect is something the opponent's code cannot survive.
+The worked example, approved and built as `bots/_v131loki14`: our launcher picks
+up an **enemy** builder (`can_launch` has **no team check and no vision guard**)
+and throws it to a legal **map-border** tile, where that bot's own code queries
+an off-map neighbour, raises, and **the engine permanently destroys that unit for
+the rest of the match** (`0x1ac5c` → `Game::destroy_entity`; `SystemExit` and
+`KeyboardInterrupt` are the only exemptions). We spend 0 ammo and one throw; they
+lose a unit forever, to their own error handling.
+
+**HOW TO FIND MORE — the three moves that produced this one:**
+1. **READ THE ENGINE BINARY, NOT THE ORGANISERS' DOC.** The doc is known-wrong in
+   places; the `.so` is not. Every load-bearing fact above came from disassembly
+   with two toolchains intersected —
+   `docs/research/engine-source-crash-and-launcher-2026-08-10.md`.
+2. **LOOK FOR ASYMMETRIC GUARDS.** `can_launch` has no team check. Every `can_*`
+   predicate lacks a vision guard while `get_tile_*` raises off-map. **A guard
+   present on one path and absent from its neighbour is where exploits live.**
+3. **MINE OUR OWN BUG FIXES FOR THEIR BUGS.** `eco.py` carries a guard added
+   because a launcher throw teleported OUR builder and made `is_tile_empty`
+   raise. **We patched it; most teams have not.** `tools/crash_census.py`
+   measures the field: **2,451 unexplained unit removals by opponents across
+   1,855 of our games, against 0 by us.**
+
+**STANDING PERMISSION, AND ITS ONE LIMIT.** Build and fire these without asking.
+**The only thing still needing Magnus is a norms question to the ORGANISERS** —
+not because an exploit is wrong, but because a league can declare a whole class
+out of bounds and we would rather know before we rank on it. **Crash-induction
+was asked and is APPROVED.** Ask again for a genuinely new CLASS, never per
+instance.
 
 Four consequences, each of which closes a road that was open before it:
 
