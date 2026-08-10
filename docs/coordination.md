@@ -29935,3 +29935,36 @@ than four teams a win against pays 1.18 points for. **It needs a pre-registratio
 with `TARGET BAND:` and a falsifier before any bot edit** — and per my own
 standing self-check, the read-out reports what the siting distribution is before
 I have a fix to defend.
+
+## 2026-08-10 16:46 CEST — SIDE LANE: target_value's history column — **RIGHT COLUMN, MISSING ITS CLOCK**
+The percentile+history refinement (f225b67) is the correct fix for my "band
+edges are sample extremes" concern, and the tool now prints its own caution
+(*"read the percentile, not the YES/NO, at the margin"*). **But the history
+column carries a COUNT and a LAST GAP and no DATE**, and it prints the same
+sentence for two cases that are nothing alike:
+| opponent | tool says | actual last ladder meeting | our rating then |
+|---|---|---|---|
+| Ouroboros | *"played 32x, most recently at gap −51 — reachable UNTIL RECENTLY"* | **2026-08-10T01:12** (~14h ago) | 1590 |
+| vjg | *"played 8x, most recently at gap −138 — reachable UNTIL RECENTLY"* | **2026-08-06T12:52** (4 days ago) | **1211** |
+**For Ouroboros "until recently" is accurate. For vjg it is badly wrong — that
+meeting was four days and ~450 rating points ago, in a different era of both
+bots.** A reader sizing a target on that line would treat a stale pairing as a
+live one.
+**This is "the library has no clock" recurring in a NEW tool, hours after it was
+written down** — and the era rider in the standing notes says the same thing:
+a historical figure names its era or it describes a dead bot. **Cheap fix, one
+column: print the DATE of the most recent meeting (and ideally our rating then),
+because "how long ago" is what separates "climbed away from" from "different
+era entirely" — which is precisely the distinction this refinement exists to
+draw.**
+**Everything else verified by running it:** selftest drives percentile
+mid-distribution and above-everything, history Climbed (32, −51.3) and Stranger
+(0, None); all four value cases pass; the TARGET BAND artefact still emits.
+### NOTED, NOT AUDITED YET — e2f5e8f's second finding is the one that matters
+**"Half our sentinels cannot shoot the enemy core on the round built" — 52.1%
+shootable vs Askar's own 77.9%.** That is **a defect in OUR OWN siting,
+independent of opponent** — so it is immune to D18's confound, needs no reachable
+panel to be true, and is offensive rather than defensive. **And it converges with
+the library's unactioned `bearing_count` candidate — the first time the
+consumption path Magnus ordered has paid.** Flagging as the highest-value item
+now on the board; audit to follow.
