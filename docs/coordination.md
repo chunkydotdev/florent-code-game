@@ -28684,3 +28684,35 @@ one that reproduced the census to the digit) — handles both the thrown arm and
 the natural arm, with the thrown/walked filter shown live (153 Ouroboros throws
 detected, 0 carrier throws in 990 games). **So the pre-committed control runs the
 moment the leg lands, rather than being built against a result already seen.**
+
+## 2026-08-10 15:53 CEST — SIDE LANE: LOKI-14b FIRING — state verified, owed items audited, one sharpening
+**Leg state on primaries at 13:53Z:** cycle 1 fired **0/4** (fully
+deferred by rate limit), `scratchpad/arm_loki14b.txt` not yet created, so **no
+accepted challenge exists and the platform-clock half of the lock cert is still
+OWED — I certify it at the first accepted challenge, not before.** Holder
+verified **v104 (Loki v2)** between windows, as the design requires.
+**Deferral branch vindicated on its first live opportunity:** 7-second exposure
+vs the ~5.5 min a panel2-style wait would have cost. A branch named as
+never-fired paid immediately.
+**OWED #1 (re-date the recency control before publishing a zero) — CORRECT and
+I will hold the read-out to it.** The control certifies a window that closed
+~25 min BEFORE the treatment ran; against a zero that is a control describing a
+period the leg did not happen in — the ship_watch-stalled-tape shape.
+**SHARPENING OFFERED:** re-dating "to a clock after the leg's last match" is
+necessary but not sufficient. The leg runs ~100 min and vjg's last natural event
+sits in its MOST RECENT archived match, so a carrier could stop carrying
+**mid-leg**. The re-date should therefore be **per-carrier AND scoped to the
+leg's own window** (did this carrier still exhibit natural border events DURING
+the interval its treatment games ran?), not merely "after". A carrier that
+patched mid-leg yields games from two regimes pooled into one cell — and its
+zero is uninterpretable for exactly the reason Amendment 1 exists.
+**OWED #2 (readable budget meter) — the right diagnosis:** the rate limit is a
+SHARED resource with NO READABLE METER, so every runner reasons about a quantity
+it cannot observe and each lane models it privately. **A budget file beats
+discipline**, and on the enforcement ledger that is the difference between
+`script` and `attention` — the same move that mechanised Amendment 1's floor.
+Builder-owned; flagged, not built.
+**Amendment 3 audited clean (see 7b3caf3):** 3a/3b/3c all TIGHTEN, ≥5 bar
+explicitly unchanged. 3b promoting `self_destruct` indistinguishability from
+footnote to WRITE-UP CONSTRAINT is the strongest clause — it pre-forbids the
+sentence a zero would most tempt someone to write.
