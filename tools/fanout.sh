@@ -26,7 +26,10 @@ gate(){ local ok=0; for i in $(seq 1 40); do [[ -n "$(holder)" ]] && ok=$((ok+1)
 back(){ for t in $(seq 1 60); do .venv/bin/fcode submission activate $INCUMBENT >/dev/null 2>&1; sleep 4
           case "$(holder)" in v$INCUMBENT*) return 0;; esac; done
         printf '%s ROLLBACK TO v%s NEVER VERIFIED\n' "$(date -u +%H:%M:%SZ)" "$INCUMBENT" > corpus/HOLDER_ALERT; return 1; }
-fire(){ local n=0; for id in $PANEL; do for t in 1 2 3; do
+PANEL2=(f61d19c1-600e-457b-861b-dbeb6b3d8691 48340ad8-701f-4a40-850d-1f3f3d56d8ca 0774b1b2-df40-4cf2-915e-5d5a6133a13a bfbb9a68-b37a-4a61-b0ea-d36369c8f65a ebd8d82a-7365-4ccb-af0b-defea3a1ac4d)
+fire(){ local n=0; local ids; ids=($PANEL)
+        [[ "$2" == PANEL2* ]] && ids=($PANEL2)
+        for id in $ids; do for t in 1 2 3; do
           r=$(.venv/bin/fcode match unrated "$id" $MAPS --json 2>&1)
           case "$r" in *matchId*) echo "$id $r" >> $1; n=$((n+1)); break;; *) sleep 25;; esac
         done; done; echo "$(date -u +%H:%M:%SZ) $2: fired $n/5"; }
@@ -38,7 +41,9 @@ ARMS=(
   "CONFIRM-v102:102:scratchpad/arm_v102confirm.txt"
   "LOKI16-ringhold:106:scratchpad/arm_loki16.txt"
   "LOKI14-kidnap:107:scratchpad/arm_loki14.txt"
+  "PANEL2-CAL:-:scratchpad/arm_panel2.txt"
 )
+# PANEL-2 CALIBRATION uses a DIFFERENT opponent set — see fire() below.
 for cycle in $(seq 1 12); do
   for a in $ARMS; do
     label=${a%%:*}; rest=${a#*:}; ver=${rest%%:*}; out=${rest#*:}
