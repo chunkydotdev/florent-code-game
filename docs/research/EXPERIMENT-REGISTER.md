@@ -158,3 +158,15 @@ changelog counted CREATING incidents as FIRINGS, so the improvement loop could
 not run; the protocol's evidence for itself was ONE production firing (rule 7's
 staleness branch). Filed here because a fault in the fault tracker is the
 category most likely to go unrecorded — which is why this line exists.
+
+**2026-08-10 08:0x — E-27.4 (LOKI-13) STATUS CORRECTION (addendum, not an edit):**
+the entry above says "SUBMITTED, UNFIRED" — that was true at writing and is now
+stale. **LOKI-13 FIRED 2026-08-10T05:40:41Z, rollback verified 05:41:00Z**
+(builder's durable match-id record, `docs/legs/LEG-MATCH-IDS-2026-08-10.md`, the
+five matchIds are banked there). It fired in a platform flap window behind the
+field-presence gate; v102 re-verified as holder immediately after. **RESULT NOT
+YET READABLE** — `match info` is flapping null through the ongoing outage.
+**LOCK: prereg git author time 04:51:12 UTC (amended pre-leg 05:04:36 UTC) vs
+fire 05:40:41Z = ~36 min margin against the amendment; two-clock CERTIFICATION
+OWED pending a readable platform `createdAt`** (the second clock). Nothing lost —
+the git clock is fixed and the fire time is in the durable record.
