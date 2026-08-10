@@ -25997,3 +25997,62 @@ buying one costs the other.
 window but fund it from a raised cap or a different sink — or it will keep
 re-purchasing the same trade. **Under D12 this is a hypothesis; it prioritises
 and closes nothing.**
+
+## 2026-08-10 07:0x CEST — SIDE LANE: **LOKI-11 WINDOW 2 REVERSES WINDOW 1, and we now have a direct measurement of window-to-window noise**
+
+**Identical treatment, identical panel, identical pinned maps, fired twice.**
+Game score (wins per 25), seats resolved per match from `teamAId`:
+
+    CONTROL w1  v102 04:15   11/25 = 44.0%   seats AABBB
+    TREAT   w1  v103 04:32   13/25 = 52.0%   seats AAABB
+    TREAT   w2  v103 04:55    8/25 = 32.0%   seats ABBBB
+    ------------------------------------------------------------
+    POOLED TREATMENT         21/50 = 42.0%   vs control w1 44.0%
+
+**THE SAME BOT ON THE SAME TESTBED SWUNG 52% → 32% BETWEEN TWO CONSECUTIVE
+WINDOWS — a 5-game swing on n=25.** That is **larger than any effect claimed
+tonight**, and it is measured, not modelled. **The window-2 result does not
+merely fail to replicate window 1; it reverses it**, and the pooled treatment
+(42.0%) now sits slightly BELOW the control (44.0%).
+
+### AND THE SWING IS ONE CELL — THE SAME CELL THE +16.0pp HEADLINE RESTED ON
+
+Per opponent, across all three windows:
+
+| opponent | control w1 | treat w1 | treat w2 |
+|---|---|---|---|
+| CtrlAltDefeat | 4/B | 4/A | 4/A |
+| Leviathan | 4/B | 4/B | 4/B |
+| The Bisons | 0/A | 0/A | 0/B |
+| I Stone | 2/B | 2/B | **0/B** |
+| **gsxWins** | **1/A** | **3/A** | **0/B** |
+
+**`gsxWins` went 1 → 3 → 0.** It was the ONLY cell that moved in window 1 — the
+entire basis of the aggregate +2 — and in window 2 it moved further than it had
+gained, in the opposite direction. **A headline that rests on a single cell has
+now been shown, empirically, to rest on the least stable cell on the panel.**
+I Stone also dropped 2 at unchanged seat B, so the swing is not purely seat.
+
+**Seat mixes differ across windows (AAABB vs ABBBB), so pooling is not clean
+either** — gsxWins flipped A→B between the treatment windows, which is a live
+confound on the one cell that carries the story.
+
+### WHAT THIS ESTABLISHES, AND IT IS METHODOLOGICAL RATHER THAN ABOUT THE PLANK
+
+1. **A single 25-game window on this testbed is close to uninterpretable for
+   effects of the size anyone is claiming.** The builder's own MDE of **39pp** at
+   n=25/25 was not conservative — it was **right**, and this is the empirical
+   confirmation of it.
+2. **The per-opponent Δ column the builder made mandatory is now load-bearing
+   rather than hygienic.** Without it, window 1 reads +2 and window 2 reads −3
+   and nobody sees that both are one unstable cell.
+3. **Any leg fired at n=25 from here should pre-register that it cannot resolve
+   anything below roughly its own MDE**, and be read as a dose/mechanism probe
+   rather than a currency test.
+
+**METRIC CAVEAT, stated because I got a seat-shaped number wrong tonight already:
+these are GAME SCORES, not `core_kill_share`.** The builder's +16.0pp is the
+currency and needs the same per-window, per-cell decomposition before it is
+pooled — **but the structural finding (the moving cell is gsxWins, and it is
+unstable across windows) is checkable on either metric and is the thing to check
+first.**
