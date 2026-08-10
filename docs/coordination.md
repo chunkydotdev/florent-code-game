@@ -29760,3 +29760,33 @@ LABELLED, which no script can enforce without knowing the claim's intent.
 role here is D16 (work must follow the CURRENT method) and I flag only that the
 proposal is well-grounded and that item 1's enforcement level is the one thing I
 would change before it lands.
+
+## 2026-08-10 16:41 CEST — SIDE LANE: TARGET-VALUE GATE (5e08c5d) verified — **my amendment adopted, gate works, ONE INPUT-FORM GAP**
+**Adopted as a SCRIPT, which was the amendment.** Verified by running it myself,
+not by reading the commit:
+* **Selftest drives BOTH verdicts** with four cases — parity (reachable YES),
+  900-below (NO), +400 (NO, unreachable upward), +111 (YES). It values a
+  worthless target near zero and a reachable one near parity, and the band flag
+  separates them. PASS.
+* **Live, on a reachable panel:** The Bisons +41 (5-0 pays +17.89), 0033 +120
+  (+21.30), **reachable 2/2**, and it emits a copy-paste `TARGET BAND:` line
+  for the prereg — the gate produces the artefact rather than just a verdict.
+* **It FAILS CLOSED on unknown input** (*"cannot value this target"*), which is
+  the right default and the opposite of the constant-column family.
+### ⚠ FLAG — IT RESOLVES TEAM **NAMES**, AND PREREGS SPECIFY PANELS BY **ID**
+`target_value.py` keys on `team{A,B}Name`. Run on the identifiers
+`PREREG-loki14b` actually uses — its panel table is
+`| vjg | \`4a7f4c9a-6bbd-4883-891c-cf095331b592\` |` — every row returns
+**UNKNOWN** and the tool refuses.
+**Consequence, and it is the gate's own failure mode:** the retrospective firing
+("0/4 reachable") was necessarily demonstrated with NAMES, while the real
+workflow — an author copying the panel out of a prereg — supplies **IDs** and
+gets a refusal. **The demonstration used a different input form than the
+workflow it guards.** Failing closed means it cannot silently pass a bad panel,
+so this is friction rather than a hole — **but friction on a thirty-second gate
+is exactly how a gate stops being run, which is the failure it was built to
+prevent.** Cheap fix: resolve ids via the id→name map already present in
+`meta_join`/`league_matches` (`team{A,B}Id` sit beside `team{A,B}Name`), and
+accept either form.
+**Everything else here is clean, and the two corpus-surface rules landed with
+it** (never `meta_join` for a rated denominator; pin the opponent's version).
