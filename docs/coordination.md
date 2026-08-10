@@ -29453,3 +29453,76 @@ same tell both times: a known cell disagreed.** This is the strongest argument
 yet for the standing rule — **validate against a KNOWN-ANSWER cell before
 trusting unknown ones** (the collar-heal standard), because it is the only guard
 that fired here.
+
+# ============================================================================
+# 2026-08-10 17:5x CEST — LADDER-FLOW READ: **THE BLEED IS FIVE NAMED TEAMS**
+# ============================================================================
+
+**1. ⭐ THE LADDER SCORES GAME SHARE, NOT MATCH WINS — EXACT, NOT FITTED.**
+`delta = 32 x (S - E)`, **S = games won / 5**, E logistic on the 400 scale.
+**Residual sd = 0.0000, max |residual| = 0.0000 over all 678 matches.** Official
+`eloDelta` vs consecutive-`ourbef` differences agree **677/677 to 0.0000**.
+* **A 3-2 WIN CAN BE NEGATIVE** (observed min -4.96); a 2-3 LOSS positive (+2.05).
+* **20 of 678 matches have a delta whose sign opposes the match result.**
+**⇒ MARGIN IS THE CURRENCY, NOT THE WIN.** Any bar, verdict or stop-loss
+denominated in MATCH WIN RATE measures a proxy for what the ladder actually pays.
+**Belongs in `CLAUDE.md` beside `R1000_IS_DEFEAT` as a fact about what scores.**
+
+**2. THE LOW BAND IS NOT DEGRADING — IT IS IMPROVING.** Magnus's worry, measured:
+against opponents currently ranked below us, **slope +0.031 game share per 100
+matches, t = +2.69**. Densest pool (ranks 25-40) by day: **-2.42 -> -1.17 -> -0.76
+-> +1.69 Elo/match** (08-07 -> 08-10). Because `delta = 32(S-E)` with
+contemporaneous E, **band-composition and our-rating-rise confounds are removed BY
+CONSTRUCTION** — this is not a raw win rate. MDE at a 50-match block = 2.0
+Elo/match.
+**AND THE EXPOSURE REFRAMES HIS ARITHMETIC: 94.0% of 678 matches are within ±100.
+ZERO matches ever against anyone +400 above; FOUR (0.6%) against anyone 300 below,
+all on 08-06.** The 29:1 asymmetry is correct arithmetic that **never fires.**
+
+**3. ⭐⭐ THE BLEED IS REAL, IS NOT A BAND, AND IS FIVE NAMED TEAMS.**
+Net Elo by current rank: **above us +183.6 · ranks 41+ +416.7 · ranks 25-40
+-438.6** — and 25-40 is **58% of our diet, 72% recently.** We are net-positive
+against everyone above us and everyone well below us; **we bleed to the teams just
+beneath us.**
+
+| opponent | rank/rating | n | S | E | lifetime net | versions |
+|---|---|---:|---:|---:|---:|---|
+| **Ouroboros** | #36 / 1558 | 32 | **0.188** | 0.482 | **-301.4 (-9.42/m)** | **v8 for 31 of 32** |
+| Lunds Stallions | #27 / 1639 | 44 | 0.309 | 0.496 | -262.5 | 10 |
+| Powerpuff Girls | #29 / 1603 | 43 | 0.386 | 0.490 | -143.1 | 17 |
+| Kings College Munich | #33 / 1572 | 30 | 0.353 | 0.499 | -139.4 | v1->v8 |
+| diverge | #26 / 1659 | 13 | 0.431 | 0.500 | -28.9 | 8 |
+
+**162 matches, -875 Elo lifetime. Since 08-09: 64 of 220 matches (29%), -167.7.
+Removing those five turns our recent record from +0.51/match to +1.79/match.**
+
+**OUROBOROS IS THE LINE THAT MATTERS. Match 3-29. Games 30-130. S=0.188 vs E=0.482
+— they are ~300 points better against US than their rating says. ON VERSION 8
+SINCE 2026-08-06 while we shipped 24 versions (v5->v102).** A **stable hard
+counter, sitting still, that nobody has ever gone after**, worth **-9.42 Elo per
+match**, and we keep getting paired into it. **We spent today building an exploit
+for teams 550-860 BELOW us while a -301 Elo matchup 111 below us sat on the same
+bot for four days.**
+
+**⛔ NO COUNTER-SHIPPER NAMED — THE INSTRUMENT WAS KILLED BY ITS OWN CONTROL,
+CORRECTLY.** Version-boundary scan: **5 "declines" and 6 "improvements" at >=2σ**
+— symmetric tails. The control: **corr(opponent's first-half S-E, their H1->H2
+change) = -0.721** across 18 opponents with n>=12. Every "decline" is a team we
+were crushing (0033, Askar, Memtrace, farming_200s, Banminary, **The Bisons**),
+every "improvement" one we were losing to. **That is REGRESSION TOWARD PARITY — E
+is recomputed from ratings that absorb the very results being scored, so repeated
+play drives S-E to 0 with no bot change on either side.** Agent **reported no
+counter-shipper rather than naming a false one.** Retires the version-boundary
+method for this question. *(The Bisons appearing in that list is further reason
+PANEL-3 must re-derive its floor status rather than inherit it.)*
+
+**Confounds stated:** our version/time collinear (88 versions / 681 matches, ~8
+each; none resolves a 0.06 game-share effect); `< us-300` cell is **4 matches,
+INSUFFICIENT, count only**; 5-day window, 08-05 a different regime and excluded
+from fits; analysis ends 13:52Z.
+
+**RECOMMENDATION — A CHANGE OF TARGET: the climb is gated on ONE hard matchup
+nobody has attacked.** Ouroboros: 32 matches, S=0.188, opponent frozen on v8 for
+four days, **~160 archived games already on disk.** Fully specified, high-volume,
+static, reachable, largest single Elo return available — **and it pays on the
+currency Magnus named, unlike a crash exploit against the ladder floor.**
