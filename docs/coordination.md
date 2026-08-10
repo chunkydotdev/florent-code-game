@@ -29118,3 +29118,66 @@ the only moment it can be marked cheaply.
 **Also verified from the builder's relay:** v107 held the slot **14:10:39Z ->
 14:10:49Z, ten seconds** for four challenges — the rate-limit inversion's payoff
 now MEASURED rather than argued. Holder v104, 1669 rank #24.
+
+# ============================================================================
+# 2026-08-10 17:2x CEST — **MAGNUS: THE TARGET BAND. A rating window, and it MOVES**
+# ============================================================================
+Magnus: *"can we have a limit on how far down we are looking at exploits? We
+should be looking at how to get higher in ELO, so we want to make sure teams
+below us aren't getting stronger against us so we drop a lot on battling them,
+but we also need to look ahead to be able to climb in a steady pace, and we need
+to update the span we look at, if we never look upwards we will never beat those
+ahead of us"*
+
+**THE ANSWER IS ARITHMETIC, NOT PREFERENCE.** Elo at our live **1669.0** (rank
+24/116), K=32:
+
+| gap | P(win) | gain on WIN | cost on LOSS | wins needed to repay one loss |
+|---:|---:|---:|---:|---:|
+| −900 | 0.994 | **+0.18** | **−31.8** | **177** |
+| −600 | 0.969 | +0.98 | −31.0 | 32 |
+| −400 | 0.909 | +2.91 | −29.1 | 10 |
+| −300 | 0.849 | +4.83 | −27.2 | 5.6 |
+| −200 | 0.760 | +7.69 | −24.3 | 3.2 |
+| −100 | 0.640 | +11.52 | −20.5 | 1.8 |
+| **0** | 0.500 | +16.00 | −16.0 | 1.0 |
+| +200 | 0.240 | +24.31 | −7.7 | 0.32 |
+| +400 | 0.091 | **+29.09** | **−2.9** | **0.10** |
+
+**AND THE RETROSPECTIVE VALIDATION IS TODAY'S OWN LEG.** LOKI-14b's carriers sit
+at **806–1107, i.e. 560–863 BELOW us.** At that gap **a win pays ~0.2–1.0 points
+and a loss costs ~31**. Even a total success there is worth **almost exactly
+nothing**, and the policy below would have caught it *before* the leg — not after.
+
+## THE BAND, PROPOSED (three zones, each with a DIFFERENT activity)
+
+| zone | range (relative, re-derived) | live count | the ONLY activity that belongs here |
+|---|---|---:|---|
+| **DEAD ZONE** | `< us − 300` | **66 teams (57%)** | **NOTHING offensive. No exploit hunting, no legs, no panels.** A win pays ≤4.8 and a loss costs ≥27. |
+| **DEFENCE FLOOR** | `us − 300 … us` | 25 teams | **ROBUSTNESS ONLY** — we do not attack them, we make sure we do not LOSE. This is Magnus's *"aren't getting stronger against us"*. |
+| **CLIMB BAND** | `us … us + 400` | **22 teams** | **ALL exploit work, all panels, all legs.** A win pays 16–29; a loss costs 16 down to 2.9. |
+
+**The exploit floor is `us − 200`** — the point where a win is still worth ~48% of
+a parity win. Below it, offense does not pay for its own risk.
+
+**THE BAND MOVES BY CONSTRUCTION** because it is defined relative to our live
+rating — that is the *"update the span"* half. **Recompute at every ship and at
+any ±50 rating move**, and re-derive panels from it. **The CLIMB BAND is currently
+22 teams**, from Powered by SmartFridge (+5) through Askar City (+18), The Bisons
+(+32), arsonist duck (+66), team lazy (+81), Big O (+119), ph (+157), Pivot (+235),
+Lorem Ipsum (+265), Jython (+269), Pantheon (+313), not adgato (+341), The Flotte
+Experience (+347), to **Clankers (+396)**.
+
+**⭐ AND THE PANEL WE ALREADY USE IS ALREADY CORRECT ON THIS AXIS** (side lane,
+from `meta_join`): the LOKI-14 pinned panel is **The Bisons 1712.1 · I Stone
+1597.5 · gsxWins 1582.9 · CtrlAltDefeat 1582.7 · Leviathan 1580.7** against our
+1669 — **it STRADDLES us, −88 to +43. That IS the climbing band.** So LOKI-14's
+null was measured on the right population and the carriers never were.
+
+## IN-FLIGHT: [agent] lowband-drift (opus) — the DEFENSIVE half, currently UNMEASURED
+**"Are teams below us getting stronger against us?"** has never been measured.
+Briefed to compute per-band **Elo FLOW** (points won and lost separately, not net)
+using **our contemporaneous rating at each match, not today's** — otherwise a
+climbing rating silently re-sorts the same opponents between periods — plus the
+direct test: **for repeatedly-played low opponents, does our win rate drop across
+THEIR version increments?** That is what shipping a counter to us looks like.
