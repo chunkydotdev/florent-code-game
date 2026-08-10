@@ -1,156 +1,47 @@
-# LIVE: **v102 = LOKI-8** — the first Loki ship. 2026-08-09 ~20:4x CEST.
+# LIVE: **v102 = LOKI-8**. Session 26 wrap, 2026-08-10 05:4x CEST.
 
-## ===== READ `PROGRAMME.md` FIRST. `tools/gate.py` ENFORCES IT. =====
-## Then `docs/builder-method.md`, then this. Before any battery: `tools/gate.py`.
-## Before any ship row: `tools/preflight.py <dir>`.
-## **SUBMIT ONLY VIA `tools/submit_clean.py`** — bare `fcode submit` zips the whole
-## dir and shipped `PREREG.md`/`DESIGN.md` to the platform on v94 and v95-v100.
-## A doc-bearing submission is a drift flag (Magnus, 2026-08-09).
+## ===== READ `PROGRAMME.md` FIRST, THEN THIS. `tools/gate.py` ENFORCES IT. =====
+## Before any battery: `tools/gate.py`. Before any ship row: `tools/preflight.py`.
+## **SUBMIT ONLY VIA `tools/submit_clean.py`** — bare `fcode submit` ships docs.
 
-## ===== STATE =====
-##   LIVE: **v102 = `bots/_v124loki8`**, treehash **2dad5a2a**, submission
-##   `ff270a6c`. Activated at **1577.5 @ rank 30/116**.
-##   **ROLLBACK TARGET: v101 (`0eccbedf`) = `bots/_v115dodge`** — byte-identical
-##   to the retired v94 (`md5 77ae5c09`) but doc-free. Eir is the fallback.
-##   Magnus approved the ladder explicitly after nine iterations benchmarked
-##   unrated: *"alright, lets get loki on the ladder"*.
-
-## ===== WHY IT SHIPPED — the number is core_kill_share, NOT win rate =====
-##   MATCHED vs v94 Eir (same opponent, same 5 short maps, n=5/cell), five
-##   opponents spanning 540 Elo:
-##     Ouroboros -62   Eir 1/5   LOKI-8 4/5
-##     CtrlAltDefeat 0 Eir 2/5   LOKI-8 4/5
-##     Lunds -28       Eir 2/5   LOKI-8 3/5
-##     Big O +200      Eir 2/5   LOKI-8 3/5
-##     Jython +337     Eir 0/5   LOKI-8 1/5
-##   **POOLED 7/25 = 28.0% vs 15/25 = 60.0%, Fisher p = 0.045, ahead in 5 of 5
-##   cells, no ties, no reversals.**
-##   **EVERY GAIN ON THIS LINE WAS A REMOVAL:** rush off (LOKI-4), all builder
-##   melee silenced (LOKI-5), three arrival defects fixed (LOKI-6), raiders
-##   exempt from the home heal + melee recall (LOKI-8).
-
-## ===== CAVEATS THAT MUST TRAVEL WITH THE 60% =====
-##   * **Dose-response is real: 75% at bracket, 60% at +200, 20% at +337.** The
-##     advantage DECAYS with opponent strength. Never quote 60-86% without the band.
-##   * **Short-map fixture only.** LOKI-5 fell 80% -> 60% on the long band.
-##   * **n=5 per cell**, seats varied per leg but were NOT controlled.
-##   * **LOKI-8 vs LOKI-7 was never run head to head** and at these n they are
-##     indistinguishable. This is the best-TESTED arm, not the best arm.
-##   * Two independent sources say our-tree-vs-our-tree numbers are biased
-##     OPTIMISTIC (~2x), not merely noisy. The ladder is the real read.
-
-## ===== WATCH THE SHIP =====
-##   **ACTIVATION BASELINE IS 1567.44, NOT 1577.5** (corrected s26, D12). 1577.5
-##   is the rating before **v101's LAST game** — the platform's per-match
-##   `teamAVersion` says the 4-1 Kings College loss (-10.08) was v101's, created
-##   **18:32:43.700Z, 4m41s before v102 was uploaded at 18:37:25.097Z** (the
-##   load-bearing clock is createdAt vs uploadedAt; that match COMPLETED 18:37:47Z,
-##   22s AFTER the upload, which is exactly why completedAt is the wrong clock).
-##   Independently confirmed by research from `corpus/ladder_games.tsv` `ourbef`.
-##   **The tape row tagged v102 is not the first v102 MATCH.**
+## ===== STATE, VERIFIED AT WRAP (not recalled) =====
+##   LIVE: **v102 = `bots/_v124loki8`**, submission `ff270a6c`, py-tree md5
+##   **72a3baf6**. **1586.2 @ 624 matches, rank 30/116, last-10 4W-6L.**
+##   **ACTIVATION BASELINE = 1567.44** (NOT the 1577.5 in older blocks — that is
+##   the rating before v101's LAST game; the platform's per-match `teamAVersion`
+##   settles it). **Net +18.8 over 54 matches.**
+##   **ROLLBACK TARGET: v101, verified `ready` on the platform at wrap.**
+##   `.venv/bin/fcode submission activate 101` — **VERSION INT, NOT ID — then
+##   VERIFY** (s25 D9: an id-based restore chain failed open with an untested
+##   bot live).
 ##
-##   The slot rule is the stop-loss: arms at >=8 matches, **net5 <= -21 frees the
-##   slot**. It is now ONE importable statement in **`tools/slot_rule.py`** —
-##   `.venv/bin/python tools/slot_rule.py` prints the live verdict in one line.
-##   **`slot_free` is a permission and a WAKE, never an n=8 evaluation of the bot.**
-##   **If it bleeds, roll to v101 — that is Eir, unchanged.**
-##   (Purpose reframed by Magnus s26: x3r0 is not actively building, so the rule
-##   is purely our own stop-loss now, not a slot-share. **Nothing mechanical
-##   changed** — threshold, arming and wake semantics all stand.)
+## ===== THE SLOT: FIRED TWICE TONIGHT, HELD BOTH TIMES, CURRENTLY CLEAR =====
+##   At wrap: **k=54, net5 -3.0, `slot_free` False, no `SHIP_ALERT`.**
+##   The arm ran **1567 -> 1600 -> 1572 -> 1616 -> 1585 -> 1599 -> 1580 -> 1586**.
+##   **`SLOT_FREE` fired at k=36 and k=52. HOLD both times, per a decision
+##   PRE-COMMITTED at k=34 while the alarm was still silent.**
+##   **THE PRE-COMMITMENT IS A CONJUNCTION AND IT STILL GOVERNS:**
+##   **`net5 <= -21` AND `net_act < 0`.** net_act is **+18.8** — v102 is still
+##   ABOVE the rating v101 handed it, which is the whole test: **hold while the
+##   ship beats its replacement.** The other trigger is the **slow SPRT
+##   (MU0=-4)** accepting BLEED. **At 1567.4 or below with net5 <= -21, ROLL.**
+##   **`slot_free` is a PERMISSION AND A WAKE, NEVER A VERDICT.**
+##
+## ===== WAKE PATH — WHAT IS AND IS NOT WATCHED AFTER THIS SESSION =====
+##   **SURVIVES (detached, PPID 1, all verified BY OUTPUT at wrap, not by `ps`):**
+##   elo_logger 25811 · match_watcher 25942 · opp_watcher 25943 ·
+##   replay_archiver 25944 · keeper 89444 · **ship_watch 66915** (armed on the
+##   CORRECTED 1567.44 baseline). All five owned files written within ~7 min of
+##   wrap. *(An earlier flag that `match_watcher` was stale was a quiet ladder
+##   hour; it is writing.)*
+##   **DIES WITH THIS SESSION:** every subagent (all relayed, none live).
+##   **NOTHING WAKES A SESSION.** `ship_watch` will write `corpus/SHIP_ALERT`
+##   and clear it on recovery — **observed doing all three tonight** — but no
+##   process boots a session to act. **FIRST THING AT NEXT BOOT:
+##   `cat corpus/SHIP_ALERT` (absent = fine), then `tail corpus/ship_watch.log`.**
+##   **Any `CLEARED` line in that log is PRE-s26 and means nothing** — two
+##   schemas. **The tape lags live by up to 5 min** (elo_logger polls at 300s).
 
-## ===== THE TRAJECTORY READ — CLOSED AT k=20, THE POINT SHIP-TIME QUEUED =====
-##   **2026-08-10 00:00 CEST: 1599.0 @ k=20, 12W-8L, net +31.6 vs the corrected
-##   1567.44 baseline. Peak 1600, drawdown -1.**
-##   **THE ROUND TRIP: 1567 -> 1600 -> 1572 -> 1599. THE STOP-LOSS PAIR NEVER
-##   FIRED THROUGH ANY OF IT**, and net5 touched -19.0 (two points off -21) at
-##   the bottom. That is the rule behaving correctly, not a near miss.
-##   **The recovery is REAL WINS, not window mechanics** — the caution was
-##   raised (net5 relaxes as bad results age out) and the tape answers it:
-##   **last five 4W-1L, +26.6 Elo actually won.** Both numbers agree this time.
-##
-##   **I AM WALKING BACK MY OWN DOSE-RESPONSE NUMBER.** At k=12 I recorded wins
-##   vs mean opponent 1566.5, losses vs 1618.2, **gap +51.6, permutation
-##   p=0.011**, and called it the documented Loki curve. At k=20 the same test
-##   gives **wins 1573.1, losses 1601.0, gap +27.9, p=0.0500** — **the effect
-##   HALVED and sits exactly on the conventional line as n grew.** That is the
-##   signature of an estimate inflated at small n, and the honest reading is
-##   that opponent strength still leans the right way but is **weaker than I
-##   published and not established**. Research replicated the k=11 version
-##   independently (+50.0, p=0.0195) — replication of an over-estimate is still
-##   an over-estimate; both were the same small window.
-##   **Anyone quoting +51.6 is quoting a superseded number.**
-##
-##   `tools/monitors/ship_watch.py` is ARMED, detached (PPID 1, 10-min cadence),
-##   re-armed s26 on the corrected baseline. It appends every evaluation to
-##   `corpus/ship_watch.log` and writes **`corpus/SHIP_ALERT`** when the RULE
-##   frees the slot, clearing it on recovery.
-##   **FIRST THING A SUCCESSOR SHOULD DO: `cat corpus/SHIP_ALERT` (absent = fine)
-##   then `tail corpus/ship_watch.log`.** Trustworthy only from s26 — see below.
-##   **`ship_watch.log` HAS TWO SCHEMAS.** Any `CLEARED` line is pre-s26 and came
-##   from the decorative single-segment test; it means nothing.
-##   **THE TAPE LAGS LIVE BY UP TO 5 MINUTES** (`elo_logger` polls at 300s), so
-##   net5 and a live `fcode status` rating are from different clocks.
-##
-## ===== THE ALARM WAS DECORATIVE UNTIL s26 — READ THIS BEFORE TRUSTING IT =====
-##   `ship_watch` shipped with the SPRT's constants imported and its
-##   SEGMENTATION hand-rolled: one (net,k) from activation to now, **no
-##   restart-on-OK**. Once it accepted OK it accepted OK forever. Measured:
-##   **v102 could have bled 1584 -> 1384 and every evaluation would have logged
-##   CLEARED.** Meanwhile `elo_logger`'s correct -21 wake is a **`print` to the
-##   stdout of a dead session** (its arming loop has no redirect). So the durable
-##   alarm could not fire and the firing rule was not durable.
-##   FIXED: `tools/slot_rule.py` (single statement of the rule) + ship_watch
-##   rewritten to use it + `slot_sprt.run_sprt` for the advisory.
-##   **`ship_watch.py --selftest` is mutation-tested against 5 mutations**
-##   (no-restart, dead threshold, ARM_AFTER=0, WINDOW 5->50, WINDOW->1) — all
-##   five make it fail. `tests/test_instruments.py` asserts ship_watch and
-##   elo_logger alarm on the SAME series in BOTH directions, so they cannot
-##   silently diverge. **Run the selftest after any edit to either.**
-##   **A wake path is verified when its alarm has been SHOWN ABLE TO FIRE, not
-##   when its process appears in `ps`** (side lane, s26 — committed as standing).
-
-## ===== WAKE PATH — STATED PLAINLY, INCLUDING WHAT IS NOT WATCHED =====
-##   **SURVIVES this wrap (detached, PPID 1):** elo_logger, match_watcher,
-##   opp_watcher (now with the league Elo tee -> `corpus/league_elo_log.tsv`,
-##   72 teams/pull, ~10-min freshness), replay_archiver, keeper, **ship_watch**.
-##   **DIES with the session:** every subagent, and the side lane's drift-watch
-##   commit monitor.
-##   **NOTHING WAKES A SESSION.** The monitors LOG and will raise `SHIP_ALERT`,
-##   but no process boots a session to act on it. **The trajectory read happens
-##   at the next boot, whenever Magnus starts one.** If v102 bleeds overnight it
-##   will be recorded and NOT acted on until then. That is the honest answer;
-##   the rollback is one command (`fcode submission activate 101`).
-
-## ===== PRE-COMMITTED ROLLBACK DECISION — written at k=34 BEFORE the rule fired =====
-##   Written 2026-08-10 02:2x CEST with `slot_free` **False** and net5 **-18.0**
-##   against a **-21** threshold, deliberately BEFORE any alarm, so the decision
-##   is not fitted to the moment it is needed. Rollback target **v101 confirmed
-##   `ready` on the platform** (v100, v99 also ready).
-##
-##   **IF `corpus/SHIP_ALERT` APPEARS, THE ANSWER IS: HOLD, AND HERE IS WHY.**
-##   1. **`slot_free` is a PERMISSION AND A WAKE, never a verdict** — ship-gate
-##      amendment, and the rule's own docstring. It permits a swap; it does not
-##      order one.
-##   2. **The arm has run 1567 -> 1600 -> 1572 -> 1616 -> 1593.** It has already
-##      made one full round trip through a **-28** drawdown and a net5 of
-##      **-19.0** — two points from the threshold — and recovered to a new peak
-##      without intervention. A stop-loss that fires on the second such excursion
-##      is firing on variance we have already watched reverse once tonight.
-##   3. **Level, not slope: +25.6 from the corrected activation baseline.** v102
-##      is well above where it started. Rolling to v101 would give that up.
-##   4. **The Powerpuff pair is the standing calibration**: same two bots, same
-##      versions, 4-1 then 1-4 eighty minutes apart. Single-match swings of this
-##      size occur with NOTHING changed on either side.
-##
-##   **WHAT WOULD CHANGE THE ANSWER, stated now so it cannot be invented later:**
-##   a **sustained** decline — net5 at or past -21 **and** net-from-activation
-##   turning **negative** (i.e. below 1567.4), **or** the slow SPRT bound
-##   (MU0=-4) accepting BLEED, which is the instrument built tonight precisely to
-##   catch a drift the -21 window cannot see. **Any one of those is a roll.**
-##   **Rollback command: `.venv/bin/fcode submission activate 101`** — takes a
-##   VERSION INT, not an id, and VERIFY it afterwards (s25 D9: an id-based
-##   restore chain failed open with an untested bot live).
-##
 ## ===== ⛔ THE STANDING CONTEXT DESCRIBES EIR, NOT THE BOT YOU ARE RUNNING =====
 ##   The replay archive is **~92% Eir** (1,580 Eir games vs 130 LOKI-8), so every
 ##   figure in the tactics library and in this file's older blocks is an EIR
