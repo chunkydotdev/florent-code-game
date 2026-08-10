@@ -500,3 +500,20 @@ a proven negative control beats three that have never flagged anything.**
   the estimator: **the planned n, and what happens if the leg is cut short.**
   Both of today's misses share a shape — **I verified everything the document
   SAID and never asked what it FAILED to say.**
+
+- **⛔ CORRECTION TO THE NOTE ABOVE, SAME NIGHT — IT WAS NOT A NEAR-MISS AND MY
+  CHARACTERISATION OF THE BUILDER WAS UNFAIR.** I wrote that the collector fix
+  was an in-place edit to a running script and that "the ordering was luck, not
+  design." **False. The builder edited the file and RELAUNCHED the collector** —
+  precisely the stop/edit/restart rule I was writing up. Confirmed by
+  observation rather than by their account: the collector's **pid changed
+  4404 → 6659** across the fix, which only happens on a restart.
+  **What I actually did: inferred an unsafe practice from a commit timestamp
+  alone, and published it about another lane in a durable record without asking
+  who had done what.** A timestamp shows WHEN a file was committed — never
+  whether the process was restarted, and never who acted. **Third instance today
+  of the same fault** (inferring blast radius on the +64 discrepancy instead of
+  checking it; convicting `CORE_PAIRS` against a formula instead of the engine).
+  **The rule stands and the builder followed it.** The lesson that survives is
+  about me: **when a record characterises another lane's conduct, the bar is
+  what they DID, verified — not what a timestamp permits me to infer.**
