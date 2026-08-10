@@ -67,12 +67,36 @@ for cycle in $(seq 1 $CYCLES); do
       r=$(.venv/bin/fcode match unrated "$id" $MAPS --json 2>&1)
       case "$r" in
         *matchId*)          echo "$id $r" >> $OUT; n=$((n+1)); break;;
-        *Rate\ limit*)      echo "$(date -u +%H:%M:%SZ) PANEL3: rate-limited on ${id:0:8}, waiting ${BACKOFF}s (attempt $t)"; sleep $BACKOFF;;
+        *Rate\ limit*)
+          # Ask the meter rather than sleeping a constant. Same defect as the
+          # inter-cycle sleep: BACKOFF=330 was a guess, and the meter knows
+          # exactly when the oldest challenge ages out of the rolling window.
+          bw=$(.venv/bin/python tools/rate_budget.py --wait 2>/dev/null || echo $BACKOFF)
+          [[ "$bw" =~ ^[0-9]+$ ]] || bw=$BACKOFF
+          (( bw < 15 )) && bw=15
+          echo "$(date -u +%H:%M:%SZ) PANEL3: rate-limited on ${id:0:8}, meter says ${bw}s (attempt $t)"
+          sleep $bw;;
         *)                  echo "$(date -u +%H:%M:%SZ) PANEL3: error on ${id:0:8}: $(echo $r | tail -1)"; sleep 25;;
       esac
     done
   done
   echo "$(date -u +%H:%M:%SZ) PANEL3 cycle $cycle: fired $n/${#PANEL2} (total $(grep -c matchId $OUT))"
-  [[ $cycle -lt $CYCLES ]] && sleep $WINDOW
+  # BUDGET-DRIVEN PACING, not a fixed sleep (s28, measured).
+  # The first version slept a flat $WINDOW between cycles. Measured over cycle 1:
+  # 6 challenges fired 15:43-16:05, then the runner slept 20 minutes while the
+  # meter read "1/5 spent, a slot is free NOW" -- FOUR IDLE SLOTS. Effective
+  # rate ~8.6/hour against a ceiling of ~15/hour: we were using 57% of a free
+  # resource while Magnus was asking why the queue was slow.
+  # The limit is a ROLLING 20-minute window, so slots free continuously; the
+  # right cadence is "fire whenever the meter says a slot is free". The meter
+  # already existed -- tools/rate_budget.py --wait -- and this runner was
+  # pacing on a constant instead of reading it. An instrument built for a
+  # decision and then not consulted by the thing making the decision.
+  if [[ $cycle -lt $CYCLES ]]; then
+    w=$(.venv/bin/python tools/rate_budget.py --wait 2>/dev/null || echo $WINDOW)
+    [[ "$w" =~ ^[0-9]+$ ]] || w=$WINDOW
+    echo "$(date -u +%H:%M:%SZ) PANEL3: meter says wait ${w}s"
+    (( w > 0 )) && sleep $w
+  fi
 done
 echo "$(date -u +%H:%M:%SZ) PANEL3: done, $(grep -c matchId $OUT) challenges banked"
