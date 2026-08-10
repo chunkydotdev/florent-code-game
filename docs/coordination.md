@@ -26261,3 +26261,54 @@ side lane's reading — that they are distinct, since a launcher throw is a
 business, versus exhausting a **shared clock** — matches mine. **Neither of us is
 authoritative and the prereg must not assume it.** **If Magnus wants both asked
 of the organisers together, this leg waits.**
+
+## 2026-08-10 07:1x CEST — SIDE LANE: **PANEL REPLACEMENT CANDIDATES** (builder's request) — and the corpus validated itself against the live cells first
+
+**THE SELECTION INSTRUMENT WAS CHECKED BEFORE IT WAS USED.** Restricting the
+corpus to **v102 + `triggeredBy == 'unrated'`** (n=15 games per cell) reproduces
+the live panel's structure exactly:
+
+    The Bisons 0.07 | Leviathan 0.80 | CtrlAltDefeat 0.73 | gsxWins 0.47 | I Stone 0.47
+
+**That is the same floor/ceiling/ceiling/live/live pattern measured off the
+platform.** The corpus can select panels.
+
+### RECOMMENDATION
+
+**KEEP `gsxWins` and `I Stone`** — the two cells that actually move.
+**DROP `The Bisons` (0.07), `Leviathan` (0.80), `CtrlAltDefeat` (0.73).**
+**ADD, best-first:**
+
+| team | team id | v102 wr (n) | why |
+|---|---|---|---|
+| **OopsGotYourElo** | `f61d19c1-600e-457b-861b-dbeb6b3d8691` | **0.50 (20)** | the only cell at exactly 0.50 on v102; 29 historical matches, **never a 0/5**, 86% in the 1–4 band |
+| **Team 48** | `48340ad8-701f-4a40-850d-1f3f3d56d8ca` | **0.60 (20)** | **most era-stable on the list** (≤101 0.63 → v102 0.60, delta −0.03), **94%** of 35 matches in band, zero 0/5 — and a top-5 league fast-killer (36.4% sub-100), so it stresses the rush axis too |
+| **Banminary** | `0774b1b2-df40-4cf2-915e-5d5a6133a13a` | 0.64 (25) | off-centre but **highest diagnostic value in the corpus**: 14 of the 25 fastest core kills, 33.0% sub-100 |
+
+**THE BISONS SHOULD STAY ON THE SCHEDULE AND COME OUT OF THE DENOMINATOR** — they
+are the method we are trying to learn, and 0.07 cannot express improvement.
+
+### ⚠ ERA TRAPS — teams whose OVERALL rate is the average of two different bots
+
+    farming_200s   overall 0.51  ->  v102 0.25   (n=20)   TRAP
+    CtrlAltDefeat  overall 0.45  ->  v102 0.66   (n=35)   TRAP
+
+**Selecting either on the overall number selects on a bot we no longer run.** And
+**this explains CtrlAltDefeat's 4,3,4,4 on the live panel**: it was a 0.38
+opponent for Eir and is a 0.66 opponent for v102. The cell did not saturate by
+accident — **we chose it from an era-mixed number.**
+
+### TWO HARD CAVEATS THE AGENT STATED UNPROMPTED
+
+1. **v102 has existed ~10 hours** (2026-08-09T18:46 → 2026-08-10T04:56, 400
+   archived games). **Every v102 cell is n ≤ 40; every v102-unrated cell is n=15.**
+2. **The ladder cell does not predict the unrated cell** — Leviathan v102 ladder
+   0.55 vs unrated 0.80; CAD 0.60 vs 0.73; Bisons 0.33 vs 0.07. **Candidates whose
+   only v102 data is rated-ladder (OopsGotYourElo, Team 48) carry that
+   uncertainty**, and it is the main risk in this recommendation.
+
+**Missing field, named rather than approximated:** `1337`, `Kleos` and `Memtrace`
+have no `teamAId`/`teamBId` because they appear only in `ladder_games.tsv`, which
+carries opponent NAME and no id column. `1337` is otherwise the best-shaped cell
+in the corpus — 10 matches, **100% in the 1–4 band**, never a 0/5 or 5/5 — and has
+simply never met v102.
