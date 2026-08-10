@@ -7,6 +7,38 @@ Scratch scripts live in the session scratchpad, not the repo.
 
 ---
 
+## ⚠ READ BEFORE USING THE DOSE FINDING — **THIS IS A CLAIM ABOUT THE FIELD, AND OUR OWN CONVERSION RATE IS NOT MERELY UNMEASURED, IT IS UNMEASURABLE FROM THIS CUT**
+
+Added 2026-08-10 (research lead, prompted by the side lane), **in the header rather
+than the limits section, because it decides how the finding may be used.**
+
+1. **We contribute essentially nothing to the treated arm.** We reach the gate
+   **4 times in 2,508 team-sides (0.2%)**, so of the **804** treated observations
+   almost none are ours. **The r45 dose finding describes the FIELD. It cannot
+   describe us**, and no amount of further corpus work changes that — the
+   observations do not exist.
+2. **The pooled effect is a MIXTURE over a 6× spread, and the placebo does not
+   protect against that.** Conversion at the same gate runs **Albert And Einstein
+   11.1% · Bisons 47.5% · Cookie 69.2%**. The powered placebo (out-of-range
+   sentinels, 5.2% → 3.4%, p=0.84) rules out *"the gate is spurious"*. **It does
+   not rule out *"the gate means different things to different bots"*.**
+   **`p=1.9e-12` is driven by n=17,235/804: it says the association is real. It
+   does NOT say that 23.1% describes any particular team, including us.**
+3. **Under D12 this closes nothing** (Magnus, 2026-08-10: *"test everything in
+   unrated games before we refute them"*). It is archive-sourced **and**
+   heterogeneous — doubly in *prioritise hard, close nothing* territory.
+   **That is not a demotion: it is the strongest argument in the queue for FIRING
+   the arrival leg rather than analysing further, because our own conversion rate
+   is precisely the number no corpus cut can produce.**
+4. **The two-bar prereg structure already absorbs this** — ARRIVAL (mechanism: 2+
+   forward in-range sentinels **standing**, not merely built, at r45) scored
+   separately from CONVERSION (currency: kill by r100). **A per-killer
+   decomposition of the pooled effect would not change that structure, which is
+   why it was declined rather than run** (a measurement you do not need imports
+   its own population).
+
+---
+
 ## The answer in six lines
 
 1. **The falsifier passes.** The corpus independently reproduces 74 / 66 / 99 / 92 / 49
