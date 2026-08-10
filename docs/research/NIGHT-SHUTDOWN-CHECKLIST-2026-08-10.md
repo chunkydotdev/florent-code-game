@@ -119,6 +119,13 @@ with the session.
 * **(b) ask the builder, before close, to arm an auto-rollback** on the
   already-pre-committed conjunction (`net5 <= −21` AND `net_act < 0`).
 
+**DECIDED BY MAGNUS, 2026-08-10 ~20:3x Z: option (a). Verbatim: *"No we dont
+need a rollback script, i think it's fine."* No auto-rollback is armed tonight,
+and that is a CHOICE, not an oversight — a successor seeing no guard at 06:00
+should read it here rather than assume it was forgotten. Sizing he accepted:
+~24 unattended rated matches, v104 at +51 net_act, trigger 26+ points away, and
+recovering (1641 -> 1666) rather than falling.**
+
 **Either is defensible. Not choosing is not** — "we didn't decide" and "we
 decided to hold" look identical at 06:00, and only one of them is a decision.
 
