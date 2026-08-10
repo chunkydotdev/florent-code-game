@@ -23217,3 +23217,59 @@ turn out to be 77% carried by four games, and three other figures travel without
 
 **`opus`, read-only, LADDER fixture, v102 population with the Eir arm as control where it
 helps. `bots/` untouched.**
+
+## commit after `81d7055` (git time is the authority) — RESEARCH ARM: **REPAIR CLASSES COSTED. My expectation was WRONG — the order did not change — and that is the result. Plus one item that changes a QUEUED plank.**
+
+Deliverable: **`docs/research/repair-class-costing-2026-08-10.md`**. **210 v102 LADDER games,
+`related=none`, our side, seat+version from `.meta.json`, population frozen and hashed before
+any headline.** Unit: **Ti/game.**
+
+| class | defect | fix | **net** | return | top-1/3/5 | n_aff |
+| --- | ---: | ---: | ---: | ---: | --- | ---: |
+| **1 unterminated (CORKING ENDS ONLY)** | 464 | 38 | **+411** | 11.9× | 9.4/24.8/38.5% | **123/210** |
+| *1′ same, complete EVERY end* | 464 | 681 | **−223** | 0.7× | — | 209/210 |
+| 2 destroyed segments | 254 | 5 | **+182** | 38× | 18/41/52% | 68/210 |
+| 3 facing incoherence | 132 | 1.4 | **+130** | 95× | 31/52/62% | 30/210 |
+| 4 self-blocking | 102 | 0 | **+102** | ∞ | 22/48/64% | 35/210 |
+
+### 1. **I PRE-STATED THAT THE ORDER WOULD CHANGE. IT DID NOT, AND THAT IS THE FINDING.**
+**On net titanium the order is IDENTICAL to the arithmetically faulty prescription ranking.**
+**The bad arithmetic happened not to matter.** **It reverses completely on RETURN-ON-SPEND
+(∞ / 95× / 38× / 12×), and class 1 goes NEGATIVE (−223) executed unconditionally** — so
+*"finish unterminated lines"* is **a good plank and a bad rule.**
+
+### 2. THE FINDING IS INSIDE CLASS 1
+**86% of our 2,348 unterminated line-ends carry ZERO blocked titanium.** **One end per game
+carries 91% of that game's loss, sits 3 conveyors from the core, costs 22 Ti at live scale,
+returns 174 Ti, and is standing by round 30.**
+**⇒ BUILD FIRST: class 1, AIMED — chosen on GENERALITY, not size.** Fires in **59% of games**
+(others 14-32%) and is **least tail-carried** (top-1 **9.4%** vs 18-31%). **The discriminator is
+cheap — walk upstream from the dead end; if the chain reaches a friendly harvester, finish it.
+That predicate is the whole difference between +411 and −223.**
+
+### 3. **AND IT CHANGES A QUEUED PLANK: LOKI-10 REACHES 35% OF ITS CLASS, NOT 70%**
+**The 70% came from splitting by EVENT COUNT — a figure I relayed.** **By TITANIUM it inverts:
+the 35 reverse pairs (a conveyor aimed LATER at an existing turret) carry 66 Ti/game against
+the 64 forward pairs' 36.** **The mirror predicate is the same shape, also free, and is not in
+the plank.** **Relayed to the builder as actionable before the leg.**
+
+### 4. TWO MORE CORRECTIONS TO MY BRIEF, BOTH MINE
+- **The 421 Ti calibration point measures a DIFFERENT QUANTITY** — build spend on excess
+  forward turrets, **not** delivery loss from turrets corking routes. **My instruction to
+  "reproduce something compatible with it" was NOT EXECUTABLE, and following it would have
+  propagated a category error into a plank.** Comparable class-4 figure: **593 Ti/affected game
+  of delivery.** Same order of magnitude **by coincidence.**
+- **I framed destroy-and-rebuild as an unpriced BURDEN; it is the CHEAPEST fix here.**
+  `destroy()` is free **and refunds the held stack**, and scale nets to zero across the
+  operation — **1.4 Ti/game to recover 130.**
+
+### 5. INSTRUMENT NOTES
+**Live scale IS integrable from the replay — 3,696/3,696 isolated build rounds exact** — which
+a sibling cut had reported as not possible. **Three corruption arms fire on disjoint columns.**
+**`0/1,017` self-destroyed carriers is NOT a dead column: the control fires** — opponents show
+**122 undamaged conveyor removals. We never `destroy()` our own logistics; they do.**
+**Byproduct: passive income lands on r ≡ 3 (mod 4)**, independently reproducing the builder's
+earlier probe from a third path.
+
+**Load-bearing limitation, stated: `NO_OUTPUT_DESTROYED` (67 Ti/game) has no costable repair
+site, making class 2's return an over-estimate by up to 26%.**
