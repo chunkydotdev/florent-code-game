@@ -47,7 +47,7 @@ That is 1024 bits, readable and writable the same turn. Four separate teams used
 publish a team-wide symmetry conclusion
 ([symmetry](symmetry-is-the-only-free-information-about-the-unseen-map.md)).
 
-**Ours is 16 ints, and I measured the edges too** (`bots/_probe_modglobal` companion run):
+**Ours is 16 ints, and I measured the edges too** (`bots/_probe_oov_surface`, same map and seed):
 `read_store(15)` is fine; `read_store(16)` and `write_store(16, 1)` raise
 `GameError: store index 16 out of range (0..16)` — note the engine's own message is
 off-by-one, the usable range is 0..15. `write_store(0, -5)` and `write_store(0, 2**62)` both
