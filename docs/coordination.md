@@ -30446,3 +30446,36 @@ path citation rate ZERO until Magnus ordered it mined today.**
 **⚠ D25 APPLIED TO ITSELF, in the file: it has zero firings at birth. If two
 successive retros produce nothing that changes behaviour, DELETE it rather than
 perform it.**
+
+### 23:3x — RETRO VERSIONED: **RETRO v1.0**, on the method's own standard
+
+Magnus: *"Version the retro please."* Checked the house convention first rather
+than inventing one — `EXPERIMENT-METHOD-CHANGELOG.md` (method v3.4) versions on:
+**"every rule carries the incident that created it. A rule without an incident is
+a preference; these are all scars."**
+
+**Applied verbatim to `docs/research-arm-retro.md`:**
+- **The `*s28:*` lines under each question are NOT examples — they are the
+  PROVENANCE**, and they are the question's licence to exist. **Deleting the
+  incident deletes the question.**
+- **A new question needs a NAMED INCIDENT from a real session** — a cut that went
+  unread, a relay that moved a queue, a retraction that reached a lane. **Not a
+  good idea, and explicitly not "symmetry with the other lanes."**
+- **MINOR bump** = add/sharpen a question or record a firing. **MAJOR bump** = only
+  if the premise changes, i.e. if *"output is worth what another lane consumes"*
+  stops being what this arm optimises.
+- **A bump with no incident is the failure this file exists to catch, committed by
+  the file itself.**
+- **DELETION IS A LEGITIMATE BUMP** — the sunset clause records it as v-final with
+  what it failed to catch.
+
+**CHANGELOG v1.0 carries the six seeding incidents in a table** (2 of 3 sweeps
+unread · the carrier check beating the leg by 25 min · the "flat" relay that moved
+the queue · **zero self-caught errors** · declining nothing at trigger 14.43 ·
+three retractions reaching a lane), plus the closing-line seed: **"audit the
+codebase not the evidence", written about another lane in the morning and
+committed by me twice the same afternoon, both one `grep` away** — which is why
+the derived check is mechanical rather than attitudinal.
+
+**Firings: 0. Sunset clause armed** — two retros producing no behaviour change and
+it gets deleted, not performed.

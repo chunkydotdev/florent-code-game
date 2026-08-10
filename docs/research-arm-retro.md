@@ -1,4 +1,13 @@
-# RESEARCH ARM RETRO — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.0** — run it at every wrap, before the process deltas
+
+**RETRO v1.0 · created 2026-08-10 (s28) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
+(method v3.4) and to `two-session-protocol.md` rule 5.**
+
+**Versioned on the same standard as the method: EVERY QUESTION CARRIES THE INCIDENT
+THAT CREATED IT. A question without an incident is a preference; these are scars.**
+The `*s28:*` lines under each question are not examples — they are the provenance,
+and they are why the question is in the list. **Deleting the incident deletes the
+question's licence to exist.**
 
 **Why this exists, and why it is NOT the wrap.** The wrap (`two-session-protocol.md`
 rule 5) is lane-agnostic and it is a **failure log** — it records what went wrong.
@@ -10,9 +19,24 @@ exactly what another lane consumes. Everything else is cost** — context, token
 and the `doc:code churn` and `cross-lane analysis` signals that `audit_trigger`
 fires on. A cut nobody reads is not neutral. It is a debit.
 
-**Created 2026-08-10 (s28), from that session's own evidence. It has ZERO firings
-at birth (D25) and must earn its place — if two successive retros produce nothing
-that changes behaviour, delete it rather than performing it.**
+## HOW TO VERSION THIS FILE
+* **A new question needs a NAMED INCIDENT from a real session** — a cut that went
+  unread, a relay that moved a queue, a retraction that reached a lane. **Not a
+  good idea, not a symmetry with the other lanes.** Same bar the method uses.
+* **Bump MINOR (v1.x)** to add or sharpen a question, or to record a firing.
+  **Bump MAJOR (v2.0)** only if the premise changes — i.e. if "output is worth what
+  another lane consumes" stops being the thing this arm is optimising.
+* **Every bump appends to the CHANGELOG below, citing the session and the incident.**
+  A bump with no incident is the failure this file exists to catch, committed by
+  the file itself.
+* **DELETION IS A LEGITIMATE BUMP.** See the sunset clause.
+
+## ⚠ SUNSET CLAUSE — D25 applied to this file
+**A rule born from a failure has ZERO firings at birth by construction.** This file
+has zero. **If two successive retros produce nothing that changes behaviour, DELETE
+it rather than perform it** — and record the deletion as v-final in the changelog,
+with what it failed to catch. **A retro nobody acts on is the same debit as a cut
+nobody reads, which is the premise of the file turned on itself.**
 
 ---
 
@@ -82,6 +106,36 @@ The check that would have fired is: before asserting a capability or a history i
 absent, grep for it.***
 
 ---
+
+## CHANGELOG
+
+### v1.0 — 2026-08-10 (s28) — CREATED
+**Incident that created the file:** Magnus asked whether a researcher-specific
+retro existed. It did not — the wrap is lane-agnostic and the vault's daily retro
+spans all projects, so **nothing anywhere asked what THIS arm should do
+differently.** The s28 wrap (D33–D40) was audited against this and found to be a
+pure failure log: **eight deltas, not one of which asks whether the lane was
+useful.**
+
+Questions seeded, each with its s28 incident:
+
+| # | question | incident that created it |
+|---|---|---|
+| 1 | Consumption | **2 of 3 library sweeps spawned and never read.** The lane spent tokens and context on cuts that reached no decision. |
+| 2 | Latency | The **carrier check beat the leg by ~25 minutes** and changed what fired; the identical work an hour later is archaeology. Value is a function of which side of the decision it lands on. |
+| 3 | Relay fidelity | An agent wrote *"flat-to-slightly-up"* over **0.150 → 0.175 → 0.100 → 0.314**; I relayed **"flat — nothing we shipped touched it"**; the builder made it the queue headline; Magnus overturned it. **Payload right, summary wrong, queue moved.** |
+| 4 | Own-checks-on-own-work | **Zero of my errors were caught by me.** All three were caught by a peer re-deriving my arithmetic or by Magnus asking about the board. |
+| 5 | Declines | Declined almost nothing while `audit_trigger` fired on analysis-outpacing-decisions at **14.43**. |
+| 6 | Per-lane delivery + retractions | **Three retractions reached a lane before I corrected them** (Ouroboros "flat", the meta_join-contaminated PANEL-3 pool, the false facing-decoder limit). |
+
+**Closing line B seeded by:** *"an audit of the evidence is not an audit of the
+codebase"* — written about another lane in the morning and **committed by me twice
+the same afternoon** (asserting no facing decoder existed while `tools/loki9_facing.py`
+ships; asserting we had never played `vjg`, whom we have played 8 times). **Both
+were one `grep` away**, which is why the derived check is mechanical rather than
+attitudinal.
+
+**Firings: 0.** Sunset clause armed.
 
 ## The one metric worth tracking across sessions
 
