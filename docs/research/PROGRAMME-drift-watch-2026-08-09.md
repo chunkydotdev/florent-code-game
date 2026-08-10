@@ -474,3 +474,29 @@ a proven negative control beats three that have never flagged anything.**
   broken guard?**) *because two observations admitted opposite readings and
   they had opposite consequences* — the builder ran the attribution and the
   answer inverted two decisions (LOKI-18 premise invalid, LOKI-17 un-retired).
+
+- **DO NOT EDIT A SCRIPT THAT IS ALREADY RUNNING UNATTENDED (s28, near-miss):**
+  `night_collector.sh` was launched at **23:03:47** and its retry-floor fix was
+  committed at **23:04:32** — 45 seconds later. **zsh reads scripts
+  incrementally, so an in-place edit can leave a long-running process executing
+  from a stale byte offset.** We got away with it (the running process was
+  observed asking the rate meter, i.e. the new behaviour, so the file was
+  written before launch and merely committed after) — **but the ordering was
+  luck, not design, and an unattended six-hour process is exactly where nobody
+  would notice.** Rule: **stop, edit, restart.** Verification form when it has
+  already happened: check the process start time against the file mtime, and
+  confirm the RUNNING BEHAVIOUR in the log matches the new code rather than
+  assuming the edit took.
+
+- **A PREREG MUST FIX ITS n, AND THIS LANE MISSED IT (s28, LOKI-16b, self-flag
+  — second prereg-hygiene miss of the day after the carrier ratings):** I
+  audited `PREREG-loki16b` and reported "no flags", having checked provenance,
+  the named estimator, the clustering unit, the map stratum and the reused
+  control — **and never asked how many games it would fire.** An unfixed n is
+  what permits **optional stopping**: fire until the number looks right, then
+  stop. **No harm landed (the runner's schedule was fixed even though the
+  document's was not, and the leg ran 10 challenges/50 games to completion), but
+  the document did not bind it.** Add to the prereg checklist beside the bar and
+  the estimator: **the planned n, and what happens if the leg is cut short.**
+  Both of today's misses share a shape — **I verified everything the document
+  SAID and never asked what it FAILED to say.**
