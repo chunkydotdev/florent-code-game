@@ -303,3 +303,53 @@ cannot resolve a currency effect — same-bot swing is ~12pp and observed
 treatment swing 20pp. **n=25 legs are DOSE AND MECHANISM PROBES. The currency
 read requires pooling, and the per-opponent per-window split is mandatory before
 any pooling at all.**
+
+## ⚠ CORRECTION TO MY OWN DECOMPOSITION — THE -10.0pp IS STRUCK
+
+I wrote *"excluding the seat-confounded cell the sign flips to -10.0pp"* as
+though seat were separable from opponent. **It is not.** `I Stone` and
+`Leviathan` have **never played seat A in any pinned window**, so seat and
+opponent are not crossed on this panel and any seat-adjusted figure is an
+opponent-mix artifact wearing a seat label.
+
+The tell is that the apparent seat effect **inverts between versions**:
+
+    v102  seat A  1/10 = 10.0%     seat B  23/40 = 57.5%
+    v103  seat A 11/20 = 55.0%     seat B  10/30 = 33.3%
+
+A real seat effect does not change sign with the bot. **The -10.0pp is struck.
+The result stands at the pooled +0.0pp (21/50 vs 21/50), which requires no seat
+model at all.**
+
+## THE PANEL IS A TWO-CELL INSTRUMENT — this is the leg's largest finding
+
+Across all pinned windows (20 matches, 100 games, seats resolved per match):
+
+| opponent | record | reading |
+|---|---|---|
+| **The Bisons** | **0/20**, both seats, both versions | **FLOOR** |
+| Leviathan | 16/20 | ceiling |
+| CtrlAltDefeat | 15/20 | ceiling |
+| **I Stone** | **8/20** | **moves** |
+| **gsxWins** | **6/20** | **moves** |
+
+**Three of five cells are saturated. They contribute variance without
+information.** The effective n of this testbed is **two cells**, and that is the
+mechanical reason +16.0pp at n=25 became +0.0pp at n=50: the aggregate was one
+unstable cell out of two live ones, and the second window resampled it.
+
+**This is D11 saturation — the defect we diagnosed in the self-authored ARENA —
+reproduced in the live fixture, in the same session in which we wrote the rule.
+Making a fixture live does not fix the fixture axis.**
+
+**Standing consequences, adopted:**
+* Every currency read on this panel is **a read on I Stone and gsxWins**: a
+  two-cell instrument wearing a five-cell denominator, and result docs say so.
+* **The Bisons come OUT of the currency denominator** and are scored as their
+  own question. 0/20 cannot express improvement. They stay on the panel because
+  they are the method we are trying to learn.
+* **Pooling across windows with different seat assignments silently reweights
+  the opponent mix.** State it or do not pool.
+* The panel was selected on **rating proximity**, which does not predict
+  informativeness. **Replacement criterion is measured mid-range performance
+  against us.**
