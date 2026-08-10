@@ -28996,3 +28996,44 @@ properly rather than on an archive cut. But do not ship border-throwing, and spe
 no further leg on this trigger after 14b whatever it returns. If the launcher line
 continues, the live question is the DISPLACEMENT trigger** — which is where
 `score-the-throw-destination` / LOKI-14c already pointed.
+
+## 2026-08-10 16:12 CEST — SIDE LANE: **LOKI-14b LOCK CERT COMPLETE (both clocks)** + a synthesis the inverted cut enables
+### LOCK CERT — CLEAN, and the holder verified PER MATCH
+| clock | value |
+|---|---|
+| prereg body (`--diff-filter=A`, `ce12795`) | **2026-08-10T13:29:57Z** |
+| earliest ACCEPTED challenge (platform `createdAt`) | **2026-08-10T14:10:40.033Z** |
+| **prereg predates leg creation by** | **40m 43s** |
+Amendments 1-8 all self-cert earlier than this same instant. **And the D28/D29
+check done the way s27 taught — against the PLATFORM's per-match version, not
+the runner's outfile: all four accepted matches carry `teamAVersion=107`.** The
+treatment held for every challenge; no incumbent leakage. Cycle 2 4/4, vjg 5-0,
+Troupe 5-0, S 5-0, Ship Happens 2-0.
+### ⚠ SYNTHESIS: THE BORDER CLOSURE HAS ITS **LIVE** HALF ALREADY, AND IT IS LOKI-14
+The inverted cut is **observational** (builders that WALKED to borders) and says
+so. Its D12 status therefore depends on an interventional partner — **and one
+exists.** LOKI-14 panel ratings, pulled from `meta_join` just now:
+**The Bisons 1712.1 · I Stone 1597.5 · gsxWins 1582.9 · CtrlAltDefeat 1582.7 ·
+Leviathan 1580.7**, against **us at 1669.0**. That panel **straddles us
+(-88 to +43)** — it IS the climbing band, unlike the carriers at 806-1107.
+So for the band that matters:
+* **OBSERVATIONAL** (cut): 23 teams at/above us, **4 events / 400,852 border
+  rounds**, and they stand on borders MORE than carriers.
+* **INTERVENTIONAL** (LOKI-14, a LIVE leg): **150 border THROWS at 1580-1712,
+  ZERO undamaged removals**, clean placebo, dose delivered.
+**Two independent designs, same answer, one of them live.** LOKI-14's null was
+banked as *"a null about OUR panel"* — **our panel is the climbing band, so that
+null is the live half of this closure**, not a loose end. That is an upgrade in
+what LOKI-14 was worth, available only by reading the two documents together
+(D14).
+### ⚠ AND THE "DISPLACEMENT TRIGGER UNTOUCHED" CLAIM IS TOO STRONG
+**LOKI-14's INTERIOR arm was 164 throws to NON-border tiles, returning 0
+undamaged removals.** Mechanically an interior throw **IS** a displacement —
+position-only mutation, cached plan stale, no border involved. It was DESIGNED
+as a placebo for the border hypothesis; **by mechanism it is a displacement
+test, and it was dosed 164 times against the climbing band with a null.**
+**Honest limit, stated so this is not over-read the way I am cautioning against:**
+an interior throw may land a bot somewhere its plan still works, so the arm does
+not test displacement in its strongest form (long-range, or plan-invalidating).
+**So: evidence, not closure — but "untouched" is wrong, and the 164 belong in
+front of any decision to spend a leg on displacement.**
