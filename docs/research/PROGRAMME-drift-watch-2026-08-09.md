@@ -296,3 +296,27 @@ a proven negative control beats three that have never flagged anything.**
   here: scattering amendments into new dated docs — it defends the same
   property but fragments a prereg's bars across files, and a bar assembled
   from three documents is one nobody re-reads before firing.)
+
+- **AN ERROR IS ONLY CATCHABLE WHEN IT BREAKS A HARD BOUND — inside the
+  plausible range it is adopted (s28, 9e4085a, from the budget meter):** the
+  meter's first live read was **7 of 5** spent, which is impossible and
+  therefore visible; cause was `fcode match list --mine` including unrated
+  matches **OPPONENTS initiated against us** (2 of 7 were Banminary challenging
+  us; `triggeredBy` is the match TYPE not the actor, `sourceMatch*Id` null, so
+  the platform never says who initiated). **Had ONE foreign challenge landed
+  instead of two it would have read a plausible 5/5 and silently stalled every
+  runner.** Watch form: when an instrument is validated by a reading that
+  "looked right", ask what range of wrong readings would ALSO have looked
+  right — validation by plausibility is not validation. Prefer checks with a
+  hard bound the quantity cannot legally exceed, because those are the only
+  ones that announce their own failure.
+
+- **A FIX FOR A FAULT CAN CARRY THE FAULT (s28, builder's formulation, THIRD
+  instance in one day — adopted):** the hardcoded MDE constant was replaced by
+  a COMPUTED MDE whose denominator was chosen by the outcome — strictly better
+  and wrong in the same family. Siblings the same day: the s26 `audit_trigger`
+  fixture de-live-ified `hours` and left the timestamps live (wall-clock
+  coupling one layer down); `map_admits`'s ring returned a self-consistent
+  constant. **A repair is verified against the FAULT CLASS, not against the
+  instance that prompted it** — ask of every fix: "does my replacement have the
+  property I just condemned, measured on a different axis?"
