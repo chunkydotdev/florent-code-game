@@ -23,7 +23,15 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 from replay_census import fields, read_pos, parse_entity, WIRE_LEN, WIRE_VARINT  # noqa: E402
 
-DELTA = {0:(0,-1),1:(1,-1),2:(1,0),3:(1,1),4:(0,1),5:(-1,1),6:(-1,0),7:(-1,-1)}
+# ⚠ 0 IS *CENTRE*, NOT NORTH. My first table omitted it and shifted every
+# facing one compass step -- and research's own validation had already shown a
+# one-step rotation drives the facing/shot match rate to EXACTLY 0.0000. That is
+# precisely the 0/287 this tool reported, and I read it as a bot defect, wrote a
+# retraction, retired a plank and pre-registered another on it.
+# Mapping copied from tools/loki9_facing.py, which is validated at 12,759/12,759
+# FireTurret events.
+DELTA = {0: (0, 0), 1: (0, -1), 2: (1, -1), 3: (1, 0), 4: (1, 1),
+         5: (0, 1), 6: (-1, 1), 7: (-1, 0), 8: (-1, -1)}
 
 
 def decode(path):

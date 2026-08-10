@@ -227,3 +227,74 @@ narrow and well-posed: **what does `can_fire_from` actually accept for a
 SENTINEL?** Read it off the engine binary, or probe it directly with
 `can_fire_from` over a grid — the API is callable in a local match. Until that
 is answered, no sentinel-aiming plank has a baseline.
+
+---
+
+## ✅ RESOLVED BY PROBING THE ENGINE: MY DIRECTION TABLE WAS OFF BY ONE. THERE IS NO DEFECT.
+
+**Step 1 — ask the engine what `can_fire_from` accepts** (`bots/_probe_firefrom`,
+one turn, stderr since `print()` goes to the replay):
+
+```
+facing=NORTH      accepted=[(0,-1,1), (0,-2,4), (0,-3,9), (0,-4,16)]
+facing=NORTHEAST  accepted=[(1,-1,2), (2,-2,8), (3,-3,18), (4,-4,32)]
+facing=EAST       accepted=[(1,0,1) ... (5,0,25)]
+```
+
+**Exactly the facing ray, truncated at d² ≤ 32 or the map edge. My predicate was
+RIGHT.**
+
+**Step 2 — so the fault was the decode, and it was one line:**
+
+```
+loki9_facing.py (validated 12,759/12,759):  0:(0,0) CENTRE, 1:N, 2:NE, 3:E ...
+mine:                                       0:N, 1:NE, 2:E ...
+```
+
+**I omitted `CENTRE = 0` and shifted every facing one compass step.** Research's
+own validation table had already published the signature: **a one-step rotation
+takes the facing/shot match rate to EXACTLY 0.0000.** I produced 0/287 and read
+it as a bot defect.
+
+**Step 3 — corrected, on the same 528 sentinels across 185 real games:**
+
+| population | n | shootable-on-build |
+|---|---:|---:|
+| ALL our sentinels | 528 | **65.7%** |
+| **`raid.py` population (beyond `main.py`'s reach)** | **287** | **100.0%** |
+| …and in range of their core | 287 | **100.0%** |
+| home (d² to our core ≤ 41) | 201 | 13.9% |
+
+**100.0% — exactly what the guard guarantees by construction. The positive
+control passes perfectly, which is the confirmation that the predicate and the
+decode now agree with the engine.** Home sentinels read 13.9% because they aim
+at threats, which is correct for them.
+
+## ⇒ EVERYTHING BUILT ON THE 0% IS DEAD, AND SO IS THE PLANK
+
+* **There is no sentinel-aiming defect on this population.** Our forward
+  sentinels are shootable-on-build **100%** of the time.
+* **LOKI-17 (first-fit → best-fit) has no defect to fix on this evidence.**
+  Its supersession is withdrawn *and so is the plank.*
+* **LOKI-18's premise is void.** `bots/_v135loki18` must not be measured.
+* **The 50.4% / 67.6% figures are a 45° tolerance on a DIFFERENT population**
+  (Ouroboros/Askar games). They are not comparable to these and no claim should
+  mix them.
+
+## THE LESSON, AND IT IS THE ONE THAT COST THE EVENING
+
+**I had TWO positive controls available before decoding a single game and ran
+NEITHER:**
+1. **`raid.py`'s guard** — a path that builds only after `can_fire_from` passes
+   produces a population that is 100% shootable **by construction**. Any
+   predicate scoring it 0% is falsified by the code.
+2. **`loki9_facing.py`'s DELTA table** — a shipped, validated mapping for the
+   exact field I was decoding, which I re-derived by hand instead of importing.
+
+**And the failure signature was already published in our own records**: a
+one-compass-step rotation reads exactly 0.0000. I hit 0.0000 and diagnosed the
+bot.
+
+**"Can this instrument ever return True?" is a much weaker control than "here is
+a population where it MUST return True."** I ran the weak one (Askar 7.7%, so
+not a constant column) and concluded the instrument was fine.
