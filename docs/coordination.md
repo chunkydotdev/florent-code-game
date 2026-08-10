@@ -22757,3 +22757,51 @@ decision term exists only because the conjunction was written down before it fir
 
 **Nothing in flight from my lane except the standing-context re-derivation. HOLD stands, the
 rollback is one verified command if Magnus overrides, and he has the state from two channels.**
+
+## commit after `e4fe60d` (git time is the authority) — RESEARCH ARM: **COUNTED THE 83% BEFORE ANYONE BUILDS AGAINST IT. The home gate is NOT the difference — the forward gate is.**
+
+The builder read the shipped tree and inferred the late-game forward share is emergent: **two
+independent gates that never see each other**, the home one **reactive** (needs a threat near
+our core *now*) and the forward one **needing only a live raider, 2 harvesters and 40 Ti — all
+MORE available as a game matures.** Their conclusion: *"55.6 → 70.6 → 83.3 is the home gate
+falling silent while the forward gate keeps qualifying."* **They flagged, correctly, that this
+is an inference from code and wanted it counted before anyone builds on it.**
+
+**Counted. Absolute builds per game, our side, gunner+sentinel, forward = `d2_enemy < d2_own`:**
+
+| band | **v102** FWD/g | HOME/g | | **Eir v80-94** FWD/g | HOME/g |
+| --- | ---: | ---: | --- | ---: | ---: |
+| r0-149 | 1.43 | 1.63 | | 1.36 | 1.59 |
+| r150-249 | 0.83 | 0.47 | | 0.18 | 0.46 |
+| r250-399 | 0.87 | 0.15 | | 0.09 | 0.30 |
+| **r400+** | **1.43** | 0.31 | | **0.06** | 0.40 |
+
+**THE MECHANISM IS CONFIRMED AND THE ATTRIBUTION IS NOT.**
+**The home gate goes quiet in BOTH eras at nearly the same rate** — Eir **1.59 → 0.40 (−75%)**,
+v102 **1.63 → 0.31 (−81%)**. **It is common to both and therefore explains nothing about the
+change.**
+**The entire era difference is the FORWARD gate:** Eir **1.36 → 0.06 (−96%, abandons it)**;
+**v102 1.43 → 1.43 (0%, sustains AND returns to its OPENING RATE in the r400+ band).**
+
+**⇒ WHAT CHANGES FOR THE PLANK.** The needed comparison is **not** a restraint on the home
+path, which restrains itself in both eras. **What is missing is a LATE-GAME BRAKE ON THE
+FORWARD GATE** — its three conditions all become *more* satisfiable with time and **nothing
+anywhere opposes them.** **Eir's forward path had some effective brake that v102's does not,
+and that specific difference is what to find in the diff.** **And the r400+ re-acceleration to
+1.43/game is the part to look at first: a dip to 0.83 then a return to opening rate is not a
+monotone drift — something RE-QUALIFIES late, and a brake keyed on round number would miss
+why.**
+
+**TWO LIMITS ON MY OWN COUNT, stated rather than left to be found:**
+1. **My forward/home split is `d2_enemy < d2_own`, which may not match the definition behind
+   the 55.6/70.6/83.3 shares.** **The era CONTRAST is valid regardless — one definition, both
+   eras — but my absolute levels must not be mixed with those shares in one table.**
+2. **I counted OUTCOMES (builds that landed), not GATE FIRINGS.** A gate that fires and fails
+   its economy check leaves no build, **so "the forward gate never stops" is strictly "forward
+   builds never stop"**, and the two differ if the failure rate changed. **That needs the
+   builder's instrumentation, not the corpus** — though the era contrast survives either way,
+   since a failed gate produces no build in both eras.
+
+**This is the shape the whole session has been converging on: a SHARE rose, and the share
+could rise two ways. Counting both terms separated "the denominator fell" from "the numerator
+rose" — and the answer was BOTH, in different bands, with only one of them being the change.**
