@@ -29,6 +29,37 @@ produced it ends.
 
 ---
 
+> # ⚠ HEADLINE CORRECTED BY THE RESEARCH ARM'S AUTOPSY (`be497c6`) — READ THIS FIRST
+>
+> **My framing below — "fast killers plant INSIDE range, we plant at the edge" —
+> is WRONG IN DIRECTION for sentinels, and the truth is a better trick.** Research
+> instrumented every Bisons sentinel in all five games (`bisons-fast-kill-autopsy-2026-08-10.md`):
+>
+> **They plant at MAXIMUM STANDOFF, on a cardinal line.** Chebyshev distance to
+> our core is *"only ever 5, 4 or 2 — never 1, never 3, never diagonal"*, **modal
+> placement Chebyshev 5** — the furthest tile from which a sentinel can still
+> connect. Our own sentinels in those same games sit at **Chebyshev 1 and 2**.
+> **They stand further away than we do, not closer.**
+>
+> **And max standoff is the whole point, because it buys INVULNERABILITY:** a
+> sentinel's line shot **ignores obstacles** and reaches r²=32, while a builder
+> bot's attack requires **orthogonal adjacency**. At Chebyshev 5 nothing of ours
+> can reach them — research's words: *"three out-of-reach sentinels killed our
+> core."* 100% of their damage in all five games was sentinel fire; **zero builder
+> melee.** 3 sentinels × 18 dmg / 2 rounds = **27 HP/round → 500 HP in 18.5
+> rounds.**
+>
+> **This also explains the map-size flatness better than anything above:
+> standoff is 5 tiles regardless of map size.** Only the walk-in scales, and they
+> complete it by r29–31 anyway.
+>
+> **What my table below still contributes** is league-wide breadth (9,874 games vs
+> their 5) and the *gunner* rows, which the autopsy does not cover. **What it must
+> not be read for is the "inside vs edge" story** — my d² figures conflate
+> cardinally-aligned with unaligned placements, and a sentinel's single-tile-wide
+> line shot only connects when aligned. **Alignment, not distance, is the variable
+> I missed.** The basis query below is still live and still worth having.
+
 ## 1. THE MECHANISM IS ONE NUMBER: d²(TURRET → ENEMY CORE)
 
 Median squared distance from the planted turret to the **enemy** core, over all
@@ -50,7 +81,80 @@ sub-100 kills:
 *inside* range — Cookie at d²=8 is 2.8 tiles from the core. **We plant at d²=32,
 exactly at the sentinel's edge, and at d²=16 on gunners.**
 
-> ### ⚠ MEASUREMENT BASIS IS UNSTATED — DO NOT SPEND A PROBE UNTIL IT IS SETTLED
+> # ⚠⚠ RESOLVED, AND MY HEADLINE IS RETRACTED. THE BASIS WAS THE ARTEFACT.
+>
+> The research arm's objection was correct and decisive. **The extractor measured
+> distance to a SINGLE ANCHOR TILE with no 2×2 accounting** — `tools/corpus/replay_events.py:65,69,87-90`,
+> where the replay's map header stores the core as one `Position` and `d2_enemy`
+> silently inherits it.
+>
+> **The footprint was then established empirically, three independent ways, and the
+> anchor is the NW tile:** buildings are never placed on core tiles, leaving a clean
+> 2×2 hole at {(0,0),(+1,0),(0,+1),(+1,+1)} with **1 exception in 19,005 placements**;
+> the builder spawn ring is exactly that block's collar; and core anchors reach x=0
+> but never exceed w−2, an asymmetry only a +x/+y footprint produces. **So the anchor
+> basis OVERSTATES distance for every plant approaching from the east or south — a
+> directional bias, not a constant offset.**
+>
+> ### THE CLAIM I PUBLISHED IS DEAD. RETRACTED IN FULL.
+> **"We are the only high-volume bot whose turrets sit at the edge of or outside
+> their firing envelope" is REFUTED.** On the basis the engine actually uses:
+> - **Our median forward GUNNER plant: d²=9 on the tile basis — INSIDE r²=13.**
+>   It read 16 (outside) on the anchor basis. **The verdict inverts.** Share of our
+>   gunner plants in range: **44.2% → 91.6%.**
+> - **Our median forward SENTINEL plant: d²=25 — INSIDE r²=32.** It read exactly 32
+>   (the edge) on the anchor basis. Share in range: **56.1% → 84.3%.**
+>
+> **No engine probe is needed and none should be spent.** The footprint is settled
+> from the corpus at 19,005:1 and the recomputation is done.
+>
+> ### WHAT SURVIVES, AND IT IS THE PART THAT MATTERED
+> **The ranking is IDENTICAL on both bases.** Sentinel medians order
+> `Cookie < Mimercraft < Banminary < Bisons < Big O < SingleCore < OpenSverige` on
+> anchor *and* on nearest-tile. **We are last — furthest from the enemy core — on
+> both bases, for both turret types.** Cookie is closest on both (d²=8 → **4**, one
+> tile of gap from the footprint).
+>
+> | claim | status |
+> |---|---|
+> | "our forward turrets can't reach the core" | **DEAD — anchor artefact** |
+> | "fast killers plant closer than we do" | **SURVIVES**, identical ranking both bases |
+> | "a sub-100 kill is a forward turret in range of the enemy core" | **SURVIVES and strengthens** — rushers go from 71–96% to **100% in-range** |
+> | "Cookie plants effectively on top of the core" | **STRENGTHENS** — d²=4 |
+>
+> **The lever is HOW CLOSE and HOW MANY, not "are they in range at all".** Our
+> sentinels average **1.3/game at d²=25**; Cookie's **2.3/game at d²=4**;
+> Banminary's **2.5/game at d²=16**.
+>
+> **Residual caveat that cuts the other way:** gunners are line-of-sight and
+> blocked by obstacles (sentinels are not), and the corpus stores no per-plant
+> line of sight — so **91.6% is an UPPER BOUND** on our gunners' effective
+> coverage. The sentinel figure of 84.3% has no such caveat.
+>
+> ### CORPUS DEFECT TO FILE (builder owns `tools/`)
+> **`replay_events.py:65,69,87-90` computes `d2_own`/`d2_enemy` against a single
+> core anchor with no 2×2 correction. EVERY published number sourced from those two
+> columns carries the same directional bias.** Same class as the s26 trap set: **a
+> column whose NAME promises a semantic its CONTENT does not carry** — `d2_enemy`
+> says "distance to the enemy core" and means "distance to the enemy core's
+> north-west tile".
+>
+> ### ⚠ AND AN APPARENT CONFLICT WITH THE BISONS AUTOPSY — FLAGGED, NOT RESOLVED
+> The autopsy (`be497c6`) reports Bisons sentinels at **modal Chebyshev 5** and
+> **ours at Chebyshev 1 and 2** in those five games. This cut reports Bisons
+> sentinel median **d²=16 (Chebyshev 4)** and **ours at d²=25 (Chebyshev 5)** — i.e.
+> *we* plant further. **Both cannot describe the same quantity.**
+> **The likeliest reconciliation, offered as the discriminating question and NOT as
+> an answer: the autopsy's "our Chebyshev 1–2" may be distance to OUR OWN core —
+> home defensive sentinels — while this cut measures distance to the ENEMY core on
+> games we WON.** Different subject, different population (5 losses vs 198 plants in
+> sub-100 wins). **If that is it, the two findings are consistent and the combined
+> story is sharper than either: they build FORWARD sentinels, we build HOME ones.**
+> Whoever owns the autopsy should state which core its Chebyshev column measures
+> from. **This is exactly the wrong-subject family, so it gets checked rather than
+> assumed.**
+
+> ### ⚠ (superseded, kept for the record) MEASUREMENT BASIS WAS UNSTATED
 > **The core is 2×2, so "d²(turret → enemy core)" is ambiguous exactly where it
 > decides the verdict** (research arm, and the objection is load-bearing):
 > distance to the core's **centre/anchor tile** versus to the **nearest of its
