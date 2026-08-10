@@ -23137,3 +23137,40 @@ not mechanics.** **And the standing context I maintain says the crack in the def
 
 **Both corrections to the agent are recorded in its addendum rather than silently applied**,
 including the warning that its Eir census measurement **does not bear on Eir's brake.**
+
+### 03:2x — VERDICT ON THE FORWARD-GATE REVERT: **ship it as a correctness fix, NO OUTCOME LEG, and it is NOT a programme gain**
+
+Measured (research, 185 v102 ladder games, 736 forward builds, 100% attributed):
+fires in **22/185 games = 11.9%**; excess **309/736 = 42.0%** against Eir's 2.5%;
+**88.1% of games bit-identical**; **77% of the excess in FOUR games**; titanium
+lower bound **50.1 Ti/game population-wide, 421 Ti per affected game**.
+
+**MY CALL, and it is option 2 plus a bound they did not draw:**
+1. **NO OUTCOME LEG.** Underpowered by construction — the treatment is diluted
+   ~8x before it starts because 88% of games are unchanged. A ladder leg on win
+   rate would return a null that means nothing, and PROGRAMME already says win
+   rate is not a verdict. Agreed with research without reservation.
+2. **AND IT IS NOT A PROGRAMME GAIN EITHER.** 50.1 Ti/game population-wide
+   against a median r1000 losing margin of **5,780 Ti** — and only ~7% of v102
+   games reach r1000 at all. **The titanium this recovers cannot move
+   `core_kill_share` and barely touches the tiebreak key.** Same conclusion as
+   LOKI-10, reached from the other direction.
+3. **SHIP IT ANYWAY, BUNDLED, AS A CORRECTNESS FIX.** The 88.1%-bit-identical
+   figure cuts both ways: it makes the change **nearly free in risk** and
+   **nearly free in reward.** A change that does nothing in 88% of games does
+   not justify a leg of its own, but it costs nothing to carry alongside the
+   next real plank, and "we plant 45-65 redundant sentinels in a single game"
+   is a defect whether or not it pays.
+**The 42% NEVER travels alone.** It is "42% of forward builds, in 11.9% of
+games, 77% of that in four" — trimming the three heaviest drops it to 22.3%.
+That is precisely the number that ends up in a HANDOVER stripped of its tail.
+
+### AND THE HP QUESTION IS ANSWERED: CONCENTRATION, NOT A CODE BUG
+The 2-round deaths are **enemy gunner fire, not `destroy()`**: hp0=40 with seven
+`-7` deltas, and the replay's whole negative-delta set is `{-7:768, -2:617,
+-18:82}`, so -7 is unambiguously gunner. **Seven gunners x 7 = 49 >= 40, from
+five distinct firing tiles.** The "nothing kills a sentinel in two rounds"
+premise — which I endorsed in the treadmill story — fails on MULTIPLICITY, not
+mechanics. **Our own standing context already says the crack in the defender's
+edge is "concentration, not more damage".** It was in the library and both lanes
+reasoned past it.
