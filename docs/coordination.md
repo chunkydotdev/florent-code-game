@@ -28726,3 +28726,46 @@ Builder-owned; flagged, not built.
 explicitly unchanged. 3b promoting `self_destruct` indistinguishability from
 footnote to WRITE-UP CONSTRAINT is the strongest clause — it pre-forbids the
 sentence a zero would most tempt someone to write.
+
+## 2026-08-10 15:58 CEST — SIDE LANE: **AMENDMENT 4 IS A MISS OF MINE**, plus the design implication it stops short of
+### I CLEARED THIS PREREG AND NEVER ASKED WHO THE CARRIERS WERE
+I audited `PREREG-loki14b` "clean, cleared to fire" (2f7860e): verified the ids
+resolve uniquely against `meta_join`, the estimator was pre-named, the
+interpretable-zero control was present, D17's trigger-vs-mechanism boundary held.
+**I never checked the carriers' RATINGS.** They are **806-1107 against our 1658**
+(gaps -551 to -852). **I verified the FRAME and trusted the PAYLOAD** — which is
+research's own D22 from this morning's wrap, committed by me the same afternoon,
+in the lane whose job is catching it.
+**AND MAGNUS FOUND IT WITH THE PLAINEST POSSIBLE QUESTION** — *"what's vjg? I
+can't see that team."* Three lanes of methodology, four amendments, a fidelity
+gate reproduced to the digit, and the thing that surfaced the confound was
+someone looking at the leaderboard and not recognising a name. **Worth recording
+as a method fact: the cheapest audit available at any moment is asking what a
+name on the page actually refers to.**
+### THE DESIGN IMPLICATION AMENDMENT 4 STOPS SHORT OF
+The prereg's headline is **"THE BOT DOES NOT CHANGE. THE FIXTURE DOES."** — the
+clean-discriminator claim that justifies reading 14b against 14's null.
+**But the fixture moved on TWO CORRELATED AXES, not one: vulnerability AND
+STRENGTH.** LOKI-14 fired at near-peers (panel selected on rating proximity,
+~1500-1700); 14b fires at the ladder's bottom. **So even a CONFIRMED cannot
+attribute the 14-to-14b difference to vulnerability** — the bot held constant,
+but two fixture properties changed together. Amendment 4 correctly constrains
+what a CONFIRMED may be written to MEAN; this is the stronger statement that the
+DISCRIMINATOR itself was never clean, and it should sit beside the bar.
+(Amendment 5's candidate mechanism — vulnerability as a **CODE-STYLE** property,
+a total legality mask — points the same way: code style plausibly correlates
+with bot quality, which is the confound restated, not a rebuttal of it.)
+### THE DISCRIMINATING TEST, handed to research (cheap, archive-only)
+The census already contains the control that decides this: **six teams at
+exactly zero undamaged removals over 722,545 border builder-rounds.**
+**Pull those six teams' RATINGS.**
+* All six high-rated ⇒ vulnerability tracks weakness; the confound is real and
+  a CONFIRMED says "we can kill weak bots", which we already knew.
+* Any of them low-rated with a real denominator ⇒ vulnerability is at least
+  partly INDEPENDENT of quality, the carrier selection survives on the
+  mechanism, and 14b's result generalises further than the ratings suggest.
+**And apply Amendment 1's own distinction to the complement group:** the census's
+`underpowered` rows (LingLing40 5 events/372 rounds, I Stone 4/660,
+farming_200s 1/446) are **INSUFFICIENT, not immune** — a zero on a thin
+denominator is the same non-answer there as it would have been for a carrier.
+Only teams with real border exposure belong in the six.
