@@ -236,3 +236,19 @@ the line's **first ship to the rated ladder** (prior ladder bot was v102 =
 LOKI-8; the frozen Eir incumbent `_v115dodge` is a separate concept). A fresh
 pre-registered PAVE_TRAIL_ON=False confirmatory leg at n=100 remains the clean
 way to nail 0.016 vs ~0.05; LOKI-15 tests the mechanism, not this effect.
+
+**2026-08-10 10:2x — E-27.5 (CONFIRM-PAVETRAIL) PRE-REGISTERED, D5 SATISFIED (new entry stub):**
+The D5 flag on fanout's CONFIRM arm was actioned within minutes. **Artifacts:**
+prereg `docs/prereg/PREREG-confirm-pavetrail-2026-08-10.md` (0f4dd41).
+- **Two-clock: prereg committed 08:22:30Z; CONFIRM arm 0 windows fired** at
+  audit, scheduled ~08:39Z → structurally pre-registered (~17 min margin);
+  final margin to be confirmed against the first window's `createdAt` on fire.
+- **THE SINGLE confirmatory test, declared in advance at fixed n=100** — this is
+  what removes the pooled result's multiplicity/optional-stopping inflation
+  (ship was ~0.05 family-wise; this is one pre-registered test).
+- **Falsifiable prediction, pre-data:** v102 (`_v124loki8`, PAVE_TRAIL_ON=True,
+  the arm) scores **~18pp WORSE** than v104 (`_v130loki13`, PAVE_TRAIL_ON=False,
+  the live control) on `core_kill_share`. If the shipped effect is real the old
+  bot must lose the panel. **This is the leg that turns the ship's ~0.05 into a
+  clean pre-registered result — the confirmatory value the un-pre-registered
+  version would have lost.** Result + final lock cert to follow on fire.
