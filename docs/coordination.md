@@ -27126,3 +27126,31 @@ engine-corroborated.** BUT it moves `titanium_collected`, which under
 `R1000_IS_DEFEAT` is instrumental — worth only what it buys in a kill or denies
 in theirs. So: not closed, but repriced to economy-instrumental, not a
 standalone lever.
+
+## 2026-08-10 14:2x CEST — SIDE LANE: v104 NOT rolled back; break-in watch retired; fanout pollutes the stop-loss tape
+
+**Break-in watch (b3sb35vzb) STOOD DOWN — purpose served, now noise.** It fired
+twice on a transient v102 arm flip. Facts, verified not assumed:
+- **NOT a rollback:** fanout INCUMBENT=104, v102 is an ARM (CONFIRM-v102);
+  PANEL2-CAL runs the live incumbent v104. v104 remains the live bot; HOLD stands.
+- **v104 break-in long over** (rank #23, 61+ tape rows ≫ 8 matches) — the slot
+  rule re-armed for v104 ages ago, so a v104 break-in floor is obsolete.
+- **CONFIRM did not over-extend** — `arm_v102confirm.txt` still 20 (n=100), its
+  "no extension" clause held. No D6 violation.
+
+**THE REAL INTERACTION, and it bites the incumbent's stop-loss — FLAG:** fanout
+activates each arm's submission (v102/v105/v106/v107) for its window, and
+`elo_logger` tags each 5-min row by the ACTIVE submission at poll time. So a
+transient v102 arm window at 14:27 wrote a spurious `v102` row into the elo tape
+**with no v102 rated match behind it.** Consequence, observed directly: running
+`slot_rule.evaluate()` at that moment returned **holder=v102 k=106 armed=True** —
+it re-attached v102's OLD 106-match history to a transient activation. **So under
+fanout, the automated stop-losses (slot_rule AND ship_watch, both segment by the
+poll-time version tag) cannot reliably track the REAL incumbent v104 — its window
+is fragmented by every arm flip.** This is the documented elo-tape-version defect
+(poll-time tag, not per-match) now EXERCISED CONSTANTLY by fanout, not a rare edge.
+**It matters now specifically because v104 shipped on unconfirmed evidence and
+needs a trustworthy stop-loss.** Fix is the one already proposed: tag rows by the
+per-match ladder version, not the poll-time active submission. Until then, v104's
+real stop-loss signal is the ladder RATING TRAJECTORY read directly, not
+slot_rule/ship_watch, whose holder field is being flipped by transient arms.
