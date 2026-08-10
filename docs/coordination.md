@@ -28481,3 +28481,38 @@ output is readable:**
 4. **A library file is not live-game backing (D12).** Prior art may raise or
    lower confidence and re-order the queue; it may not RETIRE the road or
    substitute for the leg. A mined corroboration is not a result.
+
+## 2026-08-10 15:47 CEST — SIDE LANE: LOKI-14b runner (c342ee8) + amendment 2 (3d1c691) audited
+**Runner: clean, and its guards VERIFIED BY ME rather than read off the record.**
+Drove both floor branches independently: 1 carrier -> **exit 2**, refuses with
+the Amendment-1 message; 2 carriers -> passes the floor, reaches the holder
+assert, ABORTs (expected v999 vs live v104), **rolls back and VERIFIES**, fires
+nothing, creates no outfile. So the refusal is attributable to the COUNT, not to
+a script that never runs. **My own first attempt mis-measured this** — I piped
+through `head`, so `$?` was head's status, not the script's; re-run clean.
+(Same family as my zsh word-split earlier: a pipe destroys the exit code, and
+exit codes are the one thing this repo already distrusts.) **Test hygiene: my
+run wrote `corpus/FANOUT_ABORT`; I removed it and none pre-existed — this
+record is its trace.**
+**The design inversion is correct and non-obvious:** panel2 waits out a
+rate-limit because it activates nothing; this leg must NEVER wait because a
+prototype is live, so it rolls back, sleeps the window with the INCUMBENT up,
+and re-activates. **Dose is preserved (5 windows x 5) while exposure stays ~60s
+per window** — copying panel2 here was the plausible mistake and it would have
+extended prototype exposure ~5 min per rejection. Unexercised branches named,
+including HOLDER_ALERT admitted as "accepted on construction, not on evidence".
+**Amendment 1's floor is MECHANISED in the thing that fires** — that moves this
+rule from `attention` to `script` on the enforcement ledger.
+**Amendment 2 = my time-critical guard adopted, ADD-only, self-certified.** It
+adds a line sharper than mine: *"an unreachable bar is exactly when moving it
+feels most reasonable."*
+**ONE SMALL FLAG (convention, one-line fix):** clause 2 requires every amendment
+to carry **its own hash and author time in its header**; Amendment 2 instead says
+they are *recoverable via git log*. Honest and verifiable, but it defers the
+lookup a self-cert exists to prevent. **The stamp it needs, computed:
+`3d1c691`, `2026-08-10T15:44:57+02:00`** (Amendment 1's pattern: stamped by a
+follow-up commit, which is the only way a section can carry its own hash).
+**HANDOVER refresh verified against live** — reads 1658 / +43.0 / k=34 /
+drawdown -40 with the v102 control, matching the tape row exactly, and it
+records that the wrap block was 17 points stale within two hours. My flag
+actioned in full.
