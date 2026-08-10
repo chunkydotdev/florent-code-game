@@ -189,3 +189,25 @@ the git clock is fixed and the fire time is in the durable record.
   null is not read as "economy suppression fails" while the mechanism is unread.
 - **D6 + D16: clean.** Autopsied against its own bar; NULL owned; the ammo link
   I flagged pre-leg is in Bar B; per-cell honesty ("n=5, seat A, not claimed").
+
+**2026-08-10 08:3x — E-27.4 (LOKI-13) MECHANISM BARS READ, VERDICT FINAL (addendum):**
+**BAR A NOT MET → THE LEG ANSWERED NOTHING about economy suppression, as
+pre-committed** (`b3517cc`). Conveyors 33.32 vs bar ≤27 (ratio 0.86 — a **14%**
+cut, not the 30% the bar required). The +18.0pp currency reading is therefore
+**NOT attributable to the flag.** Two-bar discipline vindicated end-to-end: a
+currency null on an unread mechanism would have been misread as "economy
+suppression fails"; it was not.
+- **NEW METHOD FAULT (D16, banked to the changelog): a bar derived from the
+  flag's OWN paired-seed LOCAL action does not transfer to live.** Local cut
+  ~35% (the bar's basis); live cut 14%. Cause: local games run long and
+  uncontested so the pave trail dominates; live games are shorter/contested.
+  **This defeated the exact fix that replaced LOKI-13's original ≤25 bar** — even
+  "derive the bar from what the flag controls" is unsafe if the derivation is
+  local.
+- **MY FLAGGED AMMO LINK: MEASURED AND CLEARED.** Criterion 8 / the pre-leg worry
+  ("conveyors→Ti→ammo→shots→kill, ammo the unmeasured self-defeat link") is
+  REFUTED: conversion 1.10× under treatment, end balance 1.60×, shots 0.98×
+  flat. **Ammo is NOT our kill constraint at this economy level.** This is why
+  ammo was added to Bar B — so the worry could die on data. It did.
+- **SURPRISE (channel): conveyors −14% but `titanium_collected` −38%** — a
+  disproportionate economy hit for a small conveyor cut. Unattributed, recorded.

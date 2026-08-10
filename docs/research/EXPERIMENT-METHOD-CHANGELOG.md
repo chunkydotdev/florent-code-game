@@ -222,3 +222,30 @@ ambiguous does not satisfy it.
 
 **Version bump v3 → v3.1: no rule's substance changed; the table now separates
 "needed" from "works", which is the difference between a protocol and a hope.**
+
+---
+
+## ADDENDUM 2026-08-10 (side lane) — v3.2: LOCAL-DERIVED BARS DO NOT TRANSFER TO LIVE
+
+**New rule, from LOKI-13's mechanism read (`b3517cc`), and it sharpens the
+existing "derive the bar from what the flag controls" rule rather than replacing
+it.** LOKI-13's Bar A was derived from the flag's OWN paired-seed LOCAL action
+(cut ~35%); LIVE the flag cut 14%, missing the bar. **A bar sized on a local run
+is a bar sized on a different fixture** — local games run long and uncontested
+(the pave trail accumulates), live games are short and contested. **Rule: a
+treatment-occurrence / mechanism bar must be sized from a LIVE measurement of the
+same treatment (a prior live window of the flag), or stated as a local estimate
+with the transfer risk named.** This is the same family as "never size on a
+stored figure" — a local paired run is a stored figure from the wrong fixture.
+
+**Firing ledger update:** this is the SECOND production firing in the protocol
+(the first was rule 7's staleness branch). The two-bar structure caught a
+currency null riding an unbound mechanism — the mechanism bar produced its "the
+leg answered nothing" verdict on real data, which is the outcome the split was
+built for. **So "mechanism bar separate from verdict" (created E-26.3) has now
+FIRED, and correctly.** Protocol self-evidence: 2 rules fired of ~19.
+
+**And a rule CONFIRMED-BY-REFUTATION:** "measure the unmeasured causal link"
+(the ammo rule) fired usefully — the pre-leg ammo worry was measured (conversion
+1.10×, shots flat) and KILLED. A rule that lets a worry die on data is working;
+ammo is not our kill constraint at this economy level.
