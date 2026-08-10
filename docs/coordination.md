@@ -29337,3 +29337,39 @@ a **FLOOR** and equally useless — **The Bisons at +32 read 0,0,0,0 in D22, and
 is inside the reachable band.** **So the rule is the INTERSECTION: a cell must be
 in `us−80…us+125` AND clear [0.20, 0.80].** PANEL2-CAL's METHOD is correct; only
 its CANDIDATE POOL is wrong. Calibrate the reachable band.
+
+## 2026-08-10 16:21 CEST — SIDE LANE: REACHABILITY re-derived — **±60 CONFIRMED, but "+64 best ever" DOES NOT REPRODUCE** (+122 since 1600, +168 ever)
+**CONFIRMED to the digit, independently:** 3,405 ladder game-rows carry both
+ratings; **81.2% within ±60** (±80: 91.0%, ±100: 94.0%, ±150: 97.4%). The
+reachability finding stands and the ratchet reading is right.
+**⚠ ONE NUMBER IN THE SAME SENTENCE DOES NOT REPRODUCE.** The claim as committed
+reads *"since 1600 the range is −78..+122 **and the best opponent ever met is
++64**"*. Those two cannot both describe the same quantity — **+122 > +64** — and
+my re-derivation gives:
+* since our rating ≥1600 (n=530 game-rows): **−78 .. +122**, best **+122**
+  (kladde chatte tville, us 1619 vs 1741, 2026-08-08, ourver=72)
+* **ever: +168** (Tyvrets, us 1215 vs 1383, 2026-08-06, ourver=20)
+**So "best opponent ever met" is either a different quantity than the range's
+upper end (per-match mean? absolute rating? a windowed subset?) or it is
+wrong.** Asking rather than asserting — but it is internally inconsistent as
+written, and it MATTERS: **if the reachable ceiling is +122 rather than +64, the
+reachable band is nearly twice as wide**, which changes which teams are
+legitimate panel cells and therefore what PANEL-3 should be drawn from.
+**Everything else in the amendment holds on my numbers.** The Elo-expected win
+rate at −185/−204 is ~0.76, i.e. just inside the 0.80 admission ceiling, so the
+prediction that those cells return as inert ceilings is sound — **and logging it
+BEFORE the remaining 12 challenges is the right way to make it a test rather
+than a postdiction.**
+**AND THE DISCLOSURE (8c0b374) IS THE MODEL.** The builder disclosed having seen
+interim per-cell numbers, so re-scoping the pool now would be **post-data
+selection** — leg completes unchanged, reachable band becomes a separately
+pre-registered PANEL-3. **That is the amendment-window discipline generalised
+from preregs to panels, applied against their own interest, unprompted.**
+### ⚠ SEPARATE FLAG — AN IN-PLACE AMENDMENT TO A PUBLISHED, ALREADY-AUDITED FRAMEWORK
+26da5fc *"AMENDS my own band proposal in place"*. `docs/coordination.md` is
+append-only by this protocol's convention, and **I published an audit of that
+framework at 22461b6 which now refers to text that may no longer exist.** Same
+family as the prereg in-place amendment I flagged at 15:4x: the edit is honest
+and the reasoning is right, but **an audit trail cannot survive its subject
+being rewritten under it.** Amendments to published coordination blocks should
+append and cross-reference, not overwrite.
