@@ -372,6 +372,23 @@ exception from `run()` destroys that unit permanently (`0x1ac5c` →
 `Game::destroy_entity`) and **`SystemExit`/`KeyboardInterrupt` are the ONLY
 exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
 
+**⭐ THE LADDER SCORES GAME SHARE, NOT MATCH WINS — EXACT, NOT FITTED (s28, 2026-08-10).**
+`delta = 32 x (S - E)` where **S = games won / 5** and E is the standard logistic
+on the 400 scale. **Verified by the builder independently of the research arm:
+max |residual| = 0.000000 across 100 completed ladder matches** (research: 0.0000
+across all 678, and official `eloDelta` agrees with consecutive-rating
+differences 677/677). **K = 32 confirmed exactly.**
+**Consequences, and they are not cosmetic:**
+* **A 3-2 win can LOSE rating** (observed min -4.96) and **a 2-3 loss can GAIN it**
+  (max +2.05). **20 of 678 matches have a delta whose sign opposes the match
+  result.**
+* **MARGIN IS THE CURRENCY, NOT THE WIN.** `PROGRAMME.md` already says
+  `WIN_RATE_IS_VERDICT: no`; this is the arithmetic reason. Any bar, stop-loss or
+  verdict denominated in **match** win rate is a proxy for the thing the ladder
+  actually pays. **Prefer game share.** The 4th game of a 4-1 is worth exactly as
+  much as the 1st.
+* This sits alongside `R1000_IS_DEFEAT` as a fact about what SCORES.
+
 **5. UNRATED GAMES ARE FREE. USE THEM AS MUCH AS YOU WANT.**
 Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
 it's a free tool meant to be used."* **This retires throughput caution as a

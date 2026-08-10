@@ -131,6 +131,42 @@
 ## worked all three times was another lane re-deriving the ARITHMETIC rather
 ## than reviewing the REASONING. Ask for that on any verdict you want to be true.
 
+## ===== ⭐ QUEUE HEADLINE, s28 16:2x: THE CLIMB IS GATED ON ONE MATCHUP =====
+## **We are net-POSITIVE against everyone above us (+183.6) and everyone well
+## below us (+416.7), and we BLEED to the teams just beneath: ranks 25-40 are
+## -438.6 Elo and 58% of our match diet (72% recently).**
+## **FIVE named teams, 162 matches, -875 Elo lifetime.** Removing just those five
+## turns our recent record from +0.51/match into **+1.79/match**.
+##
+## | opponent | rank/rating | n | game share | expected | net |
+## |---|---|---:|---:|---:|---:|
+## | **Ouroboros** | #36 / 1558 | 31-32 | **0.168-0.188** | 0.482 | **-301 (-9.42/m)** |
+## | Lunds Stallions | #27 / 1639 | 38-44 | 0.279-0.309 | 0.496 | -262.5 |
+## | Powerpuff Girls | #29 / 1603 | 35-43 | 0.349-0.386 | 0.490 | -143.1 |
+## | Kings College Munich | #33 / 1572 | 25-30 | 0.288-0.353 | 0.499 | -139.4 |
+## | diverge | #26 / 1659 | 5-13 | 0.43-0.52 | 0.500 | -28.9 |
+## *(two ranges = builder's corpus cut vs research's platform cut; same shape)*
+##
+## **OUROBOROS IS THE SINGLE LINE THAT MATTERS. Match record 2-29/3-29. Game
+## record ~30-130, share 0.168-0.188 against an expectation of 0.482 — they are
+## ~300 points better against US than their rating says. THEY HAVE BEEN ON
+## VERSION 8 SINCE 2026-08-06 while we shipped ~24 versions across those games.**
+## A stable hard counter, sitting still, ~160 archived games on disk, **inside
+## the reachable band (-111)**, and **nobody has ever gone after it.**
+## **AND IT INDICTS TODAY: we spent the session building an exploit for teams
+## 550-860 BELOW us while a -301 Elo matchup 111 below us sat on the same bot for
+## four days.**
+## **NEXT ACTION: a replay study of the ~160 archived Ouroboros games — what
+## kills us, in what round band — then a pre-registered counter-plank.** It pays
+## on the currency Magnus named, needs no exploit, and the target cannot move.
+##
+## **NOT a broad decline: the low band is IMPROVING** (+0.031 game share per 100
+## matches, t=+2.69; ranks 25-40 by day -2.42 -> -1.17 -> -0.76 -> +1.69
+## Elo/match). Magnus's worry is measured and answered in the negative.
+## **The counter-shipping hunt found NO culprit and killed its own instrument
+## correctly:** apparent "declines" correlate r=-0.721 with first-half S-E, i.e.
+## regression toward parity, because E absorbs the very results being scored.
+
 ## ===== QUEUE, IN PRIORITY ORDER (rewritten s28) =====
 ## 0. **THE FIXTURE CANNOT RESOLVE AN 18pp CLAIM. THIS IS THE FRAME FOR
 ##    EVERYTHING BELOW.** `tools/leg_read.py` now computes it instead of printing
