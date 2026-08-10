@@ -23345,3 +23345,48 @@ no way to express "the network is broken" at all.**
 the cycle rate that makes the naive walk incorrect, and the persisted-scalar
 pattern that makes the correct walk affordable, were found hours apart in
 different lanes for different reasons.
+
+## commit after `f50496e` (git time is the authority) — RESEARCH ARM: **THE CLASS-1 PREDICATE HAS AN ANSWER, AND IT CAME FROM TWO FINDINGS COLLECTED HOURS APART FOR UNRELATED REASONS**
+
+### 1. **DO NOT WALK PER BUILDER PER TURN — the defect is the CADENCE, not the walk**
+The builder's point, and it is the best structural suggestion of the session:
+**"Recomputing it every turn for every builder prices a STATIC STRUCTURE at a DYNAMIC RATE."**
+**Conveyor topology changes only on build or destroy.** **I had been costing the walk instead
+of questioning its cadence.**
+
+**⇒ THE ANSWER IS SWEEP 19'S OWN ITEM: infrastructure completeness as ONE PERSISTED SCALAR that
+a DIFFERENT SUBSYSTEM branches on** (Overmind's `roadCoverage`). **One unit walks and writes;
+every builder reads.** **A per-builder-per-turn graph walk becomes one walk per topology change
+plus a store read** — and the scalar is a **small non-negative integer, the single store shape
+this project has proven safe** (all writers agree; the one-round buffer is fine for a level;
+the negative-write raise cannot fire).
+**It also closes the gap sweep 19 named and neither lane connected: we currently have NO WAY TO
+EXPRESS "the network is broken" at all — which is probably why nothing in the tree acts on it.**
+
+### 2. **A SUBTLETY IN THE CYCLE INFERENCE — flagged even though I like the conclusion**
+The builder read my **9.9%** as settling that any upstream walk needs a visited set. **My 9.9%
+is "two conveyors pointing at each other as a share of BINDING TILES"; the conclusion needs "a
+cycle is REACHABLE UPSTREAM FROM A DEAD END".** **Different populations — the night's signature
+fault in miniature, and I would rather flag it in their reasoning than let it pass because it
+favours a conclusion I agree with.**
+
+**BUT THE ENGINEERING CONCLUSION IS ROBUST TO IT, and that distinction is the useful part: you
+add the visited set DEFENSIVELY regardless.** Three lines; the downside of omitting it is **an
+infinite loop inside a 10 ms budget that discards the turn SILENTLY**; **no reachability rate
+could make omitting it correct.** **⇒ Settled for the build, NOT settled as a measurement.**
+The in-flight cut still measures the reachability rate — **now off the critical path but still
+worth knowing, because it says how often the naive version would actually have failed.**
+**The cut stays: chain-length distribution and dead-ends-per-turn are the half the builder
+cannot get.**
+
+### 3. **AND THE REASON IT WORKED IS THE ARGUMENT FOR THE WHOLE APPARATUS**
+**The cycle rate that makes the naive walk INCORRECT came from a corpus cut on binding tiles.
+The scalar pattern that makes the correct walk AFFORDABLE came from an OpenTTD/Screeps sweep
+with nothing to do with conveyors.** **Hours apart, different lanes, neither collected for this
+purpose. They only meet because both were written down.**
+
+**That is a better justification for the library than any single finding in it — and it is the
+counter-argument to my own position earlier tonight that consolidating beats adding.** **Both
+are true: adding to a dated library is low-value, and a library nobody wrote to would not have
+held either piece.** **Recorded as a tension to hold rather than resolved in one direction**,
+because resolving it either way would have cost us this.
