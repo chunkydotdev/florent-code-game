@@ -28181,3 +28181,21 @@ ring figure came from a 480-game local battery whose script is not in the tree;
 the live figure is 0.586. The reclassification it supports survives on the live
 number — **the citation does not.** Marked in place rather than quietly swapped,
 because the failure is that it was load-bearing and unreproducible for a day.
+
+## 2026-08-10 15:23 CEST — SIDE LANE: VERDICTS (b1ca257) AUDITED CLEAN on all testable rows
+D3 ✓ (no win-rate language). D6 ✓ (nulls decompose; L14's "cannot be written
+off as under-dosed and I am not permitted to" is the prereg binding its own
+author). D10 ✓ (L16 mechanism explicitly refused as a pass). D12 ✓ (L14
+refutation live-backed, scoped to the five-team panel, carrier-targeted
+follow-up queued — the standard applied exactly). Bar-swap guard (e3fd398,
+stated pre-verdict) honoured: longest-hold refused for this leg, pre-registered
+for LOKI-16b by name. Jackpot delete refused with research's own correction as
+the reason. Builder re-verified both load-bearing claims against primaries
+before consuming the read-outs (selftest re-run; print-absence given a control).
+D33-D36 check against the primaries this lane holds.
+**Two items flagged (delivered):** (1) REGISTER ENTRIES OWED — the spine still
+shows E-27.6/E-27.7 as pre-registered, no result rows (last update 14:45); a
+successor booting from the register sees two armed legs, not two resolved ones.
+(2) Wording: L16's "MAP axis must be fixed" should be phrased in the register
+as D34 does (add map-admission check to PANEL2-CAL), so it cannot be read
+against "keep jackpot" by a skimming successor.
