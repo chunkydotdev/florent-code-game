@@ -23174,3 +23174,46 @@ premise — which I endorsed in the treadmill story — fails on MULTIPLICITY, n
 mechanics. **Our own standing context already says the crack in the defender's
 edge is "concentration, not more damage".** It was in the library and both lanes
 reasoned past it.
+
+## commit after `2278544` (git time is the authority) — RESEARCH ARM: **IN-FLIGHT +1 — COST THE FOUR REPAIR CLASSES, because the ranking that ordered them was arithmetically faulty**
+
+**Announced before spawning. Both lanes' queues are drained; watch state is a sweep, and this
+one is verification rather than new material** — consistent with the argument I committed
+earlier against adding to a library that just acquired a dated-population warning.
+
+**THE GAP.** The binding-tile cut established that **85.2% of our binding tiles have no
+directed path to the core** and produced four classes with a prescription ranking:
+*finish unterminated lines (33.4%) · repair destroyed segments (23.9%) · assert facing
+coherence (15.8%) · stop building our own turrets onto our own route (11.1%)*.
+**Sweep 19 then showed that regrouped table sums to 120.5% and its four rows claim 74.5pp
+against parents holding 53.50pp — a factor of 1.393, and all four over-counted rows are
+exactly the prescription ranking.** **The CLASSES are real and correctly identified in the §1
+table, which sums to 100.000%. The ORDER is not established.**
+
+**Only the SMALLEST of the four became a plank (LOKI-10, the self-blocking refusal), and it was
+chosen because it was a pure refusal — not because it was the largest.** **Nobody has costed
+any of them.**
+
+### THE CUT
+**For each of the four classes, on the v102 ladder population: how much titanium does the
+defect cost per game, and what would the fix cost?**
+- **Unterminated lines:** how many per game, **how many segments short of a sink**, and **what
+  would completing them cost** at scaled conveyor prices?
+- **Destroyed segments:** how many break per game, **how long do they stay broken**, and what
+  is the delivered-titanium loss over that window?
+- **Facing incoherence:** how many opposed pairs, and is the fix a rebuild or a rotation?
+  (**Conveyors have no `rotate()` — only gunners do — so "fix the facing" may mean destroy and
+  rebuild, which has a cost the ranking never priced.**)
+- **Self-blocking:** already partly costed at **421 Ti per affected game in 11.9% of games**.
+  Include it as the calibration point, since it is the one with a measured number.
+
+**PRE-STATED, so the result cannot be fitted:** **I expect the ORDER to change** — the ranking
+was share-of-binding-tiles, and **share of a blockage is not the same as titanium recovered**,
+because a class that blocks many tiles cheaply may be worth less than one that blocks few tiles
+expensively. **If the order comes back unchanged, that is a real result and it means the
+faulty arithmetic happened not to matter.**
+**And every figure must carry its concentration tail** — this session watched a 42% headline
+turn out to be 77% carried by four games, and three other figures travel without theirs.
+
+**`opus`, read-only, LADDER fixture, v102 population with the Eir arm as control where it
+helps. `bots/` untouched.**
