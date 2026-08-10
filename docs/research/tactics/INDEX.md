@@ -228,6 +228,50 @@ of the three**.
 
 | **20** | **PARTIAL OBSERVABILITY — acting on what a unit cannot see.** Re-aimed at the `WHAT LOKI IS` block (never play defence; a r1000 game is a defeat). Three arms: **20A** deception under fog (manufacturing a FALSE belief in an opponent who cannot see us) · **20B** our own fog + the illegal-query hazard (briefed as an ENABLER, not a plank) · **20C** committing to a stale belief. | **SWEPT** (s27). **20A: 41/41 verbatim, 1 cut, 3 near-misses corrected. 20C: 66/66 verbatim, 6 near-misses, 1 self-gloss cut.** **BOTH ARMS REFUTED THEIR OWN LEAD HYPOTHESIS.** Produced a **library correction** (see below). | 2026-08-10 | [20A files](hallucinate-a-target-to-steer-your-own-units.md) · [20C files](retract-the-target-only-on-a-look-not-on-a-clock.md) |
 
+| **21** | **DETECTING AND EXPLOITING AN OPPONENT'S FAILURE STATE** — the unswept half of row 4 (which covered *inducing* timeouts and is HELD). *(A) what observable says an opponent has crashed/stalled (B) what changed once known (C) inducement, reported factually and recommending nothing (D) the FALSE POSITIVE.* | **SWEPT** (s27). **49/49 verbatim**, controls run both ways (nonsense string 0/22 flats; `enemy` 21/22). **Produced a LIBRARY CORRECTION to the norms premise** and a **measured negative**: 22 postmortems, **0 hits** on 13 detection collocations. | 2026-08-10 | [sweep 21 files](every-other-league-resolves-the-failure-and-ours-does-not.md) |
+
+### Sweep 21 (s27) — **THE STRUCTURAL ASYMMETRY IS THE FINDING, AND IT EXPLAINS THE NEGATIVE**
+
+**Nobody imported an answer because in six of seven leagues THE ENGINE RESOLVES THE
+FAILURE and ends the ambiguity.** Halite II *"is ejected"* · Lux S1 *"your agent
+freezes and can no longer submit additional actions"* · Lux S2 *"the agent freezes and
+loses automatically"* · Terminal *"An algo that has 'crashed out' will not play any
+more matches."* · SSCAIT *"A bot loses immediately under these conditions:"* … *"If it
+crashes."* · BASIL *"A crash counts as a loss, unless both bots crash."* · Battlecode
+2021 resumes next round.
+**NOBODY PLAYS ON WITH A HOLE IN THEM. WE DO** — an uncaught exception destroys ONE
+unit and the match continues. **So the detection observable cannot be imported; it has
+to be built from our primitives**, and the negative result (**0 detection hits in 22
+postmortems**) is explained rather than merely reported.
+**⇒ Next step is a CORPUS CUT, not a bot plank:** does an enemy unit's action-idleness
+over N consecutive rounds predict anything, per team, with `self_destruct()` as the
+confound control? Zero bot code, zero risk. The disappearance signature is already
+measured (border hazard 224/10k vs 0 in 2,334,017).
+
+**⛔ NORMS CORRECTION — see [`no-league-bans-inducing-an-opponent-timeout`](no-league-bans-inducing-an-opponent-timeout.md).**
+**Battlesnake prohibits degrading the opponent bot BY NAME**, and the clause reaches
+**engine-and-API-level exploitation** on an **intent** test — narrowing the *"nobody
+bans it"* premise the `cpu-timeout-induction` hold was partly reasoned against.
+**The hold is unchanged. Ours are SILENT, and a tactic no other league bans is not
+thereby permitted here.**
+
+**AND A FINDING ABOUT OUR OWN INSTRUMENTS, from (D).** The documented false positive is
+**an ANALYST'S, not a bot's**: *"the crash-win contaminates your measurement of the
+opponent."* Jay Scott on Steamhammer — **learning bots converged on crashing it with NO
+INTENT**, because the engine scored a win: *"A crash for the opponent is a win, and the
+bot doesn't care how it wins, so if it can learn a plan that makes the opponent crash
+reliably, it will."* It also blinded the victim — *"It can't save learning data after a
+crash."* **Complement-group control in the same source:** *"PurpleWave shut out
+Steamhammer. It didn't learn to make Steamhammer crash because every game was a win for
+it anyway."*
+**And it ran both ways:** *"this Locutus version had a bug when facing certain zergling
+timings, and Steamhammer quickly figured out how to exploit the bug."*
+
+**One vector CLOSED for us:** both of Battlecode's recorded inductions came through the
+**shared message channel** (2009 "little", deliberate; 2020 *confused*, accidental and
+self-reported — *"which caused an ArrayOutOfBoundException and crashed some other bots"*).
+**Our store is TEAM-PRIVATE, so that vector does not exist here.**
+
 ### Sweep 20A (s27) — **THE SEAM IS EMPTY, AND THAT IS THE FINDING**
 
 **My pre-stated expectation was that deception under fog is a rich underexploited
