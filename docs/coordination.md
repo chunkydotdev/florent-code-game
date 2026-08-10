@@ -26056,3 +26056,62 @@ currency and needs the same per-window, per-cell decomposition before it is
 pooled — **but the structural finding (the moving cell is gsxWins, and it is
 unstable across windows) is checkable on either metric and is the thing to check
 first.**
+
+## 2026-08-10 07:0x CEST — SIDE LANE: **THE PANEL HAS FIVE OPPONENTS AND ONLY TWO CARRY INFORMATION.** That is the whole noise story.
+
+Pinned windows only (04:15 onward; the unpinned 03:58 baseline excluded), 20
+matches / 100 games, seats resolved per match from `teamAId`.
+
+### PER-OPPONENT, POOLED OVER BOTH VERSIONS AND BOTH SEATS
+
+| opponent | seat A | seat B | reading |
+|---|---|---|---|
+| **The Bisons** | **0/10** | **0/10** | **PINNED AT FLOOR — 0/20, both seats, both versions** |
+| Leviathan | never played A | **16/20** | near ceiling |
+| CtrlAltDefeat | 8/10 | 7/10 | near ceiling, stable across seats |
+| **I Stone** | never played A | **8/20** | **moves** |
+| **gsxWins** | 4/10 | 2/10 | **moves** |
+
+**Three of the five cells are saturated — two at ceiling, one at floor — and the
+entire window-to-window swing lives in I Stone and gsxWins.** The effective n of
+this testbed for detecting anything is **two cells, not five**. That is D11's
+saturation species arriving in the LIVE fixture, having been diagnosed there for
+the arena.
+
+**The Bisons result is the cleanest datum on the board: 0 for 20, both seats,
+both versions, five pinned maps.** Nothing we have fired touches them. That is
+not noise and it is not a matchup artefact of seat — it is the strongest evidence
+tonight that their method is unanswered by anything in the current tree.
+
+### AND SEAT IS CONFOUNDED WITH OPPONENT, SO NO SEAT ADJUSTMENT IS AVAILABLE
+
+    v102 seat A  1/10 = 10.0%      v102 seat B  23/40 = 57.5%
+    v103 seat A 11/20 = 55.0%      v103 seat B  10/30 = 33.3%
+
+**The apparent seat effect INVERTS between versions — which is the tell that it
+is not a seat effect at all.** `I Stone` and `Leviathan` have **never played seat
+A** in any pinned window, so every seat comparison pools a different opponent
+mix. **v102's "seat A = 10%" is really "the two opponents that landed on seat A
+in that window were the Bisons (0 in every configuration) and gsxWins."**
+
+**Seat and opponent are not crossed in this design**, because the platform
+assigns seats and the panel is only five teams. **So the window-to-window swing
+cannot be decomposed into seat versus noise — and pooling windows with different
+seat mixes silently reweights the opponent mix.** The pinning controls terrain;
+it does not control this, and the addendum's stated residual (`mapSeed`) is the
+smaller of the two.
+
+### CONSEQUENCES, and they change what a leg can be asked to do
+
+1. **Report per-(opponent, seat) cells. Pool only across windows sharing a seat
+   assignment, or state that pooling mixes the opponent weighting.**
+2. **A currency read on this panel is a read on I Stone and gsxWins.** Two
+   saturated ceilings and one saturated floor contribute variance without
+   information.
+3. **The panel needs a replacement for at least the Bisons cell if the aim is to
+   MEASURE** — an opponent at 0/20 tells us we lose, not whether a treatment
+   helped. **Keeping them is right for a different reason** (they are the method
+   we are trying to learn), but they should be scored as a separate question, not
+   as one fifth of a currency denominator.
+4. This is why **+16.0pp at n=25 became +0.0pp at n=50**: the aggregate was one
+   unstable cell out of two live ones, and the second window resampled it.
