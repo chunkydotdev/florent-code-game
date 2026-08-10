@@ -234,11 +234,16 @@ measuring what the census measured.
 
 # AMENDMENT 2 — HOW PRIOR ART MAY AND MAY NOT TOUCH THIS LEG
 
-**SELF-CERT: committed 2026-08-10 ~15:5x CEST, BEFORE any library-mining output
-was read.** Commit hash and author time are recoverable from
-`git log --format="%h %aI" -- <this file>` for the commit that added this
-section; the ordering claim is that it predates the mining results, and the
-mining agents were in flight when it was written.
+**SELF-CERT: commit `3d1c691`, git author time `2026-08-10T15:44:57+02:00`,
+committed BEFORE any library-mining output was read** — the mining agents were
+in flight when it was written.
+
+*(First draft of this header said the hash was "recoverable via `git log`",
+which is honest and verifiable and still WRONG under clause 2 of this file's own
+convention: it defers precisely the lookup a self-cert exists to prevent. Caught
+by the side lane on the convention's second-ever application. A section can only
+carry its own hash via a follow-up commit, which is how Amendment 1 got its
+stamp too — the pattern, not an exception.)*
 
 **This amendment only ADDS constraints, which is the only thing the convention
 in the lock-cert block permits an amendment to do.** It is that clause's first

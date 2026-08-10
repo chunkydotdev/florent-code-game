@@ -208,10 +208,14 @@ def report(games: list[dict], label: str) -> dict:
 def main(argv: list[str]) -> int:
     a_file = b_file = None
     bar = None
+    live_cells: set[str] = set()
     mids: list[str] = []
     i = 0
     while i < len(argv):
-        if argv[i] == "--bar":
+        if argv[i] == "--live-cells":
+            live_cells = {c.strip() for c in argv[i + 1].split(",") if c.strip()}
+            i += 2
+        elif argv[i] == "--bar":
             bar = float(argv[i + 1]) / 100.0; i += 2
         elif argv[i] == "--file":
             a_file = Path(argv[i + 1]); i += 2
@@ -249,6 +253,11 @@ def main(argv: list[str]) -> int:
             print(f"  n {a['n']} vs {b['n']}"
                   + ("   ** DENOMINATORS DIFFER -- not a clean pair **"
                      if a["n"] != b["n"] else ""))
+            # "worst-case": p(1-p)=0.25 is its maximum, so the printed MDE is an
+            # UPPER BOUND -- at a true share of 0.2 the same n resolves ~24.7pp
+            # rather than 30.8pp. For a resolution WARNING that is the right
+            # direction to be wrong, but the label has to say so or someone will
+            # eventually quote it as exact.
             # COMPUTED MDE (s28). This line used to be the hardcoded string
             # "with n~25 per arm this resolves ~20pp at best" -- which printed
             # the SAME sentence at n=25 and at n=150. A constant column
@@ -264,10 +273,31 @@ def main(argv: list[str]) -> int:
                 if arm["live_n"] < arm["n"]:
                     print(f"  {lbl:<10} effective n {arm['live_n']}/{arm['n']}"
                           f"  ({arm['n'] - arm['live_n']} games on inert cells)")
-            n1, n2 = a["live_n"] or a["n"], b["live_n"] or b["n"]
-            mde = 2.802 * math.sqrt(0.25 * (1 / n1 + 1 / n2))
-            print(f"  MDE (80% power, a=0.05, on live cells n={n1}/{n2})"
-                  f"   {mde*100:.1f}pp")
+            def _mde(x, y):
+                return 2.802 * math.sqrt(0.25 * (1 / x + 1 / y))
+
+            mde_all = _mde(a["n"], b["n"])
+            print(f"  MDE worst-case (80% power, a=0.05, ALL cells "
+                  f"n={a['n']}/{b['n']})   {mde_all*100:.1f}pp")
+            if live_cells:
+                n1 = sum(v for k, (sh, v) in a["cells"].items() if k in live_cells) or a["n"]
+                n2 = sum(v for k, (sh, v) in b["cells"].items() if k in live_cells) or b["n"]
+                mde = _mde(n1, n2)
+                print(f"  MDE worst-case (CALIBRATED live cells n={n1}/{n2})"
+                      f"   {mde*100:.1f}pp   [cells supplied via --live-cells]")
+            else:
+                n1, n2 = a["live_n"] or a["n"], b["live_n"] or b["n"]
+                mde = _mde(n1, n2)
+                print(f"  MDE worst-case (live cells n={n1}/{n2})   {mde*100:.1f}pp"
+                      f"   ** POST-HOC: these cells were chosen by THIS leg's own")
+                print("     outcome data. Selecting the denominator on the dependent "
+                      "variable is the same fault this line exists to catch --")
+                print("     a movable cell that happens to read 0.85 here is dropped, "
+                      "an inert one that lands at 0.5 by chance is kept, and the set")
+                print("     is not stable between windows (measured same-bot window "
+                      "noise on this panel is 12pp). Pass --live-cells from")
+                print("     PANEL2-CAL's admission verdict to make it principled; "
+                      "until then quote the ALL-cells figure. **")
             # --bar IS DENOMINATED IN THE PRIMARY CURRENCY (core_kill_share
             # percentage points) AND IN NOTHING ELSE. A plank whose
             # pre-registered bar is a MECHANISM statistic -- LOKI-16's ring
