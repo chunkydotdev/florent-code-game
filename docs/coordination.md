@@ -26204,3 +26204,60 @@ saturation does not touch at all.** Panel saturation destroys the CURRENCY read;
 it leaves the MECHANISM read intact. Rebuilding the panel first would have thrown
 away a mechanism read that is already paid for, and invalidated the n=50 control
 for no gain. **That is the right call and it is not the obvious one.**
+
+### **MY CRASH-INDUCTION BAR WAS SET AT ITS OWN NULL. CAUGHT BY THE SIDE LANE, PRE-COMMITTED BEFORE THE PREREG EXISTS.**
+Sketched bar: *"**>=3/10** undamaged removal within 3 rounds against their
+unconditional first-border-round rate of **947/3,194 = 29.6%**."*
+**3/10 = 30.0%. The base rate is 29.6%.** As worded that is a superiority test
+set at exactly the value it tests against — **3/10 would be indistinguishable
+from doing nothing.** Accepted without reservation.
+**THEIR REFRAME IS RIGHT AND I ADOPT IT:** the throw does not raise the
+per-border-standing hazard, it **causes border-standings that would not otherwise
+have happened.** So the treatment's quantity is **BORDER-STANDING EVENTS CAUSED**,
+and ~30% removal is **CONFIRMATION that the hazard transfers to an INDUCED
+border-standing**, not a failure to beat a control. **It is a consistency test
+against a known hazard, not a superiority test.** That must be stated in the
+prereg or the first reader scores 3/10 as a null, quite reasonably.
+
+### **BUT THE CONSISTENCY TEST CARRIES AN ASSUMPTION THAT IS THE LIKELIEST THING TO FAIL**
+**It assumes an INDUCED border-standing is equivalent to a NATURAL one.** The
+29.6% population is builders that **walked to a border under their own
+navigation** — plausibly while executing a specific routine (paving, routing,
+edge-following) that is what performs the fatal off-map query. **A builder thrown
+there arrives in a different state and may not run that routine at all.**
+**Consequence: any result strictly between 0 and ~30% is AMBIGUOUS under the
+sketched design** — it cannot separate *"the mechanism is weaker than natural"*
+from *"thrown builders are in a different mode"*. And **0/10 does not cleanly
+refute** for the same reason.
+
+### **⇒ BETTER DESIGN, SAME LEG, SAME COST: THROWN-TO-BORDER vs THROWN-TO-INTERIOR**
+Split the throws: half onto **border** tiles, half onto **interior** tiles.
+- **Holds "being thrown" CONSTANT** and varies only the border property, which is
+  the causal variable.
+- **Converts a consistency test into a controlled contrast** — the interior arm is
+  a within-treatment placebo, and per the census it must read **~0** (the field's
+  non-border hazard is 0 in 2,334,017 builder-rounds).
+- **It removes the equivalence assumption entirely**: if thrown builders are in a
+  different mode, BOTH arms are, so the contrast still isolates the border.
+- **And it gives the instrument its own negative control inside the leg**, which
+  is the standard this project already requires of every other instrument.
+This is strictly better than what I sketched and it costs no extra window.
+
+### **OPPONENT-CONDITIONALITY: NAME THE TARGETS BEFORE FIRING — my own data says so**
+**Six teams carry 722,545 border builder-rounds and ZERO events.** If targets are
+not named in advance, *"the mechanism is false"* and *"we threw at immune teams"*
+are **indistinguishable afterwards**. Carriers, in order of measured rate:
+`vjg` 96.13% · `S` 89.06% · `Ship Happens` 87.40% · `Troupe` 84.92% ·
+`Cookie` 50.21% (adversary-locked, p=5.2e-08 — a DIFFERENT mechanism, exclude or
+declare separately) · `Ouroboros` 17.91% (underpowered, "mixed").
+**Do not classify `LingLing40` (5 events), `I Stone` (4), `farming_200s` (1),
+`not adgato` (23)** — not classified, must not be read as null.
+
+### **NORMS QUESTION — NOT MINE, NOT THE SIDE LANE'S, ESCALATED TO MAGNUS**
+Crash-induction sits adjacent to **CPU-timeout induction**, which this library
+holds **pending an organiser ruling** (`tactics/cpu-timeout-induction.md`). The
+side lane's reading — that they are distinct, since a launcher throw is a
+**sanctioned action** and what the opponent's code does on arrival is its own
+business, versus exhausting a **shared clock** — matches mine. **Neither of us is
+authoritative and the prereg must not assume it.** **If Magnus wants both asked
+of the organisers together, this leg waits.**
