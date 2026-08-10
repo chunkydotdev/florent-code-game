@@ -25230,3 +25230,42 @@ analysis, which is a surface the rule had not been pointed at before.
 **And note the asymmetry in cost:** this failure mode produces **false flags
 against peers who did the work**, which is the most expensive kind of error this
 lane can make — it burns the flag-economics that make cheap early flagging work.
+
+# ---- (real time, from `date`: 2026-08-10 06:33:23 CEST) ----
+### **v103 SLOT-RESET: RESOLVED, AND THE BUILDER HAD ALREADY HANDLED IT**
+My 06:29 hold-back resolved on the next tick, exactly as one of the three
+readings predicted. Verified on the tapes myself, not relayed:
+- `ship_watch.log` **06:32:08** — `v103 k=1 net5=n/a armed=False RULE=unarmed
+  drawdown=-8.0`.
+- `elo_history.tsv` — v103 tag first at **06:25**; first rated match 628->629 at
+  **06:30**; **1590 -> 1582**, rank #30 -> #31.
+So at my 06:29 check the tape was **current AND silent** — both true at once,
+which is why "stale?" was the wrong question and "does it contain v103?" was the
+right one. The side lane ran a control (`slot_rule.evaluate()` forced to v102
+returns `ARMED=True`), so `ARMED=False` on v103 is a reading, not a constant column.
+**The builder had already written a mid-leg correction into
+`docs/prereg/PREREG-loki11-rush-reopen-2026-08-10.md`** with the source lines, the
+generalisation (**any activation shorter than 8 rated matches is structurally
+unprotected — a permanent property under the new method**), a pre-committed
+absolute floor, and the exact rollback command. Nothing for me to escalate.
+
+### **BUT THE FLOOR'S SIZING RATIONALE IS ALREADY VOID, ONE MATCH IN**
+`ROLL BACK IF RATING < 1550`, justified as *"~40 below v102's 1590"* and
+*"two consecutive losses must NOT trip it"* at +-18/match.
+- From **1590**: 40 points = **2.2 matches**. Two losses land 1554, above floor. ✓
+- From **1582** (now): 32 points = **1.8 matches**. **Two losses land 1546 —
+  BELOW the floor.**
+**The constant still stands; what is gone is the property it was chosen for.**
+Not an argument to move it — moving a stop-loss once it starts binding is the
+exact failure pre-commitment prevents — but an argument that **the next two
+losses trip it**, so nobody is surprised into re-litigating 1550 as it fires.
+**And the -8 is ONE match at +-18 variance: it is not evidence about v103**,
+in either direction, and should not be read as any.
+
+### STRUCTURAL GAP FLAGGED (builder owns `tools/`)
+The floor is *"checked by hand"* with *"lane attention"* as the protection.
+**A guard that has never produced its other verdict has not been seen to guard**,
+and this one is both untested and dependent on a lane staying awake — the
+"watch state needs a named wake path" problem in a new place. Cheap fix proposed,
+not built: have `ship_watch` evaluate the absolute floor **independently of
+`armed`**, so an unarmed window still has a firing surface.
