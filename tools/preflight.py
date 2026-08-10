@@ -91,6 +91,33 @@ def main() -> int:
         print(f"FAIL  no PREREG.md or README.md in {dev} — write the S0 block "
               f"before the build, not after the battery")
         return 1
+
+    # ------------------------------------------------------------------
+    # IDENTITY, not just STRUCTURE. Added 2026-08-10 after this gate printed
+    # "READY TO SHIP" for bots/_v132loki15 while reading bots/_v124loki8's
+    # pre-registration — inherited when the tree was copied. Every required
+    # field was present and valid, because they were the SOURCE's fields.
+    #
+    # The gate validated the SHAPE of its input and never asked whether the
+    # input was ABOUT THE BOT IT WAS BLESSING. Same instrument family as
+    # ship_watch reading a stalled tape and reporting it as current: an
+    # instrument that confirms the shape of its input but not its identity,
+    # and emits a confident GO either way.
+    #
+    # Emptying each copied PREREG.md by hand is whack-a-mole — the next copy
+    # re-inherits and this gate blesses it again. The check belongs HERE.
+    # ------------------------------------------------------------------
+    dirname = dev.name
+    if dirname not in text:
+        print(f"FAIL  {src.name} never mentions '{dirname}'.")
+        print(f"      A pre-registration that does not name the tree it is filed")
+        print(f"      under is almost certainly INHERITED FROM A COPIED BOT, and")
+        print(f"      this gate would otherwise pass it — every required field is")
+        print(f"      present, because they are the SOURCE bot's fields.")
+        print(f"      Leg preregs live in docs/prereg/ with both clocks; a bot")
+        print(f"      directory is code. Empty this file to a pointer or write")
+        print(f"      the real one.")
+        return 1
     for n in notes:
         print(n)
     if missing:
