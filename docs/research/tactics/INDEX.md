@@ -842,6 +842,29 @@ or from any deliverable to size a plank — ASK WHICH BOT, WHICH POPULATION, AND
 WAS MEASURED ON. If the answer is not "the arm I am about to run", do not size on it. Use it to
 choose WHAT to test, never HOW MUCH to expect.**
 
+### ⚙ AND A SECOND RULE OF THE SAME CLASS: **COST THE FIX, NOT ONLY THE DEFECT**
+
+**Every ranking this project used before 2026-08-10 priced the DEFECT and never the FIX** —
+including the one a shipped plank was selected from. **When the four titanium-delivery repair
+classes were finally costed on both sides, the top class changed sign:**
+
+| | defect | fix | **net** | return |
+| --- | ---: | ---: | ---: | ---: |
+| finish unterminated lines, **aimed** (walk upstream; finish only if the chain reaches a harvester) | 464 | 38 | **+411** | 11.9× |
+| finish unterminated lines, **as an unconditional invariant** | 464 | **681** | **−223** | 0.7× |
+
+**Same idea, opposite sign, and the entire difference is ONE UPSTREAM WALK.**
+**⇒ *"Finish unterminated lines"* is a GOOD PLANK and a BAD RULE — a distinction that cannot
+exist in a defect-only ranking, because the defect is identical in both rows.**
+
+**And the ordering itself is not stable across the two ways of pricing:** by **net titanium**
+the four classes rank 411 / 182 / 130 / 102; by **return on spend** they rank **∞ / 95× / 38× /
+11.9×** — **exactly reversed.** **Neither ordering is wrong; they answer different questions,
+and a ranking that does not say which one it is answering has not ranked anything.**
+
+**PRACTICAL FORM: before proposing a fix, price the fix at the LIVE scale, and report NET and
+RETURN separately. A defect size is a reason to look; it is not a reason to build.**
+
 ### ⚠ TWO FAILURES THE ABOVE FIX DOES **NOT** CATCH — added at the end of the same session, from cases it missed
 
 **The nine above are all "a number true somewhere, used somewhere else", and measuring both
