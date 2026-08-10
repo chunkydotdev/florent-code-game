@@ -33,6 +33,14 @@ commits) and at every verdict/ship/leg event:
 
 ## Standing notes
 
+- **THE UNIFIER (s26, f5c26e2, read first):** most notes below are instances
+  of one fault — a number true SOMEWHERE used SOMEWHERE ELSE (subject,
+  denominator, clock, fixture, era, view, capacity, window). The one
+  structural fix: **measure both sides of a comparison inside the arm being
+  tested; never size anything on a stored figure.** When auditing, before
+  itemising which rider a claim violates, ask the unified question: was every
+  number in this claim measured on the thing the claim is about?
+
 - `tools/gate.py` already refuses off-programme **batteries** (D1/D2 at
   battery time). The watch covers what gate.py cannot see: verdict wording,
   unrated legs, ships, objective drift in docs and plans.
