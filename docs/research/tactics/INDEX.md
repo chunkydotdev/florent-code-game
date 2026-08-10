@@ -199,6 +199,84 @@ exception permanently destroys that unit for the match.
 
 | **19** | **NETWORK CORRECTNESS AND REPAIR** — aimed at *"85.2% of our binding tiles have no directed path to our core; we are BREAKAGE-bound where every big-economy team is SATURATION-bound."* *(A) build-time connectivity invariants (B) repair vs rebuild (C) how does anyone DETECT silent breakage (D) self-interference* | **SWEPT** (s26). **24 files + summary. 228 strings verbatim, 0 unverified.** **My "nobody solved this" prediction is REFUTED** — and it found an **arithmetic fault in the parent cut's regrouped table.** | 2026-08-10 | [sweep 19](2026-08-10-sweep-19.md) |
 
+| **20** | **PARTIAL OBSERVABILITY — acting on what a unit cannot see.** Re-aimed at the `WHAT LOKI IS` block (never play defence; a r1000 game is a defeat). Three arms: **20A** deception under fog (manufacturing a FALSE belief in an opponent who cannot see us) · **20B** our own fog + the illegal-query hazard (briefed as an ENABLER, not a plank) · **20C** committing to a stale belief. | **SWEPT** (s27). **20A: 41/41 verbatim, 1 cut, 3 near-misses corrected. 20C: 66/66 verbatim, 6 near-misses, 1 self-gloss cut.** **BOTH ARMS REFUTED THEIR OWN LEAD HYPOTHESIS.** Produced a **library correction** (see below). | 2026-08-10 | [20A files](hallucinate-a-target-to-steer-your-own-units.md) · [20C files](retract-the-target-only-on-a-look-not-on-a-clock.md) |
+
+### Sweep 20A (s27) — **THE SEAM IS EMPTY, AND THAT IS THE FINDING**
+
+**My pre-stated expectation was that deception under fog is a rich underexploited
+seam. It is refuted QUANTITATIVELY.** Across **22 Battlecode postmortems / 123,745
+words**: `decoy` **0** · `feint` **0** · `deceiv` **0** · `bluff` **0** · `mislead`
+**0** · `disguis` **0** · `fake` **0**. `bait` = 1 (and it is a SELF-bait). `trick`
+= 8, of which **exactly one is opponent-directed.** The IEEE ToG 2018 survey of a
+decade of StarCraft AI competition carries **zero deception vocabulary.**
+
+**Jay Scott states the law, and note the hedge — dropping it converts it into a
+universal, which is one of the near-misses this sweep corrected:**
+> *"**Most** forms of deception do not work against bots, because bots are not smart
+> enough to fall for them. Exploitation of overreactions is a form of deception that
+> often does work, at least against bots that react at all."*
+
+**AND THE ONE BENCHMARK THAT MEASURES A FEINT SCORES OUR DREAM PLAY AT ZERO.**
+HLSMAC scenario `dhls` — *"A small group of our units lures the enemy forces away.
+Our main force attacks the enemy base."* — sits in the EXCLUDED set, and the
+exclusion rule is *"scenarios where all algorithms achieved zero win rates."*
+**All 21 algorithms scored zero, against a victim SCRIPTED to fall for it.**
+(That `dhls` = 0.00 is inferred from caption + exclusion rule, not printed — labelled
+`evidence: inference` in-file.) The other feint scenario `sdjx` is bimodal: **14/21
+at exactly 0.00**, five at 0.72-0.89.
+
+**⇒ FOR THE PROGRAMME: "manipulation" as an OPPONENT-DIRECTED play has no
+precedent and one measured null. The transferable form is INWARD** —
+[`hallucinate-a-target-to-steer-your-own-units`](hallucinate-a-target-to-steer-your-own-units.md):
+BC2023 baited its OWN launchers by writing a synthetic enemy into its own comms so
+existing reactive rules produced the behaviour, **with no new mode**. One store slot.
+Its authors never measured it. **Immunity condition is named** (rooklift, Halite II):
+*"We prepare for what the enemy could do, not what we think he will do. Therefore, it
+cannot really be exploited"* — **deception needs a stored belief to corrupt.**
+**Second prior refuted:** the global cost scale does NOT price decoys out —
+`floor(scale x base)` means the first 34 barriers each cost 3 Ti. **The decoy is
+priced in BUILDER-TURNS, not titanium** (act XOR move), which moves it into tempo.
+
+### Sweep 20C (s27) — **SYMMETRY DOES NOT PIN THE CORE, AND DECAY IS A NULL WITH A MECHANISM**
+
+**⛔ LIBRARY CORRECTION — [`2026-08-09-sweep-5.md`](2026-08-09-sweep-5.md) asserts the
+map is *"symmetric, fully queryable"*. IT IS NOT.** Out-of-vision terrain queries
+**RAISE** (`get_tile_env` / `is_tile_passable` / `get_tile_building_id`), and an
+uncaught raise permanently destroys the unit. This materially changes the economics
+of symmetry elimination: **the cost is WALKING, not CPU.** Independently agrees with
+`../predicate-feasibility-2026-08-10.md` (CPU 15.6 us median vs a 10,000 us budget).
+
+**Round-0 knowledge NEVER pins the enemy core — measured, not asserted.** 1,129
+replays parsed, deduped to **20 unique maps** (population: this repo's archive, not
+the organisers' generator):
+| | result |
+|---|---|
+| true enemy core in {Hrefl, Vrefl, Rot180} | **20/20 (100%)** |
+| distinct candidates = 3 / = 2 / **= 1** | 15/20 · 5/20 · **0/20** |
+| `Rot180` correct | **17/20 (85%)** (Vrefl 25%, Hrefl 15%) |
+| guard: true core shifted by (+3,+5) | **0/20** still among candidates — **the check produces the other verdict** |
+**A WRONG GUESS COSTS ABOUT A SECOND FULL TRAVERSE** — max spread between candidates
+median **24** vs true distance median **24**, equal in 17/18 on a second pass.
+**~24+ rounds of a 250-round window, paid at the FAR end.** Shape: default `Rot180`
+(85% free), walk it, disambiguate en route because the centre is the midpoint anyway.
+
+**DECAY IS A NULL, AND ITS MECHANISM IS WHY.** Decay rules exist elsewhere and their
+tuning parameter is **target mobility** (BC2026 lorem ipsum: *"Cats had 5 rounds, rats
+had 0 (has to be this round), kings have 10"*; BC2023 4 Musketeers: *"since enemies
+move, we reset that information every 100 ... rounds"*). **Run that against our entity
+list: every target we can ATTACK is an immobile building, so N = infinity for all of
+them.** Builder attacks hit buildings only; turrets fire from live vision.
+**⇒ Do not spend store slots on information ageing.** The replacement rule is
+[`retract-the-target-only-on-a-look-not-on-a-clock`](retract-the-target-only-on-a-look-not-on-a-clock.md)
+— Steamhammer and PurpleWave independently retract a remembered enemy **only when the
+tile is currently visible and it is not there**, no age term. PurpleWave: *"Buildings
+that can't move are either in the same place or dead"*, default survival `Forever()`.
+
+**And a measured warning against the obvious "verify before you commit" reflex:**
+BC2020 The High Ground reported the scouting detour NEGATIVE on the majority branch —
+*"This made our rush worse in cases when we would have guessed the right symmetry
+anyway, but more consistent overall."* **Consistency is not our currency.**
+
 ### Sweep 19 (s26) — the negative is real and my prediction of it was still wrong, and (C) has a concrete answer
 
 **(A) IS NOT THIN — four distinct patterns, all in competitive code.** **AdmiralAI dry-runs
