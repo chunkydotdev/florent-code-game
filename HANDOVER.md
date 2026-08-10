@@ -85,52 +85,47 @@
 ##   reasons, turned out to be the same defence.**
 
 
-## ===== QUEUE =====
-## 0a. **OUR ARENA POOL CANNOT MEASURE A DEFENSIVE PLANK. FIX THIS FIRST.**
-##    Measured s26 over 480 games: **not one of our forward sentinels takes one
-##    point of damage**, because the probe family fires 54,264 shots and
-##    **99.83% of them target our CORE**. Survival reads 100.0% at every horizon.
-##    Saturation of a NEW kind — not "the bar cannot resolve" but **"the
-##    mechanism never occurs"**. Any survivability, healing, screening or repair
-##    plank measured on `cad_probe`/`orizon_probe`/the probe family is measuring
-##    an event that does not happen. **A building-attacking opponent in the pool
-##    is a PREREQUISITE for that whole class of work.**
-## 0b. **THE SITING NUMBER, on THIS tree (74,723 gunner-rounds, LOKI-8):**
-##    **79.95% of gunner-rounds have NO ENEMY ON THE RAY AT ALL.** Friendly
-##    blocking is frequent but nearly free — own conveyor in front 48.71% of
-##    rounds, yet only **1.70%** have an enemy on the ray behind a friendly.
-##    **"Never stack gunners" is a 1.7% problem; aiming at nothing is an 80%
-##    one.** LOKI-9 proved facing is NOT the lever (`can_fire_from` permits at
-##    most one facing of 8), so this is a SITING road.
-## 0c. **The collar heal is dead code: 0 of 87,169 heals land on anything but our
-##    own core.** Presence is not the problem (planter adjacent 59.4% at +1);
-##    `eco.py:_heal_core` outranks `_heal_adjacent` at `main.py:411` and
-##    `raid.py` steps 4-5 never fire. REMOVAL-shaped, the only shape that has
-##    worked on this line — but unpriceable until 0a is fixed. Also:
-##    **`builderAttack` is emitted 0 times by either side** in 480 games.
-## 0. **v102 IS TWO POINTS FROM THE STOP-LOSS** (net5 -19.0 vs -21, armed). The
-##    alarm is now real and detached; `cat corpus/SHIP_ALERT` first. On SLOT FREE
-##    the call is roll-to-v101 or hold, and it is Magnus's or the builder's —
-##    the rule permits a swap, it does not order one.
-## 1. ~~`meta_join.tsv` never refreshes on sync~~ **FIXED s26.** It was the only
-##    corpus surface carrying OPPONENT versions and was built ONLY by running
-##    `meta_attrib.py` by hand, so it was the stalest file in `corpus/` while the
-##    drift-watch told every lane to prefer it (`ladder_games`/`join` refresh but
-##    their `oppver` is universally `None`). Now wired into `sync.py`, which the
-##    keeper runs every 600s — ~7s per rebuild, three attribution checks, and a
-##    LOUD refusal if they fail (failure = stale table, the very state this ends).
-##    **Opponent versions now live: 2258/2258.** First thing it answered:
-##    **Powerpuff Girls was v49 in BOTH v102 matches** (4-1 then 1-4, 80 min
-##    apart) — they did NOT ship in between, so the reversal is ours, not theirs.
-##    Askar City went **v82 -> v83 in four minutes** the same evening, so
-##    mid-session opponent ships are real and this surface sees them.
-## 2. **Per-opponent gates, not pooled win rate.** Pooling hides everything:
-##    every >=1750 team kills us at 0-12% while the 1660-1710 band runs 22-38%.
-## 3. **LOKI-7 vs LOKI-8 head to head** — never run; the ship picked the
-##    better-tested arm, not a measured winner.
-## 4. **The long band.** The whole line is tuned and measured on short maps.
-## 5. Reverse-engineer the 1,131 top-tier replays we already hold (documented
-##    path: BC2026 2nd place got its constants exactly this way).
+## ===== QUEUE, IN PRIORITY ORDER (s26 wrap) =====
+## **MAGNUS'S STANDING CORRECTION, 05:3x: "We havent runt any unrated games for
+## 8 hours."** Each leg-skip was individually defensible and collectively the
+## mill stopped producing. **THE OUTPUT STAGE IS A LEG. Fire one early.**
+##
+## 1. **FINISH LOKI-10 — it is one commit from meeting its bar.** The leg fired
+##    (480 games, gate cleared): builds onto a conveyor-faced tile went
+##    **control 58 -> variant 11, an 81% cut, but the bar was ZERO. NOT MET.**
+##    Cause is named: `_feeds_tile` is wired into `_try_counterbattery` ONLY,
+##    while emplacements also come from raid.py (forward sentinel, barriers) and
+##    the launcher. **Call the same predicate at those sites, re-run, re-read.**
+##    **Then add the MIRROR predicate** (prereg addendum 2): refuse a CONVEYOR
+##    whose facing points at an existing friendly turret/barrier — that is
+##    **66 Ti/game against the forward pairs' 36**, so the plank goes from ~35%
+##    of its class to all of it. **No currency claim either way: the prereg
+##    pre-declares the channel closed (93% of v102 games end core_destroyed).**
+## 2. **CLASS-1-AIMED ROUTING — the best-specified unbuilt plank we have.**
+##    +411 Ti/game net, 11.9x return, fires in **59% of games** and least
+##    tail-carried. **The discriminator: walk upstream from a dead end; if the
+##    chain reaches a friendly harvester, finish it.** That predicate is the
+##    entire difference between **+411 and -223** — unconditional completion is
+##    NEGATIVE. **Two things settled for the build: a visited set is MANDATORY
+##    (cycles are ~1 in 10 of our binding tiles), and DO NOT walk per builder
+##    per turn** — topology changes only on build/destroy, so use the
+##    `roadCoverage` shape: one unit walks and writes a small non-negative
+##    integer to the store, every builder reads it. We currently have no way to
+##    express "the network is broken" at all.
+## 3. **THE FORWARD-GATE REVERT.** v102 gates on a LIVE census
+##    (`_live_fwd_guns`) which sits below cap in 96-100% of rounds — **a cap
+##    that is never approached is not a cap.** Eir still uses a CUMULATIVE
+##    per-builder budget and shows a hard cliff at 3. **Revert the LOKI-2b
+##    conversion.** Costed: fires in 11.9% of games, 42% excess share, but
+##    **88.1% of games bit-identical and 77% of the mass in FOUR games** —
+##    so **ship it bundled, never as its own leg.**
+## 4. **CORRECTED FIXTURE VARIANTS — `cad_probe2` / `orizon_probe2`, ALONGSIDE,
+##    NEVER IN PLACE.** Both resolving fixtures carry `best_core or best_any`,
+##    which short-circuits. Editing them in place would make future measurements
+##    incomparable with every banked one, INVISIBLY. Also classify
+##    `ouroboros_probe:1053` as a possible sixth member.
+## 5. **Per-opponent gates** and **the 79.95%-of-gunner-rounds-with-no-enemy-on-
+##    the-ray siting road** (LOKI-9 proved facing is NOT the lever).
 
 ## ===== DO NOT REBUILD — backed by the ORGANISERS' OWN PATCH NOTES =====
 ## **Our engine is a re-tuned descendant of Cambridge Battlecode 2026; its
