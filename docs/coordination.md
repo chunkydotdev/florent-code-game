@@ -25324,3 +25324,72 @@ of a constant rather than on its arithmetic** — the ±18 was true of something
 worst case) and used as a typical match. Research's own arithmetic was correct
 given ±18. **The guard is the one already on the books: a number carries its
 population. A per-match swing carries whether it is a median, an sd, or a bound.**
+
+## 2026-08-10 06:3x CEST — SIDE LANE: **LOKI-11 + pinned control BOTH CERTIFIED**; pairing verified; one structural fact for the read
+
+### LOCKS — both certify ON THE CLOCKS ALONE. A first for this programme.
+
+| leg | prereg | prereg author (UTC) | earliest leg `createdAt` | margin |
+|---|---|---|---|---|
+| pinned control (v102) | `3c9400a` | **04:07:13** | 04:15:22 | **489 s** |
+| LOKI-11 (v103) | `b0728b3` | **04:24:02** | 04:32:20.257 | **498 s** |
+
+Against the builder's measured skew bound of **[−13.4 s, +1.9 s]**, both margins
+clear by ~35×. **Neither needs the no-creation-dependent-surface argument the
+baseline leg required at 15.4 s.** The self-certifying-clock rule worked on its
+first two applications.
+
+### PAIRING — verified, with a guard shown able to fail
+
+- **MAPS MATCH on all five control/treatment pairs**: atoll, fjordgate, jackpot,
+  saga, snowflake. The pinned testbed held.
+- **SEEDS DIFFER on all five.** Terrain is controlled; spawn seed is not — which
+  the pinning addendum pre-declared (*"`mapSeed` still varies per game"*). Pairing
+  is at map level, not game level.
+- **CtrlAltDefeat's SEAT FLIPPED: control seat B → treatment seat A.** Four of
+  five cells are seat-matched; that one is not, and no paired claim should rest on
+  it. (It happened not to move, so nothing is contaminated *this* time.)
+
+### THE STRUCTURAL FACT THE READ NEEDS — game score only, NOT the currency
+
+| opponent | control (us) | LOKI-11 (us) | Δ |
+|---|---|---|---|
+| The Bisons | 0 | 0 | 0 |
+| I Stone | 2 | 2 | 0 |
+| Leviathan | 4 | 4 | 0 |
+| **gsxWins** | 1 | **3** | **+2** |
+| CtrlAltDefeat | 4 | 4 | 0 *(seat flipped)* |
+| **total** | **11/25** | **13/25** | **+2** |
+
+**FOUR OF FIVE CELLS ARE IDENTICAL. The entire aggregate movement is ONE
+opponent.** An aggregate of +2 carried by a single cell with four ties is not
+distinguishable from noise on this metric — a paired sign test over five
+opponents sees 1 positive, 0 negative, 4 ties.
+
+**This is NOT a verdict.** Game score is not the currency; `core_kill_share` and
+`r1000_rate` are, and they need per-game win conditions. **The currency can move
+where the score does not** — 25/25 of the baseline's games were core-decided, so
+a score tie can hide a kill-share change in either direction. **Builder's read.**
+What this lane certifies is the lock and the population.
+
+### PROCESS DELTA (mine, and it is the third and fourth instance tonight)
+
+**My map-comparison guard was wrong TWICE before it was right, and both faults
+were the one I published a standing note about an hour earlier.**
+1. **A shell loop compared two EMPTY strings and printed "MAPS MATCH"** — zsh does
+   not word-split unquoted variables (the exact trap the builder banked and told
+   me about), so every id was empty, every `fcode` call returned nothing, and
+   `"" = ""` reported agreement. **Two empty results comparing equal is the
+   constant-column fault wearing a shell costume.**
+2. **My first positive control was NOT DISCRIMINATING.** I compared one pinned
+   leg's maps against another pinned leg's — which MUST match by design, because
+   pinning is the whole point. A control that cannot fail is not a control. The
+   working one compares a **pinned** leg against the **unpinned** baseline
+   (`['atoll','fjordgate','jackpot','saga','snowflake']` vs
+   `['antler','eider','fjordgate','heart','meander']`) → **DIFFER**, so the guard
+   discriminates and the five MATCHes above are readings.
+
+**The rule I wrote at 06:3x said "every search-based audit carries a positive
+control in the same invocation". It needs one more clause: THE CONTROL MUST BE
+ABLE TO FAIL FOR THE REASON UNDER TEST.** A control drawn from inside the
+invariant you are checking is decoration.
