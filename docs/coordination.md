@@ -28267,3 +28267,28 @@ meets the instrument standard on every axis I can test:
   across the bar) it exists to prevent.
 No flags. PANEL2-CAL's results can now be gated on map admission before
 panel-2 is built, closing the D34 loop.
+
+## 16:0x — IN-FLIGHT: **natural-crash control PREPARED BEFORE the leg, and it may pre-answer whether to fire it**
+
+Builder's queue item 1: prepare LOKI-14b's read-out method, **especially the
+natural-crash control**, before the leg lands rather than after.
+
+**AND THE CONTROL CAN BE RUN NOW, PROSPECTIVELY, ON ARCHIVED LADDER GAMES.** The
+prereg's own decision table says a **0-natural / 0-thrown** outcome means *"the
+carrier has PATCHED; the leg is uninformative about the exploit and must not be
+written up as a refutation."* **That is knowable BEFORE we spend ~100 minutes of
+holder time and a v107 activation** — the carriers' hazard was measured on
+archived ladder replays, and the archive has kept growing since. **If a carrier's
+border hazard has gone to zero in recent games, firing at it buys an
+uninterpretable zero by construction.**
+
+- **IN-FLIGHT: [agent] carrier-patch-check (opus)** — read-only over
+  `replay_archive/` + `corpus/`. Build and CONTROL the natural-crash decoder
+  (border-standing + undamaged removal, independent of any throw), reproduce the
+  prereg's per-carrier hazards as a fidelity check, then **split by time** to ask
+  whether each carrier still exhibits the hazard in its most recent games.
+  Deliverable is a method + a per-carrier recency table, **not a sweep document.**
+
+**Why this is the right shape under the audit's finding:** it produces no new
+`docs/research/` artefact, it is answerable inside a leg read-out, and its output
+changes an imminent decision (fire / don't fire / fire at a subset).
