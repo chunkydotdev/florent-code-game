@@ -1,3 +1,16 @@
+<!-- GENERATED FILE — DO NOT EDIT BY HAND.
+     AGENTS.md is the entry point for non-Claude agents (Codex, Cursor).
+     It was a hand-forked snapshot of CLAUDE.md taken 2026-08-06 and by
+     2026-08-10 it carried TWO rules we had since DISPROVED ON THE ENGINE:
+       line 11: 'titanium delivered to core'  -> the engine emits
+                'titanium_collected', and it EXCLUDES passive income
+       line 23: cost 'rises as you build more of that category' -> scale is
+                ONE GLOBAL ADDITIVE factor; per-category is dead (probed)
+     A fork of a living document is a slow-motion correctness bug: the
+     corrections landed in CLAUDE.md and never reached the agents booting
+     on this file.
+     REGENERATE WITH:  cp CLAUDE.md AGENTS.md  (then re-add this header)
+-->
 # What this game is
 
 Two teams each control a fleet of robots on a rectangular grid (8x8 to 30x30, symmetric by reflection or rotation). A competitor writes a single Python class:
@@ -8,7 +21,7 @@ def run(self, ct: Controller) -> None:
 
 `run()` is called once per round for every living unit on the team (the core and every builder bot, gunner, sentinel, launcher — turrets included). `ct` (a `Controller`) is unit-scoped: all of its methods act on or query relative to "this unit" unless an explicit entity `id` is passed. There is no shared game-object; all state is read through `Controller` getters.
 
-Win condition: destroy the enemy core, or have the better tiebreakers after round 1000 (titanium delivered to core → harvesters alive → titanium stored → coinflip).
+Win condition: destroy the enemy core, or have the better tiebreakers after round 1000 (titanium **collected** → harvesters alive → titanium stored → coinflip). **"collected", not "delivered to core"** — the organisers' primary is internally inconsistent (it uses both phrasings) and the ENGINE settles it: the `cond` string it emits is literally `titanium_collected`. **And key 1 decides almost everything** — over our own 1,055 r1000 games: `titanium_collected` 993 (94.1%), `harvesters` 44 (4.2%), `titanium_stored` 18 (1.7%). **`titanium_collected` EXCLUDES passive income** (engine-probed: a bot that builds no harvester finishes 1000 rounds holding 2,892 Ti of accrued passive with `titanium_collected` = **0** — the same match then tied key 1 at 0-0, tied key 2 at 0-0, and was decided on `titanium_stored`, demonstrating the cascade). **And it counts DELIVERY TO THE CORE, not emission** (engine-probed: one harvester built at r2, alive all game, ~250 stacks' worth emitted over 998 rounds, NO conveyor ever built -> `titanium_collected` = **0**; that match tied key 1 at 0-0 and stopped at key 2, `win_condition: harvesters`). **So the deciding key is harvester throughput THAT REACHES THE CORE — a harvester with no route home is worth zero on it, forever, and any late bank-to-harvester conversion must buy the conveyor line too.** Read this the right way round: **harvesters matter MAXIMALLY, via key 1** — what is nearly worthless is keeping a harvester ALIVE as a countable unit at r1000 (key 2, 4.2%). Cumulative delivery is decisive; late preservation is not. Those are different planks and only the first is worth buying.
 
 Bot file requirements: entry point must be main.py (at the zip root, or inside exactly one top-level directory) containing a top-level `class Player`. Bots are Python only. Auxiliary modules may be imported from other files in the same zip. Each unit gets 10ms CPU time per turn (with a small rolling 5% buffer) — if exceeded, that turn's run() is interrupted and does not resume next turn. This is different from an uncaught exception: if run() raises anything besides that timeout, the engine prints the traceback and permanently destroys that unit — it will never run again for the rest of the match.
 
@@ -20,7 +33,7 @@ Bot file requirements: entry point must be main.py (at the zip root, or inside e
 - Global communication store: 16 integer slots (read_store(index)/write_store(index, value), index 0-15), private per team, shared by all of a team's units. Writes are buffered — visible only from the next round, so every unit sees a consistent snapshot for the whole round.
 - Units vs. buildings: units = core, builder bots, gunners, sentinels, launchers (all except builder bots are also buildings). Buildings = everything except builder bots; they're immovable. Each team may have at most 50 living units at once (GameConstants.MAX_TEAM_UNITS), including the core — check with get_unit_count().
 - Cooldowns: every unit has an action cooldown and (builder bots only) a move cooldown, both nonnegative integers that decrease by 1 at end of round. Actions/movement require cooldown == 0, and acting or moving is mutually exclusive per round for builder bots — doing one blocks the other until next round.
-- Cost scaling: every buildable entity's cost is floor(scale \* base*cost), where scale starts at 1.0 and rises as you build more of that category (conveyors/splitters/barriers +1% each, harvesters +5% each, launchers +10% each, builder bots/gunners/sentinels +20% each — destroying an entity removes its contribution). Use the get*<entity>\_cost() getters rather than hardcoding base costs, since actual cost depends on live scale.
+- Cost scaling: every buildable entity's cost is floor(scale \* base*cost), where scale is **ONE GLOBAL ADDITIVE team factor** (NOT per-category — corrected s26 against the organisers' primary `docs/reference/official-docs.md:1353,1424` and replay-measured at 99.98% of 5,051 clean rounds, `docs/research/gunner-vs-sentinel-pricing-2026-08-09.md`). It starts at 1.0; EVERY build adds to the same factor (conveyor/splitter/barrier +1%, harvester +5%, launcher +10%, builder bot/gunner/sentinel +20%; destruction removes the contribution) and inflates ALL subsequent builds of every type. **CONFIRMED ON THE ENGINE, not only inferred** (`bots/_probe_scale`, s26): spawning ONLY builder bots drove scale 100→120→140→160→180→200% and raised conveyor 3→6, harvester 20→40, launcher 20→40 — categories that were never built — with observed == floor(scale × base) for all 8 entity types in every round. Per-category is dead; additive, not compounding. Consequences: the gunner:sentinel price ratio is pinned 2:3 at every scale; each live builder bot has already added +20% before any turret is bought. Use the get*<entity>\_cost() getters rather than hardcoding base costs, since actual cost depends on live scale.
 - Vision vs. action vs. attack radius: vision = what a unit can sense; the core has an action radius of sqrt(8), used to determine where it may spawn builder bots — no other unit has a radius-based action range: all builder bot actions (build/attack/heal/destroy) require an orthogonally adjacent tile; turrets additionally have an attack range for firing, separate from vision.
 - Resource distribution happens once at end of round, after all units have acted. Conveyors/splitters/harvesters form a purely economic pipeline into the core — turrets do not participate and never hold or accept resources (yours or the enemy's). Resources can still be pushed onto an opposing team's conveyor network or core.
 
@@ -200,3 +213,159 @@ self.\_builder_turn(ct)
 - run() executes per-unit, every round, for every living unit on the team — branch on ct.get_entity_type() at the top, as in the example above.
 - Each unit gets its own 10ms turn budget; avoid unbounded loops or expensive recomputation over the whole map every round if it can be cached via the communication store or kept cheap.
 - Stay consistent with the API and idioms above rather than inventing methods that don't exist in this reference.
+
+# Team standing practices (Magnus, 2026-08-09 — applies to EVERY session in this repo, all lanes)
+
+These override attention drift; the full lane protocol is your boot config
+(`/builder`, `/research`, `/sidelane`) + `docs/two-session-protocol.md`.
+
+- **Use subagents.** Standing permission, no per-session approval: delegate long
+  builds, wide reads, and parallelisable work to keep your own context low.
+  Model ALWAYS explicit on every Agent call — `opus` (judgment) or `sonnet`
+  (mechanical with a validated method), never omitted. Announce in IN-FLIGHT
+  before spawning; relay results before idling — they die with the session.
+- **Push every commit immediately.** Commit-without-push has cost us a
+  54-commit backlog once already.
+- **Timestamps** come from `date` in the same shell call, or a cited git time.
+  Never hand-written, never interpolated.
+- **Instruments:** anything whose output gets published is an instrument —
+  including one-liners and "quick checks". Before trusting one, run it
+  against a case where it MUST come out the other way (corrupt the input,
+  compute the complement-group control, mutation-test the fixture) — per
+  guard, per branch. A check that has never produced the other verdict has
+  not been seen to check; a constant column validates anything; alive in
+  \`ps\` is not verified.
+- **EXIT CODE IS NOT A HEALTH SIGNAL ON THIS PLATFORM.** Measured during the
+  2026-08-10 07:1x outage: `fcode status` **exits 0 while printing `Error: True`
+  to stdout** and returning a body whose `active_submission` is null; `fcode
+  match list` **exits 1** in the same outage. Two failure conventions on one
+  CLI. **A degraded response also parses as valid JSON**, so parseability and
+  non-emptiness are equally worthless as gates. **Gate on the PRESENCE OF THE
+  LOAD-BEARING FIELD** — for activation that is `active_submission` (equivalently
+  the `Active bot:` line in `fcode status`), never on `$?`. This invalidates
+  exit-code checking in every tool we write against `fcode`.
+- **A monitor that reads a file must report that file's FRESHNESS.** When the
+  elo tape stalled in that same outage, `ship_watch` kept printing
+  `rating=1599 armed=True RULE=held` from rows seven minutes stale — **a healthy
+  line and a blind line were byte-identical**. Its own docstring guards an alarm
+  that cannot FIRE; this is an alarm that cannot tell it is BLIND. Emit the age
+  of the newest row, or refuse to print a verdict past ~2 cadences.
+- **Numbers carry subjects.** Copy the denominator, the population, and the
+  clock along with the number. Us-only samples must say so inline.
+- **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
+  ships docs to the platform and is a drift flag.
+- **The iteration mill (Magnus, s25/s26 — the method behind the line's best
+  progress):** iterate bot planks in SMALL steps and test each on UNRATED
+  legs, many iterations per session. Per leg: a one-paragraph pre-registration
+  (treatment bar + falsifier) COMMITTED before leg creation, then fire, then
+  bank what measures and own nulls cheaply — a null is an iteration, not a
+  failure. Analysis exists to feed this mill, not to replace it. Full ladder:
+  `docs/builder-method.md` (S0–S8); prereg template: the obligations doc in
+  `docs/research/`.
+
+# WHAT LOKI IS (Magnus, 2026-08-10 — the definition of the active line)
+
+Loaded in EVERY session because it changes what counts as a win. `PROGRAMME.md`
+is the machine-readable authority and `tools/gate.py` enforces it; this block is
+the directive verbatim so no lane can boot without it.
+
+> *"Loki is the ultimate trickster, playing into other teams by using cheap
+> tricks, manipulation, poisoning and every exploit we can find. Loki plays
+> dirty and is the ultimate weapon at that. We want to destroy the enemy core,
+> never play defence. A r1000 round is a defeat even if we by chance win it.
+> You need to constantly figure out and test new tricks that we can use by
+> building prototypes and putting them against live teams in unrated games —
+> that beats our own calculations every time, and sometimes you find things
+> that surprise you. Those are of fantastic importance for our growth."*
+
+Four consequences, each of which closes a road that was open before it:
+
+1. **A ROUND-1000 GAME IS A DEFEAT, INCLUDING WHEN WE WIN IT.** The tiebreak
+   ladder (`titanium_collected` → harvesters → stored) decides ~94% of r1000
+   games and is now OFF-CURRENCY. Everything above about harvester throughput
+   remains factually true about the ENGINE and is no longer what we optimise.
+   **Economy is instrumental: it buys the kill, it never scores.** Any plank
+   whose only channel is `titanium_collected` is at best a correctness fix.
+2. **NEVER PLAY DEFENCE.** Survival, screening, home turrets, heal-uptime — a
+   plank whose mechanism is any of these is off-programme regardless of what it
+   measures. Turrets are bought to open a lane to the enemy core, not to hold one.
+3. **PROTOTYPES GO AT LIVE TEAMS, NOT AT OUR OWN PROBES.** `bots/*_probe` is a
+   fixture WE authored and it lies in a known direction (five probes share a
+   `best_core or best_any` short-circuit — zero of our forward turrets died in
+   480 arena games against **46.9% on the ladder**). The instrument is
+   **`fcode match unrated <team_id>`**: 5 games, a real team's real bot, no
+   rating at stake. **Constraint, verified on the CLI:** it plays our **ACTIVE
+   submission** — there is no flag for a local tree — so a prototype leg means
+   activating the prototype and paying ~6 rated ladder matches per hour of
+   window. Bounded, recoverable, and the price of the only honest fixture.
+4. **A SURPRISE IS THE POINT, NOT AN ANOMALY.** An unpredicted result from a
+   live-team leg outranks a predicted one from our own arena. Write it down
+   before explaining it away.
+
+**Never balance-changed by the organisers, therefore still open:** launcher
+throw/kidnap, spawn-tile denial, crash-induction. **Retired by this directive:**
+tiebreak-turtle (a r1000 win is a loss).
+
+**Launcher kidnap, read off the ENGINE BINARY** (`docs/research/engine-source-crash-and-launcher-2026-08-10.md`):
+`can_launch` and every `can_*` predicate has **zero vision guards**; **no team
+check** on the picked-up builder; **pickup d² ≤ 2, throw 1 ≤ d² ≤ 26 measured
+from the launcher, 0 ammo, cooldown +=1, position-only mutation.** An uncaught
+exception from `run()` destroys that unit permanently (`0x1ac5c` →
+`Game::destroy_entity`) and **`SystemExit`/`KeyboardInterrupt` are the ONLY
+exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
+
+**5. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
+Magnus, 2026-08-10: *"Every statement needs backup from real games so we need to
+test everything in unrated games before we refute them. We never know if we will
+be surprised by something, because only playing on our chambers is an echo loop.
+Out there is the truth."* `FIXTURE_OF_RECORD` governs how a plank is CONFIRMED;
+**this governs how a road is CLOSED.** Arena batteries, corpus statistics,
+source reads and engine probes may **prioritise** a road. They may not **retire**
+one. **The cost objection is dead, measured:** LOKI-11's true rated cost was
+ZERO rated ladder matches, so the binding constraint is throughput
+(150 games/hour) and not rating. Testing is cheap; the scarce good is which
+plank you spend a window on.
+**CARVE-OUT, so the rule stays usable:** a **rules-level impossibility**
+established on the engine (a conveyor has out-degree 1, so cycles cannot exist;
+`self_destruct` deals 0 damage) is the game's own definition, not an echo loop,
+and no number of live games overturns it. **The echo loop is behavioural
+inference — from opponents WE wrote, or from our own history.** Where a closure
+mixes both, the inference half still needs the live test. That is exactly how
+the barrier-form spawn lock failed: an engine fact about friendly bodies welded
+to an untested inference about enemy behaviour.
+
+**THE SIX ROADS BELOW ARE A QUEUE ORDER, PENDING LIVE TESTS — NOT A STATUS.**
+Re-anchored 2026-08-10 after an audit found **not one of the six rested on a leg
+where we deployed the trick against a live team**; under the standard above,
+REOPEN / REPRICE / CLOSED are all still archive verdicts and none of them has
+retired or revived anything on its own authority. Audited
+2026-08-10 (`docs/research/AUDIT-the-six-refuted-roads-2026-08-10.md`): **not one
+of the six rested on a leg where we deployed the trick against a live team** —
+the bases are our own engine probes, archive statistics, and in one case a
+measurement whose result was never reported. The block as first written also
+contradicted itself, listing spawn-tile denial as open two lines above closing
+two of its three forms. **Every entry now says WHAT was refuted (mechanism or
+price) and on what basis:**
+
+| road | status |
+|---|---|
+| **siphon** | **CLOSED** — off-currency by construction. Stays closed. |
+| **partial spawn starvation** | **REOPEN.** What was refuted is *"partial occupancy is a LOCK"* — a rules fact (the core needs exactly one free tile). The hostile treatment was **never dosed**: max ever seen on an *enemy* ring is 6 of 12, four times in 2,710 sides, and the source table is teams walling **themselves** in. Same primary measures **one hostile body on the ring DOUBLES the 25-round core-death hazard, 2.24%→4.77%, CIs disjoint.** |
+| **barrier-form spawn lock** | **NEVER TESTED as a lock.** The s22 probe was FRIENDLY bodies only; three maps produced no enemy contact. Its "they defend for free" inference was overturned in-repo by our own s24 probe (a parked body makes the tile unspawnable for its owner too). |
+| **CPU denial** | **REOPEN on evidence** — the only statement of the refutation in the repo is one clause in a wrap, with no number, denominator, n, or script output; the 201,469 rows sit in an untracked scratch dir. **Separately, CPU-timeout *induction* is HELD ON NORMS, not evidence** — Magnus owes the organisers one question first. Do not merge the two. |
+| **ore poisoning** | **REPRICE.** The mechanism is engine-confirmed with a control; what died was a PRICE (throughput vs redundancy) computed under the retired currency. Clearing a 3 Ti barrier costs them ~30 Ti and 15 builder-turns — a tempo weapon nobody priced as one. A carve-out both primaries preserved was dropped here: *"barrier an ore tile a forward gun already covers"* remains unmeasured. |
+| **heal-idle staffing** | Reopen on evidence, but **off-programme under PLAY_DEFENCE: never** — do not spend a leg. |
+
+**A price refutation computed under the retired currency is void even if the
+fixture was clean.** So is any survival/screening refutation resolved on
+`orizon`/`cad` — see the fixture warning in point 3 above.
+
+**Also open, verified, and closed by no document:** harvester round-robin is
+**team-blind** — an enemy conveyor adjacent to your harvester is a full-rank
+acceptor, so an unwired harvester beside an enemy belt gives ~half its output
+away (measured 49/49), and titanium is credited to whoever owns the DESTINATION
+core. Distinct from the refuted siphon.
+
+**Closed by construction, do not spend a leg:** the sandbox freezes
+`time.*`/`datetime.now` to a constant, so any strategy keyed to wall-clock or
+submission age cannot work.
