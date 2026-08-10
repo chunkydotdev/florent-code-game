@@ -77,29 +77,73 @@ caveat, and quotes the four Bisons kills as a flat 74/66/92/49.
 | heart | — | **92** | THEM |
 | jackpot | **16×16** | **49** | THEM |
 
-**Map size does not explain the Bisons — it anti-explains them.** Their two
-fastest kills in context land on the two **largest** maps in the pinned set:
-snowflake 26×26 at t=66 and saga 24×24 at t=74. **Distance does not protect us
-from them**, which is exactly the property that makes the lead worth studying
-rather than dismissing as a small-map artifact.
+> **AMENDED 06:1x, same day — I overstated this in the first version and the
+> correction cuts my own claim as well as the addendum's.** I first wrote that
+> map size "anti-explains" the Bisons, and supported it with a table of
+> cross-opponent ratios (2.2× / 6.1×). **Both were wrong.** The research arm
+> refuted the ratio table; checking the size claim properly against the data
+> refuted my own direction. What follows is the corrected read. Anything quoting
+> "2.2×", "6.1×" or "anti-explains" is void.
 
-**And the same 25 games contain paired same-map comparisons in BOTH directions,
-so no cross-population inference is needed:**
+**FIRST, THE ADDENDUM'S OWN CLAIM DOES NOT HOLD ON ITS OWN 25 GAMES.** *"Our kill
+turns range 99–524 and track map size."* Our wins on maps whose size the addendum
+states:
 
-| map | THEM killing US | US killing someone | ratio |
+| map | size | our kill turn |
+|---|---|---|
+| fjordgate | 10×10 | 142 |
+| jackpot | 16×16 | **298** |
+| atoll | 18×18 | 132 |
+| snowflake | 26×26 | 148 |
+
+**Our slowest kill here is on the second-SMALLEST map and our 26×26 kill is
+faster than our 16×16 one.** Kill turn does not track size for us in this sample;
+the claim is asserted, not shown.
+
+**SECOND, MY CORRECTION WAS AN OVERCORRECTION IN THE OPPOSITE DIRECTION.** The
+Bisons, ordered by stated size: jackpot 16×16 → **49**, saga 24×24 → **74**,
+snowflake 26×26 → **66**. That is a *weak positive* trend, not an inverted one.
+Size is not anti-correlated with their speed; it barely matters to it.
+
+**WHAT ACTUALLY HOLDS, and it is still the finding:**
+
+| map | size | turns | winner |
 |---|---|---|---|
-| snowflake | **66** (Bisons) | 148 (vs Leviathan) | **2.2×** |
-| jackpot | **49** (Bisons) | 298 (vs Leviathan) | **6.1×** |
+| jackpot | 16×16 | **49** | THEM |
+| snowflake | 26×26 | **66** | THEM |
+| saga | 24×24 | **74** | THEM |
+| heart | **UNSTATED** | **92** | THEM |
+| moonrise | **UNSTATED** | 99 | US |
 
-Our own kill-turn median across the 14 wins is **151** (n=14; independently
-reproduces the addendum's figure). **On maps we played in the same 25-game block,
-the Bisons kill 2–6× faster than we do.** Available without opening a replay.
+**The Bisons are SIZE-INSENSITIVE and uniformly fast: 4 for 4 under 92 turns
+across maps spanning 16×16 to 26×26.** Our own kill turns in the same block span
+**99–524** with no clean size relationship at all. **Map size costs them almost
+nothing and costs us a great deal** — that asymmetry is real, survives both
+corrections, and is what makes the lead worth studying rather than dismissing as
+a small-map artifact. **Explicit: moonrise and heart are NOT in the pinned set and
+their sizes are unstated — the table is only partially size-controlled and must
+not be read as a size-controlled series.**
 
-**Caveat that must travel with any archive follow-up:** the ~195 Bisons games in
-the corpus are OUR games against them across eras (92.4% of our archive is
-v101-or-earlier per the ⛔ era block), so any pooled "how the Bisons play" rate is
-confounded by which of our bots they faced. **The five games above are the only
-ones against v102.**
+**THIRD, THE CROSS-OPPONENT RATIOS ARE WITHDRAWN.** "Snowflake: 66 (Bisons kill
+us) vs 148 (us kill Leviathan)" shares **only the map**. Attacker AND defender
+both differ, so the ratio conflates three things — Bisons attack fast, we defend
+softly, Leviathan defends hard. My claim that it needed "no cross-population
+inference" was wrong: the inference is there, hidden in the defender. **The clean
+designs are within-Bisons (their fast games vs their own slow ones) for the
+mechanism, and our-games-vs-them for "Bisons property or v102 vulnerability" —
+different populations, different questions, not pooled.** Both are the research
+arm's live cut (`feaf6e3`).
+
+**FOURTH, MY ARCHIVE CAUTION WAS FACTUALLY WRONG AND THE ARCHIVE IS RICHER THAN I
+SAID.** I wrote that the ~195 Bisons rows are our-games across eras and that the
+five unrated games are the only v102 ones. Measured directly from
+`corpus/meta_join.tsv` by the research arm: **140 of the 195 are Bisons vs THIRD
+PARTIES** — so "how do the Bisons play" is answerable with us out of the picture
+entirely, free of the which-of-our-bots confound — and **20 of our 55 are against
+v102, not 5.** Their own play spans 4 versions (v2:75, v4:60, v3:40, v1:20), so
+"is this mechanism in their current version" is checkable rather than assumed.
+**The correct residue of my caution:** a rate pooled over all 55 of OUR games
+mixes five of our bots. The ⛔ era block does not bite on the 140.
 
 ---
 
