@@ -112,3 +112,37 @@ falsify "we build turrets onto lines."** Stated so a null is not over-read.
 **76.0% of v102 games contain ZERO such builds** (95 of 125); dispersion index
 2.01, twice Poisson. **Any per-game outcome metric is dominated by games where
 the treatment was inert.** Report the event counter, not a per-game average.
+
+---
+
+## ADDENDUM 2 — PRE-LEG, still no leg fired. THE PLANK COVERS 35% OF ITS CLASS, NOT 70%.
+
+**Corrected coverage.** The 70% I recorded in addendum 1 was split by **EVENT
+COUNT**. By **TITANIUM it inverts**: the **35 reverse pairs** — a conveyor built
+LATER and aimed at an EXISTING friendly turret — carry **66 Ti/game**, against
+the **64 forward pairs' 36 Ti/game** that this plank actually catches.
+**So LOKI-10 as built reaches ~35% of the self-block mass, not 70%.** Ninth
+denominator-as-view correction of the session and it is on my own plank's
+coverage claim.
+
+**Class-4 (self-blocking) costed over 210 v102 games: 102 Ti/game defect, fix
+cost 0, return infinite, 35/210 games affected, 593 Ti per affected game.**
+
+### THE MIRROR PREDICATE — SPECIFIED, NOT BUILT
+Symmetric to `_feeds_tile`: **before building a CONVEYOR with facing `f` on tile
+`T`, refuse if the tile `T.add(f)` holds a friendly TURRET or BARRIER.** Same
+four-neighbour cost class, same pure-refusal shape, and it needs no new state.
+
+**I am NOT building it tonight and the reason is on the record rather than
+implied:** the conveyor build path is in `eco.py`, which I have not read, and
+this session has produced **four instruments broken IN THE FIXING — none of them
+by carelessness.** A symmetric-looking change into an unread file at 03:30 is
+exactly that pattern. **Whoever picks it up: build both predicates, re-run the
+gate, and the plank goes from a third of its class to all of it.**
+
+### AND THE 421 Ti CALIBRATION POINT DOES NOT APPLY HERE
+It measures **build spend on excess forward turrets**; this plank measures
+**delivery loss from turrets corking routes**. Different quantities. The
+comparable figure is **593 Ti/affected game**, and its similarity to 421 is
+**coincidence**. Recorded because an instruction to reconcile the two would have
+propagated a category error into a plank.
