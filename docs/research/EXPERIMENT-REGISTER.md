@@ -140,3 +140,21 @@ result docs; these anchors are verified, details pending.)
 *Register format itself is an instrument: if an entry cannot be filled from the
 committed record, that is a documentation failure to fix at the NEXT experiment,
 not retroactively invent.*
+
+---
+
+## DATED ADDENDA (append-only)
+
+**2026-08-10 07:4x — input-registration for the queued ring-body leg (research
+arm, via `91b21bc`):** the dose cut (r45 gate, 3.6%→23.1%, p=1.9e-12) enters that
+leg's bar-sizing WITH its header constraints: *claim describes the FIELD; our own
+conversion is unmeasurable from it by construction (4 of 2,508 team-sides); the
+pooled effect is a mixture over a 6× spread; the powered placebo covers "gate is
+spurious", not "gate means different things to different bots".*
+
+**2026-08-10 07:4x — method fault in the fault-tracking apparatus itself
+(research's adversarial pass, `ef97fcb`; adopted as v3.1, `c8bb019`):** the
+changelog counted CREATING incidents as FIRINGS, so the improvement loop could
+not run; the protocol's evidence for itself was ONE production firing (rule 7's
+staleness branch). Filed here because a fault in the fault tracker is the
+category most likely to go unrecorded — which is why this line exists.
