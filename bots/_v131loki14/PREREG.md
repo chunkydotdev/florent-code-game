@@ -23,5 +23,10 @@ half to interior, the interior arm being a within-leg placebo that must read
 ~0. See `DESIGN.md` in this directory and
 `docs/research/engine-source-crash-and-launcher-2026-08-10.md`.
 
-**IT MUST NOT FIRE A LEG UNTIL MAGNUS HAS PUT THE ORGANISERS' NORMS QUESTION.**
-Crash-induction is held on norms, not on evidence.
+**THE NORMS HOLD IS RELEASED. Magnus, 2026-08-10: *"That's the entire reason we
+are named Loki — find these and use them. You are approved to build it."***
+Crash-induction is APPROVED. See `CLAUDE.md` point 0 — the exploit hunt is the
+standing brief, and a norms question goes to the organisers per CLASS, never per
+instance.
+
+Its leg pre-registration is `docs/prereg/PREREG-loki14-crash-induction-2026-08-10.md`.
