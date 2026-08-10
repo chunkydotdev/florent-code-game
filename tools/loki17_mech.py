@@ -76,7 +76,10 @@ def decode(path):
                             if vx*dy - vy*dx != 0: continue
                             if vx*dx + vy*dy <= 0: continue
                             ok = True; break
-                    rows.append((ent.team, d2, ok))
+                    own = ordered[ent.team]
+                    ownfoot = [(own[0]+a, own[1]+b) for a in (0,1) for b in (0,1)]
+                    d2own = min((pos[0]-t[0])**2 + (pos[1]-t[1])**2 for t in ownfoot)
+                    rows.append((ent.team, d2, ok, d2own))
     return rows
 
 

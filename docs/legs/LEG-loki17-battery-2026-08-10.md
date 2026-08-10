@@ -104,3 +104,65 @@ that a plank whose mechanism is unverified never reaches a currency leg. It is
 unverified — for three reasons that are all about the instrument and the
 fixture, none about the plank. **Firing a leg now would spend rate-limited games
 measuring a change I cannot yet show is triggered.**
+
+---
+
+## ⭐ THE METRIC RECONCILIATION LANDED, AND IT CHANGES LOKI-17's PREMISE
+
+The blocker was that my predicate and the baseline's are different statistics.
+Resolved, on 528 sentinels across **185 real platform games** (v104, the live
+bot), with the population split before any claim:
+
+| population | n | shootable-on-build (**exact ray**) | in range |
+|---|---:|---:|---:|
+| ALL our sentinels | 528 | 0.8% | 73.3% |
+| HOME (d² to our core ≤ 41) | 201 | 2.0% | 33.8% |
+| **FORWARD (d² > 41)** | **327** | **0.0%** | **97.6%** |
+| forward AND in range | 319 | **0.0%** | 100% |
+
+**327 forward sentinels, 97.6% of them within range of the enemy core, and NOT
+ONE can fire at it on the round it is built.**
+
+### THE CONTROL, because a 0/319 is exactly the shape I have been wrong about four times today
+
+Same predicate, same games, **opponents' forward sentinels**:
+
+```
+US (v104)               319    0.0%
+The Bisons               71    0.0%
+0033                     64    0.0%
+Askar City               39    7.7%     <- the predicate DOES fire
+Lunds Stallions          14    0.0%
+ALL OPPONENTS POOLED    191    1.6%
+```
+
+**It is not a constant column — Askar reaches 7.7%. But nobody in the population
+is remotely near 85%, including the exemplar the target was derived from.**
+
+### ⇒ WHAT THIS DOES TO THE PLANK, STATED WITHOUT ACTING ON IT
+
+**Amendment 1's baseline (50.4%) and comparator (Askar 67.6%) were computed with
+`loki9_facing.py`'s `ALIGNED_DEG = 45.0` — a FULL COMPASS STEP of tolerance.**
+That is a legitimate *"was it aimed roughly toward the core"* statistic. It is
+**not** `can_fire_from`. Under the engine's own rule for a single-tile-wide line
+shot, the same population reads **0.0% for us and 7.7% for the best opponent.**
+
+**So the pre-registered target of >85% is not "the best real bot plus headroom".
+Under the engine-exact predicate it is ~11x the best value ever observed in this
+population.** The prereg's own Amendment 1 already voided the target's stated
+justification once, when Askar moved 77.9% → 67.6%; **this moves the whole scale
+and the two numbers are not comparable at all.**
+
+**AND THE PREDICATE IS NOT MERELY MY OPINION:** research's facing validation
+established that a gunner's `FireTurret` target lies on its facing ray in
+**12,759 of 12,759** events, with one compass step of rotation taking that to
+**0.0000**. Exact-ray is the validated relationship between facing and what a
+turret can hit.
+
+**NOT DECIDED TONIGHT, deliberately.** Either the primary is restated on the
+engine-exact predicate — which makes it a much harder and much more interesting
+claim, since almost nobody achieves it — or the prereg keeps the 45° statistic
+and says so explicitly. **That is a bar decision on a leg that has not fired,
+and it is exactly the kind of choice this session has repeatedly got wrong by
+making it fast.** It is the first item tomorrow, with both readings on the
+record and neither adopted.
