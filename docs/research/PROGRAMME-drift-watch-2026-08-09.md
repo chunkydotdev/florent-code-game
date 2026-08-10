@@ -52,7 +52,13 @@ commits) and at every verdict/ship/leg event:
   held 51. Same failure both times — our experience of an opponent is not the
   field's. The meta.json expansion (98% attribution, 852 third-party matches)
   makes this fixable rather than a permanent caveat: prefer the full
-  population, or name the us-only denominator inline. **Freshness rider
+  population, or name the us-only denominator inline. **ERA rider (s26/s27,
+  ea14adf): "our archive" is an EIR archive — 92.4% of attributed our-games
+  are v101-or-earlier, so any "we/our bot" figure pooled over it describes
+  the dead bot unless recomputed on the live subset. FOUR standing-context
+  instruments INVERT on v102 (ammo conversion, late turret production,
+  banking, +1). A claim about the live tree names its era subset the same
+  way it names its population.** **Freshness rider
   (s26, from research after the meta_join incident): "prefer the attributed
   population" pointed for ~7h at a table that did not reach the current era —
   the guidance was right and the surface was silently behind it. Before using
