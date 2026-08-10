@@ -166,3 +166,64 @@ and says so explicitly. **That is a bar decision on a leg that has not fired,
 and it is exactly the kind of choice this session has repeatedly got wrong by
 making it fast.** It is the first item tomorrow, with both readings on the
 record and neither adopted.
+
+---
+
+## ⛔ RETRACTION: THE 0/319 IS MY PREDICATE, NOT A DEFECT. THE CODE IS THE POSITIVE CONTROL I NEVER RAN.
+
+The side lane put the fork precisely: 0 shootable out of 319 admits **(a)** the
+`raid.py` path builds ~none of them, or **(b)** it builds plenty and its guard is
+not delivering. I claimed (a) and pre-registered LOKI-18 on it. **Settled by a
+reach argument, and the answer is neither:**
+
+`main.py:574` requires the threat within `HUNT_BAND_DSQ = 41` of **our own**
+core, and the turret within sentinel range (32) of that threat. **So its
+placements cannot exceed d² ≈ 145 from our own core.**
+
+```
+main.py's maximum possible d2 from our own core:   145
+sentinels BEYOND that reach:                       287 / 528
+  ...in range of the enemy core:                   287
+  ...shootable at the enemy core (my predicate):     0
+```
+
+**Those 287 can only have come from `raid.py`** — there are exactly two
+`build_sentinel` call sites — **and `raid.py` builds ONLY after
+`ct.can_fire_from(bp, facing, SENTINEL, core_tile)` returns True, using that
+exact facing.**
+
+**⇒ Every one of those 287 satisfied `can_fire_from` AT BUILD TIME, by
+construction. My predicate scores them 0/287. Therefore MY PREDICATE IS NOT
+`can_fire_from`, and the 0.0% is an artefact of it.**
+
+### What this retracts
+
+* **The "0/319 forward sentinels cannot fire" finding — WITHDRAWN.** It measured
+  my exact-ray rule, not the engine's.
+* **LOKI-18's premise — INVALID.** Its 0.0% baseline and its "aim at the core,
+  not the threat" story both rest on it. The prereg stands as a record; **the
+  plank does not, and its prototype (`bots/_v135loki18`) must not be measured
+  against that baseline.**
+* **LOKI-17's supersession — WITHDRAWN.** It was retired for editing a
+  "near-dead" path. That path is the opposite of dead: **it builds 287 of our
+  528 sentinels.** LOKI-17 returns to unresolved, not retired.
+
+### The lesson, and it is the sharpest of the session
+
+**`raid.py`'s guard was a POSITIVE CONTROL sitting in the codebase the whole
+time.** A path that builds only after `can_fire_from` passes produces a
+population that is shootable **by construction** — so any predicate scoring that
+population at 0% is falsified by the code, with no replay needed. **I had a
+control available before I decoded a single game and did not run it**, then
+built a prototype and pre-registered a plank on the uncontrolled number.
+
+This is the same failure as the constant-column family, one level up: I checked
+whether my predicate could return True *at all* (Askar 7.7%, so not a constant),
+and never checked it against a population **known** to be positive. **"It can
+fire" is a weaker control than "it must fire here."**
+
+**STOP POINT. No further build tonight.** The open question for tomorrow is
+narrow and well-posed: **what does `can_fire_from` actually accept for a
+SENTINEL?** Read it off the engine binary, or probe it directly with
+`can_fire_from` over a grid — the API is callable in a local match. Until that
+is answered, no sentinel-aiming plank has a baseline.
