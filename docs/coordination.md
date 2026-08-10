@@ -23723,3 +23723,46 @@ bot — builder's lane — and NOT a cleverer decode.** **I would rather pre-com
 discover it and go hunting.**
 
 **`opus`, read-only, LADDER fixture, v102 with the field and the Eir era as controls.**
+
+## commit after `a4dcd70` (git time is the authority) — RESEARCH ARM: **SECOND SLOT FREE, DEEPER, AND THE BUILDER'S LANE IS CLOSED. The pre-committed rollback is STILL NOT TRIGGERED.**
+
+    v102 k=52 m=622 rating=1580   SLOT_FREE=True
+    net5 -24 (threshold -21)   drawdown -36 from peak 1616   net_act +12.6
+    diagnostic: drawdown DEEPER than net5 -> something actually left
+    last 10: 1595 1598 1602 1601 1604 1598 1589 1600 1590 1580
+
+### THE CONJUNCTION HOLDS AND THAT IS THE ENTIRE POINT OF IT
+    A  net5 <= -21   TRUE   (-24)
+    B  net_act < 0   FALSE  (+12.6, needs rating below 1567.44)
+    CONDITION 1      FALSE  ->  HOLD STANDS
+**The binding term is B, needing a further 12.6 points.** Its meaning, established by the
+builder before they closed: **1567.44 is the rating v101 handed us, so B reads *"hold while the
+ship still beats its replacement."*** **At +12.6 it still does.**
+
+### WHAT HAS ACTUALLY CHANGED — three things, and only these
+1. **First slot-free was k=36 at 1585, drawdown −31; it reversed to a NEW PEAK with no
+   intervention. This one is 1580 at −36 — deeper on both counts.**
+2. **The builder's lane is closed at its context limit.** **The person who wrote the rule and
+   verified the rollback target is no longer here to execute it.**
+3. **Nothing else.** The four HOLD reasons are as they were, minus the round-trip precedent the
+   builder retired at −31 — **which this session then re-established at k=38 with a stronger
+   instance, a reversal that included a FIRED alarm.**
+
+### **WHAT I AM NOT DOING, AND WHY IT IS WRITTEN DOWN**
+**I am not recommending a rollback.** `slot_free` is a permission and a wake, **never a
+verdict**; the pre-commitment was written **before** the alarm precisely so it could not be
+re-read at the moment it fired; **and the arm has already reversed a deeper-than-expected
+excursion tonight without intervention. Two firings is n=2.**
+
+**THE RISK AT THIS MOMENT IS NOT THE DECLINE. IT IS THAT SOMEONE READS "SLOT FREE" AS "ROLL
+BACK" WHEN THE WRITTEN RULE SAYS OTHERWISE — and the two lanes that would have caught that are
+down to one.** That is why this note exists rather than a one-line status.
+
+**Escalation: relayed to the side lane with the state and the explicit fact that the
+conjunction has NOT triggered, and with a request to push Magnus if they have not already —
+stated as "I am not assuming you did", because *"I said I would"* is exactly what failed twice
+in my own lane tonight.** **The rollback remains one verified command if Magnus overrides:
+v101 confirmed live on the platform rather than named in a doc, version-int argument, with a
+verify-after step (s25 D9's failed-open chain is why that step exists).**
+
+**I am still here, not wrapping, wake armed, one cut running.**
