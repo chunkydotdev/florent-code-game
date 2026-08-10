@@ -420,3 +420,53 @@ Verdict typed by the builder (`b1ca257`); lock cert two-clock clean (prereg
 * **Instrument consequence, D35:** the prereg's stated method (decode the arm
   from our own `print()` stream) **was not executable** — platform replays strip
   stdout, 30,664/30,664. `CLAUDE.md` corrected.
+
+---
+
+**2026-08-10 18:0x — PANEL-3 (reachable-band calibration) RESULT: PANEL PRODUCED, 4 OF 6 ADMITTED — WITH A MAP CONFOUND THAT THREATENS IT.**
+Prereg `PREREG-panel3-reachable-band-2026-08-10.md` (`90875ef`, before first
+challenge). **37 challenges / 185 games, v104 live incumbent, ZERO rated
+exposure, zero activations.** All cells reached the pre-registered n>=25.
+
+| cell | gap | core_kill_share | verdict |
+|---|---:|---:|---|
+| Lunds Stallions | -30 | 21/30 = **70.0%** | **ADMITTED** |
+| Askar City | +18 | 16/30 = **53.3%** | **ADMITTED** |
+| farming_200s | +35 | 10/35 = **28.6%** | **ADMITTED** |
+| Powered by SmartFridge | +5 | 8/30 = **26.7%** | **ADMITTED** |
+| 0033 | +111 | 6/35 = 17.1% | **FLOOR** |
+| The Bisons | +41 | 2/25 = **8.0%** | **FLOOR** |
+
+**Effective n 125/185 = 68%.** Four admitted clears the prereg's floor of three,
+so **the panel is produced.** Falsifier 1 did NOT fire (not all six landed in
+band), so the reachability axis was real.
+
+**THE BISONS RE-DERIVATION, PRE-COMMITTED TWO WAYS: <0.20 => D22 STANDS.**
+8.0% at the full n=25. The morning's floor verdict was **not** a small-sample
+artefact. **But see the confound below before treating that as settled** — D22's
+verdict and this one rest on the same unrated fixture.
+
+**⛔ THE FINDING THAT OUTRANKS THE CALIBRATION: THE PINNED MAP SET MAY BE THE
+CONFOUND.** Same bot (v104), same opponent, opposite results:
+* **unrated, our 5 pinned maps: 2/25 (8%)** — they core us in 23 of 25
+* **ladder, ourver=104: 5/10 (50%)**
+
+Per map vs The Bisons: **atoll 0/5 · fjordgate 0/5 · saga 0/5 · snowflake 0/5 ·
+jackpot 2/5.** **We lose every game on four of the five pinned maps and win only
+on jackpot**, while the ladder rotates all 15.
+**Two readings, not yet separated:** (a) the pinned set is unrepresentative, so
+the panel measures MAPS rather than opponents; (b) the ladder sample is 10 games
+and wide. **We fixed the panel's OPPONENT axis today and its MAP axis is now the
+suspect one — the same defect shape, one column over.**
+
+**AND THE PANEL IS STILL A LARGE IMPROVEMENT.** Against the OLD panel we killed
+**54-74%** on 4 of 5 cells; against the neighbours the ladder actually pairs us
+with, **0033 cores us in 83% of games and The Bisons in 92%.** The old fixture
+was populated with teams we beat, which is why two separate 18pp claims died on
+it: we were measuring improvements against opponents that could not show one.
+
+**ARTEFACT PRODUCED (the point of the leg):** admitted set =
+`Lunds Stallions, Askar City, farming_200s, Powered by SmartFridge` — pass to
+`leg_read.py --live-cells` on every subsequent leg, so no leg derives its own
+live-cell denominator from its own outcomes.
+**NEXT: resolve the map confound before this panel is used for a verdict.**

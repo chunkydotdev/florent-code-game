@@ -1,5 +1,23 @@
 # LIVE: **v104 = "Loki v2"**. s28 state, 2026-08-10 17:31 CEST (15:31Z).
 
+## ===== ⛔ NO UNRATED RUNNERS ARE FIRING. Magnus called it at 18:0x. =====
+##   Verified: no `panel3_cal`/`panel2_cal`/`loki14b`/`fanout` processes.
+##   Holder **v104**, **1659, rank #26/116**, 697 matches. Budget 0/5 spent.
+##   No `FANOUT_ABORT`, no `HOLDER_ALERT`.
+##
+## ===== PANEL-3 COMPLETE: 4 OF 6 ADMITTED, AND A MAP CONFOUND THAT OUTRANKS IT
+##   Admitted (use with `leg_read.py --live-cells`): **Lunds Stallions 70.0% ·
+##   Askar City 53.3% · farming_200s 28.6% · SmartFridge 26.7%.**
+##   Floors: **0033 17.1% · The Bisons 8.0%.** Effective n 125/185 = 68%.
+##   **The Bisons re-derivation resolved at the full n=25: FLOOR, D22 STANDS.**
+##   **⛔ BUT: same bot, same opponent, opposite results — unrated on our 5
+##   pinned maps 2/25 (8%), LADDER ourver=104 5/10 (50%). Per map vs Bisons:
+##   atoll 0/5, fjordgate 0/5, saga 0/5, snowflake 0/5, jackpot 2/5.**
+##   **We lose every game on 4 of 5 pinned maps; the ladder rotates all 15.**
+##   Either the pinned set is unrepresentative (the panel measures MAPS, not
+##   opponents) or the 10-game ladder sample is lucky. **NOT SEPARATED.**
+##   **Resolve the map axis before this panel decides anything.**
+##
 ## ===== s28 STATE, READ LIVE OFF THE PLATFORM =====
 ##   **v104 live · 1641 · rank #27/116 · 685 matches · last-10 6W-4L.**
 ##   `slot_rule`: `k=39 net5=-17.0 armed=True slot_free=False` -> **HOLD**, and
