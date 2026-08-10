@@ -1,6 +1,24 @@
 # LIVE: **v104 = "Loki v2"**. s28 state, 2026-08-10 17:31 CEST (15:31Z).
 
-## ===== ⛔ NO UNRATED RUNNERS ARE FIRING. Magnus called it at 18:0x. =====
+## ===== ⭐ OVERNIGHT: START THIS ONE COMMAND, THEN NOTHING ELSE =====
+##   ```
+##   cd /Users/junghard/Projects/Work/florent-code-game
+##   nohup zsh tools/night_collector.sh 40 >> scratchpad/night_run.log 2>&1 &
+##   ```
+##   **NON-ACTIVATING** — zero `submission activate` calls (grep-verified), so it
+##   cannot leak a prototype and there is NOTHING TO ROLL BACK. Asserts the
+##   holder before every challenge; abort branch mutation-tested on this file
+##   (`docs/legs/LEG-night-collector-2026-08-10.md`).
+##   **VERIFY 60s AFTER LAUNCH:** `.venv/bin/fcode status` -> `Active bot: v104`
+##   and `tail -2 scratchpad/night_run.log` shows a `fired n/9` line.
+##   Targets the **bleed band** (ranks ~25-40, us-110..us+15, 9 cells) — the
+##   -438.6 Elo across 58% of our diet that has **no mechanism attached**.
+##   ~15 challenges/hour => ~90 challenges / 450 games over six hours.
+##   **⚠ MORNING: STOP IT AND WAIT ONE FULL 20-MINUTE WINDOW BEFORE ANY LEG.**
+##   Rejected attempts count against the limit; `rate_budget.py` must read
+##   `a slot is free NOW` AFTER the collector is stopped.
+##
+## ===== ⛔ NO OTHER UNRATED RUNNER SHOULD BE FIRING OVERNIGHT =====
 ##   Verified: no `panel3_cal`/`panel2_cal`/`loki14b`/`fanout` processes.
 ##   Holder **v104**, **1659, rank #26/116**, 697 matches. Budget 0/5 spent.
 ##   No `FANOUT_ABORT`, no `HOLDER_ALERT`.

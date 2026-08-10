@@ -12,7 +12,11 @@
 # every challenge (s27 D28: an arm that activates nothing must still assert what
 # is active, or it fires into whatever the previous arm left behind).
 # Both branches of that guard are mutation-tested ON THIS FILE, not inherited:
-#   docs/legs/LEG-panel3-calibration-2026-08-10.md (abort branch run at
+#   docs/legs/LEG-night-collector-2026-08-10.md (abort branch run at
+#   20:21:00Z with INCUMBENT=999 -> ABORT, exit 1, zero challenges fired).
+#   The header of this file inherited PANEL-3's citation when it was copied,
+#   and tools/claim_check.py flagged it within minutes of the copy -- the
+#   exact defect that checker was built for, caught on its author.
 #   15:46:09Z with INCUMBENT=999 -> ABORT, FANOUT_ABORT written, exit 1, zero
 #   challenges fired; pass and rate-limit branches exercised live at 15:43-15:44Z).
 # The header of this file previously cited PANEL-2's 13:06:51Z run -- a THIRD
