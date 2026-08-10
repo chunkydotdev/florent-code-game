@@ -100,6 +100,33 @@ for cycle in $(seq 1 $CYCLES); do
 
   rollback || exit 1
   echo "$(date -u +%H:%M:%SZ) cycle $cycle: fired $n/${#ids} (total $(grep -c matchId $OUT 2>/dev/null || echo 0))"
-  [[ $cycle -lt $CYCLES ]] && sleep $WINDOW
+  # BUDGET-DRIVEN PACING (s28). A flat $WINDOW sleep left ~40% of the rolling
+  # 20-minute allowance idle -- measured on panel3 before the same fix. The
+  # rollback above has already run, so this waits with the INCUMBENT live.
+  if [[ $cycle -lt $CYCLES ]]; then
+    w=$(.venv/bin/python tools/rate_budget.py --wait 2>/dev/null || echo $WINDOW)
+    [[ "$w" =~ ^[0-9]+$ ]] || w=$WINDOW
+    # ⚠ THE METER LAGS THE PLATFORM. Challenges we just fired take time to
+    # appear in `match list`, so rate_budget -- which reads that list -- can
+    # report "a slot is free NOW" seconds after we spent four. Observed at
+    # 20:15:04Z: meter said 20s, the next cycle activated v106, was rejected,
+    # and rolled back. That is a pointless activation and pointless prototype
+    # exposure, caused by trusting a lower bound as if it were exact.
+    # If we fired anything this cycle, floor the wait at one slot-interval per
+    # challenge (20 min / 5 slots = 240s each), capped at a full window.
+    # A RATE-LIMIT REJECTION IS HARD EVIDENCE THE METER IS WRONG, and rejected
+    # attempts THEMSELVES count against the limit -- so spinning on a stale
+    # "free now" actively spends the budget it is waiting for, and pays a
+    # pointless prototype activation each time round. If we fired fewer than we
+    # asked for, the budget is provably gone: wait a real interval.
+    local floor=0
+    if (( n > 0 )); then floor=$(( 240 * n )); fi
+    if (( n < ${#ids} )); then (( floor < 330 )) && floor=330; fi
+    (( floor > WINDOW )) && floor=$WINDOW
+    (( w < floor )) && w=$floor
+    (( w < 20 )) && w=20
+    echo "$(date -u +%H:%M:%SZ) meter says wait ${w}s (incumbent live)"
+    sleep $w
+  fi
 done
 echo "$(date -u +%H:%M:%SZ) LOKI-14b: done, $(grep -c matchId $OUT) challenges banked; holder $(holder)"
