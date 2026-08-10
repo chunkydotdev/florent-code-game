@@ -252,3 +252,54 @@ remainder breaks.
 
 **The Bisons are 0/20 against us across both arms and every window.** Nothing in
 this plank touches them.
+
+## PER-WINDOW DECOMPOSITION ON THE CURRENCY — and it produces a better number than the plank
+
+`core_kill_share`, kills/5 per opponent per window, seat suffixed:
+
+| opponent | ctl W1 | ctl W2 | trt W1 | trt W2 |
+|---|---|---|---|---|
+| CtrlAltDefeat | 2/5 **B** | 2/5 **B** | 4/5 **A** | 4/5 **A** |
+| Leviathan | 4/5 B | 4/5 B | 4/5 B | 4/5 B |
+| The Bisons | 0/5 A | 0/5 B | 0/5 A | 0/5 B |
+| I Stone | 2/5 B | 4/5 B | 2/5 B | 0/5 B |
+| gsxWins | 1/5 A | 2/5 B | 3/5 A | 0/5 B |
+| **arm total** | **9/25 = 36.0%** | **12/25 = 48.0%** | **13/25 = 52.0%** | **8/25 = 32.0%** |
+
+**THE CONTROL — THE SAME BOT, SAME PANEL, SAME PINNED MAPS — SWUNG 36.0% ->
+48.0% BETWEEN CONSECUTIVE WINDOWS. 12 POINTS, WITH NOTHING CHANGED.** The
+treatment swung 20 points the other way. **That is a direct empirical
+measurement of this testbed's window noise, and it is larger than any effect
+claimed tonight.** The MDE of 39pp was not conservative; this is its
+confirmation from data rather than from arithmetic.
+
+**The panel is not five equivalent cells. It decomposes:**
+* **STABLE:** Leviathan 4/5 in all four windows. The Bisons **0/5 in all four**.
+* **SEAT-DETERMINED:** CtrlAltDefeat is 2/5 in both seat-B windows and 4/5 in
+  both seat-A windows — **perfectly consistent within seat, across arms.** That
+  cell measures the seat, not the treatment, and it is the cell the original
+  +16.0pp rested on.
+* **NOISY:** I Stone (2,4,2,0) and gsxWins (1,2,3,0) carry essentially all the
+  variance.
+
+## THE SIGN FLIPS WHEN THE SEAT-CONFOUNDED CELL IS REMOVED
+
+    excluding CtrlAltDefeat:  control 17/40 = 42.5%   LOKI-11 13/40 = 32.5%
+                              delta -10.0pp
+
+**So LOKI-11 is null-to-NEGATIVE on the primary currency, not null-to-positive.**
+The pooled +0.0pp was itself carried by a seat artifact in both directions.
+**No version of this plank is bankable, and the honest summary is: the rush
+changes the cost profile substantially and the kill share not at all, or
+slightly for the worse.**
+
+**CONSEQUENCE FOR THROUGHPUT, decided rather than left open:** more LOKI-11
+windows are NOT worth buying. The point estimate is zero-to-negative and the
+cell carrying its only positive signal is a seat artifact. **Windows go to
+LOKI-13**, which tests a larger and differently-sourced lever.
+
+**CONSEQUENCE FOR EVERY FUTURE LEG:** a single 25-game window on this testbed
+cannot resolve a currency effect — same-bot swing is ~12pp and observed
+treatment swing 20pp. **n=25 legs are DOSE AND MECHANISM PROBES. The currency
+read requires pooling, and the per-opponent per-window split is mandatory before
+any pooling at all.**
