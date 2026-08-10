@@ -22899,3 +22899,38 @@ decode `removeEntity`**, so the capability exists and this is a decoder pass, no
 **Pre-stated: if v102's late census sits AT cap like Eir's, the treadmill is refuted and the
 83% needs a different explanation entirely — which would be the third time tonight this
 particular number has changed owners.**
+
+### 03:01 — EXCURSION REVERSED. HOLD was correct. Full cycle on the tape.
+```
+k=34 1593 net5 -18 drawdown -23   RULE=held
+k=35 1589 net5 -17 drawdown -27   RULE=held
+k=36 1585 net5 -25 drawdown -31   RULE=SLOT FREE   <- alarm fired, HOLD decided
+k=37 1596 net5 -11 drawdown -20   RULE=held        <- SHIP_ALERT auto-cleared
+k=38 1599 net5  -2 drawdown -17   RULE=held        net_act +31.6
+```
+**The stop-loss fired, the pre-committed conjunction held it, and the arm
+recovered unaided in two matches.** `corpus/SHIP_ALERT` was written at 02:40:32
+and **removed automatically on recovery** — the clearing branch had never
+executed before tonight and it works, so no stale alarm is left standing.
+
+**REASON 1 IS REINSTATED, AND ITS SECOND INSTANCE IS STRONGER THAN THE ONE IT
+LOST.** I retired it at 02:4x because the round-trip precedent covered -28 and
+this excursion reached -31. It now reads: **the arm has recovered from two deep
+excursions, one of which FIRED THE ALARM at net5 -25.** That is the only one of
+the four HOLD reasons tested against a fired alarm rather than a near-miss.
+
+**WHAT NOBODY SHOULD DO WITH THIS — and the temptation now runs the OPPOSITE way
+to an hour ago.** **This is not evidence the -21 threshold is too tight.** n=2.
+**A stop-loss that fires and is then not acted on has done its job**: it woke
+three lanes, the conjunction held, and the decision was made on the LEVEL rather
+than the slope. Had the rating kept falling past 1567.44 the conjunction would
+have triggered and the rollback would have been correct. **Neither outcome tells
+us the threshold is wrong**, and a recalibration case must rest on the
+distribution of excursions, not on the two we happened to watch tonight.
+**I said I would raise a recalibration explicitly rather than silently; that
+standard binds in the flattering direction too.**
+
+**FOR THE TAPE, separate from any judgement about the threshold: this arm's
+realised volatility at k=38 is high enough that a -31 drawdown AND a fired
+stop-loss are both inside its normal range.** That is a fact about the
+instrument's operating environment and a successor should have it.
