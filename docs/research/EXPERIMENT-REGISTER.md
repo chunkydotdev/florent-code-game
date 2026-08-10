@@ -170,3 +170,22 @@ YET READABLE** — `match info` is flapping null through the ongoing outage.
 fire 05:40:41Z = ~36 min margin against the amendment; two-clock CERTIFICATION
 OWED pending a readable platform `createdAt`** (the second clock). Nothing lost —
 the git clock is fixed and the fire time is in the durable record.
+
+**2026-08-10 08:1x — E-27.4 (LOKI-13) RESULT + LOCK CERT (addendum):**
+- **LOCK CERTIFIED.** Clock 1 (prereg git author): e9135e5 **04:51:12 UTC**,
+  amendment 6d734f7 **05:04:36 UTC**. Fire (durable record, platform Z-stamp):
+  **05:40:41Z**. **Margin ~36 min against the amendment** — ~150× the measured
+  git/platform skew bound ([−13.4, +1.9]s), and the result postdates all of it,
+  so the ordering holds under any clock. Unlike the baseline leg's 15.4 s, the
+  per-match `createdAt` cannot change this verdict; it stays flapping-unreadable
+  through the outage and is noted confirm-when-readable, immaterial to the lock.
+- **CURRENCY: NULL, word written** (`c3ce6b2`). core_kill_share control 21/50 =
+  42.0% vs LOKI-13 +18.0pp, Fisher p=0.152 — **under the pre-registered ~25–30pp
+  resolution floor**, so a null by pre-registration, not a spun positive.
+  r1000 direction favourable (n=5/cell, not claimed).
+- **MECHANISM BARS: UNREAD** (conveyors/game ≤27; ammo + shots) — decode pending.
+  Prereg pre-commits "MECHANISM A missed → THE LEG ANSWERED NOTHING", so **NO
+  VERDICT until the bars are read.** The two-bar discipline held: the currency
+  null is not read as "economy suppression fails" while the mechanism is unread.
+- **D6 + D16: clean.** Autopsied against its own bar; NULL owned; the ammo link
+  I flagged pre-leg is in Bar B; per-cell honesty ("n=5, seat A, not claimed").
