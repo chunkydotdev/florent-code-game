@@ -307,3 +307,24 @@ point of committing them before the prereg existed:**
 This is the pre-stated-criteria discipline working end to end: criteria committed
 before the artifact, prereg meets them, audit fitted to nothing. Result + lock
 cert on fire.
+
+**2026-08-10 14:2x — E-27.5 (CONFIRM-PAVETRAIL) RESULT + LOCK CERTIFIED: NOT CONFIRMED:**
+- **LOCK CERTIFIED.** prereg 0f4dd41 committed 08:22:30Z; arm fired 20 windows
+  from ~08:39Z (~17 min margin) — pre-registered, single test at fixed n=100, no
+  early stop, no extension. Clean.
+- **RESULT: NOT CONFIRMED (not refuted).** v104 control 81/150 = 54.0%, v102 arm
+  47/100 = 47.0%, **delta −7.0pp, Fisher p=0.303, interval includes zero.**
+  Prediction was −18pp. **The ship's +18pp DID NOT REPLICATE** — what reproduces
+  is a −7pp shadow indistinguishable from zero. Cause is exactly the weaknesses
+  flagged at ship time: +18 pooled-into-significance after a null, honest ~0.05
+  family-wise, seat differences in 3/5 cells.
+- **NOT REFUTED:** direction still favours v104 by 7pp; the leg cannot
+  distinguish it from chance. "Not confirmed" ≠ "refuted."
+- **THE TWO INSTRUMENTS DISAGREE, and it's controlled-weak vs field-strong:**
+  the CONTROLLED panel (pre-registered, n=100) says +7pp unconfirmed — but it is
+  the **2-cell saturated instrument (D13)**, our weakest. The UNCONTROLLED rated
+  ladder says v104 **1690, rank #23, +47 over v102's peak (1643), 61 tape rows,
+  sustained** — the field instrument the programme weighs as the verdict
+  (benchmark-vs-field). Not a contradiction: a weak controlled test on a
+  near-saturated panel vs a strong field signal. **The +18 magnitude is dead;
+  v104's real edge is a modest field lead, not a panel effect.**
