@@ -320,3 +320,22 @@ a proven negative control beats three that have never flagged anything.**
   constant. **A repair is verified against the FAULT CLASS, not against the
   instance that prompted it** — ask of every fix: "does my replacement have the
   property I just condemned, measured on a different axis?"
+
+- **A CONTROL GROUP REPORTED ONLY AS A POOLED FIGURE IS UNAUDITABLE ON EVERY
+  AXIS ITS AUTHOR DID NOT ANTICIPATE (s28, 5295bf2 — the sharpest instance of
+  "numbers carry subjects" yet, because it omits the subjects of the CONTROL):**
+  `crash-induction-targeting` licenses its whole thesis — *"the border is not
+  lethal per se"* — on a complement group of **six teams, 722,545 border
+  builder-rounds, 0 events**, and **never names the six anywhere in the
+  document.** So when the carriers turned out to be rated 806-1107 against our
+  1658, nobody could ask whether the IMMUNE teams were strong: the question was
+  unanswerable from the primary that raised it. **A complement group is not a
+  scalar. It is a population, and it must be enumerable** — the treatment side
+  gets per-team rows as a matter of course while the control is allowed to
+  collapse to one number, which is precisely backwards, since the control is
+  what carries the "it isn't just everyone" claim. Watch form: when a document
+  cites a complement/negative-control rate, ask **WHICH members** — and if the
+  answer is not in the document, that is the flag, before any question about
+  what they show. Companion: apply the treatment's own admission rules to the
+  control (a zero on a thin denominator is INSUFFICIENT, not immune — if the
+  threshold changes the count, that is a finding about the document).
