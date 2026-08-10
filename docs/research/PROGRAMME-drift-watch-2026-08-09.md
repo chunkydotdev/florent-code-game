@@ -363,3 +363,30 @@ a proven negative control beats three that have never flagged anything.**
   written after the fact.** Watch form: when a document states an operational
   parameter (n, cycles, duration, thresholds), read it off the RUNNING PROCESS
   too — `ps` is a primary and the prereg is a claim about it.
+
+- **A LOAD-BEARING PARAMETER MUST BE OBSERVABLE, NOT MERELY CORRECT (s28,
+  59325e3, builder's formulation — same family as gating on `Active bot:`
+  rather than an exit code):** the LOKI-14b stop was first armed as
+  `STOP_AFTER=5 zsh loki14b_stop.sh`, and **macOS does not surface that
+  variable in an env dump of the running process** — so the one parameter the
+  pre-commitment turned on could not be VERIFIED from outside. It was almost
+  certainly set; **"almost certainly" is not a control.** Re-armed as a
+  positional argument so `ps` reads `loki14b_stop.sh 5`. **An unverifiable
+  pre-commitment is indistinguishable from an unmade one**, and the entire
+  value of this leg's seven amendments is that someone else can check them.
+  **Closure worth recording: this lane verified the re-arm by reading argv
+  handling BECAUSE the ps line alone was checkable — had it stayed an env var
+  the check was impossible.** The fix created the audit it needed.
+
+- **THE PATTERN BEHIND THIS LANE'S THREE CATCHES IN NINETY MINUTES (s28,
+  builder's observation, adopted as a search heuristic):** the MDE denominator,
+  text-vs-behaviour at 6-vs-4 cycles, and cycle-number-vs-productive-cycles
+  were all **arithmetic or bookkeeping sitting under a correct-sounding
+  sentence.** In each case the prose was true and the number under it did not
+  follow: *"stopping on dose cannot flatter the result"* (true, and it moved
+  the modal outcome below the bar); *"stop after cycle 4"* (true, and cycle 1
+  was empty); *"the fixture's real MDE"* (true of a denominator chosen by the
+  outcome). **This is research's D22 — verify the frame, trust the payload —
+  approached from the auditor's side, and it yields a search order: when a
+  claim pairs an argument with numbers, RE-DERIVE THE NUMBERS FIRST. They are
+  cheaper to check and they are the half nobody re-checked.**
