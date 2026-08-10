@@ -264,3 +264,14 @@ a proven negative control beats three that have never flagged anything.**
   declare super/subset direction, and sanity-check attribution (683/683
   unambiguous launchers; max d²=26 with 0 over, the documented range hit
   exactly).
+
+- **An admission rule must match the prereg's brackets EXACTLY (s28, f48ece1,
+  builder's delta, adopted):** `<= 0.20 / >= 0.80` against a prereg that
+  admits `[0.20, 0.80]` inclusive threw out two cells sitting exactly on the
+  boundary, halved the effective n (30/75 vs 60/75) and overstated the MDE
+  (28.3pp vs 21.7pp). The sharp part: **the off-by-one moved the number in the
+  direction that FLATTERS the tool** — a bigger MDE makes every leg look
+  unresolvable, which excuses the instrument and is therefore the comfortable
+  error. When auditing an admission or filter rule, check the boundary cases
+  against the prereg's own brackets AND ask which direction the error would
+  lean if present.
