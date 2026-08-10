@@ -127,3 +127,75 @@ four unfamiliar teams at n=125 has an MDE well above any plausible effect
 (`tools/leg_read.py` now prints it), and **the currency reading is explicitly not
 the bar.** If someone later quotes a win rate or a kill share off this leg, they
 are quoting a number this document pre-committed to ignoring.
+
+---
+
+# AMENDMENT 1 — CARRIER ADMISSION, PRE-COMMITTED BEFORE THE RECENCY DATA EXISTS
+
+**Committed 2026-08-10 ~15:4x CEST, BEFORE the research arm relays its per-carrier
+recency split.** Timestamped by commit, and that ordering is the whole point of
+this amendment.
+
+## Why this is being written now and not after
+
+The body above puts the "has the carrier PATCHED?" question in the read-out, via
+the natural-crash control. **The research arm pointed out it is answerable NOW,
+for free, from the growing replay archive — before we spend holder time.** They
+are right, and it is strictly better sequencing: a patched carrier buys an
+**uninterpretable zero by construction**, and we would learn that only after
+paying for the leg.
+
+**But moving a check earlier converts it from a read-out into a PANEL SELECTION,
+and panel selection after seeing the numbers is exactly the trap that built the
+current five-cell panel** (`PREREG-panel2-calibration`: *"selecting a fixture
+from a pooled-era number builds an instrument that cannot move"*). If I wait for
+the recency table and then decide who stays, I am choosing cells on the data.
+
+**So the rule is fixed here, in advance, and the arithmetic is done before the
+inputs are known.**
+
+## The rule
+
+Each carrier's exclusion threshold is derived from **its own** measured border
+hazard, at λ ≥ 3 (so P(0 events | the old hazard still holds) ≤ 4.98%):
+
+| carrier | measured hazard /10k | border builder-rounds since its last undamaged border removal that would EXCLUDE it |
+|---|---:|---:|
+| vjg | 450.71 | **67** |
+| Troupe | 146.43 | **205** |
+| Ship Happens | 111.55 | **269** |
+| S | 105.06 | **286** |
+
+Three outcomes, decided by the table and not by judgement:
+
+1. **ADMITTED** — the carrier has ≥1 undamaged border removal in the archive at
+   any point, AND has NOT since accumulated its threshold of border
+   builder-rounds with zero events. The measured hazard still stands.
+2. **EXCLUDED — PATCHED** — the carrier has accumulated **at or above its
+   threshold** of border builder-rounds since its last event, with zero events.
+   At 95% confidence the old hazard no longer describes it. **It comes off the
+   panel BEFORE the leg fires, and that exclusion is a FINDING** (a team fixed
+   the bug), reported as such — not a quiet substitution.
+3. **HELD — INSUFFICIENT RECENT EXPOSURE** — zero recent events but **below**
+   the threshold. **This is NOT the same as patched and must not be merged with
+   it.** The carrier stays on the panel; its games are read but a zero from it
+   carries the caveat that we could not have detected non-zero either.
+
+**If fewer than two carriers are ADMITTED, the leg does not fire.** A one-cell
+fixture cannot support the conclusion this leg exists to reach, and firing it
+anyway would repeat D22 with a denominator of one.
+
+## What this amendment does NOT license
+
+It does not permit swapping in replacement opponents chosen from the same
+recency scan. **Adding a cell selected on the statistic being measured is panel
+selection on the data no matter which direction it runs.** If admissions fall
+below two, the correct response is a new pre-registration, not a substitution.
+
+## The fidelity gate on the incoming numbers
+
+The research arm's decoder must **reproduce the four per-carrier hazards in the
+table above** before its recency split is used for anything. **A mismatch is the
+headline, not a detail to reconcile quietly** — the hazards are the entire basis
+for this leg's target selection, and a decoder that cannot re-derive them is not
+measuring what the census measured.
