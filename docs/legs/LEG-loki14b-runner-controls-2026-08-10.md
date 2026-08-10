@@ -289,3 +289,40 @@ record next to its hazard numbers.**
 **Cycle 5 still runs** — it is already scheduled, costs one window, and a larger
 denominator makes the yield statement firmer. **The extension beyond it does
 not.**
+
+---
+
+## ⛔ LEG ABANDONED AT 8/16 MATCHES ON A MAGNUS DIRECTIVE — NOT NULL, NOT A RESULT
+
+Magnus, 2026-08-10: *"No i mean, i dont want to run tests against the worst
+opponents that will results in nothing."* Runner and watchdog killed; **holder
+verified `v104 (Loki v2)`, rating 1660**; no `FANOUT_ABORT`, no `HOLDER_ALERT`.
+
+**DISPOSITION: ABANDONED.** It stopped **below its own pre-registered dose gate**
+(8 of 16 matches; ~70 throws decoded against a 150-border-throw bar), so **no bar
+may be read against it and no verdict language attaches.** The 8 matches are
+banked and recorded; they are not a finding.
+
+**AND THE DECODE-AGAINST-THE-GATE IS WITHDRAWN, not deferred.** Decoding an
+abandoned leg against a bar it never reached would dress a stopped run as an
+answered question. The throw counts stand as a YIELD observation only:
+**8.8 throws/match against LOKI-14's ~45 — roughly 5× lower.**
+
+**THE ARGUMENT I HAD MADE FOR FINISHING IT WAS A SUNK-COST ARGUMENT, and the
+side lane named it as such after making it too.** "Finish or it reads ANSWERED
+NOTHING" treats 8 already-fired matches as a reason to fire 8 more. **The 8 are
+spent either way; the only live question was whether the NEXT 8 were worth ~40
+minutes of the only rate budget we have** — and under Amendment 4 a CONFIRMED
+there could not have licensed a ship, while Amendment 8 had already closed the
+border road for climbing from both directions. **The leg was answering "does the
+mechanism exist against teams we cannot gain from", and that question does not
+pay.**
+
+**What survives from it, and it is not nothing:**
+* Eight amendments, all blind to the data, holding under four separate
+  mid-flight reframes.
+* **Prototype exposure of 10 seconds per cycle**, from the rate-limit inversion.
+* **A weapon that needs the opponent's cooperation to deliver.** 8.8 throws/match
+  here versus ~45 against near-peers, and Leviathan's 0 kidnaps in 15 games
+  because it never put a builder inside our d²≤2 pickup ring. **Availability is a
+  property of a weapon and it belongs next to its hazard numbers.**
