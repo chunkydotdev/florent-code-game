@@ -272,6 +272,9 @@ class RaidMixin:
                 t = p.add(d)
                 if (t.x, t.y) not in seatkeys:
                     continue
+                # LOKI-10: a barrier here would cap our own conveyor line.
+                if self._feeds_tile(ct, t):
+                    continue
                 try:
                     if ct.can_build_barrier(t):
                         ct.build_barrier(t)
@@ -422,6 +425,9 @@ class RaidMixin:
         for d in CARDINALS:
             bp = p.add(d)
             if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
+                continue
+            # LOKI-10: a sentinel here would cap our own conveyor line.
+            if self._feeds_tile(ct, bp):
                 continue
             for target in tiles:
                 if bp.distance_squared(target) > 32:

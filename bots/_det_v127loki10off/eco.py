@@ -573,11 +573,77 @@ class EcoMixin:
             f = nearest_cardinal(tile.direction_to(target))
         if f == Direction.CENTRE:
             f = Direction.NORTH
+        # LOKI-10 mirror: this link would deliver into our own turret/barrier.
+        # The route is dead from here on, so DROP it rather than cork it --
+        # the same response `_pave_ban` already makes to an invalid route
+        # eleven lines up. (A bare refusal would stall this builder forever on
+        # a head tile it can never satisfy.)
+        if self._faces_emplacement(ct, tile, f):
+            self.link_queue = []
+            return False
         if ct.can_build_conveyor(tile, f):
             ct.build_conveyor(tile, f)
             self.link_queue.pop(0)
             return True
         return False
+
+    # --- LOKI-10: the route guard, both directions -------------------------
+    # Lives here rather than in main.py because all three build paths need it:
+    # counterbattery + launcher (main), barrier seal + forward sentinel (raid),
+    # and the two conveyor sites below. One copy, one behaviour.
+
+    def _feeds_tile(self, ct, tile):
+        """True if an orthogonally adjacent FRIENDLY conveyor outputs into
+        `tile` -- i.e. emplacing here would cap our own line.
+
+        Cheap by construction: four neighbours, and only conveyors are asked
+        for a direction (get_direction raises on entities that have none).
+        """
+        if not LOKI10_ROUTE_GUARD:
+            return False
+        for d in CARDINALS:
+            n = tile.add(d)
+            if not (0 <= n.x < self.mw and 0 <= n.y < self.mh):
+                continue
+            bid = ct.get_tile_building_id(n)
+            if bid is None:
+                continue
+            try:
+                if ct.get_team(bid) != self.team:
+                    continue
+                if ct.get_entity_type(bid) != EntityType.CONVEYOR:
+                    continue
+                if n.add(ct.get_direction(bid)) == tile:
+                    return True
+            except Exception:
+                continue
+        return False
+
+    def _faces_emplacement(self, ct, tile, facing):
+        """MIRROR of `_feeds_tile`: True if a conveyor built on `tile` with
+        `facing` would deliver into a friendly turret or barrier.
+
+        `_feeds_tile` catches the turret built onto an existing line; this
+        catches the line built into an existing turret. By EVENT COUNT the
+        forward case is the larger half, but by TITANIUM this one is -- 35
+        reverse pairs at 66 Ti/game against 64 forward pairs at 36 Ti/game on
+        the v102 population (prereg addendum 2). Only both together cover the
+        self-block class.
+        """
+        if not LOKI10_ROUTE_GUARD or facing is None:
+            return False
+        out = tile.add(facing)
+        if not (0 <= out.x < self.mw and 0 <= out.y < self.mh):
+            return False
+        try:
+            bid = ct.get_tile_building_id(out)
+            if bid is None:
+                return False
+            if ct.get_team(bid) != self.team:
+                return False
+            return ct.get_entity_type(bid) in ROUTE_DEAD_ENDS
+        except Exception:
+            return False
 
     def _step_off_link(self, ct):
         p = ct.get_position()
@@ -785,6 +851,7 @@ class EcoMixin:
                             )
                         try:
                             if coreward_ok and facing is not None \
+                                    and not self._faces_emplacement(ct, pp, facing) \
                                     and ct.can_build_conveyor(pp, facing):
                                 ct.build_conveyor(pp, facing)
                         except Exception:

@@ -12,6 +12,9 @@ successor session inherit it. The fields below are parsed; the prose is not.
     WIN_RATE_IS_VERDICT: no
     COMPARE_AGAINST: previous_line_iteration
     KILL_WINDOW_RND: 250
+    R1000_IS_DEFEAT: yes
+    PLAY_DEFENCE: never
+    FIXTURE_OF_RECORD: live_unrated
 
 ## What this means, in the words of the directive (Magnus, 2026-08-09)
 
@@ -45,6 +48,48 @@ paired sign test p=5.2e-09).
 
 **KILL_WINDOW_RND: 250** — the target is a dead enemy core inside 250 rounds.
 Our own tape: before r200 we go 277-148 (65.2%); after r200, 164-363 (31.1%).
+
+## DIRECTIVE, Magnus, 2026-08-10 06:0x CEST — read this as the definition of the line
+
+> *"Loki is the ultimate trickster, playing into other teams by using cheap
+> tricks, manipulation, poisoning and every exploit we can find. Loki plays
+> dirty and is the ultimate weapon at that. We want to destroy the enemy core,
+> never play defence. A r1000 round is a defeat even if we by chance win it.
+> You need to constantly figure out and test new tricks that we can use by
+> building prototypes and putting them against live teams in unrated games —
+> that beats our own calculations every time, and sometimes you find things
+> that surprise you. Those are of fantastic importance for our growth."*
+
+Three fields above are new and each one closes a road that was open yesterday.
+
+**R1000_IS_DEFEAT: yes.** A tiebreak win is a LOSS in this programme's ledger.
+This retires the whole tiebreak-turtle family and demotes every economic plank
+whose only channel is `titanium_collected` — that currency is only ever paid out
+in games we have already lost by this definition. Economy is now purely
+INSTRUMENTAL: it buys the kill, it never scores.
+
+**PLAY_DEFENCE: never.** A plank whose mechanism is survival, screening, home
+turrets or heal-uptime is off-programme regardless of what it measures. This
+kills queue items that were alive at the s26 wrap.
+
+**FIXTURE_OF_RECORD: live_unrated.** `bots/*_probe` is a fixture WE WROTE, and
+s26 D21 proved it lies in a specific direction: five of our probes share a
+`best_core or best_any` short-circuit, so every verdict we ever resolved faced an
+opponent that prefers our core over anything else — which is why zero of our
+forward turrets died in 480 arena games while **46.9% die on the ladder**.
+Magnus's *"beats our own calculations every time"* is therefore not a preference,
+it is the already-measured fact. **`fcode match unrated <team_id>` is the
+instrument** — 5 games against a real team's real bot, no rating at stake.
+
+**THE CONSTRAINT THAT COMES WITH IT, and it is real:** `fcode match unrated`
+plays **our ACTIVE submission**. There is no flag to point it at a local tree.
+So testing a prototype against live teams means ACTIVATING the prototype, and
+the ladder keeps pairing us (~6 rated matches/hour) for as long as it is up.
+**A trick leg therefore costs rated exposure, roughly 2-3 ladder matches per
+20-30 minute window, bounded and recoverable by re-activating the incumbent.**
+That is the price of the only honest fixture we have. Pay it deliberately:
+prototype activated -> burst of unrated challenges -> incumbent re-activated,
+with the window and the rated matches inside it recorded.
 
 ## Exit conditions — the only things that end this programme
 

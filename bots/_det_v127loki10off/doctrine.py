@@ -1514,3 +1514,13 @@ LOKI8_RAIDERS_STAY_OUT = True    # raiders exempt from the home heal + melee rec
 # ============================================================================
 
 LOKI10_ROUTE_GUARD = False    # never emplace on a tile a friendly conveyor faces
+
+# The dead ends a conveyor must never be aimed at. A turret and a barrier both
+# refuse resources forever, so a line delivering into one scores zero on
+# `titanium_collected` for the rest of the match. The CORE is deliberately
+# absent -- that is the destination, not a dead end -- and so is the harvester,
+# which is a SOURCE and outside this plank's pre-registered scope.
+ROUTE_DEAD_ENDS = frozenset((
+    EntityType.GUNNER, EntityType.SENTINEL, EntityType.LAUNCHER,
+    EntityType.BARRIER,
+))
