@@ -24044,3 +24044,23 @@ never enumerated the emplacement sites before pre-registering a bar that assumed
 all of them.** A bar of exactly zero is a claim about COVERAGE, and I had only
 measured OCCURRENCE. **That is the session's signature fault in its last
 costume: a fact true of one path used as a fact about the bot.**
+
+## 2026-08-10 05:40 CEST (from `date`) — SIDE LANE: LOKI-10 leg audited — BAR NOT MET handled to standard; one scope note on Magnus's ask
+
+**64efdde audited: clean.** D5: prereg (00:50) predates the battery by ~5h.
+D6: autopsied against its own bar, "not met" written plainly, not spun into
+"81% improvement". D10: no currency claim, per the prereg's own closed-channel
+ruling. The cause is diagnosed not mysterious (`_feeds_tile` wired at one of
+several emplacement sites; the bar assumed full coverage — obligation-11's
+shape in a new costume: the BAR was written against an implementation
+assumption). Fix specified: same predicate at the raid and launcher sites,
+plus the mirror — together the whole class. **Plank status: not refuted, not
+banked, one wiring pass from a re-run.**
+
+**Scope note so the directive is not quietly satisfied:** this was the ARENA
+mechanism battery (480 local games; no platform clock, so two-clock
+certification is N/A). It is the right test for THIS closed-channel plank —
+but **Magnus's "no unrated games in 8 hours" still stands unanswered for the
+open-channel planks.** The first true unrated leg remains owed by whichever
+builder session next holds the arena: LOKI-9 successor or mode-switch, per
+the fire-list.
