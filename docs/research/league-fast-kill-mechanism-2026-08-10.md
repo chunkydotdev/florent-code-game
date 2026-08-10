@@ -139,7 +139,55 @@ exactly at the sentinel's edge, and at d²=16 on gunners.**
 > says "distance to the enemy core" and means "distance to the enemy core's
 > north-west tile".
 >
-> ### ⚠ AND AN APPARENT CONFLICT WITH THE BISONS AUTOPSY — FLAGGED, NOT RESOLVED
+> ### ✅ THE AUTOPSY CONFLICT IS RESOLVED — same subject, real conflict, resolved on n
+>
+> **My proposed reconciliation was WRONG and is withdrawn.** The autopsy measures
+> *"minimum d² to the **target** core's 2×2 footprint"* — its own §3 header — and
+> measures our sentinels the same way in the same games. **Same subject, same
+> basis, same quantity as this cut.** It is not home-vs-forward sentinels. (It also
+> used the 2×2 footprint from the start, which is why it never inherited the anchor
+> bias this cut did.)
+>
+> **The conflict is real and resolves on sample size.** The autopsy's claim about
+> OUR placement rests on **four sentinels** — Cheb 1, 2, 2, 3 — from five games,
+> four of them losses. This cut reports **n=198** of our plants at d²=25 (Cheb 5).
+> **A third, population-free route breaks the tie the same way:** research's source
+> read of `_try_forward_sentinel` found the approach gate admits the builder at
+> d²≤50, the range gate accepts **anything** ≤32, and the loop **returns on the
+> first success** — nothing scores distance. **So the code plants at the outermost
+> legal tile by construction.** The Cheb 1–3 cluster is the tail (a builder that
+> happened to be deep before a legal site appeared), not the mode.
+>
+> **THREE ROUTES AGREE — a 198-plant statistic, a control-flow read, and boundary
+> arithmetic — against one n=4 sample.**
+>
+> ### ⚠ AND A SELECTION EFFECT IN MY OWN POPULATION, WHICH I SHOULD NAME RATHER THAN ACCEPT THE CREDIT
+> Research called this cut the one that "can support a general statement". **It
+> cannot, quite.** My n=198 is *our sentinel plants in games we won by a sub-100
+> kill* — **conditioned on our own fastest wins**, not on our plants in general.
+> That is a selected population too; it is merely larger.
+> **But the selection runs AGAINST the finding, which strengthens it:** if
+> planting close causes fast kills, then our fastest wins are exactly where we
+> should look closest — **and we still measure d²=25, the boundary.** The only
+> population-free leg of the tripod is the source read, and it is the one that
+> should be cited when a general claim is needed.
+>
+> ### CONSEQUENCE: THE "PLANT CLOSER" PLANK WAS RETIRED ON n=4 AND SHOULD BE REOPENED
+> The LOKI-11 rationale states *"we were already planting closer than they do"*.
+> **That sentence is sourced from four sentinels and is contradicted by 198 plants
+> and by the source.** Research is amending their own autopsy's §3, whose defect
+> they identify precisely: **it reported thirteen points for THEIR arm and four for
+> OURS, then generalised from both symmetrically.**
+>
+> **AND THE TWO DEFECTS ARE ORTHOGONAL — fixing one does not fix the other.**
+> *Timing*: we plant at r73–93 vs their r29–47, because `LOKI2_RUSH_ON = False`
+> gates the raider behind a 2-harvester prerequisite and a 40 Ti floor.
+> *Distance*: we plant at the boundary, because the siting loop takes the first
+> legal tile. **Turning the rush flag on makes the builder walk in EARLIER — and it
+> will still plant at the first legal tile it finds.** Two one-constant defects,
+> two separate planks, and the timing one does not subsume the distance one.
+
+> ### (superseded — my proposed reconciliation, kept for the record) APPARENT CONFLICT, FLAGGED NOT RESOLVED
 > The autopsy (`be497c6`) reports Bisons sentinels at **modal Chebyshev 5** and
 > **ours at Chebyshev 1 and 2** in those five games. This cut reports Bisons
 > sentinel median **d²=16 (Chebyshev 4)** and **ours at d²=25 (Chebyshev 5)** — i.e.
