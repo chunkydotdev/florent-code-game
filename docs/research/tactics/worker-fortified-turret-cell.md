@@ -105,3 +105,23 @@ Two measurements decide whether it is worth more than the predicate in
 
 Related: [[marginal-healers-per-structure]] · [[heal-cap-and-timeout]] ·
 [[fortify-on-idle]] · [[sentinel-file-stacking]]
+
+---
+
+> ### ⚠ CAVEAT ADDED 2026-08-10 (research arm) — **"TURRET PRODUCTION WAS ALREADY REFUTED FOUR WAYS" IS UNSOURCED AS WRITTEN.**
+>
+> This file leans on that claim to set aside a whole knob. **No evidence is cited
+> for it here, and none of the files carrying the claim cite a source for it**
+> (`grep -c "](""` returns **0** markdown links in this file and in
+> `worker-fortified-turret-cell.md`). **"Four ways" names a count without naming
+> the four.**
+>
+> **This is the same failure class the index records for
+> `THE FORWARD ROAD IS CLOSED`** — a closure repeated downstream until it reads as
+> established, while nothing underneath it was ever re-checked. It may well be
+> true; it is simply **not sourced where it is used.**
+>
+> **Under D12** (Magnus, 2026-08-10 — *"test everything in unrated games before we
+> refute them"*) **an unsourced archive-era closure cannot retire a road.** Goes to
+> the **bottom of the queue, not off it.** Whoever next touches turret production
+> should either name the four instruments or drop the phrase.
