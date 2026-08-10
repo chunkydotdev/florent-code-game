@@ -1374,24 +1374,7 @@ LOKI_BUDDY_HEAL_GAP = 8      # heal an adjacent raider this many HP below max
 # buy tempo. On short maps the tempo was already there, so it pays the economy
 # and receives nothing. That mechanism story is UNTESTED and is not the reason
 # this flag is False; the replicated measurement is.
-# LOKI-11 (2026-08-10): RE-OPENED, and the reason is the FIXTURE, not the result.
-# The measurement below is not disputed -- it is 360 paired games and it
-# replicated. What is disputed is the ARENA it was made on. `orizon` and `cad`
-# are two of the five self-authored probes that share a `best_core or best_any`
-# short-circuit with turrets welded to the core ray and `rotate()` never called;
-# our forward turrets took ZERO damage across 480 arena games against 46.9% on
-# the ladder. A committed opening's whole cost is raider exposure deep in enemy
-# ground, and that is the quantity this fixture cannot price.
-# Meanwhile the league's fastest killers ARE this doctrine: the Bisons plant
-# sentinels r29-r47 with ~no economy and put 65-68% of their titanium into
-# sentinels and ammo (we spend ~21%), and beat us 5-0 on the pinned testbed
-# killing our core in 56-69 turns. Our own first sentinel lands r73-r93 --
-# because this flag being False applies the 2-harvester prerequisite and the
-# 40 Ti floor from round 0.
-# And the CURRENCY changed underneath it: r1000 is now a defeat even when won,
-# so the economy this flag protects no longer scores.
-# RE-TESTED ON LIVE TEAMS, which is the fixture the old verdict never faced.
-LOKI2_RUSH_ON = True
+LOKI2_RUSH_ON = False
 LOKI2_RUSH_RND = 60        # the committed-opening window
 LOKI2_RUSH_MIN_HARV = 0    # inside the window, the harvester prerequisite is waived
 LOKI2_RUSH_TI_FLOOR = 8    # inside the window, bank floor after paying for a sentinel
@@ -1511,3 +1494,92 @@ LOKI_QUIET_ON = True     # no builder melee: no core peck, no siphon hit, no cou
 # ============================================================================
 
 LOKI8_RAIDERS_STAY_OUT = True    # raiders exempt from the home heal + melee recall
+
+
+# ============================================================================
+# LOKI-10 -- DO NOT BUILD ONTO OUR OWN CONVEYOR'S OUTPUT TILE.
+# Prereg: docs/prereg/PREREG-loki10-route-guard.md
+#
+# Measured over all 8,519 replays / 1,798,862 blocked harvester-rounds: 85.2% of
+# our binding tiles have NO DIRECTED PATH to our core, and 13.2% of them are a
+# conveyor line pointing at a TURRET OR BARRIER. We emplace onto the tile our
+# own line delivers into. That is 11.1% of the blockage -- MORE than the enemy
+# inflicts on us (6.1%).
+#
+# Our build-site filter excluded heal seats and nothing else; no path anywhere
+# asked whether a friendly conveyor faces the candidate tile.
+#
+# THE TREATMENT IS A REFUSAL. Reject the site. Build nothing new, re-site
+# nothing, move nothing. Every gain this line has ever made was a removal.
+# ============================================================================
+
+LOKI10_ROUTE_GUARD = True    # never emplace on a tile a friendly conveyor faces
+
+# The dead ends a conveyor must never be aimed at. A turret and a barrier both
+# refuse resources forever, so a line delivering into one scores zero on
+# `titanium_collected` for the rest of the match. The CORE is deliberately
+# absent -- that is the destination, not a dead end -- and so is the harvester,
+# which is a SOURCE and outside this plank's pre-registered scope.
+ROUTE_DEAD_ENDS = frozenset((
+    EntityType.GUNNER, EntityType.SENTINEL, EntityType.LAUNCHER,
+    EntityType.BARRIER,
+))
+
+
+# ============================================================================
+# LOKI-11 -- AIMED PLANT. Search the sentinel's facing instead of guessing it.
+#
+# THIS PLANK REPLACED AN EARLIER ONE THAT WAS BACKWARDS, and the reason is on
+# the record because the correction is the useful part.
+#
+# A league-wide corpus cut put our median sentinel plant at d^2=32 (a
+# sentinel's exact maximum range) against the fast killers' 8-25, and the
+# obvious reading was "plant closer". I built that. Then a direct replay
+# autopsy of the match we lost 0-5 measured the actual placements:
+#
+#   **13 of 13 Bisons sentinels sit CARDINALLY ALIGNED with a core footprint
+#   tile at Chebyshev 5, 4 or 2 -- modally 5.** Chebyshev 5 is d^2=25, i.e.
+#   MAXIMUM STANDOFF that still fires (25 <= 32 < 36). They are not planting
+#   close. They are planting as far out as the shot allows, ON A CARDINAL LINE.
+#   Our own sentinels in those games sat at Chebyshev 1-3, "half
+#   diagonal-facing", one per game.
+#
+# So "plant closer" would have FORBIDDEN the Bisons' own plant, and we were
+# already planting closer than them. The distance was never the variable.
+# ALIGNMENT is: their line shot ignores obstacles, so a cardinally aligned
+# sentinel fires through everything and only its own death stops it -- and at
+# Chebyshev 5 it is out of a defending builder's orthogonal reach.
+#
+# WHAT WAS ACTUALLY WRONG WITH OUR CODE. The site loop did:
+#       facing = bp.direction_to(target)
+# ONE guess -- the nearest 45-degree compass direction, frequently DIAGONAL --
+# and if it failed, the target was abandoned. The engine permits AT MOST ONE
+# of the eight facings to hit a given tile (s26 engine probe), so a one-guess
+# rule discards legal plants on ground we have already paid to walk to.
+#
+# THE TREATMENT IS A WIDENING, NOT A NEW MECHANISM: try all eight facings,
+# cardinals first, and take the one the engine says can fire. It can only ever
+# find MORE legal plants than the guess, never fewer.
+#
+# WHY THIS IS WORTH A LEG AT ALL (the damage arithmetic, replay-reconciled):
+# 3 sentinels x 18 dmg / 2-round reload = 27 dmg/round; 500 HP of core dies in
+# ~19 rounds of fire. In the autopsied match **100% of core damage on both
+# sides was sentinel fire** -- zero builder attacks, zero gunner damage -- and
+# the Bisons put **65-68% of all their titanium into sentinels and ammo against
+# our ~21%**. The kill is not economy-limited. It is limited by how quickly a
+# correctly-aimed sentinel starts shooting.
+#
+# NOT A DEFENCE PLANK: only the FORWARD sentinel aimed at the enemy core is
+# touched. Home turrets are untouched.
+# ============================================================================
+
+LOKI11_AIMED_PLANT_ON = True
+
+# Cardinals first: the Bisons' 13/13 alignment, and the facing whose line is
+# unblockable along a map axis. Diagonals are still tried -- they are legal and
+# a found plant beats a refused one -- they are simply lower priority.
+LOKI11_FACING_ORDER = (
+    Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST,
+    Direction.NORTHEAST, Direction.SOUTHEAST, Direction.SOUTHWEST,
+    Direction.NORTHWEST,
+)

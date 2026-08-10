@@ -98,3 +98,30 @@ matches/hour, so ~2-3 matches**. v102 is re-activated immediately after.
 
 Economy suppression (we lay 19-28 conveyors while they lay ~0), ring-body
 denial, launcher kidnap, or plant DISTANCE. One plank, one leg.
+
+---
+
+# ⛔ SUPERSEDED BEFORE ANY LEG FIRED — THIS PLANK IS NOW **LOKI-12**, NOT LOKI-11
+
+**No leg was ever created against this file.** The bot it describes has been
+moved to `bots/_v129loki12` and is parked, unfired. What follows is why, because
+the reason is worth more than the plank was.
+
+**THE MECHANISM CHECK CAME BACK NEGATIVE, AND I RAN IT BEFORE SPENDING RATED
+EXPOSURE.** Paired local runs, `_probe_victim`, saga, seed 7, LOKI-11 vs the
+live LOKI-8:
+
+    LOKI-8  : 1 sentinel, at (21,20), d^2=13, born r73
+    LOKI-11 : 1 sentinel, at (21,20), d^2=13, born r93
+
+**Same count, same tile, and the treatment planted it TWENTY ROUNDS LATER.** The
+facing search cannot bind when only one plant is ever attempted — falsifier
+branch 2 as written ("the leg answered nothing"), established for ~90 seconds of
+local compute instead of a rated-exposure window. **The falsifier earned its
+keep before the leg, which is the only time it is cheap.**
+
+**AND THE NEGATIVE RESULT LOCATED THE REAL DEFECT, which the facing plank would
+have masked.** We do not plant one sentinel because we aim badly. **We plant one
+sentinel because `LOKI2_RUSH_ON = False`** — with the committed-opening window
+off, the 2-harvester prerequisite and the 40 Ti bank floor apply from round 0.
+That is the whole timing gap: **Bisons plant r29-r47; we plant r73-r93.**

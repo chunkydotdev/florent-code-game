@@ -558,6 +558,9 @@ class Player(EcoMixin, RaidMixin):
                 # that seat's +4 HP/round for the rest of the match.
                 if ban is not None and (bp.x, bp.y) in ban:
                     continue
+                # LOKI-10: a turret here would cap our own conveyor line.
+                if self._feeds_tile(ct, bp):
+                    continue
                 for facing in DIRECTIONS:
                     try:
                         if not ct.can_fire_from(bp, facing, turret_type, threat):
@@ -577,6 +580,10 @@ class Player(EcoMixin, RaidMixin):
                     ct.write_store(SLOT_HOME_GUN, ct.read_store(SLOT_HOME_GUN) + 1)
                     return True
         return False
+
+
+    # `_feeds_tile` and its mirror `_faces_emplacement` live in EcoMixin
+    # (eco.py) -- all five build paths across three modules share one copy.
 
     def _try_build_launcher(self, ct):
         """One Launcher, near home.  ~70% of all launcher activity in the field
@@ -619,6 +626,9 @@ class Player(EcoMixin, RaidMixin):
             if (bp.x, bp.y) in lban:
                 continue
             if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
+                continue
+            # LOKI-10: a launcher here would cap our own conveyor line.
+            if self._feeds_tile(ct, bp):
                 continue
             try:
                 if ct.can_build_launcher(bp):

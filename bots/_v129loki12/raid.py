@@ -272,6 +272,9 @@ class RaidMixin:
                 t = p.add(d)
                 if (t.x, t.y) not in seatkeys:
                     continue
+                # LOKI-10: a barrier here would cap our own conveyor line.
+                if self._feeds_tile(ct, t):
+                    continue
                 try:
                     if ct.can_build_barrier(t):
                         ct.build_barrier(t)
@@ -419,19 +422,54 @@ class RaidMixin:
             return False
         if self._cpu_exhausted(ct):
             return False
+        # LOKI-11: consider the CLOSEST site first, not the first cardinal that
+        # happens to align. Ordering alone changes nothing when only one site is
+        # legal; the cap below is what actually moves the plant inward.
+        cands = []
         for d in CARDINALS:
             bp = p.add(d)
             if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
                 continue
+            # LOKI-10: a sentinel here would cap our own conveyor line.
+            if self._feeds_tile(ct, bp):
+                continue
+            cands.append((min(bp.distance_squared(c) for c in tiles), bp))
+        cands.sort(key=lambda t: t[0])
+        for _d2, bp in cands:
             for target in tiles:
                 if bp.distance_squared(target) > 32:
                     continue
-                facing = bp.direction_to(target)
-                if facing == Direction.CENTRE:
+                # LOKI-11: SEARCH the facing instead of GUESSING it.
+                #
+                # The old line was `facing = bp.direction_to(target)` -- ONE
+                # guess, the nearest 45-degree compass direction, which is
+                # frequently DIAGONAL. A sentinel's shot is a single-tile-wide
+                # line, so a diagonal facing sends it diagonally past a core
+                # that is sitting due north. The engine permits AT MOST ONE
+                # facing of the eight to hit a given tile (s26 engine probe),
+                # so guessing one of eight and giving up when it fails throws
+                # away legal plants we have already walked into position for.
+                #
+                # Replay-measured, this match: 13/13 Bisons sentinels are
+                # CARDINALLY ALIGNED with a core footprint tile; ours are
+                # "half diagonal-facing", one per game. Cardinal is tried first
+                # because it is the alignment their unblockable line uses --
+                # the sentinel shot ignores obstacles, so an aligned sentinel
+                # fires through everything and only its own death stops it.
+                facing = None
+                for cand_f in LOKI11_FACING_ORDER if LOKI11_AIMED_PLANT_ON \
+                        else (bp.direction_to(target),):
+                    if cand_f == Direction.CENTRE:
+                        continue
+                    try:
+                        if ct.can_fire_from(bp, cand_f, EntityType.SENTINEL, target):
+                            facing = cand_f
+                            break
+                    except Exception:
+                        continue
+                if facing is None:
                     continue
                 try:
-                    if not ct.can_fire_from(bp, facing, EntityType.SENTINEL, target):
-                        continue
                     if not ct.can_build_sentinel(bp, facing):
                         continue
                 except Exception:
