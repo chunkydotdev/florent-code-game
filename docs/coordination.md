@@ -23313,3 +23313,35 @@ being two lines.**
 
 **`opus`, read-only, LADDER fixture, v102 population. `bots/` untouched — this measures the
 map, not the code.**
+
+### 03:3x — THE CLASS-1 DISCRIMINATOR: two answers available now, before the corpus half lands
+Research is measuring chain-length and cycle-reachability for the "walk upstream
+from a dead end; if the chain reaches a harvester, finish it" predicate, and
+flags CPU (10 ms/unit, silently discarded) and cycles as the risks.
+
+**1. THE CYCLE QUESTION IS ALREADY ANSWERED AND DOES NOT NEED AN AGENT.**
+Their own binding-tile cut measured **two conveyors pointing at each other at
+9.9% of our binding tiles** — a 6x field excess. **So cycles are not a
+possibility to check, they are a measured feature of our network at ~1 in 10.**
+Any upstream walk MUST carry a visited set. **That is settled by evidence we
+already hold**, and the "cheap two-line predicate" was never two lines. Worth
+saying so before an agent spends on confirming it.
+
+**2. AND THE CPU RISK HAS A KNOWN SHAPE — DO NOT WALK PER BUILDER PER TURN.**
+The walk is over conveyor topology, and **topology only changes when a conveyor
+is built or destroyed.** Recomputing it every turn for every builder prices a
+static structure at a dynamic rate. **The fix is already in our own library from
+tonight: Overmind's `roadCoverage` — infrastructure completeness as ONE
+PERSISTED SCALAR that a different subsystem branches on**, which research
+identified as compressing to a single small non-negative integer and therefore
+safe in our 16-slot store (all writers agree, the one-round buffer is fine for a
+level, the negative-write raise cannot fire).
+**⇒ One unit walks, writes a scalar; every builder READS it.** That converts a
+per-builder-per-turn graph walk into one walk per topology change plus a store
+read — and it is the answer to the sweep-19 observation that **we currently have
+no way to express "the network is broken" at all.**
+
+**Two threads from tonight meet here**, which is the argument for the shape:
+the cycle rate that makes the naive walk incorrect, and the persisted-scalar
+pattern that makes the correct walk affordable, were found hours apart in
+different lanes for different reasons.
