@@ -24064,3 +24064,74 @@ but **Magnus's "no unrated games in 8 hours" still stands unanswered for the
 open-channel planks.** The first true unrated leg remains owed by whichever
 builder session next holds the arena: LOKI-9 successor or mode-switch, per
 the fire-list.
+
+## SIDE LANE: **WRAP s26/s27 (Magnus's call: "lets wrap") — PROCESS DELTAS + state note**
+
+Header time from the wrap-state shell call: 2026-08-10 ~05:5x CEST; ordering
+per git. Deltas were appended in place all session, per rule 5 — this
+consolidates, it does not reconstruct.
+
+### PROCESS DELTAS (side-lane-held)
+1. **Audit commits, not deliverables.** The us-sample flag landed while the
+   agent was mid-run and the correction reached the brief before the doc
+   existed. Research's own words: post-hoc review would have baked the
+   confounded factor into a published pricing doc. The watch's cadence is its
+   value.
+2. **Pre-state the audit before the artifact lands.** Ship_watch rewrite
+   criteria, both prereg audits, the escalation posture, the B-flip push text
+   — every one written before the thing it governed existed, so none could be
+   fitted to the moment. This lane's version of the pre-commitment discipline,
+   and it held at both SLOT_FREE firings.
+3. **A wake path is verified when its alarm has fired, not when its process
+   is alive** — learned on my own boot note (SHIP_ALERT absence was
+   decorative), generalised into CLAUDE.md's instruments bullet, then
+   generalised again by the whole session into "run every check against a
+   case that must come out the other way."
+4. **Receipts before claims.** Two lanes produced phantom-status errors;
+   this lane's posture executions carry tool receipts in the committed
+   record. An action-claim follows its receipt.
+5. **The standing-notes file is an instrument and got the same treatment:**
+   the unifier heads it, its boundary is stated, its riders (era, fixture,
+   freshness) each carry their incident, and fixture-immutability +
+   IN-FLIGHT-vs-ListAgents joined it tonight. A successor reads ONE unifying
+   question before the itemised rules.
+6. **Flag economics validated end-to-end:** every hard flag this session
+   (us-sample label, HANDOVER:70, the impossible bar, the phantom hash) cost
+   a one-line reply and was resolved same-hour; zero flags were wrong in
+   substance; the one alarm research called disproportionate they themselves
+   rated proportionate at closure.
+
+### STATE — verified, not asserted
+- **Subagents: zero spawned all session.** Peer messages all answered.
+- **git 0 ahead / 0 behind**; uncommitted files are monitor-owned daemon
+  state only.
+- **Detached monitors verified BY OUTPUT at wrap** (ship_watch 05:32 log line
+  with full schema, elo tape 05:40, league tee 05:34). They survive this wrap.
+- **MY two session monitors (all-commits drift watch, slot_rule wake) DIE
+  WITH THIS SESSION** — until a successor side lane boots, commits are
+  unaudited and the in-session slot wake is gone; ship_watch (detached,
+  proven able to fire/hold/clear twice tonight) remains the durable alarm.
+- **Slot at wrap: k=54, 1586, net5 −3, slot_free False, net_act +18.6.** Two
+  firings tonight, both reversed next match, rollback never triggered.
+- **The B-flip push text stays pre-written in coordination** — successor
+  sends it verbatim on rating < 1567.44 with net5 ≤ −21.
+
+### OPEN, for whoever boots next (priority order)
+1. **Magnus's unrated-bar directive STANDS OPEN** — the LOKI-10 arena battery
+   was the right test for its closed-channel plank and is NOT the owed
+   unrated leg. First open-channel leg (LOKI-9 successor or mode-switch) is
+   the builder queue's top item.
+2. LOKI-10 wiring pass (guard at raid + launcher sites, plus the mirror
+   predicate) then re-run — one pass from the whole class.
+3. Builder-lane instrument queue per research's wrap note: stderr exception
+   counter, corrected fixture variants (cad_probe2/orizon_probe2),
+   module-global probe for the completeness scalar.
+4. The ⛔ era block in tactics/INDEX.md governs ALL plank sizing from library
+   figures — watch-enforced.
+
+### BOOT POINTER (successor side lane)
+`.claude/commands/sidelane.md` → PROGRAMME.md → this file's tail →
+`PROGRAMME-drift-watch-2026-08-09.md` (READ THE UNIFIER FIRST) → the
+obligations doc. First expected work: re-arm both wakes (selftest them per
+the standing note), audit whatever the builder successor fired, certify the
+first unrated leg's two clocks.
