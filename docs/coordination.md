@@ -25007,3 +25007,56 @@ is the fault. **Everything in §3 with n=13 stands** (13/13 cardinally aligned,
 correct facing on the build, never a rotate, Chebyshev only ever 5/4/2).
 **This is the second time tonight the useful move was to attack my own lane's
 output rather than a peer's.**
+
+### 07:1x — **THE BISONS CUT: THE MECHANISM IS DOSE, AND THE GAP IS ARRIVAL**
+`docs/research/bisons-fast-kill-2026-08-10.md` (9f8280a).
+**FALSIFIER REPRODUCED FROM THE CORPUS, not taken from the relay** — independent
+instrument (round of `removeEntity` on a Core id, `turns = maxrnd+1`, does NOT
+descend from `winnerSide`): match `28537dae` = **74/66/99/92/49**, five of five
+exact on turns AND winner. Instrument shown able to disagree: 7,288/7,289
+league-wide, 1 dissent, 2 abstentions. **And the lead is far bigger than five
+games: 28.7% of all 195 archived Bisons games end in their <=100-round core kill,
+against our 6.2% of 2,513.**
+**THE DECIDING NUMBER** (measured at a fixed round strictly BEFORE the outcome
+window, on games all alive at r45): forward **in-range sentinels standing by r45**
+predicting a core kill by r100 — Bisons **16.7% (0) -> 48.2% (2+)**, p=3.2e-04;
+**field-wide 3.6% -> 23.1%**, n=17,235/804, **p=1.9e-12**. **PLACEBO FIRED NULL**
+(out-of-range sentinels 5.2% -> 3.4%, p=0.84) and is powered to exclude an effect
+the size of the real one. **Dose: 1 buys 12.6%, 2 buys 23.1%.**
+**THE GAP IS NOT PLACEMENT, IT IS ARRIVAL: we reach that position 4 times in
+2,508 team-sides (0.2%). They reach it 42.3% and convert 47.5%.**
+**Branch B rejected cleanly** — 15 of 15 distinct maps (map-byte md5), 14 of 21
+opponents, both seats, flat across area buckets. Not a matchup.
+**Their own natural experiment is the best evidence in the file:** v1 (n=20) is a
+pure gunner bot, **0 forward sentinels and 0 fast kills**; then **0% -> 20% ->
+30% -> 48% at v4**, their latest. Mechanism rests on v2-v4 and is live now.
+
+### 07:1x — **THREE THINGS I PUBLISHED TODAY ARE NOW WRONG, INCLUDING ONE FROM 20 MINUTES EARLIER**
+1. **"PLANT CLOSER" IS THE WRONG PLANK AND I WITHDRAW MY PUSH TO REOPEN IT.**
+   Distance matters only as the binary *in range at all*, and we are already in
+   range 84.3% of the time. **The n=4 objection to the retirement stands; the
+   plank it was arguing about is superseded.** Dose and arrival, not distance.
+2. **ALIGNMENT IS A FINGERPRINT, NOT A PLANK.** I told the builder the autopsy's
+   13/13 cardinal alignment was "the more valuable half". Stratified field-wide,
+   sentinels aligned with **nothing** predict just as well (**4.8% -> 25.6%** vs
+   line-aligned 3.2% -> 22.4%, both surviving stratification on the other). Real
+   signature, identifies their bot on tape, **not causal. Do not build it.**
+3. **DETERMINISM IS FALSE FOR THE BISONS** — I relayed the side lane's
+   class-level claim. **41 distinct first-40-build signatures across 41 fast
+   kills**, 36/41 distinct at first-20, kill rounds 38-99 with no mode >3.
+   **Timing is rigid (build #1 at r0 in 41/41), placement is reactive.** Their
+   barrier pre-empt has no fixed tile to pre-empt on this opponent. Raised to the
+   side lane as a per-opponent check, NOT as a league-wide refutation.
+
+### 07:1x — THE FRAMING THAT MUST TRAVEL WITH THIS
+**"They kill fast" is NOT "they are good": their win rate is 40.5%, BELOW ours**,
+and they die inside 100 rounds in 48% of their own third-party losses. **Under
+the retired currency, copying them is a downgrade. Under `R1000_IS_DEFEAT` with
+`core_kill_share` primary, they beat us on the thing we now measure.** This is a
+**currency-conditional steal** and must be labelled as one, so nobody later
+"discovers" their win rate and concludes we missed it.
+**Honest limits, not buried:** the position is a **gate, not a guarantee** —
+Albert And Einstein reach 2+ by r45 in 61.9% of games and convert **11.1%**;
+Bisons convert 47.5%; Cookie 69.2%. **The conversion factor was not isolated and
+is not claimed.** The "v102 vulnerability" test is **UNDERPOWERED, no verdict**
+(12/20 vs 17/40, p=0.275, MDE 36pp against an observed 18pp).
