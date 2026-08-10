@@ -25060,3 +25060,46 @@ Albert And Einstein reach 2+ by r45 in 61.9% of games and convert **11.1%**;
 Bisons convert 47.5%; Cookie 69.2%. **The conversion factor was not isolated and
 is not claimed.** The "v102 vulnerability" test is **UNDERPOWERED, no verdict**
 (12/20 vs 17/40, p=0.275, MDE 36pp against an observed 18pp).
+
+### 07:2x — **CROSS-CUT CONVERGENCE: SWEEP 20B EXPLAINS THE CRASH CENSUS'S BORDER FINDING**
+Two agents that never saw each other's work produced halves of one mechanism.
+- **`crash-induction-targeting-2026-08-10.md` (ac9d2cf)** landed on the
+  pre-registered "retire the carrier list" branch — but found a gate neither of
+  my two hypotheses named. For the four teams holding **2,401 of the field's
+  2,665** undamaged mid-game removals (90.1%), the hazard is **224.06 per 10,000
+  builder-rounds ON A MAP-BORDER TILE and 0 in 2,334,017 NON-border
+  builder-rounds** — including **0 in 296,387 rounds in melee contact (d²<=2)**.
+  Rule of three: non-border <=0.0129/10k. **Ratio >=17,432x.** All 2,401 events
+  sit on a border tile (1,517/1,517 for `vjg`).
+- **Sweep 20B's engine probe, independently: `is_in_vision` and the entire
+  `can_*` family are TOTAL (safe even off-map); every `get_tile_*` / `is_tile_*`
+  RAISES** — and an uncaught raise **permanently destroys the unit**.
+**PUT TOGETHER: a builder standing on a border tile that enumerates its four
+neighbours queries an OFF-MAP tile, raises, and dies. That is exactly a hazard
+concentrated on borders and ZERO everywhere else.** Neither agent could see this;
+the census had a gate with no mechanism, the sweep had a mechanism with no
+population. **The `0 in 296,387 melee-contact rounds` is what rules out the
+adversary reading, and the border ratio is what rules out recycling.**
+**AND IT MAKES THE LOKI DIRECTIVE'S NAMED-OPEN WEAPON ACTIONABLE:** the launcher
+throws a builder **from either team** to any passable tile. **Throw their builder
+onto a border tile.** Prereg'd fixture already written in the deliverable's §7
+(builder's lane, one unrated leg): bar **>=3/10** followed by undamaged removal
+within 3 rounds against their unconditional first-border-round rate of
+**947/3,194 = 29.6%**; falsifier 0/10. **No natural experiment exists to settle
+it from tape — across 940 archived games there is NOT ONE hostile launcher throw
+of a `vjg`/`Troupe`/`S`/`Ship Happens`/`Cookie` builder** (the only hostile throws
+are 153 against `Ouroboros`, 15 onto border tiles, 0 removals within 3 rounds).
+**OUR OWN EXPOSURE — surface counted, NOT a verdict:** 27 bounds-guard sites
+against 39 `get_tile_*`/`is_tile_*` call sites in `bots/_v127loki10`. **Counts
+cannot tell you whether each query is guarded and I am not claiming they do.**
+What is established: we wrap `run()` in a blanket `try/except Exception`
+(13fdedb), so an unguarded border query costs us **the TURN, not the UNIT** —
+which is why our undamaged-death rate is 0 and why that 0 measures the HANDLER,
+not the paths. **We pay the same fault in the invisible currency.**
+**Control quality worth recording:** the instrument returned "adversary" on
+`Cookie` (p=5.2e-08) — the exact group whose null is reported elsewhere — so it
+demonstrably produces the other verdict. Six zero-teams have **722,545 border
+builder-rounds and 0 events**, so the border is not lethal per se.
+**AND A DISCARDED CONTROL THAT IS ITSELF DATA:** `round % 2` was pre-picked as
+null and **is not** — `vjg`'s undamaged removals fall **927:590 on even rounds,
+p=1.4e-10**. A parity signature is a scheduled policy, not a random fault.
