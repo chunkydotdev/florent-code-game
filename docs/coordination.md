@@ -30314,3 +30314,57 @@ by its own checks, every time.** My controls fired on other people's work all da
 and never once on mine; what caught mine was Magnus asking a question about the
 board and two peers re-deriving my arithmetic. **A lane that only checks outward
 is half an instrument.**
+
+# ============================================================================
+# 2026-08-10 21:10Z — **WRAP s28 (SIDE LANE): PROCESS DELTAS**
+# Session closing on Magnus's call. Deltas only; state is in HANDOVER and the
+# NIGHT-SHUTDOWN checklist.
+# ============================================================================
+
+## THE ONE SHAPE BEHIND EVERY MISS I MADE TODAY
+**I VERIFIED WHAT DOCUMENTS SAID AND NEVER ASKED WHAT THEY OMITTED — and where
+I could infer instead of check, I inferred.** Both halves, itemised, because a
+wrap that lists only catches is an advertisement:
+| # | the miss | what I checked | what I didn't |
+|---|---|---|---|
+| 1 | cleared `PREREG-loki14b` "no flags" | ids unique, estimator named, controls present, D17 scope | **who the carriers WERE** — 806-1107 against our 1658. Magnus found it asking *"what's vjg?"* |
+| 2 | cleared `PREREG-loki16b` "no flags" | provenance, estimator, clustering, stratum, reused control | **the planned n.** No fixed n permits optional stopping |
+| 3 | told Magnus "no prototype leaked" | `ladder_games.ourver` | that it is a **POLL-TIME tag**. Truth: 3 leaked matches, −24.67 Elo. **My own boot state warned me** |
+| 4 | Ouroboros bleed −122.9 | the arithmetic | that `meta_join` is **38% incomplete** on our ladder matches. True figure −301.4 |
+| 5 | "+64 doubles the reachable ceiling" | the internal inconsistency (real) | **the blast radius** — the band was already us−80..us+125; nothing moved |
+| 6 | "CORE_PAIRS contradicts the platform" | the table against a **formula** | the table against the **ENGINE**. Our table was right; "fixing" it would have broken a live map |
+| 7 | "the builder edited a live script, got lucky" | a commit timestamp | **the pid: 4404→6659, a restart.** They followed the rule. Unfair, in a durable record |
+| 8 | de-duplicating `PROGRAMME.md` | that my section was redundant | that a **read-modify-write races** another lane. Clobbered three machine-readable fields |
+**Items 5, 6 and 7 are one fault: a timestamp, a formula and an inconsistency
+each licensed an INFERENCE I published instead of a CHECK I could have run.**
+
+## WHAT THE LANE CAUGHT, and the single habit that produced most of it
+**When two observations admit opposite readings with opposite consequences, say
+so and name the discriminating test.** That habit produced: the **dead-path-vs-
+broken-guard** fork (inverted two plank decisions and exposed a metric that was
+wrong, not a bot that was broken); the **cycle-NUMBER vs productive-cycles** gap
+(the watchdog would have stopped the leg at ~120 throws against its own 150
+gate); and the **stop-rule-is-a-power-decision** flag (Amendment 7: at the cut
+dose the modal outcome sat BELOW the bar while proving the mechanism).
+Also: the **post-hoc MDE denominator** (21.7 → 19.5pp), **panel3's borrowed
+abort test**, **D18** promoted after two firings in four hours, and the
+**turret-mix** finding (they build 69.8% gunners, we build 56.4%) which
+independently reproduces the kill-mix inversion from the build side.
+
+## D-RULES ADDED TODAY
+**D18** (opponent version must be pinned or shown to have moved) plus standing
+notes: a control group reported as a pooled figure is unauditable · your own
+code is a free positive control · a stop rule is a power decision in scheduling
+clothes · timestamps prove WHEN never WHAT · an error is only catchable when it
+breaks a hard bound · a load-bearing parameter must be OBSERVABLE · seed text is
+multiplicative · platform DESCRIPTIONS are less reliable than platform DATA ·
+never edit a script running unattended · **a prereg must fix its n.**
+
+## WHAT I'D TELL MY SUCCESSOR
+1. **Read the prereg for what is ABSENT.** Both my prereg misses were omissions,
+   not errors. The checklist now carries n and the cut-short rule.
+2. **Never characterise another lane's conduct from an artefact.** Ask, or check
+   the process. I did neither and published it.
+3. **Population questions go to `ladder_games.tsv`; `meta_join` is
+   replay-joined and 38% short.** Version-played questions go to the PLATFORM.
+4. **The score is v2 (tiebreak −10). Any figure without a scale tag is stale.**
