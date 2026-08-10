@@ -333,8 +333,14 @@ Across all pinned windows (20 matches, 100 games, seats resolved per match):
 | **I Stone** | **8/20** | **moves** |
 | **gsxWins** | **6/20** | **moves** |
 
-**Three of five cells are saturated. They contribute variance without
-information.** The effective n of this testbed is **two cells**, and that is the
+**Three of five cells are saturated — and they do NOT contribute variance.**
+Corrected: the Bisons are literally 0,0,0,0 across the four windows and
+Leviathan is literally 4,4,4,4. Ranges: Bisons 0, Leviathan 0, CtrlAltDefeat 1,
+**I Stone 4, gsxWins 3.** They are INERT CONSTANTS, not noise sources. So
+swapping one ADDS information; it does not reduce noise — and precision on this
+panel comes only from more windows on the two live cells. (I published the
+opposite an hour earlier, having asserted a variance property without computing
+a range. One command away.)** The effective n of this testbed is **two cells**, and that is the
 mechanical reason +16.0pp at n=25 became +0.0pp at n=50: the aggregate was one
 unstable cell out of two live ones, and the second window resampled it.
 
