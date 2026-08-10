@@ -34,6 +34,7 @@ opposite of invisible.
 """
 from __future__ import annotations
 
+import ast
 import shutil
 import subprocess
 import sys
@@ -60,6 +61,43 @@ def stage(src: Path, dst: Path) -> list[Path]:
     return kept
 
 
+# LOADER-REJECTED CONSTRUCTS. Reported s28 from a read of the engine binary's
+# `ast` rules: `finally`, bare `except:`, and `except BaseException` are
+# LOAD-TIME REJECTIONS -- they do not kill a unit, they BRICK THE WHOLE
+# SUBMISSION. `Exception` and `GameError` are fine.
+#
+# WHY THIS IS A HARD BLOCK ON AN UNVERIFIED CLAIM, deliberately. I have NOT
+# re-derived the loader rules myself; this is the research arm's binary read.
+# Blocking is still correct on the asymmetry: our live trees contain ZERO of
+# these three constructs (checked across _v130loki13, _v131loki14, _v124loki8),
+# so the guard costs us nothing today, while the failure it prevents is total
+# and silent -- a submission that never loads at all. If the claim turns out to
+# be wrong we have merely forbidden three constructs we do not use.
+# Pass --allow-loader-constructs to override, which is a decision on the record.
+_LOADER_BANNED = ("finally", "bare except:", "except BaseException")
+
+
+def loader_lint(root: Path, files: list[Path]) -> list[str]:
+    bad = []
+    for rel in files:
+        if rel.suffix != ".py":
+            continue
+        try:
+            tree = ast.parse((root / rel).read_text())
+        except SyntaxError as e:
+            bad.append(f"{rel}:{e.lineno}  SYNTAX ERROR: {e.msg}")
+            continue
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Try) and node.finalbody:
+                bad.append(f"{rel}:{node.lineno}  `finally` — loader rejects the SUBMISSION")
+            if isinstance(node, ast.ExceptHandler):
+                if node.type is None:
+                    bad.append(f"{rel}:{node.lineno}  bare `except:` — loader rejects the SUBMISSION")
+                elif isinstance(node.type, ast.Name) and node.type.id == "BaseException":
+                    bad.append(f"{rel}:{node.lineno}  `except BaseException` — loader rejects the SUBMISSION")
+    return bad
+
+
 def main(argv: list[str]) -> int:
     args = [a for a in argv if not a.startswith("--")]
     dry = "--dry-run" in argv
@@ -82,6 +120,19 @@ def main(argv: list[str]) -> int:
             sys.exit("REFUSING: no main.py among the staged files — the engine "
                      "requires it at the zip root or in one top-level dir.")
 
+        offences = loader_lint(dst, kept)
+        if offences and "--allow-loader-constructs" not in argv:
+            print("REFUSING: loader-rejected constructs found. These do not kill a "
+                  "unit — they brick the ENTIRE submission at load time:")
+            for o in offences:
+                print(f"    ** {o}")
+            print("  Use `Exception` or `GameError`; restructure to avoid `finally`.")
+            print("  Override with --allow-loader-constructs (a decision on the record).")
+            return 1
+        if offences:
+            print(f"  ** {len(offences)} loader-rejected construct(s) OVERRIDDEN by flag:")
+            for o in offences:
+                print(f"    ** {o}")
         print(f"staging {src.name}: {len(kept)} code file(s) -> upload")
         for rel in kept:
             print(f"    +  {rel}")
