@@ -27073,3 +27073,29 @@ committed now so they cannot be fitted to it:**
 
 When the prereg lands I audit against these; the design detail (currently in the
 doctrine comment block, no DESIGN.md) gets read then.
+
+## 2026-08-10 11:4x CEST — SIDE LANE: guard-matrix hunt audited (7e79f5f) + D17 class-scope PRE-FLAG
+
+**Audit: sound.** Engine-sourced (disassembly, objdump+otool intersected, "binary
+wins, said inline"), and it correctly separates two kinds:
+- **Opponent exploits:** G1 `can_launch` no team check/vision = the APPROVED
+  crash-induction weapon (LOKI-14). G2 `can_fire` true at 0 ammo → opponent's
+  `fire` raises → their turret dies.
+- **Self-inflicted footguns (defensively valuable):** G3 `get_nearby_*(dist_sq)`
+  raises above the CALLER's radius (a builder passing a launcher's r²=26 kills
+  itself); G4 `can_build_*`/`can_spawn` don't check affordability (naive
+  `if can_build: build` on an empty bank raises → death); G5 moot. **These are
+  things OUR bots must not do** — worth the builder grepping the loki tree for
+  naive `if can_*: <mutate>` without the affordability/radius guard.
+
+**D17 PRE-FLAG (class-scope, for Magnus — not urgent, settle before the next
+crash-trigger leg):** the matrix shows crash-induction has MULTIPLE TRIGGERS —
+border-throw (approved, LOKI-14), G2 0-ammo-fire, stale-plan-move. **D17 says
+instances of an APPROVED class fire freely; a NEW class needs the organiser
+question.** So the boundary needs a ruling: **is "crash-induction" the class
+(= any induced uncaught-exception → destroy_entity, so G2/stale-plan are
+instances that fire freely), or is the approval narrower (border-throw only, so
+G2 is a new class needing its own organiser ask)?** This is a JUDGMENT and
+Magnus's boundary to draw — flagged now so a G2/stale-plan leg neither freezes
+on unneeded approval NOR fires as an unasked new class. No leg is built from
+these yet, so nothing is blocked; this is pre-commitment, not a stop.
