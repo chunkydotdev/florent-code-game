@@ -235,3 +235,32 @@ a proven negative control beats three that have never flagged anything.**
   wall-clock coupling that reintroduced it one layer down; a repair against a
   failure class is verified against the CLASS, not the instance that prompted
   it.
+
+- **A bar names its ESTIMATOR, or it can be met and missed by choosing one
+  afterwards (s28, LOKI-16 read-out, D24 family):** the ring-hold mechanism
+  bar (≥ +0.08 coverage) reads +0.086 game-mean (MEETS), +0.076 round-weighted
+  (MISSES), +0.084/+0.085 equal-cell (MEET) — all four within 0.010 of the
+  bar. Prereg obligation going forward: the bar line carries its estimator and
+  its clustering unit, pre-committed with the number.
+
+- **A fixture cell must ADMIT the mechanism, on every axis including the MAP
+  (s28, LOKI-16 read-out — D13's disease on an axis nobody audited):** one
+  panel map has corner-anchored cores so the 12-tile ring clips to 5 — the
+  plank's geometry does not exist there; 20% of the leg measured a mechanism
+  on terrain where it is undefined and dragged +0.117 to +0.086, across the
+  bar. Split by admission: 12-ring maps +0.117; clipped map −0.039 (sign
+  reversed). Prospective check joins D13's: before a leg, verify each cell —
+  opponent AND map — can express the treatment. Partial clips (9-10 tile
+  rings) dilute silently; a binary split does not catch them.
+
+- **Platform-downloaded replays STRIP print() output (s28, LOKI-14 read-out;
+  instrument fact, verified 30,664/30,664 BotOutput events with empty
+  stdout):** any prereg whose mechanism read plans to decode its own arm tag,
+  dose counter or state flag from a live leg's replays is planning on an
+  instrument that does not exist. CLAUDE.md's "print() is captured to the
+  replay" is true locally and false for what the platform hands back
+  (correction owed there — builder-owned). Substitute pattern from the leg:
+  derive the treatment marker from WIRE state (destination tile vs map dims),
+  declare super/subset direction, and sanity-check attribution (683/683
+  unambiguous launchers; max d²=26 with 0 over, the documented range hit
+  exactly).

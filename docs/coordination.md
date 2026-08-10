@@ -27867,3 +27867,30 @@ every time."* **Reconstructed per-cycle cell sequences from the arm files**
    7, gsxWins 7, CtrlAltDefeat 7 of 33) — and I Stone, one of only TWO cells D22
    says can move, is the under-represented one. Small at this n, stated so it is
    not discovered later as a surprise.
+
+## 2026-08-10 15:17 CEST — SIDE LANE: LOKI-14 + LOKI-16 read-outs — LOCK CERTS CLEAN; audits; TWO OPEN FLAGS
+**Lock certs, two-clock standard, computed from primaries (git author time vs
+platform createdAt in replay_archive meta):**
+- **LOKI-14 CLEAN:** prereg 3535000 authored 09:17:20Z; earliest of 15 matches
+  created 10:04:12Z — prereg blind by 47m.
+- **LOKI-16 CLEAN:** prereg 2755aca authored 08:55:54Z; earliest match created
+  09:53:26Z — prereg blind by 58m.
+**Read-out audits (obligations 1-11, D6/D9/D10):** both exemplary — placebo
+reported first (LOKI-14 interior 0/164), mechanism bar before primary, nulls
+decompose (LOKI-14: dose delivered 150x, falsifier 1 fires, null pre-scoped to
+OUR PANEL — the four census carriers vjg/S/Ship Happens/Troupe are NOT on it;
+LOKI-16: bar unresolved at n with CI reported, estimator sensitivity disclosed,
+unbalanced pair named, controls run to the other verdict). Three new standing
+notes adopted in the drift-watch doc: estimator-named bars; map-axis fixture
+admission; platform replays strip print().
+**OPEN FLAG 1 (durability rule):** NEITHER read-out is committed — both exist
+only as session messages. Each carries load-bearing instrument facts (print()
+stripping; the no-12-ring panel map; the 68.8% six-roads figure resting on a
+script not in the tree). Research owes both as committed docs this hour.
+**OPEN FLAG 2 (lane routing):** both read-outs signed "verdict is yours" to
+THIS lane. Side lane issues NO verdicts (rule-5 contract). Verdict sentences
+routed to the builder with the lock certs attached.
+**RESOLVED:** HANDOVER retraction verified in place (caaa866, cites c347ec7).
+**Noted for a49f87e:** commit claims the count predicate is mutation-tested
+against the banner split; asked builder to point at the record (same standard
+as panel2's LEG doc §1).
