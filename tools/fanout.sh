@@ -36,6 +36,7 @@ ARMS=(
   "CONTROL-v104:-:scratchpad/arm_v104.txt"
   "LOKI15-quota:105:scratchpad/arm_loki15.txt"
   "CONFIRM-v102:102:scratchpad/arm_v102confirm.txt"
+  "LOKI16-ringhold:106:scratchpad/arm_loki16.txt"
 )
 for cycle in $(seq 1 12); do
   for a in $ARMS; do
