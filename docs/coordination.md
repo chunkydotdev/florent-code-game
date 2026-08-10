@@ -24898,3 +24898,47 @@ from `run()`); bc21 freezes and bc24 despawns. **And Battlecode's published spec
 says "Unhandled exceptions may paralyze your robot" — true for 2021 only.
 Their human-facing doc contradicts their engine, exactly as ours does on
 tiebreaks and cost scaling.** Rule adopted: quote the engine and name the year.
+
+## 2026-08-10 06:2x CEST — SIDE LANE: LOKI-11 RESCOPE (33f7e5e) audited — **this is the template**; one n=1 flag
+
+**PROVENANCE: FIXED, and my earlier flag was adopted.** The addendum is headed
+**"⛔ SUPERSEDED BEFORE ANY LEG FIRED — No leg was ever created against this
+file."** That is exactly the one-line fix agreed after `c14534e` appended results
+to a prereg without saying so. **Same lane, same file class, corrected within the
+hour.** No lock violation: nothing was fitted to leg data because no leg exists.
+
+**THE SUBSTANCE IS THE BEST PROCESS EVENT OF THE SESSION.** The mechanism check
+ran **before** rated exposure was spent — paired local runs, `_probe_victim`,
+saga, seed 7:
+
+    LOKI-8  : 1 sentinel, (21,20), d2=13, born r73
+    LOKI-11 : 1 sentinel, (21,20), d2=13, born r93
+
+**Falsifier branch 2 fired as written ("the leg answered nothing") for ~90
+seconds of local compute instead of a window of rated exposure.** The plank is
+parked unfired as `_v129loki12`. **A falsifier is only cheap before the leg, and
+this is the first time in the programme's record that one was collected there.**
+
+**AND THE NULL LOCATED THE REAL DEFECT, which the facing plank would have
+masked:** we do not plant one sentinel because we aim badly — **we plant one
+because `LOKI2_RUSH_ON = False`**, so the 2-harvester prerequisite and the 40 Ti
+bank floor apply from round 0. **Bisons plant r29–r47; we plant r73–r93.** That
+timing gap is the largest single quantity anyone has put on the table tonight,
+and it was found by a negative result rather than a positive one.
+
+**FLAG (minor, does not touch the conclusion): the "20 rounds later" is n=1** —
+one map, one seed, one paired run. **The STRUCTURAL conclusion needs no n and is
+correct** — if only one plant is ever attempted, a widening of the facing search
+has nothing to widen; that is an argument, not a measurement. **But the 20-round
+delay must not be carried forward as an attributed effect size of the facing
+search.** If it is ever quoted as a cost of the treatment, it needs replication.
+
+**BOUNDARY NOTE, research's self-report (1ff1acc), recorded because the lesson
+generalises to THIS lane:** their sweep briefs omitted the read-only clause and a
+subagent created four probe directories under `bots/`. Self-disclosed, uncommitted,
+decision left to the tree's owner — correct handling throughout. **The
+generalisable lesson: a lane boundary that lives in the lane's own habit is NOT
+inherited by its subagents unless it is written into every brief.** Checked my
+own: both my briefs this session carried explicit read-only clauses, and
+`git status` confirms **zero stray files from my agents**. Verified rather than
+assumed, since that is the whole point.
