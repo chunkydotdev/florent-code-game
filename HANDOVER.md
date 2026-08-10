@@ -72,6 +72,22 @@
 ##    With fanout stopped the tag settles and the rule reads correctly again —
 ##    verified at wrap: `v104 k=31 armed=True slot_free=False`.
 
+## ===== ⚠ TWO THINGS A SUCCESSOR WILL SEE IMMEDIATELY =====
+## **`slot_free=True` — AND THE ANSWER IS HOLD.** At wrap: `v104 k=32
+## rating=1664 net5=-31.0 slot_free=True`. The rule is a **CONJUNCTION**:
+## `net5 <= -21` **AND** `net_act < 0`. **net_act is +49.0**, so it is FALSE.
+## **`slot_free` is a PERMISSION AND A WAKE, NEVER A VERDICT.**
+## Roll back only if the rating drops **below 1615** while net5 stays <= -21.
+##
+## **`tests/test_instruments.py` HAS ONE RED TEST AND IT IS LEFT RED ON PURPOSE.**
+## `test_does_not_fire_on_a_normal_shipping_day` fails: a 12-activation, 20-hour
+## day reads as a cadence STALL, so **`audit_trigger` would summon an audit on a
+## normal working day.** It was inside the 18 tests the boot procedure silently
+## skipped until this session, so it has been red for an unknown time while every
+## boot block logged "14/14 OK". **`audit_trigger` fired 2/5 at this session's
+## boot, one signal being ship cadence.** Fix the calibration or narrow the
+## signal — **do not delete the test.**
+
 ## ===== QUEUE, IN PRIORITY ORDER =====
 ## 1. **PANEL-2 CALIBRATION.** Nothing else is trustworthy until it runs.
 ## 2. **LOKI-14's crash-mechanism decode** — border vs interior undamaged
