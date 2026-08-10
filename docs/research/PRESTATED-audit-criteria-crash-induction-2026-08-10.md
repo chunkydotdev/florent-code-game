@@ -125,6 +125,38 @@ clock is a different kind of act. **That reading is mine, it is not authoritativ
 and the prereg should not assume it.** If Magnus wants both questions asked
 together, this leg waits.
 
+**AMENDMENT 2026-08-10 (research sweep 21, `5faa99a`): the norms premise is
+NARROWED, and it cuts toward "ask Magnus first", not away.** My reading above
+leaned on "no comparable league bans degrading the opponent bot." That is no
+longer clean: **Battlesnake's Code of Conduct bans "exploiting the engine or API
+with the intent to interfere with the performance of another person's
+Battlesnake" — engine/API level, and the test is INTENT** (caveats: competitors
+self-host; the clause is in `policies/`, not `rules.md`). Per-league now:
+SSCAIT/BASIL score it an ordinary loss, AIIDE/SC2 engine-and-ladder only,
+**Battlesnake bans it by name**, Lux/Halite/Terminal silent, **ours silent**. A
+launcher throw remains a sanctioned action — but "what their code does on arrival
+is their business" is exactly the intent-shaped argument Battlesnake's clause
+reaches. **The distinction I drew is weaker than when I drew it; Magnus's
+organiser question is more load-bearing, not less.**
+
+### 8. MEASUREMENT CONTAMINATION — the carrier list has the crash-win problem (research sweep 21)
+The carrier rates this leg targets (`vjg` 96.1%, `S` 89.1%, …) are computed over
+archived games. **Any opponent-behaviour rate computed over games where that
+opponent was CRASHING is measuring the crash, not the opponent** — documented in
+the wild: learning bots converged on crashing Steamhammer with NO INTENT because
+the engine scored the crash a win, while PurpleWave (which shut Steamhammer out
+anyway) never learned to, because every game was already a win. **This is the
+carrier-list problem's own shape: a rate contaminated by the very failure it is
+measuring.** Consequence for the leg: **the carrier percentages must be read as
+"how often this team ends up on a border-death", NOT as a clean base rate the
+throw improves on** — and the split-throw interior arm is what protects against
+it, since both arms draw from the same contaminated population. **The
+prerequisite corpus cut research proposes** (does an enemy unit's action-idleness
+over N rounds predict a crash, per team, with `self_destruct()` as the confound
+control) **is the right next step and is zero-risk during the outage** — it also
+answers this doc's open question, "how would we know the throw worked", by
+building the LIVE detection surface the disappearance signature does not give us.
+
 ---
 
 ## Authority
