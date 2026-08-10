@@ -93,3 +93,72 @@ apart; the activation window is shorter than one interval. Procedure:
 before firing, roll back on the fifth accepted challenge.**
 Absolute floor **1550** stands — the slot rule cannot fire inside a sub-8-match
 activation, so the floor and lane attention are the only protection.
+
+---
+
+## ⚠ AMENDMENT, PRE-LEG — MECHANISM A REDERIVED, AND AMMO ADDED. NO LEG HAS FIRED.
+
+Two flags from the side lane and research, both correct, both fixed here rather
+than argued with.
+
+### A1. The `<= 25 conveyors/game` bar was not a treatment-occurrence check
+
+**LOKI-11 already reached 20.92 conveyors/game without touching
+`PAVE_TRAIL_ON`.** A bar a *different* plank already clears cannot show that
+*this* flag bound — research's phrasing is the sharpest: **"a constant column
+wearing a threshold's clothes."** My sizing rule fixed *live-sourced* and missed
+*discriminating*; those are different properties and only the first was
+addressed.
+
+**REDERIVED FROM THE FLAG'S OWN ACTION.** Paired local runs, `_v130loki13` vs
+`_v124loki8` against the same opponent on the same map at identical seeds — the
+only difference between the two binaries being the constant itself:
+
+    seed 21   v102 51 conveyors -> LOKI-13 33   (0.65x)
+    seed 22   v102 61           -> LOKI-13 41   (0.67x)
+    seed 23   v102 75           -> LOKI-13 32   (0.43x)
+
+**The flag's own action is a 35-57% conveyor reduction.** (Absolute counts are
+higher than live because this fixture runs longer games — **the RATIO transfers,
+the absolute does not**, which is exactly the mistake that broke LOKI-11's bars.
+This is a legitimate use of a probe run: it sizes the TREATMENT's own effect,
+never the control's.)
+
+**BAR A, RESTATED: conveyors/game <= 27**, i.e. **<= 0.70x the live control's
+38.20 — the WEAKEST of the three observed flag effects.** The ratio is reported
+alongside the absolute. Above 27, the flag did not bind and the leg answered
+nothing.
+
+*Noted honestly: LOKI-13 differs from v102 by exactly one constant with all
+three other modules byte-identical, so no "unrelated reduction" is mechanically
+available — but a bar should exceed what game-dynamic variance alone produces,
+and now it is sized to do that from measurement rather than from assertion.*
+
+### A2. AMMO — the unmeasured link, and the likeliest way this plank self-defeats
+
+The causal chain is **conveyors -> titanium -> AMMO -> sentinel shots -> kill.**
+Mechanism B as written measured `titanium_collected` (delivery, not spending)
+and sentinel count (emplacements, not shots). **Neither sees ammunition.**
+
+Three sentinels firing ~19 rounds costs **~280 Ti of ammo at 10/shot**, against
+a 500 Ti start plus 2.5/round passive. **For a kill at r32 the starting bank
+covers it and economy is irrelevant; in the r100-250 band it may not.** So the
+most likely adverse outcome is *"we cut the economy and then could not afford to
+shoot"* — which, as originally instrumented, would have surfaced as a mysterious
+currency drop with Bar A passing and Mechanism B reading "less titanium",
+inviting exactly the wrong conclusion.
+
+**MECHANISM B EXTENDED, still no bar — diagnostic only:** `titanium_collected`,
+forward sentinels, **and shots fired / `convert_ammo` volume, both arms.**
+
+### A3. Denominators and what this leg can resolve
+
+Arms are **n=50 control vs n=25 treatment**, so cells pair **2:1**, not as
+matched pairs. **And the leg's own data now bounds what any 25-game window can
+say: the control swung 36.0% -> 48.0% on the currency between consecutive
+windows with the SAME BOT.** So:
+
+**THIS IS A DOSE-AND-MECHANISM PROBE, NOT A CURRENCY TEST.** The currency read
+is reported with its interval and the mandatory per-opponent Δ column, and
+**any delta under ~25pp will be called a null.** Pre-committed here, before
+firing.
