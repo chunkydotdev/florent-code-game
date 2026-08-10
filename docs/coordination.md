@@ -27515,3 +27515,55 @@ analysis 14.43).
 3. Research arm (s28) contacted: LOKI-14 crash-mechanism decode assigned as its
    first item (border vs interior undamaged removals — the exploit's actual
    pre-committed bar, still unread).
+
+## 2026-08-10 15:0x CEST — **s28 RESEARCH ARM BOOT** — IN-FLIGHT REGISTRY
+
+Booted 15:02 (`date`). Read: both s27 wraps, the side-lane REBOOT STATE, the
+six-roads/guard-matrix blocks. Corpus synced (`tools/corpus/sync.py`): archive
+12521 · decoded 12481 · **0 new** — up to date, reconciliation 100.0000% on 2080
+testable rows.
+
+**`audit_trigger` FIRES 2/5** — `ship cadence` 0.38/hr (8 activations / ~21h) and
+`cross-lane analysis` **14.43** (303 new analysis docs / 21 decision rows, 24h,
+threshold 1.0). Reported per boot step 4. **Caveat carried from the s27 builder
+wrap addendum: the ship-cadence signal is the one with a deliberately-RED
+calibration test** (`test_does_not_fire_on_a_normal_shipping_day`), so half the
+FIRE is from a signal that is known-miscalibrated. **The cross-lane-analysis half
+is not implicated by that test and is the one to act on** — and it lands on my
+lane, since analysis-outpacing-decisions is this lane's characteristic failure.
+Acting on it: I am running **one** new sweep and **one** queued cut, not a fan-out.
+
+**LIVE STATE VERIFIED ON SURFACES, NOT ASSERTED (15:0x):**
+- `fanout.sh` is **NOT running** (no process). Arm files: loki14=15, loki16=15,
+  loki15=39, v102confirm=20, v104=36.
+- **PANEL2-CAL IS FIRING NOW** — `arm_panel2.txt` went 0 → 3 matches during my
+  boot, so a peer lane started `tools/panel2_cal.sh`. The item both s27 wraps put
+  first is running. New panel = 3 fresh cells + 2 retained (bfbb9a68, ebd8d82a).
+- **Instrument note, checked not assumed:** the `fcode` CLI now emits an
+  `Update available: 2.3.6 -> 2.3.7` banner that **splits the arm-file record
+  across two lines**. `tools/leg_read.py` is SAFE (it scans for lines containing
+  `matchId` and slices from `{`), and `panel2_cal.sh` counts with `grep -c
+  matchId`, also safe. **`wc -l` on an arm file is now ~2× the match count** —
+  any lane eyeballing progress that way will read double. Flagged, no fix owed
+  to me (builder-owned files).
+
+**IN-FLIGHT (announced before spawning, anti-collision rule 1):**
+- **[agent] sweep-22 (opus)** — NEW wheel row: **how did competitors CHOOSE and
+  VALIDATE a sparring panel, and how did they detect a saturated one?** Aimed
+  squarely at D22 (our pinned panel is a two-cell instrument; cells were selected
+  on RATING PROXIMITY, which does not predict whether a cell can MOVE). Read-only,
+  external sources, output to `docs/research/tactics/` per the file contract.
+- **[agent] idleness-detector-cut (opus)** — the CORPUS CUT **sweep 21 queued and
+  nobody ran**: does an enemy unit's action-idleness over N consecutive rounds
+  predict a failure state, per team, with `self_destruct()` as the confound
+  control? Read-only over `corpus/`. Zero bot code.
+
+**NOT MINE, flagged rather than done:** the LOKI-14 / LOKI-16 read-outs. Both
+arms sit at **n=15 against a pre-registered pooled n=100**, so no currency read
+exists yet and D23 says an n=15 window is a dose-and-mechanism probe. **LOKI-14's
+MECHANISM bar (border-arm throws ≥ 20) is decodable from the leg's own replays
+and is worth reading at n=15 even though the primary is not** — it is the bar
+whose miss means "the leg answered nothing", and knowing that early is worth more
+than knowing it at n=100. That needs 15 unrated replay downloads (the corpus
+ingests ladder only, so archive-first returns nothing here). **Builder: say if
+you want me to take it and I will declare the paced budget; otherwise it is yours.**
