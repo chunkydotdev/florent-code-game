@@ -1,5 +1,20 @@
 # PREREG — LOKI-14b: BORDER-THROW CRASH INDUCTION, AGAINST MEASURED CARRIERS
 
+**PROVENANCE: corpus/archive cut** — the bimodal border-hazard census
+(`docs/research/crash-induction-targeting-2026-08-10.md`), which found four teams
+carrying 2,401 undamaged border removals against ZERO off-border — **plus an
+engine binary read** for `can_launch`'s absent team check and absent vision guard
+(`docs/research/engine-source-crash-and-launcher-2026-08-10.md`).
+**Nothing in `docs/research/tactics/` spoke to this plank.**
+
+*(Field added on Magnus's ruling, 2026-08-10: "they need to state where the idea
+came from." ADD-only, so it is a legitimate amendment to an unfired prereg, and
+this is deliberately the first carrier of the field so it models the format.
+**The honest negative is written on its first use** — that is the clause the
+field exists for. The audit that motivated it could only discover "0 of 13
+preregs cite a tactics file" by counting three days later; a field that records
+the MISS makes the gap visible at the moment it happens.)*
+
 ## LOCK CERT — READ THIS BEFORE CERTIFYING THIS DOCUMENT
 
 **Each section is certified by the commit that ADDED IT, not by the file's
