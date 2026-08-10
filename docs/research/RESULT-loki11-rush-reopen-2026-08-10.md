@@ -91,3 +91,34 @@ be **activate -> fire -> roll back within the same minute**, with the
 rate-limit wait served while the INCUMBENT is live. This leg spent ~9 minutes
 activated, almost all of it waiting on a rate limit, which was pure unforced
 exposure.
+
+## ⚠ PER-OPPONENT CONCENTRATION — THE +16.0pp IS TWO CELLS, AND ONE IS THE SEAT-FLIPPED ONE
+
+Prompted by the side lane noticing the same shape in game score. Computed on the
+PRIMARY currency, which is the one that matters:
+
+| opponent | control kills | LOKI-11 kills | Δ | seat |
+|---|---|---|---|---|
+| CtrlAltDefeat | 2/5 | 4/5 | **+2** | B→A **SEAT FLIPPED** |
+| gsxWins | 1/5 | 3/5 | **+2** | A→A |
+| I Stone | 2/5 | 2/5 | 0 | B→B |
+| Leviathan | 4/5 | 4/5 | 0 | B→B |
+| The Bisons | 0/5 | 0/5 | 0 | A→A |
+| **total** | **9/25** | **13/25** | **+4** | |
+
+**THREE OF FIVE OPPONENTS MOVED BY EXACTLY ZERO.** The whole aggregate is two
+cells. **Drop the seat-flipped cell and what remains is gsxWins alone: 7/20 →
+9/20, +10.0pp, two kills.**
+
+**This materially weakens the read and it is the honest version.** "+16.0pp
+across a five-team panel" and "+2 kills against gsxWins, +2 against an opponent
+whose seat changed" invite completely different next legs, and only the second
+is supported. **A /25 denominator is not five comparable cells and must not be
+quoted as though it were** — the same shape as the denominator rule already
+written into the prereg, now caught on my own headline.
+
+**What survives all of it:** three r1000 games became kills, the Bisons remain
+0-5 in both arms, and the arena's replicated -15.6/-18.9pp did not reproduce in
+sign. **What does not survive: any claim that the rush helps generally.** At
+best it helped against one or two specific opponents, which is a
+`per-opponent gate` question, not a doctrine question.
