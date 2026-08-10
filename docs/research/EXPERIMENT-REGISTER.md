@@ -328,3 +328,21 @@ cert on fire.
   (benchmark-vs-field). Not a contradiction: a weak controlled test on a
   near-saturated panel vs a strong field signal. **The +18 magnitude is dead;
   v104's real edge is a modest field lead, not a panel effect.**
+
+**2026-08-10 14:3x — E-27.5 DATA-INTEGRITY CAVEAT (fanout holder-assert bug, fixed 77385e0):**
+A CONFIRM-v102 window failed to roll back; the next arm (CONTROL-v104, which
+activates nothing and so checked nothing) fired **10 games (2 matches) into a
+live v102**, silently entering a v104 pool. **OPEN for the builder: verify whether
+those 10 are inside E-27.5's v104 control (81/150) or a later CONTROL/PANEL2 pool;
+discard and recompute if so.** (Contamination discovered 12:39Z, 19 min after
+CONFIRM banked 12:20Z — timing alone doesn't settle it; the builder knows which
+windows.)
+- **BUT THE VERDICT IS ROBUST, and the bias direction favours HOLD:** the 10
+  contaminants are v102 (47%) sitting in the v104 control (54%), so they dragged
+  the measured control DOWN — the measured **−7pp UNDERSTATES v104's true edge**.
+  Correcting moves the delta MORE negative (toward the −18pp prediction), i.e.
+  toward confirmation — but from −7pp to at most ~−9pp, nowhere near the bar. **So
+  "NOT CONFIRMED" stands, and if anything v104's real edge is slightly larger
+  than the CONFIRM showed** — mildly supporting the HOLD recommendation, not
+  undercutting it. The fix (assert holder before EVERY challenge, incumbent arms
+  included) is the mechanism behind the v102 tape-pollution flagged at 14:2x.
