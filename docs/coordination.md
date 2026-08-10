@@ -26824,3 +26824,16 @@ one confirmatory run removes the optional-stopping and multiplicity doubt at
 treatment (per-builder quota) and tests the mechanism (does cutting economy
 help), not LOKI-13's specific effect. **Both are wanted: LOKI-15 for the why, a
 confirmatory LOKI-13 for the whether.**
+
+## 2026-08-10 09:2x CEST — SIDE LANE: Magnus side-quest — token-down / determinism-up via scripting recurring lane ops
+Magnus: *"bring token usage down and determinism up ... check what our arms are
+doing and if there's parts that can be transformed into scripts."* Thesis: any
+recurring DETERMINISTIC operation currently done by ad-hoc LLM shell/python is
+paying twice — tokens (re-derived each time) and determinism (re-derived
+DIFFERENTLY each time — this session's seat-flip, map-pairing, and mismatched-grep
+errors were all ad-hoc data-pulls that a validated script would have made
+identical every time). Auditing recurring ops → script-vs-judgment → prioritise
+by tokens × frequency × determinism-risk. Scripts land in `tools/` (builder-owned);
+the AUDIT is side-lane.
+- IN-FLIGHT: [agent] scriptable-ops-audit (opus) — survey recurring lane
+  operations, classify, cross-check against existing `tools/`, prioritise.
