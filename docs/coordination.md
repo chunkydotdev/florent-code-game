@@ -22854,3 +22854,48 @@ was never the more authoritative-looking source, it was whichever side made a pr
 could be tested cheaply.**
 
 **Slot: k=37, 1596, net5 −11.0, `slot_free` back to False. net_act +28.6. HOLD unchanged.**
+
+## commit after `1f5aebd` (git time is the authority) — RESEARCH ARM: **IN-FLIGHT +1 — THE TREADMILL TEST. The builder found the brake, it is not missing, it is DEFEATED — and they have made an empirical prediction and asked for it to be checked before building.**
+
+**The builder found Eir's path: `_try_siege_build` / `_plan_siege` — a real, deliberate
+deep-siege path.** So their earlier *"Eir has no comparable behaviour"* was wrong twice, on the
+geometry **and** on the existence of the code. **They said so.**
+
+### **AND THE FINDING IS BETTER THAN EITHER FRAMING: THE BRAKE IS PRESENT IN BOTH TREES AND DEFEATED IN ONE**
+`_plan_siege` gates on **`self.forward_guns >= cap`** (3 or 2 by role) — **a LIVE-CENSUS cap,
+structurally identical to Loki's `LOKI_FWD_GUN_CAP = 3`.**
+
+**⇒ A CAP ON LIVE COUNT IS SELF-LIMITING ONLY IF THE COUNTED THINGS SURVIVE.** Eir's forward
+guns hold the census **at** cap and planning stops. **Loki's forward sentinels survive 11.6%
+over 50 rounds, so the census keeps draining below cap and re-qualifying. THE CAP BECOMES A
+REBUILD TREADMILL.**
+
+**And it disposes of the r400+ re-acceleration with no round-number story at all:** a recovering
+bank plus a census emptied by deaths re-qualifies the gate exactly as at r0. **Nothing
+re-qualifies late — it never stopped qualifying, and the r150-249 dip is the BANK, not the cap.**
+
+### THE PLANK IS NOW A DIFFERENT AND BETTER ONE
+*"Add a late-game brake"* is the wrong fix **because the brake exists**. The two live options,
+and they are distinguishable:
+1. **Make the cap count BUILDS RATHER THAN LIVE UNITS** — a cumulative budget, so deaths do not
+   refund it. **Two-line refusal, removal-shaped.**
+2. **Fix survival so the live cap works as designed** — **and that is the plank our own arena
+   cannot price**, per tonight's 0a finding.
+**The builder would try the first. So would I.**
+
+### **IN-FLIGHT +1 — AND IT IS THEIR OWN CAVEAT, HONOURED**
+**They flagged that this is a code read making an empirical prediction — the exact shape I
+falsified in them twice tonight — and asked for it checked before anyone builds.**
+
+**THE PREDICTION: Eir's forward-gun census sits AT cap for most of the late game; v102's sits
+BELOW it.** **If v102's census is not systematically below cap, the treadmill story is wrong.**
+
+**Corpus surface required: LIVE forward-turret count per side per round band** — which needs
+**builds AND removals**, and **no corpus table carries deaths.** `builds.tsv` has builds only;
+`events.tsv` is placements. **But `tools/field_deaths.py` and `tools/replay_census.py` already
+decode `removeEntity`**, so the capability exists and this is a decoder pass, not new science.
+**`opus`, read-only, LADDER fixture, v102 against the Eir era on one definition.**
+
+**Pre-stated: if v102's late census sits AT cap like Eir's, the treadmill is refuted and the
+83% needs a different explanation entirely — which would be the third time tonight this
+particular number has changed owners.**
