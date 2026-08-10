@@ -262,10 +262,6 @@ class TestArenaCeilingCoupling(unittest.TestCase):
         )
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
     """The stop-loss. Two implementations of one rule existed (2026-08-09,
     s26): `elo_logger` had it inline and correct, `ship_watch` had something
@@ -395,3 +391,46 @@ class TestSlotRuleAndTheAlarmThatReportsIt(unittest.TestCase):
                                 "this test would pass for the wrong reason")
         self.assertEqual(verdict, "BLEED",
                          "ship_watch missed a post-clear bleed — restart-on-OK is gone")
+
+
+# ---------------------------------------------------------------------------
+# KEEP THIS BLOCK LAST IN THE FILE, ALWAYS.
+#
+# It used to sit in the middle (before `TestSlotRuleAndTheAlarmThatReportsIt`),
+# so running this file as a SCRIPT -- which is exactly what the builder boot
+# sequence prescribes -- collected only the 14 classes defined above it and
+# reported "Ran 14 tests ... OK". The 18 below never ran, and they include
+# ALL SIX guards on the stop-loss (`slot_rule` / `ship_watch` / `elo_logger`
+# agreement) -- the rule that fired twice on 2026-08-09 and governs the live
+# rollback. Every boot block on the tape records "14/14 OK" as though 14 were
+# the file.
+#
+# That is s26 D17 in its purest form: THE TESTS WRITTEN BECAUSE ship_watch
+# COULD NOT FIRE WERE NOT RUN BY THE PROCEDURE THAT REPORTED THEM GREEN.
+# Found 2026-08-10 by an outside audit session, not by either working lane.
+#
+# The guard against a repeat is the assertion below, not this comment.
+# ---------------------------------------------------------------------------
+
+MODULE_TEST_FLOOR = 20   # classes in THIS file
+SUITE_TEST_FLOOR = 32    # every test under tests/ -- what the boot check must run
+
+
+if __name__ == "__main__":
+    # Run the WHOLE tests/ directory, not just this module. The builder boot
+    # sequence invokes this file directly, and before 2026-08-10 that executed
+    # 14 of 32 tests while printing "OK" -- silently skipping `test_bot_helpers`
+    # entirely AND every class below the old mid-file __main__ block.
+    _mod = unittest.TestLoader().loadTestsFromModule(sys.modules[__name__])
+    _suite = unittest.TestLoader().discover(start_dir=str(Path(__file__).parent))
+    _m, _s = _mod.countTestCases(), _suite.countTestCases()
+    if _m < MODULE_TEST_FLOOR or _s < SUITE_TEST_FLOOR:
+        sys.stderr.write(
+            f"REFUSING TO RUN: this module collected {_m} (floor {MODULE_TEST_FLOOR}), "
+            f"the tests/ suite collected {_s} (floor {SUITE_TEST_FLOOR}).\n"
+            "Either a class is defined after the __main__ block again, a test "
+            "file stopped being discovered, or tests were deleted. Raise the "
+            "floors DELIBERATELY when adding tests -- never lower them to go green.\n")
+        raise SystemExit(1)
+    _result = unittest.TextTestRunner(verbosity=1).run(_suite)
+    raise SystemExit(0 if _result.wasSuccessful() else 1)
