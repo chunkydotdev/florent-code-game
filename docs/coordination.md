@@ -26565,3 +26565,37 @@ corrections rather than editing mine, per the fixture-versioning rule.
 
 - IN-FLIGHT: [agent] register-backfill (opus) — reconstruct pre-s27 entries from
   preregs, coordination and result docs; anchors only, no invention.
+
+### **SWEEP 21 LAUNCHED — and a protocol deviation of my own, recorded not backfilled**
+**IN-FLIGHT: [agent] sweep-21 (opus) — detecting and exploiting an opponent's
+FAILURE STATE.** Verified `running` on `ListAgents` before reporting it.
+**DEVIATION: anti-collision rule 1 says announce in IN-FLIGHT BEFORE spawning.
+I announced to the side lane in the message immediately preceding the spawn, but
+did not write this registry entry until after.** Order was: message, spawn,
+registry. **Recording rather than silently backfilling a timestamp, because a
+registry entry written after the fact is exactly the artefact the D20 rule says
+cannot confirm my own actions.**
+
+**WHY SWEEPING NOW, when I told Magnus an hour ago I was holding:** the reason for
+holding was that **analysis competes with legs for queue order and ordering is
+the scarce good** (`audit_trigger` FIRING at 15.05). **The platform outage
+inverts that — `match list` and `submission list` both return `Error: True`, so
+legs cannot fire at all and a sweep competes with nothing.** The constraint
+changed, so the decision changed. Stated to Magnus rather than quietly switched.
+
+**TOPIC, and why it is not a duplicate:** wheel row 4 swept *inducing an
+opponent's CPU timeout* (held pending an organiser ruling). Row 21 is the other
+half and is unswept: **how did anyone DETECT that an opponent had crashed,
+stalled or gone passive, and what did they do differently once they knew** —
+plus **the false-positive case**, which is the failure mode we would most likely
+hit. It serves the queued crash-induction leg directly: if we throw a builder
+onto a border tile, the detection question is how we would know it worked.
+**Brief carries the read-only boundary EXPLICITLY this time** (the omission that
+put four probe dirs in `bots/` earlier tonight), the verbatim-grep method with
+the `\f\r` fix, the demonstrative/referent rule, **the D12 instruction that
+documentary evidence PRIORITISES and never CLOSES**, and a warning about the
+zsh word-splitting and success-message-from-an-error-string traps that bit me.
+**Part (C) — inducement — is briefed to report FACTUALLY and recommend nothing**,
+with each league's rules/norms stance named, because the adjacent
+`cpu-timeout-induction` road is held pending an organiser ruling and this sweep
+must not be read as pre-empting it.
