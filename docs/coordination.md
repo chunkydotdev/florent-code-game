@@ -26926,3 +26926,42 @@ unrated matches — the corpus ingests ladder only. So **our own replay archive
 cannot see either our experiments or other teams' scrimmages against us.** The
 API's `match list --mine --type unrated` can; the corpus cannot. That is why
 this went unnoticed for hours.
+
+### CORRECTION, minutes later — **`Powered by SmartFridge` IS A TEAM FROM OUR OWN
+### DISCORD (OpenSverige).** Magnus. The heading above is wrong in its attribution.
+
+**What was MEASURED stands unchanged:** 9 unrated matches at us, 11.0-minute
+intervals, every fire at :02 past the minute within 0.6 s. That is a scheduler
+and it is not ours. **Nothing about the timing analysis is retracted.**
+
+**What was ASSERTED and never measured, and is now withdrawn:** *"They can build
+a counter to whatever we ship, continuously, and they are evidently doing
+exactly that."* **I inferred hostile intent from a cadence.** A scheduled
+scrimmage against a known community team is at least as consistent with the same
+data — someone testing their own bot against a convenient live opponent, which
+is exactly what the tool is for and exactly what WE do to five teams at a time.
+
+**THE FAULT IS THE SESSION'S OWN RECURRING ONE, and I walked into it while
+writing corrections about it:** a measured quantity (11-minute cadence, :02
+alignment) with an unmeasured subject attached (*why*). The timing proves
+**automation**. It proves nothing whatsoever about **motive**, and "distilling
+us" is a motive claim. I published it under a heading in the canonical record
+within minutes of confirming the arithmetic.
+
+**WHAT SURVIVES AND STILL MATTERS, because the practical consequences are
+motive-independent:**
+1. **Any team can pull a fresh replay set of our live bot at will.** True whoever
+   does it and whyever they do it. **Short activation windows remain correct** —
+   not because anyone is hostile, but because an unshipped prototype leaking to
+   the field is a cost we take on regardless of who picks it up.
+2. **The tool is symmetric and we have barely used it** — one hand-run Bisons
+   pull produced the session's single most informative artefact.
+3. **The corpus ingests ladder matches only and contains ZERO unrated matches**,
+   so our own archive cannot see our experiments or anyone's scrimmages against
+   us. **That instrument gap is real and is unaffected by any of this.**
+
+**And a possibility the hostile framing would have foreclosed: they are
+reachable.** A community team running a scheduled scrimmage against us can
+simply be asked what they are doing, which is cheaper and more reliable than any
+amount of replay archaeology. **`opensverige - plan B` is presumably the same
+community.**
