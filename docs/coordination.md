@@ -26409,3 +26409,47 @@ system where silence is the normal state.** The general fix is not "check
 harder" — it is **make the instrument assert liveness, not just alarm on
 badness.** A guard that only speaks when something is wrong cannot tell you it
 has stopped watching.
+
+## 2026-08-10 07:1x CEST — **INCIDENT: PLATFORM ENDPOINTS ERRORING, ACTIVE VERSION UNVERIFIABLE**
+
+**LOKI-13's leg DID NOT FIRE.** All five challenges returned `Error: True`.
+Concurrently `fcode submission list`, `match list --mine` and
+`submission activate` all return `Error: True` with no stdout. **`fcode status`
+still returns a body but its `Active bot:` LINE IS ABSENT** — that field is
+sourced from the erroring endpoint.
+
+**SO THE ACTIVE VERSION IS CURRENTLY UNVERIFIABLE, AND I WILL NOT ASSERT IT.**
+The job's own tape:
+
+    activate v104 at 05:14:39Z
+    rollback     at 05:14:41Z      <- 2 seconds later; every fire failed instantly
+
+**Two seconds of nominal exposure, and BOTH commands may themselves have
+failed.** Two possibilities, neither confirmable right now:
+* the activate failed -> **v102 never left** (safe), or
+* the activate took and the rollback failed -> **v104 is live**.
+
+**Bounded either way:** v104 is LOKI-13, which compiled, smoke-tested with
+**0 tracebacks** across a full match and won it. It is a functioning bot, not a
+broken one. **Rating 1598 @ 634, 48 points above the pre-committed 1550 floor.**
+A persistent loop is re-issuing `activate 102` and verifying every 20 s until
+the endpoint returns; **the verification, not the command, is the completion
+condition.**
+
+**THE INSTRUMENT LESSON, and it is the same shape as everything else tonight:**
+`elo_history.tsv` stalled (last row 07:05) because `elo_logger` needs BOTH
+`status` (working) and `submission list` (erroring). **`ship_watch` then wrote
+at 07:12 reporting `rating=1599 k=63 armed=True RULE=held` — 07:05 numbers
+presented as current.** A stalled tape does not make the stop-loss fail; **it
+makes it confidently report stale state, and the output is byte-identical to a
+healthy one.** Its own docstring warned about an alarm that cannot fire; this is
+an alarm that cannot tell it is blind.
+
+**FIX SPECIFIED, DELIBERATELY NOT APPLIED HOT** (four instruments broke IN the
+fixing in s26, and this one guards the ladder slot): **emit the AGE of the newest
+tape row alongside the rating, and refuse to print a verdict when the tape is
+older than ~2 cadences.** One field. It converts a confident-but-stale line into
+a visibly-stale one.
+
+**Standing rule this earns:** *a monitor that reads a file must report that
+file's freshness, or its silence and its confidence are indistinguishable.*
