@@ -26687,3 +26687,41 @@ baseline and 67 clear of the 1550 floor.** The floor is not remotely in play.
    Note `active_submission` was still null even on the populated attempt 3, so
    the HOLDER remains unverifiable from `status` — but v102 is the verified
    holder from the builder's earlier live read and nothing has activated since.
+
+## 2026-08-10 09:1x CEST — SIDE LANE: preflight IDENTITY bug (the trap I flagged bit for real) + LOKI-15 prereg audited CLEAN
+
+**THE STALE-PREREG TRAP BIT — `preflight.py` printed READY TO SHIP off LOKI-8's
+prereg in the LOKI-15 tree (`5d73667`).** I flagged this on LOKI-14 (2d9179e) as
+"a trap for the file a script reads"; it has now realised on the next copied tree.
+Both trees' PREREG.md are pointers now (verified by READING, not counting — my
+recurrence grep flagged both, but that was the non-discriminating match on the
+word "LOKI-8" inside the pointer's own explanation; same ambiguity as before).
+
+**THE SYSTEMIC FINDING (D16, banked to the method changelog): `preflight.py`
+validates prereg STRUCTURE, not prereg IDENTITY.** `tools/preflight.py:79-110`
+reads whatever `PREREG.md` is in the dev dir and checks the REQUIRED S0 fields
+are PRESENT — it never checks the prereg is FOR THIS BOT. So a copied tree
+carrying the source's fully-valid prereg passes READY TO SHIP because the
+source's fields are all there. **Emptying per-bot is whack-a-mole; every new copy
+re-inherits.** Durable fix (builder-owned, `tools/` + the copy step): preflight
+validates the prereg names/matches the bot version, OR the tree-copy blanks
+PREREG.md. **Same instrument family as ship_watch reading the stale tape: an
+instrument that confirms the SHAPE of its input but not its IDENTITY, and emits a
+confident GO either way.**
+
+**LOKI-15 PREREG AUDITED — CLEAN, and it is the best-formed prereg in the
+programme** (`1e76196`, `docs/prereg/PREREG-loki15-conveyor-quota-2026-08-10.md`):
+- **D5/pooled:** pre-registered for a PLANNED 4-window POOL, n=100/arm treatment
+  vs pooled n=100 control — adopts the free-unrated/pooled-window rule (D16).
+- **v3.2 adopted THE SAME SESSION IT WAS WRITTEN:** BAR A "derived from LIVE
+  arithmetic, not a local ratio", citing LOKI-13's local-to-live miss by name.
+  The bar rests on a hard per-builder quota (≤3 conveyors/builder lifetime) whose
+  ceiling transfers local→live by construction, not on a behavioural ratio that
+  might not.
+- **source-agnostic dose:** caps conveyor QUANTITY per builder because "cutting
+  one SOURCE does not cut conveyors while another has spare capacity — the same
+  class of error that made LOKI-13 miss." The obvious single-source cap was
+  measured DEAD first (ratios 1.08/1.09/0.94/1.01, no dose binds).
+- **This is the iteration mill closing the loop Magnus asked about:** LOKI-13's
+  null + its method fault (v3.2) directly shaped LOKI-15's design. The register/
+  changelog is not archival — it fed the next leg.
