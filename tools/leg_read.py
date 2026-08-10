@@ -126,10 +126,10 @@ def report(games: list[dict], label: str) -> dict:
     # reporting it as a LEG's primary would repeat the 18pp-bar/19.5pp-floor
     # failure with a new number. The label says so on every line it prints.
     try:
-        from score import mean_score
+        from score import mean_score, SCALE_VERSION
         sc, _ = mean_score((g["we_won"], g["cond"], g["turns"]) for g in games)
         gate = "beats v104 -1.76" if sc > -1.76 else "below v104 -1.76"
-        print(f"  kill-speed score      {sc:>+7.2f}/game   "
+        print(f"  kill-speed score      {sc:>+7.2f}/game   [scale {SCALE_VERSION}] "
               f"[SCORECARD + SHIP GATE ONLY, NEVER A LEG PRIMARY; "
               f"n>=200 to gate; {gate}]")
     except Exception:

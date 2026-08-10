@@ -20,7 +20,8 @@ games) and as a ship gate at n >= 200. Never as a leg's primary.**
 Baselines RECOMPUTED on the -10 tiebreak scale (our own ladder tape, n>=100):
     v20 -10.00 · v53 -2.60 · v72 -4.20 · v80 -5.54 · v94 -5.08 · v102 -2.47
     **v104 -1.76 (best shipped, n=255)**
-**SHIP GATE: beat -1.76 at n >= 200.**
+**SHIP GATE: beat -1.76 at n >= 200 [scale v2].** A bar without its scale tag is
+a bar that cannot be checked.
 **THE RESCALE CHANGED THE HISTORY, NOT JUST THE NUMBERS.** v20 scores EXACTLY
 -10.00 over 110 games -- it never destroyed a core once; every "win" was a
 tiebreak. And v53, which read -1.77 on the old scale and appeared to TIE v104,
@@ -38,6 +39,20 @@ proxy with extra steps.**
 from __future__ import annotations
 
 import sys
+
+# ⚠ THE SCALE IS VERSIONED AND EVERY PRINTED SCORE CARRIES THE TAG.
+# Tonight is the proof: the tiebreak value was edited IN PLACE from 0 to -10 and
+# orphaned every earlier figure within the hour. v20 read -3.64, now -10.00. The
+# ship gate read -1.77, now -1.76. Nothing in the repo marked which rule produced
+# which number, so a reader had to date it by archaeology.
+# That is the s26 fixture rule -- VERSIONED, NEVER EDITED IN PLACE -- applying to
+# the currency, and we violated it within an hour of creating the currency.
+#   v1  tiebreak/titanium win =   0   (in force ~20:0x-21:0x Z, 2026-08-10)
+#   v2  tiebreak/titanium win = -10   (current; Magnus)
+# A rebalance is an APPENDED amendment with a new version, never an in-place
+# edit -- same discipline as the preregs. Balance property re-verified per
+# version: v1 -> v2 unchanged, ratio 1.20 both.
+SCALE_VERSION = "v2"
 
 BUCKETS = ((100, 10), (130, 8), (170, 6), (250, 4), (400, 2))
 SLOW_KILL = 1
