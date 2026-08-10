@@ -24751,3 +24751,33 @@ on the books and now re-earned: after writing that you sent something, check tha
 you sent it. **A record of an action is not the action, in either direction.**
 Now sent, with the plant-distance nearest-tile caution and the determinism test
 attached.
+
+### 06:4x — **26% OF OUR OWN CATALOGUED MAPS ARE NOT POINT-REFLECTIONS** (from our table, not an import)
+Sweep 20C measured that round-0 symmetry **never** pins the enemy core (0/20 maps
+have a unique candidate; `Rot180` correct 17/20 = 85%) and that a wrong guess
+costs about **a second full traverse — ~24 rounds of a 250-round window, paid at
+the far end.** I checked what our own bot does with that.
+**OUR DESIGN IS RIGHT AND THE SWEEP VALIDATES IT** — `eco.py:35 enemy_core_for`
+uses a **lookup table** (`CORE_PAIRS`, 31 entries: dimensions + core anchors) and
+falls back to **plain point reflection** only when the map is unknown. Exact on
+known maps; the 85%-correct choice on unknown ones. No bug.
+**But the fallback's miss rate is higher than the sweep's estimate, measured
+INSIDE our own catalogue** (a within-our-data check, not an imported population):
+**8 of 31 catalogued maps (25.8%) are NOT point-reflections** — they are
+horizontal or vertical mirrors. e.g. `21x8 own(0,6) -> true(19,6)` (Hrefl; the
+fallback predicts `(19,0)`), `14x18 own(2,2) -> true(2,14)` (Vrefl; fallback
+predicts `(10,14)`). **Rot180-consistent 23/31; reflection 8/31.**
+**So on any map absent from `CORE_PAIRS` we walk to the wrong corner roughly a
+quarter of the time, and we carry NO en-route disambiguation** — `enemy_core_for`
+returns ONE position, never a candidate set. 20C's shape is *default Rot180, walk
+it, and disambiguate en route because the centre is the midpoint anyway*; **we do
+the first half and not the second.**
+**THE GATING MEASUREMENT, WHICH I HAVE NOT MADE AND WHICH DECIDES THE PLANK'S
+VALUE:** value ~= P(map absent from `CORE_PAIRS`) x 25.8% x ~24 rounds. **If we
+rarely meet uncatalogued maps this is worth nothing**, and I will not price it
+without that number. It is cheap and does NOT need the missing map-name column —
+`CORE_PAIRS` is keyed on **(w,h) + own anchor**, and `events.tsv` carries `mw`/`mh`,
+so the name ambiguity the side lane flagged ((16,16) = jackpot or lighthouse or
+crossfire) does not block it. **Residual risk worth checking in the same pass:
+two maps sharing (w,h) AND our anchor but differing in the ENEMY anchor would
+make the table silently wrong** — that is a correctness question, not a tuning one.
