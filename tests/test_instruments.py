@@ -463,3 +463,38 @@ if __name__ == "__main__":
         raise SystemExit(1)
     _result = unittest.TextTestRunner(verbosity=1).run(_suite)
     raise SystemExit(0 if _result.wasSuccessful() else 1)
+
+
+class TestClaimCheck(unittest.TestCase):
+    """Every "mutation-tested" claim in tools/ must point at its own record.
+
+    ADDED s28 after the builder wrote that claim THREE TIMES IN ONE DAY without
+    committing the record -- panel2_cal.sh's header, the deficit-first count
+    predicate, and panel3_cal.sh citing PANEL-2's leg doc. In all three the code
+    was correct and the evidence was absent; all three were caught by another
+    lane, none by the author.
+
+    This lives in the boot suite deliberately. A prose rule saying "commit the
+    record" is exactly the kind of convention D25 says has zero firings at
+    birth -- and this one had three violations by its own enforcer inside eight
+    hours. A test that runs every boot has a firing path.
+    """
+
+    def setUp(self):
+        sys.path.insert(0, str(ROOT / "tools"))
+        import claim_check
+        self.mod = claim_check
+
+    def test_the_checker_itself_can_fail(self):
+        """It must flag an unbacked claim and a sibling citation, and stay
+        silent otherwise -- otherwise its `ok` means nothing."""
+        self.assertEqual(self.mod.selftest(), 0)
+
+    def test_no_unbacked_claims_in_tools(self):
+        unbacked = self.mod.check()
+        self.assertEqual(
+            unbacked, [],
+            "a tools/ file claims a mutation test with no record naming it. "
+            "Either commit the record (the record IS the test) or drop the "
+            "claim:\n  " + "\n  ".join(unbacked),
+        )
