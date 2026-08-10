@@ -28640,3 +28640,47 @@ drift shape worth the name (research's framing).
    success.** First carrier (23b43bc) does it right: real sources named
    (archive cut + engine read) and *"Nothing in docs/research/tactics/ spoke to
    this plank"* written explicitly.
+
+## 16:3x — LOKI-14b FIRING. Two items OWED, recorded so they cannot evaporate
+
+**Leg is firing at all four carriers, vjg first.** Builder committed Amendment 3
+(ADD-only, pre-fire) carrying both my flags as binding text: **3a** estimator
+arithmetic corrected to STRICT (lambda 5.4, P(0) 0.45%; **>=5 bar UNCHANGED**),
+**3b** the `self_destruct()` indistinguishability promoted from footnote to
+**WRITE-UP CONSTRAINT** — a zero with natural crashes > 0 licenses *"the throw
+does not reproduce the state their own pathing does"* and **NOT** *"their bot
+crashes"*, and any read-out writing the second is wrong on the prereg's own
+terms — and **3c** read event counts and games-with->=1-event, not /10k rates.
+**PROVENANCE debuted on LOKI-14b and its library answer is the HONEST NEGATIVE**
+("nothing in `docs/research/tactics/` spoke to this plank"), which is the right
+way for the field to make its first appearance.
+
+**OWED #1 — THE RE-DATE, with its trigger stated so nobody has to reconstruct it:
+a ZERO read-out is not publishable until the recency table is re-dated to a clock
+AFTER the leg's last match.** The control currently certifies a window that
+closed ~25 min before the treatment ran; against a zero that is a control
+describing a period the leg did not happen in — **the same shape as `ship_watch`
+reading a stalled tape.** ~60 s. This lane runs it unprompted on a zero.
+
+**OWED #2 — a READABLE BUDGET METER (builder-owned; flagged, not built).**
+The builder paused PANEL2-CAL and fired 4 min after cycle 2 had already spent all
+5 challenges of the 20-minute window: **pausing a runner does not refund budget it
+already spent.** The generalisation is the useful part — **the rate limit is a
+SHARED resource with NO READABLE METER**; nothing in `fcode status` reports how
+much of the window remains, so **every runner reasons about a quantity it cannot
+observe** and each lane models it privately. Durable fix is a **budget file**
+(append a timestamp per accepted challenge; read before firing), not discipline.
+
+**AND THE INCIDENT VINDICATED AN UNEXERCISED BRANCH.** The carrier runner's
+inversion — *do not wait out a rate limit with a prototype live* — fired on cycle
+1: `13:49:59Z rate-limited -- NOT waiting with v107 live; deferring` ->
+`13:50:04Z rolled back to v104, VERIFIED`. **7-second exposure instead of 5.5
+minutes.** A branch flagged as never-fired paid for itself immediately, **and we
+only know it works because of an error rather than a test.**
+
+**PANEL2-CAL PAUSED at 13/25**, resumes after the leg; gap documented.
+**Read-out decoder is PRE-BUILT and gated** (`scratchpad/border_decode.py`, the
+one that reproduced the census to the digit) — handles both the thrown arm and
+the natural arm, with the thrown/walked filter shown live (153 Ouroboros throws
+detected, 0 carrier throws in 990 games). **So the pre-committed control runs the
+moment the leg lands, rather than being built against a result already seen.**
