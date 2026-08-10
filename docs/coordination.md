@@ -28406,3 +28406,47 @@ trigger crossed, drawdown inside the prior bot's range, Magnus actively engaged.
 reads 1675 / net_act +60.0 "verified at wrap"; live is 1658 / +43.0. The label is
 honest but it is the first block a successor reads, and a stale +60 could anchor
 a rollback judgement 17 points away from the truth.
+
+# ============================================================================
+# 2026-08-10 16:1x CEST — **MAGNUS: DON'T SUSPEND THE LIBRARY — READ IT.**
+# ============================================================================
+Magnus, on being shown the 1.8% citation rate: *"so you have collected tons of
+tactics that we just never take a look at? Why don't we do that? If there's some
+tactic that is matched to what we're building there might be comments or data to
+either boost the confidence of a tactic or not. How do we find new tactics to
+test?"*
+
+**RULING: the mandate is NOT retired and NOT suspended. The defect is the
+CONSUMPTION PATH, which was never built.** The wheel has been write-only for
+three days — 217 files, ~23,658 lines, and no step in any workflow where anyone
+opens them. **The audit measured the missing step, not the worthless input.**
+
+**THE CORRECTION, and it is a workflow change not a research task:**
+1. **A library that is never read is not a library.** Mining the EXISTING 217
+   files has never once been done. That is the cheapest research in the repo —
+   it costs no games, no downloads and no new sweeps.
+2. **A plank in flight should be checked against prior art BEFORE it fires**, so
+   external evidence can raise or lower confidence while that still changes
+   something. LOKI-14b is pre-registered and unfired: it is the first test case.
+3. **New tactics come from BOTH** — the wheel keeps producing, and the library
+   gets mined. What was missing is the second half.
+
+**IN-FLIGHT (announced before spawning):**
+- **[agent] library-vs-live-planks (opus)** — mine all 217 tactics files for
+  anything bearing on the mechanisms we are ACTUALLY running (launcher
+  kidnap/displacement, crash & failure-state induction, spawn-ring denial and
+  retention). Corroborating AND contradicting. Time-critical: LOKI-14b is
+  pre-registered and unfired.
+- **[agent] library-untested-candidates (opus)** — rank every tactic carrying a
+  POSITIVE transferability verdict that no prereg has ever tested. **Must grep
+  the incumbent first (D30): the cheapest possible null is a leg testing a
+  feature we already ship.**
+- **[agent] library-contradictions (opus)** — find where the library contradicts
+  ITSELF or the repo's own measurements. The audit already found two lanes
+  ranking dirty tricks 21 minutes apart with opposite verdicts and zero
+  cross-citation; **a library that disagrees with itself cannot raise anyone's
+  confidence in anything** until the disagreements are named.
+
+**Output contract for all three: a RANKED SHORTLIST tied to decisions, not a new
+document.** Each item carries source, evidence strength, transferability verdict,
+and whether we already ship it.
