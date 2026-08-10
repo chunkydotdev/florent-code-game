@@ -28840,3 +28840,37 @@ and it is not a stop order — the operational call is the builder's.**
 4. **Guard issued with the relay:** the ruling is about PRIORITY, not existence.
    An archive rating-cut must not retire 14b's own question while a live leg is
    testing it — **that would be D12 by the back door.**
+
+## 16:5x — **MAGNUS RULING: A VULNERABILITY FAR BELOW OUR ELO IS NOT RELEVANT.** The cut inverts
+
+Magnus, verbatim, relayed live while the leg fires: *"I guess a vulnerability is
+not relevant if it's too far below our ELO, we care about climbing, killing the
+teams above us helps us a lot."*
+
+**THE CUT INVERTS, and it is the same decode.** The `zerogroup-ratings` agent was
+asking *"are the six immune teams strong?"* The ruling makes a different question
+decisive: **is ANY team at or above our ~1658 a CARRIER — nonzero border hazard on
+a REAL denominator?** Instead of rating the zero group, rate the WHOLE hazard
+distribution and look at the TOP of the ladder.
+* **No team at/above us carries** => the exploit is **structurally irrelevant to
+  climbing whatever 14b returns**, and the road deprioritises **on Magnus's
+  currency**, not on the mechanism's.
+* **A strong team DOES carry** => that team is the target and **the four low-rated
+  carriers were never the interesting panel.** This is the outcome that changes
+  what we build next.
+
+**IMMUNE-vs-INSUFFICIENT NOW APPLIES UPWARD TOO, and this is the trap:** a strong
+team with zero events on a **thin** border denominator is **INSUFFICIENT, not
+immune** — exactly the cell a careless read calls *"the top of the ladder is
+safe."* Briefed that the likeliest honest answer for strong teams is INSUFFICIENT
+(strong bots may simply rarely put builders on borders at all), and that
+*"we cannot tell from the archive"* is a different and more useful answer than
+*"they are safe."*
+
+**⛔ SCOPE LIMIT, carried into the brief verbatim: THE RULING IS ABOUT PRIORITY,
+NOT ABOUT WHETHER THE MECHANISM EXISTS.** LOKI-14b is testing that right now, and
+its own question — *"mechanism dead, or first panel merely immune?"* — is not
+answered by any archive cut. **An archive cut may re-order the queue and move
+confidence; it may NOT close a road a live experiment is currently testing. That
+would be D12 by the back door.** The leg's NEGATIVE is the valuable one because it
+would close the road properly.
