@@ -109,3 +109,68 @@ exposed the gap.**
 4. The register's "method version in force" lets old results be re-weighed when
    a method defect is found later — tonight's example: every pre-panel-audit
    currency read is now known to have run on a two-cell instrument.
+
+---
+
+## ADDENDUM 2026-08-10 (research arm) — **ADVERSARIAL PASS OVER THE RULE TABLE ITSELF**
+
+Appended, not edited, per the append-only contract. Requested by the side lane:
+*which rules have never produced their other verdict, and which two incidents are
+actually one counted twice.*
+
+### 1. **THE TABLE CONFLATES "CREATING INCIDENT" WITH "FIRING", AND THAT BREAKS THE LOOP**
+The improvement loop says *a rule that never fires in an audit gets reviewed*.
+**As the table stands that check cannot run**, because the only evidence recorded
+per rule is the incident that CREATED it. **A creating incident is evidence the
+rule is NEEDED. It is not evidence the rule WORKS.** A rule born from a failure
+has, by construction, **zero firings at birth** — the failure happened *because*
+the rule was absent.
+**Applied honestly right now, the loop would flag almost the entire v3 protocol.**
+That is the correct reading, not a defect in the loop: **v3 is a set of untested
+hypotheses about our own process.**
+**⇒ The register needs a column the table does not have: `times fired since
+creation` (and `times it produced the OTHER verdict`), kept separate from
+`creating incident`.** Without it "this rule has never fired" is unmeasurable,
+and the loop is decoration — which is the standard I am being asked to apply.
+
+### 2. **THE ONE RULE WITH A DEMONSTRATED PRODUCTION FIRING**
+Rule 7's armed-watch clause, via the side lane's **staleness branch: fired at
+807s against a 780s threshold**, on a real event, an hour after being added —
+*"TAPE STALE... THE FLOOR WATCH IS BLIND."* **That is a rule producing its other
+verdict in production rather than in a selftest, and it is currently the only
+one.** Note it also exposes a hole in rule 7 as written: **an armed watch that
+reads silence as no-breach IS "lane attention" with extra steps**, which rule 7
+explicitly forbids relying on.
+
+### 3. **RULES WITH NO FIRING AND NO PROSPECT OF ONE YET — flagged, not deleted**
+- **Rule 1 (self-certifying prereg clock).** Every lock so far has PASSED. It has
+  never returned "ordering invalid". Untested in the direction that matters.
+- **Rule 9 (panel cells must RESOLVE).** The panel was pinned today; no cell has
+  ever been rejected by it.
+- **Rule 10 (floor/ceiling opponents outside the denominator).** Written today;
+  no opponent has yet been excluded by it.
+- **Rule 18 (D14 cross-citation).** Its "firing" was the forward-road cluster —
+  **but that was the creating incident, found by an unrelated D12 sweep, not by
+  D14.** D14 has never itself caught anything.
+
+### 4. **TWO INCIDENTS THAT ARE ONE — rules 13 and 14**
+| rule | incident |
+|---|---|
+| 14 | the elo tape's **version** column is the ACTIVE SUBMISSION AT POLL TIME, not who played the match |
+| 13 | `ship_watch`'s row is fresh while its **rating** is 15 min stale (07:12 line, 07:05 data, `1599 == 1599`) |
+**These are one root cause with two symptoms: the elo tape is a POLL LOG, so
+EVERY column on it describes what the poller saw at poll time, not what happened
+in the world.** Attribution and freshness are two faces of that single fact.
+**Keeping them as two RULES is fine. Recording them as two INCIDENTS is not** —
+it makes the area look like it has two independent confirmations when it has one,
+and the improvement loop will read that as a well-evidenced area.
+
+### 5. **AND A THREE-WAY CONVERGENCE THE TABLE RECORDS AS SEPARATE**
+Rule 4's *"a bar a prior treatment already satisfies is not a bar"* (LOKI-13's
+<=25 conveyors, already cleared at 20.92), rule 4's *"bars carry an effect size"*
+(*"strictly more forward sentinels"*, cleared by one), and **my crash-induction
+bar set at its own null (3/10 = 30.0% against a 29.6% base rate)** are **three
+instances of ONE shape: a bar the null hypothesis already passes.** Convergent
+evidence for a single rule, not three findings. **Worth stating because three
+independent surfaces producing one shape is the strongest support any rule in
+this table has — and it is currently invisible in the presentation.**
