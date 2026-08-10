@@ -27205,3 +27205,99 @@ the UNIFIER first) → the obligations doc. The register is the CANONICAL SPINE
 (`EXPERIMENT-REGISTER.md`); method is v3.2 (`EXPERIMENT-METHOD-CHANGELOG.md`).
 First expected work: re-arm the drift watch (selftest it), verify detached
 monitors, audit whatever landed since this block.
+
+# ============================================================================
+# 2026-08-10 14:55 CEST (`date`) — **WRAP s27 (RESEARCH ARM): PROCESS DELTAS**
+# Wrap called by Magnus. Repo process deltas only; the vault daily note is a
+# SEPARATE day-end task and is NOT this.
+# ============================================================================
+
+## STATE, VERIFIED ON LIVE SURFACES AT 14:55 — NOT ASSERTED
+- git **0 ahead / 0 behind**; working tree carries only monitor-owned daemon
+  state (`corpus/*`, `elo_history.tsv`) plus an untracked `.DS_Store`.
+- `ship_watch` **14:49:24 · v104 · k=31 · rating 1675 · peak 1698 · armed=True ·
+  RULE=held · net_act +60.0**. Tapes written 157s / 346s ago — **fresh in the
+  DATA sense, checked per tonight's own two-freshness lesson.**
+- `ListAgents`: **both peer lanes are gone**; only the Remote Control builder
+  remains. My four subagents are all finished.
+
+## ⚠ THE FIRST THING A SUCCESSOR MUST KNOW: **MY LANE'S WORK IS 05:57-07:44. THEN I WAS DORMANT SEVEN HOURS.**
+**57 commits landed while I was not looking**, and the line moved from v102/v103
+to **v104 at 1675** (I last verified 1599). **Every conclusion in my session
+blocks below is timestamped to before 07:44 and MUST NOT be read as current.**
+Two in particular have been overtaken:
+- **The organiser question I escalated was ANSWERED. Crash-induction is
+  APPROVED** — Magnus asked the organisers (`46e407a`), the norms hold is
+  **LIFTED**, and **LOKI-14 crash-induction is pre-registered and armed as the
+  5th fanout arm (v107)** (`3535000`, `32c7cdb`, `b02a1c1`, `64dcda3`).
+- **The 1550 floor arithmetic I published is moot** — that floor belonged to the
+  v103 window; v104 is the incumbent at 1675.
+**I am recording this rather than writing a wrap that silently implies my last
+reading is the current one — which is the exact fault this session catalogued.**
+
+## D22. **THE SESSION'S ONE SHAPE, SIX TIMES: I VERIFIED THE FRAME AND TRUSTED THE PAYLOAD**
+| # | what I checked | what I didn't |
+|---|---|---|
+| 1 | the LOCK-CERT's provenance, byte-for-byte | its results table's **seat-flipped columns** |
+| 2 | the framing of "fastest-**in-context**" | what the **normalisation** was |
+| 3 | the floor's **logic** | its **+-18 constant** — against 485 deltas in a file I'd opened twice |
+| 4 | a prereg's rollback section (`sed` range) + a grep | **line 12**, which named the plank I then proposed as new |
+| 5 | that `ship_watch`'s **row** was fresh | that its **data** was 15 min old (`1599 == 1599`) |
+| 6 | that a shell loop **printed success** | that it had **written nothing** (count came from `wc -w` on the error string) |
+**THE GENERALISATION, and it is the one thing I would carry forward:**
+**when a document supplies BOTH an argument and the numbers it runs on, the
+numbers are the part that was never re-derived — and they are usually the CHEAPER
+half to re-derive.** None of the six would have been caught by checking harder in
+the direction I was already checking. **#4 and #5 are the sharpest: in #4 the miss
+was caused by the PRECISION of my read (both queries were correct for their
+question and structurally blind to the adjacent line); in #5 the INSTRUMENT
+supplied the misleading layer.**
+
+## D23. **AN AGENT HAS EXACTLY THE CONSTRAINTS ITS BRIEF STATES**
+I put the read-only clause in two briefs and left it out of three sweep briefs,
+then assumed the boundary. **Result: four probe directories under `bots/`,
+disclosed by the agent, not by me.** Standing fix: **the boundary clause belongs
+in the shared preamble, not in whichever brief I happen to be thinking about
+limits while writing.** Applied to sweep 21, which stayed clean.
+
+## D24. **A MONITOR HAS TWO FRESHNESS NUMBERS AND PRINTING ONLY ITS OWN FOOLS A READER HUNTING STALENESS**
+It fooled me **twenty minutes after the defect was described to me in detail.**
+And **my conclusion survived by luck** — the tape froze at a benign value; frozen
+mid-drop, identical reasoning yields identical false reassurance.
+
+## D25. **A CREATING INCIDENT IS NOT A FIRING, AND THE METHOD LOOP CANNOT RUN WITHOUT THAT COLUMN**
+A rule born from a failure has **zero firings at birth by construction.** Applied
+honestly, the loop flags almost all of protocol v3 — **which is the correct
+reading: v3 is a set of untested hypotheses about our own process.** Adopted as
+v3.1 with a firing ledger (**rule 7: 1 firing; everything else: 0**).
+**Best-evidenced rule in the table: "a bar the NULL already passes" — three
+independent surfaces, one shape** (LOKI-13's pre-cleared conveyor bar; "strictly
+more", cleared by one; **my own crash bar at 3/10 = 30.0% against a 29.6% base
+rate**).
+
+## D26. **DECLINING A MEASUREMENT IS A DELIVERABLE, IF THE REASON IS RECORDED**
+Declined three tonight **with reasons committed**: the clock-offset study (the
+one-line self-certifying fix retires the class prospectively), the per-killer
+dose decomposition (**the two-bar structure already absorbs the heterogeneity**),
+and the predictor question (**the leg answers our instance as a free byproduct**).
+**With `audit_trigger` FIRING at 15.05 on analysis-outpacing-decisions, a
+recorded decline is worth more than another cut** — and it stays cheap to overturn.
+
+## D27. **I PROPOSED A PLANK THAT HAD ALREADY FIRED, AND THE ANSWER WAS IN A FILENAME**
+`LOKI2_RUSH_ON` was LOKI-11. The evidence was line 12 of
+`PREREG-loki11-**rush-reopen**-2026-08-10.md`. **Opening the same document twice
+for two different narrow questions is the signal to read its head.**
+
+## WHAT MY LANE PRODUCED, and what it is worth
+**Six cuts + two sweeps.** The load-bearing ones: **the Bisons/field dose finding**
+(2+ forward in-range sentinels standing by r45 -> core-kill-by-r100 **3.6% ->
+23.1%**, n=17,235/804, **p=1.9e-12**, powered placebo null) with its header
+constraint that **it describes the FIELD and our own conversion is unmeasurable
+from it (4 of 2,508 team-sides)**; the **crash/border convergence** (**224 per
+10,000 border builder-rounds vs 0 in 2,334,017 non-border**, explained by sweep
+20B's independent probe that `get_tile_*` RAISES off-map); **module-globals are
+NOT shared across units**, closing an open design question; and the **library
+repair** — `THE FORWARD ROAD IS CLOSED` demoted across **nine files** whose
+correction had been sitting unread in the index they should have been checked
+against, **while our own strongest result of the night contradicted it.**
+**Under D12 none of these CLOSE anything. They prioritise.**
