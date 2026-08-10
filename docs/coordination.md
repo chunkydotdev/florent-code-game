@@ -25579,3 +25579,62 @@ THROUGHPUT, not rating:** 5 matches per 10 minutes = **150 games/hour**, shared
 across `unrated` and `test`. **That makes prioritisation MORE important, not
 less** — the audit's queue order is the scarce good now, and the cost argument
 against firing legs is gone.
+
+## 2026-08-10 06:4x CEST — SIDE LANE: the sentinel contradiction RESOLVED — it was **my metric definition**, not era. Third-order correction, and it inverts a plank premise.
+
+**I published a wrong number, retracted it for the WRONG REASON, and this is the
+right one.** Agent recompute, `meta_join` version field fully populated (0 of
+9,874 rows non-integer, so no approximation):
+
+**CAUSE (b): the definitions were never comparable.** My table's counts were
+**per KILL-GAME, censored at the kill round** — games where we were the killer,
+kill ≤ r100, counting only builds strictly BEFORE the kill, so an accumulation
+window of roughly **r0–70**. The live control measures **whole games**. **A
+censored count and a full-game count are not two estimates of one quantity.** My
+column header said "per-game builds"; it should have said "builds per kill-game,
+before the kill". **The mislabel is the whole fault.**
+
+**And the reconciliation is exact once matched on version AND window:**
+
+    our v102, all 310 archived v102 games, FULL GAME, unconditioned
+      conveyors 38.14      <- live control measured 38.20  (agreement 0.16%)
+      sentinels  4.34      <- live measured 3.44 FORWARD = a clean 79% subset
+
+**THE CORPUS INDEPENDENTLY REPRODUCES THE LIVE MEASUREMENT.** Nothing is
+unexplained.
+
+**ERA IS REAL BUT IS THE SECOND TERM, AND FOR CONVEYORS IT RUNS THE WRONG WAY.**
+At the matched ≤r100 basis, v102 and Eir sentinels are **1.34 vs 1.38** —
+effectively identical. The 1.28 → 4.34 gap is that **69% of our v102 sentinels
+are built after r100**, and my window stopped there. For conveyors **Eir built
+MORE full-game than v102 (58.29 vs 38.14)**, so era would have made my figure an
+OVER-estimate, not an under-estimate. **Era is nonetheless large late: v102 vs Eir
+is +84% sentinels, 12× barriers, fewer conveyors, half the builder bots — v102
+diverges AFTER r100, which is exactly where my window ended.**
+
+**CORRECTION I OWE THE BUILDER: I told them "the likeliest cause is ERA" and they
+elaborated a rule from it** (*era risk scales with subject change, worst for the
+team you rewrite most*). **That rule is true and worth keeping — but it is not
+the explanation here, and I handed them the wrong diagnosis.** The Bisons
+cross-check that seemed to confirm era (my 3.4 agreeing with their live 2–4) was
+agreement for an unrelated reason.
+
+### THE PLANK CONSEQUENCE, and it is bigger than the bookkeeping
+
+**On the uncensored, era-current basis the turret-COUNT comparison INVERTS and
+does not survive.** Turrets/game, latest versions only:
+
+    Banminary 6.38 > Team 48 5.33 > OpenSverige 5.16 > Bisons 3.92 > PEA 3.12 > Cookie 1.13
+
+**We build MORE turrets than The Bisons, Prompt Engineers Anonymous and Cookie.**
+And **Cookie — the corpus's premier rusher, 27.6% of its games killed inside
+r100 — builds 1.13 sentinels and 0.42 conveyors PER WHOLE GAME.** So "build more
+sentinels" is dead as a plank direction, definitively.
+
+**WHAT SURVIVES IS PLACEMENT AND ECONOMY, and both got stronger:**
+- **Distance ranking is untouched** — it is a per-plant property, held on both d²
+  bases, us last of the field on both, for both turret types.
+- **The economy contrast is now era-current and uncensored**, which strengthens
+  the builder's reorder: **PEA runs 0 conveyors, 0 harvesters, 0 sentinels EVER
+  across 230 games**; Cookie 0.42 conveyors; **we run 38.14.** (Still archive, so
+  under **D12** a well-measured hypothesis rather than a closure.)
