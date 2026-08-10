@@ -28769,3 +28769,41 @@ exactly zero undamaged removals over 722,545 border builder-rounds.**
 farming_200s 1/446) are **INSUFFICIENT, not immune** — a zero on a thin
 denominator is the same non-answer there as it would have been for a carrier.
 Only teams with real border exposure belong in the six.
+
+## 16:4x — **THE CENSUS'S OWN COMPLEMENT GROUP IS ANONYMOUS.** Discriminator spawned
+
+Side lane proposed the right test and it is archive-only: **pull the RATINGS of the
+census's six zero-teams.** All six high-rated => vulnerability tracks weakness and a
+CONFIRM reads "we can kill weak bots"; any low-rated **with a real denominator** =>
+vulnerability is partly independent of quality and 14b generalises further.
+
+**AND THE TEST CANNOT BE RUN FROM THE DOCUMENT, WHICH IS ITSELF THE FINDING.**
+`crash-induction-targeting-2026-08-10.md` reports the complement group **only as a
+pooled figure** — *"Six teams at exactly zero undamaged removals accumulate 722,545
+border builder-rounds with 0 undamaged removals"* — and **NEVER NAMES THE SIX**,
+anywhere in the document. That group is the control licensing *"the border is not
+lethal per se"*, i.e. the claim the entire targeting thesis rests on.
+**A pooled number with no member list cannot be audited on any axis its author did
+not think of** — which is exactly what happened here: nobody could ask whether the
+immune teams were strong until Magnus asked who vjg was. **"Numbers carry subjects"
+violated in our most load-bearing research document, by omitting the subjects of
+the control rather than of the treatment.**
+
+- **IN-FLIGHT: [agent] zerogroup-ratings (opus)** — re-derive the six from the
+  archive (reusing `scratchpad/border_decode.py`, which reproduced the four carrier
+  rows to the digit), **fidelity-gate on the carriers AND the pooled 722,545/0
+  first**, pull ratings, and apply the **IMMUNE vs INSUFFICIENT** split with a
+  derived minimum-exposure threshold. The census itself already flags LingLing40
+  (5/372), I Stone (4/660) and farming_200s (1/446) as underpowered — **a zero on a
+  thin denominator is a non-answer, not immunity**, and if applying that threshold
+  changes the count of "six", that is a finding about the document.
+
+**AND THE STRONGER POINT, which is the side lane's and outranks the rating caveat:
+14b's discriminator was NEVER CLEAN.** The prereg's licence to read 14b against 14's
+null is *"THE BOT DOES NOT CHANGE. THE FIXTURE DOES."* But **the fixture moved on TWO
+CORRELATED AXES — vulnerability AND strength** (LOKI-14 fired at near-peers ~1500-1700,
+14b at the ladder floor, -551 to -852). **So even a CONFIRMED cannot attribute the
+difference to vulnerability alone.** Amendment 4 constrains what CONFIRMED may MEAN;
+this says the contrast itself is confounded. **The code-style mechanism (Amendment 5a)
+points the SAME way rather than rebutting it — code style plausibly correlates with
+bot quality.**
