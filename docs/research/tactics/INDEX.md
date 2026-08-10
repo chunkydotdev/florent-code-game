@@ -800,6 +800,49 @@ Any survival, heal or screening figure must name which one it came from.**
   turret-bearing second fixture is a STANDING PREREQUISITE before any repair plank is trusted,
   not an option.**
 
+## ⛔⛔ READ FIRST — **MOST OF THE STANDING CONTEXT BELOW DESCRIBES EIR, NOT THE LIVE BOT** (2026-08-10, s26, `prior-tracing-2026-08-10.md`)
+
+**This is ONE fact, not seven separate caveats: the section below was built on an archive that
+is ~92% Eir (`join.tsv`: 1,580 Eir games against 130 LOKI-8), and FOUR of its own instruments
+INVERT when re-run on the v102 subset.**
+
+| standing claim | Eir (as published) | **v102, same instrument** |
+| --- | --- | --- |
+| *"Everything about us breaks at r150"* — ammo Ti/100 rounds by band | 212 → **156 → 130** → 140 | **209 → 300 → 253 → 135 — converts 43% MORE after r150** |
+| *"We under-build turrets"* — turrets built r200-300 | us 0.64 / field 2.22 | **us 2.15 / field 1.18 — we now OUT-BUILD them** |
+| *"We bank and do not spend"* — Ti held at end of r200-300 | us 506 / field 348 | **us 96 / field 210 — INVERTED** |
+| *"353 games reached r1000 and we won 57.2%"* | 30.2% reach r1000 (n=477) | **6.9% — 1 of 9. The clock claim has no current denominator at all.** |
+
+**And the 57.2% figure's own source document says it must not be quoted as a property of the
+current bot. This INDEX quotes it without that sentence.**
+
+**⇒ Treat every item below as EIR-ERA unless it has been re-run on v102. The library's oldest
+standing complaint — *"we bank and do not spend"* — is FALSE OF THE LIVE BOT, which now holds
+less titanium than the field.**
+
+**SECOND EXPOSURE, and it sits under a bigger conclusion: the `+11.4 / +16.6 / +22.3pp`
+home-defence advantage — the evidentiary floor under `THE FORWARD ROAD IS CLOSED` — DOES NOT
+REPRODUCE.** Same instrument (BUILD→DEATH, 50-round horizon, censored dropped): **Eir home
+78.3% vs field 62.0% = +16.3pp; v102 71.5% (n=439) vs 81.5% (n=520) = −10.0pp.** Paired within
+opponent (n≥20 both eras) the gap **narrows or flips in 5 of 8**, holds in 1, 2 saturated.
+**n=439 supports "does not reproduce", NOT "refuted" — but the floor under a headline
+conclusion is no longer standing on its published number.**
+
+**THIRD: both "resolving" fixtures were certified by audits that never tested target
+selection.** `probe-fidelity-orizon-flotte` declared orizon *"CLASS-VALID… usable as a field
+instrument"* and `probe-fidelity-guards` declared band *"USABLE AS A GUARD"* — **every
+predicate in both is opening / turret-type / geometry / lane-fraction.** The guard document
+states its own purpose as *"does a change break our repair line, our harvester defence…"* —
+**exactly what the targeting shortcut makes unreachable.** **Prior art existed and was not
+consumed: `cad-probe-refreeze-spec` documented the build-site half of the same blindness two
+days earlier.**
+
+**Bucket counts over 34 traced priors: CLEAN 18 · ERA-DRIFT 7 · PROBE-CONTAMINATED 4 ·
+FIXTURE-BLIND 2 · UNTRACEABLE 3.** **The majority is clean and that is the honest headline.**
+**But two of the four probe-contaminated items are the fixture CERTIFICATIONS themselves — so
+it is one bad instrument, not four bad documents, and a zero-retraction verdict audit is NOT
+the same as the probe problem being small.**
+
 ## Standing context a sweep should know
 
 - **The field does not rush.** Only 12% of top-tier kills land by r100; median
