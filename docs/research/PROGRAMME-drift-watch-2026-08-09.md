@@ -166,5 +166,12 @@ commits) and at every verdict/ship/leg event:
   what the defect costs AND what the fix costs, in the same currency, on the
   same population. A refusal-shaped plank passes trivially (fix ≈ 0), which
   is part of why refusals keep winning on this line.
+- **An IN-FLIGHT entry is a claim about process state, and it is verified
+  against ListAgents, not memory (s27, 2ea05ce):** research announced a cut,
+  reported it running twice, and had never spawned it — the commit landed,
+  an interruption intervened, the launch step was skipped, and the registry
+  carried a fiction. Status reports about one's own agents check the process
+  list first; the registry's integrity is what the watch audits announcements
+  against, so a phantom entry corrupts the audit surface itself.
 - This document is the mandate's durable record. A successor side-lane session
   boots into it via the coordination tail and MEMORY.
