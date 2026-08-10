@@ -27154,3 +27154,54 @@ needs a trustworthy stop-loss.** Fix is the one already proposed: tag rows by th
 per-match ladder version, not the poll-time active submission. Until then, v104's
 real stop-loss signal is the ladder RATING TRAJECTORY read directly, not
 slot_rule/ship_watch, whose holder field is being flipped by transient arms.
+
+# ============================================================================
+# 2026-08-10 14:5x CEST — REBOOT STATE — SIDE LANE (Magnus called a solo reboot:
+# my context 90%+, peers ~50%). NOT a wrap — a reboot seam. Everything committed.
+# ============================================================================
+
+## SUCCESSOR: DO THESE FIRST
+1. **Re-arm the all-commits drift watch** (CORE mandate; my Monitor dies with
+   this session). Selftest it on your own boot commit — a watch that has never
+   fired has not been seen to watch.
+2. **Verify detached monitors BY OUTPUT** (builder-owned; verify, don't re-arm):
+   elo_logger/match_watcher/opp_watcher/replay_archiver/keeper/ship_watch all
+   alive at reboot. **`breakin_watch.py` is DOWN** — not needed now (v104 break-in
+   over) but flag the builder to re-arm it before the next ship.
+3. **The automated stop-losses are FANOUT-FRAGMENTED** (poll-time version tag;
+   observed slot_rule report holder=v102 k=106 during v104 incumbency). **v104's
+   real guard is the LADDER RATING TRAJECTORY read directly**, not slot_rule/
+   ship_watch, until per-match tagging lands (builder-owned fix, flagged).
+
+## LIVE STATE (verified this commit)
+- **v104 "Loki v2" LIVE, ~1675 rank #24** (dipped from 1690/#23, normal variance,
+  +32 over v102's peak 1643). git 0 ahead/0 behind.
+- **HOLD standing, Magnus's roll-back call OPEN.** Confirmatory (E-27.5) came back
+  **NOT CONFIRMED, fully clean** (contaminants verified to postdate its banking):
+  ship's +18pp did not replicate (−7pp, p=0.30), but NOT refuted and ladder
+  strong. My rec = HOLD; the field (ladder) is the programme's verdict instrument
+  and it favours v104. If the ladder trajectory reverses, revisit.
+
+## OPEN ITEMS (priority order)
+1. **Magnus's HOLD/roll-back decision** on v104 — pending.
+2. **Legs pooling in fanout** (v106 LOKI-16 ring-hold, v107 LOKI-14 crash-
+   induction, v105 LOKI-15 economy-mechanism, PANEL2-CAL). Each needs lock cert +
+   register entry ON READ-OUT. **LOKI-14: flag HARD if the interior placebo arm
+   reads anything but ~0** — that means the instrument, not the exploit, is talking.
+3. **PANEL2-CAL** replaces the 2-cell saturated panel — calibrate which cells
+   resolve BEFORE any plank is measured on the new panel (D13).
+4. **D17 LIVE:** exploit instances of an APPROVED class fire freely; a new
+   MECHANISM needs a Magnus→organisers ask. Generalised exception-induction =
+   approved (border/stale-plan/0-ammo-fire are one mechanism).
+5. **Scriptable-ops scripts** (SCRIPTABLE-OPS-AUDIT): boot_verify.py first, then
+   leg_read.py --lockcert — builder-owned, banked, not yet built.
+6. **CLOSED, do not reopen:** CONFIRM data-integrity caveat (clean, quarantined);
+   ring-body reclassified ALREADY-IMPLEMENTED; the six-roads reprice.
+
+## BOOT POINTER
+`.claude/commands/sidelane.md` → PROGRAMME.md → this REBOOT STATE + notes since →
+`PROGRAMME-drift-watch-2026-08-09.md` (now **D1–D17** + enforcement ledger; read
+the UNIFIER first) → the obligations doc. The register is the CANONICAL SPINE
+(`EXPERIMENT-REGISTER.md`); method is v3.2 (`EXPERIMENT-METHOD-CHANGELOG.md`).
+First expected work: re-arm the drift watch (selftest it), verify detached
+monitors, audit whatever landed since this block.
