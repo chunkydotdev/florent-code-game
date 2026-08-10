@@ -24682,3 +24682,56 @@ and did not catch it — and it was catchable from inside the document**, since 
 seat-B row printed under an (us-them) heading contradicts its own seat column.
 I verified the clock arithmetic and the committed object byte-for-byte, then
 **took the payload on trust** — the same shape as the fault I was reviewing for.
+
+### 06:3x — **AMENDMENT TO a08669c: I WITHDRAW "MAP SIZE ANTI-EXPLAINS THEM."**
+That bullet in `a08669c` is **WRONG and is retracted here** (amend-in-place rule;
+the commit stands as the record, this is its correction). By stated size:
+jackpot 16x16 -> **49**, saga 24x24 -> **74**, snowflake 26x26 -> **66**. That is
+a weak POSITIVE trend, and **their fastest kill (49) is on their SMALLEST map**,
+which alone kills "inverted". The correct claim is **SIZE-INSENSITIVE, not
+size-inverted**: 4-for-4 under 92 across 16x16-26x26 while ours span 99-524.
+**And on n=3 sized maps no trend claim is supportable in EITHER direction** —
+what actually carries size-insensitivity is the side lane's league-wide area
+null (<=200 area 9.2% sub-100 vs >550 area 11.1%), not these three points.
+**WHY I ENDORSED IT — the mechanism is the useful part.** The claim reached me as
+*"their two fastest-IN-CONTEXT kills land on the two largest maps"* and **I never
+asked what "in context" normalised BY.** The qualifier carried the entire
+argument and I read past it. **A qualifier I cannot restate as an operation is a
+claim I have not checked.** Second instance tonight of the same shape: with the
+seat-flip I audited the provenance and trusted the payload; here I audited the
+framing and trusted the normalisation. Both times the error was reachable from
+inside the material I already had.
+
+### 06:3x — TWO OBJECTIONS RAISED ON `league-fast-kill-mechanism-2026-08-10.md` (dbe411e)
+1. **THE d² HEADLINE NEEDS ITS MEASUREMENT BASIS STATED, AND IT MAY DELETE THE
+   ALARMING HALF.** The doc reports fast killers planting at d²=8 (Cookie) /
+   d²=10 (PEA gunners) against our d²=32 (sentinel) and **d²=16 (gunner)**, and
+   flags that d²=16 exceeds gunner r²=13 — i.e. our forward gunner may not reach
+   the core it exists to shoot. **The core is 2x2, so "d² to the core" is
+   ambiguous exactly where it decides the verdict:** to the core's CENTRE/anchor,
+   or to the NEAREST of its four occupied tiles. A gunner at d²=16 to centre can
+   be at **d²~9 to the nearest core tile — inside r²=13.** Same number, opposite
+   conclusion. The engine's own predicates (`can_fire`,
+   `get_attackable_tiles`) work on TILES. **If the extraction was centre-based,
+   recompute nearest-tile before the builder spends an engine probe.** Cuts both
+   ways: nearest-tile basis means the bug is REAL and is the night's biggest find.
+2. **CURRENCY CHECK ON THE BARRIER PRE-EMPT.** "Fast killers are deterministic
+   (identical build order, identical kill round), so pre-empt the plant tile for
+   3 Ti" — the determinism finding is strong, the counter is priced wrong.
+   Blocking their plant **prevents THEIR kill; it does not produce OURS.** Under
+   `R1000_IS_DEFEAT: yes` it converts a fast defeat into a slow defeat = **a null
+   on the primary currency.** Its real value is as an ENABLER (dead bots kill
+   nothing), worth exactly our post-survival conversion — **which the same cut
+   measures as poor: our sub-100 rate fell 6.7% -> 3.5% while sub-250 rose.**
+   **Pair it with a kill plank or do not build it**; alone it buys tempo we have
+   no measured machinery to spend (the library's "material superiority with no
+   machinery to spend it"). It is also defence-shaped enough to brush the ⛔
+   NEVER PLAY DEFENCE line — **builder's ruling, not research's.**
+
+**Adopted from the same relay, no objection:** launcher throws are NOT the
+mechanism (zero throws on a COVERED zero across Cookie 58 / Bisons 56 / Big O 52
+/ PEA 45 sub-100 kills) — passed to my Bisons agent so it does not spend on
+ferrying. Map identity ~3x surviving a time control (MAIN 7.3% vs ROTATIONAL
+20.8%), which also explains away the apparent league-wide decline in sub-100
+killing. **And the sentence for Magnus: our 20.2% sub-100 death rate across
+2,453 games is spread over 38 of 43 opponents — STRUCTURAL, not a matchup.**
