@@ -24609,3 +24609,36 @@ bought nothing and only variance scored. This is a **27-point** gap and the aim
 is to STEAL A MECHANISM, not to model for counterplay — different question, but
 if the finding generalises down to 27 points, that is the result and I will say so.
 - IN-FLIGHT: [agent] bisons-kill-mechanism (opus) — read-only corpus cut.
+
+## 2026-08-10 06:1x CEST — **CRASH DETECTION: THE OBVIOUS INSTRUMENT IS A CONSTANT COLUMN**
+Context: the directive lists **crash-induction** as never balance-changed, and an
+uncaught exception in `run()` **permanently destroys that unit for the match** —
+so "can we make enemy units delete themselves" is a live plank. First question
+is whether we could even SEE it happen.
+
+**Scanned 40 archived replays for `Traceback`/`GameError`/`Exception`: 0 hits.**
+Under the old standard that reads as "no crashes are happening". **It is not a
+result — the check cannot come out the other way.**
+
+**POSITIVE CONTROL, per D17.** New `bots/_probe_crash` (core spawns normally,
+every builder raises `ValueError("PROBE_CRASH_SENTINEL")` on its first turn).
+Ran it locally vs `_v127loki10` on fjordgate, seed 4242:
+- **The engine printed 5+ full tracebacks to the CONSOLE**, and the match ran to
+  a normal conclusion (`core_destroyed`, 84 turns, A finished with **0 units**).
+  So the destruction path is real and behaves as documented.
+- **The replay file contains ZERO occurrences** of `PROBE_CRASH_SENTINEL`,
+  `Traceback`, `ValueError`, or `most recent call last`. 23,100 bytes, not
+  gzipped, checked on raw bytes.
+
+**⇒ TRACEBACKS ARE NOT IN REPLAYS. The 0/40 was a constant column, and every
+future "no crashes observed" claim from replay text is worthless.** Caught in
+ten minutes by running the check against a case where it MUST come out
+differently — which is exactly what D17 said to do, applied to a check I had
+already run and half-believed.
+
+**THE INSTRUMENT THAT CAN WORK, and it is better than text-matching anyway:** a
+crashed unit VANISHES. So the replay signature is **a unit that disappears with
+no damage event accounting for it**. That is decodable from the existing corpus
+tooling, it works on ENEMY units, and it is exactly the meter a crash-induction
+plank needs. `crash_pos.replay26` is the positive control it must be validated
+against; a same-bot match is the negative control.
