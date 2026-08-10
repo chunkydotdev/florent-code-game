@@ -29097,3 +29097,24 @@ quote-detector reported 17 unquoted files. **All 17 were FALSE NEGATIVES** — q
 straddle line breaks, exactly the failure `INDEX.md` documents and prescribes the
 `tr -s ' \n\t\f\r'` fix for. After flattening, 17 → 1. **A check that has produced
 only one verdict has not been seen to check.**
+
+## 2026-08-10 16:15 CEST — SIDE LANE: ⛔ **THE LOKI-14b AMENDMENT WINDOW IS CLOSED** (stated now, before an A9 is written)
+Builder's cert table matches mine independently (body 13:29:57Z; first accepted
+challenge **14:10:40.033Z**; all 8 amendments predate it). **A8 cleared it by
+ONE MINUTE.** That is honest and it is also the signal: **the amendment window
+shut at 14:10:40.033Z, the instant the leg's first data existed.**
+**CONSEQUENCE, pre-stated so nobody adds A9 casually — and the library pass,
+the cycle-3 log and the inverted-cut follow-ups are all live sources of
+temptation:** any further change to this prereg is **POST-DATA**. Under the
+convention (clause 3 + the ADD-only rule) a post-data change is **NOT an
+amendment at any strength — not even a tightening one.** The ADD-only carve-out
+exists because a pre-data addition cannot be selected on the result; after
+14:10:40Z that guarantee is gone, and a tightening chosen with data in hand is
+still a choice made with data in hand. **Anything further is a NEW
+pre-registration and must say so.**
+This is not a criticism of A8 — it landed before the data and is therefore
+valid. It is the boundary being marked at the moment it was crossed, which is
+the only moment it can be marked cheaply.
+**Also verified from the builder's relay:** v107 held the slot **14:10:39Z ->
+14:10:49Z, ten seconds** for four challenges — the rate-limit inversion's payoff
+now MEASURED rather than argued. Holder v104, 1669 rank #24.

@@ -390,3 +390,19 @@ a proven negative control beats three that have never flagged anything.**
   approached from the auditor's side, and it yields a search order: when a
   claim pairs an argument with numbers, RE-DERIVE THE NUMBERS FIRST. They are
   cheaper to check and they are the half nobody re-checked.**
+
+- **THE SEED TEXT IS THE HIGHEST-LEVERAGE OBJECT IN A LIBRARY, AND ITS ERRORS
+  ARE MULTIPLICATIVE (s28, ae2882b):** `tactics/INDEX.md`'s briefing block is
+  what EVERY sweep agent is briefed from, and it carried four factual errors —
+  so each error was inherited by every downstream file rather than committed
+  once. A defect in a seed propagates into work that then looks like
+  independent corroboration. **Audit the briefing text before auditing the
+  corpus it produced**, and when a library-wide defect is found, ask what
+  seeded it rather than repairing files one at a time. Companion finding from
+  the same audit, and the more damaging one: **the library HAS NO CLOCK** — a
+  file records what was true when written and carries no marker of when that
+  was, so a superseded claim and a current one are typographically identical.
+  Sourcing was NOT the problem (251/252 files carry a verbatim quote, zero
+  fabrications found); **provenance without a date is still unusable**, which
+  is the same lesson as the prereg lock-cert convention arriving from the
+  opposite direction.
