@@ -102,3 +102,48 @@ argument for putting the pre-commitment in the script rather than in attention.
 across ALL unrated/test challenges and is not per-runner. Check when the
 outgoing runner last fired before starting the incoming one; the safe gap is
 ~20 minutes from its last challenge, not from the moment you kill it.
+
+---
+
+## TEXT vs BEHAVIOUR: THE RUNNER WAS LAUNCHED FOR 6 CYCLES, THE PREREG SAYS 4
+
+**Side-lane flag, s28.** The process was started as
+`zsh tools/loki14b_leg.sh 6 <4 carriers>` at 13:49Z — **before Amendment 6
+existed**. Amendment 6 (14:01Z) then pre-committed *"stop after cycle 4, decode,
+and extend ONLY if the throw count is under 150"*. Left alone the runner would
+have fired **6 cycles ≈ 24 matches ≈ 240 throws**.
+
+**RESOLVED BY HONOURING THE TEXT: stop after cycle 4.** `tools/loki14b_stop.sh`
+is armed and will kill the runner when `cycle 4: fired` appears in the log.
+
+**Why the text and not the process, when the extra dose is scientifically
+BETTER.** At 240 throws λ≈5.2 and P(≥5) returns to ~60%, versus 26.5% at four
+cycles — so six cycles is the stronger leg, and since the stop was pre-committed
+on DOSE, more dose cannot flatter the result. The argument for amending to 6 was
+real. It loses anyway:
+
+* **The extra two cycles buy a LABEL, not a DECISION.** They raise the chance of
+  reaching the word CONFIRMED — but Amendment 4 already forbids a CONFIRMED from
+  licensing a ship and requires it to carry "against teams rated 806–1107 while
+  we are 1658". **Nothing downstream changes based on which word we get.**
+* **The EXISTENCE PROOF — the leg's whole stated purpose under Amendment 6 — is
+  already bought at four cycles.** P(≥1 | mechanism works) = 96.8% at 160
+  throws. The ≥5 bar was always about CONFIRMED, never about existence.
+* **The other half of Amendment 6's rationale is the budget**, and it is the half
+  that serves Magnus's climbing ruling: two extra cycles is ~40+ minutes that
+  PANEL2-CAL — paused at 13/25, repairing the instrument every currency verdict
+  depends on — does not get.
+
+**And the thing that decides it regardless of the merits:** a prereg that says 4
+while the process does 6 means **whichever number a read-out later cites, the
+other is evidence the text was written after the fact.** That cost is
+unrecoverable and it is larger than the difference between 26.5% and 60% on a
+leg whose result cannot license a ship either way.
+
+**The watchdog is a SCRIPT, not a note**, for the same reason Amendment 1's
+two-carrier floor is enforced in the runner: this stop fires ~50 minutes out, and
+a pre-commitment held in attention is the one that fails under time pressure.
+Both branches checked before arming — fires on a log showing `cycle 4: fired`,
+stays silent on one showing cycle 3. It also **verifies the holder after killing**
+and re-activates v104 if needed, because **a killed runner cannot run its own
+rollback** — the one hazard this stop introduces.
