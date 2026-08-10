@@ -141,10 +141,27 @@
 ##   "does not reproduce", NOT "refuted" — but a headline conclusion is no longer
 ##   standing on its published number.
 ##
-##   **RULE FOR A SUCCESSOR: before using ANY library or HANDOVER figure to size
-##   a plank, ask which bot it was measured on.** Tonight produced six
-##   denominator-as-view errors across two lanes; this is the same fault at
-##   library scale.
+##   **RULE FOR A SUCCESSOR, and it is the sharpest form we reached:
+##   USE A STORED FIGURE TO CHOOSE *WHAT* TO TEST, NEVER *HOW MUCH* TO EXPECT.**
+##   Nine failures tonight across two lanes were one fault in different clothes —
+##   **a number true SOMEWHERE, used SOMEWHERE ELSE**: a view used as a
+##   population, an assumed capacity used as a measured utilisation, an assumed
+##   game length used as a per-turn rate, a 480-file battery used as "the arena",
+##   an Eir archive used as the current line.
+##
+##   **THE FIX IS THE SAME IN ALL NINE: MEASURE BOTH SIDES OF THE COMPARISON
+##   INSIDE THE THING YOU ARE TESTING.** A paired within-arm control is immune to
+##   era drift BY CONSTRUCTION — both arms are the same bot on the same day, so
+##   what the archive is made of cannot matter. A control arm in the same fixture
+##   is immune to fixture contamination — a probe that cannot see your buildings
+##   cannot see them for EITHER arm.
+##
+##   **THE DEMONSTRATION, because it is better than the argument:** three planks
+##   were sized in one evening. **Two died of era drift before firing.** The third
+##   (LOKI-10) survived **not because anyone foresaw the era problem** but because
+##   its prereg pinned every bar to a paired within-leg control and pre-declared
+##   its currency channel closed. **Subject hygiene, applied for unrelated
+##   reasons, turned out to be the same defence.**
 
 
 ## ===== QUEUE =====
