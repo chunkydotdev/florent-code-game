@@ -22687,3 +22687,21 @@ It fired here on the RULE, wrote the file, and carried `drawdown=-31` beside
 mechanics. **Three independent paths reported within minutes and none re-derived
 the rule** — the side lane's wake fired first by cadence, exactly as the
 redundancy predicted.
+
+### 02:4x — ONE OF MY FOUR HOLD REASONS IS NOW WEAKER. Naming it; decision unchanged.
+**Reason 1 was the round-trip precedent: the arm reversed at -28 unaided.
+This drawdown is -31 and has exceeded it.** The precedent no longer covers this
+excursion, and I would rather say that than let four reasons stand as if all
+four were intact. Reasons 2-4 (level +17.6, the Powerpuff calibration, and the
+slot not being an evaluation) are untouched.
+
+**AND ON WHETHER THE CONJUNCTION IS TOO SLACK — I said 17.6 points "may well be"
+too much. On reflection it is not slack, it is the correct criterion, and here
+is why:** `net_act < 0` means *v102 has fallen below the rating v101 handed it*.
+**The rollback question is not "is v102 declining" — it is "is v102 still better
+than the thing we would replace it with".** 1567.44 IS v101's rating at
+handover, so the term reads: **hold while the ship still beats its replacement.**
+That is exactly the right test for a ROLLBACK, as distinct from the stop-loss,
+which correctly fires earlier on slope alone. **The two instruments are measuring
+different questions and the gap between them is the feature, not the slack.**
+Recording this as a defence of the rule I wrote, having briefly doubted it.
