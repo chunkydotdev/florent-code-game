@@ -24235,3 +24235,21 @@ permits at most one facing of eight, so reordering a singleton is a no-op **by
 construction**. That was resolved mathematically rather than statistically, and
 only because a third falsifier branch was added BEFORE the run. **It cost one
 leg instead of two.**
+
+### 05:5x — WRAP ADDENDUM: **BOTH PEER LANES ARE GONE.** Verified, not assumed.
+My closing relay to the research arm **failed — socket stale — and `ListAgents`
+returns "No reachable agents".** The research and side-lane sessions have
+closed. **Checked on a live surface rather than assumed, per D20.**
+
+**CONSEQUENCE A SUCCESSOR NEEDS:** research had a **feasibility cut in flight**
+(chain-length distribution, dead-ends-per-turn, cycle-reachability for the
+class-1 discriminator) and said it would report into the record whether or not I
+was reading. **If no commit from their lane carries that result, THE CUT DIED
+WITH THEM AND WAS NEVER BANKED.** Check their last commits before re-commissioning.
+**The two questions it was answering are NOT blocking** — both were settled for
+the build hours earlier (visited set mandatory; do not walk per builder per
+turn). It would have told us how often the naive version would actually have
+failed, which is worth knowing and off the critical path.
+
+**ALL THREE LANES ARE NOW DOWN.** Only the six detached monitors remain, and
+nothing wakes a session.
