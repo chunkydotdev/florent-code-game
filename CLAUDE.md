@@ -234,3 +234,48 @@ These override attention drift; the full lane protocol is your boot config
   failure. Analysis exists to feed this mill, not to replace it. Full ladder:
   `docs/builder-method.md` (S0–S8); prereg template: the obligations doc in
   `docs/research/`.
+
+# WHAT LOKI IS (Magnus, 2026-08-10 — the definition of the active line)
+
+Loaded in EVERY session because it changes what counts as a win. `PROGRAMME.md`
+is the machine-readable authority and `tools/gate.py` enforces it; this block is
+the directive verbatim so no lane can boot without it.
+
+> *"Loki is the ultimate trickster, playing into other teams by using cheap
+> tricks, manipulation, poisoning and every exploit we can find. Loki plays
+> dirty and is the ultimate weapon at that. We want to destroy the enemy core,
+> never play defence. A r1000 round is a defeat even if we by chance win it.
+> You need to constantly figure out and test new tricks that we can use by
+> building prototypes and putting them against live teams in unrated games —
+> that beats our own calculations every time, and sometimes you find things
+> that surprise you. Those are of fantastic importance for our growth."*
+
+Four consequences, each of which closes a road that was open before it:
+
+1. **A ROUND-1000 GAME IS A DEFEAT, INCLUDING WHEN WE WIN IT.** The tiebreak
+   ladder (`titanium_collected` → harvesters → stored) decides ~94% of r1000
+   games and is now OFF-CURRENCY. Everything above about harvester throughput
+   remains factually true about the ENGINE and is no longer what we optimise.
+   **Economy is instrumental: it buys the kill, it never scores.** Any plank
+   whose only channel is `titanium_collected` is at best a correctness fix.
+2. **NEVER PLAY DEFENCE.** Survival, screening, home turrets, heal-uptime — a
+   plank whose mechanism is any of these is off-programme regardless of what it
+   measures. Turrets are bought to open a lane to the enemy core, not to hold one.
+3. **PROTOTYPES GO AT LIVE TEAMS, NOT AT OUR OWN PROBES.** `bots/*_probe` is a
+   fixture WE authored and it lies in a known direction (five probes share a
+   `best_core or best_any` short-circuit — zero of our forward turrets died in
+   480 arena games against **46.9% on the ladder**). The instrument is
+   **`fcode match unrated <team_id>`**: 5 games, a real team's real bot, no
+   rating at stake. **Constraint, verified on the CLI:** it plays our **ACTIVE
+   submission** — there is no flag for a local tree — so a prototype leg means
+   activating the prototype and paying ~6 rated ladder matches per hour of
+   window. Bounded, recoverable, and the price of the only honest fixture.
+4. **A SURPRISE IS THE POINT, NOT AN ANOMALY.** An unpredicted result from a
+   live-team leg outranks a predicted one from our own arena. Write it down
+   before explaining it away.
+
+**Never balance-changed by the organisers, therefore still open:** launcher
+throw/kidnap (we may pick up an ENEMY builder and throw it anywhere passable,
+for no ammo), spawn-tile denial, crash-induction. **Retired by this directive:**
+tiebreak-turtle. **Already refuted, do not re-derive:** ore poisoning, partial
+spawn starvation, siphon, barrier-form spawn lock, CPU denial, heal-idle staffing.
