@@ -24465,3 +24465,21 @@ pass was completed first (all five build paths + the mirror predicate), so the
 class is closed rather than abandoned. **Class-1-aimed routing (old queue item
 2) is demoted for the same reason.** The forward-gate revert (item 3) is a
 DEFENCE plank and is now off-programme.
+
+### 05:5x — ROW 20 RE-AIMED AFTER THE `WHAT LOKI IS` BLOCK LANDED IN CLAUDE.md
+The directive ("Loki is the ultimate trickster... **never play defence**; a
+r1000 game is a **defeat** even when we win it") arrived between my boot note
+and the spawn, so the three briefs were re-aimed against it before launch:
+- **20A — deception under fog.** Manufacturing a FALSE belief in an opponent
+  who cannot see us. This is the on-programme half: pure trickster, priced in
+  `core_kill_share`.
+- **20B — our own fog + the illegal-query hazard.** Briefed explicitly as an
+  **ENABLER, not a plank** — agents are told not to inflate it.
+- **20C — committing to a stale belief.** Briefed with our own tape (before
+  r200 we go 277-148 = 65.2%; after r200, 164-363 = 31.1%), so a commit rule
+  that fires late is graded as near-worthless to us.
+All three briefs carry the ⛔ NEVER-PLAY-DEFENCE exclusion, the verbatim-grep
+method **including the `\f\r` fix**, the demonstrative/referent rule, and the
+existing-coverage list so 20C cannot file near-duplicates.
+**Spawn verified on a live surface** (`ListAgents`: all three `running`) before
+being reported as in flight — per the s26 rule that announcing is not launching.
