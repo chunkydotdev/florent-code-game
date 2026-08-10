@@ -24267,3 +24267,51 @@ nothing wakes a session.
 - IN-FLIGHT: [agent] audit-instruments (opus) — instrument audit, reports once.
 - IN-FLIGHT: [builder] LOKI-10 wiring pass (queue item 1) — call the route
   guard at raid.py + launcher emplacement sites, then the mirror predicate.
+
+# ============================================================================
+# 2026-08-10 05:55 CEST (from `date`) — **s27 SIDE LANE BOOT**
+# ============================================================================
+Commissioned by Magnus. Rule-5 contract unchanged: no bot edits, no arena/unrated
+runs, no verdicts, no HANDOVER/tape writes, engine probes stay with the builder.
+Writes: new files under `docs/research/` + append-only notes here; commit only my
+own named files; push every commit.
+
+**Boot verification — independent of the builder's d4566de block, and BY OUTPUT
+rather than by `ps` (the s26 lesson: alive is not working).**
+- ship_watch tape 05:52:08 — `k=55 rating=1596 net5=-4.0 peak=1616 drawdown=-20.0
+  armed=True RULE=held sprt_fast=OK sprt_slow=OK net_act=+28.6`. `corpus/SHIP_ALERT`
+  ABSENT — and that absence is now informative, because ship_watch has
+  restart-on-OK and fired/cleared twice on the s26 tape.
+- elo tape 05:50 — 1596, 625 games, v102, rank #29. keeper manifest mtime 05:55.
+- All six PIDs from the builder's boot block resolve live (25811/25942/25943/25944/
+  89444/66915). I verify these; I do not re-arm them — they are builder-owned.
+- git 0 ahead / 0 behind at `d4566de`.
+- **Slot has MOVED since the builder's 05:5x block**: k=54→55, rating 1586→1596,
+  drawdown −30→−20, net_act +18.6→+28.6. `slot_free` still False. Noted because a
+  boot number copied forward from a peer's block ~10 min old is exactly the
+  shelf-life fault D20 named.
+
+**Wakes armed:** (1) all-commits drift watch, 45s poll over HEAD + origin/main,
+one event per unseen hash — selftested on THIS commit, not assumed (the
+must-come-out-the-other-way standard; a watch that has never fired has not been
+seen to watch). (2) peer message channel — `ListAgents` returns the builder
+session live, so the channel is real and not a memory of one.
+
+**Carried forward, unresolved, so it cannot lapse quietly:**
+1. **Magnus's unrated-bar directive STANDS OPEN.** The LOKI-10 arena battery
+   (480 local games, no platform clock) was the right test for its closed-channel
+   plank and is NOT the owed unrated leg. First open-channel leg is the builder
+   queue's top item; I certify its two clocks when it fires.
+2. LOKI-10 wiring pass is IN PROGRESS on the builder's side (`bots/_v127loki10`,
+   `_det_v127loki10`, `_det_v127loki10off` modified-uncommitted at my boot). Audit
+   surface noted, no flag. **Pre-stated audit criterion, written before the commit
+   exists so it cannot be fitted to it:** the re-run's bar must be re-derived from
+   an ENUMERATION of the emplacement sites, not reused from the old "treatment = 0"
+   bar — that bar failed because it was a coverage claim built on an occurrence
+   measurement (obligation 11's shape: verify the treatment the EXPERIMENT
+   requires, not the one you coded).
+3. Research's feasibility cut (chain-length distribution, dead-ends-per-turn,
+   cycle-reachability) — per the s26 wrap addendum it died with that session unless
+   a commit carries it. Not blocking; both questions it answered were already
+   settled for the build. Flagging only so a successor does not re-derive it
+   believing it was banked.
