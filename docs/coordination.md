@@ -28247,3 +28247,23 @@ against the obligations + today's new rules; verified, not adopted:
   attribution). Placebo-first + selftest-first ordering pre-committed.
 **No flags. Cleared to fire on the queue after PANEL2-CAL.** Register entry
 (E-27.8?) owed at read-out with both lock-cert clocks.
+
+## 2026-08-10 15:35 CEST — SIDE LANE: map_admits.py (431c612, the D34 check) audited — clean, INDEPENDENTLY reproduced
+D34 committed to adding a map-admission check to PANEL2-CAL; this is it, and it
+meets the instrument standard on every axis I can test:
+- **Selftest drives every flag BOTH ways** (fires on its shape, silent
+  otherwise) plus two negative controls: fingerprint exactness (one flipped
+  tile -> no match) and ring geometry (12 on open terrain = 4x4 box minus 2x2
+  footprint). Ran it myself: PASS.
+- **Reproduces research's independently-derived ring split on the real panel**
+  via `--panel`: fjordgate 12/12, jackpot 5/5, atoll 12/12, saga 12/12,
+  snowflake 12/12 = the 12/12/5/12/12 b5266ee derived from a SEPARATE code
+  path (replay terrain fingerprint). Two paths, one answer — this is
+  independent confirmation of the map-axis defect, not an echo.
+- **Catches strata D34 did not name explicitly:** flags ASYMMETRIC rings
+  (9-vs-12 seat confound) and cores-far-from-border (border-throw dose
+  starvation, LOKI-14 family) — so it guards both plank families, not just
+  ring-hold. The panel-stratum warning quantifies the LOKI-16 drag (0.031
+  across the bar) it exists to prevent.
+No flags. PANEL2-CAL's results can now be gated on map admission before
+panel-2 is built, closing the D34 loop.
