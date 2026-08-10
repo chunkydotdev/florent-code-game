@@ -152,3 +152,42 @@ into a directive in the course of answering it.
 directive, given where the editing lane can see it.** Landing sites 2 and 3
 (method changelog, `tools/score.py`) do not touch the programme and were
 correctly built without waiting.
+
+## 2026-08-10 20:28Z — WHAT THE SCORE RE-RANKS, measured on v104's loss population
+
+**The losses are RACES, not routs, and that couples the two levers I had
+described as independent.**
+
+| | median | q1 | q3 |
+|---|---:|---:|---:|
+| **we kill at** | r170 | r128 | r228 |
+| **our core dies at** | r209 | r134 | r297 |
+
+109 losses in 240 games (45%); **107 of 109 are core deaths, only 2 tiebreaks.**
+We are ~39 rounds faster on the median and still lose 45% — **the distributions
+overlap almost entirely, and 39% of losses land before our own median kill
+round.**
+
+**⇒ SPEED AND LOSS-CONVERSION ARE THE SAME LEVER HERE, not two.** A game they
+win at r180 that we would have won at r200 flips on a 25-round improvement.
+**The spec's balance calculation UNDERSTATES speed**, because it counted only
+bucket upgrades on games already won and never counted races flipped. **A speed
+plank is worth more than the +0.79/game figure suggests; the extra is unpriced.**
+
+**Library re-rank:** the core-guess disambiguation candidate (default rot-180,
+walk it, disambiguate en route — worth ~24 rounds on maps where the fallback is
+wrong, paid at the FAR end) reads much better under this. **24 rounds against a
+39-round median margin is a race-flipping magnitude**, not a cosmetic one.
+
+### ⚠ A TENSION THE OLD CURRENCY COULD NOT EXPRESS — for Magnus, not for a lane
+
+`core_kill_share` scored a LOSS and a TIEBREAK WIN identically (both zero: no
+kill). **The new score separates them by 10 points (−10 vs 0).** So the currency
+now rewards *not losing* — while **`PLAY_DEFENCE: never`** forbids planks whose
+mechanism is survival. **The currency and the doctrine now point different ways
+for one class of plank, and they did not before.**
+
+Workable reading, offered not decided: **`PLAY_DEFENCE` governs MECHANISM, the
+score measures OUTCOME.** We do not build survival planks; if an offensive plank
+also converts losses to tiebreak wins, the score may credit it. Only Magnus can
+settle whether that is the intent.
