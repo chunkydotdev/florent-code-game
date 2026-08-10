@@ -28042,3 +28042,20 @@ pre-damped them as unreadable. Nothing else in the earlier L16 audit changes.
   rotation fix direction-agnostic), fire-verified panel2's wait-and-retry
   (recovered cells 4 and 1), and owned the three verdict misroutes.
 - Per-opponent jackpot signs are n=3/cell — pre-damped by research, unreadable.
+
+## 2026-08-10 15:21 CEST — SIDE LANE: 02de8a1 audited — ALL open flags on the builder now CLOSED
+- **print() correction in CLAUDE.md exceeds the ask:** builder added the
+  control that makes a negative claim meaningful (raid.py:700 prints per
+  throw, flag ON in the fired build, 314 kidnaps decoded, string occurs 0x in
+  1.8MB of platform replays) — the corrupt-the-input standard applied to an
+  absence. Plus the general rule: read arms from ENGINE-SIDE facts, never our
+  own stdout.
+- **68.8% marked unreproducible in the six-roads table** with the live figures
+  (0.586/0.636 over 165 games) and the never-share-a-sentence rider; the
+  reclassification stands on the live number.
+- **a49f87e mutation record committed** (LEG doc), fanout drop-direction claim
+  corrected in place.
+Flag ledger for a successor: NOTHING OPEN on the builder. Open elsewhere:
+verdict sentences L14+L16 (builder, in progress), PANEL2-CAL completion +
+platform-clock lock-cert half (mine, on read-out), register entries for both
+legs (builder, with verdicts).
