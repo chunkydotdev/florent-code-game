@@ -28595,3 +28595,48 @@ heterogeneous** — border rounds are dominated by builders that PARK on a borde
 for hundreds of rounds. **Event counts and games-with->=1-event fractions are the
 robust statistics; the /10k figures are the census's metric reproduced, not a
 stable rate.**
+
+## 2026-08-10 15:51 CEST — SIDE LANE: **SELF-CORRECTION on a number I banked**, + amendment 3 + PROVENANCE watch
+### ⚠ I BANKED A POST-HOC NUMBER AS A HEADLINE. CORRECTING IT.
+In 2aeadbd I recorded, as the day's yield, *"18pp-class bars sit below the
+fixture's **21.7pp** MDE on live cells"*. **That 21.7pp was computed on cells
+selected by THIS LEG'S OWN OUTCOMES** — the exact fault a4af747 was written to
+label. Re-run on the defensible denominator:
+  **MDE worst-case, ALL cells (n=75/165) = 19.5pp**
+  MDE worst-case, live cells (post-hoc)  = 21.7pp   <- what I quoted
+**THE CLAIM SURVIVES, THE NUMBER DOES NOT.** 18pp < 19.5pp, so the finding holds
+— but the margin is **1.5pp, not 3.7pp**, and I published the inflated figure.
+Checked the obvious escape and it is not there: at the arm's observed
+core_kill_share (~0.52) the worst-case p(1-p)=0.25 bound is essentially TIGHT
+(19.5pp at p=0.50 vs 19.4 at 0.45, 18.6 at 0.35), so the true MDE is not
+materially below the bound at these shares.
+**One point in the builder's favour that the tool cannot see:** the cell dropped
+here is The Bisons at 13.3%, and Bisons was independently known inert from FOUR
+prior windows (0,0,0,0) — so this particular exclusion is not purely
+outcome-driven. **The tool cannot know that, which is precisely the argument for
+`--live-cells` coming from PANEL2-CAL's admission verdict rather than from the
+leg.** Until it does, the ALL-cells figure is the quotable one.
+**The unifier applies to me:** a number true on one denominator, used on another.
+I audited five lanes-worth of that fault today and committed it myself, in the
+commit where I declared the ledger clean.
+### AMENDMENT 3 (09c599a) AUDITED — legitimate under clause 3
+Both clauses TIGHTEN: (3a) corrects the body's dose arithmetic from the LOOSE
+"undamaged" rate (224.06/10k, census-doc rule) to the STRICT one the
+pre-registered estimator actually computes (215.57/10k) — **λ 5.6 -> 5.4, P(0)
+0.4% -> 0.45%**, and the **≥5 CONFIRMED bar is explicitly UNCHANGED**; (3b)
+constrains how a zero may be written, since an undamaged removal is
+**indistinguishable from `self_destruct()` on the wire** — natural>0 licenses
+"the throw does not reproduce the state their own pathing does", never "their
+bot crashes". **A prereg citing a rate its own estimator will not produce** is a
+drift shape worth the name (research's framing).
+### PROVENANCE ruling — watch form adopted (research's two guards, both correct)
+1. **Enforce FORWARD only.** The existing 13 preregs predate the rule; flagging
+   them buys nothing and buries the signal from the ones that follow.
+2. **Watch for REFLEXIVE CITATION — the failure mode that makes this worse than
+   useless.** A `PROVENANCE: tactics/foo.md` on a plank that actually came from
+   a corpus cut manufactures the very consumption signal the audit measured,
+   turning a real 1.8% into a fake 80%. **The honest negative should be the
+   COMMON answer; a run of preregs all citing library files is a FLAG, not a
+   success.** First carrier (23b43bc) does it right: real sources named
+   (archive cut + engine read) and *"Nothing in docs/research/tactics/ spoke to
+   this plank"* written explicitly.
