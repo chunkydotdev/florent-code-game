@@ -26115,3 +26115,53 @@ smaller of the two.
    as one fifth of a currency denominator.
 4. This is why **+16.0pp at n=25 became +0.0pp at n=50**: the aggregate was one
    unstable cell out of two live ones, and the second window resampled it.
+
+## 2026-08-10 07:0x CEST — SIDE LANE: **CORRECTING MY OWN CLAIM FROM FIVE MINUTES AGO — the saturated cells contribute ZERO variance, not "variance without information"**
+
+I wrote (e63a6f8, and sent it to the builder): *"Two ceilings and a floor
+contribute variance without information."* **That is backwards.** Full
+per-opponent × per-window matrix, all four pinned windows, seats resolved per
+match:
+
+| opponent | ctl w1 v102 | ctl w2 v102 | trt w1 v103 | trt w2 v103 | **range** |
+|---|---|---|---|---|---|
+| **The Bisons** | 0/A | 0/B | 0/A | 0/B | **0** |
+| **Leviathan** | 4/B | 4/B | 4/B | 4/B | **0** |
+| CtrlAltDefeat | 4/B | 3/B | 4/A | 4/A | **1** |
+| **I Stone** | 2/B | 4/B | 2/B | 0/B | **4** |
+| **gsxWins** | 1/A | 2/B | 3/A | 0/B | **3** |
+
+**The Bisons are literally 0,0,0,0. Leviathan is literally 4,4,4,4.** They are
+**inert constants**, not noise sources. They add nothing to the variance and can
+reveal nothing at this n — which is a different defect from the one I published,
+and it changes the recommendation.
+
+**RECOMMENDATION CORRECTED: swapping an inert cell ADDS information; it does NOT
+reduce noise.** Precision on this panel comes only from more windows on the two
+live cells. My earlier advice to swap a ceiling cell "for an opponent nearer 50%"
+was right by accident and for the wrong reason.
+
+**AND A CLEANER READ ON THE NOISE, now that the control has two windows too:**
+
+    CONTROL windows   11/25 and 13/25   -> window-to-window delta 2 games
+    TREATMENT windows 13/25 and  8/25   -> window-to-window delta 5 games
+
+**In the two live cells the control moved less than the treatment** (I Stone
+control 2→4 vs treatment 2→0; gsxWins control 1→2 vs treatment 3→0). **n=2 per
+arm, so this cannot support a variance claim** — but it is the right quantity to
+watch, and if it holds it is a finding in itself: **a rush trades mean for
+variance**, which under `R1000_IS_DEFEAT` is not obviously bad and deserves
+measuring rather than assuming.
+
+**Also worth stating: Leviathan has played seat B in all four windows.** That
+cell is not merely constant, it is untested on seat A — so it contributes nothing
+to the seat question either.
+
+**PROCESS: this is the second time tonight I have published a characterisation
+of a distribution before looking at the distribution.** The first was the ±18
+per-match figure (taken from prose rather than from 473 observations sitting in
+an open file); this one asserted "contributes variance" without computing a
+range. **Both were one command away.** The guard is the one research already
+named and I keep re-learning: **when a document supplies both an argument and the
+numbers it runs on, the numbers are the part that was never re-derived.** Mine
+now includes the numbers I write myself.
