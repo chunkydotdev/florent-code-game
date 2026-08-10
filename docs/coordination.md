@@ -22705,3 +22705,55 @@ That is exactly the right test for a ROLLBACK, as distinct from the stop-loss,
 which correctly fires earlier on slope alone. **The two instruments are measuring
 different questions and the gap between them is the feature, not the slack.**
 Recording this as a defence of the rule I wrote, having briefly doubted it.
+
+## commit after `c6b54b8` (git time is the authority) — RESEARCH ARM: **SLOT FREE FIRED, THE PRE-COMMITTED CHANGE DID NOT — and the builder articulated WHY the second term is right. That distinction is the durable output of the whole episode.**
+
+### 1. STATE AT THE FLIP
+    v102 k=36 m=606 rating=1585   net5 -25 (threshold -21)   SLOT_FREE=True
+    drawdown -31 from peak 1616   net_act +17.6
+    CONDITION 1 = (net5 <= -21) AND (net_act < 0) = TRUE and FALSE = FALSE
+**The stop-loss fired. The pre-committed rollback did not. HOLD stands.** Last eight:
+**1611 · 1606 · 1610 · 1607 · 1601 · 1593 · 1589 · 1585** — five consecutive declines.
+
+### 2. **WHY THE SECOND TERM IS RIGHT, AND I CAN CONFIRM ITS PREMISE FROM THE CORPUS**
+The builder's reading, which they had not articulated when they wrote the rule:
+**`net_act < 0` means v102 has fallen below the rating v101 HANDED IT. 1567.44 is not an
+arbitrary line — it is v101's rating at handover. So the term reads: HOLD WHILE THE SHIP STILL
+BEATS ITS REPLACEMENT.**
+
+**Premise verified independently, and I verified it hours before it mattered:** `1567.44` is the
+`ourbef` of the **first v102 match** in `corpus/ladder_games.tsv` — the platform's own
+pre-match rating, i.e. exactly what v101 left us at. **The last v101 match closed at `ourbef`
+1577.52 and cost 10.08.** **So the number in the rule is the handover rating, measured, not
+assumed.**
+
+**⇒ THE DISTINCTION IS THE DURABLE OUTPUT:**
+- **A STOP-LOSS asks "is this declining fast RIGHT NOW" and should fire early, on slope alone.**
+  It did, correctly, at −25.
+- **A ROLLBACK asks "would the thing I swap to be BETTER" — and at +17.6 the answer is no.**
+- **THE GAP BETWEEN THE TWO INSTRUMENTS IS THE FEATURE, NOT SLACK.** Every rollback rule this
+  project writes should carry a term of that shape, because *"the holder is falling"* and
+  *"the replacement is better"* are different questions and only the second licenses a swap.
+
+### 3. **BOTH LANES NAMED SOMETHING AGAINST THEMSELVES AT THE MOMENT IT WAS HARDEST**
+- **The builder retired one of their own four HOLD reasons unprompted.** Reason 1 was the
+  round-trip precedent — the arm reversed at **−28** unaided. **This drawdown is −31, so the
+  precedent no longer covers this excursion.** Reasons 2-4 are untouched and the decision does
+  not turn on reason 1. **Four reasons standing as though all four were intact would have been
+  the comfortable thing to leave alone.**
+- **And they withdrew a doubt they had raised about their own rule** — that the 17.6-point gap
+  *"may well be too slack"*. **On reflection the rule is right and the doubt was
+  fitting-to-the-moment pressure arriving AS DOUBT RATHER THAN AS REVISION**, on no new
+  evidence, at the moment its subject was sliding. **That failure mode has a new face and it is
+  worth naming: you do not have to edit a rule to bend it — losing confidence in it at the
+  moment it binds does the same work.**
+
+### 4. THE INSTRUMENT WROTE THE LINE IT COULD NOT HAVE WRITTEN THIS MORNING
+`SHIP_ALERT` is on disk carrying **net5 −25, drawdown −31 and net_act +17.6 on one line**, so
+the next reader sees **the slope, the level and the decision term together without
+re-deriving anything.** **Five hours ago that file could not have been written at all** — the
+peak and drawdown columns exist only because the slope-as-level error was caught, and the
+decision term exists only because the conjunction was written down before it fired.
+
+**Nothing in flight from my lane except the standing-context re-derivation. HOLD stands, the
+rollback is one verified command if Magnus overrides, and he has the state from two channels.**
