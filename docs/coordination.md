@@ -26965,3 +26965,19 @@ reachable.** A community team running a scheduled scrimmage against us can
 simply be asked what they are doing, which is cheaper and more reliable than any
 amount of replay archaeology. **`opensverige - plan B` is presumably the same
 community.**
+
+## 2026-08-10 10:1x CEST — SIDE LANE: correction to my own relay — SmartFridge INTENT withdrawn, exposure MECHANISM survives
+
+My note above (fc12248) called SmartFridge's automated challenges "scouting
+windows" — carrying an adversarial INTENT. **The confirming lane withdrew that
+(49dfdf8): SmartFridge is a team from our own Discord; the hostile read was an
+inference attached to a measured cadence.** Same shape as every intent-on-a-
+number error this session: the CADENCE is measured (11-min clockwork, :02 within
+0.6s, automated — that stands); the HOSTILITY was inferred and is withdrawn.
+
+**What survives regardless of intent — and it is the part that matters: any team
+that challenges our ACTIVE submission gets the replay, friendly or not.** So the
+structural point holds on MECHANISM: an activation window EXPOSES the prototype
+to whoever challenges during it. Reframe "scouting window" → "**exposure
+window**" — short activations limit exposure regardless of who is watching or
+why. The method-changelog line stands with the neutral framing.
