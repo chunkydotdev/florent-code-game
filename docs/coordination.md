@@ -28516,3 +28516,82 @@ follow-up commit, which is the only way a section can carry its own hash).
 drawdown -40 with the v102 control, matching the tape row exactly, and it
 records that the wrap block was 17 points stale within two hours. My flag
 actioned in full.
+
+# ============================================================================
+# 2026-08-10 16:2x CEST — **MAGNUS RULING: A PREREG MUST STATE WHERE THE IDEA
+# CAME FROM.** New required field, all lanes, from now on.
+# ============================================================================
+Magnus: *"i agree, they need to state where the idea came from"* — ruling on the
+proposal that a pre-registration name its own provenance.
+
+**THE RULE:** every pre-registration carries a **`PROVENANCE:`** line naming the
+source of the idea it tests. One line. Permitted values are the real channels:
+**engine binary read · corpus/archive cut · a prior leg · a tactics-library file
+(cite it by filename) · a Magnus directive · a code read of our own or an
+opponent's behaviour.**
+
+**"Nothing in the library spoke to this" IS A VALID ANSWER AND MUST BE WRITTEN**
+— that is the whole point. The audit that produced this rule found **zero of 13
+preregs citing any tactics file** and could only discover it three days later by
+counting. **A field that records the miss makes the gap visible at the moment it
+happens instead of in a retrospective.**
+
+**Why this is the right fix and not bookkeeping:** the tactics library went
+write-only because **producing a file feels like finishing**, and no step in any
+workflow forced the next one. This is that step, and it is placed at the only
+moment where the answer can still change the work — before the leg fires, not
+after it reads out. It also converts the citation rate from a thing an auditor
+must reconstruct into a thing the prereg corpus reports about itself.
+
+Prereg template + obligations doc are BUILDER-owned; relayed to both other lanes.
+
+## 16:2x — CARRIER PATCH CHECK: **ALL FOUR CARRIERS STILL CARRY. LEG FIRES.**
+
+**FIDELITY GATE PASSED EXACTLY** — every digit of the prereg's four rows
+reproduced independently (events, hazards, both denominators), with the
+population rebuilt from `corpus/meta_join.tsv` matching the census's game counts
+225/240/210/160 **before any event was decoded**. 990 files, 0 errors.
+
+| carrier | last natural border event | ver | rounds since | trailing-20 exposure vs threshold | verdict |
+|---|---|---:|---:|---:|---|
+| vjg | 12:59:17Z | 4 | 0 | 1,216 vs 67 = **18x** | STILL CARRIES |
+| Troupe | 12:59:17Z | 1 | 0 | 3,421 vs 215 = **16x** | STILL CARRIES |
+| S | 12:59:56Z | 2 | 0 | 403 vs 294 = **1.4x** | STILL CARRIES |
+| Ship Happens | 13:25:28Z | 1 | 0 | 3,789 vs 278 = **13.6x** | STILL CARRIES |
+
+**Every carrier's last natural border crash is in its MOST RECENTLY ARCHIVED
+MATCH**, 20-46 min before the analysis. **The INSUFFICIENT branch never had to
+arbitrate.** Version column flat for all four across the whole window — and **not
+a dead column: 56 of 72 teams in `meta_join.tsv` change version at least once in
+that same window.** **vjg's hazard is RISING** (~1,060/10k recent vs 450
+historical).
+
+**⚠ TWO DEFINITIONS OF "UNDAMAGED" IN THIS REPO, DIFFERING BY 91 EVENTS (3.8%):**
+**LOOSE** (census doc rule, quoted by the prereg's table) = reconstructed HP at
+removal > 0 → **2,401 / 224.06 per 10k**. **STRICT** (`crash_census.py`, **the
+pre-registered estimator**) = never had an `updateHp` at all → **2,310 / 215.57**.
+**So the prereg's expected-dose arithmetic cites a rate its own estimator will
+not produce** (lambda 5.4 not 5.6; P(0) 0.45% not 0.4%). **Does NOT move the >=5
+CONFIRMED bar** — stated explicitly, since Amendment 2 clause 2 forbids loosening
+a bar and this is a clarification, not a loosening.
+
+**⚠ THE LIMIT GOVERNING HOW A ZERO MAY BE WRITTEN:** an undamaged removal is
+**indistinguishable from `self_destruct()` on the wire.** The control establishes
+the carriers' border-locked removal **PHENOMENON is live today**; it does **NOT**
+establish it is an uncaught exception. **If the leg returns 0, "natural > 0"
+licenses "the throw does not reproduce the state their own pathing does" — it
+does NOT license "their bot crashes."**
+
+**Controls run to the other verdict:** selftest 20/0 positive, 0/0 negative PASS ·
+**off-border zero is a property of the TEAMS, not the instrument** (same script:
+Cookie 13 on-border / **106 OFF**, Ouroboros 12 / **44**, reproducing the census's
+"106 of 119" and "44 of 56") · thrown-vs-walked filter **fires on 153 Ouroboros
+throws and returns 0 carrier throws in 990 games** · seat mapping verified
+behaviourally 357/357 on core-death-decided sides · **0 of 2,746 events from a
+builder not alive at round start.**
+
+**Caveat for the read-out:** hazard-per-border-round is **denominator-
+heterogeneous** — border rounds are dominated by builders that PARK on a border
+for hundreds of rounds. **Event counts and games-with->=1-event fractions are the
+robust statistics; the /10k figures are the census's metric reproduced, not a
+stable rate.**
