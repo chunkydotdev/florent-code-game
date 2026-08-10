@@ -29790,3 +29790,80 @@ prevent.** Cheap fix: resolve ids via the id→name map already present in
 accept either form.
 **Everything else here is clean, and the two corpus-surface rules landed with
 it** (never `meta_join` for a rated denominator; pin the opponent's version).
+
+# ============================================================================
+# 2026-08-10 18:4x CEST — OUROBOROS AUTOPSY: retraction CONFIRMED, and a
+# **GENERAL SITING DEFECT** that is not about Ouroboros at all
+# ============================================================================
+195 archived replays (110 ladder / 85 unrated), 08-07T11:31Z -> 08-10T01:17Z.
+**`oppver == 8` in 195/195** — frozen premise holds, and the column varies for
+other opponents so it is not dead. Seat from team names, never `winnerSide`; meta
+agrees with the replay's own winner byte **195/195**.
+
+## 1. MY RETRACTION CONFIRMED, AND UNDERSTATED
+**The ladder-only series was BLIND for a mechanical reason: v95-v100 never played
+a rated ladder match at all** — they exist only as unrated legs.
+**v64-v94: 0.180 (n=150) -> v>=95 pooled: 0.644 (n=45); v102, the single rated
+point: 0.800.** Three controls: **map-standardised 0.178 -> 0.676** (holds inside
+the worst maps: drumlin/hive 0.03->1.00, nordkap 0.00->0.75); **field control over
+the same split moved +4.5pp while Ouroboros moved +46pp**; trigger control says
+~19pp could be unrated-mix, **~23pp cannot**. I relayed "36% on v90+"; with the
+unrated legs it is **64%**. **The matchup went -9.42/match -> ~+5.2/match, a ~+14.6
+swing on 4.7% of our pairings, ALREADY BANKED.** Prior art was correctly damped at
+n=5 (`RESULT-unrated-legs-2026-08-09.md` §2, *"suggestive"*); at n=45 with a map
+standardisation and a field control it is no longer n=5.
+
+## 2. ⭐ THE PART THAT IS NOT ABOUT OUROBOROS — **HALF OUR SENTINELS CANNOT SHOOT THE ENEMY CORE ON THE ROUND WE BUILD THEM**
+Recomputed from each replay's own `map.cores` on a **nearest-footprint-tile** basis
+(the corpus `d2_own`/`d2_enemy` use the core ANCHOR and overstate):
+
+| our sentinel builds | vs Ouroboros (522) | vs Askar City (283) | **Askar's OWN (253)** |
+|---|---:|---:|---:|
+| median nearest d² to enemy core | **32 — the range boundary** | 25 | **18** |
+| in range (d² <= 32) | **55.9%** | 70.0% | **83.8%** |
+| in range AND on one of the 8 rays | **52.1%** | 65.4% | **77.9%** |
+
+**We plant our longest-range weapon at the exact edge of its own range.** The
+opponent we beat comfortably plants theirs at d²=18, 77.9% shootable.
+**Measured against three opponents; it is a defect in OUR siting and independent
+of who we play.** Converges with the library candidate nobody actioned:
+`get_attackable_tiles_from` is called **zero times about an enemy**, and
+`_try_forward_sentinel` takes the **first legal adjacent tile with no scoring.**
+*(Limit: no decoder emits sentinel FACING, so 52.1% is an upper bound.)*
+
+## 3. THE SEPARATOR, AND ITS CONTROL FLIPPED SIGN
+183 games reaching r150. **Our builder MELEE hits in r0-150: median WIN 38.5 vs
+LOSS 63.0, AUC 0.322 — and the control against Banminary is 0.542, SIGN FLIPPED.**
+Two of three candidate separators died to the control (their gunners built 0.354 vs
+0.325; our shots 0.652 vs 0.649 — not specific). **The more our builders melee
+early, the more reliably we lose.** Reproduces the 71-death corpus in
+`spitball.md` (70/71 killed by gunner fire; 8 of 11 traced deaths a lone builder
+attacking a 17-25/25 HP gunner). **2 Ti for 2 damage against a 25 HP gunner that
+shoots back for 7.**
+Second: **our sentinels alive at r100 — WIN 0.87 vs LOSS 0.23** (3.8x; control
+Askar 1.26x). Ours die 68% of the time, **median lifetime 27 rounds** vs 74-76.
+
+## 4. WHAT THEY ARE
+**GUNNER-ONLY: 0.0% of 195 games contain a sentinel, a launcher, or a barrier.**
+19.3 gunners/game, first at **r15**, **94.2 shots/100 rounds** (we fire 6.2),
+2,509 Ti/game to ammo (we convert 378) — shot ledger closes against the ammo
+ledger from two independent decoders. **Nothing they own exceeds r²=13 or ignores
+obstacles.** 47% of their gunners sit past the midline — a creeping corridor, not
+a home ring. **We lose builders 8x faster than they do and land 0.26
+builder-attacks-on-core per 100 rounds against 31.6 vs Askar — 120x lower. The
+offence fails in TRANSIT.**
+**SEAT IS NULL** (0.278 vs 0.295) — the one place it could have come out loud.
+**MAP IS ENORMOUS: atoll + eider + lighthouse + saga = 1 win in 56 ladder games
+(1.8%)**, all running the full 1,000 rounds with `batk_core` at 0.00.
+
+## 5. A PRIOR CLAIM OF OURS, REFUTED
+`spitball.md`'s *"their first gunner is deterministic per-map"* (13-replay decode):
+at **n=195 over 15 map fingerprints it is 51% modal — and OUR OWN first harvester
+is 71% modal.** We are more deterministic than they are. Two cells are exact
+(16x16 seat-a 7/7; 24x24 seat-a 9/10); the strong form is dead.
+
+**RECOMMENDATION: do NOT open an Ouroboros counter-plank — the matchup moved
++46pp on its own and Magnus was right. The sentinel-siting defect (item 2) is the
+plank worth having from today**: general, measured against three opponents, with a
+pre-stated observable, and independently flagged by the library from the other
+direction.
