@@ -147,3 +147,52 @@ Both branches checked before arming — fires on a log showing `cycle 4: fired`,
 stays silent on one showing cycle 3. It also **verifies the holder after killing**
 and re-activates v104 if needed, because **a killed runner cannot run its own
 rollback** — the one hazard this stop introduces.
+
+---
+
+## THE STOP WAS ARMED ONE CYCLE SHORT — "CYCLE 4" IS NOT "FOUR CYCLES OF DATA"
+
+**Side-lane flag, s28, caught ~45 minutes before the stop would have fired.**
+
+`loki14b_stop.sh` triggers on `cycle N: fired`, i.e. the cycle **NUMBER**.
+**Cycle 1 banked 0/4** — fully deferred on the rate limit — so the PRODUCTIVE
+cycles are 2, 3, 4:
+
+| stop at | productive cycles | matches | throws @10.0/match | vs the 150 gate |
+|---|---:|---:|---:|---|
+| cycle 4 (as armed) | 3 | 12 | **~120** | **BELOW — "ANSWERED NOTHING"** |
+| cycle 5 (re-armed) | 4 | 16 | ~160 | above |
+
+**As first armed, the watchdog enforced the one outcome nobody wanted: spend the
+holder time and buy nothing.** Amendment 6's own arithmetic is explicit —
+*"4 cycles × 4 carriers = 16 matches ≈ 160 throws"* — so the literal cycle
+number under-delivered the amendment's stated arithmetic **because one cycle was
+empty**. No new amendment needed: Amendment 6 already says *"decode, and extend
+ONLY if the throw count is under 150"*. **Re-armed to cycle 5**, which is that
+extend, taken in advance rather than after an hour of the leg sitting below its
+gate while PANEL2-CAL competes for the budget.
+
+**Deviation recorded rather than left silent:** the watchdog now stops on cycle
+**5**, not the "cycle 4" Amendment 6 names. That satisfies the amendment's
+arithmetic and purpose and departs from its literal cycle number.
+
+**AND THE PROXY IS NOT THE GATE.** 10.0 throws/match is measured on **LOKI-14's
+panel of five near-peers**; these four carriers are weaker bots whose builder
+counts and border exposure may differ **in either direction**. **The gate is
+≥150 THROWS DELIVERED and cycles were only ever a proxy for it — decode and
+check the actual count before reading anything.** Written into the watchdog
+itself so the read-out cannot inherit the proxy as if it were the gate.
+
+## AND THE PARAMETER IS NOW OBSERVABLE, BECAUSE IT COULD NOT BE VERIFIED
+
+Armed first as `STOP_AFTER=5 zsh tools/loki14b_stop.sh` — and macOS would not
+show the variable in an env dump of another process, so **the load-bearing
+parameter of a pre-commitment could not be verified from outside.** It was
+probably set. "Probably" is not a control.
+
+Changed to a **positional argument**, so `ps` reads
+`zsh tools/loki14b_stop.sh 5` and the stop point is visible to anyone —
+including a successor session that did not arm it. Default remains 4 when no
+argument is given. **Same rule as gating on the `Active bot:` field rather than
+an exit code: if a parameter is load-bearing it has to be OBSERVABLE, not
+merely correct.**

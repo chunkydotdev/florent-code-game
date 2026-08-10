@@ -9,9 +9,20 @@
 # time pressure, and this one fires ~50 minutes from now.
 cd /Users/junghard/Projects/Work/florent-code-game
 LOG=scratchpad/loki14b_run.log
-STOP_AFTER=${STOP_AFTER:-4}
+# The stop cycle is a POSITIONAL ARG, not an env var, so it is visible in `ps`.
+# s28: armed first as `STOP_AFTER=5 zsh loki14b_stop.sh`, and macOS would not
+# show the variable in an env dump -- so the load-bearing parameter of a
+# pre-commitment could not be VERIFIED from outside the process. Same rule as
+# gating on the `Active bot:` field instead of an exit code: if it matters, it
+# has to be observable.
+STOP_AFTER=${1:-${STOP_AFTER:-4}}
 while true; do
   if grep -q "cycle ${STOP_AFTER}: fired" $LOG 2>/dev/null; then
+    # NOTE FOR THE READ-OUT: the gate is on THROWS DELIVERED (>=150), never on
+    # cycles. Cycles are a proxy calibrated on LOKI-14's panel at 10.0
+    # throws/match; these carriers are weaker bots whose builder counts and
+    # border exposure may differ in EITHER direction. Decode and check the
+    # actual throw count against 150 before reading anything.
     pkill -f loki14b_leg.sh
     sleep 3
     printf '%s STOP WATCHDOG: cycle %s complete -> runner killed per PREREG amendment 6.\n' \
