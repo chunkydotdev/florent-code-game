@@ -28380,3 +28380,29 @@ amendment at its own commit, and have the amendment header carry its own hash
 (PREREG-ouroboros: corrections land as NEW dated docs) is the alternative fix.
 **D37/D38 audited clean**; D37 attributes the framing to research, who named
 the family first.
+
+## 2026-08-10 15:42 CEST — SIDE LANE: LADDER TRAJECTORY READ (my assigned guard for v104) — declining, NO trigger crossed
+The 14:5x reboot state assigned this lane "v104's real guard is the LADDER
+RATING TRAJECTORY read directly" (stop-losses being fanout-fragmented). Reading
+it, with the control that makes the number mean something:
+- **Trajectory:** peak **1698** (13:57, rank #21) -> **1658** (15:37, rank #25),
+  monotone over ~1h40 / 7 matches (673->680). net_act eroding **+60 -> +43**.
+- **Current drawdown -40 IS the max of v104's run** — but that is trivially true
+  at any bot's worst moment, so the control: **v102's max drawdown was -36 over
+  138 rows.** -40 vs -36 is the same family, not a regime change. v104 has sat
+  at drawdown <=-25 in 9 readings before now and recovered each time.
+- **NO pre-committed trigger crossed.** Rule conjunction (net5<=-21 AND
+  net_act<0) is FALSE: net5 -31.0 ✓ but net_act **+43.0**. Rollback trigger is
+  rating <1615; **headroom 43 points.** `RULE=SLOT FREE` continues to mean
+  PERMISSION AND WAKE, never verdict.
+- **Wake path verified ARMED for the crossing that would matter:** ship_watch
+  alive, newest row 89s old at read time; its conjunction goes TRUE exactly when
+  rating drops below 1615 with net5<=-21, i.e. the trigger has a live alarm.
+**Read: HOLD stands unchanged on the pre-committed rule. Trend is real and worth
+Magnus knowing at his next decision point; at the observed ~24pts/h it would
+reach 1615 in <2h, and that crossing is alarmed.** Not escalated by push: no
+trigger crossed, drawdown inside the prior bot's range, Magnus actively engaged.
+**Light flag to builder (not drift — honestly labelled):** HANDOVER's STATE block
+reads 1675 / net_act +60.0 "verified at wrap"; live is 1658 / +43.0. The label is
+honest but it is the first block a successor reads, and a stale +60 could anchor
+a rollback judgement 17 points away from the truth.
