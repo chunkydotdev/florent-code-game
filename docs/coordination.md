@@ -30044,3 +30044,85 @@ what it fired is not evidence of what played*) **applied to the corpus rather
 than to a runner.** Standing correction for my own use: **any claim about WHICH
 VERSION PLAYED is read from `fcode match info` / `teamAVersion`, never from a
 corpus version column.**
+
+# ============================================================================
+# 2026-08-10 19:3x CEST — FACING DECODER: **facing was ALWAYS on the wire, and
+# we already shipped a decoder for it.** The >85% target's basis is wrong.
+# ============================================================================
+
+## 1. ⛔ THE PREREG'S "KNOWN LIMIT" IS FALSE ON BOTH HALVES — **MY ERROR**
+`Sentinel { Direction direction = 1 }` is a **declared field** of
+`PlaceEntity.Entity` (`tools/replay_schema.md:121`); **`replay_census.parse_entity`
+has decoded it since it was written** (`:222-223`); and **`tools/loki9_facing.py`
+is a SHIPPED TOOL built entirely on sentinel/gunner facing**, docstring:
+*"Facing is on the wire… `parse_entity` already decodes it. Nothing is inferred."*
+**I asserted no decoder existed without grepping `tools/` for one, handed it to the
+builder, and it went into the prereg body at lines 80-90.** Textbook D30: **an
+audit of the evidence is not an audit of the codebase.** Needs an ADD-only
+amendment striking the limit — the correction is in the plank's favour, since the
+primary is now measurable exactly rather than as a bound.
+
+## 2. ⚠ THE NUMBER THAT MOVES IS THE ONE THE TARGET WAS DERIVED FROM
+| population | n | in range | UPPER (any ray) | **TRUE (facing)** | gap |
+|---|---:|---:|---:|---:|---:|
+| ours vs Ouroboros | 522 | 55.9% | 52.1% | **50.4%** | −1.7pp |
+| ours vs Askar City | 283 | 70.0% | 65.4% | **62.2%** | −3.2pp |
+| **Askar City's OWN** | 253 | 83.8% | 77.9% | **67.6%** | **−10.3pp** |
+
+**The ratchet clause worked and was worth 1.7pp — our baseline barely moves.**
+But prereg line 88 derives the target as *"an absolute standard taken from Askar's
+77.9% plus headroom."* **Askar's true figure is 67.6%, so >85% stands 17.4pp above
+the best real bot observed, not 7.1pp.** Target is fixed and **not proposed to
+move**; its **justification** no longer holds and belongs in an amendment rather
+than being discovered at read-out.
+
+## 3. ⭐ THE TWO DEFICITS ARE DIFFERENT DEFECTS — AND IT VINDICATES THE EDIT
+In-range sentinels only: **ours face the core 90.1% (Ouroboros) / 88.9% (Askar);
+Askar's own only 80.7%.**
+**OUR deficit is RANGE — 44.1% simply out of reach; the in-range ones ARE aimed**
+(`raid.py:422-438` already builds `facing = bp.direction_to(target)` behind a
+`can_fire_from` gate). **ASKAR's deficit is FACING** — a fifth of their in-range
+sentinels point away from our core, consistent with aiming at approaching BODIES.
+**⇒ The best-fit edit (closest, tie-broken by coverage) attacks exactly the
+variable where our loss is. The plank is better aimed than its own justification.**
+**⇒ And Askar is a WEAKER EXEMPLAR than 77.9% implied — not a model of siting for
+a core-killing programme. Deriving our target from them borrowed from a different
+objective.**
+
+## VALIDATION — two independent signals, four controls, all collapse
+| check | RAW | ROT+45° | ROT+90° | FLIP-Y |
+|---|---:|---:|---:|---:|
+| conveyor delivery = `from + delta(facing)` (204,819 moves / 60 replays) | **1.0000** | 0.0000 | 0.0000 | 0.5837 |
+| gunner shot on facing ray (12,759 `FireTurret`) | **1.0000** | 0.0000 | 0.0000 | 0.1736 |
+
+**Rotating one compass step takes both to EXACTLY ZERO — not a constant column.**
+**FLIP-Y is the compass control specifically:** the surviving 0.5837 is **exactly
+the E/W conveyors, the two directions a y-flip fixes** (N 1008 / E 1127 / S 1022 /
+W 990), while gunners using all 8 fall to 0.1736. **That residual pattern confirms
+NORTH = (0,−1) EMPIRICALLY rather than by quoting CLAUDE.md.**
+**Behavioural check on the field's meaning:** across 120 replays gunner ids were
+re-emitted with a **changed direction 2,393 times**; sentinel ids **0 times across
+322 sentinels** — the field mutates for exactly the type with `rotate()`.
+**⇒ For a sentinel, BUILT FACING IS ITS FACING FOR LIFE. "Shootable-on-build" is
+PERMANENT, not a decaying snapshot** — a load-bearing property of the primary that
+nobody had established.
+
+## GAPS
+1. **A reproduction failure in the prereg body:** line 29 gives Askar's own median
+   d² as **18** on a declared nearest-footprint basis; recomputed it is **13**
+   nearest-footprint / **17** anchor. **Every other cell reproduces to the digit**
+   — the anchor basis leaked into one cell.
+2. **`can_fire_from` semantics not fully replicated** (pure geometry: d²<=32 +
+   collinear). If a further predicate exists, **TRUE is still an upper bound.**
+3. **The 67.6% standard rests on ONE opponent** — Ouroboros builds **zero**
+   sentinels in 195 games, independently corroborating the autopsy.
+4. **On-build, not on-kill.**
+
+## AND THE RATED-LEAK COUNT IS 3, NOT 2 (builder's re-derivation)
+`09:42 v102 vs gsxWins 3/5 (+1.30)` · `12:32 v102 vs The Bisons 0/5 (−15.68)` ·
+`12:52 v105 vs Besvikomat 1/5 (−10.29)` = **4/15 games, NET −24.67.**
+**AND THE CAVEAT THAT MAKES THE CUT HONEST: the platform shows 47 non-v104 rated
+matches today and 44 are v102 playing BEFORE 09:21, when v102 WAS the incumbent.**
+**The discriminator is the ACTIVATION TIMESTAMP, not the version tag** — cutting on
+`ourver != 104` alone inflates the answer ~15x. **Budget a prototype leg at ~−8 Elo
+per leaked match, not zero.**
