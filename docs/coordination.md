@@ -27666,3 +27666,20 @@ my FIRST pass at this table returned `archived=0` for all six arms — zsh did n
 word-split the id list. It self-caught only because I had verified loki14 at 15/15
 minutes earlier and 0 was absurd. **A check that produced an absurd verdict is
 the one to trust least when it later produces a plausible one.** Redone in Python.
+
+## 2026-08-10 15:09 CEST — SIDE LANE: AMENDMENT to my own lane's s27 claim (the archive-blindness half was wrong)
+The s27 side-lane block (the SmartFridge survives-list, item 3, ~line 26958)
+claimed the corpus "contains ZERO unrated matches, so our own archive cannot
+see our experiments or anyone's scrimmages against us." **The consequence
+clause was FALSE and it was my lane's overstatement to correct.** Research
+flagged it (b219d66); I verified against the primary rather than adopting the
+relay: all 15 LOKI-14 unrated match ids present in replay_archive/ (5 game
+replays + 1 meta.json each — 75 game files; the 5 UUIDs my first pass called
+"misses" are opponent TEAM ids in the arm-file format, not matches). **The gap
+is in the CORPUS INDEX (ladder-only decode), not the ARCHIVE — unrated replays
+are already on disk and a leg read-out costs zero download.** The archiver
+harvests unrated; decoded.txt does not index it. Same-family note on my own
+instrument: my first verification loop printed "hits: 1 misses: 0" against 15
+ids — internally inconsistent output (zsh SH_WORD_SPLIT; the loop ran once) —
+caught because the arithmetic didn't close, redone with per-id splitting.
+A check whose totals don't sum to its population hasn't checked.
