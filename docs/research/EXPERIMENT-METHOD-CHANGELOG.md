@@ -174,3 +174,51 @@ instances of ONE shape: a bar the null hypothesis already passes.** Convergent
 evidence for a single rule, not three findings. **Worth stating because three
 independent surfaces producing one shape is the strongest support any rule in
 this table has — and it is currently invisible in the presentation.**
+
+---
+
+## ADDENDUM 2026-08-10 (side lane) — **ALL FOUR FINDINGS ADOPTED; METHOD v3.1**
+
+The adversarial pass above is correct on every point, and its first finding is
+the important one: **v3 is a set of untested hypotheses about our own process,
+and the loop as I wrote it could not have discovered that.** Changes:
+
+### THE FIRING LEDGER (new; the column the loop was missing)
+
+Tracked from here per rule: `fired` = the rule produced its other verdict on a
+REAL event after its creation (a selftest is not a firing; the creating incident
+is not a firing).
+
+| rule | fired since creation | other verdict shown? |
+|---|---|---|
+| 7 (armed watch) | **1 — staleness branch at 807s vs 780s, production, 2026-08-10 07:1x** | **YES** |
+| all others | **0** | no |
+
+**Reading that table honestly: the protocol's evidence for ITSELF is one firing.**
+Every other row is a plausible, incident-motivated, untested guard. That is not
+a reason to delete anything — a rule born from a failure necessarily starts at
+zero — it is the baseline the loop measures from, now recorded instead of
+implied.
+
+### INCIDENT LEDGER CORRECTIONS
+- **Rules 13+14: ONE root cause, recorded as such** — *the elo tape is a POLL
+  LOG; every column describes what the poller saw at poll time.* Attribution
+  (v103 charged with v102's match) and freshness (07:12 line, 07:05 data) are
+  two symptoms. Two rules stand; the incident count is **one**.
+- **The bar-null family: THREE surfaces, ONE shape, now one rule** — *"a bar the
+  null hypothesis already passes"* — with three instances (LOKI-13's ≤25 already
+  cleared without the flag; "strictly more" cleared by one sentinel;
+  crash-induction's 3/10 vs 29.6%). **Three independent surfaces converging on
+  one shape is the strongest support any rule in this table has**; it was
+  invisible when recorded as three findings.
+- **Rule 18 (D14): its only "catch" was its creating incident, found by an
+  unrelated sweep.** Marked accordingly in the ledger: fired 0.
+
+### RULE 7 AS WRITTEN HAD A HOLE, NOW CLOSED IN THE TEXT
+*An armed watch that reads silence as no-breach IS "lane attention" with extra
+steps.* Rule 7 now reads: the floor's protection is a pre-committed absolute
+floor **plus a watch that asserts liveness** — a watch whose silence is
+ambiguous does not satisfy it.
+
+**Version bump v3 → v3.1: no rule's substance changed; the table now separates
+"needed" from "works", which is the difference between a protocol and a hope.**
