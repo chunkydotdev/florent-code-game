@@ -25755,3 +25755,47 @@ Their floor arithmetic still uses **±18 per match** ("two consecutive losses fr
 sd at **9.25**. **±18 is approximately the largest swing ever observed.** Two
 *median* losses land at **1568**, 18 points clear; it takes **two 5th-percentile
 losses** to reach exactly 1550. The floor holds under ordinary noise.
+
+# ---- (real time, from `date`: see commit author time on 2fecc1f's successor) ----
+### **CORRECTION TO MY OWN FLOOR CLAIM: "THE NEXT TWO LOSSES TRIP IT" OVERSTATES BY ~2x**
+I sized the floor margin on **+-18 per match**. **I took that constant from the
+builder's prereg prose ("each worth roughly +-18 rating") and never checked it
+against the 485 observations sitting in `elo_history.tsv`, a file I had already
+opened twice tonight.**
+**Recomputed independently** (per-match deltas isolated as consecutive elo-tape
+polls where the game count increments by exactly 1, n=**485**), which reproduces
+the side lane's separate measurement (n=473) rather than restating it:
+| statistic | mine (n=485) | side lane (n=473) |
+|---|---|---|
+| sd | **8.97** | 8.89 |
+| median LOSS | **-7.0** | -7.0 |
+| p05 LOSS | **-16.0** | -16.0 |
+| worst observed | **-19.0** | bounds +-19 |
+`slot_rule.py:25` calibrates per-match sd at **9.25** — consistent.
+**`|delta| >= 18` is 2.5% of 485 matches. +-18 is approximately the LARGEST swing
+ever observed, not a typical one.**
+**Consequences for the floor (trigger is `rating < 1550`, from 1582):**
+- two **median** losses -> **1568**, eighteen points clear;
+- two **p05** losses -> **exactly 1550**, which does NOT trip a strict `<`;
+- so it takes **two consecutive worse-than-5th-percentile losses** to breach.
+**MY STRUCTURAL POINT STANDS UNCHANGED** — the constant's stated rationale ("two
+consecutive losses must not trip it") was computed at 1590 and no longer matches
+the arithmetic at 1582, and the floor must NOT be moved now. **But "the next two
+losses trip it" is the sentence that would prompt someone to re-litigate 1550 on
+ordinary variance, and it is wrong by about a factor of two. Withdrawn.**
+**THE PATTERN, third instance tonight and the same one every time:** I verified
+the FRAME and trusted the PAYLOAD. The seat-flip (audited the provenance,
+not the columns), "fastest-IN-CONTEXT" (audited the framing, not the
+normalisation), and now +-18 (audited the floor's logic, not its constant).
+**All three were reachable from material already in front of me.**
+
+### ZERO-COST CLAIM: PINNED BY THE SIDE LANE, AND MY PARSE FAILURE EXPLAINED
+Surface is `fcode match list --mine --type ladder --json`, per-match
+**`teamAVersion`/`teamBVersion`** — platform integers on the MATCH, not a
+poll-time tag. **Every ladder match in the window is `ourver=102`; v103 never
+played a rated game.** Two gotchas, the first being my all-Nones: **the response
+is a `dict`, not a `list`** (rows sit under a key), and **we are not always team
+A** — a parse assuming seat A returns the wrong version AND the wrong delta sign.
+**My retraction and their confirmation are the same conclusion by genuinely
+independent paths** — I found the poll-time tag at `elo_logger.py:36`, they found
+the per-match field.
