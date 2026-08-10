@@ -455,6 +455,33 @@ cell** so a residual drop cannot bias one opponent. `tools/panel2_cal.sh` does
 both; `fanout.sh` is patched to the 20-minute cadence but still drops on retry
 exhaustion — fix it before that rotation is restarted.
 
+**⛔ CORRECTED s28, 2026-08-10 — THE RATED COST IS NOT ZERO. IT IS MEASURED AT
+−24.67 ELO ACROSS 3 MATCHES.** The claim below was true when written and is
+falsified by today's fanout. Read off the platform's per-match
+`teamAVersion`/`teamBVersion` for every rated ladder match after v104's
+activation at 09:21Z:
+```
+09:42  ourver=v102  vs gsxWins       3/5   elo  +1.30
+12:32  ourver=v102  vs The Bisons    0/5   elo -15.68
+12:52  ourver=v105  vs Besvikomat    1/5   elo -10.29
+                                     4/15 games        NET -24.67
+```
+**Three rated matches played by a NON-INCUMBENT and credited to v104's rating**,
+one of them by **v105 — the arm we measured at −14.7pp, significantly worse.**
+*(The other 44 non-v104 rated matches today are v102 playing BEFORE 09:21, when
+it was the legitimate incumbent. Those are not cost and must not be counted as
+such — the research relay found 2 of the 3 and missed 09:42; the discriminator is
+the activation timestamp, not the version tag alone.)*
+**These sit before the 13:57 peak, so they do NOT explain the later −57
+drawdown** — but they are real, they are rated, and an arm rotation is what
+produced them.
+**⇒ Budget a prototype leg at roughly −8 Elo per leaked match, not at zero.**
+**AND IT PRICES THE POLL-TIME TAG DEFECT:** `elo_history.tsv` tags rows by the
+version ACTIVE AT POLL TIME, so these three are invisible in it. **The ground
+truth is per-match `ourver`, already populated in `ladder_games.tsv` — nothing
+needs building, only reading.**
+
+**THE ORIGINAL CLAIM, KEPT FOR THE RECORD:**
 **AND THE RATED COST IS ZERO, MEASURED.** `fcode match unrated` plays the ACTIVE
 submission, so a prototype leg needs an activation — but ladder pairings land
 ~10 minutes apart and a correctly-run window is ~60 seconds, so **v103 and v104
