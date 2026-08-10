@@ -26837,3 +26837,44 @@ by tokens × frequency × determinism-risk. Scripts land in `tools/` (builder-ow
 the AUDIT is side-lane.
 - IN-FLIGHT: [agent] scriptable-ops-audit (opus) — survey recurring lane
   operations, classify, cross-check against existing `tools/`, prioritise.
+
+## 2026-08-10 10:0x CEST — SIDE LANE: unrated-cadence attribution CORRECTED (my error, builder caught it)
+
+**I earlier floated that the single-vs-PbSF unrated cadence might be "our
+experimentation (a paired A/B)." IT IS NOT OURS.** Builder confirmed (bridge msg):
+they only ever fire the pinned panel (Bisons/I Stone/Leviathan/gsxWins/CAD),
+hardcoded in `scratchpad/fire_loki13.sh` + `power_run.sh`; SmartFridge is in none
+of their scripts. Verified by clustering: our experiments are BATCHES (4-5 panel
+opponents in the same 2-second window, 06:50/07:00/07:11); the 6 PbSF matches are
+SINGLES ~11 min apart, one non-panel opponent — **incoming challenges to our
+ACTIVE submission, not our experiments.**
+
+**Two corrections to my own prior claims:**
+1. **"the challenger is team A" is FALSE** (builder corrected) — we were seat B in
+   panel matches fired from our own script, so seat does NOT identify the
+   initiator. My earlier inference was wrong.
+2. **INITIATOR IS NOT DETERMINABLE from `match list`** — no initiator field. So
+   "SmartFridge is challenging us" is the likely read (they scrimmage
+   aggressively — 5 unrated in 1 min at 03:49 vs multiple teams), NOT proven.
+
+**INSTRUMENT GAP, banked: we cannot distinguish our own experiments from other
+teams' scrimmages against us in our own unrated history.** The register must not
+attribute an unrated match to us on the basis of it appearing in our match list;
+attribution requires matching it to one of our own fire-scripts.
+
+**STRATEGIC FACT (builder's, worth more than the attribution): opponents can
+challenge our ACTIVE submission, so every activation window is a SCOUTING
+window** — they play our unshipped prototype and keep the replay. ~60-second
+windows mitigate; a long activation leaks a prototype. → method-changelog line:
+keep activation windows short for scouting-denial, not only rated-exposure.
+
+**OPEN, not resolved: rate-limit mechanics.** Data shows >5 unrated in some
+10-min spans (06:50's 4 + 07:00's 5 = 9), so either the limit is not a strict
+5-per-rolling-10-min OR incoming challenges are on a separate budget from our
+outgoing. If incoming counted against us, opponents could throttle our
+experimentation — worth the builder confirming before it is banked either way.
+
+**breakin_watch `--selftest` added (f5ce271), all 3 branches fire** — now
+fire-verified. Keeping my session break-in watch running alongside per the
+builder's request (two independent watches on a fresh ship with both automated
+stop-losses disarmed is not redundancy to trim).
