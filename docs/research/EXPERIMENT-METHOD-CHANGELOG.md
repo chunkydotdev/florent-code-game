@@ -270,3 +270,34 @@ that keeps it from feeding the analysis-outpacing-decisions drift:
 - **This bounds documentation the way the boot-load audit bounds reads:** the
   register is complete and the prose is proportionate to the decision, so the
   record stays a spine, not a swamp.
+
+---
+
+## v3.4 — 2026-08-10 — KILL-SPEED SCORE: USE RULES
+
+**Programme half landed in `PROGRAMME.md` on Magnus's direct confirmation**
+(`PRIMARY_CURRENCY: kill_speed_score`). **These are the METHOD rules — when the
+number may and may not be used.** Spec:
+`docs/research/SPEC-kill-speed-score-2026-08-10.md`; tool `tools/score.py`.
+
+| use | allowed? | why |
+|---|---|---|
+| **version scorecard** | **YES** | free, spends no games, reads the existing tape |
+| **ship gate** (beat −1.77, n ≥ 200) | **YES** | n is large enough at that threshold |
+| **a leg's PRIMARY verdict** | **⛔ NO** | sd 7.74/game ⇒ **~2,100 games per arm**; only **1.1×** the power of plain win rate |
+| mixing populations | **NO** | the −1.77 baseline is LADDER; PANEL-3's −4.46 is the reachable band, which cores us 64% of the time. Not comparable |
+
+**The prohibition is the load-bearing rule and it has a specific cautionary
+tape.** On 2026-08-10 this project fired an 18pp bar at a fixture whose computed
+MDE floor was 19.5pp, and only found out because a hardcoded "~20pp at best"
+string was replaced with a computed one. **A leg adopting kill-speed as its
+primary would repeat that exactly, with a number that looks more sophisticated.**
+`leg_read.py` therefore prints `SCORECARD + SHIP GATE ONLY, NEVER A LEG PRIMARY`
+**on the output line itself** — a label that lives only in a spec is a label
+nobody re-reads at 2am.
+
+**MAINTENANCE OBLIGATION, inherited from the spec:** the bucket edges and the
+−10 penalty are chosen so speed and conversion pay comparably (+0.79 vs +0.67
+per game, within 20%). **Move any edge or the penalty and re-run that check** —
+`score.py`'s selftest asserts the ratio ≥ 0.60 and fails loudly, so the
+obligation is enforced by a test rather than by memory.
