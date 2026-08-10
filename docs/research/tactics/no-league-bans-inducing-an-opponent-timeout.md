@@ -101,3 +101,37 @@ not a bot change.
 
 Related: [[cpu-timeout-induction]] · [[manner-pylon-and-what-the-rules-permit]] ·
 [ammo and CPU](../ammo-and-cpu-2026-08-09.md)
+
+---
+
+> ## ⛔ **THIS FILE'S HEADLINE CLAIM IS NARROWED — 2026-08-10, sweep 21. ONE COMPARABLE LEAGUE DOES BAN IT, BY NAME.**
+>
+> The title and frontmatter say *"nobody bans degrading the OPPONENT BOT"*, and this
+> file's prior reading was that every clause found protects **the engine and the
+> ladder**, never the opponent's bot. **That is wrong as a statement about the field.**
+>
+> **Battlesnake's Code of Conduct lists as unacceptable behaviour:**
+> > *"Interference with another persons Battlesnake, including, but not limited to,
+> > denial-of-service-attacks or exploiting the Battlesnake engine or API with the
+> > intent to interfere with the performance of another persons Battlesnake."*
+>
+> **The second named example reaches ENGINE-AND-API-LEVEL EXPLOITATION, not merely
+> network attack, and the test it applies is INTENT.** That is squarely a prohibition
+> on degrading the opponent's bot.
+>
+> **Two caveats stated with it, because they bound how far the correction goes:**
+> Battlesnake competitors **self-host**, which changes what "interference" can mean
+> there; and the clause sits in `policies/`, **not in `rules.md`**.
+>
+> **WHAT THIS DOES AND DOES NOT CHANGE.** It narrows the premise — *"no comparable
+> league prohibits this"* — that the `cpu-timeout-induction` **HOLD was partly reasoned
+> against.** **The hold itself is unchanged and remains pending an organiser ruling.**
+> And the standing caution in this library is now doubly load-bearing: **a tactic no
+> other league bans is NOT thereby permitted here. Our organisers' rules govern, and
+> ours are SILENT.**
+>
+> Per-league stance as re-verified by sweep 21: **SSCAIT / BASIL** — no rule on causing
+> the opponent's crash; both score it as an ordinary loss for the victim. **AIIDE /
+> SC2 AI Arena** — engine and ladder only (this file's prior reading CONFIRMED).
+> **Battlesnake** — prohibits it by name (above). **Lux S1/S2, Halite II, Terminal** —
+> nothing found either way in the fetched specs. **Ours — silent.**

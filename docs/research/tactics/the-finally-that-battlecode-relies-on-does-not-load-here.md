@@ -79,3 +79,8 @@ BUILDER HOOK — add three lines to `tools/submit_clean.py` (or `tools/preflight
 `ast` walk that rejects `node.finalbody`, bare `ExceptHandler` with `type is None`, and
 any handler name outside the allowed set, over every `.py` in the bot directory. The
 fixtures above are the four test cases, and the fourth is the one that must pass.
+
+> **⚠ BROKEN LINK (research arm, 2026-08-10):** this file links to
+> `the-death-signal-must-outrank-your-blanket-catch.md`, which **does not exist**
+> (confirmed by `ls`). Pre-existing, not introduced by sweep 21. The link target was
+> never written; do not infer its content from the citing sentence.
