@@ -27715,3 +27715,155 @@ Audited c347ec7 against the checklist; verified, not adopted:
   0.38/hr; 4 durable activations/24h = 0.19/hr net of fanout round-trips);
   builder correctly holding counting logic stable while the audit session
   evaluates the instrument.
+
+# ============================================================================
+# 2026-08-10 15:3x CEST — RESEARCH ARM: **LOKI-14 AND LOKI-16 READ OUT**
+# Relayed to the builder (who holds the verdict sentence). Banked here because
+# subagent results die with the session.
+# ============================================================================
+
+## LOKI-14 (crash-induction by border kidnap) — **FALSIFIER 1 FIRES**
+
+Population: 15 matches / 75 games, our v107 in all 15, 10:04:41Z-11:54:09Z.
+Seat resolved **per match from meta.json** (A in 8, B in 7); wire-winner ==
+scoreA/scoreB in 15/15.
+
+**PLACEBO FIRST, per the prereg's ordering: interior arm 0/164 (0.0%). The
+instrument is NOT talking.**
+- **MECHANISM BAR MET 7.5x OVER.** 683 throws decoded; **314 kidnaps** (our
+  launcher, ENEMY builder); **150 border / 164 interior**, the near-balance the
+  per-launcher alternation predicts. Bar was >=20.
+- **PRIMARY: 0 of 150 border vs 0 of 164 interior.** Bar was >=45 of 150.
+  **Zero enemy BUILDER BOTS removed undamaged anywhere in the leg**, thrown or
+  not. Of 314 victims: 227 alive at game end, 87 removed, **all 87 with a prior
+  `updateHp`**, median gap 53 rounds.
+- **The prereg's own structural limit DID NOT BIND** — it predicted big maps
+  return n=0; **every map produced border throws** (saga 24x24: 71, snowflake
+  26x26: 12). Launcher at edge-margin <=4 for 278/314. **So the null cannot be
+  explained as "never dosed."**
+- **POWER, with its caveat:** at the census's 224/10k and a conservative
+  one-round-exposure floor, 150 throws => lambda~3.4, P(0)~3.5% against FIELD
+  AVERAGE. **But field-average is the wrong null and the prereg said so first**
+  — the census is bimodal (4 named carriers vs 6 teams with 722,545 border
+  builder-rounds and 0 events), and **no carrier is on our panel.**
+  **⇒ This is NOT "crash-induction by border throw is refuted." It is refuted
+  AGAINST THESE FIVE TEAMS, dose delivered 150 times.**
+- **Leviathan contributed 0 kidnaps in 15 games** — never put a builder in our
+  d²<=2 pickup ring. **Inert on a second, mechanically independent axis** beyond
+  D22's 4,4,4,4.
+- **FREE RECIPROCAL CONTROL:** enemy launchers threw OUR builders 257 times,
+  **54 onto borders, 0 undamaged removals**. Our `eco.py` border guard holds live.
+- Controls run to the other verdict: `crash_census --selftest` 21/0 positive,
+  0/0 negative, PASS; independent re-implementation reproduced the leg's 104
+  crash_candidates exactly; **mutation control on the temporal join** (drop the
+  undamaged predicate, keep the window) fires **9 removals, border 4 interior 5,
+  all with prior updateHp** — the window is live, the predicate zeroes it.
+
+### ⛔ INSTRUMENT FINDING THAT OUTLIVES THE LEG: **`print()` IS STRIPPED FROM PLATFORM REPLAYS**
+**30,664 `BotOutput` events in the leg carry only {id, execTimeUs}; field 2
+(`stdout`) is empty in 30,664 of 30,664.** The prereg's stated mechanism method
+— decode the arm from the `LOKI14 KIDNAP arm=` stream — **was not executable as
+written.** `CLAUDE.md` says print() is captured to the replay: **true locally,
+FALSE for what the platform returns.** **Any future prereg planning to read its
+own arm tag / dose counter / state flag out of a LIVE leg's replay is planning
+on an instrument that does not exist.** Substitute used: destination tile from
+the wire, declared a **superset** (counts fallback throws landing on a border).
+Sanity: **683/683 throws had exactly one candidate launcher**; **max
+d²(launcher->dest) = 26, 0 over** — the documented range, hit exactly.
+
+## LOKI-16 (ring retention) — mechanism moves; **the PANEL HAS A MAP DEFECT**
+
+Population: treatment 15 matches / 75 games (v106, 09:53:26Z-11:40:14Z);
+control 33 matches / 165 games (v104, **no v102 contamination**). Seat per match;
+winner tally == platform scoreA in 15/15 and 33/33.
+
+- **DOSE REACHED; ARRIVAL IS NOT THE MARGIN.** 71/75 (94.7%) treatment vs
+  158/165 (95.8%) control had a body **standing** on an enemy ring tile; **first
+  arrival median round 25 in BOTH arms.** D30's reclassification holds.
+- **RETENTION MOVES, IN THE TAIL.** Median episode is **1 round in both arms**
+  (most contacts are transits — a mean would bury this). Episodes **>=50 rounds:
+  11.8% treatment vs 5.6% control**, carrying 85.8% of treatment seat-rounds.
+  Seat-rounds per game round **1.102 vs 0.927** (equal-cell +0.175).
+- **BAR (>= +0.08 coverage) UNRESOLVED AND ESTIMATOR-SENSITIVE.** game-mean
+  +0.086 MEETS · round-weighted +0.076 MISSES · equal-cell +0.084 / +0.085 MEET
+  — **all four within 0.010 of the bar.** Match-clustered bootstrap (4,000
+  resamples): **+0.086, 95% CI [-0.038, +0.196]**, P(>=0.08)=0.56, P(>0)=0.91.
+  **⇒ A BAR WITHOUT A NAMED ESTIMATOR CAN BE MET OR MISSED BY CHOOSING ONE
+  AFTERWARDS.** Same family as D24. Name the estimator in the prereg.
+- **⚠ ONE PANEL MAP HAS NO 12-TILE RING.** 15/75 treatment and 33/165 control
+  games run on a map whose cores are corner-anchored: **the ring clips to 5
+  tiles**, so the geometry the plank is defined on **does not exist there.**
+  - **12-tile maps (nT=60, nC=132): coverage +0.117**; longest-hold/length
+    **0.649 vs 0.426 = +0.223**, reproducing the local battery's +0.231 almost
+    exactly.
+  - **5-tile clipped map (nT=15, nC=33): -0.039, sign REVERSED.**
+  **20% of the leg measures the plank on terrain where its mechanism is
+  undefined, dragging +0.117 to +0.086 — ACROSS THE BAR.** This is D22's disease
+  on an axis nobody watched: **the panel was audited for opponent range and never
+  for whether the MAP admits the mechanism.** Follow-up out (map identity by
+  tile-row fingerprint, seat symmetry of the clip, whether any other map is
+  PARTIALLY clipped at 9-11 tiles, and whether the reversal is treatment losing
+  or control gaining).
+- **SIMULTANEITY ~1.6, NOT 1 — BUT INHERITED, NOT INTRODUCED.** Mean bodies
+  given >=1 present: **1.56 treatment vs 1.66 control**; alone in only 37.6% of
+  rounds. The plank is hotter than its own ONE-body spec and **marginally COLDER
+  than the incumbent at the tail** (4-body rounds 0.01% vs 2.3%).
+- **PREDICTED COST CONFIRMED LIVE.** Enemy-ring tiles holding our BUILDING at
+  game end: **2.64 vs 3.65, equal-cell -1.011** (time-avg 1.75 vs 2.46). Prereg
+  called this trade beforehand (local 5.14 -> 4.19); **live is ~2x the local
+  magnitude.**
+- Controls to the other verdict: team-swap (ours-on-theirs **3,262** seat-rounds
+  vs theirs-on-ours **233**); ring displaced off the enemy core collapses
+  3,262 -> **606**; first-arrival returns None in 4/75, so the metric CAN produce
+  the negative.
+
+### ⛔ **THE 68.8% INCUMBENT RING FIGURE RESTS ON A SCRIPT THAT IS NOT IN THE TREE**
+It came from a **local 480-game battery vs our own `*_probe` bots**; that
+battery's script could not be found in `tools/` or `tools/corpus/`. The **live**
+control reads **0.586 game-mean / 0.636 round-weighted over 165 live games.**
+**These are not comparable and must not share a sentence without this caveat.**
+`CLAUDE.md`'s six-roads table cites 68.8% as the fact that reclassified ring-body
+as ALREADY-IMPLEMENTED — that reclassification still stands on the live 0.586,
+but **the specific number in the table is unreproducible as written.**
+Other gaps: the pair is **not balanced** (I Stone seat A has ZERO treatment
+games; control met a CtrlAltDefeat version the treatment never played);
+**gsxWins is where arrival itself fails in both arms**; and **purpose is not
+decodable** — position measured, never intent, so a long episode could be a body
+STUCK rather than PINNED.
+
+## FANOUT DROP LOCATION — **the code comment's claim is WRONG, and two of the four "drops" are not drops**
+
+`tools/fanout.sh` states: *"Under a window it cannot outwait that drop is
+systematic and always lands on the TAIL of the id list, starving the same cells
+every time."* **Reconstructed per-cycle cell sequences from the arm files**
+(records are appended in PANEL array order, so cycle boundaries are recoverable):
+
+| arm | cycles | cells missing, by cycle |
+|---|---|---|
+| v104 control | 8 | c3: **{1,2,3}** · c4: **{1,2}** · c8: {4,5} |
+| loki15 | 7 | c7: {3,4,5} |
+| **loki14** | 3 | **none — 3/3/3/3/3, perfectly uniform** |
+| **loki16** | 3 | **none — 3/3/3/3/3, perfectly uniform** |
+| **v102confirm** | 4 | **none — 4/4/4/4/4, perfectly uniform** |
+
+1. **THE GENUINE MID-RUN DROPS STARVE THE HEAD, NOT THE TAIL.** Both (v104
+   cycles 3 and 4) lost cells **1,2,3 and 1,2** — the FRONT of the id list.
+   Mechanism: an arm inherits an exhausted budget from whatever fired last, so
+   its FIRST cells are rejected; by the time the loop grinds 3x25s retries the
+   window has advanced and later cells land. **The prescription (rotate the
+   starting cell) survives; its stated rationale is inverted — protect the HEAD.**
+2. **TWO OF THE FOUR DEFICITS ARE NOT DROPS AT ALL.** v104 c8 {4,5} and loki15
+   c7 {3,4,5} are **final partial cycles** — the runner being stopped, not the
+   rate limit. Reading them as drops **doubles the apparent defect.**
+3. **Corroborated by the launch logs:** every logged short fire is the FIRST line
+   of a fresh fanout launch — `fanout2.log` 09:00 CONTROL **2/5**, `fanout3.log`
+   09:21 CONTROL **3/5**, `fanout4.log` 12:32 CONTROL **2/5**, `fanout5.log`
+   12:42 CONTROL **3/5**. **The drops are RESTART artefacts**: a relaunch fires
+   CONTROL immediately, colliding with the budget the previous run just spent.
+   Nothing after a completed sleep ever dropped.
+4. **CONSEQUENCE FOR THE READ-OUTS, and it is good news:** loki14, loki16 and
+   v102confirm have **exactly uniform cell composition, zero drops**. The only
+   arm with a composition skew is the **CONTROL** (Bisons 6, I Stone 6, Leviathan
+   7, gsxWins 7, CtrlAltDefeat 7 of 33) — and I Stone, one of only TWO cells D22
+   says can move, is the under-represented one. Small at this n, stated so it is
+   not discovered later as a surprise.
