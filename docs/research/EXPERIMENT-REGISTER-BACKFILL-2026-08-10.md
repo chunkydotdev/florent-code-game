@@ -22,16 +22,7 @@ side lane. Corrections land as dated addenda, never edits (append-only contract)
 
 ---
 
-EOF
-# append the agent's entries (already in register schema), then commit
-cat >> docs/research/EXPERIMENT-REGISTER-BACKFILL-2026-08-10.md <<'BACKFILL'
-> The full per-entry reconstruction (E-14.1 through E-26.3, plus the
-> KNOWN-UNRECONSTRUCTABLE table) is preserved verbatim from the backfill agent
-> below. It spans s14–s26. Highlights that change how the live register is read
-> are pulled into "STANDING CONSEQUENCES" at the end.
-
-BACKFILL
-echo "written header; appending entries via heredoc file"## COMPACT INDEX (join on bot dir, not LOKI number)
+## COMPACT INDEX (join on bot dir, not LOKI number)
 
 | ID | experiment | prereg? | outcome | key method fault | anchor |
 |---|---|---|---|---|---|
