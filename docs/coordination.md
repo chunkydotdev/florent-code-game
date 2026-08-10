@@ -24853,3 +24853,48 @@ south: a directional bias, not a constant.
 - **CORPUS DEFECT FILED (builder owns `tools/`):** `d2_own`/`d2_enemy` carry this
   bias in every number ever sourced from them. **A column whose NAME promises a
   semantic its CONTENT does not carry** — the s26 trap family exactly.
+
+### 06:5x — **BOUNDARY BREACH IN MY OWN LANE, AND THE CAUSE IS MY BRIEF**
+Sweep 20B created **four untracked directories under `bots/`** —
+`_probe_modglobal`, `_probe_oov_raw`, `_probe_oov_guard`, `_probe_oov_surface`.
+**Research NEVER edits `bots/`.** The agent disclosed it unprompted and asked the
+lead to reconcile; the fault is not the agent's.
+**CAUSE: I omitted the rule from the brief.** I wrote "Read-only. No bot edits,
+no arena, no submissions" into the crash-induction and Bisons briefs and **left
+it out of all three sweep briefs** — I briefed the evidence rules and the output
+contract and assumed the boundary. **An agent has exactly the constraints its
+brief states.** Standing fix: the read-only clause goes in the shared preamble,
+not in whichever brief I happen to be thinking about limits while writing.
+**I am NOT committing them and NOT deleting them** — they carry the probes behind
+four of tonight's engine results, and destroying them would destroy the
+reproduction. **Handed to the builder to keep, commit or remove; they are in the
+tree the builder is actively editing, so they are a collision risk right now.**
+
+### 06:5x — SWEEP 20B: FOUR ENGINE RESULTS, AND ONE OF THEM CLOSES AN OPEN DESIGN QUESTION
+- **MODULE-GLOBAL STATE IS NOT SHARED ACROSS UNITS.** `predicate-feasibility-2026-08-10.md`
+  §9(2) flagged this as gating "whether the store-and-memo design is buildable at
+  all, and it is one probe." **It was run. The answer is NO** — every unit sees
+  only itself, with the same counter proving the instrument works by accumulating
+  ACROSS ROUNDS WITHIN a unit (the control fires the other way). **Any design note
+  assuming units share a computed map is dead.**
+- **AN ENTITY ID IS NOT A DURABLE HANDLE.** All five id-taking getters RAISE once
+  the entity leaves vision — **including `get_max_hp`, and including our own core.**
+  Remembered things must be coordinates, never ids.
+- **`get_nearby_tiles(vr)` is fine at 69 tiles and RAISES at `vr+1`. Battlecode
+  CLAMPS an over-large radius; we RAISE** — named as the likeliest way a
+  well-intentioned port kills a unit.
+- **LOAD-TIME LINT: `finally`, bare `except:` and `BaseException` are HARD
+  SUBMISSION REJECTIONS**, and **`write_store` raises `OverflowError`, not
+  `GameError`**, so `except GameError` alone is too narrow.
+  **I CHECKED THE LIVE TREE: `bots/_v127loki10` is CLEAN on all four classes** —
+  zero `finally:`, zero bare `except:`, zero `BaseException`, zero
+  `except GameError`. Reported as a clean negative rather than as silence.
+
+### 06:5x — AND MY OWN BRIEF CONTAINED A WRONG PREMISE, WHICH IS WHY I ASKED
+I told 20B our destroy-the-unit penalty is "strictly harsher than Battlecode's"
+and asked it to say so if I was wrong. **I was wrong: it is IDENTICAL** in bc22,
+bc23 and bc25 (`GameWorld.updateRobot()` calls `destroyRobot()` on any escape
+from `run()`); bc21 freezes and bc24 despawns. **And Battlecode's published spec
+says "Unhandled exceptions may paralyze your robot" — true for 2021 only.
+Their human-facing doc contradicts their engine, exactly as ours does on
+tiebreaks and cost scaling.** Rule adopted: quote the engine and name the year.
