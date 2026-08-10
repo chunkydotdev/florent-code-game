@@ -389,6 +389,48 @@ differences 677/677). **K = 32 confirmed exactly.**
   much as the 1st.
 * This sits alongside `R1000_IS_DEFEAT` as a fact about what SCORES.
 
+**⭐ RUN `tools/target_value.py` BEFORE WRITING A PRE-REGISTRATION (s28). ONE
+GATE, ONE LINE IN THE PREREG:** `TARGET BAND: <opponents>, gaps <a..b>, win pays
+<x..y>, reachable YES/NO`.
+**The case for it is s28 itself, not a hypothetical.** The crash leg passed
+**every check this repo has** — pre-registered before the fact, 8 ADD-only
+amendments all blind to the data, a placebo reading exactly 0/164, the dose
+delivered 150 times, every control driven to the other verdict, lock cert
+two-clock clean, holder asserted before every challenge, 10-second prototype
+exposure — **and it was aimed at four teams 550–860 points below us.** Run
+retrospectively, the gate says:
+```
+vjg  -841  5-0 pays +0.25 · Troupe -635 +0.81 · S -566 +1.18 · Ship Happens -614 +0.90
+** NO TARGET IS REACHABLE ON THE LADDER **
+** A PERFECT RESULT PAYS UNDER 5 RATING POINTS (1.18) **
+```
+against `0033 +120 (+21.30)`, `The Bisons +41 (+17.89)`, `SmartFridge +14
+(+16.65)` in the reachable band — **14–85x more per win.**
+**THE MACHINERY INSPECTS THE EXPERIMENT AND NEVER ASKS WHETHER THE QUESTION IS
+WORTH ANSWERING.** No amount of rigour inside a leg reaches that. **It is a
+GATE, not a VETO** — a low-value target can still be the right leg (a negative
+that closes a road is worth something); the rule is that you write the number
+down BEFORE the work rather than defend it after.
+
+**TWO CORPUS-SURFACE RULES, because our two surfaces fail in OPPOSITE directions
+and both produced false findings on 2026-08-10:**
+* **`ladder_games.tsv` for any population or denominator question about our
+  RATED record. NEVER `meta_join` for a win-rate denominator** — it covers every
+  archived replay and so **silently pools rated with UNRATED, i.e. with our own
+  panel legs**, and it is separately **missing ~38% of our ladder matches**.
+  Durable form: **unrated pools PROTOTYPES, ladder pools SHIPPED BOTS**, so an
+  unrated-vs-ladder comparison is a prototype-vs-shipped comparison wearing a
+  fixture-vs-fixture costume. That alone explains the 40.5pp gap on The Bisons
+  (21.3% mixed vs **49.0% ladder-only**) with no era story required.
+* **PIN THE OPPONENT'S VERSION AT ANALYSIS TIME.** We pin `ourver`, assert the
+  holder, and verify `teamAVersion` on the platform for every leg — **and
+  nothing pins or even reads THEIRS.** The Bisons shipped v4 forty minutes
+  before our v102's first ladder game: perfectly collinear, so *"our v102 is
+  worse"* and *"their v4 is better"* fit identically. **`ladder_games.tsv.oppver`
+  is NULL for all 100 Bisons games and a null column reads as "no version
+  change" to any cut that trusts it — use `league_matches.tsv` for their
+  timeline.**
+
 **5. UNRATED GAMES ARE FREE. USE THEM AS MUCH AS YOU WANT.**
 Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
 it's a free tool meant to be used."* **This retires throughput caution as a
