@@ -84,7 +84,13 @@ for cycle in $(seq 1 $CYCLES); do
           # exactly when the oldest challenge ages out of the rolling window.
           bw=$(.venv/bin/python tools/rate_budget.py --wait 2>/dev/null || echo $BACKOFF)
           [[ "$bw" =~ ^[0-9]+$ ]] || bw=$BACKOFF
-          (( bw < 15 )) && bw=15
+          # A REJECTION IS EVIDENCE THE METER'S LOWER BOUND WAS STALE, and
+          # rejected attempts THEMSELVES count against the limit -- so a short
+          # retry spends the very budget it is waiting for. Attended, that costs
+          # a few seconds. UNATTENDED FOR SIX HOURS it is the difference between
+          # ~90 challenges and a night of self-inflicted rejections.
+          # Floor at a real slot interval (20 min / 5 slots = 240s) + margin.
+          (( bw < 300 )) && bw=300
           echo "$(date -u +%H:%M:%SZ) NIGHT: rate-limited on ${id:0:8}, meter says ${bw}s (attempt $t)"
           sleep $bw;;
         *)                  echo "$(date -u +%H:%M:%SZ) NIGHT: error on ${id:0:8}: $(echo $r | tail -1)"; sleep 25;;
