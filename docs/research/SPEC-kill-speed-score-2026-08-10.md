@@ -214,3 +214,46 @@ PLANK-SELECTION metric, not the bot's utility function. No bot reads it.**
 −1.69 → −1.76/game; 2 games in 255 affected.
 
 **Baselines shift by ~0.07 and must be recomputed before the ship gate is used.**
+
+## SCALE VERSIONING — required, and tonight is why
+
+**A score without a scale tag is unusable, exactly as a number without a
+denominator is.** We proved it within one hour: the tiebreak change moved
+**v20 from −3.64 to −10.00** and the ship gate from **−1.77 to −1.76**, so every
+figure quoted from a document written earlier tonight is now wrong and nothing
+marks which rule produced it. This is the standing fixture rule (s26, f1896ff)
+applying to the currency: **versioned, never edited in place.**
+
+### The version history — recorded so no figure is orphaned
+
+| scale | in force | change |
+|---|---|---|
+| **v1** | 2026-08-10 ~20:0x–21:0x Z | tiebreak/titanium win = **0** |
+| **v2** | 2026-08-10 ~21:0x Z → now | tiebreak/titanium win = **−10** (Magnus) |
+
+**Anything quoting a v1 number — the −1.77 gate, the v20 −3.64, the −2.39 for
+v102 — is stale unless recomputed.**
+
+### The rules, which cost nothing to follow
+
+1. **`score.py` carries `SCALE_VERSION`** and **every printed score carries the
+   tag**: `-1.76/game [scale v2]`. A tagged number can be checked; an untagged
+   one has to be dated by archaeology.
+2. **On any rebalance, RECOMPUTE every quoted baseline on the new scale.** The
+   score is a pure function of banked game rows, so history is free to rescore —
+   there is never a reason to leave a stale bar standing.
+3. **NEVER compare across scales.** A v1 figure and a v2 figure are different
+   measurements wearing one name. This is the fault the project spent
+   2026-08-10 eliminating everywhere else.
+4. **The balance property is re-verified on every rebalance** and its result
+   recorded with the version (v1 → v2: unchanged, ratio 1.20 both).
+5. **A rebalance is an AMENDMENT to this spec, appended, never an in-place
+   edit** — the same discipline the preregs follow.
+
+### Why versioning beats freezing
+
+The alternative — freeze the scale forever — is worse. **A currency we cannot
+rebalance is one we will quietly stop believing**, and tonight's change was a
+genuine improvement (it removed a contradiction with `PLAY_DEFENCE: never`).
+Versioning keeps rebalancing cheap and honest; freezing makes it either
+forbidden or silent.
