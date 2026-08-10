@@ -79,14 +79,30 @@
 ## **`slot_free` is a PERMISSION AND A WAKE, NEVER A VERDICT.**
 ## Roll back only if the rating drops **below 1615** while net5 stays <= -21.
 ##
-## **`tests/test_instruments.py` HAS ONE RED TEST AND IT IS LEFT RED ON PURPOSE.**
-## `test_does_not_fire_on_a_normal_shipping_day` fails: a 12-activation, 20-hour
-## day reads as a cadence STALL, so **`audit_trigger` would summon an audit on a
-## normal working day.** It was inside the 18 tests the boot procedure silently
-## skipped until this session, so it has been red for an unknown time while every
-## boot block logged "14/14 OK". **`audit_trigger` fired 2/5 at this session's
-## boot, one signal being ship cadence.** Fix the calibration or narrow the
-## signal — **do not delete the test.**
+## **RETRACTED s28 — THE SUITE IS GREEN (32/32) AND THAT IS CORRECT.**
+## This block used to say `test_does_not_fire_on_a_normal_shipping_day` was left
+## RED ON PURPOSE, proving `audit_trigger` "would summon an audit on a normal
+## working day." **That reading was WRONG and the test is now repaired, not
+## deleted** (commit `c347ec7`). `ship_cadence` measures its cutoff from
+## `datetime.now()`; the fixture hardcoded the literal `2026-08-09T10:00`; once
+## the clock passed 2026-08-10T10:00 every fixture row aged out of the 24h
+## window, the check counted ZERO transitions, and the test failed reporting
+## `0.0`. **THE FIXTURE ROTTED. THE CHECK WAS NEVER MISCALIBRATED** — pinned to a
+## fixed clock it returns 0.60/hr on the normal day (ok, threshold 0.5) and
+## 0.10/hr on the stalled day (trips), correct in both directions. `now` is now
+## overridable alongside `elo`/`hours`, and the repair is mutation-tested
+## (breaking `ship_cadence` turns the test red).
+## **DELTA, and it is the durable one: A RED TEST IS EVIDENCE OF A DEFECT, NOT
+## EVIDENCE OF *WHICH* DEFECT.** This one misnamed its own component; the
+## misnaming was promoted into HANDOVER as an instrument fact and from there into
+## the brief given to the audit session. Note also that the s26 repair which
+## de-live-ified `hours` **reintroduced wall-clock coupling one layer down** —
+## a repair against a failure CLASS must be verified against the class, not
+## against the instance that prompted it.
+## **CONSEQUENCE: the boot FIRE is REAL on both signals.** Raw ship cadence
+## 0.38/hr; stripping the 4 fanout round-trips (v102→v103→v102, v104→v102→v104)
+## leaves **4 durable activations in 24h = 0.19/hr**. Counting logic deliberately
+## LEFT UNCHANGED while the audit session evaluates that instrument.
 
 ## ===== QUEUE, IN PRIORITY ORDER =====
 ## 1. **PANEL-2 CALIBRATION.** Nothing else is trustworthy until it runs.
