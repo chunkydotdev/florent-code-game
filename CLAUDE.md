@@ -286,7 +286,31 @@ exception from `run()` destroys that unit permanently (`0x1ac5c` →
 `Game::destroy_entity`) and **`SystemExit`/`KeyboardInterrupt` are the ONLY
 exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
 
-**THE "ALREADY REFUTED" LIST WAS WRONGLY ANCHORED AND IS CORRECTED HERE.** Audited
+**5. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
+Magnus, 2026-08-10: *"Every statement needs backup from real games so we need to
+test everything in unrated games before we refute them. We never know if we will
+be surprised by something, because only playing on our chambers is an echo loop.
+Out there is the truth."* `FIXTURE_OF_RECORD` governs how a plank is CONFIRMED;
+**this governs how a road is CLOSED.** Arena batteries, corpus statistics,
+source reads and engine probes may **prioritise** a road. They may not **retire**
+one. **The cost objection is dead, measured:** LOKI-11's true rated cost was
+ZERO rated ladder matches, so the binding constraint is throughput
+(150 games/hour) and not rating. Testing is cheap; the scarce good is which
+plank you spend a window on.
+**CARVE-OUT, so the rule stays usable:** a **rules-level impossibility**
+established on the engine (a conveyor has out-degree 1, so cycles cannot exist;
+`self_destruct` deals 0 damage) is the game's own definition, not an echo loop,
+and no number of live games overturns it. **The echo loop is behavioural
+inference — from opponents WE wrote, or from our own history.** Where a closure
+mixes both, the inference half still needs the live test. That is exactly how
+the barrier-form spawn lock failed: an engine fact about friendly bodies welded
+to an untested inference about enemy behaviour.
+
+**THE SIX ROADS BELOW ARE A QUEUE ORDER, PENDING LIVE TESTS — NOT A STATUS.**
+Re-anchored 2026-08-10 after an audit found **not one of the six rested on a leg
+where we deployed the trick against a live team**; under the standard above,
+REOPEN / REPRICE / CLOSED are all still archive verdicts and none of them has
+retired or revived anything on its own authority. Audited
 2026-08-10 (`docs/research/AUDIT-the-six-refuted-roads-2026-08-10.md`): **not one
 of the six rested on a leg where we deployed the trick against a live team** —
 the bases are our own engine probes, archive statistics, and in one case a
