@@ -24430,3 +24430,38 @@ builder can lock and fire immediately.
 - IN-FLIGHT: [agent] trick-exploitability (opus) — corpus mining for the
   opponent habits these tricks feed on, decoder validated against a published
   cell before any unknown cell is trusted.
+
+## 2026-08-10 05:5x-06:0x CEST — **MAGNUS DIRECTIVE + FIRST LIVE-UNRATED LEGS**
+**Directive received mid-turn and written to BOTH durable surfaces**
+(`PROGRAMME.md` fields + prose, and `CLAUDE.md` verbatim — Magnus flagged that
+CLAUDE.md loads unconditionally while PROGRAMME.md only loads because the lane
+boot configs say so). r1000 = defeat even when won; never play defence;
+prototypes go at LIVE TEAMS in unrated games, not at our own probes.
+
+**OPERATIONAL FACT, learned by hitting it, not by reading it:**
+`Error: Rate limit exceeded: max 5 test/unrated matches per 10 minutes`.
+So the leg cadence ceiling is **5 matches = 25 games per 10 min = 150
+games/hour**, shared between `match unrated` AND `match test`. Plan legs in
+blocks of 5. The 6th opponent (Ouroboros) was NOT fired and must be added to
+the baseline in the next window or the prereg's stated set is short one team.
+
+**BASELINE LEG FIRED — prereg `docs/prereg/PREREG-live-unrated-baseline-2026-08-10.md`
+committed at git author time 2026-08-10T05:58:40+02:00 (hash 5a5ca55), BEFORE
+every matchId below.** Zero rated exposure: v102 is already the active
+submission, nothing was activated.
+| opponent | rating | matchId |
+|---|---|---|
+| The Bisons | 1626 | 28537dae-da31-45b5-9ce5-5282b18e583c |
+| I Stone | 1617 | dd4cca06-a58f-4ecf-ba66-7ed3bd10072d |
+| Leviathan | 1603 | ac612d5d-8a8a-4240-8450-6fd0ed9b1787 |
+| gsxWins | 1594 | afe914c8-5b9c-4d9f-9c51-d8f48782d205 |
+| CtrlAltDefeat | 1581 | 1bf14ad9-6bfe-4281-a118-9934e0d0db57 |
+| *Ouroboros* | *1578* | **RATE-LIMITED, NOT FIRED** |
+
+**QUEUE REPRIORITISED BY THE DIRECTIVE.** LOKI-10 (route guard) is demoted from
+a leg to a bundled correctness fix and is COMMITTED — its only channel is
+`titanium_collected`, which the directive just moved off-currency. The wiring
+pass was completed first (all five build paths + the mirror predicate), so the
+class is closed rather than abandoned. **Class-1-aimed routing (old queue item
+2) is demoted for the same reason.** The forward-gate revert (item 3) is a
+DEFENCE plank and is now off-programme.
