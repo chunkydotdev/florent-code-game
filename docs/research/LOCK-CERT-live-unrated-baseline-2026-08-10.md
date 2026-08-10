@@ -1,4 +1,19 @@
-# LOCK CERTIFICATION — `PREREG-live-unrated-baseline-2026-08-10.md` (5a5ca55)
+# LOCK CERTIFICATION — `docs/prereg/PREREG-live-unrated-baseline-2026-08-10.md` (5a5ca55)
+
+> **THE CERTIFICATION COVERS THE 83-LINE OBJECT AT `5a5ca55`, NOT THE FILE AT
+> HEAD.** Six minutes after the lock, `c14534e` appended to the SAME file both
+> the leg's RESULTS and a METHOD CHANGE (the pinned five-map / five-team
+> testbed). The file therefore now opens with *"Committed BEFORE any leg is
+> created"* and closes with material authored AFTER the data. **A successor who
+> cites "the prereg" will read the FILE and inherit the pinned testbed as though
+> it were pre-registered. It was not.** This is the s26 unifier arriving in the
+> provenance layer — true of the object, used as true of the file — and it is a
+> larger hazard than anything in §1, because the thin margin threatens a fault
+> nobody could exploit while this one is the mistake a *well-behaved* successor
+> makes by default. **Fix, one line: the addendum states its own commit hash and
+> that it is NOT covered by this lock.** Raised by the research arm on review;
+> independently the same finding as this lane's standing rule that LOCKED files
+> are never amended — corrections land as new dated docs.
 
 **Side lane, 2026-08-10 06:0x CEST.** This lane owns prereg hygiene; it owns no
 verdicts. Nothing below says what the leg's numbers MEAN — that is the builder's.
@@ -23,18 +38,39 @@ them.** The precedent margin was **2m33s** (the 15:46 conversion prereg,
 certified 2026-08-09); 15.4 s is one-tenth of that. An unmeasured offset of 20 s
 would invert the ordering and neither clock would report anything unusual.
 
-**Why the certification stands anyway, stated as an argument rather than a
-hope:** even under an inverted ordering, the legs completed AFTER creation, so
-the prereg cannot have been fitted to RESULTS under any skew of this magnitude.
-What a skew could permit is a prereg written *knowing the legs were already
-launched* — a weaker fault than outcome-fitting, and immaterial for a
-no-treatment baseline whose own text says "a baseline cannot fail".
+**THE MARGIN DOES NOT MATTER, AND THE REASON IS STRONGER THAN THE CLOCK.**
+(This paragraph replaces a weaker argument I first published, on the research
+arm's review — I had conceded that a skew could permit "a prereg written knowing
+the legs were launched" and fallen back on "a baseline cannot fail". The
+concession was unnecessary.) **Read the locked 83 lines for creation-dependent
+surface: there is none.** Opponent names, ratings, ranks and team IDs are all
+ladder-side and knowable before creation; the currency definitions come from
+`PROGRAMME.md`; the bar is explicitly "there is no pass/fail bar"; the two
+pre-committed comparisons cite s26 ladder figures; the falsifier is about the
+fixture claim. **Nothing in that object could only be known at or after leg
+creation — so an inverted ordering could not have bought anything.** That
+argument needs no clock and is immune to an offset of any size.
 
-**STANDING RECOMMENDATION (cheap, removes the whole class):** either leave a
-margin of **≥5 minutes**, or — better, and it costs one line — **record a
+**AND THE POPULATION SHRINK PROVES THE LOCK INDEPENDENTLY OF BOTH CLOCKS** (see
+§2 — the same fact in its second role, which I first recorded only as a defect).
+The prereg names six teams / 30 games; five / 25 fired, because the rate limit
+truncated Ouroboros — **a fact knowable AT CREATION TIME, not only at
+completion.** An author writing after creation would have known Ouroboros never
+fired and would not have written 30. **The prereg's disagreement with the
+realized population is consistent with pre-registration and inconsistent with
+post-hoc authoring: a one-way ratchet no skew can flip.**
+
+**STANDING RECOMMENDATION (cheap, retires the class prospectively):** **record a
 platform-clock reading inside the prereg itself** (any `fcode` JSON response
-carries server timestamps). A prereg that quotes the platform's own clock is
-self-certifying and needs no skew argument at all.
+carries server timestamps). A prereg quoting the platform's own clock is
+self-certifying and needs no skew argument. Failing that, a margin of ≥5 minutes.
+
+**AND A RECOMMENDATION AGAINST WORK:** do **not** measure the git/platform
+offset. It is measurable, and it buys nothing — neither for this certification
+(no creation-dependent surface) nor for future ones (self-certifying preregs
+need no offset). Calling it "unmeasured" framed it as a gap to close; per s26's
+D18, **a measurement you do not need imports its own population.** Declined
+deliberately, recorded so a successor does not helpfully do it.
 
 ## 2. THE POPULATION SHRANK BELOW ITS PRE-REGISTRATION — flag, not a fault
 
@@ -45,10 +81,27 @@ The prereg names **six teams, five games each = 30 games**, and says the set is
 |---|---|---|---|---|
 | 1 | The Bisons | A | 1–4 | 102 |
 | 2 | I Stone | A | 1–4 | 102 |
-| 3 | Leviathan | B | 1–4 | 102 |
-| 4 | gsxWins | B | 1–4 | 102 |
+| 3 | Leviathan | B | **4–1** | 102 |
+| 4 | gsxWins | B | **4–1** | 102 |
 | 5 | CtrlAltDefeat | A | **4–1** | 102 |
 | — | **Ouroboros** | — | **NOT FIRED** | — |
+
+> ### ERRATUM (06:0x, same day, by me, before anyone relied on it)
+> **The first published version of this table was WRONG in two rows and in its
+> aggregate, and the fault is the exact one this lane exists to catch.** I
+> printed the platform's `scoreA`–`scoreB` columns verbatim without flipping
+> them for OUR SEAT. We played Leviathan and gsxWins from **seat B**, so their
+> `1–4` means **we scored 4**. Both were WINS, published here as losses.
+> **Aggregate as first published: 7–18. Correct aggregate: 14–11.**
+> Verified game-by-game against `fcode match info --json` `winnerId` (25 of 25
+> games individually resolved), not by re-reading my own arithmetic.
+>
+> **This is a number true of the PLATFORM'S column used as a number about US** —
+> the s26 unifier's shape, committed by the auditing lane inside an hour of
+> flagging the same species in a peer's work. The general fix applies to me
+> exactly as written: a seat-relative quantity carries its seat the way a rate
+> carries its denominator. **Anything quoted from the first version of this
+> document is void; this table is the corrected one.**
 
 **5 of 6 teams, 25 of 30 games.** Cause is benign and already recorded by the
 builder (3a60dd1): the platform rate-limits unrated legs to **5 per 10 minutes**,
