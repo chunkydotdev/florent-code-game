@@ -19,6 +19,7 @@ and ROLLBACK detection, and reaction-latency timing — all without a single
 """
 from __future__ import annotations
 
+import csv
 import json
 import subprocess
 import sys
@@ -47,7 +48,77 @@ COLS = ["id", "createdAt", "teamAName", "teamAVersion", "teamBName", "teamBVersi
         "ratingABefore", "ratingBBefore", "eloDeltaA", "eloDeltaB"]
 
 
+def update(out_path: Path) -> int:
+    """INCREMENTAL refresh: pull only matches not already in the file.
+
+    WHY THIS EXISTS (s28, 2026-08-10, on Magnus's instruction "fix that with a
+    script that keeps it updated"). The full rebuild below walks 116 teams x up
+    to 40 pages -- thousands of calls -- so it was only ever run BY HAND. The
+    result: `league_matches.tsv` sat **20.9 hours stale** and `league_games.tsv`
+    **33.3 hours** while `keeper.py` ran healthily every 10 minutes and logged a
+    fresh `meta_join` each cycle. The replay half of the corpus was minutes old;
+    the match-metadata half had not moved since the previous evening, **and
+    nothing said so.**
+
+    It cost real work before anyone noticed: an opponent record verified at 31
+    matches when the platform had 32, a ratings table quoted at "~22h stale",
+    and a `diverge` cell reading 5 in the corpus against 13 on the platform --
+    the two sources disagreeing about the SAME opponent by 8 matches, which is
+    what finally exposed it.
+
+    Incremental mode stops paging a team as soon as it is well into known
+    territory, which turns an hours-long rebuild into a cheap top-up that the
+    keeper can run unattended.
+    """
+    known: set[str] = set()
+    if out_path.exists():
+        with out_path.open() as fh:
+            rows = csv.DictReader(fh, delimiter="\t")
+            known = {r["id"] for r in rows if r.get("id")}
+    fresh: dict[str, dict] = {}
+    for tid, name, _rating, _played in teams():
+        cursor, pages, seen_known = None, 0, 0
+        while pages < MAX_PAGES:
+            args = ["match", "list", "--team", tid, "--type", "ladder",
+                    "--json", "--limit", "100"]
+            if cursor:
+                args += ["--cursor", cursor]
+            try:
+                d = json.loads(fc(args))
+            except Exception:
+                break
+            page = d["matches"] if isinstance(d, dict) else d
+            if not page:
+                break
+            for m in page:
+                if m["id"] in known:
+                    seen_known += 1
+                else:
+                    fresh.setdefault(m["id"], m)
+            pages += 1
+            cursor = d.get("next_cursor") if isinstance(d, dict) else None
+            # STOP EARLY once we are into already-known history. The list is
+            # newest-first, so a page dominated by known ids means the rest of
+            # this team's history is already banked.
+            if seen_known >= 60 or not cursor:
+                break
+    if not fresh:
+        print("league_matches: +0 new (up to date)")
+        return 0
+    write_header = not out_path.exists()
+    with out_path.open("a") as fh:
+        if write_header:
+            fh.write("\t".join(COLS) + "\n")
+        for m in fresh.values():
+            fh.write("\t".join(str(m.get(c, "")) for c in COLS) + "\n")
+    newest = max((m.get("createdAt") or "") for m in fresh.values())
+    print(f"league_matches: +{len(fresh)} new (newest {newest[:19]})")
+    return len(fresh)
+
+
 def main():
+    if sys.argv[1] == "--update":
+        raise SystemExit(0 if update(Path(sys.argv[2])) >= 0 else 1)
     out_path = Path(sys.argv[1])
     ts = teams()
     print(f"ladder: {len(ts)} teams", file=sys.stderr)

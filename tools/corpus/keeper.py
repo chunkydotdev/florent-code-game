@@ -190,7 +190,7 @@ def cycle(n: int) -> None:
         s = l.strip()
         if "REFUSED" in s:
             log(f"  *** {s}")
-        elif s.startswith("meta_join:"):
+        elif s.startswith(("meta_join:", "league_matches:")):
             log(f"  {s}")
 
 

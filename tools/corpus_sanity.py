@@ -60,6 +60,70 @@ KNOWN_DEAD = {
                                   "league_matches.tsv teamBVersion on match id",
 }
 
+# Time-series corpus files and the column carrying their clock. Anything older
+# than STALE_H is reported LOUDLY.
+_TIMED = {
+    "league_matches.tsv": "createdAt",
+    "league_games.tsv": "createdAt",
+}
+STALE_H = 6
+
+
+def freshness(root) -> int:
+    """A CORPUS FILE MUST REPORT ITS OWN AGE.
+
+    Found s28, 2026-08-10, the hard way: `league_matches.tsv` was **21 hours
+    stale** and `league_games.tsv` **33 hours stale**, while `keeper.py` ran
+    healthily and logged a fresh `meta_join` every 10 minutes. The replay-derived
+    half of the corpus was minutes old; the match-METADATA half had not moved
+    since the previous evening, and NOTHING SAID SO.
+
+    It cost real work before it was noticed: a rating table quoted at "~22h
+    stale" (correctly flagged by its author), an opponent record verified at
+    31 matches when the platform had 32, and a `diverge` cell that read 5 in the
+    corpus and 13 on the platform -- the two sources disagreeing about the SAME
+    opponent by 8 matches, which is what finally exposed it.
+
+    This is `CLAUDE.md`'s own monitor rule -- "a monitor that reads a file must
+    report that file's FRESHNESS" -- applied one level down, to the corpus the
+    monitors read. A stale file and a fresh one are byte-identical in every way
+    an analysis can see; only the clock separates them.
+    """
+    from datetime import datetime, timedelta
+    stale = 0
+    print()
+    for name, col in _TIMED.items():
+        f = root / name
+        if not f.exists():
+            continue
+        best = ""
+        try:
+            for r in csv.DictReader(open(f, newline=""), delimiter="\t"):
+                v = r.get(col) or ""
+                if v > best:
+                    best = v
+        except OSError:
+            continue
+        if not best:
+            print(f"*** NO CLOCK ***  {name}:{col} absent -- freshness UNKNOWABLE")
+            stale += 1
+            continue
+        try:
+            when = datetime.fromisoformat(best.replace("Z", "+00:00").replace("+00:00", ""))
+        except ValueError:
+            continue
+        age = (datetime.utcnow() - when).total_seconds() / 3600
+        if age > STALE_H:
+            print(f"*** STALE ***  {name}  newest row {best[:19]}  "
+                  f"= {age:.1f}h old (threshold {STALE_H}h)")
+            print(f"            any analysis joined on this file is reading a "
+                  f"world that ended {age:.1f}h ago")
+            stale += 1
+        else:
+            print(f"fresh  {name}  newest row {best[:19]}  ({age:.1f}h)")
+    return stale
+
+
 def main(d="corpus"):
     bad = 0
     for f in sorted(Path(d).glob("*.tsv")):
@@ -106,6 +170,7 @@ def main(d="corpus"):
                 print(f"            cause: {note}")
             else:
                 bad += 1
+    bad += freshness(Path(d))
     print("\nno undocumented dead columns" if not bad else
           f"\n{bad} UNDOCUMENTED all-zero column(s): decoder bug, or a real fact? "
           f"Do not quote them until you know which.")

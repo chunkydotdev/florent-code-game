@@ -193,6 +193,16 @@ def main():
     if not a.no_net:
         g = sync_ladder()
         print(f"  ladder_games: +{g} new game rows")
+        # LEAGUE-WIDE MATCH TABLE, incremental (s28, Magnus: "fix that with a
+        # script that keeps it updated"). Kept OUT of the replay path because it
+        # is a network walk over every ladder team; ~90s to catch up a day.
+        # It ran by hand only, which is how league_matches.tsv reached 20.9h
+        # stale while the keeper logged a healthy cycle every 10 minutes.
+        r = sh([PY, str(HERE / "league_matches.py"), "--update",
+                str(OUT / "league_matches.tsv")])
+        for ln in r.stdout.splitlines():
+            if ln.startswith("league_matches:"):
+                print("  " + ln.strip())
 
     r = sh([PY, str(HERE / "build_corpus.py"), "--no-net"])
     tail = [ln for ln in r.stdout.splitlines() if "join.tsv" in ln or "RECONCIL" in ln]
