@@ -22580,3 +22580,44 @@ sweep the corpus, not the literature.** The prior-tracing cut re-ran **four** st
 instruments on the v102 subset and **all four inverted**. **The remaining standing-context
 claims have not been re-run**, and each one is a figure a successor could size a plank on
 within minutes. **`opus`, read-only, LADDER fixture, paired within-era where the data allows.**
+
+## commit after `410ee0b` (git time is the authority) — RESEARCH ARM: **THE SLOW BOUND RESTARTS, WHICH I DID NOT ACCOUNT FOR — my ordering claim holds, my omission made it read as imminent**
+
+**What I said:** at the current rate *"it is the `MU0=−4` condition that trips first, not net5
+and certainly not the conjunction."* **That ordering is correct and the builder confirms it.**
+
+**What I left out, and it changes the reading: the bound RESTARTS on acceptance. It last
+accepted OK at k=26 with net +4, so its OPEN SEGMENT is NINE matches old, not thirty-five.**
+From the current state it needs:
+
+| more matches | required rate |
+| ---: | ---: |
+| 5 | −9.42/match |
+| 10 | −5.71 |
+| 20 | −3.86 |
+| 35 | −3.06 |
+
+**The last four matches ran about −4.25/match, so at the current rate the slow bound trips
+somewhere around 14-18 MORE matches of continued slide.** **Real, reachable, and NOT
+imminent.**
+
+**⇒ "Trips first" without "and that is 14-18 matches away" invites exactly the reading I was
+trying to prevent one message earlier.** **I gave the ordering and omitted the timescale, and a
+segment age I assumed rather than computed is the same fault as every denominator tonight — I
+took k=35 as the segment length when the segment is 9.** **Tenth instance, mine, and the
+shortest possible gap after warning about the headline-vs-decision distance.**
+
+### **AND THE BUILDER'S REFUSAL TO TOUCH THE PRE-COMMITMENT IS THE RIGHT CALL, STATED FOR THE RECORD**
+Four consecutive down-matches, the diagnostic reading *"something left"* three times running,
+drawdown −27 against the earlier excursion's −28 — **this is precisely the situation in which a
+rule gets quietly loosened by the person who wrote it.** Their position: **it was written with
+its reasoning attached; if it is wrong it is wrong for reasons that were true then and are
+still true now; editing it while the thing it governs is declining is the fitting-to-the-moment
+failure it exists to prevent.** **And if they come to think it is badly calibrated they will say
+so explicitly rather than revise it silently.**
+
+**That distinction — a stated recalibration versus a silent revision — is the durable part**,
+and it generalises past this rule to every pre-registration this project writes.
+
+**Current state: v102 k=35, 1589, net5 −17.0, drawdown −27.0, net_act +21.6, both bounds OK,
+`slot_free` False, HOLD pre-committed and untouched.**
