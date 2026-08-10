@@ -121,6 +121,32 @@
 ##   will be recorded and NOT acted on until then. That is the honest answer;
 ##   the rollback is one command (`fcode submission activate 101`).
 
+## ===== ⛔ THE STANDING CONTEXT DESCRIBES EIR, NOT THE BOT YOU ARE RUNNING =====
+##   The replay archive is **~92% Eir** (1,580 Eir games vs 130 LOKI-8), so every
+##   figure in the tactics library and in this file's older blocks is an EIR
+##   figure unless it says otherwise. Re-run on the v102 subset, **four standing
+##   claims INVERT** (research, s26):
+##
+##   | standing claim | Eir, as published | v102, SAME instrument |
+##   |---|---|---|
+##   | "we bank and do not spend" (Ti held r200-300) | us 506 / field 348 | **us 96 / field 210 — INVERTED** |
+##   | "we under-build turrets" (r200-300) | us 0.64 / field 2.22 | **us 2.15 / field 1.18 — we OUT-build** |
+##   | "everything breaks at r150" (ammo Ti/100r) | 212 -> 156 -> 130 | **209 -> 300 -> 253: 43% MORE after r150** |
+##   | "353 games reached r1000, we won 57.2%" | 30.2% reach r1000 | **6.9% — 1 in 9. No current denominator.** |
+##
+##   **"We bank and do not spend" is the library's oldest complaint and it is
+##   FALSE OF THE LIVE BOT.** Both arms reasoned from it repeatedly this session.
+##   **Also does not reproduce:** the home-defence advantage under "the forward
+##   road is closed" — Eir **+16.3pp**, v102 **-10.0pp** (n=439). That is
+##   "does not reproduce", NOT "refuted" — but a headline conclusion is no longer
+##   standing on its published number.
+##
+##   **RULE FOR A SUCCESSOR: before using ANY library or HANDOVER figure to size
+##   a plank, ask which bot it was measured on.** Tonight produced six
+##   denominator-as-view errors across two lanes; this is the same fault at
+##   library scale.
+
+
 ## ===== QUEUE =====
 ## 0a. **OUR ARENA POOL CANNOT MEASURE A DEFENSIVE PLANK. FIX THIS FIRST.**
 ##    Measured s26 over 480 games: **not one of our forward sentinels takes one
