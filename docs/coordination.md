@@ -24361,3 +24361,72 @@ executed against a base **outside vision**, so this is priced in
 - IN-FLIGHT: [agent] sweep-20b (opus) — committing to stale beliefs, and decay.
 - IN-FLIGHT: [agent] sweep-20c (opus) — the illegal-query hazard as doctrine.
 Each returns one report; I write the files and update INDEX.md in one commit.
+
+# ============================================================================
+# 2026-08-10 05:5x CEST — **MAGNUS, DIRECT TO THE SIDE LANE: the Loki charter,
+# and a SHARPENING of D4 that the watch now enforces**
+# ============================================================================
+Verbatim, so no successor reads a paraphrase:
+
+> "Loki is the ultimate trickster, playing into other teams by using cheap
+> tricks, manipulation, poisoning and every exploit we can find, Loki plays
+> dirty and is the ultimate weapon at that, we want to destroy the enemy core,
+> never play defence, **a r1000 round is a defeat even if we by chance win it.**
+> You need to constantly figure out and test new tricks that we can use by
+> building prototypes and putting them against live teams in unrated games,
+> that beats our own calculations every time and some times you find things
+> that surprise you, those are of fantastic importance for our growth."
+> "you need to help our team figure out the dirty tricks"
+
+**THREE THINGS CHANGE, AND THE WATCH ENFORCES ALL THREE FROM NOW:**
+
+1. **D4 is STRICTER than `KILL_WINDOW_RND: 250` had it.** The old reading was
+   "kill inside r250 is the target". The directive's reading is "**a game that
+   reaches r1000 is a LOSS, including the ones the tiebreak awards us**". Those
+   are different instruments: our 1,055-game r1000 tape contains tiebreak WINS
+   that every prior read banked as wins. Under this directive they are defeats
+   and must not appear on the credit side of any plank. **Watch consequence:
+   D4 now flags any bank, bar, or verdict that counts a r1000 tiebreak win as
+   a win — and flags "win rate" even more strongly than D3 already did, because
+   win rate is the exact statistic that launders a tiebreak into a success.**
+   PROPOSED PROGRAMME.md field (NOT applied — that file is edited only on
+   Magnus's explicit say-so, and `tools/gate.py` parses it, so I will not risk
+   the parser unasked): `TIEBREAK_WIN_IS_DEFEAT: yes`. Magnus to confirm wording.
+
+2. **"Never play defence" retires the survivability plank class outright.**
+   Screening, heal-lines, turret survival and slot-defence work is now
+   incumbent-maintenance (frozen v115dodge's job), not Loki work. **Watch
+   consequence: a Loki plank whose mechanism clause is defensive is D4 drift on
+   its face, regardless of how it measures.** Note the interaction with the s26
+   fixture finding — the occurrence-zero saturation problem (D11's second
+   species) was ENTIRELY about defensive/survivability treatments. Under this
+   directive that whole measurement headache is off the critical path, because
+   the treatments it was blocking are off the programme.
+
+3. **Unrated games against LIVE teams are named the primary instrument, above
+   our own arithmetic** — "that beats our own calculations every time", and the
+   surprises are explicitly the valuable part. This is a direct restatement of
+   the still-OPEN unrated-bar directive, now with a stated reason. **Watch
+   consequence: an arena/local battery is no longer a substitute for a leg; it
+   is pre-flight. And a prereg whose only outcome is the predicted one throws
+   away the thing Magnus says is most valuable — so preregs from here carry a
+   SURPRISE CHANNEL: a named place to record off-prediction observations, which
+   obligation 6 forbids banking as confirmation but which must not be
+   discarded either.**
+
+**LANE QUESTION RAISED TO MAGNUS (not assumed either way):** the directive says
+"you need to ... test new tricks ... by building prototypes and putting them
+against live teams in unrated games", addressed to this lane. That is a rule-5
+widening if taken literally (this lane currently may not edit bots, touch the
+arena, or fire legs) — and only Magnus can widen a lane. Two lanes firing
+unrated legs on one platform account is also a live collision risk. Asked
+directly; until answered I am doing the part that needs no widening and is
+useful under either answer: **generating the trick backlog itself** — mechanisms,
+engine-fact probes, costed both-column pricing, and ready-to-fire preregs the
+builder can lock and fire immediately.
+
+- IN-FLIGHT: [agent] trick-prior-art (opus) — audit the 13 candidate tricks
+  against our own library: already tried / banked / refuted / never dosed.
+- IN-FLIGHT: [agent] trick-exploitability (opus) — corpus mining for the
+  opponent habits these tricks feed on, decoder validated against a published
+  cell before any unknown cell is trusted.
