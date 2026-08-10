@@ -644,3 +644,88 @@ independently by the builder before adoption. **The cut that made this necessary
 was mine (Amendment 6), and I made it without computing its effect on the
 evidence** — the same class of omission as quoting an MDE from the wrong
 denominator, caught by another lane on the same day I catalogued it.
+
+---
+
+# AMENDMENT 8 — THE INVERTED CUT IS IN. **THIS LEG'S CEILING IS NOW KNOWN BEFORE ITS RESULT.**
+
+**Committed 14:09Z, before the leg's first accepted challenge has decoded**
+(cycle 1 banked 0; cycle 2 due 14:10:34Z). ADD-only: it lowers what any result
+may license. **No bar moves.**
+
+Amendment 4 asked *"is any opponent AT OR ABOVE our rating a carrier?"* and
+called it the decisive cut. **It has been run — archive-only, fidelity gate
+passed to the digit** (population re-derived independently to 5,140 games /
+1,028 matches / 70 teams, matching the census's frozen `pop_field.tsv`; every
+row of the §2 table reproduced).
+
+## The answer: NO
+
+**23 teams sit at or above our live 1669. Border-gated carriers among them:
+ZERO.** Pooled **4 border events in 400,852 border builder-rounds = 0.100/10k**
+(Poisson 95% UB 0.228) — **≥460× below the weakest of our four carriers.**
+
+**They are IMMUNE, not merely under-observed.** The smallest border denominator
+in that stratum is 4,764 rounds — **16.8× the carrier-class detection
+threshold**; the smallest anywhere in the 70-team population is 3,007. **The
+INSUFFICIENT branch has nothing to arbitrate at the top either.**
+
+**The obvious escape hatch is closed by MEASUREMENT, not waved away:** border
+share of all builder-rounds is *higher* at the top than among carriers —
+sporks 7.53%, Pivot 9.78%, Flotte 7.79%, ph 7.13% against vjg 5.66%, Troupe
+3.31%, S 4.16%, Ship Happens 4.75%. **The top of the ladder stands on borders
+MORE than the carriers do, tens of thousands of rounds each, and does not die
+there.** Highest-rated carrier in the entire archive: **S at 1093.7, rank 63 of
+116. Every carrier is in the bottom nine.**
+
+## What this does to this leg
+
+**BINDING: no result from this leg licenses shipping border-throwing, and no
+further leg is spent on the BORDER trigger after this one, whatever it returns.**
+Amendment 4 forbade a CONFIRMED from being a ship licence on scope grounds;
+this makes the ceiling quantitative. **A CONFIRMED here would be a real finding
+about bot code that only teams below us run.**
+
+**The leg still finishes**, at the dose Amendment 6/7 fixed, because **its
+NEGATIVE is the valuable outcome**: a zero with natural crashes present closes
+the border trigger on an interventional test rather than on an archive cut, and
+closing a road properly is worth more than leaving it ambiguous.
+
+## And the confound is PARTIAL — which rescues the mechanism as a finding
+
+The six immune teams sit in the **same low band as the carriers**, not above
+them, and rating-matched pairs are stark: **S 1093.7 (105.06/10k) vs Tyvrets
+1098.6 (≤0.118) — 4.9 Elo apart, ≥891×** apart in hazard; vjg vs TKB, 34.8 Elo
+apart, **≥2,972×**. The bottom stratum splits 5 carriers / 5 immune / 1 mixed.
+Spearman(rating, hazard) over 70 teams = **−0.301** — real, weak, and driven
+entirely by carriers sitting in the bottom nine.
+
+**So vulnerability is a property of border-handling CODE, which weak bots more
+often lack but do not reliably lack.** It is not "weakness" and it is not
+"bimodal by rating". That is consistent with Amendment 5a's legality-mask
+explanation and is the strongest support it has.
+
+## ⛔ THE SCOPE LIMIT THAT PROTECTS THE ROAD THIS CLOSES
+
+**Every number above is OBSERVATIONAL: builders that WALKED to a border under
+their own navigation.** An observational zero at 40k+ rounds is strong evidence
+about a team's **border-position handling** and says **nothing about the
+DISPLACEMENT / stale-plan trigger** — a thrown builder stands on a tile its own
+cached plan never chose. **That is a second trigger inside the same approved
+class (D17) and it is untested by every number here.**
+
+**⇒ The BORDER-POSITION road is dead for climbing. The DISPLACEMENT road is
+untouched, and it is now the live question for the launcher line.**
+
+## Two corrections to the record this cut produced
+
+1. **A FIFTH border-gated carrier the census omitted: `Tim Tam`** (1075.8,
+   rank 64) — **16 events / 70,724 border rounds = 2.26/10k, 0 in 719,806
+   off-border**, gating ratio ≥54×, the second-largest carrier denominator of
+   any carrier. Below us, so it changes no decision — **but the census §2 table
+   is incomplete and that belongs in the record.**
+2. **"IMMUNE" means "not losing units to it", not "crash-free"** — a team can
+   swallow exceptions behind a blanket `try/except` and convert unit-loss into
+   invisible turn-loss. And `undamaged` remains the crash/`self_destruct`
+   conflation (Amendment 3b), which bites hardest on exactly the 2-event strong
+   teams above.
