@@ -29181,3 +29181,39 @@ using **our contemporaneous rating at each match, not today's** — otherwise a
 climbing rating silently re-sorts the same opponents between periods — plus the
 direct test: **for repeatedly-played low opponents, does our win rate drop across
 THEIR version increments?** That is what shipping a counter to us looks like.
+
+## 2026-08-10 16:17 CEST — SIDE LANE: TARGET BAND (dc2fd27) audited — arithmetic CONFIRMED, one strengthening, TWO FLAGS
+**ARITHMETIC RE-DERIVED INDEPENDENTLY, every row matches to the digit**
+(E=1/(1+10^(-diff/400)), K=32): -900 → +0.18/-31.82/177; -300 → +4.83/-27.17/5.6;
+0 → ±16.00/1.0; +400 → +29.09/-2.91/0.10.
+**STRENGTHENING THE FRAMEWORK DOES NOT CLAIM, and it makes the policy sturdier:
+the wins-per-loss RATIO is K-INDEPENDENT** — it is E/(1-E), so K cancels. **The
+entire policy conclusion holds for ANY K the platform actually uses**, and nobody
+needs to verify K=32 for it to bind. Worth stating, because "K=32" is currently
+the one unverified input in an otherwise self-contained derivation.
+### ⚠ FLAG 1 — THE ZONE LABELS INVERT THE RISK THE TABLE ITSELF REPORTS
+Cost of a LOSS is **monotone increasing as the opponent gets WEAKER**:
+**-16.0 at parity, -27.2 at -300, -31.8 at -900.** So *"make sure we do not
+LOSE"* is worth **MOST** in the DEAD ZONE and least in the CLIMB BAND — but the
+labels put **ROBUSTNESS ONLY** on the middle band and **"NOTHING. No exploit
+hunting, no legs, no panels"** on the 66 teams (57% of the field) where a single
+loss is the **most expensive on the board**. "Nothing OFFENSIVE" is the correct
+reading of the text; **"DEAD ZONE / 66 teams / NOTHING" is what a successor will
+retain.** Suggest the robustness mandate extend monotonically DOWNWARD (it is
+strictly more valuable there), or the zone be renamed so it reads dead-for-
+OFFENCE and maximal-for-RISK.
+### ⚠ FLAG 2 — "DEFENCE FLOOR / ROBUSTNESS ONLY" COLLIDES WITH `PLAY_DEFENCE: never`
+`PROGRAMME.md` carries **PLAY_DEFENCE: never**, and D4 flags any plank whose
+mechanism is survival/screening/home-turrets/heal-uptime. **This framework
+introduces a zone whose ONLY sanctioned activity is defensive-sounding.**
+Magnus's own words license the CONCERN (*"teams below us aren't getting stronger
+against us"*) — but the PROGRAMME field is machine-readable and `gate.py`
+enforces it, and **PROGRAMME.md may only be edited on an explicit Magnus
+directive.** So one of two things is needed and neither is a lane's to assume:
+1. **Define "robustness" mechanically as NON-defensive** — not losing to weak
+   teams via faster kills / crash-avoidance / correctness, none of which are
+   in-game defence; or
+2. **Magnus amends `PLAY_DEFENCE`.**
+**Until one lands, "ROBUSTNESS ONLY" is an unreconciled category** and a
+successor could read it as licence for exactly the planks D4 exists to catch.
+**Flagged to the builder; escalating to Magnus since only he can move the field.**
