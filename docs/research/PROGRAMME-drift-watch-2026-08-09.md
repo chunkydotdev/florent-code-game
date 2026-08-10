@@ -339,3 +339,27 @@ a proven negative control beats three that have never flagged anything.**
   what they show. Companion: apply the treatment's own admission rules to the
   control (a zero on a thin denominator is INSUFFICIENT, not immune — if the
   threshold changes the count, that is a finding about the document).
+
+- **A STOP RULE IS A POWER DECISION WEARING A SCHEDULING DECISION'S CLOTHES
+  (s28, Amendments 6/7, builder's formulation, adopted):** cutting LOKI-14b's
+  dose from 250 to 150 throws touched no threshold, so nothing in the prereg's
+  text flagged it — and it moved the **modal outcome from 5 (at the ≥5 bar) to
+  3 (below it)**, i.e. the likeliest success would have been written as a null,
+  and P(0) went 0.46% → 3.94%, an 8.6× weaker refutation quoted under an
+  unchanged number. **Any change to n travels with its recomputed operating
+  characteristics, or the bars silently change meaning while appearing
+  untouched.** The correct repair was an ADD (forbid the sentence: 1-4 reads
+  "MECHANISM DEMONSTRATED, bar not met at the delivered dose"), never a moved
+  bar — **a bar constrains what may be CLAIMED; it is not a licence to
+  mis-describe what was SEEN.** Author's own diagnosis, worth keeping: *"'cannot
+  flatter the result' was true, and I checked only the direction that could
+  embarrass me."* **Checking the self-serving direction is not checking.**
+
+- **TEXT AND BEHAVIOUR MUST BE RECONCILED WHILE BOTH ARE CHEAP TO CHANGE (s28,
+  same leg):** the prereg pre-committed *"stop after cycle 4"* while the live
+  process was launched with **6** cycles. Neither is wrong on its own and the
+  extra dose is scientifically harmless (stopping on dose cannot flatter), but
+  **whichever a read-out later cites, the other becomes evidence the rule was
+  written after the fact.** Watch form: when a document states an operational
+  parameter (n, cycles, duration, thresholds), read it off the RUNNING PROCESS
+  too — `ps` is a primary and the prereg is a claim about it.
