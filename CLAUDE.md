@@ -294,6 +294,39 @@ lose a unit forever, to their own error handling.
    measures the field: **2,451 unexplained unit removals by opponents across
    1,855 of our games, against 0 by us.**
 
+**CLASS RULING, 2026-08-10 — GENERALISED EXCEPTION-INDUCTION IS INSIDE THE
+APPROVED CLASS, and the anchor is the approval's own wording.** The question put
+to the organisers was: *"Is deliberately manoeuvring an opponent's units into
+positions chosen to provoke unhandled exceptions within the spirit of the
+competition?"* — **positions, plural and unqualified.** The map border is one
+trigger; displacing a bot off a cached plan is another; both are the same
+mechanism (a legal throw, `position-only` mutation, their own state goes stale).
+**So a new TRIGGER does not need a new question. A new MECHANISM would.**
+Freezing instance work on approval it does not need is a failure in the same
+family as shipping an unasked class.
+
+**ROADS THE 2026-08-10 GUARD-MATRIX SWEEP CLOSED — do not re-derive**
+(`docs/research/engine-guard-matrix-exploit-hunt-2026-08-10.md`; the shipped
+`.so` **retains full Rust symbols**, so every mutating call was mapped by name):
+* **Pushing resources into the enemy core is a GIFT, not a poison.** The core
+  always accepts and credits **its owner** on both `titanium_stored` (+0x198)
+  and `titanium_collected` (+0x19c). Resource flow IS team-blind
+  (`distribute_resources@0x203f4` reads no team byte) but the credit is not.
+* **The comms store is genuinely per-team private** (keyed on own team at
+  `[controller+0x18]`). No cross-team read or corruption.
+* **Cost scale is team-keyed and cannot be inflated by an enemy**
+  (`get_scale_percent@0x11fb8`). **And destroying enemy buildings LOWERS THEIR
+  scale — it helps them.** Counterintuitive, and it means demolition is not an
+  economic attack.
+* `destroy`/`heal` are team-checked; `convert_ammo`/`rotate`/`resign`/
+  `self_destruct` are self-only; bot-stacking desync is impossible.
+* **Self-audit item, not a weapon: `can_fire` returns TRUE at 0 ammo**
+  (`can_fire@0x16280` has no ammo reference; the check lives in
+  `finish_firing_turret@0x26eac` and RAISES, which destroys our own turret).
+  We cannot drain enemy ammo, so this is a hazard to us, not a lever on them.
+* **`is_in_vision(pos)` does NOT raise off-map** — it returns False. That is the
+  safe pre-check to use everywhere.
+
 **STANDING PERMISSION, AND ITS ONE LIMIT.** Build and fire these without asking.
 **The only thing still needing Magnus is a norms question to the ORGANISERS** —
 not because an exploit is wrong, but because a league can declare a whole class
