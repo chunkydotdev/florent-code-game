@@ -23534,3 +23534,61 @@ though the facts came out the other way** — **raising it cost one query; carry
 
 **Net: six monitors, five verified by output, and the sixth verified by CONTENT against an
 independent count. No stale table, no broken watcher, nothing for a successor to check first.**
+
+## commit after `24a0d30` (git time is the authority) — RESEARCH ARM: **THE PREDICATE IS AFFORDABLE BY THREE ORDERS OF MAGNITUDE. CPU WAS NEVER THE RISK — VISION IS, AND IT CAN PERMANENTLY DESTROY THE UNIT.**
+
+Deliverable: **`docs/research/predicate-feasibility-2026-08-10.md`**. **220 v102 our-side ladder
+files, 44 matches, `related=none`, seat+version from `.meta.json`, population frozen at sha256
+`443a2442…`, seat verified BEHAVIOURALLY (our-side `builderAttack` 0 against 12,815).**
+
+### THE FOUR NUMBERS — 49,409 dead-end evaluations / 8,427 topology-change rounds / 220 games
+- **Chain length:** depth median **0**, p90 4, p99 11, **MAX 31**; nodes median **1**, p90 5,
+  p99 14, **MAX 34**. **60% of dead ends have no upstream feeder at all — a "no" is cheaper
+  than a "yes".**
+- **Dead ends:** median **4 per topology change** (p90 13, MAX 31); **107 evaluations and 22
+  distinct sites per game.** **Flat — the worst game is 6.9%.**
+- **Cycle reachability: 0.0000% strict (0 of 49,409)**, 2.22% naive.
+- **Topology changes:** median **37 events in 32 rounds per game; 65.2% before round 100.**
+
+### **AFFORDABILITY: YES, BY THREE ORDERS OF MAGNITUDE — AND I ASKED THE WRONG QUESTION**
+**Timed on the real topologies: 15.6 µs median, 436.6 µs MAX per change round, against a
+10,000 µs budget.** Our own worst turn ever recorded is 8,355 µs. **Neither cadence term
+dominates; both are negligible.** **⇒ The scalar design should NOT be justified on CPU. I
+briefed a cost question and the cost is nil.**
+
+### **THE ACTUAL RISK IS VISION, AND IT IS SEVERE**
+`docs/game-model.md:449` (measured in-repo 2026-08-08): **tile queries RAISE outside vision,
+and an uncaught `GameError` PERMANENTLY DESTROYS THE UNIT for the rest of the match.**
+- **7.08% of walks do not fit a builder's r²=20 — 3,498 walks across 123 of 220 games.**
+- **Only 53.67% fit the CORE's r²=36 from a core tile**, so **the natural store-writer cannot
+  see half of what it must walk.**
+**⇒ A naive implementation does not cost a turn; it costs the unit, permanently.** **That is a
+categorically worse failure than the one I briefed for, and neither lane was looking at it.**
+
+**AND THE MEMO THE DESIGN IMPLIES MAY NOT EXIST:** the engine creates **one `Player` per
+unit**; **module-global sharing is undocumented, unmeasured, and unused in our bot.** **One
+probe gates the whole design** — builder's lane.
+
+### **THE DISCRIMINATOR IS NOT THE SELECTOR THE +411 WAS PRICED ON**
+On a population reconciled to the costing's own census to within 1%, **"reaches a harvester"
+passes 46.5% of ends against the costing's 8.5% profitable — 5.5× wider.** Crude bound puts
+spend near **~317 Ti/game, not 38**. **⇒ The +411 likely does NOT survive this predicate as
+written.** **The costing already contains the tighter rule: one end per game carries 91% of the
+loss, and that fits in one store slot.**
+**And the count was wrong for the cadence: "11.2 ends/game" was a 10-round structural cadence;
+at the plank's BUILD-TRIGGERED cadence the same census reads 27.1/game — 2.4×.** The extra
+ends are transient ends of lines still being laid, **which is exactly what a build-triggered
+predicate meets.**
+
+### **AND MY PRE-STATED EXPECTATION WAS WRONG IN THE MOST INFORMATIVE WAY**
+I predicted **the cycle question would be the one that bites.** **It is structurally impossible:
+conveyors have OUT-DEGREE 1, so an acceptance-checked upstream walk from a dead end PROVABLY
+cannot cycle.** **The premise is measured — v102 builds ZERO splitters — and the proof lapses
+the moment a future bot builds one.** **So the visited set is unnecessary today and remains
+cheap insurance against a build-order change**, which is a different justification from the one
+both lanes reasoned to.
+
+**Instrument: 22-assertion synthetic suite (terminates on injected 2-, 4- and splitter cycles
+and reports them; the unguarded run blows the cap) plus three full-population corruption arms
+on disjoint columns — `nofeed` drives LIVE 29.7% → exactly 0.0% with every other column
+bit-identical.**
