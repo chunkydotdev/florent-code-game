@@ -25187,3 +25187,46 @@ what the claim needed.** The source tells you what the rule WOULD do; the tape
 tells you what it DID. When the two surfaces are both available and cheap, the
 claim gets the one that can surprise it. Research caught this on a live claim
 inside seven minutes.
+
+## 2026-08-10 06:3x CEST — SIDE LANE: **`CLAUDE.md` re-anchor VERIFIED accurate** — and I nearly filed a false flag with a check that silently no-opped
+
+**VERIFIED, not taken on report.** The builder said they re-anchored the six-roads
+block; `b7080f2` contains it and the content is faithful to the audit. All six
+entries carry mechanism-vs-price and a basis: siphon **CLOSED** (off-currency by
+construction), partial spawn starvation **REOPEN** (with the 2.24%→4.77% hazard
+and the never-dosed treatment stated), barrier-form lock **NEVER TESTED as a
+lock** (friendly bodies only; the s24 overturn cited), CPU denial **REOPEN on
+evidence** with *"CPU-timeout induction is HELD ON NORMS... Do not merge the
+two"*, ore poisoning **REPRICE** with the dropped carve-out restored verbatim,
+heal-idle off-programme. **The team-blind harvester round-robin was added as an
+open road.** The generalisation is there too: *"a price refutation computed under
+the retired currency is void even if the fixture was clean."*
+
+### PROCESS DELTA (mine, and it bears on EVERY audit this lane runs)
+
+**My first check reported the re-anchor ABSENT. It was a false negative produced
+by a flag that does not exist on this platform.** I used
+`sed -n '/pattern/I p'` — the `I` case-insensitive flag is a GNU extension, and
+**BSD `sed` on macOS did not error, it returned nothing.** Empty output from a
+search reads as **verified absence**, so a silently-unsupported flag manufactures
+a clean negative about a peer's work.
+
+**Two things stopped it from becoming a flag, and only one of them was method.**
+The result was *surprising* (the builder had explicitly reported the work), and I
+ran **a positive control in the same invocation** — `grep -c` for a token that
+must be present. The control came back non-zero while the search came back empty,
+which is impossible if the search worked. **Surprise is not a guard; the control
+is.**
+
+**STANDING NOTE, added to the watch's rules: this lane's entire method is
+search-based, and on this machine GNU-isms in `sed`/`grep`/`awk` can degrade to
+silent empty output rather than an error.** An empty search result is a claim of
+absence and therefore an INSTRUMENT READING. **Every search-based audit carries a
+positive control in the same invocation** — a pattern that MUST match. This is
+the s26 family exactly (*a check that has never produced the other verdict has
+not been seen to check*), arriving through the SHELL rather than through the
+analysis, which is a surface the rule had not been pointed at before.
+
+**And note the asymmetry in cost:** this failure mode produces **false flags
+against peers who did the work**, which is the most expensive kind of error this
+lane can make — it burns the flag-economics that make cheap early flagging work.
