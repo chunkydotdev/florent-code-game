@@ -28219,3 +28219,31 @@ the doc; units guard added unasked. 857ac2c register result rows also verified
 in. **Open items: PANEL2-CAL completion (platform-clock lock-cert half = mine,
 on read-out; 8/25 banked, ETA pushed by the 20-min window) and Magnus's v104
 HOLD call. No flags open on any lane.**
+
+## 2026-08-10 15:31 CEST — SIDE LANE: LOKI-14b prereg (ce12795) AUDITED — clean, cleared to fire
+Carrier-targeted border-throw follow-up to LOKI-14's panel-scoped null. Audited
+against the obligations + today's new rules; verified, not adopted:
+- **D5 lock cert, git half:** prereg authored 15:29:57 CEST. Platform-createdAt
+  half owed at first challenge (leg does not start until PANEL2-CAL frees the
+  rate-limit budget — stated in the doc). Prospectively blind.
+- **D17 (trigger vs mechanism):** SAME mechanism (border-throw crash), NEW
+  FIXTURE (four measured carriers). Approved class; no organiser question owed.
+  The prereg holds the bot byte-identical (v107) and varies only the panel —
+  the correct discriminator for a "null about OUR panel", no bot/fixture
+  confound.
+- **D33 (named estimator):** identical estimator to LOKI-14, pre-committed
+  "no estimator may be selected after the data is seen". ✓
+- **Carrier ids verified against the corpus primary by me:** vjg/Troupe/S/Ship
+  Happens each resolve to exactly ONE id in meta_join, matching the declared
+  ids. No ambiguity, as claimed.
+- **The interpretable-zero control (obligation-10 family / zero-not-lower):**
+  natural border crashes decoded from the SAME replays disambiguate
+  "mechanism fails on thrown bots" from "carrier patched" — the exact control
+  whose absence made LOKI-14's zero ambiguous. Pre-committed because a zero is
+  the likeliest single outcome. This is the strongest part of the prereg.
+- **Three-way disposition with a written ANSWERED-NOTHING floor** (≥150 border
+  throws or the leg answered nothing); currency explicitly disclaimed as
+  out-of-bar with the MDE caveat. D35 print-stream trap pre-avoided (wire
+  attribution). Placebo-first + selftest-first ordering pre-committed.
+**No flags. Cleared to fire on the queue after PANEL2-CAL.** Register entry
+(E-27.8?) owed at read-out with both lock-cert clocks.
