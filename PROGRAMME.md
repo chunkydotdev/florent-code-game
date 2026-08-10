@@ -7,8 +7,8 @@ successor session inherit it. The fields below are parsed; the prose is not.
     LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki*
     INCUMBENT: bots/_v115dodge
     INCUMBENT_FROZEN: yes
-    PRIMARY_CURRENCY: core_kill_share
-    SECONDARY_CURRENCY: time_to_core_kill
+    PRIMARY_CURRENCY: kill_speed_score
+    SECONDARY_CURRENCY: core_kill_share
     WIN_RATE_IS_VERDICT: no
     COMPARE_AGAINST: previous_line_iteration
     KILL_WINDOW_RND: 250
@@ -91,6 +91,44 @@ That is the price of the only honest fixture we have. Pay it deliberately:
 prototype activated -> burst of unrated challenges -> incumbent re-activated,
 with the window and the rated matches inside it recorded.
 
+## KILL-SPEED SCORE — the currency, commissioned by Magnus 2026-08-10
+
+**Magnus commissioned it and confirmed the `PROGRAMME.md` edit directly** (asked
+in-session, answered *"Yes i did"*). Spec:
+`docs/research/SPEC-kill-speed-score-2026-08-10.md`; implementation
+`tools/score.py`, wired into `leg_read.py`.
+
+    core kill <100 -> 10 · <130 -> 8 · <170 -> 6 · <250 -> 4 · <400 -> 2
+    slower kill -> 1 · tiebreak/titanium win -> 0 · LOSS (any cause) -> -10
+    reported as MEAN POINTS PER GAME
+
+**It SUBSUMES the two fields it replaces.** `core_kill_share` is retained as
+SECONDARY because it is the cheaper diagnostic, but the score already contains
+it: a kill scores 1-10 and a tiebreak win scores 0, so kill share and
+time-to-kill are both inside one number. **`R1000_IS_DEFEAT` is now arithmetic
+rather than doctrine** — a tiebreak win is worth exactly zero.
+
+**⛔ IT IS NOT A LEG VERDICT STATISTIC. `KILL_SPEED_IS_LEG_VERDICT: no`.**
+Per-game sd is **7.74**, so a realistic change needs **~2,100 games per arm**,
+and it carries only **1.1x the power of plain win rate**. **A leg reporting it as
+its primary repeats the 2026-08-10 failure exactly — an 18pp bar fired at a
+fixture whose own MDE floor was 19.5pp — with a better-looking number.**
+Legitimate uses: **version scorecards** (free, spends no games) and the **ship
+gate**. `leg_read.py` prints the prohibition on the line itself, because a label
+that lives only in a spec is a label nobody re-reads.
+
+**SHIP GATE: beat -1.77 at n >= 200.** Baselines on our own tape:
+v80 **-3.38** · v94 **-3.29** · v102 **-2.39** · **v104 -1.77** (best shipped;
+v102 -> v104 = **+0.62/game**).
+
+**THE BALANCE PROPERTY IS A MAINTENANCE OBLIGATION, NOT TRIVIA.** These exact
+numbers exist so that speed and conversion are weighted comparably: killing 40
+rounds faster across the board pays **+0.79/game**, converting 10 of 109 losses
+pays **+0.67/game** — within 20%. **If any bucket edge or the loss penalty
+moves, RE-RUN that check**, or speed silently becomes decorative and the score
+degenerates into a win-rate proxy with extra steps. `score.py`'s selftest
+asserts the ratio and fails loudly if it drifts.
+
 ## Exit conditions — the only things that end this programme
 
 1. Magnus says so.
@@ -98,3 +136,47 @@ with the window and the rated matches inside it recorded.
 
 A Loki iteration that measures null does NOT end the programme. That is what an
 iteration is.
+
+## DIRECTIVE, Magnus, 2026-08-10 evening — **THE KILL-SPEED SCORE IS THE PRIMARY CURRENCY**
+
+> *"Use the new scorecard and update programme.md please"*
+
+Given directly to the SIDE LANE, which made this edit on that instruction —
+a departure from the usual lane split, recorded here so the provenance is
+locatable rather than relayed. Preceded by his own design of the scale
+(*"is it also good to give a scoring to when we successfully kill a core? Like
+10p before 50 rounds…"*) and his refinement of the loss penalty to **−10**.
+
+**Full definition, calibration and use-rules: `docs/research/SPEC-kill-speed-score-2026-08-10.md`.**
+Computed by `tools/score.py`; printed by `leg_read.py`.
+
+    core kill <100 -> 10 · <130 -> 8 · <170 -> 6 · <250 -> 4 · <400 -> 2
+    slower kill -> 1 · tiebreak/titanium win -> 0 · LOSS (any cause) -> -10
+    reported as MEAN POINTS PER GAME
+
+**Why it replaces both former currencies.** `core_kill_share` counted kills and
+ignored WHEN; `time_to_core_kill` measured when and ignored whether we won. The
+score is one number carrying both, which ends the s28 problem of arguing which
+of two currencies a result should be read on. `core_kill_share` is **demoted to
+secondary** — still the right mechanism-level read, no longer the verdict.
+
+**It is Elo-aligned by construction.** The ladder pays `32 × (game share −
+expected)` and pays NOTHING for speed, so the **−10** loss penalty is what keeps
+the metric from rewarding fast play that loses games. Measured balance: killing
+40 rounds faster pays **+0.79/game**; converting 10 of 109 losses pays
+**+0.67/game** — within 20%, so speed drives without being buyable by throwing
+games. **If any bucket edge or the penalty moves, re-run that check** (asserted
+as a test in `tools/score.py`).
+
+**⛔ IT IS NOT A LEG VERDICT STATISTIC, and this bound is part of the directive's
+implementation, not a caveat on it.** Per-game sd **7.74**; a realistic change
+needs **~2,100 games per arm**; it carries only **1.1× the power of plain win
+rate**. Legs resolve on MECHANISM bars, which work at small n because they are
+measured per-unit. **Uses: version scorecard (free, spends no games) and a ship
+gate at n ≥ 200.**
+
+**Baselines, rated ladder, computed 2026-08-10:**
+v80 −3.38 (n=315) · v94 −3.29 (n=140) · v102 −2.39 (n=390) · **v104 −1.77
+(n=240), the best large-sample version shipped; v102 → v104 = +0.62/game.**
+**Ship gate: beat −1.77 at n ≥ 200.** Rated games only — unrated pools
+prototypes while the ladder pools shipped bots.
