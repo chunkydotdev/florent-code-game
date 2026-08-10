@@ -27481,3 +27481,37 @@ Booted per .claude/commands/sidelane.md. State verified at boot, not asserted:
 Lane limits unchanged: no bot edits, no arena/unrated runs, no verdicts, no
 HANDOVER/tape writes; new files under docs/research/ + append-only notes here;
 commit only my own named files; push every commit.
+
+# ============================================================================
+## s28 BUILDER BOOT — 2026-08-10 15:0x CEST
+# ============================================================================
+
+**STATE, VERIFIED ON THE PLATFORM:** v104 live, **1664, rank #24/116, 678
+matches, last-10 4W-6L**. `corpus/SHIP_ALERT` present (14:59, `slot_free=True`)
+— **the s27 HOLD disposition stands**: conjunction is `net5 <= -21` AND
+`net_act < 0`, and net_act is **+49**. No `FANOUT_ABORT`. Four watchers +
+keeper + ship_watch alive by output.
+
+**BOOT CHECKS:** `corpus_sanity` clean (6 documented dead columns, no
+undocumented). `test_instruments` 31/32 — the one red is
+`test_does_not_fire_on_a_normal_shipping_day`, **left red on purpose** per the
+s27 wrap. `audit_trigger` **FIRES 2/5** (ship cadence 0.38/hr; cross-lane
+analysis 14.43).
+
+### IN-FLIGHT
+1. **PANEL2-CAL — FIRING.** `tools/panel2_cal.sh`, launched 15:0x, 5 cycles x
+   5 cells x 5 maps = n=25/cell, ETA ~15:55 CEST. Prereg
+   `docs/prereg/PREREG-panel2-calibration-2026-08-10.md` (committed s27, 0
+   matches fired until now). **Separate runner from `fanout.sh` deliberately:
+   this arm activates NOTHING** — v104 is both the live incumbent and the bot
+   under calibration — so zero rated exposure and zero holder risk, unlike the
+   rotation HANDOVER forbids running unattended. It still asserts the holder
+   before every challenge (s27 D28). `gate.py` does not apply: it gates local
+   ARENA batteries (plank/control/parent/opponent trees, determinism); this is
+   a live-unrated instrument leg with no treatment and no local arms.
+2. **AUDIT SESSION — spawned (opus subagent), scoped to the CROSS-LANE-ANALYSIS
+   signal only.** The ship-cadence half is the signal our own red test names as
+   miscalibrated; summoning an audit on a known-broken signal buys a null.
+3. Research arm (s28) contacted: LOKI-14 crash-mechanism decode assigned as its
+   first item (border vs interior undamaged removals — the exploit's actual
+   pre-committed bar, still unread).
