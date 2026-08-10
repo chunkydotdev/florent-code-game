@@ -26769,3 +26769,58 @@ away from being nailed.**
 
 **Separately: the preflight IDENTITY bug I flagged is FIXED (`f4372dd`)** — the
 gate now validates the prereg matches the bot, not just that the S0 fields exist.
+
+# ============================================================================
+# 2026-08-10 09:1x CEST — **SHIP: v104 "Loki v2" IS LIVE.** Magnus: *"Do it,
+# and name it Loki v2."*
+# ============================================================================
+**Verified, not assumed:** `Active bot: v104 (Loki v2)`. Renamed on the platform
+before activation. **Pre-ship baseline: 1615 @ 646 matches, rank #28,
+07:18:15Z.** Rollback target **v102 = `bots/_v124loki8`, submission `ff270a6c`**
+— `.venv/bin/fcode submission activate 102`, **VERSION INT, THEN VERIFY.**
+
+**THE EVIDENCE, and the honest p-value is NOT the one in my result doc.**
+`core_kill_share` **60/100 vs 42/100 = +18.0pp**, nominal Fisher **p=0.016**, on
+the live-unrated pinned panel. Held from +18.0pp at n=25 through n=100 while
+LOKI-11 went +16.0 -> +0.0 on doubling — **an artefact regresses, an effect
+holds**, and that contrast is the strongest evidence here.
+
+**CORRECTED FOR MULTIPLICITY AND OPTIONAL STOPPING (side lane, accepted):**
+family-wise over the session's currency reads is **~0.032**, and counting the
+two looks at LOKI-13 (n=25 then n=100) **~0.047**. **It survives 0.05 barely.
+The honest number is ~0.05, not 0.016**, because LOKI-11 was stopped when it
+died and LOKI-13 was continued while it looked good — continuing-while-promising
+inflates nominal p. **Do not quote 0.016 anywhere.**
+
+**AND THE MECHANISM BAR FAILED — this ships on currency, not on mechanism.**
+Conveyor cut 0.86x against a pre-registered <=0.70x. **v104 is better and we do
+not know why.** What it measurably does: forward sentinels 0.45x,
+`titanium_collected` 0.62x, own units lost 0.44x, ammo conversion 1.10x with
+shots flat, r1000 9% -> 3%, median kill 203 -> 152, kills inside r250
+25/42 -> 49/60.
+
+**SEAT CONFOUND, kept in the headline:** 3 of 5 cells differ on seat. The two
+matched-seat cells are the informative ones — **The Bisons moved +15pp (1/20 ->
+4/20), the floor cell that was 0-for-20 all session**, and Leviathan moved 0
+while pinned at an 80% ceiling.
+
+## THE STOP-LOSS FIRED ON THE OUTGOING HOLDER AT THE SAME MOMENT
+Re-arming `ship_watch` on the new baseline immediately wrote a `SHIP_ALERT`:
+**`v102 k=76 net5=-27.0 peak=1643 drawdown=-28.0 RULE=SLOT FREE`.** Those are
+**v102's** rows — the tape had not yet caught up to v104. **v102 had drawn down
+28 points from a 1643 peak.** So the mechanical stop-loss said "this holder's
+slot is free" in the same minute that an experimental result replaced it, by two
+completely independent paths. **The alert's recommendation had already been
+executed; it is moved to `corpus/SHIP_ALERT.resolved-2026-08-10T0919Z` rather
+than deleted, so the firing stays on the record.**
+**`ship_watch` re-armed detached on `SHIP_BASELINE=1615 SHIP_VERSION=v104`,
+proven by output not by `ps`.**
+
+## OWED, AND IT IS THE NEXT THING
+**A FRESH, PRE-REGISTERED, n=100 CONFIRMATORY LEG OF `PAVE_TRAIL_ON=False`.**
+Pooled-into-existence-after-a-null is not the same as pre-registered-at-n=100;
+one confirmatory run removes the optional-stopping and multiplicity doubt at
+**zero rated cost**. **LOKI-15 does NOT serve this** — it is a different
+treatment (per-builder quota) and tests the mechanism (does cutting economy
+help), not LOKI-13's specific effect. **Both are wanted: LOKI-15 for the why, a
+confirmatory LOKI-13 for the whether.**

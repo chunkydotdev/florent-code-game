@@ -1,0 +1,7 @@
+2026-08-10T09:19:24	v102	k=76	rating=1615	net5=-27.0	peak=1643	drawdown=-28.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+0.0
+
+THE SLOT RULE HAS FREED THE SLOT: v102 rolling last-5 net -27.0 (<= -21) after 76 matches.
+This is a STOP-LOSS and a WAKE, not an evaluation of the bot — it
+permits a swap, it does not order one.
+ROLLBACK: .venv/bin/fcode submission activate <rollback version>
+See HANDOVER.md for the current rollback target.
