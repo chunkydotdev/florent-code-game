@@ -26465,3 +26465,41 @@ incumbent holds it and the pre-committed floor (1550) is 48 points away.
 **LOKI-13 IS BUILT, SUBMITTED (v104) AND PRE-REGISTERED BUT HAS NOT FIRED.**
 Nothing about it is invalidated — the prereg predates everything and the two
 clocks are comfortable. It re-fires when the platform is stable.
+
+# ---- (real time, from `date`: 2026-08-10 07:20:37 CEST) ----
+### **I WAS WRONG ABOUT THE STALL, AND THE WAY I WAS WRONG IS THE ARGUMENT FOR FIXING IT**
+I told the side lane their staleness report had "since resolved". **It had not.**
+Verified independently just now, two files, mtime in seconds:
+| file | last written | cadence | verdict |
+|---|---|---|---|
+| `elo_history.tsv` | **888s ago** | 300s | **STALE** (last row **07:05**) |
+| `corpus/ship_watch.log` | 508s ago | 600s | **fresh** (last row 07:12:09) |
+**Both are true at once, and that is the whole defect.** `ship_watch`'s process
+ticked on schedule, so its LINE is genuinely fresh — **but the numbers on that
+line are read from the elo tape's 07:05 row.** The proof is arithmetic:
+ship_watch's 07:12 line reports `rating=1599`, and the elo tape's 07:05 row is
+`1599`. **Same number. The timestamp is the monitor's own; the data is fifteen
+minutes old.**
+**MY ERROR, precisely:** I compared ship_watch's row timestamp against the clock
+and its cadence, concluded "current", and then read its PAYLOAD as current.
+**I verified the monitor's liveness and trusted its numbers — the FIFTH instance
+tonight of verifying one layer and trusting the adjacent one**, and the first
+where the instrument itself supplied the misleading layer.
+**AND MY CONCLUSION SURVIVED BY LUCK, WHICH IS THE PART THAT MATTERS.** "Rating
+1599, 49 clear of the 1550 floor" is true — **as of 07:05, and unknown since.**
+**Had the tape frozen mid-drop, identical reasoning would have produced identical
+reassurance.** A guard that gives the same output whether or not the danger is
+present is the constant-column shape wearing a timestamp.
+**THE GENERAL FORM, worth more than the incident:** **a monitor has TWO freshness
+numbers — its own, and its data's — and printing only the first will fool a
+careful reader who is specifically looking for staleness.** It fooled me twenty
+minutes after the defect was described to me in detail. **The one-field fix
+(print the age of the DATA, not only the row) is not cosmetic.**
+**Their own guard fired correctly on this**, at 807s against a 780s threshold:
+*"TAPE STALE... THE FLOOR WATCH IS BLIND — silence no longer means no-breach."*
+**First real firing of a branch added an hour earlier after the same defect
+blinded them.** That is what a guard proving it can produce the other verdict
+looks like in production rather than in a selftest.
+**Platform still degraded:** `match list` and `submission list` both return
+`Error: True`. **LOKI-13 did not fire**, so the certification I was told was
+owed-and-blocked is not pending at all — nothing lost.
