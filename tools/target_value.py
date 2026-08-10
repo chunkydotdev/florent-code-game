@@ -57,6 +57,96 @@ BAND_LO, BAND_HI = -80, 125      # measured reachable window, relative to us
 _OVERRIDE: dict = {}
 
 
+def pairing_gaps(min_our: float = 1600.0) -> list[float]:
+    """Every observed ladder pairing gap (opponent - us), one per MATCH.
+
+    WHY A DISTRIBUTION AND NOT JUST THE EDGES (s28 flag, research arm). The band
+    `us-80..us+125` is the observed MIN/MAX over post-1600 matches -- and
+    **sample extremes grow with n by construction.** The same measurement on
+    5,000 matches would report a wider band, so a team just outside flips to
+    YES from more data alone, with no change in the world. A bare YES/NO also
+    renders two very different states identically: "we have literally never been
+    paired this far" and "this is the edge of the observed range".
+
+    The live victim was `Ouroboros`: reads NO at gap -102 today, **and we have
+    played them 32 times.** Their gap at our last five meetings was
+    -31.5, -13.7, +4.4, +10.0, -51.3 -- inside the band every time. It is only
+    now, after we climbed to ~1669 while they sit at ~1558, that they fall
+    outside. The honest rendering is "reachable until recently, not at current
+    ratings", and a binary flag cannot say that.
+
+    Same defect family as `0 / 18,400` vs `0 / 43`: **a verdict without its
+    denominator.**
+    """
+    if "gaps" in _OVERRIDE:
+        return _OVERRIDE["gaps"]
+    out: list[float] = []
+    path = ROOT / "corpus" / "ladder_games.tsv"
+    if not path.exists():
+        return out
+    seen = set()
+    for r in csv.DictReader(path.open(), delimiter="\t"):
+        try:
+            ours = float(r["ourbef"]); opp = float(r["oppbef"])
+        except (ValueError, KeyError, TypeError):
+            continue
+        if ours < min_our:
+            continue
+        key = r.get("match")
+        if key in seen:
+            continue                      # one gap per MATCH, not per game
+        seen.add(key)
+        out.append(opp - ours)
+    return sorted(out)
+
+
+def history(name: str) -> tuple[int, float | None]:
+    """(ladder matches played vs this opponent, gap at the most recent one).
+
+    THE COLUMN THAT SEPARATES "NEVER REACHABLE" FROM "NOT REACHABLE ANY MORE",
+    and without it those two render identically. `Ouroboros` at gap -102 and
+    `vjg` at -841 both print BELOW-every-observed-pairing -- yet we have played
+    Ouroboros 32 times (last five gaps -31.5, -13.7, +4.4, +10.0, -51.3, all
+    inside the band) and vjg zero. The first is a matchup we climbed away from;
+    the second was never on our schedule. **A gate that cannot tell those apart
+    will retire a real opponent as unreachable.**
+    """
+    if "history" in _OVERRIDE:
+        return _OVERRIDE["history"].get(name, (0, None))
+    path = ROOT / "corpus" / "ladder_games.tsv"
+    if not path.exists():
+        return 0, None
+    seen, latest, latest_gap = set(), "", None
+    for r in csv.DictReader(path.open(), delimiter="\t"):
+        if r.get("opp") != name:
+            continue
+        m = r.get("match")
+        if m in seen:
+            continue
+        seen.add(m)
+        when = r.get("created") or ""
+        try:
+            g = float(r["oppbef"]) - float(r["ourbef"])
+        except (ValueError, KeyError, TypeError):
+            continue
+        if when >= latest:
+            latest, latest_gap = when, g
+    return len(seen), latest_gap
+
+
+def percentile_of(gap: float, gaps: list[float]) -> str:
+    """Where this gap sits in the observed pairing distribution, with its n."""
+    if not gaps:
+        return "no pairing history"
+    below = sum(1 for g in gaps if g < gap)
+    n = len(gaps)
+    if below == 0:
+        return f"BELOW every one of {n} observed pairings"
+    if below == n:
+        return f"ABOVE every one of {n} observed pairings"
+    return f"p{100.0*below/n:.0f} of {n} observed pairings"
+
+
 def _live_ratings() -> tuple[float, dict[str, float]]:
     """(our rating, {team: rating}) from the freshest source available.
 
@@ -115,6 +205,29 @@ def selftest() -> int:
         ("+400 above (unreachable)", 400, 0.0909, 29.09, -2.91, False),
         ("+111 (0033, reachable)", 111, 0.3450, 20.96, -11.04, True),
     ]
+    # PERCENTILE BRANCHES, driven on a fixture so all three render.
+    fx = [-50.0, -20.0, 0.0, 30.0, 90.0]
+    _OVERRIDE["gaps"] = fx
+    for label, gap, want in [("below everything", -200.0, "BELOW every one"),
+                             ("mid-distribution", 10.0, "p60 of 5"),
+                             ("above everything", 400.0, "ABOVE every one")]:
+        got = percentile_of(gap, fx)
+        ok = want in got
+        print(f"  [{'ok' if ok else 'FAIL'}] percentile {label:<20} -> {got}")
+        if not ok:
+            bad += 1
+    # HISTORY BRANCHES: the column must separate "climbed away from" from
+    # "never on our schedule", which is the whole reason it exists.
+    _OVERRIDE["history"] = {"Climbed": (32, -51.3), "Stranger": (0, None)}
+    for _n, _want in [("Climbed", (32, -51.3)), ("Stranger", (0, None))]:
+        _got = history(_n)
+        _ok = _got == _want
+        print(f"  [{'ok' if _ok else 'FAIL'}] history {_n:<22} -> {_got}")
+        if not _ok:
+            bad += 1
+    _OVERRIDE.clear()
+
+    _OVERRIDE.clear()
     for label, gap, we, wwin, wloss, wreach in cases:
         e, win, loss = value(gap)
         reach = BAND_LO <= gap <= BAND_HI
@@ -161,9 +274,13 @@ def main(argv: list[str]) -> int:
         print(__doc__)
         return 2
 
-    print(f"our rating {ours:.0f}   (reachable band us{BAND_LO:+d}..us{BAND_HI:+d})\n")
+    gaps_hist = pairing_gaps()
+    print(f"our rating {ours:.0f}   (reachable band us{BAND_LO:+d}..us{BAND_HI:+d}, "
+          f"from {len(gaps_hist)} observed pairings)")
+    print("  BAND EDGES ARE SAMPLE EXTREMES AND GROW WITH n -- read the "
+          "percentile, not the YES/NO, at the margin.\n")
     print(f"  {'opponent':<26}{'rating':>8}{'gap':>7}{'5-0 pays':>10}"
-          f"{'0-5 costs':>11}  reachable")
+          f"{'0-5 costs':>11}  reachable   where that gap sits")
     gaps, pays = [], []
     unknown = []
     for n in names:
@@ -176,7 +293,16 @@ def main(argv: list[str]) -> int:
         gaps.append(g)
         pays.append(w)
         print(f"  {n[:26]:<26}{r:>8.0f}{g:>+7.0f}{w:>+10.2f}{l:>+11.2f}"
-              f"  {'YES' if BAND_LO <= g <= BAND_HI else '** NO **'}")
+              f"  {'YES' if BAND_LO <= g <= BAND_HI else '** NO **'}"
+              f"   {percentile_of(g, gaps_hist)}")
+        played, last_gap = history(n)
+        if played and not (BAND_LO <= g <= BAND_HI):
+            print(f"  {'':<26}{'':>8}{'':>7}{'':>10}{'':>11}"
+                  f"     ^ but PLAYED {played}x on the ladder, most recently at "
+                  f"gap {last_gap:+.0f} -- reachable UNTIL RECENTLY, not now")
+        elif not played:
+            print(f"  {'':<26}{'':>8}{'':>7}{'':>10}{'':>11}"
+                  f"     ^ never played on the ladder")
     for n in unknown:
         print(f"  {n[:26]:<26}{'?':>8}{'?':>7}{'?':>10}{'?':>11}  ** UNKNOWN **")
     if not gaps:
