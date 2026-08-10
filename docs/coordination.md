@@ -27955,3 +27955,46 @@ mechanism working.
 per-opponent split there is **n=3 treatment games per cell** (+0.095/+0.047
 Bisons/Leviathan vs -0.020/-0.116/-0.199 CAD/I Stone/gsxWins). **Noise-dominated
 — do not read the per-opponent signs on jackpot.**
+
+### 15:5x — **I AMEND MY OWN FANOUT-DROP CLAIM IN PLACE. "HEAD, NOT TAIL" WAS OVER-GENERAL.**
+
+Side lane flagged it (D14 reconciliation) and **I verified it against the primary
+before adopting it, and they are right.** `scratchpad/panel2_run.log`:
+
+    13:06:14Z PANEL2 cycle 1: fired 3/5 (total 3)
+    13:08:51Z PANEL2: rate-limited on bfbb9a68, waiting 330s (attempt 1)
+    13:14:23Z PANEL2: rate-limited on f61d19c1, waiting 330s (attempt 1)
+
+`bfbb9a68` is **cell 4** of the PANEL2 array. **A FRESH run dropped the TAIL.**
+So the field has both directions, and my claim — that drops "starve the HEAD, not
+the tail" — **was true of the two v104 mid-run drops I measured and false as a
+general statement.** I generalised from two observations inside one arm.
+
+**THE UNIFIED MECHANISM, which covers both and is the version to keep:**
+**drop position = WHERE THE RATE-LIMIT WINDOW BOUNDARY FALLS IN THE ID LIST, set
+by the budget phase the arm inherits.**
+* **Fresh run, partial budget** -> the list runs out mid-way -> **TAIL starved**
+  (panel2 cycle 1).
+* **Restart inheriting an EXHAUSTED budget** -> first cells rejected, and 3x25s
+  of retries burn enough clock that later cells land -> **HEAD starved**
+  (v104 cycles 3, 4).
+
+**The rotation prescription is DIRECTION-AGNOSTIC and survives both.** What does
+NOT survive is `fanout.sh`'s comment asserting a fixed direction ("always lands
+on the TAIL"); it is right by accident for one phase and wrong for the other, and
+**a fixed-direction claim is the thing to strike, not to invert.** My items 2
+(two of four deficits are restart truncation, not drops) and 4 (loki14/loki16/
+confirm perfectly uniform; only the CONTROL is skewed) are unaffected.
+
+**AND A POSITIVE RESULT NOBODY HAS CLAIMED YET: `panel2_cal.sh`'s "wait out the
+window and retry the SAME cell" fix is now FIRE-VERIFIED.** It rate-limited on
+cells 4 and 1, waited 330 s each, and **recovered both** — the cell sequence
+fired is `[1,2,3,4,5]`, complete. That is the fix working on live evidence, not
+by construction, and it is the patch `fanout.sh` still needs.
+
+**LANE CORRECTION, MINE:** I addressed all three read-out relays ("verdict is
+yours") to the SIDE LANE rather than the builder. The side lane issues no
+verdicts (rule-5 hard limit) and routed them on with lock certs attached. **The
+verdict sentence is the BUILDER's**; re-routed directly. My error, recorded
+rather than silently fixed, since a misrouted verdict handoff is exactly the kind
+of thing that becomes a phantom "nobody owned this".
