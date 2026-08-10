@@ -5,7 +5,7 @@
     .venv/bin/python tools/score.py --selftest
 
     core kill  <100 -> 10 · <130 -> 8 · <170 -> 6 · <250 -> 4 · <400 -> 2
-    slower kill -> 1 · tiebreak/titanium win -> 0 · LOSS (any cause) -> -10
+    slower kill -> 1 · tiebreak/titanium win -> -10 · LOSS (any cause) -> -10
 
 Reported as MEAN POINTS PER GAME.
 
@@ -17,10 +17,15 @@ failure this project spent 2026-08-10 diagnosing: an 18pp bar fired at a fixture
 whose own floor was 19.5pp. **Use it for version scorecards (free, spends no
 games) and as a ship gate at n >= 200. Never as a leg's primary.**
 
-Baselines from the spec (large-sample, our own tape):
-    v80 -3.38 · v94 -3.29 · v102 -2.39 · **v104 -1.77** (best shipped)
-    v102 -> v104 = +0.62/game.
-**Ship gate: beat -1.77 at n >= 200.**
+Baselines RECOMPUTED on the -10 tiebreak scale (our own ladder tape, n>=100):
+    v20 -10.00 · v53 -2.60 · v72 -4.20 · v80 -5.54 · v94 -5.08 · v102 -2.47
+    **v104 -1.76 (best shipped, n=255)**
+**SHIP GATE: beat -1.76 at n >= 200.**
+**THE RESCALE CHANGED THE HISTORY, NOT JUST THE NUMBERS.** v20 scores EXACTLY
+-10.00 over 110 games -- it never destroyed a core once; every "win" was a
+tiebreak. And v53, which read -1.77 on the old scale and appeared to TIE v104,
+drops to -2.60. **The old scale was crediting tiebreak wins and flattering our
+early versions into looking like today's bot.**
 
 **THE BALANCE PROPERTY IS WHY THESE EXACT NUMBERS**, and it is a maintenance
 obligation, not trivia: killing 40 rounds faster across the board pays
@@ -36,7 +41,17 @@ import sys
 
 BUCKETS = ((100, 10), (130, 8), (170, 6), (250, 4), (400, 2))
 SLOW_KILL = 1
-TIEBREAK_WIN = 0
+# CHANGED BY MAGNUS 2026-08-10: a tiebreak win scores -10, IDENTICAL TO A LOSS.
+# *"we should never optimize for tiebreak wins, all of our effort should be on
+# killing the cores."* The argument that settles it: at 0, a pure SURVIVAL plank
+# converting 20 losses into 20 tiebreak wins scores +200 and reads as a triumph
+# -- while PLAY_DEFENCE: never forbids exactly that plank. At -10 the same plank
+# scores ZERO improvement. **-10 is what makes the currency agree with the
+# doctrine**; 0 was what created the tension.
+# Verified rather than assumed: the balance property is IDENTICAL either way
+# (speed +0.75, conversion +0.63, ratio 1.20), so the maintenance obligation in
+# the spec is cleared by this change rather than reopened by it.
+TIEBREAK_WIN = -10
 LOSS = -10
 
 
@@ -82,7 +97,7 @@ def selftest() -> int:
         ("kill r399", True, "core_destroyed", 399, 2),
         ("kill r400 (boundary -> slow)", True, "core_destroyed", 400, 1),
         ("kill r980 (slow)", True, "core_destroyed", 980, 1),
-        ("tiebreak WIN scores ZERO", True, "titanium_collected", 1000, 0),
+        ("tiebreak win scores -10, SAME AS A LOSS", True, "titanium_collected", 1000, -10),
         ("loss by core kill", False, "core_destroyed", 120, -10),
         ("loss on tiebreak", False, "titanium_collected", 1000, -10),
         ("a SLOW loss is not better than a fast one", False, "core_destroyed", 990, -10),
@@ -95,6 +110,8 @@ def selftest() -> int:
         if not ok:
             bad += 1
 
+    # a tiebreak win must now be indistinguishable from a loss
+    assert game_score(True, "titanium_collected", 1000) == game_score(False, "x", 1000)
     m, n = mean_score([(True, "core_destroyed", 90), (False, "core_destroyed", 200)])
     ok = abs(m - 0.0) < 1e-9 and n == 2
     print(f"  [{'ok' if ok else 'FAIL'}] mean of a 10 and a -10 is 0.0        {m:>4.1f} n={n}")
@@ -123,7 +140,7 @@ def selftest() -> int:
         print(f"*** {bad} case(s) wrong ***")
         return 1
     print("PASS: every bucket hit including both sides of each boundary, "
-          "tiebreak win scores 0, losses score -10 regardless of cause, and "
+          "a tiebreak win is indistinguishable from a loss, losses score -10 regardless of cause, and "
           "the speed/conversion levers stay comparable.")
     return 0
 

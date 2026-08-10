@@ -128,7 +128,7 @@ def report(games: list[dict], label: str) -> dict:
     try:
         from score import mean_score
         sc, _ = mean_score((g["we_won"], g["cond"], g["turns"]) for g in games)
-        gate = "beats v104 -1.77" if sc > -1.77 else "below v104 -1.77"
+        gate = "beats v104 -1.76" if sc > -1.76 else "below v104 -1.76"
         print(f"  kill-speed score      {sc:>+7.2f}/game   "
               f"[SCORECARD + SHIP GATE ONLY, NEVER A LEG PRIMARY; "
               f"n>=200 to gate; {gate}]")

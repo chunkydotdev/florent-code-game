@@ -104,7 +104,7 @@ in-session, answered *"Yes i did"*). Spec:
 
 **It SUBSUMES the two fields it replaces.** `core_kill_share` is retained as
 SECONDARY because it is the cheaper diagnostic, but the score already contains
-it: a kill scores 1-10 and a tiebreak win scores 0, so kill share and
+it: a kill scores 1-10 and a tiebreak win scores -10, so kill share and
 time-to-kill are both inside one number. **`R1000_IS_DEFEAT` is now arithmetic
 rather than doctrine** — a tiebreak win scores **-10, identical to a loss**
 (Magnus, 2026-08-10: *"we should never optimize for tiebreak wins, all of our
@@ -123,9 +123,15 @@ Legitimate uses: **version scorecards** (free, spends no games) and the **ship
 gate**. `leg_read.py` prints the prohibition on the line itself, because a label
 that lives only in a spec is a label nobody re-reads.
 
-**SHIP GATE: beat -1.77 at n >= 200.** Baselines on our own tape:
-v80 **-3.38** · v94 **-3.29** · v102 **-2.39** · **v104 -1.77** (best shipped;
-v102 -> v104 = **+0.62/game**).
+**SHIP GATE: beat -1.76 at n >= 200** — RECOMPUTED on the -10 tiebreak scale;
+the old **-1.77** was computed under the 0-tiebreak rule and is STALE. Baselines:
+v20 **-10.00** · v53 **-2.60** · v72 **-4.20** · v80 **-5.54** · v94 **-5.08** ·
+v102 **-2.47** · **v104 -1.76** (best shipped, n=255).
+**The rescale changed the HISTORY:** v20 scores exactly **-10.00 over 110 games**
+— it never destroyed a core once, every "win" was a tiebreak — and **v53, which
+read -1.77 on the old scale and appeared to TIE v104, drops to -2.60.** The old
+scale credited tiebreak wins and flattered our early versions into looking like
+today's bot.
 
 **THE BALANCE PROPERTY IS A MAINTENANCE OBLIGATION, NOT TRIVIA.** These exact
 numbers exist so that speed and conversion are weighted comparably: killing 40
