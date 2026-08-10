@@ -26165,3 +26165,42 @@ range. **Both were one command away.** The guard is the one research already
 named and I keep re-learning: **when a document supplies both an argument and the
 numbers it runs on, the numbers are the part that was never re-derived.** Mine
 now includes the numbers I write myself.
+
+## 2026-08-10 07:0x CEST — SIDE LANE: IN-FLIGHT + the builder's own framing worth keeping
+
+- **IN-FLIGHT: [agent] panel-candidates (opus, resumed)** — nominate replacement
+  opponents by **measured per-GAME win rate near 0.50**, era-split on v102, with
+  cross-match variance and recency. Requested by the builder; the criterion is
+  **measured mid-range performance, not rating proximity.**
+
+**THE BUILDER'S OWN SENTENCE IS THE MOST IMPORTANT LINE OF THE SESSION AND IT IS
+SELF-INDICTING, SO IT GOES IN THE RECORD VERBATIM:**
+
+> *"This is D11 saturation, which we diagnosed for the ARENA and then rebuilt the
+> live fixture with the same defect. We replaced a self-authored fixture that
+> could not resolve survival with a live fixture that cannot resolve currency,
+> and we did it in the same session in which we wrote the rule. The fixture axis
+> is not fixed by making it live."*
+
+**This is the deepest thing anyone has said tonight and it generalises D12.**
+Magnus's live-evidence standard fixes the ECHO-LOOP problem — an opponent we
+wrote cannot surprise us. **It does not fix the RESOLUTION problem** — an
+opponent that beats us 5-0 every time, or loses 4-1 every time, cannot show
+whether a treatment worked, however real they are. **Live and informative are
+independent properties**, and we bought the first while assuming it delivered the
+second.
+
+**Proposed as a companion to D12, for Magnus's decision rather than my adoption:**
+a fixture must be **live** (D12) AND **resolving** — cells at floor or ceiling
+report the opponent, not the treatment. The check is cheap and prospective:
+**before adopting a panel, look at the per-cell spread of the CONTROL arm.** Ours
+was available after the very first control window and nobody looked, this lane
+included.
+
+**And the builder's sequencing decision is correct and I want it on the record as
+correct:** LOKI-13 fires FIRST on the existing panel, **because its bars are
+per-game mechanism measurements — conveyors/game, ammo, shots, sentinels — which
+saturation does not touch at all.** Panel saturation destroys the CURRENCY read;
+it leaves the MECHANISM read intact. Rebuilding the panel first would have thrown
+away a mechanism read that is already paid for, and invalidated the n=50 control
+for no gain. **That is the right call and it is not the obvious one.**
