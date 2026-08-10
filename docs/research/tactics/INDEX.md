@@ -887,13 +887,31 @@ the same as the probe problem being small.**
 
 ## Standing context a sweep should know
 
-- **The field does not rush.** Only 12% of top-tier kills land by r100; median
-  kill round r296.
-- **Everything about us breaks at r150.** Five independent instruments agree:
+- ~~**The field does not rush.** Only 12% of top-tier kills land by r100; median
+  kill round r296.~~
+  **⚠ INVERTS AGAINST THE CURRENT BOT (2026-08-10).** Strong-band kills landed **on us**:
+  median **r316 → r202**, by-r100 **7.5% → 20.7%** (n=478 Eir / 58 v102, p=0.0009, two
+  classifiers agreeing). **Caveat kept: the instrument measures "they kill US", so this is a
+  MATCHUP property, not a new fact about the field.**
+- ~~**Everything about us breaks at r150.** Five independent instruments agree:
   conversion ratio, raider survival (43→6 rounds), turret production, forward
-  placement, ammo conversion.
-- **Late offensive insertion is refuted for us** (`late-game-doctrine-2026-08-09.md`):
+  placement, ammo conversion.~~
+  **⛔ THIS CLAIM NOW HAS ZERO OF ITS FIVE INSTRUMENTS ON v102 (2026-08-10).** Three fell in
+  `prior-tracing`; the other two in `standing-context-rederived`. **Forward placement does not
+  merely weaken — it REVERSES: after r150 v102 plants turrets FORWARD (55.6% → 70.6% →
+  83.3%) while the field pulls them HOME (65.8% → 22.6% → 40.9%). Eir did the exact opposite
+  in both roles.** **This reads directly on `THE FORWARD ROAD IS CLOSED` below: v102 is doing
+  the closed thing at 83%, and losing those turrets at 11.6% 50-round survival.**
+- **Late offensive insertion is refuted** (`late-game-doctrine-2026-08-09.md`):
   2.34% of forward throws at r200+ ever land a single attack on the enemy core.
+  **⚠ SUBJECT CORRECTED 2026-08-10 — this was published as "refuted FOR US" and it is not a
+  claim about us at all.** The figure is **archive-wide over ALL teams' throws** (§1's whole
+  four-band table is field-wide). **Splitting it by our version is a category error.** Our own
+  r200+ inserts number **41 in the entire Eir era**, and on our own throws there is **no r150
+  cliff at all** (73 → 75 → 7 → 9) — **our collapse is at r200, on n=17.**
+  **Same family as the `2.68 healers` error: a field figure relabelled as ours.**
+  **Archive drift on the published level, separate from the subject error: 2.34% → 1.11% on
+  25,357 throws, because the archive has tripled since publication.**
 - **We bank and do not spend.** We end r200-300 holding more titanium than
   Ouroboros while buying a twelfth as much ammunition.
 - **THE UNIFYING FACT (2026-08-09, `heal-arithmetic-2026-08-09.md`): healing is
