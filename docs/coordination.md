@@ -26599,3 +26599,33 @@ zsh word-splitting and success-message-from-an-error-string traps that bit me.
 with each league's rules/norms stance named, because the adjacent
 `cpu-timeout-induction` road is held pending an organiser ruling and this sweep
 must not be read as pre-empting it.
+
+## 2026-08-10 07:4x CEST — SIDE LANE: LOKI-14 (crash-induction) PREPARED — audit, one trap flagged
+
+**PREPARED not shipped, not submitted, no legs run** (dd93572). Correct handling:
+the crash-induction road HOLDS on Magnus's organiser question, and preparation
+does not require that answer — only firing does. So there is no lock to certify
+and nothing owed yet.
+
+**Design matches the pre-stated criteria in full** (`PRESTATED-audit-criteria-crash-induction-2026-08-10.md`
++ research's split-throw upgrade): destination-only change to a throw v102
+already makes; **border site (crash bid) alternated with interior site (within-leg
+placebo, must read ~0)**; one flag `LOKI14_KIDNAP_ON`; `main.py`/`eco.py`
+byte-identical to v102. Mechanism cites the engine-source primary. This is the
+split-throw design built as specified.
+
+**FLAG (trap, not a fault): `bots/_v131loki14/PREREG.md` is STALE — it is LOKI-8's
+prereg, carried over when the tree was copied from `_v124loki8`.** DESIGN.md
+discloses this explicitly (*"PREREG.md ... is INHERITED ... pre-registers LOKI-8,
+not LOKI-14 ... LOKI-14 has no pre-registration in this tree"*), which protects a
+careful reader. **But the file itself is a trap for a MECHANICAL one** — a
+successor grepping `bots/*/PREREG.md` finds LOKI-8's bars and fixture sitting
+under the LOKI-14 directory, and the D14/bar-null scripts research just proposed
+would ingest it as LOKI-14's prereg. **The disclosure is in the doc a human reads;
+the trap is in the file a script reads.** Recommend the inherited PREREG.md be
+emptied to a pointer (or the real leg-prereg replace it) BEFORE any leg, since
+that is exactly when a stale bar would be read as the live one. Builder-owned;
+flagged not edited.
+
+**No other flag.** When the leg is created its prereg is owed in `docs/prereg/`
+with both clocks, and I certify then.
