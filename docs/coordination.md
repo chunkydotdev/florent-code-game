@@ -24642,3 +24642,43 @@ no damage event accounting for it**. That is decodable from the existing corpus
 tooling, it works on ENEMY units, and it is exactly the meter a crash-induction
 plank needs. `crash_pos.replay26` is the positive control it must be validated
 against; a same-bot match is the negative control.
+
+### 06:2x — BISONS FALSIFIER **PASSES**, and the archive is richer than the caution assumed
+- **Falsifier cleared on the platform primary** (side lane, `fcode match info
+  --json`, all 25 baseline games resolved on `winnerId`/`turnsPlayed`/`mapName`):
+  the Bisons leg is saga **74** · snowflake **66** · moonrise 99 (US) · heart
+  **92** · jackpot **49**. The builder's 74/66/92/49 are CONFIRMED. My agent is
+  still told to reproduce it from the corpus independently — a relayed number is
+  a claim, not a fact, and this one is load-bearing for the whole cut.
+- **THE SIDE LANE'S ARCHIVE CAUTION IS REFUTED.** Measured from
+  `corpus/meta_join.tsv` (10,034 rows): of the 195 Bisons game-rows, **140 are
+  Bisons vs THIRD PARTIES**; only 55 involve us. **So their play is studiable
+  with us out of the picture entirely.** And **20 of our 55 are v102**, not the
+  5 claimed — the unrated baseline games are a subset. Our split 102:20 / 80:15
+  / 92:10 / 87:5 / 91:5. **Their own span is four versions** — v2:75, v4:60,
+  v3:40, v1:20 — so "is the mechanism in their CURRENT version" is checkable.
+  The caution survives only in its correct form: a rate pooled over all 55 of
+  our games mixes five bots of ours.
+- **Two populations, two questions, not pooled** (scoped to the agent): the
+  **140 third-party games** answer *what is their mechanism*; the **20 v102
+  games** answer *is this a Bisons property or a v102 vulnerability*.
+- **CAVEAT ON THE RATIO TABLE, raised before it gets quoted.** The side lane's
+  "snowflake 66 vs 148 = 2.2×, jackpot 49 vs 298 = 6.1×" shares **only the map**
+  — attacker AND defender both differ — so it conflates *Bisons attack fast*,
+  *we defend softly* and *Leviathan defends hard*. **Motivation, not
+  measurement.** The clean designs are within-Bisons and the paired v102 set.
+- **What survives and is the best thing in the relay: map size ANTI-explains
+  them.** Their two fastest-in-context kills are on the two LARGEST sized maps
+  (snowflake 26x26 t=66, saga 24x24 t=74) while our own kill turns "track map
+  size" (99-524). **Distance does not protect us from them; it does protect them
+  from us.** Sizing covers saga/snowflake/jackpot only — moonrise and heart are
+  not in the pinned set and must not be assumed sized.
+
+### MY OWN ERROR, recorded because the review missed it too
+The side lane published a population table with a **seat-flip** (Leviathan and
+gsxWins, both seat B, both 4-1 WINS, printed as 1-4 losses; aggregate 7-18 vs a
+true 14-11) and has corrected it with an erratum. **I reviewed that table in full
+and did not catch it — and it was catchable from inside the document**, since a
+seat-B row printed under an (us-them) heading contradicts its own seat column.
+I verified the clock arithmetic and the committed object byte-for-byte, then
+**took the payload on trust** — the same shape as the fault I was reviewing for.
