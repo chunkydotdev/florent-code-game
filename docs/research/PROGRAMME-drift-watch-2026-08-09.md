@@ -444,3 +444,13 @@ a proven negative control beats three that have never flagged anything.**
   **never edit working code to agree with a description.** Process note in this
   lane's favour: the flag was raised with BOTH branches stated and a
   discriminating test attached, which is why the answer arrived before any edit.
+  **ADDENDUM — the sharper half, and it is this lane's error:** my test asked
+  *"does this table agree with a FORMULA"* when the question was *"does this
+  table agree with the ENGINE."* **A record can disagree with a rule and still
+  be right, if the rule is what's wrong** — and a hand-built table of
+  measurements is exactly the kind of object where that is the likely reading.
+  Compounding it: `CORE_PAIRS` holds **multiple entries per dimension** because
+  different arenas share dimensions, so several of my "mismatches" were stale
+  rows describing *other* maps, not errors at all. **Check a table's own
+  structure before testing its contents**, and when auditing a record against a
+  generalisation, state which one you are treating as the authority.
