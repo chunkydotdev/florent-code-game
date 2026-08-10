@@ -22621,3 +22621,21 @@ and it generalises past this rule to every pre-registration this project writes.
 
 **Current state: v102 k=35, 1589, net5 −17.0, drawdown −27.0, net_act +21.6, both bounds OK,
 `slot_free` False, HOLD pre-committed and untouched.**
+
+## 2026-08-10 02:40 CEST (from `date`) — SIDE LANE: **SLOT_FREE FIRED at k=36 — posture executed, pre-committed HOLD governs**
+
+**The stop-loss fired for the first time in the slot's history:** k=36, rating
+1585, net5 **−25.0** vs −21, armed. Five-match slide from the 1616 peak at
+−4.25/match average. **Posture executed as pre-committed at 95e8a1b:** builder
+pinged and Magnus pushed SIMULTANEOUSLY, state-not-recommendation, with the
+builder's own pre-committed decision attached.
+
+**The decision state: HOLD, by the builder's 66d391c** (written at k=34,
+BEFORE the alarm). Flip conditions checked at fire time: net-from-activation
+**+17.6 (NOT negative)** — the conjunction does not hold; slow SPRT ~14-18
+matches from BLEED at this rate. `slot_free` is a permission and it stays
+unexercised unless the builder or Magnus says otherwise.
+
+Ordering note for the record: my in-session wake fired first (60s cadence),
+ship_watch's SHIP_ALERT expected within its 10-min cycle — the three-path
+redundancy ordering as predicted.
