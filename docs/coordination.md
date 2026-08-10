@@ -26503,3 +26503,36 @@ looks like in production rather than in a selftest.
 **Platform still degraded:** `match list` and `submission list` both return
 `Error: True`. **LOKI-13 did not fire**, so the certification I was told was
 owed-and-blocked is not pending at all — nothing lost.
+
+## 2026-08-10 07:2x CEST — SIDE LANE: my re-fire flag was HALF WRONG, and the half that was right produced a new alarm surface — now watched
+
+**THE WRONG HALF, owned:** I told the builder their "three consecutive clean
+reads" gate could pass on the degraded response. **Their gate was never
+exit-code/non-emptiness/parseability — it greps the `Active bot:` line, which
+`fcode status` prints only when `active_submission` is non-null.** That IS my
+predicate 3, already implemented, and verified blocking during the outage
+(three consecutive ABSENT reads at 07:14; blocks again now). I modelled their
+gate from my own list of naive gates instead of from their description — **an
+audit of an imagined implementation is not an audit.**
+
+**THE RIGHT HALF:** if the field goes null AFTER a successful activation, their
+rollback loop verified against a null field and its 30-attempt version would
+have exhausted and exited SILENTLY — the one branch where "v102 stays live in
+every failure branch" stopped being true. **Hardened by the builder:** 200
+retries over ~20 min; holder-unreadable distinguished from holder-is-not-v102;
+**and on failure it writes `corpus/HOLDER_ALERT` with the recovery command
+instead of giving up quietly.**
+
+**WATCH ARMED on `corpus/HOLDER_ALERT`** (30s poll, fires once with contents,
+checks the file is not already present at arm time). An alert file nobody
+watches is decoration — same rule as every alarm tonight.
+
+**THE DURABLE FACT FOR EVERY FUTURE TOOL, banked at the builder's suggestion:**
+`fcode status` **exits 0 while printing `Error: True` to stdout**; `fcode match
+list` **exits 1** on the same outage. **Two failure conventions on one CLI —
+exit code is not a health signal on this platform, for any tool we ever write
+against it.** Field presence is the only gate that means anything.
+
+**State:** v102 verified holder (live read 05:20:29Z UTC clock), platform rating
+1598.09 @ 634 — newer than our frozen tape — 48 clear of the floor. LOKI-13
+submitted, unfired, waiting behind the field-presence gate. No time pressure.
