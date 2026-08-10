@@ -362,3 +362,74 @@ clears with margin. **Version column flat for all four** (vjg v4, Troupe v1,
 S v2, Ship Happens v1) against **56 of 72 teams changing version in the same
 window** — so the flatness is a signal, not a dead column. **vjg's hazard is
 RISING** (recent-20 ~1,060/10k vs 450 historical): highest-yield cell.
+
+---
+
+# AMENDMENT 4 — WHAT A **CONFIRMED** MAY AND MAY NOT BE WRITTEN TO MEAN
+
+**Committed BEFORE the leg's first ACCEPTED challenge** (cycle 1 was rejected on
+the rate limit and banked nothing; cycle 2 is due 14:10:34Z). ADD-only: it
+constrains the write-up and **does not touch the ≥5 bar**.
+
+**Prompted by Magnus asking "what's vjg? I can't see that team."** He could not
+see it because **it is near the bottom of the ladder.** Ratings pulled LIVE from
+the platform by the builder (per-team `match list`, latest match 13:32:59Z), not
+from the ~22h-stale corpus snapshot the research arm flagged as its own caveat:
+
+| team | live rating | version | gap to us |
+|---|---:|---|---:|
+| **us (OpenSverige)** | **1658** | v104 | — |
+| S | 1106.8 | v2 | **−551** |
+| Ship Happens | 1048.1 | v1 | **−610** |
+| Troupe | 1023.4 | v1 | **−635** |
+| **vjg** | **806.5** | v4 | **−852** |
+
+## The problem this creates, stated plainly
+
+**We selected this panel on a VULNERABILITY, and it resolved into a panel
+selected on WEAKNESS.** A bot that walks its own builders onto map borders and
+deletes them is a bot that loses, so the border-crash signature is plausibly a
+**marker of low bot quality** rather than an independent vulnerability. That
+would explain the census's bimodality directly: the carriers are carriers
+because they are unpolished.
+
+**This is the fixture trap again in new clothes — selecting cells on a property
+that correlates with the outcome** — and it is the same "rich downward, empty
+upward" asymmetry the tactics sweeps found from an unrelated direction.
+
+## What is and is not affected
+
+* **The leg is NOT stopped and its bars are NOT touched.** The mechanism
+  question is real, unanswered, cheap, and worth knowing regardless of whom it
+  fires on: **does a FORCED border placement reproduce what their own pathing
+  does?**
+* **What a CONFIRMED BUYS is what changes.** A confirmation here is a
+  confirmation **against four teams rated 806–1107 while we are 1658**, and the
+  entire top of the ladder (2102 / 2040 / 2000 / 1977 / 1966) is in the census's
+  immune half by construction.
+
+## Binding constraints on the read-out
+
+1. **A CONFIRMED MUST CARRY ITS RATING RANGE IN THE SAME SENTENCE.** The
+   permitted form is *"the exploit fires against teams rated 806–1107, we are
+   1658"*. **The bare sentence "the exploit works" is forbidden by this
+   pre-registration**, exactly as LOKI-14's null was forbidden from being
+   written as "crash-induction is refuted". **If a null had to carry its scope,
+   a confirmation carries its own.**
+2. **A CONFIRMED DOES NOT LICENSE SHIPPING BORDER-THROWING INTO THE LIVE BOT.**
+   Under `R1000_IS_DEFEAT` and a ladder currency, **an exploit that only fires
+   downward is close to worthless for ranking** — we already beat these four
+   comfortably. Shipping requires a separate question answered first (below).
+3. **The separate question, and it is now the more interesting one:** *is there
+   any opponent AT OR ABOVE our rating that carries this signature?* The census
+   classified six teams as clean and **left four UNCLASSIFIED rather than calling
+   them immune. That unclassified four is the set worth decoding now, not the
+   carriers.** Queued as its own item; it is an archive cut and costs no
+   holder time.
+
+**Method note carried from the research arm and confirmed by the builder's own
+pull:** their figures came from the most recent `rating*Before` in the corpus
+(~22h stale, pre-match snapshots) and they said so rather than presenting them
+as a leaderboard read. The live pull moved vjg from 855 to **806.5** — same
+ordering, same conclusion, and the gap is far too large to be a staleness
+artefact either way.
