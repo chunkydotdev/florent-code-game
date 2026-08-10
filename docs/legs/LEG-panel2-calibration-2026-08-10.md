@@ -208,3 +208,71 @@ off-by-one on a boundary silently re-scopes the instrument.**
 currency and nothing else. LOKI-16's coverage bar and LOKI-14's removal-count
 bar are MECHANISM statistics; feeding either to `--bar` compares them against
 the currency's MDE, which is a units error wearing a verdict's clothes.
+
+---
+
+## 8. THE REACHABILITY FINDING — RECORDED **WITH A DISCLOSURE**, NOT ACTED ON
+
+**Magnus flagged that the ladder only pairs within ~±60. The research arm
+measured it on our own 3,405 ladder games and he is right:**
+**|gap| ≤ 60 in 81.2%** of games, ≤100 in 94.0%, ≤150 in 97.4%. Since we passed
+1600 (530 games) the **entire** gap range is **−78.1 to +122.3**. The
+highest-rated opponent we have **ever** met on the ladder is `0033` at 1759.2,
+gap **+64.1**.
+
+**⇒ The reachable ladder band is ~`us−80 … us+125`.** This also retires the
+target-band framework's "climb band = us…us+400, 22 teams" as a *ladder* target:
+**19 of those 22 cannot be met** until we are near them.
+
+**And all five PANEL-2 cells sit outside it** — Banminary −204, OopsGotYourElo
+−185, Team 48 −99, gsxWins −97, I Stone −88 — while the panel it replaces
+contained The Bisons at **+32**, the only reachable-band cell we have ever used.
+
+**THE EXTERNAL-VALIDITY ARGUMENT, which is the real one:** unrated challenges
+have no ±60 restriction, so reachability does not *mechanically* constrain a
+panel. It constrains **RELEVANCE**. Our rating is produced entirely by games
+against `us−80…us+125`; **a panel at −200 measures performance against a
+population that never touches our rating.**
+
+## ⚠ DISCLOSURE, AND IT IS THE REASON NOTHING IS BEING CHANGED HERE
+
+**I have already read this leg's interim per-cell numbers** (n=5/cell, via
+`leg_read.py`, earlier this session). **So I am no longer blind to the outcome,
+and any re-scoping of the candidate pool I make now is POST-DATA panel selection
+— structurally identical to the trap that built the original panel**, however
+independent the reachability argument is of the numbers I saw.
+
+**Therefore:**
+1. **PANEL2-CAL COMPLETES ON ITS PRE-REGISTERED TERMS.** 12 challenges
+   outstanding; it reports against its committed `[0.20, 0.80]` admission band
+   and its own falsifier stands unchanged.
+2. **THE CANDIDATE POOL IS NOT EDITED.** Not now, not before it reports.
+3. **The reachable band becomes a SEPARATE, NEWLY PRE-REGISTERED leg (PANEL-3)**
+   whose selection criterion is stated in advance — **`us−80…us+125` AND the
+   `[0.20, 0.80]` admission band, the INTERSECTION** — and which therefore does
+   not inherit my exposure to panel-2's interim numbers as a selection input.
+
+## THE PREDICTION, PRE-REGISTERED NOW SO PANEL-2 ALSO TESTS THE THEORY
+
+Recorded **before** the outstanding 12 challenges land, so completion is a real
+test of reachability and not a post-hoc reading:
+
+> **The research arm predicts the two furthest-out new cells — Banminary (−204)
+> and OopsGotYourElo (−185) — are the MOST LIKELY of the five to return as
+> INERT CEILINGS**, because at −185 to −204 the Elo-expected win rate is already
+> ~0.75–0.77 before any skill difference, and our realised rate against that
+> stratum runs higher. **If so, selecting cells further below us made the
+> ceiling problem WORSE, and the panel's methodology is right while its
+> candidate pool was wrong.**
+
+**The counter-prediction is on the record too, from the research arm against its
+own point:** a panel exists to **resolve differences**, not to mirror the ladder,
+and **reachable does not imply resolving** — **The Bisons at +32 read 0,0,0,0 in
+D22, a FLOOR, and it is inside the reachable band.** So a reachable-band panel is
+not automatically better; only the **intersection** rule is defensible.
+
+**Caveat on the interim numbers I saw, stated so nobody quotes them:** at n=5
+games per cell the sampling SD of a share is ~0.20. Those readings cannot
+distinguish a ceiling from a live cell and **must not be cited** — which is
+precisely why the leg is being allowed to finish rather than resolved from what
+I have already seen.
