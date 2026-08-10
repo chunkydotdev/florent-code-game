@@ -428,3 +428,19 @@ a proven negative control beats three that have never flagged anything.**
   scope. And add a COVERAGE check beside every freshness check — compare the
   row/entity count against an independent surface, because completeness and
   recency are different failures and only one of them has a guard.**
+
+- **THE PLATFORM'S DESCRIPTIONS ARE LESS RELIABLE THAN THE PLATFORM'S DATA
+  (s28, 933c8c1 — a near-miss worth more than the check that produced it):**
+  `fcode maps list` labels **all 15 pool maps `rotational`**, and our
+  `CORE_PAIRS` disagreed on 8/31 entries with a MIRROR shape. This lane raised
+  it as a possible live offensive defect (a wrong core guess costs ~24 rounds
+  at the far end of a 250-round window). **Resolved against the wire: our table
+  is CORRECT — meander's cores are genuinely mirror-symmetric — and "fixing" it
+  to match the CLI's label would have BROKEN a live pool map.** Same rule as
+  CLAUDE.md's *"read the engine binary, not the organisers' doc"*, on a new
+  surface: **a CLI summary column is DOCUMENTATION; the replay wire is the
+  ARTEFACT.** Watch form: when our code contradicts a platform label, the label
+  is not automatically the authority — resolve against decoded data, and
+  **never edit working code to agree with a description.** Process note in this
+  lane's favour: the flag was raised with BOTH branches stated and a
+  discriminating test attached, which is why the answer arrived before any edit.
