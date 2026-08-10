@@ -27025,3 +27025,19 @@ this same object.
 **NOT ACTIONED, recorded as the open question:** whether to ask SmartFridge
 directly what their scheduled runs are. It is cheap and it is Magnus's call, not
 mine — it is a communication with an unknown competitor, not a code change.
+
+## 2026-08-10 10:2x CEST — SIDE LANE: D5 FLAG (live) — fanout's CONFIRM-v102 arm has no prereg
+
+fanout.sh (`tools/fanout.sh`, 11e4739) audited: **safety sound** (per-rotation
+field-presence gate + verified rollback + HOLDER_ALERT; per-arm outfiles;
+round-robin reduces time-confound), **v105=LOKI-15 identity confirmed clean.**
+**D5 flag:** the **CONFIRM-v102** arm — the confirmatory PAVE_TRAIL leg meant to
+turn the ship's ~0.05-family-wise into a clean pre-registered significant — has
+**NO prereg** (LOKI-15/v105 does). fanout is RUNNING; `arm_v102confirm.txt` is
+0 lines, so it hasn't fired yet — a window to fix it. **Un-pre-registered it is a
+fourth look at the same effect, reintroducing the optional-stopping/multiplicity
+doubt it exists to remove — a confirmatory leg without a prereg confirms
+nothing.** Flagged to builder: commit the prereg (n=100, single confirmatory
+test declared, v3.2 live-derived, two-clock) BEFORE the arm's first window.
+State note: v104 is k=6, still in break-in as fanout's control — fine for the
+panel core_kill_share comparison; break-in watches stay up until k≥8.
