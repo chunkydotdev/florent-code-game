@@ -122,3 +122,68 @@ written into the prereg, now caught on my own headline.
 sign. **What does not survive: any claim that the rush helps generally.** At
 best it helped against one or two specific opponents, which is a
 `per-opponent gate` question, not a doctrine question.
+
+## MECHANISM BARS — READ. BOTH NOMINALLY MET, AND BOTH PREMISES REFUTED.
+
+Decoded from the leg's own 50 replays (25 treatment, 25 control, **0 decode
+errors**). "Forward" defined as `min_d2(tile, enemy 2x2 footprint) <
+min_d2(tile, own 2x2 footprint)`, using the FULL four-tile footprint on both
+sides so the known NW-anchor bias cancels; ties counted as not-forward. Seats
+resolved per match from `teamAId`, not assumed.
+
+| bar | threshold | treatment | control | verdict |
+|---|---|---|---|---|
+| **A** median round of first forward sentinel | **< 60** | **32** | **43** | **MET** |
+| **B** mean forward sentinels/game | **>= 1.8** | **2.08** | **3.44** | MET numerically |
+
+**BOTH BARS PASS THEIR LITERAL THRESHOLD AND BOTH WERE BADLY CONSTRUCTED,
+because I sized them off a SINGLE LOCAL MATCH against `_probe_victim` — our own
+lying fixture — and the live control does not behave like it.**
+
+* Bar A's premise was *"control r73-r93"*. **The live control's own median is
+  43**, already inside the window. The treatment is still 11 rounds earlier
+  (32 vs 43), which is a real and correctly-signed effect — but the bar was
+  built to clear a hurdle the control was already clearing.
+* Bar B's premise was *"control ~1.0/game"*. **The live control builds 3.44/game
+  (2.00 excluding one 1000-round grind with 38 rebuilds at a single tile).**
+  **So the treatment does not double the siege — it builds FEWER forward
+  sentinels than the control, or about the same once the outlier is dropped.**
+
+**THIS IS THE D16 FAULT AGAIN AND IT IS MINE: a number true of a local run
+against a self-authored probe, used to size a bar for live teams.** The bars
+"passed" while the story they encoded was false, which is the worst of both
+outcomes and would have been invisible without the control arm's own numbers.
+
+## WHAT THE MECHANISM ACTUALLY DID — measured, not assumed
+
+| per game, our team | treatment | control |
+|---|---|---|
+| first forward sentinel, median round | **32** | 43 |
+| forward sentinels built | 2.08 | 3.44 |
+| **harvesters built** | **3.12** | **5.44** |
+| **conveyors built** | **20.92** | **38.20** |
+| builder bots spawned | 6.36 | 6.88 |
+| **our own units lost** | **2.76** | **4.52** |
+
+**The rush is not "more siege, sooner". It is a LEANER game: plant 11 rounds
+earlier, build 43% fewer harvesters, 45% fewer conveyors, and lose 39% fewer of
+our own units — with slightly FEWER forward sentinels.** That is a coherent
+mechanism and it is not the one the prereg described.
+
+## VERDICT
+
+**The mechanism engaged (timing, and a large economy reduction). The primary
+currency is a NULL at this n** (+16.0pp, Fisher p=0.393, paired p=0.219,
+MDE 39pp) **and the +16.0pp is carried by two of five opponents, one of them
+seat-flipped.** The plank is NOT banked and NOT discarded: it is the first live
+evidence that a road closed on our own arena behaves differently against real
+teams, and it earns more power rather than a verdict.
+
+**COST, CORRECTED — IT WAS FREE.** v103 played **ZERO rated ladder matches**
+(verified on the platform: all recent ladder matches carry `ourver=102`; the
+-8.92 delta I earlier attributed to v103 was v102's game against CtrlAltDefeat,
+created 04:22:43Z, before v103 existed). Ladder pairings land ~10 minutes apart
+and the activation window was shorter than one interval. **A trick leg on this
+procedure costs zero rated exposure, not the 2-3 matches every prereg so far has
+priced.** That materially changes the cadence arithmetic in favour of buying
+power.

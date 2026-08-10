@@ -42,6 +42,48 @@ SWAP_THRESHOLD = -21
 ARM_AFTER = 8
 WINDOW = 5
 
+# ===========================================================================
+# ⚠ KNOWN DEFECT, 2026-08-10 — THE HOLDER TAG IS A SAMPLE TIME, NOT AN
+#   ATTRIBUTION. Documented rather than hastily patched, deliberately: this is
+#   a live stop-loss and s26 D17 records four instruments that BROKE IN THE
+#   FIXING. Do not "quickly correct" it without a test that fails first.
+#
+# `elo_history.tsv`'s version column records WHICH VERSION WAS ACTIVE WHEN THE
+# TAPE WAS SAMPLED (elo_logger polls every 300 s), NOT which version played the
+# match whose result appears on that row. `holder_rows()` below filters by that
+# tag, so **a version flip hands the incoming holder every match that completed
+# between the flip and the next sample.**
+#
+# Observed, and this is the whole defect in four rows:
+#
+#     06:20  1590  628  v102
+#     06:25  1590  628  v103   <- flip observed; NO new match
+#     06:30  1582  629  v103   <- the new match is v102's, TAGGED v103
+#     06:35  1582  629  v102
+#
+# The match behind that 629 was created 04:22:43Z against CtrlAltDefeat with
+# `teamBVersion=102`, confirmed on the platform: **v103 played ZERO rated
+# ladder matches in its entire life.** Its `k=1` counted a game it never played.
+#
+# WHY THIS IS MATERIAL AND NOT COSMETIC: both `k` (arming) and `net5` (firing)
+# are computed from these rows, so a flip immediately before a bad match CHARGES
+# THE NEW HOLDER FOR THE OLD HOLDER'S LOSS, and symmetrically credits it with a
+# win. For a rule whose entire job is attributing performance to a holder, that
+# is the fault in its own definition.
+#
+# BOUNDED, WHICH IS WHY IT HAS NOT BITTEN: at most one sampling interval of
+# matches (~1 match at the observed ~10-minute ladder cadence) is misattributed,
+# and ARM_AFTER=8 means a single foreign match cannot arm anything on its own.
+# It can, however, contaminate `net5` (WINDOW=5) for the first five matches of a
+# new holder — precisely the window in which a fresh ship is being judged.
+#
+# THE FIX, when someone writes it WITH A FAILING TEST FIRST: attribute by the
+# match's own `teamAVersion`/`teamBVersion` from
+# `fcode match list --type ladder --json`, joined on match id, instead of by the
+# sampled active version. The data is already available in the same API this
+# project uses elsewhere; it is the tape's schema that is lossy, not the source.
+# ===========================================================================
+
 
 class SlotState(NamedTuple):
     version: str          # holder tag as it appears on the tape, e.g. "v102"
