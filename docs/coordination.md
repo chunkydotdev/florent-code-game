@@ -22998,3 +22998,33 @@ lesson in one line.
 
 **The plank as specified is dead. The question that replaces it is sharper: why does one
 builder plant 18 sentinels on one tile in a tree whose source says it cannot.**
+
+### 03:1x — FORWARD-PATH CONTRADICTION SETTLED. There was none: the two trees gate on different symbols.
+Both lanes parked on "docs, source and replay cannot all be right". They can.
+
+1. **`self.forward_guns` DOES NOT EXIST IN THE LOKI-8 TREE — zero references.**
+   v102's gate is
+   `(live if live is not None else SLOT_FWD_GUN) >= LOKI_FWD_GUN_CAP`, with
+   `live = _live_fwd_guns(...)` under `LOKI2B_LIVE_CAP_ON`. **v102 never gates on
+   the cumulative counter**, so the missing cliff at 3 is exactly what a LIVE
+   CENSUS predicts, and **the 19 sentinels on tile (17,16) each living 2 rounds
+   is that gate's documented failure mode** — `_live_fwd_guns`' own docstring
+   warns about reading "a census of zero as 'the cap is free' and spamming
+   turrets from across the map". The agent searched for `forward_guns`; that is
+   the wrong symbol for this tree, which is why the source looked uncapped.
+2. **`Player` IS ONE INSTANCE PER UNIT** (probed: distinct `id(self)` per unit,
+   each seeing only its own id — `bots/_probe_ident`). So Eir's
+   `self.forward_guns` is a **PER-BUILDER-BOT cumulative budget, 3 per builder,
+   not 3 per team** — which is exactly why Eir's tape shows a hard cliff at 3.
+
+**Both tapes are consistent with their own source. Nothing is wrong; a symbol
+was assumed shared across two trees that do not share it.** Same family as the
+whole night: a thing true of one population read onto another.
+
+**THE THREAD IS UNBLOCKED AND THE PLANK IS SHARPER.** Eir caps CUMULATIVELY per
+builder; v102 caps on a LIVE CENSUS that (research, measured) sits below 3 in
+96-100% of rounds — **a cap that is never approached is not a cap.** LOKI-2b made
+that conversion deliberately. **The candidate is to revert it: gate the forward
+path on a cumulative per-builder budget, as Eir still does.** Removal-shaped,
+undoing one prior iteration, which is the only shape that has gained on this
+line. **Not built tonight.**
