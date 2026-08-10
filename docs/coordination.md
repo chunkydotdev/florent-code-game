@@ -30194,3 +30194,123 @@ measured direction and an independent corroboration**, which is more than
 anything else currently in the queue has.
 **Fits the race frame:** turret mix is exactly the kind of change that moves
 kill TIME, and our losses are races lost by margin.
+
+# ============================================================================
+# 2026-08-10 23:08 CEST (`date`) — **WRAP s28 (RESEARCH ARM): PROCESS DELTAS**
+# Wrap called by Magnus. Repo process deltas only; the vault daily note is a
+# SEPARATE day-end task and is NOT this.
+# ============================================================================
+
+## STATE, VERIFIED ON LIVE SURFACES AT 23:08 — NOT ASSERTED
+- git **0 ahead / 0 behind**; working tree carries only monitor-owned daemon state
+  (`corpus/*`, `elo_history.tsv`) plus untracked probe dirs and a `.DS_Store`.
+- **v104 LIVE at 1686, rank #22, k=702.** Tape written **3.6 min** ago,
+  `ship_watch.log` 8.7 min — fresh in the DATA sense, checked.
+- **⭐ THE 17:28 SLIP REVERSED: 1641 → 1686, +28 over 18 matches**, and the low of
+  the whole episode was 1641. **The builder's refusal to roll back on a trend was
+  correct and is now measured** — the pre-committed rule never fired and the thing
+  it would have killed recovered on its own.
+- **`audit_trigger` FIRES 3/5** (was 2/5 at boot): ship cadence 0.33/hr,
+  cross-lane analysis **7.81 (down from 14.43)**, and **doc:code churn newly TRIPS
+  at 1.11**. Cross-lane halved; prose-vs-code crossed over. **My lane is the
+  largest single contributor to both and I am recording that rather than framing
+  it as someone else's number.**
+- **41 commits landed in the six hours I was dormant** — new primary currency
+  (`kill_speed_score`), LOKI-16b fired and **banked-and-unread** (its primary
+  needs a retention decoder that does not exist), overnight collector running.
+  **Nothing below should be read as current on those.**
+
+## D33. **TARGET SELECTION SITS OUTSIDE THE METHOD, AND THAT IS THE DAY**
+The crash-induction leg passed **every check we have**: pre-registered before the
+fact, 8 ADD-only amendments, placebo **exactly 0/164**, dose delivered **150
+times**, every control run to the other verdict, lock cert two-clock clean.
+**It was aimed at teams 550-860 points below us, where a perfect 5-0 pays 0.25
+rating points.** **No amount of rigour INSIDE a leg reaches the question of
+whether the leg is worth running.** Fixed as machinery, not prose:
+`tools/target_value.py`, run before a prereg, emitting a `TARGET BAND:` line.
+**And the gate's own limit, stated by its author: it only fires when someone runs
+it.** If a prereg lands tomorrow without that line and nobody notices, it is prose
+with extra steps.
+
+## D34. **I RAN AN AUDIT OF THE EVIDENCE INSTEAD OF THE CODEBASE. TWICE.**
+1. I told the builder **no decoder emits sentinel facing**, it went into the
+   prereg as a KNOWN LIMIT — and **`tools/loki9_facing.py` is a shipped tool built
+   entirely on facing**, whose docstring says *"Facing is on the wire… nothing is
+   inferred."*
+2. I asserted **vjg had never been on our ladder schedule.** We have played them
+   **8 times.**
+**Both were one grep away. D30 was written this morning about someone else and I
+committed it twice in an afternoon.**
+
+## D35. **THREE CONSTANT COLUMNS IN ONE DAY, AND ONLY ONE GUARD EVER FIRED**
+A uniform ring size of 8; a hardcoded "~20pp at best" MDE string; and **my
+all-zero win rate across seventeen teams** (lowercase `a`/`b` compared against
+uppercase). **Mine would have "proved" the reachable band was pure floor — the
+exact opposite of the truth — and killed the PANEL-3 proposal outright.**
+**The only guard that fired, all three times, was already knowing one cell's
+answer.** Not a range check, not a schema check. **Validate against a known cell
+before trusting unknown ones**, and **a column that does not VARY when the input
+varies is not a measurement.**
+
+## D36. **THE LIBRARY WAS WRITE-ONLY. CONSUMPTION WAS THE MISSING STEP, NOT THE INPUT**
+252 files, ~28k lines, **0 cited by any prereg or bot** (the builder's 1.8% was a
+substring floor; the true decision-path rate is zero). The builder read that as
+*"the input is worthless"*; **Magnus overruled it — *"why don't we just look at
+them?"*** — and the first real mining pass **explained our biggest null of the day**
+(the `can_*` family is TOTAL and `get_nearby_tiles()` returns only in-bounds tiles,
+so an idiomatically-written bot is border-immune without trying) **and produced
+the plank we shipped.** The defect was structural: **the library has no clock** —
+nothing reaches back into a file when a later measurement lands. Repaired the
+**seed text every future sweep is briefed from** (it still taught per-category cost
+scaling and only 2 of 252 files knew a r1000 win is a defeat).
+
+## D37. **A DENOMINATOR THAT SILENTLY POOLED OUR OWN EXPERIMENTS INTO THE OPPONENT'S RECORD**
+`meta_join` covers every archived replay — **rated AND unrated** — so the
+reachable-band table I supplied for PANEL-3 counted **our own prototype legs as
+opponent record.** It moved The Bisons 21.3% → **49.0%** and retired a perfectly
+normal opponent as a dead cell. **Unrated pools PROTOTYPES, ladder pools SHIPPED
+BOTS: an unrated-vs-ladder comparison is a prototype-vs-shipped comparison wearing
+a fixture-vs-fixture costume.**
+
+## D38. **THE OPPONENT'S VERSION IS THE UNPINNED CONFOUND — TWO KILLS IN FOUR HOURS**
+Ouroboros (mine) and The Bisons (the side lane's, killed by me: **their v4 shipped
+40 minutes before our v102's first game — perfectly collinear**). **We pin
+`ourver`, assert the holder, and verify `teamAVersion` on the platform for every
+leg. Nothing anywhere pins or reads THEIRS at analysis time**, and
+`ladder_games.tsv.oppver` is **NULL for all 100 Bisons games** — a null column
+reading as *"no version change"* to anything that trusts it. Now D18.
+
+## D39. **A WORD, NOT A NUMBER, REORDERED THE QUEUE**
+The agent wrote *"flat-to-slightly-up"* over quartiles **0.150 → 0.175 → 0.100 →
+0.314**. **I relayed "flat — nothing we shipped touched it,"** and the builder made
+Ouroboros the queue headline on it. Magnus challenged it; the true figure was
+**+46pp**, and the ladder-only series had been blind because **v95-v100 never
+played a rated match at all.** **The compression happened in the relay, not in the
+analysis** — the payload was correct and I summarised it wrong.
+
+## D40. **ERRORS RUN TOWARD THE WORK YOU WANT TO DO NEXT — THREE LANES, THREE INSTANCES, ONE CATCH MECHANISM**
+The builder narrowed a road they wanted open; the side lane published a blast
+radius they wanted to exist (*"I wanted a climb-band target to exist"*); I
+compressed a quartile toward a finding I wanted. **In every case the catch was
+another lane RE-DERIVING THE ARITHMETIC — never reviewing the reasoning.**
+**That is the strongest argument for the multi-lane protocol produced so far, and
+it is an argument for duplication rather than division of labour.**
+
+## WHAT MY LANE PRODUCED, AND WHAT IT IS WORTH
+**Eight cuts.** Load-bearing: **the reachability measurement** (81.2% of 3,405
+ladder games within ±60; max gap ever +167.9) which retired my own band proposal
+an hour after I made it; **game share is the currency** (`delta = 32(S−E)`,
+residual 0.0000, a 3-2 win can be negative); **the ladder-flow read** (the bleed is
+five named teams, and the low band is IMPROVING not degrading — Magnus's worry
+answered in the negative); **the sentinel siting defect** (~48% cannot shoot the
+enemy core on the round built, and the true figure is 50.4% with facing), found
+independently by a corpus autopsy and a library mine on the same afternoon.
+**The convergence is the only evidence today that arrived with its own
+replication.**
+
+## WHAT I WOULD PUT FIRST FOR A SUCCESSOR
+**Not a plank — the fact that this lane's errors were caught by peers rather than
+by its own checks, every time.** My controls fired on other people's work all day
+and never once on mine; what caught mine was Magnus asking a question about the
+board and two peers re-deriving my arithmetic. **A lane that only checks outward
+is half an instrument.**
