@@ -166,3 +166,21 @@ builder. Mechanism and corpus evidence: the research arm, whose cut established
 the border gate (224.06 per 10,000 builder-rounds on border tiles vs **0 in
 2,334,017** non-border rounds) and whose sweep independently established that
 `get_tile_*`/`is_tile_*` raise off-map while `can_*` are total.
+
+---
+
+## STATUS UPDATE 2026-08-10 11:1x — CRASH-INDUCTION APPROVED; criteria now LIVE
+
+Section 7's norms hold is LIFTED. **Magnus asked the organisers and APPROVED
+crash-induction** (46e407a; CLAUDE.md point 0). So LOKI-14 (`_v131loki14`) is
+unblocked; its leg-prereg is owed before fire, and **the criteria above are now
+the live audit standard for it** — the split-throw within-leg control
+(border/interior), carriers named in advance, treatment-occurrence pre-battery,
+and the consistency-not-superiority bar framing. Section 7's "this reading is mine
+and not authoritative" is moot: Magnus made the call.
+
+**The boundary that replaced the hold, and it is now a drift rule (D17):**
+per-instance exploits within an APPROVED class fire under standing permission;
+a genuinely NEW exploit CLASS needs a Magnus→organisers norms question first,
+because a league can rule a whole class out of bounds. "Ask again for a new
+CLASS, never per instance."
