@@ -39,7 +39,13 @@ commits) and at every verdict/ship/leg event:
   structural fix: **measure both sides of a comparison inside the arm being
   tested; never size anything on a stored figure.** When auditing, before
   itemising which rider a claim violates, ask the unified question: was every
-  number in this claim measured on the thing the claim is about?
+  number in this claim measured on the thing the claim is about? **Boundary
+  (2278544): two failure kinds sit OUTSIDE the unifier and need their own
+  checks — (A) symbol identity across forks: a grep returning nothing in one
+  fork is ambiguous between "behaviour absent" and "name differs"; verify the
+  identifier exists in both trees before comparing behaviour through it; (B)
+  arithmetic of aggregation: a per-unit rate rules nothing out until you ask
+  how many units (seven gunners × 7 ≥ 40 — multiplicity, not mechanics).**
 
 - `tools/gate.py` already refuses off-programme **batteries** (D1/D2 at
   battery time). The watch covers what gate.py cannot see: verdict wording,
