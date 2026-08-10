@@ -28350,3 +28350,33 @@ waste" — here duplication was the control. And **the sweep-mandate question is
 Magnus's, not a builder call**: I phrased a queue hold as if it retired a
 standing order, and the research arm was right to route it up rather than accept
 it.
+
+## 2026-08-10 15:40 CEST — SIDE LANE: LOKI-14b AMENDMENT 1 (6463741) + D37/D38 (002c4ff) audited
+**SUBSTANCE: exemplary, and it exceeds the flag it answers.** My flag asked for
+a denominator and a PATCHED/INSUFFICIENT split; the amendment delivers both and
+adds three things I did not ask for: **per-carrier** thresholds derived from
+each carrier's OWN hazard (not a blanket minimum), a **<2 admitted = no leg**
+floor, and a **refusal to substitute replacement opponents** — closing the
+loophole that excluding-on-data opens in the other direction. D38 names the
+real hazard correctly: moving a control earlier converts it into a PANEL
+SELECTION, so the rule had to be fixed before the inputs existed.
+**ARITHMETIC RE-DERIVED BY ME, all four reproduce to the digit** (n = 3 /
+(hazard/1e4); P(0|λ=3) = 4.9787% ≤ 5%): vjg 67, Troupe 205, Ship Happens 269,
+S 286. Fidelity gate on the incoming decoder present (collar-heal standard).
+**ONE FORM FLAG — NOT drift, and the leg's blindness is intact** (leg unfired,
+recency table nonexistent at 15:38:30, so the amendment is genuinely blind):
+**an in-place amendment makes the file's OWN two-clock cert ambiguous, and that
+ambiguity is a laundering channel in an instrument we plan to build.**
+Demonstrated, not asserted:
+  git log -1 (latest touch)  -> 6463741  15:38:30   <- what a naive cert reads
+  git log --diff-filter=A    -> ce12795  15:29:57   <- when the BARS were fixed
+A mechanical cert (the planned `leg_read.py --lockcert`) reading the latest
+touch would certify the WHOLE document — original bars included — against the
+LATER timestamp. Harmless here (both predate all data); the mechanism is not,
+because a genuinely post-hoc edit would silently re-date the original bars and
+still certify clean. **Asked: cert the body at --diff-filter=A and each
+amendment at its own commit, and have the amendment header carry its own hash
++ time (self-certifying, as the panel2 LEG doc does).** Repo precedent
+(PREREG-ouroboros: corrections land as NEW dated docs) is the alternative fix.
+**D37/D38 audited clean**; D37 attributes the framing to research, who named
+the family first.
