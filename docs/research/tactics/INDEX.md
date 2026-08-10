@@ -800,6 +800,48 @@ Any survival, heal or screening figure must name which one it came from.**
   turret-bearing second fixture is a STANDING PREREQUISITE before any repair plank is trusted,
   not an option.**
 
+## ⚙ THE ONE STRUCTURAL FIX — **MEASURE INSIDE THE ARM YOU ARE TESTING. NEVER SIZE ANYTHING ON A STORED FIGURE.** (2026-08-10, s26)
+
+**Nine distinct failures across two lanes in one session turned out to be one fault wearing
+different clothes.** Every one of them was a number that was true **somewhere** and got used
+**somewhere else**:
+
+| what it was measured on | what it got used as |
+| --- | --- |
+| a **view** (join-mapped subset, n=212) | the **population** (true n=273) |
+| an **assumed capacity** (1 stack/tile) | a measured **utilisation** (25%) |
+| an **assumed game length** (1000 turns) | a per-turn **rate** |
+| a **battery** (480 arena files) | a **fixture class** ("the arena") |
+| a **three-line window** | a **file** ("byte-identical") |
+| **turret + builder events** pooled | a **builder-only** benchmark |
+| an **Eir-era archive** (92% of games) | the **current line** |
+| one **vivid probe observation** | a **rate** |
+| a **denominator** chosen after seeing the split | a **comparison** (same claim flips sign) |
+
+**AND THE FIX IS THE SAME IN ALL NINE CASES, which is why it is worth stating once instead of
+nine times: MEASURE BOTH SIDES OF YOUR COMPARISON INSIDE THE THING YOU ARE TESTING.**
+
+- A **paired within-arm control** is immune to era drift **by construction** — both arms are
+  the same bot on the same day, so it does not matter what the archive is made of.
+- A **control arm in the same fixture** is immune to fixture contamination — a probe that
+  cannot see your buildings cannot see them for either arm.
+- A **rate with both numerator and denominator from the same population** cannot be a view.
+- **Measuring both arms** removes the need to divide by an assumed constant at all.
+
+**THE DEMONSTRATION, and it is the reason this block exists.** Three planks were sized in one
+evening. **Two died of era drift before they ever fired** — a forward-gunner plank motivated by
+`57.2% dead inside 30 rounds` (Eir tape; the current line plants ~5 forward gunners in 75
+games), and a facing plank motivated by `13.2%` on-line and `61.4%` violation (Eir). **The
+third survived — and NOT because anyone foresaw the era problem.** It survived because its
+pre-registration **pinned every bar to a paired within-leg control** and **pre-declared its
+currency channel closed**. **The discipline that saved it was subject-and-population hygiene,
+applied for unrelated reasons, and it turned out to be the same defence.**
+
+**⇒ PRACTICAL RULE FOR A SUCCESSOR: before using ANY figure from this library, from `HANDOVER`,
+or from any deliverable to size a plank — ASK WHICH BOT, WHICH POPULATION, AND WHICH FIXTURE IT
+WAS MEASURED ON. If the answer is not "the arm I am about to run", do not size on it. Use it to
+choose WHAT to test, never HOW MUCH to expect.**
+
 ## ⛔⛔ READ FIRST — **MOST OF THE STANDING CONTEXT BELOW DESCRIBES EIR, NOT THE LIVE BOT** (2026-08-10, s26, `prior-tracing-2026-08-10.md`)
 
 **This is ONE fact, not seven separate caveats: the section below was built on an archive that
