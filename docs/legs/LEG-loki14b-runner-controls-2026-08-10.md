@@ -68,3 +68,37 @@ rating 1658.** No rated exposure was spent building or testing this runner.
   be provoked cheaply without leaving a foreign bot live. It is the one branch
   in this runner accepted on construction rather than on evidence, and it is
   recorded here as such rather than left silent.
+
+---
+
+## POST-FIRE: THE RATE-LIMIT DEFERRAL BRANCH FIRED ON THE FIRST CYCLE
+
+Named above as *"not yet exercised"*. It fired within seconds of the leg
+starting, and behaved exactly as designed:
+
+```
+13:49:57Z cycle 1: v107 LIVE, firing 4 carriers
+13:49:59Z rate-limited on 4a7f4c9a -- NOT waiting with v107 live; deferring to next window
+13:50:04Z rolled back to v104, VERIFIED
+13:50:04Z cycle 1: fired 0/4 (total 0)
+```
+
+**v107 held the slot for 7 seconds.** Had this runner copied `panel2_cal.sh`'s
+wait-and-retry — the plausible move, same symptom, same-looking fix — the
+prototype would have been live for **5½ minutes** on a window it could not
+outwait, and then likely again on the retry. **The inversion paid on the very
+first cycle.** Holder verified `v104` immediately after.
+
+**MY OWN SEQUENCING ERROR, recorded because the runner absorbed it and I would
+otherwise get credit for a clean start.** I paused `panel2_cal.sh` and fired
+LOKI-14b **4 minutes after panel2's cycle 2 had spent all 5 challenges of the
+20-minute window** (13:45:58Z). Pausing a runner does not refund the budget it
+already spent. Cost: one rejected attempt, which itself counts against the
+limit. **The runner's design converted my error into a 7-second exposure and a
+deferral instead of a contaminated or half-filled window** — which is the whole
+argument for putting the pre-commitment in the script rather than in attention.
+
+**Standing note for anyone switching arms:** the rate-limit budget is shared
+across ALL unrated/test challenges and is not per-runner. Check when the
+outgoing runner last fired before starting the incoming one; the safe gap is
+~20 minutes from its last challenge, not from the moment you kill it.
