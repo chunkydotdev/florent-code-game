@@ -23834,3 +23834,62 @@ numbers. The two status pushes so far read as status by design; this one
 leads with the decision. Four surfaces currently say HOLD in the same words
 (both lanes' committed records, the decision doc, ship_watch on disk); the
 builder's absence costs execution capacity, not judgement capacity.
+
+## commit after `5125c2c` (git time is the authority) — RESEARCH ARM: **THE ENVELOPE IS LOOSE (50.80%) EXACTLY AS PRE-STATED. One sub-worry retires; the rate MOVED on v102; and the pre-committed limit binds — stderr counter, builder's lane.**
+
+Deliverable: **`docs/research/idle-round-envelope-2026-08-10.md`**. **260 v102 ladder games / 52
+matches, 3,665 units, 545,847 eligible unit-rounds, `pop_v102.tsv` sha `f56cbe26…`.**
+
+### THE BOUND
+**50.80% of our eligible unit-rounds pass with no action** (48.97% after the engine's own hard
+gates). **By type: builder 25.78%** (58.6% of the denominator), core 77.21%, gunner 91.32%,
+sentinel 81.69%, launcher 96.81%. **Controls: FIELD 53.15% standardised onto our own type×band
+mix; Eir v71-81 44.94% standardised.**
+**⇒ TOO LOOSE TO RETIRE THE WORRY, exactly as pre-registered. The pre-committed limit therefore
+binds: a stderr counter in the bot, builder's lane — NOT a cleverer decode. The agent named
+three further decodes it specifically declined.**
+
+### **TWO THINGS WORTH CARRYING**
+1. **A TIGHT SUB-BOUND THAT DOES RETIRE ONE WORRY: a builder that never acted ONCE across ≥50
+   eligible rounds is 1 of 1,516 — 0.066%** (field 2.52%). **⇒ "A unit is permanently dead in
+   the water" is retired. It says nothing about conditional paths**, which is where an
+   out-of-vision query would live.
+2. **THE RATE MOVED, AND THAT IS THE EVIDENCE CLASS I PRE-STATED AS INFORMATIVE.** Builder idle
+   sat at **11.4-21.6% across thirteen earlier shipped versions (v65-v94, median ≈14%)** and
+   reads **25.78% on v102 — highest of fourteen, +12.9pp on v94.**
+   **⚠ AND IT CANNOT BE READ AS A DEFECT: LOKI-8 ships documented `hold station` / `launchwait`
+   / nav-stall behaviour Eir did not have, and sentinel idle FELL 93.6 → 81.7% in the same
+   version.** **This cut cannot split them, and says so.**
+
+### **AND THE INSTRUMENT DEMONSTRABLY RESOLVES REAL TURN-LOSS — which is what makes the loose bound meaningful rather than empty**
+**TLE — the same observable signature as a swallowed exception — accounts for 776,454 field
+idle builder-rounds (7.46%) and 2,772 (2.61%) of our opponents', against ZERO on our side.**
+**So the classifier can see turn-loss when it is there; our exception turn-loss, if any, is
+hiding inside the 25.78% and is indistinguishable from deliberate idling by construction.**
+
+### FOUR CORRECTIONS TO MY BRIEF, and the third is the one that matters
+1. **A trap I did not list, which would have deflated the rate on exactly LOKI's units:
+   `moveBuilderBot` is NOT proof of a self-move** — **a launcher throw relocates a builder and
+   emits it with no `setMoveCooldown`.** Identity checked before trusting the classifier:
+   **moves (741) − `setMoveCooldown` (721) = launcher `setActionCooldown` (20), exactly.**
+2. **My "both cooldowns, mutually exclusive" eligibility gate is NEAR-VACUOUS** — emitted
+   cooldown values are a closed alphabet, so after the end-of-round decrement everything except
+   a sentinel is eligible again next round. **Fine for an upper bound; it does no work.**
+3. **MY MARKER LIST WAS INCOMPLETE IN THE WAY THAT MATTERS: `write_store()` LEAVES NO TRACE, and
+   LOKI-8 writes the store in the builder path.** **That — not `destroy()` — is the single
+   largest reason the envelope is an UPPER bound.** (`destroy`/`self_destruct`/`resign` have
+   zero call sites in v102, re-verified; **but they inflate the FIELD row by an unknown amount,
+   so the field number must not be quoted as a field behaviour.**)
+4. **proto3 default omission: `Team.TEAM_A == 0`, so `coreConvertAmmo` for team A carries no
+   team field.** An early draft dropped every team-A conversion and **over-counted our core's
+   idle by 5,649 unit-rounds.**
+
+**Instrument: seven corruption arms firing separately (`none_act` 100.00%, `all_act` 0.00%,
+`suppress_move` +30.91pp, `suppress_heal` +9.75, `suppress_build` +2.83, `suppress_fire` +2.55,
+`suppress_convert` +2.43); cooldown sim 0 violations in 62,225,279 unit-rounds; ammo ledger
+reconstructs the engine's balance exactly, 0 mismatches in 6,309,310 team-rounds; decode
+5,985/5,985 files, 0 errors.**
+
+**Side note recorded rather than smoothed: the archive grew mid-run (keeper live), v102 250 →
+260 games, headline 50.93 → 50.80%. Both figures recorded so the drift is visible; all tables
+are the 260-game freeze.**

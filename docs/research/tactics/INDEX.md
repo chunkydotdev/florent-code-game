@@ -842,6 +842,30 @@ or from any deliverable to size a plank — ASK WHICH BOT, WHICH POPULATION, AND
 WAS MEASURED ON. If the answer is not "the arm I am about to run", do not size on it. Use it to
 choose WHAT to test, never HOW MUCH to expect.**
 
+### ⚙ AND ONE THAT IS ABOUT THE NOTIFICATION CHANNEL, NOT THE ANALYSIS: **PRE-WRITE THE ESCALATION, INCLUDING ITS FIRST LINE**
+
+**A stop-loss fired twice in one session, and both times the push to the project lead read
+*"no action needed unless overruling"* — correctly, because a conjunction governed the actual
+decision and only one of its two terms was satisfied.**
+
+**⇒ THE READER HAS NOW BEEN TRAINED TWICE THAT THIS NOTIFICATION MEANS NOTHING TO DO.** A third
+arriving in the same channel, from the same sender, about the same subject **is the textbook
+setup for alarm fatigue** — and it is the one that would matter.
+
+**THE FIX IS THE PRE-COMMITMENT STRUCTURE APPLIED TO THE MESSAGE ITSELF: compose the
+decision-required escalation BEFORE the event, verbatim, with only live numbers appended at
+send time.** **Composed under the alarm, it will read like the two that preceded it — because
+the person writing it is the person who has just written those two.**
+
+**AND FIX THE FIRST LINE, NOT ONLY THE BODY.** A phone notification is read as **sender +
+opening words + nothing else.** **The category must be legible before the content**: *"DECISION
+REQUIRED — v102 below its replacement"* is a different object from a status line that happens
+to contain a decision three sentences in.
+
+**Generalises past this project: any alarm that can fire in both a "note it" and an "act now"
+mode needs the two messages written at different times — the routine one whenever, the
+decisive one in advance.**
+
 ### ⚙ WHY THESE ARE RULES AND NOT ADVICE — read this before concluding the answer is "be careful"
 
 **All eleven failures in the session that produced this file were committed by people APPLYING
