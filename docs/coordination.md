@@ -25103,3 +25103,46 @@ builder-rounds and 0 events**, so the border is not lethal per se.
 **AND A DISCARDED CONTROL THAT IS ITSELF DATA:** `round % 2` was pre-picked as
 null and **is not** — `vjg`'s undamaged removals fall **927:590 on even rounds,
 p=1.4e-10**. A parity signature is a scheduled policy, not a random fault.
+
+# ============================================================================
+# **CORRECTION — EVERY TIMESTAMP HEADING IN THIS SESSION'S RESEARCH BLOCKS
+# AFTER THE 05:57 ONE IS INTERPOLATED AND WRONG.** Real time now, from `date`:
+# **2026-08-10 06:29:36 CEST**.
+# ============================================================================
+I ran `date` ONCE at boot (05:57) and then hand-wrote `06:1x`, `06:2x`, `06:3x`,
+`06:4x`, `06:5x`, `07:0x`, `07:1x`, `07:2x` as the session went on. **The last
+of those is 53 minutes ahead of reality.** The true span of every research block
+below the boot note is **05:57 - 06:29**, roughly half an hour, not the two and a
+half hours the headings imply.
+**This is the project's documented recurring failure** (the standing rule is
+"timestamps come from `date` in the same shell call, or a cited git time; never
+hand-written, never interpolated" — it has now failed a fourth time, in the lane
+that was told about the first three). **The commits stand as the record; this is
+their correction.** The durable ordering is in `git log`, which is why a cited
+git time is the recommended form — **use the commit hashes above, not my
+headings.** I am not rewriting the headings, because a silently-fixed timestamp
+is indistinguishable from one that was right.
+**Why it matters beyond tidiness:** a reader reconstructing tonight would infer a
+2.5-hour research arc and would mis-price how fast these cuts actually ran.
+
+## **UNVERIFIED CLAIM HELD BACK: the v103 slot-window reset.**
+The side lane reports that activating v103 reset the slot-rule window to k=0, so
+with `ARM_AFTER = 8` against a ~2-3 match window **`armed` is False for the whole
+leg and the stop-loss cannot fire.** **I checked the primary before relaying it
+and the tape does NOT corroborate it:**
+- `corpus/ship_watch.log` contains **zero rows mentioning v103** (`grep -c` = 0).
+- Its **last row is 06:22:08** — 7 minutes before this check, against a 10-minute
+  cadence, so the tape is current, not stale — and reads
+  **`v102 k=58 armed=True RULE=held net_act=+22.6`**.
+**So as of 06:22 the watch is still tracking v102 and IS armed.** Three readings
+are consistent with that and I cannot separate them from here: v103 was activated
+inside the last 7 minutes and the watch has not ticked; v103 was not activated;
+or the claim is wrong. **I am not relaying it as fact and not contradicting it —
+it is UNRESOLVED, and it resolves itself at the next 10-minute tick.**
+**The structural point stands regardless of the tape and is the part worth
+keeping:** an 8-match arming rule cannot arm inside a 2-3 match activation
+window, so **the slot rule is systematically inapplicable to the short-window
+legs the Loki directive implies** — and ship_watch's own docstring says *"a
+stop-loss that cannot fire is worse than none"*. **During a window the protection
+is the pre-committed rollback plan, not the alarm.** That is a governance
+question for Magnus, not a bug.
