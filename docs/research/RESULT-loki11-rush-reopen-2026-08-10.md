@@ -187,3 +187,68 @@ and the activation window was shorter than one interval. **A trick leg on this
 procedure costs zero rated exposure, not the 2-3 matches every prereg so far has
 priced.** That materially changes the cadence arithmetic in favour of buying
 power.
+
+---
+
+# FINAL — POWER BOUGHT. **n=50 vs n=50. THE EFFECT IS EXACTLY ZERO.**
+
+Two further windows fired (one control on v102, one treatment on v103), same
+pinned panel, same 5 maps. **Both cost zero rated ladder exposure.**
+
+| | control (v102) n=50 | LOKI-11 (v103) n=50 | delta |
+|---|---|---|---|
+| **`core_kill_share`** | **21/50 = 42.0%** | **21/50 = 42.0%** | **+0.0pp** |
+| `r1000_rate` (= DEFEAT) | 6/50 = 12.0% | 3/50 = 6.0% | -6.0pp |
+| our kill turns, median | 246 | **165** | |
+| our kills inside r250 | 11/21 | **15/21** | |
+
+## PER-OPPONENT — AND THIS IS THE WHOLE STORY
+
+| opponent | control | LOKI-11 | Δ |
+|---|---|---|---|
+| CtrlAltDefeat | 4/10 | 8/10 | **+4** ← the seat-flipped cell |
+| I Stone | 6/10 | 2/10 | **-4** |
+| Leviathan | 8/10 | 8/10 | 0 |
+| The Bisons | 0/10 | 0/10 | 0 |
+| gsxWins | 3/10 | 3/10 | 0 |
+| **total** | **21/50** | **21/50** | **0** |
+
+**gsxWins, which carried +2 of the +4 at n=25, is +0 at n=50.** The entire
+n=25 signal was one seat-flipped cell plus noise, and it cancelled exactly
+against I Stone when the sample doubled.
+
+## VERDICT: **NULL ON THE PRIMARY CURRENCY.** The word is written.
+
+**+16.0pp at n=25 became +0.0pp at n=50.** The prereg refused to claim the
++16.0pp because the MDE was 39pp; **doubling the sample proved that refusal
+correct rather than merely cautious.** This is the clearest vindication the
+programme has produced of not banking an under-powered result — and it cost two
+free windows to get.
+
+**The arena is NOT vindicated either.** Its replicated **-15.6 / -18.9pp** does
+not reproduce at n=50 any more than the +16.0pp did: the live answer is **zero**.
+So the pre-registered branch that fired is *"mechanisms fire, `core_kill_share`
+flat -> LABELLED NULL"*, and what it establishes about the fixture is narrower
+than either lane hoped — **the arena reported a large effect where live teams
+show none.** A road was closed on a number that live play does not reproduce in
+either direction.
+
+## WHAT SURVIVES, AND IT IS NOT NOTHING
+
+The mechanism engaged and its cost profile is real and unambiguous at n=50:
+
+* **first forward sentinel r32 vs r43** — 11 rounds earlier
+* **conveyors 20.92 vs 38.20**, harvesters 3.12 vs 5.44 — ~45% less economy
+* **our own units lost 2.76 vs 4.52** — 39% fewer
+* **our kill median 246 -> 165**, kills inside r250 11/21 -> 15/21
+* **r1000 rate halved, 12.0% -> 6.0%** (6 games vs 3 — small numbers, no claim)
+
+**Same kills, sooner, for half the economy and fewer losses.** Under
+`R1000_IS_DEFEAT` that profile is worth something on its own terms, but it is
+NOT a currency gain and will not be shipped as one. **It is a strong argument
+for the LOKI-13 economy plank rather than for this flag**: if 45% of the economy
+can be removed with the kill share unchanged, the question is where the
+remainder breaks.
+
+**The Bisons are 0/20 against us across both arms and every window.** Nothing in
+this plank touches them.
