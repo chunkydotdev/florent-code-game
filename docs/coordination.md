@@ -26352,3 +26352,60 @@ error string — while writing nothing.** A success message computed from the wr
 quantity is exactly the constant-column shape, in a shell one-liner. Redone with
 a `while IFS= read -r` loop and verified with both a positive count (9) and a
 negative control (0 on an unrelated file).
+
+## 2026-08-10 07:1x CEST — SIDE LANE: **PLATFORM PARTIALLY DOWN, THE ELO TAPE STALLED, AND MY OWN ALARM WENT BLIND BEFORE I NOTICED**
+
+**Verified 07:14 CEST:**
+
+    fcode match list --type unrated --json   -> Error: True   (no stdout)
+    fcode match list --type ladder  --json   -> Error: True   (no stdout)
+    fcode submission list --json             -> Error: True   (no stdout)
+    fcode status --json                      -> WORKS (valid JSON; stray "Error: True" on stderr)
+
+**`elo_history.tsv` last row 07:05 against a 5-minute cadence — a missed cycle —
+while `elo_logger` (PID 25811) is ALIVE.** It consumes `status` (working) **and
+`submission list` (erroring)**, which is the likely cause.
+
+### THE FAULT WAS IN MY OWN GUARD, AND IT IS THE ONE I HAVE BEEN FLAGGING ALL NIGHT
+
+**My floor watch tailed the elo tape. A stalled tape produces SILENCE, and
+silence read as "no breach."** I armed that guard two hours ago, selftested both
+its branches, and reported it as a verified wake path — **and it could not
+distinguish "the rating is fine" from "there is no data."** That is precisely the
+silence-is-ambiguous fault this lane has flagged at both peers tonight.
+
+**RE-ARMED with a third branch and a deliberate no-fire case, all four shown able
+to produce their verdict:**
+
+    breach:    FIRES at 1549                       (threshold 1550)
+    version:   FIRES v102 -> v199
+    staleness: FIRES at age 900s                   (threshold 780s = 13 min)
+    no-fire:   silent on a healthy row             (correct)
+
+It now emits **"THE FLOOR WATCH IS BLIND"** rather than emitting nothing.
+
+### THE SAME DEFECT IS LIVE IN `ship_watch`, AND ITS OUTPUT LOOKS IDENTICAL EITHER WAY
+
+ship_watch wrote at **07:12:09** — `rating=1599 k=63 armed=True RULE=held` — **but
+it reads the elo tape, so those are 07:05 numbers presented as current.** A
+stalled tape does not make it fail; **it makes it confidently report stale state**,
+and it will keep logging `RULE=held` off a frozen rating for as long as the stall
+lasts. **Flagged to the builder with a one-field suggestion (emit the age of the
+newest tape row, or refuse a verdict beyond ~2 cadences) and an explicit "not
+now" — they were right earlier that hasty surgery on the stop-loss is how it
+broke twice.**
+
+### CONSEQUENCE FOR THE QUEUE
+
+**LOKI-13's lock cannot be certified while `match list` is down** — the platform
+`createdAt` is the second clock. Certification is OWED and BLOCKED, not skipped.
+The prereg's git author time is already fixed and unforgeable, so nothing is lost
+by waiting.
+
+### THE GENERALISATION, since this is the fourth instance tonight
+
+Every version has been the same: **a check whose failure mode is silence, in a
+system where silence is the normal state.** The general fix is not "check
+harder" — it is **make the instrument assert liveness, not just alarm on
+badness.** A guard that only speaks when something is wrong cannot tell you it
+has stopped watching.
