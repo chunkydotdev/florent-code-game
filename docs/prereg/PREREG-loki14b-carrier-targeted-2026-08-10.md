@@ -523,3 +523,65 @@ and unanswered: is there any opponent AT OR ABOVE our rating carrying this
 signature?** The census left **four teams UNCLASSIFIED rather than immune**, and
 that set — not the carriers — is now the decisive cut. Archive work, no holder
 time.
+
+---
+
+# AMENDMENT 6 — STOP RULE, ON MAGNUS'S CLIMBING RULING
+
+**Committed before the first accepted challenge.** Magnus, 2026-08-10, verbatim:
+*"I guess a vulnerability is not relevant if it's too far below our ELO, we care
+about climbing, killing the teams above us helps us a lot."*
+
+That is a **prioritisation directive on the currency**, and it lands on this leg
+mid-flight: the carriers are **806–1107 against our 1658**.
+
+## The decision, and it is the builder's
+
+**The leg CONTINUES, but only far enough to buy the EXISTENCE PROOF, and then it
+releases the rate budget.**
+
+**Why not stop outright.** LOKI-14's null is ambiguous between *"the mechanism is
+dead"* and *"our panel was immune"*, and **that ambiguity is the only thing this
+leg exists to resolve.** Left unresolved it sits in the record permanently and
+every future exploit decision inherits it. The most valuable single outcome is
+arguably the **negative** one: a zero **with natural crashes present** closes the
+road for real and stops us spending on it — which serves the climbing currency
+directly, by deleting a seam rather than mining it.
+
+**Why not run it to n=25.** Under the ruling, additional precision about a
+downward-only exploit buys nothing for climbing, and **the rate budget is the
+binding constraint on everything** — 5 per 20 minutes, shared, and PANEL2-CAL
+(which repairs the instrument every currency verdict depends on) is paused at
+13/25 waiting for it.
+
+## The rule, and why it is not a loosening
+
+**Run until the leg's OWN PRE-REGISTERED DOSE GATE is met — ≥150 border throws —
+then stop and hand the budget back to PANEL2-CAL.**
+
+The body already makes 150 the gate (*"ANSWERED NOTHING if fewer than 150 border
+throws land"*). **The "25 matches" figure was a PROJECTION for reaching that
+gate, never a bar.** LOKI-14 produced 150 border throws in 15 matches (~10/match),
+so **4 cycles × 4 carriers = 16 matches ≈ 160 throws.** Concretely: **stop after
+cycle 4, decode, and extend ONLY if the throw count is under 150.**
+
+**This does not loosen anything** — the **≥5 CONFIRMED bar is unchanged**, the
+dose gate is unchanged, and the placebo is unchanged. Stopping at the gate makes
+the leg *less* likely to confirm, not more, so it cannot flatter the result.
+**It is a stop rule fixed before any data, which is the only kind worth having.**
+
+## What the ruling makes decisive, and it is not this leg
+
+**Does ANY team at or above our ~1658 carry a nonzero border hazard?**
+Archive-only, costs no holder time, and it does not wait for the leg. **If the
+answer is none, the road is structurally irrelevant to climbing WHATEVER 14b
+returns** — and it is then deprioritised on Magnus's currency rather than on the
+mechanism. If some strong team does carry it, **that team was always the
+interesting panel and these four never were.** The census left **four teams
+UNCLASSIFIED rather than immune**; that set is the cut.
+
+**Programme-level question, surfaced to Magnus and NOT decided here:** if
+vulnerabilities are systematically discoverable *downward* — the "rich downward,
+empty upward" asymmetry the tactics sweeps found independently — then the exploit
+hunt may be mining a seam that does not pay for climbing. **That is a question
+about the LOKI line's premise and it is Magnus's to answer, not a lane's.**
