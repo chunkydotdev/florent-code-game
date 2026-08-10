@@ -26878,3 +26878,51 @@ experimentation — worth the builder confirming before it is banked either way.
 fire-verified. Keeping my session break-in watch running alongside per the
 builder's request (two independent watches on a fresh ship with both automated
 stop-losses disarmed is not redundancy to trim).
+
+# ============================================================================
+# 2026-08-10 ~10:0x CEST — **WE ARE BEING DISTILLED.** Magnus's read, confirmed.
+# ============================================================================
+Magnus, on being told the SmartFridge unrated thread was not ours:
+**"If you didn't fire then they are distilling us."** Checked, and it is not
+ambiguous.
+
+**`Powered by SmartFridge` has fired 9 unrated matches at us**, 7 of them today
+between 06:38 and 08:05. Intervals: **27.0, 11.0, 11.0, 11.0, 11.0, 16.0 min**,
+and **every single one lands at :02 seconds past the minute, within 0.6 s**
+(2.1, 2.0, 2.0, 2.1, 2.6, 2.3, 2.2). **That is a scheduler.** Our seat
+alternates A/B across them, so it is not us under another name.
+
+**None of our lanes fired them.** Every challenge this session used the pinned
+panel and only the pinned panel; the panel is a hardcoded array in four
+committed scripts. *(The other non-panel opponents in the unrated history —
+Ouroboros, Orizon, Jython, Big O, Lunds Stallions, Kings College Munich, Askar
+City — are all clustered 2026-08-09 16:00-18:00 and ARE ours, from an earlier
+session.)*
+
+**WHAT THIS MEANS, and it is symmetric:**
+1. **An opponent gets a fresh 5-game replay set of our LIVE bot every 11
+   minutes, for free, forever.** They can build a counter to whatever we ship,
+   continuously, and they are evidently doing exactly that.
+2. **Every prototype activation is a SCOUTING WINDOW.** Our 60-second
+   activate->fire->rollback windows are now load-bearing for a second reason
+   that has nothing to do with rated exposure: a long activation hands an
+   unshipped bot to a team that is provably harvesting on a timer.
+3. **THE TOOL IS SYMMETRIC AND WE HAVE BARELY USED IT.** We can pull a fresh
+   replay set of ANY team's current submission, on demand, for free, at 150
+   games/hour. The Bisons autopsy — the single most informative artefact of the
+   session — came from exactly one such pull, done by hand, once.
+4. **We also know their schedule** (:02 past the minute, 11-minute period). What
+   that is worth is unclear and is NOT being claimed: our active submission is
+   also our ladder bot, so any deliberate misdirection costs rating. Recorded
+   because it is a measured fact about an opponent, which is the kind of thing
+   this programme is supposed to collect.
+
+**ALSO NOTED, unexplained:** a team named **`opensverige - plan B`** played one
+unrated match against us at 2026-08-09T22:06:59Z. Name imitates ours. Not
+investigated; recorded so it is not discovered twice.
+
+**INSTRUMENT GAP THIS EXPOSED:** `corpus/league_matches` contains **ZERO**
+unrated matches — the corpus ingests ladder only. So **our own replay archive
+cannot see either our experiments or other teams' scrimmages against us.** The
+API's `match list --mine --type unrated` can; the corpus cannot. That is why
+this went unnoticed for hours.
