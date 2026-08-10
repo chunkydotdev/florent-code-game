@@ -244,3 +244,48 @@ those 164 in its `PROVENANCE:` line** — what distinguishes its treatment from
 the interior arm that already returned zero at the band we care about. If the
 answer is "throw distance", that is a dose parameter and it has to be
 pre-registered as one.
+
+---
+
+## ⚠ EARLY DOSE READ AT 8 MATCHES: THE 150-THROW GATE WILL NOT BE MET
+
+Research flagged that **"8 more challenges" and "80 more throws" are different
+quantities and only one of them is the bar.** Decoded rather than assumed, on
+the 8 banked matches (`corpus/throws.tsv`, keyed on the `file` column):
+
+```
+70 throw rows across 8/8 matches   kinds: EXILE 27, INSERT 43
+per-match: min 2, median 9, max 17, mean 8.8
+PROJECTION at 16 matches: ~140 throws TOTAL
+```
+
+**LOKI-14 produced 683 throws / 314 kidnaps across 15 matches — ~45 throws per
+match. These carriers yield 8.8. That is roughly 5× lower**, and the 140
+projection is **all** throws, of which border destinations are a subset (LOKI-14
+split 150 border / 164 interior on its kidnaps). **So the border arm lands well
+under 150 and the leg's own gate binds.**
+
+**CAVEAT, stated so this is not over-read:** `throws.tsv` is a different decoder
+from the prereg's, and its `EXILE`/`INSERT` classes are not the prereg's
+`border`/`interior` arms. **This is an early indication of YIELD, not the
+authoritative dose count** — the prereg's own decode is the one that decides.
+
+**THE DECISION, AND IT IS PRE-COMMITTED BY THE PREREG:** the body says
+*"ANSWERED NOTHING if fewer than 150 border throws land"*, and Amendment 6 says
+*"extend ONLY if the throw count is under 150"*. **The extension is refused.**
+At 4.4 border throws/match it would take ~34 further matches (~9 cycles, ~3
+hours of the shared budget) to reach the gate — **spent closing a road
+Amendment 8 already showed cannot pay for climbing** (a 5-0 against these four
+pays 0.25–1.18 rating points), while PANEL-3 waits for that same budget.
+
+**So the expected read-out is ANSWERED NOTHING — and that is not nothing.**
+"The treatment cannot be DOSED against these opponents" is itself a finding, and
+it has a precedent in this same family: **Leviathan gave 0 kidnaps in 15 games
+because it never put a builder inside our d²≤2 pickup ring.** A kidnap needs the
+victim to come to us. **A weapon that requires the opponent's cooperation to
+deliver is a weapon with an availability problem, and that belongs in the
+record next to its hazard numbers.**
+
+**Cycle 5 still runs** — it is already scheduled, costs one window, and a larger
+denominator makes the yield statement firmer. **The extension beyond it does
+not.**
