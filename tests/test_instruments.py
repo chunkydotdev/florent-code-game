@@ -33,6 +33,7 @@ import csv
 import re
 import sys
 import unittest
+from datetime import datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -198,15 +199,43 @@ class TestAuditTriggerPredicate(unittest.TestCase):
         A test whose truth changes with the wall clock is an alarm on the team's
         activity wearing a unit test's clothes. Both directions now run on
         fixtures, and both are asserted, so it cannot pass vacuously.
+
+        REPAIRED 2026-08-10 s28 — AND THE PREVIOUS REPAIR IS WHY IT BROKE. The
+        s26 rewrite above de-live-ified `hours` and the row CONTENTS, then dated
+        those rows with the LITERAL `2026-08-09T10:00`. `ship_cadence` discards
+        any row older than `datetime.now() - 24h`. So on 2026-08-10 the entire
+        fixture aged out of the window, the check counted 0 transitions, and the
+        test failed reporting `0.0` — i.e. **the same wall-clock coupling it was
+        rewritten to escape, one layer down and one day later.**
+
+        THAT FAILURE WAS THEN READ AS A FINDING ABOUT THE INSTRUMENT. The s27
+        HANDOVER recorded it as proof that `audit_trigger`'s ship-cadence signal
+        "would summon an audit on a normal working day", and left it red on
+        purpose on that basis. **The check was never miscalibrated.** Pinned to
+        a fixed clock it returns 0.60/hr for the normal day (ok) and 0.10/hr for
+        the stalled one (trips) — correct in both directions.
+
+        A RED TEST IS EVIDENCE OF A DEFECT, NOT EVIDENCE OF *WHICH* DEFECT.
+        This one named the wrong component for an unknown length of time, and
+        the naming was propagated into HANDOVER as an instrument fact.
+
+        `now` is now pinned alongside `elo` and `hours`, so no clock reaches
+        this test at all and it cannot rot a third time.
         """
+        BASE = datetime(2026, 8, 9, 10, 0)
+
         def rate_for(activations, hours):
             rows, tag = [], "v1"
             for i in range(activations + 1):
-                rows.append([f"2026-08-09T{10 + i // 6:02d}:{(i % 6) * 10:02d}",
-                             "1500", str(i), tag])
+                when = BASE + timedelta(minutes=10 * i)
+                rows.append([when.strftime("%Y-%m-%dT%H:%M"), "1500", str(i), tag])
                 tag = f"v{i + 2}"          # every row is a new activation
             self.mod._OVERRIDE.clear()
-            self.mod._OVERRIDE.update({"elo": rows, "hours": hours})
+            # Pin the clock the cutoff is measured from, not just the rows.
+            self.mod._OVERRIDE.update({
+                "elo": rows, "hours": hours,
+                "now": BASE + timedelta(hours=activations // 6 + 1),
+            })
             try:
                 return self.mod.ship_cadence()[0]
             finally:

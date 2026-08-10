@@ -7,9 +7,17 @@
 #
 # WHY A ROTATION AND NOT TRUE PARALLELISM: only ONE submission can be active at
 # a time, so arms cannot run simultaneously — but they do not need to. The rate
-# limit allows one 5-match window per 10 minutes, so the windows are the scarce
-# unit and they can be dealt out round-robin. Each arm accrues 25 games per
-# cycle; a 4-arm cycle is ~40 min and puts every arm at n=100 in ~2.7 hours.
+# limit allows one 5-match window per 20 MINUTES (corrected s28 2026-08-10 off
+# the CLI's own message; this said 10 and slept 620s), so the windows are the
+# scarce unit and they can be dealt out round-robin. Each arm accrues 25 games
+# per cycle; at the true cadence a 6-arm cycle is ~2h.
+#
+# ⚠ STILL DEFECTIVE, DO NOT RESTART UNATTENDED WITHOUT FIXING fire():
+# fire() retries a rejected challenge 3x at 25s and then GIVES UP, printing
+# "fired 3/5". Under a window it cannot outwait that drop is systematic and
+# always lands on the TAIL of the id list, starving the same cells every time.
+# tools/panel2_cal.sh shows the fix: wait out the window, retry the same cell,
+# and rotate the starting cell so a residual drop cannot bias one opponent.
 #
 # THE INCUMBENT IS NOW v104 "Loki v2" and it is the CONTROL — its windows cost
 # no activation at all, which is why it is dealt first in every cycle.
@@ -71,7 +79,7 @@ for cycle in $(seq 1 12); do
       fire $out "$label" "$ver"
       back || echo "$(date -u +%H:%M:%SZ) ** $label rollback unverified **"
     fi
-    sleep 620
+    sleep 1230   # 20-min rate-limit window + margin (s28 correction)
   done
   echo "=== cycle $cycle done: $(for a in $ARMS; do o=${a##*:}; echo -n "$(basename $o)=$(grep -c matchId $o 2>/dev/null || echo 0) "; done)"
 done

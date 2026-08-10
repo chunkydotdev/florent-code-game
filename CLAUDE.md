@@ -374,10 +374,25 @@ exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
 Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
 it's a free tool meant to be used."* **This retires throughput caution as a
 reason not to test.** The only constraint is the platform's own:
-**5 test/unrated matches per 10 minutes** (learned by hitting it; **rejected
-attempts appear to count**), shared across `match unrated` AND `match test`.
+**5 test/unrated matches per 20 minutes** (**CORRECTED s28, 2026-08-10 15:0x —
+this said 10 MINUTES and the CLI now says otherwise, verbatim: `Error: Rate
+limit exceeded: max 5 test/unrated matches per 20 minutes`**); **rejected
+attempts appear to count**; shared across `match unrated` AND `match test`.
 Matches complete in ~15 s, so **the rate limit is the ENTIRE cadence
-constraint** — ceiling ~150 games/hour.
+constraint** — **ceiling ~75 games/hour, half what this file claimed.**
+**Evidence it CHANGED rather than always having been 20:** every s27 arm filled
+its five panel cells uniformly (v104 7/7/7/6/6, loki15 7/7/6/6/6, confirm 4/4/4/4/4)
+on a 620 s inter-arm cadence — impossible under a 20-minute window, which would
+have starved the tail of the id list every time.
+**THE FAILURE MODE THIS CREATES, and it is silent:** `fanout.sh`'s `fire()`
+retries a rejected challenge three times at 25 s and then gives up, logging
+`fired 3/5` and moving on. Under a window it cannot outwait, that drop is
+**systematic and always lands on the SAME cells** — the tail of the id list —
+so the panel starves exactly the cells it is supposed to measure. Any runner
+must **wait out the window and retry the same cell**, and **rotate its starting
+cell** so a residual drop cannot bias one opponent. `tools/panel2_cal.sh` does
+both; `fanout.sh` is patched to the 20-minute cadence but still drops on retry
+exhaustion — fix it before that rotation is restarted.
 
 **AND THE RATED COST IS ZERO, MEASURED.** `fcode match unrated` plays the ACTIVE
 submission, so a prototype leg needs an activation — but ladder pairings land

@@ -123,7 +123,22 @@ def ship_cadence():
     STANDING CAUTION: every "analysis is outpacing decisions" reading taken
     before this fix is suspect, including the ones both arms acted on tonight.
     """
-    cutoff = datetime.now() - timedelta(hours=CHURN_HOURS)
+    # `now` is overridable for the SAME reason `elo` and `hours` are, and its
+    # absence was a live defect for an unknown length of time (found s28,
+    # 2026-08-10). The sibling test below pinned `hours` and the row CONTENTS
+    # but dated those rows `2026-08-09T10:00` — a literal. Once the wall clock
+    # passed 2026-08-10T10:00 every fixture row fell outside `now - 24h`, the
+    # loop counted ZERO transitions, and the test failed reporting `0.0` as a
+    # cadence stall. It was then recorded in HANDOVER as proof that the CHECK
+    # is miscalibrated and "would summon an audit on a normal working day."
+    # IT IS NOT. With the fixture dated relative to the same clock the cutoff
+    # uses, the check returns 0.60/hr on the normal day (ok, threshold 0.5) and
+    # 0.10/hr on the stalled one (trips). THE FIXTURE ROTTED, NOT THE CHECK —
+    # which is the exact family the sibling docstring says it was rewritten to
+    # escape: it de-live-ified `hours` and left the timestamps live, so the
+    # test's truth still changed with the wall clock, just a day later.
+    now = _OVERRIDE.get("now") or datetime.now()
+    cutoff = now - timedelta(hours=CHURN_HOURS)
     rows = _OVERRIDE.get("elo") or list(csv.reader((ROOT / "elo_history.tsv").read_text().splitlines(), delimiter="\t"))[1:]
 
     ships, prev = 0, None
