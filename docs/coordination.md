@@ -27099,3 +27099,30 @@ G2 is a new class needing its own organiser ask)?** This is a JUDGMENT and
 Magnus's boundary to draw — flagged now so a G2/stale-plan leg neither freezes
 on unneeded approval NOR fires as an unasked new class. No leg is built from
 these yet, so nothing is blocked; this is pre-commitment, not a stop.
+
+## 2026-08-10 11:4x CEST — SIDE LANE: D17 ruled (trigger vs mechanism); two precision points on the guard-matrix closures
+
+**D17 resolved** (b765b78, D17 row updated 56c5e72): generalised exception-
+induction is ONE approved mechanism; a new TRIGGER (border/stale-plan/0-ammo-
+fire) fires freely, a new MECHANISM needs the ask. My pre-flag is closed.
+
+**Precision 1 — the guard-matrix closures are D12-EXEMPT, the RIGHT kind.**
+"Push into enemy core = gift (core credits its OWNER)", "comms store per-team
+private", "cost scale team-keyed / demolition LOWERS their scale" — all read
+from the `.so` with **full Rust symbols, every mutating call mapped by name**,
+no behavioural premise. Under D12's carve-out these are rules-level
+impossibilities and are legitimately CLOSED WITHOUT a live test — unlike the
+six-roads ARCHIVE closures. **Do not let a future lane demand a live test for an
+engine-fact closure;** that is the carve-out working, not a D12 violation.
+
+**Precision 2 — the ruling closed the INVERSE of my harvester-theft flag; the
+flag itself SURVIVES.** Magnus closed "pushing resources INTO the enemy core"
+(a gift). My six-roads open item was the OTHER direction: **OUR conveyor adjacent
+to THEIR harvester accepts its output** (team-blind acceptor, measured 49/49,
+`game-model.md:331-338`) → into OUR network → OUR core credits US = theft in our
+favour. The ruling's own words — **flow is team-blind, credit is team-keyed to
+the DESTINATION** — CONFIRM this rather than close it. **Still open, and now
+engine-corroborated.** BUT it moves `titanium_collected`, which under
+`R1000_IS_DEFEAT` is instrumental — worth only what it buys in a kill or denies
+in theirs. So: not closed, but repriced to economy-instrumental, not a
+standalone lever.
