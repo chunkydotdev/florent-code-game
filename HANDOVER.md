@@ -1,4 +1,61 @@
-# LIVE: **v104 = "Loki v2"**. Session 27 wrap, 2026-08-10 ~14:5x CEST.
+# LIVE: **v104 = "Loki v2"**. s28 state, 2026-08-10 17:31 CEST (15:31Z).
+
+## ===== s28 STATE, READ LIVE OFF THE PLATFORM =====
+##   **v104 live · 1641 · rank #27/116 · 685 matches · last-10 6W-4L.**
+##   `slot_rule`: `k=39 net5=-17.0 armed=True slot_free=False` -> **HOLD**, and
+##   this time on the FIRST condition (net5 -17 has not reached -21).
+##   **net_act +26.0** against the 1615 activation baseline; peak 1698,
+##   **drawdown -57**. `sprt_fast=BLEED` — the fast test is unhappy, the slow
+##   one is OK. **Roll back to v102 only if rating < 1615 while net5 <= -21.**
+##   Six monitors alive. Rate budget 0/5 spent, a slot free now.
+##
+## ===== WHAT s28 SHIPPED: NOTHING. WHAT IT BUILT: ONE PLANK AND SIX TOOLS =====
+##   **LOKI-17 = `bots/_v134loki17`** (md5 `8df01ffe`), prereg
+##   `docs/prereg/PREREG-loki17-sentinel-siting-2026-08-10.md` (`03d2314`
+##   17:27:01, tree 88s later — two-clock clean, bars unmoved).
+##   **NOT SHIPPED, NOT MEASURED.** Smoke-tested only: **0 uncaught exceptions**
+##   in 4 local games. **Its win rate there is n=4 against our own probe and is
+##   NOT a signal** — the arena printed "No verdict" itself.
+##   **THE DEFECT:** our sentinel siting was FIRST-FIT, not first-fit-with-no-
+##   guard as first relayed — the range/ray/buildable guard was already there,
+##   **the CHOICE was missing.** It took the first tile that could fire, so the
+##   site was set by wherever the builder stood; median nearest d2 to the enemy
+##   core came out **32, exactly the Sentinel's range limit**, and only **52.1%**
+##   of our sentinels could fire on the round we built them. A team we beat
+##   plants at **d2 18, 77.9% shootable.** Now scores every legal (tile, facing)
+##   pair and takes the closest, tie-broken by core-tile coverage.
+##   **NEXT: the facing decoder (research, running) replaces the 52.1% BASELINE.
+##   The >85% TARGET DOES NOT MOVE WITH IT** — absolute standard, pre-committed,
+##   so a worse true baseline cannot flatter the plank.
+##
+## ===== LEGS: BOTH STOPPED, BOTH ABANDONED, NEITHER IS A RESULT =====
+##   **LOKI-14b** killed at **8/16 matches** on a Magnus directive, between
+##   cycles, holder verified. Below its own dose gate -> **no bar attaches, no
+##   verdict language, and the decode against the 150-throw gate is WITHDRAWN.**
+##   Survives as a yield fact: **8.8 throws/match vs LOKI-14's ~45.**
+##   **PANEL2-CAL** stopped at **13/25**, **ABANDONED**: all five cells sit
+##   outside the reachable band, and I had already seen its interim per-cell
+##   numbers, so re-scoping it would have been post-data selection.
+##   **Its interims must not be cited** (n=5/cell, sampling SD ~0.20).
+##
+## ===== THE MEASUREMENT THAT REFRAMED THE DAY =====
+##   **The ladder only pairs neighbours: 94.0% of 678 matches within +-100, and
+##   the highest-rated opponent we have EVER met is +64.1.** Reachable band
+##   `us-80..us+125` = 18 teams. **And it scores GAME SHARE, not match wins:**
+##   `delta = 32*(S-E)`, residual **0.000000** over 100 matches, verified twice.
+##   **=> `tools/target_value.py` is the new gate. Run it BEFORE a prereg and
+##   paste its `TARGET BAND:` line in.** On today's abandoned leg it reads
+##   *"NO TARGET IS REACHABLE"* with a perfect 5-0 paying **1.18** points,
+##   against **16-21** in band. **The machinery inspected the experiment and
+##   never asked whether the question was worth answering.**
+##
+## ===== TOOLS ADDED s28 (all selftested to BOTH verdicts) =====
+##   `target_value.py` (the gate) · `map_admits.py` (D34 map axis) ·
+##   `rate_budget.py` (the 5-per-20-min meter — **and opponents challenge US,
+##   so it attributes by our own match ids**) · `corpus_sanity` freshness ·
+##   `submit_clean` loader lint (caught a real syntax error hours later) ·
+##   `league_matches.py --update` wired into the keeper (**the corpus was 21h
+##   stale while the daemon logged healthy**).
 
 ## ===== READ `PROGRAMME.md` FIRST, THEN THIS. `tools/gate.py` ENFORCES IT. =====
 ## Then read **`CLAUDE.md` POINT 0** — the exploit hunt is the standing brief.
