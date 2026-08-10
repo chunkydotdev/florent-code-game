@@ -62,3 +62,45 @@ team_b, map_path, replay_out, seed)` already generates a match **with a retained
 replay**, and `tools/replay_census.parse_entity` already decodes `direction`.
 Both halves exist; nothing needs building. **Generate a retained-replay battery
 for `_det_v134loki17`, run the facing decode, compare against 50.4%.**
+
+---
+
+## MECHANISM DECODE BUILT — AND IT DOES NOT CLEAR THE GATE TONIGHT
+
+`tools/loki17_mech.py` now drives `fcode run --replay` and decodes
+shootable-on-build with `replay_census.parse_entity`. **Three blockers, and none
+of them is "the plank failed".**
+
+**1. ⚠ TEAM NUMBERING DIFFERS BY REPLAY SOURCE.** Locally-generated replays key
+the map's core entries as teams **{1,2}**; platform-downloaded replays use
+**{0,1}**, while `ENTITY.team` is 0/1 in both. Keying cores by team id matches
+nothing locally — the tool reported *"no sentinels decoded"* on three runs while
+a hand decode of the same file found three. Fixed by indexing cores by sorted
+position, and the mapping was then **verified** (each team's first builder bot
+spawns beside `ordered[team]`). **Any cross-source analysis that keys on team id
+silently returns zero on one of the two sources.**
+
+**2. THE TREATMENT PATH IS NOT EXERCISED BY THIS FIXTURE.** Same map, same seed:
+```
+_det_v130loki13: 3 sentinels, d2 = [4, 32, 16], shootable = [F, F, F]
+_det_v134loki17: 3 sentinels, d2 = [4, 32, 16], shootable = [F, F, F]
+```
+**Byte-identical placements.** The edit lives in `raid.py::_try_forward_sentinel`;
+against `opp_v63` on these maps that path either never fires or picks the same
+tile. **A local battery cannot measure a change it does not trigger** — the
+fixture needs opponents that produce the forward-raid state, which is the
+condition the archive population had and this one does not.
+
+**3. ⛔ AND MY METRIC IS NOT YET THE PRE-REGISTERED ONE.** I compute shootable as
+**EXACT ray collinearity**; `loki9_facing.py` — the shipped tool the Amendment 1
+baseline came from — uses an **ANGLE TOLERANCE** (`ALIGNED_DEG`). My local read
+of 13.3% against a 50.4% baseline is therefore **two different statistics, not a
+regression.** Comparing them would be the same units error this session has
+caught four times already. **The baseline must be recomputed with MY predicate,
+or my predicate replaced with the baseline's, before any number is quoted.**
+
+**DECISION: no currency leg and no ship tonight.** The mechanism gate exists so
+that a plank whose mechanism is unverified never reaches a currency leg. It is
+unverified — for three reasons that are all about the instrument and the
+fixture, none about the plank. **Firing a leg now would spend rate-limited games
+measuring a change I cannot yet show is triggered.**
