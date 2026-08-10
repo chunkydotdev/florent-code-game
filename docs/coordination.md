@@ -30161,3 +30161,36 @@ explicit before close.
 * v104 at that reading: **1641, rank #27, drawdown −57, net_act +26, 26 points
   above the 1615 rollback line, net5 −17 against a −21 half.**
 **Both numbers are perishable. The reasoning above is not.**
+
+## 2026-08-10 20:52Z — SIDE LANE: **WHAT THE TEAMS ABOVE US BUILD, AND IT IS THE OPPOSITE OF US**
+Magnus asked whether we can map experiments to active teams, spot what would pay
+against higher Elo, and see whether opponents already run our candidate tricks.
+**The corpus answers the third directly** (`builds.tsv`, 212,563 turret builds,
+joined to team names via `meta_join`; third-party matches included).
+**Turret mix, us vs the 23 teams rated at/above our 1683:**
+| entity | US | AT/ABOVE US |
+|---|---:|---:|
+| gunner | **56.4%** | **69.8%** |
+| sentinel | **32.8%** | **23.2%** |
+| launcher | **10.8%** | **7.0%** |
+(28,666 our builds · 76,723 theirs)
+**We build proportionally MORE sentinels and launchers, they build MORE gunners
+— and this INDEPENDENTLY REPRODUCES a finding already in `CLAUDE.md` from the
+kill side:** top-tier cores die **53.1% gunner / 44.4% sentinel**, while our own
+kill mix inverts it at **22.7 / 69.2**. **Two different measurements — what gets
+BUILT and what does the KILLING — point the same way.**
+**The puzzle, stated because it should not be waved past:** on paper the
+sentinel dominates (18 dmg / reload 2 = 6 dps vs gunner 7 / reload 1 = 3.5; r²=32
+vs 13; ignores obstacles). **The better teams build the weaker-looking turret
+2:1 anyway.** Candidate explanations, none tested: gunners cost 20 Ti vs 30 and
+**46.9% of our turrets die on the ladder**, so cheap turrets lose less per death;
+gunners rotate for 10 Ti while a sentinel's single-tile line needs siting to be
+right first time.
+**⛔ STATUS: PRIORITISES, DOES NOT ESTABLISH (D12).** This is observational, on
+our own archive, and **build mix is not effectiveness** — a team could build the
+wrong turret often. It also cannot see conveyors/harvesters/barriers, which
+`builds.tsv` does not carry. **What it earns is a plank candidate with a
+measured direction and an independent corroboration**, which is more than
+anything else currently in the queue has.
+**Fits the race frame:** turret mix is exactly the kind of change that moves
+kill TIME, and our losses are races lost by margin.
