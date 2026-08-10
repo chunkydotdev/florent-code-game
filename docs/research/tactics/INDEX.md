@@ -842,6 +842,32 @@ or from any deliverable to size a plank — ASK WHICH BOT, WHICH POPULATION, AND
 WAS MEASURED ON. If the answer is not "the arm I am about to run", do not size on it. Use it to
 choose WHAT to test, never HOW MUCH to expect.**
 
+### ⚙ WHY THESE ARE RULES AND NOT ADVICE — read this before concluding the answer is "be careful"
+
+**All eleven failures in the session that produced this file were committed by people APPLYING
+THE STANDARD AT THE TIME.** Four instruments were broken **in the fixing**. A stop-loss whose
+author had written *"a stop-loss that cannot fire is worse than none"* in its own docstring
+reintroduced the fault in its segmentation. A selftest's fixture was one the broken design also
+passed. **Not one of these was carelessness, so "be more careful" is not available as a fix.**
+
+**And the reason judgement fails here specifically: the correct action often FEELS LIKE A
+FAILURE IN THE MOMENT.** The builder arm, on declining to write a four-neighbour refusal into
+an unread file at 03:30 — **"it did not feel like discipline at the time, it felt like stopping
+short."** **That is exactly why it needs a rule behind it rather than a judgement**: a
+judgement made under that feeling reliably goes the other way.
+
+**Same shape across the session: retracting a number that flatters you, reporting an estimate
+at the n where it looks smallest, declining to loosen a rule at the moment it binds, and
+specifying rather than building. Every one of them feels like giving something up while you do
+it.** **The rules exist to make the right move survive that feeling.**
+
+**AND THE COUNT BELONGS TO THE BOUNDARY, NOT TO EITHER LANE.** Across both arms, **not one
+retraction came from an author re-reading their own work.** Every one came from a peer with the
+primary open, or from an agent explicitly briefed to disagree. **⇒ Structure caught eleven
+things that care would not have — which is the argument for the two-lane protocol and for
+briefing agents to challenge their own brief, stated as a measurement rather than a
+preference.**
+
 ### ⚙ AND THE INVERSE RULE, which is the only one here that says to measure LESS: **A MEASUREMENT YOU DO NOT NEED IMPORTS ITS POPULATION**
 
 **Every other rule in this file says check your number. This one says notice when you do not
