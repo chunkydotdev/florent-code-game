@@ -25638,3 +25638,52 @@ sentinels" is dead as a plank direction, definitively.
   the builder's reorder: **PEA runs 0 conveyors, 0 harvesters, 0 sentinels EVER
   across 230 games**; Cookie 0.42 conveyors; **we run 38.14.** (Still archive, so
   under **D12** a well-measured hypothesis rather than a closure.)
+
+# ---- (real time, from `date`: 2026-08-10 06:48:26 CEST) ----
+### **RETRACTION: I ATTRIBUTED A -8 RATING MOVE TO v103's "FIRST RATED MATCH". NOT ESTABLISHED.**
+I reported `elo_history.tsv` 06:30 (`1582  629  v103`) as **"v103's first rated
+match, 1590 -> 1582"**. **The version column does not support that reading.**
+Checked at the source: `tools/monitors/elo_logger.py:36` — `ver, name =
+act["version"]`, where `act` is the **ACTIVE SUBMISSION AT POLL TIME**, stored as
+`active_version`. **It is a poll-time tag, not a per-match attribution.** So
+"the rating moved while v103 was the tag" does NOT establish "v103 played that
+match" — a match completed at ~06:28 by v102 is logged at 06:30 beside a v103 tag.
+**The side lane reports the opposite of my reading — that all eight surrounding
+ladder matches were `ourver=102` and v103 never played a rated game, making the
+window's true rated cost ZERO. I cannot confirm or refute that from here**
+(`ladder_games.tsv` lags by design — keeper only passes network calls every
+`NET_EVERY` cycles, 24a0d30 — its newest row is 03:32; and my `match list --json`
+field guesses returned all-None, so I stopped rather than keep guessing a schema).
+**Status: my attribution is WITHDRAWN as unverified; theirs is UNCONFIRMED by me.**
+The schema point stands on its own and undermines my claim regardless of who is
+right — which is why it is worth more than the disputed fact.
+**And the consequence for what I told Magnus:** I said "the first rated match
+landed 1590 -> 1582". **The rating move is real; the attribution to v103 is not.**
+The floor arithmetic I published is UNAFFECTED — it depends only on the current
+rating (1582) and the pre-committed floor (1550), not on who caused the move.
+
+### **D12 CARVE-OUT: CORRECTLY AIMED, BUT UNDER-SPECIFIED — AND THEIR OWN EXAMPLE FAILS IT**
+The side lane's carve-out to Magnus's *"test everything in unrated games before
+we refute them"*: a **rules-level impossibility established on the engine** is not
+an echo loop. They cite three: `self_destruct` deals 0 damage; **conveyors have
+out-degree 1 so cycles are structurally impossible**; module-globals are not
+shared across units. They asked whether it is too wide.
+**Not too wide in principle. Under-specified — and the SECOND example is the
+counterexample, from their own list.** The cycles claim as banked (449f217) reads:
+*"cycles are STRUCTURALLY impossible because conveyors have out-degree 1, **on a
+measured premise of zero splitters that lapses if a future bot builds one**."*
+**Splitters rotate output among three directions — out-degree 3 — so cycles
+become possible the moment one is built.** That claim is a rules fact **plus a
+behavioural premise**, and the behavioural half is exactly what D12 targets.
+**PROPOSED TIGHTENING, one clause:** a closure qualifies for the carve-out only
+if it has **no behavioural premise**, and **the premise set must be stated
+explicitly so that can be checked.** A claim that cannot list its premises has
+not shown it has none. Two further boundaries worth writing in:
+- **A probe establishes what happened in the CONFIGURATIONS PROBED.**
+  Extrapolation to unprobed configurations is inference, not engine fact.
+- **D12 needs a de-prioritisation mechanism or the queue only grows.** With
+  `audit_trigger` already FIRING on analysis-outpacing-decisions, a rule that
+  forbids retiring roads makes that worse. **Usable form: archive evidence sends
+  a road to the BOTTOM of the queue, never off it.** Priority is the scarce good
+  now, which is also the side lane's own conclusion from the zero-rated-cost
+  finding.
