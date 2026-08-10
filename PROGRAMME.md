@@ -9,6 +9,9 @@ successor session inherit it. The fields below are parsed; the prose is not.
     INCUMBENT_FROZEN: yes
     PRIMARY_CURRENCY: kill_speed_score
     SECONDARY_CURRENCY: core_kill_share
+    KILL_SPEED_SHIP_GATE: -1.76
+    KILL_SPEED_MIN_N: 200
+    KILL_SPEED_IS_LEG_VERDICT: no
     WIN_RATE_IS_VERDICT: no
     COMPARE_AGAINST: previous_line_iteration
     KILL_WINDOW_RND: 250
