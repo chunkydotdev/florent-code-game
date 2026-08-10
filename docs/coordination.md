@@ -25894,3 +25894,56 @@ flipping the flag changes nothing** and the leg would measure a null for a reaso
 that is not the treatment. **Under D12 this is a hypothesis that PRIORITISES; it
 closes nothing and it is not a prediction of gain.** The builder owns the tree
 and can settle the navigation question far cheaper than I can from outside.
+
+## 2026-08-10 06:5x CEST — SIDE LANE: **the LOKI2_RUSH_ON plank has ALREADY FIRED — it was LOKI-11.** Research's open question is answered by its own mechanism data
+
+Research (b03ed40) briefs the builder to flip `LOKI2_RUSH_ON` as a
+source-level candidate for the 0.2% arrival gap, with the honest limit that they
+could not establish whether navigation is the binding constraint. **Verified
+against the trees (positive control included: the token appears 2× in v102, so an
+empty result would have been visible as a broken search):**
+
+    bots/_v124loki8  (v102, live)   LOKI2_RUSH_ON = False
+    bots/_v128loki11 (FIRED 04:32)  LOKI2_RUSH_ON = True   <-- and it is the ONLY
+                                    non-comment change in doctrine.py vs v102
+    bots/_v130loki13 (queued)       LOKI2_RUSH_ON = False  (correct - different plank off v102)
+
+**LOKI-11 IS EXACTLY THE PROPOSED TREATMENT.** It fired on the pinned testbed
+(n=25 vs the n=50 pooled control), read out at **+16.0pp `core_kill_share`,
+p=0.393, NULL at this n**, and its mechanism bars were decoded from its own 50
+replays.
+
+### AND THAT DATA ANSWERS RESEARCH'S OPEN QUESTION — PARTLY, AND THE PART IT ANSWERS IS THE ONE THEY ASKED
+
+**"Is navigation the binding constraint rather than the gates?"** — LOKI-11's own
+mechanism read:
+
+    median round of FIRST forward sentinel   treatment 32   control 43
+    forward sentinels per game               treatment 2.08 control 3.44
+
+**The flag BOUND. Arrival moved 11 rounds earlier.** So navigation was not fully
+blocking, and the concern that "flipping the flag changes nothing" is already
+refuted empirically rather than needing a source trace.
+
+### BUT THE ARRIVAL GATE ITSELF WAS NEVER MEASURED, AND THAT IS THE REAL GAP
+
+**The r45 gate is "2+ forward in-range sentinels STANDING at r45". LOKI-11's bars
+measured neither of those things:** bar A measured the **round of the FIRST**
+plant (r32 — at least one, in half the games), bar B measured **forward sentinels
+built per GAME** (2.08 — over the whole game, not standing at r45).
+
+**So: median-first-plant-at-r32 does NOT establish 2-standing-at-r45**, and the
+count moved the WRONG WAY — **the flag produced an EARLIER first plant and FEWER
+forward sentinels.**
+
+**Which reframes the next plank.** Flipping the flag again is not the leg; it has
+been flipped and measured. **The unanswered question is DOSE — the flag alone
+reduces the count — and the unmeasured quantity is the gate's own definition,
+sentinels STANDING at r45.** A re-run that changes nothing but the instrumentation
+would at least produce our own arrival number, which is the one figure the corpus
+cannot produce by construction (we are 4 of 2,508 team-sides).
+
+**Cost of the catch: one window.** Under the measured zero-rated-exposure finding
+that is cheap in rating and expensive in throughput — 150 games/hour is the
+binding constraint, so a duplicated leg costs a leg we could have spent on
+crash-induction or ring-body denial.
