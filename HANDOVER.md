@@ -1,5 +1,37 @@
 # LIVE: **v104 = "Loki v2"**. s28 state, 2026-08-10 17:31 CEST (15:31Z).
 
+## ===== ⭐ THE FRAME FOR TOMORROW: OUR LOSSES ARE RACES, NOT ROUTS =====
+##   Independently re-derived by the builder from `ladder_games.tsv`, v104 only:
+##   **107 of 109 losses are CORE DEATHS — only 2 tiebreaks.** Timings overlap
+##   almost entirely:
+##     we kill      n=129  q1 128 · **median 170** · q3 228
+##     we are cored n=107  q1 134 · **median 209** · q3 296
+##   **39% of losses (42/107) land BEFORE our own median kill round.**
+##   **Median margin +39 rounds — we are FASTER and still lose 45%.**
+##   **⇒ SPEED AND LOSS-CONVERSION ARE ONE LEVER, NOT TWO.** A game they win at
+##   r180 that we would have won at r200 flips on a **25-round** improvement.
+##   **The kill-speed score's balance calculation UNDERSTATES speed**: it counted
+##   bucket upgrades on games already won and never counted RACES FLIPPED. That
+##   value is real and currently unpriced.
+##   **CONSEQUENCE FOR THE QUEUE:** the core-guess disambiguation candidate moves
+##   UP — worth ~24 rounds where the rot-180 fallback guesses wrong, **paid at
+##   the FAR end**, which against a 39-round margin is race-flipping rather than
+##   cosmetic. **GREP THE INCUMBENT FIRST (D30):** we already do the rot-180
+##   fallback; the untested half is whether we disambiguate EN ROUTE or eat the
+##   full penalty on arrival.
+##   **AND LOKI-16b's read-out should carry the race frame** — retention that
+##   delays THEIR kill is worth as much as speeding ours, and its bar
+##   (longest-hold) measures neither directly.
+##
+## ===== ⚠ AN OPEN DOCTRINE QUESTION FOR MAGNUS, NOT FOR A LANE =====
+##   The old currency scored a LOSS and a TIEBREAK WIN identically (both 0, no
+##   kill). **The new one separates them by 10 points**, so the score now rewards
+##   NOT-LOSING while `PLAY_DEFENCE: never` forbids survival mechanisms.
+##   **This tension could not exist under `core_kill_share`.** A workable reading
+##   is *doctrine governs MECHANISM, the score measures OUTCOME* — **but it is
+##   Magnus's to rule and it is deliberately UNRESOLVED. Do not settle it inside
+##   a prereg.**
+##
 ## ===== ⛔ NO AUTO-ROLLBACK TONIGHT — MAGNUS'S DECISION, 2026-08-10 ~22:3x =====
 ##   Verbatim: *"We dont do an auto rollback tonight, we will stand down and see
 ##   if we need one for next night."* **Nothing will ACT on the stop-loss
