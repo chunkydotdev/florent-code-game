@@ -25860,3 +25860,37 @@ and the Δ column should say so rather than implying matched pairs.
   "quick checks" I ran by hand tonight produced false readings (an empty-vs-empty
   comparison, and a non-discriminating control). **Mechanical work with explicit
   pass/fail criteria goes to an agent.**
+
+### **WHY WE ARRIVE 0.2% OF THE TIME — A SOURCE-LEVEL HYPOTHESIS, AND THE RELAXATION ALREADY EXISTS AS A FLAG**
+The Bisons cut's headline gap is **arrival**: we reach "2+ forward in-range
+sentinels standing by r45" **4 times in 2,508 team-sides (0.2%)**; they reach it
+**42.3%**. That is the number the next leg turns on, so I read the source for a
+mechanism rather than commissioning another corpus cut.
+**`LOKI2_RUSH_ON = False`** (`doctrine.py:1377`). That flag gates a
+committed-opening window which, when ON, **waives exactly the two prerequisites
+that stand between us and an early forward plant**:
+| gate | window OFF (live) | window ON |
+|---|---|---|
+| `min_harv` (`SLOT_HARVESTERS` needed) | `LOKI_FWD_MIN_HARV` = **2** | `LOKI2_RUSH_MIN_HARV` = **0** |
+| bank floor after paying | `LOKI_FWD_TI_FLOOR` = **40** | `LOKI2_RUSH_TI_FLOOR` = **8** |
+| window | — | `LOKI2_RUSH_RND` = **60** |
+**So today the forward plant cannot even be attempted until two harvesters exist
+and 40 Ti remains after payment.** The Bisons place their first six builds inside
+~4 rounds and plant sentinels at **r29-r47** — i.e. they plant *during* the
+window our economy prerequisite reserves for building an economy.
+**And `_try_forward_sentinel` is OPPORTUNISTIC, not directive:** it returns early
+unless a builder is **already** within d²<=50 of the enemy core
+(`raid.py:421`), and **the function never moves anyone**. It plants if a raider
+happens to be there; it does not cause a raider to be there.
+**WHY THIS MATTERS FOR THE LEG: the relaxation is an EXISTING FLAG, not new
+code.** `LOKI2_RUSH_ON = True` flips both constants at once. That makes the
+arrival leg a flag flip with a pre-existing implementation — the cheapest
+possible form of the plank the Bisons cut points at.
+**HONEST LIMIT, and it is not small: I have NOT established that flipping the
+flag produces arrival.** I did not trace the raid dispatch far enough to say
+whether anything *navigates* a builder to the enemy core early, or whether the
+gates are the only thing binding. **If navigation is the binding constraint,
+flipping the flag changes nothing** and the leg would measure a null for a reason
+that is not the treatment. **Under D12 this is a hypothesis that PRIORITISES; it
+closes nothing and it is not a prediction of gain.** The builder owns the tree
+and can settle the navigation question far cheaper than I can from outside.
