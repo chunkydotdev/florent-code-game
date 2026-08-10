@@ -24483,3 +24483,43 @@ method **including the `\f\r` fix**, the demonstrative/referent rule, and the
 existing-coverage list so 20C cannot file near-duplicates.
 **Spawn verified on a live surface** (`ListAgents`: all three `running`) before
 being reported as in flight — per the s26 rule that announcing is not launching.
+
+### 06:0x — IN-FLIGHT +1: **can the undamaged-death census rank CRASH-INDUCTION targets?** (PRE-REGISTERED)
+The new `WHAT LOKI IS` block names **crash-induction** as never balance-changed
+and therefore still open. The obvious next builder move is "who crashes? target
+them" — and **our own lane has already proved that move may be unsupportable.**
+- The carrier list EXISTS (`undamaged-builder-deaths-2026-08-10.md` §1): field
+  control 2,636/25,466 = 10.35%, **concentrated in TEAMS not games** (per-team
+  top-1 57.5%, top-3 81.5%, 13 distinct). Carriers: `vjg` 96.13% (1,517/1,578),
+  `S` 89.06%, `Ship Happens` 87.40%, `Troupe` 84.92%, `Cookie` 50.21%,
+  `Ouroboros` 17.91%, then a thin tail. **33 of 43 teams (77%) sit at exactly 0.**
+- **But 13fdedb proved `self_destruct()` and an exception kill produce
+  BYTE-IDENTICAL replays** (cmp equal, 1000/1000 turns). So "undamaged removal"
+  does NOT mean "crash", and a 96% rate is far likelier to be a design choice
+  than a bug. **The list as it stands cannot rank targets.**
+- **And the zero-teams are not safely excludable either**, which is the part
+  that is easy to get backwards: a blanket `try/except` converts a crash from
+  UNIT-loss into TURN-loss, which is invisible in the tape
+  (`idle-round-envelope-2026-08-10.md`). A team at 0 may be crashing constantly.
+
+**THE CUT — a discriminator that does not require byte-level resolution.**
+A deliberate self-destruct is uncorrelated with adversary proximity; a crash on
+an adversary-dependent code path correlates with it. So: for each carrier team,
+do undamaged removals correlate with **our/the opponent's presence, vision
+edges and recent contact**, or only with **their own state** (own-core distance,
+post-build, unit age)?
+
+**PRE-REGISTERED, both outcomes are decisions, neither is a null:**
+- **Correlates with adversary proximity** → a real induced-crash surface exists,
+  and the carriers are a ranked target list. Decision: build the trigger.
+- **Correlates only with own-state** → the category is deliberate recycling,
+  **the carrier list is retired as a crash-induction instrument**, and the road
+  closes on tape evidence rather than on taste. Decision: do not build it.
+- **Neither / underpowered** → say so and name the fixture that would decide it;
+  do NOT report the ambiguity as a target list.
+**Falsifier for my own framing:** if `vjg`'s 1,517 removals turn out to carry
+preceding negative HP deltas after all, the classifier is broken and this whole
+cut plus §1 of the parent doc go with it — check that FIRST.
+Honest limit stated up front: this cannot see turn-loss in either arm, so it can
+retire the UNIT-loss channel only. It must not be read as pricing crash-induction.
+- IN-FLIGHT: [agent] crash-target-discriminator (opus) — read-only corpus cut.
