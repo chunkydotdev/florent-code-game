@@ -136,3 +136,75 @@ was supposed to prevent exactly this failure did not work either.
   shots. Unattributed, and interesting.
 * **The Bisons kill (1/5 after 0-for-20) stands as a recorded surprise**, and is
   now explicitly NOT attributable to this flag either.
+
+---
+
+# POOLED TO n=100 PER ARM. **THE EFFECT HELD, AND IT IS SIGNIFICANT.**
+
+Four further windows fired under Magnus's free-unrated directive. **Zero rated
+exposure**; v102 held the slot throughout except for ~60 s per treatment window.
+
+| | control (v102) n=100 | LOKI-13 (v104) n=100 |
+|---|---|---|
+| **`core_kill_share`** | **42/100 = 42.0%** (CI 32.8-51.8) | **60/100 = 60.0%** (CI 50.2-69.1) |
+| `r1000_rate` (= DEFEAT) | 9/100 = 9.0% | 3/100 = 3.0% |
+| our kill turns, median | 203 | **152** |
+| our kills inside r250 | 25/42 | **49/60** |
+
+    delta +18.0pp    Fisher exact two-sided p = 0.01598
+    r1000  -6.0pp    Fisher p = 0.134 (not significant)
+
+**LOKI-11 went +16.0pp -> +0.0pp when its n doubled. LOKI-13 went +18.0pp ->
++18.0pp when its n quadrupled.** That is the difference between a sampling
+artefact and an effect, and it is exactly what the free-windows directive bought.
+
+## PER-OPPONENT — mandatory, and it carries the caveat
+
+| opponent | control /20 | LOKI-13 /20 | Δ | seats |
+|---|---|---|---|---|
+| gsxWins | 5 = 25% | 13 = **65%** | **+40pp** | AB→A **DIFFERS** |
+| I Stone | 11 = 55% | 15 = 75% | +20pp | B→AB **DIFFERS** |
+| CtrlAltDefeat | 9 = 45% | 12 = 60% | +15pp | B→AB **DIFFERS** |
+| **The Bisons** | **1 = 5%** | **4 = 20%** | **+15pp** | **AB→AB — matched** |
+| Leviathan | 16 = 80% | 16 = 80% | +0pp | AB→AB — matched |
+
+**Four of five cells moved positive. THREE OF FIVE HAVE A SEAT DIFFERENCE and
+that is the live confound.** But the two cells with MATCHED seats are the
+informative ones:
+* **The Bisons moved +15pp at matched seats** — the floor cell, which was 0/20
+  for most of this session, is now 4/20 under treatment against 1/20 control.
+* **Leviathan moved 0pp at matched seats — and it is pinned at 80%, a ceiling
+  cell that cannot express improvement.**
+
+So the one matched-seat cell with headroom moved, and the one without headroom
+did not. **That is not proof, and the seat confound is real, but it is not the
+pattern a pure seat artefact produces.**
+
+## ⛔ AND THE MECHANISM BAR STILL FAILED. THE TWO STATEMENTS ARE SEPARATE.
+
+**Bar A (conveyors <= 27) was NOT met: 33.32 vs 38.66, ratio 0.86.** The prereg
+gates the claim *"economy suppression works"* on that bar, and the bar failed.
+
+**Therefore, precisely:**
+* **SUPPORTED: v104 beats v102 on this panel by +18.0pp core-kill share,
+  p=0.016, n=100 v 100, on the fixture of record.**
+* **NOT SUPPORTED: that it does so BECAUSE of economy suppression.** The
+  conveyor cut was under-dosed by more than half. **We have a better bot and we
+  do not know why.**
+
+What the flag *did* do, measured: forward sentinels **0.45x**,
+`titanium_collected` **0.62x**, our own units lost **0.44x**, conveyors only
+0.86x, ammo conversion **up** 1.10x with shots flat. **A large behavioural
+change whose pre-registered proxy barely moved.**
+
+## The honest position
+
+This is a **ship candidate on the currency**, not a banked mechanism. The
+outstanding weakness is the seat confound on three cells; the outstanding
+strength is that the effect survived a 4x increase in n, moved the Bisons floor
+cell at matched seats, halved our r1000 rate and cut median kill time from 203
+to 152 rounds.
+
+**LOKI-15 (`bots/_v132loki15`, per-builder conveyor quota, pre-registered at
+n=100/arm) tests the mechanism question properly** — its Bar A rests on
+arithmetic that transfers rather than a local ratio that did not.
