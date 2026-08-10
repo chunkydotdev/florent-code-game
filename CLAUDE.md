@@ -301,7 +301,7 @@ exception from `run()` destroys that unit permanently (`0x1ac5c` →
 `Game::destroy_entity`) and **`SystemExit`/`KeyboardInterrupt` are the ONLY
 exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
 
-**6. UNRATED GAMES ARE FREE. USE THEM AS MUCH AS YOU WANT.**
+**5. UNRATED GAMES ARE FREE. USE THEM AS MUCH AS YOU WANT.**
 Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
 it's a free tool meant to be used."* **This retires throughput caution as a
 reason not to test.** The only constraint is the platform's own:
@@ -327,7 +327,7 @@ MECHANISM probe. A currency read requires pooling windows** — and since window
 are free, pooling is now the default, not a luxury. **Buy the power before
 writing the verdict.**
 
-**5. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
+**6. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
 Magnus, 2026-08-10: *"Every statement needs backup from real games so we need to
 test everything in unrated games before we refute them. We never know if we will
 be surprised by something, because only playing on our chambers is an echo loop.
