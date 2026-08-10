@@ -25799,3 +25799,49 @@ A** — a parse assuming seat A returns the wrong version AND the wrong delta si
 **My retraction and their confirmation are the same conclusion by genuinely
 independent paths** — I found the poll-time tag at `elo_logger.py:36`, they found
 the per-match field.
+
+## 2026-08-10 06:5x CEST — SIDE LANE: **LOKI-13 prereg audited (e9135e5) — PASSES; two flags, one of them the LOKI-11 fault recurring**
+
+**Passes D1–D12.** Comparator is the pinned control at **n=50** with its currency
+already banked (`core_kill_share` 21/50, `r1000_rate` 6/50) ✓D2. Treatment is
+**one constant**, `main/raid/eco` byte-identical to v102 ✓minimal. **The two-bar
+structure is adopted verbatim** — Mechanism A (the cut landed) separated from the
+currency, with **"MECHANISM A missed → THE LEG ANSWERED NOTHING"** pre-declared
+✓obligation 11. Per-opponent Δ column **mandatory**, seat mix printed ✓obligation
+8 — and the reason is stated as *"the LOKI-11 headline was two of five cells and I
+will not publish another aggregate without the split"*, which is the flag being
+internalised rather than complied with. **Cookie/PEA are labelled archive
+hypotheses under D12** ✓.
+
+**FLAG 1 — MECHANISM A's BAR IS NOT DERIVED FROM THE THING THE FLAG CONTROLS, and
+this is the LOKI-11 bar fault in a new costume.** The bar is **≤25 conveyors/game
+against a control of 38.20**. But **LOKI-11 already reached 20.92 WITHOUT
+touching `PAVE_TRAIL_ON`.** So the bar is **already cleared by a different
+plank**, and it cannot discriminate "the pave trail is off" from "some unrelated
+reduction happened". **A bar a prior treatment already satisfies is not a
+treatment-occurrence check.**
+**The fix is to derive it from the flag:** if the pave trail is the only uncapped
+conveyor source (`ECO_CAP` gates harvesters only, per the prereg's own defect
+section), then turning it off predicts conveyors falling to **whatever deliberate
+line-building alone produces** — a number obtainable from the source or from one
+local run, and almost certainly far below 25. **Predict THAT and bar it.**
+Otherwise a leg that cuts 35% for unrelated reasons passes a bar written for a
+flag that may not have bound at all.
+
+**FLAG 2 — THE CAUSAL CHAIN HAS AN UNMEASURED LINK: AMMO.** Mechanism B measures
+`titanium_collected` and forward sentinels. **The chain is conveyors → titanium →
+AMMO → sentinel shots → kill**, and ammo is the link that can bind without
+showing up in either measured quantity. **Three sentinels firing for ~19 rounds
+costs ~280 Ti of ammunition** (10/shot), against a 500 Ti start plus 2.5/round
+passive. **For a kill at r32 economy is irrelevant — the starting bank covers it.
+For a kill in the r100–250 band it may not.** So the plank's most likely adverse
+mechanism is *"we cut the economy and then could not afford to shoot"*, and
+neither `titanium_collected` (which counts delivery, not spending) nor sentinel
+COUNT (which counts emplacements, not shots) would reveal it.
+**Cheap addition to Mechanism B: global ammo balance and/or `convert_ammo`
+volume, plus shots fired.** Both arms. It costs one decoder field and it is the
+difference between a readable null and a mysterious one.
+
+**NOT A FLAG, but worth stating:** the arms are **n=50 control vs n=25
+treatment**, so pairing is **2:1 per (opponent, map) cell**, not 1:1. Legitimate,
+and the Δ column should say so rather than implying matched pairs.
