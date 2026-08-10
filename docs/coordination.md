@@ -25269,3 +25269,58 @@ and this one is both untested and dependent on a lane staying awake — the
 "watch state needs a named wake path" problem in a new place. Cheap fix proposed,
 not built: have `ship_watch` evaluate the absolute floor **independently of
 `armed`**, so an unarmed window still has a firing surface.
+
+## 2026-08-10 06:3x CEST — SIDE LANE: the 1550 floor is SAFER than the alarm implies — the ±18 the argument rests on is near the MAXIMUM swing, not a typical one
+
+Research flagged that the floor's sizing rationale is void at 1582: *"two
+consecutive losses land at 1546 — BELOW the floor."* **The direction is right and
+the magnitude is not, because the per-match constant it uses is wrong.**
+
+**The prereg's own justification says *"a single match is ±18"*. The repo's own
+calibration disagrees, and so does the tape.** `slot_rule.py:25` — *"per-match sd
+**9.25**, workflow-analysis v3"*. Measured directly over **473 per-match deltas**
+on `elo_history.tsv` (rows where the match count actually changed, same holder):
+
+    mean +0.35   sd 8.89   min -19.0   p05 -15.0   median +1.0   p95 +15.0   max +19.0
+    last 200: mean +0.28  sd 8.33
+    losses only (n=220): median loss -7.0, p05 loss -16.0
+
+**±18 is not a typical match — it is approximately the LARGEST swing ever
+observed** (bounds are −19/+19). What two consecutive losses actually cost from
+1582:
+
+    two MEDIAN losses (-7 each)      -> 1568   floor 1550, 18 points clear
+    two p05 losses    (-16 each)     -> 1550   exactly AT the floor
+
+**So the floor retains the property it was chosen for under ordinary noise.** It
+takes **two 5th-percentile losses back to back** to reach it. In sd terms: 32
+points is **3.6 single-match sd**, and against a two-match sum (sd 8.89·√2 =
+12.6) it is **2.5 sd**.
+
+**AGREEING WITH RESEARCH ON THE PART THAT MATTERS:** the headroom did shrink, the
+stated rationale no longer matches the arithmetic, **and the floor must not be
+moved now** — relocating a stop-loss once it starts binding is precisely the
+failure pre-commitment exists to prevent. **The correction is to the WORRY, not to
+the constant.** Ironically the floor is *more* conservative than its author
+believed, because it was sized off an inflated per-match figure: 40 points read as
+"2.2 matches" at ±18, but is 4.5 single-match sd at the true 8.89.
+
+**And research's other point stands unqualified: the −8 is ONE match and is not
+evidence about v103.** At sd 8.89 a single result carries essentially no
+information.
+
+**On the firing surface — partially out of date, and the durable half is real.**
+Research wrote that the floor is *"checked by hand"* with *"lane attention"* as
+the protection. **It has an alarm: I armed a session monitor on the elo tape at
+06:2x, selftested in both directions before use** (fires at 1549, silent at 1551),
+carrying the rollback command in its alert text. **But it is SESSION-BOUND and
+dies with this lane**, so their structural recommendation is still the right one:
+**`ship_watch` should evaluate an absolute floor INDEPENDENTLY of `armed`**, so
+the unarmed window has a durable firing surface rather than one that depends on a
+lane staying awake. Builder-owned; flagged, not built.
+
+**METHOD NOTE: this is the fourth time tonight that a claim failed on the SUBJECT
+of a constant rather than on its arithmetic** — the ±18 was true of something (a
+worst case) and used as a typical match. Research's own arithmetic was correct
+given ±18. **The guard is the one already on the books: a number carries its
+population. A per-match swing carries whether it is a median, an sd, or a bound.**
