@@ -433,3 +433,93 @@ pull:** their figures came from the most recent `rating*Before` in the corpus
 as a leaderboard read. The live pull moved vjg from 855 to **806.5** — same
 ordering, same conclusion, and the gap is far too large to be a staleness
 artefact either way.
+
+---
+
+# AMENDMENT 5 — WHAT THE LIBRARY PASS ADDS, BEFORE THE FIRST ACCEPTED CHALLENGE
+
+**Committed before any challenge was accepted** (cycle 1 rejected on the rate
+limit, banked 0; cycle 2 due 14:10:34Z). **ADD-only throughout: every clause
+narrows what a result may be written to mean. The ≥5 bar is untouched.**
+
+Source: the library-consumption pass Magnus ordered. **It earned its keep on
+first use, which is the answer to my own audit** — I read a 1.8% citation rate as
+evidence the input was worthless; it was evidence the consumption step had never
+been built. (The pass also corrects my number: **the true rate is ZERO** — 0 of
+252 tactics files are referenced from any file in `docs/prereg/` or `bots/`.)
+
+## 5a. ⭐ A CANDIDATE MECHANISM FOR LOKI-14's 0/150 — NOT A RESTATEMENT OF IT
+
+`the-legality-mask-is-a-total-function.md` (BC2025 `RobotController.java`
+javadoc, plus our own probe `bots/_probe_oov_surface` with a boundary positive
+control) reports that **`is_in_vision()` and the whole `can_*` family are TOTAL —
+they never raise — and `get_nearby_tiles()` with no argument returns only
+in-bounds tiles.**
+
+**If that holds, a bot that enumerates neighbours the idiomatic way is
+border-immune without having written one line of anti-crash code**, and only
+hand-constructed `Position.add(dir)` → `get_tile_*` is vulnerable.
+**Vulnerability would then be a CODE-STYLE property** — which would explain, in
+one stroke, why the census is bimodal, why it tracks the weak tail, and why our
+five-team panel returned a clean zero.
+
+**STATUS: adopted as the leading EXPLANATION, not as an established fact.**
+`CLAUDE.md` independently records `is_in_vision(pos)` returning False rather than
+raising, which is consistent; the generalisation to the entire `can_*` family
+rests on the research arm's probe and I have not re-run it myself. **It changes
+no bar here and it must be verified before it is quoted as settled.**
+
+## 5b. THE TRIGGER IS NOT THE KIDNAP — DO NOT READ ONE AS THE OTHER
+
+`displace-dont-kill.md` supplies the arithmetic: **killing an enemy builder
+REFUNDS their +20% cost scale and frees a unit slot; throwing refunds nothing.**
+So **LOKI-14's 0/150 is a null on the CRASH TRIGGER, not on kidnap.** A read-out
+that treats them as one thing over-reads, and this pre-registration forbids it.
+*(That file's CodinGame quotes are NOT in the INDEX quote-audit table and must
+not be cited as verified; the arithmetic is ours and stands.)*
+
+## 5c. A NONZERO INTERIOR ARM IS A CONFIRMATION, NOT A REFUTATION
+
+Under the D17 class ruling, border-throw and stale-plan displacement are **the
+same approved mechanism with different triggers.** Therefore:
+
+**A nonzero interior arm reads as "the border TRIGGER is refuted AND a second
+trigger in the same approved class is CONFIRMED" — never as "the mechanism is
+refuted."**
+
+This supersedes the reading in `bots/_v131loki14/doctrine.py:1558-1560`, which
+currently says the opposite. **Note this does NOT weaken the placebo:** a
+nonzero interior arm still invalidates the border-vs-interior CONTRAST, and
+falsifier 1 in the body still fires first and is still reported first. It
+changes only what the *interior* number itself may be written to mean.
+
+## 5d. SCORE THE TRICK ON THE WINDOW BEFORE IT IS ANSWERED
+
+`probing-the-target-teaches-the-target.md`: BC2020 *confused* tested a counter by
+requesting many scrimmages; **the target watched the replays and shipped the
+counter-counter before the deadline.** Cory Li's BC2009 crash exploit died the
+same way — opponents noticed robots "mysteriously exploding" and patched before
+finals. **This is the only recorded operational cost of crash induction in 252
+files and it is exactly our shape: 125 games of a named exploit at four named
+teams.**
+
+**The file's own open question — whether opponents can request games against us
+at will — is settled against us in our own repo:** `docs/opponents.md:356-361`
+records **70 unrated matches on our account, 63 initiated by Pivot, none by us.**
+**The channel is two-way and they can watch every replay.**
+
+**BINDING: any value claim from this leg is scored on the WINDOW BEFORE IT IS
+ANSWERED, never as a steady-state rate, and no chassis may be built that depends
+on these four teams staying unpatched.** *(Honest counter-cut, recorded: a
+rolling ladder has no deadline, so there is no last-mover advantage against us
+either.)*
+
+## 5e. The follow-on this makes urgent
+
+Combined with Amendment 4, the addressable population is now doubly narrowed:
+**teams that both (a) hand-construct off-map positions and (b) sit far below us.**
+**The question that decides whether any of this is worth shipping is unchanged
+and unanswered: is there any opponent AT OR ABOVE our rating carrying this
+signature?** The census left **four teams UNCLASSIFIED rather than immune**, and
+that set — not the carriers — is now the decisive cut. Archive work, no holder
+time.
