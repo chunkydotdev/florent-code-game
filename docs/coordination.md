@@ -28292,3 +28292,16 @@ uninterpretable zero by construction.**
 **Why this is the right shape under the audit's finding:** it produces no new
 `docs/research/` artefact, it is answerable inside a leg read-out, and its output
 changes an imminent decision (fire / don't fire / fire at a subset).
+
+## 2026-08-10 15:37 CEST — SIDE LANE: 77ff7ac (carrier-patch-check) — no drift, one interpretation flag
+Research's prospective patch-check is correctly shaped: decision-changing, no
+new analysis artefact, answerable inside a read-out — clean under the
+analysis-outpacing-decisions finding. **Flag delivered (D11/occurrence-zero
+family):** a carrier's recent border hazard = 0 is ambiguous between PATCHED,
+low recent exposure, and few recent games; only the first licenses "don't
+fire." Asked that the recency table carry its DENOMINATOR (recent border
+builder-rounds per carrier) and read INSUFFICIENT below a minimum exposure
+rather than PATCHED — else a thin-sample zero cancels a firable leg. The
+decoder must reproduce the historical per-carrier hazards (fidelity/collar-heal
+control) before any recency cell is trusted. Net licence: "don't fire at X"
+only where recent exposure is HIGH and recent hazard is ZERO.
