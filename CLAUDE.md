@@ -363,11 +363,19 @@ price) and on what basis:**
 | road | status |
 |---|---|
 | **siphon** | **CLOSED** — off-currency by construction. Stays closed. |
-| **partial spawn starvation** | **REOPEN.** What was refuted is *"partial occupancy is a LOCK"* — a rules fact (the core needs exactly one free tile). The hostile treatment was **never dosed**: max ever seen on an *enemy* ring is 6 of 12, four times in 2,710 sides, and the source table is teams walling **themselves** in. Same primary measures **one hostile body on the ring DOUBLES the 25-round core-death hazard, 2.24%→4.77%, CIs disjoint.** |
+| **partial spawn starvation** | **ALREADY IMPLEMENTED, not a road.** Discovered 2026-08-10 by trying to BUILD it: our incumbent already puts a body on the enemy 12-tile ring in **68.8% of rounds**, arriving ~r22, and both arms of the test already exceed the prescription's ONE body (~2.3 simultaneous). **The open margin is RETENTION, not presence** — `_raid_station` walks the body OFF a corner exactly when that corner becomes pure body-denial. That is LOKI-16. Original entry read: **REOPEN.** What was refuted is *"partial occupancy is a LOCK"* — a rules fact (the core needs exactly one free tile). The hostile treatment was **never dosed**: max ever seen on an *enemy* ring is 6 of 12, four times in 2,710 sides, and the source table is teams walling **themselves** in. Same primary measures **one hostile body on the ring DOUBLES the 25-round core-death hazard, 2.24%→4.77%, CIs disjoint.** |
 | **barrier-form spawn lock** | **NEVER TESTED as a lock.** The s22 probe was FRIENDLY bodies only; three maps produced no enemy contact. Its "they defend for free" inference was overturned in-repo by our own s24 probe (a parked body makes the tile unspawnable for its owner too). |
 | **CPU denial** | **REOPEN on evidence** — the only statement of the refutation in the repo is one clause in a wrap, with no number, denominator, n, or script output; the 201,469 rows sit in an untracked scratch dir. **Separately, CPU-timeout *induction* is HELD ON NORMS, not evidence** — Magnus owes the organisers one question first. Do not merge the two. |
 | **ore poisoning** | **REPRICE.** The mechanism is engine-confirmed with a control; what died was a PRICE (throughput vs redundancy) computed under the retired currency. Clearing a 3 Ti barrier costs them ~30 Ti and 15 builder-turns — a tempo weapon nobody priced as one. A carve-out both primaries preserved was dropped here: *"barrier an ore tile a forward gun already covers"* remains unmeasured. |
 | **heal-idle staffing** | Reopen on evidence, but **off-programme under PLAY_DEFENCE: never** — do not spend a leg. |
+
+**AND A ROAD CAN BE "UNTESTED" ONLY BECAUSE NOBODY READ OUR OWN CODE.** The
+spawn-starvation entry above was audited from the evidence, nominated as an
+untested lever, and turned out to be **something we already do** — found only by
+going to build it. **An audit of the literature is not an audit of the codebase,
+and this queue is a list of things to CHANGE, not things to KNOW.** Before
+pre-registering any plank, grep the incumbent for the behaviour: the cheapest
+possible null is a leg that tests a feature we already shipped.
 
 **A price refutation computed under the retired currency is void even if the
 fixture was clean.** So is any survival/screening refutation resolved on
