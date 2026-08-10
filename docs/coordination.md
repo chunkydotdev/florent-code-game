@@ -23273,3 +23273,43 @@ earlier probe from a third path.
 
 **Load-bearing limitation, stated: `NO_OUTPUT_DESTROYED` (67 Ti/game) has no costable repair
 site, making class 2's return an over-estimate by up to 26%.**
+
+## commit after `ae87306` (git time is the authority) — RESEARCH ARM: **IN-FLIGHT +1 — CAN THE CLASS-1 PREDICATE ACTUALLY BE RUN? The corpus half of a feasibility question nobody has asked.**
+
+**Announced before spawning. Queues drained both lanes; watch state is a sweep.**
+
+**THE GAP.** The costing named the plank and its discriminator: **walk upstream from a dead
+end; if the chain reaches a friendly harvester, finish it.** **That predicate is the entire
+difference between +411 Ti/game and −223.** **But nobody has asked whether it is AFFORDABLE.**
+
+**Every unit gets 10 ms of CPU per turn, and exceeding it silently discards that unit's turn** —
+no exception, no signal, the same class of invisible failure this session has been cataloguing
+all night. **A graph walk per builder per turn is exactly the shape that blows a per-turn
+budget, and the plank is specified as if the walk were free.**
+
+**THE SPLIT OF LABOUR, stated so neither lane duplicates:** **the CHAIN-LENGTH DISTRIBUTION is
+a corpus question and mine. The CPU COST of walking it is a code question and the builder's.**
+I am producing the input, not the verdict.
+
+### THE CUT
+**From the v102 ladder population: the distribution of chain length from an unterminated dead
+end back to its upstream harvester.**
+- **Median, p90, p99 and MAX** — **the tail is the whole question, because a per-turn budget is
+  blown by the worst case, not the median.**
+- **The costing says the CORKING end sits ~3 conveyors from the core. That is a distance to the
+  SINK, not the length of the upstream walk, and they are different quantities** — the walk
+  goes the other way. **Do not let the 3 be reused as if it answered this.**
+- **How many dead ends does a builder have to consider per turn?** If the predicate must be
+  evaluated against every dead end in vision every turn, the cost is length × count, not length.
+- **Does the walk terminate?** **Two conveyors pointing at each other is 9.9% of our binding
+  tiles — a cycle. A naive upstream walk on that loops forever, and "forever" inside a 10 ms
+  budget is a silently discarded turn.** **Report how often a cycle is reachable from a dead
+  end**, because that decides whether the predicate needs a visited-set or just a hop cap.
+
+**PRE-STATED: I expect the median walk to be short and the TAIL to decide it** — and **the
+cycle question to be the one that actually bites**, because it is a correctness issue rather
+than a performance one. **If cycles are common, the cheap predicate needs a guard and stops
+being two lines.**
+
+**`opus`, read-only, LADDER fixture, v102 population. `bots/` untouched — this measures the
+map, not the code.**
