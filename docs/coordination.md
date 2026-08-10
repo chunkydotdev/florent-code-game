@@ -29719,3 +29719,44 @@ item and I would rather record the gap than invent one that sounds good.
 of the work you want to do next** — the builder said it of themselves, the side
 lane said it of themselves (*"I wanted a climb-band target to exist"*), and my
 "flat" compression of a rising quartile is the third.
+
+## 2026-08-10 16:39 CEST — SIDE LANE: v3.3 PROPOSAL audited (D16 remit) — SUPPORTED, with one substantive amendment
+**The case statement is the load-bearing sentence and it is correct:** LOKI-14b
+passed **every existing check** — pre-registered, 8 ADD-only amendments, placebo
+exactly 0/164, dose delivered 150×, controls run to the other verdict, two-clock
+cert clean — **and it was aimed where a win pays 0.2 rating points.** *"The
+method inspects the experiment and never asks whether the QUESTION is worth
+answering."* **No amount of rigour inside a leg reaches that hole**, so the bump
+is justified on structure and not only on incident count.
+**FIRING LEDGER, per D16's meta-clause and s27's D25 (a creating incident is not
+a firing) — all four carry RETROSPECTIVE firings, labelled as such:**
+| item | retrospective firings today |
+|---|---|
+| 1 target-value gate | **1** — LOKI-14b (would have redirected the session) |
+| 2 game share not win rate | **all** currency verdicts (residual sd 0.0000, 20/678 deltas oppose their match result) |
+| 3 pin the opponent's version (D18) | **2** — Ouroboros, The Bisons |
+| 4 name the denominator's surface | **2, IN OPPOSITE DIRECTIONS** — meta_join pools rated+unrated (research) AND is missing 38% of ladder (mine) |
+**Item 4's two failures pointing opposite ways is the strongest single argument
+in the proposal:** a surface that is simultaneously too INCLUSIVE and too SPARSE
+cannot be fixed by remembering to be careful with it.
+### ⚠ AMENDMENT I WOULD MAKE: **ITEM 1 SHOULD BE A SCRIPT, NOT A LINE**
+As drafted the target-value gate is *"one line, thirty seconds"* in the prereg
+template — which is **`attention` on the enforcement ledger**, and today is a
+sustained demonstration that attention-level rules fail exactly when the work is
+exciting. **LOKI-14b's panel WAS carefully selected — against crash hazard, with
+a fidelity gate reproduced to the digit. The rating criterion simply was not in
+anyone's head, and a template line is only read by someone already asking the
+question.**
+**The repo already has the pattern twice today:** `map_admits.py` (map axis) and
+Amendment 1's ≥2-carrier floor mechanised **inside the runner that fires**. A
+`band_admits`-style check takes the panel's team ids, prints each gap and the
+reachable verdict, and **cannot be skipped by enthusiasm.** Cost is one
+afternoon; it converts item 1 from `attention` to `script` — and item 1 is the
+only one of the four whose failure mode is *forgetting to ask*, which is
+precisely the class scripts fix and prose does not.
+**Items 2-4 are correctly prose:** they change how a number is COMPUTED or
+LABELLED, which no script can enforce without knowing the claim's intent.
+**Verdict language avoided deliberately — adoption is Magnus's.** This lane's
+role here is D16 (work must follow the CURRENT method) and I flag only that the
+proposal is well-grounded and that item 1's enforcement level is the one thing I
+would change before it lands.
