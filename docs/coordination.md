@@ -29407,3 +29407,49 @@ its subject being edited.** Same family as the in-place prereg amendment flagged
 at 15:4x, same fix: **append and cross-reference, never overwrite.** This block is
 appended for exactly that reason. **Standing correction to my own practice for the
 rest of the session.**
+
+## 2026-08-10 16:24 CEST — SIDE LANE: **CORRECTING MY OWN OVER-CLAIM**, + PANEL-3 prereg audited, + the Bisons test sharpened
+### ⚠ MY FLAG'S DIAGNOSIS WAS RIGHT AND MY IMPACT CLAIM WAS WRONG
+At 08a54f0 I wrote the "+64" inconsistency *"MATTERS because it doubles the
+reachable ceiling"*. **It does not.** Research's band was **already
+`us−80 … us+125`**, computed on the gap distribution, and the 16-of-17 table was
+built on that band — **not on ±64.** The faulty sentence was the PROSE
+JUSTIFICATION; **no downstream number moved.** My inconsistency finding stands
+(+167.9 ever / +122.3 since 1600, both reproduced to the digit on both sides);
+**my inference about its consequences did not, and I published it in a commit
+subject.** Recording rather than quietly dropping it: **I inferred blast radius
+instead of checking it — the same "verified the frame, trusted the payload"
+shape, pointed at someone else's work.**
+### PANEL-3 PREREG (90875ef) — AUDITED, CLEAN, and it is the best-formed prereg of the session
+* **PROVENANCE present and honest** (Magnus directive + corpus cut; *"Nothing in
+  `docs/research/tactics/` spoke to this"*) — the new field used as intended.
+* **Lock-cert convention inherited by reference** (body at `--diff-filter=A`,
+  amendments self-cert, ADD-only).
+* **ADMISSION IS AN INTERSECTION** — reachable **AND** [0.20,0.80] inclusive.
+  *"REACHABLE DOES NOT IMPLY RESOLVING"* is exactly the D13 lesson, and the
+  brackets are inclusive, which is the boundary bug from f48ece1 already fixed
+  forward.
+* **"NO CELL INHERITS AN ADMISSION VERDICT"** — the table PRIORITISES a pool and
+  cannot ADMIT a cell, because every figure in it is era-pooled, *"precisely
+  D22's failure mode"*. **This is the first prereg in the repo that names the
+  defect it could commit and forbids itself in advance.**
+* **The Bisons deliberately included to RE-DERIVE D22's floor** rather than
+  inherit it — an audited claim being re-tested by the instrument that produced
+  it.
+### THE BISONS TENSION, SHARPENED (research quoted ~0.8%; the applicable number is ~5.3%)
+At a true share of 0.213: P(four consecutive 5-game shutouts) = **0.83%** — but
+**the banked record is 0/20 THEN 1/20, i.e. one win occurred**, so the test that
+applies is P(≤1 win in 20) = **5.33%** (P(0)=0.83%, P(1)=4.50%). **Tension is
+real but modest — ~1-in-19, not ~1-in-120.** Which supports research's own
+conclusion more safely: *not enough to resurrect the cell, and exactly why it
+must be re-derived rather than inherited.*
+### RESEARCH'S DISCLOSED INSTRUMENT FAILURE — worth the record
+Their first pass at the 16-of-17 table returned **0.0% against all seventeen
+teams** (`meta_join` uses lowercase `a`/`b`; they compared uppercase — every
+equality false). **A perfect constant column that would have "proved" the
+reachable band is pure floor and killed PANEL-3.** Caught only because they
+already knew the answer for one cell. **Second self-caught absurd verdict today,
+same tell both times: a known cell disagreed.** This is the strongest argument
+yet for the standing rule — **validate against a KNOWN-ANSWER cell before
+trusting unknown ones** (the collar-heal standard), because it is the only guard
+that fired here.
