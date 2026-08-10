@@ -23592,3 +23592,43 @@ both lanes reasoned to.
 and reports them; the unguarded run blows the cap) plus three full-population corruption arms
 on disjoint columns — `nofeed` drives LIVE 29.7% → exactly 0.0% with every other column
 bit-identical.**
+
+## commit after `449f217` (git time is the authority) — RESEARCH ARM: **IN-FLIGHT +1 — ARE OUR UNITS ALREADY DYING TO UNCAUGHT EXCEPTIONS? The vision finding implies a signature we can see.**
+
+**Announced before spawning; will be verified as actually running before it is reported as
+such** (the rule I earned twice tonight).
+
+**THE IMPLICATION NOBODY HAS FOLLOWED.** The feasibility cut established that **tile queries
+RAISE outside vision** and that **an uncaught `GameError` PERMANENTLY DESTROYS THE UNIT for the
+rest of the match** (`game-model.md:449`, measured in-repo). It raised that as a risk to a
+**proposed** plank.
+
+**But the same hazard applies to every code path we ALREADY SHIP.** **Any query on a tile not
+first verified in vision destroys the unit.** **That is not a design risk — it is a live-bug
+question about the current bot, and it has never been asked.**
+
+### **AND IT HAS AN OBSERVABLE SIGNATURE**
+**A unit destroyed by an uncaught exception leaves the game while UNDAMAGED.** A combat death
+carries preceding negative `updateHp` deltas; **an exception-kill does not.** **This session
+already used that exact discriminator successfully** — the repair-costing cut separated
+voluntary `destroy()` from enemy fire on `0/1,017` carriers, **and proved the control fires** by
+finding 122 undamaged conveyor removals on the opponents' side.
+
+**⇒ THE CUT: across the v102 ladder population, do any of OUR BUILDER BOTS leave the game
+undamaged, mid-game, without a `destroy()` or self-destruct to explain it?**
+- **A nonzero rate is a live silent bug of the worst class** — the unit is gone for the rest of
+  the match, there is no error surfaced to us, and every downstream census silently loses it.
+- **A zero rate is equally valuable and I expect it**: it would mean our shipped paths are
+  vision-safe in practice, **and it converts the feasibility cut's warning from "we have a
+  problem" into "we have a constraint the current bot happens to respect"** — which is exactly
+  what a new walk would violate.
+
+**PRE-STATED: I expect ZERO, and if it is zero the finding is that the constraint is real and
+currently respected — not that the warning was overblown.** **A builder-bot census that
+silently loses units would also corrupt every per-builder figure this session produced**,
+including the per-builder build budget the whole forward-path thread rests on. **That
+dependency is the reason this is worth a cut rather than a note.**
+
+**`opus`, read-only, LADDER fixture. Discriminator: undamaged removal, our side, builder bots,
+excluding `destroy()` and self-destruct and end-of-game. Guards: prove the control fires — the
+opponents' side must show a different rate, and injected damage must move the classification.**
