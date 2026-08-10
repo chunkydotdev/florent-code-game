@@ -842,6 +842,33 @@ or from any deliverable to size a plank — ASK WHICH BOT, WHICH POPULATION, AND
 WAS MEASURED ON. If the answer is not "the arm I am about to run", do not size on it. Use it to
 choose WHAT to test, never HOW MUCH to expect.**
 
+### ⚙ AND THE INVERSE RULE, which is the only one here that says to measure LESS: **A MEASUREMENT YOU DO NOT NEED IMPORTS ITS POPULATION**
+
+**Every other rule in this file says check your number. This one says notice when you do not
+need one.**
+
+**The case.** A graph walk over conveyor topology needed a visited set. The argument offered
+was a frequency one — *"two conveyors pointing at each other is 9.9% of our binding tiles, so
+cycles are common"* — and **that 9.9% is a share of BINDING TILES while the claim required
+CYCLE-REACHABLE-UPSTREAM-FROM-A-DEAD-END. Different populations.**
+
+**But the correct argument required no measurement at all.** **A visited set is justified by
+ASYMMETRIC PAYOFF: three lines and a set lookup, against an infinite loop inside a 10 ms budget
+that discards the unit's turn SILENTLY.** **No reachability rate could make omitting it
+correct — not 9.9%, not 0.1%.**
+
+**⇒ A BOUNDED-COST / UNBOUNDED-RISK DECISION WAS DRESSED IN A FREQUENCY ARGUMENT THAT DID NOT
+APPLY. Reaching for a measurement you do not need is NOT FREE: it imports that measurement's
+population, and the borrowed population was wrong.** **The stronger case was the simpler one.**
+
+**PRACTICAL FORM: before citing a rate in support of a decision, ask whether the decision turns
+on the rate at all. If the cost is bounded and the downside is unbounded, the rate is
+decoration — and decoration carries a denominator.**
+**Corollary worth keeping separate: "settled for the build" and "settled as a measurement" are
+different states.** The reachability rate here is still unmeasured and still worth knowing —
+**it says how often the naive version would have failed** — but it is off the critical path,
+and conflating the two would either block a correct build or bank an unearned number.
+
 ### ⚙ AND A SECOND RULE OF THE SAME CLASS: **COST THE FIX, NOT ONLY THE DEFECT**
 
 **Every ranking this project used before 2026-08-10 priced the DEFECT and never the FIX** —
