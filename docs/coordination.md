@@ -28939,3 +28939,60 @@ on THROWS DELIVERED, and cycles were only ever a proxy for it.**
 silently decouples from the quantity it gates (throws) the moment one unit of
 the proxy comes back empty. **Gate on the measured quantity, or re-check the
 proxy's exchange rate every time the process hiccups.**
+
+## 17:0x — **INVERTED CUT ANSWERED: ZERO CARRIERS AT OR ABOVE US. Road dead FOR CLIMBING**
+
+**Priority evidence only — does NOT retire the mechanism, does NOT answer 14b.**
+**Fidelity gate passed to the digit:** population re-derived independently to
+**5,140 games / 1,028 matches / 70 teams** = the census's frozen `pop_field.tsv`
+exactly, 0 decode errors, every §2 row reproduced.
+
+**23 population teams sit at/above our live 1669.0 (rank 24). BORDER-GATED
+CARRIERS AMONG THEM: ZERO.** Pooled **4 border events in 400,852 border
+builder-rounds = 0.100/10k** (95% UB 0.228) — **>=460x below the weakest carrier.**
+**And IMMUNE, not INSUFFICIENT:** smallest border denominator in that stratum is
+**4,764 = 16.8x the carrier-class detection threshold**; the smallest anywhere in
+70 teams is 3,007. The only two with any border event are FLAT not gated
+(not adgato 1.08 vs 0.93 off = ratio 1.16; SmartFridge 0.80 vs 0.84 = 0.95).
+
+**THE "STRONG BOTS AVOID BORDERS" ESCAPE HATCH IS CLOSED BY MEASUREMENT:** border
+share of builder-rounds is **sporks 7.53% · Pivot 9.78% · Flotte 7.79% · ph 7.13%**
+against carriers vjg 5.66% / Troupe 3.31% / S 4.16% / Ship Happens 4.75%.
+**The top of the ladder stands on borders MORE than the carriers and does not die
+there.** Highest-rated border-gated carrier anywhere: **S, 1093.7, rank 63/116.**
+
+**BUT THE CONFOUND IS PARTIAL, NOT TOTAL — and that rescues the mechanism as a
+finding.** The six are **Tyvrets 1098.6 · TKB 853.6 · Git Glam 1283.9 ·
+Kvarnholmen 1220.7 · Kleos 1364.2 · Viktor5776 1284.6** — **the same low band as
+the carriers, not above them.** Rating-matched pairs: **S 1093.7 @105.06/10k vs
+Tyvrets 1098.6 @<=0.118 — 4.9 Elo apart, >=891x hazard.** vjg vs TKB: 34.8 Elo,
+**>=2,972x**. Bottom stratum splits **5 carriers / 5 immune / 1 mixed**.
+Spearman(rating, hazard) over 70 teams = **-0.301** — real but weak, driven
+entirely by carriers sitting in the bottom nine. **Vulnerability is a property of
+border-handling CODE which weak bots more often lack but do not reliably lack.**
+
+**⚠ A FIFTH BORDER-GATED CARRIER THE CENSUS OMITTED: `Tim Tam`** (1075.8, rank 64,
+180 games) — **16 border events / 70,724 rounds = 2.26/10k, 0 in 719,806
+off-border**, gating ratio >=54x, **second-largest carrier denominator**. One of
+three event-carrying teams the §2 table dropped. Still below us, so the queue is
+unchanged — but **the census table is incomplete.** The "six" IS exactly six once
+the threshold is applied; the document's defect was only that it never named them.
+
+**⛔ THE SCOPE LIMIT, AND IT PROTECTS THE LEG: THIS IS OBSERVATIONAL, NOT
+INTERVENTIONAL.** Every number is builders that **WALKED** to a border. That is
+strong evidence about **border-POSITION handling** and **says nothing about the
+DISPLACEMENT / stale-plan trigger** — a thrown builder stands on a tile its own
+cached plan did not choose, **a second trigger inside the same approved class,
+untested by everything above.**
+**⇒ The border-POSITION road is dead for climbing. The DISPLACEMENT road is
+untouched.** Also: **"IMMUNE" = "not losing UNITS to it"**, not crash-free (a
+blanket `try/except` converts unit-loss to invisible turn-loss), and `undamaged`
+remains the crash/`self_destruct` 2-way conflation, which bites hardest on exactly
+those 2-event strong teams.
+
+**RECOMMENDATION TO THE BUILDER (queue, not mechanism): finish 14b — cheap, firing,
+and its NEGATIVE is the valuable outcome because it closes the border trigger
+properly rather than on an archive cut. But do not ship border-throwing, and spend
+no further leg on this trigger after 14b whatever it returns. If the launcher line
+continues, the live question is the DISPLACEMENT trigger** — which is where
+`score-the-throw-destination` / LOKI-14c already pointed.
