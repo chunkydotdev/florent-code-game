@@ -191,3 +191,26 @@ Workable reading, offered not decided: **`PLAY_DEFENCE` governs MECHANISM, the
 score measures OUTCOME.** We do not build survival planks; if an offensive plank
 also converts losses to tiebreak wins, the score may credit it. Only Magnus can
 settle whether that is the intent.
+
+## AMENDMENT — TIEBREAK WIN IS **−10**, NOT 0 (Magnus, 2026-08-10 late)
+
+> *"maybe they should be the same negatives, we should never optimize for
+> tiebreak wins, all of our effort should be on killing the cores"*
+
+**Adopted, and it overturns this lane's earlier recommendation of 0.** The
+decisive argument was one I missed: **at 0, a pure SURVIVAL plank converting 20
+losses into 20 tiebreak wins scores +200 and reads as a triumph. At −10 it
+scores exactly zero improvement.** `PLAY_DEFENCE: never` forbids that plank, so
+**−10 is what makes the currency agree with the doctrine — the 0 I argued for
+is what created the tension flagged earlier today.**
+
+My earlier objection (a bot indifferent between a tiebreak win and a loss has no
+reason to hold a won game) was weaker than I presented it: **the score is a
+PLANK-SELECTION metric, not the bot's utility function. No bot reads it.**
+
+**Safe to change, verified rather than assumed:** the balance property is
+**identical** under both — speed lever **+0.75**, conversion **+0.63**, ratio
+**1.20** — so the spec's maintenance obligation is cleared. Mean moves
+−1.69 → −1.76/game; 2 games in 255 affected.
+
+**Baselines shift by ~0.07 and must be recomputed before the ship gate is used.**

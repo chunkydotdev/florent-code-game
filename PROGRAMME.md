@@ -99,14 +99,20 @@ in-session, answered *"Yes i did"*). Spec:
 `tools/score.py`, wired into `leg_read.py`.
 
     core kill <100 -> 10 · <130 -> 8 · <170 -> 6 · <250 -> 4 · <400 -> 2
-    slower kill -> 1 · tiebreak/titanium win -> 0 · LOSS (any cause) -> -10
+    slower kill -> 1 · tiebreak/titanium win -> -10 · LOSS (any cause) -> -10
     reported as MEAN POINTS PER GAME
 
 **It SUBSUMES the two fields it replaces.** `core_kill_share` is retained as
 SECONDARY because it is the cheaper diagnostic, but the score already contains
 it: a kill scores 1-10 and a tiebreak win scores 0, so kill share and
 time-to-kill are both inside one number. **`R1000_IS_DEFEAT` is now arithmetic
-rather than doctrine** — a tiebreak win is worth exactly zero.
+rather than doctrine** — a tiebreak win scores **-10, identical to a loss**
+(Magnus, 2026-08-10: *"we should never optimize for tiebreak wins, all of our
+effort should be on killing the cores"*). **This is what keeps the currency
+consistent with `PLAY_DEFENCE: never`:** at 0 a pure survival plank converting
+20 losses into 20 tiebreak wins would have scored +200 and looked like a
+triumph; at -10 it scores exactly zero improvement. Balance property verified
+UNCHANGED by the switch (speed +0.75, conversion +0.63, ratio 1.20 either way).
 
 **⛔ IT IS NOT A LEG VERDICT STATISTIC. `KILL_SPEED_IS_LEG_VERDICT: no`.**
 Per-game sd is **7.74**, so a realistic change needs **~2,100 games per arm**,
