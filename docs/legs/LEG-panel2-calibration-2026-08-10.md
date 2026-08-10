@@ -91,3 +91,64 @@ Per the prereg: **no plank is tested here and no plank result may be derived fro
 it.** Admission band `[0.20, 0.80]` on `core_kill_share`, n=25/cell. The
 falsifier for the exercise itself stands: if all five cells land inside the band,
 **the panel was never the problem** and that gets written.
+
+---
+
+## 5. DEFICIT-FIRST ORDERING — MUTATION RECORD (owed by `a49f87e`, s28)
+
+`a49f87e`'s message claims the deficit-first count predicate is "mutation-tested
+against the CLI banner split". The test ran; the record did not get committed
+with it. **That is the second time in one session I have committed a
+mutation-tested claim ahead of its artifact** (§1 was the first), which makes it
+a habit rather than a slip — the standing rule is that the record IS the test.
+
+**Why the predicate needed a mutant at all.** The `fcode` CLI now prints an
+`Update available: 2.3.6 -> 2.3.7` banner, so one banked challenge lands as TWO
+lines:
+
+```
+f61d19c1-600e-457b-861b-dbeb6b3d8691 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "a0ddeb6b-cc0b-4543-b29d-5f7dfaa714b1"}
+```
+
+The predicate I first wrote was `grep -c "^$id .*matchId"`. **`matchId` is never
+on the same line as the id, so it matches nothing and returns a constant 0 for
+every cell** — an ordering that reorders nothing while looking like it works.
+Caught by inspecting the outfile before trusting the count, not by the test.
+
+**Three cases, run against the live `scratchpad/arm_panel2.txt` (cells 1-3 banked
+1 each, cells 4-5 banked 0):**
+
+| case | input | required | observed |
+|---|---|---|---|
+| **A** real outfile | 1,1,1,0,0 | starved cells FIRST | `bfbb9a68(0), ebd8d82a(0), 0774b1b2(1), 48340ad8(1), f61d19c1(1)` ✅ |
+| **B** absent outfile | no data | order UNCHANGED (must not reorder on nothing) | `f61d19c1, 48340ad8, 0774b1b2, bfbb9a68, ebd8d82a` ✅ |
+| **C** MUTANT `^$id .*matchId` | 1,1,1,0,0 | must FAIL to prioritise | all counts read `0`; order scrambled to `0774b1b2, 48340ad8, bfbb9a68, ebd8d82a, f61d19c1` — **starved cells NOT first** ✅ |
+
+Case C is the one that matters: the mutant produces a **different and wrong**
+ordering, so case A's correctness is attributable to the predicate rather than to
+luck in the sort. Shipped predicate: `grep -c "^$id "` — only the `*matchId*`
+branch appends, so one line starting with the id IS one banked challenge,
+banner or no banner.
+
+## 6. CROSS-CITE — THE DROP-DIRECTION CLAIM IN §2 IS CORRECTED
+
+§2 states the drop "always lands on the TAIL". **Over-general.** Research's
+per-cycle reconstruction of the arm files found genuine mid-run drops starving
+the **HEAD** (v104 control cycles 3 and 4 lost cells `{1,2,3}` and `{1,2}`), and
+the side lane verified the panel2 fresh-run case starving the **TAIL**. Unified
+statement, which is what the code comment now carries:
+
+**Drop position is wherever the rate-limit window boundary falls in the id list,
+set by the budget the arm inherits** — fresh/partial budget starves the tail,
+restart-exhausted budget starves the head. **The rotation fix is
+direction-agnostic and survives both**; what was wrong was the fixed direction,
+not the prescription.
+
+Two further corrections from the same audit, which matter for the CONTROL
+denominator the audit session is reading: **two of the four apparent deficits are
+restart truncation, not drops** (a final partial cycle when the runner was
+stopped) — reading them as drops doubles the apparent defect — and
+**loki14 / loki16 / v102confirm are perfectly uniform with zero drops. Only the
+CONTROL arm is composition-skewed, and I Stone — one of the only two cells that
+can move — is the under-represented one.**

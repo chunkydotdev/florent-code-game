@@ -56,9 +56,23 @@ fire(){ local n=0; local ids; ids=($PANEL)
         # 10 (measured off the CLI 2026-08-10), so an arm can be rejected partway
         # through its window. The old loop retried 3x at 25s, gave up, printed
         # "fired 3/5" and moved on -- and because it always walked $ids in the
-        # same order, the drop was SYSTEMATIC and always landed on the TAIL.
-        # In this leg's own cycle 1 the two dropped cells were exactly the two
-        # RETAINED controls, i.e. the panel starved its own linkage.
+        # same order, the drop was SYSTEMATIC: it landed on the SAME cells every
+        # time, starving them while the rest filled.
+        #
+        # WHICH cells: NOT a fixed end of the list. This comment first claimed
+        # "always the TAIL"; research then claimed "always the HEAD"; both are
+        # over-general and the primaries settle it. DROP POSITION IS WHERE THE
+        # RATE-LIMIT WINDOW BOUNDARY FALLS IN THE ID LIST, set by the budget the
+        # arm inherits -- a fresh/partial budget starves the TAIL (panel2 cycle 1
+        # dropped cells 4 and 5, which were exactly the two RETAINED controls, so
+        # the panel starved its own linkage), an exhausted budget from a restart
+        # starves the HEAD (v104 control cycles 3 and 4 lost cells {1,2,3} and
+        # {1,2}). THE ROTATION FIX IS DIRECTION-AGNOSTIC AND SURVIVES BOTH.
+        # Also, from the same audit: two of the four apparent deficits are
+        # RESTART TRUNCATION, not drops (a final partial cycle when the runner
+        # was stopped), and loki14/loki16/v102confirm are perfectly uniform with
+        # zero drops -- only the CONTROL arm is composition-skewed, and I Stone,
+        # one of the two cells that can move, is the under-represented one.
         #
         # WHY NOT panel2_cal.sh's FIX (wait out the window, retry the same cell):
         # that runner activates NOTHING. A fanout arm has a PROTOTYPE LIVE while
