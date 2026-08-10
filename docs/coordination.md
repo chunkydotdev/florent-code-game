@@ -26725,3 +26725,47 @@ programme** (`1e76196`, `docs/prereg/PREREG-loki15-conveyor-quota-2026-08-10.md`
 - **This is the iteration mill closing the loop Magnus asked about:** LOKI-13's
   null + its method fault (v3.2) directly shaped LOKI-15's design. The register/
   changelog is not archival — it fed the next leg.
+
+## 2026-08-10 09:1x CEST — SIDE LANE: LOKI-13 POOLED p=0.016 audited — REAL-looking, but "0.016" oversells it; two caveats for the ship decision
+
+**The attribution handling is EXEMPLARY and gets no flag:** the result doc
+separates *"v104 beats v102 by +18.0pp, p=0.016, n=100/100"* (SUPPORTED) from
+*"because of economy suppression"* (NOT SUPPORTED — Bar A failed 0.86×, "we do
+not know why"), and calls it a **ship candidate on the currency, not a banked
+mechanism.** That is D6/D10 clean — a significant currency effect on an unbound
+mechanism, correctly NOT attributed to the intended cause.
+
+**THE STRONGEST EVIDENCE IT IS REAL, and it is genuinely strong:** the point
+estimate **HELD at +18.0pp from n=25 to n=100** while **LOKI-11 went +16.0pp →
++0.0pp when its n doubled.** A sampling artefact regresses toward zero as n
+grows; a real effect holds its point estimate. This one held at 4× n. That
+contrast is the best single indicator in the session that LOKI-13's effect is a
+real property of PAVE_TRAIL_ON=False, not noise.
+
+**BUT TWO CAVEATS MEAN THE TRUE SIGNIFICANCE IS NEARER 0.05 THAN 0.016, and
+neither is in the doc:**
+1. **MULTIPLICITY.** This is one of the session's currency reads, not the only
+   one. Over 2 planks (family-wise ~0.032) — or 3 counting the two looks at
+   LOKI-13 (n=25 then n=100, ~0.047) — the family-wise error is ~0.03–0.05.
+   **It survives correction, but barely; "first significant result" invites
+   reading 0.016 as decisive when corrected it is ~0.05.**
+2. **ASYMMETRIC STOPPING.** LOKI-11 was stopped at n=50 (effect died); LOKI-13
+   was continued to n=100 (effect held). Continuing-while-promising and
+   stopping-when-dead inflates the nominal p. The held point estimate mitigates
+   this strongly — but it does not formally eliminate it.
+
+**THE CLEAN FIX, cheap now windows are free: ONE fresh PRE-REGISTERED
+confirmatory PAVE_TRAIL_ON=False leg at n=100** — pooled-into-existence-after-a-
+null is not the same as pre-registered-at-n=100, and a single confirmatory run
+removes all optional-stopping and multiplicity doubt at zero rated cost. **Note
+LOKI-15 does NOT serve this** — it is a different treatment (per-builder quota),
+so it tests the MECHANISM (does cutting the economy help) but cannot confirm
+LOKI-13's specific PAVE_TRAIL effect.
+
+**Net: the best result of the session, probably real (the held point estimate is
+the reason), correctly un-attributed on mechanism — but a ship decision should
+know it is p≈0.05 family-wise, not 0.016, and is one cheap pre-registered leg
+away from being nailed.**
+
+**Separately: the preflight IDENTITY bug I flagged is FIXED (`f4372dd`)** — the
+gate now validates the prereg matches the bot, not just that the S0 fields exist.
