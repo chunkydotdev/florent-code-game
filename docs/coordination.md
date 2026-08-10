@@ -29968,3 +29968,56 @@ panel to be true, and is offensive rather than defensive. **And it converges wit
 the library's unactioned `bearing_count` candidate — the first time the
 consumption path Magnus ordered has paid.** Flagging as the highest-value item
 now on the board; audit to follow.
+
+# ============================================================================
+# 2026-08-10 19:0x CEST — **MAGNUS RULING: no Ouroboros counter. The sentinel
+# siting defect is the plank.** ("I agree")
+# ============================================================================
+Put to him: *don't build an Ouroboros counter — it moved +46pp on its own and you
+called it correctly; the sentinel siting defect is the plank worth taking from
+today.* **Magnus: "I agree."**
+
+**SO THE QUEUE FROM TODAY IS ONE PLANK, and it is a fix to OURSELVES:**
+**~48% of the sentinels we build cannot shoot the enemy core on the round they are
+built** — off every firing ray, out of range, or both. Measured on a
+nearest-footprint-tile basis from each replay's own `map.cores`, **against three
+separate opponents**, so it is not a fact about any of them:
+
+| our sentinel builds | vs Ouroboros (522) | vs Askar City (283) | **Askar's OWN (253)** |
+|---|---:|---:|---:|
+| median nearest d² to enemy core | **32 = the range boundary** | 25 | **18** |
+| in range AND on a firing ray | **52.1%** | 65.4% | **77.9%** |
+
+**Two independent roads arrived at the same defect on the same day** — this
+corpus autopsy, and the tactics-library mining, which found
+`get_attackable_tiles_from` called **zero times about an ENEMY** across the live
+bot while `_try_forward_sentinel` takes **the first legal adjacent tile with no
+scoring at all.** Convergence from an archive decode and an external-literature
+mine is the strongest form of prioritisation available to us.
+
+## THE BARS ALREADY PREDATE ANY INTERVENTION — hand them to the prereg intact
+Stated by the autopsy **before** any siting change exists, so they are genuinely
+pre-data. Restated for a GENERAL panel rather than the Ouroboros leg they were
+drafted against (the shootable-on-build statistic is opponent-agnostic):
+1. **PRIMARY (mechanism):** shootable-on-build rate — nearest-footprint d² <= 32
+   **AND** on one of the 8 rays — rises **52.1% -> >85%**, and **median sentinel
+   lifetime 27 -> >74 rounds** (the Askar City level).
+2. **MEDIATOR:** our builder melee hits in r0-150 fall **median 63 -> <20**, and
+   builder deaths **3.56/100 rounds -> <1.5**.
+3. **CURRENCY:** median game length **<300 rounds** and core-kill share rises.
+   *(A r1000 `titanium_collected` win is a DEFEAT under PROGRAMME.md.)*
+4. **FALSIFIER, pre-stated:** if sentinels are placed correctly, survive, and the
+   game still runs past r500 with their core above 250 HP, **the range asymmetry
+   is not the lever and the real constraint is TRANSIT** — in which case the lever
+   is insertion, not placement.
+**Known limit, stated: no decoder emits sentinel FACING, so 52.1% is an UPPER
+BOUND on what can actually fire.** A facing decoder would tighten the primary and
+does not exist.
+
+## AND IT ANSWERS ITS OWN TARGET-VALUE GATE CLEANLY
+This is a fix to our own play, so it pays **against every opponent we are paired
+with** — i.e. the reachable band by default, not a chosen stratum. **The first
+plank of the day that does not have to argue about who it is aimed at.**
+`PROVENANCE:` corpus/archive cut (the 195-replay autopsy) **+ a tactics-library
+file** — the first non-negative provenance since the field was created, and it
+arrived by convergence rather than by going looking for a citation.
