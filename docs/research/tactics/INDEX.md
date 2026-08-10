@@ -155,17 +155,65 @@ plausible-sounding tactic with no source is pollution; mark it
 
 ## Our ruleset, for briefing subagents
 
+> ⚠ **THIS BLOCK IS THE SEED TEXT EVERY SWEEP AGENT IS BRIEFED FROM. It carried four
+> errors until 2026-08-10 (s28), and a self-consistency audit traced library-wide
+> defects back to exactly here** — three files asserting per-category cost scaling,
+> five prescribing an instrument that does not exist, six treating enemy ammo as
+> drainable, and **only 2 of 252 files knowing that a round-1000 game is a defeat.**
+> **Repairing individual files is outrun by the ones still being written unless this
+> block is right.** Corrections below are engine-verified (disassembly with full Rust
+> symbols), not read off the organisers' doc, which is known-wrong in places.
+
 Two teams, symmetric grid 8x8..30x30. Core 500 HP / 2x2. Builder bots (40 HP, the
 only mobile unit; build/attack/heal/destroy on an orthogonally adjacent tile).
 Turrets: gunner r²=13 dmg 7 / 4 ammo; sentinel r²=32 dmg 18, **ignores obstacles**
 / 10 ammo; launcher r²=26, throws a builder bot **from either team** to a passable
 tile. One resource (titanium), moved physically by conveyors/splitters/harvesters
 into the core; **core converts titanium→ammo 1:1, no passive ammo income**.
-Build costs **scale up** per category as you build more. 16-slot integer team
-comms store, writes visible next round. 1000 rounds; win by core kill, else
-tiebreak on titanium delivered → harvesters alive → titanium stored. **10 ms CPU
-per unit per turn; exceeding it silently discards that unit's turn.** An uncaught
-exception permanently destroys that unit for the match.
+16-slot integer team comms store, writes visible next round. 1000 rounds.
+**10 ms CPU per unit per turn; exceeding it silently discards that unit's turn.**
+An uncaught exception permanently destroys that unit for the match
+(**`SystemExit`/`KeyboardInterrupt` are the only exemptions; a CPU timeout does
+NOT destroy the unit**).
+
+**THE FIVE CORRECTIONS — do not brief a sweep without them:**
+
+1. **COST SCALE IS ONE GLOBAL ADDITIVE TEAM FACTOR, NOT PER-CATEGORY.** Every build
+   adds to the same factor (conveyor/splitter/barrier +1%, harvester +5%, launcher
+   +10%, builder bot/gunner/sentinel +20%) and inflates ALL subsequent builds of
+   EVERY type. Additive, not compounding. Engine-confirmed (`bots/_probe_scale`):
+   spawning ONLY builder bots raised conveyor 3→6 and harvester 20→40, categories
+   never built. **It is team-keyed and an ENEMY CANNOT INFLATE IT — and destroying
+   their buildings LOWERS their scale, i.e. demolition HELPS them.**
+2. **A ROUND-1000 GAME IS A DEFEAT, INCLUDING WHEN WE WIN IT.** The tiebreak ladder
+   (`titanium_collected` → harvesters alive → stored) is **OFF-CURRENCY**. Economy
+   is instrumental: it buys the kill, it never scores. **Any tactic whose only
+   channel is the tiebreak does not transfer, however well sourced.** Likewise
+   **NEVER PLAY DEFENCE** — survival, screening, home turrets and heal-uptime are
+   off-programme regardless of what they measure.
+3. **`print()` OUTPUT IS STRIPPED FROM PLATFORM-DOWNLOADED REPLAYS.** Measured
+   2026-08-10: stdout empty in **30,664 of 30,664** `BotOutput` events. It is
+   captured LOCALLY only. **Never prescribe reading a bot's own log stream out of a
+   live leg's replay** — decode the wire state instead.
+4. **ENEMY AMMO CANNOT BE DRAINED.** `can_fire` returns **TRUE at 0 ammo**; the
+   check lives in `finish_firing_turret` and **RAISES**, destroying the firing
+   team's OWN turret. So there is no drain lever on an opponent — it is a hazard to
+   us. **Any "bait their shots to burn ammo" tactic is void.**
+5. **RESOURCE FLOW IS TEAM-BLIND BUT CREDIT IS TEAM-KEYED TO THE DESTINATION.**
+   Pushing resources into the enemy core **credits THEM** — it is a gift, not a
+   poison. (The live corollary: an enemy conveyor adjacent to YOUR harvester is a
+   full-rank acceptor.) **The comms store is genuinely per-team private** — no
+   cross-team read or corruption.
+
+**AND A NOTE ON THE LIBRARY'S OWN FAILURE MODE, so a sweep does not repeat it:**
+**this library has no clock.** A file records what was true when it was written and
+nothing reaches back into it when a later measurement lands. **Before asserting any
+`us`-specific fact, cite the repo path you got it from and check its date** — and
+prefer these engine-verified documents, which as of the s28 audit were cited by
+**ZERO of 252 files**: `../engine-source-crash-and-launcher-2026-08-10.md`,
+`../engine-guard-matrix-exploit-hunt-2026-08-10.md`,
+`../AUDIT-the-six-refuted-roads-2026-08-10.md`, `../crash-census-2026-08-10.md`,
+`../loki-arsenal-pricing-2026-08-09.md`.
 
 ## ⛔ **`THE FORWARD ROAD IS CLOSED` IS DEMOTED — 2026-08-10, and it had propagated into NINE FILES**
 
@@ -1193,8 +1241,15 @@ the same as the probe problem being small.**
   **Same family as the `2.68 healers` error: a field figure relabelled as ours.**
   **Archive drift on the published level, separate from the subject error: 2.34% → 1.11% on
   25,357 throws, because the archive has tripled since publication.**
-- **We bank and do not spend.** We end r200-300 holding more titanium than
-  Ouroboros while buying a twelfth as much ammunition.
+- ~~**We bank and do not spend.** We end r200-300 holding more titanium than
+  Ouroboros while buying a twelfth as much ammunition.~~
+  **⛔ STRUCK, s28 2026-08-10 — THIS FILE REFUTED ITSELF 60 LINES ABOVE AND NEVER
+  STRUCK THE ASSERTION.** Line 1184 of this same index tabulates the re-measurement:
+  **"us 506 / field 348" → "us 96 / field 210 — INVERTED".** We now bank LESS than
+  the field, not more. **An index that carries a claim and its refutation in the
+  same file, unreconciled, is worse than one that carries neither** — a reader
+  hitting the standing-facts list takes the assertion and never scrolls up. Found by
+  the s28 self-consistency audit.
 - **THE UNIFYING FACT (2026-08-09, `heal-arithmetic-2026-08-09.md`): healing is
   4.00 HP/Ti and the best damage source is 1.80 HP/Ti, so the defender wins any
   titanium-symmetric attrition race 2.2:1 — and builder attacks cannot touch

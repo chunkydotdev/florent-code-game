@@ -29037,3 +29037,63 @@ an interior throw may land a bot somewhere its plan still works, so the arm does
 not test displacement in its strongest form (long-range, or plan-invalidating).
 **So: evidence, not closure — but "untouched" is wrong, and the 164 belong in
 front of any decision to spend a leg on displacement.**
+
+## 17:1x — LIBRARY SELF-AUDIT: **THE LIBRARY HAS NO CLOCK.** Seed-text repaired
+
+**Scope corrections first, both against earlier numbers of ours:** the directory is
+**252 files / 28,481 lines**, not 217/23,658 (35 landed after the citation audit —
+the 1.8% is stale in the direction of MORE library). And **the "two lanes ranking
+dirty tricks 21 min apart" case is NOT in this library** — it is
+`offensive-catalog` vs `loki-arsenal-pricing`, both in `docs/research/`. The
+library did not produce it and cannot be blamed for it.
+
+**THE VERDICT, and it inverts the framing:** sourcing is **genuinely good** —
+**251 of 252 files carry a verbatim quote ≥30 chars**, 233 carry a URL, 122 distinct
+primaries, and **no unsourced fabrication was found**. The fabricated-quote failure
+appears contained. **What is broken is that THE LIBRARY HAS NO CLOCK:** a file
+records what was true when written, and **nothing reaches back into it when a later
+measurement lands.** Consequence: **it will reliably RAISE confidence in a plank and
+almost never LOWER it — an amplifier, not an instrument.**
+
+**THE STRUCTURAL NUMBER: citations from all 252 files to our five most settled
+2026-08-10 documents — `engine-source-crash-and-launcher` 0 · `engine-guard-matrix`
+0 · `AUDIT-the-six-refuted-roads` 0 · `crash-census` 0 · `loki-arsenal-pricing` 0.**
+**The citation problem is BIDIRECTIONAL** — the library is barely cited AND barely
+cites the repo.
+
+**FIXED THIS COMMIT — the seed text, which is the whole leverage.** `INDEX.md`'s
+*"Our ruleset, for briefing subagents"* block is what **every future sweep agent is
+briefed from**, and it carried four errors. The audit traced library-wide defects
+straight back to it: 3 files asserting per-category scaling, 5 prescribing
+`print()`-from-replay, 6 treating enemy ammo as drainable, and **only 2 of 252 files
+knowing a r1000 game is a defeat** (52 mention the tiebreak). **Repairing individual
+files is OUTRUN by the ones still being written unless this block is right.**
+Rewritten with five engine-verified corrections (global additive scale + enemy
+cannot inflate it + demolition helps them · r1000-is-defeat and never-play-defence ·
+print stripped from platform replays · enemy ammo cannot be drained, `can_fire` true
+at 0 ammo raises and kills OUR turret · flow team-blind but credit team-keyed to the
+destination), plus a standing note naming the five uncited engine documents.
+
+**ALSO FIXED: the INDEX contradicted itself 60 lines apart.** Line 1184 tabulates
+*"We bank and do not spend"* as **"us 96 / field 210 — INVERTED"**; line 1244 then
+asserted **"We bank and do not spend"** unstruck in the standing-facts list. **A
+reader hitting the standing-facts list takes the assertion and never scrolls up.**
+Struck with the refutation inline.
+
+**LEFT DELIBERATELY (real inefficiency, not unsafety):** 38 isolated files, **166
+tactic notes absent from the INDEX**, 7 near-duplicate clusters (~28 files — the
+22-postmortem census re-run **six times**, one edge between them).
+
+**STILL OWED, located but not yet edited:** 3 per-category-scaling assertions
+(`sweep-4` ×3, `decide-by-simulating-both-branches`), 5 print-from-replay hooks, 6
+ammo-drain entries, the tiebreak-as-payoff files, and **the worst single item — the
+number "57.2% of games that reach r1000" appears in 19 files, of which 2 cite a repo
+path, and its own source says verbatim: "must not be quoted as a property of v90".
+Every one of the 19 drops that sentence.** Digits also collide: `coordination.md`
+uses "57.2%" for an unrelated statistic.
+
+**METHOD NOTE, and it is the library's own method catching an auditor:** the first
+quote-detector reported 17 unquoted files. **All 17 were FALSE NEGATIVES** — quotes
+straddle line breaks, exactly the failure `INDEX.md` documents and prescribes the
+`tr -s ' \n\t\f\r'` fix for. After flattening, 17 → 1. **A check that has produced
+only one verdict has not been seen to check.**
