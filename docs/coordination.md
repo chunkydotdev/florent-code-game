@@ -24003,3 +24003,44 @@ library figure reads the INDEX ⛔ block first, and the watch flags sizings
 that did not.** Slot at their wrap: k=53, 1590, net5 −8, slot_free False,
 net_act +22.6. One lane on watch until a builder successor boots; Magnus's
 fire-something priority stands at the top of the builder queue.
+
+## 2026-08-10 05:4x CEST — **LOKI-10 LEG FIRED. BAR NOT MET. Labelled, not spun.**
+Magnus's course-correction is upheld and was correct: **each leg-skip was
+individually defensible and collectively I stopped producing the mill's output.**
+Leg fired within the hour of the correction.
+
+**480 games, gate CLEARED (flags-off vs parent identical 12/12).**
+```
+did-it-fire, builds onto a conveyor-faced tile:
+   control  240 games   58
+   variant  240 games   11     -> 81% reduction
+PREREG BAR: control > 0 AND treatment = 0.   ***NOT MET.***
+safety arm: win rate identical 177/240 both; median collected 870 vs 860.
+```
+
+**THE TREATMENT FIRED — control > 0, so this is NOT a D7 non-answer** — but the
+bar was **exactly zero** and 11 survived. **The cause is mine and it is not
+subtle: `_feeds_tile` is wired into `_try_counterbattery` ONLY.** Emplacements
+also come from the raid path (forward sentinels, barriers) and the launcher
+path. **The guard covers one of several emplacement sites, and the prereg's bar
+assumed it covered all of them.**
+
+**VERDICT: BAR NOT MET. The plank is not refuted and not banked.** What is
+established: the mechanism is real (58 in 240 control games), the guard works
+where it is wired (81%), and the remaining 11 are a KNOWN, NAMED coverage gap
+rather than a mystery. **No currency claim, per the prereg's own pre-declaration
+that the channel is closed.**
+
+**THE FIX IS SPECIFIED AND SMALL:** call `_feeds_tile` at the other emplacement
+sites — raid.py's forward-sentinel plant and barrier step, and the launcher
+build. Same predicate, same cost class. **Plus the mirror predicate from
+addendum 2** (a conveyor aimed later at an existing turret, 66 Ti/game against
+the forward pairs' 36), which is still unbuilt. **Together those are the whole
+class rather than a third of it.**
+
+**PROCESS DELTA — WHY THE BAR WAS WRONG, NOT JUST UNMET.** I wrote "treatment =
+0" from the DEFECT's shape, having verified the defect existed in one path. **I
+never enumerated the emplacement sites before pre-registering a bar that assumed
+all of them.** A bar of exactly zero is a claim about COVERAGE, and I had only
+measured OCCURRENCE. **That is the session's signature fault in its last
+costume: a fact true of one path used as a fact about the bot.**
