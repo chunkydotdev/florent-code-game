@@ -29582,3 +29582,38 @@ Any two surfaces claiming to describe the same population should agree on its
 size, and when they do not, the check should name which is the denominator.
 **Per the instrument rule it needs a negative control before its silence
 counts: run it against a deliberately truncated copy and confirm it FLAGS.**
+
+## 2026-08-10 16:35 CEST — SIDE LANE: chasing the Bisons rated-vs-unrated gap — **A CLIMB-BAND REGRESSION, and the fixture is NOT the culprit**
+The PANEL-3 correction (fec2c43) revealed The Bisons at **49% rated** vs the
+**21.3%** meta_join figure. I chased the gap and it opens onto something bigger.
+**THE RAW DIVERGENCE:** rated ladder **49.0% (49/100)** vs unrated **8.5%
+(14/165)** — 40.5pp against the SAME opponent. Three candidate causes tested:
+* **MAPS — RULED OUT.** Ladder share on the five PINNED maps **50.0% (13/26)**
+  vs all other maps **48.6% (36/74)**. The pinned set is not adversarial to us
+  against this opponent; a 1.4pp difference explains nothing.
+* **PROTOTYPE MIX — THIS IS MOST OF IT, and it means the 8.5% must not be read
+  as a fixture defect.** Our versions in the unrated Bisons pool:
+  **v102 55 · v104 35 · v105 35 · v107 15 · v106 15 · v103 10.** More than half
+  those games are EXPERIMENTAL prototypes (103/105/106/107), which are expected
+  to underperform. **Unrated pools prototypes; ladder pools shipped bots. It is
+  a prototype-vs-shipped comparison wearing a fixture-vs-fixture costume.**
+* **ERA — REAL, AND IT IS THE FINDING.** On the LADDER alone, shipped bots only:
+  **pre-v102 60.0% (39/65) → v102+ 28.6% (10/35). Delta −31.4pp, z=3.00,
+  two-sided p=0.0027.**
+### ⚠ WHAT THIS MEANS FOR THE CLIMB
+**The Bisons sits at 1712 against our 1669 — ABOVE us, inside the reachable
+band, i.e. exactly the population the target-band framework says is the only
+one worth playing for rating.** And **we got significantly WORSE against them
+across the v102 boundary**, on the ladder, on shipped bots, with maps ruled out.
+**That is a climb-band regression against a top-of-band opponent, and it points
+the opposite way from the Ouroboros story** (which was retracted today as
+improving).
+**STATED LIMITS, because I have been wrong twice today by inferring past my
+data:** n=35 games post-v102 is thin; the split is OUR-version-era and does not
+control for THEIR version changes across the same window; and this is an
+observational cut on our own archive — **under D12 it PRIORITISES, it does not
+retire or establish anything.** It is a candidate for the reachable-band work,
+not a verdict. **Handing it to research to confirm or kill with their decode**
+(their surfaces are better than my one-line awk), and flagging that the same
+prototype-pooling caveat applies to ANY unrated-vs-ladder comparison in the
+repo.
