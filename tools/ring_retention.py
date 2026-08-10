@@ -170,13 +170,27 @@ def main(argv):
         print(__doc__)
         return 2
     ids = re.findall(r'"matchId": "([0-9a-f-]+)"', Path(argv[0]).read_text())
-    r = subprocess.run([str(ROOT / ".venv/bin/fcode"), "match", "list", "--mine",
-                        "--json", "--limit", "200"], capture_output=True, text=True)
-    info = {m["id"]: (0 if m["teamAId"] == US else 1,
-                      m["teamBName"] if m["teamAId"] == US else m["teamAName"])
-            for m in json.loads(r.stdout[r.stdout.find("{"):])["matches"]
-            if m["id"] in ids}
+    # PER-MATCH LOOKUP, NOT THE 200-MATCH LIST. Older legs age out of
+    # `match list --mine --limit 200` -- LOKI-16's morning matches did, and the
+    # tool reported "no games decoded" as though the data were missing when it
+    # was only the INDEX that had moved on. Ask about each id directly.
+    info = {}
+    maps_by_match = {}
+    for mid in ids:
+        rr = subprocess.run([str(ROOT / ".venv/bin/fcode"), "match", "info", mid, "--json"],
+                            capture_output=True, text=True)
+        try:
+            d = json.loads(rr.stdout[rr.stdout.find("{"):])
+        except Exception:
+            continue
+        m = d.get("match") or {}
+        if not m:
+            continue
+        info[mid] = (0 if m.get("teamAId") == US else 1,
+                     m.get("teamBName") if m.get("teamAId") == US else m.get("teamAName"))
+        maps_by_match[mid] = [g["mapName"] for g in d.get("games", [])]
     by_ring: dict[int, list] = {}
+    by_map: dict[str, list] = {}
     n = 0
     for mid, (seat, _opp) in info.items():
         for f in sorted((ROOT / "replay_archive").glob(f"{mid}_game_*.replay26")):
@@ -185,6 +199,9 @@ def main(argv):
                 continue
             best, rounds, ringsz = got
             by_ring.setdefault(ringsz, []).append(best / rounds)
+            gi = int(f.name.split('_game_')[1].split('.')[0]) - 1
+            mp = maps_by_match.get(mid, [])
+            by_map.setdefault(mp[gi] if gi < len(mp) else '?', []).append(best / rounds)
             n += 1
     if not n:
         print("no games decoded")
@@ -194,6 +211,11 @@ def main(argv):
         v = by_ring[rs]
         tag = "  <- 12-RING STRATUM (the bar lives here)" if rs >= 12 else "  (clipped: reported, NEVER pooled)"
         print(f"  ring {rs:>2}/12   n={len(v):>4}   mean {sum(v)/len(v):.3f}{tag}")
+    if by_map:
+        print("\n  per map:")
+        for mp in sorted(by_map):
+            v = by_map[mp]
+            print(f"    {mp:<12} n={len(v):>4}  mean {sum(v)/len(v):.3f}")
     return 0
 
 

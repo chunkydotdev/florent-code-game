@@ -169,3 +169,57 @@ retains about as well as the treatment.
 **If that survives a proper reading, the plank's mechanism is not absent — it is
 already ours**, which is the cheapest possible null and the third time today a
 plank has died to *"grep the incumbent first"*.
+
+---
+
+# ⛔ THE +0.017 IS WITHDRAWN. THE DECODER DOES NOT REPRODUCE LOKI-16.
+
+Side-lane flag, and it is the fourth time today the same check has mattered:
+**a new decoder's first output must never be trusted against a number produced
+by a different decoder.** LOKI-16's +0.18–0.26 came from a bespoke pass;
+`ring_retention.py` was built tonight. So the positive-control test is: **run
+the new tool over LOKI-16's ORIGINAL games and see whether it reproduces them.**
+
+| map | LOKI-16 reported | `ring_retention.py` on the SAME games |
+|---|---:|---:|
+| fjordgate | **+0.182** | **−0.201** ⟵ **SIGN FLIP** |
+| atoll | +0.184 | +0.112 |
+| saga | +0.264 | +0.052 |
+| snowflake | +0.263 | −0.017 |
+| jackpot | −0.023 | −0.064 |
+
+*(treatment `arm_loki16` 75 games vs control `arm_v104` 165 games, the same two
+arms LOKI-16 was read on.)*
+
+**IT DOES NOT REPRODUCE. Not one map lands near its reported value, and
+fjordgate — the map whose "+0.182 with FEWER bodies" was quoted as the
+pin-one-raider signature — comes out NEGATIVE.**
+
+## Consequences
+
+1. **`+0.017` says nothing about the plank and is withdrawn as evidence.** The
+   two arms were decoded by an instrument that cannot reproduce the measurement
+   it was built to extend.
+2. **LOKI-16's own +0.18–0.26 is now equally unsupported** — one of the two
+   decoders is wrong and nothing here says which. The bespoke pass is not in the
+   tree and cannot be re-run; `ring_retention.py` is selftested on geometry
+   (12 open / 5 corner / walls reduce) but that tests the RING, not the
+   OCCUPANCY rule.
+3. **The likely divergence is the definition, not a bug.** "Longest unbroken run
+   with ANY of our builders on a ring tile" (mine) and "longest episode for ONE
+   body" (plausibly the original) are different statistics that share a name —
+   **exactly the `undamaged` failure, where the census doc and
+   `crash_census.py` differed by 3.8% under one word.**
+
+## What this leaves
+
+**LOKI-16b remains BANKED AND UNREAD, and now so is LOKI-16.** The 50 + 75
+games are clean and holder-verified. **What does not exist is an agreed
+definition of the primary** — and that is a smaller, sharper problem than
+either leg: write the occupancy rule down, implement it once, and both legs
+read out against it.
+
+**FOURTH INSTRUMENT INVERSION TODAY** (sentinel shootable 52.1% → 0/319 → 100%;
+`undamaged` 2,401 vs 2,310; the `CORE_PAIRS`/CLI symmetry claim; now this).
+**Every one was the instrument, never the bot. The only thing that has reliably
+caught them is running the new tool against a number the old one produced.**
