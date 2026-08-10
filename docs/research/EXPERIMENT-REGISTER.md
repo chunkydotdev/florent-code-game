@@ -357,3 +357,66 @@ restored to 30 clean matches) and durably quarantined
 every arm against the platform's own timestamps — the right instrument. My bias
 analysis stands as the counterfactual (would have been ~−9pp if contaminated,
 still short of the bar). **E-27.5 caveat closed.**
+
+---
+
+**2026-08-10 15:5x — E-27.6 (LOKI-16 ring-hold) RESULT: UNRESOLVED AT n. NOT ADVANCED, NOT KILLED.**
+Verdict typed by the builder (`b1ca257`); read-outs `f13e375` + `b5266ee`; lock
+cert two-clock clean (prereg 08:55:54Z vs leg 09:53:26Z, side lane `bcc17c5`).
+* **Bar (>=+0.08 ring coverage) does not resolve.** game-mean +0.086 MEETS ·
+  round-weighted +0.076 MISSES · equal-cell +0.084/+0.085 MEET — a spread of
+  0.010 straddling the threshold. Match-clustered bootstrap **+0.086, 95% CI
+  [-0.038, +0.196]**. **A number that changes verdict with the estimator is not
+  a pass.**
+* **Mechanism DOES move, and this is not banked as a consolation.** Episodes
+  >=50 rounds **11.8% vs 5.6%** (median episode is 1 round in BOTH arms — a mean
+  buries it entirely); on fjordgate the treatment holds **longer (+0.182) with
+  FEWER body-rounds** (-0.216 seat-rounds/round), i.e. one pinned body replacing
+  several transiting ones — the shape the plank claims. Predicted cost landed
+  live: ring tiles holding our building **2.64 vs 3.65 (-1.011)**.
+* **Currency arm is separately uninformative, now with a number.** Patched
+  `tools/leg_read.py` reads this pair at **MDE 21.7pp on live cells (n=60/135)**
+  against a currency delta of **+0.0pp**. The leg could not have resolved a
+  currency claim either.
+* **`jackpot` IS KEPT.** Dropping it would move +0.086 to +0.117 — **that is
+  fitting the panel to the plank.** jackpot does not harm the treatment (flat,
+  0.675 vs 0.672); the **CONTROL gains there (+0.159)** because a 5-tile corner
+  ring hands the incumbent the same ~0.65-0.68 ceiling the plank works to reach.
+  That is a real property of the plank, not a broken cell.
+* **Bar swap REFUSED for this leg, PRE-REGISTERED for the next.**
+  longest-hold/length is the better statistic (+0.182/+0.184/+0.264/+0.263 on the
+  four 12-tile maps) and research recommends it; adopting it now would be
+  choosing the estimator after seeing which one clears. **Named for LOKI-16b
+  before 16b fires.**
+* **NEXT STEP IS AN INSTRUMENT FIX, NOT A MAP DELETION.** "Fix the panel's map
+  axis" means **add a map-admission check to PANEL2-CAL** (does the map admit the
+  mechanism the plank is defined on?) — per D34. **It does NOT mean drop
+  jackpot**; see above. Recorded this way because the two sentences could
+  otherwise be read against each other.
+
+**2026-08-10 15:5x — E-27.7 (LOKI-14 border-throw crash induction) RESULT: FALSIFIER 1 FIRES. NOT ADVANCED.**
+Verdict typed by the builder (`b1ca257`); lock cert two-clock clean (prereg
+09:17:20Z vs leg 10:04:12Z).
+* **Primary: 0 undamaged enemy builder removals of 150 border throws**, bar was
+  **>=45**. **Placebo clean: interior 0/164.** Mechanism bar met **7.5x** (314
+  kidnaps decoded).
+* **SCOPE, pre-committed by the prereg and binding on me: this is refuted
+  AGAINST THESE FIVE PANEL TEAMS AT A DELIVERED DOSE OF 150 BORDER THROWS.** It
+  is **not** a refutation of border-throw crash induction and **not** a challenge
+  to the class ruling. The census is bimodal — 4 named carriers vs 6 teams with
+  722,545 border builder-rounds and 0 events — and **no carrier is on our panel**.
+  Against field-average the zero is surprising (P(0|lambda~3.4) ~ 3.5%); against
+  these five it is unremarkable.
+* **Under-dosing is ruled out and I am not permitted to reach for it:** the
+  prereg's own big-map escape did not apply — every map produced border throws
+  (saga 71, snowflake 12), launcher edge-margin <=4 for 278/314.
+* **NEXT: a carrier-targeted leg** (vjg 96.1%, S, Ship Happens, Troupe) — the
+  only test that separates "our panel is immune" from "it does not fire live."
+  **Queued, not fired:** PANEL2-CAL owns the rate-limit budget.
+* **Free findings banked:** enemy launchers threw OUR builders onto borders
+  **54 times, 0 undamaged removals** (our `eco.py` guard holds live); and
+  **Leviathan gave 0 kidnaps in 15 games**, inert on a second mechanically
+  independent axis beyond D22's 4,4,4,4.
+* **Instrument consequence, D35:** the prereg's stated method (decode the arm
+  from our own `print()` stream) **was not executable** — platform replays strip
+  stdout, 30,664/30,664. `CLAUDE.md` corrected.
