@@ -11,10 +11,13 @@
 # zero rated exposure and zero holder risk. It still ASSERTS the holder before
 # every challenge (s27 D28: an arm that activates nothing must still assert what
 # is active, or it fires into whatever the previous arm left behind).
-# Both branches of that guard are mutation-tested:
-#   docs/legs/LEG-panel2-calibration-2026-08-10.md section 1 (abort branch run at
-#   13:06:51Z with INCUMBENT=999 -> ABORT, FANOUT_ABORT written, exit 1, zero
-#   challenges fired; pass branch and rate-limit branch both exercised live).
+# Both branches of that guard are mutation-tested ON THIS FILE, not inherited:
+#   docs/legs/LEG-panel3-calibration-2026-08-10.md (abort branch run at
+#   15:46:09Z with INCUMBENT=999 -> ABORT, FANOUT_ABORT written, exit 1, zero
+#   challenges fired; pass and rate-limit branches exercised live at 15:43-15:44Z).
+# The header of this file previously cited PANEL-2's 13:06:51Z run -- a THIRD
+# copy of the guard inheriting a citation instead of carrying a test. Side-lane
+# flag, and correct: discipline attaches to labels, not function.
 #
 # ===== THE RATE LIMIT IS 20 MINUTES, MEASURED ON THE CLI 2026-08-10 15:0x =====
 #   "Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes"
