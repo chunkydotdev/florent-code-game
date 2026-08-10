@@ -1,5 +1,18 @@
 # LIVE: **v104 = "Loki v2"**. s28 state, 2026-08-10 17:31 CEST (15:31Z).
 
+## ===== ⛔ NO AUTO-ROLLBACK TONIGHT — MAGNUS'S DECISION, 2026-08-10 ~22:3x =====
+##   Verbatim: *"We dont do an auto rollback tonight, we will stand down and see
+##   if we need one for next night."* **Nothing will ACT on the stop-loss
+##   overnight.** `ship_watch` will still WRITE `corpus/SHIP_ALERT` if the
+##   conjunction fires; **nobody reads it until morning, and that is accepted.**
+##   Sizing behind the call: **v104 is +51 on its activation baseline (1615)** and
+##   the trigger needs `net_act < 0` AND `net5 <= -21`, against a halved ladder
+##   cadence of ~24 unattended matches. At 17:00 we were 26 points out and
+##   falling and this would have been a different call.
+##   **The build is ~20 minutes if wanted tomorrow** — it is a loop on a rule
+##   Magnus already approved, so it delegates EXECUTION, not judgement.
+##   **MORNING: read `corpus/SHIP_ALERT` and `tail corpus/ship_watch.log` FIRST.**
+##
 ## ===== ⭐ OVERNIGHT: START THIS ONE COMMAND, THEN NOTHING ELSE =====
 ##   ```
 ##   cd /Users/junghard/Projects/Work/florent-code-game
