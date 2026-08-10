@@ -24577,3 +24577,35 @@ checking live-unrated `r1000_rate` against the ~7% ladder figure (8/115
 attributed v102 games) and to reporting if the populations are not
 interchangeable. Unanswered. Logged before the interesting numbers arrive,
 because that is when promises like it evaporate.
+
+### 06:1x — IN-FLIGHT +1: **HOW DO THE BISONS KILL A CORE IN 49 TURNS?** (PRE-REGISTERED)
+Nobody has picked this up. It is sitting in the addendum to
+`docs/prereg/PREREG-live-unrated-baseline-2026-08-10.md` (c14534e), recorded by
+the builder under directive point 4 as a surprise and then passed over:
+> **The Bisons beat us 4-1 and killed our core in 74, 66, 92 and 49 turns.**
+They are rank 25 / 1626, **27 points above us**. `KILL_WINDOW_RND` is 250; they
+are inside 100, on four of four. **A live opponent already does the thing this
+programme exists to learn**, and our own live baseline measured it.
+
+**COST: ZERO DOWNLOADS. Archive-first, and the archive already holds it** —
+`grep -ci bison corpus/meta_join.tsv` = **195 rows**, decoded. No paced budget
+needed; this is a corpus query, not an acquisition.
+
+**PRE-REGISTERED, and the branches are decisions not readings:**
+- **A reproducible opening/kill mechanism is recoverable from the tape** → it
+  becomes a candidate plank for the Loki line, priced in `core_kill_share` and
+  `time_to_core_kill`. Decision: brief the builder to prototype it.
+- **The kills are map- or seat-conditioned** (e.g. only on small maps, only from
+  one seat) → not a mechanism but a matchup, and the honest output is the
+  CONDITION, not a plank. Decision: pin the condition into the testbed instead.
+- **No signature separates their fast kills from their slow ones** → say so; do
+  NOT convert an unresolved tape into a build brief.
+**FALSIFIER, checked first:** the four turn counts (74/66/92/49) come from the
+builder's addendum, not from my own read. **If the archive's Bisons games do not
+reproduce a fast-kill distribution, the lead is an artifact of five unrated
+games and this cut stops there.** Verify the numbers before analysing them.
+**Pre-stated limit:** sweep 16 found that at a **400-Elo** gap opponent modelling
+bought nothing and only variance scored. This is a **27-point** gap and the aim
+is to STEAL A MECHANISM, not to model for counterplay — different question, but
+if the finding generalises down to 27 points, that is the result and I will say so.
+- IN-FLIGHT: [agent] bisons-kill-mechanism (opus) — read-only corpus cut.
