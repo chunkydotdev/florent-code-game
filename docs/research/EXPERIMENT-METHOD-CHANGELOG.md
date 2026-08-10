@@ -1,0 +1,111 @@
+# EXPERIMENT METHOD — the current protocol, and where every rule came from
+
+**Companion to `EXPERIMENT-REGISTER.md`.** The register records what was run;
+this records HOW, as a versioned protocol in which **every rule carries the
+incident that created it**. A rule without an incident is a preference; these
+are all scars. **Method improvement = a new row here, citing the experiment that
+exposed the gap.**
+
+## THE PROTOCOL AS OF 2026-08-10 07:2x (method v3)
+
+**A. Before the leg**
+1. **Prereg COMMITTED before leg creation**, quoting a platform-clock reading
+   taken in the same shell call (self-certifying — no skew argument needed).
+2. Treatment is the **smallest possible diff** (one constant where achievable),
+   stated exactly; comparator is the **previous line iteration** on the pinned
+   testbed, never Eir, never a stored figure.
+3. **Bars split three ways:** treatment-occurrence (did the flag/mechanism BIND),
+   mechanism (what it changed, in the experiment's causal variable), currency
+   (`core_kill_share`; `r1000_rate` under R1000_IS_DEFEAT). **Mechanism-bar miss
+   is pre-declared as "the leg answered nothing", never as evidence against the
+   idea.**
+4. **Every bar is sized from LIVE data** (the pinned control's own arms) and
+   **derived from what the treatment controls** — a bar a prior treatment already
+   satisfies is not a bar. Bars carry an effect size; "strictly more" is not a bar.
+5. **Falsifier branches written so a null decomposes** (didn't bind / bound but
+   didn't transfer / moved the mechanism not the currency / adverse), plus a
+   **surprise channel** — off-prediction observations recorded, never banked as
+   confirmation.
+6. **Run the cheap local mechanism check FIRST** (paired seeds, one map): a
+   falsifier collected before the leg costs seconds; after it, a window.
+7. **Cost priced before payment** with a named rollback target; during any
+   activation window the slot rule is DISARMED by construction (k<8), so the
+   protection is a **pre-committed absolute floor** plus an armed watch —
+   never "lane attention".
+
+**B. The fixture**
+8. Pinned panel × pinned maps; **one leg = one rate-limit window (5/10 min)**.
+   mapSeed and seat assignment remain uncontrolled — state them, don't model them.
+9. **Panel cells must RESOLVE**: selected on measured mid-range performance vs
+   the CURRENT bot version (never rating proximity, never era-pooled win rates);
+   check the per-cell spread of the control arm BEFORE adopting; a new panel gets
+   one calibration window before any treatment.
+10. Floor/ceiling opponents (e.g. Bisons 0/20) stay on the schedule as their own
+    question, **outside the currency denominator**.
+
+**C. Reading the result**
+11. **Per-opponent Δ column mandatory**; pool only across windows sharing a seat
+    assignment, or state the reweighting. Never publish an aggregate whose
+    movement is one cell without saying so.
+12. **A single 25-game window cannot resolve below ~its MDE (~39pp)** — measured,
+    not assumed (identical treatment swung 52%→32% across consecutive windows).
+    n=25 legs are dose/mechanism probes; currency claims need pooled windows.
+13. Instruments validate on a known cell before an unknown one, and every check
+    runs against a case that MUST come out the other way. Instruments report
+    their **source's freshness**, not just their own. **Exit codes are not health
+    signals on this platform; gate on the load-bearing field.**
+14. Results are read from **per-match platform fields** (winnerId, teamXVersion),
+    never from poll-time tags or seat-naive score columns.
+15. **Null and result language:** write the word NULL; a conditional that fired
+    on an unmet condition is a null; agreement in direction is not agreement in
+    evidence.
+
+**D. Standing constraints on evidence (the D-rules, drift-watch enforced)**
+16. **D12:** refutations need live-game backing; archive/arena/source PRIORITISE
+    (send to bottom of queue), only rules-level impossibilities with explicit,
+    behaviour-free premise sets EXEMPT.
+17. **D11/D13:** a saturated fixture measures nothing, live or not.
+18. **D14:** a closure and a positive result on the same question must cite each
+    other.
+
+## THE CHANGELOG — every rule, its incident, its anchor
+
+| rule | created by (incident) | anchor |
+|---|---|---|
+| prereg before leg, two clocks | 15:46 prereg certified blind by 2m33s — the standard's founding case | `ca3c3f8` cert |
+| self-certifying platform clock | baseline lock margin 15.4 s vs a NEVER-MEASURED skew; bound then measured [−13.4, +1.9] s | LOCK-CERT + `3c9400a` |
+| outcome = mix vs IN-OUR-FAVOUR; predicted-change set not already true at lock | 15:46 prereg pre-satisfied half its prediction, anti-correlated with its own outcome | obligation 7 |
+| treatment-occurrence bar BEFORE battery | LOKI-3 built, gated, never dosed (16.7% vs 30%) — stood down pre-battery | addendum 4 |
+| check the treatment the EXPERIMENT requires, not the code | LOKI-QUIET: builder melee silenced as coded; forward sentinel never gated — invalid arm verified "clean" | obligation 11 |
+| mechanism bar separate from verdict; miss = "answered nothing" | LOKI-10's bar was a coverage claim built on an occurrence measurement | `64efdde` |
+| bars sized from LIVE arms, never a probe run | LOKI-11: both bars PASSED while both premises were false (sized off `_probe_victim`; control planted r43 not r73–93, 3.44/game not ~1) | `bd31bb7` |
+| bar derived from what the FLAG controls | LOKI-13's ≤25 already cleared by LOKI-11 without the flag — "a constant column wearing a threshold's clothes" | `6d734f7` |
+| measure the unmeasured causal link | conveyors→Ti→AMMO→shots→kill: neither titanium_collected nor sentinel count sees ammo | LOKI-13 flag 2 |
+| cheap local mechanism check first | LOKI-11 rescope: falsifier branch 2 collected in 90 s of local compute instead of a window; located LOKI2_RUSH_ON as the real defect | `33f7e5e` |
+| effect size in the bar | "strictly more than ~1/game" satisfiable by one sentinel in 25 games | LOKI-11 audit flag 1 |
+| absolute floor + armed watch during activation windows | slot rule structurally disarmed at k<8 for every prototype window ("the instrument was built for ships; the method is sampling") | `b7080f2` |
+| pinned maps + panel | unpinned baseline spanned 13 maps — a field read sold as a control (Magnus's correction) | `c14534e` |
+| panel cells must resolve; select on mid-range vs CURRENT version | 3 of 5 cells inert (0,0,0,0 / 4,4,4,4); CAD chosen off era-mixed 0.45 that is 0.66 on v102 | `e63a6f8`, `33017e0` |
+| calibration window for a new panel | ladder cells don't predict unrated cells (Leviathan 0.55→0.80, Bisons 0.33→0.07) | panel-candidates cut |
+| per-opponent Δ mandatory | +16.0pp was two cells, one seat-flipped; gsxWins went 1→3→0 | `452024d`, `1a73086` |
+| window noise ≥ claimed effects at n=25 | 52%→32% same treatment, consecutive windows; +16pp → +0.0pp at n=50 | `00e0482` |
+| arrival vs conversion barred separately; STANDING at r45 not built | conversion spans 6× at the same gate (11.1%/47.5%/69.2%); ours unmeasurable (4 of 2,508); an emplacement dead at r30 must not count toward a gate it never occupied | dose cut + agreements |
+| results from per-match fields, never poll-time tags | the −8.92 was v102's match, published as v103's; elo tape's version column labels the SAMPLE; slot-rule windows inherit the misattribution | `5a47b04` |
+| seat resolved before any score is read | Leviathan/gsxWins published as 1–4 losses; they were 4–1 wins | LOCK-CERT erratum |
+| window + conditioning compared before era or drift | "1.3 sentinels/game" was per-KILL-game censored at the kill round vs whole-game 4.34; corpus matched live to 0.16% once aligned | `2002748` |
+| a null that fired on an unmet condition is a null | 0/25 vs 7%: P=0.163, 7% inside the quoted CI, reported as "populations differ" | `b0585b5` |
+| instruments: known cell first; must-fail control; source freshness; no exit codes | leg_read validated on the baseline; replays don't capture tracebacks (constant column caught by a crash probe); ship_watch printed 07:05 data under a fresh 07:12 timestamp; status exits 0 printing `Error: True` | `4a06db5`, `e22de44` |
+| D12 + carve-out + bottom-of-queue | Magnus: "out there is the truth"; carve-out broken on its own cycles example; sweep found ~50 closures with zero live backing | `ec04fc0`, `825c0ec`, sweep |
+| D14 cross-citation | forward-road closure (9 files) coexisted for hours with the p=1.9e-12 result contradicting it | `844eba6` |
+| consistency vs superiority framing; within-leg placebo arm | crash-induction bar was set at its own null (3/10 vs 29.6%); split-throw design removes the induced-vs-natural assumption instead of arguing it | `530abff`, `2673091` |
+
+## HOW TO IMPROVE THE METHOD (the loop Magnus asked for)
+
+1. Every experiment gets a register entry **including its "method faults found"
+   field** — faults in how we tested, separate from what we tested.
+2. A recurring fault (two appearances) earns a rule here, with both incidents.
+3. A rule that never fires in an audit is reviewed — a guard that has never
+   produced its other verdict has not been seen to guard.
+4. The register's "method version in force" lets old results be re-weighed when
+   a method defect is found later — tonight's example: every pre-panel-audit
+   currency read is now known to have run on a two-cell instrument.

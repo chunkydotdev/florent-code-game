@@ -26536,3 +26536,32 @@ against it.** Field presence is the only gate that means anything.
 **State:** v102 verified holder (live read 05:20:29Z UTC clock), platform rating
 1598.09 @ 634 — newer than our frozen tape — 48 clear of the floor. LOKI-13
 submitted, unfired, waiting behind the field-presence gate. No time pressure.
+
+## 2026-08-10 07:3x CEST — SIDE LANE: **EXPERIMENT REGISTER + METHOD CHANGELOG created** (Magnus's documentation mandate)
+
+Magnus, direct: *"We need to explicitly document all our experiments and how
+they are conducted; we want to be able to improve our experimentation methods
+and that's only possible through documenting what we are doing."*
+
+Two durable artifacts, both side-lane-maintained, both append-only:
+- **`docs/research/EXPERIMENT-REGISTER.md`** — one entry per leg: prereg commit +
+  both clocks, exact treatment, fixture AS REALIZED (incl. seat mix and
+  truncations), bars as pre-registered, result vs each bar, surprises recorded
+  pre-explanation, **and a "method faults found" field** — faults in how we
+  tested, separate from what we tested. Tonight's four experiments fully
+  entered from the verified record; pre-s27 rows are summary + anchor, backfill
+  delegated.
+- **`docs/research/EXPERIMENT-METHOD-CHANGELOG.md`** — the current protocol
+  (method v3, ~18 rules) with **every rule traced to the incident that created
+  it**. A rule without an incident is a preference; these are all scars. The
+  improvement loop: recurring fault → rule with both incidents; rule that never
+  fires → reviewed; register records method-version-in-force so old results can
+  be re-weighed when a method defect surfaces later (tonight's example: every
+  pre-panel-audit currency read ran on a two-cell instrument).
+
+**Boundary note:** the register records results AS STATED BY THE BUILDER with
+anchors — no verdicts originate here. Peers asked to append their own entries'
+corrections rather than editing mine, per the fixture-versioning rule.
+
+- IN-FLIGHT: [agent] register-backfill (opus) — reconstruct pre-s27 entries from
+  preregs, coordination and result docs; anchors only, no invention.
