@@ -32119,3 +32119,55 @@ decoder gap and must be questioned before it is reported · unquoted
 `a`/`b` while other tables use `0`/`1` and nothing says so ·
 `ladder_games.winner_seat` is never ours · **and every metric must be driven to
 the opposite verdict on a known-answer case before it is trusted.**
+
+## ⭐⭐ F26 — THE DIVERGE DECODE, AND IT LANDS ON A FLAG TURNED OFF BY THE RETIRED FIXTURE
+**49 of 51 fast losses decoded (96.1%), median kill r92** (not r103 — the pooled
+figure was coarser). Instruments closed end-to-end: damage attribution + net HP
+closes at −500 HP in **49/49 and 643/643** games; swapped-damage negative control
+drives failures **325 → 44,736**; team-byte→seat mapping **13,440/13,440**.
+
+**THE MECHANISM:** four bots by r3 · **a SENTINEL inside d²≤32 of OUR core at
+~r19** · a **launcher parked ON our core** (d² median 5) throwing away every
+builder we bring adjacent — **712/712 throws push the victim AWAY from its own
+core, median +43 d², only 11.7% touch a border, so DISPLACEMENT, not
+crash-induction** · a builder pecking from ~r25 for a median 41 rounds.
+**Damage share: sentinel 81% / melee 14% / gunner 5%. The launcher deals NONE of
+the damage — it buys the ~50 uninterrupted rounds the other two need.**
+
+**⭐ CONTROL 1 IS A NULL AND THAT IS THE FINDING.** Their opening is **identical
+across all four outcome classes** (first damage r13/r6/r16/r13; barrier r4
+always; 4 bots by r5 always) — pooled over 396 games, **r16 in their fast kills
+vs r17 in everything else. THEY DO NOT PLAY DIFFERENTLY WHEN THEY KILL FAST.**
+**What varies is US:** in the 49 fast losses we delivered a median 270 damage and
+**never touched their core at all in 17 of 49.**
+**Control 2:** they do it to everyone — 300 third-party games, forward sentinel
+76%@r20, stable across 11 of their versions in 3 days.
+**Control 3:** **they damage our core in 100% of games from median r14; we damage
+theirs in 76% from median r51** — and **our damage RATE once committed matches
+theirs (8.91 vs 9.87 HP/round). THE ENTIRE GAP IS WHEN THE CLOCK STARTS.**
+
+## ⛔ F27 — AND THE FLAG THAT STARTS OUR CLOCK IS OFF ON THE FIXTURE THE PROGRAMME RETIRED THE NEXT DAY
+`bots/_v130loki13/doctrine.py:1391` — **`LOKI2_RUSH_ON = False`**, and its comment
+is honest about why: *"OFF, on replicated adverse evidence against the PRIMARY
+currency. 360 games, paired deterministic, gate CLEARED 12/12: orizon −15.6pp
+p=0.0201, SHORT −35.4pp p=0.0005; cad −18.9pp p=0.0033."* **That is a careful
+measurement whose author predicted the opposite. It is not an oversight and must
+not be described as one.**
+**THE POINT IS THE FIXTURE. `orizon` and `cad` are OUR OWN PROBES, measured
+2026-08-09 — the day BEFORE `FIXTURE_OF_RECORD: live_unrated` was set.** The
+drift-watch file already voids *"any survival/screening refutation resolved on
+`orizon`/`cad`"*, and **D12 says an arena battery against bots we wrote may
+PRIORITISE a road and may not RETIRE one. This is a road retired on the retired
+fixture.**
+**THREE INDEPENDENT LINES NOW POINT THE OTHER WAY:** the league census (forward
+turret by r20–25, **ρ=+0.784** over 71 teams, within-team p<0.0001, rating
+partialled out +0.685) · diverge planting at **r19** against our **r49** · **and
+our OWN doctrine comment: *"We have the mechanism and we under-commit it"***,
+naming Banminary's r17 plant at d²=18 against our one turret at d²=32.
+⇒ **Asked for the RE-TEST ON THE FIXTURE OF RECORD, not for the flag to be
+flipped.** If it loses live, the road closes properly and permanently.
+**⚠ AND THE COUNTER-ARGUMENT AGAINST MYSELF, recorded because it is the strongest
+thing the old measurement has: the arena's known bias FLATTERS forward turrets
+(0 of ours died in 480 arena games against 46.9% on the ladder) — and the rush
+lost anyway, in a fixture biased toward it.** I have no answer to that. It is a
+reason to size the leg properly, not a reason to skip it.
