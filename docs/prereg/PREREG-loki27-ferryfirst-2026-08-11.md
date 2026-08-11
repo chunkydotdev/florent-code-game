@@ -122,3 +122,76 @@ is INADMISSIBLE, not a refutation.
 * INSERT up but INSERT:EXILE ratio flat → **DEAD** (bought the numerator).
 * INSERT ~0 in both arms → **INADMISSIBLE** (precondition absent), not refuted.
 * Any uncaught exception / unit destruction attributable to the diff → **DEAD**.
+
+---
+
+# AMENDMENT 1 — 2026-08-11, ADD-ONLY, WRITTEN BEFORE ANY THROW DECODE
+
+**BLINDNESS DISCLOSURE, precisely.** At the time of writing I HAVE seen the leg's
+**win/loss** results (7/25 games, below). I have **NOT** run any throw decode, and
+`corpus/throws.tsv` has not been read or refreshed for these five matches. **The
+mechanism counts this amendment sizes are unknown to me.**
+
+**RAISED BY THE SIDE LANE, and the defect is mine:** the document sized the bar it
+CANNOT resolve (game share, ±20pp, disclosed) and left the bar it CAN resolve —
+the mechanism — as a **direction with no threshold and no n**. That is obligation
+12, landing on the half of the document that decides the plank's life.
+
+## 1a. THE COMPARATOR IS PINNED — MEASURED, NOT STORED
+
+The original table said `incumbent (corpus) 0.91` while the falsifier said
+*"versus v104 on the same cells"*. **Those are different comparators and the
+document did not say which binds. THE MEASURED ONE BINDS.**
+
+⇒ **A v104 control arm on the SAME FIVE CELLS is REQUIRED for a verdict.** The
+0.91 is pooled over 3,772 games across all opponents and eras and cannot stand in
+for five specific teams rated +64..+116 above us — least of all on the axis this
+document already flagged as unmeasured (whether these cells' games last long
+enough for the launcher to survive to ferry time). **Those two limitations are one
+defect and the original listed them apart.**
+
+**If the control arm is not fired, the leg's verdict is INADMISSIBLE, not a
+refutation.**
+
+## 1b. THE THRESHOLD, PRE-COMMITTED WHILE THE COUNT IS UNKNOWN
+
+Sizing (side lane's arithmetic, adopted): control 0.91 INSERT/game × 25 games
+≈ **22.75 expected, Poisson sd ≈ 4.77**. Against a 25-game control arm the
+difference of two counts has sd ≈ **6.75**.
+
+⇒ **INFORMATIVE BAND AT 25v25: the leg can only resolve a rise of ≈ +59%
+(≈ 36 vs 23 INSERTs). Throw counts are overdispersed, so +59% is the OPTIMISTIC
+end.**
+
+**PRIMARY MECHANISM STATISTIC: the INSERT:EXILE RATIO** (the second falsifier
+already preferred it, and it is the one immune to "we simply throw more of
+everything").
+
+| outcome | verdict |
+|---|---|
+| INSERT:EXILE ratio rises by ≥ 2 sd of the difference | **MECHANISM CONFIRMED** |
+| ratio falls by ≥ 2 sd | **DEAD** — mechanism runs backwards (the `_v139heal` outcome) |
+| **inside the band** | **NO INFORMATION — back to the pool, NOT demoted** |
+| INSERT ≈ 0 in BOTH arms | **INADMISSIBLE** — precondition absent |
+
+## 1c. ⛔ THE ORIGINAL FALSIFIER IS WITHDRAWN AND REPLACED
+
+**WITHDRAWN:** *"if INSERT throws/game do NOT rise versus v104 on the same cells,
+the plank is DEAD regardless of game share."*
+
+**WHY:** as written, a plank that genuinely lifts ferries **+25%** reads flat at
+this n, trips "DEAD", and gets written up as a refuted mechanism. **That is D61 —
+a screen calibrated to reject everything short of a huge effect — reproduced on
+the bar built to be the honest one, one session after the lesson.** A false
+negative here costs a plank nobody hears about again.
+
+**REPLACED BY** the four-way table in 1b: **a null result inside the band returns
+the plank to the pool and is NOT a refutation.**
+
+## 1d. WIN RESULT, RECORDED FOR COMPLETENESS AND NOT AS A VERDICT
+
+**7 of 25 games = 28.0%** (kladde 0/5, Big O 2/5, HTTP 418 2/5, Leviathan 2/5,
+0033 1/5). Rating-expected share against this band is **37.0% (9.26 games)**;
+sd of a 25-game draw is 2.4 games, so the observed sits at **−0.94 σ**.
+**INSIDE THE NOISE. This resolves nothing about the plank and is not evidence
+against it** — it is recorded so that a later pooled read has the row.
