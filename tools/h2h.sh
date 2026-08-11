@@ -57,6 +57,7 @@ W=0; N=0; KILLW=0; KILLL=0; R1000=0
 WA=0; NA=0; WB=0; NB=0
 typeset -A MW MN
 typeset -a TW_TURNS CW_TURNS
+typeset -a TSCORE CSCORE
 for S in ${=SEEDS}; do
   for M in ${=MAPS}; do
     for ORD in A B; do
@@ -81,6 +82,20 @@ for S in ${=SEEDS}; do
       if [[ -n $TN ]]; then
         case "$L" in *"$B"*) TW_TURNS+=($TN);; *) CW_TURNS+=($TN);; esac
       fi
+      # ⛔ THE PRIMARY CURRENCY. `PROGRAMME.md`: PRIMARY_CURRENCY: kill_speed_score
+      # and WIN_RATE_IS_VERDICT: no. Nine arms were screened on WIN RATE before
+      # this line existed -- D3 on the drift checklist, running all day.
+      # Scored with tools/score.py's OWN buckets so the two instruments cannot
+      # drift apart. Censoring is not missing data: a game with no kill is a
+      # LOSS or a TIEBREAK and both score -10, which is the worst bucket -- the
+      # currency already answers the question a kill-round median cannot.
+      CONDW="core_destroyed"; [[ $L == *"tiebreak"* ]] && CONDW="tiebreak"
+      case "$L" in
+        *"$B"*) TSCORE+=($(.venv/bin/python -c "import sys;sys.path.insert(0,'tools');import score;print(score.game_score(True,'$CONDW',$TN))"))
+                CSCORE+=(-10);;
+        *)      CSCORE+=($(.venv/bin/python -c "import sys;sys.path.insert(0,'tools');import score;print(score.game_score(True,'$CONDW',$TN))"))
+                TSCORE+=(-10);;
+      esac
     done
   done
 done
@@ -137,6 +152,13 @@ fi
 print ""
 print "  informative band at n=$N: <=$LOC or >=$HIC wins  (${LOP}%-${HIP}% is noise)"
 print "  VERDICT: $VERDICT"
+mean() { print -r -- $@ | tr " " "\n" | awk '{s+=$1;n++} END{if(n)printf "%.2f",s/n; else print "-"}'; }
+print ""
+print "  ⭐ KILL-SPEED SCORE (PRIMARY CURRENCY — PROGRAMME.md: win rate is NOT the verdict)"
+print "      $B  mean $(mean $TSCORE) /game        $C  mean $(mean $CSCORE) /game"
+print "      (tools/score.py buckets; a tiebreak win and a loss both score -10)"
+print ""
+print "  --- secondary, and NOT the verdict ---"
 med() { print -r -- ${(n)@} | tr " " "\n" | awk '{a[NR]=$1} END{if(NR)print (NR%2)?a[(NR+1)/2]:int((a[NR/2]+a[NR/2+1])/2); else print "-"}'; }
 print "  KILL ROUND (continuous, far more power than the win count):"
 print "    when $B wins:  n=${#TW_TURNS[@]}  median $(med $TW_TURNS)"
