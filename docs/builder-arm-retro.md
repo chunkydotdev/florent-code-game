@@ -163,3 +163,78 @@ and it feels identical from inside.
 **ROUTED (per the rule):** Q2's direction-of-error finding → **behaviour change,
 promoted to `.claude/commands/builder.md`.** Q7's items → HANDOVER. The rest →
 `OBSERVATION — NOT ROUTED`.
+
+---
+
+# INSTANCE — s30, 2026-08-11. FIRINGS: 6.
+
+Run at Magnus's wrap-call, before the process deltas, per the routing rule.
+Answered from commits, the tape, and the platform.
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+**Five typed: LOKI-19 band 2 · LOKI-18 VOID-ON-PREMISE · ammo refuted · sentinel
+siting fork · the n=1024 battery.** Each used its pre-committed language.
+✅ **FIRES, AND IT IS THE SESSION'S DEFINING ONE: "nothing above the null" was
+true, content-free, and I reported it to Magnus as evidence the bot could not be
+improved.** Seven of nine arms were inside a band the screen could not resolve.
+**I did not distinguish "no effect" from "no measurement" for six hours.**
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+**Six.** The `audit_trigger` downgrade · the null bar 44%→50.0% · cap-6 "first
+thing above the null" 58%→50% · the 7.17× ghost reading (blindness→kills) · the
+160× mechanism-bar generalisation · "nothing works".
+✅ **FIRES, AND THE DIRECTION FLIPPED MID-SESSION.** The first three ran in the
+FLATTERING direction — less work, a healthier check, a positive result. **The
+last three ran AGAINST my interest and I published them unprompted.** The
+turning point was building the null control: once a bar existed that I had not
+chosen, my own numbers stopped being negotiable.
+
+### 3. INSTRUMENTS — driven to BOTH verdicts?
+Built or repaired: `h2h.sh`, `mde.py`, `peck_read`, `loki19_5d`, `inert_check`,
+`match_ledger`, `plank_status` (3 rounds), `ship_watch` freshness,
+`corpus_sanity` token, `audit_trigger` (both directions), the seat rename.
+✅ **FIRES THREE TIMES.** `h2h.sh` read **100%** on its first self-check (identical
+basenames). `plank_status` flagged **our live incumbent** as withdrawn because
+`core_kill_share` contains "kill", then read a VOID commit as a REVIVAL because
+it contained "reinstated". **`mde.py` — which computes the bar every verdict is
+read against — shipped with NO SELFTEST and crashed on a bad argument.** A lane
+had to tell me.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+✅ **FIRES.** I fired LOKI-16b **nineteen seconds** after committing a prereg
+whose own Obligation-13 block said the gate runs first. I ran it late; it
+returned MALFORMED on my own declaration. **And I wrote the diff-touches field as
+PROSE twice** — the tool refused both times and nothing else would have.
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+**Four submissions (v109–v111), three legs fired, ZERO rated matches leaked**,
+verified per-match at the pairing boundary each time. **Exposure 16–17 s per
+window.** The slot rule FIRED at 11:19Z (`net5 −23`) and I missed it for thirty
+minutes; the rollback condition was not met and v104 recovered unaided.
+
+### 6. WHAT THE BUDGET BOUGHT
+**Three unrated windows (75 games), ~9,000 self-play games, 12 arms built.**
+✅ **FIRES: one window was spent on a plank its own author had retracted twice.**
+And the day's most expensive item was free — **six hours of screening at n=64,
+which could only detect an effect larger than our best-ever ship.**
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+**Parallel `fcode run` produces incoherent counts** — it invalidated a dose check
+and is in no docstring. The 4,096-game null was **killed deliberately** to free a
+core. `_v139heal`'s mechanism **runs backwards** and its +1.2pp is therefore not
+what it appears.
+
+## THE QUESTION THAT IS NOT A LIST
+**Did I make a decision the machinery could not have caught?**
+**Yes: I built the machinery that caused it.** Seven filters, zero generators,
+and a screen calibrated to reject everything short of LOKI-13. **Every filter was
+individually correct and the portfolio was wrong** — because a false positive
+costs one visible window and a false negative costs a plank nobody ever hears
+about, and nothing counted the second. **Magnus had to tell us.** No instrument
+in this repo measures its own false-negative rate, and after today every screen
+prints its informative band.
+
+**ROUTED:** Q1/Q6 → the band-as-verdict fix, in `h2h.sh` and HANDOVER · Q3 →
+`mde.py --selftest` with the published bar as a cell · Q7 → the serial-dose rule
+and the `_v139heal` inversion, both to the tape. Q2's direction flip →
+**OBSERVATION — NOT ROUTED**, but it is the one I would want a successor to read.
