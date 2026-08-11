@@ -51,6 +51,10 @@ FLOOR = 3
 BLOCK_MARKERS = (
     "blocked", "blocker", "gated", "needs a number", "settles it first",
     "shipped", "dead", "do not re-queue", "waiting on",
+    # Added 2026-08-11 after a WITHDRAWN row padded the floor: a plank that has
+    # been refuted still parses as a numbered row, so the withdrawal has to be
+    # read off the TEXT. Same false-positive class as the decomposition table.
+    "withdrawn", "refuted",
 )
 # Section headings whose rows never count toward the floor.
 DEAD_SECTIONS = ("## FIRING NOW", "## BLOCKED", "## DEAD")
@@ -71,10 +75,30 @@ def parse(text: str):
     return out
 
 
+def _is_plank_row(row: str) -> bool:
+    """First cell must be a plank ID -- a bare number, possibly bold/struck.
+
+    ⛔ THIS GUARD EXISTS BECAUSE THE TOOL COUNTED A DECOMPOSITION TABLE AS A PLANK.
+    On 2026-08-11 a research decomposition (`| **product** | **3.36x** | = the
+    anchor |`) sat inside a queue section and was reported as an unblocked queue
+    item. That is a FALSE POSITIVE -- the tool claiming the floor is met when it
+    is not -- which is the UNSAFE direction and the opposite of the undercount
+    documented above. A floor alarm that can be padded by a stray table is not
+    a floor alarm.
+    """
+    cells = [c.strip() for c in row.strip().strip("|").split("|")]
+    if not cells:
+        return False
+    head = re.sub(r"[*~`\s]", "", cells[0])
+    return head.isdigit()
+
+
 def unblocked(rows):
     live = []
     for section, row in rows:
         if any(section.startswith(d) for d in DEAD_SECTIONS):
+            continue
+        if not _is_plank_row(row):
             continue
         low = row.lower()
         if any(m in low for m in BLOCK_MARKERS):
@@ -112,6 +136,14 @@ def selftest() -> int:
          "## NEXT UP\n| # | plank |\n|---|---|\n", 0),
         ("three clean rows meet the floor",
          "## NEXT UP\n| 1 | **a** | c |\n| 2 | **b** | c |\n| 3 | **c** | c |\n", 3),
+        # The false-positive cell. A decomposition table inside a queue section
+        # padded the floor on 2026-08-11; this is the regression test for it.
+        ("a non-plank table row does NOT count",
+         "## NEXT UP\n| **product** | **3.36x** | = the anchor |\n", 0),
+        ("a struck-through plank id still counts as a row",
+         "## NEXT UP\n| ~~3~~ | **a** | c |\n", 1),
+        ("a WITHDRAWN row does NOT count (it still parses as a numbered row)",
+         "## NEXT UP\n| ~~3~~ | ~~**a**~~ | **WITHDRAWN — premise refuted** |\n", 0),
     ]
     bad = 0
     for name, md, want in cases:
