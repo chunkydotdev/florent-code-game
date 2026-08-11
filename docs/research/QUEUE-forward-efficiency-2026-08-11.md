@@ -118,8 +118,18 @@ says nothing about what a LOCAL battery can emit.**
 
 Verified by reading, file and line:
 * **`tools/arena.py:53` runs every match with `--replay /dev/null`** — so
-  `arena.py` and `h2h.sh` downstream of it produce **win rate and `score.py`
-  only, and zero forward quantities.**
+  `arena.py` produces **win rate and `score.py` only, and zero forward
+  quantities.**
+* **⚠ CORRECTION TO THIS RETRACTION, same day, raised by the side lane and
+  verified by me: `h2h.sh` is NOT downstream of `arena.py`.** It contains no
+  reference to it (two comment lines only) and calls `$FC run` **directly** at
+  `:66-67` with **no `--replay` flag**, so its replays go to the `fcode.toml`
+  default `replay = "replay.replay26"` — **one path, overwritten every game**
+  (confirmed: exactly one `.replay26` at repo root). **The conclusion is
+  unchanged — nothing forward is readable from today's output — but the hole on
+  the h2h side is a ONE-LINE FLAG, not a missing architecture, and my original
+  wording overstated it.** The `mech_battery.py` decode findings below are
+  untouched by this correction.
 * **`tools/mech_battery.py` DOES retain replays** (it exists for exactly this
   reason; `:6-7` states *"no local battery this project has ever run produced a
   decodable replay"*) — **but its decoder reads only builder-bot deaths by round
