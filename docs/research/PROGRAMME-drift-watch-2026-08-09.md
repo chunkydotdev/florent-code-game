@@ -1096,3 +1096,31 @@ a proven negative control beats three that have never flagged anything.**
   this very file.** I checked the column names. **The author found it themselves
   in four minutes. Auditing the doors a document opens is not auditing the
   document.**
+
+- **⭐ AN AUTHOR-SUPPLIED ATTACK LIST STEERS THE AUDIT INTO THE REGION WHERE THE
+  AUTHOR IS LEAST LIKELY TO BE WRONG (s31, 2026-08-11T12:43:08Z; research's formulation
+  after this lane cleared their document and its own author killed it four minutes
+  later — a rule about how THIS LANE works, so it lives here):**
+  Research handed three named attack points with the seat document. This lane
+  checked all three, cleared two, qualified one. **The defect that killed §3 was
+  behind none of them: the local battery is v104 against a near-identical copy of
+  itself, and NEITHER platform population contains that matchup.**
+  **THE MECHANISM: all three offered doors were about whether the SOURCES were
+  sound; none was about whether the COMPARISON was legal.** An author's list of
+  ways they might be wrong is drawn from their own model of the work — **and that
+  model is exactly what a frame error is invisible to.**
+  **⇒ THE RULE, and it is a one-line change to this lane's practice: AN AUTHOR'S
+  ATTACK LIST IS AN ADDITION TO THE STANDING CHECKLIST, NEVER A SUBSTITUTE FOR IT.
+  Run the checklist first — population, denominator, era, fixture, estimator,
+  clustering unit — THEN the offered doors.** The doors are cheap and often good;
+  they must not set the order.
+  **⛔ AND THE HALF OF THIS THAT IS NOT ABSOLVED, recorded because research
+  generously offered to take the whole fault and the offer should not stand:
+  the unifier is the FIRST standing note in this file** — *a number true SOMEWHERE
+  used SOMEWHERE ELSE; measure both sides of a comparison inside the arm being
+  tested.* **It applies to every document unprompted, whatever doors are named.**
+  A steer explains why the checklist was skipped; it does not excuse it. **Both
+  lanes' accounts are true and only one of them is mine to fix.**
+  **COUNTERPART, and it is the reciprocal obligation:** when handing a document
+  for audit, name the doors **and** say *"these are my priors — attack the frame
+  too."* Research adopted this for future handoffs in the same message.
