@@ -392,3 +392,65 @@ population than Amendment 1's rated-only baseline, chosen because the per-cell
 rated n would be near zero. **The 6x cross-opponent spread means any of these can
 move materially on a different map mix.** They are good enough to SELECT a cell
 and **not good enough to be a bar**, which is exactly how they are used here.
+
+---
+
+# AMENDMENT 3 — §5d GETS A MAGNITUDE, AN ESTIMATOR AND A CI RULE. ADD-ONLY, BEFORE ANY TREATMENT GAME EXISTS.
+
+**Written 2026-08-11 07:0x CEST. The treatment arm has fired ZERO games** —
+window 1 was rejected 0/5 by the rate limit, so no LOKI-19 game exists anywhere
+on the platform. This closes a defect in my own document before it can be
+resolved either way.
+
+## 3a. THE DEFECT: THE ONLY UNQUALIFIED CLAIM IN THIS PREREG RESTED ON AN UNDEFINED WORD
+
+§5d is the FALSIFIER, and the §6 table gives it the plain-language licence:
+
+> *dose fires, **retention (5d) falls materially*** → *"the plank buys damage
+> with position"* — **"may be written plainly."**
+
+**"Materially" carries no magnitude, no estimator and no CI rule.** After
+Amendment 1 pushed the premise bands into "ambiguous", **5d and VOID are the only
+two bands in this document that license unqualified language** — and 5d is the
+one most likely to fire, because retention is precisely what this plank spends.
+
+**This is the same defect this repo has logged twice:** *"a bar names its
+ESTIMATOR, or it can be met and missed by choosing one afterwards"* — written
+after four defensible estimators of the ring-hold bar straddled its threshold
+**inside 0.010**. A falsifier that fires on an undefined magnitude can be met or
+missed by picking the meaning at read-out. **I wrote the rule this morning and
+then left the word in my own falsifier.**
+
+## 3b. THE FIX — FULLY IN-ARM, SO NO STORED FIGURE CALIBRATES IT
+
+Statistic, estimator and clustering unit were already named: **`hold_pinned`
+(`scratchpad/ring_read.py`), 12-ring stratum, game-mean, match-clustered
+bootstrap, 4,000 draws.** What was missing was the magnitude and the interval
+rule. Both are now fixed, **relative to the control arm's OWN measured
+retention** rather than to any stored number — §2's rule applied to the
+falsifier itself:
+
+> **A FALL is: the treatment point estimate sits at least 25% BELOW the control
+> arm's own point estimate, AND the match-clustered bootstrap CI on the
+> DIFFERENCE has an upper bound below 0.**
+
+**Both conditions, not either.** The percentage is scale-free, so it needs no
+external calibration and cannot be flattered by a control arm that happens to
+retain unusually well or badly. **The CI condition is what stops a noisy
+point estimate from firing the one band that speaks plainly.**
+
+## 3c. AND THE BAND LOSES ITS LICENCE IF THE INTERVAL DOES NOT SUPPORT IT
+
+| 5d outcome | how it MUST be written |
+|---|---|
+| point ≥25% below control **AND** CI upper bound < 0 | **"the plank buys damage with position"** — the trade in §3 resolving against the plank. **May be written plainly.** |
+| point ≥25% below control, **CI straddles 0** | *"retention is lower in the treatment arm; the interval does not exclude zero at this n."* **"Falls", "costs" and "buys" are FORBIDDEN.** |
+| point within 25% of control | **no cost detected at this n.** Not evidence of no cost — the resolution table in §6 already says 5d only PARTIALLY resolves at ~10 clusters/arm. |
+| point ABOVE control | reported as observed. **No claim** — the plank has no mechanism by which pecking should INCREASE retention, so this reads as noise unless something explains it. |
+
+## 3d. WHAT THIS AMENDMENT MAY NOT DO
+
+It may not move 5a, 5a-bis, 5b, 5c, the n, the cells, or the four-band table in
+§6 other than by supplying the definition §6 referred to and did not have. **And
+the 25% is fixed HERE, before any treatment game exists — it may not be revised
+because a measured fall lands near it.**
