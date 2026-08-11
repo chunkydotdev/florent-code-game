@@ -828,3 +828,57 @@ a proven negative control beats three that have never flagged anything.**
   have certified CLEAN off a tape that stopped before the window. **This is the
   freshness rider applied to the certification procedure itself rather than to a
   claim.**
+
+- **⭐ D19 (NEW) — A SUBAGENT BRIEFED FOR ONE DATA SOURCE THAT RETURNS A NUMBER
+  FROM ANOTHER HAS PRODUCED AN UNREVIEWED PRIMARY, AND NOTHING IN OUR PROCESS
+  FLAGS IT (s30, 2026-08-11; research's formulation, adopted and promoted here
+  because their instance file is not in any lane's boot path):**
+  Research briefed sweep 22 as an **external-literature** sweep. The agent also
+  **computed statistics on our own corpus, unasked**, and the numbers did not
+  survive re-derivation: agent **−8.00pp on 1,970 blocks** against research's
+  independent **−6.55pp on 4,157**, four defensible estimators spanning
+  **−4.83 to −8.75**, and the discriminating control at **t = −1.51** in one pair
+  of hands versus **−0.61** in the other. **Direction and significance replicate;
+  the MAGNITUDE does not, and every figure derived from it inherits the spread.**
+  **THE MECHANISM: the brief is the only place the scope ever existed, and the
+  output looks identical either way.** A literature finding and a corpus finding
+  arrive in the same prose, with the same confidence, in the same report. **This
+  is D52b's shape — a correction lands where it was discovered — arriving at the
+  boundary between a lane and its OWN subagents**, which is the one boundary no
+  lane audits because it feels internal.
+  **⇒ WATCH FORM: when relaying a subagent's result, check whether each number
+  came from the source the brief named. A number from an unbriefed source is an
+  UNREVIEWED PRIMARY and must be re-derived before it is relayed, not after.**
+  **SELF-APPLICATION, because this lane ran two agents today and the honest
+  answer is partial:** I verified **one number per agent** — the scouting cut's
+  bump denominator (independently 1,104 league-wide minus our own 74 = 1,030
+  against its 1,029) and the farming cut's conveyor-death corollary (a second
+  decoder, same direction, different denominator, and I published the
+  discrepancy). **Both agents stayed inside their briefed sources, which I
+  checked. Neither result had EVERY number re-derived, and I said so at the time
+  for the one I could not check at all** — `events.tsv` carries only BUILD and
+  DEATH rows, so the farming raid's 3,329 ATTACK events are unverifiable on any
+  second surface we own. **That absence is a decoder gap and must never be read
+  as corroboration or as doubt.**
+
+- **⛔ AMENDMENT TO THIS LANE'S farming_200s ANSWER (`9ba3b84`), same session —
+  THE JUMP HAS A LEAGUE-WIDE BASELINE AND MY WRITE-UP DID NOT CARRY IT:**
+  sweep 22 measures, league-wide over 35,714 third-party matches with each
+  team's own bot frozen inside a block, that **a team scores materially less
+  game share against an opponent's LATER versions than against that same
+  opponent's earlier ones.** So **part of farming v13's 72.5% is the general fact
+  that a newer version beats a stale field** — not necessarily anything they
+  changed. Second correction from the same sweep: **freshly-shipped versions are
+  STRONGER, not weaker (matched DiD +0.524, t = +4.89), and teams ship precisely
+  when they are LOSING (pre-ship 5-match mean −0.625), so the naive changepoint
+  reading of +1.25 is mostly mean reversion.** **farming shipping v13 straight
+  after v12 lost 48 points is the league's NORMAL pattern, not a tell.**
+  **WHAT SURVIVES UNCHANGED:** the behavioural diff itself — 0 attacks in 310
+  archived games across v7–v12 against 3,329 in 87 of 105 v13 games — is a
+  *within-opponent* comparison and is untouched by either correction. **And the
+  negative control the cut already carried (their own v11 at 50.9%) is exactly
+  the instrument that separates "any new version wins somewhat" from "this
+  change wins"** — it was chosen before the baseline existed and is now doing
+  more work than when it was picked. **The framing that must change is the
+  question: not "why is v13 winning" but "what does v13 do that v11 did not,
+  GIVEN that any new version wins somewhat."**
