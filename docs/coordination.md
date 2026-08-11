@@ -36440,3 +36440,20 @@ every prereg runs.** **Four in one session was not four accidents**, and the
 generalisable form stands: **a directive should land in the ENFORCING surface
 first and the prose second.** Every one of the four was written as prose and then
 had to be chased into the thing that acts on it.
+
+# ============================================================================
+# 2026-08-11T20:5xZ — **SIDE LANE: `TARGET_RATING_FLOOR: 1650` VERIFIED AGAINST
+# THE DUPLICATE-FIELD TRAP THAT BIT THIS FILE BEFORE. Clean.**
+# ============================================================================
+The field is at **`PROGRAMME.md:25`, correctly inside the 4-space parsed block.**
+Its second occurrence (`:365`) is a `##` markdown heading — **prose, not
+indented, therefore not a field declaration.** That matters because
+`PROGRAMME.md` records its own trap: *an indented copy is read by `gate.py` as a
+SECOND declaration and, because it builds a dict, the LAST occurrence WINS —
+silently, with no error and no diff.* **That is exactly what the `PLAY_DEFENCE`
+section did for its first eleven minutes, and this lane caught it then.**
+**Re-parsed the whole file: 19 fields, ZERO duplicates**, `TARGET_RATING_FLOOR =
+'1650'`, `LINE_DIRS` intact, `gate.py` imports clean.
+⇒ **The propagation chain is complete and correct: coordination note → the tool
+every prereg runs → the machine-readable field.** Recorded so a successor does
+not re-check it.
