@@ -454,3 +454,99 @@ It may not move 5a, 5a-bis, 5b, 5c, the n, the cells, or the four-band table in
 §6 other than by supplying the definition §6 referred to and did not have. **And
 the 25% is fixed HERE, before any treatment game exists — it may not be revised
 because a measured fall lands near it.**
+
+---
+
+# AMENDMENT 4 — **THE FINAL n IS FIXED HERE, BEFORE ANY POOLING WINDOW FIRES.** ADD-ONLY.
+
+**Written 2026-08-11 08:3xZ by the s30 BUILDER, on Magnus's direct instruction
+(*"give this over to the builder as something to run an experiment on, the
+unrated games would give you real data, not hypothetical"*). Committed BEFORE
+leg creation. NO window of this continuation has fired.**
+
+## 4a. ⛔ WHY THIS AMENDMENT EXISTS AT ALL: I HAVE ALREADY SEEN AN INTERIM
+
+The read-out published **core_kill_share −12.0pp (36.0% vs 48.0%) against a
+28.0pp MDE** and band 2. **Continuing to pool AFTER seeing that is OPTIONAL
+STOPPING unless the final n is fixed first** — otherwise the leg reads at
+whatever point it looks decisive, and every interval it quotes is wrong.
+
+**⇒ THE FINAL n IS 200 TREATMENT GAMES. THE READ HAPPENS THERE. It does not
+happen at 100, at 150, or at whatever window first looks clean, and it does not
+stop early on a favourable swing.** If the leg is abandoned before 200 the
+currency is reported as UNREAD, never as a result.
+
+*(This clause is the side lane's and I am adopting it verbatim in substance
+because I would not have written it myself — I was about to fire the pooling
+windows off §6's "pooling more windows is the ONLY route" without noticing that
+§6 was written before an interim existed.)*
+
+## 4b. THE n, AND ITS RECOMPUTED OPERATING CHARACTERISTICS
+
+The s28 rule: **any change to n travels with its recomputed MDE, or the bars
+silently change meaning while appearing untouched.** That is the LOKI-14b lesson
+and it applies to a continuation as much as to a new leg.
+
+| | banked | after this amendment |
+|---|---|---|
+| treatment games | 50 | **200** (150 to fire = 30 matches = 6 windows ≈ 2 h) |
+| control games | ~400 banked v104 | unchanged, no new control fired |
+| **MDE on core_kill_share** | **~25pp** | **~14–15pp at icc = 0.1** |
+
+**⛔ 14–15pp IS STILL LARGER THAN THE −12.0pp INTERIM. Stated now, before firing,
+so it cannot be discovered at read-out: at the final n this leg may STILL be
+unable to resolve the effect it has already glimpsed.** That is an accepted
+outcome, not a failure — §6's four-band language already covers it and band 2
+remains available at n=200.
+
+## 4c. CELLS — SmartFridge takes no new games, on PRE-REGISTERED admission grounds
+
+New windows fire at the **four version-stable cells** — Askar City (v94), Lunds
+Stallions (v64), farming_200s (v13), Landers (v93) — **all four re-verified
+version-stable across a 161-minute span.**
+
+**Powered by SmartFridge receives NO NEW GAMES.** Its existing 10 treatment / 10
+control games are **reported separately and never pooled**, the disposal already
+pre-committed for it in the read-out.
+
+**⛔ THE JUSTIFICATION IS ADMISSION, NOT OUTCOME, AND THE DISTINCTION IS THE
+WHOLE LEGITIMACY OF THIS CLAUSE.** SmartFridge has failed six independent
+admission checks — arrival precondition 7.6% (measured in **Amendment 2a, before
+any treatment game existed**), ten distinct versions in 24 h, a complete seat
+inversion, no version-matched control, and being the most mid-range cell on the
+board while re-versioning sub-hourly. **None of those is an outcome.**
+**AND THE DIRECTION CUTS AGAINST THE PLANK: SmartFridge supplied the single most
+FAVOURABLE 5d number in the leg (+0.324). Dropping it removes the plank's best
+cell, not its worst.** A reader should check that, because a cell-drop after data
+exists is exactly where fixture-shopping hides.
+
+## 4d. WHAT THIS AMENDMENT MAY NOT DO — and it moves NO bar
+
+It is **ADD-only**. It does not touch 5a, 5a-bis, 5b, 5c, 5d, Amendment 3b's 25%
+rule, Amendment 3c's four rows, or §6's band language. **It does not reinterpret
+a bar; if it did, it would be a NEW pre-registration and would say so.**
+It may not be read as predicting the outcome. **And the gate reading stands
+unchanged: 5a-bis did not resolve, so the leg still may NOT claim to have tested
+"the changed premise" no matter what the pooled currency says.**
+
+## 4e. THE FIELD FACT THAT MOTIVATES SPENDING TWO HOURS ON THIS — motivation only, entering no bar
+
+* **20 of 20 teams above us land builder melee, median 90% of their games.**
+* **Our v104 does it in 0 of 1,605 games** — one boolean, `LOKI_QUIET_ON`.
+* **15 of the 50 teams below us have none, and 14 of those are rated <1550.**
+  On melee PRESENCE we group with vjg (730) and Troupe (1011).
+* ⚠ **The census's own control DEMOTES melee VOLUME** — the heaviest attackers
+  rate 1313–1669 — **so this is an argument about presence, not about dose.**
+
+**⛔ §2's rule holds: no stored figure enters any bar. This paragraph is why the
+window is worth spending and is not evidence for the plank.**
+
+## 4f. OBLIGATION 13 — run BEFORE firing, not after
+
+```
+MECHANISM METRIC READS: bots/_v136loki19/raid.py:256   (the LOKI19_CORE_PECK_ON gate)
+TREATMENT DIFF TOUCHES: v108 vs v104 — computed by tools/inert_check.py
+INTERSECTION: to be asserted by the tool BEFORE the first window
+```
+**I fired a probe ninety minutes ago having skipped this exact check, and the
+prereg for it now carries an amendment saying so. It runs first this time.**
