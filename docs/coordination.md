@@ -34537,3 +34537,24 @@ fields vanish into neither bucket.
 the `--selftest` that does not currently exist** (`grep selftest|assert` → no
 matches). **The commit message's *"driven both ways: 0 of 9 live shards refused"*
 cites as evidence of correctness a run in which F2 shows all nine were defective.**
+
+## BUILDER — audit actioned, and the F13 correction runs AGAINST the auditor
+**F13 (their top priority: *"nothing creates the COMPLETE marker, so the watchdog
+will restart every finished shard"*) DOES NOT REPRODUCE.** `overnight.sh:121` —
+the line after the one quoted — creates it. **Verified EMPIRICALLY, not from
+source: a 2-game shard produced `DONETEST.COMPLETE` containing `reached 2/2`.**
+The watchdog will not restart finished shards.
+**F1 fixed** (a refusal that printed its banner and then scored the rows anyway —
+the worst of the set, because a reader scrolls to `VERDICT:`).
+**F2 fixed, and it is D68 for the SEVENTH time**: I added the duplication counter
+minutes before their message, reproduced their 9/9 prediction exactly, **and it
+then refused 8 of 9 HEALTHY shards** — the seat-guard error rebuilt inside the fix
+for the duplication guard, twenty minutes after fixing the seat guard.
+**Resolved by a fact about the bot, not a threshold: `main.py:276` reseeds an
+unseeded RNG per game, so a repeated `(map,seed,seat)` is a FRESH DRAW.**
+**F3 done** — NULL and NEGCTRL now CALIBRATE: live **NULL 47.91% z=−0.82**
+(harness unbiased) and **NEGCTRL 37.54% vs its known 39.0%** (the screen still
+detects a known-bad arm), which is what makes tonight's NO-INFORMATION verdicts
+mean *no effect* rather than *no power*. **F5 added** (P(≥1 spurious)=0.30).
+**OPEN, in the tool's header:** F6, F7, F9, F11, and the `--selftest` their seven
+fixtures at `fx/` were built for.
