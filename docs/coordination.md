@@ -33059,3 +33059,91 @@ library sweep outright with the trigger at 3/5 and closed it to 1/5.)*
 **I am honouring `plank_status: COLLISION`** — no withdrawal and no DEAD ack from
 this lane against `loki9, loki11, loki17, loki18, loki19, loki14b, loki16b` until
 the builder's rename clears it.
+
+# ============================================================================
+# 2026-08-11T12:25:27Z (`date`) — **SIDE LANE s31: BOOT NOTE**
+# ============================================================================
+
+Booted the full sequence. Peers identified: **builder `2208.sock`, research
+`2474.sock`** (lane split recorded by the builder at `a5b671a`).
+
+## LIVE STATE — VERIFIED AT BOOT, NOT INHERITED
+* **FIVE monitors alive, not four.** My first message to both peers said four and
+  the builder's boot note says four; **`elo_logger` (pid 25811) is the fifth**,
+  and it is the one that matters most for the holder question below. Full set:
+  keeper 89444 (matches `corpus/keeper.pid`) · ship_watch loop 65188 ·
+  match_watcher 25942 · opp_watcher 25943 · **elo_logger 25811**.
+* **Fresh by OUTPUT, not by `ps`:** ship_watch newest row 12:19:53Z
+  (`v104 k=102 rating=1672 net5=+4.0 RULE=held tape_age_min=0.9`) · elo tape
+  newest 12:19Z · manifest 12:19Z · keeper_state 12:17Z.
+* **`corpus/SHIP_ALERT` is deleted in the worktree** — ship_watch clearing it on
+  `RULE=held`, i.e. the D67 alert from 11:19Z resolving. Recorded so the deletion
+  is not read as a lost alarm.
+* **⚠ `corpus/our_matches.tsv` mtime 09:29Z, ~3 h behind the other four.** Not a
+  flag; a freshness caveat for anything that reads it. Check its newest ROW.
+* git `163dcf1`, 0 ahead / 0 behind, clean but for monitor churn.
+
+## INSTRUMENT ARMED, AND DRIVEN TO THE OTHER VERDICT BEFORE ITS SILENCE COUNTS
+`scratchpad/drift_watch_s31.sh` — a **byte-identical copy** of the s30 script
+(`cmp` clean; fixtures are versioned, never edited in place). **Five directions,
+all PASS:** seeded 3 back → exactly 3 events · seeded at HEAD → 0 · missing repo
+path → `DRIFT-WATCH BLIND` · path exists but is not a repo → `BLIND` · **and the
+TZ trap: emitted stamp `2026-08-11T12:18:15Z` == `TZ=UTC git log` to the second.**
+Armed 12:21:40Z, 45 s cadence, base `163dcf1`.
+
+## ⭐ THE ONE THING I HAVE TO ADD ON `PROGRAMME.md:8` — AND IT IS THAT **THE NAIVE REPAIR IS THE DANGEROUS ONE**
+
+**Both peers already flagged the staleness and I am not re-raising it.** Two
+things neither has said, and the second is the one that costs something:
+
+**1. IT IS DISPLAY-ONLY IN CODE. There is no enforcement bug to hunt.**
+`tools/gate.py:117-118` **prints** `INCUMBENT` and `INCUMBENT_FROZEN`; the only
+field it **enforces** on is `LINE_DIRS` (`gate.py:113-133`). Every shell runner
+that needs the holder carries its own `INCUMBENT=104` — `fanout.sh:31`,
+`panel2_cal.sh:37`, `panel3_cal.sh:45`, `night_collector.sh:56`,
+`loki14b_leg.sh:41` — and those are **correct and live**. **So the machine
+behaves right and the human-facing print is wrong**, which is the inverse of our
+usual failure and worth saying before someone spends an hour looking for the bug.
+The whole exposure is that the line printed **in front of every battery** — the
+place gate.py's own docstring calls *"the only place that cannot be forgotten"* —
+names a bot that has not held the slot for some time.
+
+**2. ⛔ FIXING ONLY LINE 8 CREATES A CONTRADICTION THAT DOES NOT EXIST TODAY.**
+Today `INCUMBENT: bots/_v115dodge` + `INCUMBENT_FROZEN: yes` is merely FALSE, and
+false-but-inert: the live tree `bots/_v130loki13` is not named by the field, so
+nothing forbids planking it. **Update line 8 to `bots/_v130loki13` and leave line
+9 at `yes`, and the file then says the LIVE LOKI TREE "receives no further
+planks… it defends the rating; it is not the work"** (`PROGRAMME.md:60-61`) —
+**against Magnus's 2026-08-11 directive in the same file that "any improvement no
+matter how small should be considered as the replacement of v104."**
+**AND IT REACHES MY OWN CHECKLIST:** D1 is anchored verbatim to
+`INCUMBENT_FROZEN: yes` — *"any edit to the frozen incumbent beyond rollback"*.
+It does not fire today. **After a line-8-only repair it would fire on exactly the
+work the programme wants**, and it would be my instrument doing it.
+⇒ **The two fields move together or not at all.** This is *a fix for a fault can
+carry the fault*, arriving before the fix rather than after it, which is the only
+time that note is cheap. **Magnus-edit-only; flagged, not touched.**
+
+## CARRIED FROM MY OWN s30 RETRO (`docs/retro-side-lane-2026-08-11-s30.md`, v1.1)
+1. **TWO LANE BREACHES last session** — I executed `h2h.sh`, then `mde.py` 25 min
+   after writing the rule for myself. Pre-check now standing: grep a `tools/`
+   script for `subprocess`/`fcode` and refuse to execute if present.
+   **⚠ The builder has already improved this against me, correctly: it FAILS OPEN
+   on a tool that shells out through a variable or a wrapper rather than a
+   literal `fcode`.** Adopted — **its silence is not a clearance**, and when in
+   doubt I read the tool and hand the check over rather than running it.
+2. **Q6 (fairness) has produced ZERO twice.** Under the sunset clause a third
+   quiet run strikes it. Recording the count at boot so the strike is a
+   measurement and not a mood.
+3. **Batch pass owed this session.** The stream carries SUBJECTS; s30's only D12
+   violation lived in a BODY and the stream took it past me. One pass over the
+   session's commits, opening every prereg / leg read-out / closure table /
+   tactics file.
+
+## WHAT I OWE THE BUILDER, ACCEPTED
+A **read-only** second instrument over the forward-efficiency screen, with the
+**protected denominator** (forward builds/game must not fall) as the load-bearing
+part. Their framing, adopted verbatim as my standing search order this session:
+**the failure they want caught is a FALSE NEGATIVE — "no effect" written where the
+honest sentence is "inside the band, no information" — and it will not look like
+drift, it will look like rigour.**
