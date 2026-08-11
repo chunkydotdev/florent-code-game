@@ -56,6 +56,7 @@ fi
 W=0; N=0; KILLW=0; KILLL=0; R1000=0
 WA=0; NA=0; WB=0; NB=0
 typeset -A MW MN
+typeset -a TW_TURNS CW_TURNS
 for S in ${=SEEDS}; do
   for M in ${=MAPS}; do
     for ORD in A B; do
@@ -70,6 +71,16 @@ for S in ${=SEEDS}; do
                           [[ $L == *"Core destroyed"* ]] && KILLW=$((KILLW+1));;
                    *)                 [[ $L == *"Core destroyed"* ]] && KILLL=$((KILLL+1));; esac
       [[ $L == *"turn 1000"* ]] && R1000=$((R1000+1))
+      # ⭐ CONTINUOUS OUTCOME. Win/loss is ONE BIT and it is the noisiest thing
+      # the engine offers -- at n=64 it can only see a ~12pp swing, so a genuine
+      # +2-3pp (worth ~+64 rating over 100 matches) is INVISIBLE to it. The turn
+      # number is free, already on the same line, and a kill-round distribution
+      # carries far more information per game than a win count. Eleven arms were
+      # screened on the one-bit version before this was added.
+      TN=${L##*turn }; TN=${TN%%[!0-9]*}
+      if [[ -n $TN ]]; then
+        case "$L" in *"$B"*) TW_TURNS+=($TN);; *) CW_TURNS+=($TN);; esac
+      fi
     done
   done
 done
@@ -100,10 +111,34 @@ print ""
 # first thing above the null"; at n=64 it read 32/64 = EXACTLY 50%. The null
 # control itself read 44% at n=36 and 50.0% at n=64. **Two false signals from
 # the same instrument in one hour, both from small n.**
-if (( N < 64 )); then
-  print ""
-  print "  ⚠ UNDERPOWERED: n=$N. Against a 50% null only an extreme count separates"
-  print "    at p<0.05 (at n=24 that is <=7 or >=17). ANYTHING BETWEEN IS NOISE —"
-  print "    do not rank it, do not call it positive. Re-run at n>=64 before quoting."
+# ⛔⛔ THE VERDICT IS THE BAND, NOT THE PERCENTAGE. THIS FILE SPENT A DAY
+# REPORTING NON-RESULTS AS REFUTATIONS.
+#   n=  24 -> detects only >= +28.6pp     n= 256 -> >= +8.8pp
+#   n=  64 -> detects only >= +17.5pp     n=4096 -> >= +2.2pp
+# **LOKI-13, THE BEST PLANK THIS PROJECT HAS EVER SHIPPED, MEASURED +18.0pp.
+# THE n=64 THRESHOLD IS +17.5pp.** A LOKI-13-sized effect is a coin flip to be
+# filed as "not distinguishable". **We calibrated a filter to reject everything
+# short of our own best-ever result**, and on 2026-08-11 SEVEN OF NINE arms fell
+# inside the band and were written up as failures. They produced NO INFORMATION.
+# A false POSITIVE costs one window -- 25 games, bounded, visible. A false
+# NEGATIVE costs a plank nobody ever learns about -- unbounded, invisible. Seven
+# filters were built that day and zero generators.
+# ⇒ INSIDE THE BAND RETURNS THE PLANK TO THE POOL. It is NOT a demotion.
+BAND=$(print -r -- $N $W | awk '{ n=$1; hw=1.96*sqrt(0.25/n);
+  printf "%d %d %.0f %.0f", (0.5-hw)*n, (0.5+hw)*n, (0.5-hw)*100, (0.5+hw)*100 }')
+LOC=${BAND[(w)1]}; HIC=${BAND[(w)2]}; LOP=${BAND[(w)3]}; HIP=${BAND[(w)4]}
+if (( W <= LOC )); then
+  VERDICT="OUTSIDE-BELOW real negative"
+elif (( W >= HIC )); then
+  VERDICT="OUTSIDE-ABOVE escalate"
+else
+  VERDICT="NO-INFORMATION back to the pool, NOT demoted"
 fi
-print "H2H_RESULT: $B $W/$N"
+print ""
+print "  informative band at n=$N: <=$LOC or >=$HIC wins  (${LOP}%-${HIP}% is noise)"
+print "  VERDICT: $VERDICT"
+med() { print -r -- ${(n)@} | tr " " "\n" | awk '{a[NR]=$1} END{if(NR)print (NR%2)?a[(NR+1)/2]:int((a[NR/2]+a[NR/2+1])/2); else print "-"}'; }
+print "  KILL ROUND (continuous, far more power than the win count):"
+print "    when $B wins:  n=${#TW_TURNS[@]}  median $(med $TW_TURNS)"
+print "    when $C wins:  n=${#CW_TURNS[@]}  median $(med $CW_TURNS)"
+print "H2H_RESULT: $B $W/$N $VERDICT"
