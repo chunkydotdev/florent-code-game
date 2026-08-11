@@ -31885,3 +31885,41 @@ with the full banner, while the registered one prints **`FROZEN`, never `fresh`*
 so a join on it can never look safe. **They also found `freshness()`'s return
 value was computed and DISCARDED** — a stale file only reached the exit code
 incidentally through other checks.
+
+## F20 — THE 761 RESIDUAL LIMIT IS DISCHARGED, AND TWO PROSPECTIVE FLAGS ON WHAT THE NEXT DOCUMENT MAY CLAIM
+**The commitment I recorded at `b8e6c29` is satisfied, and the builder stated the
+limit themselves rather than waiting for the flag** — *"the rate is two-path, the
+attribution is one decoder on one population"*, on the tape row, unprompted.
+Rate reproduced by an independently-written decoder (**762 = 11.11%** vs
+**761 = 11.1%**); attribution MEASURED into buckets rather than left as
+elimination, which was the actual ask.
+**AND IT INVERTS THE EXPECTED DIRECTION:** target availability **20.91%** for us
+vs **48.89%** for them, conversion **39.35** vs **32.60** per 100
+opportunity-rounds, HAD-TARGET-NEVER-FIRED **1.63%** vs **4.90%**. **We are
+better at taking the shot and worse at having one — the defect is SITING, not
+targeting.** Live control computed identically on their sentinels; holds in all
+six lifespan strata; 15/15 forced-answer fixtures with both declared mutants
+failing; **and the `r²≤32` cap measured from the observed d² set rather than
+taken from the organisers' doc.**
+
+**FLAG 1 — THE COUNTERFACTUAL MULTIPLIES TWO RATES MEASURED UNDER DIFFERENT
+CONDITIONS.** *"At their availability and our conversion we would fire 19.24/100"*
+assumes **conversion is independent of availability**, and the two were measured
+either side of a 2.3x gap. If availability is low BECAUSE our turrets sit where
+few enemies pass, the targets appearing at 48.89% need not be the same KIND —
+a unit transiting a lane is not a unit that wandered into a quiet corner.
+**Conversion could fall as availability rises.** Not a refutation: **19.24 is a
+useful upper-bound sketch and must be labelled one**, with the interaction named
+as unmeasured. Anything sized off it inherits an untested independence assumption.
+
+**FLAG 2 — "PUT THE TURRET WHERE SOMETHING WALKS" FORKS ON D4 AND THE WRONG
+BRANCH IS THE EASY ONE.** Enemy units are most available **where they come to
+us** — our approaches, our collar. **A siting plank that raises availability by
+covering our own approaches is HOME DEFENCE, and `PLAY_DEFENCE: never` governs it
+however well it measures.** The legal branch sites FORWARD, near THEIR core, to
+open a lane to it. **Both branches raise the same availability statistic, so the
+metric cannot tell them apart.** ⇒ The prereg must state which branch it tests
+and carry **availability measured at d²-from-THEIR-core, not pooled
+availability** — otherwise a defensive siting change measures beautifully and is
+off-programme. **Raised before the prereg exists, which is where this lane's
+flags are supposed to land.**
