@@ -51,6 +51,72 @@ def one(mapname, seed, flip):
     return ts, cs
 
 
+Z = 2.802     # z_{0.975} + z_{0.80}, the 80%-power two-sided-5% constant
+
+
+def mde(sd, n):
+    """Minimum detectable effect. PURE ARITHMETIC — hand-checkable, and the
+    reason the selftest below can have forced answers at all."""
+    if n <= 0:
+        raise ValueError("mde: n must be positive")
+    return Z * sd / math.sqrt(n)
+
+
+def selftest() -> int:
+    """⛔ THIS FILE COMPUTES THE BAR EVERY VERDICT IS READ AGAINST, AND IT
+    SHIPPED WITHOUT A SELFTEST. Flagged by the side lane as the highest-value
+    unbuilt check on the board, and they were right: if this arithmetic is off,
+    every screen verdict inherits the error and nothing downstream would show it.
+
+    Forced answers are arithmetic on the fixture, never stored figures.
+    """
+    fails = []
+
+    def chk(name, got, want, why, tol=1e-9):
+        ok = abs(got - want) < tol if isinstance(want, float) else got == want
+        print(f"  [{'ok' if ok else 'FAIL'}] {name:<44} got={got!r} want={want!r}")
+        print(f"         forced by: {why}")
+        if not ok:
+            fails.append(name)
+
+    # 1. SCALING. MDE falls as 1/sqrt(n): quadrupling n must HALVE it exactly.
+    chk("MDE halves when n quadruples", mde(10.0, 400) / mde(10.0, 100), 0.5,
+        "Z*sd/sqrt(4n) over Z*sd/sqrt(n) is exactly 1/2, independent of Z and sd")
+
+    # 2. LINEARITY IN sd. Doubling the noise doubles the MDE.
+    chk("MDE doubles when sd doubles", mde(20.0, 64) / mde(10.0, 64), 2.0,
+        "MDE is linear in sd by construction")
+
+    # 3. A HAND-COMPUTABLE VALUE. sd=14.31 at n=4096: 2.802*14.31/64.
+    chk("hand value sd=14.31 n=4096", round(mde(14.31, 4096), 4),
+        round(2.802 * 14.31 / 64.0, 4),
+        "sqrt(4096)=64 exactly, so this is 2.802*14.31/64 with no floating slack")
+
+    # 4. THE MEASURED FLOOR REPRODUCES THE PUBLISHED BAR. sd=14.31 overnight
+    #    (n=10800) was published to Magnus as 0.39 points/game.
+    chk("published overnight bar", round(mde(14.31, 10800), 2), 0.39,
+        "the number this session put in front of Magnus as THE BAR; if this "
+        "cell ever fails, that figure was wrong when it was quoted")
+
+    # 5. DEGENERATE n MUST RAISE, NOT RETURN A NUMBER. A silent value here
+    #    would be a bar computed from nothing.
+    try:
+        mde(1.0, 0)
+        chk("n=0 raises rather than returning", False, True, "n<=0 has no MDE")
+    except ValueError:
+        chk("n=0 raises rather than returning", True, True,
+            "n<=0 has no MDE; returning a number would be a bar computed from "
+            "no games")
+
+    # 6. ZERO NOISE MEANS ZERO MDE. Degenerate but it must not blow up.
+    chk("sd=0 gives MDE 0", mde(0.0, 64), 0.0,
+        "with no variance any non-zero effect is detectable")
+
+    print("")
+    print(f"MDE_SELFTEST: {'PASS' if not fails else 'FAIL'}")
+    return 1 if fails else 0
+
+
 def main(n, maps):
     diffs, tsc, csc = [], [], []
     seed = 1
@@ -65,6 +131,9 @@ def main(n, maps):
                 ts, cs = r
                 tsc.append(ts); csc.append(cs); diffs.append(ts - cs)
         seed += 1
+    if not diffs:
+        print("no games completed — cannot measure a floor from nothing", file=sys.stderr)
+        return 1
     sd = statistics.pstdev(diffs)
     print(f"NULL, n={len(diffs)} games  (byte-identical copy vs the incumbent)")
     print(f"  treatment mean score {statistics.mean(tsc):+.3f}   "
@@ -76,15 +145,22 @@ def main(n, maps):
     print("  MINIMUM DETECTABLE EFFECT, 80% power, two-sided 5%:")
     print(f"    {'n games':>9}  {'MDE (score/game)':>17}  {'as % of the -10..+10 range':>28}")
     for k in (64, 256, 1024, 4096, 16384, 65536):
-        mde = 2.802 * sd / math.sqrt(k)
-        print(f"    {k:>9}  {mde:>17.3f}  {100*mde/20:>27.2f}%")
+        m = mde(sd, k)
+        print(f"    {k:>9}  {m:>17.3f}  {100*m/20:>27.2f}%")
     print()
     print("  Read it as: an arm must move the mean kill-speed score by at least")
     print("  the MDE at the n you can afford, or the run cannot see it AT ALL.")
 
 
 if __name__ == "__main__":
-    n = int(sys.argv[1]) if len(sys.argv) > 1 else 64
+    if "--selftest" in sys.argv[1:]:
+        raise SystemExit(selftest())
+    try:
+        n = int(sys.argv[1]) if len(sys.argv) > 1 else 64
+    except ValueError:
+        print(f"usage: mde.py <n_games> [maps...]   (got {sys.argv[1]!r})",
+              file=sys.stderr)
+        raise SystemExit(2)
     maps = sys.argv[2:] or ["antler", "atoll", "drumlin", "fjordgate",
                             "heart", "hive", "meander", "nordkap"]
     main(n, maps)
