@@ -56,7 +56,43 @@ variance reduction**. Binomial variance is flat near 0.5, so an 8 pp block shift
 buys essentially nothing. **What seat-pooling actually costs is not power. It is
 the ability to see an INTERACTION** — §4.
 
-## 3. ⭐ THE CAUSE IS THE MAP SET, AND THE PLATFORM SETTLES IT
+## ⛔⛔ §3 IS RETRACTED BY ITS AUTHOR, SAME SESSION, BEFORE ANY LANE ACTED ON IT — READ §3R FIRST
+
+**§3 below concluded "the cause is the map set, and the platform settles it."
+Both halves are wrong and §3R replaces them.** The text is kept intact rather
+than edited away, because the *shape* of the error is the transferable part.
+
+**What broke it:** I ran the control I should have run before publishing — the
+same test on games **we are not in**.
+
+* **§3's headline cell does not replicate.** The 8 battery maps read **52.71%
+  (z=+2.33)** in our games but **51.76% (z=+1.01), NOT SIGNIFICANT**, in
+  third-party games.
+* **Per-map directions do not replicate at all.** `atoll` is **46.95% (z −0.99)**
+  in our games and **61.75% (z +3.46)** third-party — *opposite directions, both
+  notable.* `jackpot` 40.20% → 50.93%. `hive` 56.31% → 49.53%.
+* ⇒ **The per-map bias is NOT a fixed property of the map, and "the 8 local maps
+  are A-favouring, which explains the battery's 54.13%" is withdrawn.**
+
+**⭐ AND THE METHOD ERROR IS THE THING TO CARRY, NOT THE NUMBER.** The local
+battery is **our bot against a near-identical copy of itself**. That matchup
+appears in **neither** platform population — the ladder has never played v104
+against v104. **If seat asymmetry is a map × matchup interaction (§3R), then no
+quantity of platform data can predict the local figure, because the platform does
+not contain the population.** I reached for the platform because it had the
+bigger n and did not ask whether it had the matchup. **The larger n made the
+wrong population feel like the stronger evidence.**
+
+**Direction of the error, named:** toward the **tidier** explanation. "It's the
+map set" closed the question in one table.
+
+**Operational consequence, corrected and relayed to the builder while their run
+was live:** I told them a byte-identical null on the same 8 maps "discriminates
+nothing." **That was wrong. It is the only instrument that can answer this**, and
+it yields a seat baseline for the exact matchup and map set every local screen
+runs in — a calibration constant this project has never had.
+
+## 3. ⭐ THE CAUSE IS THE MAP SET, AND THE PLATFORM SETTLES IT — **⛔ RETRACTED, see above and §3R**
 
 The obvious suspects were the engine (a team-A resolution-order advantage) and
 the local harness (the battery ran 8-way parallel; TLE under contention). **It is
@@ -104,6 +140,66 @@ symmetric map can still favour a seat through resolution order interacting with
 that geometry. *(INFERENCE — I have measured that outcomes differ by map; I have
 not measured why, and no mechanism here is established.)*
 
+## 3R. WHAT REPLACES §3 — THE THIRD-PARTY CONTROL, AND WHAT IT DOES AND DOES NOT SETTLE
+
+**Population: games we are NOT in.** `corpus/league_matches.tsv` (`scoreA`/`scoreB`
+per match) for the pooled test; `corpus/league_games.tsv` for the per-map test.
+
+### 3R-a. ⭐ THERE IS NO ENGINE-LEVEL SEAT ADVANTAGE. THIS IS THE STRONGEST NUMBER HERE AND NOTHING BELOW WEAKENS IT.
+
+| population | matches | games | seat-A share | z vs 50% |
+|---|---:|---:|---:|---:|
+| **THIRD-PARTY (every match we are not in)** | 35,578 | **177,618** | **50.137% ± 0.233pp** | **+1.16** |
+| our own matches | 748 | 3,740 | 50.909% ± 1.602pp | +1.11 |
+| all matches | 36,326 | 181,358 | 50.153% ± 0.230pp | +1.31 |
+
+**The engine is seat-symmetric to a quarter of a percentage point.** A team-A
+resolution-order advantage is dead as a hypothesis.
+
+### 3R-b. MAP-LEVEL HETEROGENEITY IS REAL AND REPLICATES ON AN INDEPENDENT POPULATION
+
+| population | maps (n≥190) | χ² | df | p |
+|---|---:|---:|---:|---:|
+| our games | 15 | 35.33 | 14 | 0.0013 |
+| **third-party** | 8 | **23.09** | **7** | **≈0.0017** |
+
+**Seat outcomes genuinely differ by map, in two independent populations.**
+
+### 3R-c. ⛔ BUT THE PER-MAP DIRECTIONS DO NOT REPLICATE — SO IT IS NOT A MAP PROPERTY
+
+| map | our games | third-party |
+|---|---:|---:|
+| **atoll** | 46.95% (z −0.99) | **61.75% (z +3.46)** |
+| jackpot | 40.20% (z −2.80) | 50.93% (z +0.27) |
+| hive | 56.31% (z +1.88) | 49.53% (z −0.14) |
+| drumlin | 52.30% (z +0.71) | 47.21% (z −0.78) |
+| nordkap | 48.00% (z −0.60) | 47.72% (z −0.64) |
+
+*(INFERENCE, the reading I now favour and have not established: this is a **map ×
+matchup** interaction — different bots exploit the same geometry differently from
+each seat — rather than a map-intrinsic bias. A heterogeneity that is real in
+both populations but points different ways in each is what an interaction with
+the *players* looks like.)*
+
+### 3R-d. WHAT NOW EXPLAINS THE LOCAL 54.13%: **UNKNOWN, AND THE PLATFORM CANNOT SAY**
+
+The battery is **our bot vs a near-identical copy of itself**, a matchup absent
+from both platform populations. **Under 3R-c that makes platform data structurally
+unable to predict it.** ⇒ **The byte-identical local null IS the discriminating
+instrument** — it measures the seat baseline in the matchup every local screen
+actually runs in. A B-favouring-map shard (locally: `jackpot`) now asks a changed
+question: not *maps vs harness*, but *does the self-play seat asymmetry track the
+map at all?*
+
+### 3R-e. LIMITS OF THE THIRD-PARTY PER-MAP CUT — stated because they are severe
+
+`league_games.tsv` is **stale (newest `createdAt` 2026-08-09T05:12Z, ~2 days
+old)** and covers only **6 third-party teams**. With so few teams, matchup
+composition drives the per-map cells heavily — which is *consistent with* 3R-c's
+interaction reading but cannot be used as evidence *for* it without circularity.
+**The pooled 177,618-game result (3R-a) does not depend on this file and is
+unaffected.**
+
 ## 4. WHAT SURVIVES AND IS WORTH SPENDING ON: SEAT × ARM INTERACTION
 
 Per arm, `(A−B)/512` estimates `2s−1` and is **constant at 8.25 pp if no arm
@@ -145,7 +241,10 @@ same-maps version it can come out the other way.**
 ## 6. WHAT THIS DOES *NOT* SAY
 
 * It does **not** invalidate any pooled verdict from a seat-balanced battery (§2).
-* It does **not** establish a mechanism for the map asymmetry (§3b).
+* It does **not** establish a mechanism for the map asymmetry (§3R-c), and it no
+  longer claims the map set explains the local 54.13% (§3 retracted).
+* It does **not** identify what *does* explain the local 54.13% (§3R-d). That is
+  open, and the local null answers it.
 * It does **not** promote ferry-first (§4).
 * The per-map platform cells are thin (n ≈ 200–260 for the big maps, n < 30 for
   the tail); **`quarry` at 16.7% is n=18 and is quoted as colour, not evidence.**
