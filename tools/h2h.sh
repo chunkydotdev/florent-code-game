@@ -158,6 +158,24 @@ print "  ⭐ KILL-SPEED SCORE (PRIMARY CURRENCY — PROGRAMME.md: win rate is NO
 print "      $B  mean $(mean $TSCORE) /game        $C  mean $(mean $CSCORE) /game"
 print "      (tools/score.py buckets; a tiebreak win and a loss both score -10)"
 print ""
+# ⛔ THE PROXY CAN DISAGREE WITH THE GOAL, AND THAT DISAGREEMENT IS THE ONLY
+# CASE WHERE IT MISLEADS. Magnus: "The goal for any of this is to climb ELO."
+# `PROGRAMME.md` says PRIMARY_CURRENCY: kill_speed_score. They are NOT the same
+# objective: **the ladder pays GAME SHARE (delta = 32 x (S - E)), so a plank that
+# kills FASTER while winning FEWER games gains kill-speed and LOSES Elo.**
+# Both numbers are already computed here, so flagging the divergence is free.
+KS_T=$(mean $TSCORE); KS_C=$(mean $CSCORE)
+DIVERGE=$(print -r -- $KS_T $KS_C $W $N | awk '{
+  ks = ($1 > $2); wr = ($3/$4 > 0.5);
+  if (ks && !wr) print "KILL-SPEED UP, WIN RATE DOWN -- the proxy and the goal DISAGREE";
+  else if (!ks && wr) print "WIN RATE UP, KILL-SPEED DOWN -- the proxy and the goal DISAGREE";
+  else print "" }')
+if [[ -n $DIVERGE ]]; then
+  print ""
+  print "  ⚠⚠ $DIVERGE"
+  print "     The ladder pays GAME SHARE. Read the Elo consequence, not the proxy."
+fi
+print ""
 print "  --- secondary, and NOT the verdict ---"
 med() { print -r -- ${(n)@} | tr " " "\n" | awk '{a[NR]=$1} END{if(NR)print (NR%2)?a[(NR+1)/2]:int((a[NR/2]+a[NR/2+1])/2); else print "-"}'; }
 print "  KILL ROUND (continuous, far more power than the win count):"
