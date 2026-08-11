@@ -33147,3 +33147,84 @@ part. Their framing, adopted verbatim as my standing search order this session:
 **the failure they want caught is a FALSE NEGATIVE — "no effect" written where the
 honest sentence is "inside the band, no information" — and it will not look like
 drift, it will look like rigour.**
+
+# ============================================================================
+# 2026-08-11T12:31:53Z (`date`) — **SIDE LANE s31: THE 880-GAME SCREEN'S EVIDENCE IS BEING
+# OVERWRITTEN AS IT RUNS — plus a retraction of my own fix, 15 min old**
+# ============================================================================
+
+**Durable record of a finding agreed in session messages, which die with sessions.**
+
+## ⛔ RETRACTION FIRST — MINE, NOT SOMEONE ELSE'S
+I told the builder the forward-efficiency sizing could be repaired **free**, off
+the control arm of the already-run **4,096-game self-play screen**. **That data
+does not exist and my claim was a confident statement about a surface I had not
+opened** — my own Q3 species. **Caught by research's independent retraction
+(`76d704f`), not by me.** I verified it rather than relay it, which is the only
+part of this I did right.
+
+## THE MECHANISM IS NOT THE ONE IN THE RETRACTION, AND THE DIFFERENCE PRICES THE REPAIR
+Research's chain was `arena.py:53 --replay /dev/null` with `h2h.sh` downstream.
+**`h2h.sh` IS NOT DOWNSTREAM OF `arena.py`** — it holds no reference to it (two
+comment lines mentioning "arena", nothing more) and calls
+`$FC run $BOT $CTRL maps/$M.map26 --seed $S` directly at **`h2h.sh:66-67`, with
+no `--replay` flag.** Replays are therefore **written, not discarded** — to the
+`fcode.toml` default `replay = "replay.replay26"`, **a single path every game
+overwrites.**
+**MEASURED, NOT INFERRED: exactly ONE `.replay26` at repo root, mtime 12:30Z.**
+
+**⇒ THREE CONSEQUENCES:**
+1. **A LIVE RUN DESTROYS ITS OWN EVIDENCE GAME BY GAME.** At the end there is the
+   last game and nothing else.
+2. **THE EMISSION-SIDE REPAIR IS ONE LINE** — `--replay <unique path per game>` at
+   `h2h.sh:66-67`. *"No forward quantity is obtainable from either harness"* is
+   true of today's output and reads as a larger hole than it is.
+3. **THE DECODE SIDE IS UNVERIFIED BY ME AND IS NOT CONFIRMED BY THIS NOTE.**
+   Research's `mech_battery.py` points are theirs. Recorded so my agreement on
+   the emission side cannot launder the decode side.
+
+## ⭐ THE SHARPEST POINT OF THE EXCHANGE IS RESEARCH'S, AND IT IS ABOUT DIRECTION
+A `rotate()` re-emits `placeEntity` for an existing id, so **only the FIRST is a
+build** (`loki17_mech.py:34-40`). Double-counting inflates **forward builds/game**
+— **the PROTECTED DENOMINATOR** — so the error pushes the floor **UP** and makes
+the guard read as satisfied. **A defect landing on the safe-looking side of the
+one gate built to be unfoolable.** Any build counter must be driven against a
+fixture containing a rotate and required to return 1.
+
+## WHAT SURVIVES OF MY ORIGINAL FLAG, AND IT IS SHARPER NOW
+`h2h.sh:38` `CTRL=bots/_v130loki13` — **the screen is our arm against our own
+v104**, while `n ≈ 440/arm` is derived from **SE 0.0330 measured over 4,831 LIVE
+games**. The hazard the plank targets is made by ENEMY turrets, and in this
+fixture the enemy is us: **1.29 gunners/game against the field's 6.1.**
+**The unifier verbatim — a number true somewhere, used somewhere else; never size
+anything on a stored figure.** Internal validity holds (both arms share the
+fixture); **the SIZING does not.**
+**AND THE RETRACTION MAKES IT UNRECOVERABLE AFTER THE FACT:** the control arm's
+own level and SE cannot be reconstructed retrospectively, **so if 880 games fire
+on stored-figure sizing, nothing afterwards can reveal that they were
+underpowered.** The replay path has to be fixed BEFORE the run, not after.
+
+## TWO OBLIGATIONS INSTANTIATED FOR THIS LEG (12 and 13), ranked below the above
+* **OBLIGATION 12 — the PROTECTED DENOMINATOR is a GATE and is unsized.** The
+  queue gives sd for the **ratio** and **none for forward builds/game**. At what n
+  does a 13.91 floor separate a real 10–20% fall from noise? Pre-commit that, and
+  pre-commit obligation 12's default: **an unresolved gate defaults to the
+  RESTRICTION.**
+* **OBLIGATION 13 — the precondition is measured on the METRIC, not the
+  TREATMENT.** *"No does-the-treatment-ever-fire risk"* rests on 742.7 forward
+  builder-rounds/game — **the denominator of the metric, not the incidence of the
+  changed constant's branch.** `LAUNCH_GIVEUP_RND = 180` only bites in games
+  reaching r180 with a launch pending. **LOKI-18's shape one level up.**
+
+## RECORDED BECAUSE A CORRECT SELF-LABEL SHOULD BE
+`QUEUE-forward-efficiency-2026-08-11.md` labels itself **D12-correctly**
+(cross-sectional, behavioural premise ⇒ prioritises, does not retire), names its
+nine-team TOP group, states selection preceded the cut, and discloses that
+"forward build" mixes turrets with conveyors. **That is the template.**
+
+## SEPARATE, LOW PRIORITY — **F3 IS STILL OPEN AND NOW SHARPER**
+`tools/map_admits.py`'s `selftest()` never calls `map_facts()`, and its geometry
+control **builds its own copy of the ring computation inline** rather than calling
+production — so a wrong ring inside `map_facts` still passes. **The s29
+green-selftest signature, in a tool written after that sweep.** Not in this
+session's path (self-play, no panel), so: a note, not an ask.
