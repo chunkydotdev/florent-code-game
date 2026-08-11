@@ -247,3 +247,68 @@ byte-identical arms the line reads TREAT 205 / CTRL 207 — a spurious 2-round
 advantage to the treatment.** ⇒ §6's kill-round observation is reported **against
 that −2 null offset**, and a kill-round delta inside ±2 rounds is reported as
 **no evidence of movement**, not as an improvement.
+
+# AMENDMENT 3 — A SECOND ABSOLUTE-GEOMETRY SITE. ARM 2 ADDED SO THE PARTITION IS MEASURED, NOT ARGUED.
+
+**Raised by the side lane against arm 1's scope. It is a correct catch and it is
+an OMISSION in what I treated, not an error in what I wrote.** ADD-only: it
+narrows what may be CLAIMED and changes no bar's threshold.
+
+**THE SITE — `main.py:284`,** the Core's spawn-candidate sort:
+`cands.sort(key=lambda sp: ((sp.x*17 + sp.y*31 + n*13 + salt) % 97, sp.y, sp.x))`
+— **a hash of ABSOLUTE map coordinates with absolute `sp.y, sp.x` tie-breaks**,
+taking the first spawnable candidate, **on every spawn from round 0**.
+`orient_cardinals` rotates `CARDINALS` and does not reach it. The two seats'
+Cores sit at different `(x, y)`, so it orders their candidate rings differently,
+**per map.**
+
+**WHAT IT DOES TO AMENDMENT 1'S CONCLUSION: NOTHING.** A1 concluded the seat gap
+is *our code interacting with terrain rather than turn order*, and the argument
+was that turn order is map-constant and cannot invert. **The spawn hash is also
+our code and is also map-dependent — it is a second instance of the conclusion,
+not a rival to it.** A1's positive claim stands unchanged.
+
+**WHAT IT DOES TO §5's BAR: it exposes that the bar was set against a total of
+UNMEASURED COMPOSITION.** ≤3.0pp out of 6.8pp assumed CARDINALS carries most of
+the gap. It might not. **If this site carries ~4pp, a perfectly executed arm 1
+misses a bar it could never have met; if ~2pp, arm 1 passes partly on a component
+it never touched.** Either way the bar was measuring the wrong thing.
+
+⇒ **ARM 2, `bots/_v152seatrel2` = arm 1 + `doctrine.seat_flip_for()`**, which
+hashes the SAME expression on coordinates **relative to our own Core, negated on
+exactly one seat**. Constants, modulus and tie-break order untouched; only the
+frame changes. Exact under point reflection: seat B's core and candidates are
+seat A's reflected, so `rel_B = -rel_A`, and negating on the seat whose enemy
+lies WEST or NORTH makes the two relative rings identical. The selector is
+reflection-invariant because the seats' enemy directions are always opposites, so
+exactly one flips.
+**Verified, driven both ways, 8 maps × 5 spawn counts × 4 salts:
+arm 2 gives both seats the same relative spawn order 160/160; the shipped
+absolute sort gives it 0/160.** 0 tracebacks on either arm.
+
+**⇒ §5 IS REPLACED BY A PARTITION, and it is now three numbers rather than a
+pass/fail:**
+
+| shard | arms | measures |
+|---|---|---|
+| `SR1NULL` | `_v151seatrel` vs byte-identical copy | residual seat gap after **CARDINALS only** |
+| `SR2NULL` | `_v152seatrel2` vs byte-identical copy | residual after **CARDINALS + spawn sort** |
+| control | tonight's `NULL` shard, already measured | **6.8pp**, untreated |
+
+**The CARDINALS share = 6.8 − SR1NULL. The spawn-sort share = SR1NULL − SR2NULL.
+The residue = SR2NULL, and it is attributable to the sites STILL untreated by
+either arm: `DIRECTIONS` (all 8, `doctrine.py:25`) and `eco.py:640`'s
+`self.ang += 0.65` sweep from a fixed absolute angle.** The ≤3.0pp figure is
+retained only as the level at which a *residue* would be small enough to stop
+pursuing, **not as a pass/fail on arm 1.**
+
+**§6 CURRENCY is run for BOTH arms** (`SR1CUR`, `SR2CUR`, each vs
+`_v148ferryfirst`), because §3's direction-neutrality applies to each
+independently and neither arm's mechanism result predicts its currency.
+
+**`NOISE_ON` STAYS `True` IN ALL FOUR SHARDS, and the reason is the control, not
+a preference.** Pinning it removes per-game salt, which is variance and not bias.
+**The 6.8pp control gap these shards are compared against was measured with
+`NOISE_ON = True`**, so pinning the treatment would compare across a difference
+that is not the treatment. The queue's "pin it in the measured copies" note is
+sound in general and wrong for this specific contrast.
