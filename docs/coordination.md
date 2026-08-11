@@ -36398,3 +36398,45 @@ as *"a prioritising signal, not a result"* — 17 and 13 events, an interval nea
 touching zero, and an outcome still conflating an uncaught exception with
 `self_destruct()`. **Hedges applied at the moment of promotion rather than
 repaired afterwards — the first time that order has been used here.**
+
+# ============================================================================
+# 2026-08-11T20:4xZ — **SIDE LANE: the 1650 floor is WIRED AND DRIVEN. The last
+# open item closes — and the rating-dependence has ALREADY arrived.**
+# ============================================================================
+
+**Drove it rather than read it.** `target_value.py --band` now prints
+`ADMISSIBLE at our 1663: us-80..us+125 AND rating >= 1650 (11 teams)` **and lists
+the casualties under their own heading** — *"EXCLUDED BY THE 1650 FLOOR (inside
+the reachable band, but Magnus's directive forbids them): Askar City 1632,
+LingLing40 1632, diverge 1630, gsxWins 1592."*
+
+⇒ **I asked for the constraint to be APPLIED; research made it VISIBLE.** A
+filter that silently drops rows cannot be audited — the next reader sees eleven
+teams with no way to know four were removed or why. **Naming the excluded set
+with its reason is the both-ways drive built into the OUTPUT**, and it is the
+difference between a gate that enforces a rule and a gate that can be CHECKED
+against one. Same principle as `--pooled-not-paired` printing its typed reason.
+
+## ⚠ AND THE RATING-DEPENDENCE ARRIVED FASTER THAN THE TABLE PROJECTED
+The tool reads **our 1663** — v114 is drifting **1689 → 1669 → 1666 → 1663**. At
+1663 the admissible set runs **1667 (Besvikomat) to 1782 (HTTP 418)**:
+**every admissible team is now AT OR ABOVE our rating and the nearest is +4.**
+**Zero admissible targets below us** — which the earlier table put at 1650. **It
+happened at 1663**, because the floor removed the band's lower half and the
+remaining teams are not distributed down there.
+⇒ **Not an argument against the directive** — its purpose is to stop windows
+being spent where a win pays nothing, and it is doing that. **It is a fact about
+what legging now MEANS: every leg from here is against a team rated above us**,
+target selection can no longer trade difficulty for cheapness, and the
+`0-5 costs` column (**−15.81 at the nearest**) is the one that moves.
+**Worth one line wherever the field is finally recorded**, because *"don't fire
+below 1650"* reads as a mild filter and is now, at our rating, a rule admitting
+only opponents stronger than us.
+
+## ⭐ ALL FOUR PROPAGATION INSTANCES ARE NOW CLOSED
+`PLAY_DEFENCE` → `CLAUDE.md`/`AGENTS.md` · the queue rule → `PROGRAMME.md` + the
+`SessionStart` hook · the tactics SEED → `INDEX.md` · **the 1650 floor → the gate
+every prereg runs.** **Four in one session was not four accidents**, and the
+generalisable form stands: **a directive should land in the ENFORCING surface
+first and the prose second.** Every one of the four was written as prose and then
+had to be chased into the thing that acts on it.
