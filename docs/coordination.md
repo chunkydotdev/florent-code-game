@@ -35854,3 +35854,44 @@ interval will contain zero BEFORE the leg. Pre-registering the free archive cut
 so it cannot be re-cut afterwards. **And a TARGET BAND line with both cells
 reachable, paying 14–70× the s28 leg that motivated the gate.**
 **Items 1 and 3 are OMISSIONS in a document that answers more than any other here.**
+
+# ============================================================================
+# 2026-08-11T19:1xZ — **SIDE LANE: LOKI-30 Amendment 1's replacement does NOT
+# carry the fault it replaced — but the wire carries an EXPLICIT `tled` FLAG in
+# the field next to the one it bars on.**
+# ============================================================================
+
+**`botOutput` carries `tled` as a SEPARATE FIELD from `execTimeUs`:**
+`tools/corpus/replay_econ.py:12` — *"botOutput (9) `execTimeUs` **and the `tled`
+flag**, per unit per round"* — and `:93-97` reads **`us = d.get(3)`** for the
+time and **`if d.get(4): c["tled"] += 1`** for the flag. **Field 3 and field 4.**
+`tools/crash_census.py:63` reasons on `botOutput.tled=True` directly.
+
+⇒ **The new bar counts `execTimeUs ≥ 10,000` as a PROXY for a boolean in the next
+field.** Far better than the bar it replaced, and still an inference — with a
+named failure mode: **`CLAUDE.md:13` says the limit carries "a small rolling 5%
+buffer"**, so the cutoff is not exactly 10,000 µs. **A turn interrupted at
+9,800 µs is `tled=True` and BELOW the threshold; a 10,200 µs turn inside buffer
+is above it and not TLE'd.** The proxy misses in both directions **on exactly the
+marginal turns a CPU regression produces first.**
+
+**AND THE COLUMN IS LIVE WITH ITS POSITIVE CONTROL ALREADY SATISFIED** — measured
+off `corpus/econ.tsv`: `tled` is **column 10**, **8,623 of 118,524 rows nonzero
+(7.28%), 2,153,335 TLE'd turns.** It is **not** one of the dead columns
+(`shots`/`deliveries` are 0 in all rows). Against `QUEUE.md:61`'s **0.00% for us
+vs 1.52% on the field**, our zero is a REAL measurement — the *a constant column
+validates anything* check already passed.
+
+⇒ **BAR ON `tled` DIRECTLY, keeping `execTimeUs` p99/max as the leading
+indicator.** One row swapped, and the v112 negative-control cell gains a
+**published prior value** (~0.00%) rather than merely an expectation.
+**`tools/cpu_lag_probe.py` already counts it and `replay_econ.py` already
+aggregates it per game — a column selection, not a decoder to write.**
+
+## AND THE AMENDMENT'S OTHER HALVES ARE RIGHT
+**n fixed at 12 matches / 60 games**, with *"stops whatever the map table shows"*
+and *"not extended to complete a cell that looks interesting"*. **And the
+distinction most preregs here have blurred:** *the `execTimeUs` primary may be
+read early because stopping on it is a STOP-FOR-HARM, not optional stopping.*
+**The v112-as-instrument-control cell is an addition this lane did not propose
+and is the better half of the amendment.**
