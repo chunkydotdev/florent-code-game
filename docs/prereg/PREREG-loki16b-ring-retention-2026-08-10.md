@@ -333,3 +333,104 @@ It may not move the +0.15 bar, the game-mean estimator, the match clustering
 unit, or the 12-ring stratum — all four predate the data and stay. It may not
 pool `jackpot` into the primary. **And it may not be read as reviving the
 withdrawn +0.017 under a new name.**
+
+---
+
+# READ-OUT — LOKI-16b CLEARS ITS PRE-REGISTERED BAR. WRITTEN IN THE LANGUAGE AMENDMENT 2c COMMITTED TO, BEFORE THE NUMBER EXISTED.
+
+**Builder verdict, s29, 2026-08-11 06:3x CEST (`date`, same shell call).**
+
+## THE NUMBER
+
+Pooled **12-ring stratum**, game-mean, match-clustered bootstrap, 4,000 draws,
+control restricted to the four pre-registered cells:
+
+| statistic | LOKI-16b (10m vs 25m) | LOKI-16 (15m vs 33m) |
+|---|---|---|
+| **per-(bot,tile) = `hold_pinned` — THE PRE-REGISTERED PRIMARY** | **+0.164 [+0.073, +0.253]** | +0.223 [+0.088, +0.346] |
+| any-builder = `hold_any` (no bar, Amendment 2a) | +0.137 [+0.045, +0.226] | +0.184 [+0.050, +0.308] |
+| `ring_retention.py` as written (retired, Amendment 2b) | +0.023 [−0.051, +0.104] | −0.013 [−0.152, +0.107] |
+
+**Point estimate +0.164 ≥ the +0.15 bar, bootstrap CI lower bound +0.073 > 0.
+That is ROW 1 of the Amendment 2c table, and its language is mandatory:**
+
+> **CLEARS THE PRE-REGISTERED BAR AT n≈8 MATCHES; UNDERPOWERED, AND A
+> CONFIRMATION LEG IS NOW WORTH THE EXPOSURE.**
+
+**The word "confirmed" is forbidden here by 2c and is not used.** This is one
+leg, ~8 treatment match-clusters, and a margin of 0.014 over the bar.
+
+## THE CALIBRATION CHECK RAN BEFORE THE READ-OUT AND PASSED — and the flag that demanded it was itself withdrawn
+
+The side lane flagged that the +0.15 bar was sized on figures from the decoder
+Amendment 2b retires, and pre-committed three outcomes. **Outcome 1 fires:** the
+four 12-ring maps under the blessed decoder reproduce **to the third decimal** —
+`atoll +0.184 · fjordgate +0.182 · saga +0.264 · snowflake +0.263` (jackpot
+−0.023, excluded by the stratum rule). **All four > +0.15. Calibration survives.**
+
+**And the flag dissolved on its own author's re-check:** the apparent
++0.182 → +0.174 drift was **two granularities of the same decoder**
+(per-(bot,tile) vs any-builder), not two decoders. **The original four were
+`ring_read` per-tile all along; nothing moved and no margin shrank.**
+
+## ⭐ THE STATISTIC CHOICE WAS THE DECIDING CALL, AND IT WAS MADE BLIND
+
+**per-tile +0.164 CLEARS · any-builder +0.137 MISSES.** The two differ by 0.027
+across a bar sitting between them. **Amendment 2a chose `hold_pinned` on the
+BAR'S PROVENANCE — because +0.15 was calibrated on LOKI-16's figures and those
+are per-tile — and it was committed at `3b56e9b` 06:15:21, before this number
+existed.** The blind replication that produced it launched at `14d7720`
+06:08:52 and was never briefed with the adjudication or the amendment.
+**Two clocks, verified by the builder against `git log`, not accepted on report.**
+
+**Had 2a gone the other way this leg would read as a miss.** That is the whole
+case for choosing an estimator on provenance before the data rather than on
+prose after it, and it is worth more than this leg's result.
+
+## WHAT QUALIFIES IT — stated here, not in a footnote
+
+1. **The effect is concentrated in the clean cells: +0.245 clean
+   (farming_200s, SmartFridge) vs +0.056 dirty (Askar City, Lunds Stallions,
+   both of which shipped a new opponent version inside the control window) — a
+   4.4x magnitude difference.** The pre-registered gate was **SIGN**, and both
+   agree in sign, **so the gate passes as written.** But the disclosed version
+   confound predicted exactly this shape and it is not priced.
+2. **No equal-cell reweighting.** The prereg names game-mean, so unweighted is
+   correct as pre-registered; the arms do not share a panel mix and that
+   difference is unpriced.
+3. **`ring_read.py` has never seen a game with a wall inside the enemy ring**
+   (0/240 in this corpus), so its missing wall filter is untested rather than
+   clean.
+4. **The kill-speed / core-kill currency is NOT read here.** Under
+   `KILL_SPEED_IS_LEG_VERDICT: no` this is a mechanism result only. **The
+   prereg's own fork stands unresolved: if retention clears and kill-speed does
+   not improve, retention is not converting into kills.** That is the next
+   question and this leg does not answer it.
+5. **Amendment 2c's Flag-2 question — `P(point ≤ 0 | true = +0.15, 8 clusters)`
+   — is MOOT FOR THIS READ-OUT and remains open for any future one.** It governs
+   the KILL band only, and the kill band did not fire. **It must be computed
+   before that row is ever used.**
+
+## AND THE WITHDRAWN +0.017 IS VOID FOR A SECOND, INDEPENDENT REASON
+
+Amendment 2b voided it on entity kinds (66.4% of its "bodies" were buildings).
+The replication adds a second: **its control pooled 0033 and The Bisons, two
+opponents not in the treatment arm at all** (148 games; restricting to the four
+pre-registered cells gives 100). **Two independent defects in one figure.**
+
+## AN INSTRUMENT FINDING THAT OUTLIVES THIS LEG
+
+**`ring_retention.py --selftest` PASSES and is worthless.** It exercises
+12-on-open / 5-in-corner / walls-reduce — **the RING GEOMETRY** — and never
+touches the **occupancy rule**, which is the thing that was wrong. **A green
+selftest that tests the geometry of a metric while leaving its definition
+untested.** That signature is worth hunting elsewhere in `tools/`: the
+decomposition shows the entity-kind filter alone accounts for **+0.375 of a
+0.383 gap, and it flips the sign** — because v104 forward-barriers the enemy
+ring harder than v106, so the contaminant enters opposite to the signal.
+
+**And the knockdown argument came from inside this prereg:** it lists
+*"enemy-ring tiles holding our building at game end, 2.64 vs 3.65"* as the
+**COST SIDE**. **A quantity pre-registered as the COST cannot simultaneously be
+the PRIMARY** — `ring_retention`'s number was 97.9% that cost metric wearing the
+primary's name with the sign reversed.
