@@ -253,9 +253,29 @@ These override attention drift; the full lane protocol is your boot config
   contradicted by the always-loaded file is a fact nobody has.**
   **Re-measured s29 2026-08-11:** submitting `_v136loki19` printed
   `Submitted! Version 108` and the next `fcode status` read `Active bot: v108`,
-  displacing a v104 holder of ~20 hours. Rolled back in ~15 s; **zero rated
-  matches leaked, verified on the match COUNTER (724 before, 724 after)** — that
-  was luck plus watching, and neither is a control.
+  displacing a v104 holder of ~20 hours. Rolled back in ~15 s. **ZERO rated
+  matches leaked — but NOT by the instrument I first used.**
+  **⛔ THE MATCH COUNTER CANNOT ANSWER THIS QUESTION.** 724→724 proves no match
+  **COMPLETED** in those seconds; it says nothing about whether one was
+  **PAIRED** while the prototype held the slot — a ladder match created at T
+  completes minutes later and carries that version into the rated record. **The
+  counter is blind to exactly the failure mode.** The real verification is
+  per-match `teamAVersion` at the PAIRING BOUNDARY, read off
+  `fcode match list --mine --type ladder`: last pairing before the submit
+  `04:32:59Z`, next after the rollback — no match created while v108 was live.
+  *(`ladder_games.tsv` could not answer it either: its newest ladder row was
+  27 minutes behind the wall clock, so an absence of v108 there was not
+  evidence.)*
+  **⭐ AND THE LADDER PAIRS ON A CLOCK, WHICH MAKES THIS PREVENTABLE RATHER THAN
+  SURVIVABLE: 55 of 60 consecutive pairings land at minute ≡ 12 (mod 20) and 49
+  of 60 at second `:59` — i.e. slots at `:12:59`, `:32:59`, `:52:59`.** The
+  submit landed ~04:37, four minutes past a pairing with ~16 minutes of clear
+  air. **Structurally safe, and knowable before typing the command.**
+  ⇒ **Do submit→fire→rollback just AFTER an observed pairing.** Two caveats:
+  the offset **has shifted at least once** inside an 18-hour span, so **re-derive
+  it from recent rows and never hardcode it**; and the sample is us-only. The
+  **offset** is the robust part, the 20-minute **interval** is not (some gaps
+  are 600 s).
   **`tools/submit_clean.py` NOW RESTORES THE HOLDER ITSELF** and confirms the
   restore against the `Active bot:` line, never the exit code. **Pass
   `--activate` to keep the new version live; that flag IS the ship decision.**
