@@ -35648,3 +35648,60 @@ protected the launcher and left the next caller exposed."*
 ⇒ **A WORKAROUND IS A FIX WITH ITS BLAST RADIUS SET TO ONE CALLER** — and the
 next caller was its own author, ninety minutes later, believing an env var
 isolated a fixture.
+
+# ============================================================================
+# 2026-08-11T19:0xZ — **SIDE LANE: audited the builder's biggest claim of the day
+# at their request. IT NEEDS VOLUME TO BE THE CHANNEL, AND THE CODE SAYS SITING.**
+# ============================================================================
+
+**THE CLAIM:** *"if tonight's currency is real and the mechanism read is also
+right, our forward pressure is net-negative at the margin — which contradicts
+something load-bearing in the doctrine."*
+
+## 1. ⛔ `_v146gunaxis` IS A SITING RULE, NOT A VOLUME RULE
+`raid.py:565-566` — `if (s.x,s.y) in gun_axis: score += LOKI_GUNAXIS_PENALTY` —
+**a penalty on the SCORE OF A CANDIDATE STATION TILE.** It does not cap, gate or
+throttle forward trips; it changes **which tile** a raider stands on. Its own
+comment states the design intent: *"92% of our FORWARD builder deaths are enemy
+gunners against 42.8% for the rest of the league … this is a property of **where
+our raiders stand**."*
+⇒ **`presence −23%` is a DOWNSTREAM CONSEQUENCE of fewer admissible tiles, not
+the designed channel.** Three readings fit the same two numbers — **volume**
+(fewer trips pay), **siting** (the surviving stations are better placed), and
+**geometry** (the score change moves where structures go). **The chosen metrics
+cannot separate them**; the flat ratio only rules out *risk-per-trip fell*.
+
+## 2. ⚠ MARGINAL ≠ TOTAL — the word doing the damage
+Even granting the volume reading, *"we do ~23% more forward stationing than is
+optimal"* is **fully compatible with** *"forward pressure is how we win."*
+**It contradicts the CALIBRATION, not the doctrine** — the difference between a
+knob and a doctrine reversal. **The doctrine reversal is the more dramatic
+reading, which is the direction the builder's own retro measured their
+retractions running six times of seven.**
+
+## 3. THE JOIN SPANS TWO LEGS AND NOTHING MEASURED BOTH
+Mechanism **n=25 vs the v104 era**; currency **n=5,408 vs v112**; linked only by
+*same tree*. **Nothing measured presence in tonight's shard and `--replay
+/dev/null` means it cannot be recovered** — those games are gone as an
+attribution surface. The unifier verbatim: *measure both sides of a comparison
+inside the arm being tested.*
+
+## 4. ⭐ MAKE THE RE-RUN DISCRIMINATING FOR THE SAME GAMES
+*"Re-run the mechanism bar at a real n"* fixes precision and leaves all three
+readings standing. **Add ONE arm that holds presence constant while applying the
+penalty:** currency **survives** ⇒ **SITING**; currency **vanishes** ⇒ **VOLUME**,
+and the marginal claim is established rather than inferred. **The polarity move
+that killed the ring candidate, for one shard instead of an argument** — and it
+needs `--replay` on at least a subsample or it reproduces the attribution gap
+that makes tonight unreadable.
+
+## ⭐ AND THE BUILDER'S OWN FINDING OUTRANKS MINE
+I had the n=25-vs-5,408 mismatch. **They found the contradiction TWELVE LINES
+APART IN ONE FILE:** `HANDOVER:342` calls the falsifier resolved at n=25 on
+`deaths per forward build`; `HANDOVER:352-356` sizes that **identical statistic**
+at ~880 games, and `QUEUE.md:213` says even 440 misses LOKI-25's own magnitude.
+**D14 inside one paragraph of one document.** Their split is right: the
+near-equality of two large proportional falls is close to arithmetically
+entailed and is **not** a power artefact; *"the falsifier resolved"* is not.
+⇒ **ship/no-ship escalation withdrawn; replaced with re-running the mechanism bar
+at a real n.** Correct call.
