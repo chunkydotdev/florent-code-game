@@ -16,6 +16,48 @@ Usage:  .venv/bin/python tools/corpus_sanity.py [corpus_dir]
 import csv, sys
 from pathlib import Path
 
+# ===== CONDITIONALLY DEAD: ZERO INSIDE A SUBGROUP, ALIVE OVERALL =====
+# A NEW CLASS, added s29 2026-08-11, and this tool CANNOT SEE IT. Every check
+# below asks "is this column all-zero across the file". These columns are not:
+# they are all-zero within one PARTITION of the rows and healthy in the other,
+# so they pass every gate here while being a constant column to anyone who cuts
+# on that partition -- which is exactly what a per-team or per-arm analysis does.
+#
+# THE INCIDENT. `throws.tsv` carries core_atk / any_atk / reached. Split by
+# whether the THROWN BOT is on the thrower's team:
+#     KIDNAP (cross-team)      172,547 rows   reached 0.00%  any_atk 0.00%  core_atk 0.00%
+#     SELF-INSERT (same team)  101,659 rows   reached 17.32% any_atk 8.07%  core_atk 1.72%
+# Three columns, exactly zero across 172,547 rows. `reached` at 0.00% is
+# physically impossible as a result -- the engine places a thrown bot at the
+# target tile -- which is the tell that it is structural.
+#
+# THE CAUSE, from tools/corpus/replay_throws.py: the outcome columns are keyed to
+# the THROWN BOT's own enemy, `foot[1 - b.team]`. For a kidnap, b is the ENEMY
+# bot, so `core_atk` counts the kidnapped bot attacking OUR core. The column is
+# not broken; it MEANS SOMETHING ELSE in that partition, and its meaning INVERTS
+# -- zero there is the good outcome, not the null one.
+#
+# IT NEARLY RETIRED A LIVE PLANK. The research arm read "our throws: 0 of 4,169
+# any_atk" as "the launcher raid delivers nothing" and was about to close the
+# kidnap road -- LOKI-14's whole mechanism, and one of three roads CLAUDE.md
+# lists as never balance-changed and still open. Its within-sample control (the
+# opponent's non-zero rows, same decoder, same 485 files) proved the code path
+# was LIVE but could not prove the two populations were COMMENSURABLE, because
+# the field that differs between them is the one the column is defined against.
+#
+# ⇒ THE GENERAL RULE, and it is the fifth constant-column incident in two days:
+#   "same column" is not "same meaning" when the column's definition is keyed to
+#   a per-row team or side. Before cutting a column by a partition, check whether
+#   the column is DEFINED relative to that partition.
+CONDITIONALLY_DEAD = {
+    ("throws.tsv", "core_atk"): "ZERO for all cross-team (kidnap) throws; "
+                                "measures the THROWN bot attacking ITS enemy, so "
+                                "for a kidnap it counts the enemy hitting OUR core",
+    ("throws.tsv", "any_atk"): "same partition, same cause as core_atk",
+    ("throws.tsv", "reached"): "same partition; 0.00% over 172,547 kidnaps is "
+                               "structurally impossible, not a measurement",
+}
+
 KNOWN_DEAD = {
     ("econ.tsv", "shots"): "replay_econ.py:109 `elif unum == 12: pass` "
                           "-- use build_agg.tsv metric=='shot'",
@@ -124,6 +166,57 @@ def freshness(root) -> int:
     return stale
 
 
+def conditionally_dead(root) -> int:
+    """RE-DERIVE the conditional-dead partitions rather than trusting the note.
+
+    A dict entry is a comment; this is a check. It re-splits `throws.tsv` on the
+    partition and prints the live rates for BOTH sides, so:
+      * if someone fixes `replay_throws.py`, the kidnap side goes non-zero and
+        this says so -- the entry can then be retired instead of outliving its
+        cause, which is how KNOWN_DEAD entries rot;
+      * the healthy side is printed too, because a check that only ever prints
+        the broken half never demonstrates it can tell them apart.
+    """
+    p = root / "throws.tsv"
+    if not p.exists():
+        return 0
+    import csv as _csv
+    part = {"KIDNAP (cross-team)": [0, 0, 0, 0],
+            "SELF-INSERT (same team)": [0, 0, 0, 0]}
+    with p.open(newline="") as fh:
+        rd = _csv.DictReader(fh, delimiter="\t")
+        if not rd.fieldnames or "tteam" not in rd.fieldnames:
+            return 0
+        for r in rd:
+            t, b = r.get("tteam", ""), r.get("bteam", "")
+            if t == "" or b == "":
+                continue
+            a = part["SELF-INSERT (same team)" if t == b else "KIDNAP (cross-team)"]
+            a[0] += 1
+            for i, col in enumerate(("reached", "any_atk", "core_atk"), start=1):
+                if r.get(col) not in ("", "0", "False", None):
+                    a[i] += 1
+    print("\nCONDITIONAL-DEAD CHECK  throws.tsv, split on thrower-vs-thrown team")
+    print("  (columns are keyed to the THROWN bot's own enemy, so they mean "
+          "something DIFFERENT in each half -- see CONDITIONALLY_DEAD)")
+    flipped = 0
+    for k, (n, re_, aa, ca) in part.items():
+        if not n:
+            continue
+        print(f"  {k:26s} n={n:>7d}  reached {re_/n:6.2%}  "
+              f"any_atk {aa/n:6.2%}  core_atk {ca/n:6.2%}")
+        if k.startswith("KIDNAP") and (re_ or aa or ca):
+            flipped = 1
+    if flipped:
+        print("  *** THE KIDNAP HALF IS NO LONGER ALL-ZERO. The decoder changed. "
+              "Retire the CONDITIONALLY_DEAD entries and re-read any finding "
+              "that relied on them being zero. ***")
+    else:
+        print("  kidnap half still identically zero -- do NOT read that as "
+              "'the kidnap achieved nothing'; it is not measuring that.")
+    return flipped
+
+
 def main(d="corpus"):
     bad = 0
     for f in sorted(Path(d).glob("*.tsv")):
@@ -170,6 +263,7 @@ def main(d="corpus"):
                 print(f"            cause: {note}")
             else:
                 bad += 1
+    bad += conditionally_dead(Path(d))
     bad += freshness(Path(d))
     print("\nno undocumented dead columns" if not bad else
           f"\n{bad} UNDOCUMENTED all-zero column(s): decoder bug, or a real fact? "
