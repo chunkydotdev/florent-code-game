@@ -84,7 +84,9 @@ def decode(replay: Path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("bot")
-    ap.add_argument("--ctrl", default="bots/_v130loki13")
+    # CONTROL = current incumbent (v112 = _v148ferryfirst as of 2026-08-11).
+    # Move this on every ship; a stale control measures the wrong contrast.
+    ap.add_argument("--ctrl", default="bots/_v148ferryfirst")
     ap.add_argument("--kind", default="sentinel")
     ap.add_argument("--games", type=int, default=24)
     ap.add_argument("--maps", nargs="*", default=MAPS)

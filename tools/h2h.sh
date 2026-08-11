@@ -35,7 +35,17 @@
 # BOTH SEATS ARE ALWAYS PLAYED -- a one-seat result is a seat measurement.
 set -u
 BOT=${1:?usage: h2h.sh <botdir> [seeds] [maps]}
-CTRL=${CTRL:-bots/_v130loki13}
+# ⭐ CONTROL = THE CURRENT INCUMBENT, per `COMPARE_AGAINST: previous_line_iteration`.
+# Moved _v130loki13 -> _v148ferryfirst on 2026-08-11 13:2xZ when v112 shipped
+# (Magnus, direct: "we should use v112 as the new opponent to beat in head 2 head").
+# ⛔ THIS DEFAULT IS A LIVE HAZARD WHEN IT GOES STALE: a screen run against a
+# retired incumbent measures the wrong contrast and reads as a valid result.
+# MOVE IT ON EVERY SHIP.
+# ⛔ AND IT INVALIDATES THE STANDING NULL: the committed 4,096-game null
+# (50.12% pooled, seat A +3.78pp) was measured vs _v130loki13. A null belongs to
+# its CONTROL, so it must be re-run against _v148ferryfirst before any screen
+# quotes a band against it.
+CTRL=${CTRL:-bots/_v148ferryfirst}
 SEEDS=${2:-"7 11 23 41"}
 MAPS=${3:-"antler atoll drumlin fjordgate heart hive meander nordkap"}
 FC=.venv/bin/fcode
