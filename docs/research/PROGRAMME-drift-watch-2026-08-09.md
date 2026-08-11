@@ -882,3 +882,30 @@ a proven negative control beats three that have never flagged anything.**
   more work than when it was picked. **The framing that must change is the
   question: not "why is v13 winning" but "what does v13 do that v11 did not,
   GIVEN that any new version wins somewhat."**
+
+- **⭐ THE COMMIT MONITOR SEES SUBJECTS. THE DRIFT LIVES IN BODIES. RUN A BATCH
+  PASS, NOT ONLY THE STREAM (s30, 2026-08-11 — a finding about THIS LANE'S OWN
+  PRIMARY INSTRUMENT):**
+  The all-commits watch is this lane's core tool and it delivers **one line per
+  commit — the subject.** That is the right shape for latency (a flag that beats
+  its decision) and it has a **structural blind spot: a table, a bar, a closure
+  label or a forbidden word lives in the BODY**, and no amount of attention to
+  the stream reaches it.
+  **MEASURED TODAY: I read 58 commit subjects live and audited a dozen artefacts
+  reactively. The one D12 violation in the session was found by a BATCH PASS over
+  the same 58 commits afterwards** — sweep 22's closure table marks six roads
+  CLOSED, two of them on archive statistics carrying a behavioural premise, and
+  **its subject line said none of that.** I had watched that commit go past and
+  read it as a research deliverable.
+  **⇒ PRACTICE: the stream is for LATENCY, the batch pass is for COVERAGE, and
+  they catch different things. Run a batch pass at least once per session** —
+  cheapest form is `git log --since=<boot>` and open every commit that
+  introduces or edits a **prereg, a leg read-out, a closure table, or a tactics
+  file**. Those four surfaces carry every D-rule that lives below a subject line.
+  **AND THE COMPANION, because I flagged my own instrument in the same pass:**
+  keyword greps over commit SUBJECTS are weak checks and their silence is not a
+  clearance — my D4 sweep (survival/screening/defence) returned **5 hits, all
+  false positives** (`defensible`, `defenders`, prose about the opponent's heal
+  response). **D1/D3/D8 are greppable because they name artefacts or fixed
+  phrases; D4/D9/D10/D12 are not, and require reading the body.** Do not report
+  a grep-clean D4 as a D4 clearance.
