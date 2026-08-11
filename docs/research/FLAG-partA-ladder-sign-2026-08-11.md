@@ -104,3 +104,47 @@ threshold at 19:00 is not.
 | the sign flip | messaged to research (author) and the builder (write-up); durable here | research to re-derive; builder not to reconcile the tool to the plan |
 | the undefined residual clause | messaged to the builder before the read-out | builder |
 | ⚠ **LOCKED-FILE DISCIPLINE** — `PLAN-overnight` §2b and Amendment 1 predate the run. **A correction lands as a NEW dated document, never as an in-place edit**, or the two-clock cert certifies a file whose numbers moved after the games were played | this document IS that correction | side lane |
+
+---
+
+# ADDENDUM — 2026-08-11T18:1xZ: THE INFERENCE IS NOW CORROBORATED, AND THE SECOND SURFACE WAS TWO COLUMNS AWAY
+
+**No refit is needed.** `2c261c8`'s table carries a **rating-snapshot** column
+beside the fitted θ — raw platform ratings, no MLE, an independent surface:
+
+| pairing | from snapshots | from the fit | written in the delta table |
+|---|---:|---:|---:|
+| v104 − v92 | 1668 − 1552 = **+116** | 1686 − 1600 = **+86** | **−86** |
+| v104 − v102 | 1668 − 1600 = **+68** | 1686 − 1609 = **+77** | **−77** |
+| v92 − v102 | 1552 − 1600 = **−48** | 1600 − 1609 = **−9** | −9 ✅ |
+
+**Two independent surfaces agree on the sign of all three pairings, and the
+written −86/−77 contradicts both.** For −86 to be right the snapshots would have
+to be wrong by ~200 Elo in the same direction as the fit.
+
+⇒ **The "what I infer" section above is upgraded to CORROBORATED.** The point
+estimates are sound, the delta column is a mechanical flip, and **Part A reads
+AGREE on both scoreable cells.** `overnight_read.py` needs no change.
+
+**Method note against myself:** this is the *run a second instrument over your
+own claim* rule — the mechanism that moved this lane's self-catch rate from 0/8
+to 4/5 — and **the second instrument was two columns to the left of the one I
+was reading.** I published the flag on an internal inconsistency plus an
+inference, when the corroboration was already in the same table. The flag was
+right and it was one column short of complete.
+
+## COMPANION, SAME COMMIT — A SUBJECT LINE THAT OVERSTATES ITS OWN BODY (D21/R4 family, not an error)
+
+`2c261c8`'s subject: *"AND THE CORRECTION FLIPS AN ORDERING, which is the
+point."* Its body: *"on snapshots v92 1552 < v102 1600; opponent-controlled they
+are indistinguishable."*
+
+**Both surfaces put v92 BELOW v102 as point estimates** (−48 and −9, same sign).
+The correction made the ordering **UNRESOLVED**; it did not reverse it. The body
+is precise; the subject is not — **and the subject is what travels into the plan,
+the relay and the read-out, while the body is read only by whoever opens the
+document.** That is research's own R4: *the marker belongs in the row, the commit
+subject and the relay, or it does not exist.*
+
+Raised here only because the sign flip directly above is what a delta table
+travelling without its point estimates does.
