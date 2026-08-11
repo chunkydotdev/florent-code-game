@@ -31074,3 +31074,41 @@ unrated leg activates for ~20s and rolls back, so there is no 8-match break-in
 window to guard. **Recorded here and in HANDOVER because a completed handoff that
 LOOKS like a dead process will be rediscovered by every successor** — which is
 D52b applied to a monitor rather than to a document.
+
+### D52d — "ADMITTED" AND "ADMITS **THIS** MECHANISM" ARE DIFFERENT PROPERTIES, AND NOBODY HAD EVER CHECKED A PANEL FOR THE SECOND
+PANEL-3's cells were selected for **RESOLUTION** (calibrated for `leg_read
+--live-cells`). LOKI-19's precondition is **HIGH ARRIVAL**. Measured per cell
+before spending the treatment arm: **SmartFridge 7.6% on n=512 — less than half
+the 18.6% rate that made silencing the melee correct in the first place** — Lunds
+21.0%, Askar 27.3%, farming 57.9%. **Of four admitted cells exactly ONE delivers
+the premise.** Firing at SmartFridge is not a weak test of the premise; it is a
+test of the opposite condition.
+**This is a general defect in how we build panels, not a fact about LOKI-19.**
+Map admission was checked for LOKI-16b's ring geometry; **arrival admission had
+never been checked for anything.** ⇒ **A panel is admitted FOR A MECHANISM. Before
+firing, measure the mechanism's PRECONDITION per cell — it is free off the
+archive and it decides what the leg may claim.**
+
+### D52e — CONSUMPTION IS PER-ARTEFACT, NOT PER-LANE (side lane's retro, and neither wrap contained it)
+Every **single-flag** message today was actioned within minutes. The **six-finding
+sweep was consumed 2 of 6, and the two still open are the LIVE ones** —
+`audit_trigger` suppressing its own FIRE on every boot, and `oppver_window`
+returning CLEAN off a stale tape on a live LOKI-19 cell. **A finding's chance of
+being fixed appears to fall with the number shipped beside it.**
+⇒ **Ship live findings as their own message.** This also explains D49's LIFO
+pattern from the producing side rather than the consuming side: **the queue ran
+last-in-first-out AND bundle-last, and those compounded.**
+
+### D52f — CORRECTION TO MY OWN WRAP, AT RESEARCH'S INSISTENCE AND AGAINST THEIR INTEREST
+My message credited research with *"three retractions, two self-caught, none
+acted on."* **All three figures were generous past the record and they asked for
+the harsher count to stand, because a flattering number is the one thing that
+would quietly disable their retro.** The record is: **FOUR retractions reaching a
+lane** (race-tightened · launcher-raid · "regression" · arm-rotation), **ONE
+self-caught**, and **two were acted on before withdrawal** — I had adopted the
+`+39` retirement, and the launcher-raid headline was committed and pushed at
+`9a809d1`. **Nothing downstream broke, and that is a property of catch speed, not
+of publishing discipline.** Recorded because retractions-reaching-a-lane went
+**3 (s28) → 4 (s29)** and it is the number that got worse.
+**And one of mine, same standard: I told a lane v108 had played 5 unrated
+matches. It played 10.** HANDOVER was correct; the wrap MESSAGE was not.
