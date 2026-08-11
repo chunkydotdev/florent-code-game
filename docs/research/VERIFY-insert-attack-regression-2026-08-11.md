@@ -172,3 +172,33 @@ advertises its own control arm (`False == LOKI-4 exactly`).
 
 **Also still unchecked, and disclosed by the adopting author at the time:** the
 siphon income the flag silences was never priced.
+
+---
+
+# ⚠ SECOND TIGHTENING — THE TITLE'S "ONE FLAG" COVERS v102+ ONLY. THE v96-v101 ZEROS ARE UNEXPLAINED.
+
+The research arm has withdrawn its own resolution of the transition zone
+(night-panel Part 10) and falsified both candidate explanations. **One of those
+falsifications lands on this document's framing and I am recording it against
+myself rather than leaving the headline to cover more than it earned.**
+
+**`LOKI_QUIET_ON` cannot explain the pre-v102 zeros, because it did not exist
+yet.** Research's git check: **v98 was submitted 17:10, twenty minutes before the
+`_v121lokiquiet` tree existed at 17:30**, and the constant appears in **no tree
+before it**. That is consistent with this document's own tree table (absent
+across `_v104loki0` … `_v120loki4`), and the two together mean **v96 (0/18), v98
+(0/11), v99 (0/37) and v100 (0/13) were produced by something that is NOT this
+flag** — or are small-cell noise.
+
+**⇒ Scope the headline correctly: the flag is established as the mechanism for
+the v102-v107 block (0 of 2,247, six versions). For v96-v101 there is either a
+second cause or no cause, and neither is shown here.** This document already
+listed *"why v97/v101 are non-zero"* under what it does not establish; that
+disclaimer now extends to the whole transition zone.
+
+**And the corollary that matters more than the zone itself:** research's other
+dead hypothesis — *"early Loki trees had no melee"* — died because
+`_v105/_v117/_v119/_v120` carry **14 fire sites and zero flag references**, i.e.
+**the melee was present and UNGATED.** That independently confirms this
+document's tree table from the opposite direction, and it strengthens the one
+claim that survives everything: **the Loki line attacked before it was silenced.**
