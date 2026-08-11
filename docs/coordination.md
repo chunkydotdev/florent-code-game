@@ -32625,3 +32625,43 @@ currency, (b) has a VERIFIED MECHANISM — dose delivered, metric not inert — 
 supplies it afterwards and the screen never could.**
 **The four restored planks now have a route: they need a MECHANISM verdict (dose,
 build mix, kill round), not a win-rate verdict.**
+
+## ⭐⭐ F42 — MAGNUS: *"The goal is to climb ELO. If we find a bot more than 0.1% better, it should take the slot after our testing funnels."*
+**0.1% IS NOT A MEASURABLE QUANTITY AT ANY SAMPLE THIS PROJECT WILL EVER HAVE:**
+```
+0.1% of our 1689 rating            = 1.7 Elo
+1.7 Elo as a win-probability edge  = 0.243pp
+games needed to RESOLVE it         = 331,751
+0.1% of a 50% win rate (50.05%)    = 7,840,000 games
+our ENTIRE rated history           = 3,670 games
+the h2h harness, overnight         = ~4,096 games
+```
+**⇒ IT IS A DECISION RULE, NOT A BAR TO CLEAR: SHIP ON A POSITIVE POINT ESTIMATE.
+The threshold is "NOT WORSE", not "proven better."** Any funnel demanding proof
+of a 0.1% edge demands what no experiment can supply — **which is exactly how we
+arrived at seven filters and a frozen slot.**
+
+**⇒ THE FUNNEL IS RE-ROLED, and this is the operational change:**
+* **NOT** *"prove it is better"* — impossible at these effect sizes.
+* **BUT** *"prove it is NOT WORSE and the mechanism FIRED"* — **resolvable at
+  n=25–64**, which is what the screens are actually good at.
+* **Then the LADDER decides** at n=425 and climbing, **rollback as the control.**
+**A plank fails only if it is MEASURABLY WORSE (outside the band on the bad
+side), INERT (dose ~0), or OFF-PROGRAMME. Everything else ships.**
+
+**⚠ AND ONE THING ONLY MAGNUS CAN RULE, FLAGGED NOT ASSUMED: he says the goal is
+ELO; `PROGRAMME.md` says `PRIMARY_CURRENCY: kill_speed_score`.** These are not
+the same objective and **they can diverge — the ladder pays GAME SHARE
+(`delta = 32 × (S − E)`), so a plank that kills faster while losing more games
+gains kill-speed and LOSES Elo.** The builder's change making kill-speed the
+primary line in `h2h.sh` is **correct against `PROGRAMME.md` as written**; the
+addition asked for is that **the screen report BOTH and FLAG any arm where they
+disagree** — that disagreement is the only case where the proxy misleads, and
+both numbers are already computed.
+
+**⇒ CONCRETE TODAY: the four restored planks need only "not measurably worse +
+dose fired".** Heal budget, home turrets and roster at **10/24 are INSIDE the
+band — i.e. NOT MEASURABLY WORSE — and none has a dose check.** **Run the dose
+checks; anything with a live dose and a non-negative kill-speed point estimate is
+shippable under this directive.** A route from a frozen slot to a ship today,
+needing no new plank.
