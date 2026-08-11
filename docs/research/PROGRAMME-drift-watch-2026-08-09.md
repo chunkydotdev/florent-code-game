@@ -553,3 +553,42 @@ a proven negative control beats three that have never flagged anything.**
   **This is not three incidents, it is one convention: analysis runs in
   `scratchpad/` and only its CONCLUSIONS get committed, so every load-bearing
   number in this repo is one `rm -rf` from unreproducible.**
+
+- **THE GREEN-SELFTEST SIGNATURE, AND THE POSITIVE STANDARD THAT COMES WITH IT
+  (s29, `694fc5f` — a sweep, not an incident):** the failure is **a test whose
+  assertions all sit on one axis of a metric while the metric's load-bearing
+  definition sits on another.** `ring_retention.py` asserted 12-on-open,
+  5-in-corner, walls-reduce — the RING — and never the OCCUPANCY RULE, which was
+  the broken half; it passed for its entire life while inverting a result.
+  **Six confirmed instances across `tools/`, each with the input that passes the
+  test and breaks the metric constructed and RUN**, including two live at the
+  time of writing: `audit_trigger` suppressing its own FIRE (a 24-hour numerator
+  over a denominator with no clock), and `oppver_window` returning **CLEAN — the
+  verdict that certifies D18 — off a stale tape**, on the very opponent its own
+  docstring uses as the worked example of a cell that ships versions.
+  **THE WATCH FORM, and it is cheap enough to apply at review time:** for any
+  instrument, name the quantity in one sentence, then ask **which clause of that
+  sentence each assertion touches.** The clause no assertion touches is where the
+  defect will be. Three recurring shapes: the test builds its own copy of the
+  computation instead of calling the production function (`map_admits`'s ring,
+  `breakin_watch`'s `main()`); an `_OVERRIDE` hook bypasses the reader so the
+  DATA is never in the test (`oppver_window`, `target_value`); and a fixture
+  degenerate enough that two different definitions coincide (`audit_trigger`'s
+  one-row tape, where tail-window and time-window are the same thing).
+  **⭐ THE POSITIVE STANDARD — `tools/corpus/meta_attrib.py`, and it should be the
+  template anyone copies:** three corruption modes, each aimed at a DIFFERENT
+  check, each mutating **the real pipeline's own rows** rather than a fixture,
+  each requiring agreement to COLLAPSE. Its third mode exists because the first
+  two only proved CHECK 1's teeth — **it reasons about which check each
+  corruption reaches.** Siblings that meet the bar: `score.py` (both sides of
+  every boundary, and tiebreak asserted IDENTICAL to a loss — the semantic, not
+  the number), `rate_budget.py` (**the blind state must REFUSE, not permit**),
+  `claim_check.py`, `plank_status.py`. **What all five share: they call the
+  PRODUCTION function, they assert semantics rather than shape, and they drive
+  the check to the verdict that is UNCOMFORTABLE.**
+  **And the category that may outrank every finding: 41 of 56 `__main__`-bearing
+  modules under `tools/` have no selftest at all** — including
+  `replay_census.py`, whose wire primitives every corpus decoder imports, so one
+  defect there moves every number in the repo. **An instrument with no test is
+  not a smaller problem than one with a blind test; it is the same problem
+  without the false assurance.**
