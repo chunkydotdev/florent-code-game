@@ -31533,3 +31533,50 @@ this plank → not stale, but nothing points at it either"*, and "not stale" was
 read as "not dead". **This is the mechanised form of D14 failing in the one
 direction it exists to cover**, and it is why the rule caught the defect only
 when a HUMAN LANE ran it manually. Builder-owned and now their top queue item.
+
+## F10 — LOKI-18's BLOCKING COST MEASURED PER CELL: 4 OF 5 HELD (side lane s30, prospective)
+Delivered BEFORE the read-out. The builder's A1.3 accepted a blocked design and
+named opponent-version drift as a cost; sweep 22 makes it concrete — **median
+opponent-version lifetime 1.17 h**, and the control (04:35–05:31Z) sits roughly
+two lifetimes before the treatment (06:46Z). Read off the **LIVE CLI**, because
+`league_matches.tsv` stops at 05:52:59Z and cannot see the treatment:
+```
+Askar City v94=v94 · Landers v93=v93 · Lunds v64=v64 · farming v13=v13   SAME
+Powered by SmartFridge   control v57 AND v67  ->  treatment v67          CHANGED
+```
+**Four of five cells held across two hours — better than the median lifetime
+predicts, so the pre-committed blocking cost is real but CONCENTRATED, not
+diffuse.** On those four the blocked comparison is sound.
+**SmartFridge has no version-matched comparison available at all: its CONTROL is
+itself a blend of two opponent bots and the treatment is one of them.**
+⇒ Recommended (not a verdict): report the mechanism bar on the four
+version-matched cells with **SmartFridge separate and not pooled** — the
+treatment `f555166` already gave Askar City. **Pooling it is the direction that
+flatters, since it also carries the most favourable 5d number in the sibling leg
+(+0.324).**
+**⭐ FIVE INDEPENDENT DEFECTS ON ONE OF FIVE CELLS IN ONE DAY, and the COUNT is
+now the finding:** arrival precondition failed (7.6%, itself 60% carried by a
+version they no longer run) · only version-churn cell · complete seat inversion
+in LOKI-19 · most favourable 5d number · no version-matched control in LOKI-18.
+**A cell failing five independent admission checks in a day is not unlucky — it
+says the panel criterion (rating proximity) selects for nothing we need**, which
+is D13's replacement-criterion point arriving from a fifth direction.
+
+## F11 — `plank_status`'s KILLED STATE VERIFIED, INCLUDING A NOVEL TRUE POSITIVE
+The builder shipped it (`9787903`) after their own diagnosis that the tool
+measured **staleness** while the failure mode was **withdrawal** — a withdrawal
+commit registered as *recency*, making a dead plank look FRESHER. Driven:
+* **loki17 → WITHDRAWN**, citing `c91c078`. ✓ acceptance case
+* **loki18 → WITHDRAWN**, citing `d5224a1`, matched on `\bvoid\b`. ✓ acceptance case
+* **loki14b → WITHDRAWN**, a plank NOBODY was tracking — **the tool's first
+  NOVEL catch, and I verified it is a TRUE positive**: `50f311a` reads *"LOKI-14b
+  ABANDONED at 8/16 on Magnus's directive — below its own dose gate so no bar
+  attaches; the decode-against-the-gate is WITHDRAWN."* Genuinely dead.
+  **Checked because D52 says a false-positive FIRST FIRING trains an alarm away**,
+  and a novel catch is exactly where that risk lives.
+* Selftest drives **12 cells in BOTH directions**, including the false-positive
+  guards that matter: *explicit revival commit → STALE, not WITHDRAWN* ·
+  *`core_kill_share` in a verdict subject → OK* (a metric name containing "kill"
+  does not trip it) · *a VOID commit containing "reinstated" → SUSPECT*.
+**This is the mechanised form of D14 repaired in the one direction it existed to
+cover, verified on the case that beat it and on a case nobody chose for it.**
