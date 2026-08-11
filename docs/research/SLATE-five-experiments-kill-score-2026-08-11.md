@@ -153,3 +153,51 @@ evidence and no attribution; #4 is clean arithmetic and untested; #5 is fenced.*
 versions (`ourver` unpinned), so it describes the line's history rather than the
 live tree; the +1,760 assumes a 10% conversion rate that nothing has yet
 demonstrated; and the diverge comparison is us-only by construction.
+
+---
+
+# ADDENDUM, 08:2xZ — I TRIED TO KILL #1 BEFORE ANYONE BUILT IT. THE PREMISE SURVIVED AND GOT STRONGER.
+
+**The Closer assumes those 603 games leave us with unspent capacity. If we finish
+broke, the plank is dead and proposing it would have cost a window.** Measured on
+`corpus/econ.tsv` joined through `meta_join` (our side only):
+
+**Titanium on hand, band `r300+`, by outcome:**
+
+| outcome | n | median `ti_end` | mean | p90 |
+|---|---|---|---|---|
+| **TIEBREAK WIN (scores −10)** | 182 | **4,318** | 6,019 | 15,677 |
+| tiebreak LOSS (−10) | 210 | 1,150 | 3,593 | 11,737 |
+| core-kill WIN | 258 | **148** | 2,391 | 8,953 |
+| core LOSS | 382 | 124 | 2,140 | 7,522 |
+
+**⭐ AND THE LIKE-FOR-LIKE VERSION, which is the one that counts — BOTH ARMS ARE
+LONG GAMES**, since a kill-win reaching the `r300+` band is by construction a SLOW
+kill:
+
+| band | tiebreak WIN: ti / builds / attacks | core-kill WIN: ti / builds / attacks |
+|---|---|---|
+| r0–150 | 50 / 49 / 57 | 33 / 33 / 0 |
+| r150–200 | 74 / 8 / 15 | 46 / 2 / 0 |
+| r200–300 | 232 / 11 / 14 | 56 / 3 / 0 |
+| **r300+** | **3,496** / 32 / 34 | **92** / 5 / 5 |
+
+**Among games that ran past r300, the ones we KILLED in finished holding 92
+titanium and the ones we did not finished holding 3,496 — a 38× difference on
+comparable populations.**
+
+**AND WE ARE NOT IDLE WHILE HOARDING: 32 builds and 34 attacks in the `r300+`
+band of tiebreak wins.** We are active *and* rich simultaneously — so this is not
+"nothing to spend it on". **The hoard also forms LATE** (50 → 74 → 232 → 3,496),
+i.e. income outruns spending progressively after ~r200.
+
+**⛔ WHAT THIS DOES NOT ESTABLISH, and it is the same fork this lane flagged on
+the turret-mix reading:** whether **hoarding causes the failure to kill** (the
+Closer fixes it) or **the failure to find a kill causes the hoard** (the Closer
+changes nothing and the constraint is elsewhere). **The correlation cannot
+separate them.**
+**What IS established either way: the RESOURCE is not the binding constraint.**
+4,318 titanium is a large assault even at inflated late-game scale. **So the
+Closer's premise — "we have the means and do not use them" — holds; its mechanism
+is exactly what the leg would test.** That is the right reason to fire it rather
+than a reason to assume it.
