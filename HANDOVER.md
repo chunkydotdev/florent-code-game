@@ -38,7 +38,13 @@
 ##   tests the RING GEOMETRY, never the OCCUPANCY RULE.** Side lane is hunting
 ##   that signature across `tools/` now.
 ##
-## ===== ⭐⭐ LOKI-19 = `bots/_v136loki19` (md5 `fb5cba8c`) — BUILT, DOSE-VERIFIED, NEEDS A PREREG =====
+## ===== ⭐⭐ LOKI-19 = `bots/_v136loki19` (md5 `fb5cba8c`) — BUILT, DOSE-VERIFIED, PREREG COMMITTED, NOT YET FIRED =====
+##   **PREREG: `docs/prereg/PREREG-loki19-core-peck-2026-08-11.md` (`5aa5233`
+##   06:32:49) — committed BEFORE leg creation, two-clock clean. n fixed at 4
+##   interleaved windows / 50 games per arm, with a table saying which bars
+##   resolve at that n (dose and mechanism YES, currency NO) and four-band
+##   read-out language with forbidden words per band.**
+##   **NEXT ACTION: fire it.** `rate_budget.py` said a slot was free at 06:32.
 ##   **ONE GATE. `LOKI19_CORE_PECK_ON`, re-enabling the enemy-core peck only.**
 ##   `main.py` and `eco.py` are BYTE-IDENTICAL to v104; counterbattery
 ##   (defensive) and siphon (economic) stay silenced deliberately.

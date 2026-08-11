@@ -66,15 +66,48 @@ def git(*args, cwd=ROOT):
     return r.stdout.strip()
 
 
-def artefact_paths(plank, cwd=ROOT):
+# Mirror//probe trees: a DETERMINISTIC COPY of a plank, created to serve as some
+# OTHER plank's paired control. `_det_v130loki13` is a copy of loki13 made by a
+# LOKI-17 commit; `_v126loki9off` is an ablation arm.
+#
+# ⛔ EXCLUDED BECAUSE THE GUARD'S FIRST AND ONLY LIVE FIRING WAS A FALSE POSITIVE.
+# `--all` reported `1 STALE: loki13`, and the triggering commit was `1f6d779`,
+# a LOKI-17 battery commit that CREATED `bots/_det_v130loki13/`. loki13 the plank
+# had not moved at all -- somebody made a copy of it to test something else, and
+# the path glob caught the copy. **The guard was reading "this tree was used as a
+# CONTROL" as "this plank MOVED."**
+#
+# This is fixed rather than noted, and the reason is the whole point of the tool:
+# it exists because attention failed twice, and AN ALARM WHOSE FIRST LIVE FIRING
+# IS WRONG GETS TRAINED AWAY. The next `1 STALE: loki13` reads as "that again",
+# and that is how the second real one gets skipped. Same family as a monitor that
+# restarts on OK: a guard nobody believes is decoration with an exit code.
+MIRROR_PREFIXES = ("bots/_det_", "bots/_probe_")
+MIRROR_SUFFIXES = ("off",)
+
+
+def _is_mirror(path):
+    if path.startswith(MIRROR_PREFIXES):
+        return True
+    parts = path.split("/")
+    return len(parts) > 1 and parts[1].endswith(MIRROR_SUFFIXES)
+
+
+def artefact_paths(plank, cwd=ROOT, include_mirrors=False):
     """Every tracked file whose path mentions the plank. Uses git's own index
     rather than a glob so that an untracked scratch file cannot masquerade as a
     durable artefact -- which is the exact class of defect that let an untracked
-    `scratchpad/shootable.py` produce the number that killed LOKI-17."""
+    `scratchpad/shootable.py` produce the number that killed LOKI-17.
+
+    Mirror trees are excluded (see MIRROR_PREFIXES): a deterministic copy of this
+    plank, built as another plank's control, is not this plank moving."""
     out = git("ls-files", cwd=cwd).splitlines()
     p = plank.lower()
-    return [f for f in out
+    hits = [f for f in out
             if p in f.lower() and (f.startswith("docs/") or f.startswith("bots/"))]
+    if include_mirrors:
+        return hits
+    return [f for f in hits if not _is_mirror(f)]
 
 
 def newest_commit(paths, cwd=ROOT):
@@ -269,8 +302,45 @@ def selftest():
         else:
             print("  [ok] unrelated HANDOVER edit does not clear   -> STALE")
 
-    print("\nPASS: drives OK -> STALE -> OK, surfaces the kill word, and an edit "
-          "that does not name the plank does not clear it."
+        # t4: a MIRROR tree of this plank is created by SOME OTHER plank's work.
+        # Must NOT read STALE -- this plank did not move, it was COPIED. This is
+        # the real false positive the guard produced on its first live run
+        # (`1 STALE: loki13`, triggered by a LOKI-17 commit creating
+        # `bots/_det_v130loki13/`). Without this branch the exclusion is
+        # untested behaviour in an alarm, which is what the tool exists to catch.
+        # Reset the baseline by editing a line that NAMES the plank -- rewriting
+        # some other line would not match `-G lokiXX` and the baseline would not
+        # move, which is what this fixture did on its first run and why it
+        # reported a failure that was the TEST's bug and not the exclusion's.
+        (d / "HANDOVER.md").write_text(
+            "lokiXX IS DEAD -- withdrawn, confirmed, do not fire.\n"
+            "Unrelated: monitors are alive.\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "HANDOVER: re-record lokiXX death (reset baseline)")
+        (d / "bots" / "_det_v999lokiXX").mkdir(parents=True)
+        (d / "bots/_det_v999lokiXX/main.py").write_text("x = 1\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "LOKI-YY battery: create a deterministic control mirror")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        if v != "OK":
+            print(f"  [FAIL] a MIRROR tree must not read as the plank moving, read {v}")
+            ok = False
+        else:
+            print("  [ok] mirror tree created by another plank    -> OK (not stale)")
+        # ...and the exclusion must be narrow: a REAL artefact commit still fires.
+        (d / "docs/prereg/PREREG-lokiXX.md").write_text("bar\nWITHDRAWN\nreal edit\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "lokiXX: a genuine artefact change")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        if v != "STALE":
+            print(f"  [FAIL] exclusion is too broad -- a real artefact edit must still fire, read {v}")
+            ok = False
+        else:
+            print("  [ok] real artefact edit after the mirror     -> STALE")
+
+    print("\nPASS: drives OK -> STALE -> OK, surfaces the kill word, ignores a "
+          "mirror tree without going blind to real edits, and an edit that does "
+          "not name the plank does not clear it."
           if ok else "\n*** SELFTEST FAILED ***")
     return 0 if ok else 1
 
@@ -292,6 +362,14 @@ def main(argv):
     if stale:
         print(f"\n*** {len(stale)} STALE: {', '.join(stale)} ***")
         print("Do not activate against HANDOVER's word until these are reconciled.")
+    # ⛔ GATE ON THIS LINE, NOT ON `$?`. The whole contract of this tool is its
+    # exit code, and the natural way anyone runs a long report --
+    # `plank_status.py --all | tail` -- makes `$?` the status of `tail`, which is
+    # ALWAYS 0. A caller gating on `$?` behind a pipe therefore reads OK forever:
+    # a guard that cannot fail, which is the exact class this tool was built to
+    # replace. This is the standing repo rule (`fcode status` exits 0 while
+    # printing `Error: True`): GATE ON THE PRESENCE OF THE LOAD-BEARING FIELD.
+    print(f"\nPLANK_STATUS: {'STALE' if stale else 'OK'}")
     return worst
 
 
