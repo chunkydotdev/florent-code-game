@@ -49,6 +49,7 @@ if [[ $B == $C ]]; then
 fi
 W=0; N=0; KILLW=0; KILLL=0; R1000=0
 WA=0; NA=0; WB=0; NB=0
+typeset -A MW MN
 for S in ${=SEEDS}; do
   for M in ${=MAPS}; do
     for ORD in A B; do
@@ -58,7 +59,8 @@ for S in ${=SEEDS}; do
       [[ -z $L ]] && { print -r -- "  !! no winner line: $M seed $S seat $ORD"; continue; }
       N=$((N+1))
       if [[ $ORD == A ]]; then NA=$((NA+1)); else NB=$((NB+1)); fi
-      case "$L" in *"$B"*) W=$((W+1)); [[ $ORD == A ]] && WA=$((WA+1)) || WB=$((WB+1))
+      MN[$M]=$(( ${MN[$M]:-0} + 1 ))
+      case "$L" in *"$B"*) W=$((W+1)); MW[$M]=$(( ${MW[$M]:-0} + 1 )); [[ $ORD == A ]] && WA=$((WA+1)) || WB=$((WB+1))
                           [[ $L == *"Core destroyed"* ]] && KILLW=$((KILLW+1));;
                    *)                 [[ $L == *"Core destroyed"* ]] && KILLL=$((KILLL+1));; esac
       [[ $L == *"turn 1000"* ]] && R1000=$((R1000+1))
@@ -75,6 +77,27 @@ print "  core kills FOR $KILLW   AGAINST $KILLL   r1000 (a DEFEAT either way) $R
 # one seat than the other, the engine or the harness is asymmetric and every
 # screen verdict is measured against a bent ruler.
 print "  seat A (treatment first)  $WA/$NA     seat B (treatment second)  $WB/$NB"
+# PER-MAP, because a pooled 8-map rate can be "harmful on short maps, neutral on
+# long" and read identically to "harmful everywhere". The rush was measured at
+# -35.4pp on SHORT maps (p=0.0005) and NULL on long ones in 2026-08-09's paired
+# battery -- so a pooled number hides the only fact that would change its status.
+# Free: the split is already in the games we just played.
+print -n "  per map: "
+for m in ${=MAPS}; do print -n "$m ${MW[$m]:-0}/${MN[$m]:-0}  "; done
+print ""
 # GATE ON THIS LINE, NEVER ON $? -- the natural `h2h.sh ... | tail` makes $? the
 # pipe's, which is always 0. Repo standing rule.
+# ⛔ POWER WARNING, AND IT IS NOT DECORATION. At n=24 the smallest count that
+# separates from a 50% null at p<0.05 is 7/24 -- so 10/24 (41%) and 14/24 (58%)
+# are BOTH indistinguishable from doing nothing. Measured the hard way on
+# 2026-08-11: LOKI_FWD_GUN_CAP 3->6 read 14/24 = 58% and was reported as "the
+# first thing above the null"; at n=64 it read 32/64 = EXACTLY 50%. The null
+# control itself read 44% at n=36 and 50.0% at n=64. **Two false signals from
+# the same instrument in one hour, both from small n.**
+if (( N < 64 )); then
+  print ""
+  print "  ⚠ UNDERPOWERED: n=$N. Against a 50% null only an extreme count separates"
+  print "    at p<0.05 (at n=24 that is <=7 or >=17). ANYTHING BETWEEN IS NOISE —"
+  print "    do not rank it, do not call it positive. Re-run at n>=64 before quoting."
+fi
 print "H2H_RESULT: $B $W/$N"
