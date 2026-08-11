@@ -201,3 +201,101 @@ effect.**
 * **Opponent versions are pinned from `league_matches.tsv` / `meta_join`, never
   `ladder_games.tsv.oppver`** (literally `'None'` for every row, and a null
   column reads as "no version change").
+
+---
+
+# AMENDMENT 1 — THE ARRIVAL GATE. ADD-ONLY, COMMITTED AFTER THE CONTROL WINDOW FIRED AND BEFORE THE TREATMENT ARM EXISTS.
+
+**Written 2026-08-11 06:4x CEST (`date`, same shell). Control window 1 fired
+04:35:21–04:35:38Z, 5/5 accepted, holder v104 asserted before every challenge.
+NO TREATMENT GAME HAS BEEN PLAYED AND NO ARRIVAL NUMBER FROM THIS LEG HAS BEEN
+READ.** This amendment ADDS a gate and RESTATES a question; it moves no bar.
+
+## 1a. ⛔ THE 38% IN §3 IS A RATED FIGURE AND THIS LEG FIRES UNRATED
+
+Side-lane catch, and it is the one flag that could have invalidated the leg
+after the fact. Our own v104, `kind=INSERT`, ours, reach:
+
+| population | reach | n |
+|---|---:|---:|
+| **RATED** | **39.8%** | 246 |
+| **UNRATED — the fixture this leg actually uses** | **20.0%** | 1,247 |
+
+**The pre-quiet rate that justified silencing the melee was 18.6%.**
+
+**⇒ IN THE FIXTURE THIS LEG RUNS IN, ARRIVAL MAY SIT ESSENTIALLY AT THE NUMBER
+THAT MADE QUIET CORRECT IN THE FIRST PLACE.** If so, LOKI-19 re-runs v96's
+experiment at v96's arrival rate under a new name, and §6's expected outcome
+(currency CI straddles 0) is **uninterpretable as evidence about the changed
+premise — because in that fixture the premise did not change.**
+
+**And arrival is not a property of our bot at all — it is per-cell, with a 6x
+spread** (night panel, INSERT reach): Landers 82.8% · Team 48 72.7% ·
+farming_200s 50.0% · gsxWins 29.2% · kladde 27.6% · **Lunds Stallions 25.0%** ·
+CtrlAltDefeat 21.2% · I Stone 18.6% · Powerpuff 13.3%. **On this leg's own
+admitted cells only two have measured arrival — Lunds 25.0% (12/48) and
+farming_200s 50.0% (10/20); Askar City and SmartFridge have NONE.**
+
+**This is D13 on an axis the fixture work has not covered: a cell must admit the
+mechanism, and THIS mechanism's PRECONDITION IS HIGH ARRIVAL.** Map admission was
+checked for LOKI-16b's ring geometry; nobody had checked arrival admission.
+
+## 1b. NEW GATE — 5a-bis, ARRIVAL, MEASURED IN-ARM ON THE CONTROL
+
+**Our INSERT reach on the four cells, CONTROL arm, live unrated, this leg's own
+games. Reported PER CELL, never pooled — a 6x spread makes a pooled mean a
+fiction.** Measured with the same decoder on both arms; **no stored figure
+enters it**, per §2.
+
+**PRE-COMMITTED READING, written before the number is computed:**
+
+| control-arm arrival | what the leg may claim |
+|---|---|
+| **> 30%** | the fixture delivers the changed premise. **§3's question stands as written and the leg tests it.** |
+| **20–30%** | **AMBIGUOUS. The leg may report dose, mechanism and cost, and may NOT claim to have tested "the changed premise."** Any currency result is reported as fixture-conditional. |
+| **≤ 20%** | **the fixture sits at pre-quiet arrival. The leg ANSWERS v96's QUESTION AGAIN and may not be read as evidence about the premise shift in either direction.** Dose and cost still read; the framing in §1 and §3 does not. |
+
+**This gate cannot flatter the result. It can only tell me whether the leg tested
+the question I meant** — which is exactly what §2's in-arm rule is for, applied
+one level up from the bars to the QUESTION.
+
+## 1c. §3 IS RESTATED FIXTURE-RELATIVE. THE NUMBER LEAVES THE QUESTION.
+
+**Struck:** *"AT 38% ARRIVAL, is an arrived-round worth more spent on damage than
+on holding position?"*
+
+**Replaces it:**
+
+> **AT THE ARRIVAL RATE THIS FIXTURE DELIVERS — measured in-arm and reported per
+> cell — is an arrived-round worth more spent on damage than on holding
+> position?**
+
+**Arrival becomes an OBSERVED COVARIATE of this leg rather than a premise
+imported from another population.** The §1 history (18.6% → 38.1% rated) stays as
+the MOTIVATION for asking, clearly tagged, and is no longer load-bearing on the
+read-out. **A question quantified at 38% and resolved in a fixture at 20% is the
+units-not-data failure at the level of the hypothesis instead of the column, and
+it would have been invisible in every bar.**
+
+## 1d. A CONTROL FIGURE IN §1 IS FLAGGED, NOT YET RECONCILED
+
+§1 cites *"opponents' inserts in the same v104 files attack at 21.1%
+(124/587)."* An independent decode of the same 485 files gives their friendly
+inserts as **107/331 = 32.3%**, and **124 is separately OUR reached count
+(124/442 = 28.1%)** — so the `124` may be a carry-over, and **`587` does not
+reproduce at all.**
+
+**The control's DIRECTION is unaffected — their column is alive and ours is zero
+on every version of the cut — so the conclusion it supports (the decoder is not
+broken) stands.** But it is a control figure inside a pre-registration and this
+document's own §1 says the population tag is load-bearing. **Recorded as
+unreconciled rather than quietly corrected; the exact filter behind 124/587 must
+be named before it is cited again.**
+
+## 1e. WHAT THIS AMENDMENT MAY NOT DO
+
+It may not move any bar in §5, the n in §6, the cells, or the four-band language.
+It may not be read as weakening the plank: **§1's measured facts — 0 attacks
+across 2,247 inserts, 28.1% standing adjacent to the enemy core — are unaffected
+by which population the ARRIVAL RATE is computed on.** What changes is only what
+this leg is entitled to conclude about WHY.
