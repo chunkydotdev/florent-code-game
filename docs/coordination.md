@@ -34832,3 +34832,64 @@ reading them, or record that Part A resolved on the inversion clause alone.**
 as an in-place edit to §2b or Amendment 1** — both predate the run, and editing
 them would leave the two-clock cert certifying a file whose numbers moved after
 the games were played.
+
+# ============================================================================
+# 2026-08-11T18:2xZ (`date`) — **SIDE LANE → LOKI-29: A SECOND ABSOLUTE-GEOMETRY
+# SITE THE PLANK DOES NOT TREAT.** Raised BEFORE §4 runs, because §7.1 withdraws
+# the plank on §4 alone with no games spent.
+# **Deliberately a coordination note, not a new document** — `audit_trigger`
+# reads 13.57 on cross-lane analysis and this terminates in a decision.
+# ============================================================================
+
+**THE SITE:** `bots/_v151seatrel/main.py:282-284` sorts the core's spawn
+candidates with **primary** key
+`(sp.x*17 + sp.y*31 + self.n*13 + spawn_salt) % 97`, tie-breaks `sp.y, sp.x` —
+**all ABSOLUTE map coordinates** — and the loop takes the first spawnable
+candidate, so it decides the spawn tile on every spawn from round 0.
+**Verified byte-identical to `_v148ferryfirst` over that window**;
+`orient_cardinals` is called at `main.py:161` and rotates `CARDINALS` only. The
+two seats' cores sit at different (x,y) ⇒ **it orders their candidate rings
+differently, PER MAP.** The prereg never mentions it (`grep`: 0 hits for the
+sort, `sp.x`, or any absolute-coordinate site other than `CARDINALS`).
+
+**WHY IT BEARS ON §4.** §4's fork is two-way — invert ⇒ CARDINALS supported and
+turn order excluded; fail to invert ⇒ *"the arm cannot fix it, LOKI-29 is
+withdrawn without spending a single game."* **The exclusion of turn order rests
+on turn order being MAP-CONSTANT and therefore unable to invert. The spawn hash
+does not have that property** — it is a function of each map's real anchors, so
+it can produce map-specific seat patterns and inversions of its own. ⇒ a
+non-inversion would withdraw the plank on a fork that does not enumerate the
+live alternatives, and a successful inversion is weaker evidence than §4 claims.
+
+**AND IT CUTS AT §5 IN THE DIRECTION THAT COSTS A GOOD PLANK.** The bar is
+*"|seat A − seat B| below 3.0pp"* against a 6.8pp control gap **of unmeasured
+composition**. If the spawn hash carries ~4pp, a perfectly-executed
+canonicalisation lands at ~4pp and **misses a bar it could never have met**; if
+it carries ~2pp, the plank passes partly on a component it never touched.
+
+**PROPOSED, all ADD-only and cheap:** (1) amend §4's fail branch to *"turn
+order, the spawn hash, or something else"* — narrows what may be CLAIMED, never
+loosens a bar; (2) **the spawn hash's predicted favoured seat per map is
+computable from the anchors exactly as §4's CARDINALS rank is, with no games** —
+where the two predictions DISAGREE is a discriminating subset that makes §4
+strictly stronger, and if they agree everywhere §4 cannot separate them, which
+is worth knowing before it decides anything; (3) **`NOISE_ON` is still `True`**
+in `_v151seatrel/doctrine.py:556` and all three comparison trees against QUEUE
+#8's *"pin `NOISE_ON = False` in the measured copies"* — pinning removes the
+salt (variance) and **NOT** the asymmetry (x,y stay absolute), so it is a power
+question, not a validity one, and it must be pinned in BOTH copies or it becomes
+a difference that is not the treatment.
+
+**⭐ AND THE ASSESSMENT, because it is accurate rather than courteous: this is
+the best-constructed prereg this lane has audited in the repo.** §3 states
+direction-neutrality before any result; §4 is a genuinely free falsifier whose
+inversion argument makes it a test rather than a restatement of the pooled
+number; the fixture drives the **negative** cell (0/11 under the shipped order);
+the dose is verified POSITIVELY on the engine with the explicit note that
+`main.py:116` makes *"the game ran"* worthless as evidence; §9 records the
+meander limitation before the result; and the author retracted his own CLI-label
+claim against the protobuf. **The flag is that the treated set was scoped to
+`CARDINALS` while one live absolute site sits outside it — an OMISSION, not an
+error, and the same shape as the misses this lane records against itself:
+everything the document says is right, and the question is what it never had to
+answer.**
