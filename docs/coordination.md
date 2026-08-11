@@ -30688,3 +30688,100 @@ PROBE whose comment advertises its own control arm — "False == LOKI-4 exactly"
 Did that probe ever produce a recorded result?** If it did, the peck plank has
 evidence already and may not need a leg; if it did not, the live line has been
 silent for fourteen iterations on an unresolved probe.
+
+## 2026-08-11 07:4x CEST (05:4xZ) — BUILDER s29 WRAP: PROCESS DELTAS
+
+**Magnus called the wrap. State: v104, 1680, rank #23/117, 728 matches,
+`RULE=held`, net_act +65, drawdown −18. Nothing shipped. Nothing rolled back.**
+**⚠ I owed these as I went and appended none — the omission is delta zero and
+these are reconstructed from the tape.**
+
+### D41 — A HANDOVER BLOCK IS A CLAIM WITH AN EXPIRY DATE, AND A SUCCESSOR CANNOT NOTICE THAT IT EXPIRED
+I booted, read HANDOVER, ran the gate, picked cells, verified a tree, and got
+**one commit from activating LOKI-17 — withdrawn by its own author five hours
+earlier** (`c91c078`). The block was written 17:31; the kill landed 22:03.
+**⇒ A plank's death is written to HANDOVER IN THE SAME COMMIT that kills it, or
+it is not written.** A wrap-time sweep is too late. Mechanised as
+`tools/plank_status.py`.
+
+### D42 — BEFORE PRE-REGISTERING A MECHANISM METRIC, ASK WHAT IN THE DIFF CAN CHANGE IT
+LOKI-17's primary sat downstream of a `can_fire_from` guard it never touched:
+~100% in BOTH arms. **Not a pre-satisfied bar — an INERT one.** No possible
+result was informative. Cheapest check in the repo and it did not exist.
+Applied immediately to LOKI-19: dose verified **777 → 3,005** before any bar
+was written.
+
+### D43 — "SAME COLUMN" IS NOT "SAME MEANING" WHEN THE COLUMN IS KEYED TO A PER-ROW FIELD
+`throws.tsv` reads 0.00% across 172,547 kidnap throws. **Nearly retired the
+kidnap line** — LOKI-14's whole mechanism. Real cause: `replay_throws.py:134`
+admits only `kind=="INSERT"` into `active`, so every other kind has those
+columns **never computed**. **RETREAT is SAME-TEAM and identically zero across
+24,277 rows, which is what falsified my FIRST published cause** (I said team
+keying; wrong). **And my first version of the check split on team, pooling the
+dead RETREAT rows into the half it printed as healthy — the check committing the
+defect it was built to catch.**
+
+### D44 — A CHECKER'S SILENCE IS NOT EVIDENCE WHEN ITS PREDICATE WAS NEVER TRIGGERED
+`claim_check` said nothing about `unrated_run.sh` for an hour — because the file
+made no claim. I wrote the mutation-test record; **it went red within minutes, on
+the same author, in the same session.** Cleared with an external record, **not by
+widening the checker: the worst day to loosen a guard is the day it first fires.**
+
+### D45 — AN ACTOR SHOULD NOT LEARN ITS OWN ACTIONS BY OBSERVING THE WORLD
+`rate_budget` was patched THREE times today (attribution glob, a blind state
+failing open, a ~25s lag) and all three are the same shape: the meter learns what
+WE did by reading the platform's late, incomplete, ambiguous view. **The runner
+knows it fired the instant it fires.** Now a PERSISTED ledger of every attempt —
+accepted and rejected — and `max(meter, ledger)`. The platform read survives as
+the cross-lane view, which is the only thing it could ever answer honestly.
+**Cost of learning this: 3 activations, 15 rejections, zero games.**
+
+### D46 — SUBMITTING IS SHIPPING
+`fcode submit` AUTO-ACTIVATES. Documented in `docs/fcode-cli.md:262` for days —
+**and that file is in no lane's boot sequence, while CLAUDE.md carried a
+procedure that only makes sense if the fact were false.** ⇒ **A fact recorded in
+a reference doc and contradicted by the always-loaded file is a fact nobody has.**
+Fixed on three surfaces, ordered by how little they need a reader:
+`submit_clean.py` restores the holder itself · CLAUDE.md · `builder.md`.
+
+### D47 — A FIX CAN CARRY THE FAULT ONE LAYER OVER
+I retired the broken ring decoder and tracked the correct one — turning **"wrong
+decoder, green test" into "right decoder, NO test"**, on the instrument two live
+results depend on. **Ask of every fix whether the replacement has the property
+you just condemned, measured on a different axis.**
+
+### D48 — PROSE CAN CARRY AN UNDEFINED TERM INDEFINITELY; A FIXTURE CANNOT
+Three lanes discussed `hold_any` vs `hold_pinned` for hours, agreed a definition,
+and made it **the deciding call of an amendment** — and nobody checked the tool
+implemented EITHER under those names. Names were matched to series **by position,
+not by semantics.** **Caught the moment a forced-answer cell existed.** Containment
+was structural: Amendment 2a's "hold_any carries NO BAR" clause meant the
+mislabelled number could not bear weight — **a guard written for a different
+reason.**
+
+### D49 — THE QUEUE RUNS LIFO, AND THAT IS HOW THE OLDEST LIVE DEFECT SURVIVES A DAY OF DILIGENT FIXING
+Side-lane catch, and it is about attention order rather than any one bug. I fixed
+everything raised in the last two hours, fast — while `audit_trigger` sat
+**suppressing its own alarm all day** (24h numerator, unwindowed denominator; its
+"21 decision rows in the last 24h" are all ≥34h old) and it is the mechanism that
+summons an audit session. **Neither of us would have noticed from inside it.**
+
+### D50 — THE EXIT CODE BEHIND A PIPE IS THE PIPE'S STATUS
+Bit me twice in one session (`plank_status --all | tail` → 0 while printing
+STALE; the abort test read 0 through `| tail -5`). **A guard verified through a
+pipe reads PASS unconditionally.** Same family as `fcode status` exiting 0 while
+printing `Error: True`. ⇒ **Print a load-bearing token and gate on its presence.**
+
+### D51 — SEVEN UNITS-NOT-DATA INCIDENTS IN ONE DAY IS NOT CARELESSNESS
+45° vs exact-ray · two `undamaged` · three "forward" · `hold_any`/`hold_pinned` ·
+four at once in `throws.tsv` · rated vs unrated arrival (**39.5% vs 23.3%**) ·
+a bar calibrated on one granularity read on another. **This project computes the
+same quantity in two places and names it once.** The in-arm rule and a peer
+re-deriving the arithmetic are what caught them — **no assertion catches "you
+compared the right number to the wrong number."**
+
+### D52 — A FALSE-POSITIVE FIRST FIRING TRAINS AN ALARM AWAY
+`plank_status`'s first live firing was wrong (a `_det_` mirror read as the plank
+moving); its second was wrong too (substring: `loki1` matched `loki16/17/19`).
+**Both fixed on the day rather than documented.** An alarm nobody believes is
+decoration with an exit code.

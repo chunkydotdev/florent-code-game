@@ -103,8 +103,15 @@ def artefact_paths(plank, cwd=ROOT, include_mirrors=False):
     plank, built as another plank's control, is not this plank moving."""
     out = git("ls-files", cwd=cwd).splitlines()
     p = plank.lower()
+    # ⛔ WORD-BOUNDARY, NOT SUBSTRING. Plain `in` makes "loki1" match loki16,
+    # loki17 and loki19, so ANY commit to a later plank reported loki1 STALE.
+    # Caught at the s29 wrap by the tool's own --all run: `1 STALE: loki1` with
+    # no loki1 artefact having moved in two days. A false positive is how an
+    # alarm gets trained away, which is the failure this tool exists to prevent
+    # -- so it is fixed rather than documented.
+    pat = re.compile(rf"(?<![a-z0-9]){re.escape(p)}(?![a-z0-9])")
     hits = [f for f in out
-            if p in f.lower() and (f.startswith("docs/") or f.startswith("bots/"))]
+            if pat.search(f.lower()) and (f.startswith("docs/") or f.startswith("bots/"))]
     if include_mirrors:
         return hits
     return [f for f in hits if not _is_mirror(f)]
