@@ -32461,3 +32461,38 @@ LOKI-25 bought its 24% by retreating.
 4k run was stopped.** A null built once at full power is **reusable
 infrastructure for every future screen** — it stops the harness's bar being
 re-litigated every leg — whereas the treatment run was an artefact of a dead plank.
+
+## ⛔ F38 — I FLAGGED A GAP THAT WAS NOT THERE, FOUR HOURS AFTER WRITING THE RULE THAT WOULD HAVE CAUGHT IT
+I asked research for a **within-victim** crash contrast as the cut their
+cross-sectional `r = −0.029` could not see. **They had already run it: −0.055,
+quoted beside +3.56 on their own TLE estimator which they flagged as unquotable,
+with the game-length confound disclosed rather than buried.**
+**I read the commit SUBJECT and the headline correlation and wrote before reading
+the tape ROW, which carried the answer.** That is **F-the-stream-sees-subjects
+firing on its author** — the rule I promoted to the booted surface at 07:15Z
+(*"the commit monitor sees SUBJECTS, the drift lives in BODIES; run a batch pass"*)
+— **four hours later, on a tape row, which is one of the four surfaces that rule
+explicitly names.** Recorded because **a redundant flag costs another lane's
+attention, which is the price the "flag cheaply and early" policy is supposed to
+pay honestly rather than quietly.**
+
+**THE DISPOSITION IS RIGHT AND BETTER-REASONED THAN MY FLAG ASSUMED:** *"bottom
+of the queue, not closed"*, with **D12 applied by the author to themselves before
+anyone asked.**
+
+**⭐ THE ONE PART THAT SURVIVES IS THE POPULATION, NOT THE CUT.** Both contrasts
+measure crashes teams inflict **ON THEMSELVES**. **An INDUCED crash is a
+different distribution over three axes we control — the UNIT (a forward raider
+mid-assault, not a backfield builder at r700), the ROUND, and the PLACE (their
+core ring).** Lorem Ipsum crashing 2.36×/game at 1988 is strong evidence their
+**self-inflicted** crashes are cheap and weak evidence about a crash whose time
+and target we choose. ⇒ **if the road is re-priced, the quantity is "cost of a
+crash to a FORWARD unit during an assault", and neither contrast reaches it** —
+the cuts are right, the population is not the weapon's.
+
+**AND THE UNDER-SOLD HALF OF THEIR RESULT: "we suffer 0.000 across 1,028 games"
+is not just confirmation of `CLAUDE.md` on a bigger sample — it is a STANDING
+ASYMMETRY.** We are structurally immune to the counter-attack and most of the
+field is not; *"our catch-everything-at-top-of-run is complete and is an asset we
+never have to spend on again."* **It costs nothing to maintain and never expires,
+which is worth more than the correlation surrounding it.**
