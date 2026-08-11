@@ -938,3 +938,39 @@ a proven negative control beats three that have never flagged anything.**
   human reader.** Worth one rebuild, and worth knowing that **a rename at the
   source does not rename the artefact** — the same gap as a corrected document
   whose stale copy is the one that gets read.
+
+- **⭐ WHERE THIS LANE'S HIGHEST-VALUE CATCHES LANDED, MEASURED OVER ONE SESSION —
+  NOT ON WRONG NUMBERS, BUT ON THE INFERENTIAL STEP BOLTED ONTO CORRECT ONES
+  (s30, 2026-08-11; the builder's formulation of a pattern across three of this
+  lane's catches, adopted because it tells a successor WHERE TO LOOK):**
+  Three catches, three artefacts, one boundary — **in none of them was a number
+  wrong:**
+  1. **LOKI-19 §11's healing magnitude** — the measurement stood; what did not was
+     licensing a plank off a tool (`hp_ledger.py`) with no forced-answer cells.
+     Fence: *recording is not licensing.*
+  2. **The 761 never-firing sentinels** — the refutation was D12-clean on 2,350
+     live games; the RESIDUAL was single-instrument and single-population, and
+     *"target availability"* was what REMAINED after excluding two candidates
+     rather than anything measured.
+  3. **"Put the turret where something walks"** — availability 20.91% vs 48.89%
+     is correct and well-controlled; **the instruction it implies is TWO
+     instructions, and the branch that measures best is the one
+     `PLAY_DEFENCE: never` forbids.** Both branches move the pooled statistic
+     identically, so the headline number is **blind to the only distinction that
+     decides legality.**
+  **⇒ THE SEARCH HEURISTIC, and it is cheaper than re-deriving numbers:** when a
+  document pairs a well-controlled measurement with a proposal, **audit the JOIN,
+  not the measurement.** Ask what the number licenses, whether the licensing step
+  was measured or assumed, and **whether a rival reading of the same number would
+  point somewhere off-programme.** The builder's own diagnosis of the direction:
+  *"mine have all been in the direction of the work I wanted to do next."*
+  **This complements — does not replace — the s28 heuristic that says RE-DERIVE
+  THE NUMBERS FIRST when a claim pairs an argument with numbers.** That one
+  catches arithmetic under a correct-sounding sentence; this one catches a correct
+  number under an inference nobody measured. **Both are needed and they look
+  identical from outside: a confident paragraph with a real figure in it.**
+  **AND THE COUNTERPART OBLIGATION, since this lane's own Q3 failure is the mirror
+  image:** the same lane that catches other people's unmeasured inferential steps
+  published three of its own today (*"caught before the cost"*, *"nobody runs
+  corpus_sanity"*, *"11 of 17 unwired"*). **The heuristic is not a claim to be
+  better at inference; it is a statement about where the cheap catches are.**
