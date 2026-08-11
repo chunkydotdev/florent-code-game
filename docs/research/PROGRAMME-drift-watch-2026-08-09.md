@@ -1049,3 +1049,50 @@ a proven negative control beats three that have never flagged anything.**
   CENSORED for games with no kill; `kill_speed_score`'s buckets already give the
   principled treatment — no kill is the −10 bucket, i.e. the worst outcome, not
   missing data.**
+
+- **⭐ A SATURATED CHECK IS THE MOST CONVINCING-LOOKING THING THAT CAN BE WRITTEN
+  DOWN (s31, 2026-08-11T12:41:32Z; this lane's catch, research's formulation and
+  independent verification, promoted here because their instance file is not in
+  any lane's boot path):**
+  `SEAT-AND-MAP-ASYMMETRY-2026-08-11.md` §1 read *"sixteen cells are fitted
+  exactly by two parameters… with no residual"*, under three ✓ marks. **It
+  consumed exactly TWO observed quantities and solved for TWO free parameters**
+  (`t=(a+b−1)/2`, `s=a−t`). **Driven to the other verdict by its own author at
+  this lane's request, it cannot produce one: worst residual over all pairs
+  INCLUDING NONSENSE = 1.11e-16, and the pair (0.99, 0.99) receives a clean
+  `s=0.500, t=+0.490`.** The three ✓ were the identity restated.
+  **WHY IT OUTRANKS AN ORDINARY BAD CHECK: it was the demonstration for the ONE
+  claim in the document that stops a repricing of every past verdict this project
+  has produced.** The load-bearing claim carried the weakest possible support and
+  **looked like the strongest** — an exact fit and a row of ticks. **The same file
+  reported the residual it denied** (heterogeneity χ²=15.93, 7 df, **p≈0.026**):
+  one question, one file, opposite answers, one author. D14 without two documents.
+  **⇒ THE MECHANICAL FORM, research's, and it is cheap enough to apply at review
+  time: COUNT THE FREE PARAMETERS AGAINST THE OBSERVED QUANTITIES BEFORE PRINTING
+  A ✓. If parameters ≥ observations the fit is an identity and carries zero
+  evidence, however many decimal places it agrees to.**
+  **⇒ AND THE REPAIR GENERALISES FURTHER THAN THE FAULT.** What replaced the fit
+  was **algebra from the DESIGN**: each arm plays 512 games in each seat, so its
+  pooled rate is `[(s+t)+((1−s)+t)]/2 = 0.5 + t` and `s` cancels identically.
+  Stress-tested by the author across `s` = 0.541 / 0.95 / **0.30 (advantage
+  REVERSED)** / 0.50 — `t` recovers **−0.02195 in every case** — and under a
+  seat×treatment interaction (`t_A=−0.05, t_B=+0.01`) the pooled figure recovers
+  **exactly `(t_A+t_B)/2`**. **Unbiased regardless of the effect's SIZE, its
+  DIRECTION, and its variation BETWEEN arms.** ⇒ **When a property of the DESIGN
+  can do the work, prefer it to a fit on the data: a design argument cannot be
+  confounded by the data it is arguing about, and it stops depending on sections
+  that may later be retracted** — which is what happened here within four minutes.
+  **COMPANION, same session, the same fault from the opposite direction (research's
+  line, worth carrying verbatim): *"the larger n made the wrong population feel
+  like the stronger evidence."*** Their §3 died on a population control — the local
+  battery is v104 against a near-identical copy of itself and **NEITHER platform
+  population contains that matchup**. Beside `meta_join`'s coverage gap, where a
+  **fresher** surface felt like a **completer** one, this gives the general form:
+  **SIZE AND RECENCY BOTH IMPERSONATE VALIDITY, AND NEITHER IS IT. Ask what
+  population a number is FROM before asking how big or how new it is.**
+  **SELF-APPLICATION, recorded against this lane:** I was handed that §3, audited
+  the three attack surfaces its author offered, cleared two — **and the killing
+  defect was a population/fixture mismatch, which is the UNIFIER at the top of
+  this very file.** I checked the column names. **The author found it themselves
+  in four minutes. Auditing the doors a document opens is not auditing the
+  document.**
