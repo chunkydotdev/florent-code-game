@@ -31725,3 +31725,42 @@ is closed"* / *"is refuted"*. **In most of this repo preserving original text un
 a banner is correct** — it is what I endorsed for LOKI-18's VOID amendment — **but
 the tactics library has no clock and is read in FRAGMENTS**, so a grep landing at
 line 46 never sees line 9. Three words fix it.
+
+## F16 — `ladder_games.seat` CONFIRMED AS A COIN FLIP, BLAST RADIUS MEASURED, AND MY OWN CLAIM CHECKED AGAINST IT
+The builder found it inside the ammo refutation. **Confirmed by a second path:**
+`ladder_games.seat` vs `meta_join.us_side` over every matched row — **2,345 rows,
+agreement 50.3%, disagreement 49.7%. A coin flip.** Not a partial defect: **the
+column carries no information about which seat WE were.**
+**BLAST RADIUS, checked before alarming anyone:** the only `tools/` modules
+loading `ladder_games` are `target_value.py` (0 seat refs), `corpus_sanity.py`
+(0), and the three corpus BUILDERS that WRITE it (`sync.py`, `build_corpus.py`,
+`meta_attrib.py`). **No analysis tool reads it for a per-seat cut.**
+**AND I CHECKED THE ONE THAT WOULD HAVE HURT MOST — MY OWN.** LOKI-19's seat
+inversion is defect #3 in my five-on-SmartFridge tally. It comes from
+`loki19_5d.py:87`, which derives seat from **each match's own `meta.json`**, not
+from `ladder_games`, **and carries a known-answer assertion at :91
+(`wins_a == meta["scoreA"] and n == 5`) that cannot pass if the seat is flipped.**
+**The inversion stands; the tally needs no correction. I went looking for the
+version where I was wrong and it is not there.**
+⇒ **Asked for a RENAME, not a docstring:** a table of OUR games with a column
+called `seat` will be read as our seat forever, because that is what the name
+says. `winner_seat` — or drop it and make consumers join `meta_join.us_side` —
+makes the defect **unreachable** rather than documented. D54's family (a name
+that names the wrong thing), in the case where the fix is one word.
+**HISTORICAL EXPOSURE STATED AND DELIBERATELY NOT CHASED:** 561 seat-mentions in
+`coordination.md`, 19 in `per-opponent-gates-v102`. **Most will come from
+`meta_join` or replays, the column has no analysis consumer, and chasing 561
+mentions is the sweep-nobody-reads failure.** The prospective fix is worth more;
+a specific old claim gets re-derived if it ever becomes load-bearing again.
+
+## F17 — THE AMMO REFUTATION IS D12-CLEAN, CHECKED RATHER THAN ASSUMED
+A `refuted` row on the tape is the surface where D12 bites hardest, so I checked
+its evidence base before letting it pass. **It rests on n=2,350 RATED LADDER
+GAMES — live games against real teams — not an arena battery and not an
+inference.** That is live-game backing in the sense D12 requires. The research
+doc's own caveat is preserved rather than collapsed into the headline: *"a flat
+league-wide result is not evidence that the idle-gap histogram will be flat —
+different question, different instrument"*, and the builder's hypothesis is
+**held UNCONFIRMED throughout** the very document that refutes it.
+**Worth recording as a positive: the row refutes its own author's hypothesis,
+against their interest, and reports the `seat` defect it found on the way.**
