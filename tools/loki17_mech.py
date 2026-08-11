@@ -95,6 +95,8 @@ def main(argv):
     bot = argv[0]; seeds = int(argv[1]) if len(argv) > 1 else 4
     maps = ["fjordgate", "atoll", "saga", "snowflake", "jackpot"]
     tot = hit = 0; d2s = []
+    fwd_tot = fwd_hit = 0                      # forward-sited subset (see below)
+    games = 0
     with tempfile.TemporaryDirectory() as td:
         for mp in maps:
             for s in range(seeds):
@@ -104,14 +106,33 @@ def main(argv):
                        "--replay", str(out), "--seed", str(1000+s)]
                 r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
                 if not out.exists(): continue
-                for team, d2, ok in decode(out):
+                games += 1
+                # ⚠ decode() yields FOUR fields. It yielded three until d2own was
+                # added, and main() was never updated -- so this tool raised
+                # `ValueError: too many values to unpack` on every invocation and
+                # CANNOT have produced any number now in circulation. Found
+                # 2026-08-11 by running it. Anything sourced to this tool before
+                # that date came from a different code path and must be re-derived.
+                for team, d2, ok, d2own in decode(out):
                     if team != 0: continue          # OUR side only (seat A)
                     tot += 1; d2s.append(d2); hit += ok
+                    # FORWARD subset: nearer the ENEMY core than our own. The
+                    # plank edits `_try_forward_sentinel` only, so this is the
+                    # population it can actually move; the headline stays ALL
+                    # sentinels because that is the population Amendment 1b's
+                    # 50.4% baseline was computed on. Reported, never a bar.
+                    if d2 < d2own:
+                        fwd_tot += 1; fwd_hit += ok
     if not tot:
         print(f"{bot}: no sentinels decoded -- cannot measure"); return 1
     d2s.sort()
     print(f"{bot}: {hit}/{tot} shootable-on-build = {hit/tot:.1%}   "
-          f"median nearest d2 = {d2s[len(d2s)//2]}")
+          f"median nearest d2 = {d2s[len(d2s)//2]}   ({games} games)")
+    if fwd_tot:
+        print(f"    forward-sited subset (d2_enemy < d2_own): "
+              f"{fwd_hit}/{fwd_tot} = {fwd_hit/fwd_tot:.1%}")
+    else:
+        print("    forward-sited subset: 0 sentinels -- nothing forward was built")
     return 0
 
 
