@@ -54,6 +54,47 @@ OUR_TEAM = "OpenSverige"
 K = 32
 BAND_LO, BAND_HI = -80, 125      # measured reachable window, relative to us
 
+# ⛔ ABSOLUTE TARGET FLOOR — Magnus, direct, 2026-08-11: "Don't fire on targets
+# below 1650 ELO." A leg may not be aimed below this REGARDLESS of what the
+# relative band says. Wired in here because `CLAUDE.md` mandates running this gate
+# BEFORE writing a prereg, and until now the gate printed `reachable YES` for
+# teams the directive excludes -- i.e. the instrument the rule says to consult
+# actively contradicted the rule. Found by the side lane.
+RATING_FLOOR = 1650
+
+# ⭐ AND THE INTERACTION, because it is INVISIBLE FROM THE DIRECTIVE'S OWN WORDING:
+# the FLOOR is ABSOLUTE and the BAND is RELATIVE, so the constraint TIGHTENS AS WE
+# FALL. At 1689 it left 39 points of room below us; at 1666 it leaves 16; at or
+# below 1650 the admissible set collapses to "teams at or above us only" -- the
+# constraint bites hardest exactly when we are doing worst and most need reachable
+# targets. A successor reading "don't fire below 1650" at a 1640 rating will read
+# it as a mild filter when it is a near-total ban. FLOOR_WARN_MARGIN is when we
+# start saying so out loud.
+FLOOR_WARN_MARGIN = 40
+
+
+def admissible(gap: float, opp_rating: float) -> tuple[bool, str]:
+    """Both gates. -> (ok, reason). The floor OVERRIDES the band, never the reverse."""
+    if opp_rating < RATING_FLOOR:
+        return False, f"BELOW {RATING_FLOOR} FLOOR"
+    if not (BAND_LO <= gap <= BAND_HI):
+        return False, "outside band"
+    return True, ""
+
+
+def floor_warning(ours: float) -> str:
+    """Say out loud when the absolute floor has eaten the relative band."""
+    room = ours - RATING_FLOOR
+    if room < 0:
+        return (f"⛔ OUR RATING {ours:.0f} IS BELOW THE {RATING_FLOOR} FLOOR. Every "
+                f"admissible target is now STRONGER than us; there is no room below.")
+    if room < FLOOR_WARN_MARGIN:
+        return (f"⚠ ONLY {room:.0f} POINTS between our {ours:.0f} and the "
+                f"{RATING_FLOOR} floor. The floor is ABSOLUTE and the band is "
+                f"RELATIVE, so this shrinks as we fall — at {RATING_FLOOR} the "
+                f"admissible set becomes 'teams at or above us only'.")
+    return ""
+
 _OVERRIDE: dict = {}
 
 
@@ -240,6 +281,34 @@ def selftest() -> int:
             bad += 1
             print(f"          expected E={we} win={wwin} loss={wloss} reach={wreach}")
     print()
+    # ⛔ THE FLOOR MUST BE DRIVEN BOTH WAYS. A gate that has only ever returned
+    # YES has not been seen to gate. Each case pins the FLOOR against the BAND so
+    # a future edit cannot silently let the band win.
+    floor_cases = [
+        ("in band, above floor",      +40, 1700, True),
+        ("in band, BELOW floor",      -31, 1632, False),   # Askar City: the live case
+        ("in band, exactly at floor",   0, RATING_FLOOR, True),
+        ("in band, 1 under floor",     -1, RATING_FLOOR - 1, False),
+        ("above floor, OUTSIDE band", +400, 2050, False),
+    ]
+    print("  FLOOR (Magnus 2026-08-11: no targets below "
+          f"{RATING_FLOOR}) — floor OVERRIDES band:")
+    for label, gap, rating, want in floor_cases:
+        got, why = admissible(gap, rating)
+        ok = got == want
+        print(f"  [{'ok' if ok else 'FAIL'}] {label:<28} gap {gap:+5} "
+              f"rating {rating:<5} -> {'ADMISSIBLE' if got else 'NO'}"
+              f"{(' (' + why + ')') if why else ''}")
+        if not ok:
+            bad += 1
+    warn_lo = floor_warning(RATING_FLOOR + 5)
+    warn_hi = floor_warning(RATING_FLOOR + 500)
+    ok_w = bool(warn_lo) and not warn_hi
+    print(f"  [{'ok' if ok_w else 'FAIL'}] rating-dependence warning fires near the "
+          f"floor and is silent far above it")
+    if not ok_w:
+        bad += 1
+    print()
     if bad:
         print(f"*** {bad} case(s) wrong ***")
         return 1
@@ -259,14 +328,25 @@ def main(argv: list[str]) -> int:
 
     if "--band" in argv:
         rows = [(n, r, r - ours) for n, r in ratings.items() if n != OUR_TEAM]
-        rows = [x for x in rows if BAND_LO <= x[2] <= BAND_HI]
+        band_only = [x for x in rows if BAND_LO <= x[2] <= BAND_HI]
+        rows = [x for x in band_only if x[1] >= RATING_FLOOR]
+        excluded = [x for x in band_only if x[1] < RATING_FLOOR]
         rows.sort(key=lambda x: -x[2])
-        print(f"REACHABLE BAND at our {ours:.0f}: "
-              f"us{BAND_LO:+d} .. us{BAND_HI:+d}  ({len(rows)} teams)\n")
+        print(f"ADMISSIBLE at our {ours:.0f}: us{BAND_LO:+d}..us{BAND_HI:+d} "
+              f"AND rating >= {RATING_FLOOR}  ({len(rows)} teams)\n")
         print(f"  {'team':<26}{'rating':>8}{'gap':>7}{'5-0 pays':>10}{'0-5 costs':>11}")
         for n, r, g in rows:
             _e, w, l = value(g)
             print(f"  {n[:26]:<26}{r:>8.0f}{g:>+7.0f}{w:>+10.2f}{l:>+11.2f}")
+        if excluded:
+            excluded.sort(key=lambda x: -x[1])
+            print(f"\n  EXCLUDED BY THE {RATING_FLOOR} FLOOR "
+                  f"(inside the reachable band, but Magnus's directive forbids them):")
+            for n, r, g in excluded:
+                print(f"    {n[:26]:<26}{r:>8.0f}{g:>+7.0f}")
+        w_ = floor_warning(ours)
+        if w_:
+            print("\n" + w_)
         return 0
 
     names = [a for a in argv if not a.startswith("--")]
@@ -281,7 +361,7 @@ def main(argv: list[str]) -> int:
           "percentile, not the YES/NO, at the margin.\n")
     print(f"  {'opponent':<26}{'rating':>8}{'gap':>7}{'5-0 pays':>10}"
           f"{'0-5 costs':>11}  reachable   where that gap sits")
-    gaps, pays = [], []
+    gaps, pays, rated = [], [], []
     unknown = []
     for n in names:
         r = ratings.get(n)
@@ -291,10 +371,14 @@ def main(argv: list[str]) -> int:
         g = r - ours
         _e, w, l = value(g)
         gaps.append(g)
+        rated.append(r)
         pays.append(w)
         print(f"  {n[:26]:<26}{r:>8.0f}{g:>+7.0f}{w:>+10.2f}{l:>+11.2f}"
-              f"  {'YES' if BAND_LO <= g <= BAND_HI else '** NO **'}"
+              f"  {'YES' if admissible(g, r)[0] else '** NO **'}"
               f"   {percentile_of(g, gaps_hist)}")
+        _ok, _why = admissible(g, r)
+        if not _ok and _why:
+            print(f"  {'':<26}{'':>8}{'':>7}{'':>10}{'':>11}     ^ {_why}")
         played, last_gap = history(n)
         if played and not (BAND_LO <= g <= BAND_HI):
             print(f"  {'':<26}{'':>8}{'':>7}{'':>10}{'':>11}"
@@ -309,10 +393,13 @@ def main(argv: list[str]) -> int:
         print("\nno known opponents -- cannot value this target")
         return 1
 
-    reach = sum(1 for g in gaps if BAND_LO <= g <= BAND_HI)
+    reach = sum(1 for g, r in zip(gaps, rated) if admissible(g, r)[0])
     print(f"\nTARGET BAND: gaps {min(gaps):+.0f}..{max(gaps):+.0f}, "
           f"a 5-0 pays {min(pays):.2f}..{max(pays):.2f}, "
-          f"reachable {reach}/{len(gaps)}")
+          f"admissible {reach}/{len(gaps)}  (band AND rating >= {RATING_FLOOR})")
+    _w = floor_warning(ours)
+    if _w:
+        print(_w)
     if reach == 0:
         print("** NO TARGET IS REACHABLE ON THE LADDER. Even a total success "
               "here cannot be converted into rating by playing them. **")
