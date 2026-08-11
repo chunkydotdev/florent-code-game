@@ -258,6 +258,43 @@
 ##      from a second independent direction alongside the pooling bias. That is
 ##      a statement about OUR OWN stored statistics, not about an opponent's
 ##      behaviour, so D12 does not reach it.)*
+##   2c. **⭐⭐ SENTINEL SITING — THE ONE LEAD TODAY THAT COULD BE A PLANK, AND ITS
+##      TWO PROSPECTIVE FLAGS. `docs/legs/` none yet; tape row `sentinel-siting`.**
+##      Our sentinels have an enemy in their firing ray **20.91% of alive-rounds
+##      vs the field's 48.89%**, while CONVERTING an available target BETTER
+##      than they do (**39.35 vs 32.60** per 100 opportunity-rounds) and
+##      declining a shot a third as often (**1.63% vs 4.90%**). Two independent
+##      decoders on the never-fire rate; the attribution is ONE decoder with 15
+##      forced-answer fixtures and a live opponent control.
+##      ⇒ **THE PLANK IS NOT "SHOOT MORE". IT IS "PUT THE TURRET WHERE SOMETHING
+##      WALKS".**
+##      **⛔ FLAG 1 — THAT SENTENCE FORKS ON `PLAY_DEFENCE: never`, AND THE EASY
+##      BRANCH IS THE FORBIDDEN ONE.** Enemy units are most available WHERE THEY
+##      COME TO US — our approaches, our collar. **A siting change that raises
+##      availability by covering our own ground is HOME DEFENCE and is
+##      off-programme no matter how well it measures.** The legal branch is to
+##      site FORWARD, near THEIR core, to open a lane to it. **Both raise the
+##      pooled availability statistic identically, so the pooled 20.91% CANNOT
+##      TELL THEM APART.** ⇒ any prereg here states which branch it tests and
+##      carries availability measured **at d² from THEIR core**, never pooled.
+##      *(Measurement of the split is IN FLIGHT; if the deficit turns out to be
+##      concentrated in HOME sentinels, the on-programme branch has no headroom
+##      and this is not a plank.)*
+##      **⚠ FLAG 2 — "at their availability and our conversion we would fire
+##      19.24/100" IS AN UPPER-BOUND SKETCH, NOT A FORECAST.** It multiplies two
+##      rates measured on opposite sides of a 2.3x gap and assumes **conversion
+##      is independent of availability**, which is untested — a unit transiting
+##      a lane is not the same kind of target as one that wandered into a quiet
+##      corner, so conversion could FALL as availability rises. **Anything sized
+##      off 19.24 inherits an untested independence assumption.**
+##      **⛔ SIZING LIMIT (recorded in the side lane's booted drift-watch file at
+##      my own request): the RATE is two-path, the ATTRIBUTION is one decoder on
+##      one population. Nothing may be SIZED off 20.91%/48.89% until a second
+##      path reproduces the availability figure.**
+##      **AND IT IS A CORRECTNESS FIX, NOT A TRICK** — a sentinel that never
+##      fires is 30 Ti plus a permanent +20% cost-scale contribution buying
+##      nothing. Instrumental under `KILL_WINDOW_RND`; **not a Loki lever and it
+##      must not be dressed as one.**
 ##   3. **THE HEAL-RATE PLANK — LOKI-19's §11 turned into a question.** If 2
 ##      damage sits under their heal rate, the plank is not "peck" but **a dose
 ##      that clears +4 HP/builder-turn, or a target that cannot be healed.**
