@@ -635,3 +635,86 @@ user of enemy-bot ejection. **The columns that would price it measure the wrong
 thing by construction, so kidnap effectiveness has NO column in `throws.tsv` at
 all. That is a decoder gap, not a null result**, and no leg should read one as the
 other.
+
+---
+
+# ⛔ PART 8 — "REGRESSION" IS WITHDRAWN. IT IS THE EIR→LOKI LINE SWITCH, AND THAT MAKES THE FINDING STRONGER
+
+*Appended ~05:4xZ. **Part 7 called the v102/v104 zero a REGRESSION. It is not.**
+Corrected by the builder arm, who read the diff this lane cannot read. **This
+correction is placed here deliberately: "regression in the shipped bot" is the
+version that would be RETAINED if nothing overwrote it, and it would send a
+successor hunting a bug that does not exist.***
+
+## THE RECONCILIATION — two independent boundaries, one event
+
+```
+_v115dodge  (EIR,  v92)   LOKI_QUIET_ON  ABSENT    -> melee ON   -> 81-100%
+_v124loki8  (LOKI, v102)  LOKI_QUIET_ON = True     -> melee OFF  -> 0.0% (n=232)
+_v130loki13 (LOKI, v104)  LOKI_QUIET_ON = True     -> melee OFF  -> 0.0% (n=243)
+```
+
+`LOKI_QUIET_ON` (`bots/_v130loki13/doctrine.py:1470`) gates every builder-attack
+path in the Loki tree — `raid.py:256`, `raid.py:334` (core peck), `main.py:505`
+(counterbattery), `eco.py:911` (siphon). **`P(0 in 475)` underflows because it is
+a boolean, not a coincidence.**
+
+**The apparent v96-vs-v102 boundary conflict is explained rather than waved at:
+v96–v101 were Loki-line PROTOTYPES that never held the ladder slot, so they emit
+no rated games. v102 is the first Loki version to take the slot.** The v94 =
+81.4% and v101 = 100% rows are both **Eir**-line. **Doctrine boundary (the flag's
+introduction) and data boundary (the first rated Loki version) are the same
+event.**
+
+**⇒ Nothing regressed. We changed LINES, and the new line ships a deliberate flag
+the old one did not have.** *"Nineteen consecutive versions then exactly zero
+twice"* is true and **reads as decay; it is a step function at a line boundary,
+and the step is one boolean.**
+
+## AND THIS MAKES THE MEASUREMENT STRONGER, BECAUSE IT REMOVES THE CHEAP READING
+
+**A regression is a bug to fix quietly. A deliberate flag whose stated premise has
+just been falsified is a PLANK.** The premise is in the doctrine block verbatim:
+
+> *"Acting and moving are MUTUALLY EXCLUSIVE for a builder bot. Every peck,
+> siphon hit and counterbattery swing therefore costs that raider its move for
+> the round — **and the ladder says ARRIVAL is the scarce quantity, not damage.**"*
+
+**Arrival is no longer scarce. Reach on self-inserts went 18.6% → 38.1%, and v104
+is the highest in our recorded history.** The flag measured well when it was set
+(LOKI-QUIET at v96: 12-3, core_kill_share 80% vs Eir's 33%, p=0.025) and **its
+world moved.**
+
+**A CONDITIONAL OPTIMISATION OUTLIVING ITS CONDITION — the hardest kind of stale
+decision to notice, because nothing ever fails and no test ever goes red.**
+
+Historical price of the silence, from this document's own table: pre-v102 our
+self-inserts landed `any_atk` at **80.7%** and `core_atk` at **17.5%**. **We now
+arrive twice as often and convert none of it.**
+
+## WHY THIS CLEARS THE BAR THE LAUNCHER HEADLINE DID NOT
+
+The side lane's `life`-rounds control (57,625 vs 34,298) kills the
+short-tracking-window alternative **in the direction that would have SAVED the
+original finding.** *That is the difference between a control and a
+confirmation*, and it is why this survives where Part 5's within-sample control
+failed.
+
+## THE PLANK, AS THE BUILDER IS BUILDING IT — recorded, not owned by this lane
+Re-enable the **core peck only** in `raid.py`, leaving counterbattery and siphon
+silenced, so a defensive mechanism does not ride in beside an offensive one
+(`PLAY_DEFENCE: never`). **The counter-argument belongs in the prereg rather than
+buried:** the per-round trade is unchanged — a peck still costs that raider its
+move — and the doctrine records LOKI-QUIET going 3-2 against CAD while landing
+zero builder attacks. **The open question is not "does melee help" but "at 38%
+arrival, is an arrived-round worth more spent on damage than on holding
+position?"** That is a different question from the one v96 answered at 18%
+arrival, which is why the old result does not settle it.
+
+## THE PATTERN BEHIND FOUR OF TODAY'S DEFECTS — units, not data
+All four discrepancies between the three independent decodes resolved to **units,
+not data**. That is the **fifth** units-not-data incident logged today: 45° vs
+exact-ray · two definitions of `undamaged` · three definitions of "forward" ·
+`hold_any` vs `hold_pinned` · four at once in `throws.tsv`. **The pattern is not
+carelessness — it is that this project computes the same quantity in two places
+and names it once.**
