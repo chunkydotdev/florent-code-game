@@ -36634,3 +36634,79 @@ IT NEEDS MAGNUS'S HAND.**
 their findings are committed — caveat pass (`b9977cb`-era), sweep 24 (`c671b00`),
 sweep 25, instrument-vs-decision audit and adversarial lane audit (both summarised
 into `coordination.md` and acted on; **neither wrote a document, by instruction**).
+
+# ============================================================================
+# 2026-08-11T21:1xZ (`date`) — **SIDE LANE s32 WRAP — PROCESS DELTAS + STATE.**
+# Retro ran FIRST (`docs/retro-side-lane-2026-08-11-s32.md`, instrument v1.2,
+# FIRINGS 2). Ledger: **prevented 6 · caused 0 · nearly caused 1.**
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**S1. ⭐ MY CHARACTERISTIC FAILURE COLLAPSED TO ONE SHAPE, FOUR TIMES: I INFERRED
+FROM AN ARTEFACT INSTEAD OF OPENING THE PRIMARY.** *(behaviour change → promoted
+to the booted drift-watch, `4fd17f7`.)* A `--stat` read as an audit · a docstring
+read as the code · an ALERT line read as the whole event · an arm file read as
+the holder — **the last inside the sentence recommending the primary it
+skipped.** ⇒ **one question before any flag leaves: which artefact am I reading,
+and what is the primary it stands in for?** And the direction is stable per lane:
+**all four of mine ran toward the COMFORTABLE reading.**
+
+**S2. ⭐ FLAG THE DEFECT WITH ITS FIX.** *(behaviour change → booted, `4fd17f7`.)*
+**Six flags became enforced code** against s28's three, and the cause is not
+effort: **every one arrived with a buildable replacement.** The `tled` bar
+arrived with its field, its file, its live column and its positive control — and
+became the **v114 SHIP GATE.** ⚠ Cost: the auditor then owns a design opinion and
+must label it as one.
+
+**S3. A CLOSURE DESERVES A HARDER READ THAN A FINDING.** *(research's sentence,
+adopted.)* Their kidnap closure was published on an estimator **selected on its
+own outcome** — the thrown arm is conditioned on having survived to be thrown,
+and "survived" includes the outcome. Corrected, **the sign REVERSED**
+(−0.080pp → **+0.265pp**) and a road closed for zero rated matches reopened.
+**The selftest could not see it: every fixture row held timing identical in both
+arms**, so exposure and selection were equal by construction.
+⇒ **The clause no assertion touches is where the defect is.**
+
+**S4. A GUARD'S STATE IS PART OF THE GUARD.** `overnight_watch.sh`'s monotonicity
+fix could not fire on a **first poll** (`MAXROWS` per-process, `hwm` defaults 0),
+which is exactly the case that produced the incident. **A stateful guard has a
+blind first cycle; prefer a stateless precondition** — *"spec names shards,
+directory has none, refuse"* — which is what shipped (exit 3, driven).
+
+**S5. AN ABSOLUTE THRESHOLD AGAINST A RELATIVE BAND CHANGES MEANING AS THE
+BASELINE MOVES.** `TARGET_RATING_FLOOR: 1650` left **39 points of room below us
+when written at 1689, 16 at 1666, and NONE at 1663** — it already admits only
+teams at or above us. **Not a criticism of the field; a property invisible from
+its own wording**, and any absolute constant beside a relative band needs it
+stated.
+
+**S6. A FILTER MUST NAME ITS CASUALTIES.** `target_value.py` now prints the
+EXCLUDED-BY-FLOOR teams with the reason. **A gate that silently drops rows cannot
+be audited against the rule it implements.**
+
+## STATE — read at wrap, not asserted (21:1xZ)
+* **v114 (Loki v4 = `_v146gunaxis`) holds the ladder**, shipped 19:14Z. Last
+  `ship_watch` row read by me: **k=5, 1674, peak 1686, drawdown −12.0,
+  `armed=False RULE=unarmed`.** ⚠ **It arms at k=8 — that is the decision point,
+  not k=12.** Clause **(b) of the ship rule is UNRESOLVED, not passed.**
+* **8 local shards running**, `corefill` up, queue **7 unblocked**, no alert files.
+* **My four propagation instances are CLOSED — verified, not assumed:** the
+  retired `PLAY_DEFENCE` returns **0 hits in all three `.claude/commands/*.md`.**
+* **⛔ AND A FIFTH IS OPEN AND IS MAGNUS'S:** research's **D86** —
+  `.claude/commands/research.md:9` still says *"immediately launch one background
+  tactics sweep"*, with `:25-27` making it the boot step, the queue-drain
+  behaviour and the surprise response — **while that lane's own audit stopped the
+  sweeps** (61 files in 24 h, 2 cited by any decision artefact, 0 built arms).
+  **A successor boots into an instruction its own lane has retired.** Confirmed
+  by grep at wrap. **If a future audit sees a sweep launched at boot, that is
+  this gap, not drift.**
+
+## OPEN, ROUTED, NOT DONE
+1. **D86 above — Magnus's file to edit.**
+2. **The banner-concatenated CLI JSON** (`…upgrade fcode{"matchId":…}`, no
+   newline): `json.loads` breaks, a `matchId` regex silently succeeds — **the
+   failure is invisible in exactly the tools that keep working.** Builder-owned.
+3. **`cores_idle.py:31` and `PROGRAMME.md:60-62` still describe the retired
+   `n == 0` predicate** against the shipped `n < EXPECTED`. **That stale text
+   produced one of my own four errors** — the docstring read as the code.
