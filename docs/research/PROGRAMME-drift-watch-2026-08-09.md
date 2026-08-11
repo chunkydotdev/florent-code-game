@@ -1018,3 +1018,34 @@ a proven negative control beats three that have never flagged anything.**
   mechanism that SKIPS the traverse — launcher delivery — is worth more than the
   one that optimises it.** Two structural facts now point the same way and
   **neither is behavioural, so neither is what D12 restricts.**
+
+- **⛔⛔ D3 RAN ALL DAY ACROSS NINE ARMS AND THIS LANE DID NOT FLAG IT — THE
+  LARGEST MISS OF s30, RECORDED AGAINST THE AUDITOR (2026-08-11):**
+  `PROGRAMME.md:10` **`PRIMARY_CURRENCY: kill_speed_score`**; `:15`
+  **`WIN_RATE_IS_VERDICT: no`**. **`tools/h2h.sh` screened NINE ARMS on WIN RATE
+  and every verdict it produced was argued from it. That is D3 verbatim — the
+  SECOND ROW of this checklist — and the watch that exists to catch it audited
+  the screen's POWER all day and never asked what it MEASURED.**
+  **THE TWO FAULTS COMPOUND, which is why nothing survived the funnel:** a
+  **binary** outcome (one bit per game) **on a quantity the programme says is not
+  the verdict** (so a real kill-speed gain need not move it), screened at
+  **n=64** (detects only ≥ +17.5pp, against LOKI-13's +18.0pp). **A plank could
+  improve kill round substantially, be exactly what the programme wants, and read
+  50%.** **LOKI-25 is the existence proof: its mechanism bar resolved at n=25
+  while its win rate said nothing at n=64.**
+  **THE BUILDER REACHED THE RIGHT INSTRUMENT BY REASONING ABOUT INFORMATION
+  CONTENT — adding KILL ROUND, continuous, the currency's own input — WHILE THIS
+  LANE SHOULD HAVE REACHED IT BY READING THE PROGRAMME FILE IT AUDITS EVERYONE
+  ELSE AGAINST.**
+  **⇒ THE WATCH FORM, and it is this lane's own "audit the JOIN, not the
+  measurement" turned on itself: before auditing an instrument's POWER, ask
+  whether its OUTCOME VARIABLE is the programme's currency.** A perfectly powered
+  screen on the wrong quantity is worse than an underpowered one on the right
+  quantity, because its confident answers are all off-target. **Check the
+  outcome variable FIRST; the power arithmetic is only meaningful afterwards.**
+  **Corollary for the fix, handed to the builder: when a screen reports two
+  numbers, the FIRST one is the verdict whatever the docstring says — so kill
+  round must be the primary line and win rate secondary.** And **kill round is
+  CENSORED for games with no kill; `kill_speed_score`'s buckets already give the
+  principled treatment — no kill is the −10 bucket, i.e. the worst outcome, not
+  missing data.**
