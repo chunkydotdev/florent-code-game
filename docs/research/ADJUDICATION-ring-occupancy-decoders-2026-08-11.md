@@ -14,6 +14,49 @@ builder arm.
 
 ---
 
+## ⛔ CORRECTED LATER THE SAME DAY — READ THIS BEFORE THE `hold_any` NAME BELOW
+
+**`hold_any`, as THIS DOCUMENT defines it, is not implemented by `ring_read.py`
+or by anything else. The name was coined here and it names nothing.** Verified at
+the code (`tools/ring_read.py:132-133, 204-205`):
+
+```
+per_bot_tile[(eid, p)] -> "tile_episodes"   same bot, SAME tile   == hold_pinned  ✅
+per_bot_any[eid]       -> "bot_episodes"    same bot, ANY ring tile  != hold_any  ⛔ A THIRD THING
+```
+
+**`per_bot_any` is keyed by entity id, so it can never span two bots** — it
+cannot be *"≥1 of our builders anywhere on the ring"*. The RELAY cell in this
+document's own table forces it: bot A on tile T rounds 0–49, bot B on the **same**
+tile 50–99 gives true `hold_any` = 100, while `bot_episodes` maxes at 50 and
+`tile_episodes` = [50, 50]. **No series returns 100.**
+
+**⇒ AUTHORITATIVE MAPPING: `docs/prereg/PREREG-loki16b-ring-retention-2026-08-10.md`,
+`CORRECTION 1`.** Read it before using either name. Found by the builder arm;
+this pointer is placed here because **this file is the more-cited surface and the
+correction is the newer fact**, so a successor reading only this one would
+re-introduce the name.
+
+**The instruction below to "name it `hold_any` or `hold_pinned`" is therefore
+HALF WRONG: `hold_pinned` is real and is `tile_episodes`; `hold_any` must not be
+requested from a tool that does not compute it.** Everything else in this
+document — the verdict on `ring_retention.py`, the forced-answer cells, the
+tile-set and aggregation rules — stands unchanged.
+
+**No leg result moves.** *(Stated so nobody re-opens it: the mislabelled series
+was a SECONDARY row that the leg's own amendment had already barred from carrying
+a bar — a no-bar clause written for an unrelated reason contained the blast
+radius. That is the argument for writing such a clause even when it feels
+redundant.)*
+
+**AND THE GENERAL LESSON IS ABOUT INSTRUMENTS, NOT ATTENTION:** this label
+travelled through three lanes and two documents and was wrong in all of them.
+**It was not caught by anyone re-reading anything. It was caught by being forced
+to state a forced answer for a fixture.** Prose never had to answer the question;
+a cell did.
+
+---
+
 ## VERDICT
 
 **`tools/ring_retention.py` is wrong, and the axis is NOT the one anyone
@@ -163,7 +206,12 @@ Precise enough that two independent implementations produce identical numbers:
   separate, separately-named column.
 - **Snapshot** — end of round, after every update in `turns[r]` is applied.
   `turns[i]` is round `i`, 0-based.
-- **Per-game statistic** — name it: `hold_any` or `hold_pinned`. Not interchangeable.
+- **Per-game statistic** — ⛔ **see the correction at the top of this file before
+  using these names.** `hold_pinned` is real and is `ring_read.py`'s
+  `tile_episodes`. **`hold_any` is NOT implemented anywhere**; the third series
+  that exists is `bot_episodes` (same bot, any ring tile), which is neither.
+  Authoritative mapping: `PREREG-loki16b-ring-retention-2026-08-10.md`,
+  `CORRECTION 1`.
 - **Aggregation** — unweighted game-mean **within map stratum**, never pooled
   across ring sizes. Uncertainty by bootstrap resampled on **match** (5 games
   share an opponent and a scheduling instant), not on game.
