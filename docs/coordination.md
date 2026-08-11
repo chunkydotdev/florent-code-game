@@ -35051,3 +35051,47 @@ reference *"the final NULL gap"* or every share inherits the staleness. (2) the
 spawn hash's per-seat ordering is **deterministic given the anchors**, exactly
 like §4's CARDINALS rank, so a per-map covariate is computable **with zero
 games** and can be laid against the eight per-map gaps already in hand.
+
+# ============================================================================
+# 2026-08-11T18:2xZ — **SIDE LANE, PRE-POSITIONED FOR THE READ-OUT: band ≠ MDE,
+# and D14 fires on `NOISE_ON` — caught BY DESIGN this time, not by accident.**
+# ============================================================================
+
+## 1. THE TOOL'S "INFORMATIVE BAND" AND THE PLAN'S "MDE" ARE DIFFERENT QUANTITIES
+`overnight_read.py` prints `informative band 48.67–51.33%` = **1.96 × SE**, a 95%
+significance band. The plan pre-registered **`MDE ≈ 1.7pp`** — a different and
+also-correct concept — **computed at n≈7,300 when the run is at n=5,408.**
+
+| | n=7,300 (plan) | n=5,408 (actual) |
+|---|---|---|
+| SE | 0.59pp | **0.68pp** |
+| 95% band | ±1.15pp | **±1.33pp** |
+| MDE (80% power) | 1.64pp | **1.90pp** |
+
+⇒ **The plan's 1.7pp is stale by n; it is 1.90pp.** And the half that matters for
+four of five arms: **an arm whose TRUE effect equals the band edge lands outside
+the band only 50% of the time.** P(read OUTSIDE) by true effect — 1.0pp **31%** ·
+1.33pp **50%** · 1.90pp **80%** · 2.50pp **96%**. ⇒ **`NO-INFORMATION` does NOT
+mean "the effect is under 1.33pp".** The plan's *"resolves +12 Elo effects"* at
+~7 Elo/pp becomes **+13 Elo** at the delivered n.
+
+## 2. ⛔ D14 FIRES — TWO LIVE DOCUMENTS, OPPOSITE INSTRUCTIONS, NOTHING MAKES THEM MEET
+* `QUEUE.md:142` (#8): *"⚠ pin `NOISE_ON = False` in the measured copies"*
+* `PLAN-overnight-2026-08-11.md:83` (control 3): *"**DECISION: LEAVE IT TRUE** …
+  Pinning it would measure a bot we do not run. ⇒ an **explicit gate override
+  with the reason on the record**, not a bypass."*
+
+The builder resolved it correctly ad hoc in LOKI-29 Amendment 3, **reasoning from
+the control rather than from either document** — but a builder reading QUEUE #8
+first would have pinned it and silently compared across a non-treatment
+difference. **One question, two documents, opposite answers.**
+
+**⭐ FOR THE ENFORCEMENT LEDGER, AND IT IS THE POINT OF RECORDING THIS: D14's two
+prior firings were both caught BY ACCIDENT** (an unrelated D12 sweep; a git log
+read on the way past a decoder audit). **This one was caught BY DESIGN** — I read
+the plan in order to pre-position for a read-out that had not happened yet, which
+is D14's own watch form (*diff a plank's status across its surfaces before the
+decision*) being RUN rather than described. **Three firings, one by process.**
+⇒ **Fix is one edit, builder-owned: QUEUE #8's rider should POINT at the plan's
+control 3 rather than carry its own contradicting copy.** A copy cannot be
+stale-checked, only contradicted.
