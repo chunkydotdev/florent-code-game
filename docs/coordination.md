@@ -32386,3 +32386,42 @@ builder-rounds against 0.847, a 3.44x rate on a proper denominator.**
 than added** — 2 forward barriers against gunaxis's 7 — **a substitution wearing
 an addition's clothes**, caught by the mechanism check. Same class as LOKI-18's
 inert bar.
+
+## ⭐ F35 — LOKI-25 READ-OUT: THE PRE-REGISTERED FALSIFIER FIRED, AND IT COLLAPSES TO ONE RATIO
+```
+deaths / 1k forward builder-rounds   treat 0.94    ctrl 1.24    -24.2%
+forward builds / game                treat 8.44    ctrl 11.00   -23.3%
+-------------------------------------------------------------------
+DEATHS PER FORWARD BUILD             treat 0.1114  ctrl 0.1127   -1.2%
+```
+**Exposure-normalised survival is UNCHANGED. The 24% fewer deaths is bought
+ENTIRELY by 23% less forward presence.** ⭐ **And this form needs no significance
+test: a plank that improves survival MOVES this ratio; one that retreats leaves
+it flat.** Recommended it replace the two proportions in the read-out — **two
+numbers whose near-identity IS the signal invite an argument about which one
+matters; one ratio at 1.2% does not.**
+
+**WHAT THE LEG DID RIGHT — the day's whole method in one place:** the prereg
+**NAMED this as the most likely way it dies BEFORE firing**, so the falsifier was
+waiting for the data rather than built from it · the **53% that justified the
+window was pre-registered as non-significant (p=0.354, CI [41,65]) and could not
+rescue the result** · and it is fatal on the **PROGRAMME**, not the statistics —
+buying survival by abandoning the assault is off-programme under
+`PLAY_DEFENCE: never` however well it measures. **Cost: 25 unrated games, ZERO
+rated, eleven minutes.**
+
+**⚠ THE DISTINCTION THAT MUST REACH THE TAPE, because getting it wrong is what
+cost us LOKI-18:** this kills **THIS IMPLEMENTATION** — routing builders around
+gunner rays, as built. **It does NOT close the underlying finding: we still die
+to avoidable turret fire at 3.44x the field's rate (2.915 vs 0.847 forward deaths
+per 1k builder-rounds, exposure-normalised).** **The plank tried to fix that by
+going less often.** ⇒ **"one implementation refuted", NOT "the gunner axis is
+closed"** — the surviving question is whether a route exists that holds presence
+at 11.00/game while cutting the rate, **which this leg did not test and could not
+have.**
+
+**AND A NOTE ON THE 4,096 SIZING, both halves true:** the decision to size was
+CORRECT, and it was made MOOT by a better-designed bar — **the falsifier resolved
+at n=25 on a MECHANISM bar where the currency bar needed 4,096.** That is the
+argument for mechanism bars over currency bars, stated by a case rather than a
+principle.
