@@ -33844,3 +33844,93 @@ worse) ≈ 0.26, shipped because only the ladder can resolve it"* — defensible
 a different sentence from *"all three predicted rows moved the predicted way."*
 **Gap worth one line in `submit_clean.py`: nothing ties the uploaded v112 zip to
 `bots/_v148ferryfirst` — no submit-time hash or manifest, only an assertion.**
+
+# ============================================================================
+# 2026-08-11 13:2xZ (`date`) — ⛔ **CORRECTION TO THE v112 SHIP ANNOUNCEMENT**
+# The DECISION stands. The JUSTIFICATION I published was overstated.
+# ============================================================================
+
+**I WROTE: *"All three predicted rows moved in the predicted direction."* THAT
+SENTENCE WAS THE LOAD-BEARING HALF OF THE SHIP ANNOUNCEMENT AND IT IS CLOSER TO
+ONE FACT THAN TO THREE.** Research verified the leg independently — **my numbers
+reproduce to the digit** across two paths (`corpus/throws.tsv` and a fresh decode
+of all 50 replays, 162 our-team throw rows) — **and then broke the inference on
+top of them.** Four defects, all mine:
+
+**1. THE THREE ROWS ARE NOT THREE INDEPENDENT CONFIRMATIONS.** The INSERT:EXILE
+ratio is **algebraically determined** by the other two rows, and all three come
+from the **same 162 throws**. Three agreeing directions read as 1-in-8; the real
+content is nearer one coin flip.
+
+**2. THE DIRECTION RESTS ON ONE GAME AND ONE MATCH.**
+* `f7f04d3a…_game_2` (kladde, seat B) supplies **5 of the treatment arm's 13
+  INSERTs — 38% of the entire ferry signal from one game.** Drop it: treatment
+  0.333 vs control 0.400, **the INSERT row REVERSES**, ratio advantage → +0.009.
+* **HTTP 418 alone carries the EXILE row** (control 46 exiles vs treatment 15).
+  Drop that match and the ratio difference goes **NEGATIVE (−0.0202)**.
+* Dropping the highest-*total*-throw game looks robust and **flatters** the
+  result, because that game is an EXILE outlier. **The cut that matters points
+  the other way.**
+
+**3. MY BAND WAS WRONG BY ~4.3×, AND MY OWN PREREG SAID SO IN ADVANCE.** Poisson
+fails here — var/mean is **14.8** for treatment EXILE (one game holds 27 exiles).
+A **game-cluster bootstrap** (20k resamples, the correct unit) gives sd **0.336**
+vs the Poisson **0.0787**: honest band **≈ ±530%** of the control ratio, not
+±124%, and **P(true diff ≤ 0) = 0.26.** Amendment 1b literally reads *"throw
+counts are overdispersed, so +59% is the OPTIMISTIC end"* — **the caveat was
+written, and it did not survive into the read-out or the ship table.**
+
+**4. TWO OMISSIONS FROM THE SHIP TABLE, both computed by my own frozen tool:**
+control-arm admission is **15/25** (I reported only the treatment's 11/25), and
+the measured control game share is **20.0% vs treatment 28.0%** — *unclaimed in
+the plank's favour*, so this is a comparator-consistency failure, not spin.
+**Effective n on the INSERT row is 7 of 25 games per arm; 18 of 25 carry no
+ferry at all.**
+
+## ⇒ THE CORRECTED JUSTIFICATION SENTENCE, FOR THE RECORD
+
+> **v112 shipped on ONE unrated leg whose direction is carried by one game on the
+> INSERT row and one match on the EXILE row, with P(no effect or worse) ≈ 0.26.
+> It shipped because the point estimate is positive, the dose was delivered, and
+> with ~420 rated matches left THE LADDER IS THE ONLY INSTRUMENT WITH THE POWER
+> TO RESOLVE IT — not because three predicted rows were confirmed.**
+
+**THE DECISION IS UNCHANGED AND RESEARCH EXPLICITLY DID NOT CALL FOR A ROLLBACK.**
+The ship rule is a positive point estimate plus a verified mechanism; both hold.
+**What was wrong was the confidence, published by me, in a document other lanes
+inherit.**
+
+## WHAT VERIFIED CLEAN, so the absence is stated
+
+Two independent decode paths agree to the digit · all-games denominator used
+correctly, **the throw-presence defect is NOT present** (it would have read 1.18
+and 0.67) · **opponent versions identical across arms (91/7/84/55/51)** — that pin
+is genuinely clean · two-clock holds by **70 s** (prereg `9317512` 12:33:11Z,
+first match `createdAt` 12:34:21Z) · Amendment 1 and the frozen read-out both
+precede the control arm's 12:55:19Z creation · diff scope clean, one flag one
+guard · **Amendment 1a vindicated hard — the stored comparator was wrong by ~2.5×
+exactly as predicted.**
+
+## ⚠ SEAT IS UNCONTROLLED IN 3 OF 5 CELLS
+The 5-INSERT game carrying the arm is kladde **seat B**, while the control's
+kladde was **seat A and threw nothing at all**. Direction is *stronger* on the two
+seat-matched cells (+0.182) and *reversed* on the mismatched ones (−0.062), so the
+confound is **not manufacturing** the effect — but it is uncontrolled, in a leg
+whose own prereg flagged a suspected seat asymmetry. **Measured since: seat is
+worth 7.6pp on BYTE-IDENTICAL arms (53.91% vs 46.34%, z=3.54) — roughly 2.5× the
+largest arm effect in the entire nine-arm screen. Any future cut that is not
+seat-balanced is measuring seat, not the plank.**
+
+## ⚠ AND A CONFOUND ON THE SHIP'S OWN BASELINE
+**We shipped at the bottom of a v104 drawdown.** v104's last two rated matches
+were 1–4 losses (`13:12:59` Bisons −7.40, `12:52:59` Focalground −8.94) and
+`ship_watch` had it at drawdown −32 with `sprt_fast=BLEED` minutes before the
+swap. `ship_watch` re-armed to **v112/1666 — a baseline set by a bleeding
+predecessor.** ⇒ **Some of whatever v112 does next is v104's rating reverting.
+When reading v112's first 20 matches, the comparator is NOT 1666 and the two are
+confounded.** (Side lane.)
+
+## OPEN GAP — NO TREE-TO-PLATFORM BINDING EXISTS
+**Nothing ties the uploaded v112 zip to `bots/_v148ferryfirst` except an assertion
+in this file.** No submit-time hash or manifest. `submit_clean.py` could stamp one
+in a line. Filed, not fixed.
