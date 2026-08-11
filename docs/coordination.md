@@ -32181,3 +32181,53 @@ Output contract: source file + `file:line` diff + one-line mechanism claim +
 precondition MEASURED/UNMEASURED. **I verify every precondition against the
 corpus before relaying — the sweep-22 lesson (an agent's number reached the
 builder at −8.00pp against my own re-derivation of −6.55pp).**
+
+## F28 — FOUR HEAD-TO-HEAD IDEAS TO THE BUILDER (Magnus's trigger), AND THE VEIN THAT PRODUCED THEM
+Sent one at a time, per this lane's own per-artefact finding. Each carries a
+`file:line`, a one-line mechanism claim, and a precondition **measured or
+explicitly marked unmeasured.**
+1. **`LOKI_BARRIER_SEAL_ON = False`** (`doctrine.py:1209`). **NOT LOKI-20 — I
+   diffed the tree first: LOKI-20 is a pure REORDER** (*"the forward sentinel is
+   tried FIRST, and the barrier seal becomes the FALLBACK. Ordering only"*) and
+   **the seal is still `True` in `_v137loki20`.** Priority vs presence. The
+   seal's own premise is a SIEGE model (*"a siege that does not out-heal the
+   defender never converts"*) and **diverge kills at r92 without a siege, and the
+   defence is throughput-capped at ~6 HP/round against one sentinel's 9.**
+2. **Cap the heal budget** — **245.9 heals vs 42.2 builds per game (v104, 1,645
+   files): ~6 builder-actions healing for every 1 building.** Healing our own
+   buildings is DEFENCE and `PLAY_DEFENCE: never` postdates the flags.
+3. **The roster** — two bodies at the opening, reached BY ELIMINATION and labelled
+   as such.
+4. **The heal cluster is FOUR flags, and `POP_CEILING_LIFT_ON` prices a body at
+   "+4 HP/round ON A SEAT"** — **we buy population in a healing currency the
+   programme no longer spends.**
+
+## ⭐ F29 — A NEGATIVE THAT PROTECTED THE LEG FIRING RIGHT NOW, AND FALSIFIED OUR OWN DOCTRINE
+I went to propose lifting the harvester prerequisite alone and **measured it
+first: v104, 1,634 games — 1st harvester median r5, 2nd median r9, and 92.9% of
+games hold two by r25.**
+* **CONSEQUENCE 1, reassurance:** `_try_forward_sentinel` returns False below
+  `LOKI_FWD_MIN_HARV = 2` (`raid.py:409`), so a reorder that puts it first still
+  cannot plant before the 2nd harvester. **It is NOT binding in the r20–25 window
+  — LOKI-20 can fire.** Handed over rather than discovered in a read-out.
+* **CONSEQUENCE 2, falsification:** the rush block claims the prerequisite is
+  *"the single biggest source of delay: it structurally forbids the r14–r22
+  plant."* **It does not — we clear it at r9, five rounds before the earliest
+  specialist plant.** So the rush spent its headline lift on a gate already open,
+  **which may be part of why it lost 25% head-to-head: two of its three lifts
+  were confounded with one that bought nothing.** ⇒ **`LOKI_FWD_MIN_HARV` alone is
+  measured shut before it costs a window.**
+
+**AND TWO FLAGS EXAMINED AND NOT PROPOSED, recorded so the vein reads as worked:**
+`SIPHON_DENY_ON = True` is **dead code under `LOKI_QUIET_ON`** — it ranks a builder
+PECK and the quiet flag bans all melee, **so it wakes up as an unpriced passenger
+if QUIET is ever flipped back for LOKI-19's pooling.** `PAVE_TRAIL_ON = False` is
+off because *"the titanium this buys does not score"* — **half-right: the
+directive says economy is INSTRUMENTAL, so the question it never asks is "does it
+buy the KILL?"** Not proposing a flip (the census finds fast killers run SMALL
+early build budgets, ρ=−0.415), but the stated reason does not follow.
+
+**THE VEIN, for whoever mines it next: of 33 booleans in `doctrine.py`, the three
+that produced ideas were the ones whose comment stated a MEASURED condition I
+could go re-check. The rest state design rationale with nothing checkable in it.**
+Returns dropped sharply after the first six flags.
