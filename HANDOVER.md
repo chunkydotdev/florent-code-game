@@ -34,24 +34,41 @@
 ##   someone boots.** That is the same accepted risk as last night.
 ##   **MORNING: read `corpus/SHIP_ALERT` and `tail corpus/ship_watch.log` FIRST.**
 ##
-## ===== ⭐⭐ LOKI-19 — FIRED, AT ITS PRE-REGISTERED n, UNREAD =====
-##   **`bots/_v136loki19` (md5 `fb5cba8c`) = v108 on the platform.**
-##   **100 GAMES BANKED: control 50, treatment 50, 4 interleaved windows —
-##   §6's stated minimum. ZERO rated leak, verified at the PAIRING BOUNDARY.**
-##   Outfiles: `scratchpad/arm_loki19_ctrl_w1.txt` `arm_loki19_treat_w1.txt`
-##   `arm_unrated_v104_20260811T052031Z.txt` `arm_unrated_v108_20260811T053112Z.txt`
-##   **⚠ TWO RUNNERS, ONE LEG:** window 1 by a hand-rolled script, windows 2+ by
-##   `tools/unrated_run.sh`. **Cell composition differs in window-1 control**
-##   (farming double, NO Landers — it fired before Amendment 2). Amendment 2c
-##   pre-committed the handling: **per-cell comparison on cells present in BOTH
-##   arms; window-1's extra farming games are NOT silently averaged.**
-##   **NEXT: THE READ-OUT.** Prereg + 3 amendments, each committed before the arm
-##   it governs existed. Bars: 5a dose · 5a-bis arrival gate · 5b mechanism ·
-##   5c currency (**pre-declared NOT resolvable at this n**) · 5d cost/falsifier.
-##   **⛔ BEFORE CITING D18: print `league_matches.tsv`'s newest row beside the leg
-##   window. If the tape does not reach the window write UNKNOWN, not CLEAN —
-##   `oppver_window.py` returns CLEAN off a stale tape, on Lunds Stallions, which
-##   is one of these four cells.**
+## ===== ✅ LOKI-19 — READ OUT s30. BAND 2. NOTHING SHIPS. =====
+##   **`docs/legs/LEG-loki19-core-peck-readout-2026-08-11.md` (`888d699`).**
+##   §6 row 2 verbatim: **"dose delivered, mechanism measured, currency
+##   unresolved at this n."** "null"/"refuted"/"fails" FORBIDDEN in this band and
+##   not used. **5d = Amendment 3c row 4** (point ABOVE control +0.0289, CI
+##   [−0.1381, +0.1816]) → no claim. **`bots/_v136loki19` is NOT a ship
+##   candidate on this evidence and v104 stays live.**
+##   * **5a DOSE GO:** 192.90 core-pecks/game, 44/50 games; control **EXACTLY
+##     0.00 across all 50**. And `our_core_atk == our_total_atk` in every cell —
+##     §4's gate-completeness claim confirmed LIVE, not enumerated.
+##   * **5c:** core-kill share 36.0% vs 48.0% = **−12.0pp against a 28.0pp MDE.**
+##   * **5a-bis GATE DID NOT RESOLVE** (19 events over 50 control games; Askar's
+##     lower bound 30.06%). ⇒ **the leg does NOT claim to have tested the changed
+##     premise.** An unresolved gate defaults to the RESTRICTION.
+##   **⭐⭐ THE SURPRISE, AND IT IS THE MOST VALUABLE THING THE LEG PRODUCED:
+##   THE PECK LANDS AND THEY ANSWER IT WITH HEALING, 5 CELLS OF 5** (median
+##   23 → 287 HP/game). Damage +342.7/game, their healing +370.1/game, **net
+##   −27.4/game.** A peck is **2 Ti for 2 dmg**; a heal is **1 Ti for +4 HP** —
+##   **4× against us, and it costs them no raider's position.** ⇒ the peck's
+##   problem may not be that it costs a move; **2 damage may simply sit under
+##   their heal rate.** HYPOTHESIS, not a finding — no live test, and
+##   `scratchpad/hp_ledger.py` has NO SELFTEST (its first output was wrong by
+##   10^19; kept only because the corrected walk reproduces `leg_read`'s
+##   core-kill counts 18/50 and 24/50 exactly, by a different path).
+##   **⛔ CONFOUND NOBODY PRE-REGISTERED: THE SEAT MIX DIFFERS IN ALL FIVE
+##   CELLS**, SmartFridge a complete inversion (10×B vs 10×A). Disclosed, NOT
+##   corrected — a seat-matched estimator would be chosen after seeing the data.
+##   Map mix differs too. **Any future pooled reading of this leg inherits both.**
+##   **D18: Askar v94 / Lunds v64 / farming v13 PINNED; SmartFridge pinned
+##   THINLY** (4 versions in the 4.5h before the window, in-window on n=2 rows) —
+##   read off `league_matches.tsv` directly, **never `oppver_window`**, which
+##   returns CLEAN off a stale tape.
+##   **RATED COST ZERO**, at the PAIRING BOUNDARY (4/4 pairings v104), not the
+##   match counter. Lock cert: Amendment 3 lands **34 s** before the first
+##   treatment game — blind, and the margin is that thin.
 ##
 ## ===== ✅ LOKI-16b CLEARED ITS BAR (read out s29) =====
 ##   **+0.164 [+0.073, +0.253]** on the 12-ring stratum vs **+0.15**.
@@ -94,19 +111,73 @@
 ##     Amendment 1 tags it; a read-out that recomputes on another population is
 ##     testing a different bar.
 ##
-## ===== QUEUE, IN PRIORITY ORDER =====
-##   1. **READ OUT LOKI-19** (100 games, decoders exist, no new games needed).
-##   2. **WIRE `tools/freshness.py` INTO THE FOUR BLIND INSTRUMENTS** — built and
-##      selftested (10 cases), **NOT yet wired.** `audit_trigger` (**suppressing
-##      its own alarm: 24h numerator, unwindowed denominator, its "21 decision
-##      rows in 24h" are all ≥34h old — measured same-window it TRIPS**),
-##      `oppver_window`, `breakin_watch`, `ship_watch`. **One helper, four bugs.**
-##   3. **LOKI-16b confirmation leg** (`tools/unrated_run.sh 106 <games>`).
-##   4. **Launcher chains** — demoted behind LOKI-19 deliberately: a six-link
-##      express lane delivering bodies that provably do not attack on arrival
-##      spends +60% permanent cost scale to move the same zero forward.
-##   5. `docs/research/SPEC-mutation-harness-2026-08-11.md` — commissioned by
-##      Magnus, unbuilt. §9(a) is item 2 above.
+## ===== QUEUE, IN PRIORITY ORDER (rebuilt s30 after the LOKI-19 read-out) =====
+##   1. **`corpus/our_matches.tsv` — THE MATCH-INITIATIVE LEDGER.** Magnus's own
+##      ask, spec at `docs/research/SPEC-match-initiative-ledger-2026-08-11.md`
+##      (`314d326`). **Deliberately ranked ABOVE the freshness work, and here is
+##      the reason: the freshness fix repairs an alarm that failed to summon an
+##      audit — and the audit happened anyway today, twice, by two lanes. The
+##      ledger fixes a meter whose failure SILENTLY STALLS EVERY RUNNER.** s28's
+##      meter read **7 of 5** and was caught only because 7-of-5 is
+##      arithmetically impossible; ONE foreign challenge reads a plausible 5/5.
+##      **A wrong-but-plausible reading outranks a missed alarm.** Today the
+##      attribution is `rate_budget.py:77` regexing `matchId` back out of
+##      untracked scratchpad files. **Two selftests are non-negotiable: a
+##      REJECTED challenge must still write a row** (rejections consume budget)
+##      **and the blind state must REFUSE, not permit.**
+##   2. **`audit_trigger`'s `cross_lane_analysis` ROW — the ONE genuinely
+##      suppressed signal.** Two lanes converged on this independently today.
+##      Numerator windowed to 24h off git; denominator is *the last 50 tape rows
+##      with no clock at all* — `results.tsv` HAS NO TIMESTAMP COLUMN, so it
+##      cannot be windowed in place. **`results.tsv` has had ZERO rows in 24h
+##      (newest commit `4ad19ab` 2026-08-09T18:38:18Z, 35.6h).** As shipped
+##      47/21 = 2.29 ok; same-window **47/0 = 47.00 against a threshold of 4.0 →
+##      TRIP.** On a day with 47 new analysis docs and zero recorded decisions,
+##      the row built to catch exactly that reads `ok`.
+##      **⛔ AND "ONE HELPER, FOUR BUGS" IS WRONG — it is 2 clean fits
+##      (`oppver_window`, `ship_watch`), 1 NECESSARY-BUT-NOT-SUFFICIENT
+##      (`audit_trigger`: even on a fresh tape this row divides 24h-of-docs by
+##      50-rows-of-tape, different populations — freshness makes it REFUSE when
+##      stale, it does not make the ratio mean anything when fresh), and 1
+##      MISDIAGNOSIS (`breakin_watch`'s named defect is selftest fidelity — its
+##      selftest duplicates `main()` and the `k>=8` stand-down branch is in NO
+##      test; its real freshness defect is gating on `TAPE.stat().st_mtime`, the
+##      clock `freshness.py`'s own docstring calls the wrong one). **Fix them as
+##      four different bugs, not one wiring job.**
+##      **⛔ AND DO NOT ACT ON `doc:code churn`. IT IS A BAD ROW.** Recomputed at
+##      six window offsets: 20h 1.0043 TRIP · 22h 0.9536 ok · 24h 0.9333 ok ·
+##      26h 1.0279 TRIP · 28h 0.9939 ok · 30h 1.0691 TRIP. **No trend — it
+##      hovers on its own threshold, so the verdict is set by WHEN YOU RUN IT**,
+##      and it prints `{val:.2f}`, so `1.00` renders on both sides of a 1.0
+##      threshold and only the TRIP/ok tag discriminates. Its anchors are 0.14
+##      vs 1.88 and today sits in the dead zone with no resolution. **~43% of
+##      the numerator is `coordination.md` (4,517 lines), `HANDOVER.md` (1,109)
+##      and three preregs (1,692) — artefacts this repo's method REQUIRES. A leg
+##      run correctly RAISES this signal.**
+##   3. **THE HEAL-RATE PLANK — LOKI-19's §11 turned into a question.** If 2
+##      damage sits under their heal rate, the plank is not "peck" but **a dose
+##      that clears +4 HP/builder-turn, or a target that cannot be healed.**
+##      Prereg it properly; §11 is a HYPOTHESIS with no live test and
+##      `hp_ledger.py` has no selftest. **Research has been asked to reproduce
+##      the healing asymmetry with a forced-answer decoder — that is worth more
+##      than another window of games.**
+##   4. **LOKI-16b confirmation leg** (`tools/unrated_run.sh 106 <games>`).
+##      **Before firing it, check `unrated_run.sh` for the boundary-guard shape
+##      the side lane found in `loki19_treat_w1.sh`: the pairing wait runs ONCE
+##      AT THE TOP, so a re-run's second activation never passes through it.**
+##      The wait belongs INSIDE the retry path.
+##   5. **Launcher chains** — still demoted: a six-link express lane delivering
+##      bodies that provably do not attack on arrival spends +60% permanent cost
+##      scale to move the same zero forward.
+##   6. `docs/research/SPEC-mutation-harness-2026-08-11.md` — commissioned by
+##      Magnus, unbuilt. Signature **5 BLIND / 1 CAUGHT**.
+##   **⭐ NEW STANDING RULE, from the read-out: A PREREG'S RESOLUTION TABLE MUST
+##   INCLUDE EVERY *GATE*, NOT ONLY EVERY *BAR*.** LOKI-19 §6 tabulated what
+##   resolves at n=50 for all four bars and never asked it of gate 5a-bis —
+##   which then arrived under-resolved and decided what the leg may claim.
+##   **AND: A BAR THAT NAMES A PHYSICAL QUANTITY STATES ITS CEILING.** §5b said
+##   "HP removed" and computed gross damage dealt; the gap was invisible until
+##   the number exceeded a physically possible one.
 ##
 ## ===== TOOLS ADDED s29 — all selftested to BOTH verdicts =====
 ##   `plank_status.py` (HANDOVER vs artefacts) · `unrated_run.sh` (**the runner
