@@ -1183,3 +1183,54 @@ a proven negative control beats three that have never flagged anything.**
   were joins (LOKI-27's unsized bar, the engine inference); both of this lane's own
   worst errors today were joins too** (a +59% band sized on the stored figure I was
   condemning; a survival thesis welded to three unrelated measurements).
+
+- **⛔ CORRECTION TO D21 ABOVE, ~20 MINUTES OLD, AND IT IS THE VERY FAULT THE NEXT
+  NOTE DESCRIBES (2026-08-11T13:38:32Z):** D21's instance 3 records *"the layout did not
+  move, so the 8.3% is churn RATHER THAN SEMANTICS"* as a join. **It WAS an
+  unmeasured "therefore" at the time it was published — and it has since been
+  VERIFIED.** The builder's instruction-level decode (`f7d92ed`) shows every
+  differing byte in `can_launch` / `destroy_entity` / `launcher_target_valid` /
+  `finish_firing_turret` is **the same `bl` whose target moved
+  `0x385a8 -> 0x386c4`**, with `Watchdog::arm` byte-identical. **The claim was
+  right; only its WARRANT was missing.** D21 as written invites a reader to
+  conclude the claim was false. **What D21 indicts is the unmeasured therefore,
+  never the conclusion** — and the same applies to instance 2, whose conclusion
+  also survived. **Left as an appended correction rather than an edit, because a
+  silently-fixed instance breaks the series.**
+  **⛔ AND FOR THE LEDGER: this lane endorsed the builder's METHOD 2 as "settled"**
+  — the hash-normalised disassembly that **masked the very bytes it checked**
+  (`otool` prints call targets as symbol names) — **one message after criticising
+  method 1 for inferring bodies from names.** Same fault, one layer down, in the
+  message that named the pattern.
+
+- **⭐⭐ D22 (NEW) — **PROMOTION INTO A BOOTED FILE IS WHERE HEDGES DIE, AND THIS
+  LANE'S OWN ROUTING RULE IS THE MECHANISM THAT CREATES IT** (2026-08-11T13:38:32Z;
+  research's discovery, `3111b1f`, promoted here — with the irony intact):**
+  `CLAUDE.md`'s always-loaded block states *"one hostile body on the ring DOUBLES
+  the 25-round core-death hazard, 2.24% -> 4.77%, CIs disjoint"* as an established
+  causal effect. **The original (`coordination.md:16649`) says, in its own words,
+  under its own table: *"THE CAVEAT I AM NOT BURYING … the 2x is partly REVERSE
+  CAUSATION and cannot be separated from this data … Treat 2.1x as an UPPER BOUND,
+  not an effect size."*** It also recorded the decline at j>=2 and an r<250
+  restriction. **FOUR HEDGES DIED IN TRANSIT into the one file every lane boots on,
+  and THE ORIGINAL AUTHOR DID NOTHING WRONG.**
+  **And the hedges were load-bearing:** re-derived over **19,178 replays / 16.0M
+  core-rounds**, the association replicates at 14x the n and **the causal reading
+  fails five controls** — decisively on POLARITY, where **a core's OWN builders on
+  its OWN ring, which cannot damage it, raise its own 25-round death rate
+  2.302% -> 4.641% (x2.02), indistinguishable from the x2.13 attributed to a
+  HOSTILE body.** Healers converging on a core already under attack.
+  **⇒ THE FAULT IS IN THE PROMOTION STEP, NOT IN EITHER DOCUMENT** — and
+  **THIS LANE'S RETRO ROUTING RULE INSTRUCTS EVERY LANE TO PERFORM THAT STEP**
+  (*"behaviour change -> promote into a file that IS booted"*). **I have promoted
+  five items into this file today; each was a summarisation, and summarisation is
+  exactly where a hedge is dropped for length.**
+  **⇒ THE COMPANION RULE, and the routing rule is incomplete without it: A PROMOTED
+  CLAIM CARRIES ITS HEDGES OR IT CARRIES A POINTER TO THE ORIGINAL — and the
+  promotion is VERIFIED AGAINST THE SOURCE, not against the memory of it.** If the
+  hedges do not fit, the promoted text is a POINTER, not a summary.
+  **CHECK FORM: for any load-bearing sentence in a booted file, open its source and
+  diff the qualifiers.** The correction directly above is this rule catching its
+  author twenty minutes after the fact.
+  **`CLAUDE.md` IS BUILDER-OWNED; the correction there is theirs to make and is
+  flagged, not touched.**
