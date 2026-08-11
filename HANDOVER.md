@@ -1,30 +1,99 @@
-# LIVE: **v104 = "Loki v2"**. s30 WRAP, 2026-08-11 12:2xZ.
+# LIVE: **v112 = "Loki v3"**. s31 WRAP, 2026-08-11 14:3xZ.
 
-## ===== ⭐⭐ READ THIS FIRST — IT IS THE SESSION'S ONE LOAD-BEARING FINDING =====
-##   **`tools/h2h.sh` AT n=64 DETECTS ONLY EFFECTS ≥ +17.5pp. LOKI-13, THE BEST
-##   PLANK THIS PROJECT HAS EVER SHIPPED, MEASURED +18.0pp.** s30 screened nine
-##   arms through it, seven landed inside the band, and I reported them to Magnus
-##   as evidence the bot could not be improved. **They produced NO INFORMATION.**
-##   ⇒ **"Inside the band" = NO INFORMATION = back to the POOL, never a demotion.**
-##   The tool now prints its own informative band as the VERDICT. **Never quote a
-##   screen result without it.**
-##   **AND THE STRUCTURAL CAUSE: a false POSITIVE costs one window — bounded and
-##   visible. A false NEGATIVE costs a plank nobody hears about — unbounded and
-##   invisible. s30 built SEVEN FILTERS AND ZERO GENERATORS.** Magnus had to say so.
+## ===== ⭐⭐ READ THIS FIRST — THE SESSION'S ONE LOAD-BEARING FINDING =====
+##   **I WROTE FOUR CHECKS THAT COULD NOT FIRE AND A FIFTH THAT FIRED ON
+##   EVERYTHING — AND FOUR OF THEM CAME AFTER I HAD DIAGNOSED THE FIRST, WHILE
+##   EXPLICITLY HUNTING FOR THAT DEFECT.** The sharpest: `overnight_watch`'s
+##   `alive==0 && age>STALE` **could never fire on a HUNG shard** — a process
+##   frozen 3.9 h printing the word `ok` — **which is verbatim the `ship_watch`
+##   failure that file's own docstring says it exists to prevent.**
+##   ⇒ **CARE DOES NOT PREVENT THIS. Of the five, I caught ONE and peers caught
+##   THREE.** ⇒ **A GUARD IS NOT DONE WHEN IT PASSES. It is done when it has been
+##   DRIVEN TO THE ANSWER IT IS SUPPOSED TO REFUSE.** Do this for every guard you
+##   write, including the one you write to fix this.
 ##
-## ===== ⭐ THE BAR, MEASURED (`tools/mde.py`, selftested) =====
-##   Noise floor on the NULL: **sd(diff) = 14.31 kill-speed points/game**,
-##   mean diff +0.24 (~0 — the check that the floor is a floor).
-##   **n=64 → MDE 5.01 · n=1024 → 1.25 · overnight n≈10,800 → 0.39/game.**
-##   ⇒ **Anything an overnight run can resolve, RESOLVE IT. Anything it cannot,
-##   ship it and let the ladder decide.** At 1,350 games/hour/core, 10 cores.
+## ===== ⭐ WHAT SHIPPED, AND AT ITS REAL STRENGTH =====
+##   **v112 = `bots/_v148ferryfirst` (LOKI-27 ferry-first), ACTIVATED 13:14Z**,
+##   ending v104's 29 h 25 m hold. **1680, rank #23 of 119, +14 Elo since
+##   activation**, k=6, drawdown +0.0, `sprt_fast=OK`.
+##   **ROLLBACK: `.venv/bin/fcode submission activate 104`** (~15 s, verify on the
+##   `Active bot:` line, NEVER `$?`).
+##   ⛔ **IT SHIPPED ON DIRECTION PLUS A POSITIVE POINT ESTIMATE, NOT A RESOLVED
+##   BAR, AND THE ANNOUNCEMENT FIRST OVERSTATED IT.** I wrote *"all three
+##   predicted rows moved the predicted way"* — **the ratio is algebraically
+##   determined by the other two and all three come from the same 162 throws, so
+##   that is ~ONE fact, not three.** Direction rests on **one game** (38% of the
+##   INSERT signal) and **one match** (the whole EXILE row); drop either and it
+##   reverses. **P(no effect or worse) = 0.26.** Corrected in `coordination.md`.
+##   ⚠ **AND ITS BASELINE IS CONFOUNDED**: shipped at the BOTTOM of a v104
+##   drawdown, and its 5-0 over Askar City is a cell **v104 also took 5-0**.
+##   **Nothing yet distinguishes v112 from v104.**
 ##
-## ===== ⛔ TWO TOOLING FACTS THAT ARE IN NO OTHER DOC =====
-##   1. **PARALLEL `fcode run` PRODUCES INCOHERENT COUNTS.** A 16-game parallel
-##      dose check inverted a 3-game serial one and both were wrong. **`h2h.sh` is
-##      unaffected (one game at a time per arm); any DOSE CHECK MUST BE SERIAL.**
-##   2. **SUBAGENTS ARE FOR JUDGMENT, CORES ARE FOR GAMES.** Screens are parallel
-##      background jobs — 8×1,024 games finished in 50 min on 8 cores.
+## ===== ⛔ RUNNING RIGHT NOW — 9 SHARDS, ~42,000 GAMES, UNATTENDED =====
+##   `tools/overnight.sh` x9, `tools/overnight_watch.sh` supervising, launched
+##   14:20Z, ~5-6 h. **ZERO LLM INVOCATIONS BY DESIGN.**
+##   **READ IT WITH `.venv/bin/python tools/overnight_read.py`** — it POOLS
+##   PARTIAL SHARDS on the declared denominator and prints the shortfall.
+##   **PART A (the biggest question): does a local h2h win rate PREDICT THE
+##   LADDER?** Registered as a **FALSIFIER** before any game ran. **Early, at ~3%:
+##   both orderings AGREE (v104>v102 +52 implied vs +77 ladder; v104>v92 +131 vs
+##   +86).** If it holds: *"failed to falsify, consistent with predicting, NOT
+##   proof"* — those words. If ANY inversion: **stop screening this week and ship
+##   on mechanism alone.**
+##   **NULL and NEGCTRL are the shards that check the harness, not a plank** —
+##   a byte-identical v112 copy, and `_v140noseal` which is a known REAL NEGATIVE.
+##
+## ===== ⭐ NEW CORE VALUE — `ALWAYS_BE_RUNNING: yes` =====
+##   Magnus, direct, after asking THREE TIMES in ten minutes whether anything was
+##   running: **idle cores are a DEFECT.** If nothing runs locally, take the top
+##   unblocked `QUEUE.md` item and run it — unasked. **`tools/monitors/
+##   cores_idle.py` is the instrument**; it names the next queue item so the alarm
+##   carries its own remedy. **This is s30's D66 recurring one session later
+##   because it was written as prose and not built as a check.**
+##
+## ===== ⛔ FOUR FACTS THAT CHANGE WHAT YOU CAN TRUST =====
+##   1. **OUR BOT RESEEDS AN UNSEEDED RNG EVERY GAME** —
+##      `main.py:276 random.Random().randrange(97)`, `NOISE_ON = True`. **`--seed`
+##      NEVER controlled it.** Pooled estimates stand (noise is unbiased);
+##      **"seed-matched pairing" is an ILLUSION in every local battery.**
+##      `gate.py` has printed this warning all along and `h2h.sh`/`dose.py`
+##      BYPASS gate.py.
+##   2. **LOCAL RUNS WITHOUT `--tle 10` MEASURE A CHASSIS THE PLATFORM DOES NOT
+##      HAVE.** Default is 0 = no limit. **`_v145bestfit` wins 6/6 with the limit
+##      OFF and loses 5/6 with it ON.**
+##   3. **NEITHER THE ELO TAPE NOR THE MATCH COUNTER CAN CERTIFY A ROTATION** —
+##      the tape polls at 300 s against a ~20 s window (**sees 6.7%**), the
+##      counter is blind to PAIRING. **Use per-match `ourver` at the pairing
+##      boundary from `--json createdAt`, never the `match list` table** (its Date
+##      column lags ~2 min).
+##   4. **SEAT IS WORTH 7.6pp ON BYTE-IDENTICAL ARMS** (~2.5x the largest arm
+##      effect ever screened). Any unbalanced cut MEASURES SEAT.
+##
+## ===== QUEUE (research owns keeping `QUEUE.md` stocked) =====
+##   1. **DESTROY ENEMY TURRETS** — term `A` is **1.77x, 47.3% of the log hazard
+##      gap**, the largest single term. ⛔ **NOT via builder melee: both
+##      counterbattery arms are DEAD** (`_v149cbfull` 49.6% NO-INFO,
+##      `_v150cbturret` **45.2% REAL NEGATIVE**). **`_raid_act` returning True
+##      RETURNS FROM THE TURN, so any action costs the move** — my "idle rounds
+##      are free" argument was wrong. **LOKI-QUIET is revalidated.**
+##   2. **Read out the overnight run** and fill the queue from what survives.
+##   3. **LOKI-28 crash induction** — treatment decoded (96 enemy crashes vs 0 of
+##      ours), control decoded (81 vs 0). **⛔ 82 of 96 come from LEVIATHAN
+##      ALONE; leave-one-match-out flips the difference to −0.40/game.** The
+##      unaided-crash control PASSES (opponents still crash ⇒ 2.3.7 did not patch
+##      the exception rule). **Verdict not yet typed — do the leave-one-out
+##      FIRST, it is prereg-mandated.**
+##   4. **Three numbers have NO committed artefact** and must not be re-quoted:
+##      the n=48 cap6 dose, best-fit's 6/6-vs-5/6, the kill-turn spread.
+##
+## ===== DEAD THIS SESSION — reasons in `QUEUE.md`, do not re-queue blind =====
+##   cap6 (NO-INFORMATION, knob under the bar) · best-fit (CPU-cost regression) ·
+##   both counterbattery arms · idle-builder defence (**WE ALREADY SHIP IT** —
+##   `_heal_core`, `heal_seats`, `SLOT_UNDER`) · "arrive without traversing"
+##   (moving is BELOW-average hazard 0.90x; parked 30+ is the SAFEST state 0.19x) ·
+##   "we go forward late" (enemies build the same turrets against us EARLY) ·
+##   the 880-game forward-efficiency screen · **fcode 2.3.7 as an exploit surface
+##   (CLOSED NEGATIVE, full attribution, nobody need look again)**.
 ##
 ## ===== BOOT: RUN THESE FOUR =====
 ##   1. `.venv/bin/python tools/plank_status.py --all`  (gate on `PLANK_STATUS:`)
