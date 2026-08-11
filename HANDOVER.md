@@ -10,6 +10,38 @@
 ##   inverts it at 22.7 / 69.2. **Two different measurements (built vs
 ##   killed-with), same direction. More corroboration than anything else queued.**
 ##
+##   **⛔⛔ s29 2026-08-11 06:1x — THE D30 GREP BELOW WENT ONE LINE TOO SHALLOW.
+##   `main.py:544` IS INSIDE `_try_counterbattery`, WHICH IS A DEFENSIVE PATH.**
+##   Its own docstring: *"Build only a weapon ray that already contains the
+##   reported threat."* It is gated on `SLOT_THREAT` being set, on the threat
+##   sitting inside `HUNT_BAND_DSQ` of **our own** core, and on `_live_home_gun`;
+##   its sibling `_cb_over_heal` opens with `self.role != "defend"`. **So the
+##   "one-constant change" is a change to HOME DEFENCE, and `PLAY_DEFENCE: never`
+##   puts it off-programme regardless of what it would measure.**
+##   **The grep found the right LINE and stopped before the enclosing FUNCTION.**
+##   Same shape as the LOKI-17 death two blocks down: the diff was read, the
+##   thing the diff sits inside was not.
+##
+##   **THE ON-PROGRAMME HALF IS THE OTHER SENTENCE, and it is NOT one constant.**
+##   *"`raid.py` builds ONLY sentinels — zero `build_gunner` calls"* — that is
+##   the forward siege, turrets bought to open a lane to the enemy core, and it
+##   is squarely on-programme. **But a gunner is not a drop-in for a sentinel
+##   there:** gunner r²=**13** vs sentinel r²=**32**, so a forward gunner must be
+##   planted more than twice as close, and **a gunner's shot is BLOCKED by
+##   obstacles while a sentinel's ignores them** — which is a live reason to
+##   prefer the sentinel when sieging a core behind cover, not an oversight.
+##   A forward-gunner plank needs its own d²≤13 siting routine. **Real, and it is
+##   a build, not a constant.**
+##
+##   **AND THE CORROBORATION IS WEAKER THAN THE BLOCK BELOW PRESENTS.** We build
+##   **56.4%** gunners against the top-23's 69.8% — a 13pp gap, not an inversion.
+##   The striking half (*cores die 53.1% gunner while OUR kills are 69.2%
+##   sentinel*) is **substantially tautological**: our forward siege is sentinel
+##   by construction, so our kills are sentinel by construction. **Two
+##   measurements pointing the same way is worth less when one of them is
+##   downstream of the other.** Still worth testing; not worth calling
+##   "more corroboration than anything else queued".
+##
 ##   **⭐ D30 GREP DONE — AND IT IS A ONE-CONSTANT CHANGE, exactly like LOKI-16:**
 ##   `main.py:544` — the choice is a FIXED TUPLE ORDER, not a costed decision:
 ##   ```
