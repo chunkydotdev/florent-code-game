@@ -173,3 +173,83 @@ atoll 2/7 · moonrise 2/6. Best: antler 3/3 · saga 5/6 · nordkap 5/7.
 **These are the maps a future powered leg would target. They are NOT this leg's
 bar** — every cell is 3–12 games and several are 0/n, where the point estimate is
 0% and the interval reaches past 40%.
+
+---
+
+# AMENDMENT 1 — **MY PRIMARY BAR COULD NOT FIRE.** Replaced, n fixed, leakage repriced. Committed BEFORE leg creation.
+
+## A1.1 ⛔ THE GATING BAR WAS A GUARD THAT FIRES ON NOTHING
+
+§3 read: *"BAR: zero timeout-attributable unit losses."* **There is no such
+event.** `CLAUDE.md:13`: a CPU overrun means *"that turn's `run()` is interrupted
+and does not resume next turn. **This is different from an uncaught exception**"*;
+`CLAUDE.md:430`: *"an escaping `GameError` kills the unit; **a CPU timeout does
+not.**"*
+
+⇒ **A timeout costs a TURN, never a UNIT.** The bar reads **zero under a healthy
+bot and zero under a bot timing out on every single turn** — and I made it the
+clause that GATES the leg. That is this session's most-repeated defect, written
+by the person who spent the session flagging it in other people's instruments.
+The second clause (*"no per-game collapse in unit count"*) was doing the real
+work, is indirect, and *"collapse"* had **no threshold** — the same undefined-bar
+defect as Part A's *"large residuals"*.
+
+## A1.2 ⭐ THE REPLACEMENT IS DIRECT, AND MY OWN CORRECTION DOCUMENTED IT
+
+The s28 print-stripping finding (`CLAUDE.md:28`) records that platform replays
+carry **30,664 `BotOutput` events of `{id, execTimeUs}`** — **stdout is stripped;
+`execTimeUs` is NOT.** That is the CPU cost of every unit-turn, **engine-side, on
+the platform's own chassis**, in the replays this leg downloads. The instrument
+was two lines from the sentence I wrote about stdout.
+
+**NEW PRIMARY — per-turn `execTimeUs`, gunaxis arm vs v112 arm:**
+
+| statistic | bar |
+|---|---|
+| **count of turns ≥ 10,000 µs** | **0 for gunaxis, or gunaxis ≤ v112** |
+| **p99 execTimeUs** | gunaxis ≤ **1.5×** v112 |
+| **max execTimeUs** | reported; a max ≥ 10,000 µs is a FINDING regardless of count |
+
+**Resolves at TENS OF TURNS, not tens of games** — a 60-game leg yields on the
+order of 10⁵ unit-turns per arm. **It measures the platform chassis, which is the
+entire reason §3 exists** (local `--tle` is this laptop's timing), and it makes
+the *best-fit* precedent **directly comparable rather than analogous.**
+**Driven both ways:** v112 is the incumbent and is known not to TLE, so a
+non-zero ≥10,000 µs count on the v112 arm would indict the INSTRUMENT, not the
+plank. **That cell is the negative control and it must read ~0.**
+
+## A1.3 ⛔ THE PREREG DID NOT FIX ITS n — AND THE EXPOSED SURFACE IS THE MAP TABLE
+
+Nothing said when a HEALTHY leg ends; §5 listed only failure-triggered stops.
+**An unfixed n permits optional stopping, and the per-map table is exactly the
+kind of thing that can be extended until a cell looks interesting.**
+
+**FIXED NOW: 12 matches — 2 per arm-cell across 3 arms × 2 opponents — = 60
+games, ~50 minutes at the 5-per-20-minute cap.**
+* **The leg STOPS at 12 accepted matches** whatever the map table shows.
+* **If cut short**, the read-out reports what was fired per cell and **the leg is
+  not extended to complete a cell that looks interesting.**
+* **No interim read of the currency or the map table.** The `execTimeUs` primary
+  MAY be read early — it is a safety gate and stopping on it is a stop-for-harm,
+  not optional stopping.
+
+*(This is the LOKI-16b miss verbatim, and the side lane recorded that it was
+theirs: they audited that prereg for provenance, estimator, clustering unit, map
+stratum and control, reported no flags, and never asked how many games it fires.)*
+
+## A1.4 TWO OF THREE ARMS ARE NON-INCUMBENT — THE LEAKAGE BUDGET WAS UNDERSTATED
+
+§5.3 priced leakage generically. **v104 AND gunaxis are both non-incumbent, so
+~2/3 of the window is exposed, not 1/3.** The s28 measurement is the anchor:
+**−24.67 Elo across 3 leaked matches**, one by an arm later measured at −14.7pp,
+**and the discriminator was the ACTIVATION TIMESTAMP, not the version tag.**
+
+* **BUDGET: ≤ 2 leaked rated matches (~−16 Elo worst case).** Exceeding it stops
+  the leg.
+* **Leakage is verified per-match on `ourver` at the PAIRING BOUNDARY** from
+  `--json createdAt` on the LIVE CLI — **never the match counter** (blind to
+  pairing), **never `elo_history.tsv`** (tags by version active at poll time),
+  **never the corpus** (lags the platform by up to an hour).
+* `unrated_run.sh` serves the rate-limit wait with the INCUMBENT live and
+  activates only inside the window; the pairing-clock offset is **re-derived from
+  recent rows, never hardcoded** — it has shifted at least once inside 18 hours.
