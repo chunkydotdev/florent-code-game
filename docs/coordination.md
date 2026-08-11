@@ -35554,3 +35554,47 @@ can separate their child `fcode run` processes. **A name-based kill would have
 taken their own control shard.** That belongs in the runner's header, not only in
 a session message. Zombie files **quarantined, not deleted** — they are the
 evidence for the incident write-up.
+
+# ============================================================================
+# 2026-08-11T18:4xZ — **SIDE LANE: LOKI-29 IS RUNNING UNSUPERVISED, AND THE ONE
+# MONITOR STILL WATCHING IS BLIND TO ITS FAILURE MODE.** Plus: a fixture test
+# wrote into the live alarm channel.
+# ============================================================================
+
+## 1. ⛔ NO WATCHDOG ON A 5-SHARD, 27,040-GAME, ~2.5 h RUN
+`ps` 18:47:02Z: **zero `overnight_watch.sh`.** The plan's **control 5** is
+explicit about why: *"Nobody watches for six hours, and **a run that dies at hour
+one is indistinguishable from one that is working** — this repo's signature
+failure."* **The watchdog had to die eleven minutes ago because it was
+supervising a run that no longer existed — not because supervision is bad** — and
+the replacement has not been started. **This is the ALWAYS_BE_RUNNING failure's
+twin: not idle cores, but running cores with nothing watching them.**
+
+## 2. ⭐ AND `cores_idle.py` CANNOT COVER IT — IT TRIPS ONLY ON *TOTAL* IDLENESS
+Its rule is two consecutive polls at **zero** local games. ⇒ **if four of five
+LOKI-29 shards die it reads `games=2/9, consec_idle=0, OK`.** **Nonzero is not a
+health signal** — the same shape as `EXIT CODE IS NOT A HEALTH SIGNAL` and as
+`ship_watch` printing a healthy line off a stale tape. **The one monitor still
+watching that machine is blind to exactly the failure mode a 5-shard 2.5-hour run
+has**, and the instrument that sees per-shard death is the one not running.
+**Its own log demonstrates the noise from both directions in the last ten
+minutes: `games=26/9` during the zombie spike, `games=4/9 consec_idle=1` during
+the handover — both printed `OK`, and neither was a healthy state.**
+
+## 3. A FIXTURE TEST WROTE INTO THE LIVE ALARM CHANNEL
+`scratchpad/overnight/ALERT` ends with five `FX dead, restarts exhausted at
+0/100` lines (18:45:55–18:46:02Z). No `FX` shard, spec or artefact exists ⇒ read
+as **the watchdog's DEAD branch being driven to prove it can fire**, which is the
+discipline this repo demands and should continue. **The flag is only where the
+output landed:** `ALERT` is the production channel for the LIVE run, and the test
+rows now sit directly under the nine genuine `restarted (1) at none` lines **in
+the same format, with nothing distinguishing them.** ⇒ **an alarm channel that
+cannot tell a test from a real event** — the *alarm-cannot-tell-it-is-blind*
+family from the other end. `--dir` on the fixture run, or an `FX`/`TEST` prefix,
+keeps both the drill and the channel.
+
+## OTHERWISE GREEN, verified not assumed
+LOKI-29 **~160/5,408 per shard, climbing evenly across all five**; keeper 89444,
+ship_watch 51273, cores_idle 11426 alive; `ship_watch` reads `v112 k=19
+rating=1692 net5=−4.0 armed=True RULE=held sprt_fast/slow OK` with
+**`tape_age_min=3.8`** — fresh, so the line means something.
