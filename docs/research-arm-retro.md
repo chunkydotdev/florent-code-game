@@ -362,14 +362,43 @@ decode that would have rescued a dead thesis (by agreement with its author). Lis
 C5 **to rule it out** rather than pad. **Declined to loosen the queue matcher to hit
 a number** — that would have been the same Goodhart the GREP gate exists to stop.
 
-**6. PER LANE. ⛔ RETRACTIONS REACHING A LANE: TEN.** (instrumentation · `h2h.sh`
-路径 · the map-set §3 · *"your null discriminates nothing"* · the saturated fit ·
+**6. PER LANE. ⛔ RETRACTIONS REACHING A LANE: TEN.** (instrumentation · the `h2h.sh`
+code path · the map-set §3 · *"your null discriminates nothing"* · the saturated fit ·
 2.28× dwell · the *"unexplained 2.3×"* · *"we go forward late"* · the
 clearing-sign · #13's two-thirds.) **Up from 5 in s30 and 4 in s29.**
 **The honest reading is not "worse work" — it is that the generator role published
 far more load-bearing claims. The rate matters more than the count, and NINE OF TEN
 were withdrawn before any lane acted.** The tenth (`h2h.sh`) reached a booted file
 and was corrected there.
+
+**⛔ AMENDED MINUTES AFTER THE WRAP, BY THE SIDE LANE, AGAINST A GENEROUS ERROR OF
+MINE.** I closed to them with *"your lane caught my worst error today and I caught
+none of yours."* **That is false, and a generous error in a wrap is still an error in
+the record — it is the one kind a successor has no reason to re-check.** I caught at
+least three:
+1. **`76d704f`.** They had told the builder the forward-efficiency sizing could be
+   repaired **free**, off the already-run 4,096-game screen. **My instrumentation
+   retraction is what made them open the surface, and that claim died there** —
+   otherwise a "free fix" enters a live plan budgeted against data that does not exist.
+2. **The transit-vs-station cut refuted a premise they had amplified TO ME as the lead
+   generator candidate** (*"the hazard lives in the traverse, so skip it"*), quoted
+   from a booted note without opening its source. **That is the D22 fault committed by
+   D22's author, and it was found while they were still recommending it.**
+3. **My §3 retraction exposed that their audit had checked the three doors I offered
+   and never asked whether the comparison was legal** — a finding about their own
+   method, handed over by accident.
+**⇒ THE HONEST SYMMETRY IS: I caught their worst error and they caught mine.**
+
+**AND ONE THING THAT MAKES THE 5:6 RATIO INTERPRETABLE, recorded because a successor
+will read it and could draw the wrong lesson.** *(Theirs, and explicitly NOT offered
+as softening.)* **Self-caught vs peer-caught is not comparable across ROLES.** The
+generator publishes far more load-bearing claims per hour than the auditor does, so
+it has more to be caught at. **The raw ratio invites the conclusion that the generator
+role degrades self-catching, when what it actually does is raise the denominator.**
+⇒ **The ten retractions with nine withdrawn before any lane acted is the number that
+describes THIS SESSION; the ratio describes THE JOB.** *(Corroboration: the side
+lane's own Q3 hit 10 — their worst recorded — in the lane whose entire product is
+checking other people's claims.)*
 
 **7. CAUSE vs EFFECT — TWO FIRINGS, AND THE SECOND IS A NEW SHAPE.**
 *"We go forward late into a matured turret field"* was a causal label on an effect —
