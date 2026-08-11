@@ -33743,3 +33743,104 @@ reading the unrated leg.** Rated form is `ladder_games.tsv` / per-match `ourver`
 `elo_history.tsv` row `2026-08-11T14:34 … v112` (local CEST = 12:34Z) is the
 elo_logger catching the 16-second prototype activation. **v112 played ZERO rated
 games then.** Any cut slicing the tape by version must exclude it.
+
+# ============================================================================
+# 2026-08-11T13:21:41Z (`date`) — **SIDE LANE s31: TWO OPUS AUDITS BACK. THE NONDETERMINISM
+# MECHANISM IS REFUTED (conclusion survives), AND THE FERRY-FIRST SHIP RESTS ON
+# ONE GAME AND ONE MATCH.**
+# ============================================================================
+
+## A. NONDETERMINISM — **CONCLUSION RIGHT, NAMED CAUSE WRONG, AND THE DIFFERENCE IS LOAD-BEARING**
+Claim audited: *"`raid.py` calls `get_cpu_time_elapsed()`, which is wall-clock,
+so every seed-matched local measurement is confounded by machine load."*
+**The call graph is real and the branches DO gate behaviour** (`eco.py:203-223`,
+nine call sites; `main.py:430` skips the whole action phase). **But the counter
+never moves locally, so the branch is unreachable in the population the claim
+indicts:**
+* `bots/_v130loki13/doctrine.py:1072-1075` — **the bot's OWN SOURCE** says
+  `get_cpu_time_elapsed()` *"reads 0 under local `fcode run` … a no-op in every
+  local arena run."*
+* `docs/tooling.md:124-131` — **zero non-zero deltas across ~55,000 sampled
+  builder-rounds**; same finding in three separate sessions.
+* `--tle` **defaults to 0 (disabled)** and neither `h2h.sh:66-67` nor
+  `dose.py:110-113` passes it, so the ENGINE-side interrupt is off too.
+* No other clock exists in either tree.
+**⇒ THE REAL CAUSE: `main.py:273-276`, `random.Random().randrange(97)` spawn salt,
+unseeded, once per Player per match, `NOISE_ON = True` — DELIBERATE, with a source
+comment saying so.**
+**⇒ WHY IT MATTERS AND IS NOT PEDANTRY: OS-entropy salt is EXCHANGEABLE i.i.d.
+noise, so pooled estimates stay UNBIASED. The load story would have implied arms
+measured at different times are SYSTEMATICALLY BIASED.** Opposite consequences.
+**⚠ THE BUILDER HAD ALREADY SELF-CORRECTED THIS in `QUEUE.md:56-70` (`b9055ff`,
+13:13:53Z). THIS LANE RELAYED THE UNCORRECTED CPU VERSION TO MAGNUS AS FACT AND
+HAS RETRACTED IT TO HIM.**
+
+### BLAST RADIUS — almost everything survives
+Governing structural fact: **`h2h.sh` and `dose.py` run treatment and control as
+the TWO SIDES OF ONE `fcode run` PROCESS**, so load is **common-mode** and has no
+channel to favour an arm.
+| | verdict |
+|---|---|
+| s30 8x1024 screen | **SURVIVES** (lost variance reduction only) |
+| today's 4,096 null | **SURVIVES — it is the instrument that MEASURES the noise** |
+| cap6 dose | **WEAKENED, not by load** — and the **n=48 artifact does not exist in the repo** |
+| best-fit (6/6 tle-off vs 5/6 tle-on) | **DEAD — the ONE row where load genuinely bites** (it toggles `--tle`), n=12, local-hardware-specific, **no artifact in the repo** |
+| LOKI-27 ferry-first | **SURVIVES** (platform games) |
+| 1800-1900 band | **SURVIVES** (third-party platform games) |
+**EMPIRICAL REFUTATION OF THE LOAD STORY:** the 4,096 null ran as **parallel
+background jobs over ~50 minutes** — exactly the indicted conditions. Shard wins
+`254,254,236,249,275,256,274,255`; **between-shard homogeneity χ²=8.91, df=7,
+p≈0.26. NO OVERDISPERSION.** If load contaminated arms, that is where it appears.
+
+### ⭐⭐ THE INCIDENTAL FINDING THAT OUTRANKS THE AUDIT: **SEAT DOMINATES EVERY KNOB-TURN**
+On **byte-identical arms**: **seat A 53.91% (1104/2048) vs seat B 46.34%
+(949/2048), z=3.54, p≈0.0004**, consistent across all 8 shards.
+**That is ~2.5x the size of the largest arm effect in the entire nine-arm
+screen.** ⇒ **any screen not balanced on seat is measuring seat.** Ours is
+balanced 512/512 and pools to 50.12%, so the design holds — **but the margin for
+error on any future unbalanced cut is now quantified.**
+
+### ⛔ THREE LOAD-BEARING NUMBERS WITH NO ARTIFACT IN THE REPO
+the **n=48 cap6 dose output** · the **best-fit 6/6 vs 5/6 TLE counts** · the
+**kill-turn spread (109,118,227,302,527,118)**, which appears once, at
+`QUEUE.md:60`, with no script, no map, no seed, no log. **Treat the spread as an
+anecdote.** Same convention this repo already flagged: analysis runs in
+`scratchpad/` and only conclusions get committed.
+
+### cap6 — **RECLASSIFY, DO NOT RESURRECT**
+Its own harness recorded **`NO-INFORMATION back to the pool, NOT demoted`**
+(`scratchpad/battery/_v143cap6.log`); it reached `QUEUE.md`'s DEAD list on a
+structural argument that is weaker than it reads — **the 1.58/1.67 levels come
+from the dose check itself, not an independent source**, and **a MEAN cannot
+establish that a cap on SIMULTANEOUS-ALIVE never binds: a tail mechanism produces
+exactly the small mean shift observed.** The number that decides it — the fraction
+of games reaching 3 simultaneous forward sentinels — **was never reported.**
+**⇒ Fix the REASON, not the DISPOSITION: it is NO-INFORMATION, and it is still a
+knob-turn under the +10pp bar, so it should not consume a cycle.**
+
+## B. FERRY-FIRST — **RATES EXACT, INFERENCE NOT ROBUST**
+Two independent paths (`throws.tsv` and a fresh decode of all 50 replays) agree
+**to the digit, 162 throw rows**. All-games denominator correct. **Opponent
+versions identical across arms (91/7/84/55/51).** Two-clock holds by **70 s**.
+**BUT:**
+* **One game — `f7f04d3a…_game_2` (kladde, seat B) — carries 5 of 13 treatment
+  INSERTs (38%).** Drop it from the treatment only and **the INSERT row REVERSES**
+  (0.333 vs 0.400); the ratio edge collapses to **+0.009**.
+* **HTTP 418 alone carries the EXILE row** (control 46 vs treatment 15). Drop that
+  one match and **the ratio difference goes NEGATIVE.**
+* **"Three predicted rows" is ~ONE FACT** — the ratio is algebraically determined
+  by the other two and all three come from the same 162 throws.
+* **Uncertainty is 4.3x worse than quoted:** var/mean **14.8** for treatment EXILE;
+  game-cluster bootstrap sd **0.336** vs Poisson **0.0787** ⇒ honest band
+  **≈±530%**, not ±124%. **P(true diff ≤ 0) = 0.26.** The prereg's own
+  overdispersion caveat did not survive into the read-out.
+* **Seat uncontrolled in 3 of 5 cells**; effective n on the INSERT row is
+  **7 of 25 games per arm.**
+**NO VERDICT AND NO ROLLBACK CALL FROM THIS LANE.** The point estimate is positive,
+the dose was delivered, and with ~420 rated matches left the ladder is the only
+instrument that can resolve it. **What needs correcting is the RECORD:** the
+justification is *"direction carried by one game and one match, P(no effect or
+worse) ≈ 0.26, shipped because only the ladder can resolve it"* — defensible, and
+a different sentence from *"all three predicted rows moved the predicted way."*
+**Gap worth one line in `submit_clean.py`: nothing ties the uploaded v112 zip to
+`bots/_v148ferryfirst` — no submit-time hash or manifest, only an assertion.**
