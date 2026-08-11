@@ -1,5 +1,91 @@
-# LIVE: **v104 = "Loki v2"**. s29 WRAP, 2026-08-11 07:4x CEST (05:4xZ).
+# LIVE: **v104 = "Loki v2"**. s30 WRAP, 2026-08-11 12:2xZ.
 
+## ===== ⭐⭐ READ THIS FIRST — IT IS THE SESSION'S ONE LOAD-BEARING FINDING =====
+##   **`tools/h2h.sh` AT n=64 DETECTS ONLY EFFECTS ≥ +17.5pp. LOKI-13, THE BEST
+##   PLANK THIS PROJECT HAS EVER SHIPPED, MEASURED +18.0pp.** s30 screened nine
+##   arms through it, seven landed inside the band, and I reported them to Magnus
+##   as evidence the bot could not be improved. **They produced NO INFORMATION.**
+##   ⇒ **"Inside the band" = NO INFORMATION = back to the POOL, never a demotion.**
+##   The tool now prints its own informative band as the VERDICT. **Never quote a
+##   screen result without it.**
+##   **AND THE STRUCTURAL CAUSE: a false POSITIVE costs one window — bounded and
+##   visible. A false NEGATIVE costs a plank nobody hears about — unbounded and
+##   invisible. s30 built SEVEN FILTERS AND ZERO GENERATORS.** Magnus had to say so.
+##
+## ===== ⭐ THE BAR, MEASURED (`tools/mde.py`, selftested) =====
+##   Noise floor on the NULL: **sd(diff) = 14.31 kill-speed points/game**,
+##   mean diff +0.24 (~0 — the check that the floor is a floor).
+##   **n=64 → MDE 5.01 · n=1024 → 1.25 · overnight n≈10,800 → 0.39/game.**
+##   ⇒ **Anything an overnight run can resolve, RESOLVE IT. Anything it cannot,
+##   ship it and let the ladder decide.** At 1,350 games/hour/core, 10 cores.
+##
+## ===== ⛔ TWO TOOLING FACTS THAT ARE IN NO OTHER DOC =====
+##   1. **PARALLEL `fcode run` PRODUCES INCOHERENT COUNTS.** A 16-game parallel
+##      dose check inverted a 3-game serial one and both were wrong. **`h2h.sh` is
+##      unaffected (one game at a time per arm); any DOSE CHECK MUST BE SERIAL.**
+##   2. **SUBAGENTS ARE FOR JUDGMENT, CORES ARE FOR GAMES.** Screens are parallel
+##      background jobs — 8×1,024 games finished in 50 min on 8 cores.
+##
+## ===== BOOT: RUN THESE FOUR =====
+##   1. `.venv/bin/python tools/plank_status.py --all`  (gate on `PLANK_STATUS:`)
+##   2. `.venv/bin/python tests/test_instruments.py`
+##   3. `.venv/bin/python tools/corpus_sanity.py`  (gate on `CORPUS_SANITY:`)
+##   4. `.venv/bin/python tools/mde.py --selftest`  **NEW — it computes the bar**
+##
+## ===== STATE, VERIFIED AT WRAP =====
+##   **LIVE: v104 "Loki v2" = `bots/_v130loki13`. 1672, rank ~#25, k=101.**
+##   `RULE=held` · net5 −10 · peak 1698 · drawdown −26.
+##   ⚠ **THE SLOT RULE FIRED TODAY at 11:19Z (net5 −23) and CLEARED ITSELF.**
+##   Rollback needs rating **< 1615 AND** net5 ≤ −21 — rating never went below
+##   1656. **ROLLBACK TARGET: v102 = `bots/_v124loki8`**,
+##   `.venv/bin/fcode submission activate 102`. **NOT indicated.**
+##
+## ===== ⭐ THE DAY'S RESULTS, AT n=1024 (MDE 4.4pp, band ≤480 or ≥543) =====
+##   heal 524 · best-fit 524 · gun-cap 519 · ferry-first 518 · gunner-axis 516 ·
+##   roster 483 → **ALL NO INFORMATION** (any effect is < 4.4pp).
+##   **home-turrets-off 433 (42.3%) and barrier-seal-off 399 (39.0%) are REAL
+##   NEGATIVES — and both are SUBTRACTIONS.** Removing behaviour costs us.
+##   ⛔ **NO SHIP, AND IT DIED ON A DOSE CHECK: `K_HEAL_RATE_PCT` 5→1 was joint
+##   top (+1.2pp) and its MECHANISM RUNS BACKWARDS** — sequential, seed-matched:
+##   v104 **132.8** heals/game, the "heal cut" arm **461.5**. **3.5× MORE.**
+##   Its win rate came from a bot doing something other than what the plank says.
+##   ⇒ **A POSITIVE POINT ESTIMATE IS NOT A MECHANISM.**
+##
+## ===== SHIP RULE, AS IT NOW STANDS (Magnus, direct, 2026-08-11) =====
+##   *"Win rate decides."* · *"Any improvement no matter how small should be
+##   considered as the replacement of v104."* · *"The goal is to climb ELO."*
+##   `PROGRAMME.md` updated: **`PRIMARY_CURRENCY: game_share`,
+##   `WIN_RATE_IS_VERDICT: yes`.** A plank ships on **(a) a positive point
+##   estimate, (b) a VERIFIED MECHANISM, (c) no programme breach.** Significance
+##   is NOT required — the ladder supplies it and no screen we can afford could.
+##   ⛔ **UNRESOLVED, FLAGGED FOR MAGNUS:** under `game_share` a r1000 tiebreak
+##   win is a WIN; `R1000_IS_DEFEAT` says it is a defeat. Interim split recorded
+##   in `PROGRAMME.md`: game_share decides the SHIP, `R1000_IS_DEFEAT` governs
+##   what we BUILD, `score.py` baselines UNCHANGED.
+##
+## ===== QUEUE =====
+##   1. **FORWARD EFFICIENCY — the highest-value open item.** 4.57× deaths per
+##      forward build vs the top tier, two independent instruments. **Screen at
+##      ~880 games with the POOLED ratio + game-resampled bootstrap; the original
+##      bar was underpowered 3× and research replaced it. DO NOT screen at 64.**
+##      **PRIMARY BAR IS A RATIO with a PROTECTED DENOMINATOR (forward
+##      builds/game must not fall) — LOKI-25 died buying its numerator.**
+##   2. **DOSE-CHECK the restored planks** (best-fit, gun-cap, ferry-first,
+##      gunner-axis). **SERIALLY.** `_v139heal` is disqualified — inverted.
+##   3. **`era_guard`** — spec'd (`SPEC-era-guard-2026-08-11.md`), unbuilt.
+##   4. **F3 `map_admits`** — selftest never invokes `map_facts()`.
+##   5. **Gunner-axis ROAD open, LOKI-25 IMPLEMENTATION dead.** 3.44× forward
+##      death rate stands; the next version must hold presence at 11.00/game
+##      while cutting the rate. **A penalty term structurally cannot.**
+##
+## ===== ⛔ NOTHING IS WATCHING OVERNIGHT EXCEPT THE MONITORS =====
+##   6 alive at wrap (elo_logger · match_watcher · opp_watcher · replay_archiver ·
+##   keeper · ship_watch). **`breakin_watch` is DOWN and that is CORRECT** (k=101).
+##   **NO runner is live. NO auto-rollback is armed.** `ship_watch` writes
+##   `corpus/SHIP_ALERT` and **nobody reads it until someone boots** — it fired
+##   today at 11:19Z and went unread for thirty minutes with a live session.
+##   **MORNING: read `corpus/SHIP_ALERT` and `tail corpus/ship_watch.log` FIRST.**
+##
 ## ===== ⭐ BOOT: RUN THESE THREE BEFORE ANYTHING =====
 ##   1. `.venv/bin/python tools/plank_status.py --all`  — **NEW s29.** Gate on the
 ##      `PLANK_STATUS:` line, never on `$?` (behind a pipe `$?` is the pipe's).
