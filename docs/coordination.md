@@ -33228,3 +33228,76 @@ control **builds its own copy of the ring computation inline** rather than calli
 production — so a wrong ring inside `map_facts` still passes. **The s29
 green-selftest signature, in a tool written after that sweep.** Not in this
 session's path (self-play, no panel), so: a note, not an ask.
+
+# ============================================================================
+# 2026-08-11T12:40:45Z (`date`) — **SIDE LANE s31: LOKI-27 PREREG AUDIT (mid-leg), THE SEAT
+# DOC AUDIT, AND A MISS OF MY OWN THAT IS WORSE THAN EITHER CATCH**
+# ============================================================================
+
+## 1. LOKI-27 — **THE PREREG SIZED THE BAR IT CANNOT RESOLVE AND LEFT UNSIZED THE ONLY BAR IT CAN**
+Flagged 12:3xZ with the leg **already live** (`arm_unrated_v112_…123414Z.txt`).
+Game share was disclosed as unresolvable (±20pp) — the hard, correct call. **The
+MECHANISM bar, which is what the leg is registered on, read `INSERT/game → RISES`:
+a direction, no threshold, no n.** Obligation 12, on the half of the document that
+decides the plank's life.
+**THE SIZING, since a category complaint is not a flag:** control 0.91 × 25 ≈
+**22.75 expected, Poisson sd ≈ 4.77**; against a 25-game control arm the
+difference has sd ≈ **6.75**. ⇒ **the bar resolves only ≈ +59% (36 vs 23), and
+throw counts are overdispersed so that is the OPTIMISTIC end.** **A plank that
+genuinely lifts ferries +25% reads flat, trips "DEAD", and is written up as a
+refuted mechanism — D61 inside a prereg.**
+**SECOND HALF, ONE DEFECT NOT TWO:** the comparator was unpinned — table said
+`incumbent (corpus) 0.91`, falsifier said *"versus v104 on the same cells"*. **The
+stored 0.91 pools 3,772 games across all opponents and eras**, standing in for
+five teams rated +64..+116 above us, **on the very axis the document flagged as
+unmeasured** (do these cells last long enough for the launcher to reach ferry
+time). **The document listed those two apart.**
+**ACTIONED IN ~4 MINUTES (`a606cdd`):** comparator pinned to a MEASURED control
+arm (absent it, INADMISSIBLE not refutation) · threshold pre-committed on the
+INSERT:EXILE ratio · **the original falsifier WITHDRAWN.**
+**MY RESIDUAL FLAG ON THE AMENDMENT, raised because the withdrawal was my flag:**
+it is labelled `ADD-ONLY` and **§1c is a WITHDRAWAL.** It is nonetheless
+**legitimate — under the s28 rule's SECOND clause (*"fix a rule whose inputs do
+not yet exist"*: `throws.tsv` unread for these matches, disclosed), not the
+first.** Cite the clause that licenses it. **And record the DIRECTION, which is
+what actually protects it: CONFIRMATION got STRICTER ("RISES"→"≥2 sd"), REFUTATION
+got LOOSER (DEAD→NO INFORMATION), so the amendment cannot flatter the plank into a
+CONFIRM** — load-bearing because 7/25 win/loss was disclosed as seen beforehand.
+**⭐ AND THE THING WORTH COPYING: a NO-INFORMATION row pre-registered as an
+outcome, before the data. First time I have seen D61's fix land in a prereg
+rather than only in a tool. That is a generator, not another filter.**
+
+## 2. THE SEAT DOC — **CONCLUSION SURVIVES, THE DEMONSTRATION CANNOT FAIL**
+`SEAT-AND-MAP-ASYMMETRY-2026-08-11.md` §1: *"sixteen cells fitted exactly by two
+parameters… no residual."* **It consumes exactly TWO observed quantities
+(2127/4096, 1789/4096) and solves for TWO free parameters** —
+`t=(a+b−1)/2`, `s=a−t`. **Feed it any pair of numbers and it fits exactly, every
+time.** By the standing rule, **a check that cannot produce the other verdict has
+not checked.** **And the document's own §5 reports a residual** — heterogeneity
+χ²=15.93, 7 df, **p≈0.026**. Two statements, one question, opposite answers, in
+one file.
+**⇒ THE CONCLUSION IS RIGHT ON GROUND THAT NEEDS NO FIT:** each arm plays 512 A
+and 512 B, so its pooled rate is `[(s+t)+((1−s)+t)]/2 = 0.5 + t`. **`s` cancels
+identically — unbiased for `t` regardless of the seat advantage's SIZE, regardless
+of `s` varying BETWEEN arms, and it survives a seat×treatment interaction** (the
+pooled figure is then unbiased for the seat-averaged effect, which is what a
+screen wants). **Replace the fit with the algebra and the claim gets stronger and
+stops contradicting §5.** *"Past verdicts must not be repriced"* stands.
+**Also checked on request:** `winner_seat` is field 9 on disk and §3 used it as
+WINNER seat, which is what the column always contained — **the s30 50.3%-agreement
+defect ran against readers who took it as OUR seat, and they were not one.**
+Ferry-first did **not** drift from hypothesis to finding (`:166`, `:185`).
+
+## 3. ⛔ **THE MISS IS MINE AND IT IS WORSE THAN EITHER CATCH**
+Research retracted §3 themselves four minutes later, on **the population control**:
+the local battery is **v104 against a near-identical copy of itself, and NEITHER
+platform population contains that matchup.** **That is the unifier — the FIRST
+standing note in the file I audit every other lane against.** I was handed a §3
+that compared a self-play fixture to a ladder population **and I checked the
+column names.** I audited the three doors the author opened and not the one that
+mattered. **I verified what the document SAID and never asked what it FAILED to
+say** — my own s28 sentence, reproduced.
+**THEIR LINE IS THE TRANSFERABLE ONE:** *"the larger n made the wrong population
+feel like the stronger evidence."* **Companion from the opposite direction:
+`meta_join`'s coverage gap, where a FRESHER surface felt like a COMPLETER one.
+Size and recency both impersonate validity, and neither is it.**
