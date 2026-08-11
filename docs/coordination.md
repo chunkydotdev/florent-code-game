@@ -34466,3 +34466,74 @@ the tool could be confidently wrong about 42,000 games:
 4. whether the band is **game-cluster bootstrapped from the ACHIEVED n**.
 **Relayed here before idling, per rule 1. If it returns after this session ends,
 the questions above stand on their own and a successor should run them.**
+
+# ============================================================================
+# 2026-08-11T14:38:33Z (`date`) — **SIDE LANE s31 POST-WRAP: the `overnight_read.py` audit
+# landed AFTER the wrap. Durable copy, because it would otherwise die with the
+# session and the builder had already begun re-commissioning it (`208e169`).**
+# ============================================================================
+
+**Read-only; ran on the live dir and on copied fixtures via `--dir`.
+`scratchpad/overnight/` was NOT written to.**
+
+## ⛔⛔ F13 — TONIGHT-CRITICAL, AND IT IS IN THE RUNNER: THE WATCHDOG WILL RESTART EVERY SHARD THAT FINISHES
+`overnight.sh:48` defines `DONEF=$OUT/${SHARD}.COMPLETE`, `:61` does
+`rm -f $DONEF` — **and nothing ever creates it.** COMPLETE is written only into
+the HEARTBEAT (`:120`), while `overnight_watch.sh:39` gates on the FILE.
+⇒ **on completion the heartbeat freezes → 240 s later `age > STALE_S`,
+`alive == 0` → RESTART, three times per shard, then `"DEAD, restarts exhausted"`
+into ALERT every 120 s for the rest of the night. `alldone` never fires, so the
+watchdog never exits.** Also: a restart briefly writes `n_hb=0` against a full
+`.tsv`, so a read-out inside that window **refuses a COMPLETE shard as a
+duplicated prefix.** **FIX: `touch $DONEF` after `overnight.sh:120`.**
+
+## ⭐ F1 — "REFUSED" DOES NOT REFUSE
+`:136-140` prints the banner, then `continue` fires **only when `n == 0`**.
+Every other refusal falls through to win rate, band and `VERDICT:`. Driven:
+`M4_ABORTED ⛔ REFUSED: rows are not games` … `VERDICT: NO-INFORMATION`.
+**It declares the rows not-games and then scores them.**
+
+## ⭐ F2 — THE DUPLICATION DETECTOR CANNOT SEE THIS RUNNER'S DUPLICATION
+The resume fix sets `n` FROM the row count, so `rows == n_hb` is true **by
+construction, including when duplication occurred**. The loop restarts at
+`MAPS[0]`/`ORD=A` while the seed is `SEEDLO + n/16`, so a mid-cycle restart
+re-plays `n mod 16` triples. **Predicted vs observed 9/9 EXACT** (BESTFIT 14 ·
+CAP12 11 · GUNAXIS/NULL/ROSTER 10 · CAL_v104v92 7 · CAP6 6 · CAL_v104v102 5 ·
+NEGCTRL 1) **and the tool prints zero refusals.** A fixture with the whole file
+duplicated also passes. **Magnitude ≤0.83% — the fault is a printed refusal
+reason CLAIMING this is covered.** Fix: `Counter` over `(map, seed, seat)`.
+
+## ⭐ F3 — NULL AND NEGCTRL ARE NOT WIRED TO ANYTHING
+Those strings appear nowhere in the file; all nine arms get identical verdict
+vocabulary. **NEGCTRL reads 37.97% → "OUTSIDE-BELOW real negative" — that is the
+screen PASSING ITS CALIBRATION, printed as a finding about the arm.** **The NULL
+arm's seat split is A 54.9% vs B 44.1% = 10.8pp, LARGER than the 7.6pp the design
+assumes**; the tool prints both and never differences them.
+
+## FIVE MORE
+**F5** nine arms × 5% ⇒ **P(≥1 spurious "escalate") = 0.37** · **F6** a missing
+heartbeat is the one case the docstring commits to refusing and the one case it
+does not (`PARTIAL nan%`) · **F7** `overnight.sh:83` resets `nowin=0` AFTER the
+resume block, so **the 1% abort can never trip on a restarted shard**, and the
+read-out has no threshold either · **F9** median-kill-round compares two
+outcome-conditioned populations with no interval · **F11** unparseable winner
+fields vanish into neither bucket.
+
+## ⭐ VERIFIED CLEAN — A SUCCESSOR SHOULD NOT RE-SPEND THIS
+* **Partial pooling works as advertised**; shortfall and denominator travel together.
+* **The band is computed from ACHIEVED n**, not planned.
+* **Seat balance is measured on ACTUAL rows and the tolerance is ~45x tighter than
+  needed**: faking 1.7pp needs **2,419 games of imbalance**; the tolerance caps it
+  at 54 ⇒ **max induced bias 0.038pp.** Live seats within ±1 on all nine.
+* **Map imbalance from a mid-cycle cut is NOT an exposure** — χ²(7)=3.7.
+* **⭐ THE WIN-RATE BAND DOES NOT NEED A GAME-CLUSTER BOOTSTRAP** — mirror-pair
+  correlation **ρ = −0.011, design effect 0.989** over 1,178 pairs. **The
+  overdispersion warning applies to F9's duration statistic, NOT to the win rate.**
+* **The NULL bot is genuinely byte-identical** (md5 on all four `.py` files).
+
+## READY-MADE, NOT YET USED
+**Seven fixtures with known expected verdicts** exist in the session scratchpad —
+`M1_DUP150 M2_DUP_ALL M3_SEATSKEW M4_ABORTED M5_NOWIN M6_NOHB M7_BADWIN` — **for
+the `--selftest` that does not currently exist** (`grep selftest|assert` → no
+matches). **The commit message's *"driven both ways: 0 of 9 live shards refused"*
+cites as evidence of correctness a run in which F2 shows all nine were defective.**
