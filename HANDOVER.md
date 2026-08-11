@@ -155,6 +155,31 @@
 ##   INTO A DEAD PLANK.** "Ready" means the checks are ALREADY DONE, not skipped.
 ##   **Run `plank_status.py <plank>` and require OK — not "not stale".**
 ##
+## ===== ⛔⛔ READ THIS BEFORE YOU BELIEVE ANY "SCREENED BELOW THE NULL" =====
+##   **`tools/h2h.sh` AT n=64 DETECTS ONLY EFFECTS >= +17.5pp. LOKI-13 — THE BEST
+##   PLANK THIS PROJECT HAS EVER SHIPPED — MEASURED +18.0pp.** We calibrated a
+##   filter to reject everything short of our own best-ever result, ran nine arms
+##   through it, and reported that the bot could not be improved.
+##   **SEVEN OF NINE FELL INSIDE THE BAND = NO INFORMATION.** Only `rush` 16/64
+##   and `barrier-seal` 7/24 are real negatives — and barrier-seal by ONE GAME.
+##   ⇒ **RESTORED TO THE POOL, STATUS *UNTESTED*, on Magnus's direct instruction
+##   ("they should go back right away"): heal budget · home turrets · roster ·
+##   the gunner AXIS.**
+##   ⚠ **CARVE-OUT: the gunner AXIS returns; the LOKI-25 IMPLEMENTATION STAYS
+##   DEAD** — it died on a pre-registered MECHANISM falsifier that DID resolve at
+##   n=25 (deaths −24%, presence −23%, deaths-per-forward-build flat −2.3%).
+##   **Road open, that implementation closed. Conflating them repeats LOKI-18 in
+##   the revival direction.**
+##   ⛔ **DO NOT RE-RUN THEM AT n=64 — another non-result by construction: the
+##   band is [38%,62%] and a real +10pp effect lands inside it.** Screen on a
+##   MECHANISM bar or take them to a live window.
+##   **STANDING RULE: a plank may die on a failed MECHANISM bar, a PROGRAMME
+##   rule, or an INERT metric — NEVER on an underpowered win rate.**
+##   **AND THE STRUCTURAL CAUSE, so it does not recur: a false POSITIVE costs one
+##   window — bounded and visible. A false NEGATIVE costs a plank nobody ever
+##   learns about — unbounded and invisible. s30 built SEVEN FILTERS and ZERO
+##   GENERATORS.**
+##
 ## ===== QUEUE, IN PRIORITY ORDER (rebuilt s30 after the LOKI-19 read-out) =====
 ##   0. **THE NEXT LEG — build it BEFORE the slot is free, per the block above.**
 ##      **Best candidate on today's evidence: the HEAL-RATE plank (queue 3).**
