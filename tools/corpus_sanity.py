@@ -345,10 +345,24 @@ def main(d="corpus"):
             else:
                 bad += 1
     bad += conditionally_dead(Path(d))
-    bad += freshness(Path(d))
+    stale = freshness(Path(d))
+    bad += stale
     print("\nno undocumented dead columns" if not bad else
-          f"\n{bad} UNDOCUMENTED all-zero column(s): decoder bug, or a real fact? "
-          f"Do not quote them until you know which.")
+          f"\n{bad} UNDOCUMENTED all-zero column(s) or STALE file(s): decoder "
+          f"bug, or a real fact? Do not quote them until you know which.")
+    # ⛔ A ONE-LINE VERDICT TOKEN AT THE VERY BOTTOM, s30 2026-08-11, AND THE
+    # REASON IS THIS TOOL'S OWN FIFTY-HOUR MISS.
+    # `league_games.tsv` froze on 08-09 and this file DETECTED IT CORRECTLY and
+    # exited 1 for fifty hours. It is in the builder boot sequence and it WAS
+    # run at boot on 08-11 -- the builder read past the STALE line in the middle
+    # of a long report and never checked `$?`. **The alarm was not broken, it
+    # was UNREAD**, which is the inverse of every other instrument defect found
+    # that day and is not fixed by making the alarm louder in the middle.
+    # So it ends with a single gate line, the same convention as PLANK_STATUS
+    # and the *_SELFTEST tokens: **GATE ON THIS LINE, NEVER ON `$?`** -- the
+    # natural way anyone runs a long report is `corpus_sanity.py | tail`, which
+    # makes `$?` the status of `tail` and therefore always 0.
+    print(f"\nCORPUS_SANITY: {'OK' if not bad else 'CHECK'}")
     return 1 if bad else 0
 
 if __name__ == "__main__":
