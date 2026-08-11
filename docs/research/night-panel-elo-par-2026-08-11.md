@@ -718,3 +718,121 @@ exact-ray · two definitions of `undamaged` · three definitions of "forward" ·
 `hold_any` vs `hold_pinned` · four at once in `throws.tsv`. **The pattern is not
 carelessness — it is that this project computes the same quantity in two places
 and names it once.**
+
+---
+
+# ✅ PART 9 — RESOLVED STATE. Read this part; Parts 5, 7 and 8 record how it got here.
+
+*Appended ~06:0xZ, after the builder arm ran the two checks this lane could not
+(it does not read bot trees) and the side lane supplied the denominator this lane
+was blind to. **This is the settled version of the finding.***
+
+## THE FINDING, AT FULL SIZE
+
+**Our ferried builder bots arrive at the enemy core and never attack — 0 of
+2,247 self-inserts, across SIX consecutive versions.**
+
+```
+v102  0/442     v103  0/22     v104  0/1490     v105  0/115     v106  0/88     v107  0/90
+```
+
+**This document's earlier "0/475 across v102 and v104" was RATED-ONLY and
+understated the sample by 4.7x** — `join.tsv` covers rated games only; joining
+our version out of `meta_join.team{A,B}Version` picks up unrated too. *(Side
+lane's cut; this lane's numbers reproduce it to the digit where they overlap.)*
+**It is not a v102/v104 observation. It is the entire current line.**
+
+**Arrival, meanwhile, is the best in our recorded history: reach on self-inserts
+18.6% → 38.1%.**
+
+## THE CAUSE — a deliberate flag, and a COMPLETE gate
+
+`LOKI_QUIET_ON = True` (`bots/_v130loki13/doctrine.py:1470`). **Every
+builder-attack path in the tree is gated, verified by grep rather than assumed:**
+
+| path | | |
+|---|---|---|
+| `raid.py:256` | core peck while standing on a seat | GATED |
+| `raid.py:335` → `_raid_peck` | melee adjacent building | GATED — **single call site, verified** |
+| `main.py:505` | counterbattery melee | GATED |
+| `eco.py:911` | siphon hit | GATED |
+
+**`_raid_peck` was this lane's candidate "fifth ungated path"** — its `ct.fire()`
+at `:377` carries no gate *inside* the function — **but it has exactly one call
+site, at `:335`, and that call site carries the gate.** The remaining `ct.fire()`
+sites are the `_turret` path (`main.py:662`, dispatching GUNNER/SENTINEL), which
+is turret fire and correctly unaffected by a builder-melee flag.
+**⇒ It is genuinely ONE CONSTANT.**
+
+## THE TRANSITION ZONE IS RESOLVED — arm rotation, not a toggling bug
+
+The v96–v101 zone read raggedly (v95 100%, **v96 0%**, v97 71.4%, **v98 0%**,
+**v99 0%**, **v100 0%**, v101 100%). **This lane tested and FALSIFIED the obvious
+explanation** — rated/unrated does not track it; all of v95–v100 are unrated and
+split anyway.
+
+**The actual answer: every Loki tree from `_v121lokiquiet` forward carries
+`LOKI_QUIET_ON = True` — all fourteen, unbroken through `_v135loki18`. The
+non-zero arms (v95/v97/v101) are simply not from that family.** The zone is
+**us A/B-rotating quiet-carrying and non-quiet arms across prototype
+submissions**, which is what those versions were for. **Nothing toggled by
+accident and there is no transition-zone story to write.**
+
+*Method note worth keeping: against a BOOLEAN gate, a single observed attack
+falsifies "the flag was on". v101's n=3 was decisive rather than underpowered —
+the usual instinct in this repo to discount n=3 is wrong when the quantity under
+test is a code path's existence rather than a rate.*
+
+## ALL THREE INNOCENT EXPLANATIONS ARE CLOSED, each by a different lane
+
+1. **Decoder break** — dead. In the same v102/104-era files the **opponents'**
+   self-inserts populate `any_atk` at 21.1% (124/587). The events decode; ours
+   are not generated. *(this lane)*
+2. **Short tracking window** — dead. Our ferried bots hold **57,625 life-rounds
+   against their 34,298** — more observed bot-time after landing, not less.
+   *(side lane)*
+3. **Ferried for economy, not as raiders** — dead. **124 of our 442 night
+   inserts (28.1%) stood orthogonally adjacent to the ENEMY CORE and never
+   attacked.** A bot ferried for eco is not on their doorstep. *(side lane)*
+
+## ⭐ THE QUEUE REORDER THIS PRODUCED — and neither lane had both halves
+
+The side lane's sentence: **building a six-link express lane to deliver bodies
+that provably do not attack when they arrive would spend +60% permanent cost
+scale to move the same zero further forward.**
+
+1. **LOKI-19 = the peck plank (CONVERSION).** Re-enable the **core peck only**,
+   leaving counterbattery and siphon silenced so no defensive mechanism rides in
+   beside an offensive one (`PLAY_DEFENCE: never`). Upstream, one constant, and
+   now known to be a complete gate.
+2. **Launcher chains (INSERTION) — DEMOTED behind it.** Not dropped; it was the
+   lead thirty minutes earlier and it is a good plank. **But if a chain leg fires
+   and nulls, this is why — and the null would be indistinguishable from "chains
+   don't work", closing a road wrongly and permanently.**
+
+**The counter-argument belongs in the prereg, not buried:** the per-round trade
+is unchanged — a peck still costs that raider its move — and the doctrine records
+LOKI-QUIET going 3-2 against CAD while landing zero builder attacks. **The open
+question is not "does melee help" but "at 38% arrival, is an arrived-round worth
+more spent on damage than on holding position?"** That is a different question
+from the one v96 answered at 18% arrival.
+
+## STILL UNPRICED, AND IT IS A PROGRAMME-FIT QUESTION
+In the night files we made **3,727 hostile throws to their 1,927** — the field's
+heaviest user of enemy-bot ejection at nearly 2:1 — **while being the only team
+whose own inserts never attack. Our launcher is almost entirely an EJECTION tool
+and almost not an INSERTION tool.** Under `PLAY_DEFENCE: never` that deserves a
+sentence. **And the columns that would price the ejection side measure the wrong
+thing by construction: kidnap effectiveness has NO column in `throws.tsv`. That
+is a decoder gap and must never be read as a null.**
+
+## THIS LANE'S PROCESS DELTA, from three corrections in one session
+**The pattern: confidently naming a CAUSE when only an EFFECT was measured.** In
+all three cases the effect was real and load-bearing and the causal label was one
+step off ("regression" for a deliberate flag; "the race tightened" for a stale
+cutoff; "the launcher raid delivered nothing" for a mis-keyed denominator).
+**The measurement is the scarce thing; the causal label is cheap to correct once
+a lane with the code reads it.** The fix is narrow and mechanical rather than
+attitudinal: **mark the causal sentence as an inference IN THE SAME MESSAGE**, as
+was done unprompted for *"conversion problem"* in Part 2. **The habit exists; it
+did not fire on these three.**
