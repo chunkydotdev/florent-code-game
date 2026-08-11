@@ -34268,3 +34268,96 @@ is blind to PAIRING; the tape is blind to DURATION. **Both fail silently toward
 `--json` `createdAt` — NEVER the `match list` table, whose Date column lags ~2
 minutes and lands on the wrong side of a submit.** All three of today's legs were
 certified this way: **zero rated leakage.**
+
+# ============================================================================
+# 2026-08-11T14:35:36Z (`date`) — **REBOOT STATE — SIDE LANE (s31, safe to reboot)**
+# Retro ran FIRST per the wrap protocol: `docs/retro-side-lane-2026-08-11-s31.md`
+# (instrument v1.1, FIRINGS 3, Q6 off zero on its third run).
+# ============================================================================
+
+## SUCCESSOR: DO THESE FIRST
+1. **RE-ARM BOTH WATCHES — they die with this session.**
+   `scratchpad/drift_watch_s31.sh` (all-commits; **five-direction selftest**:
+   seeded N back → N · at HEAD → 0 · missing repo → BLIND · not-a-repo → BLIND ·
+   **TZ trap, emitted stamp == `TZ=UTC git log` to the second**). Arm it as a
+   **Monitor**, not a background job — **a job that never exits only notifies you
+   when it DIES, which makes it a log, not a watch.**
+   `scratchpad/v112_prearm_watch.sh` (**RETIRE IT once `ship_watch` reports
+   `armed=True`** — it exists only for the pre-8th-match gap).
+2. **⛔ BEFORE EXECUTING ANYTHING IN `tools/`, GREP FOR `subprocess`/`fcode`/
+   `.venv/bin` AND REFUSE IF PRESENT.** **Zero breaches this session against s30's
+   two.** The builder's rider stands: **it FAILS OPEN on a wrapper or a variable,
+   so its silence is not a clearance.**
+3. **⛔⛔ THE LANE'S CHARACTERISTIC FAILURE CHANGED SHAPE AND GOT WORSE — Q3 = 10,
+   the worst recorded.** Not s30's confident-negative; **s31's is REPEATING A
+   CLAIM WITHOUT REOPENING ITS SOURCE — six of ten.** ⇒ **For any claim you did not
+   measure YOURSELF this session, open the source before repeating it. A claim you
+   repeated YESTERDAY needs it MORE, not less.** Care does not prevent this; **both
+   failures I stopped in time were stopped by running one command.**
+
+## LIVE STATE — VERIFIED 2026-08-11T14:35:36Z
+* **v112 (Loki v3) holds the slot** — shipped 13:14Z, ending v104's 29h25m hold.
+  **1680, rank #23 of 119, k=6, net5 +8.0, peak 1680, drawdown +0.0,
+  `sprt_fast=OK`, `armed=False`** (arms at the 8th match).
+* **⚠ v112's early gain is CONFOUNDED and I flagged it before the result was
+  good:** it inherited a **depressed baseline** (v104's last two matches were 1-4
+  losses at `sprt_fast=BLEED`, drawdown −32). **Its 5-0 vs Askar City is a cell
+  v104 also took 5-0 two hours earlier.** ⇒ **nothing yet distinguishes v112 from
+  v104.**
+* **LOKI-28's rated cost is CERTIFIED ZERO**, per-match version at the pairing
+  boundary, matched on team **id** not a name string. Every pairing since 13:14Z
+  carries v112; no prototype tag anywhere.
+* **OVERNIGHT RUN LIVE AND HEALTHY** — 9 shards, ~300 games each at 2026-08-11T14:35:36Z,
+  **0 NOWINNER, no alerts**. Spec: 2 CAL (2000) + NULL + NEGCTRL + 5 arms (5408),
+  **every TARGET a multiple of 16**.
+
+## ⛔ THE TWO THINGS I WOULD WATCH OVERNIGHT
+1. **THE SCHEDULE ASSUMES THE CAL SHARDS FREE CORES.** Measured **3.90 s/game**
+   (independently 4.07 by the builder) against a plan assuming 3.05 ⇒ 5,408 games
+   is **5.86 h**, ~98% of the window. It only fits because the two CAL shards
+   finish at ~2.2 h and relieve contention. **If a CAL shard hangs and burns its
+   restarts, all seven screening shards overrun.**
+2. **⇒ PARTIAL POOLING IS LOAD-BEARING, NOT A NICETY.** Shards landing at **85-98%
+   is the MODAL outcome.** `overnight_read.py` exists **because the completion-
+   marker refusal I proposed would have discarded a 95%-successful night.**
+
+## OPEN, ROUTED, NOT DONE
+1. **⛔ `PROGRAMME.md:8` STILL READS `INCUMBENT: bots/_v115dodge` — now stale
+   across TWO ships.** Display-only in code (`gate.py` prints it, enforces on
+   `LINE_DIRS`), so **no bug to hunt** — **but repairing line 8 ALONE while
+   `INCUMBENT_FROZEN: yes` stands would make the file forbid planks on the live
+   tree. The two fields move together or not at all.** Magnus-only.
+2. **⛔ THE DEFENCE DIRECTIVE DID NOT PROPAGATE.** `CLAUDE.md` contains **no**
+   reference to `not_at_the_kill_s_expense` or `DEFENCE_ADMISSION_BAR`; `:586`
+   still closes heal-idle staffing on `PLAY_DEFENCE: never`, its LOKI block still
+   says *"NEVER PLAY DEFENCE"*, and **`AGENTS.md:447` carries an identical copy**.
+   `HANDOVER.md` reasons from the old rule in three places. **Magnus-only; the
+   duplicated road table is the D14 defect and should become one surface with
+   pointers.**
+3. **An opus audit of `tools/overnight_read.py` was IN FLIGHT at the wrap and its
+   result dies with this session** — seat balance on ACHIEVED vs planned data,
+   the restart-duplication detector, whether NULL/NEGCTRL are used as calibration
+   or merely reported, and whether the band is game-cluster bootstrapped from the
+   achieved n. **Re-commission it before the morning read-out is trusted.**
+4. **LOKI-28's read-out had not landed** (~60 min after the fire). **Check the
+   leave-one-out range FIRST and the unaided opponent-crash control SECOND** —
+   the second is the only thing that separates a real null from a patched engine.
+
+## WHAT THIS LANE MEASURED THAT A SUCCESSOR SHOULD NOT RE-DERIVE
+* **Seat is worth 7.6pp on BYTE-IDENTICAL arms** (A 53.91% vs B 46.34%, z=3.54,
+  8/8 shards) — **~2.5x the largest arm effect in the nine-arm screen.** Any cut
+  not seat-balanced measures seat.
+* **The elo tape CANNOT certify holder restoration**: ~20 s rotation vs a 300 s
+  poll ⇒ **6.7% detection. Absence of a prototype tag is not evidence.** The
+  counter is blind to PAIRING, the tape is blind to DURATION; both fail toward
+  "looks fine".
+* **We already beat the 1800-1900 band on every kill metric** (tiebreak 2.4% vs
+  11.1%, wins-by-kill 96.9% vs 87.8%, median kill 174 vs 205) **and climbing
+  correlates with killing SLOWER.** The gap is the loss side: **our core dies in
+  46.3% of all v104 games, median r187.** ⚠ Most of the kill-round difference is
+  probably OPPOSITION; the two metrics that are FLAT across bands (tiebreak rate,
+  wins-by-kill) are the ones where we are a genuine outlier.
+* **The tiebreak tail is a COIN FLIP, not a salvage** (band wins 49.4% of tiebreak
+  games against a 45.2% base) — **this retracted my own +35 Elo estimate.**
+* **fcode 2.3.7 changed no game rules** — 47,404/47,404 bytes attributed, zero
+  rules functions edited. **Closed NEGATIVE; nobody need look again.**
