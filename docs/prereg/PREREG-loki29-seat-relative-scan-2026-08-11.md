@@ -400,3 +400,71 @@ docstring traces it to an s23 incident where `check_control_equivalence` returne
 0/14 on two noisy bots. That check genuinely needs determinism; the battery does
 not. Reproduced live this session: the gate reported `CONTROL IS NOT ITS PARENT
 (0/12)` for a directory compared against ITSELF.)*
+
+# ⭐ AMENDMENT 6 — **THIS IS A NEW PRE-REGISTRATION FOR §5/§7.2, NOT AN ADD-ONLY AMENDMENT.** Committed BLIND: shards launched 18:39:20Z, nothing read.
+
+**Three rulings, all forced by the side lane against my interest, all made before
+any LOKI-29 row has been looked at.**
+
+## 6a. AMENDMENT 3 MISLABELLED ITSELF, AND IT LOOSENED A WITHDRAWAL TRIGGER IN MY OWN FAVOUR
+
+A3 says *"ADD-only: it narrows what may be CLAIMED and changes no bar's
+threshold."* **The threshold did not move. Its ROLE did** — from a pass/fail on
+arm 1 to a descriptive level for the residue — **and `§7.2` is a withdrawal
+trigger that reads off exactly that role.** The standing rule: *an amendment may
+only ADD a constraint, or fix a rule whose inputs do not yet exist; anything that
+loosens, retargets or reinterprets an existing bar is a NEW pre-registration and
+must say so.*
+
+**Reinterpreting §5 loosened a withdrawal trigger in the direction that keeps my
+plank alive. That is the direction the checklist says to check hardest, and
+checking the self-serving direction is not checking.**
+
+⇒ **§5 and §7.2 are hereby RE-PRE-REGISTERED, and the original §5 bar stays on
+the record as SET UNDER A PREMISE NOW KNOWN TO BE WRONG** — it assumed CARDINALS
+was the whole 6.84pp, and there are at least four named contributors (CARDINALS ·
+the spawn-sort hash `main.py:284` · `DIRECTIONS` `doctrine.py:25` ·
+`eco.py:640`'s absolute angle sweep). **A pass/fail bar on a total of unknown
+composition cannot survive learning the composition** — but that is a reason to
+re-register it, not to relabel it as an addition.
+
+## 6b. §7.2 IS SUPERSEDED, AND THE CONFLICT IS RULED RATHER THAN LEFT TO READ-OUT
+
+§7.2 read: *"§5 bar missed with §6 also below 50% ⇒ withdrawn."* Under A3 a
+residue above 3.0pp is attributed rather than fatal. **Those give opposite
+readings of one event and nothing said which governs.**
+
+**RULING — the SUPERSEDING withdrawal trigger for arm 1:**
+> **Arm 1 is withdrawn if §6 (currency) reads below 50% AND the CARDINALS share
+> is not positive.** A residue above 3.0pp with a positive CARDINALS share and
+> §6 at or above 50% is **attributed to the untreated sites, not fatal.**
+
+**Rationale, stated so it can be argued with: the residue measures sites the arm
+never touched, so it cannot be evidence against the arm.** What CAN be evidence
+against the arm is its own share being null while the currency falls. **This is
+strictly harder to satisfy than §7.2 in the case that matters** (a positive
+CARDINALS share no longer rescues a plank whose currency fell — both conditions
+must fail).
+
+## 6c. OBLIGATION 12's SECOND HALF WAS MISSING. THE DEFAULT IS PRE-COMMITTED HERE.
+
+Obligation 12: *a gate carries its own resolution statement — the n at which it
+discriminates its branches, and, pre-committed, WHAT HAPPENS WHEN IT DOES NOT.*
+**Amendment 4 satisfied the first half** (which claims the n supports, which it
+does not, ~20,000 games/shard for SE≈1.0pp). **It did not state the second, and
+the missing branch is the LIKELY one, not an exotic one: all three shares can
+land inside their intervals.**
+
+⇒ **PRE-COMMITTED: an unresolved gate defaults to the RESTRICTION, never the
+permission.** Concretely:
+> **If no site resolves as dominant — i.e. no share exceeds 3.9pp in magnitude —
+> then NO MECHANISM CLAIM IS AVAILABLE, and arm 1 does NOT ship on mechanism
+> grounds, whatever §6 does on currency.** A currency-only ship would then be an
+> ordinary `game_share` decision under the s31 ship rule, argued on its own and
+> explicitly NOT carrying a mechanism claim — and §3 already forbids reporting a
+> closed seat gap as if it were a win rate.
+
+**AND THE SYMMETRIC STATEMENT, so this is not a one-way ratchet: if the CARDINALS
+share DOES exceed 3.9pp, that is a resolved mechanism and it may be claimed as
+one** — including if the spawn-sort share is the one that resolves instead, in
+which case the finding belongs to arm 2 and arm 1's own share is the null.
