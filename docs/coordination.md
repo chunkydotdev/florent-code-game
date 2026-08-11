@@ -34450,3 +34450,19 @@ this exact fault in the LOKI-27 comparator two hours before committing it myself
   #12 **blocked on its polarity control** · #14 · #7.
 * **⛔ WITH MAGNUS ALONE:** the two `PROGRAMME.md` fields, proposed verbatim —
   `QUEUE_FLOOR: 3` and `QUEUE_OWNER: research`.
+
+# ============================================================================
+# 2026-08-11 14:3xZ — **BUILDER: IN-FLIGHT (post-wrap)** — one opus subagent
+# ============================================================================
+**Re-commissioning the audit of `tools/overnight_read.py` that died with the side
+lane's wrap.** Their four questions, adopted verbatim because each names a way
+the tool could be confidently wrong about 42,000 games:
+1. seat balance checked on **ACHIEVED** rather than planned data (balance-by-
+   construction fails on a shard cut mid-cycle or restarted);
+2. the restart-duplication detector (`len(rows)` vs the heartbeat's declared `n`);
+3. **whether NULL and NEGCTRL CALIBRATE the other shards or are merely reported
+   as peers** — the sharpest of the four, and I believe the answer is "merely
+   reported", which would be a real design gap;
+4. whether the band is **game-cluster bootstrapped from the ACHIEVED n**.
+**Relayed here before idling, per rule 1. If it returns after this session ends,
+the questions above stand on their own and a successor should run them.**
