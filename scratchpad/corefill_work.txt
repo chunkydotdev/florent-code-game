@@ -1,0 +1,19 @@
+# COREFILL WORKLIST — everything is measured against the NEW incumbent v114
+# (_v146gunaxis), because PROGRAMME.md:169 says every control moves with the ship.
+# Targets are multiples of 16 (8 maps x 2 seats) so seat/map balance is exact;
+# seat is worth ~6.8pp on byte-identical arms, so an unbalanced cut measures seat.
+# shard     treatment              control              target seed_lo
+#
+# 1-3 FIRST AND THEY ARE NOT NEGOTIABLE: two calibration cells + the top plank.
+#     Without NULL and NEG the other verdicts cannot distinguish "no effect"
+#     from "no power", which is what made tonight's read-out mean anything.
+GUNFERRY    bots/_v154gunferry     bots/_v146gunaxis     5408  30000
+NULL114     bots/_v146null         bots/_v146gunaxis     5408  31000
+NEG114      bots/_v140noseal       bots/_v146gunaxis     5408  32000
+# 4-7 re-baselined against v114. All four were screened last night against v112
+#     AND ALL FOUR LACK FERRY-FIRST, so their old numbers were (X - ferry_first).
+#     Against v114 -- which also lacks it -- the contrast is finally clean.
+GUNBLANK    bots/_v147gunblank     bots/_v146gunaxis     5408  33000
+CAP12B      bots/_v144cap12        bots/_v146gunaxis     5408  34000
+CAP6B       bots/_v143cap6         bots/_v146gunaxis     5408  35000
+BESTFITB    bots/_v145bestfit      bots/_v146gunaxis     5408  36000
