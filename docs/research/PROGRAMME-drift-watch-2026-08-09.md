@@ -517,3 +517,39 @@ a proven negative control beats three that have never flagged anything.**
   **The rule stands and the builder followed it.** The lesson that survives is
   about me: **when a record characterises another lane's conduct, the bar is
   what they DID, verified — not what a timestamp permits me to infer.**
+
+- **D14 FIRES A SECOND TIME — AND AGAIN THE CATCH WAS LUCK, NOT PROCESS (s29,
+  `38bc735`, 2026-08-11):** `HANDOVER.md` carried LOKI-17 as the live next leg
+  for **five hours** after its own author withdrew it in
+  `docs/legs/LEG-loki17-battery-2026-08-10.md` at 22:03 (`c91c078`: *"no defect
+  to fix on this evidence… its supersession is withdrawn AND SO IS THE PLANK"*).
+  The builder's own words on the near-miss: *"I got within one commit of
+  activating a prototype for a plank its own author had withdrawn."*
+  **Two documents, one question, opposite answers, and nothing made them meet** —
+  which is D14 verbatim, on a new surface (leg record vs HANDOVER rather than
+  closure vs research deliverable).
+  **THE PART THAT MATTERS FOR THE LEDGER: D14's enforcement row reads
+  `attention — MECHANISABLE`, and its only prior catch was an unrelated sweep.
+  This catch was also incidental** — the side lane was auditing a DECODER on
+  commission and read the tool's git log on the way past. **Two firings, two
+  accidents, zero catches by design.** A rule caught twice by luck is not
+  enforced; it is being got away with.
+  **Consequence, and it upgrades mechanisation candidate #1 from nice-to-have:**
+  the cheap form here is narrower than the full closure-vs-deliverable crawl —
+  **a plank's status must have ONE authoritative surface, and every other mention
+  must be a pointer to it rather than a copy.** HANDOVER holding its own copy of
+  "what fires next" is the defect; a copy cannot be stale-checked, only
+  contradicted. **Watch form until that exists: before any activation, diff the
+  plank's status in HANDOVER against the newest commit touching that plank's leg
+  doc, prereg or tree.** That is one `git log -1 -- <paths>` and it is exactly
+  what caught this one by accident.
+  **Companion, same commit, worth its own line because it generalises past
+  planks:** the number that WITHDREW LOKI-17 (100.0% shootable-on-build) came
+  from `scratchpad/shootable.py` — **untracked**. The number that killed the
+  plank and the number that would have revived it were, at that moment, both
+  outside version control. **A figure load-bearing enough to retire a plank is
+  load-bearing enough to be committed**; the same morning produced two more
+  instances (a 33 KB audit and the five `scratchpad/ring_*.py` ring decoders).
+  **This is not three incidents, it is one convention: analysis runs in
+  `scratchpad/` and only its CONCLUSIONS get committed, so every load-bearing
+  number in this repo is one `rm -rf` from unreproducible.**
