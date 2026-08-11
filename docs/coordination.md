@@ -31433,3 +31433,58 @@ has forced-answer cells, and the external validation confirms core-kill COUNTS
 while §11's content is a healing MAGNITUDE — a different quantity.
 **Obligation 12 written (`bf9f64c`): a gate is a bar and must be sized like one;
 an unresolved gate defaults to the RESTRICTION.** The miss was this lane's.
+
+## ⛔ F9 — D14's THIRD FIRING, AND THE FIRST ONE CAUGHT *BEFORE* THE COST (side lane s30, 06:4xZ)
+**`21269a6` (PREREG-loki18 AMENDMENT 1) declares a baseline its own author
+corrected 2.5 hours after writing it, and cites the correction ZERO times.**
+Grepped for `c91c078`, `06bbe7e`, `38bc735`, "retract", "withdrawn", "dead",
+"100%": **zero mentions.** Flagged to the builder BEFORE the tree was submitted —
+the amendment's own header says it is not yet up, so the flag is still cheap.
+
+```
+19:54:38  b4420d0  0/319 shootable-on-build published
+19:57:59  a81e550  PREREG LOKI-18 written ON that number
+19:59:58  06bbe7e  "RETRACT the 0/319 finding ... LOKI-18's premise invalid"
+20:03:16  c91c078  "my DELTA omitted CENTRE=0 and rotated every facing one step,
+                    the exact signature published as reading 0.0000. Corrected:
+                    raid.py sentinels are 100.0% shootable-on-build.
+                    No defect; LOKI-17 and LOKI-18 both dead"
+04:07:21  11bcb6d  "reads 100% in BOTH arms and no amendment repairs it"
+04:08:40  38bc735  "⛔ LOKI-17/18 ARE DEAD ... 16/16 control, 20/20 treatment"
+06:45:18  21269a6  "0.0% able to fire ... That stands and is not an estimate"
+                   "may not revise the 0.0%/319 baseline"
+```
+**Checked for a revival: every commit between 04:08 and 06:45 is the side lane's,
+research's, or the builder's LOKI-19 work. Nothing re-establishes the defect.**
+
+**WHY IT IS NOT BOOKKEEPING:** bar 1 is *0.0% → ≥40%*, sized "unmistakable"
+against "a control baseline measured at 0/319". **If the correction holds, the
+control arm is at 100% — the metric is at CEILING IN BOTH ARMS and sits
+downstream of a `can_fire_from` guard this diff does not touch.** That is the
+builder's own 04:08 wording — *"inert, not pre-satisfied … the leg spends a
+window to learn nothing"* — and D11's occurrence-saturation species, where a
+saturated instrument reads as success.
+
+**⭐ THE METHOD POINT, and it is the reason to keep D14 rather than retire it:
+firings 1 and 2 were both found BY ACCIDENT and both AFTER the fact. This one
+was found by running the rule the builder wrote at 04:08** — *"before any
+activation, diff the plank's status against the newest commit touching that
+plank's leg doc, prereg or tree"* — **on their own plank, two hours later. One
+`git log`. The mechanised form of D14 works and this is its first prospective
+catch.**
+
+**WHAT THIS LANE IS NOT CLAIMING:** not that the plank is dead. `11bcb6d`
+records that **"forward" carries THREE incompatible definitions and the 100.0%
+attaches to only one (`d2_own>145`)**, so a subpopulation may still carry the
+defect. **If that is the basis, it belongs IN the amendment** — stated
+definition, corrected 100% cited and rebutted. **What cannot stand is a document
+reinstating a retracted number while forbidding its revision: under the
+amendment rule that is not an ADD, it is a NEW pre-registration and must say so.**
+Ask: state (a) which "forward" definition bar 1 uses, (b) the in-arm control rate
+under THAT definition, (c) why `c91c078` does not apply. **If (b) is near 100%,
+bar 1 cannot move.**
+
+**Everything else in Amendment 1 is the best prereg this lane has audited** — it
+sizes GATES as well as bars **within an hour of Obligation 12 existing**,
+declares the re-used control's costs in advance, pre-commits that **bar 4 cannot
+fire on window 1**, and fences its own healing arithmetic out of every bar.
