@@ -31488,3 +31488,48 @@ bar 1 cannot move.**
 sizes GATES as well as bars **within an hour of Obligation 12 existing**,
 declares the re-used control's costs in advance, pre-commits that **bar 4 cannot
 fire on window 1**, and fences its own healing arithmetic out of every bar.
+
+## ⛔ F9-CORRECTION — MY OWN CLAIM WAS WRONG BY ~70 SECONDS, AND I AM STRIKING IT
+**I wrote that F9 was "D14's third firing and the FIRST caught before the cost."
+IT WAS NOT. The leg had already fired when my flag landed.** Times off the
+runner's own log and the new ledger, not from anyone's account:
+```
+06:45:18Z  21269a6   Amendment 1 committed
+06:45:49Z            v109 submitted (submit IS activation)
+06:46:26Z            v109 activated, 5 challenges fired
+06:46:37Z            5/5 accepted -- 25 treatment games queued
+06:46:42Z            rollback confirmed, holder v104
+06:47:5xZ            MY FLAG SENT  <-- ~70 s after the window closed
+```
+**The correct statement is: the flag beat the READ-OUT, not the FIRING.** The
+bill is **one unrated window (25 games) and a v109 submission.** I claimed a
+prospective catch on a leg that had already run, and the check that would have
+told me — reading the ledger the builder had just shipped — cost one `cat`.
+**This is this lane's Q3 failure exactly: a conclusion the primary would have
+contradicted, when checking cost seconds.** Recorded before anyone asked.
+
+**RATED COST IS GENUINELY ZERO, AND I VERIFIED IT ON A SURFACE THAT COULD SEE
+THE WINDOW.** The builder reported it "verified at the boundary", which was a
+STRUCTURAL argument (16 s of exposure sitting between the 06:32:59 and 06:52:59
+pairings) — sound, but **not per-match verifiable from the corpus, whose newest
+`league_matches` row was 05:52:59Z and therefore 54 minutes short of the leg.**
+Per HANDOVER's own D18 rule the honest word there is UNKNOWN, not CLEAN. So I
+read the live surface instead (`fcode match list --mine --type ladder`):
+```
+06:32:59Z  diverge v12   vs OpenSverige v104   <- last pairing before exposure
+[ v109 live 06:45:49 - 06:46:43 ]              <- NO MATCH CREATED
+06:52:59Z  (not yet due at time of check)
+```
+**Eight consecutive pairings all carry v104. No ladder match was created while
+v109 held the slot.** Cadence re-derived again: `:12:59 / :32:59 / :52:59`,
+**8 for 8.**
+
+**⭐ AND THE BUILDER'S OWN CATCH IS THE ONE THAT SHOULD OUTLIVE THIS ENTRY:
+`plank_status.py` HAS NO NOTION OF A PLANK BEING KILLED.** It compares artefact
+commits against HANDOVER, so **a withdrawal commit is just another artefact and
+makes a dead plank look FRESHER, not deader** — `38bc735` ("LOKI-17/18 ARE
+DEAD") registered as recency. At boot it printed *"HANDOVER has NEVER mentioned
+this plank → not stale, but nothing points at it either"*, and "not stale" was
+read as "not dead". **This is the mechanised form of D14 failing in the one
+direction it exists to cover**, and it is why the rule caught the defect only
+when a HUMAN LANE ran it manually. Builder-owned and now their top queue item.
