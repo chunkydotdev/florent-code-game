@@ -32801,3 +32801,76 @@ programme's currency.** A perfectly powered screen on the wrong quantity is wors
 than an underpowered one on the right quantity, because its confident answers are
 all off-target. **I audited power all day and missed the currency, which was in
 the file I boot on.**
+
+# ============================================================================
+# 2026-08-11 12:1xZ (`date`) — **RESEARCH ARM s30: PROCESS DELTAS + STATE**
+# Retro ran FIRST (v1.3, FIRINGS 4) — `docs/research-arm-retro.md`.
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**D1. A BAR NAMES ITS AGGREGATION, NOT JUST ITS STATISTIC.** *(behaviour change →
+this booted file.)* I specified *"deaths per forward build, a RATIO"*. Measured:
+**mean-of-per-game-ratios has CV 2.60 and an MDE of 129% of level at n=64/arm;
+the pooled ratio is 102%.** Both useless, and I implied the worse one. **"Ratio"
+is not an estimator. Name the aggregation, the resampling unit, and the n that
+resolves it — in the same sentence as the bar.**
+
+**D2. A CROSS-TEAM RATE USED AS A CONTROL MUST BE ASKED WHAT OUR OWN BEHAVIOUR
+CONTRIBUTES TO ITS DENOMINATOR.** *(behaviour change → booted; the side lane
+promoted the same rule from their side.)* Twice today: `FIELD (all)` pooled
+`FIELD_vsUS` — deaths **we** caused with **our** sentinels — into "the field",
+turning 64.4% into 42.8%; and I nearly used *their* exposure to *our* gunners as a
+routing control while we build **1.29 gunners/game against the field's 6.1**.
+**First reached the builder. Second was caught pre-publication.**
+
+**D3. WHEN A SUBAGENT RETURNS A NUMBER FROM A SOURCE ITS BRIEF DID NOT NAME, THAT
+IS AN UNREVIEWED PRIMARY.** *(behaviour change → booted.)* Sweep 22 was briefed as
+an **external-literature** sweep and computed on our corpus. Its **−8.00pp** became
+my **−6.55pp** on re-derivation, with four defensible estimators spanning
+**−4.83 to −8.75**. **Nothing in our process flags a scope jump; the output looks
+identical either way.**
+
+**D4. "MECHANISM BARS ARE ~160× CHEAPER" IS A PROPERTY OF LOKI-25, NOT A RULE.**
+*(correction of a rule now in circulation → booted.)* True there (huge effect, low
+-variance statistic). **For forward efficiency the mechanism bar needs ~880 games
+and the win rate at 880 detects 4.7pp — comparable, not 160× apart.** The
+principle *"screen on mechanism"* stands; **quoting the multiple will under-power
+the next plank.**
+
+**D5. DECLINING TO NAME THE INTERVENTION IS A DELIVERABLE.** *(behaviour change.)*
+After mis-pricing healer eviction twice — once as a retarget, once as flag-sized —
+I handed three measured gaps with the constants named and **no diff**. **A decline
+that says "you have the tree" costs less than a wrong diff and does not consume a
+screen.**
+
+## RESEARCH ARM STATE — verified 12:1xZ, not asserted
+
+* **Nothing of mine is running.** Three library agents completed and **all three
+  were relayed before this note**; no background jobs, no pending decodes.
+* **git clean and pushed** at the time of writing; 133 commits across the three
+  lanes this session.
+* **Live surfaces I actually read this session** (a successor should not inherit
+  these unchecked — they move): `corpus/events.tsv`, `corpus/econ.tsv`,
+  `corpus/throws.tsv`, `corpus/league_matches.tsv`, `replay_archive/*.meta.json`,
+  `results.tsv`, `docs/prereg/`. **Corpus synced at boot (0 new replays);
+  it has since grown.**
+* **What a successor must NOT inherit unchecked:** every per-opponent statistic in
+  this repo **reads high** (pooling across opponent versions, direction and
+  significance replicated league-wide, **magnitude estimator-dependent across
+  −4.8..−8.8pp — do not apply a point correction**). And **the h2h screen at n=64
+  detects only ≥17.5pp**, which is larger than our best-ever plank.
+
+## OPEN, IN PRIORITY ORDER
+1. **Forward efficiency** (`QUEUE-forward-efficiency-2026-08-11.md`) — **4.57×
+   deaths per forward build vs the top tier**, two instruments. **Amended with its
+   own power audit: run at ~440/arm, NOT 64.** Highest-value open item.
+2. **LOKI-21 healer eviction** — measurements good (admission, opportunity,
+   power); **its diff section is WRONG** (not flag-sized: `_try_build_launcher`
+   has one call site in `_defend` and `SLOT_LAUNCHER` is a single latch).
+3. **The dwell question I did not answer:** what is our raiders' dwell time per
+   forward build *by round band*? The 2.28× is pooled; where it concentrates is
+   unmeasured.
+4. **Crash induction:** bottom of queue, not closed. **The weapon's population —
+   cost of a crash to a FORWARD unit mid-assault — is unmeasured by either of my
+   contrasts** (side lane's point, adopted).
