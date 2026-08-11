@@ -34605,3 +34605,74 @@ adjacent plank died to two minutes of grep on 2026-08-11).
 ⇒ **STRUCTURAL, still open for Magnus: that road table lives in TWO files and
 both were wrong about the same thing for three hours. One authoritative copy with
 pointers means the next correction is made once.**
+
+# ============================================================================
+# 2026-08-11T18:0xZ (`date`) — **SIDE LANE s32 BOOT** — drift watch + prereg
+# discipline armed. Read-only lane; no bot edits, no arena, no verdicts.
+# ============================================================================
+
+## STATE VERIFIED MYSELF AT BOOT, not relayed
+
+* **Overnight run HEALTHY, and it is nearly done, not overnight** — 7 arms at
+  **4,611–4,772 of 5,408 (85–88%) at 18:00:14Z**; both CAL shards **COMPLETE
+  (2000/2000)** with `.COMPLETE` markers on disk. At the observed rate the seven
+  land **~18:35–18:45Z**, well inside the window the plan sized at 5.86 h — the
+  CAL shards freeing cores worked exactly as the plan's load-bearing assumption
+  said it had to.
+* **The `.COMPLETE` markers on disk are the empirical close of F13.** The builder
+  verified `overnight.sh:121` creates it with a 2-game shard; the two real CAL
+  shards have now done it at full size.
+* **Monitors alive:** keeper `89444`, `cores_idle` (`games=14/9 consec_idle=0
+  queue_age_min=222.1 OK`), `ship_watch` (`v112 k=16 rating=1690 net5=+5.0
+  armed=True RULE=held sprt_fast/slow OK **tape_age_min=4.8**` — the tape is
+  FRESH, which is the check that makes the rest of that line mean anything),
+  `elo_logger`, `match_watcher`, `opp_watcher`, `replay_archiver`. Verified, not
+  re-armed — they are builder-owned.
+* **`queue_check` at boot: 5 unblocked, floor 3, OK.**
+* **Peer:** one other session (`florent-code-game-69`), announced to.
+
+## WHAT I DID FIRST, AND WHY IT WAS THIS
+
+**`tools/overnight_read.py`'s F1/F2/F3/F5 fixes landed at 16:39Z and had never
+been driven to the verdict they must refuse** — with the read-out ~35 minutes
+away and the seven known-answer fixtures still on disk in a dead session's
+scratchpad. Drove them read-only via `--dir` against a copy.
+**Full audit: `docs/research/AUDIT-overnight-read-post-fix-drive-2026-08-11.md`.**
+
+**THE HEADLINE IS THAT THE TOOL IS SOUND FOR TONIGHT'S DATA, and I am recording
+that before the defects because the comfortable direction was to publish four
+findings before pricing any of them.** Live winner-column census over all nine
+shards, **37,203 rows: `NOWINNER` = 0, unparseable = 0**, duplicate triples
+**0.02–0.35%** against a 20% refusal.
+
+**F1, F2 (both directions), F3's absent-branch and the seat guard all FIRE.**
+
+**The one that matters is latent, and it is inside the F3 fix:**
+`overnight_read.py:205` assigns `centre = nul["p"]` when the null is off 50%,
+`:225` prints `⇒ BANDS RE-CENTRED ON THE MEASURED NULL` — and **`centre` is read
+nowhere else.** Verdicts at `:183-184` use a hardcoded `0.5`, and that loop has
+**already printed** by the time `centre` is assigned. ⇒ **in the one scenario the
+branch exists for, the tool announces a correction it did not make.** It cannot
+fire tonight (live NULL 2,328/4,742 = **49.09%, z = −1.25**, trigger `|z| > 3`),
+so this is flagged FOR AFTER the read-out, not before it.
+**The fix for "the controls calibrate nothing" is a control that still does not
+act and now says it did** — D68's family, inside its own repair.
+
+Plus: **F6 disables TWO guards, not one** (`:86` is gated on `n_hb is not None`,
+so a missing heartbeat also turns off the corrupt-tsv check); the dup rate and
+the win rate use **different denominators** (zero live exposure, measured); and
+the multiplicity line counts **7** arms when **5** are screened — conservative
+direction, correct figure **0.23** not 0.30.
+
+**AND ONE THAT IS MINE:** `M5_NOWIN` — the fixture I built for the no-winner
+path — **refuses for DUPLICATION instead**, because its 200 `NOWINNER` rows
+repeat triples. It never reaches the path it exists to test, and a reader driving
+the set ticks it as passing. **F7 remains completely undriven.** A known-answer
+fixture must assert the REASON, not the outcome.
+
+## STANDING ASK TO THE BUILDER (`tools/` is theirs)
+The seven fixtures live ONLY at
+`/private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/3a0a7134-.../scratchpad/fx/`
+— a dead session's tmp, one sweep from gone. **They are the `--selftest` that
+still does not exist (`grep selftest` → 0 matches) and they belong in
+`tools/fixtures/`.**
