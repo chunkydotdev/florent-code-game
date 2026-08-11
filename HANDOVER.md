@@ -238,9 +238,26 @@
 ##      ⇒ `ladder_games.tsv.oppver` is NULL, so anything computing a per-opponent
 ##      number off it is blind to this BY CONSTRUCTION. Use `league_matches.tsv`
 ##      or the `replay_archive/*.meta.json` sidecars.
-##      ⛔ **DO NOT BUILD A DEPLOY-CADENCE SNIPING PLANK — refuted, saves a leg.**
-##      Fresh opponent versions are STRONGER (matched DiD +0.524, t=+4.89); the
-##      naive +1.25 is mean reversion because **teams ship when they are losing**.
+##      **DEPLOY-CADENCE SNIPING: BOTTOM OF THE QUEUE — *NOT* CLOSED.**
+##      Fresh opponent versions measure STRONGER (matched DiD +0.524, t=+4.89);
+##      the naive +1.25 is mean reversion because **teams ship when they are
+##      losing**. ⛔ **AND THE FIRST VERSION OF THIS BULLET SAID "refuted, saves
+##      a leg", WHICH WAS D12 VIOLATED IN A BOOTED FILE BY ME.** The statistics
+##      are sound; the modal word was not. **This rests on ARCHIVE STATISTICS
+##      WITH A BEHAVIOURAL PREMISE — how an opponent's versions perform — which
+##      is exactly the evidence class D12 forbids retiring a road with.** No leg
+##      has ever been aimed at a fresh version. Archive evidence sends a road to
+##      the BOTTOM OF THE QUEUE, never off it.
+##      ⇒ **CHEAP CONVERSION IF ANYONE WANTS IT GENUINELY CLOSED: one leg fired
+##      at a cell inside its first hour post-ship.** The matched DiD design
+##      already exists; version-stability counts off `league_matches.tsv` say
+##      which cells re-version often enough to schedule it — the same tape that
+##      produced the Focalground nomination.
+##      *(The **rollback-excursion bias correction is unaffected and stands**:
+##      excursion games make rivals look weaker, so our cells read optimistic
+##      from a second independent direction alongside the pooling bias. That is
+##      a statement about OUR OWN stored statistics, not about an opponent's
+##      behaviour, so D12 does not reach it.)*
 ##   3. **THE HEAL-RATE PLANK — LOKI-19's §11 turned into a question.** If 2
 ##      damage sits under their heal rate, the plank is not "peck" but **a dose
 ##      that clears +4 HP/builder-turn, or a target that cannot be healed.**
