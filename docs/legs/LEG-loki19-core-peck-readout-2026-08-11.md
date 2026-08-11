@@ -211,7 +211,16 @@ forbids.**
 
 ---
 
-# 6. ⛔ AN UNPRICED CONFOUND NOBODY PRE-REGISTERED: THE SEAT MIX DIFFERS IN ALL FIVE CELLS
+# 6. ⛔ ONE UNPRICED CONFOUND, WITH ONE NAME: **THE ARMS ARE NOT BALANCED ON THE FIXTURE AXES**
+
+*(Written as one defect on the side lane's audit. I first disclosed the seat mix
+and the map mix as two separate facts and the stratum exclusion as a third
+footnote. **They are one thing: the arms differ in their fixture composition, and
+that single imbalance drives all three symptoms.** A future pooled reading of
+this leg will inherit one named confound and is likelier to carry it than three
+scattered ones — D52b applied inside a document instead of across documents.)*
+
+**SYMPTOM 1 — the seat mix differs in all five cells.**
 
 `leg_read.py`'s own docstring: *"A paired comparison whose seat mix differs from
 its control is NOT paired."* **The prereg has no seat clause at all.**
@@ -224,15 +233,21 @@ its control is NOT paired."* **The prereg has no seat clause at all.**
 | **Powered by SmartFridge** | **10×B** | **10×A** — a COMPLETE INVERSION |
 | farming_200s | 5×A 5×B | 10×A 5×B |
 
-**This is DISCLOSED, not corrected.** A seat-matched estimator would be chosen
-after seeing the data, which is the fault this line exists to catch. It is
-recorded so that any future pooled reading of this leg carries it.
+**SYMPTOM 2 — the map mix differs** (treatment 14 maps, control 15): `hive` 0 vs
+3, `jackpot` 4 vs 1, `eider` 1 vs 4, `lighthouse` 6 vs 2, `drumlin` 4 vs 2.
+Research has separately established that **the map × opponent interaction cancels
+in every pooled statistic we compute** while hiding a ±0.3 within-map spread.
 
-**The map mix differs too** (treatment 14 maps, control 15): `hive` 0 vs 3,
-`jackpot` 4 vs 1, `eider` 1 vs 4, `lighthouse` 6 vs 2, `drumlin` 4 vs 2. Research
-has separately established that **the map × opponent interaction cancels in every
-pooled statistic we compute** while hiding a ±0.3 within-map spread. Both
-imbalances push in unknown directions and neither is priced.
+**SYMPTOM 3 — §5's stratum exclusion is asymmetric, 4 treatment vs 1 control, AND
+THAT ASYMMETRY *IS* SYMPTOM 2.** `jackpot` is the ring-clipped map, and the arms
+carry it 4 vs 1. The exclusion is mechanical and pre-specified, so it is not
+outcome-selected — but it is not independent evidence either, and reporting it
+as a separate caveat would have double-counted one imbalance as two.
+
+**ALL THREE ARE DISCLOSED, NOT CORRECTED.** A seat-matched or map-matched
+estimator would be chosen after seeing the data, which is the fault this line
+exists to catch. The imbalance pushes in an unknown direction and is not priced.
+**Any future pooled reading of this leg inherits it.**
 
 ---
 
@@ -323,6 +338,17 @@ effect. **Kidnap effectiveness remains a DECODER GAP and is not read as a null.*
 ---
 
 # 11. ⭐⭐ THE SURPRISE, WRITTEN DOWN BEFORE IT IS EXPLAINED AWAY
+
+> **⛔ STATUS OF THIS SECTION, FENCED ON THE SIDE LANE'S AUDIT AND CORRECTLY:
+> OBSERVATION, WITH ITS MAGNITUDE MARKED INSTRUMENT-UNVERIFIED. NOTHING MAY BE
+> SIZED OFF IT UNTIL `hp_ledger.py` HAS FORCED-ANSWER CELLS.**
+> The programme says a surprise is written down before it is explained away, so
+> this stays where it is. But the external validation in §9 confirms **core-kill
+> COUNTS** (18/50, 24/50) and this section's content is a **healing MAGNITUDE** —
+> a different quantity, and an untested one. **Recording is not licensing.** The
+> distinction costs nothing today because §11 is not a build input; it becomes
+> load-bearing the moment somebody prices a heal-rate-beating dose, and this is
+> the sentence that must stop them.
 
 **The peck works, and the opponents answer it with healing — in five cells out of
 five.**

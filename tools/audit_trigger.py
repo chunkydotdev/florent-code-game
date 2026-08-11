@@ -69,15 +69,60 @@ def note_verdict_ratio():
     return ratio, f"{analysis} analysis rows / {decisions} decision rows (last {len(tail)})"
 
 
-def doc_code_churn():
+# Prose surfaces this repo's METHOD REQUIRES. Writing them is doing the work,
+# not avoiding it, so they must not count as drift. See doc_code_churn().
+MANDATED_PROSE = ("docs/coordination.md", "HANDOVER.md", "docs/prereg/")
+
+
+def doc_code_churn(hours=None):
     """Lines changed in prose vs in code, over the last day of commits.
 
     0.14 on the productive day; 1.88 on the deadlocked one.
+
+    ⛔ RE-SPECIFIED s30, 2026-08-11, AFTER AN OUTSIDE AUDIT SHOWED THE ROW WAS
+    RETURNING NOISE. Two defects, both measured, neither hypothetical:
+
+    1. **IT HOVERED ON ITS OWN THRESHOLD, so the verdict was set by WHEN you ran
+       it.** Recomputed at six window offsets on one unchanged tree:
+           20h 1.0043 TRIP · 22h 0.9536 ok · 24h 0.9333 ok
+           26h 1.0279 TRIP · 28h 0.9939 ok · 30h 1.0691 TRIP
+       Three of six trip, with no trend. Two lanes booting four minutes apart
+       got opposite verdicts off the same tree (1.002820 TRIP at 06:05Z,
+       0.998839 ok at 06:09Z) purely from prose commits ageing out.
+       **AND `{val:.2f}` PRINTS `1.00` ON BOTH SIDES OF A 1.0 THRESHOLD**, so
+       the two readings were byte-identical except for the TRIP/ok tag.
+    2. **~43% of the numerator was artefacts the method MANDATES** —
+       `coordination.md` 4,517 lines (26.8%), `HANDOVER.md` 1,109 (6.6%), three
+       preregs 1,692 (10.0%) in one 24h window. **A leg run CORRECTLY raised
+       this signal.** The IN-FLIGHT registry, the handover and a pre-registration
+       are the work; counting them as drift inverts the row's meaning.
+
+    THE FIX, both halves:
+      * MANDATED_PROSE is excluded from the numerator.
+      * The row TRIPS ONLY IF IT TRIPS AT 20h, 24h AND 28h. A signal that cannot
+        survive a +/-4h window shift is a phase of the commit lumpiness, not a
+        property of the work. The reported value is the 24h one; the detail line
+        prints all three so a near-miss is visible instead of rounded away.
     """
+    if hours is not None:                      # single-window mode, used by the
+        return _churn_at(hours)                # stability check below
+        # (and by the selftest, which needs one deterministic window)
+    vals = {h: _churn_at(h)[0] for h in (20, 24, 28)}
+    v24, detail = _churn_at(24)
+    stable = all(v >= 1.0 for v in vals.values())
+    # Report BELOW threshold unless all three windows agree, so `main`'s
+    # `val >= thresh` comparison implements the stability rule without needing
+    # to know about it.
+    shown = v24 if stable else min(v24, 0.999)
+    return shown, (f"{detail}   [20h {vals[20]:.3f} · 24h {vals[24]:.3f} · "
+                   f"28h {vals[28]:.3f}; trips only if ALL THREE >= 1.0]")
+
+
+def _churn_at(hours):
     out = _OVERRIDE.get("numstat")
     if out is None:
         out = subprocess.run(
-            ["git", "log", f"--since={CHURN_HOURS}.hours", "--numstat", "--pretty=format:"],
+            ["git", "log", f"--since={hours}.hours", "--numstat", "--pretty=format:"],
             capture_output=True, text=True, cwd=ROOT).stdout
     doc = code = 0
     for line in out.splitlines():
@@ -94,11 +139,13 @@ def doc_code_churn():
         # three one-line flag changes).
         n = min(n, 500)
         if p[2].endswith(".md"):
+            if p[2].startswith(MANDATED_PROSE):
+                continue      # the method requires these; they are not drift
             doc += n
         elif p[2].startswith(("bots/", "tools/")):
             code += n
     ratio = doc / max(code, 1)
-    return ratio, f"{doc} prose lines / {code} code lines (last {CHURN_HOURS}h)"
+    return ratio, f"{doc} prose lines / {code} code lines (last {hours}h, mandated prose excluded)"
 
 
 def ship_cadence():
@@ -188,6 +235,34 @@ def cross_lane_analysis():
     Threshold 4.0 is deliberately loose and is NOT calibrated on a confirmed
     incident — it is a smoke alarm for "many documents, no decisions", and it is
     labelled as uncalibrated so nobody quotes it as a p-value.
+
+    ⛔ FIXED s30, 2026-08-11. THIS ROW WAS SUPPRESSING ITSELF, AND IT WAS THE
+    ONLY ONE OF THE FIVE THAT GENUINELY WAS. Two lanes found it independently
+    (the side lane's s29 sweep item, and an outside audit session spawned on the
+    boot FIRE) and both landed on the same cause:
+
+      **THE NUMERATOR WAS WINDOWED TO 24h OFF GIT AND THE DENOMINATOR WAS "THE
+      LAST 50 TAPE ROWS", WHICH CARRY NO CLOCK AT ALL.** `results.tsv` has no
+      timestamp column, so it could not be windowed in place, and the two sides
+      were therefore counting different populations.
+
+    Measured on 2026-08-11: `results.tsv` newest commit `4ad19ab`
+    2026-08-09T18:38:18Z (35.6h old); 19 of 21 dateable decision rows ALL >=35.5h
+    old; **zero rows added in 24h.** As shipped the row read 47/21 = 2.29 → `ok`.
+    Same-window it reads **47/0 = 47.00 against a threshold of 4.0 → TRIP.**
+    **On a day with 47 new analysis documents and ZERO recorded decisions, the
+    row built to catch exactly that condition printed `ok`.** Shipped: 1/5,
+    "audit not indicated". Consistently windowed: 2/5 = FIRE.
+
+    **AND `freshness.py` WOULD NOT HAVE FIXED IT.** That helper makes an
+    instrument REFUSE when its tape is stale; it does not make a ratio of two
+    different populations mean anything when the tape is fresh. This needed a
+    matched denominator, not a staleness gate — recorded because the standing
+    queue item called this "one helper, four bugs" and it is not.
+
+    THE FIX: count decision rows ADDED to `results.tsv` inside the SAME git
+    window as the documents, read off `git log -p`. Same clock, same source,
+    same population — `+` lines added, `+++` header excluded.
     """
     out = _OVERRIDE.get("namestat")
     if out is None:
@@ -197,14 +272,37 @@ def cross_lane_analysis():
             capture_output=True, text=True, cwd=ROOT).stdout
     docs = sum(1 for ln in out.splitlines()
                if ln.strip().startswith("docs/") and ln.strip().endswith(".md"))
-    rows = _OVERRIDE.get("tape") or list(csv.reader(
-        (ROOT / "results.tsv").read_text().splitlines(), delimiter="\t"))[1:]
-    tail = [r for r in rows if len(r) > 5][-WINDOW_ROWS:]
-    c = Counter(r[5] for r in tail)
-    decisions = (c["verdict"] + c["keep"] + c["discard"] + c["refuted"] + c["gate"]
-                 + c["baseline"] + c["ship"])
+    decisions = _decisions_in_window()
     ratio = docs / max(decisions, 1)
-    return ratio, f"{docs} new analysis docs / {decisions} decision rows (last {CHURN_HOURS}h)"
+    return ratio, (f"{docs} new analysis docs / {decisions} decision rows ADDED "
+                   f"(BOTH sides last {CHURN_HOURS}h, same git window)")
+
+
+DECISION_KINDS = ("verdict", "keep", "discard", "refuted", "gate", "baseline", "ship")
+
+
+def _decisions_in_window(hours=None):
+    """Decision rows ADDED to results.tsv inside the git window.
+
+    Matched to the numerator's population by construction: same `--since`, same
+    git log, same definition of "new". A row that already existed is not a
+    decision made in the window, and that is the whole bug this replaces.
+    """
+    hours = CHURN_HOURS if hours is None else hours
+    patch = _OVERRIDE.get("tape_patch")
+    if patch is None:
+        patch = subprocess.run(
+            ["git", "log", f"--since={hours}.hours", "-p", "--unified=0",
+             "--pretty=format:", "--", "results.tsv"],
+            capture_output=True, text=True, cwd=ROOT).stdout
+    n = 0
+    for ln in patch.splitlines():
+        if not ln.startswith("+") or ln.startswith("+++"):
+            continue
+        f = ln[1:].split("\t")
+        if len(f) > 5 and f[5] in DECISION_KINDS:
+            n += 1
+    return n
 
 
 def stuck_planks():
@@ -234,9 +332,15 @@ _TRIPPERS = {
     "doc:code churn":      {"numstat": "900\t0\tdocs/a.md\n1\t0\ttools/b.py\n"},
     "ship cadence":        {"elo": [["2026-08-09T10:00", "1", "1", "vX"]] * 5},
     "stuck planks":        {"tape": [["", "", "", "", "", "note", "KEEP-dev"]] * 9},
+    # cross-lane now reads ADDED decision rows out of a git patch, not the tape
+    # tail, so its tripper feeds a patch with exactly one added decision row.
+    # The `+++` header line is included DELIBERATELY: it starts with `+` and a
+    # parser that forgets to skip it would count it, so this fixture doubles as
+    # the guard for that off-by-one.
     "cross-lane analysis": {"namestat": "docs/a.md\ndocs/b.md\ndocs/c.md\ndocs/d.md\n"
                                         "docs/e.md\n",
-                            "tape": [["", "", "", "", "", "verdict", "x"]]},
+                            "tape_patch": "+++ b/results.tsv\n"
+                                          "+a\tb\tc\td\te\tverdict\tx\n"},
 }
 
 
