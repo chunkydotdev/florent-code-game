@@ -69,6 +69,37 @@ say(){ print -r -- "$(date -u +%H:%M:%SZ) $*" | tee -a $OUT/watch.log }
 
 say "WATCHDOG up. spec=$SPEC stale=${STALE_S}s poll=${POLL_S}s max_restarts=$MAX_RESTARTS"
 
+# ⛔ STARTUP REFUSAL, s32 -- and it closes the hole the monotonicity guard CANNOT.
+# MAXROWS is PER-PROCESS state, so on the FIRST poll hwm is 0 for every shard and
+# `rows < hwm` can never be true. ⇒ point a FRESH watchdog at a spec whose run has
+# already completed and been archived, and it sees rows=0, hwm=0, no fall, falls
+# through to the death check, and RESTARTS THE WORLD -- the s31 incident verbatim,
+# minus the coincidence that saved the diagnosis (that watchdog had been alive two
+# hours and therefore HAD a high-water mark).
+# That path is not contrived: it is the natural response to the incident itself
+# ("I should start a watchdog"), or a crash restart, or a successor reading the
+# runbook. **The guard catches "I was already watching"; it cannot catch "I was
+# pointed at an archived run."**
+# A launched shard ALWAYS leaves its .tsv behind, so "spec names shards, directory
+# has none" is NEVER a supervisable state -- it is an archived run or a wrong
+# --dir/OUT. A watchdog that begins by finding nothing to watch must SAY SO AND
+# EXIT, not restart the world. Stateless, one check, and it also catches a
+# mistyped spec path. (Side lane, who opened the diff rather than the subject.)
+found=0; listed=0
+while read -r SH _rest; do
+  [[ -z ${SH:-} || $SH == \#* ]] && continue
+  listed=$(( listed + 1 ))
+  [[ -f $OUT/${SH}.tsv ]] && found=$(( found + 1 ))
+done < $SPEC
+if (( listed > 0 && found == 0 )); then
+  say "*** REFUSING TO START: $SPEC names $listed shard(s) and $OUT contains NO .tsv for any of them. ***"
+  say "*** That is an ARCHIVED/finished run or a wrong OUT -- not a supervisable state. ***"
+  say "*** Restarting here would relaunch every shard FROM ZERO. Exiting instead. ***"
+  print -r -- "$(date -u +%H:%M:%SZ) WATCHDOG REFUSED TO START: $listed shards in spec, 0 .tsv in $OUT" >> $ALERT
+  exit 3
+fi
+say "startup check: $found/$listed shards have a .tsv in $OUT -- supervisable"
+
 while true; do
   alldone=1
   while read -r SH TR CT TG SL; do
