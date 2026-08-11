@@ -282,27 +282,64 @@ DECISION_KINDS = ("verdict", "keep", "discard", "refuted", "gate", "baseline", "
 
 
 def _decisions_in_window(hours=None):
-    """Decision rows ADDED to results.tsv inside the git window.
+    """Decision rows NET-ADDED to results.tsv inside the git window.
 
     Matched to the numerator's population by construction: same `--since`, same
     git log, same definition of "new". A row that already existed is not a
     decision made in the window, and that is the whole bug this replaces.
+
+    ⛔ NET, NOT GROSS, AND THE REASON IS A MEASURED FALSE SILENCE. The first
+    version of this counted `+` lines only. The side lane then asked the one
+    question a can-it-fire selftest cannot — *has the repaired row ever been
+    able to read `ok`?* — and found its only non-degenerate quiet day in nine
+    was an artefact:
+
+        T-2d   79 docs / 527 "decisions" = 0.15  ok
+        ...where 527 came from THREE commits whose diffs rewrote the whole file
+           c380ae8  -1,308 +1,309  -> 309 phantom "rows added"
+           3c3bedf  -1,308 +1,308  -> 308
+           eea3be8  initial add    -> 235
+        Two of those are ordinary content edits ("Lunds fixture unblocked",
+        "Correct my own gate row") on a day that also carries commits titled
+        "Repair shell-mangled backtick content in the tape row".
+
+    **So a trailing-whitespace normalisation, a line-ending change, a column
+    addition or any repair that rewrites the tape injected hundreds of phantom
+    decisions and silenced the alarm for a full 24 hours — and it did so exactly
+    when someone was doing bulk housekeeping on the decision tape, which is not
+    independent of periods when decisions are not being made.**
+
+    Subtracting removed decision rows fixes it without a magic constant: a
+    rewrite removes 308 and adds 309, netting **1**; an honest append removes 0
+    and adds 1, netting **1**. A genuine deletion lowers the count, which is the
+    correct sign.
     """
     hours = CHURN_HOURS if hours is None else hours
     patch = _OVERRIDE.get("tape_patch")
     if patch is None:
         patch = subprocess.run(
+            # --diff-filter=M excludes the commit that CREATED results.tsv.
+            # A file creation is not a day's decisions: on 2026-08-09 `eea3be8`
+            # contributed 235 phantom rows with nothing to net them against,
+            # and net-counting alone left 170 of the 527. Modified-only leaves
+            # 36, which matches the side lane's per-commit read of that day
+            # ("every other commit 1-3 rows each") -- i.e. the residual is REAL.
             ["git", "log", f"--since={hours}.hours", "-p", "--unified=0",
-             "--pretty=format:", "--", "results.tsv"],
+             "--diff-filter=M", "--pretty=format:", "--", "results.tsv"],
             capture_output=True, text=True, cwd=ROOT).stdout
-    n = 0
+    added = removed = 0
     for ln in patch.splitlines():
-        if not ln.startswith("+") or ln.startswith("+++"):
-            continue
-        f = ln[1:].split("\t")
-        if len(f) > 5 and f[5] in DECISION_KINDS:
-            n += 1
-    return n
+        if ln.startswith("+++") or ln.startswith("---"):
+            continue                       # diff headers, not content
+        if ln.startswith("+"):
+            f = ln[1:].split("\t")
+            if len(f) > 5 and f[5] in DECISION_KINDS:
+                added += 1
+        elif ln.startswith("-"):
+            f = ln[1:].split("\t")
+            if len(f) > 5 and f[5] in DECISION_KINDS:
+                removed += 1
+    return max(added - removed, 0)
 
 
 def stuck_planks():
@@ -332,8 +369,8 @@ _TRIPPERS = {
     "doc:code churn":      {"numstat": "900\t0\tdocs/a.md\n1\t0\ttools/b.py\n"},
     "ship cadence":        {"elo": [["2026-08-09T10:00", "1", "1", "vX"]] * 5},
     "stuck planks":        {"tape": [["", "", "", "", "", "note", "KEEP-dev"]] * 9},
-    # cross-lane now reads ADDED decision rows out of a git patch, not the tape
-    # tail, so its tripper feeds a patch with exactly one added decision row.
+    # cross-lane now reads NET-ADDED decision rows out of a git patch, not the
+    # tape tail, so its tripper feeds a patch with exactly one added row.
     # The `+++` header line is included DELIBERATELY: it starts with `+` and a
     # parser that forgets to skip it would count it, so this fixture doubles as
     # the guard for that off-by-one.
@@ -341,6 +378,22 @@ _TRIPPERS = {
                                         "docs/e.md\n",
                             "tape_patch": "+++ b/results.tsv\n"
                                           "+a\tb\tc\td\te\tverdict\tx\n"},
+}
+
+# THE QUIET DIRECTION. _TRIPPERS above only prove a row CAN fire; a row stuck at
+# TRIP would pass that test, and so would a row that goes quiet for the wrong
+# reason. These fixtures assert the row must still SAY THE UNCOMFORTABLE THING.
+# Built from real history, not invented: the whole-file-rewrite case below is
+# `c380ae8`/`3c3bedf` (hunk headers -1,308 +1,309 and -1,308 +1,308), which
+# silenced this alarm for a full 24 hours on 2026-08-09.
+_MUST_STILL_TRIP = {
+    "cross-lane analysis": (
+        {"namestat": "docs/a.md\ndocs/b.md\ndocs/c.md\ndocs/d.md\ndocs/e.md\n",
+         # 300 decision rows REMOVED and 301 ADDED = a reformat, net 1 decision.
+         "tape_patch": "+++ b/results.tsv\n---- a/results.tsv\n"
+                       + "".join(f"-r{i}\tb\tc\td\te\tverdict\tx\n" for i in range(300))
+                       + "".join(f"+r{i}\tb\tc\td\te\tverdict\tx\n" for i in range(301))},
+        "a whole-file rewrite of the tape must NOT read as 301 decisions"),
 }
 
 
@@ -375,6 +428,29 @@ def selftest() -> int:
         print(f"  [{'PASS' if trip else 'FAIL'}] {name:<20} -> {val:.2f}   ({detail})")
         if not trip:
             bad.append(name)
+    _OVERRIDE.clear()
+    # THE QUIET DIRECTION -- see _MUST_STILL_TRIP. Without these, a row that has
+    # a known way to go silent for the wrong reason still passes above.
+    if _MUST_STILL_TRIP:
+        print("\n  -- and must it still fire on the input that WRONGLY silenced it? --")
+    for name, fn, thresh, _why in CHECKS:
+        fx = _MUST_STILL_TRIP.get(name)
+        if not fx:
+            continue
+        override, why = fx
+        _OVERRIDE.clear()
+        _OVERRIDE.update(override)
+        try:
+            val, detail = fn()
+        except Exception as e:
+            print(f"  [ERROR] {name}: {e}")
+            bad.append(f"{name} (quiet-direction)")
+            continue
+        trip = val < 0.5 if name == "ship cadence" else val >= thresh
+        print(f"  [{'PASS' if trip else 'FAIL'}] {name:<20} -> {val:.2f}   ({why})")
+        print(f"         {detail}")
+        if not trip:
+            bad.append(f"{name} (quiet-direction)")
     _OVERRIDE.clear()
     print()
     if bad:
