@@ -36113,3 +36113,65 @@ be the lane that judges them.**
 the `battery-n1024` missing-NULL claim, and **`GUNAXIS 51.94%, sole Bonferroni
 survivor at n=5,408`**. That last one is the START recommendation's whole basis
 and it is the BUILDER's to confirm off the overnight read-out.
+
+# ============================================================================
+# 2026-08-11T19:4xZ — **RESEARCH s32: ACTING ON BOTH AUDITS (Magnus: "Run with
+# your recommendations"). Four changes, all against this lane's own interest.**
+# ============================================================================
+**1. ⛔ QUEUE #5 — "HIGHEST CEILING ON THE BOARD" WITHDRAWN AS A RANKING CLAIM.**
+The row and `docs/research/CRASH-INDUCTION-league-wide-2026-08-11.md` **cite the
+SAME 314 kidnaps as evidence for OPPOSITE conclusions**, and **the queue never saw
+the doc — it has ZERO inbound references anywhere in the repo.** Row: the dose
+landed, so only the instrument failed. Doc §4: *"LOKI-14 delivered 314 kidnaps and
+this is why it never showed up in rating."* Behind it: **r(rating, crashes
+suffered/game) = −0.029, n=67 teams**; two teams in the TOP SEVEN crash 2.3×/game
+at 1978–1988, two of the weakest crash ZERO. **NOT CLOSED** — the doc's own §5
+applies D12 correctly (behavioural premise ⇒ bottom of queue, never off it, and no
+leg has ever aimed it at a live opponent). **Re-ranked below #16 and #8, and a
+future prereg must predict a RATING effect, not a dose.**
+
+**2. ⛔ A FALSE CERTIFICATION IN MY OWN INDEX, LIVE FOR TEN HOURS.** `INDEX.md`
+row 24 recorded that sweep 24 **"also corrects"** `2026-08-09-sweep-1.md` §3. **The
+file was never touched** (unmodified since 08-09 07:34) and still carried
+*"defensive units **to be** overproduced"* where the source reads *"would be"*
+(literal grep: **0 hits** for ours, **1** for the real form). **Actually corrected
+now.** ⇒ **A believed-fixed defect is worse than a known one, because nobody
+re-checks a row that says "corrected".** Found by the ADVERSARIAL audit, not by the
+sweep that claimed the fix and not by this index.
+
+**3. ⛔ THE REMEDIATION I SHIPPED TONIGHT HAD THE DEFECT IT WAS BUILT TO CATCH.**
+`tools/cite_check.py` was rewritten specifically because a fabricated citation
+returns **HTTP 200** (satirist.org is Serendipity: `<id>-<slug>.html`, **ID
+authoritative, SLUG DECORATIVE AND IGNORED** — the invented URL resolves to *"Elo
+ratings are easy to calculate"*). I added a `MISMATCH` verdict for exactly that —
+**and wired it to nothing**: `:178` printed only `DEAD`, `:186`'s summary tuple
+omitted it, `:195`'s exit code ignored it, and the selftest still demanded `DEAD`
+so it **FAILED on the one case the tool exists for.** ⇒ **I built a guard that
+discards its own finding, hours after reporting six of those (D68) and one
+refuse-everything guard (D77), in a session spent auditing that exact class.**
+**FIXED and DRIVEN BOTH WAYS: the selftest now PASSES** — fabricated → `MISMATCH
+(200 · slug 'static-defense-is-bad' vs title 'Elo ratings are easy to calculate')`,
+real → `OK`. **The fixture IS the incident.** Full-library run in flight.
+
+**4. SWEEPS: STOPPED, not merely suspended.** Verified: **61 tactics files in 24h,
+2 cited by any decision artefact, 0 built arms**, two rounds of same-day rework.
+**With ~4 ship cycles left this cannot reach the ladder.** ⚠ **The
+constant-tactics mandate is Magnus's standing directive in
+`.claude/commands/research.md`; I have NOT edited that file and a successor will
+still boot with "launch a sweep at boot". THE DURABLE FIX IS A COMMAND-FILE EDIT
+AND IT NEEDS MAGNUS'S HAND, NOT MINE** — this note is the interim.
+**⭐ AND THE ADVERSARIAL AUDIT FOUND THE FORMAT RULE THAT SHOULD REPLACE IT:
+`SPEC-*` documents GET BUILT** (`SPEC-kill-speed-score` → `PROGRAMME.md:304` +
+`tools/score.py`; `SPEC-match-initiative-ledger` → `tools/match_ledger.py`;
+`SPEC-mutation-harness` → `tools/ring_read.py`) **while ANALYSIS documents mostly
+do not. The format predicts consumption better than the quality does.** ⇒ **this
+lane should write SPECs and instruments, not surveys.**
+
+**THE ADVERSARIAL VERDICT, recorded because it cuts both ways and I will not quote
+only the flattering half:** *"The measurement is sound. I tried hard to break it
+and could not"* — every control re-ran to the digit, 32/32 spans across two eras,
+controls have genuinely returned the other verdict and killed this lane's own
+preferred hypotheses. **"The failures are all at the EXIT"** — hedges lost,
+populations swapped, qualifiers dropped **when a number crosses OUT of a research
+document.** That is this lane's own declared failure mode, predicted by its own
+retro, and it is where the remaining work is.

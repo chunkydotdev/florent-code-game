@@ -142,13 +142,17 @@ def selftest(timeout: float) -> int:
     live, ld = probe(SELFTEST_LIVE, timeout)
     print(f"  known-DEAD {SELFTEST_DEAD}\n      -> {dead} ({dd})")
     print(f"  known-LIVE {SELFTEST_LIVE}\n      -> {live} ({ld})")
-    if dead == "DEAD" and live == "OK":
-        print("\n  ✅ PASS — the guard fires on the bad case and stays silent on the good one.")
-        return 0
     if dead in ("ERROR", "BLOCKED") or live in ("ERROR", "BLOCKED"):
         print("\n  ⚠ INCONCLUSIVE — network or bot wall. NOT a pass. Re-run before trusting a sweep.")
         return 2
-    print("\n  ⛔ FAIL — the checker cannot tell a dead citation from a live one. Do not trust its output.")
+    # The known-bad URL resolves 200 (the slug is decorative), so the ONLY verdict
+    # that can catch it is MISMATCH. Expecting DEAD here is what made v1 of this
+    # selftest fail on the very case the tool was rewritten to detect.
+    if dead in ("MISMATCH", "DEAD") and live == "OK":
+        print(f"\n  ✅ PASS — the guard fires on the fabricated citation ({dead}) and is silent on the real one.")
+        return 0
+    print("\n  ⛔ FAIL — the checker cannot separate a fabricated citation from a real one.")
+    print("     Do not trust its output until this passes.")
     return 1
 
 
@@ -175,24 +179,31 @@ def main() -> int:
     for i, url in enumerate(urls, 1):
         verdict, detail = probe(url, args.timeout)
         buckets[verdict].append((url, detail))
-        if verdict == "DEAD":
-            print(f"  ⛔ DEAD  {url}  [{detail}]")
+        if verdict in ("DEAD", "MISMATCH"):
+            mark = "⛔ DEAD    " if verdict == "DEAD" else "⚠ MISMATCH"
+            print(f"  {mark} {url}\n              [{detail}]")
             for f in cites[url]:
-                print(f"          cited by {f}")
+                print(f"              cited by {f}")
         print(f"    ...{i}/{len(urls)}", end="\r", file=sys.stderr)
         time.sleep(args.delay)
 
     print("\n" + "=" * 72)
-    for k in ("DEAD", "ERROR", "BLOCKED", "OK"):
-        print(f"  {k:<8} {len(buckets[k])}")
-    if buckets["DEAD"]:
-        print(f"\n⛔ {len(buckets['DEAD'])} CITATION(S) DO NOT RESOLVE — re-source or cut them.")
-        print("   A verbatim quote under a dead URL is the sweep-25 failure mode exactly.")
+    for k in ("DEAD", "MISMATCH", "ERROR", "BLOCKED", "OK"):
+        print(f"  {k:<9} {len(buckets[k])}")
+    bad = len(buckets["DEAD"]) + len(buckets["MISMATCH"])
+    if bad:
+        print(f"\n⛔ {bad} SUSPECT CITATION(S) — re-source or cut them.")
+        print("   DEAD     = the page does not exist.")
+        print("   MISMATCH = the page EXISTS but is not the page the URL claims. This is the")
+        print("              sweep-25 failure mode exactly: the invented slug returned HTTP 200")
+        print("              while pointing at a different article, so status alone passes it.")
     else:
-        print("\n✅ No dead citations. (Says nothing about whether the quotes are on those pages.)")
+        print("\n✅ No dead or mismatched citations.")
+        print("   ⚠ Says NOTHING about whether the quoted spans are on those pages —")
+        print("     that is the expensive half of the join and this tool does not do it.")
     if buckets["ERROR"] or buckets["BLOCKED"]:
         print(f"⚠ {len(buckets['ERROR'])} ERROR + {len(buckets['BLOCKED'])} BLOCKED are NON-VERDICTS, not passes.")
-    return 1 if buckets["DEAD"] else 0
+    return 1 if bad else 0
 
 
 if __name__ == "__main__":
