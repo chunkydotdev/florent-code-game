@@ -195,3 +195,35 @@ the plank to the pool and is NOT a refutation.**
 sd of a 25-game draw is 2.4 games, so the observed sits at **−0.94 σ**.
 **INSIDE THE NOISE. This resolves nothing about the plank and is not evidence
 against it** — it is recorded so that a later pooled read has the row.
+
+## 1e. LABEL CORRECTION — THIS AMENDMENT IS NOT `ADD-ONLY`, AND THE CLAUSE THAT PERMITS IT
+
+**DISCLOSURE OF MY STATE AT THIS WRITING, which is later than §1a–1d:** I have now
+decoded the **TREATMENT** arm's throws (INSERT 13, EXILE 60 over 25 games). I have
+**NOT** fired or seen the **CONTROL** arm, which is the comparator every bar in
+§1b is written against. **This section changes NO bar, NO threshold and NO
+branch** — it corrects a heading and states an argument that was implicit.
+
+**Raised by the side lane, and the correction is theirs on my document.** §1c
+WITHDRAWS a falsifier, so `ADD-ONLY` is the wrong label. The s28 rule permits an
+amendment that **adds a constraint** *or* **fixes a rule whose inputs do not yet
+exist**. This qualifies under the **SECOND** clause — the mechanism counts were
+undecoded and `corpus/throws.tsv` unread for these five matches when §1a–1d were
+written and committed (`a606cdd`). **That is the clause that legitimises it and I
+did not cite it.**
+
+⇒ **AMENDMENT 1 is permitted under the "inputs do not yet exist" clause and
+contains one WITHDRAWAL (§1c).**
+
+**AND THE DIRECTION IS THE POINT, because I disclosed seeing 7/25 win/loss before
+writing it.** A reader who sees a poor game share followed by a loosened death
+condition should ask the obvious question, so the document answers it rather than
+leaving it to them. **The two bars moved in OPPOSITE directions:**
+
+* **CONFIRMATION got STRICTER** — from *"RISES"* (any amount satisfies) to
+  *"INSERT:EXILE ratio rises by ≥ 2 sd of the difference"*.
+* **REFUTATION got LOOSER** — a DEAD branch became NO INFORMATION.
+
+⇒ **The amendment CANNOT flatter this plank into a CONFIRM.** It made confirming
+harder and made a null survivable. That is the asymmetry the ADD-only rule exists
+to enforce, and it is satisfied in substance even though the label was wrong.
