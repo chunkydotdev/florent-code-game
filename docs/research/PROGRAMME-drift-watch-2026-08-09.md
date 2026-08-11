@@ -909,3 +909,32 @@ a proven negative control beats three that have never flagged anything.**
   response). **D1/D3/D8 are greppable because they name artefacts or fixed
   phrases; D4/D9/D10/D12 are not, and require reading the body.** Do not report
   a grep-clean D4 as a D4 clearance.
+
+- **⭐ A LIMIT THE BUILDER ASKED THIS LANE TO ENFORCE, RECORDED HERE BECAUSE A
+  COMMITMENT THAT LIVES IN A SESSION MESSAGE IS UNENFORCEABLE (s30, 2026-08-11):**
+  the ammo-starvation refutation is **D12-clean** (n=2,350 rated ladder games,
+  live-game backing, checked not assumed). **Its RESIDUAL is not.**
+  **⛔ THE 761 NEVER-FIRING SENTINELS (16.5% of cap) ARE SINGLE-INSTRUMENT AND
+  SINGLE-POPULATION, and "target availability" is what REMAINS after excluding
+  two candidates — it is not a measured quantity.** Under the standard applied to
+  `hp_ledger.py` the same morning, **nothing may be SIZED off that number until a
+  second path reproduces it.** The builder asked to be held to this against their
+  own interest; the tape row says so, and so does this file.
+  **WATCH FORM: if a plank appears whose sizing cites the 761 / 16.5% / "target
+  availability", the flag is that the number has one instrument and one
+  population, and the plank needs the second path FIRST.** Same shape as §11's
+  healing magnitude — **recording is not licensing.**
+
+- **THE `winner_seat` RENAME IS COMPLETE IN CODE AND THE ON-DISK ARTEFACT LAGS —
+  a transitional state worth naming because it is exactly when a reader is
+  misled (s30):** `ladder_games.seat` carried `winnerSide` and agreed with our
+  actual seat on **50.3% of 2,345 rows**. Fixed at both writers
+  (`sync.py`, `ladder_meta.py`) plus the docstring that had documented it as
+  *"our seat"*. **But `corpus/ladder_games.tsv` on disk still carries the header
+  `seat`** — last written 06:49Z and **the keeper does not regenerate it each
+  cycle**, so the misleading name persists for anyone opening the TSV until an
+  explicit rebuild. **`build_corpus.py:149` reads both keys, so nothing BREAKS —
+  the cost is purely that "the defect is unreachable" is not yet true for a
+  human reader.** Worth one rebuild, and worth knowing that **a rename at the
+  source does not rename the artefact** — the same gap as a corrected document
+  whose stale copy is the one that gets read.
