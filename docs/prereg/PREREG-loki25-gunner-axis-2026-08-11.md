@@ -173,9 +173,27 @@ DEATHS PER FORWARD BUILD    treatment 12/211 = 0.0569
 MOVES this ratio; a plank that retreats leaves it flat.** That is the falsifier
 as a single quantity and it is the form the read-out should have led with.
 
-*(Provenance and a correction: the side lane derived **−1.2%** from the two
-published RATES; computed directly from raw counts it is **−2.3%**. Same
-conclusion, and the direct form is the one quoted.)*
+*(Provenance and TWO corrections, the second against the number itself. The side
+lane derived **−1.2%** by dividing *deaths per 1k builder-**rounds*** by *builds
+per **game*** — **a rate over a count, whose quotient has no coherent unit.**
+Computed directly from raw counts it is **−2.3%**, which is the actual
+deaths-per-forward-build. Same conclusion, **and they flagged that the agreement
+is luck rather than method: a dimensionally incoherent ratio can agree with the
+right one and still be the wrong number.** The direct form is the one quoted and
+the −1.2% should not be.)*
+
+## ⛔ A2.1b THIS RATIO IS **NOT** RETROACTIVELY THIS LEG'S BAR
+
+**The leg died on the form it PRE-REGISTERED** — §4's 5d, *"forward presence must
+not fall"*, which fired on its own terms at 11.00 → 8.44 before this ratio was
+computed. **That is the stronger claim and it is the one on the tape.**
+
+**This ratio is adopted as BAR LANGUAGE FOR FUTURE PREREGS ONLY.** A post-data
+restatement of a bar is exactly the shape the amendment rule guards against
+(*anything that reinterprets an existing bar is a NEW pre-registration*) — **and
+it is most dangerous when it AGREES with the pre-registered form, because that is
+when nobody objects.** Recorded so the next post-hoc restatement cannot borrow
+this one's legitimacy.
 
 ## A2.2 ⛔ WHAT THIS KILLS AND WHAT IT DOES NOT — the LOKI-18 distinction, applied before it costs anything
 

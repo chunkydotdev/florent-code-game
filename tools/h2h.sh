@@ -22,6 +22,12 @@
 # seeds -- reproducing a 2026-08-09 arena refutation on a fixture without the
 # probe bias, and saving the live window I was about to spend on it.
 #
+# ⭐ THE NULL IS A STANDING ASSET, NOT A PER-LEG ARTEFACT. Build it ONCE at full
+# power and every later screen is measured against a settled bar instead of
+# re-litigating one. The 64-game null (32/64 = 50.0%) is committed; a 4,096-game
+# null is running for the same reason. **A treatment run belongs to its plank and
+# dies with it; the null belongs to the harness and outlives every plank.**
+#
 # ⚠ WHAT IT IS AND IS NOT. This is a PRIORITISATION instrument, not a D12
 # closure: deterministic, self-play, and self-play is not the field.
 # `FIXTURE_OF_RECORD: live_unrated` is unchanged. A plank that dies here is
