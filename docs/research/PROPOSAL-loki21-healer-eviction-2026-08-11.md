@@ -1,4 +1,13 @@
-# PROPOSAL — LOKI-20: HEALER EVICTION
+# PROPOSAL — LOKI-21: HEALER EVICTION
+
+**⚠ RENAMED FROM LOKI-20 ON 2026-08-11.** The builder's guns-not-walls plank took
+the name LOKI-20 in a commit **41 seconds** from this one, and theirs carries a
+bot tree, a locked prereg and a live submission while this is one document. **The
+collision was not cosmetic: `PLANK_STATUS: WITHDRAWN` is a real gate, `plank_ack.tsv`
+keys on the plank NAME and `DEAD` is STICKY — so one withdrawal or one ack would
+have silenced both planks, and a `results.tsv` row would have been ambiguous about
+which one it scored.** The tool defect that exposes (fail-safe asymmetry failing
+unsafe under a shared name) is the builder's to fix; the rename is the cheap half.
 
 **Research arm, s30, 2026-08-11, written on Magnus's instruction ("worth an
 experiment… write something up for the builder to prototype and run unrated
