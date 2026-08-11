@@ -22,6 +22,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     ALWAYS_BE_RUNNING: yes
     QUEUE_FLOOR: 3
     QUEUE_OWNER: research
+    TARGET_RATING_FLOOR: 1650
 
 ## ⭐⭐⭐ CORE VALUE, MAGNUS, 2026-08-11 (s31) — **ALWAYS BE RUNNING.**
 
@@ -360,3 +361,51 @@ asserts the ratio and fails loudly if it drifts.
 
 A Loki iteration that measures null does NOT end the programme. That is what an
 iteration is.
+
+## TARGET_RATING_FLOOR: 1650 — added 2026-08-11 (s32) on Magnus's explicit directive
+
+**Verbatim: *"Dont fire on targets below 1650 ELO."*** Added under this file's own
+rule (*edit ONLY on an explicit directive from Magnus*), which that sentence is.
+
+**WHAT IT DOES.** No live leg may be aimed at a team rated below **1650**,
+**regardless of what the reachable band says**. It is a floor on the TARGET, not
+on the payoff, and it is **stricter than the reachability gate and supersedes it
+where they disagree**. Enforced in `tools/target_value.py` — `RATING_FLOOR`, with
+`admissible()` making the floor override the band, five selftest cases driving it
+both ways, and the `--band` listing printing an **EXCLUDED BY THE 1650 FLOOR**
+section that names every team it removes. **A filter that silently drops rows is a
+filter nobody can audit.**
+
+**WHY IT EXISTS.** s28: a crash-induction leg passed every check this repo has and
+was aimed at four teams **550–860 points below us**, where a perfect 5-0 pays
+**under 5 rating points** against a **−31** loss. The machinery inspected the
+experiment and never asked whether the question was worth answering.
+
+## ⛔ THE PART THAT IS INVISIBLE FROM THE DIRECTIVE'S OWN WORDING — READ THIS BEFORE APPLYING IT
+
+**THE FLOOR IS ABSOLUTE AND THE REACHABLE BAND IS RELATIVE, SO THE CONSTRAINT
+TIGHTENS AS WE FALL.** *"Don't fire below 1650"* reads as a mild filter. At our
+current rating it is **a rule that admits only opponents STRONGER than us.**
+
+| our rating | room below us inside the band |
+|---:|---|
+| 1689 *(when the directive was given)* | 39 pts |
+| **~1663–1666 *(v114, live at 20:35Z)*** | **~13–16 pts** |
+| 1650 | **none** |
+
+**ALREADY ARRIVED, AND EARLIER THAN PROJECTED.** At our ~1663 the admissible set
+is **11 teams running 1667 (Besvikomat, +4) to 1782 (HTTP 418, +119)** — **every
+admissible team is at or above our rating and there are ZERO admissible targets
+below us.** That was projected to happen at 1650; it happened at ~1663, because
+the floor removed the band's lower half and the remaining field is not distributed
+down there.
+**AND WE ARE SQUEEZED FROM BOTH ENDS:** Leviathan (1793) was **+124 and admissible
+at 1669**; at 1663 it is **+130 and outside `BAND_HI`**. A falling rating costs
+targets at the top and the bottom simultaneously.
+
+⇒ **WHAT THIS CHANGES ABOUT LEGGING: every leg from here is against a team rated
+above us**, so target selection can no longer trade difficulty for cheapness and
+the `0-5 costs` column (**−15.81** at the nearest admissible team) is the one that
+moves. **`floor_warning()` fires automatically inside 40 points and is firing now.**
+⚠ **A successor reading this field at a 1640 rating will read a mild filter and
+get a near-total ban.** That is why the caveat is here and not only in the tool.
