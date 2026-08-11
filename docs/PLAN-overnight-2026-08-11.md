@@ -159,3 +159,91 @@ reading whatever rating that version happened to be sitting on.** That removes
 most of the era confound on the ladder side, and research already has the
 decoders. **If it lands before the read-out, Part A upgrades from a falsifier
 back to an estimator. If not, the falsifier stands on its own.**
+
+---
+
+# AMENDMENT 2 — PART A RESIZED 4 SHARDS → 1; B3 FILLED; COUNTERBATTERY DEAD
+### 2026-08-11 ~14:1xZ
+
+## 2a. THE 14:10Z COUNTERBATTERY RESULT — BOTH ARMS DEAD, B3 IS NOT THEM
+
+| arm | n | win rate | band | verdict |
+|---|---:|---:|---|---|
+| `_v149cbfull` (`LOKI_QUIET_ON = False`) | 1024 | 49.6% | 46.9–53.1 | **NO INFORMATION** |
+| `_v150cbturret` (counterbattery, turrets only) | 1024 | **45.2%** | 46.9–53.1 | ⛔ **REAL NEGATIVE** |
+
+`_v150cbturret` core kills **449 FOR / 546 AGAINST = 0.82×.** Seat A 48.6% /
+seat B 41.8% against a null baseline of 53.8% seat A — **worse in BOTH seats**,
+so it is not a seat artefact.
+
+**⛔ THE MECHANISM ERROR IS MINE AND THE CODE SHOWS IT.** I argued: *25.76% of
+builder-rounds are idle, so an idle builder swinging at an adjacent turret costs
+ZERO movement.* **`raid.py:193` is `if ct.get_action_cooldown() == 0 and
+self._raid_act(...): return` — `_raid_act` returning True RETURNS FROM THE TURN
+AND MOVEMENT NEVER HAPPENS.** Placing counterbattery LAST in the ranking does not
+make it free; it still converts a move-round into an attack-round.
+
+⇒ **The 25.76% figure counts rounds where the bot EMITTED nothing, NOT rounds
+where movement was unavailable. It never refuted LOKI-QUIET's premise, and I
+treated it as though it had.** **LOKI-QUIET's original rationale — acting and
+moving are mutually exclusive, arrival is the scarce quantity — is REVALIDATED
+under the current currency**, which had never been rechecked.
+
+**⇒ TERM `A` REMAINS THE LARGEST TARGET ON THE BOARD (1.77×, 47.3% of the log
+hazard gap). What is refuted is BUYING IT WITH BUILDER MELEE.** Any future
+attempt must reduce enemy turrets **without spending a raider's move** — which
+points at turrets shooting turrets, or at not being adjacent in the first place.
+
+## 2b. PART A RESIZED — 4 SHARDS → 1, AND THE REASON IS A MISSING LADDER SIDE
+
+Research's opponent-controlled version effects (`2c261c8`), estimated off
+per-match data rather than rating snapshots:
+
+```
+v92  1600 [1520,1681]   v102 1609 [1578,1641]   v104 1686 [1656,1717]
+v112 -- NOT ESTIMABLE (zero archived ladder games) --
+```
+
+* **v104 − v92 = −86, CI [−169,−5] → SIGN RESOLVED** ✅
+* **v104 − v102 = −77, CI [−125,−29] → SIGN RESOLVED** ✅
+* **v92 − v102 = −9, CI [−104,+71] → NOT RESOLVED** ⛔
+* **v112's three pairings → NO LADDER ESTIMATE EXISTS AT ANY LOCAL n** ⛔
+
+**⇒ ONLY TWO OF SIX PAIRINGS HAVE A LADDER SIDE TO PREDICT, AND 65,000 LOCAL
+GAMES DO NOT FIX A MISSING ONE.** The two scoreable gaps are **86 and 77 Elo ≈
+12pp and 11pp**, resolvable at **n ≈ 500–1,000 each** — not 4,800.
+
+⇒ **PART A: 1 SHARD (v104-vs-v92 and v104-vs-v102 only). ~3 SHARDS ≈ 22,000
+GAMES FREED FOR PART B.**
+
+**⭐ AND THE EXERCISE PAID FOR ITSELF BEFORE A GAME WAS PLAYED:** on raw snapshots
+**v92 1552 < v102 1600**; opponent-controlled they are **indistinguishable**.
+**A residual scored against snapshots would have counted a real local v102 > v92
+result as a HIT against an ordering that does not exist** — the falsifier graded
+on a fiction, in 1 of 6 cells.
+
+⚠ **Carried against my own reallocation:** at n≈1,000/pairing the LOCAL side is
+precise and **the LADDER side stays binding** (±80 and ±48 Elo). **More local
+games cannot narrow that. Part A is cheap by necessity, not by choice.**
+
+## 2c. NO LLM DURING THE RUN — A SHELL WATCHDOG, NOT A BABYSITTER
+
+Magnus: *"the overnight runs need to be running without our arms and perhaps with
+a sonnet agent or something that makes sure it works well but doesn't steal too
+many tokens."* ⇒ **Adopted, and cheaper than offered: ZERO LLM invocations on a
+healthy night.** Overnight failures here are **assertion-shaped, not
+judgment-shaped** — a dead shard needs a restart, not a thought.
+
+1. **Per-shard HEARTBEAT**, overwritten each game: `ts · games_done · TARGET_N ·
+   shard_id`. **TARGET_N is written BEFORE the run so partial output can never
+   read as complete.**
+2. **Shell watchdog, every 2 min**: heartbeat older than ~3 min, or process gone
+   before target ⇒ **restart (bounded, 3 attempts)** and append to an ALERT file.
+3. **COMPLETION MARKER per shard, written only on reaching TARGET_N**, and **the
+   morning read-out REFUSES to pool a shard without one.** *Silent truncation
+   reads as "covered everything".*
+4. **The garbage-detection checks go in the RUNNER as assertions, not to an
+   agent** — null arm near 50%, seat split near even, more than one map present,
+   win rates non-degenerate. **If it can be an assertion it should not be an LLM.**
+5. **One sonnet agent in the MORNING** to assemble the read-out. That is where
+   judgment actually is.

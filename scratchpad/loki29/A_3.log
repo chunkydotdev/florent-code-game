@@ -1,0 +1,33 @@
+
+H2H  _v149cbfull  vs  _v148ferryfirst
+  games 256   (both seats always played)
+  WINS  125 = 48%
+  core kills FOR 119   AGAINST 125   r1000 (a DEFEAT either way) 12
+  seat A (treatment first)  64/128     seat B (treatment second)  61/128
+  per map: antler 18/32  atoll 16/32  drumlin 19/32  fjordgate 12/32  heart 15/32  hive 15/32  meander 11/32  nordkap 19/32  
+
+  informative band at n=256: <=112 or >=143 wins  (44%-56% is noise)
+  VERDICT: NO-INFORMATION back to the pool, NOT demoted
+
+  ⭐⭐⭐ WIN RATE / GAME SHARE — THE VERDICT (Magnus, 2026-08-11: "Win rate decides")
+      _v149cbfull      125/256 = 48.8%   vs the measured 50.0% null
+      The ladder pays delta = 32 x (S - E), S = games won / 5. This IS the objective.
+
+  --- decomposition, for MECHANISM reading only ---
+      P(core-kill win)   _v149cbfull     46.0%  (119/256)
+                         _v148ferryfirst  48.0%  (125/256)
+      kill round | kill  _v149cbfull    median 228   n=119
+                         _v148ferryfirst median 192   n=125
+      tiebreak wins      _v149cbfull    6        _v148ferryfirst 6   (both score -10 BY DESIGN,
+                         and they are completely different states — 48.8% of live-era games sit here)
+
+  KILL-SPEED SCORE (SECONDARY since 2026-08-11 — PROGRAMME.md: win rate is NOT the verdict)
+      _v149cbfull  mean -3.52 /game        _v148ferryfirst  mean -2.90 /game
+      (tools/score.py buckets; a tiebreak win and a loss both score -10)
+
+
+  --- secondary, and NOT the verdict ---
+  KILL ROUND (continuous, far more power than the win count):
+    when _v149cbfull wins:  n=125  median 235
+    when _v148ferryfirst wins:  n=131  median 197
+H2H_RESULT: _v149cbfull 125/256 NO-INFORMATION back to the pool, NOT demoted
