@@ -17,15 +17,53 @@
 # seven minutes stale, and a healthy line and a blind line were byte-identical.
 #
 # GATES ON THE HEARTBEAT FILE'S CONTENT AND AGE, NEVER ON AN EXIT CODE.
+#
+# ⛔⛔ THIRD FAILURE, s32 2026-08-11 18:40:13Z, AND IT COST NOTHING ONLY BY LUCK.
+# A run FINISHED, its outputs were ARCHIVED to another directory by a launcher,
+# and THIS WATCHDOG -- still polling the old spec -- saw no `.COMPLETE` and no
+# heartbeat for any of the nine shards, read `prog=none`, and RESTARTED ALL NINE
+# FROM ZERO within one second. 14 shards then ran on 10 cores for three minutes.
+#
+# **A COMPLETED-AND-ARCHIVED RUN AND A NEVER-STARTED RUN WERE BYTE-IDENTICAL TO
+# IT.** That is this file's own docstring defect for the THIRD time: first a
+# guard that could not fire (`&&` vs `||`), then a hung shard printing "ok", now
+# a watchdog that cannot tell "my files were taken away" from "my shard died".
+#
+# ⛔ AND NOTE WHICH CHECK MISSED IT: the s31 F13 audit asked "does anything
+# create the COMPLETE marker?" and answered YES, empirically, correctly. Nobody
+# asked what happens when the marker is REMOVED while the watchdog still lives.
+# The claim was right, the refutation of it was wrong, and the failure came
+# through a door neither covered.
+#
+# THE GUARD BELOW: progress is MONOTONIC. A shard's row count can only rise. If
+# it FALLS -- or the .tsv vanishes -- that is EXTERNAL INTERFERENCE, not a dead
+# shard, and a restart would destroy work rather than resume it. REFUSE and
+# ALERT. Restarting is only ever correct when progress STALLED, never when it
+# went BACKWARDS.
+# Belt as well as braces: a launcher that archives a finished run MUST STOP THIS
+# WATCHDOG FIRST. That is the actual ordering bug; this guard is what makes the
+# ordering bug survivable instead of destructive.
 set -u
 SPEC=${1:?spec file}
-OUT=scratchpad/overnight
+# ⛔ `${OUT:-...}` NOT a bare assignment, s32. This was hardcoded, so an
+# `OUT=... zsh tools/watchdog.sh` invocation SILENTLY WROTE TO THE LIVE DIRECTORY.
+# Measured the hard way: a throwaway watchdog fixture, believed isolated by that
+# exact env var, instead ran against the live run -- created `FX.*` files beside
+# five live shards, appended to their ALERT and watch.log, and launched a stray
+# shard. Harmless only by luck (its bots did not exist, so every game recorded
+# NOWINNER). **The trap had ALREADY been found in the sibling script an hour
+# earlier and worked around in the launcher rather than fixed at the source --
+# so the workaround protected the launcher and left the next caller exposed.**
+# Fixing the source is what makes a test fixture possible at all: a guard that
+# cannot be exercised in isolation cannot be driven to both verdicts.
+OUT=${OUT:-scratchpad/overnight}
 ALERT=$OUT/ALERT
 STALE_S=${STALE_S:-240}      # heartbeat older than this = dead
 MAX_RESTARTS=${MAX_RESTARTS:-3}
 POLL_S=${POLL_S:-120}
 mkdir -p $OUT
 typeset -A RESTARTS
+typeset -A MAXROWS      # high-water row count per shard; progress is MONOTONIC
 
 say(){ print -r -- "$(date -u +%H:%M:%SZ) $*" | tee -a $OUT/watch.log }
 
@@ -46,6 +84,19 @@ while true; do
     else
       age=999999; prog="none"
     fi
+    # --- MONOTONICITY GUARD (s32). Must run BEFORE any restart decision. ---
+    rows=0
+    [[ -f $OUT/${SH}.tsv ]] && rows=$(( $(wc -l < $OUT/${SH}.tsv) - 1 ))
+    (( rows < 0 )) && rows=0
+    hwm=${MAXROWS[$SH]:-0}
+    if (( rows < hwm )); then
+      say "*** $SH PROGRESS WENT BACKWARDS ($hwm -> $rows rows) -- NOT a dead shard. ***"
+      say "*** Files were moved, truncated or deleted underneath me. REFUSING to restart. ***"
+      print -r -- "$(date -u +%H:%M:%SZ) $SH EXTERNAL INTERFERENCE: rows $hwm -> $rows, refused restart" >> $ALERT
+      continue
+    fi
+    MAXROWS[$SH]=$rows
+
     alive=$(ps ax -o command= | grep -c "[o]vernight.sh $SH ")
     # ⛔⛔ `||` NOT `&&`. The first version required BOTH "process gone" AND
     # "heartbeat stale", so A HUNG SHARD -- live process, frozen heartbeat --

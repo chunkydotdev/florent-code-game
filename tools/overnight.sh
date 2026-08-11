@@ -41,7 +41,18 @@ CTRL=${3:?control dir}
 TARGET=${4:?target games}
 SEEDLO=${5:-1}
 
-OUT=scratchpad/overnight
+# ⛔ `${OUT:-...}` NOT a bare assignment, s32. This was hardcoded, so an
+# `OUT=... zsh tools/runner.sh` invocation SILENTLY WROTE TO THE LIVE DIRECTORY.
+# Measured the hard way: a throwaway watchdog fixture, believed isolated by that
+# exact env var, instead ran against the live run -- created `FX.*` files beside
+# five live shards, appended to their ALERT and watch.log, and launched a stray
+# shard. Harmless only by luck (its bots did not exist, so every game recorded
+# NOWINNER). **The trap had ALREADY been found in the sibling script an hour
+# earlier and worked around in the launcher rather than fixed at the source --
+# so the workaround protected the launcher and left the next caller exposed.**
+# Fixing the source is what makes a test fixture possible at all: a guard that
+# cannot be exercised in isolation cannot be driven to both verdicts.
+OUT=${OUT:-scratchpad/overnight}
 mkdir -p $OUT
 HB=$OUT/${SHARD}.heartbeat
 ROWS=$OUT/${SHARD}.tsv
