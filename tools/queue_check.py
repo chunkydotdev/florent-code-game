@@ -68,6 +68,12 @@ BLOCK_MARKERS = (
     # been refuted still parses as a numbered row, so the withdrawal has to be
     # read off the TEXT. Same false-positive class as the decomposition table.
     "withdrawn", "refuted",
+    # Added 2026-08-11 (third false positive of the day): a row DEMOTED pending a
+    # control still parses as numbered and unblocked. Every one of these three
+    # false positives inflated the count -- the UNSAFE direction -- while the
+    # documented undercount deflates it. Padding the floor is the failure mode
+    # the GREP gate exists to stop, so each gets a regression cell.
+    "do not build", "demoted",
 )
 # Section headings whose rows never count toward the floor.
 DEAD_SECTIONS = ("## FIRING NOW", "## BLOCKED", "## DEAD")
@@ -185,6 +191,8 @@ def selftest() -> int:
          "## NEXT UP\n| 1 | **thing** | change | metric |\n", 0),
         ("the same row WITH a grep does count",
          "## NEXT UP\n| 1 | **thing** | GREP: PASS not shipped | metric |\n", 1),
+        ("a DEMOTED / do-not-build row does NOT count",
+         "## NEXT UP\n| 12 | **thing** | GREP: PASS | DEMOTED - do not build before the control runs |\n", 0),
         ("a DEAD-section row is still excluded without the text marker",
          "## DEAD\n| 1 | **thing** | GREP: PASS | metric |\n", 0),
     ]
