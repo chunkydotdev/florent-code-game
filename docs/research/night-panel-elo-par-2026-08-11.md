@@ -511,3 +511,95 @@ unrated challenge, the ladder assigns rated pairings).
 the programme calls a defeat at 3–4x the rate the ladder does** — a statement
 about the instrument, touching every leg we fire. **Powered version is buyable
 with free unrated windows rather than arguable.**
+
+---
+
+# ⛔ PART 7 — PART 5's LAUNCHER-RAID HEADLINE IS WITHDRAWN, AND THE CORRECTED CUT FOUND A REGRESSION
+
+*Appended ~05:2xZ. **Part 5's "THE LAUNCHER RAID DELIVERED NOTHING — 0 of 4,169"
+is WRONG and is struck.** Caught by the builder arm after this document was
+committed and pushed at `9a809d1`. This is the second retraction in this file and
+the first one caught by another lane.*
+
+## WHY IT WAS WRONG — confirmed at source, not accepted on relay
+
+`tools/corpus/replay_throws.py:157,164` defines the outcome columns against
+**the THROWN bot's own enemy**:
+```python
+if b is not None and tgt in foot[1 - b.team]:   # b = the THROWN bot
+    rec["core_atk"] += 1
+```
+**For a KIDNAP, `b.team` is the enemy, so `foot[1 - b.team]` is OUR core** — the
+column counts *the kidnapped bot coming back and hitting us*. Read literally it
+is a **success** column for the kidnap, not a failure column. And `reached` at
+0.00% over 172,547 cross-team throws is physically impossible as a real result,
+which is proof on its own that the column is not measuring what was assumed.
+
+**The split, using the `kind` column that was in `throws.tsv` all along and that
+neither the agent nor this lane used:**
+
+| thrower | class | n | reached | any_atk | core_atk |
+|---|---|---:|---:|---:|---:|
+| OURS | KIDNAP (EXILE) | **3,727 (89.4%)** | 0.00% | 0.00% | 0.00% |
+| OURS | SELF-INSERT | 442 (10.6%) | 28.05% | 0.00% | 0.00% |
+| THEIRS | KIDNAP (EXILE) | 1,927 | 0.00% | 0.00% | 0.00% |
+| THEIRS | SELF-INSERT | 317 | 32.18% | 33.75% | 2.21% |
+
+**89.4% of the 4,169 were kidnaps, whose columns cannot populate by
+construction.** The "ours vs theirs" control in Part 5 compared **our kidnaps
+against their self-inserts** — not the same quantity on both sides, which is
+precisely the apples-to-oranges shape that control was written to exclude.
+**"Same column" is not "same meaning" when the column is defined against a
+per-row team.** Kidnap effectiveness has **no column in this table at all**;
+measuring it is a decoder gap, not a null result.
+
+## ⭐ BUT THE COMMENSURABLE HALF SURVIVES, AND IT IS A REGRESSION IN OUR OWN BOT
+
+Restricted to `kind=INSERT` only — apples to apples — the zero does not go away,
+**and it is ours alone.** RATED corpus, `join.tsv` authoritative `our_team`:
+
+| era | who | n | reached | any_atk | core_atk |
+|---|---|---:|---:|---:|---:|
+| pre-v102 | OURS | 633 | 18.6% | **511 (80.7%)** | 111 (17.5%) |
+| pre-v102 | THEIRS | 3,310 | 28.8% | 647 (19.5%) | 272 (8.2%) |
+| **v102/104** | **OURS** | **475** | **38.1%** | **0 (0.0%)** | **0 (0.0%)** |
+| v102/104 | THEIRS | 587 | 27.4% | 124 (21.1%) | 20 (3.4%) |
+
+**Every one of our versions, with our own back-catalogue as the positive control:**
+v65 100% · v67 84.6% · v68 80.8% · v69 100% · v70 83.3% · v71 90.9% · v72 80.0% ·
+v74 71.4% · v75 100% · v76 65.8% · v79 85.7% · v80 87.5% · v84 83.3% · v86 66.7% ·
+v89 70.0% · v90 81.2% · v91 82.6% · v92 100% · v94 81.4% · v101 100% (n=3) —
+**then v102 (n=232) 0.0% and v104 (n=243) 0.0%.**
+
+**Nineteen consecutive versions at 66–100%, then exactly zero twice on the two
+largest samples in the table.** `P(0 in 475 | p = 0.807)` underflows to 0.
+
+**THE DECODER-BREAK ALTERNATIVE IS DEAD.** In the **same v102/104-era files**, the
+**opponents'** self-inserts still populate `any_atk` at **21.1% (124/587)** —
+`builderAttack` events decode normally in those replays. **The events are there;
+ours are not being generated.**
+
+**AND THE DIRECTION IS THE WORST ONE: our reach rate nearly DOUBLED, 18.6% →
+38.1%.** We put builder bots on the enemy core's doorstep more often than at any
+point in our history **and then never swing.**
+
+## WHY THIS IS THE DOORSTEP FINDING FROM A FOURTH DIRECTION
+
+Part 5's separator (we get pinned, never fund the battery, never fire) and this
+(we arrive and never swing) are the same story from two sides. **This one is the
+most actionable of the four routes because it is a REGRESSION, not a design gap:
+the behaviour existed in v94 and does not in v104, so there is a diff to read.**
+
+Candidate to check first — **stated as a hypothesis, not a finding, and it is the
+builder's to test, not this lane's:** a builder bot's `fire()` requires an
+orthogonally adjacent tile, and `reached` is defined on exactly that adjacency.
+**Our `reached` went UP while attacks went to zero, which fits a guard that admits
+arrival but blocks the swing.**
+
+## WHAT THIS LANE GOT WRONG, MECHANICALLY
+
+The `kind` column already classified EXILE / INSERT / RETREAT and was sitting in
+the table's header. **Neither the agent nor this lane used it — one `head -1`
+away.** That is D34 repeating: *an audit of the evidence instead of an audit of
+the codebase.* The within-sample control was the right instinct aimed at the
+wrong axis.
