@@ -71,7 +71,40 @@ value**, and 6 versions ≈ one cycle's worth of compute.
 **Every effect size is labelled by its evidential status. I am naming mechanisms,
 not writing diffs.**
 
-## C1 — RING RETENTION: hold the enemy spawn ring instead of walking off it
+## ⛔⛔ C1 — **WITHDRAWN THE SAME SESSION BY THE CHECK I COMMISSIONED AGAINST IT. DO NOT BUILD.**
+
+**Verification: `docs/research/RING-HAZARD-VERIFICATION-2026-08-11.md`** — 19,178
+replays, 16.0M core-rounds, 0 parse failures.
+
+**The association replicates at 14× the n** (2.199% → 5.858% on the original's own
+r<250 cut). **The causal reading fails five independent controls:**
+* **POLARITY — decisive.** A core's **own** builders on its **own** ring — which
+  **cannot damage it** — raise its 25-round death rate **2.302% → 4.641%, ×2.02**,
+  indistinguishable from the ×2.13 attributed to a hostile body.
+* **LAG.** A body that stood there **100 rounds ago** still predicts at **×2.09**.
+* **DISCORDANT PAIRS.** Ring provably **clear now**, occupied 50 rounds ago:
+  **4.581%** vs 1.563% — ~75% of the effect carried by a body that has left.
+* **NULL OUTCOME.** Death at **+200 rounds** still **×1.47**.
+* **SAME FORCE, DIFFERENT TILE — the plank's own manipulation:** holding force, HP
+  and turrets fixed, **44 of 56 cells are BELOW 1.0.**
+
+**And the retention number — the actual plank — is the weakest in the set:**
++1.40pp unstratified, and it **inverts monotonically** under stratification
+(immortal-time selection). **No duration number here can size a plank.**
+
+**⭐ THE FINDING THAT OUTRANKS ALL OF IT: `CLAUDE.md` CARRIES A CORRUPTED
+QUOTATION OF ITS OWN SOURCE.** The original (`coordination.md:16649`) said
+**"Treat 2.1× as an UPPER BOUND, not an effect size"** and named the reverse
+causation explicitly. **The always-loaded file dropped that, the null at R=50, the
+decline at j≥2, and the r<250 restriction.** See the verification doc §0.
+
+**Surviving fragment, worth exactly one line:** in `US_ATTACK` alone the discordant
+pairs flip in the **causal** direction (`now_only` 6.566% vs `ago_only` 2.325%),
+n=49,559 core-rounds, us-only and observational. **Only a live leg that randomises
+the tile — hold the raider on the ring vs step it one tile off — could separate the
+stories.**
+
+## ~~C1 — RING RETENTION: hold the enemy spawn ring instead of walking off it~~ *(text kept for the lesson; see withdrawal above)*
 
 **Not a knob:** `_raid_station` walks the body **off** a corner exactly when that
 corner becomes pure body-denial. The change is to the behaviour, not to a number.
