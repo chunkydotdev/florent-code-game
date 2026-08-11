@@ -320,6 +320,26 @@
 ##      firing evidence and is NOT established on the availability evidence.**
 ##      Anyone re-opening this needs a within-round occupancy trace, not a
 ##      snapshot. `scratchpad/symm.py` reproduces the discriminator.
+##      **✅ AND THE TRACE IS BUILDABLE — THE WIRE IS AN ORDERED EVENT STREAM,
+##      NOT A PER-ROUND SNAPSHOT.** `replay_schema.md:47`:
+##      `message Turn { repeated Update updates = 1; }` — `repeated` is ordered,
+##      and `moveBuilderBot`/`fireTurret`/`removeEntity` are all sequenced inside
+##      a turn. **So availability has NO permanent ceiling and this is a cost
+##      question, not a structural one.** Written down so nobody re-derives it,
+##      and so this is never filed beside the kidnap DECODER GAP, which it is not.
+##      **⭐⭐ AND THAT READ PARTLY REVERSES MY OWN 7.17x, AGAINST MY INTEREST:**
+##      **a builder bot moves AT MOST ONE STEP PER ROUND**, so "enters and leaves
+##      a ray by moving inside one round" is **impossible for a single unit**.
+##      The transient-target story therefore requires the target to DIE (or a
+##      building to be built and destroyed) in that round — and **death-in-round
+##      is real and common: 9.07% of 170,109 turret shots in a 600-replay slice
+##      land on a tile that ALSO saw a `removeEntity` that same round.**
+##      ⇒ **the ghost cases are plausibly KILLS rather than missed opportunities,
+##      which inverts the direction of the concern — a sentinel that fired and
+##      erased its own target reads as "0 availability" BECAUSE it worked.**
+##      ⛔ **MECHANISM ESTABLISHED, ATTRIBUTION NOT: the 9.07% is over ALL shots
+##      and the ghost subset was never isolated.** Do not quote it as the
+##      explanation; it is a candidate with a measured mechanism behind it.
 ##      **AND OUR FORWARD POPULATION IS BIMODAL: 3,331 of 3,341 sit at
 ##      d²_enemy ≤ 32 — parked at the doorstep — with ZERO beyond 100.** No
 ##      mid-distance population exists, so there is no availability curve to
