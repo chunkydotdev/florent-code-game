@@ -1,5 +1,64 @@
 # ⭐ QUEUE FOR THE BUILDER — FORWARD EFFICIENCY: WE PAY 4.57× AS MANY BUILDERS PER FORWARD BUILD
 
+> # ⛔⛔ HEADLINE CORRECTION, s31 — **THE 2.28× DWELL FIGURE IS A SAMPLING ARTEFACT. THE POPULATION VALUE IS 1.30×, AND CORRECTING IT INVERTS THIS DOCUMENT'S CENTRAL RECOMMENDATION.**
+>
+> **Instrument B was run on the FULL population (US 5,178 games, TOP 3,165) instead
+> of 120 games/group.** Result: **US 44.12 rounds per forward build vs TOP 33.98 —
+> `1.30×`, not `2.28×`.** Over 2,000 draws of 120 games/group,
+> **`P(sampled ratio ≥ 2.28×) = 0.0005`.** The US half reproduces on exactly one cut
+> (game-1-of-match, 53.82 ≈ the published 54.55); **the TOP half reproduces on none —
+> TOP is flat at 33.7–34.2 across all five game indices, so 23.93 is unreachable.**
+>
+> **AND THE CORRECTED VALUE CLOSES AN IDENTITY THE PUBLISHED ONE BROKE**, which is
+> why it should be believed rather than merely preferred. This document's own
+> `deaths/build = deaths/round × rounds/build`:
+> ```
+>   published 2.28 x 3.44 = 7.85  vs Instrument A's 4.57   ERROR +72%
+>   measured  1.30 x 3.44 = 4.47  vs Instrument A's 4.57   ERROR  -2%
+> ```
+> **The defect was visible here all along:** §"THE HEADLINE" asserts *"~2.0× is
+> PER-ROUND HAZARD"* — which is only `4.57/2.28` back-solved — **while the same
+> paragraph quotes `2.915 vs 0.847 = 3.44×` as separately measured.** Those never
+> matched, and in log shares the two halves summed to **135%**, which is not a
+> decomposition. Corrected, they sum to **99%**.
+>
+> ## ⇒ THE RECOMMENDATION INVERTS
+> | | as published | **measured** |
+> |---|---:|---:|
+> | dwell share of the gap | 54% | **17%** |
+> | per-round hazard share | 81% | **81%** |
+>
+> **This document said *"the dwell half is the larger lever and it is the one nothing
+> has been aimed at"*. DWELL IS THE SMALLER LEVER BY ~5×.** The hazard/geometry half
+> — **deprioritised below on a 34% tile-selection ceiling** — is **81% of the gap**,
+> and a 34% ceiling on 81% beats a free hand on 17%.
+>
+> **WHERE THE RESIDUAL DWELL EXCESS SITS, and it contradicts the constant list below:**
+> excess is **early** (r0–99 1.38–1.45×; r100–179 1.24–1.39×), **parity at r180–250**,
+> and **INVERTS after — we are 0.80–0.86×, BETTER than the top group, from r250 to
+> r999.** Both band schemes agree; the waiting-time framing narrows it to r0–59;
+> censored-mass gap +19.5pp at r0–59, ~0 by r250. **On the live v104 alone (n=1,750)
+> peak excess is r60–179 at 1.73×, gone after r250.**
+> ⇒ **`LAUNCH_GIVEUP_RND = 180` is NOT implicated.** *(INFERENCE — a round-band
+> profile was measured; no constant was varied.)*
+>
+> **⭐ AND THE TEAM-SWAP CONTROL SUPPLIES THE ANCHOR THIS PLANK NEVER HAD: against
+> the field we ACTUALLY PLAY, we are the better side — 44.12 vs our opponents'
+> 62.65.** The 4.57× is against a ≥1900 group we rarely meet.
+>
+> **UNPREDICTED, REPORTED WITHOUT EXPLANATION:** US dwell falls systematically by
+> game index within a match (**53.8 → 33.0**, game 1 → game 5) while **TOP is flat to
+> ±0.5**. ⇒ **any cut of ours that is not index-balanced is biased**, cause unknown.
+> Separately, our games are far longer in the tail: **14.2% reach r999 vs TOP's 5.8%.**
+>
+> **Method:** side keyed on `teamAId`/`teamBId`, not `us_side` (corpus-howto TRAP 7);
+> seat validated against the replay-internal winner byte, **8,343/8,343 = 100.0000%**.
+> All four controls ran. The band-shuffle as commissioned was a **no-op** and was
+> reported as such rather than silently substituted; the form testing the intent
+> flattens spread 3.78×→1.56× (US), 6.04×→2.24× (TOP). Empty bands print `UNDEFINED`;
+> a real zero still prints `0.00`.
+> **Script `scratchpad/dwell_band_s31.py`; tables `scratchpad/_dwell_band_full.txt`.**
+
 **Research arm, s30, 2026-08-11. Two independent instruments, both reported.
 Population: our 5,143 games vs 3,080 THIRD-PARTY games of nine ≥1900 teams
 (sporks, Clankers, Jython, Lorem Ipsum, not adgato, Erebus, The Flotte
@@ -29,11 +88,18 @@ AND LOSE 4.57× AS MANY BUILDERS PER FORWARD BUILD.**
 The two instruments agree and **decompose the gap cleanly**, since
 `deaths per build = deaths per round × rounds per build`:
 
-* **~2.28× is DWELL** — our raiders stand forward far longer per thing built.
-* **~2.0× is PER-ROUND HAZARD** — measured separately at 2.915 vs 0.847 deaths
-  per 1k forward builder-rounds.
+* **⛔ ~2.28× is DWELL — RETRACTED s31. The population value is 1.30×** (see the
+  correction banner at the top). At 2.28× the decomposition does not close.
+* **⛔ "~2.0× is PER-ROUND HAZARD" WAS NEVER MEASURED — it is `4.57/2.28`
+  back-solved**, and it sits in the same sentence as the figure that WAS measured,
+  **2.915 vs 0.847 = 3.44×**. The two never matched and the mismatch went unflagged.
 
-**Roughly half the problem is loitering and half is where we loiter.**
+**⇒ CORRECTED: dwell 1.30×, hazard 3.44×, and 1.30 × 3.44 = 4.47 ≈ 4.57. In log
+shares that is dwell 17% / hazard 81%, summing to 99%. As published the shares
+summed to 135%, which is not a decomposition.**
+
+**~~Roughly half the problem is loitering and half is where we loiter.~~ THE
+PROBLEM IS OVERWHELMINGLY WHERE WE LOITER, NOT HOW LONG.**
 
 ## WHY THIS IS THE RIGHT TARGET AND LOKI-25 WAS NOT
 
