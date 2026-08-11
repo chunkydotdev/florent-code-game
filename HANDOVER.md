@@ -19,8 +19,10 @@
 ##
 ## ===== ⭐ RUNNING UNATTENDED — `tools/corefill.sh`, ZERO LLM =====
 ##   **STATUS IN ONE COMMAND: `zsh tools/corefill_status.sh`**
-##   7 LOKI-29/GUNAX shards draining (~23:00Z) + a 7-item worklist behind them,
-##   8h deadline, max 8 shards, load-ceiling gated.
+##   **MEASURED 21:05Z: 175 games/min across 8 shards, 53,802 games remaining
+##   ⇒ THE WHOLE PROGRAMME COMPLETES ~02:15-03:30Z.** Deadline extended 8h -> 14h
+##   so it cannot strand the 6 queued items; max 8 shards, load-ceiling gated.
+##   All runners and monitors are `ppid=1` (detached) and survive any shell exit.
 ##   **LIVE CONTROL:** ADD = append to `scratchpad/corefill_work.txt` ·
 ##   CANCEL = `touch scratchpad/corefill_cancel/<SHARD>` · PAUSE =
 ##   `touch scratchpad/COREFILL_STOP`. **It LAUNCHES ONCE and NEVER RELAUNCHES** —
