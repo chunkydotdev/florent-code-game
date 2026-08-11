@@ -35705,3 +35705,57 @@ near-equality of two large proportional falls is close to arithmetically
 entailed and is **not** a power artefact; *"the falsifier resolved"* is not.
 ⇒ **ship/no-ship escalation withdrawn; replaced with re-running the mechanism bar
 at a real n.** Correct call.
+
+# ============================================================================
+# 2026-08-11T19:0xZ — **⛔ SIDE LANE CORRECTION AGAINST ITSELF: my `cores_idle`
+# claim was FALSE, and MY OWN LANE HAD ALREADY FIXED THE THING I REPORTED.**
+# Plus: the machine is at HALF throughput for the next 4.5 hours.
+# ============================================================================
+
+## THE CORRECTION
+I told the builder *"`cores_idle` trips only on TOTAL idleness, so four of five
+shards dying reads `games=2/9 consec_idle=0 OK`."* **False.**
+`tools/monitors/cores_idle.py:100-103` is `expected = EXPECTED_GAMES; if n <
+expected: consec += 1`. **It trips on `n < EXPECTED`, not on zero.** The blind
+spot I described does not exist.
+
+**AND THE CODE COMMENT AT `:97-99` CREDITS THE FIX TO THIS LANE:** *"⛔ EXPECTED,
+NOT ZERO. The first version's predicate was `n == 0` … an idleness alarm blind to
+89% idleness. **(Side lane audit, s31.)**" ⇒ **I reported as a live defect the
+thing my own lane found and fixed one session ago.**
+
+**HOW: I read the DOCSTRING and `PROGRAMME.md`, not the code.**
+`cores_idle.py:31` still says *"If ZERO for two consecutive polls"*;
+`PROGRAMME.md:60-62` says *"on two consecutive polls with zero local games"*.
+**Both are stale relative to the code the s31 fix shipped.** ⇒ **I audited the
+DOCUMENTATION and called it an audit of the INSTRUMENT** — the exact fault I
+flagged elsewhere twice today, and the fourth self-correction of this session.
+**The two stale descriptions are themselves a finding: a fix that updates the
+code and its inline comment but not the module docstring leaves a trap for the
+next reader, and I am the next reader.**
+
+## ⭐ TWO REAL FINDINGS SURVIVE, AND ONE IS LIVE
+**1. `EXPECTED_GAMES=9` IS STALE AND WILL FIRE A FALSE ALARM.** Set for the
+9-shard s31 run; the run is now **5 shards producing 8–11 `fcode run`
+processes**, and the last poll already read **`games=8/9 consec_idle=1`.** One
+more sub-9 poll writes `CORES_IDLE_ALERT` and names a queue item while LOKI-29
+runs perfectly. Fix is the env var on the monitor's loop, not the tool.
+
+**2. AND THE ALARM WOULD BE SUBSTANTIVELY RIGHT ON A WRONG THRESHOLD — THE
+MACHINE IS AT HALF THROUGHPUT FOR 4.5 HOURS.** Measured 18:57Z:
+* LOKI-29 **371 games/shard in 18.3 min = 20.2 games/min/shard**
+* **total 101 games/min vs 189 during s31** (9 × 5,408 in 258 min)
+* **ETA 23:06Z**, **5 games in flight on 10 cores**, load 7.83 and falling
+⇒ **~half the machine idle for four and a half hours while `QUEUE.md` holds 7
+unblocked items.** `ALWAYS_BE_RUNNING` verbatim. **The five-shard shape was
+inherited from what the PARTITION needed, not chosen from what the MACHINE
+holds** — a design choice worth making deliberately, and it was not one.
+
+## THE STARTUP GUARD — DRIVEN, NOT READ
+Pointed at an empty `OUT` with the 9-shard spec: printed the refusal, **exit 3**,
+**launched nothing**, five live shards untouched. **I deliberately did NOT drive
+the positive branch** — a second watchdog on the live run could launch real
+shards. ⇒ **the START path has no safe test.** A `--dry-run` that logs decisions
+without launching would make both branches drivable — the builder's own `OUT`
+principle: *a guard that cannot be exercised in isolation cannot be driven to
+both verdicts.*
