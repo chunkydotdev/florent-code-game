@@ -7,6 +7,15 @@ Boot sequence:
 4. **Run the three boot checks** (~5s total): `.venv/bin/python tools/audit_trigger.py`, `.venv/bin/python tests/test_instruments.py`, `.venv/bin/python tools/corpus_sanity.py`. If audit_trigger FIRES, the project is producing analysis faster than decisions — spawn a short-lived AUDIT session with no stake in the queue, whose only job is to ask whether the instruments can support the decisions being made, and let it stop when it reports. Prior art: `docs/workflow-analysis/` (2026-08-08), where an outside session found our standard battery had **19% power** after both arms had missed it for fifteen hours. Nobody audits their own instrument. If test_instruments or corpus_sanity fail, fix before trusting the affected instrument — a red check means a metric or corpus column is lying.
 5. Continue the build queue from HANDOVER + coordination notes.
 
+**⛔ BEFORE ANY SUBMIT OR ACTIVATION, READ `docs/fcode-cli.md` §"The submit-vs-activate question".**
+`fcode submit` **AUTO-ACTIVATES** what it uploads — submitting IS shipping, and
+there is no "upload now, activate later". That fact sat in `fcode-cli.md` for days
+while this boot sequence never opened the file; s29 submitted a prototype ~20
+minutes ahead of its window and put it on the rated ladder instantly. **A fact in a
+reference doc that no boot sequence opens is a fact nobody has.**
+`tools/submit_clean.py` now restores the holder automatically — `--activate` is the
+ship decision. Run `.venv/bin/python tools/plank_status.py --all` before activating.
+
 Standing measurement rule: **`tools/gate.py` is the sole entry to a battery** — no arena battery fires without a passing (or explicitly escape-flagged) gate run. An escape flag typed is a decision on the record; a battery fired without the gate is not. (Process review 2026-08-09: every prose-only rule in this repo has a recorded violation by its own author; the two durable surfaces are this file and tools that exit 1.)
 
 **PROGRAMME DISCIPLINE (Magnus, 2026-08-09 — written into this config on his direct order).** `PROGRAMME.md` is the standing directive and is read BEFORE HANDOVER at boot. The loop it encodes: iterate planks on the active line, test theories on **pre-registered unrated legs between ladder games** (the prereg is a COMMITTED file that predates leg creation — the two-clock standard, git author time vs platform `createdAt`), autopsy every leg against its own bar, keep what measures, lean into what kills inside the window. Concretely: planks live in the line's dirs only and are measured against the **previous line iteration**, never the frozen incumbent; **verdict language is denominated in the PRIMARY currency** (a secondary-only headline is not a pass); win rate is never a verdict; a mechanism metric never substitutes for the currency; an off-prediction win is labelled, not banked. **The side lane audits every commit against the D1–D10 checklist in `docs/research/PROGRAMME-drift-watch-2026-08-09.md` (Magnus mandate, all lanes)** — answer a drift flag with the anchor or the correction, never with compliance for its own sake.

@@ -243,6 +243,24 @@ These override attention drift; the full lane protocol is your boot config
   clock along with the number. Us-only samples must say so inline.
 - **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
   ships docs to the platform and is a drift flag.
+- **⛔⛔ SUBMITTING **IS** SHIPPING. `fcode submit` AUTO-ACTIVATES WHAT IT
+  UPLOADS — there is no such thing as "upload now, activate later".** The
+  platform makes a freshly-`ready` submission active with no `activate` call.
+  **This was documented in `docs/fcode-cli.md:262` for days and it is written
+  here because that file is NOT in any lane's boot sequence, while the procedure
+  three sections down said "activate only in the instant before firing" — which
+  only makes sense if this were false. A fact recorded in a reference doc and
+  contradicted by the always-loaded file is a fact nobody has.**
+  **Re-measured s29 2026-08-11:** submitting `_v136loki19` printed
+  `Submitted! Version 108` and the next `fcode status` read `Active bot: v108`,
+  displacing a v104 holder of ~20 hours. Rolled back in ~15 s; **zero rated
+  matches leaked, verified on the match COUNTER (724 before, 724 after)** — that
+  was luck plus watching, and neither is a control.
+  **`tools/submit_clean.py` NOW RESTORES THE HOLDER ITSELF** and confirms the
+  restore against the `Active bot:` line, never the exit code. **Pass
+  `--activate` to keep the new version live; that flag IS the ship decision.**
+  ⇒ **Never submit a prototype "to have it ready". The submit IS the activation,
+  so it happens inside the firing window or not at all.**
 - **The iteration mill (Magnus, s25/s26 — the method behind the line's best
   progress):** iterate bot planks in SMALL steps and test each on UNRATED
   legs, many iterations per session. Per leg: a one-paragraph pre-registration
@@ -489,6 +507,12 @@ each played ZERO rated ladder matches** across their legs (verified: every
 ladder match in the window carries `ourver=102`). **Procedure: serve the
 rate-limit wait with the INCUMBENT live; activate only in the instant before
 firing; roll back on the fifth accepted challenge and VERIFY the holder.**
+**⛔ AND "ACTIVATE" HERE INCLUDES THE SUBMIT — see the submissions bullet above.
+`fcode submit` AUTO-ACTIVATES, so uploading the prototype ahead of time to be
+ready is exactly the mistake this procedure reads as safe. The upload belongs
+INSIDE the 60-second window, not before it.** (s29 walked into this: submitted a
+prototype ~20 min ahead of its window and put it on the rated ladder instantly.
+Cost was zero rated matches only because the submit was being watched.)
 
 **THE CONSEQUENCE, and it is the one that matters: STOP CALLING UNDERPOWERED
 LEGS.** Every null on 2026-08-10 failed its own resolution bar rather than the
