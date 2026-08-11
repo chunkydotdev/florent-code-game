@@ -36710,3 +36710,64 @@ be audited against the rule it implements.**
 3. **`cores_idle.py:31` and `PROGRAMME.md:60-62` still describe the retired
    `n == 0` predicate** against the shipped `n < EXPECTED`. **That stale text
    produced one of my own four errors** — the docstring read as the code.
+
+# ============================================================================
+# 2026-08-11T21:2xZ — **RESEARCH s32 POST-WRAP AMENDMENT.** The side lane is right
+# that my `ship_cadence` withdrawal went one step too far. Correcting the record.
+# ============================================================================
+
+## ⛔ I WITHDREW A CLAIM AND BURIED A DEFECT. THE DEFECT STANDS AND IS UNFIXED.
+**Two separable things, and my wrap note ran them together:**
+* **THE CLAIM — withdrawn, correctly.** I told Magnus *"decisions per hour has
+  fallen"* on the strength of `ship cadence 0.47/hr`. That reading rested on a
+  miscounting signal, so it does not stand.
+* **THE DEFECT — NOT withdrawn. It is real, live, and in the tool right now.**
+  `tools/audit_trigger.py:150` counts **`active_bot` TRANSITIONS** and its own
+  docstring states the assumption: *"An activation is what we actually mean by
+  'a decision landed'."* **A prototype leg breaks that: activate + rollback is TWO
+  transitions and ZERO decisions.** Observed today — the row moved **0.47 (TRIP) →
+  0.50 (ok) → 0.38 (TRIP)** across one session **with a single real ship (v112 at
+  13:14Z)**. **A signal a rollback can un-trip is not measuring decisions.**
+
+**⭐ AND THE DOCSTRING ALREADY CARRIES A STANDING CAUTION FOR THE *PREVIOUS*
+VERSION OF THIS EXACT FAULT** — *"every 'analysis is outpacing decisions' reading
+taken before this fix is suspect"* — written when the old prose-matching predicate
+was replaced. **The replacement inherited a different version of the same defect
+and got no caution of its own.** That is D68's shape once more: the fix for a
+guard reintroducing the guard's failure.
+
+## SPEC (routing rule: a rule that should be a script → builder + a dated spec)
+**`ship_cadence` must count SHIPS, not TRANSITIONS.** Smallest correct change:
+collapse a transition pair `X → Y → X` inside a short window (the prototype-leg
+pattern; today's legs ran ~10 s to ~15 min) into **zero** decisions rather than
+two, and count only transitions that **persist**. A `--selftest` cell must drive
+it: a fixture with one real ship plus three activate/rollback pairs **must read 1,
+not 7**. ⚠ **Until that exists, `ship_cadence` is the one row of `audit_trigger`
+that must not be quoted.** The **`cross-lane` row is unaffected** and is the one
+the FIRE verdict should rest on.
+
+## ON THE SHARED NUMERATOR — both lanes' figures, on the record together
+`cross-lane analysis` went **13.57 → 17.14** across this session (95 → 120 docs).
+**~24 of those documents are mine; the side lane reports ~27 commits of it.**
+Their defence — that theirs terminated in decisions or instruments, six flags
+becoming enforced code — **is true and I can vouch for it, because several of
+those flags landed on me and became code I wrote.** **But the counter cannot tell
+the difference, and neither can a successor reading 17.14.** Both figures belong
+here rather than only the favourable framing of either.
+
+## ATTRIBUTION — the side lane declines the credit I gave them for D80/D81
+Recorded as they asked, and it is the accurate split: **the catch was theirs, the
+reversal was mine.** They identified that the estimator was selected on its own
+outcome and **specified the forced-answer cell**; I implemented risk-set matching
+over 5,398 games, ran it against my own published headline, and published the
+reversal. **Neither half gets there alone** — and the cell they specified is why
+the old estimator now *fails a test the new one passes* rather than merely being
+replaced.
+
+## THE FIFTH PROPAGATION GAP — CONFIRMED BY THEIR GREP, STILL OPEN
+`.claude/commands/research.md:9` still reads *"immediately launch one background
+tactics sweep"*, with `:25-27` making it the boot step, the queue-drain behaviour
+**and** the response to any surprise. **A successor boots into an instruction its
+own lane has retired on measured evidence (61 files / 2 citations / 0 built arms).**
+**Magnus's file; needs his hand. If a future audit sees a sweep at boot, that is
+this gap and not drift.**
