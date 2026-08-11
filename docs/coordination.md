@@ -32894,3 +32894,72 @@ booted file and the reply is not** — D52b, on my own text, at the wrap.
 **Both peers caught the same over-generalisation independently. That is the third
 time today a claim of mine was corrected by two lanes arriving separately, and it
 is the strongest argument in this session for keeping three lanes.**
+
+# ============================================================================
+# 2026-08-11 12:1xZ (`date`) — **BUILDER ARM s30 WRAP — PROCESS DELTAS**
+# Arm retro ran FIRST (`docs/builder-arm-retro.md`, INSTANCE s30, FIRINGS 6).
+# ============================================================================
+
+## D60 — ⭐ WE BUILT SEVEN FILTERS AND ZERO GENERATORS, AND EVERY FILTER WAS INDIVIDUALLY CORRECT
+`h2h.sh` · `inert_check` · the power guard · `plank_status` withdrawal ·
+`era_guard` (spec) · `corpus_sanity` tokens · `freshness`. **Each is sound. The
+PORTFOLIO was wrong**, and nothing in the process could see it, because
+**a false POSITIVE costs one window — 25 games, eleven minutes, bounded and
+VISIBLE — while a false NEGATIVE costs a plank nobody ever learns about,
+unbounded and INVISIBLE.** We optimised hard against the measurable one.
+**Magnus had to tell us.** ⇒ **No instrument here measures its own
+false-negative rate. Every screen now prints its informative band.**
+
+## D61 — ⛔ A SCREEN CALIBRATED TO REJECT EVERYTHING SHORT OF OUR BEST-EVER PLANK
+`h2h.sh` at n=64 detects only **≥+17.5pp**. **LOKI-13 measured +18.0pp.**
+Nine arms went through it; **seven fell inside the band and I wrote them up as
+failures**, then reported to Magnus that the bot could not be improved.
+⇒ **"Inside the band" is NO INFORMATION and returns a plank to the POOL.** Fixed
+in the tool, with the LOKI-13 arithmetic in the docstring so the threshold cannot
+be quietly re-tuned. **Four planks restored on Magnus's instruction.**
+
+## D62 — THE SCREEN MEASURED A QUANTITY `PROGRAMME.md` SAID WAS NOT THE VERDICT
+Nine arms screened on **win rate** while the file read `WIN_RATE_IS_VERDICT: no`
+and `PRIMARY_CURRENCY: kill_speed_score`. **That is D3, the second row of the
+drift checklist, running all day in the builder's own instrument.** Two faults
+compounding: a **binary** outcome (one bit/game) on a **non-currency** quantity at
+**n=64**. *(Superseded the same session — Magnus, direct: **"Win rate decides"**,
+`PRIMARY_CURRENCY: game_share`. The fault stands as a lesson; the field changed.)*
+
+## D63 — ⭐ THE BAR IS NOW MEASURED, NOT ASSUMED — `tools/mde.py`
+Magnus: *"Figure out the smallest change we can find out using our current tools,
+that's the bar."* Measured on the NULL, where the effect is known to be zero:
+**sd(diff) = 14.31 kill-speed points/game, mean diff +0.24 (~0 — the check that
+the floor is a floor).** At 1,350 games/hour: **MDE 0.39/game overnight** against
+**5.01 at n=64**. ⇒ **Anything an overnight run can resolve, resolve it. Anything
+it cannot, ship it and let the ladder decide.** The tool shipped with **no
+selftest** and had to be flagged by another lane; it now has six forced-answer
+cells, **including one asserting the published 0.39** so a wrong bar cannot be
+quoted twice.
+
+## D64 — ⛔ A DOSE CHECK KILLED THE SHIP, AND THE MECHANISM RAN BACKWARDS
+`K_HEAL_RATE_PCT` 5→1 was the joint top arm at n=1024 (+1.2pp) with a permissive
+ship rule and a free slot. **Sequential, seed-matched: v104 heals 132.8/game, the
+"heal cut" arm heals 461.5/game — 3.5× MORE.** The win rate came from a bot doing
+something other than what the plank claims. ⇒ **A positive point estimate is not a
+mechanism. Run the dose check even when the rule permits shipping without it.**
+
+## D65 — ⛔ PARALLEL `fcode run` PRODUCES INCOHERENT COUNTS
+A 16-game parallel dose check reported the heal arm at 268 heals/game vs control
+108 — the **opposite** of a 3-game serial check, and both were wrong. **Sequential
+is the trustworthy form.** `h2h.sh` runs one game at a time per arm and is
+unaffected; **any DOSE check must be serial.** In no docstring before today.
+
+## D66 — SUBAGENTS ARE FOR JUDGMENT, CORES ARE FOR GAMES
+I ran screens serially in my own shell for ninety minutes using **1 core of 10**
+while eight sat idle, having used subagents only for decoders and audits.
+**Running games needs no judgment, it needs cores** → parallel background jobs.
+The 8×1,024 battery finished in 50 minutes. **Magnus asked "are you using all our
+cores"; the answer was no and nothing in the process asked.**
+
+## D67 — THE SLOT RULE FIRED AND I MISSED IT FOR THIRTY MINUTES
+`RULE=SLOT FREE` at 11:19Z (net5 −23, drawdown −37). Rollback condition
+(rating < 1615 **AND** net5 ≤ −21) **not met** — rating 1656 — and v104 recovered
+unaided to 1672/`RULE=held`. **No action was correct; the thirty-minute delay was
+not.** `ship_watch` wrote `corpus/SHIP_ALERT` on time. **A monitor that fires into
+a session nobody is reading is the same failure as one that cannot fire.**
