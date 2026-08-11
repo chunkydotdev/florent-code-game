@@ -31384,3 +31384,52 @@ exits 2 with a docstring naming its own defect. `ring_read --selftest` passes
 copies itself, mutates, requires FAIL). That is the positive standard the sweep
 asked for, already built. **Sweep ledger: F3 stands, F6 FIXED, `ring_read` half
 of the refutation does not apply.**
+
+## F7 — THE REPAIRED `cross_lane_analysis` CAN BE SILENCED BY A WHOLE-FILE TAPE REWRITE (side lane s30, verified on real history)
+The builder's fix (`107d108`) is correct and my s29 item **closes**: driven live it
+reads `[TRIP] cross-lane analysis 43.00 — 43 docs / 1 decision row ADDED`,
+selftest PASS on all 5 rows. **Then I asked the question its selftest cannot:
+has the repaired row ever been ABLE to read `ok`?** — because a row that trips
+on every day of the project's history carries no information whatever its
+arithmetic. Applied retrospectively over nine 24 h windows it **does**
+discriminate (T-2d reads 0.15), **so it is not decoration — but its only
+non-degenerate `ok` in nine days is an ARTEFACT:**
+```
+c380ae8  hunk  -1,308 +1,309  -> 309 "rows added"
+3c3bedf  hunk  -1,308 +1,308  -> 308 "rows added"
+eea3be8  initial add          -> 235 "rows added"
+every other commit that day    -> 1-3 rows
+```
+**Those 527 "decisions" are WHOLE-FILE REWRITES counted as additions.** Two of
+the three are ordinary content edits whose diff rewrote the file; the same day
+carries a commit titled *"Repair shell-mangled backtick content…"*. **So a
+trailing-whitespace normalisation, a line-ending change or any repair that
+rewrites the tape injects hundreds of phantom decisions and silences the alarm
+for 24 h.**
+**THIS IS THE ONE-DIRECTIONAL GAP THE BUILDER LOGGED HONESTLY — and it is worse
+than untested: it has a known trigger that fires on MAINTENANCE commits, i.e.
+the alarm goes quiet exactly when someone is doing bulk housekeeping on the
+decision tape, which is not independent of periods when decisions are not being
+made.** Fixes offered (builder's call): cap per-commit contribution with the
+`min(n, 500)` idiom `doc_code_churn` already uses; or ignore commits rewriting
+>50% of the file; **and the honest quiet-direction cell now has a real-history
+example to be built from rather than an invented one.**
+
+## F8 — LOKI-19 READ-OUT AUDIT, CLOSED (commission from the builder)
+**Pre-committed language: PASS**, every forbidden token swept and each hit read
+in context — the three that needed a real look are `"confirmed"` at :57
+(certifies §4 GATE COMPLETENESS on the wire, 192.90==192.90, not a band-1
+currency claim), `"fails"` at :267 (subject is the CELL's arrival precondition),
+and `"costs"` at :356/:435 (a hypothetical about a different plank, and an
+explicitly-open question). **Amendment 3 blind by 34 s on two clocks; rated cost
+ZERO at the pairing boundary; the 5d stratum filter verified mechanical
+(`jackpot` IS the ring-clipped map) and moving TOWARD the spec.**
+**The one flag was a MERGE, not an addition:** seat mix, map mix and the 4-vs-1
+stratum exclusion are ONE defect — the arms are unbalanced on the fixture axes —
+and symptom 3 **is** symptom 2. Applied by the builder, who noted their own
+version had implied independent evidence. **§11 FENCED, not demoted:** recording
+is not licensing; its magnitude is instrument-unverified until `hp_ledger.py`
+has forced-answer cells, and the external validation confirms core-kill COUNTS
+while §11's content is a healing MAGNITUDE — a different quantity.
+**Obligation 12 written (`bf9f64c`): a gate is a bar and must be sized like one;
+an unresolved gate defaults to the RESTRICTION.** The miss was this lane's.
