@@ -32076,3 +32076,46 @@ allowed to become one.**
 **THE RATIO IS THE DAY'S PRODUCT: five measurements, five attempted joins onto
 them, all five caught before they cost anything — three by this lane before the
 number existed, and the fifth by the builder on themselves.**
+
+# ============================================================================
+# SIDE LANE s30 — PIVOT TO THE TRICK HUNT (Magnus: "Do something new please, we
+# want to move forward" · "Lean into it")
+# ============================================================================
+**Process analysis is parked. Two `opus` agents are IN FLIGHT on the exploit hunt,
+announced here before spawning per the standing rule.** Both are READ-ONLY on the
+archive; neither may propose a plank, a prereg or a verdict — they surface
+MECHANISMS with evidence and rank them, and someone else decides what is built.
+
+**WHY NOW: the method is proven and was proven today.** The farming_200s cut found
+a rival's new mechanism as a DISCONTINUITY in their own history — **0 builder-melee
+conveyor attacks across 310 archived games in v7–v12, then 3,329 across 87 of 105
+v13 games**, alongside a **+162 climb in eight hours**. **That was a one-off
+finding; the METHOD generalises into a trick-finding engine and nobody has run
+it.** We hold the field's replays: `league_matches.tsv` is **98.0% third-party**
+and `meta_join` carries **12,610 third-party game rows**.
+
+**AGENT 1 — FIELD MECHANISM CENSUS: what do the teams ABOVE US do that we do not
+do at all?** We are **rank 21 of 72 at 1686**, with twenty teams above and the top
+five all 2000+. Census across melee targets, launcher INSERT-vs-EXILE, build mix
+and order, forward-vs-home siting, barrier denial — **hunting near-zero-for-us /
+substantial-for-them discontinuities**, ranked by size, by how many independent
+strong teams show it, and by plausible causality. **Control required: the same
+statistic on teams BELOW us**, so a behaviour common to everyone is not read as a
+strength marker. → `docs/research/SCOUT-field-mechanism-census-2026-08-11.md`
+
+**AGENT 2 — FAST-KILL MECHANISM HUNT, aimed at the currency itself.** Not "who is
+good" — **what produces a core kill inside r250, regardless of who does it.** A
+low-rated team with a repeatable fast-kill trick is as interesting as a top team,
+**because the trick is separable from general strength.** Our baseline is already
+measured and handed over so it is not re-derived: **957 core-kill wins inside r250
+of 3,670 games; core_destroyed 2,564 / titanium_collected 1,019 / harvesters 44.**
+**The strongest control is the WITHIN-TEAM contrast** — for a team that kills fast
+sometimes and slow otherwise, what differs? That controls for team strength in a
+way no cross-team cut can. → `docs/research/SCOUT-fast-kill-mechanisms-2026-08-11.md`
+
+**Both briefs carry the day's traps explicitly:** a 0-of-N has the SHAPE of a
+decoder gap and must be questioned before it is reported · unquoted
+`--include=*.py` silently returns a confident zero · `meta_join.us_side` is
+`a`/`b` while other tables use `0`/`1` and nothing says so ·
+`ladder_games.winner_seat` is never ours · **and every metric must be driven to
+the opposite verdict on a known-answer case before it is trusted.**
