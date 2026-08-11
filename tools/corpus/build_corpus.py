@@ -143,7 +143,10 @@ def stage_join(files: list[Path]) -> dict:
                 continue
             row = games[idx]
             won = row["won"] == "1"
-            ws = row["seat"]
+            # `winner_seat` is the WINNING seat, not ours -- the flip below is
+            # what turns it into ours. Reads the legacy `seat` key too so an
+            # un-rebuilt ladder_games.tsv keeps working through the rename.
+            ws = row.get("winner_seat") or row.get("seat", "")
             ours = ws if won else ("b" if ws == "a" else "a")
             our_team = 0 if ours == "a" else 1
             # --- reconciliation ---

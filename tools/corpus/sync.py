@@ -137,7 +137,7 @@ def sync_ladder() -> int:
     if not fresh:
         return 0
     cols = ["match", "created", "opp", "oppver", "ourver", "ourbef", "oppbef",
-            "map", "seat", "won", "cond", "turns", "s3"]
+            "map", "winner_seat", "won", "cond", "turns", "s3"]
     n = 0
     with path.open("a") as fh:
         for m in fresh:
@@ -156,7 +156,7 @@ def sync_ladder() -> int:
                 oppbef=mm.get("ratingBBefore") if side == "a" else mm.get("ratingABefore"),
             )
             for g in d.get("games", []):
-                row2 = dict(row, map=g.get("mapName", ""), seat=g.get("winnerSide", ""),
+                row2 = dict(row, map=g.get("mapName", ""), winner_seat=g.get("winnerSide", ""),
                             won=int(g.get("winnerId") == OURS),
                             cond=g.get("winCondition", ""), turns=g.get("turnsPlayed", 0),
                             s3=g.get("replayS3Key", "") or "")

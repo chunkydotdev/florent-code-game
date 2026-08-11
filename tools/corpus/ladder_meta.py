@@ -2,9 +2,21 @@
 """Free-metadata corpus of OUR ladder matches: one row per GAME.
 
 `fcode match list --mine` + `fcode match info <id> --json`. Zero replay
-downloads. Carries per game: map, our seat, result, winCondition, turnsPlayed,
+downloads. Carries per game: map, the WINNING seat (`winner_seat`, NOT ours --
+see below), result, winCondition, turnsPlayed,
 replayS3Key, plus the match-level opponent identity and the AT-MATCH ratings
 (`ratingABefore`/`ratingBBefore` — the reconciled field, NOT teamXRating).
+
+⛔ THE COLUMN WAS CALLED `seat` UNTIL s30 2026-08-11 AND THIS DOCSTRING SAID
+"our seat". BOTH WERE WRONG. It is `winnerSide` off the platform — the seat that
+WON the game, which equals ours only when we won. Measured on every matched row:
+`ladder_games.seat` agreed with `meta_join.us_side` on **1,180 of 2,345 = 50.3%.
+A coin flip.** The column carried no information about which seat WE were, in a
+table of OUR games, under a name every reader takes as ours.
+Renamed rather than documented, because **a comment does not survive a
+`csv.DictReader`** — the defect is now unreachable instead of explained.
+⇒ FOR OUR SEAT, JOIN `meta_join.us_side` (values `a`/`b`), or derive it as
+  `build_corpus.py` does: our seat == winner_seat when we won, else the other.
 """
 import json, subprocess, sys, collections
 from pathlib import Path
@@ -57,7 +69,7 @@ for i, m in enumerate(matches):
             match=m["id"], created=mm.get("createdAt", ""),
             opp=opp, oppver=oppver, ourver=ourver,
             ourbef=ourbef, oppbef=oppbef,
-            map=g["mapName"], seat=(g.get("winnerSide") or ""),
+            map=g["mapName"], winner_seat=(g.get("winnerSide") or ""),
             won=int(g.get("winnerId") == OURS),
             cond=g.get("winCondition", ""), turns=g.get("turnsPlayed", 0),
             s3=g.get("replayS3Key", "") or "",
@@ -66,7 +78,7 @@ for i, m in enumerate(matches):
         print(f"  ...{i+1}/{len(matches)} matches, {len(games)} games", file=sys.stderr)
 
 cols = ["match", "created", "opp", "oppver", "ourver", "ourbef", "oppbef",
-        "map", "seat", "won", "cond", "turns", "s3"]
+        "map", "winner_seat", "won", "cond", "turns", "s3"]
 with OUT.open("w") as f:
     f.write("\t".join(cols) + "\n")
     for g in games:
