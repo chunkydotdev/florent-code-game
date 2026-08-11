@@ -59,7 +59,7 @@ import json
 import os
 import sys
 import tempfile
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
@@ -68,7 +68,8 @@ ALERT = ROOT / "corpus" / "SHIP_ALERT"
 STATE = ROOT / "corpus" / "ship_watch_state.json"
 
 sys.path.insert(0, str(ROOT / "tools"))
-import slot_rule                              # noqa: E402  the RULE
+import slot_rule
+from freshness import assert_fresh                              # noqa: E402  the RULE
 import slot_sprt                              # noqa: E402  the ADVISORY
 from slot_sprt import bound, run_sprt, MU0, ALPHA   # noqa: E402
 
@@ -257,8 +258,71 @@ def selftest() -> int:
     check("...and an alarm is raised naming the slow bound",
           alert is not None and "slow bound" in alert)
 
+    # ---- THE BLIND BRANCH, s30. Without this the freshness guard is untested
+    # wiring in the exact monitor whose documented failure was printing five
+    # byte-identical healthy verdicts off a dead tape. Drives BOTH directions:
+    # a stale tape must REFUSE, a fresh one must still print.
+    import slot_rule as _sr
+    _real_tape, _real_log = _sr.TAPE, LOG
+    with tempfile.TemporaryDirectory() as _td:
+        _d = Path(_td)
+        def _body(stamp_fn):
+            # assess() needs a RUN, not a single row -- a one-row fixture returns
+            # line=None and main() exits before writing anything, which made the
+            # FRESH cell pass its emptiness off as a refusal.
+            return "".join(
+                f"{stamp_fn(i)}\t{1650 + i * 5}\t{730 + i}\tv104\trank #25\n"
+                for i in range(8))
+        def _run_with(tape_body, when):
+            f = _d / f"tape_{when}.tsv"
+            f.write_text("ts\trating\tmatches\tver\trank\n" + tape_body)
+            _sr.TAPE = f
+            globals()["LOG"] = _d / f"out_{when}.log"   # per-run: a shared log
+            # made the FRESH cell read the STALE run's line and fail for the
+            # wrong reason -- the fixture's bug, not the guard's.
+            # main() dispatches on argv, so it must not see --selftest or it
+            # re-enters this function. (First cut did, and recursed to the
+            # interpreter limit -- kept as a comment because a selftest that
+            # calls its own entry point is a trap anyone would walk into.)
+            _argv = sys.argv[:]
+            sys.argv = [_argv[0]]
+            try:
+                rc = main()
+            finally:
+                sys.argv = _argv
+            lg = _d / f"out_{when}.log"
+            return rc, lg.read_text() if lg.exists() else ""
+
+        # STALE: a row from 1970 is unambiguously past two cadences.
+        _rc, _out = _run_with(
+            _body(lambda i: f"1970-01-01T00:{i:02d}"), "stale")
+        _blind = "BLIND" in _out and "RULE=" not in _out
+        check("BLIND: a stale tape REFUSES and prints no verdict", _blind,
+              f"log={_out.strip()[:60]!r}")
+        if not _blind:
+            fails.append("blind-refuses")
+
+        # FRESH: the same code path must still produce a verdict, or the guard
+        # is just an off switch. Timestamps are LOCAL CEST in this tape, which is
+        # why main() passes assume_local=True -- a fixture written in UTC would
+        # read two hours stale and pass this cell for the wrong reason.
+        _base = datetime.now()
+        _rc, _out = _run_with(
+            _body(lambda i: (_base - timedelta(minutes=7 - i)).strftime(
+                "%Y-%m-%dT%H:%M")), "fresh")
+        _live = "tape_age_min=" in _out and "BLIND" not in _out
+        check("...and a FRESH tape still prints a verdict with its age", _live,
+              f"log={_out.strip()[:70]!r}")
+        if not _live:
+            fails.append("fresh-still-prints")
+    _sr.TAPE = _real_tape
+    globals()["LOG"] = _real_log
+
     print(f"\n{'SELFTEST PASSED' if not fails else 'SELFTEST FAILED: ' + ', '.join(fails)}")
     return 1 if fails else 0
+
+
+STALE_H = 20 / 60.0      # two 10-minute cadences
 
 
 def main() -> int:
@@ -277,11 +341,53 @@ def main() -> int:
     if version:
         STATE.write_text(json.dumps({"version": version, "baseline": baseline}))
 
+    # ⛔ FRESHNESS FIRST, s30 2026-08-11. THIS MONITOR IS THE ONE CLAUDE.md's
+    # "a monitor that reads a file must report that file's FRESHNESS" rule was
+    # WRITTEN ABOUT, and it still asserted nothing until now.
+    #
+    # MEASURED (side lane, `elo_history.tsv`, 1,243 rows over 08-06..08-11):
+    # median inter-row gap 5.0 min against this monitor's 10-min cadence, but
+    # TEN stalls exceed two cadences, totalling 338 of 6,693 min = 5.1% of the
+    # tape's life, longest 50 min. On the documented 08-10 outage this monitor
+    # printed FIVE CONSECUTIVE verdict lines, byte-identical but for the
+    # timestamp, off a dead tape -- and when it recovered, k jumped 63 -> 68 and
+    # rating 1599 -> 1631. **Five matches and +32 Elo were invisible to the ship
+    # monitor for fifty minutes while it printed `armed=True RULE=held` and
+    # reported drawdown=-17.0 for a state that had reached +0.0.**
+    #
+    # ⭐ AND THE CONTROL IS WHY NO AMOUNT OF ATTENTION FIXES IT: the healthy
+    # stretch immediately after is ALSO byte-identical across two cadences
+    # (08:02:09 and 08:12:09, k=68 rating=1631) -- because that is simply what a
+    # quiet ten minutes looks like. **"The same line twice" carries no
+    # information in either direction.** A reader cannot distinguish "no match
+    # completed" from "the tape is dead".
+    #
+    # So the monitor REFUSES rather than guessing, per the rule's own wording:
+    # "emit the age of the newest row, or refuse to print a verdict past ~2
+    # cadences." Threshold is 2 cadences = 20 min = 0.34 h.
+    # assume_local=True: elo_history stamps LOCAL CEST with NO zone marker, so
+    # read naively as UTC it reports rows from the FUTURE, which makes stale data
+    # look live. That hazard is exactly what freshness.py's CLOCK ERROR branch is
+    # for, and getting the flag wrong here would invert the check.
+    ok, age_h, fmsg = assert_fresh(slot_rule.TAPE, max_age_h=STALE_H,
+                                   assume_local=True)
+    if not ok:
+        print(f"SHIP_WATCH BLIND -- refusing to print a verdict. {fmsg}",
+              file=sys.stderr)
+        LOG.parent.mkdir(parents=True, exist_ok=True)
+        with open(LOG, "a") as fh:
+            fh.write(f"{datetime.now(timezone.utc):%Y-%m-%dT%H:%M:%S}Z\t"
+                     f"BLIND\t{fmsg}\n")
+        return 0
+
     # version is REPORTING-ONLY; the rule follows whoever the tape says is live.
     st, verdict, events, line, alert = assess(slot_rule.TAPE, None, baseline)
     if line is None:
         print("no holder run on the tape yet", file=sys.stderr)
         return 0
+    # The age travels WITH the verdict, so a healthy line and a nearly-stale one
+    # are no longer byte-identical.
+    line = f"{line}\ttape_age_min={age_h*60:.1f}"
 
     LOG.parent.mkdir(parents=True, exist_ok=True)
     with open(LOG, "a") as fh:
