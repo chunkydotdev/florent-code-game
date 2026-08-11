@@ -98,9 +98,27 @@ def loader_lint(root: Path, files: list[Path]) -> list[str]:
     return bad
 
 
+def _holder() -> str | None:
+    """The live submission, read off the platform. Returns None if it cannot be
+    read -- and None is treated as UNKNOWN, never as 'unchanged'. Parses the
+    `Active bot:` line rather than the exit code, because `fcode status` exits 0
+    while printing `Error: True` (standing repo rule: gate on the presence of the
+    load-bearing field)."""
+    try:
+        r = subprocess.run([str(FCODE), "status"], cwd=ROOT,
+                           capture_output=True, text=True, timeout=60)
+    except Exception:
+        return None
+    for line in r.stdout.splitlines():
+        if "Active bot:" in line:
+            return line.split("Active bot:", 1)[1].strip() or None
+    return None
+
+
 def main(argv: list[str]) -> int:
     args = [a for a in argv if not a.startswith("--")]
     dry = "--dry-run" in argv
+    activate = "--activate" in argv
     if not args:
         sys.exit(__doc__)
     src = Path(args[0]).resolve()
@@ -147,9 +165,59 @@ def main(argv: list[str]) -> int:
             print("\n--dry-run: nothing uploaded.")
             return 0
 
+        # ⛔⛔ `fcode submit` ACTIVATES WHAT IT UPLOADS. MEASURED, s29 2026-08-11.
+        #
+        # Submitting `_v136loki19` printed "Submitted! Version 108" and the very
+        # next `fcode status` read `Active bot: v108`. NOTHING in this script or
+        # in that command line asks for activation. The holder had been v104 for
+        # ~20 hours.
+        #
+        # WHY THIS IS A REAL HAZARD AND NOT A CURIOSITY: the standing procedure in
+        # CLAUDE.md is "serve the rate-limit wait with the INCUMBENT live;
+        # activate only in the instant before firing". That procedure is written
+        # as though SUBMIT and ACTIVATE were separable. THEY ARE NOT. A session
+        # that submits a prototype an hour before its window -- the obviously
+        # careful thing to do -- has silently put an unmeasured bot on the rated
+        # ladder for that hour, at a measured ~-8 Elo per leaked match.
+        #
+        # The s29 leak was ~15 seconds and cost ZERO rated matches, verified on
+        # the match COUNTER (724 before, 724 after) rather than assumed. That was
+        # luck plus watching, and neither is a control.
+        #
+        # SO THIS SCRIPT NOW RESTORES THE HOLDER ITSELF. Pass --activate to keep
+        # the new version live (a real ship); the default is that submitting is
+        # not shipping.
+        holder_before = _holder()
         print()
         r = subprocess.run([str(FCODE), "submit", str(dst)], cwd=ROOT)
-        return r.returncode
+        if r.returncode != 0:
+            return r.returncode
+
+        holder_after = _holder()
+        print(f"\nHOLDER: before={holder_before or '?'}  after={holder_after or '?'}")
+        if activate:
+            print("--activate given: leaving the new submission live. THIS IS A SHIP.")
+            return 0
+        if holder_after and holder_before and holder_after != holder_before:
+            print(f"** `fcode submit` ACTIVATED {holder_after}. Restoring {holder_before}. **")
+            ver = "".join(c for c in holder_before.split()[0] if c.isdigit())
+            if not ver:
+                print(f"** CANNOT PARSE A VERSION FROM '{holder_before}' -- "
+                      f"RESTORE IT BY HAND NOW. **")
+                return 1
+            subprocess.run([str(FCODE), "submission", "activate", ver], cwd=ROOT)
+            # Gate on the LOAD-BEARING FIELD, never on the exit code: `fcode`
+            # exits 0 while printing `Error: True` (standing repo rule).
+            back = _holder()
+            print(f"HOLDER NOW: {back or '?'}")
+            if not back or not back.startswith(holder_before.split()[0]):
+                print("** ROLLBACK NOT CONFIRMED. THE LADDER IS RUNNING AN "
+                      "UNINTENDED BOT. FIX THIS BEFORE ANYTHING ELSE. **")
+                return 1
+            print("rollback confirmed against the holder, not the exit code.")
+        elif holder_after == holder_before:
+            print("holder unchanged by submit.")
+        return 0
 
 
 if __name__ == "__main__":
