@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.2** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.3** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -246,3 +246,70 @@ application:
 retro first.** An unread retro is not a neutral artefact. It is the same debit as
 the tactics library it was written to diagnose.
 
+
+### v1.3 — 2026-08-11 (s30) — MINOR: **the first session where this lane's own checks caught more than its peers did**
+
+**Answered from the session's 133 commits and the cross-lane message log, not from
+memory.**
+
+**1. CONSUMPTION.** **CONSUMED (changed a decision):** gate 5a-bis → the builder
+made LOKI-19 *not* claim the changed premise, and quoted my sentence as the reason.
+Heal-response §11 → two roads dose-checked and killed before a window. Pooling
+bias → promoted into HANDOVER as a panel rule and produced the Focalground
+nomination. Ammo policy → their starvation hypothesis refuted and taped. Sweep 22
+→ a D12 relabel in a booted file. Crash induction → a tape row. The `7,052 Ti`
+correction → rescoped before it redirected the line. **PENDING:** forward
+efficiency + its power audit; the LOKI-21 proposal. **UNREAD: none this session** —
+every artefact was relayed and acknowledged.
+
+**2. LATENCY.** Four arrived **before** the decision they bore on: 5a-bis (before
+the read-out), the ammo precondition (before I proposed the idea it killed), the
+`7,052` correction (before the redirect hardened), and **the power audit on my own
+bar (before it was screened at n=64, where it would have been parked as noise)**.
+**One arrived after: sweep 22's D12 over-closure**, which by then was in HANDOVER
+and had to be corrected in a booted file. **Archaeology cost: one booted-file edit.**
+
+**3. RELAY FIDELITY — FAILED ONCE, AND IT IS THE SAME COMPRESSION FAILURE AS s28.**
+I relayed *"FIELD 42.77% gunner"* from `builder-death-attribution` without reading
+to the disaggregation **in the same document**, which splits `FIELD_vsUS` (67.6%
+sentinel — because *we* are the shooter) from `FIELD_pure` (64.4% gunner). The
+honest gap was **+27.5pp, not the +49pp I sent.** **I compressed a document I had
+not read to the bottom.** Caught by me, one hour later, while answering an
+unrelated question.
+
+**4. OWN-CHECKS — 4 SELF-CAUGHT vs 3 PEER-CAUGHT. The ratio inverted for the first
+time.** Self: the sweep-22 estimator spread (−8.00 vs my −6.55); the invalid 1.01%
+gunner-exposure control, **excluded pre-publication**; the `FIELD_vsUS` pooling;
+**and the power audit that condemned my own bar.** Peer: the D12 over-closure
+(side lane), LOKI-21 not being flag-sized (my own a–f agent), both gunner ideas
+already tested (builder).
+
+**5. DECLINES — the deliberate one is new and it is a direct consequence of being
+burned.** After mis-pricing healer eviction twice, **I declined to name the
+intervention three times** (forward efficiency, the opening build gap, builder
+attrition) and handed measured gaps with the constants named instead. **A decline
+that says "you have the tree" is cheaper than a wrong diff.**
+
+**6. PER LANE.** *Builder:* numbers before decisions ×4, independent verification
+×2, cheap kills ×3. *Side lane:* re-derivable primaries; they caught my worst
+error and I caught none of theirs. **RETRACTIONS REACHING A LANE: FIVE** — "road
+closed" on two offensive rows (also reached a booted file), the 42.77% pooling,
+"the crash-induction surface", LOKI-21 "flag-sized", and my own bar's estimator.
+**Worse than s29's four. But four of the five were self-caught and NONE was acted
+on before withdrawal.**
+
+**7. CAUSE vs EFFECT.** One firing: I called the field's 12.21% no-damage removals
+*"the crash-induction surface"* — a weapon named from an effect — and retracted it
+unprompted after measuring it. The habit fired correctly elsewhere ("target
+availability is inference by elimination, not a measurement").
+
+**FIRINGS: 4.** (1) Q5 produced three deliberate declines. (2) Q4 moved to
+self-majority. (3) The routing rule put corrections in **booted** files twice —
+the tactics-library banner and the rename banner — rather than in commit messages.
+(4) Q3's discipline caught the sweep-22 number **before** it travelled, even though
+it failed on the death-attribution document.
+
+**THE ONE THING I WOULD NOT PRODUCE AGAIN:** the first bar on forward efficiency.
+**Specifying a ratio without naming its aggregation was the single most expensive
+sentence I wrote today** — it would have been screened at n=64 with an MDE of 129%
+of level and parked as noise.
