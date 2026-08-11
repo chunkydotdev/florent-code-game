@@ -254,3 +254,74 @@ the field census now says every team above us runs the mechanism we switched off
 titanium gap, which I have NOT era-pinned.** The same correction may apply.
 **Pin it before building anything** — one query, and it is the query I should
 have run before writing the addendum.
+
+---
+
+# ⛔⛔ SECOND CORRECTION, 08:3xZ — #1 IS DEAD AND THE WHOLE SLATE'S BASIS WAS THE DEAD BOT
+
+**I made the SAME era error twice in one document, and the second time was after I
+had already corrected the first.** The builder's dose check gave me the population
+to pin, and pinning it killed my own top recommendation.
+
+**TIEBREAK WINS BY OUR VERSION — straight off the rated tape, no replay join:**
+
+| era | games | tiebreak wins | kill wins |
+|---|---|---|---|
+| v80 | 315 | **21.6%** | 27.9% |
+| v92 | 80 | 21.2% | 35.0% |
+| v94 | 140 | 17.9% | 32.9% |
+| **v102** | 390 | **0.8%** | **50.0%** |
+| **v104** | 425 | **1.2% — five games** | **52.7%** |
+
+**THE LIVE TREE ALREADY SOLVED THIS.** The 603 tiebreak wins the Closer targets
+are the **Eir** bot's. v104 produces **five in 425 games**, and its kill share is
+**52.7% against Eir's ~30%.** **My "+1,760 from converting 10%" was computed on a
+population that no longer exists.** The builder's 7,052 unspent-titanium figure is
+real and is also Eir's. **#1 IS WITHDRAWN. Do not spend a window on it.**
+
+**AND THE SLATE'S HEADLINE ARITHMETIC MOVES WITH IT:**
+
+| | pooled (all versions) | **live era v102–v107** |
+|---|---|---|
+| n | 3,670 | 820 |
+| mean score/game | −4.549 | **−2.288** |
+| −10 share | 65.0% | **48.8%** |
+| kill median | r162 | **r172** |
+
+**The live −10 pile is mostly LOSSES, not unconverted tiebreak wins — so
+"conversion beats speed ~5×" was also a dead-bot statement.** With tiebreak
+conversion nearly exhausted (1.2%), **the remaining −10 mass is games we lose, and
+those are won by killing faster or not at all.** That moves SPEED back up the
+board and it is the opposite of what this document argued two sections ago.
+
+## WHAT THE TWO CENSUSES SAY, NOW THAT THE BASIS IS RIGHT
+
+**⚠ THEY CONFLICT ON MELEE, AND THE DISTINCTION MATTERS:**
+* **Census 1 (mechanism presence):** 20 of 20 teams above us do builder melee,
+  median 90% of games; **our v104 does it in 0 of 1,605** — one boolean at
+  `doctrine.py:1470`. Control: melee VOLUME is demoted (heaviest attackers rated
+  1313–1669); melee PRESENCE is not (15 of 50 teams below us have none, 14 rated
+  <1550).
+* **Census 2 (kill delivery):** **fast kills are TURRET-DELIVERED. The Bisons 0
+  core pecks in 41/41; Cookie 0 in 70/70.** `diverge` (19/20) is a **minority**
+  melee-kill family.
+* **⇒ Reconciliation: melee presence and core-kill delivery are DIFFERENT
+  QUANTITIES.** The widespread melee is largely **belt raid** (0033 74%, sporks
+  70%) — economy denial, not core damage. **"20 of 20 do melee" does not license
+  "melee is how they kill", and my handoff to the builder implied it did.**
+
+**⭐ THE STRONGEST SURVIVING CANDIDATE: FORWARD TURRET IN THE ENEMY HALF BY ~r20–25.**
+ρ=**+0.784** across 71 teams; dominates generic forward building (partial +0.452
+vs +0.124); within-team **p<0.0001**; rating partialled out leaves **+0.685**;
+reverse causality tested (opponent losses by r30 flat-to-lower in fast games,
+p=0.0005). **We lack it: first forward turret median r49 (v104) vs r23 league-fast.**
+**Sharpest form — GUNS NOT WALLS: fast killers' forward builds are 64% turret /
+16% barrier; v104's are 81% BARRIER / 13% turret**, and we already place **2.62
+forward builds/game, MORE than they do.** League-supplied out-of-sample control:
+HTTP 418 and not adgato share our barrier composition and post 4.5%/8.8% fast kills.
+
+**⛔ ITS FALSIFIER, flagged by the agent against its own finding, and it must ride
+in any prereg: v92 → v104 → v107 went 0.70 → 0.34 → 0.15 forward turrets by r40
+while fast-kill rate went 11.1% → 22.3% → 31.3%. v107 has our WORST siting and our
+BEST speed.** Either the forward-barrier plank delivers the tempo by another
+channel, or the league correlation does not transfer to our chassis.
