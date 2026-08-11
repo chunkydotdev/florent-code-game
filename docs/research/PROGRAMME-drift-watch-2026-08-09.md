@@ -1252,3 +1252,24 @@ a proven negative control beats three that have never flagged anything.**
   opening its source — which is D22, committed by the author of D22, on the same
   day.** The hazard concentrates in the SETTLING phase, and neither routing nor
   delivery addresses that.
+
+- **⭐ THE ELO TAPE CANNOT CERTIFY HOLDER RESTORATION, AND ITS SILENCE IS NOT
+  EVIDENCE — CAUGHT WHILE ABOUT TO BUILD A CHECK THAT WOULD HAVE RELIED ON IT
+  (2026-08-11T13:57:16Z):** I set out to add a HOLDER-IDENTITY check to this lane's
+  pre-arm watch, on the reasoning that a prototype left live is worse than a
+  rating dip. **The surface is wrong.** `elo_history.tsv` is polled every
+  **300 s**; a correctly-run prototype window is **~20 s** (submit → fire →
+  rollback). ⇒ **P(a poll lands inside the window) ≈ 20/300 = 6.7%. Roughly 93% of
+  CLEAN rotations leave no trace, and so would 93% of DIRTY ones.**
+  **MEASURED NOW: the LOKI-28 prototype fired at ~13:33 and the last 20 tape rows
+  contain only v104 and v112 — no prototype tag at all.** A reader could take that
+  as evidence the rotation was clean. **It is not evidence of anything.**
+  **⇒ THE CHECK WOULD HAVE BEEN AN ALARM THAT CANNOT FIRE — the fourth in this
+  repo — and I would have built it into a watch I armed twelve minutes earlier.
+  A fix for a fault carrying the fault, caught before construction rather than
+  after.**
+  **⇒ THE CORRECT SURFACE IS UNCHANGED AND ALREADY MANDATED: the LIVE `Active bot:`
+  line, or per-match `teamAVersion` at the PAIRING BOUNDARY.** `CLAUDE.md` already
+  says the match COUNTER cannot answer this; **this adds that the ELO TAPE cannot
+  either, and for a different reason — the counter is blind to pairing, the tape is
+  blind to duration.** Both fail silently and both fail toward "looks fine".
