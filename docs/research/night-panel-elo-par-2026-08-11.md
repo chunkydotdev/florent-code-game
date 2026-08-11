@@ -258,3 +258,84 @@ building. Real lengths come from the replay's field-3 turn buffers. **Caught by
 the 448/448 + 37/37 known-answer reconciliation, not by inspection.** Also: one
 game carries two core deaths (gsxWins, both r69) — counted as a kill, excluded
 from the death distribution.
+
+---
+
+# ⛔ PART 3 — SELF-CORRECTION: PART 2's TREND CLAIM IS WITHDRAWN
+
+*Appended ~04:5xZ, about 20 minutes after Part 2 was relayed and adopted by the
+builder arm. **The correction is late — it reached a lane before it reached me.***
+
+**WHAT I CLAIMED:** *"The margin more than halved and it moved from BOTH ends —
+our kill 6 rounds slower, their kill of us 16 rounds faster. The race tightened."*
+
+**THE METHOD ERROR: I compared a SUBSET to the WHOLE** (first 240 games against
+all 365) **and reported the difference as change over time.** That is not a period
+comparison and it is guaranteed to understate the movement. Disjoint periods:
+
+| period | n | share | killW | medK | deathL | medD | **margin** |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| EARLY (≤ cut) | 240 | .546 | 129 | r170 | 107 | r209 | **+39** |
+| LATE (> cut) | 125 | .544 | 66 | r182 | 56 | r172 | **−10** |
+
+So the true pooled movement is **+39 → −10 (−49 rounds)**, larger than reported —
+**and still not established:**
+
+- **Permutation test, 5,000 shuffles of the period label: p = 0.123**, and that
+  **understates** p because games are clustered in 5-game matches. Clears nothing.
+- **UNCONTROLLED CONFOUND — opponent composition.** Mean opponent rating is flat
+  (1658.6 vs 1659.7) but the *teams* turned over almost entirely (early:
+  kladde/farming_200s/Landers/Askar City; late: SmartFridge/diverge/Landers/Askar
+  City). **Part 1 of this very document measures per-cell median kill rounds
+  spanning r107–r198 — a 91-round spread.** Composition alone can move a pooled
+  median by 12 rounds with nothing about our bot changing.
+- **Within-opponent** (11 opponents with ≥5 games in both periods): median margin
+  change **−51**, negative in 8 of 11 — directionally consistent, but per-cell n
+  is 1–4 kill/death observations and the swings run **+254 to −282**. Noise with
+  a tilt.
+
+**WHAT SURVIVES:**
+- ✅ **`+39` is computed on 240 of 365 available v104 games; the full-sample
+  figure is `+17`.** A stale cutoff is a stale cutoff — arithmetic, unaffected.
+- ✅ The 98.2% core-death share is stable to the digit across both cuts.
+- ❌ **"The race tightened" / "moved from both ends" — WITHDRAWN.**
+
+**THE LESSON, against this lane specifically.** The s28 wrap recorded that this
+arm's checks fired on every other lane's work and never on its own. This one
+fired on its own — **and it fired after the relay rather than before it**, which
+is the same failure one step smaller. **A trend claim needs a disjoint-period
+comparison and a composition control BEFORE it is sent, not after it is adopted.**
+
+---
+
+# ⛔ PART 4 — TEAM 48'S PROMOTION DOES NOT REPLICATE ON THE RATED SURFACE
+
+Part 1 and Part 2 converged on Team 48 from two independent instruments and it was
+promoted on that convergence. **A third surface inverts the sign.**
+
+```
+v104 UNRATED (night):  24/50  = 0.480    S-E = -0.147
+v104 RATED          :   7/10  = 0.700    S-E = +0.107   (mean gap -65.7)
+all-version RATED   : 113/180 = 0.628
+```
+
+**Both confounds are dead, which sharpens the contradiction rather than softening
+it.** Same our-version (v104 on both sides). **D18 satisfied cleanly: Team 48 has
+been on `v17` continuously since 2026-08-09T22:02Z**, verified across their whole
+`league_matches` timeline — their bot is identical across both samples.
+
+**What remains is power: the rated arm is 10 games = TWO MATCHES.** Fisher exact
+two-sided **p = 0.302** (games as units, which already overstates). **The rated
+sample cannot refute the unrated finding — but it is the only other evidence and
+it points the other way.**
+
+**Pairing frequency:** 180 rated game rows / 36 matches all-version = 4.99% of our
+3,610-game rated diet, most recent 2026-08-10T17:32Z (current, not historic) —
+but **only 10 of v104's 365 rated games (2.7%)**, not in v104's top 12 opponents.
+
+**REVISED RECOMMENDATION, against this document's own earlier framing:** keep Team
+48 as a **mechanism lead** — medD r93 against our medK r140 is a real, named,
+measured gap — and **drop it as a currency target.** 2.7% of the rated diet, at
+the reachable-band edge, rated sample inverted. **Cheap resolution: unrated games
+are free; 50 more against Team 48 v17 settles whether 0.480 or 0.700 is real, at
+a rate-limit cost and no rating cost.**
