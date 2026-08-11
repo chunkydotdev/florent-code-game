@@ -31658,3 +31658,44 @@ ejection cut returned **0 EXILE throws out of 185,695 — a JOIN FAILURE, not a
 fact.** `meta_join.us_side` is `a`/`b` while `throws.tteam` is `0`/`1`, **and
 nothing in either file says so.** Caught only because 0-of-185,695 is the SHAPE
 of a decoder gap — still the only reliable tell this project has for the class.
+
+## F15 — D12 FLAG ON SWEEP 22's CLOSURE TABLE, AND THE SYSTEMATIC PASS IS WHAT FOUND IT
+Found by sweeping today's **58 commits** against D1–D19 as a batch, **not** by
+reading the commit as it landed — I saw that subject go past on the drift watch
+and read it as a research deliverable. **Reactive per-commit auditing sees
+SUBJECTS; a closure table lives in the body.**
+
+`docs/research/tactics/2026-08-11-sweep-22.md` contains **zero** mentions of
+`D12`, "live-game", "prioritise" or "may not close", and marks **six roads
+CLOSED**. **Four qualify under D12's carve-out and are recorded as fine:**
+resubmit-as-reroll (our ladder pairs on a clock — platform fact, cadence
+re-derived by this lane 8/8 today) · hall-of-fame (their retired versions are
+unplayable) · reduce-own-exploitability (one submission slot, plus
+`PLAY_DEFENCE: never`) · import-a-blocked-design (a term census of EXTERNAL
+papers, not a claim about our game).
+
+**⛔ TWO DO NOT, AND THEY ARE THE TWO OFFENSIVE ONES:**
+*"Target a rival's freshly-shipped, un-debugged version"* (DiD +0.524, t=+4.89)
+and *"Read the rollback excursion as a hidden strong bot"* (−8.23pp, t=−6.61).
+**Both rest on ARCHIVE STATISTICS carrying a BEHAVIOURAL premise** — how
+opponents' fresh and excursion versions perform — so the carve-out fails its
+second clause. **Neither was ever tested by aiming a leg at a freshly-shipped
+opponent.**
+**THE DIRECTION IS THE POINT: these are the only two rows that would have given
+us something to DO to a rival**, and D12 exists precisely because an audit found
+not one of the original six roads rested on a live deployment.
+⇒ **Fix is a RELABEL, not a retraction: `CLOSED` → bottom of the queue pending a
+live test**, which is D12's own remedy clause. **The numbers are not disputed —
+the DiD is the best-controlled thing produced today; what they support is "queue
+this last", not "this is closed."** And research's own finding makes the live
+test cheap to size: they already have the matched design, and Obligation 14's
+version-stability counts say which cells re-version often enough to schedule it.
+
+**INSTRUMENT NOTE ON MY OWN SWEEP, since it is the kind of thing I flag in
+others:** the D4 keyword pass (survival/screening/defence) returned **5 hits, all
+false positives** — `defensible`, `defenders`, prose about the opponent's heal
+response. **A keyword grep on commit subjects is a weak D4 instrument and its
+silence should not be quoted as a D4 clearance.** D1, D3 and D8 came back
+genuinely clean (no edits to the frozen incumbent, no win-rate verdict language,
+no programme-over claim). **The one real catch came from reading a TABLE, which
+no grep of mine would have surfaced.**
