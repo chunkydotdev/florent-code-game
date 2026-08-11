@@ -303,3 +303,67 @@ guessing the intervention is the error I made twice today on healer eviction.
   so it mixes turrets with conveyors — the same definitional caveat LOKI-25's
   read-out carried.
 * Instrument B samples one game per match; Instrument A uses all games.
+
+# ⭐ s31 — THE 83% TERM DECOMPOSED, AND THE GAP IT OPENS
+
+**Deaths per 1,000 forward builder-rounds, by band. Side-sets matched** (a
+TOP-vs-TOP game contributes TWO TOP sides; a first pass that missed this put the
+ratio at 5.11× and was caught before publication).
+
+| band | US rate | TOP rate | US/TOP |
+|---|---:|---:|---:|
+| r0-59 | 3.08 | 0.87 | 3.54× |
+| r60-179 | 3.19 | 0.93 | 3.44× |
+| r180-249 | **3.77** | 0.82 | **4.58×** |
+| r250-499 | 3.23 | 0.80 | 4.03× |
+| r500-999 | 2.14 | 0.70 | 3.05× |
+| **POOLED** | **2.92** | **0.84** | **3.47×** |
+
+**Controls — Instrument A's TOP half, unlike Instrument B's, DOES reproduce on the
+full population:** US deaths/game **1.79** (doc 1.79) · US **2.918**/1k (doc 2.915)
+· TOP **0.842**/1k (doc 0.847) · deaths-per-forward-build ratio **4.50×** (doc
+4.57×) · and `dwell 1.30 × hazard 3.47 = 4.51×` **closes exactly**, log shares
+**dwell 17% / hazard 83%.**
+
+## ⇒ THE HAZARD IS NOT A PHASE PROBLEM
+
+Our rate is **2.1–3.8 in every band**; theirs is **0.70–0.93 in every band**. It is
+a roughly **constant ~3.5× multiplier**, so **no round-band-gated intervention will
+touch it.** Note it peaks at **r180–249**, exactly where dwell excess has already
+returned to parity — **the two components peak in different bands, so they are
+separate defects and one constant cannot address both.**
+
+## ⛔⛔ AND EXPOSURE EXPLAINS AT MOST HALF OF IT — THE MOST VALUABLE OPEN QUESTION ON THIS PLANK
+
+`FORWARD-HAZARD-geometry-2026-08-11.md`: we stand on gunner-covered tiles **2.04%
+of forward builder-rounds against a 1.34% baseline — 1.53× chance.** We die
+**3.47×** more per forward round.
+
+**⇒ TILE EXPOSURE ACCOUNTS FOR AT MOST 1.53× OF A 3.47× GAP. ~2.3× IS UNEXPLAINED
+BY WHERE WE STAND, AND NOTHING IN THIS REPO HAS MEASURED WHAT CAUSES IT.** This is
+why the 34% tile-selection ceiling felt unsatisfying: **it is a ceiling on the
+smaller part of the larger half.**
+
+**Named, NOT measured — a list, not a finding:** lingering adjacent to enemy
+*builders* (melee, not turret fire); being focused by multiple shooters; not
+healing forward; not disengaging after damage. **`events.tsv` carries death round
+and position and `builder-death-attribution` already splits shooter type, so
+*"what kills our forward builders, and how does that split differ from TOP's"* is
+answerable off existing surfaces — ~1 hour, not a multi-day instrument.**
+
+## MECHANISM NAMED (not a diff)
+
+If hazard is constant per forward round and band-independent, the lever is **not**
+"spend fewer rounds forward" — that is LOKI-25's trap, buying the ratio by going
+forward less — but **"arrive without traversing."** Launcher delivery skips the
+traverse rather than optimising it. **⚠ The traverse-vs-destination split is
+ASSUMED, not measured; the attribution cut above would settle it first.**
+
+## DECLINED, ON THE RECORD
+
+**The three-way state split (action available and unused / no legal action /
+errand complete) is NOT being run.** The builder ruled correctly on excluding
+`destroy`/`self_destruct`, and the design is sound and feasible — **but it is
+aimed at the dwell half, now 17% of the gap, at 15–25 min of decode on a five-day
+clock.** The attribution cut targets the 83% half for similar money. **Recorded as
+a decline rather than dropped silently; reversible on the builder's word.**
