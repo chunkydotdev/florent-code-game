@@ -40,8 +40,24 @@
 #    prototype live across a pairing at roughly −8 Elo.
 #
 # 5. REJECTED ATTEMPTS COUNT AGAINST THE RATE LIMIT and create no match, so they
-#    are invisible to the meter. The meter is a LOWER bound; we pace off it and
-#    still treat a rejection as spend.
+#    are invisible to the meter. The meter is a LOWER bound.
+#
+# 7. ⛔ THE METER LAGS REALITY BY ~25 SECONDS AND THIS RUNNER SPUN ON IT.
+#    `fcode match list` does not show a match the instant it is created, so a
+#    back-to-back run reads a window that is already spent as FREE.
+#    MEASURED 2026-08-11 05:21Z, this runner's first prototype outing: a control
+#    window fired 5 challenges at 05:21:03-13; the treatment run started at
+#    05:21:35, the meter reported a free slot, and the runner ACTIVATED v108 and
+#    burned 5 rejections. It then looped and did it twice more —
+#    **3 activations, 15 rejections, ZERO games** — because a zero-accept cycle
+#    retried immediately against the same stale reading.
+#    ⇒ TWO FIXES, BOTH BELOW: (a) THE RUNNER KEEPS ITS OWN LEDGER and is the
+#      authority on its own attempts — it knows what it fired and when, including
+#      rejections, which the meter can never see; the effective wait is
+#      max(meter, own ledger). (b) a cycle that accepts NOTHING backs off a full
+#      window instead of retrying at once.
+#    The meter stays in the loop because it sees OTHER lanes' spend, which the
+#    ledger cannot. Neither is sufficient alone.
 #
 # 6. ROLLBACK IS VERIFIED, RETRIED, AND ITS FAILURE IS LOUD. Two prior sessions
 #    left a non-incumbent live.
@@ -88,6 +104,7 @@ fi
 MAIN=${MAIN:-104}                # the incumbent to return the ladder to
 GAMES_PER=5                      # a challenge is 5 games
 GUARD_S=${GUARD_S:-150}          # keep this clear of the next pairing
+WINDOW_S=${WINDOW_S:-1230}       # the rate window + margin, for a zero-accept backoff
 STAMP=$(date -u +%Y%m%dT%H%M%SZ)
 OUT=scratchpad/arm_unrated_v${VER}_${STAMP}.txt      # MUST match arm_*.txt (guard 2)
 LOG=scratchpad/unrated_run_v${VER}_${STAMP}.log
@@ -157,6 +174,19 @@ case "$h" in
   *) say "ABORT: expected incumbent v$MAIN, holder is '$h'. Firing nothing."; exit 1 ;;
 esac
 
+# --- guard 7a: our own spend ledger, in epoch seconds, attempts not matches ----
+typeset -a ATTEMPTS
+local_wait(){
+  local now cutoff n oldest
+  now=$(date -u +%s); cutoff=$((now - 1200)); n=0; oldest=0
+  for ts in $ATTEMPTS; do
+    if [ "$ts" -ge $cutoff ]; then
+      n=$((n+1)); [ $oldest -eq 0 ] && oldest=$ts
+    fi
+  done
+  if [ $n -ge 5 ]; then echo $(( oldest + 1200 - now + 5 )); else echo 0; fi
+}
+
 done_games=0; fired=0; rejected=0; ci=0; cycle=0
 while [ $done_games -lt $WANT ]; do
   cycle=$((cycle+1))
@@ -170,6 +200,12 @@ while [ $done_games -lt $WANT ]; do
   # of rate_budget's current control flow and NOT a contract; that file changed
   # twice in the hour before this was written. Same guard as night_collector.sh.
   [[ "$w" =~ ^[0-9]+$ ]] || { say "rate meter returned non-numeric output — assuming a full window"; w=1200; }
+  # guard 7a: the meter lags ~25s, so take the max of it and our own ledger.
+  lw=$(local_wait)
+  if [ "$lw" -gt "$w" ]; then
+    say "own ledger says wait ${lw}s (meter said ${w}s — it lags ~25s); taking the ledger"
+    w=$lw
+  fi
   if [ "${w:-0}" -gt 0 ]; then
     say "rate: waiting ${w}s for a slot"
     sleep "$w"
@@ -206,6 +242,7 @@ while [ $done_games -lt $WANT ]; do
     id=${CELLS[$(( ci % ${#CELLS[@]} + 1 ))]}   # zsh arrays are 1-based
     ci=$((ci+1))                                 # rotate so drops don't bias one cell
     r=$(.venv/bin/fcode match unrated "$id" --json 2>&1 | tr -d '\n')
+    ATTEMPTS+=($(date -u +%s))     # guard 7a: EVERY attempt, accepted or not
     print -r -- "$id $r" >> "$OUT"
     case "$r" in
       *matchId*)
@@ -226,7 +263,13 @@ while [ $done_games -lt $WANT ]; do
   say "cycle $cycle: queued $got/$n_this   total ${done_games}/${WANT} games"
 
   [ $done_games -ge $WANT ] && break
-  [ $got -eq 0 ] && say "no challenge accepted this cycle — will re-pace and retry"
+  if [ $got -eq 0 ]; then
+    # guard 7b: a zero-accept cycle means the window was spent despite what the
+    # meter said. Retrying at once re-activates the prototype and burns five more
+    # rejections, which is exactly what happened at 05:21-05:22Z.
+    say "NOTHING accepted this cycle — the window was spent. Backing off ${WINDOW_S}s before retrying."
+    sleep $WINDOW_S
+  fi
 done
 
 say "DONE: ${done_games}/${WANT} games queued in $cycle cycle(s); $fired accepted, $rejected rejected"
