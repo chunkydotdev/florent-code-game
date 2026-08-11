@@ -175,7 +175,17 @@ case "$h" in
 esac
 
 # --- guard 7a: our own spend ledger, in epoch seconds, attempts not matches ----
+# PERSISTED TO A SHARED FILE, and that is not a detail: an in-memory ledger dies
+# with the process, so a FRESH invocation starts blind to what the previous one
+# spent. Rejections are the case that makes this bite -- they count against the
+# limit but create no match, so they are invisible to the meter AND to a new
+# process. After the 05:21Z spin, 15 rejections sat in the window and NOTHING
+# could see them. The file is shared, so a second runner in another lane inherits
+# them too.
+LEDGER=${LEDGER:-scratchpad/.rate_ledger}
 typeset -a ATTEMPTS
+[ -f "$LEDGER" ] && ATTEMPTS=($(tail -50 "$LEDGER"))
+note_attempt(){ local ts=$(date -u +%s); ATTEMPTS+=($ts); print -r -- $ts >> "$LEDGER"; }
 local_wait(){
   local now cutoff n oldest
   now=$(date -u +%s); cutoff=$((now - 1200)); n=0; oldest=0
@@ -242,7 +252,7 @@ while [ $done_games -lt $WANT ]; do
     id=${CELLS[$(( ci % ${#CELLS[@]} + 1 ))]}   # zsh arrays are 1-based
     ci=$((ci+1))                                 # rotate so drops don't bias one cell
     r=$(.venv/bin/fcode match unrated "$id" --json 2>&1 | tr -d '\n')
-    ATTEMPTS+=($(date -u +%s))     # guard 7a: EVERY attempt, accepted or not
+    note_attempt                   # guard 7a: EVERY attempt, accepted or not, persisted
     print -r -- "$id $r" >> "$OUT"
     case "$r" in
       *matchId*)
