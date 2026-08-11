@@ -32038,3 +32038,41 @@ bolted on — **the 19.24 counterfactual · the mix's 8× · the reading of the 
 · the pooled availability gap itself** — **and every one bent toward the work we
 wanted to do next.** All four were caught prospectively. **The measurements have
 been reliable all day. The joins have not.**
+
+## F25 — THREAD CLOSED: THE GHOSTS ARE KILLS, MY MECHANISM HYPOTHESIS WAS WRONG, AND THE FIFTH JOIN WAS REFUSED
+**Attributed case by case** (`scratchpad/ghost50.py`, **tracked** — the s29 rule
+that a figure load-bearing enough to settle a dispute is load-bearing enough to
+be committed, applied unprompted):
+```
+OURS   n=46   KILLS 44 (96%)   blind 2
+THEIRS n= 4   KILLS  4 (100%)  blind 0
+```
+**MY HYPOTHESIS WAS WRONG.** I raised transient-target **blindness**; the
+mechanism is **kills** — the sentinel erased its own target and the end-of-round
+snapshot missed it **because it worked.** Raised conditionally rather than
+asserted, and conceded before the measurement landed, **but wrong is wrong and it
+was settled by ~50 cases on the ordered `Turn` stream.**
+**WHAT SURVIVED IS THE ROBUSTNESS POINT, and it never depended on the mechanism:**
+under BOTH readings a target was present, so availability is undercounted **7.17×
+more often for us**, and **the true forward gap is smaller than 6.5pp either
+way.** Now in HANDOVER with the reader-hazard attached: **a reader told the
+mechanism is contested must not conclude the correction is contested.**
+
+**⭐ AND THE BUILDER REFUSED THE FIFTH BOLTED-ON JOIN OF THE DAY, UNPROMPTED.**
+The tempting move — *"9.07% of shots coincide with a same-round removal, so
+adjust 83.18%/89.72% by ~9%"* — **is a mechanism, not a measured correction**:
+the attributed subset is **46 sentinels of 6,869**, and generalising it to the
+full availability denominator is the identical join that produced the 19.24
+counterfactual, the mix's 8×, and the misreading of the 7.17×. **HANDOVER: do not
+adjust those figures by any number derived from it.** *Recognising the shape
+before making the move is the thing that changed today.*
+
+**CLOSING STATE OF THIS THREAD:** the disposal is banked and untouched (the
+on-programme siting branch is dead, measured, on a **pre-committed** criterion) ·
+the mix reading survives, fenced against a selection effect **no n fixes** · the
+6.5pp figure carries a correction of **known direction, unknown magnitude** and
+is **not quotable as a level** · **nothing here is a plank and nothing here was
+allowed to become one.**
+**THE RATIO IS THE DAY'S PRODUCT: five measurements, five attempted joins onto
+them, all five caught before they cost anything — three by this lane before the
+number existed, and the fifth by the builder on themselves.**
