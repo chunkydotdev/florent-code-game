@@ -35363,3 +35363,64 @@ from the drift-watch checklist**, and obligation 12 produced item 3 above within
 two minutes of opening it. **A boot sequence skipped is indistinguishable from a
 boot sequence completed, in my own output, until something it would have caught
 goes past.**
+
+# ============================================================================
+# 2026-08-11T18:4xZ — **INCIDENT: THE WATCHDOG OUTLIVED ITS RUN AND RESTARTED
+# ALL NINE COMPLETED s31 SHARDS.** Data safe (archive verified). Cores lost for
+# ~4 minutes. **The F13 family, arriving from the side neither lane checked.**
+# ============================================================================
+
+## WHAT HAPPENED
+**18:39:05Z** LOKI-29's launcher archived s31 into `scratchpad/overnight_s31/`
+— moving the heartbeats **and the `.COMPLETE` markers** out of the live dir.
+**18:39:20Z** five LOKI-29 shards launched.
+**18:40:13–14Z** `overnight_watch.sh` (pid 10044, alive since 16:20Z, **never
+stopped**) saw no heartbeat and no marker for any of the nine s31 shards, wrote
+`restarted (1) at none` nine times in one second, and **relaunched all nine from
+scratch.** Live `.tsv` files went from ~5,408 rows to 10 and began refilling.
+**Peak: 14 shards on 10 cores.** Killed by the builder ~18:44Z after this lane
+flagged it at ~18:41Z.
+
+## ⛔ ROOT CAUSE, AND WHY BOTH LANES MISSED IT
+**A COMPLETED RUN AND AN ARCHIVED RUN ARE INDISTINGUISHABLE TO THE WATCHDOG.** It
+gates on the PRESENCE of heartbeat/marker files; archiving MOVES them; absence
+reads as death.
+**This is F13's family and BOTH earlier readings of F13 were wrong in
+instructive ways.** The side lane's original claim — *"nothing creates the
+`.COMPLETE` marker"* — was **false**, and the builder disproved it empirically
+with a 2-game shard. **The builder's disproof was correct and did not cover
+this.** Neither of us asked **what happens when the markers are moved away while
+the watchdog is still alive.** ⇒ **A guard verified against the case that
+prompted it is not verified against its class** — the drift-watch's own
+*"a repair is verified against the FAULT CLASS, not the instance"*, landing on
+the pair of us four hours after we both quoted it.
+
+## ⭐ THE DANGEROUS PART WAS NOT THE CORES — IT WAS THE `--dir` DEFAULT
+`overnight_read.py` defaults to `scratchpad/overnight`, which for those four
+minutes held **nine zombie shards at 10→30 rows**. A default-`--dir` read-out
+would have printed **`NO-INFORMATION` on every arm** (band ±19.6pp at n≈25) and
+**looked merely uninformative rather than catastrophically wrong** — and the
+zombie row counts were climbing toward numbers that look superficially
+reasonable. **The read-out MUST use `--dir scratchpad/overnight_s31`.**
+
+## ✅ ARCHIVE VERIFIED SOUND — independently, file by file, not from the tool
+`ARCHIVED_AT` = **Tue 11 Aug 2026 18:39:05 UTC** · **9 of 9 `.COMPLETE` markers**
+· seven arms at **5,408/5,408**, both CALs at **2,000/2,000** · **zero shortfall
+anywhere** (the partial-pooling machinery is unused tonight) · seat balance exact
+or within one (2704/2704 ×6, 2705/2703 ×2, 1001/999 ×2) · **row counts agree with
+heartbeat `n` on all nine** — no truncation, no restart residue.
+
+**Both calibration cells did their job** — an integrity fact, not a verdict:
+**NULL 49.20%** (harness unbiased, bands stand) and **NEGCTRL 36.93%** (the screen
+still detects a known-bad arm at this n). ⇒ **tonight's `NO-INFORMATION` verdicts
+mean *no effect resolved*, not *no power*** — the first night F3's calibration has
+been able to say so, and it was rebuilt for exactly this five hours earlier.
+
+## AND SRNULL0 PAID FOR ITSELF IN A WAY NOBODY PREDICTED
+All five LOKI-29 shards ran through the contention spike **together**, so every
+term of the partition shares it and the differences stay clean. **Had the
+contemporaneous null not gone in ninety minutes earlier, the baseline would have
+been the s31 NULL at 9-shard contention against arms measured across a 14-shard
+spike — and the contamination would have landed entirely in the CARDINALS
+share.** The flag was argued from `--tle` and TLE-rate; **the event that
+vindicated it was a watchdog nobody knew was alive.**
