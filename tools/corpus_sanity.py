@@ -136,6 +136,47 @@ _TIMED = {
     "league_matches.tsv": "createdAt",
     "league_games.tsv": "createdAt",
 }
+
+# ---------------------------------------------------------------------------
+# FROZEN ARCHIVES — a decision on the record, not a silenced alarm.
+#
+# ⛔ WHY THIS IS A REGISTRY AND NOT AN `if name == ...: continue`.
+# `league_games.tsv` froze at 2026-08-09T05:12Z and this check reported it
+# correctly, exiting 1, FOR FIFTY HOURS. Nothing was wrong with the alarm --
+# it was UNREAD. Every other instrument defect found on 2026-08-11 was an alarm
+# that COULD NOT FIRE (audit_trigger suppressing itself, ring_retention passing
+# while inverted, plank_status measuring staleness instead of withdrawal,
+# ship_watch printing verdicts off a dead tape). **This was the opposite: a
+# correct alarm with nothing scheduled to read it, and the builder who DID run
+# it at boot skimmed past the line.**
+#
+# The wrong fix is to silence it, because then a NEW stale file reads the same
+# as an accepted one. The right fix is the shape already used by
+# tools/plank_ack.tsv: record the DECISION, keep the file loud about being
+# frozen, and leave every unregistered file able to alarm.
+#
+# DISPOSAL DECISION, builder, 2026-08-11: league_games.tsv is RETIRED, not
+# revived. It has ONE producer (tools/corpus/league_games.py, never in the
+# keeper cycle) and ZERO analysis consumers in tools/ -- meta_attrib.py:84 is a
+# filename list and league_matches.py:57 is a docstring. Its sibling
+# `league_matches.tsv` IS in the keeper, IS fresh, and is what this very file
+# already recommends for the dead `verB` column. Wiring a 50-hour corpse into
+# the keeper to serve nobody is spending compute to keep it warm.
+# The FILE IS KEPT rather than deleted: two research documents
+# (bisons-fast-kill-autopsy-2026-08-10, league-fast-kill-mechanism-2026-08-10)
+# were written on it and deleting it destroys their reproducibility. **Both were
+# written on 2026-08-10, when it had ALREADY stopped at 08-09 -- so their
+# population silently excludes everything after that point, and either needs its
+# population restated before it can carry a plank.**
+FROZEN_ARCHIVES = {
+    "league_games.tsv": (
+        "RETIRED 2026-08-11 — froze 2026-08-09T05:12Z, no producer in the keeper "
+        "and no analysis consumer in tools/. USE league_matches.tsv INSTEAD "
+        "(fresh, keeper-maintained). Kept for the reproducibility of two "
+        "2026-08-10 research docs, whose population already excluded everything "
+        "after the freeze."),
+}
+
 STALE_H = 6
 
 
@@ -183,6 +224,13 @@ def freshness(root) -> int:
         except ValueError:
             continue
         age = (datetime.utcnow() - when).total_seconds() / 3600
+        if name in FROZEN_ARCHIVES:
+            # Loud, but not an anomaly: the state is known and the decision is
+            # recorded. It must never read as `fresh`, or a join on it looks safe.
+            print(f"FROZEN  {name}  newest row {best[:19]}  ({age:.1f}h) — "
+                  f"NOT AN ALARM, a recorded decision")
+            print(f"            {FROZEN_ARCHIVES[name]}")
+            continue
         if age > STALE_H:
             print(f"*** STALE ***  {name}  newest row {best[:19]}  "
                   f"= {age:.1f}h old (threshold {STALE_H}h)")

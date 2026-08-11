@@ -31803,3 +31803,42 @@ rather than measured** (EXILE 187,426 rows at 0.00%, RETREAT 25,196 at 0.00%) �
 *"a zero here says the column was never computed, never that the throw achieved
 nothing."* **The decoder gap HANDOVER carries is stated better in the tool than
 in the doc**, and the builder's EXILE cut this morning ran against that table.
+
+## F19 — THE F18 GENERALISATION, AND MY OWN INSTRUMENT OVER-REPORTED BY NINE
+Asked the obvious follow-up to F18 — **how many other correct alarms have no
+runner?** — by checking every `__main__`-bearing tool with alarm semantics against
+the boot suite (`tests/test_instruments.py`), `keeper.py`, and every `tools/*.sh`.
+**Raw answer: 11 of 17 unwired. THAT NUMBER IS WRONG AND I AM NOT PUBLISHING IT
+AS A FINDING.** On inspection:
+* **8 are CORRECTLY unwired** — `target_value` (a gate CLAUDE.md mandates a human
+  runs before a prereg), `map_admits`, `oppver_window`, `delta_status`,
+  `field_deaths`, `loki9_facing` (per-leg / retro-time reads), plus
+  `ring_retention` (RETIRED, refuses to run) and `breakin_watch` (exits by design
+  at k>=8 — the thing three readers have now re-flagged).
+* **1 is a LIBRARY my detector mis-classified:** `freshness.py` is imported by
+  `ship_watch.py`. **It is wired by IMPORT, and my check looked for invocation by
+  NAME** — so "no runner" was a fact about my grep, not about the tool.
+* **2 are genuine.**
+**THE HONEST COUNT IS 2, NOT 11.** Recording the 11 alongside it because a
+detector that over-reports 5x is exactly the kind of instrument this lane spends
+its day flagging in other people's work, and **the raw number would have looked
+like a crisis.**
+
+**THE TWO THAT ARE REAL:**
+1. **`corpus_sanity.py`** — F18. Correct alarm, exits 1, fifty hours unread.
+2. **`tools/monitors/window_watcher.py` — DOWN, and nothing schedules it.** Its
+   own docstring records why it exists: *"The v80 window was pre-registered to
+   settle at n=20 and nobody was watching for n=20. It closed at 00:26:36Z; the
+   builder scored it ~3 hours later… In that gap v80 played 19 more matches and
+   **lost 40.92 Elo**, with a measured, identity-controlled fix sitting KEEP-dev
+   the whole time."* **Unlike `breakin_watch`, it documents no lifecycle that
+   makes being down CORRECT.** Whether it matters right now depends on whether a
+   pre-registered evaluation point is live — builder's call, and the LOKI-19
+   pooled/confirmation read is exactly that shape.
+
+**AND A SECOND SELF-CORRECTION IN THE SAME PASS:** my first check of whether
+`window_watcher` was running used `ps | grep -c "[w]indow_watcher"` and returned
+**1**, which I nearly read as "it is running." **It was counting my own shell
+command line.** Verified properly with `ps -eo pid,etime,command`: the only
+matches are my own two invocations. **Not running.** Same family as the unquoted
+`--include=*.py` glob — **a check whose subject is its own execution.**
