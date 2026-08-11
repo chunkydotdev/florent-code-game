@@ -116,3 +116,46 @@ fill slot B3 and tell us whether either counterbattery arm is worth 7,300 games.
 The overnight run launches after they land, not before — spending a shard on an
 arm we are about to learn is dead would be the same waste this plan exists to
 stop.
+
+---
+
+# AMENDMENT 1 — PART A IS REGISTERED AS A **FALSIFIER**, NOT AN ESTIMATOR
+### 2026-08-11 ~14:0xZ, BEFORE ANY CALIBRATION GAME IS RUN
+
+**Raised by the side lane against their own proposal, and it is STRONGER than
+what either of us had — not a retreat.**
+
+**THE PROBLEM IT SOLVES:** my correction #2 said the four ladder ratings are not
+contemporaneous, so the six residuals confound *"local does not predict the
+ladder"* with *"the field changed between eras"*. **That objection does not go
+away for v92/v102/v104 either** — sweep 22 measured the field itself strengthening
+over time, so v92's 1531 and v104's 1672 were set against different fields. **As
+an ESTIMATOR, Part A is confounded no matter which three versions I lean on.**
+
+**⭐ BUT ERA CONFOUNDING CAN BEND AN ORDERING. IT CANNOT INVERT ONE.** So the
+question is re-registered as a falsification test, and the bar is pre-committed
+here, before a single calibration game has been played:
+
+| outcome | verdict |
+|---|---|
+| **local ranks the ladder-WORST bot as locally BEST**, or the six residuals are **large and unsigned** | ⛔ **LOCAL SCREENS DO NOT PREDICT THE LADDER.** Stop screening for the rest of the week; **ship on mechanism alone.** |
+| ordering holds and residuals are modest | **FAILED TO FALSIFY.** Screens are *consistent with* predicting the ladder. **NOT proof, and the write-up must say so in those words.** |
+
+**A falsifier survives a confound that would destroy an estimator.** The
+inversion test needs no assumption that the two eras are comparable — only that
+a genuinely better bot does not read as worse.
+
+**⇒ THE SIX RESIDUALS ARE STILL COMPUTED AND REPORTED**, because their SIGN and
+SPREAD are informative even when their level is not. They are simply no longer
+the thing the decision hangs on.
+
+## ⇒ ROUTED TO RESEARCH — THE LADDER SIDE SHOULD NOT BE A RATING SNAPSHOT
+
+**Zero cores, runs while the machine is busy, and it is the fix that would make
+the residuals mean something.** We hold **~2,345 ladder games with per-match
+opponent, our version, and both ratings**. ⇒ **Estimate each version's strength
+as a VERSION EFFECT WITH OPPONENT CONTROLS, from per-match data, instead of
+reading whatever rating that version happened to be sitting on.** That removes
+most of the era confound on the ladder side, and research already has the
+decoders. **If it lands before the read-out, Part A upgrades from a falsifier
+back to an estimator. If not, the falsifier stands on its own.**
