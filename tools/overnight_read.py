@@ -85,9 +85,21 @@ def summarise(sh, d):
                         f"— tsv truncated or corrupt")
     keys = [(r[3], r[4], r[5]) for r in rows if len(r) > 5]
     dupes = len(keys) - len(set(keys))
-    if dupes > max(2, 0.01 * max(len(keys), 1)):
-        refusals.append(f"{dupes} duplicate (map,seed,seat) rows — a restart "
-                        f"replayed a prefix, so the sample is skewed to low seeds")
+    # ⛔ WARNING, NOT REFUSAL, AND THE REASON IS SPECIFIC TO THIS BOT.
+    # `overnight.sh` resumes at MAPS[0]/ORD=A with seed = SEEDLO + n/16, so a
+    # mid-cycle restart replays `n mod 16` triples. Measured live: 1-14 rows per
+    # shard, <=3.6%. **BUT OUR BOT RESEEDS AN UNSEEDED RNG EVERY GAME
+    # (main.py:276), so a repeated (map,seed,seat) is a FRESH DRAW, not a copied
+    # observation.** Refusing 8 of 9 healthy shards over it would be the same
+    # error as the seat guard refusing 78/76. Reported, with the count, so a
+    # reader can judge -- and it WOULD refuse at a magnitude that matters.
+    dup_pct = 100.0 * dupes / max(len(keys), 1)
+    dup_note = (f"{dupes} repeated (map,seed,seat) rows ({dup_pct:.1f}%) from a "
+                f"mid-cycle restart — FRESH DRAWS, not copies, because the bot "
+                f"reseeds per game") if dupes else None
+    if dup_pct > 20:
+        refusals.append(f"{dupes} duplicate rows ({dup_pct:.1f}%) — too many to be "
+                        f"restart residue; the sample is skewed to low seeds")
     nowin = sum(1 for r in rows if len(r) > 6 and r[6] == "NOWINNER")
     good = [r for r in rows if len(r) > 8 and r[6] in ("T", "C")]
     if not good:
@@ -113,6 +125,7 @@ def summarise(sh, d):
                 seatA=(sum(1 for r in seatA if r[6] == "T"), len(seatA)),
                 seatB=(sum(1 for r in seatB if r[6] == "T"), len(seatB)),
                 kt=kills_t, kc=kills_c, ties=ties, nowin=nowin, refusals=refusals,
+                dup_note=dup_note,
                 maps=len({r[3] for r in good}))
 
 
@@ -148,10 +161,17 @@ def main():
         if s["refusals"]:
             for r in s["refusals"]:
                 print(f"   ⛔ REFUSED: {r}")
-            if s["n"] == 0:
-                continue
+            # ⛔ A REFUSAL THAT DOES NOT REFUSE. The first version continued only
+            # when n==0, so every other refusal printed its banner and then went
+            # on to print a win rate, a band and a VERDICT line. A fixture with
+            # ABORTED_NOWINNER read "rows are not games" and then scored them.
+            # At 06:00 a reader scrolls to VERDICT:. (Side lane fixture M4.)
+            print("   ⇒ NOT SCORED. No verdict is printed for a refused shard.")
+            continue
         print(f"   n={s['n']}/{s.get('target','?')}  {tag}   maps={s['maps']}  "
               f"NOWINNER={s['nowin']}  tiebreaks={s['ties']}")
+        if s.get("dup_note"):
+            print(f"   ⚠ {s['dup_note']}")
         print(f"   WINS {s['W']}/{s['n']} = {s['p']:.2%}   informative band "
               f"{50-s['hw']*100:.2f}%–{50+s['hw']*100:.2f}%")
         a, an = s["seatA"]; b, bn = s["seatB"]
@@ -205,6 +225,12 @@ def main():
         print(f"\n  ⇒ BANDS RE-CENTRED ON THE MEASURED NULL ({centre:.2%}), not on 50%.")
 
     # ---- PART A: falsifier, not estimator ----
+    n_arms = sum(1 for k in data if not k.startswith("CAL"))
+    if n_arms > 1:
+        p_any = 1 - 0.95 ** n_arms
+        print(f"\n⚠ MULTIPLICITY: {n_arms} arms screened at 5% each ⇒ "
+              f"P(at least one spurious OUTSIDE verdict) = {p_any:.2f}. "
+              f"A single escalate is NOT a finding on its own.")
     print("\n" + "=" * 78)
     print("PART A — DOES A LOCAL h2h WIN RATE PREDICT THE LADDER?  (FALSIFIER)")
     print("=" * 78)
