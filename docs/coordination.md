@@ -35992,3 +35992,88 @@ and fires a spurious rebuild. **Substituting a differently-scoped quantity for
 the one being replaced** — the same family as everything found today, caught
 BEFORE it was built. And the defect is sized to a **5.24% upper bound**, ranked
 below #16 and #8 rather than at the size the sweep implied.
+
+---
+
+# 2026-08-11 19:1xZ — ⭐⭐ **SHIP: v114 = `bots/_v146gunaxis` IS LIVE.** Activated by Magnus 19:14Z. Ends v112's 6h hold.
+
+**HOLDER VERIFIED ON THE `Active bot:` LINE, NEVER `$?`:** `Active bot: v114`,
+rating 1689, rank #23/120, 768 matches. py-tree md5 `fdbde822`.
+**ROLLBACK: `.venv/bin/fcode submission activate 112`** (~15 s, verify on the
+`Active bot:` line).
+
+## WHAT SHIPPED, AND AT ITS REAL STRENGTH
+
+**`_v146gunaxis` IS the LOKI-25 gunner-axis plank — the one this repo declared
+DEAD at s30.** It adds `LOKI_GUNAXIS_PENALTY = 8` to the score of any raid
+station tile sitting on a live enemy gunner's firing ray.
+
+* **CURRENCY: 51.94% over 5,408 self-play games vs v112** — the largest of seven
+  arms overnight and **the only one surviving multiplicity correction**
+  (Bonferroni and Holm agree: ROSTER p=0.00006 and GUNAXIS p=0.00433 reject,
+  CAP12 p=0.0439 stops).
+* **CHASSIS: 0 TLE'd turns / 13,457 turns ON PLATFORM HARDWARE**, mean CPU
+  **485 µs vs the incumbent's 522 µs** — *cheaper*, not merely survivable.
+  Negative control satisfied: v112 reads 0 TLE'd / 16,421 turns, matching its
+  published prior of 0.00%, so the instrument is not blind.
+
+## ⛔ WHAT IS **NOT** ESTABLISHED, AND IT IS CLAUSE (b) OF OUR OWN SHIP RULE
+
+The rule is *(a) positive point estimate, (b) **verified mechanism**, (c) no
+programme breach.* **(b) is UNRESOLVED — not passed, and not falsified either.**
+
+* The s30 kill read the mechanism at **n=25** on `deaths per forward build`, a
+  statistic `HANDOVER:352` sizes at **~880 games** twelve lines later and
+  `QUEUE.md:213` says misses LOKI-25's own magnitude even at 440. **D14 inside
+  one paragraph of one document.**
+* Its own `PREREG-loki25` sized the **currency** screen at **4,096**, declared
+  *"IT IS LAUNCHED"*, and **only 1,024 were ever delivered** — the n that same
+  prereg says *cannot ever settle it*. 50.4% then and 51.94% now are
+  **consistent, exactly as that prereg predicted in advance.**
+* ⇒ **the plank was never validly killed**, and shipping it is not a rules
+  conflict. **But we do not know WHY it wins.**
+
+**THREE READINGS REMAIN OPEN and the shipped metrics cannot separate them:**
+**SITING** (the stations that remain are better placed) · **VOLUME** (it simply
+sends fewer builders forward) · **GEOMETRY** (the score change moves where
+structures go). ⚠ **My "forward pressure is net-negative at the margin" was an
+OVERCLAIM** — `raid.py:565` is a *siting* rule, presence −23% is a downstream
+consequence of fewer admissible tiles, and even granting volume it is a
+CALIBRATION claim, not a doctrine reversal. Caught by the side lane; the
+dramatic reading was the wrong one and that is the direction my errors run.
+
+**`GUNAXTB` (`bots/_v153gunaxtb`) IS RUNNING NOW TO SEPARATE THEM** — the same
+avoidance moved into the SORT KEY instead of the score, so a ray tile can only
+lose to an equally-scored alternative and **forward presence is held at the
+control's level BY CONSTRUCTION.** Currency survives ⇒ SITING. Currency vanishes
+⇒ VOLUME. (Design: side lane — the polarity move that killed the ring candidate.)
+
+## CONTROLS MOVED WITH THE SHIP — `PROGRAMME.md:169`, and this is the field that goes stale every time
+
+`h2h.sh:48` CTRL · `dose.py:89` --ctrl · `mde.py` TREAT/CTRL (+ new byte-identical
+`bots/_v146null`, 0 differing files) · `unrated_run.sh` MAIN 112→114.
+`mde.py --selftest` re-run: PASS.
+⚠ **The 7 shards currently running all carry `_v148ferryfirst` as control. They
+were designed against v112 and remain valid AS DESIGNED — but they now measure
+against the PREVIOUS incumbent and must be read that way.**
+
+## MONITORS RE-ARMED
+`ship_watch` → `SHIP_VERSION=v114 SHIP_BASELINE=1689`. **`breakin_watch` ARMED
+(`BREAKIN_VERSION=v114 BREAKIN_FLOOR=1615`)** — this is an
+ACTIVATION-AS-A-SHIP, which is exactly the case HANDOVER says to arm it for, and
+its log file was **29 hours stale** (`v104 … standing down`, 10 Aug 14:55), so
+that line is history and not a fresh verdict.
+⚠ **`ship_watch`'s printed `version` column comes from the ELO TAPE, which tags
+by version active at POLL time — it read `v112` for minutes after the ship. That
+is the documented poll-time defect, not a misconfiguration.**
+
+## LEG THAT GATED THIS — LOKI-30, 2 matches, RATED COST ZERO
+v114 vs The Bisons v4 **1/5**, vs Focalground v11 **3/5** (n=10, unresolved and
+pre-registered as such). **v112 played the SAME two opponents at the SAME
+versions on the rated ladder an hour earlier: 2/5 and 3/5** — a free
+same-opponent-version control.
+**RATED LEAKAGE ZERO, CERTIFIED STRUCTURALLY:** v114 held the slot 19:06:47→
+19:06:55 (8 s); today's pairings are **12 of 12 at minute ≡ 12 (mod 20), second
+:59**, re-derived from live rows and not hardcoded, so **the window contains no
+pairing instant.** That is stronger than "no v114 match appeared", which is the
+match-counter fallacy.

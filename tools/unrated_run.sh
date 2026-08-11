@@ -116,7 +116,7 @@ fi
 # The standing obligation is that a leg is always ready; the next unrated leg
 # would have died at pre-flight instead of rolling the ladder back to v104.
 # A guard that refuses everything is the failure this repo logged twice today.
-MAIN=${MAIN:-112}                # the incumbent to return the ladder to
+MAIN=${MAIN:-114}                # the incumbent to return the ladder to
 GAMES_PER=5                      # a challenge is 5 games
 GUARD_S=${GUARD_S:-150}          # keep this clear of the next pairing
 WINDOW_S=${WINDOW_S:-1230}       # the rate window + margin, for a zero-accept backoff

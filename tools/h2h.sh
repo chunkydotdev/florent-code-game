@@ -45,7 +45,7 @@ BOT=${1:?usage: h2h.sh <botdir> [seeds] [maps]}
 # (50.12% pooled, seat A +3.78pp) was measured vs _v130loki13. A null belongs to
 # its CONTROL, so it must be re-run against _v148ferryfirst before any screen
 # quotes a band against it.
-CTRL=${CTRL:-bots/_v148ferryfirst}
+CTRL=${CTRL:-bots/_v146gunaxis}   # v114, shipped 2026-08-11 19:14Z (was _v148ferryfirst/v112)
 SEEDS=${2:-"7 11 23 41"}
 MAPS=${3:-"antler atoll drumlin fjordgate heart hive meander nordkap"}
 FC=.venv/bin/fcode

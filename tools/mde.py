@@ -43,8 +43,8 @@ FC = str(ROOT / ".venv" / "bin" / "fcode")
 # audit computed sd(diff) = 14.08 directly off tonight's v112-based shards,
 # 1.6% from the stored 14.31 -- so this staleness moved the bar by ~1.6%, not by
 # anything that changed a verdict. Recorded as measured, not as reassurance.
-TREAT, CTRL = "bots/_v148null", "bots/_v148ferryfirst"
-TB, CB = "_v148null", "_v148ferryfirst"
+TREAT, CTRL = "bots/_v146null", "bots/_v146gunaxis"
+TB, CB = "_v146null", "_v146gunaxis"
 
 
 def one(mapname, seed, flip):
