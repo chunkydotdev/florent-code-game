@@ -974,3 +974,47 @@ a proven negative control beats three that have never flagged anything.**
   published three of its own today (*"caught before the cost"*, *"nobody runs
   corpus_sanity"*, *"11 of 17 unwired"*). **The heuristic is not a claim to be
   better at inference; it is a statement about where the cheap catches are.**
+
+- **⭐ A REPEAT-CLASS CAUGHT PRE-PUBLICATION RATHER THAN POST — RECORD IT, BECAUSE
+  THE SAME SHAPE REACHED A LANE THIS MORNING (s30, 2026-08-11; research's
+  self-catch, at their request):** measuring **their builders in OUR gunner
+  lines at 1.01%** as a control for our builders in theirs, and **excluding it
+  before publication with the reason stated: we build 1.29 gunners/game against
+  the field's 6.1, so they are exposed to FEWER GUNS rather than dodging
+  better.** **The control was confounded by the very quantity it was controlling
+  for.**
+  **THIS MORNING'S `FIELD_vsUS` POOLING WAS THE SAME SHAPE AND IT REACHED THE
+  BUILDER** (91.94% vs a field figure that included games where WE did the
+  killing; corrected to **+27.5pp** and then to the exposure-normalised **2.915
+  vs 0.847 per 1k builder-rounds**). **Same class, six hours apart, and the
+  second one died in the author's own draft.** ⇒ **The durable form: when a
+  cross-team rate is used as a CONTROL, ask what OUR OWN behaviour contributes to
+  the denominator. A control computed on a population our bot shapes is not a
+  control** — and the tell is that the two arms differ in something we chose
+  (here, gunner count 1.29 vs 6.1).
+
+- **⭐ A BOUND THAT CAPS A ROAD BEFORE IT IS BUILT — AND THE CEILING ERROR IN IT
+  (s30, research's measurement, this lane's correction):** our forward builders
+  stand on gunner-covered tiles **2.04% of 22,676 forward builder-rounds against
+  a 1.34% map baseline (1.53x)**, and **the enemy core ring is only 2.57%
+  gunner-covered with a free ring tile available in 100% of sampled rounds.**
+  **⇒ THE HAZARD IS PER-ROUND AND CUMULATIVE, SO DEATHS ∝ ROUNDS-EXPOSED — which
+  re-explains LOKI-25 WITHOUT blaming its implementation:** presence −23%, deaths
+  −24%, per-build −2.3% **is that identity**, and **ANY plank that reduces
+  rounds-exposed shows the same signature whether it penalises or replaces.**
+  **This supersedes the "penalty term vs proposal" framing this lane promoted an
+  hour earlier** — that framing was about design intent; **this is about
+  arithmetic, and the arithmetic binds.**
+  **⚠ THE CEILING ERROR, and it runs in the plank's FAVOUR:** *"a perfect routing
+  plank cuts exposure by at most 34%"* is `(2.04−1.34)/2.04` — **the reduction
+  from becoming AVERAGE.** But **map baseline is the rate for a unit placed at
+  RANDOM and a router actively avoids**; with covered tiles at 1.34% of the map
+  and a free ring tile always available, **a planner can go BELOW baseline,
+  bounded by FORCED exposed tiles (chokepoints, the destination), not by 1.34%.**
+  ⇒ **34% is the floor of the ceiling, not the ceiling. Do not size a plank at
+  ≤34% and do not let a >34% result read as impossible.**
+  **AND THE GEOMETRY POINTS PAST ROUTING ENTIRELY: if the hazard lives in the
+  TRAVERSE and the DESTINATION is safe (2.57% covered, always a free tile), the
+  mechanism that SKIPS the traverse — launcher delivery — is worth more than the
+  one that optimises it.** Two structural facts now point the same way and
+  **neither is behavioural, so neither is what D12 restricts.**
