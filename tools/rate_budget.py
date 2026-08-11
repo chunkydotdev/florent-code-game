@@ -5,6 +5,9 @@
     .venv/bin/python tools/rate_budget.py --wait       # seconds to wait, one int
     .venv/bin/python tools/rate_budget.py --selftest   # prove it reads both ways
 
+IMPLEMENTS: D45 (an actor must not learn its own actions by observing the
+world -- the platform read is a cross-check, the actor's ledger is authority).
+
 WHY THIS EXISTS (s28). The unrated/test rate limit is **5 per 20 minutes, shared
 across every runner and every lane**, and NOTHING in `fcode status` reports how
 much of it is left. So each runner models a resource it cannot observe, and the

@@ -21,6 +21,10 @@ artefact said one thing, the record said another, and nothing made them meet.
 READ-ONLY. Downloads nothing. Consumes replay_archive/<matchId>_game_<N>.replay26
 plus <matchId>.meta.json (for the seat, which is NEVER assumed).
 
+IMPLEMENTS: D47 (a fix can carry the fault one layer over -- this file was the
+'right decoder, no test' half and now has one), D48 (prose carries an undefined
+term indefinitely; a fixture cannot).
+
 ⛔⛔ THE TWO EPISODE SERIES ARE NOT `hold_any` AND `hold_pinned`. READ THIS
 BEFORE QUOTING EITHER — the names were matched to the series BY POSITION, by
 three lanes, over hours, and nobody checked:

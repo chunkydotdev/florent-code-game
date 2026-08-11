@@ -11,6 +11,10 @@
 # ladder isn't damaged, report back every game that is run with progress, exit
 # cleanly when the amount of games you want has been done."
 #
+# IMPLEMENTS: D45 (own ledger is authority for own spend), D46 (submitting IS
+# shipping), D44 (a claim needs a record -- see docs/legs/LEG-unrated-run-abort-
+# guard-2026-08-11.md), D50 (verify exit codes without a pipe).
+#
 # ===== EVERY GUARD BELOW IS AN INCIDENT, NOT A PRECAUTION =====
 #
 # 1. SUBMITTING IS SHIPPING. `fcode submit` AUTO-ACTIVATES what it uploads. This

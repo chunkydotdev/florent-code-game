@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Submit a bot with CODE ONLY — never our documents.
 
+IMPLEMENTS: D46 -- `fcode submit` AUTO-ACTIVATES, so submitting IS shipping and
+this restores the holder itself rather than relying on anyone knowing that.
+
 WHY THIS EXISTS. Magnus, 2026-08-09: *"don't leak DESIGN and PREREG into our
 submissions please."* It was not a hypothetical. Verified by downloading our own
 artifacts back off the platform:

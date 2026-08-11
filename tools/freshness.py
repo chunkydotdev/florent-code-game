@@ -7,6 +7,9 @@
 
     .venv/bin/python tools/freshness.py --selftest
 
+IMPLEMENTS: D49 (the queue runs LIFO, so the oldest live defect survives a day
+of diligent fixing -- this is the shared fix for four of them).
+
 ===== WHY THIS EXISTS =====
 `CLAUDE.md` states the rule and NOTHING ENFORCED IT:
 

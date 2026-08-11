@@ -16,6 +16,9 @@ Usage:  .venv/bin/python tools/corpus_sanity.py [corpus_dir]
 import csv, sys
 from pathlib import Path
 
+# IMPLEMENTS: D43 -- 'same column' is not 'same meaning' when the column is
+# keyed to a per-row field.
+#
 # ===== CONDITIONALLY DEAD: ZERO INSIDE A SUBGROUP, ALIVE OVERALL =====
 # A NEW CLASS, added s29 2026-08-11, and this tool CANNOT SEE IT. Every check
 # below asks "is this column all-zero across the file". These columns are not:

@@ -5,6 +5,10 @@
     .venv/bin/python tools/plank_status.py --all
     .venv/bin/python tools/plank_status.py --selftest
 
+IMPLEMENTS: D41 (a plank's death is written in the same commit that kills it),
+D50 (gate on the printed token, never on `$?`), D52 (a false-positive first
+firing trains an alarm away).
+
 RUN THIS BEFORE ANY ACTIVATION. It exits 1 when HANDOVER's claim about a plank
 is older than the plank's own artefacts, which is the only state that matters.
 
