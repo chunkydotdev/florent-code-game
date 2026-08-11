@@ -32273,3 +32273,39 @@ recorded.** ⇒ **the DIRECTION is the finding, not the level.** And **builder b
 are the largest contributor (+139%) and `destroy()` cannot reach them** — they are
 units, not buildings; only `self_destruct()` does, which is a different and
 riskier plank. **The destroy() version addresses ≈+59%, not +316%.**
+
+## F31 — THE ROUND-ROBIN THEFT IS REAL, ALREADY HAPPENS, AND FAILS THE SINK-CONSTRAINT TEST
+Measured before proposing, per "the cheapest possible null is a leg that tests a
+feature we already shipped." **`flow.tsv` class `ENEMY_CORE`:** we LEAK **1,524
+units across 19 games**, we STEAL **1,133 across 12**, **net −391 to us**; and we
+already build a conveyor orthogonally adjacent to an enemy harvester **283 times
+across 183 of 1,586 eligible v104 games — incidentally, not deliberately.**
+**⛔ NOT PROPOSED, on the BUILDER'S OWN TEST: *"an addition that only buys
+survival or TITANIUM is a subtraction wearing a different coat."*** Theft buys
+titanium; **we finish games holding a median 7,052 Ti and five subtractions in a
+row screened at or below a byte-identical copy of v104. We are SINK-constrained.**
+Stealing more titanium is the lever those screens measured as worthless, pointed
+at a different pocket. **Stays OPEN in `CLAUDE.md` — it is not refuted, it is
+mis-aimed — and a screen spent on it is a screen not spent on a sink.**
+
+## ⭐ F32 — IDEA 6: SITE THE FORWARD SENTINEL BY COVERAGE, NOT FIRST-FIT
+**`get_attackable_tiles_from` is never called.** We DO call `can_fire_from` —
+`raid.py` builds a sentinel only after it passes — **so we ask "can a turret here
+hit something?" and take the FIRST tile that says yes. We never ask which
+candidate covers the MOST.** The method returns the whole hypothetical attack
+pattern and is free to call; **it is the difference between first-fit and best-fit
+siting.**
+**PRECONDITION, and it is why this one is worth a screen:** the fast-kill census
+found **our damage RATE once committed already matches the specialists (8.91 vs
+9.87 HP/round)** — we do not hit softer, we start later — and the diverge decode
+found **17 of 49 fast losses where we never touched their core at all.** A rule
+that raises the fraction of sentinels actually bearing on the core attacks that
+number directly. **A sentinel's line ignores obstacles, so coverage is pure
+geometry and cheap to evaluate.**
+**⚠ UNMEASURED HALF, stated: I have not measured how often a better tile was
+available — only that we never look.** The screen answers it.
+
+**⇒ OF THE 15 UNUSED METHODS, EXACTLY TWO SURVIVE THE SINK TEST: `destroy()`
+(cost-scale refund, F30) and `get_attackable_tiles_from` (siting, here). The rest
+are debug draws, `resign`, `self_destruct`, and economy primitives — and economy
+primitives all fail for the same reason the theft does.**
