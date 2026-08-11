@@ -34676,3 +34676,65 @@ The seven fixtures live ONLY at
 — a dead session's tmp, one sweep from gone. **They are the `--selftest` that
 still does not exist (`grep selftest` → 0 matches) and they belong in
 `tools/fixtures/`.**
+
+---
+
+# 2026-08-11 18:0xZ (`date` = Tue 11 Aug 2026 17:59:24 UTC) — **BUILDER ARM s32 — BOOT + IN-FLIGHT**
+
+**BOOT CHECKS.** `test_instruments` PASS · `corpus_sanity: OK` · `mde --selftest:
+PASS` · `queue_check: 5 unblocked (floor 3) OK` · `plank_status: COLLISION`
+(8 name collisions + 1 SUSPECT `loki28`; no plank I am touching is among them) ·
+**`audit_trigger` FIRES 2/5** (`ship cadence` 0.47/hr, `cross-lane analysis`
+13.57 = 95 analysis docs / 7 decision rows). **Audit session spawned per the boot
+sequence (opus, read-only, no stake in the queue).**
+
+**CORES ARE BUSY — `ALWAYS_BE_RUNNING` satisfied on arrival, not by me.** 14
+`fcode run` processes; the 9-shard overnight run launched 14:20Z is at ~86–88%
+and the two CAL shards are COMPLETE. `cores_idle` reads `games=14/9 consec_idle=0`.
+**Expected drain ~19:30–20:30Z. I am building against that drain, not idling for it.**
+
+**LADDER: v112 held, healthy.** `ship_watch` 17:54:49Z — rating 1690, k=16,
+net5 +5.0, peak 1700, drawdown −10.0, `RULE=held`, `sprt_fast=OK`,
+`sprt_slow=OK`, `tape_age_min=4.8`. **No `corpus/SHIP_ALERT` on disk.**
+
+**IN-FLIGHT (builder):**
+1. **AUDIT SESSION (opus, spawned 18:0xZ)** — boot-mandated by the
+   `audit_trigger` FIRE. Read-only. Asked specifically whether tonight's
+   `overnight_read.py` band/MDE and its seat split can support the verdicts it
+   is about to produce.
+2. **QUEUE #8 SEAT-RELATIVE SCAN ORDER — BUILDING NOW, by me.** Chosen over #5
+   and #13 because **tonight's NULL shard just confirmed the premise a third
+   time, on the largest and freshest fixture we have**: byte-identical arms,
+   n=4693, **seat A 52.6% vs seat B 45.8% (6.8pp)** — and the same A>B ordering
+   appears in **all seven** shards. The fixture the plank needs already exists
+   and is already powered.
+3. **ANCHOR-TABLE CHECK (sonnet) — a possible LIVE BUG found while sizing #8,
+   not a plank.** See below.
+
+**⭐ `fcode maps list` SETTLES THE #8 DESIGN, AND IT IS THE CHEAP BRANCH.**
+I was about to build a handedness rule, because a canonicalisation that rotates
+the scan to face the enemy is **exact under point reflection but NOT under a
+mirror** (a reflection flips handedness, so `CARDINALS[(i±1)%4]` — used as
+"the two perpendiculars" at `eco.py:588-590, 703-711, 743-744` — would not
+canonicalise for both seats). **The CLI answers it outright: all 15 pool maps,
+including all 8 battery maps, are `rotational`.** ⇒ **plain rotate-to-enemy with
+the clockwise cycle preserved is EXACT on every map we actually play**, and the
+mirror branch is dead code we do not have to write, test, or defend.
+
+**⚠ AND THE SAME READ SURFACED A POSSIBLE LIVE DEFECT — FLAGGING, NOT CLAIMING.**
+`doctrine.py:CORE_PAIRS` has **31 anchor rows; 8 of them are NOT point
+reflections** (`bx != w-2-ax` or `by != h-2-ay`). Their header comment says
+*"Several maps are mirror-symmetric rather than 180-degree symmetric"* — **but
+the platform now reports every pool map as `rotational`.** Two of those 8 rows
+sit on dimensions of maps in **tonight's own battery**: `(14,18,2,2 -> 2,14)`
+(antler is 14x18) and `(25,15,11,3 -> 11,10)` (meander is 25x15). Point
+reflection would give `(10,14)` and `(12,10)`. **`enemy_core_for` matches on
+`(w,h)` AND the exact own anchor, so a stale row only fires if our core actually
+sits on it — which is exactly what I have not yet established.** If it does fire,
+the bot raids the wrong tile on that map. **Delegated to a sonnet subagent to
+settle against ground truth from a replay, not from the table.** No claim until
+it reports.
+
+**NOT DOING:** no submit, no activation, no battery until the overnight drains
+(a new battery now would contend with 14 live `fcode run` processes and corrupt
+the timing of a run that is 88% done).
