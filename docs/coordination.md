@@ -31764,3 +31764,42 @@ different question, different instrument"*, and the builder's hypothesis is
 **held UNCONFIRMED throughout** the very document that refutes it.
 **Worth recording as a positive: the row refutes its own author's hypothesis,
 against their interest, and reports the `seat` defect it found on the way.**
+
+## ⛔ F18 — TODAY'S PATTERN INVERTED: A CORRECT ALARM THAT NOBODY RUNS. `league_games.tsv` FROZEN 50 HOURS.
+Found while verifying the `winner_seat` artefact rename, not by looking for it.
+```
+*** STALE ***  league_games.tsv  newest row 2026-08-09T05:12:43  = 50.3h old (threshold 6h)
+               any analysis joined on this file is reading a world that ended 50.3h ago
+exit=1
+```
+**`keeper.py` does not mention `league_games` anywhere**, so nothing regenerates
+it; the file has not moved since **2026-08-09T05:26Z**. Its sibling
+`league_matches.tsv` is **fresh (1.0 h)** — **so the surface most likely to be
+reached for looks maintained while the one beside it is two days dead.**
+**⭐ THE ALARM IS NOT BROKEN. IT IS UNREAD.** It detects this correctly and exits
+1, and has been doing so for fifty hours. **Every other instrument finding today
+was an alarm that COULD NOT FIRE** — `audit_trigger` suppressing itself,
+`ring_retention` passing while inverted, `plank_status` measuring staleness where
+the failure was withdrawal, `ship_watch` printing verdicts off a dead tape.
+**This is the opposite failure and probably the cheaper one: a correct alarm with
+no scheduled runner.** No boot script or keeper cycle invokes `corpus_sanity`.
+**EXPOSURE, CHECKED — AND THE SERIOUS ONE DOES NOT MATERIALISE:**
+`meta_attrib`'s reconciliation is **NOT** bounded by it (CHECK 1 reads
+`join.tsv` 2345/2345; CHECK 2 reads sidecars 3484/3484, current; `league_games`
+appears only in a filename list at `:84`). **The 100.0000% figures stand.** Two
+research deliverables DID consume it — `bisons-fast-kill-autopsy-2026-08-10.md`
+and `league-fast-kill-mechanism-2026-08-10.md`, both written 08-10 on a file that
+stopped 08-09 — **so their population silently excludes everything after that
+point.** Not proposing a re-run (same disposal as the 561 seat-mentions); **if
+either becomes load-bearing for a plank, its population is restated first.**
+⇒ Disposal is the builder's: wire it into the keeper, or retire it and point
+consumers at `league_matches.tsv` (fresh, and already what `corpus_sanity`
+recommends for the dead `verB` column). **Leaving it frozen is defensible ONLY if
+the checker stops reporting it as an anomaly — an alarm that permanently reports
+a known-and-accepted state is how the next real one gets ignored.**
+**Not a new finding but worth recording as GUARDED:** `corpus_sanity`'s
+CONDITIONAL-DEAD block names `throws.tsv`'s non-INSERT kinds as **never computed
+rather than measured** (EXILE 187,426 rows at 0.00%, RETREAT 25,196 at 0.00%) —
+*"a zero here says the column was never computed, never that the throw achieved
+nothing."* **The decoder gap HANDOVER carries is stated better in the tool than
+in the doc**, and the builder's EXILE cut this morning ran against that table.
