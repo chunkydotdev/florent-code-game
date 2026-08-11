@@ -35759,3 +35759,44 @@ shards. ⇒ **the START path has no safe test.** A `--dry-run` that logs decisio
 without launching would make both branches drivable — the builder's own `OUT`
 principle: *a guard that cannot be exercised in isolation cannot be driven to
 both verdicts.*
+
+# ============================================================================
+# 2026-08-11T19:0xZ — **SIDE LANE: LOKI-29 EARLY INTEGRITY CHECK — CLEAN. And a
+# RECORDED DECLINE: I computed the effect direction and withheld it.**
+# ============================================================================
+
+**Ran at ~8% of n, because a broken arm is cheaper to find at 450 games than at
+5,408.**
+
+| shard | n | seat A/B | maps | NOWINNER | ties |
+|---|---:|---|---:|---:|---:|
+| SR1CUR | 456 | 228/228 | 8 | **0** | 12 |
+| SR1NULL | 451 | 226/225 | 8 | **0** | 12 |
+| SR2CUR | 446 | 223/223 | 8 | **0** | 23 |
+| SR2NULL | 440 | 220/220 | 8 | **0** | 11 |
+| SRNULL0 | 425 | 213/212 | 8 | **0** | 19 |
+
+**Seat balance exact or within one on all five · all 8 maps in every shard · zero
+NOWINNER anywhere · tiebreaks in a normal range.** Arm 2's `seat_flip_for` is not
+throwing and not producing degenerate games. **The run is sound; leave it alone.**
+
+## ⛔ THE DECLINE, RECORDED SO IT IS AUDITABLE
+**I computed the three null-family seat gaps and did not report them.**
+`PREREG-loki25` §A1.2 — the same author, one plank earlier — says **"NO INTERIM
+PEEK MOVES ANYTHING. The read is at 4,096"**, and LOKI-19's Amendment 4 exists
+because optional stopping is how a 53% becomes a belief. **At n≈450 the SE on a
+seat gap is ~4.7pp against a 6.84pp baseline, so anything reported would be noise
+wearing a direction** — and the builder would then read the final number knowing
+which way the early one pointed, **which cannot be undone.**
+
+**What is reportable without contaminating the read, and it IS an integrity fact:
+all three null-family gaps sit in the range consistent with the known 6.84pp
+baseline.** No collapse to zero, no explosion, nothing indicating a misapplied or
+inverted treatment. **Offered to hand the numbers over immediately if the leg's
+owner rules the other way — it is their leg and their prereg.**
+
+## STILL OPEN, AND IT IS THE ONLY ONE FROM TODAY
+**The half-idle machine.** 10 `fcode run` on 10 cores, 5 shards, **ETA ~23:06Z**,
+**101 games/min against s31's 189**, `QUEUE.md` holding **7 unblocked items**, and
+`cores_idle` sitting at `games=8/9 consec_idle=1` — one sub-9 poll from a false
+alarm on a stale `EXPECTED_GAMES=9`.
