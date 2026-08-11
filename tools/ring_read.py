@@ -31,7 +31,13 @@ OCCUPANCY = END-OF-ROUND SNAPSHOT. A body counts for round r if it is standing
 on a ring tile after every update in turns[r] has been applied. That is
 "standing, not placed-then-lost" by construction.
 
-Usage: python3 scratchpad/ring_read.py scratchpad/arm_loki16.txt [more.txt ...]
+Usage: python3 tools/ring_read.py scratchpad/arm_loki16.txt [more.txt ...]
+       python3 tools/ring_read.py --selftest
+
+⭐ THE ADJUDICATION'S CELLS ARE NOW RE-EXECUTABLE: `--selftest` rebuilds them as
+real engine protobuf and drives the UNMODIFIED `decode()` over them (see the
+SELFTEST block at the foot of this file, including the declared mutant that must
+make it FAIL). Gate on the printed `RING_READ_SELFTEST: PASS` token, not on `$?`.
 """
 from __future__ import annotations
 
@@ -297,7 +303,380 @@ def report(label, games, per_opp, seat_check):
     return {"cov": statistics.mean(cov), "cov250": statistics.mean(cov250)}
 
 
+# =============================================================================
+# SELFTEST -- ADDITIVE ONLY. Nothing above this line was touched when it landed.
+# =============================================================================
+#
+# WHY IT EXISTS. The correctness argument for this file lived only as PROSE in
+# docs/research/ADJUDICATION-ring-occupancy-decoders-2026-08-11.md: seven
+# forced-answer cells, run once, by an agent, in a scratch dir that no longer
+# exists. A correctness argument that cannot be re-executed is a CLAIM, not a
+# CONTROL -- and this file produced LOKI-16b's committed read-out and is the
+# decoder for LOKI-19's falsifier.
+#
+# HOW IT WORKS, AND THE ONE CONSTRAINT THAT SHAPED IT. `decode()` produced a
+# number already committed to a pre-registration, so it MUST NOT be refactored
+# to make it testable -- adding seams risks silently moving that number. So the
+# selftest synthesises `.replay26` files as REAL ENGINE PROTOBUF (schema:
+# tools/replay_schema.md) and calls the EXISTING `decode(path, our_team)`
+# unmodified. What follows is a protobuf WRITER for fixtures; the reader above
+# is untouched.
+#
+# THE DECLARED MUTANT (docs/research/SPEC-mutation-harness-2026-08-11.md,
+# fixture #1). Delete the entity-kind condition from the end-of-round snapshot
+# in `decode()` -- i.e. let every entity of ours count as a body, which is
+# exactly the defect that made `tools/ring_retention.py` read 0.900 where the
+# forced answer is 0.000. Apply it to a SCRATCH COPY (never to tools/) and the
+# BARRIER_ONLY cell below MUST FAIL. Recipe, and it is the acceptance
+# criterion for this selftest:
+#
+#   d=$(mktemp -d); mkdir -p $d/tools
+#   cp tools/replay_census.py $d/tools/
+#   sed 's/^            if kind_of\.get.*$/            if True:/' \
+#       tools/ring_read.py > $d/tools/ring_read.py
+#   python3 $d/tools/ring_read.py --selftest    # must print RING_READ_SELFTEST: FAIL
+#
+# A selftest that passes on both the real file and the mutant is worthless --
+# that is precisely the defect `ring_retention.py --selftest` had (it passed
+# while the occupancy rule was wrong, because it only ever tested the ring
+# GEOMETRY).
+
+_SF_KIND_FIELD = {"builder_bot": 10, "conveyor": 11, "splitter": 12,
+                  "harvester": 15, "barrier": 18, "core": 20, "gunner": 21,
+                  "sentinel": 22, "launcher": 24}
+
+
+def _sf_varint(n: int) -> bytes:
+    out = bytearray()
+    while True:
+        b, n = n & 0x7F, n >> 7
+        if n:
+            out.append(b | 0x80)
+        else:
+            out.append(b)
+            return bytes(out)
+
+
+def _sf_v(num: int, value: int) -> bytes:            # varint field
+    return _sf_varint(num << 3) + _sf_varint(value)
+
+
+def _sf_l(num: int, payload: bytes) -> bytes:        # length-delimited field
+    return _sf_varint(num << 3 | 2) + _sf_varint(len(payload)) + payload
+
+
+def _sf_pos(xy) -> bytes:                            # Pos{x=1,y=2}
+    return _sf_v(1, xy[0]) + _sf_v(2, xy[1])
+
+
+def _sf_entity(eid: int, team: int, xy, kind: str, hp: int = 40) -> bytes:
+    """Entity{id=1,team=2,position=3,hp=4,maxHp=5,<kind>=K}."""
+    body = (_sf_v(1, eid) + _sf_v(2, team) + _sf_l(3, _sf_pos(xy))
+            + _sf_v(4, hp) + _sf_v(5, hp))
+    # Barrier is an EMPTY message -> zero-length submessage on the wire
+    # (tools/replay_schema.md); everything else carries at least one scalar.
+    sub = b"" if kind == "barrier" else _sf_v(1, 0)
+    return body + _sf_l(_SF_KIND_FIELD[kind], sub)
+
+
+def _sf_place(entity: bytes) -> bytes:               # Update{placeEntity{entity}}
+    return _sf_l(1, _sf_l(1, entity))
+
+
+def _sf_move(eid: int, xy) -> bytes:                 # Update{moveBuilderBot{id,to}}
+    return _sf_l(2, _sf_v(1, eid) + _sf_l(2, _sf_pos(xy)))
+
+
+def _sf_remove(eid: int) -> bytes:                   # Update{removeEntity{id}}
+    return _sf_l(3, _sf_v(1, eid))
+
+
+def _sf_turn(updates) -> bytes:                      # Turn{repeated Update=1}
+    return b"".join(_sf_l(1, u) for u in updates)
+
+
+def _sf_replay(w, h, cores, turns, winner=1, walls=()) -> bytes:
+    """Replay{map=1, turns=3(repeated), winner=4, winCondition=6}.
+
+    cores: [(id, team, (x, y))]; turns: [[update_bytes, ...], ...] (one per
+    round, turns[i] IS round i). `walls` are (x, y) tiles written as ENV_WALL.
+    """
+    grid = [[0] * w for _ in range(h)]
+    for x, y in walls:
+        grid[y][x] = 1
+    rows = b"".join(_sf_l(3, _sf_l(1, b"".join(_sf_varint(t) for t in row)))
+                    for row in grid)
+    cbuf = b"".join(_sf_l(4, _sf_v(1, cid) + _sf_v(2, team) + _sf_l(3, _sf_pos(xy)))
+                    for cid, team, xy in cores)
+    mp = _sf_v(1, w) + _sf_v(2, h) + rows + cbuf
+    return (_sf_l(1, mp) + b"".join(_sf_l(3, _sf_turn(t)) for t in turns)
+            + _sf_v(4, winner) + _sf_l(6, b"core_destroyed"))
+
+
+# --- fixture geometry (identical to the adjudication's) ----------------------
+# 12x12 all-EMPTY map, 100 rounds. Our core id=1 team=0 at (1,1); enemy core
+# id=2 team=1 at (8,8). Enemy ring is fully in bounds and is these 12 tiles:
+#   (8,7)(9,7)(10,8)(10,9)(9,10)(8,10)(7,9)(7,8) + (7,7)(10,7)(7,10)(10,10)
+_SF_W = _SF_H = 12
+_SF_N = 100
+_SF_CORES = [(1, 0, (1, 1)), (2, 1, (8, 8))]
+_SF_T = (8, 7)          # a ring tile
+_SF_T2 = (9, 7)         # a second ring tile, orthogonally adjacent to _SF_T
+_SF_OFF = (8, 6)        # ONE cardinal step north of _SF_T, off the ring
+_SF_FAR = (2, 2)        # min d^2 to any ring tile >= 25: no contact possible
+
+
+def _sf_blank_turns(n=_SF_N):
+    return [[] for _ in range(n)]
+
+
+def _sf_cells():
+    """-> [(name, why_forced, replay_bytes, our_team, [(label, forced, key)])]
+
+    `key` is a callable on decode()'s dict. Every forced answer is forced BY
+    CONSTRUCTION -- it is arithmetic on the fixture, never a stored figure.
+    """
+    cells = []
+
+    def add(name, why, turns, our_team, checks, cores=None, walls=()):
+        cells.append((name, why,
+                      _sf_replay(_SF_W, _SF_H, cores or _SF_CORES, turns,
+                                 walls=walls),
+                      our_team, checks))
+
+    # 1. FLOOR -- no contact. Our sole builder never approaches the ring.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_FAR, "builder_bot"))]
+    add("FLOOR_no_contact",
+        "sole builder parked at (2,2); min d^2 to any ring tile >= 25",
+        t, 0,
+        [("coverage", 0.0, lambda g: g["coverage"]),
+         ("seat_rounds", 0, lambda g: g["seat_rounds"]),
+         ("first_arrival", None, lambda g: g["first_arrival"]),
+         ("len(tile_episodes)", 0, lambda g: len(g["tile_episodes"])),
+         ("max_simul", 0, lambda g: g["max_simul"])])
+
+    # 2. BARRIER_ONLY -- THE CELL THAT SEPARATES THE TWO DECODERS.
+    # One of OUR BARRIERS on ring tile (7,7) from r10 to r99, and ZERO
+    # builder-bot rounds on the ring. ring_retention.py reads 0.900 here.
+    # The cost-side assertions are load-bearing: they prove the barrier IS
+    # parsed and IS on the ring, so 0.000 occupancy is the KIND FILTER doing
+    # its job and not the fixture failing to place anything.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_FAR, "builder_bot"))]
+    t[10] = [_sf_place(_sf_entity(20, 0, (7, 7), "barrier", hp=30))]
+    add("BARRIER_ONLY",
+        "our barrier on ring tile (7,7) r10-99 (90 rounds); zero builder-rounds "
+        "on the ring",
+        t, 0,
+        [("coverage", 0.0, lambda g: g["coverage"]),
+         ("seat_rounds", 0, lambda g: g["seat_rounds"]),
+         ("len(tile_episodes)", 0, lambda g: len(g["tile_episodes"])),
+         # cost side: the barrier is seen, on 1 distinct ring tile, 90/100 rounds
+         ("bld_ring_tiles_end", 1, lambda g: g["bld_ring_tiles_end"]),
+         ("bld_ring_tiles_mean", 0.9, lambda g: g["bld_ring_tiles_mean"])])
+
+    # 3. CEILING -- one builder pinned on one ring tile for all 100 rounds.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_T, "builder_bot"))]
+    add("CEILING_pinned",
+        "one builder placed on (8,7) at r0, never moves, never removed: 100/100",
+        t, 0,
+        [("coverage", 1.0, lambda g: g["coverage"]),
+         ("seat_rounds", 100, lambda g: g["seat_rounds"]),
+         ("first_arrival", 0, lambda g: g["first_arrival"]),
+         ("max(tile_episodes)", 100, lambda g: max(g["tile_episodes"])),
+         ("max(bot_episodes)", 100, lambda g: max(g["bot_episodes"])),
+         ("max_simul", 1, lambda g: g["max_simul"])])
+
+    # 4. RELAY -- pins the granularity the adjudication's SECOND FINDING names.
+    # Bot A holds tile T for r0-49; at r50 A is removed and bot B takes the
+    # SAME tile T for r50-99, with no gap. Coverage (>=1 body on the ring in a
+    # round) is unbroken at 1.000, but no (bot,tile) pair and no single bot
+    # exceeds 50. THIS IS WHY `hold_any` AND `hold_pinned` ARE NOT THE SAME
+    # NUMBER, and why a document must name which one it quotes.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_T, "builder_bot"))]
+    t[50] = [_sf_remove(10), _sf_place(_sf_entity(11, 0, _SF_T, "builder_bot"))]
+    add("RELAY_same_tile_two_bots",
+        "bot A on (8,7) r0-49, bot B on the SAME tile r50-99, no gap",
+        t, 0,
+        [("coverage", 1.0, lambda g: g["coverage"]),
+         ("cover_rounds", 100, lambda g: g["cover_rounds"]),
+         ("seat_rounds", 100, lambda g: g["seat_rounds"]),
+         ("max_simul", 1, lambda g: g["max_simul"]),
+         ("max(tile_episodes)", 50, lambda g: max(g["tile_episodes"])),
+         ("sorted(tile_episodes)", [50, 50], lambda g: sorted(g["tile_episodes"])),
+         ("max(bot_episodes)", 50, lambda g: max(g["bot_episodes"]))])
+
+    # 4b. WALK -- separates bot_episodes from tile_episodes in the OTHER
+    # direction. ONE bot, two ring tiles, no gap: same-bot ring residency is
+    # 100 while the longest same-tile hold is 70. Without this cell the two
+    # series are indistinguishable on every cell above.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_T, "builder_bot"))]
+    t[30] = [_sf_move(10, _SF_T2)]
+    add("WALK_one_bot_two_tiles",
+        "one bot on (8,7) r0-29 then one cardinal step to (9,7) r30-99",
+        t, 0,
+        [("coverage", 1.0, lambda g: g["coverage"]),
+         ("sorted(tile_episodes)", [30, 70], lambda g: sorted(g["tile_episodes"])),
+         ("max(bot_episodes)", 100, lambda g: max(g["bot_episodes"]))])
+
+    # 5a. TEAM control -- an ENEMY builder sitting on the ENEMY ring all game.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 1, _SF_T, "builder_bot"))]
+    add("TEAM_enemy_bot_on_enemy_ring",
+        "a TEAM-1 builder pinned on (8,7) r0-99 while we are team 0",
+        t, 0,
+        [("coverage", 0.0, lambda g: g["coverage"]),
+         ("seat_rounds", 0, lambda g: g["seat_rounds"])])
+
+    # 5b. SEAT control -- the CEILING bytes read from the opposite seat. Same
+    # file, our_team=1: "the enemy ring" is now the ring of the team-0 core at
+    # (1,1) and the team-0 builder on (8,7) is theirs, not ours.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_T, "builder_bot"))]
+    add("SEAT_ceiling_bytes_other_seat",
+        "CEILING fixture decoded with our_team=1: ring moves to (1,1) and the "
+        "body is the enemy's",
+        t, 1,
+        [("coverage", 0.0, lambda g: g["coverage"]),
+         ("ring_size", 12, lambda g: g["ring_size"])])
+
+    # 6. MID -- hand-countable partial. On (8,7) for r0-39 (40 rounds), then
+    # ONE cardinal step north off the ring at r40 and never back.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_T, "builder_bot"))]
+    t[40] = [_sf_move(10, _SF_OFF)]
+    add("MID_40_of_100",
+        "on (8,7) r0-39 then steps to (8,6), off-ring, for r40-99: exactly 40/100",
+        t, 0,
+        [("coverage", 0.4, lambda g: g["coverage"]),
+         ("cover_rounds", 40, lambda g: g["cover_rounds"]),
+         ("seat_rounds", 40, lambda g: g["seat_rounds"]),
+         ("max(tile_episodes)", 40, lambda g: max(g["tile_episodes"]))])
+
+    # 7. LATENT id-swap -- byte-identical to CEILING except the two cores'
+    # `id` values are reversed against their `team`. CorePosition field 1 is
+    # the ID and field 2 is the TEAM; keying on field 1 (ring_retention.py's
+    # defect) returns 0.000 where the forced answer is 1.000.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_T, "builder_bot"))]
+    add("LATENT_core_id_swap",
+        "CEILING with core ids reversed vs teams: id=2/team=0 at (1,1), "
+        "id=1/team=1 at (8,8)",
+        t, 0,
+        [("coverage", 1.0, lambda g: g["coverage"]),
+         ("ring_size", 12, lambda g: g["ring_size"])],
+        cores=[(2, 0, (1, 1)), (1, 1, (8, 8))])
+
+    # 8. CLIPPED ring -- enemy core in the NW corner at (0,0): 5 of the 12 ring
+    # tiles are in bounds. Guards the bounds clip in ring_tiles(), and the
+    # stratum the adjudication says to stratify on.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, (2, 0), "builder_bot"))]
+    add("CLIPPED_corner_ring",
+        "enemy core at (0,0): ring clipped to 5 in-bounds tiles; our bot on "
+        "(2,0), one of them, all game",
+        t, 0,
+        [("ring_size", 5, lambda g: g["ring_size"]),
+         ("coverage", 1.0, lambda g: g["coverage"])],
+        cores=[(1, 0, (9, 9)), (2, 1, (0, 0))])
+
+    # 9. WALL inside the ring -- the agreed definition says do NOT drop WALL
+    # tiles from the ring (a wall can never hold a body, so dropping one only
+    # changes the reported ring size and therefore the stratum). Ring tile
+    # (7,7) is ENV_WALL here and the ring must still be 12.
+    t = _sf_blank_turns()
+    t[0] = [_sf_place(_sf_entity(10, 0, _SF_T, "builder_bot"))]
+    add("WALL_in_ring_not_dropped",
+        "ring tile (7,7) is ENV_WALL; ring size must stay 12 (agreed definition)",
+        t, 0,
+        [("ring_size", 12, lambda g: g["ring_size"]),
+         ("coverage", 1.0, lambda g: g["coverage"])],
+        walls=[(7, 7)])
+
+    return cells
+
+
+def _sf_eq(forced, observed) -> bool:
+    if isinstance(forced, float) or isinstance(observed, float):
+        try:
+            return abs(float(forced) - float(observed)) < 1e-9
+        except (TypeError, ValueError):
+            return False
+    return forced == observed
+
+
+def selftest() -> int:
+    """Drive the UNMODIFIED decode() over forced-answer synthetic replays.
+
+    Returns a process exit code and prints a terminal
+    `RING_READ_SELFTEST: PASS|FAIL` token -- gate on the TOKEN, not on `$?`,
+    because `$?` behind a pipe is the pipe's status.
+    """
+    import tempfile
+    from replay_census import Replay  # independent parser: fixture cross-check
+
+    tmp = Path(tempfile.mkdtemp(prefix="ring_read_selftest_"))
+    print("RING_READ SELFTEST -- forced-answer cells, real engine protobuf, "
+          "decode() unmodified")
+    print(f"  fixtures: {tmp}")
+    n_ok = n_fail = 0
+    fails = []
+    cells = _sf_cells()
+    for name, why, blob, our_team, checks in cells:
+        path = tmp / f"{name}.replay26"
+        path.write_bytes(blob)
+        print(f"\n  CELL {name}  (our_team={our_team})\n       forced because: {why}")
+        # Fixture self-check: the bytes must also parse under the
+        # independently-written replay_census parser. A fixture only this file
+        # can read proves nothing about this file.
+        try:
+            rp = Replay(path, track_flow=False)
+            assert rp.rounds == _SF_N, f"rounds {rp.rounds} != {_SF_N}"
+            assert len(rp.cores) == 2, f"{len(rp.cores)} cores"
+            assert (rp.width, rp.height) == (_SF_W, _SF_H), "map dims"
+            assert rp.unknown_kinds == set(), f"unknown kinds {rp.unknown_kinds}"
+        except Exception as exc:                       # noqa: BLE001
+            n_fail += 1
+            fails.append((name, "fixture unparseable by replay_census", exc))
+            print(f"       FAIL  fixture does not parse under replay_census: {exc}")
+            continue
+        g = decode(path, our_team)
+        if g is None:
+            n_fail += 1
+            fails.append((name, "decode() returned None", None))
+            print("       FAIL  decode() returned None")
+            continue
+        for label, forced, key in checks:
+            try:
+                obs = key(g)
+            except Exception as exc:                   # noqa: BLE001
+                obs = f"<raised {exc!r}>"
+            ok = _sf_eq(forced, obs)
+            n_ok, n_fail = n_ok + ok, n_fail + (not ok)
+            if not ok:
+                fails.append((name, label, f"forced {forced!r} observed {obs!r}"))
+            print(f"       {'ok  ' if ok else 'FAIL'}  {label:<26}"
+                  f" forced {forced!r:<12} observed {obs!r}")
+    print(f"\n  {n_ok} assertions passed, {n_fail} failed, "
+          f"over {len(_sf_cells())} cells")
+    for f in fails:
+        print(f"    FAILED: {f[0]} :: {f[1]} :: {f[2]}")
+    print("\n  WHAT THIS DOES NOT COVER: aggregation across games (run_arm/"
+          "report are untested here); real-replay geometry beyond these cells; "
+          "and decode()'s removeEntity handler popping pos_of without popping "
+          "team_of/kind_of (harmless as written, live if anyone reads those "
+          "maps outside the position loop).")
+    print(f"\nRING_READ_SELFTEST: {'PASS' if n_fail == 0 else 'FAIL'}")
+    return 1 if n_fail else 0
+
+
 if __name__ == "__main__":
+    if "--selftest" in sys.argv[1:]:
+        sys.exit(selftest())
     res = {}
     for f in sys.argv[1:]:
         fp = Path(f)
