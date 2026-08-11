@@ -7,17 +7,44 @@ successor session inherit it. The fields below are parsed; the prose is not.
     LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki*
     INCUMBENT: bots/_v115dodge
     INCUMBENT_FROZEN: yes
-    PRIMARY_CURRENCY: kill_speed_score
-    SECONDARY_CURRENCY: core_kill_share
+    PRIMARY_CURRENCY: game_share
+    SECONDARY_CURRENCY: kill_speed_score
     KILL_SPEED_SHIP_GATE: -1.76
     KILL_SPEED_MIN_N: 200
     KILL_SPEED_IS_LEG_VERDICT: no
-    WIN_RATE_IS_VERDICT: no
+    WIN_RATE_IS_VERDICT: yes
     COMPARE_AGAINST: previous_line_iteration
     KILL_WINDOW_RND: 250
     R1000_IS_DEFEAT: yes
     PLAY_DEFENCE: never
     FIXTURE_OF_RECORD: live_unrated
+
+## ⭐⭐ DIRECTIVE, MAGNUS, 2026-08-11 — **"WIN RATE DECIDES."** GIVEN DIRECTLY TO THE BUILDER, NOT RELAYED.
+
+Preceded in the same session by *"The goal for any of this is to climb ELO"* and
+*"Any improvement no matter how small should be considered as the replacement of
+v104."* **`WIN_RATE_IS_VERDICT` flips `no` -> `yes` and `PRIMARY_CURRENCY`
+becomes `game_share`.**
+
+**AND IT IS NOT A COMPROMISE WITH RIGOUR — IT IS THE OBJECTIVE FUNCTION.** The
+ladder pays `delta = 32 x (S - E)` where **S = games won / 5**. Game share IS
+what the ladder pays, verified to a max residual of 0.000000 across 100 matches.
+`kill_speed_score` was always a PROXY, adopted because `R1000_IS_DEFEAT` made a
+tiebreak win worthless *to us*; **the ladder never agreed and pays for it
+anyway.** Optimising the proxy while the goal is Elo is the mistake, not the fix.
+
+**⛔ ONE CONSEQUENCE THE BUILDER FLAGGED BACK RATHER THAN APPLYING SILENTLY, AND
+IT IS THE ONLY PLACE THIS DIRECTIVE COLLIDES WITH ANOTHER:** under
+`PRIMARY_CURRENCY: game_share` **a round-1000 tiebreak win is a WIN**, because the
+ladder pays it. `R1000_IS_DEFEAT: yes` (below) says it is a defeat, and the
+`-10` in `tools/score.py` exists precisely to make tiebreak-turtling score zero.
+**Those two cannot both drive a ship decision.** Until Magnus rules:
+* **`game_share` decides the SHIP** (this directive, and it is what Elo pays);
+* **`R1000_IS_DEFEAT` still governs what we BUILD** — no plank may be *designed*
+  to farm tiebreaks, because that is the doctrine and it was set on 2026-08-10;
+* **`tools/score.py` and every baseline in it are UNCHANGED**, so v20 -10.00
+  through v104 -1.76 stay mutually comparable. Changing the scale in place
+  orphaned every earlier figure once already, within the hour.
 
 ## What this means, in the words of the directive (Magnus, 2026-08-09)
 

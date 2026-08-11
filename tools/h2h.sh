@@ -170,7 +170,11 @@ print "  VERDICT: $VERDICT"
 med() { print -r -- ${(n)@} | tr " " "\n" | awk '{a[NR]=$1} END{if(NR)print (NR%2)?a[(NR+1)/2]:int((a[NR/2]+a[NR/2+1])/2); else print "-"}'; }
 mean() { print -r -- $@ | tr " " "\n" | awk '{s+=$1;n++} END{if(n)printf "%.2f",s/n; else print "-"}'; }
 print ""
-print "  ⭐⭐ SCREENING STATISTICS (the score is DECISION-ONLY, not the screen)"
+print "  ⭐⭐⭐ WIN RATE / GAME SHARE — THE VERDICT (Magnus, 2026-08-11: \"Win rate decides\")"
+printf "      %-16s %d/%d = %.1f%%   vs the measured 50.0%% null\n" $B $W $N $((100.0*W/N))
+print "      The ladder pays delta = 32 x (S - E), S = games won / 5. This IS the objective."
+print ""
+print "  --- decomposition, for MECHANISM reading only ---"
 printf "      P(core-kill win)   %-14s %5.1f%%  (%d/%d)\n" $B $((100*TKILL/N)) $TKILL $N
 printf "                         %-14s %5.1f%%  (%d/%d)\n" $C $((100*CKILL/N)) $CKILL $N
 printf "      kill round | kill  %-14s median %s   n=%d\n" $B "$(med $TKR)" ${#TKR[@]}
@@ -195,7 +199,7 @@ if [[ -n $SEL ]]; then
   print "     Read the two halves TOGETHER. Neither alone is the result."
 fi
 print ""
-print "  KILL-SPEED SCORE (DECISION-ONLY — PROGRAMME.md: win rate is NOT the verdict)"
+print "  KILL-SPEED SCORE (SECONDARY since 2026-08-11 — PROGRAMME.md: win rate is NOT the verdict)"
 print "      $B  mean $(mean $TSCORE) /game        $C  mean $(mean $CSCORE) /game"
 print "      (tools/score.py buckets; a tiebreak win and a loss both score -10)"
 print ""
