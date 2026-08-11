@@ -30884,3 +30884,159 @@ each with a constructed failing case run.
    say so in the read-out.**
 5. **The mutation-harness spec** (`e2840d4`) ships with six acceptance fixtures
    whose answers are already known: **five BLIND, one CAUGHT.**
+
+# ============================================================================
+# 2026-08-11 07:4xZ / 09:4x CEST (`date`) — **WRAP s29 (RESEARCH ARM)**
+# Wrap called by Magnus. Repo PROCESS DELTAS only; the vault daily note is a
+# SEPARATE day-end task and is NOT this. D-numbers start at D53 (builder took
+# D41-D52 at `da53092`).
+# ============================================================================
+
+## RETRO v1.1 RUN FIRST, per `docs/research-arm-retro.md` — and it FIRED THREE TIMES
+The file was created at s28 with **zero firings and a sunset clause armed**. This
+was its first real application. **Sunset clause DISARMED (`2af3a6b`).**
+
+**Q1 CONSUMPTION — 3 agents, 3 cuts, ALL THREE CONSUMED, zero unread.**
+night-loss-anatomy → retired the builder's `+39` race frame · night-separator →
+produced the doorstep-turret lever and the map×opponent finding · ring-occupancy
+adjudication → **unblocked LOKI-16b's 50 banked games**, which then read out at
+`4dca48f`. *(s28 baseline: 1 of 3 consumed, 2 unread.)*
+
+**Q2 LATENCY — all three landed BEFORE the decision they bore on.** The
+adjudication preceded the LOKI-16b read-out; the separator preceded the LOKI-19
+prereg; the anatomy preceded the queue reorder. **The insert-attack cut arrived
+~25 min before LOKI-19 was built and is the reason it exists.**
+
+**Q3 RELAY FIDELITY — run, and CLEAN. That is the finding, not a pass.** Diffed
+the anatomy relay against source: the rated comparator I published (72/166 =
+43.4%) I had independently recomputed from `ladder_games.tsv` and it matched to
+the digit. **s28's failure mode (compressing agent output) did not recur — this
+lane's failure mode MOVED.** See Q7.
+
+**Q4 OWN-CHECKS-ON-OWN-WORK — off zero for the first time, but still peer-dominated.**
+- **Self-caught, published:** 1 — the "race tightened" trend claim, withdrawn
+  ~20 min after relay (`bbc7244`).
+- **Self-caught BEFORE publication: 3 broken instruments** — `stat -t '...Z'`
+  appending a **literal** Z to a local time · a `team` column that does not exist
+  in `throws.tsv` (returned a clean 0 for everything) · an unquoted
+  `--include=*.py` that zsh ate, returning **exactly the zeros my hypothesis
+  predicted**.
+- **Peer-caught: 4** — the launcher-raid denominator, the "regression" label, the
+  arm-rotation story, `hold_any`. *(s28: zero self-caught. Improvement is real
+  and small.)*
+
+**Q5 DECLINES — fired at boot and it is the clearest win of the session.**
+Declined the library tactics sweep outright, naming the 1.8% decision-path
+conversion rate as the reason, and declined to commission a kidnap-effectiveness
+decoder speculatively. **`audit_trigger` closed 3/5 FIRE → 1/5 OK across the
+session** (doc:code churn 1.06→0.99, cross-lane 4.24→2.38). **Also accepted the
+builder's correction that the cross-lane row's arithmetic is broken — I quoted it
+as a constraint on my own lane without checking its denominator first.**
+
+**Q6 PER-LANE DELIVERY.** *Builder:* numbers before decisions on every item;
+independently verified their material (485/485) rather than accepting the relay;
+killed their `+39` sizing; supplied two prereg corrections before lock (the
+2,247-scale denominator, the arrival-baseline population tag). *Side lane:*
+re-derivable primaries, and my errors surfaced by me where I could —
+they re-derived my throws figures and all four discrepancies resolved to units.
+**RETRACTIONS THAT REACHED A LANE: 4** (race-tightened · launcher-raid ·
+regression · arm-rotation). *s28 was 3.* **This is the number that got worse.**
+
+**Closing A — what I would not produce again:** Part 9, published as **"RESOLVED
+STATE"** on a story that fit. It was withdrawn 40 minutes later. **The output I
+regret is not a wrong number, it is a confident FRAME around correct numbers.**
+
+**Closing B — what a peer caught that my process should have:** the builder went
+looking for the check against their own plank's interest (`fcode submission list`
+→ the v98 timestamp) and found it. **I went looking for a clean boundary and
+found a story that fit.** Converted to Q7's mechanical check.
+
+---
+
+## D53. **THREE RETRACTIONS, ONE SHAPE: I NAMED A CAUSE HAVING ONLY MEASURED AN EFFECT**
+*"The race TIGHTENED"* (a stale cutoff) · *"the launcher raid DELIVERED NOTHING"*
+(a mis-keyed denominator) · *"a REGRESSION in the shipped bot"* (a deliberate
+flag). **In all three the effect was real, load-bearing and correctly measured,
+and the sentence wrapped around it was wrong. All three reached a lane.**
+**The fix is the builder's and it is smaller than the one I was writing for
+myself** (which was drifting toward *send less*): **the effect ships at full
+strength, the causal sentence ships marked INFERENCE, in the same message.** The
+habit exists — it fired unprompted for *"conversion problem"* the same morning.
+It just did not fire on these three. **Now RETRO Q7.**
+
+## D54. **A NAME I COINED FOR SOMETHING NO TOOL COMPUTES BECAME A DECIDING CALL**
+`hold_any` / `hold_pinned` are **my** coinages, written into the adjudication's
+"RECOMMENDED AGREED DEFINITION" and then **cited by an amendment**. `hold_pinned`
+is real (`tile_episodes`); **`hold_any` is implemented nowhere** — the third
+series that exists is `bot_episodes`, keyed by entity id and therefore incapable
+of spanning two bots. **The falsifying evidence was inside my own file**: my RELAY
+cell records `ring_read` returning 0.500 where `hold_any` = 1.000.
+**Derived check: a name introduced in a document cites the file and line that
+implements it, or is marked PROPOSED.** Neither was done.
+
+## D55. **THE STRONGEST ARGUMENT OF THE DAY IS ABOUT INSTRUMENTS, NOT ATTENTION**
+Three lanes discussed two statistics for hours, agreed a definition, and made it
+the deciding call of an amendment — **and nobody checked the tool implemented
+either one under those names. It was not caught by re-reading. It was caught by
+BUILDING A FORCED-ANSWER CELL, which cannot be written without stating what the
+number must be.** Prose can carry an undefined term indefinitely; a fixture
+cannot. **The same mechanism found `ring_retention.py`'s kind-filter defect
+earlier the same session.**
+
+## D56. **A POSITIVE CONTROL IS NOT OPTIONAL WHEN THE NULL IS THE RESULT YOU EXPECT**
+My tree grep used `--include=*.py` unquoted; zsh expanded it, the grep never ran,
+and every tree reported **`0 fire sites`** — **exactly what my "early Loki trees
+had no melee" hypothesis predicted.** Caught only because the shell's error text
+printed beside it. **Fifth constant-zero of the day and the first where the
+broken instrument AGREED with the hypothesis under test.** That is the dangerous
+configuration.
+
+## D57. **UNITS-NOT-DATA IS THE PROJECT'S DOMINANT DEFECT CLASS — 6 instances in one session**
+Four at once in `throws.tsv` between three independent decodes
+(throws-with-≥1-attack vs attack EVENTS · pooled vs friendly-only · `INSERT` vs
+`INSERT`+`RETREAT` · rated-only vs all-games), plus `hold_any`/`bot_episodes`,
+plus **one in my own prereg guidance** (`38.1%` reach is rated-only; the same
+quantity pooled with unrated is **23.3%**). **Not one was a disagreement about
+data — the zero never moved.** **The cause is structural: this project computes
+the same quantity in two places and names it once.**
+
+## D58. **A STALE NUMBER AND A CURRENT ONE ARE BYTE-IDENTICAL — a cutoff is part of the subject**
+The builder's `+39` race margin reproduces **to the digit** at its own cutoff and
+is computed on **240 of 365** available games. **Nothing about the number says
+so.** Same family as `SHIP_ALERT` reading `rating=1678` eight minutes and fifteen
+points stale while a lane made an activation decision against it. **"Numbers carry
+subjects" already covers the denominator and the population; this adds the
+CLOCK.**
+
+## D59. **`elo_history.tsv` AND `corpus/SHIP_ALERT` STAMP LOCAL TIME WITH NO ZONE MARKER**
+Instrument defect #13 by the s28 count. **Fails in the dangerous direction — a
+successor reading `05:52` as Zulu concludes the tape is two hours FRESHER than it
+is.** Builder-owned; adopted and queued by them. **I nearly published the same
+fault myself in the opposite direction the same minute.**
+
+---
+
+## RESEARCH ARM STATE, VERIFIED ON LIVE SURFACES AT 07:4xZ — NOT ASSERTED
+- **`audit_trigger` 1/5, OK** (was 3/5 FIRE at boot). Only `ship cadence` trips.
+- **v104 live, 1680, rank #23, k=728**, tape newest row 07:42 CEST.
+- **Corpus synced at boot**, 16,766 replays, reconciliation **2,305/2,305 =
+  100.0000%**. Not re-synced since; a successor should sync before querying.
+- **Nothing running. No agents alive. Nothing queued for me.** All three
+  agents' results were relayed before idling.
+- **Deliverables:** `docs/research/night-panel-elo-par-2026-08-11.md` (Parts 1-10,
+  including four self-withdrawals kept in place as the record) ·
+  `docs/research/ADJUDICATION-ring-occupancy-decoders-2026-08-11.md` (carries a
+  correction pointer at the top) · `docs/research-arm-retro.md` **v1.1**.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **The v95–v101 transition zone is UNRESOLVED and I was wrong about it twice.**
+   Do not adopt "nineteen healthy versions then the flag" — v98 predates the flag
+   by 20 minutes, the pre-quiet trees carry all 14 fire sites ungated, and reach
+   does not explain it. **`bde1627` Part 9 is superseded by `e96371e` Part 10.**
+2. **Team 48 is a MECHANISM lead, not a currency target** — unrated says −0.147,
+   rated says +0.107 on n=2 matches, both confounds dead.
+3. **Kidnap effectiveness has NO column in `throws.tsv`.** That absence is a
+   **decoder gap** and must never be read as a null.
+4. **The map × opponent interaction (kladde 0.82 vs 0.23, p=0.0005; Landers the
+   exact mirror, p=0.0015) cancels in every pooled statistic we compute.** Any
+   map-pooled read this project has ever run averaged over a ±0.3 spread.
