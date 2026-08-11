@@ -162,3 +162,88 @@ canonicalised on that map.** 1 of 8 battery maps. `fcode maps list` labels
 meander `rotational`; the anchor geometry says otherwise, and **a CLI label is
 not ground truth about anchor geometry** — I asserted the CLI version first and
 it was wrong.
+
+---
+
+# AMENDMENT 1 — §4 READ OUT. **MY PREDICTION FAILED AT EXACTLY CHANCE.**
+
+**Query run 2026-08-11 18:1xZ, after this file's commit `2026-08-11T18:12:08+02:00`
+(two clocks, `git log` vs the run).** Gate: 0 of 8 maps short of n≥400 — PASSES,
+so all 8 count and the denominator is unchanged.
+
+| map | A's enemy | rk | B's enemy | rk | PREDICTED | n | seat A win% | z | ACTUAL | |
+|---|---|---|---|---|---|---|---|---|---|---|
+| antler | SOUTH | 3 | NORTH | 1 | **B** | 624 | 61.7% | +5.84 | A | MISS |
+| atoll | EAST | 2 | WEST | 4 | **A** | 624 | 45.7% | −2.16 | B | MISS |
+| drumlin | EAST | 2 | WEST | 4 | **A** | 624 | 55.4% | +2.72 | A | HIT |
+| fjordgate | EAST | 2 | WEST | 4 | **A** | 624 | 57.2% | +3.60 | A | HIT |
+| heart | EAST | 2 | WEST | 4 | **A** | 622 | 50.0% | +0.00 | B | MISS |
+| hive | EAST | 2 | WEST | 4 | **A** | 620 | 56.1% | +3.05 | A | HIT |
+| meander | SOUTH | 3 | NORTH | 1 | **B** | 620 | 46.6% | −1.69 | B | HIT |
+| nordkap | SOUTH | 3 | NORTH | 1 | **B** | 620 | 55.8% | +2.89 | A | MISS |
+
+**4/8. P(≥4/8 | no relationship) = 0.64. This is indistinguishable from a coin.**
+
+**RESOLUTION, taken from §4's table as written and not from the rule I would
+prefer to have written.** §4 offers three outcomes: ≥7/8 supports; *"seat A above
+50% on all or nearly all 8"* refutes; **"6/8 or fewer, mixed: unresolved; falls
+back to §5."** Two maps sit below 50%, so the refutation clause does not apply
+literally and **the honest verdict is UNRESOLVED — NOT "refuted".** I am recording
+that distinction because the temptation to upgrade my own resolution rule after
+seeing the data is exactly the failure this file exists to prevent.
+
+**⛔ BUT THE CAUSAL STORY I WROTE IS DEAD, AND THAT IS A STRONGER STATEMENT THAN
+THE VERDICT LINE.** §4 predicted the favoured seat from *enemy direction alone*.
+Three maps share the identical configuration (A→SOUTH, B→NORTH):
+**antler 61.7%, nordkap 55.8%, meander 46.6%.** Same geometry, opposite signs, and
+the spread is 15pp. Within the five EAST maps the signs also split (atoll 45.7%
+against hive 56.1%). **Enemy direction does not predict which seat wins. The scan
+rank model is not weakly supported — it is wrong**, and no larger n rescues it.
+
+**⭐ AND THE TEST STILL EARNED ITS KEEP, BY KILLING THE RIVAL EXPLANATION IT WAS
+BUILT TO KILL.** The pooled 52.6% was equally consistent with a *turn-order*
+advantage — the obvious rival, and one we cannot change. **Turn order is constant
+across maps and can only push every map the same way.** The observed effect
+**inverts by map** (+61.7% to 45.7%, a 16pp spread, five maps individually
+significant at |z|>2.1). ⇒ **The seat gap is NOT turn order. It is our code
+interacting with map terrain**, which is the half of the premise the plank needs
+and the half that was in doubt.
+
+**WHAT THIS DOES TO §5, AND WHY IT IS NOT A RATIONALISATION.** §5 asks whether
+canonicalising the scan *removes* the gap. That does not depend on §4's
+directional model being right: on a rotationally symmetric map, seat B's terrain
+is seat A's rotated 180°, so under an ABSOLUTE order the two seats necessarily
+scan their own terrain from different directions, and under a seat-relative order
+they necessarily scan it from the same one. **§4 asked which seat wins; §5 asks
+whether the difference survives. Only the first is refuted.**
+
+**⛔ SELF-CHECK, BECAUSE THIS IS THE LOKI-17 SHAPE: IS §5 INERT?** If
+canonicalisation were total, the gap would collapse by algebra and the bar would
+be pre-satisfied — spending 5,408 games to observe arithmetic. **It is not total,
+and that is what makes §5 informative:** `DIRECTIONS` (all 8 compass points,
+`doctrine.py:25`) is still absolute, and `eco.py:640` still sweeps `self.ang +=
+0.65` rad from a fixed absolute angle. **Neither is touched by this arm.** ⇒ §5
+measures **how much of the 6.8pp gap CARDINALS accounts for versus the untouched
+absolute sites** — a partition, not a confirmation. **§5 is hereby restated as a
+PARTITION measurement**; the ≤3.0pp bar stands unchanged.
+
+**AND §3 STANDS AND NOW MATTERS MORE.** Canonicalisation makes both seats play
+*the same*; nothing makes them play *the better* way. On antler the two seats
+differ by 23pp in win rate — whichever behaviour the canonical order lands on,
+that is the one both seats will get. **The currency read (§6) is genuinely 50/50
+a priori and the mechanism result must not be reported as if it settled it.**
+
+**FOLLOW-UP NOTED, NOT QUEUED:** seat-relative ordering turns the scan start into
+a *knob* (four rotations relative to the enemy). Choosing the best of four is a
+different and larger plank than making the two seats agree, and it must not be
+smuggled into this leg's read-out.
+
+# AMENDMENT 2 — the kill-round column carries a known bias (ADD-only, blind to §5/§6)
+
+From the s32 instruments audit: `overnight_read.py`'s median kill round is
+computed on games **conditioned on who won**, and seat predicts winning, so the
+two subsets have different seat mixes (+3.9 to +16.2pp across shards). **On
+byte-identical arms the line reads TREAT 205 / CTRL 207 — a spurious 2-round
+advantage to the treatment.** ⇒ §6's kill-round observation is reported **against
+that −2 null offset**, and a kill-round delta inside ±2 rounds is reported as
+**no evidence of movement**, not as an improvement.
