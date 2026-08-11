@@ -299,3 +299,96 @@ It may not be read as weakening the plank: **§1's measured facts — 0 attacks
 across 2,247 inserts, 28.1% standing adjacent to the enemy core — are unaffected
 by which population the ARRIVAL RATE is computed on.** What changes is only what
 this leg is entitled to conclude about WHY.
+
+---
+
+# AMENDMENT 2 — ARRIVAL ADMISSION MEASURED PER CELL. THE PANEL LARGELY DOES NOT ADMIT THIS MECHANISM, AND ONE CELL IS REPLACED.
+
+**Written 2026-08-11 06:4x CEST. ADD-only. Committed BEFORE the treatment arm
+exists — no LOKI-19 game has been played anywhere.** This is a CELL-SELECTION
+decision made on a criterion Amendment 1 stated **before** this measurement was
+run, and it does not touch the in-arm gate 5a-bis.
+
+## 2a. THE MEASUREMENT — v104, `kind=INSERT`, OURS, archived, per cell
+
+| cell | n | reach | band (Amendment 1b) |
+|---|---:|---:|---|
+| **Powered by SmartFridge** | **512** | **7.6%** | **⛔ ≤20 — FAR BELOW the 18.6% pre-quiet rate** |
+| Lunds Stallions | 100 | 21.0% | 20–30 ambiguous |
+| Askar City | 44 | 27.3% | 20–30 ambiguous |
+| farming_200s | 38 | 57.9% | **>30 — premise holds** |
+| *Landers (not in panel)* | 54 | **68.5%** | **>30 — premise holds** |
+| *Team 48 (not in panel)* | 29 | 44.8% | >30 — premise holds |
+
+**⇒ OF THE FOUR ADMITTED CELLS, EXACTLY ONE DELIVERS THE PREMISE.** And
+**SmartFridge — the LARGEST sample on the board at n=512 — arrives at 7.6%, less
+than half the rate that made silencing the melee correct in the first place.**
+Firing there is not a weak test of the premise; it is a test of the opposite
+condition.
+
+**This is the tension named precisely: "ADMITTED" AND "ADMITS THIS MECHANISM"
+ARE DIFFERENT PROPERTIES.** PANEL-3's cells were selected for **resolution**
+(calibrated for `leg_read --live-cells`). **This plank's precondition is HIGH
+ARRIVAL, and nobody had ever checked a panel for it.** Map admission was checked
+for LOKI-16b's ring geometry; arrival admission was checked by nobody, for
+anything, until now.
+
+## 2b. THE CHANGE — the 5th challenge becomes LANDERS, not a farming_200s double
+
+The §6 rule sent the 5th challenge of each window to farming_200s as the
+highest-paying admitted cell. **From window 2 onward it goes to Landers.**
+
+```
+TARGET BAND: Landers, gap -37, a 5-0 pays 14.32, reachable YES (p19 of 149)
+```
+*(verbatim `tools/target_value.py`, run before this amendment was written)*
+
+**Why Landers and not Team 48:** Landers is **reachable at −37** and Team 48 sits
+at the band edge (−90) where research has already dropped it as a currency
+target (2.7% of v104's rated diet, and its rated sample inverts). **Landers has
+the highest measured arrival on the board (68.5%) AND pays inside the band.**
+
+**⛔ WHAT THIS DOES NOT DO: SmartFridge, Askar City and Lunds Stallions STAY.**
+Dropping the low-arrival cells after measuring them would be selecting the
+fixture to suit the plank — and their §5 bars (dose, mechanism, cost) do not
+depend on arrival. **Only the ability to speak about the PREMISE does.**
+
+## 2c. THE ASYMMETRY THIS CREATES IS DISCLOSED, NOT PAPERED OVER
+
+**Control window 1 already fired** (04:35:21–04:35:38Z, 5/5) with the original
+rule: four cells plus a **farming_200s double, and no Landers.** Windows 2+ carry
+four cells plus **Landers**. **So the arms do not share an identical cell mix and
+window 1 is the odd one.**
+
+**This is tolerable ONLY because Amendment 1b already forbids pooling arrival and
+mandates per-cell reporting** — per-cell reads are unaffected by the mix; only a
+pooled number would be corrupted, and a pooled number is already banned.
+**Pre-committed: the LOKI-19-vs-v104 comparison is made CELL-BY-CELL on cells
+present in both arms. Window 1's extra farming_200s games are reported and are
+NOT silently averaged into the farming cell's treatment comparison** — the
+matched control for treatment farming games is the equal number of window-1
+farming games, chosen by challenge order, not by outcome.
+
+## 2d. AND THE HONEST FORECAST, WRITTEN BEFORE THE DATA
+
+**On these priors the modal outcome of gate 5a-bis is still the 20–30 AMBIGUOUS
+band**, because three of five cells sit at or below 27% and SmartFridge's 7.6%
+drags any average hard. **I am firing anyway, and the reason is stated in
+advance rather than reconstructed afterwards:** the bars that actually resolve at
+this n — **dose (5a), mechanism (5b) and the cost/falsifier (5d)** — are all
+arrival-independent. **The premise claim is the ONLY thing at risk from a low
+gate reading, and Amendment 1 already forbids me from making it in that case.**
+
+**⇒ A leg that returns "dose delivered, mechanism sized, cost measured, premise
+untested" is a SUCCESS of this design, not a failure of it.** Writing that down
+now so it cannot be spun either way later.
+
+## 2e. CAVEATS ON THE NUMBERS THIS AMENDMENT RESTS ON
+
+Per-cell n is small for the decisive cells (**farming 38, Landers 54, Team 48
+29**) and large only for the cell being demoted (SmartFridge 512). All are
+**v104, ours, `kind=INSERT`, archived, pooling rated and unrated** — a broader
+population than Amendment 1's rated-only baseline, chosen because the per-cell
+rated n would be near zero. **The 6x cross-opponent spread means any of these can
+move materially on a different map mix.** They are good enough to SELECT a cell
+and **not good enough to be a bar**, which is exactly how they are used here.
