@@ -233,9 +233,65 @@ def main() -> int:
         print()
         print(f"*** QUEUE ALARM: {len(live)} < {args.floor}. THIS IS A RESEARCH FAILURE,")
         print("    NOT A BUILDER PAUSE. Stock it before doing anything else.")
+        local_runs()
         return 1
     print("   OK")
+    local_runs()
     return 0
+
+
+# ---------------------------------------------------------------------------
+# LOCAL-RUN BANNER — s32. Printed by the SessionStart hook in EVERY lane.
+#
+# ⛔ WHY THIS LIVES HERE AND NOT IN A DOC. `tools/corefill.sh` was built
+# 2026-08-11 and appeared **6 times in HANDOVER.md and 0 times in all three
+# `.claude/commands/*.md`, 0 in CLAUDE.md, 0 in PROGRAMME.md, 0 in QUEUE.md**.
+# That is verbatim the s31 finding about QUEUE.md itself — a rule promoted into a
+# file nobody opens — and it was found the same way both times: Magnus asked
+# whether the next session would know.
+#
+# HANDOVER *is* read at boot, but it is the weakest durable surface in the repo:
+# the next wrap rewrites its top block and the pointer silently drops out. The
+# SessionStart hook already runs THIS file in every lane, harness-executed, so
+# adding the banner here needs no settings change and cannot be forgotten.
+#
+# It reports STATE, not just existence — a pointer to a tool nobody knows is
+# running is only half the problem. And it distinguishes BLIND from IDLE: if the
+# process table cannot be read it says so rather than reporting zero, because an
+# alarm that cannot tell it is blind is this repo's most-repeated defect.
+def local_runs() -> None:
+    import subprocess
+    root = QUEUE.parent
+    try:
+        ps = subprocess.run(["ps", "ax", "-o", "command="],
+                            capture_output=True, text=True, timeout=10).stdout
+    except Exception:
+        print("\nLOCAL RUNS: BLIND — cannot read the process table. "
+              "NOT the same as idle; do not conclude the cores are free.")
+        return
+    shards = [l for l in ps.splitlines() if "overnight.sh " in l and "grep" not in l]
+    filler = [l for l in ps.splitlines() if "corefill.sh" in l and "grep" not in l]
+    out = root / "scratchpad" / "overnight"
+    rows = 0
+    if out.is_dir():
+        for f in out.glob("*.tsv"):
+            try:
+                rows += max(0, sum(1 for _ in f.open()) - 1)
+            except Exception:
+                pass
+    print()
+    print(f"LOCAL RUNS: {len(shards)} shard(s) running, {rows} rows on disk, "
+          f"filler {'UP' if filler else 'DOWN'}")
+    if filler or shards:
+        print("   STATUS:  zsh tools/corefill_status.sh          <- start here")
+        print("   ADD:     append a line to scratchpad/corefill_work.txt")
+        print("   CANCEL:  touch scratchpad/corefill_cancel/<SHARD>   (rows are KEPT)")
+        print("   PAUSE:   touch scratchpad/COREFILL_STOP")
+        print("   READ:    .venv/bin/python tools/overnight_read.py --dir scratchpad/overnight")
+    if not filler and not shards:
+        print("   *** NOTHING IS RUNNING LOCALLY. `ALWAYS_BE_RUNNING: yes` says that")
+        print("       is a DEFECT. Start work from the queue above:")
+        print("       zsh tools/corefill.sh scratchpad/corefill_work.txt 8 8")
 
 
 if __name__ == "__main__":
