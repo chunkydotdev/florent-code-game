@@ -36457,3 +36457,86 @@ section did for its first eleven minutes, and this lane caught it then.**
 ⇒ **The propagation chain is complete and correct: coordination note → the tool
 every prereg runs → the machine-readable field.** Recorded so a successor does
 not re-check it.
+
+---
+
+# 2026-08-11 ~21:2xZ — **BUILDER s32 WRAP: PROCESS DELTAS**
+
+⚠ **I did not append these as I went. That omission is delta zero** — they are
+reconstructed from commits, which is exactly the reconstruction the rule exists
+to avoid.
+
+## D80 — ⛔⛔ A GUARD IS NOT DONE WHEN IT PASSES. **FOUR MORE FIRED TODAY, AND ONE WAS THE STOP-LOSS ON THE BOT WE SHIPPED.**
+s31 recorded five guards that could not fire. **s32 produced four more:**
+1. **`breakin_watch` counted TAPE ROWS as matches** (`k = len(mine)`). The logger
+   polls every 5 min, so a fresh ship "reached k=8" in **forty minutes** and the
+   guard **stood down** — announced live on v114 while the platform said 768→770,
+   **k was 2, and the rating had already fallen 1689→1677.** Its alert also
+   carried `activate 102` — **two ships stale.**
+2. **`overnight_watch` restarted NINE COMPLETED shards from zero** because their
+   outputs were archived out from under it: a completed-and-archived run and a
+   never-started run were **byte-identical** to it.
+3. **My monotonicity fix could not catch the case that actually happened** — the
+   high-water mark is per-process, so a FRESH watchdog pointed at an archived run
+   still restarts the world. Closed with a startup refusal.
+4. **My own LOKI-30 primary bar — "zero timeout-attributable unit losses" — had
+   no corresponding event.** A CPU timeout costs a TURN, never a UNIT
+   (`CLAUDE.md:13`, `:430`). It reads zero for a healthy bot and zero for one
+   timing out every turn, **and I made it the clause that GATES the leg.**
+⇒ **Nine guards in two sessions. This is not a streak, it is the base rate.**
+**The operational form: before writing a bar, name the EVENT it reads and check
+the engine emits it.**
+
+## D81 — ⭐ A WORKAROUND IS A FIX WITH ITS BLAST RADIUS SET TO ONE CALLER
+`overnight.sh` hardcodes `OUT=`. I found that, **worked around it in my launcher**,
+and 90 minutes later wrote a watchdog fixture isolated by `OUT=` — which
+`overnight_watch.sh` also hardcodes. **The fixture ran against the LIVE run**,
+created files beside five live shards and launched a stray shard. Harmless only
+because its bots did not exist. **The workaround protected the launcher and left
+the next caller exposed; the next caller was me.** Both now `${OUT:-…}`, which is
+also **what makes the guards testable at all** — a guard that cannot be exercised
+in isolation cannot be driven to both verdicts.
+
+## D82 — ⛔ A DIRECTIVE LANDS IN THE ENFORCING SURFACE FIRST, THE PROSE SECOND
+**Four propagation failures in one session** (`PLAY_DEFENCE` absent from
+`CLAUDE.md`/`AGENTS.md` for 3 h · the queue rule absent from `PROGRAMME.md` and
+all three command files · the tactics SEED carrying a retired rule · the 1650
+targeting floor in one note and **zero** enforcing surfaces).
+**And `corefill` was the fifth, mine, caught by Magnus asking "will the next
+session know how to use it?"** — 6 mentions in `HANDOVER.md`, **0 in every file a
+lane boots from.** Verbatim the s31 finding about `QUEUE.md`, one session later.
+⇒ **Fixed via the ladder that already worked: the SessionStart hook already runs
+`queue_check.py` in every lane, so the banner went THERE** — no settings change,
+harness-executed, cannot be forgotten. **It reports STATE (shards, rows, filler
+up/down) and distinguishes BLIND from IDLE**, because reporting an unreadable
+process table as "nothing running" would send a successor to start a second
+programme on top of a live one.
+
+## D83 — ⭐⭐ OUR ARCHIVE CANNOT GRADE OUR OWN SHIPS. IT IS UNIDENTIFIED, NOT UNDERPOWERED.
+Cross-tabulating OUR version × THEIR version: **every modern bot we own has met
+ONLY The Bisons' v4; every bot of ours that beat them met ONLY v1–v3.**
+Focalground: v104 met only their v10, v112 only their v11. ⇒ *"we regressed"* and
+*"their v4 is better"* **fit 120 games identically, at any n.**
+⇒ **A within-window multi-arm unrated leg is the ONLY design that separates
+them** — and that, not the map question, is what makes such a leg worth a window.
+**And it is accelerating: SmartFridge shipped v28→v35 in seventy minutes.**
+
+## D84 — A KILL IS ONLY AS GOOD AS THE n IT WAS READ AT, AND WE HAVE NOT BEEN CHECKING
+**v114 is a plank we DECLARED DEAD.** Its mechanism falsifier was resolved at
+**n=25** on a statistic `HANDOVER:352` sizes at **~880 games** — *twelve lines
+later in the same paragraph*. Its own `PREREG-loki25` sized the CURRENCY screen at
+**4,096**, said **"IT IS LAUNCHED"**, and **1,024 were delivered** — the n that
+prereg says *cannot ever settle it*.
+⇒ **The standing rule says a plank may die on a failed MECHANISM bar but NEVER on
+an underpowered win rate. This died on an UNDERPOWERED MECHANISM BAR — the same
+error one level over, and the rule does not cover it.**
+⇒ **`QUEUE.md` #15 asks how much of our battery history has an effective n nobody
+computed. D84 says the same question applies to our KILLS.**
+
+## D85 — THE INSTRUMENT THAT SHIPPED THE BOT WAS BUILT BY A FLAG AGAINST IT
+The side lane flagged my primary bar as unable to fail; the replacement — the
+wire's own `tled` boolean, with v112 as an instrument control carrying a
+**published prior of 0.00%** — became **the gate that made the ship defensible**
+(0 TLE'd / 13,457 turns, mean CPU 485 µs vs 522 µs). **A flag raised two hours
+before a ship turned into the ship's evidence.** Worth recording because the
+cheap read of an adversarial flag is that it costs time.
