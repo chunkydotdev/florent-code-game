@@ -140,3 +140,61 @@ reason to keep asking.
 session's numbers set no norm — Q3's "three" and Q4's "3 of 8" are datapoints,
 not thresholds, and **v2 should not treat them as targets until a second run
 exists to compare against.**
+
+---
+
+## ⭐ v1.1 — **ROUTING: WHERE A FINDING GOES, WITHOUT WHICH THIS FILE IS THE TACTICS LIBRARY**
+
+**Seeded by an incident in this instrument's OWN FIRST FIRING (s29), found when
+Magnus asked "how do you handle actionable items from the retro?" — and the
+answer was that nothing handled them.**
+
+**THE DEFECT, measured on instance s29:** the retro produced three findings.
+**One survived, and by luck** — per-artefact consumption happened to be written
+into the WRAP as well, and the wrap's home (`coordination.md`) IS in the boot
+sequence. **The other two died in the instance:** *"the output I would not
+produce again is the sweep as one document"* and *"Q4 moved because I ran a
+second instrument over my own claim, not because I was careful."*
+
+**`docs/side-lane-retro.md` and its instances are NOT in `.claude/commands/sidelane.md`'s
+boot path.** So a finding that stops here is unread by construction — **which is
+exactly what this instrument's own premise condemns** (*"a cut nobody reads is
+not neutral, it is a debit"*) and exactly the failure the tactics library died
+of: 252 files, decision-path citation rate zero.
+
+**⇒ EVERY FINDING IS ROUTED AT WRITE TIME, OR IT IS NOT A FINDING:**
+
+| kind | route | test that it landed |
+|---|---|---|
+| **behaviour change** for the next session | **promote to `PROGRAMME-drift-watch-2026-08-09.md`** — that file IS booted | a successor reading only the boot path would act differently |
+| **instrument change** (a question is blunt, missing, or dead) | **a version bump here**, per the rules above | the CHANGELOG names the incident |
+| **a flag that should become a script** | **route to the builder AND a dated spec under `docs/research/`** | a `tools/` commit cites it |
+| **observation only** | stays in the instance, **and is labelled `OBSERVATION — NOT ROUTED`** | nothing; this is the honest bucket |
+
+**AN ITEM WITH NO ROUTE IS AN OBSERVATION, NOT AN ACTION, AND MUST SAY SO.**
+The failure mode this closes is the comfortable one: writing *"next time I
+will…"* in a document the next session never opens, which reads as
+self-improvement and costs nothing to write.
+
+**STANDING ASK, outside this lane's write surface:** `.claude/commands/sidelane.md`
+should name the retro in the boot sequence. **This lane may not edit that file
+— so until it does, ROUTING is the only mechanism, and it is the reason this
+bump exists.**
+
+## CHANGELOG — v1.1
+
+**v1.1 — 2026-08-11 (MINOR: adds the routing rule, records firing 1).**
+* **FIRINGS: 1. SUNSET CLAUSE NOT TRIGGERED** — every question produced
+  something on instance s29 (`docs/retro-side-lane-2026-08-11-s29.md`).
+* **Q4 moved off zero for the first time: 4 of 5 self-caught, against s28's 0 of
+  8** — and the recorded mechanism is **running a second instrument over my own
+  claim**, not diligence.
+* **Q1 produced the finding the WRAP missed entirely: consumption is
+  PER-ARTEFACT, not per-lane.** Every single-flag message was actioned within
+  minutes; the six-finding sweep was consumed **2 of 6**, and the two left open
+  were the LIVE defects.
+* **Q3 came back FLAT (three published inferences, same as s28). That is the
+  answer, not a failure of the question** — and one of the three was a flag
+  alleging a units error while committing one.
+* **The routing rule above is itself Q8 applied to this file:** the instrument
+  asks whether flags became scripts, and had no mechanism for its own output.
