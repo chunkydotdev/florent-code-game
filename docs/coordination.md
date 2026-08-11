@@ -31112,3 +31112,71 @@ of publishing discipline.** Recorded because retractions-reaching-a-lane went
 **3 (s28) → 4 (s29)** and it is the number that got worse.
 **And one of mine, same standard: I told a lane v108 had played 5 unrated
 matches. It played 10.** HANDOVER was correct; the wrap MESSAGE was not.
+
+# ============================================================================
+# 2026-08-11 06:01Z (`date`) — **REBOOT STATE — SIDE LANE (s29, safe to reboot)**
+# Wrap and retro already landed (193f2a1 · 27bc436 · 3821770 · 250bc42).
+# This block is what a successor BOOTS FROM.
+# ============================================================================
+
+## SUCCESSOR: DO THESE FIRST
+1. **RE-ARM THE ALL-COMMITS DRIFT WATCH. It dies with this session** — it is a
+   `Monitor`, not a daemon, and nothing else watches commits. **Selftest it in
+   THREE directions before trusting its silence:** seeded N commits back → N
+   events · seeded at HEAD → 0 · repo path broken → it must ANNOUNCE its own
+   blindness rather than go quiet. (s29 script:
+   `scratchpad/drift_watch_s29.sh` pattern; rebuild, do not assume.)
+2. **Verify the detached monitors BY OUTPUT, not by `ps`** — they are
+   builder-owned; you verify, you do not re-arm.
+3. **Read `docs/side-lane-retro.md` (now step 7 of your boot, wired 2026-08-11)
+   and carry its OPEN items in.** Routing rule applies: a finding is routed at
+   write time or it is an `OBSERVATION — NOT ROUTED`.
+
+## LIVE STATE — VERIFIED 06:01Z, NOT ASSERTED
+* git **0 ahead / 0 behind**, tree clean but for daemon-owned state.
+* **v104 · rating 1689 · k=83 · holder `v104 (Loki v2)`.** `ship_watch` row
+  **07:59:51 CEST = 05:59:51Z (~90 s old)**; `elo_history` newest **05:58Z**.
+  **Both fresh in the DATA sense — the two-freshness check passes.**
+  **⚠ BOTH TAPES STAMP LOCAL CEST WITH NO ZONE MARKER.** Read naively as UTC
+  they report a row from the FUTURE, which makes stale data look live.
+* Monitors alive: keeper **89444** · ship_watch **65188** · match_watcher
+  **25942** · opp_watcher **25943**. `breakin_watch` is DOWN **and that is
+  CORRECT** — it exits by design at k>=8 and v104 is at 83. Re-arm before the
+  next real SHIP, not before an unrated leg.
+* **Boot suite: 34/34 OK.** `claim_check` clean, `delta_status` selftest green.
+
+## OPEN ITEMS — PRIORITY ORDER
+1. **`tools/freshness.py` EXISTS, IS SELFTESTED (10 cases, mutation-verified by
+   this lane), AND IS WIRED INTO NOTHING.** Four call sites. Until then
+   **`audit_trigger` is suppressing its own FIRE on every builder boot**
+   (52 docs / 21 decision rows where the rows are >=34 h old; same-window it is
+   52/0 → TRIP, and with ship cadence that is **2/5 = FIRE**), and
+   **`oppver_window` certifies D18 CLEAN off a stale tape.** Highest value left.
+2. **LOKI-19 read-out pending.** n reached: **100 games, 50 control / 50
+   treatment, four interleaved windows.** **Gate 5a-bis (arrival, control arm,
+   PER CELL) decides whether the leg may speak about the premise at all** — on
+   archive figures only farming_200s and Landers clear >30%; SmartFridge reads
+   **7.6% on n=512**. **Two runners, one leg** (window 1 = `loki19_treat_w1.sh`,
+   windows 2+ = `unrated_run.sh`) — say so in the read-out.
+3. **Sweep findings F3 and F4 still open** (`map_admits`'s geometry control
+   never calls `map_facts`; `breakin_watch`'s selftest verifies a private copy;
+   `ship_watch` has no freshness assertion at all).
+   `docs/research/SWEEP-green-selftests-2026-08-11.md`.
+4. **`SPEC-mutation-harness-2026-08-11.md` is written and UNBUILT** — six
+   acceptance fixtures with known answers; **the signature is 5 BLIND / 1
+   CAUGHT.** Anything else means the harness is wrong.
+5. **`delta_status` honest count is 7 enforced / 3 referenced / 7 prose-only.**
+   **Prose-only is a legitimate verdict — triage it, do not drive it to zero.**
+
+## WHAT THIS LANE LEARNED THAT CHANGES HOW YOU WORK
+**A check only checks once something forces it to produce an answer it could get
+wrong** (drift-watch standing note, four instances). **Consumption is
+PER-ARTEFACT** — ship LIVE findings as their own message; a six-item document
+loses its live items. **And the thing that moved this lane's own error-catch rate
+from 0/8 to 4/5 was running a SECOND INSTRUMENT over my own claim**, not care.
+
+## BOOT POINTER
+`.claude/commands/sidelane.md` (now names the retro at step 7) → `PROGRAMME.md`
+→ this block + notes since → `PROGRAMME-drift-watch-2026-08-09.md` (**read the
+UNIFIER first**; D1–D18 + enforcement ledger + s29 standing notes) → the
+obligations doc → `docs/side-lane-retro.md`.
