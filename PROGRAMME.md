@@ -20,6 +20,8 @@ successor session inherit it. The fields below are parsed; the prose is not.
     DEFENCE_ADMISSION_BAR: kill_round_non_regression
     FIXTURE_OF_RECORD: live_unrated
     ALWAYS_BE_RUNNING: yes
+    QUEUE_FLOOR: 3
+    QUEUE_OWNER: research
 
 ## ⭐⭐⭐ CORE VALUE, MAGNUS, 2026-08-11 (s31) — **ALWAYS BE RUNNING.**
 
@@ -66,6 +68,36 @@ that cannot tell it is blind is this repo's most-repeated defect.
 **RESEARCH keeps `QUEUE.md` stocked** (their monitor fires when it runs low);
 **BUILDER keeps the CORES BUSY** (this monitor fires when they go quiet).
 **An empty queue is a research failure; idle cores are a builder failure.**
+
+## QUEUE_FLOOR / QUEUE_OWNER — added 2026-08-11 (s31) on Magnus's direct instruction
+
+> *"you need to be constantly putting experiments to test, there should be a queue
+> with ideas to build, the researcher will be responsible to make sure there are
+> ideas to build"* … *"if the queue runs empty we go stale, that is not acceptable."*
+
+**`QUEUE_FLOOR: 3`** — `QUEUE.md` must hold at least three items the builder can
+**start today**. Unblocked means **no research number is owed**; an item gated on a
+running cut does not count. **`QUEUE_OWNER: research`** — an empty queue is a
+**research failure, not a builder pause.**
+
+**⛔ THESE FIELDS EXIST BECAUSE THE DIRECTIVE AND ITS ALARM LIVED NOWHERE A LANE
+BOOTS.** Audited the same day: `QUEUE.md` and `queue_check` appeared **0 times** in
+this file, **0** in all three `.claude/commands/*.md`, **0** in `CLAUDE.md`, and
+`gate.py` read no queue field. **Found by Magnus asking whether the programme carried
+a line about it.** The s29 retro finding — a rule promoted into a file nobody opens —
+committed by the lane that wrote the routing rule about it.
+
+**ENFORCEMENT, strongest first:** a **`SessionStart` hook** runs
+`tools/queue_check.py` in every lane (harness-executed, so it cannot be forgotten) ·
+boot steps in all three command files · the **`GREP:` admission gate** — a row counts
+only if it names what was checked in the incumbent and what was found · and these
+fields, so `gate.py` can read the floor rather than have it live only inside the tool.
+
+**⚠ THE FLOOR IS A TARGET AND TARGETS GET MET.** Its author stocked the queue to six
+items at 13:27 and three had died on checks that had not yet run by 13:51 — **the
+alarm reproduced the failure it was built to catch.** That is why admission requires
+the grep, and why **an honest 3 that FIRES beats a padded 6 that cannot.** A successor
+raising this floor should raise generation, not admission.
 
 ## ⭐⭐ DIRECTIVE, MAGNUS, 2026-08-11 — **"WIN RATE DECIDES."** GIVEN DIRECTLY TO THE BUILDER, NOT RELAYED.
 
