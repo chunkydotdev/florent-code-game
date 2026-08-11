@@ -36285,3 +36285,61 @@ safe direction and the tool took it.** Worth one look — the alternative readin
 It read *"v104 standing down"* — **history wearing the costume of a fresh
 verdict**, now armed. **The two-freshness rule catching a MONITOR rather than a
 document, and the fourth stale-surface find today.**
+
+# ============================================================================
+# 2026-08-11T20:3xZ — ⛔⛔ **RESEARCH RETRACTS THE KIDNAP CLOSURE. CORRECTING THE
+# ESTIMATOR REVERSES THE SIGN.** Plus a STANDING TARGETING CONSTRAINT from Magnus.
+# ============================================================================
+**⛔ MAGNUS, DIRECT, 2026-08-11 — STANDING AND APPLIES TO EVERY LIVE LEG:
+"Don't fire on targets below 1650 ELO."**
+Against `target_value.py --band` at our ~1669 that leaves **12 admissible targets**:
+Leviathan 1793 · HTTP 418 1782 · Big O 1758 · 0033 1732 · SmartFridge 1710 ·
+The Bisons 1710 · team lazy 1705 · Focalground 1704 · arsonist duck 1701 ·
+Coreflood 1698 · Landers 1672 · Besvikomat 1667.
+**EXCLUDED by the rule:** Askar City 1632 · LingLing40 1632 · diverge 1630 ·
+gsxWins 1592. **This is a floor on the TARGET, not on the payoff** — it is stricter
+than the reachability gate and it supersedes it where they disagree.
+
+## THE RETRACTION
+**I published "the displacement channel is dead" ~40 minutes ago. It was computed
+on a biased estimator. The SIDE LANE flagged the bias; I confirmed it against my
+own result; correcting it FLIPS THE SIGN.**
+
+**IMMORTAL-TIME BIAS.** A victim must be **ALIVE at round R to be thrown**, and
+*"alive"* includes *"has not yet been removed undamaged"* — **which is the
+outcome.** So the thrown arm was conditioned on not having crashed while controls
+were clocked from **birth** and were not: **the thrown group was depleted of
+crash-prone bots BY CONSTRUCTION, in exactly the direction of my finding.** The
+outcome was also a **lifetime** property, so a victim's whole pre-throw life sat
+inside the window during which the throw cannot have caused anything.
+
+| estimator | THROWN | CONTROL | delta |
+|---|---|---|---|
+| naive (**what I published**) | 5/3,724 = 0.134% | 10/4,668 = 0.214% | **−0.080pp** |
+| **risk-set (correct)** | **17/3,844 = 0.442%** | **13/7,341 = 0.177%** | **+0.265pp** |
+
+**95% CI [+0.034, +0.496]pp · z = 2.25 · ratio 2.50×.**
+⇒ **THE DISPLACEMENT CHANNEL IS NOT CLOSED. It is WEAKLY POSITIVE.**
+⚠ **AND NOT CONFIRMED: 17 and 13 events**, an interval nearly touching zero, and
+`no_damage_removal` still conflates an uncaught exception with `self_destruct()`.
+**A prioritising signal, not a result.**
+
+**⭐ MY SELFTEST COULD NOT HAVE CAUGHT THIS AND THAT IS THE LESSON.** Every fixture
+row carried **identical timing in both arms**, so exposure and selection were equal
+**by construction**. It asserted the estimator *separates an effect from no effect*
+— which it did — and never that it is **unbiased when the arms differ in
+exposure**, which is the clause the closure rested on. **The clause no assertion
+touches is where the defect was.** The selftest now drives it: a true-effect-ZERO
+fixture reads **−50.00pp naive, +0.00pp risk-set** — the estimator that produced
+the retracted number **fails a test the shipped one passes.**
+
+**SURVIVES UNCHANGED:** the **2.62% structural bound** (360 of 13,743 enemy-builder
+removals are no-damage at all), and the scope — **all 9,372 archived throws are
+`EXILE`, so the BORDER-THROW mechanism is still untested.** **QUEUE #17's local
+both-ways drive is now MORE valuable, not less.**
+
+**PROCESS, second instance today:** a number crossed out of a research document
+into `QUEUE.md` as a **closure** within minutes, and the defect was in the
+**estimator**, not the arithmetic — which controls, selftests and matched strata
+were not built to see. **A closure deserves a harder read than a finding and I
+gave it the same one.**
