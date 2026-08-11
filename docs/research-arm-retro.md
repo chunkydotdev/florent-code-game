@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.4** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.5** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -422,3 +422,101 @@ which three died on checks that had not yet run. **The alarm reproduced the exac
 failure it was built to catch.** The GREP admission gate is the repair; the lesson is
 that **an instrument whose output is a number the author is judged on must be
 designed against its own author.**
+
+---
+
+# s32 RUN — 2026-08-11, wrap at 21:1xZ. **v1.4 → v1.5.**
+
+**FIRINGS THIS SESSION: 2.** (The sunset clause needs two successive retros with
+zero. This is not one of them.)
+
+## FIRING 1 — ⭐ Q4 FIRED ON MY OWN WORK FOR THE FIRST TIME
+Q4 asks whether any of my own checks caught my own errors. **It has read ZERO all
+week.** Today it read **two**, and the mechanism was the same both times: **a
+POSITIVE CONTROL returned 0.**
+Verifying sweep 24's headline I ran my greps against **the wrong corpus** (a
+scratchpad dated Aug 10, RoboCup/ICAPS PDFs). Every phrasing returned 0 — **which
+looked exactly like confirming the negative.** On the right corpus my harness broke
+differently (an unquoted file list passed 41 newline-separated paths as one
+argument); every grep errored and `ZERO HITS ON ALL 20 PHRASINGS` printed anyway.
+**`enemy` cannot be absent from 166k words of Battlecode postmortems, so a 0 there
+is a statement about the INSTRUMENT.** Two false "verified absences" in five
+minutes, both caught, neither published.
+**ROUTE: behaviour change → already promoted into `docs/coordination.md` (booted).
+The general form belongs in the tactics method block and is there:** *run the
+positive control in the SAME command as the real grep.*
+
+## FIRING 2 — ⛔ Q-NEW: **A CLOSURE DESERVES A HARDER READ THAN A FINDING, AND I GAVE IT THE SAME ONE**
+I published *"the displacement channel is dead"* into `QUEUE.md` **within minutes**
+of computing it. The side lane found **immortal-time bias** — a victim must be
+alive at round R to be thrown, and *"alive"* includes *"has not yet been removed
+undamaged"*, **which is the outcome**. Correcting it with risk-set matching
+**REVERSED THE SIGN**: −0.080pp → **+0.265pp**, CI [+0.034, +0.496], ratio 2.50×.
+**My selftest could not have caught it: every fixture row had identical timing in
+both arms, so exposure and selection were equal BY CONSTRUCTION.** It asserted the
+estimator *separates an effect from no effect* — true, and not the clause the
+closure rested on. **The clause no assertion touches is where the defect was.**
+**ROUTE: NEW QUESTION 7 BELOW (a version bump), plus the retraction promoted into
+`coordination.md`, `QUEUE.md` #5 and the SPEC.**
+
+## THE SIX QUESTIONS
+
+**1. CONSUMPTION.** Cuts/relays this session and what each did:
+* **sign-error correction** → **CONSUMED**, reached the builder before the
+  read-out; it decided whether Amendment 1's *"stop screening for the week"* bar
+  fired. Highest-value item of the day.
+* **D79 third instance (tactics seed)** → **CONSUMED**, fixed; verified downstream
+  by the side lane on sweep 25's output (bar present where load-bearing, absent
+  where noise).
+* **caveat pass, 12 files** → **CONSUMED**, produced QUEUE #14's second arm.
+* **sweeps 24 + 25** → **PARTIALLY CONSUMED**: produced QUEUE #16 and #17. **But 61
+  tactics files in 24h bought 2 citations and 0 built arms**, which is why the
+  sweeps are stopped.
+* **kidnap reader** → **CONSUMED then RETRACTED then re-consumed** as a
+  prioritising signal.
+* **`cite_check`, `kidnap_fate`, `border_defect_scan`, `target_value` floor** →
+  instruments, not cuts. **`border_defect_scan` is UNRUN — a debit I am naming.**
+
+**2. LATENCY.** The sign correction beat the read-out by ~20 minutes and **changed
+what the bar did**. The retraction landed ~40 minutes after its own closure — **late
+enough that the closure was already in `QUEUE.md`**, which is exactly the cost
+Firing 2 is about. Everything else was pre-decision.
+
+**3. RELAY FIDELITY.** Re-read: my relay of sweep 25's *"most buildable item"*.
+The agent said *"NO NEW STORE SLOT NEEDED"*; I checked the tree, found **the store
+is 16/16 full**, sized the exposure at **≤5.24%** of our side-games, and found the
+proposed fix **unsound** (vision-scoped `live` substituted for a global mark).
+**I did not pass the agent's framing through.** ✅ — and it is the first relay this
+week where I caught the compression before it left.
+
+**4. OWN CHECKS ON OWN WORK.** **TWO (see Firing 1).** Previous: zero.
+**But both of my sign/bias errors were caught by the SIDE LANE, not by me** — so
+the honest score is: my checks catch my *instruments*, my peers catch my
+*inferences*.
+
+**5. WHAT I DECLINED.** **Heal-idle staffing — declined, and it was right.** The
+doctrine change reopened it; the admission grep found `_heal_core`,
+`_heal_adjacent`, `heal_seats` and the `SLOT_UNDER` latch already shipped. **The
+grep ran BEFORE the item counted, so it never became an item.** Also declined:
+quoting a target list from `border_defect_scan` before driving it both ways.
+
+**6. PER LANE.**
+* **BUILDER** — got the sign correction before the read-out, QUEUE #16/#17 with
+  greps run, the crash-weapon design, and the 1650 floor wired into the gate they
+  must run. **Survived.**
+* **SIDE LANE** — got re-derivable primaries every time; they re-derived my
+  version-strength numbers and **found two defects I had missed**. That is the
+  protocol working in the direction that costs me something.
+* **MAGNUS** — one withdrawn finding (`ship_cadence` counts rollbacks as ships,
+  so *"decisions per hour has fallen"* was unsupported) and one retraction. Both
+  surfaced by me, unprompted.
+
+## ⭐ NEW QUESTION 7 — added v1.5 on the incident above
+**7. DID ANYTHING I PUBLISHED THIS SESSION CLOSE A ROAD? IF SO, WHAT WOULD HAVE
+HAD TO BE TRUE FOR IT TO BE WRONG, AND DID ANY ASSERTION TOUCH THAT?**
+*Incident (s32): the kidnap closure. Every control passed, the selftest passed, the
+strata were matched — and the defect was in the ESTIMATOR'S SELECTION, which no
+assertion touched. Name the quantity in one sentence, then ask which clause each
+assertion covers. **The uncovered clause is where the defect will be.***
+**A CLOSURE IS NOT A FINDING WITH A STRONGER ADJECTIVE. It removes a road from the
+queue, so it must survive a harder read than the finding that motivated it.**
