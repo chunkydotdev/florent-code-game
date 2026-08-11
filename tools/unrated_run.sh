@@ -1,0 +1,196 @@
+#!/bin/zsh
+# UNRATED RUN — queue N unrated games for a prototype, protect the ladder, report
+# every game, exit clean when N is reached.
+#
+#   tools/unrated_run.sh <version> <games> [opponent_id ...]
+#   tools/unrated_run.sh 108 50
+#   tools/unrated_run.sh 108 25 eceb8455-... b2deaacd-...
+#
+# Spec, Magnus 2026-08-11: "take the number of games we want to play and the id of
+# the bot we want to run, switch back to the main bot after runs are queued so the
+# ladder isn't damaged, report back every game that is run with progress, exit
+# cleanly when the amount of games you want has been done."
+#
+# ===== EVERY GUARD BELOW IS AN INCIDENT, NOT A PRECAUTION =====
+#
+# 1. SUBMITTING IS SHIPPING. `fcode submit` AUTO-ACTIVATES what it uploads. This
+#    runner therefore takes an ALREADY-SUBMITTED version number and never submits.
+#    (s29: a submit put an unmeasured prototype on the rated ladder instantly.)
+#
+# 2. THE OUTFILE MUST BE `scratchpad/arm_*.txt`. `tools/rate_budget.py` attributes
+#    our spend by globbing exactly that — the platform supplies no actor field, so
+#    the glob IS the contract. (s29: a hand-rolled runner wrote `loki19_ctrl_w1.txt`,
+#    the meter could not attribute five challenges, reported "a slot is free NOW"
+#    into a spent window, and the next window came back 0/5 rejected.)
+#
+# 3. GATE ON THE `Active bot:` LINE, NEVER ON `$?`. `fcode status` exits 0 while
+#    printing `Error: True`, and `fcode match list` exits 1 on a healthy list.
+#
+# 4. THE LADDER PAIRS ON A CLOCK. Pairings land on a fixed second-of-20-minutes
+#    (observed `:12:59`/`:32:59`/`:52:59`, 55 of 60 matches). The prototype is live
+#    for ~20 seconds, so firing just after a pairing gives ~19 minutes of clear
+#    air. THE OFFSET IS DERIVED FROM RECENT ROWS, NEVER HARDCODED — it has shifted
+#    at least once inside an 18-hour span.
+#
+# 5. REJECTED ATTEMPTS COUNT AGAINST THE RATE LIMIT and create no match, so they
+#    are invisible to the meter. The meter is a LOWER bound; we pace off it and
+#    still treat a rejection as spend.
+#
+# 6. ROLLBACK IS VERIFIED, RETRIED, AND ITS FAILURE IS LOUD. Two prior sessions
+#    left a non-incumbent live.
+set -u
+cd /Users/junghard/Projects/Work/florent-code-game
+
+VER=${1:?usage: unrated_run.sh <version> <games> [opponent_id ...]}
+WANT=${2:?usage: unrated_run.sh <version> <games> [opponent_id ...]}
+shift 2
+CELLS=("$@")
+if [ ${#CELLS[@]} -eq 0 ]; then
+  # PANEL-3 admitted cells + Landers. Named here so a bare invocation is
+  # reproducible rather than depending on what the caller remembered.
+  CELLS=(eceb8455-7cb3-442b-ba40-c6597c16b446   # Lunds Stallions
+         b2deaacd-08ad-4c14-b97b-b4f382d82ea3   # Askar City
+         7fd91e77-812c-44da-bce7-457be94d2548   # Powered by SmartFridge
+         25288fdb-f3a0-4ae2-964f-2fd7eb9b11d7   # farming_200s
+         b538e523-2250-4c1d-b718-e73b77ebad55)  # Landers
+fi
+
+MAIN=${MAIN:-104}                # the incumbent to return the ladder to
+GAMES_PER=5                      # a challenge is 5 games
+GUARD_S=${GUARD_S:-150}          # keep this clear of the next pairing
+STAMP=$(date -u +%Y%m%dT%H%M%SZ)
+OUT=scratchpad/arm_unrated_v${VER}_${STAMP}.txt      # MUST match arm_*.txt (guard 2)
+LOG=scratchpad/unrated_run_v${VER}_${STAMP}.log
+: > "$OUT"; : > "$LOG"
+
+say(){ print -r -- "$(date -u +%H:%M:%SZ) $*" | tee -a "$LOG"; }
+holder(){ .venv/bin/fcode status 2>/dev/null | grep "Active bot" | sed 's/.*Active bot: //'; }
+
+# --- guard 6: restore the incumbent, verify, and shout if it did not take ------
+restore(){
+  local tries=0 h
+  while [ $tries -lt 4 ]; do
+    .venv/bin/fcode submission activate "$MAIN" >/dev/null 2>&1
+    sleep 2
+    h=$(holder)
+    case "$h" in
+      v${MAIN}*) say "rollback confirmed: holder=$h"; return 0 ;;
+    esac
+    tries=$((tries+1)); say "rollback attempt $tries did not take (holder='$h'), retrying"
+    sleep 3
+  done
+  say "*** ROLLBACK FAILED after 4 tries. HOLDER='$h'. THE LADDER IS RUNNING THE"
+  say "*** WRONG BOT. Fix by hand NOW: .venv/bin/fcode submission activate $MAIN"
+  print -r -- "$(date -u +%H:%M:%SZ) rollback failed, holder=$h" >> corpus/HOLDER_ALERT
+  return 1
+}
+trap 'say "interrupted — restoring incumbent"; restore; exit 130' INT TERM
+
+# --- guard 4: seconds until safely past the next pairing -----------------------
+# Derives the offset from the last few ladder pairings instead of assuming it.
+secs_to_safe_gap(){
+  .venv/bin/fcode match list --mine --type ladder --json --limit 8 2>/dev/null \
+  | .venv/bin/python -c '
+import json,sys,re
+from datetime import datetime,timezone,timedelta
+try:
+    d=json.load(sys.stdin)
+except Exception:
+    print(0); raise SystemExit          # unreadable -> do not block, guard 3 style
+rows=d if isinstance(d,list) else d.get("matches",d.get("data",[]))
+ts=[]
+for m in rows:
+    c=m.get("createdAt")
+    if c:
+        try: ts.append(datetime.fromisoformat(c.replace("Z","+00:00")))
+        except ValueError: pass
+if len(ts)<3: print(0); raise SystemExit
+ts.sort(reverse=True)
+last=ts[0]
+# period from consecutive gaps, snapped to the nearest minute; falls back to 1200
+gaps=[(ts[i]-ts[i+1]).total_seconds() for i in range(min(4,len(ts)-1))]
+gaps=[g for g in gaps if 300<=g<=3600]
+period=min(gaps) if gaps else 1200
+now=datetime.now(timezone.utc)
+nxt=last
+while nxt<=now: nxt=nxt+timedelta(seconds=period)
+print(int((nxt-now).total_seconds()))
+' 2>/dev/null || echo 0
+}
+
+say "UNRATED RUN  version=v$VER  target=$WANT games  incumbent=v$MAIN"
+say "cells=${#CELLS[@]}  outfile=$OUT   (arm_*.txt so rate_budget can attribute it)"
+
+h=$(holder)
+case "$h" in
+  v${MAIN}*) say "holder before: $h" ;;
+  *) say "ABORT: expected incumbent v$MAIN, holder is '$h'. Firing nothing."; exit 1 ;;
+esac
+
+done_games=0; fired=0; rejected=0; ci=0; cycle=0
+while [ $done_games -lt $WANT ]; do
+  cycle=$((cycle+1))
+
+  # guard 5: pace off the meter, which is a LOWER bound
+  w=$(.venv/bin/python tools/rate_budget.py --wait 2>/dev/null || echo 1200)
+  if [ "${w:-0}" -gt 0 ]; then
+    say "rate: waiting ${w}s for a slot"
+    sleep "$w"
+  fi
+
+  # guard 4: do not hold the prototype live across a pairing
+  g=$(secs_to_safe_gap)
+  if [ "${g:-0}" -gt 0 ] && [ "${g:-0}" -lt $GUARD_S ]; then
+    say "pairing in ${g}s — waiting past it before activating"
+    sleep $((g+15))
+  fi
+
+  remaining=$(( (WANT - done_games + GAMES_PER - 1) / GAMES_PER ))
+  n_this=$(( remaining < 5 ? remaining : 5 ))
+
+  h=$(holder)
+  case "$h" in v${MAIN}*) ;; *) say "ABORT mid-run: holder='$h' not v$MAIN"; restore; exit 1;; esac
+
+  .venv/bin/fcode submission activate "$VER" >/dev/null 2>&1
+  sleep 2
+  h=$(holder)
+  case "$h" in
+    v${VER}*) say "cycle $cycle: activated $h — firing $n_this challenge(s)" ;;
+    *) say "cycle $cycle: ACTIVATE FAILED (holder='$h') — restoring, no challenges fired"
+       restore; exit 1 ;;
+  esac
+
+  got=0
+  for i in $(seq 1 $n_this); do
+    id=${CELLS[$(( ci % ${#CELLS[@]} + 1 ))]}   # zsh arrays are 1-based
+    ci=$((ci+1))                                 # rotate so drops don't bias one cell
+    r=$(.venv/bin/fcode match unrated "$id" --json 2>&1 | tr -d '\n')
+    print -r -- "$id $r" >> "$OUT"
+    case "$r" in
+      *matchId*)
+        got=$((got+1)); fired=$((fired+1))
+        done_games=$((done_games + GAMES_PER))
+        say "  queued ${id:0:8}  +${GAMES_PER} games   PROGRESS ${done_games}/${WANT}"
+        ;;
+      *)
+        rejected=$((rejected+1))
+        say "  REJECTED ${id:0:8} (counts against the limit even though no match exists)"
+        ;;
+    esac
+    sleep 2
+  done
+
+  # guard 1/6: the prototype goes back in the box the moment queuing is done
+  restore || exit 1
+  say "cycle $cycle: queued $got/$n_this   total ${done_games}/${WANT} games"
+
+  [ $done_games -ge $WANT ] && break
+  [ $got -eq 0 ] && say "no challenge accepted this cycle — will re-pace and retry"
+done
+
+say "DONE: ${done_games}/${WANT} games queued in $cycle cycle(s); $fired accepted, $rejected rejected"
+h=$(holder); say "final holder: $h"
+case "$h" in
+  v${MAIN}*) say "ladder is on the incumbent. clean exit."; exit 0 ;;
+  *) say "*** FINAL HOLDER IS NOT v$MAIN ***"; exit 1 ;;
+esac
