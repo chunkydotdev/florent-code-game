@@ -84,3 +84,58 @@ than whether forward play CORRELATES with losing.** The latter is what the data
 answers most eagerly, in the thesis's favour, and it means nothing. **The
 tautological 39.6pp split is precisely what would have been published had the frame
 been taken.**
+
+---
+
+# ADDENDUM s31 — WE DO NOT DIE RICH, SO THE TIDIEST FORM OF "THE ARMY DID NOT MATTER" IS ALSO OUT
+
+The side lane's reframe of the result above — *"not 'we threw our army away' but 'we
+had an army and it did not matter': a resource ALLOCATION failure, not an attrition
+one"* — has an obvious testable form: **are we dying with resources banked?**
+
+`corpus/econ.tsv`, our state in the band containing the core death
+(**LOSS n=1,609 · WIN n=1,815**):
+
+| quantity | LOSS median | WIN median |
+|---|---:|---:|
+| **`ti_end`** | **21** | 48 |
+| `builds` | 9 | 17 |
+| `heals` | 52 | 38 |
+| `attacks` (median 0) | mean 10.6 | mean 9.5 |
+
+**⇒ We die holding a median of 21 titanium. There is no hoard to redirect, and the
+unspent-bank version of the reframe is dead.**
+
+What survives is a **composition** difference: in the deciding band of a loss we
+**build half as much (9 vs 17) and heal more (52 vs 38)**.
+**⚠ CONFOUNDED — the deciding band sits later in losses and the bands are of unequal
+width. Do not build on this without matching on band.** Stated as an observation, not
+a finding.
+
+## ⛔ INSTRUMENT NEAR-MISS — CAUGHT PRE-PUBLICATION, AND THE REPO ALREADY KNEW
+
+The same table's **`shots` column read 0.0 in both arms**, one step from being
+reported as *"we never fire in the decisive band."*
+
+**Checked whether the column is ever nonzero first: `shots` is 0 in ALL 110,336 rows
+of `econ.tsv`, and so is `deliveries`.** *(`ti_end` 98.3% nonzero, `builds` 76.9%,
+`heals` 66.7%, `attacks` 47.3% — those are populated and the rows above stand.)*
+
+**Then grepped before claiming a discovery, and the repo already knows.**
+`tools/corpus_sanity.py` carries both columns as known-zero **with the root cause
+named** (`replay_econ.py:109 elif unum == 12: pass`) and records that `deliveries`
+was found by that same tool one run after the trap-7 fix taught it to read string
+columns. **The guard exists, it works, and it ran clean at boot.**
+
+**The transferable half — and it is not a proposal, on a five-day clock.**
+`corpus_sanity` *flags* the zero columns; nothing *prevents* a naive read of
+`econ.tsv` from treating them as measurements, which is exactly what nearly happened
+here **with the sanity tool sitting green in the same repo.** ⇒ **A constant column
+validates anything, and a guard that lives in a different tool than the data does not
+travel with the data.** A header comment in the TSV would close it; it is not worth an
+hour this week.
+
+**And the personal half:** *before asserting a capability or a history is absent,
+grep for it* is this lane's own closing rule. **It failed twice today** — the
+`h2h.sh` code path, and a four-watcher count I repeated without counting — **and
+fired correctly on the third occasion, before publication.**
