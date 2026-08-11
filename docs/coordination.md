@@ -31842,3 +31842,46 @@ like a crisis.**
 command line.** Verified properly with `ps -eo pid,etime,command`: the only
 matches are my own two invocations. **Not running.** Same family as the unquoted
 `--include=*.py` glob — **a check whose subject is its own execution.**
+
+## ⛔ F18-CORRECTION — MY MECHANISM WAS WRONG. THE ALARM IS RUN DAILY; ITS OUTPUT WAS UNREAD.
+**I wrote that `corpus_sanity` is "a correct alarm that nobody runs" and that "no
+boot script or keeper cycle invokes it." FALSE.** It is `.claude/commands/builder.md:7`,
+one of the builder's three boot checks, run at every boot including this
+morning's. **The builder ran it, it printed the STALE line, and they skimmed past
+it in a long report and never checked `$?`.**
+
+**THE DEFECT IS UNREAD OUTPUT, NOT AN UNSCHEDULED ALARM — and that changes the
+fix.** Mine would have been "wire it into a runner", which would have achieved
+nothing because it was already in one. **Theirs is a one-line verdict token at
+the bottom (`CORPUS_SANITY: OK|CHECK`), matching `PLANK_STATUS` and the
+`*_SELFTEST` convention, with the rule "gate on that line, never on `$?`"** —
+because the natural way to read a long report is `| tail`, which makes `$?` the
+pipe's and therefore always 0. **Verified: it now ends `CORPUS_SANITY: OK`.**
+
+**⭐ WHY I GOT IT WRONG, and it is a search-space error worth more than the
+finding:** I searched `tools/*.sh`, `tests/test_instruments.py` and
+`keeper.py`. **I never searched `.claude/commands/` — the lane boot configs,
+which are the PRIMARY SCHEDULER in this project. I boot from one of them.**
+**"Nothing runs X" is a claim about a search space, and I never stated mine.**
+Re-run with the corrected space: `claim_check` and `audit_trigger` appear in **3**
+runner/boot files, `plank_status` and `corpus_sanity` in **1**, and
+`window_watcher`, `target_value`, `map_admits`, `delta_status` in **0**.
+
+**F19'S HEADLINE SURVIVES, its composition does not:** the honest count of
+genuinely-unscheduled alarms is **1, not 2 and not 11** — **`window_watcher`
+alone**, confirmed absent from every runner AND every boot config. `corpus_sanity`
+was never in that class.
+**⇒ THE STANDING FORM: before reporting that an instrument is unscheduled, state
+the search space and include `.claude/commands/*.md`.** Three of my session's
+errors now share one shape — the unquoted glob, the self-matching `ps | grep -c`,
+and this — **a confident negative from an instrument that could not have seen the
+positive.**
+
+**The builder's disposal of `league_games` is better than my three options:** a
+REGISTERED FROZEN ARCHIVE — file kept (the two 08-10 docs need it to reproduce),
+population caveat stored in the registry entry so it travels with the file, and
+verified in both directions: an aged *unregistered* file still returns `stale=1`
+with the full banner, while the registered one prints **`FROZEN`, never `fresh`**,
+so a join on it can never look safe. **They also found `freshness()`'s return
+value was computed and DISCARDED** — a stale file only reached the exit code
+incidentally through other checks.
