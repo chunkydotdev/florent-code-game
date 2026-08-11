@@ -53,7 +53,16 @@ name the aggregation. Measured, 4,831 of our games:**
 | estimator | value | MDE at n=64/arm |
 |---|---:|---:|
 | **mean of per-game ratios** (what I originally implied) | 0.1541, sd 0.4007, **CV 2.60** | **129% of level** |
-| **pooled ratio** (total deaths ÷ total builds), game-resampled bootstrap | 0.1281, SE 0.0330 | **102% of level** |
+| **pooled ratio** (total deaths ÷ total builds), game-resampled bootstrap | 0.1281, **SE 0.0330 AT n=64/arm** | **102% of level** |
+
+**⚠ THE `n` ON THAT SE WAS MISSING UNTIL s31 AND ONLY ARITHMETIC PINNED IT.** As
+first published the SE was printed bare, in a row whose other column says
+`n=64`; a reader could as easily have taken it for the SE at the full 4,831
+games, which would make the ~440 below wrong by a factor of 75. It is the SE at
+**n=64/arm**, and it is forced twice over: `2.8 × √2 × 0.0330 = 0.1307 = 102%`
+of the 0.1281 level, reproducing the same row's MDE; and `64 × (0.0330/0.0126)²
+= 439`, reproducing the n below. **Self-caught, s31. A standard error without
+its n is not a standard error.**
 
 **Both are useless at n=64. The one I implied is the worse of the two.** This is
 the defect this repo logged when four defensible estimators straddled the
@@ -73,6 +82,17 @@ SE ≈ 0.0126 → **~440 games/arm, 880 total.** **A 4,096-game self-play screen
 already been run today, so 880 costs zero unrated windows.** The protected floor
 rides along in the same run.
 
+**⚠ THE VARIANCE INPUT COMES FROM A DIFFERENT POPULATION THAN THE SCREEN WILL
+RUN IN, and the reader should carry that.** SE 0.0330 was measured on **4,831 of
+our LADDER games, against a heterogeneous field**; the screen runs in
+**SELF-PLAY against one fixed opponent**. Removing opponent heterogeneity should
+*lower* per-game variance, which would make ~440/arm **conservative rather than
+optimistic** — *(INFERENCE: the direction is reasoned, not measured.)* **It
+cannot be measured from anything we have, because no local battery has retained
+replays to measure it from** — see the retraction below. ⇒ **If the screen's
+battery retains replays, read the empirical per-game sd of the pooled ratio off
+it before trusting 440.**
+
 **⚠ And one correction to a rule in circulation:** *"mechanism bars are ~160×
 cheaper"* is true of LOKI-25 (huge effect, low-variance statistic) and **NOT of
 this plank** — here the mechanism bar needs 880 games and the win rate at 880
@@ -90,8 +110,41 @@ family can buy its metric by simply going forward less.**
 floor (our current 13.91) and treat a breach as the falsifier, exactly as LOKI-25's
 5d was written and then fired.
 
-**Both quantities are already in `events.tsv`, so the read-out needs no new
-decoder and the builder's 64-game self-play harness can compute both.**
+**⛔ RETRACTED BY ITS AUTHOR, 2026-08-11 s31, BEFORE THE SCREEN WAS RUN. The
+sentence here read: *"Both quantities are already in `events.tsv`, so the
+read-out needs no new decoder and the builder's 64-game self-play harness can
+compute both."* IT IS WRONG. `events.tsv` is built from PLATFORM replays and
+says nothing about what a LOCAL battery can emit.**
+
+Verified by reading, file and line:
+* **`tools/arena.py:53` runs every match with `--replay /dev/null`** — so
+  `arena.py` and `h2h.sh` downstream of it produce **win rate and `score.py`
+  only, and zero forward quantities.**
+* **`tools/mech_battery.py` DOES retain replays** (it exists for exactly this
+  reason; `:6-7` states *"no local battery this project has ever run produced a
+  decodable replay"*) — **but its decoder reads only builder-bot deaths by round
+  band and builder-bot spawns.** No core-position read, no
+  `d2_enemy < d2_own` test, and **no position tracking**: it sets `team_of[e.id]`
+  on first sight and never updates from move events. `removeEntity` carries an
+  **id only**, so **even a DEATH cannot be classified as forward** without adding
+  that pass. It computes neither the numerator nor the denominator.
+* Its `BANDS` are `r0_99 / r100_249 / r250_499 / r500p` — **not** the doctrine
+  edges used by the band cut.
+
+**THE PARTS EXIST AND ARE DEBUGGED — this is assembly, not research.**
+`scratchpad/dwell.py::walk()` already reads both cores out of the map buffer
+(`field 4` → `(team, pos)`), tracks positions through `unum==2` move events, and
+applies the forward test to builder-rounds and to non-`builder_bot` placements.
+`tools/loki17_mech.py` already drives `fcode run --replay` directly for this
+reason (`:34-35`) and carries the traps `loki9_facing.py` paid for — including
+that **a `rotate()` re-emits `placeEntity` for an existing id, so only the FIRST
+is a build**, which will silently inflate a forward-build denominator written
+fresh.
+
+**Why the retraction is recorded here rather than only relayed:** this file is
+the builder's brief for an ~880-game run, and a wrong sentence about
+instrumentation in a brief is spent compute. Caught by going to look, not by the
+run failing at its read-out.
 
 ## WHERE TO LOOK IN THE TREE — NAMED, NOT PRESCRIBED
 
