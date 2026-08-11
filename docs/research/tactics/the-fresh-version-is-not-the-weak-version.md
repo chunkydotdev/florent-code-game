@@ -44,7 +44,7 @@ with it: these buckets pool across opponents, so the SD is not opponent-matched 
 of the spread is rating-gap variety rather than erratic play.
 
 WHY IT MIGHT TRANSFER — it does not, and that is the point of filing it. The road is
-closed in the direction everyone would try first. Two further reasons it stays closed
+deprioritised in the direction everyone would try first. Two further reasons it stays deprioritised
 even if the mean had gone the other way:
 * **We cannot choose our rated pairings.** Ladder matches are paired on the platform's
   clock, not by us. Knowing a rival is in a fragile window buys nothing on the rated

@@ -89,7 +89,7 @@ paired within excursion (407 excursions, 2,539 excursion games,
 | game share | 0.4278 | 0.5101 | **−0.0823** | **−6.61** |
 | eloDelta | −2.505 | +0.098 | **−2.603** | **−6.76** |
 
-**The "AI hiding" reading is refuted for this league.** A version that appears briefly and is
+**The "AI hiding" reading is unsupported for this league.** A version that appears briefly and is
 withdrawn is a *worse* bot, by 8.2pp of game share — which is what our own procedure
 produces too, since a prototype is normally worse than the tuned incumbent it displaces.
 The external taxonomy raised a real hypothesis and our own data killed it.
