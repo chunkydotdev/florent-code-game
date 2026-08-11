@@ -32685,3 +32685,48 @@ design", which this lane flagged in someone else's work in s28.
 **Recorded at full weight: I have spent the day holding other lanes to
 "alive is not working" and "a guard that has never fired has not been shown to
 guard." This is the lane's own hard limit, breached by me, caught by a shebang.**
+
+## ⭐⭐ F44 — MAGNUS: *"Do it."* THE SCREENING STATISTIC IS DECOMPOSED. SPEC ROUTED TO THE BUILDER.
+**Not implemented by this lane: `tools/` is builder-owned and they had edited
+`h2h.sh` four times in twenty minutes — a concurrent write is a real collision,
+not a formality.**
+
+**THE MEASUREMENT THAT JUSTIFIES IT (live era, n=855):**
+```
+kill_speed_score   sd 7.74   mean -2.361
+  BETWEEN kill/no-kill  94.5% of variance
+  WITHIN kills (speed)   5.5% of variance
+```
+**94.5% of the scorecard's noise is the binary "did we kill at all"; only 5.5% is
+the speed it exists to reward** — which is why `PROGRAMME.md` already records it
+at **1.1× the power of plain win rate.** Statistically it IS a binary with a
+20-point swing bolted on.
+
+**THE SPEC — three lines, not one:**
+| line | statistic | sd | MDE @ n=2048/arm |
+|---|---|---|---|
+| PRIMARY | **P(core-kill win)** | 0.50 | 4.37pp |
+| PRIMARY | **kill round \| kill** | 2.55 | **0.22 pts — 3× tighter than the score** |
+| DECISION | `kill_speed_score` | 7.74 | 0.68 pts — **decision-only, never the screening stat** |
+
+The score is a deterministic function of `(won, cond, turns)`, so these two
+components are **SUFFICIENT** — decomposing loses nothing and gains resolution
+plus visibility of WHICH half moved.
+
+**⛔ THE TRAP THE DECOMPOSITION CREATES, AND IT MUST SHIP WITH IT: "kill round
+GIVEN a kill" IS CONDITIONED ON THE OUTCOME.** A plank that **kills only the easy
+games** posts a BETTER speed-given-kill and a WORSE P(kill) — **a selection effect
+that looks like an improvement on the line just promoted to primary.** ⇒ **the
+screen must FLAG any arm where the two components move in OPPOSITE directions**,
+same code shape as the proxy-vs-goal flag already added. **Without it the
+decomposition is MORE dangerous than the pooled score, which at least averaged
+the trade away rather than advertising half of it.**
+
+**AND THE SCORECARD ITSELF IS UNCHANGED — it is a VALUE STATEMENT, not an
+estimator.** The −10 collapsing a tiebreak win into a loss is what makes
+`R1000_IS_DEFEAT` arithmetic rather than doctrine. **Changing an objective because
+it is noisy optimises for measurability instead of for what we want**, and it
+would make v20 −10.00 / v53 −2.60 / v104 −1.76 mutually incomparable — the
+fixture-versioning rule. **One cheap diagnostic added: report tiebreak-WINS and
+LOSSES separately though both score −10; 48.8% of live-era games sit in that
+bucket and the score cannot tell which kind.**
