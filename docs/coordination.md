@@ -34361,3 +34361,92 @@ certified this way: **zero rated leakage.**
   games against a 45.2% base) — **this retracted my own +35 Elo estimate.**
 * **fcode 2.3.7 changed no game rules** — 47,404/47,404 bytes attributed, zero
   rules functions edited. **Closed NEGATIVE; nobody need look again.**
+
+# ============================================================================
+# 2026-08-11 14:3xZ (`date`) — **RESEARCH ARM s31 WRAP — PROCESS DELTAS + STATE**
+# Arm retro ran FIRST (`docs/research-arm-retro.md` v1.4, FIRINGS 5).
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**R1. ⭐ A GUARD MUST LIVE ON THE PATH IT GUARDS. FOUR INSTANCES IN ONE SESSION.**
+*(behaviour change → this booted file, and → a `SessionStart` hook, `c535412`.)*
+`gate.py`'s reseed warning, bypassed by `h2h.sh` and `dose.py`, the two tools that
+needed it · `corpus_sanity` sitting green beside two constant-zero `econ.tsv`
+columns I nearly published as measurements · the queue rule and its alarm, present
+**0 times** in `PROGRAMME.md`, **0** in all three `.claude/commands/*.md`, **0** in
+`CLAUDE.md` (found by Magnus asking) · and the arm retro itself, the s29 instance.
+**⇒ The only layer that does not depend on a model reading something is a HOOK,
+executed by the harness. Everything else is a preference with good intentions.**
+
+**R2. ⛔ AN INSTRUMENT WHOSE OUTPUT IS A NUMBER ITS AUTHOR IS JUDGED ON MUST BE
+DESIGNED AGAINST ITS AUTHOR.** *(behaviour change → booted; repair shipped in
+`tools/queue_check.py`.)* I wrote a queue floor alarm at 13:27 and **met it by 13:51
+with six items of which three died on checks that had not yet run.** A minimum count
+is a **target**. **The alarm reproduced the exact failure it was built to catch.**
+Repair: the incumbent grep moved from **prereg-time to ADMISSION-time**, and a row
+counts only if it carries `GREP:` naming what was checked. **An honest 3 that FIRES
+beats a padded 6 that cannot.** *(Diagnosis: side lane.)*
+**And the tool then produced THREE false positives, all inflating the count — a
+decomposition table row, a WITHDRAWN plank, a DEMOTED plank. Each has a regression
+cell. Padding the floor is the unsafe direction; the documented undercount is not.**
+
+**R3. ⛔ COUNT THE FREE PARAMETERS BEFORE PRINTING A ✓. A SATURATED MODEL IS THE MOST
+CONVINCING-LOOKING THING THAT CAN BE WRITTEN DOWN.** *(behaviour change → booted.)*
+The demonstration for the one claim that stops a repricing of **every past verdict**
+— *"the ruler is not bent"* — was a fit of **two observed quantities onto two free
+parameters.** Zero degrees of freedom; it fits `(0.99, 0.99)` with residual `1.1e-16`.
+Three ✓ marks, three lines from a section reporting a residual at p≈0.026. **The
+load-bearing claim is exactly where the vacuous check is most tempting.** *(Caught by
+the side lane; replaced with one line of algebra that is strictly stronger.)*
+
+**R4. ⛔ AN INFERENCE MARKER DOES NOT TRAVEL.** *(behaviour change → booted.)*
+*"We go forward late into a matured turret field"* **was correctly marked INFERENCE
+in the deliverable — and then used unmarked as a QUEUE-ROW HEADLINE.** Same session,
+same author, same defect as the `CLAUDE.md` ring claim whose four hedges died in
+transit. **⇒ The marker belongs in the row, the commit subject and the relay, or it
+does not exist. A body marker is read by whoever opens the document; a title is read
+by everyone who never opens it.** *(Second half from the side lane.)*
+
+**R5. TERMS THAT COMPOSE MULTIPLICATIVELY DO NOT LEAVE A RESIDUAL.** *(correction of
+a claim in circulation → booted.)* I published — in `QUEUE.md`, the queue doc, and to
+both lanes — *"tile exposure explains 1.53× of a 3.47× gap, so ~2.3× is unaccounted."*
+**The terms multiply.** `1.77 × 1.57 × 1.05 × 1.15 = 3.36×`, the anchor exactly.
+**There was never a residual, and a whole cut was commissioned to find one.**
+
+**R6. ⭐ THE POLARITY CONTROL — a predictor that works for an agent that CANNOT cause
+the outcome is measuring convergence, not causation.** *(method, worth reusing.)*
+It is what killed the ring-hold candidate: **a core's own builders on its own ring,
+which cannot damage it, reproduce ×2.02 of the ×2.13 attributed to a hostile body.**
+Cheap, and it makes the causal story **impossible** rather than merely unlikely.
+
+**R7. NUMERATOR AND DENOMINATOR MUST COVER THE SAME SIDE-SET.** *(booted.)* A
+TOP-vs-TOP game contributes **two** TOP sides. A death numerator that excluded them
+against a rounds denominator that included both put a 3.47× at **5.11×**. **I flagged
+this exact fault in the LOKI-27 comparator two hours before committing it myself.**
+
+## RESEARCH ARM STATE — verified 14:33Z, not asserted
+
+* **Nothing of mine is running.** Five subagents completed; **all five relayed before
+  this note** (tactics sweep 23, dwell-by-band, ring hazard, forward-death
+  attribution, idle/active split).
+* **Live surfaces I read myself just now:** `ship_watch` newest row `14:24:47Z v112
+  k=6 rating=1680 net5=+8.0 RULE=unarmed tape_age_min=4.8`; `elo_history` newest
+  `16:30` local = 14:30Z, `1680 / 754 / v112 / rank #23`. **v112 holds the slot.**
+  `queue_check` → **5 unblocked, floor 3, OK.** `audit_trigger` **still FIRES** on
+  cross-lane analysis.
+* **What a successor must NOT inherit unchecked:**
+  1. **Every per-opponent statistic in this repo still reads high** (pooling across
+     opponent versions) — unchanged from s30.
+  2. **SEAT IS ~2.5× THE LARGEST ARM EFFECT EVER SCREENED.** A seat-BALANCED pooled
+     estimate is unbiased (`s` cancels identically); **any cut pooling seats
+     unequally is measuring seat.** Report the seat split before the verdict.
+  3. **`ladder_games.seat` is `winner_seat`, NOT our seat.**
+  4. **`econ.tsv.shots` and `econ.tsv.deliveries` are 0 in all 110,336 rows.**
+  5. **v112 has ZERO archived games** — its 1674/1680 is a handful of matches, and
+     no version effect can be fitted for it.
+* **Open, in priority order:** #13 (ambush the rebuild — tile numbers now measured,
+  killing instrument unnamed) · #5 crash induction · #8 seat-relative scan order ·
+  #12 **blocked on its polarity control** · #14 · #7.
+* **⛔ WITH MAGNUS ALONE:** the two `PROGRAMME.md` fields, proposed verbatim —
+  `QUEUE_FLOOR: 3` and `QUEUE_OWNER: research`.
