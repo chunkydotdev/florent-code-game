@@ -33642,3 +33642,104 @@ and none of the retired half.**
 our median kill **174** · our median death **187** · **our core dies in 46.3% of
 all v104 games** · 77% of our kills already inside r250, so **the r250 focus is
 already satisfied and the marginal work is in the games where we do NOT kill.**
+
+# ============================================================================
+# 2026-08-11 13:1xZ (`date`) — ⭐⭐ **SHIP ANNOUNCEMENT — v112 IS LIVE** (rule 3)
+# ============================================================================
+
+**`v112` = `bots/_v148ferryfirst` = LOKI-27 "ferry-first" ACTIVATED 13:14Z by
+Magnus** (the builder's activation was refused by this session's permission
+classifier; the command was run by hand). **Verified on the `Active bot:` line,
+never on `$?`: `Active bot: v112`, rating 1666, rank #24 of 117.**
+
+**ROLLBACK TARGET: v104** — `.venv/bin/fcode submission activate 104`, ~15 s,
+verify on the `Active bot:` line. **This ends v104's 29 h 25 m hold.**
+
+**`ship_watch` RE-ARMED** to `SHIP_VERSION=v112 SHIP_BASELINE=1666` (old pid
+65188 killed, new loop live) and confirmed writing rows:
+`v112 k=2 rating=1666 net5=n/a peak=1672 RULE=unarmed tape_age_min=0.8`.
+
+## WHAT SHIPPED, AND ON WHAT — STATED AT ITS REAL STRENGTH
+
+One behavioural change: **a fresh ferry request now outranks a home exile** in
+the launcher priority order. EXILE returned on success, so one enemy builder
+within d²≤2 of our launcher pre-empted ferrying a raider forward, every time both
+were available. **Home defence was pre-empting delivery into the enemy half.**
+
+**IT SHIPS ON DIRECTION PLUS A POSITIVE POINT ESTIMATE, NOT ON A RESOLVED BAR,
+AND THE RECORD SAYS SO.** Live 25-game leg vs five teams +64..+116 above us,
+against a MEASURED v104 control arm on the same five cells:
+
+| | v104 ctrl | v112 | |
+|---|---:|---:|---|
+| INSERT (ferry) /game | 0.40 | **0.52** | +30% |
+| EXILE (home defence) /game | 3.16 | **2.40** | −24% |
+| INSERT:EXILE | 1:7.9 | **1:4.6** | +71% |
+
+**All three predicted rows moved in the predicted direction.** Verdict on
+magnitude: **NO INFORMATION** — the band needs +124%, measured +71%. Screen was
+518/1024, itself inside the noise band, and it is the top of nine arms so the
+point estimate is biased upward by selection.
+
+**Contrast that makes it worth shipping anyway:** `_v139heal` was the JOINT-TOP
+screen arm and its mechanism ran **backwards** (461.5 heals/game vs control
+132.8). Three predicted rows in three predicted directions is the opposite
+signature.
+
+## THE OTHER THREE CANDIDATES ARE DEAD — REASONS, SO NOBODY RE-QUEUES THEM BLIND
+
+* **cap6** — **INERT BY CONSTRUCTION.** Raises `LOKI_FWD_GUN_CAP` 3→6; we build
+  **1.6–1.9 forward sentinels/game**, so the cap of 3 was never binding.
+  ⚠ **The structural argument is the WHOLE kill. Its paired dose check is NOT
+  evidence** — see the RNG finding below. *(Split raised by the side lane against
+  my original write-up, which presented both halves as if both stood.)*
+* **best-fit** — **CPU-COST REGRESSION.** Same seed/map/bots: **limit disabled →
+  wins 6/6; `--tle 10` → loses 5/6.** Calls `get_attackable_tiles_from` up to 16×
+  per sentinel attempt inside a 10 ms budget. n=12; worth one repeat before the
+  ROAD (not just this implementation) is closed.
+* **gunner-axis / LOKI-25** — already dead s30 on a resolved falsifier.
+
+## ⛔⛔ THE FINDING THAT REPRICES EVERY LOCAL BATTERY THIS PROJECT HAS RUN
+
+**OUR BOT RESEEDS AN UNSEEDED RNG EVERY GAME.**
+`bots/_v130loki13/main.py:276`:
+`self.spawn_salt = random.Random().randrange(97) if NOISE_ON else 0`, and
+`doctrine.py:474` has `NOISE_ON = True`. **`--seed` never controlled it.**
+Identical seed/map/bots → kill turns **109, 118, 227, 302, 527, 118**.
+
+⇒ **"SEED-MATCHED PAIRING" IS AN ILLUSION IN EVERY LOCAL BATTERY WE RUN** —
+s30's 8×1024 screens, today's 4,096-game null, and `dose.py`. **Pooled estimates
+STAND (the noise is unbiased); PAIRED designs buy nothing they claim to buy.**
+
+**⭐ AND `gate.py` HAS PRINTED THIS WARNING ALL ALONG** — *"paired fixtures do not
+pair against a bot that reseeds"* — **while `h2h.sh` and `dose.py` both BYPASS
+gate.py, which the standing rule calls the SOLE ENTRY TO A BATTERY.** The check
+existed; the tools that needed it skipped it. Fix: pin `NOISE_ON = False` in
+measured COPIES, or route every battery through the gate.
+
+**⛔ CORRECTION, MINE, AND IT RAN TOWARD THE MORE DRAMATIC READING FOR THE SECOND
+TIME TODAY.** I first published this as *"our CPU guard reacts to machine load"*
+— a load-dependent chassis is a better story than an unseeded RNG, and I reached
+for it before running the gate that says it in one line. Earlier the same day I
+published *"every pooled screen verdict was measured against a bent ruler"* on a
+seat effect that cancels by design. **Both errors ran toward the larger claim.**
+
+## THE 4,096-GAME NULL — the seat question, settled
+
+Byte-identical copy vs v104, 8 shards, both seats:
+**pooled 2053/4096 = 50.12% (z=+0.16)** — the harness is UNBIASED pooled, so no
+past verdict is repriced. **Seat A is worth +3.78pp in self-play (z=+4.84)**, and
+the arms' 54.13% seat-A share sits **0.35pp** off that baseline. **The 8/8
+pattern I flagged this morning IS the baseline.** Ferry-first remains the largest
+seat deviation (+5.59pp, z=+2.53) — max of eight, selected post hoc, a HYPOTHESIS.
+
+## ⚠ `fcode status` "Last 10" POOLS UNRATED GAMES — IT IS NOT RATED FORM
+
+Post-ship it reads **1W 9L** while rated matches moved only **748→750**. We fired
+50 unrated games in this leg. **Anyone reading that line as a rating collapse is
+reading the unrated leg.** Rated form is `ladder_games.tsv` / per-match `ourver`.
+
+## ⚠ POLL-TIME TAG ARTEFACT IN THE TAPE
+`elo_history.tsv` row `2026-08-11T14:34 … v112` (local CEST = 12:34Z) is the
+elo_logger catching the 16-second prototype activation. **v112 played ZERO rated
+games then.** Any cut slicing the tape by version must exclude it.
