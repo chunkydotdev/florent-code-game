@@ -34893,3 +34893,63 @@ claim against the protobuf. **The flag is that the treated set was scoped to
 error, and the same shape as the misses this lane records against itself:
 everything the document says is right, and the question is what it never had to
 answer.**
+
+# ============================================================================
+# 2026-08-11T18:1xZ (`date`) — **RESEARCH s32: MY OWN SIGN ERROR, AND IT WOULD
+# HAVE STOPPED A WEEK OF SCREENING** (`cf843c3`, `2019a5c`, queue amend)
+# ============================================================================
+**Caught by the SIDE LANE, not by me. Retro Q4 fires again: zero of my errors
+today were caught by my own checks.** Logged as a firing, not smoothed over.
+
+**THE ERROR.** `VERSION-STRENGTH-OPPONENT-CONTROLLED-2026-08-11.md` published
+`v104 − v92 = −86` and `v104 − v102 = −77` while its OWN fitted θ three lines
+above gives **+86** and **+77**. Two of three flipped; `v92 − v102 = −9` correct
+⇒ not a convention, a mechanical flip computing `v92 − v104` under the opposite
+label.
+**SETTLED AGAINST THE PRIMARY SOURCE, NOT INTERNALLY** — the document was already
+internally consistent in the wrong place, so an internal check was not enough.
+Re-derived from `ladder_games.tsv` with a **deliberately different estimator**
+(logistic inversion on mean opponent rating; no MLE, no seat term, no bootstrap):
+**+82.9 / +73.2 / −9.7 — all within ~4 Elo of the fit.** The side lane then found
+a **third** surface *inside the document*: the rating-snapshot column two cells
+left, **+116 / +68**. **Three surfaces agree on all three signs.**
+**⇒ THE POINT ESTIMATES ARE SOUND; THE DELTA ROW WAS THE TYPO. Part A reads AGREE
+on both scoreable cells and Amendment 1's "stop screening for the rest of the
+week" bar DOES NOT FIRE.** `overnight_read.py:49` was never affected — **the
+exposure was the reverse of the usual one: the TOOL was right and the DOCUMENT
+was wrong, so a human reconciling them could have "fixed" the tool.**
+
+**⭐ v112 IS NOW LADDER-ESTIMABLE — the deliverable's "0 games / NOT ESTIMABLE"
+went stale inside my own 17:59Z sync (+1,197 replays).** Match-level bootstrap:
+**v112 70 games / 14 MATCHES, 57.1%, θ 1723 [1616, 1832]** vs **v104 θ 1682
+[1652, 1714]**. **⚠ INTERVALS OVERLAP ⇒ NOT sign-resolved, NO new scoreable Part
+A cell, "only two pairings" STANDS.** First ladder number v112 has ever had.
+**Never quote 1723 without [1616, 1832]: that is 14 matches.**
+
+**D79 THIRD INSTANCE — `tactics/INDEX.md:192` (fixed, `2019a5c`).** `CLAUDE.md`
+and `AGENTS.md` were repaired at 16:49; this copy was not, **and it is the SEED
+TEXT every sweep agent is briefed from — it was MANUFACTURING stale files, not
+merely holding a stale sentence.** Caveat pass over the 12 downstream files:
+**every mention load-bearing — 8 closures, 8 restrictions, 0 incidental.**
+**TWO single-reason closures VOIDED** (`every-withdrawal-trigger…:46`,
+`three-teams-deleted-the-withdrawal…:83`) ⇒ *"preserve the unit"* is a live
+withdrawal motive again. Five others had co-stated independent grounds, so **those
+roads STAY CLOSED** — recorded as such rather than as five reopenings.
+
+**QUEUE (owner: research).** **#14 amended to a TWO-ARM test** — (A) destination,
+(B) recall — off the SAME idle detector, **arm B carrying
+`kill_round_non_regression` or it is not admissible.** A and B predict **opposite
+signs on median kill round from the same 25.76% idle pool, so one run scores
+both.** `queue_check` **5 unblocked, OK.**
+**⭐ AND A DECLINE, RECORDED AS A DELIVERABLE (retro Q5): heal-idle staffing was
+REOPENED by the same doctrine change and I did NOT queue it — the admission GREP
+FAILS.** The live tree already ships `_heal_core` (`main.py:411,470,641`),
+`_heal_adjacent` (`:468`), `heal_seats` (`:30,616`) and the `SLOT_UNDER` 50-round
+latch (`:180,188,377,409,420,633`). **The grep runs BEFORE the item counts, so it
+never became an item.**
+
+**`audit_trigger` FIRES 2/5 — cross-lane analysis 13.57** (95 analysis docs / 7
+decision rows, both sides, same git window). **Side lane and I have both accepted
+it as a live constraint** and neither of us opened a second analysis front for
+the sign flag — it went into their existing `FLAG-partA-ladder-sign` doc plus an
+announced in-place amendment, and **no new document was created for it.**
