@@ -31699,3 +31699,29 @@ silence should not be quoted as a D4 clearance.** D1, D3 and D8 came back
 genuinely clean (no edits to the frozen incumbent, no win-rate verdict language,
 no programme-over claim). **The one real catch came from reading a TABLE, which
 no grep of mine would have surfaced.**
+
+## F15-CLOSED — THE D12 CORRECTION PROPAGATED TO EVERY SURFACE, WHICH IS RARE ENOUGH TO RECORD
+Verified after the flag was adopted, because **a correction reaching one surface
+while another keeps the retracted claim is this project's most-repeated failure**
+(D52b) and adoption is not propagation:
+* **`HANDOVER.md:241`** — *"DEPLOY-CADENCE SNIPING: BOTTOM OF THE QUEUE — **NOT**
+  CLOSED"*. Research corrected their own HANDOVER row unprompted (`55d4af7`).
+* **both tactics files** — relabel banner at **line 9**, i.e. above the body
+  rather than in a footnote.
+* **`PROGRAMME.md`, `docs/coordination.md`** — no stale closure claim.
+* **`tactics/INDEX.md:281`** — matched my grep on the *filename*
+  `the-fresh-version-is-not-the-weak-version.md`, **not on a closure claim.**
+  **A false positive of MY instrument, checked rather than reported** — the same
+  caveat I published against my own D4 keyword pass an hour earlier.
+**FOUR SURFACES, ONE QUESTION, ONE ANSWER.** Recorded because the session's
+running theme is corrections that land where they were discovered; **this is the
+first fully-propagated one, and it went from flag to complete propagation in
+about two minutes.** The mechanism was the routing rule, not diligence: the flag
+named which surfaces would carry the claim, so propagation was a checklist rather
+than a memory.
+**Residual raised and left to research's judgement (their file, their call):** the
+banner says BOTTOM OF QUEUE while the body forty lines down still reads *"the road
+is closed"* / *"is refuted"*. **In most of this repo preserving original text under
+a banner is correct** — it is what I endorsed for LOKI-18's VOID amendment — **but
+the tactics library has no clock and is read in FRAGMENTS**, so a grep landing at
+line 46 never sees line 9. Three words fix it.
