@@ -24,12 +24,26 @@ unshipped plank is a certain zero and every idle hour on the slot is spent.
 ## FIRING NOW
 | # | plank | change | mechanism metric | status |
 |---|---|---|---|---|
-| 1 | **LOKI-27 ferry-first** | ferry request outranks home exile | INSERT:EXILE ratio | **SHIPPED-PENDING** — v112 uploaded, activation blocked on a permission; Magnus runs `fcode submission activate 112` |
+| 1 | **LOKI-27 ferry-first** | ferry request outranks home exile | INSERT:EXILE ratio | ⭐ **SHIPPED 13:14Z** — v112 LIVE, verified on the `Active bot:` line. Ends v104's 29 h 25 m hold. Rollback: `fcode submission activate 104`. |
 
 ## NEXT UP — ready to build
 | # | plank | change | mechanism metric | why now |
 |---|---|---|---|---|
-| 2 | **Idle-builder defence** | re-task builders already alive+idle when core HP falls | median kill round MUST NOT rise (`DEFENCE_ADMISSION_BAR`) | **The first plank under the amended defence field.** Measured: when our core dies ~5 builders are ALIVE (median 5.0) with 0.38 deaths in the 40 rounds prior — they are not in combat. Costs the kill nothing BY CONSTRUCTION. Our median kill 174 vs median death 187 = a 13-round race. |
+| 2 | **Idle-builder defence** | re-task builders already alive when core HP falls | median kill round MUST NOT rise (`DEFENCE_ADMISSION_BAR`) — **measured, not assumed** | **The first plank under the amended defence field.** Measured: when our core dies ~5 builders are **ALIVE** (median 5.0, mean 4.43 vs 5.20 in wins) with 0.38 deaths in the 40 rounds prior. Our median kill 174 vs median death 187 = a 13-round race. **⛔ BLOCKED ON ONE NUMBER — see below.** |
+
+**⛔ CORRECTION TO ITEM 2, RAISED BY RESEARCH AGAINST THEIR OWN NUMBER.** I first
+wrote that this plank is *"admissible BY CONSTRUCTION, because it spends idle
+resource rather than kill budget."* **That over-reads the evidence and the
+over-read is mine.** Research measured that ~5 builders are **ALIVE** at the
+decisive round. **They did NOT measure that those builders are IDLE.** A live
+builder may be mid-errand, mid-traverse or building forward — **redirecting it
+then DOES spend kill budget and CAN regress the kill round.**
+⇒ **Admission is NOT by construction. This plank clears the kill-round
+non-regression bar the same way every other plank does.**
+⇒ **BLOCKER: the idle/active split of those alive builders at T** — wire-side,
+`MoveBuilderBot` vs `BuilderBuild/Attack/Heal`, cooldowns explicit on the wire.
+Research declined this classification earlier as aimed at the 17% dwell half;
+**aimed at THIS question it is worth it, and they have offered it.**
 | 3 | **Arrive without traversing** | launcher delivery instead of walking the raider forward | forward builder deaths per forward build | Hazard is ~3.5x the field in EVERY round band (not a phase problem), so no round-gated constant touches it. Skipping the traverse attacks it directly. ⚠ traverse-vs-destination split is ASSUMED not measured — research's attribution cut settles it first. |
 
 ## BLOCKED / NEEDS A NUMBER FIRST

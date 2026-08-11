@@ -110,9 +110,13 @@ directive, relayed to the side lane and confirmed to me directly:
 "SOME defence" is a GRADIENT and a gradient is unenforceable unless the test is
 written down.** `never` was a bright line, enforceable at zero judgement cost;
 replacing it with a preference would have made every survival plank arguable.
-So it is replaced with a MEASURABLE ADMISSION TEST:
-
-    DEFENCE_ADMISSION_BAR: kill_round_non_regression
+So it is replaced with a MEASURABLE ADMISSION TEST, declared in the parsed block
+at the top of this file as `DEFENCE_ADMISSION_BAR: kill_round_non_regression`.
+**(Written inline as prose, NOT indented four spaces: an indented copy is read by
+`gate.py` as a SECOND field declaration and, because it builds a dict, the LAST
+occurrence WINS — so a prose illustration would silently override the canonical
+block with no error and no diff. That is exactly what this section did for its
+first eleven minutes; caught by the side lane.)**
 
 ⇒ **A defensive plank is ADMISSIBLE if and only if it does not slow the kill.**
 Any survival-mechanism plank carries a **kill-round non-regression bar beside its

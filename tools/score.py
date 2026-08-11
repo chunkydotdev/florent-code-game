@@ -60,7 +60,7 @@ SLOW_KILL = 1
 # *"we should never optimize for tiebreak wins, all of our effort should be on
 # killing the cores."* The argument that settles it: at 0, a pure SURVIVAL plank
 # converting 20 losses into 20 tiebreak wins scores +200 and reads as a triumph
-# -- while PLAY_DEFENCE: never forbids exactly that plank. At -10 the same plank
+# -- while PLAY_DEFENCE (now `not_at_the_kill_s_expense`, amended 2026-08-11) forbids exactly that plank. At -10 the same plank
 # scores ZERO improvement. **-10 is what makes the currency agree with the
 # doctrine**; 0 was what created the tension.
 # Verified rather than assumed: the balance property is IDENTICAL either way

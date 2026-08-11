@@ -110,7 +110,31 @@ def check_programme(plank: Path, allow_off: bool) -> None:
     if not prog.exists():
         WARN.append("no PROGRAMME.md -- no active line is being enforced")
         return
-    fields = dict(re.findall(r"^\s{4}([A-Z_]+):\s*(.+?)\s*$", prog.read_text(), re.M))
+    # [A-Z_0-9]+ NOT [A-Z_]+ -- the original excluded DIGITS, so `R1000_IS_DEFEAT`
+    # sat inside the block headed "The fields below are parsed" and was NEVER
+    # PARSED. 15 fields read vs 16 present, and the missing one was that one.
+    # A doctrine field that looks machine-enforced and is decorative is the
+    # CLAUDE.md-vs-reference-doc failure INSIDE the machine-readable block.
+    # (Side lane, s31.) The count selftest below is what keeps it honest.
+    raw = prog.read_text()
+    pairs = re.findall(r"^\s{4}([A-Z_0-9]+):\s*(.+?)\s*$", raw, re.M)
+    # ⛔ PERMISSIVE pattern on purpose. First written as [A-Z_0-9]+ -- the SAME
+    # class as the parser -- so an unparseable name dropped out of BOTH counts
+    # and the guard could never fire. Driven to the other verdict by renaming a
+    # field to KILL-WINDOW-RND: with the matched class it printed nothing; with
+    # this one it warns. A guard that cannot produce the other answer has not
+    # been seen to check.
+    _declared = len(re.findall(r"^\s{4}[^\s:]+:\s", raw, re.M))
+    if len(pairs) != _declared:
+        print(f"WARN  PROGRAMME.md: parsed {len(pairs)} fields but {_declared} "
+              f"are declared -- a field name is unparseable")
+    _dupes = [k for k in {k for k, _ in pairs} if [x for x, _ in pairs].count(k) > 1]
+    if _dupes:
+        # dict() keeps the LAST occurrence, so a copy inside a prose block
+        # SILENTLY OVERRIDES the canonical declaration with no error and no diff.
+        print(f"WARN  PROGRAMME.md: DUPLICATE field(s) {sorted(_dupes)} -- "
+              f"last occurrence wins; de-indent the prose copy")
+    fields = dict(pairs)
     line = fields.get("LINE", "?")
     pats = fields.get("LINE_DIRS", "").split()
     print("ACTIVE PROGRAMME")
