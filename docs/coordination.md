@@ -31580,3 +31580,42 @@ commit registered as *recency*, making a dead plank look FRESHER. Driven:
   does not trip it) · *a VOID commit containing "reinstated" → SUSPECT*.
 **This is the mechanised form of D14 repaired in the one direction it existed to
 cover, verified on the case that beat it and on a case nobody chose for it.**
+
+## F12 — AUDITED `plank_ack.tsv`, THE NEW SINGLE POINT OF FAILURE. ALL THREE SILENCING ACKS ARE TRUE.
+`plank_status` now gates on a human decision record, so **the acks that SILENCE
+the alarm are the weakest link and nothing verifies them.** Checked all three
+`NOT-A-WITHDRAWAL` rows against their commit subjects:
+* **loki9 / `ff3e6bc`** — *"PREREG LOKI-9 facing … **supersedes** forward-survival
+  for this slot"*. The ack claims the grammatical direction is wrong (loki9 does
+  the superseding). **Correct.** ✓
+* **loki11 / `a31c28c`** — *"the saturated **cells** are INERT CONSTANTS, not
+  variance sources (ranges 0,0,1 vs 4,3)"*. Describes a FIXTURE property, not the
+  plank. **Correct.** ✓
+* **loki16b / `6c74b67`** — *"WITHDRAW the +0.017: `ring_retention.py` does NOT
+  reproduce LOKI-16 …"*. Withdraws a NUMBER, and the decoder question was later
+  settled in `ring_read`'s favour. **The ack's forward-looking half also holds:
+  LOKI-16b cleared its bar next morning at +0.164 [+0.073, +0.253] vs +0.15
+  (`4dca48f`).** **Correct.** ✓ *(This one is about this lane's own work and is
+  the one I most wanted to be wrong about; it is not.)*
+
+**⭐ THE PROPERTY THAT MAKES THE ACK TABLE SAFE, and it should be stated rather
+than left implicit: THE TWO VERDICTS ARE ASYMMETRIC IN THE SAFE DIRECTION.**
+`NOT-A-WITHDRAWAL` is **hash-keyed**, so it silences ONE commit and a later
+retirement flags again; `DEAD` is **sticky** and holds until an explicit
+`PLANK-REVIVED`. **So the failure mode of a wrong dismissal is bounded (it
+expires on new evidence) while the failure mode of a wrong kill is loud (someone
+must type a revival).** That asymmetry is what stops the ack table from becoming
+the "one dismissal deafens a plank forever" defect its own author mutation-tested
+against.
+**RESIDUAL, stated and not fixed: nothing detects a WRONG ack.** All three are
+true today; the risk is prospective, and the mitigation is the asymmetry above
+rather than any check. **A fourth ack should be audited the same way** — it costs
+one `git log -1` per row.
+
+**AND THE ROUND-3 DEFECT IS THE SESSION'S BEST INSTANCE OF D47** (*a fix can
+carry the fault one layer over*): writing up WHY loki18 was dead created a new
+kill-word commit with no ack, which downgraded it **WITHDRAWN → SUSPECT — the fix
+unwinding itself the moment you document the thing it caught.** Verified fixed:
+`loki18` now reads *"WITHDRAWN: acknowledged DEAD in `tools/plank_ack.tsv`
+(d5224a1)"*, and *"later commit after a DEAD ack → still WITHDRAWN"* is a driven
+selftest cell.
