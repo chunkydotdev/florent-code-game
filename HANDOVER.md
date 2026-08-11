@@ -277,9 +277,35 @@
 ##      pooled availability statistic identically, so the pooled 20.91% CANNOT
 ##      TELL THEM APART.** ⇒ any prereg here states which branch it tests and
 ##      carries availability measured **at d² from THEIR core**, never pooled.
-##      *(Measurement of the split is IN FLIGHT; if the deficit turns out to be
-##      concentrated in HOME sentinels, the on-programme branch has no headroom
-##      and this is not a plank.)*
+##      **✅ MEASURED, AND IT LANDED THAT WAY. THE ON-PROGRAMME BRANCH IS DEAD.**
+##      US FORWARD n=3,341 availability **83.18%** vs OPP FORWARD **89.72%** —
+##      **a 6.5pp gap, not 28pp. Our forward sentinels are already
+##      near-saturated and there is almost nothing to buy there.**
+##      US HOME 10.26% vs OPP HOME 23.44%, and **MIX: we sit 51.4% HOME against
+##      their 31.1%.** ⇒ the pooled gap is (a) HOME availability, which is home
+##      defence and off-programme to fix, and (b) mix.
+##      **⭐ THE ONE SURVIVING ON-PROGRAMME READING IS THE MIX, and it is the
+##      directive restated rather than a loophole: our HOME sentinels fire 4.04
+##      shots/100 alive-rounds against 32.74 forward — 8x less productive — at
+##      30 Ti and a permanent +20% cost-scale contribution each. The plank is
+##      not "defend better", it is "STOP DEFENDING".** NOT pre-registered, NOT
+##      sized — same single attribution instrument, same sizing limit.
+##      ⚠ **AVAILABILITY IS A LOWER BOUND: 600 of our sentinels read 0%
+##      availability yet recorded 101 shots** — an end-of-round-snapshot
+##      artefact, so a target entering and leaving inside one round is invisible.
+##      Unresolved. The 6.5pp gap is measured under a definition that can only
+##      understate BOTH sides.
+##      **AND OUR FORWARD POPULATION IS BIMODAL: 3,331 of 3,341 sit at
+##      d²_enemy ≤ 32 — parked at the doorstep — with ZERO beyond 100.** No
+##      mid-distance population exists, so there is no availability curve to
+##      climb.
+##      **✅ FLAG 2 (the 19.24 counterfactual) IS VINDICATED BY MEASUREMENT:
+##      conversion is NOT independent of availability.** Binned on our own
+##      sentinels: (0-10%] 69.82 · (10-25%] 51.23 · (25-50%] 32.30 ·
+##      (50-75%] 26.68 · (75-100%] 37.20. **At the field's pooled 48.9%
+##      availability our own conversion reads 26.7-32.3, BELOW the 39.35 the
+##      counterfactual used. ⇒ 19.24/100 OVERSTATES and is retired as a
+##      forecast.**
 ##      **⚠ FLAG 2 — "at their availability and our conversion we would fire
 ##      19.24/100" IS AN UPPER-BOUND SKETCH, NOT A FORECAST.** It multiplies two
 ##      rates measured on opposite sides of a 2.3x gap and assumes **conversion
