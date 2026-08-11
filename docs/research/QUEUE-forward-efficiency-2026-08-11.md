@@ -45,6 +45,40 @@ exposure by at most 34%.**
 **The dwell half is 2.28× and has no such ceiling.** It is the larger lever and it
 is the one nothing has been aimed at.
 
+## ⛔ POWER AUDIT — AMENDED 2026-08-11, AFTER THE BAR BELOW FAILED ITS OWN CHECK
+
+**The bar specified below said "deaths per forward build, a RATIO" and did NOT
+name the aggregation. Measured, 4,831 of our games:**
+
+| estimator | value | MDE at n=64/arm |
+|---|---:|---:|
+| **mean of per-game ratios** (what I originally implied) | 0.1541, sd 0.4007, **CV 2.60** | **129% of level** |
+| **pooled ratio** (total deaths ÷ total builds), game-resampled bootstrap | 0.1281, SE 0.0330 | **102% of level** |
+
+**Both are useless at n=64. The one I implied is the worse of the two.** This is
+the defect this repo logged when four defensible estimators straddled the
+ring-hold threshold inside 0.010 — **a bar names its estimator or it can be met
+and missed by choosing one afterwards.**
+
+**The obvious rescue does not work either.** Self-play looks like a free paired
+design (same map, same seed, both arms in one game). **Measured within-game
+correlation between the two sides' deaths-per-forward-build: r = +0.027 —
+variance reduction 3%.** Reported because it is the design I would otherwise have
+prescribed.
+
+### ⇒ THE FIX: POOLED RATIO, GAME-RESAMPLED BOOTSTRAP, **n ≈ 440 PER ARM**
+
+Detecting a move that closes **half** the top-tier gap (a 39% reduction) needs
+SE ≈ 0.0126 → **~440 games/arm, 880 total.** **A 4,096-game self-play screen has
+already been run today, so 880 costs zero unrated windows.** The protected floor
+rides along in the same run.
+
+**⚠ And one correction to a rule in circulation:** *"mechanism bars are ~160×
+cheaper"* is true of LOKI-25 (huge effect, low-variance statistic) and **NOT of
+this plank** — here the mechanism bar needs 880 games and the win rate at 880
+detects 4.7pp. **Comparable, not 160× apart. The principle is right; the multiple
+is a property of that plank.**
+
 ## ⛔ THE BAR MUST BE A RATIO, AND THIS IS THE DESIGN CONTRIBUTION
 
 **LOKI-25 died because it moved a numerator and a denominator together**: deaths
