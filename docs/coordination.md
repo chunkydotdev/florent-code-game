@@ -31327,3 +31327,60 @@ Nothing in the obligations doc asks for this today.
   prose commits ageing out of the rolling 24 h window. **The row prints
   `{val:.2f}`, so both render as `1.00`** and only the TRIP/ok tag discriminates.
   Ship cadence (0.31/hr) did not move and is the durable half.
+
+## F5 — LOKI-19 LOCK + RATED-COST CERTIFICATION (side lane s30, 06:2xZ)
+Run BEFORE the read-out so the audit precedes the decision rather than trailing
+it. **Two passes and one flag; the passes are recorded as loudly as the flag.**
+
+**RATED COST: ZERO, verified at the PAIRING BOUNDARY off per-match `ourver` in
+`league_matches.tsv` — NOT on the match counter, which CLAUDE.md establishes is
+blind to exactly this failure mode.**
+```
+04:32:59Z v104 vs Coreflood · 04:52:59Z v104 vs diverge
+05:12:59Z v104 vs Powered by SmartFridge · 05:32:59Z v104 vs arsonist duck
+```
+Four consecutive pairings, **all v104; no rated match carries v108.** Prototype
+exposure was **two 16-second windows** (04:53:16–04:53:32, 05:00:53–05:01:09)
+read off the runner's own log. W1 begins **17 s after** the 04:52:59 pairing.
+**AND THE CADENCE RE-DERIVES FROM TODAY'S ROWS** (the rule forbids hardcoding it;
+it has shifted before): minute ≡ 12 (mod 20), second `:59`, **4 for 4** this
+morning. Unchanged.
+
+**AMENDMENT 3's BLINDNESS HOLDS, ON TWO CLOCKS, BY 34 SECONDS.** Header claims
+*"BEFORE ANY TREATMENT GAME EXISTS"*; `e775a0c` committed **05:00:20Z**, first
+treatment match created **05:00:54Z**. The earlier 04:53 attempt cannot
+contaminate it — **0/5 accepted, all five rate-limit rejections**, so no
+treatment game existed from it. Amendments 1 (04:38:07Z) and 2 (04:46:21Z)
+precede the treatment arm by 22 and 14 min. **I went looking for the opposite:
+three amendments landing inside a 04:35–05:31 leg window is the SHAPE of a
+lock-discipline failure and it is not one here.**
+
+**THE FLAG — mechanism, not outcome.** `loki19_treat_w1.sh` waits for the derived
+boundary (`minute % 20 == 13`) **once, at the top**. The log carries
+`boundary passed, starting` before W1 and **no such line before W2**, so the
+05:00:50 activation did not pass the guard. It landed in clear air regardless
+(12 min from the nearest pairing either side), **so nothing was risked — but the
+second activation's safety was a property of when it was re-run, not of the
+guard.** Fix for the next runner: the boundary wait belongs INSIDE the retry
+path, not above it.
+
+## F6 — MY OWN SWEEP ITEM CLOSES AS FIXED, AND A REFUTATION OF IT MISSED BY ONE FILE
+The builder's audit reported my green-selftest signature REFUTED because mutating
+the entity-kind filter out of **`ring_read.py`** produced FAIL. **My sweep flagged
+`ring_retention.py`** — a different 245-line file (`md5 48a64a4b…` vs
+`8739c843…`), with a third object, untracked `scratchpad/ring_read.py`, sharing
+the name. `ring_retention.py:156-186`'s selftest asserts `len(ring)==12`,
+`==5`, `<12` — **every assertion on `ring_of()`, none on the kind filter**, as
+published. **The strongest corroboration is the builder's own tool:**
+`ring_read.py:4` *"THIS IS THE BLESSED RING DECODER. `ring_retention.py` IS THE
+BROKEN ONE"*, `:370` and `peck_read.py:525` *"precisely the defect
+`ring_retention.py --selftest` had."* Three files in `tools/` state it as fact.
+**The auditor mutated the tool WRITTEN TO FIX the defect and found it absent.**
+Unifier boundary (A) — symbol identity across forks — on a name, not a fork.
+**AND F6 IS NOW CLOSED BY THEIR FIX, WHICH I AM RECORDING RATHER THAN LETTING
+RIDE:** `8ec5222` (05:03:22Z) makes the broken twin refuse to run; driven, it
+exits 2 with a docstring naming its own defect. `ring_read --selftest` passes
+**40 assertions over 11 cells** and carries a **self-mutation harness** (`:366`
+copies itself, mutates, requires FAIL). That is the positive standard the sweep
+asked for, already built. **Sweep ledger: F3 stands, F6 FIXED, `ring_read` half
+of the refutation does not apply.**
