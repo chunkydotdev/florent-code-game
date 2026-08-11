@@ -45,6 +45,9 @@ ALERT = ROOT / "corpus" / "BREAKIN_ALERT"
 FLOOR = float(os.environ.get("BREAKIN_FLOOR", "1567"))
 VERSION = os.environ.get("BREAKIN_VERSION", "v104")
 STALE_S = float(os.environ.get("BREAKIN_STALE_S", "900"))
+# the version to roll back TO -- was hardcoded to 102, which was two
+# ships stale by the time this fired for v114.
+ROLLBACK = os.environ.get("BREAKIN_ROLLBACK", "112")
 
 
 def rows():
@@ -77,11 +80,33 @@ def main():
                       f"Silence is NOT 'no breach'. Check the platform.")
             elif mine:
                 rating = float(mine[-1][1])
-                k = len(mine)
+                # ⛔⛔ k COUNTS MATCHES, NOT TAPE ROWS. s32 2026-08-11.
+                # This read `k = len(mine)` -- the number of POLL ROWS carrying
+                # this version. `elo_logger` polls every ~5 min, so a freshly
+                # shipped bot reached "k=8" in FORTY MINUTES and this guard
+                # STOOD DOWN. Caught live on v114: it announced
+                # "v114 reached k=8; slot rule is armed" while the platform said
+                # 768 -> 770 matches, i.e. **k was actually 2**, and the rating
+                # had already fallen 1689 -> 1677.
+                # ⇒ THE STOP-LOSS FOR A FRESH SHIP DISARMED ITSELF ON A CLOCK
+                # INSTEAD OF ON EVIDENCE, inside the exact window its own
+                # docstring says is unguarded. A guard that stands down before
+                # it can fire is the same defect as one that never fires.
+                # The tape's column 2 is the platform's cumulative match count,
+                # so k is the DIFFERENCE across this version's rows -- and the
+                # +1 counts the match that produced the first row.
+                try:
+                    k = int(mine[-1][2]) - int(mine[0][2]) + 1
+                except (IndexError, ValueError):
+                    # Unparseable match column: do NOT fall back to len(mine),
+                    # which is the bug. Stay armed and say why.
+                    k = 0
+                    sys.stderr.write("BREAK-IN: match column unparseable; "
+                                     "holding k=0 and STAYING ARMED.\n")
                 if rating < FLOOR:
                     alert(f"*** BREAK-IN FLOOR BREACHED *** {VERSION} rating "
                           f"{rating:.0f} < {FLOOR:.0f} at k={k}.\n"
-                          f"ROLLBACK: .venv/bin/fcode submission activate 102"
+                          f"ROLLBACK: .venv/bin/fcode submission activate {ROLLBACK}"
                           f"   # VERSION INT, THEN VERIFY with `fcode status`")
                 elif k >= 8:
                     sys.stderr.write(f"{VERSION} reached k={k}; slot rule is armed. "
