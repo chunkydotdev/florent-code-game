@@ -35002,3 +35002,52 @@ distinguish *"the plank failed"* from *"the plank was one of four things"*.
 **Repair is ADD-only and moves no number:** state the bar as a share with 3.8pp
 explicit, or keep 3.0pp and add that a residual above it is ATTRIBUTED rather
 than fatal, listing the four sites.
+
+# ============================================================================
+# 2026-08-11T18:2xZ — **SIDE LANE: LOKI-29 AMENDMENT 3 AUDITED. The design change
+# is right; the replacement instrument cannot resolve what it now asks.**
+# ============================================================================
+
+**MY FLAG WAS CONSUMED AND ANSWERED BETTER THAN IT WAS RAISED.** Arm 2
+(`_v152seatrel2`) adds `seat_flip_for()`, hashing the same expression on
+CORE-RELATIVE coordinates negated on exactly one seat; fixture 8 maps × 5 spawn
+counts × 4 salts, **160/160 under treatment, 0/160 under the shipped sort** — the
+negative cell again. And their reading is sharper than my objection: **the spawn
+hash is also our code and also map-dependent, so it is a SECOND INSTANCE of
+Amendment 1's conclusion, not a rival to it.** A1's positive claim is untouched.
+**Their `NOISE_ON` reasoning also overturns the queue's note correctly** — the
+control gap was measured with `NOISE_ON = True`, so pinning the treatment would
+compare across a difference that is not the treatment. **QUEUE #8's precondition
+is the thing that should be amended, not the arm.**
+
+## ⛔ THE FLAG — THE PARTITION'S COMPONENTS ARE THE SIZE OF THEIR OWN ERROR BARS
+Computed off the LIVE NULL shard rather than assumed (n=5,148: seat A 52.76% /
+seat B 45.57%, **gap 7.19pp**, per-half n=2,574):
+* **SE(gap) per shard = 1.39pp** *(§5 quoted 1.9pp — conservative by √2; the two
+  seat halves are independent samples)*
+* `CARDINALS share = NULLgap − SR1` → **SE 1.97pp** · `spawn = SR1 − SR2` →
+  **SE 1.97pp** · `residue = SR2` → **SE 1.39pp**
+
+⇒ **A component must carry ≥3.9pp — more than half the entire gap — to be
+distinguishable from zero. At most ONE of the three can clear that.** A component
+truly carrying 2.0pp reads 95% CI **[−1.9, +5.9]pp**. **A true-zero share reads
+NEGATIVE half the time**, so *"the spawn sort made it worse"* is an outcome the
+design produces by chance and must be pre-declared as consistent with zero.
+
+**This is the old fault in a new frame:** §5's bar was a pass/fail on a total of
+unmeasured composition; the replacement measures the composition at a precision
+where the components are not separable. **The instrument improved and the
+resolution question MOVED rather than closing** — the family the drift-watch
+calls *a fix for a fault carrying the fault*, in its mildest form.
+
+**WHAT IS ANSWERABLE AT THIS n:** *"which site dominates"*, if one does. **NOT**
+*"here are three shares."* ⇒ **print the three intervals beside the three point
+estimates** and no reader can confuse them. SE ≈ 1.0pp/share needs ~20,000
+games/shard, ~3.7× planned — worth knowing, not necessarily worth buying.
+
+**TWO FREE FIXES:** (1) **`6.8` is hardcoded into all three partition formulas
+and it is a MID-RUN value** — live is already **7.19pp** and still filling;
+reference *"the final NULL gap"* or every share inherits the staleness. (2) the
+spawn hash's per-seat ordering is **deterministic given the anchors**, exactly
+like §4's CARDINALS rank, so a per-map covariate is computable **with zero
+games** and can be laid against the eight per-map gaps already in hand.
