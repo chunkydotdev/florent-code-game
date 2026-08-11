@@ -1,6 +1,6 @@
-# RESEARCH ARM RETRO — **v1.1** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.2** — run it at every wrap, before the process deltas
 
-**RETRO v1.1 · created 2026-08-10 (s28) · bumped 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
+**RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
 
 **Versioned on the same standard as the method: EVERY QUESTION CARRIES THE INCIDENT
@@ -18,6 +18,36 @@ only one of them makes the arm better for the builder and the side lane.
 exactly what another lane consumes. Everything else is cost** — context, tokens,
 and the `doc:code churn` and `cross-lane analysis` signals that `audit_trigger`
 fires on. A cut nobody reads is not neutral. It is a debit.
+
+## ⭐ ROUTING — A FINDING IS ROUTED AT **WRITE TIME** OR IT IS NOT A FINDING
+
+**This rule outranks every question below it, because without it the answers land
+in a file nobody opens.** Each finding gets exactly one route, written beside it:
+
+| kind of finding | route |
+|---|---|
+| **behaviour change** | **promote into a file that IS booted** — `docs/coordination.md`, or `docs/research/PROGRAMME-drift-watch-2026-08-09.md` |
+| **instrument change** | a **version bump** of the instrument, with the incident |
+| **a rule that should be a script** | hand it to the builder **and** write a dated spec — an unbuilt script is prose |
+| **observation only** | it stays here, and **must label itself `OBSERVATION — NOT ROUTED`** |
+
+**The failure this closes is the comfortable one:** writing *"next time I will…"*
+in a document nobody reopens. **It reads as self-improvement and costs nothing to
+write**, which is exactly why it accumulates.
+
+**Measured, s29 2026-08-11 — the incident that created this rule.** This file was
+bumped to v1.1 carrying three firings and the finding *"retractions reaching a
+lane went 3 → 4"* — **the one number that got WORSE, and therefore the one a
+successor most needed** — into a file that **no lane's boot sequence opened.**
+The side lane found the same defect in theirs (three findings, one survived, and
+only by luck: it had been duplicated into the wrap, whose home IS booted). An
+audit the same day found **no lane named its arm retro at boot or at wrap** —
+`builder.md`'s three "retro" mentions all pointed at the WRAP retro in
+`coordination.md`, not at `docs/builder-arm-retro.md`.
+**Fixed at the source on Magnus's direct instruction ("Act on it please"): all
+three `.claude/commands/*.md` now name their arm retro in BOTH boot and wrap.**
+**Applied to itself, this file's own premise — output is worth what another lane
+consumes — indicts an unread retro before it indicts anything else.**
 
 ## HOW TO VERSION THIS FILE
 * **A new question needs a NAMED INCIDENT from a real session** — a cut that went
@@ -184,4 +214,35 @@ its first real application:
    causal labelling on the lane's own analysis. **A retro that only asked s28's
    question would have returned "no defects" on a session with three retractions** —
    which is precisely why Q7 exists.
+
+### v1.2 — 2026-08-11 (s29) — MINOR: **the ROUTING rule, and the file's own premise turned on the file**
+
+**Incident:** v1.1 was bumped forty minutes earlier with three firings and the
+finding *"retractions reaching a lane went 3 → 4"* **into a file no boot sequence
+opened.** Found by the side lane auditing their own retro and checking all three
+lanes' command files. **`research.md`: 0 mentions. `sidelane.md`: 0.
+`builder.md`: 3, all of them the WRAP retro, none the arm retro.**
+
+**Routed, not merely recorded** — which is the rule proving itself on its first
+application:
+* **behaviour change → promoted to a booted file.** `.claude/commands/research.md`
+  gains boot step 8 (read this file, carry its open items) and an explicit WRAP
+  SEQUENCE whose step 1 is *run the retro before the process deltas*.
+  `sidelane.md` and `builder.md` fixed the same way, same commit.
+* **instrument change → this bump.**
+* **a rule that should be a script → BUILT:** `tools/name_check.py` mechanises
+  D54. *And it failed its own motivating case on the first attempt* — v1 asked
+  "does the name appear anywhere in our source?", passed a four-cell selftest,
+  and returned CLEAN on the document that motivated it, because `hold_any`
+  appears in `ring_read.py` inside a docstring saying the name means nothing.
+  **A mention satisfied a test for existence; the tool reproduced the failure it
+  was built to catch.** Fixed to require a definition site; that document is now
+  selftest cell 5.
+
+**FIRINGS: 4** (3 from v1.1, plus this one). Sunset clause remains disarmed.
+
+**The durable lesson, and it is bigger than this file: the retro's premise —
+"this lane's output is worth exactly what another lane CONSUMES" — applies to the
+retro first.** An unread retro is not a neutral artefact. It is the same debit as
+the tactics library it was written to diagnose.
 

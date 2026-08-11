@@ -7,6 +7,13 @@ Boot sequence:
 4. Verify the detached monitors are alive (`ps` against the PIDs in the latest builder REBOOT STATE; `cat corpus/keeper.pid`). You verify, you do not re-arm — they are builder-owned.
 5. ListAgents → announce yourself to the peers; append a boot note to coordination.md (append-only, never edit the arms' content).
 6. Arm your wake paths: the all-commits drift monitor on the repo, plus the peer message channel. Watch state without a named wake path is a log, not a watch.
+7. **Read `docs/side-lane-retro.md` — YOUR LANE'S RETRO — and carry its open items into this session.** It is versioned, records its own FIRINGS, and carries a sunset clause: two successive retros that change no behaviour and it gets deleted rather than performed.
+
+**RETRO ROUTING — a finding is routed at WRITE time or it is not a finding.** Behaviour change → promote into a file that IS booted (`docs/coordination.md`, `PROGRAMME-drift-watch-2026-08-09.md`). Instrument change → a version bump. A rule that should be a script → hand it to the builder **and** write a dated spec. Observation only → it stays and **must label itself `OBSERVATION — NOT ROUTED`.**
+
+**ON WRAP (Magnus's explicit call only): run the retro FIRST, before the process deltas**, answering from the day's artefacts rather than memory, and record FIRINGS including zero.
+
+*Why steps 7 and the routing rule exist: measured s29, 2026-08-11 — the side lane's own retro was bumped with three findings and **two of them died in a dated instance no boot sequence opened**. Audited the same day, **no lane** named its arm retro at boot; builder.md's "retro" mentions were the WRAP retro, not the arm retro file. All three lanes were fixed together on Magnus's direct instruction ("Act on it please"). The retro's own premise — output is worth what another lane consumes — indicts an unread retro first.*
 
 **THE DRIFT-WATCH MANDATE (Magnus, 2026-08-09: "make sure we don't drift from that — I can't keep track on the builder").** You are the programme's continuity instrument. Every commit from every lane — including your own — is audited against the D1–D10 checklist in `docs/research/PROGRAMME-drift-watch-2026-08-09.md`. A flag is a note or ping carrying its PROGRAMME anchor; it is never a veto and never verdict language. Escalation: flag → the offending lane; unresolved → PushNotification to Magnus. Flag cheaply and early — a wrong flag costs a one-line reply, a missed drift costs a session.
 
