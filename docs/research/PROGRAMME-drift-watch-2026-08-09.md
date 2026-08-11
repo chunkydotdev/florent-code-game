@@ -1320,3 +1320,30 @@ a proven negative control beats three that have never flagged anything.**
   a criticism gets acknowledged.** ⚠ **And it is not free: proposing the fix
   means the auditor now owns a design opinion, which must be labelled as one** —
   each of the six was offered as *"either of these closes it"*, not as the answer.
+
+- **⛔ `audit_trigger.ship_cadence` MUST NOT BE QUOTED UNTIL IT COUNTS SHIPS
+  RATHER THAN TRANSITIONS (s32, 2026-08-11; research's finding, promoted here
+  because THIS FILE cites `audit_trigger` as the precedent for a mechanical
+  process check and a successor will therefore trust its rows):**
+  `tools/audit_trigger.py:150` counts **`active_bot` TRANSITIONS**, and its own
+  docstring states the assumption it rests on — *"an activation is what we
+  actually mean by 'a decision landed'."* **A prototype leg breaks exactly that:
+  activate + roll back reads as two activations.** Across one session the row
+  read **0.47 (TRIP) → 0.50 (ok) → 0.38 (TRIP) against a single real ship.**
+  **⚠ SCOPE, and it is what keeps the instrument usable: the `cross-lane
+  analysis` row is UNAFFECTED and is what a FIRE verdict should rest on.** Only
+  the cadence row is compromised. A spec is with the builder (collapse
+  `X → Y → X` inside a short window to ZERO; count only transitions that
+  PERSIST; selftest cell = one real ship plus three activate/rollback pairs must
+  read **1, not 7**).
+  **⭐ AND THE REASON THIS IS A CHECKLIST ENTRY RATHER THAN A BUG REPORT: the
+  same docstring ALREADY CARRIES A STANDING CAUTION FOR THE PREVIOUS VERSION OF
+  THIS SAME FAULT** — *"every 'analysis is outpacing decisions' reading taken
+  before this fix is suspect"* — written when a prose-matching predicate was
+  replaced. **The replacement inherited a different version of the same failure
+  and got no caution of its own.** ⇒ **D68's shape a seventh time, and the new
+  form is the sharpest yet: A WARNING ABOUT THE OLD FAULT SITTING DIRECTLY ABOVE
+  THE NEW ONE READS AS EVIDENCE THE FAULT WAS HANDLED.** When a fix carries a
+  caution about what it replaced, ask whether the caution applies to the
+  replacement — the text that should have prompted the question is the text that
+  suppressed it.
