@@ -94,10 +94,14 @@ def main() -> int:
             prev = json.loads(STATE.read_text())
         except Exception:
             prev = {}
+    # ⛔ EXPECTED, NOT ZERO. The first version's predicate was `n == 0`, so
+    # 8 of 9 shards dying overnight would read `OK` and DELETE the alert file --
+    # an idleness alarm blind to 89% idleness. (Side lane audit, s31.)
+    expected = int(os.environ.get("EXPECTED_GAMES", "1"))
     consec = prev.get("consec_idle", 0)
-    if n == 0:
+    if n < expected:
         consec += 1
-    elif n > 0:
+    else:
         consec = 0
     STATE.parent.mkdir(parents=True, exist_ok=True)
     STATE.write_text(json.dumps({"consec_idle": consec, "last_n": n,
@@ -109,14 +113,15 @@ def main() -> int:
         print(f"{stamp}\tgames=UNKNOWN\tCORES=BLIND (ps failed) — not reporting idle")
         return 0
     qs = f"queue_age_min={age:.1f}" if age is not None else "queue=MISSING"
+    short = f"games={n}/{expected}"
     if consec >= 2:
-        msg = (f"{stamp}\tgames=0\tconsec_idle={consec}\t{qs}\t"
+        msg = (f"{stamp}\t{short}\tconsec_idle={consec}\t{qs}\t"
                f"*** CORES IDLE — NEXT QUEUE ITEM: {item or 'QUEUE EMPTY'} ***")
         print(msg)
         with ALERT.open("a") as fh:
             fh.write(msg + "\n")
     else:
-        print(f"{stamp}\tgames={n}\tconsec_idle={consec}\t{qs}\tOK")
+        print(f"{stamp}\t{short}\tconsec_idle={consec}\t{qs}\tOK")
         if n > 0 and ALERT.exists():
             ALERT.unlink()                # cleared by work actually starting
     return 0

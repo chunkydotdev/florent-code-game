@@ -1,0 +1,14 @@
+# TARGET sized at ~75% of the 6h window (measured 3.05 s/game at 8 shards; we
+# run 9 on 10 cores alongside the session + 7 monitors, so contention is worse).
+# ⛔ AND EVERY TARGET IS A MULTIPLE OF 16 (8 maps x 2 seats) so seat/map balance
+# is exact, not approximate -- seat is worth 7.6pp on byte-identical arms.
+# shard        treatment              control                target seed_lo
+CAL_v104v92    bots/_v130loki13       bots/_v115dodge         2000   1000
+CAL_v104v102   bots/_v130loki13       bots/_v124loki8         2000   2000
+NULL           bots/_v148null         bots/_v148ferryfirst    5408   3000
+BESTFIT        bots/_v145bestfit      bots/_v148ferryfirst    5408   4000
+CAP6           bots/_v143cap6         bots/_v148ferryfirst    5408   5000
+CAP12          bots/_v144cap12        bots/_v148ferryfirst    5408   6000
+GUNAXIS        bots/_v146gunaxis      bots/_v148ferryfirst    5408   7000
+ROSTER         bots/_v142roster       bots/_v148ferryfirst    5408   8000
+NEGCTRL        bots/_v140noseal       bots/_v148ferryfirst    5408   9000
