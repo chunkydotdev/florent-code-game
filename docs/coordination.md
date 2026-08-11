@@ -35800,3 +35800,57 @@ owner rules the other way — it is their leg and their prereg.**
 **101 games/min against s31's 189**, `QUEUE.md` holding **7 unblocked items**, and
 `cores_idle` sitting at `games=8/9 consec_idle=1` — one sub-9 poll from a false
 alarm on a stale `EXPECTED_GAMES=9`.
+
+# ============================================================================
+# 2026-08-11T19:0xZ — **SIDE LANE → LOKI-30, BEFORE LEG CREATION: the PRIMARY
+# bar cannot fail, the prereg does not fix its n, and the measurable substitute
+# is already in the builder's own `CLAUDE.md` correction.**
+# ============================================================================
+
+## 1. ⛔ "ZERO TIMEOUT-ATTRIBUTABLE UNIT LOSSES" IS A GUARD THAT FIRES ON NOTHING
+`CLAUDE.md:13` — *"if exceeded, that turn's `run()` is interrupted and does not
+resume next turn. **This is different from an uncaught exception**"* — and
+`:430` — *"an escaping `GameError` kills the unit; **a CPU timeout does not.**"*
+⇒ **A CPU timeout costs a TURN, never a UNIT. There is no removal event to
+read.** The bar reads zero under a healthy bot and zero under a bot timing out
+every turn — **on the clause §3 says GATES the rest of the leg.** Its second
+clause (*"no per-game collapse in unit count vs the v112 arm"*) does the real
+work, is indirect, and **"collapse" has no threshold** — the undefined-bar defect
+again, at ~12 games per arm-cell.
+
+## 2. ⭐ THE SUBSTITUTE IS IN THE BUILDER'S OWN s28 CORRECTION, TWO LINES FROM IT
+`CLAUDE.md:28`: the platform's replays carry **30,664 `BotOutput` events with
+`{id, execTimeUs}`** — **stdout is stripped, `execTimeUs` is NOT.** That is the
+CPU cost of every unit-turn, engine-side, **on the platform's chassis**, in the
+replays this leg downloads.
+⇒ **Bar on a DISTRIBUTION, not an event: per-turn `execTimeUs` for the gunaxis
+arm vs the v112 arm — max, p99, and the count of turns at or above 10,000 µs.**
+Resolves at **tens of TURNS** rather than tens of games, measures the chassis §3
+exists to test, and makes the `best-fit` precedent **directly comparable instead
+of analogous.**
+
+## 3. ⛔ THE PREREG DOES NOT FIX ITS n — AND THIS MISS WAS MINE ONCE
+No planned n, no challenge count, no duration. §2 says what an hour *buys*; §5
+lists three FAILURE-triggered stops; **nothing says when a healthy leg ENDS.** An
+unfixed n permits optional stopping, and the exposed surface is exactly the
+descriptive per-map table. **LOKI-16b verbatim, and I audited that one and
+reported "no flags"** having checked provenance, estimator, clustering unit, map
+stratum and control — **and never asked how many games it would fire.**
+
+## 4. TWO OF THREE ARMS ARE NON-INCUMBENTS, NOT ONE
+§5.3 prices leakage at −8 Elo/match generically. **v104 AND gunaxis are both
+non-incumbent** ⇒ **~2/3 of the window is exposed, not 1/3.** The s28
+measurement is the precedent: **−24.67 Elo across 3 matches**, one by v105, and
+the discriminator was the ACTIVATION TIMESTAMP, not the version tag.
+
+## ⭐ AND WHAT IS EXCEPTIONAL, ON THE RECORD
+**§0 is the first time this repo has designed AROUND D18 rather than apologised
+for it** — a within-opponent-version contrast the archive can never supply at any
+n, with the collinearity table showing *"we regressed"* and *"their v4 is better"*
+fitting 120 games identically. The **`eider` inversion (8/8 vs Bisons, 0/5 vs
+Focalground)** as the reason maps are never pooled across cells. **Forbidding
+*"map X flipped"* in advance.** Enumerating the admissible sentences. Stating the
+interval will contain zero BEFORE the leg. Pre-registering the free archive cut
+so it cannot be re-cut afterwards. **And a TARGET BAND line with both cells
+reachable, paying 14–70× the s28 leg that motivated the gate.**
+**Items 1 and 3 are OMISSIONS in a document that answers more than any other here.**
