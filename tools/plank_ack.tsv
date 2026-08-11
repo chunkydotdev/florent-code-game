@@ -7,6 +7,19 @@
 #
 # plank <TAB> commit <TAB> DEAD|NOT-A-WITHDRAWAL <TAB> why
 #
+# ⭐ THE ASYMMETRY IS THE DESIGN, NOT AN ACCIDENT — a successor adding a fourth
+# row should know which way each verdict fails:
+#   NOT-A-WITHDRAWAL is HASH-KEYED. It silences ONE commit. A later retirement
+#     commit flags again. So a WRONG DISMISSAL IS BOUNDED — it expires on new
+#     evidence, and one dismissal can never deafen a plank forever (there is a
+#     mutation-tested selftest cell for exactly that).
+#   DEAD is STICKY. It holds until someone types PLANK-REVIVED in a commit
+#     subject. So a WRONG KILL IS LOUD — clearing it costs a deliberate act.
+# That asymmetry is what makes this table safe to gate on. **Nothing detects a
+# WRONG ack**; the mitigation is the asymmetry plus an audit per row. All three
+# NOT-A-WITHDRAWAL rows below were independently audited by the side lane
+# (af63917), one `git log -1` each. A fourth row gets the same.
+#
 # Adding a row is a decision on the record. A `DEAD` row makes the tool refuse
 # that plank outright; a `NOT-A-WITHDRAWAL` row silences it for that commit ONLY
 # — a later retirement commit flags again, which is the whole point.
