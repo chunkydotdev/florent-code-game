@@ -58,6 +58,8 @@ WA=0; NA=0; WB=0; NB=0
 typeset -A MW MN
 typeset -a TW_TURNS CW_TURNS
 typeset -a TSCORE CSCORE
+typeset -a TKR CKR
+TKILL=0; CKILL=0; TTIE=0; CTIE=0
 for S in ${=SEEDS}; do
   for M in ${=MAPS}; do
     for ORD in A B; do
@@ -90,6 +92,19 @@ for S in ${=SEEDS}; do
       # LOSS or a TIEBREAK and both score -10, which is the worst bucket -- the
       # currency already answers the question a kill-round median cannot.
       CONDW="core_destroyed"; [[ $L == *"tiebreak"* ]] && CONDW="tiebreak"
+      # DECOMPOSE. kill_speed_score is a deterministic function of
+      # (won, cond, turns), so P(core-kill win) and kill-round-given-a-kill are
+      # SUFFICIENT for it -- decomposing loses nothing and gains resolution.
+      # MEASURED JUSTIFICATION: 94.5% of the score's variance is the BINARY
+      # "did we kill at all"; only 5.5% is the speed it exists to reward. The
+      # scorecard is a VALUE STATEMENT and is left unchanged; this changes what
+      # the SCREEN reports, not what any bar is.
+      if [[ $CONDW == core_destroyed ]]; then
+        case "$L" in *"$B"*) TKILL=$((TKILL+1)); TKR+=($TN);;
+                     *)      CKILL=$((CKILL+1)); CKR+=($TN);; esac
+      else
+        case "$L" in *"$B"*) TTIE=$((TTIE+1));; *) CTIE=$((CTIE+1));; esac
+      fi
       case "$L" in
         *"$B"*) TSCORE+=($(.venv/bin/python -c "import sys;sys.path.insert(0,'tools');import score;print(score.game_score(True,'$CONDW',$TN))"))
                 CSCORE+=(-10);;
@@ -152,9 +167,35 @@ fi
 print ""
 print "  informative band at n=$N: <=$LOC or >=$HIC wins  (${LOP}%-${HIP}% is noise)"
 print "  VERDICT: $VERDICT"
+med() { print -r -- ${(n)@} | tr " " "\n" | awk '{a[NR]=$1} END{if(NR)print (NR%2)?a[(NR+1)/2]:int((a[NR/2]+a[NR/2+1])/2); else print "-"}'; }
 mean() { print -r -- $@ | tr " " "\n" | awk '{s+=$1;n++} END{if(n)printf "%.2f",s/n; else print "-"}'; }
 print ""
-print "  ⭐ KILL-SPEED SCORE (PRIMARY CURRENCY — PROGRAMME.md: win rate is NOT the verdict)"
+print "  ⭐⭐ SCREENING STATISTICS (the score is DECISION-ONLY, not the screen)"
+printf "      P(core-kill win)   %-14s %5.1f%%  (%d/%d)\n" $B $((100*TKILL/N)) $TKILL $N
+printf "                         %-14s %5.1f%%  (%d/%d)\n" $C $((100*CKILL/N)) $CKILL $N
+printf "      kill round | kill  %-14s median %s   n=%d\n" $B "$(med $TKR)" ${#TKR[@]}
+printf "                         %-14s median %s   n=%d\n" $C "$(med $CKR)" ${#CKR[@]}
+printf "      tiebreak wins      %-14s %d        %-14s %d   (both score -10 BY DESIGN,\n" $B $TTIE $C $CTIE
+print  "                         and they are completely different states — 48.8% of live-era games sit here)"
+# ⛔ THE TRAP THE DECOMPOSITION CREATES. "kill round GIVEN a kill" is CONDITIONED
+# ON THE OUTCOME. A plank that kills only the EASY games posts a BETTER
+# speed-given-kill and a WORSE P(kill) -- a selection effect that looks like an
+# improvement on the line just promoted to primary. The pooled score at least
+# averaged that trade away; the decomposition ADVERTISES half of it. So the two
+# halves must be read together and any opposite movement is flagged.
+SEL=$(print -r -- $TKILL $CKILL "$(med $TKR)" "$(med $CKR)" | awk '{
+  if ($3=="-" || $4=="-") { print ""; exit }
+  pk = ($1 > $2); spd = ($3 < $4);          # lower kill round = faster = better
+  if (!pk && spd) print "P(kill) DOWN but speed-given-kill UP -- SELECTION EFFECT: it may be killing only the easy games";
+  else if (pk && !spd) print "P(kill) UP but speed-given-kill DOWN -- the two halves disagree";
+  else print "" }')
+if [[ -n $SEL ]]; then
+  print ""
+  print "  ⚠⚠ $SEL"
+  print "     Read the two halves TOGETHER. Neither alone is the result."
+fi
+print ""
+print "  KILL-SPEED SCORE (DECISION-ONLY — PROGRAMME.md: win rate is NOT the verdict)"
 print "      $B  mean $(mean $TSCORE) /game        $C  mean $(mean $CSCORE) /game"
 print "      (tools/score.py buckets; a tiebreak win and a loss both score -10)"
 print ""
@@ -177,7 +218,6 @@ if [[ -n $DIVERGE ]]; then
 fi
 print ""
 print "  --- secondary, and NOT the verdict ---"
-med() { print -r -- ${(n)@} | tr " " "\n" | awk '{a[NR]=$1} END{if(NR)print (NR%2)?a[(NR+1)/2]:int((a[NR/2]+a[NR/2+1])/2); else print "-"}'; }
 print "  KILL ROUND (continuous, far more power than the win count):"
 print "    when $B wins:  n=${#TW_TURNS[@]}  median $(med $TW_TURNS)"
 print "    when $C wins:  n=${#CW_TURNS[@]}  median $(med $CW_TURNS)"
