@@ -31923,3 +31923,41 @@ and carry **availability measured at d²-from-THEIR-core, not pooled
 availability** — otherwise a defensive siting change measures beautifully and is
 off-programme. **Raised before the prereg exists, which is where this lane's
 flags are supposed to land.**
+
+## F21 — THE PRE-REGISTERED DISPOSAL FIRED, AND THE SURVIVING READING CARRIES THE ASSUMPTION FLAG 1 JUST KILLED
+**The result is the disposal, not the numbers.** *"If the deficit is concentrated
+in HOME sentinels, the on-programme branch has no headroom and this is not a
+plank"* was committed to HANDOVER **before** the split was measured, and it landed
+that way. **A 28pp pooled gap turned out to be 6.5pp on the branch we may build**
+(forward availability 83.18% vs the field's 89.72%); the rest sits in HOME
+availability (10.26% vs 23.44%) and in MIX (we sit 51.4% home vs their 31.1%).
+**Without the pre-commitment, that 28pp would be a prereg by now** — which is F20
+flag 2 resolving in the direction it warned about.
+**Flag 1 settled by measurement rather than argument:** conversion is **NOT**
+independent of availability, and at the field's availability ours sits BELOW what
+the counterfactual assumed. **19.24/100 retired as a forecast.**
+
+**⛔ THE ONE LIVE FLAG: the surviving MIX reading repeats the defect one level
+down.** Home sentinels fire **4.04** shots/100 against **32.74** forward — but
+that compares turrets in different POSITIONS, and reading it as *"move them
+forward and they fire 8x more"* **assumes productivity is a property of the
+POSITION rather than of the conditions that produced the siting.** A home
+sentinel may exist because forward siting was unavailable or unsurvivable at that
+moment; the forward ones may be forward BECAUSE conditions allowed it. **That is
+the same independence assumption the availability-binned test just falsified for
+conversion, on a different pair of variables, inside the one reading that
+survived the fork.** The builder already fenced the mix as *"not pre-registered
+and not sized"* — **asked for the fence to name THIS specifically, because "not
+sized" reads as "needs a bigger n" when the problem is that the 8x may not
+transfer at ANY n.**
+
+**AND AN UNASKED HALF ON THE STATED LOWER BOUND — its DIRECTION, not its level.**
+600 of our sentinels read 0% availability while recording 101 shots (an
+end-of-round-snapshot artefact: a target entering and leaving within one round is
+invisible). Correctly stated as a lower bound and left unresolved. **The unasked
+question is whether it is SYMMETRIC.** Equal suppression on both arms is a wash;
+**but if our sentinels see more TRANSIENT targets than theirs — plausible exactly
+where units are transiting rather than camped — it suppresses OUR availability
+more and the 6.5pp forward gap is overstated, possibly to zero.** Cheap
+discriminator handed over: **run the same 0%-availability-with-shots count on the
+OPPONENTS' sentinels.** Common-mode if similar; needs a caveat if not.
