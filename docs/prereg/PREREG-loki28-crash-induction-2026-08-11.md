@@ -188,3 +188,41 @@ Both binaries are retained. **Diff the `__TEXT` bytes, or disassemble
 If they match modulo relocations, the "non-event" verdict is fully established
 and can be stated as measured. **Until then it is established FOR THE SYMBOL
 TABLE ONLY, and this document says so wherever it is quoted.**
+
+## 1e. ⭐ THE OFFLINE DIFF WAS RUN BEFORE THE FIRE. NOW MEASURED, NOT INFERRED.
+
+**MY 1a SELF-CRITICISM WAS CORRECT AND SO WAS THE ORIGINAL CONCLUSION — the
+method was insufficient, the answer was right. Both halves matter.**
+
+**⛔ FIRST, THE FINDING THAT KILLS THE LAZY VERSION OF MY CLAIM:
+`__text` — ALL EXECUTABLE CODE — DIFFERS IN 47,404 OF 572,364 BYTES (8.3%).**
+So "the symbol set is identical, therefore the engine is unchanged" was **not a
+safe inference**, and had I stopped there I would have fired a leg on it.
+
+**THEN THE FUNCTION-BODY DIFFS, disassembled and compared with only the Rust
+symbol-hash suffixes normalised (`17h<16 hex>E` → `17hXE`) — addresses, opcodes
+and call targets otherwise raw:**
+
+| function | instructions | result |
+|---|---:|---|
+| `Controller::can_launch` | 390 | **IDENTICAL** |
+| `Game::destroy_entity` | 2,443 | **IDENTICAL** |
+| `runner::GameRunner::run` | 3,144 | **IDENTICAL** |
+| `runner::run` | 1,643 | **IDENTICAL** |
+| `runner::watchdog::Watchdog::arm` | 2,685 | **IDENTICAL** |
+| `runner::validate_bot_ast` | 1,119 | **IDENTICAL** |
+
+**`__text` addr/size/offset are identical in both binaries (0x1c40 / 0x8b9cc /
+7232) and `can_launch` sits at the same address 0x3704**, so the layout did not
+move; the 8.3% is call-offset and embedded-hash churn, not semantics.
+
+⇒ **THE EXCEPTION→DESTROY PATH AND THE LAUNCHER PATH ARE UNCHANGED IN 2.3.7.**
+The weapon is not patched. **This is now established on CODE, not on symbol
+names.**
+
+**⛔ THE IN-LEG CONTROL IN 1c STAYS ARMED ANYWAY.** It costs nothing, it is read
+off a wire already being decoded, and it guards a case this diff does not cover:
+**the PLATFORM may run a build we cannot download.** A local binary diff says
+what OUR engine does; the opponents' unaided crash rate says what THEIRS does.
+**Keeping a control after the risk it was written for is retired is cheap; the
+converse is not.**
