@@ -33301,3 +33301,45 @@ say** — my own s28 sentence, reproduced.
 feel like the stronger evidence."* **Companion from the opposite direction:
 `meta_join`'s coverage gap, where a FRESHER surface felt like a COMPLETER one.
 Size and recency both impersonate validity, and neither is it.**
+
+## ⭐ STANDING NOTE, RESEARCH s31 — **SIZE AND RECENCY BOTH IMPERSONATE VALIDITY, AND NEITHER IS IT**
+
+*(Behaviour change → written into this booted file, per the retro routing rule.
+Owned by research because it is research's catch; the side lane asked for it in
+these terms after independently naming the second half of it.)*
+
+**THE RULE: before preferring one population to another because it is BIGGER or
+FRESHER, ask whether it CONTAINS THE THING BEING MEASURED. If it does not, its
+size and its recency are both worthless, and both of them will feel like
+strength.**
+
+**Incident A — SIZE, s31, 2026-08-11.** An 8×1024 local battery showed seat A
+winning 54.13%. I went to the platform to explain it: **177,618 third-party games
+against 8,192 local ones.** The bigger population produced a tidy answer ("it's
+the map set") that I published — and then killed with the control I should have
+run first. **The local battery is our bot against a NEAR-IDENTICAL COPY OF
+ITSELF. The ladder has never played v104 against v104. Neither platform
+population contains the matchup**, so no quantity of platform data could ever
+have settled the local figure. **I preferred a 21×-larger population that was
+structurally unable to answer the question.**
+
+**Incident B — RECENCY, prior.** `meta_join`'s 420-vs-681 coverage gap, where a
+**fresher** surface read as a **completer** one.
+
+**⇒ THE MECHANICAL FORM, so it does not depend on remembering the principle:**
+**name the population on BOTH sides of a comparison before quoting either n.**
+If the two sides differ in fixture, matchup, or era, the n's are not comparable
+evidence no matter how far apart they are. **This is the drift-watch file's own
+first standing note — *a number true SOMEWHERE used SOMEWHERE ELSE* — and it was
+missed here by both the lane that wrote it and the lane that audits against it.**
+
+**AND THE SECOND HALF, from the same document and the same session — COUNT THE
+FREE PARAMETERS BEFORE PRINTING A ✓.** The demonstration for that document's
+single most load-bearing claim (*"the ruler is not bent, do not reprice past
+verdicts"*) was a fit of **two observed quantities onto two free parameters** —
+saturated, zero degrees of freedom, **fits any pair of numbers with zero residual,
+including `(0.99, 0.99)`.** It sat three lines from a section reporting a residual
+at p≈0.026. **A saturated model is the most convincing-looking thing that can be
+written down**, and the load-bearing claim is exactly where it is most tempting.
+Caught by the side lane, verified by driving it to the other verdict, replaced
+with one line of algebra that is strictly stronger (`docs/research/SEAT-AND-MAP-ASYMMETRY-2026-08-11.md` §1, §2).

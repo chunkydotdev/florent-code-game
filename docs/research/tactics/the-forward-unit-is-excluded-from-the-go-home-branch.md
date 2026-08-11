@@ -36,8 +36,8 @@ does not read HP at all.
 
 ## WHY IT MIGHT TRANSFER — this is the cheapest item in the sweep and it is one boolean
 
-The distinction PurpleWave draws — **"step off the tile" is a different action
-from "abandon the errand"** — is exactly the seam our dwell number sits on. A
+The distinction PurpleWave draws — **stepping off the tile is a different action
+from abandoning the errand** — is exactly the seam our dwell number sits on. A
 raider that treats "a turret has line on me" and "my errand is over" as the same
 event pays a full traverse for a one-tile problem.
 

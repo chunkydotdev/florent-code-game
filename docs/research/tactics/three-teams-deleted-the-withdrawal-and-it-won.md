@@ -8,7 +8,7 @@ transfers: partial
 
 ## WHAT IT IS
 
-The brief for this sweep warned that finding only *"leave faster"* material would
+The brief for this sweep warned that finding only leave-faster material would
 mean the sweep had not been run hard enough. **The opposite happened: the
 strongest measured statements in the whole sweep run the other way.**
 

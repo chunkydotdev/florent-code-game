@@ -82,6 +82,6 @@ fixed and cheap to compute.
 ## BUILDER HOOK
 
 Smallest test: add **one** disjunct to whatever currently ends a raid errand —
-*"every remaining build target on my list is inside a known enemy turret's
-attack pattern"* — and remove the round-count give-up in the same arm. That
+every remaining build target on the raider's list is inside a known enemy
+turret's attack pattern — and remove the round-count give-up in the same arm. That
 swaps a clock for a completion test without adding a mode.

@@ -55,7 +55,7 @@ the limiter is only consulted when it could not.
 
 ## BUILDER HOOK
 
-Reorder, do not retune. In the raid arm, evaluate *"is there a legal build target
-adjacent right now"* **before** any round-count limiter, and let the limiter fire
+Reorder, do not retune. In the raid arm, evaluate whether a legal build target is
+adjacent right now **before** any round-count limiter, and let the limiter fire
 only in the else. This is a one-block move with no new state and it is the
 single cheapest item in this sweep to try.

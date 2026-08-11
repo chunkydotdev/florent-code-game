@@ -1,4 +1,16 @@
-# ⭐ THE SEAT EFFECT IN THE 8×1024 BATTERY IS THE MAP SET — AND MAPS ARE NOT SEAT-SYMMETRIC
+# ⭐ THE 8×1024 SEAT EFFECT: THE RULER IS NOT BENT, THE ENGINE IS SEAT-SYMMETRIC, AND WHAT CAUSES THE LOCAL 54.13% IS **OPEN**
+
+> **⛔ THIS TITLE WAS ORIGINALLY *"THE SEAT EFFECT IN THE 8×1024 BATTERY IS THE
+> MAP SET — AND MAPS ARE NOT SEAT-SYMMETRIC"*. THAT CLAIM IS RETRACTED (§3, §3R-c).**
+> The title is corrected rather than left standing because **a filename and a
+> heading are what a future session greps**, and a retracted conclusion sitting
+> in the title outlives every ⛔ in the body.
+>
+> **WHAT THIS DOCUMENT ESTABLISHES:** §2 the balanced design is unbiased (past
+> verdicts do **not** get repriced) · §3R-a no engine-level seat advantage across
+> 177,618 third-party games · §3R-b map-level heterogeneity is real and replicates.
+> **WHAT IT RETRACTS:** §3 the map-set explanation. **WHAT IT LEAVES OPEN:**
+> §3R-d the cause of the local 54.13%. **WHAT IT DOES NOT CLAIM:** §6.
 
 **Research arm, s31, 2026-08-11.** Commissioned by nothing; produced by
 re-deriving a builder finding that arrived mid-session. **Every number below is
@@ -159,7 +171,10 @@ The all-maps number is diluted by maps the battery never used — including
 strongly B-favouring ones — and **a pooled population that happens to balance is
 not evidence of symmetry in its members.**
 
-### 3b. THE UNDERLYING FACT, AND IT CONTRADICTS THE ORGANISERS' DOC
+### 3b. ⛔ **RETRACTED WITH §3** — THE UNDERLYING FACT, AND IT CONTRADICTS THE ORGANISERS' DOC
+*(The heterogeneity claim here SURVIVES and is restated properly at §3R-b. What
+is retracted is this section's framing of it as a per-map property with fixed
+directions — §3R-c shows the directions do not replicate. Read §3R-b/c, not this.)*
 
 `CLAUDE.md` states maps are *"symmetric by reflection or rotation."* **The win
 outcome on them is not symmetric.**
@@ -269,17 +284,31 @@ eight gives p ≈ 0.024 — it survives, barely. **This is a HYPOTHESIS deservin
 pre-registered seat-stratified re-run of ferry-first. It is not a finding and
 this document does not call it one.**
 
-## 5. THE CONTROL THAT WOULD DISCRIMINATE, AND THE ONE THAT WOULD NOT
+## 5. THE CONTROLS — ⛔ **THIS SECTION REVERSED ITSELF; READ 5R, NOT 5**
 
-A byte-identical null run on **the same 8 maps** returns ~54% seat A and
-**discriminates nothing** — the platform already shows those maps doing that with
-zero contention. It confirms an effect whose cause it cannot address.
+**⛔ RETRACTED, same session, and this one had OPERATIONAL consequences — it was
+relayed to the builder as an instruction while their run was live.** §5 read:
 
-⇒ **Run part of the null on the platform's B-FAVOURING maps.** If the local
-harness reproduces the **B**-favouring direction there, the map explanation is
-confirmed and the harness is clean. If it still shows **A**, there is a
-harness/contention effect on top of the map effect. **Same cost, and unlike the
-same-maps version it can come out the other way.**
+> *"A byte-identical null run on **the same 8 maps** returns ~54% seat A and
+> **discriminates nothing** — the platform already shows those maps doing that
+> with zero contention. It confirms an effect whose cause it cannot address."*
+
+**That was wrong, and it depended entirely on the retracted §3.** Once the map-set
+explanation failed to replicate (§3R-c), the platform stops being able to speak
+to the local number at all — because **the local battery's matchup (v104 vs a
+near-identical copy of itself) exists in NEITHER platform population** (§3R-d).
+
+### 5R. THE CORRECTED CONTROLS
+
+1. **The byte-identical null on the same 8 maps is the PRIMARY instrument, not a
+   redundant one.** It measures the seat baseline **in the exact matchup and map
+   set every local screen runs in** — a calibration constant this project has
+   never had, and one no platform cut can supply.
+2. **A shard on a B-favouring map (locally: `jackpot`) is still worth firing, but
+   its QUESTION HAS CHANGED.** It is no longer *maps vs harness*. It is: **does
+   the self-play seat asymmetry track the map at all?** If `jackpot` comes back
+   A-favouring in self-play while reading 40.2% in our ladder games and 50.9% in
+   third-party games, the map is not the driver and something in the matchup is.
 
 ## 6. WHAT THIS DOES *NOT* SAY
 
