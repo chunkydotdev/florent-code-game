@@ -36540,3 +36540,97 @@ wire's own `tled` boolean, with v112 as an instrument control carrying a
 (0 TLE'd / 13,457 turns, mean CPU 485 µs vs 522 µs). **A flag raised two hours
 before a ship turned into the ship's evidence.** Worth recording because the
 cheap read of an adversarial flag is that it costs time.
+
+# ============================================================================
+# 2026-08-11T21:1xZ — **RESEARCH ARM s32 WRAP** (Magnus called it). Retro ran
+# FIRST (v1.5, 2 firings, new Q7). Process deltas, then arm state.
+# ============================================================================
+
+## PROCESS DELTAS — what a successor should DO differently
+
+**D80 — ⛔ A CLOSURE IS NOT A FINDING WITH A STRONGER ADJECTIVE.** I published
+*"the displacement channel is dead"* into `QUEUE.md` minutes after computing it.
+Every control passed, the selftest passed, the strata were matched — **and the
+defect was IMMORTAL-TIME BIAS in the estimator's SELECTION, which no assertion
+touched.** A victim must be alive at round R to be thrown, and *"alive"* includes
+*"has not yet been removed undamaged"* — **the outcome**. Correcting it reversed
+the sign: **−0.080pp → +0.265pp, CI [+0.034, +0.496], ratio 2.50×.**
+⇒ **Name the quantity in one sentence, then ask which clause each assertion
+covers. The uncovered clause is where the defect is.** A closure removes a road
+from the queue and must survive a harder read than the finding that motivated it.
+*(Now Q7 of `docs/research-arm-retro.md`.)*
+
+**D81 — A SELFTEST THAT HOLDS THE CONFOUND CONSTANT CANNOT SEE IT.** Every fixture
+row in `kidnap_fate.py` carried **identical timing in both arms**, so exposure and
+selection were equal **by construction**. The test asserted *separates an effect
+from no effect* — true, and irrelevant to the claim. **The fixture must VARY the
+thing the estimator could be fooled by.** The selftest now does: a true-effect-ZERO
+cell reads **naive −50.00pp / risk-set +0.00pp**, so **the estimator that produced
+the retracted number fails a test the shipped one passes.**
+
+**D82 — RUN THE POSITIVE CONTROL IN THE SAME COMMAND AS THE REAL GREP.** Twice in
+five minutes I produced a clean-looking "verified absence" that was pure instrument
+failure — once from the **wrong corpus**, once from an **unquoted shell file-list**
+that errored on every file and printed its summary anyway. **Both were caught only
+because `enemy` returned 0, which is impossible in 166k words of Battlecode
+postmortems.** A 0 on a positive control indicts the harness, not the corpus.
+
+**D83 — A FILTER MUST NAME ITS CASUALTIES.** `target_value.py` now prints
+**EXCLUDED BY THE 1650 FLOOR** with every team it removes, not just the survivors.
+A filter that silently drops rows cannot be audited — the next reader sees 11 teams
+and cannot know 4 were cut or why. **Same family as `--pooled-not-paired` requiring
+a typed reason. Generalise it: any gate that drops rows prints what it dropped.**
+
+**D84 — WHEN A RULE IS STATED, NAME THE SURFACE THAT WILL REFUSE WORK WITHOUT IT,
+IN THE SAME BREATH.** Four instances today of a doctrine change stopping short of
+its enforcer: `PLAY_DEFENCE` absent from `CLAUDE.md`/`AGENTS.md` for 3 h · the queue
+rule absent from `PROGRAMME.md` and all 3 command files · **the tactics SEED still
+carrying the retired rule while MANUFACTURING new stale files** · and
+`TARGET_RATING_FLOOR` living only in a note while the mandated gate printed
+`reachable YES` for teams it excluded. **All four are closed.**
+
+**D85 — SPECS GET BUILT; ANALYSES DO NOT. FORMAT PREDICTS CONSUMPTION BETTER THAN
+QUALITY DOES.** From the adversarial audit: `SPEC-kill-speed-score` →
+`PROGRAMME.md:304` + `tools/score.py`; `SPEC-match-initiative-ledger` →
+`tools/match_ledger.py`; `SPEC-mutation-harness` → `tools/ring_read.py`. Meanwhile
+**61 tactics files in 24 h bought 2 citations and 0 built arms.** ⇒ **this lane
+should write SPECs and INSTRUMENTS, not surveys.**
+
+**D86 — TACTICS SWEEPS ARE STOPPED, AND THE DURABLE FIX IS NOT MINE TO MAKE.**
+Verified 61/2/0. **⚠ The constant-tactics mandate is Magnus's standing directive in
+`.claude/commands/research.md`; I did NOT edit that file, so a successor still
+boots with "launch a sweep at boot".** **THIS IS THE ONE OPEN PROPAGATION GAP AND
+IT NEEDS MAGNUS'S HAND.**
+
+## RESEARCH ARM STATE — s32, 21:1xZ
+
+**LIVE SURFACES I READ MYSELF AT WRAP (not asserted, not relayed):**
+* `ship_watch` newest **21:07:46Z — v114, k=5, rating=1674, net5=−12.0, peak=1686,
+  drawdown=−12.0, armed=False, RULE=unarmed.**
+* `queue_check` **7 unblocked** (#17 #16 #7 #8 #13 #14 #15), floor 3, **OK**.
+  **8 local shards running, 22,766 rows, filler UP.**
+* `audit_trigger` **STILL FIRES 2/5** — and **`cross-lane analysis` went 13.57 →
+  17.14 across this session (95 → 120 docs). I added ~24 of them.**
+* Corpus synced by me at 17:59Z (+1,197 replays; reconciliation 2,520/2,520).
+* **Nothing of mine is still running.** All 4 subagents returned and are relayed.
+
+**⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED:**
+1. **`ship_cadence` in `audit_trigger` COUNTS ROLLBACKS AS SHIPS** — it reads
+   `active_bot` transitions, so activate+rollback = 2 "activations". It untripped
+   itself (0.47→0.50) with zero ships. **I reported it to Magnus as a finding and
+   withdrew it. The `cross-lane` row is unaffected and is the real one.**
+2. **The kidnap result is +0.265pp on SEVENTEEN AND THIRTEEN EVENTS**, z=2.25, an
+   interval nearly touching zero, and `no_damage_removal` conflates an uncaught
+   exception with `self_destruct()`. **Prioritising signal, NOT a result.**
+3. **`TARGET_RATING_FLOOR: 1650` ALREADY ADMITS ONLY TEAMS AT OR ABOVE US** at our
+   ~1663–1674 — projected for 1650, arrived at 1663. Every leg from here is against
+   a stronger team.
+4. **`border_defect_scan.py` IS UNRUN.** Do not quote a target list from it until
+   it is driven both ways.
+5. Every per-opponent statistic still pools opponent versions; **seat is ~2.5× the
+   largest arm effect ever screened**; `ladder_games.seat` is `winner_seat`, not ours.
+
+**RELAYED BEFORE IDLING (subagents die with the session):** all four returned and
+their findings are committed — caveat pass (`b9977cb`-era), sweep 24 (`c671b00`),
+sweep 25, instrument-vs-decision audit and adversarial lane audit (both summarised
+into `coordination.md` and acted on; **neither wrote a document, by instruction**).
