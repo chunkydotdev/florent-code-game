@@ -35895,3 +35895,48 @@ distinction most preregs here have blurred:** *the `execTimeUs` primary may be
 read early because stopping on it is a STOP-FOR-HARM, not optional stopping.*
 **The v112-as-instrument-control cell is an addition this lane did not propose
 and is the better half of the amendment.**
+
+# ============================================================================
+# 2026-08-11T19:0xZ — **SIDE LANE: today's PAIRING OFFSET re-derived (12/12
+# clean), the v114 window CERTIFIED CLEAN STRUCTURALLY — and a fifth
+# infer-from-artefact by me, inside the sentence recommending the primary.**
+# ============================================================================
+
+## ⭐ THE OFFSET, RE-DERIVED RATHER THAN TRUSTED
+`CLAUDE.md` warns the offset **has shifted inside an 18-hour span and must never
+be hardcoded.** Off `fcode match list --mine --type ladder --json`, the last 12
+ladder pairings:
+```
+15:12:59  15:32:59  15:52:59  16:12:59  16:32:59  16:52:59
+17:12:59  17:32:59  17:52:59  18:12:59  18:32:59  18:52:59
+```
+**minute mod 20 = 12 on 12 of 12; second :59 on all 12.** ⇒ next slots
+**19:12:59 · 19:32:59 · 19:52:59 · 20:12:59**, clear air `:13:00–:32:00`.
+
+## ⭐⭐ THE v114 WINDOW IS CLEAN, AND CERTIFIED BY STRUCTURE NOT BY ABSENCE
+`fcode status` **19:08:46Z: `Active bot: v112 (Loki v3)`.** Activated ~19:06:41,
+restored inside ~2 minutes. **The window 19:06:41 → ≤19:08:46 sits ENTIRELY
+between the 18:52:59 and 19:12:59 slots.** ⇒ **no pairing instant existed inside
+it.** That is **not** *"no v114 match appeared"* — the match-counter fallacy
+`CLAUDE.md` says is blind to exactly this failure — it is *"the window contains
+no pairing instant."* **Zero rated exposure, certified structurally.**
+
+## ⛔ AND THE FLAG I SENT BEFORE READING IT — FIFTH INFER-FROM-ARTEFACT TODAY
+I sent an urgent *"v114 went live and the next pairing is in four minutes"* off
+the **existence of `scratchpad/arm_unrated_v114_*.txt`** — an artefact, not the
+holder. **In the same message I wrote *"the tape will not tell you; the `Active
+bot:` line and per-match `teamAVersion` are the only surfaces that will"* — and I
+had not read the `Active bot:` line.** **The fault was inside the sentence
+recommending the cure.** Fifth instance today of inferring from an artefact
+instead of opening the primary, and the most direct.
+
+## WHAT STANDS
+* **Remaining windows are SCHEDULABLE**: a 12-match leg at 5/20 min runs ~50
+  minutes and re-activates repeatedly across three more slots.
+* **⚠ INSTRUMENT HAZARD:** the CLI's upgrade banner is concatenated onto the JSON
+  with **no newline** — `Update available: 2.3.6 -> 2.3.7. Run: pip install
+  --upgrade fcode{"matchId": …}`. **A `json.loads` breaks; a `matchId` regex
+  silently succeeds. The failure is invisible in exactly the tools that keep
+  working.**
+* **The machine is no longer half-idle**: 7 shards / 14 `fcode run` (GUNAXREP and
+  GUNAXTB added), and `EXPECTED_GAMES` moved 9 → 5, so no false alarm fired.
