@@ -31,11 +31,36 @@ from pathlib import Path
 # physically impossible as a result -- the engine places a thrown bot at the
 # target tile -- which is the tell that it is structural.
 #
-# THE CAUSE, from tools/corpus/replay_throws.py: the outcome columns are keyed to
-# the THROWN BOT's own enemy, `foot[1 - b.team]`. For a kidnap, b is the ENEMY
-# bot, so `core_atk` counts the kidnapped bot attacking OUR core. The column is
-# not broken; it MEANS SOMETHING ELSE in that partition, and its meaning INVERTS
-# -- zero there is the good outcome, not the null one.
+# ⛔ THE CAUSE PUBLISHED HERE FIRST WAS WRONG, AND SO WAS THE PARTITION. Corrected
+# 2026-08-11 after a side-lane sweep; verified at source and in the data by me.
+#
+# I WROTE: the columns are keyed to the thrown bot's own enemy (`foot[1-b.team]`),
+# so for a kidnap `core_atk` counts the kidnapped bot attacking OUR core.
+# THAT IS FALSE AS THE CAUSE. Split on `kind` rather than on team, 275,358 rows:
+#     EXILE     171,984   reached 0.00%   any_atk 0.00%   core_atk 0.00%
+#     INSERT     77,844   reached 22.65%  any_atk 10.61%  core_atk 2.25%
+#     RETREAT    24,277   reached 0.00%   any_atk 0.00%   core_atk 0.00%  <-- SAME TEAM
+#     UNATTRIB    1,253   reached 0.00%   ...
+# RETREAT IS SAME-TEAM AND IDENTICALLY ZERO ACROSS 24,277 ROWS. Team keying cannot
+# explain that, and it is the observation that falsifies my version.
+#
+# THE REAL CAUSE, `tools/corpus/replay_throws.py:134`:
+#     if kind == "INSERT":  active[eid] = rec
+# ONLY INSERT ROWS EVER ENTER `active`, and both the `builderAttack` handler and
+# the `reached` loop read exclusively from `active`. For every non-INSERT throw
+# THE COLUMNS ARE NEVER COMPUTED AT ALL. The team-keyed line at :157 sits
+# DOWNSTREAM OF A GATE IT NEVER PASSES -- re-keying it would change nothing.
+#
+# ⇒ THE CONCLUSION THAT MATTERED IS UNCHANGED AND IS IF ANYTHING STRONGER: a zero
+#   in these columns for any non-INSERT throw is NOT A MEASUREMENT OF ANYTHING.
+#   "The launcher raid delivered nothing, 0 of 4,169" remains withdrawn.
+#
+# ⚠ AND THE FIRST VERSION OF THIS CHECK COMMITTED THE DEFECT IT WAS BUILT TO
+#   CATCH: it split on `tteam == bteam`, which pools the 24,277 structurally-dead
+#   RETREAT rows into the half it prints as HEALTHY -- publishing 17.29% against a
+#   true INSERT rate of 22.65%, diluted ~24%. A partition that is not the
+#   defect's own partition is a wrong denominator wearing a control's clothes.
+#   Now split on `kind`, which is the column the decoder itself branches on.
 #
 # IT NEARLY RETIRED A LIVE PLANK. The research arm read "our throws: 0 of 4,169
 # any_atk" as "the launcher raid delivers nothing" and was about to close the
@@ -181,39 +206,44 @@ def conditionally_dead(root) -> int:
     if not p.exists():
         return 0
     import csv as _csv
-    part = {"KIDNAP (cross-team)": [0, 0, 0, 0],
-            "SELF-INSERT (same team)": [0, 0, 0, 0]}
+    from collections import defaultdict
+    part = defaultdict(lambda: [0, 0, 0, 0])
     with p.open(newline="") as fh:
         rd = _csv.DictReader(fh, delimiter="\t")
-        if not rd.fieldnames or "tteam" not in rd.fieldnames:
+        # Split on `kind` -- THE COLUMN THE DECODER ITSELF BRANCHES ON. Splitting
+        # on team was the first version's error and it diluted the live half by
+        # ~24% by pooling structurally-dead RETREAT rows into it.
+        if not rd.fieldnames or "kind" not in rd.fieldnames:
             return 0
         for r in rd:
-            t, b = r.get("tteam", ""), r.get("bteam", "")
-            if t == "" or b == "":
-                continue
-            a = part["SELF-INSERT (same team)" if t == b else "KIDNAP (cross-team)"]
+            a = part[r.get("kind") or "?"]
             a[0] += 1
             for i, col in enumerate(("reached", "any_atk", "core_atk"), start=1):
                 if r.get(col) not in ("", "0", "False", None):
                     a[i] += 1
-    print("\nCONDITIONAL-DEAD CHECK  throws.tsv, split on thrower-vs-thrown team")
-    print("  (columns are keyed to the THROWN bot's own enemy, so they mean "
-          "something DIFFERENT in each half -- see CONDITIONALLY_DEAD)")
+    print("\nCONDITIONAL-DEAD CHECK  throws.tsv, split on `kind`")
+    print("  replay_throws.py:134 admits ONLY kind=='INSERT' into `active`, and "
+          "the attack/reach\n  loops read only from `active` -- so every other "
+          "kind has these columns NEVER COMPUTED.")
     flipped = 0
-    for k, (n, re_, aa, ca) in part.items():
+    for k, (n, re_, aa, ca) in sorted(part.items(), key=lambda t: -t[1][0]):
         if not n:
             continue
-        print(f"  {k:26s} n={n:>7d}  reached {re_/n:6.2%}  "
-              f"any_atk {aa/n:6.2%}  core_atk {ca/n:6.2%}")
-        if k.startswith("KIDNAP") and (re_ or aa or ca):
+        tag = "  <- LIVE" if k == "INSERT" else (
+            "  <- SAME-TEAM AND DEAD: team keying cannot explain this"
+            if k == "RETREAT" else "")
+        print(f"  {k:9s} n={n:>7d}  reached {re_/n:6.2%}  "
+              f"any_atk {aa/n:6.2%}  core_atk {ca/n:6.2%}{tag}")
+        if k != "INSERT" and (re_ or aa or ca):
             flipped = 1
     if flipped:
-        print("  *** THE KIDNAP HALF IS NO LONGER ALL-ZERO. The decoder changed. "
-              "Retire the CONDITIONALLY_DEAD entries and re-read any finding "
-              "that relied on them being zero. ***")
+        print("  *** A NON-INSERT KIND IS NO LONGER ALL-ZERO. The decoder "
+              "changed. Retire the CONDITIONALLY_DEAD entries and re-read any "
+              "finding that relied on them being zero. ***")
     else:
-        print("  kidnap half still identically zero -- do NOT read that as "
-              "'the kidnap achieved nothing'; it is not measuring that.")
+        print("  non-INSERT kinds still identically zero -- this is NOT a "
+              "measurement.\n  A zero here says the column was never computed, "
+              "never that the throw achieved nothing.")
     return flipped
 
 

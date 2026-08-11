@@ -95,11 +95,20 @@
 ##   1. **`tools/loki17_mech.py` COULD NOT RUN** (4-tuple yielded, 3 unpacked).
 ##      **No number in circulation came from it.** Fixed.
 ##   2. **`throws.tsv` CONDITIONALLY DEAD** — `reached`/`any_atk`/`core_atk` are
-##      identically zero across **172,547 cross-team (kidnap) throws** and
-##      healthy on self-inserts. They are keyed to the THROWN bot's own enemy, so
-##      for a kidnap `core_atk` counts **the enemy hitting OUR core** — zero
-##      there is the GOOD outcome. **This was about to retire the kidnap line.**
-##      `corpus_sanity` now re-derives both halves live.
+##      computed for **`kind=='INSERT'` ONLY**. `replay_throws.py:134` admits only
+##      INSERT rows into `active`, and the attack/reach loops read only from
+##      `active`, so **for every other kind the columns are NEVER COMPUTED.**
+##      EXILE 171,984 · **RETREAT 24,277 (SAME-TEAM!)** · UNATTRIB 1,253 all read
+##      exactly 0.00%; INSERT 77,844 reads 22.65% / 10.61% / 2.25%.
+##      **This was about to retire the kidnap line, and the withdrawal stands.**
+##      **⛔ MY FIRST PUBLISHED CAUSE WAS WRONG** — I said the columns were keyed
+##      to the thrown bot's enemy so a kidnap's `core_atk` counted the enemy
+##      hitting OUR core. **RETREAT is same-team and identically zero, which team
+##      keying cannot explain.** The team-keyed line sits DOWNSTREAM of a gate it
+##      never passes. **And my first version of the check split on team, pooling
+##      the dead RETREAT rows into the half it printed as healthy — 17.29% vs a
+##      true 22.65%, diluted ~24%: the check committing the defect it was built
+##      to catch.** Both corrected; `corpus_sanity` now splits on `kind`.
 ##   3. `ring_retention.py` sign flip (above).
 ##   4. **`elo_history.tsv` and `corpus/SHIP_ALERT` stamp LOCAL CEST with NO ZONE
 ##      MARKER** — a successor reading `05:52` as Zulu thinks the tape is 2h
