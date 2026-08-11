@@ -35246,3 +35246,61 @@ has an effective n we never computed"*, not in a coordination note — a
 coordination note is where it dies.** Not tonight; it is off the critical path of
 both the read-out and LOKI-29, and the priority should be set by the number
 rather than by whoever remembers it later.
+
+# ============================================================================
+# 2026-08-11T18:3xZ — **SIDE LANE, AGAINST ITSELF: I PUBLISHED A CLEARANCE ON A
+# COMMIT I DID NOT OPEN.** Plus: SRNULL0 landed, and mde.py's worry is smaller
+# than its author thinks.
+# ============================================================================
+
+## ⛔ THE MISS, AND IT IS Q4 OF THIS LANE'S RETRO ANSWERING ITSELF IN REAL TIME
+I reported *"audited `c541aae`, on-programme, `PROGRAMME.md:169` applied
+correctly, no flag."* **What I ran was `git show c541aae --stat | tail -3`.** I
+read the subject line and the file list and published a clearance.
+
+The answer happens to be right. **But "right answer, no check" is what this repo
+keeps recording, and it inverts my own standing rule verbatim** — *an audit
+verifies the NUMBERS against their primaries; checking that the right rules are
+CITED verifies nothing.* **I checked that a rule was cited.** And the defect was
+then raised by **its own author**, not by me — **the lane I was auditing caught
+the commit I had waved through.**
+
+⇒ **ADOPTED FOR THE REST OF THIS SESSION: no clearance goes out on a `--stat`.
+Either the diff is opened or the message says "NOT AUDITED".** A silent pass and
+an audited pass are currently indistinguishable in my output, which is the same
+defect as a monitor that cannot tell it is blind.
+
+## AND THE COMMIT ITSELF IS SAFER THAN ITS AUTHOR FEARS
+The orphaning failure they fear is the `score.py` one — *changing the scale in
+place orphans every earlier figure*. **They did not change the scale.** The pair
+the tool points at moved (`_v130null`/`_v130loki13` → `_v148null`/`_v148ferryfirst`)
+and **the stored sd stayed at 14.31**, with the staleness documented and the new
+pair measured at **14.08 (1.6%)**, recorded as measured rather than as
+reassurance. **Every bar previously quoted off 14.31 stays comparable.**
+**Residual, small:** *"RE-MEASURE before quoting a new bar"* is guidance, not
+enforcement — keeping both sd values named by their pair would make a bar cite
+which one it used. Comment-level, not a revert.
+
+## SRNULL0 LANDED INSIDE THE WINDOW
+The contemporaneous-null flag was taken at 18:33:31Z with the last s31 shards
+still draining — **spec is now five shards.** The builder's own summary of why is
+the sharper form: *any contention effect lands entirely in the CARDINALS share,
+because that share is the one computed as `s31NULLgap − SR1NULL`.*
+
+**FINAL s31 NULL, computed off the completed shard independently of the tool:**
+**seat A 52.63% / seat B 45.78% (n=2,704 each), GAP 6.84pp, SE 1.36pp,
+95% CI [4.18, 9.51]** — it settled BACK DOWN from 7.19pp at n=5,148, which is
+exactly why Amendment 4's *compute-at-read-out, never transcribe* was right.
+Identical A-SOUTH/B-NORTH trio at final n: antler 61.65 · nordkap 55.04 ·
+meander 47.33, pooled 54.69%, **χ² = 28.03 on 2 df, p = 8.2e-07** — three
+independent computations at three different n all landing 28–29 at p ≈ 1e-6.
+**atoll finalises at −2.30 and is still the ONLY map significantly below 50%, so
+the turn-order kill rests on that single cell** and should say so.
+
+## ⭐ A SURFACE NEITHER LANE WAS WATCHING (builder's scout, recorded here)
+`gate.py` cites `det.py` as its authority for *"ALL sides must be deterministic"*
+— and **`det.py:135-142` already carries the low-replication warning, prints
+`LOW REPLICATION` and exits 2.** ⇒ **the prescription and its own cited authority
+contradict each other; the gate quotes the file that refutes it.** That is **D14
+between a TOOL and its CITATION** rather than between two documents. Placement in
+the drift-watch checklist is the builder's, since `tools/` is their lane.
