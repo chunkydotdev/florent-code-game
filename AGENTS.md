@@ -350,9 +350,28 @@ Four consequences, each of which closes a road that was open before it:
    remains factually true about the ENGINE and is no longer what we optimise.
    **Economy is instrumental: it buys the kill, it never scores.** Any plank
    whose only channel is `titanium_collected` is at best a correctness fix.
-2. **NEVER PLAY DEFENCE.** Survival, screening, home turrets, heal-uptime — a
-   plank whose mechanism is any of these is off-programme regardless of what it
-   measures. Turrets are bought to open a lane to the enemy core, not to hold one.
+2. **DEFENCE IS ADMISSIBLE IF IT DOES NOT SLOW THE KILL.** ⭐ **AMENDED
+   2026-08-11 (s31). THIS CLAUSE READ "NEVER PLAY DEFENCE… off-programme
+   regardless of what it measures" AND THAT IS NO LONGER THE PROGRAMME.**
+   Magnus, direct: *"This does sound like we should allow SOME defence
+   strategies, but our FOCUS should be to kill at <r250."*
+   `PROGRAMME.md` now carries **`PLAY_DEFENCE: not_at_the_kill_s_expense`** and
+   **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**.
+   ⇒ **A defensive plank is ADMISSIBLE IFF it does not slow the kill: it carries
+   a kill-round non-regression bar beside its survival bar, and if MEDIAN KILL
+   ROUND RISES it is off-programme whatever it does to win rate.** A gradient is
+   unenforceable, so the directive is encoded as a BAR.
+   **SCOPE, and it is what keeps `R1000_IS_DEFEAT` intact: "some defence" means
+   surviving the r150–250 window SO OUR OWN KILL LANDS — our median kill is 174
+   and our median death is 187, a thirteen-round race, and our core dies in 46.3%
+   of all games. It does NOT mean surviving to r1000**; the tiebreak tail is a
+   coin flip (1800-1900 wins 49.4% of tiebreaks vs 45.2% overall), so that road
+   stays retired. Turrets are still bought to open a lane, not to hold one.
+   ⚠ **This does NOT wholesale revive what "never" killed.** Each candidate must
+   clear the non-regression bar on its own. **And note s30 measured
+   `home-turrets-off` at 433/1024 and `barrier-seal-off` at 399/1024 — both REAL
+   NEGATIVES, i.e. removing defensive behaviour COST us**, which is evidence the
+   amended field was always the truer description of the bot we ship.
 3. **PROTOTYPES GO AT LIVE TEAMS, NOT AT OUR OWN PROBES.** `bots/*_probe` is a
    fixture WE authored and it lies in a known direction (five probes share a
    `best_core or best_any` short-circuit — zero of our forward turrets died in
@@ -444,7 +463,7 @@ price) and on what basis:**
 | **barrier-form spawn lock** | **NEVER TESTED as a lock.** The s22 probe was FRIENDLY bodies only; three maps produced no enemy contact. Its "they defend for free" inference was overturned in-repo by our own s24 probe (a parked body makes the tile unspawnable for its owner too). |
 | **CPU denial** | **REOPEN on evidence** — the only statement of the refutation in the repo is one clause in a wrap, with no number, denominator, n, or script output; the 201,469 rows sit in an untracked scratch dir. **Separately, CPU-timeout *induction* is HELD ON NORMS, not evidence** — Magnus owes the organisers one question first. Do not merge the two. |
 | **ore poisoning** | **REPRICE.** The mechanism is engine-confirmed with a control; what died was a PRICE (throughput vs redundancy) computed under the retired currency. Clearing a 3 Ti barrier costs them ~30 Ti and 15 builder-turns — a tempo weapon nobody priced as one. A carve-out both primaries preserved was dropped here: *"barrier an ore tile a forward gun already covers"* remains unmeasured. |
-| **heal-idle staffing** | Reopen on evidence, but **off-programme under PLAY_DEFENCE: never** — do not spend a leg. |
+| **heal-idle staffing** | **REOPENED 2026-08-11.** Was *"off-programme under `PLAY_DEFENCE: never`"* — **that field no longer says that** (see the defence clause above). Now admissible IF it clears `DEFENCE_ADMISSION_BAR: kill_round_non_regression`. ⚠ **And grep the incumbent FIRST: we already ship `_heal_core`, `_heal_adjacent`, `heal_seats` and a `SLOT_UNDER` under-attack latch — the adjacent plank died 2026-08-11 to two minutes of grep.** |
 
 **AND A ROAD CAN BE "UNTESTED" ONLY BECAUSE NOBODY READ OUR OWN CODE.** The
 spawn-starvation entry above was audited from the evidence, nominated as an

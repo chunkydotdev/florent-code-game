@@ -4,9 +4,9 @@ Edit this file ONLY on an explicit directive from Magnus. Both arms and every
 successor session inherit it. The fields below are parsed; the prose is not.
 
     LINE: loki
-    LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki*
-    INCUMBENT: bots/_v115dodge
-    INCUMBENT_FROZEN: yes
+    LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?*
+    INCUMBENT: bots/_v148ferryfirst
+    INCUMBENT_FROZEN: no
     PRIMARY_CURRENCY: game_share
     SECONDARY_CURRENCY: kill_speed_score
     KILL_SPEED_SHIP_GATE: -1.76
@@ -137,8 +137,54 @@ ladder pays it. `R1000_IS_DEFEAT: yes` (below) says it is a defeat, and the
 > anything that seems to have a shot at killing teams in the first 250 rounds,
 > and lean into that hard once we find it."*
 
-**INCUMBENT_FROZEN** — `bots/_v115dodge` (v92) holds the ladder slot and receives
-no further planks. It defends the rating; it is not the work.
+**INCUMBENT / INCUMBENT_FROZEN** — ⭐ **BOTH FIELDS UPDATED 2026-08-11 (s31) ON
+MAGNUS'S DIRECT INSTRUCTION ("fix please"), AND THEY MOVED TOGETHER ON PURPOSE.**
+
+**WAS:** `INCUMBENT: bots/_v115dodge` (v92) with `INCUMBENT_FROZEN: yes` — *"holds
+the ladder slot and receives no further planks. It defends the rating; it is not
+the work."*
+**NOW:** `INCUMBENT: bots/_v148ferryfirst` (v112) with `INCUMBENT_FROZEN: no`.
+
+**WHY BOTH, AND WHY REPAIRING LINE 8 ALONE WOULD HAVE BEEN WORSE THAN LEAVING IT
+STALE.** The incumbent field had gone stale across TWO ships (v104, then v112) and
+both other lanes flagged it. **But the freeze clause says the incumbent receives
+NO FURTHER PLANKS — so pointing `INCUMBENT` at the LIVE Loki tree while
+`INCUMBENT_FROZEN: yes` stood would have made this file forbid development on the
+exact bot we develop**, contradicting Magnus's own *"any improvement no matter how
+small should be considered as the replacement of v104"* three sections above.
+**A false-but-inert field became a false-and-binding one on repair.** The side
+lane caught this before either repair was made.
+
+**WHAT THE FREEZE ACTUALLY MEANT, AND WHY IT NO LONGER APPLIES.** It was written
+when **Eir held the slot and Loki was a separate line under development** — the
+point was *do not spend planks defending Eir; build Loki*. **That situation ended
+when Loki itself started shipping.** v104 held for 29 h 25 m, v112 shipped
+2026-08-11 13:14Z, and the line under development IS the line on the ladder.
+⇒ **There is no longer a frozen rating-defender distinct from the work.**
+
+**⛔ WHAT `INCUMBENT_FROZEN: no` DOES NOT LICENSE.** It does not retire
+`COMPARE_AGAINST: previous_line_iteration` — a plank is still measured against the
+CURRENT incumbent, and **when a ship lands, every control moves with it** (a stale
+control measures the wrong contrast and still reads as a valid result;
+`h2h.sh`/`dose.py` defaults and `unrated_run.sh`'s `MAIN` all moved on 2026-08-11
+for this reason). **And a null belongs to its control** — the 4,096-game null
+built against `_v130loki13` was marked STALE the moment v112 shipped.
+
+**⛔ LINE_DIRS — WIDENED 2026-08-11 (s31), AND THIS FIELD WAS SILENTLY BREAKING
+THE ONLY GATE WE HAVE.** `LINE_DIRS` is **the one field `gate.py` ENFORCES on**
+(everything else it merely prints). It matched only names containing `loki` —
+and **we stopped putting `loki` in bot names at `_v139heal`.**
+⇒ **The LIVE SHIPPED BOT `_v148ferryfirst` (v112) failed its own programme's
+line check**, as did every arm built this session. `gate.py` would have refused a
+battery on any of them with *"is not on the active 'loki' line"*.
+**AND THAT IS ALMOST CERTAINLY WHY `h2h.sh` BYPASSES `gate.py` AT ALL** — the
+standing rule says the gate is the SOLE ENTRY to a battery, and the gate had
+become unusable on the current line, so the tools routed around it. **A guard
+that refuses everything gets removed from the path; that is the same failure as a
+guard that fires on nothing, and this repo produced both in one day.**
+Widened to `bots/_v1[3-9]?*` (v130+, any name) alongside the historical
+`loki`-named patterns. **Verified: 43 line dirs match, 22 Eir-era dirs excluded
+including `_v115dodge` and `_v116thor`.**
 
 **LINE: loki** — Loki is a SEPARATE BOT, not a flag on the Eir chassis. Iterations
 edit Loki's own tree. Porting Loki features onto Eir is the line-mixing this

@@ -34558,3 +34558,50 @@ detects a known-bad arm), which is what makes tonight's NO-INFORMATION verdicts
 mean *no effect* rather than *no power*. **F5 added** (P(≥1 spurious)=0.30).
 **OPEN, in the tool's header:** F6, F7, F9, F11, and the `--selftest` their seven
 fixtures at `fx/` were built for.
+
+## D77 — ⛔⛔ THE ONE FIELD `gate.py` ENFORCES ON HAD STOPPED MATCHING OUR OWN BOTS, AND THAT IS WHY THE GATE GOT ROUTED AROUND
+Fixing the two stale `PROGRAMME.md` items on Magnus's instruction surfaced a
+third that neither lane had found. **`LINE_DIRS` is the ONLY field `gate.py`
+enforces on** — everything else it merely prints. It read
+`bots/_v105loki1 bots/_v10?loki* bots/_v1??loki*`, i.e. **names containing
+`loki`** — and **we stopped putting `loki` in bot names at `_v139heal`.**
+⇒ **THE LIVE SHIPPED BOT `_v148ferryfirst` (v112) FAILED ITS OWN PROGRAMME'S LINE
+CHECK**, as did every arm built this session. `gate.py` answers
+*"is not on the active 'loki' line"* for all of them.
+**⭐ AND THAT IS ALMOST CERTAINLY WHY `h2h.sh` BYPASSES `gate.py`.** The standing
+rule is that the gate is the SOLE ENTRY to a battery. **The gate had become
+unusable on the current line, so the tools routed around it — and the bypass was
+then recorded as a process defect of the TOOLS rather than as a symptom of the
+GATE.**
+⇒ **A guard that refuses EVERYTHING gets removed from the path. That is the same
+failure as a guard that fires on NOTHING, and this session produced both** — six
+unfirable guards (D68) and one refuse-everything guard, on the same day.
+**FIXED:** widened to `bots/_v1[3-9]?*` (v130+, any name) alongside the historical
+`loki` patterns. **Driven both ways: the current line now passes, `_v115dodge`
+still returns OFF PROGRAMME.** 43 line dirs match, 22 Eir-era excluded.
+
+## D78 — THE TWO STALE PROGRAMME FIELDS, AND WHY REPAIRING ONE ALONE WAS WORSE THAN LEAVING IT
+**`INCUMBENT: bots/_v115dodge` was stale across TWO ships.** Both other lanes
+flagged it; neither repaired it, correctly. **`INCUMBENT_FROZEN: yes` means the
+incumbent RECEIVES NO FURTHER PLANKS — so pointing `INCUMBENT` at the live Loki
+tree while the freeze stood would have made the file FORBID DEVELOPMENT ON THE
+BOT WE DEVELOP.** A false-but-inert field becomes false-and-binding on repair.
+⇒ **Both moved together: `INCUMBENT: bots/_v148ferryfirst`, `INCUMBENT_FROZEN:
+no`.** The freeze was written when **Eir held the slot and Loki was a separate
+line under development**; that ended when Loki itself started shipping.
+⛔ **It does NOT retire `COMPARE_AGAINST: previous_line_iteration` — and when a
+ship lands, EVERY CONTROL MOVES WITH IT.**
+
+## D79 — A DOCTRINE CHANGE DOES NOT PROPAGATE OUT OF THE FILE IT WAS MADE IN
+`PLAY_DEFENCE` became `not_at_the_kill_s_expense` at ~13:2xZ. **Three hours
+later `CLAUDE.md` and `AGENTS.md` contained ZERO references to the new value or
+the bar**, while `CLAUDE.md:385` still read *"NEVER PLAY DEFENCE… off-programme
+regardless of what it measures"* and both files closed **heal-idle staffing** on
+the retired rule. **`CLAUDE.md` is the always-loaded file every lane boots from;
+`AGENTS.md:447` held an identical copy of the same road table.**
+⇒ **Both updated, and the heal-idle row now REOPENS with its admission bar AND
+carries the grep warning** (`_heal_core`, `heal_seats`, `SLOT_UNDER` — the
+adjacent plank died to two minutes of grep on 2026-08-11).
+⇒ **STRUCTURAL, still open for Magnus: that road table lives in TWO files and
+both were wrong about the same thing for three hours. One authoritative copy with
+pointers means the next correction is made once.**
