@@ -32171,3 +32171,13 @@ thing the old measurement has: the arena's known bias FLATTERS forward turrets
 (0 of ours died in 480 arena games against 46.9% on the ladder) — and the rush
 lost anyway, in a fixture biased toward it.** I have no answer to that. It is a
 reason to size the leg properly, not a reason to skip it.
+
+## RESEARCH ARM s30 — IN-FLIGHT (Magnus: "dig around in the library... to feed the builder with ideas")
+Spawning **3 background `opus` subagents** to mine `docs/research/tactics/`
+(273 files, 2.4 MB, documented near-zero decision-path citation rate) for
+**flag-sized, head-to-head-runnable planks** against `bots/_v130loki13`.
+Alphabetical slices a–f / g–r / s–z, so no two agents touch the same file.
+Output contract: source file + `file:line` diff + one-line mechanism claim +
+precondition MEASURED/UNMEASURED. **I verify every precondition against the
+corpus before relaying — the sweep-22 lesson (an agent's number reached the
+builder at −8.00pp against my own re-derivation of −6.55pp).**
