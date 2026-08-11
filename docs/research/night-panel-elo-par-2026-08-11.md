@@ -157,3 +157,104 @@ anything.
 median kill round, rated comparator 39%) and what separates the deficit cells
 from the surplus cells, including the within-cell opponent-version split in the
 three cells where D18 fires.
+
+---
+
+# PART 2 — LOSS ANATOMY, AND THE RACE FRAME IS STALE
+
+*Appended ~04:3xZ. Same population. Join validated in three directions with a
+flipped negative control; the independent check tallies the sidecar's
+`scoreA`/`scoreB` against the replay-internal winner field: **97/97 matches,
+flipped 0/97**. All 97 score lines are asymmetric, so the flip cannot pass by
+symmetry. Unplanned exact reconciliation: **448/448 core-death games end at
+exactly `turns-1`; 37/37 no-core-death games ran exactly 1000 turns.***
+
+## ⭐ THE RACE FRAME IS A SNAPSHOT AT 2026-08-10T19:12:59Z AND ITS HEADLINE HAS HALVED
+
+The builder's standing frame — *"107/109 v104 losses are CORE DEATHS, median
+margin **+39** rounds in our favour, and we still lose 45%"* — could not be
+reconciled against a 166-loss denominator. **Resolved: every number is correct,
+at a cutoff 125 games ago.** Filtering `ladder_games.tsv` to `ourver=104` and
+cutting at the creation time of the 109th loss:
+
+| | kill median | death median | **margin** | core-death losses |
+|---|---:|---:|---:|---:|
+| **at that cutoff** (240 rows) | r170 | r209 | **+39** | 107/109 = 98.2% |
+| **now** (365 rows) | r176 | r193 | **+17** | 163/166 = 98.2% |
+
+**The margin more than halved and it moved from BOTH ends** — our kill 6 rounds
+slower, their kill of us 16 rounds faster. The loss *mode* is unchanged (98.2%
+core deaths, identical to the digit). **The race tightened.** Any plank sized
+against +39 is sized against a number that no longer exists.
+
+## THE ANATOMY (485 unrated games, us-only, v104)
+
+448/485 decided by core death (92.4%), 37 to r1000 (7.6%).
+- core-kill wins **n=271, median r169** (q1 126, q3 252) + 11 r1000 wins
+- core-death losses **n=177, median r202** (q1 108, q3 340) + 26 r1000 losses
+
+**Losses landing before our own median kill round: 74/203 = 36.5%** (all losses)
+/ **74/177 = 41.8%** (core-death only). Rated comparator, recomputed
+independently from `ladder_games.tsv`: **72/166 = 43.4% / 72/163 = 44.2%.**
+**Same regime — the night population does not contradict the rated frame.**
+
+| opponent | n | share | kill-W | medK | death-L | medD | loss<r169 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Team 48 | 50 | .480 | 24 | **140** | 25 | **93** | **23/26 = 88.5%** |
+| farming_200s | 60 | .250 | 15 | **107** | 42 | 158 | 27/45 = 60.0% |
+| gsxWins | 55 | .673 | 37 | 121 | 17 | 134 | 10/18 = 55.6% |
+| CtrlAltDefeat | 50 | .780 | 34 | 187 | 9 ⚠ | 254 | 3/11 = 27.3% |
+| Landers | 55 | .618 | 34 | 166 | 15 | 252 | 5/21 = 23.8% |
+| Lunds Stallions | 55 | .655 | 35 | 189 | 14 | 238 | 4/19 = 21.1% |
+| I Stone | 55 | .709 | 39 | 198 | 15 | **357** | 1/16 = 6.2% |
+| kladde | 55 | .345 | 19 | 164 | 35 | **323** | 1/36 = **2.8%** |
+| Powerpuff Girls | 50 | .780 | 34 | 182 | 5 ⚠ | **663** | 0/11 = 0.0% |
+
+⚠ loss-side median on <10 obs — not to be quoted alone. Buckets over the 177
+core-death losses: **zero** before r50 · 20.9% <r100 · 36.7% <r150 · 48.6% <r200
+· 69.5% <r300 · 92.1% <r500.
+
+## FOUR SURPRISES, RECORDED BEFORE BEING EXPLAINED AWAY
+
+**(a) The 36.5% aggregate is two disjoint modes with no middle.** Three cells
+(Team 48 88.5%, farming_200s 60.0%, gsxWins 55.6%) supply **60 of the 74** early
+losses; six cells sit at 0–27%. ***"We get rushed" is false as a description of
+the field*** — a third of it rushes us and the rest does not. **A plank aimed at
+early-rush survival would be inert in six of nine cells.**
+
+**(b) 63.5% of losses (129/203) land AFTER our own median kill round.** Against
+kladde we lose 36 of 55 and **35 of those 36 come after r169, median r323**,
+while our own median kill there is r164. Same shape at I Stone (94% late) and
+Powerpuff (100% late). **The larger bucket is games we are alive in, past the
+round at which we normally win, and do not finish.** *Timing is MEASURED;
+"conversion problem" is INFERENCE from it and is flagged as such — two analysts
+converged on this story quickly and it deserves an adversarial look before it
+becomes a plank.*
+
+**(c) Early-loss rate does not track game share.** kladde is our 2nd-worst cell
+(.345) with the 2nd-*lowest* early-loss rate (2.8%); Powerpuff is our best (.780)
+at 0%; gsxWins is a good cell (.673) at 55.6%. **Dying early explains exactly one
+cell: Team 48** — medD r93 against our medK r140. **The same cell Part 1 flags at
+S−E = −0.147 (p=0.040), 90 points BELOW us, where a loss costs −19.96. Two
+independent reads land on one cell, with a named mechanism: they kill in r93 and
+we need r140.**
+
+**(d) The metric is unstable to which median you use, in one cell.**
+farming_200s reads **60.0%** against the global r169 but **17.8%** against its own
+cell median r107. gsxWins moves 55.6→44.4. The other seven are identical either
+way. **Any headline must state the median it was measured against.**
+
+## OPEN, NOT CLOSED
+**r1000 rate is ~4x higher unrated than rated: 37/485 = 7.6% vs 7/365 = 1.9%**
+(rated side verified independently: 7/365, W4/L3). Under `R1000_IS_DEFEAT` all 37
+are defeats, including the 11 we "won". Opponent mix or a real unrated/rated
+difference — not isolated, not closed.
+
+## DECODER TRAP, for the repo's memory
+**`max event round` is NOT a game-length proxy.** All 37 non-core-death games ran
+1000 turns, but their last BUILD/DEATH event ranged **r31–r999** — a first pass
+produced "a 31-round game with no core death", which is just a game that stopped
+building. Real lengths come from the replay's field-3 turn buffers. **Caught by
+the 448/448 + 37/37 known-answer reconciliation, not by inspection.** Also: one
+game carries two core deaths (gsxWins, both r69) — counted as a kill, excluded
+from the death distribution.
