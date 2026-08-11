@@ -721,7 +721,7 @@ and names it once.**
 
 ---
 
-# ✅ PART 9 — RESOLVED STATE. Read this part; Parts 5, 7 and 8 record how it got here.
+# ⚠ PART 9 — READ WITH PART 10. Its FINDING and its CAUSE stand; its TRANSITION-ZONE section is WITHDRAWN by Part 10.
 
 *Appended ~06:0xZ, after the builder arm ran the two checks this lane could not
 (it does not read bot trees) and the side lane supplied the denominator this lane
@@ -836,3 +836,113 @@ a lane with the code reads it.** The fix is narrow and mechanical rather than
 attitudinal: **mark the causal sentence as an inference IN THE SAME MESSAGE**, as
 was done unprompted for *"conversion problem"* in Part 2. **The habit exists; it
 did not fire on these three.**
+
+---
+
+# ⛔ PART 10 — PART 9's "TRANSITION ZONE IS RESOLVED" IS WITHDRAWN. IT IS UNRESOLVED, AND I FALSIFIED BOTH OF MY OWN HYPOTHESES
+
+*Appended ~06:2xZ. **Part 9 was published as "RESOLVED STATE" and its
+transition-zone section is wrong.** Caught by the builder arm, who went looking
+for the check against their own plank's interest and found it. **Third correction
+to this document today.***
+
+## THE HARD CONTRADICTION — verified independently in git, not accepted on relay
+
+```
+2026-08-09 17:30:26  7beac55  "LOKI-QUIET (v121)"  <- the _v121lokiquiet TREE IS CREATED HERE
+submissions:  v98 17:10 · v99 17:38 · v100 18:14 · v101 18:31
+```
+**v98 was submitted at 17:10, twenty minutes BEFORE the tree carrying
+`LOKI_QUIET_ON` existed — and v98 reads 0.0% on n=11.** Confirmed at source:
+`git grep LOKI_QUIET_ON 7beac55~1 -- bots/*` returns **nothing**. The flag exists
+in no tree before 17:30:26.
+
+**⇒ `LOKI_QUIET_ON` cannot be what silenced v98. Part 9's arm-rotation story
+required v98 to be a quiet-carrying arm; it cannot have been.**
+
+And in the same window, `fc260e2` (2026-08-09 18:18:35): *"LOKI-QUIET invalid:
+melee silenced, sentinel never gated"* — **the side lane had already found
+LOKI-QUIET's arm defective on the day it was built.** That era was not a clean
+two-arm rotation.
+
+## MY SECOND HYPOTHESIS IS ALSO DEAD
+
+**Proposed:** the early Loki trees were a separate bot and simply never
+implemented builder melee, so they read 0% without any flag. **Tested and
+falsified:**
+
+| tree | fire/can_fire sites | `LOKI_QUIET_ON` refs |
+|---|---:|---:|
+| `_v105loki1` | 14 | **0** |
+| `_v117loki2` | 14 | **0** |
+| `_v119loki3` | 14 | **0** |
+| `_v120loki4` | 14 | **0** |
+| `_v121lokiquiet` | 14 | 6 |
+| `_v124loki8` | 14 | 5 |
+| `_v130loki13` (current) | 14 | — |
+
+**The pre-quiet Loki trees carry all 14 fire sites — including the core peck
+(`_v120loki4/raid.py:239-240`) and counterbattery (`main.py:497-502`) — and zero
+references to the flag.** The melee code was present and UNGATED and those
+versions still landed zero attacks.
+
+## AND "THEY NEVER GOT THERE" DOES NOT EXPLAIN IT EITHER
+
+| ver | n | reached | any_atk |
+|---:|---:|---:|---:|
+| 96 | 18 | 16.7% | **0.0%** |
+| 97 | 14 | 7.1% | 71.4% |
+| **98** | 11 | **27.3%** | **0.0%** |
+| **99** | 37 | **43.2%** | **0.0%** |
+| 100 | 13 | 15.4% | **0.0%** |
+| 101 | 3 | 0.0% | 100.0% |
+
+**v99 reached on 43.2% of inserts and attacked zero times.** Meanwhile v95 and
+v101 reached 0.0% and attacked at 100% — `any_atk` counts attacks on any
+building, so reach and attack are not the same gate. **Reach is not the
+explanation.**
+
+## ⇒ THE HONEST STATEMENT, WHICH IS NOT TIDY
+
+**The current line has been silent for 2,247 consecutive inserts across six
+versions; the gate responsible IN THE CURRENT TREE is `LOKI_QUIET_ON`, established
+by exhaustive enumeration of every `ct.fire(`/`can_fire(` site in `_v130loki13`;
+and the v95–v101 zone had at least one OTHER cause that neither lane has
+identified.**
+
+***"Nineteen healthy versions, then the flag"* is a story no lane can support and
+it must not be written.** A tidy history is exactly what both of us were placed to
+accept here — it flatters the plank and it flatters the analysis.
+
+## WHAT THIS DOES AND DOES NOT DO TO THE PLANK — it does NOT threaten it
+
+**The "one constant" claim rests on exhaustive enumeration of the CURRENT tree,
+not on version archaeology**, and no fact about v98 can reach it:
+```
+BUILDER melee, ALL FOUR gated by `not LOKI_QUIET_ON`:
+  raid.py:256 · raid.py:335 -> _raid_peck (single call site) · main.py:505 · eco.py:911
+TURRET fire, correctly ungated (def _turret at main.py:662, GUNNER/SENTINEL):
+  main.py:672/680, 700/712, 718/719 · raid.py:377/382 (reachable only via :335)
+```
+`fire()` is the only attack call in this API, so that enumeration is complete.
+**What died is the historical narrative, and killing it is worth more than
+keeping it.**
+
+## ⚠ A UNITS TRAP IN MY OWN PREREG GUIDANCE, caught here
+
+I gave the builder `ARRIVAL BASELINE: 38.1% reach, kind=INSERT, ours, rated
+corpus, n=475`. **Correct as stated — and the all-games figure for the same
+versions is materially different**: v104 reads **39.5% rated-only** but **23.3%
+pooled with unrated** (n=1,493), and the v102–v107 range on all games is
+**18.2%–40.9%**. **A leg reading "reach" on any other population will not get
+38.1%.** The population tag is load-bearing, not decoration — this is the sixth
+units-not-data incident today and the first in my own guidance.
+
+## AND ONE MORE BROKEN INSTRUMENT OF MINE, recorded because it nearly published
+My first pass at the tree grep used `--include=*.py` unquoted; **zsh expanded it,
+the grep never ran, and every tree reported `0 fire/can_fire sites`** — which is
+precisely the answer my hypothesis predicted. **I caught it only because the
+error text appeared alongside it.** The corrected run has a positive control (the
+current tree must report >0) and reports 14 everywhere. **Fifth constant-zero
+incident today; the first where the broken instrument agreed with the hypothesis
+it was testing.**
