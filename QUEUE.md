@@ -29,21 +29,54 @@ unshipped plank is a certain zero and every idle hour on the slot is spent.
 ## NEXT UP — ready to build
 | # | plank | change | mechanism metric | why now |
 |---|---|---|---|---|
-| 2 | **Idle-builder defence** | re-task builders already alive when core HP falls | median kill round MUST NOT rise (`DEFENCE_ADMISSION_BAR`) — **measured, not assumed** | **The first plank under the amended defence field.** Measured: when our core dies ~5 builders are **ALIVE** (median 5.0, mean 4.43 vs 5.20 in wins) with 0.38 deaths in the 40 rounds prior. Our median kill 174 vs median death 187 = a 13-round race. **⛔ BLOCKED ON ONE NUMBER — see below.** |
+| ~~2~~ | ~~**Idle-builder defence**~~ | **WITHDRAWN — WE ALREADY SHIP IT.** See below. |
+| 2 | **DESTROY ENEMY TURRETS** | not yet specified — **intervention deliberately NOT named** | enemy turrets alive per forward builder-round (term `A`) | **Largest single term on the board: 1.77x, 47.3% of the log hazard gap. Reduces `A` DIRECTLY, does not touch forward-round counts, and therefore escapes the LOKI-25 numerator/denominator trap BY CONSTRUCTION.** |
 
-**⛔ CORRECTION TO ITEM 2, RAISED BY RESEARCH AGAINST THEIR OWN NUMBER.** I first
-wrote that this plank is *"admissible BY CONSTRUCTION, because it spends idle
-resource rather than kill budget."* **That over-reads the evidence and the
-over-read is mine.** Research measured that ~5 builders are **ALIVE** at the
-decisive round. **They did NOT measure that those builders are IDLE.** A live
-builder may be mid-errand, mid-traverse or building forward — **redirecting it
-then DOES spend kill budget and CAN regress the kill round.**
-⇒ **Admission is NOT by construction. This plank clears the kill-round
-non-regression bar the same way every other plank does.**
-⇒ **BLOCKER: the idle/active split of those alive builders at T** — wire-side,
-`MoveBuilderBot` vs `BuilderBuild/Attack/Heal`, cooldowns explicit on the wire.
-Research declined this classification earlier as aimed at the 17% dwell half;
-**aimed at THIS question it is worth it, and they have offered it.**
+**⛔ #2 WITHDRAWN — THE CHEAPEST NULL IN THIS REPO IS A LEG THAT TESTS A FEATURE
+WE ALREADY SHIP, AND THIS WAS ONE.** Research's idle/active split gave the number
+that unblocked it AND the warning that killed it: **bucket B ("active, home") is
+92% HEAL** — 65,673 heal-rounds against 1,532 build and 3,980 attack in the 20
+rounds before our core dies. **grep of the shipped tree confirms it**:
+`eco.py:312 _heal_core`, `eco.py:322 _heal_adjacent`, `eco.py:125 heal_seats`
+(tiles that exist ONLY to heal the core), multi-healer convergence at `:16-17`,
+and `main.py:160-188 SLOT_UNDER` — an under-attack flag that already retargets
+`ammo_target` and `ti_floor`. **The 2.44 "active home" builders are our own
+heal line showing up in the data.** Two minutes of grep, one window saved.
+
+**AND THREE MEASURED REASONS IT WOULD NOT HAVE PAID ANYWAY:**
+* **Idleness carries NO loss-specific information**: idle share **25.76% in
+  losses vs 27.59% in WINS**, flat straight through the core's destruction. What
+  differs is WHERE activity sits, not how much there is.
+* **Median bank at T-1 is 28 Ti.** At 2 Ti per 2 damage a redirected builder
+  cannot do much — a cap independent of headcount.
+* The genuinely expensive bucket (forward AND mid-action) is **0.18
+  builders/game**, so the kill-budget objection was small — **my "admissible by
+  construction" was still wrong, but the number landed in my favour.**
+
+**⭐ TWO ENGINE FACTS ESTABLISHED AS BY-PRODUCTS, both correcting standing belief:**
+**a builder bot's action cooldown is NEVER >0 at decision time** (only the value
+`1` is ever written, 93.9% of one builder's consecutive actions are exactly 1
+round apart) ⇒ **"builders act every other round" is FALSE.** And **99.75% of idle
+rounds carry a `BotOutput`** — the engine ran `run()` and it emitted nothing —
+with `tled` at **0.00% for us vs 1.52% on the field**, so that zero is real and
+not a dead column.
+
+**⛔ AND MY OWN "FORWARD TIMING" ENTRY FROM 20 MINUTES AGO IS ALSO REFUTED, BY THE
+ARM THAT PROPOSED IT.** *"We go forward late into a matured turret field"* fails:
+enemies build the SAME turrets against us as against the top tier EARLY
+(**r0-59 ratio 1.04, r60-179 ratio 1.00**); divergence is entirely late, which is
+**DOWNSTREAM of clearing, not upstream of it**. **The field is the same size when
+we get there.**
+
+⇒ **What differs from the first minute is DESTRUCTION: cumulatively the enemy
+builds 1.19x more turrets against us while we destroy 0.88x as many.** That is
+why #2 above is now *destroy enemy turrets* — and it is OFFENSE, so it needs no
+defence-admission bar at all.
+
+⚠ **Caveat carried from the source:** deaths-per-build *within* a band is a flow
+ratio, not a survival share (a turret built in one band can die in the next).
+**The cumulative totals are the clean comparison.**
+
 | ~~3~~ | ~~**Arrive without traversing**~~ | **WITHDRAWN 2026-08-11 — its premise is refuted.** See below. |
 | 3 | ⭐⭐ **WE DO NOT CLEAR TURRETS — the field matures because we leave it standing** *(replaces "forward timing", which research tested and refuted — see below)* | not named — **the intervention is deliberately NOT specified**; the target quantity is enemy turrets DESTROYED | **enemy turret deaths per side-game, and standing enemy turret count per forward builder-round (term `A`)** | archive-measurable now; a leg needs the usual fixture | **Term `A` is 1.77x and 47.3% of the log gap — the largest single term on the board.** ⛔ **The "we go forward late" reading is REFUTED: enemies build the SAME turrets against us as against the top tier EARLY (r0-59 ratio 1.04, r60-179 ratio 1.00) and only diverge LATE (1.39x, 1.64x, 2.36x) — which is DOWNSTREAM of clearing, not upstream.** **What differs from the first minute is DESTRUCTION: deaths-per-build within band 24.0% vs 35.4% at r0-59 and 47.4% vs 67.0% at r60-179.** **Cumulative: enemy builds 7.68/game against us vs 6.45 against TOP (1.19x) while we destroy 3.01 vs their 3.42 (0.88x).** ⇒ **This is OFFENSE, not timing — it reduces `A` directly and does not touch forward-round counts, so it escapes the LOKI-25 trap by construction.** |
 
