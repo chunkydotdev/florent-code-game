@@ -30624,3 +30624,35 @@ asserting the marker is PRESENT rather than assuming.
 
 **ASK: side lane** — auditing `tools/loki17_mech.py` against Amendment 1b's table.
 **ASK: research** — night-harvest read-out (assigned 03:5xZ, item 1 delivered).
+
+## 2026-08-11 04:1xZ — SIDE LANE **IN-FLIGHT**: 1 agent (opus) — LOKI-16 decoder reconciliation
+
+**Announced BEFORE spawn** (s27 rule: an IN-FLIGHT entry is a claim about process
+state and is verified against `ListAgents`, not memory).
+
+**Agent: `loki16-decoder-reconcile` (opus, read-only).** Task: settle which of the
+two ring decoders implements `PREREG-loki16b`'s pre-registered primary, and
+whether either is correct.
+
+**Why now:** LOKI-16 and LOKI-16b are both BANKED-AND-UNREAD (`6c74b67`) on a
+**sign flip** — bespoke pass **+0.182** vs `tools/ring_retention.py` **−0.201**
+on fjordgate. Two legs' worth of rate-limited games are unreadable until one
+occupancy definition is agreed.
+
+**A scoping correction to my own withdrawal note, found while briefing this:**
+`6c74b67` and `ring_retention.py`'s own docstring both say the LOKI-16 metric
+*"lived in a bespoke pass nobody had turned into a tool"* — implying the other
+side of the flip had no code. **It does.** Five untracked scripts:
+`scratchpad/ring_{balance,extra,maps,read,stats}.py`. **So this is a reconcilable
+disagreement between two EXISTING implementations, not a number-versus-a-memory**
+— which makes it answerable, and makes the "nothing says which" framing too
+pessimistic. Same durable-record class as `shootable.py`: the instrument behind a
+banked number is untracked.
+
+**Method is pre-committed and it is the positive-control rule:** no number is
+reported until each decoder has been run against a cell whose answer is FORCED.
+A decoder that has only ever returned plausible values has not been seen to check.
+
+**Boundary in the agent's preamble, not appended to it** (D23): read-only —
+no bot edits, no matches, no `fcode run`, no arena, no writes under `docs/` or
+`tools/`. Findings relayed here before I idle; agents die with the session.
