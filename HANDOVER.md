@@ -1,4 +1,79 @@
-# LIVE: **v112 = "Loki v3"**. s31 WRAP, 2026-08-11 14:3xZ.
+# LIVE: **v114 = `_v146gunaxis`** (shipped 2026-08-11 19:14Z). s32.
+
+## ===== ⭐ STATE, VERIFIED ON THE PLATFORM =====
+##   **v114 = `bots/_v146gunaxis`, py-tree md5 `fdbde822`. 1689, rank #23/120.**
+##   **ROLLBACK: `.venv/bin/fcode submission activate 112`** (~15 s, verify on the
+##   `Active bot:` line, NEVER `$?`). `ship_watch` SHIP_VERSION=v114
+##   SHIP_BASELINE=1689; `breakin_watch` ARMED (v114, floor 1615).
+##   ⚠ `ship_watch`'s printed `version` column comes from the ELO TAPE, which tags
+##   by version active at POLL time — it read `v112` for minutes after the ship.
+##
+## ===== ⛔⛔ THE SHIPPED BOT LACKS FERRY-FIRST. READ THIS BEFORE ANY COMPARISON =====
+##   **`_v146gunaxis` was branched from the PRE-v112 base: NO `LOKI27_FERRY_FIRST`
+##   flag and NO ferry code path in `raid.py`.** So v114 = v112 MINUS ferry-first
+##   PLUS gunaxis, and its **+1.94pp is `(gunaxis − ferry_first)`, not `gunaxis`.**
+##   **`_v143cap6`, `_v144cap12`, `_v145bestfit`, `_v147gunblank` share the gap** —
+##   every one of their overnight numbers is understated if ferry-first is worth
+##   anything positive. (Ferry-first shipped on `P(no effect or worse) = 0.26`.)
+##   ⇒ **`bots/_v154gunferry` is the first tree to carry BOTH.** Running now.
+##
+## ===== ⭐ RUNNING UNATTENDED — `tools/corefill.sh`, ZERO LLM =====
+##   **STATUS IN ONE COMMAND: `zsh tools/corefill_status.sh`**
+##   7 LOKI-29/GUNAX shards draining (~23:00Z) + a 7-item worklist behind them,
+##   8h deadline, max 8 shards, load-ceiling gated.
+##   **LIVE CONTROL:** ADD = append to `scratchpad/corefill_work.txt` ·
+##   CANCEL = `touch scratchpad/corefill_cancel/<SHARD>` · PAUSE =
+##   `touch scratchpad/COREFILL_STOP`. **It LAUNCHES ONCE and NEVER RELAUNCHES** —
+##   a dead shard is logged and left, because at 18:40Z a watchdog restarted NINE
+##   COMPLETED shards from zero when their outputs were archived out from under it.
+##   **FULL READ: `overnight_read.py --dir scratchpad/overnight`.**
+##   ⛔ **s31's data is `scratchpad/overnight_s31/` — read it with `--dir`.**
+##
+## ===== WHAT THE 7 RUNNING SHARDS ASK =====
+##   **GUNAXTB** — gunner-axis avoidance as a TIEBREAK not a score penalty, so
+##   forward presence is held BY CONSTRUCTION. **Currency survives ⇒ SITING;
+##   vanishes ⇒ VOLUME.** This is the one that tells us WHY v114 wins.
+##   **GUNAXREP** — v114 replicated under tonight's contention, for comparability.
+##   **SR1NULL/SR2NULL/SR1CUR/SR2CUR/SRNULL0** — LOKI-29 seat-relative scan order.
+##   ⚠ **All 7 carry `_v148ferryfirst` as CONTROL — they measure against the
+##   PREVIOUS incumbent and must be read that way.** Controls for everything new
+##   have moved to `_v146gunaxis` (`h2h.sh`, `dose.py`, `mde.py`, `unrated_run.sh`).
+##
+## ===== ⛔ CLAUSE (b) OF THE SHIP RULE IS UNRESOLVED FOR v114 =====
+##   Not passed, and **not falsified either.** The s30 kill read the mechanism at
+##   **n=25** on a statistic `HANDOVER:352` sizes at **~880 games** twelve lines
+##   later — D14 inside one paragraph. `PREREG-loki25` sized its CURRENCY screen at
+##   **4,096**, said *"IT IS LAUNCHED"*, and **1,024 were delivered.**
+##   ⇒ **the plank was never validly killed. But we do not know WHY it wins**:
+##   SITING / VOLUME / GEOMETRY all remain open. ⚠ My *"forward pressure is
+##   net-negative at the margin"* was an **OVERCLAIM and is retracted** — it is a
+##   siting rule, presence −23% is downstream, and even granting volume it is a
+##   CALIBRATION claim, not a doctrine reversal.
+##
+## ===== ⭐ THE ARCHIVE CANNOT GRADE OUR SHIPS — STRUCTURAL, NOT UNDERPOWERED =====
+##   Our versions are **PERFECTLY COLLINEAR with our opponents'.** Every modern bot
+##   we own has met ONLY The Bisons' v4; every bot that beat them met ONLY v1–v3.
+##   Focalground: v104 met only their v10, v112 only their v11. ⇒ *"we regressed"*
+##   and *"their v4 is better"* fit 120 games identically. **Only a within-window
+##   multi-arm unrated leg can separate them** — that is what `PREREG-loki30` is.
+##
+## ===== s31 OVERNIGHT READ OUT — `docs/legs/LEG-s31-overnight-readout-2026-08-11.md` =====
+##   41,856 games. Both calibration cells PASSED (NULL 49.20%, NEGCTRL 36.93%), so
+##   NO-INFORMATION means *no effect resolved*, not *no power*. MDE **1.90pp**.
+##   GUNAXIS 51.94% (survives Bonferroni AND Holm) · CAP12 51.37% (**crossed by
+##   0.037pp, does NOT survive**) · BESTFIT 50.96% · CAP6 50.87% · **ROSTER 47.26%
+##   REAL NEGATIVE**. ⛔ **Between-arm contrasts the tool never computes: GUNAXIS vs
+##   CAP12 p=0.55.** Only GUNAXIS and ROSTER are resolved.
+##   **Seat gap on byte-identical arms: 6.84pp [4.18, 9.50]** — and it **INVERTS by
+##   map** (antler 61.7%, atoll 45.6%, χ²=28.03 p=8e-07), which **excludes turn
+##   order** as the cause since turn order is map-constant.
+##
+## ===== BOOT: RUN THESE FOUR =====
+##   1. `zsh tools/corefill_status.sh`     ← what is running RIGHT NOW
+##   2. `.venv/bin/python tools/plank_status.py --all`  (gate on `PLANK_STATUS:`)
+##   3. `.venv/bin/python tests/test_instruments.py` + `tools/corpus_sanity.py`
+##   4. `.venv/bin/python tests/test_seat_relative.py` (NEW s32)
+##
 
 ## ===== ⭐⭐ READ THIS FIRST — THE SESSION'S ONE LOAD-BEARING FINDING =====
 ##   **I WROTE FOUR CHECKS THAT COULD NOT FIRE AND A FIFTH THAT FIRED ON

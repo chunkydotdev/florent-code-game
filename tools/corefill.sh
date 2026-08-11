@@ -42,7 +42,20 @@
 #    refuses at launch time, hours in, in a log nobody is reading. This checks the
 #    WHOLE worklist up front and refuses to start at all.
 #
-# READ IT WITH:  tools/corefill_read.sh   (or overnight_read.py --dir <OUT>)
+# ===== LIVE CONTROL — the worklist is RE-READ EVERY POLL =====
+#   ADD     : append a line to the worklist. It is picked up within POLL_S.
+#   REMOVE  : delete an UNSTARTED line. Started shards are unaffected by edits
+#             (deleting a running item's line does NOT stop it -- see CANCEL).
+#   CANCEL  : `touch scratchpad/corefill_cancel/<SHARD>` -> that shard is killed
+#             at the next poll and marked cancelled. Its rows are KEPT.
+#   PAUSE   : `touch scratchpad/COREFILL_STOP` -> launches nothing further;
+#             running shards continue. Delete the file to resume.
+#   STATUS  : tools/corefill_status.sh
+#
+# ⛔ CANCEL KILLS, IT DOES NOT REWIND. A cancelled shard's partial rows stay on
+# disk and are real games -- `overnight_read.py` pools partial shards and prints
+# the shortfall, so a cancelled shard is readable, just under-powered. Nothing
+# here ever deletes data.
 set -u
 WORK=${1:?worklist file}
 MAX_SHARDS=${2:-8}
@@ -81,6 +94,23 @@ while true; do
   if (( now >= DEADLINE )); then
     say "DEADLINE reached (${DEADLINE_H}h). Launching nothing further; running shards continue."
     break
+  fi
+
+  # ---- live control: cancel + pause, checked before any launch decision ----
+  if [[ -d scratchpad/corefill_cancel ]]; then
+    for cf in scratchpad/corefill_cancel/*(N); do
+      csh=${cf:t}
+      if ps ax -o command= 2>/dev/null | grep -q "[o]vernight.sh $csh "; then
+        say "CANCEL $csh -- killing on request. Partial rows are KEPT and remain readable."
+        pkill -f "overnight.sh $csh " 2>/dev/null
+      fi
+      print -r -- "cancelled $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $STATE/$csh
+      rm -f $cf
+    done
+  fi
+  if [[ -f scratchpad/COREFILL_STOP ]]; then
+    say "PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing."
+    sleep $POLL_S; continue
   fi
 
   # ---- guard 2: blind is not idle -----------------------------------------
