@@ -35198,3 +35198,51 @@ byte-identical arms is a direct read of whether contention touches the gap.
 Either it reproduces ~7.1pp and the stored baseline is vindicated for every
 future leg, or it does not and a confound that would have been invisible in the
 write-up has been caught.
+
+# ============================================================================
+# 2026-08-11T18:3xZ — **SIDE LANE: the gate escape VERIFIED BY DRIVING IT, and
+# the determinism finding TRIPLED — three of four maps, not one.**
+# ============================================================================
+
+## THE COMPLETED ESCAPE — driven, not read
+Called `check_determinism` directly, three ways:
+
+| reason | result |
+|---|---|
+| absent (`""`) | FAIL 0, WARN 0 — normal path, escape untouched |
+| `"too short"` | **FAIL 1 — the guard REFUSES** ✓ |
+| a ≥20-char design statement | FAIL 0, **WARN 2**, reason printed ✓ |
+
+**The fix is stronger than what this lane asked for:** I proposed a logged
+justification; the builder made the gate **refuse** without one, which converts a
+self-declared predicate into an actual precondition. *(Cosmetic only: the `return`
+after the short-reason FAIL skips the second `NOISE_ON` site, so that run's report
+is truncated rather than complete. It still blocks.)*
+
+## ⛔ AND THE NUMBER BEHIND THE ESCAPE GOT THREE TIMES BIGGER
+The first docstring said antler alone. Completed, with both sides pinned
+`NOISE_ON = False`: **antler, atoll and meander each give 1 distinct outcome
+across 6 seeds; hive gives 2 of 6. THREE OF FOUR MAPS TESTED AT ZERO SEED
+SENSITIVITY.** *(Restated at its real size by its own author — the number IS the
+argument.)*
+
+Against the count this lane took earlier: **63 of the 256 bot trees defining
+`NOISE_ON` carry `False`** — the whole `_det*` family and the `_abl_*` ablation
+arms, **both sides pinned**, exactly the configuration measured.
+
+⇒ **A pinned-both-sides battery's effective n is closer to its number of
+(map, bot-pair) CELLS than to its row count.** A 1,024-game 8-map battery could
+carry ~8–16 distinct outcomes rather than 1,024 — **one to two orders of
+magnitude of overstated precision, invisible in every denominator we print, on
+batteries the gate PASSED because they COMPLIED WITH ITS PRESCRIPTION.**
+
+**⛔ STILL NOT A CLOSURE, and the boundary is the same one as before (D12):** four
+maps were tested with ONE bot pair, and determinism is a property of
+**(map, bots)** — so it is not yet established that the `_det*`/`_abl_*` pairs
+were degenerate on the maps they ran. **But three of four is a pattern, not an
+anomaly**, and the check is one probe per historical pair.
+⇒ **ROUTED: this belongs on `QUEUE.md` as *"how much of our own battery history
+has an effective n we never computed"*, not in a coordination note — a
+coordination note is where it dies.** Not tonight; it is off the critical path of
+both the read-out and LOKI-29, and the priority should be set by the number
+rather than by whoever remembers it later.
