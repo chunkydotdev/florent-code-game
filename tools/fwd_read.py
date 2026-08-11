@@ -218,6 +218,57 @@ def bootstrap(games, reps=2000, seed=17):
     return sd, out[int(0.025 * len(out))], out[int(0.975 * len(out))]
 
 
+def verdict(treat, ctrl):
+    """THE ONE DEFINITION. Both the report and the selftest call THIS.
+
+    ⛔ IT WAS DUPLICATED. Until 2026-08-11 the selftest carried its own `_verdict`
+    whose PASS rule was `dr < 0` — ANY improvement passes, no threshold — while
+    production required `dr < -2*se`, and the selftest's copy had NO
+    NO-INFORMATION branch at all. The denominator cells therefore validated the
+    COPY: breaking production's threshold logic left the selftest green.
+
+    **AND THE DUPLICATION WAS INVISIBLE BECAUSE THE FIXTURE WAS DEGENERATE.**
+    The synthetic games were identical, so per-game sd = 0, so se = 0, so
+    `dr < -2*se` DEGENERATED TO `dr < 0` — the two implementations coincided on
+    the only fixture that ever exercised them and diverged everywhere else.
+    A fixture degenerate enough that two different definitions agree cannot
+    distinguish them, and no amount of making the cells stricter would have
+    caught it. (Side lane, s31 — same signature as `ring_retention`.)
+
+    ⛔ THE DENOMINATOR GATE IS SIZED. It used to be a bare `db < 0`.
+    **On two arms drawn from the SAME distribution that fires about half the
+    time** — caught 2026-08-11 by the NO-INFORMATION cell the moment the fixture
+    stopped being degenerate. An unsized gate on a noisy statistic is a coin
+    flip, and this one's coin flip lands on "kill the plank". That is obligation
+    12 ("a gate is a bar and must be sized like one") failing inside the tool
+    built to enforce the protected denominator.
+
+    **The conservative default is PRESERVED, not traded away:** a denominator
+    that cannot be resolved does NOT return a clean PASS. It returns
+    `PASS-DENOM-UNRESOLVED`, which is not shippable — it means buy more n.
+    """
+    import statistics
+    n_t, n_c = len(treat), len(ctrl)
+    if not n_t or not n_c:
+        return "NO-INFORMATION"
+    dr = _pooled(treat) - _pooled(ctrl)
+    bt = [g["fwd_builds"] for g in treat]
+    bc = [g["fwd_builds"] for g in ctrl]
+    db = sum(bt) / n_t - sum(bc) / n_c
+    se_db = ((statistics.pvariance(bt) / n_t + statistics.pvariance(bc) / n_c)
+             ** 0.5) if n_t > 1 and n_c > 1 else 0.0
+    se = (bootstrap(treat)[0] ** 2 + bootstrap(ctrl)[0] ** 2) ** 0.5
+
+    if db < -2 * se_db:                      # a RESOLVED fall — LOKI-25's shape
+        return "FAIL-DENOM"
+    denom_ok = db >= 0 or db >= -2 * se_db   # held, or fall not resolved
+    if dr < -2 * se:
+        return "PASS" if db >= 0 else "PASS-DENOM-UNRESOLVED"
+    if dr > 2 * se:
+        return "FAIL-WORSE"
+    return "NO-INFORMATION" if denom_ok else "FAIL-DENOM"
+
+
 def cmd_analyse(argv):
     path = argv[0]
     treat = 0
@@ -259,19 +310,20 @@ def cmd_analyse(argv):
         print(f"\n  RATIO  treat - ctrl = {dr:+.4f}   (SE_diff {se:.4f}; "
               f"lower is better)")
         print(f"  DENOM  treat - ctrl = {db:+.2f} forward builds/game")
-        # ⛔ THE GUARD. This is the branch LOKI-25 would have failed.
-        if db < 0:
+        print(f"  informative band: |ratio diff| >= {2*se:.4f}")
+        # ⛔ ONE DEFINITION, called here and by the selftest. Never re-implemented.
+        v = verdict(arms[treat], arms[1 - treat])
+        if v == "FAIL-DENOM":
             print("\n  ⛔ PROTECTED DENOMINATOR BREACHED — forward builds/game FELL.")
             print("     A ratio improvement bought by going forward LESS is the "
                   "LOKI-25 failure mode.")
             print("  FWD_VERDICT: FAIL denominator-breach")
-        elif dr < -2 * se:
+        elif v == "PASS":
             print("\n  FWD_VERDICT: PASS ratio improved, denominator held")
-        elif dr > 2 * se:
+        elif v == "FAIL-WORSE":
             print("\n  FWD_VERDICT: FAIL ratio worsened")
         else:
-            print(f"\n  informative band: |ratio diff| >= {2*se:.4f}")
-            print("  FWD_VERDICT: NO-INFORMATION back to the pool, NOT demoted")
+            print("\n  FWD_VERDICT: NO-INFORMATION back to the pool, NOT demoted")
         # research asked for this FIRST, before trusting n=440/arm
         import statistics
         per = [g["fwd_deaths"] / g["fwd_builds"] for g in arms[treat] if g["fwd_builds"]]
@@ -357,11 +409,24 @@ def selftest():
          "forward is defined by core geometry; if swapping cores changes "
          "nothing, the classifier is not reading geometry at all")
 
-    # CELL 3 — the rotate() re-emit trap must actually be armed.
-    src = Path(__file__).read_text()
-    cell("rotate re-emit guard present", "e.id not in seen" in src, True,
-         "rotate() re-emits placeEntity; without the first-placement test the "
-         "PROTECTED DENOMINATOR inflates and a failing plank passes")
+    # CELL 3 — the rotate() re-emit trap, BEHAVIOURALLY.
+    # ⛔ WAS `"e.id not in seen" in src` — a GREP OF THE SOURCE TEXT. Renaming the
+    # variable turned it red while the guard worked; writing the string in a
+    # comment turned it green while the logic was broken. Checking that a rule is
+    # CITED verifies nothing. Now: a twin without the guard must count MORE
+    # forward builds on real replays.
+    guarded = unguarded = 0
+    for q in reps:
+        g = walk(q)
+        u = walk_norotguard(q)
+        if g is None or u is None:
+            continue
+        guarded += sum(g[t]["fwd_builds"] for t in (0, 1))
+        unguarded += sum(u[t] for t in (0, 1))
+    cell("rotate re-emit INFLATES builds without the guard", unguarded > guarded,
+         True,
+         f"rotate() re-emits placeEntity; the unguarded twin must over-count the "
+         f"PROTECTED DENOMINATOR ({guarded} guarded vs {unguarded} unguarded)")
 
     # CELL 4 — move events must be consumed, or every death reads as home.
     # ⛔ POOLED ACROSS THE SAMPLE, NOT reps[0]. First written against a single
@@ -387,18 +452,66 @@ def selftest():
              f"dies at its spawn tile, i.e. never forward "
              f"({base_fd} forward deaths with the move pass, {nomove_fd} without)")
 
-    # CELL 5 — the denominator guard must FIRE, not just exist. Side lane's ask:
-    # "a guard that has only ever seen builds/game hold is a guard nobody has
-    # watched refuse."
-    fired = _guard_fires()
-    cell("denominator guard FIRES on a fallen denominator", fired, True,
-         "LOKI-25's exact signature (ratio improves, forward builds fall) must "
-         "produce FAIL, not PASS")
+    # ⛔ CELLS 5-8 ALL CALL PRODUCTION `verdict()`. They used to call a test-only
+    # `_verdict` copy whose PASS rule was `dr < 0` (any improvement passes, no
+    # threshold) and which had NO NO-INFORMATION branch — so breaking production
+    # left the selftest green. Side lane, s31.
+
+    # CELL 5 — the denominator guard must FIRE. "A guard that has only ever seen
+    # builds/game hold is a guard nobody has watched refuse."
+    cell("denominator guard FIRES on a fallen denominator",
+         verdict(_synth(200, 10, 1, seed=1), _synth(200, 14, 2, seed=2)),
+         "FAIL-DENOM",
+         "LOKI-25's exact signature (ratio improves 0.143->0.100 while forward "
+         "builds fall 14->10) must produce FAIL, not PASS")
 
     # CELL 6 — and it must NOT fire when the denominator holds.
-    held = _guard_holds()
-    cell("denominator guard SILENT when denominator holds", held, True,
+    cell("denominator guard SILENT when denominator holds",
+         verdict(_synth(400, 20, 1, spread=2, seed=3),
+                 _synth(400, 14, 3, spread=2, seed=4)) in ("PASS", "NO-INFORMATION"),
+         True,
          "a guard that fires on everything is not a guard")
+
+    # ⭐ CELL 7 — THE NO-INFORMATION BRANCH, TESTED AS A RATE, NOT ON ONE DRAW.
+    # It is the D61 fix, it is the reason this tool is a generator rather than
+    # another filter, and until now NOTHING DROVE IT: the string appeared exactly
+    # once in the file, in production.
+    #
+    # ⛔ FIRST WRITTEN AS A SINGLE SEED PAIR AND IT FAILED — on a draw with
+    # db = -0.950 against a 2*se_db of 0.944, a genuine ~5% tail event. **A one
+    # -draw cell cannot distinguish "the tool manufactures verdicts" from "this
+    # pair was unlucky", which is the same defect as cell 4's reps[0].** The
+    # property under test is a RATE, so the cell measures the rate.
+    #
+    # THIS CELL IS WHAT CAUGHT THE PRODUCTION DEFECT, AND IT WAS DRIVEN TO THE
+    # OTHER VERDICT RATHER THAN ASSUMED TO BE STRICT. MEASURED, both oracles on
+    # the same 120 null pairs:
+    #     old test-copy `_verdict` (no NO-INFORMATION branch)  120/120 = 100%
+    #     sized production gate                                 13/120 =  10.8%
+    # The bare `db < 0` gate ALONE reads ~50% (two null arms differ in the wrong
+    # direction half the time); the 100% is that gate plus the missing branch.
+    # Threshold is 20%, so the old oracle FAILS this cell loudly.
+    fp = 0
+    TRIALS = 120
+    for k in range(TRIALS):
+        v = verdict(_synth(60, 14, 2, spread=4, seed=1000 + 2 * k),
+                    _synth(60, 14, 2, spread=4, seed=1001 + 2 * k))
+        if v != "NO-INFORMATION":
+            fp += 1
+    rate = fp / TRIALS
+    cell("null pairs return NO-INFORMATION at ~the nominal rate", rate <= 0.20,
+         True,
+         f"two arms from the SAME distribution must land inside the band except "
+         f"at the nominal tail rate; measured {fp}/{TRIALS} = {rate:.1%} "
+         f"(an UNSIZED denominator gate reads ~50% here)")
+
+    # CELL 8 — and the other side of the same boundary: a LARGE ratio move with
+    # the denominator held must NOT be filed as NO-INFORMATION.
+    big = verdict(_synth(400, 20, 0, spread=2, seed=13),
+                  _synth(400, 14, 6, spread=2, seed=14))
+    cell("a large improvement is NOT filed as NO-INFORMATION", big, "PASS",
+         "the band must be crossable; a tool that never leaves NO-INFORMATION "
+         "is D61 in the opposite direction")
 
     print("\nFWD_READ_SELFTEST: " + ("PASS" if ok else "FAIL"))
     return ok
@@ -433,31 +546,53 @@ def walk_nomoves(path):
     return out
 
 
-def _synth(n, builds, deaths):
-    return [{"fwd_builds": builds, "fwd_deaths": deaths, "fwd_rounds": 0,
-             "all_builds": 0, "all_deaths": 0, "rounds": 0} for _ in range(n)]
+def _synth(n, builds, deaths, spread=3, seed=5):
+    """⛔ MUST PRODUCE VARIANCE.
+
+    The first version returned n IDENTICAL games. Per-game sd was 0, so the
+    bootstrap SE was 0, so production's `dr < -2*se` collapsed to `dr < 0` and
+    the NO-INFORMATION branch was UNREACHABLE — no fixture could ever land
+    inside a zero-width band. A degenerate fixture does not merely weaken a
+    test; it makes a whole branch untestable while every cell stays green.
+    """
+    rng = random.Random(seed)
+    out = []
+    for _ in range(n):
+        b = max(1, builds + rng.randint(-spread, spread))
+        d = max(0, deaths + rng.randint(-1, 1))
+        out.append({"fwd_builds": b, "fwd_deaths": d, "fwd_rounds": 0,
+                    "all_builds": 0, "all_deaths": 0, "rounds": 0})
+    return out
 
 
-def _verdict(treat, ctrl):
-    dr = _pooled(treat) - _pooled(ctrl)
-    db = (sum(g["fwd_builds"] for g in treat) / len(treat)
-          - sum(g["fwd_builds"] for g in ctrl) / len(ctrl))
-    if db < 0:
-        return "FAIL denominator-breach"
-    return "PASS" if dr < 0 else "OTHER"
+def walk_norotguard(path):
+    """Deliberately broken twin: counts EVERY placeEntity as a build.
 
-
-def _guard_fires():
-    """LOKI-25's signature: ratio improves AND forward builds fall."""
-    ctrl = _synth(100, 14, 2)            # ratio 0.1429
-    treat = _synth(100, 10, 1)           # ratio 0.1000 — better; builds 14 -> 10
-    return _verdict(treat, ctrl) == "FAIL denominator-breach"
-
-
-def _guard_holds():
-    ctrl = _synth(100, 14, 2)
-    treat = _synth(100, 15, 1)           # ratio better AND builds up
-    return _verdict(treat, ctrl) == "PASS"
+    Used by the rotate cell. `rotate()` re-emits placeEntity for an existing id,
+    so without the first-placement test the PROTECTED DENOMINATOR inflates —
+    and an inflated denominator makes the guard look SATISFIED, i.e. the error
+    lands on the safe-looking side of the one gate built to be unfoolable.
+    """
+    data = Path(path).read_bytes()
+    home, turns = _cores_and_turns(data)
+    if home is None:
+        return None
+    out = {t: 0 for t in home}
+    for rnd, tb in enumerate(turns):
+        for _a, _b, ub in fields(tb):
+            for un, _w, ubuf in fields(ub):
+                if un != 1:
+                    continue
+                for en, _e, eb in fields(ubuf):
+                    if en != 1:
+                        continue
+                    e = parse_entity(eb, rnd)
+                    if e is None or e.team not in out:
+                        continue
+                    if e.kind != "builder_bot" and \
+                            _d2(e.pos, home[1 - e.team]) < _d2(e.pos, home[e.team]):
+                        out[e.team] += 1          # NO first-placement test
+    return out
 
 
 if __name__ == "__main__":
