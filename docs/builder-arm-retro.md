@@ -361,3 +361,94 @@ times, and the instrument that now exists exists because he did.**
 **The machinery inspects the EXPERIMENT (s28), asks whether the QUESTION is worth
 answering (`target_value.py`), and still does not ask whether I should be
 answering a question at all rather than running games.**
+
+---
+
+# FIRING — s32, 2026-08-11. Answered from artefacts (commits, logs, the platform).
+
+**1. VERDICTS — each scoped to what its interval supports.**
+* **s31 read-out:** ROSTER *real negative* · GUNAXIS *resolved* · **CAP12 "crossed
+  by 0.037pp and does NOT survive correction"** · BESTFIT/CAP6 *no information*.
+  **Tempted to write:** *"two arms escalate."* The tool said so. Between-arm
+  contrast was **p=0.55**, so it would have been the tool's label, not a fact.
+* **LOKI-29 §4:** **UNRESOLVED, not "refuted"** — 4/8 with two maps below 50%
+  did not meet my own refutation clause. **Tempted to write "refuted"**, because
+  the scan-rank model *is* dead; the table said unresolved and the table was
+  written first.
+* **v114 ship:** clause (b) **UNRESOLVED — "not passed, and not falsified
+  either."** Tempted to write *"we are overriding a rules conflict"*; the truer
+  sentence was *"the plank was never validly killed."*
+* **LOKI-30 chassis gate: PASSED** — 0 TLE'd / 13,457 turns with a live control.
+
+**2. RETRACTIONS — SIX, AND THE DIRECTION IS MIXED, WHICH IS A CHANGE FROM s28.**
+
+| retraction | direction |
+|---|---|
+| `CORE_PAIRS` "possible live bug on antler/meander" → 0/15 mismatch | **alarming — against me** |
+| *"at a comparable n"* in the read-out (n=25 vs 5,408) | against the ship |
+| *"forward pressure is net-negative at the margin"* | **flattering — the dramatic reading** |
+| *"all 15 pool maps rotational"* off the CLI → meander is not | **convenient — the cheap branch** |
+| *"Part A rests on ONE signed cell"* (relayed extremes-method CI) | pessimistic |
+| my §5 SE wrong by √2 | against me |
+
+**s28's finding was "every one ran toward the work I wanted to do next." That is
+NOT this session's distribution — and I do not think that is virtue.** Four of
+the six were caught by the side lane, not by me. **The mechanism that changed the
+distribution was a peer, not better judgement**, and a successor should read this
+as "the check worked", not "the bias is gone."
+
+**3. INSTRUMENTS — 9 changed; 7 driven to both verdicts, and ONE WAS TRUSTED ON
+ITS FIRST OUTPUT.**
+Driven both/three/four ways: `gate.py --pooled-not-paired` · `overnight_watch`
+(monotonicity + startup refusal) · `corefill.sh` (4 cells) · `queue_check`
+local-runs banner (live/idle/**blind**) · `breakin_watch` k (4 cells) ·
+`test_seat_relative` (11/11 vs **0/11**) · `_v156gunseat` splice (8/8 vs flag-off).
+⛔ **`corefill_status.sh` HAS NO FIXTURE. It has five states and none is forced by
+a test.** It is the tool a successor will read first. **Named, not fixed.**
+⛔ **AND THE FAILURE WAS MINE AND EXACTLY THIS SHAPE:** I wrote a watchdog fixture
+isolated by `OUT=`, **did not test that `OUT=` was honoured**, and it ran against
+the LIVE run — created files beside five live shards and launched a stray shard.
+**I had found that same hardcoded-`OUT` trap in the sibling script 90 minutes
+earlier and worked around it in my launcher instead of fixing the source.**
+**A workaround is a fix with its blast radius set to one caller, and the next
+caller was me.**
+
+**4. CLAIMS AHEAD OF RECORD — `claim_check.py` RUN: 2 unbacked, NEITHER MINE**
+(`inert_check.py`, `match_ledger.py`, both pre-existing). Clean this session.
+
+**5. THE SLOT — 3 activations, RATED LEAKAGE ZERO, certified structurally.**
+Submit auto-activated v114 and `submit_clean` restored the holder in **5 s**;
+`unrated_run` held the slot **8 s** (19:06:47→19:06:55); Magnus activated the ship
+19:14Z. **Leakage zero because the activation window CONTAINS NO PAIRING INSTANT**
+(12 of 12 pairings at minute ≡ 12 mod 20, second :59, re-derived live) — **not
+because no v114 match appeared, which is the match-counter fallacy.**
+⚠ **The ship itself is −26 (1689→1663) over 5 matches. That is the ship, not
+leakage, and at k=5 it is not evidence.**
+
+**6. BUDGET — UNDER-SPENT, AND I SHOULD SAY SO.** The ceiling is 5 unrated
+matches / 20 min. **I fired 2 and stopped** because the chassis gate had passed
+and I recommended shipping instead. Defensible, but **3 slots in that window went
+unused and unrated games are free.** s28's lesson was a third of the budget spent
+on abandoned legs; **this session's is the opposite failure and it is still a debit.**
+
+**7. WHAT A SUCCESSOR CANNOT RECONSTRUCT** — all now written down: why `GUNAXTB`
+is the siting/volume discriminator (doctrine comment + prereg) · that the
+`corefill` ADD path was verified **in production**, not only in its fixture ·
+that the GUNFERRY/GUNAXTB interim rates are **NOT verdicts** · and one loose
+thread: **`ship_watch` reports k=4 while the platform shows 5 matches — logged,
+unchased.** Given `breakin_watch` was miscounting the same quantity, I would look
+there first.
+
+## THE ONE QUESTION: did I make a decision the machinery could not have caught?
+
+**YES, and it is the ship.** `target_value` passed, `plank_status` passed, the
+`tled` chassis gate passed, controls moved, the holder was verified. **No gate in
+this repo asks "do we know WHY it wins?"** — and clause (b) of our own ship rule
+was unresolved when I recommended activating. The machinery inspected the
+experiment and never asked whether we understood the result.
+**That is s28's finding one level up: there, the unasked question was whether the
+TARGET was worth hitting; here it is whether the MECHANISM was understood.**
+⇒ **The honest form: v114 shipped on a replicated currency number and a passing
+chassis gate, with its mechanism openly unresolved and three arms now running to
+close it.** I would take that trade again with ~420 rated matches left — **but it
+was a judgement, not a gate, and no instrument would have stopped me.**
