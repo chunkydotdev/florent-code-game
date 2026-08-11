@@ -32545,3 +32545,39 @@ games, eleven minutes. The cost of a false NEGATIVE is unbounded and invisible.*
    escalate to win rate only for what survives.
 3. **A PLANK MAY ONLY DIE ON: a mechanism bar it failed, a programme rule it
    breaks, or an inert metric.** **Never on an underpowered win rate.**
+
+## ⛔ F40 — MAGNUS, IMMEDIATE: *"They should go back right away."* THE FOUR ARE REINSTATED.
+**Status is UNTESTED — not demoted, not parked, not bottom-of-queue.** Each was
+screened by an instrument that **could not resolve it** and recorded as though it
+had.
+```
+heal budget    10/24 = 41.7%   null band [30,70]   INSIDE — NO INFORMATION
+home turrets   10/24 = 41.7%   null band [30,70]   INSIDE — NO INFORMATION
+roster         10/24 = 41.7%   null band [30,70]   INSIDE — NO INFORMATION
+gunner-axis    34/64 = 53.1%   null band [38,62]   INSIDE — NO INFORMATION
+```
+
+**⚠ ONE CARVE-OUT SO THE REINSTATEMENT DOES NOT OVERREACH: GUNNER-AXIS IS TWO
+OBJECTS.** Its **win rate** carried no information — **but LOKI-25 died on a
+PRE-REGISTERED MECHANISM FALSIFIER THAT DID RESOLVE at n=25** (deaths −24% vs
+presence −23%; deaths-per-forward-build flat at −2.3%). **That kill is valid and
+stands.** ⇒ **the AXIS returns to the pool; the LOKI-25 IMPLEMENTATION stays
+dead.** Conflating them would be the LOKI-18 error in the revival direction.
+**The other three carry no mechanism verdict at all and return unqualified.**
+
+**AND THE TAPE MUST BE CORRECTED, NOT JUST THE QUEUE.** A row reading *"nothing
+above the null"* **asserts a measurement that was never made**; the honest row is
+**"screened at n=24/64, result INSIDE the null band, NO INFORMATION."** **A tape
+that records a non-result as a failure will re-kill these next week when someone
+greps it** — the same durability problem as a plank's death living only in a
+commit message.
+
+**AND DO NOT RE-RUN THEM AT 64: that is another non-result.** At n=64 the band is
+**[38,62]** and a real **+10pp** effect lands inside it. ⇒ **screen them on a
+MECHANISM bar (dose, build mix, exposure-rounds — LOKI-25's resolved at n=25) or
+take them to a live window. Re-running the same underpowered screen is how a
+non-result becomes a belief.**
+
+**Three of the four were this lane's own ideas. Reinstatement is asked by the same
+lane that supplied the arithmetic killing its own Closer and its own harvester
+idea this morning — the standard is symmetric or it is not a standard.**
