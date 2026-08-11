@@ -1,5 +1,86 @@
-# LIVE: **v104 = "Loki v2"**. s29 state, 2026-08-11 06:5x CEST (04:5xZ).
+# LIVE: **v104 = "Loki v2"**. s29 WRAP, 2026-08-11 07:4x CEST (05:4xZ).
 
+## ===== ⭐ BOOT: RUN THESE THREE BEFORE ANYTHING =====
+##   1. `.venv/bin/python tools/plank_status.py --all`  — **NEW s29.** Gate on the
+##      `PLANK_STATUS:` line, never on `$?` (behind a pipe `$?` is the pipe's).
+##      It exists because I got ONE COMMIT from activating a plank its own author
+##      had withdrawn five hours earlier.
+##   2. `.venv/bin/python tests/test_instruments.py` (34/34 at wrap)
+##   3. `.venv/bin/python tools/corpus_sanity.py`
+##   **`tools/freshness.py --selftest` is new too — see the queue.**
+##
+## ===== STATE, VERIFIED ON THE PLATFORM AT WRAP =====
+##   **LIVE: v104 "Loki v2" = `bots/_v130loki13`, py-tree md5 `798d2df4`.**
+##   **1680, rank #23/117, 728 matches. last-10 3W-7L.**
+##   `RULE=held` · net_act **+65** · peak 1698 · drawdown **−18** ·
+##   `sprt_fast=BLEED` `sprt_slow=OK`. **ACTIVATION BASELINE 1615.**
+##   **ROLLBACK TARGET: v102 = `bots/_v124loki8`**, md5 `e8697ffa`,
+##   `.venv/bin/fcode submission activate 102`. **Roll back only if rating < 1615
+##   AND net5 <= −21.** Neither is close.
+##   ⚠ **A STATE BLOCK IS AN EXPIRY DATE, NOT A GUARANTEE. Re-read it live.**
+##
+## ===== ⛔ NOTHING IS WATCHING OVERNIGHT EXCEPT THE MONITORS =====
+##   7 monitor processes alive at wrap (4 watchers + keeper + ship_watch + loop).
+##   **NO runner is live. NO auto-rollback is armed. `ship_watch` will WRITE
+##   `corpus/SHIP_ALERT` if its conjunction fires and NOBODY WILL READ IT until
+##   someone boots.** That is the same accepted risk as last night.
+##   **MORNING: read `corpus/SHIP_ALERT` and `tail corpus/ship_watch.log` FIRST.**
+##
+## ===== ⭐⭐ LOKI-19 — FIRED, AT ITS PRE-REGISTERED n, UNREAD =====
+##   **`bots/_v136loki19` (md5 `fb5cba8c`) = v108 on the platform.**
+##   **100 GAMES BANKED: control 50, treatment 50, 4 interleaved windows —
+##   §6's stated minimum. ZERO rated leak, verified at the PAIRING BOUNDARY.**
+##   Outfiles: `scratchpad/arm_loki19_ctrl_w1.txt` `arm_loki19_treat_w1.txt`
+##   `arm_unrated_v104_20260811T052031Z.txt` `arm_unrated_v108_20260811T053112Z.txt`
+##   **⚠ TWO RUNNERS, ONE LEG:** window 1 by a hand-rolled script, windows 2+ by
+##   `tools/unrated_run.sh`. **Cell composition differs in window-1 control**
+##   (farming double, NO Landers — it fired before Amendment 2). Amendment 2c
+##   pre-committed the handling: **per-cell comparison on cells present in BOTH
+##   arms; window-1's extra farming games are NOT silently averaged.**
+##   **NEXT: THE READ-OUT.** Prereg + 3 amendments, each committed before the arm
+##   it governs existed. Bars: 5a dose · 5a-bis arrival gate · 5b mechanism ·
+##   5c currency (**pre-declared NOT resolvable at this n**) · 5d cost/falsifier.
+##   **⛔ BEFORE CITING D18: print `league_matches.tsv`'s newest row beside the leg
+##   window. If the tape does not reach the window write UNKNOWN, not CLEAN —
+##   `oppver_window.py` returns CLEAN off a stale tape, on Lunds Stallions, which
+##   is one of these four cells.**
+##
+## ===== ✅ LOKI-16b CLEARED ITS BAR (read out s29) =====
+##   **+0.164 [+0.073, +0.253]** on the 12-ring stratum vs **+0.15**.
+##   Amendment 2c row 1 verbatim; **"confirmed" is forbidden and is not used.**
+##   **The statistic choice was the deciding call and was made BLIND** (per-tile
+##   +0.164 clears, the other series misses; chosen on the bar's PROVENANCE at
+##   06:15:21, the blind replication launched 06:08:52).
+##   **CORRECTION 1 in that prereg: the row published as `hold_any` is a THIRD
+##   statistic — `ring_read.py` computes no `hold_any` at all.** Primary and
+##   verdict unaffected.
+##   **A confirmation leg is now justified. The prereg's own fork is open:
+##   retention cleared, KILL-SPEED WAS NOT READ.**
+##
+## ===== QUEUE, IN PRIORITY ORDER =====
+##   1. **READ OUT LOKI-19** (100 games, decoders exist, no new games needed).
+##   2. **WIRE `tools/freshness.py` INTO THE FOUR BLIND INSTRUMENTS** — built and
+##      selftested (10 cases), **NOT yet wired.** `audit_trigger` (**suppressing
+##      its own alarm: 24h numerator, unwindowed denominator, its "21 decision
+##      rows in 24h" are all ≥34h old — measured same-window it TRIPS**),
+##      `oppver_window`, `breakin_watch`, `ship_watch`. **One helper, four bugs.**
+##   3. **LOKI-16b confirmation leg** (`tools/unrated_run.sh 106 <games>`).
+##   4. **Launcher chains** — demoted behind LOKI-19 deliberately: a six-link
+##      express lane delivering bodies that provably do not attack on arrival
+##      spends +60% permanent cost scale to move the same zero forward.
+##   5. `docs/research/SPEC-mutation-harness-2026-08-11.md` — commissioned by
+##      Magnus, unbuilt. §9(a) is item 2 above.
+##
+## ===== TOOLS ADDED s29 — all selftested to BOTH verdicts =====
+##   `plank_status.py` (HANDOVER vs artefacts) · `unrated_run.sh` (**the runner
+##   for every unrated leg — do NOT hand-roll one**) · `freshness.py` ·
+##   `ring_read.py` tracked + 11-cell selftest whose declared mutant FAILS it ·
+##   `ring_retention.py` **REFUSES TO RUN** (wrong, and its selftest passed) ·
+##   `loki17_mech.py` fixed (it raised ValueError on EVERY invocation) ·
+##   `corpus_sanity` conditional-dead check · `rate_budget` persisted ledger ·
+##   `submit_clean` restores the holder.
+##
+## ===== s29 DETAIL BELOW; s28 BLOCK FURTHER DOWN =====
 ## ===== ⭐ s29 — READ THIS BLOCK BEFORE THE s28 ONE BELOW IT =====
 ##   **LADDER: v104, ~1663-1678, rank #24-25/117, ~724 matches. `RULE=held`,
 ##   net_act ~+48, peak 1698, drawdown -35. NO ROLLBACK. Nothing was shipped.**
