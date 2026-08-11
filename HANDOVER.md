@@ -57,6 +57,35 @@
 ##   **A confirmation leg is now justified. The prereg's own fork is open:
 ##   retention cleared, KILL-SPEED WAS NOT READ.**
 ##
+## ===== ⛔ FOUR THINGS FROM RESEARCH'S WRAP — DO NOT INHERIT THESE UNCHECKED =====
+##   **Carried HERE and not left in their docs, because today's most-repeated
+##   failure (D14, three firings) is that a correction lands where it was
+##   DISCOVERED and never where it will be READ.**
+##   1. **The v95–v101 melee transition zone is UNRESOLVED, and research was
+##      wrong about it TWICE.** `bde1627` Part 9 says "resolved"; **`e96371e`
+##      Part 10 SUPERSEDES it.** ⛔ **Do not let "nineteen healthy versions, then
+##      the flag" back into circulation** — v98 was submitted 20 minutes BEFORE
+##      the LOKI-QUIET tree existed and still reads 0.0%. The current tree's gate
+##      is established by exhaustive enumeration; the HISTORY is not.
+##   2. **Team 48 is a MECHANISM lead, not a currency target.** Unrated S−E
+##      −0.147, **rated +0.107 on n=2 matches**, both confounds dead. Real gap
+##      (they kill r93, we need r140), 2.7% of v104's rated diet.
+##   3. **Kidnap effectiveness has NO column in `throws.tsv`.** A DECODER GAP,
+##      **never a null.** Prerequisite if the kidnap line comes back up.
+##   4. **The map × opponent interaction CANCELS in every pooled statistic we
+##      compute** — pooled share by map is flat 0.485–0.633 and that flatness
+##      averages a ±0.3 within-map spread. kladde 10x10 0.82 vs bigger 0.23
+##      (p=0.0005); Landers the exact mirror. **This is about our whole
+##      measurement practice, not about v104.**
+##
+## ===== ⚠ TWO SIZING FACTS LOKI-19's READ-OUT MUST NOT GET WRONG =====
+##   * **The primary's baseline is 2,247-scale, NOT the rated-only 475.**
+##     Sizing n against 0/475 over-buys games by 4.7x.
+##   * **The arrival figure carries its POPULATION or it is a different number:**
+##     **38.1% rated-only vs 23.3% pooled**, range 18.2–40.9% across v102–v107.
+##     Amendment 1 tags it; a read-out that recomputes on another population is
+##     testing a different bar.
+##
 ## ===== QUEUE, IN PRIORITY ORDER =====
 ##   1. **READ OUT LOKI-19** (100 games, decoders exist, no new games needed).
 ##   2. **WIRE `tools/freshness.py` INTO THE FOUR BLIND INSTRUMENTS** — built and
