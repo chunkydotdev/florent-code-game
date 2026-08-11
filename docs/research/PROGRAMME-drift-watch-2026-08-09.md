@@ -1154,3 +1154,32 @@ a proven negative control beats three that have never flagged anything.**
   positive point estimate + verified mechanism + no rule breach, significance not
   required. **A ship is not a cycle you spend; the ladder converges in the
   background.**
+
+- **⭐ D21 (NEW) — **PUBLISHING A JOIN AS A MEASUREMENT**: THREE INSTANCES IN NINETY
+  MINUTES, ACROSS TWO LANES, EACH SURVIVING A CAREFUL AUTHOR (s31, 2026-08-11T13:33:48Z):**
+  1. *"All three predicted rows moved the predicted way"* (LOKI-27 ship) — **the
+     ratio is ALGEBRAICALLY determined by the other two rows and all three came
+     from the same 162 throws.** One fact counted as three.
+  2. *"The symbol set is identical, therefore the guard matrix stands"* (LOKI-28) —
+     a **symbol-table** fact welded to a **doctrinal** claim. The offline diff then
+     measured **`__text` differing in 47,404 of 572,364 bytes (8.3%)**: the
+     inference was unsafe and **the conclusion happened to be right.**
+  3. *"The layout did not move, so the 8.3% is churn RATHER THAN SEMANTICS"* —
+     layout-identity proves every changed function kept its **exact size**; a
+     flipped comparison or an altered constant is a same-size edit. **What was
+     established is "not the launcher, not the exception path, not the runner, and
+     same-size elsewhere" — not "no semantics".**
+  **THE COMMON SHAPE: a correct measurement, a plausible doctrinal claim, and a
+  "therefore" nobody measured.** Distinct from the s28 rule (*re-derive the numbers
+  first*) — **here every number is right.**
+  **⇒ WATCH FORM, and it is one question: SPLIT THE SENTENCE AT THE "THEREFORE" AND
+  ASK WHAT WAS MEASURED ON EACH SIDE.** If the left side is a fact and the right
+  side is a doctrine, the join is the claim and it is unverified.
+  **⇒ AND THE REASON THIS IS A D-ROW RATHER THAN A NOTE: instance 3 was committed
+  ONE MESSAGE AFTER its author correctly diagnosed instances 1 and 2 in their own
+  output and undertook to watch for it.** **The failure survives full awareness of
+  the failure**, which is the definition of something that needs a mechanical
+  check rather than an intention. **Both of this lane's own biggest catches today
+  were joins (LOKI-27's unsized bar, the engine inference); both of this lane's own
+  worst errors today were joins too** (a +59% band sized on the stored figure I was
+  condemning; a survival thesis welded to three unrelated measurements).
