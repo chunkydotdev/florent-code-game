@@ -34064,3 +34064,56 @@ LADDER AND WE DO NOT KNOW WHETHER THE PLATFORM RUNS 2.3.7.** A local binary diff
 says what OUR engine does; it structurally cannot see the platform's build.
 **That is why LOKI-28's in-leg unaided-crash control stays armed even though the
 risk it was written for is now retired locally.**
+
+## ⭐ RESOLUTION — `fcode 2.3.7` CHANGES NO GAME RULES. THE GENERATOR IS CLOSED, NEGATIVE.
+
+**Full address-paired attribution** (addresses are identical in both binaries, so
+every function pairs exactly): **47,404 of 47,404 differing bytes attributed —
+100%, no residue.** 364 of 1,604 `__text` functions differ.
+
+**⛔ FIRST, THE TENSION THE SIDE LANE RAISED, RESOLVED:** my "396 unmatched
+functions" were **396 DUPLICATE-NORMALISED-NAME collisions my `dict()` silently
+dropped** (80 names sharing 476 symbols), not missing functions. Checked
+explicitly: **0 functions exist in OLD only, 0 in NEW only.** Method 1's *"nothing
+added, removed or renamed"* HOLDS — it was insufficient, not wrong. **That check
+had to be run; "unread but benign" would have been the fourth reassuring
+inference.**
+
+**WHERE THE 47,404 BYTES ACTUALLY LIVE:**
+* **Rust library/dependency monomorphisations** — `hashbrown::RawTable::
+  reserve_rehash` (**9 separate instantiations, ~10.6 kB**), `core::iter::Map`
+  (2,520 B), `prost::encoding::message::encode`, `std::thread::LocalKey::with`,
+  `alloc::Vec` spec-from-iter, `pyo3::conversion::IntoPyObject`.
+* **pyo3-generated `PyMethods` dispatch thunks** — 86 game-namespace functions
+  with non-`bl` edits and **every single one is `bindings::controller::…
+  PyMethods…` glue**, plus `proto::…::encode_raw`.
+* **`bl` relocations everywhere else** — callees moved, offsets followed.
+
+**⛔ ZERO `battlecode_titan::game::*` RULES FUNCTIONS HAVE A NON-RELOCATION EDIT.**
+
+**`runner::run` decoded instruction-by-instruction** because it IS the exception
+path: **13 changed instructions, 12 are `bl` target relocations, and the one
+non-`bl` is `add x0, x0, #1471` → `add x0, x0, #1503`** — a +32 immediate, i.e. a
+struct offset shifting because a dependency type grew. **No comparison flipped, no
+branch condition altered.**
+
+⇒ **2.3.7 IS A DEPENDENCY/TOOLCHAIN REBUILD (pyo3 + prost + hashbrown), NOT A
+BALANCE OR RULES PATCH.** Launcher kidnap, crash-induction and the guard matrix
+all stand. **`distribute_resources`' 28 bytes are `bl` relocations — the standing
+`CLAUDE.md` claims that hang off it (team-blind resource flow, enemy conveyor as
+full-rank acceptor, core-push is a gift) are NOT affected.**
+
+**THE GENERATOR RESULT IS A NEGATIVE AND IT IS WORTH HAVING:** the organisers did
+**not** change gameplay this week. **There is no new exploit surface in 2.3.7 and
+nobody needs to look again.** *(A road closed on ENGINE CODE, which the D12
+carve-out permits: this is the game's own definition, not behavioural inference.)*
+
+**⛔ WHAT THIS STILL CANNOT SEE, so the control stays armed:** a local binary diff
+says what OUR engine does. **It cannot see which build the PLATFORM runs.**
+LOKI-28's in-leg unaided-crash control remains armed for exactly that.
+
+**METHOD COST, FOR THE RECORD: four methods, three wrong, all three wrong in the
+REASSURING direction** — symbol set (insufficient), hash-normalised disassembly
+(masked the bytes it checked), name-paired byte attribution (dropped 396 duplicate
+names, attributed 1.2%). **Only address-paired attribution + instruction decoding
+was sound.** Each cheaper method said "fine" first.
