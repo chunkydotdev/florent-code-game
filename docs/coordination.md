@@ -30785,3 +30785,102 @@ compared the right number to the wrong number."**
 moving); its second was wrong too (substring: `loki1` matched `loki16/17/19`).
 **Both fixed on the day rather than documented.** An alarm nobody believes is
 decoration with an exit code.
+
+# ============================================================================
+# 2026-08-11 05:45Z (`date`) — **WRAP s29 (SIDE LANE): PROCESS DELTAS**
+# Wrap called by Magnus ("wrap at the end of this cycle"). Repo process deltas
+# only. The vault daily note is a SEPARATE task and is NOT this.
+# ============================================================================
+
+## STATE, VERIFIED ON LIVE SURFACES AT 05:45Z — NOT ASSERTED
+* git **0 ahead / 0 behind**; working tree carries monitor-owned daemon state only.
+* **v104 live, rating 1680, k=82, peak 1698, drawdown −18, RULE=held**
+  (`ship_watch` row **07:39:51 CEST = 05:39:51Z**, six minutes old).
+  **Zone stated explicitly because that tape stamps LOCAL with no marker —
+  research's instrument defect #13, found today.**
+* keeper **89444** alive; ship_watch loop alive. Holder `v104 (Loki v2)`.
+* **No agents running. Both of mine completed and their findings are committed**
+  (`0aa5302`, `694fc5f`), not left in session memory.
+
+## D41. **THE SESSION'S ONE FINDING, AND IT HAS FOUR INDEPENDENT INSTANCES**
+**A CHECK ONLY CHECKS ONCE SOMETHING FORCES IT TO PRODUCE AN ANSWER IT COULD GET
+WRONG.** Six selftests passed while their metric was broken · `claim_check` was
+silent on a runner **because the file made no claim**, and went red the instant
+one was written · the **ABORT branch guarding the rated ladder had never been
+driven** in its fourth copy · **`hold_any` named a statistic no tool computed**,
+agreed by three lanes over hours, names matched to series **by position**.
+**In every case the artefact LOOKED verified and nothing had ever demanded an
+answer that could have come out the other way.** Standing note + watch form in
+the drift-watch mandate (`685583d`).
+
+## D42. **THREE AUDITS CLOSED "NO FLAGS" AND ALL THREE WERE REOPENED — ALL OMISSIONS**
+The arrival premise (38% is RATED, the leg fires UNRATED at 20%) · the undefined
+**"materially"** guarding the only unqualified claim left in a prereg · an
+**untracked decoder sitting under a tracked, broken, green-selftested twin**.
+**Each was found by asking what the document did not force itself to answer** —
+which is D41 applied to my own reviews. **s28's lesson was "read for what is
+ABSENT"; s29 shows I only do that on the second pass.**
+
+## D43. **I COMMITTED THE FAULT I WAS ALLEGING, IN THE SAME SENTENCE**
+Flag 1 against `PREREG-loki16b` Amendment 2 said the bar was sized on a retired
+decoder's output. **False: +0.182 and +0.174 are two GRANULARITIES of the same
+decoder, and I had compared a per-tile calibration figure to an any-builder
+measurement** — the exact units error I was alleging. **The flag still did its
+job** (it forced a check that could only have hurt the result, before the
+read-out rather than after), **and the reasoning was wrong.** Both halves belong
+in the ledger.
+
+## D44. **RELAY FIDELITY, AGAIN: I NAMED TWO SERIES BY POSITION**
+Carried *"per-tile +0.164, any-builder +0.137"* to two recipients with
+`any-builder` glossed as `hold_any`. **My subagent reported V1/V3; I supplied the
+names.** The `+0.137` is `bot_episodes` — a third quantity. **Primary and verdict
+unaffected**, my four committed docs clean, damage confined to messages. **This
+arm's characteristic failure, second instance in two sessions.**
+
+## D45. **TWO NEAR-PUBLICATIONS CAUGHT BY MECHANISM, NOT BY CARE**
+(a) Read a tool's exit code **after a pipe** — `$?` was `tail`'s — and was one
+sentence from reporting its contract broken. (b) Nearly reported **absence of
+v108 from `ladder_games.tsv` as evidence of no leak**, when the corpus had not
+yet ingested the window. **Both were caught by a hard bound** (a documented
+promise; a timestamp), **not by reading more carefully.** Prefer checks with a
+bound the quantity cannot legally cross.
+
+## D46. **THE QUEUE RAN LIFO AND THE OLDEST LIVE DEFECT SURVIVED A DAY OF DILIGENT FIXING**
+Every flag raised in the last two hours was fixed within minutes. **The sweep's
+findings from 04:4x were untouched at 07:4x — and two of them were the LIVE
+ones** (`audit_trigger` suppressing its own FIRE on every builder boot;
+`oppver_window` certifying D18 CLEAN off a stale tape, on one of the leg's own
+cells). **Neither lane can see this from inside the work.** Watch form: at wrap,
+list open findings by AGE, not by salience.
+
+## WHAT THE LANE CAUGHT — and the two that changed what fired
+**Stopped a leg on its merits twice:** LOKI-17's primary sat downstream of an
+**unchanged `can_fire_from` guard**, so it read 100% in both arms — no amendment
+repairs that; and LOKI-19's premise was quantified at **38% arrival (RATED)**
+while the leg fires **UNRATED at 20%**, which produced Amendments 1 and 2 and the
+**first arrival-admission measurement anyone has run on a panel** (of four
+"admitted" cells, exactly one delivers the premise; SmartFridge arrives at 7.6%
+on n=512).
+**Also:** the falsifier's undefined magnitude (Amendment 3) · `ring_read`
+untracked with a broken tracked twin (now tracked, selftested, **mutation-verified
+by me**) · `claim_check`'s silence proving nothing · `rate_budget`'s second blind
+state failing **open on the machine path runners actually read** · the **ladder
+pairing clock** (`:12:59/:32:59/:52:59`), which converted *"luck plus watching"*
+into a schedulable control and passed its first forward test · the **0/4,169
+denominator** (89% of it could not produce the event) · **six green selftests**,
+each with a constructed failing case run.
+
+## WHAT A SUCCESSOR SHOULD KNOW
+1. **`audit_trigger` is disarmed and it runs on YOUR boot.** 52 docs / 21
+   decision rows where the rows are ≥34h old; same-window it is 52/0 → TRIP, and
+   with ship cadence that is **2/5 = FIRE**.
+2. **`oppver_window` returns CLEAN off a stale tape.** Before citing D18, print
+   `league_matches.tsv`'s newest row beside the leg window; if it does not reach,
+   write **UNKNOWN**.
+3. **`tools/freshness.py` exists and fixes three of the four** — it is written
+   and **not yet wired into any caller**.
+4. **LOKI-19 has window 1 only (50 games), fired by the OLD runner.** Windows 2+
+   go through `unrated_run.sh` on Magnus's directive. **Two runners, one leg —
+   say so in the read-out.**
+5. **The mutation-harness spec** (`e2840d4`) ships with six acceptance fixtures
+   whose answers are already known: **five BLIND, one CAUGHT.**
