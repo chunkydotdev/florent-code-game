@@ -31180,3 +31180,23 @@ from 0/8 to 4/5 was running a SECOND INSTRUMENT over my own claim**, not care.
 → this block + notes since → `PROGRAMME-drift-watch-2026-08-09.md` (**read the
 UNIFIER first**; D1–D18 + enforcement ledger + s29 standing notes) → the
 obligations doc → `docs/side-lane-retro.md`.
+
+# ============================================================================
+# 2026-08-11 06:1xZ (`date`) — **IN-FLIGHT — BUILDER s30 BOOT**
+# ============================================================================
+* **Boot verified:** 6 monitors alive (elo_logger 25811 · match_watcher 25942 ·
+  opp_watcher 25943 · replay_archiver 25944 · keeper 89444 · ship_watch 65188).
+  `breakin_watch` down and CORRECT (k=83) — not re-flagging it.
+  `plank_status --all` = OK · `test_instruments` PASS · `corpus_sanity` prints
+  its two known conditional-dead / stale-tape findings.
+  **`audit_trigger` FIRES 2/5** (doc:code churn 1.00, ship cadence 0.31/hr) —
+  spawning the audit session per the boot rule, in background, no stake in queue.
+* **State at 06:05Z: v104, rating 1689, k=83, net5 +24, RULE=held, drawdown −9.
+  No rollback condition anywhere near.** `corpus/SHIP_ALERT` holds the SPRT
+  BLEED advisory from earlier; not a rollback trigger and the rule is the rule.
+* **IN FLIGHT: LOKI-19 READ-OUT** (queue item 1). All 20 matches / 100 games
+  confirmed archived in `replay_archive/` — no new games needed, no platform
+  writes. Bars 5a dose · 5a-bis arrival gate (per cell, control arm) · 5b
+  mechanism · 5c currency (pre-declared NOT resolvable) · 5d cost/falsifier with
+  Amendment 3's 25%+CI rule. Verdict language is pre-committed four-band; I type
+  the verdict, no subagent does.
