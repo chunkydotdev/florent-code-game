@@ -175,6 +175,24 @@
 ##   MECHANISM bar or take them to a live window.
 ##   **STANDING RULE: a plank may die on a failed MECHANISM bar, a PROGRAMME
 ##   rule, or an INERT metric — NEVER on an underpowered win rate.**
+##   ⛔ **BUT A MECHANISM BAR IS NOT AUTOMATICALLY CHEAP, AND THE "160x" FROM
+##   LOKI-25 IS A PROPERTY OF THAT PLANK, NOT OF MECHANISM BARS.** LOKI-25
+##   resolved at n=25 because its effect was ENORMOUS (a 23-24% swing) on a
+##   LOW-VARIANCE statistic. Measured counter-example, same day: the
+##   forward-efficiency bar (`deaths per forward build`) needs **~880 self-play
+##   games** to detect half the top-tier gap, while a win rate at 880 would
+##   detect 4.7pp — **comparable, not 160x apart.**
+##   ⇒ **EVERY MECHANISM BAR GETS ITS OWN POWER ANALYSIS AND ITS OWN NAMED
+##   ESTIMATOR.** Research audited their own bar and found the aggregation they
+##   proposed was the noisier of two: **mean-of-per-game-ratios CV = 2.60, MDE
+##   129% of level at n=64; POOLED ratio (total deaths / total builds),
+##   game-resampled bootstrap, MDE 102% at n=64 and usable at ~440/arm.**
+##   **An unnamed aggregation is the ring-hold defect again — four defensible
+##   estimators straddling a threshold inside 0.010.**
+##   ⚠ **AND SELF-PLAY IS NOT A FREE PAIRED DESIGN: measured within-game
+##   correlation between the two sides' deaths-per-forward-build is r = +0.027,
+##   i.e. 3% variance reduction. Pairing buys nothing here** — reported because
+##   it is the design anyone would reach for first.
 ##   **AND THE STRUCTURAL CAUSE, so it does not recur: a false POSITIVE costs one
 ##   window — bounded and visible. A false NEGATIVE costs a plank nobody ever
 ##   learns about — unbounded and invisible. s30 built SEVEN FILTERS and ZERO
