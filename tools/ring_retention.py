@@ -1,33 +1,55 @@
 #!/usr/bin/env python3
-"""RING RETENTION — LOKI-16b's primary, decoded from replays.
+"""⛔⛔ RETIRED 2026-08-11. THIS DECODER IS WRONG AND IT REFUSES TO RUN.
+USE `tools/ring_read.py`.
 
-    .venv/bin/python tools/ring_retention.py <arm_file.txt> [--team-seat 0|1]
-    .venv/bin/python tools/ring_retention.py --selftest
+IT DOES NOT APPLY AN ENTITY-KIND FILTER. Every BUILDING of ours on an enemy-ring
+tile counts as ring occupancy, permanently, until destroyed. Measured over 65
+games, our entity-rounds on the enemy ring: barrier 48.8% / builder_bot 33.6% /
+conveyor 17.5% / sentinel 0.2% -- **66.4% of what this file calls "a body on the
+ring" is not a body.**
 
-PRIMARY (PREREG-loki16b): **longest-hold / game-length** -- the longest single
-UNBROKEN run of rounds in which one of our builder bots stands on a tile of the
-ENEMY core's ring, divided by the game's round count. Estimator: GAME-MEAN.
-Clustering unit: MATCH.
+AND IT DOES NOT ADD AN OFFSET, IT FLIPS THE SIGN, because the control lays MORE
+ring buildings than the treatment on all four 12-ring maps, so the contaminant
+enters opposite to the signal. Decomposed on fjordgate: as-shipped -0.201 -> add
+the kind filter -> +0.174. The kind filter alone accounts for +0.375 of a 0.383
+gap. Measured again in HEAD on 60 archived games: 0.284 as shipped vs 0.139
+filtered -- **103% high against a +0.15 bar.**
 
-**Bar: >= +0.15 on the 12-RING STRATUM ONLY.** `jackpot`'s ring clips to 5 tiles
-so the plank's geometry does not exist there; it is reported and never pooled.
+THE FORCED-ANSWER CELL THAT SETTLES IT: a BARRIER on the ring with zero
+builder-rounds must read 0.000. This file reads 0.900. `ring_read.py` reads
+0.000. Seven cells, floor and ceiling, both decoders imported unmodified.
 
-WHY THIS FILE EXISTS. LOKI-16b banked 10 challenges / 50 games and could not be
-read, because the metric lived in a bespoke pass nobody had turned into a tool.
-**A bar cannot be read by a decoder nobody has written**, so the leg sat
-BANKED-AND-UNREAD. Both halves already existed -- ring geometry in
-`map_admits`, per-round positions via `placeEntity` + `moveBuilderBot` in
-`replay_census` -- this is assembly.
+⚠ AND ITS `--selftest` PASSED THE WHOLE TIME. It exercised 12-on-open /
+5-in-corner / walls-reduce -- THE RING GEOMETRY -- and never the OCCUPANCY RULE,
+which is the part that was wrong. A green selftest testing the geometry of a
+metric while leaving its definition untested. That is why this file now refuses
+at import rather than carrying a warning nobody reads: a wrong decoder sitting in
+tools/ with a passing selftest is the single most likely way the 2026-08-11
+adjudication gets silently undone.
 
-TRAPS PAID FOR ELSEWHERE TODAY AND HONOURED HERE:
-  * **Cores are keyed {1,2} in locally-run replays and {0,1} on platform ones**,
-    while ENTITY.team is 0/1 in both. Index cores by SORTED POSITION.
-  * **The ring is the 4x4 box minus the 2x2 footprint = 12 tiles on open
-    terrain**, not the 8 orthogonal neighbours. An orthogonal-only ring returns
-    a uniform 8 that reads exactly like a real constant.
-  * Occupancy is UNBROKEN: a round with nobody on the ring ends the run.
+A KNOCKDOWN ARGUMENT FROM INSIDE PREREG-loki16b ITSELF: that document lists
+"enemy-ring tiles holding our building at game end, 2.64 vs 3.65" as the COST
+SIDE. A quantity pre-registered as the COST cannot simultaneously be the PRIMARY.
+This file's number was 97.9% that cost metric wearing the primary's name, sign
+reversed.
+
+Kept rather than deleted so its git history and this explanation stay reachable.
+Set RING_RETENTION_I_KNOW_IT_IS_WRONG=1 to run it anyway (forensics only; any
+number it emits is void).
 """
 from __future__ import annotations
+
+import os as _os
+import sys as _sys
+
+if not _os.environ.get("RING_RETENTION_I_KNOW_IT_IS_WRONG"):
+    _sys.stderr.write(
+        "\nring_retention.py: RETIRED AND WRONG -- refusing to run.\n"
+        "  66.4% of what it counts as 'a body on the ring' is barriers/conveyors,\n"
+        "  and it FLIPS THE SIGN (fjordgate -0.201 -> +0.174 with the kind filter).\n"
+        "  Its --selftest passed throughout: it tested the RING, never the OCCUPANCY RULE.\n"
+        "  USE tools/ring_read.py (blessed by the 2026-08-11 adjudication, 7 forced cells).\n\n")
+    raise SystemExit(2)
 
 import json
 import re
