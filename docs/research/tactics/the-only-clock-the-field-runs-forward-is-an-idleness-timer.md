@@ -11,7 +11,9 @@ transfers: yes
 This library holds two claims that appear to conflict:
 [`branch-on-a-milestone-not-a-round-number`](branch-on-a-milestone-not-a-round-number.md)
 (sweep 15) and sweep 17A's falsification of it via robostac's *"For the last 40
-turns spend gold as fast as possible"*. **Read against forward dwell
+turns spend gold as fast as possible"* (re-verified verbatim for this sweep
+against `https://raw.githubusercontent.com/robostac/cg-code-royale-postmortem/master/README.md`,
+1 hit). **Read against forward dwell
 specifically, they do not conflict — every surviving clock in the field is one of
 three shapes, and none of them is a dwell budget.**
 
@@ -57,9 +59,9 @@ Against this taxonomy:
   instances of a competitor budgeting time-in-enemy-territory.
 
 **And the redirect, not the recall, is the transferable action.** confused's
-timer answers *"this unit has produced nothing for N rounds"* with *"go somewhere
-it might"* — which under `PLAY_DEFENCE: never` is the only answer we are allowed
-to give anyway.
+timer answers a unit that has produced nothing for N rounds by sending it
+somewhere it might — which under `PLAY_DEFENCE: never` is the only answer we are
+allowed to give anyway.
 
 ## WHAT WOULD KILL IT
 

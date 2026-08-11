@@ -18,10 +18,13 @@ list of late changes:
 > *"Don't retreat unless you are close to the tower"*
 > *"Surprisingly, this won against old bots by a very large margin"*
 
-**Referent check.** These are items 3a and 3b of a numbered list of changes in
-SPAARK's final section; "the tower" is the paint tower a robot retreats to for
-refill; "old bots" are SPAARK's own earlier versions, i.e. this is a **self-play
-A/B**, which this library holds inflates effects ~2x
+**Referent check.** This is item 3, and the second line is its sub-point (a),
+under a heading reading *"Some small last-minute optimizations we did:"*. "the
+tower" is the paint tower a robot retreats to for refill. **The term `old bots`
+is not defined in the source** — the surrounding paragraph compares the current build
+against the team's own earlier bot (*"Initially, it had a meager 25% winrate
+against SPAARK"*), so I read it as a **self-play A/B**. That reading is mine, not
+the source's. If it is right, this library holds that self-play inflates effects ~2x
 ([`self-play-inflates-the-effect-by-about-2x`](self-play-inflates-the-effect-by-about-2x.md))
 and has the wrong population
 ([`self-play-ab-has-the-wrong-population`](self-play-ab-has-the-wrong-population.md)).
@@ -41,6 +44,15 @@ other teams.**
 reads *"This was such an obvious improvement:"*. The trade is stated explicitly:
 **pay currency to replace the unit rather than pay TIME to preserve it**, and the
 exception is named — only high-value units are worth preserving.
+
+**⛔ AND THE CAVEAT IS IN THE VERY NEXT SENTENCE, WHICH MUST TRAVEL WITH THE
+QUOTE:** *"This change came way too late in the competition and was a stark
+reminder to pay careful attention to other team's strategies."* **So the Kragle
+did NOT measure this change in their results — it is a field observation about
+what every other team was doing plus an argument, not an ablation.** The
+load-bearing evidence in item 2 is therefore *"no other team bothered having
+their bots refill on paint"* — a **census of the field**, which is the stronger
+half anyway and does not depend on the Kragle's own outcome.
 
 **3. don't @ me (BC2023) considered a withdrawal-to-heal rule and cut it.**
 

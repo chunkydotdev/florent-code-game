@@ -34,7 +34,7 @@ map center"*) — filed at
 
 ## WHY IT MIGHT TRANSFER — and it is the reframing the builder should take from this sweep
 
-**"Rounds in enemy territory per structure placed" is an idle-time metric wearing
+**Rounds in enemy territory per structure placed is an idle-time metric wearing
 a dwell-time costume.** It rises for two structurally different reasons:
 
 1. the unit stays too long after finishing — a **withdrawal** defect;

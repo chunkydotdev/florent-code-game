@@ -44,8 +44,8 @@ tile. The exchange is favourable in a way that is specific to our cost rules:
   our scale by 19 points net while leaving a body on the tile.
 * A **barrier on an enemy spawn-ring tile is a body that does not need a unit**,
   and it costs 3 Ti at scale 1.0. `CLAUDE.md` records the retention problem
-  directly: *"The open margin is RETENTION, not presence."* **A structure retains
-  by construction.**
+  directly: *"The open margin is RETENTION, not presence"* (`CLAUDE.md:582`).
+  **A structure retains by construction.**
 * Under `R1000_IS_DEFEAT`, a forward turret left behind is a lane opener, which is
   the only justification the programme accepts for buying a turret at all.
 
