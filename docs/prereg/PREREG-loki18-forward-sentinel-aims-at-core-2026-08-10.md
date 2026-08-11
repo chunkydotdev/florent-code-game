@@ -196,3 +196,99 @@ It may not move bar 1's 40%, bar 2's −20%, bar 3's 300 rounds, or bar 4's
 conjunction. It may not read §A1.1's healing arithmetic as evidence for the
 plank. It may not upgrade the re-used control into a paired design. And it may
 not revise the 0.0%/319 baseline, which is measured and not an estimate.
+
+---
+
+# ⛔⛔ AMENDMENT 2 — **VOID ON PREMISE. THIS DOCUMENT'S BASELINE WAS RETRACTED BY ITS OWN AUTHOR BEFORE AMENDMENT 1 WAS WRITTEN, AND AMENDMENT 1 REINSTATED IT.**
+
+**Written 2026-08-11 by the s30 BUILDER, AFTER the leg was submitted and fired.
+Nothing above is edited. The original text and Amendment 1 stand as written so
+the failure is legible rather than tidy.**
+
+## 2a. THE CHAIN, OFF THE COMMIT LOG, VERIFIED ON THE PRIMARIES
+
+```
+2026-08-10 21:54:38  b4420d0  0/319 shootable-on-build published
+2026-08-10 21:57:59  a81e550  THIS PREREG written on that number
+2026-08-10 21:59:58  06bbe7e  "RETRACT the 0/319 finding ... LOKI-18's premise invalid"
+2026-08-10 22:03:16  c91c078  "my DELTA omitted CENTRE=0 and rotated every facing one
+                               step, the exact signature published as reading 0.0000.
+                               Corrected: raid.py sentinels are 100.0% shootable-on-
+                               build. No defect; LOKI-17 and LOKI-18 both dead"
+2026-08-11 06:07:21  11bcb6d  "shootable-on-build sits downstream of a can_fire_from
+                               guard the plank does NOT change ... it reads 100% in
+                               BOTH arms and no amendment repairs it"
+2026-08-11 06:08:40  38bc735  "LOKI-17/18 ARE DEAD"
+2026-08-11 06:45:18  21269a6  AMENDMENT 1: "0.0% able to fire ... That stands and is
+                               not an estimate" + "may not revise the 0.0%/319 baseline"
+```
+
+**Amendment 1 cites the correction ZERO times.** It reinstated a retracted number
+and then forbade its revision. **Under the amendment-discipline rule a clause that
+reinstates a retracted figure is not an ADD — it is a new pre-registration, and it
+did not say so.**
+
+## 2b. THE CONSEQUENCE FOR EVERY BAR IN THIS DOCUMENT
+
+**Bar 1 is `forward shootable-on-build 0.0% → ≥40%`, sized as "unmistakable"
+against "a control baseline measured at 0/319". If the corrected figure is right,
+the control arm is at 100%, the metric is AT CEILING IN BOTH ARMS, and it sits
+causally downstream of a `can_fire_from` guard this diff does not touch.** That is
+the LOKI-17 death verbatim — **inert, not pre-satisfied** — and it is the
+occurrence-saturation species where a saturated instrument reads as success.
+
+⇒ **NO BAR IN THIS DOCUMENT MAY BE READ. The leg is VOID ON PREMISE**, which is a
+different and worse verdict than VOID ON DOSE: the dose may well have been
+delivered; the question was already answered before the window was spent.
+
+## 2c. WHAT WAS SPENT, AT ITS REAL SIZE
+
+Amendment 1 locked `21269a6` **06:45:18Z**; v109 submitted **06:45:49Z** with the
+holder restored and verified on the `Active bot:` line 4 s later; 25 games fired
+**06:46:26–06:46:42Z**, 5/5 accepted, rollback confirmed. **Exposure 16 s, between
+pairings at 06:32:59 and 06:52:59 — RATED COST ZERO, verified at the boundary.**
+**The bill is one unrated window and one submission slot. It is not zero and it is
+not rating.**
+
+## 2d. THE ONLY THING THESE 25 GAMES CAN HONESTLY BUY — and it is worth stating because it is not nothing
+
+`c91c078` and `11bcb6d` are **a code read and a decoder audit**. Under this
+repo's standing rule — *a refutation without live-game backing is a hypothesis,
+not a refutation* — that class **may prioritise a road and may not close one**.
+The carve-out for rules-level impossibility does not apply: "the guard makes the
+metric saturate" is a behavioural inference about our own build path, not a
+definition of the game.
+
+**We now hold 25 live treatment games and 50 live control games on the same five
+cells.** So the honest use of the window is to measure forward-shootable-on-build
+**in-arm, both arms, live, under a STATED definition of "forward"** — `11bcb6d`
+records that the word carries **three incompatible definitions and the 100.0%
+attaches to only one of them (`d2_own > 145`)**.
+
+**PREDICTION, WRITTEN BEFORE THE MEASUREMENT: ~100% in BOTH arms.** If that is
+what comes back, the window converts a code-read refutation into a **live-backed
+closure** of LOKI-17/18 — the only thing these games can buy. **It does not
+retroactively justify firing on a retracted premise, and the read-out will say
+so in those words.**
+
+## 2e. THE PROCESS FAILURE, ROUTED — AND IT IS A TOOL DEFECT, NOT A REMINDER
+
+**I ran the instrument built for exactly this and read past its output.**
+`plank_status.py --all` printed at boot, for loki18: *"HANDOVER.md has NEVER
+mentioned this plank. → not stale, but nothing points at it either. If it is
+live, say so there."* I read "not stale" as "not dead".
+
+**⛔ `plank_status.py` HAS NO CONCEPT OF A PLANK BEING KILLED.** It compares
+artefact-commit recency against HANDOVER recency. **A withdrawal commit is just
+another artefact to it — so `38bc735` ("LOKI-17/18 ARE DEAD") made this plank look
+FRESHER, not deader.** The tool exists because s29 got one commit from activating
+a withdrawn plank; **s30 then fired one, through the tool, because the tool
+measures staleness and the failure is withdrawal.**
+
+⇒ **ROUTED AS AN INSTRUMENT CHANGE, top of queue:** `plank_status.py` must scan
+each plank's artefact commit messages for withdrawal language and refuse to
+report OK on a plank whose newest such commit kills it — with a selftest driven
+to both verdicts. **The rule "before any activation, diff the plank's status
+against the newest commit touching its leg doc, prereg or tree" was written by me
+at 04:08 today and is what the side lane used to catch this two hours later. The
+rule works; nothing forced it. Forcing belongs in the tool.**
