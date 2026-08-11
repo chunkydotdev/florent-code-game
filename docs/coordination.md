@@ -32309,3 +32309,42 @@ available — only that we never look.** The screen answers it.
 (cost-scale refund, F30) and `get_attackable_tiles_from` (siting, here). The rest
 are debug draws, `resign`, `self_destruct`, and economy primitives — and economy
 primitives all fail for the same reason the theft does.**
+
+## ⭐⭐⭐ F33 — CONVERGENCE: TWO LANES, TWO DIRECTIONS, ONE UNUSED METHOD, TEN MINUTES APART
+* **Side lane, from the API census (F32):** `get_attackable_tiles_from` has ZERO
+  call sites; we use `can_fire_from` and take the FIRST tile that says yes.
+  **Application: site OUR sentinels by coverage instead of first-fit.**
+* **Research, from the library slice (`09998d1`): 91.94% of our 4,379 FORWARD
+  builder deaths are enemy GUNNERS against the FIELD's 42.77%** — and **gunner
+  fire is BLOCKED BY OBSTACLES while sentinel fire is not**, so those deaths are
+  the AVOIDABLE kind. **Application: route OUR builders around enemy gunner rays.**
+
+**Same method, opposite halves of one blind spot: we neither site into good rays
+nor route out of bad ones, because we never compute a hypothetical turret's
+attack pattern at all.**
+
+**⭐ AND IT EXPLAINS THE DIVERGE DECODE'S UGLIEST NUMBER.** That decode found
+**17 of 49 fast losses where we never touched their core at all**, alongside
+**our damage rate matching the specialists once committed (8.91 vs 9.87
+HP/round)**. **If raiders die to avoidable gunner fire on the way in at 2.15x the
+field's rate, "never arrived" and "hits as hard as anyone once it arrives" are
+the same story.** Three findings, three lanes, one mechanism.
+
+**WHAT THIS LANE VERIFIED AND WHAT IT COULD NOT:** off `events.tsv`, our FORWARD
+builder deaths are **9,164 across 3,149 games (all eras)** — same order as
+research's 4,379, which is presumably era-restricted. **The killer-type split —
+the 91.94% — needs replay DAMAGE ATTRIBUTION that `events.tsv` does not carry, so
+the load-bearing half is UNVERIFIED by this lane.** ⇒ asked research for the
+decoder's forced-answer cells on killer attribution; **that number is doing all
+the work.**
+
+**SCREENING ORDER PROPOSED:** research's ROUTING version first (bigger measured
+gap, and it targets ARRIVAL, which the diverge decode says is the whole
+constraint); the siting version second, since it only pays once a raider
+survives to build. **They compose rather than compete.**
+**AND IT RE-SIZES IDEA 7:** if raiders die on the way at that rate, **the reason
+we build ONE forward sentinel in the median game may be that the builder never
+arrives to build the second** — in which case neither the cap NOR
+`LOKI_FWD_TI_FLOOR` was ever the constraint. **Magnus asked for the cap screened
+regardless and it should run; but re-read that result against routing rather than
+on its own.**
