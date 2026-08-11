@@ -21,6 +21,32 @@ artefact said one thing, the record said another, and nothing made them meet.
 READ-ONLY. Downloads nothing. Consumes replay_archive/<matchId>_game_<N>.replay26
 plus <matchId>.meta.json (for the seat, which is NEVER assumed).
 
+⛔⛔ THE TWO EPISODE SERIES ARE NOT `hold_any` AND `hold_pinned`. READ THIS
+BEFORE QUOTING EITHER — the names were matched to the series BY POSITION, by
+three lanes, over hours, and nobody checked:
+
+    per_bot_tile[(eid, p)]  -> "tile_episodes"   same bot, SAME tile
+                                                 == hold_pinned  ✅ correct
+    per_bot_any[eid]        -> "bot_episodes"    same bot, ANY ring tile
+                                                 != hold_any     ⛔ A THIRD THING
+
+`hold_any` as the 2026-08-11 adjudication defines it — *longest unbroken run with
+>=1 of OUR BUILDERS anywhere on the ring* — **IS NOT COMPUTED BY THIS FILE AT
+ALL.** The RELAY selftest cell forces the distinction: bot A on tile T rounds
+0-49, bot B on the SAME tile 50-99 gives true `hold_any` = 100, while
+`bot_episodes` maxes at 50 and `tile_episodes` == [50, 50]. **No series here
+returns 100.**
+
+⇒ LOKI-16b's PRIMARY is `tile_episodes` = `hold_pinned` = +0.164, and that is
+  correct and published. The +0.137 that circulated as "hold_any" is
+  `bot_episodes` and must never be quoted under that name.
+⇒ `docs/research/ADJUDICATION-ring-occupancy-decoders-2026-08-11.md` still tells
+  a reader to "name it hold_any or hold_pinned" for a tool implementing neither
+  under those names. The correction lives in
+  `docs/prereg/PREREG-loki16b-ring-retention-2026-08-10.md` (CORRECTION 1).
+  **If you arrived here from the adjudication, that document is older than this
+  comment.**
+
 RING DEFINITION -- the same 12 tiles the bot itself derives
 (bots/_v133loki16/eco.py: heal_seats + core_corners, clipped to map bounds):
 a Core's `position` is the NW corner of its 2x2 footprint {(x,y),(x+1,y),
