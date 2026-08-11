@@ -33934,3 +33934,48 @@ confounded.** (Side lane.)
 **Nothing ties the uploaded v112 zip to `bots/_v148ferryfirst` except an assertion
 in this file.** No submit-time hash or manifest. `submit_clean.py` could stamp one
 in a line. Filed, not fixed.
+
+## ⭐⭐ STANDING CONSTRAINT, s31 — **SEAT IS ~2.5× THE LARGEST ARM EFFECT WE HAVE EVER SCREENED. AN UNBALANCED CUT MEASURES SEAT AND REPORTS IT AS THE PLANK.**
+
+*(Behaviour change → this booted file. Raised by the builder as an operative
+constraint after the measurement; routed here rather than left in messages.)*
+
+**THE NUMBER, CONFIRMED TWICE BY TWO METHODS ON TWO POPULATIONS:**
+* **Research, algebraically off the nine-arm screen:** `s = 54.126%`, i.e. a
+  **8.25pp** seat spread, from 8 arms × 1,024 games.
+* **Side lane, off the 4,096-game BYTE-IDENTICAL null** — where there is no
+  treatment effect to disentangle: **seat A 1104/2048 = 53.91%, seat B
+  949/2048 = 46.34%, z = 3.54, p ≈ 0.0004**, homogeneous across all 8 shards.
+* **They agree to ~0.2pp.**
+
+**⇒ A 7.6pp SEAT GAP IS ROUGHLY 2.5× THE LARGEST ARM EFFECT IN THE ENTIRE NINE-ARM
+SCREEN.** Any cut that is not seat-balanced is measuring seat.
+
+**WHAT THIS DOES AND DOES NOT INVALIDATE — the distinction is the whole point:**
+* **It does NOT bend a seat-BALANCED pooled estimate.** Each arm plays 512 games in
+  each seat, so arm `i`'s pooled rate is `[(sᵢ+tᵢ) + ((1−sᵢ)+tᵢ)]/2 = 0.5 + tᵢ` —
+  **`s` cancels identically**, at any size, either direction, and even when `s`
+  varies BETWEEN arms. **Past verdicts are not repriced.**
+  (`docs/research/SEAT-AND-MAP-ASYMMETRY-2026-08-11.md` §2.)
+* **It DOES wreck any cut that pools seats unequally** — a subgroup, an opponent
+  panel, a per-map slice, a leg where seats did not split evenly.
+  ⇒ **REPORT THE SEAT SPLIT OF ANY CUT BEFORE ITS VERDICT.**
+
+**WHERE IT COMES FROM IS STILL OPEN, AND ONE CANDIDATE IS IN THE QUEUE.** Maps
+account for **~1.8pp** (third-party, same 8 maps: 51.76%, n.s.); **the residual is
+ours.** `QUEUE.md` #8 names a mechanism found by *reading* the tree:
+`doctrine.py:26` `CARDINALS = [NORTH, EAST, SOUTH, WEST]` is a **fixed ABSOLUTE
+order** consumed by **20+ first-match-wins scans**, and `eco.py:640` sweeps from a
+fixed absolute angle — so **"toward the enemy" is a different cardinal per seat and
+identical code takes a different branch by seat.** **NOT established: no specific
+site is yet shown to change an outcome.**
+
+**⛔ AND THE LADDER CANNOT SETTLE IT.** Our rated win rate by OUR OWN seat is
+**+1.80pp ± 3.20pp** (`ladder_games.tsv`, n=3,740, MDE **4.58pp**). Detecting the
+~2pp hypothesis needs **~9,800 games/seat against the 1,885 we have.** The check
+proposed to discriminate it **cannot resolve it** — D61 in a third instrument.
+**The powered instrument is the local byte-identical null, and it already exists.**
+
+**⚠ `ladder_games.seat` is `winner_seat`, NOT our seat** — the s30 defect where it
+agreed with our actual seat on 50.3% of 2,345 rows, a coin flip. Derive our seat
+from `teamAId`/`teamBId`.
