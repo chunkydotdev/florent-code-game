@@ -17,3 +17,14 @@ GUNBLANK    bots/_v147gunblank     bots/_v146gunaxis     5408  33000
 CAP12B      bots/_v144cap12        bots/_v146gunaxis     5408  34000
 CAP6B       bots/_v143cap6         bots/_v146gunaxis     5408  35000
 BESTFITB    bots/_v145bestfit      bots/_v146gunaxis     5408  36000
+# --- appended 21:1xZ, all measured against the LIVE incumbent v114 ---
+# DOSE SWEEP on the shipped knob. v114 went live with LOKI_GUNAXIS_PENALTY = 8
+# and NOBODY EVER SWEPT IT. Monotone in the penalty => VOLUME (a bigger push off
+# gunner rays pulls stations further back); interior optimum => SITING. This
+# answers the GUNAXTB question a second, independent way, on one constant.
+GUNPEN4     bots/_v155gunpen4      bots/_v146gunaxis     5408  40000
+GUNPEN16    bots/_v155gunpen16     bots/_v146gunaxis     5408  41000
+# SEAT-RELATIVE ON WHAT IS ACTUALLY LIVE. LOKI-29 tests seat-relative on the v112
+# chassis; if it works we would have to re-test it on v114 anyway. This is that
+# test, and it does not wait on LOKI-29 to read out.
+GUNSEAT     bots/_v156gunseat      bots/_v146gunaxis     5408  42000
