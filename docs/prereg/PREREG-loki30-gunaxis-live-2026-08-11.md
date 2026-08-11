@@ -253,3 +253,47 @@ stratum and control, reported no flags, and never asked how many games it fires.
 * `unrated_run.sh` serves the rate-limit wait with the INCUMBENT live and
   activates only inside the window; the pairing-clock offset is **re-derived from
   recent rows, never hardcoded** — it has shifted at least once inside 18 hours.
+
+# AMENDMENT 2 — BAR ON THE WIRE'S OWN `tled` BOOLEAN, NOT ON A THRESHOLD I CHOOSE. Committed before any replay is read.
+
+**A1.2's bar counted `execTimeUs ≥ 10,000` as a proxy for a flag that is sitting
+in the NEXT FIELD.** `botOutput` carries **`execTimeUs` in field 3 and a `tled`
+BOOLEAN in field 4** — `tools/corpus/replay_econ.py:93-97` reads
+`us = d.get(3)` then `if d.get(4): c["tled"] += 1`; `tools/crash_census.py:63`
+already reasons off `botOutput.tled` directly.
+
+**AND THE PROXY HAS A NAMED FAILURE MODE IN BOTH DIRECTIONS.** `CLAUDE.md:13`:
+the 10 ms limit carries **"a small rolling 5% buffer"**, so the cutoff is not
+exactly 10,000 µs. A turn interrupted at 9,800 µs is `tled=True` and **below** my
+threshold; a 10,200 µs turn inside buffer is **above** it and not TLE'd.
+⇒ **the proxy misses precisely on the marginal turns a CPU regression produces
+first**, which is the population the bar exists to catch.
+
+**REVISED PRIMARY — one row swapped, the other two unchanged:**
+
+| statistic | bar |
+|---|---|
+| **count of `tled` turns** *(the wire's own answer — no threshold to choose)* | **0 for gunaxis, or ≤ v112** |
+| p99 `execTimeUs` *(leading indicator, kept)* | gunaxis ≤ **1.5×** v112 |
+| max `execTimeUs` *(kept)* | reported; near the limit is a finding |
+
+**AND THE NEGATIVE CONTROL NOW HAS A PUBLISHED PRIOR VALUE RATHER THAN AN
+EXPECTATION.** `tled` is column 10 of `corpus/econ.tsv` and is **not a dead
+column** — 8,623 of 118,524 rows nonzero (7.28%), 2,153,335 TLE'd turns total —
+against `QUEUE.md:61`'s **`tled` 0.00% for us vs 1.52% on the field.**
+⇒ **v112 must read ~0.00%, matching our measured field-wide zero. A nonzero there
+indicts the INSTRUMENT, not the plank.** The "a constant column validates
+anything" check is therefore already passed, on the live corpus, before this leg
+reads a byte.
+
+*(`tools/cpu_lag_probe.py` already counts `tled` and `replay_econ.py` already
+aggregates it per game — this is a column selection, not a decoder to write.)*
+
+## LEG STATE AT AMENDMENT TIME
+**Cycle 1 fired 19:06:47–19:06:50Z**: v114 vs The Bisons (`db5f1812`) and vs
+Focalground (`988554e3`), 10 games, 2/2 accepted, 0 rejected.
+**Rollback confirmed at 19:06:55Z on the `Active bot:` line** — v114 held the
+slot for **8 seconds**, against observed pairings at 18:52:59Z and 19:12:59Z
+(minute ≡ 12 mod 20, second :59, ten consecutive rows, **re-derived tonight and
+not hardcoded**). **Rated leakage is expected to be ZERO and will be verified
+per-match at the pairing boundary rather than asserted from that arithmetic.**
