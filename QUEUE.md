@@ -44,7 +44,54 @@ non-regression bar the same way every other plank does.**
 `MoveBuilderBot` vs `BuilderBuild/Attack/Heal`, cooldowns explicit on the wire.
 Research declined this classification earlier as aimed at the 17% dwell half;
 **aimed at THIS question it is worth it, and they have offered it.**
-| 3 | **Arrive without traversing** | launcher delivery instead of walking the raider forward | forward builder deaths per forward build | Hazard is ~3.5x the field in EVERY round band (not a phase problem), so no round-gated constant touches it. Skipping the traverse attacks it directly. ⚠ traverse-vs-destination split is ASSUMED not measured — research's attribution cut settles it first. |
+| ~~3~~ | ~~**Arrive without traversing**~~ | **WITHDRAWN 2026-08-11 — its premise is refuted.** See below. |
+| 3 | **FORWARD TIMING — we hold forward posture LATE, into a matured turret field** | not yet specified — **the intervention is deliberately NOT named** | enemy turrets alive per forward builder-round (term `A`) | **83% of the unexplained gap sits here and it is the largest single term on the board.** |
+
+**⛔ #3 REPLACED. THE ORIGINAL PREMISE ("the traverse is what kills us") IS
+REFUTED BY RESEARCH'S OWN ATTRIBUTION CUT (13,771 replays, 0 parse failures,
+anchor reproduced: US 2.90 vs 2.92, TOP 0.87 vs 0.84).**
+
+**AND THE "UNEXPLAINED ~2.3x" THAT MOTIVATED THE WHOLE ROAD NEVER EXISTED — it
+was an arithmetic error (terms MULTIPLY, they were treated as ADDING), corrected
+by its own author.** The gap decomposes exactly:
+
+| term | factor | log-share |
+|---|---:|---:|
+| **A. enemy turrets EXIST near us** (per fwd builder-round) | **1.77x** | **47.3%** |
+| B. share of them IN RANGE of our tile | 1.57x | 37.0% |
+| C. damage per turret-in-range-round | 1.05x | 4.3% |
+| D. damage absorbed per death | 1.15x | 11.4% |
+| **product** | **3.36x** | = the anchor |
+
+**B = 1.57x independently reproduces `FORWARD-HAZARD`'s ray-based 1.53x on a
+different instrument.** So *"exposure explains 1.53x, leaving 2.3x unaccounted"*
+was never a residual.
+
+**⛔ AND TRANSIT-vs-STATION KILLS THE LAUNCHER-DELIVERY CASE SPECIFICALLY:**
+our forward builders die **2-9 rounds AFTER they stop moving** — 40.6% of forward
+deaths in 11.5% of forward rounds, at **4x mean hazard**. **MOVING IS BELOW-AVERAGE
+HAZARD (0.90x). Parked 30+ rounds is the SAFEST state in the game (0.19x).**
+⇒ **Launcher delivery removes the traverse — the LEAST hazardous state, 44.6% of
+deaths — and drops the bot straight into the PEAK-hazard window.** Ceiling ~45%
+of forward deaths with **no hazard-per-round discount**. The saving is purely
+"fewer forward rounds per build", **the same lever LOKI-25 pulled.**
+
+**⭐ THE GENERATIVE FINDING, AND IT IS `A`:** opponent-matched, we see **3.94
+enemy turrets alive per forward round vs TOP's 2.19**, and the opponent-matched
+gap is **2.96x** — opponent selection is only ~10% of it. The alive-ratio runs
+**1.14x at r0-59 -> 2.25x at r500-999**, and **30.5% of our forward rounds sit in
+r500-999 against TOP's 16.8%.** **We are forward LATE, into a turret field that
+has matured.**
+
+**TWO STORIES KILLED OUTRIGHT, so nobody re-queues them:** *"we fail to disengage
+or heal"* is **dead** (moved-after-first-damage 76.74% vs 76.81%; ever-healed
+14.34% vs 13.96%). And **we do not crash** — no-damage removals 0.00% US vs 1.02%
+TOP. **Our movement-state mix is FAVOURABLE**; standardised to TOP's mix our rate
+RISES 2.90 -> 4.11 and the gap WIDENS to 4.74x.
+
+⚠ **Carried caveat, flagged by the agent against itself:** *"moved last round"* is
+partly a RESPONSE to danger, so the transit/station boundary is blurred in both
+directions. **The bucket shape is robust; the causal reading of it is not.**
 
 ## ⭐ UNBLOCKED — BUILD THESE WITHOUT WAITING FOR RESEARCH
 
@@ -96,7 +143,7 @@ sit at 0. **Not worth a slot.**
 ## BLOCKED / NEEDS A NUMBER FIRST
 | # | plank | blocker |
 |---|---|---|
-| 4 | forward-death attribution | what actually kills our forward builders vs the field's — tile exposure explains only 1.53x of a 3.47x gap; ~2.3x is unaccounted and nothing has measured it. **~1h cut off surfaces that already exist.** |
+| 4 | ~~forward-death attribution~~ **DONE s31 — AND IT DISSOLVED ITS OWN PREMISE.** ⛔ *"tile exposure explains only 1.53x of a 3.47x gap; ~2.3x is unaccounted"* **WAS A RESEARCH ARITHMETIC ERROR: the terms MULTIPLY, they do not add.** `A` turrets exist 1.77x x `B` in-range 1.57x x `C` damage/turret-round 1.05x x `D` damage absorbed/death 1.15x = **3.36x, the anchor exactly.** There was never a residual. **`B`=1.57x independently reproduces the ray-based 1.53x on a different instrument.** ⇒ **The whole gap is that we take 2.92x the damage per forward builder-round, and `A` alone is 83% of what I called unexplained.** **`A` is our forward TIMING, not their build:** opponent-matched 3.94 vs 2.19 turrets alive, gap 2.96x, and **30.5% of our forward rounds sit in r500-999 against TOP's 16.8%.** `docs/research/FORWARD-DEATH-ATTRIBUTION-2026-08-11.md` |
 
 ## DEAD THIS SESSION — do not re-queue without new evidence
 * **cap6** (`LOKI_FWD_GUN_CAP` 3->6) — **NO INFORMATION, and it is a knob-turn
