@@ -48,7 +48,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SEARCH_DIRS = ("tools", "bots", "corpus")
+SEARCH_DIRS = ("tools", "bots")   # CODE only. corpus/ is DATA (237MB of tsv) -- never scanned.
 
 # An identifier that LOOKS like code: snake_case with an underscore, or dotted
 # module-ish, or a *.py filename. Deliberately broad -- see SCOPE above.
@@ -75,14 +75,19 @@ STOPWORDS = {
 
 
 def repo_corpus() -> str:
-    """Every byte of our own source, concatenated once. Slow-ish, simple, correct."""
+    """Every byte of our own SOURCE, concatenated once.
+
+    Code only. `corpus/` is excluded deliberately: it is 237 MB of decoded replay
+    TSV, it contains no definitions, and scanning it made v1 of this tool take
+    minutes per document -- a linter nobody will wait for is a linter nobody runs.
+    """
     buf = []
     for d in SEARCH_DIRS:
         p = ROOT / d
         if not p.is_dir():
             continue
         for f in p.rglob("*"):
-            if f.suffix in (".py", ".sh", ".tsv", ".json", ".md") and f.is_file():
+            if f.suffix in (".py", ".sh") and f.is_file():
                 try:
                     buf.append(f.read_text(errors="ignore"))
                 except OSError:
@@ -90,7 +95,27 @@ def repo_corpus() -> str:
     return "\n".join(buf)
 
 
-def is_defined(name: str, corpus: str) -> bool:
+DEF_PATTERNS = (
+    r"^\s*(?:def|class)\s+([A-Za-z_][A-Za-z0-9_]*)",   # def name / class name
+    r"^\s*([A-Za-z_][A-Za-z0-9_]*)\s*(?::[^=\n]*)?=[^=]",  # name = / name: T =
+    r"['\"]([A-Za-z_][A-Za-z0-9_]*)['\"]\s*:",         # "name": dict key
+    r"--([a-z][a-z0-9_-]*)\b",                          # --cli-flag
+)
+
+
+def defined_names(corpus: str) -> set[str]:
+    """Every name that appears in a DEFINING position. Computed ONCE.
+
+    v1 ran five regexes over the whole corpus per candidate name. Correct and
+    unusably slow; this returns the same set in one pass.
+    """
+    out: set[str] = set()
+    for pat in DEF_PATTERNS:
+        out.update(re.findall(pat, corpus, re.M))
+    return out
+
+
+def is_defined(name: str, corpus: str | set) -> bool:
     """Does `name` appear in a DEFINING position, not merely mentioned?
 
     ⛔ THIS IS THE WHOLE TOOL, AND THE FIRST VERSION GOT IT WRONG.
@@ -100,23 +125,14 @@ def is_defined(name: str, corpus: str) -> bool:
     because `hold_any` DOES appear in `tools/ring_read.py`, inside a docstring
     that exists to say the name means nothing. **A mention satisfied a test for
     existence.** The tool reproduced, in its own resolver, the failure it was
-    built to catch.
+    built to catch. Selftest cell 5 is that document, minimised.
 
-    So resolution requires a definition site: a def/class, an assignment, a dict
-    key, or a real file on disk. A name that lives only in prose does not count,
-    which is precisely the `hold_any` case.
+    Accepts either a raw corpus string (tests) or a precomputed name set (runs).
     """
     if (ROOT / name).is_file():
         return True
-    esc = re.escape(name)
-    patterns = (
-        rf"^\s*(?:def|class)\s+{esc}\b",          # def name / class name
-        rf"^\s*{esc}\s*(?::[^=\n]*)?=[^=]",        # name = ... / name: T = ...
-        rf"['\"]{esc}['\"]\s*:",                   # "name": dict key
-        rf"^\s*{esc}\s*=",                         # bare assignment
-        rf"--{esc}\b",                             # a CLI flag
-    )
-    return any(re.search(p, corpus, re.M) for p in patterns)
+    names = corpus if isinstance(corpus, set) else defined_names(corpus)
+    return name in names
 
 
 def check_text(text: str, corpus: str) -> list[tuple[int, str]]:
@@ -230,7 +246,7 @@ def main(argv: list[str]) -> int:
         print("\nno documents given. Use --changed, or pass .md paths, or --selftest.")
         return 0
 
-    corpus = repo_corpus()
+    corpus = defined_names(repo_corpus())
     total = 0
     for p in paths:
         if not p.is_file():
