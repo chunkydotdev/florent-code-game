@@ -34781,3 +34781,54 @@ reason has been retired is not a closure** — caveat sweep in flight below.
    REOPENED heal-idle road and its `kill_round_non_regression` bar.
 **Both relayed here before idling. If they land after this session ends, the
 briefs stand on their own and a successor should re-run them.**
+
+# ============================================================================
+# 2026-08-11T18:1xZ (`date`) — **SIDE LANE: ⛔ SIGN ERROR IN THE PART A LADDER
+# SIDE — it inverts BOTH scoreable cells and fires a pre-registered stop-rule
+# that did not trigger. Raised ~20 min before the read-out.**
+# Full flag: `docs/research/FLAG-partA-ladder-sign-2026-08-11.md`
+# ============================================================================
+
+**Origin `2c261c8` (research s31), copied faithfully into
+`docs/PLAN-overnight-2026-08-11.md` §2b.** The fitted strengths are
+`v92 1600 · v102 1609 · v104 1686`; the delta table three lines below writes
+**`v104 − v92 = −86`** and **`v104 − v102 = −77`** where the arithmetic gives
+**+86** and **+77**, with CIs that are the exact negations of the right
+intervals. **`v92 − v102 = −9` is correct** — two of three flipped, which rules
+out a convention and matches computing the pairs in the opposite order under
+unchanged labels.
+
+**IT REVERSES THE VERDICT.** Both CAL shards are COMPLETE at 2000/2000:
+`CAL_v104v92` 68.90% ⇒ implied **+138.2** vs ladder **+86** ⇒ **AGREE**
+(residual +52.2) · `CAL_v104v102` 55.50% ⇒ implied **+38.4** vs ladder **+77** ⇒
+**AGREE** (residual −38.6). **Substitute −86/−77 and both read ⛔ INVERTED**,
+which is Amendment 1's trigger for *"LOCAL SCREENS DO NOT PREDICT THE LADDER.
+Stop screening for the rest of the week; ship on mechanism alone."*
+**In the ONLY TWO of six cells that have a ladder side at all.**
+
+**AND THE TOOL IS UNAFFECTED, WHICH IS THE TRAP.** `overnight_read.py:49` holds
+the point estimates and computes `lad = LADDER[t] − LADDER[c]`, so it prints
++86/+77/AGREE. **The two surfaces disagree and the document is the one that
+reads like the authority — it is the pre-registration.** The failure mode is a
+write-up quoting §2b and reconciling the tool to it.
+
+**WHAT I ASSERT vs INFER:** the internal inconsistency is CERTAIN; that the
+point estimates are the sound half is INFERRED (the third delta agrees with
+them; the tool's dict independently carries them). **I did not refit the MLE** —
+the discriminating check is its author's, and if the ESTIMATES are the typo then
+the tool is wrong too and Part A genuinely inverts. That is why it could not
+wait.
+
+**SECOND FLAG, SAME BAR, AND IT NOW DECIDES:** Amendment 1 reads *"any
+inversion, **or large and unsigned residuals**"*. With the signs corrected the
+inversion clause reads AGREE on both cells ⇒ **the whole Part A verdict rests on
+a clause with no threshold, no estimator and no clustering unit**, against
+residuals of +52.2 and −38.6 Elo. **A threshold chosen once the numbers are
+visible is not pre-registered** (the s29 undefined-`materially` defect, in the
+one place tonight where it is load-bearing). ⇒ **state what "large" means before
+reading them, or record that Part A resolved on the inversion clause alone.**
+
+⚠ **LOCKED-FILE DISCIPLINE: the correction lands as a NEW dated document, never
+as an in-place edit to §2b or Amendment 1** — both predate the run, and editing
+them would leave the two-clock cert certifying a file whose numbers moved after
+the games were played.
