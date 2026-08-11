@@ -69,6 +69,23 @@
 ##   4. **SEAT IS WORTH 7.6pp ON BYTE-IDENTICAL ARMS** (~2.5x the largest arm
 ##      effect ever screened). Any unbalanced cut MEASURES SEAT.
 ##
+## ===== ⭐ PROGRAMME FIXED AT THE WRAP — THREE FIELDS, ONE WAS BREAKING THE GATE =====
+##   **`LINE_DIRS` is the ONLY field `gate.py` ENFORCES on, and it matched only
+##   names containing `loki` — which we stopped using at `_v139heal`. THE LIVE
+##   SHIPPED BOT FAILED ITS OWN PROGRAMME'S LINE CHECK**, as did every arm built
+##   this session. **That is almost certainly why `h2h.sh` bypasses the gate:
+##   a guard that refuses EVERYTHING gets routed around.** Widened to
+##   `bots/_v1[3-9]?*`; driven both ways (current line passes, `_v115dodge` still
+##   OFF PROGRAMME).
+##   **`INCUMBENT` → `bots/_v148ferryfirst` and `INCUMBENT_FROZEN` → `no`,
+##   MOVED TOGETHER** — repairing the first alone would have made the file forbid
+##   planks on the tree we develop.
+##   **`CLAUDE.md` + `AGENTS.md` now carry the amended defence doctrine**
+##   (`not_at_the_kill_s_expense` + `kill_round_non_regression`); **heal-idle
+##   staffing is REOPENED** with its bar and a grep warning.
+##   ⚠ **STILL OPEN FOR MAGNUS: the six-road table is duplicated in `CLAUDE.md`
+##   and `AGENTS.md` and both were wrong about the same thing for three hours.**
+##
 ## ===== QUEUE (research owns keeping `QUEUE.md` stocked) =====
 ##   1. **DESTROY ENEMY TURRETS** — term `A` is **1.77x, 47.3% of the log hazard
 ##      gap**, the largest single term. ⛔ **NOT via builder melee: both
