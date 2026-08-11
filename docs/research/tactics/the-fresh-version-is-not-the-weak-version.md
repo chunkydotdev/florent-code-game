@@ -5,6 +5,8 @@ origin: measured in-repo (research arm, sweep 22, 2026-08-11)
 evidence: documented
 transfers: no
 ---
+
+**⛔ D12 RELABEL (side-lane flag, 2026-08-11, adopted): this road is at the BOTTOM OF THE QUEUE, NOT CLOSED.** The finding rests on archive statistics with a BEHAVIOURAL premise — how opponents' versions perform — which is exactly the evidence class D12 forbids retiring a road with, and **no leg has ever been aimed at a freshly-shipped version or an excursion window.** The statistics stand; the claim they support is *"unpromising, queue it last"*, not *"closed"*. D12's own remedy: archive evidence sends a road to the bottom of the queue, never off it.
 WHAT IT IS — The intuitive offensive read on opponent non-stationarity: a rival who has
 just shipped is running code that has had less testing than the version it replaced, so
 the window right after their deploy is the moment to attack them. **Measured league-wide,

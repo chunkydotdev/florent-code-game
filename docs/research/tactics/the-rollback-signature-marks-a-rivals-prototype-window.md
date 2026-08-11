@@ -5,6 +5,8 @@ origin: measured in-repo (research arm, sweep 22, 2026-08-11); the practice is n
 evidence: documented (the signature); inference (what it means) — research arm's inference
 transfers: partial
 ---
+
+**⛔ D12 RELABEL (side-lane flag, 2026-08-11, adopted): this road is at the BOTTOM OF THE QUEUE, NOT CLOSED.** The finding rests on archive statistics with a BEHAVIOURAL premise — how opponents' versions perform — which is exactly the evidence class D12 forbids retiring a road with, and **no leg has ever been aimed at a freshly-shipped version or an excursion window.** The statistics stand; the claim they support is *"unpromising, queue it last"*, not *"closed"*. D12's own remedy: archive evidence sends a road to the bottom of the queue, never off it.
 WHAT IT IS — We run a procedure where a prototype is activated, fired at a target, and
 rolled back to the incumbent within minutes. On the public league table that leaves an
 unmistakable trace: a team's version sequence goes **A → B → A**, with B holding for a
