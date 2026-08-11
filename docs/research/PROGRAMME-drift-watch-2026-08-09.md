@@ -711,3 +711,66 @@ a proven negative control beats three that have never flagged anything.**
   are not distinguishable after the fact without that number.** Nothing in the
   obligations doc asks for this today. **The cheapest possible instance is free:
   a first-exposure cell and a re-exposed cell in the same leg is the control.**
+
+- **⛔ AMENDMENT TO THE SCOUTING NOTE ABOVE, SAME SESSION, ~25 MINUTES LATER —
+  THE MECHANISM I INFERRED WAS TESTED AND IS NOT SUPPORTED AT THE VERSION-BUMP
+  LEVEL** (`docs/research/SCOUTING-opponent-version-response-2026-08-11.md`,
+  commissioned by this lane, `opus`, read-only over `league_matches.tsv`,
+  2026-08-06 → 2026-08-11T05:52:59Z):
+  **The raw association is there and the causal reading is dead.** Version-bump
+  hazard is **1.46x** higher in the 6 h after we play a team UNRATED
+  (team-stratified Mantel-Haenszel, 224 bumps / 5,615 treated vs 805 / 38,835
+  untreated observations, 45 teams), stable at T=2 h (1.466) and T=12 h (1.428),
+  **and the ladder arm — where matchmaking picks, not us — shows nothing
+  (0.729 / 0.890 / 0.893).** That contrast is exactly what a scouting story
+  predicts.
+  **AND THEN THE EVENT STUDY KILLS IT.** On leg-initiating unrated matches (≥24 h
+  since last contact, 66 events), bump hazard in the six hours **BEFORE** our leg
+  is **1.471 (z +3.48)** against **1.177 (z +1.32)** after. **A hump straddling
+  t=0, not a step at t=0.** Detection lags deployment, which pushes the causing
+  event EARLIER relative to our leg, not later — so the pre-period elevation
+  cannot be explained away as measurement lag. **An effect that appears before
+  its cause is not that cause's effect.**
+  Two further controls agree: the pair-swap placebo (team X given team Y's
+  our-match times) **itself reaches 1.263 ± 0.175**, leaving the observed 1.460
+  only **+1.13 sd** above its own placebo; and a day-preserving circular
+  permutation moves p from 0.034 to **0.137**. **Much of the raw signal is our
+  legs and the league's deploys sharing an evening.**
+  Instrument driven both ways before use: synthetic injection fires (RR 6.53 at
+  15%, 11.76 at 30%, p=0.0033); within-team label shuffle sits at 1.000 ± 0.072.
+  **Denominator independently reproduced by this lane: 1,104 bumps league-wide in
+  the window, minus our own 74, = 1,030 against the agent's 1,029.**
+  **WHAT SURVIVES, AND IT IS NOT NOTHING:**
+  1. **The obligation stands on its own reasoning, not on this mechanism.** A
+     re-fired trick's null is still ambiguous between "never worked" and "was
+     countered", because **the scouting CHANNEL is confirmed to exist** — see
+     the next note — even though *shipping a new version within hours of playing
+     us* is not how it shows up.
+  2. **D18's collinearity control is NOT promoted to a causal path on this
+     evidence.** My earlier note above proposed exactly that; **this is the
+     retraction of the causal half.** The ladder arm is only powered to ~±1.3 sd
+     against an effect of unrated size, so it **disfavours rather than excludes**.
+  3. **A shared driver exists and is unidentified.** The obvious candidate is
+     absent — we do NOT preferentially open legs against teams that just shipped
+     (0.968 / 0.993 / 1.002 vs 2,000 random draws, us-only, n=726). Left open
+     rather than filled in with a story.
+  4. **DIRECTION OF INITIATION IS UNOBSERVABLE and it may invert the arrow on an
+     unknown share of the 726** — `triggeredBy` is the match TYPE, `sourceMatch*Id`
+     is null. **An opponent-initiated unrated match against us is plausibly
+     already a scouting act.** This is the second independent argument this
+     session for `SPEC-match-initiative-ledger-2026-08-11.md`, and it arrived
+     from a different direction than the budget meter did.
+
+- **⭐ THE SCOUTING CHANNEL IS CONFIRMED TO EXIST, AND IT IS SYMMETRIC — WE ARE
+  ALREADY THE THING WE ARE WORRIED ABOUT (s30, measured):** `league_matches.tsv`
+  is **35,642 rows of which 98.0% (34,913) are matches between OTHER teams**, and
+  of the **400 most recent third-party matches we hold archived `.replay26` wire
+  files for 86.** The platform serves everyone's replays to everyone.
+  **CONSEQUENCE, and it is larger than the unrated question that prompted it:**
+  exposure is NOT limited to the ~5 games of an unrated leg. **Every LADDER game
+  is scouted material too, at ~6 matches/hour, for as long as a version holds the
+  slot.** A trick shipped to the ladder is published far more widely than a trick
+  fired in a leg. **So "protect the trick by not testing it" was never the trade
+  — the trade is between a leg's 5 games and a ship's hundreds.** Whatever we can
+  compute about an opponent from their replays, any team with a decoder can
+  compute about us.
