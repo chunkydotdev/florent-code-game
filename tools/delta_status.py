@@ -83,12 +83,38 @@ def _grep(token: str) -> list[str]:
     for f in r.stdout.strip().splitlines():
         if not f:
             continue
+        # ⛔ THE LEDGER MUST NOT COUNT ITSELF. This file lists every delta id, so
+        # without this line every delta it mentions is certified by the mention.
+        # Measured on the first version: THREE deltas read ENFORCED with only
+        # `tools/delta_status.py` in their citation list -- the tool counting
+        # itself, and inflating in the FLATTERING direction, which is the one my
+        # own D-rules say to distrust. The selftest's fixture ids poisoned the
+        # same search (D99 appeared 6x in this module's own source and the
+        # negative control found it), which is why SENTINEL is now built at
+        # runtime instead of written as a literal.
+        if Path(f).name == Path(__file__).name:
+            continue
         try:
             if pat.search((ROOT / f).read_text(errors="replace")):
                 out.append(f)          # word-bounded in PYTHON, where \b works
         except OSError:
             continue
     return out
+
+
+def _has_selftest(path: str) -> bool:
+    """Does the citing file carry a runnable selftest?
+
+    ⚠ A PROXY, AND A WEAK ONE, LABELLED AS SUCH. A mention is PROVENANCE ("see
+    D47"); enforcement is a code path that can EXIT NON-ZERO when the rule is
+    broken. Nothing here proves the selftest tests THAT rule. The honest
+    predicate is the mutation-harness one -- a delta is enforced when a test
+    exists that FAILS if the rule is violated -- and this is the floor beneath
+    it, not a substitute for it."""
+    try:
+        return "--selftest" in (ROOT / path).read_text(errors="replace")
+    except OSError:
+        return False
 
 
 def status(path: Path = COORD):
@@ -107,15 +133,25 @@ def main(argv):
     if not rows:
         print("no deltas found -- has coordination.md moved?")
         return 1
-    enforced = [r for r in rows if r[2]]
+    def kind(hits):
+        if not hits:
+            return "PROSE ONLY"
+        return "ENFORCED*" if any(_has_selftest(h) for h in hits) else "REFERENCED"
+    enforced = [r for r in rows if kind(r[2]) == "ENFORCED*"]
+    referenced = [r for r in rows if kind(r[2]) == "REFERENCED"]
     openr = [r for r in rows if not r[2]]
     show = openr if only_open else rows
     for did, headline, hits in show:
-        tag = f"ENFORCED  {', '.join(hits[:2])}" if hits else "PROSE ONLY"
-        print(f"  [{tag:<44}] {did:<5} {headline[:76]}")
+        tag = f"{kind(hits):<11}{', '.join(hits[:2])}" if hits else "PROSE ONLY"
+        print(f"  [{tag:<52}] {did:<5} {headline[:70]}")
     n = len(rows)
-    print(f"\n{len(enforced)}/{n} deltas appear on a durable surface "
-          f"({len(openr)} prose-only).")
+    print(f"\n{len(enforced)} ENFORCED* / {len(referenced)} REFERENCED / "
+          f"{len(openr)} PROSE-ONLY   (of {n})")
+    print("  * ENFORCED* IS A PROXY: cited by a file that HAS a selftest. It does "
+          "NOT prove\n    the selftest tests THAT rule. REFERENCED means cited "
+          "with no selftest behind it --\n    provenance, not a guard. The honest "
+          "predicate is 'a test exists that FAILS if\n    the rule is violated', "
+          "and nothing here measures that yet.")
     if openr:
         print("PROSE-ONLY IS NOT AUTOMATICALLY WRONG -- some deltas are judgement and "
               "\nmechanising judgement produces a checkbox. The point is that this "
@@ -124,7 +160,8 @@ def main(argv):
     # Deliberately exits 0. This is a LEDGER, not a gate: a boot check that fails
     # on "you have unenforced ideas" is one every session learns to skip, and this
     # repo has already logged what a disbelieved alarm is worth.
-    print(f"\nDELTA_STATUS: {len(enforced)} enforced / {len(openr)} prose-only")
+    print(f"\nDELTA_STATUS: {len(enforced)} enforced* / {len(referenced)} referenced "
+          f"/ {len(openr)} prose-only")
     return 0
 
 
@@ -133,18 +170,23 @@ def selftest() -> int:
     import tempfile
     bad = 0
     with tempfile.TemporaryDirectory() as td:
+        # SENTINEL IS ASSEMBLED AT RUNTIME. Written as a literal it would appear
+        # in this module's source, `_grep` searches tools/, and the NEGATIVE
+        # CONTROL would find itself -- which is exactly how the first version
+        # failed. A fixture that contaminates the search space it is testing.
+        S = "D" + str(9 * 11)          # -> the sentinel id, never a literal here
         f = Path(td) / "coord.md"
         f.write_text(
-            "### D99 — a delta no tool mentions\n"
+            f"### {S} — a delta no tool mentions\n"
             "some prose\n"
             "### D34 — a delta a tool DOES mention\n"
             "more prose\n"
-            "## D99 — duplicate heading, must not double-count\n"
+            f"## {S} — duplicate heading, must not double-count\n"
         )
         ds = deltas(f)
         ids = [d for d, _ in ds]
         for label, got, want in [
-            ("parses both deltas", sorted(ids), ["D34", "D99"]),
+            ("parses both deltas", sorted(ids), sorted(["D34", S])),
             ("de-duplicates a repeated id", len(ids), 2),
             ("keeps the headline", ds[ids.index("D34")][1][:24], "a delta a tool DOES ment"),
         ]:
@@ -154,10 +196,12 @@ def selftest() -> int:
 
         # The live half: D34 IS cited by tools/map_admits.py and D99 is not.
         # If these came out the same, the grep would be doing nothing.
-        d34, d99 = _grep("D34"), _grep("D99")
+        d34, dsent = _grep("D34"), _grep(S)
         for label, got, want in [
             ("D34 (real, cited by a tool) -> found", bool(d34), True),
-            ("D99 (invented) -> NOT found", bool(d99), False),
+            ("sentinel (invented) -> NOT found", bool(dsent), False),
+            ("the ledger does not count ITSELF",
+             all(Path(h).name != Path(__file__).name for h in _grep("D41")), True),
         ]:
             ok = got == want
             bad += 0 if ok else 1
