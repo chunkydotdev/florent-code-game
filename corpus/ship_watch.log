@@ -57,3 +57,169 @@
 2026-08-10T05:22:11	v102	k=52	rating=1580	net5=-24.0	peak=1616	drawdown=-36.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+12.6
 2026-08-10T05:32:08	v102	k=53	rating=1590	net5=-8.0	peak=1616	drawdown=-26.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+22.6
 2026-08-10T05:42:08	v102	k=54	rating=1586	net5=-3.0	peak=1616	drawdown=-30.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+18.6
+2026-08-10T05:52:08	v102	k=55	rating=1596	net5=-4.0	peak=1616	drawdown=-20.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+28.6
+2026-08-10T06:02:08	v102	k=56	rating=1599	net5=+9.0	peak=1616	drawdown=-17.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+31.6
+2026-08-10T06:12:08	v102	k=57	rating=1593	net5=+13.0	peak=1616	drawdown=-23.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+25.6
+2026-08-10T06:22:08	v102	k=58	rating=1590	net5=+0.0	peak=1616	drawdown=-26.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+22.6
+2026-08-10T06:32:08	v103	k=1	rating=1582	net5=n/a	peak=1590	drawdown=-8.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=+14.6
+2026-08-10T06:42:08	v102	k=60	rating=1591	net5=-5.0	peak=1616	drawdown=-25.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+23.6
+2026-08-10T06:52:09	v102	k=61	rating=1594	net5=-5.0	peak=1616	drawdown=-22.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+26.6
+2026-08-10T07:02:09	v102	k=62	rating=1601	net5=+8.0	peak=1616	drawdown=-15.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+33.6
+2026-08-10T07:12:09	v102	k=63	rating=1599	net5=+9.0	peak=1616	drawdown=-17.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+31.6
+2026-08-10T07:22:09	v102	k=63	rating=1599	net5=+9.0	peak=1616	drawdown=-17.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+31.6
+2026-08-10T07:32:09	v102	k=63	rating=1599	net5=+9.0	peak=1616	drawdown=-17.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+31.6
+2026-08-10T07:42:09	v102	k=63	rating=1599	net5=+9.0	peak=1616	drawdown=-17.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+31.6
+2026-08-10T07:52:09	v102	k=63	rating=1599	net5=+9.0	peak=1616	drawdown=-17.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+31.6
+2026-08-10T08:02:09	v102	k=68	rating=1631	net5=+32.0	peak=1631	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+63.6
+2026-08-10T08:12:09	v102	k=68	rating=1631	net5=+32.0	peak=1631	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+63.6
+2026-08-10T08:22:09	v102	k=70	rating=1637	net5=+38.0	peak=1637	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+69.6
+2026-08-10T08:32:09	v102	k=71	rating=1642	net5=+43.0	peak=1642	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+74.6
+2026-08-10T08:42:09	v102	k=71	rating=1642	net5=+43.0	peak=1642	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+74.6
+2026-08-10T08:52:09	v102	k=72	rating=1643	net5=+44.0	peak=1643	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+75.6
+2026-08-10T09:02:09	v102	k=74	rating=1634	net5=+3.0	peak=1643	drawdown=-9.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+66.6
+2026-08-10T09:12:09	v102	k=75	rating=1630	net5=-7.0	peak=1643	drawdown=-13.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+62.6
+2026-08-10T09:19:21	v102	k=76	rating=1615	net5=-27.0	peak=1643	drawdown=-28.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+0.0
+2026-08-10T09:19:24	v102	k=76	rating=1615	net5=-27.0	peak=1643	drawdown=-28.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+0.0
+2026-08-10T09:39:21	v104	k=2	rating=1615	net5=n/a	peak=1615	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=+0.0
+2026-08-10T09:49:21	v104	k=3	rating=1631	net5=n/a	peak=1631	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+16.0
+2026-08-10T09:59:22	v104	k=4	rating=1620	net5=n/a	peak=1631	drawdown=-11.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+5.0
+2026-08-10T10:09:22	v104	k=5	rating=1628	net5=+13.0	peak=1631	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0
+2026-08-10T10:19:22	v104	k=6	rating=1642	net5=+34.0	peak=1642	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=OK	net_act=+27.0
+2026-08-10T10:29:22	v104	k=6	rating=1642	net5=+34.0	peak=1642	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=OK	net_act=+27.0
+2026-08-10T10:39:22	v104	k=8	rating=1645	net5=+14.0	peak=1645	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+30.0
+2026-08-10T10:49:22	v104	k=9	rating=1646	net5=+26.0	peak=1646	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+31.0
+2026-08-10T10:59:22	v104	k=10	rating=1654	net5=+26.0	peak=1654	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+39.0
+2026-08-10T11:09:22	v104	k=11	rating=1652	net5=+10.0	peak=1654	drawdown=-2.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+37.0
+2026-08-10T11:19:22	v104	k=12	rating=1650	net5=+10.0	peak=1654	drawdown=-4.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+35.0
+2026-08-10T11:29:22	v104	k=13	rating=1655	net5=+10.0	peak=1655	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+40.0
+2026-08-10T11:39:22	v104	k=14	rating=1665	net5=+19.0	peak=1665	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+50.0
+2026-08-10T11:49:22	v104	k=15	rating=1666	net5=+12.0	peak=1666	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+51.0
+2026-08-10T11:59:22	v104	k=16	rating=1670	net5=+18.0	peak=1670	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+55.0
+2026-08-10T12:09:22	v104	k=17	rating=1680	net5=+30.0	peak=1680	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+65.0
+2026-08-10T12:19:23	v104	k=18	rating=1684	net5=+29.0	peak=1684	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+69.0
+2026-08-10T12:29:23	v104	k=18	rating=1684	net5=+29.0	peak=1684	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+69.0
+2026-08-10T12:39:23	v104	k=20	rating=1672	net5=+6.0	peak=1684	drawdown=-12.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+57.0
+2026-08-10T12:49:23	v104	k=20	rating=1672	net5=+6.0	peak=1684	drawdown=-12.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+57.0
+2026-08-10T12:59:23	v104	k=22	rating=1685	net5=+5.0	peak=1685	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+70.0
+2026-08-10T13:09:23	v104	k=22	rating=1685	net5=+5.0	peak=1685	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+70.0
+2026-08-10T13:19:23	v104	k=24	rating=1695	net5=+17.0	peak=1695	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+80.0
+2026-08-10T13:29:23	v104	k=25	rating=1691	net5=+19.0	peak=1695	drawdown=-4.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+76.0
+2026-08-10T13:39:23	v104	k=26	rating=1682	net5=+9.0	peak=1695	drawdown=-13.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+67.0
+2026-08-10T13:49:23	v104	k=27	rating=1695	net5=+10.0	peak=1695	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+80.0
+2026-08-10T13:59:23	v104	k=28	rating=1698	net5=+3.0	peak=1698	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+83.0
+2026-08-10T14:09:23	v104	k=29	rating=1689	net5=-6.0	peak=1698	drawdown=-9.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+74.0
+2026-08-10T14:19:23	v104	k=29	rating=1689	net5=-6.0	peak=1698	drawdown=-9.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+74.0
+2026-08-10T14:29:24	v102	k=106	rating=1690	net5=+75.0	peak=1690	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+75.0
+2026-08-10T14:39:24	v102	k=107	rating=1675	net5=+60.0	peak=1690	drawdown=-15.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+60.0
+2026-08-10T14:49:24	v104	k=31	rating=1675	net5=-7.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+60.0
+2026-08-10T14:59:24	v104	k=32	rating=1664	net5=-31.0	peak=1698	drawdown=-34.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+49.0
+2026-08-10T15:09:24	v104	k=32	rating=1664	net5=-31.0	peak=1698	drawdown=-34.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+49.0
+2026-08-10T15:19:24	v104	k=33	rating=1661	net5=-37.0	peak=1698	drawdown=-37.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+46.0
+2026-08-10T15:29:24	v104	k=33	rating=1661	net5=-37.0	peak=1698	drawdown=-37.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+46.0
+2026-08-10T15:39:24	v104	k=34	rating=1658	net5=-31.0	peak=1698	drawdown=-40.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+43.0
+2026-08-10T15:49:24	v104	k=34	rating=1658	net5=-31.0	peak=1698	drawdown=-40.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+43.0
+2026-08-10T15:59:24	v104	k=35	rating=1669	net5=-21.0	peak=1698	drawdown=-29.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+54.0
+2026-08-10T16:09:24	v104	k=35	rating=1669	net5=-21.0	peak=1698	drawdown=-29.0	armed=True	RULE=SLOT FREE	sprt_fast=OK	sprt_slow=OK	net_act=+54.0
+2026-08-10T16:19:24	v104	k=36	rating=1672	net5=-3.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+57.0
+2026-08-10T16:29:24	v104	k=36	rating=1672	net5=-3.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+57.0
+2026-08-10T16:39:24	v104	k=37	rating=1660	net5=-4.0	peak=1698	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+45.0
+2026-08-10T16:49:24	v104	k=37	rating=1660	net5=-4.0	peak=1698	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+45.0
+2026-08-10T16:59:24	v104	k=38	rating=1658	net5=-3.0	peak=1698	drawdown=-40.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+43.0
+2026-08-10T17:09:25	v104	k=38	rating=1658	net5=-3.0	peak=1698	drawdown=-40.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+43.0
+2026-08-10T17:19:25	v104	k=39	rating=1641	net5=-17.0	peak=1698	drawdown=-57.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+26.0
+2026-08-10T17:29:25	v104	k=39	rating=1641	net5=-17.0	peak=1698	drawdown=-57.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+26.0
+2026-08-10T17:39:25	v104	k=40	rating=1655	net5=-14.0	peak=1698	drawdown=-43.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+40.0
+2026-08-10T17:49:25	v104	k=40	rating=1655	net5=-14.0	peak=1698	drawdown=-43.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+40.0
+2026-08-10T17:59:25	v104	k=41	rating=1661	net5=-11.0	peak=1698	drawdown=-37.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+46.0
+2026-08-10T18:09:25	v104	k=41	rating=1661	net5=-11.0	peak=1698	drawdown=-37.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+46.0
+2026-08-10T18:19:25	v104	k=42	rating=1659	net5=-1.0	peak=1698	drawdown=-39.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+44.0
+2026-08-10T18:29:25	v104	k=42	rating=1659	net5=-1.0	peak=1698	drawdown=-39.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+44.0
+2026-08-10T18:39:25	v104	k=43	rating=1650	net5=-8.0	peak=1698	drawdown=-48.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+35.0
+2026-08-10T18:49:25	v104	k=43	rating=1650	net5=-8.0	peak=1698	drawdown=-48.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+35.0
+2026-08-10T18:59:25	v104	k=44	rating=1654	net5=+13.0	peak=1698	drawdown=-44.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+39.0
+2026-08-10T19:09:25	v104	k=44	rating=1654	net5=+13.0	peak=1698	drawdown=-44.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+39.0
+2026-08-10T19:19:26	v104	k=45	rating=1651	net5=-4.0	peak=1698	drawdown=-47.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+36.0
+2026-08-10T19:29:26	v104	k=45	rating=1651	net5=-4.0	peak=1698	drawdown=-47.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+36.0
+2026-08-10T19:39:26	v104	k=46	rating=1651	net5=-10.0	peak=1698	drawdown=-47.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+36.0
+2026-08-10T19:49:26	v104	k=46	rating=1651	net5=-10.0	peak=1698	drawdown=-47.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+36.0
+2026-08-10T19:59:26	v104	k=47	rating=1654	net5=-5.0	peak=1698	drawdown=-44.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+39.0
+2026-08-10T20:09:26	v104	k=47	rating=1654	net5=-5.0	peak=1698	drawdown=-44.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+39.0
+2026-08-10T20:19:26	v104	k=48	rating=1657	net5=+7.0	peak=1698	drawdown=-41.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+42.0
+2026-08-10T20:29:26	v104	k=48	rating=1657	net5=+7.0	peak=1698	drawdown=-41.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+42.0
+2026-08-10T20:39:26	v104	k=49	rating=1661	net5=+7.0	peak=1698	drawdown=-37.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+46.0
+2026-08-10T20:49:26	v104	k=49	rating=1661	net5=+7.0	peak=1698	drawdown=-37.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+46.0
+2026-08-10T20:59:26	v104	k=50	rating=1657	net5=+6.0	peak=1698	drawdown=-41.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+42.0
+2026-08-10T21:09:26	v104	k=50	rating=1657	net5=+6.0	peak=1698	drawdown=-41.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+42.0
+2026-08-10T21:19:26	v104	k=51	rating=1659	net5=+8.0	peak=1698	drawdown=-39.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+44.0
+2026-08-10T21:29:26	v104	k=51	rating=1659	net5=+8.0	peak=1698	drawdown=-39.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+44.0
+2026-08-10T21:39:26	v104	k=52	rating=1666	net5=+12.0	peak=1698	drawdown=-32.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+51.0
+2026-08-10T21:49:27	v104	k=52	rating=1666	net5=+12.0	peak=1698	drawdown=-32.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+51.0
+2026-08-10T21:59:27	v104	k=53	rating=1670	net5=+13.0	peak=1698	drawdown=-28.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+55.0
+2026-08-10T22:09:27	v104	k=53	rating=1670	net5=+13.0	peak=1698	drawdown=-28.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+55.0
+2026-08-10T22:19:27	v104	k=54	rating=1671	net5=+10.0	peak=1698	drawdown=-27.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+56.0
+2026-08-10T22:29:27	v104	k=54	rating=1671	net5=+10.0	peak=1698	drawdown=-27.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+56.0
+2026-08-10T22:39:27	v104	k=54	rating=1671	net5=+10.0	peak=1698	drawdown=-27.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+56.0
+2026-08-10T22:49:27	v104	k=55	rating=1683	net5=+26.0	peak=1698	drawdown=-15.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+68.0
+2026-08-10T22:59:27	v104	k=55	rating=1683	net5=+26.0	peak=1698	drawdown=-15.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+68.0
+2026-08-10T23:09:27	v104	k=56	rating=1686	net5=+27.0	peak=1698	drawdown=-12.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+71.0
+2026-08-10T23:19:27	v104	k=56	rating=1686	net5=+27.0	peak=1698	drawdown=-12.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+71.0
+2026-08-10T23:29:27	v104	k=57	rating=1688	net5=+22.0	peak=1698	drawdown=-10.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+73.0
+2026-08-10T23:59:47	v104	k=58	rating=1682	net5=+12.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0
+2026-08-11T00:09:47	v104	k=59	rating=1685	net5=+14.0	peak=1698	drawdown=-13.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+70.0
+2026-08-11T00:19:47	v104	k=60	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0
+2026-08-11T00:29:48	v104	k=60	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0
+2026-08-11T00:39:48	v104	k=60	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0
+2026-08-11T00:49:48	v104	k=61	rating=1660	net5=-26.0	peak=1698	drawdown=-38.0	armed=True	RULE=SLOT FREE	sprt_fast=BLEED	sprt_slow=OK	net_act=+45.0
+2026-08-11T00:59:48	v104	k=62	rating=1675	net5=-13.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0
+2026-08-11T01:09:48	v104	k=62	rating=1675	net5=-13.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0
+2026-08-11T01:19:48	v104	k=62	rating=1675	net5=-13.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0
+2026-08-11T01:29:48	v104	k=63	rating=1672	net5=-10.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+57.0
+2026-08-11T01:39:48	v104	k=64	rating=1668	net5=-17.0	peak=1698	drawdown=-30.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+53.0
+2026-08-11T01:49:48	v104	k=64	rating=1668	net5=-17.0	peak=1698	drawdown=-30.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+53.0
+2026-08-11T01:59:48	v104	k=64	rating=1668	net5=-17.0	peak=1698	drawdown=-30.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+53.0
+2026-08-11T02:09:48	v104	k=65	rating=1669	net5=-7.0	peak=1698	drawdown=-29.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+54.0
+2026-08-11T02:19:48	v104	k=66	rating=1666	net5=+6.0	peak=1698	drawdown=-32.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+51.0
+2026-08-11T02:29:48	v104	k=66	rating=1666	net5=+6.0	peak=1698	drawdown=-32.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+51.0
+2026-08-11T02:39:49	v104	k=66	rating=1666	net5=+6.0	peak=1698	drawdown=-32.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+51.0
+2026-08-11T02:49:49	v104	k=67	rating=1675	net5=+0.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0
+2026-08-11T02:59:49	v104	k=68	rating=1682	net5=+10.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0
+2026-08-11T03:09:49	v104	k=68	rating=1682	net5=+10.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0
+2026-08-11T03:19:49	v104	k=68	rating=1682	net5=+10.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0
+2026-08-11T03:29:49	v104	k=69	rating=1674	net5=+6.0	peak=1698	drawdown=-24.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+59.0
+2026-08-11T03:39:49	v104	k=70	rating=1673	net5=+4.0	peak=1698	drawdown=-25.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+58.0
+2026-08-11T03:49:49	v104	k=70	rating=1673	net5=+4.0	peak=1698	drawdown=-25.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+58.0
+2026-08-11T03:59:49	v104	k=71	rating=1676	net5=+10.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0
+2026-08-11T04:09:49	v104	k=71	rating=1676	net5=+10.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0
+2026-08-11T04:19:49	v104	k=72	rating=1665	net5=-10.0	peak=1698	drawdown=-33.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+50.0
+2026-08-11T04:29:49	v104	k=72	rating=1665	net5=-10.0	peak=1698	drawdown=-33.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+50.0
+2026-08-11T04:39:49	v104	k=73	rating=1669	net5=-13.0	peak=1698	drawdown=-29.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+54.0
+2026-08-11T04:49:50	v104	k=73	rating=1669	net5=-13.0	peak=1698	drawdown=-29.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+54.0
+2026-08-11T04:59:50	v104	k=74	rating=1678	net5=+4.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0
+2026-08-11T05:09:50	v104	k=74	rating=1678	net5=+4.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0
+2026-08-11T05:19:50	v104	k=75	rating=1688	net5=+15.0	peak=1698	drawdown=-10.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+73.0
+2026-08-11T05:29:50	v104	k=75	rating=1688	net5=+15.0	peak=1698	drawdown=-10.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+73.0
+2026-08-11T05:39:50	v104	k=76	rating=1678	net5=+2.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0
+2026-08-11T05:49:50	v104	k=76	rating=1678	net5=+2.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0
+2026-08-11T05:59:50	v104	k=77	rating=1663	net5=-2.0	peak=1698	drawdown=-35.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+48.0
+2026-08-11T06:09:50	v104	k=77	rating=1663	net5=-2.0	peak=1698	drawdown=-35.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+48.0
+2026-08-11T06:19:50	v104	k=78	rating=1665	net5=-4.0	peak=1698	drawdown=-33.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+50.0
+2026-08-11T06:29:50	v104	k=78	rating=1665	net5=-4.0	peak=1698	drawdown=-33.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+50.0
+2026-08-11T06:39:50	v104	k=79	rating=1675	net5=-3.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0
+2026-08-11T06:49:50	v104	k=79	rating=1675	net5=-3.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0
+2026-08-11T06:59:50	v104	k=80	rating=1678	net5=-10.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0
+2026-08-11T07:09:50	v104	k=80	rating=1678	net5=-10.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0
+2026-08-11T07:19:51	v104	k=81	rating=1683	net5=+5.0	peak=1698	drawdown=-15.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+68.0
+2026-08-11T07:29:51	v104	k=81	rating=1683	net5=+5.0	peak=1698	drawdown=-15.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+68.0
+2026-08-11T07:39:51	v104	k=82	rating=1680	net5=+17.0	peak=1698	drawdown=-18.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+65.0
+2026-08-11T07:49:51	v104	k=82	rating=1680	net5=+17.0	peak=1698	drawdown=-18.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+65.0
+2026-08-11T07:59:51	v104	k=83	rating=1689	net5=+24.0	peak=1698	drawdown=-9.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+74.0
+2026-08-11T08:09:51	v104	k=83	rating=1689	net5=+24.0	peak=1698	drawdown=-9.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+74.0
+2026-08-11T08:19:51	v104	k=84	rating=1689	net5=+14.0	peak=1698	drawdown=-9.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+74.0
+2026-08-11T08:29:51	v104	k=84	rating=1689	net5=+14.0	peak=1698	drawdown=-9.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+74.0
+2026-08-11T08:39:51	v104	k=85	rating=1685	net5=+7.0	peak=1698	drawdown=-13.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+70.0
+2026-08-11T08:49:51	v104	k=85	rating=1685	net5=+7.0	peak=1698	drawdown=-13.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+70.0
+2026-08-11T08:59:51	v104	k=86	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0
+2026-08-11T09:08:58	v104	k=86	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0	tape_age_min=1.0
+2026-08-11T09:09:51	v104	k=86	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0	tape_age_min=1.9
+# CLOCK CONVENTION CHANGED HERE: rows ABOVE this line stamp LOCAL time with no zone marker; rows BELOW stamp UTC with an explicit Z. Written once, by tools/monitors/ship_watch.py, s30 2026-08-11.
+2026-08-11T07:12:33Z	v104	k=86	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0	tape_age_min=4.6

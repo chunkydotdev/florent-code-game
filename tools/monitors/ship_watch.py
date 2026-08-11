@@ -112,7 +112,18 @@ def assess(tape, version=None, baseline=None):
     # SPRT. The drawdown column cannot fix that (the alarm still belongs to the
     # rule) but it makes the blind spot legible instead of invisible.
     peak = max(r for _, r, _ in st.rows)
-    line = (f"{datetime.now().isoformat(timespec='seconds')}\t{st.version}\t"
+    # ⛔ UTC WITH AN EXPLICIT `Z`, s30 2026-08-11. This line stamped LOCAL CEST
+    # with NO zone marker for the whole life of the file -- read naively as UTC
+    # it reports rows from the FUTURE, which is precisely how stale data looks
+    # live, and it is the hazard three lanes have flagged all session.
+    # It was changed the same hour the BLIND line was added, because that line
+    # is UTC-marked and a log carrying TWO conventions is worse for a reader
+    # than either uniform one: sorted chronologically, a BLIND row would land
+    # ~2 hours BEFORE the verdicts that bracket it, so the one row saying "I was
+    # blind here" sorts away from the window it describes. The convention change
+    # is recorded IN THE LOG by a one-time marker row (see _mark_convention),
+    # because a log that silently switches clocks mid-file is its own trap.
+    line = (f"{datetime.now(timezone.utc):%Y-%m-%dT%H:%M:%S}Z\t{st.version}\t"
             f"k={st.k}\trating={st.rating:.0f}\tnet5={n5}\t"
             f"peak={peak:.0f}\tdrawdown={st.rating - peak:+.1f}\t"
             f"armed={st.armed}\tRULE={ruling}\t"
@@ -325,6 +336,26 @@ def selftest() -> int:
 STALE_H = 20 / 60.0      # two 10-minute cadences
 
 
+CONVENTION_MARK = ("# CLOCK CONVENTION CHANGED HERE: rows ABOVE this line stamp "
+                   "LOCAL time with no zone marker; rows BELOW stamp UTC with an "
+                   "explicit Z. Written once, by tools/monitors/ship_watch.py, "
+                   "s30 2026-08-11.")
+
+
+def _mark_convention() -> None:
+    """Write the convention marker once, ever. A log that switches clocks
+    mid-file with nothing recording when is a trap for whoever parses it later
+    -- and the switch is invisible in the data because both conventions produce
+    a plausible ISO timestamp."""
+    try:
+        if LOG.exists() and CONVENTION_MARK in LOG.read_text():
+            return
+        with open(LOG, "a") as fh:
+            fh.write(CONVENTION_MARK + "\n")
+    except Exception:
+        pass          # never let bookkeeping break the stop-loss
+
+
 def main() -> int:
     if "--selftest" in sys.argv:
         return selftest()
@@ -390,6 +421,7 @@ def main() -> int:
     line = f"{line}\ttape_age_min={age_h*60:.1f}"
 
     LOG.parent.mkdir(parents=True, exist_ok=True)
+    _mark_convention()
     with open(LOG, "a") as fh:
         fh.write(line + "\n")
     print(line)
