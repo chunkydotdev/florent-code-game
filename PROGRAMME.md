@@ -19,6 +19,53 @@ successor session inherit it. The fields below are parsed; the prose is not.
     PLAY_DEFENCE: not_at_the_kill_s_expense
     DEFENCE_ADMISSION_BAR: kill_round_non_regression
     FIXTURE_OF_RECORD: live_unrated
+    ALWAYS_BE_RUNNING: yes
+
+## ⭐⭐⭐ CORE VALUE, MAGNUS, 2026-08-11 (s31) — **ALWAYS BE RUNNING.**
+
+**Written into this file on his direct instruction — *"put this in your
+programme, it's a core value for you"* — after he had to ask THREE TIMES in ten
+minutes whether anything was running locally.** The exchange, verbatim:
+
+> *"anything running locally?"*
+> *"do we not monitor the local runs? if nothing is running we're losing time we
+> could use to figure out the next Loki version"*
+> *"If we are not running locally we should grab items from the queue and run
+> them, the researcher has a monitor that makes them put more items in the queue
+> if it is running out."*
+
+**THE RULE: IDLE CORES ARE A DEFECT. If nothing is running locally, the builder
+takes the top unblocked item from `QUEUE.md` and runs it — without being asked,
+without waiting for analysis, and without a window.**
+
+**WHY IT IS A VALUE AND NOT A PREFERENCE, in this project's own numbers:**
+* Local games are **free, unlimited and instant**. The rate limit (5 unrated per
+  20 min) governs the PLATFORM only. **Nothing rations local cores but attention.**
+* **~420 rated matches remain in the whole game** (~84/day). **A ship converges
+  in the BACKGROUND while we work**, so an unshipped plank is a certain zero and
+  an idle hour is unrecoverable.
+* Measured on this machine 2026-08-11 13:53Z: **load average drained 14.67 -> 1.57
+  with ZERO `fcode run` processes and a fully stocked queue sitting unread.**
+  Ten cores idle while three planks waited.
+
+**⛔ AND THE STRUCTURAL REASON NOBODY NOTICED — this is s30's D66 recurring:**
+that session ran screens on **1 core of 10** for ninety minutes. The lesson was
+recorded as *"subagents are for judgment, cores are for games"* and it **did not
+prevent the same failure one session later**, because it was written as a lesson
+rather than built as an instrument.
+
+⇒ **`tools/monitors/cores_idle.py` (s31) IS THE INSTRUMENT.** It polls every
+300 s, and on two consecutive polls with zero local games it prints
+`*** CORES IDLE — NEXT QUEUE ITEM: <plank> ***` and writes
+`corpus/CORES_IDLE_ALERT`. **The alarm carries its own remedy: it names the plank
+to start.** It gates on the process count (never `$?`), reports the queue file's
+AGE, and returns **BLIND rather than "idle"** if `ps` fails — because an alarm
+that cannot tell it is blind is this repo's most-repeated defect.
+
+**THE DIVISION OF LABOUR MAGNUS SET, and both halves are now instrumented:**
+**RESEARCH keeps `QUEUE.md` stocked** (their monitor fires when it runs low);
+**BUILDER keeps the CORES BUSY** (this monitor fires when they go quiet).
+**An empty queue is a research failure; idle cores are a builder failure.**
 
 ## ⭐⭐ DIRECTIVE, MAGNUS, 2026-08-11 — **"WIN RATE DECIDES."** GIVEN DIRECTLY TO THE BUILDER, NOT RELAYED.
 
