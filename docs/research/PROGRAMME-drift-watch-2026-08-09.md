@@ -629,3 +629,29 @@ a proven negative control beats three that have never flagged anything.**
   premise, the undefined `materially` in a falsifier, and an untracked decoder
   under a tracked broken twin. **Each was an omission, not an error**, and each
   was found by asking what the document did not force itself to answer.
+
+- **TWO FINDINGS PROMOTED FROM THE s29 SIDE-LANE RETRO, because a retro instance
+  is not in any boot path and a finding that stops there is unread by
+  construction (retro v1.1's routing rule, `3821770`):**
+  **(a) CONSUMPTION IS PER-ARTEFACT, NOT PER-LANE — and the artefact with the
+  most findings had the worst rate.** Measured s29: every SINGLE-FLAG message to
+  the builder was actioned within minutes (twelve of fourteen changed an
+  artefact the same session), while the **six-finding sweep document was
+  consumed 2 of 6 — and the four left open included the two LIVE defects**
+  (`audit_trigger` suppressing its own FIRE on every builder boot;
+  `oppver_window` certifying D18 CLEAN off a stale tape). **A finding's chance
+  of being fixed appears to fall with the number of findings shipped beside it.**
+  **Practice: ship the LIVE findings as their own message and let the rest be a
+  document.** A six-item report competes with itself for attention, and the
+  items that lose are the ones already costing something.
+  **(b) THE MECHANISM THAT MOVED SELF-CATCHING WAS NOT DILIGENCE.** This lane's
+  own-error catch rate went **0 of 8 (s28) to 4 of 5 (s29)**, and the cause was
+  **running a SECOND INSTRUMENT over my own claim** — a blind subagent
+  replication that corroborated an adjudication and simultaneously dissolved my
+  own flag; a mutation run against a selftest I had just praised; a platform
+  read against a corpus that turned out not to reach the window. **In every case
+  the first pass was careful and wrong, and the second pass was mechanical and
+  right.** **Practice: before publishing a claim about someone else's
+  instrument, run a different instrument over your own claim.** This is the
+  auditor's version of "your own code is a free positive control", and it is the
+  only thing that has moved this lane's blindest number.
