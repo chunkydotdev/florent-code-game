@@ -187,6 +187,24 @@ esac
 # could see them. The file is shared, so a second runner in another lane inherits
 # them too.
 LEDGER=${LEDGER:-scratchpad/.rate_ledger}
+
+# --- guard 7c: THE MATCH-INITIATIVE LEDGER (Magnus's ask, s30) -----------------
+# `.rate_ledger` above is 25 lines of bare unix timestamps -- it knows we spent
+# budget and NOTHING about on what. `fcode match list --mine` mixes matches WE
+# created with matches opponents created against US, `triggeredBy` is the match
+# TYPE not the actor, and sourceMatchAId/BId are null: NOTHING ON THE PLATFORM
+# RECORDS WHO PRESSED THE BUTTON. s28's meter read `7 of 5` because two of the
+# seven were an opponent challenging us, and that was caught ONLY because 7-of-5
+# is arithmetically impossible -- ONE foreign challenge reads a plausible 5/5 and
+# silently stalls this runner.
+# REFUSE BEFORE FIRING IF THE LEDGER IS BLIND. An unrecorded match is the exact
+# defect being fixed, so firing unrecorded is not a degraded mode, it is the bug.
+if ! .venv/bin/python tools/match_ledger.py preflight; then
+  say "ABORT: match ledger is BLIND. Firing nothing — an unrecorded match is the"
+  say "       defect this ledger exists to fix, so we do not fire without it."
+  exit 1
+fi
+ARM_TAG=${ARM_TAG:-unrated_v${VER}_${STAMP}}
 typeset -a ATTEMPTS
 [ -f "$LEDGER" ] && ATTEMPTS=($(tail -50 "$LEDGER"))
 note_attempt(){ local ts=$(date -u +%s); ATTEMPTS+=($ts); print -r -- $ts >> "$LEDGER"; }
@@ -258,6 +276,14 @@ while [ $done_games -lt $WANT ]; do
     r=$(.venv/bin/fcode match unrated "$id" --json 2>&1 | tr -d '\n')
     note_attempt                   # guard 7a: EVERY attempt, accepted or not, persisted
     print -r -- "$id $r" >> "$OUT"
+    # guard 7c: stamp our initiative at the moment the CLI returns. Rejections
+    # get a row too (match_id=REJECTED) because they consume the rate window; a
+    # success-only ledger under-counts in the direction that matters. The tool
+    # gates on the presence of `matchId` in the body, NEVER on $? -- this CLI
+    # exits 0 while printing `Error: True`.
+    print -r -- "$r" | .venv/bin/python tools/match_ledger.py record \
+      --type unrated --opponent-id "$id" --opponent-name "$id" \
+      --our-version "v$VER" --arm-tag "$ARM_TAG" --runner unrated_run.sh >/dev/null
     case "$r" in
       *matchId*)
         got=$((got+1)); fired=$((fired+1))

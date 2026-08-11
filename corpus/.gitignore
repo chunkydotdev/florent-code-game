@@ -5,3 +5,12 @@ corpus/keeper.log
 corpus/keeper.pid
 corpus/keeper.out
 corpus/keeper_state.json
+
+# ⛔ EXCEPTION, s30 2026-08-11. The rule above says "regenerable". THIS ONE IS
+# NOT, AND THAT IS ITS ENTIRE POINT: `our_matches.tsv` records WHO CREATED EACH
+# MATCH, and the platform has no field that says so — `match list --mine` mixes
+# our own challenges with opponents' challenges against us, `triggeredBy` is the
+# match TYPE not the actor, and sourceMatchAId/BId are null. Nothing can
+# reconstruct a row after the fact. An ignored ledger is a ledger that dies with
+# one machine, which is the defect it was built to fix.
+!our_matches.tsv

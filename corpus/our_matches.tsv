@@ -1,0 +1,6 @@
+created_at_utc	match_id	match_type	opponent_id	opponent_name	our_version	arm_tag	runner	source
+2026-08-11T06:46:27.367282+00:00	a7d51053-c7a6-4cc2-9c40-5aca72121d45	unrated	25288fdb-f3a0-4ae2-964f-2fd7eb9b11d7	25288fdb-f3a0-4ae2-964f-2fd7eb9b11d7	v109	loki18_w1	unrated_run.sh	live
+2026-08-11T06:46:29.868124+00:00	957bf2f5-b52c-4f55-86b7-15d58dcdd159	unrated	7fd91e77-812c-44da-bce7-457be94d2548	7fd91e77-812c-44da-bce7-457be94d2548	v109	loki18_w1	unrated_run.sh	live
+2026-08-11T06:46:32.402976+00:00	7b346405-6450-498f-9c0f-a4d6e83fe1a9	unrated	b2deaacd-08ad-4c14-b97b-b4f382d82ea3	b2deaacd-08ad-4c14-b97b-b4f382d82ea3	v109	loki18_w1	unrated_run.sh	live
+2026-08-11T06:46:35.016203+00:00	4b103212-2dc1-46d8-a041-860807503ad4	unrated	b538e523-2250-4c1d-b718-e73b77ebad55	b538e523-2250-4c1d-b718-e73b77ebad55	v109	loki18_w1	unrated_run.sh	live
+2026-08-11T06:46:37.597130+00:00	b8e7dfc2-2277-4a62-8fcf-faea90c9e9f9	unrated	eceb8455-7cb3-442b-ba40-c6597c16b446	eceb8455-7cb3-442b-ba40-c6597c16b446	v109	loki18_w1	unrated_run.sh	live
