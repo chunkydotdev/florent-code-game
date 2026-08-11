@@ -59,7 +59,14 @@ constant column — this cut can produce the other verdict.
 
 * **"Alive but forward and unable to return" is NOT excluded.** This cut measures
   that the builders *existed*, not *where they stood*. The surviving route for the
-  thesis is per-round positions (the dwell decoder, ~20 min). **Unrun, offered.**
+  thesis is per-round positions (the dwell decoder, ~20 min).
+  **⛔ OFFERED AND THEN DECLINED BY AGREEMENT — DO NOT READ THIS AS AN OPEN OFFER.**
+  The side lane, whose thesis it was, refused the rescue: *"alive but forward and
+  unable to return" is a **NEW** hypothesis, not a survivor of the old one*, and
+  running it now would hand it a priority it has not earned. **It queues against the
+  other candidates on its own merits.** They also noted the plank it implies — bring
+  builders home before r187 — **lands squarely on `PLAY_DEFENCE: never`**, already
+  flagged to Magnus twice today. **Research concurs; the decode is not scheduled.**
 * The forward-share rows use only games with ≥1 builder death in the window
   (567 loss / 391 win) — a selected subset. **The alive-count uses all 4,504 and
   is the load-bearing number.**
