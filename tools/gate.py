@@ -64,12 +64,15 @@ def check_determinism(bots: list[Path], pooled_not_paired: bool = False) -> None
     the engine supplies variation once our own RNG stops.  Measured on this
     machine 2026-08-11 with `NOISE_ON = False` on both sides:
 
-        antler, 6 distinct --seed values, 10 runs:  ALL IDENTICAL
-                                                    (same winner, same turn 170)
-        hive,   3 distinct --seed values:           2 distinct outcomes
+        antler   1 distinct outcome / 6 seeds   (B, turn 170, every seed)
+        atoll    1 distinct outcome / 6 seeds   (B, turn 942, every seed)
+        meander  1 distinct outcome / 6 seeds   (B, turn 135, every seed)
+        hive     2 distinct outcomes / 6 seeds
 
-    ⇒ **The engine's own seed sensitivity is MAP-DEPENDENT, and on at least one
-    of the 8 battery maps it is ZERO.**  Pinning `NOISE_ON = False` there would
+    ⇒ **The engine's own seed sensitivity is MAP-DEPENDENT and it is ZERO on
+    THREE OF THE FOUR maps tested** -- not on antler alone, which is what this
+    docstring claimed for its first twenty minutes. The number is the argument,
+    so it is stated at its real size.  Pinning `NOISE_ON = False` there would
     have collapsed that map's ~676 games to ONE distinct game while the row count
     still read 676 -- a sample-size collapse invisible in every denominator we
     print.  The gate would have passed and the battery would have been worthless.
@@ -81,10 +84,22 @@ def check_determinism(bots: list[Path], pooled_not_paired: bool = False) -> None
     An escape flag typed is a decision on the record; that is the point of it.
     """
     if pooled_not_paired:
-        WARN.append("--pooled-not-paired: NOISE_ON determinism FAILs downgraded "
-                    "to WARN. Valid ONLY for a POOLED estimate. Pinning "
-                    "NOISE_ON=False is NOT a free fix -- engine seed sensitivity "
-                    "is map-dependent and measured at ZERO on antler.")
+        # The flag takes a REASON STRING and refuses without one. The docstring
+        # used to say it "prints the caller's justification" while the code
+        # appended a hardcoded constant -- i.e. a self-declared escape whose
+        # predicate is supplied by the party it guards. An escape flag typed is
+        # a decision on the record only if the caller has to type the decision.
+        if not isinstance(pooled_not_paired, str) or len(pooled_not_paired.strip()) < 20:
+            FAIL.append("--pooled-not-paired requires a REASON of >=20 chars "
+                        "naming the design (e.g. 'pooled within-game win rate, "
+                        "no seed-matched or across-run comparison'). An escape "
+                        "with no stated reason is not a decision on the record.")
+            return
+        WARN.append(f"--pooled-not-paired ESCAPE TAKEN. Reason: {pooled_not_paired.strip()}")
+        WARN.append("  NOISE_ON determinism FAILs downgraded to WARN. Valid ONLY "
+                    "for a POOLED estimate. Pinning NOISE_ON=False is NOT a free "
+                    "fix -- seed sensitivity is map-dependent and measured at "
+                    "ZERO on 3 of 4 maps tested.")
     for b in bots:
         s = _src(b)
         if "NOISE_ON = True" in s:
@@ -292,8 +307,8 @@ def main() -> int:
                     help="skip the remote TLE fidelity check (records a WARN)")
     ap.add_argument("--off-programme", action="store_true",
                     help="run a battery outside the active PROGRAMME.md line")
-    ap.add_argument("--pooled-not-paired", action="store_true",
-                    help="ESCAPE: downgrade the NOISE_ON determinism FAILs to WARN. "
+    ap.add_argument("--pooled-not-paired", metavar="REASON", default="",
+                    help="ESCAPE, TAKES A REASON STRING: downgrade the NOISE_ON FAILs to WARN. "
                          "Valid ONLY for a POOLED estimate, never a paired/seed-matched "
                          "one. Pinning NOISE_ON=False is not a free fix: engine seed "
                          "sensitivity is map-dependent and measured at ZERO on antler.")
@@ -310,7 +325,22 @@ def main() -> int:
                       pooled_not_paired=a.pooled_not_paired)
     check_pool_identity(opponents, a.allow_self_play)
     if not FAIL:
-        check_control_equivalence(control, parent, opponents[0], a.maps)
+        if a.pooled_not_paired:
+            # ⛔ SKIPPED DELIBERATELY, s32. check_control_equivalence runs the
+            # control and the parent in TWO SEPARATE `fcode run` processes at
+            # --seed 1 and demands byte-identical outcomes -- an ACROSS-RUN
+            # seed-matched design, and the ONLY thing check_determinism was ever
+            # protecting. Against a reseeding bot it reports a meaningless
+            # mismatch: observed this session as `CONTROL IS NOT ITS PARENT
+            # (0/12)` for a directory compared against ITSELF.
+            # Downgrading determinism to WARN and then running this anyway
+            # traded one confusing FAIL for a more confusing one.
+            WARN.append("control-equivalence SKIPPED: it is an ACROSS-RUN "
+                        "seed-matched check and cannot run against a reseeding "
+                        "bot. This battery is therefore NOT control-verified; "
+                        "the treatment/control diff stands on the tree diff alone.")
+        else:
+            check_control_equivalence(control, parent, opponents[0], a.maps)
     if not FAIL:
         try:
             check_platform_instruments(plank, parent, a.skip_tle)
