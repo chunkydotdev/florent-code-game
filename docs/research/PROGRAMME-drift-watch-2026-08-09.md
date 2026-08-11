@@ -592,3 +592,40 @@ a proven negative control beats three that have never flagged anything.**
   defect there moves every number in the repo. **An instrument with no test is
   not a smaller problem than one with a blind test; it is the same problem
   without the false assurance.**
+
+- **⭐ A CHECK ONLY CHECKS ONCE SOMETHING FORCES IT TO PRODUCE AN ANSWER IT COULD
+  GET WRONG (s29, 2026-08-11 — four independent instances in one session, which
+  is why this is a standing note and not an incident):**
+  1. **Six selftests passed while their metric was broken.** Each asserted one
+     axis of its quantity and never the clause that was wrong — `ring_retention`
+     asserted the RING and never the OCCUPANCY RULE, and inverted a result for
+     its whole life.
+  2. **`claim_check.py` was silent on `unrated_run.sh` for an hour** — not
+     because the guard was tested, but because **the file made no claim to
+     check.** The moment the claim was written, the checker went red and the
+     boot suite failed. **Silence from a checker whose predicate was never
+     triggered is not evidence.**
+  3. **The holder-assertion ABORT branch — the guard against putting a prototype
+     on the rated ladder — had never been driven** in its fourth copy. Driving it
+     took one command and a `MAIN=999`.
+  4. **`hold_any` named a statistic no tool computed.** Three lanes discussed it
+     for hours, agreed a definition, and made the choice between it and
+     `hold_pinned` the DECIDING call of an amendment — **and the names had been
+     matched to the code's two series BY POSITION, not by semantics.** It was
+     caught by **building the selftest**, because a forced-answer cell cannot be
+     written without stating what the number must be. Prose never had to answer.
+  **THE COMMON MECHANISM: in every case the artefact LOOKED verified — green
+  exit, silent checker, guard present in the source, a definition three lanes
+  agreed — and in every case nothing had ever demanded an answer that could have
+  come out the other way.**
+  **THE WATCH FORM, and it is one question:** for any check, name the case where
+  it MUST say the uncomfortable thing, and ask whether that case has ever been
+  run. If the answer is *"it would"* rather than *"it did, here is the output"*,
+  it has not been checked. **Applies to selftests, boot gates, abort branches,
+  linters, and agreed definitions alike.**
+  **CONSEQUENCE FOR THIS LANE SPECIFICALLY:** an audit that ends *"no flags"*
+  has usually verified what a document SAYS. **Three times on 2026-08-11 this
+  lane closed an audit with "no flags" and had to reopen it** — the arrival
+  premise, the undefined `materially` in a falsifier, and an untracked decoder
+  under a tracked broken twin. **Each was an omission, not an error**, and each
+  was found by asking what the document did not force itself to answer.
