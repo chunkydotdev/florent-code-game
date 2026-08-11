@@ -40,7 +40,7 @@ already paid for: turn -> update-list -> update -> entity is THREE levels; a
 rotate() re-emits placeEntity for an existing id so only the FIRST is a build;
 and distance is to the nearest of the four footprint tiles, not the anchor.
 """
-import subprocess, sys, tempfile
+import argparse, csv, subprocess, sys, tempfile
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
@@ -56,8 +56,82 @@ from replay_census import fields, read_pos, parse_entity, WIRE_LEN, WIRE_VARINT 
 DELTA = {0: (0, 0), 1: (0, -1), 2: (1, -1), 3: (1, 0), 4: (1, 1),
          5: (0, 1), 6: (-1, 1), 7: (-1, 0), 8: (-1, -1)}
 
+# --------------------------------------------------------------------------
+# ARCHIVED MODE -- decode ALREADY-DOWNLOADED PLATFORM replays instead of
+# generating local games. Added 2026-08-11 as reusable infrastructure for any
+# future turret-siting question (LOKI-17 itself is dead, see docstring above).
+#
+# WHERE THE FILES LIVE: `tools/monitors/replay_archiver.py` downloads every
+# match into `replay_archive/<matchId>_game_<n>.replay26` flat (its own
+# docstring: "Archive layout: replay_archive/<matchId>_game_<N>.replay26").
+# No other path convention exists; do not invent one.
+#
+# WHICH TEAM IS OURS: local mode can hardcode `team == 0` because `fcode run
+# bots/US bots/THEM` always seats us first. Archived platform replays carry no
+# such guarantee. `corpus/meta_join.tsv` (built by tools/corpus/meta_attrib.py)
+# gives the authoritative per-FILE seat via `us_side` ("a"/"b"/"none"), derived
+# from the match sidecar's `teamAId`/`teamBId` against our own team id and
+# CROSS-CHECKED (meta_attrib.py CHECK 1) against the independently-derived,
+# replay-decoded seat in join.tsv: 289/289 matches, 1,445/1,445 files agree.
+# `us_side == "a"` means our entities carry `ENTITY.team == 0` in THIS file;
+# `"b"` means `== 1`. That is a per-file mapping (a team can sit on either
+# side of different matches), so it must be looked up per file, never assumed
+# constant the way local mode's `team == 0` is.
+#
+# The generic form below resolves ANY team id to its per-file seat (0/1) the
+# same way, which is what lets it also measure an OPPONENT's own sentinels
+# (e.g. Amendment 1b's third row, Askar City's own population) without a
+# separate code path.
+OURS_TEAM_ID = "379a5d80-9921-4c9e-949b-f9b1dcba16be"      # OpenSverige
+                                                             # (tools/corpus/meta_attrib.py)
+ARCHIVE_DIR = ROOT / "replay_archive"
+META_JOIN = ROOT / "corpus" / "meta_join.tsv"
 
-def decode(path):
+
+def _rot(direction, rotate):
+    """Apply a deliberate N-step compass rotation to a decoded facing index,
+    for the known-answer control (a 1-step rotation must collapse the exact-
+    ray match rate to ~0.0%, per c91c078's own published signature). CENTRE
+    (0) is not a compass direction and is left alone; rotate=0 is a no-op so
+    the default local-mode call site (`decode(path)`) is byte-for-byte
+    unchanged."""
+    if not rotate or direction == 0:
+        return direction
+    return ((direction - 1 + rotate) % 8) + 1
+
+
+def load_meta_rows():
+    with META_JOIN.open(newline="") as fh:
+        return list(csv.DictReader(fh, delimiter="\t"))
+
+
+def resolve_population(rows, team_id, vs_team_id=None, ver=None, vs_ver=None):
+    """file -> our seat (0/1) for every archived replay `team_id` played in,
+    optionally restricted to a specific opponent id and/or either side's
+    version. Seat resolution: whichever of teamAId/teamBId equals `team_id`
+    fixes the seat (A=0, B=1) -- this is the mapping meta_attrib.py's CHECK 1
+    validated at 1,445/1,445 files against the independently-derived
+    replay-decoded seat in join.tsv.
+    """
+    out = []
+    for r in rows:
+        if r.get("teamAId") == team_id:
+            idx, my_ver, opp_id, opp_ver = 0, r["teamAVersion"], r["teamBId"], r["teamBVersion"]
+        elif r.get("teamBId") == team_id:
+            idx, my_ver, opp_id, opp_ver = 1, r["teamBVersion"], r["teamAId"], r["teamAVersion"]
+        else:
+            continue
+        if vs_team_id is not None and opp_id != vs_team_id:
+            continue
+        if ver is not None and my_ver != str(ver):
+            continue
+        if vs_ver is not None and opp_ver != str(vs_ver):
+            continue
+        out.append((r["file"], idx))
+    return out
+
+
+def decode(path, rotate=0):
     data = path.read_bytes()
     mb = None; turns = []
     for num, wire, val in fields(data):
@@ -97,7 +171,7 @@ def decode(path):
                     foot = [(foe[0]+a, foe[1]+b) for a in (0,1) for b in (0,1)]
                     pos = tuple(ent.pos)
                     d2 = min((pos[0]-t[0])**2 + (pos[1]-t[1])**2 for t in foot)
-                    d = DELTA.get(ent.direction or 0)
+                    d = DELTA.get(_rot(ent.direction or 0, rotate))
                     ok = False
                     if d and d != (0, 0):
                         dx, dy = d
@@ -171,5 +245,85 @@ def main(argv):
     return 0
 
 
+def main_archived(argv):
+    """Archived mode: same shootable-on-build metric, sourced from already-
+    downloaded platform replays under replay_archive/ instead of freshly
+    generated local games. Population is resolved via corpus/meta_join.tsv
+    (see module docstring section above for the seat-resolution argument).
+
+        .venv/bin/python tools/loki17_mech.py --archived [options]
+
+    Options:
+        --team-id ID       team whose sentinels to measure (default: us,
+                            OpenSverige -- OURS_TEAM_ID)
+        --vs-team-id ID    restrict to games against this opponent id
+        --ver N            restrict --team-id's own version to N
+        --vs-ver N         restrict the opponent's version to N
+        --rotate N         KNOWN-ANSWER CONTROL: rotate every decoded facing
+                            by N compass steps before scoring (N=1 must
+                            collapse the hit rate to ~0%)
+        --min-own-d2 N     KNOWN-ANSWER CONTROL / reach filter: keep only
+                            sentinels with d2_own > N (strictly). N=145 is the
+                            raid.py-reach argument from
+                            docs/legs/LEG-loki17-battery-2026-08-10.md that
+                            isolates the population raid.py's can_fire_from
+                            guard builds by construction -- expected ~100%.
+        --limit N          cap the number of matching files (speed)
+    """
+    ap = argparse.ArgumentParser(prog="loki17_mech.py --archived", add_help=True)
+    ap.add_argument("--team-id", default=OURS_TEAM_ID)
+    ap.add_argument("--vs-team-id", default=None)
+    ap.add_argument("--ver", default=None)
+    ap.add_argument("--vs-ver", default=None)
+    ap.add_argument("--rotate", type=int, default=0)
+    ap.add_argument("--min-own-d2", type=int, default=None)
+    ap.add_argument("--limit", type=int, default=None)
+    args = ap.parse_args(argv)
+
+    rows = load_meta_rows()
+    pop = resolve_population(rows, args.team_id, args.vs_team_id, args.ver, args.vs_ver)
+    if args.limit:
+        pop = pop[: args.limit]
+
+    tot = hit = 0; d2s = []
+    fwd_tot = fwd_hit = 0
+    games = 0; missing = 0
+    for file, want_idx in pop:
+        path = ARCHIVE_DIR / file
+        if not path.exists():
+            missing += 1
+            continue
+        rows_d = decode(path, rotate=args.rotate)
+        if not rows_d:
+            continue
+        games += 1
+        for team, d2, ok, d2own in rows_d:
+            if team != want_idx:
+                continue
+            if args.min_own_d2 is not None and not (d2own > args.min_own_d2):
+                continue
+            tot += 1; d2s.append(d2); hit += ok
+            if d2 < d2own:
+                fwd_tot += 1; fwd_hit += ok
+
+    print(f"archived: team={args.team_id} vs={args.vs_team_id} ver={args.ver} "
+          f"vs_ver={args.vs_ver} rotate={args.rotate} min_own_d2={args.min_own_d2}")
+    print(f"  population: {len(pop)} files matched, {missing} missing on disk, "
+          f"{games} games with >=1 decoded sentinel")
+    if not tot:
+        print("  no sentinels decoded -- cannot measure"); return 1
+    d2s.sort()
+    print(f"  {hit}/{tot} shootable-on-build = {hit/tot:.1%}   "
+          f"median nearest d2 = {d2s[len(d2s)//2]}")
+    if fwd_tot:
+        print(f"    forward-sited (midpoint) subset (d2_enemy < d2_own): "
+              f"{fwd_hit}/{fwd_tot} = {fwd_hit/fwd_tot:.1%}")
+    else:
+        print("    forward-sited (midpoint) subset: 0 sentinels")
+    return 0
+
+
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["--archived"]:
+        raise SystemExit(main_archived(sys.argv[2:]))
     raise SystemExit(main(sys.argv[1:]))
