@@ -284,6 +284,24 @@ def commits_since(paths, since_hash, cwd=ROOT):
     return rows
 
 
+
+def topic_slugs(plank, paths):
+    """Distinct TOPIC slugs among a plank's doc artefacts.
+
+    `PREREG-loki20-guns-not-walls-2026-08-11.md` and
+    `PROPOSAL-loki20-healer-eviction-2026-08-11.md` share the plank name and are
+    UNRELATED PLANKS. Two lanes committed exactly that 41 seconds apart on
+    2026-08-11.
+    """
+    out = {}
+    pat = re.compile(rf"{re.escape(plank.lower())}[-_]([a-z0-9-]+?)(?:-\d{{4}}-\d\d-\d\d)?\.md$")
+    for f in paths:
+        m = pat.search(f.lower())
+        if m:
+            out.setdefault(m.group(1), []).append(f)
+    return out
+
+
 def withdrawal_state(paths, cwd=ROOT):
     """-> (killed_commit | None, revival_commit | None).
 
@@ -348,6 +366,25 @@ def check(plank, cwd=ROOT, handover="HANDOVER.md", quiet=False):
     say(f"  newest artefact  {art['hash']}  {art['date']}  {art['subject'][:88]}")
     say(f"    ({len(paths)} tracked path(s): {', '.join(paths[:3])}"
         f"{' ...' if len(paths) > 3 else ''})")
+
+    # ⛔ NAME COLLISION. Two unrelated planks under one name is not cosmetic
+    # once WITHDRAWN is a real gate: a withdrawal commit for either marks BOTH
+    # dead (the LOKI-18 failure with the polarity reversed -- a LIVE plank
+    # looking dead), and `plank_ack.tsv` keys on the NAME, so one DEAD ack
+    # silences both. DEAD is STICKY by design, so **the asymmetry built to fail
+    # safe fails UNSAFE under a collision.** Found 2026-08-11 when two lanes
+    # committed different LOKI-20s 41 seconds apart.
+    topics = topic_slugs(plank, paths)
+    if len(topics) > 1:
+        say("")
+        say(f"  *** NAME COLLISION: {len(topics)} unrelated planks share the name "
+            f"'{plank}'. ***")
+        for t, fs in sorted(topics.items()):
+            say(f"      {t:<28} {fs[0]}")
+        say("  A withdrawal for either marks BOTH dead, and a DEAD ack in")
+        say("  plank_ack.tsv silences both because it keys on the NAME.")
+        say("  RENAME ONE BEFORE ACTING ON EITHER.")
+        return "COLLISION", sorted(topics)
 
     # WITHDRAWAL CHECK -- runs FIRST, over the whole artefact history, and does
     # not depend on HANDOVER having ever mentioned the plank. That dependency is
@@ -577,6 +614,38 @@ def selftest():
         else:
             print("  [ok] later commit without the token          -> still flagged")
 
+        # t1-collision: ⛔ TWO UNRELATED PLANKS UNDER ONE NAME. Real: on
+        # 2026-08-11 two lanes committed PREREG-loki20-guns-not-walls and
+        # PROPOSAL-loki20-healer-eviction 41 seconds apart. It matters because
+        # WITHDRAWN is a real gate and plank_ack keys on the NAME, so one DEAD
+        # ack silences both -- the fail-safe asymmetry failing UNSAFE.
+        (d / "docs/prereg/PREREG-lokiCC-guns-not-walls-2026-08-11.md").write_text("a\n")
+        (d / "docs" / "research").mkdir(exist_ok=True)
+        (d / "docs/research/PROPOSAL-lokiCC-healer-eviction-2026-08-11.md").write_text("b\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "two unrelated lokiCC planks")
+        v, det = check("lokiCC", cwd=d, quiet=True)
+        if v != "COLLISION":
+            print(f"  [FAIL] two unrelated planks under one name must read "
+                  f"COLLISION, read {v}"); ok = False
+        else:
+            print(f"  [ok] two unrelated planks, one name           -> COLLISION {det}")
+
+        # ...and the OTHER direction: one plank with several of its OWN docs
+        # (prereg + leg read-out) must NOT read as a collision, or the guard
+        # fires on every plank that gets written up and is trained away.
+        (d / "docs" / "legs").mkdir(exist_ok=True)
+        (d / "docs/prereg/PREREG-lokiDD-ring-2026-08-11.md").write_text("a\n")
+        (d / "docs/legs/LEG-lokiDD-ring-2026-08-11.md").write_text("b\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "lokiDD prereg and its own leg read-out")
+        v, _ = check("lokiDD", cwd=d, quiet=True)
+        if v == "COLLISION":
+            print("  [FAIL] one plank's own prereg+leg must NOT read COLLISION")
+            ok = False
+        else:
+            print(f"  [ok] one plank, prereg + its own leg doc     -> {v} (not COLLISION)")
+
         # t1c: ⛔ THE FALSE POSITIVE, TAKEN VERBATIM FROM REAL HISTORY. The first
         # cut of this guard flagged `loki13` -- OUR LIVE SHIPPED INCUMBENT --
         # because `core_kill_share` contains the substring "kill". This is the
@@ -696,6 +765,7 @@ def main(argv):
     stale = []
     withdrawn = []
     suspect = []
+    collision = []
     for p in planks:
         v, _ = check(p)
         if v == "STALE":
@@ -707,12 +777,19 @@ def main(argv):
         elif v == "SUSPECT":
             worst = 1
             suspect.append(p)
+        elif v == "COLLISION":
+            worst = 1
+            collision.append(p)
     if withdrawn:
         print(f"\n*** {len(withdrawn)} WITHDRAWN: {', '.join(withdrawn)} ***")
         print("A committed prereg and an existing bot tree BOTH SURVIVE a")
         print("withdrawal. s30 fired 25 unrated games on loki18 forty minutes")
         print("after this tool ran clean on it, because the kill-word scan sat")
         print("inside the STALE branch and loki18 exited at UNMENTIONED.")
+    if collision:
+        print(f"\n*** {len(collision)} NAME COLLISION: {', '.join(collision)} ***")
+        print("Two unrelated planks share a name. A withdrawal or a DEAD ack for")
+        print("either one silences BOTH — rename one before acting on either.")
     if suspect:
         print(f"\n*** {len(suspect)} SUSPECT: {', '.join(suspect)} ***")
         print("Each has a commit that READS LIKE a retirement. Read it, then")
@@ -727,8 +804,8 @@ def main(argv):
     # a guard that cannot fail, which is the exact class this tool was built to
     # replace. This is the standing repo rule (`fcode status` exits 0 while
     # printing `Error: True`): GATE ON THE PRESENCE OF THE LOAD-BEARING FIELD.
-    label = ("WITHDRAWN" if withdrawn else "SUSPECT" if suspect
-             else "STALE" if stale else "OK")
+    label = ("COLLISION" if collision else "WITHDRAWN" if withdrawn
+             else "SUSPECT" if suspect else "STALE" if stale else "OK")
     print(f"\nPLANK_STATUS: {label}")
     return worst
 
