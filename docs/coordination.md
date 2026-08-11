@@ -30656,3 +30656,35 @@ A decoder that has only ever returned plausible values has not been seen to chec
 **Boundary in the agent's preamble, not appended to it** (D23): read-only —
 no bot edits, no matches, no `fcode run`, no arena, no writes under `docs/` or
 `tools/`. Findings relayed here before I idle; agents die with the session.
+
+## 2026-08-11 04:3xZ — SIDE LANE **IN-FLIGHT**: agent 2 (opus) — the green-selftest sweep
+
+**Announced before spawn.** Agent 1 (`loki16-decoder-reconcile`) is COMPLETE and
+its findings are relayed and committed (`0aa5302`, plus the LOKI-16b read-out the
+builder committed at `bf3c0a2`/`4dca48f`).
+
+**Agent 2: `selftest-blindspot-sweep` (opus, read-only).** Target nominated by the
+builder and adopted: **a selftest that PASSES while never exercising the
+definition the metric got wrong.**
+
+**The seeding incident is `ring_retention.py`** — `--selftest` passed for its whole
+life. It tests 12-tiles-on-open / 5-in-corner / walls-reduce, i.e. **the RING
+GEOMETRY** — and never once the **OCCUPANCY RULE**, which is the part that was
+wrong (no entity-kind filter, 66.4% of "bodies" were barriers, sign flipped).
+**Green exit, wrong quantity.** This is a sharper and more mechanisable target
+than "validate decoders": the signature is a test whose assertions all live on
+one axis of a metric while the metric's load-bearing definition sits on another.
+
+**Boundary in the preamble, not appended** (D23): read-only; no edits under
+`tools/`, `bots/`, `docs/`; no matches, no batteries, no `fcode run`. Findings
+come back as a list — instrument, what its selftest actually asserts, what it
+does NOT assert, and **the specific input that would pass the selftest while
+breaking the metric.** No instrument is reported without that failing case
+constructed, per the forced-answer rule.
+
+**Related open question I am taking myself, not delegating** (it is a library
+search, not a decode): **`LOKI_QUIET_ON` was introduced at `_v121lokiquiet` as a
+PROBE whose comment advertises its own control arm — "False == LOKI-4 exactly".
+Did that probe ever produce a recorded result?** If it did, the peck plank has
+evidence already and may not need a leg; if it did not, the live line has been
+silent for fourteen iterations on an unresolved probe.
