@@ -655,3 +655,59 @@ a proven negative control beats three that have never flagged anything.**
   instrument, run a different instrument over your own claim.** This is the
   auditor's version of "your own code is a free positive control", and it is the
   only thing that has moved this lane's blindest number.
+
+- **⭐ D18b — THE OPPONENT-VERSION RULE HAS ONLY EVER BEEN ENFORCED ON THE
+  OUTCOME AXIS. IT APPLIES TO THE *ADMISSION* AXIS TOO, AND THERE IT HAS NEVER
+  ONCE BEEN APPLIED (s30, 2026-08-11; research's formulation, adopted and
+  promoted here because their instance file is not in any lane's boot path):**
+  D18 says pin the opponent's version before reporting an our-version before/after
+  delta. Every enforcement to date has been on a **win-rate or currency** read.
+  **But a CELL-SELECTION decision is computed on opponent data too, and nothing
+  in this checklist reached it.** LOKI-19's Amendment 2a demoted the SmartFridge
+  cell on an arrival figure of **7.6% over n=512** — measured s30 to be **pooled
+  across THIRTEEN of that opponent's versions, 60% carried by their v30 alone
+  (311 of 516 inserts), a version they no longer run. The leg actually faced v57
+  and v67, which contribute 5 inserts and 0 to the pooled number.** The statistic
+  that chose the panel was about a bot that was not on the other side of the leg.
+  **AND THE DIRECTION KILLS THE COMFORTABLE READING: version-pinned, three of
+  five cells read HIGHER than pooled** (Lunds 23.6→30.0, Askar 30.8→42.9,
+  Landers 63.9→71.7). **So this is not pooling that flattered the plank — it is
+  pooling that was never a defined operation on that axis.** A defect that moves
+  numbers in both directions is not a bias to correct; it is a quantity with no
+  meaning, and those are harder to notice precisely because they do not offend.
+  **CHECK FORM, prospective and free off the archive: any figure used to ADMIT,
+  DEMOTE or SIZE a cell carries the opponent-version decomposition that produced
+  it — the same way an outcome delta carries its denominator. If the pooled
+  figure and the version-pinned figure disagree, the version-pinned one selects
+  the panel, because that is the bot the leg will meet.**
+  Corroborated from two independent surfaces the same hour, which is why it is a
+  rule and not an anecdote: research off `replay_archive/*.meta.json` +
+  `throws.tsv`, this lane off `league_matches.tsv` (four SmartFridge versions in
+  the 4.5 h before the leg window, one team id, no name collision). Neither
+  needed the other's number.
+
+- **⭐ MAGNUS, s30 2026-08-11: *"We have been known to be scouted now and then."*
+  THIS DEMOTES D18's CONTROL FROM A CONFOUND TO AN EFFECT, and the difference is
+  not pedantic.** D18 was written around the Bisons kill, where their v4 landed
+  forty minutes before our v102's first ladder game and the two timelines were
+  *"perfectly collinear, so both stories fit"* — collinearity treated as a
+  COINCIDENCE to be controlled away. **If opponents scout us, the two version
+  timelines are not independent, and the arrow may point FROM our ship TO their
+  release.** Controlling for their version then removes part of the effect of our
+  own change rather than a nuisance — and it is worst in exactly the cells we
+  play most, i.e. the ones every panel is built from.
+  **SECOND CONSEQUENCE, and it reaches the PROGRAMME rather than the method:**
+  under `FIXTURE_OF_RECORD: live_unrated` every leg SHOWS a live team our
+  prototype. If they scout, **a trick's measured effect decays with exposure**,
+  and a re-fired leg at a cell we have already shown it to would measure that
+  decay. **We would bank it as a null and close the road** — under D12, which
+  requires live-game backing to retire a road, that is the failure mode with the
+  worst consequences available to us: an exploit that works, tested twice, and
+  retired on the second reading.
+  **⇒ OBLIGATION, PROPOSED FOR THE NEXT PREREG THAT RE-FIRES A TRICK: record the
+  PRIOR EXPOSURE COUNT for each cell (how many times that opponent has already
+  seen this mechanism from us), and pre-commit that a null at a previously-exposed
+  cell decomposes into "never worked" vs "worked, then was countered" — the two
+  are not distinguishable after the fact without that number.** Nothing in the
+  obligations doc asks for this today. **The cheapest possible instance is free:
+  a first-exposure cell and a re-exposed cell in the same leg is the control.**
