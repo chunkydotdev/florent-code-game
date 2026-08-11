@@ -33372,3 +33372,91 @@ manufactured a **false alarm** (the s31 ferry-first window verified CLEAN on
 `createdAt`: pairing `12:32:59.588Z` carrying `teamBVersion=104`, submit
 `12:34:14Z`, next slot `12:52:59` — no match paired while the prototype held the
 slot). **In the mirror configuration it manufactures a false ALL-CLEAR.**
+
+# ============================================================================
+# 2026-08-11T12:55:10Z (`date`) — **MAGNUS, DIRECT: "do we actually make ANY progress? We
+# haven't had a new bot in over a day." — THE MEASUREMENT, AND WHAT A GENERATOR IS**
+# ============================================================================
+
+## 1. HE IS RIGHT. MEASURED, NOT CHARACTERISED.
+* **v104 has held the slot since 2026-08-10 07:21Z — 29 h 25 m.** v106, v111, v112
+  are prototype rotations rolled back inside five minutes. **ZERO SHIPS.**
+* **~19 arm trees built** (`_v130loki13` → `_v148ferryfirst`), **none shipped.**
+* **THE RATING LOOKS LIKE PROGRESS AND MOSTLY IS NOT.** 1615 → 1675, peak 1698,
+  now oscillating below its own peak — **a frozen bot converging to its true
+  strength and finishing.** Shipping era: v46 → v94, ~50 activations in 71 h,
+  **+220.** Frozen era: **+60, and it is spent.**
+* **THE PERMISSION TO SHIP EXISTS IN WRITING AND HAS NEVER BEEN USED.** The s30
+  operational reading — *positive point estimate + verified mechanism + no rule
+  breach; significance NOT required* — has shipped nothing. **best-fit 524/1024,
+  cap6 519/1024, ferry-first 518/1024 all hold positive point estimates and lack
+  only a DOSE CHECK**, which is local, serial and costs minutes.
+
+## 2. **WHAT A GENERATOR IS** — asked by Magnus, defined here because I used the
+## term from the s30 retro without one
+**FILTER: decides whether an existing candidate survives.** `h2h.sh`, `mde.py`,
+`inert_check`, `gate.py`, `plank_status`, `claim_check`, `fwd_read`, the prereg
+obligations. **No filter can invent a plank.**
+**GENERATOR: produces a new MECHANISM to try.** This project's real ones:
+reading the **engine binary** (→ the launcher kidnap, off `can_launch`'s missing
+team check); **opponent replay diffs** (→ farming v13's 3,329 attacks against
+v7–v12's zero); **API coverage gaps** (15 of 80 Controller methods never called —
+`destroy()`, `self_destruct()`, `get_scale_percent()`).
+**WHY WE DRIFTED TO FILTERS (builder's D60):** a false positive costs one window —
+bounded and VISIBLE; a false negative costs a plank nobody hears about —
+unbounded and INVISIBLE.
+**⭐ AND THE PART THAT OUTRANKS THE DEFINITION: THE NINE SCREENED ARMS WERE
+KNOB-TURNS, NOT MECHANISMS.** `heal` (a constant), `cap6`/`cap12` (constants),
+`noseal`/`nohome` (flags off), `roster` (composition), `bestfit` (a selection
+rule), `gunaxis`/`gunblank` (siting). **Knob-turns produce small effects; small
+effects need enormous screens.** ⇒ *"our screens resolve nothing"* and *"we have
+no generators"* **are one problem from two ends. The fix is not bigger screens,
+it is bigger candidate effects** — LOKI-25's mechanism resolved at **n=25**.
+
+## 3. ⛔ A GAP IN MY OWN CHECKLIST, FOUND BY MAGNUS'S QUESTION
+D4 catches a plank aimed at DEFENCE. **Nothing catches a plank that is a
+PARAMETER TWEAK rather than a MECHANISM**, while the directive defines Loki as
+*"cheap tricks, manipulation, poisoning and every exploit we can find."* **A
+heal-rate constant is not that.** To be added as a D-row.
+
+## 4. RECOMMENDATION PUT TO MAGNUS — **RESEARCH AS THE GENERATOR LANE.**
+**HIS CALL, NOT MINE: only Magnus widens a lane (rule 5), and this is recorded as
+a recommendation, NOT as a role change.** Research is right by INPUT — the two
+generators that have worked here are engine reads and opponent replay diffs, both
+their surfaces; the builder's surface is our own tree, which is where knob-turns
+come from. Three conditions:
+1. **⛔ THEIR OWN D5 IS THE FIRST THING IN ITS WAY.** *"Declining to name the
+   intervention is a deliverable"* was right about guessing a DIFF from a
+   mis-measured mechanism; **as a standing rule it commits the best-equipped lane
+   to not naming candidates.** ⇒ **SCOPE IT: decline to name the DIFF, still name
+   the MECHANISM.** Their forward-dwell brief is the case — they named four
+   constants and stopped; *"skip the traverse via launcher delivery rather than
+   optimise it"* is the generator output and their own geometry already implies it.
+2. **THE OUTPUT FORM MUST CHANGE OR IT PRODUCES MORE DOCUMENTS** — `audit_trigger`
+   is at **12.00** on analysis-outpacing-decisions (84 docs vs 7 decision rows).
+   Output = a candidate register entry: mechanism · the engine/API fact it rests
+   on · **a PREDICTED EFFECT SIZE** · the cheapest dose check. **The predicted size
+   is load-bearing: reject at GENERATION TIME any candidate that cannot resolve at
+   n≈25–50.**
+3. **THE ENGINE BOUNDARY BLOCKS IT AS WRITTEN** — engine probes are reserved to the
+   builder. **The highest-yield generator in our history is an engine read.**
+   **PENDING MAGNUS.**
+**Judged on SHIPS PER WEEK, not documents.** **And stated to Magnus as a
+medium-term fix that does nothing about today** — reorganising lanes without
+shipping adds a structural change to the list of things that were not the problem.
+
+## 5. THE FORWARD-EFFICIENCY SCREEN NOW CARRIES THREE INDEPENDENT DEFECTS
+1. **Sizing from a population the fixture cannot sample** (side lane): `CTRL=`our
+   own v104, `n≈440` derived from **live-game SE 0.0330**; enemy turret density in
+   fixture is ours (**1.29 gunners/game vs the field's 6.1**).
+2. **Replays overwritten** (side lane): one `replay.replay26`, every game clobbers
+   it — the control-arm level and SE are **unrecoverable after the fact**.
+3. **⭐ THE PROTECTED DENOMINATOR IS DECORATIVE AT THE PRESCRIBED n** (research,
+   `e10a5e0`, self-flagged): forward builds/game **mean 13.94, sd 24.31, CV 1.74**;
+   an unsized `db < 0` gate fires on **50.5% of NULL pairs at n=64, 48.5% at 440**.
+   Sized to `2·SE`, the threshold at n=440 is **−3.28 builds/game**, i.e. a PASS
+   means *"no fall ≥ 23.5% detected"*. **LOKI-25 — the plank this guard exists
+   because of — died at −23% forward presence = 3.21 against a 3.278 threshold.
+   THE GATE MISSES ITS OWN FOUNDING CASE BY A HAIR.** Catching a 23% fall at 80%
+   power needs **~700–900 games/arm**. ⇒ **the ratio and its guard have DIFFERENT
+   sample requirements and the original sized only the numerator.**
