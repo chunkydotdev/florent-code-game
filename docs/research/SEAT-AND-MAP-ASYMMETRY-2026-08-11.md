@@ -27,27 +27,70 @@ informative quantity is the seat, pooled:
 > *(2127 A-wins where treatment is A, plus 4096 − 1789 = 2307 A-wins where
 > treatment is B.)*
 
-**Sixteen cells are fitted exactly by two parameters:**
+Writing `s` = P(A wins | equal bots) and `t` = the pooled treatment effect, the
+two seat rates imply:
 
 | parameter | value |
 |---|---:|
-| seat advantage `s` = P(A wins \| equal bots) | **54.126%** |
+| seat advantage `s` | **54.126%** |
 | treatment effect `t`, pooled over the eight arms | **−2.195 pp** |
 
-Check: treatment-on-A = `s+t` = 51.93% ✓ · treatment-on-B = `(1−s)+t` = 43.68% ✓
-· pooled = 47.80% ✓.
+**⛔ AND THE "CHECK" I ORIGINALLY PRINTED HERE WAS VACUOUS — CAUGHT BY THE SIDE
+LANE, VERIFIED BY ME, RECORDED RATHER THAN QUIETLY DELETED.** This section read
+*"Sixteen cells are fitted exactly by two parameters… no residual"*, followed by
+three ✓ marks. **It consumes exactly two observed quantities and solves for
+exactly two free parameters** — `t = (a+b−1)/2`, `s = a−t`. **It is saturated:
+zero degrees of freedom, and it fits ANY pair of numbers with zero residual.**
+
+Driven to the other verdict, as the standing rule requires:
+
+```
+a=0.5193 b=0.4368 -> s=+0.5413 t=-0.0220   residual 0.00e+00
+a=0.9000 b=0.1000 -> s=+0.9000 t=+0.0000   residual 0.00e+00
+a=0.9900 b=0.9900 -> s=+0.5000 t=+0.4900   residual 0.00e+00
+a=0.6509 b=0.0724 -> s=+0.7893 t=-0.1383   residual 0.00e+00
+   WORST RESIDUAL OVER ALL PAIRS INCLUDING NONSENSE: 1.11e-16
+```
+
+**The sixteen cells are never touched by it. The three ✓ were the identity
+restated, not a test of it.** *(And it contradicted §4 of this same document,
+which reports a per-arm residual at χ²=15.93, p≈0.026 — "no residual" and "a
+residual" on one question in one file.)* **The parameter values above stand as a
+description; they were never evidence.**
 
 ## 2. ⛔ THE RULER IS **NOT** BENT — THE BALANCED DESIGN CANCELS IT
 
 The leading reading offered was *"seat A is worth ~+8pp, so every pooled screen
 verdict this project has produced was measured against a bent ruler."*
-**That is false, and the fit above is the demonstration.**
+**That is false — and the demonstration is one line of algebra, not the fit in §1.**
+*(The fit was my original argument for it. The fit is vacuous, §1; the conclusion
+was right anyway and the correct ground is stronger. Side lane, s31.)*
 
-Each arm plays **512 games in each seat**. A seat advantage enters `s+t` and
-`(1−s)+t` with opposite sign and **cancels exactly** in the pooled mean — which
-is precisely what seat-balancing is for. The decomposition recovers `t = −2.195pp`
-**through** an 8.25pp seat spread with no residual. **Pooled point estimates are
-unbiased. Past verdicts must not be repriced on this.**
+Each arm plays **512 games in each seat**, so **arm `i`'s pooled rate is**
+
+> `[(sᵢ + tᵢ) + ((1 − sᵢ) + tᵢ)] / 2 = 0.5 + tᵢ`
+
+**`s` cancels identically.** Verified by driving it where the vacuous version
+would have hidden a failure:
+
+| condition | recovered `t` |
+|---|---:|
+| `s` = 0.541 as observed | **−0.02195** |
+| `s` = 0.95 (huge seat advantage) | **−0.02195** |
+| `s` = 0.30 (seat advantage REVERSED) | **−0.02195** |
+| `s` = 0.50 (no seat advantage) | **−0.02195** |
+
+⇒ **Each arm's pooled estimate is unbiased for its own `tᵢ` regardless of the
+seat advantage's SIZE, its DIRECTION, and — critically — regardless of `s`
+VARYING BETWEEN ARMS**, which is exactly the heterogeneity §4 of this document
+measures and which my original fit-based argument would have had to explain away.
+
+**It even survives a seat × treatment interaction.** With `t_A = −0.05` and
+`t_B = +0.01`, the pooled figure recovers **−0.0200**, exactly the seat-averaged
+effect `(t_A+t_B)/2` — **which is the estimand a screen wants anyway.**
+
+**Pooled point estimates are unbiased. Past verdicts must not be repriced on
+this** — and that claim is now independent of anything §3 or §4 does.
 
 **And the power loss is negligible, which closes the other half of the worry.**
 Blocking on seat moves the variance of the pooled proportion from
