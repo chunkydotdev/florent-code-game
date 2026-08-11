@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.3** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.4** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -313,3 +313,83 @@ it failed on the death-attribution document.
 **Specifying a ratio without naming its aggregation was the single most expensive
 sentence I wrote today** — it would have been screened at n=64 with an MDE of 129%
 of level and parked as noise.
+
+### v1.4 — 2026-08-11 (s31) — MINOR: **the session the lane became a GENERATOR, and the retraction count doubled because of it**
+
+**Answered from the session's ~196 commits and the cross-lane message log, not from memory.**
+
+**1. CONSUMPTION — the highest of any session, and nothing went UNREAD.**
+**CONSUMED (changed a decision):** the forward-efficiency instrumentation retraction
+(builder did not spend 880 games on a bar no harness could read) · the seat/map work
+(builder withdrew *"the ruler is bent"*; **no past verdict repriced**) · the LOKI-27
+comparator (**both mechanism rows inverted**; builder adopted the v104 control arm
+instead) · sweep 23 (**no withdrawal threshold ported**) · dwell 1.30× (**builder had
+not written a line of the arm**) · the hazard decomposition → **two counterbattery
+arms built** · ring verification (**killed my own lead candidate before it was
+queued**) · core-death builder state (**killed the side lane's survival thesis on its
+own pre-registered branch, and became the evidentiary basis of `PROGRAMME.md`'s
+amended defence field**) · idle/active split (**unblocked #2**) · version strength
+(**Part A narrowed from 6 scorable pairings to 2**). **PENDING:** #13's tile numbers,
+#12's polarity control. **UNREAD: none.**
+
+**2. LATENCY — the best of any session. EVERY consumed item landed BEFORE its
+decision.** The instrumentation retraction beat the 880-game run; the dwell
+correction beat the arm being written; #3's withdrawal beat the build; Part A beat
+the overnight read-out; the ring verification beat its own queueing. **Archaeology
+cost this session: zero.**
+
+**3. RELAY FIDELITY — run on the forward-attribution relay. CLEAN.** I carried the
+agent's self-raised caveats (`B` is a range proxy ignoring facing/LOS; *"moved last
+round"* is partly a response to danger) into the relay rather than dropping them.
+**⇒ THE FAILURE MODE MOVED AGAIN: s28 was compressing agent output, s29 was causal
+labelling, s31 is ARITHMETIC IN MY OWN ANALYSIS.** A retro asking only s28's question
+would have returned "no defects" on a session with ten retractions.
+
+**4. OWN CHECKS — 5 self-caught vs 6 peer-caught. THE RATIO WENT BACKWARDS from
+s30's 4:3.** Self: the 5.11× side-set bug (numerator and denominator over different
+side-sets — **the exact fault I had flagged in the LOKI-27 comparator two hours
+earlier**); the `econ.tsv` `shots` near-miss (grepped first, repo already knew); the
+`match list` display-vs-`createdAt` trap; **my own §3 map-set retraction, on the
+control I should have run first**; a print bug reporting a +32.1pp lift as +0.3pp.
+Peer: the vacuous saturated fit · `h2h.sh` not downstream of `arena.py` · **the
+Goodharting of my own floor alarm** · #13's wrong quantity · #12's structural
+confound · my `CLAUDE.md` replacement text reproducing the fault it fixed.
+
+**5. DECLINES — four, and one was correctly REVERSED.** Declined the three-way state
+split as aimed at the 17% half — **then reversed it when re-aimed at #2, which is the
+right behaviour and worth distinguishing from flip-flopping**. Declined the position
+decode that would have rescued a dead thesis (by agreement with its author). Listed
+C5 **to rule it out** rather than pad. **Declined to loosen the queue matcher to hit
+a number** — that would have been the same Goodhart the GREP gate exists to stop.
+
+**6. PER LANE. ⛔ RETRACTIONS REACHING A LANE: TEN.** (instrumentation · `h2h.sh`
+路径 · the map-set §3 · *"your null discriminates nothing"* · the saturated fit ·
+2.28× dwell · the *"unexplained 2.3×"* · *"we go forward late"* · the
+clearing-sign · #13's two-thirds.) **Up from 5 in s30 and 4 in s29.**
+**The honest reading is not "worse work" — it is that the generator role published
+far more load-bearing claims. The rate matters more than the count, and NINE OF TEN
+were withdrawn before any lane acted.** The tenth (`h2h.sh`) reached a booted file
+and was corrected there.
+
+**7. CAUSE vs EFFECT — TWO FIRINGS, AND THE SECOND IS A NEW SHAPE.**
+*"We go forward late into a matured turret field"* was a causal label on an effect —
+**and I DID mark it INFERENCE in the document, then used it unmarked as a queue-row
+headline.** ⇒ **A marker on the deliverable does not travel into the queue row, the
+commit subject, or the relay.** *(This is the same defect as the `CLAUDE.md` ring
+claim, committed by me, on my own text, the same day.)* Second: *"the late build
+divergence is downstream of failing to clear"* asserted a causal **sign** that the
+data contradicted — replacement means clearing MORE causes MORE builds.
+
+**FIRINGS: 5.** (1) Q5 produced four declines including one refusal to game my own
+instrument. (2) Q3's discipline carried agent caveats into relays intact. (3) The
+routing rule put corrections into **booted** files four times — `CLAUDE.md`,
+`coordination.md` ×2, and **all three `.claude/commands/*.md`**. (4) Q7 caught the
+marker-does-not-travel defect. (5) **Q4 fired on my own arithmetic before publication
+in the one case that would have been most expensive** — the 5.11× hazard.
+
+**THE ONE THING I WOULD NOT PRODUCE AGAIN: the floor alarm as first written.** A
+minimum count is a target, and I met it inside half an hour by admitting six items of
+which three died on checks that had not yet run. **The alarm reproduced the exact
+failure it was built to catch.** The GREP admission gate is the repair; the lesson is
+that **an instrument whose output is a number the author is judged on must be
+designed against its own author.**
