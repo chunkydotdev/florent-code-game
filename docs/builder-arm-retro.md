@@ -92,3 +92,74 @@ EXPERIMENT and never asks whether the QUESTION is worth answering.*
 
 **If the answer is "no", say so plainly. A retro that finds a profound failure
 every time is performing.**
+
+---
+
+# INSTANCE — s29, 2026-08-11. FIRINGS: 5.
+
+**Run at Magnus's instruction after the wrap** (the boot/wrap step routing it
+landed at `8e1bde6`, *after* my process deltas were written — so this instance is
+late by its own rule and that is recorded rather than hidden). Answered from
+commits, logs and the platform.
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+**One verdict issued: LOKI-16b, +0.164 [+0.073, +0.253] against +0.15.** Written
+in the pre-committed row-1 language; **"confirmed" forbidden by my own table and
+absent.** ✅ **FIRES ONCE:** I published the secondary row as `hold_any` when the
+tool computes no such statistic. **The primary was untouched only because
+Amendment 2a had already barred that row from carrying a bar** — a guard written
+for a different reason, not judgement on my part.
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+**Three of mine.** (a) the kidnap-zero **cause** — I named team-keying; the real
+gate is `kind=="INSERT"`, falsified by RETREAT being same-team and zero. (b) the
+check I built for it **split on the wrong partition and diluted the live half by
+~24%** — the check committing the defect it was built to catch. (c) `delta_status`
+reported **11 enforced**; the ledger was counting itself and the honest figure is
+**7**. ✅ **FIRES: all three ran in the FLATTERING direction** — a cleaner story,
+a healthier check, a better number. **None ran against my interest.**
+
+### 3. INSTRUMENTS — driven to BOTH verdicts?
+Nine built or repaired; **every one has a selftest driven to both verdicts**, and
+four caught themselves broken before any number survived: `plank_status` (two
+false positives), `delta_status` (twice), `freshness` (built after), `ring_read`
+(mutant reproduces the wrong answer bit-for-bit). ✅ **FIRES:** `loki17_mech`
+**could not run at all** and I found that by running it — no selftest existed to
+find it earlier.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+✅ **FIRES ONCE:** I asserted zero rated leak "verified on the match counter."
+**The counter cannot answer that** — it proves no match COMPLETED, not that none
+was PAIRED. Corrected to the pairing boundary. The conclusion held; **the
+instrument named did not support it.**
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+**Four activations of v108, ZERO rated matches leaked**, verified on per-match
+`teamAVersion` at the pairing boundary and independently by the side lane.
+**Cost paid instead: 3 wasted activations and 15 rejections** from a runner
+spinning on a lagging meter. **Not free, and the free-looking version of that
+sentence is the one I nearly wrote.**
+
+### 6. WHAT THE BUDGET BOUGHT
+**100 games at LOKI-19's pre-registered n, one verdict, nine instruments.**
+✅ **FIRES:** I shipped **nothing** and read out **one** banked leg while
+**LOKI-19 sits unread** — the session's own product is the thing it did not
+consume.
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+That **LOKI-19's two arms were fired by two different runners** with different
+cell composition in window 1 — in HANDOVER and the prereg, and invisible in the
+data. That **`ring_retention.py` refuses to run on purpose.** That the
+**v95–v101 melee history is unexplained and two lanes were wrong about it.**
+
+## THE QUESTION THAT IS NOT A LIST
+**What did I do because it was in front of me rather than because it was next?**
+**The queue ran last-in-first-out all session** — I fixed every flag within
+minutes of it arriving while `audit_trigger` sat suppressing its own alarm from
+04:4x to the wrap. **Nine instruments got built and the leg they exist to serve
+is still unread.** Both are the same failure: **responsiveness is not priority**,
+and it feels identical from inside.
+
+**ROUTED (per the rule):** Q2's direction-of-error finding → **behaviour change,
+promoted to `.claude/commands/builder.md`.** Q7's items → HANDOVER. The rest →
+`OBSERVATION — NOT ROUTED`.
