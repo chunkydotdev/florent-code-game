@@ -33460,3 +33460,70 @@ shipping adds a structural change to the list of things that were not the proble
    THE GATE MISSES ITS OWN FOUNDING CASE BY A HAIR.** Catching a 23% fall at 80%
    power needs **~700–900 games/arm**. ⇒ **the ratio and its guard have DIFFERENT
    sample requirements and the original sized only the numerator.**
+
+# ============================================================================
+# 2026-08-11T12:58:00Z (`date`) — **⛔⛔ MAGNUS: "THIS GAME IS OVER IN A WEEK, WE HAVE DAYS TO
+# CLIMB, NOT WEEKS." THE ARITHMETIC, AND WHAT IT RETIRES.**
+# Relayed to both lanes immediately; recorded here because messages die.
+# ============================================================================
+
+## THE BUDGET — MEASURED OFF THE TAPE, NOT ESTIMATED
+v104 went **646 → 749 rated matches in 29.5 h = ~84/day** ⇒ **~420 RATED MATCHES
+REMAIN IN THE ENTIRE GAME.** Rating converges in ~100 matches ⇒ **≈ FOUR
+SHIP-AND-CONVERGE CYCLES LEFT.**
+
+## THE CONVERSION EVERY DECISION THIS WEEK SHOULD BE MADE IN
+Near 50%, **+1pp of true game share ≈ +7 Elo of equilibrium rating.**
+* knob-turn at +2.3pp (best-fit 524/1024) ≈ **+15 Elo**
+* a real trick — LOKI-13 at +18pp ≈ **+120 Elo**
+⇒ **On four cycles, a candidate under ~+10pp is not worth one of them.** This is
+the SAME wall as the screens (big effects resolve cheaply, small ones cannot be
+seen at all), so **a generation-time size filter buys both at once.**
+
+## ⭐ A SHIP IS NOT A CYCLE YOU SPEND — THE CORRECTION THAT CHANGES THE NEXT ACTION
+**The ladder converges in the BACKGROUND while we work.** The only scarce resource
+is CALENDAR DAYS OF CONVERGENCE. ⇒ **Every hour v104 holds the slot is convergence
+that cannot be recovered, and 29 h 25 m of it is already spent on a bot that has
+finished converging** (peak 1698, now oscillating below it). **Ship the best ready
+candidate because it is free to have live, not because it is good.**
+Downside bounded and already measured: one bad match caps at **~16 Elo**, the slot
+rule fires at **net5 ≤ −21**, rollback is **~15 s** verified on `Active bot:`.
+
+## WHAT THIS RETIRES FOR THE WEEK — each on its own lane's numbers
+1. **THE 880-GAME FORWARD-EFFICIENCY SCREEN** — research's own `e10a5e0`: the
+   protected denominator needs **~700–900 games/arm**, and at the prescribed 440
+   **the gate misses LOKI-25's own magnitude by a hair.** Best analysis on the
+   board; **not a days-scale ship.**
+2. **INSTRUMENT WORK** — `fwd_read`, `dose.py`, `loki27_read`: three correct fixes
+   in one hour, **zero bots.** `dose.py`'s own commit notes it is the **third**
+   unsized-bar defect today, caught by the author of the first two fixes. **A
+   healthy loop eating a scarce week.**
+3. **⛔ MOST OF THIS LANE, AND I HAVE SAID SO TO MAGNUS AND TO BOTH PEERS.**
+   **Prereg discipline exists so a null DURABLY CLOSES A ROAD. If the game ends in
+   a week, roads do not need closing — we need rating.** What still pays from the
+   side lane is narrow and fast: **no crashing bot · no rated leak · fast
+   rollback.** Sized mechanism bars, two-clock certification and closure
+   documentation **do not pay on this clock.** Standing instruction issued to both
+   lanes: **if I flag something that costs you an hour this week, push back and I
+   will drop it.**
+
+## OPEN, PENDING MAGNUS — recorded so neither is lost in a message
+1. **RESEARCH AS THE GENERATOR LANE** (recommended `c6b82d3`; only Magnus widens a
+   lane). On this clock the brief collapses to **ONE big-effect trick, ≥ ~+10pp,
+   not a pipeline.** Their **D5** must be scoped first: *decline the DIFF, still
+   name the MECHANISM.*
+2. **THE ENGINE-PROBE BOUNDARY** — reserved to the builder; **the highest-yield
+   generator in our history is an engine read.**
+3. **⛔ `R1000_IS_DEFEAT` JUST GOT EXPENSIVE, AND IT IS MAGNUS'S DOCTRINE.** ~half
+   of live-era games land in the tiebreak bucket; **the ladder PAYS for tiebreak
+   wins while our scorecard scores them −10.** On a research horizon the discipline
+   is right — it stops us optimising a dead end. **With five days left it may be
+   suppressing planks that would pay rating.** Flagged, not proposed.
+
+## THE STANDING CANDIDATES THAT ARE BIG-EFFECT AND UNBUILT
+**launcher DELIVERY** (research's own geometry: hazard is in the traverse, the
+destination is safe — 2.57% covered, a free ring tile in 100% of sampled rounds,
+so SKIP the traverse rather than optimise it) · **crash-induction** (APPROVED
+class, no norms question owed, bottom of queue for weeks) · **the ore-barrier
+carve-out** (*"barrier an ore tile a forward gun already covers"* — preserved by
+both primaries, never measured) · **spawn-ring RETENTION** as against presence.
