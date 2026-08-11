@@ -57,12 +57,115 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Words that have actually retired a plank in this repo's log. Matched on commit
-# SUBJECTS only. This list is a convenience for the human reading the output --
-# the STALE verdict never depends on it, because a plank can die in a commit
-# whose subject says none of these, and a subject can say "dead" about something
-# else entirely. The verdict is the timestamp comparison; this is the annotation.
-KILL_WORDS = ("dead", "kill", "withdraw", "retire", "abandon", "null",
-              "superseded", "off-programme", "stand down", "struck")
+# SUBJECTS only.
+#
+# ⛔ THESE ARE NOW LOAD-BEARING, s30 2026-08-11, AND THE PARAGRAPH THAT USED TO
+# SIT HERE SAID THE OPPOSITE: "the STALE verdict never depends on it ... this is
+# the annotation." That was true and it is exactly how this tool let a dead plank
+# through.
+#
+# WHAT HAPPENED. LOKI-18 was retracted by its own author at `c91c078`
+# 2026-08-10T22:03:16Z ("Corrected: raid.py sentinels are 100.0% shootable-on-
+# build. No defect; LOKI-17 and LOKI-18 both dead") and re-confirmed dead at
+# `38bc735` 06:08:40Z. At 06:45Z the builder submitted its tree and fired 25
+# unrated games on it.
+#
+# **AND THIS TOOL WAS RUN AT BOOT AND SAID NOTHING**, because HANDOVER had never
+# mentioned loki18, so `check()` returned UNMENTIONED and exited BEFORE reaching
+# the kill-word scan -- which lived inside the STALE branch and nowhere else.
+#
+# **THE DEEPER DEFECT: THIS TOOL MEASURED STALENESS AND THE FAILURE MODE IS
+# WITHDRAWAL. A withdrawal commit is just another artefact to a recency check, so
+# `38bc735` ("LOKI-17/18 ARE DEAD") made the plank look FRESHER, NOT DEADER.**
+# It was built after s29 got one commit from activating a withdrawn plank; s30
+# then fired one THROUGH it.
+#
+# So the scan now runs over the plank's WHOLE artefact history, independent of
+# HANDOVER, and produces its own non-OK verdict. False positives are the intended
+# direction: a subject can say "dead" about something else, and the cost of
+# reading one extra commit is nothing against the cost of firing on a retracted
+# premise.
+# ⛔ PATTERNS, NOT SUBSTRINGS, AND BOTH FORMS OF THAT MISTAKE WERE MADE HERE
+# WITHIN TEN MINUTES OF EACH OTHER. The first cut of this guard matched bare
+# substrings against commit subjects and produced, on its very first `--all`:
+#
+#   FALSE POSITIVE: `loki13` -- OUR LIVE SHIPPED INCUMBENT -- read WITHDRAWN,
+#   because "LOKI-13 POOLED n=100/100: +18.0pp core_kill_share HELD" contains
+#   the substring `kill`. **`core_kill_share` is the PRIMARY CURRENCY OF THIS
+#   PROJECT and appears in nearly every verdict we write.** A guard that flags
+#   the live bot on its first run is the "alarm trained away" failure this file
+#   already documents against itself, one section up.
+#
+#   FALSE NEGATIVE, worse: the commit that marked LOKI-18 VOID-ON-PREMISE read
+#   as a REVIVAL, because its subject contains "reinstated" -- describing the
+#   very mistake it was recording. **The document declaring a plank dead cleared
+#   the plank's death.**
+#
+# So: kill patterns are word-boundary regexes chosen to be rare in ordinary
+# verdict prose (`kill` and `null` are dropped outright -- `core_kill_share`,
+# `kill-speed`, "a null is an iteration"), and REVIVAL REQUIRES AN EXPLICIT
+# UPPERCASE TOKEN that cannot occur by accident. The asymmetry is deliberate:
+# a missed withdrawal costs a window fired on a retracted premise, a spurious
+# one costs reading a commit message.
+KILL_PATTERNS = [
+    r"\bis dead\b", r"\bare dead\b", r"\bboth dead\b", r"\bnow dead\b",
+    r"\bwithdrawn\b", r"\bwithdraw\b", r"\bwithdrew\b",
+    r"\bretract(?:ed|ion|ions|s)?\b",
+    r"\bretir(?:e|ed|es|ing|ement)\b",
+    r"\babandon(?:ed|ing)?\b",
+    r"\bsupersed(?:e|ed|es)\b",
+    r"\bvoid\b", r"\bstand down\b", r"\boff-programme\b",
+    r"\bstruck\b", r"\binert\b",
+]
+_KILL_RE = [(p, re.compile(p, re.I)) for p in KILL_PATTERNS]
+
+# The ONLY thing that clears a withdrawal. Case-sensitive and deliberately ugly:
+# reviving a dead plank is a decision that belongs on the record as a decision,
+# not something inferred from a commit that happens to use the word "reopen".
+REVIVAL_TOKEN = "PLANK-REVIVED"
+
+# ⛔ AND PROSE ALONE CANNOT CARRY THIS VERDICT. Measured on the first `--all`
+# after the patterns were tightened: SIX planks flagged, THREE of them false:
+#   loki16b  "WITHDRAW the +0.017: ring_retention.py does NOT reproduce LOKI-16"
+#            -- withdrew a NUMBER; the plank cleared its bar the next morning
+#   loki9    "PREREG LOKI-9 ... supersedes forward-survival"
+#            -- this plank supersedes something ELSE; wrong grammatical direction
+#   loki11   "the saturated cells are INERT CONSTANTS"
+#            -- "inert" describes the CELLS, not the plank
+# **A 50% false-positive rate is how an alarm gets trained away, which this file
+# already documents as its own failure mode two sections up.** A subject line
+# carries the word but not what the word is ABOUT, and no regex fixes that.
+#
+# So the flag is a SUSPICION that must be RESOLVED ONCE, on the record:
+#   * `PLANK-DEAD` in a commit subject  -> WITHDRAWN outright, no ack needed.
+#   * a prose match                     -> SUSPECT until acknowledged in
+#                                          tools/plank_ack.tsv, which records
+#                                          plank, commit, verdict and reason.
+# A dismissal is then a decision someone typed, not a judgement re-made silently
+# by every successor. New flags stay loud because old ones stop shouting.
+KILL_TOKEN = "PLANK-DEAD"
+ACK_FILE = ROOT / "tools" / "plank_ack.tsv"
+
+
+def load_acks(cwd=ROOT):
+    """-> {(plank, commit_hash): (verdict, note)}. Missing file = no acks."""
+    f = Path(cwd) / "tools" / "plank_ack.tsv"
+    acks = {}
+    if not f.exists():
+        return acks
+    for line in f.read_text().splitlines():
+        if not line.strip() or line.startswith("#"):
+            continue
+        parts = line.split("\t")
+        if len(parts) < 3:
+            continue
+        acks[(parts[0].strip(), parts[1].strip())] = (parts[2].strip(),
+                                                      parts[3] if len(parts) > 3 else "")
+    return acks
+
+# Kept for the report annotation and for callers that still import it.
+KILL_WORDS = ("dead", "withdrawn", "retract", "retire", "abandon",
+              "superseded", "void", "inert")
 
 
 def git(*args, cwd=ROOT):
@@ -181,9 +284,55 @@ def commits_since(paths, since_hash, cwd=ROOT):
     return rows
 
 
+def withdrawal_state(paths, cwd=ROOT):
+    """-> (killed_commit | None, revival_commit | None).
+
+    Scans EVERY commit touching this plank's artefacts, newest first, for a
+    subject that reads as a retirement. If one is found, looks for a LATER
+    commit whose subject explicitly revives it. Both are returned so the caller
+    can print the pair rather than a bare verdict.
+    """
+    out = git("log", "--format=%h\x1f%ad\x1f%s", "--date=format-local:%Y-%m-%d %H:%M:%S",
+              "--", *paths, cwd=cwd)
+    commits = []
+    for line in out.splitlines():
+        parts = line.split("\x1f")
+        if len(parts) != 3:
+            continue
+        commits.append({"hash": parts[0], "date": parts[1], "subject": parts[2]})
+    killed = None
+    killed_idx = None
+    for i, c in enumerate(commits):          # newest first
+        subj = c["subject"]
+        # REVIVAL IS CHECKED FIRST, and it has to be: a revival commit almost
+        # always NAMES the thing it is undoing, so it will also match a kill
+        # pattern. Scanning kills first made such a commit its own withdrawal,
+        # with nothing newer to clear it.
+        if REVIVAL_TOKEN in subj:
+            return None, c
+        if KILL_TOKEN in subj:
+            killed = dict(c, hits=[KILL_TOKEN], hard=True)
+            killed_idx = i
+            break
+        hits = [pat for pat, rx in _KILL_RE if rx.search(subj)]
+        if hits:
+            killed = dict(c, hits=hits, hard=False)
+            killed_idx = i
+            break
+    if killed is None:
+        return None, None
+    # commits[:killed_idx] are strictly NEWER than the withdrawal. Unreachable
+    # in practice because the newest-first loop returns on the token, but kept
+    # so the function is correct if that loop is ever reordered.
+    for c in reversed(commits[:killed_idx]):
+        if REVIVAL_TOKEN in c["subject"]:
+            return killed, c
+    return killed, None
+
+
 def check(plank, cwd=ROOT, handover="HANDOVER.md", quiet=False):
     """-> (verdict, detail). verdict in {"STALE", "OK", "NO-ARTEFACTS",
-    "UNMENTIONED"}. Only STALE exits 1."""
+    "UNMENTIONED", "WITHDRAWN"}. STALE and WITHDRAWN exit 1."""
     paths = artefact_paths(plank, cwd=cwd)
     art = newest_commit(paths, cwd=cwd)
     men = newest_handover_mention(plank, cwd=cwd, handover=handover)
@@ -199,6 +348,45 @@ def check(plank, cwd=ROOT, handover="HANDOVER.md", quiet=False):
     say(f"  newest artefact  {art['hash']}  {art['date']}  {art['subject'][:88]}")
     say(f"    ({len(paths)} tracked path(s): {', '.join(paths[:3])}"
         f"{' ...' if len(paths) > 3 else ''})")
+
+    # WITHDRAWAL CHECK -- runs FIRST, over the whole artefact history, and does
+    # not depend on HANDOVER having ever mentioned the plank. That dependency is
+    # precisely what let LOKI-18 through: no mention -> early return -> the scan
+    # never ran. See KILL_WORDS.
+    killed, revived = withdrawal_state(paths, cwd=cwd)
+    if killed and not revived and not killed.get("hard"):
+        verdict, note = load_acks(cwd=cwd).get((plank, killed["hash"]), (None, ""))
+        if verdict == "NOT-A-WITHDRAWAL":
+            say(f"  (a commit reads like a retirement and was reviewed and "
+                f"dismissed: {killed['hash']} — {note.strip()})")
+            killed = None
+        elif verdict == "DEAD":
+            killed = dict(killed, hard=True)
+        else:
+            say("")
+            say("  *** SUSPECT: a commit for this plank READS LIKE a retirement, "
+                "and prose cannot settle it. ***")
+            say(f"      {killed['hash']}  {killed['date']}  {killed['subject'][:76]}")
+            say(f"      matched: {', '.join(killed['hits'])}")
+            say("  READ THAT COMMIT before you fire, then record the answer in")
+            say(f"  tools/plank_ack.tsv:   {plank}\t{killed['hash']}\t"
+                f"DEAD|NOT-A-WITHDRAWAL\t<why>")
+            return "SUSPECT", [killed]
+    if killed and not revived:
+        say("")
+        say("  *** WITHDRAWN: an artefact commit for this plank reads as a "
+            "RETIREMENT and nothing later revives it. ***")
+        say(f"      {killed['hash']}  {killed['date']}  {killed['subject'][:76]}")
+        say(f"      matched: {', '.join(killed['hits'])}")
+        say("  DO NOT ACTIVATE, SUBMIT OR FIRE THIS PLANK on the strength of a")
+        say("  committed prereg or an existing bot tree -- both survive a")
+        say("  withdrawal. To clear this, a later commit touching its artefacts")
+        say(f"  must carry the explicit token {REVIVAL_TOKEN}.")
+        return "WITHDRAWN", [killed]
+    if killed and revived:
+        say(f"  (withdrawn at {killed['hash']}, revived at {revived['hash']} — "
+            f"proceeding)")
+
     if men is None:
         say(f"  {handover} has NEVER mentioned this plank.")
         say("  -> not stale, but nothing points at it either. If it is live, say so there.")
@@ -274,15 +462,124 @@ def selftest():
         run(d, "add", "-A")
         run(d, "commit", "-q", "-m", "No defect; lokiXX is dead")
 
+        # ⛔ EXPECTATION CHANGED s30: this now reads WITHDRAWN, not STALE, and the
+        # change is the whole point of that revision. STALE says "HANDOVER is out
+        # of date"; WITHDRAWN says "this plank is DEAD" -- and s30 fired 25
+        # unrated games on a plank whose HANDOVER was merely SILENT, so silence
+        # produced no STALE at all. WITHDRAWN does not depend on HANDOVER.
         v, later = check("lokiXX", cwd=d, quiet=True)
-        if v != "STALE":
-            print(f"  [FAIL] killed-but-unannounced should read STALE, read {v}"); ok = False
+        if v != "SUSPECT":
+            print(f"  [FAIL] killed plank should read SUSPECT, read {v}"); ok = False
         else:
             subj = " ".join(c["subject"].lower() for c in later)
             if not any(w in subj for w in KILL_WORDS):
-                print("  [FAIL] STALE but the kill word was not surfaced"); ok = False
+                print("  [FAIL] SUSPECT but the kill word was not surfaced"); ok = False
             else:
-                print("  [ok] plank killed, HANDOVER silent            -> STALE + kill word")
+                print("  [ok] prose kill, unacknowledged               -> SUSPECT + word")
+
+        # t1-ack-a: acknowledging it DEAD hardens the verdict.
+        (d / "tools").mkdir(exist_ok=True)
+        kill_hash = later[0]["hash"]
+        (d / "tools" / "plank_ack.tsv").write_text(
+            f"lokiXX\t{kill_hash}\tDEAD\tits author said so\n")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        if v != "WITHDRAWN":
+            print(f"  [FAIL] a DEAD ack must harden SUSPECT to WITHDRAWN, read {v}")
+            ok = False
+        else:
+            print("  [ok] acknowledged DEAD                       -> WITHDRAWN")
+
+        # t1-ack-b: THE OTHER DIRECTION. Acknowledging it NOT-A-WITHDRAWAL must
+        # clear it — this is the branch that keeps the alarm believable, and its
+        # real cases are loki9/loki11/loki16b, where the retirement word was
+        # about a number, a fixture, or the wrong grammatical direction.
+        (d / "tools" / "plank_ack.tsv").write_text(
+            f"lokiXX\t{kill_hash}\tNOT-A-WITHDRAWAL\tit withdrew a number\n")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        if v in ("WITHDRAWN", "SUSPECT"):
+            print(f"  [FAIL] a NOT-A-WITHDRAWAL ack must clear it, read {v}"); ok = False
+        else:
+            print(f"  [ok] acknowledged NOT-A-WITHDRAWAL           -> {v}")
+
+        # t1-ack-c: an ack for a DIFFERENT commit must NOT silence this one, or
+        # one dismissal would deafen the plank forever.
+        (d / "tools" / "plank_ack.tsv").write_text(
+            "lokiXX\tdeadbeef\tNOT-A-WITHDRAWAL\tsome other commit\n")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        if v != "SUSPECT":
+            print(f"  [FAIL] an ack for another commit must not clear this one, read {v}")
+            ok = False
+        else:
+            print("  [ok] ack keyed to a different commit         -> still SUSPECT")
+        (d / "tools" / "plank_ack.tsv").unlink()
+
+        # t1a: THE OTHER DIRECTION, and without it WITHDRAWN is a verdict that can
+        # only ever be reached and never left -- an alarm that cannot be satisfied
+        # is one that gets trained away, which is this file's own stated failure
+        # mode. An explicit revival commit must CLEAR it.
+        (d / "docs/prereg/PREREG-lokiXX.md").write_text("bar: >85%\nrevived\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "lokiXX PLANK-REVIVED: the retraction was itself wrong")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        if v == "WITHDRAWN":
+            print("  [FAIL] an explicit revival commit must clear WITHDRAWN"); ok = False
+        else:
+            print(f"  [ok] explicit revival commit                 -> {v} (not WITHDRAWN)")
+
+        # t1b: and a revival must be EXPLICIT -- merely touching the tree again
+        # after a withdrawal must NOT clear it, or every subsequent commit
+        # silently resurrects a dead plank.
+        (d / "docs" / "prereg" / "PREREG-lokiYY.md").write_text("bar\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "create lokiYY")
+        (d / "docs/prereg/PREREG-lokiYY.md").write_text("bar\ndead now\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "lokiYY is dead, withdrawn")
+        (d / "docs/prereg/PREREG-lokiYY.md").write_text("bar\ndead now\nmore work\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "lokiYY: tidy the document")
+        v, _ = check("lokiYY", cwd=d, quiet=True)
+        if v != "SUSPECT":
+            print(f"  [FAIL] a later NON-revival commit must not clear it, read {v}")
+            ok = False
+        else:
+            print("  [ok] later commit without the token          -> still flagged")
+
+        # t1c: ⛔ THE FALSE POSITIVE, TAKEN VERBATIM FROM REAL HISTORY. The first
+        # cut of this guard flagged `loki13` -- OUR LIVE SHIPPED INCUMBENT --
+        # because `core_kill_share` contains the substring "kill". This is the
+        # cell that separates word-boundary patterns from substring matching, and
+        # it uses the actual commit subject that produced the false alarm.
+        (d / "docs" / "prereg" / "PREREG-lokiZZ.md").write_text("bar\n")
+        (d / "HANDOVER.md").write_text(
+            (d / "HANDOVER.md").read_text() + "lokiZZ is live.\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m",
+            "LOKI-ZZ POOLED n=100/100: +18.0pp core_kill_share HELD, Fisher p=0.016")
+        v, _ = check("lokiZZ", cwd=d, quiet=True)
+        if v == "WITHDRAWN":
+            print("  [FAIL] 'core_kill_share' must NOT read as a withdrawal"); ok = False
+        else:
+            print(f"  [ok] core_kill_share in a verdict subject   -> {v} (not WITHDRAWN)")
+
+        # t1d: ⛔ THE FALSE NEGATIVE, ALSO FROM REAL HISTORY AND WORSE. The commit
+        # that marked LOKI-18 VOID-ON-PREMISE contained the word "reinstated" --
+        # describing the mistake it was recording -- and under prose matching THE
+        # DOCUMENT DECLARING A PLANK DEAD CLEARED THE PLANK'S DEATH.
+        (d / "docs" / "prereg" / "PREREG-lokiWW.md").write_text("bar\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "create lokiWW")
+        (d / "docs/prereg/PREREG-lokiWW.md").write_text("bar\nvoid\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m",
+            "PREREG-lokiWW AMENDMENT 2 - VOID ON PREMISE: the amendment reinstated "
+            "a retracted number and then forbade its revision")
+        v, _ = check("lokiWW", cwd=d, quiet=True)
+        if v != "SUSPECT":
+            print(f"  [FAIL] a VOID commit saying 'reinstated' must still be "
+                  f"flagged, read {v}"); ok = False
+        else:
+            print("  [ok] VOID commit containing 'reinstated'    -> SUSPECT")
 
         # t2: HANDOVER is updated to record the death. -> back to OK.
         # This is the branch that matters most: if the tool cannot be SATISFIED,
@@ -365,11 +662,29 @@ def main(argv):
     planks = discover_planks() if argv[0] == "--all" else argv
     worst = 0
     stale = []
+    withdrawn = []
+    suspect = []
     for p in planks:
         v, _ = check(p)
         if v == "STALE":
             worst = 1
             stale.append(p)
+        elif v == "WITHDRAWN":
+            worst = 1
+            withdrawn.append(p)
+        elif v == "SUSPECT":
+            worst = 1
+            suspect.append(p)
+    if withdrawn:
+        print(f"\n*** {len(withdrawn)} WITHDRAWN: {', '.join(withdrawn)} ***")
+        print("A committed prereg and an existing bot tree BOTH SURVIVE a")
+        print("withdrawal. s30 fired 25 unrated games on loki18 forty minutes")
+        print("after this tool ran clean on it, because the kill-word scan sat")
+        print("inside the STALE branch and loki18 exited at UNMENTIONED.")
+    if suspect:
+        print(f"\n*** {len(suspect)} SUSPECT: {', '.join(suspect)} ***")
+        print("Each has a commit that READS LIKE a retirement. Read it, then")
+        print("record the answer in tools/plank_ack.tsv so it stops shouting.")
     if stale:
         print(f"\n*** {len(stale)} STALE: {', '.join(stale)} ***")
         print("Do not activate against HANDOVER's word until these are reconciled.")
@@ -380,7 +695,9 @@ def main(argv):
     # a guard that cannot fail, which is the exact class this tool was built to
     # replace. This is the standing repo rule (`fcode status` exits 0 while
     # printing `Error: True`): GATE ON THE PRESENCE OF THE LOAD-BEARING FIELD.
-    print(f"\nPLANK_STATUS: {'STALE' if stale else 'OK'}")
+    label = ("WITHDRAWN" if withdrawn else "SUSPECT" if suspect
+             else "STALE" if stale else "OK")
+    print(f"\nPLANK_STATUS: {label}")
     return worst
 
 

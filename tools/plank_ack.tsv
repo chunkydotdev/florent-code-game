@@ -1,0 +1,18 @@
+# PLANK WITHDRAWAL ACKNOWLEDGEMENTS — read by tools/plank_status.py
+#
+# A commit subject can carry a retirement word without retiring the plank
+# ("WITHDRAW the +0.017", "supersedes forward-survival", "the CELLS are INERT").
+# Prose cannot settle that, so plank_status flags it SUSPECT and stops flagging
+# once the answer is recorded HERE, as a decision someone typed.
+#
+# plank <TAB> commit <TAB> DEAD|NOT-A-WITHDRAWAL <TAB> why
+#
+# Adding a row is a decision on the record. A `DEAD` row makes the tool refuse
+# that plank outright; a `NOT-A-WITHDRAWAL` row silences it for that commit ONLY
+# — a later retirement commit flags again, which is the whole point.
+loki17	c91c078	DEAD	Its own author: "my DELTA omitted CENTRE=0 and rotated every facing one step ... Corrected: raid.py sentinels are 100.0% shootable-on-build. No defect; LOKI-17 and LOKI-18 both dead." Re-confirmed 38bc735.
+loki18	d5224a1	DEAD	VOID ON PREMISE. Baseline 0/319 was retracted at c91c078 before Amendment 1 reinstated it; the metric is at ceiling in both arms and downstream of a guard the diff does not touch. 25 unrated games fired on it, rated cost zero.
+loki14b	50f311a	DEAD	"LOKI-14b ABANDONED at 8/16 on Magnus's directive" — below its own dose gate, so no bar attaches.
+loki9	ff3e6bc	NOT-A-WITHDRAWAL	Wrong grammatical direction: "PREREG LOKI-9 facing ... supersedes forward-survival" says this plank supersedes something ELSE. Nothing retires loki9 here.
+loki11	a31c28c	NOT-A-WITHDRAWAL	"the saturated cells are INERT CONSTANTS" describes the CELLS, not the plank. A property of a fixture, not a retirement.
+loki16b	6c74b67	NOT-A-WITHDRAWAL	Withdrew a NUMBER (+0.017), not the plank — and loki16b went on to clear its bar at +0.164 [+0.073, +0.253] the next morning. A confirmation leg is still queued.
