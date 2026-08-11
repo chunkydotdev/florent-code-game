@@ -297,3 +297,44 @@ slot for **8 seconds**, against observed pairings at 18:52:59Z and 19:12:59Z
 (minute ≡ 12 mod 20, second :59, ten consecutive rows, **re-derived tonight and
 not hardcoded**). **Rated leakage is expected to be ZERO and will be verified
 per-match at the pairing boundary rather than asserted from that arithmetic.**
+
+# AMENDMENT 3 — THE SHIP INVERTED THIS LEG'S EXPOSURE PROFILE (and made it cheaper)
+
+**§5.3 and A1.4 priced the leg with gunaxis as the PROTOTYPE needing activation.
+It is now the INCUMBENT (v114, 19:14Z), so the gunaxis arm costs NOTHING** — it
+holds the slot already. **v104 and v112 are now the exposed arms.** Still 2 of 3
+non-incumbent, but **the plank under test is the free one and the CONTROLS are
+the expensive ones**, which is the reverse of what was priced. `MAIN` 112→114
+already handles the holder assertion. **Budget unchanged at ≤2 leaked rated
+matches; the arm-rotation cost model in A1.4 now describes the old world.**
+
+# ⭐ OBSERVATION, NOT A BAR — WE ARE BEING SCOUTED, AND THE OPPONENT IS ITERATING FASTER THAN OUR STATISTICS
+
+`fcode match list --mine` at 20:30Z, reading the OPPONENT's version column:
+
+    19:16:03   SmartFridge v28  vs v114   we took 3/5
+    19:38:03   SmartFridge v30  vs v114   we took 2/5
+    19:52:59   SmartFridge v34  vs v114   we took 1/5
+    20:27:06   SmartFridge v35  vs v114   we took 2/5
+
+**v28 → v35 in seventy minutes**, and the off-slot timestamps (19:16:03,
+19:38:03, 20:27:06 — not the `:12:59/:32:59/:52:59` ladder cadence) are **unrated
+matches THEY initiated against US.** The platform never says who started a match
+(`triggeredBy` is the TYPE, not the actor), so this is inferred from the cadence,
+not read — **but the version churn is read directly and is not in doubt.**
+
+**TWO CONSEQUENCES, both about our measurement rather than about them:**
+1. **Any per-opponent statistic we hold on SmartFridge is stale on arrival.**
+   D18 already says a team scores materially less against an opponent's LATER
+   versions; here the later version arrives every ~20 minutes. **Their cell was
+   already the one where five independent defects landed in LOKI-19.**
+2. **This is the collinearity problem accelerating**, not a new one: we cannot
+   grade our own ships against a cell that re-versions faster than we accumulate
+   games in it. ⇒ **prefer STABLE opponents for measurement and treat SmartFridge
+   as a live sparring partner, not as a yardstick.**
+
+⚠ **NOT A CLAIM ABOUT INTENT.** *"They are scouting us"* is one reading; another
+is that they run their own unrated screens against whoever is adjacent and we
+happen to be adjacent. **Nothing here distinguishes those and no plank should be
+built on the difference.** What IS established: their version churn, and that our
+per-opponent numbers on that cell decay faster than we can measure them.
