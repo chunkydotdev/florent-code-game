@@ -1124,3 +1124,33 @@ a proven negative control beats three that have never flagged anything.**
   **COUNTERPART, and it is the reciprocal obligation:** when handing a document
   for audit, name the doors **and** say *"these are my priors — attack the frame
   too."* Research adopted this for future handoffs in the same message.
+
+- **⭐ D20 (NEW) — A PLANK THAT IS A PARAMETER TWEAK RATHER THAN A MECHANISM MUST
+  DECLARE ITS PREDICTED EFFECT SIZE, AND ON A SHORT CLOCK MUST CLEAR ~+10pp
+  (s31, 2026-08-11T13:08:47Z; the gap Magnus's question exposed in this checklist):**
+  D4 catches a plank aimed at DEFENCE. **Nothing caught a plank that is a KNOB-TURN**,
+  while the directive defines Loki as *"cheap tricks, manipulation, poisoning and
+  every exploit we can find."*
+  **THE EVIDENCE IS THE WHOLE s30 SCREEN:** `heal` (a constant), `cap6`/`cap12`
+  (constants), `noseal`/`nohome` (flags off), `roster` (composition), `bestfit`
+  (a selection rule), `gunaxis`/`gunblank` (siting). **Nine arms, zero new
+  mechanisms.** Magnus, 2026-08-11, after 29 h with no ship: *"do we actually make
+  ANY progress?"*
+  **⇒ THE RULE, AND ITS ARITHMETIC:** near 50%, **+1pp of true game share ≈ +7 Elo
+  of equilibrium rating.** A knob-turn at +2.3pp is **~+15 Elo**; LOKI-13 at +18pp
+  was **~+120**. **With ~420 rated matches left (~4 ship-and-converge cycles), a
+  candidate under ~+10pp is not worth one of them.**
+  **⇒ AND IT DISSOLVES THE SCREEN PROBLEM AT THE SAME TIME:** knob-turns produce
+  small effects, small effects need enormous screens, **so the SAME size filter
+  that buys a worthwhile plank also buys a resolvable one.** LOKI-25's mechanism
+  resolved at **n=25**; the s30 screen at n=64 could not see **+17.5pp**.
+  **⇒ WATCH FORM: when a plank's diff is a constant, a flag or a threshold, ask for
+  the predicted effect size BEFORE the prereg. If it cannot be stated, that is the
+  finding.** A tweak may still be shipped — it is nearly free to have live while
+  something bigger is built — **but it must not consume a CYCLE, a screen, or a
+  window.**
+  **⛔ SCOPE, so this does not become a veto:** the bar is on what a plank may
+  CONSUME, never on whether it may SHIP. The s30 operational rule stands —
+  positive point estimate + verified mechanism + no rule breach, significance not
+  required. **A ship is not a cycle you spend; the ladder converges in the
+  background.**
