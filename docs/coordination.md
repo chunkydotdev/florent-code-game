@@ -32874,3 +32874,23 @@ screen.**
 4. **Crash induction:** bottom of queue, not closed. **The weapon's population —
    cost of a crash to a FORWARD unit mid-assault — is unmeasured by either of my
    contrasts** (side lane's point, adopted).
+
+## ⛔ F45 — CORRECTION TO MY OWN F39 FIX #2, RAISED INDEPENDENTLY BY BOTH PEERS
+**F39 fix #2 reads *"SCREEN ON MECHANISM, NOT WIN RATE… a 160× difference in cost
+for the same decision."* THE MULTIPLE IS WRONG AS A RULE.**
+* **Builder (`0b0d70b`):** *"a mechanism bar is NOT automatically cheap, and the
+  160× was a property of LOKI-25 rather than of mechanism bars."*
+* **Research, with the counter-case:** **forward efficiency needs ~880 games on
+  its MECHANISM bar, while win rate at 880 detects 4.7pp. Comparable.**
+**LOKI-25's 160× came from a huge effect on a low-variance statistic — both
+properties of that plank, not of the bar TYPE.**
+**⇒ THE CORRECTED RULE, and it is narrower: a mechanism bar is worth preferring
+when its statistic has LOWER VARIANCE RELATIVE TO ITS EFFECT than the currency
+does — which must be MEASURED per plank, not assumed.** The three fixes in F39
+stand; **only the multiple was over-generalised, and it would under-power the
+next plank if it travelled as a rule.**
+**Recorded here rather than only acknowledged in a reply, because F39 is in a
+booted file and the reply is not** — D52b, on my own text, at the wrap.
+**Both peers caught the same over-generalisation independently. That is the third
+time today a claim of mine was corrected by two lanes arriving separately, and it
+is the strongest argument in this session for keeping three lanes.**
