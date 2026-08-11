@@ -223,3 +223,113 @@ read out against it.
 `undamaged` 2,401 vs 2,310; the `CORE_PAIRS`/CLI symmetry claim; now this).
 **Every one was the instrument, never the bot. The only thing that has reliably
 caught them is running the new tool against a number the old one produced.**
+
+---
+
+# AMENDMENT 2 — THE TWO DECISIONS THIS DOCUMENT SAID MUST BE MADE BEFORE THE NUMBER IS READ
+
+**Written 2026-08-11 06:2x CEST by the s29 BUILDER (`date`, same shell call).
+ADD-only. Committed BEFORE any corrected retention figure for either arm has
+been computed or seen.** The prereg's own "What is needed" list asks for exactly
+these two and records that neither was made. They are made here.
+
+## 2a. THE STATISTIC IS `hold_pinned`, AND THE BAR'S PROVENANCE DECIDES IT — NOT THE PROSE
+
+The research arm's adjudication (2026-08-11, seven forced-answer cells)
+establishes that **"longest hold" names two legitimately different statistics**:
+
+* **`hold_any`** — longest run of rounds with **≥1 of our builders on ≥1 ring tile**
+* **`hold_pinned`** — longest run of **the same builder on the same tile**
+
+Its relay cell forces **1.000** and **0.500** respectively and **neither decoder
+is wrong there.** This is an ambiguity, not a defect — and this document
+predicted it in its own limitations section: *"'longest unbroken run with ANY of
+our builders on a ring tile' and 'longest episode for ONE body' are different
+statistics that share a name — exactly the `undamaged` failure."*
+
+**THE PROSE IS GENUINELY AMBIGUOUS AND I AM NOT RESOLVING IT ON THE PROSE.**
+The PRIMARY BAR section says *"the longest single unbroken occupancy of **an**
+enemy-ring tile"* (singular tile, unspecified body); the MEASUREMENT section says
+*"one of our builders on an enemy-ring tile"* (any body). **Those point different
+ways and both are in this file.**
+
+**WHAT DECIDES IT IS WHERE THE NUMBER `+0.15` CAME FROM.** This document sets the
+bar as *"≥ +0.15 ... LOKI-16 measured +0.182 / +0.184 / +0.264 / +0.263 ... +0.15
+sits below the smallest of those."* **The bar was CALIBRATED on LOKI-16's four
+map figures, and research establishes those figures are `hold_pinned`.**
+
+⇒ **A bar derived from `hold_pinned` values, applied to a `hold_any` read-out, is
+a threshold in one unit tested against a quantity in another.** That is the exact
+error class this repo has now logged four times in one day (52.1% at 45° vs
+exact-ray; two definitions of `undamaged` 3.8% apart; the sentinel metric
+inverted three times; this). **The statistic is `hold_pinned` because the bar is
+only meaningful against the thing that produced it.**
+
+**`hold_any` MAY STILL BE REPORTED** — it is a real quantity and the prose
+arguably asks for it — **but it carries NO BAR and the words "clears", "meets"
+and "fails" are FORBIDDEN next to it.**
+
+## 2b. THE DECODER IS `ring_read.py`. `ring_retention.py` IS RETIRED FOR THIS PURPOSE.
+
+Research's adjudication, on synthetic replays written as real engine protobuf
+with both decoders imported unmodified: `tools/ring_retention.py:128` applies
+**no entity-kind filter**, so **every BUILDING of ours on an enemy-ring tile
+counts as ring occupancy, permanently, until destroyed.** Measured over 65 games,
+our entity-rounds on the enemy ring: **barrier 48.8% · builder_bot 33.6% ·
+conveyor 17.5% · sentinel 0.2% — 66.4% of what it calls "a body" is not a body.**
+
+**It does not merely add an offset, it flips the sign**, because the control lays
+**more** ring buildings than the treatment on all four 12-ring maps, so the
+contaminant enters opposite to the signal. Decomposed on fjordgate: **−0.201 →
++0.174** on the kind filter alone (+0.375 of a 0.383 gap).
+
+**Forced-answer cell that settles it: a BARRIER on the ring with zero
+builder-rounds must read 0.000. `ring_retention` reads 0.900. `ring_read` reads
+0.000.** Floor and ceiling both covered, seven cells.
+
+⇒ **The withdrawn `+0.017` (treatment 0.782 / control 0.765) is VOID — it was
+`ring_retention` output and 66% of it was buildings. It is not a prior, not a
+weak signal, and must not be cited as either.**
+
+**⚠ I AM NOT FULLY BLIND AND I AM SAYING SO RATHER THAN CLAIMING I AM.** I have
+seen that void figure, and I have seen research's decomposition showing the
+kind-filtered fjordgate figure for **LOKI-16's** games is ≈ +0.174. **I have NOT
+seen any corrected figure for LOKI-16b's own 50 games in either arm.** The
+partial information runs in the plank's favour, which is the direction that
+should make a reader more suspicious of a positive read-out, not less.
+
+## 2c. THE n DECISION: **READ THE 50. DO NOT FIRE MORE FIRST. AND IT IS UNDERPOWERED.**
+
+Made explicitly, on the record, before the estimate exists — which is what this
+document asked for and did not get the first time.
+
+**The decision is to read what we have**, because the treatment arm is **~40
+games on the 12-ring stratum = ~8 matches**, and the pre-registered clustering
+unit is the **MATCH**. **A match-clustered bootstrap on n≈8 cannot resolve a
+±0.15 bar**, and firing more would mean activating v106 and paying rated exposure
+for a plank whose decoder was only agreed twenty minutes ago. **The cheap,
+correct order is: read it, see whether the mechanism moved at all, and let THAT
+decide whether a powered confirmation leg is worth the exposure.**
+
+**PRE-COMMITTED READ-OUT LANGUAGE, so the n decision cannot be laundered at
+write-up.** This is the LOKI-14b Amendment 7 shape and the LOKI-17 Amendment 1c
+shape, applied to power rather than to a threshold:
+
+| what the 12-ring `hold_pinned` read shows | how it MUST be written |
+|---|---|
+| point ≥ +0.15 **and** bootstrap CI lower bound > 0 | **"clears the pre-registered bar at n≈8 matches; underpowered, and a confirmation leg is now WORTH the exposure."** The word **"confirmed" is FORBIDDEN.** |
+| point ≥ +0.15, CI straddles 0 | **"the expected outcome at this n. Consistent with the bar, resolves nothing."** The words **"null", "refuted", "fails" are FORBIDDEN.** |
+| point in (0, +0.15) | improved, below bar — a partial result, stated as one. |
+| point ≤ 0 | **the mechanism did not move in the direction predicted.** This IS informative at any n and may be written plainly. |
+
+**AND THE ASYMMETRY IS DELIBERATE:** a negative is readable at n≈8 because the
+prediction was a *doubling*; a positive is not, because the CI cannot exclude
+zero. **A leg can be underpowered for confirming and adequately powered for
+killing, and pretending otherwise in either direction is the failure.**
+
+## 2d. WHAT THIS AMENDMENT MAY NOT DO
+
+It may not move the +0.15 bar, the game-mean estimator, the match clustering
+unit, or the 12-ring stratum — all four predate the data and stay. It may not
+pool `jackpot` into the primary. **And it may not be read as reviving the
+withdrawn +0.017 under a new name.**
