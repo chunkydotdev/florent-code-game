@@ -33586,3 +33586,59 @@ causal test run.**
 **CONTROLS RUN:** wins summed over both sides = **3,705 of 3,705**; the first run
 returned **0 wins in 600 games — impossible, so the bug announced itself** rather
 than producing a plausible wrong answer (`winnerIsA` is `0`/`1`, not a boolean).
+
+# ============================================================================
+# 2026-08-11T13:07:29Z (`date`) — **⭐⭐ MAGNUS DIRECTIVE, DIRECT TO THIS LANE: PLAY_DEFENCE
+# CHANGES. "This does sound like we should allow SOME defence strategies, but
+# our FOCUS should be to kill at <r250"**
+# ============================================================================
+
+**VERBATIM, given directly to the side lane, not relayed.** Supersedes
+`PLAY_DEFENCE: never` as written.
+
+**⛔ THIS LANE IS NOT EDITING `PROGRAMME.md` AND THAT IS DELIBERATE.** The file is
+outside this lane's write surface whoever directs the change, and the s28/s30
+precedent is that the lane which refused was right. **Recorded here verbatim;
+the field edit is the BUILDER's.**
+
+## THE PROBLEM THE DIRECTIVE CREATES, AND THE FIX
+`PLAY_DEFENCE: never` was a BRIGHT LINE — trivially enforceable, and it killed a
+whole plank family at zero judgement cost. **"SOME defence" is a gradient, and a
+gradient is unenforceable unless the test is written down.** Proposed operational
+form, so a drift check can apply it:
+
+> **A defensive plank is admissible IF IT DOES NOT SLOW THE KILL.** Any plank whose
+> mechanism is survival carries a **KILL-ROUND NON-REGRESSION BAR** beside its
+> survival bar. **If median kill round rises, it is off-programme regardless of
+> what it does to win rate.** That is "focus stays on killing" expressed as a bar
+> rather than a preference.
+
+## ⭐ AND THE MEASUREMENT FROM TEN MINUTES AGO MAKES THE CHEAP VERSION OBVIOUS
+Research (`7df2ae3`): **when our core dies, ~5 of our builders are ALIVE**
+(median 5.0, mean 4.43 vs 5.20 in wins) with **0.38 builder deaths in the whole
+40 rounds before the core falls** — they are not even in combat.
+⇒ **DISTINGUISH DEFENCE THAT SPENDS THE KILL BUDGET FROM DEFENCE THAT SPENDS IDLE
+RESOURCES.** Turrets and barriers bought at home compete with the assault;
+**re-tasking builders who are already alive and already idle costs the kill
+nothing.** The idle resource is measured and substantial. **That is where "some
+defence" should be spent first, and it is the version that cannot violate the
+non-regression bar by construction.**
+
+## ⛔ AND THE SCOPE THAT KEEPS `R1000_IS_DEFEAT` INTACT — THIS IS THE IMPORTANT LINE
+**Magnus's tiebreak discriminator, run at his request:** of games that REACH a
+tiebreak, the 1800-1900 band wins **49.4%** against a **45.2%** overall rate;
+1900-2200 wins **50.9%** against **52.5%**. **THE TAIL IS A COIN FLIP, NOT A
+SALVAGE.** *(Ours: 8 of 12, all `titanium_collected` — n=12, noise.)*
+**⇒ THIS RETRACTS THIS LANE'S OWN "+5pp ≈ +35 Elo" TAIL ESTIMATE FROM ~20 MINUTES
+EARLIER. It was too generous and it is withdrawn.**
+**⇒ THEREFORE: "SOME DEFENCE" MEANS SURVIVING THE r150-250 WINDOW SO OUR OWN KILL
+LANDS. IT DOES NOT MEAN SURVIVING TO r1000.** Defence in service of reaching a
+tiebreak is still a bad road — the tiebreak is worth a coin flip. Defence in
+service of being alive at r187 when our median kill is r174 is the good one.
+**`R1000_IS_DEFEAT` needs no change; the directive opens exactly the useful half
+and none of the retired half.**
+
+## STANDING NUMBERS THIS SITS ON
+our median kill **174** · our median death **187** · **our core dies in 46.3% of
+all v104 games** · 77% of our kills already inside r250, so **the r250 focus is
+already satisfied and the marginal work is in the games where we do NOT kill.**
