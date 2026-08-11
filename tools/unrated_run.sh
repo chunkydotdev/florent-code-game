@@ -31,6 +31,13 @@
 #    for ~20 seconds, so firing just after a pairing gives ~19 minutes of clear
 #    air. THE OFFSET IS DERIVED FROM RECENT ROWS, NEVER HARDCODED — it has shifted
 #    at least once inside an 18-hour span.
+#    ⚠ AND WHEN THE PAIRING CLOCK CANNOT BE READ, THIS WAITS `GUARD_S` RATHER THAN
+#    PROCEEDING. It used to return 0 — i.e. fail OPEN on the one guard whose
+#    failure mode IS the incident it was built for. Blocking forever on a flaky
+#    API is its own failure, so the unreadable case takes a BOUNDED conservative
+#    wait instead of either extreme. The trade is stated rather than implied:
+#    worst case we wait GUARD_S too long; the alternative worst case is a
+#    prototype live across a pairing at roughly −8 Elo.
 #
 # 5. REJECTED ATTEMPTS COUNT AGAINST THE RATE LIMIT and create no match, so they
 #    are invisible to the meter. The meter is a LOWER bound; we pace off it and
@@ -38,6 +45,29 @@
 #
 # 6. ROLLBACK IS VERIFIED, RETRIED, AND ITS FAILURE IS LOUD. Two prior sessions
 #    left a non-incumbent live.
+#
+# ===== THE ABORT BRANCH, MUTATION-TESTED ON THIS FILE AND NOT INHERITED =====
+# This runner is the FOURTH copy of the holder-assertion guard. The house rule
+# (night_collector.sh's own header) is that a copied guard carries a copied
+# CITATION and not a copied TEST, and `tools/claim_check.py` stays silent here
+# because this file makes no claim to check -- silence from a checker whose
+# predicate was never triggered is not evidence.
+#
+#   2026-08-11 05:04:39Z   MAIN=999 zsh tools/unrated_run.sh 108 10
+#     -> "ABORT: expected incumbent v999, holder is 'v104 (Loki v2)'. Firing nothing."
+#     -> exit 1 (checked WITHOUT a pipe: `$?` behind `| tail` is tail's status,
+#        which reads 0 and is the exact trap this repo logged against `fcode`)
+#     -> scratchpad/arm_unrated_v108_*.txt created and EMPTY: zero challenges fired
+#   RE-RUN 2026-08-11 05:08:42Z   after the guard-2/4/5 hardening touched this path
+#     -> ABORT, exit 1, arm file EMPTY. Same result. (The rule is "re-run after
+#        any edit to the holder logic"; this is that rule applied to its own file
+#        rather than asserted about it.)
+#   Also verified the same run: the pairing helper returns -1 on unreadable input
+#   (bounded wait, guard 4) and 281s on a healthy read, landing on the observed
+#   :12:59 pairing -- so it is derived, not assumed, in both directions.
+#
+#   Re-run it after any edit to the holder logic. It is the guard standing
+#   between us and another prototype on the rated ladder.
 set -u
 cd /Users/junghard/Projects/Work/florent-code-game
 
@@ -96,7 +126,7 @@ from datetime import datetime,timezone,timedelta
 try:
     d=json.load(sys.stdin)
 except Exception:
-    print(0); raise SystemExit          # unreadable -> do not block, guard 3 style
+    print(-1); raise SystemExit         # unreadable -> caller applies a bounded wait
 rows=d if isinstance(d,list) else d.get("matches",d.get("data",[]))
 ts=[]
 for m in rows:
@@ -104,7 +134,7 @@ for m in rows:
     if c:
         try: ts.append(datetime.fromisoformat(c.replace("Z","+00:00")))
         except ValueError: pass
-if len(ts)<3: print(0); raise SystemExit
+if len(ts)<3: print(-1); raise SystemExit   # too little history to derive a period
 ts.sort(reverse=True)
 last=ts[0]
 # period from consecutive gaps, snapped to the nearest minute; falls back to 1200
@@ -115,7 +145,7 @@ now=datetime.now(timezone.utc)
 nxt=last
 while nxt<=now: nxt=nxt+timedelta(seconds=period)
 print(int((nxt-now).total_seconds()))
-' 2>/dev/null || echo 0
+' 2>/dev/null || echo -1
 }
 
 say "UNRATED RUN  version=v$VER  target=$WANT games  incumbent=v$MAIN"
@@ -133,6 +163,13 @@ while [ $done_games -lt $WANT ]; do
 
   # guard 5: pace off the meter, which is a LOWER bound
   w=$(.venv/bin/python tools/rate_budget.py --wait 2>/dev/null || echo 1200)
+  # `--wait` ALWAYS exits 0, so the `||` fallback only catches a crash, never bad
+  # output. If that path ever prints anything besides the bare integer -- a
+  # warning line, a blank -- `w` goes multi-line and `-gt` errors. Safe today
+  # only because `--wait` returns before anything is printed, which is a property
+  # of rate_budget's current control flow and NOT a contract; that file changed
+  # twice in the hour before this was written. Same guard as night_collector.sh.
+  [[ "$w" =~ ^[0-9]+$ ]] || { say "rate meter returned non-numeric output — assuming a full window"; w=1200; }
   if [ "${w:-0}" -gt 0 ]; then
     say "rate: waiting ${w}s for a slot"
     sleep "$w"
@@ -140,7 +177,11 @@ while [ $done_games -lt $WANT ]; do
 
   # guard 4: do not hold the prototype live across a pairing
   g=$(secs_to_safe_gap)
-  if [ "${g:-0}" -gt 0 ] && [ "${g:-0}" -lt $GUARD_S ]; then
+  [[ "$g" =~ ^-?[0-9]+$ ]] || g=-1
+  if [ "$g" -lt 0 ]; then
+    say "pairing clock UNREADABLE — waiting ${GUARD_S}s (bounded, fail-safer; see guard 4)"
+    sleep $GUARD_S
+  elif [ "$g" -lt $GUARD_S ]; then
     say "pairing in ${g}s — waiting past it before activating"
     sleep $((g+15))
   fi
