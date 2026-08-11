@@ -31993,3 +31993,48 @@ and **no decoder in the tree sees intra-round ordering.** So:
 **Builder owns the decoders and will know in one look. The point is that "needs a
 within-round trace" may be "needs a thing the wire does not carry", and those two
 have very different consequences for anything resting on availability later.**
+
+## ⭐ F23 — THE TWO READINGS DISAGREE ON MECHANISM AND AGREE ON DIRECTION: THE 6.5pp CORRECTION IS ROBUST
+Reached independently by both lanes in crossed messages; **this is the part
+neither of us wrote first time.** The builder recorded the 7.17× ghost asymmetry
+as *"a number with two live readings pointing opposite ways, neither
+established"* — **true of the MECHANISM, false of the CONSEQUENCE.**
+* **In BOTH readings a target WAS present in those rounds** — otherwise there is
+  no shot to have observed.
+* So availability is **undercounted** either way, **and 7.17× more often for us
+  than for them** (46/6,869 = 0.67% vs 4/4,280 = 0.09%).
+* ⇒ **Our measured availability is understated relative to theirs under BOTH
+  readings, so the true forward gap is SMALLER than 6.5pp under both — possibly
+  zero, possibly inverted.**
+**Blindness and kills disagree about WHY we undercount and agree that WE
+UNDERCOUNT MORE.** ⇒ **The correction attaches to the 6.5pp figure now, without
+waiting for the mechanism** — otherwise a reader who learns the mechanism is
+contested concludes the correction is contested too, and it is not.
+**And the attribution is ~50 CASES, not a project:** ghost subset is **46 ours /
+4 theirs**; per case, did a `removeEntity` occur on that sentinel's ray that
+round — **decidable on the ordered `Turn` stream** (`replay_schema.md:47`,
+`repeated Update`, confirmed sequenced). A query, not an instrument.
+**BUILDABILITY RESOLVED — MY STRUCTURAL WORRY WAS WRONG:** the wire is an ordered
+event stream, availability has **no permanent ceiling**, and this must **never**
+be filed beside the kidnap decoder gap.
+
+## F24 — I TOOK HALF A REFRAMING OFFERED IN MY FAVOUR, AND RECORDED WHY NOT ALL OF IT
+The builder proposed my discriminator not be filed with my three other
+self-corrections: those produced **wrong answers**; this produced a **correct**
+answer to the question I posed and merely could not answer the one that mattered
+— a scope error in a working instrument. **That distinction is real and accepted.**
+**WHAT I DID NOT ACCEPT, and the reason is the FRAMING rather than the tool:** I
+wrote *"cheap discriminator"* and *"common-mode if similar; needs a caveat if
+not"*. **I asserted it would SETTLE the symmetry question and it structurally
+could not.** The instrument was sound; **the claim I bolted onto it was the same
+unmeasured inferential step this lane spent the day flagging in other people's
+documents, made about my own tool.** Kept at full weight in my column —
+**a flattering count is the one thing that quietly disables a retro** (D52f, the
+standard research insisted on against their own interest).
+
+**THE DAY'S FINDING, builder's formulation, and it outranks every instrument fix
+recorded above:** four correct measurements arrived with an inferential step
+bolted on — **the 19.24 counterfactual · the mix's 8× · the reading of the 7.17×
+· the pooled availability gap itself** — **and every one bent toward the work we
+wanted to do next.** All four were caught prospectively. **The measurements have
+been reliable all day. The joins have not.**
