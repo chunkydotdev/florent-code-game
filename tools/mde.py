@@ -19,8 +19,9 @@ quantity that actually governs what we can see.
 
 WHY THE NULL AND NOT A TREATMENT: the noise floor must be measured where the
 effect is known to be exactly zero, or the estimate of the floor absorbs part of
-the effect. `_v130null` is byte-identical to `_v130loki13` and differs only in
-directory name, which is also why identical basenames are refused by h2h.sh.
+the effect. `_v148null` is byte-identical to the incumbent `_v148ferryfirst` (verified: 0
+differing files) and differs only in directory name, which is also why identical
+basenames are refused by h2h.sh and overnight.sh.
 """
 import statistics, subprocess, sys, math
 from pathlib import Path
@@ -29,8 +30,21 @@ import score  # noqa
 
 ROOT = Path(__file__).resolve().parent.parent
 FC = str(ROOT / ".venv" / "bin" / "fcode")
-TREAT, CTRL = "bots/_v130null", "bots/_v130loki13"
-TB, CB = "_v130null", "_v130loki13"
+# ⛔ MOVED s32 2026-08-11. WAS `_v130null` / `_v130loki13` (v104), which was TWO
+# SHIPS STALE: v104 -> v112 landed 2026-08-11 13:14Z and `PROGRAMME.md:169` is
+# explicit -- *"when a ship lands, EVERY control moves with it"*. A stale control
+# measures the wrong contrast and still reads as a valid result. Found by the s32
+# instruments audit, not by this file's own selftest, because the selftest cells
+# are PURE ARITHMETIC on a stored sd and cannot see which bots produced it.
+#
+# ⚠ AND THE STORED sd IS STILL THE OLD PAIR'S. The 14.31 in the selftest below
+# was measured against the v104 null and every bar quoted from it inherits that.
+# RE-MEASURE before quoting a new bar. Reassuringly small in practice: the s32
+# audit computed sd(diff) = 14.08 directly off tonight's v112-based shards,
+# 1.6% from the stored 14.31 -- so this staleness moved the bar by ~1.6%, not by
+# anything that changed a verdict. Recorded as measured, not as reassurance.
+TREAT, CTRL = "bots/_v148null", "bots/_v148ferryfirst"
+TB, CB = "_v148null", "_v148ferryfirst"
 
 
 def one(mapname, seed, flip):
