@@ -35501,3 +35501,56 @@ what they CHANGED · **tempo vs robustness at the margin** · the VARIANCE argum
 (a bot that always arrives r180 beats one averaging r170 with a long tail) · what
 one stopped push COST. Briefed with the sweep-24 corpus for reuse, the U+200B
 trap, the positive-control requirement, and the **full-store** constraint.
+
+# ============================================================================
+# 2026-08-11T18:4xZ — **SIDE LANE: independent recomputation of all seven s31
+# cells REPRODUCES TO THE DIGIT. Two additions, both arithmetic.**
+# ============================================================================
+
+**Computed off `overnight_s31/*.tsv` with my own parser, no tool involved:**
+GUNAXIS **51.94%** · CAP12 **51.37%** · BESTFIT **50.96%** · CAP6 **50.87%** ·
+ROSTER **47.26%** · NULL **49.20%** · NEGCTRL **36.93%** — **identical to the
+builder's in every cell.** The archive is sound and the read is reproducible.
+
+## 1. THE MULTIPLICITY THE TOOL WARNS ABOUT SHOULD ALSO BE APPLIED — IT CHANGES WHO ESCALATES
+The tool's ±1.33pp is uncorrected. Bonferroni over the **5 screened arms**
+(α=0.01) ⇒ **±1.75pp, band 48.25–51.75%**:
+
+| arm | rate | uncorrected | **corrected** |
+|---|---:|---|---|
+| GUNAXIS | 51.94% | OUTSIDE | **OUTSIDE** |
+| CAP12 | 51.37% | OUTSIDE | **inside** |
+| BESTFIT | 50.96% | inside | inside |
+| CAP6 | 50.87% | inside | inside |
+| ROSTER | 47.26% | OUTSIDE | **OUTSIDE** |
+
+⇒ **CAP12's escalate does not survive the correction the tool itself prints a
+warning about.** Its margin over the uncorrected band top is **0.0374pp**, and
+the builder's own between-arm contrasts agree from the other side (GUNAXIS vs
+CAP12 **p=0.55**). **Two arms survive, GUNAXIS and ROSTER**, and ROSTER is the
+negative. **This is the band-vs-MDE flag landing where it was aimed:** an arm
+whose true effect sits on the band edge reads OUTSIDE ~50% of the time by
+construction, and CAP12 is *on* the edge to four decimal places.
+
+## 2. ⛔ GUNAXIS IS ON THE DEAD LIST AND TONIGHT'S NUMBER DOES NOT SPEAK TO WHY IT DIED
+`QUEUE.md:210` — *"gunner-axis / LOKI-25 — died s30 on a **resolved MECHANISM
+falsifier** (deaths −24%, presence −23%, ratio flat −2.3%). ROAD open,
+implementation dead."*
+**It died on a MECHANISM axis; tonight's +1.94pp is CURRENCY.** They do not
+contradict each other — an implementation can move game share with its mechanism
+metric flat, which is the anti-Goodhart case this programme keeps naming (D10).
+⇒ **the write-up must not present tonight's escalate as overturning s30**, and it
+must say which axis it is on. **Two questions the builder can answer and this
+lane cannot:** is `_v146gunaxis` the same implementation that died, or a rebuild?
+And was the s30 falsifier resolved at a comparable n — a mechanism falsifier at
+n=1,024 and a currency read at n=5,408 are not in tension if the first was
+underpowered.
+
+## ⭐ THE KILL-ORDER REASONING IS WORTH MORE THAN THE KILL
+The builder killed **the watchdog first** (killing a shard under a live watchdog
+just restarts it), then the nine zombies **by PID, never by name — because
+`SRNULL0` and s31's `NULL` are the SAME BOT PAIR**, so no command-line pattern
+can separate their child `fcode run` processes. **A name-based kill would have
+taken their own control shard.** That belongs in the runner's header, not only in
+a session message. Zombie files **quarantined, not deleted** — they are the
+evidence for the incident write-up.
