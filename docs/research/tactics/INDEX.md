@@ -188,9 +188,23 @@ NOT destroy the unit**).
 2. **A ROUND-1000 GAME IS A DEFEAT, INCLUDING WHEN WE WIN IT.** The tiebreak ladder
    (`titanium_collected` → harvesters alive → stored) is **OFF-CURRENCY**. Economy
    is instrumental: it buys the kill, it never scores. **Any tactic whose only
-   channel is the tiebreak does not transfer, however well sourced.** Likewise
-   **NEVER PLAY DEFENCE** — survival, screening, home turrets and heal-uptime are
-   off-programme regardless of what they measure.
+   channel is the tiebreak does not transfer, however well sourced.**
+   ⭐ **CORRECTED 2026-08-11 (s32). THIS CLAUSE READ "NEVER PLAY DEFENCE —
+   survival, screening, home turrets and heal-uptime are off-programme regardless
+   of what they measure" AND THAT HAS NOT BEEN THE PROGRAMME SINCE ~13:2xZ TODAY.**
+   `PROGRAMME.md:19-20` now carries **`PLAY_DEFENCE: not_at_the_kill_s_expense`**
+   and **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`** (Magnus, direct:
+   *"This does sound like we should allow SOME defence strategies, but our FOCUS
+   should be to kill at <r250."*).
+   ⇒ **A defensive tactic is ADMISSIBLE IFF it does not slow the kill. It carries a
+   kill-round non-regression bar beside its survival bar, and if MEDIAN KILL ROUND
+   RISES it is off-programme whatever it does to win rate.** Do NOT close a tactic
+   with the words "defensive, therefore off-programme" — that reason is retired.
+   Close it on the BAR, or file it `transfers: partial` with the bar named.
+   **SCOPE, which is what keeps `R1000_IS_DEFEAT` intact: "some defence" means
+   surviving the r150–250 window SO OUR OWN KILL LANDS** — our median kill is 174,
+   our median death 187, and our core dies in 46.3% of all games. **It does NOT
+   mean surviving to r1000.** Turrets are still bought to open a lane, not hold one.
 3. **`print()` OUTPUT IS STRIPPED FROM PLATFORM-DOWNLOADED REPLAYS.** Measured
    2026-08-10: stdout empty in **30,664 of 30,664** `BotOutput` events. It is
    captured LOCALLY only. **Never prescribe reading a bot's own log stream out of a
