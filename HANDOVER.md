@@ -34,6 +34,38 @@
 ##   someone boots.** That is the same accepted risk as last night.
 ##   **MORNING: read `corpus/SHIP_ALERT` and `tail corpus/ship_watch.log` FIRST.**
 ##
+## ===== ⛔⛔ LOKI-18 — I FIRED 25 GAMES ON A PLANK ITS OWN AUTHOR KILLED TWICE =====
+##   **`docs/legs/LEG-loki18-void-and-the-live-closure-2026-08-11.md`.**
+##   VOID ON PREMISE. `c91c078` (2026-08-10 22:03Z) retracted the 0/319 baseline
+##   — the delta table had omitted CENTRE=0 and rotated every facing one step —
+##   and `38bc735` re-confirmed it dead at 06:08Z. **My Amendment 1 at 06:45Z
+##   reinstated the retracted number, forbade its revision, and cited the
+##   correction zero times.** Side lane caught it ~70 s after the window closed.
+##   **COST: one unrated window + one submission slot (v109). RATED COST ZERO** —
+##   8 consecutive pairings all v104, verified per-match **ON THE LIVE CLI**.
+##   ⛔ **`league_matches.tsv` STOPPED AT 05:52:59Z AND COULD NOT SEE THE 06:46
+##   WINDOW. The corpus lags the platform by up to an hour ⇒ ANY SAME-SESSION LEG
+##   CERTIFICATION READS THE LIVE CLI, NEVER THE TAPE.** My own "verified at the
+##   boundary" was a STRUCTURAL argument, not a per-match one.
+##   **⭐ WHAT THE WASTED WINDOW BOUGHT — prediction committed BEFORE measuring:**
+##   treatment **39/39 = 100.0%**, control **229/229 = 100.0%** shootable-on-build
+##   (`d2_own>145`, the definition NAMED because `11bcb6d` records three
+##   incompatible ones). **Known-answer control: rotate one compass step → 0/39
+##   and 0/229.** ⇒ **LOKI-17/18 CLOSED WITH LIVE-GAME BACKING** on 268 sentinels
+##   over 122 games. The bar was **INERT**, not pre-satisfied. Do not reopen.
+##   **⭐ FIVE INDEPENDENT DEFECTS LANDED ON ONE OF FIVE CELLS TODAY** (SmartFridge:
+##   arrival precondition · version churn · seat inversion · most-favourable 5d
+##   number · no version-matched control). **The panel criterion is RATING
+##   PROXIMITY and it selects for nothing a mechanism needs.**
+##   ⛔ **`plank_status.py` RAN AT BOOT ON THIS PLANK AND SAID NOTHING** — HANDOVER
+##   had never mentioned loki18, so it exited at UNMENTIONED before the kill
+##   scan, and **a recency check reads a withdrawal commit as FRESHNESS.**
+##   **FIXED s30:** whole-history scan, word-boundary patterns, `PLANK-REVIVED`
+##   token, a **SUSPECT** tier and `tools/plank_ack.tsv`. Both prose-matching
+##   mistakes are fixtures now: `core_kill_share` flagged our **LIVE INCUMBENT**,
+##   and a VOID commit containing "reinstated" **cleared the plank's death**.
+##   **⇒ `PLANK_STATUS: WITHDRAWN` IS NOW A REAL VERDICT. GATE ON IT.**
+##
 ## ===== ✅ LOKI-19 — READ OUT s30. BAND 2. NOTHING SHIPS. =====
 ##   **`docs/legs/LEG-loki19-core-peck-readout-2026-08-11.md` (`888d699`).**
 ##   §6 row 2 verbatim: **"dose delivered, mechanism measured, currency
@@ -111,8 +143,40 @@
 ##     Amendment 1 tags it; a read-out that recomputes on another population is
 ##     testing a different bar.
 ##
+## ===== ⛔⛔ MAGNUS, s30 06:4xZ — A LEG MUST ALWAYS BE READY =====
+##   *"We are leaving unrated games unplayed, games that could potentially find
+##   something that surprises."* · *"When there's a free slot to run unrated games
+##   we should have experiments ready to test one or many hypotheses or an
+##   experimental new bot."*
+##   ⇒ **A PREREG'D, DOSE-VERIFIED, PLANK-STATUS-CLEAN CANDIDATE IS A STANDING
+##   OBLIGATION, NOT A PER-SESSION TASK.** `rate_budget.py` says a slot is free
+##   roughly every 20 minutes and they are free.
+##   ⛔ **AND THE COUNTER-LESSON FROM THE SAME HOUR: SPEED IS WHAT PUT 25 GAMES
+##   INTO A DEAD PLANK.** "Ready" means the checks are ALREADY DONE, not skipped.
+##   **Run `plank_status.py <plank>` and require OK — not "not stale".**
+##
 ## ===== QUEUE, IN PRIORITY ORDER (rebuilt s30 after the LOKI-19 read-out) =====
-##   1. **`corpus/our_matches.tsv` — THE MATCH-INITIATIVE LEDGER.** Magnus's own
+##   0. **THE NEXT LEG — build it BEFORE the slot is free, per the block above.**
+##      **Best candidate on today's evidence: the HEAL-RATE plank (queue 3).**
+##      Do NOT reach for a built tree with a committed prereg without running
+##      `plank_status` first; that is exactly how LOKI-18 got fired.
+##   0b. **BUILD THE D42 CHECKER — routed, and its acceptance fixture already
+##      exists on disk so nothing needs inventing.** A prereg must NAME the
+##      `file:line` its mechanism metric reads; the checker asserts that path
+##      appears in the treatment diff. **NEGATIVE CELL: LOKI-18 Amendment 1 MUST
+##      FAIL** (metric reads `raid.py`'s guard, diff touches only `main.py:560`).
+##      **POSITIVE CELL: LOKI-19's 5a dose bar MUST PASS.** Without the positive
+##      cell a checker that fails everything looks correct. **D42 was violated by
+##      its own author 2 h 37 m after writing it — that is the `name_check.py`
+##      signature and it is why this jumps the queue.**
+##   1. **`corpus/our_matches.tsv` — THE MATCH-INITIATIVE LEDGER.** ✅ **BUILT AND
+##      LIVE s30** (`tools/match_ledger.py`, wired into `unrated_run.sh`, which now
+##      REFUSES TO FIRE if the ledger is blind). 5 rows on its first leg, 5/5
+##      attribution against the platform. ⚠ **The FOREIGN-challenge direction is
+##      still UNTESTED — no foreign challenge has landed since it shipped, and a
+##      zero on a minutes-long denominator is not evidence.** Remaining work:
+##      point `rate_budget.py:77` at it instead of the regex scrape.
+##      *(Original justification retained below.)* Magnus's own
 ##      ask, spec at `docs/research/SPEC-match-initiative-ledger-2026-08-11.md`
 ##      (`314d326`). **Deliberately ranked ABOVE the freshness work, and here is
 ##      the reason: the freshness fix repairs an alarm that failed to summon an
@@ -154,6 +218,29 @@
 ##      the numerator is `coordination.md` (4,517 lines), `HANDOVER.md` (1,109)
 ##      and three preregs (1,692) — artefacts this repo's method REQUIRES. A leg
 ##      run correctly RAISES this signal.**
+##   2b. **⛔ EVERY PER-OPPONENT NUMBER IN THIS REPO READS HIGH — research, s30.**
+##      League-wide, 4,157 blocks with each team's own bot frozen: a team scores
+##      materially LESS against an opponent's LATER versions. Direction and
+##      significance replicate across four estimators (all t < −13); **the
+##      magnitude does NOT — it spans 1.8x, so treat it as order 5-9pp and
+##      NEVER apply a numeric correction.**
+##      **AND THE REPAIR IS NOT EXECUTABLE: 419 of our 599 matches (69.9%) were
+##      played against a version the opponent no longer runs**, and conditioning
+##      leaves n=1 or 2 in every LOKI-19 panel cell (Lunds "80%" off ONE match).
+##      **The conditioning is well-powered exactly where it is unnecessary.**
+##      ⇒ **STOP QUOTING PER-OPPONENT SHARES TO A DECIMAL** — including in target
+##      bands. ⇒ **PREFER CELLS WHERE THE OPPONENT IS STABLE OVER CELLS WHERE OUR
+##      SAMPLE IS LARGE. Those are nearly opposite properties right now**, and
+##      only **Ouroboros and OopsGotYourElo** have stored statistics that describe
+##      the bot we would actually meet. That is a free panel criterion nobody has
+##      applied, and it is the sixth arrival of "rating proximity selects for
+##      nothing a mechanism needs".
+##      ⇒ `ladder_games.tsv.oppver` is NULL, so anything computing a per-opponent
+##      number off it is blind to this BY CONSTRUCTION. Use `league_matches.tsv`
+##      or the `replay_archive/*.meta.json` sidecars.
+##      ⛔ **DO NOT BUILD A DEPLOY-CADENCE SNIPING PLANK — refuted, saves a leg.**
+##      Fresh opponent versions are STRONGER (matched DiD +0.524, t=+4.89); the
+##      naive +1.25 is mean reversion because **teams ship when they are losing**.
 ##   3. **THE HEAL-RATE PLANK — LOKI-19's §11 turned into a question.** If 2
 ##      damage sits under their heal rate, the plank is not "peck" but **a dose
 ##      that clears +4 HP/builder-turn, or a target that cannot be healed.**
