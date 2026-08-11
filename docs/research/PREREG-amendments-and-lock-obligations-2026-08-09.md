@@ -270,3 +270,56 @@ quiet-melee-line result upward is a result about the mechanism that does
 Amendments: side lane (this lane owns the PREREG discipline). Data: research
 arm, blind-computed, primary-source-confirmed. Verdicts: none here — firing
 and verdicts remain the builder's.
+
+## Addendum 8, 2026-08-11 06:3xZ (s30) — OBLIGATION 12: A GATE IS A BAR AND MUST BE SIZED LIKE ONE
+
+**Found in the LOKI-19 read-out audit, and the miss is THIS LANE'S.** I reviewed
+Amendment 1b before the treatment arm fired and reported no flags on it.
+
+**WHAT 1b DID RIGHT, which is why the omission was invisible:** it named its
+statistic (INSERT reach), its population (control arm, in-arm, this leg's own
+games), its per-cell rule (*"never pooled — a 6x spread makes a pooled mean a
+fiction"*), it barred stored figures, and it pre-committed a **three-branch
+reading table** (`>30%` / `20–30%` / `≤20%`) written before the number existed.
+By every check on this lane's prereg list it is a model amendment.
+
+**WHAT NOBODY ASKED — including me, and I own this list:** *at what n can this
+gate tell its own branches apart?* Its bands are **10 percentage points wide**
+and it was answered by **19 events across 50 control games**. Askar's lower
+bound sits at 30.06%, i.e. astride a branch boundary. **The gate could not
+resolve the question it was built to decide, and nothing in the document
+required it to say so in advance.**
+
+**⇒ OBLIGATION 12. A GATE CARRIES ITS OWN RESOLUTION STATEMENT: the n at which
+it discriminates its branches, and — pre-committed — WHAT HAPPENS WHEN IT DOES
+NOT.** We size bars as a matter of course (`KILL_SPEED_MIN_N`, MDEs, the
+2,100-games-per-arm note) and **we have never once sized a GATE**, because a
+gate looks like a definition rather than a measurement. It is a measurement.
+
+**THE DEFAULT, pre-committed here so it is not a judgement made at read-out:
+AN UNRESOLVED GATE DEFAULTS TO THE RESTRICTION, NEVER THE PERMISSION.** The
+builder ruled exactly this way on LOKI-19 without a clause to lean on, and the
+reasoning is the one to keep: **1b's own sentence is *"This gate cannot flatter
+the result"*, and granting the permissive branch on an estimate that cannot
+distinguish delivery from non-delivery is precisely a flatter.** The restrictive
+default is the only branch that cannot launder a result.
+
+**COMPANION, from the same audit — TWO IMBALANCES ARE ONE DEFECT AND MUST BE
+NAMED ONCE.** LOKI-19 disclosed a seat-mix difference in all five cells
+(SmartFridge a complete inversion, 10xB vs 10xA) and a map-mix difference
+(`jackpot` 4v1, `eider` 1v4, `lighthouse` 6v2, `drumlin` 4v2) as two separate
+facts. **They are one property — the arms were not balanced on the fixture axes
+— and the same imbalance drives the retention stratum's asymmetric exclusion
+(treatment 50→46, control 50→49).** Disclosing rather than correcting is right
+(a matched estimator chosen after the data is the fault this line exists to
+catch), **but a future pooled reading inherits BOTH and is far likelier to carry
+one named confound than two scattered ones.** D52b — a correction lands where it
+was discovered, not where it will be read — applied INSIDE a document.
+**Prereg consequence: where a leg's arms are assigned by anything other than an
+explicit balancing rule, the prereg names the fixture axes (seat, map, opponent
+version) and pre-commits to reporting imbalance on all of them under ONE
+heading.**
+
+**AND ONE OBLIGATION THIS AUDIT DID NOT PRODUCE, recorded so the absence is
+deliberate:** nothing here requires a leg to CORRECT for these. Correcting
+post-hoc is worse than disclosing, and LOKI-19 got that right.
