@@ -105,7 +105,18 @@ if [ ${#CELLS[@]} -eq 0 ]; then
          b538e523-2250-4c1d-b718-e73b77ebad55)  # Landers
 fi
 
-MAIN=${MAIN:-104}                # the incumbent to return the ladder to
+# ⛔ MOVED 104 -> 112 on 2026-08-11 (s32). PROGRAMME.md:169 ALREADY ASSERTED THIS
+# HAD MOVED -- *"h2h.sh/dose.py defaults and unrated_run.sh's MAIN all moved on
+# 2026-08-11"* -- and h2h.sh:38 and dose.py:89 DID move at 13:2xZ when v112
+# shipped. This one did not. The programme stated a fact about the tree that was
+# false for five hours, on the same line every lane cites as the authority for
+# moving controls.
+# NOT COSMETIC, though it failed safe: line ~177 aborts unless the holder is
+# v$MAIN, so with the holder at v112 and MAIN at 104 the runner REFUSES TO FIRE.
+# The standing obligation is that a leg is always ready; the next unrated leg
+# would have died at pre-flight instead of rolling the ladder back to v104.
+# A guard that refuses everything is the failure this repo logged twice today.
+MAIN=${MAIN:-112}                # the incumbent to return the ladder to
 GAMES_PER=5                      # a challenge is 5 games
 GUARD_S=${GUARD_S:-150}          # keep this clear of the next pairing
 WINDOW_S=${WINDOW_S:-1230}       # the rate window + margin, for a zero-accept backoff
