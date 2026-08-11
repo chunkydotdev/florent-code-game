@@ -151,10 +151,24 @@
 ##   **NEXT: a confirmation leg is now justified.** And the prereg's own fork is
 ##   open — retention cleared, **kill-speed was NOT read**.
 ##   ⛔ `tools/ring_retention.py` IS RETIRED (no entity-kind filter; **66.4% of
-##   its "bodies" are barriers/conveyors** and it FLIPS THE SIGN). Use
-##   `scratchpad/ring_read.py`. **Its `--selftest` PASSES and is worthless — it
-##   tests the RING GEOMETRY, never the OCCUPANCY RULE.** Side lane is hunting
-##   that signature across `tools/` now.
+##   its "bodies" are barriers/conveyors** and it FLIPS THE SIGN). It now
+##   **REFUSES TO RUN** (`8ec5222`, exit 2). **`tools/ring_retention.py`'s
+##   `--selftest` PASSED and was worthless — every one of its three assertions
+##   is on `ring_of()`, i.e. it tested the RING GEOMETRY and never the OCCUPANCY
+##   RULE.** Use **`tools/ring_read.py`** (tracked `05:53Z`, 40 assertions over
+##   11 cells, carries its own self-mutation harness).
+##   ⛔⛔ **NAME BOTH FILES IN FULL, EVERY TIME — THIS BULLET USED TO SAY "Use
+##   `scratchpad/ring_read.py`. **Its** `--selftest` PASSES and is worthless",
+##   and the pronoun's antecedent was `ring_retention`, two clauses back.** s30
+##   copied that antecedent into an audit brief; the audit dutifully mutated
+##   `ring_read.py`, found the defect absent, and reported the claim REFUTED —
+##   truthfully, about the wrong file. The side lane caught it. **THREE OBJECTS
+##   SHARE TWO NAMES** (`tools/ring_read.py`, `tools/ring_retention.py`, and an
+##   untracked `scratchpad/ring_read.py`), so a bare "it" here is not a style
+##   problem, it is a defect generator.
+##   **STILL OPEN from that sweep: `map_admits` — its selftest exercises
+##   `classify()` and NEVER invokes `map_facts()` (0 calls in the selftest body
+##   vs 2 in the shipped path, :191/:284).** That one is real.
 ##
 ## ===== ⭐⭐ LOKI-19 = `bots/_v136loki19` (md5 `fb5cba8c`) — BUILT, DOSE-VERIFIED, PREREG COMMITTED, NOT YET FIRED =====
 ##   **PREREG: `docs/prereg/PREREG-loki19-core-peck-2026-08-11.md` (`5aa5233`
