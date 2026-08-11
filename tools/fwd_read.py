@@ -364,12 +364,28 @@ def selftest():
          "PROTECTED DENOMINATOR inflates and a failing plank passes")
 
     # CELL 4 — move events must be consumed, or every death reads as home.
-    nomove = walk_nomoves(p)
-    cell("ignoring move events LOSES forward deaths",
-         sum(nomove[t]["fwd_deaths"] for t in (0, 1))
-         < sum(base[t]["fwd_deaths"] for t in (0, 1)), True,
-         "removeEntity carries an id only; without the move pass a builder dies "
-         "at its spawn tile, i.e. never forward")
+    # ⛔ POOLED ACROSS THE SAMPLE, NOT reps[0]. First written against a single
+    # replay, it FAILED on 2026-08-11 because that game had 0 forward deaths in
+    # BOTH arms, so `0 < 0` was False. The decoder was correct; the CELL was
+    # unable to distinguish "the guard is broken" from "this fixture cannot test
+    # the guard". A cell must not fail for lack of a dose -- it must SAY so.
+    base_fd = nomove_fd = 0
+    for q in reps:
+        bq = walk(q)
+        if bq is None:
+            continue
+        base_fd += sum(bq[t]["fwd_deaths"] for t in (0, 1))
+        nq = walk_nomoves(q)
+        nomove_fd += sum(nq[t]["fwd_deaths"] for t in (0, 1))
+    if base_fd == 0:
+        print("  [SKIP] ignoring move events LOSES forward deaths — "
+              "NO DOSE: 0 forward deaths in the whole sample, cell cannot resolve")
+        ok = False                       # an unresolvable cell is not a pass
+    else:
+        cell("ignoring move events LOSES forward deaths", nomove_fd < base_fd, True,
+             f"removeEntity carries an id only; without the move pass a builder "
+             f"dies at its spawn tile, i.e. never forward "
+             f"({base_fd} forward deaths with the move pass, {nomove_fd} without)")
 
     # CELL 5 — the denominator guard must FIRE, not just exist. Side lane's ask:
     # "a guard that has only ever seen builds/game hold is a guard nobody has
