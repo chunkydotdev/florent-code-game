@@ -36343,3 +36343,58 @@ into `QUEUE.md` as a **closure** within minutes, and the defect was in the
 **estimator**, not the arithmetic — which controls, selftests and matched strata
 were not built to see. **A closure deserves a harder read than a finding and I
 gave it the same one.**
+
+# ============================================================================
+# 2026-08-11T20:3xZ — **SIDE LANE: the new "no targets below 1650" directive is
+# in ZERO enforcing surfaces, the mandated gate will CONTRADICT it, and the
+# constraint TIGHTENS AS OUR RATING FALLS.** Fourth propagation failure today.
+# ============================================================================
+
+## 1. ⛔ IT EXISTS IN ONE COORDINATION NOTE AND NOWHERE ELSE
+`PROGRAMME.md` **0** · `CLAUDE.md` **0** · `AGENTS.md` **0** ·
+**`tools/target_value.py` 0** · `QUEUE.md` **0** · `gate.py` **0** ·
+all three `.claude/commands/*.md` **0**.
+**Fourth instance today of a doctrine change stopping short of what enforces it:**
+`PLAY_DEFENCE` absent from `CLAUDE.md`/`AGENTS.md` for three hours · the queue
+rule absent from `PROGRAMME.md` and all three command files · the tactics SEED
+still carrying the retired rule · **and now this.**
+
+## 2. ⛔ AND THE MANDATED GATE WILL ACTIVELY CONTRADICT IT
+`tools/target_value.py:55` — `BAND_LO, BAND_HI = -80, 125`. At our **1666** it
+reports **1586..1791 reachable**, so the gate `CLAUDE.md` instructs be run
+**BEFORE writing a prereg** prints **`reachable YES`** for a 1600-rated team the
+directive excludes. ⇒ **the next prereg that OBEYS the standing instruction gets
+an answer violating a standing constraint.** One constant plus the printed
+`TARGET BAND:` string fixes it — **and the gate output is the right home, because
+that string is what lands in every prereg.**
+
+## 3. ⭐ THE INTERACTION NOBODY HAS PRICED: AN ABSOLUTE FLOOR AGAINST A RELATIVE BAND
+| our rating | reachable band | with the floor | room BELOW us |
+|---|---|---|---|
+| 1689 *(when written)* | 1609..1814 | 1650..1814 | **39 pts** |
+| **1666** *(v114, now)* | 1586..1791 | 1650..1791 | **16 pts** |
+| 1650 | 1570..1775 | 1650..1775 | **none** |
+| 1640 | 1560..1765 | 1650..1765 | **none** |
+
+**v114 sits at 1666, peak 1686, drawdown −20.** At or below 1650 the floor and
+our rating coincide and **the admissible set becomes "teams at or above us
+only"** — **the constraint bites hardest exactly when we are doing worst and most
+need reachable targets.** Written at 1689 with 39 points of room; it now has 16.
+⇒ **Not a proposal to change Magnus's constraint** — it is his call and sound
+against the s28 failure it targets. **The flag is that its behaviour is
+RATING-DEPENDENT in a way invisible from its own wording**, and whoever records
+it must record THAT: a successor reading *"don't fire below 1650"* at a 1640
+rating will read a mild filter and get a near-total ban.
+
+## AND THE DISPLACEMENT CLOSURE REVERSED SIGN ON THE CORRECTED ESTIMATOR
+Research implemented the risk-set fix and re-ran all 5,398 games:
+**naive 0.134% vs 0.214% (−0.080pp) → risk-set 17/3,844 = 0.442% vs
+13/7,341 = 0.177% (+0.265pp), CI [+0.034, +0.496], z=2.25, ratio 2.50×.**
+⇒ **the displacement channel is NOT dead — it is weakly POSITIVE**, and a road
+that was closed for zero rated matches is reopened. **The forced-answer cell was
+built verbatim and the OLD estimator FAILS it: NAIVE −50.00pp / RISK-SET +0.00pp
+on a true-effect-ZERO fixture.** Correctly written into `QUEUE.md` and the SPEC
+as *"a prioritising signal, not a result"* — 17 and 13 events, an interval nearly
+touching zero, and an outcome still conflating an uncaught exception with
+`self_destruct()`. **Hedges applied at the moment of promotion rather than
+repaired afterwards — the first time that order has been used here.**
