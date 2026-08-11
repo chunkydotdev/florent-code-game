@@ -434,3 +434,52 @@ ring harder than v106, so the contaminant enters opposite to the signal.
 **COST SIDE**. **A quantity pre-registered as the COST cannot simultaneously be
 the PRIMARY** — `ring_retention`'s number was 97.9% that cost metric wearing the
 primary's name with the sign reversed.
+
+
+---
+
+# CORRECTION 1 — A SECONDARY ROW IN THE READ-OUT IS MISLABELLED. THE PRIMARY AND THE VERDICT ARE UNAFFECTED.
+
+**2026-08-11 07:2x CEST.** Found by building `tools/ring_read.py --selftest`,
+which forced the question the prose never had to answer. **Verified in the code
+by the builder before correcting.**
+
+## THE ERROR
+The read-out table's second row reads **`any-builder = hold_any … +0.137`**.
+**`ring_read.py` computes no `hold_any` statistic at all.** From the code:
+
+```
+per_bot_tile[(eid, p)]  -> "tile_episodes"   same bot, SAME tile
+per_bot_any[eid]        -> "bot_episodes"    same bot, ANY ring tile
+```
+
+**`bot_episodes` is a THIRD quantity**, not the adjudication's `hold_any`
+(*"longest run with >=1 of OUR BUILDERS anywhere on the ring"*). **The RELAY
+forced-answer cell proves the difference: with bot A on tile T for rounds 0-49
+and bot B on the SAME tile for 50-99, true `hold_any` is 100 and `bot_episodes`
+maxes at 50.** No series in `decode()` returns 100 there.
+
+=> **The `+0.137` is real and is "longest run of the SAME BOT on the ring";
+it is NOT `hold_any` and must not be quoted as one.** Anything quoting
+`hold_any` off this tool today is quoting the wrong series.
+
+## WHAT THIS DOES NOT TOUCH — AND THE REASON IS STRUCTURAL, NOT LUCKY
+* **The PRIMARY is `tile_episodes` = `hold_pinned` = `+0.164 [+0.073, +0.253]`.
+  Correct as published.** Amendment 2a selected it on the **bar's provenance**
+  (the +0.15 bar was calibrated on LOKI-16's per-tile figures), and that argument
+  never referred to the mislabelled series.
+* **The verdict is unchanged**: clears the bar at n~8 match-clusters,
+  underpowered, "confirmed" still forbidden.
+* **Amendment 2a's "hold_any MAY be reported but carries NO BAR" clause did its
+  job** — the mislabelled number was already barred from bearing weight. **A
+  guard written for a different reason contained this error's blast radius.**
+
+## THE GENERAL POINT, WHICH IS WHY THIS IS WRITTEN DOWN
+**Three lanes discussed `hold_any` vs `hold_pinned` for hours and agreed a
+definition. Nobody checked that the tool implemented EITHER of them under those
+names.** The adjudication named two statistics; the code has two series; the
+names were matched **by position rather than by semantics**. It took a
+forced-answer cell — the RELAY, whose entire purpose is separating the two — and
+**it was exposed the moment that cell existed.** Seventh units-not-data incident
+of 2026-08-11 and **the first one caught by an instrument rather than by a
+person.**
