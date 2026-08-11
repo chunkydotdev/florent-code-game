@@ -544,9 +544,18 @@ window is worth spending and is not evidence for the plank.**
 ## 4f. OBLIGATION 13 — run BEFORE firing, not after
 
 ```
-MECHANISM METRIC READS: bots/_v136loki19/raid.py:256   (the LOKI19_CORE_PECK_ON gate)
-TREATMENT DIFF TOUCHES: v108 vs v104 — computed by tools/inert_check.py
-INTERSECTION: to be asserted by the tool BEFORE the first window
+MECHANISM METRIC READS: bots/_v136loki19/raid.py:256
+TREATMENT DIFF TOUCHES: raid.py, doctrine.py
+INTERSECTION: raid.py
 ```
 **I fired a probe ninety minutes ago having skipped this exact check, and the
 prereg for it now carries an amendment saying so. It runs first this time.**
+
+**AND IT CAUGHT ME AGAIN, BEFORE THE WINDOW RATHER THAN AFTER — which is the
+entire difference.** The first draft of the block above wrote `TREATMENT DIFF
+TOUCHES` as PROSE (*"v108 vs v104 — computed by tools/inert_check.py"*), the
+same defect as the LOKI-16b probe's, and `inert_check` returned **MALFORMED**
+twice before I wrote it as a path list. **A declaration that names no paths is
+not a declaration**, and both times my instinct was to describe how the value
+would be obtained rather than to state it. **The tool refused prose on both
+attempts and nothing else would have.**
