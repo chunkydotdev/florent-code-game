@@ -95,3 +95,59 @@ INTERSECTION: raid.py
 No currency claim. No verdict. **It may not be described as confirming the
 head-to-head** — 53% at p≈0.35 is not a finding, and one unrated window does not
 make it one. It may not borrow any other plank's bars.
+
+---
+
+# AMENDMENT 1 — **THE SCREEN IS SIZED AT 4,096 GAMES. DECIDED HERE, BEFORE ANY RE-RUN.**
+
+**Written 2026-08-11 09:3xZ, after the live window fired and BEFORE any further
+head-to-head is run.** ADD-only; moves no bar.
+
+## A1.1 THE ARITHMETIC THAT FORCES A CHOICE
+
+A true 53% effect against a 50% null needs, at 80% power:
+```
+n=  64   z=0.48   no
+n= 256   z=0.96   no
+n=1024   z=1.92   no
+n=4096   z=3.84   RESOLVES
+```
+**So re-running at 64 CANNOT EVER SETTLE THIS.** A series of 64-game screens will
+keep returning 50% ± 6% forever, and each one will feel like new information.
+
+**⇒ THERE ARE EXACTLY TWO HONEST POSITIONS AND DRIFTING BETWEEN THEM IS HOW A 53%
+BECOMES A BELIEF:**
+* **size the screen at ~4,096 and say so**, or
+* **declare it PRIORITISATION-ONLY and stop re-running it.**
+
+## A1.2 THE DECISION: 4,096, AND IT IS LAUNCHED
+
+**Head-to-head games are free, instant, unlimited and need no rate-limit slot** —
+the one resource this project is not short of. **A live window can never buy
+4,096 games; the harness can buy them overnight.** That asymmetry is the whole
+argument for the instrument and it would be wasted by screening at 64 forever.
+
+**8 maps × both seats × 256 seeds = 4,096 games**, treatment `bots/_v146gunaxis`
+vs control `bots/_v130loki13`. **The null control has already been established at
+32/64 = 50.0% and will be re-run at the same n for a matched baseline** — a 4,096
+treatment against a 64 null would be comparing a tight interval to a loose one.
+
+**PRE-COMMITTED READING, written before the number exists:**
+
+| result at n=4,096 | how it MUST be written |
+|---|---|
+| CI excludes 50% and above | *"the gunner-axis penalty beats the previous line iteration in self-play at n=4,096."* **Still not a currency claim and still not the field** — self-play is deterministic and one opponent. |
+| CI excludes 50% and below | **refuted in self-play.** The live window's games are read on their own bars and the plank is demoted. |
+| CI includes 50% | **NO EFFECT DETECTABLE AT 4,096 GAMES.** Not "promising", not "needs more games" — **4,096 was chosen as the resolving n and this is the answer at it.** |
+
+**⛔ AND NO INTERIM PEEK MOVES ANYTHING.** The read is at 4,096. **I have already
+seen 34/64 and that is exactly why the final n is fixed here** — the same
+optional-stopping problem Amendment 4 of LOKI-19 was written to close, arriving
+on the local harness instead of the live ladder.
+
+## A1.3 WHAT THIS DOES NOT DO
+
+It does not touch the live leg's bars — those 25 unrated games are read against
+§4 as written. It does not upgrade the plank. **And it does not make self-play the
+fixture of record: `FIXTURE_OF_RECORD: live_unrated` is unchanged, and a 4,096-game
+self-play result PRIORITISES rather than CLOSES, per D12.**
