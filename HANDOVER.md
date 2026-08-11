@@ -1,4 +1,146 @@
-# LIVE: **v104 = "Loki v2"**. s28 state, 2026-08-10 17:31 CEST (15:31Z).
+# LIVE: **v104 = "Loki v2"**. s29 state, 2026-08-11 06:5x CEST (04:5xZ).
+
+## ===== ⭐ s29 — READ THIS BLOCK BEFORE THE s28 ONE BELOW IT =====
+##   **LADDER: v104, ~1663-1678, rank #24-25/117, ~724 matches. `RULE=held`,
+##   net_act ~+48, peak 1698, drawdown -35. NO ROLLBACK. Nothing was shipped.**
+##
+##   **⭐ FIRST: `.venv/bin/python tools/plank_status.py --all`. NEW, AND IT
+##   EXISTS BECAUSE OF THIS SESSION'S NEAR-MISS.** I booted, read this file, ran
+##   the target-value gate, picked cells, verified a tree, and got **one commit
+##   from activating LOKI-17 — withdrawn by its own author five hours earlier**
+##   (`c91c078`). The block saying it was next was written at 17:31; the kill
+##   landed at 22:03. **A HANDOVER BLOCK IS A CLAIM WITH AN EXPIRY DATE AND THE
+##   ONE THING A SUCCESSOR CANNOT DO IS NOTICE THAT IT EXPIRED.**
+##   ⇒ **STANDING RULE: a plank's death is written to HANDOVER IN THE SAME COMMIT
+##     that kills it, or it is not written.** A wrap-time sweep is too late.
+##
+##   **⭐ AND THE RULE THAT WOULD HAVE SAVED THE MOST TIME TODAY:**
+##   **BEFORE PRE-REGISTERING A MECHANISM METRIC, ASK WHAT IN THE DIFF CAN CHANGE
+##   IT. IF THE ANSWER IS NOTHING, THE LEG SPENDS A WINDOW TO LEARN NOTHING.**
+##   LOKI-17's primary sat downstream of an `can_fire_from` guard it never
+##   touched — ~100% in BOTH arms. Not pre-satisfied: **inert**.
+##
+## ===== ✅ LOKI-16b: READ OUT, AND IT CLEARS ITS BAR =====
+##   **+0.164 [+0.073, +0.253]** on the 12-ring stratum vs a **+0.15** bar, CI
+##   lower bound above zero. Amendment 2c row 1, verbatim: *"clears the
+##   pre-registered bar at n≈8 matches; underpowered, and a confirmation leg is
+##   now WORTH the exposure."* **"Confirmed" is forbidden and is not used.**
+##   **THE STATISTIC CHOICE WAS THE DECIDING CALL AND IT WAS MADE BLIND:**
+##   per-tile **+0.164 clears**, any-builder **+0.137 misses**, bar between them.
+##   Chosen on the BAR'S PROVENANCE at `3b56e9b` 06:15:21; the blind replication
+##   launched `14d7720` 06:08:52 and the number landed after. **Two clocks,
+##   verified against `git log`, not accepted on report.**
+##   **NEXT: a confirmation leg is now justified.** And the prereg's own fork is
+##   open — retention cleared, **kill-speed was NOT read**.
+##   ⛔ `tools/ring_retention.py` IS RETIRED (no entity-kind filter; **66.4% of
+##   its "bodies" are barriers/conveyors** and it FLIPS THE SIGN). Use
+##   `scratchpad/ring_read.py`. **Its `--selftest` PASSES and is worthless — it
+##   tests the RING GEOMETRY, never the OCCUPANCY RULE.** Side lane is hunting
+##   that signature across `tools/` now.
+##
+## ===== ⭐⭐ LOKI-19 = `bots/_v136loki19` (md5 `fb5cba8c`) — BUILT, DOSE-VERIFIED, NEEDS A PREREG =====
+##   **ONE GATE. `LOKI19_CORE_PECK_ON`, re-enabling the enemy-core peck only.**
+##   `main.py` and `eco.py` are BYTE-IDENTICAL to v104; counterbattery
+##   (defensive) and siphon (economic) stay silenced deliberately.
+##   **DOSE VERIFIED, and this is the anti-LOKI-17 check: 777 -> 3,005
+##   builderAttack events over the same 10 local games.** The treatment fires.
+##   **THE FINDING BEHIND IT:** `LOKI_QUIET_ON = True` has silenced all builder
+##   melee since the Eir->Loki switch. **0 builder attacks across 2,247
+##   self-inserts over SIX versions** (v104 alone 0/1,490) against a pre-quiet
+##   **80.7% any_atk / 17.5% core_atk** — and **28.1% of night inserts stood
+##   ORTHOGONALLY ADJACENT TO THE ENEMY CORE and never swung.**
+##   **LOKI-QUIET WAS NOT WRONG. ITS PREMISE EXPIRED.** Its stated reason was
+##   *"ARRIVAL is the scarce quantity, not damage"*; arrival went **18.6% ->
+##   38.1%**. **A conditional optimisation outliving its condition — nothing
+##   fails, no test goes red.**
+##   **THE PREREG MUST CARRY THE COUNTER-ARGUMENT:** a peck still costs that
+##   raider its move. The question is **not** "does melee help" but **"at 38%
+##   arrival, is an arrived-round worth more spent on damage than on holding
+##   position?"** — a different question from the one v96 answered at 18%.
+##   **PREREG LINES RESEARCH ASKS FOR, both to prevent a units error:**
+##   `ARRIVAL BASELINE: 38.1% reach, kind=INSERT, ours, rated corpus, n=475` and
+##   size n against **0/2,247**, never the rated-only 0/475 (understates 4.7x).
+##   **⛔ AND THE ARRIVAL NUMBER IS POPULATION-SENSITIVE — THIS IS THE SIXTH
+##   UNITS-NOT-DATA INCIDENT OF THE DAY AND IT IS INSIDE THE GUIDANCE ITSELF:**
+##   v104 reads **39.5% rated-only** but **23.3% pooled with unrated** (n=1,493),
+##   and v102-v107 all-games spans **18.2%-40.9%**. **A leg that reads reach on
+##   any other population will not get 38.1% and will test the bar against the
+##   wrong number.** The tag travels with the number or the number is worthless.
+##
+## ===== ⚠ QUEUE REORDERED MID-SESSION — LAUNCHER CHAINS DEMOTED BEHIND LOKI-19 =====
+##   Chains were the lead for ~30 minutes (Magnus asked; we build exactly ONE
+##   launcher, latched, on the DEFEND path — verified in the LIVE Loki tree).
+##   **Demoted on the side lane's objection: building a six-link express lane to
+##   deliver bodies that provably do not attack on arrival spends +60% permanent
+##   cost scale to move the same zero further forward.** Insertion and conversion
+##   are different planks and **conversion is upstream**. If a chain leg fires
+##   and nulls, this is why — and the null would be **indistinguishable from
+##   "chains don't work"**, closing a road wrongly.
+##
+## ===== ⛔ TURRET MIX (the s28 "best-corroborated candidate") IS OFF-PROGRAMME AS SPECIFIED =====
+##   `main.py:544` is inside **`_try_counterbattery`** — a DEFENSIVE path. The
+##   D30 grep found the right LINE and stopped before the enclosing FUNCTION.
+##   The on-programme half (raid.py builds zero gunners) is real but is **a
+##   build, not a constant**: gunner r²=13 vs sentinel r²=32, and a gunner's shot
+##   is BLOCKED by obstacles. Corroboration also downgraded — the kill-mix half
+##   is **substantially tautological**.
+##
+## ===== INSTRUMENT DEFECTS FOUND s29 — five, and two nearly killed live planks =====
+##   1. **`tools/loki17_mech.py` COULD NOT RUN** (4-tuple yielded, 3 unpacked).
+##      **No number in circulation came from it.** Fixed.
+##   2. **`throws.tsv` CONDITIONALLY DEAD** — `reached`/`any_atk`/`core_atk` are
+##      identically zero across **172,547 cross-team (kidnap) throws** and
+##      healthy on self-inserts. They are keyed to the THROWN bot's own enemy, so
+##      for a kidnap `core_atk` counts **the enemy hitting OUR core** — zero
+##      there is the GOOD outcome. **This was about to retire the kidnap line.**
+##      `corpus_sanity` now re-derives both halves live.
+##   3. `ring_retention.py` sign flip (above).
+##   4. **`elo_history.tsv` and `corpus/SHIP_ALERT` stamp LOCAL CEST with NO ZONE
+##      MARKER** — a successor reading `05:52` as Zulu thinks the tape is 2h
+##      FRESHER than it is. **STILL UNFIXED. Builder-owned. Queued.**
+##   5. `league_games.tsv` **47h STALE** (corpus_sanity flags it).
+##   **⇒ Five units-not-data incidents in two days** (45° vs exact-ray; two
+##   `undamaged`; three "forward"; `hold_any` vs `hold_pinned`; four at once in
+##   `throws.tsv`). **The pattern is not carelessness — this project computes the
+##   same quantity in two places and names it once.**
+##
+## ===== ENGINE FACTS ESTABLISHED s29 (subagent, `2181300`) =====
+##   * **`can_fire_from` is UNAFFECTED by an intervening entity** — barrier built
+##     on the ray, accept/reject identical at every distance on 3 maps.
+##     **Retires PREREG-loki17 Amendment 1g limit 1.** (Legality only; the
+##     damage-side version was not attempted.)
+##   * **`_probe_firefrom` extended to ALL 8 facings** (was 3, all in one
+##     quadrant): pure-Python geometry matches the engine on every facing.
+##   * **Rotation control exact: 4067/4067 = 100.0% at rotate=0, 0/4067 = 0.0% at
+##     rotate=1** on the same n.
+##   * **⚠ TRAP FOR ANY MULTI-UNIT PROBE: `Player` CLASS-LEVEL STATE IS NOT
+##     SHARED ACROSS A TEAM'S UNITS.** A probe's core wrote `Player.builder_id`
+##     and the builder never saw it — **idle for 1000 rounds, no exception
+##     raised.** Only `read_store`/`write_store` crosses units.
+##   * `--archived` mode added to `loki17_mech.py` (resolves OUR seat per file
+##     from `meta_join.us_side`; never assumes team 0).
+##
+## ===== ⚠ OPEN, AND DO NOT LET THEM LAPSE =====
+##   * **Flag 2 on LOKI-16b:** `P(point <= 0 | true = +0.15, 8 clusters)` governs
+##     the KILL band. **Moot today (the kill band did not fire), MUST be computed
+##     before that row is ever used.**
+##   * **The v95-v101 transition zone is NOT explained.** v98 was submitted
+##     **17:10**, twenty minutes BEFORE the LOKI-QUIET tree existed (`7beac55`
+##     17:30), and reads 0.0%. **Do not write the tidy history.**
+##   * **Kidnap effectiveness has NO column in `throws.tsv`.** That is a decoder
+##     gap and **must never be read as a null**. Prerequisite if the kidnap line
+##     comes back up the queue.
+##   * **Team 48**: mechanism real (they kill r93, we need r140) but **currency
+##     dropped** — 2.7% of v104's rated diet and the rated sample INVERTS (7/10).
+##
+## ===== ⚠ RESEARCH RETRACTED ITS OWN "THE RACE TIGHTENED" TREND CLAIM =====
+##   Subset-vs-whole comparison; disjoint periods give **+39 -> -10, p=0.123**,
+##   opponent composition uncontrolled. **What survives is arithmetic only: the
+##   +39 margin was computed on 240 of 365 games; the full-sample figure is +17.**
+##   **Do not carry "the race is tightening over time" into a prereg.**
+
+## ===== s28 BLOCK BELOW — SUPERSEDED WHERE IT CONFLICTS WITH THE ABOVE =====
+# s28 state, 2026-08-10 17:31 CEST (15:31Z).
 
 ## ===== ⭐ TOMORROW'S BEST-CORROBORATED CANDIDATE: TURRET MIX =====
 ##   **212,563 builds, third-party matches included. Us vs the 23 teams at or
