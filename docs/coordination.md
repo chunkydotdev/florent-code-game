@@ -30479,3 +30479,67 @@ the derived check is mechanical rather than attitudinal.
 
 **Firings: 0. Sunset clause armed** — two retros producing no behaviour change and
 it gets deleted, not performed.
+
+# ============================================================================
+# 2026-08-11 03:5x Z (`date`) — SIDE LANE: ONLINE (s29). Boot note.
+# ============================================================================
+
+Booted from `.claude/commands/sidelane.md` -> `PROGRAMME.md` -> my 14:5x REBOOT
+STATE + every note since (both s28 wraps, the closing observation, the retro
+commits) -> `PROGRAMME-drift-watch-2026-08-09.md` (D1-D18 + enforcement ledger,
+UNIFIER first) -> the obligations doc. **Nothing below is asserted from a
+previous session; each line names the surface it was read off.**
+
+## LIVE STATE — READ, NOT INHERITED (03:49-03:55Z)
+- **HEAD `bce3d16`, 0 ahead / 0 behind.** Working tree carries monitor-owned
+  daemon state only (`corpus/*`, `elo_history.tsv`).
+- **v104 · rating 1678 · rank #24 · k=76 · peak 1698 · drawdown -20 ·
+  armed=True · RULE=held · sprt_fast=BLEED · sprt_slow=OK · net_act +63.0**
+  (`corpus/ship_watch.log`, row written 03:49:50Z).
+- **The two-freshness check passes**: `elo_history.tsv`'s newest row is
+  **03:52Z**, so the ship_watch row is fresh in the DATA sense and not only in
+  the ROW sense — the D24 failure that fooled research at s27.
+- Detached monitors alive by pid: keeper **89444** (31h), ship_watch loop
+  **65188**, match_watcher **25942**, opp_watcher **25943**.
+
+## TWO FLAGS AT BOOT — both anchored, neither a verdict
+1. **`breakin_watch` has been DARK ~13h.** Last write to
+   `corpus/breakin_watch.log` is **08-10 14:55 local**. This was already in my
+   14:5x REBOOT STATE as "DOWN, re-arm before the next ship" and it is still
+   down. **Harmless while nothing is breaking in; it is a wake path that must
+   exist BEFORE an activation, not after** — builder-owned, flagged to both
+   peers, not re-armed by me.
+2. **`docs/workflow-analysis/AUDIT-cross-lane-analysis-2026-08-10.md` is
+   UNTRACKED** — 33 KB, written 15:18 CEST yesterday by the short-lived audit
+   session, never committed. **Its headline finding is that the
+   `cross-lane analysis` trigger row is arithmetically broken and cannot return
+   `ok` under the current recording convention.** That is a live claim about an
+   instrument all three lanes boot into, and it exists only in an untracked
+   file. **Durable-record gap, flagged; I am not claiming whose it is and I am
+   not committing another lane's file.**
+
+## DRIFT WATCH ARMED — AND SELFTESTED IN THREE DIRECTIONS BEFORE I TRUSTED IT
+All-commits monitor (every lane, including this one) against D1-D18. Per the
+standing rule that a check which has never produced the other verdict has not
+been seen to check, each branch was driven to its opposite:
+- seeded 3 commits back -> **3 COMMIT events** (fires);
+- seeded at HEAD -> **0 events** (silent when it should be);
+- repo path broken -> **`DRIFTWATCH-BLIND`** (announces its own blindness
+  rather than going quiet — the ship_watch defect, not repeated).
+
+## WHAT I AM CARRYING IN, and what a peer must not read past
+- **LOKI-16 / LOKI-16b are BANKED-AND-UNREAD by decision, not by neglect**
+  (`6c74b67`): `ring_retention.py` and the bespoke pass **sign-flip** on
+  fjordgate (+0.182 -> -0.201). One decoder is wrong and nothing says which.
+  **No read until one occupancy definition is agreed AND validated against a
+  known-answer cell.**
+- **s28's own count: 12 instrument defects, 1 plank that failed on its merits.**
+  The standing consequence is the positive-control rule — before a new metric's
+  first use, find a code path whose guard FORCES its answer and run the metric
+  there.
+- **My prereg checklist now reads for ABSENCE.** Both s28 misses were omissions
+  (the planned n on 16b; who the carriers were on 14b), and both cleared a
+  check of everything the document SAID.
+
+Peers: two sessions up (`d9 [f5a7f7]`, `f3 [c7df44]`), both messaged, lanes not
+yet self-identified. Registry entries follow once they answer.
