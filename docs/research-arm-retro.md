@@ -1,6 +1,6 @@
-# RESEARCH ARM RETRO — **v1.0** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.1** — run it at every wrap, before the process deltas
 
-**RETRO v1.0 · created 2026-08-10 (s28) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
+**RETRO v1.1 · created 2026-08-10 (s28) · bumped 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
 
 **Versioned on the same standard as the method: EVERY QUESTION CARRIES THE INCIDENT
@@ -90,6 +90,22 @@ Per lane, because they need different things:
 **Count retractions separately.** *s28: three of mine reached a lane before I
 corrected them.*
 
+### 7. DID I NAME A **CAUSE** WHEN I HAD ONLY MEASURED AN **EFFECT**?
+**Count separately: effects measured, and causal labels attached to them.** For each
+label, was it marked as an inference *in the same message that carried it*?
+*s29 incident (the one that created this question): **three times in one session** the
+effect was real, load-bearing and correctly measured, and the causal sentence wrapped
+around it was wrong — "the race TIGHTENED" (a stale cutoff), "the launcher raid
+DELIVERED NOTHING" (a mis-keyed denominator), "a REGRESSION in the shipped bot" (a
+deliberate flag). **All three reached a lane. All three were withdrawn.** The habit
+of marking inferences exists and fired unprompted for "conversion problem" the same
+morning — **it simply did not fire on these three.***
+**The derived check, mechanical rather than attitudinal: a causal sentence ships with
+the word INFERENCE next to it, or it does not ship.** And: **a name introduced in a
+document must cite the file and line implementing it, or be marked PROPOSED** —
+`hold_any` was coined in my own adjudication for something no tool computes, and it
+became the deciding call of an amendment before anyone checked.
+
 ---
 
 ## Two standing lines to close on
@@ -144,3 +160,28 @@ not tokens spent. **If that ratio falls, the lane is drifting toward being a lib
 nobody reads — which is precisely what happened to `docs/research/tactics/`: 252
 files, ~28k lines, and a decision-path citation rate of ZERO until Magnus ordered it
 mined on 2026-08-10.**
+
+### v1.1 — 2026-08-11 (s29) — MINOR: **+1 question, and the file's FIRST FIRINGS**
+
+**Bump justified by a named incident, per this file's own bar.** Question 7 (cause
+vs effect) is seeded by three s29 retractions in one session, all with the same
+shape: **the measurement was right and the causal label was one step off, and all
+three reached a lane before being withdrawn.**
+
+**FIRINGS: 3.** The sunset clause is **disarmed** — this file changed behaviour on
+its first real application:
+1. **Q5 (declines)** fired at boot: `audit_trigger` was at 3/5 and the lane declined
+   the library sweep outright, naming the 1.8% conversion rate as the reason. **The
+   trigger closed to 1/5 by the wrap** (doc:code churn 1.06→0.99, cross-lane
+   4.24→2.38).
+2. **Q4 (own-checks-on-own-work)** moved off zero for the first time: one published
+   error self-caught (the "race tightened" trend claim) plus **three broken
+   instruments caught before publication** — a literal `Z` appended to a local
+   timestamp, a `team` column that does not exist in `throws.tsv`, and an unquoted
+   `--include=*.py` that returned exactly the zeros the hypothesis predicted.
+3. **Q3 (relay fidelity)** was run and came back CLEAN, which is itself the finding:
+   **this lane's failure mode moved.** s28's was compressing agent output; s29's was
+   causal labelling on the lane's own analysis. **A retro that only asked s28's
+   question would have returned "no defects" on a session with three retractions** —
+   which is precisely why Q7 exists.
+
