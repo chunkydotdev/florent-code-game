@@ -32,6 +32,13 @@ that merely MENTIONS a blocked or shipped sibling is excluded. Measured on the
 for the words "dead-list entry" and #9 for "we just shipped the other direction".
 
     ⇒ It errs toward RAISING THE ALARM EARLY, never toward a false OK.
+    MEASURED AGAIN 2026-08-11 after the GREP gate landed: item #10's own grep
+    stamp cites `eco.py:pave_blocked_by_ore`, and the substring "blocked"
+    excludes it. The live count reads 3 where 4 are startable. THAT IS STILL THE
+    SAFE DIRECTION and the correct response is to GENERATE, not to loosen the
+    matcher -- loosening it to hit a number is the same Goodhart the GREP gate
+    was added to stop.
+
       Do not "fix" it into a smarter matcher that could miss a real emptiness;
       if you want the true count, read the file. This is a floor alarm, not an
       inventory.
@@ -50,7 +57,13 @@ FLOOR = 3
 # Substrings that disqualify a row from counting as startable. Lowercased match.
 BLOCK_MARKERS = (
     "blocked", "blocker", "gated", "needs a number", "settles it first",
-    "shipped", "dead", "do not re-queue", "waiting on",
+    "do not re-queue", "waiting on",
+    # "shipped" and "dead" were REMOVED as text markers on 2026-08-11. Both are
+    # already handled by DEAD_SECTIONS (## FIRING NOW / ## DEAD), and as
+    # substrings they fired on legitimate rows: an incumbent-grep stamp reading
+    # "NOT shipped" -- i.e. the very evidence that an item IS startable -- was
+    # excluding it. The undercount is the safe direction but it was wrong here,
+    # and rewording the queue around a tool's bug is the wrong repair.
     # Added 2026-08-11 after a WITHDRAWN row padded the floor: a plank that has
     # been refuted still parses as a numbered row, so the withdrawal has to be
     # read off the TEXT. Same false-positive class as the decomposition table.
@@ -94,6 +107,26 @@ def _is_plank_row(row: str) -> bool:
 
 
 def unblocked(rows):
+    """Startable = plank row, no blocker marker, AND the incumbent grep has run.
+
+    ⛔ THE `GREP:` REQUIREMENT EXISTS BECAUSE THIS ALARM WAS GOODHARTED BY ITS OWN
+    AUTHOR, WITHIN HALF AN HOUR OF BEING WRITTEN. A floor of 3 is a TARGET, and a
+    target gets met: the queue was stocked to "6 startable items" at 13:27 and by
+    13:51 THREE of the six were withdrawn (ring retention, launcher delivery,
+    idle-builder defence) because the disqualifying check ran AFTER admission
+    rather than before it. Net effect: the file advertised work that did not
+    exist -- which is precisely the "reads full and is empty" failure the alarm
+    was built to catch, reproduced by the alarm.
+
+    `CLAUDE.md` already carries the rule -- "before pre-registering any plank,
+    grep the incumbent for the behaviour: the cheapest possible null is a leg
+    that tests a feature we already shipped" -- but it fires at PREREG, which is
+    downstream of admission. Moving it upstream costs ~2 minutes per item.
+
+        ⇒ A row counts only if it carries `GREP:` naming what was checked and
+          what was found. An honest 3 that FIRES beats a padded 6 that cannot.
+          Raised by the side lane; the diagnosis is theirs.
+    """
     live = []
     for section, row in rows:
         if any(section.startswith(d) for d in DEAD_SECTIONS):
@@ -102,6 +135,8 @@ def unblocked(rows):
             continue
         low = row.lower()
         if any(m in low for m in BLOCK_MARKERS):
+            continue
+        if "grep:" not in low:
             continue
         live.append((section, row))
     return live
@@ -121,7 +156,7 @@ def selftest() -> int:
         # (name, markdown, expected unblocked count)
         ("empty file", "# QUEUE\n", 0),
         ("one clean row",
-         "## NEXT UP\n| # | p |\n|---|---|\n| 1 | **thing** | change | metric |\n", 1),
+         "## NEXT UP\n| # | p |\n|---|---|\n| 1 | **thing** | GREP: PASS | metric |\n", 1),
         ("row carrying BLOCKED is not counted",
          "## NEXT UP\n| 1 | **thing** | BLOCKED on a number |\n", 0),
         ("row under ## BLOCKED is not counted",
@@ -135,15 +170,23 @@ def selftest() -> int:
         ("header and rule rows are not rows",
          "## NEXT UP\n| # | plank |\n|---|---|\n", 0),
         ("three clean rows meet the floor",
-         "## NEXT UP\n| 1 | **a** | c |\n| 2 | **b** | c |\n| 3 | **c** | c |\n", 3),
+         "## NEXT UP\n| 1 | **a** | GREP: PASS |\n| 2 | **b** | GREP: PASS |\n| 3 | **c** | GREP: PASS |\n", 3),
         # The false-positive cell. A decomposition table inside a queue section
         # padded the floor on 2026-08-11; this is the regression test for it.
         ("a non-plank table row does NOT count",
          "## NEXT UP\n| **product** | **3.36x** | = the anchor |\n", 0),
         ("a struck-through plank id still counts as a row",
-         "## NEXT UP\n| ~~3~~ | **a** | c |\n", 1),
+         "## NEXT UP\n| ~~3~~ | **a** | GREP: PASS |\n", 1),
         ("a WITHDRAWN row does NOT count (it still parses as a numbered row)",
          "## NEXT UP\n| ~~3~~ | ~~**a**~~ | **WITHDRAWN — premise refuted** |\n", 0),
+        # The Goodhart cell: an item with no incumbent grep does not count, even
+        # though it is numbered, unblocked and reads as ready.
+        ("a row with NO incumbent grep does NOT count",
+         "## NEXT UP\n| 1 | **thing** | change | metric |\n", 0),
+        ("the same row WITH a grep does count",
+         "## NEXT UP\n| 1 | **thing** | GREP: PASS not shipped | metric |\n", 1),
+        ("a DEAD-section row is still excluded without the text marker",
+         "## DEAD\n| 1 | **thing** | GREP: PASS | metric |\n", 0),
     ]
     bad = 0
     for name, md, want in cases:
