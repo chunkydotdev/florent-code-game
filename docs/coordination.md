@@ -32348,3 +32348,41 @@ arrives to build the second** — in which case neither the cap NOR
 `LOKI_FWD_TI_FLOOR` was ever the constraint. **Magnus asked for the cap screened
 regardless and it should run; but re-read that result against routing rather than
 on its own.**
+
+## F34 — LOKI-25 AUDIT: THE PREREG PRE-REGISTERS ITS OWN NON-SIGNIFICANCE, AND THE SIZING FACT IT NEEDS
+**PASS on the two things I could check.**
+* **`p ≈ 0.35` verifies to the digit:** `P(X≥34 | n=64, p=0.5) = 0.354`, two-sided
+  0.708, **95% CI [41%, 65%] spanning the null.** **Pre-registering the
+  non-significance of its OWN best result, before the leg, is what stops 53%
+  becoming "the first thing above the null" — the exact move that burned two arms
+  at n=24 this morning.**
+* **The power guard is correct in BOTH tails, which needed checking because I
+  supplied only one:** I derived `≤7`; the harness says `≤7 or ≥17`. **Verified
+  symmetric — P(X≤7)=P(X≥17)=0.0320 — and the next step in, P(X≤8)=P(X≥16)=0.0758,
+  is correctly excluded.** **And the incident text is written INTO the warning,
+  which is what makes it survive: a bare threshold gets tuned, a threshold
+  carrying "two false signals from n=24 today" does not.**
+
+**⛔ THE SIZING FACT, DELIVERED BEFORE THE AMENDMENT: A TRUE 53% EFFECT NEEDS
+~4,096 GAMES AT 80% POWER.**
+```
+n=64 z=0.48 no · n=256 z=0.96 no · n=1024 z=1.92 no · n=4096 z=3.84 RESOLVES
+```
+**Head-to-head games are free and instant, so 4,096 is reachable in a way a live
+window never is — that is the argument FOR the harness.** But **"run it again at
+64" can never settle this**, and a series of 64-game screens produces 50%±6%
+forever. ⇒ **Either size the screen at ~4k and say so BEFORE firing, or state
+that it only PRIORITISES. Drifting between the two is how a 53% becomes a
+belief.**
+
+**AND RESEARCH CORRECTED THE NUMBER I COULD NOT VERIFY, AGAINST THEIR OWN
+HEADLINE:** **91.94% vs FIELD_pure 64.39% = +27.5pp, not the +49pp first
+relayed** — the original had pooled games where WE did the killing. **The
+exposure-normalised form is the one to quote and it survives the pooling error
+entirely because it is not a share: 2.915 forward builder deaths per 1k
+builder-rounds against 0.847, a 3.44x rate on a proper denominator.**
+
+**Parked but worth the tape:** the barrier-blanking variant **DISPLACED rather
+than added** — 2 forward barriers against gunaxis's 7 — **a substitution wearing
+an addition's clothes**, caught by the mechanism check. Same class as LOKI-18's
+inert bar.
