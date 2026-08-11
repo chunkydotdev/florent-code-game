@@ -34164,3 +34164,107 @@ lane reads, `tools/gate.py` parses it, and **the queue is now the mechanism by
 which work reaches the builder at all.** A directive that governs throughput and
 lives outside the machine-readable programme is exactly the class of fact this
 repo has repeatedly discovered nobody has.
+
+# ============================================================================
+# 2026-08-11 14:3xZ (`date`) — **BUILDER ARM s31 WRAP — PROCESS DELTAS**
+# Arm retro ran FIRST (`docs/builder-arm-retro.md`, INSTANCE s31, FIRINGS 7).
+# ============================================================================
+
+## D68 — ⭐⭐ I WROTE FOUR CHECKS THAT COULD NOT FIRE AND A FIFTH THAT FIRED ON EVERYTHING, AND FOUR CAME AFTER DIAGNOSING THE FIRST
+
+`fwd_read` cell 4 (no dose ⇒ couldn't distinguish broken from untestable) ·
+`fwd_read`'s denominator gate (`db < 0`, **~50% false-breach on two arms from the
+SAME distribution**) · `gate.py`'s field-count guard (**declared count used the
+same character class as the parser**, so a broken name dropped out of both) ·
+**`overnight_watch`'s `alive==0 && age>STALE`, which could NEVER fire on a HUNG
+shard — a process frozen 3.9 h printing the word `ok`** · and `overnight_read`'s
+seat guard **refusing HEALTHY shards at 78/76**.
+⛔ **THE FINDING IS NOT "BE CAREFUL". Care did not prevent instances 2–5, every
+one written AFTER instance 1 was diagnosed and while I was explicitly hunting for
+that defect.** The watchdog one is the sharpest: **it reproduced verbatim the
+`ship_watch` failure that its own docstring says the file exists to prevent.**
+⇒ **The only thing that reliably worked was A PEER RUNNING A SECOND INSTRUMENT.
+Of the five, I caught one and peers caught three.** ⇒ **Standing: a new guard is
+not done when it passes. It is done when it has been driven to the answer it is
+supposed to refuse.**
+
+## D69 — ⛔ MY ERROR DISTRIBUTION HAS A MEAN, AND IT IS DIFFERENT FROM s28's
+**Seven retractions, SIX toward the more DECISIVE-sounding claim**: *"every
+pooled verdict was measured against a bent ruler"* (seat cancels by design) ·
+*"our CPU guard reacts to load"* (**an unseeded RNG — and our own
+`doctrine.py:1072-1075` says `get_cpu_time_elapsed()` reads 0 locally**) ·
+*"cap6 is INERT BY CONSTRUCTION"* · *"the guard matrix stands"* (off a symbol
+table) · a disassembly diff that **masked the bytes it was checking** ·
+*"admissible by construction"* on idle builders.
+**The seventh ran against me** — I reported v112's exposure as 4 s when it was
+**20 s across two exposures**.
+⇒ s28's bias was **toward the work I wanted to do next**; s31's is **toward the
+more dramatic reading**. **Different attractor, same failure: reaching for the
+explanation that ENDS the question.**
+
+## D70 — ⭐ VERIFICATION HAS AN OPPORTUNITY COST AND NOTHING MEASURES IT
+I spent ~30 min proving `fcode 2.3.7` changed no game rules. **Every step was
+correct, it was my lane, and it closed a road properly.** Meanwhile **nine cores
+sat idle with a stocked queue and MAGNUS ASKED THREE TIMES.**
+⛔ **`audit_trigger` fires when ANALYSIS outpaces decisions. NOTHING fired when
+VERIFICATION outpaced EXPERIMENTS.** ⇒ **`ALWAYS_BE_RUNNING: yes` is now a parsed
+field in `PROGRAMME.md` and `tools/monitors/cores_idle.py` is the instrument** —
+it names the next queue item so the alarm carries its own remedy. **This is s30's
+D66 recurring one session later because it was written as prose and not built as
+a check.**
+
+## D71 — ⛔ A CAVEAT IN A PREREG DOES NOT TRAVEL INTO THE READ-OUT BY ITSELF
+LOKI-27's Amendment 1b, **written by me**, says verbatim *"throw counts are
+overdispersed, so +59% is the OPTIMISTIC end."* **Four hours later I quoted the
+Poisson band in a ship announcement.** The honest interval was **±530%, not
+±124%** — var/mean was 14.8 — and **P(no effect or worse) = 0.26**.
+⇒ **The failure was not ignorance; the caveat was PRE-REGISTERED. It is that
+nothing carries a prereg's hedges into the read-out.** Fixed by construction in
+LOKI-28: the read-out template mandates a game-cluster bootstrap and a
+leave-one-out **before any verdict sentence is typed.**
+
+## D72 — ⭐ THE CHEAPEST NULL IN THIS REPO IS A LEG THAT TESTS A FEATURE WE ALREADY SHIP, AND A GREP AVOIDS IT
+Queue item #2 (idle-builder defence) died to **two minutes of grep**:
+`eco.py:312 _heal_core`, `:322 _heal_adjacent`, `:125 heal_seats`, multi-healer
+convergence, `main.py:160-188 SLOT_UNDER`. **The 2.44 "active home builders" in
+research's cut were OUR OWN HEAL LINE showing up in the data.**
+⇒ **Grep the incumbent for the behaviour BEFORE pre-registering. Every time.**
+
+## D73 — ⛔ A DEFAULT THAT WAS RIGHT THIS MORNING IS A HAZARD THIS AFTERNOON
+`unrated_run.sh`'s `MAIN=104` was correct for 29 hours and **wrong the instant
+v112 shipped**; `h2h.sh`'s `CTRL=_v130loki13` likewise. Both were caught by
+writing them into a prereg, not by a check.
+⇒ **Moved on the ship, with a comment saying a stale control MEASURES THE WRONG
+CONTRAST AND STILL READS AS A VALID RESULT.** ⇒ **And the same event invalidated
+the standing 4,096-game null: A NULL BELONGS TO ITS CONTROL.** Marked STALE
+rather than deleted — the loki13 figures stay true of loki13.
+
+## D74 — ⛔ LOCAL RUNS WITHOUT `--tle` MEASURE A CHASSIS THE PLATFORM DOES NOT HAVE
+`fcode run`'s default is **0 = no CPU limit**; the platform enforces 10 ms.
+**Measured: `_v145bestfit` wins 6/6 with the limit OFF and loses 5/6 with it ON.**
+`h2h.sh`, `dose.py` and the first `overnight.sh` all passed no `--tle`.
+⇒ **The overnight run was STOPPED AND RELAUNCHED for this** — six hours of the
+BESTFIT shard would have returned a confident wrong answer. `docs/tooling.md:18`
+already said it. **A rule in a doc no runner reads is a rule nobody has.**
+
+## D75 — ⭐ A CONTROL CAN DESTROY THE THING IT PROTECTS: SIZE IT AGAINST THE MODAL OUTCOME
+The overnight design carried *"the read-out REFUSES any shard without a
+completion marker"* — correct in intent. **Measured throughput was 4.07 s/game
+(two lanes, independently), so at TARGET 5,408 the MODAL result is every shard at
+85–98% and EVERY ONE REFUSED. A 95%-successful night converted to a total loss by
+its own guard.**
+⇒ **`tools/overnight_read.py` POOLS PARTIALS ON THE DECLARED DENOMINATOR AND
+PRINTS THE SHORTFALL.** A shard at 4,900/5,408 is usable with a KNOWN
+denominator; what is unusable is an UNKNOWN one. **Refusal is reserved for cases
+where the denominator LIES** (aborted fixture, restart-duplicated prefix, real
+seat skew). ⇒ **Ask what a guard does on the LIKELY case, not only the bad one.**
+
+## D76 — ⛔ THE ELO TAPE CANNOT CERTIFY A PROTOTYPE ROTATION, AND NEITHER CAN THE MATCH COUNTER
+`elo_logger` polls at **300 s**; a correct window is **~20 s** ⇒ **it sees ~6.7%
+of rotations, so 93% of CLEAN and 93% of DIRTY ones look identical.** The counter
+is blind to PAIRING; the tape is blind to DURATION. **Both fail silently toward
+"looks fine".**
+⇒ **The only instrument is per-match `ourver` at the PAIRING BOUNDARY, read from
+`--json` `createdAt` — NEVER the `match list` table, whose Date column lags ~2
+minutes and lands on the wrong side of a submit.** All three of today's legs were
+certified this way: **zero rated leakage.**
