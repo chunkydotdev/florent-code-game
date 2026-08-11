@@ -1,5 +1,83 @@
-# LIVE: **v114 = `_v146gunaxis`** (shipped 2026-08-11 19:14Z). s32.
+# LIVE: **v114 = `_v146gunaxis`** (shipped 2026-08-11 19:14Z). **s32 WRAP.**
 
+## ===== ⛔ FIRST TWO COMMANDS, IN THIS ORDER =====
+##   1. `cat corpus/BREAKIN_ALERT corpus/SHIP_ALERT 2>/dev/null` — **NOBODY READ
+##      THESE OVERNIGHT.** If either exists, read it before anything else.
+##   2. `zsh tools/corefill_status.sh` — what ran, what finished, what it says.
+##   Then: `.venv/bin/python tools/overnight_read.py --dir scratchpad/overnight`
+##   **READ THE CALIBRATION CELLS FIRST: `NULL114` must be ~50% and `NEG114` well
+##   below. If either misses, NOTHING ELSE IN THE RUN MEANS ANYTHING.**
+##
+## ===== ⚠ THE SHIP IS DOWN AND WAS UNWATCHED =====
+##   **v114 activated at 1689; last seen 1663, rank #25, k≈5.** At k=5 that is
+##   **25 games against a ladder that pays ±32 a match — NOT evidence.**
+##   `breakin_watch` armed (floor 1615, ~48 pts of room); the slot rule arms at
+##   k>=8 with `net_act` already −23 against a −21 threshold. **The decision point
+##   is k=8 — look then, not at k=12.**
+##   **ROLLBACK: `.venv/bin/fcode submission activate 112`** (~15 s; verify on the
+##   `Active bot:` line, NEVER `$?`).
+##
+## ===== ⛔ CLAUSE (b) IS UNRESOLVED FOR v114 — WE DO NOT KNOW WHY IT WINS =====
+##   Shipped on **51.94%/5,408 games (replicated at 52.22%)** + a platform chassis
+##   gate (**0 TLE'd / 13,457 turns**, mean CPU 485 µs vs the incumbent's 522).
+##   **Its mechanism is UNRESOLVED — not passed, not falsified.** It was declared
+##   dead at **n=25** on a statistic sized at **~880 games** twelve lines later in
+##   the same document, and its own prereg's 4,096-game currency screen delivered
+##   **1,024**. ⇒ **the plank was never validly killed.**
+##   **THREE READINGS OPEN: SITING · VOLUME · GEOMETRY**, and three arms are
+##   running to close them. ⚠ *"forward pressure is net-negative"* was MY
+##   OVERCLAIM and is retracted.
+##
+## ===== ⭐ INTERIM, EXPLICITLY NOT VERDICTS (no interim read may drive a decision) =====
+##   `GUNAXREP` 52.22% ±2.00 (n=2413) — **v114 REPLICATES.**
+##   `GUNAXTB` 49.53% ±1.98 (n=2455) — tiebreak variant; **contrast +2.69pp
+##   z=1.87 p=0.061.** If it holds ⇒ **VOLUME**, i.e. v114 wins by going forward
+##   LESS, which touches doctrine and implies a ceiling.
+##   `GUNFERRY` ~49.3% — ferry-first looks worth ≈0 on top of v114.
+##
+## ===== ⛔ v114 LACKS FERRY-FIRST =====
+##   Branched from the PRE-v112 base: **no flag, no code path.** So v114 = v112
+##   MINUS ferry-first PLUS gunaxis, and `_v143cap6`/`_v144cap12`/`_v145bestfit`/
+##   `_v147gunblank` all share the gap. `_v154gunferry` carries BOTH.
+##
+## ===== RUNNING UNATTENDED — 9 items, ~70k games, done ~03:50Z =====
+##   `tools/corefill.sh`, 14 h deadline, max 8 shards, all runners `ppid=1`.
+##   **ADD** = append to `scratchpad/corefill_work.txt` (verified in production) ·
+##   **CANCEL** = `touch scratchpad/corefill_cancel/<SHARD>` (rows KEPT) ·
+##   **PAUSE** = `touch scratchpad/COREFILL_STOP`.
+##   ⛔ **It LAUNCHES ONCE and NEVER RELAUNCHES** — a dead shard is logged and
+##   left, because a watchdog restarted nine COMPLETED shards from zero today.
+##   ⛔ **s31's data is `scratchpad/overnight_s31/` — read it with `--dir`.**
+##   Queue: GUNFERRY · NULL114 · NEG114 · GUNBLANK · CAP12B · CAP6B · BESTFITB ·
+##   **GUNPEN4/GUNPEN16** (dose sweep — v114's knob was NEVER swept) · **GUNSEAT**
+##   (seat-relative on the LIVE chassis; LOKI-29 tests it on v112's).
+##   ⚠ The 5 LOKI-29 shards carry `_v148ferryfirst` as control — they measure
+##   against the PREVIOUS incumbent. Everything new uses `_v146gunaxis`.
+##
+## ===== ⭐⭐ THE ARCHIVE CANNOT GRADE OUR SHIPS — UNIDENTIFIED, NOT UNDERPOWERED =====
+##   Our versions are **perfectly collinear with our opponents'.** Every modern bot
+##   we own met ONLY Bisons v4; every bot that beat them met ONLY v1–v3.
+##   Focalground: v104 met only their v10, v112 only their v11.
+##   ⇒ *"we regressed"* and *"their v4 is better"* fit 120 games identically **at
+##   any n.** Only a within-window multi-arm unrated leg separates them.
+##   **SmartFridge shipped v28→v35 in 70 minutes** — treat them as a sparring
+##   partner, never a yardstick.
+##
+## ===== s31 READ OUT — `docs/legs/LEG-s31-overnight-readout-2026-08-11.md` =====
+##   41,856 games, both calibration cells passed, MDE 1.90pp. GUNAXIS 51.94%
+##   (survives Bonferroni AND Holm) · **CAP12 crossed by 0.037pp and does NOT
+##   survive** · ROSTER 47.26% REAL NEGATIVE. **GUNAXIS vs CAP12 is p=0.55** —
+##   the verdict labels overstate what separates the arms.
+##   **Seat gap 6.84pp [4.18, 9.50], and it INVERTS by map** (antler 61.7%, atoll
+##   45.6%, χ²=28.03 p=8e-07) ⇒ **turn order is excluded.**
+##
+## ===== BOOT: RUN THESE =====
+##   `plank_status.py --all` · `tests/test_instruments.py` · `corpus_sanity.py` ·
+##   `tests/test_seat_relative.py` · `tests/test_breakin_k.py` ·
+##   `tests/test_local_runs_banner.py` · `mde.py --selftest`
+##   ⚠ **`corefill_status.sh` HAS NO FIXTURE** — five states, none forced. Named
+##   in the arm retro, not fixed. It is the tool you will read first.
+##
 ## ===== ⭐ STATE, VERIFIED ON THE PLATFORM =====
 ##   **v114 = `bots/_v146gunaxis`, py-tree md5 `fdbde822`. 1689, rank #23/120.**
 ##   **ROLLBACK: `.venv/bin/fcode submission activate 112`** (~15 s, verify on the
