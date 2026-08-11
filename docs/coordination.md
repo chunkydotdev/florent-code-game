@@ -32231,3 +32231,45 @@ early build budgets, ρ=−0.415), but the stated reason does not follow.
 that produced ideas were the ones whose comment stated a MEASURED condition I
 could go re-check. The rest state design rationale with nothing checkable in it.**
 Returns dropped sharply after the first six flags.
+
+## ⭐⭐ F30 — CONTROLLER API CENSUS: 15 OF 80 METHODS ARE NEVER CALLED, AND ONE REFUNDS A TAX WE PAY 316% OF
+Commissioned by the builder after the SUBTRACTION seam measured exhausted (five
+subtractions, five results at or below a byte-identical copy of v104 — **we are
+not resource-constrained, we are SINK-constrained**). This is the ADDITION seam.
+
+**NEVER CALLED in `bots/_v130loki13` (15/80):** `build_splitter` · `can_build` ·
+`can_build_splitter` · `can_destroy` · **`destroy`** · `draw_indicator_dot` ·
+`draw_indicator_line` · `get_attackable_tiles_from` · **`get_scale_percent`** ·
+`get_splitter_cost` · `get_stored_resource` · `get_stored_resource_id` ·
+`get_vision_radius_sq` · `resign` · **`self_destruct`**.
+**`destroy` and `self_destruct` appear nowhere in the tree — not in code, not in
+a comment.**
+
+**THE MEASUREMENT, v104, 1,650 games — our build mix priced in COST SCALE:**
+```
+builder_bot 6.97 x20% = +139.3   sentinel 4.49 x20% = +89.8
+harvester   5.78 x 5% = + 28.9   conveyor 23.69 x1% = +23.7
+gunner      0.78 x20% = + 15.7   launcher  1.19 x10% = +11.9
+barrier     6.25 x 1% = +  6.2          GROSS TOTAL  +316% / game
+```
+**At +316% a 30 Ti sentinel costs 125 Ti.** `CLAUDE.md`, engine-confirmed:
+*"destruction removes the contribution"* — and the guard-matrix's own warning is
+that destroying **ENEMY** buildings **helps them**. **The asymmetry runs in our
+favour on our OWN spent buildings and we have never used it once.**
+
+**AND THE SHARPER HALF: THE BOT DOES NOT KNOW WHAT ITS OWN BUILDS COST.**
+`raid.py:411` is scale-aware and correct (`cost = ct.get_sentinel_cost()`), but
+**`raid.py:408`'s `LOKI_FWD_TI_FLOOR = 40` is an ABSOLUTE number in base-cost
+units** — at +316% it is no longer "a sentinel plus change", it is **a third of
+one sentinel.** Same for `LOKI_PECK_TI_FLOOR` (:256,:334) and `LOKI_SEAL_TI_FLOOR`
+(:270). **Every reserve floor in the raid ladder is calibrated in early-game money
+and silently becomes ~4x too small late.**
+
+**⚠ TWO LIMITS ON MY OWN NUMBER, STATED:** **+316% is GROSS.** Buildings that DIE
+also remove their contribution and **46.9% of our forward turrets die on the
+ladder**, so true live scale is lower — **and I cannot measure it from the
+archive, because `get_scale_percent()` is never called and was therefore never
+recorded.** ⇒ **the DIRECTION is the finding, not the level.** And **builder bots
+are the largest contributor (+139%) and `destroy()` cannot reach them** — they are
+units, not buildings; only `self_destruct()` does, which is a different and
+riskier plank. **The destroy() version addresses ≈+59%, not +316%.**
