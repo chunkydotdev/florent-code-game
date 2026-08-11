@@ -184,6 +184,21 @@ so all 8 count and the denominator is unchanged.
 
 **4/8. P(≥4/8 | no relationship) = 0.64. This is indistinguishable from a coin.**
 
+**⭐ STRENGTHENED (side lane's estimator, recomputed by me off `NULL.tsv` rather
+than taken on report). The right statistic is not the 15pp spread — a spread
+invites "is that noise?" — it is a HETEROGENEITY TEST across the three maps that
+share the IDENTICAL A→SOUTH / B→NORTH configuration:**
+
+    antler   407/656  62.04%
+    nordkap  362/652  55.52%
+    meander  308/653  47.17%
+    pooled  1077/1961 54.92%     chi2 = 29.39 on 2 df,  p = 4.15e-07
+
+**Three maps the scan-rank model says are the SAME CASE disagree at p = 4e-07.**
+⇒ *"the model is wrong"* does NOT rest on meander's sign, which is individually
+non-significant (z = −1.69). It rests on a heterogeneity that is overwhelming.
+*(Side lane computed 29.06 / 4.9e-07 at an earlier n; consistent.)*
+
 **RESOLUTION, taken from §4's table as written and not from the rule I would
 prefer to have written.** §4 offers three outcomes: ≥7/8 supports; *"seat A above
 50% on all or nearly all 8"* refutes; **"6/8 or fewer, mixed: unresolved; falls
