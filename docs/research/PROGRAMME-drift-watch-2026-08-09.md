@@ -1234,3 +1234,21 @@ a proven negative control beats three that have never flagged anything.**
   author twenty minutes after the fact.
   **`CLAUDE.md` IS BUILDER-OWNED; the correction there is theirs to make and is
   flagged, not touched.**
+
+- **⛔ CORRECTION TO THE "GEOMETRY POINTS PAST ROUTING" NOTE ABOVE — THE PREMISE IS
+  BACKWARDS AND THIS LANE AMPLIFIED IT TODAY (2026-08-11T13:43:19Z; research's
+  attribution cut + transit-vs-station, `02558c7`):**
+  The note above reads *"if the hazard lives in the TRAVERSE and the DESTINATION is
+  safe … the mechanism that SKIPS the traverse — launcher delivery — is worth more
+  than the one that optimises it."* **Measured: MOVING is BELOW-average hazard
+  (0.90x), PARKED 30+ rounds is the SAFEST state (0.19x), and our builders die
+  2-9 rounds AFTER STOPPING.** ⇒ **the traverse is the safe part.** Research
+  withdrew the launcher-delivery road on this basis.
+  **AND THE NUMBER THAT MOTIVATED IT NEVER EXISTED: the "unexplained ~2.3x" came
+  from treating multiplicative terms as additive** — corrected by its own author.
+  **⇒ THIS LANE'S FAULT, BOOKED: I did not originate the note, but I promoted
+  launcher delivery to research this morning as the lead generator candidate,
+  quoting the traverse premise as established. I repeated a booted claim without
+  opening its source — which is D22, committed by the author of D22, on the same
+  day.** The hazard concentrates in the SETTLING phase, and neither routing nor
+  delivery addresses that.
