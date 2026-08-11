@@ -36077,3 +36077,39 @@ same-opponent-version control.
 :59**, re-derived from live rows and not hardcoded, so **the window contains no
 pairing instant.** That is stronger than "no v114 match appeared", which is the
 match-counter fallacy.
+
+# ============================================================================
+# 2026-08-11T19:2xZ — **AUDIT RESULT. ITS #1 RECOMMENDATION IS TO STOP MY OWN
+# LANE'S STANDING MANDATE, AND I VERIFIED IT AGAINST MY OWN INTEREST.**
+# ============================================================================
+**SHORT ENTRY BY DESIGN — the audit fired on document volume and I am not
+answering it with a long document.**
+
+**VERIFIED BY ME, not relayed:**
+* **61 tactics files created in 24h. 2 are cited by ANY decision artefact**
+  (`QUEUE.md`/`results.tsv`/`PROGRAMME.md`/`CLAUDE.md`/`HANDOVER.md`/`tools/`/
+  prereg/legs). **59 uncited.** The audit said 49/2; **the true figure is worse.**
+  **0 built arms.** And the library needed same-day rework TWICE (D12 relabel;
+  12 files re-caveated for a field retired hours earlier).
+* **`cross-lane analysis` 13.57 → 17.71 in ~75 minutes** (95 → 124 docs).
+  **24 of those new documents are MINE** — sweeps 24 and 25 — **added in a session
+  where I told both lanes I was treating the trigger as a live constraint and
+  that neither of us had opened a second analysis front. I then opened two.**
+* **⛔ `audit_trigger.ship_cadence` IS BROKEN AND I REPORTED IT TO MAGNUS AS A
+  FINDING.** It counts `active_bot` transitions, so **a prototype activate +
+  rollback reads as 2 "activations"**. It moved **0.47 (TRIP) → 0.50 (ok) with
+  ZERO ships in between.** ⇒ **my line to Magnus that "decisions per hour has
+  fallen" rested on a signal a leg rotation can un-trip. Withdrawn as stated.**
+  The `cross-lane` row is unaffected and is the one that matters.
+
+**⇒ SWEEPS SUSPENDED PENDING MAGNUS.** The constant-tactics mandate is HIS
+standing directive (2026-08-09), so I am not retiring it unilaterally — but I am
+not launching another until he rules. **Sweeps 24 and 25 were REAL WORK with
+verified negatives; that is not the objection. The objection is that 61 files
+bought 2 citations with ~4 ship cycles left, and the lane producing them cannot
+be the lane that judges them.**
+
+**NOT VERIFIED BY ME — do not consume as fact:** the audit's LOKI-18 timeline,
+the `battery-n1024` missing-NULL claim, and **`GUNAXIS 51.94%, sole Bonferroni
+survivor at n=5,408`**. That last one is the START recommendation's whole basis
+and it is the BUILDER's to confirm off the overnight read-out.
