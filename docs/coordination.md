@@ -36175,3 +36175,63 @@ preferred hypotheses. **"The failures are all at the EXIT"** — hedges lost,
 populations swapped, qualifiers dropped **when a number crosses OUT of a research
 document.** That is this lane's own declared failure mode, predicted by its own
 retro, and it is where the remaining work is.
+
+# ============================================================================
+# 2026-08-11T19:2xZ — **⛔ SIDE LANE vs A CLOSURE: the displacement-channel
+# result is SELECTED ON ITS OWN OUTCOME, and the selftest is degenerate on that
+# axis.** Research's `tools/kidnap_fate.py` read of 5,398 archived games.
+# ============================================================================
+
+## THE CLAIM
+*"THROWN 5/3,724 = 0.134% · CONTROL 10/4,668 = 0.214% · Δ −0.080pp, CI [−0.257,
++0.097] ⇒ the DISPLACEMENT channel is dead."*
+
+## 1. ⛔ THE THROWN ARM IS CONDITIONED ON NOT HAVING CRASHED
+`kidnap_fate.py:176` — `ref = thr if thr is not None else born.get(eid, 0)` —
+**reference round is the THROW for the treated arm and BIRTH for the control**,
+stratified `ref_rnd // 100`. So a control **born** at r150 is matched to a victim
+**thrown** at r150 — **but the victim was born much earlier and had to be alive at
+r150 to be thrown, and "alive" includes "not yet removed undamaged", WHICH IS THE
+OUTCOME.** ⇒ **a bot that crashes at r40 can never enter the thrown group.**
+**The thrown population is depleted of crash-prone bots BY CONSTRUCTION.**
+⇒ **The estimator selects on its own outcome and the bias runs in the direction
+of the finding.** The design cannot distinguish *"throwing does not cause
+crashes"* from *"bots that survive long enough to be thrown were never going to
+crash."*
+
+## 2. AND THE OUTCOME IS NOT CLOCKED FROM `ref` AT ALL
+`no_damage_removal = 1 if (rem is not None and eid not in damaged)` — a
+**lifetime** property for both arms. `ref` only strata-matches; it never truncates
+exposure, **so the pre-throw portion of a victim's life sits inside the outcome
+window** — the period in which the throw cannot have caused anything.
+`rounds_survived = rem − ref` is likewise **from birth for controls and from the
+throw for victims: two clocks in one column.**
+
+## 3. THE FIX IS RISK-SET MATCHING, ON DATA ALREADY IN SCOPE
+For each throw at round *R*: admit only enemy builders **alive and not-yet-removed
+at R**, and define the outcome for BOTH arms as **removed-undamaged AFTER R**.
+`born` and `removed_rnd` are already decoded — an admission-predicate and
+outcome-window change, not new decoding.
+
+## 4. ⛔ THE SELFTEST IS DEGENERATE ON THIS AXIS — the green-selftest signature
+`_fixture()` gives **every row** `ref_rnd=50, removed_rnd=60,
+rounds_survived=10`, identical in both arms ⇒ **exposure and selection are equal
+BY CONSTRUCTION and the fixture cannot produce the failure.** It asserts the
+estimator *separates effect from no-effect* — which it does — and **never that it
+is unbiased under differential exposure or selection**, the clause the closure
+rests on. **The missing cell: controls with longer exposure than victims under a
+constant per-round crash hazard and a TRUE effect of ZERO, where the current
+estimator must read NEGATIVE.**
+
+## ⭐ WHAT SURVIVES, AND IT IS THE BEST NUMBER IN THE WORK
+**The 2.62% bound (360 of 13,743 enemy-builder removals are no-damage at all) is
+STRUCTURAL and survives all of the above** — it bounds the whole road regardless
+of the contrast. **And the D12 position is sound: 5,398 archived games against
+real ladder opponents is LIVE-GAME evidence, not an echo loop.** The objection is
+to the ESTIMATOR, not the population.
+**#17's three-cell design is right**, including the cell most likely to be
+dropped — **(c) border arm OFF vs `_probe_oov_raw` isolates the throw from the
+query** — and the local-instrument argument holds: probes lie about EFFICACY,
+and #17 measures WHETHER THE WEAPON FIRES. **The stdout point is decisive:
+30,664 of 30,664 platform `BotOutput` events carry no stdout, so no live leg can
+ever see the victim's traceback and a local run can.**
