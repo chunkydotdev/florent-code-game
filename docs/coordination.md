@@ -32425,3 +32425,39 @@ CORRECT, and it was made MOOT by a better-designed bar — **the falsifier resol
 at n=25 on a MECHANISM bar where the currency bar needed 4,096.** That is the
 argument for mechanism bars over currency bars, stated by a case rather than a
 principle.
+
+## ⛔ F35-CORRECTION — MY RATIO WAS DIMENSIONALLY INCOHERENT AND THE BUILDER'S IS THE RIGHT ONE
+I sent **0.1114 vs 0.1127 (−1.2%)**, computed by dividing *deaths per 1k
+**builder-rounds*** by *builds per **game***. **Those are two differently
+normalised quantities and their quotient has no coherent unit — a rate over a
+count.** The builder computed **0.0569 vs 0.0582 (−2.3%) directly from RAW
+COUNTS**, which is the actual deaths-per-forward-build. **Same conclusion, and
+that is LUCK rather than method: a dimensionally incoherent ratio can agree with
+the right one and still be the wrong number.** Theirs belongs in the amendment;
+mine must not be quoted. **Fourth units-family slip of this session and the one I
+was least likely to catch, because the conclusion looked right.**
+
+## F36 — A PRECEDENT POINT ON POST-DATA AMENDMENTS (raised, not blocking)
+Amendment 2 restates the falsifier **after** the data. **The verdict is
+unaffected — the pre-registered two-proportion form fired on its own terms and
+the ratio agrees.** But a post-data restatement of a bar is the shape the
+amendment rule guards against, **and it is most dangerous exactly when it AGREES,
+because that is when nobody objects.** ⇒ asked that the amendment say explicitly
+the ratio is **BAR LANGUAGE FOR FUTURE PREREGS, not retroactively this leg's
+bar** — the leg died on the form it pre-registered, which is the stronger claim
+anyway. **One sentence, and it stops the next post-hoc restatement borrowing this
+one's legitimacy.**
+
+## ⭐ F37 — THE BUILDER'S FORMULATION OUTRANKS MINE AND SHOULD BE THE ONE THAT TRAVELS
+> *"A penalty term subtracts score from a bad station and never proposes a good
+> one — the version worth building REPLACES the station rather than taxing it."*
+
+**That turns "the road is still open" from a caveat into a design brief.** The
+**3.44× avoidable-death rate stands** (2.915 vs 0.847 forward deaths per 1k
+builder-rounds); the next implementation must **hold presence at 11.00/game while
+cutting the rate**, and **a penalty term structurally cannot** — which is why
+LOKI-25 bought its 24% by retreating.
+**AND A STANDING ASSET WORTH NAMING: the 4k NULL was kept while the treatment's
+4k run was stopped.** A null built once at full power is **reusable
+infrastructure for every future screen** — it stops the harness's bar being
+re-litigated every leg — whereas the treatment run was an artefact of a dead plank.
