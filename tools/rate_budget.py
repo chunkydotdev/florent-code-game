@@ -103,10 +103,35 @@ def spend(now: datetime | None = None) -> tuple[int, list[datetime], bool]:
     cutoff = now - timedelta(minutes=WINDOW_MIN)
     mine = _our_ids()
     hits = []
+    unattributed: list = []
     for m in matches:
         if m.get("triggeredBy") not in ("unrated", "test"):
             continue
         if m.get("id") not in mine:
+            # ⚠ UNATTRIBUTED. Two very different things land here and they look
+            # identical: an opponent challenged US (spends nothing of ours), or
+            # WE fired from a runner that did not write its ids to
+            # `scratchpad/arm_*.txt`. The second is a SILENT UNDERCOUNT and it
+            # makes the meter report free slots into a spent window.
+            #
+            # MEASURED s29 2026-08-11: a hand-rolled leg runner wrote its
+            # outfile as `loki19_ctrl_w1.txt` instead of `arm_loki19_ctrl_w1.txt`.
+            # The meter read `0/5, a slot is free NOW` twice -- once immediately
+            # before the next window and once immediately after all five of its
+            # challenges were REJECTED -- and the treatment window was lost.
+            # Renaming the file alone flipped the reading to 5/5.
+            #
+            # So the count stays honest (we cannot prove it was ours) but the
+            # meter now REPORTS ITS OWN BLINDNESS, per the standing rule that a
+            # monitor which cannot see must not look identical to one that can.
+            ts_u = m.get("createdAt")
+            if ts_u:
+                try:
+                    w = datetime.fromisoformat(ts_u.replace("Z", "+00:00"))
+                    if w >= cutoff:
+                        unattributed.append(w)
+                except ValueError:
+                    pass
             continue                     # an opponent challenged US: not our spend
         ts = m.get("createdAt")
         if not ts:
@@ -117,6 +142,11 @@ def spend(now: datetime | None = None) -> tuple[int, list[datetime], bool]:
             continue
         if when >= cutoff:
             hits.append(when)
+    if unattributed:
+        print(f"  ** {len(unattributed)} unrated match(es) in-window could NOT be "
+              f"attributed to any scratchpad/arm_*.txt. Either an opponent "
+              f"challenged us, or A RUNNER OF OURS IS NOT WRITING arm_*.txt "
+              f"and this meter is UNDERCOUNTING. Check before trusting it. **")
     return len(hits), sorted(hits), True
 
 
