@@ -128,3 +128,63 @@ and leave-one-match-out range before any verdict sentence is typed.**
   numerator).
 * Kidnap opportunities ≈ 0 → **INADMISSIBLE**, not refuted.
 * Any uncaught exception in OUR units attributable to the diff → **DEAD**.
+
+---
+
+# AMENDMENT 1 — 2026-08-11 13:2xZ, **BEFORE LEG CREATION**, ADD-ONLY (adds a control)
+
+**Raised by the side lane. The defect is mine and it is a JOIN, not a number.**
+
+## 1a. WHAT MY 2.3.7 CHECK ACTUALLY ESTABLISHED, AND WHAT IT DID NOT
+
+I wrote *"the guard matrix stands."* **What I measured is that the SYMBOL SET is
+identical — 2,468 named symbols each, no function added, removed or renamed.
+THAT IS THE API SURFACE. IT IS NOT THE FUNCTION BODIES.** The `.so` hash CHANGED,
+so something in that binary IS different, and I attributed the delta to Rust hash
+suffixes and `GCC_except_table` renumbering — **an inference from symbol NAMES,
+not a comparison of CODE.** The conclusion may well be right; **it is not
+measured, and I stated it as measured.**
+
+## 1b. ⛔ WHY THAT GAP IS WORST-SHAPED FOR *THIS* LEG SPECIFICALLY
+
+This plank's entire mechanism is: **an uncaught exception from `run()` → the
+engine permanently destroys that unit.** That is **the single most likely
+behaviour an organiser patches in a point release** — "bots get permanently
+killed by their own exceptions" is the most complained-about rule any bot league
+has. **A patch to it changes a function BODY and leaves the symbol set
+byte-for-byte identical.**
+
+⇒ **THE FAILURE MODE: THE LEG COULD NOT DISTINGUISH "THE TRICK DOESN'T WORK" FROM
+"THE TRICK WAS PATCHED", AND WOULD BANK THE SECOND AS THE FIRST.** Under D12 that
+retires a road on evidence about the ENGINE rather than about the PLANK — the
+worst outcome available to us, and `CLAUDE.md` lists this weapon as open
+*precisely because it was never balance-changed*.
+
+## 1c. ⭐ THE ADDED CONTROL — IN-LEG, COSTS NOTHING, PRE-COMMITTED BEFORE THE FIRE
+
+**Measure the OPPONENTS' UNAIDED unexplained unit removals in this leg's own
+replays** — crashes we did not cause — and compare against the historical field
+rate measured today: **`crash_census.py`, random 400-game sample of the archive,
+515 crash candidates, 129 of 400 games carrying at least one.**
+
+| in-leg observation | reading |
+|---|---|
+| opponents still crash unaided at ~the historical rate | **the engine still destroys units on uncaught exceptions.** A null is then about OUR PLANK and is bankable. |
+| opponents' unaided crash rate **collapses to ~zero** | **THE ENGINE WAS PATCHED. The leg is INADMISSIBLE, not a refutation.** No road is retired. |
+
+**This is read off the SAME wire already being decoded** — no extra window, no
+extra decode pass, no delay to the fire. Same shape as the placebo arm that made
+LOKI-14 readable.
+
+⚠ **Stated limit:** the historical 515/400 pools both teams across the archive and
+is not opponent-matched to these five cells, so it bounds the comparison loosely.
+**A collapse to ~zero is interpretable; a modest shift is not.** The control is
+built to catch a PATCH, which is a step change, not a drift.
+
+## 1d. OFFLINE, NOT A BLOCKER ON THIS LEG
+
+Both binaries are retained. **Diff the `__TEXT` bytes, or disassemble
+`can_launch` and the exception path in each and diff those two function bodies.**
+If they match modulo relocations, the "non-event" verdict is fully established
+and can be stated as measured. **Until then it is established FOR THE SYMBOL
+TABLE ONLY, and this document says so wherever it is quoted.**
