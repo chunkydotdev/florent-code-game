@@ -33008,3 +33008,54 @@ run a parallel screen and instead delivers **dwell time per forward build BY
 ROUND BAND** (their open item 3), which lands BEFORE my intervention design
 rather than after it. The 2.28× is pooled and where it concentrates decides what
 the arm actually changes.
+
+# ============================================================================
+# 2026-08-11 12:2xZ (`date`) — **RESEARCH ARM s31 — BOOT + IN-FLIGHT**
+# ============================================================================
+
+**LANE:** research. Builder is s31 (`a5b671a`), side lane is s31 (drift watch
+armed). All three lanes exchanged boot state before any lane spawned.
+
+**BOOT CHECKS, RUN NOT ASSERTED.** `audit_trigger` = **FIRE (2/5)** — ship cadence
+0.33/hr, **cross-lane analysis 12.00** (84 analysis docs / 7 decision rows, both
+sides, same git window). Builder read 11.86 on the same signal minutes earlier.
+**s29 closed this to 2.38; s30 put it back at 12.** Corpus synced at boot: **0 new
+replays** (archive 19,181 / decoded 19,141), +1 league_matches row, reconciliation
+2,435/2,435 = 100.00%.
+
+**LIVE SURFACES I VERIFIED MYSELF** (not inherited): `ship_watch` newest row
+`12:19:53Z v104 k=102 rating=1672 net5=+4.0 RULE=held tape_age_min=0.9`;
+`elo_history.tsv` newest `14:19` local-CEST = 12:19Z, `1672 / 748 / v104 / rank
+#25`. Both fresh. **`PROGRAMME.md:8` stale against the live slot** — raised by me
+at boot, independently confirmed by the builder against `fcode status`.
+Magnus-edit-only; neither lane is touching it.
+
+**WHAT THE AUDIT TRIGGER BUYS THIS SESSION, stated as a constraint before the
+work rather than as an excuse after it:** I am spending this lane on **one narrow
+cut that lands before a decision**, and declining breadth. **The boot tactics
+sweep is NOT declined but is RE-AIMED at the same decision** rather than adding a
+row to a 252-file library whose decision-path citation rate was zero until Magnus
+ordered it mined. *(Precedent: research-arm-retro v1.1 FIRING 1 — s29 declined the
+library sweep outright with the trigger at 3/5 and closed it to 1/5.)*
+
+**LANE SPLIT — AGREED WITH THE BUILDER, both directions on the record:**
+* **Builder owns the forward-efficiency SCREEN and its verdict** (~440/arm, ~880
+  games, pooled ratio + game-resampled bootstrap, protected denominator).
+* **Research does NOT run a parallel screen** — the 4.57× is already on two
+  instruments and a second screen is duplication.
+* **Research delivers DWELL PER FORWARD BUILD BY ROUND BAND** (my open item 3).
+  The 2.28× is pooled; **where it concentrates decides which constant the arm
+  touches.** It lands **before** the intervention design, not after.
+* **A FLAT profile is a result and is wanted before the diff, not after** —
+  builder's explicit request, and it is the falsifier for this cut.
+
+**IN-FLIGHT (research), spawning now:**
+1. **`dwell-by-round-band`** — opus subagent. US vs TOP third-party, per band,
+   **numerator and denominator reported separately** per D1/LOKI-25.
+2. **Tactics sweep, re-aimed** — opus subagent, background: *what governed how
+   long a raiding/expeditionary unit stayed in enemy territory elsewhere, and what
+   triggered withdrawal.* Consumable by the builder's intervention design.
+
+**I am honouring `plank_status: COLLISION`** — no withdrawal and no DEAD ack from
+this lane against `loki9, loki11, loki17, loki18, loki19, loki14b, loki16b` until
+the builder's rename clears it.
