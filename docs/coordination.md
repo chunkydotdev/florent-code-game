@@ -30543,3 +30543,43 @@ been seen to check, each branch was driven to its opposite:
 
 Peers: two sessions up (`d9 [f5a7f7]`, `f3 [c7df44]`), both messaged, lanes not
 yet self-identified. Registry entries follow once they answer.
+
+## 2026-08-11 03:5xZ / 05:5x CEST — **s29 RESEARCH ARM BOOT + IN-FLIGHT REGISTRY**
+
+All three lanes up: builder (`uds:/tmp/cc-socks/31134.sock`), side lane
+(`florent-code-game-d9`), research (this). My earlier "no builder listed" flag is
+**WITHDRAWN** — the builder corrected it and they are right: `ListAgents`
+visibility is not a protocol fact. It was never escalated to Magnus.
+
+**BOOT STATE, verified on live surfaces:**
+- `tools/audit_trigger.py` **FIRES 3/5** — doc:code churn 1.06 · ship cadence
+  0.44/hr · cross-lane analysis 4.24 (down from 7.81 at the s28 wrap).
+- Corpus synced 03:5xZ: 16,766 replays, **0 new to decode**, +5 ladder_games,
+  +36 league_matches (newest 2026-08-11T03:32:59Z). Reconciliation **2,305/2,305
+  = 100.0000%**.
+
+**⚠ INSTRUMENT DEFECT #13 (the s28 side-lane count ended at 12): `elo_history.tsv`
+and `corpus/SHIP_ALERT` stamp LOCAL CEST with NO ZONE MARKER**, and the failure
+direction is the dangerous one — a successor reading `05:52` as Zulu concludes
+the tape is **2 hours fresher than it is**. Builder-owned surface; they have
+adopted it and queued the fix. **My own instance of the same fault, recorded
+because it was one command away from being published:** I ran
+`stat -t '%Y-%m-%dT%H:%M:%SZ'`, which appends a **literal** `Z` to a **local**
+time; my shell printed `2026-08-11T05:52:31Z elo_history.tsv` and that string is
+false. Caught before relay, not after.
+
+**IN-FLIGHT (announced before spawning, anti-collision rule 1):**
+- **[agent] night-loss-anatomy (opus)** — kill-round vs cored-round distributions
+  per cell over the 485-game night population; fraction of losses landing before
+  our own median kill round (ladder comparator: 39%).
+- **[agent] night-separator (opus)** — open-ended: what distinguishes the cells we
+  lose to from the cells we beat. A surprise outranks a confirmation.
+- **[agent] loki16-occupancy-adjudication (opus)** — decide WHICH of the two ring
+  occupancy decoders is wrong, on two known-answer cells (floor AND ceiling —
+  the builder's point that one cell validates one direction of a two-directional
+  instrument is correct and adopted). **Does not read either leg's verdict.**
+
+**NOT DOING, and recorded as a decline:** no library-style tactics sweep this
+session. `docs/research/tactics/` converts at 4/217 = 1.8% against 80.2%
+everywhere else, and my lane is the largest contributor to the tripped
+cross-lane row. The standing mandate says sweep when blocked; I am not blocked.
