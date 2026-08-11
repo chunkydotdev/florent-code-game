@@ -33527,3 +33527,62 @@ so SKIP the traverse rather than optimise it) · **crash-induction** (APPROVED
 class, no norms question owed, bottom of queue for weeks) · **the ore-barrier
 carve-out** (*"barrier an ore tile a forward gun already covers"* — preserved by
 both primaries, never measured) · **spawn-ring RETENTION** as against presence.
+
+# ============================================================================
+# 2026-08-11T13:02:52Z (`date`) — **⭐⭐ MAGNUS ASKED FOR THE 1800-1900 BAND. THE ANSWER RETIRES
+# KILL SPEED AS THE GAP AND REPLACES IT WITH A 13-ROUND RACE.**
+# Surface: `corpus/league_games.tsv` (third-party games; OpenSverige NOT present).
+# ============================================================================
+
+## WE ALREADY BEAT THE BAND ABOVE US ON EVERY KILL METRIC
+| | tiebreak games | wins by kill | median kill round | kills <250 |
+|---|---:|---:|---:|---:|
+| **1800-1900** (6 teams, 2,150 side-games) | **11.1%** | **87.8%** | **205** | **60%** |
+| **US v104** (495 rated games) | **2.4%** | **96.9%** | **174** | **77%** |
+
+**And the trend says climbing goes WITH killing SLOWER, not faster:** median kill
+round **157 → 205 → 237** across 1700-1800 / 1800-1900 / 1900-2200, kills-inside-250
+**71% → 60% → 54%**, tiebreak rate and kill-conversion FLAT above 1700.
+⇒ **`KILL_WINDOW_RND: 250` and the kill-speed currency are aimed at the one
+dimension we already lead the league on.** Kill speed looks like a property of how
+well-defended the OPPONENT is, not of how good the killer is.
+
+## ⭐ THE LOSS SIDE IS WHERE THE GAP LIVES
+| | losses by core death | median round WE die | losses <250 |
+|---|---:|---:|---:|
+| 1800-1900 | 89.7% | **211** | 63% |
+| 1900-2200 | 87.7% | **241** | 53% |
+| **US v104** | **98.3%** | **187** | **69%** |
+
+**OUR CORE DIES IN 46.3% OF ALL v104 GAMES.** The band above us survives **24-54
+rounds longer** when it loses, and **10-12% of its losses are not core deaths at
+all** (it reaches a tiebreak and loses on points) against **our 1.7%**.
+
+## ⇒ **THE WHOLE THING IS A 13-ROUND RACE: OUR MEDIAN KILL IS 174, OUR MEDIAN DEATH IS 187.**
+Two distributions almost exactly on top of each other. **We are winning a
+coin-flip.** We are league-leading on the kill side and below the band on the
+death side, so **the cheap moves are all on the death side** — and a ~25-round
+shift there is the difference between the band's profile and ours.
+
+## ⛔⛔ AND IT COLLIDES WITH `PLAY_DEFENCE: never` — THE THIRD DOCTRINE FLAG TODAY
+AND THE BEST-EVIDENCED. **Magnus's call, flagged not proposed.**
+**BUT THE COLLISION MAY BE COSMETIC, AND THIS RECONCILES THREE MEASUREMENTS:**
+research measures us losing builders forward at **3.47x the field rate**; we
+out-kill everyone, so **the forward aggression IS paying on the kill side**; and we
+die 24 rounds earlier than the band. ⇒ **RESEARCH'S FORWARD-EFFICIENCY THESIS MAY
+BE THE SURVIVAL PLANK IN OFFENSIVE CLOTHING** — we die at 187 partly because the
+units that would have been home are already thrown away forward. **Not wasting
+your army is not defence.** **HYPOTHESIS, explicitly: three facts reconciled, no
+causal test run.**
+
+## CAVEATS, INLINE
+1. **COVERAGE: 3,705 games ≈ 741 matches of the 36,326 in `league_matches` — ~2%,
+   whichever we archived replays for.** If archiving is biased, so is this.
+2. **OPPOSITION DIFFERS** — we play a ~1675 field, they play a ~1900 field. Pushes
+   in the finding's direction, so *"we kill 31 rounds faster"* is not like-for-like.
+3. **The same six teams recur in every band** (ratings moved during the window), so
+   the trend is partly WITHIN-team over time, not six distinct cohorts.
+4. Our row is `ladder_games` (rated, us); theirs is `league_games` (third-party).
+**CONTROLS RUN:** wins summed over both sides = **3,705 of 3,705**; the first run
+returned **0 wins in 600 games — impossible, so the bug announced itself** rather
+than producing a plausible wrong answer (`winnerIsA` is `0`/`1`, not a boolean).
