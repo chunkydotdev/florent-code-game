@@ -35598,3 +35598,53 @@ LOKI-29 **~160/5,408 per shard, climbing evenly across all five**; keeper 89444,
 ship_watch 51273, cores_idle 11426 alive; `ship_watch` reads `v112 k=19
 rating=1692 net5=−4.0 armed=True RULE=held sprt_fast/slow OK` with
 **`tape_age_min=3.8`** — fresh, so the line means something.
+
+# ============================================================================
+# 2026-08-11T18:5xZ — **SIDE LANE: the monotonicity guard CANNOT FIRE ON A
+# WATCHDOG'S FIRST POLL — the exact scenario this incident's successor lives in.**
+# Diff opened, per the rule adopted an hour ago after clearing a commit on a
+# `--stat`.
+# ============================================================================
+
+**THE GUARD IS STATEFUL AND ITS STATE IS PER-PROCESS.** `typeset -A MAXROWS`,
+in memory, `hwm=${MAXROWS[$SH]:-0}`. ⇒ **on the FIRST poll `hwm` is 0 for every
+shard, so `rows < hwm` can never be true.**
+
+⇒ **Start a watchdog against a spec whose run has already completed AND been
+archived: first poll sees `rows=0`, `hwm=0`, no fall detected, falls through to
+the death check, restarts all nine from zero.** That is the s31 event verbatim,
+**minus the single coincidence that saved the diagnosis — the watchdog had been
+alive two hours and therefore HAD a high-water mark.** The guard catches the case
+where it was already watching; it cannot catch the case where it is POINTED at an
+archived run. **And that is the natural response to tonight** — *"I should start
+a watchdog"* — against the old spec, after a crash, or by a successor reading the
+runbook.
+
+**TWO STATELESS FIXES, either closes it:** (1) persist the high-water mark to
+`$OUT/.hwm`, turning `MAXROWS` from process memory into run state, which is what
+it describes; (2) **cheaper, no new file — refuse to START if no shard in the
+spec has a `.tsv` at all.** A launched shard always leaves its file behind, so
+*spec has shards, directory has nothing* is **never** a supervisable state: it is
+an archived run or a wrong `--dir`. **A watchdog that begins by finding nothing
+to watch should say so and exit, not restart the world.** Also catches a mistyped
+spec path.
+
+## ⛔ AND MY `FX` FLAG WAS UNDERSTATED — THIRD TIME TODAY IN THE SAME DIRECTION
+I reported the `FX` lines as *"a fixture test wrote into the live alarm channel"*
+and said the flag was *"only about where the output landed."* **It was not only
+that: `OUT` was hardcoded, so the fixture ran against the LIVE RUN and LAUNCHED A
+STRAY SHARD** (harmless only because its bots did not exist, so every game
+recorded NOWINNER). **I saw ALERT rows, inferred a fixture, and stopped.**
+**Third instance today of right-in-direction, short-in-magnitude:** the sign flag
+was one column short of its own corroboration; the CI flag needed research's
+bootstrap I had not looked for; this one was one severity short.
+**The pattern in all three: I stop when the flag is ACTIONABLE rather than when
+it is COMPLETE.** Actionable is enough to send; it is not enough to characterise.
+
+## ⭐ THE BUILDER'S GENERAL FINDING, WORTH MORE THAN EITHER FIX
+*"The trap had ALREADY been found in the sibling script an hour earlier and
+worked around in the launcher rather than fixed at the source — so the workaround
+protected the launcher and left the next caller exposed."*
+⇒ **A WORKAROUND IS A FIX WITH ITS BLAST RADIUS SET TO ONE CALLER** — and the
+next caller was its own author, ninety minutes later, believing an env var
+isolated a fixture.
