@@ -31200,3 +31200,104 @@ obligations doc → `docs/side-lane-retro.md`.
   mechanism · 5c currency (pre-declared NOT resolvable) · 5d cost/falsifier with
   Amendment 3's 25%+CI rule. Verdict language is pre-committed four-band; I type
   the verdict, no subagent does.
+
+# ============================================================================
+# 2026-08-11 06:1xZ (`date`) — **SIDE LANE s30 BOOT + THREE FINDINGS + IN-FLIGHT**
+# ============================================================================
+
+## BOOT, VERIFIED ON PRIMARIES
+* git 0 ahead / 0 behind at boot, HEAD `6e773d0`. Peers: builder (8396),
+  research (8366), both booted 06:05Z.
+* **Four detached monitors verified BY OUTPUT, not by `ps`:** keeper
+  (`manifest.json`/`decoded.txt` written 06:05:17Z) · ship_watch (newest row
+  05:59:51Z, cadence 600 s, in-cadence) · match_watcher + opp_watcher (state
+  json 06:05Z). `breakin_watch` DOWN and CORRECT (exits at k>=8; v104 k=83).
+* v104 · 1689 · k=83 · rank #21.
+* **⚠ THE LOCAL-CEST HAZARD IS STILL LIVE** in `elo_history.tsv` and
+  `ship_watch.log`. All ages above computed with the +2h offset applied.
+
+## DRIFT WATCH RE-ARMED — `scratchpad/drift_watch_s30.sh`
+Selftested in FOUR directions before its silence was trusted: seeded 4 commits
+back → exactly 4 events · seeded at HEAD → 0 · repo path broken → **announces
+`DRIFT-WATCH BLIND`** · path exists but is not a git repo → same. The test
+drives the same `_pass()` the loop calls (no private copy of the computation).
+**AND IT COMMITTED THE FAULT THIS LANE POLICES, ON ITS FIRST LIVE EVENT:**
+`--date=format-local` rendered a 06:07:45Z commit as `08:07:45Z` — local CEST
+under a `Z` suffix, the exact `elo_history.tsv` defect. Caught by reading the
+event against `%aI`, fixed with `TZ=UTC` (load-bearing, commented as such),
+re-selftested under a hostile ambient `TZ=Europe/Stockholm`, monitor stopped
+before the edit and re-armed seeded at `2fc1fbb` so no commit fell in the gap.
+
+## F1 — `audit_trigger`'s doc:code ROW FLIPS VERDICT ON A ROLLING WINDOW, AND PRINTS THE SAME NUMBER BOTH SIDES
+Research read **2/5 FIRE** at 06:05Z; I read **1/5 OK** at 06:11Z. **Both are
+correct at their own clock.** Reproduced through the production
+`doc_code_churn()` at each cutoff: 06:05Z **18135/18084 = 1.002820 TRIP** ·
+06:09Z **18063/18084 = 0.998839 ok** · 06:14Z **0.891506 ok**. Nothing was done
+in those minutes — prose commits aged out of the rolling 24 h window.
+**⛔ `{val:.2f}` PRINTS `1.00` ON BOTH SIDES OF THE 1.0 THRESHOLD.** Two lanes
+quoted the identical string `doc:code churn 1.00` with opposite verdicts; the
+only discriminating character is the `[TRIP]`/`[ok]` tag. D58 family, inside one
+instrument's display rather than across two tapes.
+
+## F2 — THE SUPPRESSED ROW IS `cross_lane_analysis`, AND I AM NARROWING MY OWN s29 CLAIM
+`results.tsv` **has no timestamp column**, so the denominator cannot be windowed
+in place. **Zero rows added to it in 24 h**; newest commit `4ad19ab`
+**2026-08-09T18:38:18Z = 35.6 h old**. So a 24 h numerator sits over 21
+decisions that all predate the window: **as shipped 47 docs / 21 = 2.29 ok;
+same-window 47 / 0 = 47.00 against a 4.0 threshold → TRIP.** On a day with 47
+new analysis docs and **zero recorded decisions**, the row built to catch
+"many documents, no decisions" reads `ok`.
+**Correction to my own s29 item, against my interest: `note:verdict` is honestly
+`ok` (0/0 same-window). Only `cross_lane` is suppressed — I claimed both.**
+Positive control (a zero was what my hypothesis predicted): the same command at
+48 h → 2 rows, 72 h → 972 rows / 529 decisions, env-stripped variant byte-identical.
+
+## F3 — D18 FOR LOKI-19, RUN ON COMMISSION FROM THE BUILDER, OFF `league_matches.tsv` DIRECTLY
+Deliberately NOT via `oppver_window` — that tool returning CLEAN off a stale tape
+is this lane's own open finding, so using it here would be a verification sharing
+its subject's failure mode. Tape newest row **05:52:59Z**, leg window
+**04:35–05:31Z** — reaches past the end by 22 min, so the answer is not UNKNOWN.
+Versions on league rows **created inside the window**:
+
+| cell | pre 00:00–04:35Z | IN WINDOW | post 05:31–06:00Z | verdict |
+|---|---|---|---|---|
+| Askar City | v94 ×14 | v94 ×2 | v94 ×2 | PINNED |
+| Lunds Stallions | v64 ×14 | v64 ×2 | v64 ×2 | PINNED |
+| farming_200s | v13 ×14 | v13 ×2 | v13 ×2 | PINNED |
+| Powered by SmartFridge | **v55 ×3, v57 ×2, v58 ×6, v67 ×3** | v57 ×2 | v67 ×1, v57 ×1 | **pinned THINLY** |
+
+Three cells clean on the strong reading. **SmartFridge is different in kind: one
+team id (`7fd91e77…` — no name collision, that was my first hypothesis and it was
+wrong), four distinct versions in the 4.5 h BEFORE the window.** "Their version
+held constant" there is an inference from **n=2 in-window rows**, not an
+observation. **And it is the same cell that fails the arrival premise (D52d,
+7.6% on n=512)** — the weakest cell on the mechanism's precondition is the only
+one whose opponent version is not demonstrably fixed.
+
+## ⭐ F4 — MAGNUS, 06:1xZ: *"We have been known to be scouted now and then"* — AND IT DEMOTES A CONTROL WE RELY ON
+Recorded verbatim because it changes what a measurement means, not just what we
+know. **D18 currently treats our-version/their-version collinearity as a
+CONFOUND to be controlled away** (the Bisons kill: their v4 forty minutes before
+our v102's first game, "perfectly collinear, so both stories fit"). **If we are
+scouted, collinearity is not coincidence — it is an EFFECT, and the arrow points
+from our ship to theirs.** A control that assumes independence between the two
+version timelines is unsound in exactly the cells where we are most active.
+**Second consequence, and it is a PROGRAMME-level one for the exploit line:** an
+unrated leg shows a live team our prototype. Under `FIXTURE_OF_RECORD:
+live_unrated` that is the price of the only honest fixture — but if opponents
+scout, **a trick's measured effect decays with exposure**, and repeated legs
+against the SAME cell would show that decay. **We would read it as a null.**
+⇒ **Prereg consequence, proposed not imposed:** a leg re-firing a trick at a cell
+we have already shown it to must record the PRIOR EXPOSURE COUNT for that cell,
+and a null there decomposes into "never worked" vs "worked, then was countered".
+Nothing in the obligations doc asks for this today.
+
+## IN-FLIGHT — side lane s30
+* **Drift watch** (Monitor `bc464ur7q`), armed 06:09:03Z, base `2fc1fbb`.
+* **Spawning one `opus` subagent** on F4's testable half: does an opponent's
+  version-bump hazard RISE in the hours after we play them unrated, against
+  their own baseline bump cadence? Read-only over `league_matches.tsv` +
+  `fcode match list`. Announced here before spawning, per the rule.
+* Commission accepted from the builder: audit the LOKI-19 read-out against the
+  LOCKED document (§6 four-band language, Amendment 3c's 5d rows, 2c cell-by-cell
+  vs 1b's pooled-mean ban, 3b's 25% rule as BOTH conditions). Not yet posted.
