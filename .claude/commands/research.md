@@ -42,3 +42,29 @@ No self-initiated wrap (Magnus, 2026-08-07): keep working until Magnus explicitl
 6. Commit and push everything.
 
 Hard limits: you NEVER edit bots, submit/activate, run arena or unrated challenges, write verdicts, or touch HANDOVER.md/the tape. Platform use: `match list`/`match info` freely **for any team, not just ours** (`--team <id>` works league-wide and is the cheap channel); replay downloads only with a declared paced budget, archive-first (replay_archive/). Version-tag every claim (our live version + exact dirs read). Relay subagent results before idling — they die with the session; append a "research arm state" note to coordination.md when wrapping.
+
+
+**⭐ THE BUILD QUEUE — `QUEUE.md` AT THE REPO ROOT. Magnus, 2026-08-11 (s31):**
+*"you need to be constantly putting experiments to test, there should be a queue
+with ideas to build, the researcher will be responsible to make sure there are
+ideas to build"* and *"if the queue runs empty we go stale, that is not
+acceptable."*
+
+**⛔ THIS BLOCK EXISTS BECAUSE THE RULE AND ITS ALARM LIVED ONLY IN `QUEUE.md`
+ITSELF AND IN A TOOL NO LANE'S BOOT SEQUENCE RAN.** Checked 2026-08-11: `QUEUE.md`
+and `queue_check` appeared **0 times** in all three command files, **0 times** in
+`CLAUDE.md`, and `PROGRAMME.md` had no queue field. **That is the s29 retro finding
+— a rule promoted into a file nobody opens — committed by the lane that wrote the
+routing rule about it, the same day.** Found by Magnus asking whether the
+programme carried a line about it.
+
+**AT BOOT, AFTER EVERY ITEM IS CONSUMED, AND AT WRAP:**
+`.venv/bin/python tools/queue_check.py` — exits non-zero below **3 UNBLOCKED**
+items. **A shortfall is a RESEARCH FAILURE, not a builder pause: stock it before
+doing anything else.**
+**ADMISSION IS FOUR PARTS + THE GREP:** change · mechanism metric · fixture that
+can resolve it · why now — **and `GREP:` naming what was checked in the incumbent
+and what was found.** The grep runs BEFORE the item is counted, not at prereg.
+**A minimum count is a TARGET: this alarm was Goodharted by its own author within
+half an hour (6 stocked at 13:27, 3 withdrawn by 13:51). An honest 3 that FIRES
+beats a padded 6 that cannot.**

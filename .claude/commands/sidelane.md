@@ -26,3 +26,24 @@ Hard limits (unchanged from the rule-5 contract): NO bot edits, NO arena or unra
 Stance: adversarial peer review is your value — discriminating cuts and placebo arms exchanged BEFORE an observational finding becomes a build input. Verify relayed numbers against primaries before building on them; amend your own published work the moment you find it overstated, and say so. Agreement is a measurement outcome, not a courtesy.
 
 No self-initiated wrap (Magnus, 2026-08-07): a drained queue is watch state under the drift monitor, never a handover. Wrap and reboot-seam mechanics fire only on Magnus's call, per the two-session protocol's seam section (side-lane barrier threshold ~85%).
+
+
+**⭐ THE BUILD QUEUE — `QUEUE.md` AT THE REPO ROOT. Magnus, 2026-08-11 (s31):**
+*"you need to be constantly putting experiments to test, there should be a queue
+with ideas to build, the researcher will be responsible to make sure there are
+ideas to build"* and *"if the queue runs empty we go stale, that is not
+acceptable."*
+
+**⛔ THIS BLOCK EXISTS BECAUSE THE RULE AND ITS ALARM LIVED ONLY IN `QUEUE.md`
+ITSELF AND IN A TOOL NO LANE'S BOOT SEQUENCE RAN.** Checked 2026-08-11: `QUEUE.md`
+and `queue_check` appeared **0 times** in all three command files, **0 times** in
+`CLAUDE.md`, and `PROGRAMME.md` had no queue field. **That is the s29 retro finding
+— a rule promoted into a file nobody opens — committed by the lane that wrote the
+routing rule about it, the same day.** Found by Magnus asking whether the
+programme carried a line about it.
+
+**AUDIT TARGET:** `QUEUE.md` admission. Every counted row must carry `GREP:`
+naming what was checked in the incumbent and what was found — the cheapest null
+in this repo is a leg testing a feature we already ship. **Also check the count
+is honest: the floor is a TARGET and targets get met by admitting unchecked
+items.** `.venv/bin/python tools/queue_check.py --selftest`.

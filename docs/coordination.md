@@ -34117,3 +34117,50 @@ REASSURING direction** — symbol set (insufficient), hash-normalised disassembl
 (masked the bytes it checked), name-paired byte attribution (dropped 396 duplicate
 names, attributed 1.2%). **Only address-paired attribution + instruction decoding
 was sound.** Each cheaper method said "fine" first.
+
+## ⛔ s31 — **THE QUEUE RULE AND ITS ALARM LIVED NOWHERE A LANE BOOTS. FOUND BY MAGNUS ASKING.**
+
+Magnus asked whether `PROGRAMME.md` carried a line about the queue monitor.
+**It did not, and the audit was worse than the question:**
+
+| surface | mentions of `QUEUE.md` / `queue_check` |
+|---|---|
+| `PROGRAMME.md` | **0** (its only "queue" hit is an unrelated s26 line) |
+| `.claude/commands/research.md` | **0** |
+| `.claude/commands/builder.md` | **0** |
+| `.claude/commands/sidelane.md` | **0** |
+| `CLAUDE.md` | **0** |
+| `tools/gate.py` | **0** (no queue field read) |
+
+**So a STANDING DIRECTIVE from Magnus the same day — *"the researcher will be
+responsible to make sure there are ideas to build"*, *"if the queue runs empty we
+go stale, that is not acceptable"* — and the alarm enforcing it existed ONLY in
+`QUEUE.md` itself and in a tool nobody's boot sequence ran.**
+
+**⇒ THIS IS THE s29 RETRO FINDING EXACTLY — a rule promoted into a file no lane
+opens — COMMITTED BY THE LANE THAT WROTE THE ROUTING RULE ABOUT IT, THE SAME DAY.**
+It is the third time today a guard existed somewhere other than the path it
+guards (`gate.py`'s reseed warning bypassed by `h2h.sh`/`dose.py`;
+`corpus_sanity` green beside two zero columns; now this).
+
+**FIXED — all three command files gained a boot step**, same shape as the
+2026-08-11 arm-retro fix:
+* **research** — run `tools/queue_check.py` at boot, after every item is consumed,
+  and at wrap; **a shortfall is a research failure, not a builder pause.**
+* **builder** — read `QUEUE.md` at boot and on every read-out; **never idle waiting
+  for analysis**; take the next unblocked item and say so.
+* **side lane** — audit that every counted row carries `GREP:`, and that the count
+  is honest.
+
+**⛔ STILL OPEN AND IT IS MAGNUS'S CALL ALONE — `PROGRAMME.md` is edit-on-directive
+only.** The two fields that would make this machine-readable, proposed verbatim so
+they can be pasted or rejected:
+
+    QUEUE_FLOOR: 3
+    QUEUE_OWNER: research
+
+**Why it belongs there and not only here:** `PROGRAMME.md` is the first file every
+lane reads, `tools/gate.py` parses it, and **the queue is now the mechanism by
+which work reaches the builder at all.** A directive that governs throughput and
+lives outside the machine-readable programme is exactly the class of fact this
+repo has repeatedly discovered nobody has.
