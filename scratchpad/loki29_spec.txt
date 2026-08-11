@@ -1,0 +1,10 @@
+# LOKI-29 seat-relative scan order. Prereg: docs/prereg/PREREG-loki29-seat-relative-scan-2026-08-11.md
+# Amendment 3 partition: arm1 = CARDINALS only, arm2 = CARDINALS + spawn sort.
+# NOISE_ON stays True in ALL shards -- the 6.8/7.2pp control gap was measured
+# with it True, and pinning it False collapses antler to ONE distinct game.
+# Targets are multiples of 16 (8 maps x 2 seats) so seat/map balance is exact.
+# shard      treatment              control                 target seed_lo
+SR1NULL      bots/_v151seatrel      bots/_v151null           5408  20000
+SR2NULL      bots/_v152seatrel2     bots/_v152null           5408  21000
+SR1CUR       bots/_v151seatrel      bots/_v148ferryfirst     5408  22000
+SR2CUR       bots/_v152seatrel2     bots/_v148ferryfirst     5408  23000

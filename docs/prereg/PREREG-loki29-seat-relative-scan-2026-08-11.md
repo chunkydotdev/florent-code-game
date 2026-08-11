@@ -312,3 +312,76 @@ a preference.** Pinning it removes per-game salt, which is variance and not bias
 `NOISE_ON = True`**, so pinning the treatment would compare across a difference
 that is not the treatment. The queue's "pin it in the measured copies" note is
 sound in general and wrong for this specific contrast.
+
+# AMENDMENT 4 — THE PARTITION'S COMPONENTS ARE THE SIZE OF THEIR OWN ERROR BARS. WHAT THIS LEG MAY CLAIM, NARROWED.
+
+**Raised by the side lane against Amendment 3, and it is arithmetic rather than
+judgement, so it is adopted outright.** ADD-only: no threshold moves, only what
+may be concluded.
+
+**MY §5 SE WAS WRONG BY √2, IN THE FLATTERING DIRECTION.** §5 wrote "SE on the
+gap ≈ 1.9pp", computed as `2 × SE(rate)`. For a difference of two independent
+proportions it is `√2 × SE(rate)`. At per-half n≈2,574: SE(rate)=0.99pp ⇒
+**SE(gap) = 1.39pp**, not 1.9pp. *(Direction of the error: it made my own bar look
+harder to clear than it is — for once against my interest, which is worth
+recording given s29's finding that my retractions ran flattering three times out
+of three.)*
+
+**AND THE PARTITION CANNOT DELIVER THREE SHARES.** Propagating:
+
+| quantity | estimator | SE |
+|---|---|---|
+| CARDINALS share | NULLgap − SR1NULL | **1.97pp** |
+| spawn-sort share | SR1NULL − SR2NULL | **1.97pp** |
+| residue | SR2NULL | **1.39pp** |
+
+⇒ **A component must carry ≥3.9pp — more than half the entire gap — to be
+individually distinguishable from zero. At most ONE of the three can clear that.**
+A component truly carrying 2.0pp reads with 95% CI **[−1.9, +5.9]pp**:
+indistinguishable from 0 and from 4.
+
+**⇒ PRE-DECLARED, SO IT IS NOT DISCOVERED AFTERWARDS: a true-zero share reads
+NEGATIVE half the time.** "The spawn sort made it worse" is an outcome this
+design produces by chance. **A negative share is to be reported as CONSISTENT
+WITH ZERO, never as a harmful component**, unless it exceeds 3.9pp in magnitude.
+
+**WHAT THE LEG MAY CLAIM, in these words:**
+* ✅ **"which site DOMINATES"** — answerable at this n *if* one of them does.
+* ⛔ **"here are the three shares"** — NOT answerable; the numbers will not carry it.
+* **All three point estimates are reported WITH their intervals**, so a reader
+  cannot make the second mistake from the first.
+Reaching SE≈1.0pp per share needs ~20,000 games/shard, ~3.7× what is planned.
+**Recorded as a known limit, not bought.**
+
+**AND THE BASELINE IS THE FINAL NULL GAP, NOT THE LITERAL 6.8.** Amendment 3
+hardcoded `6.8` into all three formulas; that was a MID-RUN value and the s31
+NULL shard finished higher (7.19pp at n=5,148, still filling). **All three
+partition formulas reference the FINAL s31 `NULL` shard gap**, computed at
+read-out from the archived shard, never a number transcribed here.
+
+# AMENDMENT 5 — THE GATE REFUSED THIS BATTERY, AND COMPLYING WOULD HAVE DESTROYED IT
+
+`tools/gate.py`'s `check_determinism` FAILS any battery with `NOISE_ON = True`
+and prescribes *"flip it to False in this COPY."* **Measured before complying,
+both sides pinned `NOISE_ON = False`:**
+
+```
+antler   6 distinct --seed values, 10 runs:  ALL IDENTICAL (same winner, turn 170)
+hive     3 distinct --seed values:           2 distinct outcomes
+```
+
+⇒ **engine seed-sensitivity is MAP-DEPENDENT and on antler it is ZERO.** Pinning
+would have collapsed antler's ~676 games to **one distinct game** while the row
+count still read 676 — **a sample-size collapse invisible in every denominator we
+print, on a gate-PASSING battery.**
+
+**Fired under `--pooled-not-paired`**, an escape added s32 that downgrades those
+FAILs to loud WARNs and prints the justification; without it the gate still
+refuses (driven both ways). **The escape is valid here because every estimate in
+this leg is POOLED, never paired or seed-matched.** The gate's premise — that a
+paired fixture cannot pair against a bot that reseeds — is correct and does not
+reach a pooled win rate. *(Origin under independent scout: the check's own
+docstring traces it to an s23 incident where `check_control_equivalence` returned
+0/14 on two noisy bots. That check genuinely needs determinism; the battery does
+not. Reproduced live this session: the gate reported `CONTROL IS NOT ITS PARENT
+(0/12)` for a directory compared against ITSELF.)*

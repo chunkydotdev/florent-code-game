@@ -53,13 +53,44 @@ def _src(bot: Path) -> str:
     return "\n".join(p.read_text(errors="replace") for p in sorted(bot.glob("*.py")))
 
 
-def check_determinism(bots: list[Path]) -> None:
-    """Every side must be deterministic or paired comparison is meaningless."""
+def check_determinism(bots: list[Path], pooled_not_paired: bool = False) -> None:
+    """Every side must be deterministic or PAIRED comparison is meaningless.
+
+    ⛔ ESCAPE ADDED s32 2026-08-11 (`--pooled-not-paired`), AND IT EXISTS BECAUSE
+    THIS CHECK'S PRESCRIPTION WAS MEASURED TO DESTROY A BATTERY IT REFUSED.
+
+    The check is right about what it names: a PAIRED design cannot pair against a
+    bot that reseeds.  Its REMEDY -- "flip it to False in this COPY" -- assumes
+    the engine supplies variation once our own RNG stops.  Measured on this
+    machine 2026-08-11 with `NOISE_ON = False` on both sides:
+
+        antler, 6 distinct --seed values, 10 runs:  ALL IDENTICAL
+                                                    (same winner, same turn 170)
+        hive,   3 distinct --seed values:           2 distinct outcomes
+
+    ⇒ **The engine's own seed sensitivity is MAP-DEPENDENT, and on at least one
+    of the 8 battery maps it is ZERO.**  Pinning `NOISE_ON = False` there would
+    have collapsed that map's ~676 games to ONE distinct game while the row count
+    still read 676 -- a sample-size collapse invisible in every denominator we
+    print.  The gate would have passed and the battery would have been worthless.
+
+    So the flag does NOT silence the check; it downgrades the two NOISE_ON FAILs
+    to loud WARNs and prints the caller's justification.  Use it ONLY for a
+    POOLED estimate (noise is exchangeable and unbiased, so pooled estimates
+    stand -- `QUEUE.md` records this), NEVER for a paired or seed-matched one.
+    An escape flag typed is a decision on the record; that is the point of it.
+    """
+    if pooled_not_paired:
+        WARN.append("--pooled-not-paired: NOISE_ON determinism FAILs downgraded "
+                    "to WARN. Valid ONLY for a POOLED estimate. Pinning "
+                    "NOISE_ON=False is NOT a free fix -- engine seed sensitivity "
+                    "is map-dependent and measured at ZERO on antler.")
     for b in bots:
         s = _src(b)
         if "NOISE_ON = True" in s:
-            FAIL.append(f"{b.name}: NOISE_ON = True -- flip it to False in this COPY "
-                        f"(tools/det.py says ALL sides, and s23 got this wrong twice)")
+            (WARN if pooled_not_paired else FAIL).append(
+                f"{b.name}: NOISE_ON = True -- flip it to False in this COPY "
+                f"(tools/det.py says ALL sides, and s23 got this wrong twice)")
         elif "NOISE_ON" not in s:
             WARN.append(f"{b.name}: no NOISE_ON constant (older lineage; assumed deterministic)")
         # NOISE_ON is OUR lineage's determinism switch and says nothing about a
@@ -86,7 +117,7 @@ def check_determinism(bots: list[Path]) -> None:
             WARN.append(f"{b.name}: random.{{{', '.join(calls)}}} present but "
                         f"NOISE_ON = False is declared; assumed gated.")
         else:
-            FAIL.append(
+            (WARN if pooled_not_paired else FAIL).append(
                 f"{b.name}: calls random.{{{', '.join(calls)}}} and declares no "
                 f"NOISE_ON switch -- paired fixtures do not pair against a bot "
                 f"that reseeds. Exclude it from the pool, or pin its seed in a "
@@ -261,6 +292,11 @@ def main() -> int:
                     help="skip the remote TLE fidelity check (records a WARN)")
     ap.add_argument("--off-programme", action="store_true",
                     help="run a battery outside the active PROGRAMME.md line")
+    ap.add_argument("--pooled-not-paired", action="store_true",
+                    help="ESCAPE: downgrade the NOISE_ON determinism FAILs to WARN. "
+                         "Valid ONLY for a POOLED estimate, never a paired/seed-matched "
+                         "one. Pinning NOISE_ON=False is not a free fix: engine seed "
+                         "sensitivity is map-dependent and measured at ZERO on antler.")
     ap.add_argument("--allow-self-play", action="store_true",
                     help="acknowledge a self-play pool and proceed (result is SAFETY only)")
     a = ap.parse_args()
@@ -270,7 +306,8 @@ def main() -> int:
 
     check_programme(plank, a.off_programme)
 
-    check_determinism([plank, control, parent] + opponents)
+    check_determinism([plank, control, parent] + opponents,
+                      pooled_not_paired=a.pooled_not_paired)
     check_pool_identity(opponents, a.allow_self_play)
     if not FAIL:
         check_control_equivalence(control, parent, opponents[0], a.maps)
