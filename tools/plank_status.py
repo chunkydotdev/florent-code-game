@@ -302,6 +302,29 @@ def topic_slugs(plank, paths):
     return out
 
 
+
+def _is_pure_rename(sha, paths, cwd=ROOT):
+    """True when this commit only RENAMED/MOVED the plank's artefacts.
+
+    Uses git's own rename detection (`--name-status -M`) rather than reading the
+    subject, because the subject is exactly what cannot be trusted here."""
+    # Scoped to THIS plank's paths only. A commit may rename the plank's file
+    # AND add an unrelated one in the same push -- the first live case did
+    # exactly that -- so "every status line in the commit is R" is the wrong
+    # test. The right one is "every line TOUCHING THIS PLANK is R".
+    out = git("show", "--name-status", "-M", "--format=", sha, cwd=cwd)
+    want = set(paths)
+    st = []
+    for ln in out.splitlines():
+        if not ln.strip():
+            continue
+        parts = ln.split("\t")
+        if not any(f in want for f in parts[1:]):
+            continue
+        st.append(parts[0][:1])
+    return bool(st) and all(x == "R" for x in st)
+
+
 def withdrawal_state(paths, cwd=ROOT):
     """-> (killed_commit | None, revival_commit | None).
 
@@ -333,6 +356,17 @@ def withdrawal_state(paths, cwd=ROOT):
             killed_idx = i
             break
         hits = [pat for pat, rx in _KILL_RE if rx.search(subj)]
+        if hits and _is_pure_rename(c["hash"], paths, cwd=cwd):
+            # ⛔ A COMMIT THAT ONLY RENAMES OR MOVES A PLANK'S FILES CANNOT BE
+            # RETIRING IT. Live false positive, 2026-08-11: a rename commit was
+            # flagged because it contained the word "withdrawn" -- while
+            # DESCRIBING this very gate. The heuristic cannot tell "this commit
+            # withdraws the plank" from "this commit mentions the withdrawal
+            # mechanism", and a sticky DEAD ack against that SUSPECT would have
+            # killed a plank that had no tree, no prereg and no games.
+            # The fail-safe asymmetry failing unsafe on a commit whose only sin
+            # is talking about the gate.
+            continue
         if hits:
             killed = dict(c, hits=hits, hard=False)
             killed_idx = i
@@ -645,6 +679,28 @@ def selftest():
             ok = False
         else:
             print(f"  [ok] one plank, prereg + its own leg doc     -> {v} (not COLLISION)")
+
+        # t1-rename: ⛔ A PURE RENAME CANNOT BE A RETIREMENT. Live false
+        # positive, 2026-08-11: a commit renaming a plank's file was flagged
+        # because its message contained "withdrawn" -- while DESCRIBING this
+        # gate. A sticky DEAD ack against it would have killed a plank with no
+        # tree, no prereg and no games. The commit ALSO added an unrelated file,
+        # which is why the test is scoped to the plank's own paths.
+        (d / "docs/prereg/PREREG-lokiRN-thing-2026-08-11.md").write_text("x\n")
+        run(d, "add", "-A"); run(d, "commit", "-q", "-m", "create lokiRN")
+        run(d, "mv", "docs/prereg/PREREG-lokiRN-thing-2026-08-11.md",
+            "docs/prereg/PREREG-lokiRN2-thing-2026-08-11.md")
+        (d / "docs/unrelated.md").write_text("y\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m",
+            "RENAME lokiRN -> lokiRN2. Explaining PLANK_STATUS: WITHDRAWN and why "
+            "a withdrawn plank stays withdrawn")
+        v, _ = check("lokiRN2", cwd=d, quiet=True)
+        if v in ("SUSPECT", "WITHDRAWN"):
+            print(f"  [FAIL] a pure RENAME must not read as a retirement, read {v}")
+            ok = False
+        else:
+            print(f"  [ok] rename commit saying 'withdrawn'       -> {v} (not flagged)")
 
         # t1c: ⛔ THE FALSE POSITIVE, TAKEN VERBATIM FROM REAL HISTORY. The first
         # cut of this guard flagged `loki13` -- OUR LIVE SHIPPED INCUMBENT --
