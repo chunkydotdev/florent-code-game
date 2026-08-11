@@ -36235,3 +36235,53 @@ query** — and the local-instrument argument holds: probes lie about EFFICACY,
 and #17 measures WHETHER THE WEAPON FIRES. **The stdout point is decisive:
 30,664 of 30,664 platform `BotOutput` events carry no stdout, so no live leg can
 ever see the victim's traceback and a local run can.**
+
+# ============================================================================
+# 2026-08-11T20:3xZ — **SIDE LANE: v114 SHIP AUDITED — CLEAN, no drift flag.
+# Three watch items, and the first one's alarming reading is available and wrong.**
+# ============================================================================
+
+## THE SHIP PASSES, AND THE CPU GATE WAS RUN RATHER THAN PROMISED
+**0 TLE'd turns in 13,457, mean CPU 485 µs vs the incumbent's 522 µs — CHEAPER,
+not merely survivable — with v112 as a negative control at 0/16,421 matching its
+published 0.00% prior.** That is the `tled` bar with its instrument-control cell,
+used as a **ship gate** rather than a leg statistic. **A flag raised two hours
+earlier as "your primary bar cannot fail" became the thing that made a ship
+defensible.**
+Clause **(b) stated as UNRESOLVED, not passed**; the three readings
+(siting/volume/geometry) left open; the *"forward pressure is net-negative"*
+overclaim retracted in the announcement; controls moved with the ship
+(`PROGRAMME.md:169`), `_v146null` created, `mde` selftest re-run; and the builder
+self-flagged that **the 7 running shards still carry `_v148ferryfirst` and must
+be read against the PREVIOUS incumbent.** ⇒ **No drift flag.**
+
+## 1. v114 IS DOWN EARLY AND AT THIS k THAT IS NOISE — labelled deliberately
+`ship_watch` 20:25:15Z: **k=3, rating 1666, peak 1686, drawdown −20.0,
+net_act −23.0, `armed=False RULE=unarmed`.** The slot rule is **k≥8 AND
+net ≤ −21** — net_act is already past the threshold and **the rule correctly has
+NOT fired**, because k=3 is 15 games against a ladder paying up to ±32/match.
+**The instrument is doing its job; no verdict is being read into it.** ⚠ **It
+arms at k=8 and someone should look THEN, not at k=12.** *(Symmetric with the
+caution this lane applied to v112's inherited depressed baseline.)*
+
+## 2. ⭐ THE SHIP INVERTED LOKI-30's EXPOSURE PROFILE
+gunaxis was the prototype needing activation; **it is now the INCUMBENT, so that
+arm needs no activation and is FREE.** v104 and v112 are now the arms costing
+rated exposure. Still 2 of 3 non-incumbent — but **the plank under test is the
+free one and the CONTROLS are the exposed ones**, the reverse of what §5.3
+priced. `MAIN` 112→114 handles the holder assertion; **the prereg's arm-rotation
+cost model now describes the old world.** One amendment line, and it makes the
+remaining windows cheaper rather than dearer.
+
+## 3. AN UNATTRIBUTED UNRATED MATCH AT 20:27:06Z
+`rate_budget`: *"not in any `scratchpad/arm_*.txt`, counted as OURS for the
+wait."* Per `CLAUDE.md`'s s28 finding, `fcode match list --mine` includes matches
+**opponents initiated against us**, and `triggeredBy` is the match TYPE not the
+actor, so the platform never says who started it. **Counting it as ours is the
+safe direction and the tool took it.** Worth one look — the alternative reading
+(an opponent challenging us) is **free information about being scouted**.
+
+## ALSO: `breakin_watch` WAS 29 HOURS STALE
+It read *"v104 standing down"* — **history wearing the costume of a fresh
+verdict**, now armed. **The two-freshness rule catching a MONITOR rather than a
+document, and the fourth stale-surface find today.**
