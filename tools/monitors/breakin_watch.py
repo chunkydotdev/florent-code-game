@@ -13,6 +13,21 @@ v102 was activated at 1567.44 and climbed ~48 points from there over a night.
 earned** — that is a real line, not a noise threshold, and at the observed
 ~+-9 per rated match it is ~5 consecutive bad matches away.
 
+⛔⛔ IF YOU FOUND THIS PROCESS NOT RUNNING, THAT IS CORRECT. DO NOT RE-ARM IT.
+It hands back to the slot rule at k >= 8 and EXITS WHEN IT DOES. v104 is at
+k=86. **It is down because it FINISHED, not because it died.**
+**This has now been re-flagged as a dead monitor by three separate readers on
+three lanes** (two other lanes at their boots, and one lane's own boot
+verification). It was recorded in HANDOVER's boot block and in a process-deltas
+ledger, and it got rediscovered anyway — because **a completed handoff and a
+crashed daemon look identical in `ps`, and the place people look is the file.**
+So it is written HERE, where the rediscovery happens.
+**RE-ARM IT BEFORE THE NEXT ACTIVATION-AS-A-SHIP, NEVER BEFORE AN UNRATED LEG:**
+a leg activates for ~16 s and rolls back, so there is no 8-match break-in window
+to guard. *(Struck from the deltas ledger 2026-08-11: it is a FACT with nothing
+to enforce, and a rule ledger is the wrong home for a fact — leaving it there
+guaranteed a fourth firing.)*
+
 SILENCE IS NOT SAFE. This reads `elo_history.tsv`, which stalled for ~45
 minutes today while `ship_watch` cheerfully reported rows 7 minutes old as
 current. So a stale tape is itself an alert here: a monitor that reads a file
