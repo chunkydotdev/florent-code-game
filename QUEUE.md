@@ -237,5 +237,24 @@ POOLED estimates stand; PAIRED designs buy nothing they claim to buy.
 **`gate.py` HAS WARNED ABOUT THIS ALL ALONG** — *"paired fixtures do not pair
 against a bot that reseeds"* — **and `h2h.sh` and `dose.py` both bypass gate.py,
 which the standing rule calls the sole entry to a battery.** The check existed;
-the tools that needed it skipped it. **Fix: pin `NOISE_ON = False` in the measured
-COPIES, or route every battery through the gate.**
+the tools that needed it skipped it. **Fix — AND IT DEPENDS ON THE DESIGN. ⛔ THIS LINE PREVIOUSLY READ
+"pin `NOISE_ON = False` in the measured COPIES" WITH NO DESIGN QUALIFIER, three
+lines under its own text saying pooled estimates stand — and it is the GENERATOR
+that emitted the wrong rider onto item #8 above** (that rider was a verbatim copy
+of this sentence). Fixing the symptom and leaving the source would have put the
+same rider on the next plank:
+* **PAIRED / seed-matched design** → pin `NOISE_ON = False` in the measured
+  copies, **on BOTH sides** — pinning one arm is itself a non-treatment difference.
+* **POOLED estimate — which is every battery we actually run** (`h2h.sh`,
+  `dose.py` and `overnight.sh` all put both arms inside ONE `fcode run`, so the
+  pairing is WITHIN-GAME and automatic, and noise inflates the band rather than
+  biasing the estimate) → **LEAVE IT TRUE** and fire under
+  `gate.py --pooled-not-paired "<reason>"`.
+  **⛔ Pinning here is NOT free, measured s32: with `NOISE_ON = False` the engine
+  returned ONE distinct outcome across 6 seeds on antler, atoll AND meander —
+  3 of 4 maps — so a shard's effective n collapses toward its (map, bot-pair)
+  CELL COUNT while every denominator still prints in full.** See QUEUE #15.
+* **And `tools/det.py:135-142` — the file `gate.py` cites as its authority for
+  "ALL sides must be deterministic" — already carries this warning, prints
+  `LOW REPLICATION`, and exits 2.** The prescription and its own cited authority
+  contradict each other.
