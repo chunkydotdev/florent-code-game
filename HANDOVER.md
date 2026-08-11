@@ -337,9 +337,26 @@
 ##      ⇒ **the ghost cases are plausibly KILLS rather than missed opportunities,
 ##      which inverts the direction of the concern — a sentinel that fired and
 ##      erased its own target reads as "0 availability" BECAUSE it worked.**
-##      ⛔ **MECHANISM ESTABLISHED, ATTRIBUTION NOT: the 9.07% is over ALL shots
-##      and the ghost subset was never isolated.** Do not quote it as the
-##      explanation; it is a candidate with a measured mechanism behind it.
+##      **✅ ATTRIBUTED, CASE BY CASE, 50 CASES: `scratchpad/ghost50.py`.** For
+##      every ghost sentinel, did a `removeEntity` land on ITS ray in the round
+##      it fired? **OURS 44/46 = 96% KILLS, 2 blind. THEIRS 4/4 = 100% kills.**
+##      ⇒ **THE GHOSTS ARE KILLS, NOT BLINDNESS. The mechanism is settled.**
+##      **⭐⭐ AND THE CORRECTION TO THE 6.5pp GAP IS ROBUST TO WHICH MECHANISM
+##      WON, WHICH IS STRONGER THAN "TWO READINGS, NEITHER ESTABLISHED":**
+##      **under BOTH readings a target WAS present in those rounds** — otherwise
+##      there is no shot to have observed — **so availability is undercounted
+##      either way, and 7.17x more often for us than for them.** Blindness and
+##      kills disagree about WHY we undercount and agree that WE UNDERCOUNT
+##      MORE. ⇒ **the true forward gap is SMALLER than 6.5pp, possibly zero,
+##      possibly inverted.** A reader told the mechanism is contested must not
+##      conclude the correction is contested; it is not.
+##      ⛔ **MAGNITUDE STILL NOT ESTABLISHED, AND DERIVING IT HERE WOULD BE THE
+##      FIFTH BOLTED-ON INFERENCE OF THE DAY.** The attributed subset is 46
+##      sentinels of 6,869. The tempting generalisation — *every in-round kill
+##      undercounts that sentinel's availability that round, and 9.07% of all
+##      shots coincide with a same-round removal* — is a MECHANISM, not a
+##      measured correction. **Do not adjust 83.18%/89.72% by any number derived
+##      from it.**
 ##      **AND OUR FORWARD POPULATION IS BIMODAL: 3,331 of 3,341 sit at
 ##      d²_enemy ≤ 32 — parked at the doorstep — with ZERO beyond 100.** No
 ##      mid-distance population exists, so there is no availability curve to
