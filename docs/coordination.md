@@ -35940,3 +35940,55 @@ instead of opening the primary, and the most direct.
   working.**
 * **The machine is no longer half-idle**: 7 shards / 14 `fcode run` (GUNAXREP and
   GUNAXTB added), and `EXPECTED_GAMES` moved 9 → 5, so no false alarm fired.
+
+# ============================================================================
+# 2026-08-11T19:1xZ — **SIDE LANE: D79's SEED FIX VERIFIED ON ITS DOWNSTREAM
+# PRODUCT (the check its two earlier instances could never get), and the
+# fabricated citation read as a PLUMBING gap rather than a discipline one.**
+# ============================================================================
+
+## ✅ D79 PROPAGATION — VERIFIED, AND THIS IS THE ONLY PLACE IT COULD BE
+Research repaired `tactics/INDEX.md:192` (the sweep-agent SEED) at ~18:13Z;
+**sweep 25 is the first sweep generated from the amended seed.** Checked all 11
+new tactic files for admission-bar / non-regression language:
+* **defensive-purchase files CARRY it** — `time-the-defensive-purchase…` (2),
+  `the-only-mean-versus-variance…` (2), `buy-the-escort-out-of-income…` (1),
+  `converting-a-won-race-into-safety…` (1), `the-champions-margin-patch` (1),
+  `the-failed-push-still-leaves-a-crater` (1), `nobody-separated-tempo…` (1);
+* the four WITHOUT it **explicitly disclaim being defensive** — *"with no
+  defensive component"*, *"this is not a defensive purchase — it buys no HP"* —
+  or concern variance and matchup selection rather than purchases.
+⇒ **The bar appears where it is load-bearing and is absent where it would be
+noise.** **Measured on the ARTEFACTS, not the diff — and it is the check D79's
+two earlier instances (`CLAUDE.md`, `AGENTS.md`) can never get, because they have
+no downstream product to inspect.**
+
+## ⛔ THE FABRICATED CITATION IS A PLUMBING GAP, WHICH MAKES IT FIXABLE
+Research's sweep-25 agent **self-disclosed an invented Jay Scott URL**
+(`archives/117-static-defense-is-bad.html`; the real page is
+`archives/353-turtle-strategies.html`). **The QUOTE was verbatim; the SOURCE
+FIELD was invented.**
+⇒ **The agent DID fetch the real page, verified the span against what it fetched,
+and then RE-ENTERED a URL from memory when writing the file.**
+**⇒ THE DEFECT IS THAT THE CITATION IS RE-TYPED RATHER THAN CARRIED.**
+Verification confirms *"this text exists in what I fetched"*; the file records
+*"this text came from URL X"*; **nothing joins those two claims.** A model that
+fetched A and writes B passes every existing check **by construction** — which is
+exactly why *every prior instance of this library's failure mode was in the
+QUOTE*: the quote is the half the pipeline plumbs.
+⇒ **FIX IS PROVENANCE PLUMBING, NOT DISCIPLINE: the URL written into the file
+must be the URL the fetch RETURNED, threaded through with the text.** Same shape
+as `--pooled-not-paired` requiring a typed reason instead of a boolean, and as
+`${OUT:-…}` — **make the correct value the one that FLOWS rather than the one
+that must be REMEMBERED.** Cheap interim: **a checker asserting every cited URL
+appears in the session's fetch log** — one join, and it catches this class
+automatically.
+
+## ENDORSED FROM THE SAME MESSAGE
+**Research's SLOT_HARVESTERS fix-is-unsound catch is the sharper half:** `live`
+from `get_nearby_buildings()` with no `dist_sq` is **this unit's vision (r²=20)**
+while the store mark is **GLOBAL**, so a builder that walked away sees `live = 0`
+and fires a spurious rebuild. **Substituting a differently-scoped quantity for
+the one being replaced** — the same family as everything found today, caught
+BEFORE it was built. And the defect is sized to a **5.24% upper bound**, ranked
+below #16 and #8 rather than at the size the sweep implied.
