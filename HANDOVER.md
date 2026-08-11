@@ -288,13 +288,38 @@
 ##      directive restated rather than a loophole: our HOME sentinels fire 4.04
 ##      shots/100 alive-rounds against 32.74 forward — 8x less productive — at
 ##      30 Ti and a permanent +20% cost-scale contribution each. The plank is
-##      not "defend better", it is "STOP DEFENDING".** NOT pre-registered, NOT
-##      sized — same single attribution instrument, same sizing limit.
-##      ⚠ **AVAILABILITY IS A LOWER BOUND: 600 of our sentinels read 0%
-##      availability yet recorded 101 shots** — an end-of-round-snapshot
-##      artefact, so a target entering and leaving inside one round is invisible.
-##      Unresolved. The 6.5pp gap is measured under a definition that can only
-##      understate BOTH sides.
+##      not "defend better", it is "STOP DEFENDING".**
+##      **⛔⛔ AND THE FENCE ON IT IS NOT "NEEDS A BIGGER n" — IT IS A SELECTION
+##      EFFECT THAT MAY NOT TRANSFER AT ANY n.** 4.04-vs-32.74 compares turrets
+##      in different POSITIONS. Reading it as *"move them forward and they fire
+##      8x more"* assumes productivity is a property of the **position** rather
+##      than of **the conditions that produced the siting**. A home sentinel
+##      exists because at that moment forward siting was not available or not
+##      survivable; **the forward ones may be forward BECAUSE conditions allowed
+##      it.** That is the SAME independence assumption the availability-binned
+##      test just falsified for conversion (69.82 → 26.68 as availability rises),
+##      one level down, inside the only reading that survived the fork.
+##      ⇒ **Before this becomes a prereg it needs a design that breaks the
+##      selection — e.g. compare home sentinels that COULD have been sited
+##      forward against those that could not — not more games.** NOT
+##      pre-registered, NOT sized, and the sizing limit on the attribution
+##      instrument also still stands.
+##      ⛔ **AVAILABILITY IS A LOWER BOUND AND THE ARTEFACT IS *NOT*
+##      COMMON-MODE — MEASURED, s30.** End-of-round snapshot, so a target
+##      entering and leaving inside one round is invisible. Sentinels reading 0%
+##      availability yet firing: **OURS 46/6,869 = 0.67% · THEIRS 4/4,280 =
+##      0.09% — a 7.17x asymmetry AGAINST US.** (Broader 0-availability counts:
+##      600 vs 176, 8.7% vs 4.1%.) **So it suppresses OUR availability harder,
+##      which is the direction that erodes the 6.5pp forward gap.**
+##      **⚠⚠ AND THE DISCRIMINATOR IS ONE-SIDED BY CONSTRUCTION, WHICH IS THE
+##      PART THAT MATTERS: it can only see ghosts that FIRED. A transient target
+##      that was never shot at leaves NO TRACE AT ALL.** So the bound it gives —
+##      ghost shots are 101 of all our shots, **0.097%** — bounds the FIRING
+##      side only. **It does NOT bound the availability side, and availability is
+##      the quantity in dispute.** ⇒ **the 6.5pp forward gap survives on the
+##      firing evidence and is NOT established on the availability evidence.**
+##      Anyone re-opening this needs a within-round occupancy trace, not a
+##      snapshot. `scratchpad/symm.py` reproduces the discriminator.
 ##      **AND OUR FORWARD POPULATION IS BIMODAL: 3,331 of 3,341 sit at
 ##      d²_enemy ≤ 32 — parked at the doorstep — with ZERO beyond 100.** No
 ##      mid-distance population exists, so there is no availability curve to
