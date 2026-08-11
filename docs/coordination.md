@@ -32581,3 +32581,47 @@ non-result becomes a belief.**
 **Three of the four were this lane's own ideas. Reinstatement is asked by the same
 lane that supplied the arithmetic killing its own Closer and its own harvester
 idea this morning — the standard is symmetric or it is not a standard.**
+
+## ⭐⭐ F41 — MAGNUS: *"Any improvement no matter how small, should be considered as the replacement of v104."*
+**A SHIP-POLICY DIRECTIVE. It is arithmetically correct, and it RESTATES a
+standing one this project has drifted from.**
+
+**THE ARITHMETIC, straight out of this morning's power work:**
+```
+h2h screen          n=  64  resolves only >= 17.5pp
+KILL_SPEED_MIN_N    n= 200  resolves only >=  9.9pp
+v104 on the ladder  n= 425  resolves        >=  6.8pp
+a few days on slot  n=1000  resolves        >=  4.4pp
+```
+**A +5pp plank is INVISIBLE to every screen we can afford and RESOLVABLE ON THE
+LADDER INSIDE A DAY OR TWO.** ⇒ **the ladder is not the risky place to measure a
+small effect — it is the ONLY place with the power to see one.** Asking a
+64-game screen to authorise a plank is asking the weakest instrument to license
+what only the strongest can measure.
+**AND THE DOWNSIDE IS BOUNDED AND ALREADY MEASURED:** submit→fire→rollback at
+**~15 s with ZERO rated matches leaked**, verified per-match at the pairing
+boundary · `ship_watch`'s slot rule is the stop-loss · `delta = 32 × (S − E)`
+caps one bad match at **~16 rating**.
+
+**⛔ IT COLLIDES WITH THREE `PROGRAMME.md` FIELDS AND THIS LANE DID NOT EDIT THAT
+FILE:** `:9 INCUMBENT_FROZEN: yes` (written for `_v115dodge`/v92; the live slot
+is v104) · `:12 KILL_SPEED_SHIP_GATE: -1.76` · `:13 KILL_SPEED_MIN_N: 200`.
+**"Any improvement however small" and "n≥200 and beat −1.76 first" cannot both
+govern.** The s28 precedent is that a lane refused to edit `PROGRAMME.md` on a
+relayed directive and was right; **this one arrived directly and I still did not
+edit it — the fields are load-bearing and Magnus sets them himself.**
+
+**⭐ AND IT IS ALREADY THE STANDING POLICY, WHICH MAKES TODAY A DRIFT FINDING:**
+the ship gate was loosened **2026-08-08** — *"parity passes, ladder is the field
+instrument, rollback is the control"* — after a **15-hour / 57-Elo deadlock.**
+**We spent today re-deriving the exact deadlock that directive was written to
+end**, and built seven filters while doing it. **A loosened gate that no
+instrument implements tightens itself back up.**
+
+**⇒ OPERATIONAL READING, handed to the builder to act on without waiting for a
+file edit: a plank ships when it (a) shows a POSITIVE POINT ESTIMATE on the
+currency, (b) has a VERIFIED MECHANISM — dose delivered, metric not inert — and
+(c) breaks no programme rule. SIGNIFICANCE IS NOT REQUIRED, because the ladder
+supplies it afterwards and the screen never could.**
+**The four restored planks now have a route: they need a MECHANISM verdict (dose,
+build mix, kill round), not a win-rate verdict.**
