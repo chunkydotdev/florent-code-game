@@ -110,6 +110,60 @@ family can buy its metric by simply going forward less.**
 floor (our current 13.91) and treat a breach as the falsifier, exactly as LOKI-25's
 5d was written and then fired.
 
+### ⛔ AMENDED s31 — **THAT FLOOR WAS A DIRECTION WITH NO THRESHOLD, WHICH IS THE SAME DEFECT AS "INSERT → RISES"**
+
+Raised by the side lane as an obligation and independently forced when the
+builder's own tool failed a selftest cell. **Measured, 5,178 archived games:
+`forward builds/game` mean 13.94, sd 24.31, CV 1.74.**
+
+**An unsized `db < 0` gate fires on ~half of all null pairs** — bootstrap, two
+arms drawn from the SAME distribution, 4,000 reps: **50.5% at n=64, 48.5% at
+n=440.** Sized to `db < −2·SE(diff)`: **2.2% / 2.5%.**
+
+| n/arm | SE(arm) | SE(diff) | **2·SE(diff)** | as % of level |
+|---:|---:|---:|---:|---:|
+| 64 | 3.039 | 4.297 | 8.595 | 61.6% |
+| 256 | 1.519 | 2.149 | 4.297 | 30.8% |
+| **440** | **1.159** | **1.639** | **3.278** | **23.5%** |
+| 880 | 0.819 | 1.159 | 2.318 | 16.6% |
+| 2048 | 0.537 | 0.760 | 1.519 | 10.9% |
+
+⇒ **At n=440 the breach threshold is `db < −3.28`, i.e. the treatment must fall
+below 10.66 builds/game — not below 13.94.**
+
+### ⛔⛔ AND THE GATE CANNOT CATCH THE FAILURE IT WAS BUILT FOR AT THE n THIS DOC PRESCRIBES
+
+**`2·SE(diff)` is 23.5% of level at n=440**, so a `PASS` there means *"no fall
+≥23.5% detected"*, **not** *"the denominator held"*. **That is D61 in a second
+instrument: the gate has an informative band, and inside it a non-breach is no
+information.**
+
+**LOKI-25 — the plank this guard exists because of — died with forward presence
+−23%.** A 23% fall is `0.23 × 13.94 = 3.21`; the threshold is `3.278`;
+**3.21 < 3.278, so the gate does NOT fire.** It misses LOKI-25's own magnitude by
+a hair and anything smaller outright.
+
+**To catch a 23% fall at 80% power: ~700 games/arm one-sided, ~900 two-sided.**
+
+⇒ **THE TWO HALVES OF THIS BAR HAVE DIFFERENT SAMPLE REQUIREMENTS AND THE
+ORIGINAL DID NOT NOTICE. The ratio resolves at ~440; its protected denominator
+needs ~700–900.** Sizing on the numerator alone buys a bar whose guard is
+decorative. Options, in preference order if the run is not yet committed:
+**(1) run at ~700–900/arm** so both halves resolve · **(2) run at 440 and
+pre-register the gate's own MDE (23.5%)**, reporting `PASS-DENOM` as *"no fall
+≥23.5% detected"* · **(3) find a lower-variance denominator** — CV 1.74 is the
+driver.
+
+### ⚠ AND A PRIOR OBJECTION TO THE DENOMINATOR ITSELF, from tactics sweep 23
+
+**"Rounds per forward structure" charges every spawn-denial round to a build that
+was never the point.** We hold a body on the enemy 12-tile ring in ~59–64% of
+rounds — **state-valued forward work with no build attached**, which this metric
+scores as waste. Where the field found longer dwell correct, the forward work was
+state-valued rather than event-valued. ⇒ **The 2.28× is not yet established as a
+defect**, and the three-way state split (action available and unused / no legal
+action / errand complete) is now wanted ahead of the band split.
+
 **⛔ RETRACTED BY ITS AUTHOR, 2026-08-11 s31, BEFORE THE SCREEN WAS RUN. The
 sentence here read: *"Both quantities are already in `events.tsv`, so the
 read-out needs no new decoder and the builder's 64-game self-play harness can
