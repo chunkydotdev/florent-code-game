@@ -102,3 +102,32 @@ return-home arm entirely for one leg and let raiders die forward, then read
 forward structures placed per builder spawned. **Pre-register the falsifier:
 builders lost per forward build is EXPECTED to rise — the plank fails only if
 forward structures per core-spawn does not.**
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 83 — "Under `R1000_IS_DEFEAT` and
+`PLAY_DEFENCE: never`, 'preserve the raider' needs an affirmative case and it does not have
+one." — is the file's stated reason, in its WHY IT MIGHT TRANSFER section, for treating "delete
+the raider's return-home arm entirely" as having no real counter-argument. `R1000_IS_DEFEAT` is
+unchanged and still applies. But `PLAY_DEFENCE: never` is retired, and "preserve the raider" now
+DOES have a possible affirmative case: `DEFENCE_ADMISSION_BAR` admits a survival move that does
+not raise median kill round. This is the clearest case in this batch where voiding the premise
+removes the file's stated justification for its own BUILDER HOOK. The pre-registered falsifier
+in that hook ("builders lost per forward build is EXPECTED to rise — the plank fails only if
+forward structures per core-spawn does not") is itself unaffected and remains a correct test,
+but any leg run on it should now also check kill-round non-regression, since "preserve the
+raider" is a live alternative rather than a foreclosed one.
+**STATUS:** CLOSURE VOIDED — the stated reason for foreclosing "preserve the raider" as a
+counter-argument is retired; the road returns to the queue for a live test, and any future leg
+on this file's plank should carry a kill-round check alongside its forward-structures-per-spawn
+falsifier.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

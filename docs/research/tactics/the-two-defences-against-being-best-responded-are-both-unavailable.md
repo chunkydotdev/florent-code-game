@@ -75,3 +75,27 @@ send anyone looking for the citation that prices it: it does not exist. If the q
 ever becomes live, it must be measured here first — see
 `our-shipped-bot-is-a-published-pure-policy.md` for the placebo design that a scouting test
 would require.
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 37's "direct programme conflict" — "'reduce
+our exploitability' is a **defensive objective**, and `NEVER PLAY DEFENCE` governs" — is one of
+two closure arguments in the WHAT WOULD KILL IT section; the other is that both literature
+defences (mixing, fielding a population) are "structurally unavailable" — "we hold **one**
+submission slot, so we cannot field a population... no cross-game memory, so we cannot mix
+across matches" — a rules fact, unaffected. The file's `transfers: no` frontmatter and its "two
+measured negatives" (nobody quantifies best-responder exposure; concealment is not a literature
+here) are both independent of `PLAY_DEFENCE` and also unaffected.
+**STATUS:** CLOSURE VOIDED (as a reason) — the road stays closed on the independent
+structural-unavailability grounds already stated in the same section. This is the source file
+that `2026-08-11-sweep-22.md` cites for the same road.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

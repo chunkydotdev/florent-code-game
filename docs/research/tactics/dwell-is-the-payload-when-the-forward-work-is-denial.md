@@ -82,3 +82,27 @@ None as a new plank. **Use it as a gate on the existing one:** before spending a
 leg on forward dwell, split raider-rounds into denial-productive (a body on a
 tile the enemy needs) and inert. If the denial share is large, the dwell number
 is partly a feature and the intervention should exempt those rounds.
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 75 uses `PLAY_DEFENCE: never` to draw the
+line between denial-productive dwell (on-programme) and idle dwell ("the idle case, not this
+one"). The denial-vs-idle distinction is a rules/mechanism fact independent of the defence rule
+and is unaffected. What changes is the framing that idle-looking dwell was categorically
+excluded because it might read as "defence": under the amended field, forward presence that
+also happens to aid survival is no longer automatically disqualified, provided it clears the
+kill-round non-regression bar. The denial/idle split in this file remains the operative test
+either way.
+**STATUS:** RESTRICTION NARROWED — the denial-vs-idle distinction stands, but "idle, therefore
+forbidden" is no longer the whole story if an idle-looking dwell turns out to help survival
+without costing kill speed.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

@@ -77,3 +77,25 @@ One boolean on the raider role that makes the go-home branch unreachable, plus a
 known enemy turret patterns covering it. **Falsifier: if forward rounds per
 structure does not fall, the dwell was never withdrawal-caused and the
 intervention should be reverted rather than tuned.**
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 70 restricts the sidestep tactic's
+justification to "keeps the unit *producing forward*, not because it keeps the unit alive" —
+i.e., survival could not be cited as a reason under the absolute rule. That restriction is now
+narrower than the rule requires: survival is an admissible reason too, provided it clears
+`DEFENCE_ADMISSION_BAR` (kill-round non-regression). This does not change the file's BUILDER
+HOOK (add a go-home exclusion flag plus a `sidestep()`) — it only removes a now-unnecessary
+justification constraint.
+**STATUS:** RESTRICTION NARROWED — survival is no longer a disqualifying justification for the
+sidestep, only a non-regressing kill round is required.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

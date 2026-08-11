@@ -75,3 +75,31 @@ next", which is
 our forward builders, what fraction of raider-rounds have a second friendly
 builder orthogonally adjacent? If it is near zero, forward healing is
 theoretical and item 1 above reopens.
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 46 is the fourth and final item in the
+chain that produces the file's headline conclusion, "⇒ There is no rule-level reason for our
+forward builder to go home, ever." The first three reasons (titanium is a global pool with no
+carry limit, no ammunition is carried by a builder, HP is healed by an adjacent builder anywhere
+rather than at a home-only facility) are rules facts and are unaffected. The fourth — "`PLAY_
+DEFENCE: never` removes the one remaining motive. Preserving the unit is not a reason on this
+programme." — is squarely the retired premise, and its own wording concedes preservation WAS
+"the one remaining motive" once the resupply-style triggers are ruled out by rules facts.
+Voiding it means preservation is restored as a possible motive for a forward builder to
+withdraw, subject to the new kill-round non-regression bar — which directly qualifies the
+file's own headline conclusion.
+**STATUS:** CLOSURE VOIDED — the highest-impact instance in this batch: the file's central
+claim ("no rule-level reason... ever") rested on four legs, and this was the one non-rules leg.
+Reopens "preserve the unit" as a possible motive, subject to the new bar; does not by itself
+establish that it is a good one.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

@@ -76,3 +76,25 @@ Before building anything: split the forward-round population three ways
 (legal-action-available-and-unused / no-legal-action / errand-already-complete).
 **That single cut tells you which of three planks the 2.28x is, and it is a
 corpus cut with zero bot risk.**
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 45 says "(2) is the only one with a fix that
+survives `PLAY_DEFENCE: never`" — using the retired absolute rule to imply the withdrawal-shortening
+plank (3) is off-programme by category, leaving only the targeting-fix (2) as pursuable. That implicit
+exclusion is void: if the builder's own three-way corpus cut shows the withdrawal plank dominates, it is
+no longer disqualified on category alone — it would need to clear the new kill-round non-regression bar,
+not be excluded outright. The file's actual BUILDER HOOK (the three-way corpus cut) is unaffected — it
+recommends measurement, not a closure.
+**STATUS:** RESTRICTION NARROWED — the targeting-fix plank is no longer the only admissible outcome of
+the corpus cut.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

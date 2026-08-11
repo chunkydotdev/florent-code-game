@@ -80,3 +80,27 @@ question is ever tested, note the one asymmetry worth exploiting first: SAIDA ad
 new opponent strategy **without shipping a new version at all**, because its change lived in
 a learning file — a channel that does not exist in our league (see
 `a-version-bump-is-the-only-behaviour-channel-here.md`).
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 61's opening clause — "all three are
+DEFENSIVE, and `NEVER PLAY DEFENCE` governs" — is a voided blanket disqualifier. But the same
+"WHAT WOULD KILL IT" paragraph gives each of the three its own independent objection: churn
+"costs a submission per iteration... We cannot churn cheaply", freeze "directly contradicted by
+our own measurement: a frozen bot loses 8.00pp of game share", and weakened-decoy "would put a
+deliberately worse bot on the *rated* ladder, where the rating is the thing we are trying to
+move." Those three stand untouched by this amendment, so the file's closing "Do not spend a leg
+on any of the three" is NOT reopened in practice — only the categorical "defensive = forbidden"
+framing is removed as one of its stated reasons.
+**STATUS:** CLOSURE VOIDED (as a reason) — the file's practical conclusion survives on its other,
+independently-stated grounds.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

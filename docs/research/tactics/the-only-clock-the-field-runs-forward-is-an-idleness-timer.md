@@ -79,3 +79,28 @@ Audit the three literals against the taxonomy rather than retuning them: does
 each one measure *time since last progress* (keep), *time bounding a search*
 (keep), or *time in enemy territory* (delete — no precedent, and it is the one
 that would produce our dwell number as a side effect rather than as a fix).
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 63 asserts that "redirect, not recall" is
+"the only answer we are allowed to give" to an idle unit, because recall (bringing the unit
+home) would be defence, forbidden under the old rule. That exclusivity claim is void: recall is
+no longer categorically forbidden, only conditionally admissible (it must not raise median kill
+round). The file's audit instruction in the BUILDER HOOK — check whether each literal
+(`STALL_RNDS`, `GIVEUP_RND`, `rnd + 60`) measures time-since-progress, a search deadline, or
+time-in-enemy-territory, and delete only the last — is unaffected; recall becoming admissible
+does not itself argue for reinstating any of the three literals as a dwell-recall trigger, since
+none of them was shown to have field precedent as one.
+**STATUS:** RESTRICTION NARROWED — "redirect is the only legal answer" is no longer true by
+category; a recall-shaped answer would need to be argued and tested on the kill-round bar, not
+simply disqualified.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.

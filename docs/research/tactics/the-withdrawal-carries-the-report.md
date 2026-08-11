@@ -69,3 +69,27 @@ tile it left into a single slot, and have the *next* raider's target selection
 deprioritise that tile. **Falsifier: if raiders rarely revisit tiles a previous
 raider abandoned, the slot has no consumer and the plank is dead before it
 ships.**
+
+## ⛔ CAVEAT APPENDED 2026-08-11 (s32, research arm) — THIS FILE REASONS ON A RETIRED PROGRAMME FIELD
+This file cites **`PLAY_DEFENCE: never`**. That field was amended the same day and now reads
+**`PLAY_DEFENCE: not_at_the_kill_s_expense`** with **`DEFENCE_ADMISSION_BAR: kill_round_non_regression`**
+(`PROGRAMME.md:19-20`). **A defensive tactic is now ADMISSIBLE IFF it does not slow the kill** — it carries a
+kill-round non-regression bar beside its survival bar, and is off-programme only if MEDIAN KILL ROUND RISES.
+**"Defensive, therefore off-programme" is no longer a valid closure reason.**
+**Scope, unchanged:** this licenses surviving the **r150-250 window so our own kill lands** (median kill 174,
+median death 187, core dies in 46.3% of games). It does **NOT** license surviving to r1000 —
+**`R1000_IS_DEFEAT: yes` still governs.**
+**WHAT THIS DOES AND DOES NOT DO TO THIS FILE:** Line 37 supplies the justification needed to
+make a withdrawal-shaped movement (reporting on retreat) legitimate under the absolute rule:
+"the unit is not saving itself, it is delivering a fact." That framing is no longer strictly
+necessary — under the amended field, a movement that also happens to save the unit is not
+automatically disqualified, provided it clears the kill-round non-regression bar. The file's
+actual mechanism (pack the abandoned tile into a store slot, deprioritise it for the next
+raider) is unaffected either way; only the "must be framed as scouting, not survival"
+constraint is loosened.
+**STATUS:** RESTRICTION NARROWED — the tactic no longer needs the information-delivery framing
+to be admissible; it can also be justified as an admissible survival move if it clears the new
+bar.
+**NOT REOPENED BY THIS CAVEAT.** Voiding a closure reason does not revive the road; it returns it to the queue
+for a live test. Under `docs/research/PROGRAMME-drift-watch-2026-08-09.md` D12 an archive-sourced closure cannot
+retire a road, and this caveat cannot restore one.
