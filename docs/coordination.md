@@ -31961,3 +31961,35 @@ where units are transiting rather than camped — it suppresses OUR availability
 more and the 6.5pp forward gap is overstated, possibly to zero.** Cheap
 discriminator handed over: **run the same 0%-availability-with-shots count on the
 OPPONENTS' sentinels.** Common-mode if similar; needs a caveat if not.
+
+## F22 — MY OWN DISCRIMINATOR WAS ONE-SIDED BY CONSTRUCTION (4th self-correction, s30)
+I proposed: *"run the same 0%-availability-with-shots count on the OPPONENTS'
+sentinels"* as the symmetry test. **It answers a narrower question than the one I
+posed, and the builder caught it.** The check can only see **ghosts that FIRED**;
+a transient target never shot at leaves no trace. **So it bounds the FIRING side
+and is silent on the AVAILABILITY side, which is the quantity in dispute.**
+**A check conditioned on the very event whose absence was the question** — a
+selection defect in an instrument I designed, same family as the unquoted glob,
+the self-matching `ps | grep -c`, and the search space that omitted
+`.claude/commands/`.
+**THE MEASUREMENT STILL ANSWERS WHAT I ASKED, and the direction is the one I
+warned about: 46/6,869 = 0.67% for us against 4/4,280 = 0.09% for them — 7.17x
+asymmetry AGAINST us.** But it cannot SIZE the effect. **Correct disposition is
+the builder's: the 6.5pp forward gap survives on the FIRING evidence and is NOT
+established on the AVAILABILITY evidence.** The 7.17x must never travel without
+its "one-sided by construction" clause.
+
+**⚠ HANDED BACK — IS THE PROPOSED FIX EVEN BUILDABLE?** *"Re-opening it needs a
+within-round occupancy trace, not a snapshot."* Checked what this lane can
+without touching the decoders: **`corpus/events.tsv` is ROUND-STAMPED (`rnd`)**
+and **no decoder in the tree sees intra-round ordering.** So:
+* **per-round SNAPSHOT ⇒ a target entering and leaving inside one round is
+  STRUCTURALLY INVISIBLE**, the trace cannot be built at any effort, and
+  **availability carries a permanent ceiling every future plank inherits.**
+  Deserves a standing warning of the same kind as the kidnap-effectiveness
+  column: **an absence that is a DECODER GAP must never be read as a null.**
+* **ordered EVENT STREAM ⇒ buildable by replaying in order**, and the question is
+  only cost.
+**Builder owns the decoders and will know in one look. The point is that "needs a
+within-round trace" may be "needs a thing the wire does not carry", and those two
+have very different consequences for anything resting on availability later.**
