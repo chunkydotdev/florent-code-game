@@ -354,6 +354,20 @@ def check(plank, cwd=ROOT, handover="HANDOVER.md", quiet=False):
     # precisely what let LOKI-18 through: no mention -> early return -> the scan
     # never ran. See KILL_WORDS.
     killed, revived = withdrawal_state(paths, cwd=cwd)
+    # DEATH IS STICKY. Once a plank has been acknowledged DEAD for ANY commit,
+    # later commits about it -- read-outs, post-mortems, HANDOVER blocks -- must
+    # not re-open the question. Without this the ack is keyed so tightly that
+    # writing up WHY a plank is dead re-flags it as merely SUSPECT, which reads
+    # as a downgrade and is how the fix would have unwound itself.
+    dead_acks = [(pl, h) for (pl, h), (v, _n) in load_acks(cwd=cwd).items()
+                 if pl == plank and v == "DEAD"]
+    if dead_acks and not revived:
+        say("")
+        say("  *** WITHDRAWN: acknowledged DEAD in tools/plank_ack.tsv "
+            f"({', '.join(h for _p, h in dead_acks)}). ***")
+        say("  DO NOT ACTIVATE, SUBMIT OR FIRE. A committed prereg and a built")
+        say(f"  tree both survive a withdrawal. Clear only with {REVIVAL_TOKEN}.")
+        return "WITHDRAWN", [killed] if killed else []
     if killed and not revived and not killed.get("hard"):
         verdict, note = load_acks(cwd=cwd).get((plank, killed["hash"]), (None, ""))
         if verdict == "NOT-A-WITHDRAWAL":
@@ -500,6 +514,24 @@ def selftest():
             print(f"  [FAIL] a NOT-A-WITHDRAWAL ack must clear it, read {v}"); ok = False
         else:
             print(f"  [ok] acknowledged NOT-A-WITHDRAWAL           -> {v}")
+
+        # t1-ack-d: DEATH IS STICKY. Once acknowledged DEAD, a LATER commit about
+        # the plank -- a read-out, a post-mortem, a HANDOVER block -- must not
+        # downgrade it back to SUSPECT. Real case: writing up WHY loki18 was dead
+        # created a new kill-word commit with no ack, which re-flagged it as
+        # merely SUSPECT. The fix unwinding itself the moment you document it.
+        (d / "tools" / "plank_ack.tsv").write_text(
+            f"lokiXX\t{kill_hash}\tDEAD\tits author said so\n")
+        (d / "docs/prereg/PREREG-lokiXX.md").write_text("bar\npost-mortem\n")
+        run(d, "add", "-A")
+        run(d, "commit", "-q", "-m", "lokiXX post-mortem: why it was retracted")
+        v, _ = check("lokiXX", cwd=d, quiet=True)
+        if v != "WITHDRAWN":
+            print(f"  [FAIL] a later commit must not un-stick a DEAD ack, read {v}")
+            ok = False
+        else:
+            print("  [ok] later commit after a DEAD ack           -> still WITHDRAWN")
+        (d / "tools" / "plank_ack.tsv").unlink()
 
         # t1-ack-c: an ack for a DIFFERENT commit must NOT silence this one, or
         # one dismissal would deafen the plank forever.
