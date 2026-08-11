@@ -80,11 +80,43 @@ not contradict each other and neither overturns the other:**
 That is the anti-Goodhart case running in the *unfamiliar* direction, and this
 project has no precedent for it.
 
-**⛔ AND IT DOES NOT MEET THE SHIP RULE AS WRITTEN.** The s31 rule is *(a) a
-positive point estimate, (b) a **VERIFIED MECHANISM**, (c) no programme breach.*
-GUNAXIS has (a) and (c). **It fails (b) — its mechanism was falsified, at a
-comparable n, on a pre-registered bar that resolved.** ⇒ **NOT SHIPPED on this
-evidence, and the decision is escalated rather than taken** (§8).
+**⛔ CORRECTION — "AT A COMPARABLE n" WAS FALSE AND I WROTE IT. The mechanism
+falsifier was resolved at n=25 against tonight's n=5,408 — a factor of 216.**
+Caught by the side lane; I had already retracted it verbally to Magnus and the
+committed document still carried it. It is corrected here rather than softened.
+
+**THE PLANK'S FULL EVIDENTIAL HISTORY, assembled from the artefacts:**
+
+| when | what | n | result |
+|---|---|---:|---|
+| s30 | MECHANISM falsifier | **25** | deaths −24%, presence −23%, **ratio flat −2.3%** ⇒ declared dead |
+| s30 | currency screen, **pre-registered at 4,096** | **1,024** | 516/1024 = **50.4% NO-INFORMATION** |
+| tonight | currency, vs the CURRENT incumbent | **5,408** | **51.94%, the only arm surviving correction** |
+
+**⛔ THE PRE-REGISTERED CURRENCY SCREEN WAS NEVER DELIVERED.**
+`PREREG-loki25` §A1.2 sizes it at **4,096** — *"n=1024 z=1.92 no · n=4096 z=3.84
+RESOLVES"* — and says **"IT IS LAUNCHED."** The only artefact is
+`scratchpad/battery/_v146gunaxis.log` at **1,024**, the n that same prereg says
+**cannot ever settle it.** ⇒ the plank was killed on the mechanism read **while
+its own pre-registered currency screen sat at a quarter of its specified n.**
+The 50.4% and tonight's 51.94% are **consistent, not contradictory** — the prereg
+said so in advance, with the arithmetic.
+
+**⇒ THE OBJECTION TO SHIPPING IS WEAKER THAN "FALSIFIED", AND THE DIFFERENCE
+MATTERS.** The kill rests on deaths and presence falling by *nearly the same*
+proportion — **a SMALL-difference claim derived from two LARGE ones.**
+`PREREG-loki25` §5's own table says the mechanism bar resolves at n=25 only for
+*"a large change in death rate, not a small one"*, and `HANDOVER:352` says this
+exact statistic (`deaths per forward build`) needs **~880 self-play games**, with
+`QUEUE.md:213` adding that even 440 *"misses LOKI-25's own magnitude."*
+⇒ **ship-rule clause (b) is failing on an UNRESOLVED mechanism, not a FALSIFIED
+one.** That is a materially weaker objection and Magnus gets it in those terms.
+
+⚠ **AND TONIGHT IS NOT LITERALLY THE PRE-REGISTERED CELL.** The prereg's 4,096
+cell is vs `_v130loki13` (v104); tonight's shard is vs `_v148ferryfirst` (v112).
+Same design, above the resolving n, **against a different — and under
+`COMPARE_AGAINST: previous_line_iteration`, the correct — control.** The
+pre-committed sentence therefore does not transfer unaltered and is not claimed.
 
 ## 4. PART A — DOES A LOCAL WIN RATE PREDICT THE LADDER?
 
@@ -182,12 +214,17 @@ next caller — me — exposed.*
 3. **BESTFIT, CAP6, CAP12: NO INFORMATION.** Back to the pool, **not demoted** —
    CAP12's escalate does not survive multiplicity and its own contrast against
    CAP6 is p=0.60.
-4. **GUNAXIS is the only positive arm that survives correction — and it is a
-   plank we killed on a mechanism falsifier.** ⇒ **ESCALATED TO MAGNUS, not
-   shipped**: the standing ship rule requires a verified mechanism and this has a
-   *falsified* one alongside the night's best currency. Under *"win rate decides"*
-   it is a candidate; under the ship rule as written it is not. **Those two need
-   reconciling by the person who set both.**
+4. **GUNAXIS is the only positive arm that survives correction — and its kill
+   does not stand up.** Mechanism read at **n=25** on a statistic needing ~880;
+   currency screen pre-registered at 4,096 and **delivered at 1,024**; tonight
+   5,408 and positive. ⇒ **NOT a rules conflict for Magnus to arbitrate, and I
+   withdrew that framing: the plank was never validly killed.**
+   **Holm–Bonferroni agrees with plain Bonferroni** (ROSTER p=0.00006<0.01,
+   GUNAXIS p=0.00433<0.0125, CAP12 p=0.0439>0.0167), so the two-arm survivor set
+   is not an artefact of picking the most conservative correction.
+   ⇒ **Magnus's call, taken 2026-08-11: take it to LIVE UNRATED against teams we
+   LOSE to, and read which maps flip.** That is `FIXTURE_OF_RECORD` and it beats
+   another self-play battery. See `PREREG-loki30`.
 5. **Part A did NOT falsify** — local screens remain *consistent with* predicting
    the ladder, on two signed cells, one marginal, with the residual clause
    unoperationalised. **Screening continues; the falsifier is thinner than it reads.**
