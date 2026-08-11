@@ -173,16 +173,16 @@ def analyse(path: Path, us: int) -> list[dict]:
         # Reference round: the throw for the treated arm, birth for the control.
         # Matching is done on the round the clock starts, so the arms are compared
         # at the same game phase rather than over whole lifetimes.
-        ref = thr if thr is not None else born.get(eid, 0)
         p = pos.get(eid)
         rows.append({
             "file": path.name,
             "eid": eid,
             "thrown": 1 if thr is not None else 0,
-            "ref_rnd": ref,
+            "born_rnd": born.get(eid, 0),
+            "thrown_rnd": thr if thr is not None else -1,
             "removed_rnd": rem if rem is not None else -1,
             "survived_to_end": 0 if rem is not None else 1,
-            "rounds_survived": (rem - ref) if rem is not None else (nrounds - ref),
+            "undamaged": 1 if eid not in damaged else 0,
             "no_damage_removal": 1 if (rem is not None and eid not in damaged) else 0,
             "dist_bucket": bucket(d2(p, corepos[enemy])) if p else "unk",
             "rounds": nrounds,
@@ -190,68 +190,145 @@ def analyse(path: Path, us: int) -> list[dict]:
     return rows
 
 
-def summarise(rows: list[dict]) -> dict:
-    """Matched contrast. Strata = (file, dist_bucket, round-band of ref_rnd).
+def summarise(rows: list[dict], naive: bool = False) -> dict:
+    """RISK-SET MATCHED contrast.
 
-    A stratum contributes ONLY if it holds both a thrown and a non-thrown victim,
-    which is what makes this matched rather than pooled.
+    ⛔ THE BIAS THIS EXISTS TO REMOVE, found by the side lane against the FIRST
+    version of this estimator, which had already been published as a closure.
+    A victim must be ALIVE at round R to be thrown -- and "alive" includes "has
+    not yet been removed undamaged", WHICH IS THE OUTCOME. So the thrown arm was
+    conditioned on not having crashed, while controls were clocked from BIRTH and
+    were not. **The thrown group was depleted of crash-prone bots BY
+    CONSTRUCTION, and the depletion runs in exactly the direction of the finding.**
+    The old design could not distinguish "throwing does not cause crashes" from
+    "bots that survive long enough to be thrown were never going to crash".
+    Compounding it, the outcome was a LIFETIME property, so the pre-throw portion
+    of a victim's life sat inside the outcome window -- a period during which the
+    throw cannot have caused anything.
+
+    THE FIX, and it is the standard one for immortal time: for each throw at round
+    R, admit as controls only enemy builders ALIVE AND NOT YET REMOVED AT R, and
+    define the outcome for BOTH arms as **removed-undamaged strictly AFTER R**.
+    Both arms then share one clock and one risk set.
+
+    `naive=True` reproduces the OLD biased estimator, so the selftest can drive
+    the difference rather than assert it.
     """
-    strata: dict[tuple, dict[int, list[dict]]] = defaultdict(lambda: {0: [], 1: []})
+    by_file: dict[str, list[dict]] = defaultdict(list)
     for r in rows:
-        if r["dist_bucket"] == "unk":
-            continue
-        band = r["ref_rnd"] // 100
-        strata[(r["file"], r["dist_bucket"], band)][r["thrown"]].append(r)
+        by_file[r["file"]].append(r)
 
     tn = td = cn = cd = 0
     used = 0
-    for _k, arms in strata.items():
-        if not arms[0] or not arms[1]:
-            continue                                   # unmatched -> excluded
-        used += 1
-        for r in arms[1]:
+    for _f, rs in by_file.items():
+        thrown = [r for r in rs if r["thrown"] and r["dist_bucket"] != "unk"]
+        for v in thrown:
+            R = v["thrown_rnd"]
+            if naive:
+                pool = [c for c in rs if not c["thrown"] and c["dist_bucket"] == v["dist_bucket"]
+                        and c["born_rnd"] // 100 == R // 100]
+                out_v = v["no_damage_removal"]
+            else:
+                # RISK SET: not thrown, born before R, still alive at R.
+                pool = [c for c in rs
+                        if not c["thrown"]
+                        and c["dist_bucket"] == v["dist_bucket"]
+                        and c["born_rnd"] <= R
+                        and (c["removed_rnd"] == -1 or c["removed_rnd"] > R)]
+                out_v = 1 if (v["removed_rnd"] > R and v["undamaged"]) else 0
+            if not pool:
+                continue                                # no risk set -> excluded
+            used += 1
             tn += 1
-            td += r["no_damage_removal"]
-        for r in arms[0]:
-            cn += 1
-            cd += r["no_damage_removal"]
+            td += out_v
+            for c in pool:
+                cn += 1
+                cd += (c["no_damage_removal"] if naive else
+                       (1 if (c["removed_rnd"] > R and c["undamaged"]) else 0))
     tp = td / tn if tn else float("nan")
     cp = cd / cn if cn else float("nan")
     return {
-        "strata_used": used, "strata_total": len(strata),
+        "strata_used": used, "strata_total": len(rows),
         "thrown_n": tn, "thrown_nodmg": td, "thrown_rate": tp,
         "ctrl_n": cn, "ctrl_nodmg": cd, "ctrl_rate": cp,
         "delta_pp": (tp - cp) * 100 if tn and cn else float("nan"),
     }
 
 
+def _row(f, eid, thrown, born, thr, rem, undam, bucket_="mid"):
+    return dict(file=f, eid=eid, thrown=thrown, born_rnd=born, thrown_rnd=thr,
+                removed_rnd=rem, survived_to_end=0 if rem != -1 else 1,
+                undamaged=undam,
+                no_damage_removal=1 if (rem != -1 and undam) else 0,
+                dist_bucket=bucket_, rounds=400)
+
+
 def _fixture(always: bool) -> list[dict]:
-    """Synthetic rows: thrown victims vanish undamaged always / never."""
+    """Thrown victims vanish undamaged always / never. Timing held equal."""
     rows = []
     for f in range(30):
         for i in range(4):
-            rows.append(dict(file=f"f{f}", eid=i, thrown=1, ref_rnd=50,
-                             removed_rnd=60, survived_to_end=0, rounds_survived=10,
-                             no_damage_removal=1 if always else 0,
-                             dist_bucket="mid", rounds=200))
-            rows.append(dict(file=f"f{f}", eid=100 + i, thrown=0, ref_rnd=50,
-                             removed_rnd=60, survived_to_end=0, rounds_survived=10,
-                             no_damage_removal=0, dist_bucket="mid", rounds=200))
+            rows.append(_row(f"f{f}", i, 1, 40, 50, 60, 1 if always else 0))
+            rows.append(_row(f"f{f}", 100 + i, 0, 40, -1, 60, 0))
+    return rows
+
+
+def _fixture_immortal() -> list[dict]:
+    """⭐ THE CELL THAT CATCHES THE BIAS — specified by the side lane.
+
+    TRUE EFFECT IS ZERO. Every bot has the same constant per-round hazard of
+    vanishing undamaged. But victims can only be THROWN if they survived to r50,
+    while controls are observed from birth at r0 -- so controls accumulate crash
+    events in r0..50 that victims could never have had.
+
+    A NAIVE (birth-clocked, whole-life-outcome) estimator MUST read NEGATIVE here.
+    The RISK-SET estimator MUST read ~ZERO, because it only counts events after
+    the throw round and only admits controls still alive at that round.
+    """
+    rows = []
+    for f in range(60):
+        # controls: half die undamaged EARLY (r10-40), before any throw happens
+        for i in range(6):
+            rows.append(_row(f"f{f}", 200 + i, 0, 0, -1, 10 + i * 5, 1))
+        # controls: the rest survive past r50 and then die damaged
+        for i in range(6):
+            rows.append(_row(f"f{f}", 300 + i, 0, 0, -1, 120, 0))
+        # victims: alive at r50 by construction, then die damaged (true effect 0)
+        for i in range(4):
+            rows.append(_row(f"f{f}", i, 1, 0, 50, 120, 0))
     return rows
 
 
 def selftest() -> int:
-    print("SELFTEST — the estimator must separate an effect from no effect.")
-    hi = summarise(_fixture(True))
-    lo = summarise(_fixture(False))
+    rc = 0
+    print("SELFTEST 1 — the estimator must separate an effect from no effect.")
+    hi, lo = summarise(_fixture(True)), summarise(_fixture(False))
     print(f"  all-thrown-vanish  : thrown {hi['thrown_rate']:.1%} vs ctrl {hi['ctrl_rate']:.1%}"
-          f"  delta {hi['delta_pp']:+.1f}pp")
+          f"   delta {hi['delta_pp']:+.1f}pp")
     print(f"  none-thrown-vanish : thrown {lo['thrown_rate']:.1%} vs ctrl {lo['ctrl_rate']:.1%}"
-          f"  delta {lo['delta_pp']:+.1f}pp")
-    ok = hi["delta_pp"] > 50 and abs(lo["delta_pp"]) < 1e-9 and hi["strata_used"] == 30
-    print("\n  ✅ PASS — fires on the effect, silent on the null."
-          if ok else "\n  ⛔ FAIL — estimator cannot separate the two. Do not trust its output.")
-    return 0 if ok else 1
+          f"   delta {lo['delta_pp']:+.1f}pp")
+    ok1 = hi["delta_pp"] > 50 and abs(lo["delta_pp"]) < 1e-9
+    print("  ✅ PASS" if ok1 else "  ⛔ FAIL")
+
+    print("\nSELFTEST 2 — IMMORTAL-TIME BIAS. True effect is ZERO; victims are")
+    print("  alive-at-r50 by construction while controls are watched from birth.")
+    fx = _fixture_immortal()
+    nv, rs = summarise(fx, naive=True), summarise(fx, naive=False)
+    print(f"  NAIVE  (birth-clocked, whole-life outcome): delta {nv['delta_pp']:+.2f}pp"
+          f"   <- must be NEGATIVE, i.e. the bias is real and reproducible")
+    print(f"  RISK-SET (post-throw window, alive-at-R)  : delta {rs['delta_pp']:+.2f}pp"
+          f"   <- must be ~ZERO, i.e. the fix removes it")
+    ok2 = nv["delta_pp"] < -5 and abs(rs["delta_pp"]) < 1.0
+    print("  ✅ PASS — the biased estimator fails this cell and the fixed one survives it."
+          if ok2 else
+          "  ⛔ FAIL — either the bias does not reproduce or the fix does not remove it.")
+
+    if not (ok1 and ok2):
+        print("\n⛔ DO NOT TRUST THIS TOOL'S OUTPUT.")
+        rc = 1
+    else:
+        print("\n✅ Both cells pass.")
+    return rc
 
 
 def main(argv=None) -> int:

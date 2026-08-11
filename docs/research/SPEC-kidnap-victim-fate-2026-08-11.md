@@ -125,3 +125,62 @@ known 36,275 times.**
 * A `removed_without_damage` elevation is **association**, not proof of induction —
   it needs the matched control in §4 and, per rule 6, a live leg before any road is
   CLOSED on it.
+
+---
+
+# ⛔⛔ RETRACTION — 2026-08-11T20:2xZ. THE CLOSURE THIS SPEC AUTHORISED WAS WRONG, AND CORRECTING IT REVERSES THE SIGN.
+
+**Flagged by the SIDE LANE. Confirmed by me against my own published result.**
+
+**THE DEFECT — immortal-time bias.** A victim must be **alive at round R to be
+thrown**, and *"alive"* includes *"has not yet been removed undamaged"*, **which
+is the outcome.** The thrown arm was therefore conditioned on not having crashed;
+controls were clocked from **birth** and were not. **The thrown group was depleted
+of crash-prone bots BY CONSTRUCTION — in exactly the direction of the finding.**
+Compounding it, the outcome was a **lifetime** property, so a victim's entire
+pre-throw life sat inside the outcome window, a period during which the throw
+cannot have caused anything.
+
+**AND MY SELFTEST COULD NOT CATCH IT.** Every fixture row carried identical
+timing in both arms, so **exposure and selection were equal by construction.**
+The test asserted the estimator *separates an effect from no effect* — which it
+did — and never that it is **unbiased when the arms differ in exposure**, which is
+the clause the closure actually rested on. **The clause no assertion touches is
+where the defect was.**
+
+**CORRECTED — risk-set matching**, controls = enemy builders alive and not-yet-
+removed at R, outcome = removed-undamaged strictly **after** R, one clock for both
+arms. All 5,398 of our games:
+
+| estimator | THROWN | CONTROL | delta |
+|---|---|---|---|
+| **naive (published, biased)** | 5/3,724 = 0.134% | 10/4,668 = 0.214% | **−0.080pp** |
+| **risk-set (correct)** | **17/3,844 = 0.442%** | **13/7,341 = 0.177%** | **+0.265pp** |
+
+**95% CI [+0.034, +0.496]pp · z = 2.25 · ratio 2.50×.**
+
+⇒ **THE DISPLACEMENT CHANNEL IS NOT CLOSED. It is WEAKLY POSITIVE — thrown enemy
+builders vanish undamaged at ~2.5× the rate of matched controls.**
+
+⚠ **AND IT IS NOT CONFIRMED EITHER, which matters as much as the reversal.**
+**17 and 13 events.** z = 2.25 on an interval that nearly touches zero.
+`no_damage_removal` still conflates an uncaught exception with `self_destruct()`
+(~40% of no-damage removals in `crash_census`'s own 40-file sample). **This is a
+PRIORITISING signal, not a result.**
+
+**THE SELFTEST NOW DRIVES THE BIAS ITSELF** — cell 2 builds a true-effect-ZERO
+fixture where victims are alive-at-r50 by construction and controls are watched
+from birth: **naive reads −50.00pp, risk-set reads +0.00pp.** The estimator that
+produced the retracted number now **fails a test the shipped one passes.**
+
+**WHAT SURVIVES UNCHANGED:** the **2.62% structural bound** (360 of 13,743
+enemy-builder removals are no-damage at all) — it bounds the road regardless of
+the contrast, and it was the most valuable number here. And the **scope**: all
+9,372 archived throws are `EXILE`, so the **border-throw** mechanism is still
+untested.
+
+**PROCESS NOTE, because this is the second time today the pattern held.** A number
+crossed out of a research document and into `QUEUE.md` as a closure within
+minutes, and the defect was in the *estimator*, not the arithmetic — which the
+verification I ran (controls, selftest, matched strata) was not built to see. **A
+closure deserves a harder read than a finding, and I gave it the same one.**
