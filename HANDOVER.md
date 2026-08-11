@@ -73,6 +73,45 @@
 ##   any other population will not get 38.1% and will test the bar against the
 ##   wrong number.** The tag travels with the number or the number is worthless.
 ##
+## ===== ⭐ LOKI-19 IS FIRING. WINDOW 1 BOTH ARMS BANKED, 50 GAMES =====
+##   **control 5/5 (04:35Z) · treatment 5/5 (05:00Z), v108 live 19 s, rollback
+##   confirmed. ZERO rated leak — verified at the PAIRING BOUNDARY, not on the
+##   match counter** (exposure 05:00:50–05:01:09Z sat between pairings at
+##   04:52:59 and 05:12:59).
+##   Prereg + 3 amendments committed before their respective arms existed:
+##   **A1 arrival gate · A2 per-cell arrival admission · A3 the falsifier's
+##   magnitude + CI rule.** Outfiles `scratchpad/arm_loki19_*`.
+##   **NEXT: windows 2+ via `tools/unrated_run.sh 108 <games>`** — do NOT
+##   hand-roll a runner, see below.
+##
+## ===== ⭐⭐ `tools/unrated_run.sh` — USE THIS FOR EVERY UNRATED LEG =====
+##   `tools/unrated_run.sh <version> <games> [opponent_id ...]`
+##   Magnus's spec. Never submits (submitting IS shipping); writes
+##   `scratchpad/arm_*.txt` **by construction**; gates on `Active bot:` never
+##   `$?`; waits past an imminent pairing with the period **derived from recent
+##   rows, not hardcoded**; rotates cells; rollback verified + retried 4x, writes
+##   `corpus/HOLDER_ALERT` and exits 1 on failure; SIGINT/SIGTERM trap restores.
+##   **Abort branch mutation-tested ON THIS FILE and the result recorded in its
+##   header** (MAIN=999 -> ABORT, exit 1, arm file EMPTY, zero fired).
+##
+## ===== ⛔ THE TOP QUEUE ITEM: `tools/ring_read.py` HAS NO SELFTEST =====
+##   I retired the broken ring decoder and tracked the correct one — and **the
+##   fix carried the fault one layer over: "wrong decoder, green test" became
+##   "right decoder, NO test."** `ring_read.py` is now **the most load-bearing
+##   instrument in the line**: it produced **LOKI-16b's +0.164** and it is the
+##   decoder for **LOKI-19's §5d falsifier, the only band that may be written
+##   plainly.** Its seven-cell validation exists as PROSE in
+##   `docs/research/ADJUDICATION-ring-occupancy-decoders-2026-08-11.md`, was run
+##   once by an agent in scratch, and **is not runnable today. A correctness
+##   argument that cannot be re-executed is a claim, not a control.**
+##   **The two cells that carry it are already known-answer:**
+##   (a) a BARRIER on the ring with zero builder-rounds **must read 0.000**
+##       (`ring_retention` read 0.900) — the cell that separates the decoders;
+##   (b) a relay cell forcing **1.000 `hold_any` / 0.500 `hold_pinned`** — pins
+##       the granularity Amendment 2a turned on.
+##   **Declared mutant (harness spec fixture #1): drop the entity-kind filter ->
+##   the selftest MUST fail.** Today it cannot fail; there is nothing to fail.
+##
 ## ===== ⚠ QUEUE REORDERED MID-SESSION — LAUNCHER CHAINS DEMOTED BEHIND LOKI-19 =====
 ##   Chains were the lead for ~30 minutes (Magnus asked; we build exactly ONE
 ##   launcher, latched, on the DEFEND path — verified in the LIVE Loki tree).
