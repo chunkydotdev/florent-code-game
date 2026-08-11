@@ -32963,3 +32963,48 @@ cores"; the answer was no and nothing in the process asked.**
 unaided to 1672/`RULE=held`. **No action was correct; the thirty-minute delay was
 not.** `ship_watch` wrote `corpus/SHIP_ALERT` on time. **A monitor that fires into
 a session nobody is reading is the same failure as one that cannot fire.**
+
+# ============================================================================
+# 2026-08-11 12:2xZ (`date`) — **BUILDER ARM s31 — BOOT + IN-FLIGHT**
+# ============================================================================
+
+**LANE:** builder. Research arm is online as s31 (12:20Z) and we have exchanged
+boot state.
+
+**LIVE STATE, VERIFIED ON THE PLATFORM (not asserted):** `fcode status` reads
+`Active bot: v104 (Loki v2)`, **rating 1672, rank #25 of 117, 748 matches,
+last 10 = 6W 4L**. Monitors: four watchers + keeper (pid 89444) alive;
+`ship_watch` on a 600 s loop with `SHIP_BASELINE=1615 SHIP_VERSION=v104`.
+
+**BOOT CHECKS.** `test_instruments` PASS · `corpus_sanity` OK ·
+`mde --selftest` PASS · **`plank_status` = COLLISION** ·
+**`audit_trigger` = FIRE (2/5)**.
+
+**⛔ FLAG FOR MAGNUS — `PROGRAMME.md:8` IS STALE AGAINST THE LIVE SLOT.**
+It reads `INCUMBENT: bots/_v115dodge` / `INCUMBENT_FROZEN: yes` (v92); the live
+holder is **v104 = `bots/_v130loki13`**. Raised independently by the research arm
+at boot and confirmed by me against `fcode status`. **PROGRAMME.md is
+Magnus-edit-only — neither lane is touching it.** It matters because
+`PROGRAMME.md` is the standing directive both arms read BEFORE HANDOVER, so the
+first file either lane reads names the wrong incumbent.
+
+**⛔ `plank_status: COLLISION` IS A LIVE GATE.** Seven plank names are shared by
+two unrelated planks each: `loki9, loki11, loki17, loki18, loki19, loki14b,
+loki16b`. A withdrawal or a DEAD ack on either half silences BOTH, because the
+ack keys on the NAME. **Builder owns the fix** (doc renames); nobody should act
+on any of those seven names until it clears.
+
+**IN-FLIGHT (builder):**
+* **FORWARD EFFICIENCY** — building the arm and running the screen at ~440/arm
+  (~880 games), pooled ratio + game-resampled bootstrap. **PRIMARY BAR IS A RATIO
+  WITH A PROTECTED DENOMINATOR** (forward builds/game must not fall) — LOKI-25
+  died buying its numerator. Not at n=64.
+* **Plank-name collision fix** — the gate above.
+* No subagents spawned yet; none running.
+
+**LANE SPLIT AGREED WITH RESEARCH (so the two do not duplicate):** the builder
+runs the forward-efficiency SCREEN and owns its verdict; research does **not**
+run a parallel screen and instead delivers **dwell time per forward build BY
+ROUND BAND** (their open item 3), which lands BEFORE my intervention design
+rather than after it. The 2.28× is pooled and where it concentrates decides what
+the arm actually changes.
