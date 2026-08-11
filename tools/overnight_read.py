@@ -73,9 +73,21 @@ def summarise(sh, d):
     refusals = []
     if d["status"] == "ABORTED_NOWINNER":
         refusals.append("ABORTED_NOWINNER — fixture broken, rows are not games")
+    # ⛔ THE HEARTBEAT COMPARISON CANNOT FIRE, AND IT IS THE SIXTH UNFIRABLE
+    # GUARD OF THIS SESSION. `overnight.sh` now RESUMES by setting `n` to the
+    # existing row count, so the heartbeat's n and len(rows) agree BY
+    # CONSTRUCTION -- the fix for restart-duplication defeated its own detector.
+    # Kept (it still catches a truncated/corrupt tsv) but it is NOT the
+    # duplication check. The real one is below: a duplicated prefix repeats
+    # (map, seed, seat) triples, which a clean run never does.
     if d["n_hb"] is not None and n and abs(n - d["n_hb"]) > max(1, 0.01 * n):
         refusals.append(f"row count {n} disagrees with heartbeat n={d['n_hb']} "
-                        f"— restart likely duplicated a prefix")
+                        f"— tsv truncated or corrupt")
+    keys = [(r[3], r[4], r[5]) for r in rows if len(r) > 5]
+    dupes = len(keys) - len(set(keys))
+    if dupes > max(2, 0.01 * max(len(keys), 1)):
+        refusals.append(f"{dupes} duplicate (map,seed,seat) rows — a restart "
+                        f"replayed a prefix, so the sample is skewed to low seeds")
     nowin = sum(1 for r in rows if len(r) > 6 and r[6] == "NOWINNER")
     good = [r for r in rows if len(r) > 8 and r[6] in ("T", "C")]
     if not good:
@@ -152,6 +164,45 @@ def main():
              else "OUTSIDE-ABOVE escalate" if s["p"] > 0.5 + s["hw"]
              else "NO-INFORMATION — back to the pool, NOT demoted")
         print(f"   VERDICT: {v}")
+
+    # ---- HARNESS CALIBRATION: what the control shards are FOR ----
+    # ⛔ THEY WERE REPORTED AS ORDINARY PEERS, WHICH WASTES THEM. A null arm that
+    # is merely printed answers nothing; a null arm that RE-CENTRES the bands
+    # tells every other shard what "no effect" looked like TONIGHT, on this
+    # machine, at this contention. (Side lane's audit question, adopted.)
+    print("\n" + "=" * 78)
+    print("HARNESS CALIBRATION — what the two control shards say about the night")
+    print("=" * 78)
+    nul = summarise("NULL", data["NULL"]) if "NULL" in data else None
+    neg = summarise("NEGCTRL", data["NEGCTRL"]) if "NEGCTRL" in data else None
+    centre = 0.5
+    if nul and nul["n"]:
+        z = (nul["p"] - 0.5) / math.sqrt(0.25 / nul["n"])
+        print(f"  NULL (byte-identical v112 copy)  {nul['p']:.2%} on n={nul['n']}  z={z:+.2f}")
+        if abs(z) > 3:
+            print("  ⛔ THE NULL IS OFF 50%. The harness is biased tonight and EVERY")
+            print("     band below is measured against a bent ruler. Re-centring on it.")
+            centre = nul["p"]
+        else:
+            print("  ✓ consistent with 50% — the harness is unbiased, bands stand.")
+        a, an = nul["seatA"]; b, bn = nul["seatB"]
+        if an and bn:
+            print(f"     seat A {a/an:.1%} vs seat B {b/bn:.1%} on byte-identical arms "
+                  f"— this IS the seat effect, measured tonight")
+    else:
+        print("  ⚠ NO NULL DATA — every band below is uncalibrated.")
+    if neg and neg["n"]:
+        print(f"  NEGCTRL (_v140noseal, a KNOWN real negative, 39.0% vs v104)  "
+              f"{neg['p']:.2%} on n={neg['n']}")
+        if neg["p"] < 0.5 - neg["hw"]:
+            print("  ✓ the screen still DETECTS a known-bad arm at this n.")
+        else:
+            print("  ⛔ A KNOWN NEGATIVE READS AS NO-INFORMATION. The screen has lost")
+            print("     its power tonight and no NO-INFORMATION verdict below is safe.")
+    else:
+        print("  ⚠ NO NEGCTRL DATA — the screen's power is unverified tonight.")
+    if centre != 0.5:
+        print(f"\n  ⇒ BANDS RE-CENTRED ON THE MEASURED NULL ({centre:.2%}), not on 50%.")
 
     # ---- PART A: falsifier, not estimator ----
     print("\n" + "=" * 78)
