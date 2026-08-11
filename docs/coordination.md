@@ -32496,3 +32496,52 @@ ASYMMETRY.** We are structurally immune to the counter-attack and most of the
 field is not; *"our catch-everything-at-top-of-run is complete and is an asset we
 never have to spend on again."* **It costs nothing to maintain and never expires,
 which is worth more than the correlation surrounding it.**
+
+## ⛔⭐ F39 — MAGNUS: *"we have become a machine that suppresses itself so much that we can barely find anything to improve our bot with."* HE IS RIGHT, AND IT IS A MISCALIBRATION, NOT A MOOD.
+
+**WHAT THE HEAD-TO-HEAD SCREEN CAN ACTUALLY DETECT (80% power, two-sided 5%):**
+```
+n=  24  ->  only effects >= 78.6%  (+28.6pp over the null)
+n=  64  ->  only effects >= 67.5%  (+17.5pp)
+n= 256  ->  only effects >= 58.8%  (+ 8.8pp)
+n=1024  ->  only effects >= 54.4%  (+ 4.4pp)
+n=4096  ->  only effects >= 52.2%  (+ 2.2pp)
+```
+**⭐ OUR BEST PLANK EVER SHIPPED — LOKI-13 — MEASURED +18.0pp (p=0.016). THE n=64
+SCREEN'S THRESHOLD IS +17.5pp.** A LOKI-13-sized effect sits **ON the detection
+edge: roughly a coin-flip whether it reads as "not distinguishable" and is
+parked.** **We built a filter calibrated to reject everything short of the best
+thing we have ever done.**
+
+**AND TODAY'S SCREENED IDEAS, RE-READ AGAINST WHAT THE SCREEN COULD SEE:**
+```
+barrier-seal-off  7/24 = 29.2%   null band [30%,70%]   OUTSIDE (by one game)
+heal budget      10/24 = 41.7%   null band [30%,70%]   INSIDE - NO INFORMATION
+home turrets     10/24 = 41.7%   null band [30%,70%]   INSIDE - NO INFORMATION
+roster           10/24 = 41.7%   null band [30%,70%]   INSIDE - NO INFORMATION
+gunner-axis      34/64 = 53.1%   null band [38%,62%]   INSIDE - NO INFORMATION
+```
+**FOUR OF FIVE PRODUCED NO INFORMATION AND WERE RECORDED AS FAILURES.** *"Nothing
+above the null"* was true and meant nothing. **We killed four ideas on
+non-results.**
+
+**⇒ THE STRUCTURAL DIAGNOSIS: WE BUILT SEVEN FILTERS TODAY AND ZERO GENERATORS.**
+`h2h.sh` · `inert_check` · the power guard · `plank_status` withdrawal ·
+`era_guard` (spec'd) · `corpus_sanity` tokens · `freshness`. **Every one is
+excellent and every one only ever REMOVES.** And the asymmetry that made this
+invisible: **the cost of a false POSITIVE is bounded and visible — one window, 25
+games, eleven minutes. The cost of a false NEGATIVE is unbounded and invisible.**
+**We optimised hard against the measurable cost and not at all against the other.**
+
+**⇒ THREE FIXES, and they are cheap:**
+1. **"INSIDE THE NULL BAND" IS RECORDED AS *NO INFORMATION*, NEVER AS A
+   DEMOTION.** Those ideas return to the pool. **Only counts OUTSIDE the band
+   move a plank's status in either direction.** `h2h.sh` already computes the
+   band for its power warning — it must apply it to the VERDICT, not just print it.
+2. **SCREEN ON MECHANISM, NOT WIN RATE.** LOKI-25's falsifier resolved at
+   **n=25** on a mechanism bar; its currency bar needed **4,096**. **That is a
+   160x difference in cost for the same decision.** The screen should ask *"did
+   the treatment change what the bot DOES"* — dose, build mix, timing — and
+   escalate to win rate only for what survives.
+3. **A PLANK MAY ONLY DIE ON: a mechanism bar it failed, a programme rule it
+   breaks, or an inert metric.** **Never on an underpowered win rate.**
