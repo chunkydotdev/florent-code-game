@@ -1273,3 +1273,50 @@ a proven negative control beats three that have never flagged anything.**
   says the match COUNTER cannot answer this; **this adds that the ELO TAPE cannot
   either, and for a different reason — the counter is blind to pairing, the tape is
   blind to duration.** Both fail silently and both fail toward "looks fine".
+
+- **⭐ THIS LANE'S CHARACTERISTIC FAILURE HAS COLLAPSED TO ONE SHAPE, AND IT HAS
+  A DIRECTION (s32, 2026-08-11; promoted from `docs/retro-side-lane-2026-08-11-s32.md`
+  because a retro instance is in no boot path):**
+  **Four published errors in one session, all the SAME fault — I INFERRED FROM AN
+  ARTEFACT INSTEAD OF OPENING THE PRIMARY.**
+  1. **A `--stat` read as an audit** — I published *"audited `c541aae`,
+     on-programme, no flag"* having read the subject line and the file list. The
+     defect was then raised by the commit's own author.
+  2. **A docstring read as the code** — I reported `cores_idle` as *"trips only
+     on TOTAL idleness"*; the code is `if n < EXPECTED`. **`cores_idle.py:31` and
+     `PROGRAMME.md:60-62` are both stale against a fix MY OWN LANE shipped one
+     session earlier**, so I flagged as live a defect I had already closed.
+  3. **An ALERT line read as the whole event** — I called the `FX` fixture
+     *"channel pollution"*; `OUT` was hardcoded, the fixture ran against the LIVE
+     run and **launched a stray shard.**
+  4. **An arm file read as the holder** — I sent an urgent *"a prototype is live,
+     pairing in four minutes"* off the existence of `arm_unrated_v114_*.txt`,
+     **inside the same message that said the `Active bot:` line is the only
+     surface that will tell you.** `fcode status` said v112. **The fault was
+     inside the sentence recommending the cure.**
+  **⇒ WATCH FORM, and it is one question before any flag leaves: WHICH ARTEFACT
+  AM I READING, AND WHAT IS THE PRIMARY IT STANDS IN FOR?** A file's existence is
+  not a state. A docstring is not behaviour. A stat is not a diff. An alert line
+  is not an incident.
+  **⇒ AND THE DIRECTION IS STABLE WITHIN A LANE AND DIFFERS BETWEEN THEM:** all
+  four of mine ran toward the **COMFORTABLE** reading — a clean clearance, a
+  defect that was someone else's, a smaller severity, a danger already passed.
+  **s28's ran toward the DRAMATIC; the builder's s32 retro records mixed with a
+  peer catching four of six.** **A lane that knows its own attractor can check
+  that side first**, which is cheaper than checking both.
+
+- **⭐ FLAG THE DEFECT WITH ITS FIX — the practice that doubled this lane's
+  mechanisation rate (s32; Q8 went 3 → 6):**
+  Six flags became enforced code in one session — `gate.py`'s reason-string
+  requirement · `overnight_watch.sh`'s startup refusal (exit 3) and its
+  monotonicity guard · `OUT=${OUT:-…}` in both runners · `TARGET_RATING_FLOOR`
+  in `PROGRAMME.md` + `target_value.py` · and the **`tled` bar, which became a
+  SHIP GATE rather than a leg statistic.**
+  **The cause was not more effort. Every one of the six arrived with a buildable
+  replacement**: the startup refusal was a named option ("refuse to start if no
+  shard has a `.tsv`"); the `tled` flag named the field, the file, the live
+  column **and its positive control** (7.28% of rows nonzero, so the column is
+  not dead). **A flag that arrives with a fix gets built; a flag that arrives as
+  a criticism gets acknowledged.** ⚠ **And it is not free: proposing the fix
+  means the auditor now owns a design opinion, which must be labelled as one** —
+  each of the six was offered as *"either of these closes it"*, not as the answer.
