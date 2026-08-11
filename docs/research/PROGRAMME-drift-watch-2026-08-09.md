@@ -774,3 +774,31 @@ a proven negative control beats three that have never flagged anything.**
   — the trade is between a leg's 5 games and a ship's hundreds.** Whatever we can
   compute about an opponent from their replays, any team with a decoder can
   compute about us.
+
+- **⭐ F4 PRICED AND THEN MEASURED, WITH THE CONTROL THAT MAKES IT UNFIXABLE BY
+  ATTENTION (s30, 2026-08-11):** `ship_watch` still asserts nothing about the
+  freshness of the tape it reads — the standing rule *"emit the age of the newest
+  row, or refuse to print a verdict past ~2 cadences"* is in CLAUDE.md **and is
+  unimplemented on the very instrument the rule was written about.**
+  **EXPOSURE:** `elo_history.tsv`, 1,243 rows over 08-06→08-11, median inter-row
+  gap **5.0 min** against a 10-min cadence; **ten stalls exceed two cadences,
+  totalling 338 of 6,693 min = 5.1% of the tape's life, longest 50 min.**
+  **THE MEASUREMENT, not the projection** — the documented 08-10 07:05→07:55
+  outage, read off `ship_watch.log`: **five consecutive verdict lines
+  byte-identical but for the timestamp** (`k=63 rating=1599 drawdown=-17.0
+  armed=True RULE=held`), then recovery to `k=68 rating=1631 drawdown=+0.0`.
+  **Five matches and +32 Elo were invisible to the ship monitor for fifty
+  minutes while it reported a drawdown for a state that had already recovered.**
+  **⇒ THE CONTROL IS THE POINT: the healthy stretch immediately after is ALSO
+  byte-identical across two cadences (08:02 and 08:12 both `k=68 rating=1631`),
+  because a quiet ten minutes legitimately produces a repeated line.** So
+  repetition carries NO information in either direction, and **a reader cannot
+  distinguish "no new match" from "the tape is dead" by looking.** This is the
+  general form: **when a failure mode and a benign mode emit the identical
+  artefact, no amount of care closes the gap — only an assertion the instrument
+  makes about itself.** Recorded with its negative control because the same
+  finding without the healthy-stretch comparison would have read as "watch for
+  repeated lines", which is advice that cannot work.
+  One of the ten stalls sits four rows after a `v103 k=1 armed=False` prototype
+  rotation — **the tape goes blind in exactly the operating mode where the
+  monitor is load-bearing.**
