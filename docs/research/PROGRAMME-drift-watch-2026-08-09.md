@@ -802,3 +802,29 @@ a proven negative control beats three that have never flagged anything.**
   One of the ten stalls sits four rows after a `v103 k=1 armed=False` prototype
   rotation — **the tape goes blind in exactly the operating mode where the
   monitor is load-bearing.**
+
+- **⭐ THE CORPUS LAGS THE PLATFORM BY UP TO AN HOUR, SO A SAME-SESSION LEG
+  CERTIFICATION MUST READ THE LIVE CLI — AND THIS INVALIDATES THE SURFACE THIS
+  LANE USED THIS MORNING (s30, 2026-08-11 06:5xZ):**
+  LOKI-18 fired **06:46:26–06:46:42Z**. At **06:49Z**, `league_matches.tsv`'s
+  newest row was **05:52:59Z — fifty-four minutes short of the leg.** The builder
+  reported the leg's rated cost *"verified at the boundary"*; that was a
+  **STRUCTURAL** argument (16 s of exposure sitting between the 06:32:59 and
+  06:52:59 pairings) and it was correct, **but it was not a per-match
+  verification, and the corpus could not have supplied one.** By HANDOVER's own
+  D18 rule the honest word off a tape that short is **UNKNOWN**, not CLEAN.
+  Read live instead (`fcode match list --mine --type ladder`): last pairing
+  before exposure `06:32:59Z` v104, **no match created inside the window, eight
+  consecutive pairings all v104 — rated cost ZERO, verified on a surface that
+  could see it.** Cadence re-derived **8/8** at `:12:59 / :32:59 / :52:59`.
+  **⇒ RULE: any certification about a leg fired THIS SESSION reads the live CLI.
+  `league_matches.tsv` / `ladder_games.tsv` are for history, and their freshness
+  must be printed beside any window they are asked about.**
+  **AND THE SELF-APPLICATION IS THE POINT: this lane's own F5 certification at
+  06:2xZ used `league_matches.tsv` and got the RIGHT answer — because that leg
+  happened to sit inside the tape's reach. I did not check that it did.** A
+  correct answer from a surface that could have been blind is not a verified
+  answer; it is a lucky one, and the same procedure ninety minutes later would
+  have certified CLEAN off a tape that stopped before the window. **This is the
+  freshness rider applied to the certification procedure itself rather than to a
+  claim.**
