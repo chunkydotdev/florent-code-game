@@ -16,7 +16,8 @@ successor session inherit it. The fields below are parsed; the prose is not.
     COMPARE_AGAINST: previous_line_iteration
     KILL_WINDOW_RND: 250
     R1000_IS_DEFEAT: yes
-    PLAY_DEFENCE: never
+    PLAY_DEFENCE: not_at_the_kill_s_expense
+    DEFENCE_ADMISSION_BAR: kill_round_non_regression
     FIXTURE_OF_RECORD: live_unrated
 
 ## ⭐⭐ DIRECTIVE, MAGNUS, 2026-08-11 — **"WIN RATE DECIDES."** GIVEN DIRECTLY TO THE BUILDER, NOT RELAYED.
@@ -98,9 +99,55 @@ whose only channel is `titanium_collected` — that currency is only ever paid o
 in games we have already lost by this definition. Economy is now purely
 INSTRUMENTAL: it buys the kill, it never scores.
 
-**PLAY_DEFENCE: never.** A plank whose mechanism is survival, screening, home
-turrets or heal-uptime is off-programme regardless of what it measures. This
-kills queue items that were alive at the s26 wrap.
+**PLAY_DEFENCE: not_at_the_kill_s_expense.** ⭐ **AMENDED 2026-08-11 (s31) ON
+MAGNUS'S DIRECT INSTRUCTION TO THE BUILDER — "update the programme".** The
+directive, relayed to the side lane and confirmed to me directly:
+
+> *"This does sound like we should allow SOME defence strategies, but our FOCUS
+> should be to kill at <r250."*
+
+**THE FIELD WAS `never`. IT IS NOW A BAR, NOT A BAN — and the bar exists because
+"SOME defence" is a GRADIENT and a gradient is unenforceable unless the test is
+written down.** `never` was a bright line, enforceable at zero judgement cost;
+replacing it with a preference would have made every survival plank arguable.
+So it is replaced with a MEASURABLE ADMISSION TEST:
+
+    DEFENCE_ADMISSION_BAR: kill_round_non_regression
+
+⇒ **A defensive plank is ADMISSIBLE if and only if it does not slow the kill.**
+Any survival-mechanism plank carries a **kill-round non-regression bar beside its
+survival bar. If median kill round RISES, the plank is off-programme, whatever it
+does to win rate.** (Operational form proposed by the side lane; adopted here
+because it converts the directive into something `gate.py` can eventually read.)
+
+**⛔ THE SCOPE, AND IT IS WHAT KEEPS `R1000_IS_DEFEAT` UNCHANGED.** "SOME defence"
+means **surviving the r150-250 window so OUR OWN KILL LANDS.** It does NOT mean
+surviving to r1000. Measured, 1800-1900 band cut (side lane, `9209e3e`):
+**our median kill round is 174 and our median death is 187 — a thirteen-round
+race**, and **our core dies in 46.3% of all v104 games** with 98.3% of our losses
+by core destruction against the band's 89.7%. Defence aimed at that thirteen-round
+gap is the good road. **Defence aimed at reaching a tiebreak is still the retired
+one** — the tiebreak tail is a coin flip (1800-1900 wins 49.4% of tiebreaks vs
+45.2% overall), so there is no salvage there, and `R1000_IS_DEFEAT: yes` stands
+untouched.
+
+**⭐ AND THE CHEAP CLASS IS ALREADY IDENTIFIED, MEASURED RATHER THAN ASSUMED:
+SEPARATE DEFENCE THAT SPENDS THE KILL BUDGET FROM DEFENCE THAT SPENDS IDLE
+RESOURCES.** When our core dies, **~5 of our builders are ALIVE** (median 5.0,
+mean 4.43 vs 5.20 in wins) with **0.38 builder deaths across the whole 40 rounds
+before the core falls** — they are not even in combat. Home turrets and barriers
+COMPETE with the assault and must clear the bar the hard way; **re-tasking
+builders who are already alive and already idle costs the kill nothing and cannot
+violate the non-regression bar by construction.** That is where the first
+defensive plank belongs.
+
+**WHAT THIS DOES NOT REVIVE.** `never` killed queue items at the s26 wrap; this
+amendment does not restore them wholesale. Each must now clear the
+non-regression bar on its own, and heal-idle staffing / home turrets / screening
+re-enter as CANDIDATES, not as confirmed planks. Note that s30 measured
+`home-turrets-off` at 433/1024 and `barrier-seal-off` at 399/1024 — both REAL
+NEGATIVES, i.e. **removing that defensive behaviour cost us**, which is evidence
+the amended field was already the truer description of the bot we ship.
 
 **FIXTURE_OF_RECORD: live_unrated.** `bots/*_probe` is a fixture WE WROTE, and
 s26 D21 proved it lies in a specific direction: five of our probes share a
@@ -139,9 +186,15 @@ time-to-kill are both inside one number. **`R1000_IS_DEFEAT` is now arithmetic
 rather than doctrine** — a tiebreak win scores **-10, identical to a loss**
 (Magnus, 2026-08-10: *"we should never optimize for tiebreak wins, all of our
 effort should be on killing the cores"*). **This is what keeps the currency
-consistent with `PLAY_DEFENCE: never`:** at 0 a pure survival plank converting
+consistent with the defence field:** at 0 a pure survival plank converting
 20 losses into 20 tiebreak wins would have scored +200 and looked like a
-triumph; at -10 it scores exactly zero improvement. Balance property verified
+triumph; at -10 it scores exactly zero improvement. **⭐ THIS SENTENCE SURVIVES
+THE 2026-08-11 AMENDMENT AND IS NOW LOAD-BEARING RATHER THAN DECORATIVE.** It
+said `PLAY_DEFENCE: never` when written; the field is now
+`not_at_the_kill_s_expense`, and **the -10 is what still makes turtling score
+zero once the blanket ban is gone.** The ban used to do that work by fiat; the
+scoring does it arithmetically, which is why loosening the field did not reopen
+the tiebreak-turtle road. Balance property verified
 UNCHANGED by the switch (speed +0.75, conversion +0.63, ratio 1.20 either way).
 
 **⛔ IT IS NOT A LEG VERDICT STATISTIC. `KILL_SPEED_IS_LEG_VERDICT: no`.**
