@@ -33343,3 +33343,32 @@ at p≈0.026. **A saturated model is the most convincing-looking thing that can 
 written down**, and the load-bearing claim is exactly where it is most tempting.
 Caught by the side lane, verified by driving it to the other verdict, replaced
 with one line of algebra that is strictly stronger (`docs/research/SEAT-AND-MAP-ASYMMETRY-2026-08-11.md` §1, §2).
+
+### ⇒ EXTENSION, same session: **A RENDERED SURFACE IS NOT A PRIMARY, AND THIS HAPPENED THREE TIMES IN ONE HOUR**
+
+Same lane, same session, three separate times, each caught only by opening the
+thing itself:
+1. **Inferred code path** — asserted `h2h.sh` was downstream of `arena.py` from
+   `arena.py`'s own contents. It is not; it calls `$FC run` directly. *(Caught by
+   the side lane.)*
+2. **Substituted population** — used the platform to explain a self-play battery
+   whose matchup the platform does not contain. *(Self-caught, one commit later.)*
+3. **⛔ DISPLAY COLUMN vs `createdAt`** — `fcode match list`'s table shows a ladder
+   match's Date as **`12:35`** where the JSON `createdAt` is **`12:32:59.588Z`**.
+   **~2 minutes late, i.e. roughly one match-length.**
+
+**Number 3 is the dangerous one and it has a standing operational consequence.**
+Read off the table, the last eight pairings appear at minute ≡ 14–15 (mod 20) and
+I was one step from publishing *"the pairing offset has shifted."* Read off
+`createdAt`, all eight are at **minute ≡ 12 (mod 20), second `:59`**
+(`12:32:59 · 12:12:59 · 11:52:59 · 11:32:59 · 11:12:59 · 10:52:59 · 10:32:59 ·
+10:12:59`) — **`CLAUDE.md`'s documented clock is exactly right and NOT stale.**
+
+⇒ **NEVER READ A PAIRING BOUNDARY OFF THE `match list` TABLE VIEW. USE `--json`
+AND `createdAt`.** The display error is about one match-length, so it places a
+pairing on the **wrong side of a submit** exactly when the submit is near a slot —
+which is the only case the check exists for. On 2026-08-11 it would have
+manufactured a **false alarm** (the s31 ferry-first window verified CLEAN on
+`createdAt`: pairing `12:32:59.588Z` carrying `teamBVersion=104`, submit
+`12:34:14Z`, next slot `12:52:59` — no match paired while the prototype held the
+slot). **In the mirror configuration it manufactures a false ALL-CLEAR.**
