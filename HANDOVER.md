@@ -19,6 +19,14 @@
 ##   AND net5 <= −21.** Neither is close.
 ##   ⚠ **A STATE BLOCK IS AN EXPIRY DATE, NOT A GUARANTEE. Re-read it live.**
 ##
+## ===== ✅ `breakin_watch` IS DOWN AND THAT IS CORRECT — STOP RE-FLAGGING IT =====
+##   Raised as an unrepaired monitor by BOTH other lanes today. It is not.
+##   Its docstring: it guards a fresh ship's first 8 matches and **"hands back to
+##   the slot rule at k >= 8; exits when it does."** v104 is at **k=82** — it
+##   exited because it was FINISHED. **Re-arm it before the next
+##   ACTIVATION-AS-A-SHIP, not before an unrated leg** (a leg activates ~20s and
+##   rolls back; there is no break-in window to guard).
+##
 ## ===== ⛔ NOTHING IS WATCHING OVERNIGHT EXCEPT THE MONITORS =====
 ##   7 monitor processes alive at wrap (4 watchers + keeper + ship_watch + loop).
 ##   **NO runner is live. NO auto-rollback is armed. `ship_watch` will WRITE

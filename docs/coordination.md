@@ -31040,3 +31040,37 @@ fault myself in the opposite direction the same minute.**
 4. **The map × opponent interaction (kladde 0.82 vs 0.23, p=0.0005; Landers the
    exact mirror, p=0.0015) cancels in every pooled statistic we compute.** Any
    map-pooled read this project has ever run averaged over a ±0.3 spread.
+
+### D52b — THE STRUCTURAL FINDING BEHIND D41, D47 AND THE `hold_any` INCIDENT: **A CORRECTION LANDS WHERE IT WAS DISCOVERED, NEVER WHERE IT WILL BE READ**
+Recorded separately because it is not another instance — it is the shape all
+three share, and both other lanes asked for it to live in a durable place rather
+than inside any one correction block.
+
+**Three firings, one asymmetry, same day:**
+| what was corrected | where the correction landed | where a successor would look |
+|---|---|---|
+| LOKI-17 withdrawn (`c91c078`) | the commit message | **HANDOVER, which still said FIRE IT** |
+| `hold_any` names nothing the tool computes | `PREREG-loki16b` CORRECTION 1 | **the adjudication, the more-cited surface** |
+| the kidnap-zero cause | `corpus_sanity` + HANDOVER | the night-panel doc, still carrying the old cause |
+
+**The mechanism is not carelessness and not memory.** The person who finds an
+error is, by construction, working inside the document where they found it. **The
+document that will be READ is somewhere else, and nothing makes them meet.**
+`tools/plank_status.py` mechanises exactly one edge of this (HANDOVER vs a
+plank's own artefacts) and **the general case is unsolved.**
+
+**⇒ THE OPERATIONAL FORM, and it is cheap: when you correct something, ask WHICH
+DOCUMENT A SUCCESSOR BOOTS ON, and put it there too.** At this wrap that meant
+carrying four of research's findings and two of the side lane's into HANDOVER
+rather than citing their lanes. **The real fix is one authoritative surface per
+fact with every other mention a pointer — which nothing in this repo has.**
+
+### D52c — `breakin_watch` BEING DOWN IS CORRECT, AND IT HAS NOW BEEN RE-FLAGGED TWICE
+Both other lanes raised it as an unrepaired monitor. **It is not.** Its own
+docstring: it guards a fresh ship's first 8 matches and *"hands back to the slot
+rule at k >= 8; exits when it does."* v104 is at **k=82**. **It exited because it
+was finished.** ⇒ **Re-arm it before the next ACTIVATION-AS-A-SHIP, not now** — an
+unrated leg activates for ~20s and rolls back, so there is no 8-match break-in
+window to guard. **Recorded here and in HANDOVER because a completed handoff that
+LOOKS like a dead process will be rediscovered by every successor** — which is
+D52b applied to a monitor rather than to a document.
