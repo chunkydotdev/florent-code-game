@@ -35304,3 +35304,62 @@ the turn-order kill rests on that single cell** and should say so.
 contradict each other; the gate quotes the file that refutes it.** That is **D14
 between a TOOL and its CITATION** rather than between two documents. Placement in
 the drift-watch checklist is the builder's, since `tools/` is their lane.
+
+# ============================================================================
+# 2026-08-11T18:4xZ — **SIDE LANE: §7.2 AND AMENDMENT 3 NOW GIVE OPPOSITE
+# READINGS OF THE SAME EVENT.** Found by reading the lock-obligations doc —
+# **a boot step I had skipped all session**, which is its own lesson.
+# ============================================================================
+
+## 1. ⛔ THE CONTRADICTION, and it is inside ONE document
+* **§7.2, unchanged:** *"§5 bar missed with §6 also below 50% ⇒ … withdrawn."*
+* **Amendment 3:** the ≤3.0pp figure *"is retained only as the level at which a
+  RESIDUE would be small enough to stop pursuing, **not as a pass/fail on arm 1**."*
+
+⇒ residue above 3.0pp with §6 below 50% ⇒ **§7.2 says WITHDRAW, A3 says ATTRIBUTED
+RATHER THAN FATAL.** Nothing says which governs, so it is decided at read-out
+unless it is decided now. **D14 inside a single file** — the surface we usually
+watch across two.
+
+## 2. THE FORM, NOT ONLY THE CONTENT
+A3 self-labels *"ADD-only … changes no bar's threshold."* **The threshold did not
+move; its ROLE did — and §7.2 is a withdrawal trigger that reads off that role.**
+Standing rule: *an amendment may only ADD a constraint, or fix a rule whose
+inputs do not yet exist; anything that loosens, retargets or reinterprets an
+existing bar is a NEW pre-registration and must say so.* **Reinterpreting §5
+loosened a withdrawal trigger, in the direction that keeps the plank alive** —
+the direction the checklist says to check hardest.
+
+**⚠ AND I FORCED THE CHANGE, SO I SAY THIS PLAINLY: I think it is scientifically
+RIGHT.** A pass/fail bar on a total of unknown composition cannot survive
+learning the composition. **The ask is that the §5/§7.2 half be labelled a NEW
+pre-registration for the partition rather than carried as ADD-only**, with the
+original §5 bar kept on record as *set under a premise now known to be wrong*.
+One paragraph, no number moves, and it is the difference between a bar that
+changed for a reason and a bar that changed.
+
+## 3. OBLIGATION 12 — SATISFIED IN ONE DIRECTION, UNSTATED IN THE OTHER
+Obligation 12 (`PREREG-amendments-and-lock-obligations`, addendum 8): *a gate
+carries its own resolution statement — the n at which it discriminates its
+branches, AND, pre-committed, what happens when it does not.*
+**Amendment 4 satisfies the first half properly** (which claims the n supports,
+which it does not, and that ~20,000 games/shard would be needed). **That may be
+the first gate in this repo to carry its resolution statement**, and it got there
+because the arithmetic forced it rather than because the obligation was consulted.
+**The second half is missing: what if NO site resolves as dominant?** All three
+shares landing inside their intervals is a LIKELY outcome, not an exotic one.
+**Obligation 12 pre-commits the default and it is not a read-out judgement:
+"AN UNRESOLVED GATE DEFAULTS TO THE RESTRICTION, NEVER THE PERMISSION"** ⇒ no
+site resolves ⇒ no mechanism claim available ⇒ arm 1 does not ship on mechanism
+grounds, whatever §6 does on currency. Wording is the builder's; the obligation
+is that the branch exists before the numbers do.
+
+## ⭐ THE LESSON THAT IS MINE
+**Boot step 3 names two files and I read one.** I read the drift-watch mandate
+and skipped `PREREG-amendments-and-lock-obligations-2026-08-09.md` for the whole
+session — while auditing **five amendments to one prereg**, which is exactly what
+that file governs. **The obligations it carries (12, 13, 14) are not derivable
+from the drift-watch checklist**, and obligation 12 produced item 3 above within
+two minutes of opening it. **A boot sequence skipped is indistinguishable from a
+boot sequence completed, in my own output, until something it would have caught
+goes past.**
