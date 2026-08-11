@@ -201,3 +201,56 @@ separate them.**
 Closer's premise — "we have the means and do not use them" — holds; its mechanism
 is exactly what the leg would test.** That is the right reason to fire it rather
 than a reason to assume it.
+
+---
+
+# ⛔ CORRECTION, 08:3xZ — MY DAMAGE-RATE ARITHMETIC DESCRIBED A BOT THAT HAS NOT EXISTED SINCE 2026-08-09
+
+**The addendum above reasoned from `batk_core ≈ 104/game` in long games. That
+figure is POOLED ACROSS ALL OUR VERSIONS and it describes the DEAD tree.**
+Era-pinned:
+
+| our version | games | batk/game | batk_core/game | shots/game |
+|---|---|---|---|---|
+| v64–v94 (Eir era) | 45–366 each | **117–322** | 5.8–130.8 | 47–169 |
+| **v102, v103, v104, v105, v106, v107** | **1,573 on v104 alone** | **0.00** | **0.00** | 42–58 |
+| v108 (LOKI-19 treatment) | 50 | 192.9 | **192.90** | 34.8 |
+
+**THE LIVE TREE DOES ZERO BUILDER MELEE.** I flagged "`ourver` unpinned" as a
+limit in this document's own header and then reasoned from the pooled number
+anyway two sections later. **That is the era rider firing on me — the exact
+failure the drift-watch file warns about: "any 'we/our bot' figure pooled over
+the archive describes the dead bot unless recomputed on the live subset."**
+**The 1.81 HP/round rate is v64–v94's, not ours.** Withdrawn.
+
+## ⭐ AND THE CORRECTION POINTS SOMEWHERE BETTER THAN THE ERROR DID
+
+The field census (`SCOUT-field-mechanism-census-2026-08-11.md`) measured, on the
+same archive: **20 of 20 teams above us do builder melee, median 90% of their
+games. Our v104 does it in 0 of 1,605.** It is **one boolean** —
+`bots/_v130loki13/doctrine.py:1470`, `LOKI_QUIET_ON = True`, four call sites —
+and **our own v94 ran 218 attacks/game until 2026-08-09**, when we switched it
+off. **⚠ The census's own control demotes melee VOLUME (the heaviest attackers
+are rated 1313–1669) but not melee PRESENCE: 15 of 50 teams below us have none,
+14 of those 15 rated <1550, and we group with vjg 730 / Troupe 1011.**
+
+**⇒ THE HIGHEST-VALUE ACTION IS NOT A NEW PLANK. IT IS FINISHING ONE.**
+**LOKI-19 already re-tested exactly this** — v108, core-peck restored, **dose
+verified at 192.90 attacks/game against a control of exactly 0.00** — and
+returned **band 2: dose delivered, mechanism measured, currency UNRESOLVED at
+n=50/arm**, precisely as its own prereg predicted it would.
+
+**It is 150 treatment games short of resolving.** Against the ~400 banked v104
+control games — **still version-stable on 4 of 5 cells at 161 minutes, measured**
+— **200 treatment games resolves 15pp.** LOKI-19 has 50.
+
+> **150 more v108 games = 30 matches = 6 windows ≈ 2 hours.**
+
+**No new tree. No new prereg — its own says "pooling more windows is the ONLY
+route and windows are free". Dose already verified. Control already banked. And
+the field census now says every team above us runs the mechanism we switched off.**
+
+**HONEST CAVEAT ON #1, THE CLOSER: its premise rests on the 4,318 vs 148
+titanium gap, which I have NOT era-pinned.** The same correction may apply.
+**Pin it before building anything** — one query, and it is the query I should
+have run before writing the addendum.
