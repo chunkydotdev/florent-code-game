@@ -323,3 +323,56 @@ heading.**
 **AND ONE OBLIGATION THIS AUDIT DID NOT PRODUCE, recorded so the absence is
 deliberate:** nothing here requires a leg to CORRECT for these. Correcting
 post-hoc is worse than disclosing, and LOKI-19 got that right.
+
+## Addendum 9, 2026-08-11 07:0xZ (s30) — OBLIGATIONS 13 AND 14, BOTH INTERIM GUARDS FOR SCRIPTS THAT ARE QUEUED AND UNBUILT
+
+**Written because both fixes are routed to the builder and neither exists yet.
+A prereg locked before they ship must carry the requirement by hand, or the gap
+sits open for exactly as long as the queue does.**
+
+### OBLIGATION 13 — A PREREG NAMES THE `file:line` ITS MECHANISM METRIC READS, AND ASSERTS THAT PATH APPEARS IN THE TREATMENT DIFF
+
+The human form of the D42 checker (spec:
+`docs/research/TRIAGE-prose-only-deltas-2026-08-11.md`, routed to `tools/`).
+
+**THE INCIDENT IT CLOSES IS THREE HOURS OLD AND COST A WINDOW.** LOKI-18's bar 1
+measured `shootable-on-build` on a diff that was **one hunk in `main.py:560`**,
+while the metric sits downstream of a `can_fire_from` guard in **`raid.py`, which
+was byte-identical between arms.** The metric therefore read **100% in BOTH
+arms** — 39/39 treatment, 229/229 control, live — and **could not have moved
+whatever the plank did.** 25 unrated games.
+
+**THE OBLIGATION, one line in the prereg:**
+`MECHANISM METRIC READS: <file:line>. TREATMENT DIFF TOUCHES: <paths>. INTERSECTION: <yes/no>.`
+**If the intersection is NO, the bar is INERT and the leg may not be fired on
+it. If the prereg cannot name the file:line, that is the finding** — an
+unnameable read path is not a measured one.
+
+**AND THE POSITIVE HALF IS NOT OPTIONAL:** a check that answers NO to everything
+looks correct. **The obligation is satisfied by naming the path, not by asserting
+the intersection** — LOKI-19's 5a dose bar reads exactly the gate its diff
+changes and answers YES, which is what a healthy answer looks like.
+
+### OBLIGATION 14 — A PANEL CELL IS SCORED ON OPPONENT VERSION STABILITY BEFORE IT IS SELECTED
+
+**Evidence:** `docs/research/PANEL-selection-version-stability-2026-08-11.md`.
+D13 replaced *rating proximity* with *"measured mid-range performance against
+us"*. **That criterion then selected the cell it could not measure:
+SmartFridge is the MOST mid-range opponent on the board (51.4% over 35 v104
+games) and ran TEN versions in 24 hours**, producing five independent defects in
+a single day — failed arrival precondition, no version-matched control, a seat
+inversion, the most favourable 5d number, and a control arm that is itself a
+blend of two opponent bots.
+
+**THE OBLIGATION:** a prereg naming its cells states, per cell, **the opponent's
+distinct-version count over the preceding 24 h**, and treats a high-churn cell as
+**reportable but not poolable**. Free off `league_matches.tsv`.
+**THE DENOMINATOR NEEDS NO NORMALISATION AND THAT IS MEASURED, NOT ASSUMED:
+every team in the league played EXACTLY 87 matches in the window**, so version
+counts are directly comparable and the volume confound cannot arise. Re-check
+that at selection time rather than inheriting it — it is a property of the
+league's scheduler, not a law.
+
+**Companion, so this is not read as a strength claim:** sweep 22 measures
+freshly-shipped versions as **STRONGER** (matched DiD **+0.524**, t = +4.89).
+**A stable cell is a READABLE one, not a weak one.**
