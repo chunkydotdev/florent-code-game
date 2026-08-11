@@ -198,3 +198,43 @@ bump exists.**
   alleging a units error while committing one.
 * **The routing rule above is itself Q8 applied to this file:** the instrument
   asks whether flags became scripts, and had no mechanism for its own output.
+
+## ⭐ v1.2 — **THE CHARACTERISTIC FAILURE HAS A SINGLE SHAPE NOW, AND TWO QUESTIONS ARE GOING QUIET**
+
+**v1.2 — 2026-08-11 (MINOR: sharpens Q3, merges Q5's scope into it, arms Q6's
+sunset, records firing 2). Instance: `docs/retro-side-lane-2026-08-11-s32.md`.**
+
+* **FIRINGS: 2.** (s29 instance, s32 instance.)
+* **⛔ Q3 IS THE WORST RECORDED AND IS NO LONGER VARIED: 4 published, and all
+  four are ONE fault — INFERRED FROM AN ARTEFACT INSTEAD OF OPENING THE
+  PRIMARY.** A `--stat` read as an audit · a docstring read as the code · an
+  ALERT line read as the whole event · an arm file read as the holder.
+  **⇒ Q3 is re-worded from "publishing a conclusion the primary would have
+  contradicted" to name the mechanism: WHICH ARTEFACT STOOD IN FOR WHICH
+  PRIMARY.** A count without the substitution is not actionable.
+* **⭐ AND THE DIRECTION IS STABLE WITHIN A LANE AND DIFFERS BETWEEN LANES:
+  mine ran 4-of-4 toward the COMFORTABLE reading** (a clean clearance, a defect
+  that was someone else's, a smaller severity, a danger already passed);
+  **s28's ran toward the DRAMATIC; the builder's s32 retro records mixed.**
+  ⇒ **Q3 now asks for the DIRECTION as well as the count**, because a lane that
+  knows its own attractor can check that side first.
+* **⚠ Q5 HAS BECOME Q3's TAIL.** Both s32 false positives were Q3 instances.
+  **Q5 is NOT struck** — it still counts the cost, and it caught the one
+  near-miss — **but it is now scored as a SUBSET of Q3 and a future bump should
+  decide whether it earns its own question.**
+* **⚠ Q6 SUNSET ARMED FOR REAL.** Zero conduct claims this run; the clause says
+  *any question with ZERO firings after three runs is struck at the next bump.*
+  **This is its third quiet run. v1.3 strikes Q6 unless it fires**, and that will
+  be information about the lane (conduct claims stopped being a hazard once the
+  s28 rule landed), not a failure of the question.
+* **⭐ Q8 JUMPED 3 → 6 AND THE CAUSE IS A PRACTICE, NOT AN EFFORT LEVEL: FLAG THE
+  DEFECT WITH ITS FIX.** The startup refusal was a named option; the `tled` bar
+  named the field, the file, the live column **and its positive control**.
+  **A flag arriving with a buildable replacement gets built; a flag arriving as
+  a criticism gets acknowledged.** Q8 now asks *"did the flag carry a fix?"*
+  alongside *"did it become a script?"*
+* **Q7 GAINED A NEW DECLINE TYPE worth counting separately: WITHHOLDING A
+  COMPUTED NUMBER FROM THE PERSON ENTITLED TO IT** (the LOKI-29 effect direction
+  at 8% of n, on that leg's own no-interim-peek rule, with the numbers offered
+  if its owner ruled otherwise). Distinct from declining to ACT; it is declining
+  to TELL, and it can be wrong in a way the others cannot.
