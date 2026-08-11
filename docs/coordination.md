@@ -35095,3 +35095,63 @@ decision*) being RUN rather than described. **Three firings, one by process.**
 ⇒ **Fix is one edit, builder-owned: QUEUE #8's rider should POINT at the plan's
 control 3 rather than carry its own contradicting copy.** A copy cannot be
 stale-checked, only contradicted.
+
+# ============================================================================
+# 2026-08-11T18:3xZ — **SIDE LANE: the Part A ladder-side CIs were built by
+# combining marginals at their EXTREMES. Part A rests on TWO signed cells, not
+# one — the error understated our own evidence.** Plus a gate-prescription
+# question that is a QUESTION, not a closure.
+# ============================================================================
+
+## THE INTERVAL CONSTRUCTION
+`[−25, +197]` for `v104 − v92` is `1656 − 1681` and `1717 − 1520` — **the two
+marginal CIs at their extremes.** A difference has `SE = √(SE₁²+SE₂²)`, not
+`SE₁+SE₂`, so that interval is far too wide. Same construction produced
+`[+15,+139]` on the other cell.
+
+| cell | Δ | proper normal | **research bootstrap (PRIMARY)** | extremes |
+|---|---:|---|---|---|
+| v104 − v92 | +86 | [−0, +172], SE 43.9 | **[+5, +169]** | [−25, +197] |
+| v104 − v102 | +77 | [+33, +121], SE 22.4 | **[+29, +125]** | [+15, +139] |
+
+**And no approximation was needed: research published match-bootstrap CIs on the
+DIFFERENCES themselves** (`2c261c8`, as the negations of the flipped rows), which
+is the right object and tighter than either reconstruction. **Both exclude zero.**
+⇒ **TWO signed cells, one of them MARGINAL** (v104−v92's lower bound is 5 Elo off
+zero, driven by v92's 80-game n) — not *"one signed cell"*. **The error ran
+AGAINST its author's own evidence**, which is the rarer direction and worth
+recording as such.
+
+**Same family as this lane's own near-miss twenty minutes earlier** (a denominator
+I re-derived before sending): arithmetic sitting under a correct-sounding
+sentence, twice in one hour, in both lanes. **The s28 search order — when a claim
+pairs an argument with numbers, RE-DERIVE THE NUMBERS FIRST — earned itself
+twice today.**
+
+## ⚠ A QUESTION THE GATE ESCAPE OPENS — NOT A CLOSURE (D12)
+`check_determinism`'s prescription (*"flip `NOISE_ON` to False in this COPY"*)
+**has been complied with at scale: 63 of the 256 bot trees defining `NOISE_ON`
+carry `NOISE_ON = False`**, including an entire `_det*` family (`_det_v115dodge`,
+`_det_v134loki17`, `_detNLoff`, `_detHG` …) and the `_abl_*` ablation arms, where
+**both sides are pinned.**
+
+The builder measured **antler: 6 distinct seeds, 10 runs, ALL IDENTICAL** with
+`NOISE_ON=False` on both sides. **If that generalises, every such battery drew
+~ONE distinct game per (bot-pair, map) cell while its denominator printed the
+full row count — on batteries that PASSED the gate.**
+
+**⛔ WHAT IS NOT ESTABLISHED, and this is why it retires nothing:** determinism is
+a property of **(map, bots)**, and a different bot pair could be seed-sensitive on
+antler. **The named decisive check is cheap: run the same probe on the
+`_det*`/`_abl_*` pairs actually used, on the maps they used.** Until then, a
+verdict resting on a pinned-both-sides battery has an **UNQUANTIFIED EFFECTIVE n**
+— which is different from being wrong, and must be written that way.
+
+## THE ESCAPE ITSELF — read the diff, correctly built, one defect
+Only `check_determinism` takes the flag · only the two `NOISE_ON` FAILs downgrade
+· defaults OFF so the gate still refuses · appends a loud WARN. **Defect: the
+docstring says the flag "prints the caller's justification" and the code appends
+a HARDCODED CONSTANT** — no justification parameter exists. A self-declared
+`--pooled-not-paired` with a fixed WARN is **a predicate supplied by the party it
+guards**; a required reason string would make it the decision-on-the-record the
+docstring already claims it is.
