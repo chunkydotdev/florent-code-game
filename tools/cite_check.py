@@ -19,11 +19,27 @@ be where the quote came from.**  It does not verify that the quote is ON that pa
 (that is the expensive half, and a 200 here is NOT evidence the span is there).
 
 WHAT A RESULT MEANS
-  DEAD   -- 404/410.  Treat as a FABRICATED OR ROTTEN CITATION until re-sourced.
-            This is the signal the tool exists for.
-  OK     -- resolves.  Says NOTHING about whether the quote is on the page.
-  BLOCKED-- 403/429 or a bot wall (Cloudflare).  NOT a defect; not evidence either.
-  ERROR  -- network/DNS/timeout.  Re-run before believing it.
+  DEAD    -- 404/410.  Rotten or fabricated; re-source it.
+  MISMATCH-- resolves, but the page's <title> shares no token with the URL's slug.
+             ⛔ THIS IS A TRIAGE FLAG, NOT A VERDICT OF FABRICATION.  Read the
+             calibration below before repeating a MISMATCH count to anyone.
+  OK      -- resolves and the title matches.  Says NOTHING about whether the QUOTE
+             is on the page -- that is the expensive half of the join, not done here.
+  BLOCKED -- 403/429 or a bot wall.  NOT a defect and NOT a pass.
+  ERROR   -- network/DNS/timeout.  Re-run before believing it.
+
+⛔ CALIBRATION -- MEASURED ON THE FIRST FULL RUN, 2026-08-11, 187 URLs.
+Raw output was 17 MISMATCH.  A false-positive guard (numeric ids, commit hashes,
+directory URLs) cut that to 5.  **ALL FIVE SURVIVORS WERE THEN TRIAGED BY HAND AND
+ALL FIVE WERE CORRECT CITATIONS.**  The heuristic cannot handle:
+  * abbreviation      `bc21`        -> "Battlecode 2021 Postmortem"
+  * stemming          `defense`     -> "Defending your room | Screeps Documentation"
+  * generic titles    `specs-s2`    -> "Lux AI Challenge"
+  * compounds         `planetwars`  -> "Planet Wars 2010"
+⇒ **TRUE POSITIVES ON THAT RUN: 1 DEAD (link rot) and 0 fabrications beyond the
+one already known.  A raw MISMATCH count is NOT a fabrication count, and quoting
+it as one would be this repo's standing failure -- a number losing its hedges at
+the exit -- committed by the tool built in response to that failure.**
 
 DRIVEN BOTH WAYS: --selftest injects a known-dead URL and a known-live one and
 asserts the checker separates them.  A checker that has never returned DEAD has
@@ -87,8 +103,26 @@ def _slug_of(url: str) -> str:
     completely different article.
     """
     seg = url.rstrip("/").rsplit("/", 1)[-1]
-    seg = re.sub(r"\.(html?|php|aspx)$", "", seg, flags=re.I)
-    return re.sub(r"^\d+[-_]", "", seg)
+    seg = seg.split("#")[0].split("?")[0]
+    seg = re.sub(r"\.(html?|php|aspx|md)$", "", seg, flags=re.I)
+    seg = re.sub(r"^\d+[-_]", "", seg)
+
+    # ⛔ FALSE-POSITIVE GUARD, added after the first full-library run flagged 17
+    # URLs of which most were NOT fabricated. There is no slug to cross-check when
+    # the last path segment is an opaque IDENTIFIER rather than a title:
+    #   Discourse/Kaggle end in the topic id  (forum.codingame.com/t/1752)
+    #   git hosts end in a commit hash        (.../commit/b0235feefe2e)
+    #   directory/index URLs have no slug     (satirist.org/ai/planetwars/)
+    # Flagging these as MISMATCH would have reported ordinary citations as
+    # fabricated — the exact "a number loses its hedges at the exit" failure this
+    # tool was written in response to, committed by the tool itself.
+    if re.fullmatch(r"\d+", seg):          # bare numeric id
+        return ""
+    if re.fullmatch(r"[0-9a-f]{7,40}", seg, flags=re.I):  # commit hash
+        return ""
+    if seg in ("", "index", "specs"):      # directory / index / generic
+        return ""
+    return seg
 
 
 def probe(url: str, timeout: float) -> tuple[str, str]:
