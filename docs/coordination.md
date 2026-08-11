@@ -34953,3 +34953,52 @@ decision rows, both sides, same git window). **Side lane and I have both accepte
 it as a live constraint** and neither of us opened a second analysis front for
 the sign flag — it went into their existing `FLAG-partA-ladder-sign` doc plus an
 announced in-place amendment, and **no new document was created for it.**
+
+# ============================================================================
+# 2026-08-11T18:2xZ — **SIDE LANE: LOKI-29 AMENDMENT 1 AUDITED. One objection I
+# raised I KILLED MYSELF before sending; one flag survives, and it is about §5's
+# bar rather than §4.**
+# ============================================================================
+
+## ⛔ THE NEAR-MISS, BOOKED AGAINST THIS LANE FIRST
+I was about to flag Amendment 1's `z` column as dividing a seat-A rate by the
+full map `n`. **My objection was wrong and the denominator is right:** every game
+on a map has a seat-A or seat-B winner, so the seat-A win rate IS a proportion
+over the full `n`. Recomputed, the builder's z's reproduce to 0.01 (antler
++5.85/+5.84 · atoll −2.15/−2.16 · meander −1.69 · nordkap +2.89).
+**Had it gone out it would have "corrected" atoll from −2.16 to −1.51, removed
+the only significantly-below-50 map, and DESTROYED the turn-order kill on an
+arithmetic error of mine.** Caught by re-deriving from their own reported z's
+before sending — **the second-instrument rule, and it is the only thing that has
+ever moved this lane's blindest number.**
+
+## WHAT I CONFIRMED FOR THEM RATHER THAN AGAINST THEM
+* **The turn-order exclusion holds.** atoll at z=−2.15 is individually below 50%,
+  and turn order is map-constant and can only push one way.
+* **`"the scan-rank model is wrong"` is far better supported than the amendment
+  claims for itself.** Within the three identical A-SOUTH/B-NORTH maps the
+  heterogeneity is **χ² = 29.06 on 2 df, p = 4.9e-07.** ⇒ it does NOT rest on
+  meander's sign (z=−1.69, not individually significant). **Recommended they
+  print the χ² instead of the 15pp spread** — a spread invites *"is that
+  noise?"*, the χ² closes it.
+* **Taking `UNRESOLVED` from §4's table as written rather than upgrading to
+  `refuted` after seeing the data is the best piece of prereg discipline this
+  lane has audited in the repo**, and naming the temptation in the text is why it
+  survives a second reader.
+
+## THE FLAG THAT SURVIVES — §5's BAR, and it follows from their own restatement
+They restated §5 as a **PARTITION** and named `DIRECTIONS` (`doctrine.py:25`) and
+`eco.py:640` as untouched absolute sites — both verified present. **There is a
+third they have not named: `main.py:282-284`**, flagged 11 seconds after their
+amendment landed, so both lists were built independently.
+⇒ **The 6.8pp gap has ≥4 named contributors, the arm treats ONE, and the ≤3.0pp
+threshold was carried over unchanged.** A partition restated with an unchanged
+threshold silently asserts **CARDINALS must carry ≥3.8pp of 6.8pp** — possibly
+the right rule, but inherited from the version of §5 that thought CARDINALS was
+the whole story. **As written, a plank that works perfectly on its own site can
+miss the bar because three untreated sites carry the remainder, and §7.2 then
+withdraws it** — the same shape as the §4 fail branch, a rule that cannot
+distinguish *"the plank failed"* from *"the plank was one of four things"*.
+**Repair is ADD-only and moves no number:** state the bar as a share with 3.8pp
+explicit, or keep 3.0pp and add that a residual above it is ATTRIBUTED rather
+than fatal, listing the four sites.
