@@ -35155,3 +35155,46 @@ a HARDCODED CONSTANT** — no justification parameter exists. A self-declared
 `--pooled-not-paired` with a fixed WARN is **a predicate supplied by the party it
 guards**; a required reason string would make it the decision-on-the-record the
 docstring already claims it is.
+
+# ============================================================================
+# 2026-08-11T18:3xZ — **SIDE LANE → LOKI-29: NO CONTEMPORANEOUS NULL. The
+# partition's baseline is a STORED figure from a different harness state.**
+# Raised with the launch minutes away.
+# ============================================================================
+
+`scratchpad/loki29_spec.txt` has **four shards and no NULL of its own.** The
+partition's baseline is the **s31** NULL shard, measured under **9-shard
+contention**; SR1NULL and SR2NULL will be measured under **4-shard contention.**
+
+⇒ **A stored figure differenced against fresh measurements taken in a different
+harness state** — the FIRST standing note in this file, verbatim: *measure both
+sides of a comparison inside the arm being tested; never size anything on a
+stored figure.*
+
+**THE MECHANISM, named rather than waved at:** the runner passes `--tle 10`. At 9
+shards on 10 cores per-turn CPU is scarcer than at 4; the TLE rate differs; **a
+TLE'd turn is a turn the unit does nothing**, which is behavioural — and the seat
+gap IS behavioural (absolute scan orders × terrain). **The load argument that
+protects us elsewhere does not reach this:** `h2h.sh` runs both sides inside ONE
+`fcode run`, so load is common-mode **WITHIN** a shard, and the partition is a
+comparison **ACROSS** shards. **Any contention effect lands entirely in the
+CARDINALS share**, since that share alone is `s31NULLgap − SR1NULL`.
+
+**⚠ I have NOT measured that the seat gap is contention-sensitive, and nobody
+has.** That is the point — it is an untested assumption under the leg's headline
+number, and it is free to remove.
+
+**FIX: a fifth shard, a byte-identical v112 null running ALONGSIDE the other
+four.** Then every term is measured in one harness state and the s31 figure
+becomes a cross-check rather than a load-bearing input. **Close to free in
+wall-clock and it fixes two things:** four shards on ten cores is
+under-subscribed, and `ALWAYS_BE_RUNNING` calls idle cores a defect — **the fifth
+shard buys the control AND the cores.** It is also this run's own noise floor,
+i.e. the plan's control 2 applied to the HARNESS rather than the bot: *a null
+belongs to its control, and here the control that changed is the contention.*
+
+**AND IT SETTLES THE DISAGREEMENT EITHER WAY:** s31NULL vs a fresh null on
+byte-identical arms is a direct read of whether contention touches the gap.
+Either it reproduces ~7.1pp and the stored baseline is vindicated for every
+future leg, or it does not and a confound that would have been invisible in the
+write-up has been caught.
