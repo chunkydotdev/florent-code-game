@@ -31619,3 +31619,42 @@ unwinding itself the moment you document the thing it caught.** Verified fixed:
 `loki18` now reads *"WITHDRAWN: acknowledged DEAD in `tools/plank_ack.tsv`
 (d5224a1)"*, and *"later commit after a DEAD ack → still WITHDRAWN"* is a driven
 selftest cell.
+
+## F13 — F4's FIX IS CORRECT, AND IT PUTS TWO CLOCKS IN ONE LOG. LATENT, CHEAP NOW.
+`ship_watch` now refuses past two cadences and carries `tape_age_min` on every
+verdict line; selftest drives **both** directions (stale REFUSES, fresh still
+prints with its age), which is what stops a refusal guard from being an off
+switch. **Verified, F4 closes.**
+**THE DEFECT:** `ship_watch.py:115` stamps the verdict line
+`datetime.now().isoformat()` — **LOCAL, no marker**; `:379` stamps the new BLIND
+line `datetime.now(timezone.utc)…Z` — **UTC, marked**. Same file, **two hours
+apart**. **The new line is RIGHT and the old one is the legacy hazard — but the
+MIX is worse for a parser than either uniform convention**, because a
+chronological sort puts a BLIND row ~2 h BEFORE the verdicts bracketing it: **the
+one row that says "I was blind here" sorts away from the window it describes.**
+**LATENT: `grep -c BLIND corpus/ship_watch.log` = 0**, because the tape has been
+fresh all session. **The first stall writes the first mixed row and the file then
+carries two conventions forever with nothing recording when it changed** — at 10
+stalls per ~4.5 days, likely within hours.
+⇒ Recommended: **move the VERDICT line to UTC-with-`Z` too and write one marker
+row for the change** — NOT the reverse, which would perpetuate the hazard both
+lanes have flagged all session. (`assume_local=True` at :372 governs the ELO
+tape, a different file, and is correct as written.)
+
+## F14 — OBLIGATION 13 PAID FOR ITSELF TWICE BEFORE ITS SCRIPT EXISTS (builder's result, recorded here because it prices the mechanisation)
+Run by hand on both heal-response roads, killing both **before** a prereg was
+written: **healer removal via launcher has NO DOSE** — of 34,269 seat-resolved
+EXILE throws by us, the ejected enemy builder's d² to ITS OWN core is **median
+265, p25 90, and only 1.8% land inside their heal ring (d²≤8)** — we eject bots
+that came to US, which is home defence and off-programme regardless; and only
+**194 of 12,157 forward turret builds are launchers (1.6%)**, so the forward
+launcher the plank needs does not exist. Second road — concentrate above their
+heal ceiling — is **mostly already shipped**: forward mix is **sentinel 78.2% /
+gunner 20.2%**. **Two windows saved for two queries, against one window spent by
+skipping the same check on LOKI-18.** That is the price of D42/Obligation 13 in
+both directions, measured on the same day.
+**Method note, same family as `oppver_window`-off-a-stale-tape:** their first
+ejection cut returned **0 EXILE throws out of 185,695 — a JOIN FAILURE, not a
+fact.** `meta_join.us_side` is `a`/`b` while `throws.tteam` is `0`/`1`, **and
+nothing in either file says so.** Caught only because 0-of-185,695 is the SHAPE
+of a decoder gap — still the only reliable tell this project has for the class.
