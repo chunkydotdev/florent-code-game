@@ -118,3 +118,57 @@ In the same 485 night files we made **3,727 hostile throws against their 1,927**
 inserts never attack. **Our launcher is almost entirely a defensive ejection tool
 and almost not an insertion tool at all.** A programme-fit observation against
 `PLAY_DEFENCE: never`, unaddressed in the night read.
+
+---
+
+# ⛔ CORRECTION TO THIS DOCUMENT, SAME MORNING — I ASKED "DID THE PROBE EVER RESOLVE?" AND THE ANSWER LARGELY DEFUSES MY OWN FRAMING
+
+**The adoption of `LOKI_QUIET_ON` into the shipped line was JUSTIFIED ON ITS OWN
+EVIDENCE, not inherited from an unfinished probe.** Recorded here rather than in
+a new file because the original framing above is what a successor would retain.
+
+**What the probe's own question did:** `docs/RESULT-unrated-legs-2026-08-09.md`
+records LOKI-QUIET as **INVALID BY DESIGN ERROR, not a null** — the quiet arm
+still fired **43-315 turret shots per game and destroyed CAD's core in 3 of 5**,
+because `LOKI_QUIET_ON` gates builder melee and **the forward SENTINEL was never
+gated.** Author's own line: *"I verified the treatment I CODED, not the treatment
+the EXPERIMENT REQUIRED."* **So damage-vs-presence is still open** — my question
+was well-posed and its answer is "no".
+
+**But the flag's ADOPTION rests on a different and separately measured basis**
+(`bots/_v123loki7/PREREG.md` + `doctrine.py:1442-1456`):
+* quiet **12/15 = 80.0% core-kill share** vs **Eir's 5/15 = 33%, p=0.025**;
+* the reasoning stated at adoption: *"the ladder says ARRIVAL is the scarce
+  quantity, not damage… it went 3-2 against CAD landing ZERO builder attacks, so
+  the melee was never load-bearing"*;
+* **and its limits were stated, not hidden:** *"quiet's advantage over LOKI-4 is
+  NOT significant (12/15 vs 8/15)"*, plus the honest risk *"quiet also silences
+  the SIPHON, which is real income."*
+
+**⇒ "We shipped the losing arm of an unfinished experiment" would be WRONG and I
+am striking it before anyone repeats it.** The adoption was evidenced and its
+weaknesses were disclosed by its author in advance.
+
+## WHAT SURVIVES, AND IT IS SHARPER THAN WHAT I WITHDREW
+
+**The justification was explicitly CONDITIONAL on arrival being the bottleneck —
+and that condition has since changed.**
+
+* The adoption argument is *"arrival is the scarce quantity, not damage"*,
+  measured in an era when we rarely arrived.
+* **We now arrive far more often.** This lane's own night decode: **124 of 442
+  inserts (28.1%) stood orthogonally adjacent to the enemy core**; the research
+  arm's series puts arrival at an all-time high (**18.6% → 38.1%**).
+* **The evidence base for silencing every builder-melee path in the live line is
+  15 games, 5 short maps, 3 opponents — and it was NOT significant against the
+  attacking arm** (12/15 vs 8/15). It has never been re-read at the current
+  arrival rate.
+
+**So the question is not "was this a mistake" — it was not. It is: a premise
+that was true when the flag was adopted is measurably no longer true, and the
+flag has ridden fourteen iterations without being re-read against it.** That is
+a **re-measurement** case, not a defect report, and it is cheap: the flag
+advertises its own control arm (`False == LOKI-4 exactly`).
+
+**Also still unchecked, and disclosed by the adopting author at the time:** the
+siphon income the flag silences was never priced.
