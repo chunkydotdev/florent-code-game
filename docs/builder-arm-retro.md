@@ -238,3 +238,126 @@ prints its informative band.
 `mde.py --selftest` with the published bar as a cell · Q7 → the serial-dose rule
 and the `_v139heal` inversion, both to the tape. Q2's direction flip →
 **OBSERVATION — NOT ROUTED**, but it is the one I would want a successor to read.
+
+---
+
+# INSTANCE — s31, 2026-08-11. FIRINGS: 7.
+
+Answered from commits, logs, the platform and the binaries. Run at the wrap,
+BEFORE the process deltas, as this file's own routing requires.
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+
+**Six verdicts.** LOKI-27 **NO INFORMATION** on magnitude with the direction
+stated separately · cap6 **NO INFORMATION** (initially mis-filed, see 2) ·
+best-fit **CPU-cost regression** · `_v149cbfull` **NO INFORMATION** ·
+`_v150cbturret` **REAL NEGATIVE** · fcode 2.3.7 **no game-rules change**.
+
+✅ **FIRES ONCE, AND IT IS THE SHIP.** I announced v112 with *"all three
+predicted rows moved in the predicted direction."* **The ratio is algebraically
+determined by the other two and all three come from the same 162 throws — that is
+approximately ONE fact presented as three.** The sentence I should have written,
+and did write on correction: *"one leg whose direction is carried by one game on
+INSERT and one match on EXILE, P(no effect or worse) ≈ 0.26, shipped because the
+ladder is the only instrument that can resolve it."* **The decision was right; the
+confidence was not, and it went into a document other lanes inherit.**
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+
+**Seven retractions. ⛔ SIX RAN TOWARD THE MORE DECISIVE-SOUNDING CLAIM.**
+(a) *"every pooled screen verdict was measured against a bent ruler"* — seat
+cancels by design. (b) *"our CPU guard reacts to machine load"* — it is an
+unseeded RNG, and **our own `doctrine.py:1072-1075` says `get_cpu_time_elapsed()`
+reads 0 locally**; I could have grepped my own bot. (c) *"cap6 is INERT BY
+CONSTRUCTION"* — the levels came from the dose check itself and **a MEAN cannot
+show a cap on SIMULTANEOUS-ALIVE never binds.** (d) *"the guard matrix stands"*
+off a symbol table. (e) the hash-normalised disassembly that **masked the very
+bytes it was checking**. (f) *"admissible by construction"* on idle builders —
+research measured ALIVE, not IDLE.
+**The seventh ran the other way** and is the only one that did: I reported the
+v112 window as *"live 4 seconds"* when it was **20 seconds across two exposures**,
+i.e. I understated my own risk. **Six flattering, one not.** s28 recorded five
+running toward the work I wanted; **this session's bias is different in kind —
+toward the more DRAMATIC reading rather than the more convenient one.**
+
+### 3. INSTRUMENTS — what did I change, and was each driven to BOTH verdicts?
+
+Built: `fwd_read.py`, `loki27_read.py`, `dose.py`, `cores_idle.py`,
+`overnight.sh`, `overnight_watch.sh`, `overnight_read.py`; patched `gate.py`,
+`h2h.sh`, `score.py`.
+
+✅ **FIRES, AND IT IS THE SESSION'S SIGNATURE: I WROTE FOUR CHECKS THAT COULD NOT
+FIRE, AND A FIFTH THAT FIRED ON EVERYTHING — WHILE FIXING THAT EXACT DEFECT.**
+1. `fwd_read` cell 4 failed on a fixture with no dose and could not tell "guard
+   broken" from "nothing to test".
+2. `fwd_read`'s denominator gate was a bare `db < 0` — **~50% false-breach rate
+   on two arms from the SAME distribution.**
+3. `gate.py`'s new field-count guard computed the declared count with **the same
+   character class as the parser**, so a broken name dropped out of both.
+4. **`overnight_watch` required `alive==0 && age>STALE`, so a HUNG shard could
+   never trigger it** — a process frozen 3.9 h printing the word `ok`, which is
+   verbatim the `ship_watch` defect that file's docstring says it exists to
+   prevent.
+5. `overnight_read`'s seat guard **refused HEALTHY shards at 78/76.**
+⇒ **Every one is now driven to both verdicts. The lesson is not "be careful" —
+care did not prevent instances 2, 3, 4 and 5, all written AFTER instance 1 was
+diagnosed.** The only thing that worked was a peer running a second instrument.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+
+✅ **FIRES. Three load-bearing numbers have NO committed artefact**: the n=48
+cap6 dose, the best-fit 6/6-vs-5/6 TLE contrast, and the kill-turn spread
+(109–527). **They exist in session scrollback and one `QUEUE.md` line.** The
+best-fit contrast is the basis on which I killed a plank. Flagged by the side
+lane, marked in `QUEUE.md` as not re-quotable without a log, **and I did not go
+back and generate the logs.**
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+
+**v112 SHIPPED 13:14Z, ending v104's 29 h 25 m hold.** Three prototype rotations
+(v112 submit, v113, control arms). **Rated cost: ZERO, verified per-match at the
+PAIRING BOUNDARY** — not from the counter, not from the elo tape (which polls at
+300 s against a ~20 s window and would give a false clean **93%** of the time).
+v112 sits at **1680, rank #23 of 119, +14 Elo since activation.**
+⚠ **And I flagged the confound before the good result arrived and hold to it now:
+v112 inherited a baseline set at the BOTTOM of a v104 drawdown, and its 5-0 over
+Askar City is a cell v104 also took 5-0. Nothing yet distinguishes v112 from v104.**
+
+### 6. WHAT THE BUDGET BOUGHT
+
+**75 unrated games in 3 legs, all fired, none abandoned, 0 rejected challenges.**
+`target_value.py` run BEFORE both preregs; every cell inside the reachable band
+paying +18 to +21 per win, against s28's legs paying 1.18. **Local: ~2,500 screen
+games plus ~42,000 overnight in flight.**
+⛔ **The debit: from ~13:53Z the machine sat at 10 cores idle with a stocked
+queue, and MAGNUS HAD TO ASK THREE TIMES.** That is s30's D66 recurring one
+session later, because it was written as a lesson and not built as an instrument.
+**Now `ALWAYS_BE_RUNNING: yes` in `PROGRAMME.md` + `cores_idle.py`.**
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+
+The overnight run's **design rationale** — why TARGET is 5,408 and not 7,300, why
+`--tle 10` is not optional, why partial pooling replaced the completion-marker
+refusal. **All three are now in the file headers rather than in my head.** The
+one genuinely unreconstructable thing: **which of today's four unfirable guards
+was caught by me and which by a peer.** The answer is **one and three** — and
+that ratio is the finding.
+
+---
+
+## The one question that is not a list
+
+**Did I make a decision today that the machinery could not have caught?**
+
+**Yes, and it is not the ship — it is the thirty minutes I spent proving `fcode
+2.3.7` changed nothing while nine cores sat idle and a stocked queue went
+unread.** Every check I ran was correct. The engine question was real, it was my
+lane, and it closed a road properly. **And it was the wrong thing to be doing,
+because nothing in this repo measures the OPPORTUNITY COST of a correct
+investigation.** `audit_trigger` fires when analysis outpaces decisions; nothing
+fired when verification outpaced experiments. **Magnus fired instead, three
+times, and the instrument that now exists exists because he did.**
+
+**The machinery inspects the EXPERIMENT (s28), asks whether the QUESTION is worth
+answering (`target_value.py`), and still does not ask whether I should be
+answering a question at all rather than running games.**
