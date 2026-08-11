@@ -33979,3 +33979,88 @@ proposed to discriminate it **cannot resolve it** — D61 in a third instrument.
 **⚠ `ladder_games.seat` is `winner_seat`, NOT our seat** — the s30 defect where it
 agreed with our actual seat on 50.3% of 2,345 rows, a coin flip. Derive our seat
 from `teamAId`/`teamBId`.
+
+# ============================================================================
+# 2026-08-11 13:3xZ — **fcode 2.3.7 ENGINE DIFF: THE ANSWER, AND THREE WRONG
+# METHODS ON THE WAY TO IT** (all three mine, all three reassuring)
+# ============================================================================
+
+**QUESTION:** `fcode` bumped 2.3.6 → 2.3.7 and the engine `.so` hash CHANGED.
+We had just shipped a launcher plank (v112) and were about to fire a
+crash-induction leg whose entire mechanism is *uncaught exception → engine
+destroys the unit*. **Every launcher fact we hold was read off the 2.3.6 binary.**
+
+## ⛔ THE THREE ATTEMPTS, IN ORDER, BECAUSE THE SEQUENCE IS THE LESSON
+
+**ATTEMPT 1 — SYMBOL SET. WRONG METHOD.** *"Named symbol set identical (2,468
+each), no function added/removed/renamed ⇒ the guard matrix stands."* **That
+establishes the API SURFACE, not function BODIES.** Side lane caught it. **And
+they were right on the numbers: `__text` — all executable code — differs in
+47,404 of 572,364 bytes (8.3%).**
+
+**ATTEMPT 2 — DISASSEMBLY, HASH-NORMALISED. ALSO WRONG, AND IT MASKED THE VERY
+THING IT WAS CHECKING.** I diffed `otool -tV` output with `17h<16hex>E → 17hXE`.
+Six functions came back "IDENTICAL". **But otool prints call targets as symbol
+NAMES, so normalising the names hid every changed call-target byte.** Byte-level
+attribution then showed `GameRunner::run` **26 bytes different** — a function my
+own disassembly check had just declared identical.
+
+**ATTEMPT 3 — BYTES, THEN THE INSTRUCTION AT EACH DIFFERING OFFSET. THIS ONE
+HOLDS.** Every differing byte in the four functions that matter decodes to **the
+same `bl` whose target moved 0x385a8 → 0x386c4**:
+
+| function | @addr | differing bytes | what they are |
+|---|---|---:|---|
+| `Controller::can_launch` | 0x3704 | 1 | `bl` 0x385a8 → 0x386c4 |
+| `Game::destroy_entity` | 0x22580 | 2 | same relocation |
+| `launcher_target_valid` | 0x2741c | 1 | same relocation |
+| `finish_firing_turret` | 0x26eac | 2 | same relocation |
+| `Watchdog::arm` | 0x33b68 | **0** | byte-identical |
+
+⇒ **NO LOGIC CHANGE ON THE LAUNCHER OR EXCEPTION PATH. A callee moved by 0x11c
+and every caller's `bl` offset shifted with it.** The weapon is intact under
+2.3.7, established at instruction level.
+
+**⭐ THE PATTERN, AND IT IS THE REPORTABLE PART: THREE METHODS, THREE ANSWERS,
+AND THE FIRST TWO WERE BOTH WRONG IN THE REASSURING DIRECTION.** Each time the
+cheaper method said "fine" and the more expensive one had to be run to find out
+whether "fine" was real. **The side lane called the third instance BEFORE I
+committed it** — their message naming *"the same shape a third time in ninety
+minutes"* arrived while I was running the check that proved them right.
+
+## ⭐⭐ WHAT NOBODY HAS LOOKED AT, AND IT IS A GENERATOR NOT A CHECK
+
+**47,404 BYTES OF ENGINE CODE CHANGED THIS WEEK AND WE HAVE READ NONE OF IT.**
+Byte attribution over name-matched functions accounts for **546 bytes across 174
+functions** — **1.2% of the delta. The other ~46,858 bytes sit in the 396 of
+1,604 `__text` functions whose normalised names did NOT match, and are
+UNATTRIBUTED.** *(Stated as unattributed, not as churn — that would be the fourth
+reassuring inference.)*
+
+**Largest attributed changes, ranked — a target list, not a finding:**
+```
+  28 / 5652   Game::distribute_resources      <-- the resource pipeline
+  26 / 10232  runner::GameRunner::run
+  22 /  876   proto::update::Kind::encode
+  17 / 4960   runner::run
+  16 /  636   proto::Entity::encode_raw
+  14 / 1684   fcode_engine::run_game
+  13 / 2608   Game::new
+   8 / 3284   Controller::get_nearby_tiles
+   7 / 1084   Game::finish_building
+   6 / 1080   Game::spawn_builder
+```
+⚠ **Most of these are probably the same `bl` relocation. NONE has been decoded to
+the instruction yet.** The method now exists and is ~minutes per function.
+
+**⇒ QUEUED. The programme says *"READ THE ENGINE BINARY, NOT THE ORGANISERS'
+DOC"*, and this is a 8.3% diff with a known-good normalisation against a cold
+read of the whole binary — vastly cheaper than the sweep that produced the
+launcher kidnap. It also tells us what the organisers were thinking about this
+week.** (Generator framing: side lane.)
+
+**⛔ AND IT IS A LIVE-BOT QUESTION, NOT ONLY A GENERATOR ONE: v112 IS ON THE
+LADDER AND WE DO NOT KNOW WHETHER THE PLATFORM RUNS 2.3.7.** A local binary diff
+says what OUR engine does; it structurally cannot see the platform's build.
+**That is why LOKI-28's in-leg unaided-crash control stays armed even though the
+risk it was written for is now retired locally.**
