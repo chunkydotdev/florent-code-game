@@ -151,3 +151,65 @@ It does not touch the live leg's bars — those 25 unrated games are read agains
 §4 as written. It does not upgrade the plank. **And it does not make self-play the
 fixture of record: `FIXTURE_OF_RECORD: live_unrated` is unchanged, and a 4,096-game
 self-play result PRIORITISES rather than CLOSES, per D12.**
+
+---
+
+# AMENDMENT 2 — READ-OUT ADDENDUM: THE FALSIFIER AS ONE NUMBER, AND WHAT IT DOES **NOT** CLOSE
+
+## A2.1 THE FALSIFIER COLLAPSES TO A SINGLE RATIO, AND IT NEEDS NO SIGNIFICANCE TEST
+
+The read-out gave two proportions whose near-identity was the signal — deaths
+−24%, forward presence −23%. **Two numbers invite an argument about which one
+matters. One does not:**
+
+```
+DEATHS PER FORWARD BUILD    treatment 12/211 = 0.0569
+                            control   32/550 = 0.0582      -2.3%
+```
+**Exposure-normalised survival is UNCHANGED.** The 24% fewer deaths is bought
+**entirely** by 23% less forward presence.
+
+**⭐ AND THIS FORM REQUIRES NO STATISTICS AT ALL: a plank that improves survival
+MOVES this ratio; a plank that retreats leaves it flat.** That is the falsifier
+as a single quantity and it is the form the read-out should have led with.
+
+*(Provenance and a correction: the side lane derived **−1.2%** from the two
+published RATES; computed directly from raw counts it is **−2.3%**. Same
+conclusion, and the direct form is the one quoted.)*
+
+## A2.2 ⛔ WHAT THIS KILLS AND WHAT IT DOES NOT — the LOKI-18 distinction, applied before it costs anything
+
+**KILLED: THIS IMPLEMENTATION** — penalising raid stations that sit on enemy
+gunner rays, as built. **The penalty makes raiders retreat rather than reroute.**
+
+**NOT KILLED: THE UNDERLYING FINDING.** We die forward at **2.915 deaths per
+1,000 builder-rounds against FIELD_pure's 0.847 — 3.44×** — on a proper
+denominator that survives the pooling error research corrected against its own
+headline. **That number is untouched by this leg.** We still lose builders to
+avoidable turret fire at three and a half times the field's rate; **this plank
+tried to fix it by going forward less often, and that is a property of the
+implementation, not of the road.**
+
+⇒ **STATUS: ONE IMPLEMENTATION REFUTED. The gunner axis is NOT closed.** The
+surviving question — untested here and untestable by this design — is **whether a
+route exists that holds forward presence at ~11 builds/game while cutting the
+death rate.** A penalty term subtracts score from a bad station; it never
+proposes a good one. **The version worth building REPLACES the station rather
+than taxing it.**
+
+## A2.3 THE 4,096-GAME SIZING: THE DECISION WAS CORRECT AND WAS MADE MOOT BY A BETTER BAR
+
+Both are true and only one is obvious afterwards. **Amendment 1 was right that a
+53% needs ~4,096 games and that re-running at 64 could never settle it.** It was
+also aimed at the WRONG QUESTION: **a head-to-head win rate cannot see whether a
+win was bought by retreating, and the mechanism bar resolved the plank at n=25.**
+
+⇒ **THE GENERAL FORM, worth more than this leg: a well-designed MECHANISM bar
+resolves at a sample size a CURRENCY bar cannot reach.** `PROGRAMME.md` already
+says `WIN_RATE_IS_VERDICT: no`; this is the power argument for it rather than the
+principled one.
+
+**ACTION TAKEN:** the treatment's 4,096-game run is **STOPPED** — it can no
+longer change the disposition and it was consuming hours of CPU. **The 4,096-game
+NULL is left running deliberately: a properly-powered null is reusable
+infrastructure for every future screen, not an artefact of this plank.**
