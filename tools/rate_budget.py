@@ -94,12 +94,17 @@ def _fetch() -> list[dict] | None:
     return d.get("matches") if isinstance(d.get("matches"), list) else None
 
 
-def spend(now: datetime | None = None) -> tuple[int, list[datetime], bool]:
-    """(spent, sorted challenge times inside the window, meter_ok)."""
+def spend(now: datetime | None = None) -> tuple[int, list[datetime], bool, list]:
+    """(spent, sorted challenge times inside the window, meter_ok, unattributed).
+
+    `unattributed` is the in-window unrated matches we could not tie to any
+    `scratchpad/arm_*.txt`. It is returned SEPARATELY rather than folded into
+    the count, because the two readings are genuinely different -- but
+    `wait_seconds()` treats it as OURS, deliberately. See there."""
     now = now or _OVERRIDE.get("now") or datetime.now(timezone.utc)
     matches = _fetch()
     if matches is None:
-        return 0, [], False
+        return 0, [], False, []
     cutoff = now - timedelta(minutes=WINDOW_MIN)
     mine = _our_ids()
     hits = []
@@ -142,23 +147,37 @@ def spend(now: datetime | None = None) -> tuple[int, list[datetime], bool]:
             continue
         if when >= cutoff:
             hits.append(when)
-    if unattributed:
-        print(f"  ** {len(unattributed)} unrated match(es) in-window could NOT be "
-              f"attributed to any scratchpad/arm_*.txt. Either an opponent "
-              f"challenged us, or A RUNNER OF OURS IS NOT WRITING arm_*.txt "
-              f"and this meter is UNDERCOUNTING. Check before trusting it. **")
-    return len(hits), sorted(hits), True
+    return len(hits), sorted(hits), True, sorted(unattributed)
 
 
 def wait_seconds(now: datetime | None = None) -> int:
     """Seconds until at least one slot frees. 0 if a slot is free NOW."""
     now = now or _OVERRIDE.get("now") or datetime.now(timezone.utc)
-    n, times, ok = spend(now)
+    n, times, ok, unattr = spend(now)
     if not ok:
         return WINDOW_MIN * 60          # meter blind -> assume the worst
-    if n < LIMIT:
+    # ⛔ THE SECOND BLIND STATE, AND IT USED TO FAIL OPEN. An in-window unrated
+    # match we cannot attribute is EITHER an opponent challenging us (spends
+    # nothing of ours) OR a runner of ours not writing scratchpad/arm_*.txt.
+    # Those are indistinguishable here, and only one of them is safe.
+    #
+    # Until s29 this branch printed a warning on the HUMAN path and left the
+    # integer alone -- but `--wait` is the MACHINE path and returns before any
+    # message is printed, so every runner (night_collector, panel3_cal,
+    # loki14b_leg) read GO and the warning reached nobody. That is precisely the
+    # asymmetry that cost the LOKI-19 treatment window: the meter said "0/5, a
+    # slot is free NOW" twice, the second time immediately after all five
+    # challenges had been rejected.
+    #
+    # So unattributed matches now COUNT AS OURS for the wait. This can over-wait
+    # when an opponent really did challenge us -- measured as 2 of 7 once -- and
+    # that is the trade taken deliberately: over-waiting costs latency, under-
+    # waiting costs a whole window AND spends budget on rejects, which count.
+    # The human read still prints both numbers separately so the split is visible.
+    combined = sorted(times + unattr)
+    if len(combined) < LIMIT:
         return 0
-    free_at = times[0] + timedelta(minutes=WINDOW_MIN)
+    free_at = combined[0] + timedelta(minutes=WINDOW_MIN)
     return max(0, int((free_at - now).total_seconds()) + 5)
 
 
@@ -185,8 +204,17 @@ def selftest() -> int:
         ("5 inside window -> BLOCKED", [mk(1), mk(5), mk(9), mk(15), mk(19)], 5, 65),
         ("5 but oldest aged out -> free", [mk(1), mk(5), mk(9), mk(15), mk(21)], 4, 0),
         ("ladder matches must NOT count", [mk(1, "ladder")], 0, 0),
-        ("OPPONENT-INITIATED unrated must NOT count",
-         [mk(1), mk(2), mk(3, ours=False), mk(4, ours=False), mk(5, ours=False)], 2, 0),
+        # ⚠ THIS CASE'S EXPECTED WAIT CHANGED AT s29, DELIBERATELY, AND THE
+        # CHANGE IS THE POINT RATHER THAN AN ADJUSTMENT TO MAKE A TEST PASS.
+        # The COUNT assertion is untouched: opponent-initiated matches still do
+        # NOT count as our spend (want_n=2), because that is a fact about the
+        # budget. The WAIT moved 0 -> conservative, because the meter cannot
+        # tell an opponent's challenge from our own runner failing to write
+        # scratchpad/arm_*.txt, and only one of those is safe to act on.
+        # Over-waiting costs latency; under-waiting cost the LOKI-19 treatment
+        # window and spends budget on rejects, which themselves count.
+        ("OPPONENT-INITIATED: not our COUNT, but still our WAIT",
+         [mk(1), mk(2), mk(3, ours=False), mk(4, ours=False), mk(5, ours=False)], 2, 905),
     ]
     bad = 0
     for label, matches, want_n, want_wait in cases:
@@ -194,7 +222,7 @@ def selftest() -> int:
         _OVERRIDE.update({"matches": matches, "now": now,
                           "our_ids": {m["id"] for m in matches
                                       if m["id"].startswith("ours")}})
-        n, _t, ok = spend()
+        n, _t, ok, _u = spend()
         w = wait_seconds()
         good = (n == want_n) and (w == want_wait) and ok
         print(f"  [{'ok' if good else 'FAIL'}] {label:<34} spent={n} wait={w}s")
@@ -203,9 +231,26 @@ def selftest() -> int:
             print(f"          expected spent={want_n} wait={want_wait}s")
 
     # BLIND STATE: an unreadable body must NOT read as "budget free".
+    # SECOND BLIND STATE: readable body, but the in-window matches cannot be
+    # attributed. Until s29 this returned 0 on the machine path -- fail-OPEN --
+    # while printing a warning only a human would see. This branch is the reason
+    # the LOKI-19 treatment window was lost.
+    _OVERRIDE.clear()
+    _OVERRIDE.update({
+        "now": now, "our_ids": set(),
+        "matches": [mk(i) for i in (1, 2, 3, 4, 5)],
+    })
+    n, _t, ok, u = spend()
+    w = wait_seconds()
+    unattr_ok = ok and n == 0 and len(u) == 5 and w > 0
+    print(f"  [{'ok' if unattr_ok else 'FAIL'}] {'UNATTRIBUTED in-window -> must REFUSE':<34} "
+          f"ours={n} unattributed={len(u)} wait={w}s")
+    if not unattr_ok:
+        bad += 1
+
     _OVERRIDE.clear()
     _OVERRIDE.update({"matches": None, "now": now, "our_ids": set()})
-    n, _t, ok = spend()
+    n, _t, ok, _u = spend()
     w = wait_seconds()
     blind_ok = (not ok) and w == WINDOW_MIN * 60
     print(f"  [{'ok' if blind_ok else 'FAIL'}] {'unreadable body -> assume worst':<34} "
@@ -218,15 +263,16 @@ def selftest() -> int:
     if bad:
         print(f"*** {bad} case(s) wrong -- the meter is not metering ***")
         return 1
-    print("PASS: reads spent/free/blocked/aged-out, ignores ladder matches, and a "
-          "blind meter refuses rather than permits.")
+    print("PASS: reads spent/free/blocked/aged-out, ignores ladder matches, and "
+          "BOTH blind states refuse rather than permit -- unreadable body AND "
+          "unattributable in-window matches.")
     return 0
 
 
 def main(argv: list[str]) -> int:
     if "--selftest" in argv:
         return selftest()
-    n, times, ok = spend()
+    n, times, ok, unattr = spend()
     w = wait_seconds()
     if "--wait" in argv:
         print(w)
@@ -239,6 +285,14 @@ def main(argv: list[str]) -> int:
           f"(shared across ALL runners and lanes)")
     for t in times:
         print(f"    {t.strftime('%H:%M:%SZ')}")
+    if unattr:
+        print(f"  ** {len(unattr)} in-window unrated match(es) UNATTRIBUTED "
+              f"(not in any scratchpad/arm_*.txt):")
+        for t in unattr:
+            print(f"    {t.strftime('%H:%M:%SZ')}  <- counted as OURS for the wait")
+        print("     Either an opponent challenged us, or A RUNNER OF OURS IS NOT "
+              "WRITING arm_*.txt.\n     Indistinguishable here, so the wait "
+              "assumes the unsafe one. **")
     print(f"  wait {w}s before the next challenge"
           if w else "  a slot is free NOW")
     print("  ** LOWER BOUND: rejected attempts count against the limit and "
