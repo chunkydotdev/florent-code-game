@@ -603,3 +603,35 @@ the table's header. **Neither the agent nor this lane used it — one `head -1`
 away.** That is D34 repeating: *an audit of the evidence instead of an audit of
 the codebase.* The within-sample control was the right instinct aimed at the
 wrong axis.
+
+## PART 7 ADDENDUM — three independent decodes, and the control this lane did NOT run
+
+The side lane decoded the same 485 files independently and reached the same
+withdrawal by the same route, ~15 minutes after the builder. **All discrepancies
+between the three decodes were UNITS, not data:**
+
+| quantity | this doc | side lane | reconciliation |
+|---|---|---|---|
+| their any_atk | 107 | 985 | throws-with-≥1-attack vs **attack EVENTS** |
+| their core_atk | 7 | 135 | same |
+| our denominator | 4,169 | 442 | pooled hostile+friendly vs **friendly ferries only** |
+| their ferries | 317 | 331 | `kind=INSERT` vs **INSERT + RETREAT (317+14)** |
+
+**⭐ THE CONTROL THIS LANE DID NOT RUN, and it is the one that matters most
+(side lane's, cited):** the obvious alternative explanation is that `life`/
+`any_atk` are tracked only from the throw until the bot dies or is re-thrown, so
+a short observation window could suppress our attacks. **It does not: our ferried
+bots accumulate 57,625 life-rounds against their 34,298 — we have MORE observed
+bot-time after landing, not less.** It kills the alternative in the direction
+that could have saved the finding, which is why it counts.
+
+**Carried verbatim from them — the scope caveat:** this is **ferry-path only**.
+Raiders that WALKED in are not in this population. It is not *"we never attack
+their core"*; it is *"the ferried ones don't"*.
+
+**Still unpriced, and now the only live question about the kidnap line:** we made
+**3,727 hostile throws to their 1,927** in these files — we are by far the heavier
+user of enemy-bot ejection. **The columns that would price it measure the wrong
+thing by construction, so kidnap effectiveness has NO column in `throws.tsv` at
+all. That is a decoder gap, not a null result**, and no leg should read one as the
+other.
