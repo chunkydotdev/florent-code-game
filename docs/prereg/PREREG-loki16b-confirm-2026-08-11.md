@@ -85,3 +85,73 @@ It may not publish a number against +0.15. It may not claim a currency effect.
 It may not pool SmartFridge. It may not re-choose the estimator. **And it may not
 be described as a confirmation until the pooled n is reached** — one window is
 the first payment on that, not the thing itself.
+
+---
+
+# ⛔ AMENDMENT 1 — **I SKIPPED THIS DOCUMENT'S OWN GATE, SIXTY SECONDS AFTER WRITING IT.** POST-HOC, AND LABELLED AS SUCH.
+
+**Written 2026-08-11 08:3xZ, AFTER the window fired.** §Obligation-13 above says,
+verbatim: *"If `inert_check` reports INERT, this window is not fired."* **I did
+not run it. I committed the prereg at 08:26:25Z and fired at 08:26:44Z — nineteen
+seconds later.**
+
+## A1.1 WHAT THE GATE SAYS, RUN LATE
+
+```
+INERT_CHECK: MALFORMED
+  declared but NOT in the computed diff: "v106 vs v104 — to be confirmed by …"
+  in the computed diff but NOT declared: doctrine.py, raid.py
+```
+**Two defects in my own declaration, neither of them subtle:**
+1. `TREATMENT DIFF TOUCHES` was left as **placeholder prose** rather than a path
+   list. The tool correctly refuses to compare a sentence to a file set.
+2. `MECHANISM METRIC READS: bots/_v133loki16/eco.py` **is wrong.** I took it from
+   `ring_read`'s docstring, which cites `eco.py` for the ring GEOMETRY
+   (`heal_seats + core_corners`). **But the diff does not touch `eco.py`** — and
+   LOKI-16b's own source comment says why, explicitly: *"Set here rather than in
+   `main.__init__` so that file stays untouched."*
+
+## A1.2 THE SUBSTANTIVE ANSWER — NOT INERT — AND IT WAS ESTABLISHED AFTER FIRING
+
+The statistic is ring OCCUPANCY, produced by **`_ring_hold` in `raid.py`**, which
+is exactly what the diff adds (`raid.py` +90 lines, `doctrine.py` +68).
+**`v106 vs v104` touches `raid.py`; the metric reads `raid.py`; the intersection
+is non-empty; the bar is NOT inert.** The window is therefore not void and the 25
+games are on a live plank.
+
+**⛔ BUT I DETERMINED THE READ PATH BY LOOKING AT THE DIFF, AFTER FIRING. That is
+the precise reasoning `inert_check` exists to prevent** — a read path chosen once
+the answer is visible is not a pre-registration, and *"it turned out fine"* is
+the weakest possible defence. Recorded at full weight rather than corrected
+quietly.
+
+## A1.3 ⭐ THE LESSON, AND IT CORRECTS THE TIER IDEA I ADOPTED THIS MORNING
+
+The PROBE tier was introduced hours earlier to cut ceremony after a day of six
+unfired slots. **Within ninety seconds of its first use I treated "probe tier" as
+licence to skip a GATE.** It is not.
+
+> **THE TIER REDUCES THE WRITE-UP, NOT THE VERIFICATION.**
+> A probe may skip bands, amendments, power tables and verdict language.
+> **It may not skip a check that decides whether the window can learn anything** —
+> those are seconds each, they are the cheap half, and they are the half that
+> made this document wrong.
+
+**AND THE SHAPE IS TODAY'S, FOR THE FIFTH TIME: a check I had, did not run, that
+would have caught something.** LOKI-18 (`plank_status`, cost 25 games),
+`corpus_sanity`'s fifty-hour STALE line, the ammo decoder's proto3 default, the
+`meta_join`/`throws` join key, and now this. **Every one was seconds of work
+placed after the expensive step instead of before it.**
+
+## A1.4 WHAT THIS AMENDMENT MAY NOT DO
+
+It may not be read as clearing the gate — the gate was **skipped**, and running
+it late does not un-skip it. It may not move any bar, cell, statistic or the n.
+It may not upgrade this window from PROBE. **And the corrected declaration below
+is for the NEXT window, where it will be run BEFORE firing:**
+
+```
+MECHANISM METRIC READS: bots/_v133loki16/raid.py:112   (_ring_hold)
+TREATMENT DIFF TOUCHES: raid.py, doctrine.py
+INTERSECTION: raid.py — YES
+```
