@@ -148,24 +148,62 @@
 ##   one is OK. **Roll back to v102 only if rating < 1615 while net5 <= -21.**
 ##   Six monitors alive. Rate budget 0/5 spent, a slot free now.
 ##
-## ===== WHAT s28 SHIPPED: NOTHING. WHAT IT BUILT: ONE PLANK AND SIX TOOLS =====
-##   **LOKI-17 = `bots/_v134loki17`** (md5 `8df01ffe`), prereg
-##   `docs/prereg/PREREG-loki17-sentinel-siting-2026-08-10.md` (`03d2314`
-##   17:27:01, tree 88s later — two-clock clean, bars unmoved).
-##   **NOT SHIPPED, NOT MEASURED.** Smoke-tested only: **0 uncaught exceptions**
-##   in 4 local games. **Its win rate there is n=4 against our own probe and is
-##   NOT a signal** — the arena printed "No verdict" itself.
-##   **THE DEFECT:** our sentinel siting was FIRST-FIT, not first-fit-with-no-
-##   guard as first relayed — the range/ray/buildable guard was already there,
-##   **the CHOICE was missing.** It took the first tile that could fire, so the
-##   site was set by wherever the builder stood; median nearest d2 to the enemy
-##   core came out **32, exactly the Sentinel's range limit**, and only **52.1%**
-##   of our sentinels could fire on the round we built them. A team we beat
-##   plants at **d2 18, 77.9% shootable.** Now scores every legal (tile, facing)
-##   pair and takes the closest, tie-broken by core-tile coverage.
-##   **NEXT: the facing decoder (research, running) replaces the 52.1% BASELINE.
-##   The >85% TARGET DOES NOT MOVE WITH IT** — absolute standard, pre-committed,
-##   so a worse true baseline cannot flatter the plank.
+## ===== ⛔⛔ LOKI-17 AND LOKI-18 ARE DEAD. BOTH. KILLED s28 22:03, `c91c078`. =====
+##   **THE BLOCK BELOW IS THE 17:31 TEXT AND IT IS WRONG. IT IS KEPT, STRUCK,
+##   BECAUSE THE WAY IT FAILED IS WORTH MORE THAN THE WORDS ARE.**
+##   `c91c078` (2026-08-10 22:03:16) verbatim: *"No defect; LOKI-17 and LOKI-18
+##   both dead."* **That is FIVE HOURS after this block was written, by the same
+##   session, and this block was never updated. The s29 builder booted, read it,
+##   ran the gate, picked cells, verified the tree, and got within one commit of
+##   activating a prototype for a plank its own author had already withdrawn.**
+##   Caught by the side lane reading the commit log, and independently by the
+##   builder's own local run. **A HANDOVER BLOCK IS A CLAIM WITH AN EXPIRY DATE,
+##   AND THE ONE THING A SUCCESSOR CANNOT DO IS NOTICE THAT IT EXPIRED.**
+##   ⇒ **STANDING RULE, EARNED: a plank's death is written to HANDOVER IN THE
+##   SAME COMMIT that kills it, or it is not written.** A wrap-time sweep is too
+##   late — the next session boots on whatever is in the file at the time.
+##
+##   **WHY IT DIED, and this is the reusable part — it is a METRIC lesson, not a
+##   plank lesson.** `raid.py` gates every sentinel build behind
+##   `can_fire_from(...)`, and **LOKI-17 did not touch that guard.** So
+##   shootable-on-build reads ~100% in the CONTROL arm too. The pre-registered
+##   primary sat **causally downstream of an unchanged guard**: it could not
+##   move, in either direction, for any implementation. Not a pre-satisfied bar
+##   — an **inert** one. Confirmed twice on 2026-08-11: side lane by reading the
+##   diff, builder by running both arms (forward subset **16/16 and 20/20**).
+##   ⇒ **BEFORE PRE-REGISTERING ANY MECHANISM METRIC, ASK WHAT IN THE DIFF CAN
+##     CHANGE IT. If the answer is nothing, the leg spends a window to learn
+##     nothing.** This is the cheapest check in the repo and it is new.
+##
+##   **AND DO NOT REVIVE THE 50.4% / 62.2% / 67.6% BASELINES.** They are a
+##   **45° angular tolerance** (`loki9_facing.py`, `ALIGNED_DEG = 45.0`) on
+##   Ouroboros/Askar games. `tools/loki17_mech.py` computes **exact-ray
+##   collinearity**. Different predicate — so **a reconciled-looking number
+##   across the two is evidence of a units error, not a validation.**
+##   **"Forward" also carries THREE incompatible definitions** across this
+##   plank's evidence (`d2_own>41` n=327 · `d2_own>145` n=287 · midpoint
+##   `d2_enemy<d2_own`). The **100.0% that killed the plank attaches ONLY to
+##   `d2_own>145`.** All three are named in `tools/loki17_mech.py`'s comments.
+##
+##   **WHAT IS STILL GOOD HERE:** `bots/_v134loki17` is a clean, crash-safe
+##   one-function diff and `tools/loki17_mech.py` now runs (it raised
+##   `ValueError` on **every** invocation until 2026-08-11 — 4-tuple yielded,
+##   3-tuple unpacked — so **no number in circulation came from it**; the 100.0%
+##   came from `scratchpad/shootable.py`, **untracked**). If the closest-plant
+##   idea is ever revived it needs a **NEW pre-registration on distance /
+##   coverage / lifetime** — not an amendment, because the bar changes quantity.
+##
+## ~~===== WHAT s28 SHIPPED: NOTHING. WHAT IT BUILT: ONE PLANK AND SIX TOOLS =====~~
+##   ~~**LOKI-17 = `bots/_v134loki17`** (md5 `8df01ffe`), prereg~~
+##   ~~`docs/prereg/PREREG-loki17-sentinel-siting-2026-08-10.md` (`03d2314`~~
+##   ~~17:27:01, tree 88s later — two-clock clean, bars unmoved).~~
+##   ~~**NOT SHIPPED, NOT MEASURED.** Smoke-tested only: **0 uncaught exceptions**~~
+##   ~~in 4 local games.~~
+##   ~~**THE DEFECT:** our sentinel siting was FIRST-FIT... **the CHOICE was~~
+##   ~~missing.**... only **52.1%** of our sentinels could fire on the round we~~
+##   ~~built them.~~ **← THE 52.1% IS A 45°-TOLERANCE FIGURE. STRUCK.**
+##   ~~**NEXT: the facing decoder replaces the 52.1% BASELINE. The >85% TARGET~~
+##   ~~DOES NOT MOVE WITH IT.**~~ **← THERE IS NO NEXT. THE PLANK IS WITHDRAWN.**
 ##
 ## ===== LEGS: BOTH STOPPED, BOTH ABANDONED, NEITHER IS A RESULT =====
 ##   **LOKI-14b** killed at **8/16 matches** on a Magnus directive, between

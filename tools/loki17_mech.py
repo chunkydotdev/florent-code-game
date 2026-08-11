@@ -3,9 +3,32 @@
 
     .venv/bin/python tools/loki17_mech.py <bot_dir> [n_seeds]
 
+⛔ THE PLANK THIS TOOL WAS BUILT FOR IS DEAD (c91c078, 2026-08-10 22:03:
+"No defect; LOKI-17 and LOKI-18 both dead"). KEEP READING BEFORE REUSING ANY
+NUMBER IT PRINTS -- the tool is fine, the METRIC was the wrong instrument, and
+the distinction is the whole lesson:
+
+  `raid.py` gates EVERY sentinel build behind `can_fire_from(...)`, and
+  LOKI-17 did not touch that guard. So shootable-on-build reads ~100% in the
+  CONTROL arm too. The metric sits causally DOWNSTREAM OF AN UNCHANGED GUARD,
+  which means no possible result was informative -- not a bar that was
+  pre-satisfied, but a bar that could not move. Confirmed twice independently
+  on 2026-08-11: by reading (side lane) and by running this tool on both arms
+  (builder: forward subset 16/16 and 20/20, 100% in each).
+  ⇒ GENERAL RULE, and it is cheap to apply: before pre-registering a mechanism
+    metric, ask what in the DIFF can change it. If the answer is nothing, the
+    leg spends a window to learn nothing.
+
+⛔ AND DO NOT COMPARE ITS OUTPUT TO 50.4% / 62.2% / 67.6%. Those come from
+`tools/loki9_facing.py` with ALIGNED_DEG = 45.0 -- a full compass step of
+angular TOLERANCE -- on Ouroboros/Askar games. This file computes EXACT-RAY
+collinearity (cross-product zero). Different predicate. Matching the population
+is necessary and NOT sufficient, and a reconciled-looking number across two
+predicates is the more dangerous error, not the safer one.
+
 PREREG-loki17's primary: a sentinel is SHOOTABLE-ON-BUILD if on the round it is
 built the nearest ENEMY CORE FOOTPRINT tile is within d^2 <= 32 AND lies on its
-actual facing ray. Amendment 1 baseline: 50.4%; target >85%.
+actual facing ray.
 
 Local, unlimited, zero rate-limit, zero rated exposure -- the primary is a
 property of OUR OWN placement geometry, so the arena's opponent-behaviour bias
@@ -116,11 +139,23 @@ def main(argv):
                 for team, d2, ok, d2own in decode(out):
                     if team != 0: continue          # OUR side only (seat A)
                     tot += 1; d2s.append(d2); hit += ok
-                    # FORWARD subset: nearer the ENEMY core than our own. The
-                    # plank edits `_try_forward_sentinel` only, so this is the
-                    # population it can actually move; the headline stays ALL
-                    # sentinels because that is the population Amendment 1b's
-                    # 50.4% baseline was computed on. Reported, never a bar.
+                    # ⚠ "FORWARD" CARRIES THREE DEFINITIONS IN THIS PLANK'S
+                    # EVIDENCE CHAIN AND THEY PARTITION DIFFERENTLY. Named here
+                    # because the LOKI-16 sign flip and the two-definitions-of-
+                    # `undamaged` incident (3.8% apart under one name) are the
+                    # same failure:
+                    #   leg doc table ........ d2_own > 41   (n=327)
+                    #   the 100.0% control ... d2_own > 145  (n=287) <- the
+                    #        number that KILLED this plank attaches ONLY here
+                    #   this line ............ d2_enemy < d2_own (a MIDPOINT rule)
+                    # The midpoint rule is the LOOSEST of the three: it admits
+                    # sentinels sited by main.py's home/threat path, which reads
+                    # ~13.9% because it correctly aims at threats rather than at
+                    # the core. So this subset is NOT "what LOKI-17 touches" --
+                    # the plank edits `_try_forward_sentinel` in raid.py alone,
+                    # and the honest filter for that is the reach argument
+                    # (d2_own > 145), not this one. Reported as a midpoint cut,
+                    # never as a bar, and never mixed with the other two.
                     if d2 < d2own:
                         fwd_tot += 1; fwd_hit += ok
     if not tot:
