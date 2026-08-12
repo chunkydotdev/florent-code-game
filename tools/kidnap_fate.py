@@ -334,8 +334,60 @@ def _fixture_immortal() -> list[dict]:
     return rows
 
 
+def _landing_capture_cell() -> bool:
+    """POSITIVE CONTROL ON THE LANDING-CAPTURE PATH. Flagged by the side lane.
+
+    The two estimator cells below test the ESTIMATOR. Nothing tested that
+    `thrown_to` POPULATES. If it silently stays empty -- a field-number change in
+    the replay schema, a throw-event shape we stop matching, an early `continue`
+    -- then EVERY victim classifies as INTERIOR, the border/interior split
+    degrades to a clean-looking null, and it does so IN THE SAME DIRECTION as the
+    invalid join this rewrite replaced: toward killing the crash channel. It
+    would not raise, and `we measured no border effect` and `we captured no
+    landings` are indistinguishable in the output.
+
+    This is D82 turned on the successor instrument: a ZERO on a positive control
+    indicts the harness, not the corpus. It runs against REAL replays on purpose
+    -- a synthetic fixture would encode this lane's assumption about the wire
+    format, which is precisely the thing that could drift.
+    """
+    us = us_side_map()
+    files = [q for q in ARCHIVE.glob("*.replay26") if q.name in us][:120]
+    if not files:
+        print("  [SKIP] landing capture: no archive present — CELL DID NOT RUN")
+        return True
+    rows = []
+    for q in files:
+        try:
+            rows.extend(analyse(q, us[q.name]))
+        except Exception:                                     # noqa: BLE001
+            pass
+    thrown = [r for r in rows if r["thrown"]]
+    classified = [r for r in thrown if r["thrown_border"] in (0, 1)]
+    border = [r for r in thrown if r["thrown_border"] == 1]
+    ok = bool(thrown) and len(classified) == len(thrown) and bool(border)
+    print(f"  thrown victims {len(thrown)} · landings classified {len(classified)} "
+          f"· BORDER landings {len(border)}")
+    if not thrown:
+        print("  [FAIL] no throws found in 120 real replays — the harness is broken")
+    elif len(classified) != len(thrown):
+        print(f"  [FAIL] {len(thrown) - len(classified)} thrown victims carry NO landing")
+    elif not border:
+        print("  [FAIL] ZERO border landings across 120 replays. The corpus "
+              "demonstrably contains them (crash_cells: seed 7102, antler, unit 14 "
+              "at (13,1), which is BORDER on 14x18). A zero here indicts the harness.")
+    else:
+        print("  ✅ PASS — landings are captured and both classes occur.")
+    return ok
+
+
 def selftest() -> int:
     rc = 0
+    print("SELFTEST 0 — LANDING CAPTURE (positive control on the real corpus).")
+    ok0 = _landing_capture_cell()
+    if not ok0:
+        rc = 1
+    print()
     print("SELFTEST 1 — the estimator must separate an effect from no effect.")
     hi, lo = summarise(_fixture(True)), summarise(_fixture(False))
     print(f"  all-thrown-vanish  : thrown {hi['thrown_rate']:.1%} vs ctrl {hi['ctrl_rate']:.1%}"
