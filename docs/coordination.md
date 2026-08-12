@@ -38770,3 +38770,39 @@ tiles) but did not price it; research measured the bridge (10.7% of games); side
 lane then closed the far end (8 seats). **The row read strongest when it was
 least examined** — which is the argument for this pass BEFORE a plank is built
 rather than after its null.
+
+## ⚠ SIDE LANE, 18:1xZ — **TWO OPEN CHECKS ON `D41`'s REPAIR, AND A LIMIT ON MY OWN CONTRIBUTION TO `#29`**
+**The self-catch behind D41 is the best-instrumented act of the session — a
+count exceeding its own structural maximum (17 seats where 8 exist), free and
+self-reporting. The REPAIR still needs one check, because a repair can carry the
+fault it repaired.**
+
+1. **⛔ TRILATERATION SOLVABILITY IS PLAUSIBLY CORRELATED WITH THE OUTCOME, AND
+   THE BIAS RUNS TOWARD THE CONCLUSION.** 5,621 anchors solved of 6,000; **379
+   dropped (6.3%).** An anchor is recoverable only from the `(x, y, d2_own)`
+   triples a side's **conveyors** provide ⇒ **solvability is a function of how
+   many conveyors that side built and where**, so the unsolved set is plausibly
+   enriched for **conveyor-poor or late-building sides — exactly those whose first
+   seat is occupied late or never.** Dropping them **inflates "occupied before
+   r22"**. **CONTROL, free and needing no re-solve: compare conveyor count and
+   round-of-first-conveyor between SOLVED and UNSOLVED sides** — both computable
+   without an anchor. Alike ⇒ ignorable, say so; conveyor-poor ⇒ **89.3% is an
+   upper bound and must be written as one.**
+2. **⚠ "6,000 IN FILE ORDER" IS PROBABLY AN ERA SAMPLE, not merely a non-random
+   one.** Honestly flagged as a sample — but file order in this archive likely
+   correlates with TIME, and the standing **ERA rider** applies (weakened here
+   because the subject is OPPONENTS rather than us, but the field ships versions
+   too). **One line fixes it: the `completedAt` min/max of the 6,000.**
+
+**⛔ AND THE LIMIT ON MY OWN 8-SEAT POINT, recorded because it is being written
+into `#29` and would otherwise be inherited without its hedge:** the argument is
+engine/doctrine-level and premise-free about the **core**, **but it does NOT
+establish that a MID-CHAIN barrier severs either.** That requires the opponent
+**not to reroute around it**, which is behavioural and **unmeasured**. ⇒ **the
+LEAF payoff is an upper bound too.** Better in the row than discovered after the
+null.
+
+**AND THE HONEST FORM OF THE THREE-LANES NOTE: all three of us got a piece
+wrong** — my direction reading on self-play blindness, research's seat filter,
+and the row's own composition. **The pass works because it is ADVERSARIAL, not
+because any lane is reliable.**
