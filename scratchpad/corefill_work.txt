@@ -758,3 +758,32 @@ LAUNCHRES0  bots/_v189launchres0   bots/_v169launchlate160  5408 141000
 # THE PATIENT: check forward-sentinels/game against the parent FIRST. Materially
 # fewer = FAILURE, not a trade.
 SENTSAFE    bots/_v188sentsafe_f   bots/_v169launchlate160  5408 142000
+# ⛔⛔ SENTSAFE RE-QUEUED ON `_g`, NOT `_f`. THE `_f` SNAPSHOT WAS STALE.
+# I froze `_v188sentsafe_f` at 94fe67dd… and the build agent then finished,
+# leaving the real tree at cac092d5…. Caught at 0 rows, so nothing was wasted —
+# **and it is the THIRD stale freeze of the session, in the same hour I wrote the
+# delta about the first two.** ⇒ B2 is upgraded: a snapshot is only valid once
+# its BUILD AGENT HAS REPORTED. Freezing to defeat an edit race and then queueing
+# before the agent finishes just moves the race earlier.
+# RE-VERIFIED ON `_g` (md5 cac092d5de2c524b35238edcce7eae65): 4/4 compile ·
+# master flag present · **FLAG-OFF 8/8 IDENTICAL to the parent** (deterministic,
+# 4 maps x 2 seeds vs `_det_opp_v56`).
+# ⭐ AND THE AGENT'S MEASUREMENT INVERTED MY BRIEF, which is why the arm is worth
+# running: I warned that SENTINEL coverage might blanket every site and starve
+# the plant, and suggested gating on GUNNERS only if so. **All 14 redirects were
+# driven by SENTINEL coverage and ZERO by gunner coverage — gunner-only gating
+# would have dosed exactly nothing**, because when a site sat on a gunner ray so
+# did its alternatives. Forced-to-build-anyway is only 12.5%.
+# REQUIREMENT 2 HOLDS BY CONSTRUCTION, not by luck: 497 forward sentinels vs the
+# parent's 498 (-0.2%). The arm re-CHOOSES among admissible sites; it never
+# refuses one. Median kill round 171 both. 0 crashes in 192 games, positive
+# control fired 8 tracebacks.
+# ⚠ DOSE IS SPARSE AND STRUCTURALLY CAPPED: 3.4% of builds redirect, and
+# 92.7% of games are byte-identical, so the whole effect lives in 14 of 192.
+# ⛔ THE CEILING IS PHYSICS, NOT TUNING: a builder sees r^2=20 and a sentinel
+# reaches r^2=32, so the coverage set is a LOWER BOUND — the arm cannot dodge a
+# sentinel that outranges the unit choosing the site. An inside-band read is
+# therefore NOT "coverage does not matter"; it is "we could only see part of it".
+# ⚠ ROTATION TERM MEASURED AND REJECTED: 3.4% -> 4.4% redirects for 8x the
+# coverage calls, and it RAISED forced-builds 12.5% -> 17.4%. Left in, flagged off.
+SENTSAFE2   bots/_v188sentsafe_g   bots/_v169launchlate160  5408 143000
