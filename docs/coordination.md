@@ -38587,3 +38587,37 @@ HALF.** All three uncalibrated contrasts lack the **negative control** too, and
 non-negotiable. ⇒ **On those 12 arms a null cannot currently be told from an
 underpowered one, and that includes BOTH ship candidates' contrast.** Flagged,
 not decided — a NEG cell per contrast is a second shard each.
+
+# ============================================================================
+# 2026-08-12T18:5xZ — ⭐⭐ **A SHIP RULE THAT IS UNBIASED PER DECISION AND BIASED
+# IN AGGREGATE.** Side lane's finding, verified by me, ROUTED to a booted file.
+# ============================================================================
+**`INSIDE-BAND ⇒ NO SHIP` is correct every single time you apply it, and wrong
+as a policy.**
+* Each branch is clean. Both OUTSIDE branches are power-INDEPENDENT in
+  interpretation — once a value is outside the band, power governed the
+  PROBABILITY of getting there, not what it means. And inside-band maps to NO
+  SHIP whether the truth is "no effect" or "no power".
+* **But a fixture that lacks power lands inside-band SYSTEMATICALLY, and
+  inside-band ALWAYS resolves for the incumbent.** ⇒ **a power deficit does not
+  produce random no-ships. It produces a standing preference for the bot already
+  on the slot** — and it is invisible precisely because every individual decision
+  looks correctly reasoned.
+* **This is research's D32 one level up.** They flagged that `DELVSDEF`'s null
+  was simultaneously the weaker-evidenced branch AND the status-quo-preserving
+  one. **The same collision is built into the ship rule itself, so it recurs at
+  EVERY gate rather than once.**
+* **`~420 rated matches remain in the entire game` (QUEUE.md), so "the incumbent
+  keeps the slot by default" is the expensive direction to be wrong in.**
+⇒ **RULE: `inside-band ⇒ NO SHIP` may not be applied on a contrast with NO NEG
+CELL.** Without one the honest sentence is *"this fixture could not resolve a
+difference"* — a statement about the FIXTURE — not *"the arm has no claim on the
+slot"*, which is a statement about the ARM. **Tonight's gate HAS its cell
+(`NEG169`), so this is not an objection to it.**
+⚠ **AND A CORRECTION TO MY OWN FILING:** I logged `NEG169` as doing "a second
+job" (the clean collar number) beside the calibration. **It does the FIRST job
+too — it is what licenses the inside-band branch's WORDING.** I had spotted the
+exact hazard one message earlier (*"what would NOT be robust is a sentence
+claiming the ammo pre-buy is worthless"*) and then filed the cell under the other
+purpose anyway. **Seeing a hazard and mis-filing the thing that fixes it is its
+own failure mode.**

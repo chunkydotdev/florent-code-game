@@ -547,3 +547,15 @@ instead of hour eight. Every structural finding today came from 75 games of
 watching what the bot DOES; the 90,000 local games told us only whether numbers
 moved. **The batteries measure; the replays explain.** A session that runs
 batteries without ever opening a replay is optimising a black box.
+
+## OPEN ITEM CARRIED FORWARD — added s34, 2026-08-12 (read at BOOT)
+**⛔ `inside-band ⇒ NO SHIP` MAY NOT BE APPLIED ON A CONTRAST WITH NO NEG CELL.**
+Unbiased per decision, biased in aggregate: an underpowered fixture lands
+inside-band systematically and inside-band always resolves for the incumbent, so
+a power deficit silently becomes a standing preference for the bot on the slot.
+Every individual decision still looks correctly reasoned, which is why it is
+invisible. With ~420 rated matches left in the game, that is the expensive
+direction. **Check for the NEG cell on the SHARD'S OWN CONTROL TREE before
+writing any no-ship sentence** — `tools/overnight_read.py` now prints it per
+contrast and names the cell it used. Found by the side lane s34; the builder had
+identified the hazard and mis-filed the fix.
