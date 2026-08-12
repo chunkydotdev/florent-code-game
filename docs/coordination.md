@@ -38125,3 +38125,52 @@ bot that sees r²=20. **The 35.6%-invisible figure stands.** And per side lane's
 engine read, the fix CANNOT be a wider argument — `get_nearby_*` RAISES on
 `dist_sq` above the caller's radius, which inside `_live_fwd_guns`' blanket
 `except Exception: return None` would go **permanently blind and silently**.
+
+# ============================================================================
+# 2026-08-12T17:4xZ (`date -u`) — **SIDE LANE: THE CELL I ASKED FOR CANNOT BE
+# READ BY THE READ-OUT.** Durable because the flag went by message and messages
+# die. **Verified UNACTED as of `8dc583c` (17:45:21Z): `corefill_work.txt:524`
+# still reads `SHIPGATENULL` and no shard dir exists — so this is still ahead
+# of the decision, which is the only reason it is worth anything.**
+# ============================================================================
+
+**`overnight_read.py:326-328`** selects the calibration cell as
+`sorted(k for k in data if k.startswith(prefix))`, then `_cal("NULL")`.
+**`"SHIPGATENULL".startswith("NULL")` is `False`.**
+⇒ **The cell is never selected. `NULL114` — the `_v146` contrast — keeps being
+read, which is the exact substitution the flag existed to remove.** The shard
+would run to completion, cost a full **5,408 games**, and be silently
+unconsulted: nothing errors, nothing is skipped, the number is simply never
+read. **AND A SECOND BITE ONE LINE UP: `hits[0]` takes the LEXICOGRAPHIC FIRST**,
+so even renamed `NULL169` the `NULL114` row still wins. **The tool selects *a*
+null, not *the matching* null — it has no concept of which CONTRAST a
+calibration cell belongs to.**
+
+**⛔ AND THE PART THAT IS MINE: MY FIX MOVED A KNOWN DEFECT FROM BACKGROUND TO
+LOAD-BEARING, AND I DID NOT PRICE THAT WHEN I PROPOSED IT.** The builder's own
+audit had already found that `_cal` reads `nul["p"]`/`nul["n"]` **with no
+`refusals` check**. Before my flag, calibration read a long-finished shard.
+**After it, the ship gate depends on a NEW null that can be refused** — and
+`summarise` returns a scored dict carrying `p` and `n` **alongside** populated
+`refusals` on seat imbalance (`:144`), heartbeat disagreement (`:112`) and
+duplicate rows (`:129`). *(The `n=0` path at `:134` IS caught, by
+`if nul and nul["n"]` — stated so nobody hunts a bug there.)* ⇒ **The gate could
+print `✓ consistent with 50% — the harness is unbiased, bands stand` off a cell
+the same tool printed NOT SCORED for three lines earlier.**
+**This is the repo's own standing rule turned on its author: COST THE FIX, NOT
+ONLY THE DEFECT. I costed the defect and shipped the fix's interaction
+unpriced.**
+
+**RECOMMENDED, and I would not take the cheap one:** *(a)* rename so it sorts
+first (`NULL069`) — **wins by lexicographic accident and the next null added
+breaks it silently**; *(b)* make `_cal` select the null **whose CONTROL TREE
+matches the shard being scored**, print which cell it used, and **print the
+count of matching candidates so a count ≠ 1 announces itself.** The worklist
+already carries the control path per row, so the join exists.
+**The test that proves either: put BOTH nulls in a fixture and assert which one
+the calibration block reports.** If the fixture cannot distinguish them, that is
+defect 4 again — a test validating a copy of the selection rather than the rule.
+
+**NOT blocking the shard.** The games are not wasted once the reader can see
+them. **Blocking only the reading of a GATE VERDICT off it until `_cal`
+demonstrably picks the right cell.**
