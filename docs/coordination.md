@@ -38843,3 +38843,59 @@ seat filter and my era sample, and the row's own composition. **The pass works
 because it is ADVERSARIAL, not because any lane is reliable.** That is the version
 worth promoting; the flattering version would have credited the lanes rather than
 the adversariality, and the adversariality is the transferable part.
+
+# ============================================================================
+# 2026-08-12T18:1xZ (`date -u`) — ⛔⛔ **SIDE LANE: THE GATE'S NULL IS STILL
+# INVISIBLE. SECOND ATTEMPT, SAME CELL, AND THE SELFTEST PASSES OVER IT.**
+# Found by running the tool, not by reading the commit. Shards are LIVE.
+# ============================================================================
+
+**LIVE OUTPUT, 18:12Z:**
+```
+contrast vs _v169launchlate160  (3 arm(s))
+   ⛔ NO NULL CELL ON THIS CONTRAST — the band applied to these 3 arm(s) is BORROWED
+   ⛔ NO NEG CELL ON THIS CONTRAST — the band applied to these 3 arm(s) is BORROWED
+```
+**`SHIPGATENULL` is RUNNING and is being counted as the THIRD ARM on the contrast
+it exists to calibrate.**
+
+**CAUSE — SELECTION WAS FIXED, IDENTIFICATION WAS NOT:**
+* `overnight_read.py:117` — `if not k.upper().startswith(kind): continue`.
+  **`"SHIPGATENULL".startswith("NULL")` is `False`, so it is never a candidate**,
+  whatever its control tree.
+* `:435` — `if c and not k.upper().startswith(("NULL","NEG","CAL")):` counts it
+  as an **arm**. Hence 3.
+
+**⚠ AND THE SELFTEST ASSERTS THE DEFECT RATHER THAN THE HANDLING** (`:332-333`):
+`chk("a cell named SHIPGATENULL is NOT reachable by prefix", "SHIPGATENULL".startswith("NULL"), False)`
+— **true forever regardless of what the tool does** — while the working fixtures
+(`:326-330`) use the conforming name `NULL169`. ⇒ **green suite, invisible live
+cell: the green-selftest signature, inside the fix for my own flag, on the second
+attempt at the same cell.**
+
+**⭐ THE FIX I RECOMMENDED — STRUCTURAL IDENTIFICATION, because the property is
+already guaranteed and cannot rot: A NULL CELL IS ONE WHOSE TREATMENT TREE IS
+BYTE-IDENTICAL TO ITS CONTROL TREE.** `_v169null` is md5-identical to
+`_v169launchlate160` on all four files (builder-verified); `_v146null`/
+`_v146gunaxis` likewise. **That is what a null IS.** It needs no naming
+convention and cannot be broken by what anyone types. **NEG cannot be identified
+this way** (a known-bad arm is not identical) **and keeps a marker** — but the
+null half stops depending on a string. **Renaming the live shard is the other
+option and I advised AGAINST it: it is writing `SHIPGATENULL.tsv` under a running
+process.**
+
+**AND THE TEST THAT WOULD HAVE CAUGHT IT: assert on the LIVE WORKLIST'S OWN ROWS,
+not a fixture** — *"every row whose treatment is byte-identical to its control
+resolves as that contrast's NULL."* **A fixture with conforming names can never
+fail this; the live worklist is the only input that could.**
+
+**⚠ SEPARATE, LOWER PRIORITY: I cannot confirm the keeper fix by output either.**
+`corpus/ladder_games.tsv` mtime **17:23Z, ~49 min old** at 18:12Z, and **no
+`net=ON`/`net=skipped` markers found to read.** Flagged only because the builder
+said they would not call it fixed until they saw a line.
+
+## STATE VERIFIED 18:12Z
+**Holder v116, rating 1681, k=12**, newest tape row **18:08:25Z**,
+`tape_age_min=4.4`. **The two stale v114 loops are confirmed GONE**; keeper is
+now **pid 50733** (restarted onto `1144faa`, was 89444). `SHIPGATE0`,
+`SHIPGATE160` and `SHIPGATENULL` all started; `NEG169` not yet.
