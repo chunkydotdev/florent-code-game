@@ -568,3 +568,32 @@ NEG169      bots/_v169noseal       bots/_v169launchlate160  5408 124000
 # instrument is DEAD. Analytic bound ~<=40 extra getters/turn, eco path only.
 # ⇒ IF THIS ARM IS EVER SHIPPED IT NEEDS A PLATFORM CHASSIS GATE FIRST.
 L4REPAIR    bots/_v177l4repair     bots/_v169launchlate160  5408 125000
+# --- GUNAX0: DOES THE PLANK WE SHIPPED v114 ON ACTUALLY DO ANYTHING? ---
+# ⛔ THE JUSTIFICATION IN THE SHIPPED TREE IS STALE. `raid.py:508-517` says "92%
+# of our FORWARD builder deaths are enemy gunners... we are dying almost entirely
+# to the AVOIDABLE one." Research reproduced 92.0% ALL-TIME to the decimal -- and
+# on the SHIPPED trees it is 64.8% any-gunner / 31.2% gunner-ONLY, against 68.4%
+# any-SENTINEL. In the bot on the ladder, SENTINELS COVER MORE FORWARD DEATHS
+# THAN GUNNERS DO.
+# ⭐ I VERIFIED THE ERA SHIFT INDEPENDENTLY, by a different measurement (enemy
+# TURRET MIX, not death coverage): enemy sentinel share of their turret builds
+# went 21.4% (2,540 older games) -> 48.8% (325 shipped games), and OUR forward
+# builder deaths fell 2.17/game -> 0.73/game. Two instruments, same direction.
+# ⚠ NOT A REFUTATION OF LOKI-25 -- suppressing gunner deaths mechanically RAISES
+# the sentinel share, so this is equally consistent with the plank WORKING. The
+# archive cannot attribute it: the adjacent contrast runs BACKWARDS (v112 0.43
+# gunner-covered fwd deaths/game vs v114 0.59) and v114 differs from v112 by more
+# than this flag.
+# ⇒ ONLY AN ABLATION ANSWERS IT. `_v183gunaxis0` is the LIVE HOLDER with ONE line
+# changed: LOKI_GUNAXIS_PENALTY 8 -> 0. Verified: diff -rq names one file, the
+# diff is one line. At 0 the gun_axis penalty term is dead and station scoring
+# reverts to pre-LOKI-25 behaviour.
+# PRE-DECLARED, before the shard runs:
+#   <48.67%  the flag is LOAD-BEARING -- removing it costs us, v114's promotion
+#            plank is doing work, and the gunner term stays.
+#   >51.33%  removing it HELPS -- we shipped a plank that hurts, and the whole
+#            gun_axis machinery should be re-pointed (QUEUE #30, sentinels).
+#   inside   the flag is worth <1.33pp either way ON THIS FIXTURE. NOT "it does
+#            nothing" -- our own control builds few forward gunners, so the local
+#            fixture UNDER-REPRESENTS the rays the penalty exists to dodge.
+GUNAX0      bots/_v183gunaxis0     bots/_v169launchlate160  5408 126000
