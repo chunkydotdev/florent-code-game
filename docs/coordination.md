@@ -37671,3 +37671,57 @@ inside-band = NO SHIP), and **the open question I would put to it is whether the
 two candidates are compared to EACH OTHER as well as to v116: ZEROAMMO 53.51%
 and LATE160AMMO 53.72% sit 0.21pp apart on a band that cannot resolve them, so
 "the better one" is not a quantity this fixture produces.**
+
+# ============================================================================
+# 2026-08-12T17:3xZ (`date -u`) — **SIDE LANE: QUEUE ADMISSION AUDIT.**
+# The boot config's named audit target. Two findings, one of them mine to own.
+# ============================================================================
+
+**INSTRUMENT FIRST: `tools/queue_check.py --selftest` PASSES 18 cells and they
+are DRIVEN BOTH WAYS** — including D31's fix (`GREP: TODO` / `N/A` rejected as a
+CLASS) and the `STATUS:` vocabulary. **Live parse: 16 unblocked, floor 3.** This
+is one of the better-built instruments in the repo and I am not flagging it.
+
+## ⚠ FINDING 1 — **`PROGRAMME.md:8` IS STALE AGAIN, NOW BY THREE HOLDERS, AND IT IS THE FIELD THE GREP GATE IS DENOMINATED IN**
+
+    INCUMBENT: bots/_v148ferryfirst      <- v112
+
+**The live holder is v116 = `bots/_v169launchlate160`** (`fcode status`, read by
+the builder at 17:24Z). v114, v115 (x3r0's) and v116 have shipped since. **The
+`GREP:` admission gate asks what was checked *in the incumbent* — so the one
+field that says which tree that is has been pointing at the wrong one.**
+**This is the SECOND time**: s31 repaired it after two ships, on Magnus's
+instruction. **Magnus-only field, so this is a flag and not a fix.**
+**The trees are genuinely apart: 81 changed source lines** — `raid.py` 52,
+`main.py` 21, `doctrine.py` 8, **`eco.py` 0**.
+
+## ⭐ FINDING 2 — **AND THE COUNT IS HONEST ANYWAY. I CHECKED THE ROWS AGAINST THE LIVE TREE AND THEY HOLD.**
+
+**Stated plainly because this lane's characteristic failure is publishing the
+alarming reading:** a stale pointer is not a false admission, and **no counted
+row is wrongly admitted on this axis.**
+* **#17** — *"`raid.py` has zero `border`/`edge` references"*: **0 in
+  `_v148ferryfirst`, 0 in `_v169launchlate160`.** **Positive control run in the
+  same command: `_v131loki14/raid.py` = 7.** The grep produces the other verdict
+  where it should, so it is a check and not a formality.
+* **#23** — `LOKI_FWD_GUN_CAP = 3`: **identical in both trees** (`doctrine.py:1219`).
+* `doctrine.py`'s whole delta is **additive** — `LOKI_GUNAXIS_PENALTY = 8`,
+  `LAUNCHER_MIN_RND = 160`, minus `LOKI27_FERRY_FIRST`.
+
+## ⛔ THE ONE ROW THE STALENESS ACTUALLY MOVES — **#10, AND IT MOVES IN THE BUILDER'S FAVOUR**
+
+**`get_attackable_tiles_from` — the predicate #10 (BLIND THEIR GUN WITH THEIR OWN
+BODY) would need — has ZERO call sites in `_v148ferryfirst` and TWO in the live
+tree** (`_v169launchlate160/raid.py:514,522`, LOKI-25's gun-axis avoidance).
+**#10 is still correctly NOT SHIPPED** — LOKI-25 *steps our stations off* an
+enemy gunner's ray; #10 would *put a body on* it. Different planks.
+**But the live tree's own comment at `:514` reads *"has ZERO call sites anywhere
+in this tree"* — true when written, and now FALSE IN THE FILE THAT CONTAINS
+IT.** ⇒ **Whoever builds #10 gets the enemy-gunner ray set computed for free and
+should not re-derive it.** That is the cheapest-null direction the gate exists to
+prevent, one notch milder: not *"we already ship it"* but *"the row says the
+component does not exist and it now does."*
+
+**ROUTED:** finding 1 → Magnus (field edit) · finding 2 → nobody, it is a
+clearance and is recorded so the next auditor does not re-run it · the #10 note →
+`QUEUE.md`'s owner (research), as a one-line amendment to that row.
