@@ -358,3 +358,24 @@ DELVSDEF    bots/_v171launch0ammo  bots/_v171late160ammo  5408 113000
 # FIELD", and those coincide only if the ordering is transitive across opponent
 # types. For a knob whose value depends on ENEMY TIMING, that is exactly what is
 # not guaranteed.
+# --- LOKI-44 MAGAZINE BURST: same titanium, spent when the gun exists ---
+# FOUND BY DECODING 25 LIVE GAMES OF v116, not by reading code:
+#   our opening is r0-4 builders · r5 harvester · r7 conveyor · r8 2nd harvester
+#   (opens the ammo gate) · r13 FIRST SENTINEL, FORWARD in 14/25 · r18 barriers ·
+#   r39 gunner in only 9/25 · r246 launcher in only 2/25 · splitters NEVER.
+# ⇒ THE FIRST THING THAT CAN FIRE IS A FORWARD SENTINEL AT r13, AND A SENTINEL
+#   IS 10 AMMO A SHOT. x3r0's r0 pre-buy of 17 is AMMO_FLOOR+1 -- the same 16 the
+#   harv>=2 gate gives us at median r8, moved earlier, plus one. It funds ONE
+#   VOLLEY and strands 7.
+# The incumbent ALREADY knows the right magazine: `if fwd_guns: ammo_target =
+# max(..., min(120, 40+20*fwd_guns))` = 60 for one forward gun. What it lacks is
+# FILL RATE: `amt = min(16, ...)` dribbles 16/turn, and fwd_guns is a STORE read
+# buffered one round -- sentinel lands r13, seen r14, magazine full ~r17. FOUR
+# ROUNDS of a forward sentinel in the enemy half holding one shot.
+# THE CHANGE: raise the per-turn cap ONLY when a forward gun exists. No earlier
+# spend, no larger target, and it cannot exceed what ammo_target already asks
+# for. Dose swept 32/64 because I do not know where the ti_floor trade bites.
+# CONTROL is _v171late160ammo -- v116 + the ammo pre-buy it reverted -- so this
+# measures the TIMING fix alone, on the chassis closest to what is live.
+BURST64     bots/_v172burst64      bots/_v171late160ammo  5408 114000
+BURST32     bots/_v172burst32      bots/_v171late160ammo  5408 115000
