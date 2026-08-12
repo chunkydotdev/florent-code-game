@@ -64,3 +64,15 @@ against Leviathan into "23.4% share". The whole early-kill ranking inherited it.
 **`CLAUDE.md` states the rule I broke verbatim: "NEVER `meta_join` for a
 win-rate denominator."** Redone on `ladder_games.tsv`; the target changed from
 Leviathan to The Bisons as a result.
+
+## ⛔ AMENDMENT, 12:21Z, BEFORE LEG CREATION — THE TARGET'S RATING WAS STALE
+The band listing above read **The Bisons 1762, +98, 5-0 pays +20.38**. A LIVE
+`fcode team search` reads **1682 / 845 matches** — **80 points lower.**
+`tools/target_value.py --band` is reading a cached leaderboard and I did not
+check it against the live value before selecting.
+**Recomputed at our ~1664: gap +18, E=0.474, a 5-0 pays ~+16.8 and a 0-5 costs
+~-15.2.** Still ADMISSIBLE (>= the 1650 floor) and still worth firing, so the
+target does NOT change — but the payoff is ~18% lower than the prereg claimed
+and the number on the record must be the live one.
+**Everything else in this prereg stands: the 46.4% control and the 44.8%
+early-kill rate come from `ladder_games.tsv` and are unaffected.**
