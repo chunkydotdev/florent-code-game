@@ -262,4 +262,22 @@ LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
 # ============================================================================
 LAUNCHLATE80  bots/_v169launchlate80  bots/_v146gunaxis   5408 106000
 LAUNCHLATE160 bots/_v169launchlate160 bots/_v146gunaxis   5408 107000
-LAUNCHRENT  bots/_v170launchrent bots/_v146gunaxis   5408 108000
+# ⛔⛔ LAUNCHRENT (LOKI-43) WITHDRAWN BEFORE FIRING — the trade is ~BREAK-EVEN,
+# and a break-even plank is not worth 5,408 games. Research flagged it; I
+# attacked the quantity they named and BOTH OF US WERE WRONG, IN OPPOSITE
+# DIRECTIONS, and the answer landed in the middle:
+#   their 'base cost after the first throw' = 169 Ti   -> mine measures 260 Ti
+#         (so the SAVING is 26 Ti, not 17 -- 54% BETTER for the plank)
+#   their rent term assumed n=5 cycles/game            -> I MEASURED 0.62
+#         (the self-destruct fires only on the EXILE branch and the rebuild
+#          needs the Core to lose sight of a launcher, so cycles are bounded
+#          by geometry, not by throw count -- exactly the side lane's caveat)
+#   => at the measured 0.62 cycles: rent 25-50 Ti against a 26 Ti saving,
+#      NET +1 to -24 Ti depending on scale. NOT their 14x shortfall -- but not
+#      a gain either, and ~24 Ti on a ~568 Ti build-out is well under what a
+#      +-1.33pp band can resolve.
+# THE MECHANISM IS REAL (0.62 launcher deaths/game vs the control's 0.00, so it
+# fires) AND THE MAGNITUDE IS ~ZERO. Same family as E-22.3, which died on the
+# same shape: mechanism confirmed, magnitude absent. The two now cite each other.
+# ⭐ AND THE REASON IT IS NEAR-ZERO IS THE REASON IT LOOKED GOOD: the rent cycle
+# fires rarely, which caps the cost -- and caps the benefit with it.
