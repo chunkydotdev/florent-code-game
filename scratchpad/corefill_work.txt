@@ -229,5 +229,37 @@ LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
 # this reads null — a clean answer, not a wasted arm.
 # ⚠ Not free: deferring also delays the ferry, and early exile is our cheapest
 # home defence. Dose SWEPT because I do not know where that trade turns over.
+# GUNADD and GUNSUB CANCELLED s33 to free two slots for FERRY0/BOTH0 — rows KEPT.
+# Not a verdict on either: GUNADD was at 6% and GUNSUB at 12%, both far from any
+# readable n. They are the two LOWEST-PRIOR arms on the board (GUNADD's site was
+# refuted by grep — no build_gunner exists in raid.py at all; GUNSUB failed to
+# hold count, which was its entire purpose) and Magnus is holding a DOCTRINE
+# decision — whether to drop the kidnap line — on FERRY0/BOTH0 specifically.
+# Cores spent on a 6%-complete low-prior arm while the decision arm sits queued
+# is the wrong allocation, and the queue order was set before that decision existed.
+# ============================================================================
+# ⭐⭐ THE HEADROOM ARMS. The 2x2 prices the launcher at ~7.0pp TO OWN (BOTH0
+# 45.79% vs LAUNCH0 52.77%, identical mechanism, differing ONLY in whether it
+# is built and paid for) against mechanisms returning ~4.2pp. Deleting it wins
+# +2.77pp -- but a launcher with FULL mechanism and ZERO ownership cost would
+# read ~57%, so there is ~4pp of headroom ABOVE LAUNCH0 that DELETION CANNOT
+# REACH. These three arms reach for it, two different ways:
+#   LAUNCHLATE  -- DEFER the purchase, so the +10% scale is levied on the tail
+#                  of the game instead of all of it.
+#   LAUNCHRENT  -- REFUND it. CLAUDE.md:23: destruction REMOVES the scale
+#                  contribution, so a launcher that throws and then self-
+#                  destructs costs 20 Ti ONCE instead of +10% on every
+#                  subsequent build of every type, forever.
+# DOSE VERIFIED BY OUTCOME before queueing: the rent arm records 0.62 launcher
+# DEATHS/game against the control's 0.00, so the self-destruct fires and
+# LOKI6_LAUNCHER_RELEASE rebuilds -- the rent cycle runs with no new machinery.
+# ⚠ Scale effect NOT measurable at n=8: the incumbent's own two sides read 397%
+# and 354% on identical code, 43pp apart. That is the documented per-game
+# reseeding, and it is why the battery decides this and not a local check.
+# ⚠ Rent is not free -- 20 Ti re-paid per throw, ferry lost between cycles, a
+# builder action per rebuild. Ferry measured at ~0 (FERRY0 49.84%), which is
+# what makes the trade plausibly worth taking.
+# ============================================================================
 LAUNCHLATE80  bots/_v169launchlate80  bots/_v146gunaxis   5408 106000
 LAUNCHLATE160 bots/_v169launchlate160 bots/_v146gunaxis   5408 107000
+LAUNCHRENT  bots/_v170launchrent bots/_v146gunaxis   5408 108000
