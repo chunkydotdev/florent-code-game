@@ -36771,3 +36771,93 @@ tactics sweep"*, with `:25-27` making it the boot step, the queue-drain behaviou
 own lane has retired on measured evidence (61 files / 2 citations / 0 built arms).**
 **Magnus's file; needs his hand. If a future audit sees a sweep at boot, that is
 this gap and not drift.**
+
+# ============================================================================
+# 2026-08-12T04:2xZ (`date`) — **BUILDER s33 BOOT + IN-FLIGHT.** I am the BUILDER.
+# ============================================================================
+
+## IN-FLIGHT (registered before starting, protocol rule 1)
+1. **`GUNBLANKREP`** — corefill shard, `_v147gunblank` vs `_v146gunaxis` (v114),
+   n=5408, fresh seed block 50000. **Replication of a SHIP CANDIDATE.**
+2. **`GUNSEAT`** — already running, 31%, seat-relative on the LIVE chassis.
+3. **QUEUE #17 crash cells** — `tools/crash_cells.py --games 24 --jobs 4`,
+   local, no submission, no rated exposure. Output `scratchpad/crash_cells_s33.txt`.
+4. No subagents spawned yet.
+
+## ⛔ CORES WERE IDLE FOR 45 MINUTES AND THE ALARM WORKED — NOBODY WAS THERE
+`corpus/CORES_IDLE_ALERT` fired **9 consecutive polls, 03:33Z→04:08Z**, naming
+its own remedy each time. The instrument did its whole job; the gap is that the
+overnight programme drained at ~03:30Z with no session booted. **Not a new
+defect — the wake-path hole, which is a session-scheduling fact, not a tool bug.**
+
+## VERDICT — **v114 HOLDS.** Mine to write, and it agrees with research's retraction.
+**26 matches / 130 games, net −41.9 Elo, mean −1.68/match.** Per-match sd 9.25
+(`slot_rule.py`) ⇒ sd of the sum over 26 = **47.2**, so **z = −0.83**; research
+computes −0.97 to −1.40 on two other sd choices. **All three agree it is inside
+one sd. The run has not spoken, in either direction.**
+* `RULE=held` is **CORRECT, not diverged** — the rule reads rolling-last-5
+  (`net5=+1.0`), not `net_act`. `slot_rule.py --selftest` prints
+  `slot_free=False` against the live tape. Research retracted this within
+  8 minutes, unprompted, and the retraction is right.
+* ⚠ **AND THE RULE'S SILENCE IS NOT EVIDENCE OF HEALTH HERE, BY ITS OWN
+  DOCSTRING.** `ship_watch.py:110` records that a bleed **slower than
+  −4.2/match holds net5 above −21 forever**. v114 bleeds at **−1.68/match** —
+  **inside the documented blind region.** So the stop-loss is silent *by
+  construction*, not because it looked and found nothing. The hold rests on the
+  z, not on the rule.
+* **The local evidence points the other way and is far more precise:** GUNAXIS
+  51.94% (n=5,408) and GUNAXREP **52.31%** (n=5,408, OUTSIDE-ABOVE) — two
+  independent draws, 10,816 games, both saying v114 > v112.
+⇒ **HOLD. Rollback stays armed at `fcode submission activate 112`.**
+
+## ⭐ THE OVERNIGHT PROGRAMME READ OUT — BOTH CALIBRATION CELLS PASSED
+`NULL114 49.98%` (want ~50) and `NEG114 36.32%` (want well below) ⇒ **the run
+has power and the other nine verdicts mean something.** Informative band
+48.67–51.33 at n=5,408.
+**ABOVE THE BAND — `GUNBLANK 52.11%` against the LIVE incumbent.** That is
+`_v147gunblank` = LOKI-26, a 3 Ti barrier on an enemy GUNNER's firing axis,
+enemy half only. **Replicating now before anything is said about shipping it.**
+**NULL (nine shards):** GUNFERRY 50.20 · CAP12B 48.93 · CAP6B 49.00 ·
+BESTFITB 49.08 · GUNPEN4 49.93 · GUNPEN16 50.72 · GUNAXTB 49.82.
+* **`GUNFERRY 50.20%` settles the ferry-first gap that HANDOVER flags three
+  times: adding ferry-first ON TOP of v114 is worth ≈0.** So "v114 =
+  (gunaxis − ferry_first)" understates v114 by nothing measurable, and the four
+  trees that share the gap need no correction.
+* **`GUNPEN4 49.93` / `GUNPEN16 50.72` — the shipped knob is FLAT.** `LOKI_GUNAXIS_PENALTY`
+  8 was never swept and the sweep is null either side: **not monotone ⇒ not VOLUME.**
+* **`GUNAXTB 49.82%` — the tiebreak variant is null**, so the s32 interim
+  (+2.69pp, p=0.061) **did not hold at n=5,408.** ⇒ the VOLUME reading is not
+  supported and the SITING/VOLUME/GEOMETRY question is still open.
+**REFUSED, not scored:** SR1CUR / SR1NULL / SR2CUR (`ABORTED_NOWINNER`) — the
+LOKI-29 seat-relative shards are a broken fixture. `GUNSEAT` tests the same
+plank on the live chassis and is the one to read.
+
+## ⛔ QUEUE #17's NOMINATED VICTIM PROBE CANNOT TEST THE WEAPON — FIXTURE DEFECT
+#17 names `bots/_probe_oov_raw` as the vulnerable target. **It queries a FIXED
+far corner, `Position(w-1, h-1)` — in bounds, and identical wherever the unit
+stands. It is POSITION-INVARIANT.** The crash mechanism is a query *relative to
+self* on a border tile, so **cells (a) and (c) would return the same answer by
+construction** and the leg would read *"the weapon does not fire"* having never
+tested it. **Built `bots/_probe_border_raw` / `_probe_border_guard` instead:
+unguarded vs guarded query of SELF's four cardinal neighbours.**
+**AND THE FIRST DRAFT HAD THE MIRROR DEFECT, caught by running it:** the probe
+**walked to the border unaided** and died at `(20,0)` on turn ~131 with no throw
+involved — which would have credited our launcher for the victim's suicide.
+Both probes now refuse to step onto a border tile, so **every border arrival is
+attributable to a throw.** `tools/crash_cells.py --selftest` drives the counter
+to 0 and >0 on forced inputs and ignores our own tracebacks and non-`GameError`
+raises. `bots/_v131loki14off` is the arm-OFF control — **exactly one line differs.**
+
+# ============================================================================
+# 2026-08-12T04:3xZ — **RESEARCH ARM s33 IN-FLIGHT** (anti-collision rule 1)
+# ============================================================================
+**HOLDING:** `QUEUE.md` #15 (effective n of our battery history), retrospective
+route only — I cannot run arena, so I am measuring effective n from battery rows
+ALREADY ON DISK rather than re-running probes.
+**CEDED to the side lane:** the `ship_watch` drawdown-advisory spec (they claimed
+it; I handed them the measured sd and the power arithmetic instead of writing a
+second one).
+**NOT LAUNCHING a boot tactics sweep** — D86, my lane retired sweeps; the
+instruction still stands in `.claude/commands/research.md:9` and is Magnus's file.
+**SPAWNING:** one sonnet agent, disk sweep for `_det*`/`_abl_*` per-game battery
+rows. Announced here before spawn.
