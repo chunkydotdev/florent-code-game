@@ -39642,3 +39642,45 @@ the bot we run, independent of any sizing, and it is what makes `#30` worth
 building. **The `#31a` "build first" reversal stands on the same footing —
 31.2% gunner-only vs 34.9% sentinel-only is like-for-like on the shipped tree, and
 the rate collapse hits both rows equally.**
+
+# ============================================================================
+# 2026-08-12T19:2xZ — **GUNAX0: FILTER RECONCILIATION + TWO AMENDMENTS.**
+# ============================================================================
+## 1. THE TWO FORWARD-DEATH RATES ARE DIFFERENT CUTS, AND MINE IS NAMED HERE
+Side lane flagged that research reports **3.03 -> 0.93/game** and I reported
+**2.17 -> 0.73/game** for the same trees. **Both are right; they are different
+populations, and neither of us had stated the filter.**
+* **MINE:** `FORWARD = d2_enemy < d2_own` — the **midline test**, which is
+  `#23`'s VERIFIED definition (100% clean on 40,000 rows). Population: our
+  `builder_bot` DEATH events, `join.tsv`-mapped, era-split on `ourver`.
+* **THEIRS:** `d2_enemy <= 60` — an **absolute band** around the enemy core.
+⇒ **A midline test and an absolute band are not approximations of each other:**
+on a large map a death can be well inside `d2_enemy <= 60` and still be on OUR
+half. **The ~30% endpoint gap is the definition, not an error in either cut.**
+⭐ **AND THE CONCLUSION IS ROBUST TO WHICH PAIR IS USED**, which is why this is a
+naming issue and not a re-derivation: `#30`'s sizing correction comes out
+**1.40x** on research's pair and **1.55x** on mine — **~1.4-1.6x either way, not
+the 4.6x the raw share ratio suggests.**
+⇒ **STANDING: a forward/home statistic states its filter inline.** We now have
+two in circulation; `#23`'s midline definition is the verified one and should be
+the default unless a band is argued for.
+
+## 2. ⭐ THE ENEMY-TURRET-MIX CHANNEL DECOUPLES `#30` FROM THE ABLATION
+My `sentinel share 21.4% -> 48.8%` is a fact about **WHAT OPPONENTS BUILD**, with
+our own behaviour nowhere in it. ⇒ **our sentinel exposure rose because THE FIELD
+SHIFTED, not necessarily because LOKI-25 suppressed the gunner half.**
+⇒ **`#30`'s premise — sentinels are now the dominant forward threat — HOLDS
+WHICHEVER WAY GUNAX0 READS.** The ablation answers *"is LOKI-25 doing anything?"*;
+it does **not** gate `#30`. **Two questions, tangled in one thread, buildable in
+parallel.** (Side lane's separation; I had them coupled.)
+
+## 3. ⛔ AMENDMENT TO GUNAX0's PRE-DECLARED READ — THE BAR CUTS BOTH WAYS
+The read as written treats a faster kill as good and forward deaths as
+incidental. **On a defence-adjacent ablation that is wrong.** Amended, before the
+shard runs:
+* **If removing the penalty makes the KILL LAND SOONER while FORWARD DEATHS
+  RISE, that is a plank to RECONSIDER, not a null** — LOKI-25 may be buying
+  survival at the cost of tempo, which is precisely the trade
+  `DEFENCE_ADMISSION_BAR: kill_round_non_regression` exists to price.
+* ⇒ **the kill-round column is read BESIDE the forward-death column, never
+  after it.** A shard that reports one without the other cannot resolve this.
