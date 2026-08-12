@@ -79,28 +79,59 @@ def analyse(rows):
         modal_shares.append(Counter(outcomes).most_common(1)[0][1] / len(outcomes))
 
     n = len(rows)
+    sizes = [len(v) for v in cells.values()]
+    k = (sum(sizes) / len(sizes)) if sizes else 0.0        # seeds per cell
+    mean_distinct = (eff / len(cells)) if cells else 0.0
     return {
         "rows": n,
         "cells": len(cells),
+        "cell_key": CELL_KEYS,
+        "seeds_per_cell": k,
+        "mean_distinct": mean_distinct,
         "eff_n": eff,
         "ratio": (n / eff) if eff else float("nan"),
         "degenerate_cells": degenerate,
         "max_modal_share": max(modal_shares) if modal_shares else float("nan"),
         "mean_modal_share": (sum(modal_shares) / len(modal_shares)) if modal_shares else float("nan"),
+        "at_ceiling": bool(k >= 2 and mean_distinct >= CEILING_FRAC * k),
     }
 
 
+# ⛔ CEILING. Distinct-outcomes-per-cell is CENSORED ABOVE AT k, the seed budget:
+# a cell drawn 3 times can report at most 3 distinct games however many the bots
+# could actually produce. When mean distinct/cell sits at the ceiling the statistic
+# is measuring THE BUDGET, NOT THE OUTCOME SPACE, and it must not be quoted as an
+# overstatement factor. Measured on `NULL114.tsv` (NOISE_ON=True, 16 cells x 338
+# seeds), censoring the SAME shard to smaller k:
+#     k=2 -> 2.00   k=3 -> 3.00   k=5 -> 5.00   k=10 -> 10.00   (all exactly k)
+#     k=50 -> 46.44   k=338 -> 238.44   (truth: 1.4x overstatement)
+# So a k=3 read of that shard "predicts" a 112.7x overstatement where the real
+# figure is 1.4x. Raised by the side lane against this file's own first output,
+# which projected a 30x hazard from k=3 data. The projection was withdrawn.
+CEILING_FRAC = 0.98
+
+
 def verdict(st):
-    """DEGENERATE / SUSPECT / OK -- driven by degeneracy and modal share, NOT by ratio."""
+    """DEGENERATE / CEILING / SUSPECT / OK.
+
+    CEILING outranks OK because an unpinned-looking OK at low k is the dangerous
+    reading: it says "these games are all distinct" when it can only ever have
+    said that. DEGENERATE still outranks CEILING -- a cell that returns 1 distinct
+    outcome out of k is BELOW the ceiling and is therefore real information.
+    """
     if st["degenerate_cells"]:
         return "DEGENERATE"
+    if st.get("at_ceiling"):
+        return "CEILING"
     if st["max_modal_share"] >= MODAL_SHARE_WARN:
         return "SUSPECT"
     return "OK"
 
 
 def report(paths):
-    hdr = f"{'shard':<14}{'rows':>7}{'cells':>7}{'eff_n':>8}{'ratio':>7}{'modal':>7}{'degen':>7}  verdict"
+    hdr = (f"{'shard':<14}{'rows':>7}{'cells':>7}{'k/cell':>8}{'dist/cell':>10}"
+           f"{'eff_n':>8}{'ratio':>7}{'modal':>7}{'degen':>7}  verdict")
+    print(f"cell key = {CELL_KEYS}   fingerprint = {OUTCOME_KEYS}")
     print(hdr)
     print("-" * len(hdr))
     worst = "OK"
@@ -114,9 +145,15 @@ def report(paths):
         if v == "DEGENERATE" or (v == "SUSPECT" and worst == "OK"):
             worst = v
         name = p.split("/")[-1].replace(".tsv", "")
-        print(f"{name:<14}{st['rows']:>7}{st['cells']:>7}{st['eff_n']:>8}"
+        print(f"{name:<14}{st['rows']:>7}{st['cells']:>7}{st['seeds_per_cell']:>8.0f}"
+              f"{st['mean_distinct']:>10.2f}{st['eff_n']:>8}"
               f"{st['ratio']:>6.1f}x{st['max_modal_share']:>7.2f}"
               f"{len(st['degenerate_cells']):>7}  {v}")
+        if v == "CEILING":
+            print(f"    ⛔ AT CEILING: mean distinct/cell {st['mean_distinct']:.2f} of a "
+                  f"{st['seeds_per_cell']:.0f}-seed budget. This is measuring THE BUDGET,\n"
+                  f"       not the outcome space. `ratio` here is NOT quotable as an "
+                  f"overstatement factor.")
         for cell, k in st["degenerate_cells"][:5]:
             print(f"    ⛔ DEGENERATE CELL {cell}: {k} rows, 1 distinct outcome "
                   f"-> this cell's effective n is 1, not {k}")
@@ -169,11 +206,42 @@ def selftest() -> int:
                 h = prng(i)
                 indep.append(row(m, sd, seat, "AB"[h & 1], 120 + (h >> 8) % 400))
     st2 = analyse(indep)
-    check("independent fixture is NOT flagged", verdict(st2) == "OK",
+    check("independent fixture is NOT flagged DEGENERATE", verdict(st2) != "DEGENERATE",
           f"verdict={verdict(st2)} modal={st2['max_modal_share']:.2f}")
     check("independent fixture: no degenerate cells", not st2["degenerate_cells"])
     check("independent fixture: eff_n is near the row count, not the cell count",
           st2["eff_n"] > 0.7 * st2["rows"], f"eff_n={st2['eff_n']} of {st2['rows']} rows")
+
+    # --- ⛔ THE CEILING CELL. This is the one that would have caught the withdrawn
+    # 30x projection, and the cell it REPLACES is the one that certified it: the
+    # assertion above ("eff_n is near the row count") reads TRUE at the ceiling by
+    # construction, so at low k the tool's own PASS condition was the bug.
+    # Same KNOWN-INDEPENDENT games as `indep`, censored to 3 seeds per cell.
+    by_cell = defaultdict(list)
+    for r in indep:
+        by_cell[(r["map"], r["seat"])].append(r)
+    censored = [r for v in by_cell.values() for r in v[:3]]
+    st4 = analyse(censored)
+    check("censored-to-k=3 independent fixture reads CEILING, not OK",
+          verdict(st4) == "CEILING",
+          f"verdict={verdict(st4)} mean_distinct={st4['mean_distinct']:.2f} k={st4['seeds_per_cell']:.0f}")
+    check("censored fixture: mean distinct/cell is pinned AT the seed budget",
+          abs(st4["mean_distinct"] - 3.0) < 1e-9,
+          f"mean_distinct={st4['mean_distinct']:.2f} of k=3")
+    # NOTE, and it is the honest reading rather than a weakened assertion: the
+    # UNCENSORED independent fixture ALSO reads CEILING (50.00 of k=50), because
+    # its outcome space is wide enough that 50 draws never collide. That is the
+    # correct verdict, and it is the point -- CEILING is the DEFAULT state of any
+    # well-separated battery, and an overstatement factor is only quotable once
+    # collisions appear. The "not at ceiling" case is therefore the COLLISION
+    # fixture, asserted below, not this one. A first draft asserted the opposite
+    # here and FAILED, which is how the distinction got found.
+    # A degenerate cell is BELOW ceiling and must still win -- it is real information.
+    # degen[:3] is one cell (antler/A) drawn 3 times, all identical: k=3, distinct=1.
+    st5 = analyse(degen[:3])
+    check("degeneracy still outranks CEILING at low k",
+          verdict(st5) == "DEGENERATE",
+          f"verdict={verdict(st5)} mean_distinct={st5['mean_distinct']:.2f} k={st5['seeds_per_cell']:.0f}")
 
     # --- THE COLLISION CELL. This is the one that would have caught the wrong headline.
     # Independent games over a NARROW turns range collide by birthday alone. The ratio
@@ -191,6 +259,13 @@ def selftest() -> int:
           st3["ratio"] > 2.0, f"ratio={st3['ratio']:.1f}x on INDEPENDENT games")
     check("collision fixture: verdict still NOT degenerate (ratio is not redundancy)",
           not st3["degenerate_cells"], f"verdict={verdict(st3)}")
+    # THE OTHER HALF OF THE CEILING PAIR: real collisions pull mean distinct/cell
+    # off the ceiling, so this fixture -- and only this one -- is quotable as a
+    # ratio. Without this cell, CEILING could be a constant that fires on everything.
+    check("collision fixture is NOT at ceiling (so its ratio IS quotable)",
+          verdict(st3) != "CEILING",
+          f"verdict={verdict(st3)} mean_distinct={st3['mean_distinct']:.2f} "
+          f"of k={st3['seeds_per_cell']:.0f}")
 
     # --- Guard: a 1-row cell must not read as degenerate by arithmetic.
     single = [row("antler", 1, "A", "A", 300)]

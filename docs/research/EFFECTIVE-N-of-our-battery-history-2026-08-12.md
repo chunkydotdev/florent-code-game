@@ -18,6 +18,13 @@ identical outcome (*the seed changed nothing*):
 | **`NOISE_ON = False`** | `dodge` 88/128 · `dodge2` 88/128 · `loki1base` 92/128 · `loki2b` 97/128 | **68.8% – 75.8%** |
 | **`NOISE_ON = False`** | `collar`, 2 seeds/cell | **80.6%** |
 
+**⭐ THIS CONTRAST SURVIVES THE AMENDMENT BELOW, AND MATCHING `seeds_per_cell` IS
+WHY.** At k=3 the `NOISE_ON=True` arm sits **at the 3.00 ceiling** and the
+`NOISE_ON=False` arm at **1.37** — below ceiling, therefore real information. The
+control being ceiling-pinned means the separation printed here is a **LOWER BOUND**:
+it can only be wider, never narrower. The decision to match seeds-per-cell across
+arms was load-bearing rather than tidy, which is only visible in hindsight.
+
 **A four-order-of-magnitude separation, and the fingerprint used on the
 `NOISE_ON=True` arm is COARSER** (the overnight schema has no `collected` column,
 so `(winner, cond, turns)` is all there is) — **which biases toward finding
@@ -51,12 +58,57 @@ it, so:
 > **⭐ THE DAMAGE IS `seeds_per_cell`, NOT `rows`. Our historical `NOISE_ON=False`
 > legs were protected from a catastrophic overstatement only by being SMALL.**
 
-**And that is the live hazard, because our batteries got big.** Tonight's shards run
-**338 seeds per cell**. A `NOISE_ON=False` battery at that scale would carry roughly
-**1.4 distinct games per cell — an effective n near 180 out of 5,408, a ~30×
-overstatement** — and every denominator we print would say 5,408. **Tonight escaped
-this only because all 17 shards ran `NOISE_ON = True`** (verified: `doctrine.py:474`
-in `_v146gunaxis`, `_v146null`, `_v154gunferry`, `_v140noseal`, `_v145bestfit`).
+> ## ⛔ AMENDED SAME DAY — THE 338-SEED PROJECTION IS **WITHDRAWN**. IT WAS WRONG TWICE.
+>
+> **This paragraph originally read: *"A `NOISE_ON=False` battery at that scale would
+> carry roughly 1.4 distinct games per cell — an effective n near 180 out of 5,408,
+> a ~30× overstatement."* Both halves of that sentence are defective.** Flagged by
+> the side lane within ~20 minutes of the commit, ahead of the sizing decisions it
+> was heading for; I verified every claim against the primary before conceding.
+>
+> **DEFECT 1 — THE ARITHMETIC MIXED TWO POPULATIONS.** `180 ≈ 128 cells × 1.4`, but
+> **128 is the `_det` legs' cell count** (8 maps × 2 seats × 2 arms × 4 opponents),
+> while **5,408 is an overnight shard's row count, and that shard has 16 cells**
+> (`map`, `seat`; 338 seeds each) — verified both by direct count. I took the cell
+> count of one population and the row count of another. **Corrected within its own
+> logic the figure would be 16 × 1.37 ≈ 22, i.e. ~246×, so the error ran AGAINST my
+> own argument — the hazard I was warning about would be ~8× worse, not smaller.**
+>
+> **DEFECT 2 — AND THIS IS THE ONE THAT KILLS IT: THE ESTIMATOR IS CENSORED ABOVE AT
+> `k`, SO THE PROJECTION IS NOT IDENTIFIED.** Distinct-outcomes-per-cell cannot exceed
+> the seed budget: a cell drawn 3 times reports at most 3. Censoring the *same*
+> `NULL114` shard to smaller `k` shows the statistic returning **exactly `k`**:
+> ```
+> k=2 -> 2.00   k=3 -> 3.00   k=5 -> 5.00   k=10 -> 10.00      (all pinned AT ceiling)
+> k=50 -> 46.44   k=338 -> 238.44           (truth: 1.4x overstatement)
+> ```
+> **Apply my projection method to that checkable shard and it predicts 112.7× where
+> the real answer is 1.4×.** Since distinct-outcomes is non-decreasing in `k`, the
+> measured **1.37 distinct/cell at k=3 is a LOWER BOUND** and says nothing about
+> k=338. **The honest interval is effective n ∈ [22, 5408] — completely
+> unidentified.**
+>
+> **WHAT WOULD SETTLE IT:** one shard — the same battery config with
+> `NOISE_ON=False` at 338 seeds/cell. Builder ask, cheap, and it would also settle
+> whether `det.py:135-142`'s *"the seed drives nothing that is still switched on"*
+> means literally 1.0 distinct/cell (⇒ ~338×) or something above it.
+>
+> **INSTRUMENT FIXED, and the cell that would have caught this is the cell that was
+> certifying it.** `effective_n.py` now prints `seeds_per_cell` and the cell key on
+> every line and returns a **`CEILING`** verdict when mean distinct/cell ≥ 0.98·k,
+> refusing to be quoted as an overstatement factor there. The old selftest asserted
+> *"eff_n is near the row count"* as its PASS condition for the independent fixture
+> — **which is the ceiling read, so the one cell that could have caught this was
+> instead certifying it.** New cells: a known-independent fixture censored to k=3
+> must read `CEILING`, not `OK`; degeneracy must still outrank `CEILING` (a cell
+> returning 1 of 3 is BELOW ceiling and is real information); and the collision
+> fixture must read NOT-at-ceiling, so `CEILING` cannot become a constant that
+> fires on everything.
+
+**The live hazard is therefore real in DIRECTION and UNQUANTIFIED in SIZE**, and
+tonight's shards did not run into it: all 17 ran `NOISE_ON = True` (verified at
+`doctrine.py:474` in `_v146gunaxis`, `_v146null`, `_v154gunferry`, `_v140noseal`,
+`_v145bestfit` — checked, not assumed).
 
 ---
 
