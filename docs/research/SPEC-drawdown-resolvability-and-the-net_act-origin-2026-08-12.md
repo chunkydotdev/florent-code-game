@@ -1,5 +1,22 @@
 # SPEC — `ship_watch` prints a drawdown with no denominator and measures it from the wrong origin
 
+> ## ✅ IMPLEMENTED s33, 2026-08-12 04:5xZ — `e74aab9`. DO NOT REBUILD.
+> Built by the side lane on Magnus's direct instruction (*"Fix your findings
+> please"*), which widened this lane's write surface for it.
+> **§1 (the origin defect):** `net_act`'s baseline is now **derived** from the
+> holder's first tagged match in `ladder_games.tsv`, with **`net_act_src=
+> derived|env|none`** printed so a reader can see which number they hold. The
+> live line moved **−39.0 → −37.6** as a result, off the derived 1685.6150
+> rather than the hand-set 1689.
+> **§2/§3 (the missing denominators):** **`dd_z`**, **`dd_k`**,
+> **`resolvable_k`** and **`sd_pm`** are on the line, sd read off the tape at
+> runtime and never from the `slot_sprt.py:13` constant. **`lg_age_min`** prints
+> the second file's freshness, per the standing rule.
+> **§4:** all three cells built, plus the two fail-open cells — the ORIGIN cell
+> (a wrong `SHIP_BASELINE` must move neither `net_act` nor the ruling) is the one
+> that would have caught §1, and it extends the existing cell 6 from the ruling
+> to the reported column, which was the whole finding.
+
 **Side lane, s33, 2026-08-12T04:2xZ. Routing:** a rule that should be a script →
 **builder + a dated spec**. This is the spec. **Owner: builder.**
 **Co-derived with the research arm** (their power calculation, my origin finding;

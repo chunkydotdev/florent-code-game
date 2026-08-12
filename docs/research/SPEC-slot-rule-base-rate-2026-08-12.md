@@ -1,5 +1,19 @@
 # SPEC — the slot rule fires on a NEUTRAL holder three-quarters of the time by k=27, and that base rate is written down nowhere
 
+> ## ✅ IMPLEMENTED s33, 2026-08-12 04:5xZ — `e74aab9`. DO NOT REBUILD.
+> Built by the side lane on Magnus's direct instruction (*"Fix your findings
+> please"*), which widened this lane's write surface for it.
+> **`tools/slot_denoms.py`** (pure functions, 25 selftest cells) +
+> **`tools/monitors/ship_watch.py`** (7 new cells). Live line now reads:
+> `… RULE=held … p_null=0.75 dd_z=-0.83 dd_k=28 resolvable_k=147 sd_pm=8.66
+> net_act_src=derived lg_age_min=39.6`.
+> **The rule is untouched** — no threshold moved, no arming point changed,
+> `slot_rule.py` not edited. `ladder_games.tsv` feeds the diagnostics only and
+> never the alarm; **an unreadable ladder degrades the columns to `NA` and the
+> rule STILL frees the slot** (driven in the selftest).
+> Calibration against the 40k bootstrap in §1: k=8 **14.1/14.1**, k=27
+> **73.7/74.6**, k=60 **97.0/97.0**, at **0.03 s per poll**.
+
 **Side lane, s33, 2026-08-12 ~04:4xZ. Owner: builder.**
 **Companion to `SPEC-drawdown-resolvability-and-the-net_act-origin-2026-08-12.md`
 — same family (a threshold printed without its denominator), different column.
