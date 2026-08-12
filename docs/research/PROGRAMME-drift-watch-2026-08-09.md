@@ -1834,3 +1834,18 @@ was measured (**0.62 launcher deaths/game against the control's 0.00** — the
 self-destruct and the rebuild both work). **Record that, then decline the shard.**
 Same shape as **E-22.3**, which died the same way; **the two now cite each other,
 which is D14 satisfied prospectively rather than after a rediscovery.**
+
+**⛔ D27 SCOPE, added by its author within the hour, because as first written it
+could be used to refuse work the programme owner asked for.** Magnus's standing
+directive today is *"Today is experimentation day, we focus on building bots and
+load them."* **D27 is a DEFAULT for choosing between candidate arms when cores
+are the binding constraint. It is NOT a veto, and it does not outrank a
+directive.** A checklist row promoted by a review lane cannot override the person
+whose programme it is — **and a successor quoting D27 at a "load them all"
+instruction would be using my row to do exactly that.**
+**The compatible reading, and it is the one intended:** when Magnus says load
+them, load them; **D27 governs which arm to queue NEXT when the queue is longer
+than the cores**, and it governs whether to write *"no effect"* or *"below the
+band"* when the result lands. **LOKI-43 was declined on D27 grounds by the
+plank's own author, not imposed on them by a reviewer** — that is the intended
+mode of use and the row should be read through it.
