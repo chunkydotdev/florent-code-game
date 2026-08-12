@@ -122,6 +122,9 @@ FLOOR = 3
 # token it means BLOCKED (#12, waiting on a control) and in prose it has meant
 # DEPRIORITISED-but-startable (#20). Prefer STATUS: BLOCKED for the first sense;
 # the same word must not read the same and behave differently.
+# A `grep:` whose VALUE is a promise rather than a result does not satisfy the gate.
+UNMET_GREP_RE = re.compile(r"grep:\s*\**\s*(todo|tbd|not run|not yet|pending|n/a)", re.I)
+
 STATUS_RE = re.compile(
     r"status:\s*(blocked|done|answered|note|demoted|withdrawn|refuted"
     r"|superseded|waiting|shipped)",
@@ -225,6 +228,18 @@ def unblocked(rows):
             continue
         if "grep:" not in low:
             continue
+        # ⛔ THE GATE TESTED FOR THE STRING, NOT FOR A RESULT. `GREP: TODO BEFORE
+        # BUILD` passed it -- a row satisfying the gate by writing the gate's name
+        # while its own text says the gate is UNMET. That is the literal form of the
+        # Goodhart this gate exists to stop, and it is the same substring-for-state
+        # failure as the old `blocked` matcher, one column over. The row that found
+        # it (#26) was transparently honest; the COUNTER was wrong, not the author.
+        # Class fixed rather than the instance: the next author writing `GREP: TODO`
+        # would otherwise be counted again, and the risk is not a floor reading 17 --
+        # it is a builder pulling the top item and building a plank whose incumbent
+        # check was never run, which is the cheapest null this repo produces.
+        if UNMET_GREP_RE.search(low):
+            continue
         live.append((section, row))
     return live
 
@@ -324,6 +339,13 @@ def selftest() -> int:
         ("a heavily-audited row naming every legacy marker in prose still counts",
          "## NEXT UP\n| 9 | **thing** | GREP: PASS `eco.py:pave_blocked_by_ore` | was "
          "refuted, then withdrawn as a ranking claim, was gated, blocker cleared |\n", 1),
+        # THE TWO-WAY CELL FOR THE UNMET GREP. Same row text, one word different.
+        ("a row whose GREP is a RESULT counts",
+         "## NEXT UP\n| 26 | **thing** | GREP: PASS — checked eco.py, not present | metric |\n", 1),
+        ("the SAME row with GREP: TODO does NOT count",
+         "## NEXT UP\n| 26 | **thing** | GREP: TODO — must be run before build | metric |\n", 0),
+        ("GREP: N/A on a plank row does NOT count",
+         "## NEXT UP\n| 26 | **thing** | GREP: N/A | metric |\n", 0),
         ("a DEAD-section row is still excluded without the text marker",
          "## DEAD\n| 1 | **thing** | GREP: PASS | metric |\n", 0),
     ]
