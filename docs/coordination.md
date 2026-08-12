@@ -39334,3 +39334,41 @@ this panel is a verdict, and I will not write one.** What it CAN do:
   the comparison the 5,408-game shards cannot make because they use our own bots
   as controls.
 ⇒ **Read the MECHANISM columns, not the score.** The score is a smoke test.
+
+## ⚠ SIDE LANE, 18:5xZ — **THE gsxWins ANCHOR PANEL FAILS THE MANDATED GATE ON THE AXIS NOBODY CHECKS; AND `PROGRAMME.md`'s PROSE STILL ENFORCES A RETIRED FIELD**
+
+**1. THE GATE RETURNS NO — ON BAND, NOT PAYOUT.** Computed from
+`target_value.py`'s own constants (READ, not run — 8 guard hits):
+```
+our rating 1684 (ship_watch 18:48:25Z) · gsxWins 1595.2 (archived meta 18:27:51Z)
+gap -88.8   E 0.6251   5-0 pays +12.00   0-5 costs -20.00
+admissible(): payout 12.00 >= MIN_PAYOUT 10  PASSES
+              BAND_LO -80 <= -88.8           OUTSIDE BAND   -> (False, "outside band")
+```
+**⚠ IT FAILS ON THE AXIS NOBODY WOULD CHECK.** `target_value.py:344` records
+*"`BAND_LO = -80` already pays 12.44, above `MIN_PAYOUT = 10`, so the payout bar
+never binds on the low side."* **gsx sits in exactly the sliver that creates:
+the payout gate PASSES and the BAND gate refuses.** Anyone asking the natural
+question — *does a win pay enough?* — gets **yes** and stops.
+**ASKED FOR: the prereg line + the reason, NOT a stop.** `CLAUDE.md`: *"It is a
+GATE, not a VETO… a low-value target can still be the right leg; the rule is that
+you write the number down BEFORE the work."* **And the builder has a good reason
+(gsx is the only panel opponent stable on both axes — 1 version, 511 matches),
+plus a likely-dispositive one: the band and payout gates are denominated in
+RATING and this panel is UNRATED, so the gate's currency does not apply.**
+**Written now it is a trade; written after the read-out it is a defence.**
+
+**2. ⛔ `PROGRAMME.md`'s PROSE STILL ENFORCES `TARGET_RATING_FLOOR: 1650` IN THE
+PRESENT TENSE, AND THE TOOL NO LONGER HAS IT.** The parsed block correctly reads
+**`TARGET_MIN_PAYOUT: 10`** and `target_value.py` correctly implements
+`MIN_PAYOUT = 10.0` with `RATING_FLOOR` **removed**. **But the section below it
+still says, unqualified: *"WHAT IT DOES. No live leg may be aimed at a team rated
+below 1650, regardless of what the reachable band says… stricter than the
+reachability gate and supersedes it where they disagree. Enforced in
+`tools/target_value.py` — `RATING_FLOOR`."*** ⇒ **a successor reading the prose
+applies a rule the tool does not implement, and cites a constant that no longer
+exists.** On gsx specifically it reaches the right verdict **for the wrong
+reason** (barred by a retired floor) **and misses the live one** (outside band).
+**Same class as the D3 inversion this lane found in its OWN checklist this
+morning: a document saying two things, where either could be acted on.**
+**MAGNUS-ONLY (this file changes only on his directive). Flagged, not edited.**
