@@ -1514,7 +1514,7 @@ LOKI8_RAIDERS_STAY_OUT = True    # raiders exempt from the home heal + melee rec
 # Same units as LOKI_EXILE_PENALTY, which is the launcher-adjacency penalty.
 LOKI_GUNAXIS_PENALTY = 8
 
-# LOKI-31 NON-STRIKE SURCHARGE -- see eco.py `_eco_spendable`.
+# LOKI-34 NON-STRIKE SURCHARGE -- see eco.py `_eco_spendable`.
 # ⛔ THE KNOB IS CHOSEN AND WRITTEN DOWN BEFORE THE LEG, DELIBERATELY.  A knob
 # picked after seeing the kill round is not a gate, it is a fit.  The source's
 # 250 is on THEIR cost scale, not ours: our conveyor is 3 Ti, harvester 20,

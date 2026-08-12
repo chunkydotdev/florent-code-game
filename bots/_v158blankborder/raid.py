@@ -704,7 +704,7 @@ class RaidMixin:
                     continue
             except Exception:
                 continue
-            # LOKI-30: BORDER-FIRST EXILE.  Same throw, same cost, same target
+            # LOKI-33: BORDER-FIRST EXILE.  Same throw, same cost, same target
             # set -- only the ORDER changes.  An enemy builder standing on a
             # map-border tile has off-map neighbours, and a bot that queries a
             # neighbour of its own position without a guard raises, the raise

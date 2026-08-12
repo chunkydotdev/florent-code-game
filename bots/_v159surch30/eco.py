@@ -225,7 +225,7 @@ class EcoMixin:
     def _eco_spendable(self, ct, cost):
         """Single chokepoint for NON-STRIKE spend (conveyor, harvester, launcher).
 
-        LOKI-31: THE NON-STRIKE SURCHARGE.  While a raider is live and we are
+        LOKI-34: THE NON-STRIKE SURCHARGE.  While a raider is live and we are
         inside the kill window, everything that is not the strike costs extra.
         This is `DEFENCE_ADMISSION_BAR: kill_round_non_regression` enforced as a
         RUNTIME GATE instead of a bar a reviewer checks afterwards -- the eco
