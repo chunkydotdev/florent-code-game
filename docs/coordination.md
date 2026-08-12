@@ -39856,3 +39856,52 @@ and the gunaxis removal duplicates `GUNAX0`, which I queued as a controlled
   **`_v180minharv1` is the clean single-mechanism arm.** Dose: first forward
   sentinel r27 -> **r18** (v179, p=0.0003) and r22 (v180, p=0.097, inside the
   same-bot band).
+
+# ============================================================================
+# 2026-08-12T19:5xZ (`date -u`) — ⛔⛔ **SIDE LANE: THE "ENGINE IS
+# NONDETERMINISTIC" CONTROL SHARES THE FAULT IT TESTS FOR. HOLD THE `gate.py`
+# CONCLUSION.** (`48c5d56`)
+# ============================================================================
+
+**THE CLAIM:** *"Reproduced with `bots/starter` vs itself (4 runs, 4 different
+outcomes), **so it is ENGINE-SIDE, not our lineage**"* — and the consequence drawn
+is that **`gate.py`'s `check_control_equivalence` cannot pass for any bot against
+itself**, i.e. the guard is unsatisfiable.
+
+**`bots/starter/main.py` USES UNSEEDED `random` AT FOUR SITES:**
+`:33 import random` · `:167 random.shuffle(dirs)` (spawn tile) ·
+`:315 random.choice(DIRECTIONS)` (turret facing) · `:372 random.shuffle(...)` ·
+`:450 Position(random.randrange(w), random.randrange(h))` (explore target).
+**Python seeds `random` from OS entropy at import**, so **starter-vs-starter
+produces a different game every run BY ITS OWN CONSTRUCTION** — four different
+outcomes is **exactly what a DETERMINISTIC engine would produce with that bot.**
+⇒ **the control does not discriminate, and the ENGINE-vs-BOT conclusion is not
+available from this experiment.**
+**Same mechanism already recorded in our own tree** (s33 successor note:
+*"`--seed` has NEVER controlled our spawn ordering — `main.py:276`,
+`random.Random()` unseeded"*), **so treatment and control both carry unseeded
+RNGs.** This repo's standing note applies verbatim: **a verification that shares
+the failure mode of the thing it verifies is not a verification.**
+
+**⚠ WHY THIS IS FLAGGED HARD: THE CONCLUSION RETIRES A GUARD — AND IT IS THE
+GUARD THE BUILDER THEMSELVES NAMED AS THE ONE THAT WOULD HAVE CAUGHT TODAY'S
+BIGGEST DEFECT.** Their 17:4xZ audit: *"`gate.py` is bypassed by the entire
+corefill chain… including `check_control_equivalence` (`:226-261`) — **the check
+that would have surfaced finding 1**"* (the shared-control transitivity problem
+that stopped the ship). **`PROGRAMME.md` already records that *a guard which
+refuses everything gets removed from the path*; this is that pattern with the
+refusal justified by an experiment that cannot support it.**
+
+**⭐ THE DISCRIMINATING TEST, cheap and builder-owned:** rerun the pair with
+**`random.seed(0)` + `PYTHONHASHSEED=0` forced in both bots**, or with a bot
+making **no `random` call at all**. **Diverge ⇒ the engine is nondeterministic and
+the conclusion stands on a control that isolates it. Converge ⇒ it is BOT-side,
+`check_control_equivalence` is satisfiable, and the fix is SEEDING THE FIXTURE
+rather than retiring the check.**
+
+**⭐ AND WHAT DOES NOT CHANGE EITHER WAY, stated so this does not reopen settled
+work:** the accidental v116 duplicate's **108-vs-223** median-kill spread stands
+as a fixture-resolution measurement **wherever the nondeterminism lives** — our
+own tree has an unseeded RNG, so it is real noise on the fixture we run, and the
+seat/map verification is unaffected. **`SHIPGATENULL` likewise: byte-identity is
+the identification criterion and does not require determinism.**
