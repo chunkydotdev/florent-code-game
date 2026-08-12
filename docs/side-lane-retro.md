@@ -494,3 +494,45 @@ on the error when it is retracted — **`KIND: judgement|estimator · HYPOTHESIS
 y/n`** — costs nothing and is the only version of this test that is not
 retrospective. **Until that exists, this table is suggestive and must not be
 cited as confirmation.**
+
+## ⚠ v1.3.2 — **TWO MORE INSTANCES, AND THE FIRST WHERE I CAN NAME THE STATE I WAS IN BEFORE THE DIRECTION**
+
+**v1.3.2 — 2026-08-12 (s34, mid-session). POINT bump. FIRINGS remain 3.**
+
+**Both published, both on `QUEUE #30`, both within twenty minutes, both corrected
+by peers — and both ran toward the row I was supporting.**
+
+| # | claim | kind | hypothesis? | direction | caught by |
+|---|---|---|---|---|---|
+| 7 | *"`SENTINEL` → nothing"* in `raid.py` | **judgement** | yes (the row) | **toward it** | research (`:366` gives `GUNNER`/`SENTINEL` `pr=3`) |
+| 8 | *"local self-play UNDERSTATES the plank"* | **judgement** | yes (the self-play-blindness rule) | **toward it** | builder (local 1.68 vs panel 0.48–0.84 ⇒ **OVERSTATES**) |
+
+**#7 IS A SCOPE ERROR PUBLISHED AS A PROPERTY OF THE TREE.** I grepped **one
+function** (`:500-527`), correctly found no sentinel branch, and wrote it as a
+claim about the file. **Second time today I generalised from WHERE I LOOKED to
+WHAT EXISTS** — the first was *"not established anywhere I can find"* about the
+API default, six hours earlier, **which should have been the warning.**
+
+**#8 IS THE UNIFIER FAULT, AND THE CIRCUMSTANCE IS THE FINDING.** I cited `#23`'s
+**35.9% vs 57–80%** — *share of ALL turret builds*, 5,618 games, the six TOP
+teams — to argue about *enemy forward SENTINELS per game* on a five-opponent
+panel. Different quantity, different population; `#21` already records our
+forward slot is **81% sentinel** while Pivot builds **10.77 gunners/game**.
+**⛔ AND I COMMITTED IT INSIDE THE MESSAGE FLAGGING THE BUILDER FOR A POOLED
+DENOMINATOR.** The flag was right. **I enforced the rule and broke it in the same
+paragraph** — the repo's *"stating a rule in a document does not enforce it in
+that document"*, turned on its enforcer.
+
+**⭐ THE CONJECTURE REFINEMENT THIS BUYS, and it is the first thing here that
+predicts rather than describes: the v1.2.1 model has two branches — DEFENDING
+runs toward the result, SURVEYING runs toward the alarming. Both of these were
+made while AUDITING SOMEONE ELSE'S NUMBER, which the model does not cover — and
+both ran toward MY OWN conclusion, not toward the alarming.** The builder's s33
+retro has the matching instance (*"against a teammate, wrongly"*, made while
+attacking someone else's cut). ⇒ **AUDITING IS A DEFENDING STATE, NOT A SURVEYING
+ONE: the auditor has a hypothesis — "the flag I am raising is correct" — and errs
+toward it.** **That is a lane-specific hazard for THIS lane specifically, because
+auditing is what it does all day.** Judgement errors now **6 for 6** across three
+lanes.
+⇒ **v1.4's tag should be `KIND · HYPOTHESIS · STATE(defending|surveying|auditing)`,
+and `auditing` should be pre-registered as behaving like `defending`.**
