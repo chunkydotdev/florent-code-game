@@ -179,7 +179,16 @@ queue runs empty we go stale, that is not acceptable."***
 Pivot 12.99 · sporks 12.11 · ph 11.15 · O(1) 7.95 · US 7.78 · Clankers 6.14 · Lorem Ipsum 5.53
 ```
 ⇒ **THREE are above us, one is level, and TWO are BELOW us — including the teams rated 2014 and 2021.** *"We run the smallest economy of the top group"* is **false**: we are 5th of 7, not last. **The top BRACKETS us on economy rather than exceeding it, which is #25 again on a second dimension.** ⚠ **measured against six teams; the top does not converge — see #25.**
-**WHAT SURVIVES, and it is much weaker than the row first claimed:** our OWN internal curve peaks at 9–10 harvesters against our 7.78. That is a us-only, observational, non-significant signal (z=+0.92 on core-kill) for a ~2-harvester move. **No cross-team evidence supports it, and two top teams run less economy than we do.** ⇒ **Build #23 first.** ⛔⛔ **AMENDED SAME DAY — THE INSTRUMENTAL LINK IS NOW MEASURED AND IT IS WEAK AND NON-MONOTONE. THE TARGET IS ~10, NOT PIVOT'S 13.** The row originally asserted "economy buys the kill" with a citation. Side lane flagged that the link was unmeasured and cheap to test; it was. **Conditioned on harvesters built by r150 in 2,760 of OUR games that survived to r150, then measured FORWARD** (the duration confound they named — long games accumulate harvesters — is removed by conditioning on the state at r150 and scoring only what follows):
+**WHAT SURVIVES, and it is much weaker than the row first claimed:** our OWN internal curve peaks at 9–10 harvesters against our 7.78. That is a us-only, observational, non-significant signal (z=+0.92 on core-kill) for a ~2-harvester move. **No cross-team evidence supports it, and two top teams run less economy than we do.** ⇒ **Build #23 first.**
+**⭐ THE 11+ REVERSAL SURVIVED ITS DISCRIMINATING TEST.** Side lane proposed the mirror confound: 11+ games might be ones where the assault had already failed, so we economised INSTEAD of attacking — which would make the ceiling an artefact. **That story predicts FEWER forward units in the 11+ bucket. We observe more:**
+```
+harv by r150   games   fwd turrets by r150   fwd share   win%
+    7-8         437          1.59              34.7%      49.2%
+    9-10        295          1.80              36.0%      54.2%
+    11+         334          1.90              41.1%      42.2%
+   11+ vs 9-10 forward turrets: +0.09, z=+0.64
+```
+⇒ **The 11+ bucket invested at least as much forward, so "economised instead of attacking" is NOT what produces the reversal.** That specific confound is ruled out; others (map ore availability) are not. ⚠ **And the sizing caution stands regardless: with 5 buckets and the peak chosen post hoc, and both trend tests null (z=+0.92, z=+1.51), 9–10 is a HINT not a target. The robust clause is the third one — Pivot's 13 is past where our own data turns — and it is the only one that changes a decision.** ⛔⛔ **AMENDED SAME DAY — THE INSTRUMENTAL LINK IS NOW MEASURED AND IT IS WEAK AND NON-MONOTONE. THE TARGET IS ~10, NOT PIVOT'S 13.** The row originally asserted "economy buys the kill" with a citation. Side lane flagged that the link was unmeasured and cheap to test; it was. **Conditioned on harvesters built by r150 in 2,760 of OUR games that survived to r150, then measured FORWARD** (the duration confound they named — long games accumulate harvesters — is removed by conditioning on the state at r150 and scoring only what follows):
 ```
 harv by r150   games   win%   core-kill%
      0-4        985    43.4%     35.4%
