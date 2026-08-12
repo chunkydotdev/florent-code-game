@@ -410,11 +410,21 @@ def selftest() -> int:
           if ok2 else
           "  ⛔ FAIL — either the bias does not reproduce or the fix does not remove it.")
 
-    if not (ok1 and ok2):
-        print("\n⛔ DO NOT TRUST THIS TOOL'S OUTPUT.")
+    # ⛔ `ok0` WAS COMPUTED AND THEN LEFT OUT OF THIS GATE. It set `rc` above, so a
+    # landing-capture failure exited 1 while this line still printed a tick --
+    # the summary contradicting the exit code. That is D24(b), the right value
+    # computed and the deciding branch ignoring it, in the file whose commit
+    # message cites D24(b). Found by the side lane flagging the CELL COUNT as
+    # cosmetic; the miscount was the visible end of a real defect.
+    cells = [("landing capture", ok0), ("effect separation", ok1),
+             ("immortal-time bias", ok2)]
+    failed = [n for n, ok in cells if not ok]
+    if failed:
+        print(f"\n⛔ DO NOT TRUST THIS TOOL'S OUTPUT — {len(failed)} of {len(cells)} "
+              f"cells FAILED: {', '.join(failed)}")
         rc = 1
     else:
-        print("\n✅ Both cells pass.")
+        print(f"\n✅ All {len(cells)} cells pass.")
     return rc
 
 
