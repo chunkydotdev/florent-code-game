@@ -452,3 +452,98 @@ TARGET was worth hitting; here it is whether the MECHANISM was understood.**
 chassis gate, with its mechanism openly unresolved and three arms now running to
 close it.** I would take that trade again with ~420 rated matches left — **but it
 was a judgement, not a gate, and no instrument would have stopped me.**
+
+---
+
+# INSTANCE — s33, 2026-08-12. FIRINGS: 7.
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+* **GUNBLANK NO-SHIP** — held, and the REASON was corrected mid-session. I wrote
+  "does not replicate"; research showed the pooled figure (51.20%, CI excluding
+  50) does not support that phrasing. The verdict survived on a better reason:
+  **the discovery run was selected from 18 arms, so the replication ALONE is the
+  unbiased estimate (50.30%, CI includes 50).** Simulated the winner's curse
+  rather than asserting it: a true 51.2% arm winning a field of 18 reads a
+  median 51.64%, biased up 0.44pp.
+* **LAUNCHER DECOMPOSITION** — six arms at n=5,408, internally consistent to the
+  decimal: cost-to-own 6.34pp minus mechanisms 3.57pp = −2.77pp, which IS
+  LAUNCH0's measured +2.77pp. That cross-check is the strongest thing this
+  session produced and it was computed two independent ways.
+* ⛔ **THE ONE I OVERSOLD:** "4.75x more gunners, 30% more turrets" for LOKI-39.
+  Withdrawn the same day — the CONTROL swung 4→17 gunners on identical seeds.
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+**Seven retractions. The direction is no longer uniform, which is new.**
+* **Toward my own plank (flattering):** the 4.75x gunner dose; "the r13-20 window
+  has nothing to hit" (measured builder deaths for a plank aimed at CORES);
+  "the heal absorbs it" (missed that healing COSTS THE BUILDER ITS ACTION).
+* **Against my own plank:** "GUNBORDER delivers 4x the border dose" understated
+  it — the corrected figure was 5.8x.
+* **Against a teammate, wrongly:** I told research their ferry-timing cut was
+  wrong on the strength of MY cut, which had pooled both teams' throws and then
+  compared `us_side == "A"` against a LOWERCASE column. Their number reproduced
+  to the digit once I fixed it.
+⇒ **Magnus caught the two CONCEPTUAL errors (sentinel targets cores; healing
+consumes the action). I caught the arithmetic ones. That split is the finding.**
+
+### 3. INSTRUMENTS — driven to BOTH verdicts?
+* `crash_cells` v1 → v3. **v1 published a FALSE NEGATIVE behind a green
+  7-case selftest**: it read the dose off our own `print()` ledger, stamped two
+  cells UNDOSED, and let UNDOSED fall through to "the road closes" — on a run
+  where the weapon fired 15 times. v3 reads dose ENGINE-SIDE, returns EXPOSURE,
+  and REFUSES a ratio at >15% exposure skew. 12 new cells, 4 fail on v2.
+* `overnight_read` — refused 27,040 real games on a stale heartbeat flag while
+  computing the honest answer 29 lines below; its calibration gate had NEVER
+  executed (literal keys `NULL`/`NEGCTRL`, shards named `NULL114`/`NEG114`).
+* `arena.py` — persisted NOTHING; now writes per-game rows BY DEFAULT, and
+  `turns` was being discarded too.
+⇒ **All three now assert on the DECIDING branch, not the parser.**
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+* "16 HP/round of enemy healing" — quoted all afternoon. It is **CAPACITY
+  (4 builders x 4 HP), never observed**: `events.tsv` has no heal verb. Named in
+  the worklist before the arms were queued, but only after building two arms on it.
+* "the first turret arrives at r20" — that was LOCAL self-play. **Live it is r13.**
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+**ZERO rated matches across THREE prototype windows** (12:33, 15:53, 16:13),
+totalling ~19 seconds live. Verified the only way that works: per-match
+`teamAVersion` at the PAIRING BOUNDARY — five rated matches since 15:00, all
+`ourver=116`. The pairing clock re-derived each time (60/60 at minute ≡ 12 mod
+20, second :59).
+⛔ **AND THE NEAR-MISS: my first leg script HARDCODED `activate 112`.** The holder
+was v115 (x3r0's). It would have displaced a live ship. `HANDOVER.md:10` said the
+same thing and I had quoted it all session. **The holder is a fact to READ AT FIRE
+TIME; a document naming it is a CACHE.** Fixed in three places.
+⚠ Also: fired one leg ONE SECOND early against the 20-min window and **lost 4 of
+5 cells to rate-limit rejection** — the systematic-drop failure `CLAUDE.md` warns
+about, and it cost a submission version for one usable match.
+
+### 6. WHAT THE BUDGET BOUGHT
+**~90,000 local games across 20+ arms, 75 live games, 3 prototype windows.**
+Settled: the launcher decomposition · surcharge REFUTED with a monotone curve ·
+seat-relative NULL · GUNBLANK correctly declined. **Killed by arithmetic BEFORE
+spending games: LOKI-43 rent (~break-even), the launcher-cap arms, LOKI-44 twice
+(both times wrongly — it is back).**
+⭐ **THE BEST RETURN WAS THE CHEAPEST THING: decoding 75 live replays.** It found
+that v116 builds a launcher in 2 of 50 games, that our opening plants a FORWARD
+sentinel at r13, that 41% of our sentinels die with 100% under enemy turret
+coverage against 64% of survivors, and that the field TEARS DOWN AND REBUILDS
+GUNNERS routinely (86 undamaged removals in 25 games) while never doing it to
+builders (2). **None of that came from a battery.**
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+* **v116/v117/v118 are all ours from today's legs** — v116 = `_v169launchlate160`
+  (LAUNCHLATE160, activated by Magnus), v117 = `_v171launch0ammo`,
+  v118 = `_v171late160ammo`. v115 is x3r0's ammo pre-buy.
+* **The paired-map design**: v116's 25 games (5 opponents x 5 fixed maps) are the
+  CONTROL for every subsequent live leg. Map lists are in this session's legs.
+* **`meta_join.tsv` bit three times today**: `our_won` empty in 77% of rows,
+  `us_side` empty in 78% AND lowercase. Use `ladder_games.tsv`.
+
+## THE QUESTION THAT IS NOT A LIST
+**What would have changed the most, earliest?** Decoding live replays on hour one
+instead of hour eight. Every structural finding today came from 75 games of
+watching what the bot DOES; the 90,000 local games told us only whether numbers
+moved. **The batteries measure; the replays explain.** A session that runs
+batteries without ever opening a replay is optimising a black box.
