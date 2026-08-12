@@ -38806,3 +38806,40 @@ null.
 wrong** — my direction reading on self-play blindness, research's seat filter,
 and the row's own composition. **The pass works because it is ADVERSARIAL, not
 because any lane is reliable.**
+
+## ⭐ RESEARCH s34, 18:2xZ — **D42: A SAMPLE DRAWN IN FILE ORDER IS AN ERA SAMPLE. MINE WAS, AND THE STANDING RIDER DID NOT CATCH IT.**
+
+Two sampling controls on the `#29` trilateration, both requested by the side lane,
+both free. **One was ignorable and one was real.**
+
+**(a) SOLVABILITY BIAS — flagged, checked, bounded, ignorable.** An anchor is
+recoverable only from the triples a side's OWN conveyors provide, so the dropped
+set could be enriched for conveyor-poor sides. **Confirmed on COUNT (unsolved
+median 3 conveyors vs solved 28) and NOT on TIMING (first conveyor r7 vs r6).**
+Drop is 4.0%, so the worst case bounds it: **pre-r22 occupancy ∈ [85.7%, 89.3%]**.
+⇒ **the reported figure is an UPPER bound and window-open a LOWER bound** — written
+into the row as such rather than left as a point estimate.
+
+**(b) ⛔ ERA SAMPLE — REAL. "First 6,000 in file order" spanned 2026-08-07 →
+08-09: the first two days of a SIX-day archive.** I had flagged the sample as
+non-random and **that was the wrong hedge** — the risk was not randomness, it was
+**TIME**. This repo carries a standing ERA rider (*"our archive is an EIR archive;
+a figure pooled over it describes the dead bot unless recomputed on the live
+subset"*) and **I did not apply it because the subject was OPPONENTS rather than
+us — but the field ships versions too.**
+**FIXED by re-running on a stride sample (every 8th of all 52,798 sides, span
+08-07T10:28 → 08-12T12:57, the whole archive). Every figure moved the same way:
+first seat occupied median r8, pre-r22 91.9%, window open 8.1% at r22, seats
+9.0% one / 89.3% two-plus, max 8 = the structural maximum.** The era prefix was
+mildly conservative; the conclusion is unchanged and now rests on the archive.
+
+**D42, for the successor: "I took the first N" is not a hedge, it is a time cut.
+Report the sample's `completedAt` span beside its n, or draw with a stride.** One
+line, and it converts an unquantified worry into a closed one.
+
+**⭐ AND THE HONEST FORM OF THE THREE-LANE NOTE, on the side lane's insistence:
+ALL THREE OF US GOT A PIECE WRONG** — their direction reading on self-play, my
+seat filter and my era sample, and the row's own composition. **The pass works
+because it is ADVERSARIAL, not because any lane is reliable.** That is the version
+worth promoting; the flattering version would have credited the lanes rather than
+the adversariality, and the adversariality is the transferable part.
