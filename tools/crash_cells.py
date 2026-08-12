@@ -142,17 +142,33 @@ def _crash_count(stderr: str, victim_dir: str) -> int:
     return n
 
 
-def throws(blob: str, w: int, h: int) -> tuple[int, int]:
-    """(border_throws, interior_throws), measured ENGINE-SIDE.
+def throws(blob: str, w: int, h: int) -> tuple[int, int, int]:
+    """(border_throws, interior_throws, EXPOSURE), measured ENGINE-SIDE.
 
     A builder moves at most one cardinal step per round, so a Chebyshev jump of
     >= 2 between consecutive sightings of the same unit id is a LAUNCH.  Nothing
     here reads our own bookkeeping.
+
+    ⛔⛔ EXPOSURE IS RETURNED BECAUSE A RAW COUNT FROM THIS FUNCTION IS BIASED BY
+    ITS OWN TREATMENT, AND v2 OF THIS FILE PUBLISHED THAT BIAS.
+    A throw is only visible while the victim is still logging.  A CRASHED VICTIM
+    STOPS LOGGING.  So an arm that kills more victims observes fewer subsequent
+    throws: **the denominator shrinks exactly when the treatment succeeds.**
+    That is immortal-time selection with the sign pointing at the treatment --
+    the identical shape that reversed the s32 kidnap closure from -0.080pp to
+    +0.265pp, built into this file the same morning by the person who watched it
+    happen.
+    HOW IT SURFACED, and it was not inspection: the V114 baseline read 1.17
+    throws/game in one run and 8.06 in another -- same tree, same probe, same
+    maps.  A 7x swing on an unchanged arm is not variance.
+    ⇒ **EXPOSURE (victim-rounds actually observed) IS THE ONLY HONEST
+    DENOMINATOR.**  Use `dose()`, never the bare counts.
     """
     last: dict[int, tuple[int, int, int]] = {}
-    border = interior = 0
+    border = interior = exposure = 0
     for rnd, uid, x, y in RE_POS.findall(blob):
         rnd, uid, x, y = int(rnd), int(uid), int(x), int(y)
+        exposure += 1                      # one victim-round actually observed
         prev = last.get(uid)
         if prev is not None:
             pr, px, py = prev
@@ -162,7 +178,51 @@ def throws(blob: str, w: int, h: int) -> tuple[int, int]:
                 else:
                     interior += 1
         last[uid] = (rnd, x, y)
-    return border, interior
+    return border, interior, exposure
+
+
+# If two arms' exposures differ by more than this, a RATE comparison is still
+# suspect: the arms are not observing the same amount of game, and whatever
+# caused that may also drive the numerator. Refuse rather than print.
+EXPOSURE_SKEW_LIMIT = 0.15
+
+
+def dose(border, interior, exposure):
+    """Throw rates per 1,000 observed victim-rounds. The reporting unit.
+
+    Rates are immune to the selection above in a way raw counts are not: a
+    victim that dies early contributes fewer throws AND fewer exposed rounds,
+    so the ratio is unchanged while the count collapses.
+    """
+    if exposure <= 0:
+        return None
+    t = border + interior
+    return {"throws": t, "border": border, "exposure": exposure,
+            "thr_per_1k": 1000.0 * t / exposure,
+            "brd_per_1k": 1000.0 * border / exposure,
+            "border_share": (border / t) if t else 0.0}
+
+
+def compare(arm_a, arm_b):
+    """Two `dose()` dicts -> a verdict, or a REFUSAL when exposure is skewed.
+
+    ⭐ THE REFUSAL IS THE POINT. A rate looks trustworthy even when the two arms
+    watched different amounts of game, and exposure skew is the observable
+    signature of the selection this module got wrong. Printing a ratio without
+    checking it is how the biased number got published in the first place.
+    """
+    ea, eb = arm_a["exposure"], arm_b["exposure"]
+    skew = abs(ea - eb) / max(ea, eb, 1)
+    if skew > EXPOSURE_SKEW_LIMIT:
+        return {"ok": False, "skew": skew,
+                "why": (f"exposure differs by {skew:.1%} ({ea} vs {eb}), over the "
+                        f"{EXPOSURE_SKEW_LIMIT:.0%} limit — the arms did not observe "
+                        f"the same amount of game, so a rate ratio is not "
+                        f"attributable to the treatment. Use an IMMUNE victim "
+                        f"(bots/_probe_border_guard) and re-run.")}
+    base = arm_b["brd_per_1k"]
+    return {"ok": True, "skew": skew,
+            "border_ratio": (arm_a["brd_per_1k"] / base) if base else float("inf")}
 
 
 def run_game(cell, ours, theirs, mp, seed, tle):
@@ -175,10 +235,10 @@ def run_game(cell, ours, theirs, mp, seed, tle):
     except subprocess.TimeoutExpired:
         return {"cell": cell, "map": mp, "seed": seed, "timeout": True}
     blob = (p.stdout or "") + (p.stderr or "")
-    tb, ti = throws(blob, w, h)
+    tb, ti, exp = throws(blob, w, h)
     return {"cell": cell, "map": mp, "seed": seed, "timeout": False,
             "crashes": _crash_count(blob, theirs),
-            "thr_border": tb, "thr_interior": ti}
+            "thr_border": tb, "thr_interior": ti, "exposure": exp}
 
 
 def main() -> int:
@@ -283,22 +343,59 @@ def selftest() -> int:
     # Throw detector, on a 14x18 map (antler's real size).
     W, H = 14, 18
     step = "BRAW r=1 unit=4 pos=(5,5) alive\nBRAW r=2 unit=4 pos=(5,6) alive\n"
-    chk("throw: a legal 1-step move is NOT a throw", throws(step, W, H), (0, 0))
+    chk("throw: a legal 1-step move is NOT a throw", throws(step, W, H)[:2], (0, 0))
     real_jump = "BRAW r=14 unit=14 pos=(8,4) alive\nBRAW r=15 unit=14 pos=(13,1) alive\n"
-    chk("throw: the REAL seed-7102 jump -> border", throws(real_jump, W, H), (1, 0))
+    chk("throw: the REAL seed-7102 jump -> border", throws(real_jump, W, H)[:2], (1, 0))
     inner = "BRAW r=1 unit=9 pos=(3,3) alive\nBRAW r=2 unit=9 pos=(7,8) alive\n"
-    chk("throw: jump to an INTERIOR tile", throws(inner, W, H), (0, 1))
+    chk("throw: jump to an INTERIOR tile", throws(inner, W, H)[:2], (0, 1))
     twobots = step + real_jump
-    chk("throw: per-unit tracking, mixed", throws(twobots, W, H), (1, 0))
+    chk("throw: per-unit tracking, mixed", throws(twobots, W, H)[:2], (1, 0))
     edge0 = "BRAW r=1 unit=2 pos=(6,6) alive\nBRAW r=2 unit=2 pos=(6,0) alive\n"
-    chk("throw: y=0 counts as border", throws(edge0, W, H), (1, 0))
+    chk("throw: y=0 counts as border", throws(edge0, W, H)[:2], (1, 0))
     # The size trap: (13,1) is border on 14x18 and INTERIOR on 26x26. If this
     # cell ever reads (1,0) the header parser has been bypassed.
     chk("throw: same jump on 26x26 is INTERIOR (size trap)",
-        throws(real_jump, 26, 26), (0, 1))
+        throws(real_jump, 26, 26)[:2], (0, 1))
     chk("guard probe's BGRD lines parse too",
         throws("BGRD r=1 unit=4 pos=(2,2) alive\nBGRD r=2 unit=4 pos=(9,9) alive\n",
-               W, H), (0, 1))
+               W, H)[:2], (0, 1))
+
+
+    # ---- THE SELECTION CELLS. These are the reason this file was rewritten and
+    # they are the ones that FAIL on v2. A victim that dies early contributes
+    # fewer throws AND fewer exposed rounds; the RATE must survive that while
+    # the raw COUNT must not.
+    def trace(uid, rounds, jump_at=None, w=W):
+        out = []
+        x = 5
+        for r in range(rounds):
+            if jump_at is not None and r == jump_at:
+                x = w - 1                      # thrown to the border
+            out.append(f"BRAW r={r} unit={uid} pos=({x},5) alive")
+        return "\n".join(out) + "\n"
+
+    # Arm LIVE: victim survives 100 rounds, thrown once at r10.
+    live = trace(1, 100, jump_at=10)
+    # Arm DEAD: identical bot, identical throw at r10, but the victim CRASHES at
+    # r12 so only 12 rounds are ever observed. Same underlying throw behaviour.
+    dead = trace(2, 12, jump_at=10)
+    dl, dd = dose(*throws(live, W, H)), dose(*throws(dead, W, H))
+    chk("selection: raw COUNTS are equal here (1 throw each)",
+        (dl["throws"], dd["throws"]), (1, 1))
+    chk("selection: the CRASHED arm observed far less game",
+        dd["exposure"] < dl["exposure"] / 4, True)
+    chk("selection: and its RATE is therefore inflated, not equal",
+        round(dd["brd_per_1k"] / dl["brd_per_1k"]) >= 8, True)
+    chk("selection: compare() REFUSES on that exposure skew",
+        compare(dd, dl)["ok"], False)
+    # And it must NOT refuse when exposure is balanced -- a guard that refuses
+    # everything gets routed around, which is this repo's other recorded failure.
+    bal_a, bal_b = dose(*throws(trace(3, 100, 10), W, H)), dose(*throws(trace(4, 100, None), W, H))
+    chk("balanced exposure -> compare() PROCEEDS", compare(bal_a, bal_b)["ok"], True)
+    chk("...and reports the border ratio as infinite vs a zero-dose arm",
+        compare(bal_a, bal_b)["border_ratio"] == float("inf"), True)
+    chk("dose() on zero exposure returns None, never a divide-by-zero",
+        dose(0, 0, 0), None)
 
     # Real map headers.
     for name, want in (("antler", (14, 18)), ("hive", (25, 25)),
