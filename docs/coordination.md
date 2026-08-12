@@ -38174,3 +38174,75 @@ defect 4 again — a test validating a copy of the selection rather than the rul
 **NOT blocking the shard.** The games are not wasted once the reader can see
 them. **Blocking only the reading of a GATE VERDICT off it until `_cal`
 demonstrably picks the right cell.**
+
+# ============================================================================
+# 2026-08-12T18:0xZ — **THE BELT MEASUREMENT. MAGNUS'S REPLAY OBSERVATION IS
+# CONFIRMED ON BOTH HALVES AND THE FIRST HALF IS SHARPER THAN HE SAID.**
+# opus subagent, read-only archive cut. RELAYED — it dies with the session.
+# ============================================================================
+
+## ⭐ THE HEADLINE: BEING CUT IS NORMAL. NOT REPAIRING IS NOT.
+| | ours v112+ | field (length-matched) | our own opponents |
+|---|---|---|---|
+| trunk loss rate | **14.4%** | **15.0%** | — |
+| **repair rate <=50r** | **6.8%** | **40.5%** | **50.3%** |
+| trunk damage INFLICTED | **2.1%** | **15.0%** | — |
+**We are cut at exactly the field's rate — so the cutting is not a defect, it is
+the game.** ⇒ **THE DEFECT IS THE REPAIR: a ~6x deficit against the field and a
+~7.4x deficit against the very opponents we are playing.** And we inflict **2.1%
+where the field inflicts 15.0% — 7.1x the other way.**
+
+## ⛔⛔ AND IT HAS WORSENED MONOTONICALLY, VERSION BY VERSION
+`v64-v94 17-34%` -> `v102 14.3%` -> `v104 9.4%` -> `v112 5.6%` -> `v114 6.4%` ->
+`v115 9.6%` (censoring-controlled, 50r horizon).
+⭐ **THIS IS THE PRICE OF THE REMOVAL LINE, AND NOBODY BOOKED IT.** LOKI-QUIET,
+LOKI-8 and the rest won on *"every removal hands rounds back to MOVEMENT, because
+arrival is the scarce quantity"* — and `doctrine.py:638` records that our ONLY
+reconnection is the PIECE F trail pave, i.e. **a side effect of builders walking
+past delivery seats.** Removing the reasons a builder loiters near the trunk
+removed the repair. **Each of those planks was measured on arrival and none was
+measured on this.** The version curve is the invoice.
+
+## THE MECHANISM ON THE OFFENSIVE HALF IS CONFIRMED OFF, NOT INFERRED OFF
+**Our `batk` (builder attacks) is 0 in 420 of 420 rated v112-v116 games** —
+`LOKI_QUIET_ON = True` measured on the wire. **The decoder is live in both
+directions**: the ENEMY's `batk` in the SAME 420 files totals 43,300 across 330
+of them (78.6%, max 1,953), and OUR OWN `batk` in the <=v94 era totals 357,098.
+⇒ **Zero of the 452 enemy conveyor deaths in our games came from our builders.**
+And only **47.8% of enemy conveyor deaths in our games are on their own half
+against a field baseline of 83.4%** — **we kill what walks into our guns; we do
+not touch their trunk.**
+
+## INSTRUMENT DRIVEN BOTH WAYS — the repair matcher, which is the load-bearing one
+A 6.8% could easily be a broken join, so it was driven to the other verdict
+FOUR ways before being reported: **TRUE same-tile 6.8% · CTRL-A rebuild sought 20
+tiles away 0.00% (0/885) · CTRL-B same tile in a SHUFFLED other game 0.79% ·
+positive control verified against raw `events.tsv` rows** (`0b1bbdd6…_game_5`
+tile (20,5): `BUILD r24 -> DEATH r66 -> BUILD r76 -> DEATH r78`).
+Team identity resolved on `join.tsv` (agree_rate 1.0, 0 dropped) and
+cross-checked against `meta_join`'s NAME columns — **2,865/2,865 agree** — not on
+the known-bad `us_side`.
+
+## ⛔ WHAT IT COULD NOT ANSWER, STATED AS SUCH
+* **Q4 "what is a cut worth" is NOT ANSWERABLE on this corpus.** Raw win rate
+  falls 60.7% -> 30.9% across death bands, but **game length rises 102 -> 788
+  rounds monotonically with it**, so cuts, titanium and losing are all collinear.
+  Winners-only does not separate them. **The most informative cut — long games
+  only (>=300r) — leaves the win-rate gradient intact while the titanium signal
+  goes FLAT (5,760/3,710/3,805/4,915/6,990)**, suggestive that cuts TRACK losing
+  rather than cause titanium loss. **No effect size. Only a live repair-on /
+  repair-off leg prices it.**
+* **Self-demolition cannot be separated for the FIELD**, so part of their 40.5%
+  may be planned churn. **Ours is clean** (`ct.destroy` has ZERO call sites in the
+  shipped tree; `batk`=0 corroborates on the wire).
+* Ruled out a game-end cleanup artefact: only **2.48%** of conveyor deaths land
+  on a file's final round.
+
+## THE MATCH MAGNUS WATCHED — and one correction to the framing
+`aa72a635` is **UNRATED** (hence absent from `join.tsv`), opponent **Coreflood
+v81, not "heart"**; we were **v117, seat A, and won all five games.**
+**Game 3 is the entire finding in one row: 893 rounds · 68 of our conveyors built,
+24 CUT, 2 REPAIRED (8%) · they built 183 and lost 6.**
+⛔ **And it ran to r893 — under `R1000_IS_DEFEAT` that is a game we lost while
+winning it.** The belt is not a tiebreak story; a starved bank is why the game
+went to 893 rounds instead of ending in a kill.
