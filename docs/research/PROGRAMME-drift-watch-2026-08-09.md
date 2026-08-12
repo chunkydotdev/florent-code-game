@@ -1516,3 +1516,61 @@ fires on legitimate stacked arms gets removed from the path, which is how
 **COST OF DELAY IS THE WHOLE POINT (D21):** while the shards run this is six
 string edits; **once a 5,408-game readout is filed under the wrong leg name it is
 an archive correction**, and the archive is what outlives the session.
+
+---
+
+## D23 — **SELF-PLAY CAN NEVER MEASURE AN EXPLOIT PLANK, AND IT IS A PROPERTY OF THE WHOLE LOKI LINE RATHER THAN A DEFECT IN ONE SHARD**
+
+**Promoted s33, 2026-08-12, after the GUNBORDER occurrence-zero flag turned out
+to generalise. Measured, one command:**
+
+```
+for d in bots/_v1[3-9]*/main.py; do grep -q 'except Exception' "$d" && ...; done
+  ->  line-era trees with a blanket `except Exception` in main.py:  38 of 38
+```
+
+**And `CLAUDE.md` states the generating mechanism in its own words:**
+
+> **"MINE OUR OWN BUG FIXES FOR THEIR BUGS.** `eco.py` carries a guard added
+> because a launcher throw teleported OUR builder and made `is_tile_empty` raise.
+> **We patched it; most teams have not.**"
+
+⇒ **Every exploit of this class is, BY CONSTRUCTION, one we have already
+immunised ourselves against — because patching it is how we found it.**
+An escaping exception is what destroys a unit (`0x1ac5c` →
+`Game::destroy_entity`, `SystemExit`/`KeyboardInterrupt` the only exemptions), so
+a blanket `except Exception` is total immunity, and **all 38 of our line-era
+trees have one.**
+
+**THE CONSEQUENCE, and it is structural:** `COMPARE_AGAINST:
+previous_line_iteration` makes the currency fixture **one of our own trees**.
+For an ordinary plank (economy, siting, targeting, a runtime gate) that is
+correct and cheap. **For an EXPLOIT plank it means the mechanism cannot occur at
+all**, so the shard measures the plank's COST and reads exactly ZERO on its
+benefit — however many games it runs. **This is not a mistake anyone made; it is
+two programme fields interacting**, and `FIXTURE_OF_RECORD: live_unrated` is the
+one that resolves it.
+
+**⚠ AND THE FAILURE IS ASYMMETRIC IN A WAY THAT CLOSES ROADS.** A ~50% read on
+such a shard says *"free, ship it"* when no benefit was measurable; **a <50% read
+says *"it costs us, drop it"* — a VALID cost finding that retires a road whose
+benefit has never been measured on any fixture where it could occur.** The second
+is a D12 violation wearing a local-battery costume, and it is the one to guard.
+
+### THE WATCH FORM — one question, asked before the shard is queued
+**"Can the OPPONENT in this shard experience the mechanism?"** If the opponent is
+one of our own trees and the mechanism targets a defect we have patched, the
+answer is **no**, and the shard is a **COST SCREEN** — which is a genuinely
+useful thing to be, because a clean non-inferiority result is exactly what
+licenses spending a live-unrated window on the benefit. **It must simply never be
+quoted as the currency.**
+**AND NAME BOTH ENDS OF THE BRACKET** (research's generalisation, adopted): our
+`*_probe` fixtures are maximally VULNERABLE by construction and our own trees are
+maximally INVULNERABLE by construction. **`_probe_border_raw` gives the ceiling
+(100% of border arrivals kill), `_v146gunaxis` gives the floor (0/16).** The
+field sits between and is measured by neither. **A scope note that caveats one
+fixture has an obligation to say what the OTHER fixture is doing — bracketing is
+only visible when both ends are named**, and the s33 instance caveated the end
+that lies UP and left the end that lies DOWN unstated.
+**NEVER POOL THE TWO.** Averaging a maximally-vulnerable fixture with a
+maximally-invulnerable one produces a number about neither.
