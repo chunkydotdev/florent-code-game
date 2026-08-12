@@ -379,6 +379,33 @@ sit at 0. **Not worth a slot.**
 
 **⚠ FIXTURE WARNING, per the s34 self-play rule in `docs/builder-arm-retro.md`:** GUNBLOCK pays off **enemy forward GUNNERS**, and our own control bot builds few. **Local under-represents the rays this arm exists to block — local is a DOSE check, not an efficacy read.**
 
+
+### ⭐⭐⭐ #32 — OUR SENTINELS DIE AT 71% AND THEIRS AT 34%. THIS IS THE LARGEST MEASURED GAP WE HAVE. *(Magnus, s34, from watching one match)*
+
+**MEASURED on the v121 leg, 25 live games, 5 opponents, BUILD/DEATH paired on tile:**
+
+| | built | destroyed | median lifetime | **sentinel-rounds** |
+|---|---|---|---|---|
+| **us** | **107** | **76 = 71%** | **12 rounds** | **5,143** |
+| them | 68 | 23 = 34% | **34 rounds** | **6,618** |
+
+⇒ **WE BUILD 57% MORE SENTINELS AND GET 22% FEWER SENTINEL-ROUNDS.** A sentinel is 18 dmg on a 2-round reload (~9 HP/round), so sentinel-rounds is the DPS-carrying quantity: **theirs delivers ~3x the damage per build, for the same 30 Ti and the same +20% scale.**
+
+**⛔ AND THE THREE EXPLANATIONS I REACHED FOR FIRST ARE ALL DEAD, EACH KILLED BY A DIFFERENT CHECK:**
+* **NOT count** — we build MORE (107 vs 68).
+* **NOT timing** — ours land EARLIER (median r16 vs r23 in the 0033 match).
+* **NOT range or siting.** I proposed that our median sentinel sat at `d²=33`, outside the r²=32 range. **Magnus refuted it from the replay — our sentinel DID fire on their core, and it was well placed.** The corpus measures `d2_enemy` to the core's single stored position while the bot takes the min over four core tiles, so the corpus figure over-estimates. **I had flagged that caveat myself and then leant on the number anyway.**
+
+⇒ **IT IS SURVIVAL, AND ONLY SURVIVAL.** The turret is fine; it does not live long enough to matter.
+
+**⭐ AND THE MECHANISM IS ALREADY MEASURED FROM AN EARLIER LEG — this REPRODUCES it exactly:** s33's 75-game decode found *"41% of our sentinels destroyed, median life 12 rounds, and 100% of the destroyed sat under ENEMY TURRET COVERAGE against 64% of survivors."* **The median-12 figure reproduces to the round on a completely different leg.** ⇒ **We plant sentinels under their guns.**
+
+**THE PLANK, and it re-points an existing one rather than inventing anything.** `#30` is *"the station scorer is blind to enemy sentinels"* — but that scorer decides **where RAIDERS STAND** (`raid.py:500-527`). **The real gap is where our SENTINELS ARE PLANTED** (`raid.py:386 _try_forward_sentinel`), which consults **no threat model at all** — it checks `can_fire_from` for offence and never asks whether the site is covered by an enemy turret. **`get_attackable_tiles_from` is already called at `raid.py:522` for gunners; the change is to run it over enemy turrets and refuse a build site inside the union of their rays**, preferring a covered-free tile that still satisfies `can_fire_from`.
+
+**MECHANISM METRIC:** sentinel median lifetime and destroyed-share, ours vs theirs, on the same leg. **Both are already instrumented by the BUILD/DEATH tile pairing used above — no new tooling.**
+
+**WHY IT OUTRANKS EVERYTHING ELSE QUEUED:** it is a **3x** effect on the unit that does the killing, it needs no new entity and no extra titanium, and **the failure is not that we do too little — it is that we pay for 107 sentinels and receive the output of ~37.** ⚠ **And the obvious cheap counter-hypothesis must be tested first: are theirs surviving because they HEAL them?** `events.tsv` has no heal verb, so that is not answerable on this corpus and needs a live decode or a probe.
+
 ## BLOCKED / NEEDS A NUMBER FIRST
 | # | plank | blocker |
 |---|---|---|
