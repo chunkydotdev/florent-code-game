@@ -39190,3 +39190,51 @@ one level down** — a seat filter that assumed a distance encodes a tile ROLE, 
 a sample drawn in file order that assumed order encodes nothing. **All four are
 "I measured X and reported Y".** ⇒ **state the scope you actually searched in the
 sentence that carries the finding.**
+
+# ============================================================================
+# 2026-08-12T18:5xZ — **THE REPAIR DENOMINATOR RESEARCH ASKED FOR. THE DECLINE
+# SURVIVES; "MONOTONIC" STAYS DEAD; THE CAUSAL CLAIM STAYS WITHDRAWN.**
+# ============================================================================
+Research's threshold: *"the v104->v112 decline survives at pooled p<.05 only if
+trunk cuts are >=74.9% of our conveyor deaths."* Measured off `join.tsv`
+(agree_rate 1.0, 2,870 files) — **share of OUR conveyor DEATHS on OUR OWN half
+(`d2_own < d2_enemy`), per version:**
+| ourver | games | our conveyor deaths | trunk share |
+|---|---|---|---|
+| 102 | 219 | 1846 | 79.0% |
+| **104** | 288 | 1699 | **89.3%** |
+| **112** | 53 | 341 | **89.7%** |
+| 114 | 118 | 707 | 94.9% |
+| 115 | 50 | 327 | 89.3% |
+| 116 | 23 | 144 | 91.7% |
+⇒ **89-95% across the modern era, comfortably clear of 74.9% on BOTH sides of the
+comparison.** ⇒ **THE v104->v112 DECLINE SURVIVES at pooled p<.05.**
+
+## WHAT THAT DOES AND DOES NOT RESTORE — stated precisely, because I over-withdrew
+* **RESTORED: the DECLINE is real** (repair 9.4% -> 5.6%, and the denominator
+  clears the bar with ~15pp of margin).
+* **STILL DEAD: "MONOTONICALLY".** The series rises at v114 (6.4%) and v115
+  (9.6%); the reversal is null under every denominator. The word was wrong and
+  stays wrong.
+* **STILL WITHDRAWN: the CAUSAL claim.** *"The version curve is the invoice for
+  the removal line"* asserts a CAUSE, and a significant decline does not supply
+  one. **Nothing here tests whether LOKI-QUIET/LOKI-8 caused it.** ⭐ **And the
+  arm build gave the competing explanation: `PAVE_TRAIL_ON = False` means the
+  incidental repair mechanism does not exist in this tree AT ALL, and only 1 of
+  the first 55 repaired tiles had ever held a conveyor** — most of the defect is
+  our own `_build_next_link` abandoning chain heads, which no removal plank
+  touched.
+* **STILL TRUE AND UNAFFECTED: the cross-sectional gap** (6.8% vs field 40.5% vs
+  our own opponents 50.3%). It never depended on the curve.
+
+## ⚠ AND THE DIRECTION OF *THIS* ERROR IS THE OPPOSITE OF TODAY'S OTHER THREE
+Three errors of mine today ran FLATTERING (the collar's 13.7pp off a two-factor
+ablation · `SLOT_LAUNCHER` as a sweepable cap · "monotonic"). **This one runs the
+other way: I withdrew MORE than the evidence required.** ⇒ **Over-withdrawal is a
+failure mode too — it destroys a real finding to buy the appearance of rigour,
+and it is harder to notice because it looks like discipline.** The rule that
+fixes both is the same one: **state the denominator and let the threshold decide,
+rather than choosing how much to concede.**
+⚠ Composition note, flagged not resolved: **v102 sits at 79.0% while v104-v116 sit
+at 89-95%**, so the trunk share is not constant across the whole series. It clears
+the threshold everywhere it matters, but a cut spanning v102 should not assume it.
