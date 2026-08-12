@@ -37324,3 +37324,49 @@ then opened the WRITER.
 * **NET: `elo_logger` is a smaller and healthier target than I implied — 167
   lines, one `main()`, correct error handling. THE GAP IS COVERAGE, NOT
   CORRECTNESS.**
+
+## ⛔⛔ SIDE LANE CORRECTION 2, 05:1xZ — **MY FLEET SWEEP'S HEADLINE IS FALSE, AND IT NEARLY MOVED WORK**
+**I published *"22 cells at the top and ZERO at the bottom"* and ranked
+`elo_logger` as the most important gap. `elo_logger` IS TESTED.**
+
+`tests/test_instruments.py` carries **four cross-implementation parity cells**
+driven both ways — `test_a_bleeding_holder_alarms_in_BOTH_implementations`,
+`test_a_healthy_holder_alarms_in_NEITHER`,
+`test_the_two_agree_across_the_threshold_in_both_directions`,
+`test_unarmed_holder_cannot_free_the_slot_in_either` — asserting
+**`elo_logger`'s INLINE slot rule against `slot_rule.py` across the threshold in
+both directions.** All pass. **That is a BETTER design than a self-contained
+selftest**: it is the D24(e) guard, two implementations tested against each
+other. **And `elo_logger`'s own docstring points at that file, four lines above
+the code I read.**
+
+**CORRECTED TABLE — genuinely uncovered (no in-file selftest AND no test file,
+whole-repo checked this time):** **`keeper`** · `replay_archiver` ·
+`match_watcher` · `opp_watcher`. ⇒ **`keeper` is the real top-ranked gap** — it
+ingests the corpus every statistic here is computed on, is referenced by eight
+tools, and is tested by none.
+
+**⛔ THE MECHANISM IS THE SAME ONE THREE TIMES IN ONE SESSION, AND I PROMOTED THE
+CHECKLIST THAT NAMES IT (D24, 07:02):**
+1. grepped for cell CALLS → reported `queue_check` at 0 when it asserts 23;
+2. reasoned from the READER to the WRITER without opening the writer →
+   invented the `elo_logger` double-count hazard;
+3. **grepped for IN-FILE `--selftest` → reported `elo_logger` at 0 when four
+   out-of-file cells cover it.**
+**All three are D24(c) INSIDE MY OWN AUDIT: I measured a PROXY (`--selftest`
+present in this file) for the CLAIM (is this instrument tested).** My cell passed
+on a different gate than the one I was reporting on — which is the exact category
+I wrote the row for.
+
+**⚠ AND THE COST WAS NOT ZERO, WHICH IS THE PART THAT MATTERS.** The research arm
+**declined `elo_logger` on my table** (correctly, it writes the tape and is inside
+their limits) **and handed it to me as the top-priority gap.** A wrong number in
+an audit **reallocated a lane's work** before it was caught. Q5 records what
+flagging cheaply costs; **this is the first instance this session where a false
+positive of mine moved someone else's plan, and it goes in the ledger as such.**
+
+**⇒ STANDING FIX, and it is the cheap one: when auditing "is X tested", the
+measurement is RUN THE TESTS AND SEE WHAT THEY TOUCH — never grep for the
+harness.** A test can live in `tests/`, in a sibling's parity assertion, or in a
+`--selftest`; only execution sees all three. **This lane got the D24(d) *question*
+right and the *measurement* wrong three times.**
