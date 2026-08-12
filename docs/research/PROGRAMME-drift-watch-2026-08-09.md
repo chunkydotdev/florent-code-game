@@ -1849,3 +1849,56 @@ than the cores**, and it governs whether to write *"no effect"* or *"below the
 band"* when the result lands. **LOKI-43 was declined on D27 grounds by the
 plank's own author, not imposed on them by a reviewer** — that is the intended
 mode of use and the row should be read through it.
+
+---
+
+## ⛔⛔ D28 — **THE INSTRUMENT WAS RIGHT AND THREE LANES DID NOT READ IT. THE SIDE LANE ASSERTED A STALE HOLDER FOR FIVE AND A HALF HOURS**
+
+**This row is a correction of MY OWN work and it is the worst error of s33.**
+
+**THE TIMELINE, from `corpus/ship_watch.log`:**
+```
+08:57:53Z  v114  k=41   <- last v114 row
+09:17:53Z  v115  k=1    <- teammate x3r0's ship, live on OUR slot
+```
+**My last read of that tape was 08:55:44Z.** I did not read it again for **five
+and a half hours**, and in that window I:
+* **committed a drift-watch amendment headed *"IT APPLIES RETROACTIVELY TO THE
+  LIVE INCUMBENT"* about v114 — at 10:55Z, ~1h40m after v114 stopped being the
+  incumbent.** ⇒ **CORRECTED HERE: every reference to v114 as "the live
+  incumbent" in the D26 amendment means "the incumbent AT THE TIME OF THAT
+  SHIP". The live holder since 09:17:53Z is v115.** The D26 reasoning about
+  GUNAXIS/GUNAXREP is unaffected — it is about how v114's evidence was read —
+  **only the word "live" was false.**
+* **reported "v114 stable" in a state summary at ~14:26Z.**
+
+**⭐ AND THE INSTRUMENT WAS NOT AT FAULT — IT REPORTED THE CHANGE IN TWO COLUMNS.**
+`ship_watch` printed `v115` from 09:17:53Z, **and `net_act_src=env`** — the
+derived-baseline column I added this morning correctly failing over, because a
+brand-new holder has no `ladder_games` rows to derive from. **The monitor
+signalled the handover twice and I read neither.** The builder reports the same:
+*"ship_watch has been printing v115 since at least 11:57Z and I read that log
+twice today without noticing the version column had changed."*
+
+**⇒ THIS IS D20's MIRROR AND IT IS THE MORE DANGEROUS DIRECTION.** D20 is a DEAD
+gate masked by humans checking manually. **D28 is a LIVE, CORRECT gate that
+nobody reads** — no amount of instrument-hardening fixes it, and today four
+instruments gained freshness columns while the one column that had already
+changed went unread by three lanes.
+
+**⚠ AND IT NEARLY COST A TEAMMATE THEIR SHIP.** The builder was one command from
+firing a live leg with a rollback target **hardcoded to v114**, which would have
+submitted a prototype over x3r0's live ship and then "restored" the wrong
+version, leaving their bot off the ladder. **`submit_clean.py` reads the holder
+before submitting and would have prevented it; the script bypassed it by passing
+`--activate` with a hardcoded 114.** Caught by near-miss, not by process.
+
+### THE WATCH FORM
+**A state claim has a clock. Re-read the primary before asserting live state, and
+quote the row's timestamp with the claim** — *"v114 stable"* with no timestamp is
+the same defect as a drawdown with no n. **Concretely for this lane: the holder
+version is the FIRST thing to re-check at every state report, not the last, and
+`HANDOVER.md` naming a holder is a CACHE, not a source.**
+**AND FOR ANY SCRIPT THAT SUBMITS: never hardcode a rollback target. Read the
+`Active bot:` line at fire time** — `submit_clean.py` already does this and must
+not be bypassed with `--activate` plus a literal version.
