@@ -148,3 +148,21 @@ LAUNCH0     bots/_v161launch0      bots/_v146gunaxis     5408  95000
 # 6065 (25% below) -- consistent with EXILE0 keeping a working launcher. Treat
 # as suggestive; a successor wanting proof must log our own side.
 EXILE0      bots/_v162exile0       bots/_v146gunaxis     5408  96000
+# --- QUEUE #21(b) LOKI-39 GUNNER-FIRST — the tuple order WAS the constraint ---
+# `main.py:_try_counterbattery` tries SENTINEL then GUNNER. A sentinel's line
+# IGNORES obstacles at r^2=32; a gunner's is BLOCKED at r^2=13 -- so
+# `can_fire_from` is TRUE for a sentinel EVERYWHERE it is true for a gunner and
+# strictly more often. SENTINEL DOMINATES GUNNER ON THE EXACT PREDICATE THE LOOP
+# SELECTS ON, so tried first it wins every contested tile and the gunner branch
+# is reachable ONLY when we cannot AFFORD a sentinel (20 <= Ti < 30).
+# Nobody chose that: it is tuple order meeting a dominance relation.
+# DOSE, OUTCOME-VERIFIED off `tools/corpus/replay_events.py`, 6 paired games:
+#   gunner-first  19 gunner / 20 sentinel  (3.17 gun/game)  39 turrets
+#   incumbent      4 gunner / 26 sentinel  (0.67 gun/game)  30 turrets
+# 4.75x the gunners AND 30% more turrets for the same titanium.
+# ⚠ THE STATS DO NOT OBVIOUSLY FAVOUR THE GUNNER, WHICH IS WHY THIS IS A TEST:
+# per Ti sentinel is 0.200 dmg/rnd vs gunner 0.175; per ammo 1.8 vs 1.75; and
+# sentinel has 40 HP to 25 and 2.5x the range. On paper the incumbent's order is
+# DEFENSIBLE. What contradicts it is the FIELD -- Pivot 10.77 gunners/game,
+# O(1) 7.02, ph 5.79, US 1.86. One of those is wrong; the battery says which.
+GUNFIRST    bots/_v164gunfirst     bots/_v146gunaxis     5408  97000
