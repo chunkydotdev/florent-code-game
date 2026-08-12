@@ -38440,3 +38440,49 @@ same files — **is untouched by every point above and carries the plank on its
 own.** The opponent axis should be written as **"unattributable"** rather than
 left absent, since `ladder_games.tsv:oppver` is NULL in stretches and a null
 column reads as *no change* to any cut that trusts it.
+
+## ⭐ RESEARCH s34, 18:0xZ — **D40: A SIGNIFICANCE CLAIM CARRIES ITS ESTIMATOR AND ITS DENOMINATOR, OR IT CARRIES NOTHING**
+
+Two corrections to my own belt-curve arithmetic within twenty minutes, both found by
+the side lane, both running **against** the more interesting conclusion.
+
+**(a) I QUOTED UNPOOLED (WALD) z's. The two-proportion test under H0 POOLS.**
+```
+                   unpooled (mine)   pooled (correct)
+ decline  v104->v112   -2.65             -2.26
+ reversal v112->v115   +1.95             +1.96
+          v112->v114   +0.52             +0.51
+```
+**The two estimators agree to 0.01 on both NULL steps and diverge only on the
+load-bearing DECLINE — in the anti-conservative direction.** In an exchange whose
+entire subject was which steps are significant, the SE convention was the one
+thing that had to be named and was not. ⇒ **name the estimator beside the z.**
+
+**(b) ⭐⭐ THE REAL DENOMINATOR WAS A THIRD QUANTITY, SMALLER THAN BOTH I OFFERED —
+AND PRICING IT KILLS THE STEP.** I framed the belt curve as *"ambiguous between
+per-game and per-cut"* and supplied both. **Wrong frame:** the series is a
+repair-of-a-**TRUNK**-cut rate, and trunk cuts are a **subset** of the conveyor
+deaths I counted, so **both my n's are CEILINGS and every |z| I published was an
+overestimate.** Since z scales as √n (|z| = 2.26·√fraction):
+**the v104→v112 decline holds at p<.05 only if trunk cuts are ≥74.9% of all our
+conveyor deaths.** The deliverable's own structure (trunk loss 14.4% reported
+*separately*) implies a minority — at 14.4% the step reads **z = -0.86.**
+⇒ **The causal sentence rests on a number nobody has stated. Held, and the bar it
+must clear is now written down (75%) so it can be discharged in one line.**
+
+**D40, stated for the successor: when supplying a denominator to someone else's
+rate, the question is not "which of my candidates did you use" — it is "is your
+numerator a SUBSET of any of them".** A supplied denominator that is too large is
+worse than none: it produces a significance claim that looks sourced.
+
+**⚠ AND IT COULD NOT BE CLOSED FROM THE REPO — the belt deliverable is NOT
+COMMITTED.** Pulled and grepped `docs/research/`: the "trunk" hits are all older
+files. **An audit of a deliverable that exists only in a message can price the bar
+but cannot read the number.**
+
+**WHAT SURVIVES REGARDLESS, and both are structural:** *"monotonically"* is dead
+under **every** denominator either lane can construct (the reversal is null at
++1.96 pooled per-cut, +0.77 per-game); and **with v115 dropped as x3r0's ship and
+v116 — the LIVE HOLDER — absent from the curve entirely, the last our-bot
+transition is v112→v114 at z=+0.51.** The whole post-v112 story is one null step.
+**A curve used to price a plank should reach the bot that is on the ladder.**
