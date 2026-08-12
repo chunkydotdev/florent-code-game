@@ -181,8 +181,6 @@ GUNEARLY150 bots/_v166gunearly150 bots/_v146gunaxis     5408  98000
 GUNEARLY60  bots/_v166gunearly60  bots/_v146gunaxis     5408  99000
 GUNSUB      bots/_v165gunsub      bots/_v146gunaxis     5408 100000
 GUNADD      bots/_v163gunadd      bots/_v146gunaxis     5408 101000
-LAUNCH2     bots/_v160launch2     bots/_v146gunaxis     5408 102000
-LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
 # ============================================================================
 # THE LAUNCHER 2x2 — closing a design I had accidentally built three corners of.
 # ⛔ MY "FERRY IS BAD" READING WAS WRONG AND THIS IS WHY. LAUNCH0 (+2.64pp) and
@@ -204,5 +202,17 @@ LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
 # inferred from a between-shard contrast.
 # ⚠ Both live readings are interim (~30% of target) and are SEPARATE SHARDS with
 # different seeds, so the 7.3pp gap between them is between-shard, not paired.
+# ============================================================================
+# ⭐ REORDERED s33: the LAUNCHER DECOMPOSITION runs NEXT, ahead of everything
+# else queued. Magnus is holding a doctrine decision on it -- whether to drop
+# the kidnap line -- and that decision needs FERRY0 and BOTH0, not another
+# gunner arm. FERRY0 isolates the ferry at constant launcher cost; BOTH0 vs
+# LAUNCH0 isolates the LAUNCHER PREMIUM at identical mechanism. LAUNCH2/3 then
+# complete the dose curve 0/1/2/3 on launcher count.
+# The four displaced arms (GUNSUB, GUNADD and the gunner family) are NOT
+# cancelled -- they keep their place after these and lose nothing but order.
+# ============================================================================
 FERRY0      bots/_v167ferry0       bots/_v146gunaxis     5408 104000
 BOTH0       bots/_v168both0        bots/_v146gunaxis     5408 105000
+LAUNCH2     bots/_v160launch2     bots/_v146gunaxis     5408 102000
+LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
