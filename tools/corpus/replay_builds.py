@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, "tools")
-from replay_census import fields, read_pos, parse_entity, WIRE_LEN, WIRE_VARINT  # noqa: E402
+from replay_census import guard_out, fields, read_pos, parse_entity, WIRE_LEN, WIRE_VARINT  # noqa: E402
 
 
 def d2(a, b):
@@ -134,8 +134,9 @@ def census(path: Path, out, agg):
 
 
 def main(argv):
+    guard_out(argv[0])
     out = open(argv[0], "w")
-    agg = open(argv[1], "w")
+    agg = open((guard_out(argv[1]) or argv[1]), "w")
     out.write("file\trnd\tband\tteam\tkind\tx\ty\td2_own\td2_enemy\tside\twinner\n")
     agg.write("file\tteam\tband\tmetric\tn\n")
     bad = 0

@@ -675,3 +675,32 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
+def guard_out(path) -> None:
+    """Refuse an OUTPUT path that is an existing NON-.tsv file.
+
+    ⛔ THE DECODERS TAKE argv[0] AS THE OUTPUT AND argv[1:] AS INPUTS. That is a
+    landmine in tools people feed file lists to: on 2026-08-12 a lane xargs'd a
+    directory of replays straight in, THE FIRST REPLAY WAS OPENED "w" AND DESTROYED,
+    and the run printed "done 7 files, 0 errors" -- a success message that counted
+    the SURVIVORS. FOUR files carried the identical signature.
+
+    ⚠ The first fix sniffed a protobuf magic byte and was INSTANCE-SCOPED TWICE: it
+    lived in one of the four files, and it only caught REPLAYS -- an xargs over a
+    directory whose first entry is a `.COMPLETE` marker, a heartbeat or a `.log`
+    would still have been destroyed silently. Both caught by the side lane, one hour
+    after this lane argued for class fixes over instance fixes on queue_check.
+
+    Existence + extension cannot be defeated by an unrecognised file type, and it
+    still permits the normal re-run path (overwriting an existing .tsv). The
+    positional signature stays because sync.py and build_corpus.py pass outputs
+    positionally and replay_builds.py takes TWO of them.
+    """
+    from pathlib import Path as _P
+    p = _P(path)
+    if p.exists() and p.suffix != ".tsv":
+        raise SystemExit(
+            f"REFUSING: argv[0] is the OUTPUT path, and {path!r} is an existing "
+            f"non-.tsv file.\n    You probably meant:  <tool>.py OUT.tsv <inputs...>"
+        )

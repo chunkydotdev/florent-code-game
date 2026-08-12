@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, "tools")
-from replay_census import fields, read_pos, parse_entity, WIRE_LEN  # noqa: E402
+from replay_census import guard_out, fields, read_pos, parse_entity, WIRE_LEN  # noqa: E402
 
 CARRIERS = ("conveyor", "splitter", "harvester")
 
@@ -112,6 +112,7 @@ def census(path: Path, out):
 
 
 def main(argv):
+    guard_out(argv[0])
     out = open(argv[0], "w")
     out.write("file\tteam\tband\tclass\tn\n")
     bad = 0

@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, "tools")
-from replay_census import fields, WIRE_LEN, WIRE_VARINT  # noqa: E402
+from replay_census import guard_out, fields, WIRE_LEN, WIRE_VARINT  # noqa: E402
 
 
 def band(r):
@@ -131,6 +131,7 @@ def census(path: Path, out):
 
 
 def main(argv):
+    guard_out(argv[0])
     out = open(argv[0], "w")
     out.write("\t".join(COLS) + "\n")
     bad = 0

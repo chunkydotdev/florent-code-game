@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, "tools")
-from replay_census import fields, read_pos, parse_entity, WIRE_LEN, WIRE_VARINT  # noqa: E402
+from replay_census import guard_out, fields, read_pos, parse_entity, WIRE_LEN, WIRE_VARINT  # noqa: E402
 
 
 def census(path: Path, out):
@@ -125,17 +125,7 @@ def _packed(buf):
 
 
 def main(argv):
-    # ⛔ argv[0] IS THE OUTPUT PATH, argv[1:] ARE INPUTS. That signature is a
-    # landmine in a tool people feed file lists to: on 2026-08-12 a lane xargs'd a
-    # directory of replays straight in and the FIRST REPLAY WAS OPENED "w" AND
-    # DESTROYED. No error, no warning -- the run reported "done 7 files, 0 errors"
-    # while silently eating the 8th. Guard refuses exactly that shape.
-    if argv and Path(argv[0]).exists():
-        head = Path(argv[0]).read_bytes()[:2]
-        if head[:1] == b"\x0a":          # protobuf field 1, length-delimited
-            sys.exit(f"REFUSING: argv[0] is the OUTPUT path and {argv[0]!r} looks "
-                     f"like a replay (protobuf). You probably meant:\n"
-                     f"    replay_events.py OUT.tsv <replays...>")
+    guard_out(argv[0])
     out = open(argv[0], "w")
     out.write("file\tev\trnd\tteam\tkind\tx\ty\td2_own\td2_enemy\tmw\tmh\n")
     bad = 0
