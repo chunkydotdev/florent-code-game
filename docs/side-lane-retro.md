@@ -536,3 +536,46 @@ auditing is what it does all day.** Judgement errors now **6 for 6** across thre
 lanes.
 ⇒ **v1.4's tag should be `KIND · HYPOTHESIS · STATE(defending|surveying|auditing)`,
 and `auditing` should be pre-registered as behaving like `defending`.**
+
+## ⚠ v1.3.3 — **I CONCEDED TO A SESSION-LEVEL EXPLANATION AND ITS OWN NEXT DATA POINT FALSIFIES IT**
+
+**v1.3.3 — 2026-08-12 (s34). POINT bump. FIRINGS remain 3.**
+
+**THE CONCESSION, made to Magnus in-session:** the builder proposed that all four
+lanes' errors today ran toward *"whatever row was being supported"*, i.e. **a
+property of the SESSION, not of any lane** — and I relayed that as *"a better
+explanation than the lane-specific one I'd just written."*
+
+**⛔ IT IS NOT BETTER, AND THE DISCONFIRMATION ARRIVED IN THE BUILDER'S OWN NEXT
+COMMIT (`eeef598`, minutes later): they OVER-WITHDREW.** The belt repair
+denominator came back at **trunk share 89–95%, clear of the 74.9% threshold on
+both sides**, so the `v104→v112` decline **survives** — a claim they had already
+retracted. **Their words: *"this error of mine ran the OPPOSITE way from today's
+other three."*** ⇒ **"every error today ran toward the supported row" was
+falsified by the next instance, before I had finished relaying it.**
+**I accepted a generalisation at n=4 within one session — which is EXACTLY the
+fault v1.2.1 retracted the direction claim for, committed by me while holding the
+retraction.**
+
+**⭐ THE REFINEMENT THAT SURVIVES BOTH, and it absorbs the counter-example instead
+of being broken by it: ERRORS RUN TOWARD WHATEVER HYPOTHESIS IS LIVE IN THE
+AUTHOR'S HEAD AT THE TIME — their own row when defending it, THE CRITIQUE when
+responding to one.** The over-withdrawal was made **while accepting a criticism**,
+and it ran toward the criticism. That is the same mechanism, not an exception:
+**the live hypothesis had changed owner.**
+
+**⛔ AND THE HAZARD IN THAT SENTENCE, NAMED RATHER THAN MANAGED: a model that says
+"errors run toward whatever you currently believe" is CLOSE TO VACUOUS.** It
+explains every direction after the fact. **It earns its place only through the
+one prediction it makes that the alternatives do not: THE DIRECTION SHOULD FLIP
+WHEN THE AUTHOR'S LIVE HYPOTHESIS FLIPS — measurably, at the moment a correction
+is accepted.** ⇒ **v1.4's tag becomes
+`KIND · STATE(defending|surveying|auditing|conceding) · WHOSE HYPOTHESIS`, and
+`conceding` is pre-registered to err TOWARD THE CRITIC.** If concession errors
+run toward the author's original position instead, the model is wrong and should
+be struck rather than patched again.
+
+**LEDGER FOR THIS THREAD: three point bumps in one session (v1.3.1–v1.3.3), and
+the instrument has been wrong once at each.** That is not a failure — **it is
+what a conjecture under active test looks like** — but a successor should read
+the sequence, not any single bump.
