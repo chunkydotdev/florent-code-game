@@ -66,11 +66,13 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 LOG = ROOT / "corpus" / "ship_watch.log"
 ALERT = ROOT / "corpus" / "SHIP_ALERT"
 STATE = ROOT / "corpus" / "ship_watch_state.json"
+LADDER = ROOT / "corpus" / "ladder_games.tsv"   # denominators only, never the rule
 
 sys.path.insert(0, str(ROOT / "tools"))
 import slot_rule
 from freshness import assert_fresh                              # noqa: E402  the RULE
 import slot_sprt                              # noqa: E402  the ADVISORY
+import slot_denoms                            # noqa: E402  the DENOMINATORS (s33)
 from slot_sprt import bound, run_sprt, MU0, ALPHA   # noqa: E402
 
 BOUND = bound()
@@ -84,7 +86,7 @@ def _n5(v) -> str:
     return "n/a" if v is None else f"{v:+.1f}"
 
 
-def assess(tape, version=None, baseline=None):
+def assess(tape, version=None, baseline=None, ctx=None):
     """Return (state, sprt_verdict, sprt_events, line, alert_text|None).
 
     The rule decides the alarm. The SPRT is reported alongside it and never
@@ -101,7 +103,22 @@ def assess(tape, version=None, baseline=None):
     verdict, events, _, _ = run_sprt(st.rows, MU0, ALPHA)
 
     n5 = _n5(st.net5)
-    net_act = "" if baseline is None else f"\tnet_act={st.rating - baseline:+.1f}"
+    # ⛔ THE BASELINE IS DERIVED, NOT PASSED — s33 2026-08-12. `SHIP_BASELINE`
+    # is a HAND-SET env var and on 2026-08-12 it was 1689, which is `ourbef` of
+    # v112's LAST match (1688.8986); v114's FIRST match carries 1685.6150, so a
+    # v112 game costing -3.28 was being credited to v114's drawdown. That is the
+    # defect this file documents at :52-54 for v102/v101 -- the repair hardened
+    # the ALARM (cell 6) and left the REPORTING column on the env var, and the
+    # reporting column is the one TWO LANES MISREAD WITHIN ONE HOUR that day.
+    # `net_act_src` is printed so a successor can see which number they have.
+    _ctx = ctx or {}
+    derived = _ctx.get("baseline_derived")
+    if derived is None and _ctx.get("ladder"):
+        derived = slot_denoms.activation_baseline(st.version, _ctx["ladder"])
+    base_act, src = ((derived, "derived") if derived is not None else
+                     (baseline, "env") if baseline is not None else (None, "none"))
+    net_act = ("" if base_act is None else
+               f"\tnet_act={st.rating - base_act:+.1f}")
     ruling = ("SLOT FREE" if st.slot_free else
               "held" if st.armed else "unarmed")
     # LEVEL, not just slope. net5 is a five-match SLOPE and it RELAXES as a bad
@@ -112,6 +129,43 @@ def assess(tape, version=None, baseline=None):
     # SPRT. The drawdown column cannot fix that (the alarm still belongs to the
     # rule) but it makes the blind spot legible instead of invisible.
     peak = max(r for _, r, _ in st.rows)
+    # ---- THE DENOMINATORS, s33 2026-08-12 -----------------------------------
+    # The comment above says the drawdown column "makes the blind spot legible".
+    # It did not: it was printed with NO n and NO base rate, and :112 instructs
+    # the reader "Check DRAWDOWN, not net5" -- correct advice with a missing
+    # denominator, which is how two lanes independently alarmed on drawdown=-36
+    # at k=27, a value inside ONE sd. Three columns close that:
+    #   dd_z          the drawdown in units of its own noise
+    #   resolvable_k  matches this holder's OBSERVED rate would need to be called
+    #   p_null        how often a bot with NO EFFECT would have freed the slot
+    #                 by now -- 14% at k=8, 75% at k=27, 97% at k=60
+    # ⭐ p_null INVERTS HOW THE RULING READS: `SLOT FREE` is close to
+    # uninformative on its own (it is the MAJORITY outcome for a neutral holder
+    # by k=27) and `RULE=held` is the informative half. See
+    # docs/research/SPEC-slot-rule-base-rate-2026-08-12.md.
+    # ⛔ FAIL-OPEN BY CONSTRUCTION: every helper returns None rather than
+    # raising, and the columns print `NA`. A monitor that dies because its
+    # DIAGNOSTIC could not be computed is worse than one without the diagnostic.
+    ivs = _ctx.get("intervals") or []
+    sd_pm = slot_denoms.sd_of(ivs)
+    peak_m = max((m for _, r, m in st.rows if r == peak), default=None)
+    k_dd = None if peak_m is None else st.matches - peak_m
+    ddz = slot_denoms.dd_z(st.rating - peak, k_dd, sd_pm) if k_dd else None
+    rate = ((st.rating - base_act) / st.k
+            if base_act is not None and st.k else None)
+    res_k = slot_denoms.resolvable_k(rate, sd_pm)
+    p0 = slot_denoms.p_null(st.k, ivs) if ivs else None
+    _na = lambda v, f: "NA" if v is None else format(v, f)
+    denoms = (f"\tdd_z={_na(ddz, '+.2f')}\tdd_k={_na(k_dd, 'd')}"
+              f"\tresolvable_k={_na(res_k, '.0f')}\tp_null={_na(p0, '.2f')}"
+              f"\tsd_pm={_na(sd_pm, '.2f')}\tnet_act_src={src}"
+              # THE SECOND FILE THIS MONITOR NOW READS GETS ITS AGE PRINTED,
+              # under the same standing rule the tape's `tape_age_min` serves:
+              # "a monitor that reads a file must report that file's FRESHNESS."
+              # A stale ladder table cannot make the RULE wrong (the rule reads
+              # the elo tape) but it silently ages `sd_pm` and can leave a new
+              # holder's baseline UNDERIVED — both visible here instead of not.
+              f"\tlg_age_min={_na(_ctx.get('ladder_age_min'), '.1f')}")
     # ⛔ UTC WITH AN EXPLICIT `Z`, s30 2026-08-11. This line stamped LOCAL CEST
     # with NO zone marker for the whole life of the file -- read naively as UTC
     # it reports rows from the FUTURE, which is precisely how stale data looks
@@ -127,7 +181,7 @@ def assess(tape, version=None, baseline=None):
             f"k={st.k}\trating={st.rating:.0f}\tnet5={n5}\t"
             f"peak={peak:.0f}\tdrawdown={st.rating - peak:+.1f}\t"
             f"armed={st.armed}\tRULE={ruling}\t"
-            f"sprt_fast={pair['fast']}\tsprt_slow={pair['slow']}{net_act}")
+            f"sprt_fast={pair['fast']}\tsprt_slow={pair['slow']}{net_act}{denoms}")
 
     alert = None
     if st.slot_free:
@@ -326,6 +380,52 @@ def selftest() -> int:
               f"log={_out.strip()[:70]!r}")
         if not _live:
             fails.append("fresh-still-prints")
+    # ---- 8. THE DENOMINATOR COLUMNS, s33 ------------------------------------
+    # Added WITH the columns, because the lesson three lanes learned today is
+    # that a selftest can certify the bug: `effective_n`'s independent-fixture
+    # cell asserted "eff_n near the row count" -- the CEILING read -- as its PASS
+    # condition, and `queue_check` had three marker cells that passed on a
+    # missing grep and would have passed with the marker code deleted.
+    # So every cell here drives the column to TWO DIFFERENT VALUES, and the last
+    # two assert the monitor SURVIVES losing the new data source.
+    _ivs = [8.664 * z for z in (-1.7, -1.1, -0.7, -0.4, -0.15, 0.05, 0.25, 0.5,
+                                0.8, 1.2, 1.7, -0.9, 0.35, -0.5, 0.65)]
+    _slow = lambda n: tape([(1685 - 1.5 * i, 900 + i) for i in range(n)])
+    _c = {"intervals": _ivs, "baseline_derived": 1685.0}
+    _, _, _, l27, _ = assess(_slow(28), ctx=_c)
+    _, _, _, l9, _ = assess(_slow(10), ctx=_c)
+    _get = lambda ln, key: ln.split(key)[1].split("\t")[0]
+    p27, p9 = float(_get(l27, "p_null=")), float(_get(l9, "p_null="))
+    check("p_null: the neutral base rate RISES with k (not a constant column)",
+          p27 > p9 + 0.30, f"k=9 {p9:.2f} -> k=27 {p27:.2f}")
+    z27 = float(_get(l27, "dd_z="))
+    check("dd_z: a -40 drawdown at k=27 reads INSIDE one sd -- i.e. nothing",
+          -1.4 < z27 < -0.5, f"dd_z={z27:+.2f}")
+    _, _, _, lfast, _ = assess(
+        tape([(1685 - 12.0 * i, 900 + i) for i in range(28)]), ctx=_c)
+    zf = float(_get(lfast, "dd_z="))
+    check("dd_z: a REAL collapse over the same k reads far outside",
+          zf < -3 and abs(zf - z27) > 2, f"dd_z={zf:+.2f} vs {z27:+.2f}")
+    check("net_act_src: says `derived` when a baseline was derived",
+          "net_act_src=derived" in l27)
+    _, _, _, lenv, _ = assess(_slow(28), baseline=1700.0,
+                              ctx={"intervals": _ivs})
+    check("net_act_src: says `env` when it fell back to the hand-set value",
+          "net_act_src=env" in lenv, "so a reader can see WHICH number they have")
+
+    # ⛔ FAIL-OPEN. The columns read a SECOND file; the rule reads only the tape.
+    # Losing the second file must degrade the DIAGNOSTIC and leave the ALARM
+    # intact. A monitor that dies because its diagnostic could not be computed
+    # is strictly worse than one without the diagnostic.
+    _, _, _, lbad, _ = assess(_slow(28), ctx={"ladder": "/nonexistent/nope.tsv"})
+    check("fail-open: an unreadable ladder degrades the columns to NA",
+          "p_null=NA" in lbad and "sd_pm=NA" in lbad and "dd_z=NA" in lbad)
+    _, _, _, _, a_free = assess(
+        tape([(1600 - 8.0 * i, 900 + i) for i in range(12)]),
+        ctx={"ladder": "/nonexistent/nope.tsv"})
+    check("...and the RULE STILL FREES THE SLOT with the ladder unreadable",
+          a_free is not None and "SLOT RULE HAS FREED" in a_free)
+
     _sr.TAPE = _real_tape
     globals()["LOG"] = _real_log
 
@@ -411,8 +511,21 @@ def main() -> int:
                      f"BLIND\t{fmsg}\n")
         return 0
 
+    # ---- DENOMINATOR CONTEXT, s33 -------------------------------------------
+    # `ladder_games.tsv` supplies the per-match sd (for dd_z / resolvable_k /
+    # p_null) and the DERIVED activation baseline. It is read best-effort: a
+    # failure here must degrade the DIAGNOSTIC columns to `NA` and must never
+    # touch the RULE, which reads the elo tape alone. Its age is printed.
+    ctx = {"ladder": LADDER}
+    try:
+        ctx["intervals"] = slot_denoms.intervals_from_ladder(LADDER)
+        _lok, _lage, _ = assert_fresh(LADDER, max_age_h=24.0)
+        ctx["ladder_age_min"] = _lage * 60 if _lage is not None else None
+    except Exception:
+        ctx["intervals"] = []
+
     # version is REPORTING-ONLY; the rule follows whoever the tape says is live.
-    st, verdict, events, line, alert = assess(slot_rule.TAPE, None, baseline)
+    st, verdict, events, line, alert = assess(slot_rule.TAPE, None, baseline, ctx)
     if line is None:
         print("no holder run on the tape yet", file=sys.stderr)
         return 0
