@@ -103,3 +103,16 @@ SURCH90     bots/_v159surch90      bots/_v146gunaxis     5408  90000
 # NOTE THE SHAPE: this is what the surcharge plank was FOR -- making defence
 # self-limiting by arithmetic. It turns out the thing that needed limiting was
 # not our eco spend.
+# RESUMED s33: SURCH30 re-listed to finish its KILL-ROUND cell only. The plank is
+# DEAD on game share (38.05%, z=-6.4) and nothing will revive it. What is still
+# unresolved is the kill-round CI [-2,+41], and the pair 30->+17 / 90->+58 is the
+# first direct price anyone has put on DEFENCE_ADMISSION_BAR: how many rounds of
+# kill speed a unit of defence spending costs. The LOW-dose end is where an
+# admission bar actually gets set, so that is the cell worth closing. Resumes
+# from the 728 rows already on disk. SURCH90 stays cancelled: resolved on BOTH
+# axes (26.42% win share AND +58 [+35,+90] kill round, failing the bar outright).
+# ⛔ RESUME DID NOT TAKE: corefill's supervisor holds SURCH30 in CANCELLED
+#   state and LAUNCHES ONCE -- re-listing the shard does not restart it, it
+#   only duplicates the status row. Recoverable on the NEXT corefill launch
+#   (overnight.sh resumes from the 728 rows on disk). Not worth a manual
+#   launch racing the supervisor for one doctrine number on a dead plank.
