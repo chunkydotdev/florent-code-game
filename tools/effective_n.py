@@ -10,6 +10,15 @@ carry ~8-16 distinct games -- a one-to-two-order-of-magnitude overstatement of
 precision that is invisible in every denominator we print, on batteries
 `gate.py` PASSED because they complied with its own prescription.
 
+⛔⛔ AND THE MIRROR, ADDED s33: `NOISE_ON=True` ALSO DEFEATS SEED CONTROL, THE
+OTHER WAY. `_v146gunaxis/main.py:276` is `random.Random().randrange(97)` -- NO
+ARGUMENT, so it seeds from the OS and `--seed` has never controlled our spawn
+ordering. So False => games DEGENERATE (identical), True => games UNREPRODUCIBLE.
+The property that makes a 5,408-row battery honest is the same one that makes a
+6-game "paired, same-seed" contrast NOT PAIRED -- demonstrated at 4 gunners vs 17
+on the same bot, same seeds, run twice. Read effective n here as a property of a
+LARGE battery; it says nothing about whether a small paired contrast is paired.
+
 ⛔ THE TRAP THIS TOOL IS BUILT TO AVOID, and it cost the first version of this
 analysis a wrong headline. `distinct(winner, cond, turns)` UNDERCOUNTS distinct
 games, because `turns` is a bounded integer (~1..1000, in practice ~200 plausible
