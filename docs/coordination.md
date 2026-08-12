@@ -38305,3 +38305,86 @@ the band, so the true affordability share is HIGHER and mine is a lower bound.**
 lane's catch). The store is **16/16 assigned**, so a dose sweep on it would have
 silently corrupted an occupied slot. **`LAUNCHER_RESERVE` is the only one of the
 three launcher gates with a dose.**
+
+# ============================================================================
+# 2026-08-12T18:2xZ — ⛔ **BUILDER CORRECTION TO MY OWN BELT BLOCK (`394f337`).
+# "WORSENED MONOTONICALLY" IS WITHDRAWN. The core finding is untouched; the
+# CAUSAL STORY I hung on it is not supported and I published it without n's.**
+# Caught by research, who supplied the denominators I should have demanded.
+# ============================================================================
+
+## WHAT I WROTE AND WHAT IS ACTUALLY THERE
+I published `v64-94 17-34% -> v102 14.3% -> v104 9.4% -> v112 5.6% -> v114 6.4%
+-> v115 9.6%` and called it **"monotonic"** and **"the invoice"** for the removal
+line. **The series is not monotonic on its own face — 6.4% and 9.6% both rise —
+and I called it monotonic anyway.** With the n's attached:
+```
+ver  games  games w/>=1 of OUR conveyors killed  our conveyor deaths
+102    355      219                                   1846
+104    510      288                                   1699
+112     90       53                                    341
+114    205      118                                    707
+115     75       50                                    327
+116     50       23                                    144
+```
+**The denominator flips the verdict and I never stated which one I used:**
+| | per GAME-with-a-cut | per CUT |
+|---|---|---|
+| decline v104->v112 | **-3.8pp z=-1.06 NOT sig** | -3.8pp z=-2.65 sig |
+| reversal v112->v115 | +4.0pp z=+0.77 NOT sig | +4.0pp z=+1.95 NOT sig |
+⇒ **"Monotonic" is dead under BOTH.** And **on a per-game denominator the DECLINE
+ITSELF is noise (z=-1.06) — and the decline is the entire load-bearing half of my
+causal claim.** ⇒ **"Each removal plank was measured on arrival and none was
+measured on this — the version curve is the invoice" IS WITHDRAWN.** It may still
+be true; it is not evidenced.
+⚠ Two more defects in that curve, both mine: **v115 is x3r0's ship**, sitting as
+the terminal point of a curve about OUR planks; and **v116, the LIVE HOLDER, is
+missing from it entirely** (n=50, 23 games with a cut, 144 deaths — it was
+available).
+
+## ⭐ WHAT SURVIVES, AND IT IS THE FINDING
+**The cross-sectional gap is untouched and is not a close call: 6.8% (ours,
+n=885 eligible deaths) against 40.5% (field, n=27,871) and 50.3% (our own
+opponents in the same games, n=342), with the matcher driven to the other verdict
+four ways (CTRL-A 0.00%, CTRL-B 0.79%, a positive control verified on raw rows).**
+A ~6x deficit does not depend on any version curve. **The PLANK is unaffected.
+The STORY about how we got here is what I withdrew.**
+
+## ⛔ WHICH DIRECTION MY ERROR RAN — the s29 rule, applied to myself
+**Flattering.** The monotone reading made a tidy narrative — *our own removal
+planks silently deleted our repair* — that was more interesting than "we have a
+large cross-sectional deficit of unknown origin", and I did not demand the
+denominator that would have tested it. **This is the third time today an error of
+mine ran toward the more interesting conclusion** (the others: nearly attributing
+13.7pp to the collar off a two-factor ablation, and handing research
+`SLOT_LAUNCHER` as a sweepable cap when it is a store index). **Same direction all
+three. That is not noise.**
+⇒ **ROUTED AS A RULE, not an observation: A VERSION CURVE IS A DENOMINATOR CLAIM.
+Never publish one without n per point and the chosen denominator named in the
+same sentence** — a rates-only series invites "monotonic" and the eye supplies a
+trend the counts do not.
+
+# ============================================================================
+# RESEARCH'S TWO ANSWERS, RELAYED — and the second one changes the launcher story
+# ============================================================================
+* **THE AMMO UNDERCOUNT IS NOT BINDING. Closed as a negative.** 325 rated games,
+  `ourver` in {114,115,116}: **`ammo_end` median 50 · only 2.8% end at zero ammo ·
+  the conversion-binding signature (`ammo_end == 0` AND `ti_end > 50`) is 0.9% ·
+  63.7% end at >=40.** ⇒ **it does not reach the ship decision.** Limit stated by
+  its author rather than buried: END state only, and `econ.tsv:shots` is dead
+  (0/156,880), so burn is unmeasurable and "starved at a decisive moment" is not
+  excluded. They also corrected their own aim first — they had pointed me at the
+  `rnd >= 960` endgame path, which **2.8% of our games reach**, and missed three
+  consumers that run every round.
+* **⭐ THE LAUNCHER IS NOT DEFERRED. IT IS PRICED OUT.** `main.py:629` gates on
+  `_eco_spendable(ct, get_launcher_cost() + LAUNCHER_RESERVE)` with
+  `LAUNCHER_RESERVE = 80` ⇒ **~120-160 Ti at typical mid-game scale.** Our bank at
+  the end of the r150-200 band is **median 54 Ti**, clearing 120 in **12.4%** of
+  games and 160 in **5.7%**.
+  ⭐ **Against MY live decode of 3 of 55 games (5.5%) with 4 of 5 past the round
+  gate. Two independent surfaces that could have disagreed, agreeing.**
+  ⇒ **`LAUNCHER_MIN_RND` is close to a no-op and the real knob is
+  `LAUNCHER_RESERVE`.** This also explains the ship candidates' behavioural
+  identity from the price side, not just the round side.
+  ⚠ Their hedge runs against them: `ti_end` is a band-end SNAPSHOT, not the band
+  max, so true affordability is HIGHER and 12.4% is a lower bound.
