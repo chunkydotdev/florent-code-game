@@ -40168,3 +40168,91 @@ ignore it).
 5. **`#30` was published at three different sizes in one session** (7.6% → "4.6×"
    → **0.32 deaths/game absolute**). **Only the absolute is current**, and Q9 of
    the arm retro exists because of it.
+
+# ============================================================================
+# 2026-08-12T21:0xZ (`date -u`) — **BUILDER s34 WRAP — PROCESS DELTAS.**
+# Arm retro ran FIRST (`docs/builder-arm-retro.md`, instrument v1, FIRINGS 3).
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**B1. ⭐⭐ A SUBAGENT'S NEGATIVE ABOUT OUR OWN TOOLING GETS ITS CONTROL AUDITED
+BEFORE IT IS BANKED.** *(behaviour change → booted via the arm retro.)* I relayed
+*"the engine is nondeterministic"* from a subagent whose control was `bots/starter`
+— **four unseeded RNG call sites.** The claim retired
+`gate.py:check_control_equivalence`, **the guard I had myself named hours earlier
+as the one that would have caught the day's biggest defect.** ⇒ **I verify
+subagents' positives and took a negative on trust because it EXCUSED us.** The
+retraction (`6454a7b`) rests on two clean controls: `_det_opp_v56` (zero RNG
+calls) 3/3 and 2/2, and `_x3r0_v120` (`NOISE_ON = False`) 4/4.
+
+**B2. ⭐ FREEZE, THEN VERIFY — NEVER FREEZE, THEN TRUST.** *(behaviour change →
+now the queueing procedure.)* I snapshotted four mid-build arms to defeat an
+edit race, then queued them **without re-checking**. **Two of four were stale.**
+The freeze was right; skipping the re-check made it decorative. **Fixed on the
+fifth arm and that is now the standard: freeze → compile → diff → flag-off
+equivalence → dose → queue.** `SENTSAFE` is the worked example.
+
+**B3. ⭐⭐ THE CONTROL-EQUIVALENCE CHECK IS LIVE AGAIN, AND IT IS THE SESSION'S
+BIGGEST TOOLING GAIN.** The engine is DETERMINISTIC; the only nondeterminism in
+our lineage is `main.py:276` under `NOISE_ON`. ⇒ **set `NOISE_ON = False` in both
+trees and a flags-off arm can be proven BYTE-IDENTICAL to its parent.** Ran it
+for real on `SENTSAFE`: **6/6 identical, 3 maps x 2 seeds.** This was believed
+impossible at 19:5xZ and is now routine.
+⚠ **One honest limit from the build agent: raw replay BYTES cannot match** —
+`BotOutput` carries `execTimeUs`. **Identity of the GAME (result JSON + full
+BUILD/DEATH stream) is the assertable thing.**
+
+**B4. THREE FALSE ZEROS IN ONE SESSION, AND TWO SURVIVED THEIR OWN CHECK.**
+`builds.tsv` reported **0 barriers for every team including us** (it is a TURRET
+census, not a build census); a replay grep reported **0 crashes** (tracebacks go
+to stderr); my own `grep -c | awk` purity check reported **0 RNG calls in a bot
+with four** (single-file `grep -c` omits the filename, so `-F:` summed the wrong
+field). ⇒ **A ZERO THAT MATCHES NO PRIOR EXPECTATION IS THE ONE TO RE-DERIVE.**
+Two of the three were caught only because the answer contradicted something
+already known — **not by the check.**
+
+**B5. A DOSE IS A PRECONDITION, NOT A RESULT — AND IT DECIDED FOUR ARMS TONIGHT.**
+`GUNBLOCK` placed **ZERO ray barriers in 25 live games** against 4.68 enemy
+gunners/game ⇒ its 32% score is uninterpretable, and I refused to read it.
+`SALTIDLE`'s gate opened 64.6% of rounds but **92% of what it bought was
+PECKING** — the ~10-action cost that killed salt — so it removed the mechanism
+and kept the cost. `COLLARVOL` moved barriers 3.90→4.37, inside 1 SE. **Three
+arms cancelled on dose alone, before spending 16,000 games.**
+
+**B6. THE LOCAL FIXTURE CANNOT RESOLVE THE BAR WE CARE MOST ABOUT.** The PARENT's
+own median kill round across four identical 120-game runs: **135.0, 137.0, 141.5,
+146.0.** ⇒ **no local kill-round effect below ~±11 rounds is resolvable**, and
+every `+10/+11/+12.5` measured tonight sits inside that span. **Use paired
+per-cell deltas or a live panel for `DEFENCE_ADMISSION_BAR`; this fixture cannot
+adjudicate it.**
+
+**B7. MAGNUS WATCHING REPLAYS OUT-PRODUCED ~90,000 LOCAL GAMES, AGAIN.** The
+conveyor-repair defect, the **sentinel-survival gap (71%/12r vs 34%/34r — the
+largest measured gap on the board)** and the salt-when-idle refinement all came
+from him describing what he saw. **Two of them corrected ME**: he refuted the
+sentinel-range reading from the wire, and asking *"are the maps really
+different?"* is what made the v120 finding attributable **off data already on
+disk**. ⇒ **S3 from s33 stands and strengthens: the batteries measure, the
+replays explain.**
+
+## RELAYED — nothing of mine is still running
+Five subagents ran: the instrument audit, the belt-cut archive cut, the L4 build,
+the salt build, the barrier-family build (4 arms) and the sentsafe build. **All
+reported; all findings are in this file, `QUEUE.md`, or the worklist.** No live
+agent at wrap.
+
+## RESEARCH'S FIVE OVERNIGHT CARRIES, acknowledged
+1. `raid.py:508`'s 92% is STALE; **only `GUNAX0` can attribute it** — the archive
+   contrast runs BACKWARDS and cannot.
+2. **The DECODE still defers whenever load > 6, which `ALWAYS_BE_RUNNING`
+   guarantees.** NET is fixed (`lg_age_min` 125.4 → 25.5); the EVENT surface is
+   not. **Spec stands: decode OUR RATED GAMES first regardless of load (~15
+   rows/cycle).** Builder-owned, not done.
+3. **`#8` seat-relative has gone unbuilt for THREE sessions** and carries the only
+   Elo estimate on the board (~+7-14). **It needs SCHEDULING, not re-ranking** —
+   it costs build time, not cores, and tonight I had only cores.
+4. **71% (my 25-game leg) vs 52% (their 325 archived games)** — both "high", do
+   not let 71% travel untagged.
+5. **`#30` was published at three sizes today; only the absolute (0.32
+   deaths/game) is current.**
