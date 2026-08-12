@@ -593,3 +593,87 @@ rounds**. A probe bot that repairs at that rate is a purpose-built opponent
 calibrated to an OBSERVED number — strictly better than self-play (blind) or a
 guess (unfalsifiable). ⚠ **And it must be built to the FIELD's number, never to
 ours, or it reintroduces the same blindness wearing a probe's costume.**
+
+# ============================================================================
+# s34 — 2026-08-12, ~17:20Z to ~21:0xZ. BUILDER ARM RETRO. Instrument v1.
+# **FIRINGS THIS SESSION: 3** (self-play blindness rule fired on salt, on
+# gunblock, and on the sentsafe fixture caveat — each changed what an arm was
+# allowed to claim BEFORE it ran).
+# ============================================================================
+
+## 1. WERE THIS LANE'S DECISIONS SOUND?
+
+**SOUND, and the session's spine:**
+* **Opening move — controlling the ship gate on the LIVE holder.** The s33
+  successor note said no shard was controlled against v116; one worklist line
+  fixed it, and it produced the night's only ship decision: **NO SHIP**, on
+  arms reading 49.4%/49.2%.
+* **Killing the gate at 56%.** Verified not optional-stopping: both arms sat
+  inside the band they'd face at FULL n (0.56pp and 0.81pp from 50 against
+  ±1.33), so the remaining 44% could not change it. **Side lane checked this
+  precisely because stopping early favours the incumbent — the right suspicion.**
+* **Mechanism before statistics.** The launcher decode (v118 builds one in 1 of
+  5 live games) explained the unseparability HOURS before the shards did. **A
+  null explained in advance cannot be re-read later as low power.**
+* **Verifying `_v188sentsafe` myself** rather than waiting or rewriting: frozen
+  first, then compiled, diffed, flag-off proven 6/6 identical, dose confirmed.
+
+**UNSOUND, and all four are mine:**
+1. **⛔ I BANKED A SUBAGENT'S NEGATIVE ABOUT OUR OWN TOOLING WITHOUT AUDITING ITS
+   CONTROL.** *"The engine is nondeterministic"* came from `bots/starter` vs
+   itself — a bot with **four unseeded RNG call sites**. **A control that shares
+   the fault it tests for is not a control.** The claim retired
+   `check_control_equivalence` — **the guard I had myself named, hours earlier,
+   as the one that would have caught the day's biggest defect.** Caught by the
+   side lane. ⇒ **I verify subagents' POSITIVES and took a NEGATIVE on trust
+   because it excused us.**
+2. **⛔ FREEZE-THEN-TRUST.** I snapshotted four arms mid-build to avoid a race,
+   then queued them **without re-verifying**. Two of four were **stale**. The
+   freeze was the right instinct; not checking it afterwards made the instinct
+   decorative. **Fixed on the fifth arm: freeze, THEN verify.**
+3. **ESTIMATOR SWAP.** Published *"theirs delivers ~3x the damage per build"* —
+   that is the **median-lifetime** ratio; per-build damage is **2.0x**.
+   Sentinel-rounds is a SUM and medians do not compose into sums.
+4. **OVER-WITHDRAWAL.** Retracted the belt-repair decline entirely when the
+   denominator (89-95% trunk share) cleared the threshold with 15pp to spare.
+   **Destroying a real finding to buy the appearance of rigour is a failure in
+   the same family as overclaiming**, and harder to see because it looks like
+   discipline.
+
+## 2. ⭐ THE ERROR-DIRECTION LEDGER — the s29 rule applied to a whole session
+**Six corrected errors: four ran FLATTERING** (collar 13.7pp off a two-factor
+ablation · `SLOT_LAUNCHER` as a sweepable cap · "monotonic" belt curve · the 3x
+estimator), **one ran OVER-CAUTIOUS** (the withdrawal), **one ran toward
+EXCUSING A BYPASS** (engine nondeterminism → "the gate is impossible").
+⇒ **The third category is new and is the worst shape available**: it converts
+*"we skip this check"* into *"this check cannot be satisfied."* **And I did not
+generate it — I relayed it.** ⇒ **ROUTED: a subagent conclusion that excuses us
+gets its control audited before it is banked.**
+
+## 3. WHAT THE INSTRUMENTS DID — three FALSE ZEROS in one session
+`builds.tsv` reported **0 barriers for every team including us** (it is a TURRET
+census); a replay-grep reported **0 crashes** (tracebacks are on stderr); my own
+`grep -c | awk` purity check reported **0 RNG calls in `starter`** (a bot with
+four). **Two of the three I caught only because the answer contradicted
+something I already knew.** ⇒ **A zero that matches no prior expectation is the
+one to re-derive, and "I ran a check" is not the same as "the check could have
+come out the other way."**
+
+## 4. WHAT THE BUDGET BOUGHT
+~14 arms built, 4 live legs (~1.5 min total prototype exposure, **ZERO rated
+leakage across all four**, verified per-match at the pairing boundary), 5 shards
+cancelled on decided verdicts, 13 queued overnight.
+⭐ **AND THE BEST RETURN WAS AGAIN THE CHEAPEST THING: Magnus watching replays.**
+The conveyor-repair defect, the sentinel-survival gap (71% vs 34% — the largest
+measured gap on the board), and the salt-when-idle refinement **all came from him
+describing what he saw, and two of them corrected ME**: he refuted the sentinel
+range reading from the wire, and he asked whether the maps were really different,
+which is what made the v120 finding attributable **using data already on disk**.
+
+## 5. THE QUESTION THAT IS NOT A LIST
+**What would have changed the most, earliest?** Auditing the control of every
+claim BEFORE banking it — mine and subagents' alike. **Five of tonight's six
+errors were bad controls, not bad reasoning:** a control bot with its own RNG, a
+frozen copy nobody re-checked, a pooled denominator, a turret census read as a
+build census, a median read as a sum. **The reasoning was fine every time. The
+thing under it was not what I thought it was.**
