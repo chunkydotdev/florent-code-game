@@ -9,3 +9,5 @@ SR2NULL      bots/_v152seatrel2     bots/_v152null           5408  21000
 SR1CUR       bots/_v151seatrel      bots/_v148ferryfirst     5408  22000
 SR2CUR       bots/_v152seatrel2     bots/_v148ferryfirst     5408  23000
 SRNULL0      bots/_v148null         bots/_v148ferryfirst     5408  24000
+GUNAXTB      bots/_v153gunaxtb      bots/_v148ferryfirst     5408  25000
+GUNAXREP     bots/_v146gunaxis      bots/_v148ferryfirst     5408  26000

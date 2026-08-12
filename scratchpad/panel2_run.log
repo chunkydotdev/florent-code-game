@@ -1,0 +1,6 @@
+13:06:14Z PANEL2 cycle 1: fired 3/5 (total 3)
+13:08:51Z PANEL2: rate-limited on bfbb9a68, waiting 330s (attempt 1)
+13:14:23Z PANEL2: rate-limited on f61d19c1, waiting 330s (attempt 1)
+13:19:53Z PANEL2: rate-limited on f61d19c1, waiting 330s (attempt 2)
+13:25:25Z PANEL2 cycle 1: fired 5/5 (total 8)
+13:45:58Z PANEL2 cycle 2: fired 5/5 (total 13)

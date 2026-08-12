@@ -1,0 +1,29 @@
+05:21:35Z UNRATED RUN  version=v108  target=25 games  incumbent=v104
+05:21:35Z cells=5  outfile=scratchpad/arm_unrated_v108_20260811T052135Z.txt   (arm_*.txt so rate_budget can attribute it)
+05:21:35Z holder before: v104 (Loki v2)
+05:21:40Z cycle 1: activated v108 — firing 5 challenge(s)
+05:21:41Z   REJECTED eceb8455 (counts against the limit even though no match exists)
+05:21:43Z   REJECTED b2deaacd (counts against the limit even though no match exists)
+05:21:46Z   REJECTED 7fd91e77 (counts against the limit even though no match exists)
+05:21:48Z   REJECTED 25288fdb (counts against the limit even though no match exists)
+05:21:50Z   REJECTED b538e523 (counts against the limit even though no match exists)
+05:21:56Z rollback confirmed: holder=v104 (Loki v2)
+05:21:56Z cycle 1: queued 0/5   total 0/25 games
+05:21:56Z no challenge accepted this cycle — will re-pace and retry
+05:22:00Z cycle 2: activated v108 — firing 5 challenge(s)
+05:22:01Z   REJECTED eceb8455 (counts against the limit even though no match exists)
+05:22:03Z   REJECTED b2deaacd (counts against the limit even though no match exists)
+05:22:06Z   REJECTED 7fd91e77 (counts against the limit even though no match exists)
+05:22:08Z   REJECTED 25288fdb (counts against the limit even though no match exists)
+05:22:10Z   REJECTED b538e523 (counts against the limit even though no match exists)
+05:22:16Z rollback confirmed: holder=v104 (Loki v2)
+05:22:16Z cycle 2: queued 0/5   total 0/25 games
+05:22:16Z no challenge accepted this cycle — will re-pace and retry
+05:22:21Z cycle 3: activated v108 — firing 5 challenge(s)
+05:22:21Z   REJECTED eceb8455 (counts against the limit even though no match exists)
+05:22:23Z   REJECTED b2deaacd (counts against the limit even though no match exists)
+05:22:26Z   REJECTED 7fd91e77 (counts against the limit even though no match exists)
+05:22:28Z   REJECTED 25288fdb (counts against the limit even though no match exists)
+05:22:31Z   REJECTED b538e523 (counts against the limit even though no match exists)
+05:22:33Z interrupted — restoring incumbent
+05:22:36Z rollback confirmed: holder=v104 (Loki v2)

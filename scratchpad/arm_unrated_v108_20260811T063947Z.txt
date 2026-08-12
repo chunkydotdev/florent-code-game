@@ -1,0 +1,2 @@
+team1 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcodeError: Opponent has no ready submission
+team2 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcodeError: Opponent has no ready submission

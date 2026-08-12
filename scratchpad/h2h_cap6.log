@@ -1,0 +1,16 @@
+
+H2H  _v143cap6  vs  _v130loki13
+  games 64   (both seats always played)
+  WINS  32 = 50%
+  core kills FOR 31   AGAINST 29   r1000 (a DEFEAT either way) 4
+  seat A (treatment first)  17/32     seat B (treatment second)  15/32
+H2H_RESULT: _v143cap6 32/64
+
+H2H  _v140noseal  vs  _v130loki13
+  games 64   (both seats always played)
+  WINS  27 = 42%
+  core kills FOR 27   AGAINST 36   r1000 (a DEFEAT either way) 1
+  seat A (treatment first)  11/32     seat B (treatment second)  16/32
+H2H_RESULT: _v140noseal 27/64
+tools/h2h.sh:81: command not found: tral
+  per map: tools/h2h.sh:87: antler: parameter not set

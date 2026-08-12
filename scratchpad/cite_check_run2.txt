@@ -1,0 +1,37 @@
+cite_check — 187 unique URLs cited by 289 files
+⚠ A 200 means the PAGE exists. It does NOT mean the quote is on it.
+
+  ⚠ MISMATCH http://satirist.org/ai/planetwars/
+              [200 · slug 'planetwars' vs title 'Planet Wars 2010']
+              cited by pay-for-the-capture-with-no-economic-return.md
+  ⚠ MISMATCH https://blog.stoneztao.com/posts/bc21/
+              [200 · slug 'bc21' vs title 'Battlecode 2021 Postmortem | Stone's Blog']
+              cited by copy-the-leader-from-their-public-replays.md
+  ⚠ MISMATCH https://davechurchill.ca/starcraft/aiide/
+              [200 · slug 'aiide' vs title 'StarCraft AI Competition(s)']
+              cited by manner-pylon-and-what-the-rules-permit.md
+              cited by no-league-bans-inducing-an-opponent-timeout.md
+  ⚠ MISMATCH https://docs.screeps.com/defense.html
+              [200 · slug 'defense' vs title 'Defending your room | Screeps Documentation']
+              cited by 2026-08-09-sweep-7.md
+              cited by fortify-on-idle.md
+  ⛔ DEAD     https://github.com/Lux-AI-Challenge/Lux-Design-S2/blob/main/docs/specs.md
+              [404]
+              cited by the-kill-mechanism-was-starvation-not-hp.md
+  ⚠ MISMATCH https://www.lux-ai.org/specs-s2
+              [200 · slug 'specs-s2' vs title 'Lux AI Challenge']
+              cited by 2026-08-09-sweep-3.md
+
+========================================================================
+  DEAD      1
+  MISMATCH  5
+  ERROR     1
+  BLOCKED   3
+  OK        177
+
+⛔ 6 SUSPECT CITATION(S) — re-source or cut them.
+   DEAD     = the page does not exist.
+   MISMATCH = the page EXISTS but is not the page the URL claims. This is the
+              sweep-25 failure mode exactly: the invented slug returned HTTP 200
+              while pointing at a different article, so status alone passes it.
+⚠ 1 ERROR + 3 BLOCKED are NON-VERDICTS, not passes.

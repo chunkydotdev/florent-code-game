@@ -1,0 +1,33 @@
+
+H2H  _v139heal  vs  _v130loki13
+  games 1024   (both seats always played)
+  WINS  524 = 51%
+  core kills FOR 510   AGAINST 485   r1000 (a DEFEAT either way) 28
+  seat A (treatment first)  284/512     seat B (treatment second)  240/512
+  per map: antler 69/128  atoll 63/128  drumlin 70/128  fjordgate 52/128  heart 75/128  hive 67/128  meander 59/128  nordkap 69/128  
+
+  informative band at n=1024: <=480 or >=543 wins  (47%-53% is noise)
+  VERDICT: NO-INFORMATION back to the pool, NOT demoted
+
+  ⭐⭐⭐ WIN RATE / GAME SHARE — THE VERDICT (Magnus, 2026-08-11: "Win rate decides")
+      _v139heal        524/1024 = 51.2%   vs the measured 50.0% null
+      The ladder pays delta = 32 x (S - E), S = games won / 5. This IS the objective.
+
+  --- decomposition, for MECHANISM reading only ---
+      P(core-kill win)   _v139heal       49.0%  (510/1024)
+                         _v130loki13     47.0%  (485/1024)
+      kill round | kill  _v139heal      median 204   n=510
+                         _v130loki13    median 207   n=485
+      tiebreak wins      _v139heal      14        _v130loki13    15   (both score -10 BY DESIGN,
+                         and they are completely different states — 48.8% of live-era games sit here)
+
+  KILL-SPEED SCORE (SECONDARY since 2026-08-11 — PROGRAMME.md: win rate is NOT the verdict)
+      _v139heal  mean -2.93 /game        _v130loki13  mean -3.31 /game
+      (tools/score.py buckets; a tiebreak win and a loss both score -10)
+
+
+  --- secondary, and NOT the verdict ---
+  KILL ROUND (continuous, far more power than the win count):
+    when _v139heal wins:  n=524  median 208
+    when _v130loki13 wins:  n=500  median 209
+H2H_RESULT: _v139heal 524/1024 NO-INFORMATION back to the pool, NOT demoted

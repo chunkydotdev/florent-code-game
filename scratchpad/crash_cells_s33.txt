@@ -1,0 +1,26 @@
+
+==============================================================================
+QUEUE #17 — CRASH CELLS.  Local, both-ways.  Two of three cells are FORCED-ZERO.
+==============================================================================
+
+A_ON_RAW   bots/_v131loki14  vs  bots/_probe_border_raw
+   games 24/24
+   throws  B(border)=0  I(interior)=0  F(fallback)=0
+   CRASHES 15 across 6/24 games   expected: CRASH
+   VERDICT: UNDOSED — no throw was delivered, this cell answers nothing
+
+B_ON_GUARD   bots/_v131loki14  vs  bots/_probe_border_guard
+   games 24/24
+   throws  B(border)=0  I(interior)=0  F(fallback)=0
+   CRASHES 0 across 0/24 games   expected: ZERO
+   VERDICT: UNDOSED — no throw was delivered, this cell answers nothing
+
+C_OFF_RAW   bots/_v131loki14off  vs  bots/_probe_border_raw
+   games 24/24
+   throws  B(border)=0  I(interior)=0  F(fallback)=0
+   CRASHES 13 across 3/24 games   expected: ZERO
+   VERDICT: ⛔ CONTROL CONTAMINATED — 13 crashes where zero was required
+
+------------------------------------------------------------------------------
+READ: THE WEAPON DOES NOT FIRE against a probe built to be maximally
+      vulnerable.  The road closes for the price of a local batch.

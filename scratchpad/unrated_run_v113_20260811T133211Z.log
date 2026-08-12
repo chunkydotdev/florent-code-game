@@ -1,0 +1,15 @@
+13:32:11Z UNRATED RUN  version=v113  target=25 games  incumbent=v112
+13:32:11Z cells=5  outfile=scratchpad/arm_unrated_v113_20260811T133211Z.txt   (arm_*.txt so rate_budget can attribute it)
+13:32:12Z holder before: v112 (Loki v3)
+13:32:14Z pairing in 44s — waiting past it before activating
+13:33:17Z cycle 1: activated v113 — firing 5 challenge(s)
+13:33:18Z   queued f3362833  +5 games   PROGRESS 5/25
+13:33:21Z   queued 12fdece5  +5 games   PROGRESS 10/25
+13:33:23Z   queued 26286680  +5 games   PROGRESS 15/25
+13:33:26Z   queued 74ae65ff  +5 games   PROGRESS 20/25
+13:33:28Z   queued 648d1d5b  +5 games   PROGRESS 25/25
+13:33:33Z rollback confirmed: holder=v112 (Loki v3)
+13:33:33Z cycle 1: queued 5/5   total 25/25 games
+13:33:33Z DONE: 25/25 games queued in 1 cycle(s); 5 accepted, 0 rejected
+13:33:34Z final holder: v112 (Loki v3)
+13:33:34Z ladder is on the incumbent. clean exit.

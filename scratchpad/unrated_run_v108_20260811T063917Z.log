@@ -1,0 +1,5 @@
+06:39:17Z UNRATED RUN  version=v108  target=10 games  incumbent=v104
+06:39:17Z cells=2  outfile=scratchpad/arm_unrated_v108_20260811T063917Z.txt   (arm_*.txt so rate_budget can attribute it)
+06:39:18Z holder before: v104 (Loki v2)
+06:39:18Z ABORT: match ledger is BLIND. Firing nothing — an unrecorded match is the
+06:39:18Z        defect this ledger exists to fix, so we do not fire without it.

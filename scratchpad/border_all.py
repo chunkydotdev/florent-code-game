@@ -1,0 +1,110 @@
+#!/usr/bin/env python3
+"""Field-wide border/undamaged census, reusing scratchpad/border_decode.decode verbatim.
+
+Population: corpus/meta_join.tsv, triggeredBy == ladder, neither side us
+(379a5d80-...) nor 'opensverige - plan B' (b7cafd9f-...), completedAt <
+CUTOFF (the census's decode-start clock) -> reproduces 5,140 games / 1,028
+matches / 70 teams.
+
+Per team, aggregates: border/off-border builder-ROUNDS (round-start),
+undamaged builder removals (crash_census rule) split mid-game vs final round
+and border vs off, and damage-killed removals.  Read-only; scratch.
+"""
+from __future__ import annotations
+import csv, json, sys
+from pathlib import Path
+from multiprocessing import Pool
+
+sys.path.insert(0, "scratchpad")
+from border_decode import decode  # noqa: E402
+
+CUTOFF = "2026-08-10T04:05:34Z"
+US = "379a5d80"
+PB = "b7cafd9f"
+ARCH = Path("replay_archive")
+
+
+def build_pop():
+    rows = list(csv.DictReader(open("corpus/meta_join.tsv"), delimiter="\t"))
+    pop = []
+    for r in rows:
+        if r["triggeredBy"] != "ladder":
+            continue
+        if r["teamAId"].startswith(US) or r["teamBId"].startswith(US):
+            continue
+        if r["teamAId"].startswith(PB) or r["teamBId"].startswith(PB):
+            continue
+        if r["completedAt"] >= CUTOFF:
+            continue
+        pop.append(r)
+    return pop
+
+
+def job(args):
+    fname, na, nb = args
+    p = ARCH / fname
+    out = []
+    for ti, name in ((0, na), (1, nb)):
+        try:
+            d = decode(p, ti)
+        except Exception as exc:  # noqa: BLE001
+            out.append({"team": name, "err": f"{type(exc).__name__}: {exc}",
+                        "file": fname})
+            continue
+        und = d["undamaged"]
+        dmg = d["damage_killed"]
+        out.append({
+            "team": name,
+            "file": fname,
+            "bnd": d["border_builder_rounds"],
+            "off": d["offborder_builder_rounds"],
+            "u_mid_bnd": sum(1 for x in und if not x["final"] and x["border"]),
+            "p_mid_bnd": sum(1 for x in und + dmg if not x["final"] and x["border"] and (x["hp_at"] or 0) > 0),
+            "p_mid_off": sum(1 for x in und + dmg if not x["final"] and not x["border"] and (x["hp_at"] or 0) > 0),
+            "p_fin": sum(1 for x in und + dmg if x["final"] and (x["hp_at"] or 0) > 0),
+            "pd_mid": sum(1 for x in und + dmg if not x["final"] and (x["hp_at"] or 0) <= 0),
+            "u_mid_off": sum(1 for x in und if not x["final"] and not x["border"]),
+            "u_fin": sum(1 for x in und if x["final"]),
+            "d_mid": sum(1 for x in dmg if not x["final"]),
+            "d_fin": sum(1 for x in dmg if x["final"]),
+            "thrown_own": d["throws_of_own_builders"],
+        })
+    return out
+
+
+def main():
+    pop = build_pop()
+    missing = [r["file"] for r in pop if not (ARCH / r["file"]).exists()]
+    print(f"population games={len(pop)} matches={len({r['match'] for r in pop})} "
+          f"missing_files={len(missing)}", file=sys.stderr)
+    jobs = [(r["file"], r["teamAName"], r["teamBName"]) for r in pop
+            if (ARCH / r["file"]).exists()]
+    agg = {}
+    errs = []
+    with Pool(8) as pool:
+        for i, res in enumerate(pool.imap_unordered(job, jobs, chunksize=32)):
+            for rec in res:
+                if "err" in rec:
+                    errs.append(rec)
+                    continue
+                a = agg.setdefault(rec["team"], {k: 0 for k in
+                                                ("games", "bnd", "off", "u_mid_bnd",
+                                                 "u_mid_off", "u_fin", "d_mid",
+                                                 "d_fin", "thrown_own",
+                                                 "p_mid_bnd", "p_mid_off",
+                                                 "p_fin", "pd_mid")})
+                a["games"] += 1
+                for k in ("bnd", "off", "u_mid_bnd", "u_mid_off", "u_fin",
+                          "d_mid", "d_fin", "thrown_own", "p_mid_bnd",
+                          "p_mid_off", "p_fin", "pd_mid"):
+                    a[k] += rec[k]
+            if (i + 1) % 1000 == 0:
+                print(f"  ...{i+1}/{len(jobs)}", file=sys.stderr, flush=True)
+    print(f"decode errors: {len(errs)}", file=sys.stderr)
+    json.dump({"agg": agg, "errors": errs[:20], "n_err": len(errs),
+               "games": len(jobs)},
+              open("scratchpad/border_all_out.json", "w"), indent=1)
+
+
+if __name__ == "__main__":
+    main()

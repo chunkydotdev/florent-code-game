@@ -1,0 +1,61 @@
+20:14:53Z cycle 1: v106 LIVE, firing 4 carriers
+20:15:03Z rolled back to v104, VERIFIED
+20:15:03Z cycle 1: fired 4/4 (total 4)
+20:15:04Z meter says wait 20s (incumbent live)
+20:15:29Z cycle 2: v106 LIVE, firing 4 carriers
+20:15:30Z rate-limited on 25288fdb -- NOT waiting with v106 live; deferring to next window
+20:15:36Z rolled back to v104, VERIFIED
+20:15:36Z cycle 2: fired 0/4 (total 4)
+20:15:36Z meter says wait 20s (incumbent live)
+20:16:02Z cycle 3: v106 LIVE, firing 4 carriers
+20:16:03Z rate-limited on 25288fdb -- NOT waiting with v106 live; deferring to next window
+20:16:14Z cycle 1: v106 LIVE, firing 4 carriers
+20:16:15Z rate-limited on 25288fdb -- NOT waiting with v106 live; deferring to next window
+20:16:20Z rolled back to v104, VERIFIED
+20:16:20Z cycle 1: fired 0/4 (total 4)
+20:16:21Z meter says wait 20s (incumbent live)
+20:16:46Z cycle 2: v106 LIVE, firing 4 carriers
+20:16:47Z rate-limited on 25288fdb -- NOT waiting with v106 live; deferring to next window
+20:16:52Z rolled back to v104, VERIFIED
+20:16:52Z cycle 2: fired 0/4 (total 4)
+20:16:53Z meter says wait 20s (incumbent live)
+20:17:05Z cycle 1: v106 LIVE, firing 4 carriers
+20:17:06Z rate-limited on 25288fdb -- NOT waiting with v106 live; deferring to next window
+20:17:12Z rolled back to v104, VERIFIED
+20:17:12Z cycle 1: fired 0/4 (total 4)
+20:17:12Z meter says wait 330s (incumbent live)
+20:22:47Z cycle 2: v106 LIVE, firing 4 carriers
+20:22:48Z rate-limited on 25288fdb -- NOT waiting with v106 live; deferring to next window
+20:22:53Z rolled back to v104, VERIFIED
+20:22:53Z cycle 2: fired 0/4 (total 4)
+20:22:54Z meter says wait 330s (incumbent live)
+20:28:29Z cycle 3: v106 LIVE, firing 4 carriers
+20:28:31Z rate-limited on 25288fdb -- NOT waiting with v106 live; deferring to next window
+20:28:36Z rolled back to v104, VERIFIED
+20:28:36Z cycle 3: fired 0/4 (total 4)
+20:28:36Z meter says wait 330s (incumbent live)
+20:34:12Z cycle 4: v106 LIVE, firing 4 carriers
+20:34:14Z rate-limited on 7fd91e77 -- NOT waiting with v106 live; deferring to next window
+20:34:19Z rolled back to v104, VERIFIED
+20:34:19Z cycle 4: fired 1/4 (total 5)
+20:34:19Z meter says wait 330s (incumbent live)
+20:39:55Z cycle 5: v106 LIVE, firing 4 carriers
+20:39:58Z rate-limited on eceb8455 -- NOT waiting with v106 live; deferring to next window
+20:40:03Z rolled back to v104, VERIFIED
+20:40:03Z cycle 5: fired 2/4 (total 7)
+20:40:04Z meter says wait 480s (incumbent live)
+20:48:10Z cycle 6: v106 LIVE, firing 4 carriers
+20:48:11Z rate-limited on eceb8455 -- NOT waiting with v106 live; deferring to next window
+20:48:16Z rolled back to v104, VERIFIED
+20:48:16Z cycle 6: fired 0/4 (total 7)
+20:48:17Z meter says wait 330s (incumbent live)
+20:53:52Z cycle 7: v106 LIVE, firing 4 carriers
+20:53:53Z rate-limited on eceb8455 -- NOT waiting with v106 live; deferring to next window
+20:53:58Z rolled back to v104, VERIFIED
+20:53:58Z cycle 7: fired 0/4 (total 7)
+20:53:59Z meter says wait 330s (incumbent live)
+20:59:34Z cycle 8: v106 LIVE, firing 4 carriers
+20:59:39Z rate-limited on b2deaacd -- NOT waiting with v106 live; deferring to next window
+20:59:45Z rolled back to v104, VERIFIED
+20:59:45Z cycle 8: fired 3/4 (total 10)
+20:59:45Z LOKI-14b: done, 10 challenges banked; holder v104 (Loki v2)

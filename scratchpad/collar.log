@@ -1,0 +1,20 @@
+144 matches — 6 maps x 3 opponents x 2 seeds x 2 seats x 2 arms, 5 parallel
+  20/144
+  40/144
+  60/144
+  80/144
+  100/144
+  120/144
+  140/144
+144 games -> scratchpad/collar/full.json
+
+MECHANISM (the metric only this change can move)
+  arm        games      r0_99   r100_249   r250_499      r500p    total  spawns  crash
+  control       72       1.00       1.43       1.12       1.06     4.61   12.58      0
+  variant       72       1.15       0.74       0.31       0.21     2.40    7.99      0
+
+SAFETY ARM (win rate; underpowered by construction at this n — not the verdict)
+  control   63/72 = 87.5%   median collected 3120
+  variant   63/72 = 87.5%   median collected 1510
+
+Run tools/reprice.py on the JSON for the paired/pooled split.

@@ -1,0 +1,19 @@
+[16:13:21] HOLDER READ LIVE: v116 (restore v116)
+[16:13:21] SUBMIT -- ACTIVATES NOW
+HOLDER: before=v116 (Loki v5)  after=v118
+--activate given: leaving the new submission live. THIS IS A SHIP.
+[16:13:24] LIVE:   Active bot: v118
+[16:13:24] Leviathan
+Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+[16:13:24] Coreflood
+Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+[16:13:24] 0033
+Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+[16:13:25] BeanCounters
+Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+[16:13:25] SmartFridge
+https://game.code.florent.vc/match/04c6fc29-aa33-46b6-beb5-f0f3a568665b
+[16:13:26] ROLLBACK to v116
+Version 116 is now the active submission.
+[16:13:27] HOLDER NOW:   Active bot: v116 (Loki v5)
+[16:13:27] ROLLBACK VERIFIED

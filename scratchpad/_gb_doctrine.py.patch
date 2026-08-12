@@ -1,0 +1,8 @@
+--- bots/_v146gunaxis/doctrine.py	2026-08-11 11:18:13
++++ bots/_v147gunblank/doctrine.py	2026-08-11 11:26:19
+@@ -1513,3 +1513,5 @@
+ # LOKI-25: penalty for a raid station sitting on a live enemy gunner's ray.
+ # Same units as LOKI_EXILE_PENALTY, which is the launcher-adjacency penalty.
+ LOKI_GUNAXIS_PENALTY = 8
++
++LOKI26_GUNBLANK_ON = True   # barrier an enemy gunner's firing axis, enemy half only

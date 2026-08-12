@@ -1,0 +1,24 @@
+====================================================================================================
+CONTROL 4 DIAGNOSTIC — is the queue doc's Instrument B reproducible at n=120?
+====================================================================================================
+  US FULL POPULATION n=5,178: fwd-rounds/game 615.1  builds/game 13.94  ROUNDS/BUILD 44.12
+  TOP FULL POPULATION n=3,165: fwd-rounds/game 806.3  builds/game 23.73  ROUNDS/BUILD 33.98
+  FULL RATIO US/TOP = 1.30x    (queue doc 2.28x on n=120/group)
+
+  -- head-of-order 120 (meta_join row order, the cheapest thing a 120-game cut does):
+     US: n=120  fwd-rounds/game 609.2  builds/game 12.27  ROUNDS/BUILD 49.66
+     TOP: n=120  fwd-rounds/game 805.1  builds/game 27.88  ROUNDS/BUILD 28.87
+
+  -- distribution of a RANDOM 120-game subsample (2,000 draws, without replacement):
+     US: median 44.48   2.5% 33.37   97.5% 58.64   min 27.95 max 72.29
+     TOP: median 33.90   2.5% 28.09   97.5% 41.51   min 24.04 max 50.74
+     US/TOP ratio at n=120/group: median 1.31x   2.5% 0.92x   97.5% 1.84x   max 2.48x
+     P(sampled ratio >= 2.28x | full population) = 0.0005
+
+  -- is the sampled pooled ratio driven by the sample's MEAN GAME LENGTH?
+     US: r(mean game length, pooled rounds/build) = +0.098   (mean length 347)
+     TOP: r(mean game length, pooled rounds/build) = +0.379   (mean length 305)
+
+  -- one game per match (the doc says Instrument B sampled one game per match):
+     US: n=1,038  ROUNDS/BUILD 53.82
+     TOP: n=637  ROUNDS/BUILD 33.86

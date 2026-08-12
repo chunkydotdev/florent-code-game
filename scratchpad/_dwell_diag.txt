@@ -1,0 +1,71 @@
+==============================================================================================================
+CONTROL 4 FOLLOW-UP — which cut, if any, reproduces the queue doc's Instrument B (US 54.55 / TOP 23.93)?
+==============================================================================================================
+  BY GAME INDEX WITHIN THE MATCH (a match is 5 games; the doc says Instrument B sampled ONE game per match):
+   US:
+    game_1                             games  1,038  rounds/game   647.9  builds/game  12.04  ROUNDS/BUILD      53.82  meanlen   367
+    game_2                             games  1,036  rounds/game   692.3  builds/game  14.00  ROUNDS/BUILD      49.44  meanlen   360
+    game_3                             games  1,035  rounds/game   558.9  builds/game  13.56  ROUNDS/BUILD      41.21  meanlen   352
+    game_4                             games  1,035  rounds/game   596.2  builds/game  12.55  ROUNDS/BUILD      47.51  meanlen   326
+    game_5                             games  1,034  rounds/game   580.2  builds/game  17.57  ROUNDS/BUILD      33.03  meanlen   328
+    ALL games                          games  5,178  rounds/game   615.1  builds/game  13.94  ROUNDS/BUILD      44.12  meanlen   347
+   TOP:
+    game_1                             games    637  rounds/game   780.5  builds/game  23.05  ROUNDS/BUILD      33.86  meanlen   302
+    game_2                             games    632  rounds/game   826.7  builds/game  24.18  ROUNDS/BUILD      34.19  meanlen   311
+    game_3                             games    632  rounds/game   806.9  builds/game  23.59  ROUNDS/BUILD      34.21  meanlen   300
+    game_4                             games    632  rounds/game   835.0  builds/game  24.59  ROUNDS/BUILD      33.95  meanlen   311
+    game_5                             games    632  rounds/game   782.7  builds/game  23.23  ROUNDS/BUILD      33.69  meanlen   300
+    ALL games                          games  3,165  rounds/game   806.3  builds/game  23.73  ROUNDS/BUILD      33.98  meanlen   305
+
+  TOP BY TEAM (a side is counted for each TOP team in the game):
+    Clankers                           games    517  rounds/game   859.2  builds/game  19.97  ROUNDS/BUILD      43.02  meanlen   293
+    Erebus                             games    455  rounds/game   864.9  builds/game  20.56  ROUNDS/BUILD      42.07  meanlen   291
+    Jython                             games    461  rounds/game  1294.5  builds/game  29.19  ROUNDS/BUILD      44.34  meanlen   329
+    Lorem Ipsum                        games    355  rounds/game   788.8  builds/game  17.35  ROUNDS/BUILD      45.47  meanlen   275
+    O(1)                               games    440  rounds/game   747.3  builds/game  19.76  ROUNDS/BUILD      37.82  meanlen   391
+    Pantheon                           games    600  rounds/game  1009.3  builds/game  35.49  ROUNDS/BUILD      28.44  meanlen   294
+    The Flotte Experience              games    435  rounds/game   761.8  builds/game  15.32  ROUNDS/BUILD      49.71  meanlen   320
+    not adgato                         games    420  rounds/game   834.5  builds/game  26.60  ROUNDS/BUILD      31.37  meanlen   299
+    sporks                             games    542  rounds/game  1035.9  builds/game  42.30  ROUNDS/BUILD      24.49  meanlen   310
+
+  TOP BY GAME COMPOSITION:
+    TOP vs non-TOP                     games  2,105  rounds/game   575.7  builds/game  19.07  ROUNDS/BUILD      30.18  meanlen   292
+    TOP vs TOP (both sides counted)    games  1,060  rounds/game  1264.3  builds/game  32.97  ROUNDS/BUILD      38.35  meanlen   331
+
+  LADDER vs UNRATED (both populations pool them; the primary does not control this):
+    US ladder                          games  2,430  rounds/game   703.5  builds/game  15.66  ROUNDS/BUILD      44.93  meanlen   412
+    US unrated                         games  2,748  rounds/game   537.0  builds/game  12.42  ROUNDS/BUILD      43.22  meanlen   289
+    TOP ladder                         games  1,275  rounds/game   946.1  builds/game  24.00  ROUNDS/BUILD      39.41  meanlen   314
+    TOP unrated                        games  1,890  rounds/game   712.0  builds/game  23.54  ROUNDS/BUILD      30.25  meanlen   298
+
+  US BY OUR BOT VERSION (47 distinct versions in the pool):
+    US v104                            games  1,750  rounds/game   509.3  builds/game  11.83  ROUNDS/BUILD      43.06  meanlen   246
+    US v102                            games    650  rounds/game   569.6  builds/game  15.11  ROUNDS/BUILD      37.70  meanlen   260
+    US v80                             games    366  rounds/game   947.3  builds/game  18.38  ROUNDS/BUILD      51.54  meanlen   535
+    US v94                             games    200  rounds/game   960.8  builds/game  20.34  ROUNDS/BUILD      47.25  meanlen   494
+    US v72                             games    180  rounds/game   417.3  builds/game   7.64  ROUNDS/BUILD      54.59  meanlen   428
+    US v105                            games    160  rounds/game   668.1  builds/game   8.44  ROUNDS/BUILD      79.18  meanlen   268
+    US v106                            games    150  rounds/game   438.7  builds/game  10.70  ROUNDS/BUILD      41.00  meanlen   231
+    US v68                             games    130  rounds/game   588.0  builds/game  17.41  ROUNDS/BUILD      33.78  meanlen   455
+
+  US BY GAME LENGTH DECILE (the composition channel):
+    US len decile 1                    games    517  rounds/game   108.6  builds/game   3.79  ROUNDS/BUILD      28.69  meanlen    73
+    US len decile 2                    games    518  rounds/game   176.7  builds/game   5.21  ROUNDS/BUILD      33.89  meanlen   103
+    US len decile 3                    games    518  rounds/game   225.9  builds/game   6.16  ROUNDS/BUILD      36.64  meanlen   127
+    US len decile 4                    games    518  rounds/game   284.1  builds/game   7.73  ROUNDS/BUILD      36.73  meanlen   155
+    US len decile 5                    games    518  rounds/game   346.9  builds/game   8.68  ROUNDS/BUILD      39.97  meanlen   188
+    US len decile 6                    games    517  rounds/game   399.9  builds/game   9.41  ROUNDS/BUILD      42.49  meanlen   235
+    US len decile 7                    games    518  rounds/game   501.0  builds/game  12.06  ROUNDS/BUILD      41.54  meanlen   304
+    US len decile 8                    games    518  rounds/game   670.4  builds/game  15.35  ROUNDS/BUILD      43.66  meanlen   438
+    US len decile 9                    games    518  rounds/game  1433.2  builds/game  31.42  ROUNDS/BUILD      45.61  meanlen   844
+    US len decile 10                   games    518  rounds/game  2003.4  builds/game  39.57  ROUNDS/BUILD      50.63  meanlen  1000
+    TOP len decile 1                   games    316  rounds/game   196.7  builds/game   9.97  ROUNDS/BUILD      19.74  meanlen    96
+    TOP len decile 2                   games    317  rounds/game   313.7  builds/game  15.63  ROUNDS/BUILD      20.07  meanlen   132
+    TOP len decile 3                   games    316  rounds/game   360.2  builds/game  16.38  ROUNDS/BUILD      21.98  meanlen   156
+    TOP len decile 4                   games    317  rounds/game   452.3  builds/game  19.37  ROUNDS/BUILD      23.36  meanlen   179
+    TOP len decile 5                   games    316  rounds/game   512.6  builds/game  19.73  ROUNDS/BUILD      25.98  meanlen   204
+    TOP len decile 6                   games    317  rounds/game   599.2  builds/game  22.25  ROUNDS/BUILD      26.93  meanlen   234
+    TOP len decile 7                   games    316  rounds/game   772.0  builds/game  25.01  ROUNDS/BUILD      30.87  meanlen   284
+    TOP len decile 8                   games    317  rounds/game   971.1  builds/game  30.25  ROUNDS/BUILD      32.10  meanlen   353
+    TOP len decile 9                   games    316  rounds/game  1454.2  builds/game  39.52  ROUNDS/BUILD      36.79  meanlen   496
+    TOP len decile 10                  games    317  rounds/game  2428.9  builds/game  39.15  ROUNDS/BUILD      62.05  meanlen   911

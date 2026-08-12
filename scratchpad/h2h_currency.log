@@ -1,0 +1,87 @@
+
+H2H  _v139heal  vs  _v130loki13
+  games 64   (both seats always played)
+  WINS  26 = 40%
+  core kills FOR 26   AGAINST 36   r1000 (a DEFEAT either way) 2
+  seat A (treatment first)  10/32     seat B (treatment second)  16/32
+  per map: antler 5/8  atoll 1/8  drumlin 5/8  fjordgate 6/8  heart 1/8  hive 3/8  meander 3/8  nordkap 2/8  
+
+  informative band at n=64: <=24 or >=39 wins  (38%-62% is noise)
+  VERDICT: NO-INFORMATION back to the pool, NOT demoted
+
+  ⭐ KILL-SPEED SCORE (PRIMARY CURRENCY — PROGRAMME.md: win rate is NOT the verdict)
+      _v139heal  mean -4.58 /game        _v130loki13  mean -2.11 /game
+      (tools/score.py buckets; a tiebreak win and a loss both score -10)
+
+
+  --- secondary, and NOT the verdict ---
+  KILL ROUND (continuous, far more power than the win count):
+    when _v139heal wins:  n=26  median 213
+    when _v130loki13 wins:  n=38  median 209
+H2H_RESULT: _v139heal 26/64 NO-INFORMATION back to the pool, NOT demoted
+
+H2H  _v141nohome  vs  _v130loki13
+  games 64   (both seats always played)
+  WINS  29 = 45%
+  core kills FOR 28   AGAINST 33   r1000 (a DEFEAT either way) 3
+  seat A (treatment first)  14/32     seat B (treatment second)  15/32
+  per map: antler 4/8  atoll 2/8  drumlin 4/8  fjordgate 5/8  heart 3/8  hive 4/8  meander 4/8  nordkap 3/8  
+
+  informative band at n=64: <=24 or >=39 wins  (38%-62% is noise)
+  VERDICT: NO-INFORMATION back to the pool, NOT demoted
+
+  ⭐ KILL-SPEED SCORE (PRIMARY CURRENCY — PROGRAMME.md: win rate is NOT the verdict)
+      _v141nohome  mean -3.69 /game        _v130loki13  mean -2.39 /game
+      (tools/score.py buckets; a tiebreak win and a loss both score -10)
+
+
+  --- secondary, and NOT the verdict ---
+  KILL ROUND (continuous, far more power than the win count):
+    when _v141nohome wins:  n=29  median 205
+    when _v130loki13 wins:  n=35  median 184
+H2H_RESULT: _v141nohome 29/64 NO-INFORMATION back to the pool, NOT demoted
+
+H2H  _v142roster  vs  _v130loki13
+  games 64   (both seats always played)
+  WINS  31 = 48%
+  core kills FOR 29   AGAINST 30   r1000 (a DEFEAT either way) 5
+  seat A (treatment first)  12/32     seat B (treatment second)  19/32
+  per map: antler 3/8  atoll 3/8  drumlin 7/8  fjordgate 3/8  heart 5/8  hive 3/8  meander 5/8  nordkap 2/8  
+
+  informative band at n=64: <=24 or >=39 wins  (38%-62% is noise)
+  VERDICT: NO-INFORMATION back to the pool, NOT demoted
+
+  ⭐ KILL-SPEED SCORE (PRIMARY CURRENCY — PROGRAMME.md: win rate is NOT the verdict)
+      _v142roster  mean -3.73 /game        _v130loki13  mean -3.67 /game
+      (tools/score.py buckets; a tiebreak win and a loss both score -10)
+
+
+  --- secondary, and NOT the verdict ---
+  KILL ROUND (continuous, far more power than the win count):
+    when _v142roster wins:  n=31  median 209
+    when _v130loki13 wins:  n=33  median 246
+H2H_RESULT: _v142roster 31/64 NO-INFORMATION back to the pool, NOT demoted
+
+H2H  _v146gunaxis  vs  _v130loki13
+  games 64   (both seats always played)
+  WINS  32 = 50%
+  core kills FOR 31   AGAINST 31   r1000 (a DEFEAT either way) 2
+  seat A (treatment first)  14/32     seat B (treatment second)  18/32
+  per map: antler 2/8  atoll 3/8  drumlin 6/8  fjordgate 5/8  heart 4/8  hive 6/8  meander 4/8  nordkap 2/8  
+
+  informative band at n=64: <=24 or >=39 wins  (38%-62% is noise)
+  VERDICT: NO-INFORMATION back to the pool, NOT demoted
+
+  ⭐ KILL-SPEED SCORE (PRIMARY CURRENCY — PROGRAMME.md: win rate is NOT the verdict)
+      _v146gunaxis  mean -2.75 /game        _v130loki13  mean -3.12 /game
+      (tools/score.py buckets; a tiebreak win and a loss both score -10)
+
+
+  ⚠⚠ KILL-SPEED UP, WIN RATE DOWN -- the proxy and the goal DISAGREE
+     The ladder pays GAME SHARE. Read the Elo consequence, not the proxy.
+
+  --- secondary, and NOT the verdict ---
+  KILL ROUND (continuous, far more power than the win count):
+    when _v146gunaxis wins:  n=32  median 197
+    when _v130loki13 wins:  n=32  median 222
+H2H_RESULT: _v146gunaxis 32/64 NO-INFORMATION back to the pool, NOT demoted

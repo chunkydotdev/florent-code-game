@@ -1,0 +1,36 @@
+==============================================================================
+QUEUE #17 — CRASH CELLS.  Dose read ENGINE-SIDE from the victim's own
+position trace, never from our stdout.  See the v1 defect in the docstring.
+==============================================================================
+
+A_ON_RAW  [POSITIVE]   bots/_v131loki14  vs  bots/_probe_border_raw
+   games 24
+   THROWS (engine-side)  border=13  interior=57
+   CRASHES 13 across 5/24 games
+   VERDICT: DOSED — 13 border arrivals, 1.00 crashes per border throw
+
+B_ON_GUARD  [FORCED_ZERO]   bots/_v131loki14  vs  bots/_probe_border_guard
+   games 24
+   THROWS (engine-side)  border=16  interior=45
+   CRASHES 0 across 0/24 games
+   VERDICT: DOSED — 16 border arrivals, 0.00 crashes per border throw
+
+C_OFF_RAW  [ARM_CONTROL]   bots/_v131loki14off  vs  bots/_probe_border_raw
+   games 24
+   THROWS (engine-side)  border=16  interior=17
+   CRASHES 16 across 3/24 games
+   VERDICT: DOSED — 16 border arrivals, 1.00 crashes per border throw
+
+------------------------------------------------------------------------------
+MECHANISM: CONFIRMED — border throws kill the UNGUARDED probe and
+           leave the GUARDED one untouched under the same throws.
+
+PLANK (does the border ARM add border throws over the incumbent?):
+   arm ON  border/interior = 13/57   arm OFF = 16/17
+   ⚠ THE ARM-OFF BUILD ALSO LANDS BORDER THROWS — the incumbent exile
+     ordering (farthest tile from our core) already produces them.
+     The border arm's value is the DIFFERENCE, not the whole count.
+
+⚠ SCOPE: this says nothing about what SHARE of the real field is
+  vulnerable. We patched this in eco.py; most teams have not, and
+  'most' is unmeasured. That needs the live leg.

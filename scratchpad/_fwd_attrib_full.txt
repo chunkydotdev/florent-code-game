@@ -1,0 +1,245 @@
+============================================================================================================
+POPULATION (corpus/meta_join.tsv; side keyed on teamAId/teamBId, NOT us_side -- TRAP 7)
+  US   games with replay on disk : 5,243
+  TOP  third-party games on disk : 3,285   (TOP on BOTH sides: 1,060 -> two measured sides each)
+  VSUS our opponents' sides      : 5,243  (context only, never pooled into TOP)
+============================================================================================================
+  decoded US    files=5,243 sides=5,243 skipped=0 PARSE FAILURES=0 
+  decoded TOP   files=3,285 sides=4,345 skipped=0 PARSE FAILURES=0 
+  decoded VSUS  files=5,243 sides=5,243 skipped=0 PARSE FAILURES=0 
+  decoded US_vTOP files=115 sides=115 skipped=0 PARSE FAILURES=0 
+  decoded TOP_vTOP files=1,060 sides=2,120 skipped=0 PARSE FAILURES=0 
+  decoded TOP_vOTH files=2,225 sides=2,225 skipped=0 PARSE FAILURES=0 
+
+============================================================================================================
+CONTROL 1 -- REPRODUCE THE ANCHOR (forward builder deaths per 1,000 forward builder-rounds)
+  target: US 2.92, TOP 0.84, ratio 3.47x  (QUEUE-forward-efficiency-2026-08-11.md)
+============================================================================================================
+  band        US deaths   US fwd-rnds   US rate  TOP deaths   TOP fwd-rnds  TOP rate   US/TOP
+  r0-59          1,132       360,556      3.14         329        337,449      0.97    3.22x
+  r60-179         2,742       873,912      3.14         875        933,630      0.94    3.35x
+  r180-249         1,148       306,764      3.74         286        331,096      0.86    4.33x
+  r250-499         2,198       684,702      3.21         469        573,950      0.82    3.93x
+  r500-999         2,076       975,226      2.13         304        438,400      0.69    3.07x
+  POOLED          9,296     3,201,160      2.90       2,263      2,614,525      0.87    3.36x
+  [context] VSUS (our opponents, killed BY US): 9,422 fwd deaths / 2,939,783 fwd-rounds = 3.20/1k -- NOT part of TOP
+  ==> REPRODUCTION: US 2.90 (doc 2.92)  TOP 0.87 (doc 0.84)  ratio 3.36x (doc 3.47x)
+
+============================================================================================================
+CONTROL 2 -- ATTRIBUTION COMPLETENESS (share of FORWARD deaths by cause class)
+  EXACT = attributed shot damage equals death-round HP loss from the ledger
+============================================================================================================
+  group   n fwd deaths          EXACT           OVER        PARTIAL   DMG_UNATTRIB      NO_DAMAGE   UNATTRIB
+  US             9,296         99.47%          0.53%          0.00%          0.00%          0.00%      0.00%
+  TOP            2,263         98.28%          0.71%          0.00%          0.00%          1.02%      1.02%
+  VSUS           9,422         97.93%          0.51%          0.00%          0.00%          1.56%      1.56%
+  RECONCILIATION of the NON-FATAL shot census (round-start-occupancy rule) against the HP ledger:
+    US    census implies 361,261 dmg vs ledger 459,382  = 78.6% (shortfall = shots on tiles a bot moved onto mid-round; census is a LOWER BOUND)
+    TOP   census implies 114,518 dmg vs ledger 128,352  = 89.2% (shortfall = shots on tiles a bot moved onto mid-round; census is a LOWER BOUND)
+    VSUS  census implies 363,024 dmg vs ledger 521,838  = 69.6% (shortfall = shots on tiles a bot moved onto mid-round; census is a LOWER BOUND)
+
+============================================================================================================
+H1 -- WHAT KILLS THEM (forward deaths carrying >=1 attributed shot)
+============================================================================================================
+  group         n  gunner-only  sentinel-only    mixed  friendly-fire  dmg/death  shots/death
+  US        9,296       87.51%         11.78%    0.71%          0.75%       9.20         1.11
+  TOP       2,240       66.03%         33.12%    0.85%          2.19%      11.26         1.07
+  VSUS      9,275       33.09%         64.29%    2.62%          3.36%      15.39         1.09
+  CONTROL 3 -- SAME INSTRUMENT ON *HOME* DEATHS. Must come out different; if it
+               returns the forward numbers it is not measuring shooter type at all.
+  group         n  gunner-only  sentinel-only    mixed  friendly-fire  dmg/death  shots/death
+  US       12,158       83.28%         16.33%    0.39%          0.29%       9.40         1.08
+  TOP       4,083       63.34%         36.22%    0.44%          0.07%      11.34         1.05
+  VSUS      3,766       47.11%         51.49%    1.41%          2.81%      13.39         1.06
+  CONTROL 3b -- builder melee (enemy BuilderAttack on the victim's tile, death round):
+    US    10/9,296 = 0.11%  (engine damage-target law: a builder attack hits the BUILDING, never the bot)
+    TOP   6/2,263 = 0.27%  (engine damage-target law: a builder attack hits the BUILDING, never the bot)
+    VSUS  12/9,422 = 0.13%  (engine damage-target law: a builder attack hits the BUILDING, never the bot)
+  NON-FATAL shot census, forward, per 1,000 forward builder-rounds (round-start occupancy, LOWER BOUND):
+    US    gunner  14.10   sentinel   0.79   total  14.88
+    TOP   gunner   4.55   sentinel   0.67   total   5.21
+    VSUS  gunner   6.75   sentinel   4.23   total  10.99
+
+============================================================================================================
+DECOMPOSITION -- deaths/round = (damage taken/round) x (deaths/damage taken)
+  damage from the UpdateHp ledger, attributed to the band of the victim's ROUND-START tile
+============================================================================================================
+  group      fwd dmg     fwd-rnds   dmg/1k rnds  fwd deaths  dmg/death   heal fwd  heal/dmg
+  US         459,382    3,201,160        143.50       9,296      49.42     62,445     13.6%
+  TOP        128,352    2,614,525         49.09       2,263      56.72      9,894      7.7%
+  VSUS       521,838    2,939,783        177.51       9,422      55.39     37,556      7.2%
+  ==> TERM 1  damage-taken per forward round, US/TOP = 2.92x
+  ==> TERM 2  damage absorbed per death,      TOP/US = 1.15x
+  ==> product = 3.36x   (identity: must equal the 3.36x anchor)
+
+  SUB-DECOMPOSITION OF TERM 1 -- is it more guns, or worse tiles?
+  group   enemy guns alive  enemy sents alive  guns IN RANGE  sents IN RANGE  dmg per gun-in-range-rnd
+  US                  3.18               0.58          0.959           0.227                      0.12
+  TOP                 1.65               0.47          0.274           0.153                      0.11
+  VSUS                0.69               1.19          0.170           0.562                      0.24
+  (per forward builder-round; IN RANGE ignores facing and line-of-sight, so it is
+   an upper bound on threat and a clean population control: it says how many enemy
+   turrets COULD reach the tile we chose to stand on.)
+  ==> TERM 1a  turrets-in-range per forward round, US/TOP = 2.78x
+  ==> TERM 1b  damage per turret-in-range-round,   US/TOP = 1.05x
+      1a x 1b = 2.92x  (must equal TERM 1)
+
+============================================================================================================
+H2 -- FOCUS (distinct turret TILES that fired on the victim's tile on the death round)
+============================================================================================================
+  group         n   1 shooter        2       3+    mean  guns in range  sents in range
+  US        9,296      89.49%    9.62%    0.89%    1.11           2.88            0.42
+  TOP       2,240      93.17%    6.65%    0.18%    1.07           1.52            0.85
+  VSUS      9,275      91.82%    7.43%    0.75%    1.09           0.96            2.09
+
+============================================================================================================
+H3 -- DEPTH (distance to the ENEMY core, normalised by core-to-core distance;
+      SMALLER = DEEPER inside the enemy half)
+============================================================================================================
+  group   median @death     p25     p75   mean over fwd ROUNDS  deaths d2<=32  deaths d2<=8
+  US              0.300   0.186   0.425                  0.316         79.77%        29.12%
+  TOP             0.263   0.167   0.395                  0.345         84.00%        33.94%
+  VSUS            0.253   0.177   0.354                  0.382         85.92%        35.24%
+
+============================================================================================================
+H4 -- TRANSIT vs STATION   *** THE ONE THAT DECIDES THE LAUNCHER-DELIVERY PLANK ***
+  Every forward builder-round AND every forward death bucketed by rounds since that
+  bot last moved.  Hazard is computed WITHIN each state -- same side-set both sides
+  of the fraction.
+============================================================================================================
+  --- US --- (9,296 forward deaths, 3,201,160 forward builder-rounds)
+    state              fwd rounds  % of rounds   deaths  % of deaths  deaths/1k rnds  vs group mean
+    moved last rnd      1,588,607       49.63%    4,148       44.62%            2.61          0.90x
+    2 rnds ago            120,918        3.78%      905        9.74%            7.48          2.58x
+    3-9                   246,534        7.70%    2,867       30.84%           11.63          4.00x
+    10-29                 217,440        6.79%      814        8.76%            3.74          1.29x
+    30+                 1,027,661       32.10%      562        6.05%            0.55          0.19x
+    NEVER moved                 0        0.00%        0        0.00%             nan           nanx
+  --- TOP --- (2,263 forward deaths, 2,614,525 forward builder-rounds)
+    state              fwd rounds  % of rounds   deaths  % of deaths  deaths/1k rnds  vs group mean
+    moved last rnd      1,532,981       58.63%      985       43.53%            0.64          0.74x
+    2 rnds ago            192,728        7.37%      246       10.87%            1.28          1.47x
+    3-9                   379,069       14.50%      845       37.34%            2.23          2.58x
+    10-29                 188,621        7.21%      121        5.35%            0.64          0.74x
+    30+                   321,126       12.28%       66        2.92%            0.21          0.24x
+    NEVER moved                 0        0.00%        0        0.00%             nan           nanx
+  --- VSUS --- (9,422 forward deaths, 2,939,783 forward builder-rounds)
+    state              fwd rounds  % of rounds   deaths  % of deaths  deaths/1k rnds  vs group mean
+    moved last rnd      1,760,637       59.89%    5,891       62.52%            3.35          1.04x
+    2 rnds ago            167,064        5.68%      803        8.52%            4.81          1.50x
+    3-9                   291,222        9.91%    1,931       20.49%            6.63          2.07x
+    10-29                 176,688        6.01%      446        4.73%            2.52          0.79x
+    30+                   544,172       18.51%      351        3.73%            0.65          0.20x
+    NEVER moved                 0        0.00%        0        0.00%             nan           nanx
+  US/TOP hazard ratio WITHIN each transit state (this is the 3.47x, decomposed):
+    state              US rate   TOP rate    US/TOP  US round-share  TOP round-share
+    moved last rnd        2.61       0.64     4.06x          49.63%           58.63%
+    2 rnds ago            7.48       1.28     5.86x           3.78%            7.37%
+    3-9                  11.63       2.23     5.22x           7.70%           14.50%
+    10-29                 3.74       0.64     5.84x           6.79%            7.21%
+    30+                   0.55       0.21     2.66x          32.10%           12.28%
+    NEVER moved            nan        nan      nanx           0.00%            0.00%
+  STANDARDISATION -- what would the US rate be if we spent our forward rounds in
+  TOP's transit-state MIX (removes the composition difference, keeps our hazards)?
+    US observed 2.90/1k  ->  US standardised to TOP's mix 4.11/1k   (ratio to TOP 4.74x vs observed 3.36x)
+  ⭐ THE COMMISSIONED k=3 / k=10 FORM (moved within the last k rounds), exact:
+    group       k  transit rnds  transit%  deaths T  deaths T%  T rate/1k  S rate/1k     T/S
+    US          3     1,767,872    55.23%     5,671     61.00%       3.21       2.53   1.27x
+    US         10     1,972,713    61.62%     8,037     86.46%       4.07       1.02   3.98x
+    TOP         3     1,825,661    69.83%     1,410     62.31%       0.77       1.08   0.71x
+    TOP        10     2,130,320    81.48%     2,100     92.80%       0.99       0.34   2.93x
+    VSUS        3     2,009,264    68.35%     7,168     76.08%       3.57       2.42   1.47x
+    VSUS       10     2,236,179    76.07%     8,695     92.28%       3.89       1.03   3.76x
+  ROUNDS SINCE THE BOT LAST *ACTED* (build/attack/heal), forward rounds only:
+    state             US % of rounds   TOP % of rounds
+    moved last rnd            20.31%            18.57%
+    2 rnds ago                 2.67%             4.92%
+    3-9                        8.18%            15.85%
+    10-29                     12.55%            17.57%
+    30+                       43.35%            35.88%
+    NEVER moved               12.94%             7.21%
+  CONTROL 3c -- same transit instrument on HOME rounds (composition must differ):
+    state              US home %   TOP home %
+    moved last rnd        60.82%       53.84%
+    2 rnds ago             6.18%        7.21%
+    3-9                    8.18%       10.63%
+    10-29                  5.25%        7.46%
+    30+                   16.69%       17.26%
+    NEVER moved            2.88%        3.60%
+  thrown-at-least-once among forward deaths:
+    US    1,389/9,296 = 14.94%
+    TOP   51/2,263 = 2.25%
+    VSUS  3,046/9,422 = 32.33%
+
+============================================================================================================
+H5 -- HP TRAJECTORY.  A builder has 40 HP; a gunner does 7 and a sentinel 18, so
+      NO builder can die from full HP in one round.  The measurable question is how
+      LONG the killing episode lasted and whether the bot could have left.
+============================================================================================================
+  group         n  mean hp_start  mean age  rnds first-dmg->death   median  n dmg rounds  ever healed
+  US        9,296           5.75     123.5                  46.26       12          4.73       14.34%
+  TOP       2,263           5.83     138.5                  44.57       11          3.84       13.96%
+  VSUS      9,422           6.65     118.5                  34.50        9          2.89       14.37%
+  DAMAGE EPISODE LENGTH (rounds between first damage ever taken and death):
+    group   <=1 rnd (burst)      2-5     6-20   21-100     >100  never dmgd
+    US                0.31%   27.94%   33.14%   26.44%   12.09%       0.08%
+    TOP               0.18%   31.95%   31.33%   23.99%   11.62%       0.93%
+    VSUS              1.17%   37.23%   28.23%   23.07%    8.84%       1.45%
+  DID IT TRY TO LEAVE? (moved at least once AFTER first taking damage):
+    US    7,128/9,289 = 76.74% moved after first damage
+    TOP   1,722/2,242 = 76.81% moved after first damage
+    VSUS  7,537/9,285 = 81.17% moved after first damage
+
+  BONUS -- enemy builder bots within d2<=2 of the victim at round start:
+    US    32.71% of forward deaths (mean 0.40)
+    TOP   37.78% of forward deaths (mean 0.46)
+    VSUS  40.89% of forward deaths (mean 0.51)
+
+============================================================================================================
+CONTROL 4 -- OPPONENT-MATCHED. The decomposition above says the biggest single term is
+  HOW MANY ENEMY TURRETS EXIST, which is a property of the OPPONENT, not of us. If that
+  is right, matching opponent quality must shrink the gap. US_vTOP = our 115 games against
+  a >=1900 team; TOP_vTOP = both sides of TOP-vs-TOP games; TOP_vOTH = the TOP side against
+  everyone else.  Same instrument, same definitions, different opponent populations.
+============================================================================================================
+  group        sides  fwd deaths    fwd-rnds  deaths/1k  enemy turrets alive  in range  dmg/1k rnds
+  US           5,243       9,296   3,201,160       2.90                 3.76     1.186       143.50
+  US_vTOP        115          76      49,465       1.54                 3.94     0.908        77.53
+  TOP          4,345       2,263   2,614,525       0.87                 2.12     0.427        49.09
+  TOP_vTOP     2,120         695   1,335,627       0.52                 2.19     0.379        29.06
+  TOP_vOTH     2,225       1,568   1,278,898       1.23                 2.06     0.477        70.01
+
+  ENEMY TURRETS ALIVE / IN RANGE per forward builder-round, BY ROUND BAND
+  (separates 'our opponents own more guns' from 'we go forward later, when more guns exist')
+  band           US alive    TOP alive   US inrange  TOP inrange alive US/TOP inrng US/TOP
+  r0-59             1.51         1.32        0.503        0.477        1.14x        1.06x
+  r60-179            2.43         1.95        0.762        0.435        1.25x        1.75x
+  r180-249            3.41         2.32        1.161        0.433        1.47x        2.68x
+  r250-499            4.50         2.56        1.469        0.408        1.76x        3.60x
+  r500-999            5.38         2.39        1.626        0.393        2.25x        4.13x
+
+  ⭐ THE SAME FOUR TERMS, COMPUTED WITHIN EACH ROUND BAND -- because the pooled version
+     is Simpson-ed: turret exposure is equal in r0-59 and 4x apart in r500-999, while the
+     DEATH ratio is ~3.2x in both.
+  band         A pop  B tile  C dmg/turret-rnd  D absorb  product  observed
+  r0-59       1.14x   0.92x             2.24x     1.36x    3.22x     3.22x
+  r60-179      1.25x   1.40x             1.69x     1.13x    3.35x     3.35x
+  r180-249      1.47x   1.83x             1.46x     1.11x    4.33x     4.33x
+  r250-499      1.76x   2.04x             1.11x     0.98x    3.93x     3.93x
+  r500-999      2.25x   1.84x             0.72x     1.03x    3.07x     3.07x
+  damage taken per 1,000 forward builder-rounds, by band:
+  band              US       TOP   US/TOP
+  r0-59        190.99     80.84    2.36x
+  r60-179       159.29     53.66    2.97x
+  r180-249       182.67     46.61    3.92x
+  r250-499       154.05     38.42    4.01x
+  r500-999        92.08     30.77    2.99x
+
+  FOUR-TERM PRODUCT (each term US/TOP; the product is the anchor by construction):
+    A. enemy turrets EXIST (opponent property)      1.77x   log-share   47.3%
+    B. share of them IN RANGE of our tile           1.57x   log-share   37.0%
+    C. damage per turret-in-range-round             1.05x   log-share    4.3%
+    D. damage absorbed per death                    1.15x   log-share   11.4%
+    PRODUCT                                         3.36x   (anchor 3.36x)
+
+  dumped scratchpad/fwd_death_rows_s31.tsv

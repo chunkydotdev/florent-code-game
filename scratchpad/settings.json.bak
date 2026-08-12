@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(tools/arena.py)",
+      "Write(tools/arena.py)",
+      "Edit(tools/make_map.py)",
+      "Write(tools/make_map.py)",
+      "Edit(maps/**)",
+      "Write(maps/**)",
+      "Edit(bots/starter/**)",
+      "Write(bots/starter/**)",
+      "Edit(bots/v*/**)",
+      "Write(bots/v*/**)",
+      "Edit(bots/probe_*/**)",
+      "Write(bots/probe_*/**)",
+      "Edit(program.md)",
+      "Write(program.md)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null; OUT=$(.venv/bin/python tools/queue_check.py 2>&1); RC=$?; if [ $RC -ne 0 ]; then jq -n --arg o \"$OUT\" '{systemMessage:\"BUILD QUEUE BELOW FLOOR - research stocks it before other work\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; else jq -n --arg o \"$OUT\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; fi",
+            "timeout": 20,
+            "statusMessage": "Checking build-queue floor"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+[15:53:22] HOLDER READ LIVE: v116 (restore v116)
+[15:53:22] SUBMIT -- ACTIVATES NOW
+HOLDER: before=v116 (Loki v5)  after=v117
+--activate given: leaving the new submission live. THIS IS A SHIP.
+[15:53:25] LIVE:   Active bot: v117
+[15:53:25] Leviathan
+https://game.code.florent.vc/match/820b1397-59fb-422c-80ab-b35677ef2b0e
+[15:53:25] Coreflood
+https://game.code.florent.vc/match/aa72a635-082c-4489-a2c3-9f9971ae86c9
+[15:53:26] 0033
+https://game.code.florent.vc/match/5eb0b78a-ae98-41fc-b04a-098a25af9bfc
+[15:53:26] BeanCounters
+https://game.code.florent.vc/match/62b51035-8d5e-498e-bf65-9dc0cb2a4786
+[15:53:27] SmartFridge
+https://game.code.florent.vc/match/49ded463-242c-4296-99f7-cc715f9a899f
+[15:53:28] ROLLBACK to v116
+Version 116 is now the active submission.
+[15:53:29] HOLDER NOW:   Active bot: v116 (Loki v5)
+[15:53:29] ROLLBACK VERIFIED

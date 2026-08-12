@@ -1,0 +1,20 @@
+09:21:19Z CONTROL-v104: fired 3/5
+09:31:59Z LOKI15-quota: fired 5/5
+09:42:43Z CONFIRM-v102: fired 5/5
+09:53:29Z LOKI16-ringhold: fired 5/5
+10:04:14Z LOKI14-kidnap: fired 5/5
+=== cycle 1 done: arm_v104.txt=15 arm_loki15.txt=15 arm_v102confirm.txt=10 arm_loki16.txt=5 arm_loki14.txt=5 
+10:14:42Z CONTROL-v104: fired 5/5
+10:25:22Z LOKI15-quota: fired 5/5
+10:36:06Z CONFIRM-v102: fired 5/5
+10:46:51Z LOKI16-ringhold: fired 5/5
+10:57:36Z LOKI14-kidnap: fired 5/5
+=== cycle 2 done: arm_v104.txt=20 arm_loki15.txt=20 arm_v102confirm.txt=15 arm_loki16.txt=10 arm_loki14.txt=10 
+11:08:04Z CONTROL-v104: fired 5/5
+11:18:43Z LOKI15-quota: fired 5/5
+11:29:29Z CONFIRM-v102: fired 5/5
+11:40:14Z LOKI16-ringhold: fired 5/5
+11:50:59Z LOKI14-kidnap: fired 5/5
+=== cycle 3 done: arm_v104.txt=25 arm_loki15.txt=25 arm_v102confirm.txt=20 arm_loki16.txt=15 arm_loki14.txt=15 
+12:01:27Z CONTROL-v104: fired 5/5
+12:12:06Z LOKI15-quota: fired 5/5

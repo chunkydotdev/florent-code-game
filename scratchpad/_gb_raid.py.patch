@@ -1,0 +1,48 @@
+--- bots/_v146gunaxis/raid.py	2026-08-11 11:18:13
++++ bots/_v147gunblank/raid.py	2026-08-11 11:26:41
+@@ -267,6 +267,37 @@
+         # 2. SEAL A FREE SEAT.  can_build_barrier enforces adjacency, emptiness
+         # and occupancy, so a seat one of our own raiders is standing on is
+         # refused by the engine and stays a peck station.
++        # LOKI-26: BLANK AN ENEMY GUNNER'S AXIS.  A gunner's shot is a straight
++        # line that IS BLOCKED by obstacles (r^2=13); a sentinel's IGNORES them
++        # (r^2=32).  So a 3 Ti barrier on a firing axis blanks a gunner outright
++        # and does NOTHING to a sentinel -- and we are 28% gunner against a
++        # league mean of 68%.  **We are the team that loses least by putting
++        # barriers on axes and gains most**, because the gunner-heavy majority
++        # (Erebus 98%, Jython 97%, not adgato 93%) cannot do it back to us.
++        # 91.94% of our 4,379 forward builder deaths are enemy gunners, and
++        # exposure-normalised we die forward at 2.915 per 1k builder-rounds
++        # against 0.847 in games we are not in.
++        # ⚠ It is a TEMPO TAX, not a permanent blind: a gunner rotates for 10 Ti
++        # and a full action cooldown. At 3 Ti that trade is still ours, but the
++        # head-to-head must be read as a drain rather than a shutdown.
++        # ON PROGRAMME: placed in the ENEMY half on the approach to their core,
++        # to keep an assault alive. Sited at home it would be off-programme.
++        gun_axis = getattr(self, '_gun_axis', None) or set()
++        if LOKI26_GUNBLANK_ON and gun_axis and \
++                ti >= ct.get_barrier_cost() + LOKI_SEAL_TI_FLOOR:
++            for d in CARDINALS:
++                t = p.add(d)
++                if (t.x, t.y) not in gun_axis:
++                    continue
++                if t.distance_squared(self.core) <= p.distance_squared(self.core):
++                    continue          # enemy half only
++                try:
++                    if ct.can_build_barrier(t):
++                        ct.build_barrier(t)
++                        return True
++                except Exception:
++                    continue
++
+         if LOKI_BARRIER_SEAL_ON and ti >= ct.get_barrier_cost() + LOKI_SEAL_TI_FLOOR:
+             for d in CARDINALS:
+                 t = p.add(d)
+@@ -567,6 +598,7 @@
+             if standing_here:
+                 score -= 2  # hysteresis: do not shuffle between equal tiles
+             k = (score, (s.x * 17 + s.y * 31 + self.raid_slot * 7) % 97, s.y, s.x)
++            self._gun_axis = gun_axis
+             if best_k is None or k < best_k:
+                 best, best_k = s, k
+         self.raid_station = best

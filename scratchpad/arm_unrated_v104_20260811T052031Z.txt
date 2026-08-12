@@ -1,0 +1,5 @@
+eceb8455-7cb3-442b-ba40-c6597c16b446 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode{"matchId": "5be05eb4-808b-4b65-a943-32ed851cff41"}
+b2deaacd-08ad-4c14-b97b-b4f382d82ea3 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode{"matchId": "21473134-4451-4169-80b9-559ebaed177b"}
+7fd91e77-812c-44da-bce7-457be94d2548 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode{"matchId": "ee7e53d9-45a2-4a19-a45a-535090f1b267"}
+25288fdb-f3a0-4ae2-964f-2fd7eb9b11d7 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode{"matchId": "687d2252-16cd-4899-b274-a9c56618a170"}
+b538e523-2250-4c1d-b718-e73b77ebad55 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode{"matchId": "982d966e-3c6e-450b-8251-8f25dc92330c"}

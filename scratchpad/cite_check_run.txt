@@ -1,0 +1,76 @@
+    ...1/187    ...2/187    ...3/187    ...4/187    ...5/187    ...6/187    ...7/187    ...8/187    ...9/187    ...10/187    ...11/187    ...12/187    ...13/187    ...14/187    ...15/187    ...16/187    ...17/187    ...18/187    ...19/187    ...20/187    ...21/187    ...22/187    ...23/187    ...24/187    ...25/187    ...26/187    ...27/187    ...28/187    ...29/187    ...30/187    ...31/187    ...32/187    ...33/187    ...34/187    ...35/187    ...36/187    ...37/187    ...38/187    ...39/187    ...40/187    ...41/187    ...42/187    ...43/187    ...44/187    ...45/187    ...46/187    ...47/187    ...48/187    ...49/187    ...50/187    ...51/187    ...52/187    ...53/187    ...54/187    ...55/187    ...56/187    ...57/187    ...58/187    ...59/187    ...60/187    ...61/187    ...62/187    ...63/187    ...64/187    ...65/187    ...66/187    ...67/187    ...68/187    ...69/187    ...70/187    ...71/187    ...72/187    ...73/187    ...74/187    ...75/187    ...76/187    ...77/187    ...78/187    ...79/187    ...80/187    ...81/187    ...82/187    ...83/187    ...84/187    ...85/187    ...86/187    ...87/187    ...88/187    ...89/187    ...90/187    ...91/187    ...92/187    ...93/187    ...94/187    ...95/187    ...96/187    ...97/187    ...98/187    ...99/187    ...100/187    ...101/187    ...102/187    ...103/187    ...104/187    ...105/187    ...106/187    ...107/187    ...108/187    ...109/187    ...110/187    ...111/187    ...112/187    ...113/187    ...114/187    ...115/187    ...116/187    ...117/187    ...118/187    ...119/187    ...120/187    ...121/187    ...122/187    ...123/187    ...124/187    ...125/187    ...126/187    ...127/187    ...128/187    ...129/187    ...130/187    ...131/187    ...132/187    ...133/187    ...134/187    ...135/187    ...136/187    ...137/187    ...138/187    ...139/187    ...140/187    ...141/187    ...142/187    ...143/187    ...144/187    ...145/187    ...146/187    ...147/187    ...148/187    ...149/187    ...150/187    ...151/187    ...152/187    ...153/187    ...154/187    ...155/187    ...156/187    ...157/187    ...158/187    ...159/187    ...160/187    ...161/187    ...162/187    ...163/187    ...164/187    ...165/187    ...166/187    ...167/187    ...168/187    ...169/187    ...170/187    ...171/187    ...172/187    ...173/187    ...174/187    ...175/187    ...176/187    ...177/187    ...178/187    ...179/187    ...180/187    ...181/187    ...182/187    ...183/187    ...184/187    ...185/187    ...186/187    ...187/187cite_check — 187 unique URLs cited by 289 files
+⚠ A 200 means the PAGE exists. It does NOT mean the quote is on it.
+
+  ⚠ MISMATCH http://satirist.org/ai/planetwars/
+              [200 · slug 'planetwars' vs title 'Planet Wars 2010']
+              cited by pay-for-the-capture-with-no-economic-return.md
+  ⚠ MISMATCH https://blog.stoneztao.com/posts/bc21/
+              [200 · slug 'bc21' vs title 'Battlecode 2021 Postmortem | Stone's Blog']
+              cited by copy-the-leader-from-their-public-replays.md
+  ⚠ MISMATCH https://davechurchill.ca/starcraft/aiide/
+              [200 · slug 'aiide' vs title 'StarCraft AI Competition(s)']
+              cited by manner-pylon-and-what-the-rules-permit.md
+              cited by no-league-bans-inducing-an-opponent-timeout.md
+  ⚠ MISMATCH https://docs.screeps.com/api/#Source
+              [200 · slug '#Source' vs title 'Screeps Documentation']
+              cited by 2026-08-09-sweep-4.md
+  ⚠ MISMATCH https://docs.screeps.com/defense.html
+              [200 · slug 'defense' vs title 'Defending your room | Screeps Documentation']
+              cited by 2026-08-09-sweep-7.md
+              cited by fortify-on-idle.md
+  ⚠ MISMATCH https://forum.codingame.com/t/1752
+              [200 · slug '1752' vs title '&quot;Add more battles&quot; option for multiplayer games and contests']
+              cited by resubmit-as-reroll-is-closed-on-our-ladder.md
+  ⚠ MISMATCH https://forum.codingame.com/t/2642
+              [200 · slug '2642' vs title 'AI Hiding - Contests - CodinGame Forum']
+              cited by the-rollback-signature-marks-a-rivals-prototype-window.md
+  ⚠ MISMATCH https://forum.codingame.com/t/92373
+              [200 · slug '92373' vs title 'Code a la Mode - Feedback &amp; Strategies - Contests - CodinGame Foru']
+              cited by resubmit-as-reroll-is-closed-on-our-ladder.md
+  ⚠ MISMATCH https://forum.codingame.com/t/975
+              [200 · slug '975' vs title 'Back to the Code - Feedback &amp; Strategies - AI Battles - CodinGame ']
+              cited by a-frozen-bot-moves-on-the-ladder-anyway.md
+  ⚠ MISMATCH https://forum.codingame.com/t/code-royale-cc03-feedback-strategies/30903
+              [200 · slug '30903' vs title 'Code Royale (CC03) - Feedback &amp; Strategies - Contests - CodinGame ']
+              cited by set-the-emplacement-count-from-the-enemys-production.md
+  ⚠ MISMATCH https://forum.codingame.com/t/spring-challenge-2022-feedbacks-strategies/195736
+              [200 · slug '195736' vs title 'Spring Challenge 2022 - Feedbacks &amp; Strategies - Contests - CodinG']
+              cited by 2026-08-09-sweep-3.md
+              cited by 2026-08-09-sweep-3.md
+              cited by displace-dont-kill.md
+              cited by the-all-in-is-a-counter-strategy-not-a-strategy.md
+  ⛔ DEAD     https://github.com/Lux-AI-Challenge/Lux-Design-S2/blob/main/docs/specs.md
+              [404]
+              cited by the-kill-mechanism-was-starvation-not-hp.md
+  ⚠ MISMATCH https://github.com/dgant/PurpleWave/commit/b0235feefe2e
+              [200 · slug 'b0235feefe2e' vs title 'Deleted declarative gameplans! · dgant/PurpleWave@b0235fe · GitHub']
+              cited by a-tournament-winning-bot-deleted-its-plan-representation.md
+  ⚠ MISMATCH https://sscaitournament.com/index.php?action=rules
+              [200 · slug 'index.php?action=rules' vs title '[SSCAIT] Student StarCraft AI Tournament &amp; Ladder']
+              cited by organisers-legislate-the-endgame-and-name-the-incentive.md
+  ⚠ MISMATCH https://web.archive.org/web/20180115195925/http://forums.halite.io/t/addressing-the-desertion-meta-in-4-player-games/482
+              [200 · slug '482' vs title 'Addressing the desertion meta in 4 player games - Game Rules - Halite ']
+              cited by the-organisers-refused-to-force-elimination.md
+  ⚠ MISMATCH https://www.codingame.com/forum/t/leaderboard-ranking-algorithm-issues/2764
+              [200 · slug '2764' vs title 'Coding Games and Programming Challenges to Code Better']
+              cited by a-frozen-bot-moves-on-the-ladder-anyway.md
+  ⚠ MISMATCH https://www.kaggle.com/competitions/lux-ai-season-2/discussion/407982
+              [200 · slug '407982' vs title '1st place solution | Kaggle']
+              cited by pay-a-positional-price-to-deny.md
+  ⚠ MISMATCH https://www.lux-ai.org/specs-s2
+              [200 · slug 'specs-s2' vs title 'Lux AI Challenge']
+              cited by 2026-08-09-sweep-3.md
+
+========================================================================
+  DEAD      1
+  MISMATCH  17
+  ERROR     1
+  BLOCKED   3
+  OK        165
+
+⛔ 18 SUSPECT CITATION(S) — re-source or cut them.
+   DEAD     = the page does not exist.
+   MISMATCH = the page EXISTS but is not the page the URL claims. This is the
+              sweep-25 failure mode exactly: the invented slug returned HTTP 200
+              while pointing at a different article, so status alone passes it.
+⚠ 1 ERROR + 3 BLOCKED are NON-VERDICTS, not passes.

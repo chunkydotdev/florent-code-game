@@ -223,3 +223,227 @@
 2026-08-11T09:09:51	v104	k=86	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0	tape_age_min=1.9
 # CLOCK CONVENTION CHANGED HERE: rows ABOVE this line stamp LOCAL time with no zone marker; rows BELOW stamp UTC with an explicit Z. Written once, by tools/monitors/ship_watch.py, s30 2026-08-11.
 2026-08-11T07:12:33Z	v104	k=86	rating=1676	net5=-7.0	peak=1698	drawdown=-22.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+61.0	tape_age_min=4.6
+2026-08-11T07:19:51Z	v104	k=87	rating=1686	net5=+6.0	peak=1698	drawdown=-12.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+71.0	tape_age_min=1.9
+2026-08-11T07:29:51Z	v104	k=87	rating=1686	net5=+6.0	peak=1698	drawdown=-12.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+71.0	tape_age_min=1.9
+2026-08-11T07:39:51Z	v104	k=88	rating=1682	net5=-7.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0	tape_age_min=1.9
+2026-08-11T07:49:51Z	v104	k=88	rating=1682	net5=-7.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0	tape_age_min=1.9
+2026-08-11T07:59:51Z	v104	k=89	rating=1685	net5=-4.0	peak=1698	drawdown=-13.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+70.0	tape_age_min=1.9
+2026-08-11T08:09:51Z	v104	k=89	rating=1685	net5=-4.0	peak=1698	drawdown=-13.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+70.0	tape_age_min=1.9
+2026-08-11T08:19:51Z	v104	k=90	rating=1678	net5=-7.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0	tape_age_min=1.9
+2026-08-11T08:29:52Z	v104	k=90	rating=1678	net5=-7.0	peak=1698	drawdown=-20.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+63.0	tape_age_min=1.9
+2026-08-11T08:39:52Z	v104	k=91	rating=1681	net5=+5.0	peak=1698	drawdown=-17.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+66.0	tape_age_min=1.9
+2026-08-11T08:49:52Z	v104	k=91	rating=1681	net5=+5.0	peak=1698	drawdown=-17.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+66.0	tape_age_min=1.9
+2026-08-11T08:59:52Z	v104	k=92	rating=1684	net5=-2.0	peak=1698	drawdown=-14.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+69.0	tape_age_min=1.9
+2026-08-11T09:09:52Z	v104	k=92	rating=1684	net5=-2.0	peak=1698	drawdown=-14.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+69.0	tape_age_min=1.9
+2026-08-11T09:19:52Z	v104	k=93	rating=1681	net5=-1.0	peak=1698	drawdown=-17.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+66.0	tape_age_min=1.9
+2026-08-11T09:39:52Z	v104	k=94	rating=1684	net5=-1.0	peak=1698	drawdown=-14.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+69.0	tape_age_min=1.9
+2026-08-11T09:49:52Z	v104	k=94	rating=1684	net5=-1.0	peak=1698	drawdown=-14.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+69.0	tape_age_min=1.9
+2026-08-11T09:59:52Z	v104	k=95	rating=1677	net5=-1.0	peak=1698	drawdown=-21.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+62.0	tape_age_min=1.9
+2026-08-11T10:09:52Z	v104	k=95	rating=1677	net5=-1.0	peak=1698	drawdown=-21.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+62.0	tape_age_min=1.9
+2026-08-11T10:19:52Z	v104	k=96	rating=1682	net5=+1.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0	tape_age_min=0.9
+2026-08-11T10:29:52Z	v104	k=96	rating=1682	net5=+1.0	peak=1698	drawdown=-16.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+67.0	tape_age_min=0.9
+2026-08-11T10:39:52Z	v104	k=97	rating=1668	net5=-16.0	peak=1698	drawdown=-30.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+53.0	tape_age_min=0.9
+2026-08-11T10:49:53Z	v104	k=97	rating=1668	net5=-16.0	peak=1698	drawdown=-30.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+53.0	tape_age_min=0.9
+2026-08-11T10:59:53Z	v104	k=98	rating=1672	net5=-9.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+57.0	tape_age_min=0.9
+2026-08-11T11:09:53Z	v104	k=98	rating=1672	net5=-9.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+57.0	tape_age_min=0.9
+2026-08-11T11:19:53Z	v104	k=99	rating=1661	net5=-23.0	peak=1698	drawdown=-37.0	armed=True	RULE=SLOT FREE	sprt_fast=BLEED	sprt_slow=OK	net_act=+46.0	tape_age_min=0.9
+2026-08-11T11:29:53Z	v104	k=99	rating=1661	net5=-23.0	peak=1698	drawdown=-37.0	armed=True	RULE=SLOT FREE	sprt_fast=BLEED	sprt_slow=OK	net_act=+46.0	tape_age_min=0.9
+2026-08-11T11:39:53Z	v104	k=100	rating=1656	net5=-21.0	peak=1698	drawdown=-42.0	armed=True	RULE=SLOT FREE	sprt_fast=BLEED	sprt_slow=OK	net_act=+41.0	tape_age_min=0.9
+2026-08-11T11:49:53Z	v104	k=100	rating=1656	net5=-21.0	peak=1698	drawdown=-42.0	armed=True	RULE=SLOT FREE	sprt_fast=BLEED	sprt_slow=OK	net_act=+41.0	tape_age_min=0.9
+2026-08-11T11:59:53Z	v104	k=101	rating=1672	net5=-10.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+57.0	tape_age_min=0.9
+2026-08-11T12:09:53Z	v104	k=101	rating=1672	net5=-10.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+57.0	tape_age_min=0.9
+2026-08-11T12:19:53Z	v104	k=102	rating=1672	net5=+4.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+57.0	tape_age_min=0.9
+2026-08-11T12:29:53Z	v104	k=102	rating=1672	net5=+4.0	peak=1698	drawdown=-26.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+57.0	tape_age_min=0.9
+2026-08-11T12:39:53Z	v104	k=103	rating=1675	net5=+3.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0	tape_age_min=0.9
+2026-08-11T12:49:53Z	v104	k=103	rating=1675	net5=+3.0	peak=1698	drawdown=-23.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+60.0	tape_age_min=0.9
+2026-08-11T12:59:53Z	v104	k=104	rating=1666	net5=+5.0	peak=1698	drawdown=-32.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+51.0	tape_age_min=0.9
+2026-08-11T13:09:53Z	v104	k=104	rating=1666	net5=+5.0	peak=1698	drawdown=-32.0	armed=True	RULE=held	sprt_fast=BLEED	sprt_slow=OK	net_act=+51.0	tape_age_min=0.9
+2026-08-11T13:14:47Z	v112	k=2	rating=1666	net5=n/a	peak=1672	drawdown=-6.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=+0.0	tape_age_min=0.8
+2026-08-11T13:14:49Z	v112	k=2	rating=1666	net5=n/a	peak=1672	drawdown=-6.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=+0.0	tape_age_min=0.8
+2026-08-11T13:24:47Z	v112	k=3	rating=1658	net5=n/a	peak=1672	drawdown=-14.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-8.0	tape_age_min=5.8
+2026-08-11T13:34:47Z	v112	k=3	rating=1658	net5=n/a	peak=1672	drawdown=-14.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-8.0	tape_age_min=5.8
+2026-08-11T13:44:47Z	v112	k=4	rating=1674	net5=n/a	peak=1674	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+8.0	tape_age_min=5.8
+2026-08-11T13:54:47Z	v112	k=4	rating=1674	net5=n/a	peak=1674	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+8.0	tape_age_min=5.8
+2026-08-11T14:04:47Z	v112	k=5	rating=1671	net5=-1.0	peak=1674	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+5.0	tape_age_min=5.8
+2026-08-11T14:14:47Z	v112	k=5	rating=1671	net5=-1.0	peak=1674	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+5.0	tape_age_min=5.8
+2026-08-11T14:24:47Z	v112	k=6	rating=1680	net5=+8.0	peak=1680	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+14.0	tape_age_min=4.8
+2026-08-11T14:34:47Z	v112	k=6	rating=1680	net5=+8.0	peak=1680	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+14.0	tape_age_min=4.8
+2026-08-11T14:44:47Z	v112	k=7	rating=1664	net5=-2.0	peak=1680	drawdown=-16.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-2.0	tape_age_min=4.8
+2026-08-11T14:54:48Z	v112	k=7	rating=1664	net5=-2.0	peak=1680	drawdown=-16.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-2.0	tape_age_min=4.8
+2026-08-11T15:04:48Z	v112	k=8	rating=1676	net5=+18.0	peak=1680	drawdown=-4.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+10.0	tape_age_min=4.8
+2026-08-11T15:14:48Z	v112	k=8	rating=1676	net5=+18.0	peak=1680	drawdown=-4.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+10.0	tape_age_min=4.8
+2026-08-11T15:24:48Z	v112	k=9	rating=1684	net5=+10.0	peak=1684	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+18.0	tape_age_min=4.8
+2026-08-11T15:34:48Z	v112	k=9	rating=1684	net5=+10.0	peak=1684	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+18.0	tape_age_min=4.8
+2026-08-11T15:44:48Z	v112	k=10	rating=1675	net5=+4.0	peak=1684	drawdown=-9.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+9.0	tape_age_min=4.8
+2026-08-11T15:54:48Z	v112	k=10	rating=1675	net5=+4.0	peak=1684	drawdown=-9.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+9.0	tape_age_min=4.8
+2026-08-11T16:04:48Z	v112	k=11	rating=1685	net5=+5.0	peak=1685	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+19.0	tape_age_min=4.8
+2026-08-11T16:14:48Z	v112	k=11	rating=1685	net5=+5.0	peak=1685	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+19.0	tape_age_min=4.8
+2026-08-11T16:24:46Z	v112	k=12	rating=1683	net5=+19.0	peak=1685	drawdown=-2.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+17.0	tape_age_min=4.8
+2026-08-11T16:34:46Z	v112	k=12	rating=1683	net5=+19.0	peak=1685	drawdown=-2.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+17.0	tape_age_min=4.8
+2026-08-11T16:44:46Z	v112	k=13	rating=1690	net5=+14.0	peak=1690	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+24.0	tape_age_min=4.8
+2026-08-11T16:54:46Z	v112	k=13	rating=1690	net5=+14.0	peak=1690	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+24.0	tape_age_min=4.8
+2026-08-11T17:04:46Z	v112	k=14	rating=1696	net5=+12.0	peak=1696	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+30.0	tape_age_min=4.8
+2026-08-11T17:14:49Z	v112	k=14	rating=1696	net5=+12.0	peak=1696	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+30.0	tape_age_min=4.8
+2026-08-11T17:24:49Z	v112	k=15	rating=1700	net5=+25.0	peak=1700	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+34.0	tape_age_min=4.8
+2026-08-11T17:34:49Z	v112	k=15	rating=1700	net5=+25.0	peak=1700	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+34.0	tape_age_min=4.8
+2026-08-11T17:44:49Z	v112	k=16	rating=1690	net5=+5.0	peak=1700	drawdown=-10.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+24.0	tape_age_min=4.8
+2026-08-11T17:54:49Z	v112	k=16	rating=1690	net5=+5.0	peak=1700	drawdown=-10.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+24.0	tape_age_min=4.8
+2026-08-11T18:04:49Z	v112	k=17	rating=1686	net5=+3.0	peak=1700	drawdown=-14.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+20.0	tape_age_min=4.8
+2026-08-11T18:14:49Z	v112	k=17	rating=1686	net5=+3.0	peak=1700	drawdown=-14.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+20.0	tape_age_min=4.8
+2026-08-11T18:24:49Z	v112	k=18	rating=1694	net5=+4.0	peak=1700	drawdown=-6.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+28.0	tape_age_min=4.8
+2026-08-11T18:34:49Z	v112	k=18	rating=1694	net5=+4.0	peak=1700	drawdown=-6.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+28.0	tape_age_min=4.8
+2026-08-11T18:44:49Z	v112	k=19	rating=1692	net5=-4.0	peak=1700	drawdown=-8.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+26.0	tape_age_min=3.8
+2026-08-11T18:54:49Z	v112	k=19	rating=1692	net5=-4.0	peak=1700	drawdown=-8.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+26.0	tape_age_min=3.8
+2026-08-11T19:04:49Z	v112	k=20	rating=1689	net5=-11.0	peak=1700	drawdown=-11.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+23.0	tape_age_min=3.8
+2026-08-11T19:14:49Z	v112	k=20	rating=1689	net5=-11.0	peak=1700	drawdown=-11.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+23.0	tape_age_min=3.8
+2026-08-11T19:15:14Z	v112	k=20	rating=1689	net5=-11.0	peak=1700	drawdown=-11.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+0.0	tape_age_min=4.2
+2026-08-11T19:45:15Z	v114	k=1	rating=1677	net5=n/a	peak=1686	drawdown=-9.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-12.0	tape_age_min=4.3
+2026-08-11T19:55:15Z	v114	k=1	rating=1677	net5=n/a	peak=1686	drawdown=-9.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-12.0	tape_age_min=4.3
+2026-08-11T20:05:15Z	v114	k=2	rating=1669	net5=n/a	peak=1686	drawdown=-17.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-20.0	tape_age_min=4.3
+2026-08-11T20:15:15Z	v114	k=2	rating=1669	net5=n/a	peak=1686	drawdown=-17.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-20.0	tape_age_min=4.3
+2026-08-11T20:25:15Z	v114	k=3	rating=1666	net5=n/a	peak=1686	drawdown=-20.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-23.0	tape_age_min=4.3
+2026-08-11T20:35:15Z	v114	k=3	rating=1666	net5=n/a	peak=1686	drawdown=-20.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-23.0	tape_age_min=4.3
+2026-08-11T20:47:46Z	v114	k=4	rating=1663	net5=n/a	peak=1686	drawdown=-23.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-26.0	tape_age_min=3.8
+2026-08-11T20:57:46Z	v114	k=4	rating=1663	net5=n/a	peak=1686	drawdown=-23.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-26.0	tape_age_min=3.8
+2026-08-11T21:07:46Z	v114	k=5	rating=1674	net5=-12.0	peak=1686	drawdown=-12.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-15.0	tape_age_min=3.8
+2026-08-11T21:17:46Z	v114	k=5	rating=1674	net5=-12.0	peak=1686	drawdown=-12.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-15.0	tape_age_min=3.8
+2026-08-11T21:27:46Z	v114	k=6	rating=1669	net5=-8.0	peak=1686	drawdown=-17.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-20.0	tape_age_min=3.8
+2026-08-11T21:37:46Z	v114	k=6	rating=1669	net5=-8.0	peak=1686	drawdown=-17.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-20.0	tape_age_min=3.8
+2026-08-11T21:47:46Z	v114	k=7	rating=1660	net5=-9.0	peak=1686	drawdown=-26.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-29.0	tape_age_min=3.8
+2026-08-11T21:57:47Z	v114	k=7	rating=1660	net5=-9.0	peak=1686	drawdown=-26.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-29.0	tape_age_min=3.8
+2026-08-11T22:07:47Z	v114	k=8	rating=1662	net5=-4.0	peak=1686	drawdown=-24.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-27.0	tape_age_min=3.8
+2026-08-11T22:17:47Z	v114	k=9	rating=1659	net5=-4.0	peak=1686	drawdown=-27.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-30.0	tape_age_min=3.8
+2026-08-11T22:27:47Z	v114	k=9	rating=1659	net5=-4.0	peak=1686	drawdown=-27.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-30.0	tape_age_min=3.8
+2026-08-11T22:37:47Z	v114	k=9	rating=1659	net5=-4.0	peak=1686	drawdown=-27.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-30.0	tape_age_min=3.8
+2026-08-11T22:47:47Z	v114	k=10	rating=1661	net5=-13.0	peak=1686	drawdown=-25.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-28.0	tape_age_min=3.8
+2026-08-11T22:57:47Z	v114	k=10	rating=1661	net5=-13.0	peak=1686	drawdown=-25.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-28.0	tape_age_min=3.8
+2026-08-11T23:07:47Z	v114	k=11	rating=1659	net5=-10.0	peak=1686	drawdown=-27.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-30.0	tape_age_min=3.8
+2026-08-11T23:17:47Z	v114	k=11	rating=1659	net5=-10.0	peak=1686	drawdown=-27.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-30.0	tape_age_min=3.8
+2026-08-11T23:27:47Z	v114	k=12	rating=1651	net5=-9.0	peak=1686	drawdown=-35.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-38.0	tape_age_min=3.8
+2026-08-11T23:37:47Z	v114	k=12	rating=1651	net5=-9.0	peak=1686	drawdown=-35.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-38.0	tape_age_min=3.8
+2026-08-11T23:47:47Z	v114	k=13	rating=1650	net5=-12.0	peak=1686	drawdown=-36.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-39.0	tape_age_min=3.8
+2026-08-11T23:57:47Z	v114	k=13	rating=1650	net5=-12.0	peak=1686	drawdown=-36.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-39.0	tape_age_min=3.8
+2026-08-12T00:07:47Z	v114	k=14	rating=1658	net5=-1.0	peak=1686	drawdown=-28.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-31.0	tape_age_min=3.8
+2026-08-12T00:17:48Z	v114	k=15	rating=1655	net5=-6.0	peak=1686	drawdown=-31.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-34.0	tape_age_min=3.8
+2026-08-12T00:27:48Z	v114	k=15	rating=1655	net5=-6.0	peak=1686	drawdown=-31.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-34.0	tape_age_min=3.8
+2026-08-12T00:37:48Z	v114	k=15	rating=1655	net5=-6.0	peak=1686	drawdown=-31.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-34.0	tape_age_min=2.8
+2026-08-12T00:47:48Z	v114	k=16	rating=1650	net5=-9.0	peak=1686	drawdown=-36.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-39.0	tape_age_min=2.8
+2026-08-12T00:57:48Z	v114	k=17	rating=1648	net5=-3.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T01:07:48Z	v114	k=17	rating=1648	net5=-3.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T01:17:48Z	v114	k=17	rating=1648	net5=-3.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T01:27:48Z	v114	k=18	rating=1642	net5=-8.0	peak=1686	drawdown=-44.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-47.0	tape_age_min=2.8
+2026-08-12T01:37:48Z	v114	k=19	rating=1648	net5=-10.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T01:47:48Z	v114	k=19	rating=1648	net5=-10.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T01:57:48Z	v114	k=20	rating=1657	net5=+2.0	peak=1686	drawdown=-29.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-32.0	tape_age_min=2.8
+2026-08-12T02:07:48Z	v114	k=20	rating=1657	net5=+2.0	peak=1686	drawdown=-29.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-32.0	tape_age_min=2.8
+2026-08-12T02:17:48Z	v114	k=21	rating=1649	net5=-1.0	peak=1686	drawdown=-37.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-40.0	tape_age_min=2.8
+2026-08-12T02:27:49Z	v114	k=21	rating=1649	net5=-1.0	peak=1686	drawdown=-37.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-40.0	tape_age_min=2.8
+2026-08-12T02:37:49Z	v114	k=21	rating=1649	net5=-1.0	peak=1686	drawdown=-37.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-40.0	tape_age_min=2.8
+2026-08-12T02:47:49Z	v114	k=22	rating=1653	net5=+5.0	peak=1686	drawdown=-33.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-36.0	tape_age_min=2.8
+2026-08-12T02:57:49Z	v114	k=23	rating=1648	net5=+6.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T03:07:49Z	v114	k=23	rating=1648	net5=+6.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T03:17:49Z	v114	k=23	rating=1648	net5=+6.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=2.8
+2026-08-12T03:27:49Z	v114	k=24	rating=1653	net5=+5.0	peak=1686	drawdown=-33.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-36.0	tape_age_min=2.8
+2026-08-12T03:37:49Z	v114	k=25	rating=1644	net5=-13.0	peak=1686	drawdown=-42.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-45.0	tape_age_min=2.8
+2026-08-12T03:47:49Z	v114	k=25	rating=1644	net5=-13.0	peak=1686	drawdown=-42.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-45.0	tape_age_min=2.8
+2026-08-12T03:57:49Z	v114	k=25	rating=1644	net5=-13.0	peak=1686	drawdown=-42.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-45.0	tape_age_min=2.8
+2026-08-12T04:07:49Z	v114	k=26	rating=1650	net5=+1.0	peak=1686	drawdown=-36.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-39.0	tape_age_min=2.8
+2026-08-12T04:17:49Z	v114	k=27	rating=1645	net5=-8.0	peak=1686	drawdown=-41.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-44.0	tape_age_min=2.8
+2026-08-12T04:27:49Z	v114	k=27	rating=1645	net5=-8.0	peak=1686	drawdown=-41.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-44.0	tape_age_min=2.8
+2026-08-12T04:37:49Z	v114	k=27	rating=1645	net5=-8.0	peak=1686	drawdown=-41.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-44.0	tape_age_min=1.8
+2026-08-12T04:47:49Z	v114	k=28	rating=1648	net5=+0.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-41.0	tape_age_min=1.8
+2026-08-12T04:52:35Z	v114	k=28	rating=1648	net5=+0.0	peak=1686	drawdown=-38.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-37.6	dd_z=-0.83	dd_k=28	resolvable_k=147	p_null=0.75	sd_pm=8.66	net_act_src=derived	lg_age_min=39.6	tape_age_min=1.6
+2026-08-12T04:57:50Z	v114	k=29	rating=1640	net5=-13.0	peak=1686	drawdown=-46.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-45.6	dd_z=-0.99	dd_k=29	resolvable_k=107	p_null=0.77	sd_pm=8.66	net_act_src=derived	lg_age_min=44.8	tape_age_min=1.8
+2026-08-12T05:07:50Z	v114	k=29	rating=1640	net5=-13.0	peak=1686	drawdown=-46.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-45.6	dd_z=-0.99	dd_k=29	resolvable_k=107	p_null=0.77	sd_pm=8.66	net_act_src=derived	lg_age_min=54.9	tape_age_min=1.8
+2026-08-12T05:17:50Z	v114	k=29	rating=1640	net5=-13.0	peak=1686	drawdown=-46.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-45.6	dd_z=-0.99	dd_k=29	resolvable_k=107	p_null=0.77	sd_pm=8.66	net_act_src=derived	lg_age_min=64.9	tape_age_min=1.8
+2026-08-12T05:27:50Z	v114	k=30	rating=1645	net5=+1.0	peak=1686	drawdown=-41.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-40.6	dd_z=-0.86	dd_k=30	resolvable_k=144	p_null=0.79	sd_pm=8.66	net_act_src=derived	lg_age_min=74.9	tape_age_min=1.8
+2026-08-12T05:37:50Z	v114	k=31	rating=1655	net5=+5.0	peak=1686	drawdown=-31.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-30.6	dd_z=-0.64	dd_k=31	resolvable_k=271	p_null=0.80	sd_pm=8.66	net_act_src=derived	lg_age_min=24.9	tape_age_min=1.8
+2026-08-12T05:47:50Z	v114	k=31	rating=1655	net5=+5.0	peak=1686	drawdown=-31.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-30.6	dd_z=-0.64	dd_k=31	resolvable_k=271	p_null=0.80	sd_pm=8.66	net_act_src=derived	lg_age_min=34.9	tape_age_min=1.8
+2026-08-12T05:57:50Z	v114	k=32	rating=1649	net5=+4.0	peak=1686	drawdown=-37.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-36.6	dd_z=-0.76	dd_k=32	resolvable_k=202	p_null=0.81	sd_pm=8.66	net_act_src=derived	lg_age_min=44.9	tape_age_min=1.8
+2026-08-12T06:07:50Z	v114	k=32	rating=1649	net5=+4.0	peak=1686	drawdown=-37.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-36.6	dd_z=-0.76	dd_k=32	resolvable_k=202	p_null=0.81	sd_pm=8.66	net_act_src=derived	lg_age_min=54.9	tape_age_min=1.8
+2026-08-12T06:17:51Z	v114	k=33	rating=1666	net5=+18.0	peak=1686	drawdown=-20.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-19.6	dd_z=-0.40	dd_k=33	resolvable_k=748	p_null=0.82	sd_pm=8.66	net_act_src=derived	lg_age_min=64.9	tape_age_min=1.8
+2026-08-12T06:27:51Z	v114	k=33	rating=1666	net5=+18.0	peak=1686	drawdown=-20.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-19.6	dd_z=-0.40	dd_k=33	resolvable_k=748	p_null=0.82	sd_pm=8.66	net_act_src=derived	lg_age_min=74.9	tape_age_min=1.9
+2026-08-12T06:37:51Z	v114	k=34	rating=1665	net5=+25.0	peak=1686	drawdown=-21.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-20.6	dd_z=-0.42	dd_k=34	resolvable_k=719	p_null=0.83	sd_pm=8.66	net_act_src=derived	lg_age_min=84.9	tape_age_min=1.9
+2026-08-12T06:47:51Z	v114	k=34	rating=1665	net5=+25.0	peak=1686	drawdown=-21.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-20.6	dd_z=-0.42	dd_k=34	resolvable_k=719	p_null=0.83	sd_pm=8.66	net_act_src=derived	lg_age_min=94.9	tape_age_min=1.9
+2026-08-12T06:57:51Z	v114	k=35	rating=1668	net5=+23.0	peak=1686	drawdown=-18.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-17.6	dd_z=-0.35	dd_k=35	resolvable_k=1043	p_null=0.84	sd_pm=8.66	net_act_src=derived	lg_age_min=104.9	tape_age_min=1.9
+2026-08-12T07:07:51Z	v114	k=35	rating=1668	net5=+23.0	peak=1686	drawdown=-18.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-17.6	dd_z=-0.35	dd_k=35	resolvable_k=1043	p_null=0.84	sd_pm=8.66	net_act_src=derived	lg_age_min=114.9	tape_age_min=1.9
+2026-08-12T07:17:51Z	v114	k=36	rating=1666	net5=+11.0	peak=1686	drawdown=-20.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-19.6	dd_z=-0.39	dd_k=36	resolvable_k=890	p_null=0.85	sd_pm=8.66	net_act_src=derived	lg_age_min=124.9	tape_age_min=1.9
+2026-08-12T07:27:52Z	v114	k=36	rating=1666	net5=+11.0	peak=1686	drawdown=-20.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-19.6	dd_z=-0.39	dd_k=36	resolvable_k=890	p_null=0.85	sd_pm=8.66	net_act_src=derived	lg_age_min=134.9	tape_age_min=1.9
+2026-08-12T07:37:52Z	v114	k=37	rating=1660	net5=+11.0	peak=1686	drawdown=-26.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-25.6	dd_z=-0.49	dd_k=37	resolvable_k=551	p_null=0.86	sd_pm=8.66	net_act_src=derived	lg_age_min=144.9	tape_age_min=1.9
+2026-08-12T07:47:52Z	v114	k=37	rating=1660	net5=+11.0	peak=1686	drawdown=-26.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-25.6	dd_z=-0.49	dd_k=37	resolvable_k=551	p_null=0.86	sd_pm=8.66	net_act_src=derived	lg_age_min=154.9	tape_age_min=1.9
+2026-08-12T07:57:52Z	v114	k=38	rating=1647	net5=-19.0	peak=1686	drawdown=-39.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-38.6	dd_z=-0.73	dd_k=38	resolvable_k=256	p_null=0.87	sd_pm=8.66	net_act_src=derived	lg_age_min=164.9	tape_age_min=1.9
+2026-08-12T08:07:52Z	v114	k=38	rating=1647	net5=-19.0	peak=1686	drawdown=-39.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-38.6	dd_z=-0.73	dd_k=38	resolvable_k=256	p_null=0.87	sd_pm=8.66	net_act_src=derived	lg_age_min=174.9	tape_age_min=1.9
+2026-08-12T08:17:52Z	v114	k=39	rating=1645	net5=-20.0	peak=1686	drawdown=-41.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-40.6	dd_z=-0.76	dd_k=39	resolvable_k=244	p_null=0.88	sd_pm=8.66	net_act_src=derived	lg_age_min=184.9	tape_age_min=1.9
+2026-08-12T08:27:53Z	v114	k=39	rating=1645	net5=-20.0	peak=1686	drawdown=-41.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-40.6	dd_z=-0.76	dd_k=39	resolvable_k=244	p_null=0.88	sd_pm=8.66	net_act_src=derived	lg_age_min=194.9	tape_age_min=1.9
+2026-08-12T08:37:53Z	v114	k=40	rating=1653	net5=-15.0	peak=1686	drawdown=-33.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-32.6	dd_z=-0.60	dd_k=40	resolvable_k=397	p_null=0.89	sd_pm=8.66	net_act_src=derived	lg_age_min=204.9	tape_age_min=0.9
+2026-08-12T08:47:53Z	v114	k=40	rating=1653	net5=-15.0	peak=1686	drawdown=-33.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-32.6	dd_z=-0.60	dd_k=40	resolvable_k=397	p_null=0.89	sd_pm=8.66	net_act_src=derived	lg_age_min=214.9	tape_age_min=0.9
+2026-08-12T08:57:53Z	v114	k=41	rating=1657	net5=-9.0	peak=1686	drawdown=-29.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=-28.6	dd_z=-0.52	dd_k=41	resolvable_k=542	p_null=0.90	sd_pm=8.66	net_act_src=derived	lg_age_min=224.9	tape_age_min=0.9
+2026-08-12T09:17:53Z	v115	k=1	rating=1658	net5=n/a	peak=1658	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-31.0	dd_z=NA	dd_k=0	resolvable_k=0	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=244.9	tape_age_min=0.9
+2026-08-12T09:27:53Z	v115	k=1	rating=1658	net5=n/a	peak=1658	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-31.0	dd_z=NA	dd_k=0	resolvable_k=0	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=254.9	tape_age_min=0.9
+2026-08-12T09:37:54Z	v115	k=2	rating=1655	net5=n/a	peak=1658	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-34.0	dd_z=-0.35	dd_k=1	resolvable_k=1	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=264.9	tape_age_min=0.9
+2026-08-12T09:47:54Z	v115	k=2	rating=1655	net5=n/a	peak=1658	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=open	sprt_slow=open	net_act=-34.0	dd_z=-0.35	dd_k=1	resolvable_k=1	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=274.9	tape_age_min=0.9
+2026-08-12T09:57:54Z	v115	k=3	rating=1662	net5=n/a	peak=1662	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-27.0	dd_z=NA	dd_k=0	resolvable_k=3	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=284.9	tape_age_min=0.9
+2026-08-12T10:07:54Z	v115	k=3	rating=1662	net5=n/a	peak=1662	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-27.0	dd_z=NA	dd_k=0	resolvable_k=3	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=294.9	tape_age_min=0.9
+2026-08-12T10:17:54Z	v115	k=4	rating=1658	net5=n/a	peak=1662	drawdown=-4.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-31.0	dd_z=-0.46	dd_k=1	resolvable_k=4	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=304.9	tape_age_min=0.9
+2026-08-12T10:27:54Z	v115	k=4	rating=1658	net5=n/a	peak=1662	drawdown=-4.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-31.0	dd_z=-0.46	dd_k=1	resolvable_k=4	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=314.9	tape_age_min=0.9
+2026-08-12T10:37:54Z	v115	k=5	rating=1670	net5=+13.0	peak=1670	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-19.0	dd_z=NA	dd_k=0	resolvable_k=18	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=324.9	tape_age_min=0.9
+2026-08-12T10:47:54Z	v115	k=5	rating=1670	net5=+13.0	peak=1670	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-19.0	dd_z=NA	dd_k=0	resolvable_k=18	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=334.9	tape_age_min=0.9
+2026-08-12T10:57:54Z	v115	k=6	rating=1661	net5=+3.0	peak=1670	drawdown=-9.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-28.0	dd_z=-1.04	dd_k=1	resolvable_k=12	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=344.9	tape_age_min=0.9
+2026-08-12T11:07:54Z	v115	k=6	rating=1661	net5=+3.0	peak=1670	drawdown=-9.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-28.0	dd_z=-1.04	dd_k=1	resolvable_k=12	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=354.9	tape_age_min=0.9
+2026-08-12T11:17:55Z	v115	k=7	rating=1665	net5=+10.0	peak=1670	drawdown=-5.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-24.0	dd_z=-0.41	dd_k=2	resolvable_k=22	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=364.9	tape_age_min=0.9
+2026-08-12T11:27:55Z	v115	k=7	rating=1665	net5=+10.0	peak=1670	drawdown=-5.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=-24.0	dd_z=-0.41	dd_k=2	resolvable_k=22	p_null=NA	sd_pm=8.66	net_act_src=env	lg_age_min=374.9	tape_age_min=0.9
+2026-08-12T11:37:55Z	v115	k=8	rating=1662	net5=+0.0	peak=1670	drawdown=-8.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-27.0	dd_z=-0.53	dd_k=3	resolvable_k=23	p_null=0.14	sd_pm=8.66	net_act_src=env	lg_age_min=384.9	tape_age_min=0.9
+2026-08-12T11:47:55Z	v115	k=8	rating=1662	net5=+0.0	peak=1670	drawdown=-8.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-27.0	dd_z=-0.53	dd_k=3	resolvable_k=23	p_null=0.14	sd_pm=8.66	net_act_src=env	lg_age_min=394.9	tape_age_min=0.9
+2026-08-12T11:57:55Z	v115	k=9	rating=1660	net5=+2.0	peak=1670	drawdown=-10.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-29.0	dd_z=-0.58	dd_k=4	resolvable_k=25	p_null=0.20	sd_pm=8.66	net_act_src=env	lg_age_min=404.9	tape_age_min=0.9
+2026-08-12T12:07:55Z	v115	k=9	rating=1660	net5=+2.0	peak=1670	drawdown=-10.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-29.0	dd_z=-0.58	dd_k=4	resolvable_k=25	p_null=0.20	sd_pm=8.66	net_act_src=env	lg_age_min=414.9	tape_age_min=0.9
+2026-08-12T12:17:55Z	v115	k=10	rating=1664	net5=-6.0	peak=1670	drawdown=-6.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-25.0	dd_z=-0.31	dd_k=5	resolvable_k=42	p_null=0.25	sd_pm=8.66	net_act_src=env	lg_age_min=424.9	tape_age_min=0.9
+2026-08-12T12:27:55Z	v115	k=10	rating=1664	net5=-6.0	peak=1670	drawdown=-6.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-25.0	dd_z=-0.31	dd_k=5	resolvable_k=42	p_null=0.25	sd_pm=8.66	net_act_src=env	lg_age_min=434.9	tape_age_min=5.9
+2026-08-12T12:37:55Z	v115	k=10	rating=1664	net5=-6.0	peak=1670	drawdown=-6.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-25.0	dd_z=-0.31	dd_k=5	resolvable_k=42	p_null=0.25	sd_pm=8.66	net_act_src=env	lg_age_min=444.9	tape_age_min=5.9
+2026-08-12T12:47:55Z	v115	k=11	rating=1662	net5=+1.0	peak=1670	drawdown=-8.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-27.0	dd_z=-0.38	dd_k=6	resolvable_k=44	p_null=0.29	sd_pm=8.66	net_act_src=env	lg_age_min=454.9	tape_age_min=5.9
+2026-08-12T12:57:55Z	v115	k=11	rating=1662	net5=+1.0	peak=1670	drawdown=-8.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-27.0	dd_z=-0.38	dd_k=6	resolvable_k=44	p_null=0.29	sd_pm=8.66	net_act_src=env	lg_age_min=464.9	tape_age_min=4.9
+2026-08-12T13:07:55Z	v115	k=12	rating=1663	net5=-2.0	peak=1670	drawdown=-7.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+6.2	dd_z=-0.31	dd_k=7	resolvable_k=971	p_null=0.33	sd_pm=8.61	net_act_src=derived	lg_age_min=14.9	tape_age_min=4.9
+2026-08-12T13:17:55Z	v115	k=12	rating=1663	net5=-2.0	peak=1670	drawdown=-7.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+6.2	dd_z=-0.31	dd_k=7	resolvable_k=971	p_null=0.33	sd_pm=8.61	net_act_src=derived	lg_age_min=24.9	tape_age_min=4.9
+2026-08-12T13:27:56Z	v115	k=13	rating=1660	net5=-2.0	peak=1670	drawdown=-10.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+3.2	dd_z=-0.41	dd_k=8	resolvable_k=4236	p_null=0.36	sd_pm=8.61	net_act_src=derived	lg_age_min=35.0	tape_age_min=4.9
+2026-08-12T13:37:56Z	v115	k=13	rating=1660	net5=-2.0	peak=1670	drawdown=-10.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=+3.2	dd_z=-0.41	dd_k=8	resolvable_k=4236	p_null=0.36	sd_pm=8.61	net_act_src=derived	lg_age_min=45.0	tape_age_min=4.9
+2026-08-12T13:47:56Z	v115	k=14	rating=1651	net5=-9.0	peak=1670	drawdown=-19.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-5.8	dd_z=-0.74	dd_k=9	resolvable_k=1541	p_null=0.40	sd_pm=8.61	net_act_src=derived	lg_age_min=55.0	tape_age_min=4.9
+2026-08-12T13:57:56Z	v115	k=14	rating=1651	net5=-9.0	peak=1670	drawdown=-19.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=open	net_act=-5.8	dd_z=-0.74	dd_k=9	resolvable_k=1541	p_null=0.40	sd_pm=8.61	net_act_src=derived	lg_age_min=65.0	tape_age_min=4.9
+2026-08-12T14:18:22Z	v116	k=1	rating=1668	net5=n/a	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=2	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=5.4	tape_age_min=0.4
+2026-08-12T14:27:56Z	v116	k=1	rating=1668	net5=n/a	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=2	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=15.0	tape_age_min=4.9
+2026-08-12T14:28:22Z	v116	k=1	rating=1668	net5=n/a	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=2	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=15.4	tape_age_min=5.4
+2026-08-12T14:37:56Z	v116	k=1	rating=1668	net5=n/a	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=2	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=25.0	tape_age_min=4.9
+2026-08-12T14:38:23Z	v116	k=1	rating=1668	net5=n/a	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=2	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=25.4	tape_age_min=5.4
+2026-08-12T14:47:56Z	v116	k=2	rating=1665	net5=n/a	peak=1668	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+10.0	dd_z=-0.35	dd_k=1	resolvable_k=10	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=35.0	tape_age_min=4.9
+2026-08-12T14:48:23Z	v116	k=2	rating=1665	net5=n/a	peak=1668	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+10.0	dd_z=-0.35	dd_k=1	resolvable_k=10	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=35.4	tape_age_min=5.4
+2026-08-12T14:57:57Z	v116	k=2	rating=1665	net5=n/a	peak=1668	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+10.0	dd_z=-0.35	dd_k=1	resolvable_k=10	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=45.0	tape_age_min=5.0
+2026-08-12T14:58:23Z	v116	k=2	rating=1665	net5=n/a	peak=1668	drawdown=-3.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+10.0	dd_z=-0.35	dd_k=1	resolvable_k=10	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=45.4	tape_age_min=5.4
+2026-08-12T15:07:57Z	v116	k=3	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.16	dd_k=2	resolvable_k=19	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=55.0	tape_age_min=5.0
+2026-08-12T15:08:23Z	v116	k=3	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.16	dd_k=2	resolvable_k=19	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=55.4	tape_age_min=5.4
+2026-08-12T15:17:57Z	v116	k=3	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.16	dd_k=2	resolvable_k=19	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=5.0	tape_age_min=5.0
+2026-08-12T15:18:23Z	v116	k=3	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.16	dd_k=2	resolvable_k=19	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=5.4	tape_age_min=5.4
+2026-08-12T15:27:57Z	v116	k=4	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.13	dd_k=3	resolvable_k=34	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=15.0	tape_age_min=5.0
+2026-08-12T15:28:23Z	v116	k=4	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.13	dd_k=3	resolvable_k=34	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=15.4	tape_age_min=5.4
+2026-08-12T15:37:57Z	v116	k=4	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.13	dd_k=3	resolvable_k=34	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=25.0	tape_age_min=5.0
+2026-08-12T15:38:23Z	v116	k=4	rating=1666	net5=n/a	peak=1668	drawdown=-2.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+11.0	dd_z=-0.13	dd_k=3	resolvable_k=34	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=25.4	tape_age_min=5.4
+2026-08-12T15:47:57Z	v116	k=5	rating=1656	net5=+1.0	peak=1668	drawdown=-12.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+1.0	dd_z=-0.70	dd_k=4	resolvable_k=6127	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=35.0	tape_age_min=5.0
+2026-08-12T15:48:23Z	v116	k=5	rating=1656	net5=+1.0	peak=1668	drawdown=-12.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+1.0	dd_z=-0.70	dd_k=4	resolvable_k=6127	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=35.4	tape_age_min=5.4
+2026-08-12T15:57:57Z	v116	k=5	rating=1656	net5=+1.0	peak=1668	drawdown=-12.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+1.0	dd_z=-0.70	dd_k=4	resolvable_k=6127	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=45.0	tape_age_min=5.0
+2026-08-12T15:58:23Z	v116	k=5	rating=1656	net5=+1.0	peak=1668	drawdown=-12.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+1.0	dd_z=-0.70	dd_k=4	resolvable_k=6127	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=45.4	tape_age_min=5.4
+2026-08-12T16:07:57Z	v116	k=6	rating=1664	net5=-4.0	peak=1668	drawdown=-4.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+9.0	dd_z=-0.21	dd_k=5	resolvable_k=115	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=55.0	tape_age_min=5.0
+2026-08-12T16:08:23Z	v116	k=6	rating=1664	net5=-4.0	peak=1668	drawdown=-4.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+9.0	dd_z=-0.21	dd_k=5	resolvable_k=115	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=55.4	tape_age_min=5.4
+2026-08-12T16:17:57Z	v116	k=6	rating=1664	net5=-4.0	peak=1668	drawdown=-4.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+9.0	dd_z=-0.21	dd_k=5	resolvable_k=115	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=65.0	tape_age_min=5.0
+2026-08-12T16:18:23Z	v116	k=6	rating=1664	net5=-4.0	peak=1668	drawdown=-4.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+9.0	dd_z=-0.21	dd_k=5	resolvable_k=115	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=65.4	tape_age_min=5.4
+2026-08-12T16:27:57Z	v116	k=7	rating=1668	net5=+3.0	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=75	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=75.0	tape_age_min=5.0
+2026-08-12T16:28:23Z	v116	k=7	rating=1668	net5=+3.0	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=75	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=75.4	tape_age_min=5.4
+2026-08-12T16:37:57Z	v116	k=7	rating=1668	net5=+3.0	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=75	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=85.0	tape_age_min=5.0
+2026-08-12T16:38:24Z	v116	k=7	rating=1668	net5=+3.0	peak=1668	drawdown=+0.0	armed=False	RULE=unarmed	sprt_fast=OK	sprt_slow=open	net_act=+13.0	dd_z=NA	dd_k=0	resolvable_k=75	p_null=NA	sd_pm=8.60	net_act_src=derived	lg_age_min=85.4	tape_age_min=5.4
+2026-08-12T16:47:58Z	v116	k=8	rating=1682	net5=+16.0	peak=1682	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+27.0	dd_z=NA	dd_k=0	resolvable_k=23	p_null=0.13	sd_pm=8.60	net_act_src=derived	lg_age_min=95.0	tape_age_min=5.0
+2026-08-12T16:48:24Z	v116	k=8	rating=1682	net5=+16.0	peak=1682	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+27.0	dd_z=NA	dd_k=0	resolvable_k=23	p_null=0.13	sd_pm=8.60	net_act_src=derived	lg_age_min=95.4	tape_age_min=5.4
+2026-08-12T16:57:58Z	v116	k=8	rating=1682	net5=+16.0	peak=1682	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+27.0	dd_z=NA	dd_k=0	resolvable_k=23	p_null=0.13	sd_pm=8.60	net_act_src=derived	lg_age_min=105.0	tape_age_min=5.0
+2026-08-12T16:58:24Z	v116	k=8	rating=1682	net5=+16.0	peak=1682	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+27.0	dd_z=NA	dd_k=0	resolvable_k=23	p_null=0.13	sd_pm=8.60	net_act_src=derived	lg_age_min=105.4	tape_age_min=5.4
+2026-08-12T17:07:58Z	v116	k=9	rating=1682	net5=+16.0	peak=1682	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+27.0	dd_z=NA	dd_k=0	resolvable_k=29	p_null=0.20	sd_pm=8.60	net_act_src=derived	lg_age_min=115.0	tape_age_min=5.0
+2026-08-12T17:08:24Z	v116	k=9	rating=1682	net5=+16.0	peak=1682	drawdown=+0.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+27.0	dd_z=NA	dd_k=0	resolvable_k=29	p_null=0.20	sd_pm=8.60	net_act_src=derived	lg_age_min=115.4	tape_age_min=5.4
+2026-08-12T17:17:58Z	v116	k=10	rating=1668	net5=+12.0	peak=1682	drawdown=-14.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+13.0	dd_z=-1.63	dd_k=1	resolvable_k=153	p_null=0.23	sd_pm=8.60	net_act_src=derived	lg_age_min=125.0	tape_age_min=4.0
+2026-08-12T17:18:24Z	v116	k=10	rating=1668	net5=+12.0	peak=1682	drawdown=-14.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+13.0	dd_z=-1.63	dd_k=1	resolvable_k=153	p_null=0.23	sd_pm=8.60	net_act_src=derived	lg_age_min=125.4	tape_age_min=4.4
+2026-08-12T17:27:58Z	v116	k=10	rating=1668	net5=+12.0	peak=1682	drawdown=-14.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+13.0	dd_z=-1.63	dd_k=1	resolvable_k=153	p_null=0.24	sd_pm=8.59	net_act_src=derived	lg_age_min=15.0	tape_age_min=4.0
+2026-08-12T17:28:24Z	v116	k=10	rating=1668	net5=+12.0	peak=1682	drawdown=-14.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+13.0	dd_z=-1.63	dd_k=1	resolvable_k=153	p_null=0.24	sd_pm=8.59	net_act_src=derived	lg_age_min=15.4	tape_age_min=4.4
+2026-08-12T17:38:24Z	v116	k=10	rating=1668	net5=+12.0	peak=1682	drawdown=-14.0	armed=True	RULE=held	sprt_fast=OK	sprt_slow=OK	net_act=+13.0	dd_z=-1.63	dd_k=1	resolvable_k=153	p_null=0.24	sd_pm=8.59	net_act_src=derived	lg_age_min=25.4	tape_age_min=4.4

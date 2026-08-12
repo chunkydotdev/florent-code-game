@@ -1,0 +1,26 @@
+f61d19c1-600e-457b-861b-dbeb6b3d8691 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "a0ddeb6b-cc0b-4543-b29d-5f7dfaa714b1"}
+48340ad8-701f-4a40-850d-1f3f3d56d8ca Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "d6770fa5-addf-4757-8576-2835fb27b9d8"}
+0774b1b2-df40-4cf2-915e-5d5a6133a13a Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "e0ad1d30-04c7-46f3-884a-a4c16fceb570"}
+bfbb9a68-b37a-4a61-b0ea-d36369c8f65a Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "1b33efbe-0447-417b-be1b-0cc8be0ed20e"}
+ebd8d82a-7365-4ccb-af0b-defea3a1ac4d Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "79026270-8115-492c-a79e-cd6ca3757019"}
+f61d19c1-600e-457b-861b-dbeb6b3d8691 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "1aed7ca3-fd5b-4bc8-836c-d86bad4cd711"}
+48340ad8-701f-4a40-850d-1f3f3d56d8ca Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "5d39d77c-4ae4-4be9-90ef-ee2d1bbb4182"}
+0774b1b2-df40-4cf2-915e-5d5a6133a13a Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "d14c14fe-0111-4b2d-8338-fa6000e72fa7"}
+ebd8d82a-7365-4ccb-af0b-defea3a1ac4d Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "417cf7ea-4f21-47fb-9a4e-b7f4bdbc4d29"}
+f61d19c1-600e-457b-861b-dbeb6b3d8691 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "f73ae2e5-ebdc-4ae3-acbc-1559a86e23ac"}
+48340ad8-701f-4a40-850d-1f3f3d56d8ca Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "07c78f3b-ddf4-4cea-9e7b-b668f92e908b"}
+0774b1b2-df40-4cf2-915e-5d5a6133a13a Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "2e2cb1d4-a624-4a28-b16c-cef041db9466"}
+bfbb9a68-b37a-4a61-b0ea-d36369c8f65a Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+{"matchId": "67aab319-7e28-434f-a3ca-f8424b821238"}

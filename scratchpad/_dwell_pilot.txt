@@ -1,0 +1,233 @@
+====================================================================================================
+POPULATION SELECTION (corpus/meta_join.tsv, side keyed on teamAId/teamBId, NOT on us_side — corpus-howto TRAP 7)
+  US   games with a replay on disk : 5,178   (queue doc Instrument A: 5,143)
+  TOP  third-party games on disk   : 3,165   (queue doc: 3,080)
+       of which TOP on BOTH sides  : 1,060  -> contribute two measured sides each
+====================================================================================================
+
+decoded: US 40 games (err 0, skipped 0)   TOP 40 games (err 0, skipped 0)
+SEAT VALIDATION (independent of us_side): does the replay-internal winner byte
+  agree with meta_join's game_winner_side under TEAM_A == 0?
+  US: 40 / 40 agree (100.0000%)  -- must be ~100%, and a swapped convention would read ~0%
+  TOP: 40 / 40 agree (100.0000%)  -- must be ~100%, and a swapped convention would read ~0%
+
+====================================================================================================
+CONTROL 4 — POOLED REPRODUCTION vs the queue doc (US 54.55, TOP 23.93, ratio 2.28x)
+====================================================================================================
+  US   n=40 games   fwd builder-rounds/game    879.0   fwd builds/game  13.22   ROUNDS PER FORWARD BUILD   66.47
+       (dwell.py's `id not in pos` build rule instead of `seen`: builds 529 vs 529, dwell 66.47)
+  TOP  n=40 games   fwd builder-rounds/game    738.4   fwd builds/game  23.32   ROUNDS PER FORWARD BUILD   31.65
+       (dwell.py's `id not in pos` build rule instead of `seen`: builds 933 vs 933, dwell 31.65)
+  RATIO US/TOP = 2.10x   (queue doc 2.28x)
+
+====================================================================================================
+PRIMARY — pooled ratio within band, DOCTRINE bands (numerator round in band b / build in band b)
+====================================================================================================
+  US    [US]  games=40  sides=40
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-59             2,343         101         23.20     19.35 -   29.02           40             58.6             2.52
+  r60-179            8,607         171         50.33     36.12 -   77.99           40            215.2             4.28
+  r180-249            3,355          42         79.88     43.12 -  276.33           26            129.0             1.62
+  r250-499            9,110         130         70.08     39.34 -  206.40           19            479.5             6.84
+  r500-999           11,745          85        138.18     77.81 -  627.54           15            783.0             5.67
+  POOLED            35,160         529         66.47
+
+  TOP   [TOP]  games=40  sides=55
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-59             3,985         177         22.51     17.31 -   30.02           40             72.5             3.22
+  r60-179           10,754         412         26.10     18.46 -   39.34           40            195.5             7.49
+  r180-249            3,356         111         30.23     17.13 -   70.48           23            101.7             3.36
+  r250-499            5,639         125         45.11     23.65 -  127.93           15            256.3             5.68
+  r500-999            5,800         108         53.70     16.15 -  175.85            8            446.2             8.31
+  POOLED            29,534         933         31.65
+
+  US/TOP ratio by band:
+    r0-59     US      23.20   TOP      22.51   ratio 1.03x
+    r60-179    US      50.33   TOP      26.10   ratio 1.93x
+    r180-249    US      79.88   TOP      30.23   ratio 2.64x
+    r250-499    US      70.08   TOP      45.11   ratio 1.55x
+    r500-999    US     138.18   TOP      53.70   ratio 2.57x
+
+====================================================================================================
+PRIMARY — pooled ratio within band, UNIFORM bands (numerator round in band b / build in band b)
+====================================================================================================
+  US    [US]  games=40  sides=40
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-99             5,329         171         31.16     24.97 -   39.32           40            133.2             4.28
+  r100-199            6,677         114         58.57     38.91 -  111.00           38            175.7             3.00
+  r200-299            4,506          60         75.10     40.22 -  300.20           23            195.9             2.61
+  r300-499            6,903          99         69.73     39.53 -  185.19           17            406.1             5.82
+  r500-999           11,745          85        138.18     77.81 -  627.54           15            783.0             5.67
+  POOLED            35,160         529         66.47
+
+  TOP   [TOP]  games=40  sides=55
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-99             7,873         332         23.71     18.07 -   32.36           40            143.1             6.04
+  r100-199            7,991         290         27.56     19.45 -   43.41           38            150.8             5.47
+  r200-299            3,826         123         31.11     17.98 -   70.70           20            136.6             4.39
+  r300-499            4,044          80         50.55     23.83 -  182.69           14            202.2             4.00
+  r500-999            5,800         108         53.70     16.15 -  175.85            8            446.2             8.31
+  POOLED            29,534         933         31.65
+
+  US/TOP ratio by band:
+    r0-99     US      31.16   TOP      23.71   ratio 1.31x
+    r100-199    US      58.57   TOP      27.56   ratio 2.13x
+    r200-299    US      75.10   TOP      31.11   ratio 2.41x
+    r300-499    US      69.73   TOP      50.55   ratio 1.38x
+    r500-999    US     138.18   TOP      53.70   ratio 2.57x
+
+====================================================================================================
+ROBUSTNESS — WAITING-TIME framing: each forward builder-round attributed to the
+band of THAT BUILDER's NEXT forward build.  Right-censored rounds reported, not dropped.
+====================================================================================================
+  US: censored forward builder-rounds 26,186 of 35,160 (74.5%)  |  build->builder attribution: unique 484, ambiguous 45, none 0 (0.0% unattributed)
+  TOP: censored forward builder-rounds 14,862 of 29,534 (50.3%)  |  build->builder attribution: unique 875, ambiguous 58, none 0 (0.0% unattributed)
+
+  US  WAIT/doctrine   [US]  games=40  sides=40
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-59               806         101          7.98      6.55 -    9.49           40             20.1             2.52
+  r60-179            2,730         171         15.96     12.15 -   22.27           40             68.2             4.28
+  r180-249              556          42         13.24      6.83 -   22.22           26             21.4             1.62
+  r250-499            2,832         130         21.78     12.15 -   47.03           19            149.1             6.84
+  r500-999            2,050          85         24.12      1.88 -   33.74           15            136.7             5.67
+  POOLED             8,974         529         16.96
+
+  TOP WAIT/doctrine   [TOP]  games=40  sides=55
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-59             1,416         177          8.00      6.91 -    9.22           40             25.7             3.22
+  r60-179            6,242         412         15.15     11.64 -   21.43           40            113.5             7.49
+  r180-249            2,087         111         18.80     10.50 -   42.16           23             63.2             3.36
+  r250-499            2,642         125         21.14     12.65 -   38.05           15            120.1             5.68
+  r500-999            2,285         108         21.16      8.85 -   60.89            8            175.8             8.31
+  POOLED            14,672         933         15.73
+
+  US  WAIT/uniform   [US]  games=40  sides=40
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-99             1,947         171         11.39      9.43 -   13.49           40             48.7             4.28
+  r100-199            1,795         114         15.75     11.40 -   23.50           38             47.2             3.00
+  r200-299              735          60         12.25      6.44 -   21.48           23             32.0             2.61
+  r300-499            2,447          99         24.72     13.02 -   57.50           17            143.9             5.82
+  r500-999            2,050          85         24.12      1.88 -   33.74           15            136.7             5.67
+  POOLED             8,974         529         16.96
+
+  TOP WAIT/uniform   [TOP]  games=40  sides=55
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-99             3,559         332         10.72      9.07 -   13.13           40             64.7             6.04
+  r100-199            4,606         290         15.88     11.72 -   22.99           38             86.9             5.47
+  r200-299            2,684         123         21.82     10.22 -   44.70           20             95.9             4.39
+  r300-499            1,538          80         19.23     11.59 -   40.04           14             76.9             4.00
+  r500-999            2,285         108         21.16      8.85 -   60.89            8            175.8             8.31
+  POOLED            14,672         933         15.73
+
+----------------------------------------------------------------------------------------------------
+CENSORED MASS BY ITS OWN ROUND — forward builder-rounds that are never followed by
+a forward build FROM THAT BUILDER.  This is the part the waiting-time framing drops,
+so it is reported in full rather than as a footnote.
+----------------------------------------------------------------------------------------------------
+  doctrine:
+    band          US censored  US fwd-rnds  US cens%   TOP censored  TOP fwd-rnds  TOP cens%  US-TOP pp
+    r0-59                900        2,343     38.4%          1,052         3,985      26.4%      12.0pp
+    r60-179             6,029        8,607     70.0%          4,428        10,754      41.2%      28.9pp
+    r180-249             2,408        3,355     71.8%          1,678         3,356      50.0%      21.8pp
+    r250-499             6,547        9,110     71.9%          3,341         5,639      59.2%      12.6pp
+    r500-999            10,302       11,745     87.7%          4,363         5,800      75.2%      12.5pp
+  uniform:
+    band          US censored  US fwd-rnds  US cens%   TOP censored  TOP fwd-rnds  TOP cens%  US-TOP pp
+    r0-99              2,708        5,329     50.8%          2,407         7,873      30.6%      20.2pp
+    r100-199             5,005        6,677     75.0%          3,611         7,991      45.2%      29.8pp
+    r200-299             3,121        4,506     69.3%          2,031         3,826      53.1%      16.2pp
+    r300-499             5,050        6,903     73.2%          2,450         4,044      60.6%      12.6pp
+    r500-999            10,302       11,745     87.7%          4,363         5,800      75.2%      12.5pp
+
+====================================================================================================
+CONTROL 1 — TEAM SWAP: recompute with the measured side inverted.
+  US group -> measures our OPPONENTS in our games.
+  TOP group -> measures the NON-TOP side in the same third-party games
+               (games with TOP on both sides drop out; n falls, as it must).
+====================================================================================================
+  US       n=40     fwd-rounds     35,160  fwd-builds      529  ROUNDS/BUILD      66.47
+  US-INV   n=40     fwd-rounds     24,975  fwd-builds      361  ROUNDS/BUILD      69.18
+  TOP      n=40     fwd-rounds     29,534  fwd-builds      933  ROUNDS/BUILD      31.65
+  TOP-INV  n=25     fwd-rounds      8,859  fwd-builds      158  ROUNDS/BUILD      56.07
+  swap moved US   66.47 -> 69.18
+  swap moved TOP  31.65 -> 56.07
+  (15 both-TOP games dropped from TOP-INV by construction)
+
+====================================================================================================
+CONTROL 2 — BAND SHUFFLE
+====================================================================================================
+  2a. THE LITERAL FORM AS COMMISSIONED ('permute the band label of each forward
+      builder-round within a game') IS A NO-OP and I am showing that rather than
+      substituting silently: permuting labels among the numerator items leaves the
+      per-band multiset — hence every band total and every ratio — bit-identical.
+      US: pre-shuffle [2343, 8607, 3355, 9110, 11745]  post-shuffle [2343, 8607, 3355, 9110, 11745]  identical=True
+      TOP: pre-shuffle [3985, 10754, 3356, 5639, 5800]  post-shuffle [3985, 10754, 3356, 5639, 5800]  identical=True
+
+  2b. THE FORM THAT TESTS THE STATED INTENT ('is the effect an artefact of
+      exposure?'): within each game, redraw every forward build's ROUND from that
+      side's OWN forward-builder-round distribution.  Under this null the rate of
+      building is proportional to forward presence, so rounds-per-build MUST be flat
+      at the pooled value in every band.
+      US / doctrine:
+        r0-59     shuffled      48.81   (real      23.20)   pooled      66.47
+        r60-179    shuffled      58.95   (real      50.33)   pooled      66.47
+        r180-249    shuffled      72.93   (real      79.88)   pooled      66.47
+        r250-499    shuffled      56.58   (real      70.08)   pooled      66.47
+        r500-999    shuffled      91.76   (real     138.18)   pooled      66.47
+      TOP / doctrine:
+        r0-59     shuffled      28.06   (real      22.51)   pooled      31.65
+        r60-179    shuffled      26.82   (real      26.10)   pooled      31.65
+        r180-249    shuffled      32.27   (real      30.23)   pooled      31.65
+        r250-499    shuffled      32.04   (real      45.11)   pooled      31.65
+        r500-999    shuffled      52.73   (real      53.70)   pooled      31.65
+      US / uniform:
+        r0-99     shuffled      47.16   (real      31.16)   pooled      66.47
+        r100-199    shuffled      59.62   (real      58.57)   pooled      66.47
+        r200-299    shuffled      73.87   (real      75.10)   pooled      66.47
+        r300-499    shuffled      60.03   (real      69.73)   pooled      66.47
+        r500-999    shuffled      91.76   (real     138.18)   pooled      66.47
+      TOP / uniform:
+        r0-99     shuffled      29.49   (real      23.71)   pooled      31.65
+        r100-199    shuffled      26.11   (real      27.56)   pooled      31.65
+        r200-299    shuffled      28.55   (real      31.11)   pooled      31.65
+        r300-499    shuffled      34.56   (real      50.55)   pooled      31.65
+        r500-999    shuffled      53.21   (real      53.70)   pooled      31.65
+
+====================================================================================================
+CONTROL 3 — EMPTY BAND: a band no game reaches must report UNDEFINED, not 0.
+====================================================================================================
+  US: longest game 1000 rounds
+  US NARROW   [US]  games=40  sides=40
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-0                  0           0     UNDEFINED           UNDEFINED           40              0.0             0.00
+  r1-1                  0           0     UNDEFINED           UNDEFINED           40              0.0             0.00
+  r998-998               21           0     UNDEFINED           UNDEFINED            9              2.3             0.00
+  r999-999               21           0     UNDEFINED           UNDEFINED            9              2.3             0.00
+  r1000-1999               0           0     UNDEFINED           UNDEFINED            0              0.0             0.00
+  POOLED                42           0     UNDEFINED
+  TOP: longest game 1000 rounds
+  TOP NARROW   [TOP]  games=40  sides=55
+  band        fwd b-rounds  fwd builds  ROUNDS/BUILD              95% CI  games alive  rnds/side-alive  blds/side-alive
+  r0-0                  0           0     UNDEFINED           UNDEFINED           40              0.0             0.00
+  r1-1                  0           1          0.00      0.00 -    0.00           40              0.0             0.02
+  r998-998               11           0     UNDEFINED           UNDEFINED            4              1.8             0.00
+  r999-999               11           0     UNDEFINED           UNDEFINED            4              1.8             0.00
+  r1000-1999               0           0     UNDEFINED           UNDEFINED            0              0.0             0.00
+  POOLED                22           1         22.00
+  sanity: ratio(0,0) = None -> printed as '  UNDEFINED'; ratio(7,0) = None; ratio(0,7) = 0.0 -> '      0.00'  (a REAL zero still prints 0.00, so the two are distinguishable)
+
+====================================================================================================
+GAME-LENGTH CONFOUND — survival profile of the two groups
+====================================================================================================
+  threshold     US games alive     US %   TOP games alive    TOP %
+  r>0                       40   100.0%                40   100.0%
+  r>60                      40   100.0%                40   100.0%
+  r>100                     38    95.0%                38    95.0%
+  r>180                     26    65.0%                23    57.5%
+  r>200                     23    57.5%                20    50.0%
+  r>250                     19    47.5%                15    37.5%
+  r>300                     17    42.5%                14    35.0%
+  r>500                     15    37.5%                 8    20.0%
+  r>999                      9    22.5%                 4    10.0%
+  US game length: median 235, mean 445, p25 160, p75 759
+  TOP game length: median 204, mean 327, p25 146, p75 431

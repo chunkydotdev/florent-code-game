@@ -1,0 +1,11 @@
+06:39:47Z UNRATED RUN  version=v108  target=10 games  incumbent=v104
+06:39:47Z cells=2  outfile=scratchpad/arm_unrated_v108_20260811T063947Z.txt   (arm_*.txt so rate_budget can attribute it)
+06:39:48Z holder before: v104 (Loki v2)
+06:39:52Z cycle 1: activated v108 — firing 2 challenge(s)
+06:39:53Z   REJECTED team1 (counts against the limit even though no match exists)
+06:39:55Z   REJECTED team2 (counts against the limit even though no match exists)
+06:40:00Z rollback confirmed: holder=v104 (Loki v2)
+06:40:00Z cycle 1: queued 0/2   total 0/10 games
+06:40:00Z NOTHING accepted this cycle — the window was spent. Backing off 1230s before retrying.
+06:42:17Z interrupted — restoring incumbent
+06:42:20Z rollback confirmed: holder=v104 (Loki v2)

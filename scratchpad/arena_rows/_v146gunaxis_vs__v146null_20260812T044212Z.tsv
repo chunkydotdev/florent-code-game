@@ -1,0 +1,3 @@
+bot_a	bot_b	map	seed	seat	winner	condition	crashes_a	crashes_b	collected_a	collected_b
+bots/_v146gunaxis	bots/_v146null	hive	1	a	bots/_v146gunaxis	core_destroyed	0	0	1930	1700
+bots/_v146null	bots/_v146gunaxis	hive	1	a	bots/_v146null	core_destroyed	0	0	1790	490

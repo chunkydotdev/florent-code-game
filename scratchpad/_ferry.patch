@@ -1,0 +1,43 @@
+--- bots/_v146gunaxis/raid.py	2026-08-11 11:18:13
++++ bots/_v148ferryfirst/raid.py	2026-08-11 12:18:36
+@@ -656,6 +630,30 @@
+                 if 0 <= t.x < w and 0 <= t.y < h:
+                     sites.append(t)
+ 
++        # ⭐ LOKI-27: FERRY BEFORE EXILE. THE PRIORITY WAS INVERTED AGAINST THE
++        # PROGRAMME. EXILE below returns on success, so ONE enemy builder
++        # wandering within d^2<=2 of our launcher pre-empts ferrying a raider
++        # forward -- every time both are available. EXILE is home defence;
++        # FERRY is delivery into the enemy half. `PLAY_DEFENCE: never` says
++        # which wins, and it was losing.
++        # MEASURED: 34,703 EXILE throws by us against 3,434 INSERTs -- 10:1
++        # toward ejection, 0.91 ferries per game over 3,772 games. CLAUDE.md
++        # already says it: "our launcher is almost entirely an ejection tool and
++        # almost not an insertion tool."
++        # WHY IT IS AN ADDITION, NOT A REORDER OF EQUALS: the enemy core ring is
++        # 2.57% gunner-covered with a free tile in 100% of sampled rounds, while
++        # the forward hazard is ~2%/round CUMULATIVE over the traverse. **The
++        # destination is safe and the WALK is what kills.** A throw skips the
++        # walk, so it attacks dwell-per-build (ours 46.9 rounds against the
++        # field's 39.1) rather than the per-round hazard -- which is exactly the
++        # quantity LOKI-25 moved the wrong way, 46.9 -> 60.5.
++        ferry_pending = (
++            LOKI27_FERRY_FIRST and LOKI_FERRY_ON
++            and ct.read_store(SLOT_FERRY_ID) != 0
++            and ct.get_current_round() - ct.read_store(SLOT_FERRY_RND)
++                <= LOKI_FERRY_STALE_RNDS
++        )
++
+         # 1. EXILE.  Pickup is the full 8-neighbourhood at d^2 <= 2 (measured,
+         # 1471/1472 wild throw events).  This is the same tool the field uses
+         # against our raiders, and it is the cheapest home defence we own.
+@@ -672,6 +670,8 @@
+                     continue
+             except Exception:
+                 continue
++            if ferry_pending:
++                continue          # LOKI-27: a fresh ferry request outranks it
+             far = sorted(sites, key=lambda t: t.distance_squared(self.core), reverse=True)
+             for site in far:
+                 try:
+

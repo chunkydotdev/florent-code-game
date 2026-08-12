@@ -1,0 +1,20 @@
+09:28:44Z UNRATED RUN  version=v111  target=25 games  incumbent=v104
+09:28:44Z cells=4  outfile=scratchpad/arm_unrated_v111_20260811T092844Z.txt   (arm_*.txt so rate_budget can attribute it)
+09:28:45Z holder before: v104 (Loki v2)
+OK: ledger present and writable: /Users/junghard/Projects/Work/florent-code-game/corpus/our_matches.tsv
+09:28:50Z cycle 1: activated v111 — firing 5 challenge(s)
+RECORDED match_id=20bdd8f1-a545-45b0-82b7-c114944b2957 source=live -> /Users/junghard/Projects/Work/florent-code-game/corpus/our_matches.tsv
+09:28:50Z   queued 25288fdb  +5 games   PROGRESS 5/25
+RECORDED match_id=21033db4-7ec4-4dc7-a590-8d78f2c5a500 source=live -> /Users/junghard/Projects/Work/florent-code-game/corpus/our_matches.tsv
+09:28:53Z   queued b2deaacd  +5 games   PROGRESS 10/25
+RECORDED match_id=105e1402-5f94-4718-9af2-78b35f7d5601 source=live -> /Users/junghard/Projects/Work/florent-code-game/corpus/our_matches.tsv
+09:28:55Z   queued eceb8455  +5 games   PROGRESS 15/25
+RECORDED match_id=0838210c-9781-4f4a-9338-0d2e535992a3 source=live -> /Users/junghard/Projects/Work/florent-code-game/corpus/our_matches.tsv
+09:28:58Z   queued b538e523  +5 games   PROGRESS 20/25
+RECORDED match_id=b78248c3-b76b-4e73-b37b-0c4e1d8a52c6 source=live -> /Users/junghard/Projects/Work/florent-code-game/corpus/our_matches.tsv
+09:29:01Z   queued 25288fdb  +5 games   PROGRESS 25/25
+09:29:06Z rollback confirmed: holder=v104 (Loki v2)
+09:29:06Z cycle 1: queued 5/5   total 25/25 games
+09:29:06Z DONE: 25/25 games queued in 1 cycle(s); 5 accepted, 0 rejected
+09:29:07Z final holder: v104 (Loki v2)
+09:29:07Z ladder is on the incumbent. clean exit.

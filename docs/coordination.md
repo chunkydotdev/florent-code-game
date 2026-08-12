@@ -38246,3 +38246,62 @@ v81, not "heart"**; we were **v117, seat A, and won all five games.**
 ⛔ **And it ran to r893 — under `R1000_IS_DEFEAT` that is a game we lost while
 winning it.** The belt is not a tiebreak story; a starved bank is why the game
 went to 893 rounds instead of ending in a kill.
+
+## ✅ RESEARCH s34, 17:5xZ — **THE HELD CLAIM CLEARED BY EXECUTION, AND MY OWN ITEM 4 CLOSED AS A NEGATIVE**
+
+**CLAIM 2 IS UN-HELD.** The builder ran `bots/_probe_nearby_default` (`0686fdc`):
+**`get_nearby_buildings()` == `get_nearby_buildings(vision_radius_sq)` in 100% of
+informative rows across 9 games**, with `dist_sq=2` reading strictly lower and
+**the control that makes a match meaningful — the end-card showed the opponent
+holding 22 buildings while our core read D=6.** ⇒ the premise I asserted is now
+an engine fact. **The hold cost ~40 minutes and bought the difference between a
+plank built on a read-across and one built on a probe.**
+
+**⭐ D37 — THE BOUNDED CHECK IS THE CHEAPEST AUDIT ON THE BOARD, AND IT FOUND A
+REAL DEFECT IN MY HEADLINE.** The side lane asked for a quantity **the claim
+cannot legally exceed**: only **35.55%** of games ever see ≥3 forward-sentinel
+BUILD events, which needs no pairing at all. That told us the pairing carries
+~2/3 of the claim and deserved scrutiny — and it did: my within-round sort put
+DEATH before BUILD, **stranding a phantom on the 219 same-round build-and-die
+tiles.** Corrected: **12.77% → 12.92%, identical under both cross-tile
+orderings.** **The pairing is now PROVEN rather than asserted** — a tile holds one
+building, so per (game,tile) events must alternate B,D,B,D: **0 violations after
+the fix, 0 tiles where DEATHs exceed BUILDs.** ⇒ **ask for the bound before
+auditing the estimate.** *(Instrument change → the corrected figure and its proof
+are in `QUEUE.md #23`.)*
+
+**⛔ D38 — I POINTED THE BUILDER AT THE LEAST IMPORTANT CONSUMER OF MY OWN
+FINDING, AND THE CHANNEL IS NOT BINDING ANYWAY.** I flagged the `SLOT_FWD_GUN`
+undercount as under-sizing **the endgame ammo conversion**. That path is gated
+`rnd >= ENDGAME_RND = 960` and **only 2.8% of our rated games reach r900+** — it
+is nearly irrelevant. The consumers that matter run **every round**
+(`main.py:222-236`): `ammo_target = max(…, min(48, 4*weapons))`, a dedicated
+forward magazine floor `min(120, 40 + 20*fwd_guns)`, and `ti_floor = 12 if (under
+or weapons) else 52`. **I named the one that fires in 2.8% of games and missed
+the three that fire in all of them.**
+**AND THE ANSWER IS STILL NO.** On **325 RATED games, `ourver` ∈ {114,115,116}**:
+**`ammo_end` median 50, only 2.8% end at zero ammo; the conversion-binding
+signature (`ammo_end == 0` AND `ti_end > 50`) is 0.9%, while 63.7% end flush at
+≥40 ammo.** ⇒ **turrets are not ammo-starved, the undercount does not reach the
+ship decision, and the flag is CLOSED as a negative.** ⚠ **Limit stated rather
+than buried: this is END state. `econ.tsv:shots` is a dead column (0/156,880), so
+burn cannot be measured directly and "starved at a decisive moment" is not
+excluded** — but a median 50 ammo at game end against a target ceiling of 120 is
+not the shape of a starved bot.
+
+**⭐⭐ D39 — TWO INDEPENDENT MEASUREMENTS CONVERGED ON THE LAUNCHER, FROM
+DIFFERENT SURFACES.** The builder's live replay decode: we build a launcher in
+**3 of 55 games (5.5%)**, and **4 of 5 games passed `LAUNCHER_MIN_RND = 160`**, so
+the round gate is not what binds. My archive cut: our bank at the end of the
+r150-200 band is **median 54 Ti** and clears the real gate — `_eco_spendable(ct,
+launcher_cost + LAUNCHER_RESERVE)` at `main.py:629`, i.e. `floor(scale*20) + 80`,
+~120-160 Ti — in only **5.7-12.4%** of games. ⇒ **the launcher is not DEFERRED, it
+is PRICED OUT.** Queued as **`#28`** with its resolution declared in advance.
+⚠ **The hedge runs against me: `ti_end` is a band-end SNAPSHOT, not the max over
+the band, so the true affordability share is HIGHER and mine is a lower bound.**
+
+**AND A WRONG LEVER WAS CAUGHT IN CROSS-LANE TRAFFIC BEFORE IT WAS BUILT:
+`SLOT_LAUNCHER` is a comms-store INDEX, not a cap** (builder's correction, side
+lane's catch). The store is **16/16 assigned**, so a dose sweep on it would have
+silently corrupted an occupied slot. **`LAUNCHER_RESERVE` is the only one of the
+three launcher gates with a dose.**

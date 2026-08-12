@@ -1,0 +1,20 @@
+[12:33:22] HOLDER READ LIVE: v115 (restore target v115)
+[12:33:22] SUBMIT -- this ACTIVATES. Window starts NOW.
+
+HOLDER: before=v115  after=v116
+--activate given: leaving the new submission live. THIS IS A SHIP.
+[12:33:26] LIVE:   Active bot: v116
+[12:33:26] unrated 1/5
+https://game.code.florent.vc/match/47e00c02-fa33-449c-837d-afa96269acd1
+[12:33:26] unrated 2/5
+https://game.code.florent.vc/match/8ad8af60-b1d8-428b-8255-130ca0440a6c
+[12:33:27] unrated 3/5
+https://game.code.florent.vc/match/441bfd77-6981-4c62-babd-cfe541842e26
+[12:33:27] unrated 4/5
+https://game.code.florent.vc/match/1dda40b8-4c73-40af-9a1e-8751391c346b
+[12:33:28] unrated 5/5
+https://game.code.florent.vc/match/df6062cb-391e-4c70-b450-993dde20ba01
+[12:33:28] ROLLBACK to v115
+Version 115 is now the active submission.
+[12:33:29] HOLDER NOW:   Active bot: v115
+[12:33:29] ROLLBACK VERIFIED on the Active bot line

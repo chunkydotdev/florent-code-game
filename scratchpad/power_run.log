@@ -1,0 +1,13 @@
+=== 06:23:45Z CONTROL window (v102 live, no activation) ===
+06:24:13Z fired 5/5 -> scratchpad/control_extra_ids.txt
+=== 06:34:33Z TREATMENT window ===
+06:38:15Z fired 5/5 -> scratchpad/loki13_extra_ids.txt
+06:38:22Z ROLLBACK VERIFIED
+=== 06:48:42Z TREATMENT window ===
+06:50:04Z fired 5/5 -> scratchpad/loki13_extra_ids.txt
+06:50:10Z ROLLBACK VERIFIED
+=== 07:00:30Z CONTROL window (v102 live, no activation) ===
+07:00:33Z fired 5/5 -> scratchpad/control_extra_ids.txt
+=== 07:10:53Z TREATMENT window ===
+07:11:28Z fired 5/5 -> scratchpad/loki13_extra_ids.txt
+07:11:34Z ROLLBACK VERIFIED

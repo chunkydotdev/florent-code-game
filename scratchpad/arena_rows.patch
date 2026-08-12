@@ -1,0 +1,51 @@
+--- tools/arena.py
++++ tools/arena.py
+@@
+     ap.add_argument("--jobs", type=int, default=0, help="parallel matches (default: cores-2)")
++    # PER-GAME ROWS ARE WRITTEN BY DEFAULT (s33, 2026-08-12).
++    # `play()` has always built a full per-game record (winner, seat, map, seed,
++    # condition, crashes, collected) and `main()` has always aggregated it and
++    # thrown it away. `mech_battery.py` was the only runner that persisted rows,
++    # so EVERY arena-run battery in our history is unauditable after the fact --
++    # the `_abl_c0..c4` legs have no per-game rows anywhere and never did.
++    # The consumer is `tools/effective_n.py`: distinct-outcome counting needs
++    # per-game rows, and without them a battery's REAL n cannot be checked.
++    # DEFAULT-ON rather than a flag: a flag has to be remembered by whoever runs
++    # the battery, and the whole finding is that nobody remembered.
++    ap.add_argument("--rows", default=None,
++                    help="per-game TSV path (default: scratchpad/arena_rows/<a>_vs_<b>_<utc>.tsv)")
++    ap.add_argument("--no-rows", action="store_true",
++                    help="suppress the per-game TSV; prints that it did, so a "
++                         "battery run without rows is visible in its own log")
+     args = ap.parse_args()
+@@
+     if not results:
+         sys.exit("every match failed to produce a result")
+ 
++    # Persist BEFORE any aggregation, so a crash in the reporting code below
++    # cannot cost us the games we already paid for.
++    if args.no_rows:
++        print("  (--no-rows: per-game rows NOT written; this battery is not "
++              "auditable for effective-n)\n")
++    else:
++        rp = args.rows
++        if rp is None:
++            stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
++            safe = lambda s: Path(s).name.replace("/", "_")
++            rp = (ROOT / "scratchpad" / "arena_rows" /
++                  f"{safe(args.bot_a)}_vs_{safe(args.bot_b)}_{stamp}.tsv")
++        rp = Path(rp)
++        rp.parent.mkdir(parents=True, exist_ok=True)
++        cols = ("bot_a", "bot_b", "map", "seed", "seat", "winner",
++                "condition", "crashes_a", "crashes_b", "collected_a", "collected_b")
++        with rp.open("w") as fh:
++            fh.write("\t".join(cols) + "\n")
++            for r in results:
++                fh.write("\t".join(str(x) for x in (
++                    r["bot_a"], r["bot_b"], r["map"], r["seed"], r["seat"],
++                    r["winner"], r["condition"],
++                    r["crashes"].get("a", 0), r["crashes"].get("b", 0),
++                    r["collected"][0], r["collected"][1])) + "\n")
++        print(f"  per-game rows -> {rp}  ({len(results)} rows)\n")
++
+     a, b = args.bot_a, args.bot_b

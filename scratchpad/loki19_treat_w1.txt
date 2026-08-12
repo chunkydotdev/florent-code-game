@@ -1,0 +1,5 @@
+eceb8455-7cb3-442b-ba40-c6597c16b446 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcodeError: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+b2deaacd-08ad-4c14-b97b-b4f382d82ea3 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcodeError: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+7fd91e77-812c-44da-bce7-457be94d2548 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcodeError: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+25288fdb-f3a0-4ae2-964f-2fd7eb9b11d7 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcodeError: Rate limit exceeded: max 5 test/unrated matches per 20 minutes
+b538e523-2250-4c1d-b718-e73b77ebad55 Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcodeError: Rate limit exceeded: max 5 test/unrated matches per 20 minutes

@@ -1,0 +1,128 @@
+population: 5243 archived games with us on a side (meta_join, keyed on teamAId/teamBId)
+parse failures: 0  {}
+skipped (core-death count != 1): 739  by n_core_deaths {0: 734, 2: 5}
+games with exactly one core death: 4504  LOSS=2304  WIN=2200
+anomalous builder-rounds (verb emitted while cooldown>0): 0
+
+=== CONTROL 1 -- REPRODUCE THE ANCHOR (median 5.0 / mean 4.43 loss, mean 5.20 win) ===
+  [1a events.tsv, the anchor's OWN instrument] LOSS n=2304  median 5.0  mean 4.43   T median 201
+  [1a events.tsv, the anchor's OWN instrument] WIN  n=2200  median 5.0  mean 5.20   T median 165
+  LOSS OUR builders alive at T-1 (alive_T1_start) n=2304  median 5.0  mean 4.43
+  LOSS OUR builders alive at T-1 (alive_T1_end  ) n=2304  median 5.0  mean 4.43
+  LOSS decisive round T   median 201
+  WIN  OUR builders alive at T-1 (alive_T1_start) n=2200  median 5.0  mean 5.21
+  WIN  OUR builders alive at T-1 (alive_T1_end  ) n=2200  median 5.0  mean 5.20
+  WIN  decisive round T   median 165
+
+=== BUCKET SHARES -- builder-rounds over the window [T-20, T] ===
+  LOSS  games=2304  builder-rounds=215,366
+     A  IDLE AND FREE         55,486   25.76%
+     B  ACTIVE, HOME         119,869   55.66%
+     C  ACTIVE, FORWARD       40,011   18.58%
+     D  ON COOLDOWN                0    0.00%
+  WIN  games=2200  builder-rounds=241,252
+     A  IDLE AND FREE         66,572   27.59%
+     B  ACTIVE, HOME         108,697   45.06%
+     C  ACTIVE, FORWARD       65,983   27.35%
+     D  ON COOLDOWN                0    0.00%
+
+=== HEADCOUNT AT T-1 ===
+  LOSS  n=2304 games -- MEAN HEADCOUNT at T-1 (per game)
+     A  IDLE AND FREE      mean   1.19 builders/game
+     B  ACTIVE, HOME       mean   2.44 builders/game
+     C  ACTIVE, FORWARD    mean   0.80 builders/game
+     D  ON COOLDOWN        mean   0.00 builders/game
+     TOTAL alive                mean   4.43
+  WIN  n=2200 games -- MEAN HEADCOUNT at T-1 (per game)
+     A  IDLE AND FREE      mean   1.44 builders/game
+     B  ACTIVE, HOME       mean   2.30 builders/game
+     C  ACTIVE, FORWARD    mean   1.47 builders/game
+     D  ON COOLDOWN        mean   0.00 builders/game
+     TOTAL alive                mean   5.21
+
+=== DISTRIBUTION OF THE 'IDLE AND FREE' HEADCOUNT AT T-1 (how many games have anything to redirect at all?) ===
+  LOSS n=2304  median 1.0  mean 1.19   0:34.11%  1:30.99%  2:20.66%  3:11.15%  4:2.30%  5:0.56%  6+:0.22%
+  WIN  n=2200  median 1.0  mean 1.44   0:22.18%  1:35.09%  2:25.05%  3:13.36%  4:3.41%  5:0.73%  6+:0.18%
+
+=== PERSISTENTLY IDLE -- of the builders alive at T-1, what share of the 21-round window were they in bucket A? ===
+  LOSS builders=10,198  mean A-share 0.259  median 0.000
+       mean per game: A-share>=0.8  0.96   >=0.5  1.08   <0.2  3.06   builders/game
+  WIN  builders=11,453  mean A-share 0.276  median 0.000
+       mean per game: A-share>=0.8  1.21   >=0.5  1.32   <0.2  3.48   builders/game
+
+=== HEADCOUNT AT T-1, SPLIT BY WHICH VERB -- move-only is cheap to redirect, build/attack/heal is a committed turn ===
+  LOSS B: move-only  0.96   act(build/attack/heal)  1.48  builders/game
+  LOSS C: move-only  0.62   act(build/attack/heal)  0.18  builders/game
+  WIN  B: move-only  1.48   act(build/attack/heal)  0.82  builders/game
+  WIN  C: move-only  0.92   act(build/attack/heal)  0.54  builders/game
+
+=== CONTROL 2 -- SAME CLASSIFIER AT r60 (window [40, 60]) and at r10 (window [0,10]) ===
+  LOSS @r60  games=2243  builder-rounds=235,710
+     A  IDLE AND FREE         46,456   19.71%
+     B  ACTIVE, HOME         138,877   58.92%
+     C  ACTIVE, FORWARD       50,377   21.37%
+     D  ON COOLDOWN                0    0.00%
+     headcount: A 1.17  B 2.74  C 1.00  D 0.00   TOTAL 4.91
+  WIN @r60  games=2199  builder-rounds=239,975
+     A  IDLE AND FREE         47,158   19.65%
+     B  ACTIVE, HOME         137,004   57.09%
+     C  ACTIVE, FORWARD       55,813   23.26%
+     D  ON COOLDOWN                0    0.00%
+     headcount: A 1.16  B 2.82  C 1.16  D 0.00   TOTAL 5.14
+  LOSS @r10  games=2304  builder-rounds=95,006
+     A  IDLE AND FREE          3,855    4.06%
+     B  ACTIVE, HOME          88,996   93.67%
+     C  ACTIVE, FORWARD        2,155    2.27%
+     D  ON COOLDOWN                0    0.00%
+     headcount: A 0.34  B 4.80  C 0.18  D 0.00   TOTAL 5.31
+  WIN @r10  games=2200  builder-rounds=91,380
+     A  IDLE AND FREE          3,604    3.94%
+     B  ACTIVE, HOME          85,488   93.55%
+     C  ACTIVE, FORWARD        2,288    2.50%
+     D  ON COOLDOWN                0    0.00%
+     headcount: A 0.33  B 4.84  C 0.20  D 0.00   TOTAL 5.37
+
+=== CONTROL 2b -- FORWARD SHARE OF *ALL* BUILDER-ROUNDS (verb-blind), so a flat C can be told apart from a broken classifier ===
+  LOSS [T-20,T]  forward builder-rounds   79,073 /  215,366 =  36.72%
+  WIN  [T-20,T]  forward builder-rounds  116,870 /  241,252 =  48.44%
+  LOSS [40,60]   forward builder-rounds   79,908 /  235,710 =  33.90%
+  WIN  [40,60]   forward builder-rounds   89,758 /  239,975 =  37.40%
+  LOSS [0,10]    forward builder-rounds    2,419 /   95,006 =   2.55%
+  WIN  [0,10]    forward builder-rounds    2,473 /   91,380 =   2.71%
+
+=== PER-ROUND PROFILE OF BUCKET A (share of builder-rounds idle), by offset from T ===
+  LOSS -20:24%  -19:24%  -18:25%  -17:25%  -16:25%  -15:25%  -14:25%  -13:26%  -12:26%  -11:26%  -10:26%  -9:26%  -8:26%  -7:26%  -6:26%  -5:27%  -4:27%  -3:26%  -2:27%  -1:27%  +0:26%
+  WIN  -20:27%  -19:27%  -18:27%  -17:27%  -16:27%  -15:27%  -14:28%  -13:27%  -12:28%  -11:28%  -10:28%  -9:28%  -8:28%  -7:28%  -6:28%  -5:28%  -4:28%  -3:28%  -2:28%  -1:28%  +0:28%
+
+=== VERB SPLIT INSIDE B AND C -- move-only is cheap to redirect, build/attack/heal is not ===
+  LOSS B: move-only   48,684 ( 40.61%)   act-only   71,175 ( 59.38%)   both      10 (  0.01%)
+  LOSS C: move-only   31,118 ( 77.77%)   act-only    8,891 ( 22.22%)   both       2 (  0.00%)
+  WIN  B: move-only   69,657 ( 64.08%)   act-only   39,013 ( 35.89%)   both      27 (  0.02%)
+  WIN  C: move-only   43,311 ( 65.64%)   act-only   22,670 ( 34.36%)   both       2 (  0.00%)
+
+=== WHICH ACTION are the ACTIVE builder-rounds spending, window [T-20,T] (one round can carry only one action) ===
+  LOSS B: build   1,532 (  2.15%)   attack   3,980 (  5.59%)   heal  65,673 ( 92.26%)
+  LOSS C: build     867 (  9.75%)   attack   4,700 ( 52.85%)   heal   3,326 ( 37.40%)
+  WIN  B: build   2,379 (  6.09%)   attack   1,370 (  3.51%)   heal  35,291 ( 90.40%)
+  WIN  C: build   2,192 (  9.67%)   attack   7,081 ( 31.23%)   heal  13,399 ( 59.10%)
+
+=== CONTROL 4 -- WHY ELSE COULD A BUILDER-ROUND LOOK IDLE? TLE / death-in-round / no BotOutput at all, per bucket, window [T-20,T] ===
+  LOSS A: n=  55,486   tled      0 (  0.00%)   died-that-round   159 (  0.29%)   no BotOutput    137 (  0.25%)
+  LOSS B: n= 119,869   tled      0 (  0.00%)   died-that-round   233 (  0.19%)   no BotOutput      0 (  0.00%)
+  LOSS C: n=  40,011   tled      1 (  0.00%)   died-that-round    18 (  0.04%)   no BotOutput      0 (  0.00%)
+  WIN  A: n=  66,572   tled      0 (  0.00%)   died-that-round   130 (  0.20%)   no BotOutput     94 (  0.14%)
+  WIN  B: n= 108,697   tled      0 (  0.00%)   died-that-round    75 (  0.07%)   no BotOutput      0 (  0.00%)
+  WIN  C: n=  65,983   tled      0 (  0.00%)   died-that-round    56 (  0.08%)   no BotOutput      0 (  0.00%)
+
+=== CONTROL 3 -- COOLDOWN SANITY ===
+  every SetActionCooldown value ever written for a builder bot (field 7): {1: 2330874}
+  every SetMoveCooldown   value ever written for a builder bot (field 8): {1: 5717490}
+  (actionCooldown, moveCooldown) at PLACEMENT, all builder bots: {(0, 0): 65065}
+  LOSS: builder-rounds with a cooldown>0 at ROUND START and no verb (bucket D): 0 / 215,366 =   0.00%
+        gap in rounds between one builder's consecutive BUILD/ATTACK/HEAL actions, in-window (n=74,663): 1:93.90%  2:3.26%  3:1.81%  4:0.43%  5:0.17%  6:0.09%  7:0.09%  8:0.07%  9:0.18%
+  WIN: builder-rounds with a cooldown>0 at ROUND START and no verb (bucket D): 0 / 241,252 =   0.00%
+        gap in rounds between one builder's consecutive BUILD/ATTACK/HEAL actions, in-window (n=56,618): 1:92.01%  2:4.17%  3:2.07%  4:0.44%  5:0.36%  6:0.19%  7:0.21%  8:0.12%  9:0.44%
+
+=== CONTEXT -- our global titanium at T-1 ===
+  LOSS median 28  mean 240.9  q1 12  q3 76  share>=100  19.62%
+  WIN  median 46  mean 133.9  q1 22  q3 84  share>=100  20.18%

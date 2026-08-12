@@ -1,0 +1,684 @@
+match	game	opp	map	w	h	rounds	rnd	victim	victim_team	thrower_team	amb	ours_threw	enemy_victim	border	d2_launch	launcher_margin	removed_rnd	gap	undamaged_removal	within3
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	2	The Bisons	jackpot	16	16	82	37	6	1	0	one	1	1	1	20	2	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	12	17	0	0	one	1	0	0	25	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	37	4	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	43	4	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	47	4	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	51	6	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	58	9	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	59	6	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	62	4	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	63	6	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	67	6	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	68	4	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	72	4	1	0	one	1	1	0	26	6	-1	-1	0	0
+a70c0aeb-5bbd-46c1-8e0d-51a7635d408d	5	The Bisons	snowflake	26	26	79	76	4	1	0	one	1	1	0	26	6	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	1	I Stone	fjordgate	10	10	116	9	8	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	1	I Stone	fjordgate	10	10	116	10	14	1	0	one	1	1	0	4	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	1	I Stone	fjordgate	10	10	116	11	14	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	1	I Stone	fjordgate	10	10	116	12	12	1	0	one	1	1	0	4	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	1	I Stone	fjordgate	10	10	116	14	12	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	1	I Stone	fjordgate	10	10	116	18	8	1	0	one	1	1	0	4	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	1	I Stone	fjordgate	10	10	116	41	9	0	0	one	1	0	0	8	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	2	I Stone	jackpot	16	16	203	30	6	1	0	one	1	1	1	25	0	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	2	I Stone	jackpot	16	16	203	61	4	1	0	one	1	1	0	25	0	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	2	I Stone	jackpot	16	16	203	102	4	1	0	one	1	1	1	25	0	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	2	I Stone	jackpot	16	16	203	128	4	1	0	one	1	1	0	25	0	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	2	I Stone	jackpot	16	16	203	146	4	1	0	one	1	1	1	25	0	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	2	I Stone	jackpot	16	16	203	154	4	1	0	one	1	1	0	25	0	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	2	I Stone	jackpot	16	16	203	182	4	1	0	one	1	1	1	25	0	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	3	I Stone	atoll	18	18	379	7	3	0	0	one	1	0	0	25	4	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	3	I Stone	atoll	18	18	379	11	18	0	0	one	1	0	0	25	4	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	3	I Stone	atoll	18	18	379	20	6	1	0	one	1	1	1	25	4	70	50	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	3	I Stone	atoll	18	18	379	35	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	3	I Stone	atoll	18	18	379	346	353	1	0	one	1	1	1	25	4	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	61	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	67	6	1	0	one	1	1	0	26	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	73	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	79	6	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	84	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	90	6	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	95	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	99	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	101	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	104	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	107	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	109	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	113	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	114	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	119	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	120	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	125	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	126	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	131	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	132	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	137	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	138	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	143	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	144	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	149	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	150	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	155	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	156	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	161	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	162	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	167	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	168	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	173	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	174	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	179	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	180	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	185	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	186	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	4	I Stone	saga	24	24	192	191	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	5	I Stone	snowflake	26	26	152	70	4	1	0	one	1	1	1	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	5	I Stone	snowflake	26	26	152	81	4	1	0	one	1	1	0	25	3	-1	-1	0	0
+4dfe51f4-b4ec-41fd-94e4-8390a52ab493	5	I Stone	snowflake	26	26	152	103	4	1	0	one	1	1	1	25	3	-1	-1	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	1	Leviathan	fjordgate	10	10	1000	294	135	0	0	one	1	0	0	20	0	537	243	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	1	Leviathan	fjordgate	10	10	1000	296	126	0	0	one	1	0	0	26	0	340	44	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	1	Leviathan	fjordgate	10	10	1000	298	232	0	0	one	1	0	0	25	0	-1	-1	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	1	Leviathan	fjordgate	10	10	1000	462	211	0	0	one	1	0	0	26	0	-1	-1	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	1	Leviathan	fjordgate	10	10	1000	499	222	0	0	one	1	0	0	25	0	857	358	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	1	Leviathan	fjordgate	10	10	1000	543	421	0	0	one	1	0	0	25	0	-1	-1	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	1	Leviathan	fjordgate	10	10	1000	651	328	0	0	one	1	0	0	20	0	936	285	0	0
+eea2f9a4-84ac-4526-bead-40c2b3fbcf94	4	Leviathan	saga	24	24	234	218	9	0	0	one	1	0	0	25	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	3	6	1	1	one	0	1	0	26	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	40	7	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	47	13	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	50	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	52	7	0	1	one	0	0	1	20	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	69	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	70	13	0	1	one	0	0	1	20	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	94	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	95	3	0	0	one	1	0	0	13	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	98	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	103	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	109	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	115	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	121	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	127	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	133	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	139	10	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	172	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	174	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	176	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	181	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	183	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	185	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	190	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	192	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	194	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	199	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	201	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	203	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	208	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	210	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	212	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	217	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	219	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	221	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	226	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	228	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	230	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	235	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	237	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	239	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	244	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	246	3	0	0	one	1	0	0	18	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	248	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	1	gsxWins	fjordgate	10	10	255	253	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	3	6	1	1	one	0	1	0	25	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	7	14	0	0	one	1	0	0	25	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	24	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	29	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	34	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	39	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	44	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	2	gsxWins	jackpot	16	16	50	49	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	3	gsxWins	atoll	18	18	122	3	6	1	1	one	0	1	0	25	2	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	3	6	1	1	one	0	1	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	5	6	1	1	one	0	1	0	25	8	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	6	8	1	1	one	0	1	0	25	4	117	111	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	74	10	0	1	one	0	0	0	25	8	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	122	197	1	1	one	0	1	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	150	4	1	1	one	0	1	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	151	4	1	1	one	0	1	0	25	8	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	270	229	1	1	one	0	1	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	376	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	377	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	382	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	389	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	391	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	397	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	404	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	411	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	418	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	425	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	432	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	439	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	446	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	453	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	460	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	463	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	467	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	469	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	474	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	476	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	481	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	487	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	493	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	499	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	505	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	511	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	517	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	523	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	529	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	535	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	541	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	547	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	549	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	553	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	555	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	559	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	562	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	565	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	571	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	577	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	583	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	589	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	595	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	601	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	607	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	613	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	619	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	625	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	631	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	635	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	637	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	641	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	643	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	648	10	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	649	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	657	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	663	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	669	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	675	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	681	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	687	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	693	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	699	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	4	gsxWins	saga	24	24	711	705	15	0	1	one	0	0	0	25	4	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	3	6	1	1	one	0	1	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	20	8	1	1	one	0	1	0	25	2	79	59	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	39	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	44	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	50	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	55	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	58	132	1	1	one	0	1	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	59	6	1	0	one	1	1	1	26	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	60	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	65	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	70	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	75	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	75	132	1	0	one	1	1	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	78	174	1	1	one	0	1	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	80	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	81	132	1	0	one	1	1	1	26	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	85	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	86	191	1	1	one	0	1	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	90	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	94	174	1	0	one	1	1	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	95	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	99	174	1	0	one	1	1	1	26	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	100	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	102	191	1	0	one	1	1	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	105	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+9773d306-f8ca-462c-aa20-1eab86af283c	5	gsxWins	snowflake	26	26	108	107	191	1	0	one	1	1	1	26	5	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	1	CtrlAltDefeat	fjordgate	10	10	592	94	59	0	0	one	1	0	0	25	0	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	2	CtrlAltDefeat	jackpot	16	16	269	2	4	1	1	one	0	1	0	25	2	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	2	CtrlAltDefeat	jackpot	16	16	269	3	6	1	1	one	0	1	0	25	2	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	2	CtrlAltDefeat	jackpot	16	16	269	4	9	1	1	one	0	1	1	13	2	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	2	CtrlAltDefeat	jackpot	16	16	269	34	4	1	0	one	1	1	1	26	1	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	2	CtrlAltDefeat	jackpot	16	16	269	65	4	1	0	one	1	1	0	25	1	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	3	CtrlAltDefeat	atoll	18	18	328	2	4	1	1	one	0	1	0	25	4	24	22	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	3	CtrlAltDefeat	atoll	18	18	328	3	6	1	1	one	0	1	0	25	4	89	86	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	3	CtrlAltDefeat	atoll	18	18	328	4	13	1	1	one	0	1	1	26	4	173	169	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	3	CtrlAltDefeat	atoll	18	18	328	79	119	0	0	one	1	0	0	25	0	202	123	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	4	CtrlAltDefeat	saga	24	24	257	2	4	1	1	one	0	1	0	25	6	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	4	CtrlAltDefeat	saga	24	24	257	176	284	0	0	one	1	0	0	25	6	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	4	CtrlAltDefeat	saga	24	24	257	244	414	0	0	one	1	0	0	25	6	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	5	CtrlAltDefeat	snowflake	26	26	159	2	4	1	1	one	0	1	0	25	7	102	100	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	5	CtrlAltDefeat	snowflake	26	26	159	19	9	0	0	one	1	0	0	25	2	-1	-1	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	5	CtrlAltDefeat	snowflake	26	26	159	43	4	1	0	one	1	1	1	20	2	102	59	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	5	CtrlAltDefeat	snowflake	26	26	159	69	4	1	0	one	1	1	0	25	2	102	33	0	0
+10dc4f40-16ce-491d-8e91-3376f476d548	5	CtrlAltDefeat	snowflake	26	26	159	79	4	1	0	one	1	1	1	20	2	102	23	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	2	The Bisons	jackpot	16	16	63	8	15	1	1	one	1	0	0	25	2	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	2	The Bisons	jackpot	16	16	63	30	5	0	1	one	1	1	1	13	2	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	2	The Bisons	jackpot	16	16	63	33	5	0	1	one	1	1	0	25	2	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	2	The Bisons	jackpot	16	16	63	45	7	0	1	one	1	1	1	13	2	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	3	The Bisons	atoll	18	18	62	44	3	0	1	one	1	1	1	4	0	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	4	The Bisons	saga	24	24	66	22	12	1	1	one	1	0	0	25	3	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	4	The Bisons	saga	24	24	66	53	11	0	1	one	1	1	0	26	3	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	4	The Bisons	saga	24	24	66	57	8	0	1	one	1	1	0	20	3	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	4	The Bisons	saga	24	24	66	61	8	0	1	one	1	1	0	26	3	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	4	The Bisons	saga	24	24	66	65	8	0	1	one	1	1	0	26	3	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	5	The Bisons	snowflake	26	26	80	59	10	0	1	one	1	1	0	26	7	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	5	The Bisons	snowflake	26	26	80	61	8	0	1	one	1	1	0	26	7	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	5	The Bisons	snowflake	26	26	80	66	8	0	1	one	1	1	0	26	7	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	5	The Bisons	snowflake	26	26	80	71	8	0	1	one	1	1	0	26	7	-1	-1	0	0
+8a614e5e-82bb-431c-a1cd-379e3f100432	5	The Bisons	snowflake	26	26	80	76	8	0	1	one	1	1	0	26	7	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	1	I Stone	fjordgate	10	10	619	17	7	0	1	one	1	1	1	25	0	300	283	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	1	I Stone	fjordgate	10	10	619	25	7	0	1	one	1	1	0	26	0	300	275	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	2	I Stone	jackpot	16	16	215	33	5	0	1	one	1	1	1	20	2	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	2	I Stone	jackpot	16	16	215	72	5	0	1	one	1	1	0	25	2	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	50	5	0	1	one	1	1	1	2	1	93	43	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	51	5	0	1	one	1	1	0	25	1	93	42	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	60	5	0	1	one	1	1	1	2	1	93	33	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	61	5	0	1	one	1	1	0	25	1	93	32	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	82	5	0	1	one	1	1	1	2	1	93	11	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	83	5	0	1	one	1	1	0	25	1	93	10	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	126	207	0	1	one	1	1	1	2	1	141	15	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	127	207	0	1	one	1	1	0	25	1	141	14	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	133	207	0	1	one	1	1	1	2	1	141	8	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	134	207	0	1	one	1	1	0	25	1	141	7	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	140	207	0	1	one	1	1	1	2	1	141	1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	3	I Stone	atoll	18	18	268	141	207	0	1	one	1	1	0	25	1	141	0	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	66	5	0	1	one	1	1	1	2	1	159	93	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	67	5	0	1	one	1	1	0	8	1	159	92	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	69	5	0	1	one	1	1	1	2	1	159	90	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	70	5	0	1	one	1	1	0	8	1	159	89	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	72	5	0	1	one	1	1	1	2	1	159	87	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	73	5	0	1	one	1	1	0	8	1	159	86	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	75	5	0	1	one	1	1	1	2	1	159	84	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	76	5	0	1	one	1	1	0	8	1	159	83	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	78	5	0	1	one	1	1	1	2	1	159	81	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	79	5	0	1	one	1	1	0	8	1	159	80	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	81	5	0	1	one	1	1	1	2	1	159	78	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	82	5	0	1	one	1	1	0	8	1	159	77	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	84	5	0	1	one	1	1	1	2	1	159	75	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	85	5	0	1	one	1	1	0	8	1	159	74	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	87	5	0	1	one	1	1	1	2	1	159	72	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	88	5	0	1	one	1	1	0	8	1	159	71	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	90	5	0	1	one	1	1	1	2	1	159	69	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	91	5	0	1	one	1	1	0	8	1	159	68	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	93	5	0	1	one	1	1	1	2	1	159	66	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	94	5	0	1	one	1	1	0	8	1	159	65	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	96	5	0	1	one	1	1	1	2	1	159	63	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	97	5	0	1	one	1	1	0	8	1	159	62	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	99	5	0	1	one	1	1	1	2	1	159	60	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	100	5	0	1	one	1	1	0	13	1	159	59	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	103	5	0	1	one	1	1	1	2	1	159	56	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	104	5	0	1	one	1	1	0	13	1	159	55	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	144	5	0	1	one	1	1	1	2	1	159	15	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	145	5	0	1	one	1	1	0	8	1	159	14	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	147	5	0	1	one	1	1	1	2	1	159	12	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	148	5	0	1	one	1	1	0	8	1	159	11	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	221	333	0	1	one	1	1	1	2	1	225	4	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	222	333	0	1	one	1	1	0	8	1	225	3	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	224	333	0	1	one	1	1	1	2	1	225	1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	225	333	0	1	one	1	1	0	8	1	225	0	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	281	539	0	1	one	1	1	1	2	1	285	4	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	282	539	0	1	one	1	1	0	8	1	285	3	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	284	539	0	1	one	1	1	1	2	1	285	1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	285	539	0	1	one	1	1	0	8	1	285	0	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	453	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	459	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	465	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	471	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	477	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	483	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	489	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	4	I Stone	saga	24	24	572	495	796	0	1	one	1	1	0	26	6	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	5	I Stone	snowflake	26	26	521	80	3	0	1	one	1	1	1	25	3	-1	-1	0	0
+644e4e5d-a051-4427-8a19-d6e4adbe6d55	5	I Stone	snowflake	26	26	521	86	3	0	1	one	1	1	0	25	3	-1	-1	0	0
+4e644548-d1f5-4b1a-b9a2-61cae7a749e6	5	Leviathan	snowflake	26	26	100	12	16	0	0	one	1	0	0	25	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	1	gsxWins	fjordgate	10	10	223	3	4	1	0	one	0	0	1	20	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	1	gsxWins	fjordgate	10	10	223	4	5	0	0	one	0	1	0	9	3	25	21	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	1	gsxWins	fjordgate	10	10	223	7	4	1	0	one	0	0	0	25	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	3	7	0	0	one	0	1	0	25	1	28	25	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	4	5	0	0	one	0	1	0	25	1	34	30	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	7	14	1	1	one	1	0	0	25	2	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	19	45	0	0	one	0	1	0	25	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	21	7	0	1	one	1	1	1	8	2	28	7	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	22	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	23	7	0	1	one	1	1	0	25	2	28	5	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	26	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	28	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	29	63	0	0	one	0	1	0	25	1	84	55	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	30	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	32	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	34	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	35	73	0	0	one	0	1	0	25	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	36	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	38	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	40	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	42	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	44	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	46	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	48	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	50	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	52	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	54	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	56	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	58	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	60	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	62	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	63	63	0	1	one	1	1	1	8	2	84	21	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	64	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	66	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	66	63	0	1	one	1	1	0	25	2	84	18	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	68	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	70	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	72	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	74	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	76	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	78	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	80	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	82	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	84	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	86	4	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	2	gsxWins	jackpot	16	16	89	88	14	1	0	one	0	0	0	26	1	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	3	7	0	0	one	0	1	0	25	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	4	5	0	0	one	0	1	0	25	3	29	25	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	22	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	27	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	28	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	31	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	32	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	35	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	36	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	39	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	40	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	43	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	44	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	47	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	48	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	51	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	52	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	55	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	55	10	1	1	one	1	0	0	25	0	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	56	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	59	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	60	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	63	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	64	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	67	14	1	0	one	0	0	0	25	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	68	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	71	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	72	10	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	73	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	75	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	77	10	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	78	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	79	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	81	10	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	82	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	84	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	85	10	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	86	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	88	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	90	10	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	91	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	92	14	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	94	10	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	96	4	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	3	gsxWins	atoll	18	18	99	98	10	1	0	one	0	0	0	26	3	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	4	gsxWins	saga	24	24	171	3	5	0	0	one	0	1	0	25	4	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	4	gsxWins	saga	24	24	171	5	5	0	0	one	0	1	0	25	8	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	4	gsxWins	saga	24	24	171	19	14	1	1	one	1	0	0	25	4	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	4	gsxWins	saga	24	24	171	30	10	1	1	one	1	0	0	25	4	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	4	gsxWins	saga	24	24	171	32	4	1	0	one	0	0	0	26	4	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	4	gsxWins	saga	24	24	171	39	14	1	0	one	0	0	0	26	4	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	3	5	0	0	one	0	1	0	25	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	20	7	0	0	one	0	1	0	25	2	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	28	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	32	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	37	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	39	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	41	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	41	7	0	1	one	1	1	1	25	4	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	44	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	45	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	46	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	47	5	0	1	one	1	1	0	25	4	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	48	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	49	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	52	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	53	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	54	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	56	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	57	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	60	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	61	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	62	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	64	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	65	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	68	10	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	69	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	71	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	73	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	75	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	77	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	79	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	81	4	1	0	one	0	0	0	26	6	-1	-1	0	0
+62f097c0-71f0-415a-877c-b485ae18cab0	5	gsxWins	snowflake	26	26	84	83	14	1	0	one	0	0	0	26	6	-1	-1	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	2	CtrlAltDefeat	jackpot	16	16	109	2	3	0	0	one	0	1	0	25	2	67	65	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	2	CtrlAltDefeat	jackpot	16	16	109	3	5	0	0	one	0	1	0	25	2	75	72	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	2	CtrlAltDefeat	jackpot	16	16	109	4	10	0	0	one	0	1	1	13	2	-1	-1	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	2	CtrlAltDefeat	jackpot	16	16	109	19	5	0	1	one	1	1	1	25	0	75	56	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	2	CtrlAltDefeat	jackpot	16	16	109	22	3	0	1	one	1	1	0	26	0	67	45	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	2	CtrlAltDefeat	jackpot	16	16	109	90	15	0	1	one	1	1	1	25	0	-1	-1	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	2	CtrlAltDefeat	jackpot	16	16	109	105	10	0	1	one	1	1	0	26	0	-1	-1	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	2	3	0	0	one	0	1	0	25	4	69	67	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	3	5	0	0	one	0	1	0	25	4	113	110	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	4	11	0	0	one	0	1	1	16	4	143	139	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	5	13	0	0	one	0	1	0	20	4	-1	-1	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	16	3	0	1	one	1	1	1	16	0	69	53	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	45	3	0	1	one	1	1	0	26	0	69	24	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	143	11	0	1	one	1	1	1	16	0	143	0	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	272	631	1	1	one	1	0	0	25	0	294	22	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	284	331	0	1	one	1	1	1	26	1	335	51	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	512	304	0	1	one	1	1	1	20	2	547	35	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	523	304	0	1	one	1	1	0	26	2	547	24	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	528	304	0	1	one	1	1	1	20	2	547	19	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	3	CtrlAltDefeat	atoll	18	18	1000	543	304	0	1	one	1	1	0	26	2	547	4	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	4	CtrlAltDefeat	saga	24	24	188	2	3	0	0	one	0	1	0	25	6	81	79	0	0
+c7ea848c-c98c-4b7f-843b-0919b249fab9	5	CtrlAltDefeat	snowflake	26	26	346	2	3	0	0	one	0	1	0	25	7	246	244	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	2	The Bisons	jackpot	16	16	63	7	15	1	1	one	1	0	0	25	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	2	The Bisons	jackpot	16	16	63	28	7	0	1	one	1	1	1	13	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	2	The Bisons	jackpot	16	16	63	50	7	0	1	one	1	1	0	25	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	2	The Bisons	jackpot	16	16	63	54	5	0	1	one	1	1	1	13	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	4	The Bisons	saga	24	24	80	55	3	0	1	one	1	1	1	13	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	4	The Bisons	saga	24	24	80	59	3	0	1	one	1	1	0	26	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	4	The Bisons	saga	24	24	80	64	5	0	1	one	1	1	1	13	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	4	The Bisons	saga	24	24	80	68	5	0	1	one	1	1	0	26	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	4	The Bisons	saga	24	24	80	75	5	0	1	one	1	1	1	13	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	4	The Bisons	saga	24	24	80	79	5	0	1	one	1	1	0	26	2	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	5	The Bisons	snowflake	26	26	71	21	11	1	1	one	1	0	0	25	8	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	5	The Bisons	snowflake	26	26	71	53	8	0	1	one	1	1	0	26	8	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	5	The Bisons	snowflake	26	26	71	56	3	0	1	one	1	1	0	26	8	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	5	The Bisons	snowflake	26	26	71	59	8	0	1	one	1	1	0	26	8	-1	-1	0	0
+226ed6e7-a13a-4ec2-84fe-27fe854b00a3	5	The Bisons	snowflake	26	26	71	65	8	0	1	one	1	1	0	26	8	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	2	I Stone	jackpot	16	16	256	7	13	0	0	one	1	0	0	25	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	2	I Stone	jackpot	16	16	256	21	4	1	0	one	1	1	1	26	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	2	I Stone	jackpot	16	16	256	174	317	0	0	one	1	0	0	20	1	221	47	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	25	6	1	0	one	1	1	1	16	0	306	281	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	29	6	1	0	one	1	1	0	26	0	306	277	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	50	6	1	0	one	1	1	1	16	0	306	256	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	216	4	1	0	one	1	1	0	26	0	316	100	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	338	217	1	0	one	1	1	1	16	0	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	342	217	1	0	one	1	1	0	26	0	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	348	217	1	0	one	1	1	1	16	0	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	352	217	1	0	one	1	1	0	26	0	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	3	I Stone	atoll	18	18	405	386	217	1	0	one	1	1	1	16	0	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	135	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	136	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	138	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	139	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	140	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	141	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	142	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	143	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	144	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	145	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	146	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	147	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	148	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	149	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	150	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	151	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	152	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	153	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	154	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	155	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	156	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	157	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	158	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	159	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	160	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	161	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	162	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	163	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	164	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	165	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	166	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	167	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	168	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	169	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	170	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	171	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	172	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	173	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	174	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	175	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	176	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	177	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	178	6	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	179	6	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	180	4	1	0	one	1	1	1	2	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	4	I Stone	saga	24	24	182	181	4	1	0	one	1	1	0	8	1	-1	-1	0	0
+b9770e60-b8d0-4a3c-926c-be248ac806cf	5	I Stone	snowflake	26	26	349	64	4	1	0	one	1	1	1	25	3	91	27	0	0
+9057cdc2-d5c2-472f-a6ec-e20a5ce840f7	2	Leviathan	jackpot	16	16	143	7	14	1	1	one	1	0	0	25	2	-1	-1	0	0
+9057cdc2-d5c2-472f-a6ec-e20a5ce840f7	4	Leviathan	saga	24	24	190	44	9	1	1	one	1	0	0	25	5	-1	-1	0	0
+9057cdc2-d5c2-472f-a6ec-e20a5ce840f7	4	Leviathan	saga	24	24	190	173	413	1	1	one	1	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	3	6	1	1	one	0	1	0	26	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	10	6	1	0	one	1	1	1	25	0	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	20	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	20	6	1	0	one	1	1	0	26	0	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	22	8	1	0	one	1	1	1	25	0	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	25	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	27	8	1	0	one	1	1	0	26	0	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	28	6	1	0	one	1	1	1	25	0	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	30	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	32	5	0	1	one	0	0	1	25	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	35	3	0	1	one	0	0	1	25	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	1	gsxWins	fjordgate	10	10	124	40	6	1	0	one	1	1	0	26	0	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	3	6	1	1	one	0	1	0	25	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	7	14	0	0	one	1	0	0	25	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	24	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	29	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	34	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	39	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	44	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	2	gsxWins	jackpot	16	16	50	49	3	0	1	one	0	0	1	26	1	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	3	6	1	1	one	0	1	0	25	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	7	3	0	0	one	1	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	17	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	20	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	24	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	28	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	29	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	34	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	36	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	41	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	42	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	47	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	49	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	54	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	55	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	60	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	62	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	67	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	68	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	73	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	75	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	80	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	81	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	86	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	88	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	93	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	94	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	99	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	101	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	106	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	107	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	112	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	114	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	120	6	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	128	6	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	131	8	1	0	one	1	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	3	gsxWins	atoll	18	18	169	139	8	1	0	one	1	1	1	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	3	6	1	1	one	0	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	5	6	1	1	one	0	1	0	25	8	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	6	8	1	1	one	0	1	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	15	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	20	6	1	0	one	1	1	0	26	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	22	8	1	0	one	1	1	1	25	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	27	8	1	0	one	1	1	0	26	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	29	16	0	0	one	1	0	0	25	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	32	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	37	6	1	0	one	1	1	0	26	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	39	8	1	0	one	1	1	1	25	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	44	8	1	0	one	1	1	0	26	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	53	6	1	0	one	1	1	1	25	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	58	6	1	0	one	1	1	0	26	3	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	103	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	109	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	116	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	123	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	130	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	137	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	144	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	4	gsxWins	saga	24	24	153	151	3	0	1	one	0	0	0	25	4	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	3	6	1	1	one	0	1	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	20	8	1	1	one	0	1	0	25	2	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	47	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	52	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	58	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	63	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	68	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	73	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	78	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	83	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	88	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	93	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+7ae2eff7-c688-47d4-badc-7a53e9a568b2	5	gsxWins	snowflake	26	26	104	98	3	0	1	one	0	0	0	25	5	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	1	CtrlAltDefeat	fjordgate	10	10	160	2	4	1	0	one	0	0	1	25	4	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	1	CtrlAltDefeat	fjordgate	10	10	160	3	3	0	0	one	0	1	0	4	4	111	108	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	1	CtrlAltDefeat	fjordgate	10	10	160	4	8	1	0	one	0	0	1	25	4	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	1	CtrlAltDefeat	fjordgate	10	10	160	5	5	0	0	one	0	1	0	2	4	17	12	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	2	CtrlAltDefeat	jackpot	16	16	1000	2	3	0	0	one	0	1	0	25	2	186	184	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	2	CtrlAltDefeat	jackpot	16	16	1000	3	5	0	0	one	0	1	0	25	2	78	75	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	2	CtrlAltDefeat	jackpot	16	16	1000	4	11	0	0	one	0	1	1	13	2	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	2	CtrlAltDefeat	jackpot	16	16	1000	10	13	1	1	one	1	0	0	25	2	39	29	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	2	CtrlAltDefeat	jackpot	16	16	1000	15	3	0	1	one	1	1	1	20	2	186	171	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	2	CtrlAltDefeat	jackpot	16	16	1000	19	5	0	1	one	1	1	0	25	2	78	59	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	2	CtrlAltDefeat	jackpot	16	16	1000	26	5	0	1	one	1	1	1	20	2	78	52	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	2	3	0	0	one	0	1	0	25	4	207	205	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	3	5	0	0	one	0	1	0	25	4	214	211	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	4	10	0	0	one	0	1	1	16	4	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	5	13	0	0	one	0	1	0	20	4	195	190	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	79	3	0	1	one	1	1	1	16	0	207	128	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	105	5	0	1	one	1	1	0	26	0	214	109	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	130	18	0	1	one	1	1	1	16	0	220	90	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	133	13	0	1	one	1	1	0	26	0	195	62	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	134	18	0	1	one	1	1	1	16	0	220	86	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	146	18	0	1	one	1	1	0	26	0	220	74	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	152	5	0	1	one	1	1	1	16	0	214	62	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	167	5	0	1	one	1	1	0	26	0	214	47	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	3	CtrlAltDefeat	atoll	18	18	444	190	13	0	1	one	1	1	1	16	0	195	5	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	4	CtrlAltDefeat	saga	24	24	156	2	3	0	0	one	0	1	0	25	6	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	4	CtrlAltDefeat	saga	24	24	156	27	3	0	1	one	1	1	1	13	2	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	5	CtrlAltDefeat	snowflake	26	26	170	2	3	0	0	one	0	1	0	25	7	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	5	CtrlAltDefeat	snowflake	26	26	170	139	3	0	1	one	1	1	1	25	3	-1	-1	0	0
+dbec8547-868a-451d-8dff-c44b3a9644de	5	CtrlAltDefeat	snowflake	26	26	170	140	5	0	1	one	1	1	0	25	3	-1	-1	0	0

@@ -1,0 +1,18 @@
+LOKI-34 NON-STRIKE SURCHARGE: REFUTED with a monotone dose curve. The field's 'rush cost' tactic is a real mechanism here and a losing one.
+
+Both arms stopped early at decisive n, rows kept:
+  surcharge  0 (incumbent)  50%      by construction
+  surcharge 30              38.10%   n=693, band +-3.72, CI excludes 50 by ~8pp
+  surcharge 90              26.62%   n=725, band +-3.64, CI excludes 50 by ~20pp
+
+MONOTONE IN THE DOSE WITH NO INTERIOR OPTIMUM. Every increment of the tax makes us worse. This is the strongest form a negative can take: the knob HAS a large live effect on the game, which is precisely what GUNPEN4/GUNPEN16 could not show for the SHIPPED gunaxis constant (49.93 / 50.72, flat either side of 8 = a dead knob). A steep monotone curve and a flat pair are different results and only one of them closes a road.
+
+WHAT IS REFUTED, stated at the right altitude: not the implementation, the TRANSFER. The `confused` bot / BC2020's rush cost -- tax everything non-rush until the rush ends, which the tactics sweep called the only mechanism in 166,155 words of field literature that makes defence self-limiting by arithmetic rather than by a reviewer checking a metric afterwards -- is a REAL mechanism in this engine and it runs entirely the wrong way. Starving eco to protect the strike costs more than the strike gains, at every dose tested. The plank existed to enforce DEFENCE_ADMISSION_BAR at runtime; it turns out the thing that needed limiting was not our eco spend.
+
+The design was sound and the grep that reshaped it was sound: it asked for a new store slot (all 16 bound, not buildable), and both halves it needed already shipped separately -- the surcharge SHAPE in `_eco_spendable`'s SIEGE reserve and the strike-alive SIGNAL in SLOT_RAID_LIVE's heartbeat. Building it cost one constant and zero slots. That is the cheap way to find out a road is closed, and the dose sweep is why it closes cleanly instead of ambiguously: a single arm at 30 would have read as an unexplained negative rather than as a curve.
+
+ALSO RECORDED: BLANKBORDER is uninterpretable without its base. It is the stack of LOKI-26 gunblank + LOKI-33 border-first exile and was queued to test INTERACTION on top of a CONFIRMED base. GUNBLANK is not replicating (52.11% first draw at n=5,408; replication 49.00% at n=1,251 and falling), so a BLANKBORDER read cannot be attributed to either plank.
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01A9sztEEfq9GFEMQPBbQ77p
+

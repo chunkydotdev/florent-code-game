@@ -1,0 +1,10 @@
+13:49:57Z cycle 1: v107 LIVE, firing 4 carriers
+13:49:59Z rate-limited on 4a7f4c9a -- NOT waiting with v107 live; deferring to next window
+13:50:04Z rolled back to v104, VERIFIED
+13:50:04Z cycle 1: fired 0/4 (total 0)
+14:10:39Z cycle 2: v107 LIVE, firing 4 carriers
+14:10:49Z rolled back to v104, VERIFIED
+14:10:49Z cycle 2: fired 4/4 (total 4)
+14:31:24Z cycle 3: v107 LIVE, firing 4 carriers
+14:31:34Z rolled back to v104, VERIFIED
+14:31:34Z cycle 3: fired 4/4 (total 8)

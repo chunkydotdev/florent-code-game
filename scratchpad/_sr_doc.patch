@@ -1,0 +1,100 @@
+--- bots/_v146gunaxis/doctrine.py	2026-08-11 11:18:13
++++ bots/_v151seatrel/doctrine.py	2026-08-11 20:10:27
+@@ -25,6 +25,88 @@
+ DIRECTIONS = [d for d in Direction if d != Direction.CENTRE]
+ CARDINALS = [Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST]
+ 
++# SEAT-RELATIVE SCAN ORDER (LOKI-29, s32).  CARDINALS above is a FIXED ABSOLUTE
++# order and it is consumed by 20+ first-match-wins scans across main.py, eco.py
++# and raid.py (main :480 :551 :617; eco :330 :391 :433 :465 :511 :682 :812 :919
++# :975 :1029; raid :271 :296 :317 :349 :422 :558).  "Toward the enemy" is a
++# DIFFERENT cardinal for each seat, so identical code takes a different branch
++# depending on which side we spawn on -- and every scan is biased NORTH-then-EAST
++# regardless of where the enemy actually is.
++#
++# WHAT WAS MEASURED, three times, on three populations:
++#   * research, algebraically off the nine-arm screen:  seat A 54.126%
++#   * side lane, byte-identical arms:                   seat A 53.91%, z=3.54
++#   * THIS SESSION's overnight NULL shard, n=4693:      seat A 52.6% / B 45.8%
++# and the same A>B ordering appears in all seven of tonight's shards.  Maps
++# account for ~1.8pp of it (a third-party bot on the same 8 maps reads 51.76%,
++# n.s.); the residual is ours.  Half of every game is played on the wrong side
++# of a self-inflicted ~5pp gap.
++#
++# THE FIX: rotate the list so the scan STARTS at the cardinal facing the enemy
++# Core.  Two properties make this safe, and both are load-bearing:
++#
++#   1. THE CLOCKWISE 4-CYCLE IS PRESERVED.  eco.py:588-590, :703-711 and :743-744
++#      do CARDINALS.index(desired) and then take (i+1)%4 / (i-1)%4 as "the two
++#      PERPENDICULARS of desired".  That is only true while the list is a proper
++#      rotational cycle.  A ROTATION preserves it; an arbitrary reorder would
++#      silently turn "perpendicular" into "opposite" at three sites.
++#   2. IT IS AN EXACT CANONICALISATION UNDER POINT REFLECTION, not an
++#      approximation.  Seat A facing EAST gives [E,S,W,N]; seat B facing WEST
++#      gives [W,N,E,S], and reflecting that (N<->S, E<->W) returns [E,S,W,N] --
++#      the same list.  Both seats therefore execute the same scan in their own
++#      frame.  The abs(dx) >= abs(dy) tiebreak is itself reflection-invariant
++#      (abs is preserved, so both seats take the same branch).
++#
++# ⚠ AND PROPERTY 2 IS EXACT ONLY WHERE THE TWO ANCHORS ARE A TRUE POINT
++# REFLECTION.  A MIRROR flips handedness, so a rotation equalises the FIRST
++# element (both seats face the enemy) but not necessarily the ORDER OF THE TWO
++# PERPENDICULARS.  Fully canonicalising a mirror map needs a per-symmetry
++# handedness rule; it is deliberately NOT written, and here is the exact scope.
++#
++# ⛔ I FIRST WROTE THAT `fcode maps list` REPORTS ALL 15 POOL MAPS AS
++# `rotational` AND THEREFORE THE MIRROR BRANCH WAS UNREACHABLE.  THAT WAS AN
++# OVERCLAIM AND GROUND TRUTH CONTRADICTS IT ON ONE MAP.  Real Core anchors read
++# off the `.map26` protobuf (`Map.cores`) and cross-checked against two live
++# replays -- 15/15 maps, NW corner of the 2x2 applied to both seats:
++#     MEANDER, 25x15, anchors (11,3) and (11,10).
++#     Point reflection would put the second at (25-2-11, 15-2-3) = (12,10).
++#     x is off by one: the anchors are related by a MIRROR in y, not a rotation.
++# The other 14 pool maps ARE genuine point reflections.  So the canonicalisation
++# is exact on 14/15 pool maps and on 7 of the 8 in our local battery; meander is
++# the exception, and it is in the battery.  A LABEL FROM THE CLI IS NOT GROUND
++# TRUTH ABOUT ANCHOR GEOMETRY.
++#
++# What still holds on meander, and it is why the arm is not compromised there:
++# the two anchors differ only in y, so the two seats' enemy directions are still
++# exact opposites (SOUTH / NORTH) and the FIRST scanned direction still faces the
++# enemy from both seats.  Only the perpendicular handedness is uncanonicalised.
++#
++# Mutated IN PLACE (CARDINALS[:] = ...) and never rebound.  main.py, eco.py and
++# raid.py each do `from doctrine import *`, which binds the LIST OBJECT into
++# three module namespaces; rebinding doctrine.CARDINALS would leave all three
++# pointing at the old list and change nothing.
++SEAT_RELATIVE_SCAN = True
++
++
++def orient_cardinals(core, enemy):
++    """Rotate CARDINALS in place to start at the cardinal facing ``enemy``.
++
++    Idempotent and O(1); safe to call every Core turn.  Called from
++    ``main.py:_core``, which is guaranteed to run before any other unit exists
++    (on round 0 the Core is the team's only unit, and it is what spawns the
++    builders).
++    """
++    if not SEAT_RELATIVE_SCAN or core is None or enemy is None:
++        return
++    dx, dy = enemy.x - core.x, enemy.y - core.y
++    if abs(dx) >= abs(dy):
++        first = Direction.EAST if dx > 0 else Direction.WEST
++    else:
++        first = Direction.SOUTH if dy > 0 else Direction.NORTH
++    base = (Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST)
++    i = base.index(first)
++    CARDINALS[:] = list(base[i:] + base[:i])
++
+ MAX_BUILDERS = 5
+ EARLY_BUILDERS = 5
+ ECO_CAP = 18
+@@ -1509,7 +1591,4 @@
+ 
+ LOKI8_RAIDERS_STAY_OUT = True    # raiders exempt from the home heal + melee recall
+ 
+-
+-# LOKI-25: penalty for a raid station sitting on a live enemy gunner's ray.
+-# Same units as LOKI_EXILE_PENALTY, which is the launcher-adjacency penalty.
+-LOKI_GUNAXIS_PENALTY = 8
++LOKI27_FERRY_FIRST = True   # a fresh ferry request outranks a home exile

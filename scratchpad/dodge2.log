@@ -1,0 +1,32 @@
+384 matches — 8 maps x 4 opponents x 3 seeds x 2 seats x 2 arms, 5 parallel
+  20/384
+  40/384
+  60/384
+  80/384
+  100/384
+  120/384
+  140/384
+  160/384
+  180/384
+  200/384
+  220/384
+  240/384
+  260/384
+  280/384
+  300/384
+  320/384
+  340/384
+  360/384
+  380/384
+384 games -> scratchpad/dodge2/full.json
+
+MECHANISM (the metric only this change can move)
+  arm        games      r0_99   r100_249   r250_499      r500p    total  spawns  crash
+  control      192       1.01       1.27       1.69       1.99     5.97   12.35      0
+  variant      192       0.78       0.96       0.69       0.65     3.08   10.47      0
+
+SAFETY ARM (win rate; underpowered by construction at this n — not the verdict)
+  control   159/192 = 82.8%   median collected 2750
+  variant   167/192 = 87.0%   median collected 2660
+
+Run tools/reprice.py on the JSON for the paired/pooled split.

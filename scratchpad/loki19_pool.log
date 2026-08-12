@@ -1,0 +1,8 @@
+08:34:42Z UNRATED RUN  version=v108  target=150 games  incumbent=v104
+08:34:42Z cells=4  outfile=scratchpad/arm_unrated_v108_20260811T083442Z.txt   (arm_*.txt so rate_budget can attribute it)
+08:34:43Z holder before: v104 (Loki v2)
+OK: ledger present and writable: /Users/junghard/Projects/Work/florent-code-game/corpus/our_matches.tsv
+08:34:43Z rate: waiting 728s for a slot
+08:46:52Z interrupted — restoring incumbent
+08:46:55Z rollback attempt 1 did not take (holder='v110'), retrying
+08:47:01Z rollback confirmed: holder=v104 (Loki v2)

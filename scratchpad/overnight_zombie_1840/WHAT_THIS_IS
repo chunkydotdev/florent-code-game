@@ -1,0 +1,6 @@
+Tue 11 Aug 2026 18:43:40 UTC
+NOT DATA. Nine s31 shards RESTARTED FROM ZERO by overnight_watch.sh at 18:40:13Z
+because the archive step moved their heartbeats and .COMPLETE markers out of the
+live dir while the watchdog was still polling. A COMPLETED run and an ARCHIVED
+run are indistinguishable to it. ~30 rows each, kept only so nothing is deleted.
+THE REAL s31 DATA IS scratchpad/overnight_s31/ -- 9 shards, full size, .COMPLETE.

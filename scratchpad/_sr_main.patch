@@ -1,0 +1,15 @@
+--- bots/_v148ferryfirst/main.py	2026-08-11 12:18:36
++++ bots/_v151seatrel/main.py	2026-08-11 20:07:09
+@@ -153,6 +153,12 @@
+             self.map_grid = known_map_for(w, h, p, ct)
+         if ct.read_store(SLOT_ENEMY_CORE) == 0:
+             ct.write_store(SLOT_ENEMY_CORE, pack_pos(enemy_core_for(w, h, p)))
++
++        # LOKI-29: point every first-match-wins CARDINALS scan at the enemy
++        # instead of at absolute NORTH.  Computed from enemy_core_for() and NOT
++        # from SLOT_ENEMY_CORE -- store writes are buffered until next round, so
++        # reading it here would leave round 0 unoriented.  See doctrine.py.
++        orient_cardinals(self.core, enemy_core_for(w, h, self.core))
+ 
+         rnd = ct.get_current_round()
+ 

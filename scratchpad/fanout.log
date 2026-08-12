@@ -1,0 +1,5 @@
+08:18:32Z CONTROL-v104: fired 5/5
+08:29:12Z LOKI15-quota: fired 5/5
+08:39:57Z CONFIRM-v102: fired 5/5
+=== cycle 1 done: arm_v104.txt=5 arm_loki15.txt=5 arm_v102confirm.txt=5 
+08:50:25Z CONTROL-v104: fired 5/5

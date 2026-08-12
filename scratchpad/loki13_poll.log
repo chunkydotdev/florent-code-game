@@ -1,0 +1,16 @@
+05:56:21Z LEG COMPLETE AND FULLY READABLE
+
+=== loki13_ids.txt  (n=25 games) ===
+  r1000 rate (DEFEAT)     2/25 =   8.0%
+  core_kill_share        15/25 =  60.0%   [definition: OUR kills / ALL games]
+     ...their kills       8/25 =  32.0%
+  win rate               17/25 =  68.0%   [NOT A VERDICT -- PROGRAMME.md]
+  our kill turns        median   184  range 80-482  <= 250: 11/15
+  THEIR kill turns      median   124  range 57-484
+  seat mix              [('CtrlAltDefeat', 'A'), ('I Stone', 'A'), ('Leviathan', 'B'), ('The Bisons', 'A'), ('gsxWins', 'A')]
+  per map:
+    atoll        kills 4/5  turns [57, 156, 184, 237, 268]
+    fjordgate    kills 0/5  turns [98, 164, 389, 484, 1000]
+    jackpot      kills 5/5  turns [81, 100, 143, 208, 230]
+    saga         kills 2/5  turns [72, 150, 302, 482, 1000]
+    snowflake    kills 4/5  turns [74, 80, 110, 156, 285]
