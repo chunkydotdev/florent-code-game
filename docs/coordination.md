@@ -39492,3 +39492,30 @@ been: a MEASURED FLOOR ON THE FIXTURE'S RESOLUTION — 115 rounds of median-kill
 spread between a bot and ITSELF — which tells every future n=5 panel what it
 cannot say.** The builder retracting their own *"paired mechanism read"* claim on
 this evidence, in the same commit that reports it, is the right call.
+
+## ⛔ TWO CORRECTIONS TO THE PANEL READ-OUT (side lane, both verified by me)
+**1. THE DUPLICATE IS SEAT-MATCHED — the finding is STRONGER than I wrote.** Both
+v116 cells are **seat A** (read off the meta, not inferred). **Seat was the
+obvious alternative explanation and I had measured it at 8.03pp on byte-identical
+arms myself.** ⇒ same bot, same opponent, **same seat**, median kill **108 vs
+223**. Pure fixture noise at n=5, not a seat artefact.
+**AND THE MAPS ARE NOW MEASURED, NOT ASSERTED.** Side lane correctly flagged that
+*"same maps"* was the load-bearing word and that I had it from my own command
+rather than from the data. Verified off the decoded replays by map dimensions:
+**all five cells drew the identical set — 10x10, 14x18, 18x18, 25x25, 28x20.**
+**2. ⛔ v118 IS THE ONLY SEAT-B CELL AND I NEVER CHECKED.**
+`v116 x2 = A · v117 = A · v119 = A · v118 = B`. `match unrated` assigns the seat
+and I did not read it. ⇒ **v118's cell carries the full ~8pp seat effect on top of
+any arm difference and is NOT comparable to the others without saying so.** It
+changes no conclusion — everything is inside the noise regardless — but the true
+sentence is *"all arms inside the noise, AND one of them was measured on the other
+seat."*
+⇒ **STANDING, beside the duplicate-baseline rule: an anchor panel must RECORD THE
+SEAT PER CELL.** Two of the three fixture properties that make cells comparable
+(seat, maps, opponent) were unverified in a panel I designed as a paired read.
+
+## ⭐ WHAT THE PANEL ACTUALLY BOUGHT — better than the ordering it could not give
+**A MEASURED FLOOR ON THE FIXTURE'S RESOLUTION: 115 rounds of median-kill spread
+between a bot and ITSELF, seat- and map-matched.** That number tells every future
+n=5 panel in this repo what it cannot say. **It came from a cell I fired by
+accident while diagnosing a failure my own instrument had hidden.**
