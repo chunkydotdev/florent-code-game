@@ -125,10 +125,32 @@ def census(path: Path):
                     kind = ("UNATTRIB" if tteam is None else
                             "EXILE" if tteam != bteam else
                             "INSERT" if after < before else "RETREAT")
+                    # ⭐ LANDING POSITION, added s33 2026-08-12. `to` was already
+                    # parsed here and thrown away -- the same computed-then-discarded
+                    # shape as arena.py's rows and the engine's `turns`. Without it
+                    # the archive cannot separate a BORDER landing from an INTERIOR
+                    # one, which is the split that distinguishes the crash channel
+                    # (victim queries an off-map neighbour and dies) from the mere
+                    # displacement channel.
+                    #
+                    # ⛔ `border` IS COMPUTED AGAINST THIS GAME'S OWN w/h, NEVER AN
+                    # ASSUMED SIZE. Maps here run 10x10 to 28x20 -- 17 distinct
+                    # sizes -- so (13,1) is a BORDER tile on antler (14x18) and an
+                    # INTERIOR tile on 26x26. Classifying against a fixed size, or
+                    # against "max observed coordinate" (worse: it drifts with the
+                    # sample), misfiles every border landing on a small map as
+                    # interior. That error is SYSTEMATIC toward "no border
+                    # concentration" -- i.e. toward killing the crash channel --
+                    # so it would silently confirm the null. Hazard flagged by the
+                    # builder, who hit it in `crash_cells.py`; `w`/`h` here are
+                    # already the per-game parsed dimensions written to mw/mh.
+                    border = int(to[0] == 0 or to[1] == 0
+                                 or to[0] == w - 1 or to[1] == h - 1)
                     rec = dict(file=path.name, mw=w, mh=h, rounds=nrounds, rnd=rnd,
                                kind=kind, tteam=-1 if tteam is None else tteam,
                                bteam=bteam, amb=amb, d2_before=before, d2_after=after,
                                bot=eid, life=-1, core_atk=0, any_atk=0, reached=0,
+                               to_x=to[0], to_y=to[1], border=border,
                                winner=-1 if winner is None else winner, wincond=wincond)
                     recs.append(rec)
                     if kind == "INSERT":
@@ -170,6 +192,7 @@ def census(path: Path):
 
 COLS = ["file", "mw", "mh", "rounds", "rnd", "kind", "tteam", "bteam", "amb",
         "d2_before", "d2_after", "bot", "life", "core_atk", "any_atk", "reached",
+        "to_x", "to_y", "border",
         "winner", "wincond"]
 
 
