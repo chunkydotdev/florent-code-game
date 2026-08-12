@@ -274,6 +274,21 @@ sit at 0. **Not worth a slot.**
 
 **8. NOTE ON "ON THE RING".** For the ENEMY CORE's ring this is the collar and we already ship it. The new ground is **trunk** tiles. The mirror case — them denying OUR delivery seats — is the L4 problem from the same session.
 
+
+### ⭐⭐ #30 — THE STATION SCORER IS BLIND TO ENEMY SENTINELS *(side lane, s34; verified independently by the builder in the shipped tree)*
+
+**1. THE CHANGE, named to the branch.** `raid.py:500-527`, the raid-station scan, handles exactly **two** enemy entity types: `LAUNCHER` → `threats`, `GUNNER` → `gun_axis` (LOKI-25, the plank v114 shipped on). **`SENTINEL` → nothing.** Verified by me on `_v169launchlate160`: `grep -oE "EntityType\.[A-Z_]+"` over the scorer returns `GUNNER` ×2 and `LAUNCHER` ×1, **and no SENTINEL at all.** One call site. The change is a third term, same penalty machinery as `LOKI_GUNAXIS_PENALTY`.
+
+**2. ⭐ THE IRONY IS IN OUR OWN COMMENT, AND IT IS THE WHOLE CASE.** `raid.py:508-517` says gunners are *"the AVOIDABLE one"* precisely because *"A gunner's shot is a straight line that IS BLOCKED by obstacles and reaches only r²=13; **a sentinel's ignores obstacles**."* ⇒ **We built avoidance for the threat we could also defeat with a 3 Ti barrier, and none for the threat that can ONLY be avoided — which additionally has 2.5× the range (r²=32 vs 13).**
+
+**3. MECHANISM METRIC.** Share of our raid-station rounds spent on a live enemy sentinel's line; and forward-builder deaths attributable to sentinels vs gunners. `get_attackable_tiles_from` is the exact predicate and is already called at `raid.py:522` for gunners — **the expensive half is built and pointed at the wrong turret.**
+
+**4. FIXTURE.** Local battery against `_v169launchlate160` resolves it: unlike SALT, this plank pays off a behaviour our own control bot HAS (it builds sentinels, 3.04/game) — so it passes the s34 self-play-blindness test in `docs/builder-arm-retro.md`. **Screenable locally.**
+
+**5. WHY NOW.** Found in `95e14c55`, a **rated 0-5 loss by the LIVE HOLDER v116 to LingLing40 v29** that had **zero rows in `corpus/events.tsv`** — invisible to all three lanes until side lane decoded it off `replay_archive/` after Magnus asked about a replay. Their first turret is up **r3-r22 in every one of the five games**. On moonrise their sentinel at `(9,3)` on **r6** sat on the only corridor crossing and our scorer could not see it.
+
+**⚠ 6. WHAT IS NOT CLAIMED, and side lane said so first.** That this term would have won that match (untested), and that it generalises past LingLing40 (**one match, one opponent — they may simply be strong**). ⛔ **And the MOONRISE sub-story is separately scoped: there, 3 sentinels went WEST of our own core at d²_enemy 104/130/173 against range 32, and the cause was `LOKI_FWD_MIN_HARV = 2` against a 2nd harvester that landed r65, with `LOKI2_RUSH_ON = False` disabling the waiver written for exactly that window. Games 1-4 had their 2nd harvester by r6-r14 and STILL built 0/1/2/1 forward — so the gate is NOT the match-wide problem.**
+
 ## BLOCKED / NEEDS A NUMBER FIRST
 | # | plank | blocker |
 |---|---|---|
