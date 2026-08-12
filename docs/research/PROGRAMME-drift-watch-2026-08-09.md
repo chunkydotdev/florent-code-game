@@ -1622,3 +1622,44 @@ silently confirming the null.
 *Attribution: the eight instances came from all three lanes; the side lane split
 them into categories and supplied (d)'s second instance and the questions; the
 research arm supplied (a)–(c), then produced (e) by committing and catching it.*
+
+### ⭐ D23 REFINEMENT, added the same day by the finding that would have been BLOCKED by D23 as first written
+
+**D23 asks *"can the OPPONENT experience the mechanism?"* and routes a `no` to
+COST SCREEN. Read carelessly that says immune fixtures are only ever a
+consolation prize. THAT IS WRONG, and the counter-example landed within the
+hour** (`8db6390`).
+
+**AN IMMUNE FIXTURE IS THE *CORRECT* INSTRUMENT FOR MEASURING DOSE.** The
+builder's dose counter detected a launch as a Chebyshev jump in the victim's own
+position log — **and a crashed victim stops logging**, so **the denominator
+shrank exactly when the treatment succeeded.** Immortal-time selection with the
+sign pointing at the treatment: the same shape that reversed the s32 kidnap
+closure. **It surfaced not by inspection but from a 7× swing on an UNCHANGED arm**
+(1.17 vs 8.06 throws/game, same tree, same probe, same maps, different seed
+block) — *a 7× swing on an unchanged arm is not variance, it is a fixture
+measuring something other than what it names.*
+
+**The fix was to measure dose against `_probe_border_guard`**, and the reasoning
+is the general rule: **dose is a property of OUR bot, not of the victim, so
+measuring it against an immune target is not a compromise — it is the correct
+fixture**, because immunity removes the feedback loop by construction.
+Re-measured, 32 games/arm, zero crashes both sides, exposure within 3%: **5.8×
+the border dose per exposed round, border share 25.0% → 80.0%** (the earlier
+"4×" was measured on the biased counter and UNDERSTATED it).
+
+⇒ **THE RULE, stated so D23 cannot be misapplied: MATCH THE FIXTURE TO THE
+QUANTITY, not to the plank.**
+
+| quantity | correct fixture | why |
+|---|---|---|
+| **DOSE** (how often do we deliver it?) | **IMMUNE** | a property of OUR bot; immunity removes the outcome→exposure feedback |
+| **LETHALITY** (does it kill when delivered?) | **VULNERABLE** | needs the mechanism to be able to occur |
+| **CURRENCY** (does it pay?) | **LIVE UNRATED** | needs the FIELD's guard rate, which neither of our fixtures has |
+
+**AND THE SECOND FIX IS THE GENERALISABLE ONE:** report the dose **per EXPOSED
+VICTIM-ROUND**, not per game, so any residual difference in observation time
+cannot masquerade as a difference in rate. **Any per-game rate whose denominator
+can be shortened by the outcome needs an exposure denominator instead** — that is
+the risk-set correction, arrived at independently in a second instrument on the
+same day.
