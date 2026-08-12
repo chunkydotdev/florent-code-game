@@ -1784,3 +1784,53 @@ estimate usually regresses down, so this is consistent with a true rate near 52%
 and the first run being an unremarkable draw, not with an inflated discovery.)*
 **Nothing here reopens the ship**; the rule is applied to it because a successor
 will ask whether it was, and the answer should be on the record before they do.
+
+---
+
+## D27 — **PRICE THE EXPECTED EFFECT BEFORE QUEUEING. AN ARM WHOSE PREDICTED SIZE IS BELOW THE BAND IS A SHARD SPENT ON A NUMBER INDISTINGUISHABLE FROM ZERO**
+
+**Promoted s33, 2026-08-12, from LOKI-43 `LAUNCHRENT` — withdrawn BEFORE FIRING,
+which is the outcome this row exists to make repeatable.**
+
+The four-part queue admission already demands *"a fixture that can resolve it"*.
+**Nobody was checking the other half: whether the EXPECTED EFFECT clears the
+fixture's resolution.** LOKI-43 had a real mechanism, a legal API, a clean
+design and a queued shard — and its predicted size was **~24 Ti on a ~568 Ti
+build-out**, far below what **±1.33pp at n=5,408** can resolve. **A shard spent
+there buys a number indistinguishable from zero, and 5,408 games is ~3.5 hours
+of the machine under `ALWAYS_BE_RUNNING`.**
+
+**HOW IT WAS PRICED — three lanes, each supplying a term, none of them right
+alone:**
+```
+rent  = (n_cycles - 1) x 20 x S        saving = 0.10 x remaining base cost
+side lane   supplied the FORM, and the caveat that n is bounded by GEOMETRY not throws
+research    instantiated it: n=5, 169 Ti  ->  240 vs 17 Ti, "14x short"
+builder     attacked 169 -> measured 260 Ti (moves 54% TOWARD the plank)
+builder     then measured the decisive term nobody had: 0.62 launcher deaths/game, NOT 5
+            (self-destruct fires only on the EXILE branch; rebuild needs the Core to
+             lose sight of a launcher -- cycles bounded by geometry, exactly as flagged)
+CORRECTED   rent 25-50 Ti vs saving 26 Ti  ->  NET +1 to -24 Ti, roughly BREAK-EVEN
+```
+**Both review lanes were wrong in OPPOSITE directions and the plank's own author
+corrected both** — the same credit direction as D26, twice in one session.
+
+**⭐ THE FINDING IS THE SYMMETRY, and it generalises past this plank:** *the rent
+cycle fires rarely, which caps the cost — and caps the benefit with it.*
+**The property that made it look safe is the property that makes it worthless.**
+Watch for it wherever a plank's risk is bounded by a rate: **the same rate bounds
+the payoff, and a mechanism that cannot hurt you often usually cannot help you
+often either.**
+
+### THE WATCH FORM
+**Before a shard is queued, state the expected effect in the units the shard
+reports, and compare it to the band.** Three outcomes:
+* **predicted >> band** → run it;
+* **predicted ≈ band** → run it only if the direction alone is worth the cores;
+* **predicted << band** → **do not run it.** A null there is uninformative by
+  construction and reads as evidence of absence to everyone downstream.
+**MECHANISM CONFIRMED IS NOT MAGNITUDE.** LOKI-43's mechanism is engine-real and
+was measured (**0.62 launcher deaths/game against the control's 0.00** — the
+self-destruct and the rebuild both work). **Record that, then decline the shard.**
+Same shape as **E-22.3**, which died the same way; **the two now cite each other,
+which is D14 satisfied prospectively rather than after a rediscovery.**
