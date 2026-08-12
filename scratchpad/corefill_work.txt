@@ -34,3 +34,13 @@ GUNSEAT     bots/_v156gunseat      bots/_v146gunaxis     5408  42000
 # replicated by GUNAXREP (51.94% -> 52.31%) before v114 went live. Fresh seed
 # block (50000) so this is an independent draw, not a longer run of the same one.
 GUNBLANKREP bots/_v147gunblank     bots/_v146gunaxis     5408  50000
+# --- appended s33 2026-08-12T04:4xZ (builder) — LOKI-30 BORDER-FIRST EXILE ---
+# The crash mechanism is MEASURED (tools/crash_cells.py, 72 games): EVERY border
+# arrival killed the unguarded probe (13/13, 16/16) and the GUARDED probe took 16
+# and lost nothing (0/16). DOSE MEASURED ON THIS TREE, 48 games vs the same probe:
+#   GUNBORDER  border=28 interior=42 (40.0%)  crashes=28
+#   V114       border= 7 interior=21 (25.0%)  crashes= 7
+# 4x the border dose and 4x the kills, from a SORT-KEY REORDER -- no new unit, no
+# new cost, no filtering, so it cannot lose an exile the incumbent would have made.
+# This is the currency read. Mechanism confirmed != currency plank.
+GUNBORDER   bots/_v157gunborder    bots/_v146gunaxis     5408  60000
