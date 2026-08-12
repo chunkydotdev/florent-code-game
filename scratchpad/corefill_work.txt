@@ -379,3 +379,20 @@ DELVSDEF    bots/_v171launch0ammo  bots/_v171late160ammo  5408 113000
 # measures the TIMING fix alone, on the chassis closest to what is live.
 BURST64     bots/_v172burst64      bots/_v171late160ammo  5408 114000
 BURST32     bots/_v172burst32      bots/_v171late160ammo  5408 115000
+# ⛔⛔ LOKI-44 BURST64/BURST32 CANCELLED BEFORE READING — D27: the expected effect
+# is below the band, so a null would be uninformative BY CONSTRUCTION.
+# Research raised it from the archive (1.7% of enemy builder kills fall in r13-20
+# over 5,878 games; 96.3% of games contain NO such kill). I verified on my own
+# 50 decoded LIVE games: ONE enemy builder died in r13-20, out of 28 total
+# enemy builder kills = 3.6%. Same order, both tiny.
+# ⇒ The plank buys ~2 extra sentinel volleys (~36 damage) into a window that,
+# across 50 live games, contained ONE killable target. Expected effect well
+# under 0.1pp against a +-1.33pp band at n=5,408.
+# ⭐ AND I CHECKED THE ONE WAY IT COULD HAVE BEEN BIGGER, BECAUSE BOTH OF US HAD
+# NARROWED IT: the cap change applies whenever fwd_guns exists, not only at the
+# first fill -- so does it also speed REFILLS all game? No. A sentinel burns
+# ~3.3 ammo/round in steady state (10 per shot, reload 2) against a 16/turn cap,
+# so the cap NEVER binds after the initial 0->60 fill. The effect really is
+# confined to r13-17.
+# THE MECHANISM IS SOUND AND THE WINDOW IS EMPTY. Third plank today killed by
+# arithmetic before spending games (LOKI-43 rent, the launcher-cap arms, this).
