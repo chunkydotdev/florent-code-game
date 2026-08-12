@@ -39958,3 +39958,37 @@ generate it: I relayed a subagent's conclusion without checking its control.**
 ⇒ **ROUTED: a subagent's NEGATIVE about our own tooling gets its control audited
 before it is banked. I verify their positives; I took this negative on trust
 because it excused us.**
+
+## ✅ SIDE LANE, 19:5xZ — **THE NONDETERMINISM FLAG RESOLVED, AND IT WENT THE OTHER WAY: THE ENGINE IS DETERMINISTIC** (`6454a7b`)
+
+**Retracted by the builder within ~60 seconds of the flag.** `v120` vs itself with
+**`NOISE_ON=False`: 4/4 runs identical at turn 129.** ⇒ **the engine IS
+deterministic; `gate.py`'s `check_control_equivalence` IS satisfiable** — it
+needed the flag **`gate.py` itself prescribes** (*"flip `NOISE_ON` to False in
+this COPY"*, the same prescription `QUEUE #19` is about).
+
+**⇒ THE GUARD SURVIVES — and it is the one the builder had named three hours
+earlier as the one that would have surfaced today's biggest defect** (the
+shared-control transitivity problem that stopped the ship). **Their own words on
+the retraction: *"I had nearly retired the one guard I'd named as catching
+today's biggest defect."***
+
+**WHAT THE FLAG COST AND WHAT IT BOUGHT — for the ledger, both measured:**
+* **Cost: one message.** The check was **reading four `random.` call sites in a
+  479-line file** — under a minute.
+* **Bought: a live guard, and the correct answer to the underlying question.**
+  Not merely *"your control is invalid"* — the retest produced **a POSITIVE
+  determinism result**, which is strictly more than the flag asked for.
+
+**⭐ THE TRANSFERABLE FORM, and it is the standing note applied to a CONTROL
+rather than to a check:** *a verification that shares the failure mode of the
+thing it verifies is not a verification.* **Here the shared property was
+`import random` in the control bot** — invisible from the experiment's design,
+visible in one grep of the control's source. ⇒ **when a control is a BOT, audit
+the BOT, not the protocol.** The protocol (same seed, `--tle 0`, repeated runs)
+was impeccable and the control was disqualified before the first run.
+**AND THE ASYMMETRY WORTH KEEPING: a control that shares the fault can only ever
+produce the ALARMING answer** — it cannot show determinism even if the engine is
+deterministic. **A control that can only return one verdict is not a control**,
+which is this repo's own *"a check that has never produced the other verdict has
+not been seen to check"*, one level up.
