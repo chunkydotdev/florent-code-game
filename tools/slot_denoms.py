@@ -204,6 +204,22 @@ def selftest() -> int:
     check("dd_z: the two cells DIFFER (the column is not a constant)",
           abs(z_real - z_bad) > 3)
     check("dd_z: no sd -> None, never a number", dd_z(-36.0, 27, None) is None)
+    # ---- ADDED by applying D24(d) TO THIS FILE, minutes after promoting it:
+    # "enumerate BRANCHES, not cells". Three refusal branches had no cell, and
+    # ONE OF THEM FIRES LIVE -- `dd_z=NA dd_k=0` appeared in ship_watch's own
+    # selftest output whenever the peak IS the current row. A branch that runs
+    # in production with no cell is D24(d) exactly, in the instrument written to
+    # carry D24. Found by running the checklist on my own work, which is the
+    # only reason it is worth having.
+    check("dd_z: k=0 (the peak IS the current row) -> None, not a divide-by-zero",
+          dd_z(0.0, 0, sd) is None, "this branch fires LIVE")
+    check("dd_z: sd of exactly 0 (a constant tape) -> None, never inf",
+          dd_z(-36.0, 27, 0.0) is None)
+    check("sd_of: a single point -> None, not 0.0 -- a 0 in a denominator is "
+          "how a column becomes inf instead of absent", sd_of([1.0]) is None)
+    check("sd_of: empty -> None", sd_of([]) is None)
+    check("sd_of: a CONSTANT series -> 0.0, and that 0 must reach dd_z as None",
+          sd_of([5.0, 5.0, 5.0]) == 0.0 and dd_z(-1.0, 5, sd_of([5.0, 5.0, 5.0])) is None)
 
     # --- resolvable_k: the three rates from the s33 spec.
     r10, r4, r168 = (resolvable_k(-10.0, sd), resolvable_k(-4.0, sd),
