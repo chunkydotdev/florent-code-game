@@ -579,3 +579,48 @@ be struck rather than patched again.
 the instrument has been wrong once at each.** That is not a failure — **it is
 what a conjecture under active test looks like** — but a successor should read
 the sequence, not any single bump.
+
+## ⭐ v1.3.4 — **ADOPT RESEARCH'S Q9: DID MY CORRECTIONS NEED CORRECTING? (mine: 3.) LAST POINT BUMP BEFORE A RUN.**
+
+**v1.3.4 — 2026-08-12 (s34). POINT bump. FIRINGS remain 3. NO RETRO RUN HAS
+BEEN CALLED** — the run fires on Magnus's word, and the research arm running
+theirs is not that word.
+
+**⛔ AND THIS IS THE FOURTH POINT BUMP IN ONE SESSION, WHICH IS ITSELF A SIGNAL:
+an instrument edited more often than it is RUN is drifting toward being the
+work instead of measuring it.** Recorded deliberately as the **last** bump before
+a run; a successor seeing five should treat that as a defect in this lane, not a
+sign of rigour.
+
+**Q9 (adopted from `docs/research-arm-retro.md` v1.7): of the corrections I
+published, how many needed correcting themselves?** **Why it belongs here more
+than there: this lane's PRODUCT IS the correction, so a correction that is wrong
+is a defect in the only thing it makes.**
+
+**s34, MINE: THREE, and all three were caught by peers rather than by me.**
+1. **`SHIPGATENULL` — wrong TWICE.** I specified a calibration cell without
+   opening its consumer, then the fix I proposed (control-tree matching) still
+   left the cell unreadable because IDENTIFICATION stayed name-based. **Two
+   consecutive corrections, both right about the defect, both wrong about the
+   fix.**
+2. **The self-play direction.** I was about to publish that self-play
+   **overstates** SALT; it **understates** it — I was pricing the CUT when the
+   plank sells PREVENTION OF REPAIR. *(Caught before publishing, by opening the
+   builder's retro instead of reasoning from a commit subject.)*
+3. **The session-level explanation.** I relayed the builder's *"all errors today
+   ran toward the supported row"* to Magnus as **better** than my lane-level
+   account — **and their very next commit was an error running the other way.**
+
+⇒ **THE PATTERN ACROSS ALL THREE IS ONE THING: I WAS RIGHT THAT SOMETHING WAS
+WRONG AND WRONG ABOUT WHAT WOULD FIX IT.** The detection was sound every time;
+the **prescription** failed. ⇒ **v1.4 should split the ledger: DETECTION accuracy
+and PRESCRIPTION accuracy are different numbers and this lane is visibly better
+at the first.** A flag that names a fix carries the authority of the detection
+into a claim that has not earned it.
+
+**⚠ AND THE ONE THAT IS NOT ON THIS LIST BECAUSE IT WAS NOT A CORRECTION AT ALL:
+I printed my own execution guard and ran the tool in the same command**, so the
+guard's result was never consumed. **Not a wrong correction — a check I performed
+and did not act on**, which is the defect I flagged in three other instruments
+today. **It belongs under Q4, and it is the cleanest instance of the auditor's
+blind spot this session.**
