@@ -356,6 +356,29 @@ def selftest() -> int:
           f"of ours  {same_no}")
     if not ok_w2:
         bad += 1
+    # ⛔⛔ THE CELL THAT WOULD HAVE CAUGHT THE s33 OUTAGE, and it is the reason this
+    # block exists at all. The re-denomination removed RATING_FLOOR and left FIVE
+    # references alive in main(). Every cell above exercises `admissible()`; NONE
+    # called main(). So the suite was GREEN while the tool -- the gate CLAUDE.md
+    # mandates before every pre-registration -- crashed on `--band`, on a named
+    # team, and on no args. D24 in its purest form: no cell touched the shipped
+    # surface. Found by the side lane, ten minutes after the commit.
+    # ⇒ A PREDICATE BEING CORRECT SAYS NOTHING ABOUT WHETHER THE PROGRAM RUNS.
+    import io, contextlib
+    print("  ENTRY POINTS — the suite must exercise the SHIPPED surface, not just the predicate:")
+    for label, args in (("--band", ["--band"]), ("named team", ["The Bisons"]), ("no args", [])):
+        try:
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                main(args)
+            ok_e = True; detail = "ran"
+        except SystemExit:
+            ok_e = True; detail = "ran (SystemExit is the usage path)"
+        except Exception as exc:                                  # noqa: BLE001
+            ok_e = False; detail = f"{type(exc).__name__}: {exc}"
+        print(f"  [{'ok' if ok_e else 'FAIL'}] main({label}) {detail}")
+        if not ok_e:
+            bad += 1
+
     print()
     if bad:
         print(f"*** {bad} case(s) wrong ***")
@@ -377,19 +400,22 @@ def main(argv: list[str]) -> int:
     if "--band" in argv:
         rows = [(n, r, r - ours) for n, r in ratings.items() if n != OUR_TEAM]
         band_only = [x for x in rows if BAND_LO <= x[2] <= BAND_HI]
-        rows = [x for x in band_only if x[1] >= RATING_FLOOR]
-        excluded = [x for x in band_only if x[1] < RATING_FLOOR]
+        rows = [x for x in band_only if payout_for(x[2]) >= MIN_PAYOUT]
+        excluded = [x for x in band_only if payout_for(x[2]) < MIN_PAYOUT]
         rows.sort(key=lambda x: -x[2])
         print(f"ADMISSIBLE at our {ours:.0f}: us{BAND_LO:+d}..us{BAND_HI:+d} "
-              f"AND rating >= {RATING_FLOOR}  ({len(rows)} teams)\n")
+              f"AND a 5-0 pays >= {MIN_PAYOUT:.0f}  ({len(rows)} teams)\n")
         print(f"  {'team':<26}{'rating':>8}{'gap':>7}{'5-0 pays':>10}{'0-5 costs':>11}")
         for n, r, g in rows:
             _e, w, l = value(g)
             print(f"  {n[:26]:<26}{r:>8.0f}{g:>+7.0f}{w:>+10.2f}{l:>+11.2f}")
         if excluded:
             excluded.sort(key=lambda x: -x[1])
-            print(f"\n  EXCLUDED BY THE {RATING_FLOOR} FLOOR "
-                  f"(inside the reachable band, but Magnus's directive forbids them):")
+            # A FILTER MUST NAME ITS CASUALTIES (D83/S6). This section is why the
+            # seven teams the old absolute floor wrongly excluded were VISIBLE
+            # enough to get the rule re-denominated. Kept for that reason.
+            print(f"\n  EXCLUDED — a 5-0 pays less than {MIN_PAYOUT:.0f} "
+                  f"(inside the reachable band, but not worth a leg):")
             for n, r, g in excluded:
                 print(f"    {n[:26]:<26}{r:>8.0f}{g:>+7.0f}")
         w_ = floor_warning(ours)
@@ -444,7 +470,7 @@ def main(argv: list[str]) -> int:
     reach = sum(1 for g, r in zip(gaps, rated) if admissible(g, r)[0])
     print(f"\nTARGET BAND: gaps {min(gaps):+.0f}..{max(gaps):+.0f}, "
           f"a 5-0 pays {min(pays):.2f}..{max(pays):.2f}, "
-          f"admissible {reach}/{len(gaps)}  (band AND rating >= {RATING_FLOOR})")
+          f"admissible {reach}/{len(gaps)}  (band AND a 5-0 paying >= {MIN_PAYOUT:.0f})")
     _w = floor_warning(ours)
     if _w:
         print(_w)
