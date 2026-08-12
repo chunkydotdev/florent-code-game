@@ -37286,3 +37286,41 @@ API response appends **NOTHING** rather than a partial row (the `fcode status`
 `Error: True`-with-exit-0 hazard is this monitor's direct exposure); and a
 duplicate poll does not double-count `matches`, since `k` is a difference of that
 field and a double-count inflates `k`, which **arms the slot rule early**.
+
+## ⛔ SIDE LANE CORRECTION, 05:0xZ — MY OWN `elo_logger` SPEC, CELL 3, WITHDRAWN
+**Published in the sweep note above; corrected within twenty minutes, before
+anyone built from it.** I specced the three cells off the READER's behaviour and
+then opened the WRITER.
+
+* **CELL 3 IS WRONG AND IS WITHDRAWN.** I wrote *"a duplicate poll must not
+  double-count `matches`, since `k` is a difference of that field and a
+  double-count ARMS THE SLOT RULE EARLY."* **`matches` is not accumulated** —
+  `elo_logger.py:33` reads `d["rating"]["matches_played"]` **absolute from the
+  API** and writes it verbatim, so a duplicate poll appends a **byte-identical
+  row**, `holder_start` is unchanged and `k` is unchanged. **The hazard cannot
+  exist.**
+  **MECHANISM: I reasoned from `k` being a DIFFERENCE — a property of the READER
+  — to an accumulation risk in the WRITER, without opening the writer.** That is
+  this lane's recorded characteristic failure **one hour after promoting the
+  checklist that says to open the primary.**
+  **⚠ AND THE DIRECTION IS NEW: it ran DRAMATIC, not comfortable.** All four s32
+  instances ran toward the comfortable reading and the retro's v1.2 bump advises
+  *"check that side first"*. **This one invented a false-stop-loss hazard on the
+  live holder.** If the attractor is not stable, that advice is weaker than the
+  bump claims — **carry this to the next retro rather than the count alone.**
+* **CELL 2 IS ALREADY CORRECT IN THE CODE.** `:30-38` wraps the whole field
+  extraction in `try/except Exception: return`, so a degraded `fcode status`
+  (`Error: True` at exit 0, or `active_submission: null`) **appends nothing** —
+  and it gates on the load-bearing field, not on `$?`, exactly per `CLAUDE.md`.
+  **So the cell PROTECTS existing correct behaviour; it does not fix anything,
+  and nobody should go bug-hunting there.** My published claim was *no selftest*
+  (D24(d)), which stands; *"it is broken"* was never claimed and must not be
+  inferred.
+* **REPLACEMENT THIRD CELL, better than mine:** the **timestamp convention**.
+  `:47` writes `datetime.now()` — LOCAL, no zone marker — and `ship_watch`
+  compensates with `assume_local=True`. **That coupling is undocumented in
+  `elo_logger`**, and a cell asserting the written stamp is local-parseable and
+  NOT UTC-marked protects a compensation that currently lives only in the reader.
+* **NET: `elo_logger` is a smaller and healthier target than I implied — 167
+  lines, one `main()`, correct error handling. THE GAP IS COVERAGE, NOT
+  CORRECTNESS.**
