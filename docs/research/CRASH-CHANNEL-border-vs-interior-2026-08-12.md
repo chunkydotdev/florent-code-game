@@ -75,3 +75,62 @@ restored                            -> 192 thrown, 192 classified, 31 border, PA
 names the ground truth that refutes it (`crash_cells` seed 7102, antler, unit 14
 at (13,1), BORDER on 14×18). **Without that control this result and a broken
 harness would look the same, and they would look the same in this direction.**
+
+---
+
+# ⭐ AMENDED — THE PER-OPPONENT CUT. The pooled cell was the wrong aggregation, and the right one CLOSES THE ROAD HARDER.
+
+**Objection raised by the side lane, and it is correct: the pool bounds the FIELD
+MEAN and cannot see a concentrated effect.** The crash requires an **unguarded**
+victim, and our own local probe measured that between-victim variance as a
+**switch — 0/16 guarded, 13/13 and 16/16 unguarded** — not a covariate. Averaging
+over a switch hides a minority. **And we never attack the average opponent:
+`fcode match unrated <team_id>` is per-team and `target_value.py` picks the team.**
+
+So the cut was re-run per opponent. **33 teams with ≥1 border landing · 1,805
+border landings · 15 events total · only FOUR teams have ANY event.**
+
+## THE ROAD CLOSES ON THE POPULATION WE ARE ACTUALLY ALLOWED TO FIRE AT
+
+```
+ADMISSIBLE TARGETS (rating >= 1650 AND inside the reachable band)
+  Powered by SmartFridge  1/29     The Bisons 0/27     Leviathan 0/14
+  Besvikomat 0/11   Focalground 0/8   arsonist duck 0/7   Coreflood 0/5
+  LingLing40 0/4    Big O 0/3         0033 0/2           Bean counters 0/0
+  team lazy 0/0
+  ------------------------------------------------------------------
+  TOTAL 1 event on 110 border landings = 0.91%
+  the SAME teams' not-thrown baseline  = 0.74%      -> no elevation
+```
+
+**95% upper bound on the true rate given 1/110: 4.2%.** The unguarded probe rate
+is **100%**; a 20% rate would have produced **22 events and we observed 1**.
+⇒ **No admissible target is unguarded in the probe's sense.** That is a far
+stronger closure than the pooled null, and it is the one the side lane said would
+be worth publishing — **it rules out the concentrated case on exactly the
+population a target-selecting programme can use.**
+
+## ⛔ AND THE ONE CONCENTRATED SIGNAL IS THE s28 TRAP, EXACTLY
+
+**Team `S`: 3/3 border landings removed — 100% — against 6/15 = 40% not-thrown.**
+The only opponent in the archive whose border cell looks like the unguarded probe.
+```
+target_value.py S  ->  gap -714,  a 5-0 pays 0.52 rating points,  NOT admissible
+```
+**S is 714 points below us. A perfect result pays half a rating point.**
+**The single team where the weapon demonstrably works is the team it is worthless
+to beat** — which is s28's lesson arriving from the opposite direction, and the
+reason `target_value.py` is a gate in front of pre-registration rather than a
+clause inside one. *(n=3. It refutes nothing and establishes nothing; it is
+recorded because it is the only concentrated signal in the archive and a
+successor will otherwise re-find it and think it is new.)*
+
+## WHAT THIS AMENDMENT CHANGES ABOUT THE TITLE
+
+Nothing operational — `_v157gunborder` remains the wrong tree and the displacement
+channel remains where the effect lives. **What changes is the STRENGTH and the
+SCOPE of the negative:** it now rests on the admissible population rather than on
+a field average, and **D12 is satisfied without straining** — this is archive
+evidence, it sends the road to the bottom of the queue, and it does not take it
+off. **A live unrated leg against an admissible team could still overturn it; what
+it may not do is claim surprise, because the prior is now measured at ≤4.2%.**
