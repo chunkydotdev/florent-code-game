@@ -297,3 +297,19 @@ LAUNCHLATE160 bots/_v169launchlate160 bots/_v146gunaxis   5408 107000
 # THIS SHARD IS THE BRIDGE: it prices the gap so every other arm can be read
 # against the live holder without re-running any of them.
 AMMO115     bots/_x3r0_v115        bots/_v146gunaxis     5408 110000
+# --- THE STACKS (Magnus): our launcher findings + x3r0's ammo pre-buy ---
+# CONTROL IS bots/_x3r0_v115, NOT v114 -- deliberately. Both stacks carry the
+# ammo pre-buy verbatim, so they differ from the control in the LAUNCHER
+# TREATMENT AND NOTHING ELSE. Verified by diff: the only non-comment deltas are
+# the launcher gates. That makes these the first arms today whose control is a
+# bot that has actually held the ladder slot.
+# WHAT EACH ANSWERS, given the launcher decomposition at n=5,408 vs v114:
+#   LAUNCH0 52.77% · LAUNCHLATE160 51.40% · ferry -0.15pp · exile +2.98pp ·
+#   launcher premium +6.34pp to own · dose curve 0>1>2>3 monotone.
+# ZEROAMMO  = does DELETING the launcher still pay once ammo is held constant?
+# LATE160AMMO = does DEFERRING it still pay on the same footing?
+# ⭐ AND TOGETHER THEY ANSWER THE SHIP QUESTION DIRECTLY: v116 (live) IS
+# LAUNCHLATE160 WITHOUT the ammo pre-buy, so LATE160AMMO is v116 + the thing
+# v116 accidentally reverted. If it beats the control, the fix is additive.
+ZEROAMMO    bots/_v171launch0ammo  bots/_x3r0_v115       5408 111000
+LATE160AMMO bots/_v171late160ammo  bots/_x3r0_v115       5408 112000
