@@ -137,6 +137,16 @@ def assess(tape, version=None, baseline=None, ctx=None):
     # at k=27, a value inside ONE sd. Three columns close that:
     #   dd_z          the drawdown in units of its own noise
     #   resolvable_k  matches this holder's OBSERVED rate would need to be called
+    #                 ⚠ IT RISES AS THE OBSERVED EFFECT SHRINKS, AND THAT IS
+    #                 CORRECT BUT READS BACKWARDS. Observed live within 10
+    #                 minutes of shipping: k=29 -> 107, k=30 -> 144. Nothing got
+    #                 worse; the holder's mean/match got SMALLER (-45.6/29 ->
+    #                 -40.6/30), and a smaller effect needs more matches to call.
+    #                 So a RISING resolvable_k beside a SHRINKING |net_act| is
+    #                 mildly GOOD news, and a reader watching the column climb
+    #                 will infer the opposite. Written here because every defect
+    #                 this session was a number printed without the sentence that
+    #                 makes it readable, and this column is mine.
     #   p_null        how often a bot with NO EFFECT would have freed the slot
     #                 by now -- 14% at k=8, 75% at k=27, 97% at k=60
     # ⭐ p_null INVERTS HOW THE RULING READS: `SLOT FREE` is close to
