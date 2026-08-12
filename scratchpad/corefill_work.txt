@@ -421,3 +421,29 @@ BURST32     bots/_v172burst32      bots/_v171late160ammo  5408 115000
 #   "under 1.33pp", never as "the pin does not work".
 BURST64B    bots/_v172burst64      bots/_v171late160ammo  5408 116000
 BURST32B    bots/_v172burst32      bots/_v171late160ammo  5408 117000
+# --- TWO ARMS FROM THE LIVE REPLAY WORK. Magnus: "don't assume anything, measure" ---
+# HEALERFIRST (LOKI-46): a FORWARD turret shoots enemy BUILDERS before the CORE.
+#   MEASURED, 75 live games: their core carries a median 4 builders (up to
+#   16 HP/round repair) against our sentinel's 6 HP/round -- so core fire is net
+#   negative. Those same builders do 2 dmg each to our 40 HP sentinel; 41% of
+#   our sentinels DIE, median life 12 rounds. Their builder replacement latency
+#   after a death is a median 12 ROUNDS, capped at 1 spawn per core turn.
+#   DOSE VERIFIED, 12 paired games: 30 enemy builders killed vs the control's 19.
+#   ⚠ AND THE THING I PREDICTED THAT DID NOT HAPPEN: our own sentinel losses went
+#   UP, 18 vs 13. I expected killing the attackers to protect the gun. At n=12
+#   that is noise-or-real and the battery decides -- recorded because predicting
+#   it and then finding the opposite is exactly what should not be quietly dropped.
+#   ⚠ NOT ATTRITION: destruction REFUNDS their scale, so a kill makes their next
+#   builder cheaper. This buys a repeatable ~12-round tempo window, not a grind.
+# NOAPPROACH (LOKI-47): delete the approach sentinel entirely.
+#   The same arithmetic says a gun firing before the collar is sealed makes ZERO
+#   net progress, at 30 Ti and +20% global scale. Rather than assert that, this
+#   measures it. If the approach sentinel is worth ~0, deleting it should be
+#   neutral-to-positive; if it is worth something, this reads clearly negative.
+# ⛔ BOTH REST ON AN UNVERIFIED PREMISE AND IT IS NAMED HERE: I have never
+#   OBSERVED the enemy healing. events.tsv carries BUILD and DEATH only -- there
+#   is no heal verb -- so "16 HP/round" is CAPACITY (4 builders x 4 HP), not
+#   behaviour. The builder-damage half (2 dmg/round each vs our sentinel) IS
+#   directly observable and does not depend on it.
+HEALERFIRST bots/_v174healerfirst   bots/_v171late160ammo  5408 118000
+NOAPPROACH  bots/_v175noapproach    bots/_v171late160ammo  5408 119000
