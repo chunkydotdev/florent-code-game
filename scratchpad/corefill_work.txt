@@ -522,3 +522,25 @@ SHIPGATE0   bots/_v171launch0ammo  bots/_v169launchlate160  5408 122000
 # `_v169null` is a byte-identical copy of `_v169launchlate160`, md5-verified on
 # all four files, `diff -rq` empty -- the same construction as `_v146null`.
 SHIPGATENULL bots/_v169null       bots/_v169launchlate160  5408 123000
+# --- NEG169: the gate's NEGATIVE control, and it does a SECOND job ---
+# Side lane, correctly: all three uncalibrated contrasts lack a NEG cell, and
+# NEG is what licenses reading NO-INFORMATION as "no effect" rather than "no
+# power" -- this file's own stated reason the calibration cells are
+# non-negotiable.
+# ⭐ AND IT REPAIRS A CLAIM I MADE TO MAGNUS TODAY. I nearly told him the collar
+# is worth 13.7pp, citing NEG114 (`_v140noseal`, 36.32%). It is NOT a clean
+# single-flag ablation: `_v140noseal` ALSO lacks LOKI_GUNAXIS_PENALTY -- the
+# LOKI-25 plank v114 shipped on -- differing by 7 doctrine lines AND 26 in
+# raid.py. So 13.7pp was an UPPER BOUND on the collar, never its value, and the
+# repo has never had a clean measurement of the single most load-bearing thing
+# in the bot.
+# `_v169noseal` is `_v169launchlate160` (THE LIVE HOLDER) with ONE line changed:
+# `LOKI_BARRIER_SEAL_ON = True -> False`. Verified: `diff -rq` reports one file,
+# and the diff is one line. Clean attribution, on the chassis we actually ship.
+# ⇒ ONE SHARD, TWO JOBS: the NEG cell the gate contrast lacks, and the first
+# honest number for what the collar is worth.
+# PRE-DECLARED: this MUST read well below 50% or the screen has lost its power
+# on this contrast -- and if it reads NEAR 50%, that is not "the collar is free",
+# it is "this fixture cannot detect a known-bad arm", which invalidates every
+# NO-INFORMATION verdict on the same contrast INCLUDING the ship gate's.
+NEG169      bots/_v169noseal       bots/_v169launchlate160  5408 124000
