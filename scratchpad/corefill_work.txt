@@ -330,3 +330,31 @@ LATE160AMMO bots/_v171late160ammo  bots/_x3r0_v115       5408 112000
 # DOCTRINE rather than measurement -- which is Magnus's call, since deletion
 # removes the kidnap weapon and deferral keeps it.
 DELVSDEF    bots/_v171launch0ammo  bots/_v171late160ammo  5408 113000
+# ⛔⛔ DELVSDEF IS ASYMMETRIC AND THE READ MUST SAY SO BEFORE THE DATA.
+# Flagged by the side lane, measured by research, REPRODUCED BY ME to the digit
+# (n=3,913 inserts over 1,915 attributable games): OUR ferry delivers EARLY --
+# median INSERT r82, median FIRST insert r27, and 74.6% of all inserts land
+# BEFORE r160.
+# ⇒ LAUNCH0AMMO HAS NO LAUNCHER, SO IT HAS NO FERRY, SO IT ATTACKS LATER than
+# our already-late chassis. And deferral's ENTIRE exposure is "undefended until
+# r160 against an opponent that attacks EARLY". THE H2H FIXTURE CANNOT EXERCISE
+# DEFERRAL'S FAILURE MODE -- it removes exactly the traffic that would arrive
+# inside the exposure window.
+# THEREFORE THE THREE OUTCOMES ARE NOT EQUALLY STRONG:
+#   >51.33% DELETE WINS  -> STRONG. It won DESPITE a fixture tilted toward its
+#                           opponent. Take it.
+#   <48.67% DEFER WINS   -> WEAK. Won on the one fixture that cannot exercise
+#                           its failure mode. NOT evidence that the undefended
+#                           opening survives real early aggression -- that is
+#                           what the live leg vs The Bisons was for, and that
+#                           leg passed (48.0% share, 40.0% early deaths vs a
+#                           44.8% baseline), which is separate evidence.
+#   inside band          -> indistinguishable ON A FIXTURE FAVOURABLE TO DEFER,
+#                           which is strictly weaker than plain indistinguishable.
+# GENERAL FORM: our own trees are the wrong fixture for a mechanism whose
+# trigger is OPPONENT BEHAVIOUR WE DO NOT EXHIBIT -- the same reason
+# _v146gunaxis could not measure the crash channel. The H2H answers "which beats
+# which on OUR chassis"; the ship question is "which does better against the
+# FIELD", and those coincide only if the ordering is transitive across opponent
+# types. For a knob whose value depends on ENEMY TIMING, that is exactly what is
+# not guaranteed.
