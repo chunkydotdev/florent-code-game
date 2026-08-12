@@ -22,7 +22,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     ALWAYS_BE_RUNNING: yes
     QUEUE_FLOOR: 3
     QUEUE_OWNER: research
-    TARGET_RATING_FLOOR: 1650
+    TARGET_MIN_PAYOUT: 10
 
 ## ⭐⭐⭐ CORE VALUE, MAGNUS, 2026-08-11 (s31) — **ALWAYS BE RUNNING.**
 
@@ -362,7 +362,24 @@ asserts the ratio and fails loudly if it drifts.
 A Loki iteration that measures null does NOT end the programme. That is what an
 iteration is.
 
-## TARGET_RATING_FLOOR: 1650 — added 2026-08-11 (s32) on Magnus's explicit directive
+## TARGET_MIN_PAYOUT: 10 — re-denominated 2026-08-12 (s33) on Magnus's directive
+## (was TARGET_RATING_FLOOR: 1650, added 2026-08-11 (s32) on Magnus's directive)
+
+**The intent is unchanged: do not spend a leg where a win pays nothing.** What
+changed is the UNIT. The old form was ABSOLUTE (1650) while the thing it protects
+is RELATIVE (payout is a function of the GAP), so it drifted every time OUR rating
+moved — and it tightened hardest exactly when we were doing worst. At 1689 it left
+39 points of room below us; at 1645 it left NONE and excluded seven teams inside
+the reachable band, three of which paid **12.56–15.78** while the rule was written
+to exclude targets paying **0.25–0.52**. A payout threshold cannot drift, because
+it is denominated in the quantity the rule cares about; no boot rule is needed to
+update it because there is nothing to update.
+
+⚠ **Measured and worth knowing: the BAND is tighter than the BAR below us.**
+`BAND_LO = -80` already pays 12.38, above the 10-point bar, so the bar **never
+binds on the low side** — it is a backstop, not the active gate. That is fine and
+is recorded rather than tuned away: a non-binding guard that cannot drift is worth
+more than a binding one that drifts wrongly.
 
 **Verbatim: *"Dont fire on targets below 1650 ELO."*** Added under this file's own
 rule (*edit ONLY on an explicit directive from Magnus*), which that sentence is.

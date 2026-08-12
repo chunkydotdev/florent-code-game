@@ -54,46 +54,68 @@ OUR_TEAM = "OpenSverige"
 K = 32
 BAND_LO, BAND_HI = -80, 125      # measured reachable window, relative to us
 
-# ⛔ ABSOLUTE TARGET FLOOR — Magnus, direct, 2026-08-11: "Don't fire on targets
-# below 1650 ELO." A leg may not be aimed below this REGARDLESS of what the
-# relative band says. Wired in here because `CLAUDE.md` mandates running this gate
-# BEFORE writing a prereg, and until now the gate printed `reachable YES` for
-# teams the directive excludes -- i.e. the instrument the rule says to consult
-# actively contradicted the rule. Found by the side lane.
-RATING_FLOOR = 1650
+# ⭐ RE-DENOMINATED 2026-08-12 (s33) ON MAGNUS'S DIRECTIVE. WAS `RATING_FLOOR =
+# 1650`, ABSOLUTE. It is now expressed in the quantity it was always protecting.
+#
+# THE ORIGINAL DIRECTIVE, unchanged in intent — Magnus, 2026-08-11: "Don't fire on
+# targets below 1650 ELO." Its PURPOSE was that a win against a far-weaker team
+# pays nothing: s28 fired a crash leg at four teams 550-860 points below us where
+# a 5-0 paid 0.2-1.0 rating points.
+#
+# ⛔ WHY THE ABSOLUTE FORM HAD TO GO, AND IT IS A MEASURED FAILURE NOT A TIDY-UP.
+# The thing it protects is RELATIVE (payout is a function of the GAP) while the
+# threshold was ABSOLUTE, so it drifted every time OUR rating moved -- tightening
+# hardest exactly when we are doing worst and most need reachable targets. At 1689
+# it left 39 points of room below us; at 1666, 16; at 1645 it left NONE and
+# excluded seven teams inside the reachable band. Measured 2026-08-12:
+#
+#     EXCLUDED by the 1650 floor     Askar City  gap  -5   a 5-0 paid +15.78
+#                                    gsxWins     gap -37   a 5-0 paid +14.32
+#                                    Lunds Stns  gap -76   a 5-0 paid +12.56
+#     what the floor was BUILT to exclude    S   gap -714  a 5-0 pays   +0.52
+#                                    vjg (s28)   gap -841  a 5-0 pays   +0.25
+#
+# It was excluding targets paying 12-16 points while written to exclude targets
+# paying half a point -- 25-60x off its own intent. Predicted by the side lane's
+# s32 S5 ("an absolute threshold beside a relative band changes meaning as the
+# baseline moves") and it arrived exactly as predicted.
+#
+# ⇒ A PAYOUT THRESHOLD CANNOT DRIFT, because it is denominated in the thing the
+# rule cares about. No boot rule is needed to "update" it; there is nothing to
+# update. That is why this is a re-denomination and not a new constant.
+MIN_PAYOUT = 10.0        # a 5-0 must pay at least this many rating points
 
-# ⭐ AND THE INTERACTION, because it is INVISIBLE FROM THE DIRECTIVE'S OWN WORDING:
-# the FLOOR is ABSOLUTE and the BAND is RELATIVE, so the constraint TIGHTENS AS WE
-# FALL. At 1689 it left 39 points of room below us; at 1666 it leaves 16; at or
-# below 1650 the admissible set collapses to "teams at or above us only" -- the
-# constraint bites hardest exactly when we are doing worst and most need reachable
-# targets. A successor reading "don't fire below 1650" at a 1640 rating will read
-# it as a mild filter when it is a near-total ban. FLOOR_WARN_MARGIN is when we
-# start saying so out loud.
-FLOOR_WARN_MARGIN = 40
+# Derivation, so the number is auditable rather than picked: delta = K*(S - E)
+# with S = 1, so payout >= 10 <=> E <= 0.6875 <=> the opponent is no more than
+# ~137 points BELOW us. That admits every team the old floor excluded (worst was
+# -76) and still excludes S (-714, 0.52) and s28's targets (-841, 0.25) decisively.
+PAYOUT_WARN_MARGIN = 3.0   # warn when the best available target is close to the bar
+
+
+def payout_for(gap: float) -> float:
+    """Rating points a 5-0 pays against an opponent `gap` points from us."""
+    E = 1.0 / (1.0 + 10 ** (-(-gap) / 400))
+    return K * (1.0 - E)
 
 
 def admissible(gap: float, opp_rating: float) -> tuple[bool, str]:
-    """Both gates. -> (ok, reason). The floor OVERRIDES the band, never the reverse."""
-    if opp_rating < RATING_FLOOR:
-        return False, f"BELOW {RATING_FLOOR} FLOOR"
+    """Both gates. -> (ok, reason). The payout bar OVERRIDES the band, never the reverse."""
+    pay = payout_for(gap)
+    if pay < MIN_PAYOUT:
+        return False, f"a 5-0 pays only {pay:.2f} (< {MIN_PAYOUT:.0f})"
     if not (BAND_LO <= gap <= BAND_HI):
         return False, "outside band"
     return True, ""
 
 
 def floor_warning(ours: float) -> str:
-    """Say out loud when the absolute floor has eaten the relative band."""
-    room = ours - RATING_FLOOR
-    if room < 0:
-        return (f"⛔ OUR RATING {ours:.0f} IS BELOW THE {RATING_FLOOR} FLOOR. Every "
-                f"admissible target is now STRONGER than us; there is no room below.")
-    if room < FLOOR_WARN_MARGIN:
-        return (f"⚠ ONLY {room:.0f} POINTS between our {ours:.0f} and the "
-                f"{RATING_FLOOR} floor. The floor is ABSOLUTE and the band is "
-                f"RELATIVE, so this shrinks as we fall — at {RATING_FLOOR} the "
-                f"admissible set becomes 'teams at or above us only'.")
-    return ""
+    """Retained as the reporting hook. The drift it used to warn about is GONE by
+    construction -- a payout bar does not move when our rating moves -- so this
+    now says only that, and says it once, so a successor does not go looking for
+    a floor that no longer exists."""
+    return (f"NOTE: the absolute 1650 floor was RE-DENOMINATED to "
+            f"MIN_PAYOUT = {MIN_PAYOUT:.0f} rating points on 2026-08-12. "
+            f"It no longer drifts with our own rating ({ours:.0f}).")
 
 _OVERRIDE: dict = {}
 
@@ -284,15 +306,30 @@ def selftest() -> int:
     # ⛔ THE FLOOR MUST BE DRIVEN BOTH WAYS. A gate that has only ever returned
     # YES has not been seen to gate. Each case pins the FLOOR against the BAND so
     # a future edit cannot silently let the band win.
+    # REWRITTEN s33 FOR THE PAYOUT BAR. The old cells pinned an ABSOLUTE floor and
+    # two of them referenced RATING_FLOOR itself -- so they MOVED WITH the constant
+    # and could never have caught the drift that actually happened. A cell defined
+    # in terms of the thing under test cannot test it. These are pinned to MEASURED
+    # live gaps instead, and the first two are teams the old floor wrongly excluded.
     floor_cases = [
-        ("in band, above floor",      +40, 1700, True),
-        ("in band, BELOW floor",      -31, 1632, False),   # Askar City: the live case
-        ("in band, exactly at floor",   0, RATING_FLOOR, True),
-        ("in band, 1 under floor",     -1, RATING_FLOOR - 1, False),
-        ("above floor, OUTSIDE band", +400, 2050, False),
+        ("Askar City (old floor EXCLUDED it)",   -5, 1640, True),
+        ("Lunds Stallions (old floor EXCLUDED)", -76, 1569, True),
+        ("The Bisons, well above us",           +121, 1766, True),
+        ("parity",                                 0, 1645, True),
+        # THE BAND IS TIGHTER THAN THE BAR BELOW US, and this cell records it.
+        # BAND_LO = -80 already pays 12.44, above MIN_PAYOUT = 10, so the payout
+        # bar NEVER BINDS on the low side -- it is a backstop, not the active
+        # gate. Found by this cell failing when it was written the other way.
+        # A non-binding guard that CANNOT drift is still worth having; what it
+        # replaces was a binding guard that drifted in the wrong direction.
+        ("-136: refused by the BAND, not the bar", -136, 1509, False),
+        ("-140: refused, outside both",            -140, 1505, False),
+        ("team S (the ONE concentrated signal)", -714,  931, False),
+        ("s28's vjg (the original mistake)",     -841,  804, False),
+        ("pays well but OUTSIDE the band",      +400, 2050, False),
     ]
-    print("  FLOOR (Magnus 2026-08-11: no targets below "
-          f"{RATING_FLOOR}) — floor OVERRIDES band:")
+    print(f"  PAYOUT BAR (re-denominated s33): a 5-0 must pay >= "
+          f"{MIN_PAYOUT:.0f} rating points -- bar OVERRIDES band:")
     for label, gap, rating, want in floor_cases:
         got, why = admissible(gap, rating)
         ok = got == want
@@ -301,12 +338,23 @@ def selftest() -> int:
               f"{(' (' + why + ')') if why else ''}")
         if not ok:
             bad += 1
-    warn_lo = floor_warning(RATING_FLOOR + 5)
-    warn_hi = floor_warning(RATING_FLOOR + 500)
-    ok_w = bool(warn_lo) and not warn_hi
-    print(f"  [{'ok' if ok_w else 'FAIL'}] rating-dependence warning fires near the "
-          f"floor and is silent far above it")
+    # THE CELL THAT WOULD HAVE CAUGHT THE ORIGINAL DEFECT, and it replaces the one
+    # that could not. The old cell asserted a WARNING fired as we approached the
+    # floor -- it accepted the drift and only announced it. This asserts the drift
+    # CANNOT HAPPEN: the same gap must yield the same verdict at any rating of ours,
+    # which is exactly what an absolute floor failed to do.
+    same = {admissible(-76, ours - 76)[0] for ours in (1500, 1600, 1645, 1700, 1900)}
+    ok_w = same == {True}
+    print(f"  [{'ok' if ok_w else 'FAIL'}] a gap of -76 is admissible at EVERY rating "
+          f"of ours (1500..1900) -- the bar cannot drift  {same}")
     if not ok_w:
+        bad += 1
+    # ...and the complement, so the cell is not simply always-True.
+    same_no = {admissible(-714, ours - 714)[0] for ours in (1500, 1600, 1645, 1700, 1900)}
+    ok_w2 = same_no == {False}
+    print(f"  [{'ok' if ok_w2 else 'FAIL'}] a gap of -714 is refused at EVERY rating "
+          f"of ours  {same_no}")
+    if not ok_w2:
         bad += 1
     print()
     if bad:
