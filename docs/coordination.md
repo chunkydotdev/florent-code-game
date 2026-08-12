@@ -38949,3 +38949,60 @@ Holder read LIVE: **`Active bot: v116`, rating 1687, rank #23** (up from 1668 at
 boot). At 18:22 I was **11 minutes past** the 18:12:59 pairing with only ~8
 minutes of clear air ⇒ **held fire and waited for 18:32:59 rather than take the
 thinner margin.** Manifest dry-run clean: 4 `.py` files, no docs.
+
+# ============================================================================
+# 2026-08-12T18:3xZ — **LOKI-50 SALT: LIVE LEG READ-OUT. THE PLANK FAILS ITS
+# KILL-ROUND BAR, AND THE MECHANISM WORKED.** Magnus asked for it, watched it.
+# ============================================================================
+## THE LEG
+v119 = `_v178salt`. **Live exposure 30 s** (18:26:11 -> 18:26:41Z). **ZERO rated
+leakage, verified at the PAIRING BOUNDARY** (not the match counter, which is
+blind to this): last pairing 18:12:59 `ourver=116`, next 18:32:59, nothing
+created inside. Holder restored and asserted on the `Active bot:` line.
+**Game share 13/25 = 52.0%** (band ±19pp — not a currency read and not offered
+as one).
+
+## ⭐ THE MECHANISM FIRED — DOSE CONFIRMED ENGINE-SIDE, NOT FROM OUR OWN PRINTS
+**`print()` IS STRIPPED from platform replays**, so the `SALT` tag was unreadable
+by construction and the dose was read off BUILD/DEATH events instead — exactly
+what `CLAUDE.md` requires. **All four legs ran the SAME FIVE OPPONENTS, 5 games
+each**, so this is opponent-matched:
+| arm | our barriers/game | their conveyor deaths/game | our sentinels/game |
+|---|---|---|---|
+| v116 | 3.48 | 6.56 | 3.04 |
+| v117 | 3.72 | 1.72 | 4.84 |
+| v118 | 3.52 | 1.20 | 4.00 |
+| **v119 SALT** | **6.68** | 4.36 | 3.72 |
+**Barriers nearly DOUBLE against three baselines that agree within 0.24.** The
+turret build is NOT suppressed (sentinels mid-range), so the arm is not simply
+starving itself of guns.
+
+## ⛔⛔ AND IT FAILS THE PRE-REGISTERED BAR, RESOLVABLY
+`PROGRAMME.md`: `DEFENCE_ADMISSION_BAR: kill_round_non_regression`.
+| arm | core kills | median KILL round |
+|---|---|---|
+| v116 | 10 | **130** |
+| v117 | 11 | **116** |
+| v118 | 12 | **125** |
+| **v119 SALT** | **13** | **179** |
+**Pooled baseline n=33 median 129 · SALT n=13 median 179 · Mann-Whitney z=+2.63,
+p≈0.008 · baseline median bootstrapped to n=13 gives a 90% band of 110..146 and
+179 is OUTSIDE it.**
+⇒ **SALT KILLS MORE CORES (13 vs 10/11/12) AND KILLS THEM ~50 ROUNDS LATER.** It
+converts fast kills into slow ones. **That is the bar, and the bar fails.**
+⚠ **HONEST LIMITS:** n=13 kills; the baseline pools three DIFFERENT arms (they
+cluster 116/125/130, which is why pooling is defensible); 5 games share an
+opponent so the kills are not fully independent. **This is a strong signal, not a
+proof — but it is the signal the bar was written to catch, and 179 sits outside
+the band by 33 rounds.**
+
+## ⭐ THE PRICE WAS PREDICTED BEFORE THE LEG AND PAID EXACTLY WHERE PREDICTED
+Written before firing: *"every peck costs that raider its move for the round, and
+this line's entire winning history came from REMOVING actions to hand rounds back
+to movement."* **That is precisely what the tape shows.** LOKI-QUIET's original
+finding — arrival is the scarce quantity — **survives its first direct
+challenge.** A conveyor-only carve-out is still an action carve-out.
+⇒ **LOKI-50 SALT: NOT SHIPPED. The corpse-salt mechanism is CONFIRMED to work
+and the price is a ~50-round kill delay.** Any revival must buy the denial
+WITHOUT spending raider actions — e.g. a turret-delivered cut, or salting only
+while a raider is already action-idle (25.76% of builder-rounds).
