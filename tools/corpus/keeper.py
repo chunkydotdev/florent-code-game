@@ -114,36 +114,78 @@ def ladder_watch() -> None:
     that when a human or a session next looks, they already know."""
     p = subprocess.run([str(ROOT / ".venv/bin/fcode"), "status"],
                        cwd=ROOT, capture_output=True, text=True, timeout=60)
-    txt = p.stdout
+    # Parsed by the SAME function the selftest drives -- not a second copy here.
+    parsed = parse_status(p.stdout)
+    if parsed is None:
+        return                             # degraded response: write NOTHING
+    rating, matches, bot, wins = parsed
+
+    st = json.loads(STATE.read_text()) if STATE.exists() else {}
+    alerts, st, should_log = decide(st, rating, matches, bot, wins)
+    for title, msg in alerts:
+        notify(title, msg)
+    if should_log:
+        log(f"ladder {bot} · {rating:.1f} @ {matches}"
+            + (f" · last10 {wins}W" if wins is not None else ""))
+    STATE.write_text(json.dumps(st, indent=2))
+
+
+def decide(st: dict, rating: float, matches: int, bot: str, wins):
+    """PURE. -> (alerts, new_state, should_log). No I/O, so `--selftest` can drive it.
+
+    ⛔ EXTRACTED s33 2026-08-12 BECAUSE THIS LOGIC HAD NO TEST OF ANY KIND. keeper
+    ingests the corpus every statistic in this repo is computed on, and the ship
+    gate's denominators now sit on it -- 22 cells above it and 0 in it (D24(d)).
+    It is `ladder_watch()` that CALLS this, so the selftest drives the shipped
+    line and not a copy (D24(e)) -- the mistake made in `replay_throws.py` earlier
+    today by the lane writing this.
+
+    ⚠ THE ALERT CHAIN IS `elif`, SO IT IS MUTUALLY EXCLUSIVE AND THAT IS A REAL
+    PROPERTY, not an accident: a SHIP that is also a 40-point drop notifies SHIP
+    ONLY. Preserved deliberately -- the drop is meaningless across a bot change,
+    which is exactly why `peak` resets on a ship. A cell pins both halves.
+    """
+    peak = max(rating, st.get("peak", rating))
+    st = dict(st)
+    alerts = []
+
+    if st.get("bot") and bot != st["bot"]:
+        alerts.append(("florent: SHIP DETECTED",
+                       f"active bot changed {st['bot']} -> {bot} @ {rating:.0f}"))
+        # NEW BOT, NEW BASELINE. Without this the incoming bot inherits the
+        # outgoing bot's peak and can fire a RATING DROP on its first poll for a
+        # decline it had no part in.
+        peak = rating
+    elif peak - rating >= DROP_ALERT and st.get("alerted_at", 0) != round(rating):
+        alerts.append(("florent: RATING DROP",
+                       f"{rating:.0f} is {peak - rating:.0f} below peak {peak:.0f} "
+                       f"({matches} matches)"))
+        st["alerted_at"] = round(rating)
+    elif wins is not None and wins <= STREAK_ALERT and st.get("wins") != wins:
+        alerts.append(("florent: LOSING STREAK",
+                       f"last 10 = {wins}W, rating {rating:.0f}"))
+
+    should_log = st.get("matches") != matches
+    st.update(bot=bot, rating=rating, matches=matches, peak=peak, wins=wins)
+    return alerts, st, should_log
+
+
+def parse_status(txt: str):
+    """PURE. -> (rating, matches, bot, wins) or None if the response is degraded.
+
+    ⛔ THE `None` RETURN IS THE LOAD-BEARING BRANCH AND IT IS THIS REPO'S MOST
+    DIRECT EXPOSURE TO THE DOCUMENTED `fcode status` HAZARD: it EXITS 0 while
+    printing `Error: True`, and a degraded body still parses as valid JSON. So
+    the gate is the PRESENCE OF THE LOAD-BEARING FIELD, never the exit code --
+    and a degraded poll must write NOTHING rather than a partial row.
+    """
     m_rate = re.search(r"Rating:\s*([\d.]+).*?(\d+)\s+matches", txt, re.S)
     m_bot = re.search(r"Active bot:\s*(.+)", txt)
     m_last = re.search(r"Last 10:\s*(\d+)W", txt)
     if not (m_rate and m_bot):
-        return
-    rating, matches = float(m_rate.group(1)), int(m_rate.group(2))
-    bot = m_bot.group(1).strip()
-    wins = int(m_last.group(1)) if m_last else None
-
-    st = json.loads(STATE.read_text()) if STATE.exists() else {}
-    peak = max(rating, st.get("peak", rating))
-
-    if st.get("bot") and bot != st["bot"]:
-        notify("florent: SHIP DETECTED",
-               f"active bot changed {st['bot']} -> {bot} @ {rating:.0f}")
-        peak = rating                      # new bot, new baseline
-    elif peak - rating >= DROP_ALERT and st.get("alerted_at", 0) != round(rating):
-        notify("florent: RATING DROP",
-               f"{rating:.0f} is {peak - rating:.0f} below peak {peak:.0f} "
-               f"({matches} matches)")
-        st["alerted_at"] = round(rating)
-    elif wins is not None and wins <= STREAK_ALERT and st.get("wins") != wins:
-        notify("florent: LOSING STREAK", f"last 10 = {wins}W, rating {rating:.0f}")
-
-    if st.get("matches") != matches:
-        log(f"ladder {bot} · {rating:.1f} @ {matches}"
-            + (f" · last10 {wins}W" if wins is not None else ""))
-    st.update(bot=bot, rating=rating, matches=matches, peak=peak, wins=wins)
-    STATE.write_text(json.dumps(st, indent=2))
+        return None
+    return (float(m_rate.group(1)), int(m_rate.group(2)),
+            m_bot.group(1).strip(), int(m_last.group(1)) if m_last else None)
 
 
 def run(cmd: list[str], timeout: int) -> tuple[int, str]:
@@ -212,12 +254,97 @@ def loop() -> None:
         PIDFILE.unlink(missing_ok=True)
 
 
+def selftest() -> int:
+    """Forced-answer cells for keeper's decision branches.
+
+    D24(d) -- `enumerate BRANCHES, not cells`. keeper had ZERO of either while
+    the instruments reading its output had 22, which is D20 one level up: a
+    compensating check downstream is how an untested writer survives.
+    """
+    fails = []
+
+    def check(name, cond, detail=""):
+        print(f"  [{'ok' if cond else 'FAIL'}] {name}" + (f"  {detail}" if detail else ""))
+        if not cond:
+            fails.append(name)
+
+    OK = "Active bot: v114\nRating: 1650.0 (795 matches)\nLast 10: 6W 4L\n"
+
+    # --- parse_status: the degraded-response branch, both ways.
+    p = parse_status(OK)
+    check("a well-formed status parses all four fields", p == (1650.0, 795, "v114", 6), f"{p}")
+    check("⛔ `Error: True` with NO rating returns None (writes nothing)",
+          parse_status("Error: True\n") is None)
+    check("⛔ a body with a rating but NO active bot returns None",
+          parse_status("Rating: 1650.0 (795 matches)\n") is None)
+    check("a status without `Last 10` still parses, wins=None",
+          parse_status("Active bot: v114\nRating: 1650.0 (795 matches)\n")[3] is None)
+
+    # --- decide: SHIP.
+    a, st, _ = decide({"bot": "v112", "peak": 1700.0}, 1650.0, 795, "v114", 6)
+    check("a bot change notifies SHIP DETECTED", any("SHIP" in t for t, _ in a))
+    check("⭐ a ship RESETS peak to the new rating", st["peak"] == 1650.0,
+          f"peak={st['peak']}")
+    check("...and a ship that is ALSO a 50-point drop notifies SHIP ONLY (elif is deliberate)",
+          len(a) == 1 and "SHIP" in a[0][0], f"{[t for t, _ in a]}")
+
+    # --- decide: DROP, driven to fire and to stay silent.
+    a2, st2, _ = decide({"bot": "v114", "peak": 1700.0}, 1650.0, 795, "v114", 6)
+    check("a 50-point drop from peak notifies RATING DROP", any("DROP" in t for t, _ in a2))
+    a3, _, _ = decide({"bot": "v114", "peak": 1670.0}, 1650.0, 795, "v114", 6)
+    check("a 20-point drop is BELOW the 25 threshold and is SILENT", not a3,
+          f"{[t for t, _ in a3]}")
+    a4, _, _ = decide({"bot": "v114", "peak": 1700.0, "alerted_at": 1650}, 1650.0, 795, "v114", 6)
+    check("the SAME rating does not re-alert", not any("DROP" in t for t, _ in a4))
+
+    # --- decide: STREAK, both ways.
+    a5, _, _ = decide({"bot": "v114", "peak": 1650.0, "wins": 5}, 1650.0, 795, "v114", 2)
+    check("last-10 at 2W notifies LOSING STREAK", any("STREAK" in t for t, _ in a5))
+    a6, _, _ = decide({"bot": "v114", "peak": 1650.0, "wins": 5}, 1650.0, 795, "v114", 3)
+    check("last-10 at 3W is above the threshold and is SILENT",
+          not any("STREAK" in t for t, _ in a6))
+    a7, _, _ = decide({"bot": "v114", "peak": 1650.0, "wins": 2}, 1650.0, 795, "v114", 2)
+    check("an UNCHANGED streak does not re-alert", not a7)
+
+    # --- a healthy poll must be completely silent. Without this the alerts could
+    # all be firing constantly and every cell above would still pass.
+    a8, _, lg = decide({"bot": "v114", "peak": 1650.0, "wins": 6, "matches": 795},
+                       1655.0, 795, "v114", 6)
+    check("⭐ a healthy poll raises NOTHING", not a8, f"{[t for t, _ in a8]}")
+    check("...and does not re-log an unchanged match count", not lg)
+    _, _, lg2 = decide({"bot": "v114", "peak": 1650.0, "matches": 795},
+                       1655.0, 796, "v114", 6)
+    check("a new match DOES log", lg2)
+
+    # --- peak is a high-water mark, never lowered by a good poll.
+    _, st9, _ = decide({"bot": "v114", "peak": 1700.0}, 1650.0, 795, "v114", 6)
+    check("peak is a high-water mark and is not lowered by a lower rating",
+          st9["peak"] == 1700.0, f"peak={st9['peak']}")
+
+    # --- first-ever poll: no prior bot, so no spurious SHIP.
+    a10, st10, _ = decide({}, 1650.0, 795, "v114", 6)
+    check("the FIRST poll (no prior state) does not fire a spurious SHIP", not a10)
+    check("...and seeds peak from the current rating", st10["peak"] == 1650.0)
+
+    print()
+    if fails:
+        print(f"SELFTEST FAILED: {len(fails)}: {', '.join(fails)}")
+        return 1
+    print("SELFTEST PASSED — every alert branch driven to FIRE and to STAY SILENT,\n"
+          "the degraded-response gate returns None, and a healthy poll raises nothing.")
+    return 0
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--start", action="store_true", help="detach and run")
     ap.add_argument("--stop", action="store_true")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()
+
+    if a.selftest:
+        raise SystemExit(selftest())
 
     if a.status:
         pid = read_pid()
