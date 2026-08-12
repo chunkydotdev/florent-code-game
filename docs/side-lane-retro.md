@@ -444,3 +444,53 @@ by direction, and only then ask whether a hypothesis existed.** Standing at
 4-for-4 on judgement errors across three lanes, with one estimator error
 correctly out of scope. **It is still a conjecture and must not be used as a
 prior.**
+
+## ⚠ v1.3.1 — **SIX CLASSIFIABLE ERRORS IN ONE SESSION, THREE LANES. THE JUDGEMENT/ESTIMATOR SPLIT IS CLEAN AND THE CONJECTURE SURVIVES ITS FIRST REAL TEST.**
+
+**v1.3.1 — 2026-08-12 (s34, mid-session). POINT bump: records conjecture data as
+it occurs, per the v1.2.1 precedent. NOT A RETRO RUN — FIRINGS remain 3.**
+
+**Recorded now rather than held for a wrap that may not be called, which is the
+whole reason the point-bump mechanism exists.**
+
+**THE TEST, fixed in advance at v1.2.1 and applied here for the first time:**
+*classify each published error as JUDGEMENT or ESTIMATOR **first**, then by
+direction.* **Classification rule, stated before the table so it cannot be bent
+to fit: an ESTIMATOR error is one where the tool or computation produced a wrong
+number the author read correctly; a JUDGEMENT error is one where the numbers were
+right and the inference was wrong.**
+
+| # | lane | error | kind | hypothesis? | direction |
+|---|---|---|---|---|---|
+| 1 | builder | *"the belt repair rate worsened MONOTONICALLY"* — its own series rises on the last two transitions | **judgement** | yes (the removal-line invoice) | **toward it** |
+| 2 | research | `get_nearby_buildings` default read ACROSS from the neighbouring `get_nearby_tiles` row | **judgement** | yes (their census defect) | **toward it** |
+| 3 | side (me) | specified `SHIPGATENULL` without opening the consumer; the cell I asked for could not be read | **judgement** | yes (my own flag's fix) | **toward it** |
+| 4 | side (me) | *"not established anywhere I can find"* — a claim about where I had looked, wearing a claim about the repo | **judgement** | **no — surveying** | **toward the alarming** |
+| 5 | research | unpooled Wald SE where the two-proportion test pools | **estimator** *(borderline, see below)* | yes | anti-conservative **by construction** |
+| 6 | side (me) | execution guard printed `$?` after a pipe ending in `head` — a 0 that prints either way | **estimator** | no | n/a — a constant |
+
+**⇒ ON JUDGEMENT ERRORS THE CONJECTURE IS 4 FOR 4 AND THE SURVEY BRANCH FIRED
+FOR THE FIRST TIME.** Three errors made while DEFENDING a result ran toward it;
+**#4 was made while SURVEYING and ran toward the alarming**, which is the branch
+the conjecture predicted and had never yet observed in the same session as its
+complement. **That is the first within-session contrast rather than a between-
+session comparison** — and the between-session comparison is what broke the v1.2
+direction claim.
+
+**⛔ THE HONESTY PROBLEM WITH THIS TABLE, STATED RATHER THAN MANAGED: I
+CLASSIFIED AFTER KNOWING THE DIRECTIONS.** The test says classify first, and for
+these six that was not possible — they had already happened. **The obvious
+failure mode is filing an inconvenient case as ESTIMATOR to protect the
+conjecture, and #5 is exactly that case: choosing Wald over pooled IS a judgement,
+and I have filed it as an estimator error on the grounds that its direction comes
+from the formula's known bias rather than from the author's wish.** **That
+reasoning is defensible and it is also precisely the move that would rescue a
+false conjecture.** ⇒ **Flagged, not resolved. If #5 is judgement, the conjecture
+is 5 for 5 and gains nothing it did not have; the point is that I cannot be the
+one to decide it after the fact.**
+
+⇒ **v1.4 MUST CLASSIFY AT PUBLICATION TIME, NOT AT RETRO TIME.** A one-line tag
+on the error when it is retracted — **`KIND: judgement|estimator · HYPOTHESIS:
+y/n`** — costs nothing and is the only version of this test that is not
+retrospective. **Until that exists, this table is suggestive and must not be
+cited as confirmation.**
