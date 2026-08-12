@@ -1,48 +1,60 @@
-# LIVE: **v116 = `bots/_v169launchlate160`** (LOKI-42 LAUNCHLATE160, `LAUNCHER_MIN_RND = 160`).
+# LIVE: **v116 = `bots/_v169launchlate160`** — Magnus rolled back x3r0's v120 at ~19:40Z.
 # ⛔ **VERIFY WITH `fcode status | grep 'Active bot:'` BEFORE ACTING ON THIS LINE.**
-# ⛔ **NEVER ROLLBACK TO A VERSION WRITTEN IN A DOCUMENT — FOUR HOLDERS CHANGED
-#    ON 2026-08-12 (v114 → v115 x3r0 → v116). Read the holder LIVE, every time.**
-# **s33 WRAP.**
-#
-# ## ===== SHIP CANDIDATES — read these first =====
-# **`_v171launch0ammo` 53.51%** and **`_v171late160ammo` 53.72%** (n≈3,080, band
-# ±1.77, BOTH OUTSIDE-ABOVE) against the **v115** baseline — the first arms today
-# controlled against a bot that has actually held the slot.
-# **`_v171late160ammo` IS v116 + x3r0's ammo pre-buy, which v116 SILENTLY
-# REVERTED** by branching from v114. If it holds at full n, the repair is
-# ADDITIVE and needs no rollback.
-# **LIVE PAIRED EVIDENCE: both read +8.0pp over v116** on identical opponents AND
-# maps (n=25 each; ±19pp, so DIRECTION ONLY, not a magnitude).
-#
-# ## ===== ⭐ THE FINDING THAT REFRAMES THE LINE =====
-# **DEFERRAL IS DELETION IN PRACTICE: v116 builds a launcher in 2 of 50 live
-# games.** The launcher decomposition at n=5,408, internally consistent to the
-# decimal: **ferry −0.15pp · exile +2.98pp · launcher costs +6.34pp TO OWN**, and
-# cost 6.34 − mechanisms 3.57 = **−2.77pp = LAUNCH0's measured +2.77pp exactly.**
-# Dose curve monotone across 0/1/2/3 launchers (52.77 / 50 / 44.67 / 43.52).
-#
-# ## ===== ⛔ WHAT 75 DECODED LIVE GAMES SAID THAT NO BATTERY DID =====
-# * our opening: r0-4 builders · r5 harvester · r7 conveyor · r8 2nd harvester ·
-#   **r13 FIRST SENTINEL, FORWARD in 14/25** · r18 barriers · launcher ~never.
-#   **Local self-play says r20 for that sentinel. Live it is r13.**
-# * **41% of our sentinels are DESTROYED**, median life 12 rounds. **100% of the
-#   destroyed sat under enemy turret coverage against 64% of survivors** — the
-#   control is what makes that mean something.
-# * **THE FIELD TEARS DOWN AND REBUILDS GUNNERS**: 86 undamaged gunner removals
-#   in 25 games (~16% of their turret removals), median rebuild 2 rounds. They do
-#   it to builders **twice**. We never call `self_destruct` at all.
-# * **OUR SCALE IS ~377% AND BUILDERS ARE 44% OF IT** (6.2/game × +20pp = 123pp,
-#   more than every turret combined). Destruction REFUNDS it.
-# * ⚠ **"they heal at 16 HP/round" IS CAPACITY, NEVER OBSERVED** — `events.tsv`
-#   has no heal verb. Several arms rest on it; say so when quoting it.
-#
-# ## ===== ⛔ BOOT: THE RULE THIS SESSION EARNED =====
-# **TEST THE DECIDING BRANCH, NOT THE MEASURING FUNCTION**, and **COUNT THE
-# OUTPUT, DON'T READ THE LOOP.** Three tools published false verdicts behind
-# green selftests today; `overnight_read`, `crash_cells` and `arena.py` now
-# assert on REFUSE/SCORE outcomes. **And decode replays in hour one, not hour
-# eight — the batteries measure, the replays explain.**
-#
+# ⛔ **FIVE HOLDERS CHANGED ON 2026-08-12: v114 → v115 → v116 → v120 (x3r0) → v116.**
+# **s34 OVERNIGHT — batteries running unattended until ~04:00-05:00Z.**
+
+## ===== ⭐ FIRST COMMAND IN THE MORNING =====
+##   `zsh tools/corefill_status.sh`  then
+##   `.venv/bin/python tools/overnight_read.py --dir scratchpad/overnight`
+##   **READ THE CALIBRATION LINE FIRST.** The read-out now prints calibration
+##   PER CONTRAST and names the cell it used. Every arm below is controlled on
+##   `_v169launchlate160`; its null is `SHIPGATENULL` (reading 50.01% at n=3485,
+##   i.e. the fixture is UNBIASED on the contrast that matters) and its negative
+##   is `NEG169`. **If NEG169 has not cleared ~50% BELOW 50, no NO-INFORMATION
+##   verdict on this contrast may be read as "no effect" — only as "no power".**
+
+## ===== ⛔ NOTHING SHIPPED TODAY, AND THAT IS THE CORRECT OUTCOME =====
+##   **SHIPGATE160 49.44% / SHIPGATE0 49.19%** (n~3050, ±1.78) — cancelled at 56%
+##   as inside-band, which was the PRE-REGISTERED verdict: **NO SHIP.**
+##   **The mechanism explained it before the shards did: v118 builds a launcher
+##   in 1 live game of 5**, so both candidates are v116 + an ammo pre-buy that
+##   measured null (AMMO115 51.23%, z=+1.72) on its own. **They are the same bot
+##   in ~4 games of 5 — unseparability was BEHAVIOURAL IDENTITY, not low n.**
+
+## ===== ⭐⭐ THE FINDING OF THE DAY — `QUEUE #32`, and Magnus found it watching =====
+##   **OUR SENTINELS DIE AT 71%, THEIRS AT 34%** (v121 leg, 25 live games,
+##   BUILD/DEATH paired on tile). Median life **12 vs 34 rounds**. **We build 57%
+##   MORE sentinels (107 vs 68) and get 22% FEWER sentinel-rounds (5,143 vs
+##   6,618)** — ~**2x** the damage per build for the same 30 Ti and +20% scale.
+##   **Not count, not timing, not siting** — Magnus refuted the siting reading
+##   from the replay (our sentinel DID fire on their core, well placed) and the
+##   corpus `d2_enemy` over-estimates because it uses the core's single stored
+##   position. ⚠ **Ammo, THEIR healing, and enemy target-priority remain UNTESTED
+##   and would produce the same signature.**
+##   ⭐ **s33's median-12 reproduces to the round on a different leg** — one of
+##   the few independently replicated numbers we have.
+
+## ===== ⛔ x3r0's v120 — MEASURED AND ROLLED BACK =====
+##   **3/25 = 12% on the standard panel; four baselines read 40-45% ON THE
+##   IDENTICAL MAPS** (z=-2.52, p~0.012). Magnus's challenge — "are the maps
+##   really different?" — is what made it attributable: restricting the earlier
+##   legs to v120's five maps needed NO new games. ⚠ **Its RATED record was 5/10
+##   over two matches (net -8.01) — far too small to confirm or contradict.**
+##   v120 changed FIVE things at once (gunaxis machinery removed entirely,
+##   `LAUNCHER_MIN_RND` removed, `PAVE_TRAIL_ON` on, `FWD_GUN_CAP` 3→2,
+##   `NOISE_ON` off), so even this cannot attribute.
+
+## ===== ⭐ ENGINE FACT SETTLED TONIGHT, AND IT UNLOCKS A GUARD =====
+##   **THE ENGINE IS DETERMINISTIC.** `_det_opp_v56` (zero RNG calls) vs itself:
+##   3/3 identical on eider s13, 2/2 on nordkap s41; `_x3r0_v120` (`NOISE_ON =
+##   False`) 4/4 at turn 129. **The only nondeterminism in our lineage is
+##   `main.py:276`.** ⇒ **`gate.py:226-261` control-equivalence IS satisfiable —
+##   set `NOISE_ON = False` in both trees and demand byte-identical outcomes.**
+##   ⛔ I first banked the OPPOSITE, from a subagent using `bots/starter` as its
+##   control — a bot with FOUR unseeded RNG call sites. **A control that shares
+##   the fault it tests for is not a control.** Retracted `6454a7b`.
+
+## ===== (previous session's block follows) =====
 ## ===== ⛔ FIRST TWO COMMANDS, IN THIS ORDER =====
 ##   1. `cat corpus/BREAKIN_ALERT corpus/SHIP_ALERT 2>/dev/null` — **NOBODY READ
 ##      THESE OVERNIGHT.** If either exists, read it before anything else.
