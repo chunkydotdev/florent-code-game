@@ -39409,3 +39409,55 @@ stops.
 may be quoted as a rating or field claim, in either direction.** A win here is
 worth +12 we are not collecting; a loss here says nothing about the 13 reachable
 teams. **The panel reports mechanism columns only.**
+
+## THE gsxWins PANEL READ OUT — AND THE ACCIDENT IS THE FINDING
+| arm | score | 1st FWD sent | fwd/g | home/g | barriers/g | kills | med kill rnd |
+|---|---|---|---|---|---|---|---|
+| v116 incumbent | 4-1 | **r28** (4/5 g) | 0.8 | 1.4 | 2.0 | 4 | **108** |
+| **v116 REPLICATE** | **3-2** | **r54** (4/5 g) | 1.8 | 1.2 | 3.8 | 3 | **223** |
+| v117 launch0ammo | 2-3 | r101 (3/5) | 0.8 | 2.4 | 3.4 | 2 | 130 |
+| v118 late160ammo | 4-1 | r105 (5/5) | 1.2 | 1.4 | 1.6 | 4 | 129 |
+| v119 SALT | 5-0 | r79 (4/5) | 0.8 | 1.2 | **5.6** | 5 | 169 |
+**ZERO rated leakage** (no pairing in 18:59:20-19:00:15Z); holder v116/1687 asserted
+after every cell.
+
+## ⛔⛔ THE TWO v116 CELLS ARE THE SAME BOT AND THEY DISAGREE ON EVERYTHING
+Identical tree, identical opponent, identical five maps: **median kill round 108
+vs 223 — a 115-ROUND SPREAD. First forward sentinel r28 vs r54. Barriers 2.0 vs
+3.8.** Every between-arm difference in the table sits INSIDE that same-bot
+spread.
+⇒ **MY DESIGN CLAIM WAS HALF WRONG AND I AM CORRECTING IT RATHER THAN THE
+DATA.** I pre-registered *"n=5 is a smoke test AND a paired mechanism read."*
+**The second half is false: n=5 cannot resolve the mechanism columns either.**
+The panel is a smoke test, full stop. **The only reason I know that is the
+DUPLICATE v116 CELL — which I fired BY ACCIDENT while diagnosing a failure.**
+⭐ **An unplanned same-bot control was worth more than the three cells I planned.**
+⇒ **STANDING: every future anchor panel carries a DUPLICATE OF THE BASELINE ARM
+as a cell.** Without it, five arms with no same-bot control invite exactly the
+ordering I pre-committed not to write — and I would have had no number to refuse
+it with.
+
+## WHAT SURVIVES — one thing, and it is the dose
+**v119's barrier rate: 5.6/game here against a 1.6-3.8 same-bot baseline spread,
+and 6.68/game over the 25-game leg against a 3.48-3.72 three-arm baseline.**
+**Two independent fixtures, consistent.** The salt MECHANISM is confirmed twice.
+⛔ **AND THE 5-0 CHANGES NOTHING.** SALT's kill round here is **169**, sitting
+between the two v116 cells (108 and 223) — the panel neither confirms nor refutes
+the regression. **The verdict stands on the 25-game leg (13 kills, median 179 vs
+pooled baseline 129, Mann-Whitney p=0.008): NOT SHIPPED.** A 5-0 on five games
+against an out-of-band opponent is precisely the flattering read the pre-declared
+resolution exists to refuse, and today's error ledger says my mistakes run
+flattering four times out of five.
+
+## PROCESS DELTA — MY INSTRUMENT HID A FAILURE, IN THE SESSION I SPENT ENFORCING THAT RULE
+The first attempt at these three cells fired all three inside ~10 s and **piped
+the CLI output to `grep -oE "Match ID: ..."`.** All three were rejected; **grep
+printed nothing; I read silence as ambiguity and reported "fired".** Magnus saw
+the empty queue before I did. Then **my diagnostic challenge SUCCEEDED with v116
+active — burning a slot and producing the duplicate.**
+⇒ **A success-string filter converts a failure into silence.** Fixed form, used
+for all three retries: capture FULL output, `case "$OUT" in *"Match ID"*)`,
+assert the id, re-read the holder between every step, one cell at a time.
+⚠ **And the cause was the BURST, not the rate limit** — the identical command
+succeeded 60 s later. **I never proved the rate limiter was involved and will not
+claim it.**
