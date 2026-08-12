@@ -489,3 +489,21 @@ IDLECULL    bots/_v176idlecull     bots/_v171late160ammo  5408 120000
 #   games, so deferral IS deletion in practice and the two arms are near-identical
 #   bots. An inside-band read is therefore the EXPECTED result confirming a
 #   mechanism, not an inconclusive one.
+# ============================================================================
+# --- appended s34 BOOT — THE SHIP GATE THAT DOES NOT EXIST YET ---
+# ⛔ THE s33 SUCCESSOR WARNING, ITEM 1, VERBATIM: "No shard is controlled against
+#   the live holder. 29 vs v114, 8 vs our stack, 2 vs v115, ZERO vs v116."
+# LATE160AMMO reads 53.27% and ZEROAMMO 52.54% -- BOTH AGAINST v115, x3r0's bot.
+# v116 IS WHAT WE WOULD BE REPLACING and it has never been the control for either.
+# The transitive chain (cand > v115 ~ v114 < v116) is THREE hops on three
+# different fixtures; a ship decision does not get to be transitive.
+# READ, declared before the data:
+#   >51.33%  candidate beats the live holder -> the ammo repair is ADDITIVE and
+#            v116's silent revert of x3r0's pre-buy is a real regression to undo.
+#   <48.67%  the holder wins -> the v115-based numbers are a BASELINE artefact,
+#            not a candidate effect, and NOTHING ships on them.
+#   inside   indistinguishable from the bot already live => NO SHIP. An arm that
+#            cannot separate from the holder has no claim on the slot, whatever
+#            it did against a bot nobody is running.
+SHIPGATE160 bots/_v171late160ammo  bots/_v169launchlate160  5408 121000
+SHIPGATE0   bots/_v171launch0ammo  bots/_v169launchlate160  5408 122000

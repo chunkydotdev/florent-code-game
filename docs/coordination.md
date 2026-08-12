@@ -37566,3 +37566,24 @@ DIRECTION did — pooling favoured the more interesting conclusion.**
 **RELAYED BEFORE IDLING:** one subagent ran today (the `_det*`/`_abl*` disk sweep);
 its findings are committed in `docs/research/EFFECTIVE-N-…` and `QUEUE #18`.
 **Nothing of mine is still running.**
+
+# ============================================================================
+# 2026-08-12T17:2xZ (`date -u`) — **BUILDER s34 BOOT.** IN-FLIGHT registry.
+# ============================================================================
+* **HOLDER READ LIVE, NOT CACHED:** `fcode status` -> `Active bot: v116 (Loki v5)`,
+  **rating 1668, rank #25 of 121, 835 matches, last 10 = 5W 5L.** v116 =
+  `bots/_v169launchlate160`. Four watchers + keeper (pid 89444) all alive.
+* **Boot checks:** `test_instruments` PASS · `corpus_sanity` OK ·
+  **`audit_trigger` FIRES 2/5** (ship cadence 0.20/hr; cross-lane analysis 37.00).
+* **IN-FLIGHT — one subagent (opus):** instrument audit, spawned per the boot
+  sequence's audit clause. Scoped to ONE question — can the instruments support
+  the ship decision on the table — and explicitly forbidden from proposing queue
+  items or writing to the repo. Will relay before idling.
+* **QUEUED — two shards, `SHIPGATE160` / `SHIPGATE0`.** This closes the s33
+  successor warning's item 1 verbatim: *"No shard is controlled against the live
+  holder — 29 vs v114, 8 vs our stack, 2 vs v115, ZERO vs v116."* Both ship
+  candidates read against **x3r0's v115**, which is not the bot we would be
+  replacing. **The transitive chain is three hops on three fixtures and a ship
+  decision does not get to be transitive.** Read declared in the worklist BEFORE
+  the shards start: >51.33% ships, <48.67% kills the v115-based numbers as a
+  baseline artefact, inside-band = NO SHIP.
