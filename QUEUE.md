@@ -283,6 +283,20 @@ sit at 0. **Not worth a slot.**
 
 **3. MECHANISM METRIC.** Share of our raid-station rounds spent on a live enemy sentinel's line; and forward-builder deaths attributable to sentinels vs gunners. `get_attackable_tiles_from` is the exact predicate and is already called at `raid.py:522` for gunners — **the expensive half is built and pointed at the wrong turret.**
 
+**⛔ 4a. AMENDED — MY `3.04 sentinels/game` WAS POOLED, side lane was right to flag it, AND SPLITTING IT REVERSES THEIR CONCLUSION.** Split on `d2_enemy < d2_own` over the same 100 opponent-matched games:
+
+| arm | OUR fwd sent/g | OUR home sent/g | fwd share | **THEIR fwd sent/g** |
+|---|---|---|---|---|
+| v116 | **1.68** | 1.36 | 55% | **0.84** |
+| v117 | 2.20 | 2.64 | 45% | 0.60 |
+| v118 | 2.08 | 1.92 | 52% | 0.80 |
+| v119 | 1.84 | 1.88 | 49% | 0.48 |
+
+**The load-bearing figure is 1.68 forward/game, not 3.04** — the flag was correct and the pooled number should not be quoted again.
+⭐ **BUT SIDE LANE'S "SCREENABLE BUT UNDERSTATED" IS BACKWARDS FOR THIS PANEL.** The quantity that matters is **how many ENEMY forward sentinel rays our raiders must cross.** Against these five live opponents that is **0.48-0.84/game**. In a LOCAL battery the opponent is `_v169launchlate160`, which builds **1.68**. ⇒ **local presents our raiders with 2-3x MORE enemy forward sentinels than this live panel does. The local fixture OVERSTATES this plank's opportunity — the opposite direction from SALT.**
+⇒ **Read it accordingly: a local NULL is damning (the term did nothing even at 2-3x the exposure); a local POSITIVE is inflated and must be re-read live before it ships.**
+⚠ **AND THE TWO POPULATIONS ARE NOT THE SAME FIELD, which is why this is not a refutation of `#23`:** `#23`'s 35.9%-vs-57-80% forward share is measured over 5,618 of our games against the six TOP teams; this is 100 games against **five specific opponents**, and LingLing40 — the team whose r6 corridor sentinel started this row — **is not in it.** Both numbers are true about their own population. **Neither licenses a sentence about "the field" unqualified.**
+
 **4. FIXTURE.** Local battery against `_v169launchlate160` resolves it: unlike SALT, this plank pays off a behaviour our own control bot HAS (it builds sentinels, 3.04/game) — so it passes the s34 self-play-blindness test in `docs/builder-arm-retro.md`. **Screenable locally.**
 
 **5. WHY NOW.** Found in `95e14c55`, a **rated 0-5 loss by the LIVE HOLDER v116 to LingLing40 v29** that had **zero rows in `corpus/events.tsv`** — invisible to all three lanes until side lane decoded it off `replay_archive/` after Magnus asked about a replay. Their first turret is up **r3-r22 in every one of the five games**. On moonrise their sentinel at `(9,3)` on **r6** sat on the only corridor crossing and our scorer could not see it.
