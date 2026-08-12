@@ -216,3 +216,18 @@ FERRY0      bots/_v167ferry0       bots/_v146gunaxis     5408 104000
 BOTH0       bots/_v168both0        bots/_v146gunaxis     5408 105000
 LAUNCH2     bots/_v160launch2     bots/_v146gunaxis     5408 102000
 LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
+# --- LOKI-42 LAUNCHER DEFERRAL — the likely SHIPPABLE form of LAUNCH0 ---
+# Built BEFORE the decomposition lands because it is the one arm that helps
+# under the good outcome and is INERT under the bad one.
+# The cost we pay is not the 20 Ti: each launcher adds +10% to the ONE GLOBAL
+# scale factor, inflating EVERY subsequent build of EVERY type for the rest of
+# the match. Bought at r10 that surcharge is levied on the WHOLE game; bought
+# at r150 only on the tail. We build ~1.17/game against five of the six teams
+# above us at essentially ZERO.
+# ⇒ If LAUNCH0's gain is the PREMIUM, deferral captures most of it while KEEPING
+# the exile mechanism EXILE0 says is worth ~+3pp. If LAUNCH0's gain is the FERRY,
+# this reads null — a clean answer, not a wasted arm.
+# ⚠ Not free: deferring also delays the ferry, and early exile is our cheapest
+# home defence. Dose SWEPT because I do not know where that trade turns over.
+LAUNCHLATE80  bots/_v169launchlate80  bots/_v146gunaxis   5408 106000
+LAUNCHLATE160 bots/_v169launchlate160 bots/_v146gunaxis   5408 107000
