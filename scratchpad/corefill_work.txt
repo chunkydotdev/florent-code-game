@@ -461,3 +461,31 @@ NOAPPROACH  bots/_v175noapproach    bots/_v171late160ammo  5408 119000
 #   removals (turret walking, routine) against TWO undamaged builder_bot
 #   removals. Untested by anyone -- novel lever, or an idea already rejected.
 IDLECULL    bots/_v176idlecull     bots/_v171late160ammo  5408 120000
+# ⛔⛔ DELVSDEF CARRIES TWO INDEPENDENT BIASES AND THEY NOW POINT THE SAME WAY.
+# Recorded BEFORE the shard reads out (it is at 83% as this is written).
+# BIAS 1 — FIXTURE: _v171launch0ammo has NO LAUNCHER, so no ferry, so it attacks
+#   LATER than our already-late chassis. 74.6% of our ferry INSERTs land before
+#   r160 (n=3,913 over 1,915 games, first at median r27 -- reproduced by me to
+#   the digit). Deferral's ENTIRE exposure is "undefended until r160 against an
+#   opponent that attacks EARLY". THE FIXTURE CANNOT EXERCISE IT.
+# BIAS 2 — STRUCTURE, and it is new: **v116 IS THE DEFERRAL ARM.** So this is not
+#   challenger-vs-challenger any more, it is CHALLENGER vs THE SHIPPED BOT.
+#   DELETE-wins implies a SHIP; DEFER-wins implies INACTION.
+# ⇒ THE COMPOUNDING IS THE POINT: a DEFER win would be simultaneously the
+#   WEAKER-EVIDENCED branch AND the STATUS-QUO-PRESERVING one -- the combination
+#   that attracts the least scrutiny and deserves the most. The two biases were
+#   independent while both arms were challengers. They are not now.
+# THE READ, asymmetric, declared before the data:
+#   >51.33% DELETE WINS -> STRONG. Won DESPITE a fixture tilted toward its
+#           opponent, and it licenses replacing the holder.
+#   <48.67% DEFER WINS  -> WEAK TWICE OVER. Won on the one fixture that cannot
+#           exercise its failure mode, AND it is the incumbent defending. NOT
+#           evidence the undefended opening survives early aggression -- the
+#           live Bisons leg is the separate evidence there (48.0% share, 40.0%
+#           early deaths vs a 44.8% baseline).
+#   inside band -> indistinguishable ON A FIXTURE FAVOURABLE TO DEFER, against
+#           an arm that is already live. Weaker than plain indistinguishable.
+# ⭐ AND THE REPLAYS PREDICT INSIDE-BAND: v116 built a launcher in 2 of 50 live
+#   games, so deferral IS deletion in practice and the two arms are near-identical
+#   bots. An inside-band read is therefore the EXPECTED result confirming a
+#   mechanism, not an inconclusive one.
