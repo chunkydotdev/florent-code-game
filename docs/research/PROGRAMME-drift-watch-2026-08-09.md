@@ -1663,3 +1663,48 @@ cannot masquerade as a difference in rate. **Any per-game rate whose denominator
 can be shortened by the outcome needs an exposure denominator instead** — that is
 the risk-set correction, arrived at independently in a second instrument on the
 same day.
+
+---
+
+## D25 — **A PROXY IS NOT THE CLAIM. FIVE INSTANCES IN ONE SESSION, ALL FROM THE LANE THAT AUDITS**
+
+**Promoted s33, 2026-08-12, on an evidence base that is entirely this lane's own
+errors. Cheaper than D24 and it catches a superset of D24(c).**
+
+**THE RULE: when the claim is *"does X hold"*, RUN X AND READ ITS OUTPUT.** Never
+substitute a signal that merely correlates with X — a grep hit, a cell count, an
+exit code, the presence of a harness.
+
+| # | the claim I was making | the PROXY I measured | what it cost |
+|---|---|---|---|
+| 1 | *is `queue_check` tested?* | grep for `^\s*check(` | reported **0 cells**; it asserts **23** |
+| 2 | *is `elo_logger` tested?* | grep for an **in-file** `--selftest` | reported **0**; four cross-implementation cells live in `tests/`. **Published a fleet table whose headline was false and which REALLOCATED ANOTHER LANE'S WORK** |
+| 3 | *are `PROGRAMME.md`'s fields unique?* | an awk pipeline over the field names | mangled them into `DUPLICATE x20` — **garbage, not a verdict** |
+| 4 | *which fields are declared?* | `grep -E '^    [A-Z_]+:'` | **silently dropped `R1000_IS_DEFEAT`** — the character class excluded digits |
+| 5 | *does `target_value.py` run?* | **the exit code** | reported no-args as `** CRASHES **`; it prints a **clean usage message with zero tracebacks** and exits non-zero by design |
+
+**⛔ AND #5 IS A RULE THIS REPO ALREADY HAS, APPLIED TO THE WRONG TARGET.**
+`CLAUDE.md` states **"EXIT CODE IS NOT A HEALTH SIGNAL ON THIS PLATFORM"** and
+prescribes gating on the **presence of the load-bearing field**. That was written
+about `fcode`; **I applied an exit code as a health signal to OUR OWN TOOL, hours
+after quoting the rule at another lane.** A rule scoped to one surface does not
+generalise itself.
+
+**ALL FIVE WERE SELF-CAUGHT, FOUR OF THEM WITHIN MINUTES — AND THAT IS NOT A
+DEFENCE.** #2 stood long enough to move a lane's plan. **The mechanism that caught
+each one was the same: going to USE the number for something.** Not diligence,
+not review — the second instrument was always *"now do the thing the number was
+for"*.
+
+### THE WATCH FORM
+Before publishing any audit figure, name the **claim** and the **measurement** in
+one sentence and ask whether they are the same thing. *"Is it tested"* measured by
+*"does the file contain the string `selftest`"* is two different sentences.
+**Three cheap habits close most of it:** run the thing rather than grepping for
+it · **read the OUTPUT, not the return code** · and when a count is the claim,
+derive it from the same list the code uses rather than re-deriving it externally.
+**RELATED BUT DISTINCT, and it needs its own check:** the `elo_logger`
+double-count hazard I invented came from reasoning about the **reader's**
+arithmetic and never opening the **writer** — that is D24's *open the primary*,
+not a proxy failure. **Proxy failures mis-MEASURE; artefact-inference
+mis-LOCATES.**
