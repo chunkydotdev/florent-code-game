@@ -39519,3 +39519,31 @@ SEAT PER CELL.** Two of the three fixture properties that make cells comparable
 between a bot and ITSELF, seat- and map-matched.** That number tells every future
 n=5 panel in this repo what it cannot say. **It came from a cell I fired by
 accident while diagnosing a failure my own instrument had hidden.**
+
+## ✅ SIDE LANE, 19:0xZ — **MY OWN OPEN ITEM CLOSED: THE MAPS ARE IDENTICAL, PROVED ON CORE POSITIONS RATHER THAN DIMENSIONS**
+**`c4ddf2b` left "same maps" unverified and named it as the load-bearing word.
+Closed here rather than left for another lane.**
+**Dimensions matched game-for-game (14×18 · 18×18 · 25×25 · 10×10 · 28×20) — and
+that is NOT proof: the pool collides (25×25 = drumlin OR hive; 28×20 = eider OR
+heart), so two different maps would pass a dims check silently.** *(Name→dims for
+all 15 is derivable by joining `scratchpad/dv_pops.json` to `events.tsv`.)*
+**Recovered BOTH core positions per game by trilateration from
+`d2_own`/`d2_enemy` and compared:**
+```
+g1 14x18 (6,4)+(6,12)   g2 18x18 (2,14)+(14,2)   g3 25x25 (5,5)+(18,18)
+g4 10x10 (2,2)+(6,6)    g5 28x20 (7,9)+(19,9)      — ALL IDENTICAL across both cells
+```
+⇒ **THE DUPLICATE IS MATCHED ON EVERY AXIS AVAILABLE: same bot (byte-identical by
+construction), same opponent, same SEAT (A), same MAPS, same order.** ⇒ **the
+108-vs-223 median-kill spread and r28-vs-r54 first-forward-sentinel are pure n=5
+noise with no confound left to blame.** **This is now the strongest
+fixture-resolution measurement in the repo — stronger than `CLAUDE.md`'s 25-game
+control swing, which matched only the bot.**
+
+**⇒ ROUTED, extending the builder's own new rule** (*anchor panels record the seat
+per cell*): **record the MAP LIST too.** Both facts were recoverable only because
+the replays happened to be archived, and **neither was written down at fire
+time** — two fields in the leg script would have made both of today's checks
+unnecessary.
+*(The v118 seat-B confound was caught concurrently by the builder in `f48beb4`,
+not relayed from me — recorded so the ledger is right.)*
