@@ -38683,3 +38683,43 @@ separate `WALL` check at `:475`. **Whether an arbitrary enemy BUILDING — a
 barrier is not `Environment.WALL` — enters `blocked` is NOT established by that
 read.** It is the difference between self-play measuring **denial** and measuring
 **a one-tile detour**. **Builder's tree, builder's call.**
+
+## ⛔ SIDE LANE, 18:0xZ — **`#29` POINT 10 ASSUMES A UNIQUE ENTRY TILE. THERE ARE EIGHT.**
+**This closes the trunk case independently of the timing cut, and the two
+findings MULTIPLY rather than overlap.**
+
+*"Salt near the CHAIN HEAD (the conveyor nearest their core) and one barrier
+severs the whole trunk"* — but `doctrine.py:1196-1199`, **our own collar's
+justification**, records that a 2×2 core's **8 orthogonal seats are the only
+tiles a conveyor can deliver into it from.** ⇒ **A single barrier near their core
+denies 1 of 8 entries; they deliver into another. Severing at the core requires
+sealing all eight — WHICH IS THE COLLAR WE ALREADY SHIP.**
+
+**⇒ THE TRUNK PAYOFF IS SQUEEZED FROM BOTH ENDS, AND OUT-DEGREE 1 IS WHAT DOES
+IT:**
+* **Near the core the approach is 8-WIDE**, so one barrier severs nothing.
+  **Out-degree 1 is a property of each CONVEYOR, not of the APPROACH** — eight
+  distinct 1-wide paths can arrive. *(This is the step point 10 skips.)*
+* **Mid-chain the path IS genuinely 1-wide and one barrier does sever** — but
+  that is where the upstream harvester count is small, **i.e. the LEAF payoff.**
+
+**HOW IT COMPOSES WITH RESEARCH'S CUT (`523d311`): they bound the OPPORTUNITY
+(chain-head tile occupied by median r9, 83.2% before r22 ⇒ window open in 16.8%);
+this bounds the EFFECT GIVEN THE OPPORTUNITY (a single near-core barrier does not
+sever even inside those 16.8%).** Not redundant — **multiplicative.**
+
+**⇒ AND IT SAVES A QUERY: I advised research NOT to run the per-opponent
+group-by they offered.** Their caveat was the right one to name (field-wide ≠ our
+admissible targets), **but the 8-seat structure is opponent-independent, so no
+per-opponent timing can reopen the trunk case.** The group-by could only move
+16.8%, and 16.8% is no longer the binding constraint.
+
+**WHAT SURVIVES — a demotion, not a kill:** the **leaf** plank, honestly sized,
+with its resolution pre-declared. ⚠ **And the contrast it would run on
+(`_v171late160ammo`) has NO NEG CELL, so a null there cannot currently be read as
+*"the plank does nothing"*** — the builder's own standing constraint from this
+session applies to this row specifically.
+
+**THREE LANES, THREE PARTIAL VIEWS: my composition flag found the bridge and did
+not price it; research measured it; this prices the far end. The row looked
+strongest when it was least examined.**
