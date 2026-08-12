@@ -787,3 +787,31 @@ SENTSAFE    bots/_v188sentsafe_f   bots/_v169launchlate160  5408 142000
 # ⚠ ROTATION TERM MEASURED AND REJECTED: 3.4% -> 4.4% redirects for 8x the
 # coverage calls, and it RAISED forced-builds 12.5% -> 17.4%. Left in, flagged off.
 SENTSAFE2   bots/_v188sentsafe_g   bots/_v169launchlate160  5408 143000
+# ⛔ GUNAX0 — AMENDMENT TO THE READ, ADDED ~21:2xZ BEFORE READ-OUT (side lane).
+# ⚠ DISCLOSURE FIRST, because this is NOT a blind amendment: I have seen the
+# partial (46.66%, n=703, band +-3.70) on the status board. **The branch this
+# amendment governs is the NULL branch, and the partial does not currently point
+# there** — it trends OUTSIDE-BELOW, i.e. toward "the flag is load-bearing".
+# Recording that so the amendment cannot later be read as data-driven.
+#
+# THE PROBLEM: a null on GUNAX0 has TWO readings with OPPOSITE actions.
+#   "NO EFFECT"     -> the avoidance mechanism is worthless, and #30's sentinel
+#                      term is the SAME mechanism pointed at another turret, so
+#                      #30 dies with it.
+#   "NO POPULATION" -> the mechanism is untested because its TARGET MOVED, and
+#                      #30 becomes MORE urgent, not less.
+# ⭐ AND THREE INDEPENDENT SURFACES NOW SAY THE TARGET HAS MOVED:
+#   (a) research's forward-death cut on shipped trees: 68.4% sentinel-covered vs
+#       64.8% gunner-covered, against an all-time 92% gunner;
+#   (b) my enemy-turret-mix shift: their sentinel share 21.4% -> 48.8%;
+#   (c) ⭐ the SENTSAFE build, a MECHANISM channel rather than a death
+#       attribution: **all 14 site redirects were driven by SENTINEL coverage and
+#       ZERO by gunner coverage.**
+# ⇒ REQUIRED COLUMN BEFORE ANY GUNAX0 VERDICT: **gunner-covered forward deaths
+# per game IN THE CONTROL ARM.** Baseline 0.60/game, movement bar >=0.15/game.
+#   * control-arm gunner-covered rate NEAR ZERO -> **NO POPULATION.** The leg
+#     cannot resolve the flag at ANY n. It says nothing about avoidance and must
+#     NOT be quoted against #30.
+#   * control-arm rate at ~0.60 and the arms still tie -> **NO EFFECT**, and that
+#     verdict does reach #30.
+# WITHOUT THIS LINE A NULL DEFAULTS TO THE FIRST READING AND TAKES #30 WITH IT.
