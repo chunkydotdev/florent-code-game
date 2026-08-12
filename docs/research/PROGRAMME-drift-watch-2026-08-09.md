@@ -1755,3 +1755,32 @@ subset · a fixed cadence) or because of its RESULT?**
 must be fixed BEFORE the replication is ordered, never after both are read** —
 otherwise the choice of rule is itself selected on the outcome, one level up.
 **Cheapest fix: declare the replication trigger when the first shard is queued.**
+
+### ⛔ D26 AMENDED SAME DAY — attribution corrected, the pattern is TWO instances, and it reaches the SHIPPED INCUMBENT
+
+**1. THE CREDIT WAS WRONG AND IT RUNS THE OTHER WAY.** I wrote this row crediting
+the research arm. **The winner's-curse counter-argument is the BUILDER's, produced
+with its own simulation.** **BOTH review lanes — research and this one —
+independently made the SAME pooling error, and the lane whose plank was under
+review talked both of us out of it.** That is the direction credit rarely runs
+and the row must record it accurately: **promoted from flags of both review
+lanes that were wrong, corrected by the builder.**
+
+**2. THE PATTERN IS TWO INSTANCES, NOT ONE — which strengthens the row.** My
+*"only replication in the worklist"* was true as scoped and understated
+unscoped. **`GUNAXREP` also exists** (earlier worklist, `scratchpad/overnight/`,
+**verified by me: 52.31%, n=5,408**), replicating **GUNAXIS at 51.94%** — again
+a high reader. ⇒ **Across both worklists, replications have gone to high readers
+TWICE and to nothing else.** A schedule-level selection pattern, not a one-off.
+
+**3. ⭐ IT APPLIES RETROACTIVELY TO THE LIVE INCUMBENT, AND THE ANSWER DOES NOT
+CHANGE.** **v114 shipped on GUNAXIS 51.94% replicated at 52.31%.** Under rule 1
+of this row, if `GUNAXREP` was ordered *because* GUNAXIS read high, then
+**51.94% is itself a selected estimate and 52.31% is the unbiased read.**
+**52.31% ± 1.33 = [50.98, 53.64] — it clears.** ⇒ **The incumbent's evidence is
+UNHARMED; it should simply be stated on the REPLICATION ALONE rather than on the
+pair.** *(Note the replication read HIGHER than the original — a winner's-curse
+estimate usually regresses down, so this is consistent with a true rate near 52%
+and the first run being an unremarkable draw, not with an inflated discovery.)*
+**Nothing here reopens the ship**; the rule is applied to it because a successor
+will ask whether it was, and the answer should be on the record before they do.
