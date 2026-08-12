@@ -559,3 +559,37 @@ direction. **Check for the NEG cell on the SHARD'S OWN CONTROL TREE before
 writing any no-ship sentence** — `tools/overnight_read.py` now prints it per
 contrast and names the cell it used. Found by the side lane s34; the builder had
 identified the hazard and mis-filed the fix.
+
+## ⭐⭐ OPEN ITEM — added s34 (Magnus's question, and it generalises past his plank)
+**SELF-PLAY IS STRUCTURALLY BLIND TO ANY PLANK THAT EXPLOITS AN OPPONENT
+BEHAVIOUR WE DO NOT SHARE — AND WE NOW HAVE THE NUMBER THAT PROVES IT.**
+Magnus asked whether SALT-THE-CORPSE (`QUEUE #29`) could be tested against
+ourselves. **No, and the reason is measured, not argued:** a denial barrier is
+worth exactly what the opponent's return to that tile is worth, and
+**we repair 6.8% of our own cut conveyors against a field 40.5% and our actual
+opponents 50.3%** (s34, n=885 eligible deaths, field control n=27,871).
+⇒ **Salt tested in self-play denies a tile to a bot that does not want it back.
+It would read NULL, and the null would be an artefact of the fixture.**
+
+**THIS IS THE THIRD INSTANCE OF ONE SHAPE AND THEY ALL RUN THE SAME DIRECTION —
+SELF-PLAY UNDERSTATES PLANKS THAT EXPLOIT THE FIELD:**
+1. **Crash-induction:** our tree is GUARDED (`main.py:120` blanket try/except,
+   added because a launcher throw broke our own `is_tile_empty`); most teams are
+   not. `crash_census`: 2,451 unexplained unit removals BY opponents vs **0 by
+   us**. Self-play measures the crash channel at zero BY CONSTRUCTION.
+2. **Denial/salt:** we do not repair; the field does. As above.
+3. **Forward-turret survival:** five probes share a `best_core or best_any`
+   short-circuit — **zero of our forward turrets died in 480 arena games against
+   46.9% on the ladder** (`CLAUDE.md`).
+⇒ **RULE: before a local battery, ask "does this plank pay off a behaviour the
+CONTROL BOT exhibits?" If the control is us and the answer is no, the battery
+cannot resolve the plank and its null is uninformative.** This is narrower and
+more usable than "prototypes go at live teams" — it says WHICH planks self-play
+can and cannot screen.
+
+**⭐ AND THE CONSTRUCTIVE HALF, which is cheap: BUILD THE FIXTURE TO A MEASURED
+FIELD BEHAVIOUR.** We know the field repairs **40.5% at a median latency of 4
+rounds**. A probe bot that repairs at that rate is a purpose-built opponent
+calibrated to an OBSERVED number — strictly better than self-play (blind) or a
+guess (unfalsifiable). ⚠ **And it must be built to the FIELD's number, never to
+ours, or it reintroduces the same blindness wearing a probe's costume.**
