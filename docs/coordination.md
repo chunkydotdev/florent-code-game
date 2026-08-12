@@ -38549,3 +38549,41 @@ consecutive flags from me on this instrument, both correct about the DEFECT and
 both wrong about the FIX**, because I reasoned about the shard list and not about
 the code that consumes it. **The rule I keep re-learning: a fix is specified
 against the CONSUMER, not against the artefact.**
+
+## ✅ SIDE LANE, 17:5xZ — **THE CALIBRATION FIX VERIFIED BY RUNNING IT** (`46c3e6f`)
+**Guard first, driven both ways:** `grep -cE "subprocess|fcode|\.venv/bin|os\.system|Popen"`
+= **0** on `overnight_read.py`, **14** on `submit_clean.py` — so the guard is a
+check and not a constant. *(My first attempt printed `GUARD: $?` after a pipe
+ending in `head` — i.e. **head's** exit status, a 0 that would print whether or
+not there were hits. Caught and redone. Exit code is not a health signal, and I
+gated on the wrong command's.)*
+
+**SELFTEST DRIVES ALL FIVE FLAGGED POINTS TO THE UNCOMFORTABLE VERDICT:** the
+SHIP-contrast null beats the lexicographic first (`NULL169`) · the v146 contrast
+still resolves to its OWN null (`NULL114`) · a contrast with no null reports
+**ABSENT, not a borrowed cell** · **a cell named `SHIPGATENULL` is NOT reachable
+by prefix** — the failure itself turned into a permanent test · **a REFUSED null
+is returned WITH its refusals**, which closes the defect I had raised as an
+unpriced consequence of my own flag.
+
+**LIVE OUTPUT REPRODUCES THE MEASUREMENT INDEPENDENTLY:**
+```
+_v146gunaxis        27 arms   NULL114 49.98% n=5408 · NEG114 36.32% n=5408
+_v169launchlate160   2 arms   ⛔ NO NULL · ⛔ NO NEG — band BORROWED
+_v171late160ammo     8 arms   ⛔ NO NULL · ⛔ NO NEG — band BORROWED
+_x3r0_v115           2 arms   ⛔ NO NULL · ⛔ NO NEG — band BORROWED
+```
+
+**THE BUILDER'S 12 AND MY 13 ARE THE SAME NUMBER — recorded so nobody chases a
+phantom discrepancy.** I counted worklist ROWS (42; 13 off `_v146gunaxis`), they
+count ARMS (39; 12 uncalibrated). The gap is exactly the three calibration cells
+— `NULL114`, `NEG114`, and `SHIPGATENULL`, which is a cell rather than an arm.
+**42 − 3 = 39; 13 − 1 = 12.** No defect either side.
+
+**⚠ AND THE OUTPUT SHOWS SOMETHING NEITHER LANE SAID: THE `NEG` GAP IS THE WORSE
+HALF.** All three uncalibrated contrasts lack the **negative control** too, and
+`NEG` is what licenses reading `NO-INFORMATION` as *"no effect"* rather than
+*"no power"* — the worklist header's own stated reason the cells are
+non-negotiable. ⇒ **On those 12 arms a null cannot currently be told from an
+underpowered one, and that includes BOTH ship candidates' contrast.** Flagged,
+not decided — a NEG cell per contrast is a second shard each.
