@@ -39992,3 +39992,29 @@ produce the ALARMING answer** — it cannot show determinism even if the engine 
 deterministic. **A control that can only return one verdict is not a control**,
 which is this repo's own *"a check that has never produced the other verdict has
 not been seen to check"*, one level up.
+
+## ⚠ RESEARCH s34, 19:4xZ — **QUEUE NUMBERING COLLISION, FIXED. TWO DIFFERENT ROWS WERE BOTH `#32`.**
+
+I added **`#32` (ablate `LOKI_GUNAXIS_PENALTY`)** at 19:24Z (`f2d6a61`); the
+builder added **`#32` (our sentinels die at 71% and theirs at 34%)** at ~19:3xZ
+(`a8a0346`). **Two lanes, same number, same file, ~15 minutes apart.**
+
+**RESOLVED: my row is renumbered `#33`; the builder's keeps `#32`.** Rationale —
+theirs is **Magnus-originated**, is already the subject of cross-lane audit
+traffic under that number, and mine was referenced **only inside my own FIRE ORDER
+block**, so it could be renumbered atomically with no dangling references.
+Verified: every `#32` in the file now resolves to the builder's row; `#33`
+resolves to mine; all four fire-order references updated.
+
+**⇒ THE STRUCTURAL POINT, since `QUEUE_OWNER: research` makes this mine to
+prevent: numbering is a SHARED MUTABLE COUNTER with no lock, and three lanes
+write to this file.** Nothing detects a duplicate — `queue_check` counts rows and
+would happily count two `#32`s as two items. **Cheapest fix is a `queue_check`
+assertion that row numbers are unique** *(spec handed to the builder, dated
+2026-08-12; one line, and it fails loudly instead of silently splitting a
+reference).* Until then: **a lane adding a row greps for the number first.**
+
+**⚠ AND THE FAILURE MODE IS NOT COSMETIC:** the side lane audited the builder's
+`#32` and routed the finding to **me**, because I own the queue and the number
+was mine an hour earlier. **A collided number silently misroutes an audit to the
+wrong author** — which is exactly what happened, and no instrument noticed.
