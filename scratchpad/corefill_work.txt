@@ -396,3 +396,28 @@ BURST32     bots/_v172burst32      bots/_v171late160ammo  5408 115000
 # confined to r13-17.
 # THE MECHANISM IS SOUND AND THE WINDOW IS EMPTY. Third plank today killed by
 # arithmetic before spending games (LOKI-43 rent, the launcher-cap arms, this).
+# --- LOKI-44 RE-QUEUED (Magnus: "uncancel them, we can cancel them later") ---
+# Fresh shard names because corefill holds a CANCELLED shard cancelled and
+# launches once; removing the marker alone does not restart it (same as SURCH30).
+# ⛔ AND THE REASON I CANCELLED IT WAS WRONG TWICE, WHICH IS WHY IT IS BACK:
+#  (1) I first killed it on "the r13-20 window has nothing to hit", measured as
+#      ENEMY BUILDER DEATHS. Wrong outcome entirely: `raid.py:415 tiles =
+#      core_tiles(E)` -- the forward sentinel is aimed at the CORE, and core
+#      damage produces no death event until the core falls. Magnus caught it.
+#  (2) I then killed it on "their core heals at ~16 HP/round against our
+#      sentinel's 6, so the damage is refunded in 2.2 rounds". Also wrong, and
+#      Magnus caught this one too: A BUILDER GETS ONE ACTION PER TURN AND ACTING
+#      IS MUTUALLY EXCLUSIVE WITH MOVING. So a builder that heals cannot build,
+#      attack, or move. Their 4 healers cost them 4 Ti AND 4 BUILDER-ACTIONS per
+#      round, and they are pinned in place. We spend ~5 Ti/round of ammo to deny
+#      that. THE ABSORPTION IS THE WEAPON, not the mechanism failing.
+# ⇒ If the sentinel's job is PINNING rather than killing, filling its magazine
+#   sooner means pinning sooner, and the value is NOT bounded by whether 36
+#   damage survives the heal line.
+# ⚠ STILL NOT THE RIGHT INSTRUMENT, AND SAYING SO BEFORE THE DATA: game share at
+#   n=5,408 resolves 1.33pp. The metric that would actually test this is ENEMY
+#   BUILDER-ACTIONS DENIED per round while our forward sentinel is firing, which
+#   the replays can answer and a win-rate shard cannot. Read a null here as
+#   "under 1.33pp", never as "the pin does not work".
+BURST64B    bots/_v172burst64      bots/_v171late160ammo  5408 116000
+BURST32B    bots/_v172burst32      bots/_v171late160ammo  5408 117000
