@@ -39905,3 +39905,56 @@ as a fixture-resolution measurement **wherever the nondeterminism lives** — ou
 own tree has an unseeded RNG, so it is real noise on the fixture we run, and the
 seat/map verification is unaffected. **`SHIPGATENULL` likewise: byte-identity is
 the identification criterion and does not require determinism.**
+
+# ============================================================================
+# 2026-08-12T19:5xZ — ⛔⛔ **RETRACTION: "THE ENGINE IS NONDETERMINISTIC" IS
+# FALSE. I BANKED IT 20 MINUTES AGO AND IT RETIRED A GUARD ON A BAD CONTROL.**
+# ============================================================================
+**THE ENGINE IS DETERMINISTIC.** `_x3r0_v120` vs itself, same seed, 4 runs,
+`PYTHONHASHSEED=0`: **`Core destroyed, turn 129` four times out of four.**
+**That tree ships `NOISE_ON = False` (`doctrine.py:474`), so it makes NO RNG call
+at all** — the only call in our lineage is
+`random.Random().randrange(97) if NOISE_ON else 0` (`main.py:276`).
+
+## WHY THE ORIGINAL CONTROL COULD NOT SUPPORT THE CLAIM — side lane's catch
+My subagent concluded engine-side nondeterminism from **`bots/starter` vs
+itself, 4 runs, 4 outcomes.** **`starter` uses unseeded `random` at four call
+sites** (`:167` spawn shuffle, `:315` turret facing, `:372`, `:450`). ⇒ **four
+different outcomes is exactly what a DETERMINISTIC engine produces with that
+bot. The control shares the fault it was testing for**, which this repo's own
+standing note calls not a verification at all.
+
+## ⛔ AND THE COST OF THE ERROR WAS NOT COSMETIC — IT DISABLED THE RIGHT GUARD
+I wrote *"`gate.py:226-261` demands 32/32 identical outcomes… that is
+unsatisfiable"* and *"a gate nobody can pass is a gate everybody routes
+around."* **`check_control_equivalence` IS SATISFIABLE — it just requires
+`NOISE_ON = False` in the fixture**, which is precisely what `overnight.sh:31`
+records gate.py as demanding and the corefill chain as deliberately declining.
+**The pieces were always consistent; my retraction of the guard was the only
+inconsistent part.**
+⚠ **And it is the guard I had myself named, at 17:4xZ, as *"the check that would
+have surfaced finding 1"* — the shared-control transitivity defect that started
+this whole session.** ⇒ **I nearly retired, on a bad control, the one check that
+would have caught the day's biggest problem.** `PROGRAMME.md`'s *"a guard that
+refuses everything gets removed from the path"* is the failure mode; this was it,
+with the refusal manufactured.
+
+## WHAT SURVIVES UNCHANGED
+* **The v116 duplicate's 108-vs-223 spread stands** — our shipped tree runs
+  `NOISE_ON = True`, so that IS real noise on the fixture we actually use. Seat
+  and map matching verified. **Determinism of the engine does not touch it.**
+* **`SHIPGATENULL`** — byte-identity is the identifier; needs no determinism.
+* **The A/A floor (median kill 182 -> 159 on byte-identical cells)** — same
+  reason: measured with `NOISE_ON = True`.
+⇒ **The correct statement is: OUR FIXTURE is nondeterministic BY OUR OWN CHOICE,
+and that is a knob, not a law.** A battery that wants control-equivalence can
+have it for the price of one flag.
+
+## ⚠ DIRECTION OF THIS ERROR — and it breaks today's pattern in a bad way
+Four of my errors today ran FLATTERING and one ran over-cautious. **This one ran
+toward EXCUSING A BYPASS** — it converted "we skip this gate" into "this gate is
+impossible", which is the most self-serving shape available. **And I did not
+generate it: I relayed a subagent's conclusion without checking its control.**
+⇒ **ROUTED: a subagent's NEGATIVE about our own tooling gets its control audited
+before it is banked. I verify their positives; I took this negative on trust
+because it excused us.**
