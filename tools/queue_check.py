@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """QUEUE FLOOR ALARM — is there anything the builder can start TODAY?
 
+⛔⛔ THIS FILE IS EXECUTED BY THE `SessionStart` HOOK IN `.claude/settings.json`,
+SO ITS BLAST RADIUS IS EVERY LANE'S BOOT, NOT YOUR TERMINAL. A crash here does
+not read as "tool broken" -- the hook branches on a non-zero exit and prints a
+DIRECTIVE naming the research lane, so a SyntaxError makes every booting session
+be told the queue is below floor while it is full. That happened for 22 seconds
+on 2026-08-12 (2eae63f -> 0f2632c). ⇒ RUN `--selftest` BEFORE EVERY PUSH of this
+file; nothing else in it warns you what it is wired into.
+
 Magnus, 2026-08-11 (s31): "please make sure there always is new items on the
 list for the builder to build and test, if the queue runs empty we go stale,
 that is not acceptable."
@@ -367,7 +375,13 @@ def main() -> int:
         print(f"*** QUEUE ALARM: {len(live)} < {args.floor}. THIS IS A RESEARCH FAILURE,")
         print("    NOT A BUILDER PAUSE. Stock it before doing anything else.")
         local_runs()
-        return 1
+        # ⛔ EXIT 2 = "the floor is BREACHED". EXIT 1 is reserved for "this tool
+        # FAILED and the floor is UNKNOWN". They were the same code until s33, so
+        # the boot hook could not tell a real shortfall from a crash and printed
+        # the same directive for both -- CLAUDE.md's own "exit code is not a health
+        # signal" rule, inside our own hook. Splitting them here is the precondition;
+        # the hook must still branch 2/1/0 for the fix to land. Side lane's catch.
+        return 2
     print("   OK")
     local_runs()
     return 0
