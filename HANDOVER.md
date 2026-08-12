@@ -60,6 +60,46 @@
 ##   control — a bot with FOUR unseeded RNG call sites. **A control that shares
 ##   the fault it tests for is not a control.** Retracted `6454a7b`.
 
+
+## ===== ⛔ OVERNIGHT STATE — 13 SHARDS, UNATTENDED, ~9h =====
+##   Runner is DETACHED (`ppid 1`), keeper alive. **Nothing will be watched.**
+##   No monitor interprets a result and no alarm exists for a battery that dies.
+##   If a shard crashes at 03:00 it stays crashed until someone looks.
+##   RUNNING: SHIPGATENULL(null) · NEG169(negative) · L4REPAIR · GUNAX0 · SCREEN
+##            · MINHARV1
+##   QUEUED:  SALT · SCREEN4 · GBNOSHIELD · LAUNCHRES20 · LAUNCHRES0 · V120
+##            · SENTSAFE
+##   CANCELLED tonight with rows KEPT and reasons in the worklist: SHIPGATE160,
+##   SHIPGATE0 (answered), NOAPPROACH, IDLECULL (decided negatives), RUSHON
+##   (confounded at ANY n), GUNBLOCK (kept the no-shield arm), COLLARVOL and
+##   SALTIDLE (measured non-dosing).
+
+## ===== ⛔ THREE RULES THAT BIND THE MORNING READ =====
+##   1. **NEG169 gates every inside-band verdict on this contrast.** If it has
+##      not cleared well BELOW 50, an inside-band result means "no power", NOT
+##      "no effect" — an underpowered fixture lands inside-band systematically
+##      and inside-band always favours the incumbent.
+##   2. **READ THE DOSE COLUMN BEFORE THE WIN RATE.** Three arms were cancelled
+##      tonight on dose alone. `LAUNCHRES*` carries an explicit rule: a dose that
+##      does not move launchers/game by >=1 is UNINTERPRETABLE.
+##   3. **NO LOCAL KILL-ROUND EFFECT BELOW ~±11 ROUNDS IS REAL.** The parent's
+##      own median across four identical 120-game runs: 135.0 / 137.0 / 141.5 /
+##      146.0.
+
+## ===== BUILDER-OWNED AND NOT DONE =====
+##   * **The keeper DECODE still defers whenever load > 6**, which
+##     `ALWAYS_BE_RUNNING` guarantees. NET is fixed (`lg_age_min` 125.4 -> 25.5);
+##     the EVENT surface is not, and a rated 0-5 by the live holder was invisible
+##     to `events.tsv` for over an hour. **Spec: decode OUR RATED GAMES first,
+##     regardless of load — ~15 rows a cycle.**
+##   * **`#8` seat-relative scan order: unbuilt for THREE sessions**, and the only
+##     row carrying an Elo estimate (~+7-14). It costs BUILD time, not cores.
+##     **Schedule it; do not re-rank it.**
+##   * `queue_check` uniqueness: research built it; side lane asks whether
+##     struck-through rows should be excluded from uniqueness. **I agree they
+##     should** — a guard that fires three times on day one on cases nobody
+##     intends to fix becomes noise.
+
 ## ===== (previous session's block follows) =====
 ## ===== ⛔ FIRST TWO COMMANDS, IN THIS ORDER =====
 ##   1. `cat corpus/BREAKIN_ALERT corpus/SHIP_ALERT 2>/dev/null` — **NOBODY READ
