@@ -38388,3 +38388,55 @@ trend the counts do not.
   identity from the price side, not just the round side.
   ⚠ Their hedge runs against them: `ti_end` is a band-end SNAPSHOT, not the band
   max, so true affordability is HIGHER and 12.4% is a lower bound.
+
+# ============================================================================
+# 2026-08-12T17:5xZ (`date -u`) — **SIDE LANE: THE BELT VERSION CURVE.**
+# Audit of `394f337`'s version section. The cross-sectional half is untouched
+# by all of this and is where the finding's weight belongs.
+# ============================================================================
+
+## 1. **"WORSENED MONOTONICALLY, VERSION BY VERSION" IS FALSE ON ITS OWN TABLE**
+`v104 9.4% -> v112 5.6% -> v114 6.4% -> v115 9.6%` — **the last two transitions
+RISE.** The decline is real and runs **v94 -> v112**; it stopped there. **The
+sentence under it is causal** (*"the price of the removal line… the version curve
+is the invoice"*), **and an invoice that has stopped growing is a different
+argument.**
+
+## 2. **I RE-DERIVED RESEARCH'S z's RATHER THAN TAKING THEM. BOTH HOLD, AND ONE CARRIES AN UNNAMED ESTIMATOR CHOICE**
+```
+                       pooled z    unpooled z (as supplied)
+decline   v104->v112     -2.26         -2.65
+reversal  v112->v115     +1.96         +1.95
+          v112->v114     +0.51         +0.52
+```
+**The supplied figures are UNPOOLED (Wald); under H0 the standard two-proportion
+test POOLS.** No conclusion moves — **but the two estimators differ ONLY on the
+load-bearing step** (the other two agree to 0.01), and the unpooled choice is the
+**anti-conservative** one, moving the decline **away from the null**. **A bar
+names its estimator** — in an exchange whose whole subject is which steps are
+significant, the SE convention is the thing that must be stated.
+
+## 3. ⛔ **THE DENOMINATOR SUPPLIED MAY NOT BE THE DENOMINATOR THE RATE WAS COMPUTED ON — AND THIS STRENGTHENS RESEARCH'S OWN CONCLUSION**
+The series is a **repair-of-a-TRUNK-cut** rate; the deliverable reports **trunk
+loss 14.4%** and **repair ≤50r 6.8%** as separate quantities. The candidate
+denominators offered are **`our conveyor deaths`** and **games with ≥1 conveyor
+death**. **If trunk cuts are a SUBSET of conveyor deaths — which the
+deliverable's own two-row structure implies — both n's are too large and every
+|z| above is an OVERESTIMATE.** ⇒ **Not *"ambiguous between two denominators"*
+but *"the true denominator is a third quantity, smaller than both, which pushes
+every step further toward noise"* — and the decline at pooled z = -2.26 is the
+step least able to afford it.**
+
+## 4. **v116 IS ABSENT FROM THE CURVE AND IT IS THE LIVE HOLDER** *(research's
+catch, endorsed)*. It compounds with v115 being **x3r0's ship**: drop the other
+author's bot and add nothing for the current one, and **the whole post-v112 story
+rests on ONE transition at z = +0.51.**
+
+## ⇒ POSITION
+**Hold the causal sentence, not the finding.** The cross-sectional result —
+**6.8% ours vs 40.5% field vs 50.3% our own opponents**, with the repair matcher
+driven four ways and `batk = 0` in 420/420 against the ENEMY's `batk` live in the
+same files — **is untouched by every point above and carries the plank on its
+own.** The opponent axis should be written as **"unattributable"** rather than
+left absent, since `ladder_games.tsv:oppver` is NULL in stretches and a null
+column reads as *no change* to any cut that trusts it.
