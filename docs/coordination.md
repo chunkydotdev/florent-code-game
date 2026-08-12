@@ -39779,3 +39779,80 @@ ones — arithmetic already built, or a two-line calculation off my numbers —
 that would actually test it."** ⇒ **an adversarial pass is evidenced by the
 expensive concessions, not the cheap ones**, and neither lane should bank credit
 for the cheap kind.
+
+# ============================================================================
+# 2026-08-12T19:4xZ — **v120 (x3r0) MEASURED · FOUR ARMS BUILT · AND AN ENGINE
+# FACT THAT BREAKS ONE OF OUR GATES.**
+# ============================================================================
+
+## ⛔⛔ THE ENGINE IS NONDETERMINISTIC, AND `gate.py`'s CONTROL-EQUIVALENCE CHECK
+## CANNOT PASS FOR ANY BOT AGAINST ITSELF ON THIS BUILD
+Same bots, same seed, `--tle 0`, three sequential runs of `_v169launchlate160`
+vs itself: **`B 186 core_destroyed` · `A 470 core_destroyed` · `A 127
+core_destroyed`.** **Reproduced with `bots/starter` vs itself (4 runs, 4
+different outcomes)**, so it is ENGINE-SIDE, not our lineage, and not the CPU
+guard (`get_cpu_time_elapsed()` reads 0 locally — that instrument is dead).
+⇒ **`tools/gate.py:226-261` demands 32/32 IDENTICAL outcomes between a flags-off
+arm and its parent. That is unsatisfiable.** Every arm built tonight had to
+substitute: (a) a guard audit that every added executable line sits under the
+flag, (b) a flag-off tree run over the same grid confirming **exactly 0 arm
+events**, (c) an A/A noise floor. **That substitution is now the standard and
+`gate.py` needs the check rewritten or retired — a gate nobody can pass is a gate
+everybody routes around.**
+⭐ **AND THE A/A FLOOR IS THE NUMBER TO REMEMBER: two byte-identical cells moved
+median kill round 182 -> 159 with nothing changed**, and BOTH unmodified
+flag-off controls read "SLOWER" than the pooled A/A baseline **by more than the
+treated arms did.** Any kill-round verdict below ~25 rounds at n<=96 is noise.
+
+## v120 (x3r0) — MEASURED, AND MAGNUS'S MAP CHALLENGE IS WHAT MADE IT ATTRIBUTABLE
+Fired the standard 5-team panel on 5 fixed maps: **3/25 = 12.0% game share, our
+core died 21/25.** I first reported this with the caveat that the earlier legs
+used random maps. **Magnus asked whether they were really different maps.** They
+partly were — earlier legs drew **10 distinct maps**, v120's five overlap them
+**4 of 5** — so the fix was to **restrict the earlier legs to v120's exact maps**,
+using data already on disk rather than new games:
+| leg | games on those maps | kill share |
+|---|---|---|
+| v116 | 12 | **42%** |
+| v117 | 12 | **42%** |
+| v118 | 12 | **45%** |
+| v119 salt | 10 | **40%** |
+| **v120** | 25 | **12%** |
+**Four independent baselines at 40-45% on the identical maps; v120 at 12%,
+z=-2.52, p~0.012.** ⇒ **the map confound is DEAD and the rollback was correct.**
+⚠ **AND WHAT IS STILL NOT CLAIMED: v120's RATED record is 5/10 games over TWO
+matches (net -8.01 elo) — a coin flip, far too small to contradict or confirm.**
+The strong claim is "much worse on this panel", not "measured losing rated
+games". v120 is NOT broken: builds 5.9 bldr / 3.1 sent / 26.2 conv against
+v116's 5.8 / 3.0 / 22.1, zero crashes. **It loses fights.**
+⇒ **v120 changes FIVE things at once** (gunaxis machinery removed entirely,
+`LAUNCHER_MIN_RND` removed, `PAVE_TRAIL_ON` on, `LOKI_FWD_GUN_CAP` 3->2,
+`NOISE_ON` off) **so even this result cannot attribute.** Worth telling x3r0 —
+and the gunaxis removal duplicates `GUNAX0`, which I queued as a controlled
+5,408-game shard an hour before they shipped it.
+
+## FOUR ARMS BUILT, NONE SHIPPED
+* **`_v182screen`** — approach barriers at d²13-32. **Doses 2.57/game, >=1 in
+  92/96 games, in exactly the band ph (17) and not adgato (25) occupy and we had
+  0.00 of.** Did NOT cannibalise the collar (6.01 vs 5.20) or the forward
+  sentinel (1.67 vs 1.66).
+* **`_v181gunblock`** — barrier on an enemy gunner's ray. **Doses only 0.20/game
+  LOCALLY and the funnel says why: 11.3% of raider-rounds see any enemy gunner
+  ray at all.** Archive check: **we build 1.26 gunners/game against Leviathan
+  13.86, Lunds Stallions 10.56, Erebus 8.35 — we are the least gunner-heavy team
+  in the top field by 4-11x**, so self-play under-represents the rays this arm
+  exists to block by roughly that factor. **0.20 is a FLOOR, not an estimate.**
+  ⚠ Its premise — that the barrier survives to absorb a shot — is **UNTESTED**:
+  there is no engine-side event for "shot blocked by obstacle".
+  ⚠ **GBX read a 62.5% kill rate against 43.8-47.9% in all four controls. 19
+  barriers in 96 games cannot move a kill rate 19pp. Recorded as an UNEXPLAINED
+  DRAW, not a result.**
+* **`_v179rushon` / `_v180minharv1`** — forward-timing. **`_v179rushon` is a
+  RE-RUN: the same one-line flip was tested twice with OPPOSITE signs** — LOKI-4
+  arena, −15.6pp/−18.9pp on `orizon`/`cad` (the fixtures `CLAUDE.md` names as
+  lying), and LOKI-11 live-unrated **+16.0pp** core-kill share. **And the flag has
+  a SECOND consumer at `main.py:324`** (sends seats (0,1) on the raid, not just
+  seat 0), so any delta is unattributable between the gate and the extra body.
+  **`_v180minharv1` is the clean single-mechanism arm.** Dose: first forward
+  sentinel r27 -> **r18** (v179, p=0.0003) and r22 (v180, p=0.097, inside the
+  same-bot band).
