@@ -28,3 +28,9 @@ GUNPEN16    bots/_v155gunpen16     bots/_v146gunaxis     5408  41000
 # chassis; if it works we would have to re-test it on v114 anyway. This is that
 # test, and it does not wait on LOKI-29 to read out.
 GUNSEAT     bots/_v156gunseat      bots/_v146gunaxis     5408  42000
+# --- appended s33 2026-08-12T04:1xZ (builder) ---
+# GUNBLANK read 52.11% (n=5408) OUTSIDE-ABOVE against the LIVE incumbent v114.
+# That is a SHIP CANDIDATE and this repo replicates before it ships: GUNAXIS was
+# replicated by GUNAXREP (51.94% -> 52.31%) before v114 went live. Fresh seed
+# block (50000) so this is an independent draw, not a longer run of the same one.
+GUNBLANKREP bots/_v147gunblank     bots/_v146gunaxis     5408  50000

@@ -71,8 +71,36 @@ def summarise(sh, d):
     rows = d["rows"]
     n = len(rows)
     refusals = []
-    if d["status"] == "ABORTED_NOWINNER":
-        refusals.append("ABORTED_NOWINNER — fixture broken, rows are not games")
+    # ⛔⛔ REFUSE ON THE ROWS, NEVER ON THE HEARTBEAT FLAG. Fixed 2026-08-12 (s33)
+    # after this branch silently discarded 27,040 REAL GAMES.
+    # WHAT HAPPENED: five LOKI-29 shards (SR1CUR/SR1NULL/SR2CUR/SR2NULL/SRNULL0)
+    # each carried 5,408 rows with **0 row-level NOWINNER** and a full T/C split,
+    # while their heartbeat read `5408  5408  <name>  ABORTED_NOWINNER` — a line
+    # that claims the shard BOTH aborted with no winner AND reached its target,
+    # and `SR1CUR.COMPLETE` says `reached 5408/5408`. The flag was stale from an
+    # earlier aborted attempt and was never cleared on the re-run.
+    # ⭐ AND THE HONEST ANSWER WAS ALREADY BEING COMPUTED TWENTY-NINE LINES BELOW
+    # (`nowin`, :103) AND THEN IGNORED. A row-level instrument and a flag
+    # disagreed and the flag won — the side lane's named characteristic failure
+    # (inferring from an artefact instead of opening the primary), compiled into
+    # a tool, which is worse than a person doing it once because it refuses
+    # silently and forever.
+    # The flag is retained ONLY as corroboration: it may not refuse on its own.
+    nowinners = sum(1 for r in rows if len(r) > 6 and r[6] == "NOWINNER")
+    nowin_pct = 100.0 * nowinners / max(n, 1)
+    if nowinners and nowin_pct > 20:
+        refusals.append(f"{nowinners} NOWINNER rows ({nowin_pct:.1f}%) — the "
+                        f"fixture is broken, these rows are not games")
+    override_note = None
+    if d["status"] == "ABORTED_NOWINNER" and nowinners == 0 and n:
+        # Say it out loud rather than swallowing it: a successor must be able to
+        # see that a flag was overridden and on what evidence.
+        # ⛔ AND IT GOES IN ITS OWN CHANNEL, NOT IN `refusals` — anything in that
+        # list suppresses the whole shard (`:194 continue`), so a "note" filed
+        # there would refuse exactly as hard as the bug it replaces.
+        override_note = (f"heartbeat says ABORTED_NOWINNER but the rows carry "
+                         f"0 NOWINNER across n={n} — STALE FLAG, OVERRIDDEN, "
+                         f"scored on the rows")
     # ⛔ THE HEARTBEAT COMPARISON CANNOT FIRE, AND IT IS THE SIXTH UNFIRABLE
     # GUARD OF THIS SESSION. `overnight.sh` now RESUMES by setting `n` to the
     # existing row count, so the heartbeat's n and len(rows) agree BY
@@ -100,7 +128,7 @@ def summarise(sh, d):
     if dup_pct > 20:
         refusals.append(f"{dupes} duplicate rows ({dup_pct:.1f}%) — too many to be "
                         f"restart residue; the sample is skewed to low seeds")
-    nowin = sum(1 for r in rows if len(r) > 6 and r[6] == "NOWINNER")
+    nowin = nowinners
     good = [r for r in rows if len(r) > 8 and r[6] in ("T", "C")]
     if not good:
         return dict(sh=sh, n=0, refusals=refusals + ["no scorable rows"])
@@ -125,6 +153,7 @@ def summarise(sh, d):
                 seatA=(sum(1 for r in seatA if r[6] == "T"), len(seatA)),
                 seatB=(sum(1 for r in seatB if r[6] == "T"), len(seatB)),
                 kt=kills_t, kc=kills_c, ties=ties, nowin=nowin, refusals=refusals,
+                override_note=override_note,
                 dup_note=dup_note,
                 maps=len({r[3] for r in good}))
 
@@ -134,7 +163,93 @@ def implied_elo(p):
     return -400 * math.log10(1 / p - 1)
 
 
+def selftest():
+    """⭐ THIS TESTS THE **DECIDING** FUNCTION, NOT THE PARSING FUNCTION.
+
+    Magnus, 2026-08-12: *"Dont we test our tools?"* — asked after `crash_cells.py`
+    shipped a green 7-case selftest and then printed **"THE WEAPON DOES NOT FIRE
+    — the road closes"** on a run in which the weapon had fired 15 times, and
+    after this file discarded 27,040 real games.
+
+    **THE PATTERN BEHIND BOTH, AND IT IS THE WHOLE POINT OF THIS FUNCTION: the
+    selftests in this repo drive the MEASURING functions and leave the DECIDING
+    branch untested.** `crash_cells` v1 tested its crash counter to 0 and >0 and
+    never once tested the branch that turns a count into a verdict. This file
+    computed `nowin` from the rows (`:131`) and then refused on a heartbeat flag
+    it never compared against — a measurement that was right and a decision that
+    ignored it. **Every cell below asserts on a REFUSE / SCORE outcome.**
+
+    Each cell must be reachable both ways, or it validates nothing.
+    """
+    bad = 0
+
+    def chk(name, got, want):
+        nonlocal bad
+        ok = got == want
+        bad += not ok
+        print(f"  [{'ok' if ok else 'FAIL'}] {name:56s} got={got!r} want={want!r}")
+
+    def shard(n_rows, nowinner=0, status="COMPLETE"):
+        rows = []
+        for i in range(n_rows):
+            res = "NOWINNER" if i < nowinner else ("T" if i % 2 else "C")
+            seat = "A" if i % 2 else "B"
+            # Distinct (map, seed, seat) per row: a constant seed makes every
+            # row a "duplicate" and trips the restart-residue guard, which is
+            # the guard doing its job on a bad fixture rather than a defect.
+            rows.append(["ts", "tr", "ct", f"map{i % 8}", str(1000 + i // 8),
+                         seat, res, "core_destroyed", "200"])
+        return dict(rows=rows, n_hb=n_rows, target=n_rows, status=status)
+
+    # ---- THE CELL THAT FAILS ON THE OLD CODE -------------------------------
+    # 5,408 real games under a STALE ABORTED_NOWINNER heartbeat. This is
+    # SR1CUR/SR1NULL/SR2CUR/SR2NULL/SRNULL0 exactly, and all five were refused.
+    stale = summarise("SR1CUR", shard(5408, nowinner=0, status="ABORTED_NOWINNER"))
+    chk("stale ABORTED_NOWINNER + 0 bad rows -> SCORES", stale["refusals"], [])
+    chk("...and n survives", stale["n"], 5408)
+    chk("...and the override is announced, not swallowed",
+        bool(stale["override_note"]), True)
+
+    # ---- THE OTHER WAY: a genuinely broken fixture MUST still refuse --------
+    broken = summarise("BROKEN", shard(1000, nowinner=900, status="COMPLETE"))
+    chk("900/1000 NOWINNER rows -> REFUSES", len(broken["refusals"]) >= 1, True)
+    chk("...even with a HEALTHY heartbeat", broken["status"], "COMPLETE")
+
+    # A handful of NOWINNER rows is residue, not a broken fixture.
+    few = summarise("FEW", shard(5408, nowinner=5, status="COMPLETE"))
+    chk("5/5408 NOWINNER rows -> still SCORES", few["refusals"], [])
+
+    # A clean shard with a clean flag must score, and must NOT print an override.
+    clean = summarise("CLEAN", shard(5408, nowinner=0, status="COMPLETE"))
+    chk("clean shard -> SCORES", clean["refusals"], [])
+    chk("clean shard -> NO override note", clean["override_note"], None)
+
+    # ---- CALIBRATION RESOLUTION, both ways ---------------------------------
+    def cal_keys(keys):
+        data = {k: shard(64) for k in keys}
+        found = []
+        for pre in ("NULL", "NEG"):
+            hits = sorted(k for k in data if k.startswith(pre))
+            found.append(hits[0] if hits else None)
+        return tuple(found)
+
+    chk("calibration found by PREFIX (tonight's names)",
+        cal_keys(["NULL114", "NEG114", "GUNBLANK"]), ("NULL114", "NEG114"))
+    chk("calibration found under the OLD literal names",
+        cal_keys(["NULL", "NEGCTRL", "X"]), ("NULL", "NEGCTRL"))
+    chk("calibration genuinely ABSENT is reported as absent",
+        cal_keys(["GUNBLANK", "CAP6B"]), (None, None))
+
+    print("\n" + ("PASS: a stale flag over good rows SCORES, a genuinely broken "
+                 "fixture REFUSES, and calibration resolves under both naming "
+                 "conventions and reports its own absence."
+                 if not bad else f"FAIL: {bad} case(s)"))
+    return 1 if bad else 0
+
+
 def main():
+    if "--selftest" in sys.argv:
+        return selftest()
     d = "scratchpad/overnight"
     if "--dir" in sys.argv:
         d = sys.argv[sys.argv.index("--dir") + 1]
@@ -170,6 +285,8 @@ def main():
             continue
         print(f"   n={s['n']}/{s.get('target','?')}  {tag}   maps={s['maps']}  "
               f"NOWINNER={s['nowin']}  tiebreaks={s['ties']}")
+        if s.get("override_note"):
+            print(f"   ⚠ FLAG OVERRIDDEN: {s['override_note']}")
         if s.get("dup_note"):
             print(f"   ⚠ {s['dup_note']}")
         print(f"   WINS {s['W']}/{s['n']} = {s['p']:.2%}   informative band "
@@ -193,8 +310,25 @@ def main():
     print("\n" + "=" * 78)
     print("HARNESS CALIBRATION — what the two control shards say about the night")
     print("=" * 78)
-    nul = summarise("NULL", data["NULL"]) if "NULL" in data else None
-    neg = summarise("NEGCTRL", data["NEGCTRL"]) if "NEGCTRL" in data else None
+    # ⛔⛔ RESOLVE CALIBRATION SHARDS BY PREFIX. Fixed 2026-08-12 (s33).
+    # These two lines looked up the LITERAL keys "NULL" and "NEGCTRL". Every
+    # shard we have ever actually run is named for its baseline — NULL114,
+    # NEG114, and s31's equivalents — so NEITHER KEY HAS EVER MATCHED and this
+    # whole section has printed "⚠ NO NULL DATA — every band below is
+    # uncalibrated" on every run of its life. The `BANDS RE-CENTRED` branch
+    # below is dead code that has never once executed.
+    # ⚠ AND FIXING THE KEY ALONE DOES NOT MOVE TONIGHT'S BANDS, which is worth
+    # stating so nobody re-derives a difference that is not there: the
+    # re-centring is gated on |z| > 3 and the measured null is z = −0.03, and
+    # the per-shard band at `:199` is hardcoded to 50 ± hw and never reads
+    # `centre` at all. What the fix buys is that the calibration cells are
+    # SEEN and can FIRE — not a different band tonight.
+    def _cal(prefix):
+        hits = sorted(k for k in data if k.startswith(prefix))
+        return summarise(hits[0], data[hits[0]]) if hits else None
+
+    nul = _cal("NULL")
+    neg = _cal("NEG")
     centre = 0.5
     if nul and nul["n"]:
         z = (nul["p"] - 0.5) / math.sqrt(0.25 / nul["n"])
