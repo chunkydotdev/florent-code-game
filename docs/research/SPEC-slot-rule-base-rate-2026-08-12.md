@@ -101,12 +101,30 @@ drifted.
 
 ## 5. LIMITS — stated, not buried
 
-* **The bootstrap resamples i.i.d. from the centred empirical intervals.** Real
-  ladder deltas are **not** independent: `E` depends on the rating gap and our
-  rating drifts, so there is genuine serial structure. **This can bias `p_null`
-  in either direction** and the figure should be read as an order-of-magnitude
-  base rate, not a p-value. It is still vastly better than the current column,
-  which carries no denominator at all.
+* **⭐ AMENDED SAME DAY — THIS LIMIT WAS TOO HARSH AND THE RESEARCH ARM MEASURED
+  IT RATHER THAN ARGUING IT.** I originally wrote that the i.i.d. bootstrap made
+  `p_null` *"an order-of-magnitude base rate, not a p-value"*, because real
+  ladder deltas should carry serial structure through the rating gap. **Tested,
+  on the same centred deltas:**
+  ```
+  lag-1 r +0.052 · lag-2 +0.022 · lag-3 +0.012 · lag-4 +0.048 · lag-5 +0.075
+  Ljung-Box Q(5) = 8.99   vs chi2_5 95% crit 11.07   -> NO DETECTABLE STRUCTURE
+  moving-block bootstrap (block=10) vs i.i.d.:
+     k=8   14.2% / 14.1%      k=27  74.8% / 72.6%      k=60  97.1% / 96.4%
+  ```
+  **The i.i.d. assumption is supported, and where it fails the gap is ≤2.2pp and
+  runs CONSERVATIVE for the argument** — under blocks, v114's *"held at k=27"*
+  sits at **27.4%** rather than 25.2%, i.e. marginally *less* surprising.
+  ⇒ **`p_null` is robust to serial structure within ~2pp**, not
+  order-of-magnitude only. *(Reproduction and both tests: research arm, s33,
+  independently resampled — their per-window count 113/791 is identical to the
+  row and every bootstrap cell sits inside Monte Carlo noise of mine.)*
+* **Two limits that survive it, because the tests above do not address them:**
+  **absence of DETECTABLE autocorrelation at n=795 is not proof of
+  independence** — lag-5 at +0.075 is the largest and is the one to re-check as
+  n grows — and **the sample is us-only, which no resampling fixes.**
+  **It is still not a p-value: it is a base rate with a measured robustness
+  bound.**
 * **Us-only sample.** Every figure describes OUR ladder run (795 matches), not
   the field's.
 * **This does not touch the SPRT bounds**, which are correctly sized for the

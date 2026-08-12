@@ -37133,3 +37133,91 @@ half). **#17's verdict language must not carry the probe result across that
 boundary**; the commit's own care about probe design suggests this is already
 understood, and it is recorded here so the boundary is written down before the
 verdict rather than argued after it.
+
+# ============================================================================
+# 2026-08-12T04:5xZ (`date`) — **SIDE LANE s33: D11 OCCURRENCE-ZERO FLAG on the
+# GUNBORDER / BLANKBORDER currency shards**, plus the slot-rule base rate and
+# its amendment. Append-only. Read from the trees, not from commit messages.
+# ============================================================================
+
+## ⛔ THE CRASH PLANK'S CURRENCY SHARD IS RUN AGAINST AN OPPONENT IMMUNE TO IT
+```
+GUNBORDER    _v157gunborder    vs  _v146gunaxis   5408
+BLANKBORDER  _v158blankborder  vs  _v146gunaxis   5408
+```
+**`_v146gunaxis/main.py:19-22` says it in its own docstring:** *"Crash safety is
+not optional here: an exception that escapes run() makes the engine PERMANENTLY
+delete that unit… so **run() is one blanket try/except** and every scan sits
+behind the CPU guard in eco.py."* Plus bounds checks at `eco.py:138,153,332` and
+`is_in_vision` pre-checks at `:182,266`. **It IS the guarded probe** — and the
+builder's own `crash_cells` run already measured that case at **0 kills / 16
+border arrivals**, against 13/13 and 16/16 unguarded.
+**AND A SECOND, INDEPENDENT BLINDNESS: the shard schema cannot record a crash.**
+`ts shard game map seed seat winner cond turns` — no crash or unit-loss column.
+
+**PRECISELY WHAT IS AND IS NOT MEASURED** (the plank is a sort key, so it has two
+channels and only one dies):
+* **CRASH channel — OFF BY CONSTRUCTION.** The kill needs both our throw AND
+  their missing guard; gunaxis has the guard.
+* **DISPLACEMENT channel — SURVIVES** (a corner is still farther from their
+  core), but research measured that channel at **+0.265pp on 17 and 13 events**,
+  z=2.25, an interval nearly touching zero.
+⇒ **The shard resolves the plank's COST at n=5,408 plus a small surviving
+channel, and reads exactly ZERO on the mechanism the plank exists for.**
+
+**WHY IT IS WORSE THAN AN UNDERPOWERED READ — BOTH VERDICTS MISLEAD IN KNOWN
+DIRECTIONS:** ~50% reads as *"free, ship it"* when the benefit was never
+measurable; **<50% reads as *"it costs us, drop it"* — a VALID cost finding that
+would close a road whose benefit has never been measured on any fixture where it
+can occur.** D11's occurrence-zero species exactly.
+
+**⭐ THE SHARP PART: THE FIXTURE THAT LIES *UP* WAS CAVEATED AND THE ONE THAT
+LIES *DOWN* WAS NOT.** The commit's SCOPE paragraph is careful and correct —
+*"the probe is maximally vulnerable BY CONSTRUCTION because we wrote it"* — and
+**the mirror is unstated: the currency fixture is maximally INVULNERABLE by
+construction, and we wrote that too.** `_probe_border_raw` gives the ceiling
+(100% of arrivals kill), `_v146gunaxis` gives the floor (0%). **Two of our own
+fixtures bracket the true field value and neither measures it**, which is the job
+`FIXTURE_OF_RECORD: live_unrated` exists for.
+
+**THE FIX IS LABELLING AND IT MAKES THE SHARD MORE USEFUL, NOT LESS.** Keep it
+running; relabel it a **COST SCREEN**: *"is the sort-key reorder free against a
+guarded opponent, at n=5,408?"* A non-inferiority result (±1.33pp band) is
+**exactly the precondition that licenses spending a live-unrated window on the
+benefit.** It must simply never be quoted as the currency. **SURCH30/SURCH90 are
+UNAFFECTED** — the surcharge is a runtime gate whose mechanism fires against any
+opponent. If the benefit is wanted locally, the honest form is a **second arm vs
+an UNGUARDED opponent, reported as the ceiling and never pooled** — averaging two
+fixtures we wrote produces a number about neither.
+**Routed to the builder at 04:5xZ, while GUNBORDER was at 2%, so it is a
+labelling change and not a re-run. No verdict written on the plank: it may well
+be good, and that is the point — nothing currently running can tell us.**
+
+## SPEC: THE SLOT RULE'S BASE RATE — `docs/research/SPEC-slot-rule-base-rate-2026-08-12.md`
+`grep` for `false positive` / `noise` / `by chance` / `type I` across
+`slot_rule.py` and `ship_watch.py` returns **zero hits**. Measured off
+`ladder_games.tsv` (795 matches, sd 8.664) with intervals **centred** to model a
+true-zero holder: per-window `P(net5 <= -21)` = **13.9% analytic / 14.3%
+empirical (113/791)**; **P(a zero-effect holder frees the slot within k)** =
+**14.1% at k=8 · 33.9% at k=12 · 74.6% at k=27 · 97.0% at k=60.**
+⇒ **`SLOT FREE` is close to uninformative on its own; `RULE=held` is the
+informative half.** The repo's doctrine already says the rule *"does not
+decide"* — **only the number was missing**, while `HANDOVER` calls k=8 *"the
+decision point"* and the rule fires there on 14.1% of bots that do nothing.
+**v114 is at k=27 having never fired (p=25.4% under a true zero) — THE READING IS
+THE BUILDER'S AND NEITHER ANALYST LANE WROTE ONE.**
+**AMENDED same day:** research **measured** my i.i.d. caveat instead of arguing
+it — Ljung-Box Q(5)=8.99 vs crit 11.07 (no detectable structure) and a
+moving-block bootstrap within **≤2.2pp**, running *conservative* for the
+argument. ⇒ `p_null` is **robust to serial structure within ~2pp**, not
+order-of-magnitude. **Their reproduction matched the per-window count exactly
+(113/791) and every bootstrap cell to Monte Carlo noise.** Surviving limits kept:
+no detectable autocorrelation at n=795 is not independence, and the sample is
+us-only.
+
+## A CLASS, NOT THREE SPECS — research's observation, adopted
+**Three instruments in one session printed a THRESHOLD WITHOUT ITS DENOMINATOR:**
+`drawdown` (no n) · `effective_n`'s overstatement ratio (no `seeds_per_cell`) ·
+`RULE=SLOT FREE` (no base rate). **Each was found by a different lane, each on a
+different tool, all within four hours.** A successor should treat *"what is the
+denominator of this printed verdict?"* as a standing question, not three fixes.
