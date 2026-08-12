@@ -281,3 +281,19 @@ LAUNCHLATE160 bots/_v169launchlate160 bots/_v146gunaxis   5408 107000
 # same shape: mechanism confirmed, magnitude absent. The two now cite each other.
 # ⭐ AND THE REASON IT IS NEAR-ZERO IS THE REASON IT LOOKED GOOD: the rent cycle
 # fires rarely, which caps the cost -- and caps the benefit with it.
+# ============================================================================
+# ⭐⭐ X3R0 SHIPPED v115 AT 08:57Z AND IT HOLDS THE SLOT. Magnus: 'run out v114
+# against it and see if we beat it.' Downloaded off the platform and diffed:
+# v115 = v114 + SIX LINES in main.py -- an opening ammo pre-buy, converting Ti
+# to ammo up to 17 at rnd 0. Ammo starts at 0 with NO passive income and the
+# ONLY source is convert_ammo, so this is 'the first turret we build can
+# actually fire'. doctrine/eco/raid are byte-identical to v114.
+# ⛔ AND IT MOVES EVERY CONTROL WE ARE RUNNING. PROGRAMME.md: 'when a ship
+# lands, every control moves with it -- a stale control measures the wrong
+# contrast and still reads as a valid result.' All 16 arms today are measured
+# against bots/_v146gunaxis = v114 = the PREVIOUS incumbent. They are still
+# internally valid (they answer 'better than v114?') but they no longer answer
+# 'better than what is LIVE?' until this shard says how big the v114->v115 step is.
+# THIS SHARD IS THE BRIDGE: it prices the gap so every other arm can be read
+# against the live holder without re-running any of them.
+AMMO115     bots/_x3r0_v115        bots/_v146gunaxis     5408 110000
