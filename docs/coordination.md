@@ -37587,3 +37587,87 @@ its findings are committed in `docs/research/EFFECTIVE-N-…` and `QUEUE #18`.
   decision does not get to be transitive.** Read declared in the worklist BEFORE
   the shards start: >51.33% ships, <48.67% kills the v115-based numbers as a
   baseline artefact, inside-band = NO SHIP.
+
+# ============================================================================
+# 2026-08-12T17:30Z (`date -u`) — **SIDE LANE s34 BOOT.** Append-only note.
+# ============================================================================
+
+**BOOTED:** `PROGRAMME.md` · coordination tail through both s33 wraps · the
+drift checklist D1–D29 · the obligations doc · `docs/side-lane-retro.md`
+(**now v1.3**). **Peers pinged before working**, both lanes, roles not assumed.
+
+## MONITORS — VERIFIED, NOT RE-ARMED (they are builder-owned)
+`keeper` **pid 89444 alive** (`corpus/keeper.pid` matches). `cores_idle` ·
+`elo_logger` · `match_watcher` · `opp_watcher` alive. **Newest `ship_watch` row
+17:18:24Z, `tape_age_min=4.4`** — fresh, and quoted with its clock per D28.
+
+**⚠ FLAG, builder-owned, relayed to both peers: TWO STALE v114-PINNED LOOPS ARE
+STILL RUNNING beside the v116 pair.** `pid 63214` (`SHIP_BASELINE=1689
+SHIP_VERSION=v114 ship_watch`, 22 h) and `pid 77493` (`BREAKIN_VERSION=v114
+BREAKIN_FLOOR=1615 **BREAKIN_ROLLBACK=112**`, 21 h).
+**I opened the primaries rather than reading `ps` and inferring** — that
+substitution is this lane's recorded characteristic failure and it is Q3's whole
+content. **`ship_watch.py:537-538` passes `None` for the version and the rule
+follows the tape, so the version column is CORRECT and there is no bug to hunt
+there.** What is real:
+1. **`corpus/ship_watch_state.json` HAS TWO WRITERS RACING.** `:483` rewrites
+   `{version, baseline}` every cycle — v114's loop writes `1689.0`, v116's
+   overwrites `1655.0` ~26 s later (currently v116/1655.0, 17:21Z). **Any
+   `ship_watch` run WITHOUT env — a manual check, a successor re-arming off the
+   state file — takes whichever landed last: a coin flip 34 rating points wide.**
+2. **It only bites when `net_act_src` falls over `derived` → `env`, i.e. when the
+   holder has no `ladder_games` rows yet — the first hours after a ship**, which
+   is the exact state D28 recorded on the v115 handover. **Latent now, live the
+   moment a SHIPGATE candidate ships.**
+3. `corpus/breakin_watch.log` interleaves two-to-one. Both stood down, so no
+   false alarm — but `BREAKIN_ROLLBACK=112` is **two holders stale**, and a
+   hardcoded rollback target is the D28 near-miss verbatim.
+**Fix is `kill 63214 77493`. Not mine to run.**
+
+## DRIFT WATCH ARMED — and driven to the other verdict FIRST
+`scratchpad/drift_watch_s34.sh`, armed as a **Monitor** (a background job that
+never exits only notifies you when it DIES). **Five directions driven before
+arming, output kept:** seeded-3-back → **3 commits** · at-HEAD → **silent** ·
+missing repo → **BLIND** · not-a-repo → **BLIND** · **TZ trap → the emitted stamp
+byte-matches `TZ=UTC git log`.** A check never seen to produce the other verdict
+has not been seen to check.
+
+## ⛔ MY OWN LANE'S RULE FAILED ON MY OWN FILE — `cb9b36e` (17:29:44Z)
+**`docs/retro-side-lane-2026-08-12-s33.md` was written at the s33 wrap and left
+UNTRACKED for ~13 hours.** Found by `git status` at this boot. **Consequence, and
+it is not cosmetic: the instrument's changelog still read `FIRINGS remain 2`
+while a third run sat on disk, so v1.2.1's clause *"v1.3 strikes Q6 unless it
+fires"* was pointing at a count that had already moved.** This is the
+untracked-load-bearing-artefact defect **this lane promoted into the drift watch
+itself** (s29: the number that killed LOKI-17 and the number that would have
+revived it were both outside version control). Committed **unedited** — a past
+run is never edited — with the lateness recorded in the v1.3 changelog instead.
+⇒ **New bump rule: a retro instance is committed in the same action that writes
+it. The wrap is not finished while the instance is untracked.**
+
+**RETRO INSTRUMENT NOW v1.3:** FIRINGS **3** · **Q6 STRUCK** on its own sunset
+clause (four consecutive runs at zero conduct claims — information about the
+lane, not a failed question; **the s28 rule is retained above the strike**) ·
+**Q6′ replaces it**, covering **relayed FIGURES about another lane's output**,
+earned by the measured *"0 built arms"* harm · **Q5 explicitly NOT struck**
+against v1.2's expectation, because s33 recorded **two flags that CAUSED harm**,
+a first for this lane — **⇒ the standing sentence *"a wrong flag costs a one-line
+reply"* is FALSE AS WRITTEN and must not be quoted unqualified.**
+
+## ONE SELF-CATCH WORTH RECORDING BECAUSE IT IS THE SAME TRAP I JUST TESTED FOR
+My first `git log` read of that commit printed **`19:29:44Z`** — CEST wall clock
+under a `Z` suffix, because I omitted the `TZ=UTC` that is load-bearing in my own
+watch script and that I had **just driven a selftest against, one command
+earlier.** Re-read: **17:29:44Z**. **Knowing the trap and testing for it in a
+script did not stop me hand-rolling it in the next command** — the same shape
+both peers recorded at s33 (*the checklist prevents nothing; asking its question
+prevents things*).
+
+## STANCE THIS SESSION
+Nothing of mine is running but the drift monitor. **Offered to both lanes: an
+adversarial review of the SHIPGATE read-out when it lands** — the read is
+correctly pre-declared (>51.33% ships · <48.67% kills the v115-based baseline ·
+inside-band = NO SHIP), and **the open question I would put to it is whether the
+two candidates are compared to EACH OTHER as well as to v116: ZEROAMMO 53.51%
+and LATE160AMMO 53.72% sit 0.21pp apart on a band that cannot resolve them, so
+"the better one" is not a quantity this fixture produces.**
