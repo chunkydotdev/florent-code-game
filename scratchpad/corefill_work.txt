@@ -447,3 +447,17 @@ BURST32B    bots/_v172burst32      bots/_v171late160ammo  5408 117000
 #   directly observable and does not depend on it.
 HEALERFIRST bots/_v174healerfirst   bots/_v171late160ammo  5408 118000
 NOAPPROACH  bots/_v175noapproach    bots/_v171late160ammo  5408 119000
+# --- LOKI-48 IDLE CULL: self-destruct a builder idle 12 consecutive rounds ---
+# MEASURED, our scale over 75 live games: we run at ~377% and BUILDER BOTS ARE
+# 44% OF IT (6.2/game x +20pp = 123pp, more than every turret combined).
+# Destruction REFUNDS the contribution, and 25.76% of our builder-rounds are
+# idle with both cooldowns at zero -- the same share in WINS, so it is what our
+# bot always does, not a losing-position artefact.
+# DOSE VERIFIED, 8 paired games: 6.8 builders culled/game vs the control's 1.6,
+# and END SCALE 222% vs 318% -- a 96pp reduction, every later build ~25% cheaper.
+# ⚠ AND IT REBUILDS: 8.4 builders built vs 6.9, so the cull is partly a
+#   treadmill and the titanium cost is real. That is what the battery prices.
+# ⛔ NOBODY IN THE FIELD DOES THIS: 25 live games carry 86 undamaged GUNNER
+#   removals (turret walking, routine) against TWO undamaged builder_bot
+#   removals. Untested by anyone -- novel lever, or an idea already rejected.
+IDLECULL    bots/_v176idlecull     bots/_v171late160ammo  5408 120000
