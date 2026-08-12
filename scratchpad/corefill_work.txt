@@ -44,3 +44,9 @@ GUNBLANKREP bots/_v147gunblank     bots/_v146gunaxis     5408  50000
 # new cost, no filtering, so it cannot lose an exile the incumbent would have made.
 # This is the currency read. Mechanism confirmed != currency plank.
 GUNBORDER   bots/_v157gunborder    bots/_v146gunaxis     5408  60000
+# STACK: LOKI-26 gunblank (52.11% vs v114) + LOKI-30 border-first exile.
+# Independent mechanisms -- a barrier on an enemy GUNNER's firing axis vs the
+# ORDER we throw exiled enemies in -- so they should not interact. If GUNBLANKREP
+# confirms and GUNBORDER lands, this is the ship candidate; if it reads BELOW
+# both singles, they interact and that is worth knowing before shipping either.
+BLANKBORDER bots/_v158blankborder   bots/_v146gunaxis     5408  70000
