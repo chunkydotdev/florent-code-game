@@ -51,6 +51,84 @@ LADDER_CI = {"_v130loki13": (1656, 1717), "_v115dodge": (1520, 1681),
              "_v124loki8": (1578, 1641)}
 
 
+def load_spec():
+    """shard -> (treatment, control), read from the LIVE worklist.
+
+    ⛔ THIS USED TO READ `scratchpad/overnight_spec.txt` AND THAT FILE IS DEAD.
+    Measured 2026-08-12 by the instrument audit: it was last written 2026-08-11
+    and lists nine shards that no longer exist, so **45 of 45 shards printed
+    `? vs ?`** — the read-out was structurally incapable of showing that every
+    candidate shared a control nobody is running, which is exactly the defect
+    that let two ship candidates be measured against a non-holder for a day.
+    `scratchpad/corefill_work.txt` is what the runner actually consumes.
+
+    Kept as a FALLBACK rather than deleted: some archived runs predate the
+    worklist and their spec still resolves from the old file.
+    """
+    spec = {}
+    for p in (Path("scratchpad/corefill_work.txt"),
+              Path("scratchpad/overnight_spec.txt")):
+        if not p.exists():
+            continue
+        for line in p.read_text().splitlines():
+            if line.lstrip().startswith("#") or not line.strip():
+                continue
+            f = line.split()
+            # shard treatment control [target] [seed_lo]
+            if len(f) >= 3 and f[1].startswith("bots/") and f[0] not in spec:
+                spec[f[0]] = (f[1], f[2])
+        if spec:
+            break
+    return spec
+
+
+def pick_cal(kind, control, data, spec):
+    """The calibration cell for THIS contrast, or an explicit refusal.
+
+    ⛔⛔ THE BUG THIS REPLACES, and it would have burned 5,408 games.
+    The old lookup was `hits = sorted(k for k in data if k.startswith(prefix))`
+    then `hits[0]`. Two independent failures, both silent:
+
+      1. IT MATCHED ON THE START OF THE SHARD NAME. A calibration cell added for
+         the ship-gate contrast and named `SHIPGATENULL` is NOT `startswith
+         ("NULL")`, so it would never have been selected — the block would keep
+         reporting `NULL114`, the *other* fixture, which is the substitution the
+         new cell existed to remove.
+      2. `hits[0]` TAKES THE LEXICOGRAPHIC FIRST. So even renamed `NULL169`, with
+         `NULL114` present, `sorted()` returns `NULL114` and the wrong null STILL
+         wins. **The old code selected *a* null, never *the matching* null — it
+         had no concept of which contrast a calibration cell belongs to.**
+
+    ⇒ Selection is now by CONTROL TREE, the thing that actually defines the
+    fixture. Returns (summary, name, n_candidates) so the caller can PRINT which
+    cell it used and say so when the count is not 1 — a calibration that cannot
+    name its own cell is not a calibration.
+
+    ⚠ AND IT ENFORCES `refusals`, which the old `_cal` never checked (it read
+    `["p"]`/`["n"]` straight out of `summarise`). A shard refused for seat
+    imbalance, heartbeat disagreement or duplicate rows STILL carries `p` and
+    `n`, so the night's power certificate could be issued off a cell the tool
+    printed `NOT SCORED` for three lines earlier. That was background when
+    calibration read a long-finished shard; it is load-bearing now that a ship
+    gate depends on a NEW null that can be refused.
+    """
+    cands = []
+    for k in sorted(data):
+        if not k.upper().startswith(kind):
+            continue
+        if control is not None and spec.get(k, (None, None))[1] != control:
+            continue
+        cands.append(k)
+    if not cands:
+        return None, None, 0
+    for k in cands:                       # prefer a cell that actually scored
+        s = summarise(k, data[k])
+        if not s["refusals"] and s["n"]:
+            return s, k, len(cands)
+    s = summarise(cands[0], data[cands[0]])
+    return s, cands[0], len(cands)        # refused; caller must check
+
+
 def load(d):
     out = {}
     for f in sorted(glob.glob(f"{d}/*.tsv")):
@@ -225,13 +303,40 @@ def selftest():
     chk("clean shard -> NO override note", clean["override_note"], None)
 
     # ---- CALIBRATION RESOLUTION, both ways ---------------------------------
+    # ⛔ THESE CELLS NOW CALL THE REAL `pick_cal`, NOT A REIMPLEMENTATION.
+    # The previous version defined its own `cal_keys()` that duplicated the
+    # prefix lookup, while the live lookup was a closure inside `main()` that no
+    # test could reach. Mutation-tested 2026-08-12: restoring the original
+    # literal-key bug to the REAL path left this selftest PASSING 11/11,
+    # including a cell literally named "calibration found by PREFIX". A test
+    # that validates a copy of the code is not a test.
     def cal_keys(keys):
         data = {k: shard(64) for k in keys}
-        found = []
-        for pre in ("NULL", "NEG"):
-            hits = sorted(k for k in data if k.startswith(pre))
-            found.append(hits[0] if hits else None)
-        return tuple(found)
+        return tuple(pick_cal(pre, None, data, {})[1] for pre in ("NULL", "NEG"))
+
+    # ---- THE CELL SIDE LANE ASKED FOR: TWO NULLS, WHICH ONE IS PICKED? -----
+    # A ship gate controlled on a different tree than the calibration cells is
+    # the failure this whole function exists to prevent. Both nulls present, both
+    # scorable — the ONLY thing that can distinguish them is the control tree.
+    two = {"NULL114": shard(64), "NULL169": shard(64), "SHIPGATE160": shard(64)}
+    sp2 = {"NULL114":    ("bots/_v146null", "bots/_v146gunaxis"),
+           "NULL169":    ("bots/_v169null", "bots/_v169launchlate160"),
+           "SHIPGATE160": ("bots/_v171late160ammo", "bots/_v169launchlate160")}
+    chk("⭐ the null matching the SHIP contrast is chosen over the lexicographic first",
+        pick_cal("NULL", "bots/_v169launchlate160", two, sp2)[1], "NULL169")
+    chk("...and the v146 contrast still resolves to its OWN null",
+        pick_cal("NULL", "bots/_v146gunaxis", two, sp2)[1], "NULL114")
+    chk("...and a contrast with NO null on it reports ABSENT, not a borrowed cell",
+        pick_cal("NULL", "bots/_v999nothing", two, sp2)[1], None)
+    # The old code's exact failure, asserted as a failure: prefix matching alone.
+    chk("a cell named SHIPGATENULL is NOT reachable by prefix — hence control-matching",
+        "SHIPGATENULL".startswith("NULL"), False)
+    # And refusals must be surfaced, not scored through.
+    ref = {"NULLX": shard(1000, nowinner=900)}
+    spr = {"NULLX": ("bots/t", "bots/c")}
+    got = pick_cal("NULL", "bots/c", ref, spr)[0]
+    chk("a REFUSED null is returned WITH its refusals, never as a clean cell",
+        bool(got and got["refusals"]), True)
 
     chk("calibration found by PREFIX (tonight's names)",
         cal_keys(["NULL114", "NEG114", "GUNBLANK"]), ("NULL114", "NEG114"))
@@ -257,15 +362,11 @@ def main():
     print("=" * 78)
     print("OVERNIGHT READ-OUT — partial shards POOLED with the shortfall printed")
     print("=" * 78)
-    spec = {}
-    sp = Path("scratchpad/overnight_spec.txt")
-    if sp.exists():
-        for line in sp.read_text().splitlines():
-            if line.startswith("#") or not line.strip():
-                continue
-            f = line.split()
-            if len(f) >= 3:
-                spec[f[0]] = (f[1], f[2])
+    spec = load_spec()
+    if not spec:
+        print("  ⚠ NO WORKLIST FOUND — every shard below prints '? vs ?' and the")
+        print("     calibration cell CANNOT be matched to a contrast. Verdicts are")
+        print("     uncalibrated; treat them as arithmetic, not as findings.")
 
     for sh in sorted(data):
         s = summarise(sh, data[sh])
@@ -323,12 +424,44 @@ def main():
     # the per-shard band at `:199` is hardcoded to 50 ± hw and never reads
     # `centre` at all. What the fix buys is that the calibration cells are
     # SEEN and can FIRE — not a different band tonight.
-    def _cal(prefix):
-        hits = sorted(k for k in data if k.startswith(prefix))
-        return summarise(hits[0], data[hits[0]]) if hits else None
+    # ⛔ CALIBRATE PER CONTRAST, NOT ONCE FOR THE WHOLE RUN.
+    # A run can carry arms on several control trees at once — tonight it carries
+    # `_v146gunaxis` (the v114 contrast) AND `_v169launchlate160` (the ship gate
+    # against the LIVE holder). A single global null calibrates whichever fixture
+    # it happens to come from and silently certifies the others.
+    controls = {}
+    for k in data:
+        c = spec.get(k, (None, None))[1]
+        if c and not k.upper().startswith(("NULL", "NEG", "CAL")):
+            controls.setdefault(c, []).append(k)
+    for c in sorted(controls):
+        n_arm = len(controls[c])
+        s_n, k_n, c_n = pick_cal("NULL", c, data, spec)
+        s_g, k_g, c_g = pick_cal("NEG", c, data, spec)
+        print(f"  contrast vs {Path(c).name}  ({n_arm} arm(s))")
+        for kind, s, k, cn in (("NULL", s_n, k_n, c_n), ("NEG", s_g, k_g, c_g)):
+            if s is None:
+                print(f"     ⛔ NO {kind} CELL ON THIS CONTRAST — the band applied to "
+                      f"these {n_arm} arm(s) is BORROWED from another fixture.")
+            elif s["refusals"]:
+                print(f"     ⛔ {kind} cell `{k}` was REFUSED "
+                      f"({s['refusals'][0][:60]}) — NOT USABLE as calibration.")
+            else:
+                print(f"     {kind} cell `{k}`  {s['p']:.2%} on n={s['n']}"
+                      + (f"   ⚠ {cn} candidates, picked one" if cn != 1 else ""))
+    print()
 
-    nul = _cal("NULL")
-    neg = _cal("NEG")
+    # The legacy global read below is kept because PART A and the re-centring
+    # branch consume it. It is now explicitly labelled as global.
+    nul, _kn, _cn = pick_cal("NULL", None, data, spec)
+    neg, _kg, _cg = pick_cal("NEG", None, data, spec)
+    if nul and nul["refusals"]:
+        print(f"  ⛔ THE GLOBAL NULL WAS REFUSED — {nul['refusals'][0][:70]}")
+        print("     Treating it as ABSENT rather than scoring off a refused cell.")
+        nul = None
+    if neg and neg["refusals"]:
+        print(f"  ⛔ THE GLOBAL NEGCTRL WAS REFUSED — {neg['refusals'][0][:70]}")
+        neg = None
     centre = 0.5
     if nul and nul["n"]:
         z = (nul["p"] - 0.5) / math.sqrt(0.25 / nul["n"])
