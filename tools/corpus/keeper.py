@@ -204,22 +204,54 @@ def cycle(n: int) -> None:
     except Exception as exc:                              # noqa: BLE001
         log(f"ladder_watch error {type(exc).__name__}: {exc}")
 
+    net_on = (n % NET_EVERY == 0)
     rc, _ = run([PY, str(ROOT / "tools/monitors/replay_archiver.py")], timeout=900)
     arch = "archiver ok" if rc == 0 else f"archiver rc={rc}"
 
     la = loadavg()
     if la > LOAD_CEILING:
-        log(f"{arch} · DECODE DEFERRED, load {la:.1f} > {LOAD_CEILING} "
-            f"(a battery is probably running)")
+        # ⛔⛔ ROOT CAUSE OF THE 2026-08-12 LADDER-METADATA STALL, and it is a
+        # SCOPE bug not a throttle bug. This early return skipped ALL of sync.py,
+        # including the LADDER-METADATA NET PULL, which is network-bound and cheap
+        # -- the same class of work as the archiver, which this function
+        # deliberately runs BEFORE the load check for exactly that reason. The
+        # docstring even says "Archiving still runs -- it is network-bound and
+        # cheap" and then defers an equally network-bound step.
+        # Measured: 156 DEFERRED cycles in this log. With 6+ shards running all
+        # day the load sat at 8-10, so nearly every cycle deferred, and the net
+        # pull (only eligible on n % NET_EVERY == 0 anyway) almost never landed.
+        # ladder_games.tsv reached 8.5h stale and league_matches.tsv 5.8h while
+        # every cycle logged a healthy line. ladder_games is the surface CLAUDE.md
+        # names as AUTHORITATIVE for every rated denominator.
+        # ⇒ The NET pull now runs even when the DECODE is deferred.
+        if net_on:
+            rcn, outn = run([PY, str(HERE / "sync.py"), "--net-only"], timeout=900)
+            got = [l.strip() for l in outn.splitlines()
+                   if l.strip().startswith(("ladder_games:", "league_matches:"))]
+            log(f"{arch} · DECODE DEFERRED, load {la:.1f} > {LOAD_CEILING} "
+                f"· NET PULL STILL RAN" + (" · " + " · ".join(got) if got else
+                " · *** NET PULL PRODUCED NO OUTPUT"))
+        else:
+            log(f"{arch} · DECODE DEFERRED, load {la:.1f} > {LOAD_CEILING} "
+                f"(a battery is probably running) · net not due (cycle {n})")
         return
 
     args = [PY, str(HERE / "sync.py")]
-    if n % NET_EVERY:
+    if not net_on:
         args.append("--no-net")
     rc, out = run(args, timeout=1800)
     line = next((l.strip() for l in out.splitlines() if l.startswith("archive ")), "")
     added = next((l.strip() for l in out.splitlines() if "appended rows" in l), "")
-    log(f"{arch} · load {la:.1f} · {line}" + (f" · {added}" if added else ""))
+    # ⛔ SAY WHETHER THE NET STEP RAN. It is the ONE step in the cycle that never
+    # reported, and it stalls INVISIBLY: on 2026-08-12 ladder_games.tsv sat 8.5h
+    # stale and league_matches.tsv 5.8h while every cycle logged a healthy line
+    # and the replay-derived tables were fresh to the minute. 1,284 log lines
+    # contained ZERO mentions of the ladder-metadata pull, so its success and its
+    # failure looked identical from outside -- and `ladder_games.tsv` is the
+    # surface CLAUDE.md names as authoritative for every rated denominator.
+    # Magnus asked why it was stale; this is the line that would have answered it.
+    log(f"{arch} · load {la:.1f} · net={'ON' if net_on else 'skipped'}"
+        f"(cycle {n} % {NET_EVERY}) · {line}" + (f" · {added}" if added else ""))
 
     # THE LOG LINE ABOVE IS TWO GREPS, AND EVERYTHING ELSE sync PRINTS IS
     # DISCARDED. That was fine while sync only appended rows. It stopped being
@@ -232,8 +264,15 @@ def cycle(n: int) -> None:
         s = l.strip()
         if "REFUSED" in s:
             log(f"  *** {s}")
-        elif s.startswith(("meta_join:", "league_matches:")):
+        elif s.startswith(("meta_join:", "league_matches:", "ladder_games:")):
             log(f"  {s}")
+    # A net cycle that produced NEITHER table line is a SILENT FAILURE, which is
+    # exactly the state that went unnoticed for 8.5 hours. Say so.
+    if net_on and not any(l.strip().startswith(("ladder_games:", "league_matches:"))
+                          for l in out.splitlines()):
+        log("  *** NET STEP RAN AND PRODUCED NO ladder_games/league_matches LINE "
+            "-- ladder metadata is NOT being refreshed. Run "
+            ".venv/bin/python tools/corpus/sync.py by hand and read its output.")
 
 
 def loop() -> None:

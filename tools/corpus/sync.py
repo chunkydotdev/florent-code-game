@@ -168,8 +168,25 @@ def sync_ladder() -> int:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-net", action="store_true")
+    # ⛔ ADDED s33: the LADDER-METADATA pull only, skipping the CPU-heavy decode.
+    # The keeper defers the decode when load is high (156 times on 2026-08-12),
+    # and that early return was ALSO skipping this network-bound step -- which is
+    # how ladder_games.tsv reached 8.5h stale while every cycle logged healthy.
+    ap.add_argument("--net-only", action="store_true",
+                    help="ladder metadata only; no replay decode")
     ap.add_argument("--check", action="store_true", help="report drift and exit")
     a = ap.parse_args()
+
+    if a.net_only:
+        # LADDER METADATA ONLY. No decode, no ledger, no build_corpus.
+        g = sync_ladder()
+        print(f"  ladder_games: +{g} new game rows")
+        r = sh([PY, str(HERE / "league_matches.py"), "--update",
+                str(OUT / "league_matches.tsv")])
+        for ln in r.stdout.splitlines():
+            if ln.startswith("league_matches:"):
+                print("  " + ln.strip())
+        return
 
     files = sorted(ARCHIVE.rglob("*.replay26"))
     done = ledger()
