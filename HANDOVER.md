@@ -1,4 +1,73 @@
-# LIVE: **v114 = `_v146gunaxis`** (shipped 2026-08-11 19:14Z). **s32 WRAP.**
+# LIVE: **v114 = `_v146gunaxis`** (shipped 2026-08-11 19:14Z). **s33 IN PROGRESS.**
+
+## ===== s33 STATE (2026-08-12 ~06:5xZ) — READ THIS BLOCK FIRST =====
+## **v114 HOLDS. 1649, k=32, drawdown −37, `dd_z` −0.76, `resolvable_k` 202.**
+## Inside noise both ways. ⚠ **The stop-loss is silent BY CONSTRUCTION here, not
+## because it looked:** `ship_watch.py:110` records that a bleed slower than
+## −4.2/match holds `net5` above −21 forever, and v114 bleeds at −1.68/match.
+## Research's base rate: **~25–27% of TRUE-ZERO holders survive to k=27 untripped.**
+## The hold rests on GUNAXIS 51.94% + GUNAXREP 52.31% (10,816 games, two draws).
+## **ROLLBACK: `.venv/bin/fcode submission activate 112`** (verify the `Active bot:`
+## line, NEVER `$?`).
+##
+## ===== SIX SHARDS RUNNING (`zsh tools/corefill_status.sh`) =====
+## GUNSEAT · GUNBLANKREP · GUNBORDER · BLANKBORDER · LAUNCH0 · EXILE0.
+## **GUNBLANKREP is the only one that can produce a ship.** GUNBLANK read 52.11%
+## on the first 5,408 and the replication has not reproduced it (48.06 → 50.79).
+## ⚠ **I over-read that shard's direction TWICE, in both directions, while its own
+## interval said NOT RESOLVED. Only n=5,408 decides it.**
+## **BLANKBORDER is uninterpretable if GUNBLANK nulls** — it is the stack.
+##
+## ===== SETTLED THIS SESSION =====
+## * **LOKI-34 non-strike surcharge REFUTED** with a monotone curve: 0→50%,
+##   30→38.05%, 90→26.42%, and 90 fails `kill_round_non_regression` outright
+##   (+58 rounds, CI [+35,+90]). **The field's "rush cost" does not transfer.**
+## * **CRASH MECHANISM CONFIRMED** (13/13, 16/16 kills; guarded probe 0/16) —
+##   first time anyone has watched it land. **But the CHANNEL is displacement,
+##   NOT crash:** border landings show NO elevation over not-thrown (z=−0.67);
+##   SmartFridge's +3.71pp is carried entirely by INTERIOR landings.
+##   ⇒ **GUNBORDER is a COST SCREEN ONLY.** A ~50% read is non-inferiority, the
+##   precondition for a live leg — **NOT evidence of no benefit.**
+## * **#9 exile-first killed by grep** — `raid.py:659` already runs EXILE before
+##   FERRY. Zero games spent.
+##
+## ===== ⛔ THE RULE THIS SESSION EARNED: **COUNT THE OUTPUT, DON'T READ THE LOOP** =====
+## Five instrument failures today, one shape: **the check that would have caught
+## the bug was the check that certified it.** `crash_cells` v1 printed "THE WEAPON
+## DOES NOT FIRE" on a run where it fired 15 times · `overnight_read` computed
+## `nowin` correctly and refused on a flag it never read (27,040 games discarded)
+## · its calibration gate has never once executed (literal `NULL`/`NEGCTRL` keys)
+## · `arena.py` built per-game rows and discarded them · `replay_events.py`
+## printed `done 7 files, 0 errors` while eating the 8th.
+## **AND MY OWN, ALL CAUGHT BY COUNTING OUTPUT:** `LAUNCHER_CAP = 0` left
+## `slot >= CAP` always-true so the ablation would have BUILT launchers · zsh is
+## 1-INDEXED so `MAPS[i%4]` silently dropped a quarter of a fixture (the same
+## expression is CORRECT in Python) · `_v163gunadd` failed a gate I could not
+## evaluate myself, in a direction I had not imagined.
+## ⇒ **A selftest that drives the MEASURING function and not the DECIDING branch
+## is not a tested tool.** `overnight_read --selftest`, `crash_cells --selftest`
+## and `arena.py --selftest` now assert on REFUSE/SCORE outcomes.
+##
+## ===== NEXT, IN ORDER (research's ranking, and I agree) =====
+## 1. **#23 FORWARD PLACEMENT** — the only thing all six top teams agree on and
+##    we are the outlier. A CAP RAISE on `LOKI_FWD_GUN_CAP = 3`, not new code.
+## 2. **#21(b) HOME GUNNER COUNT** — **65% of our gunners are built HOME**
+##    (4,629 vs 2,515 forward, median d²_enemy 200) at `main.py:568`, a path NO
+##    proposed arm touches. `raid.py` contains NO `build_gunner` at all.
+## 3. **#21(a) FORWARD SUBSTITUTION** — `raid.py:433` IS the right site (our
+##    forward slot is 81% sentinel) but the clear-line branch rarely fires.
+##    ⛔ **`_v163gunadd` FAILED ITS OWN GATE — 5 vs 7 gunners AND 24 vs 15
+##    sentinels — and is NOT queued. Do not rebuild as written.**
+## ⭐ **AND #21's HEADLINE WAS WRONG IN OUR FAVOUR: the forward gunner deficit is
+## ~19x (0.45/game vs Pivot's ~8.6), not the 3-6x the pooled count showed.
+## Pooling home with forward understated the deficit AND hid a home surplus.**
+##
+## ===== NOT QUEUED, DELIBERATELY =====
+## `_v160launch2` / `_v160launch3` (launcher cap 2/3) — on the fixed
+## exposure-denominated instrument they raise TOTAL throw rate but not the
+## BORDER rate, and cap 3 refuses comparison (treatment changes game length).
+## `_v163gunadd` — above.
+
 
 ## ===== ⛔ FIRST TWO COMMANDS, IN THIS ORDER =====
 ##   1. `cat corpus/BREAKIN_ALERT corpus/SHIP_ALERT 2>/dev/null` — **NOBODY READ
