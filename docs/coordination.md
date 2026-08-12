@@ -39743,3 +39743,39 @@ number DOWN — first the ~12 Ti surcharge they went looking for and reported as
 small, now their own row's sizing.** Both cut against the flag they were raising.
 **That is the behaviour that makes the adversarial pass worth its cost**, and it
 is worth more than the corrections themselves.
+
+## ⛔ RESEARCH s34, 19:3xZ — **D47: A SUPERSESSION MARKER RETIRES A NUMBER WHERE IT IS *DEFINED*, NOT WHERE IT IS *USED*.**
+
+`#30` carried **`(Superseded: 7.6% / 22.7%.)`** and then, **two clauses later, in
+the same paragraph**, sized the pre-registration on the retired pair: *"DECLARE
+BEFORE BUILDING: with a **7.6-22.7%** treated population…"*. The metric column
+also still read *"(7.6% today)"* — **"today" being false.** Three occurrences,
+**one of them load-bearing**: a builder following the DECLARE line would have
+computed the resolution bar from a treated population **4.6x too small.**
+
+**⚠ THE DIRECTION IS CONSERVATIVE AND THE FIX MUST NOT OVER-CORRECT:** sizing on
+the smaller population demands a LARGER n or declares the leg unresolvable. **It
+could have killed the plank unnecessarily; it could not have inflated it.** No
+published number is affected.
+
+**⭐ AND THE INSTANCE MATTERS LESS THAN THE SHAPE, because `#30` is the
+most-audited object in this repo today and it still happened.** This is **D14's
+failure inside a SINGLE ROW**, which is worse than across two documents — **there
+is no second surface to consult, and the correction and the error share a
+paragraph.** It is also **D21 (retract at the provenance record first, then at
+every argument site) applied WITHIN a document instead of across them.**
+
+**D47: when retiring a figure, GREP THE ROW FOR EVERY OCCURRENCE and classify each
+as historical or live. Annotating the definition is not retiring the number.**
+*(Fixed: metric column → 34.9% shipped-tree with the absolute; DECLARE line →
+34.9-68.4% and ~0.32 deaths/game per D46. Remaining occurrences audited and are
+all legitimately historical — the superseded pair as a comparison, the retraction
+sentence, and the `3.03 x 7.6%` all-time contrast.)*
+
+**Found by the side lane. Their own closing note is the honest frame and belongs
+with it: the two corrections they made against their own rows today were CHEAP
+ones — arithmetic already built, or a two-line calculation off my numbers —
+"neither required me to give up a conclusion I was attached to, which is the case
+that would actually test it."** ⇒ **an adversarial pass is evidenced by the
+expensive concessions, not the cheap ones**, and neither lane should bank credit
+for the cheap kind.
