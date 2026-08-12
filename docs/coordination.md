@@ -37407,3 +37407,79 @@ proxy for a measurement you did not make.** The proxy rule says *run X*; this sa
 every time you repeat it.* **The us-only/denominator rule already demands the
 population and the clock travel with a number; this is the same rule applied to
 PROVENANCE.**
+
+# ============================================================================
+# 2026-08-12T17:0xZ (`date`) — **BUILDER s33 WRAP — PROCESS DELTAS.**
+# Arm retro ran FIRST (`docs/builder-arm-retro.md`, instrument v1, FIRINGS 7).
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**S1. ⭐⭐ TEST THE DECIDING BRANCH, NOT THE MEASURING FUNCTION.** *(behaviour
+change → three instruments rewritten, `overnight_read`/`crash_cells`/`arena.py`
+now assert on REFUSE/SCORE outcomes.)* **Three tools published false verdicts
+today behind GREEN selftests, all one shape.** `crash_cells` v1 drove its crash
+counter to 0 and >0 across 7 cells and then printed **"THE WEAPON DOES NOT FIRE
+— the road closes"** on a run where it fired 15 times, because the branch turning
+a count into a verdict had no test. `overnight_read` computed a row-level
+NOWINNER count correctly and then refused on a heartbeat flag it never compared
+against — **27,040 real games discarded** — and its calibration gate had **never
+once executed** in its life (literal keys `NULL`/`NEGCTRL`; shards are named
+`NULL114`/`NEG114`). `arena.py` built a full per-game record and dropped it.
+⇒ **A green selftest over the parser is not a tested tool.**
+
+**S2. ⭐ COUNT THE OUTPUT, DON'T READ THE LOOP.** *(behaviour change → booted
+via this block.)* Every one of my own defects was caught by counting what came
+out, never by reading what went in: `LAUNCHER_CAP = 0` left `slot >= CAP`
+always-true so the ablation would have **built launchers**; zsh is **1-indexed**
+so `MAPS[i%4]` silently dropped a quarter of a fixture while the identical
+expression is correct in Python; `_v173sealfirst` was a circular gate that
+delayed the raid instead of reordering it; `_v163gunadd` failed a gate in a
+direction I had not imagined. **All four were invisible to code review and
+obvious to an outcome check.**
+
+**S3. ⭐⭐ THE BATTERIES MEASURE; THE REPLAYS EXPLAIN.** *(behaviour change →
+promoted here because it changes what a session DOES first.)* ~90,000 local
+games told us whether numbers moved. **75 decoded live games told us what the
+bot does** — v116 builds a launcher in **2 of 50 games** (deferral IS deletion),
+our first forward sentinel lands **r13** and not the r20 self-play reports, **41%
+of our sentinels die with 100% under enemy turret coverage against 64% of
+survivors**, and the field **tears down and rebuilds gunners routinely** (86
+undamaged removals in 25 games) while doing it to builders **twice**. **None of
+that came from a battery, and every structural finding today came from it.**
+⇒ **Decode replays in hour one, not hour eight.**
+
+**S4. A SELECTED ARM'S REPLICATION IS THE ESTIMATE; POOLING REINTRODUCES THE
+SELECTION.** *(rule → declared forward-looking before the numbers landed.)*
+GUNBLANK's discovery run was chosen from 18 arms, so it is biased up — simulated
+at **+0.44pp** for a true 51.2% arm winning that field. **Pooling discovery with
+its own replication keeps ~half the bias.** Declared as a standing rule with
+clause 3 doing the work: **which case an arm is in is fixed BEFORE its
+replication reads out** — and it binds me on LAUNCH0/EXILE0, which POOL.
+
+**S5. THE HOLDER IS A FACT TO READ AT FIRE TIME; A DOCUMENT NAMING IT IS A
+CACHE.** *(behaviour change → `HANDOVER.md` fixed in three places; leg scripts
+read `Active bot:` live.)* My first leg script **hardcoded `activate 112`** while
+the holder was x3r0's **v115**. `HANDOVER.md:10` said the same and I had quoted
+it all session. **Four holders changed today.**
+
+**S6. PRICE THE EXPECTED EFFECT BEFORE QUEUEING — AND MEASURE THE RIGHT
+OUTCOME.** LOKI-43 rent died to arithmetic (~break-even) before spending games.
+**But I then killed LOKI-44 TWICE on two different WRONG reasons** — counting
+enemy builder deaths for a plank aimed at **cores**, then missing that **healing
+costs the builder its action**, so the absorption IS the weapon. **Both caught by
+Magnus, not by me.** ⇒ pricing is right; **pricing the wrong quantity is worse
+than not pricing.**
+
+## STATE (17:0xZ)
+* **v116 = `_v169launchlate160` LIVE**, 1664, activated by Magnus ~14:1x.
+  **ROLLBACK: read `fcode status | grep 'Active bot:'` FIRST** — never a written
+  version. v117/v118 are today's prototype legs, correctly inactive.
+* **8 shards running/queued.** ZEROAMMO **53.51%** and LATE160AMMO **53.72%**
+  (n≈3,080, both OUTSIDE-ABOVE vs the v115 baseline) are the **ship candidates**.
+  AMMO115 50.81% null · DELVSDEF 50.87% (delete≈defer, as the replays predicted)
+  · BURST64B/32B/HEALERFIRST/NOAPPROACH/IDLECULL behind them.
+* **ZERO rated leakage across three prototype windows** (~19 s live total),
+  verified per-match `teamAVersion` at the pairing boundary.
+* **Live paired evidence:** ZEROAMMO **+8.0pp** and LATE160AMMO **+8.0pp** over
+  v116 on identical opponents AND maps (n=25 each, ±19pp — direction only).
