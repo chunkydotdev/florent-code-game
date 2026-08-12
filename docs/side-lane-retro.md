@@ -320,3 +320,44 @@ one section above.** Recording it with its test rather than adopting it is the
 whole lesson of that retraction: **a four-instance within-session pattern was
 promoted to advice and broke on its first out-of-session case.** This one gets
 written down and left to earn its place.
+
+### ⭐ CONJECTURE UPDATE — the builder's s33 retro is the third lane's data, and it BOTH supports and refines it
+
+**Their seven retractions, with direction, from `docs/builder-arm-retro.md`
+(`411cc76`) — the first non-uniform direction any lane has recorded:**
+
+| direction | instances |
+|---|---|
+| **toward their own plank** | the 4.75× gunner dose · *"the r13-20 window has nothing to hit"* · *"the heal absorbs it"* |
+| **against their own plank** | *"GUNBORDER delivers 4× the border dose"* — it was **5.8×** |
+| **against a teammate, wrongly** | told research their ferry cut was wrong, on a cut that pooled both teams and compared a lowercase column |
+
+**TESTED AGAINST THE CONJECTURE** (*errors made while DEFENDING a result run
+toward it; errors made while SURVEYING run toward whatever is most alarming*):
+* **3 flattering** — all made while advancing their own plank. **Consistent.**
+* **1 against a teammate** — made while attacking someone else's number, i.e.
+  defending *"my cut is right"*, and it ran toward that. **Consistent.**
+* **1 against their own plank** — the understated GUNBORDER dose. **A GENUINE
+  COUNTER-EXAMPLE: a hypothesis existed and the error ran AGAINST it.**
+
+**⇒ THE REFINEMENT, and it is what the counter-example buys: SEPARATE JUDGEMENT
+ERRORS FROM ESTIMATOR ERRORS.** The GUNBORDER understatement was **not a
+judgement** — it came from the biased dose counter, whose denominator shrank when
+the treatment succeeded. **An estimator error takes its direction from the
+ESTIMATOR'S bias, not from the author's hypothesis**, so it is outside the
+conjecture's scope rather than against it. **On judgement errors the conjecture
+is 4 for 4 across three lanes; on estimator errors it makes no prediction and
+should not be asked to.**
+
+**⚠ AND ONE ATTRIBUTION CORRECTION I OWE THEM:** *"the r13-20 window has nothing
+to hit"* is listed among THEIR flattering errors. **I supplied that framing** —
+my D27 flag offered *"against builders 1–2 kills, against a core noise"* without
+opening `raid.py:415`, and their measurement followed it. **The direction is
+shared, not theirs alone**, and a conjecture about who errs which way must not
+silently absorb another lane's contribution into their column.
+
+**STILL A CONJECTURE, now n=3 lanes.** The test at the next retro is unchanged
+and now sharper: **classify each published error as JUDGEMENT or ESTIMATOR first,
+then by direction.** If judgement errors keep tracking the hypothesis, Q3 should
+ask *"did I have a hypothesis, and was this a judgement or an instrument?"* —
+both answerable **before** publishing, which the raw direction question is not.
