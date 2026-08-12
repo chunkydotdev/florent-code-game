@@ -39278,3 +39278,59 @@ our all-time rate.
 **Nothing here says the arm is bad. It says this match is not evidence either
 way, and the flattering reading had four cheap disconfirmations sitting in the
 archive.**
+
+# ============================================================================
+# 2026-08-12T18:5xZ — **THE gsxWins ANCHOR PANEL.** Magnus: *"run our latest bots
+# against gsx on the maps we do so we see how they hold up compared to each
+# other."* Design recorded BEFORE the cells fire.
+# ============================================================================
+## WHY gsxWins, AND IT IS A MEASURED CHOICE NOT A CONVENIENT ONE
+Panel churn measured over `league_matches.tsv` today:
+| team | versions today | newest ver | matches on it | 24h Elo swing |
+|---|---|---|---|---|
+| **gsxWins** | **1** | v22 | **511** | **73** |
+| Coreflood | 2 | v81 | 22 | 54 |
+| 0033 | 1 | v54 | 72 | 95 |
+| SmartFridge | **6** | v54 | 22 | 81 |
+| Leviathan | 5 | v59 | **5** | 157 |
+| Bean counters | 1 | v34 | 66 | **442** |
+⇒ **gsxWins is the only opponent that is stable on BOTH axes** — one version, 511
+matches on it, the smallest rating swing. **That makes it an ANCHOR: a cell whose
+job is to tell us whether a swing is OURS or THEIRS.**
+⚠ **And the limit of an anchor, stated up front: stable can mean "stopped
+developing". gsxWins sits at 1601 against our 1684, so this panel is NOT a
+field-representativeness test and no result here licenses a claim about the
+field.** It is a controlled comparison BETWEEN OUR OWN ARMS.
+
+## DESIGN — what makes this comparable at all
+**Same opponent, same FIVE FIXED MAPS for every arm** (`antler atoll drumlin
+fjordgate heart`, from the standard 8-map battery set so the numbers sit beside
+our local ones). Four arms, all ALREADY on the platform so **no submit is needed
+— activation only**: `v116` (live incumbent, the baseline) · `v117
+_v171launch0ammo` · `v118 _v171late160ammo` · `v119 _v178salt`.
+⛔ **`fcode match test` cannot be used**: it runs two LOCAL bots and we do not
+have gsxWins' code. **`match unrated` plays the ACTIVE submission, so each arm
+costs an activation** — this is why the design is 4 cells and not 40.
+
+## PROCEDURE, and the timing is the whole safety argument
+* **v116's cell fired at 18:49:48Z with NO activation** — it is already the
+  holder, so that cell costs zero exposure. `fd329d01`.
+* **The three prototype cells wait for the 18:52:59 pairing** and fire in the
+  ~20 minutes of clear air after it. At 18:49 the next pairing was 3.7 minutes
+  out — **too tight for three activate-and-fire cycles, so I held.**
+* Pairing clock re-derived today, not hardcoded: **12 consecutive pairings at
+  minute ≡ 12 (mod 20), second `:59`.**
+* Rate limit: 5 per 20 min shared across `unrated`/`test`. The 18:26 burst
+  expired at 18:46; 1 used at 18:49; **3 needed, 4 available.**
+* **Rollback to v116 after the third cell, verified on the `Active bot:` line.**
+
+## ⛔ WHAT THIS CAN AND CANNOT SETTLE — written before the data
+**n=5 games per arm. The band on 5 games is ±44pp.** ⇒ **NO arm ordering from
+this panel is a verdict, and I will not write one.** What it CAN do:
+* **show a GROSS failure** — an arm that crashes, TLEs, or loses 0-5 where the
+  incumbent wins, on a fixed opponent and fixed maps;
+* give a **paired mechanism read** — forward-sentinel timing, barrier counts and
+  kill rounds on IDENTICAL maps against an IDENTICAL opponent, which is exactly
+  the comparison the 5,408-game shards cannot make because they use our own bots
+  as controls.
+⇒ **Read the MECHANISM columns, not the score.** The score is a smoke test.
