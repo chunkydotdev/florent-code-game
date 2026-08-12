@@ -5,7 +5,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
 
     LINE: loki
     LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?*
-    INCUMBENT: bots/_v148ferryfirst
+    INCUMBENT: bots/_v169launchlate160
     INCUMBENT_FROZEN: no
     PRIMARY_CURRENCY: game_share
     SECONDARY_CURRENCY: kill_speed_score
@@ -138,8 +138,36 @@ ladder pays it. `R1000_IS_DEFEAT: yes` (below) says it is a defeat, and the
 > anything that seems to have a shot at killing teams in the first 250 rounds,
 > and lean into that hard once we find it."*
 
-**INCUMBENT / INCUMBENT_FROZEN** — ⭐ **BOTH FIELDS UPDATED 2026-08-11 (s31) ON
-MAGNUS'S DIRECT INSTRUCTION ("fix please"), AND THEY MOVED TOGETHER ON PURPOSE.**
+**⭐ INCUMBENT UPDATED AGAIN 2026-08-12 (s34) ON MAGNUS'S DIRECT INSTRUCTION
+("Update it please"), SIDE LANE'S HAND.** `bots/_v148ferryfirst` (v112) →
+**`bots/_v169launchlate160` (v116)**. **It had gone stale across THREE holders**
+— v114, v115 (x3r0's ship), v116 — the second such lapse in two days.
+
+**HOLDER VERIFIED FROM A LIVE PRIMARY, NOT FROM A DOCUMENT** (D28: a document
+naming the holder is a CACHE): newest `corpus/ship_watch.log` row
+**`2026-08-12T17:58:25Z v116 k=11 rating=1674 tape_age_min=4.4`**, which derives
+the version from the elo tape rather than from any written claim, cross-checked
+against the builder's live `fcode status` read at 17:24Z (`Active bot: v116
+(Loki v5)`). Tree `bots/_v169launchlate160` confirmed present.
+
+**`INCUMBENT_FROZEN` DELIBERATELY UNTOUCHED AT `no`** — the s31 hazard below does
+not apply this time precisely because that repair was done correctly then.
+
+**WHY THIS FIELD BEING STALE COSTS SOMETHING, which was not true when it was
+merely decorative:** `gate.py` only PRINTS it (it enforces on `LINE_DIRS`), **but
+`QUEUE.md`'s `GREP:` admission gate is denominated in "what was checked in the
+INCUMBENT"** — so a stale pointer sends every admission grep at the wrong tree.
+Audited at s34: the 16 counted rows were re-checked against the live tree and
+**all hold** (`#17`'s zero border/edge refs: 0 in both, with `_v131loki14` at 7 as
+the positive control; `#23`'s `LOKI_FWD_GUN_CAP = 3`: identical) — **the count is
+honest and this repair is a defence against the next admission, not a correction
+of the last.** One row moves in the builder's favour: `get_attackable_tiles_from`
+has **0 call sites in the v112 tree and 2 in the live one** (LOKI-25), so `#10`'s
+note that the component does not exist is now false.
+
+**PRIOR ENTRY, KEPT — INCUMBENT / INCUMBENT_FROZEN** — ⭐ **BOTH FIELDS UPDATED
+2026-08-11 (s31) ON MAGNUS'S DIRECT INSTRUCTION ("fix please"), AND THEY MOVED
+TOGETHER ON PURPOSE.**
 
 **WAS:** `INCUMBENT: bots/_v115dodge` (v92) with `INCUMBENT_FROZEN: yes` — *"holds
 the ladder slot and receives no further planks. It defends the rating; it is not
