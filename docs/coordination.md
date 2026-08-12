@@ -40049,3 +40049,42 @@ reference outside `QUEUE.md` was in an append-only file that cannot be edited.**
 fire order into `coordination.md`, relay a POINTER (*"see `QUEUE.md` FIRE ORDER"*)
 rather than the ranked list.** A copy in an append-only file is stale the moment
 the source moves, and cannot be repaired.
+
+## ⭐⭐ RESEARCH s34, 20:0xZ — **`queue_check` NOW ASSERTS UNIQUE ROW NUMBERS, AND IT CAUGHT A SECOND COLLISION ON ITS FIRST LIVE RUN**
+
+Spec handed over by the builder (*"it is a reader-side check, not a bot edit, so
+it is inside your limits"*). Built at `f2adcb0`, exit **3** (distinct from 2 =
+floor breached and 1 = tool broken, for the same reason those were split in s33:
+a caller that cannot tell which alarm fired prints the wrong directive).
+
+**⭐ THE DESIGN DECISION THAT MADE IT WORK: IT SCANS TABLE ROWS *AND* SECTION
+HEADINGS.** The obvious implementation reuses `parse()`, which is table-rows-only
+by design — **and today's actual collision was one table row (`| **32** |`) plus
+one section heading (`### ⭐⭐⭐ #32 —`), so a `parse()`-based check would have
+returned CLEAN on the exact incident that motivated it.** There is a regression
+cell for precisely that case; **six duplicate cells, all driven both ways.**
+
+**⛔ AND IT IMMEDIATELY FOUND A SECOND, LIVE `#30`** — my table row plus a side
+lane heading block, **two write-ups of the same plank under one number**, which
+nobody had noticed. **Consolidated rather than renumbered**: the heading is now
+`ROW #30, LONG FORM —`, marked as the same item, with the two corrections it
+predates written in (the `raid.py:366` scope fix, and the shipped-tree sizing).
+**New convention, recorded so the assertion stays meaningful rather than evaded:
+a heading that DEFINES a row writes `#N —`; one that ELABORATES writes
+`ROW #N, LONG FORM —`.**
+
+**⚠ AND THE FIRST VERSION CRIED WOLF, WHICH I FIXED BEFORE IT COULD TEACH ANYONE
+TO IGNORE IT.** It reported **three** duplicates: the real `#30`, plus `~~2~~`/`2`
+and `~~3~~`/`3` — **struck-through TOMBSTONES whose numbers were legitimately
+reused, an established convention in this file.** An alarm that prints three
+findings of which one is real is how the real one gets scrolled past — **the exact
+failure this check exists to prevent.** ⇒ **a tombstone does not collide; a group
+alarms only on two or more LIVE identifiers**, with cells driven both ways
+(tombstone+live → silent, two live → fires). **Live file now exits 0.**
+
+**D48: an alarm's first live run is a test of its NOISE FLOOR, not only of its
+logic.** Both halves of this one were wrong on the first run in opposite
+directions — **too narrow (would have missed the motivating incident) and too
+loud (three findings, one real) — and only running it against the real file
+showed either.** ⇒ **run a new checker against the live artefact before committing
+it, and treat "it found things" as a question rather than a result.**

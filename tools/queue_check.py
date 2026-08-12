@@ -201,7 +201,10 @@ def row_numbers(text: str):
             first = line.strip().strip("|").split("|")[0]
             m = re.fullmatch(r"[\s*~]*(\d+)[\s*~]*", first)
             if m:
-                out.append((int(m.group(1)), "table row", line[:70]))
+                # A struck-through id (`~~2~~`) is a TOMBSTONE, not a live row.
+                tomb = "~~" in first
+                out.append((int(m.group(1)),
+                            "tombstone" if tomb else "table row", line[:70]))
         elif line.startswith("#"):
             m = re.search(r"#(\d+)\s*[—-]", line)
             if m:
@@ -210,11 +213,24 @@ def row_numbers(text: str):
 
 
 def duplicate_numbers(text: str):
-    """-> sorted list of (number, [(kind, snippet), ...]) for numbers used twice."""
+    """-> sorted list of (number, [(kind, snippet), ...]) for LIVE collisions.
+
+    ⛔ TOMBSTONES DO NOT COLLIDE, AND THIS IS NOT LENIENCY -- IT IS WHAT KEEPS THE
+    ALARM READABLE. `QUEUE.md` retires a plank as `~~2~~` and reuses the number
+    for a new row; that is an established convention here (two instances). Firing
+    on it every run would print three "duplicates" of which one is real, and an
+    alarm that is mostly noise is how the REAL collision gets scrolled past --
+    the failure this check exists to catch. A group alarms only when it holds two
+    or more LIVE identifiers.
+    """
     seen = {}
     for num, kind, snip in row_numbers(text):
         seen.setdefault(num, []).append((kind, snip))
-    return sorted((n, v) for n, v in seen.items() if len(v) > 1)
+    out = []
+    for n, uses in sorted(seen.items()):
+        if sum(1 for k, _ in uses if k != "tombstone") > 1:
+            out.append((n, uses))
+    return out
 
 
 def _is_plank_row(row: str) -> bool:
@@ -407,8 +423,15 @@ def selftest() -> int:
          "## NEXT UP\n| **32** | **ablate the flag** |\n\n### #32 — OUR SENTINELS DIE\n", 1),
         ("two headings sharing a number -> one duplicate",
          "### #9 — alpha\n### #9 — beta\n", 1),
-        ("a struck-through id still collides",
-         "## NEXT UP\n| ~~4~~ | **a** |\n| 4 | **b** |\n", 1),
+        # ⛔ FLIPPED s34 AFTER THE LIVE RUN: a struck-through id is a TOMBSTONE and
+        # reusing its number is an established convention here. Firing on it printed
+        # 3 duplicates of which 1 was real -- noise that buries the real one.
+        ("a struck-through id is a TOMBSTONE and does NOT collide",
+         "## NEXT UP\n| ~~4~~ | **a** |\n| 4 | **b** |\n", 0),
+        ("TWO tombstones plus a live row still do NOT collide",
+         "## NEXT UP\n| ~~4~~ | **a** |\n| ~~4~~ | **b** |\n| 4 | **c** |\n", 0),
+        ("but two LIVE rows sharing a number DO collide",
+         "## NEXT UP\n| ~~4~~ | **a** |\n| 4 | **b** |\n| 4 | **c** |\n", 1),
         ("different numbers do NOT collide",
          "## NEXT UP\n| **32** | **a** |\n\n### #33 — b\n", 0),
     ]

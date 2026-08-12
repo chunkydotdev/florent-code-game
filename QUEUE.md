@@ -318,7 +318,11 @@ sit at 0. **Not worth a slot.**
 **8. NOTE ON "ON THE RING".** For the ENEMY CORE's ring this is the collar and we already ship it. The new ground is **trunk** tiles. The mirror case — them denying OUR delivery seats — is the L4 problem from the same session.
 
 
-### ⭐⭐ #30 — THE STATION SCORER IS BLIND TO ENEMY SENTINELS *(side lane, s34; verified independently by the builder in the shipped tree)*
+### ⭐⭐ ROW #30, LONG FORM — THE STATION SCORER IS BLIND TO ENEMY SENTINELS *(side lane, s34; verified independently by the builder in the shipped tree)*
+
+**⚠ THIS IS THE LONG FORM OF TABLE ROW `#30`, NOT A SECOND ITEM.** Found by `queue_check`'s new unique-number assertion on its first live run — the two write-ups shared a number and a reference to *"#30"* was ambiguous between them. **The TABLE ROW is authoritative for the GREP and the sizing; this block is authoritative for the argument.** Two corrections landed on the table row after this block was written and are NOT reflected below: **(1)** *"`SENTINEL` → nothing"* is too strong — **sentinels ARE handled at `raid.py:366`, sharing attack priority `pr=3` with gunners; the true finding is scoped to the STATION SCAN, i.e. we model the sentinel as something to KILL and never as something to AVOID**; **(2)** the sizing is **34.9% newly / 68.4% ceiling = ~0.32 forward builder deaths/game on the SHIPPED trees**, not the all-time 7.6%/22.7% this block predates.
+
+**⇒ CONVENTION, so the assertion stays meaningful rather than evaded: a heading that DEFINES a row writes `#N —`; a heading that ELABORATES an existing row writes `ROW #N, LONG FORM —`.**
 
 **1. THE CHANGE, named to the branch.** `raid.py:500-527`, the raid-station scan, handles exactly **two** enemy entity types: `LAUNCHER` → `threats`, `GUNNER` → `gun_axis` (LOKI-25, the plank v114 shipped on). **`SENTINEL` → nothing.** Verified by me on `_v169launchlate160`: `grep -oE "EntityType\.[A-Z_]+"` over the scorer returns `GUNNER` ×2 and `LAUNCHER` ×1, **and no SENTINEL at all.** One call site. The change is a third term, same penalty machinery as `LOKI_GUNAXIS_PENALTY`.
 
