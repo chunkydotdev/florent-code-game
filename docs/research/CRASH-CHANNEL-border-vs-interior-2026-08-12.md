@@ -100,10 +100,17 @@ ADMISSIBLE TARGETS (rating >= 1650 AND inside the reachable band)
   team lazy 0/0
   ------------------------------------------------------------------
   TOTAL 1 event on 110 border landings = 0.91%
-  the SAME teams' not-thrown baseline  = 0.74%      -> no elevation
+  the SAME teams' not-thrown baseline  = 0.74%  (23/3099)
 ```
 
-**95% upper bound on the true rate given 1/110: 4.2%.** The unguarded probe rate
+**The sharper statement, and it is better than "no elevation" (side lane): at that
+baseline, 110 border landings are EXPECTED to produce 0.82 events. We observed 1.
+The admissible population's border cell is AT its own not-thrown baseline —
+1.22x — not merely un-elevated.**
+
+**Clopper-Pearson 95% upper bound given 1/110: 4.24%** — and 0/110 would have
+given 2.69%, so **the single event, not the sample size, is what costs 1.5pp of
+that bound.** The unguarded probe rate
 is **100%**; a 20% rate would have produced **22 events and we observed 1**.
 ⇒ **No admissible target is unguarded in the probe's sense.** That is a far
 stronger closure than the pooled null, and it is the one the side lane said would
