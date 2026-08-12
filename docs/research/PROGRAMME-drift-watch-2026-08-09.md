@@ -1988,3 +1988,37 @@ ENEMY BUILDER-ACTIONS DENIED per round — which the replays can measure and a
 win-rate shard cannot.** ⇒ **A null here means "under 1.33pp", never "the pin
 does not work."** That is D27 used to SCOPE a conclusion rather than to cancel a
 run, which is the mode the first scope note already said was intended.
+
+- **⭐ THERE IS A THIRD TIER OF API AUTHORITY AND NOBODY HAD NAMED IT (s34,
+  2026-08-12, side lane + research within twenty minutes, on `#23`'s premise):**
+  `CLAUDE.md` says *read the engine binary, not the organisers' doc*, which
+  presents a two-tier world — the `.so` (authoritative, expensive) and
+  `official-docs.md` (cheap, known-wrong). **There is a cheap middle tier and it
+  is already installed: `.venv/lib/python3.13/site-packages/fcode/_types.py`,
+  shipped BY the organisers with `py.typed` beside it.** It carries **per-method**
+  contracts on the method's own docstring line — `get_nearby_buildings` reads
+  *"Return ids of all buildings within dist_sq (defaults to vision radius)"*, and
+  `get_nearby_tiles` carries a second sentence the others do not (*"dist_sq must
+  not exceed the vision radius"*) which **corroborates the binary's own
+  `dist_sq exceeds vision radius` guard string** (`engine-source-crash-and-
+  launcher-2026-08-10.md:46-50`).
+  **WHY IT EARNS A NOTE RATHER THAN A FOOTNOTE: the failure it prevents is
+  READING ACROSS ROWS.** `#23`'s premise — that a no-argument
+  `get_nearby_buildings()` defaults to vision — was taken from the **neighbouring
+  `get_nearby_tiles` row** of a summary table, because that is the only row
+  carrying the parenthetical. **A table invites the read-across; a per-method
+  docstring cannot be read across.** Both lanes independently searched
+  `official-docs.md`, found nothing, and one of them published *"not established
+  anywhere I can find"* — **which was a claim about where they had looked,
+  wearing the clothes of a claim about the repo.**
+  **⚠ AND THE TIER HAS A CEILING THAT MUST TRAVEL WITH IT: the bodies are `...`.**
+  `_types.py` is a STUB, so this is a **docstring, not an implementation** — and
+  *"a docstring read as the code"* is one of the four recorded instances of this
+  lane's characteristic failure. ⇒ **RANKING, and it is the usable output:
+  `.so` probe > `_types.py` (cite WITH the stub caveat) > `official-docs.md` /
+  `CLAUDE.md` tables (never read across rows).** **`_types.py` demotes a probe
+  from BLOCKING to LOW PRIORITY; it never retires one.**
+  **Dead end recorded so nobody re-walks it:** the `.so` carries **no
+  docstrings** and `fcode_engine` exposes only `run_game` — `Controller` is not
+  importable, so the top tier is a BUILDER-OWNED behavioural probe
+  (`get_cpu_time_elapsed`-style call loop), not introspection.
