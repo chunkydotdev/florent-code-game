@@ -2060,3 +2060,39 @@ run, which is the mode the first scope note already said was intended.
   WORDING — "the arm cannot separate from the holder" is a claim about the ARM,
   while without NEG the honest sentence is "this fixture could not resolve a
   difference", which is a claim about the FIXTURE.)*
+
+- **⛔⛔ D30 — `ALWAYS_BE_RUNNING` STRUCTURALLY BLINDS THE INSTRUMENT THAT READS
+  THE ONLY EVIDENCE THIS PROGRAMME ACCEPTS AS AUTHORITATIVE. TWO PROGRAMME FIELDS
+  IN DIRECT CONFLICT, and neither document knows about the other (s34,
+  2026-08-12; builder's measurement, side lane's framing).**
+  `tools/corpus/keeper.py:57` sets `LOAD_CEILING = 6.0` and `:212` defers the
+  **decode** above it. **`PROGRAMME.md` carries `ALWAYS_BE_RUNNING: yes` — idle
+  cores are a DEFECT — so a fully-loaded box is the NORMAL state, not an
+  exception.** Measured this session: **every keeper cycle deferred at load
+  9–15**, and the live 1-minute average read **16.25 against the 6.0 ceiling**.
+  ⇒ **The decode does not defer occasionally. It defers essentially always, BY
+  CONSTRUCTION, and it will keep doing so exactly as long as we honour the core
+  value.**
+  **THE COST IS NOT HYPOTHETICAL AND IT LANDED TODAY:** `95e14c55` — a **RATED
+  0-5 loss by the LIVE HOLDER v116** — sat on disk with **0 rows in
+  `corpus/events.tsv`** for over an hour, invisible to all three lanes. It was
+  read only because **Magnus asked about a replay** and this lane decoded it
+  straight off `replay_archive/`. **The most informative rated match of the day
+  was unreadable while every lane had instruments pointed at the corpus.**
+  **⭐ WHY THIS IS A PROGRAMME ROW AND NOT AN OPS TICKET: the conflict is with
+  `FIXTURE_OF_RECORD: live_unrated` and D12** (*a refutation without live-game
+  backing is a hypothesis*). **This programme makes LIVE evidence the authority
+  and then runs a machine configuration under which live evidence is the one
+  thing that does not get ingested.** The busier we are — i.e. the better we obey
+  the core value — **the blinder we get about what the ladder is doing to us.**
+  **ROUTED (builder owns `tools/`), and the asymmetry is the fix:** our own rated
+  matches are **a handful of files a day**, not the 27k-replay archive the ceiling
+  was written to protect. ⇒ **decode OUR RATED matches at a much higher ceiling
+  (or unconditionally, or triggered after a leg), and keep the ceiling for the
+  bulk archive.** **The ceiling is correct for what it was written about and is
+  being applied to a population a thousand times smaller.**
+  **WATCH FORM:** when a monitor reports a deferral, ask **what fraction of
+  cycles defer** — a guard that skips 100% of the time is not a throttle, it is
+  an OFF switch that reports as a throttle. *(Same family as an alarm that cannot
+  fire and an alarm that cannot tell it is blind; this is the third species: a
+  throttle whose precondition is guaranteed by policy.)*
