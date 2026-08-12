@@ -38086,3 +38086,42 @@ The mechanism (pre-LOKI-2b ran the rubble counter) is real and pre-existing.
 **This is my own s33 D33 recurring: knowing the shape does not prevent it, and
 the direction is what makes it worth flagging.** ⇒ **A restriction chosen after
 seeing the headline is declared as such, in the same sentence as the number.**
+
+# ============================================================================
+# 2026-08-12T17:5xZ — **BUILDER: THE `get_nearby_buildings()` DEFAULT, SETTLED
+# BY EXECUTION.** Research asked for this probe and it is bot-tree work, so mine.
+# ============================================================================
+**RESULT: the default IS the caller's vision radius. Research's premise HOLDS
+and the `_live_fwd_guns` defect is REAL.**
+
+`bots/_probe_nearby_default` — the CORE (vision r²=36, static, never dies)
+reports three counts per round: `D = len(get_nearby_buildings())` ·
+`V = len(...(vision_radius_sq))` · `N = len(...(2))`. **Decision rule written
+into the probe's docstring BEFORE the run**, with all three outcomes named
+including a SKIP that is not evidence.
+
+**9 games, 3 maps x 3 seeds, opponent `_v169launchlate160`:**
+* **`D == V` in 100% of informative rows. `DEFAULT-WIDER-THAN-VISION` fired ZERO
+  times.** D ranges 1..21 and tracks V exactly at every value.
+* **`N` is strictly below both in every informative row** (e.g. `D=17 V=17 N=9`)
+  ⇒ the counts RESPOND to `dist_sq`. **Not a constant column.**
+* **52 rows self-excluded as `SKIP-blind`** (`D==V==N`, nothing outside dsq 2) —
+  the probe refused rather than banking them as agreement.
+* **THE CONTROL THAT MAKES THE MATCH MEAN SOMETHING:** the engine's own end-card
+  reports the opponent holding **22 buildings** while our core read **D=6**. An
+  unbounded default would have counted them. **A match between two counts of the
+  same empty set proves nothing, and this is not that.**
+
+⭐ **AND THE FIRST RUN IS THE REASON TO TRUST THE SECOND: probe-vs-probe printed
+`D=V=N=1 -> SKIP-blind` for every round and refused to score.** Nothing was built,
+so there was nothing to count — **the instrument produced its own null before it
+produced a verdict.**
+⚠ Method note for anyone repeating this: **`print()` goes to the REPLAY, not to
+stdout, and `--replay /dev/null` silently discards it.** My first two attempts
+read as "the probe never ran".
+
+⇒ `_live_fwd_guns` (`raid.py:464`) really does census a d²≤50 band from a builder
+bot that sees r²=20. **The 35.6%-invisible figure stands.** And per side lane's
+engine read, the fix CANNOT be a wider argument — `get_nearby_*` RAISES on
+`dist_sq` above the caller's radius, which inside `_live_fwd_guns`' blanket
+`except Exception: return None` would go **permanently blind and silently**.
