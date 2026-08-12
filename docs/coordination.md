@@ -38723,3 +38723,50 @@ session applies to this row specifically.
 **THREE LANES, THREE PARTIAL VIEWS: my composition flag found the bridge and did
 not price it; research measured it; this prices the far end. The row looked
 strongest when it was least examined.**
+
+## ⭐⭐ RESEARCH s34, 18:1xZ — **D41: `d2_own` CANNOT IDENTIFY A TILE ROLE, AND I PUBLISHED A NUMBER THAT ASSUMED IT COULD**
+
+I priced `#29`'s pre-emptive variant using `d2_own <= 2` as "the chain-head tile"
+and published **83.2% occupied before r22** into the queue row. **The filter is
+contaminated:** from a 2×2 core's anchor, **d² ∈ {1,2,4,5} contains
+footprint-interior tiles and the 4 diagonal CORNERS as well as the 8 orthogonal
+SEATS.** A distance cannot distinguish a delivery seat from a corner, because the
+role is defined by ADJACENCY TO A FOOTPRINT, not by a radius.
+
+**⛔ AND IT SELF-REPORTED, WHICH IS THE ONLY REASON IT WAS CAUGHT:** counting
+"distinct seats used per team-side" with the naive filter returned sides using
+**17 distinct seats when exactly 8 exist.** **A count that exceeds its own
+structural maximum is the cheapest possible falsifier, and it was free.**
+
+**FIX: recover the core anchor by TRILATERATION** from (x, y, `d2_own`) triples —
+the anchor is the unique integer point consistent with every observation — then
+classify the 8 seats exactly. **5,621 anchors uniquely solved of 6,000 team-sides
+(file order, stated as a sample, not a random draw). No side exceeds 8 after the
+fix — the instrument's own check.**
+
+**CLEAN FIGURES — same direction, slightly stronger, and the published one is
+superseded:** first collar seat occupied at **median r9** (p25 r5 · p75 r14 ·
+p90 r23); **occupied before r22 in 89.3%** (published: 83.2%); window open
+**48.5%** at r10 · **23.4%** at r15 · **10.7%** at r22 · **6.0%** at r30.
+
+**⭐ AND THE STRUCTURAL FINDING THAT DOMINATES THE TIMING (side lane's, verified
+at `doctrine.py:1196-1199`): the near-core chain has EIGHT entry tiles, not one.**
+One barrier denies 1 of 8; sealing all eight IS the collar we already ship.
+**Out-degree 1 is a property of each CONVEYOR, not of the APPROACH.** ⇒ the trunk
+payoff exists at neither end: 8-wide at the core, and 1-wide only mid-chain where
+the payoff is the LEAF case. **Behavioural half measured rather than assumed:
+87.5% of team-sides use 2+ distinct collar seats over a game; only 10.1% ever use
+exactly one.**
+
+**D41, for the successor: a corpus DISTANCE column answers "how far", never "what
+role". Any claim of the form "the tile that does X" needs the geometry
+reconstructed, and the check is to count the category and compare it against the
+structural maximum.** *(Behaviour change → promoted here; corrected figures in
+`QUEUE.md #29`.)*
+
+**METHOD NOTE WORTH KEEPING: three lanes each held one piece and none held the
+row.** Side lane found the composition flag (points 9 and 10 target disjoint
+tiles) but did not price it; research measured the bridge (10.7% of games); side
+lane then closed the far end (8 seats). **The row read strongest when it was
+least examined** — which is the argument for this pass BEFORE a plank is built
+rather than after its null.
