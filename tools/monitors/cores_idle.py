@@ -28,9 +28,21 @@ not happening, are the same failure.**
 
 WHAT IT DOES
 ------------
-Counts running `fcode run` processes. If ZERO for two consecutive polls, it
-prints an ALERT naming the top unblocked item in `QUEUE.md` — the queue is the
-answer to "what should be running", so the alarm carries its own remedy.
+Counts running `fcode run` processes. If FEWER THAN `EXPECTED_GAMES` (default 1)
+for two consecutive polls, it prints an ALERT naming the top unblocked item in
+`QUEUE.md` — the queue is the answer to "what should be running", so the alarm
+carries its own remedy.
+
+⛔ THIS PARAGRAPH SAID "If ZERO" UNTIL 2026-08-12 (s33) AND THE CODE HAD SAID
+`n < expected` SINCE s31. A stale docstring beside live code is not cosmetic:
+the side lane published a wrong conclusion off THIS SENTENCE in s32 — one of
+four errors that session, all of them "inferred from an artefact instead of
+opening the primary", and a docstring is the artefact that most looks like the
+primary. Fixed here on Magnus's "fix your findings", together with the alert
+wording below, which had the same gap: `games=2/5` printed "*** CORES IDLE ***"
+while a runner was alive, so a reader had to caveat the alarm before quoting it.
+⚠ `PROGRAMME.md:60-62` still describes the retired `n == 0` predicate. That file
+is edited only on Magnus's explicit directive, so it is FLAGGED, not fixed.
 
 ⛔ IT GATES ON THE PROCESS COUNT, NEVER ON AN EXIT CODE, and it reports the AGE
 of what it read — both standing repo rules (`fcode status` exits 0 while printing
@@ -115,8 +127,13 @@ def main() -> int:
     qs = f"queue_age_min={age:.1f}" if age is not None else "queue=MISSING"
     short = f"games={n}/{expected}"
     if consec >= 2:
+        # `CORES IDLE` is kept VERBATIM for n == 0 because PROGRAMME.md quotes
+        # that literal string; the shortfall case gets its own honest wording
+        # rather than borrowing a word that is not true of it.
+        _what = ("CORES IDLE" if classify(n, expected) == "idle"
+                 else f"CORES UNDER-USED ({n} of {expected})")
         msg = (f"{stamp}\t{short}\tconsec_idle={consec}\t{qs}\t"
-               f"*** CORES IDLE — NEXT QUEUE ITEM: {item or 'QUEUE EMPTY'} ***")
+               f"*** {_what} — NEXT QUEUE ITEM: {item or 'QUEUE EMPTY'} ***")
         print(msg)
         with ALERT.open("a") as fh:
             fh.write(msg + "\n")
@@ -125,6 +142,21 @@ def main() -> int:
         if n > 0 and ALERT.exists():
             ALERT.unlink()                # cleared by work actually starting
     return 0
+
+
+def classify(n: int, expected: int) -> str:
+    """The predicate, as a PURE function so the selftest can drive it.
+
+    It was inline, which is why `--selftest` had no cell for it and could not
+    have caught the docstring drift above. Returns 'blind' | 'idle' | 'under'
+    | 'ok'. 'idle' and 'under' both count toward `consec_idle`; they differ only
+    in what the alarm CALLS itself, and that difference is the s33 fix.
+    """
+    if n < 0:
+        return "blind"
+    if n == 0:
+        return "idle"
+    return "under" if n < expected else "ok"
 
 
 def selftest() -> bool:
@@ -150,11 +182,32 @@ def selftest() -> bool:
          "the alarm names the next plank; if the parser returns None the alarm "
          "fires with no remedy and is just noise")
 
-    # And it must SKIP withdrawn/shipped rows, or it will send us to a dead plank.
-    txt = QUEUE.read_text() if QUEUE.exists() else ""
-    cell("skips withdrawn/shipped rows", ("~~" in txt or "WITHDRAWN" in txt), True,
-         "QUEUE.md currently contains withdrawn rows; if the parser did not "
-         "skip them this cell has no dose and cannot check the filter")
+    # ⛔ THE CELL THIS REPLACED ASSERTED ON THE FIXTURE, NOT THE PARSER: it
+    # checked that QUEUE.md *contains* "~~" and never that the parser SKIPPED
+    # such a row, so it would have passed with the filter deleted. That is the
+    # fourth instance in one session of an assertion that did not test its own
+    # claim (effective_n's ceiling cell, overnight_read's nowin, queue_check's
+    # three marker cells). The parser is exercised above by "reads a queue item";
+    # what is added here is the predicate, which had NO cell at all -- which is
+    # why the docstring could say `n == 0` for a session while the code said
+    # `n < expected` and --selftest stayed green.
+    cell("predicate: 0 of 5 is IDLE", classify(0, 5), "idle",
+         "the original predicate; must still fire")
+    cell("predicate: 2 of 5 is UNDER-USED, not idle", classify(2, 5), "under",
+         "the s31 fix -- 8 of 9 shards dying read OK under `n == 0` and DELETED "
+         "the alert file, an idleness alarm blind to 89% idleness")
+    cell("predicate: 5 of 5 is OK", classify(5, 5), "ok",
+         "the alarm must be able to return the OTHER verdict, or it validates "
+         "everything")
+    cell("predicate: 12 of 5 is OK (over-subscribed is not a fault)",
+         classify(12, 5), "ok", "observed live at 04:38Z")
+    cell("predicate: a ps failure is BLIND, never idle", classify(-1, 5),
+         "blind", "an alarm that cannot tell it is blind is this repo's "
+         "most-repeated defect")
+    cell("wording: only the n==0 case may call itself CORES IDLE",
+         classify(2, 5) == "idle", False,
+         "`games=2/5` printed `*** CORES IDLE ***` with a runner alive, so the "
+         "side lane had to caveat the alarm before it could be quoted at boot")
     print("\nCORES_IDLE_SELFTEST: " + ("PASS" if ok else "FAIL"))
     return ok
 
