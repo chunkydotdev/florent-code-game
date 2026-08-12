@@ -39238,3 +39238,43 @@ rather than choosing how much to concede.**
 ⚠ Composition note, flagged not resolved: **v102 sits at 79.0% while v104-v116 sit
 at 89-95%**, so the trunk share is not constant across the whole series. It clears
 the threshold everywhere it matters, but a cut spanning v102 should not assume it.
+
+## ⛔ SIDE LANE, 18:4xZ — **THE LEVIATHAN 4-1 DOES NOT SURVIVE ITS PRIMARIES. FIVE INDEPENDENT REASONS, AND "FIRST TIME IN AGES" IS FALSE.**
+**Magnus flagged a 4-1 over Leviathan as encouraging; the builder flagged the
+version collinearity. Verified off `replay_archive/*.meta.json` and
+`league_matches.tsv`, and it is weaker than either of us framed it.**
+
+1. **IT IS UNRATED, AND IT IS NOT THE HOLDER.** `0d8a4018` —
+   **`Leviathan v59 1-4 OpenSverige v119`, `triggeredBy: unrated`, 18:27:14Z.**
+   **Pays no Elo, and v119 is a prototype, not the bot on the slot.**
+2. **⭐ IN ITS OWN POPULATION A 4-1 IS THE NORMAL OUTCOME, NOT A BREAKTHROUGH.**
+   Split by type, because pooling these is the error `CLAUDE.md` names:
+   | kind | matches | match wins | **matches we took ≥4 games** |
+   |---|---|---|---|
+   | **ladder (rated)** | 34 | 17 (50%) | **6 (18%)** |
+   | **unrated** | 42 | 35 (83%) | **31 (74%)** |
+   **The 4-1 came from the population where we take ≥4 games 74% of the time** —
+   we pick the opponent and the maps there.
+3. **⛔ "FIRST TIME IN AGES" IS FALSE: we beat Leviathan 5-0 ON THE RATED LADDER
+   AT 06:15:47 TODAY** (v114 vs their v56).
+4. **THEIR BUILD IS 95 MINUTES OLD AND THEY SHIPPED THREE TODAY.** v57 13:32:59,
+   v58 14:12:59, **v59 16:52:59** — against long-lived v55 (n=86) and v56 (n=38).
+   **We met v59 at 18:27.** This is the Bisons collinearity inverted: *"our arm
+   is better"* and *"their v59 is worse"* fit identically.
+5. **⭐ AND THE COLLINEARITY IS BREAKABLE HERE, WHICH IT WAS NOT FOR THE BISONS —
+   v59 HAS A THIRD-PARTY RECORD THAT DOES NOT INVOLVE US.**
+   `17:56:50 v59 0-5 kladde chatte tville v95` — **thirty minutes BEFORE we
+   played it** — and `18:28:39 v59 4-1 Powered by SmartFridge v34`.
+   **v59's whole archived record: 5-10 in games across three opponents.**
+   ⇒ **an independent read that their fresh build is weak, obtained without our
+   bot appearing in it** — exactly what the us-only rider says to prefer.
+   ⚠ **Not "v59 is bad": it took SmartFridge 4-1 in the same minute. n=3.**
+
+**⇒ THE HONEST SENTENCE: an unrated prototype leg took 4 games off a 95-minute-old
+opponent build that a third party had already beaten 5-0, in the population where
+we take ≥4 games three times in four.** The builder's selection arithmetic is the
+sixth reason and agrees: **P(at least one ≥4-1 across five opponents) ≈ 65%** at
+our all-time rate.
+**Nothing here says the arm is bad. It says this match is not evidence either
+way, and the flattering reading had four cheap disconfirmations sitting in the
+archive.**
