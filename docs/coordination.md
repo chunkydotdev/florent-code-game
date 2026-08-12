@@ -39132,3 +39132,61 @@ daemon is the builder's.
 running and the load ceiling exists precisely so a decode does not distort their
 CPU measurements.** Clearing my own blind spot by corrupting someone else's
 instrument is not a trade I get to make unilaterally.
+
+## ⭐⭐ RESEARCH s34, 18:5xZ — **D43: THE POOLED TURRET FIGURE INVERTS THE SIGN OF OUR BIGGEST STRUCTURAL GAP**
+
+Ran the side lane's live-loss observation (their first turret r3-r22 vs our
+0/1/2/1/0 forward sentinels) as a field cut over **2,884 of our games**. **It
+generalises on one axis and reverses on the other, and only the decomposition
+shows it.**
+```
+                       first one            in % of games      per game
+ HOME     us  r7        them  r8            96%  vs 81%      3.32 vs 4.52
+ FORWARD  us  r33       them  r25           78%  vs 87%      2.28 vs 4.54
+ POOLED   us  r7        them  r10                            5.60 vs 9.10
+```
+**⇒ THE DEFICIT IS ENTIRELY FORWARD AND IT IS THREE DEFICITS AT ONCE: eight
+rounds later, in nine points fewer games, at half the count.**
+
+**⛔ AND THE POOLED NUMBER SAYS THE OPPOSITE. On all turrets we look EARLIER than
+the field — r7 against r10 — because a prompt HOME turret masks a forward arm
+that arrives eight rounds late.** Anyone who quotes an all-turret timing figure
+concludes we are ahead of the field on turret tempo. **We are ahead at home and
+eight rounds late where the kill happens**, against a median kill of ~174 and a
+median death of ~187 — **a thirteen-round race.**
+
+**D43, for the successor: a turret statistic pooled over HOME and FORWARD is not
+a weaker version of the forward one, it is a DIFFERENT SIGN.** `#23` already
+carries the verified split (`d2_enemy < d2_own`, 100% clean on 40,000 rows) —
+**use it on every timing and count claim, not only on the placement share.**
+*(Behaviour change → promoted here and into `QUEUE.md #23`.)*
+
+**AND THE SINGLE MATCH WAS RIGHT FOR A REASON IT DID NOT STATE.** The side lane
+flagged their r3-r22 first turret against our thin forward answer and hedged it as
+one opponent. **The hedge was correct and the observation still generalises — but
+on the FORWARD axis only.** On the first-turret axis the same match reads as us
+being late when the field-wide answer is that we are early. **A single live game
+identified the right gap through a comparison that does not survive contact with
+the archive** — which is an argument for running the cut, not for trusting or
+discarding the anecdote.
+
+## ⭐ D44 — TWO METHOD RULES BANKED FROM THE CROSS-LANE PASS, BOTH GENERAL
+
+**(a) AN IN-TREE ASSERTED NUMBER IS A FREE POSITIVE CONTROL FOR A NEW
+INSTRUMENT.** My death-attribution cut returned **92.0% of our forward builder
+deaths in an enemy gunner's range** — reproducing `raid.py`'s own LOKI-25 comment
+(*"92% … are enemy gunners"*) **to the decimal, independently.** I built the
+instrument for `#30` and got a calibration target for free, on a number I could
+have got wrong in either direction. ⇒ **before trusting a new corpus instrument,
+point it at a number the codebase already asserts.**
+
+**(b) A CLAIM ABOUT WHERE YOU LOOKED IS NOT A CLAIM ABOUT WHAT EXISTS.** The side
+lane named this against themselves twice in one day — *"the default is not
+established anywhere I can find"* (it was, in our own engine deliverable) and
+*"`SENTINEL` → nothing"* (it appears three times in that file; the true finding was
+scoped to ONE FUNCTION). **Both were true of the search and published as
+properties of the repo.** ⚠ **And my own two defects today are the same family
+one level down** — a seat filter that assumed a distance encodes a tile ROLE, and
+a sample drawn in file order that assumed order encodes nothing. **All four are
+"I measured X and reported Y".** ⇒ **state the scope you actually searched in the
+sentence that carries the finding.**
