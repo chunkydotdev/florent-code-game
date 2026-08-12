@@ -39547,3 +39547,58 @@ time** — two fields in the leg script would have made both of today's checks
 unnecessary.
 *(The v118 seat-B confound was caught concurrently by the builder in `f48beb4`,
 not relayed from me — recorded so the ledger is right.)*
+
+## ⛔⛔ RESEARCH s34, 19:1xZ — **D45: THE ERA RIDER, INVOKED BY ME AT 18:2xZ AND VIOLATED BY ME AT 18:4xZ. IT MIS-SIZED A QUEUE ROW BY 4.6x AND IT INVALIDATES A JUSTIFICATION IN THE SHIPPED TREE.**
+
+I sized `#30` (the sentinel THREAT term) at **7.6% newly / 22.7% ceiling** off
+**all 2,865 of our archived games.** **Wrong population.** That pool is dominated
+by v80/v90/v91-era trees losing **6-8 forward builders per game** against the
+shipped trees' **0.93** — so it describes the dead bot. **I wrote D42 an hour
+earlier about exactly this ("a sample drawn in file order is an era sample") and
+then did not apply the rider to a POPULATION when I had just applied it to a
+SAMPLE.**
+
+**RE-CUT ON THE SHIPPED TREES (v114+v115+v116, 325 games, 301 forward deaths):**
+```
+                     ALL-TIME (what I used)     SHIPPED TREES
+ gunner-only              76.9%                     31.2%
+ both                     15.1%                     33.6%
+ SENTINEL-ONLY             7.6%                     34.9%
+ any gunner coverage      92.0%                     64.8%
+ any sentinel coverage    22.7%                     68.4%
+```
+⇒ **`#30` addresses 34.9% newly and 68.4% at the ceiling — 4.6x what I queued it at.**
+
+**⭐⭐ AND THE CONSEQUENCE REACHES THE SHIPPED BOT: `raid.py:508-527`'s OWN
+JUSTIFICATION IS STALE.** LOKI-25 says *"we are dying almost entirely to the
+AVOIDABLE one"* on 92% gunner attribution. **My all-time cut reproduces that at
+92.0% — the comment was TRUE WHEN WRITTEN.** In the tree we ship, **sentinels
+cover MORE forward deaths than gunners do (68.4% vs 64.8%)** and the gunner-ONLY
+share is **31.2%.**
+**⚠ THIS IS NOT A REFUTATION OF LOKI-25 — it is consistent with LOKI-25 WORKING**,
+since suppressing gunner deaths mechanically raises the sentinel share. **The
+archive CANNOT attribute it and the adjacent-version contrast runs BACKWARDS:**
+v112 (pre) **0.43** gunner-covered forward deaths/game and **60.0%** share vs v114
+(post) **0.59** and **66.9%** — and v114 differs from v112 by more than this flag.
+**Attribution needs a local `LOKI_GUNAXIS_PENALTY = 0` ablation; the descriptive
+residual does not.**
+
+**⇒ QUEUE RE-RANK, and it reverses an instruction:** `#31a` GUNBLOCK is labelled
+**"BEST EVIDENCED, BUILD FIRST"** and the evidence cited is that 92%. **The
+gunner-ONLY population it uniquely addresses is 31.2% in the shipped tree, against
+`#30`'s 34.9%.** Both rows corrected in place; **"build first" is no longer
+supported by the number under it.**
+
+**D45, for the successor: the ERA RIDER applies to POPULATIONS, not only to
+SAMPLES.** *"I used every game we have"* feels like the opposite of a sampling
+error and is the same error — **an unrestricted pool is a weighted average over
+every bot we ever shipped, and the worst ones contribute the most rows because
+they died the most.** ⇒ **any per-event rate over our own history is cut on the
+shipped trees, or it is a statement about a bot nobody runs.**
+
+**⭐ AND THE 92.0% REPRODUCTION IS BOTH A VALIDATION AND THE TRAP.** I banked it
+this afternoon (D44a) as *"an in-tree asserted number is a free positive
+control"* — **it validated the instrument and simultaneously anchored me to the
+era that number came from.** Matching a stale constant is evidence the meter
+works; **it is not evidence the constant is current.** *(Both halves of D44a
+stand; this is the missing second clause.)*
