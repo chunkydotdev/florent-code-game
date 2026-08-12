@@ -37968,3 +37968,58 @@ the launcher is BOTH the kidnap/exile weapon AND the ferry/insert delivery syste
 (`raid.py:679` exile, `raid.py:703` ferry). **Deleting it retires the LOKI
 mechanism the line is named for.** Deferral keeps the code and, measured above,
 uses it in 1 game of 5. **That is the actual choice; the win rates do not make it.**
+
+# ============================================================================
+# 2026-08-12T17:4xZ (`date -u`) — **SIDE LANE: FLAGS AND THEIR OUTCOMES.**
+# Durable record — session messages die, so the flags and the CORRECTIONS TO
+# THEM land here. Append-only.
+# ============================================================================
+
+## FLAGS THAT CHANGED SOMETHING (all builder-owned, all fixed by the builder)
+1. **Two stale v114-pinned monitor loops.** `kill 63214 77493` done; only the
+   v116 pair survives. **⛔ AND I SCOPED IT WRONG — the correction is mine.** I
+   wrote *"latent now, live the moment a candidate ships."* **The builder sampled
+   `ship_watch_state.json` at `v114/1689.0` minutes after I sampled
+   `v116/1655.0` — it had flipped between us. It was LIVE the whole time.**
+   **I read an oscillating value ONCE and reported that read as its state**,
+   which is the instrument error this lane exists to flag in others. Now pinned.
+2. **`SHIPGATE160`/`SHIPGATE0` had no calibration cell on their own contrast** —
+   the only NULL/NEG cells were controlled on `_v146gunaxis` while the gate is
+   controlled on `_v169launchlate160`, so the band deciding the ship would have
+   been **transferred from a different pair of trees**. Flagged against the
+   worklist's own header (*"1-3 FIRST AND THEY ARE NOT NEGOTIABLE"*). **Accepted
+   in full and built the same minute (`08c0af7`): `_v169null`, md5-identical on
+   all four files, `SHIPGATENULL` queued.** ⇒ **Fired BEFORE the shards read out,
+   which is the only time this flag was worth anything.**
+3. **`SLOT_LAUNCHER = 6` is a comms-store INDEX, not a cap** — named alongside
+   `LAUNCHER_RESERVE = 80` as a candidate binding gate. It is the address of a
+   one-way latch (`doctrine.py:1427`, written 0/1 at `main.py:623,625,631`).
+   **AND THE STORE IS FULL: all sixteen indices 0-15 are assigned, five already
+   re-used under new names**, so a dose sweep on it would silently corrupt
+   another slot rather than measure nothing. ⇒ **Of the three real gates at
+   `main.py:620-631` — the latch, `SLOT_HARVESTERS < 1`, and
+   `LAUNCHER_RESERVE` — only the last has a dose; the latch needs an ablation.**
+
+## A NEGATIVE, PUBLISHED BECAUSE IT CLOSES AN OBJECTION CHEAPLY
+**I looked for a reason the v116 + v118 pooling (3 of 55) would be invalid** —
+namely the ammo pre-buy draining the titanium `LAUNCHER_RESERVE` gates on, which
+would make *"deferral is deletion"* partly a pre-buy artefact. **It does not
+survive the primary: the pre-buy is `if rnd == 0 and ammo < 17`, at most 17 Ti,
+once, at round 0** (`_v171late160ammo/main.py:206-217`), against ~400 Ti of
+passive income by r160. **The pooling stands.**
+
+## ⛔ MY OWN INSTRUMENT HAD THE DISEASE I FLAGGED IN `PROGRAMME.md:8` — `da10a3f`
+**D3 said the OPPOSITE of the programme for a day.** It read *"a verdict argued
+from win rate"* is drift, anchored to `WIN_RATE_IS_VERDICT: no`; the field has
+been **`yes`** with `PRIMARY_CURRENCY: game_share` since Magnus's 2026-08-11
+directive. **So the checklist would have flagged the builder's `f51a405` verdict
+— the best-controlled read-out this repo has produced — as drift.** Found only by
+running the check against real work. **D1's frozen-incumbent clause was stale the
+same way** (`INCUMBENT_FROZEN` flipped at s31). Both corrected IN PLACE, not
+appended, because a row and its correction on two surfaces is the D14 defect this
+file has already fired on twice.
+⇒ **The general form, and it is the one worth carrying: A GUARD THAT FIRES ON
+ON-PROGRAMME WORK GETS ROUTED AROUND.** That is exactly how `gate.py` came to be
+bypassed by the whole corefill chain (`LINE_DIRS` matched nothing on the current
+line). **A wrong guard and a dead guard fail the same way, and this repo has now
+produced both in the same instrument family.**
