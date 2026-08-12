@@ -704,3 +704,33 @@ SALTIDLE    bots/_v187saltidle_f   bots/_v169launchlate160  5408 138000
 # READ: <48.67% confirms the panel and the rollback · >51.33% my panel was wrong
 # and v120 was rolled back on noise · inside = the 12% was a small-n artefact.
 V120        bots/_x3r0_v120        bots/_v169launchlate160  5408 139000
+# ============================================================================
+# --- OVERNIGHT, fourth block ~20:5xZ. Research's ranked list, acted on. ---
+# CUT `RUSHON` -- a second consumer at main.py:324 makes it unreadable AT ANY n.
+#   ⭐ CONFOUNDING IS NOT A POWER PROBLEM, so no shard size fixes it. Right call.
+# CUT `GUNBLOCK` at 793 rows (kept) -- `GBNOSHIELD` stays. The live v121 leg
+#   placed ZERO ray barriers in 25 games against 4.68 enemy gunners/game, so the
+#   SHIELD CLAUSE is the prime suspect and the no-shield arm is the informative
+#   one. Running a plank twice ALONGSIDE its own precondition (`GUNAX0`, same
+#   batch) is the expensive ordering.
+# NOT QUEUED, on research's preconditions:
+#   `#30` station-scorer sentinel term -- separable from `#32` but its population
+#     is 7x SMALLER (sentinel-only builder deaths 0.32/game vs our sentinel deaths
+#     2.25/game, same 30 Ti and +20% scale, so directly comparable). Follow-up.
+#   `#21` gunner count -- a 0.2 gap (sporks 0.6 vs our 0.4) is not a consensus,
+#     and the deficit is FORWARD, which `MINHARV1` already tests.
+# ============================================================================
+# LAUNCHER_RESERVE DOSE PAIR -- best effort-to-finding ratio on the board, and
+# unqueued until now. ONE CONSTANT each, verified one changed line.
+# TWO INDEPENDENT SURFACES CONVERGE: the gate is
+# `_eco_spendable(get_launcher_cost() + LAUNCHER_RESERVE)` = floor(scale*20)+80
+# ~= 120-160 Ti, our bank at the end of the r150-200 band is MEDIAN 54 Ti and
+# clears 120 in only 12.4% of games -- against MY live decode of 3 of 55 games
+# building a launcher (5.5%). ⇒ THE LAUNCHER IS PRICED OUT, NOT DEFERRED, and
+# `LAUNCHER_MIN_RND` (v116's whole plank) is close to a no-op.
+# ⭐ RESOLUTION DECLARED BEFORE THE SHARDS, per research's row: at ~1.17
+# launchers/game a dose that does NOT move launchers-per-game by >=1 is
+# UNINTERPRETABLE -- read the DOSE column first and refuse the win rate if the
+# dose did not land. Two points (20 and 0) make it a curve, not a point.
+LAUNCHRES20 bots/_v189launchres20  bots/_v169launchlate160  5408 140000
+LAUNCHRES0  bots/_v189launchres0   bots/_v169launchlate160  5408 141000
