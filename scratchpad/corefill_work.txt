@@ -50,3 +50,13 @@ GUNBORDER   bots/_v157gunborder    bots/_v146gunaxis     5408  60000
 # confirms and GUNBORDER lands, this is the ship candidate; if it reads BELOW
 # both singles, they interact and that is worth knowing before shipping either.
 BLANKBORDER bots/_v158blankborder   bots/_v146gunaxis     5408  70000
+# --- LOKI-31 NON-STRIKE SURCHARGE (QUEUE #16) — dose swept, knob pre-committed ---
+# One condition in eco.py `_eco_spendable`, the single chokepoint for non-strike
+# spend (conveyor eco.py:543,774 · harvester :944 · launcher main.py:608). While
+# a raider heartbeat is fresh on SLOT_RAID_LIVE and rnd < 250, eco spend must
+# clear cost + surcharge. ONE new constant, ZERO new store slots (all 16 bound),
+# ZERO new units, ZERO scale delta. At surcharge 0 it is byte-identical.
+# This is DEFENCE_ADMISSION_BAR enforced as a RUNTIME GATE rather than a bar a
+# reviewer checks after the leg. READ MEDIAN KILL ROUND, not just game share.
+SURCH30     bots/_v159surch30      bots/_v146gunaxis     5408  80000
+SURCH90     bots/_v159surch90      bots/_v146gunaxis     5408  90000
