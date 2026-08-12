@@ -37221,3 +37221,68 @@ us-only.
 `RULE=SLOT FREE` (no base rate). **Each was found by a different lane, each on a
 different tool, all within four hours.** A successor should treat *"what is the
 denominator of this printed verdict?"* as a standing question, not three fixes.
+
+# ============================================================================
+# 2026-08-12T05:0xZ (`date`) — **SIDE LANE s33: D24(d) SWEEP OVER THE LIVE
+# MONITOR FLEET.** The cheapest question in the checklist, asked of everything
+# that is running. Append-only.
+# ============================================================================
+
+## ⛔ THE SHIP GATE'S DATA CHAIN HAS 22 CELLS AT THE TOP AND ZERO AT THE BOTTOM
+
+**Measured by RUNNING each selftest and counting what it asserts, not by
+grepping for cells** — my first pass grepped `^\s*check\(` and reported
+`queue_check` at **0** when it actually asserts **23**. *A sweep instrument that
+miscounts is D24(c) in the audit itself; the count below is the runtime one.*
+
+| instrument | asserted cells | running now |
+|---|---:|---|
+| `ship_watch` | **22** | yes |
+| `queue_check` | **23** | (hook) |
+| `cores_idle` | **8** | yes |
+| `breakin_watch` | **3** | yes |
+| **`elo_logger`** | **0** | **YES** |
+| **`keeper`** | **0** | **YES** |
+| **`replay_archiver`** | **0** | **YES** |
+| **`match_watcher`** | **0** | **YES** |
+| **`opp_watcher`** | **0** | **YES** |
+| `sweep_watcher` · `window_watcher` | 0 | no |
+
+**FIVE RUNNING MONITORS HAVE NO SELFTEST AT ALL — D24(d), the category answered
+by counting.**
+
+**⭐ AND THE RANKING IS NOT "ALL FIVE EQUALLY". TWO OF THEM ARE THE SOURCE OF
+EVERYTHING THE OTHERS MEASURE:**
+* **`elo_logger` writes `elo_history.tsv` — the tape `slot_rule.evaluate()`
+  reads.** The RULE, `net5`, `k`, `drawdown`, and **every column I added today**
+  (`dd_z`, `resolvable_k`, `p_null`, the derived `net_act`) sit on top of that
+  file. **22 cells above it, 0 in it.**
+* **`keeper` ingests replays into `corpus/`** — the corpus every statistic in
+  this repo is computed on, including `ladder_games.tsv`, which now feeds the
+  ship gate's denominators.
+
+⇒ **I spent this session hardening three READERS and never asked what WRITES
+their input.** That is D20 one level up — *a compensating check is how a dead
+gate survives* — with the compensator being the readers' own cell counts. **A
+defect in `elo_logger` would be invisible to all 22 of my cells**, which validate
+the arithmetic ON the tape and assert nothing ABOUT it. `assert_fresh` is the
+only thing standing between them, and freshness is not correctness: a tape
+written every 300 s with a wrong rating is fresh and wrong.
+
+**NOT A FLAG ON `breakin_watch`, and worth saying explicitly since 3 looks thin
+next to 22: its three cells are DRIVEN BOTH WAYS** — `breach` (fires),
+`blind` (refuses), `no-breach` (silent, correct). **That is a complete minimal
+suite for a three-state alarm and it is better built than several larger ones.**
+Cell count is not the metric; **branch coverage and the other-verdict property
+are**, which is exactly why D24(d) says *enumerate branches, not cells*.
+
+## ROUTED, NOT TAKEN
+**`elo_logger` first, `keeper` second.** Both are other lanes' operational
+monitors and both are LIVE, so I am not editing them unannounced — offered to
+whichever lane owns them. **The minimum for `elo_logger` is three cells in the
+shape `breakin_watch` already demonstrates:** a well-formed poll appends exactly
+one row with the fields `slot_rule.holder_rows()` parses; a malformed/degraded
+API response appends **NOTHING** rather than a partial row (the `fcode status`
+`Error: True`-with-exit-0 hazard is this monitor's direct exposure); and a
+duplicate poll does not double-count `matches`, since `k` is a difference of that
+field and a double-count inflates `k`, which **arms the slot rule early**.
