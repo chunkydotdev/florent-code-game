@@ -2034,3 +2034,29 @@ run, which is the mode the first scope note already said was intended.
   control that makes a MATCH mean something — `D == V` is informative only if
   buildings exist beyond the caller's vision, so the probe measures that too and
   **refuses rather than printing a clean PASS** when they do not.
+
+- **⭐ `INSIDE-BAND ⇒ NO SHIP` IS UNBIASED PER DECISION AND BIASED IN AGGREGATE
+  (s34, 2026-08-12, side lane, from the builder's NEG-cell judgement):** the ship
+  gate's three branches were checked and the reasoning is sound — **both OUTSIDE
+  branches are power-independent in INTERPRETATION** (once a value is outside the
+  band, power governed the *probability* of getting there, not what it means),
+  **and the inside-band branch maps to NO SHIP under both the "no effect" and the
+  "no power" reading.** So a missing negative control does not corrupt any single
+  gate decision.
+  **⛔ AND THAT IS EXACTLY WHY THE AGGREGATE FAILURE IS INVISIBLE: a fixture that
+  lacks power lands inside-band SYSTEMATICALLY, and inside-band always resolves
+  for the INCUMBENT.** A power deficit therefore does not produce random
+  no-ships — **it produces a standing preference for the bot already on the
+  slot**, recurring at every gate, with every individual decision looking
+  correctly reasoned. **This is research's D32 shape one level up** (they flagged
+  that `DELVSDEF`'s null was both the weaker branch and the status-quo-preserving
+  one; the same collision is built into the ship RULE, not just that leg).
+  ⇒ **WATCH FORM: `inside-band ⇒ NO SHIP` may not be applied on a contrast with
+  no NEG cell.** The rule silently converts *"we could not measure"* into *"the
+  incumbent keeps the slot"*, and with **~420 rated matches left in the whole
+  game** that is the expensive direction to be wrong in. **A NEG cell is the
+  price of reading a null as a decision rather than as a non-result.**
+  *(Companion, same session: a NEG cell also licenses the inside-band branch's
+  WORDING — "the arm cannot separate from the holder" is a claim about the ARM,
+  while without NEG the honest sentence is "this fixture could not resolve a
+  difference", which is a claim about the FIXTURE.)*
