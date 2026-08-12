@@ -304,6 +304,39 @@ sit at 0. **Not worth a slot.**
 
 **⚠ 6. WHAT IS NOT CLAIMED, and side lane said so first.** That this term would have won that match (untested), and that it generalises past LingLing40 (**one match, one opponent — they may simply be strong**). ⛔ **And the MOONRISE sub-story is separately scoped: there, 3 sentinels went WEST of our own core at d²_enemy 104/130/173 against range 32, and the cause was `LOKI_FWD_MIN_HARV = 2` against a 2nd harvester that landed r65, with `LOKI2_RUSH_ON = False` disabling the waiver written for exactly that window. Games 1-4 had their 2nd harvester by r6-r14 and STILL built 0/1/2/1 forward — so the gate is NOT the match-wide problem.**
 
+
+### ⭐⭐ #31 — THE BARRIER FAMILY *(Magnus, s34: "a tool in the toolbox, a trick our Loki needs to use efficiently")*
+
+**⛔ FAMILY ROW, per D30 — every new barrier plank is checked against THIS row before it is queued separately.** Members: `#29` SALT (corpse-salt, **mechanism confirmed / plank failed the kill bar**), `#31a` GUNBLOCK, `#31b` SCREEN, `#31c` VOLUME. Pairwise cross-references do not survive a third member; this is the named row.
+
+**THE FIELD MEASUREMENT THAT DEFINES THE GAP** (`events.tsv`, top-10 teams, placement by `d2_own`/`d2_enemy`):
+
+| team | barriers/g | forward | on their RING (d²≤12) | median d² to their core | median build round |
+|---|---|---|---|---|---|
+| **us** | 4.2 | **98%** | **99% of fwd** | **4** | **r65** |
+| Pantheon | 15.1 | 87% | 66% | 5 | r76 |
+| Clankers | 18.2 | 60% | 62% | 5 | r160 |
+| **ph** | 11.0 | 96% | **39%** | **17** | r148 |
+| **not adgato** | 9.4 | 77% | **29%** | **25** | r101 |
+| Bean counters | 17.6 | 52% | **4%** | **52** | r118 |
+| sporks (rank 1) | 3.0 | 83% | 43% | 17 | r174 |
+
+⇒ **THREE DISTINCT DOCTRINES EXIST AND WE RUN EXACTLY ONE:** the **collar** (ring, d²≈5 — us, Pantheon, Pivot, Clankers), the **approach screen** (d²≈17–25 — ph, not adgato, sporks), the **mid-map wall** (d²≈52 — Bean counters). **We are the purest collar in the field (99%) and the earliest builder (r65 against the field's r101–174).**
+
+**⛔ AND THE BUDGET IS UNSPENT, NOT UNAVAILABLE — this is the finding that makes the family worth a programme.** My first hypothesis was that their barriers are cheaper. **It is FALSE and measured false:** their end scale is equal or higher (Clankers 335%, Pantheon 406%, ph 400% vs our 313%), so a barrier costs everyone **7–9 Ti**. **Clankers collects the SAME median titanium we do — 880 — and spends 110 Ti/game on barriers against our 34.** Same economy, different spending. At 8 Ti a barrier against ~2.5 Ti/round of passive income alone, **we are not constrained; we simply do not buy them.**
+
+**#31a GUNBLOCK — barrier an enemy gunner's firing ray. BEST EVIDENCED, BUILD FIRST.**
+`raid.py:500-527` already computes `gun_axis` via `get_attackable_tiles_from`; **LOKI-25 uses it only to make raiders STEP OFF.** The expensive half exists and is pointed at avoidance only. **92% of our forward builder deaths are enemy gunners** (42.8% league-wide) and our own comment calls the gunner *"the AVOIDABLE one"* because its shot — unlike a sentinel's — **is blocked by obstacles**. Magnus's arithmetic: healing is 0.25 Ti/HP but costs an ACTION EVERY ROUND; a barrier is 0.37 Ti/HP for **one action** — **7.5× better per builder-action**, and actions are this line's scarce good.
+⭐ **AND IT DOES NOT INHERIT WHAT KILLED SALT.** `#29` failed on kill round (179 vs pooled 129, p=0.008) **because pecking a conveyor costs ~10 raider actions. A barrier placement costs ONE.** That distinction is the family's central hypothesis and the thing each member must be judged on.
+
+**#31b SCREEN — forward barriers at d²13–32**, matching ph/not adgato. The one doctrine two teams above us run and we do not.
+
+**#31c VOLUME — spend the unspent budget.** Weakest hypothesis, cheapest build. ⚠ **And volume is NOT obviously good: sporks tops the ladder at 2181 on 3.02 barriers/game.** Do not queue this ahead of a/b.
+
+**⚠ THE COST THAT BINDS THE WHOLE FAMILY: every barrier is +1% global scale, permanently.** Our scale already prices the launcher out (`LAUNCHER_RESERVE` needs 120–160 Ti against a median r150–200 bank of **54**). **Any volume increase must be priced against that, not just against titanium.**
+
+**⚠ FIXTURE WARNING, per the s34 self-play rule in `docs/builder-arm-retro.md`:** GUNBLOCK pays off **enemy forward GUNNERS**, and our own control bot builds few. **Local under-represents the rays this arm exists to block — local is a DOSE check, not an efficacy read.**
+
 ## BLOCKED / NEEDS A NUMBER FIRST
 | # | plank | blocker |
 |---|---|---|
