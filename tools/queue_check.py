@@ -106,7 +106,16 @@ FLOOR = 3
 #   explicit `STATUS: <reason>` token, or sits under a dead section heading.
 #   Prose can say anything. Diagnosis and the `## DONE` design: side lane.
 STATUS_RE = re.compile(
-    r"status:\s*(blocked|done|answered|demoted|withdrawn|refuted|superseded|waiting|shipped)",
+    r"status:\s*(blocked|done|answered|note|demoted|withdrawn|refuted|superseded|waiting|shipped)"
+    # `note` added s33: a SCOPING row (context a builder must read, with nothing to
+    # build) was counting toward the floor. It declared `GREP: N/A`, metric `n/a` and
+    # fixture `n/a` and still counted -- the first row to declare N/A on all three and
+    # be admitted. The floor means "startable TODAY", so a note is not floor material
+    # even when it is one of the most useful rows on the queue.
+    # ⚠ `demoted` is RETAINED but is ambiguous and both readings are live: as a STATUS
+    # token it means BLOCKED (#12, waiting on a control) and in prose it has meant
+    # DEPRIORITISED-but-startable (#20). Prefer STATUS: BLOCKED for the first sense;
+    # the same word must not read the same and behave differently.,
     re.I,
 )
 
