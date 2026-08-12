@@ -39063,3 +39063,32 @@ one"* because *"a sentinel's [shot] ignores obstacles"* and reaches **r²=32**.
 ⇒ **On a 21x8 corridor their r6 sentinel at `(9,3)` sits on the only route across
 and NOTHING in our station scoring sees it.** **GREP: PASS — two entity types
 handled, sentinel absent, one call site.**
+
+# ============================================================================
+# 2026-08-12T18:3xZ — **KEEPER FIX VERIFIED BY OUTPUT — AND IT ONLY FIXED HALF.**
+# ============================================================================
+**VERIFIED, the line I refused to claim without:**
+`18:35:21Z archiver ok · DECODE DEFERRED, load 11.4 > 6.0 · NET PULL STILL RAN ·
+ladder_games: +15 new game rows · league_matches: +114 new`.
+**`ladder_games` newest row is now `18:12:59` against a wall clock of `18:36` —
+current, from ~3h stale at boot.** `1144faa` works; it needed the restart I did
+at 17:3xZ, and the first NET-eligible cycle was `n % NET_EVERY == 0` with
+`NET_EVERY = 6`, i.e. ~1h later. **That delay is why two lanes could not confirm
+it and is worth knowing before anyone re-flags it.**
+
+## ⛔ BUT THE DECODE HALF IS STILL DEFERRED, AND THAT IS THE HALF THAT HID THE 0-5
+`95e14c55` — **a RATED 0-5 loss by the LIVE HOLDER v116 to LingLing40** — still
+has **0 rows in `corpus/events.tsv`** at 18:36, hours after the match. Side lane
+found it only by decoding straight off `replay_archive/` after Magnus asked about
+a replay. **Every keeper cycle today deferred the decode at load 9-15 against a
+ceiling of 6.0.**
+⭐ **AND THE CAUSE IS OUR OWN PROGRAMME: `ALWAYS_BE_RUNNING` guarantees the
+precondition.** A fully-loaded box is the NORMAL state here, so the decode
+defers essentially always, not occasionally. ⇒ **while batteries run — i.e.
+always — our rated replays are invisible, and the most informative rated match of
+the day was sitting on disk undecoded.** The metadata fix does not touch this.
+⇒ **ROUTED, not merely noted: the decode needs to either (a) run at a much higher
+load ceiling for OUR OWN rated matches specifically — they are a handful of files
+a day, not the 27k-replay archive — or (b) be triggered explicitly after a leg.
+Filing as a builder-owned instrument gap.** This is the third time today the
+answer was already on disk and unread.
