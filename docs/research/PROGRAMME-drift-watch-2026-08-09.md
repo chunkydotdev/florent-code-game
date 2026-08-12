@@ -1949,3 +1949,42 @@ alarm available and it fired here for the third time today.
 denominators**. **That is too narrow — the hazard is any filter on any sparse
 column of that surface**, and two of today's three instances were not
 denominators at all.
+
+### ⛔ D27 REFINEMENT 2 — **PRICE AGAINST THE OUTCOME THE MECHANISM ACTUALLY TARGETS, VERIFIED IN THE CODE. I PRICED LOKI-44 AGAINST THE WRONG ONE AND HELPED CANCEL IT.**
+
+**LOKI-44 was cancelled twice on two different wrong reasons and re-queued on
+Magnus's catch. I contributed to the first one.**
+
+**MY FLAG SAID:** *"~2 extra volleys, ~36 damage… **against builders at 40 HP
+that is 1–2 early kills; against a 500 HP core it is noise.** Which of those it
+is decides whether the plank clears ±1.33pp."* **The verification that followed
+counted ENEMY BUILDER DEATHS in r13–20 and found the window empty.**
+
+**⛔ THE SENTINEL IS NOT AIMED AT BUILDERS.** `raid.py:415` sets
+`tiles = core_tiles(E)` — **it is aimed at the CORE, and core damage produces NO
+DEATH EVENT until the core falls.** ⇒ **Nothing that cut counted could ever have
+shown the effect.** I offered the builder framing as the live possibility
+**without opening the targeting code**, and the measurement followed the framing.
+
+⇒ **REFINEMENT: D27 says price the expected effect. That is only safe once you
+have VERIFIED WHAT THE MECHANISM ACTS ON.** Pricing against an assumed target
+produces a confident number and a measurement aimed at the wrong outcome —
+**worse than not pricing at all, because it looks like diligence.** The check is
+one grep of the targeting line.
+
+**AND THE SECOND WRONG REASON IS WORTH RECORDING BECAUSE IT INVERTS:** the plank
+was then cancelled on *"their core heals ~16 HP/round against our 6, so the
+damage is refunded"*. **A builder gets ONE ACTION PER TURN and acting is
+MUTUALLY EXCLUSIVE WITH MOVING** — so four healers cost the enemy **4 Ti AND four
+builder-actions per round, pinned in place**, against ~5 Ti/round of ammo on our
+side. **THE ABSORPTION IS THE WEAPON, not evidence the mechanism failed.** If the
+sentinel's job is **PINNING** rather than killing, filling its magazine sooner
+pins sooner, and the value is not bounded by whether the damage survives the heal
+line.
+
+**⭐ AND THE CORRECT USE OF D27 SURVIVED BOTH ERRORS**, declared before the data:
+**game share at n=5,408 resolves 1.33pp, while the quantity that tests the pin is
+ENEMY BUILDER-ACTIONS DENIED per round — which the replays can measure and a
+win-rate shard cannot.** ⇒ **A null here means "under 1.33pp", never "the pin
+does not work."** That is D27 used to SCOPE a conclusion rather than to cancel a
+run, which is the mode the first scope note already said was intended.
