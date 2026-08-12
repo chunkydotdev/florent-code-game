@@ -82,6 +82,50 @@ def load_spec():
     return spec
 
 
+_IDENT_CACHE = {}
+
+
+def trees_identical(a, b):
+    """Is bot tree `a` byte-identical to bot tree `b`?
+
+    ⭐ THIS IS WHAT A NULL CELL *IS*, AND IT IS WHY NULLS ARE NO LONGER
+    IDENTIFIED BY NAME. The previous fix taught `pick_cal` to MATCH on the
+    control tree but left it IDENTIFYING candidates with
+    `k.upper().startswith("NULL")` — and `"SHIPGATENULL".startswith("NULL")` is
+    False, so the live ship-gate null was invisible for exactly the reason it was
+    invisible before, and was additionally counted as a third ARM on the contrast
+    it exists to calibrate. Selection was fixed; identification was not.
+
+    A structural test cannot rot: it does not depend on what anyone types, it
+    survives any renaming, and it needs no convention to be documented or
+    remembered. `_v169null` vs `_v169launchlate160` and `_v146null` vs
+    `_v146gunaxis` are both md5-identical on all four files — that property is
+    the definition, not a heuristic standing in for it.
+
+    ⚠ NEG CANNOT BE IDENTIFIED THIS WAY — a known-bad arm is by construction NOT
+    identical to its control — so NEG keeps a name marker. Only the null half
+    stops depending on a naming choice.
+    """
+    key = (a, b)
+    if key in _IDENT_CACHE:
+        return _IDENT_CACHE[key]
+    pa, pb = Path(a), Path(b)
+    ok = False
+    if pa.is_dir() and pb.is_dir():
+        fa = sorted(f.name for f in pa.glob("*.py"))
+        fb = sorted(f.name for f in pb.glob("*.py"))
+        ok = bool(fa) and fa == fb and all(
+            (pa / n).read_bytes() == (pb / n).read_bytes() for n in fa)
+    _IDENT_CACHE[key] = ok
+    return ok
+
+
+def is_null_row(sh, spec):
+    """A row is a NULL cell iff its treatment tree is byte-identical to its control."""
+    tr, ct = spec.get(sh, (None, None))
+    return bool(tr and ct and trees_identical(tr, ct))
+
+
 def pick_cal(kind, control, data, spec):
     """The calibration cell for THIS contrast, or an explicit refusal.
 
@@ -114,7 +158,12 @@ def pick_cal(kind, control, data, spec):
     """
     cands = []
     for k in sorted(data):
-        if not k.upper().startswith(kind):
+        # NULL is identified STRUCTURALLY (treatment == control, byte for byte);
+        # NEG cannot be, so it keeps the name marker. See `trees_identical`.
+        if kind == "NULL":
+            if not is_null_row(k, spec):
+                continue
+        elif not k.upper().startswith(kind):
             continue
         if control is not None and spec.get(k, (None, None))[1] != control:
             continue
@@ -310,9 +359,20 @@ def selftest():
     # literal-key bug to the REAL path left this selftest PASSING 11/11,
     # including a cell literally named "calibration found by PREFIX". A test
     # that validates a copy of the code is not a test.
+    # ⚠ CONTRACT CHANGE, ASSERTED RATHER THAN QUIETLY DROPPED: NULL is no longer
+    # found by NAME at all — it is found by treatment==control (see
+    # `trees_identical`), so a bare name with no worklist entry CANNOT resolve as
+    # a null and must come back None. NEG still uses the name marker, because a
+    # known-bad arm is by construction not identical to its control. These two
+    # cells failed when the contract changed, which is what a real test does.
     def cal_keys(keys):
         data = {k: shard(64) for k in keys}
         return tuple(pick_cal(pre, None, data, {})[1] for pre in ("NULL", "NEG"))
+
+    ident = {"Z": shard(64)}
+    spi = {"Z": ("bots/_v169null", "bots/_v169launchlate160")}
+    chk("a null with NO conventional name resolves purely on tree identity",
+        pick_cal("NULL", None, ident, spi)[1], "Z")
 
     # ---- THE CELL SIDE LANE ASKED FOR: TWO NULLS, WHICH ONE IS PICKED? -----
     # A ship gate controlled on a different tree than the calibration cells is
@@ -328,20 +388,46 @@ def selftest():
         pick_cal("NULL", "bots/_v146gunaxis", two, sp2)[1], "NULL114")
     chk("...and a contrast with NO null on it reports ABSENT, not a borrowed cell",
         pick_cal("NULL", "bots/_v999nothing", two, sp2)[1], None)
-    # The old code's exact failure, asserted as a failure: prefix matching alone.
-    chk("a cell named SHIPGATENULL is NOT reachable by prefix — hence control-matching",
-        "SHIPGATENULL".startswith("NULL"), False)
+    # ⛔ THE CELL THAT USED TO SIT HERE ASSERTED A FACT ABOUT PYTHON, NOT ABOUT
+    # THIS TOOL: `"SHIPGATENULL".startswith("NULL") == False`. That is true
+    # forever, whatever the tool does, so it could never fail — and it was GREEN
+    # while the live `SHIPGATENULL` cell was invisible to the calibration block
+    # and was being counted as a third ARM on its own contrast. A permanently
+    # true assertion is not a test. Replaced with the two that can fail:
+    nc = {"SHIPGATENULL": shard(64), "SHIPGATE160": shard(64)}
+    spn = {"SHIPGATENULL": ("bots/_v169null", "bots/_v169launchlate160"),
+           "SHIPGATE160":  ("bots/_v171late160ammo", "bots/_v169launchlate160")}
+    chk("⭐ a NON-CONFORMING null name still resolves — identification is STRUCTURAL",
+        pick_cal("NULL", "bots/_v169launchlate160", nc, spn)[1], "SHIPGATENULL")
+    chk("...and it is NOT counted as an arm on the contrast it calibrates",
+        is_null_row("SHIPGATENULL", spn), True)
+    chk("...while a real arm on the same contrast is NOT mistaken for a null",
+        is_null_row("SHIPGATE160", spn), False)
+
+    # ⭐ AND THE ONE THAT READS THE LIVE WORKLIST, NOT A FIXTURE. A fixture with
+    # conforming names can never fail the cell above; only the real worklist can.
+    live = load_spec()
+    if live:
+        ident = [k for k in live if is_null_row(k, live)]
+        chk("LIVE worklist: at least one row is byte-identical to its control",
+            bool(ident), True)
+        for k in ident:
+            c = live[k][1]
+            chk(f"LIVE: `{k}` resolves as the NULL for its own contrast",
+                pick_cal("NULL", c, {k: shard(64)}, live)[1], k)
     # And refusals must be surfaced, not scored through.
     ref = {"NULLX": shard(1000, nowinner=900)}
-    spr = {"NULLX": ("bots/t", "bots/c")}
-    got = pick_cal("NULL", "bots/c", ref, spr)[0]
+    spr = {"NULLX": ("bots/_v169null", "bots/_v169launchlate160")}
+    got = pick_cal("NULL", "bots/_v169launchlate160", ref, spr)[0]
     chk("a REFUSED null is returned WITH its refusals, never as a clean cell",
         bool(got and got["refusals"]), True)
 
-    chk("calibration found by PREFIX (tonight's names)",
-        cal_keys(["NULL114", "NEG114", "GUNBLANK"]), ("NULL114", "NEG114"))
-    chk("calibration found under the OLD literal names",
-        cal_keys(["NULL", "NEGCTRL", "X"]), ("NULL", "NEGCTRL"))
+    chk("NEG is still found by its name marker",
+        cal_keys(["NULL114", "NEG114", "GUNBLANK"])[1], "NEG114")
+    chk("...and under the OLD literal name too",
+        cal_keys(["NULL", "NEGCTRL", "X"])[1], "NEGCTRL")
+    chk("⛔ a NULL-shaped NAME with no worklist row does NOT resolve — names are not evidence",
+        cal_keys(["NULL114", "NEG114", "GUNBLANK"])[0], None)
     chk("calibration genuinely ABSENT is reported as absent",
         cal_keys(["GUNBLANK", "CAP6B"]), (None, None))
 
@@ -432,7 +518,10 @@ def main():
     controls = {}
     for k in data:
         c = spec.get(k, (None, None))[1]
-        if c and not k.upper().startswith(("NULL", "NEG", "CAL")):
+        # A calibration cell is NOT an arm. Nulls are excluded structurally, so a
+        # cell named `SHIPGATENULL` stops being counted as a third arm on the
+        # very contrast it calibrates.
+        if c and not is_null_row(k, spec) and not k.upper().startswith(("NEG", "CAL")):
             controls.setdefault(c, []).append(k)
     for c in sorted(controls):
         n_arm = len(controls[c])
