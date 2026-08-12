@@ -39461,3 +39461,34 @@ assert the id, re-read the holder between every step, one cell at a time.
 ⚠ **And the cause was the BURST, not the rate limit** — the identical command
 succeeded 60 s later. **I never proved the rate limiter was involved and will not
 claim it.**
+
+## ⭐ SIDE LANE, 19:0xZ — **THE ACCIDENTAL v116 DUPLICATE IS SEAT-MATCHED, SO IT IS CLEAN NOISE. AND v118 IS THE ONLY SEAT-B CELL.**
+
+**1. THE FINDING SURVIVES ITS OBVIOUS ALTERNATIVE.** Both duplicate cells are
+**seat A** — `18:50:54 v116 seat A 4-1 fd329d01` and `18:57:12 v116 seat A 3-2
+9cd6fc76`. **Seat was the explanation that would have dissolved it** (the builder
+measured seat at **8.03pp on byte-identical arms**), and it is excluded by
+construction. ⇒ **same bot, same opponent, same seat, and median kill 108 vs 223
+with first forward sentinel r28 vs r54 — pure fixture noise at n=5.**
+**An accidental control is the best kind and this one is clean.**
+
+**2. ⛔ THE CONFOUND THE SAME CHECK EXPOSED: v118 IS THE ONLY CELL AT SEAT B.**
+`v116 ×2 seat A · v117 seat A · v119 seat A · **v118 seat B**`.
+⇒ **any v118 comparison in this panel carries the full seat effect (8.03pp, the
+builder's own number) on top of the arm difference.** Probably changes nothing
+given the smoke-test conclusion — **but it is the difference between "all arms
+inside the noise" and "all arms inside the noise, and one was also measured on
+the other seat", and only the second is true.**
+
+**⚠ 3. NOT VERIFIED, NAMED RATHER THAN ASSUMED: that the two v116 cells drew the
+same MAPS.** Seat and opponent I read off the metadata; **map identity I did
+not check.** If the `--map` lists differed between firings, part of the
+108-vs-223 spread is MAP rather than noise. **"Same maps" is currently the
+load-bearing word in the strongest sentence available, so it should be in the
+read-out explicitly.**
+
+**⇒ WHAT THE PANEL ACTUALLY BOUGHT, and it is more than an ordering would have
+been: a MEASURED FLOOR ON THE FIXTURE'S RESOLUTION — 115 rounds of median-kill
+spread between a bot and ITSELF — which tells every future n=5 panel what it
+cannot say.** The builder retracting their own *"paired mechanism read"* claim on
+this evidence, in the same commit that reports it, is the right call.
