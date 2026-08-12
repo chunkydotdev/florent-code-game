@@ -1469,3 +1469,50 @@ provenance/closure/ANSWERED records FIRST — the reverse of the order that feel
 natural — then the places the case was made. **And this is D14 with a name: a
 closure and its correction sat one line apart in the same file, on the same
 question, with nothing forcing them to cite each other.**
+
+---
+
+## D22 — **A LEG NAME REUSED FOR A DIFFERENT PLANK. THERE IS NO ALLOCATION REGISTRY, AND TWO COLLISIONS LANDED IN FOUR MINUTES**
+
+**Promoted s33, 2026-08-12, from a live audit of `1f12297` / `fb4355a` / `a360936`.**
+
+**THE COLLISIONS, grepped across `bots/` and `docs/prereg/`:**
+
+| n | s32 holder | s33 claimant | verdict |
+|---|---|---|---|
+| **30** | **`PREREG-loki30-gunaxis-live-2026-08-11.md` — LOCKED, +3 amendments**, live-unrated 3-arm leg whose Amendment 2 became the **v114 ship gate** | `_v157gunborder` · `_v158blankborder` — BORDER-FIRST EXILE, a local n=5,408 shard | **⛔ COLLISION** |
+| **31** | `_v153gunaxtb/raid.py:565` — *"⭐ LOKI-31 (s32)"* | `_v159surch30` · `_v159surch90` — NON-STRIKE SURCHARGE | **⛔ COLLISION** |
+
+**Multi-hits on 26 / 27 / 29 are NOT collisions** — those are stacked or paired
+arms of one plank (`_v158blankborder` stacking `_v147gunblank`'s LOKI-26;
+`_v151null` as `_v151seatrel`'s control). **The numbering exists to do exactly
+that**, and any guard built here must pass them or it will be routed around.
+
+**⛔ A PREREG'S IDENTITY IS ITS LEG NAME** — that is how the prereg-of-record is
+located for a result — **and a LOCKED prereg cannot be the side that moves.**
+
+**WHY IT IS STRUCTURAL AND NOT CARELESSNESS, which is the part to carry:**
+**there is no canonical list.** s32's allocations exist **only as comments inside
+bot trees**; `docs/prereg/` holds only the legs that reached a prereg. So *"what
+is the next free LOKI number?"* is answerable **only by a repo-wide grep nobody
+is instructed to run**, and picking *one past the last one I worked on* collides
+**by construction across a session boundary**. Both instances are precisely that,
+by two different lanes, ten minutes apart.
+
+### THE WATCH FORM
+On any commit introducing a `LOKI-N` label: **grep `bots/` and `docs/prereg/` for
+that N and confirm every other hit is the SAME plank.** A different plank on the
+same number is a flag.
+**THE DURABLE FIX IS A SCRIPT, NOT A CONVENTION** — this repo's own measured
+lesson (attention-level rules failed under time pressure all day; script-level
+ones held). Routed to the builder in `docs/coordination.md` (s33):
+`tools/leg_name.py --next` / `--claim N --plank "<name>"`, refusing a number
+already bound to a **different** plank, appending to one
+`docs/prereg/LEG-REGISTRY.md`, **with a selftest driving all three cells: free N
+claims cleanly · N bound to a DIFFERENT plank REFUSES · N bound to the SAME plank
+PASSES.** The third cell is the one that keeps the guard usable — a guard that
+fires on legitimate stacked arms gets removed from the path, which is how
+`gate.py` came to be bypassed by `h2h.sh`.
+**COST OF DELAY IS THE WHOLE POINT (D21):** while the shards run this is six
+string edits; **once a 5,408-game readout is filed under the wrong leg name it is
+an archive correction**, and the archive is what outlives the session.
