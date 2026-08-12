@@ -1708,3 +1708,50 @@ double-count hazard I invented came from reasoning about the **reader's**
 arithmetic and never opening the **writer** — that is D24's *open the primary*,
 not a proxy failure. **Proxy failures mis-MEASURE; artefact-inference
 mis-LOCATES.**
+
+---
+
+## D26 — **REPLICATE ON A RULE, NOT ON A RESULT. A SELECTED FIRST RUN MAY NOT BE POOLED WITH ITS REPLICATION**
+
+**Promoted s33, 2026-08-12, from a flag OF MINE THAT WAS WRONG. Research's
+correction; the mechanism is the third instance of one bias family in one
+session.**
+
+**WHAT I CLAIMED:** `GUNBLANK` read **52.11%** and its replication **50.30%**;
+the runs do not differ significantly (`z=1.88`), so under this repo's own
+*"pooling is the default, not a luxury"* the pooled read is **51.20% ± 0.94,
+excluding 50** — and *"does not replicate"* was the wrong reason for a no-ship.
+
+**WHY IT IS WRONG, and I verified the premise in the primary before conceding:**
+**`GUNBLANKREP` is the ONLY replication in the entire worklist.** Thirteen arms
+ran; exactly one was replicated, **and it was the highest reader of the set**
+(52.11 > GUNSEAT 51.04 > GUNPEN16 50.72 > GUNFERRY 50.20 > CAP6B 49.00 …).
+
+⇒ **REPLICATION WAS SELECTED ON THE FIRST RESULT. That makes the first run a
+WINNER'S-CURSE estimate — `E[first | selected for replication] > true` — and
+pooling a selected estimate with an unselected one INHERITS the upward bias.**
+**The replication alone is the unbiased estimate: 50.30%, inside its band.**
+Research's corrected phrasing — *"the unbiased estimate does not clear 50"* — is
+right and is a **stronger** statement than the one it replaced.
+
+**⭐ AND IT IS THE SAME BIAS FAMILY AS THE OTHER TWO TODAY, WHICH IS WHY IT GETS
+A ROW:** the kidnap estimator (the thrown arm conditioned on having survived to
+be thrown) · the dose counter (denominator shrinks exactly when the treatment
+succeeds) · **and now, which arms get a second run conditioned on how the first
+one read.** **Three instruments, three lanes, one shape: SELECTION ON THE
+OUTCOME.** The first two were caught in the estimator; this one lives in the
+EXPERIMENT SCHEDULE, where no estimator can see it.
+
+### THE WATCH FORM
+**Ask what selected this sample, and whether the thing that selected it is
+correlated with the thing being measured.** For a replication the question is
+concrete: **was this arm replicated because of a RULE (every arm · a pre-declared
+subset · a fixed cadence) or because of its RESULT?**
+* **Selected on a result ⇒ THE REPLICATION IS THE READ.** Do not pool; the first
+  run is a discovery, the second is the estimate.
+* **Selected by a rule ⇒ POOL**, per the standing pooling doctrine, which remains
+  correct for unselected windows and is what `CLAUDE.md` is talking about.
+**⚠ THE TWO RULES GIVE OPPOSITE ANSWERS ON THE SAME NUMBERS, so which one applies
+must be fixed BEFORE the replication is ordered, never after both are read** —
+otherwise the choice of rule is itself selected on the outcome, one level up.
+**Cheapest fix: declare the replication trigger when the first shard is queued.**
