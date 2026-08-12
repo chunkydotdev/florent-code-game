@@ -37905,3 +37905,66 @@ ramp with no ceiling.** My boot `sync.py` pulled the table current (newest ladde
 row 17:12:59Z); without the restart it resumes ramping immediately.
 **Q8 of the lane retro applied at boot rather than at wrap: I read the freshness
 column before I quoted the table it guards.**
+
+# ============================================================================
+# 2026-08-12T17:5xZ — **MAGNUS'S QUESTION, ANSWERED ON THE WIRE.**
+# *"Did we run the late160ammo arm in an unranked set of games? I want to know
+#  if its actually building the launcher or not, If not then its the same as
+#  zeroammo."* — **HE IS RIGHT, AND IT IS THE MECHANISM VERSION OF WHAT THE
+#  AUDIT FOUND STATISTICALLY.**
+# ============================================================================
+
+## THE GAMES EXIST AND ARE ARCHIVED
+v118 = `_v171late160ammo`, five live unrated games 16:13-16:17Z
+(`b4d07af7 474576ab 678be25d df81b2b6 04c6fc29`); v117 = `_v171launch0ammo`,
+five at 15:53Z. All ten present in `corpus/events.tsv`.
+
+## ⭐ WHICH TEAM IS US — IDENTIFIED BY A CONTROL, NOT ASSUMED
+`events.tsv` carries `team` 0/1, not "us". **`_v171launch0ammo` has
+`LAUNCHER_CAP = 0` and builds ZERO launchers BY CONSTRUCTION**, so the v117 leg
+is a placebo that pins the mapping: only `A = team0, B = team1` gives our side
+zero launchers in all five (`49ded463` alone excludes the alternative — 26
+launchers on team0 where we are B). **The ablation doubles as the identification
+key.** This is the kind of check `meta_join`'s 78%-empty `us_side` cannot give.
+
+## THE ANSWER — AND THE ROUND GATE IS NOT THE REASON
+| match | last rnd | reached r160? | our launchers |
+|---|---|---|---|
+| `04c6fc29` | 977 | YES | **0** |
+| `474576ab` | 274 | YES | **0** |
+| `678be25d` | 376 | YES | **0** |
+| `b4d07af7` | 634 | YES | **2** (r206, r244) |
+| `df81b2b6` | 141 | no | 0 |
+
+**4 of 5 games passed r160 — so "the game ends first" is NOT the explanation —
+and 3 of those 4 still never built one.** v117 built 0 in 5 of 5, as designed.
+⇒ **v118 builds a launcher in 1 of 5 live games. Something DOWNSTREAM of
+`LAUNCHER_MIN_RND` is the binding gate** — `SLOT_LAUNCHER = 6` /
+`LAUNCHER_RESERVE = 80` (`doctrine.py:937,965`) are the candidates, unmeasured.
+
+## ⇒ THE CONSEQUENCE, AND IT REFRAMES THE SHIP DECISION
+Pooled across every `LAUNCHER_MIN_RND = 160` arm: **v116 built one in 2 of 50
+decoded live games, v118 in 1 of 5 — 3 of 55.** **DEFERRAL IS DELETION,
+confirmed on a SECOND arm and a second leg.**
+⭐ **This is not a power problem, it is a BEHAVIOURAL IDENTITY problem.** The two
+ship candidates are the same bot in roughly four games of five, which is the
+CAUSE of the two statistical readings the audit reported as separate facts:
+`DELVSDEF` 50.75% z=+1.05 NO-INFORMATION (n=4883) and the shared-control
+difference +0.53pp ±1.94pp. **We were treating unseparability as insufficient n.
+It is not. No n separates two bots that are the same bot.**
+⚠ **AND IT PREDICTS THE SIZE:** late160 pays the launcher premium in ~1/5 of
+games, so at the measured decomposition (launcher cost +6.34pp to own, mechanisms
++3.57pp) it should sit ~0.2 x 2.77 = **~0.55pp below zeroammo** — which is
+exactly the +0.53pp shared-control difference, and comfortably inside ±1.94.
+**Three independent readings agree at the decimal.**
+⇒ **SHIPGATE160 and SHIPGATE0 are measuring nearly the SAME contrast against
+v116.** They remain worth running — the ammo pre-buy is the shipped delta and is
+still unmeasured against the holder — **but the choice BETWEEN the two candidates
+cannot be made on their difference, at any n, and must be made on grounds that
+are not the win rate.**
+⛔ **AND THE GROUNDS ARE A PROGRAMME QUESTION, NOT A STATISTICS ONE:**
+`_v171launch0ammo` deletes the launcher outright, and per `QUEUE #24`'s amendment
+the launcher is BOTH the kidnap/exile weapon AND the ferry/insert delivery system
+(`raid.py:679` exile, `raid.py:703` ferry). **Deleting it retires the LOKI
+mechanism the line is named for.** Deferral keeps the code and, measured above,
+uses it in 1 game of 5. **That is the actual choice; the win rates do not make it.**
