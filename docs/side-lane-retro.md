@@ -71,7 +71,12 @@ acted on** (breaking a live pool map) — the policy survives because the flag
 carried both branches and a discriminating test, so it cost one decode instead
 of one map.
 
-## Q6. FAIRNESS — did I characterise another lane's conduct, and was it verified?
+## Q6. ⛔ STRUCK AT v1.3 AND REPLACED — see the v1.3 changelog. The question below is the ORIGINAL and is kept only so the series stays readable.
+
+> **~~Q6. FAIRNESS — did I characterise another lane's conduct, and was it
+> verified?~~** *(struck 2026-08-12 on the sunset clause: four consecutive runs
+> at zero. Replaced by **Q6′** below, which covers the thing that actually did
+> the damage.)*
 
 **Why:** flags about *work* are cheap to correct; claims about *conduct* land in
 a durable record about a colleague. **How:** count conduct claims; for each, was
@@ -79,7 +84,26 @@ it verified against the process, or inferred from an artefact?
 
 **s28: one, and it was inferred from a commit timestamp and wrong.** Rule now
 standing: **the bar for a conduct claim is what they DID, verified — never what
-an artefact permits me to infer.**
+an artefact permits me to infer.** *(This rule SURVIVES the strike — it is why
+the question went quiet, so retiring the question must not retire the rule.)*
+
+## Q6′. CLAIMS ABOUT ANOTHER LANE — including relayed FIGURES about their output
+
+**Why (the incident, s33):** Q6 asked only about *conduct* and went quiet for
+four runs, while **the damage was done by a NUMBER.** I wrote *"61 files /
+2 citations / **0 built arms**"* about the research lane into my s32 wrap, my s33
+boot note, and messages to two lanes. **It was false** — seven tactics converted
+into decision artefacts — the figure was **not mine**, it was **scoped to a
+24-hour window**, and I repeated it a session later without re-deriving it. **A
+conduct claim would have done exactly this much harm and Q6 could not see it.**
+
+**How:** count every claim published about another lane's work or output —
+characterisation OR figure. For each: **did I measure it, or relay it? If
+relayed, does every repetition carry whose number it is and what window it
+covered?**
+
+**s33 baseline (retrofitted from the instance): one, and it was wrong** — the
+*"0 built arms"* figure above. **Conduct claims: zero, fourth consecutive run.**
 
 ## Q7. WHAT DID I DECLINE, and was declining right?
 
@@ -361,3 +385,62 @@ and now sharper: **classify each published error as JUDGEMENT or ESTIMATOR first
 then by direction.** If judgement errors keep tracking the hypothesis, Q3 should
 ask *"did I have a hypothesis, and was this a judgement or an instrument?"* —
 both answerable **before** publishing, which the raw direction question is not.
+
+## ⭐ v1.3 — **FIRING 3 RECORDED · Q6 STRUCK AND REPLACED · AND THE INSTANCE THAT DEMANDED THIS BUMP SPENT A DAY UNTRACKED**
+
+**v1.3 — 2026-08-12 (MINOR: records firing 3, executes Q6's sunset, replaces it
+with Q6′). Instance: `docs/retro-side-lane-2026-08-12-s33.md`.**
+
+**⛔ FIRST, THE DEFECT IN THIS FILE'S OWN PROCESS, because it is the same shape
+as everything the instrument measures.** The s33 instance was **written at the
+s33 wrap and never committed** — found untracked at the s34 boot, ~13 hours
+later, by `git status`. **The instrument's changelog therefore still read
+`FIRINGS remain 2` while a third run sat on disk**, and the v1.2.1 clause
+*"v1.3 strikes Q6 unless it fires"* was pointing at a count that had already
+moved. **An uncommitted retro instance is the untracked-load-bearing-number
+defect this lane promoted into the drift watch (s29: the figure that killed
+LOKI-17 and the figure that would have revived it were both outside version
+control).** Committed at the s34 boot, **unedited** — *the instance is a past run
+and past runs are never edited, so the lateness is recorded HERE and not in it.*
+⇒ **ROUTED AS A BUMP RULE: a retro instance is committed in the same action that
+writes it.** The wrap is not finished while the instance is untracked.
+
+* **FIRINGS: 3.** (s29, s32, s33.) The Q6 sunset clock ran on runs, and the runs
+  had happened.
+* **⛔ Q6 STRUCK ON ITS OWN CLAUSE — four consecutive runs at zero conduct
+  claims** (s28 one; s29, s32, s33 none). **That is information about the lane,
+  not a failure of the question:** the s28 rule (*"the bar for a conduct claim is
+  what they DID, verified"*) worked, and the hazard stopped recurring. **The RULE
+  is retained above the strike so retiring the question does not retire it.**
+* **⭐ Q6′ REPLACES IT, AND THE REPLACEMENT IS EARNED BY A MEASURED HARM RATHER
+  THAN INVENTED:** the s33 instance found that the damage Q6 was built to catch
+  arrived as **a relayed NUMBER about another lane's output** (*"0 built arms"*,
+  false, not mine, scoped to a day, repeated across two sessions and two
+  recipients) — **a class Q6 could not see.** Q6′ counts claims about another
+  lane's work *or* output, and asks of each whether it was measured or relayed.
+* **⚠ Q5 IS NO LONGER Q3's TAIL AND MUST NOT BE STRUCK.** v1.2 scored it as a
+  subset of Q3 and flagged it for review. **s33 answers that: 5 wrong flags and
+  TWO CAUSED HARM — the first time this lane caused rather than nearly caused**
+  (MAGAZINE BURST's misdirected measurement; SURCH30's cancellation, killed
+  ~2 minutes before the correction landed). ⇒ **Q5 stays, and the standing
+  sentence *"a wrong flag costs a one-line reply"* is FALSE AS WRITTEN and must
+  not be quoted unqualified.** The policy still nets out — 24 outcome-changing
+  flags against 2 harms — but the price is no longer notional.
+* **Q3 = 13, the worst recorded, and the count is not the finding.** The
+  mechanism moved from s32's *inferred from an artefact instead of opening the
+  primary* to **`A PROXY IS NOT THE CLAIM`** (promoted mid-session as D25, then
+  broken twice more after promoting it). **Direction came back MIXED**, which is
+  why v1.2's *"check the comfortable side first"* is already retracted at
+  v1.2.1. **The MECHANISM replicates; the DIRECTION does not.**
+* **Q8 = 10** (s28 3 → s32 6 → s33 10), same practice: **flag the defect with its
+  fix.** s33 adds the second condition, learned from the two harms: **the fix
+  must name what it was VERIFIED against** — both harmful flags carried buildable
+  fixes and an unverified premise underneath.
+
+**CARRIED FORWARD TO v1.4, unchanged and now with a third lane's data:** the
+**JUDGEMENT-vs-ESTIMATOR conjecture** (v1.2.1 and its update). The test is fixed
+in advance: **classify each published error as JUDGEMENT or ESTIMATOR first, then
+by direction, and only then ask whether a hypothesis existed.** Standing at
+4-for-4 on judgement errors across three lanes, with one estimator error
+correctly out of scope. **It is still a conjecture and must not be used as a
+prior.**
