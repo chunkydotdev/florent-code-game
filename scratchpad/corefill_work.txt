@@ -166,3 +166,20 @@ EXILE0      bots/_v162exile0       bots/_v146gunaxis     5408  96000
 # DEFENSIBLE. What contradicts it is the FIELD -- Pivot 10.77 gunners/game,
 # O(1) 7.02, ph 5.79, US 1.86. One of those is wrong; the battery says which.
 GUNFIRST    bots/_v164gunfirst     bots/_v146gunaxis     5408  97000
+# ============================================================================
+# s33 EXPERIMENTATION LOAD (Magnus: "Today is experimentation day, we focus on
+# building bots and load them"). EVERY ARM BUILT TODAY IS QUEUED.
+# ⛔ AND THE REASON THE PREVIOUSLY-REJECTED ONES ARE BACK: I rejected three arms
+# on LOCAL DOSE CONTROLS AT n=6-32, and those controls are NOT RELIABLE. Our bot
+# reseeds an UNSEEDED RNG every game (main.py:276, NOISE_ON=True), so --seed
+# never controlled it. MEASURED TODAY: the SAME incumbent, SAME 6 seeds, SAME
+# maps produced 4 gunners in one run and 17 in another. A gate whose control
+# swings 4x cannot reject anything.
+# ⇒ The n=5,408 shard IS the instrument. It reads game share off the engine's
+# own winner field and never touches a counter I wrote. Let the battery decide.
+GUNEARLY150 bots/_v166gunearly150 bots/_v146gunaxis     5408  98000
+GUNEARLY60  bots/_v166gunearly60  bots/_v146gunaxis     5408  99000
+GUNSUB      bots/_v165gunsub      bots/_v146gunaxis     5408 100000
+GUNADD      bots/_v163gunadd      bots/_v146gunaxis     5408 101000
+LAUNCH2     bots/_v160launch2     bots/_v146gunaxis     5408 102000
+LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
