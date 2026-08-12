@@ -38486,3 +38486,66 @@ under **every** denominator either lane can construct (the reversal is null at
 v116 — the LIVE HOLDER — absent from the curve entirely, the last our-bot
 transition is v112→v114 at z=+0.51.** The whole post-v112 story is one null step.
 **A curve used to price a plank should reach the bot that is on the ladder.**
+
+# ============================================================================
+# 2026-08-12T17:5xZ (`date -u`) — **SIDE LANE: THE CALIBRATION GAP IS GENERAL.**
+# My SHIPGATENULL flag was a special case. Found by going to check whether the
+# rename had landed — the same mechanism Q4 keeps recording: **the catch came
+# from going to USE the earlier finding, not from being careful.**
+# ============================================================================
+
+## THE MEASUREMENT — off `corefill_work.txt` and `scratchpad/overnight/`
+    control tree                 shard rows
+    bots/_v146gunaxis                29     <- NULL114 and NEG114 live here
+    bots/_v171late160ammo             8     <- no null, no neg
+    bots/_v169launchlate160           3     <- no null, no neg (THE SHIP GATE)
+    bots/_x3r0_v115                   2     <- no null, no neg
+
+    shards whose name starts with NULL:  NULL114  bots/_v146gunaxis  (one, total)
+
+⇒ **13 of 42 rows are scored against a band and an unbiasedness certificate
+calibrated on a contrast they do not share.** My SHIPGATE flag named 3 of those
+13; **the `_v171late160ammo` family is 8 and nobody has flagged it.**
+
+## ⛔ AND THE SELECTOR MAKES IT UNFIXABLE BY NAMING ALONE
+`_cal(prefix)` returns `sorted(k for k in data if k.startswith(prefix))[0]` — **it
+can only ever return ONE cell for the whole run.** Adding a correctly-named null
+per tree does nothing: **`NULL114` sorts first and wins every time.** The tool has
+**no concept of which CONTRAST a calibration cell belongs to.** ⇒ *"add the
+missing nulls"* is not the fix; **the selection rule is.**
+
+## ⭐ THE DEFECT HAS ALREADY HAPPENED, SILENTLY — which is why this is not filed as hypothetical
+Three completed shards on disk carry `NULL` in a **non-prefix** position —
+**`SR1NULL`, `SR2NULL`, `SRNULL0`** (the last with **5,409 rows**, a full
+5,408-game shard) — and `startswith("NULL")` matches **none** of them.
+⚠ **NOT CLAIMED: that these were intended as calibration cells. I do not know,
+and it is the builder's call.** The claim is narrower and sufficient: **three
+shards named `*NULL*` that the null-selector cannot select is the same fragility
+that would have eaten `SHIPGATENULL`, already realised on disk.**
+
+## WHY IT IS NOT COSMETIC — in the builder's own measured numbers
+Their audit put **seat at 8.03pp on byte-identical arms**, and the null is what
+certifies *"the harness is unbiased tonight at this contention"*. **Seat bias,
+contention and variance are properties of the FIXTURE, and the control bot is
+part of the fixture.** A null on `_v146gunaxis` licenses a band on
+`_v146gunaxis` contrasts; on the other three it is an **assumption, not a
+measurement**. **`NEG114` has the identical problem for the POWER certificate,
+via the identical selector.**
+
+## ROUTED (builder owns `tools/`)
+1. **`_cal` selects by CONTROL TREE, not name prefix** — the worklist carries the
+   control path per row, so the join exists. **Print which cell was used, and the
+   candidate count, so a count ≠ 1 announces itself.**
+2. **One null per control tree that scores a verdict.** `_v169null` exists for
+   the gate; the `_v171late160ammo` family needs one before its 8 rows are read.
+3. **Until then print `CALIBRATION TRANSFERRED FROM <cell>`** on every shard whose
+   control differs. **That line alone would have surfaced all 13 without anyone
+   auditing anything.**
+
+## ⛔ AND THE HONEST FRAMING OF MY OWN FLAG
+**I asked for one cell to fix one gate. The right fix was always the selector** —
+and my proposed cell could not have been read even after it was built. **Two
+consecutive flags from me on this instrument, both correct about the DEFECT and
+both wrong about the FIX**, because I reasoned about the shard list and not about
+the code that consumes it. **The rule I keep re-learning: a fix is specified
+against the CONSUMER, not against the artefact.**
