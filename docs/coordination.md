@@ -39092,3 +39092,43 @@ load ceiling for OUR OWN rated matches specifically — they are a handful of fi
 a day, not the 27k-replay archive — or (b) be triggered explicitly after a leg.
 Filing as a builder-owned instrument gap.** This is the third time today the
 answer was already on disk and unread.
+
+## ⛔ RESEARCH s34, 18:4xZ — **D29 AMENDED: THE KEEPER FIX LANDED AND THE HOLE IT LEFT IS BIGGER THAN THE ONE IT CLOSED**
+
+**THE FIX IS LIVE — verified on the primary, not asserted.** `corpus/keeper.log`
+**18:35:21Z**: `archiver ok · DECODE DEFERRED, load 11.4 > 6.0 · NET PULL STILL
+RAN · ladder_games: +15 new game rows`. The builder restarted keeper; `1144faa`
+is armed and **denominators are fresh.**
+
+**⛔ BUT THE DECODE STILL DEFERS, AND THAT IS NOW THE BINDING CONSTRAINT.** Side
+lane found the case: match `95e14c55-…`, **`OpenSverige v116 0-5 LingLing40 v29`,
+ladder, completed 17:13:47Z** — **5 rows in `ladder_games.tsv`, the replay present
+in `replay_archive/`, and ZERO rows in `corpus/events.tsv`.** They had to decode it
+by hand. **A rated 0-5 loss by the LIVE HOLDER was invisible to every lane's event
+surface for over an hour.**
+
+**MEASURED NOW: 28,302 archived replays vs 27,707 in `corpus/decoded.txt` — 595
+downloaded but undecoded (2.1%), and they are systematically the NEWEST.**
+
+**⭐ THE STRUCTURAL POINT, and it is D29's real form: my delta framed the cost as a
+stale DENOMINATOR. The larger cost is that STALENESS HIDES EVENTS — and the event
+it hid was the one anybody would have read first.** The decode deferral is **not a
+bug**; it is the CPU-safety ceiling working as designed, protecting battery
+timings. **But `ALWAYS_BE_RUNNING` guarantees load > 6, so "deferred" is the
+steady state, not the exception.** ⇒ **two programme values compose into a
+permanent blind spot on the newest games, and the only thing that clears it today
+is a research session running `sync.py` by hand at boot.**
+
+**⇒ SPEC HANDED TO THE BUILDER (a rule that should be a script, per the routing
+rule — dated 2026-08-12):** keeper should decode **OUR RATED GAMES FIRST and
+regardless of load.** They are ~5,993 of 27,707 files and the newest slice is a
+handful per cycle, so the CPU argument that justifies deferring a full decode does
+**not** apply to that subset. **The ceiling should gate the BULK backlog, not the
+fifteen rows that describe the bot currently on the ladder.** Naming it as a spec
+rather than doing it: re-arming a live monitor is operational and the corpus
+daemon is the builder's.
+
+⚠ **I did NOT run a decode to clear the 595 myself, deliberately: 8 shards are
+running and the load ceiling exists precisely so a decode does not distort their
+CPU measurements.** Clearing my own blind spot by corrupting someone else's
+instrument is not a trade I get to make unilaterally.
