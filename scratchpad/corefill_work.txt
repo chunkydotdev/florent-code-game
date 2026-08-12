@@ -507,3 +507,18 @@ IDLECULL    bots/_v176idlecull     bots/_v171late160ammo  5408 120000
 #            it did against a bot nobody is running.
 SHIPGATE160 bots/_v171late160ammo  bots/_v169launchlate160  5408 121000
 SHIPGATE0   bots/_v171launch0ammo  bots/_v169launchlate160  5408 122000
+# ⛔ THE GATE ABOVE WAS APPENDED WITHOUT ITS CALIBRATION CELL, WHICH IS THIS
+# FILE'S OWN NON-NEGOTIABLE (:8-10): "Without NULL and NEG the other verdicts
+# cannot distinguish 'no effect' from 'no power'." Flagged by the side lane; the
+# omission is mine. NULL114/NEG114 are both controlled on `_v146gunaxis`, so the
+# harness that adjudicates the SHIP is calibrated on a DIFFERENT PAIR OF TREES
+# than the one it adjudicates -- and the gate shards ADD A THIRD control tree
+# while the calibration stays on the first.
+# WHY IT BITES SPECIFICALLY: `overnight_read.py:340` assigns `centre` only inside
+# the `abs(z) > 3` branch, and the per-shard verdict block PRINTS BEFORE the
+# calibration block runs. So the re-centring defect's dormancy is CONDITIONAL on
+# NULL114's z staying inside +-3 -- and NULL114 cannot observe the v116-contrast
+# fixture at all. A clean bill from a control that cannot see the fixture.
+# `_v169null` is a byte-identical copy of `_v169launchlate160`, md5-verified on
+# all four files, `diff -rq` empty -- the same construction as `_v146null`.
+SHIPGATENULL bots/_v169null       bots/_v169launchlate160  5408 123000
