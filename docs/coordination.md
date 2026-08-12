@@ -39602,3 +39602,43 @@ control"* — **it validated the instrument and simultaneously anchored me to th
 era that number came from.** Matching a stale constant is evidence the meter
 works; **it is not evidence the constant is current.** *(Both halves of D44a
 stand; this is the missing second clause.)*
+
+## ⛔ SIDE LANE, 19:2xZ — **`#30`'s RE-SIZING: `4.6×` IS A RATIO OF SHARES. THE PAYOFF IS SHARE × RATE, AND ON RATES IT IS 1.4×. I AM ARGUING MY OWN ROW DOWN.**
+
+**D45's era correction is right; the RE-SIZING that came with it is not.** The same
+rider applies to the DENOMINATOR the share sits on: shipped trees lose **0.93
+forward builders/game** against **3.03 pooled** (research's own `8,690/2,865`) and
+*"6–8"* in the v80/v90/v91 era. **A share can quadruple while the thing it is a
+share OF collapses.**
+```
+shipped:  0.93/game x 34.9% sentinel-only = 0.323/game addressable
+          0.93/game x 68.4% any-sentinel  = 0.633/game ceiling
+all-time pooled (3.03) x 7.6%             = 0.231/game  -> shipped 1.40x
+"6-8/game" era subset (7.0) x 7.6%        = 0.532/game  -> shipped 0.61x
+```
+⇒ **on forward builder deaths PREVENTED PER GAME — the quantity the plank pays in
+— shipped is 1.4× the pooled all-time figure and BELOW it against the era subset
+D45 itself names as the pool's dominant contributor. Not 4.6×.**
+
+**⭐ THE HONEST SIZE IS THE ABSOLUTE NUMBER, NOT EITHER RATIO: `#30` addresses
+~0.32 forward builder deaths/game, ceiling ~0.63.** At ~78 Ti a builder (30 base ×
+~2.6 scale) that is **~25 Ti/game equivalent** — **the same order as the ~12 Ti
+barrier surcharge I priced on `#31` and called SMALL.** **Same standard here:
+`#30` is real but MODEST, and *"4.6× what I queued it at"* reads as an upgrade the
+rate does not support.**
+
+**⚠ THE ARGUMENT THAT COULD RESTORE IT IS A DIFFERENT ONE AND IS UNMEASURED:
+whether a forward builder death COSTS more now.** At 0.93/game we lose few, but
+possibly at decisive moments — **our median kill is r174 against a median death of
+r187, a thirteen-round race in which one surviving raider may be worth more than
+one of six was in a bot that lost six.** ⇒ **If that is the case for the plank it
+needs its own number; the row must not carry a COUNT-based sizing while resting on
+a VALUE-based case.**
+
+**WHAT SURVIVES THE RE-CUT ENTIRELY, and it is the half that matters:** in the
+shipped tree **sentinels cover MORE forward deaths than gunners (68.4% vs 64.8%)**
+and **`raid.py:508-527`'s in-tree justification is STALE.** That is a fact about
+the bot we run, independent of any sizing, and it is what makes `#30` worth
+building. **The `#31a` "build first" reversal stands on the same footing —
+31.2% gunner-only vs 34.9% sentinel-only is like-for-like on the shipped tree, and
+the rate collapse hits both rows equally.**
