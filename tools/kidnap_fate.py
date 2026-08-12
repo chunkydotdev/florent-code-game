@@ -54,6 +54,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "corpus"))
 from replay_census import fields, read_pos, parse_entity, WIRE_LEN  # noqa: E402
+# ⛔ IMPORTED, NOT REIMPLEMENTED. `is_border` carries its own 11-cell selftest
+# including the size trap ((13,1) is BORDER on antler 14x18 and INTERIOR on
+# 26x26). A second copy here would be D24(e) -- the selftest driving a parallel
+# implementation -- which this lane committed once already today.
+from replay_throws import is_border  # noqa: E402
 
 REPO = HERE.parent
 ARCHIVE = REPO / "replay_archive"
@@ -97,7 +102,12 @@ def analyse(path: Path, us: int) -> list[dict]:
         return []
 
     corepos: dict[int, tuple[int, int]] = {}
+    mw = mh = 0
     for num, _w, value in fields(map_buf):
+        if num == 1:
+            mw = value
+        elif num == 2:
+            mh = value
         if num == 4:
             # ⛔ proto3 OMITS default-valued fields, so team 0's `team` field is
             # ABSENT from the wire -- the first core arrives as {id, pos} with no
@@ -124,6 +134,16 @@ def analyse(path: Path, us: int) -> list[dict]:
     damaged: set[int] = set()
     born: dict[int, int] = {}
     thrown_at: dict[int, int] = {}       # victim eid -> round WE threw it
+    # ⭐ LANDING RECORDED AT THROW TIME, s33. The previous version dropped it,
+    # so the border/interior split had to be reconstructed by JOINING this
+    # file to throws.tsv on (file, eid, rnd) -- and that join is INVALID: the
+    # two passes do not share an entity-id space, only 4,300 of 9,372 thrown
+    # rows matched, and the decisive opponent collapsed from 779 rows to 9.
+    # The apparent matches were coincidental key collisions, and they produced
+    # a result in the predicted direction. Recording it here removes the join.
+    thrown_to: dict[int, tuple[int, int]] = {}   # eid -> FIRST throw landing
+    throw_n: dict[int, int] = {}                 # eid -> how many throws
+    border_any: set[int] = set()                 # eid -> ANY throw hit a border
     removed: dict[int, int] = {}
     nrounds = len(turn_bufs)
 
@@ -155,6 +175,10 @@ def analyse(path: Path, us: int) -> list[dict]:
                     # Same geometry replay_throws.py uses; not re-derived.
                     if frm is not None and d2(frm, to) > 1 and team.get(eid) == enemy:
                         thrown_at.setdefault(eid, rnd)
+                        thrown_to.setdefault(eid, to)
+                        throw_n[eid] = throw_n.get(eid, 0) + 1
+                        if mw and mh and is_border(to, mw, mh):
+                            border_any.add(eid)
                 elif unum == 5:                                  # updateHp
                     for n2, _w2b, v2 in fields(ubuf):
                         if n2 == 1:
@@ -185,6 +209,17 @@ def analyse(path: Path, us: int) -> list[dict]:
             "undamaged": 1 if eid not in damaged else 0,
             "no_damage_removal": 1 if (rem is not None and eid not in damaged) else 0,
             "dist_bucket": bucket(d2(p, corepos[enemy])) if p else "unk",
+            # ⚠ `thrown_border` is the FIRST throw's landing, matching `thrown_rnd`.
+            # `border_any` covers victims thrown repeatedly, where the first throw
+            # may be interior and a later one on the border -- the fate cannot be
+            # attributed to one of them, so BOTH are emitted and the analysis must
+            # say which it used. -1 means no throw / no map dimensions.
+            "thrown_border": (is_border(thrown_to[eid], mw, mh)
+                              if (thr is not None and eid in thrown_to and mw and mh)
+                              else -1),
+            "border_any": 1 if eid in border_any else (0 if thr is not None else -1),
+            "throw_n": throw_n.get(eid, 0),
+            "mw": mw, "mh": mh,
             "rounds": nrounds,
         })
     return rows
