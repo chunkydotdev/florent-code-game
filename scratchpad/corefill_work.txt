@@ -597,3 +597,110 @@ L4REPAIR    bots/_v177l4repair     bots/_v169launchlate160  5408 125000
 #            nothing" -- our own control builds few forward gunners, so the local
 #            fixture UNDER-REPRESENTS the rays the penalty exists to dodge.
 GUNAX0      bots/_v183gunaxis0     bots/_v169launchlate160  5408 126000
+# ============================================================================
+# --- OVERNIGHT BLOCK, appended s34 ~20:0xZ. Magnus: run until ~08:00, no end
+#     time, keep building. SHIPGATE160/SHIPGATE0 CANCELLED at 56% -- 49.44% and
+#     49.19% at +-1.78, inside the pre-registered band, which IS the verdict
+#     (NO SHIP). NOAPPROACH (18.6%) and IDLECULL (33.5%) cancelled as decided
+#     negatives. Rows kept for all four.
+# ⛔ EVERY ARM BELOW IS CONTROLLED ON `_v169launchlate160`, WHICH IS THE HOLDER
+#     AGAIN AFTER MAGNUS ROLLED BACK v120 AT ~19:40Z. SHIPGATENULL (already
+#     running) is the null cell for this contrast; NEG169 is its negative.
+#     Do not read an inside-band result as "no effect" until NEG169 has n.
+# ============================================================================
+# SCREEN -- the approach doctrine we have ZERO of and ph/not adgato run at
+# d^2 17-25. Dosed 2.57/game, >=1 in 92/96 games, did NOT cannibalise the collar
+# (6.01 vs 5.20 pooled) or the forward sentinel (1.67 vs 1.66).
+# READ: >51.33% the doctrine transfers · <48.67% approach barriers cost us and
+# the collar-only doctrine is CORRECT, which is worth knowing · inside = under
+# 1.33pp on this fixture, and NOTE the fixture is our own bot, which also has no
+# approach screen to be obstructed by.
+SCREEN      bots/_v182screen       bots/_v169launchlate160  5408 130000
+# GUNBLOCK -- barrier on a visible enemy gunner's ray. Doses only 0.20/game
+# LOCALLY and that is a FLOOR, not an estimate: we build 1.26 gunners/game
+# against Leviathan 13.86 / Erebus 8.35 / Lunds Stallions 10.56, so a self-play
+# fixture under-represents the rays this arm exists to block by 4-11x.
+# ⛔ AN INSIDE-BAND READ HERE IS NEARLY UNINFORMATIVE BY CONSTRUCTION. It is
+# queued to price the COST (does carrying the logic hurt?), not the benefit.
+GUNBLOCK    bots/_v181gunblock     bots/_v169launchlate160  5408 131000
+# MINHARV1 -- the CLEAN forward-timing arm. LOKI_FWD_MIN_HARV 2 -> 1, one line.
+# Dose: first forward sentinel r27 -> r22 (p=0.097, inside the same-bot band, so
+# a WEAK dose). Field deficit is r33 vs r25, so this is the right direction.
+# ⭐ PREFERRED OVER _v179rushon, which is a RE-RUN tested twice with OPPOSITE
+# signs AND has a second consumer at main.py:324 (sends seats (0,1) on the raid),
+# making any delta unattributable between the gate and the extra body.
+MINHARV1    bots/_v180minharv1     bots/_v169launchlate160  5408 132000
+# L4 TRUNK REPAIR is already running (13%). GUNAX0 already queued.
+# --- OVERNIGHT, second block ~20:4xZ. Two arms that have been stable for hours.
+# SALT vs THE HOLDER. The live leg (25 games) killed it on kill round -- 13 kills
+# at median r179 vs a pooled baseline of 129, Mann-Whitney p=0.008. That is a
+# STRONG signal on a SMALL n, and the local A/A floor measured tonight is +-25
+# rounds at n<=96. A 5,408-game battery is the only thing that turns "probably
+# ~50 rounds" into a number. ⭐ AND IT IS THE CONTROL FOR `_v187saltidle`: if the
+# idle-gate arm is to be read as "same denial, less tempo cost", the ungated
+# arm's cost must be measured on the SAME fixture, not carried over from a
+# 25-game live leg.
+# READ: this arm is EXPECTED to lose. A clean OUTSIDE-BELOW at n=5408 with a
+# measured kill-round delta is the deliverable, not a surprise.
+SALT        bots/_v178salt         bots/_v169launchlate160  5408 133000
+# RUSHON -- LOKI2_RUSH_ON False->True. ⛔ QUEUED WITH A KNOWN DEFECT, STATED:
+# (a) it is a RE-RUN -- the same one-line flip was tested twice with OPPOSITE
+#     signs (LOKI-4 arena -15.6/-18.9pp on orizon/cad, the fixtures CLAUDE.md
+#     names as lying; LOKI-11 live-unrated +16.0pp core-kill share);
+# (b) the flag has a SECOND consumer at main.py:324 (sends seats (0,1) on the
+#     raid, not just seat 0), so ANY delta is unattributable between "the
+#     harvester/bank gate lifted" and "a second body left home".
+# ⇒ IT IS QUEUED FOR THE DOSE AND THE COST, NOT FOR ATTRIBUTION. `MINHARV1` is
+# the clean single-mechanism arm on the same axis and is already running.
+# A result here NEVER licenses a sentence about the rush gate on its own.
+RUSHON      bots/_v179rushon       bots/_v169launchlate160  5408 134000
+# ============================================================================
+# --- OVERNIGHT, third block ~20:4xZ. FIVE MORE. ---
+# ⛔ THE `_f` SUFFIX IS A FROZEN SNAPSHOT, NOT A DIFFERENT ARM. The build agent
+# was still live when these were queued (last edit 6 min prior), so each tree was
+# copied and md5-verified identical at freeze time. A late edit to the original
+# therefore cannot contaminate 5,408 games. The agent's report will name the
+# UNSUFFIXED trees; they are the same code.
+#   _v184screen4_f        0858bb44e97cfdd0bb358553d63acd57
+#   _v185collarvol_f      8f2a92dd8a53aabe055e2d4b1766a3c9
+#   _v186gunblocknoshield_f 5d690fe431c6cb6a94a148eee053d41f
+#   _v187saltidle_f       945a6e91c3941d85f4d29c03acd410b1
+# ============================================================================
+# SCREEN4 -- the approach doctrine at DOUBLE dose (cap 2->4, gap 10->5 rounds).
+# SCREEN itself is already running, so this is a two-point DOSE CURVE on the one
+# barrier doctrine we have zero of and ph/not adgato run. Monotone in the dose is
+# the strongest shape either verdict can take: if 2.57/g and ~5/g both help, the
+# doctrine transfers; if both hurt, collar-only is CORRECT and that is worth as
+# much. ⚠ Read ONLY beside SCREEN -- alone it is one point.
+SCREEN4     bots/_v184screen4_f    bots/_v169launchlate160  5408 135000
+# COLLARVOL -- collar volume, same placement, lower bank floor. We spend 34 Ti/game
+# on barriers; Clankers spends 110 on the SAME median titanium (880) at the same
+# 7-9 Ti unit cost. This asks whether our under-spend is a DEFECT or a CHOICE.
+# ⚠ AND VOLUME IS NOT OBVIOUSLY GOOD: sporks tops the ladder at 3.02 barriers/game.
+# Every barrier is +1% scale forever, and scale is what prices our launcher out.
+COLLARVOL   bots/_v185collarvol_f  bots/_v169launchlate160  5408 136000
+# GBNOSHIELD -- gunblock WITHOUT the shield clause. 4.2x the local dose (0.20 ->
+# 0.83/game) at the cost of sometimes placing cover in front of nothing.
+# ⭐ THIS IS THE ARM THAT MATTERS OF THE PAIR: the live v121 leg placed ZERO ray
+# barriers in 25 games against 4.68 enemy gunners/game, so the shield clause is
+# the prime suspect. If the cheap high-dose version measures the same or better,
+# the clever logic is unnecessary complexity.
+GBNOSHIELD  bots/_v186gunblocknoshield_f bots/_v169launchlate160 5408 137000
+# SALTIDLE -- salt gated on the raider having NO better action. The revival test
+# for a plank killed tonight on TEMPO, not on mechanism (live: 13 kills at median
+# r179 vs pooled 129, p=0.008; mechanism 20/20 corpse-salts at median latency 1).
+# ⭐ READ IT BESIDE `SALT`, WHICH IS QUEUED ON THE SAME FIXTURE FOR EXACTLY THIS:
+#   SALTIDLE kill round ~= parent AND salt events > 0  -> REVIVED
+#   SALTIDLE kill round ~= SALT (regressed)            -> the idle-gate hypothesis
+#                                                         is WRONG and salt is dead
+#   SALTIDLE salt events ~= 0                          -> the gate never opens;
+#                                                         says nothing about salt
+SALTIDLE    bots/_v187saltidle_f   bots/_v169launchlate160  5408 138000
+# ⭐ V120 -- x3r0's ship, PROPERLY. My panel read 12% (3/25) against four
+# baselines at 40-45% on identical maps (p~0.012) -- but that is n=25 and its
+# RATED record was 5/10 over two matches. A teammate's bot deserves better than a
+# 25-game verdict, and the tree is already local. This is the cheapest honest
+# answer available and it costs nothing but cores.
+# READ: <48.67% confirms the panel and the rollback · >51.33% my panel was wrong
+# and v120 was rolled back on noise · inside = the 12% was a small-n artefact.
+V120        bots/_x3r0_v120        bots/_v169launchlate160  5408 139000

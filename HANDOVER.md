@@ -16,6 +16,12 @@
 ## ===== ⛔ NOTHING SHIPPED TODAY, AND THAT IS THE CORRECT OUTCOME =====
 ##   **SHIPGATE160 49.44% / SHIPGATE0 49.19%** (n~3050, ±1.78) — cancelled at 56%
 ##   as inside-band, which was the PRE-REGISTERED verdict: **NO SHIP.**
+##   ⭐ **AND THE STOP IS NOT OPTIONAL-STOPPING: both arms sit inside the band
+##   they would have been judged against AT FULL n** — 49.44% is 0.56pp from 50
+##   and 49.19% is 0.81pp, against the n=5,408 band of ±1.33. **The remaining
+##   44% could not have changed the verdict unless the estimates moved.**
+##   (Side lane checked this precisely because stopping early WIDENS the band
+##   and inside-band always resolves for the incumbent — the aggregate bias.)
 ##   **The mechanism explained it before the shards did: v118 builds a launcher
 ##   in 1 live game of 5**, so both candidates are v116 + an ammo pre-buy that
 ##   measured null (AMMO115 51.23%, z=+1.72) on its own. **They are the same bot
