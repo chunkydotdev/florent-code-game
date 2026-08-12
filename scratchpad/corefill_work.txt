@@ -544,3 +544,27 @@ SHIPGATENULL bots/_v169null       bots/_v169launchlate160  5408 123000
 # it is "this fixture cannot detect a known-bad arm", which invalidates every
 # NO-INFORMATION verdict on the same contrast INCLUDING the ship gate's.
 NEG169      bots/_v169noseal       bots/_v169launchlate160  5408 124000
+# --- LOKI-49 L4 TRUNK REPAIR --- Magnus's replay observation, s34 ---
+# MEASURED: we repair 6.8% of our cut conveyors against a FIELD 40.5% and our own
+# OPPONENTS 50.3% (n=885 eligible deaths, field control n=27,871; matcher driven
+# to the other verdict four ways -- CTRL-A 0.00%/885, CTRL-B 0.79% on a shuffled
+# game, positive control verified on raw events rows).
+# ⛔ AND THE ARM'S OWN BUILD FOUND THE DEFECT IS WORSE THAN THAT: `PAVE_TRAIL_ON
+# = False` (doctrine.py:528, turned off by LOKI-13), so the "incidental repair"
+# the doctrine describes DOES NOT EXIST IN THIS TREE. Repair here is structurally
+# zero, not merely low.
+# ⭐⭐ AND THE BIGGEST SURPRISE, FOUND BY COUNTING NOT BY READING: only 1 of the
+# first 55 repaired tiles had EVER held a conveyor. The belt half is mostly
+# repairing OUR OWN DEAD HEADS -- chains `_build_next_link` abandoned mid-walk
+# and never revisits, because it pops its queue as it lays it. ⇒ THE L4 DEFECT
+# HAS TWO HALVES AND ONE IS SELF-INFLICTED. This arm fixes both and cannot
+# attribute between them; that is a known limit, declared before it runs.
+# DOSE VERIFIED: treatment 40 repairs / 40 games (24 of 40 games >=1); control
+# 0 / 40. Flag-off reproduces the parent 20/20 on gate.py's five keys with
+# NOISE_ON disabled, and the mutation control differs in 2/5 with the flag ON.
+# 0 tracebacks in 80 games, mutation-tested with a canary raise (5 tracebacks).
+# ⚠ CPU HEADROOM IS UNVERIFIED: `get_cpu_time_elapsed()` returned 0 on all 6,515
+# local calls and the replay `tled` flag is 0 even at --tle 1, so the local CPU
+# instrument is DEAD. Analytic bound ~<=40 extra getters/turn, eco path only.
+# ⇒ IF THIS ARM IS EVER SHIPPED IT NEEDS A PLATFORM CHASSIS GATE FIRST.
+L4REPAIR    bots/_v177l4repair     bots/_v169launchlate160  5408 125000
