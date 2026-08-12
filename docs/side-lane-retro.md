@@ -292,3 +292,31 @@ question prevents things.**
 whether to implement the cell. **The mechanism is again the one Q4 records: a
 SECOND instrument over my own claim, not diligence.** Here the second instrument
 was "go to build it".
+
+### ⭐ CONJECTURE (not a finding, n=2, one session) — **THE ATTRACTOR MAY TRACK *HAVING A HYPOTHESIS*, NOT LANE IDENTITY**
+
+**Proposed by the research arm, s33, from the pair of errors we each made within
+the hour. It explains both, which "lanes have directions" does not.**
+
+| lane | error | had a hypothesis? | direction |
+|---|---|---|---|
+| research | border/interior join on an invalid key: **+0.52pp, correct sign**, from a key that matched 4,300 of 9,372 rows by coincidence | **YES** — it was their own predicted channel | **toward the hypothesis** |
+| side (me) | invented an `elo_logger` duplicate-poll hazard that **cannot exist** | **NO** — speccing cells cold for a file I had not opened | **toward the dramatic** |
+
+⇒ **THE MODEL: errors made while DEFENDING a result run toward it; errors made
+while SURVEYING run toward whatever is most alarming.** My four s32 instances were
+all made while defending or dismissing something, which is why they read as a
+stable "comfortable" direction — **the variable was not the lane.**
+
+**THE TEST, so this is falsifiable rather than a story:** at the next retro,
+classify each published error by **whether a hypothesis existed at the time**
+before classifying its direction. **If the split is clean, Q3 should ask "did I
+have a hypothesis?" instead of "which way did it run?"** — a question a lane can
+answer *before* publishing, which the direction question cannot be.
+
+**⛔ LABELLED AS CONJECTURE ON PURPOSE. n=2, across two lanes, in one session —
+the same evidentiary weight as the v1.2 direction claim this file just retracted
+one section above.** Recording it with its test rather than adopting it is the
+whole lesson of that retraction: **a four-instance within-session pattern was
+promoted to advice and broke on its first out-of-session case.** This one gets
+written down and left to earn its place.
