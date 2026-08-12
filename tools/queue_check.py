@@ -178,6 +178,45 @@ def parse(text: str):
     return out
 
 
+def row_numbers(text: str):
+    """-> list of (number, kind, snippet) for every ROW IDENTIFIER in the file.
+
+    ⛔ TWO FORMS, AND THE SECOND IS WHY THIS EXISTS. On 2026-08-12 two lanes wrote
+    `#32` fifteen minutes apart: research added a TABLE ROW (`| **32** | ... |`)
+    and the builder added a SECTION HEADING (`### ⭐⭐⭐ #32 — OUR SENTINELS DIE
+    ...`). A checker that scanned table rows ONLY would have reported no
+    duplicate on the exact incident that motivated it -- the `parse()` above is
+    table-rows-only by design, so reusing it here would have been that bug.
+
+    The cost is not cosmetic and that is why this is an alarm rather than a note:
+    the side lane audited the BUILDER's #32 and routed the finding to RESEARCH,
+    because the number had been research's an hour earlier. **A collided number
+    silently misroutes an audit to the wrong author**, and nothing detected it.
+    """
+    out = []
+    for line in text.splitlines():
+        if line.startswith("| "):
+            if line.startswith("|---") or re.match(r"\|\s*#\s*\|", line):
+                continue
+            first = line.strip().strip("|").split("|")[0]
+            m = re.fullmatch(r"[\s*~]*(\d+)[\s*~]*", first)
+            if m:
+                out.append((int(m.group(1)), "table row", line[:70]))
+        elif line.startswith("#"):
+            m = re.search(r"#(\d+)\s*[—-]", line)
+            if m:
+                out.append((int(m.group(1)), "heading", line[:70]))
+    return out
+
+
+def duplicate_numbers(text: str):
+    """-> sorted list of (number, [(kind, snippet), ...]) for numbers used twice."""
+    seen = {}
+    for num, kind, snip in row_numbers(text):
+        seen.setdefault(num, []).append((kind, snip))
+    return sorted((n, v) for n, v in seen.items() if len(v) > 1)
+
+
 def _is_plank_row(row: str) -> bool:
     """First cell must be a plank ID -- a bare number, possibly bold/struck.
 
@@ -355,6 +394,30 @@ def selftest() -> int:
         ok = got == want
         bad += not ok
         print(f"  [{'ok' if ok else 'FAIL'}] {name}: expected {want}, got {got}")
+    # --- DUPLICATE-NUMBER CELLS. Driven both ways, and the THIRD reproduces the
+    # actual 2026-08-12 incident: a TABLE ROW and a SECTION HEADING sharing #32.
+    # A table-rows-only checker returns 0 on that cell -- i.e. it would have passed
+    # while missing the collision it was built for. That cell is the whole point.
+    dup_cases = [
+        ("no duplicates -> none",
+         "## NEXT UP\n| 1 | **a** |\n| 2 | **b** |\n", 0),
+        ("same number twice as TABLE ROWS -> one duplicate",
+         "## NEXT UP\n| 7 | **a** |\n| 7 | **b** |\n", 1),
+        ("REGRESSION 2026-08-12: table row #32 + heading #32 -> one duplicate",
+         "## NEXT UP\n| **32** | **ablate the flag** |\n\n### #32 — OUR SENTINELS DIE\n", 1),
+        ("two headings sharing a number -> one duplicate",
+         "### #9 — alpha\n### #9 — beta\n", 1),
+        ("a struck-through id still collides",
+         "## NEXT UP\n| ~~4~~ | **a** |\n| 4 | **b** |\n", 1),
+        ("different numbers do NOT collide",
+         "## NEXT UP\n| **32** | **a** |\n\n### #33 — b\n", 0),
+    ]
+    for name, md, want in dup_cases:
+        got = len(duplicate_numbers(md))
+        ok = got == want
+        bad += not ok
+        print(f"  [{'ok' if ok else 'FAIL'}] {name}: expected {want}, got {got}")
+
     # The reproduction cell: the real file must parse without raising.
     try:
         n = len(unblocked(parse(QUEUE.read_text())))
@@ -378,7 +441,9 @@ def main() -> int:
         print(f"QUEUE ALARM: {QUEUE} does not exist.")
         return 1
 
-    parsed = parse(QUEUE.read_text())
+    text = QUEUE.read_text()
+    dupes = duplicate_numbers(text)
+    parsed = parse(text)
     live = unblocked(parsed)
     print(f"QUEUE FLOOR CHECK — unblocked items: {len(live)} (floor {args.floor})")
     for section, row in live:
@@ -392,6 +457,17 @@ def main() -> int:
               f"(no STATUS: token, so NOT blocked):")
         for lbl, hits in warn:
             print(f"       {lbl[:52]}  [{', '.join(hits)}]")
+    if dupes:
+        print()
+        print(f"*** QUEUE ALARM: {len(dupes)} DUPLICATE ROW NUMBER(S). Three lanes write")
+        print("    this file and numbering is a shared counter with no lock. A collided")
+        print("    number MISROUTES AN AUDIT TO THE WRONG AUTHOR (measured 2026-08-12).")
+        for num, uses in dupes:
+            print(f"    #{num} used {len(uses)}x:")
+            for kind, snip in uses:
+                print(f"        [{kind}] {snip}")
+        print("    ⇒ renumber the LATER row and update every reference to it.")
+
     if len(live) < args.floor:
         print()
         print(f"*** QUEUE ALARM: {len(live)} < {args.floor}. THIS IS A RESEARCH FAILURE,")
@@ -404,6 +480,12 @@ def main() -> int:
         # signal" rule, inside our own hook. Splitting them here is the precondition;
         # the hook must still branch 2/1/0 for the fix to land. Side lane's catch.
         return 2
+    if dupes:
+        # ⛔ EXIT 3 = "row numbers COLLIDE". Distinct from 2 (floor breached) and 1
+        # (tool broken) for the same reason those were split in s33: a caller that
+        # cannot tell WHICH alarm fired prints the wrong directive. A duplicate is
+        # not a shortfall -- the fix is renumbering, not stocking.
+        return 3
     print("   OK")
     local_runs()
     return 0
