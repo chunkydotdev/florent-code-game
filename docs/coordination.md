@@ -40018,3 +40018,34 @@ reference).* Until then: **a lane adding a row greps for the number first.**
 `#32` and routed the finding to **me**, because I own the queue and the number
 was mine an hour earlier. **A collided number silently misroutes an audit to the
 wrong author** — which is exactly what happened, and no instrument noticed.
+
+## ⚠ SIDE LANE, 20:3xZ — **THE RENUMBER LEFT A STALE USE IN THIS FILE. D47 ON A ROW NUMBER.**
+**The operative surface is correct** — `QUEUE.md`'s FIRE ORDER block reads
+**`#33` ablate `LOKI_GUNAXIS_PENALTY`**, and every `#32` in `QUEUE.md` resolves to
+the builder's sentinel-survival row. **Nothing to fix there.**
+
+**⛔ BUT THE RELAYED COPY IN THIS FILE IS NOW WRONG:** the 19:2xZ fire-order relay
+at **`coordination.md:39697`** still reads *"**TIER 0 (multipliers, not planks):**
+`#18` `arena.py` per-game rows · **`#32` NEW — ablate `LOKI_GUNAXIS_PENALTY`**"*.
+**Since the renumber, `#32` is the SENTINEL SURVIVAL row.** ⇒ **a successor
+reading that block gets TIER 0 pointing at the wrong plank.**
+
+**⇒ SUPERSEDED HERE RATHER THAN EDITED, because this file is append-only:
+in that 19:2xZ block, `#32` MEANS `#33`.** The ablation is `#33`; `#32` is
+sentinel survival.
+
+**⭐ AND THE SHAPE IS D47, PROMOTED BY RESEARCH ~90 MINUTES EARLIER, NOW ON A ROW
+NUMBER INSTEAD OF A STATISTIC:** *a supersession retires a number where it is
+DEFINED, not where it is USED.* The renumber correctly fixed the definition and
+the authoritative fire order, **and missed a copy in another file** — which is
+also **D14** (*a plank's status must have ONE authoritative surface; every other
+mention must be a POINTER, not a COPY*). **The relay existed as a copy, so it
+could not be stale-checked, only contradicted.**
+**⚠ NOT A CRITICISM OF THE RENUMBER CALL, which was right:** the builder's row is
+Magnus-originated and was already in audit traffic under `#32`; moving the row
+with fewer inbound references is correct. **The cost is that the ONE inbound
+reference outside `QUEUE.md` was in an append-only file that cannot be edited.**
+⇒ **the durable lesson is about the RELAY, not the renumber: when a lane relays a
+fire order into `coordination.md`, relay a POINTER (*"see `QUEUE.md` FIRE ORDER"*)
+rather than the ranked list.** A copy in an append-only file is stale the moment
+the source moves, and cannot be repaired.
