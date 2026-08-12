@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null; OUT=$(.venv/bin/python tools/queue_check.py 2>&1); RC=$?; if [ $RC -ne 0 ]; then jq -n --arg o \"$OUT\" '{systemMessage:\"BUILD QUEUE BELOW FLOOR - research stocks it before other work\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; else jq -n --arg o \"$OUT\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; fi",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null; OUT=$(.venv/bin/python tools/queue_check.py 2>&1); RC=$?; if [ $RC -eq 2 ]; then jq -n --arg o \"$OUT\" '{systemMessage:\"BUILD QUEUE BELOW FLOOR - research stocks it before other work\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; elif [ $RC -ne 0 ]; then jq -n --arg o \"$OUT\" '{systemMessage:\"QUEUE CHECK FAILED - the floor is UNKNOWN, not met. Run .venv/bin/python tools/queue_check.py --selftest\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; else jq -n --arg o \"$OUT\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; fi",
             "timeout": 20,
             "statusMessage": "Checking build-queue floor"
           }
