@@ -1902,3 +1902,50 @@ version is the FIRST thing to re-check at every state report, not the last, and
 **AND FOR ANY SCRIPT THAT SUBMITS: never hardcode a rollback target. Read the
 `Active bot:` line at fire time** — `submit_clean.py` already does this and must
 not be bypassed with `--activate` plus a literal version.
+
+---
+
+## D29 — **A SPARSE, CASE-SENSITIVE COLUMN RETURNS A CLEAN ZERO TO ANY CUT THAT DOES NOT CHECK. `meta_join.tsv` BIT THREE TIMES IN ONE DAY**
+
+**Promoted s33, 2026-08-12. Research's finding, from their own three misses.
+`CLAUDE.md` already warns about this surface for a NARROWER reason — *"NEVER
+`meta_join` for a win-rate denominator"* — and that rule does not cover what
+happened twice more today.**
+
+**THE THREE INSTANCES:**
+1. **Morning, target selection:** `our_won` is **empty in 18,575 of 24,203 rows
+   (77%)**; counting blanks as losses turned a **118W-62L** record into
+   *"23.4% share"* and set the wrong leg target. *(Caught before lock.)*
+2. **Pooled the wrong population:** `throws.tsv` carries **every** throw by both
+   teams; an unfiltered cut read **median insert r301, 31% before r160** —
+   flatly contradicting the truth.
+3. **⭐ THE SILENT ONE:** filtering `us_side == "A"` returned **ZERO of our
+   throws** — because the column holds **lowercase `"a"`/`"b"`**. **A
+   case-mismatched comparison matches nothing rather than erroring.** And
+   `us_side` is **`"none"` in 20,678 of 26,501 rows (78%)** — the same sparsity
+   that made `our_won` unusable in instance 1.
+
+**Correct answer, once the cut was right: n=3,913 inserts over 1,915 attributable
+games, median insert r82, median FIRST insert per game r27, 74.6% before r160.**
+*(This is the number that confirmed the DELVSDEF fixture asymmetry — the ferry
+does deliver early, so that flag rests on a measurement rather than an
+inference.)*
+
+⇒ **THE GENERAL FORM, which is what earns a row: a column that is MOSTLY EMPTY
+and CASE-SENSITIVE is indistinguishable, to any filter, from a column where your
+predicate is simply false.** An empty result set is the same shape as a real
+zero. **The failure is silent, it errors nowhere, and it produces a
+publication-ready number.**
+
+### THE WATCH FORM
+**Before filtering on any column, check its FILL RATE and its VALUE DOMAIN**
+(`sort | uniq -c` on a sample beats an assumption; both defects were one command
+away). **And run the POSITIVE CONTROL IN THE SAME COMMAND as the real cut** —
+research's own D82 from this morning, and the thing that caught instance 3:
+**a cut returning 0 of our throws, when we demonstrably throw thousands, indicts
+the harness and not the corpus.** A zero that is *impossible* is the cheapest
+alarm available and it fired here for the third time today.
+**SCOPE EXTENSION:** `CLAUDE.md`'s existing rule bans `meta_join` for **win-rate
+denominators**. **That is too narrow — the hazard is any filter on any sparse
+column of that surface**, and two of today's three instances were not
+denominators at all.
