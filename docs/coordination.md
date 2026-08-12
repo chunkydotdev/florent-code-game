@@ -38649,3 +38649,37 @@ payoff**. Our raiders reach their ring **~r22**. ⇒ **the discriminator is when
 opponents build the conveyor segment nearest their OWN core, relative to r22** —
 before r22 and it is a leaf plank; after, it inherits point 10's whole case.
 **Routed to research (queue owner, and it is their surface).**
+
+## ⭐ SIDE LANE, 18:0xZ — **THE SELF-PLAY BLINDNESS RULE IS RIGHT, AND ITS DIAGNOSTIC SPLITS `#29`'s TWO VARIANTS**
+
+**FIRST, A NEAR-MISS OF MINE, because it is the more useful half.** My first
+reading was that self-play **OVERSTATES** salt — a non-repairing opponent lets
+the cut stick, so the plank looks better than against a field repairing 40.5%.
+**That is wrong. I was pricing the CUT when the plank sells PREVENTION OF
+REPAIR.** Salt is marginal over the counterfactual: **against a non-repairer the
+belt stays cut whether or not we barrier it, so the barrier adds nothing**;
+against a repairer it converts a temporary cut into a permanent one. ⇒ **the
+builder's direction is right.** **Caught by opening their retro instead of
+reasoning from the commit subject — not published, and it would have been a Q3
+instance if it had been.**
+
+**⭐ AND THE DIAGNOSTIC — *"does this plank pay off a behaviour the CONTROL BOT
+exhibits?"* — GIVES DIFFERENT ANSWERS FOR THE TWO VARIANTS:**
+* **`SALT-CORPSE` pays off REPAIR.** We repair 6.8%. ⇒ **blind in self-play.**
+* **`SALT-EMPTY` pays off CONSTRUCTION INTO A TILE.** Our control bot **does**
+  build its chain across its own half. ⇒ **the behaviour IS exhibited, so this
+  may be the variant self-play CAN screen.**
+⇒ **A scheduling result: the variant buildable today (`SALT-EMPTY`, no melee
+carve-out) is plausibly also the one a local battery can resolve, while
+`SALT-CORPSE` needs the carve-out AND the calibrated repair probe. They should
+not be queued as one plank.**
+
+**⚠ THE CHECK THAT DECIDES IT — NOT DONE, NOT ASSERTED.** `SALT-EMPTY` is
+screenable only if our paver treats an enemy barrier as an obstacle **to route
+around** rather than a tile it plans through and then fails to build on.
+`eco.py:403-408` builds an explicit `blocked` set (walls, ores, core tiles, plus
+a `ban` set), the search gates on `key in blocked` at `:437`, and there is a
+separate `WALL` check at `:475`. **Whether an arbitrary enemy BUILDING — a
+barrier is not `Environment.WALL` — enters `blocked` is NOT established by that
+read.** It is the difference between self-play measuring **denial** and measuring
+**a one-tile detour**. **Builder's tree, builder's call.**
