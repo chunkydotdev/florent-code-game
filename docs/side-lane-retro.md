@@ -238,3 +238,57 @@ sunset, records firing 2). Instance: `docs/retro-side-lane-2026-08-11-s32.md`.**
   at 8% of n, on that leg's own no-interim-peek rule, with the numbers offered
   if its owner ruled otherwise). Distinct from declining to ACT; it is declining
   to TELL, and it can be wrong in a way the others cannot.
+
+## ⚠ v1.2.1 — **THE DIRECTION CLAIM DID NOT REPLICATE. A POINT BUMP, NOT A RUN.**
+
+**v1.2.1 — 2026-08-12 (s33, mid-session). POINT bump: records one finding
+against Q3 as it occurs.**
+
+**⛔ THIS IS EXPLICITLY NOT A RETRO RUN, AND THE NUMBERING SAYS SO.** The retro
+runs at wrap on Magnus's call, as a dated instance. **v1.2 armed Q6's sunset with
+*"v1.3 strikes Q6 unless it fires"*, so calling this v1.3 would either strike Q6
+on a count nobody has taken or silently break that clause.** Hence **v1.2.1**:
+**FIRINGS remain 2 and the Q6 sunset clock is UNTOUCHED.** Recorded now rather
+than at wrap because the routing rule says an instrument change is a version
+bump, and a finding held for a wrap that may not be called this session is a
+finding that dies in a session.
+
+### THE FINDING — Q3's DIRECTION CLAIM IS CONTRADICTED BY ITS FIFTH INSTANCE
+
+**v1.2 concluded:** *"the direction is stable within a lane and differs between
+lanes — mine ran 4-of-4 toward the COMFORTABLE reading… a lane that knows its own
+attractor can check that side first."*
+
+**Instance 5, s33, 2026-08-12 05:0xZ, self-caught and published
+(`fe9d4ca`): it ran DRAMATIC.** I specced an `elo_logger` selftest cell around a
+*"duplicate poll double-counts `matches` and ARMS THE SLOT RULE EARLY"* hazard —
+**a false stop-loss on the live holder** — and the hazard cannot exist:
+`matches` is read absolute from the API and written verbatim, so a duplicate poll
+appends a byte-identical row. **I invented a danger rather than dismissing one.**
+
+⇒ **THE ADVICE IN v1.2 IS WEAKER THAN IT CLAIMS AND MUST NOT BE RELIED ON.**
+*"Check the comfortable side first"* was drawn from **n=4 within one session**,
+and the first out-of-session instance broke it. **A within-session run of four is
+not a lane property; it is plausibly one session's mood.** Q3 keeps asking for
+the direction — the data is worth having — but **a successor must not use the
+direction as a PRIOR** until it has replicated across sessions.
+
+**AND THE MECHANISM WAS UNCHANGED, WHICH IS THE PART THAT DID REPLICATE:**
+*inferred from an artefact instead of opening the primary* — I reasoned from `k`
+being a DIFFERENCE, a property of the READER, to an accumulation risk in the
+WRITER, without opening the writer. **Five for five.** ⇒ **The MECHANISM is the
+stable finding; the DIRECTION is not.** That distinction is the whole content of
+this bump.
+
+**⭐ AND IT HAPPENED ONE HOUR AFTER I PROMOTED D24, whose own watch form is
+"open the primary".** Knowing a checklist does not execute it — the same lesson
+the research arm recorded the same morning when they committed a
+parallel-implementation defect inside the commit adding the test for it. **Two
+lanes, one session, the same shape: the checklist prevents nothing; asking its
+question prevents things.**
+
+**SELF-CATCH LEDGER (Q4):** caught by me, before any lane built from it,
+**~20 minutes after publishing** — by opening the writer while considering
+whether to implement the cell. **The mechanism is again the one Q4 records: a
+SECOND instrument over my own claim, not diligence.** Here the second instrument
+was "go to build it".
