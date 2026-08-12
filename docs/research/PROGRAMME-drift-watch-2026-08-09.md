@@ -1347,3 +1347,125 @@ a proven negative control beats three that have never flagged anything.**
   caution about what it replaced, ask whether the caution applies to the
   replacement — the text that should have prompted the question is the text that
   suppressed it.
+
+---
+
+## D19 — **A SUBSTRING FILTER OVER PROSE IS BIASED AGAINST THE MOST-AUDITED ROWS, AND THE BIAS RUNS TOWARD MAKING A HEALTHY QUEUE LOOK STARVED**
+
+**Promoted to this file (side lane, s33, 2026-08-12) because it is a behaviour
+change and this file IS in every lane's boot path. Measured, not argued.**
+
+`tools/queue_check.py` excludes a `QUEUE.md` row if any of `BLOCK_MARKERS`
+appears anywhere in its text. **Run against the LIVE file at 04:5xZ, three items
+carrying `GREP: PASS` in live sections are silently dropped:**
+
+| item | `GREP:` | excluded by | the substring actually occurs in |
+|---|---|---|---|
+| **#5 CRASH INDUCTION AT SCALE** | **PASS** | `withdrawn` | *"…IS **WITHDRAWN** AS A RANKING CLAIM. ⚠ **BUT NOT CLOSED, AND THE DOC ITSELF SAYS SO**"* |
+| **#3 CLEAR MORE ENEMY TURRETS** | PARTIAL PASS | `withdrawn`, `refuted` | its own title: *"(was 'we go forward late' — **refuted**; then over-sized — corrected)"* |
+| **#10 BLIND THEIR GUN WITH THEIR OWN BODY** | **PASS** | `blocked` | **a SYMBOL NAME in its grep stamp: `eco.py:pave_**blocked**_by_ore`** |
+
+⇒ **The live count reads 8. The true unblocked count is 11.**
+
+**⭐ THE DECISIVE DEMONSTRATION, and it is same-minute:** `queue_check` reports
+**#5 as not startable**, and the builder **started it in commit `1f12297`**
+(`bots/_v157gunborder`, LOKI-30 BORDER-FIRST EXILE) **while this row was being
+written.** A gate whose verdict is contradicted by the work happening beside it
+is not undercounting at the margin.
+
+**WHY THE BIAS IS SYSTEMATIC RATHER THAN BAD LUCK — this is the part to carry:**
+**a row acquires the words *withdrawn*, *refuted*, *blocked* precisely BECAUSE it
+has been audited.** This repo's culture is to record the correction inline and
+keep the provenance, so **the most-scrutinised rows are the ones most certain to
+contain the excluding substring.** #10's case is the purest: it is excluded by a
+**function name in the codebase**, quoted as the evidence the item IS startable —
+identical in kind to `"shipped"` firing on `"NOT shipped"`, which that file
+already documents and removed.
+
+**⛔ AND "THE UNDERCOUNT IS THE SAFE DIRECTION" IS FALSE HERE.** `queue_check.py`
+says so in its own comment. Under `QUEUE_FLOOR: 3` and Magnus's *"if the queue
+runs empty we go stale, that is not acceptable"*, **an undercount pressures the
+owner to GENERATE items while good ones are already sitting there** — the same
+Goodhart the `GREP:` gate exists to stop, running the other way. An overcount
+pads the floor; an undercount manufactures busywork and hides finished thinking.
+
+**FIVE FALSE POSITIVES OF THIS CLASS ARE NOW ON THE RECORD IN TWO DAYS**
+(`shipped`/`NOT shipped` · a WITHDRAWN row · a DEMOTED row · `withdrawn` firing on
+#19's own retraction text while research was FIXING the previous one · and these
+three). ⇒ **The substring approach has failed in ORDINARY PROSE, not at the
+edges, and each repair has added another substring.**
+
+### THE WATCH FORM
+**Any gate that decides on a SUBSTRING SEARCH OVER PROSE must be assumed to fire
+on rows that merely DISCUSS the state it looks for.** Before trusting such a
+gate's count, print the excluded rows and the marker that excluded each. **A gate
+that reports only survivors cannot be audited** (this is D83/S6 — *a filter must
+name its casualties* — with the added finding that **the casualties here are
+non-random and correlate with quality**).
+**THE STRUCTURAL FORM IS THE REPAIR:** state belongs in a **SECTION HEADING**
+(`DEAD_SECTIONS`) or a typed field, never in the body text. Spec routed to the
+builder in `docs/coordination.md` (s33): add `## DONE` to `DEAD_SECTIONS`, **and
+the selftest must drive the SAME row text both ways** — under `## DONE` → 0,
+under `## NEXT UP` → 1 — because a typo'd heading is otherwise a silent no-op
+whose failure state is indistinguishable from a legitimately open item.
+**⚠ AND `queue_check.py`'s OWN COMMENT NAMES THE ANTI-PATTERN THAT WAS THEN
+FOLLOWED:** *"rewording the queue around a tool's bug is the wrong repair."*
+#19 was reworded WITHDRAWN → RETRACTED to satisfy the tool, by the lane that had
+just read that comment. **D68 again: the caution sits directly above the fault.**
+
+---
+
+## D20 — **A COMPENSATING MANUAL CHECK IS HOW A DEAD GATE SURVIVES ITS WHOLE LIFE**
+
+**Promoted s33, 2026-08-12. Research's formulation; this lane supplied one of the
+three instances and it is the reason it is credible.**
+
+`overnight_read.py`'s calibration section looked up literal keys `NULL`/`NEGCTRL`
+while every shard we have ever run is named `NULL114`/`NEG114`. **It printed
+"⚠ NO NULL DATA — every band below is uncalibrated" on every run of its life and
+the `BANDS RE-CENTRED` branch had never once executed.**
+
+**IT SURVIVED BECAUSE ALL THREE LANES INDEPENDENTLY HAND-VERIFIED THE THING IT
+FAILED TO CHECK.** The builder, research and this lane each reported the
+calibration cells as passing — correctly, from `corefill_status.sh:67`'s
+row-derived awk — **in the same sessions where the tool printed `NO NULL DATA` in
+its own output.** Three correct answers from a surface nobody was told to use,
+covering for a gate nobody noticed had never run.
+
+### THE WATCH FORM
+**When you hand-verify something a tool was supposed to check, CHECK THAT THE TOOL
+CHECKED IT.** A right answer obtained the manual way is not evidence the
+instrument works — **it is the mechanism by which a broken instrument is never
+noticed.** HANDOVER's instruction (*"READ THE CALIBRATION CELLS FIRST"*) was
+correct, and the instrument it named could not satisfy it; the gate was met only
+by accident. **Related to D13 but distinct: D13 is a live instrument that cannot
+RESOLVE; D20 is a dead instrument masked by a human who resolves it elsewhere.**
+**And the general form: a guard whose failure state is indistinguishable from its
+success state will not be found by reading its output** — it is found only by
+asking what its success state would look like and whether anything has ever
+produced it.
+
+---
+
+## D21 — **RETRACT AT THE PROVENANCE RECORD FIRST, THEN THE ARGUMENT SITES**
+
+**Promoted s33, 2026-08-12. Research's rule, from their own miss, adopted here
+because it is the durable half of a three-site retraction.**
+
+A withdrawn projection was retracted at the analysis doc and at the queue item
+that inherited it — **and left standing in the ANSWERED/closure row of the item
+it belonged to**, which is the row a successor reads when asking *"what did this
+conclude?"* **Of the three sites it was the least visible to the author and the
+most load-bearing for everyone after.**
+
+**The mechanism, in their words and worth quoting because it is not
+carelessness:** *"I retracted by searching for the claim where I had ARGUED it,
+not where I had RECORDED it."* Argument sites are salient because you wrote the
+case there; **the archive is what outlives the session.**
+
+### THE WATCH FORM
+**A retraction that follows the argument misses the archive.** Enumerate the
+provenance/closure/ANSWERED records FIRST — the reverse of the order that feels
+natural — then the places the case was made. **And this is D14 with a name: a
+closure and its correction sat one line apart in the same file, on the same
+question, with nothing forcing them to cite each other.**
