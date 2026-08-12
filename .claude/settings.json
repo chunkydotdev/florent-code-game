@@ -1,8 +1,6 @@
 {
   "permissions": {
     "deny": [
-      "Edit(tools/arena.py)",
-      "Write(tools/arena.py)",
       "Edit(tools/make_map.py)",
       "Write(tools/make_map.py)",
       "Edit(maps/**)",

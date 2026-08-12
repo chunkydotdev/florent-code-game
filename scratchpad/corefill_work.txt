@@ -60,3 +60,22 @@ BLANKBORDER bots/_v158blankborder   bots/_v146gunaxis     5408  70000
 # reviewer checks after the leg. READ MEDIAN KILL ROUND, not just game share.
 SURCH30     bots/_v159surch30      bots/_v146gunaxis     5408  80000
 SURCH90     bots/_v159surch90      bots/_v146gunaxis     5408  90000
+# ⛔⛔ GUNBORDER RELABELLED s33 — IT IS A COST SCREEN, NOT A BENEFIT TEST.
+# Flagged by the side lane, verified independently by research, confirmed by me
+# against the tree: `_v146gunaxis/main.py:120` wraps `_dispatch` in a blanket
+# `try/except Exception`. THE CONTROL IS A GUARDED BOT, so the crash channel --
+# the entire mechanism this plank exists for -- IS OFF BY CONSTRUCTION. And the
+# shard schema (ts shard game map seed seat winner cond turns) has no crash or
+# unit-loss column, so it could not record it even if it fired.
+# The only surviving channel is displacement, at +0.265pp PER EVENT (17 and 13
+# events, z=2.25) -- which is not a win-rate delta, and converting it needs two
+# factors nobody has computed. Even assuming 1:1, detecting 0.265pp needs
+# ~279,103 games; this shard resolves ~2pp. It is ~52x short.
+# ⇒ GUNBORDER ANSWERS EXACTLY ONE QUESTION: "is the sort-key reorder FREE?"
+# A clean ~50% is NON-INFERIORITY and is the precondition that licenses spending
+# a live-unrated window on the benefit -- which is where FIXTURE_OF_RECORD says
+# the benefit must be measured anyway. A ~50% read is NOT evidence of no benefit.
+# KEPT RUNNING. The cost question is real and answerable at this n.
+# ⚠ If an unguarded arm is ever added, report it as a CEILING and NEVER pool it
+# with the guarded arm: two fixtures we wrote, bracketing the field from both
+# ends, averaged together produce a number about neither.

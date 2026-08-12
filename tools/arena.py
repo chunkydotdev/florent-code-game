@@ -28,6 +28,7 @@ import subprocess
 import sys
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -86,12 +87,109 @@ def play(job):
         "bot_a": bot_a,
         "bot_b": bot_b,
         "condition": result.get("win_condition"),
+        # `turns` was in the engine's JSON all along and was never read. It is
+        # load-bearing for `effective_n.py`, whose distinct-game fingerprint is
+        # (win, cond, TURNS, collected): without it two different games that end
+        # the same way on the same map collapse into one, so the fingerprint
+        # UNDERCOUNTS distinct games and OVERSTATES degeneracy. It is also the
+        # kill-round column every defence plank is measured on.
+        "turns": result.get("turns"),
         "crashes": dict(crashes),
         "collected": (result.get("a_titanium_collected"), result.get("b_titanium_collected")),
     }
 
 
+ROW_COLS = ("bot_a", "bot_b", "map", "seed", "seat", "winner", "condition",
+            "turns", "crashes_a", "crashes_b", "collected_a", "collected_b")
+
+
+def rows_for(results):
+    """Per-game records as TSV-ready tuples. Separated from the writer so the
+    selftest can drive it without touching the filesystem."""
+    out = []
+    for r in results:
+        out.append((r["bot_a"], r["bot_b"], r["map"], r["seed"], r["seat"],
+                    r["winner"], r["condition"], r["turns"],
+                    r["crashes"].get("a", 0), r["crashes"].get("b", 0),
+                    r["collected"][0], r["collected"][1]))
+    return out
+
+
+def write_rows(results, args):
+    """Write the per-game TSV. Returns the path, or None if suppressed."""
+    if args.no_rows:
+        print("  (--no-rows: per-game rows NOT written — this battery will not "
+              "be auditable for effective-n)\n")
+        return None
+    rp = args.rows
+    if rp is None:
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        rp = (ROOT / "scratchpad" / "arena_rows" /
+              f"{Path(args.bot_a).name}_vs_{Path(args.bot_b).name}_{stamp}.tsv")
+    rp = Path(rp)
+    rp.parent.mkdir(parents=True, exist_ok=True)
+    with rp.open("w") as fh:
+        fh.write("\t".join(ROW_COLS) + "\n")
+        for row in rows_for(results):
+            fh.write("\t".join(str(x) for x in row) + "\n")
+    print(f"  per-game rows -> {rp}  ({len(results)} rows)\n")
+    return rp
+
+
+def selftest():
+    """Drives the ROW WRITER to both outcomes — written and suppressed.
+
+    ⛔ THIS TESTS THE DECIDING BRANCH, NOT ONLY THE FORMATTER, and that is the
+    whole point. Three tools in this repo published false verdicts on 2026-08-12
+    behind green selftests, every one of them because the test drove the
+    MEASURING function and left the branch that DECIDES untested. Magnus, that
+    day: *"Dont we test our tools?"*
+    """
+    import tempfile
+    bad = 0
+
+    def chk(name, got, want):
+        nonlocal bad
+        ok = got == want
+        bad += not ok
+        print(f"  [{'ok' if ok else 'FAIL'}] {name:48s} got={got!r} want={want!r}")
+
+    res = [{"winner": "botA", "seat": "a", "map": "hive", "seed": 3,
+            "bot_a": "botA", "bot_b": "botB", "condition": "core_destroyed",
+            "turns": 214, "crashes": {"b": 2}, "collected": (100, 50)}]
+    chk("a game with no crash key for 'a' -> 0, not KeyError",
+        rows_for(res)[0][8], 0)
+    chk("the other seat's crashes survive", rows_for(res)[0][9], 2)
+    chk("turns is captured, not discarded", rows_for(res)[0][7], 214)
+    chk("column count matches the header", len(rows_for(res)[0]), len(ROW_COLS))
+
+    class A:
+        no_rows = False
+        rows = None
+        bot_a = "bots/botA"
+        bot_b = "bots/botB"
+
+    with tempfile.TemporaryDirectory() as td:
+        a = A(); a.rows = Path(td) / "r.tsv"
+        p = write_rows(res, a)
+        chk("default path -> rows ARE written", p is not None, True)
+        lines = Path(a.rows).read_text().splitlines()
+        chk("header + one row", len(lines), 2)
+        chk("header is the declared columns", lines[0], "\t".join(ROW_COLS))
+        # THE OTHER WAY: suppression must actually suppress.
+        a2 = A(); a2.no_rows = True; a2.rows = Path(td) / "no.tsv"
+        chk("--no-rows -> NOTHING written", write_rows(res, a2), None)
+        chk("...and no file appears", (Path(td) / "no.tsv").exists(), False)
+
+    print("\n" + ("PASS: rows are written by default and suppressed on --no-rows; "
+                 "a missing per-seat crash key reads 0 rather than raising."
+                 if not bad else f"FAIL: {bad} case(s)"))
+    return 1 if bad else 0
+
+
 def main():
+    if "--selftest" in sys.argv:
+        return selftest()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("bot_a")
     ap.add_argument("bot_b")
@@ -99,6 +197,37 @@ def main():
     ap.add_argument("--seeds", type=int, default=4, help="seeds per map per ordering (default 4)")
     ap.add_argument("--tle", type=int, default=10, help="per-turn CPU limit in ms (default 10)")
     ap.add_argument("--jobs", type=int, default=0, help="parallel matches (default: cores-2)")
+    # ⭐ PER-GAME ROWS ARE WRITTEN BY DEFAULT. Added 2026-08-12 (s33), on Magnus's
+    # instruction, and the `Edit(tools/arena.py)` deny in `.claude/settings.json`
+    # was lifted for exactly this change (the maps, `make_map.py` and the
+    # reference bots stay frozen -- the substrate freeze is still doing its job).
+    #
+    # WHAT WAS BROKEN: `play()` has always built a full per-game record (winner,
+    # seat, map, seed, condition, crashes, collected) and `main()` has always
+    # aggregated it and thrown it away. `mech_battery.py` was the ONLY runner
+    # that persisted rows, so EVERY arena-run battery in this repo's history is
+    # permanently unauditable after the fact -- the `_abl_c0..c4` legs have no
+    # per-game rows anywhere and never did.
+    #
+    # WHO NEEDS THEM: `tools/effective_n.py`. Distinct-outcome counting requires
+    # per-game rows, so without them a battery's REAL n cannot be checked later.
+    # A `NOISE_ON=False` pair can replay one game across a whole cell while the
+    # denominator still prints the row count, and nothing after the fact can
+    # tell you it happened.
+    #
+    # WHY DEFAULT-ON AND NOT A FLAG: a flag has to be remembered by whoever runs
+    # the battery, and the entire finding is that nobody remembered. This repo's
+    # own record is that every prose-only rule has a recorded violation by its
+    # author. `--no-rows` exists so an opt-out is possible, and it ANNOUNCES
+    # itself on stdout so a battery run without rows is visible in its own log.
+    #
+    # This change cannot move a single result: it adds an output file and
+    # touches no game logic, no job list, and no aggregation.
+    ap.add_argument("--rows", default=None,
+                    help="per-game TSV path "
+                         "(default: scratchpad/arena_rows/<a>_vs_<b>_<utc>.tsv)")
+    ap.add_argument("--no-rows", action="store_true",
+                    help="suppress the per-game TSV; says so on stdout")
     args = ap.parse_args()
 
     maps_dir = ROOT / "maps"
@@ -129,6 +258,10 @@ def main():
 
     if not results:
         sys.exit("every match failed to produce a result")
+
+    # Persisted BEFORE any aggregation, deliberately: a crash anywhere in the
+    # reporting code below must not cost us games we have already paid for.
+    write_rows(results, args)
 
     a, b = args.bot_a, args.bot_b
     wins = Counter(r["winner"] for r in results)
