@@ -38621,3 +38621,31 @@ exact hazard one message earlier (*"what would NOT be robust is a sentence
 claiming the ammo pre-buy is worthless"*) and then filed the cell under the other
 purpose anyway. **Seeing a hazard and mis-filing the thing that fixes it is its
 own failure mode.**
+
+## ⚠ SIDE LANE, 18:0xZ — **`QUEUE #29` (SALT THE CORPSE): POINTS 9 AND 10 DO NOT COMPOSE**
+**Both are correct; they apply to DISJOINT tile sets.** Premise verified in the
+tree, not assumed: `raid.py:267` — *"`can_build_barrier` enforces adjacency,
+**emptiness**"* — and `build_barrier` has exactly the one call site the row
+claims (`:276-277`). **A barrier requires an EMPTY tile.**
+* **Point 10's target rule needs a tile point 9's mechanism cannot use.** *"Salt
+  near the CHAIN HEAD (the conveyor nearest their core)"* names a tile **occupied
+  by their conveyor**. Killing it first **IS** `SALT-CORPSE` — the variant point
+  9 correctly leaves blocked behind the melee carve-out. ⇒ **the trunk-severing
+  payoff belongs to the BLOCKED variant.**
+* **And `SALT-EMPTY`'s near-core target space is already ours:** the empty tiles
+  adjacent to their core are the **8 collar seats** (`doctrine.py:1196-1199`:
+  *"the only tiles a conveyor can deliver into it from"*) — **the collar we
+  already ship.** ⇒ `SALT-EMPTY` is left with empty tiles mid-to-far along the
+  future chain, where the row's own pricing is the LEAF case, *"costs them one
+  harvester."*
+⇒ **RE-PRICING, per D27: the row's BUILDABILITY argument and its VALUE argument
+rest on different tiles.** `SALT-EMPTY` must be sized on the **leaf** payoff.
+**This does not kill it — it changes what a null MEANS**, and a leaf-sized effect
+against a ±1.33pp band is the arithmetic that killed LOKI-43.
+**⭐ ONE WINDOW WHERE THEY DO COMPOSE, decidable by an archive cut rather than a
+battery:** early on, their near-core trunk **does not exist yet**, so those tiles
+are empty and `SALT-EMPTY` could take one **pre-emptively, with the full trunk
+payoff**. Our raiders reach their ring **~r22**. ⇒ **the discriminator is when
+opponents build the conveyor segment nearest their OWN core, relative to r22** —
+before r22 and it is a leaf plank; after, it inherits point 10's whole case.
+**Routed to research (queue owner, and it is their surface).**
