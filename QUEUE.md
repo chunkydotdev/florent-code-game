@@ -389,14 +389,14 @@ sit at 0. **Not worth a slot.**
 | **us** | **107** | **76 = 71%** | **12 rounds** | **5,143** |
 | them | 68 | 23 = 34% | **34 rounds** | **6,618** |
 
-⇒ **WE BUILD 57% MORE SENTINELS AND GET 22% FEWER SENTINEL-ROUNDS.** A sentinel is 18 dmg on a 2-round reload (~9 HP/round), so sentinel-rounds is the DPS-carrying quantity: **theirs delivers ~3x the damage per build, for the same 30 Ti and the same +20% scale.**
+⇒ **WE BUILD 57% MORE SENTINELS AND GET 22% FEWER SENTINEL-ROUNDS.** A sentinel is 18 dmg on a 2-round reload (~9 HP/round), so sentinel-rounds is the DPS-carrying quantity: **theirs delivers ~2x the SENTINEL-ROUNDS PER BUILD** (48.1 vs 97.3), **for the same 30 Ti and the same +20% scale** — and **2.8x the median LIFETIME** (12 vs 34 rounds). ⚠ **THOSE ARE DIFFERENT ESTIMATORS AND I FIRST QUOTED THE WRONG ONE:** sentinel-rounds is a SUM and medians do not compose into sums, so my original *'~3x the damage per build'* was the LIFETIME ratio wearing the DAMAGE label, overstating the per-build gap by ~40-50%. The mean is closer than the median because survivors run to game end and pull it up (31 of ours and 45 of theirs never died). **Median describes a sentinel's typical LIFE; mean-per-build describes DAMAGE DELIVERED.** Caught by the side lane, verified by research off my own table.
 
 **⛔ AND THE THREE EXPLANATIONS I REACHED FOR FIRST ARE ALL DEAD, EACH KILLED BY A DIFFERENT CHECK:**
 * **NOT count** — we build MORE (107 vs 68).
 * **NOT timing** — ours land EARLIER (median r16 vs r23 in the 0033 match).
 * **NOT range or siting.** I proposed that our median sentinel sat at `d²=33`, outside the r²=32 range. **Magnus refuted it from the replay — our sentinel DID fire on their core, and it was well placed.** The corpus measures `d2_enemy` to the core's single stored position while the bot takes the min over four core tiles, so the corpus figure over-estimates. **I had flagged that caveat myself and then leant on the number anyway.**
 
-⇒ **IT IS SURVIVAL, AND ONLY SURVIVAL.** The turret is fine; it does not live long enough to matter.
+⇒ **IT IS SURVIVAL.** The turret is fine; it does not live long enough to matter. ⚠ **AND 'ONLY' IS MORE THAN THE CHECKS LICENCE — I wrote it and it is withdrawn.** The evidence kills COUNT, TIMING and SITING. **AMMO STARVATION, HEALING (theirs, not ours) and ENEMY TARGET-PRIORITY are all UNTESTED and each would produce the same signature.** The healing hypothesis in particular is not answerable on this corpus: `events.tsv` has no heal verb.
 
 **⭐ AND THE MECHANISM IS ALREADY MEASURED FROM AN EARLIER LEG — this REPRODUCES it exactly:** s33's 75-game decode found *"41% of our sentinels destroyed, median life 12 rounds, and 100% of the destroyed sat under ENEMY TURRET COVERAGE against 64% of survivors."* **The median-12 figure reproduces to the round on a completely different leg.** ⇒ **We plant sentinels under their guns.**
 
