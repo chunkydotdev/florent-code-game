@@ -38023,3 +38023,66 @@ ON-PROGRAMME WORK GETS ROUTED AROUND.** That is exactly how `gate.py` came to be
 bypassed by the whole corefill chain (`LINE_DIRS` matched nothing on the current
 line). **A wrong guard and a dead guard fail the same way, and this repo has now
 produced both in the same instrument family.**
+
+## ⛔⛔ RESEARCH s34, 17:4xZ — **AMENDING MY OWN DELIVERABLE INSIDE THE HOUR. THE SIDE LANE FOUND THE LOAD-BEARING PREMISE AND IT WAS NOT THE ONE I NOMINATED.**
+
+I published claim 2 above — *"the cap is a per-raider VISION-LIMITED census"* — on a
+premise I **asserted and never established: that `get_nearby_buildings()` with no
+`dist_sq` defaults to VISION RADIUS.** I got it by **reading across from the
+neighbouring `get_nearby_tiles` row in CLAUDE.md**, which carries "(default: vision
+radius)" while the `get_nearby_buildings` row does not. `official-docs.md:454,1508`
+states no default. **If the default is unbounded, the census is complete, 35.6%
+is 0, and claim 2 collapses entirely.**
+
+**⚠ AND THE BUILDER HAD ALREADY ACCEPTED IT AND WAS QUEUEING A PLANK ON IT**
+(*"the LEAK IS THE PLANK"*), having independently confirmed the half nobody
+disputed — that `raid.py:464` passes no `dist_sq`. **A cross-lane confirmation
+that checks the uncontested half reads as verification and is not one.** Held by
+message before anything was built.
+
+**BEST AVAILABLE EVIDENCE — better than the doc, still not execution:** the
+SHIPPED package's own type contract, `site-packages/fcode/_types.py:363-365` with
+`py.typed` present — **a different artefact from the known-wrong
+`official-docs.md`** — carries it on the method's **own** docstring line:
+*"Return ids of all buildings within dist_sq **(defaults to vision radius)**"*,
+for all four `get_nearby_*` methods. The engine binary carries the guard string
+**`dist_sq exceeds vision radius`**, so vision is a hard ceiling on the explicit
+path. **The `.so` carries NO docstrings and exposes only `run_game`**, so it
+cannot be introspected from this lane. ⇒ **one builder-owned probe settles it.**
+
+**AND I WITHDREW MY OWN EMPIRICAL PROOF, having found its confound myself.** I
+tried to settle it from the archive: **320 RATED games, `ourver` ∈ {114,115,116},
+every tree verified `CAP = 3` + live cap ON** (rated-only excludes the
+`_v143cap6`/`_v144cap12` prototypes, which reach only unrated legs) — **16 games
+(5.0%) reach 4+ forward sentinels alive, 28 builds with 3+ already alive**, which
+a complete census forbids. **It is not proof**, because:
+
+⭐⭐ **D35 — THE CAP GOVERNS ONE OF TWO SENTINEL PRODUCERS, AND THIS IS CERTAIN
+REGARDLESS OF THE PREMISE.** `grep 'build_sentinel('` returns **two** call sites:
+`raid.py:439` (forward, capped) and **`main.py:574`, the HOME-DEFENCE path, which
+never reads `LOKI_FWD_GUN_CAP` and increments `SLOT_HOME_GUN`.** `_live_fwd_guns`
+counts by **position, team and type — not by which store built it** — so **a home
+sentinel inside the d²≤50 band is COUNTED BY the cap while being UNCAPPED BY it.**
+⇒ *"Raise the cap"* was never a whole lever. **And the two paths cannot be
+separated from replays** — corpus `d2_enemy` ≥ the bot's `min` over `core_tiles`,
+so nothing inside the band can be proven home-path by geometry. **The
+discriminator fails in the direction that leaves it unresolved.** *(Behaviour
+change → promoted here and into `QUEUE.md #23`.)*
+
+**⭐ WHAT SURVIVES WITH NO PREMISE ATTACHED, i.e. the finding that actually
+re-specified #23: the cap binds in only 12.77% of live-cap-era games.** Pure
+BUILD/DEATH event data — no API semantics, no proxy, no code read. **The 8×
+dilution conclusion is untouched.** Recorded explicitly so the retraction of
+claim 2 does not take the sound finding down with it.
+
+**D36 — THE DENOMINATOR SWITCH WAS NOT PRE-DECLARED, AND THE SIDE LANE WAS RIGHT
+TO ASK.** Going all-time → live-cap-era moved the headline **7.74% → 12.77%,
+toward the more interesting conclusion.** Honest sequence: **I ran all-time
+FIRST and saw 7.74%**, then saw impossible cells in my own true-vs-census table
+(builds occurring at census ≥ 3), inferred a mixed population, and **then** cut on
+the LOKI-2b ship date. **So the trigger was a diagnostic contradiction, not the
+headline — but I saw the headline first and the cut was not fixed in advance.**
+The mechanism (pre-LOKI-2b ran the rubble counter) is real and pre-existing.
+**This is my own s33 D33 recurring: knowing the shape does not prevent it, and
+the direction is what makes it worth flagging.** ⇒ **A restriction chosen after
+seeing the headline is declared as such, in the same sentence as the number.**
