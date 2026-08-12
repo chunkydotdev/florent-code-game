@@ -39684,3 +39684,62 @@ shard runs:
   `DEFENCE_ADMISSION_BAR: kill_round_non_regression` exists to price.
 * ⇒ **the kill-round column is read BESIDE the forward-death column, never
   after it.** A shard that reports one without the other cannot resolve this.
+
+## ⭐⭐⭐ RESEARCH s34, 19:2xZ — **QUEUE RE-PRIORITISED ON MAGNUS'S INSTRUCTION. `QUEUE.md` NOW CARRIES A `FIRE ORDER` BLOCK THAT SUPERSEDES POSITIONAL ORDER.**
+
+**Ranked on today's measurements, not on queue order.** Rows keep their numbers
+and evidence. **The ranking rule is stated in the block so it can be argued with:
+no two rows share a currency** (Elo vs rounds vs builder-deaths/game) and **I did
+NOT convert them to a common unit — that would be false precision.** Order is:
+multipliers → largest prize with a named lever → the programme's own brief →
+priced-but-modest → conditional.
+
+**TIER 0 (multipliers, not planks):** `#18` `arena.py` per-game rows · **`#32`
+NEW — ablate `LOKI_GUNAXIS_PENALTY`.**
+**TIER 1:** `#8` seat-relative scan order (**the only row carrying an Elo
+estimate**) · `#23` **the FORWARD TIMING lever, not the cap.**
+**TIER 2 (Loki):** `#17` (Magnus asked directly) · `#5` gated behind it · `#13`.
+**TIER 3:** `#28` · `#14` · `#30`/`#31a` tied and modest.
+
+**⭐⭐ AND A CONSOLIDATION THAT REMOVES TWO ROWS FROM CONTENTION: `#21`, `#22` AND
+`#23` ARE ONE GAP.** The home arm is healthy (first turret r7 vs the field's r8,
+present in 96% of games vs 81%); **the deficit is entirely FORWARD.** `#21`'s
+gunner count and `#22`'s post-r150 halt are facets of it. **`#23`'s timing lever
+reads out first and the other two are re-measured after, because both may be
+downstream.**
+
+## ⛔ D46 — **A RATIO OF SHARES IS NOT A RATIO OF PAYOFFS, AND I MADE THAT ERROR INSIDE THE FIX FOR D45.**
+
+D45 corrected `#30`'s sizing from an all-time population to the shipped trees and
+I reported the row as **"4.6x what I queued it at."** **The side lane argued their
+own row DOWN and they were right.** **4.6x is a ratio of SHARES; the plank pays in
+share x RATE, and the era correction applies to the DENOMINATOR too.**
+```
+ shipped trees   0.93 fwd deaths/game x 34.9% = 0.32/game addressable (ceiling 0.63)
+ all-time pooled 3.03               x  7.6% = 0.23/game
+ v80/v90/v91 era ~7.0               x  7.6% = 0.53/game
+```
+⇒ **1.40x the pooled figure and 0.61x the era subset that DOMINATES that pool —
+not 4.6x.** **The honest size is the absolute: ~0.32 forward builder deaths/game,
+~25 Ti/game equivalent — the same order as the ~12 Ti barrier surcharge the side
+lane had just priced as SMALL, and it gets the same standard. `#30` is real and
+modest.** `#31a` lands at 0.29/game, so the two are **effectively tied** and the
+re-rank between them is marginal — what stands is that `#31a`'s **"BEST EVIDENCED,
+BUILD FIRST"** is withdrawn, since it rested on the stale 92%.
+
+**D46, for the successor: when an era correction moves a SHARE, check whether it
+also moved the RATE the share is taken of. A share can quadruple while the thing
+it is a share of collapses.** ⇒ **size planks in ABSOLUTE units per game, and
+quote the ratio only beside the absolute.**
+
+⚠ **AND THE RESTORING ARGUMENT IS NAMED IN THE ROW SO IT CANNOT BE SMUGGLED IN:**
+a forward builder death may COST more now than it did then (0.93/game lost
+possibly at decisive moments; median kill r174 vs median death r187 is a
+thirteen-round race). **That is a VALUE case, not a COUNT case, and it needs its
+own number before `#30` leans on it.**
+
+**⭐ NOTE THE SHAPE: this is the second time today the side lane has argued a
+number DOWN — first the ~12 Ti surcharge they went looking for and reported as
+small, now their own row's sizing.** Both cut against the flag they were raising.
+**That is the behaviour that makes the adversarial pass worth its cost**, and it
+is worth more than the corrections themselves.
