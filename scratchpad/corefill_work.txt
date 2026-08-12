@@ -734,3 +734,27 @@ V120        bots/_x3r0_v120        bots/_v169launchlate160  5408 139000
 # dose did not land. Two points (20 and 0) make it a curve, not a point.
 LAUNCHRES20 bots/_v189launchres20  bots/_v169launchlate160  5408 140000
 LAUNCHRES0  bots/_v189launchres0   bots/_v169launchlate160  5408 141000
+# --- SENTSAFE — the `#32` arm, the largest measured gap on the board ---
+# Penalise forward-sentinel SITES inside visible enemy turret coverage, reusing
+# the `get_attackable_tiles_from` machinery at raid.py:500-527. SOFT PENALTIES
+# (gunner 8, sentinel 3, gunner-ROTATION 4) rather than a hard veto, so it
+# degrades gracefully when every site is covered — the idiomatic form here.
+# VERIFIED BY ME, not taken from the agent (its report had not landed):
+#   * frozen FIRST then verified — md5 94fe67dd3091e033bfa7db682f55f5f5.
+#     ⛔ THIS IS THE FIX FOR TONIGHT'S OWN DEFECT: I froze COLLARVOL/SALTIDLE and
+#     TRUSTED them, and BOTH froze stale. Freeze-then-verify, never freeze-then-trust.
+#   * all 4 files compile; one master flag `LOKI_SENTSAFE_ON`.
+#   * ⭐ FLAG-OFF EQUIVALENCE 6/6 IDENTICAL vs the parent, `NOISE_ON = False` in
+#     both trees, 3 maps x 2 seeds vs `_det_opp_v56`. This is `gate.py:226-261`'s
+#     control-equivalence check ACTUALLY RUN — impossible before tonight, because
+#     the engine was wrongly believed nondeterministic.
+#   * DOSE: flag ON vs OFF changes the game in 2/8 deterministic cells. Sparse,
+#     and EXPECTED to be — our own bot builds 1.26 gunners/game against the
+#     field's 8-14, so the fixture under-represents the coverage this arm dodges.
+# ⛔ READ, DECLARED BEFORE THE SHARD: the headline metric is NOT win rate. It is
+# SENTINEL MEDIAN LIFETIME and DESTROYED-SHARE, ours vs parent, BUILD/DEATH paired
+# on tile — the same instrument that produced 71%/12-rounds vs their 34%/34.
+# ⛔ AND A FILTER THAT PLANTS FEWER SENTINELS HAS CURED THE SYMPTOM BY REMOVING
+# THE PATIENT: check forward-sentinels/game against the parent FIRST. Materially
+# fewer = FAILURE, not a trade.
+SENTSAFE    bots/_v188sentsafe_f   bots/_v169launchlate160  5408 142000
