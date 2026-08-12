@@ -37483,3 +37483,86 @@ than not pricing.**
   verified per-match `teamAVersion` at the pairing boundary.
 * **Live paired evidence:** ZEROAMMO **+8.0pp** and LATE160AMMO **+8.0pp** over
   v116 on identical opponents AND maps (n=25 each, ±19pp — direction only).
+
+# ============================================================================
+# 2026-08-12T17:1xZ — **RESEARCH ARM s33 WRAP** (Magnus called it). Retro ran
+# FIRST (`docs/research-arm-retro.md` v1.6, **4 FIRINGS**, new Q8).
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**D29 — ⭐⭐ A COLUMN IS WORTH WHAT SOMEONE READS. WE ADDED FOUR FRESHNESS
+COLUMNS TODAY AND READ NONE OF THEM.** `lg_age_min` climbed **39.6 → 464.9
+minutes** in every `ship_watch` row while three lanes quoted the table it was
+flagging. The producer was broken in MY surface: `keeper`'s load ceiling returned
+before `sync.py`, deferring the **network-bound** ladder-metadata pull along with
+the CPU-heavy decode — **156 deferred cycles, zero timeouts, zero errors**, and
+that step was the one thing in the cycle that never logged. `ladder_games.tsv` is
+what `CLAUDE.md` names AUTHORITATIVE for every rated denominator and it sat **8.5h
+stale**. *(Fixed `1144faa`: `--net-only`, net survives a deferred decode, every
+cycle logs `net=ON/skipped`.)* ⇒ **Instrument-hardening is the easy half. Now Q8
+of the lane retro.**
+
+**D30 — A PAIRWISE CROSS-REFERENCE DOES NOT SURVIVE A THIRD MEMBER.** I wrote
+LOKI-43's withdrawal saying *"the two now cite each other so nobody re-derives
+this"*; **six hours later LOKI-48 arrived citing neither.** Pairwise scales O(n²)
+and fails on the first edit nobody makes. ⇒ **A FAMILY needs a named row new
+members are checked against** — `QUEUE.md #27` (E-22.3 → LOKI-43 → LOKI-48).
+*(Behaviour change → promoted to the booted queue.)*
+
+**D31 — A GATE CAN BE SATISFIED BY WRITING THE GATE'S NAME.** `queue_check`
+tested for the substring `grep:`, so `#26`'s honest **`GREP: TODO BEFORE BUILD`**
+passed it — a row clearing the admission gate while its own text said the gate was
+unmet. **The author was transparent; the COUNTER was wrong.** Same substring-for-
+state failure as the `blocked` matcher, one column over. ⇒ **Fixed as a CLASS
+(`TODO/TBD/NOT RUN/PENDING/N/A` treated as absent), never by tagging the row** —
+tagging leaves the next author counted again, and the cost is a builder testing a
+feature we already ship.
+
+**D32 — STATE THE RESOLUTION BEFORE THE NUMBERS, AND THE ASYMMETRY WITH IT.**
+Pre-registered in `#24`: the launcher premium is resolvable only above **±1.9pp**
+between-arm, so **a null means "under 2pp", not "the launcher is free."** Same for
+`DELVSDEF`, which now carries **two compounding biases** — the fixture cannot
+exercise deferral's failure mode (**74.6% of our ferry inserts land before r160**)
+**and** v116 IS the deferral arm, so DEFER-wins is both the weaker branch and the
+status-quo-preserving one. **Written before the shards; afterwards it reads as a
+choice.**
+
+**D33 — I MADE THE SELECTION ERROR I SPENT THE MORNING EXPLAINING.** I argued for
+pooling GUNBLANK's discovery run with its replication. **The discovery run was
+chosen out of 18 arms for clearing the band**, so pooling reintroduces half the
+winner's curse — verified on my own simulation (a true 51.2% arm reads **51.64%**
+conditional on winning a field of 18). **The builder corrected me; the side lane
+made the same error independently.** ⇒ **Knowing the shape did not prevent it. The
+DIRECTION did — pooling favoured the more interesting conclusion.**
+
+## RESEARCH ARM STATE — s33, 17:1xZ, READ NOT ASSERTED
+
+* **HOLDER: `v116` ("Loki v5" = `bots/_v169launchlate160`), k=9, rating 1682**,
+  newest `ship_watch` row **17:08:24Z**, `tape_age_min=5.4`. **FOUR holders today:
+  v112 → v114 → v115 (x3r0's) → v116.**
+* **`queue_check` 16 unblocked** (floor 3). **`keeper` RUNNING pid 89444.**
+* **⚠ `corpus/ladder_games.tsv` newest 14:32:59Z — ~2h45m stale AGAIN.** My keeper
+  fix (`1144faa`) **takes effect on the loop's next RESTART, which I did not
+  perform.** Re-arming a live monitor is operational, not mine.
+* **`audit_trigger` FIRES 2/5; `cross-lane analysis` 37.00 (37 docs / 0 decision
+  rows).** ⚠ **I contributed to that numerator and the denominator reads 0 because
+  decisions landed in `QUEUE.md` rows and tool commits, which it does not count.**
+
+**⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED:**
+1. **No shard is controlled against the live holder.** 29 vs v114, 8 vs our stack,
+   2 vs v115, **0 vs v116**. The tree is present (`_v169launchlate160`) — one
+   worklist line, not an acquisition.
+2. **`econ.tsv:shots` and `:deliveries` are DEAD COLUMNS** (138,946 rows, all
+   zero). The ammo-throughput hypothesis is **not testable** on the corpus.
+3. **`--seed` has NEVER controlled our spawn ordering** (`main.py:276`,
+   `random.Random()` unseeded). Large batteries: trust the n. **Small "paired,
+   same-seed" contrasts are NOT paired** — 4 gunners vs 17 on the same bot.
+4. **My ladder-derived figures were recomputed on the fresh table and HOLD**
+   (sd 8.661→8.596, base rate 14.3%→13.9%). Measured, not assumed.
+5. **`#20`'s title claim was FALSE** (we are 5th of 7 on economy, not last) and
+   **`#21` conflated two levers** (65% of our gunners are HOME). Both amended.
+
+**RELAYED BEFORE IDLING:** one subagent ran today (the `_det*`/`_abl*` disk sweep);
+its findings are committed in `docs/research/EFFECTIVE-N-…` and `QUEUE #18`.
+**Nothing of mine is still running.**

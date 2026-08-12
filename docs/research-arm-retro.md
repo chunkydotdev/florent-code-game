@@ -520,3 +520,25 @@ assertion touched. Name the quantity in one sentence, then ask which clause each
 assertion covers. **The uncovered clause is where the defect will be.***
 **A CLOSURE IS NOT A FINDING WITH A STRONGER ADJECTIVE. It removes a road from the
 queue, so it must survive a harder read than the finding that motivated it.**
+
+---
+
+# RUN s33 — 2026-08-12T17:1xZ. **v1.6. FIRINGS: 4.**
+
+**1. CONSUMPTION.** **CONSUMED (changed a decision):** LOKI-43 withdrawn on my 14× break-even arithmetic · LOKI-44 flagged under-band on 0.042 enemy-builder-deaths/game in r13–20 · `DELVSDEF`'s read made asymmetric on my 74.6%-of-inserts-before-r160 · `#20` demoted and `#21` re-split on my own archive cuts · `queue_check`, `keeper`, `target_value`, `replay_throws`, `replay_events` fixes all consumed · the `SessionStart` hook fixed on Magnus's authorisation. **PENDING:** `#23` forward placement (the strongest item, unbuilt). **UNREAD: none I can name** — unusual, and it is because the output contract changed from documents to queue rows.
+
+**2. LATENCY. Strongest column this session.** LOKI-43, LOKI-44 and `DELVSDEF` were all reached **BEFORE the shard/numbers**. GUNBLANK was **AFTER** the verdict was recorded — archaeology, though it changed the reason on the record.
+
+**3. RELAY FIDELITY.** Re-read the side lane's *"`GUNBLANKREP` is the ONLY replication"* against `corefill_work.txt`: **true for that worklist, and `GUNAXREP` exists from an earlier one.** I corrected it and the correction **strengthened** their D26 — replications have gone to high readers twice, not once. **Checked, not relayed.**
+
+**4. DID MY OWN CHECKS FIRE ON MY OWN WORK? YES — 4 self-caught of 7 retractions**, against s28's zero. Self-caught: the v114 `RULE=held` flag (8 min), the 338-seed ~30× projection, the +78pp scale figure, `#26`'s own `GREP: TODO` padding the floor. **Caught by others: 3** — the `d2_enemy`-as-range misread (builder), `#20`'s population (side lane), the pooling argument (builder).
+
+**5. DECLINED, AND ALL FOUR WERE RIGHT.** The boot tactics sweep (D86, my lane's own audit) · cut #4 rotation (**not decodable** — `events.tsv` carries only BUILD/DEATH; said so rather than inferring) · ~190 games/arm for the ferry rate (the failure mode that mattered was already excluded) · editing `HANDOVER.md`/`settings.json` on a peer's flag (both went to Magnus; he authorised one).
+
+**6. PER LANE.** **BUILDER:** numbers before decisions, four times, and two batteries saved. **SIDE LANE:** re-derivable primaries; they reproduced my sd, my Clopper-Pearson and my base rate to the digit. **RETRACTIONS REACHING A LANE: 7** — s28 was 3, s29 4. **That is the worst number in this retro and it is not all bad: 4 were self-caught within minutes, and the rate rose because I published more, faster, in a lane that now writes queue rows instead of documents.**
+
+**FIRINGS (4):** (a) Q4's *"run a second instrument over your own claim"* → the ceiling cell, the mutation tests, the recompute-on-the-fresh-table. (b) The routing rule → every finding this session landed in `QUEUE.md` or a tool, **not one standalone document**. (c) Q1's *"unread is a debit"* → the output contract changed *because* 313 tactics files bought 7 conversions. (d) Q5 → four recorded declines, all upheld.
+
+**SUNSET: NOT ARMED.** Four firings.
+
+**⭐ NEW QUESTION — Q8: DID I READ THE COLUMNS I ADDED?** *Incident: I added or hardened freshness reporting in four instruments today (`target_value`, `keeper`, `queue_check`, `replay_events`) and **read none of them**. `lg_age_min` — a column the side lane added this morning for exactly this — climbed 39.6 → 464.9 minutes in every row while all three lanes quoted the table it was flagging. The producer underneath was broken in my own surface (156 deferred keeper cycles). **Instrument-hardening is the easy half; a column is worth what someone reads.*** **This is D20's mirror and it is the defect none of today's fixes addresses.**
