@@ -313,3 +313,20 @@ AMMO115     bots/_x3r0_v115        bots/_v146gunaxis     5408 110000
 # v116 accidentally reverted. If it beats the control, the fix is additive.
 ZEROAMMO    bots/_v171launch0ammo  bots/_x3r0_v115       5408 111000
 LATE160AMMO bots/_v171late160ammo  bots/_x3r0_v115       5408 112000
+# --- DELETE vs DEFER, HEAD TO HEAD. The decision arm. ---
+# We currently have LAUNCH0 52.77% and LAUNCHLATE160 51.40%, each measured
+# against v114 in SEPARATE shards with different seed blocks. The 1.37pp gap
+# between them therefore carries BOTH shards' noise: SE ~0.96pp, z ~1.43, NOT
+# significant. Inferring "delete beats defer" from two independent contrasts is
+# exactly the between-shard comparison the GUNBORDER/EXILE0 caveat warned about.
+# A DIRECT head-to-head puts both arms in the SAME games and resolves the
+# contrast itself at +-1.33pp.
+# ⭐ RUN ON THE AMMO STACKS, NOT THE BARE ARMS: both carry x3r0's pre-buy, so
+# ammo is held constant and the ONLY difference is delete-vs-defer. That also
+# makes the winner directly shippable -- it already contains the change v116
+# accidentally reverted.
+# READ: >51.33% means DELETE beats DEFER; <48.67% means DEFER beats DELETE;
+# inside the band means they are indistinguishable and the choice falls to
+# DOCTRINE rather than measurement -- which is Magnus's call, since deletion
+# removes the kidnap weapon and deferral keeps it.
+DELVSDEF    bots/_v171launch0ammo  bots/_v171late160ammo  5408 113000
