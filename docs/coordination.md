@@ -40256,3 +40256,124 @@ agent at wrap.
    not let 71% travel untagged.
 5. **`#30` was published at three sizes today; only the absolute (0.32
    deaths/game) is current.**
+
+# ============================================================================
+# 2026-08-12T21:1xZ (`date -u`) — **SIDE LANE s34 WRAP** (Magnus called it).
+# Retro ran FIRST: `docs/retro-side-lane-2026-08-12-s34.md`, instrument **v1.4**,
+# **FIRINGS 4**. Ledger: **prevented 21 · caused 0 · nearly caused 1.**
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**S1. ⭐⭐ DETECTION AND PRESCRIPTION ARE DIFFERENT ACCURACIES, AND THIS LANE IS
+VISIBLY BETTER AT THE FIRST.** *(behaviour change → the retro ledger now carries
+both numbers; standing rule below.)* **Three corrections of mine needed
+correcting and all three have one shape: right that something was wrong, wrong
+about what would fix it.** `SHIPGATENULL` twice (a cell whose consumer I never
+opened, then a fix that left it unreadable because identification stayed
+name-based) · the self-play direction · the session-level explanation.
+⇒ **A FIX IS SPECIFIED AGAINST THE CONSUMER, NOT AGAINST THE ARTEFACT.** And the
+mechanical form, adopted from research's Q9: **when you correct a number, re-run
+the ORIGINAL objection against the CORRECTED number before publishing** — my
+second fix failed the same unasked question as my first.
+
+**S2. ⭐ A CLAIM ABOUT THE SCOPE OF MY SEARCH IS NOT A CLAIM ABOUT THE WORLD —
+THREE INSTANCES, ONE FAULT.** *(behaviour change → Q3 now records what was
+SEARCHED and what was CLAIMED as two fields.)* *"`SENTINEL` → nothing"* (grepped
+one function, published about the file) · *"not established anywhere I can find"*
+(my search, published about the repo) · the understatement direction (one
+population, published about the field). **Q3 fell 13 → 4 and the unifier is worth
+more than the drop.**
+
+**S3. ⭐⭐ WHEN A CONTROL IS A BOT, AUDIT THE BOT — NOT THE PROTOCOL.**
+*(behaviour change → promoted here because it saved a live guard.)* The
+*"engine is nondeterministic"* finding had an impeccable protocol (same seed,
+`--tle 0`, repeated runs) and a control — `bots/starter` — carrying **unseeded
+`random` at four decision sites.** ⇒ **a control that shares the fault can only
+ever return the ALARMING verdict; it cannot show determinism even if the engine
+is deterministic. A control that can return only one verdict is not a control.**
+**The retest went the other way in ninety seconds and
+`check_control_equivalence` — the guard its own author had named as catching the
+day's biggest defect — survives.**
+
+**S4. AN ALARM'S FIRST LIVE RUN TESTS ITS NOISE FLOOR.** *(builder's D48, seeded
+by this lane's flag.)* The new unique-row-number check fired **3:1 wolf-to-real**
+on first contact. **Catching that in the first minutes is the difference between
+a guard people act on and one they learn to scroll past.**
+
+**S5. RELAY A POINTER, NOT A COPY — ESPECIALLY INTO AN APPEND-ONLY FILE.**
+*(behaviour change → the stale fire-order copy is superseded in place.)* A row
+renumber (`#32`→`#33`) fixed the definition and the authoritative fire order and
+missed a **copy** relayed into `coordination.md`, **which cannot be edited.**
+**D47 on a row number; D14 on why the copy existed at all.**
+
+**S6. ⚠ MY OWN GUARD WAS DECORATIVE.** *(behaviour change → the guard is now run
+AND READ before each execution.)* I printed the `subprocess`/`fcode` execution
+grep and ran the tool **in the same command**, so its result was never consumed —
+**the defect I had flagged in three other instruments the same day.** Harmless in
+fact (`ps ax`, read-only) and **the file had gained that code since my boot
+check**, which is the freshness half. **Corrected on the next execution by
+reading the call site first and clearing it deliberately.**
+
+## ⚠ FOUR FALSE ALARMS FROM ONE CHECK, CAUGHT BEFORE PUBLISHING — worth more than the finding
+My overnight-readiness check produced **three alarms and all three were false**:
+48 "stale heartbeats" that were **completed** shards · *"nothing running"* from a
+`pgrep -c … || echo 0` **that masked its own failure** (truth: load 35, 23
+`fcode run`) · a *"95% full"* disk that is **the machine's, not ours** (repo
+9.3 GiB, 91 GiB free, **0 replays added that hour**). **Caught by running a
+second instrument — load, process count, and `cores_idle`'s own verdict — before
+publishing.** ⇒ **the mechanism that has moved this lane's blindest number every
+session is not care; it is asking the same question with a different
+instrument.**
+
+# ============================================================================
+# **REBOOT STATE — SIDE LANE (s34, safe to reboot)** — read 21:15:19Z, not asserted
+# ============================================================================
+
+## SUCCESSOR: DO THESE FIRST
+1. **RE-ARM THE DRIFT WATCH — it dies with this session.**
+   `scratchpad/drift_watch_s34.sh`, armed as a **Monitor** (a background job that
+   never exits notifies you only when it DIES). **Drive it five ways first:**
+   seeded-N-back → N · at-HEAD → silent · missing repo → BLIND · not-a-repo →
+   BLIND · **TZ trap → the emitted stamp must byte-match `TZ=UTC git log`.**
+2. **⛔ BEFORE EXECUTING ANYTHING IN `tools/`: grep for
+   `subprocess|fcode|\.venv/bin|os\.system|Popen`, THEN READ THE RESULT AND
+   DECIDE.** Not in the same command as the execution — **I did that this session
+   and the guard was decorative.** **Re-run per execution: `queue_check.py` went
+   0 hits → 4 between my boot and 21:0xZ.** A hit is a trigger to INSPECT, not an
+   automatic ban (`ps ax` is fine; `fcode` is not).
+3. **⛔⛔ YOUR DETECTION IS TRUSTWORTHY AND YOUR PRESCRIPTIONS ARE NOT.** Three
+   times this session the defect was real and the named fix was wrong, twice on
+   the same artefact. **Say what is broken and what test would settle it; say
+   what would FIX it only after opening the thing that must CONSUME the fix.**
+
+## LIVE STATE — VERIFIED 2026-08-12T21:15:19Z
+* **Holder `v116` (`bots/_v169launchlate160`), rating 1685, k=21, peak 1690,
+  drawdown −5.0, `armed=True`**, newest `ship_watch` row **21:08:27Z**,
+  `tape_age_min=4.5`. **Read the holder from `fcode status` at fire time — a
+  document naming it is a CACHE (D28).**
+* **NOTHING SHIPPED TODAY, and it was the PRE-REGISTERED outcome.** SHIPGATE160
+  **49.44%** / SHIPGATE0 **49.19%**, cancelled at 56% as inside-band — **and the
+  stop is licensed because both sit inside the FULL-n ±1.33 band (0.56 and
+  0.81pp from 50), so the remaining 44% could not have changed it.**
+* **The gate's band is MEASURED, not borrowed:** `SHIPGATENULL` **50.01% at
+  n=3,485** on `_v169launchlate160`'s own contrast. **`NEG169` was still filling
+  — until it clears BELOW 50, no NO-INFORMATION verdict on that contrast may be
+  read as "no effect", only "no power".**
+* **Batteries LIVE:** load 9.07/17.46/35.75, **16 `fcode run`**, `cores_idle`
+  `consec_idle=0 OK` at 21:13:49Z. **6 watchers + keeper (pid 50733) alive.**
+* **`queue_check` 19 unblocked (floor 3), exit 0, unique-number assertion green.**
+
+## OPEN, ROUTED, NOT DONE
+1. **⛔ `PROGRAMME.md`'s PROSE STILL ENFORCES THE RETIRED 1650 FLOOR IN THE
+   PRESENT TENSE** — *"No live leg may be aimed at a team rated below 1650…
+   Enforced in `tools/target_value.py` — `RATING_FLOOR`"* — while the parsed field
+   reads **`TARGET_MIN_PAYOUT: 10`** and the tool has **removed `RATING_FLOOR`**.
+   **A successor reading the prose applies a rule nothing implements.
+   MAGNUS-ONLY.**
+2. **`_v171late160ammo`'s EIGHT arms still have NEITHER calibration cell.** The
+   builder's standing constraint covers it: **no null on that contrast may be
+   read as "this plank does nothing."**
+3. **The `#30`/`#31a`/`#32` family is gated behind `#33`'s
+   `LOKI_GUNAXIS_PENALTY` ablation** — and `#30`'s honest size is **~0.32 forward
+   builder deaths/game (ceiling 0.63)**, not the 4.6× share ratio.
