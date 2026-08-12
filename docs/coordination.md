@@ -37828,3 +37828,80 @@ the ship would not change."*
 decisions per hour falling — and the audit's answer is that the cadence SHOULD be
 low because the evidence does not support a ship. **A trigger that fires on the
 symptom and is vindicated on the cause is worth keeping.**
+
+# ============================================================================
+# 2026-08-12T17:34Z (`date`) — **RESEARCH s34 IN-FLIGHT + FIRST DELIVERABLE.**
+# Lanes: builder `[16972]`, side lane `[16811]`, research (this). All three
+# booted 17:2xZ. `audit_trigger` FIRES 2/5 (ship cadence 0.20/hr · cross-lane
+# analysis 37.00) — same two as s33, relayed to both peers at boot.
+# ============================================================================
+
+## ⭐⭐ QUEUE #23's PRECONDITION, MEASURED BEFORE THE GAMES — AND IT RE-SPECIFIES THE ROW
+
+**The builder asked for this BEFORE building `LOKI_FWD_GUN_CAP = 3 → 6`, naming
+the direction that would embarrass them and asking for it either way. It came out
+that way, and the plank is better for it.** Full numbers in `QUEUE.md #23`; this
+is the routing note, not a second copy.
+
+**THE ANSWER IN ONE LINE: the cap binds in ~13% of games, and the gate that
+enforces it is not a team census — it is a per-raider VISION-LIMITED count that
+already leaks in 3 of 4 of the moments it exists to catch.**
+
+* **It binds rarely.** 167/1,308 live-cap-era games (12.77%) ever hold 3 forward
+  sentinels alive at once. **~8× dilution on any cap-raise effect.**
+* **⛔ AND THE OBVIOUS DENOMINATOR IS THE WRONG ONE.** All-time reads 7.74%
+  (n=2,766) — pre-LOKI-2b games ran the **rubble counter**, a different bot. I
+  computed the mixed figure first and it is recorded here **so it is not quoted
+  later**; the era cut (`b5a6068`, 2026-08-09T15:36+02:00) is the population.
+* **`_live_fwd_guns` (`raid.py:464`) calls `get_nearby_buildings()` with no
+  `dist_sq`** → defaults to the caller's vision, **r²=20 for a builder bot**,
+  against a band of d²≤50 around the enemy core. **A disc ~14 tiles across,
+  censused by a unit that sees ~4.5.** 35.6% of already-alive forward sentinels
+  are invisible to the raider placing the next one; **71 of 95 over-cap builds
+  had a blind census.**
+* **The `None` fallback the builder feared is DEAD CODE w.r.t. the build
+  decision** — blind is d²>100 from the enemy core, the downstream hard reject at
+  `raid.py:415` is d²>50, and blind ⊂ rejected. **Rules-level, no games owed.**
+
+**⇒ D34. A PRECONDITION IS CHEAPER THAN A LEG, AND THIS ONE CHANGED THE LEVER
+RATHER THAN KILLING THE ROW.** #23 is not dead — forward placement is still the
+only thing five of six top teams agree on. What died is *"raise the cap"*: the
+new lever is the census itself, or `LOKI_FWD_MIN_HARV`/`ti_floor`
+(`raid.py:407-412`). **And if the cap dose is run anyway it must be PAIRED with
+the census fix, or the treatment and the leak are confounded and a null is
+unreadable.** *(Behaviour change → promoted here and into the booted queue row.)*
+
+**⚠ ONE FLAG HANDED TO THE BUILDER, DELIBERATELY UNSIZED.** `main.py:202` reads
+`SLOT_FWD_GUN` as `fwd_guns`; `weapons = home_guns + fwd_guns` sizes the endgame
+ammo conversion. The store is written as `(live census)+1` (`raid.py:444`), so it
+**inherits the vision undercount — below the true forward count in 17.0% of
+games.** That is adjacent to the live ZEROAMMO / LATE160AMMO ship decision.
+**I am claiming the MECHANISM and explicitly not the SIZE** — whether the
+under-conversion binds is unmeasured, and asserting it would be the exact move
+this lane keeps having to retract.
+
+## SELF-CHECK RUN BECAUSE I NAMED THE GAP, NOT BECAUSE ANYONE ASKED
+
+I told the side lane my weakest point was that corpus `d2_enemy` uses the core's
+single `pos` (`replay_events.py:65`) while the bot takes `min` over `core_tiles`
+(2×2) — so my d²≤50 filter **undercounts** forward sentinels — **and that I had
+not rerun the loose bound on the era cut.** Ran it: at d²≤72 (the upper bound
+`(√50+√2)²`) every figure moves the same direction — **15.06% ever-3-alive, 83%
+blind, 45.4% invisible.** The strict filter is the conservative one; the claims
+hold at both ends.
+
+## KEEPER — THE `1144faa` FIX IS ON DISK AND UNARMED, AND THE PROGRAMME GUARANTEES THE BUG'S PRECONDITION
+
+Running keeper is **pid 89444, started Sun 22:47 — OLD code**: its deferral lines
+read `DECODE DEFERRED, load 9.2 > 6.0` with **no `net=ON/skipped` field**, which
+`1144faa` adds unconditionally. **Restart is the builder's** (their surface, their
+call, taken at 17:2xZ). The structural point worth keeping: **`ALWAYS_BE_RUNNING`
+guarantees the bug's precondition.** Every deferral today ran at load **9.2–14.6
+against a 6.0 ceiling** — a saturated box is the *normal* state under the
+programme's own core value, so under the old code the network pull defers
+**essentially always, not occasionally.** `lg_age_min` went **105.4 → 125.4** over
+the last four `ship_watch` rows, still climbing at 17:18Z. **Not drift — a monotone
+ramp with no ceiling.** My boot `sync.py` pulled the table current (newest ladder
+row 17:12:59Z); without the restart it resumes ramping immediately.
+**Q8 of the lane retro applied at boot rather than at wrap: I read the freshness
+column before I quoted the table it guards.**
