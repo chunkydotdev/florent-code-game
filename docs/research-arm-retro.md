@@ -542,3 +542,131 @@ queue, so it must survive a harder read than the finding that motivated it.**
 **SUNSET: NOT ARMED.** Four firings.
 
 **⭐ NEW QUESTION — Q8: DID I READ THE COLUMNS I ADDED?** *Incident: I added or hardened freshness reporting in four instruments today (`target_value`, `keeper`, `queue_check`, `replay_events`) and **read none of them**. `lg_age_min` — a column the side lane added this morning for exactly this — climbed 39.6 → 464.9 minutes in every row while all three lanes quoted the table it was flagging. The producer underneath was broken in my own surface (156 deferred keeper cycles). **Instrument-hardening is the easy half; a column is worth what someone reads.*** **This is D20's mirror and it is the defect none of today's fixes addresses.**
+
+# ============================================================================
+# RUN s34 — 2026-08-12T20:5xZ. **v1.7. FIRINGS: 5.** Answered from the day's
+# artefacts (17 research commits, the cross-lane message log, and `git log`).
+# ============================================================================
+
+**SHAPE OF THE DAY: this lane produced almost no standalone analysis and almost
+nothing but decisions.** Zero new documents in `docs/research/`. Every finding
+landed in `QUEUE.md`, `docs/coordination.md`, or a tool. **That is the routing
+rule working, and it is the first session where it held for 100% of output.**
+
+## 1. CONSUMPTION — 11 CONSUMED, 3 PENDING, 1 NOT TAKEN (named)
+**CONSUMED (another lane acted):** `#23` precondition → **builder cancelled the
+cap dose without spending a game** · the claim-2 HOLD → **builder ran a probe
+(`0686fdc`) instead of building on my assertion** · the census-fix HAZARD
+(`get_nearby_buildings` RAISES, swallowed by `raid.py:472`) → **builder did not
+write the wider-radius fix** · belt denominator bar (74.9%) → **builder measured
+it and RESTORED their decline (`eeef598`)** · D43 pooled-turret sign inversion →
+accepted, re-ranked · D45 stale 92% → **builder built `GUNAX0` (`339e608`) and
+verified it independently via enemy turret mix** · D38 ammo flag → closed as a
+negative, nothing further spent · `#29` trunk close → row demoted to leaf ·
+`queue_check` uniqueness → built, **caught a live collision on its first run** ·
+`#28` `LAUNCHER_RESERVE` → **queued tonight** · **the RANKING → acted on verbatim
+(`9a5bf61`: cut `RUSHON`, cut one `GUNBLOCK`, add the `LAUNCHER_RESERVE` pair).**
+**PENDING:** `#30`, `#31a`, `#14`.
+**⚠ NOT TAKEN, and it is named rather than omitted: `#8` seat-relative scan
+order.** I ranked it **second** among freed slots and it was not added — **it is
+the only row on the board carrying an Elo estimate (~+7-14) and it has now gone
+unbuilt for three sessions.** The stated reason is real (it changes an algorithm,
+not a constant, so it costs BUILD time and the builder had cores rather than
+time) — **but "the largest quantified prize is too expensive to build" is a
+finding about our capacity, not about the plank, and it should stop being
+re-ranked and start being scheduled.**
+
+## 2. LATENCY — BEFORE on everything that mattered, and that is the whole value
+`#23` precondition: **before**, builder's own words — *"it killed my plank before
+I spent a game."* Claim-2 hold: **before by minutes** — they had already accepted
+it and were queueing a plank on it. The census RAISES hazard: **before** they
+wrote the fix. The ranking: **before** the overnight box filled. D45: **before**
+`GUNAX0` was built.
+**AFTER (archaeology, and it was on MY OWN work): the `#30` sizing.** 7.6% →
+"4.6×" → 1.4× — **two of the three reached both peers before the third landed.**
+
+## 3. RELAY FIDELITY — **ZERO SUBAGENTS SPAWNED THIS SESSION.** Nothing to diff.
+**Named as a fact, not a virtue.** Standing permission exists and I used none: the
+work was short focused cuts where a subagent adds relay risk without saving
+context. **The compression failure this question exists for could not occur.**
+**What I did instead was verify INBOUND relays, and both held:** the side lane's
+pooled z's (**all three reproduced exactly**: -2.26 / +1.96 / +0.51) and the
+builder's six trunk shares (**79.0 / 89.3 / 89.7 / 94.9 / 89.3 / 91.7, exact**).
+
+## 4. ⭐⭐ OWN CHECKS ON OWN WORK — **~6 SELF-CAUGHT vs ~7 PEER-CAUGHT. NEAR PARITY, AGAINST s28's ZERO.**
+**Self-caught:** the probe that silently returned `NoneType.__doc__` (caught
+before reading anything into it) · the impossible cells in my own true-vs-census
+table, which is what exposed the mixed population · **the 17-seats-of-8 count,
+caught by its own structural maximum** · **withdrawing my own 28 "cap violations"
+as proof after finding the second-producer confound myself** · closing my own
+ammo flag as a negative · naming and then closing the loose-bound gap unprompted.
+**Peer-caught:** the `get_nearby_buildings` premise · the undeclared denominator
+switch · the era sample · the solvability bias · shares-vs-rate · the superseded
+figure in the DECLARE line · pooled-vs-Wald.
+⇒ **Q4 FIRES for the second session running, and this is the first time the two
+counts are comparable.**
+
+## 5. DECLINES — **SIX, ALL UPHELD**
+Declined to decode the 595-replay backlog (would distort 8 running shards' CPU
+timings) · declined to restart `keeper` (operational, builder's surface) ·
+declined the per-opponent SALT timing group-by (**the 8-seat structure is
+opponent-independent, so no timing result could reopen it — a saved query**) ·
+declined to place the builder's `#32` in the fire order (their finding, their
+placement) · declined to claim a SIZE on the ammo under-conversion before
+measuring it · declined to edit the builder's `#32` row, relaying the estimator
+fix instead.
+
+## 6. WHAT EACH LANE GOT — **and FOUR retractions of mine reached a lane**
+**BUILDER:** numbers before decisions (every one of the five above), a hazard that
+would have cost units or produced a silent null, and a ranking they built from
+verbatim. **SIDE LANE:** re-derivable primaries — they re-derived my z's, my trunk
+shares and my seat figures, and **found real defects in three of them.**
+**⚠ RETRACTIONS THAT REACHED A LANE: FOUR** — claim 2's premise (held before it
+was built on), `#30`'s 7.6% sizing, the "4.6×", and the DECLARE-line figure.
+**That is up from three in s28 and it is the honest cost of publishing fast.**
+
+## 7. CAUSE vs EFFECT — **one causal label, marked as inference in the same message**
+D45's *"consistent with LOKI-25 working"* shipped with **"the archive CANNOT
+attribute it"** in the same paragraph, plus the backwards adjacent-version
+contrast as the evidence for that. The forward-timing gap, the census leak and
+the ammo mechanism were all published as **effects with no causal sentence
+attached** — and the ammo one explicitly refused a size. **Q7 fires clean.**
+
+## 8. ⭐ Q8 — **DID I READ THE COLUMNS I ADDED? YES, AND AT BOOT RATHER THAN AT WRAP.**
+Read `lg_age_min` in `ship_watch.log` **before** quoting the table it guards —
+125.4 minutes and climbing — which is what produced the `keeper` diagnosis. **And
+read `queue_check`'s own first live output rather than trusting a green
+selftest**, which is what caught the 3:1 noise floor (D48). **The question created
+last session changed behaviour this session, which is the only evidence a retro
+question is worth its line.**
+
+---
+
+**FIRINGS (5):** (a) **Q8 applied at boot**, not at wrap. (b) **Q5 → six recorded
+declines, all upheld.** (c) **Q4 → near parity on self-catches for the first
+time.** (d) **Q7 → the single causal label carried its inference marker inline.**
+(e) **The routing rule → 100% of output landed in a booted file or a tool; ZERO
+standalone documents.**
+
+**SUNSET: NOT ARMED.** Five firings.
+
+## ⭐⭐ NEW QUESTION — Q9: **DID MY CORRECTIONS NEED CORRECTING?**
+
+*Incident, and it is the shape of the whole session: `#30`'s sizing was published
+at **7.6%**, corrected by me to **"4.6× bigger"**, and then corrected AGAIN by the
+side lane to **1.4× on the quantity that pays**. My D45 correction was about
+applying the era rider to a population — **and the fix I shipped applied it to the
+SHARE and not to the RATE the share was taken of.** Same with D41→D42: I fixed a
+contaminated tile filter by trilateration and the sample I ran it on was an era
+sample.*
+
+**A CORRECTION INHERITS THE AUTHORITY OF HAVING BEEN CAREFUL, WHICH IS EXACTLY WHY
+THE SECOND ERROR IS HARDER TO SEE.** Nobody re-audits the fix; the diligence is
+the disguise. **Count separately: corrections issued, and corrections that were
+themselves amended.** *s34: **3 of 6** — `#30`'s sizing (twice), D41's sample,
+and the `queue_check` noise floor.*
+
+⇒ **The derived check, mechanical rather than attitudinal: when you correct a
+number, re-run the ORIGINAL objection against the corrected number before
+publishing it.** *"Is my fix vulnerable to the thing that broke the original?"*
+D45's fix was not — and that is the whole finding.
