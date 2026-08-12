@@ -38899,3 +38899,53 @@ said they would not call it fixed until they saw a line.
 `tape_age_min=4.4`. **The two stale v114 loops are confirmed GONE**; keeper is
 now **pid 50733** (restarted onto `1144faa`, was 89444). `SHIPGATE0`,
 `SHIPGATE160` and `SHIPGATENULL` all started; `NEG169` not yet.
+
+# ============================================================================
+# 2026-08-12T18:2xZ — **`_v178salt` BUILT AND DOSED.** Magnus asked for a live
+# leg to WATCH. Local is a MECHANISM check only and says so below.
+# ============================================================================
+**THE PACKAGE:** a narrow conveyor-only exemption to `LOKI_QUIET_ON` (melee stays
+silenced for every other target) + barrier the tile the dead conveyor vacated.
+Inserted as step 7 of `_raid_act`, **below** seal, forward sentinel, buddy heal
+and collar repair, so it can never outbid the kill.
+
+## ⭐ THE MECHANISM FIRES, AND CLEANLY
+**20 of 20 corpse-salts landed on a tile THIS BOT had pecked to <=2 HP, median
+latency 1 round.** 632 pecks / 56 barriers / **46 belt pieces severed** over 24
+games; 491 of 632 pecks (78%) on a tile that reached <=2 HP, so the peck budget
+is mostly productive. Replay tag: `strings <replay> | grep SALT`.
+**Flag-off is EXACT: 0 cuts, 0 barriers, 0 `SALT` strings in 48 control replays**,
+one character of diff. **Zero crashes in 72 games.**
+⚠ **The builder DEVIATED from my spec and was right to.** I specified the
+stateless trigger (barrier an empty tile beside their belt) as primary; they made
+it secondary behind a 4-tile memory, because **the stateless version fires the
+moment a raider REACHES the belt and would spend the whole cap on speculative
+ground before a single conveyor died** — the raider would have no barrier left
+for the tile it actually cut. My version would have measured the wrong thing.
+
+## ⛔ AND THE KILL-ROUND BAR CANNOT BE READ ON THIS FIXTURE — SAY IT PLAINLY
+| arm | wins | median kill round |
+|---|---|---|
+| T `_v178salt` | 14/24 | **164.5** |
+| OFF (same tree, flag False) | 20/24 | 154.0 |
+| CTL (identical copy of OFF) | 15/24 | 162 |
+**OFF and CTL are BEHAVIOURALLY IDENTICAL and differ by 8 rounds of median and
+FIVE WINS.** ⇒ **the same-bot swing at n=24 already exceeds the treatment
+effect.** Bootstrapping the pooled control to T's n gives a 90% band of
+**124..237**; T sits inside it. ⇒ **"no detectable kill-round regression" here is
+NOT a pass — it is "this fixture cannot resolve this bar."** Same for the win
+column: T 58.3% sits BETWEEN CTL 62.5% and OFF 83.3%.
+⚠ **AND LOCAL UNDERSTATES BY CONSTRUCTION** (the s34 fixture rule): self-play
+realises the full COST of the plank (pecks stealing steps) and almost none of the
+BENEFIT (denying a rebuild), because **we repair 6.8% where the field repairs
+40.5%.** A weak local win column is not evidence about this plank.
+⚠ **Only 20 of 46 kills (43%) got salted and the cause was NOT isolated** —
+candidates: the 12 Ti floor, the 4-per-unit cap, a higher-priority action, or the
+raider being exiled off the tile. One instrumented run if it survives the leg.
+
+## FIRING PROCEDURE — pairing clock RE-DERIVED, never hardcoded
+**12 consecutive ladder pairings, ALL at minute ≡ 12 (mod 20), second `:59`.**
+Holder read LIVE: **`Active bot: v116`, rating 1687, rank #23** (up from 1668 at
+boot). At 18:22 I was **11 minutes past** the 18:12:59 pairing with only ~8
+minutes of clear air ⇒ **held fire and waited for 18:32:59 rather than take the
+thinner margin.** Manifest dry-run clean: 4 `.py` files, no docs.
