@@ -249,6 +249,27 @@ local `try` — **costs that turret one turn, not the unit.** Residual cost is a
 silently wasted turret turn, and `econ.tsv.ammo_end` (median 24–48) says we rarely
 sit at 0. **Not worth a slot.**
 
+
+### ⭐ #29 — SALT THE CORPSE: BARRIER THE TILE A DEAD CONVEYOR VACATED *(Magnus, s34)*
+
+**Magnus, watching a replay:** *"if we kill a conveyor, why dont we build a barrier on it? If it's on the ring that would be annoying for them, If it's in a tight spot they cant build around the barrier they have to kill it."*
+
+**1. THE CHANGE, named to the branch.** `raid.py:267-279` is the ONLY `build_barrier` call site in the entire tree, and it is gated `if (t.x, t.y) not in seatkeys: continue` — **we have never barriered anything except the enemy core's 8 seats.** The change is a second admissible tile class in that same loop: an orthogonally adjacent EMPTY tile that a known enemy conveyor occupied. New constant `LOKI_SALT_ON`, off = byte-identical.
+
+**2. WHY IT IS THE COLLAR'S OWN ARITHMETIC, POINTED AT A BETTER TARGET.** `doctrine.py:1200-1206` already prices this exact exchange for the ring: *"a barrier is 3 Ti / 30 HP; breaking one costs 15 builder pecks at 2 Ti each = 30 Ti. The exchange is 10:1 in our favour and every round they spend pecking is a round they are not healing."* **We spend ~11 Ti and ONE builder action; they spend 30 Ti and FIFTEEN builder-turns** — and builder-turns are the scarce good on this line, since acting and moving are mutually exclusive.
+
+**3. ⭐ IT IS WHAT MAKES A CUT STICK, AND THAT IS THE REAL CASE.** Measured s34 (21,587-replay field control): **the field REPAIRS 40.5% of cut conveyors at a median latency of 4 rounds.** ⇒ **a bare cut is worth little because they rebuild it in four rounds. The barrier converts a temporary cut into a persistent one.** This upgrades the conveyor-melee carve-out from a tempo poke to a structural denial.
+
+**4. MECHANISM METRIC.** Enemy conveyor tiles denied at r+10 after a cut (i.e. cut tiles carrying OUR barrier and no enemy conveyor); and their repair latency on salted vs unsalted cuts. Both readable from `events.tsv` BUILD/DEATH by tile.
+
+**5. ⛔ THE PRECONDITION, AND IT BLOCKS THE PLANK AS WRITTEN.** *"If we kill a conveyor"* — **we almost never do.** `batk` is **0 in 420 of 420 rated v112-v116 games** (`LOKI_QUIET_ON = True`), and we inflict **2.1%** trunk damage against the field's **15.0%**. ⇒ **#29 is DOWNSTREAM of the conveyor-melee carve-out and they should be ONE package**, not two legs. The sequencing is naturally clean: a builder may only build on an orthogonally adjacent tile, and a raider that just pecked a conveyor down **is** adjacent — kill, then salt, same unit, consecutive actions.
+
+**6. ⚠ THE VALUE IS ENTIRELY CONDITIONAL ON LOCAL TOPOLOGY — Magnus named the discriminator himself.** In a corridor they must clear the barrier (30 Ti + 15 turns). **In open ground they lay a conveyor one tile over and our 11 Ti bought nothing.** ⇒ **MEASURE FIRST, FREE, OFF THE ARCHIVE: what share of enemy trunk tiles have <=2 free orthogonal neighbours?** That number decides whether this is a weapon or a donation, and it is a research cut, not a battery.
+
+**7. HONEST COSTS.** +1% global scale per barrier, permanent until destroyed — the cheapest increment in the game, but our scale is already ~377% and research measured that scale is exactly what prices our launcher out (`LAUNCHER_RESERVE` needs 120-160 Ti against a median r150-200 bank of 54). And killing their conveyor first REFUNDS them 1% scale (engine fact: destroying enemy buildings LOWERS their scale). Both small; both real.
+
+**8. NOTE ON "ON THE RING".** For the ENEMY CORE's ring this is the collar and we already ship it. The new ground is **trunk** tiles. The mirror case — them denying OUR delivery seats — is the L4 problem from the same session.
+
 ## BLOCKED / NEEDS A NUMBER FIRST
 | # | plank | blocker |
 |---|---|---|
