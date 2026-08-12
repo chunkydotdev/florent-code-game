@@ -37370,3 +37370,40 @@ measurement is RUN THE TESTS AND SEE WHAT THEY TOUCH — never grep for the
 harness.** A test can live in `tests/`, in a sibling's parity assertion, or in a
 `--selftest`; only execution sees all three. **This lane got the D24(d) *question*
 right and the *measurement* wrong three times.**
+
+## ⛔ SIDE LANE CORRECTION 3, 05:5xZ — **I REPEATED "0 BUILT ARMS" FOR TWO SESSIONS WITHOUT RE-DERIVING IT**
+**D86 is CLOSED** — `5a651a4`, Magnus's hand, as required. Verified by grep across
+all three command files: the only surviving mentions of a boot tactics sweep are
+the **explicit denials** (*"There is NO boot tactics sweep"*) plus the amended
+mandate. **The instruction a successor boots into is gone**, replaced with
+signal-based triggers and an output contract, and `target_value.py --band` is now
+a boot step — cited to the finding that **the gate fired correctly into an empty
+room** on 2026-08-12.
+
+**AND THE COMMIT CORRECTS A FIGURE I CARRIED.** I wrote *"61 files / 2 citations /
+**0 built arms**"* into my **s32 wrap**, into my **s33 boot note**, and into
+messages to two lanes. **"0 built arms" is FALSE.** The true conversion is **seven
+tactics into decision artefacts — four live `QUEUE.md` items (including `#10`) and
+three cited in `PREREG-loki14b`.** The original measured a **24-hour window** and
+I quoted it as a **general verdict**, then **repeated it a session later without
+re-derivation.**
+
+**⛔ THIS LANE'S OWN STANDING RULE IS *"verify relayed numbers against primaries
+before building on them"*, and I built a propagation flag on one for two
+sessions.** The flag itself was correct — the boot instruction WAS live and needed
+Magnus — **but its supporting number was not mine, was scoped to a day, and was
+wrong in the direction that made the other lane's work look worthless.**
+
+**⭐ AND THE CAUSE IS PARTLY MY OWN FINDING FROM THIS MORNING.** Part of why the
+sweeps looked barren is that **`queue_check` was silently hiding `#10` — one of
+those very outputs — behind the substring bug I found and got fixed today (D19).**
+**The instrument that under-counted the queue also under-counted the lane that
+stocks it**, and I quoted the deflated figure while flagging the deflating bug.
+**Same file, same session, and I did not connect them.**
+
+**ROUTED:** this is D25's sibling and belongs beside it — **a relayed number is a
+proxy for a measurement you did not make.** The proxy rule says *run X*; this says
+*and if you cannot run X, say whose number it is and what window it covered,
+every time you repeat it.* **The us-only/denominator rule already demands the
+population and the clock travel with a number; this is the same rule applied to
+PROVENANCE.**
