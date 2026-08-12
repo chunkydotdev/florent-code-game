@@ -36959,3 +36959,177 @@ monitor verification.
 4. **`audit_trigger.ship_cadence` must not be quoted until it counts SHIPS rather
    than TRANSITIONS** (promoted to the booted drift-watch, `503d2ff`). The
    `cross-lane` row is unaffected and is the one a FIRE verdict rests on.
+
+# ============================================================================
+# 2026-08-12T04:3xZ (`date`) — **BUILDER s33: QUEUE #17 READS OUT.**
+# **THE CRASH WEAPON FIRES. THE PLANK AS BUILT DOES NOT DELIVER IT.**
+# 72 local games, no submission, no rated exposure. `scratchpad/crash_cells_s33_v2.txt`
+# ============================================================================
+
+## ⭐ MECHANISM: **CONFIRMED**, and the attribution is clean in both directions
+```
+cell                            border throws   crashes   crashes/border throw
+(a) arm ON  vs UNGUARDED probe        13           13            1.00
+(b) arm ON  vs GUARDED   probe        16            0            0.00   <- forced zero HELD
+(c) arm OFF vs UNGUARDED probe        16           16            1.00
+```
+**Every single border arrival killed the unit. The guarded probe took 16 border
+arrivals and lost nothing.** The kill therefore requires BOTH our throw AND
+their unguarded query, which is the mechanism as stated on the engine
+(`0x1ac5c` -> `Game::destroy_entity`). **This is the first time anyone has
+watched the crash land** — LOKI-14 delivered 314 kidnaps and could never see
+the outcome, because the platform strips stdout in 30,664 of 30,664 `BotOutput`
+events. Locally the traceback is visible.
+
+## ⛔ AND THE PLANK FAILS IN A DIRECTION NOBODY PREDICTED — **THE ARM DELIVERS FEWER BORDER THROWS THAN THE INCUMBENT IT REPLACES**
+`arm ON 13 border / 57 interior` vs `arm OFF 16 border / 17 interior`.
+**Two facts, and the second is the one that matters:**
+1. **Border throws are NOT a LOKI-14 invention.** The plain incumbent exile
+   ordering sorts destinations by **maximum distance from our own core**, and the
+   farthest reachable tiles are disproportionately edge tiles. **We have been
+   landing border throws by accident all along** — which is a candidate
+   explanation for a slice of `crash_census`'s 2,451 unexplained opponent unit
+   removals that nobody has attributed.
+2. **`_v131loki14` spends HALF its throws on the interior placebo**, because
+   `_kidnap_plan` alternates `B`/`I` on `kidnap_n % 2` — the within-leg control.
+   **The A/B alternation is a MEASUREMENT DEVICE and it is in the shipping
+   path.** So the tree we would have fired is *worse* at the thing it exists to
+   do than the tree it replaces.
+⇒ **THE SHIPPABLE FORM IS "ALWAYS TARGET BORDER, NEVER ALTERNATE", AND THAT
+TREE DOES NOT EXIST.** `_v131loki14` is not it. Any prereg citing LOKI-14's
+314 kidnaps as its dose is citing a build that halves its own dose.
+
+## ⚠ WHAT THIS DOES **NOT** SHOW, and it is the half that still needs a live leg
+**The probe is maximally vulnerable BY CONSTRUCTION — we wrote it.** This says
+nothing about what share of the real field queries a neighbour of self without a
+guard. We patched exactly this in `eco.py`; *"most teams have not"* is still
+**unmeasured**. And it does not touch research's `r(rating, crashes suffered) =
+−0.029` over n=67 teams, which is the reason #5 sits at the bottom of the queue.
+**Mechanism confirmed ≠ currency plank.** Both remain true.
+
+## ⛔ BLOCKED ON PERMISSIONS, NOT ON JUDGEMENT — `tools/arena.py`
+Research's item 2 is right and I verified it: `arena.py:47-88` `play()` builds a
+full per-game record (winner, seat, map, seed, condition, crashes, collected) and
+`main()` aggregates it and **discards it**; `mech_battery.py` is the only runner
+that persists rows. **Every arena-run battery in our history is permanently
+unauditable for effective-n.** I wrote the fix — per-game TSV written BY DEFAULT,
+not behind a flag, because a flag has to be remembered and this repo's record is
+that every prose-only rule has a violation by its own author — and **the edit was
+refused: `tools/arena.py` is in a directory denied by this session's permission
+settings.** I am not routing around it. **Magnus's call; it is a ~15-line change
+and it makes every future battery auditable for free.**
+
+# ============================================================================
+# 2026-08-12T04:4xZ (`date`) — **SIDE LANE s33: DRIFT AUDIT of `f181ac4`,
+# `6466dc3`, `55670ac`, plus THREE ITEMS RESEARCH ROUTED TO THIS LANE.**
+# Append-only. Every number below re-derived from the primary by me.
+# ============================================================================
+
+## ⭐ A PROVENANCE SHARPENING ON MY OWN BOOT NOTE — Q4 (does my watch catch MY work?)
+My boot note said *"Overnight calibration cells PASS, so the run is readable per
+HANDOVER's own gate."* **The numbers are right and row-derived**
+(`corefill_status.sh:67` computes the RESULT column with awk straight over the
+TSV, `$7=="T"` — not from any flag). **But "per HANDOVER's own gate" implies a
+TOOL ran that gate, and none did.** HANDOVER's first instruction is *"READ THE
+CALIBRATION CELLS FIRST"* via `overnight_read.py` — and research has now shown
+that tool looked up literal keys `NULL`/`NEGCTRL` while every shard we have ever
+run is named `NULL114`/`NEG114`, so **the calibration section printed "NO NULL
+DATA" on every run of its life and the `BANDS RE-CENTRED` branch had never
+executed.** ⇒ **The gate was satisfied only by a hand check I happened to make
+from a different surface.** Recorded because the comfortable reading is *"my
+number was right"* and the useful one is *"the named instrument could not have
+produced it."*
+
+## THE THREE ITEMS RESEARCH ROUTED HERE — verified, two already closed by them
+1. **`overnight_read.py` refusing on a stale heartbeat flag** — **FIXED in
+   `6466dc3`, and I read the diff rather than the message.** It now refuses on
+   **row-level** NOWINNER (>20%), keeps the flag as corroboration only, and emits
+   `override_note` **in its own channel** — correct, because anything appended to
+   `refusals` hits the `continue` at `:194` and would suppress the shard exactly
+   as hard as the bug. **27,040 real games recovered.**
+2. **The `NULL`/`NEGCTRL` key mismatch** — **FIXED in the same commit** (prefix
+   match). Their note that it moves no band is right and worth keeping: the
+   re-centring is gated on `|z| > 3` and the per-shard band is hardcoded to
+   `50 ± hw`. **What the fix buys is that the cells can FIRE.**
+3. **`queue_check.py` has no marker meaning DONE — ROUTED TO ME, spec below.**
+
+## SPEC — `queue_check.py` NEEDS A STRUCTURAL `## DONE` SECTION (builder-owned, ~2 lines + 2 cells)
+**Verified by me, not relayed:** `DEAD_SECTIONS = ("## FIRING NOW", "## BLOCKED",
+"## DEAD")` (`:79`); `#15` is excluded **only** by the substring
+`DO NOT RE-QUEUE`; and the selftest asserts at `:184` that **a struck-through id
+still COUNTS** (`~~3~~ → 1`), deliberately. So today's live count of **8** rests
+on one hand-typed phrase.
+* **THE FIX:** add **`"## DONE"`** to `DEAD_SECTIONS` and move answered rows
+  under it. **NOT into `## DEAD`** — that section reads *"do not re-queue without
+  new evidence"*, i.e. the road was refuted; an ANSWERED item **delivered its
+  number**. Merging them corrupts the history a successor reads.
+* **NOT another substring**, and research is right about why: `"shipped"` was
+  already removed from `BLOCK_MARKERS` for firing on a legitimate grep stamp
+  reading *"NOT shipped"*. A new substring invites that class straight back.
+* **⛔ THE SELFTEST MUST DRIVE IT BOTH WAYS, with the SAME row text:** identical
+  row under `## DONE` → **0**, under `## NEXT UP` → **1**. Without the second
+  cell a typo'd heading is a no-op **and its failure state is indistinguishable
+  from a legitimately open item** — which is precisely the shape research just
+  found in the calibration gate. A one-way cell would certify the bug.
+
+## ⛔ FLAG RAISED ON `f181ac4` (EFFECTIVE-N) — sent to research ~20 min after the commit
+**The headline SURVIVES; one projection does not.** I ran their `--selftest`
+myself (passes; the collision cell is real work). Then measured on
+`scratchpad/overnight/NULL114.tsv` — a **`NOISE_ON=True`** shard, 5,408 rows,
+**8 maps × 2 seats = 16 cells × 338 seeds**, their coarse `(winner, cond, turns)`
+fingerprint:
+```
+FULL 338 seeds/cell : mean 238.44 distinct/cell  eff_n 3815/5408 ->   1.4x
+censored to  3/cell : mean   3.00 distinct/cell  eff_n   48      -> 112.7x
+censored to 2/5/10  : mean 2.00 / 5.00 / 10.00   = EXACTLY k, every time
+```
+⇒ **At low k the estimator returns exactly k: it is CEILING-PINNED and measuring
+the seed budget, not the outcome space. D11/D13 in literal form.**
+* **UNAFFECTED, and it is most of the document:** the **matched-k** contrast
+  (0.007% vs 68.8–80.6%) — **and the run above shows the matching was
+  LOAD-BEARING, not tidy**: at k=3 the True arm sits at the 3.00 ceiling and the
+  False arm at 1.37, the widest separation the instrument can express. The
+  per-leg **~2.2×** is sound (ceiling 3.00, measured 1.37). Their
+  coarser-fingerprint argument is directionally correct; I checked it.
+* **AFFECTED:** the projection *"at 338 seeds/cell … effective n ≈ 180 of 5,408,
+  ~30×"*. **Not identified by these data, and the bias is demonstrable rather
+  than argued** — the same projection applied to a shard we CAN check predicts
+  **112.7×** where the truth is **1.4×**. A 3-seed estimate is censored above at 3.
+* **Second, independent problem: the arithmetic does not close.** `180 ≈ 128
+  cells × 1.4`, but a 5,408-row shard at 338 seeds/cell has **16** cells. **The
+  direction is not comfortable for either lane — if the cell count is 16 the
+  hazard is ~8× WORSE than printed, not smaller.** I named the discriminating
+  check (print the cell key and `seeds_per_cell` for both arms) rather than
+  asserting their cell key, which I do not know.
+* **THE FIX:** print `seeds_per_cell` + the cell key on every line; a **`CEILING`
+  verdict when `mean_distinct_per_cell >= 0.98·k`**; **a selftest cell that
+  censors a KNOWN-INDEPENDENT fixture to k=3 and asserts `CEILING`, not `OK`** —
+  today the tool's independent fixture asserts *"eff_n is near the row count"* as
+  its PASS condition, **which is the ceiling read, so the one cell that could
+  have caught this currently certifies it.** And: **report no projection to a k
+  you did not run.**
+* **⚠ IT HAS ALREADY PROPAGATED:** the `~30×` now appears in `QUEUE.md` **#19**'s
+  rationale (`55670ac`). **#19's substance is untouched** — 68.8–80.6% at matched
+  k stands on its own — but its magnitude claim should not be quoted until the
+  cell key reconciles.
+* **UNTOUCHED AND MORE VALUABLE:** the durable half — `arena.py:47-88` builds
+  per-game dicts and never writes them, `mech_battery.py:181-183` is the only
+  persisting runner, the `_abl_*` legs' effective n is **permanently unknowable**.
+  **`QUEUE.md` #18 (the one-line `arena.py` writer) should go ahead regardless of
+  how the projection resolves.**
+
+## D1–D18 AUDIT OF `6466dc3` — CLEAN, and it is the strongest instrument commit of the session
+`_v131loki14off` matches `LINE_DIRS` (`bots/_v1[3-9]?*`) ⇒ **D1 clear**. Crash
+induction is the APPROVED class and a new TRIGGER needs no new question ⇒ **D17
+clear, in the under-reach direction too** (it built rather than froze). It
+**un-closes** a road rather than closing one — *"LOKI-29 seat-relative is NOT a
+broken fixture and must not be retired as one"* ⇒ **D12 clear**.
+**⭐ ONE SCOPE NOTE, NOT A FLAG, for whoever writes #17's verdict:** the local
+both-ways probe pair can establish that **the ENGINE destroys an unguarded victim
+thrown to a border tile** — rules-level, D12 carve-out applies. It **cannot**
+establish **what fraction of the FIELD is unguarded**, which is behavioural and
+needs live games (`crash_census.py`'s 2,451 unexplained removals is the archive
+half). **#17's verdict language must not carry the probe result across that
+boundary**; the commit's own care about probe design suggests this is already
+understood, and it is recorded here so the boundary is written down before the
+verdict rather than argued after it.
