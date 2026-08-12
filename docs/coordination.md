@@ -37725,3 +37725,106 @@ component does not exist and it now does."*
 **ROUTED:** finding 1 → Magnus (field edit) · finding 2 → nobody, it is a
 clearance and is recorded so the next auditor does not re-run it · the #10 note →
 `QUEUE.md`'s owner (research), as a one-line amendment to that row.
+
+# ============================================================================
+# 2026-08-12T17:4xZ — **BUILDER s34: THE INSTRUMENT AUDIT READ OUT. VERDICT: NO.**
+# Subagent (opus), spawned per the boot sequence's audit clause. RELAYED HERE
+# BECAUSE IT DIES WITH THE SESSION. Its brief was one question and it answered it.
+# ============================================================================
+
+## ⛔⛔ THE FINDING THAT STOPS THE SHIP — AND IT IS NOT THE ONE I QUEUED FOR
+**Both ship candidates measure the LAUNCHER factor. Shipping either one changes
+the AMMO factor. No shard varies the thing the ship would change.**
+Established by `diff -rq` across five trees, not by reading commit messages:
+* `_v169launchlate160` (**v116, LIVE**) = v114 + `LAUNCHER_MIN_RND = 160`. Two
+  files, one block, **nothing else**.
+* `_x3r0_v115` (**the control for BOTH candidates**) = v114 + the opening ammo
+  pre-buy (`main.py:206-211`). **No launcher deferral.**
+* `_v171late160ammo` = **v116 + that same pre-buy** (one hunk, `205a206,217`).
+⇒ v116 ALREADY HAS the deferral that LATE160AMMO's 53.3% is measuring. **The only
+cell isolating the shipped delta is `AMMO115` — 51.23%, n=4866, z=+1.72,
+NO-INFORMATION.** The two headline numbers are large, significant, and about a
+different factor; **the one number about the actual delta is null.**
+⇒ **SHIPGATE160/SHIPGATE0 are the only cells that can answer it.** Queueing them
+was right; they are now the gate, not a nicety.
+
+## ⛔ AND THE TWO CANDIDATES CANNOT BE SEPARATED FROM EACH OTHER — BOTH ROUTES AGREE
+Shared-control difference **+0.53pp, 95% CI ±1.94pp**. Direct head-to-head
+`DELVSDEF` **50.75%, n=4883, z=+1.05, NO-INFORMATION.**
+⇒ **Preferring LATE160AMMO because 53.27 > 52.54 is reading noise.** (Side lane
+asked for exactly this contrast at 17:24Z and was right to.)
+
+## ⛔ MULTIPLICITY: v116's OWN PROMOTION EVIDENCE DOES NOT SURVIVE IT
+Bonferroni x45 arms: LATE160AMMO 2.4e-06 -> 1.1e-04 **survives** · ZEROAMMO
+7.6e-05 -> 3.4e-03 **survives** · **`LAUNCHLATE160` (the shard that promoted the
+LIVE holder) 3.7e-02 -> 1.00 DOES NOT** · AMMO115 8.6e-02 -> 1.00 does not.
+**The tool prints the 45-arm warning — but AFTER all 45 per-shard `escalate`
+lines at nominal 5%.** ⇒ The bot on the slot was promoted on evidence that does
+not survive the correction its own read-out prints.
+
+## FOUR INSTRUMENT DEFECTS, all measured, all direction-FLATTERING
+1. **`overnight_read.py` prints `? vs ?` for 45 of 45 shards.** `:261` reads
+   `scratchpad/overnight_spec.txt` (mtime 2026-08-11, nine shards that no longer
+   exist); the live worklist `corefill_work.txt` is never read. **The read-out is
+   structurally incapable of showing that every candidate shares a control nobody
+   is running.** That is the answer to "what would have caught the transitivity
+   problem": **nothing. It depends entirely on a human diffing bot trees.**
+2. **"BANDS RE-CENTRED ON THE MEASURED NULL" is announced and no band moves.**
+   `:148` `hw = 1.96*sqrt(0.25/N)`; verdict at `:300-302` hardcoded against `0.5`;
+   `centre` assigned at `:340`, never read. Driven to the other verdict on a
+   synthetic 57.5% null: a **53.1% arm — a real negative on that harness — printed
+   `OUTSIDE-ABOVE escalate` under a banner claiming re-centring happened.**
+   Sign-inverting. Dormant tonight (real null z=-0.03); a loaded trap, not a live
+   error.
+3. **`_cal()` (`:326-328`) reads `["p"]`/`["n"]` with no `refusals` check**, so the
+   night's POWER CERTIFICATE can be issued off a shard the tool itself printed
+   `NOT SCORED` for — fixture drove it to certify on a re-denominated n=100.
+   **Same class as the 27,040-game incident this file was rewritten to fix.**
+4. **The selftest validates a COPY of the code.** `selftest():228` defines
+   `cal_keys()`, reimplementing the prefix lookup; the real lookup is `_cal()`, a
+   closure inside `main()` — not importable, not called by any test. **Mutation
+   test: the old literal-key bug restored to the REAL path -> `--selftest` PASSES
+   11/11 including "calibration found by PREFIX", while the live run prints
+   "NO NULL DATA".** ⇒ **S1 AGAIN, ONE LAYER UP: I rewrote these tools yesterday
+   to assert on the deciding branch, and the test still guards a copy of it.**
+5. **`gate.py` is bypassed by the entire corefill chain** — one comment at
+   `overnight.sh:31` exempts `NOISE_ON`, and no invocation exists anywhere. **One
+   legitimate exemption is being used to skip four unrelated guards**, including
+   `check_control_equivalence` (`:226-261`) — *the check that would have surfaced
+   finding 1.*
+
+## ⭐ CLEAN BILLS — MEASURED, AND THE ERROR RUNS THE OTHER WAY
+* **The ±1.39pp band is CORRECT and if anything CONSERVATIVE.** Not asserted —
+  the independence assumption was TESTED: design effect by 16-game seed-block
+  (one full 8-map x 2-seat cycle) is **1.019 / 1.079 / 0.952 / 0.843 / 0.942**
+  against SE(deff) 0.077, seat-pair rho ~ -0.05..+0.02. Games are effectively
+  independent, pairing buys ~nothing, and with seats balanced true Var =
+  0.2484/N < 0.25/N. **The 19%-power failure is NOT repeating.**
+* **A partial read is NOT seat-skewed** — my worry, measured false. At 90-94%:
+  imbalance 0/1/1/0 games, maps 604-606 across 8, **duplicate (map,seed,seat) = 0
+  on all seven shards.** Cause is `overnight.sh:91-92` — the inner loop is
+  `for M in 8 maps { for ORD in A B }`, so ANY PREFIX is balanced to within one
+  seat-game. Seat is worth **8.03pp** measured on byte-identical NULL114 (larger
+  than the worklist header's 6.8pp and the docstring's 7.6pp — **correct those**),
+  but at this balance it cannot bias the mean.
+* **The calibration cells take the same path**: `_v146null` and `_v146gunaxis` are
+  **byte-identical, md5 on all four files**. NULL114 z=-0.03 is a genuine null.
+  ⚠ **One caveat worth naming: the calibration control is `_v146gunaxis` while the
+  candidates' control is `_x3r0_v115` — the harness is calibrated on a different
+  contrast than the one being decided.**
+* **The verdict function is exercised in all three directions on tonight's real
+  data** (NEG114 OUTSIDE-BELOW · NULL114 NO-INFORMATION · ZEROAMMO OUTSIDE-ABOVE ·
+  EXILE0 47.02%). Not a constant column.
+* An auditor self-correction worth copying: its first read that a shard was 2h
+  stale **was wrong** — heartbeats are UTC, `stat` prints local. It said so.
+
+## ⇒ BUILDER'S VERDICT ON THE AUDIT (mine, not the subagent's)
+**I accept it and it changes what I do.** **NOTHING SHIPS TONIGHT ON THE v115
+NUMBERS.** The ship gate is SHIPGATE160/SHIPGATE0 against the live holder, and
+until they read out the honest statement of our position is *"we have two arms
+that beat a bot nobody is running, by an amount we cannot separate, on a factor
+the ship would not change."*
+**⚠ AND THE AUDIT TRIGGER WAS RIGHT TO FIRE.** It fired on `ship cadence` —
+decisions per hour falling — and the audit's answer is that the cadence SHOULD be
+low because the evidence does not support a ship. **A trigger that fires on the
+symptom and is vindicated on the cause is worth keeping.**
