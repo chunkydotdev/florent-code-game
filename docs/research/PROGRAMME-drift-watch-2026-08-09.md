@@ -2022,3 +2022,15 @@ run, which is the mode the first scope note already said was intended.
   docstrings** and `fcode_engine` exposes only `run_game` — `Controller` is not
   importable, so the top tier is a BUILDER-OWNED behavioural probe
   (`get_cpu_time_elapsed`-style call loop), not introspection.
+  **⭐ OUTCOME, SAME HOUR (`0686fdc`): THE TOP TIER WAS RUN AND THE MIDDLE TIER
+  HELD.** The builder built `bots/_probe_nearby_default` and executed it:
+  **`D == V` in 100% of informative rows over 9 games, never wider**, so the
+  no-argument default IS the caller's vision radius and research's premise (and
+  `_types.py`) are confirmed **on the engine**. ⇒ **The ranking above did its job
+  rather than merely being stated: `_types.py` correctly demoted the probe from
+  blocking to low-priority, the probe was still run, and it agreed.** Worth
+  copying as a probe design: the decision rule is pre-registered with **all
+  three** outcomes including a **SKIP for non-evidence**, and it carries the
+  control that makes a MATCH mean something — `D == V` is informative only if
+  buildings exist beyond the caller's vision, so the probe measures that too and
+  **refuses rather than printing a clean PASS** when they do not.
