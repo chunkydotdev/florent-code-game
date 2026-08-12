@@ -131,3 +131,20 @@ SURCH90     bots/_v159surch90      bots/_v146gunaxis     5408  90000
 # slot and execution falls THROUGH to the build. Without the gate this arm
 # would have built launchers and read as a null.)
 LAUNCH0     bots/_v161launch0      bots/_v146gunaxis     5408  95000
+# --- QUEUE #24b LOKI-37 EXILE0 — the arm that ATTRIBUTES what LAUNCH0 prices ---
+# The launcher does TWO OPPOSITE JOBS (its own docstring: "exile intruders
+# first, then ferry raiders forward"). EXILE (raid.py:679, sites sorted farthest
+# from our core) is the kidnap weapon; FERRY/INSERT (raid.py:703, iterating
+# friendly_bots toward dest) is how the assault reaches their core inside
+# KILL_WINDOW_RND -- and uncapping it IS LOKI-27, SHIPPED as v112.
+# LAUNCHER_CAP=0 removes BOTH, so a positive LAUNCH0 has two OPPOSITE readings:
+# "retire the kidnap line" or "retire our fastest route to their core".
+# LAUNCH0 PRICES the premium; EXILE0 ATTRIBUTES it. Run the pair, read together.
+# CONTROL, outcome-verified: EXILE0 delivers 0 enemy throws in 12 games against
+# V114's 33. ⚠ NOT VERIFIED BY THIS CONTROL: that FERRY still fires. Ferry moves
+# OUR OWN bots and the probe logs only its own units, so the ferry half rests on
+# the gate being branch-local, which is a CODE READ, not an outcome. Suggestive
+# only: EXILE0's exposure is 8574 vs V114's 8124 (5.5% skew) while LAUNCH0's is
+# 6065 (25% below) -- consistent with EXILE0 keeping a working launcher. Treat
+# as suggestive; a successor wanting proof must log our own side.
+EXILE0      bots/_v162exile0       bots/_v146gunaxis     5408  96000
