@@ -40088,3 +40088,83 @@ directions — **too narrow (would have missed the motivating incident) and too
 loud (three findings, one real) — and only running it against the real file
 showed either.** ⇒ **run a new checker against the live artefact before committing
 it, and treat "it found things" as a question rather than a result.**
+
+# ============================================================================
+# 2026-08-12T21:0xZ (`date`) — **RESEARCH ARM s34 WRAP** (Magnus called it).
+# Arm retro ran FIRST: `docs/research-arm-retro.md` **v1.7, FIRINGS 5, new Q9**.
+# ============================================================================
+
+## PROCESS DELTAS — D40–D48, all routed inline when found. Summary and the three that matter most.
+
+**⭐⭐ D43 — THE POOLED TURRET FIGURE INVERTS THE SIGN OF OUR BIGGEST GAP.** On all
+turrets we look **earlier** than the field (first at r7 vs r10). Split by the
+verified FORWARD definition: **HOME us r7 / them r8, 96% vs 81% of games, 3.32 vs
+4.52 per game — we are FINE. FORWARD us r33 / them r25, 78% vs 87%, 2.28 vs
+4.54.** ⇒ **eight rounds later, nine points fewer games, half the count, against a
+thirteen-round kill/death race.** **A turret statistic pooled over home and
+forward is not a weaker forward statistic — it is a DIFFERENT SIGN.**
+
+**⛔⛔ D45 — THE ERA RIDER APPLIES TO POPULATIONS, NOT ONLY TO SAMPLES.** I sized
+`#30` on all 2,865 of our games; that pool is dominated by v80/v90/v91 trees
+losing **6–8 forward builders per game** against the shipped **0.93**. *"I used
+every game we have"* feels like the opposite of a sampling error and is the same
+error. **And the consequence reached the shipped bot: `raid.py:508-527`'s own
+LOKI-25 justification is STALE** — 92% gunner attribution was true when written
+(my all-time cut reproduces it at **92.0%**) and in the tree we ship **sentinels
+cover more forward deaths than gunners do (68.4% vs 64.8%).**
+
+**⛔ D46 — A RATIO OF SHARES IS NOT A RATIO OF PAYOFFS**, and I made that error
+*inside* the fix for D45. **Check whether an era correction moved the RATE the
+share is taken of.** Size planks in ABSOLUTE units per game.
+
+**The rest, one line each:** **D40** a significance claim carries its estimator
+and its denominator (pooled vs Wald diverged only on the load-bearing step) ·
+**D41** a distance column answers *how far*, never *what role* (my seat filter
+counted 17 of 8, caught by its own structural maximum) · **D42** a sample drawn
+in file order is a TIME cut · **D44** an in-tree asserted number is a free
+positive control — **and matching a stale constant validates the meter, not the
+constant** · **D47** a supersession marker retires a number where it is DEFINED,
+not where it is USED · **D48** an alarm's first live run tests its NOISE FLOOR
+(the uniqueness check cried wolf 3:1 and was fixed before it taught anyone to
+ignore it).
+
+## RESEARCH ARM STATE — s34, 21:0xZ, **READ NOT ASSERTED**
+
+* **HOLDER `v116` ("Loki v5" = `bots/_v169launchlate160`)**, read off `fcode
+  status`'s `Active bot:` line — **not from a document.** Rating **1681**, k=20,
+  drawdown −9.0, `armed=True RULE=held`. Newest tape row **20:58:27Z**,
+  `tape_age_min=4.5`.
+* **⭐ `lg_age_min` is 25.5 — DOWN FROM 125.4 AT BOOT AND NO LONGER RAMPING.** The
+  builder restarted `keeper`, so `1144faa` is armed; the log now prints
+  `NET PULL STILL RAN` on deferred cycles. **Verified in the log, not inferred
+  from the commit.**
+* **`queue_check`: 19 unblocked, EXIT 0** — including the new unique-number
+  assertion, which is green after the `#30` consolidation.
+* **`audit_trigger` STILL FIRES 2/5** (`ship cadence` 0.20/hr · `cross-lane
+  analysis`). ⚠ **This lane produced ZERO standalone documents today and still
+  contributes to that numerator**, because the signal counts prose lines and not
+  where they landed. **It is measuring the wrong thing for this lane and should
+  not be read as an indictment of the routing rule.**
+* **NOTHING OF MINE IS RUNNING. ZERO SUBAGENTS SPAWNED THIS SESSION** — so there
+  is nothing to relay and no compressed agent output anywhere in today's output.
+
+**⛔ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED:**
+1. **`raid.py:508-527`'s "92% of forward builder deaths are gunners" is STALE.**
+   True for its era, false for the shipped tree (64.8% gunner / 68.4% sentinel).
+   **`GUNAX0` is running and is the only thing that can attribute it** — the
+   adjacent-version contrast runs BACKWARDS (v112 pre 0.43/game and 60.0% vs v114
+   post 0.59 and 66.9%).
+2. **595 archived replays were undecoded at boot and the DECODE still defers
+   whenever load > 6** — which `ALWAYS_BE_RUNNING` guarantees. **The net pull is
+   fixed; the event surface is not.** A rated **0-5 loss by the live holder** was
+   invisible to `corpus/events.tsv` for over an hour. **Spec owed: keeper should
+   decode OUR RATED GAMES first, regardless of load.**
+3. **`#8` seat-relative scan order has now gone unbuilt for three sessions**
+   despite being the only row carrying an Elo estimate (~+7–14). **It needs
+   scheduling, not re-ranking.**
+4. **My sentinel loss rate (52%, 325 archived games) and the builder's (71%, one
+   25-game v121 leg) are DIFFERENT POPULATIONS.** Both say "high". **Do not quote
+   71% as a general figure without the leg tag.**
+5. **`#30` was published at three different sizes in one session** (7.6% → "4.6×"
+   → **0.32 deaths/game absolute**). **Only the absolute is current**, and Q9 of
+   the arm retro exists because of it.
