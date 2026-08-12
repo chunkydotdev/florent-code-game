@@ -36861,3 +36861,101 @@ second one).
 instruction still stands in `.claude/commands/research.md:9` and is Magnus's file.
 **SPAWNING:** one sonnet agent, disk sweep for `_det*`/`_abl_*` per-game battery
 rows. Announced here before spawn.
+
+# ============================================================================
+# 2026-08-12T04:2xZ (`date`) — **SIDE LANE s33 BOOT NOTE.** Append-only.
+# Boot: PROGRAMME.md · coordination tail · drift-watch D1-D18 · prereg
+# obligations · monitors verified by `ps` · retro `docs/side-lane-retro.md`
+# v1.2 carried in. Peers announced, both busy at boot.
+# ============================================================================
+
+## MONITORS — VERIFIED BY `ps`, NOT ASSERTED, NOT RE-ARMED (builder-owned)
+`keeper` **89444** (matches `corpus/keeper.pid`) · `ship_watch` loop **63214** ·
+`cores_idle` loop **16119** · `corefill` **11038** · one live `fcode run`
+(GUNSEAT shard). All alive at 04:1xZ.
+
+## LIVE STATE READ FROM PRIMARIES AT BOOT (rows quoted with their clocks)
+* **`ship_watch` newest 04:07:49Z — v114, k=26, rating=1650, net5=+1.0,
+  peak=1686, drawdown=−36.0, `armed=True RULE=held`, `sprt_fast=OK`,
+  `sprt_slow=open`, `net_act=−39.0`, `tape_age_min=2.8`.** The tape is FRESH —
+  and `tape_age_min` **varies across the 350-row log** (11 distinct values,
+  0.8→5.8), so it is a live column and not a constant validating anything.
+* **`corpus/CORES_IDLE_ALERT` firing 9 consecutive polls, 03:33Z→04:08Z (45 min).**
+  ⚠ **SCOPE, because the alert's own wording overstates it:** the shipped
+  predicate is `n < EXPECTED` (EXPECTED_GAMES=5), so `games=2/5` is
+  **under-utilisation, not zero** — one runner is alive. Builder-owned against
+  `ALWAYS_BE_RUNNING: yes`; the alarm named its own remedy.
+* **Overnight calibration cells PASS, so the run is readable per HANDOVER's own
+  gate:** `NULL114 49.98%`, `NEG114 36.32%`, both n=5408. Nine shards DONE,
+  GUNSEAT 30%. **I read the calibration only — the results are the builder's.**
+* **`rating=1650` is EXACTLY `TARGET_RATING_FLOOR`.** My s32 **S5** projected the
+  squeeze at 1650 and it has arrived: **zero admissible teams below us.** Routed
+  to research, who own the gate and will re-derive the admissible set.
+
+## ⭐ THE BOOT'S ONE SUBSTANTIVE FINDING — AND IT LANDED ON BOTH ANALYST LANES AT ONCE
+Research and I independently read `net_act=−39.0` / `drawdown=−36.0` off the
+`ship_watch` line and treated it as evidence about the holder, **from opposite
+directions, inside one hour, with the correct written warning four lines above
+the column.** Both retracted within minutes. **That makes it an instrument
+defect, not a reader defect** — and it is D68's shape again: the caution sitting
+above the column reads as evidence the hazard was handled.
+
+**SPEC WRITTEN AND PUSHED — `docs/research/SPEC-drawdown-resolvability-and-the-net_act-origin-2026-08-12.md`. BUILDER-OWNED.**
+* **`RULE=held` at k=26 is CORRECT and nothing in the spec touches it.** The rule
+  consumes **`net5` = +1.0** (rolling five-match, `slot_rule.py:97,131`);
+  **`net_act` is display-only** (`ship_watch.py:104`). Research raised the
+  possible divergence and retracted it themselves; I confirmed against the
+  primary. **No stop-loss case against v114 and no case FOR it — z=−0.97, the
+  run has not spoken.**
+* **FINDING A (mine, novel): `net_act` is measured from the WRONG ORIGIN, by the
+  mechanism this file documents as fixed.** `SHIP_BASELINE=1689` is hand-set in
+  the armed loop; **1689 ≈ `ourbef` of v112's LAST match (1688.8986, 19:12:59Z),
+  while v114's FIRST ladder match carries `ourbef`=1685.6150 (19:32:59Z)** — so a
+  v112 game costing **−3.28** is credited to v114's drawdown.
+  `ship_watch.py:52-54` documents precisely this for v102/v101 (*"the tape row
+  tagged v102 is not the first v102 MATCH"*), and **the fix hardened the ALARM
+  (cell 6, driven both ways) and left the REPORTING column on the env var** —
+  the column both lanes then misread. **Three numbers are all called "v114's
+  drawdown": −39.0 printed · −41.93 on the tape · −35.6 true-since-activation.**
+  All inside noise; the defect is that the line does not say which it prints.
+* **FINDING B (research's power calculation, reproduced here against their run
+  before building on it):** ALL-ladder per-match sd **8.667** (n=794, newest row
+  03:52:59Z); v114 **mean −1.677/match, net −41.93, z=−1.37 own / −0.97
+  all-ladder**. At α=.15/80%: **fast bound needs k≥3, slow bound k≥17 — both
+  honestly sized — v114's own rate needs k≥94 and we have 26.** ⇒ **the dead
+  zone is 94 matches wide and is NOT a mis-sizing; it is a region where 26
+  matches cannot speak.** A fact to PRINT, not to alarm on. *(Their sd figures
+  8.661/6.009 vs my 8.667/6.133; mean, net, z and every power figure reproduce
+  to the digit.)*
+* **THE CHANGE IS TWO COLUMNS AND ONE CORRECTED CONSTANT, NOT AN ALARM** — an
+  alarm on today's numbers fires on noise. `dd_z` + `resolvable_k` beside
+  `drawdown`; **sd read off the tape at runtime**, not the `slot_sprt.py:13`
+  docstring constant of 9.25 (**S5 again: a constant beside a quantity that
+  moves**); `net_act`'s baseline derived from the holder's first tagged match or
+  printed **`UNDERIVED`**. Three selftest cells and **the NOISE cell is the
+  load-bearing one.**
+
+## DIVISION AT BOOT, agreed with research so we do not ship two of anything
+**Research holds:** the `TARGET_RATING_FLOOR` admissible-set re-derivation and
+`QUEUE.md` #15 (effective n across battery history); they stood down on this spec.
+**Builder holds:** `CORES_IDLE_ALERT`, the overnight results read, and this spec.
+**I hold:** drift watch over all commits including my own, prereg hygiene,
+monitor verification.
+
+## OPEN AND ROUTED, CARRIED IN FROM s32 — none closed by this boot
+1. **D86 — `.claude/commands/research.md:9` still says launch a tactics sweep at
+   boot** (`:25-27` make it the boot step, the queue-drain behaviour and the
+   surprise response) **while that lane retired sweeps on its own audit.**
+   **Magnus's file; needs his hand.** Research confirmed at this boot that they
+   are NOT launching one — **that is compliance with the audit, not drift**, and
+   it is on the record here so a future audit reads it correctly.
+2. **The banner-concatenated CLI JSON** (`…upgrade fcode{"matchId":…}`, no
+   newline): `json.loads` breaks while a `matchId` regex silently succeeds — the
+   failure is invisible in exactly the tools that keep working. Builder-owned.
+3. **`cores_idle.py:31` and `PROGRAMME.md:60-62` still describe the retired
+   `n == 0` predicate** against the shipped `n < EXPECTED`. **That stale text
+   produced one of my own four s32 errors** (a docstring read as the code) and it
+   is why the alert above needed a scope caveat before it could be quoted.
+4. **`audit_trigger.ship_cadence` must not be quoted until it counts SHIPS rather
+   than TRANSITIONS** (promoted to the booted drift-watch, `503d2ff`). The
+   `cross-lane` row is unaffected and is the one a FIRE verdict rests on.
