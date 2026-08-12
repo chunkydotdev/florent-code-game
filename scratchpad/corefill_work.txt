@@ -79,3 +79,27 @@ SURCH90     bots/_v159surch90      bots/_v146gunaxis     5408  90000
 # ⚠ If an unguarded arm is ever added, report it as a CEILING and NEVER pool it
 # with the guarded arm: two fixtures we wrote, bracketing the field from both
 # ends, averaged together produce a number about neither.
+# ⛔ BLANKBORDER IS UNINTERPRETABLE WITHOUT ITS BASE. It is the STACK of LOKI-26
+# gunblank + LOKI-33 border-first exile, and the base (GUNBLANK) is currently
+# FAILING to replicate: first draw 52.11% (n=5408, OUTSIDE-ABOVE), replication
+# reading well below at partial n. If GUNBLANKREP nulls, a BLANKBORDER read
+# CANNOT be attributed -- any effect could be either plank or their interaction,
+# and the stack was queued to test interaction ON TOP of a confirmed base.
+# ⇒ Read GUNBLANKREP FIRST. If it nulls, BLANKBORDER answers nothing about
+# gunblank and only weakly about border-first, which GUNBORDER measures cleanly.
+# ⛔⛔ LOKI-34 NON-STRIKE SURCHARGE — REFUTED, and refuted with a CURVE rather
+# than a shrug. Both arms stopped early at decisive n; rows kept.
+#   SURCH30  38.10%  (n=693, band +-3.72)  CI excludes 50 by ~8pp
+#   SURCH90  26.62%  (n=725, band +-3.64)  CI excludes 50 by ~20pp
+#   incumbent (surcharge 0) = 50% by construction
+# MONOTONE IN THE DOSE: 0 -> 50%, 30 -> 38%, 90 -> 27%. Every increment of the
+# tax makes us worse, with no interior optimum. This is the strongest possible
+# form of a negative: the knob HAS a large live effect (unlike GUNPEN4/GUNPEN16,
+# flat both sides = dead knob) and its effect runs entirely the wrong way.
+# ⇒ THE FIELD TACTIC DOES NOT TRANSFER. `confused`/BC2020's "rush cost" -- tax
+# everything non-rush until the rush ends -- is a REAL mechanism here and a
+# LOSING one. Starving eco to protect the strike costs more than the strike
+# gains, at every dose we tested. Do not re-queue without a new mechanism.
+# NOTE THE SHAPE: this is what the surcharge plank was FOR -- making defence
+# self-limiting by arithmetic. It turns out the thing that needed limiting was
+# not our eco spend.
