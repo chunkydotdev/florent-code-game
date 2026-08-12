@@ -39006,3 +39006,60 @@ challenge.** A conveyor-only carve-out is still an action carve-out.
 and the price is a ~50-round kill delay.** Any revival must buy the denial
 WITHOUT spending raider actions — e.g. a turret-delivered cut, or salting only
 while a raider is already action-idle (25.76% of builder-rounds).
+
+# ============================================================================
+# 2026-08-12T18:3xZ (`date -u`) — ⛔⛔ **SIDE LANE: A RATED 0-5 LOSS BY THE LIVE
+# HOLDER, DECODED FROM RAW REPLAYS BECAUSE THE CORPUS HAS NOT INGESTED IT.**
+# Magnus watched it and asked. `95e14c55-e587-47a4-9dad-dff31046803b`.
+# ============================================================================
+
+**`OpenSverige v116  0-5  LingLing40 v29`, `triggeredBy: ladder`, completed
+2026-08-12T17:13:47Z.** **Zero rows in `corpus/events.tsv`** — decoded straight
+off `replay_archive/` with `tools/corpus/replay_events.py` (guard-clean, 0 hits,
+driven against `submit_clean.py`=14). ⇒ **The keeper lag is not only a
+denominator problem: the single most informative rated match of the day was
+invisible to every lane.**
+
+## THE MATCH — THEIR TURRET IS UP BY r22 IN EVERY GAME; OURS BARELY EXISTS
+| game | map | our core died | our 2nd harvester | our FWD sentinels | their 1st turret |
+|---|---|---|---|---|---|
+| 1 | 28x20 | **r107** | r7 | **0** *(and 0 home — none at all)* | r11 |
+| 2 | 10x10 | r199 | r14 | 1 | **r3** |
+| 3 | 26x26 | **r87** | r8 | 2 | r21 |
+| 4 | 25x25 | r99 | r6 | 1 | r22 |
+| 5 | **moonrise 21x8** | **r109** | **r65** | **0** *(3 built HOME)* | **r6** |
+
+## MOONRISE — MAGNUS'S OBSERVATION, CONFIRMED ON THE WIRE
+Our core **(5,3)**, theirs **(14,3)**. **Every sentinel we built was WEST of our
+own core** — r13 `(4,5)`, r16 `(3,6)`, r20 `(1,5)` — at `d2_enemy` **104 / 130 /
+173** against a sentinel range of **32**. **None could reach anything of theirs.**
+**They** planted a sentinel at `(9,3)` on **r6** (d²=16 from OUR core, so it
+covered us immediately) and a gunner at `(7,2)` on r10.
+
+**⭐ THE GATE, AND THE EVIDENCE THAT IT — NOT THE MAP — SHUT THE FORWARD PATH:
+a raider WAS at their core.** A barrier went up at **`(14,5)`, d²=4 from their
+core, at r10** (the collar seal). So the `d2<=50` proximity gate at
+`raid.py:418` was satisfied. **What blocked the sentinel was the ECONOMY gate:
+`LOKI_FWD_MIN_HARV = 2` and our second harvester did not land until r65.** Our
+raiders died **r50 / r56 / r60**, before the economy ever qualified.
+⚠ **And the waiver written for exactly this case is OFF: `LOKI2_RUSH_ON = False`,
+which would set `LOKI2_RUSH_MIN_HARV = 0` inside the r60 window.**
+
+**MEANWHILE THE OTHER PRODUCER FIRED THREE TIMES** — research's D35 (`main.py:574`,
+uncapped, `SLOT_HOME_GUN`). Its siting is `bp = p.add(d)` — **adjacent to
+whatever builder happens to be standing there**, first facing that satisfies
+`can_fire_from`, then `return True`. **On moonrise our free builders were west of
+the core, so the turrets went west of the core.**
+
+**⛔ SCOPED HONESTLY: THE HARVESTER GATE IS THE MOONRISE STORY ONLY.** In games
+1-4 the second harvester landed **r6-r14** and we still built **0/1/2/1** forward
+sentinels and lost every game. **The match-wide story is not the gate.**
+
+## ⭐ NEW, GREP-VERIFIED GAP IN THE INCUMBENT — **OUR STATION SCORER HAS NO ENEMY-SENTINEL TERM**
+`raid.py:500-527` scans enemy buildings and handles exactly two kinds:
+`LAUNCHER` → `threats` (exile risk) · `GUNNER` → `gun_axis` (LOKI-25).
+**`SENTINEL` → nothing.** The code's own comment says gunners are *"the AVOIDABLE
+one"* because *"a sentinel's [shot] ignores obstacles"* and reaches **r²=32**.
+⇒ **On a 21x8 corridor their r6 sentinel at `(9,3)` sits on the only route across
+and NOTHING in our station scoring sees it.** **GREP: PASS — two entity types
+handled, sentinel absent, one call site.**
