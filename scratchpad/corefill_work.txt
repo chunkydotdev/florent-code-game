@@ -116,3 +116,18 @@ SURCH90     bots/_v159surch90      bots/_v146gunaxis     5408  90000
 #   only duplicates the status row. Recoverable on the NEXT corefill launch
 #   (overnight.sh resumes from the 728 rows on disk). Not worth a manual
 #   launch racing the supervisor for one doctrine number on a dead plank.
+# --- QUEUE #24 THE LAUNCHER SINGULARITY — price what nobody else pays for ---
+# Launchers/game: sporks 0.00 · Lorem Ipsum 0.00 · Pivot 0.00 · O(1) 0.00 ·
+# Clankers 0.09 · ph 0.87 · US 1.17. Five of the top six build essentially NONE
+# and we build the most, at 20 Ti and +10% global scale each. Today's archive
+# work put the CRASH channel at 1 event on 110 border landings (<=4.2% upper
+# bound), so we pay a premium nobody else pays for a channel measured as weak.
+# NOT a recommendation to drop them -- the launcher IS the kidnap weapon and
+# LOKI is the programme. This PRICES it for zero rated exposure.
+# POSITIVE CONTROL RUN BEFORE QUEUEING: LAUNCH0 produces 0 throws in 12 games
+# against V114's 68. The ablation actually ablates -- verified by outcome, not
+# by reading the branch. (An explicit `if LAUNCHER_CAP <= 0: return False` was
+# REQUIRED: at cap 0 the cap test is always true, the release branch zeroes the
+# slot and execution falls THROUGH to the build. Without the gate this arm
+# would have built launchers and read as a null.)
+LAUNCH0     bots/_v161launch0      bots/_v146gunaxis     5408  95000
