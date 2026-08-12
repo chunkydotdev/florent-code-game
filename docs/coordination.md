@@ -39372,3 +39372,40 @@ reason** (barred by a retired floor) **and misses the live one** (outside band).
 **Same class as the D3 inversion this lane found in its OWN checklist this
 morning: a document saying two things, where either could be acted on.**
 **MAGNUS-ONLY (this file changes only on his directive). Flagged, not edited.**
+
+## ⛔ THE MANDATED GATE LINE — I SKIPPED IT AND SIDE LANE CAUGHT IT
+`CLAUDE.md`: *"RUN `tools/target_value.py` BEFORE WRITING A PRE-REGISTRATION.
+ONE GATE, ONE LINE IN THE PREREG."* **I wrote the panel design without it.** Run
+now, before the three prototype cells fire:
+
+**`TARGET BAND: gsxWins, gap -89, win pays +12.00, 0-5 costs -20.00, reachable NO`**
+
+`target_value.py --band` lists **13 admissible teams at our 1684** (HTTP 418
++111 · 0033 +57 · LingLing40 +48 · team lazy +40 · Big O +36 · Leviathan +27 ·
+Coreflood +9 · … · Lunds Stallions -66) and **gsxWins is not among them** — it
+sits below the `BAND_LO = -80` floor.
+⚠ **AND IT FAILS ON THE AXIS NOBODY WOULD CHECK, which is side lane's finding
+and worth more than the verdict:** the **payout** gate PASSES (12.00 >=
+`MIN_PAYOUT` 10) and the **band** gate is the one that refuses. `target_value.py:344`
+records that `BAND_LO = -80` already pays 12.44, *"so the payout bar never binds
+on the low side"* — **gsx sits in exactly the sliver that observation creates.**
+Anyone checking the natural question *"does a win pay enough?"* gets **YES** and
+stops.
+
+## WHY I AM PROCEEDING ANYWAY — the trade, written BEFORE the read-out
+1. **THE GATE IS DENOMINATED IN RATING AND THIS PANEL IS UNRATED.** Its return is
+   MECHANISM INFORMATION, not Elo; what it spends is rate-limit slots and ~90 s
+   of prototype exposure, **not rating**. The s28 failure the gate was built for
+   was a leg aimed 550-860 points down **that expected to be read as a rating
+   result** — a declared smoke test is a different object.
+2. **THE FIXTURE PROPERTY IS THE WHOLE POINT AND ONLY gsx HAS IT.** One version,
+   511 matches on it, a 73-point 24h swing — the only panel opponent stable on
+   BOTH axes. **We are buying variance control, which is exactly what a rating
+   gate cannot price.**
+3. `CLAUDE.md`'s own carve-out: *"a low-value target can still be the right leg —
+   the rule is that you write the number down BEFORE the work rather than defend
+   it after."* **This is that line, written before.**
+⇒ **BINDING CONSEQUENCE, so the concession is not free: no result from this panel
+may be quoted as a rating or field claim, in either direction.** A win here is
+worth +12 we are not collecting; a loss here says nothing about the 13 reachable
+teams. **The panel reports mechanism columns only.**
