@@ -218,8 +218,20 @@ def compare(arm_a, arm_b):
                 "why": (f"exposure differs by {skew:.1%} ({ea} vs {eb}), over the "
                         f"{EXPOSURE_SKEW_LIMIT:.0%} limit — the arms did not observe "
                         f"the same amount of game, so a rate ratio is not "
-                        f"attributable to the treatment. Use an IMMUNE victim "
-                        f"(bots/_probe_border_guard) and re-run.")}
+                        f"attributable to the treatment.\n"
+                        f"     TWO CAUSES, DIFFERENT REMEDIES:\n"
+                        f"     (1) the victim is CRASHABLE, so exposure ENDS when "
+                        f"the treatment works -> re-run against the immune victim "
+                        f"bots/_probe_border_guard.\n"
+                        f"     (2) the victim is ALREADY immune and the arms still "
+                        f"differ -> the TREATMENT ITSELF changes game length (more "
+                        f"launchers = more global cost scale = a different economy). "
+                        f"NO FIXTURE FIXES THAT: the arms are not exchangeable and "
+                        f"the dose is not separable from the rest of the change. "
+                        f"Report both rates and the skew; do NOT quote a ratio.\n"
+                        f"     The first version of this message named only (1), "
+                        f"and the first case it fired on was (2) -- it told the "
+                        f"reader to do what they had already done.")}
     base = arm_b["brd_per_1k"]
     return {"ok": True, "skew": skew,
             "border_ratio": (arm_a["brd_per_1k"] / base) if base else float("inf")}
