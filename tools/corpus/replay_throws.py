@@ -72,6 +72,19 @@ def census(path: Path):
     corepos = {c["team"]: c["pos"] for c in cores}
     if len(corepos) != 2:
         return []
+    # ⛔ THE FALLBACK IS ITSELF AN ASSUMED SIZE, WHICH THE `border` COMMENT BELOW
+    # FORBIDS. `w, h = 0, 0` above is the initialiser; if the map buffer ever fails
+    # to yield fields 1/2 it survives, and then `to[0] == w - 1` is `== -1` (never
+    # true) while `to[0] == 0` still fires -- so ONLY THE NEAR EDGES count as
+    # border and the far edges are silently misfiled as interior. That is the same
+    # systematic direction the border comment warns about: toward "no border
+    # concentration", i.e. toward killing the crash channel.
+    # Latent, not active: 0 rows of the live 46 MB throws.tsv carry mw or mh = 0.
+    # Refusing the file is correct anyway -- a row with no map size cannot be
+    # classified, and absorbing it as `border=0` makes it unauditable.
+    # Flagged by the side lane against this file's own comment.
+    if not (w and h):
+        return []
     foot = {t: {(p[0] + dx, p[1] + dy) for dx in (0, 1) for dy in (0, 1)}
             for t, p in corepos.items()}
 
@@ -144,8 +157,14 @@ def census(path: Path):
                     # so it would silently confirm the null. Hazard flagged by the
                     # builder, who hit it in `crash_cells.py`; `w`/`h` here are
                     # already the per-game parsed dimensions written to mw/mh.
-                    border = int(to[0] == 0 or to[1] == 0
-                                 or to[0] == w - 1 or to[1] == h - 1)
+                    # ⛔ CALLS `is_border()` -- the SAME function the selftest drives.
+                    # An inline copy here would mean the selftest exercises a
+                    # PARALLEL implementation and cannot catch a defect in the
+                    # shipped path. That is the exact shape found four times in one
+                    # session (effective_n's ceiling assertion, overnight_read's
+                    # ignored `nowin`, queue_check's three grep-less marker cells):
+                    # the test and the claim were about different things.
+                    border = is_border(to, w, h)
                     rec = dict(file=path.name, mw=w, mh=h, rounds=nrounds, rnd=rnd,
                                kind=kind, tteam=-1 if tteam is None else tteam,
                                bteam=bteam, amb=amb, d2_before=before, d2_after=after,
@@ -196,7 +215,73 @@ COLS = ["file", "mw", "mh", "rounds", "rnd", "kind", "tteam", "bteam", "amb",
         "winner", "wincond"]
 
 
+def is_border(to, w, h):
+    """Border classification. Extracted so a selftest can drive it directly.
+
+    ⛔ Takes w/h AS ARGUMENTS and has no default. A version of this with a default
+    map size is the defect this function exists to make impossible.
+    """
+    if not (w and h):
+        raise ValueError("no map dimensions — a landing cannot be classified")
+    return int(to[0] == 0 or to[1] == 0 or to[0] == w - 1 or to[1] == h - 1)
+
+
+def selftest() -> int:
+    """Forced-answer cells for the border flag.
+
+    This instrument supplies the FIELD PREVALENCE number for the crash channel --
+    the number D23 says cannot be obtained any other way -- so it is the one that
+    most needs driving both ways. Written after the side lane observed that four
+    instruments in one session had a test that could not catch their own bug, and
+    that this file was in the worst category: no test at all.
+    """
+    fails = []
+
+    def check(name, cond, detail=""):
+        print(f"  [{'ok' if cond else 'FAIL'}] {name}" + (f"  {detail}" if detail else ""))
+        if not cond:
+            fails.append(name)
+
+    # 1. THE SIZE TRAP. Same coordinate, opposite verdict, because the map differs.
+    # A regression to any fixed size fails this loudly instead of silently.
+    check("(13,1) is BORDER on antler 14x18", is_border((13, 1), 14, 18) == 1)
+    check("(13,1) is INTERIOR on 26x26 — SAME COORD, OPPOSITE VERDICT",
+          is_border((13, 1), 26, 26) == 0)
+    check("(24,7) is BORDER on meander 25x15", is_border((24, 7), 25, 15) == 1)
+    check("(24,7) is INTERIOR on 26x26", is_border((24, 7), 26, 26) == 0)
+    check("(5,14) is BORDER on meander 25x15 (y == h-1)", is_border((5, 14), 25, 15) == 1)
+    check("(5,14) is INTERIOR on hive 25x25", is_border((5, 14), 25, 25) == 0)
+
+    # 2. THE FALLBACK CELL. Missing dimensions must RAISE, never quietly read 0.
+    # Without this, `w=0` makes `to[0] == w-1` unsatisfiable and only the near
+    # edges count -- far edges misfiled as interior, biased toward the null.
+    try:
+        is_border((13, 1), 0, 0)
+        check("missing dimensions REFUSE rather than defaulting", False, "returned instead of raising")
+    except ValueError:
+        check("missing dimensions REFUSE rather than defaulting", True)
+    check("a far-edge landing is not silently interior under a 0 width",
+          is_border((13, 0), 14, 18) == 1)
+
+    # 3. A GENUINE INTERIOR LANDING. Without this the flag could be a constant 1.
+    check("a centre landing is INTERIOR", is_border((12, 9), 25, 25) == 0)
+    check("all four edges register", all(is_border(p, 10, 10) == 1
+          for p in ((0, 5), (9, 5), (5, 0), (5, 9))))
+    check("the tile just inside each edge does NOT", all(is_border(p, 10, 10) == 0
+          for p in ((1, 5), (8, 5), (5, 1), (5, 8))))
+
+    print()
+    if fails:
+        print(f"SELFTEST FAILED: {len(fails)}: {', '.join(fails)}")
+        return 1
+    print("SELFTEST PASSED — the classifier was driven to BORDER and to INTERIOR on\n"
+          "the SAME coordinate by changing only the map, and refuses without dimensions.")
+    return 0
+
+
 def main(argv):
+    if "--selftest" in argv:
+        return selftest()
     out = sys.stdout
     out.write("\t".join(COLS) + "\n")
     bad = 0
@@ -213,4 +298,4 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    sys.exit(main(sys.argv[1:]) or 0)
