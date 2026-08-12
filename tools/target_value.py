@@ -92,6 +92,20 @@ MIN_PAYOUT = 10.0        # a 5-0 must pay at least this many rating points
 PAYOUT_WARN_MARGIN = 3.0   # warn when the best available target is close to the bar
 
 
+def _hours_since(iso: str) -> str:
+    """Age of an ISO timestamp, as text. Never raises -- an unparseable stamp
+    reads UNKNOWN, which is louder than a wrong number."""
+    from datetime import datetime, timezone
+    try:
+        d = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+        if d.tzinfo is None:
+            d = d.replace(tzinfo=timezone.utc)
+        h = (datetime.now(timezone.utc) - d).total_seconds() / 3600.0
+        return f"{h:.1f}h old" + ("  ⛔ STALE" if h > 2 else "")
+    except Exception:
+        return "AGE UNKNOWN  ⛔"
+
+
 def payout_for(gap: float) -> float:
     """Rating points a 5-0 pays against an opponent `gap` points from us."""
     E = 1.0 / (1.0 + 10 ** (-(-gap) / 400))
@@ -118,6 +132,7 @@ def floor_warning(ours: float) -> str:
             f"It no longer drifts with our own rating ({ours:.0f}).")
 
 _OVERRIDE: dict = {}
+_RATING_AGE: dict = {}   # team -> ISO timestamp of its most recent observed rating
 
 
 def pairing_gaps(min_our: float = 1600.0) -> list[float]:
@@ -236,6 +251,15 @@ def _live_ratings() -> tuple[float, dict[str, float]]:
                 if when >= seen.get(name, ""):
                     seen[name] = when
                     best[name] = rt
+    # ⛔ FRESHNESS, s33. `seen[name]` already holds the timestamp of each team's
+    # most recent observation and it was being DISCARDED. CLAUDE.md: "A monitor
+    # that reads a file must report that file's FRESHNESS." This gate is MANDATED
+    # before every pre-registration, so every target line in every prereg inherited
+    # a silently stale rating. Measured 2026-08-12: The Bisons 1762 cached vs 1682
+    # live -- 80 points, an 18% payoff error, on a corpus surface 6 hours old. It
+    # did not flip admissibility that time; that was luck, not the gate. Caught by
+    # the side lane after a prereg author found it BY HAND, post-writing.
+    _RATING_AGE.clear(); _RATING_AGE.update(seen)
     ours = best.get(OUR_TEAM, 0.0)
     # prefer the platform for OUR rating -- it is one cheap call and it is the
     # number every gap is measured from
@@ -364,6 +388,24 @@ def selftest() -> int:
     # team, and on no args. D24 in its purest form: no cell touched the shipped
     # surface. Found by the side lane, ten minutes after the commit.
     # ⇒ A PREDICATE BEING CORRECT SAYS NOTHING ABOUT WHETHER THE PROGRAM RUNS.
+    # FRESHNESS CELL, driven BOTH WAYS. A staleness marker that has never been
+    # absent is a constant, and one that has never fired is decoration.
+    from datetime import datetime, timezone, timedelta
+    _now = datetime.now(timezone.utc)
+    fresh = _hours_since((_now - timedelta(minutes=30)).isoformat())
+    stale = _hours_since((_now - timedelta(hours=7)).isoformat())
+    bad_stamp = _hours_since("not-a-timestamp")
+    for nm, got, want in (("a 30-min-old rating is NOT marked stale", fresh, False),
+                          ("a 7-hour-old rating IS marked stale", stale, True)):
+        ok_f = ("STALE" in got) == want
+        print(f"  [{'ok' if ok_f else 'FAIL'}] {nm}  -> {got}")
+        if not ok_f:
+            bad += 1
+    ok_u = "UNKNOWN" in bad_stamp
+    print(f"  [{'ok' if ok_u else 'FAIL'}] an unparseable stamp reads UNKNOWN, not a number  -> {bad_stamp}")
+    if not ok_u:
+        bad += 1
+
     import io, contextlib
     print("  ENTRY POINTS — the suite must exercise the SHIPPED surface, not just the predicate:")
     for label, args in (("--band", ["--band"]), ("named team", ["The Bisons"]), ("no args", [])):
@@ -403,6 +445,13 @@ def main(argv: list[str]) -> int:
         rows = [x for x in band_only if payout_for(x[2]) >= MIN_PAYOUT]
         excluded = [x for x in band_only if payout_for(x[2]) < MIN_PAYOUT]
         rows.sort(key=lambda x: -x[2])
+        _newest = max(_RATING_AGE.values(), default="")
+        _age = _hours_since(_newest)
+        print(f"RATINGS from corpus/league_matches.tsv — newest observation "
+              f"{_newest[:16] or '?'} ({_age})")
+        print(f"  ⚠ opponent ratings are CACHED. Ours is live off `fcode status`. "
+              f"80-point drift over ~6h has been observed; verify the SELECTED "
+              f"target before quoting its payoff.\n")
         print(f"ADMISSIBLE at our {ours:.0f}: us{BAND_LO:+d}..us{BAND_HI:+d} "
               f"AND a 5-0 pays >= {MIN_PAYOUT:.0f}  ({len(rows)} teams)\n")
         print(f"  {'team':<26}{'rating':>8}{'gap':>7}{'5-0 pays':>10}{'0-5 costs':>11}")
