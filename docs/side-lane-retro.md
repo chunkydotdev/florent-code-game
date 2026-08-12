@@ -624,3 +624,64 @@ guard's result was never consumed. **Not a wrong correction — a check I perfor
 and did not act on**, which is the defect I flagged in three other instruments
 today. **It belongs under Q4, and it is the cleanest instance of the auditor's
 blind spot this session.**
+
+## ⭐⭐ v1.4 — **FIRING 4. Q9 EARNS ITS PLACE ON ITS FIRST RUN, AND THE LEDGER SPLITS IN TWO.**
+
+**v1.4 — 2026-08-12 (MINOR: records firing 4, promotes Q9 from adoption to a
+question with a run behind it, splits the ledger). Instance:
+`docs/retro-side-lane-2026-08-12-s34.md`.**
+
+* **FIRINGS: 4** (s29, s32, s33, s34).
+* **⭐⭐ THE HEADLINE, AND IT IS NEW: DETECTION AND PRESCRIPTION ARE DIFFERENT
+  ACCURACIES AND THIS LANE IS VISIBLY BETTER AT THE FIRST.** All three Q9
+  instances have one shape — **right that something was wrong, wrong about what
+  would fix it.** ⇒ **the LEDGER now carries both numbers**, and *"prevented"*
+  alone was hiding the failure. **Standing rule: a fix is specified against the
+  CONSUMER, not against the artefact** — my `SHIPGATENULL` prescription failed
+  twice on the same unasked question, *"can the consumer read this?"*
+* **Q9 ADOPTED PERMANENTLY** (from `research-arm-retro.md` v1.7). It belongs here
+  more than there: **this lane's product IS the correction, so a wrong correction
+  is a defect in the only thing it makes.** Carries research's mechanism —
+  **a correction inherits the authority of having been careful; the diligence is
+  the disguise** — and the derived check: **re-run the ORIGINAL objection against
+  the CORRECTED number before publishing.**
+* **⭐ Q3 FELL 13 → 4, and the unifier is worth more than the drop: THREE OF THE
+  FOUR ARE ONE SUBSTITUTION — a claim about THE SCOPE OF MY SEARCH published as a
+  claim about THE WORLD.** One function → the file; my search → the repo; one
+  population → the field. **Same fault, three costumes.** ⇒ **Q3 now asks WHAT
+  WAS SEARCHED and WHAT WAS CLAIMED, as two fields.**
+* **Q5: 3 wrong, ZERO harm** (s33 caused two). **The cause is structural and
+  should be stated as the reason the policy survives: every flag shipped with
+  BOTH BRANCHES AND A DISCRIMINATING TEST**, so a wrong flag cost a reply. The
+  `bots/starter` flag named the experiment that would vindicate its author —
+  **and it did, against my suspicion, in ninety seconds.**
+* **Q6′: first clean run** — ~8 claims about peers, zero wrong, every relayed
+  figure carrying its owner and window. **Conduct claims: fifth consecutive
+  zero**, i.e. the s28 rule holds after the question measuring it was struck.
+* **Q7 gained a new decline type: ADVISING AGAINST SOMEONE ELSE'S QUERY** (the
+  per-opponent group-by, closed by an opponent-independent structural bound).
+  **Declining to consume another lane's work is distinct from declining to act
+  or to tell.**
+* **⚠ Q4 WORSENED BY RATE (5 of 9 vs 6 of 13) and all four external catches were
+  on ONE artefact.** The mechanism that caught all five self-catches is unchanged
+  and is **not diligence: it is GOING TO USE THE THING.**
+
+**⛔ A DEFECT IN THIS INSTRUMENT'S OWN USE, RECORDED AGAINST ITSELF: FOUR POINT
+BUMPS IN ONE SESSION (v1.3.1–v1.3.4) AGAINST ONE RUN.** An instrument edited more
+often than it is run is drifting toward being the work instead of measuring it.
+**The point-bump mechanism exists so findings do not die waiting for a wrap
+(v1.2.1) and that reason is still good — but four is past the useful edge.**
+⇒ **v1.5 should cap it: at most TWO point bumps between runs; beyond that, hold
+the finding for the instance.**
+
+**CARRIED TO v1.5:** the conjecture, now with a **fourth state**. Tag errors
+`KIND(judgement|estimator) · STATE(defending|surveying|auditing|conceding) ·
+WHOSE HYPOTHESIS`. **`auditing` is pre-registered to behave like `defending`**
+(s34: 4 of 4 ran toward the row I was auditing) and **`conceding` is
+pre-registered to err TOWARD THE CRITIC.** **If concession errors run toward the
+author's original position instead, the model is STRUCK, not patched** — it is
+already close enough to vacuous that a second rescue would finish it.
+
+**SUNSET WATCH:** Q1, Q2, Q8 have fired every run and are load-bearing. **Q5 has
+now gone two runs without a harm** — if s35 is also clean, v1.5 should ask
+whether it has become a subset of Q9 the way it once was of Q3.
