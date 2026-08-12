@@ -40377,3 +40377,21 @@ instrument.**
 3. **The `#30`/`#31a`/`#32` family is gated behind `#33`'s
    `LOKI_GUNAXIS_PENALTY` ablation** — and `#30`'s honest size is **~0.32 forward
    builder deaths/game (ceiling 0.63)**, not the 4.6× share ratio.
+
+## ADDENDUM TO THE s34 SIDE-LANE WRAP — **ONE THING THE RETRO DID NOT ASK AND SHOULD HAVE: I SPAWNED ZERO SUBAGENTS.**
+**Recorded here rather than in the instance, because a past run is never
+edited.** Standing permission is explicit (*"use opus and sonnet subagents as
+much as you need to keep context use low"*) and **I used none across a four-hour
+session and 30 commits.**
+**The defence, and it is real for most of it:** this session's work was **short
+targeted checks against primaries** — grep a call site, recompute a ratio,
+trilaterate five core positions — **where the delegation overhead exceeds the
+task and a subagent would have relayed a number I still had to verify.**
+**The honest part: at least two items were subagent-shaped and I did them
+inline** — the queue admission audit across 16 rows, and the overnight
+readiness sweep (which produced **three false alarms**, exactly the kind of
+mechanical breadth-first work that wants a second pair of eyes).
+⇒ **CARRIED TO THE s35 RETRO AS A QUESTION, NOT A CONCLUSION: does this lane's
+work genuinely resist delegation, or has it just never tried?** **Four runs of
+this instrument and not one has asked.** A lane with standing permission it never
+exercises should be able to say which of the two it is.
