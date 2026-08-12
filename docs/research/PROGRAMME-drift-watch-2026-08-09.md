@@ -1574,3 +1574,51 @@ only visible when both ends are named**, and the s33 instance caveated the end
 that lies UP and left the end that lies DOWN unstated.
 **NEVER POOL THE TWO.** Averaging a maximally-vulnerable fixture with a
 maximally-invulnerable one produces a number about neither.
+
+---
+
+## D24 — **A GREEN SELFTEST IS NOT EVIDENCE. FIVE WAYS A TEST FAILS TO TEST ITS CLAIM, EACH NEEDING A DIFFERENT CHECK**
+
+**Promoted s33, 2026-08-12. EIGHT instances, FIVE categories, THREE lanes, ONE
+session — every one measured, none hypothetical.** Magnus's question that opened
+it, after `crash_cells` v1 shipped a 7-case green selftest and then printed *"THE
+WEAPON DOES NOT FIRE — the road closes"* on a run where the weapon fired 15
+times: ***"Dont we test our tools?"*** **The answer is worse than "no": we test
+them, the tests pass, and the verdict is still wrong.**
+
+**The split matters because a single sentence — *"the assertion and the defect
+can be the same line"* — does not tell you what to DO. Each category has its own
+question, and (a) and (d) are not detected the same way.**
+
+| # | category | instance(s) this session | **the check that finds it** |
+|---|---|---|---|
+| **a** | **THE PASS CONDITION *IS* THE BUG** | `effective_n`: the independent fixture asserted *"eff_n is near the row count"* as its PASS condition — **which is the CEILING read**, so the one cell able to catch ceiling-pinning was ratifying it | **"What would this assertion print if the bug WERE present?"** If the answer is "the same thing", the cell is decorative |
+| **b** | **THE RIGHT VALUE IS COMPUTED AND THE DECISION IGNORES IT** | `overnight_read`: refused 5 shards on a stale HEARTBEAT flag while computing row-level `nowin` (= 0 for all five) **29 lines below**. 27,040 real games discarded | **"Does the DECIDING branch read the MEASURING function's output?"** A correct measurement and a wrong decision coexist happily |
+| **c** | **THE CELL PASSES ON A DIFFERENT GATE** | `queue_check`: three marker cells (`BLOCKED`, `gated`, `WITHDRAWN`) carried **no `GREP:` stamp**, so all three returned 0 because of the missing grep — **they would have passed with the marker code deleted** | **"Delete the code under test. Does the cell still pass?"** If yes, it was never testing that code |
+| **d** | **THERE IS NO CELL AT ALL** | `cores_idle`: **zero cells for its predicate**, which is how the docstring said `n == 0` for a whole session while the code said `n < expected` and `--selftest` stayed green · `replay_throws`: shipped a published-output instrument with no selftest | **"Which branch does each cell touch?"** Enumerate branches, not cells — a suite can be green and untouched |
+| **e** | **THE CELL DRIVES A PARALLEL IMPLEMENTATION** | `replay_throws` first draft: extracted `is_border()` **for the test** and left the decoder's inline copy in place — the test would have passed forever against code that does not ship. **Self-caught before push** | **"Is the line the test calls the line that SHIPS?"** `ship_watch`'s own docstring already states it: *"anything you retype is a second implementation, and the second implementation is the one nobody tests"* |
+
+**⭐ THE INSTANCE THAT MAKES THIS A CHECKLIST ENTRY RATHER THAN AN OBSERVATION:
+category (e) was committed INSIDE THE COMMIT THAT ADDED THE TEST FOR CATEGORY
+(d), by the lane that had just catalogued (a)–(c).** Knowing the taxonomy did not
+prevent the fault; **asking the question did** — *"what is this cell actually
+touching?"* is what caught it, and it is the same question that found the other
+four. **That is D68's shape and it is why the CHECK column exists: the categories
+are for diagnosis, the questions are the instrument.**
+
+### THE WATCH FORM
+**A green `--selftest` may not be cited as evidence that a tool is correct.** It
+is evidence only that the cells present were driven. Before trusting an
+instrument whose output gets published, run the five questions above **per
+guard, per branch** — and prefer the cheapest one first: **(d) is answered by
+counting, (c) by deleting a line, (e) by grepping for a second definition.**
+**AND THE POSITIVE OBLIGATION, which is the standing repo rule this row
+operationalises:** a cell must have been **seen to produce the OTHER verdict**.
+The gold standard shipped today is `replay_throws`' size trap — **`(13,1)` reads
+BORDER on antler 14×18 and INTERIOR on 26×26, the same coordinate, changing only
+the map** — so any regression to an assumed size fails loudly rather than
+silently confirming the null.
+
+*Attribution: the eight instances came from all three lanes; the side lane split
+them into categories and supplied (d)'s second instance and the questions; the
+research arm supplied (a)–(c), then produced (e) by committing and catching it.*
