@@ -183,3 +183,26 @@ GUNSUB      bots/_v165gunsub      bots/_v146gunaxis     5408 100000
 GUNADD      bots/_v163gunadd      bots/_v146gunaxis     5408 101000
 LAUNCH2     bots/_v160launch2     bots/_v146gunaxis     5408 102000
 LAUNCH3     bots/_v160launch3     bots/_v146gunaxis     5408 103000
+# ============================================================================
+# THE LAUNCHER 2x2 — closing a design I had accidentally built three corners of.
+# ⛔ MY "FERRY IS BAD" READING WAS WRONG AND THIS IS WHY. LAUNCH0 (+2.64pp) and
+# EXILE0 (-4.68pp) look like they bracket a strongly negative ferry -- but they
+# differ in MORE than the mechanism: LAUNCH0 NEVER BUILDS A LAUNCHER, so it also
+# saves 20 Ti and +10% GLOBAL SCALE per launcher (~1.17/game). EXILE0 still PAYS
+# for the launcher and merely stops exiling with it. So LAUNCH0's gain may be
+# entirely the ECONOMY SAVING -- which is literally what QUEUE #24 exists to
+# price -- and I conflated the launcher's PRICE with the ferry's VALUE.
+#   cell       launcher  exile  ferry   arm
+#   incumbent  yes       ON     ON      _v146gunaxis     50% by construction
+#   EXILE0     yes       off    ON      _v162exile0      45.32% running
+#   FERRY0     yes       ON     off     _v167ferry0      <- NEW, isolates FERRY
+#   BOTH0      yes       off    off     _v168both0       <- NEW
+#   LAUNCH0    NO        off    off     _v161launch0     52.64% running
+# ⭐ BOTH0 vs LAUNCH0 is the pair that matters: identical MECHANISM (neither
+# exiles nor ferries), differing ONLY in whether the launcher is BUILT AND PAID
+# FOR. That difference IS the launcher premium, measured directly instead of
+# inferred from a between-shard contrast.
+# ⚠ Both live readings are interim (~30% of target) and are SEPARATE SHARDS with
+# different seeds, so the 7.3pp gap between them is between-shard, not paired.
+FERRY0      bots/_v167ferry0       bots/_v146gunaxis     5408 104000
+BOTH0       bots/_v168both0        bots/_v146gunaxis     5408 105000
