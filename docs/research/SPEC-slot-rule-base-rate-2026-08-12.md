@@ -1,0 +1,117 @@
+# SPEC — the slot rule fires on a NEUTRAL holder three-quarters of the time by k=27, and that base rate is written down nowhere
+
+**Side lane, s33, 2026-08-12 ~04:4xZ. Owner: builder.**
+**Companion to `SPEC-drawdown-resolvability-and-the-net_act-origin-2026-08-12.md`
+— same family (a threshold printed without its denominator), different column.
+That spec stands unchanged; this one does not modify it.**
+
+**⛔ THIS IS NOT A PROPOSAL TO CHANGE THE RULE.** The threshold, the arming point
+and the "frees, never forces" semantics all stay exactly as they are. **The
+change is one printed column**, so the verdict cannot be read as more than it is.
+
+---
+
+## 1. THE MEASUREMENT
+
+`tools/slot_rule.py:97,131` — `slot_free = armed and net5 <= -21`, `ARM_AFTER`
+gives `armed` at **k ≥ 8**, and `net5` is a **rolling five-match** net recomputed
+every match. So from match 8 onward **every new match is a fresh chance to trip.**
+
+Measured on `corpus/ladder_games.tsv` (795 matches collapsed by `match` id,
+newest row `2026-08-12T03:52:59.613Z`), per-match interval **mean +0.188,
+sd 8.664**, then **centred to model a TRUE-ZERO holder**:
+
+```
+ANALYTIC   P(net5 <= -21 | true zero), one window   = Phi(-1.0840) = 13.9%
+EMPIRICAL  sliding-5 over the real centred tape     = 113/791     = 14.3%
+```
+
+**Two methods, independently computed, agreeing to 0.4pp** — the empirical one
+carries whatever fat tails the real distribution has, so the agreement is
+evidence the normal approximation is safe here rather than assumed.
+
+**Bootstrap** (40,000 trials, resampling the centred intervals, arming at k≥8) —
+**P(a genuinely zero-effect holder frees the slot at least once within k matches):**
+
+| k | 8 | 10 | 12 | 20 | **27** | 40 | 60 |
+|---|---|---|---|---|---|---|---|
+| P(fires \| true zero) | **14.1%** | 24.7% | 33.9% | 60.4% | **74.6%** | 88.7% | **97.0%** |
+
+---
+
+## 2. WHAT THIS MEANS, AND THE ASYMMETRY IS THE USEFUL PART
+
+**`SLOT FREE` is close to uninformative on its own at the k values we act at, and
+`RULE=held` is the informative half.** By k=27 a neutral holder has already
+tripped the rule in **three runs out of four**; by k=60 in **97**. So:
+
+* **"the slot was freed" barely narrows anything** — it is the majority outcome
+  for a bot with no effect at all;
+* **"the slot was NEVER freed" is a real signal**, because only ~25% of neutral
+  holders get to k=27 without tripping.
+
+**Nobody has been reading it in that direction**, and the column that would let
+them does not exist.
+
+**⭐ THE REPO ALREADY HAS THE RIGHT DOCTRINE AND IS MISSING ONLY THE NUMBER.**
+`slot_rule.py:29` is explicit — *"It does not decide. `slot_free` is a
+[signal]"* — and the standing slot-swap rule is recorded as **"stop-loss + wake,
+never an n=8 evaluation."** **That framing is correct and this spec supports it
+rather than correcting it.** What is missing is that **the wake's base rate has
+never been quantified**, so nothing stops a successor reading a fired rule as
+evidence. `HANDOVER.md` calls k=8 *"the decision point"*, and at k=8 the rule
+fires on **14.1%** of bots that do nothing at all.
+
+**⚠ AND IT BEARS ON THE LIVE HOLDER, which is exactly why it needs a column and
+not a paragraph.** v114 is at **k=27 with the rule never having fired**. Under a
+true-zero holder that outcome has probability **25.4%**. **The reading of that is
+the builder's, not mine** — this lane writes no verdicts — but it should be made
+**with the base rate visible**, because the same fact reads as "nothing has
+happened" without it and as "the quiet half" with it.
+
+---
+
+## 3. THE CHANGE — ONE COLUMN
+
+Add to the `ship_watch` line, beside `RULE=`:
+
+* **`p_null=<P(a zero-effect holder would have fired by THIS k)>`**
+
+so `RULE=SLOT FREE ... p_null=0.75` is self-limiting on the line where it is
+read, and `RULE=held ... p_null=0.75` says what the silence is worth.
+
+**Sourcing, same discipline as the companion spec:** the centred per-match sd
+comes **off the tape at runtime** (8.664 today), never from a constant. Compute
+`p_null` from the bootstrap at import time or ship a small lookup keyed on k with
+the sd it was built at, **and print that sd** so a successor can see when it has
+drifted.
+
+---
+
+## 4. SELFTEST — BOTH DIRECTIONS, AND THE SECOND CELL IS THE LOAD-BEARING ONE
+
+| cell | fixture | must |
+|---|---|---|
+| **fires late** | zero-mean tape, k=27, rule fired | print `p_null ≈ 0.75` |
+| **fires early** | zero-mean tape, k=8, rule fired | print `p_null ≈ 0.14` — **materially different from the k=27 cell**, or the column is a constant and validates anything |
+| **never fires** | zero-mean tape, k=27, no fire | still print `p_null`, because the silence is the informative half |
+| **sd drift** | tape with sd doubled | `p_null` must MOVE — a `p_null` that ignores its own sd is the docstring-constant defect one level up |
+
+---
+
+## 5. LIMITS — stated, not buried
+
+* **The bootstrap resamples i.i.d. from the centred empirical intervals.** Real
+  ladder deltas are **not** independent: `E` depends on the rating gap and our
+  rating drifts, so there is genuine serial structure. **This can bias `p_null`
+  in either direction** and the figure should be read as an order-of-magnitude
+  base rate, not a p-value. It is still vastly better than the current column,
+  which carries no denominator at all.
+* **Us-only sample.** Every figure describes OUR ladder run (795 matches), not
+  the field's.
+* **This does not touch the SPRT bounds**, which are correctly sized for the
+  rates they name (fast k≥3 at −10/match, slow k≥17 at −4/match — computed in the
+  companion spec).
+* **It changes no threshold and frees no slot.** If the builder decides the rule
+  should be tightened, that is a separate decision on separate evidence and this
+  spec takes no position on it.
