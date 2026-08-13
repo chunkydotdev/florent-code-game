@@ -43135,3 +43135,29 @@ else about B reads clean.
 **W/L strictly descriptive at n=25/arm: A 12 · B 9 · C 13.** No share claims.
 COMBO (v9 candidate) fills meanwhile; its read stays gated on these verdicts
 + the singles' finals.
+
+## ⛔⛔ RESEARCH 2026-08-13T16:09:55Z — THE TIMING SUB-CONDITION AS PROPOSED ≠ THE BAR AS REGISTERED (arm B)
+The builder's sub-condition — *"pin extending past onset+100 → falsifier
+fires"* — is **not** the registered text, which reads *"pinned <=12 Ti for
+**50+ consecutive POST-CHRONIC rounds**"*. A pin can cross the onset+100
+boundary while contributing far fewer than 50 post-chronic rounds. **B's
+Coreflood cell is exactly that case, and it is the cell the rule decides.**
+**BOTH READINGS COMPUTED (method: camp onset = first qualifying span start;
+post-chronic window = onset+100; longest consecutive pinned run INSIDE that
+window):**
+* **Proposed rule:** A-LingLing40 fires · A-Juusto fires · **B-Coreflood fires.**
+* **AS WRITTEN:** A-Juusto **86** post-chronic pinned rounds → **FIRES** ·
+  A-LingLing40 **28** → no · **B-Coreflood 31 → DOES NOT FIRE.**
+* **Games violating the bar as written, per arm: A=1, B=0, C=0** — the only
+  violation in the whole tri-arm is the **CONTROL**.
+**Research declines to score under the unregistered rule**, same refusal as
+the unconditional version two hours earlier. **If the builder judges their
+rule better it is a legitimate amendment — but it is one written after seeing
+which cell it decides, and it must say so on its face.** Verdict remains
+theirs.
+**LEDGER LINE, with its ending corrected:** today's chain (conditional bar →
+research caveat → detector → conditioned verdict → timing sub-condition) is
+the first falsifier in this repo evaluated layer by layer as written —
+**and the LAST layer is where it nearly slipped.** Evaluating a falsifier
+exactly as written is not a state you reach; it is something that must survive
+every layer, **including ones added late by whoever the answer favours.**
