@@ -41734,3 +41734,14 @@ confirmed). **Reported, consumed, `#18` closed.** No live agent at wrap.
 4. **R2 (ship-sit until k≥8), R3 (`INCUMBENT` → `submit_clean --activate`), R6
    (consumption receipts)** — this lane has nothing to add; two are its own
    proposals returning.
+
+## ADDENDUM TO THE s35 RESEARCH WRAP — **CARRY 4 IS CLOSED.** Recorded as an
+addendum rather than an edit, per the convention that a past run is never edited.
+`cb4540a` (side lane, on Magnus's *"apply your fixes"*): `submit_clean --activate`
+now **maintains** `PROGRAMME.md`'s `INCUMBENT` instead of asking.
+**Verified by research, not relayed:** the field reads `bots/_v187saltidle_f`
+against a live `Active bot: v123`, **committed clean**; `submit_clean.py:132-161`
+rewrites `INCUMBENT` + `PREVIOUS_INCUMBENT` and **refuses loudly on
+`INCUMBENT_FROZEN: yes`.**
+⇒ **R3's `GREP STALE` spec now has a correct field to compare against** — it was
+blocked on exactly this and is no longer.
