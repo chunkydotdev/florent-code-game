@@ -4,6 +4,7 @@
      disproved on the engine. A fork of a living document is a slow-motion
      correctness bug: corrections land in CLAUDE.md and never reach the fork.
      REGENERATE:  cp CLAUDE.md AGENTS.md   (then restore this header)
+     Last regenerated: 2026-08-13 (meta lane).
 -->
 
 # What this game is
@@ -148,6 +149,8 @@ read_store(index) -> int / write_store(index, value) -> None — index in 0..Gam
 
 draw_indicator_line(pos_a, pos_b, r, g, b) and draw_indicator_dot(pos, r, g, b) draw into the replay for visual debugging. print() output is captured to the replay; use stderr for console-only output.
 
+**⛔ CORRECTED s28, 2026-08-10 — `print()` IS STRIPPED FROM PLATFORM-DOWNLOADED REPLAYS.** The sentence above is true LOCALLY and **false for what the platform returns**. Measured on the LOKI-14 leg: **30,664 `BotOutput` events carry only `{id, execTimeUs}`; the `stdout` field is empty in 30,664 of 30,664.** Independently spot-checked by the builder with the control that makes an absence meaningful: `bots/_v131loki14/raid.py:700` prints `LOKI14 KIDNAP arm=…` once per throw, `LOKI14_KIDNAP_LOG = True` in the fired build, and the leg decoded **314 kidnaps** — yet the literal strings `LOKI14`, `KIDNAP` and `arm=` occur **0 times in 1.8 MB** of that leg's platform replays. **CONSEQUENCE FOR EVERY FUTURE PREREG: a leg that plans to read its own arm tag, dose counter or state flag out of a LIVE replay is planning on an instrument that does not exist.** LOKI-14's prereg did exactly that and the method was not executable as written; the substitute was the throw destination read off the wire. Read arms from ENGINE-SIDE facts (positions, entity events), never from our own stdout.
+
 # Key types and constants
 
 - Direction: NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST, CENTRE. Compass convention: (0, 0) is the map's northwest corner, x grows east and y grows south, so **NORTH is (0, −1)** (toward row 0); in the isometric viewer north renders up-right on screen — see the on-screen compass. Has .delta() -> (dx, dy), .rotate_left(), .rotate_right(), .opposite(), .is_cardinal() -> bool (True only for N/E/S/W). Builder bots may only **move** in the 4 cardinal directions — move(<diagonal>) raises GameError and can_move(<diagonal>) is False. All 8 directions remain valid for turret facing and building orientation.
@@ -249,6 +252,44 @@ These override attention drift; the full lane protocol is your boot config
   clock along with the number. Us-only samples must say so inline.
 - **Submissions:** only via `tools/submit_clean.py`. A bare `fcode submit`
   ships docs to the platform and is a drift flag.
+- **⛔⛔ SUBMITTING **IS** SHIPPING. `fcode submit` AUTO-ACTIVATES WHAT IT
+  UPLOADS — there is no such thing as "upload now, activate later".** The
+  platform makes a freshly-`ready` submission active with no `activate` call.
+  **This was documented in `docs/fcode-cli.md:262` for days and it is written
+  here because that file is NOT in any lane's boot sequence, while the procedure
+  three sections down said "activate only in the instant before firing" — which
+  only makes sense if this were false. A fact recorded in a reference doc and
+  contradicted by the always-loaded file is a fact nobody has.**
+  **Re-measured s29 2026-08-11:** submitting `_v136loki19` printed
+  `Submitted! Version 108` and the next `fcode status` read `Active bot: v108`,
+  displacing a v104 holder of ~20 hours. Rolled back in ~15 s. **ZERO rated
+  matches leaked — but NOT by the instrument I first used.**
+  **⛔ THE MATCH COUNTER CANNOT ANSWER THIS QUESTION.** 724→724 proves no match
+  **COMPLETED** in those seconds; it says nothing about whether one was
+  **PAIRED** while the prototype held the slot — a ladder match created at T
+  completes minutes later and carries that version into the rated record. **The
+  counter is blind to exactly the failure mode.** The real verification is
+  per-match `teamAVersion` at the PAIRING BOUNDARY, read off
+  `fcode match list --mine --type ladder`: last pairing before the submit
+  `04:32:59Z`, next after the rollback — no match created while v108 was live.
+  *(`ladder_games.tsv` could not answer it either: its newest ladder row was
+  27 minutes behind the wall clock, so an absence of v108 there was not
+  evidence.)*
+  **⭐ AND THE LADDER PAIRS ON A CLOCK, WHICH MAKES THIS PREVENTABLE RATHER THAN
+  SURVIVABLE: 55 of 60 consecutive pairings land at minute ≡ 12 (mod 20) and 49
+  of 60 at second `:59` — i.e. slots at `:12:59`, `:32:59`, `:52:59`.** The
+  submit landed ~04:37, four minutes past a pairing with ~16 minutes of clear
+  air. **Structurally safe, and knowable before typing the command.**
+  ⇒ **Do submit→fire→rollback just AFTER an observed pairing.** Two caveats:
+  the offset **has shifted at least once** inside an 18-hour span, so **re-derive
+  it from recent rows and never hardcode it**; and the sample is us-only. The
+  **offset** is the robust part, the 20-minute **interval** is not (some gaps
+  are 600 s).
+  **`tools/submit_clean.py` NOW RESTORES THE HOLDER ITSELF** and confirms the
+  restore against the `Active bot:` line, never the exit code. **Pass
+  `--activate` to keep the new version live; that flag IS the ship decision.**
+  ⇒ **Never submit a prototype "to have it ready". The submit IS the activation,
+  so it happens inside the firing window or not at all.**
 - **The iteration mill (Magnus, s25/s26 — the method behind the line's best
   progress):** iterate bot planks in SMALL steps and test each on UNRATED
   legs, many iterations per session. Per leg: a one-paragraph pre-registration
@@ -379,7 +420,7 @@ Four consequences, each of which closes a road that was open before it:
    **`fcode match unrated <team_id>`**: 5 games, a real team's real bot, no
    rating at stake. **Constraint, verified on the CLI:** it plays our **ACTIVE
    submission** — there is no flag for a local tree — so a prototype leg means
-   activating the prototype and paying ~6 rated ladder matches per hour of
+   activating the prototype and paying ~3 rated ladder matches (⛔ corrected 2026-08-13: pairing cadence halved to 20-min on 08-10; this claimed ~6 under the old cadence) per hour of
    window. Bounded, recoverable, and the price of the only honest fixture.
 4. **A SURPRISE IS THE POINT, NOT AN ANOMALY.** An unpredicted result from a
    live-team leg outranks a predicted one from our own arena. Write it down
@@ -397,15 +438,116 @@ exception from `run()` destroys that unit permanently (`0x1ac5c` →
 `Game::destroy_entity`) and **`SystemExit`/`KeyboardInterrupt` are the ONLY
 exemptions — an escaping `GameError` kills the unit; a CPU timeout does not.**
 
+**⭐ THE LADDER SCORES GAME SHARE, NOT MATCH WINS — EXACT, NOT FITTED (s28, 2026-08-10).**
+`delta = 32 x (S - E)` where **S = games won / 5** and E is the standard logistic
+on the 400 scale. **Verified by the builder independently of the research arm:
+max |residual| = 0.000000 across 100 completed ladder matches** (research: 0.0000
+across all 678, and official `eloDelta` agrees with consecutive-rating
+differences 677/677). **K = 32 confirmed exactly.**
+**Consequences, and they are not cosmetic:**
+* **A 3-2 win can LOSE rating** (observed min -4.96) and **a 2-3 loss can GAIN it**
+  (max +2.05). **20 of 678 matches have a delta whose sign opposes the match
+  result.**
+* **MARGIN IS THE CURRENCY, NOT THE WIN.** `PROGRAMME.md` already says
+  `WIN_RATE_IS_VERDICT: no`; this is the arithmetic reason. Any bar, stop-loss or
+  verdict denominated in **match** win rate is a proxy for the thing the ladder
+  actually pays. **Prefer game share.** The 4th game of a 4-1 is worth exactly as
+  much as the 1st.
+* This sits alongside `R1000_IS_DEFEAT` as a fact about what SCORES.
+
+**⭐ RUN `tools/target_value.py` BEFORE WRITING A PRE-REGISTRATION (s28). ONE
+GATE, ONE LINE IN THE PREREG:** `TARGET BAND: <opponents>, gaps <a..b>, win pays
+<x..y>, reachable YES/NO`.
+**The case for it is s28 itself, not a hypothetical.** The crash leg passed
+**every check this repo has** — pre-registered before the fact, 8 ADD-only
+amendments all blind to the data, a placebo reading exactly 0/164, the dose
+delivered 150 times, every control driven to the other verdict, lock cert
+two-clock clean, holder asserted before every challenge, 10-second prototype
+exposure — **and it was aimed at four teams 550–860 points below us.** Run
+retrospectively, the gate says:
+```
+vjg  -841  5-0 pays +0.25 · Troupe -635 +0.81 · S -566 +1.18 · Ship Happens -614 +0.90
+** NO TARGET IS REACHABLE ON THE LADDER **
+** A PERFECT RESULT PAYS UNDER 5 RATING POINTS (1.18) **
+```
+against `0033 +120 (+21.30)`, `The Bisons +41 (+17.89)`, `SmartFridge +14
+(+16.65)` in the reachable band — **14–85x more per win.**
+**THE MACHINERY INSPECTS THE EXPERIMENT AND NEVER ASKS WHETHER THE QUESTION IS
+WORTH ANSWERING.** No amount of rigour inside a leg reaches that. **It is a
+GATE, not a VETO** — a low-value target can still be the right leg (a negative
+that closes a road is worth something); the rule is that you write the number
+down BEFORE the work rather than defend it after.
+
+**TWO CORPUS-SURFACE RULES, because our two surfaces fail in OPPOSITE directions
+and both produced false findings on 2026-08-10:**
+* **`ladder_games.tsv` for any population or denominator question about our
+  RATED record. NEVER `meta_join` for a win-rate denominator** — it covers every
+  archived replay and so **silently pools rated with UNRATED, i.e. with our own
+  panel legs**, and it is separately **missing ~38% of our ladder matches**.
+  Durable form: **unrated pools PROTOTYPES, ladder pools SHIPPED BOTS**, so an
+  unrated-vs-ladder comparison is a prototype-vs-shipped comparison wearing a
+  fixture-vs-fixture costume. That alone explains the 40.5pp gap on The Bisons
+  (21.3% mixed vs **49.0% ladder-only**) with no era story required.
+* **PIN THE OPPONENT'S VERSION AT ANALYSIS TIME.** We pin `ourver`, assert the
+  holder, and verify `teamAVersion` on the platform for every leg — **and
+  nothing pins or even reads THEIRS.** The Bisons shipped v4 forty minutes
+  before our v102's first ladder game: perfectly collinear, so *"our v102 is
+  worse"* and *"their v4 is better"* fit identically. **`ladder_games.tsv.oppver`
+  is NULL for all 100 Bisons games and a null column reads as "no version
+  change" to any cut that trusts it — use `league_matches.tsv` for their
+  timeline.**
+
 **5. UNRATED GAMES ARE FREE. USE THEM AS MUCH AS YOU WANT.**
 Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
 it's a free tool meant to be used."* **This retires throughput caution as a
 reason not to test.** The only constraint is the platform's own:
-**5 test/unrated matches per 10 minutes** (learned by hitting it; **rejected
-attempts appear to count**), shared across `match unrated` AND `match test`.
+**5 test/unrated matches per 20 minutes** (**CORRECTED s28, 2026-08-10 15:0x —
+this said 10 MINUTES and the CLI now says otherwise, verbatim: `Error: Rate
+limit exceeded: max 5 test/unrated matches per 20 minutes`**); **rejected
+attempts appear to count**; shared across `match unrated` AND `match test`.
 Matches complete in ~15 s, so **the rate limit is the ENTIRE cadence
-constraint** — ceiling ~150 games/hour.
+constraint** — **ceiling ~75 games/hour, half what this file claimed.**
+**Evidence it CHANGED rather than always having been 20:** every s27 arm filled
+its five panel cells uniformly (v104 7/7/7/6/6, loki15 7/7/6/6/6, confirm 4/4/4/4/4)
+on a 620 s inter-arm cadence — impossible under a 20-minute window, which would
+have starved the tail of the id list every time.
+**THE FAILURE MODE THIS CREATES, and it is silent:** `fanout.sh`'s `fire()`
+retries a rejected challenge three times at 25 s and then gives up, logging
+`fired 3/5` and moving on. Under a window it cannot outwait, that drop is
+**systematic and always lands on the SAME cells** — the tail of the id list —
+so the panel starves exactly the cells it is supposed to measure. Any runner
+must **wait out the window and retry the same cell**, and **rotate its starting
+cell** so a residual drop cannot bias one opponent. `tools/panel2_cal.sh` does
+both; `fanout.sh` is patched to the 20-minute cadence but still drops on retry
+exhaustion — fix it before that rotation is restarted.
 
+**⛔ CORRECTED s28, 2026-08-10 — THE RATED COST IS NOT ZERO. IT IS MEASURED AT
+−24.67 ELO ACROSS 3 MATCHES.** The claim below was true when written and is
+falsified by today's fanout. Read off the platform's per-match
+`teamAVersion`/`teamBVersion` for every rated ladder match after v104's
+activation at 09:21Z:
+```
+09:42  ourver=v102  vs gsxWins       3/5   elo  +1.30
+12:32  ourver=v102  vs The Bisons    0/5   elo -15.68
+12:52  ourver=v105  vs Besvikomat    1/5   elo -10.29
+                                     4/15 games        NET -24.67
+```
+**Three rated matches played by a NON-INCUMBENT and credited to v104's rating**,
+one of them by **v105 — the arm we measured at −14.7pp, significantly worse.**
+*(The other 44 non-v104 rated matches today are v102 playing BEFORE 09:21, when
+it was the legitimate incumbent. Those are not cost and must not be counted as
+such — the research relay found 2 of the 3 and missed 09:42; the discriminator is
+the activation timestamp, not the version tag alone.)*
+**These sit before the 13:57 peak, so they do NOT explain the later −57
+drawdown** — but they are real, they are rated, and an arm rotation is what
+produced them.
+**⇒ Budget a prototype leg at roughly −8 Elo per leaked match, not at zero.**
+**AND IT PRICES THE POLL-TIME TAG DEFECT:** `elo_history.tsv` tags rows by the
+version ACTIVE AT POLL TIME, so these three are invisible in it. **The ground
+truth is per-match `ourver`, already populated in `ladder_games.tsv` — nothing
+needs building, only reading.**
+
+**THE ORIGINAL CLAIM, KEPT FOR THE RECORD:**
 **AND THE RATED COST IS ZERO, MEASURED.** `fcode match unrated` plays the ACTIVE
 submission, so a prototype leg needs an activation — but ladder pairings land
 ~10 minutes apart and a correctly-run window is ~60 seconds, so **v103 and v104
@@ -413,6 +555,12 @@ each played ZERO rated ladder matches** across their legs (verified: every
 ladder match in the window carries `ourver=102`). **Procedure: serve the
 rate-limit wait with the INCUMBENT live; activate only in the instant before
 firing; roll back on the fifth accepted challenge and VERIFY the holder.**
+**⛔ AND "ACTIVATE" HERE INCLUDES THE SUBMIT — see the submissions bullet above.
+`fcode submit` AUTO-ACTIVATES, so uploading the prototype ahead of time to be
+ready is exactly the mistake this procedure reads as safe. The upload belongs
+INSIDE the 60-second window, not before it.** (s29 walked into this: submitted a
+prototype ~20 min ahead of its window and put it on the rated ladder instantly.
+Cost was zero rated matches only because the submit was being watched.)
 
 **THE CONSEQUENCE, and it is the one that matters: STOP CALLING UNDERPOWERED
 LEGS.** Every null on 2026-08-10 failed its own resolution bar rather than the
@@ -443,39 +591,15 @@ mixes both, the inference half still needs the live test. That is exactly how
 the barrier-form spawn lock failed: an engine fact about friendly bodies welded
 to an untested inference about enemy behaviour.
 
-**THE SIX ROADS BELOW ARE A QUEUE ORDER, PENDING LIVE TESTS — NOT A STATUS.**
-Re-anchored 2026-08-10 after an audit found **not one of the six rested on a leg
-where we deployed the trick against a live team**; under the standard above,
-REOPEN / REPRICE / CLOSED are all still archive verdicts and none of them has
-retired or revived anything on its own authority. Audited
-2026-08-10 (`docs/research/AUDIT-the-six-refuted-roads-2026-08-10.md`): **not one
-of the six rested on a leg where we deployed the trick against a live team** —
-the bases are our own engine probes, archive statistics, and in one case a
-measurement whose result was never reported. The block as first written also
-contradicted itself, listing spawn-tile denial as open two lines above closing
-two of its three forms. **Every entry now says WHAT was refuted (mechanism or
-price) and on what basis:**
-
-| road | status |
-|---|---|
-| **siphon** | **CLOSED** — off-currency by construction. Stays closed. |
-| **partial spawn starvation** | **ALREADY IMPLEMENTED, not a road.** Discovered 2026-08-10 by trying to BUILD it: our incumbent already puts a body on the enemy 12-tile ring in **68.8% of rounds**, arriving ~r22, and both arms of the test already exceed the prescription's ONE body (~2.3 simultaneous). **The open margin is RETENTION, not presence** — `_raid_station` walks the body OFF a corner exactly when that corner becomes pure body-denial. That is LOKI-16. Original entry read: **REOPEN.** What was refuted is *"partial occupancy is a LOCK"* — a rules fact (the core needs exactly one free tile). The hostile treatment was **never dosed**: max ever seen on an *enemy* ring is 6 of 12, four times in 2,710 sides, and the source table is teams walling **themselves** in. Same primary measures **one hostile body on the ring DOUBLES the 25-round core-death hazard, 2.24%→4.77%, CIs disjoint.** |
-| **barrier-form spawn lock** | **NEVER TESTED as a lock.** The s22 probe was FRIENDLY bodies only; three maps produced no enemy contact. Its "they defend for free" inference was overturned in-repo by our own s24 probe (a parked body makes the tile unspawnable for its owner too). |
-| **CPU denial** | **REOPEN on evidence** — the only statement of the refutation in the repo is one clause in a wrap, with no number, denominator, n, or script output; the 201,469 rows sit in an untracked scratch dir. **Separately, CPU-timeout *induction* is HELD ON NORMS, not evidence** — Magnus owes the organisers one question first. Do not merge the two. |
-| **ore poisoning** | **REPRICE.** The mechanism is engine-confirmed with a control; what died was a PRICE (throughput vs redundancy) computed under the retired currency. Clearing a 3 Ti barrier costs them ~30 Ti and 15 builder-turns — a tempo weapon nobody priced as one. A carve-out both primaries preserved was dropped here: *"barrier an ore tile a forward gun already covers"* remains unmeasured. |
-| **heal-idle staffing** | **REOPENED 2026-08-11.** Was *"off-programme under `PLAY_DEFENCE: never`"* — **that field no longer says that** (see the defence clause above). Now admissible IF it clears `DEFENCE_ADMISSION_BAR: kill_round_non_regression`. ⚠ **And grep the incumbent FIRST: we already ship `_heal_core`, `_heal_adjacent`, `heal_seats` and a `SLOT_UNDER` under-attack latch — the adjacent plank died 2026-08-11 to two minutes of grep.** |
-
-**AND A ROAD CAN BE "UNTESTED" ONLY BECAUSE NOBODY READ OUR OWN CODE.** The
-spawn-starvation entry above was audited from the evidence, nominated as an
-untested lever, and turned out to be **something we already do** — found only by
-going to build it. **An audit of the literature is not an audit of the codebase,
-and this queue is a list of things to CHANGE, not things to KNOW.** Before
-pre-registering any plank, grep the incumbent for the behaviour: the cheapest
-possible null is a leg that tests a feature we already shipped.
-
-**A price refutation computed under the retired currency is void even if the
-fixture was clean.** So is any survival/screening refutation resolved on
-`orizon`/`cad` — see the fixture warning in point 3 above.
+**THE SIX-ROADS STATUS TABLE MOVED (2026-08-13, boot-load audit cut 5):**
+per-road status — siphon, spawn starvation, barrier-form lock, CPU denial,
+ore poisoning, heal-idle staffing — is VOLATILE and now lives in
+`docs/research/SIX-ROADS-STATUS-2026-08-13.md`, which carries every hedge
+(per D22: a promoted claim carries its hedges or it carries a pointer). The
+durable rules stay here: roads close only on live-game evidence (point 6);
+grep the incumbent before pre-registering any plank — the cheapest null is a
+leg testing a feature we already ship; and a price refutation computed under
+the retired currency is void even if the fixture was clean.
 
 **Also open, verified, and closed by no document:** harvester round-robin is
 **team-blind** — an enemy conveyor adjacent to your harvester is a full-rank
