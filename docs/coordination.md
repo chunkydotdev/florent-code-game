@@ -41020,3 +41020,69 @@ suspected the counter prereg's ±1.33pp was BORROWED from the `_v169launchlate16
 contrast and might not transfer to the salt contrast. **Unfounded — ±1.33pp is the
 binomial half-width at n=5,408 (1.96 × √(0.25/5408)), i.e. arithmetic, and it
 transfers to any contrast at that n.** The bar `> 51.33%` is correctly specified.
+
+# ============================================================================
+# 2026-08-13T06:0xZ — ⭐⭐ **DOSE VERIFICATION. MAGNUS'S POINT, AND IT PAID OFF
+# THREE TIMES IN FIFTEEN MINUTES — INCLUDING KILLING A VERDICT I WAS ABOUT TO
+# PUBLISH.**
+# ============================================================================
+
+**MAGNUS, 2026-08-13:** *"On local plays we cant see if a play we think we built
+actually happens, but they are verifiable on an unrated leg, so we can use them
+to verify something we built actually happens, and then run the local games to
+see if they make a difference."*
+
+**THE MECHANISM, CORRECTED AGAINST THE ENGINE:** bot `print()` goes into the
+REPLAY, and `tools/overnight.sh:102` runs every local game with
+**`--replay /dev/null`**. So our local batteries are **dose-blind BY OUR OWN
+CONFIGURATION, not by a platform limit.** `stderr` reaches the console locally
+(1,984 probe lines prove it); the replay is where `print()` lands and we delete
+it. On the platform the reverse holds — our stdout is stripped (30,664/30,664)
+but ENGINE-side entity events survive and are decoded into the corpus.
+⇒ **Both surfaces can verify dose; neither does it by default; and the local one
+is FREE. Keep the replay on a SAMPLE of games.**
+
+## ⛔ TWO FALSE ZEROS IN ONE INVESTIGATION, BOTH MINE
+
+1. **First dose check read `0` for ALL FIVE arms including `_v178salt` itself.**
+   Cause: `--replay /dev/null`. The grep could not have returned anything else.
+   **A check that has never produced the other verdict has not been seen to
+   check** — I caught it only because a zero for the parent was not plausible.
+2. **Second check read `0` for `_v187saltidle_f` alone.** Cause: that arm sets
+   **`LOKI_SALT_LOG = False` and `LOKI_SALTIDLE_LOG = False`** — its logging is
+   off by design. With logging flipped ON in a probe copy (the ONLY change):
+   **2,571 S48 funnel events and 196 SALT events over 8 games.** It doses
+   heavily. **My "zero" was an instrument reading its own switch.**
+
+## THE DOSE TABLE — corrected, 3 games/arm vs the holder unless noted
+
+    arm                  cut  bar-cut  bar-blk   ~events/game   local win%
+    _v178salt             49        3        6        19        61.00% (n=5408)
+    _v190saltcutonly      73        0        0        24        61.46% (n=519)
+    _v191saltbaronly       0        0        8       2.7        45.41% (n=436)
+    _v192saltnoblock     231        6        0        79        62.34% (n=462)
+    _v187saltidle_f    (logging off; 196 events / 8 games) 24.5 65.40% (n=974)
+
+## ⭐ WHAT THE DOSE CHANGES — AND IT KILLS A VERDICT I HAD DRAFTED
+
+* **⛔ `SALTBARONLY`'s 45.41% MUST NOT BE READ AS "BARRIERS HURT".** It doses
+  **2.7 events/game against 19-79 for the others** — low BY CONSTRUCTION, since
+  path (1) needs a belt that DIED and disabling the cut removes the thing that
+  kills belts. **It is a low-dose arm, not a mechanism verdict.** I was ~one
+  message from publishing "the barrier adds nothing and alone is harmful."
+* **`SALTNOBLOCK` doses 4x `SALT` (79 vs 19/game)** — removing the pre-emptive
+  barrier frees the raider to CUT far more. Reads 62.34%. **Consistent with
+  "the cut is the weapon and the barrier is a tax on it", but that now rests on
+  the CUTONLY/NOBLOCK pair, not on BARONLY.**
+* **`SALTIDLE` doses comparably to SALT (24.5 vs 19/game) and reads the HIGHEST
+  of every arm on the board (65.40%, n=974).** It was written off last night as
+  "measured non-dosing" and cancelled at 0 rows. **That write-off was wrong.**
+
+## ROUTED, NOT MERELY OBSERVED
+**`tools/overnight.sh` should keep the replay for a SAMPLE of games per shard
+(say the first 5) and emit a dose count column.** Full retention is ~104 KB/game
+= 560 MB per 5,408-game shard, which is why `/dev/null` was chosen; a 5-game
+sample is 520 KB and answers the question. **Until that exists, every arm's dose
+must be measured by hand BEFORE its rate is read** — and the rule is the
+programme's own: a mechanism metric never substitutes for the currency, and a
+currency reading on an undosed arm is not a null, it is a non-experiment.
