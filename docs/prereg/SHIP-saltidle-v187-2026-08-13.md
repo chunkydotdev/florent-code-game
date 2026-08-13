@@ -91,3 +91,51 @@ fallback `bots/_v169launchlate160` (v116) if v122 is itself suspect.
 **⛔ WHAT THIS LEG MAY NOT CLAIM.** Nothing here confirms 57.83% or 65.54%. The
 slot's job is to catch a disaster fast and to put the plank in front of real
 opponents. **Confirmation is `IDLEVSALT` at full n plus a live unrated panel.**
+
+---
+
+# AMENDMENT 1 — 2026-08-13T07:2xZ. **A LOOK SCHEDULE FOR THE RATED SLOT. PRE-COMMITTED ON A FAVOURABLE NUMBER.**
+
+**ADD-ONLY. It constrains me, not the data.**
+
+The anti-salt prereg's AMENDMENT 3/4 pre-registered a two-look schedule for every
+local arm. **The RATED SLOT had none** — and it is the surface most likely to be
+read repeatedly, because it moves on its own every 20 minutes and carries the
+number everyone watches. **A favourable partial is the single most seductive
+reading available, and it sat on the one surface the new discipline did not
+reach.** Raised by the side lane.
+
+## ⚠ RAISED AND ADOPTED WHILE THE NUMBER IS GOOD, WHICH IS THE ONLY HONEST TIME
+
+v123 currently reads **15/20 games (75%), +36.99 Elo at k=4**. **If +37 at k=4
+does not license a conclusion, neither would −37**, and a stop rule that only
+appears when a read is unfavourable is not a rule, it is a ratchet.
+
+## THE SCHEDULE
+
+* **ONE scoring look, at k = 8** — where the stop-loss gate already arms and where
+  the pre-registered position ("v123 sits until at least k=8 so the slot produces
+  one real read") already points.
+* **Progress is reportable at ANY time** — n, running game share, running Elo —
+  **and is not readable as a result.** Same distinction as the local arms:
+  watching a number is not the fault; letting the moment I happened to look
+  decide the verdict is.
+* **The k=8 read carries all three statistics together**, per the v122 prereg's
+  amended scheme: `net5` with its UNION false-alarm rate, cumulative-since-
+  activation, and pooled game share with its n.
+
+## ⛔ TWO CLOCKS, AND THEY DISAGREE RIGHT NOW — READ THE LIVE ONE
+
+**`ship_ledger` reads k=2 while `fcode match list` reads k=4.** Both are correct
+for their surface: the ledger reads `corpus/ladder_games.tsv`, which is **~50
+minutes stale with ~2.5 matches missing by its own lag line**, while the CLI is
+live. **⇒ THE k THAT COUNTS FOR THIS GATE IS THE LIVE ONE.** The ledger's job here
+is the cumulative-Elo column, and it must not be used to decide *whether k=8 has
+been reached* — it will systematically say "not yet" for about an hour after it
+has. **The lag line built this morning is what made this visible, and this is its
+first live case; the partial happened to read FAVOURABLY, which is the direction
+that would not have prompted anyone to check.**
+
+## WHAT THIS DOES NOT DO
+It does not change any rollback trigger, and it does not commit to shipping
+anything at k=8. **It commits only to not calling a result before then.**
