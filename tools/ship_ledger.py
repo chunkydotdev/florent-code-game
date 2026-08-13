@@ -137,6 +137,56 @@ def newest_created_age_min(rows: list[dict], now: datetime | None = None):
     return (now - newest).total_seconds() / 60.0, newest
 
 
+def observed_pairing_interval_min(matches: list[dict]) -> float | None:
+    """MEASURED median gap between consecutive ladder pairings, in minutes.
+
+    ⛔ DERIVED, NEVER HARDCODED. The repo's own standing note says the ~20-minute
+    ladder cadence "has SHIFTED at least once inside an 18-hour span, so re-derive
+    it from recent rows and never hardcode it". Uses the most recent 60 gaps.
+    """
+    stamps = set()
+    for m in matches:
+        c = m.get("created")
+        if not c:
+            continue
+        try:
+            stamps.add(parse_iso(c))
+        except ValueError:
+            continue
+    stamps = sorted(stamps)
+    if len(stamps) < 3:
+        return None
+    gaps = [(b - a).total_seconds() / 60.0 for a, b in zip(stamps, stamps[1:])]
+    gaps = [g for g in gaps[-60:] if g > 0]
+    if not gaps:
+        return None
+    gaps.sort()
+    n = len(gaps)
+    return gaps[n // 2] if n % 2 else (gaps[n // 2 - 1] + gaps[n // 2]) / 2.0
+
+
+def lag_in_matches(age_min: float | None, interval_min: float | None):
+    """(estimated_missing_matches, message).
+
+    ⭐ WHY THIS EXISTS — side lane, 2026-08-13, and it is the sharper half of a
+    staleness flag: **freshness in MINUTES is not load-bearing for a gate
+    denominated in MATCHES.** The ladder tape sawtooths 15.6 -> ~85.6 min BY
+    DESIGN (the keeper's net pull fires every 6th cycle), so the 170-min limit is
+    only crossed if the keeper DIES — it is a keeper-death detector, not a
+    staleness guard, and its silence says nothing about whether this ledger is
+    current. At ~3 matches/hr an 85-minute lag hides ~4 completed matches, and
+    **the gate arms at k >= 8** — so the tool can print "k=6, not armed" while the
+    truth is "k=9, fired an hour ago". For a gate counting to 8 that lag is
+    25-50% of the sample. The age must therefore be reported in the gate's own
+    unit, not only in minutes.
+    """
+    if age_min is None or not interval_min:
+        return None, "lag in matches: UNKNOWN (no observed pairing interval)"
+    missing = age_min / interval_min
+    return missing, (f"lag: ~{missing:.1f} match(es) may be missing "
+                     f"(observed pairing interval {interval_min:.1f} min)")
+
+
 def check_staleness(rows: list[dict], now: datetime | None = None,
                     limit_min: float = STALE_LIMIT_MIN):
     """(ok, age_min, message). ok=False means DO NOT PRINT A VERDICT — the
@@ -433,14 +483,24 @@ def main(argv: list[str]) -> int:
     if args.selftest:
         return selftest()
 
-    if not args.since:
-        print("--since is required (ISO8601Z, e.g. 2026-08-12T19:00:00Z)", file=sys.stderr)
-        return 2
-    try:
-        since_dt = parse_iso(args.since)
-    except ValueError as e:
-        print(f"could not parse --since {args.since!r}: {e}", file=sys.stderr)
-        return 2
+    # ⛔ --since IS NO LONGER REQUIRED, AND THAT IS A GUARD, NOT A CONVENIENCE.
+    # Side lane, 2026-08-13: their first run used an arbitrary `--since 19:00Z`
+    # and read -49.61 over 26 matches -- which trips the -21 trigger comfortably
+    # and would have published as "the trigger would have rolled back v116 last
+    # night". FALSE: that window starts after v116's positive run-up, so it
+    # measures a CHOSEN TAIL, not the holder. Since-activation is -17.50 and does
+    # not trip. **A cumulative trigger's answer depends entirely on where the
+    # counting starts, and nothing stopped a reader picking a window that
+    # flatters or damns.** So: the default is the holder's FIRST OBSERVED MATCH,
+    # and an explicit --since that disagrees with it is WARNED about loudly
+    # rather than silently honoured.
+    since_dt = None
+    if args.since:
+        try:
+            since_dt = parse_iso(args.since)
+        except ValueError as e:
+            print(f"could not parse --since {args.since!r}: {e}", file=sys.stderr)
+            return 2
 
     tsv_path = Path(args.tsv) if args.tsv else LADDER
     rows = load_rows(tsv_path)
@@ -482,6 +542,49 @@ def main(argv: list[str]) -> int:
         holder = raw
 
     matches = build_matches(rows)
+
+    # --- LAG IN THE GATE'S OWN UNIT (matches), not only in minutes -----------
+    interval = observed_pairing_interval_min(matches)
+    _missing, lag_msg = lag_in_matches(age_min, interval)
+    if args.json:
+        print(lag_msg, file=sys.stderr)
+    else:
+        print(lag_msg)
+
+    # --- WINDOW-CHOICE GUARD -------------------------------------------------
+    first_dt = None
+    for m in matches:
+        if str(m.get("ourver")) != holder.lstrip("v"):
+            continue
+        c = m.get("created")
+        if not c:
+            continue
+        try:
+            d = parse_iso(c)
+        except ValueError:
+            continue
+        if first_dt is None or d < first_dt:
+            first_dt = d
+
+    if since_dt is None:
+        if first_dt is None:
+            print(f"BLIND: no matches for holder {holder} in the tape, and no "
+                  f"--since given — cannot choose a window", file=sys.stderr)
+            return 2
+        since_dt = first_dt
+        print(f"--since defaulted to v{holder}'s FIRST OBSERVED MATCH "
+              f"{first_dt.strftime('%Y-%m-%dT%H:%M:%SZ')}",
+              file=sys.stderr if args.json else sys.stdout)
+    elif first_dt is not None:
+        drift = abs((since_dt - first_dt).total_seconds()) / 60.0
+        if drift > (interval or 20.0):
+            _w = sys.stderr if args.json else sys.stdout
+            print(f"⚠ WINDOW WARNING: --since {args.since} is {drift:.0f} min from "
+                  f"v{holder}'s first observed match "
+                  f"{first_dt.strftime('%Y-%m-%dT%H:%M:%SZ')}.", file=_w)
+            print(f"⚠ A cumulative total depends ENTIRELY on where counting starts. "
+                  f"This window measures a CHOSEN TAIL, not the holder's life.", file=_w)
+
     windowed = in_window(matches, since_dt)
     holder_matches = [m for m in windowed if m["ourver"] == holder]
     leaked_matches = [m for m in windowed if m["ourver"] != holder]
@@ -491,13 +594,13 @@ def main(argv: list[str]) -> int:
 
     if args.json:
         print(json.dumps({
-            "holder": holder, "since": args.since,
+            "holder": holder, "since": since_dt.strftime("%Y-%m-%dT%H:%M:%SZ"), "since_was_defaulted": args.since is None,
             "staleness": {"ok": ok, "age_min": age_min, "message": staleness_msg},
             "windowed_matches": len(windowed),
             "ledger": ledger, "leaks": leaks,
         }, default=str, indent=2))
     else:
-        print(format_report(holder, args.since, len(windowed), ledger, leaks))
+        print(format_report(holder, since_dt.strftime("%Y-%m-%dT%H:%M:%SZ"), len(windowed), ledger, leaks))
     return 0
 
 
