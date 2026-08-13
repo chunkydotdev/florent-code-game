@@ -35,8 +35,14 @@ INCUMBENT=${INCUMBENT:-123}     # overridable ONLY for the abort-branch selftest
 PTR=${PTR:-scratchpad/panel_cal1_pointer.txt}
 OUT=${OUT:-scratchpad/panel_cal1_fires.tsv}
 STOP=scratchpad/PANEL_CAL1_STOP
-FIRE_GAP=${FIRE_GAP:-245}       # s between accepted fires (5 per ~20.5 min)
-BACKOFF=${BACKOFF:-120}         # s after a rate-limit rejection, same cell
+# ⛔ WINDOW ARITHMETIC (side lane s36, caught live at window 1): the limit is a
+# ROLLING 20 min and REJECTED ATTEMPTS COUNT (CLAUDE.md). Five fires span only
+# 4*FIRE_GAP, so the next window's first fire must wait until the oldest accept
+# ages out: FIRE_GAP*4 + POST_SLEEP >= 1200s. And BACKOFF must keep the ATTEMPT
+# rate under 1 per 240s, or each rejection re-fills the rolling window and the
+# stall self-sustains (the fanout.sh failure class, rediscovered).
+FIRE_GAP=${FIRE_GAP:-250}       # s between accepted fires
+BACKOFF=${BACKOFF:-305}         # s after a rate-limit rejection, same cell
 WINDOWS=${1:-999}               # run until stopped by default
 
 classify() {  # $1 = fcode output -> ACCEPT | RATELIMIT | ERROR
@@ -69,15 +75,17 @@ for w in $(seq 1 $WINDOWS); do
     echo "$(date -u +%H:%M:%SZ) PANEL-CAL-1: STOP file present, yielding." | tee -a $OUT
     exit 0
   fi
-  live="$(holder)"
-  if [[ "$live" != v${INCUMBENT}* ]]; then
-    printf '%s\tABORT\tholder\texpected v%s saw "%s"\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$INCUMBENT" "$live" >> $OUT
-    echo "$(date -u +%H:%M:%SZ) PANEL-CAL-1 ABORT: holder is '$live', not v$INCUMBENT. Firing nothing."
-    exit 1
-  fi
   n=0
   while (( n < 5 )); do
     [[ -f $STOP ]] && { echo "$(date -u +%H:%M:%SZ) PANEL-CAL-1: STOP mid-window after $n fires." | tee -a $OUT; exit 0; }
+    # Holder verified PER FIRE, not per window (side lane s36: a mid-window
+    # rotation would otherwise get up to 4 fires at the wrong holder).
+    live="$(holder)"
+    if [[ "$live" != v${INCUMBENT}* ]]; then
+      printf '%s\tABORT\tholder\texpected v%s saw "%s"\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$INCUMBENT" "$live" >> $OUT
+      echo "$(date -u +%H:%M:%SZ) PANEL-CAL-1 ABORT: holder is '$live', not v$INCUMBENT. Firing nothing."
+      exit 1
+    fi
     p=$(cat $PTR)
     id=${CELLS[$((p % 6 + 1))]}
     name=${NAMES[$((p % 6 + 1))]}
@@ -91,5 +99,5 @@ for w in $(seq 1 $WINDOWS); do
     esac
   done
   echo "$(date -u +%H:%M:%SZ) PANEL-CAL-1: window $w complete (5 accepted), pointer at $(cat $PTR)."
-  sleep 60   # margin before the next window's first fire
+  sleep 280  # 4*FIRE_GAP + 280 = 1280s > 1200s rolling window (side lane fix)
 done
