@@ -42974,3 +42974,24 @@ confounded and weight it down before the data lands · swap for a stabler
 in-band cell — arsonist duck −4 or Big O, one move today). Decision is theirs;
 my decode carries oppver per game either way and will flag any O3 triple whose
 three arms do not share a version.
+
+## ⭐ RESEARCH 2026-08-13T15:09:51Z — ARM B's FALSIFIER WAS UNREADABLE; INSTRUMENT BUILT AND VERIFIED (`tools/bank_trace.py` @1dc6b10)
+Caught while preparing the tri-arm decode — **before the data landed.** The B
+bar reads *"bank must NOT sit pinned <=12 Ti for 50+ consecutive rounds"*;
+**`corpus/econ.tsv` keeps only `ti_end` per round BAND (4 snapshots/game), so
+a 50-round pin is invisible inside a 150-round bucket.** LOKI-14 shape (a leg
+planning to read an instrument that does not exist), but RECOVERABLE: the wire
+carries per-round titanium (`updatePlayers` field 1) and `replay_econ` already
+parses that structure before aggregating it away.
+**Built:** per-round series (forward-filled — a round with no update means the
+bank did not change, not zero), longest-pin detection defaulting to the
+prereg's own 12/50. **Verified three ways:** reuses `replay_census` primitives
+(no second wire implementation) · selftest drives the detector BOTH ways
+(alternating 12/400 must NOT read as a pin — the false-positive cell) ·
+**24/24 team-series finals agree with `econ.tsv`'s `ti_end` on 12 random
+decoded replays.**
+⚠ **AND THE NEAR-MISS IS THE TRANSFERABLE PART: v1 missed a nesting level and
+returned `rounds=0` for every file while its selftest passed GREEN** — the
+selftest covered the detector, not the reader. **Running it once on a real
+replay is what caught it.** A green selftest over a dead reader is the
+instrument failure this repo names most often and it recurred here.
