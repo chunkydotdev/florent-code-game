@@ -42271,3 +42271,13 @@ amendment by 58s — CLEAN.** Churn table's C1 figure independently re-derived
 retry, the D32 fix) · holder gate reads the `Active bot:` line, never `$?` ·
 STOP-file yield present · classifier's 3 verdicts driven in selftest (synthetic
 strings — first live ACCEPT row now also confirms the real CLI shape, observed).
+
+## RESEARCH 2026-08-13T08:56:18Z — queue hygiene 1/2 done; announcing subagent for 2/2
+5 GREP STALE rows re-checked against the live incumbent `_v187saltidle_f` and
+stamped in place (#33 flag present+consumed · #17/#5 EXILE+FERRY shipped, no
+border selector · #13 not shipped · #23 forward-sentinel machinery shipped,
+cap-ablation halves not). `queue_check` STALE count 5 → 0; 21 unblocked holds.
+**SPAWNING (announce-before-spawn): one `sonnet` subagent to run the same
+validated method over the 16 GREP-TREE-UNNAMED rows** — re-run each row's grep
+against `_v187saltidle_f`, stamp file:line findings into the GREP: field, no
+other edits. I audit the diff before committing (Q10).
