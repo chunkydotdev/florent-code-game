@@ -43533,3 +43533,84 @@ drift watch's job on it is spot-verification, not propulsion.**
   five cells first; the TZ cell only discriminates on a non-UTC box.
 * **Nothing of mine is running or parked in an agent.** All flags consumed or
   handed over above. Retro committed with its instance in the same action.
+
+# ============================================================================
+# 2026-08-13T16:56:25Z (`date -u`) — **RESEARCH ARM s36 WRAP** (Magnus called it).
+# Arm retro ran FIRST: `docs/research-arm-retro.md`, instrument **v1.9**,
+# **FIRINGS 6**, new **Q11**. 47 research/queue commits this session.
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**R1. ⭐⭐ A BAR IS SCORED AS WRITTEN OR IT IS NOT SCORED — INCLUDING WHEN THE
+REWRITE CUTS AGAINST ITS AUTHOR.** *(behaviour change → promoted here; the
+session's most load-bearing act.)* The builder handed me a timing sub-condition
+to settle arm B's falsifier. It was **not the registered text** — "pin crosses
+onset+100" versus "50+ consecutive POST-CHRONIC rounds" — and the two disagree
+on exactly the cell it decides. I computed both and declined to score under the
+unregistered one. **As written: A-Juusto 86 rounds FIRES, B-Coreflood 31 does
+not; violations per arm A=1, B=0, C=0 — the only violation in the tri-arm is
+the CONTROL.** ⭐ **And the builder's own observation is the durable form: their
+rule was STRICTER than what they registered, so it ran AGAINST their arm.
+⇒ POST-DATA BAR REWRITING IS A DEFECT INDEPENDENT OF DIRECTION; a rule that
+cuts against its author is exactly as inadmissible as one that flatters.**
+
+**R2. ⭐⭐ FOUR BARS AIMED AT INSTRUMENTS THAT DID NOT EXIST — ALL FOUR CAUGHT BY
+RUNNING, NONE BY READING.** *(behaviour change → promoted; this is the LOKI-14
+class recurring four times in one day across three lanes.)*
+(i) Arm B's falsifier needed per-round bank state; `econ.tsv` keeps four
+band-snapshots → `tools/bank_trace.py`. (ii) That tool's v1 returned
+`rounds=0` for every file **under a green selftest** (missed a nesting level) —
+caught by running it on one real replay. (iii) A triage check returned "no such
+command" for four real subcommands — **zsh does not word-split unquoted
+parameters**, a shell idiom producing a confident false negative. (iv) #46's
+own gating cut hit a constant-zero column. ⇒ **The keeper sentence, and it
+caught (iv): A ZERO THAT COVERS EVERY GROUP INCLUDING THE CONTROL IS NEVER A
+FINDING.**
+
+**R3. ⛔ I READ HALF A DOCUMENTED ENTRY AND REPORTED THE HALF THAT AGREED WITH
+ME.** *(instrument change → retro Q11.)* I blocked #46 citing
+`corpus_sanity.py:90`, whose entry reads *"econ.tsv shots: replay_econ.py:109
+pass **— use build_agg.tsv metric=='shot'**"*. The second clause names the
+working surface. Running the cut there **refuted the row I had stocked**. The
+file was open; the answer was on the same line.
+
+**R4. ⭐ A CONSTANT ENTERING A TOOL MUST NAME ITS SOURCE INLINE.** *(behaviour
+change → promoted + memory updated.)* I hand-interpolated a panel boundary
+("10:47") that no surface carried; it silently discarded 30 legitimate games
+**and manufactured a false two-clock accusation against the builder's runner.**
+**Fourth failure of the timestamps rule (s17/s25/s26/s36) and a NEW damage
+profile: previous instances mislabelled narratives; this one corrupted a
+filter.**
+
+**R5. ⭐ PANELS AND LEGS SHARE OPPONENTS — SO A PANEL MUST FILTER ON *OUR*
+VERSION.** *(instrument change → `panel_read` holder filter + leg-id
+exclusion.)* CAL-3's "40 games" were **100% the builder's tri-arm** (v126/v127)
+at overlapping opponents. Caught by two of my own instruments disagreeing (one
+accept in the fire log against 40 counted games), not by review.
+
+**R6. ⛔ A MONITOR THAT REPORTS FRESHNESS CAN STILL BE READ WRONG.**
+`panel_read` PRINTED corpus age; I read its game COUNT as complete and closed
+CAL-2 at 95 games when it had 280 — declaring its licensed n=150 look
+unreachable. ⇒ **AGE OF THE NEWEST ROW TELLS YOU NOTHING ABOUT WHAT IS
+MISSING.** The look was then taken correctly on the first 150 games in
+completion order (**a look is defined by n, not by wall clock**) and disclosed
+as late.
+
+**R7. ⭐ PIN TREATMENT LEGS; NEVER PIN CALIBRATION PANELS.** *(behaviour change
+→ `SPEC-opponent-pinning-2026-08-13.md` + this note.)* `--match` pins the
+opponent's build. **Matched-pair legs cannot absorb opponent variation → pin
+always; calibration panels exist to measure RELEVANCE → never pin. Churn is
+noise in a leg and signal in a panel.** Verified live: LingLing40 shipped
+**v33→v41 in one day** and all three tri-arm arms still met **v40**.
+⛔ **And the capability was documented at `docs/fcode-cli.md:330` since
+2026-08-09 and named in ZERO booted files** — second instance of the
+reference-doc-vs-booted-file class → **fixed structurally by
+`tools/cli_capabilities.py` (65 flags, 30 commands; untriaged = alarm), whose
+triage pass then found `fcode maps sync`, the standing fix for the builder's
+own B1 fixture-staleness finding.**
+
+## RELAYED — nothing of mine is still running
+**One subagent all session** (three opponent profiles, `opus`, announced before
+spawning). **Reported, all four load-bearing claims re-derived by me, banked.**
+No live agent at wrap.
