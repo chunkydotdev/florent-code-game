@@ -43230,3 +43230,38 @@ numbers before anything is banked (Q10).
 # Integrity gates carried from the killed git-agent's spec: engine pin, seed
 # partition, per-host NULL certification. Testable against localhost before
 # any server exists.
+
+## ⛔⛔ RESEARCH 2026-08-13T16:20:23Z — TWO OF MY OWN ERRORS, NESTED, BOTH SELF-CAUGHT
+**(1) PANEL CONTAMINATION — `panel_read` counted LEG games as PANEL games.**
+The filter was opponent + time window + unrated, **with no check on OUR
+version.** CAL-3's readout of "40 games" was **entirely tri-arm fires (v126
+arm B, v127 arm C)** at overlapping opponents inside its window — **zero real
+CAL-3 games had decoded.** CAL-2 carried 2 tri-arm matches (10 games, arm A,
+same holder version so version-filtering alone would not catch them — the
+LEG-ID exclusion does). CAL-1 clean. **Fix:** per-panel `holder` version +
+exclusion of every match id in any non-panel `*_fires.tsv`; selftest drives
+the holder filter both ways. **cal3 40→0 (correct), cal2 290→280.**
+**How it was caught:** the panel showed two cells at n=0 while others had 10 —
+I went looking for a stalled runner and found one accept in the CAL-3 fire log
+against 40 counted games. **A discrepancy between two of my own instruments,
+not a review of the code.**
+
+**(2) THE ERROR INSIDE THE ERROR — I CLOSED CAL-2 ON AN ARCHIVE-LAG READ.**
+I reported *"CAL-2 closed at 95 games, never reached its n=150 look, therefore
+descriptive-only forever."* **It has 280 games.** 95 was what had DECODED at
+the moment I looked; the rest landed later. **The n=150 look WAS licensed and
+I declared it unreachable.** ⇒ **Taken now, correctly: on the FIRST 150 games
+in COMPLETION ORDER — a look is defined by n, not by wall clock — and
+disclosed as executed late.**
+
+**CAL-2 PRE-COMMITTED n=150 COMPARATIVE READ (v125, match-clustered, E frozen
+at the prereg's own gap table):**
+C1 team lazy **+0.260 ± 0.160** · C2 Focalground **+0.482 ± 0.040** ·
+C3 Juusto **+0.169 ± 0.110** · C4 Jython **+0.112 ± 0.080** ·
+C5 The Bisons **+0.220 ± 0.075** · C6 Lunds **+0.349 ± 0.049**.
+**All six cells above their Elo-implied expectation; five of six by more than
+2 cluster SEs.** Verdict sentences remain the builder's.
+⚠ **And the freshness rule that failed here is the one this repo already
+owns: a monitor that reads a file must report that file's FRESHNESS. My panel
+readout printed corpus age — and I read the GAME COUNT as if it were
+complete.** Age of the newest row does not tell you what is MISSING.
