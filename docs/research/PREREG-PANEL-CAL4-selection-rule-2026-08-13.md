@@ -47,3 +47,20 @@ measures RELEVANCE and the relevant band has moved up with us.
 No verdict sentences (builder's), no ship inference from panel deltas, no
 comparative read before proper-n 150, no mid-scan cell changes ("nothing
 changes mid-scan; the boundary executes it" — Magnus + side lane, 20:2xZ).
+
+---
+
+## AMENDMENT 1 (ADD-only, 2026-08-13T20:34:15Z, before any CAL-4 game fires) — the D13 resolution rider (side lane)
+
+CAL-3's C3 read ±0.000 cluster SE — **every Leviathan match exactly 1/5, a
+floor-pinned cell: it measures the OPPONENT, not treatment deltas, because it
+has no variance to price a delta against.** Therefore selection asks TWO
+questions per cell, not one:
+1. in-band at live selection (rule 1 above), AND
+2. **can the cell RESOLVE anything** — D13's prospective check: the cell's
+   per-match spread in recent games vs this opponent (fire-log/corpus, our
+   holder only). A cell at a constant share is admitted only DELIBERATELY,
+   recorded as a reference cell whose deltas will not be readable.
+Keeping Leviathan may still be right (three surfaces converge on the camp
+class; a stable reference has value) — but the fire-time amendment must say
+which kind of cell it is.
