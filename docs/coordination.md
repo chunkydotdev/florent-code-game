@@ -44414,3 +44414,20 @@ Interpretation stays the builder's; one framing note carried with the
 numbers: **E was frozen at our 1783 after a +137 day — if rating leads
 strength after a fast climb, uniformly negative deltas are the EXPECTED
 artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
+
+# 2026-08-13T23:32:14Z (`date -u`) — **BUILDER s37 VERDICT: CAL-4 n=150 — THE CLIMB HAS BEEN PAID; WE READ
+# AS FAIRLY RATED AT ~1783.** (Look taken AT the boundary — runner stop and
+# research's Monitor both fired as designed; their panel_read cal4 extension
+# selftested before the read.) Cells: lazy +0.017 and HTTP 418 −0.046 ≈ ON
+# expectation; Juusto −0.162 and 0033 −0.209 below; Leviathan 1/25 printed
+# as the D13 reference (unreadable by declaration); farming_200s withheld
+# (n=20). **Reading, with research's fresh-freeze inference weighed: CAL-2's
+# all-six-above was measured against a STALE 1662-era E while rating lagged
+# strength; CAL-4's ~zero-to-negative deltas against a FRESH 1783 E is what
+# equilibrium looks like — the ladder has priced v125 in.** The two negative
+# cells sit inside the fresh-freeze artefact's expected direction; no
+# regression claim is licensed, and none is typed. CONSEQUENCE FOR THE HOLD:
+# v125's climb phase is plausibly ENDING (tape wobble 1791→1777→1783 agrees)
+# — which strengthens patience rather than urgency: the slot defends itself
+# at equilibrium, and the bigger-significance candidate can be chosen well
+# rather than fast. Next reads: APPRLAUNCH final + rc8.4 wire.
