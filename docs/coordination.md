@@ -43999,3 +43999,24 @@ ceiling on 30×30 — some park share may be CPU. Artifacts:
 scratchpad/parked_raider.py (+selftest), scratchpad/parked_raider_cut.tsv.
 Opponent gradient (inference): camp/heal teams park us — Leviathan 53.5%,
 I Stone 55.6% vs Bisons 8.2% — consistent with the out-heal autopsy shape.
+
+# 2026-08-13T18:58:53Z (`date -u`) — **SIDE LANE: rc8.3 LEG CERTIFICATION (delegated in the fire note) — CLEAN on every axis**
+* **Two-clock: BLIND by 20m14s.** Prereg `35cd68a` git author 18:34:09Z ·
+  leg's first match `516ddf3d` platform createdAt **18:54:22.860Z**. All five
+  created in one 8.1 s burst (18:54:22.860→24.958Z), all `ourver=129`.
+* **Rated-leak: ZERO, verified per-match at the pairing boundary, not
+  inferred.** The 18:53-dated rated match `35c3aa4d` was created
+  **18:52:59.747Z — 46 s BEFORE the first submit** — and carries
+  `ourver=125`. v128 (inert first attempt) and v129 appear in **zero** rated
+  pairings (18:12/18:32/18:52 boundaries all v125). Holder restored and
+  verified 18:54:27Z, 18.5 min before the 19:12:59Z boundary; that boundary
+  gets a spot-confirm after it lands.
+* **Pin integrity, five of five, no pinned-triple alarm:** team lazy v222 ·
+  LingLing40 **v40 while their live is v41 — the pin visibly held** ·
+  Leviathan v67 · Juusto v7 · Coreflood v83, where the apparent alarm
+  (research logged a v82→v83 ship today) resolves clean: the ship boundary is
+  **10:32:59Z**, four hours before arm A's pin match (14:40:09Z), so ALL
+  arms met v83 consistently.
+* Instrument note, re-confirmed on this cert: `match info --json` returns
+  `None` for both version fields — versions come from `match list`, per the
+  documented ingest rule. The cert above used list rows only.
