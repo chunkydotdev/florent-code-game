@@ -78,3 +78,38 @@ exactly: one plank withholds bank in the siege phase, the partner exists to
 spend it there; both partners negative alone, FWDFLOOR8 dose-unknown.
 (Mention: IDLECULL×TWORAID — opposed on bodies; IDLECULL's negative is
 intrinsic, a rebuild treadmill, not complement-shaped.)
+
+---
+
+## AXIS 2 (same agent, Magnus's follow-up): old-null × SHIPPED-plank
+
+**S1. SCREEN × the SHIPPED idle-gate** — correction to C6: LOKI_SALTIDLE_ON
+already lives in the incumbent (doctrine.py:1575); the pair needs a 123-line
+port of SCREEN only, no new machinery. Warning carried: the gate opens 64.6%
+of rounds, 92% of its first product was pecking.
+**S2. ⭐ x3r0's r0 AMMO PRE-BUY × the salt kill-share chassis** — 5 lines
+(_x3r0_v115/main.py:206-211, `rnd==0: convert_ammo` to 17), VERIFIED absent
+from the incumbent (v116 reverted it; everything since descends from v116).
+LATE160AMMO 53.31/ZEROAMMO 52.90/AMMO115 51.16 all n=5408 — the record's own
+amplification example — and the pre-buy has NEVER been screened alone on any
+chassis; the two shipgate arms that buried it bundled launcher deletions.
+Product (first sentinel volley funded at r13) is worth strictly more on a
+kill-share chassis. Cost 17 Ti of 500, action-free, zero bodies/tiles.
+**S3. SENTSAFE × shipped GUNAXIS term** — completes a half-built scorer
+(theirs: gunner-only for stations; SENTSAFE's dose was 14/14 sentinel-only);
+free corpus cut first (gunner- vs sentinel-covered forward deaths, 0.60/game
+baseline, ≥0.15 movement bar). Ceiling honest: builder vision r²=20 vs
+sentinel r²=32.
+**S4. L4REPAIR × SALT** — the fixture CHANGED: on the incumbent, self-play
+salts both belts by construction, so L4REPAIR's v169-era null was measured
+where no belts died. Free 9-game belt-death cut decides exposure first. ⛔
+Carries the #44 CPU blocker (local CPU instrument confirmed dead: 0 on all
+6,515 calls).
+**Rejections:** RA HEALERFIRST×SALT (same enemy-builder denial resource —
+and it BACK-FLAGS C2/C3: HEALERFIRST's 50.80 is a pre-salt UPPER BOUND; its
+target-density column must be re-measured on the salt chassis) · RB
+idle-round consumers (gate already monetises the round; IDLECULL worse, not
+revivable) · RC GUNBORDER (enabler is an unguarded OPPONENT — a live-window
+question, not a combo) · RD LAUNCHRES (already harvested into _v207's
+conditional). FWDFLOOR8's 45.88 explained: floor 8 undercuts the shipped
+12 Ti salt floors.
