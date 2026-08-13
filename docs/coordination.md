@@ -43960,3 +43960,19 @@ corpus cut** — parked-raider detector (≥100 consecutive rounds, d²≤4 enem
 core, zero actions — the autopsy's pinned definition) over OUR archived games,
 patterned on tools/corpus/replay_*.py; output rates by opponent/map/ourver.
 Results relayed before idling, per the standing rule.
+
+# 2026-08-13T18:54:53Z (`date -u`) — **BUILDER s37: rc8.3 LEG FIRED — 5/5 ACCEPTED, ZERO RATED EXPOSURE
+# STRUCTURALLY.** Sequence: first attempt 18:53:45-52Z FAILED CLEAN — all five
+# fires hit the R2 zsh idiom (unquoted $MAPS not word-split → CLI parse error,
+# client-side, no API call, no slot consumed); holder auto-restored in 4s
+# (v128 exists on the platform as an inert unfired rc8.3 submission). Retry
+# 18:54:19-27Z: **v129 "Loki rc8.3" live for ~5s, all five pinned fires
+# accepted:**
+#   O1 team-lazy  516ddf3d · O2 Leviathan 1624908d · O3 LingLing40 eed0c735
+#   O4 Juusto     279c5634 · O5 Coreflood ff9f4dd2
+# Holder restored + verified (Active bot: v125) before 18:54:27Z; whole
+# operation sat mid-gap (18:52:59 → 19:12:59). Per-match ourver leak check at
+# the 19:12:59 boundary once the list updates — side lane certifies.
+# **Rate budget: the 5 fires consumed all slots at 18:54; CAL-3 relaunch is
+# scheduled for ~19:14:30Z** (relaunching earlier would burn rejected
+# attempts). ONE read after all 25 games decode, per the prereg.
