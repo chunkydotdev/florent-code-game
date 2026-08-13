@@ -132,3 +132,26 @@ Amendment 2's 2a. Live-leg wire filter, per the side lane's scope caveat:
 **builder-attacks-ON-CORE (target type CORE), not all builderAttack — the
 conveyor-melee carve-out means the incumbent's melee is only zero on the
 correctly-scoped event class.**
+
+---
+
+## READOUT (iteration 2) — WIDENED ARM REFUTED ON ITS OWN KILL-ROUND CLAUSE
+
+Fire clause: **MET, 12/12 games, 22-462 pecks/game.** Kill-round clause:
+**FAILED — drops in only 4/12 matched cells, median diff +44.5 rounds, worst
++171.** Mechanism of the harm, consistent with research's rider 1 stated in
+this prereg before any game: pecks buy 1.0 dmg/Ti while the kill runs
+through the ammo pipeline at higher efficiency — hundreds of idle-pecks per
+game divert 200-900 Ti from conversion, and the kill slows. **The widened
+target set converts parked waste into a WORSE spend. `_v210idlepeck2` goes
+no further** (its screen was never queued).
+
+**#48 state after tonight's mill:** the NARROW arm (`_v208idlepeck`,
+core-only peck) remains the live-relevant rung — real parks are
+core-adjacent (autopsy d²1-2) even though the local camper cannot reproduce
+that geometry (its own healers hold the seats; local fire 1/12 with the one
+firing game at −28 rounds paired). Its harm screen runs (n=86→5400). The
+RESOLVING read stays the pinned camp-class live leg with the wire filter
+(attacks-ON-CORE, by-construction attribution). QUIET0's doctrine screen
+runs beside it. Seat-release (research's orthogonal rung) is the next build,
+not raced tonight.
