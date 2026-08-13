@@ -1,60 +1,54 @@
-# LIVE: **v123 = `bots/_v187saltidle_f`** = **"Loki v7"** — shipped 06:06:27Z (s35).
+# LIVE: **v125 = `bots/_v197mapcode`** = **"Loki v8"** — shipped 10:16Z (s36, Magnus's call).
 # ⛔ **VERIFY WITH `fcode status | grep 'Active bot:'` BEFORE ACTING ON THIS LINE.**
-# **THREE HOLDERS ON 2026-08-13: v116 → v122 (04:45:54Z) → v123 (06:06:27Z).**
-# At wrap (~07:5xZ): rating **1641**, **5 matches, 19/25 games (0.760), +43.45 Elo**,
-# **ZERO leaked rated matches** across both ships (per-match `ourver`, not the poll tag).
+# At wrap 16:4xZ: **rating 1752 (Emerald), k=18, net5 +50, ZERO drawdown since
+# activation (1662→1752, first zero-drawdown break-in on record).** k=8 look
+# TAKEN (HOLD, certified) and SPENT — no rated reads without a new schedule.
+# ROLLBACK: `bots/_v187saltidle_f` (v123); deeper `bots/_v178salt` (v122).
+# Slot rule armed+held; fa_union prints on the ship_watch line.
 
-## ===== ⛔⛔ FIRST THING: THE MAP POOL ROTATED TODAY AND IT INVALIDATES HALF OUR EVIDENCE =====
-##   The organisers moved to a **15-map pool**. **FOUR of our eight battery maps —
-##   atoll, heart, hive, meander — ARE RETIRED.** Eleven of the fifteen had **zero
-##   games in any battery**. `tools/overnight.sh` is **re-pointed at the live pool**;
-##   targets must now be multiples of **30** (15 maps x 2 seats), not 16.
-##   ⚠ **THE EIGHT ARMS RUNNING AT WRAP KEEP THE OLD SET** (the array is assigned once
-##   at startup, so they stay internally consistent). **Their verdicts need a map
-##   caveat: half their maps no longer appear.**
-##   ⭐ **NEW SIZE CLASS: five 30x30 maps (area 900) against a previous maximum of 625.**
+## ===== ⛔ FIRST: WHAT DIED WITH s36 — RE-ARM BEFORE TRUSTING THE SCHEDULE =====
+##  1. **THE INTERIM/FINAL LOOK WATCHER (session Monitor) IS DEAD.** Five arms
+##     finish tonight UNWATCHED: UNDERECO (~70%→5400), DIGOUT (~73%), TWORAID
+##     (~64%), STANDOFF (~43%), COMBO (~8%). **Final look = O'Brien-Fleming
+##     final band 48.66–51.34 at n=5400** (all past their interims, all inside
+##     when last checked except none outside). Re-arm: watch corefill_status
+##     for DONE, then type the final via overnight_read (class lines included).
+##     Durable fix queued as D2: auto-stop inside corefill.
+##  2. **THE CAL-3 PANEL RUNNER IS DEAD** (it was a session background task).
+##     Re-launch: \`INCUMBENT=125 OUT=scratchpad/panel_cal3_fires.tsv
+##     PTR=scratchpad/panel_cal3_pointer.txt zsh tools/panel_cal1.sh\` —
+##     pointer/fires persist, cells are CAL-3 (fire order #3 @63d45eb).
+##  3. **THE VPS PREP AGENT DIED MID-BUILD** (tools/vps/ worker+orchestrator;
+##     spec in the s36 tail note ~15:0xZ + the killed git-agent design).
+##     Respawn from the registered brief when wanted; nothing committed.
+## SURVIVES: keeper (pid 50733) · elo/match/opp/replay watchers · cpu_watch
+## loop (pid 18613, 30-min) · dash server :8787 · corefill filler + 5 shards.
 
-## ===== ⛔ WE CANNOT KILL ON THE 30x30 MAPS — MEASURED, THREE DOCTRINES =====
-##   vs `bots/starter` (a WEAK bot) on the five 900s: **Loki v123 1 kill of 5 · Eir v94
-##   1 of 5 and LOSES two · Thor v116 1 of 5.** Three designs ~50 versions apart, same wall.
-##   **MECHANISM, banked over 18 games:** maps <=625 → **94 Ti banked, 27.2 buildings,
-##   8/8 kills**; maps at 900 → **4,805 banked, 21.6 buildings, 3/10 kills**, one cell
-##   finishing on **0 titanium mined in 1,000 rounds**. **We are not too slow. We are
-##   rich and idle.** `doctrine.py` references map size **ZERO times**; every cap is an
-##   absolute integer (`MAX_BUILDERS 5`, `LOKI_MAX_BUILDERS 11`, `LOKI_FWD_GUN_CAP 3`,
-##   `ECO_CAP 18`) and `eco.py:372` gates harvester sync on `d^2<=64` — **58% of
-##   fjordgate, 6.4% of midgard, the same 58 tiles on every map.**
-##   ⇒ **THE FIX IS NOT STARTED, DELIBERATELY:** a map-area scale factor behind a flag
-##   (`self.mw`/`self.mh` are already set in every unit init and unused), flag-off
-##   verified behaviour-identical, tested on the NEW pool.
-
-## ===== ⭐ PROGRAMME CHANGE, MAGNUS 2026-08-13 =====
-##   **`R1000_IS_DEFEAT: conditional_on_map_area` + `R1000_DEFEAT_AREA_MAX: 676`.**
-##   At or below 676 a r1000 finish is still a DEFEAT; above it (the five 30x30s) it is
-##   an **admissible win**. ⚠ **Does NOT revive the tiebreak on the 10 maps <=676:**
-##   controlled for rating gap we win **49.9%** of r1000 games vs **52.5%** of short ones.
+## ===== THE DAY IN ONE PARAGRAPH (details in the s36 coordination blocks) =====
+## Map rotation crisis → root cause MAP_CODES (builders livelocked on all 10
+## new maps) → v125 pure-data fix shipped, GRAND class now our strongest
+## (65.4% rated, was 25%) → R1000_IS_DEFEAT reverted UNCONDITIONAL (Magnus:
+## offensive team) → two opponent classes profiled to the bone (5 books) →
+## tri-arm live panel (Magnus's design, --match version-pinned): TWORAID dose
+## MET (#42 closed on travel seriality), UNDERECO falsifier NOT FIRED with the
+## CONTROL demonstrating the income-lock defect (86 post-chronic rounds) →
+## CAL-2 n=150: all six cells above then-rating expectation → COMBO (v9
+## candidate: UNDERECO+TWORAID+DIGOUT) filling.
 
 ## ===== THE QUEUE, IN PRIORITY ORDER =====
-##   1. **MAP-AREA SCALING** — the 30x30 fix above. Highest value on the board.
-##   2. **BOOT CHECK: pool vs battery set.** `fcode maps list` is one call and **no boot
-##      sequence has ever made it**; that is why today happened.
-##   3. **`ship_ledger.py` has an UNBACKED CLAIM** — `tools/claim_check.py` fires on it.
-##      Commit the record or drop the claim.
-##   4. **Read the local arms at their PRE-REGISTERED looks only** — interim n=2,704
-##      (stop only outside **47.31-52.69%**), final n=5,408 (band **48.66-51.34%**).
-##      O'Brien-Fleming; the naive two-look scheme measured alpha **0.0831**.
-##   5. **The rated slot has ONE look, at k=8**, pre-committed while the number was good.
-##   6. Counter arms (`SALTCLEAR`/`SALTROUTE`) test the trunk fix on a base that is no
-##      longer live; the bug they fix is **NOT salt-specific** (the non-salting control
-##      triggered it MORE often).
-
-## ===== ROLLBACK =====
-##   `bots/_v178salt` (v122). Deeper fallback `bots/_v169launchlate160` (v116).
-##   Bars in `docs/prereg/SHIP-saltidle-v187-2026-08-13.md`.
-
-# LIVE: **v116 = `bots/_v169launchlate160`** — Magnus rolled back x3r0's v120 at ~19:40Z.
-# ⛔ **VERIFY WITH `fcode status | grep 'Active bot:'` BEFORE ACTING ON THIS LINE.**
-# ⛔ **FIVE HOLDERS CHANGED ON 2026-08-12: v114 → v115 → v116 → v120 (x3r0) → v116.**
+##  1. **Type tonight's five finals as they land** (item 1 above), then the
+##     **v9 (COMBO) read**: gated on singles' finals; attribution vs best
+##     ingredient, not just control. Ship recommendation to Magnus fully
+##     priced — no urgency while v125 climbs at +50/5.
+##  2. **#45 KILL THE BUILDER, NOT THE LADDER** — build-first pick (two teams
+##     walk point-blank gunner ladders with 1-2 round refunds; the 40 HP
+##     feeder is never targeted). Composes with #40 + launcher eviction.
+##  3. **Econ rebuild** (research's fireTurret decoder fix @d62753c is in;
+##     historical shots rows stay zero until rebuilt — run when load allows).
+##  4. **VPS worker** (item 3 above) — 48-vCPU server incoming; night-one
+##     slate = NULLHOST cert then the v9 attribution matrix (4×5400).
+##  5. QUEUE.md: 31 unblocked, all grepped against _v197mapcode.
+## ⛔ fcode 2.3.6→2.3.7 upgrade ONLY at a shard boundary (pooling hazard).
 
 ## ===== ARCHIVE =====
 Everything superseded lives in `HANDOVER-archive.md` (boot-load audit cut 1,
