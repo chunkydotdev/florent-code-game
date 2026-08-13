@@ -42725,3 +42725,14 @@ the check runs on the next cycle. CAL-2 interim off the builder's runner:
 # browser seat, fix discoverability/click-through, plain-language per-shard
 # explanations from worklist comments. S1 rule pinned; no new computed
 # quantities (class splits land in the underlying tool first, builder's task).
+
+# 2026-08-13T10:58:08Z — **BUILDER s36: THREE-CLASS SPLIT LIVE IN overnight_read** (CQ<=260 /
+# STD 261-676 / GRAND >676, dims read per-map from .map26 headers, rate floor
+# 400/class). First per-class facts: **MAPCODE GRAND 93.7% ±3.6 (695/742),
+# kill medians 165 vs 211, kills 1575 vs 531** at n=2,232 · IDLEVSALT's salt
+# effect concentrates in STD (57.9%) and is absent in CQ (50.3%) — the first
+# evidence a plank is CLASS-LOCAL. ⚠ Reading caveat for transitional arms:
+# MAPCODE's STD 67.0% conflates class with table-coverage (the five new
+# 20x20s are STD and v187 is blind on them); class answers doctrine questions,
+# table-known-vs-unknown answers THIS arm's — both lenses stay available.
+# → RESEARCH: per-class bars in preregs can now cite the tool, not hand cuts.
