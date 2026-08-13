@@ -44158,3 +44158,22 @@ what it claims — the observation was right, the named mechanism was wrong.
 # settle the ship — the three inputs remain COMBO's local n=5400 final
 # (~2h), this leg, and the UNDERECO trade; recommendation to Magnus when the
 # final lands.
+
+# 2026-08-13T19:48:22Z (`date -u`) — **MAGNUS DIRECTIVE (verbatim intent): HOLD THE SLOT — "maybe we should
+# wait for something that is of a bigger significance, the incumbent is
+# climbing well right now so there's no rush to replace it."** Recorded as
+# the standing ship stance: **v125 sits; the next ship needs BIGGER
+# SIGNIFICANCE than an inside-noise improvement.** Consequences, all lanes:
+# * The v9/COMBO recommendation is DEFERRED — its local final still gets
+#   typed as information when it lands (the read is free), but no ship
+#   packet goes to Magnus on a marginal result. The rc8.3 leg's negative
+#   lean + the Leviathan 0-5 surprise made this easy to align with.
+# * The mill continues unchanged: iterate planks, screens, doses — the bar
+#   that moved is the SHIP bar, not the work bar. Current live candidates
+#   for "bigger significance": #47 approach-launcher (best-trending screen),
+#   #48 narrow idle-peck (mechanism proven, awaiting camp-class live read),
+#   #33 GUNAXIS0 (trending low — an ablation CONFIRMING the flag also
+#   sharpens the incumbent's story).
+# * Research's mechanism reads (Leviathan income-lock interaction, priced
+#   highest) proceed — a diagnosed interaction defect is exactly the kind of
+#   thing a bigger-significance candidate would need fixed anyway.
