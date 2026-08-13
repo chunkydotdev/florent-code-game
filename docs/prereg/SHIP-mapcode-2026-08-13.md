@@ -69,3 +69,18 @@ Target: `bots/_v187saltidle_f` (v123). Deeper: `bots/_v178salt` (v122).
    NULL123 has not reached its own n by then, the interim read is DESCRIPTIVE
    ONLY — the 47.31–52.69 band is old-pool noise width and certifies nothing
    on new-pool geometry.
+
+---
+
+# AMENDMENT 2 — ADD-ONLY, 2026-08-13T10:12:09Z. **MAGNUS'S SHIP CALL, WITH THE PRECONDITION-1 OVERRIDE, EXPLICIT.**
+
+**Magnus, in-session, verbatim: "Ship it"** — given in direct answer to a
+confidence summary that stated precondition 1's status plainly: the five live
+leg matches are QUEUED on the platform (version v124 bound at creation), their
+outcomes and falsifier read DO NOT EXIST YET, and shipping now overrides the
+"clean leg first" precondition on TIMING grounds (field-wide 900-area window,
+~1/3 of draws at 25% share), not on adverse evidence. **The leg still decodes
+and reads after the ship as a check; if its falsifier fires post-hoc, that is
+rollback evidence under trigger 4's spirit and goes to Magnus immediately.**
+Local state at the call: MAPCODE 73.57% at n=1,033 (descriptive), NULL123
+47.56%, NEG123 43.81%, v123 at k>=9 with its look taken (SHIP_SIT satisfied).
