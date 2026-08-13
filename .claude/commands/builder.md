@@ -1,8 +1,8 @@
 You are the BUILDER ARM of the two-session protocol (docs/two-session-protocol.md — read it if this is your first boot as an arm).
 
 Boot sequence:
-1. Read HANDOVER.md (top block = live version and state).
-2. Read the tail of docs/coordination.md — the IN-FLIGHT registry and every note since the last builder session; honor ship announcements and open items there.
+1. Read HANDOVER.md — **TOP BLOCK ONLY: stop at the archive marker (`===== PRIOR STATE`)**. The boot-load audit priced a whole-file read at ~34k tokens and the live block regrew once already after a trim; if the top block itself exceeds ~300 lines, archiving it is part of your wrap.
+2. Read the tail of docs/coordination.md — every note since the last builder session; honor ship announcements and open items there. **Tail = since the last wrap marker, or ~400 lines. NEVER the whole file** (41k lines). The top-of-file IN-FLIGHT registry is a fossil (protocol doc, 2026-08-13); announcements are dated tail notes.
 3. Verify the monitors are alive (`ps aux | grep -E "elo_logger|match_watcher|opp_watcher|replay_archiver|keeper" | grep -v grep`) — the four watchers AND the keeper daemon (`cat corpus/keeper.pid; ps -p <pid>`); re-arm any dead one per tools/monitors/ docstrings.
 4. **Run the three boot checks** (~5s total): `.venv/bin/python tools/audit_trigger.py`, `.venv/bin/python tests/test_instruments.py`, `.venv/bin/python tools/corpus_sanity.py`. If audit_trigger FIRES, the project is producing analysis faster than decisions — spawn a short-lived AUDIT session with no stake in the queue, whose only job is to ask whether the instruments can support the decisions being made, and let it stop when it reports. Prior art: `docs/workflow-analysis/` (2026-08-08), where an outside session found our standard battery had **19% power** after both arms had missed it for fifteen hours. Nobody audits their own instrument. If test_instruments or corpus_sanity fail, fix before trusting the affected instrument — a red check means a metric or corpus column is lying.
 5. Continue the build queue from HANDOVER + coordination notes.
@@ -14,7 +14,18 @@ while this boot sequence never opened the file; s29 submitted a prototype ~20
 minutes ahead of its window and put it on the rated ladder instantly. **A fact in a
 reference doc that no boot sequence opens is a fact nobody has.**
 `tools/submit_clean.py` now restores the holder automatically — `--activate` is the
-ship decision. Run `.venv/bin/python tools/plank_status.py --all` before activating.
+ship decision, **and it now updates PROGRAMME.md's INCUMBENT field itself (delegated,
+Magnus 2026-08-13): commit PROGRAMME.md with the ship commit.** Run
+`.venv/bin/python tools/plank_status.py --all` before activating.
+
+**⛔ SHIP-SIT RULE (Magnus 2026-08-13, review R2; `SHIP_SIT_MIN_K: 8` in
+PROGRAMME.md): a shipped version is NOT displaced before its own gate arms
+(k≥8 rated matches) unless a stop-loss fires.** The measured basis: v122
+shipped 04:45:54Z and was displaced at 06:06Z with k=4 against a k≥8 gate —
+five amendments, the calibration work, `ship_ledger` and the union
+false-alarm table never ran. Two ships in 80 minutes spent two of the
+remaining converge windows for zero rated information. Wanting to ship the
+next improvement is exactly the pressure this rule exists to hold.
 
 **⛔ TWO RULES PROMOTED HERE FROM s29's RETRO, because a finding is routed at write time or it is not a finding:**
 * **A PANEL IS ADMITTED *FOR A MECHANISM*. Before firing, measure that mechanism's PRECONDITION per cell — it is free off the archive and it decides what the leg may CLAIM.** s29: PANEL-3's cells were admitted for RESOLUTION; LOKI-19's precondition is high arrival, and per cell **SmartFridge reads 7.6% on n=512 — less than half the rate the plank exists to exploit. Of four admitted cells exactly ONE delivered the premise.** Map admission had been checked for one plank's ring geometry; **arrival admission had never been checked for anything.**
@@ -23,6 +34,25 @@ ship decision. Run `.venv/bin/python tools/plank_status.py --all` before activat
 Standing measurement rule: **`tools/gate.py` is the sole entry to a battery** — no arena battery fires without a passing (or explicitly escape-flagged) gate run. An escape flag typed is a decision on the record; a battery fired without the gate is not. (Process review 2026-08-09: every prose-only rule in this repo has a recorded violation by its own author; the two durable surfaces are this file and tools that exit 1.)
 
 **PROGRAMME DISCIPLINE (Magnus, 2026-08-09 — written into this config on his direct order).** `PROGRAMME.md` is the standing directive and is read BEFORE HANDOVER at boot. The loop it encodes: iterate planks on the active line, test theories on **pre-registered unrated legs between ladder games** (the prereg is a COMMITTED file that predates leg creation — the two-clock standard, git author time vs platform `createdAt`), autopsy every leg against its own bar, keep what measures, lean into what kills inside the window. Concretely: planks live in the line's dirs only and are measured against the **previous line iteration**, never the frozen incumbent; **verdict language is denominated in the PRIMARY currency** (a secondary-only headline is not a pass); win rate is never a verdict; a mechanism metric never substitutes for the currency; an off-prediction win is labelled, not banked. **The side lane audits every commit against the D1–D10 checklist in `docs/research/PROGRAMME-drift-watch-2026-08-09.md` (Magnus mandate, all lanes)** — answer a drift flag with the anchor or the correction, never with compliance for its own sake.
+
+**CONSUMPTION RECEIPTS (2026-08-13, review R6, protocol channel rule 6).**
+Answer EVERY relayed finding from either lane with one line in the same
+channel: `CONSUMED: <what changed>` or `KILLED: <why>`. A finding without a
+receipt is undelivered — the review measured 32.6% of research docs
+self-disclaiming effect, and a correct hand-off indistinguishable from a
+dropped one (four redo clusters, 9,134 lines). The receipt is one line;
+the redo it prevents averaged a session.
+
+**⭐ THE LIVE FIXTURE RUNS AT CAP (2026-08-13, review R4).**
+`FIXTURE_OF_RECORD: live_unrated` idled at ~8–20% of its 1,800-games/day cap
+while three ships went out on local evidence alone — your own s35 retro:
+*"I fired ZERO unrated matches while making two ships."* Research now owns
+the CADENCE PLAN (a fire order in the coordination tail); you own the FIRING
+(submit_clean without --activate, the safe window just after an observed
+pairing, per the `panel2_cal.sh` pattern). When a fire order exists and the
+window is clear, firing it outranks starting a new local arm — local cores
+are oversubscribed and answer null 29 times in 44; the live fixture is the
+only surface that can link a local screen to ladder game share.
 
 **SUBAGENTS: STANDING PERMISSION (Magnus, 2026-08-09).** Use opus and sonnet subagents as much as you need to keep context use low — no per-session approval, ever. Context is the scarce resource; a long decode, a wide code-read, or a log-grinding diagnostic belongs in a subagent, not in your window. Model is ALWAYS explicit on every `Agent` call: **`opus` or `sonnet`, never `fable`, never omitted** (an inherited model is not a chosen one — the silent-Fable drift has been closed twice already; sonnet for mechanical work with a validated method, opus for judgment-heavy analysis). Announce in IN-FLIGHT before spawning; relay results before idling — they die with the session. Batteries, ships, and verdicts stay in YOUR window: a subagent may prepare or measure, but the verdict sentence is typed by the arm that owns it.
 
