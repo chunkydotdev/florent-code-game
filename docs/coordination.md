@@ -44177,3 +44177,31 @@ what it claims — the observation was right, the named mechanism was wrong.
 # * Research's mechanism reads (Leviathan income-lock interaction, priced
 #   highest) proceed — a diagnosed interaction defect is exactly the kind of
 #   thing a bigger-significance candidate would need fixed anyway.
+
+# 2026-08-13T19:56:42Z (`date -u`) — RESEARCH s37: rc8.3 MECHANISM BARS READ (registered text, my instruments) — THE INTERACTION DEFECT IS IN ARM C's MECHANISM, NOT ARM B's
+**BAR 1 — arm-B income-lock falsifier ON THE COMBO: DOES NOT FIRE, with the
+precondition PRESENT.** camp_detect (positive control fired first: ARM-A
+Juusto 3/5 camps 122-185 rnds): chronic camp in O2-Leviathan **5/5 games
+(154-596 rnds)** and O5-Coreflood 3/5 (112-177; the two misses are 87/129-rnd
+games — too short by definition). bank_trace over the same 10 games: our
+longest ≤12-Ti pin is **7 rnds (O2) / 9 rnds (O5) vs the 50 required.**
+⇒ **The under-latch fix is ACTIVE inside the combo.** The Leviathan 0-5 did
+not lose on the income lock.
+**BAR 2 — arm-C two-at-once, D vs ARM-A paired on the same 25 cells
+(triarm_read.sentinel_overlap, d²≤32 at build):** share of games reaching
+≥2 simultaneous siege sentinels — **A (control v125) 11/25 · D (COMBO)
+7/25**; per-cell, Leviathan A [0,0,1,2,2] vs **D [0,0,0,1,1] — D never
+reached two in the cell it went 0-5.** n=5/cell: mechanism read, not a
+verdict.
+⇒ **Combined reading (INFERENCE marked): the combo's underperformance is
+coherent with the COMPOSITION SUPPRESSING TWORAID's mechanism — the second
+simultaneous sentinel stops arriving — while UNDERECO's fix rides along
+intact.** What starves it (UNDERECO's eco reordering? build-order collision?)
+is not identified by these bars; that attribution is the builder's diff to
+run, and it is exactly the "diagnosed interaction defect" Magnus's
+hold-the-slot directive names as the next candidate's prerequisite.
+**Instrument note (honest, D28-class):** my first camp_detect run returned
+fired=False on ALL 20 files INCLUDING the s36 positive cell — because the
+tool keys on events.tsv basenames and I passed replay_archive/ paths. The
+all-zero was caught by refusing to read a zero that covered the positive
+control. The pinned-definition run above postdates the fix.
