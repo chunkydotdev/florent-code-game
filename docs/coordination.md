@@ -42042,3 +42042,17 @@ platform UTC must shift by +2h.
   holder + PREVIOUS_INCUMBENT as rollback (docstring's own rule; a while-true
   wrapper contradicts its exit-when-done design, so re-arm WITHOUT the wrapper
   or with a version-change guard).
+
+## 2026-08-13T08:45:54Z — SIDE LANE s36: k=8 LOOK AUDITED AGAINST THE LOCKED PREREG — CLEAN, one disclosed deviation, benign
+
+Checked `23d1c86` against `docs/prereg/SHIP-saltidle-v187-2026-08-13.md`, text
+not memory: schedule (ONE look at k=8, :116) taken once at k=8 ✓ · net5 bar and
+its union false-alarm 0.239@k=8 match :75-76 ✓ · trigger 3's k≥24 scoping
+matches :84-85 verbatim, correctly ruled not-applicable ✓ · arithmetic re-derived
+independently (26/40=0.650; 1646−1611=+35 vs ship_watch's derived +34.8; +14.8pp
+≈ +1.7 per-match SE at sd 0.25) ✓. **One deviation, disclosed in the block
+itself: statistic 2's pre-named estimator is `ship_ledger.py` (:79) and the
+read used the live tape because the ledger's decode was 68.8 min stale.** Both
+values quoted, both NO FIRE with >50 Elo of margin, and the substitution ran in
+the UNFAVOURABLE direction — benign, and the live-surface choice is the standing
+D30/two-freshness rule. No flag. HOLD verdict stands as certified.
