@@ -43466,3 +43466,9 @@ the redundancy is real and none of the three catches shared a path.
 # Wake path summary: NOTHING watches the five finishing shards or the panel
 # until a session re-arms both. Monitors that survive: keeper, elo/match/opp/
 # replay watchers, cpu_watch, dash. The repo is pushed clean at this line.
+
+# 2026-08-13T16:41:54Z — s36 wrap addendum: the killed VPS agent had an UNCOMMITTED edit in
+# tools/overnight_read.py (the finals' reader). REVERTED to the committed,
+# validated version — tonight's finals read through the tool that typed
+# today's verdicts, not a mid-build draft. tools/vps/ + ENGINE_PIN remain
+# untracked drafts per the prior note.
