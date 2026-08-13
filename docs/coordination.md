@@ -43863,3 +43863,15 @@ value: the misread arm name would have cost an iteration aimed backwards.
 # tag- or replay-attributed. Next: finals typing as shards land (DIGOUT
 # first), then the v9/COMBO read, then the pinned live leg for #47 after its
 # screen.
+
+# 2026-08-13T17:58:14Z (`date -u`) — **BUILDER s37 VERDICT: DIGOUT FINAL — NO-INFORMATION at the boundary.**
+# _v202digout vs _v197mapcode, n=5400/5400 COMPLETE, 15 maps: **2628/5400 =
+# 48.67%, exactly at the informative band's lower edge (48.67-51.33; prereg
+# OB-F final band 48.66-51.34 → inside by a hundredth).** Verdict as the tool
+# types it: NO-INFORMATION — back to the pool, NOT demoted. Class lines: CQ
+# 50.3 ±3.7 · STD 48.6 ±1.8 · GRAND 48.1 ±2.3 (no class rescues it). Kill
+# medians TREAT 212 / CTRL 218 with FEWER kills (2379 vs 2537) — the dig-out
+# behaviour trades kills away without buying share. Seat split 51.8/45.6
+# noted. **Consequence for the v9/COMBO read: DIGOUT contributes no positive
+# evidence — the attribution question sharpens to UNDERECO+TWORAID vs best
+# single ingredient.** UNDERECO final ~14m out.
