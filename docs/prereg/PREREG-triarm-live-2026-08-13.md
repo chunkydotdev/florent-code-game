@@ -61,3 +61,27 @@ after an observed pairing → submit_clean --leg (hold-until-sentinel, 300s
 auto-restore) → 5 fires with the pinned map list → sentinel → holder restored
 + verified. Leak check per-match `ourver` at every pairing boundary. ONE read
 after all 15 matches decode.
+
+---
+
+# AMENDMENT 1 — ADD-ONLY (side lane audit, pre-fire for arms B/C). Three fixes.
+
+1. **C's dose bar is the PAIRED CONTRAST, not bare occurrence.** At the
+   control's measured ~1-in-10 base rate, P(≥1 two-at-once game in 25 inert
+   games) ≈ 93% — a bare occurrence confirms nothing (the s28 bar-null rule:
+   the null expectation now stands beside the bar). C's dose reads as: C's
+   two-at-once cell count vs the control's on the SAME 25 opponent×map cells.
+   A bare ≥1 may not be quoted as dose-confirmed.
+2. **Obligation 13 (mechanism-metric ∩ treatment-diff), both arms:**
+   B's metrics (bank level, harvester rebuild activity) are downstream of the
+   under_since/chronic diff at `_v201undereco/main.py` (the ti_floor/reserve
+   block) — intersection nonempty. C's metric (simultaneous forward-sentinel
+   count) is downstream of the seat-4 conversion at `_v203tworaid/main.py`
+   (the _raid_seat condition) — intersection nonempty.
+3. **Obligation 14 (opponent churn):** O1 team lazy shipped 13+ versions in
+   48h. The readout carries a churn table from league_matches per cell;
+   high-churn cells are reportable, not poolable across the arm boundary.
+
+**CPU stamp for B (UNDERECO), closing the rider precedent gap:** NEUTRAL —
+the diff is a per-round flag update + one comparison in the CORE's turn (no
+loops, no scans), nowhere near any per-unit budget path.
