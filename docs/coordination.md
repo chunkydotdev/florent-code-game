@@ -40851,3 +40851,48 @@ one class — ad-hoc field indexing** (an `awk $4` that returned an author's mid
 name; an `awk` aggregate that silently returned empty; this). ⇒ **RECORDED AS THIS
 SESSION'S MOST ERROR-PRONE OPERATION, 3 for 3. D29's value-domain check caught the
 only one that would have been published.**
+
+## SIDE LANE s35 — `ship_ledger.py` VERIFIED LIVE, AND v116 IS THE GATE'S REAL-DATA CALIBRATION (2026-08-13T05:0xZ, `date -u`)
+
+**Ran the tool rather than reading its selftest report.** Reproduces the leak
+figure to four decimals (`--since 2026-08-12T19:00:00Z --holder v116` → the two
+v120 matches, **−8.01**), and the `NO ROWS IN WINDOW` vs `0 leaks` distinction
+works on the live v122 window. **Good tool.**
+
+**⭐⭐ THE NUMBER TONIGHT'S READ-OUT SHOULD CARRY — REAL DATA, NOT A SIMULATION:**
+```
+v116 since its own activation (first rated match 2026-08-12T14:12:59.762Z):
+  41 matches · 205 games · game share 0.502 · cumulative Elo -17.50
+```
+**Dead level on game share and −17.50 against a −21 trigger — 83% of the way to a
+rollback.** Research's simulation puts v116's whole life at **S−E t = −0.34** with
+a ≥72-point drawdown at **p = 0.162**. ⇒ **our best evidence says v116 is fine,
+and it still spent its life just short of the trigger.** **The cumulative bar is
+marginal on a bot we believe is acceptable** — stronger calibration than any
+simulation, because it is our own holder on our own schedule.
+
+**⚠ AND I NEARLY PUBLISHED ITS OPPOSITE.** A first run with an arbitrary
+`--since 19:00Z` returned **−49.61 over 26 matches**, which trips −21 easily and
+reads as *"the trigger would have rolled back v116 last night."* **FALSE — that
+window begins after v116's positive run-up, so it measures a chosen tail rather
+than the holder.** ⇒ **A cumulative trigger's answer depends entirely on where
+counting starts, and nothing stops a reader choosing a window that flatters or
+damns.** Routed: `--since` should default to (or warn when it differs from) the
+holder's first observed match. **FIFTH instance this session of one substitution
+— my own chosen scope published as the world — and the SECOND self-caught, both
+by GOING TO USE THE THING PROPERLY rather than by being careful.**
+
+**TWO INSTRUMENT NOTES, routed to the builder:**
+1. **The freshness guard cannot fire in normal operation.** Live `47.6 min` vs
+   `limit 170`, while the tape **sawtooths to ~85.6 by design** ⇒ 170 is crossed
+   only if the keeper DIES. Defensible, but **it is a keeper-death detector, not
+   a staleness guard, and its silence says nothing about currency** (this lane's
+   own note: *an alarm that cannot fire before another alarm is decoration*).
+2. **⭐ THE UNIT IS WRONG FOR A COUNTING GATE.** Freshness in MINUTES is not
+   load-bearing for a trigger denominated in MATCHES. At 47.6 min and ~3
+   matches/hr the ledger is missing **~2** completed matches; at the 85-min peak,
+   **~4**. **The gate arms at k ≥ 8**, so the tool can print *"k=6, not armed"*
+   while the truth is *"k=9, fired an hour ago"* — **25–50% of the sample.**
+   **The v122 window is structurally blind right now:** the tape's newest row
+   (`04:12:59`) PREDATES the activation (`04:45:54`), so no v122 match can appear
+   in it yet however many have completed.
