@@ -43472,3 +43472,64 @@ the redundancy is real and none of the three catches shared a path.
 # validated version — tonight's finals read through the tool that typed
 # today's verdicts, not a mid-build draft. tools/vps/ + ENGINE_PIN remain
 # untracked drafts per the prior note.
+
+# ============================================================================
+# 2026-08-13T16:55:36Z — **SIDE LANE s36 WRAP** (Magnus called it). Retro ran FIRST:
+# `docs/retro-side-lane-2026-08-13-s36.md`, instrument **v1.6**, **FIRING 6**.
+# Ledger: **DETECTION 21/21 · PRESCRIPTION 19/21 · caused 0 · nearly caused 0 ·
+# prevented 4 major** (wrong-bot leg / runner stall / phantom re-fire /
+# 30-game false exclusion).
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**S1. ⭐⭐ A CERTIFICATION IS A STANDING INSTRUMENT, NOT A MOMENT.** *(behaviour
+change → recorded in the retro as Q4's new mechanism.)* Both of this session's
+biggest external kills — the phantom leg and the 10:47 prereg clock — died
+against certifications I had committed HOURS earlier (the match-info read; the
+two-clock cert). ⇒ **Certify eagerly and precisely: the cert's value compounds
+when a later claim must survive it.** The corollary already banked at 5112dcd:
+when a surface's blindness is discovered, RE-SCOPE your own past certs that
+used it, in the channel where they were published.
+
+**S2. ⭐ THE SURFACING CLAUSE SURVIVED ITS HARDEST TEST AND IS CONFIRMED AS
+WRITTEN.** A falsifier "trip" was surfaced to Magnus on a number that turned
+out inverted (0/14, not 4/14). **Procedure right, number wrong for an hour —
+and that is the correct trade:** a disputed falsifier reading goes up
+regardless of who is right; the alternative (resolve lane-side, surface only
+if it survives) is how a real trip gets buried. *(No change; confirmation
+under fire, recorded because the next occurrence will tempt the shortcut.)*
+
+**S3. FLAG-WITH-FIX + ADD-ONLY AMENDMENT is now the measured norm:** six
+amendment cycles today (CAL-1, SHIP-mapcode, tri-arm ×3, leg prereg), every
+one 0-deletions verified at the diff, every flag consumed same-session with a
+receipt. **The convention needs no further enforcement from this lane — the
+drift watch's job on it is spot-verification, not propulsion.**
+
+## ⛔ OPEN FOR SUCCESSORS, in priority order
+1. **`CLAUDE.md:484` still reads "nothing pins or even reads THEIRS" — FALSE
+   since the `--match` rediscovery** (documented in fcode-cli.md since 08-09;
+   design rule: pin treatment legs, never calibration panels). **Builder-owned
+   file; flagged twice today; not yet corrected.** A session booting on it
+   will re-derive D18 pain the repo has already paid for.
+2. **v9 (COMBO) gate is queued** behind the singles' finals — its SHIP prereg,
+   when written, cites: tri-arm cert @588b2c0, TWORAID dose verdict, UNDERECO's
+   registered-text no-fire, and the NULL125 fixture cert (51.04).
+3. **CAL-3 restarts from 0 proper games** (post-contamination-fix); two-clock
+   cert owed on its first window vs prereg @63d45eb's clock.
+4. **The completes-only rule** (fire-registration on `match info`, list
+   absence ≠ nonexistence) is in research's rules and panel_read; **not yet in
+   any booted file** — candidates: the protocol doc's leg section.
+
+## REBOOT STATE — SIDE LANE (s36, safe to reboot) — read 2026-08-13T16:55:36Z, not asserted
+* **Holder v125 (Loki v8), rating 1752 Emerald, 905 matches** — live
+  `Active bot:` line. Day: 1646 → 1752, one ship, zero rollbacks, zero
+  leaked rated matches across FOUR prototype activations (~10-60 s exposures,
+  all mid-gap, all per-match verified).
+* **Monitors:** keeper + cores_idle + ship_watch loops alive (builder-armed);
+  breakin_watch retired by design (re-arm duty discharged at the v125 ship);
+  cpu_watch new (threshold 9200). **My drift watch DIES WITH THIS SESSION** —
+  successor re-arms `tools/watch/drift_watch.sh` (tracked home), driving its
+  five cells first; the TZ cell only discriminates on a non-UTC box.
+* **Nothing of mine is running or parked in an agent.** All flags consumed or
+  handed over above. Retro committed with its instance in the same action.
