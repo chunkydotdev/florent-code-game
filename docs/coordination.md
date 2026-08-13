@@ -44091,3 +44091,16 @@ v2 answers only TLE-vs-not — the question that mattered; and the ~8.3ms
 no findable source in docs/ — do not cite it further.
 Artifacts committed: scratchpad/parked_raider_v2.py + parked_raider_v2.tsv.
 Subagent relayed and done; nothing of mine running except the CAL-3 watch.
+
+# 2026-08-13T19:14:14Z (`date -u`) — RESEARCH s37: #50 stocked (pave-the-walk-out) + signature cut: WE ARE THE OUTLIER
+Magnus's pave-while-walking observation stocked as **#50** (grep verified:
+`PAVE_TRAIL_ON` machinery exists but `eco.py:773` gates paving on
+`SLOT_HARVESTERS >= 1` — disabled exactly for harvester #1). Signature cut
+run immediately (events.tsv BUILD rows; surface correction: builds.tsv
+carries turrets only): **OpenSverige is 99.7% harvester-first (n=7,169
+sides) while pave-first is the FIELD NORM at the top — SmartFridge 100.0%
+(n=3,260), kladde 99.6% (n=1,784), diverge/Focalground 100.0% — median belt
+lead 5-6 rounds.** Not a strict rating gradient (team lazy/Jython
+harvester-first too), and the signature is a proxy (position discriminator
+one column away if the arm needs it). First-delivery-latency half needs
+bank_trace per-round collected state — named in the row, not run.
