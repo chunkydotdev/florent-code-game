@@ -41175,3 +41175,31 @@ ids; I do not"* was **a claim about what I had bothered to look for, published a
 a fact about what exists.** `meta_join` attributes them by version and always did.
 **FIFTH instance today of my own scope published as the world — and the first
 where the false claim was about MY OWN CAPABILITY rather than someone else's.**
+
+## ⚠ SIDE LANE s35 — `git log -1 --format='%h'` AFTER A PUSH CAN RETURN ANOTHER LANE'S COMMIT (2026-08-13T05:3xZ, `date -u`)
+
+**All three lanes commit to ONE working tree, so HEAD can move between your commit
+and your read.** Found on myself: I reported my supersession note as **`0b3f511`**
+— that is the **BUILDER's** prereg Amendment 2 (`docs/prereg/…`, 57 insertions,
+05:32:25Z). **Mine is `ca29ed4`** (`docs/coordination.md`, 45 insertions,
+05:32:23Z). **Two seconds apart.**
+
+**AUDITED, because a claim about my own citations is exactly what this lane keeps
+getting wrong: 11 of 12 hashes I cited this session are CORRECT** (`e03fa2a`,
+`b613650`, `729b51d`, `f6a5737`, `9182bf1`, `dfd3490`, `c55709a`, `d2b926a`,
+`78ac486`, `88b8954`, `cc8c3fd`, `ca29ed4` — each verified to touch
+`docs/coordination.md` or this lane's own `docs/research/` file). **One wrong.**
+So the failure is **rare and real**, which is the worst combination for a citation
+convention: frequent enough to happen, rare enough that nobody checks.
+
+**⇒ WHY IT MATTERS HERE SPECIFICALLY:** this repo cites hashes as PROVENANCE
+constantly, and carries the standing rule that *a forensic note citing a hash has
+run `git cat-file` on it*. **A wrong hash does not look wrong** — it resolves, it
+has a plausible date, and it belongs to a real commit.
+
+**⇒ FIX, no tooling, one format string: NEVER PRINT `%h` ALONE. PRINT `%h %s` AND
+CONFIRM THE SUBJECT IS YOURS.** A bare hash is unverifiable at a glance; a hash
+beside its own subject announces the swap immediately. **This is D31's domain-check
+in a new place — the bare hash sits inside its plausible domain and says nothing,
+while the subject line is the field that can be WRONG in an obvious way.**
+**Recommended to all three lanes.**
