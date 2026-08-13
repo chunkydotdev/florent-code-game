@@ -43939,3 +43939,24 @@ value: the misread arm name would have cost an iteration aimed backwards.
 # Window: burst of 5 just after the ~18:52:59Z pairing, all rate slots free.
 # Separately: Magnus asked for an autopsy of 4b039a9c (Jython builder
 # lock-in hypothesis) — delegated to an opus subagent, report lands here.
+
+# 2026-08-13T18:47:37Z (`date -u`) — RESEARCH s37: rows #48/#49 stocked (Magnus's two live observations) + subagent announce
+**#48 PARKED-RAIDER TERMINAL IDLE** (autopsy 4b039a9c: arrived raider's whole
+action ladder closes — QUIET_ON kills melee, SALT_CUT_MAX=40 exhausts, bots at
+exactly 40 lifetime attacks then silence — yet it beats SLOT_RAID_LIVE and
+holds the team on a dead foothold; 22/110 recent games have a raider parked
+≥100 rounds at d²≤4 of enemy core). Anchors re-verified in _v197mapcode
+(doctrine.py:1488/:1585/:1188, raid.py:194). Three separable reopening rungs
+listed; terminal-idle seat release is the no-redesign rung.
+**#49 ORE-BARRIER DENIAL DEFENCE-SIDE cut** (Jython barriers our ore on
+icefloe, Magnus-observed): does the denial BIND on end-game harvesters +
+ti_collected, or 3-Ti theatre? Free corpus cut; counter already in flight
+(#47 evicts the planter). **#7 bumped with the demand-side field evidence
+(flag, not re-rank).**
+**Priority note per the Magnus-jump rule: neither ask displaces anything in
+flight — CAL-3 fills, #47 awaits its screen; both new rows are cuts/mill arms.**
+**SUBAGENT ANNOUNCE (IN-FLIGHT): spawning ONE opus agent for #48's full-width
+corpus cut** — parked-raider detector (≥100 consecutive rounds, d²≤4 enemy
+core, zero actions — the autopsy's pinned definition) over OUR archived games,
+patterned on tools/corpus/replay_*.py; output rates by opponent/map/ourver.
+Results relayed before idling, per the standing rule.
