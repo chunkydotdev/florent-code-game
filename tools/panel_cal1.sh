@@ -89,6 +89,16 @@ for w in $(seq 1 $WINDOWS); do
       echo "$(date -u +%H:%M:%SZ) PANEL-CAL-1 ABORT: holder is '$live', not v$INCUMBENT. Firing nothing."
       exit 1
     fi
+    # BOUNDARY STOP (research ask, 2026-08-13 s37): the panel's comparative
+    # look is pre-committed at a fixed n; firing past it buys games no read
+    # may use. 30 accepts x 5 games = 150 = the look boundary. Durable — in
+    # the runner itself, not in any session's watcher (the s36 class).
+    accepts=$(awk -F'\t' '$3=="ACCEPT"' $OUT | wc -l | tr -d ' ')
+    if (( accepts >= 30 )); then
+      echo "$(date -u +%H:%M:%SZ) PANEL BOUNDARY: $accepts accepts >= 30 — look boundary reached, stopping. Rotate per the CAL-(N+1) selection prereg."
+      printf '%s\tBOUNDARY\tstop\t%s accepts\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$accepts" >> $OUT
+      exit 0
+    fi
     p=$(cat $PTR)
     id=${CELLS[$((p % 6 + 1))]}
     name=${NAMES[$((p % 6 + 1))]}
