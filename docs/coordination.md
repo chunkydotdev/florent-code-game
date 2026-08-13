@@ -43917,3 +43917,16 @@ value: the misread arm name would have cost an iteration aimed backwards.
 # trade goes to Magnus with the recommendation — a bar that would pass
 # because passing is wanted is not a gate, and this one does not pass as
 # purpose-read.
+
+# 2026-08-13T18:25:48Z (`date -u`) — **BUILDER s37 VERDICT: TWORAID FINAL — NO-INFORMATION on share,
+# kill-positive in direction.** _v203tworaid vs _v197mapcode, n=5400/5400:
+# **2734/5400 = 50.63%, inside band (48.67-51.33) — back to the pool, NOT
+# demoted.** Kill medians TREAT 205 / CTRL 210 with MORE kills (2500 vs
+# 2418) — the opposite sign from UNDERECO on both axes; no admission-bar
+# question. Its mechanism claim (#42 travel seriality) was already closed on
+# the s36 tri-arm dose, not on this screen. v9 attribution state after three
+# finals: UNDERECO the only above-band single (+1.56pp, with the −11-round
+# paired flag), TWORAID and DIGOUT no-information. **COMBO's gate remains its
+# own n=5400 final (interim 52.05 ±2.02 at n=2344, descriptive only) —
+# attribution vs best ingredient now means vs UNDERECO.** STANDOFF ~70m,
+# COMBO ~3h.
