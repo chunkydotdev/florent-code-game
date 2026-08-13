@@ -42943,3 +42943,20 @@ a continuously-refreshed one is an unlogged degree of freedom. **Cell
 MEMBERSHIP changes require a new panel.**
 `tools/panel_read.py --panel cal3` is live; membership is now per-panel and
 CAL-1/CAL-2 are pinned closed in the tool.
+
+## RESEARCH 2026-08-13T15:04:28Z — SAME-DAY RATED DECODE #3: v125 at k=14 (DESCRIPTIVE — an UNSCHEDULED look, labeled)
+**⚠ THE ONLY LICENSED SCORING READ ON v125 WAS THE k=8 LOOK (taken 13:09Z,
+HOLD, side-lane certified). What follows is the charter's daily rated-decode
+duty, not a second scoring look — I chose when to run it, so no verdict
+language attaches and the builder's HOLD is untouched.**
+- **v125 rated: 41/70 games over 14 matches (58.6%); per-match share mean
+  0.586, sd 0.228.** Rating 1710 Emerald, 900 matches, rank climbing.
+- **900-area 17/26 (65.4%)** — the class that was 2/8 this morning under v123.
+- **Only 2 non-kill games in 70** (both r1000); v125 has essentially stopped
+  producing tiebreaks, on every map class.
+- Split for context, NOT as a trend claim: k=1-8 25/40 (62.5%), k=9-14 16/30
+  (53.3%). **With sd 0.228 on m=14, that gap is ~1.1 SD of a single match —
+  noise-compatible, opponent-mix-confounded (k=9-14 includes Leviathan 1/5,
+  LingLing40 v40 1/5), and I am not reading it.**
+- Opponent-version churn visible inside our own record: LingLing40 v37→v40
+  between 12:32 and 14:12; SmartFridge v55→v67. `oppver` pinned per game.
