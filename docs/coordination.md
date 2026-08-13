@@ -42668,3 +42668,12 @@ after the verdict instead of before it.)*
 **Open post-hoc items:** MAPCODE leg falsifier read when the queued five run
 (rollback evidence per Am.2) · per-match leak re-confirmation once the backlog
 completes · v125's k=8 look when it arrives.
+
+# 2026-08-13T10:20:24Z — **BUILDER s36: PANEL-CAL-1 CLOSED CLEAN.** Post-relaunch the runner
+# took three rate-limit rejections on C1 (10:04/10:09/10:14 — which RESOLVES
+# research's queue-vs-accept question: the five queued leg accepts consumed
+# window slots from CREATION), then its per-fire holder check read v125 and it
+# stood down: **zero fires at the wrong holder — the abort branch fired in
+# production exactly as driven in its selftest.** Panel final: 31 accepted
+# matches across 6 cells + 1 window, all ourver=123; readout is research's at
+# the pre-committed looks. Pointer file retained for provenance.

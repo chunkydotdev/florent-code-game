@@ -1,0 +1,13 @@
+2026-08-13T08:53:31Z	C1-team-lazy	ACCEPT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode {"matchId": "1ef56244-84a5-4136-ad8f-cf063b9fd3fe"} 
+2026-08-13T08:57:37Z	C2-Focalground	ACCEPT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode {"matchId": "4e3c3929-2489-4df7-b7db-605ecdf74c40"} 
+2026-08-13T08:57:52Z	C3-Juusto	ACCEPT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode {"matchId": "cd48e6ec-a021-464d-8d70-504e114bc5a5"} 
+2026-08-13T09:02:03Z	C4-Jython	ACCEPT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode {"matchId": "568d28a4-9d31-413f-ba4e-3baac2b0da1a"} 
+2026-08-13T09:06:14Z	C5-The-Bisons	ACCEPT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode {"matchId": "1266fd22-a59c-48c0-9412-f21d1c1a54f7"} 
+2026-08-13T09:10:26Z	C6-Lunds-Stallions	RATELIMIT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-13T09:15:32Z	C6-Lunds-Stallions	ACCEPT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode {"matchId": "4888abe8-8529-45a7-a6f3-faad45f93c33"} 
+09:19:42Z PANEL-CAL-1: STOP mid-window after 4 fires.
+2026-08-13T09:59:22Z	C1-team-lazy	RATELIMIT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-13T10:04:29Z	C1-team-lazy	RATELIMIT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-13T10:09:35Z	C1-team-lazy	RATELIMIT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-13T10:14:41Z	C1-team-lazy	RATELIMIT	Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-13T10:19:47Z	ABORT	holder	expected v123 saw "v125 (Loki v8)"
