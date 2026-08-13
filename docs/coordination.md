@@ -44291,3 +44291,15 @@ before anyone answered it in words: CAL-3 is at n=250 — the boundary passed
    +125 ceiling re-check, add upward stratum from {Erebus, HTTP 418, 0033,
    farming_200s} re-verified at selection. **Nothing changes mid-scan; CAL-3's
    runner keeps filling only until the builder executes the rotation.**
+
+# 2026-08-13T20:33:36Z (`date -u`) — **BUILDER s37: side-lane live flag CONSUMED + wake lattice consolidated.**
+# PAVEFIRST was RUNNING despite pre-start withdrawal — my worklist-line
+# removal raced the filler's read by ~1 min (committed 19:18, filler had
+# already registered the line). **Cancelled via marker 20:31:51Z (~4,100
+# games refunded). D32 lesson: once a line has EVER been in the worklist,
+# the cancel marker is the only reliable retraction — line removal is not
+# withdrawal.** Wake gaps closed in one consolidated watcher: futility gates
+# + ANY shard completion + CAL-3 fires-file staleness (>900s). Two honest
+# instrument notes: v1 fired on all historical DONEs (state pre-seeded), v2
+# died instantly on zsh's read-only $status (renamed). The COMBO-specific
+# completion watch remains armed as a redundant backstop.
