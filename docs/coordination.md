@@ -42351,3 +42351,53 @@ rotation, closed. Also verified this hour: null tree `_v196null187` diffs
 byte-identical ex pycache. **No flags. If MAPCODE ships on its battery, this
 note is the verification the cert cites for the old-map non-regression premise —
 the battery still owes the empirical half on the live pool.**
+
+# ============================================================================
+# 2026-08-13T09:18:07Z (`date -u`) — **BUILDER s36: THE 30x30 MECHANISM IS FOUND AND THE FIX
+# IS BUILT, VERIFIED, AND QUEUED — MAPCODE (`bots/_v197mapcode`).**
+# ============================================================================
+
+**THE MECHANISM (osc subagent + my local repro, converging):** none of the 10
+rotation maps has a MAP_CODES/EXTRA_MAP_CODES entry → `known_map_for` returns
+None → pathing degrades to a greedy dominant-axis step that LIVELOCKS on wall
+pockets (measured: **98.7% of 10,556 builder moves on midgard are immediate
+A→B→A reversals; 9 builder actions in 1,000 rounds; 6,966 Ti banked; 9
+buildings**) and ore targeting degrades to a blind spiral (88% of picks). NOT
+caps, NOT spend gates, NOT TLE (all ruled out explicitly). Magnus's replay
+observation ("builders mostly walking back and forth") was exact.
+
+**THE FIX IS PURE DATA:** the 10 maps encoded into EXTRA_MAP_CODES (18 lines in
+doctrine.py, nothing else). Encoder `tools/map_encode.py` COMMITTED (the
+weekly-rotation encoder never was) — selftest reproduces 5 old-pool entries
+BYTE-FOR-BYTE + corruption negative. Collision pairs midgard/ragnarok and
+frostgate/yulerune share keys → EXTRA list + the existing sensed-terrain
+disambiguation (8–15 differing cells inside core vision at every anchor,
+verified). No new key equals any existing entry ⇒ **old-map behaviour unchanged
+BY CONSTRUCTION; the parent tree IS the flag-off control.**
+
+**VERIFICATION:** vs starter — midgard r1000-tiebreak → **KILL turn 71**,
+ragnarok **115** (disambiguation live-proven), yulerune **86**; oscillation
+98.7% → **11.0%**; **0 TLE-truncated of 3,725 unit-turns**. Local battery
+MAPCODE (vs incumbent, LIVE pool, n=5,400) queued; calibration cells
+NULL123/NEG123 + IDLEVSALT2 (ship contrast on live geometry) already filling.
+
+**LIVE LEG (prereg @09:17:25Z, before leg creation):** mechanism+smoke leg, 5
+unrated vs team lazy, window post-09:52:59Z pairing, submit_clean NO
+--activate, name Loki rc7.1. Panel yielded (STOP after C6; window 1 complete,
+all 6 cells C1 3/5 · C2 4/5 · C3 2/5 · C4 1/5 · C5 4/5 · C6 pending decode).
+
+**⇒ SHIP RECOMMENDATION TO MAGNUS (decision his, stated for the record):** ship
+`_v197mapcode` today if the leg is clean. 900-area is ~1/3 of draws; v123
+reads 25% game share there vs 75% elsewhere (research decode); back-of-envelope
+bleed ≈3 Elo/match. SHIP_SIT is satisfied (v123 k=9, its one look taken: HOLD).
+Rollback target: v123 (`_v187saltidle_f`).
+
+**RECEIPTS:** research #39 opening-book re-base CONSUMED (composes with this
+fix: map_ores now populates on 900s — the raid prior gets its substrate free) ·
+league-pass staleness CONSUMED → task queued, next archiver touch · rate-limit
+probe CLOSED by the log (5/20min HOLDS rolling; rejections DON'T count,
+research banked @937f62b) · side lane's "it would vs it did" — the abort-row
+artefact, verbatim for the durable record since session scratchpads die:
+`2026-08-13T08:53:15Z<TAB>ABORT<TAB>holder<TAB>expected v999 saw "v123 (Loki
+v7)"`, exit 1, zero fires (INCUMBENT=999 drive, OUT/PTR pointed at the session
+scratchpad).
