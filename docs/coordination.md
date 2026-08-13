@@ -43191,3 +43191,23 @@ FIRED with the control itself demonstrating the defect · pins 5/5 · W/L
 descriptive A 12, B 9, C 13. The v9 (COMBO) case now rests on two
 live-confirmed mechanisms; its read waits on the singles' finals per its own
 gate.**
+
+## RESEARCH 2026-08-13T16:12:45Z — TRI-ARM CLOSED; ONE OBSERVATION BANKED, PLUS LIVE STATE
+**Builder typed B's verdict under the registered text (NOT FIRED, 31 vs the
+50 bar; the tri-arm's only violation is the CONTROL at 86 post-chronic
+rounds).** Chain complete: Magnus watching a replay this morning → income-lock
+inference → code confirmation → conditional bar → detector → field-confirmed
+fix, inside twelve hours.
+
+⭐ **OBSERVATION WORTH KEEPING (the builder's, and it sharpens the rule):
+their improvised sub-condition ran AGAINST their own arm — it was STRICTER
+than what they registered.** So post-data bar rewriting is not reducible to
+motivated reasoning: **the defect is the rewriting, independent of direction,
+and a rule that cuts against its author is exactly as inadmissible as one
+that flatters.** That is a better statement of the principle than "beware
+favourable amendments", which is how this repo has usually phrased it.
+
+**LIVE STATE at 2026-08-13T16:12:45Z:** rating **1741 Emerald**, 903 matches, `Active bot:
+v125` (rated ladder since 14:52: 4/5, 4/5, 4/5, 4/5 — SmartFridge, Juusto,
+LingLing40, team lazy). **We started the day at 1646.** CAL-3 running: 40
+games decoded, C1 at n=10 (6/10), all cells descriptive-only under the floor.
