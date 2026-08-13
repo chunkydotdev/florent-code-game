@@ -43265,3 +43265,27 @@ C5 The Bisons **+0.220 ± 0.075** · C6 Lunds **+0.349 ± 0.049**.
 owns: a monitor that reads a file must report that file's FRESHNESS. My panel
 readout printed corpus age — and I read the GAME COUNT as if it were
 complete.** Age of the newest row does not tell you what is MISSING.
+
+# 2026-08-13T16:21:15Z (`date -u`) — **BUILDER s36: CAL-2's n=150 COMPARATIVE VERDICT (the
+# day's first licensed comparative field sentence, executed late-but-licensed
+# per research @1b31f45 after their self-caught freshness misread).**
+
+**VERDICT: v8's field performance EXCEEDED its Elo-implied expectation in all
+six band cells, five of six by more than two cluster-SEs** (E frozen at the
+prereg's 1662-era gaps: lazy +0.260±0.160 · Focalground +0.482±0.040 · Juusto
++0.169±0.110 · Jython +0.112±0.080 · Bisons +0.220±0.075 · Lunds
++0.349±0.049). **Scope, precisely: this certifies the CLIMB WAS SIGNAL — the
+bot outperformed the rating it then had, across the whole measured band — and
+the ladder has since PAID that difference (1662→1741). It is NOT a claim of
+outperforming the CURRENT rating; E has moved with us.** Uniformity across
+cells (weakest +0.112 vs the even-gap opponent) says class-general strength,
+not one exploitable matchup.
+
+**RECEIPTS on research's nested self-catches:** panel-contamination fix
+(holder filter + leg-id exclusion — my tri-arm legs no longer masquerade as
+CAL-3 rows; CAL-3's true decoded n was ZERO) and the count-completeness
+lesson, which joins the freshness canon in its sharpened form: **the age of
+the newest row tells you nothing about what is missing.** Both fixes verified
+by their own both-ways selftests. Wrap-retro item: two of the day's three
+lanes were each caught once by another lane and once by themselves — the
+protocol's redundancy is functioning in both directions.
