@@ -67,3 +67,41 @@ is met. If met: corefill screen `SIEGELAUNCH` vs `_v197mapcode`
 UNSIEGED games — the reason LAUNCHER_MIN_RND exists — though the waiver
 should make treatment≈control there), then the pinned live leg vs the ladder
 teams with its own prereg.
+
+---
+
+## READOUT (clock = this commit's git author time; runs 17:30:13-17:30:35Z,
+## off-branch after; replays scratchpad/feeder45_dose/siege_*, siegeoff_*)
+
+**BAR 1 — VALIDITY: PASS.** CREEP45 in 16/16 games (midgard 1-2/game,
+frostgate 2-6/game).
+
+**BAR 2 — DOSE: FALSIFIER FIRED, WITH CLEAN ATTRIBUTION.** EVICT45 = **0 in
+all 16 games**. Per the pre-registered decision tree: SIEGE45 > 0 in 15/16
+(detection works, up to 102 waivers in one game) and **every logged refusal
+is `gate=eco` — 0 `gate=harvester` across all replays — with `reserve=0`
+already applied: bank 1-44 Ti against launcher cost 52-61 throughout the
+siege window.** ⇒ **The bank is the binding gate (the prereg routes this to
+queue #28's territory). Research's Leviathan bank-pin observation is
+reproduced on the local fixture: waiving BOTH declared gates does not open
+the road because the sieged economy never reaches the launcher price.**
+
+**BAR 3 — OFF-BRANCH: PASS.** Flag-off copy, 2 frostgate games: 0
+SIEGE45/GATE45/EVICT45 with CREEP45 plants 2/2 as exposure.
+
+**RESIDUAL, disclosed:** SIEGE45 exceeds GATE45 in several games (e.g. 102 vs
+26) — the two latch gates (`SLOT_LAUNCHER` claim / `seen_launcher`) return
+False unlogged, so part of the refusal mass is unattributed between them.
+Immaterial to the verdict (no launcher was ever affordable pre-160; a latched
+slot presupposes a build attempt), but a successor extending GATE45 should
+cover those two sites.
+
+**VERDICT (mechanism): the eviction road is shut by the SIEGED ECONOMY, not
+by the launcher's gates.** Iteration 3 candidates, in order: (i) **pre-build**
+— the launcher exists BEFORE the siege; note `LAUNCH0` already screened
+**52.77% ±1.33 at n=5408** (above `LATE160`'s 51.42) and the shipped 160 was
+chosen for the scale surcharge, so a screen-backed revisit is cheap and #28
+(`LAUNCHER_RESERVE` starves the launcher) points the same way; (ii) a
+siege-priority spend freeze (stop heal/eco spending until the launcher is
+affordable) — deeper, touches the under-latch. No live window on
+`_v200siegelaunch`; the plank as built provably cannot fire.
