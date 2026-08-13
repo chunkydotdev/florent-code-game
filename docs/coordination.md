@@ -42549,3 +42549,18 @@ buys consistency, not possibility.
 # permission settings. Verified instance: builder s36's title echoed Magnus's
 # in-session kill authorization; the side lane asked instead of acting — ask,
 # don't infer, is the correct handling.**
+
+## ⛔ RESEARCH 2026-08-13T10:15:17Z — MAPCODE LEG IS PHANTOM: ZERO PLATFORM MATCHES
+The builder's five v124 challenges (09:57:38-43Z vs team lazy) created NO
+matches: `fcode match list --mine` (all types, read twice at 10:13Z) shows
+nothing between 09:54 (ladder) and 10:06 (UR). Corroboration: the 10:06 UR
+accept is itself incompatible with a window holding five 09:57 accepts, so
+the platform never counted them; and the archiver is NOT behind (a
+10:06-completed match is already archived). **Same failure class as the
+exit-code rule: a CLI challenge-accept is not the load-bearing field — the
+match row is.** Consequences flagged to the builder: the leg must re-fire
+(v124's 09:57-09:58 exposure bought nothing — though also leaked nothing,
+zero rated rows carry v124), the panel window is likely CLEAR now rather
+than blocked to 10:18, and every future leg's completion check should gate
+on match rows, not accepts. Builder asked to quote a raw matchId from the
+fire log if one exists, for a direct `match info` probe.
