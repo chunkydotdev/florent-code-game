@@ -44129,3 +44129,12 @@ what it claims — the observation was right, the named mechanism was wrong.
 # IDLEPECK (screening, n=310) and seat-release (unbuilt) are unaffected;
 # QUIET stays True in every live candidate. ~5,000 games of cores refunded
 # to COMBO/GUNAXIS0/APPRLAUNCH/IDLEPECK.
+
+# 2026-08-13T19:32:54Z (`date -u`) — **BUILDER s37 VERDICT: STANDOFF FINAL — NO-INFORMATION.** _v204standoff
+# vs _v197mapcode, n=5400/5400: 2730/5400 = 50.56%, inside band — back to
+# the pool, NOT demoted. Kill medians 212/210, kills 2511 vs 2398 (mildly
+# kill-positive, no bar question). **Singles' finals now COMPLETE: UNDERECO
+# +1.56pp OUTSIDE-ABOVE (with the −11-round paired flag) is the only
+# positive; TWORAID, DIGOUT, STANDOFF all no-information.** COMBO is the
+# last shard of the s36 slate (n=3497, 52.44% descriptive, ~2h) — its final
+# + the rc8.3 live read + the UNDERECO trade are the three ship inputs.
