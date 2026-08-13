@@ -42779,3 +42779,22 @@ nothing needs retracting because nothing panel-shaped was claimed on them.
 # claim is made. **Consequence: the ship's post-hoc falsifier duty is
 # DISCHARGED CLEAN — no rollback evidence exists; v125 holds on its own
 # k=8 schedule.**
+
+## ⛔ RESEARCH 2026-08-13T11:03:06Z — CORRECTION of 78dc6fc's "unregistered auxiliary" label: THE 30 GAMES ARE PANEL GAMES
+The side lane is right at both clocks and I verified before correcting: the
+CAL-2 prereg's only commit is **16f799e at 10:21:59Z** (file self-stamp
+identical), and the 30 games ran 10:31-10:46 — **AFTER the prereg. The runner
+never jumped the gun; my two-clock flag against it was FALSE and is
+withdrawn.** Where "10:47" came from, named so it cannot recur: **I
+hand-interpolated the timestamp when writing panel_read's PANELS dict —
+no surface ever carried it. That is the timestamps-from-`date`-only rule
+failing a FOURTH time (s17/s25/s26/now), this time silently discarding 30
+legitimate games and manufacturing a false process flag.** Fixed at the
+tool (`since` = the prereg's own self-stamp, with the incident in a comment)
+and the mechanism read re-keys as PANEL data.
+**CAL-2 ROUND 1 (now correctly counted): 19/30 games; per-cell C1 3/5 ·
+C2 5/5 · C3 5/5 · C4 2/5 · C5 4/5 · C6 0/5(assumed, decoding) — descriptive,
+n<25/cell.** All six cells' kills are core_destroyed with medians 153-167 —
+including ON the 900-area maps, where v123's CAL-1 games ran 89-251 with
+tiebreak wins mixed in. Same caveat stack as ever: single match per cell,
+churn on C1 (v212).

@@ -43,7 +43,12 @@ PANELS = {
     "cal1": {"since": "2026-08-13T08:49:13Z", "until": "2026-08-13T10:16:00Z",
              "gaps": {"C1": -122, "C2": -96, "C3": -68, "C4": -54, "C5": -47, "C6": +23},
              "comparative_allowed": False},  # wrapped at 30 games
-    "cal2": {"since": "2026-08-13T10:47:00Z", "until": "9999",
+    # since = the prereg's OWN self-stamp (== commit 16f799e, verified at both
+    # clocks). The first value here was a hand-interpolated "10:47" that no
+    # surface ever carried — it silently discarded the panel's first 30 games
+    # and manufactured a false two-clock flag. Constants in this dict must be
+    # copied from a named primary, never estimated.
+    "cal2": {"since": "2026-08-13T10:21:59Z", "until": "9999",
              "gaps": {"C1": -85, "C2": -15, "C3": -48, "C4": -65, "C5": +28, "C6": +50},
              "comparative_allowed": True},
 }
