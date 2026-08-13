@@ -14,8 +14,8 @@ s36: 0 of 3,620 unrated matches in `league_games`). So:
     (`triggeredBy == 'unrated'`, us_side != 'none')
   * map AREA class ......................... corpus/events.tsv (mw, mh per
     file; area 900 is unambiguous = the five 30x30s; queue #35's proxy)
-  * kill-round proxy ....................... corpus/econ.tsv `turns_run`
-    (max over the file's team rows; ==1000 means r1000, i.e. no kill)
+  * kill round ............................. corpus/events.tsv (DEATH, core)
+    rows — exact. (econ `turns_run` REFUTED as a length proxy: 0/135.)
 
 FRESHNESS: prints the newest completedAt it saw and refuses a verdict-shaped
 summary if the corpus is older than --max-age-min (a monitor that reads a
@@ -65,30 +65,33 @@ def load(corpus: Path, since: str):
 
 
 def join_area_turns(games, corpus: Path):
+    """Area from events mw*mh; kill round from the (DEATH, core) EVENT — exact,
+    not a length proxy. (econ `turns_run` was tried first and REFUTED as a
+    game-length proxy: 0/135 rated files within ±2 of the ladder's own `turns`
+    — it is summed unit-turns. events max-rnd scores 129/135 but its misses
+    are all r1000 games, i.e. exactly the kill/no-kill boundary.)"""
     need = {g["file"] for g in games}
-    area, turns = {}, {}
+    area, core_death = {}, {}
     if need:
         with open(corpus / "events.tsv") as f:
             rd = csv.reader(f, delimiter="\t")
             head = next(rd)
-            fi, mwi, mhi = head.index("file"), head.index("mw"), head.index("mh")
+            fi, evi, rndi, tmi, ki = (head.index(c) for c in
+                                      ("file", "ev", "rnd", "team", "kind"))
+            mwi, mhi = head.index("mw"), head.index("mh")
             for row in rd:
                 fn = row[fi]
-                if fn in need and fn not in area:
+                if fn not in need:
+                    continue
+                if fn not in area:
                     area[fn] = int(row[mwi]) * int(row[mhi])
-                    if len(area) == len(need):
-                        break
-        with open(corpus / "econ.tsv") as f:
-            rd = csv.reader(f, delimiter="\t")
-            head = next(rd)
-            fi, ti = head.index("file"), head.index("turns_run")
-            for row in rd:
-                fn = row[fi]
-                if fn in need:
-                    turns[fn] = max(turns.get(fn, 0), int(row[ti] or 0))
+                if row[evi] == "DEATH" and row[ki] == "core":
+                    core_death[fn] = (int(row[rndi]), row[tmi])
     for g in games:
         g["area"] = area.get(g["file"])
-        g["turns"] = turns.get(g["file"])
+        cd = core_death.get(g["file"])
+        # kill round only when WE won AND a core died (their core, necessarily)
+        g["turns"] = cd[0] if (cd and g["won"]) else None
     return games
 
 
@@ -106,15 +109,16 @@ def cell_report(games, elo_gap=None):
     a900 = [g for g in games if g["area"] == AREA900]
     small = [g for g in games if g["area"] is not None and g["area"] != AREA900]
     undec = sum(1 for g in games if g["area"] is None)
-    kills = [g["turns"] for g in games if g["won"] and g["turns"] and g["turns"] < 1000]
+    kills = [g["turns"] for g in games if g["turns"]]
+    tb_wins = w - len(kills)
     vers = sorted({g["oppver"] for g in games})
     lines = [
         f"  games {w}/{n} ({w/n:.1%})  [game-level binomial CI would be ANTI-CONSERVATIVE; primary unit below]",
         f"  matches m={m}: share mean {mean:.3f}" + (f" ± {se:.3f} (cluster SE)" if m > 1 else " (single match — no SE)"),
         f"  area: 900 {sum(g['won'] for g in a900)}/{len(a900)} · <=676 {sum(g['won'] for g in small)}/{len(small)}"
         + (f" · UNDECODED {undec}" if undec else ""),
-        f"  kill rounds (wins, <1000): n={len(kills)}"
-        + (f" median={statistics.median(kills):.0f}" if kills else ""),
+        f"  core kills {len(kills)}/{w} of wins (tiebreak wins {tb_wins})"
+        + (f" · kill round median {statistics.median(kills):.0f}" if kills else ""),
         f"  oppver mix: {', '.join('v'+v for v in vers) if vers else '-'}",
     ]
     return n, lines
@@ -206,6 +210,8 @@ def selftest() -> int:
         for i in range(1, 6):
             mw = 30 if i == 1 else 20
             f.write(f"m1_g{i}.replay26\tBUILD\t1\ta\tconveyor\t0\t0\t0\t0\t{mw}\t{mw}\n")
+        f.write("m1_g1.replay26\tDEATH\t180\tb\tcore\t0\t0\t0\t0\t30\t30\n")
+        f.write("m1_g2.replay26\tDEATH\t250\ta\tcore\t0\t0\t0\t0\t20\t20\n")
     with open(d / "econ.tsv", "w") as f:
         f.write("file\tteam\tband\tammo_converted\tn_convert\tshots\theals\tbuilds\tattacks\tdeliveries\ttled\tturns_run\tcpu_sum_us\tcpu_max_us\tti_end\tammo_end\tti_collected_end\n")
         for i in range(1, 6):
@@ -216,6 +222,9 @@ def selftest() -> int:
     assert sum(1 for x in g if x["area"] == 900) == 1
     n, lines = cell_report(g)
     assert n == 5 and "m=1" in lines[1] and "single match" in lines[1]
+    # kill cell: g1 (won, core death r180) counts; g2's core death does NOT
+    # (we lost g2 — the dead core is ours) — 1 kill, median 180
+    assert "core kills 1/3" in lines[3] and "180" in lines[3], lines[3]
     # the OTHER verdict: corrupt the TSV ITSELF (m1_g1 won 1 -> 0), re-run the
     # PRODUCTION loader, and require the LOADED count to move 3 -> 2. Flipping
     # a dict in memory would only assert Python arithmetic (side lane, s36).
