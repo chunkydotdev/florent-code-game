@@ -41624,3 +41624,113 @@ routed further, because the fix is R2.)*
   or in the builder relays.** Nothing is parked in a live agent.
 * **A successor must NOT inherit unchecked:** the three z-statistics in the SALT
   direction correction, and `#2`'s engine addresses — see carry 2 and Q10.
+
+# ============================================================================
+# 2026-08-13T08:22:19Z (`date -u`) — **SIDE LANE s35 WRAP** (Magnus called it).
+# Retro ran FIRST: `docs/retro-side-lane-2026-08-13-s35.md`, instrument **v1.5**,
+# **FIRING 5**. Ledger: **DETECTION 16/16 · PRESCRIPTION 14/16 · caused 0 ·
+# nearly caused 1.**
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**S1. ⭐⭐ KNOWING A DEFECT DOES NOT PREVENT COMMITTING IT. ONLY A FORCED COMPARISON
+DOES.** *(behaviour change → promoted as a practice in the retro; the strongest
+thing this lane produced today and it is against itself.)* At 05:41Z I flagged
+`cores_idle` for re-implementing `queue_check`'s admission rather than calling it.
+**Within two hours `tools/dash` committed that exact defect three times in one
+file** — 13 STALLED against the tool's DONE/DEAD, 4 queue rows against 21, a
+**negative** tape age against 4.4 min. **The rule was freshly written, by me, in a
+message I had sent that hour.** ⇒ **When writing anything that computes a quantity
+another tool already computes, RUN BOTH AND DIFF THEM BEFORE COMMITTING — not as a
+test, as the act of writing it.**
+
+**S2. ⛔ RESTATING SOMEONE ELSE'S CONCERN IN WEAKER TERMS AND THEN ADDRESSING THE
+WEAKER VERSION.** *(behaviour change → new retro question Q10.)* The builder
+distrusted a number because **they chose when to look**; I wrote that their concern
+*"reads as being about precision"* and offered a **multiplicity** correction, which
+a fixed-n z cannot see. **Worse than a scope error because it is COMFORTING — it
+hands an author permission they did not ask for, on grounds they did not offer.**
+For a lane whose product is the objection, that is the failure that matters most.
+
+**S3. ⭐ A NEAR-DUPLICATE IS AN INSTRUMENT.** Before publishing a false-alarm rate
+for the slot rule I grepped for prior derivations — found this lane's own s33 spec,
+**live and printing `p_null` on the monitor line I had read at boot** — and **the
+DIVERGENCE between my number and theirs at high k is what exposed the
+cumulative-vs-rolling-5 mis-specification**, the session's highest-value flag.
+**The duplicate I did not publish was the finding.**
+
+**S4. DETECTION AND PRESCRIPTION ARE STILL DIFFERENT ACCURACIES, NOW MEASURED
+TWICE.** 16 flagged defects, **16 real**; of the fixes I named, **2 needed
+correcting** — and both were caught *before or at the point of build*
+(`INCUMBENT`-as-editor → guard; the GUNBLOCK test that did not discriminate).
+
+**S5. SHIP THE LIVE FINDING AS ITS OWN MESSAGE.** s29's per-artefact result
+replicated: every single-flag message was actioned in minutes; **the one combined
+flag I sent at boot took 62 minutes on its second half.**
+
+**S6. DECLINING TO INTERPRET A FAVOURABLE NUMBER IS A DECLINE WORTH COUNTING.**
+v123 read **+36.99 at k=4** under a look schedule I had proposed an hour earlier. I
+reported it as progress and did not read it. **The only one of six declines that
+constrained me rather than protecting someone else.**
+
+**S7. MEASUREMENT SLIPS: 6, ALL ONE CLASS — ad-hoc field indexing.** Every one
+caught by a **domain or structural implausibility**, never by re-reading code. **One
+is a repeat of a specifically-named prior instance** (`$?` after a pipe ending in
+`head`) — knowing a checklist does not execute it, recorded against the lane that
+wrote the checklist.
+
+## RELAYED — nothing of mine is still running
+**One subagent all session** (the 19-row `QUEUE.md` GREP audit, `sonnet`, announced
+before spawning; its single negative — `#18` — audited by me before banking and
+confirmed). **Reported, consumed, `#18` closed.** No live agent at wrap.
+
+# ============================================================================
+# **REBOOT STATE — SIDE LANE (s35, safe to reboot)** — read 08:22:19Z, not asserted
+# ============================================================================
+
+## SUCCESSOR: DO THESE FIRST
+1. **RE-ARM THE DRIFT WATCH — it dies with this session.**
+   `scratchpad/drift_watch_s35.sh`, armed as a **Monitor**. **Drive it five ways
+   first** (seeded-N-back → N · at-HEAD → silent · missing repo → BLIND ·
+   not-a-repo → BLIND · **TZ trap**). ⚠ **The TZ cell only discriminates because
+   this box is UTC+2 — on a UTC machine it passes trivially and certifies nothing.**
+2. **⛔ RUN BOTH AND DIFF THEM.** Before writing any computation the repo already
+   performs, run the existing tool and compare. **S1 above; three failures in one
+   file within two hours of flagging it in someone else's code.**
+3. **⛔ BEFORE EXECUTING ANYTHING IN `tools/`: grep for
+   `subprocess|fcode|\.venv/bin|os\.system|Popen`, THEN READ THE RESULT AND DECIDE**
+   — not in the same command as the execution. Held all session; keep it.
+4. **`%h %s`, NEVER `%h` ALONE.** Three lanes share one working tree, so
+   `git log -1` after a push can return another lane's commit. It did once today
+   (11 of 12 citations correct).
+
+## LIVE STATE — VERIFIED 2026-08-13T08:22:19Z
+* **Holder `v123` (`bots/_v187saltidle_f`), rating 1641, 880 matches**, off the live
+  `Active bot:` line. **v123 at k=5: 19/25 games (share 0.760).** ⚠ **The
+  pre-registered scoring look is k=8 — this is PROGRESS, not a result**, and the
+  ledger's own lag line reads **~2.5 matches may be missing** off a 49-min tape.
+* **`PROGRAMME.md INCUMBENT: bots/_v187saltidle_f`, COMMITTED and current.**
+* **Cores busy: 16 `fcode run`, load 10.84, `cores_idle` `consec_idle=0 OK`
+  (08:19:05Z). Keeper pid 50733.** ⚠ **D30 is ACTIVE again** — the keeper logs
+  `DECODE DEFERRED, load > 6.0`; the NET pull runs, the EVENT surface lags.
+* **`queue_check` 21 unblocked (floor 3).**
+* **`tools/dash` serving on `127.0.0.1:8787`** (Magnus-commissioned; cores / game /
+  lingo). Read-only, no `fcode`, localhost. Restart:
+  `.venv/bin/python tools/dash/serve.py`.
+
+## OPEN, ROUTED, NOT DONE
+1. **R1 of the lane-structure review is PENDING MAGNUS** — side lane →
+   ship-critical verification only. **This lane supplied the number and refused the
+   verdict: roughly HALF of today's 16 outcome-changing flags sit outside that
+   boundary.** Not an argument; the trade in units.
+2. **`oppver` BACKFILL IS DONE AND VERIFIED** — 99 distinct values, **0 residual
+   `None`**, and 400/400 recent rows agree with `league_matches` on both `oppver`
+   and `ourver`. **D18's worst sub-finding is retired.** *(Listed here because it
+   was the one time-boxed item; it closed.)*
+3. **The `conceding` branch of the direction conjecture is untested for a second
+   armed run. STRIKE IT AT v1.6 if it is still untested** — an armed branch that
+   never fires is the vacuity the model was accused of.
+4. **R2 (ship-sit until k≥8), R3 (`INCUMBENT` → `submit_clean --activate`), R6
+   (consumption receipts)** — this lane has nothing to add; two are its own
+   proposals returning.
