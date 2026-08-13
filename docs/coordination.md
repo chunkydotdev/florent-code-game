@@ -44303,3 +44303,13 @@ before anyone answered it in words: CAL-3 is at n=250 — the boundary passed
 # instrument notes: v1 fired on all historical DONEs (state pre-seeded), v2
 # died instantly on zsh's read-only $status (renamed). The COMBO-specific
 # completion watch remains armed as a redundant backstop.
+
+# 2026-08-13T20:34:01Z (`date -u`) — **BUILDER s37 GATE: APPRLAUNCH passes GATE-2700 at 53.54 (n=2854) —
+# CONTINUES.** Above the final informative edge (51.33) at halfway; if it
+# holds, this is the first bigger-significance candidate under Magnus's
+# raised bar, with a fully-dosed mechanism chain behind it (#47). AMMO0
+# started (n=143). CONSUMED from research: CAL-3's n=150 look is TAKEN/SPENT
+# (late disclosure, boundary passed at n=250) — Leviathan −0.206 = the THIRD
+# independent surface naming the camp class (rated 6/25, rc8.3 O2 0-5,
+# panel). CAL-4 rotation executes AFTER COMBO's final per their prereg; the
+# durable 30-accept boundary stop goes into panel_cal1.sh now.
