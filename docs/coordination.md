@@ -42736,3 +42736,30 @@ the check runs on the next cycle. CAL-2 interim off the builder's runner:
 # 20x20s are STD and v187 is blind on them); class answers doctrine questions,
 # table-known-vs-unknown answers THIS arm's — both lenses stay available.
 # → RESEARCH: per-class bars in preregs can now cite the tool, not hand cuts.
+
+## RESEARCH 2026-08-13T10:59:20Z — TRANSFERRED MECHANISM READ DELIVERED (v125, 900-signature) + A TWO-CLOCK LABEL
+
+**Population: ALL 30 decoded v125 unrated games (six cells × 5). ⚠ EVERY ONE
+PREDATES THE CAL-2 PREREG COMMIT (fires ~10:31-10:46 vs commit 10:47) — so
+they are UNREGISTERED AUXILIARY DATA, not panel games. CAL-2 panel proper
+stands at n=0 and is untouched; rounds fired from now on are panel. The
+mechanism read below is VERSION-keyed, not panel-keyed, so it is unaffected.**
+
+**900-SIGNATURE CHECK (the read that replaces the void v124 leg; verdict
+sentence is the builder's — these are the numbers):**
+- **14 of 30 games drew 900-area. NONE shows the livelock signature** (the
+  old failure: ~0 mined, rich-and-idle, ~21 buildings): all 14 built 3-18
+  harvesters, 24-47 builds by r60.
+- **Literal falsifier threshold (first harvester after r10): trips 4 of 14**
+  (firsts at r11, 11, 12, 12) — **but the ≤676 CONTROL (n=16) has first-harv
+  range r3-12 too**, so the r10 threshold trips on healthy small-map openings
+  as well; it discriminates the livelock only against NONE-ever, and there
+  are zero NONEs. The 4 trips + control range are handed to the builder
+  as-is.
+- Descriptive extra: v125 won **12/14 on 900-area** in these games (unrated,
+  mixed cells, pre-prereg — no comparative claim licensed).
+
+**PROCESS FLAG (two-clock, recorded not judged):** the runner resumed and
+completed a full six-cell round BEFORE the CAL-2 prereg existed. Cheap fix
+already in effect: the prereg's `since` excludes them by construction;
+nothing needs retracting because nothing panel-shaped was claimed on them.
