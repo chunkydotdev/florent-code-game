@@ -8,10 +8,17 @@ researcher will be responsible to make sure there are ideas to build."*
 file is never empty. BUILDER fires from the top and never idles waiting for
 analysis. **An empty queue is a research failure, not a builder pause.**
 
-**THE CLOCK.** ~420 rated matches remain in the entire game (~84/day, measured
-646->749 in 29.5 h). Rating converges in ~100 matches ⇒ **about four
-ship-and-converge cycles left.** A ship converges in the BACKGROUND, so an
-unshipped plank is a certain zero and every idle hour on the slot is spent.
+**THE CLOCK (corrected 2026-08-13, lane-structure review).** Rated cadence is
+**72 matches/day at HEAD** (20.0-minute pairing gaps, 40/40 recent; the old
+"~420 at ~84/day" was measured 646→749 across the 08-10 cadence change and
+averaged two regimes). No hard end date is on record — "over in a week"
+(Magnus, 08-11) ⇒ roughly **300–390 rated matches left**. Convergence cost is
+UNVALIDATED in both directions: "~100 matches" has no derivation on record,
+and "~30 suffices" fits v104's tape but is contradicted by v116 (+32 in its
+first 15, −57 in its next 27). What is certain: **displacement before a
+ship's own gate arms buys zero rated information** — `SHIP_SIT_MIN_K: 8` in
+PROGRAMME.md now binds. A ship converges in the BACKGROUND, so an unshipped
+plank is a certain zero and every idle hour on the slot is spent.
 
 **ADMISSION — an item is queueable only with all four:**
 1. the CHANGE, named to the constant or branch

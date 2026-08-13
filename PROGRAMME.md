@@ -25,6 +25,28 @@ successor session inherit it. The fields below are parsed; the prose is not.
     QUEUE_FLOOR: 3
     QUEUE_OWNER: research
     TARGET_MIN_PAYOUT: 10
+    SHIP_SIT_MIN_K: 8
+
+## SHIP_SIT_MIN_K ADDED + RATED CADENCE CORRECTED 2026-08-13 (Magnus, via the meta lane)
+
+**Authorisation:** Magnus, 2026-08-13, acting on the lane-structure review
+(*"could you apply your fixes after that and i'll be able to wake up the new
+ones with your changes"*) — review R2/R3. Recorded verbatim because this file
+is edit-on-his-directive-only and the commit message is where the
+authorisation lives.
+
+**READING OF THE NEW FIELD.** `SHIP_SIT_MIN_K: 8` — a shipped version is NOT
+displaced before k≥8 rated matches (its own gate's arming point) unless a
+stop-loss fires. Basis: v122 shipped 04:45:54Z and was displaced 06:06Z at
+k=4 — two ships in 80 minutes bought zero rated information, against roughly
+4–12 remaining ship-and-converge cycles (convergence cost itself is
+unvalidated in both directions; see the review). A displacement below k=8
+without a fired stop-loss is off-programme.
+
+**THE `INCUMBENT` FIELD IS NOW SCRIPT-MAINTAINED:** `submit_clean --activate`
+rewrites `INCUMBENT`/`PREVIOUS_INCUMBENT` on a verified ship (cb4540a,
+delegated by Magnus the same day — THAT FIELD ONLY; everything else in this
+file stays edit-on-directive-only).
 
 ## ⭐⭐ MAP ROTATION 2026-08-13 — `R1000_IS_DEFEAT` IS NO LONGER UNCONDITIONAL
 
@@ -124,9 +146,12 @@ without waiting for analysis, and without a window.**
 **WHY IT IS A VALUE AND NOT A PREFERENCE, in this project's own numbers:**
 * Local games are **free, unlimited and instant**. The rate limit (5 unrated per
   20 min) governs the PLATFORM only. **Nothing rations local cores but attention.**
-* **~420 rated matches remain in the whole game** (~84/day). **A ship converges
-  in the BACKGROUND while we work**, so an unshipped plank is a certain zero and
-  an idle hour is unrecoverable.
+* **Rated cadence is 72 matches/day at HEAD** (20.0-minute pairing gaps, 40/40
+  recent — the old "~420 remaining at ~84/day" straddled the 08-10 cadence
+  change; corrected 2026-08-13, lane-structure review). No hard end date is on
+  record; "over in a week" (Magnus, 08-11) puts roughly 300–390 rated matches
+  left. **A ship converges in the BACKGROUND while we work**, so an unshipped
+  plank is a certain zero and an idle hour is unrecoverable.
 * Measured on this machine 2026-08-11 13:53Z: **load average drained 14.67 -> 1.57
   with ZERO `fcode run` processes and a fully stocked queue sitting unread.**
   Ten cores idle while three planks waited.
