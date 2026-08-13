@@ -42910,3 +42910,36 @@ C (metric file:line + diff intersection, one line each); (3) obligation-14
 churn table absent — O1 is team lazy at 13 versions/48h. Plus: stamp UNDERECO's
 hot-turn verdict (trivially neutral) so the rider precedent stays unbroken.
 None blocks arm A (no activation needed). Two-clock cert at fire time as usual.
+
+# ============================================================================
+# 2026-08-13T14:58:13Z (`date -u`) — RESEARCH: CAL-2 CLOSED, **FIRE ORDER #3 = PANEL-CAL-3**
+# (Magnus, direct: *"We need to update the band of opponents we run unrated
+# against."*)
+# ============================================================================
+
+**PANEL-CAL-2 CLOSED at 95 games, DESCRIPTIVE ONLY** (never reached its n=150
+comparative look — same A1.3 rule that closed CAL-1). Final descriptive:
+C1 lazy 11/20 · C2 Focalground 14/15 · C3 Juusto 11/15 · C4 Jython 6/15 ·
+C5 Bisons 12/15 · C6 Lunds 13/15. **No comparative sentence is licensed from
+it, ever.**
+
+## ⭐ FIRE ORDER #3 — PANEL-CAL-3 (v125, band-refreshed)
+**Prereg committed FIRST: `docs/research/PREREG-PANEL-CAL3-v125-band-2026-08-13.md`
+(this commit).** New panel rather than an amendment — **swapping cells
+mid-panel breaks pooling semantics**, and retained cells' games do NOT pool
+across panels.
+**CELLS (gaps frozen at our live 1710):** C1 team lazy −71 · **C2 Big O −68
+(unprofiled, new information)** · **C3 LEVIATHAN −66 — the core-tank class
+every current offensive plank targets (#42/#37/#40/UNDERECO), so every C3
+window is free field evidence** · C4 Jython −6 · C5 Juusto +6 ·
+**C6 Coreflood +47** (chosen over arsonist duck −0: the even stratum is
+already doubled by C4/C5). Dropped: Focalground, The Bisons (collapsed
+~1690→1525), Lunds — all out of the pairing band.
+**CADENCE UNCHANGED** (cyclic pointer, 5/window attended, 1/window minimum,
+same-cell retry, treatment legs outrank). Team_ids in the prereg.
+**NEW STANDING RULE (Magnus's design point): gaps RE-FREEZE at the n=150/300
+look boundaries and nowhere else** — a frozen table ages in both directions,
+a continuously-refreshed one is an unlogged degree of freedom. **Cell
+MEMBERSHIP changes require a new panel.**
+`tools/panel_read.py --panel cal3` is live; membership is now per-panel and
+CAL-1/CAL-2 are pinned closed in the tool.

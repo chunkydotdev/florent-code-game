@@ -31,9 +31,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CELLS = {  # same six cells in CAL-1 and CAL-2 (deliberate, cross-panel contrast)
-    "team lazy": "C1", "Focalground": "C2", "Juusto": "C3",
-    "Jython": "C4", "The Bisons": "C5", "Lunds Stallions": "C6",
+# Cell MEMBERSHIP is per-panel (a membership change requires a NEW panel —
+# CAL-3 prereg, standing rule). Never pool games across panels.
+CELLS_BY_PANEL = {
+    "cal1": {"team lazy": "C1", "Focalground": "C2", "Juusto": "C3",
+             "Jython": "C4", "The Bisons": "C5", "Lunds Stallions": "C6"},
+    "cal2": {"team lazy": "C1", "Focalground": "C2", "Juusto": "C3",
+             "Jython": "C4", "The Bisons": "C5", "Lunds Stallions": "C6"},
+    "cal3": {"team lazy": "C1", "Big O": "C2", "Leviathan": "C3",
+             "Jython": "C4", "Juusto": "C5", "Coreflood": "C6"},
 }
 
 # Per-panel frozen parameters — each from its own committed prereg. A panel's
@@ -48,8 +54,15 @@ PANELS = {
     # surface ever carried — it silently discarded the panel's first 30 games
     # and manufactured a false two-clock flag. Constants in this dict must be
     # copied from a named primary, never estimated.
-    "cal2": {"since": "2026-08-13T10:21:59Z", "until": "9999",
+    # cal2 CLOSED at cal3's prereg commit; it never reached its n=150 look, so
+    # it is descriptive-only forever (same A1.3 rule that closed cal1).
+    "cal2": {"since": "2026-08-13T10:21:59Z", "until": "2026-08-13T14:57:19Z",
              "gaps": {"C1": -85, "C2": -15, "C3": -48, "C4": -65, "C5": +28, "C6": +50},
+             "comparative_allowed": False},
+    # gaps frozen at the CAL-3 prereg commit (ours 1710 live, theirs 13:52Z
+    # league_matches) — re-freeze ONLY at the n=150/300 look boundaries.
+    "cal3": {"since": "2026-08-13T14:57:19Z", "until": "9999",
+             "gaps": {"C1": -71, "C2": -68, "C3": -66, "C4": -6, "C5": +6, "C6": +47},
              "comparative_allowed": True},
 }
 AREA900 = 900  # drakkarfjord, glacierkeep, midgard, ragnarok, valkyrie
@@ -58,7 +71,7 @@ def expected(gap: float) -> float:
     return 1.0 / (1.0 + 10 ** (-gap / 400.0))
 
 
-def load(corpus: Path, since: str):
+def load(corpus: Path, since: str, cells):
     games = []  # dicts: match, file, opp, our_won, completedAt
     for r in csv.DictReader(open(corpus / "meta_join.tsv"), delimiter="\t"):
         if r["triggeredBy"] != "unrated" or r["us_side"] == "none":
@@ -67,7 +80,7 @@ def load(corpus: Path, since: str):
             continue
         opp = r["teamBName"] if r["us_side"] == "a" else r["teamAName"]
         oppver = r["teamBVersion"] if r["us_side"] == "a" else r["teamAVersion"]
-        if opp not in CELLS:
+        if opp not in cells:
             continue
         games.append({"match": r["match"], "file": r["file"], "opp": opp,
                       "oppver": oppver, "won": int(r["our_won"] or 0),
@@ -147,7 +160,8 @@ def main() -> int:
         return selftest()
     corpus = Path(args.corpus)
     panel = PANELS[args.panel]
-    games = [g for g in join_area_turns(load(corpus, panel["since"]), corpus)
+    cells = CELLS_BY_PANEL[args.panel]
+    games = [g for g in join_area_turns(load(corpus, panel["since"], cells), corpus)
              if g["at"] < panel["until"]]
     newest = max((g["at"] for g in games), default=None)
     total = len(games)
@@ -159,7 +173,7 @@ def main() -> int:
         stale = age_min > args.max_age_min
         print(f"corpus freshness: newest panel game {newest} ({age_min:.1f} min old)"
               + ("  ⚠ STALE — run tools/corpus/sync.py before trusting counts" if stale else ""))
-    for opp, cell in sorted(CELLS.items(), key=lambda kv: kv[1]):
+    for opp, cell in sorted(cells.items(), key=lambda kv: kv[1]):
         sub = [g for g in games if g["opp"] == opp]
         if not sub:
             print(f"{cell} {opp}: no games yet")
@@ -178,7 +192,7 @@ def main() -> int:
     # ---- comparative read (licensed only here, at the pre-committed looks) --
     print(f"\nCOMPARATIVE READ (panel n={total} >= 150; target E frozen at the "
           f"prereg gaps, match-clustered):")
-    for opp, cell in sorted(CELLS.items(), key=lambda kv: kv[1]):
+    for opp, cell in sorted(cells.items(), key=lambda kv: kv[1]):
         sub = [g for g in games if g["opp"] == opp]
         if len(sub) < 25:
             print(f"  {cell} {opp}: n={len(sub)} < 25 — cell withheld")
@@ -231,7 +245,7 @@ def selftest() -> int:
         f.write("file\tteam\tband\tammo_converted\tn_convert\tshots\theals\tbuilds\tattacks\tdeliveries\ttled\tturns_run\tcpu_sum_us\tcpu_max_us\tti_end\tammo_end\tti_collected_end\n")
         for i in range(1, 6):
             f.write(f"m1_g{i}.replay26\ta\t0\t0\t0\t0\t0\t0\t0\t0\t0\t{150+i}\t0\t0\t0\t0\t0\n")
-    g = join_area_turns(load(d, "2026-08-13T08:49:13Z"), d)
+    g = join_area_turns(load(d, "2026-08-13T08:49:13Z", CELLS_BY_PANEL["cal1"]), d)
     assert len(g) == 5, f"expected 5 panel games (ladder + pre-prereg excluded), got {len(g)}"
     assert sum(x["won"] for x in g) == 3
     assert sum(1 for x in g if x["area"] == 900) == 1
@@ -247,7 +261,7 @@ def selftest() -> int:
     with open(mj, "w", newline="") as f:
         wtr = csv.DictWriter(f, fieldnames=cols, delimiter="\t")
         wtr.writeheader(); wtr.writerows(rows)
-    g2 = load(d, "2026-08-13T08:49:13Z")
+    g2 = load(d, "2026-08-13T08:49:13Z", CELLS_BY_PANEL["cal1"])
     assert sum(x["won"] for x in g2) == 2, (
         "corrupted TSV did not change the LOADED count — selftest is vacuous")
     print("selftest PASS (5-game fixture; ladder + pre-prereg rows excluded; "
