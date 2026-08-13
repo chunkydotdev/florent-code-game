@@ -41919,3 +41919,45 @@ with the archive rule now structural; CLAUDE.md six-roads table →
 ⛔ SUCCESSORS: your charter CHANGED — read your .claude/commands file in full.
 The review behind all of it: `docs/workflow-analysis/lane-structure-review-2026-08-13.md`.
 Meta lane idles here.
+
+# ============================================================================
+# 2026-08-13T08:40:37Z — **SIDE LANE s36 BOOT** (Magnus commissioned; /sidelane). Charter read
+# in full post-2026-08-13 rewrite: SHIP-CRITICAL VERIFICATION ONLY — ship-chain
+# commits, two-clock certs, gate/stop-loss arithmetic, rated-leak checks,
+# rollback readiness. Analysis docs and non-ship commits are no longer audited.
+# Prescriptions one line. Retro v1.5 carried (open: Q10 live; conceding-branch
+# strike at v1.6 if untested; point-bump cap 2).
+# ============================================================================
+
+**BOOT VERIFICATION (read, not asserted):** keeper pid 50733 alive · cores busy
+(6+ `fcode run` shards) · monitor loops alive: cores_idle 16119, ship_watch
+66445, breakin_watch 66446 · `queue_check` 21 unblocked (floor 3) via the
+SessionStart hook · drift watch re-armed from **`tools/watch/drift_watch.sh`**
+(the tracked home, per the s35 addendum — NOT the scratchpad path in the s35
+reboot block) and driven through all five cells first: seeded-3-back → 3 ·
+at-HEAD → silent · missing-repo → BLIND · not-a-repo → BLIND · TZ cell has
+teeth on this CEST box (local-10:35 commit rendered 08:35:22Z).
+
+**FLAG 1 → BUILDER (ship chain, time-sensitive): v123's PRE-COMMITTED k=8 LOOK
+HAS ARRIVED.** `ship_watch.log` 08:38:36Z: **k=8, rating=1646, net5=-7.0,
+net_act=+34.8, armed=True RULE=held, tape_age_min=1.6.** Your B4 schedule is ONE
+look at k=8, pre-committed while the number was favourable. The look is yours,
+not mine — flagged so it is taken once, now-ish, and not re-taken. Anchor:
+coordination s35 B4.
+
+**FLAG 2 → BUILDER (rollback readiness): `breakin_watch` (pid 66446) is
+standing down on v116 with `BREAKIN_ROLLBACK=115` — v123's break-in window
+(k=0→8) passed UNWATCHED, and the loop's advisory rollback names a holder two
+ships stale.** One-line fix: re-arm with the live holder and
+`PROGRAMME.md:PREVIOUS_INCUMBENT` (`bots/_v178salt` = v122) as the rollback
+name, or retire the loop if ship_watch's slot rule supersedes it. (ship_watch's
+own env pin `SHIP_VERSION=v116` is cosmetic — its rows derive v123 from the
+tape — note only, no action.)
+
+**NOTE → RESEARCH (queue, no action from me):** the hook prints **5 GREP STALE
+rows and 16 GREP TREE UNNAMED** against incumbent `_v187saltidle_f` — the R3
+convention (every `GREP:` names its tree) has its first live backlog. Queue is
+yours; recorded here so the count's honesty caveat travels with the 21.
+
+Wake paths armed: all-commits drift monitor (45 s cadence) + peer channel
+(ListAgents shows 3 peers). Hard limits unchanged. Watching.
