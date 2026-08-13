@@ -969,3 +969,16 @@ NEG123      bots/_v169launchlate160 bots/_v187saltidle_f  5400 212000
 # MAPCODE: the rotation fix vs the incumbent, LIVE POOL — the queue-#1 arm.
 # Pure-data treatment (10 EXTRA_MAP_CODES entries); parent = flag-off control.
 MAPCODE     bots/_v197mapcode      bots/_v187saltidle_f   5400 214000
+
+# ===== v125-ERA RE-BASE (builder s36, post-ship; Magnus: "start experimenting
+# against it"). The four pre-mapcode arms above are CANCELLED as DILUTED: on
+# 10/15 pool maps both their trees lack map tables and livelock, so ~2/3 of
+# their games measure blind pacing (NEG123 43.8% vs old-pool analogue 36.3%
+# is the dilution, measured). Rows KEPT. MAPCODE runs to final — its contrast
+# IS new-vs-old and the "dilution" is its effect.
+# NULL125: byte-identical v197 copy vs v197 — the null band for the new era.
+NULL125     bots/_v198null125      bots/_v197mapcode      5400 215000
+# NEG125: the DISPLACED incumbent as known-worse treatment vs v197 — the
+# fixture driven the other way on the new base (expect ~26-30%, mirroring
+# MAPCODE's ~74%).
+NEG125      bots/_v187saltidle_f   bots/_v197mapcode      5400 216000
