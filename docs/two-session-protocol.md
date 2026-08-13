@@ -57,6 +57,14 @@ leg fires each rate-limit window, pooled across windows), the pooled
 readouts, the decode of our own rated games, and opponent-version pinning.
 The builder still executes every platform action; research schedules and
 reads.** Authoritative charter: `.claude/commands/research.md`.
+**Leg accounting rule (completes-only; promoted here s37, 2026-08-13 — it
+lived only in research's working rules and `panel_read` while three lanes
+depended on it):** a fired match is REGISTERED off `fcode match info` at fire
+time, never inferred later from `match list` — `match list` shows COMPLETED
+matches, so **absence from the list is not evidence a challenge was never
+accepted** (the s36 "phantom leg" near-miss: an accepted, in-flight match read
+as nonexistent for the minutes it was pending). Any leg or panel count quoted
+without a fire-time registration behind it says so inline.
 
 **Side lane** (commissioned by Magnus 2026-08-09; this Roles entry added
 2026-08-13 — the lane ran four days without one) owns: **ship-critical
