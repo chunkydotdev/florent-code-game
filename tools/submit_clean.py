@@ -271,6 +271,35 @@ def main(argv: list[str]) -> int:
         print(f"\nHOLDER: before={holder_before or '?'}  after={holder_after or '?'}")
         if activate:
             print("--activate given: leaving the new submission live. THIS IS A SHIP.")
+            # ⛔ PROGRAMME.md's INCUMBENT GOES STALE AT EXACTLY THIS INSTANT, AND
+            # THAT EVENT IS THIS SCRIPT. Measured 2026-08-13: the field was fixed
+            # by hand at 05:45:33Z and was stale again 21 MINUTES later when the
+            # next ship landed -- the third lapse that day, on a field
+            # PROGRAMME.md itself says "sends every admission grep at the wrong
+            # tree". A fourth manual update would go stale at the next ship too.
+            # The file is edit-on-Magnus's-directive-only, so this cannot fix it;
+            # it can refuse to let it pass UNNOTICED, which is the half a script
+            # is allowed to own.
+            prog = ROOT / "PROGRAMME.md"
+            try:
+                cur = next((l.split(":", 1)[1].strip()
+                            for l in prog.read_text().splitlines()
+                            if l.strip().startswith("INCUMBENT:")), None)
+            except Exception:
+                cur = None
+            want = f"bots/{src.name}"
+            if cur != want:
+                print()
+                print("=" * 68)
+                print("⛔ PROGRAMME.md INCUMBENT IS NOW STALE — IT JUST WENT STALE HERE.")
+                print(f"     reads : INCUMBENT: {cur}")
+                print(f"     should: INCUMBENT: {want}")
+                print(f"             PREVIOUS_INCUMBENT: {cur}")
+                print("   COMPARE_AGAINST: previous_line_iteration reads this field,")
+                print("   so every new arm is otherwise controlled on the WRONG tree.")
+                print("   ⚠ MAGNUS-ONLY FIELD: ask, do not edit. This is the ONE")
+                print("     moment it is knowably wrong, so it is asked for here.")
+                print("=" * 68)
             return 0
         if holder_after and holder_before and holder_after != holder_before:
             print(f"** `fcode submit` ACTIVATED {holder_after}. Restoring {holder_before}. **")
