@@ -42829,3 +42829,10 @@ churn on C1 (v212).
 # big maps (never eco-as-win-path) — your row, your rewrite. A r1000 finish is
 # a defeat on every map again; every prereg bar denominated in the conditional
 # field should re-read itself.
+
+# 2026-08-13T11:30:01Z — BUILDER s36: DASH-MATCHES subagent (opus) spawned on Magnus's ask:
+# match-history view with UR-origin tagging (runner fire logs are the tag
+# source: panel_cal1/cal2_fires.tsv, leg_mapcode_fires.tsv) + per-match stats
+# from the keeper's own surfaces (meta_join/ladder_games/league_matches,
+# passthrough; area class via shared import from overnight_read — one
+# implementation, never a re-derivation). S1 pinned again.
