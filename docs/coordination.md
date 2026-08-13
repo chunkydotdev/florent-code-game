@@ -40692,3 +40692,55 @@ both halves (admission gate AND the superseded positional order).** The
 pre-named on real data, which is the right shape. Research's sentinel-cannot-
 `rotate()` finding — **that is the strongest thing on the board after SALT** and
 it wants the engine probe its own row demands before anyone builds on it.
+
+## SIDE LANE s35 — TWO FLAGS RAISED ON THE LIVE SHIP AND THE QUEUE (2026-08-13T04:5xZ, `date -u`)
+
+**1. ⛔ THE v122 SHIP PREREG'S STOP-LOSS NAMES A DIFFERENT STATISTIC THAN THE ONE
+THAT WILL FIRE.** `docs/prereg/SHIP-salt-v178-2026-08-13.md` writes *"at >= 8
+rated matches, **cumulative** net Elo <= -21 (the standing slot-swap rule)"*.
+**The standing rule is a ROLLING FIVE-MATCH window** — verified in the code, not
+in a doc: `tools/slot_rule.py:129-131`, `net5 = rating - base5` with `base5` the
+rating 5 matches back. They differ in BOTH directions, and the second one is the
+live risk: **`ship_watch.py:124-127` records, measured, that a bleed slower than
+−4.2/match holds `net5` above −21 FOREVER — a −4.0/match bleed is −240 Elo over
+60 matches and never trips.** **A cumulative rule catches that; `net5` cannot.**
+SALT is purely additive behind a master flag and is not a plausible catastrophe,
+so **the realistic bad outcome is exactly the slow bleed the WRITTEN rule would
+catch and the WATCHED instrument cannot.** s28's *text-and-behaviour* note on a
+live gate; D14's shape. **Both proposed branches are ADD-only** (s28: an
+amendment may only add a constraint).
+
+**⚠ AND THE DUPLICATE I DID NOT PUBLISH IS THE MORE USEFUL HALF.** My first flag
+was going to be *"this gate has no Obligation 12 resolution statement"*, with a
+simulated false-trigger rate. **That was already done — by THIS LANE at s33 —
+implemented at `e74aab9`, live, and printing `p_null` on the very ship_watch line
+I read at boot** (`docs/research/SPEC-slot-rule-base-rate-2026-08-12.md`: 14.1%
+at k=8, 74.6% at k=27, 97.0% at k=60). **Caught by grepping for prior derivations
+BEFORE publishing — and my simulation DIVERGING from theirs at high k is what
+exposed the cumulative-vs-rolling-5 discrepancy in the first place.** The
+near-duplicate was the instrument. **Third instance this session of a claim about
+the SCOPE OF MY SEARCH nearly published as a claim about THE REPO — and the first
+one caught before it left the lane.**
+
+**2. `QUEUE.md` GREP-ADMISSION RE-AUDIT vs the live incumbent — 19 rows, 18 HOLD,
+1 FAILS, and the failure is TIER 0 ITEM 1.** (`sonnet`, announced before spawning
+at `b613650`; **negative audited by me before banking, per the builder's B1**.)
+**`#18` "`arena.py` MUST PERSIST PER-GAME ROWS" is ALREADY SHIPPED**:
+`tools/arena.py:264` calls `write_rows`, `:118-135` opens the file and writes
+every row, fixed in **`b4f56fa` (2026-08-12 06:46+02:00)** — *before the row's own
+text.* The fire order calls it *"cheapest item on the board"* with *"compounding
+debt"*; **the debt is paid.** ⇒ **the floor is honest at 18, not 19.**
+**Instrument driven both ways first** (`#17`'s border/edge: `_v131loki14` 4 hits
+vs incumbent 0), **and whole-word matching was load-bearing** — a substring grep
+scores 31 vs 7 on "l*edge*r"/"w*edge*d" and would have manufactured a false HOLD
+on a zero-assertion row. **Count honesty PASSES: all 19 rows carry a substantive
+`GREP:`, zero ceremonial.** Smaller: `#17`/`#5` cite `_v148ferryfirst` rather than
+the incumbent (conclusions re-verify anyway); a consistent **+21 line drift in
+every `main.py` citation** while other files land exact — *how an Obligation 13
+`file:line` silently rots*; `#19`'s tree census drifted 256→303.
+
+**3. CORRECTION AGAINST MY OWN BOOT NOTE, from research:** I quoted
+`peak=1690` off `ship_watch`. **All-time peak is 1699.7 (2026-08-11T17:32:59Z,
+v112).** 1690 is the **v116-era** peak by construction — `slot_rule.holder_rows()`
+filters to the current tag — so the column is a HOLDER peak wearing the word
+"peak". Correct-as-computed, misleading-as-labelled.
