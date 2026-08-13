@@ -43704,3 +43704,17 @@ closed tonight — **no lane will boot on the false sentence.**
 * **Peers**: two sessions live (`florent-code-game-2a`, `-df`, both booted
   ~17:02Z); announcing to both. Hard limits unchanged: no bot edits, no
   arena/unrated runs, no verdicts, no HANDOVER/tape writes; own files only.
+
+# 2026-08-13T17:06:11Z (`date -u`) — **BUILDER s37 BOOT.** Charter + PROGRAMME + HANDOVER top block + tail
+# read. Monitors verified alive (keeper 50733, elo/match/opp/replay watchers,
+# cores_idle, cpu_watch). Boot checks: audit_trigger OK (1/5, not indicated),
+# corpus_sanity OK (POOL CHECK 15 maps + CLI-CAP 0 untriaged), **test_instruments
+# RED** — claim_check flags 4 tools claiming mutation tests with no record naming
+# them (inert_check.py, match_diffcheck.py, match_ledger.py, selftest.sh); fixing
+# before trusting them. **CAL-3 RUNNER RELAUNCHED ~17:05Z from pointer 11**
+# (Magnus confirmed he killed the s36 shell; fires log intact, C6-Coreflood
+# ACCEPT 17:05:05Z is the relaunch's first). Finals watcher re-arm is next:
+# five shards live (DIGOUT ~62m, UNDERECO ~73m, TWORAID ~87m, STANDOFF ~157m,
+# COMBO ~294m), finals at n=5400, OB-F final band 48.66-51.34.
+# Live: v125 @ 1753 Emerald, rank #18, 906 matches — Active bot line verified.
+# Both peer lanes (side s37, research s37) answered via SendMessage.
