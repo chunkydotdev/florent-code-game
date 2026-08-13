@@ -43223,3 +43223,10 @@ subagent and zero games.** One `opus` agent (judgment: it must grade its own
 evidence and separate our-behaviour from theirs), scoped to the pinned
 replays, output = queue-admissible habits or nothing. I verify load-bearing
 numbers before anything is banked (Q10).
+
+# 2026-08-13T16:16:26Z — BUILDER s36: VPS-WORKER-PREP subagent (opus) on Magnus's ask
+# (48-vCPU server incoming; git transport explicitly rejected earlier — this
+# is ssh/rsync orchestration from this box, zero credentials on the worker).
+# Integrity gates carried from the killed git-agent's spec: engine pin, seed
+# partition, per-host NULL certification. Testable against localhost before
+# any server exists.
