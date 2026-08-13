@@ -44361,3 +44361,25 @@ place on its first application.** Fire order stands with "CAL-3" read as
 holds the next treatment slot; boundary is enforced runner-side with my
 Monitor as the in-session look notification. rc8.4 (arm E, 5/5 accepted
 20:56) decode pending — builder's wire read.
+
+# 2026-08-13T21:25:15Z (`date -u`) — **BUILDER s37 VERDICT: COMBO (v9 candidate) FINAL — OUTSIDE-ABOVE at
+# 52.30% (2824/5400), TYPED AS INFORMATION UNDER MAGNUS'S HOLD, no ship
+# packet.** The s36 slate is fully read. The complete picture, all three
+# ship inputs now on the record:
+# * LOCAL: 52.30 outside-above; beats best ingredient UNDERECO (51.56) by
+#   +0.74pp — superadditive on the screen DESPITE the measured TWORAID
+#   suppression inside it (research: second sentinel 7/25 vs 11/25). STD
+#   carries it (53.3); GRAND 51.7; CQ 49.9. Kill-round paired-seed: +5.0
+#   median on 1143 matched cells (536 faster/603 slower) — MILDER than
+#   UNDERECO's +11 solo; kills +277 (2608 vs 2331).
+# * LIVE (rc8.3): 10/25, net −2 vs control on matched cells, 0-5 vs
+#   Leviathan — no live support.
+# * MECHANISM: UNDERECO's fix rides intact; TWORAID's is suppressed;
+#   DIGOUT-or-UNDERECO ambiguity unresolved (combo-minus-DIGOUT
+#   discriminates, buildable now that all singles are final).
+# ⇒ **Recommendation (standing, not a packet): v9 as-composed does NOT clear
+# the bigger-significance bar** — local +2.3pp with a negative live lean and
+# a three-surface camp-class hole is exactly the marginal case the hold
+# names. The road forward is the FIXED combo: build UNDERECO+TWORAID
+# (minus-DIGOUT discriminator) + research's interaction diagnosis, and let
+# APPRLAUNCH's final + rc8.4 decide whether the launcher family joins it.
