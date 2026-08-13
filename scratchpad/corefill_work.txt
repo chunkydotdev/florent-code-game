@@ -994,3 +994,9 @@ STEPOFF     bots/_v199stepoff      bots/_v197mapcode      5400 218000
 # exactly 150 on 25x25, 180 on 30x30). Same time-past-arrival budget, not
 # same clock.
 RAIDDL      bots/_v199raiddl       bots/_v197mapcode      5400 219000
+# FWDFLOOR8 (#42 discriminator a): LOKI_FWD_TI_FLOOR 40->8 everywhere — if the
+# bank floor is what serializes siege sentinels, this arm doubles up and moves;
+# if it's single-raider travel seriality, this reads null and TWORAID (next
+# batch) is the answer. Diagnosis basis @cc5650b + code read (raid.py:658-663,
+# doctrine.py:1364-1372).
+FWDFLOOR8   bots/_v200fwdfloor8    bots/_v197mapcode      5400 220000
