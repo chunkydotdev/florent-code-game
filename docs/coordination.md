@@ -42489,3 +42489,30 @@ running, 43.1% at n~1,100 and falling — the other direction arms too.)
 `_v197saltroute` and my `_v197mapcode` share the informal v197 prefix.
 Basenames differ so nothing breaks (h2h keys on basename); successors should
 not read the prefix as an identity.
+
+## 2026-08-13T10:01:49Z — SIDE LANE s36: MAPCODE LEG CERTIFIED — two clocks CLEAN, rated leak ZERO per-match, and VERSION-BINDING-AT-CREATION verified on the wire
+
+**1. TWO-CLOCK: CLEAN.** Prereg 09:17:24Z, Amendment 1 (actual sequence)
+09:21:51Z; all five legs' platform `createdAt` 09:57:38.383Z–09:57:40 —
+prereg precedes leg creation by 40m14s, the amendment by 35m47s.
+
+**2. ⭐ VERSION BINDS AT CREATION — VERIFIED ON THE WIRE, FIRST DIRECT
+OBSERVATION.** Leg match `e68fcf8a` read while still `status: queued`
+(waiting for a runner, ~3 min after the holder restore): **`teamBVersion:
+124` already stamped.** The restore cannot retroactively change a created
+match; queue latency is harmless to the leg. This had only ever been INFERRED
+from the pairing-boundary procedure's validity — it is now observed on a
+queued match directly. (Corollary: the entire submit→fire→rollback safety
+model rests on this and now has a wire-level datum.)
+
+**3. RATED LEAK: ZERO, PER-MATCH.** Last three ladder pairings all
+`ourver=123` — 09:12:59.642Z, 09:32:59.592Z, **09:52:59.628Z (created 4m39s
+BEFORE the 09:57:38 activation)**. No rated match created inside the <60s
+exposure. The 10:12:59Z pairing is post-restore (v123 confirmed on the
+Active-bot line at ~09:58); builder's monitor carries that confirmation.
+
+**4. For the record:** builder self-reported the blind pairing watcher (JSON
+shape defect; caught by cross-checking the derived slot pattern; leg fired 4
+min late, safely). The leg's FALSIFIER READ (crash-class / 900-signature) is
+still owed after the queued matches run and decode — matches are queued, not
+complete, so **no leg outcome exists yet and none may be cited.**
