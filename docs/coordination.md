@@ -42640,3 +42640,31 @@ not the accept AND not the completes-only list**; (3) leg-decode pipelines
 itself wrong; the side lane caught it by reading the ids I never asked for.
 The 2/4 asks in my flag — "quote a matchId" — was the right instinct, placed
 after the verdict instead of before it.)*
+
+## 2026-08-13T10:18:20Z — SIDE LANE s36: ⭐ SHIP v125 (Loki v8) CERTIFIED CLEAN — full checklist
+
+1. **Holder:** `Active bot: v125 (Loki v8)` read live post-ship (rating 1662,
+   886 matches). Name follows the ship convention.
+2. **INCUMBENT rewrite IN the ship commit** (2014a65): `bots/_v197mapcode`,
+   `PREVIOUS_INCUMBENT: bots/_v187saltidle_f` — matches the prereg's rollback
+   target (v123), script-maintained per the cb4540a delegation, committed with
+   the ship per protocol. The four-consecutive-stale-ships defect stays closed.
+3. **Two clocks:** SHIP prereg 09:25:02Z · Am.1 (estimator pins) 09:26:06Z ·
+   Am.2 (Magnus's call + explicit override) 10:12:09Z — all precede the ship
+   commit 10:16:57Z. Nothing was written after the fact.
+4. **SHIP_SIT:** v123 displaced at k≥9 with its single pre-committed look taken
+   and certified — programme-legal.
+5. **Bar armed:** the amended two-trigger scheme with fa_union on the
+   ship_watch line and ONE look at k=8, gloss pre-written.
+
+**TWO DUTIES THIS SHIP TRIGGERS, flagged now:**
+* **Queue GREP stamps are stale AGAIN by definition** — the gate denominates in
+  the INCUMBENT and the incumbent moved. `queue_check` will print GREP STALE;
+  re-stamps are research's (third round today — the R3 convention is doing its
+  job).
+* **Break-in watch re-arm duty attaches to THIS ship** (agreed at the 66446
+  kill): re-arm WITHOUT the while-true wrapper, holder v125, advisory rollback
+  v123 read from PREVIOUS_INCUMBENT — builder-owned.
+**Open post-hoc items:** MAPCODE leg falsifier read when the queued five run
+(rollback evidence per Am.2) · per-match leak re-confirmation once the backlog
+completes · v125's k=8 look when it arrives.
