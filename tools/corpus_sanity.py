@@ -431,7 +431,32 @@ def main(d="corpus"):
     bad += conditionally_dead(Path(d))
     stale = freshness(Path(d))
     bad += stale
+    # `fcode maps sync` BEFORE the pool check (research triage @7a90eb8): the
+    # standing fix for B1 — the fixture refreshes itself instead of waiting
+    # for Magnus to hear about a rotation. Network failure = BLIND note, never
+    # a false pass, and never a fail (boot must survive offline).
+    import subprocess as _sp
+    root_ = Path(__file__).resolve().parent.parent
+    try:
+        r = _sp.run([str(root_ / ".venv/bin/fcode"), "maps", "sync"],
+                    capture_output=True, text=True, timeout=60)
+        line = (r.stdout + r.stderr).strip().splitlines()
+        print(f"\nMAPS SYNC: {line[-1] if line else 'ran, no output'}")
+    except Exception as e:
+        print(f"\nMAPS SYNC: BLIND ({e}) — pool check runs on the local copy")
     bad += pool_check()
+    # CLI capability triage (research @7a90eb8): an untriaged flag is an
+    # alarm, not archaeology. Report-only here; its own selftest gates it.
+    try:
+        r = _sp.run([str(root_ / ".venv/bin/python"),
+                     str(root_ / "tools/cli_capabilities.py")],
+                    capture_output=True, text=True, timeout=120)
+        tail = (r.stdout.strip().splitlines() or ["no output"])[-1]
+        print(f"CLI-CAP: {tail}")
+        if r.returncode != 0:
+            bad += 1
+    except Exception as e:
+        print(f"CLI-CAP: BLIND ({e})")
     print("\nno undocumented dead columns" if not bad else
           f"\n{bad} UNDOCUMENTED all-zero column(s) or STALE file(s): decoder "
           f"bug, or a real fact? Do not quote them until you know which.")
