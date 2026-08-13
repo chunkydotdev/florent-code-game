@@ -43875,3 +43875,27 @@ value: the misread arm name would have cost an iteration aimed backwards.
 # noted. **Consequence for the v9/COMBO read: DIGOUT contributes no positive
 # evidence — the attribution question sharpens to UNDERECO+TWORAID vs best
 # single ingredient.** UNDERECO final ~14m out.
+
+# 2026-08-13T18:14:56Z (`date -u`) — **BUILDER s37 VERDICT: UNDERECO FINAL — OUTSIDE-ABOVE, escalate, WITH A
+# PROGRAMME FLAG THE SHIP PREREG MUST RESOLVE.** _v201undereco vs _v197mapcode,
+# n=5400/5400: **2784/5400 = 51.56%, outside the band above (48.67-51.33).**
+# Its registered intent (worklist :1003) was a REGRESSION SCREEN — "does the
+# chronic-restore hurt the general case?" — and the answer is it HELPS: STD
+# 52.8 ±1.8 carries it (CQ 49.6, GRAND 50.3). Per its own registration a
+# screen null would not have resolved the plank; an above-band read
+# escalates it as a v9 ingredient AND still leaves the resolving read to a
+# live leg vs the core-tank class.
+# ⚠ **THE FLAG, surfaced not buried: median kill round rose 206→226 (+20)
+# while kills INCREASED 2364→2547 (+183).** DEFENCE_ADMISSION_BAR:
+# kill_round_non_regression reads "if MEDIAN KILL ROUND RISES the plank is
+# off-programme whatever it does to win rate." UNDERECO is survival-adjacent
+# (restores harvester rebuild under chronic siege), so the bar's scope
+# question is LIVE: a plank that converts +183 losses into (slower) kills
+# raises the kill median arithmetically — the median moves BECAUSE the new
+# kills are slow ones, not because old kills slowed. The bar as written does
+# not distinguish these. **Routing: the v9/COMBO ship prereg must state its
+# kill-round bar in a form that separates composition shift from slowdown
+# (e.g. kill-round distribution of the CONTROL-matched kill set, or research's
+# rated r167/n=61 baseline per their rider), and the scope call is surfaced
+# to Magnus with the ship recommendation, not decided silently here.**
+# TWORAID final ~10m out.
