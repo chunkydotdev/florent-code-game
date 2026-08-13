@@ -25,7 +25,7 @@ Look-schedule guard: comparative output (share - Elo expectation) prints ONLY
 at panel totals n>=150, per the prereg. Below that: descriptive only.
 """
 from __future__ import annotations
-import argparse, csv, math, statistics, sys
+import argparse, csv, math, re, statistics, sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -46,7 +46,12 @@ CELLS_BY_PANEL = {
 # `since` is its prereg commit time; its `until` is the next holder's ship
 # (CAL-1 wrapped below n=150, so it is descriptive-only FOREVER per A1.3).
 PANELS = {
-    "cal1": {"since": "2026-08-13T08:49:13Z", "until": "2026-08-13T10:16:00Z",
+    # `holder` = the version the panel is ABOUT. Any game our OTHER versions
+    # played in the window is a LEG, not a panel game (s36 contamination:
+    # cal3 read 40 games that were entirely tri-arm v126/v127 fires at
+    # overlapping opponents — the filter was opponent+window only).
+    "cal1": {"holder": "123",
+             "since": "2026-08-13T08:49:13Z", "until": "2026-08-13T10:16:00Z",
              "gaps": {"C1": -122, "C2": -96, "C3": -68, "C4": -54, "C5": -47, "C6": +23},
              "comparative_allowed": False},  # wrapped at 30 games
     # since = the prereg's OWN self-stamp (== commit 16f799e, verified at both
@@ -56,12 +61,19 @@ PANELS = {
     # copied from a named primary, never estimated.
     # cal2 CLOSED at cal3's prereg commit; it never reached its n=150 look, so
     # it is descriptive-only forever (same A1.3 rule that closed cal1).
-    "cal2": {"since": "2026-08-13T10:21:59Z", "until": "2026-08-13T14:57:19Z",
+    "cal2": {"holder": "125",
+             "since": "2026-08-13T10:21:59Z", "until": "2026-08-13T14:57:19Z",
              "gaps": {"C1": -85, "C2": -15, "C3": -48, "C4": -65, "C5": +28, "C6": +50},
-             "comparative_allowed": False},
+             # ⛔ CORRECTED s36 ~16:2xZ: closed as "95 games, never reached
+             # n=150" — that was ARCHIVE LAG, not the panel. It has 280.
+             # The n=150 look WAS licensed; it is taken on the FIRST 150 games
+             # in completion order (a look is defined by n, not by wall clock),
+             # disclosed as executed late.
+             "comparative_allowed": True},
     # gaps frozen at the CAL-3 prereg commit (ours 1710 live, theirs 13:52Z
     # league_matches) — re-freeze ONLY at the n=150/300 look boundaries.
-    "cal3": {"since": "2026-08-13T14:57:19Z", "until": "9999",
+    "cal3": {"holder": "125",
+             "since": "2026-08-13T14:57:19Z", "until": "9999",
              "gaps": {"C1": -71, "C2": -68, "C3": -66, "C4": -6, "C5": +6, "C6": +47},
              "comparative_allowed": True},
 }
@@ -71,7 +83,26 @@ def expected(gap: float) -> float:
     return 1.0 / (1.0 + 10 ** (-gap / 400.0))
 
 
-def load(corpus: Path, since: str, cells):
+def leg_matches() -> set:
+    """Match ids belonging to fired LEGS — never panel games even when the
+    holder version and the opponent coincide (a leg pins maps, so its draw is
+    not the panel's draw). Reads every scratchpad/*_fires.tsv EXCEPT the
+    panels' own."""
+    out = set()
+    for f in (ROOT / "scratchpad").glob("*_fires.tsv"):
+        if f.name.startswith("panel_"):
+            continue
+        for line in f.read_text().splitlines():
+            if "\tACCEPT\t" not in line:
+                continue
+            m = re.search(r'"matchId":\s*"([0-9a-f-]{36})"', line)
+            if m:
+                out.add(m.group(1))
+    return out
+
+
+def load(corpus: Path, since: str, cells, holder: str | None = None,
+         exclude_matches: set | None = None):
     games = []  # dicts: match, file, opp, our_won, completedAt
     for r in csv.DictReader(open(corpus / "meta_join.tsv"), delimiter="\t"):
         if r["triggeredBy"] != "unrated" or r["us_side"] == "none":
@@ -80,7 +111,13 @@ def load(corpus: Path, since: str, cells):
             continue
         opp = r["teamBName"] if r["us_side"] == "a" else r["teamAName"]
         oppver = r["teamBVersion"] if r["us_side"] == "a" else r["teamAVersion"]
+        ourver = r["teamAVersion"] if r["us_side"] == "a" else r["teamBVersion"]
         if opp not in cells:
+            continue
+        # a panel measures ONE version — anything else in the window is a leg
+        if holder is not None and ourver != holder:
+            continue
+        if exclude_matches and r["match"] in exclude_matches:
             continue
         games.append({"match": r["match"], "file": r["file"], "opp": opp,
                       "oppver": oppver, "won": int(r["our_won"] or 0),
@@ -154,6 +191,9 @@ def main() -> int:
                     help="which committed prereg's parameters to read under")
     ap.add_argument("--corpus", default=str(ROOT / "corpus"))
     ap.add_argument("--max-age-min", type=float, default=45.0)
+    ap.add_argument("--look", type=int, default=None,
+                    help="take the pre-committed look at this n: uses the "
+                         "FIRST n games in completion order")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
     if args.selftest:
@@ -161,8 +201,15 @@ def main() -> int:
     corpus = Path(args.corpus)
     panel = PANELS[args.panel]
     cells = CELLS_BY_PANEL[args.panel]
-    games = [g for g in join_area_turns(load(corpus, panel["since"], cells), corpus)
+    excl = leg_matches()
+    games = [g for g in join_area_turns(
+                 load(corpus, panel["since"], cells,
+                      panel.get("holder"), excl), corpus)
              if g["at"] < panel["until"]]
+    if args.look:
+        games = sorted(games, key=lambda g: g["at"])[:args.look]
+        print(f"⚠ PRE-COMMITTED LOOK AT n={args.look} — first {args.look} games "
+              f"in completion order (a look is defined by n, not wall clock).")
     newest = max((g["at"] for g in games), default=None)
     total = len(games)
     print(f"PANEL-{args.panel.upper()} readout — since {panel['since']} — {total} games")
@@ -183,7 +230,7 @@ def main() -> int:
         print(f"{cell} {opp}: n={n}{floor}")
         for ln in lines:
             print(ln)
-    if total < 150 or not panel["comparative_allowed"]:
+    if (total < 150 and not args.look) or not panel["comparative_allowed"]:
         why = (f"n={total} < 150" if total < 150 else
                "panel wrapped below its floor — descriptive-only forever (A1.3)")
         print(f"\nPANEL DESCRIPTIVE ONLY ({why}). "
@@ -246,6 +293,19 @@ def selftest() -> int:
         for i in range(1, 6):
             f.write(f"m1_g{i}.replay26\ta\t0\t0\t0\t0\t0\t0\t0\t0\t0\t{150+i}\t0\t0\t0\t0\t0\n")
     g = join_area_turns(load(d, "2026-08-13T08:49:13Z", CELLS_BY_PANEL["cal1"]), d)
+    # holder filter must EXCLUDE a game our other version played (the s36 bug)
+    rows_leg = rows + [row("leg_g1.replay26", "leg", "Juusto", 1)]
+    rows_leg[-1]["teamAVersion"] = "127"
+    with open(mj, "w", newline="") as f:
+        wtr = csv.DictWriter(f, fieldnames=cols, delimiter="\t")
+        wtr.writeheader(); wtr.writerows(rows_leg)
+    assert len(load(d, "2026-08-13T08:49:13Z", CELLS_BY_PANEL["cal1"])) == 6, \
+        "unfiltered load lost a row"
+    held = load(d, "2026-08-13T08:49:13Z", CELLS_BY_PANEL["cal1"], holder="")
+    assert len(held) == 5, f"holder filter did not drop the leg game: {len(held)}"
+    with open(mj, "w", newline="") as f:
+        wtr = csv.DictWriter(f, fieldnames=cols, delimiter="\t")
+        wtr.writeheader(); wtr.writerows(rows)
     assert len(g) == 5, f"expected 5 panel games (ladder + pre-prereg excluded), got {len(g)}"
     assert sum(x["won"] for x in g) == 3
     assert sum(1 for x in g if x["area"] == 900) == 1
