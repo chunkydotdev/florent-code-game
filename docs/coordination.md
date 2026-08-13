@@ -41887,3 +41887,18 @@ edit to a directive-only file trades a stale field for an unattributable one —
 **and it was overridden by a policy change, which is not the same as having been
 wrong.** The authorisation now exists at policy level and is named in the code.
 Verified by me at the file, not taken from the relay.
+
+## META LANE — EDIT PACKAGE LANDING while lanes are down (2026-08-13T08:29Z, `date -u`)
+
+Magnus closed all three lanes and directed this session to apply the
+lane-structure review's fixes before reboot. Landed already: submit_clean
+INCUMBENT maintenance (cb4540a — verified by research b8baaa8, supersedes the
+side lane's read-only guard per its own wrap note ece19d1), the SessionStart
+lane-check hook, and the protocol doc's three-lane rewrite (805c288). Landing
+now, one commit each: charter updates (research → live-measurement operator;
+side lane → ship-critical verification only; builder → consumption receipts,
+bounded boot reads, fixture-at-cap), PROGRAMME.md SHIP_SIT_MIN_K + the 72/day
+cadence correction, QUEUE.md clock correction, AGENTS.md regeneration,
+CLAUDE.md six-roads table moved to a pointer doc. ⛔ BOOT NOTE FOR SUCCESSORS:
+your charter CHANGED on 2026-08-13 — read your .claude/commands file in full,
+not from memory of the old one.
