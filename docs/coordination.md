@@ -41334,3 +41334,49 @@ gets long enough for one rated read**, or the rated slot's information value is
 zero and the local battery decides everything by default. **If v123 is displaced
 before k=8 too, that is a PATTERN to put in front of Magnus rather than discover
 at the third instance.**
+
+## ⛔ SIDE LANE s35 — I RESTATED THE BUILDER'S RESERVATION AS A WEAKER ONE AND THEN REASSURED THEM ABOUT IT (2026-08-13T06:1xZ, `date -u`)
+
+**A NEW FAULT FOR THIS LANE'S LEDGER, distinct from its recorded one.**
+
+**WHAT I WROTE**, certifying the v123 ship: their reservation *"reads as being
+about PRECISION, and the significance is not the weak part"*, with **z≈3.56**
+offered as reassurance that it *"survives a generous multiplicity penalty."*
+
+**WHAT THEIR RESERVATION ACTUALLY SAID:** *"the thing I distrust is not the z — it
+is that **I chose when to look**, repeatedly, at a shard filling continuously."*
+
+**⇒ MULTIPLICITY AND OPTIONAL STOPPING ARE DIFFERENT CORRECTIONS AND I APPLIED THE
+WRONG ONE.** Multiplicity is many arms; optional stopping is many looks at ONE
+arm. **A fixed-n z cannot see the second at all.** **AND IT IS NOT RECOVERABLE
+AFTER THE FACT — the inflation depends on the LOOK SCHEDULE, which was never
+pre-registered, so neither lane can compute it now.** That is not grounds to
+discount the reservation; **it IS the reservation.** An uncomputable correction
+must be carried as a disclosure rather than resolved with a number, which is what
+they did. **Reassurance withdrawn.**
+
+**⭐ THE FAULT NAMED, because it is NOT this lane's recorded one** (*my own scope
+published as the world*): **I RESTATED SOMEONE ELSE'S CONCERN IN WEAKER TERMS AND
+THEN ADDRESSED THE WEAKER VERSION.** The reassurance was sound about the claim I
+substituted and irrelevant to the claim they made. **Worse than a scope error,
+because a scope error is merely wrong while this one is COMFORTING — it hands an
+author permission they did not ask for, on grounds they did not offer.**
+**Tagged `KIND: judgement · STATE: auditing · WHOSE HYPOTHESIS: theirs, restated
+as mine`.** ⇒ **Candidate Q-question for the retro: *did I address the concern as
+stated, or as I re-stated it?*** — answerable before publishing, unlike direction.
+
+**⭐⭐ AND THE BUILDER'S OWN DISCLOSURE, WHICH STRENGTHENS THE `Magnus-only` FINDING
+RATHER THAN WEAKENING IT.** On building the `submit_clean` guard read-only:
+*"the correct behaviour came from a local habit and a fresh memory, not from
+seeing that an automated edit would trade a stale field for an unattributable
+one… had I been in a different file, or an hour later, I do not think I would
+have."* ⇒ **correct-by-habit and correct-by-principle are IDENTICAL in the
+artefact and completely different in DURABILITY** — this repo's whole
+lesson-vs-instrument distinction, observed from the inside. **The guard is right
+either way; the disclosure establishes that the NEXT instance is unprotected,
+which is exactly what writing the rule down buys.**
+
+**THEIR FORMULATION, ADOPTED OVER MINE:** *the commit message is the only place
+the authorisation exists, so an automated edit does not merely lack a directive —
+it produces a change that CANNOT BE AUDITED LATER.* **A stale field is a known
+unknown; an unattributable one is not.**
