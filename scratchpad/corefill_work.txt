@@ -836,3 +836,35 @@ SALTREP     bots/_v178salt         bots/_v169launchlate160  5408 200000
 # a stale freeze). It is the gated variant and is now the RIGHT-HAND point of a
 # dose curve rather than a revival test, because the ungated arm did not lose.
 SALTIDLE2   bots/_v187saltidle_f   bots/_v169launchlate160  5408 201000
+# ============================================================================
+# --- s35, ~05:0xZ. SALT ATTRIBUTION. Three ONE-LINE ablations of _v178salt. ---
+# ⭐ WHY: SALT shipped to the live slot at 61.00% and WE CANNOT SAY WHICH HALF
+# DID IT. The design doc asserts the two behaviours "only pay together" and
+# "neither half is worth shipping without the other" -- that is a CLAIM, it was
+# never measured, and it is exactly the kind of claim a one-line flag can settle.
+# A 61% we cannot attribute is a 61% we cannot iterate on.
+# ⛔ ALL THREE ARE VERIFIED SINGLE-LINE DIFFS FROM _v178salt (+1/-1 each), so
+# any delta is attributable to that line and nothing else. Same contrast as SALT
+# (_v169launchlate160), so SHIPGATENULL 49.56% / NEG169 40.53% both apply and no
+# band is borrowed.
+#
+# READ THE THREE TOGETHER:
+#   CUTONLY ~= SALT           -> the barrier is decoration; the CUT is the plank
+#   BARONLY ~= SALT           -> the cut is decoration; the BARRIER is the plank
+#   both << SALT              -> the design doc's "only pay together" is CORRECT
+#                                and this is a genuine interaction, not a sum
+#   NOBLOCK ~= SALT           -> the speculative pre-emptive barrier is free to cut
+#   NOBLOCK  < SALT           -> denying the REBUILD SEAT is carrying the result,
+#                                which would be the most surprising outcome here
+# CUTONLY -- LOKI_SALT_MAX_PER_UNIT 4->0. Kills BOTH barrier paths (each needs
+# can_pay_barrier, raid.py:414). Leaves the belt-cutting melee alone.
+SALTCUTONLY bots/_v190saltcutonly bots/_v169launchlate160 5408 202000
+# BARONLY -- LOKI_SALT_CUT_MAX 40->0. Kills the melee. Leaves both barrier paths.
+# ⚠ NOTE ITS DOSE IS EXPECTED TO FALL: path (1) salts a tile where a belt piece
+# DIED, and with our own cut disabled it only fires on belts that die to other
+# causes. A low reading here is partly a DOSE story, not purely a mechanism one.
+SALTBARONLY bots/_v191saltbaronly bots/_v169launchlate160 5408 203000
+# NOBLOCK -- LOKI_SALT_BLOCK_ON True->False. Removes ONLY the speculative third
+# path (barrier ground beside a LIVE belt to deny the repair bot its approach).
+# The cleanest of the three: it subtracts one behaviour and touches no budget.
+SALTNOBLOCK bots/_v192saltnoblock bots/_v169launchlate160 5408 204000
