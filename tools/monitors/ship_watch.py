@@ -165,9 +165,14 @@ def assess(tape, version=None, baseline=None, ctx=None):
             if base_act is not None and st.k else None)
     res_k = slot_denoms.resolvable_k(rate, sd_pm)
     p0 = slot_denoms.p_null(st.k, ivs) if ivs else None
+    # fa_union is the figure the ship preregs REQUIRE at read-out (audit M2);
+    # p_null (net5 alone) is kept beside it because existing readers parse it.
+    fu = slot_denoms.fa_union(st.k)
+    fu_s = "NA" if fu is None else f"{fu[0]:.2f}" + ("+" if fu[1] else "")
     _na = lambda v, f: "NA" if v is None else format(v, f)
     denoms = (f"\tdd_z={_na(ddz, '+.2f')}\tdd_k={_na(k_dd, 'd')}"
-              f"\tresolvable_k={_na(res_k, '.0f')}\tp_null={_na(p0, '.2f')}"
+              f"\tresolvable_k={_na(res_k, '.0f')}\tfa_union={fu_s}"
+              f"\tp_null={_na(p0, '.2f')}"
               f"\tsd_pm={_na(sd_pm, '.2f')}\tnet_act_src={src}"
               # THE SECOND FILE THIS MONITOR NOW READS GETS ITS AGE PRINTED,
               # under the same standing rule the tape's `tape_age_min` serves:

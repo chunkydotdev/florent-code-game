@@ -150,6 +150,38 @@ def resolvable_k(mean_per_match: float | None, sd: float | None) -> float | None
     return ((Z_ALPHA + Z_BETA) * sd / abs(mean_per_match)) ** 2
 
 
+# UNION FALSE-ALARM TABLE — the amended two-trigger gate (net5 <= -21 OR
+# cumulative <= -21), simulated at 60k trials on the real tape by the side lane
+# and published in docs/prereg/SHIP-salt-v178-2026-08-13.md:245-249. Both ship
+# preregs REQUIRE this figure at read-out, NOT p_null (quoting p_null understates
+# the gate by ~10pp exactly in the k range where decisions happen — audit M2,
+# 2026-08-13: the k=8 look printed p_null=0.13 where the required figure was
+# 0.239). Values are for the amended gate's exact arrangement; do not reuse for
+# a different threshold or window.
+_FA_UNION = {8: 0.239, 12: 0.435, 16: 0.569, 20: 0.667, 24: 0.744}
+
+
+def fa_union(k: int | None) -> tuple[float, bool] | None:
+    """(union false-alarm rate at k, clamped_high) — linear between table rows.
+
+    None below the arming point (the gate cannot fire, so the rate has no
+    meaning). Above k=24 returns the k=24 value with clamped_high=True: the
+    true rate is HIGHER, and printing the edge value unmarked would understate
+    exactly the way p_null did.
+    """
+    if k is None or k < min(_FA_UNION):
+        return None
+    ks = sorted(_FA_UNION)
+    if k >= ks[-1]:
+        return _FA_UNION[ks[-1]], k > ks[-1]
+    lo = max(x for x in ks if x <= k)
+    hi = min(x for x in ks if x >= k)
+    if lo == hi:
+        return _FA_UNION[lo], False
+    frac = (k - lo) / (hi - lo)
+    return _FA_UNION[lo] + frac * (_FA_UNION[hi] - _FA_UNION[lo]), False
+
+
 def p_null(k: int, intervals, threshold: float = -21.0, window: int = 5,
            arm_after: int = 8, trials: int = TRIALS,
            seed: int = SEED) -> float | None:
@@ -260,6 +292,22 @@ def selftest() -> int:
     # refusals
     check("p_null: below the arming point -> None", p_null(5, ivs) is None)
     check("p_null: too few intervals -> None", p_null(27, [1.0]) is None)
+
+    # --- fa_union: the prereg's own cells, both refusal directions, and the
+    #     clamp marker (an unmarked edge value would repeat the p_null defect).
+    check("fa_union: k=8 is the prereg's 0.239 exactly",
+          fa_union(8) == (0.239, False))
+    check("fa_union: k=24 is 0.744 exactly, unclamped",
+          fa_union(24) == (0.744, False))
+    v10 = fa_union(10)
+    check("fa_union: k=10 interpolates strictly between the k=8/k=12 rows",
+          v10 is not None and 0.239 < v10[0] < 0.435 and not v10[1],
+          f"got {v10}")
+    check("fa_union: below arming -> None (gate cannot fire)",
+          fa_union(7) is None and fa_union(None) is None)
+    v30 = fa_union(30)
+    check("fa_union: k>24 clamps AND SAYS SO",
+          v30 == (0.744, True), f"got {v30}")
 
     # --- activation_baseline: derived vs UNDERIVED, driven both ways.
     import tempfile
