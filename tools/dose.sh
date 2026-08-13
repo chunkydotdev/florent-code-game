@@ -59,12 +59,32 @@ trap 'rm -rf $TMP' EXIT
 [[ -d $CTRL  ]] || { print "FATAL: $CTRL is not a directory";  exit 2 }
 [[ -f maps/$MAP.map26 ]] || { print "FATAL: maps/$MAP.map26 not found"; exit 2 }
 
-# ---- THE LOG-FLAG PRE-CHECK. Defect 2 above, made impossible to repeat. ------
-# A `*_LOG = False` in the treatment guarantees a zero that says nothing about
-# behaviour. Report it BEFORE running, not as a puzzle afterwards.
-offflags=$(grep -hE '^[A-Z_]*LOG[A-Z_]* *= *False' $TREAT/*.py 2>/dev/null)
+# ---- PRE-RUN GATE: CAN THE TAG APPEAR AT ALL? -------------------------------
+# ⛔ THIS REPLACED A FLAG-NAME GREP WRITTEN TO THE INSTANCE RATHER THAN THE CLASS.
+# The old check was `grep '^[A-Z_]*LOG[A-Z_]* *= *False'`: it required the flag
+# name to CONTAIN `LOG`, sit at COLUMN 0, and live in a top-level .py.
+# `LOKI_SALT_LOG` matched — which is precisely the defect that prompted it —
+# while `SALT_VERBOSE`, `DEBUG_SALT`, `LOKI_SALT_TRACE` and any indented or
+# class-level flag did not. **A repair verified against the instance that
+# prompted it is not a repair of the fault class**: this repo's own standing
+# rule, broken by me in the act of fixing something else.
+#
+# Asserting THE TAG ITSELF IS IN THE SOURCE subsumes that guard and does not care
+# what any flag is named: if the only occurrences sit behind a False constant,
+# that is visible at this same grep. It also catches a tag TYPO deterministically
+# and BEFORE spending games, rather than after three games and a puzzle.
+# ⭐ And it gives this tool a branch that MUST come out the other way and can be
+# driven in one second with no games. Spec: side lane.
+if ! grep -rqE "$TAG" $TREAT/*.py 2>/dev/null; then
+  print "⛔ TAG NOT PRESENT IN TREATMENT SOURCE: /$TAG/ appears nowhere in $TREAT/*.py"
+  print "   The tag CANNOT appear in a replay, so running games would prove nothing."
+  print "   This is a DIFFERENT finding from 'the tag did not appear' (exit 4) —"
+  print "   it is about the TAG, not about the plank."
+  exit 5
+fi
+offflags=$(grep -rhE '= *False' $TREAT/*.py 2>/dev/null | grep -iE 'log|verbose|trace|debug')
 if [[ -n $offflags ]]; then
-  print "⚠ LOG FLAGS OFF IN THE TREATMENT — a zero below would be THIS, not behaviour:"
+  print "⚠ A LOGGING-SHAPED FLAG IS FALSE IN THE TREATMENT — a zero below may be THIS:"
   print -r -- "$offflags" | sed 's/^/    /'
   print "  (flip them in a probe COPY and re-run; never edit the measured arm)"
 fi
@@ -79,9 +99,21 @@ for i in $(seq 1 $GAMES); do
     print "  game $i seed=$seed  ⚠ NO REPLAY WRITTEN — cannot count"
     empty=$(( empty + 1 )); continue
   fi
+  # ⭐ POSITIVE CONTROL ON THE COUNTER — not on the plank. Without it this tool
+  # never has to produce a non-zero: if `strings` fails on a future replay format
+  # or encoding, EVERY run returns 0 -> UNPROVEN -> exit 4 forever, and that
+  # reads as the tool being conservative rather than the tool being DEAD.
+  # `[[ -s $R ]]` proves the file is non-empty, never that it holds countable
+  # output. **A healthy line and a blind line must not be identical** — the
+  # defect this script warns about in three other forms, in the script itself.
+  strout=$(strings $R 2>/dev/null | wc -l | tr -d ' ')
+  if [[ -z $strout ]] || (( strout < 5 )); then
+    print "  game $i seed=$seed  ⛔ COUNTER BLIND: strings() gave ${strout:-0} lines from a $(wc -c <$R | tr -d ' ')-byte replay"
+    empty=$(( empty + 1 )); continue
+  fi
   n=$(strings $R 2>/dev/null | grep -cE "$TAG" || true)
   total=$(( total + n ))
-  print "  game $i seed=$seed  events=$n"
+  print "  game $i seed=$seed  events=$n  (counter live: $strout strings)"
 done
 
 ran=$(( GAMES - empty ))
