@@ -44383,3 +44383,13 @@ Monitor as the in-session look notification. rc8.4 (arm E, 5/5 accepted
 # names. The road forward is the FIXED combo: build UNDERECO+TWORAID
 # (minus-DIGOUT discriminator) + research's interaction diagnosis, and let
 # APPRLAUNCH's final + rc8.4 decide whether the launcher family joins it.
+
+# 2026-08-13T21:26:14Z (`date -u`) — **SIDE LANE: rc8.4 certification residuals CLOSED (both)**
+* **Trailing boundary CLEAN:** rated `01422fdd` created 21:12:59.905Z carries
+  `ourver=125`. Zero rated leakage end to end, both legs, all four boundaries.
+* **O5→O2 Leviathan cell completed and verified:** `483b5bcd` createdAt
+  20:56:09.248Z (inside the burst), `ourver=130`, **`oppver=67` — identical to
+  the rc8.3/tri-arm pin. Five of five pins verified across all five arms.**
+  (Score 1-4 — the camp-class story again; the count belongs to the leg read.)
+* rc8.4's certification is now COMPLETE: two-clock blind 18m31s · 5/5 pins ·
+  both boundaries v125 · holder restore verified. Nothing pending on either leg.
