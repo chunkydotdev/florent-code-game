@@ -1,0 +1,127 @@
+{
+  "": {
+    "--help": "help text; no behaviour",
+    "--version": "version string"
+  },
+  "ladder": {
+    "--around": "rankings; --around/--limit used by target_value inputs.",
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely",
+    "--limit": "rankings; --around/--limit used by target_value inputs."
+  },
+  "login": {
+    "--help": "help text; no behaviour"
+  },
+  "logout": {
+    "--help": "help text; no behaviour"
+  },
+  "map-editor": {
+    "--help": "help text; no behaviour",
+    "--platform": "GUI; irrelevant to lanes."
+  },
+  "maps": {
+    "--help": "help text; no behaviour"
+  },
+  "maps list": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "maps sync": {
+    "--help": "help text; no behaviour"
+  },
+  "match": {
+    "--help": "help text; no behaviour"
+  },
+  "match info": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "match list": {
+    "--cursor": "pagination; unused, harmless",
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely",
+    "--limit": "row cap; default is small \u2014 a decode that omits it silently truncates history (use with --cursor for full pulls)",
+    "--mine": "used \u2014 our record; NOTE: returns COMPLETE rows only, blind to queued (s36 incident)",
+    "--team": "used \u2014 works league-wide, the cheap opponent channel",
+    "--type": "used \u2014 ladder|unrated filter"
+  },
+  "match replay": {
+    "--help": "help text; no behaviour"
+  },
+  "match test": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "match tests": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely",
+    "--limit": "lists remote test-run matches; distinct from `match list --type test`."
+  },
+  "match unrated": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely",
+    "--map": "used \u2014 pins maps (<=5); the tri-arm's matched-map design depends on it",
+    "--match": "\u2b50 PINS THE OPPONENT'S SUBMISSION from a past match id. MANDATORY for matched-pair treatment legs; deliberately UNUSED for calibration panels (SPEC-opponent-pinning-2026-08-13.md)."
+  },
+  "match watch": {
+    "--help": "help text; no behaviour"
+  },
+  "run": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely",
+    "--map-random": "local match runner; --tle/--seed/--replay used by our batteries. \u26a0 --replay /dev/null discards bot print() (builder B2).",
+    "--replay": "local match runner; --tle/--seed/--replay used by our batteries. \u26a0 --replay /dev/null discards bot print() (builder B2).",
+    "--seed": "local match runner; --tle/--seed/--replay used by our batteries. \u26a0 --replay /dev/null discards bot print() (builder B2).",
+    "--tle": "local match runner; --tle/--seed/--replay used by our batteries. \u26a0 --replay /dev/null discards bot print() (builder B2).",
+    "--watch": "local match runner; --tle/--seed/--replay used by our batteries. \u26a0 --replay /dev/null discards bot print() (builder B2)."
+  },
+  "starter": {
+    "--bot": "scaffolding; irrelevant.",
+    "--help": "help text; no behaviour"
+  },
+  "status": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "submission": {
+    "--help": "help text; no behaviour"
+  },
+  "submission activate": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "submission download": {
+    "--help": "help text; no behaviour"
+  },
+  "submission list": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "submission rename": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "submission upload": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "submit": {
+    "--help": "help text; no behaviour"
+  },
+  "team": {
+    "--help": "help text; no behaviour"
+  },
+  "team info": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "team search": {
+    "--help": "help text; no behaviour",
+    "--json": "machine-readable output; used widely"
+  },
+  "watch": {
+    "--game": "opens the visualiser; local/manual only.",
+    "--help": "help text; no behaviour",
+    "--match": "opens the visualiser; local/manual only."
+  }
+}
