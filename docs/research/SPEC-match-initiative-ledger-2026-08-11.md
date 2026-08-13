@@ -105,3 +105,12 @@ verdict.
   `scratchpad/arm_*.txt` files can be back-filled **only where they still exist
   and are unambiguous**; a back-fill must be tagged as such and never mixed with
   live rows without a source column.
+
+---
+
+**APPENDIX (append-only, 2026-08-13T17:09Z, builder s37):** implemented by
+`tools/match_ledger.py`. Its selftest and both in-file mutation recipes were
+re-run and recorded at
+`docs/research/RECORD-mutation-tests-inert-ledger-diffcheck-2026-08-13.md`.
+This line closes the citation chain: the tool declares IMPLEMENTS against this
+spec, and the spec names its implementation.

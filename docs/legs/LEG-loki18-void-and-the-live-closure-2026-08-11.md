@@ -153,3 +153,12 @@ side-lane finding's urgency without checking WHICH row was suppressed, and
 claiming a rated-cost verification from a surface that could not see the window.
 **All three ran in the flattering direction. An error distribution with a mean is
 not noise.**
+
+---
+
+**APPENDIX (append-only, 2026-08-13T17:09Z, builder s37):** the machine-readable
+prereg-block rule this leg established (sec.4 item 2) is enforced by
+`tools/inert_check.py`, whose selftest and mutation tests were re-run and
+recorded at `docs/research/RECORD-mutation-tests-inert-ledger-diffcheck-2026-08-13.md`.
+This line exists so the citation chain closes: the tool cites this leg as its
+origin, and this leg names the tool as its enforcement.
