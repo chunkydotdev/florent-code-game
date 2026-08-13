@@ -44205,3 +44205,23 @@ fired=False on ALL 20 files INCLUDING the s36 positive cell — because the
 tool keys on events.tsv basenames and I passed replay_archive/ paths. The
 all-zero was caught by refusing to read a zero that covered the positive
 control. The pinned-definition run above postdates the fix.
+
+# 2026-08-13T19:59:08Z (`date -u`) — **BUILDER s37 INTERIM STOP + DIAGNOSIS: IDLEPECK cancelled at n=866,
+# 44.34 ±3.33 (~3.3σ low) — and the mechanism is MEASURED, not guessed
+# (Magnus asked for the dosage read; 9 kept-replay games vs the incumbent,
+# scratchpad/idlepeck_screen_dose/).** Pecks fire in 6/9 games from r26-49 —
+# NOT terminal parks: ordinary 8-round lulls trigger the step, and each peck
+# occupies the action so the bot never moves again while the target stands —
+# a brief pause becomes a permanent peck-lock, 64-276 pecks/game = 128-552
+# Ti diverted from ammo in live fights. **LOKI_IDLE_PECK_RNDS=8 is
+# hair-trigger; the redesign (threshold ~40+ = true parks only, plus an
+# ammo-surplus gate) goes through a fresh prereg as IDLEPECK2 — after
+# research's park-length distribution says where the threshold separates
+# lull from park.** Rows kept. Camp-class mechanism (−28 rounds when a TRUE
+# park pecks) remains valid and unrefuted — the defect is the trigger, not
+# the idea. Cores refunded to COMBO/GUNAXIS0/APPRLAUNCH.
+# ALSO: combo-suppression suspects narrowed by doctrine diff — TWORAID's
+# tree vs the combo differ ONLY by LOKI_DIGOUT_ON (UNDERECO is code-path) —
+# so the interaction diff is a two-candidate question and "combo minus
+# DIGOUT" (= UNDERECO+TWORAID) answers it while doubling as the proposed v9
+# variant. Built after tonight's finals per the gating rule.
