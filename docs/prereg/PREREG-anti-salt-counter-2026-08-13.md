@@ -227,3 +227,50 @@ the single nondeterminism site HANDOVER already names, now confirmed to matter i
 practice. ⇒ **It is a precondition on the paired-seed design proposed earlier: a
 paired contrast requires `NOISE_ON = False` in BOTH trees, or the pairing buys
 nothing.**
+
+---
+
+# AMENDMENT 3 — 2026-08-13T06:1xZ. **A PRE-REGISTERED LOOK SCHEDULE, BECAUSE I DID NOT HAVE ONE.**
+
+**ADD-ONLY, and it CONSTRAINS me rather than the data.**
+
+I shipped v123 partly on `IDLEVSALT` at n=517 and disclosed the reason to
+distrust it: **I chose when to look, repeatedly, at a shard filling
+continuously.** The side lane first offered z≈3.56 as reassurance and then
+withdrew it, correctly: **that is a MULTIPLICITY correction and this is OPTIONAL
+STOPPING — different faults, and a fixed-n z cannot see the second at all.**
+
+**⛔ AND THE INFLATION IS NOT RECOVERABLE AFTER THE FACT: it depends on the LOOK
+SCHEDULE, which was never pre-registered, so nobody can compute it now.** That is
+not a reason to discount the disclosure — **it IS the disclosure.**
+
+⇒ **It cannot be fixed retrospectively for `IDLEVSALT`. It CAN be fixed
+prospectively for every arm still filling, and all four are under 25% of target,
+so nothing here is chosen with knowledge of a final number.**
+
+## THE SCHEDULE — committed now, before any of these arms is near done
+
+**Exactly TWO scoring looks per arm. No verdict may be read at any other n.**
+
+| look | n | what may be concluded |
+|---|---|---|
+| **INTERIM** | **2,704** (half target, exactly 8 maps x 2 seats x 169 seeds) | STOP EARLY **only** if outside the band at that n; otherwise say nothing and continue |
+| **FINAL** | **5,408** | the verdict |
+
+**Bands: ±1.88pp at n=2,704 · ±1.33pp at n=5,408.** Applies to `NULLSALT`,
+`SALTCLEAR`, `SALTROUTE`, `IDLEVSALT` and `ROUTEONLY`.
+
+**⚠ AND THE HONEST COST OF EVEN TWO LOOKS, stated rather than hidden:** two looks
+at nominal 5% is a family-wise error near 8-9%, not 5%. **A stop at the interim
+is therefore a WEAKER result than the same number at full n**, and any interim
+stop must be reported with that sentence attached.
+
+**WHAT I MAY STILL DO BETWEEN LOOKS — and the distinction is the whole point:**
+report **progress** (n, and the rate as a running figure) to Magnus on request.
+**What I may not do is treat a between-look reading as a RESULT, or ship on one.**
+Watching a number is not the fault; **letting the moment I happened to look decide
+the verdict is.**
+
+**⛔ THIS DOES NOT RETROSPECTIVELY VALIDATE v123.** v123 shipped on a look taken
+outside any schedule, on Magnus's call, and that stands as recorded. **The
+schedule binds what comes next.**
