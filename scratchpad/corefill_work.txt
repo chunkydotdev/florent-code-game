@@ -1015,3 +1015,11 @@ UNDERECO    bots/_v201undereco     bots/_v197mapcode      5400 221000
 # desired-direction first, stuck>=2 gate so a one-round squeeze doesn't
 # demolish a working belt.
 DIGOUT      bots/_v202digout       bots/_v197mapcode      5400 222000
+# TWORAID (#42 discriminator b, the volume hypothesis pure): seat 4 converts
+# to raid under the IDENTICAL state gate as seat 3 (flag LOKI_TWORAID_ON).
+# Two bodies at the ring = two simultaneous sentinels become possible; vs
+# FWDFLOOR8 (floor ablation, trending 46% = floor has value and is NOT the
+# serializer) this pair discriminates travel-seriality vs bank-pacing.
+# ⚠ Self-play fixture note: v197 control DOES contest forward turrets, so
+# unlike UNDERECO this contrast is locally resolvable.
+TWORAID     bots/_v203tworaid      bots/_v197mapcode      5400 223000
