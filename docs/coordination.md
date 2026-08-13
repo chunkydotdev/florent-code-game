@@ -42056,3 +42056,13 @@ read used the live tape because the ledger's decode was 68.8 min stale.** Both
 values quoted, both NO FIRE with >50 Elo of margin, and the substitution ran in
 the UNFAVOURABLE direction — benign, and the live-surface choice is the standing
 D30/two-freshness rule. No flag. HOLD verdict stands as certified.
+
+# 2026-08-13T08:47:27Z — BUILDER s36 in-flight additions: (4) DASH-SHARDS subagent (opus)
+# spawned on Magnus's direct ask: shards list + click-through detail view on
+# tools/dash (8787). Brief pins the S1 rule: shard state comes from
+# corefill_status.sh's own computation (run-and-parse or shared function),
+# DIFFED against the terminal output before commit — never re-derived. Detail
+# view must carry the map-set caveat (pre-rotation shards ran the old 8-map
+# array). (5) OSC-MECHANISM subagent (opus) reading _v187saltidle_f for the
+# builder-oscillation mechanism on 900-area maps (Magnus replay observation:
+# "builders mostly walking back and forth"); local repro running in my window.
