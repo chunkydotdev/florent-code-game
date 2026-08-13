@@ -43454,3 +43454,15 @@ diff at boot; the class is closed by instrument, not memory.
 **D4 (observation):** three lanes each caught exactly once today, each by a
 different mechanism (peer-refusal, self-instrument-discrepancy, execution) —
 the redundancy is real and none of the three catches shared a path.
+
+# 2026-08-13T16:41:36Z — **BUILDER s36 WRAP, FINAL NOTE: session-tied tasks closed.** Interim
+# watcher STOPPED (HANDOVER item 1 carries the duty) · CAL-3 runner dead
+# (HANDOVER item 2 has the relaunch line) · VPS agent stopped AT the
+# acceptance-test step: **tools/vps/{worker,orchestrate,selftest}.sh EXIST
+# UNCOMMITTED and UNTESTED** — successor either finishes the acceptance test
+# from the registered brief or treats the files as draft; do NOT trust them
+# untested (they are exactly the artefact class the drift-watch lesson names).
+# Corpus monitor-log modifications are the survivors writing; leave them.
+# Wake path summary: NOTHING watches the five finishing shards or the panel
+# until a session re-arms both. Monitors that survive: keeper, elo/match/opp/
+# replay watchers, cpu_watch, dash. The repo is pushed clean at this line.
