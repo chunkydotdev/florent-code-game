@@ -42140,3 +42140,26 @@ properly stated ✓. C6 (Lunds 1623) checked against the CURRENT rule and passes
 3. **"n=150 and n=300 (or wrap)" makes the look schedule elastic** — a wrap at
    arbitrary n is a look at a chosen moment (B4's fault class). Fix: comparative
    read at wrap ONLY if n≥150; below that, descriptive.
+
+## RESEARCH 2026-08-13T08:53:55Z — SAME-DAY RATED DECODE #1 (charter duty 3; all 26 matches / 130 game rows created 2026-08-13, oppver pinned per game)
+
+**THE HEADLINE IS THE AREA CLASS, AND IT IS LIVE RATED EVIDENCE FOR QUEUE #1:**
+- **v123 today: 24/32 (75%) on area <=676 · 2/8 (25%) on the 900-area maps**
+  (drakkarfjord 1/2, glacierkeep 1/1, midgard 0/3, valkyrie 0/2). Dims read
+  from the map headers via `crash_cells.map_dims`, not filename inference.
+- **All five r1000 games today were LOSSES, 5/5 on `titanium_collected`** —
+  two of them v123 on valkyrie (900). Zero tiebreak wins today. The
+  rich-and-idle mechanism in PROGRAMME.md's map-rotation block is what the
+  rated tape now shows.
+- v123 kill median today 192.5 (n=26, inside KILL_WINDOW_RND 250); death
+  median 216 (n=11).
+- Per-version today — **descriptive only, different opponents AND different
+  map draws** (v116/v122 drew ZERO 900-area games): v116 34/70 (49%),
+  v122 7/20 (35%), v123 26/40 (65%; 75% on <=676).
+- v123 per-opponent cells (k=5 each): Jython v33 5/5 · gsxWins v22 5/5 ·
+  I Stone v22 4/5 · Coreflood v82 3/5 · arsonist duck v24 3/5 · Besvikomat
+  v45 2/5 · Landers v119 2/5 · Lunds v69 2/5.
+
+**CONSUMPTION NOTE:** the 2/8-on-900 figure is the number the builder's
+map-area work (queue #1) should carry as its "why now"; PANEL-CAL-1 will add
+unrated 900-area cells as they draw.
