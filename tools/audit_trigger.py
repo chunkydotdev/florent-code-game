@@ -270,8 +270,14 @@ def cross_lane_analysis():
             ["git", "log", f"--since={CHURN_HOURS}.hours", "--diff-filter=A",
              "--name-only", "--pretty=format:"],
             capture_output=True, text=True, cwd=ROOT).stdout
+    # Audit M6 (2026-08-13): MANDATED_PROSE was honoured by doc_code_churn and
+    # never by this sibling — 4 of the 10 files behind that day's FIRE were
+    # preregs. Retros are mandated too (each lane's wrap REQUIRES one), so they
+    # are excluded here for the same reason preregs are.
     docs = sum(1 for ln in out.splitlines()
-               if ln.strip().startswith("docs/") and ln.strip().endswith(".md"))
+               if ln.strip().startswith("docs/") and ln.strip().endswith(".md")
+               and not any(ln.strip().startswith(m) for m in MANDATED_PROSE)
+               and "retro" not in Path(ln.strip()).name.lower())
     decisions = _decisions_in_window()
     ratio = docs / max(decisions, 1)
     return ratio, (f"{docs} new analysis docs / {decisions} decision rows ADDED "
