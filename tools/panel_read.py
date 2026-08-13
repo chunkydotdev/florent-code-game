@@ -40,6 +40,8 @@ CELLS_BY_PANEL = {
              "Jython": "C4", "The Bisons": "C5", "Lunds Stallions": "C6"},
     "cal3": {"team lazy": "C1", "Big O": "C2", "Leviathan": "C3",
              "Jython": "C4", "Juusto": "C5", "Coreflood": "C6"},
+    "cal4": {"team lazy": "C1", "Juusto": "C2", "Leviathan": "C3",
+             "HTTP 418": "C4", "0033": "C5", "farming_200s": "C6"},
 }
 
 # Per-panel frozen parameters — each from its own committed prereg. A panel's
@@ -73,9 +75,21 @@ PANELS = {
     # gaps frozen at the CAL-3 prereg commit (ours 1710 live, theirs 13:52Z
     # league_matches) — re-freeze ONLY at the n=150/300 look boundaries.
     "cal3": {"holder": "125",
-             "since": "2026-08-13T14:57:19Z", "until": "9999",
+             "since": "2026-08-13T14:57:19Z", "until": "2026-08-13T20:58:43Z",
              "gaps": {"C1": -71, "C2": -68, "C3": -66, "C4": -6, "C5": +6, "C6": +47},
-             "comparative_allowed": True},
+             "comparative_allowed": True},  # n=150 look SPENT 2026-08-13 ~20:4xZ
+    # gaps copied from the CAL-4 FIRE-TIME AMENDMENT (commit ffd8d71, author
+    # 2026-08-13T20:58:43Z, the named primary) and NEGATED: the amendment
+    # lists them-minus-us (Leviathan +101 = they are 101 above us at our
+    # 1783); this dict is us-minus-them, verified against cal3's own printed
+    # E values (C4 Jython gap -6 -> E 0.491).
+    "cal4": {"holder": "125",
+             "since": "2026-08-13T20:58:43Z", "until": "9999",
+             "gaps": {"C1": +2, "C2": +67, "C3": -101, "C4": -38, "C5": -64, "C6": -73},
+             "comparative_allowed": True,
+             # D13 rider: C3 Leviathan kept DELIBERATELY as the camp-class
+             # reference; floor-pinned in CAL-3 (every match 1/5, +-0.000).
+             "reference_cells": {"C3"}},
 }
 AREA900 = 900  # drakkarfjord, glacierkeep, midgard, ragnarok, valkyrie
 
@@ -252,8 +266,10 @@ def main() -> int:
         mean = statistics.mean(shares)
         se = statistics.stdev(shares) / math.sqrt(m) if m > 1 else float("nan")
         e = expected(panel["gaps"][cell])
+        ref = "  [REFERENCE cell — deltas declared unreadable (D13)]" \
+            if cell in panel.get("reference_cells", set()) else ""
         print(f"  {cell} {opp}: share {mean:.3f} vs E {e:.3f} -> "
-              f"{mean - e:+.3f} ± {se:.3f} (cluster SE, m={m})")
+              f"{mean - e:+.3f} ± {se:.3f} (cluster SE, m={m}){ref}")
     print("  (verdict sentences remain the builder's; this table is the read)")
     return 0
 

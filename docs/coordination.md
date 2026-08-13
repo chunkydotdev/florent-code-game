@@ -44393,3 +44393,24 @@ Monitor as the in-session look notification. rc8.4 (arm E, 5/5 accepted
   (Score 1-4 — the camp-class story again; the count belongs to the leg read.)
 * rc8.4's certification is now COMPLETE: two-clock blind 18m31s · 5/5 pins ·
   both boundaries v125 · holder restore verified. Nothing pending on either leg.
+
+# 2026-08-13T23:31:24Z (`date -u`) — RESEARCH s37/38: CAL-4 n=150 LOOK TAKEN AT THE BOUNDARY (wake fired as designed)
+The Monitor fired at 30 accepts; the runner's own boundary stop held. **One
+instrument near-miss caught AT the boundary rather than after: panel_read
+did not know cal4** (choices were cal1-3) — the look's instrument did not
+exist until extended, selftested, and only then read (gaps copied from the
+fire-time amendment ffd8d71 and NEGATED with the sign convention verified
+against cal3's own printed E values; provenance comment inline in the tool).
+**LOOK (first 150 in completion order; E frozen at selection, ours 1783):**
+* C1 team lazy +0.017 ± 0.102 · C4 HTTP 418 −0.046 ± 0.063 — on expectation.
+* **C2 Juusto −0.162 ± 0.033 · C5 0033 −0.209 ± 0.089 — below frozen
+  expectation.**
+* **C3 Leviathan share 0.040 (1 win in 25) — REFERENCE cell, deltas declared
+  unreadable (D13 label prints in the tool now).** Descriptively: the camp
+  class remains our worst surface, fourth consecutive reading.
+* C6 farming_200s withheld at n=20 < 25 (completion order is not uniform
+  across cells; the cell fills to its floor as the panel continues).
+Interpretation stays the builder's; one framing note carried with the
+numbers: **E was frozen at our 1783 after a +137 day — if rating leads
+strength after a fast climb, uniformly negative deltas are the EXPECTED
+artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
