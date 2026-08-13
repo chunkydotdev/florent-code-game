@@ -440,8 +440,9 @@ def main(d="corpus"):
     try:
         r = _sp.run([str(root_ / ".venv/bin/fcode"), "maps", "sync"],
                     capture_output=True, text=True, timeout=60)
-        line = (r.stdout + r.stderr).strip().splitlines()
-        print(f"\nMAPS SYNC: {line[-1] if line else 'ran, no output'}")
+        lines = [ln for ln in (r.stdout + r.stderr).strip().splitlines()
+                 if ln.strip() and "Update available" not in ln]
+        print(f"\nMAPS SYNC: {lines[-1] if lines else 'ran, no output beyond the update banner'}")
     except Exception as e:
         print(f"\nMAPS SYNC: BLIND ({e}) — pool check runs on the local copy")
     bad += pool_check()
