@@ -88,7 +88,22 @@ class Player:
         me = ct.get_team()
         p = ct.get_position()
         core = self._visible_enemy_core_tile(ct, me)
-        target = core or Player.enemy_core_est
+        # Class attributes do NOT share across units in this sandbox (each
+        # unit runs its own Player), so every builder derives the reflected
+        # enemy-core estimate from its OWN core sighting — it spawns adjacent
+        # to it, so the first turn always sees it.
+        if getattr(self, "_tgt", None) is None:
+            for bid in ct.get_nearby_buildings():
+                try:
+                    if (ct.get_team(bid) == me
+                            and ct.get_entity_type(bid) == EntityType.CORE):
+                        q = ct.get_position(bid)
+                        self._tgt = Position(ct.get_map_width() - 1 - q.x,
+                                             ct.get_map_height() - 1 - q.y)
+                        break
+                except Exception:
+                    continue
+        target = core or getattr(self, "_tgt", None)
 
         # 1. FEEDER DUTY: if a core tile is in creep range, keep exactly one
         #    gunner alive on an adjacent tile, rebuilding the instant it dies.
@@ -127,6 +142,7 @@ class Player:
                 try:
                     if ct.can_move(d):
                         ct.move(d)
+                        self._stuck = 0
                         return
                 except Exception:
                     pass
@@ -135,9 +151,25 @@ class Player:
                     if ct.can_move(d2) and p.add(d2).distance_squared(target) \
                             < p.distance_squared(target) + 3:
                         ct.move(d2)
+                        self._stuck = 0
                         return
                 except Exception:
                     continue
+            # STUCK-ESCAPE: greedy+slide deadlocks in wall pockets and in the
+            # clump the builders themselves form. After 3 failed move turns,
+            # take ANY legal move, direction rotated by unit id + stuck count
+            # so clumped builders disperse instead of mirroring each other.
+            self._stuck = getattr(self, "_stuck", 0) + 1
+            if self._stuck >= 3:
+                off = (ct.get_id() + self._stuck) % 4
+                for k in range(4):
+                    d3 = CARDINALS[(off + k) % 4]
+                    try:
+                        if ct.can_move(d3):
+                            ct.move(d3)
+                            return
+                    except Exception:
+                        continue
 
     # ----------------------------------------------------------- gunner
     def _gunner_turn(self, ct: Controller) -> None:
