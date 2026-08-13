@@ -535,6 +535,68 @@ def load_worklist(path: Path = WORKLIST) -> dict:
     return out
 
 
+# A worklist comment block is written for a GROUP of shard lines, not for one row
+# (the three calibration cells share one block, and the file header is the block
+# for the very first line). So a caption lifted from it is about the batch unless
+# it happens to name the shard.
+SEPARATOR_RE = re.compile(r"^#\s*(?:[-=*_~]{3,}|)\s*$")
+# A new caption inside a block starts with a bare SHARDNAME: or a numbered range
+# ("1-3 FIRST AND THEY ARE NOT NEGOTIABLE:"). Everything else on the following
+# lines is the same sentence, hard-wrapped by hand at ~78 columns.
+NEW_CAPTION_RE = re.compile(r"^(?:[A-Z][A-Z0-9_]{2,}\s*:|\d+[-–]\d+\s)")
+NOTE_MAX_CHARS = 240
+
+
+def _paragraph(lines: list[str], i: int) -> str:
+    """The picked line PLUS its hand-wrapped continuations, joined verbatim.
+
+    ⛔ WITHOUT THIS THE CAPTION IS A FRAGMENT. The worklist is wrapped by hand at
+    ~78 columns, so `NEG125`'s own line ends "…as known-worse treatment vs v197 —
+    the", and showing one line showed that. Joining adjacent lines is still pure
+    selection — no word is added — and it stops at the next caption so one
+    shard's note cannot annex the next shard's.
+    """
+    parts = [lines[i].lstrip("#").strip()]
+    for l in lines[i + 1:]:
+        t = l.lstrip("#").strip()
+        if not t or NEW_CAPTION_RE.match(t):
+            break
+        parts.append(t)
+    # A leading rule ("--- THE ATTRIBUTION ARMS. …") is punctuation the operator
+    # used to separate batches, not a word. Dropping it leaves the sentence.
+    text = re.sub(r"^[-=*_~\s]+", "", " ".join(p for p in parts if p))
+    if len(text) > NOTE_MAX_CHARS:
+        cut = text.rfind(" ", 0, NOTE_MAX_CHARS)
+        text = text[:cut if cut > 0 else NOTE_MAX_CHARS].rstrip(" ,;-") + " …"
+    return text
+
+
+def worklist_note(shard: str, block: list[str]) -> dict | None:
+    """One line of the operator's OWN prose to caption this shard in the list.
+
+    ⛔ SELECTION, NEVER SUMMARY. Every character returned is copied verbatim out
+    of `corefill_work.txt` with its leading `#` stripped. This page is forbidden
+    from inventing an explanation of what an arm tests, and the worklist comment
+    IS the richest explanation that exists, so the job is to CHOOSE a line, not
+    to write one.
+
+    Preference order, and why it is reported rather than hidden: a comment block
+    sits above a GROUP of shard lines, so a line NAMING this shard is about this
+    shard while the first prose line of a block is about the batch. `shard_named`
+    tells the reader which of the two they got — a batch caption presented as a
+    per-shard one would be a claim nobody made.
+    """
+    lines = [l for l in (block or []) if not SEPARATOR_RE.match(l)]
+    if not lines:
+        return None
+    idx = next((i for i, l in enumerate(lines) if shard in l), None)
+    text = _paragraph(lines, idx if idx is not None else 0)
+    if not text:
+        return None
+    return {"text": text, "shard_named": idx is not None,
+            "block_lines": len(block or [])}
+
+
 def shard_map_set(shard: str) -> dict:
     """Which map pool this shard actually played, decided FROM ITS OWN ROWS.
 
@@ -676,6 +738,16 @@ def collect_shard_list() -> dict:
         w = wl["shards"].get(r["shard"], {})
         r["tests"] = w.get("tests")
         r["worklist_line"] = w.get("line")
+        # ⭐ The worklist's OWN prose, carried to the list view. Before this the
+        # list rendered seven columns of numbers and no word about what any arm
+        # tested — `tests` was in this payload and shown nowhere, so answering
+        # "what is this one?" cost 79 page loads. Passthrough only: no field
+        # below is computed, scored or paraphrased here.
+        r["worklist_lineno"] = w.get("lineno")
+        r["treatment"], r["control"] = w.get("treatment"), w.get("control")
+        r["target"], r["seed_lo"] = w.get("target"), w.get("seed_lo")
+        r["comment_block"] = w.get("comment_block") or []
+        r["note"] = worklist_note(r["shard"], w.get("comment_block") or [])
     orphans = []
     try:
         on_disk = sorted({p.name.split(".")[0] for p in OVERNIGHT.glob("*.heartbeat")}
@@ -698,6 +770,11 @@ def collect_shard_list() -> dict:
                         "heartbeat": _file_facts(hb)})
     return {"ok": st.get("ok", False), "pending": st.get("pending", False),
             "error": st.get("error"), "note": st.get("note"),
+            # TWO CLOCKS, AND THEY ARE NOT THE SAME ONE. `served_at` is when this
+            # reply was built; `at` is when corefill_status.sh last ran. A page
+            # that shows only the first looks live while quoting a capture that
+            # may be minutes old — the ship_watch defect, in a browser.
+            "served_at": iso(now_utc()),
             "at": st.get("at"), "age_min": st.get("age_min"),
             "cadence_min": st.get("cadence_min"),
             "source": "tools/corefill_status.sh (verbatim output, parsed)",
@@ -752,6 +829,7 @@ def collect_shard_detail(shard: str) -> dict:
         # --- what defines it -------------------------------------------------
         "worklist": w, "worklist_path": wl["path"],
         "tests": (w or {}).get("tests"),
+        "note": worklist_note(shard, (w or {}).get("comment_block") or []),
         # --- artefacts -------------------------------------------------------
         "maps": shard_map_set(shard),
         "heartbeat": {**_file_facts(hb), "line": hb_line},

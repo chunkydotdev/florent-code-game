@@ -116,3 +116,59 @@ dl { margin: 0; }
          font-family: var(--mono); }
 footer { color: var(--dimmer); font-size: 12px; margin-top: 44px;
          border-top: 1px solid var(--line); padding-top: 14px; }
+
+/* ---- shard view -------------------------------------------------------- */
+/* State chips: the list is 79 rows long and "what is running?" is the question
+   it is opened with, so that answer is one click and not a scroll. */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 12px; }
+.chip {
+  font-family: var(--mono); font-size: 12px; font-weight: 650;
+  padding: 5px 11px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--panel); color: var(--dim);
+  text-decoration: none; display: inline-block;
+}
+.chip:hover { background: var(--panel2); color: var(--ink); }
+.chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip.c-running:not(.on) { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 40%, var(--line)); }
+.chip.c-STALLED:not(.on) { color: var(--warn); border-color: color-mix(in srgb, var(--warn) 40%, var(--line)); }
+.chip.c-DEAD:not(.on)    { color: var(--bad);  border-color: color-mix(in srgb, var(--bad) 40%, var(--line)); }
+
+.cta {
+  display: inline-block; background: var(--accent); color: #fff;
+  text-decoration: none; font-weight: 650; font-size: 13.5px;
+  padding: 7px 14px; border-radius: 9px;
+}
+.cta:hover { filter: brightness(1.1); }
+
+th .th-note { font-weight: 400; text-transform: none; letter-spacing: 0;
+              color: var(--dimmer); }
+.sub-mono { font-family: var(--mono); font-size: 11.5px; color: var(--dimmer);
+            margin-top: 3px; }
+.vs { color: var(--dimmer); font-weight: 400; }
+.rate { font-family: var(--mono); font-size: 14px; font-weight: 650; }
+.note-line { color: var(--ink); font-size: 13px; max-width: 46ch; }
+
+/* The operator's own explanation, at the top of a shard page where it belongs. */
+.what {
+  background: var(--panel); border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 11px 11px 0; padding: 14px 18px; margin: 6px 0 20px;
+}
+.what > .k { font-size: 11px; text-transform: uppercase; letter-spacing: .07em;
+             color: var(--dimmer); margin-bottom: 8px; }
+.what .headline { font-size: 16px; line-height: 1.45; color: var(--ink);
+                  margin: 0 0 10px; }
+.what h3 { margin-top: 18px; }
+table.kv { width: auto; font-size: 13px; }
+table.kv td { border-bottom: none; padding: 2px 16px 2px 0; }
+table.kv td:first-child { color: var(--dimmer); }
+pre.prose {
+  background: var(--panel2); border: 1px solid var(--line); border-radius: 9px;
+  padding: 12px 15px; margin: 0; font-family: var(--sans); font-size: 13.5px;
+  line-height: 1.55; color: var(--ink); white-space: pre-wrap; word-wrap: break-word;
+}
+details { margin: 10px 0 0; }
+details summary { cursor: pointer; color: var(--dim); font-size: 13px;
+                  padding: 6px 0; }
+details summary:hover { color: var(--ink); }
+details p.lede { margin-top: 8px; }

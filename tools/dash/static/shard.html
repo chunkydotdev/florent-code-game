@@ -22,13 +22,20 @@
 <main>
   <p class="lede" style="margin-bottom:6px"><a href="/shards">&larr; all shards</a></p>
   <h1 id="name" class="mono">…</h1>
-  <p class="lede" id="tests"></p>
+  <div class="count" id="read">…</div>
+
+  <!-- THE OPERATOR'S OWN WORDS COME FIRST. This block used to sit below the
+       cards AND below a ten-line essay about the map rotation that is
+       byte-identical on all 79 shard pages, so the one genuinely explanatory
+       thing on the page was the last thing a reader reached. -->
+  <div id="what"></div>
 
   <div class="grid" id="cards"></div>
 
   <div id="body"></div>
 
   <footer>
+    <a href="/shards">&larr; all shards</a> · <a href="/">Cores overview</a> ·
     Auto-refreshes every 10 s. State, rows, percentage, heartbeat age, ETA, rate and
     band are read out of <code>tools/corefill_status.sh</code>; everything else on
     this page is a file on disk, shown with its own timestamp.
@@ -49,11 +56,35 @@ function freshBadge(ageMin, cadenceMin) {
   return `<span class="badge ${cls}">${label} ${ageMin.toFixed(1)}m</span>`;
 }
 
+// ⛔ A FILE ON DISK HAS NO CADENCE, SO IT CANNOT BE CALLED "fresh". The previous
+// version passed a cadence of 1e9 to freshBadge for every artefact, which printed
+// a green `fresh 2141.2m` beside a heartbeat last touched a day and a half ago.
+// In a dashboard whose whole premise is that a healthy line and a blind line must
+// not look alike, a green badge on a 35-hour-old file is the defect, not the fix.
+// Artefacts get their age stated in human units and no verdict at all.
+function fileAge(ageMin) {
+  if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
+  const m = ageMin;
+  const txt = m < 90 ? `${m.toFixed(1)} min ago`
+            : m < 2880 ? `${(m / 60).toFixed(1)} h ago`
+            : `${(m / 1440).toFixed(1)} days ago`;
+  return `<span class="badge b-dim" title="age of the file itself; files have no refresh cadence, so this is not a fresh/stale verdict">${txt}</span>`;
+}
+
 function stateBadge(st) {
   const cls = {running:'b-ok', DONE:'b-ok', STALLED:'b-warn', DEAD:'b-bad',
                CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
   return `<span class="badge ${cls}">${esc(st)}</span>`;
 }
+
+const STATE_MEANS = {
+  running:   'an `overnight.sh` process is alive and its heartbeat is moving',
+  STALLED:   'alive but frozen — the process exists, the heartbeat has not moved for over 600 s',
+  DEAD:      'started, no process. corefill deliberately never relaunches, so it stays dead until a human looks',
+  DONE:      'its .COMPLETE marker exists — it reached its pre-registered target',
+  CANCELLED: 'cut short by hand. Rows are KEPT, so the rate below is whatever its partial rows give — read the progress beside it',
+  queued:    'a worklist line that has never been launched',
+};
 
 function card(k, v, sub) {
   return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div>
@@ -64,7 +95,7 @@ function mapBadge(label) {
   if (label === 'live pool') return '<span class="badge b-ok">live pool</span>';
   if (label === 'MIXED') return '<span class="badge b-bad">MIXED</span>';
   if (label === 'unknown') return '<span class="badge b-blind">unknown</span>';
-  return '<span class="badge b-warn">pre-rotation</span>';
+  return '<span class="badge b-warn">RETIRED GEOMETRY</span>';
 }
 
 function fileBlock(title, f, extra) {
@@ -74,26 +105,70 @@ function fileBlock(title, f, extra) {
   }
   return `<h3>${title}</h3>
     <div class="count"><code>${esc(f.path)}</code> · ${esc(f.bytes)} bytes ·
-      written ${esc(f.at)} ${freshBadge(f.age_min, 1e9)}</div>
+      written ${esc(f.at)} ${fileAge(f.age_min)}</div>
     ${extra || ''}`;
 }
 
 function render(d) {
-  $('#clock').textContent = d.served_at;
   document.title = d.shard + ' — Loki dashboard';
   $('#name').textContent = d.shard;
+  $('#clock').textContent = d.served_at;
 
   if (!d.exists) {
-    $('#tests').innerHTML = '';
+    $('#what').innerHTML = '';
     $('#cards').innerHTML = '';
+    $('#read').textContent = 'read ' + (d.served_at || '');
     $('#body').innerHTML = `<div class="note warn"><strong>No such shard.</strong>
-      Nothing on disk and no worklist line for <code>${esc(d.shard)}</code>.</div>`;
+      Nothing on disk and no worklist line for <code>${esc(d.shard)}</code>.
+      <a href="/shards">Back to the shard list.</a></div>`;
     return;
   }
 
-  $('#tests').innerHTML = d.tests
-    ? 'Tests ' + esc(d.tests)
-    : '<span class="badge b-dim">what it tests: not derivable from a worklist line</span>';
+  // ---------- the two clocks, said out loud -------------------------------
+  $('#read').innerHTML =
+    'page data read <strong>' + esc(d.served_at) + '</strong> · state/rows/rate from '
+    + '<code>' + esc(d.status_source) + '</code> captured '
+    + (d.status_at ? esc(d.status_at) + ' ' + freshBadge(d.status_age_min, d.status_cadence_min)
+                   : '<span class="badge b-blind">never — no capture yet</span>')
+    + ' · auto-refreshing every 10 s';
+
+  // ---------- what it tests, in the operator's own words -------------------
+  const w = d.worklist;
+  const block = (w && w.comment_block) || [];
+  const prose = block.map(l => l.replace(/^#\s?/, '')).join('\n').trim();
+  const wparts = [];
+  if (d.note) {
+    wparts.push(`<p class="headline">${esc(d.note.text)}</p>`);
+    if (!d.note.shard_named) {
+      wparts.push(`<p class="lede" style="margin:0 0 10px"><span class="badge b-dim">batch note</span>
+        This line does not name <code>${esc(d.shard)}</code>: worklist comment blocks sit
+        above a <em>group</em> of shard lines, so it describes the batch this shard
+        belongs to. The whole block is below, verbatim.</p>`);
+    }
+  }
+  if (w) {
+    wparts.push(`<table class="kv">
+      <tr><td>treatment (the arm)</td><td class="mono">${esc(w.treatment) || '<span class="badge b-dim">—</span>'}</td></tr>
+      <tr><td>control</td><td class="mono">${esc(w.control) || '<span class="badge b-dim">—</span>'}</td></tr>
+      <tr><td>target games</td><td class="mono">${esc(w.target) || '<span class="badge b-dim">—</span>'}</td></tr>
+      <tr><td>seed block</td><td class="mono">${esc(w.seed_lo) || '<span class="badge b-dim">—</span>'}</td></tr>
+    </table>
+    <p class="lede" style="font-size:13px;margin:10px 0 0">The percentage on this page
+      is the share of finished games won by the <strong>treatment</strong> tree against
+      that control — 50% is the no-difference point.</p>`);
+  }
+  if (prose) {
+    wparts.push(`<h3>The worklist note in full (verbatim, ${esc(block.length)} line${block.length === 1 ? '' : 's'})</h3>
+      <pre class="prose">${esc(prose)}</pre>
+      <p class="lede" style="font-size:12px;margin:6px 0 0">Copied from
+        <code>${esc(d.worklist_path)}</code>, the comment block immediately above line
+        ${esc(w.lineno)}. Nothing on this page paraphrases it.</p>`);
+  }
+  $('#what').innerHTML = wparts.length
+    ? `<div class="what"><div class="k">What this shard tests</div>${wparts.join('')}</div>`
+    : `<div class="note warn"><strong>No worklist line, so nothing states what this
+        shard tests.</strong> Its line was replaced by a later batch; the artefacts
+        below are all that can honestly be shown.</div>`;
 
   // ---------- cards: the authority's own fields, nothing recomputed ----------
   const st = d.status;
@@ -106,11 +181,10 @@ function render(d) {
                 d.in_worklist ? 'in the worklist but absent from the tool output'
                               : 'no worklist line — the status tool does not cover it'));
   } else {
-    c.push(card('State', stateBadge(st.state),
-                freshBadge(d.status_age_min, d.status_cadence_min)
-                + ' from corefill_status.sh'));
-    c.push(card('Rows', `${esc(st.rows)}`,
-                `${esc(st.pct)} of target${d.worklist && d.worklist.target ? ' ' + esc(d.worklist.target) : ''}`));
+    c.push(card('State', stateBadge(st.state), esc(STATE_MEANS[st.state] || '')));
+    c.push(card('Progress', `${esc(st.pct)}`,
+                `${esc(st.rows)} rows${d.worklist && d.worklist.target ? ' of ' + esc(d.worklist.target) : ''}`
+                + (st.eta && st.eta !== '-' ? ` · ETA ${esc(st.eta)}` : '')));
     let rateV, rateS;
     if (st.refused) {
       rateV = '<span class="badge b-dim">NO RATE</span>';
@@ -120,17 +194,25 @@ function render(d) {
       rateS = (st.band !== null && st.band !== undefined
                ? `${st.lo.toFixed(2)} – ${st.hi.toFixed(2)} (±${st.band.toFixed(2)}pp, n=${esc(st.n)})` : '')
               + ' ' + (st.separated
-                ? `<span class="badge ${st.rate >= 50 ? 'b-ok' : 'b-bad'}">separated</span>`
+                ? `<span class="badge ${st.rate >= 50 ? 'b-ok' : 'b-bad'}">separated ${st.rate >= 50 ? 'ABOVE' : 'BELOW'} 50</span>`
                 : '<span class="badge b-warn">inside band</span>');
     } else {
       rateV = '<span class="badge b-dim">—</span>';
       rateS = esc(st.result_raw) || 'the tool printed no result for this shard';
     }
-    c.push(card('Rate (from the tool)', rateV, rateS));
-    const neg = /^-/.test(st.hb_age);
-    c.push(card('Heartbeat age', esc(st.hb_age),
-      (neg ? '<span class="badge b-warn">NEGATIVE</span> corefill_status.sh captures NOW once, before its ~5 s loop; a heartbeat written during the loop reads as negative. Defect is in the tool, reported not patched.'
-           : 'as printed by corefill_status.sh') + ` · ETA ${esc(st.eta)}`));
+    c.push(card('Treatment win share', rateV, rateS));
+    // ⛔ `-` and `-5s` ARE DIFFERENT FACTS. corefill_status.sh prints a bare `-`
+    // when the shard has NO heartbeat file at all, and a negative number only
+    // when one was written during its own ~5 s scan loop. Testing /^-/ matched
+    // both, so four shards with no heartbeat were shown a warning badge and a
+    // paragraph blaming a tool defect that was not happening. An alarm that
+    // fires on the wrong condition is worse than no alarm.
+    const neg = /^-\d/.test(st.hb_age);
+    const none = st.hb_age === '-';
+    c.push(card('Heartbeat age', none ? '<span class="badge b-dim">none</span>' : esc(st.hb_age),
+      none ? 'no <code>.heartbeat</code> file exists for this shard — it never wrote one'
+      : neg ? '<span class="badge b-warn">NEGATIVE</span> corefill_status.sh captures NOW once, before its ~5 s loop; a heartbeat written during the loop reads as negative. Defect is in the tool, reported not patched.'
+            : 'as printed by corefill_status.sh'));
   }
   const m = d.maps;
   c.push(card('Map set', mapBadge(m.label),
@@ -140,13 +222,16 @@ function render(d) {
   // ---------- body ----------
   const b = [];
 
-  // map set, in full — this is a real analysis hazard, not a decoration
+  // map set — a real analysis hazard, so the VERDICT stays open; the standing
+  // explanation of the rotation is identical on every shard page and is folded.
+  const pre = m.label !== 'live pool';
   b.push(`<h2>Map set</h2>
-    <div class="note ${m.label === 'live pool' ? '' : 'warn'}">
+    <div class="note ${pre ? 'warn' : ''}">
       <strong>${mapBadge(m.label)} ${esc(m.label)}</strong><br>
       ${esc(m.why)}<br>
       <span class="mono" style="font-size:12px">maps: ${m.maps.length ? esc(m.maps.join(' ')) : '(none)'}</span>
     </div>
+    <details><summary>Why the map set matters (same on every shard)</summary>
     <p class="lede">The organisers rotated the map pool on 2026-08-13;
       <code>tools/overnight.sh</code> was re-pointed at the live 15-map pool in
       <code>${esc(m.rotation_commit)}</code> at <code>${esc(m.rotation_at)}</code>.
@@ -155,17 +240,13 @@ function render(d) {
       geometry that no longer exists</strong> and the two populations must not be
       pooled. The label above is read from this shard's own <code>map</code> column
       where its rows decide it, and only falls back to launch time when they do not —
-      which it says when it does.</p>`);
+      which it says when it does.</p></details>`);
 
   // what defines it
   if (d.worklist) {
     b.push(`<h2>Worklist line</h2>
       <div class="count">${esc(d.worklist_path)} line ${esc(d.worklist.lineno)}</div>
       <pre class="raw">${esc(d.worklist.line)}</pre>`);
-    if (d.worklist.comment_block && d.worklist.comment_block.length) {
-      b.push(`<h3>Comment block above it in the worklist (verbatim)</h3>
-        <pre class="raw">${esc(d.worklist.comment_block.join('\n'))}</pre>`);
-    }
   } else {
     b.push(`<h2>Worklist line</h2>
       <div class="note warn"><strong>No line in
@@ -175,6 +256,8 @@ function render(d) {
         no state, no rows, no rate. The artefacts below are all that can honestly
         be shown.</div>`);
   }
+
+  b.push('<h2>Artefacts on disk</h2>');
 
   b.push(fileBlock('Heartbeat', d.heartbeat,
     d.heartbeat.line ? `<pre class="raw">${esc(d.heartbeat.line)}</pre>
@@ -210,9 +293,19 @@ async function tick() {
   }
   try {
     const r = await fetch('/api/shard?id=' + encodeURIComponent(ID), {cache: 'no-store'});
-    render(await r.json());
+    const d = await r.json();
+    if (d.error) {
+      $('#name').textContent = ID;
+      $('#body').innerHTML = `<div class="note warn"><strong>${esc(d.error)}</strong>
+        — <code>${esc(ID)}</code> is not a shard id this server will look up.
+        <a href="/shards">Back to the shard list.</a></div>`;
+      return;
+    }
+    render(d);
   } catch (e) {
     $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+    $('#read').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span> '
+      + 'anything below is whatever was last read and is NOT being refreshed.';
   }
 }
 tick(); setInterval(tick, 10000);

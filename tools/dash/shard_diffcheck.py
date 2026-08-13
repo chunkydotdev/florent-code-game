@@ -38,6 +38,16 @@ B. LIVE (fields must match, or advance by exactly the elapsed time). Run the
    rewritten, `hb_age` must advance by EXACTLY the gap between the two runs' own
    `COREFILL STATUS` header stamps. Frozen fails, and so does drifting.
 
+D. NOTE TEXT vs the worklist it claims to quote. The list view captions every
+   shard with a line of plain language, and the brief that commissioned it says
+   in as many words: do NOT invent your own summaries beyond what is derivable.
+   That is a promise no amount of care enforces, so it is checked here: every
+   caption must be a VERBATIM run of that shard's own comment block, and the
+   `batch note` badge — which tells the reader whether the caption is about THIS
+   shard or the group it sits in — must agree with whether the block names the
+   shard at all. Without D, a paraphrase, or a caption borrowed from the
+   neighbouring shard's line, would render exactly like an honest one.
+
 C. MAP LABEL vs the tool's RETIRED%. The detail view labels each shard's map set
    from that shard's own tsv rows; `corefill_status.sh` independently counts rows
    played off the live pool. Two derivations of one fact, so they must agree in
@@ -223,6 +233,58 @@ def diff_maps(rendered: dict, get_detail) -> tuple[list[str], int, int]:
         if (rp > 0) != says_pre:
             bad.append(f"  {sh:<14} tool RETIRED={rp}%  detail label={label!r} "
                        f"({d['maps']['why']})")
+    return bad, checked, skipped
+
+
+def _norm(s: str) -> str:
+    return re.sub(r"\s+", " ", s or "").strip()
+
+
+def note_block_text(row: dict) -> str:
+    """The shard's comment block flattened the way a caption would read it."""
+    return _norm(" ".join(l.lstrip("#").strip()
+                          for l in (row.get("comment_block") or [])))
+
+
+def diff_notes(rendered: dict) -> tuple[list[str], int, int]:
+    """Every caption must be COPIED from the worklist, and say whose note it is.
+
+    Two assertions, and the second is the one that is easy to get wrong:
+      1. the caption text is a contiguous run of the shard's own comment block
+         (modulo the trailing ellipsis on a truncated one and the leading rule
+         the server strips off a batch banner);
+      2. `shard_named` is TRUE iff the block actually mentions the shard. The
+         badge derived from it is the reader's only signal that a caption
+         describes a BATCH rather than the row it sits on, so a badge that lies
+         is worse than no badge.
+    """
+    bad, checked, skipped = [], 0, 0
+    for sh, r in sorted(rendered.items()):
+        note = r.get("note")
+        block = note_block_text(r)
+        if not note:
+            skipped += 1
+            if block and sh in block:
+                bad.append(f"  {sh:<14} no caption, yet its comment block names it "
+                           f"— the note was dropped, not absent")
+            continue
+        checked += 1
+        text = _norm(note.get("text"))
+        if text.endswith("…"):
+            text = text[:-1].strip()
+        # The server strips a leading rule ("===== NEW-POOL ARMS…") off a banner.
+        probe = re.sub(r"^[-=*_~ ]+", "", text)
+        if probe and probe not in block:
+            bad.append(f"  {sh:<14} caption is NOT verbatim from its comment "
+                       f"block: {probe[:90]!r}")
+        names = sh in block
+        if bool(note.get("shard_named")) != names:
+            bad.append(f"  {sh:<14} shard_named={note.get('shard_named')} but the "
+                       f"block {'DOES' if names else 'does NOT'} name {sh} — the "
+                       f"`batch note` badge would be backwards")
+        elif names and sh not in text:
+            bad.append(f"  {sh:<14} claims a shard-specific caption but the caption "
+                       f"itself never names {sh}: {text[:90]!r}")
     return bad, checked, skipped
 
 
@@ -438,6 +500,16 @@ def main() -> int:
         bad_c,
         f"{checked} shards agree in sign (RETIRED>0 <=> pre-rotation/MIXED)")
 
+    bad_d, checked_d, skipped_d = diff_notes(rendered)
+    fails += report(
+        "D. NOTES   list captions vs the worklist comment blocks they quote",
+        f"{checked_d} shards carry a caption; {skipped_d} have no comment block to "
+        f"quote. Every caption must be verbatim, and its `batch note` badge must "
+        f"match whether the block names the shard",
+        bad_d,
+        f"{checked_d} captions are contiguous runs of their own comment block and "
+        f"every shard_named flag matches the block")
+
     if args.selftest:
         print("\nSELFTEST  driving each comparison to its FAILING verdict")
         ok = True
@@ -506,6 +578,27 @@ def main() -> int:
             ok &= bool(got5)
         else:
             print("   C  UNTESTED — no shard carries a RETIRED reading. Not a pass.")
+        # D — a PARAPHRASED caption, and a backwards batch badge, must both fire.
+        dcand = next((s for s, r in rendered.items() if r.get("note")), None)
+        if dcand:
+            mutd = {dcand: {**rendered[dcand],
+                            "note": {**rendered[dcand]["note"],
+                                     "text": "this shard tests whether the plank "
+                                             "pays off, in my own words"}}}
+            got6, _, _ = diff_notes(mutd)
+            print(f"   D1 paraphrase {dcand}'s caption            -> {len(got6)} "
+                  f"mismatch(es) {'OK' if got6 else '*** DID NOT FIRE ***'}")
+            ok &= bool(got6)
+            flip = {dcand: {**rendered[dcand],
+                            "note": {**rendered[dcand]["note"],
+                                     "shard_named":
+                                         not rendered[dcand]["note"]["shard_named"]}}}
+            got7, _, _ = diff_notes(flip)
+            print(f"   D2 flip {dcand}'s `batch note` badge       -> {len(got7)} "
+                  f"mismatch(es) {'OK' if got7 else '*** DID NOT FIRE ***'}")
+            ok &= bool(got7)
+        else:
+            print("   D  UNTESTED — no shard carries a caption. Not a pass.")
         if ok:
             print("   SELFTEST OK — every exercised comparison produced the "
                   "other verdict")

@@ -35,6 +35,16 @@
   <div class="grid" id="cards"></div>
 
   <h2>Shards running now</h2>
+  <!-- ⛔ THE ONLY ROUTE OFF THIS PAGE USED TO BE A 14px GREY NAV ITEM. This page
+       named shards two dozen times in prose and every one of those mentions was
+       text: the shard names in the table below were not links, so "read the
+       details about each shard" had no clickable path from the front door. -->
+  <p class="lede" style="margin-bottom:10px">
+    <a class="cta" href="/shards">Open the full shard view &rarr;</a>
+    <span style="margin-left:10px">what each one tests, in the operator's own
+    words, how far along it is, and what the finished ones produced. Every shard
+    name below is a link to its own page.</span>
+  </p>
   <div class="count" id="shardcount">…</div>
   <div class="scroll" id="shardwrap"><table id="shardtable">
     <thead><tr>
@@ -165,7 +175,7 @@ function render(s) {
   // --- running shard table
   const tb = $('#shardtable tbody');
   if (!sh.ok) {
-    tb.innerHTML = '<tr><td colspan="4"><span class="badge b-blind">BLIND</span> ' + sh.blind + '</td></tr>';
+    tb.innerHTML = '<tr><td colspan="6"><span class="badge b-blind">BLIND</span> ' + sh.blind + '</td></tr>';
     $('#shardcount').textContent = '';
   } else {
     const rows = [...sh.running, ...sh.stalled];
@@ -173,7 +183,7 @@ function render(s) {
       `${sh.n_running} running · ${sh.n_stalled} stalled · ${sh.n_done} done · ${sh.n_total} shards seen`;
     const res = (s.shard_text && s.shard_text.rows) || {};
     tb.innerHTML = rows.length === 0
-      ? '<tr><td colspan="6">Nothing running. ALWAYS_BE_RUNNING says that is a defect — see the idle alarm above for the next queue item.</td></tr>'
+      ? '<tr><td colspan="6">Nothing running. ALWAYS_BE_RUNNING says that is a defect — see the idle alarm above for the next queue item. <a href="/shards">Every shard, including the finished ones &rarr;</a></td></tr>'
       : rows.map(r => {
           const st = r.state === 'STALLED'
             ? '<span class="badge b-warn">STALLED</span>'
@@ -198,7 +208,8 @@ function render(s) {
               ? `<span class="badge ${above ? 'b-ok' : 'b-bad'}">separated ${above ? 'ABOVE' : 'BELOW'} 50</span>`
               : '<span class="badge b-warn">inside band</span>';
           }
-          return `<tr><td class="mono">${r.shard}</td><td>${st}</td>
+          return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
+                  <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${r.shard}</a></td><td>${st}</td>
                   <td class="mono">${n} / ${r.target} <span style="color:var(--dimmer)">${pct}</span></td>
                   <td class="mono">${rate}</td>
                   <td class="mono">${interval}</td>
