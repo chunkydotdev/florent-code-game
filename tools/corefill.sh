@@ -142,6 +142,23 @@ while true; do
       [[ -z ${SH:-} || $SH == \#* ]] && continue
       # ---- guard 1: at most once, marker written BEFORE the launch ---------
       [[ -f $STATE/$SH ]] && continue
+      # ---- guard 4b: RE-CHECK THE COLLISION AT LAUNCH, NOT ONLY AT STARTUP --
+      # ⛔ ADDED 2026-08-13 (s35) BY WALKING INTO IT. Guard 4's docstring says it
+      # "checks the WHOLE worklist up front and refuses to start at all" -- true
+      # of the worklist AS IT WAS AT STARTUP. The worklist is RE-READ EVERY POLL
+      # and ADD is now the entire operator interface, so a line appended later
+      # NEVER met that check. I appended `SALTNULL _v178salt_null vs _v178salt`,
+      # corefill launched it, and `overnight.sh` refused it at 05:11:09Z --
+      # burning a shard slot and a `.started` marker (which is never removed, so
+      # the id is spent) to discover something the up-front check already knew
+      # how to detect. **A guard that runs once cannot protect a surface that
+      # changes.** Same predicate as overnight.sh:71, deliberately duplicated
+      # here so the refusal happens BEFORE the marker is written.
+      _b=${TR:t}; _c=${CT:t}
+      if [[ $_b == $_c || $_b == *$_c* || $_c == *$_b* ]]; then
+        say "REFUSING $SH: basenames collide ('$_b' vs '$_c') -- unscorable, NOT started (no marker written)"
+        continue
+      fi
       print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > $STATE/$SH
       say "LAUNCH $SH  $TR vs $CT  target=$TG seed_lo=$SL   (running was $running, load $load1)"
       nohup zsh tools/overnight.sh $SH $TR $CT $TG $SL >> $OUT/${SH}.launch.log 2>&1 &

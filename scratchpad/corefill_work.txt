@@ -888,4 +888,8 @@ SALTNOBLOCK bots/_v192saltnoblock bots/_v169launchlate160 5408 204000
 # by `diff -r --exclude=__pycache__` at build time (zero differing files).
 # ⛔ IT MUST READ ~50%. If it does not, the fixture is biased on this contrast and
 # NO counter verdict may be read at all.
-SALTNULL    bots/_v178salt_null    bots/_v178salt         5408 205000
+# ⛔ RENAMED FROM `_v178salt_null`, WHICH THE COLLISION GUARD CORRECTLY REFUSED:
+# `_v178salt` is a SUBSTRING of `_v178salt_null`, and overnight.sh scores by
+# substring match on the basename, so it would have read ~100% for whichever
+# side matched first. Guard worked. My name was wrong.
+NULLSALT    bots/_v195nullcell     bots/_v178salt         5408 205000
