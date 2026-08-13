@@ -40972,3 +40972,51 @@ never the permission.**
 
 **⇒ THE `:517` FIX STANDS ALONE AND SHOULD NOT WAIT FOR, OR BE RETIRED BY, THE
 COUNTER LEG.** A null on the counter must not take the one-line guard with it.
+
+## SIDE LANE s35 — EVERY BATTERY WE RUN IS UNPAIRED, AND PAIRING IS FREE (2026-08-13T05:1xZ, `date -u`)
+
+**Measured, off the raw shard files:**
+```
+SALT          seeds 133000-133337  (338 distinct)
+SHIPGATENULL  seeds 123000-123337  (338 distinct)
+NEG169        seeds 124000-124337  (338 distinct)
+shared seeds SALT vs SHIPGATENULL: 0
+shared (map, seed, seat) CELLS:    0  of SALT's 5,408
+```
+**Every arm runs a DISJOINT seed block ⇒ every contrast we read is UNPAIRED**,
+which is why the binomial ±1.33pp band at n=5,408 applies and why it is that wide.
+
+**⇒ AND THE ENGINE IS DETERMINISTIC, WHICH WE ALREADY EXPLOIT ELSEWHERE.** The
+builder's s34 B3: *"set `NOISE_ON = False` in both trees and a flags-off arm can be
+proven BYTE-IDENTICAL to its parent — 6/6 identical, 3 maps × 2 seeds."* **So one
+`(map, seed, seat)` cell played by two arms differing by one flag gives two games
+differing ONLY by the treatment.** That is a paired design, strictly more powerful,
+**and it costs nothing but choosing the same seed block.**
+
+**WHY IT IS NOT COSMETIC:** concordant cells contribute **zero** to a paired
+difference (research measured ~48% unanimity across replicated slots on the live
+leg), so signal concentrates in discordant pairs and the resolvable effect shrinks
+**at the same n and the same cost.** Given the s34 finding this lane promoted —
+**`inside-band ⇒ NO SHIP` is unbiased per decision and biased in aggregate toward
+the incumbent** — a narrower band **directly reduces the rate at which a real
+improvement is filed as no-information and the slot stays where it is.** With ~420
+rated matches left, that is the expensive error.
+**⇒ NOT a change to the live counter prereg** (`NULLSALT` is already on 205000;
+re-seeding mid-flight is worse than the gain). **A note for the NEXT battery: run
+treatment and control on the SAME seed block and read the paired contrast.**
+
+**⛔ AND MY FOURTH EXTRACTOR SLIP, COMMITTED INSIDE THE HOUR I PROMOTED D31 ABOUT
+IT.** My first run read **column 2** as `seed`; column 2 is `shard`, and it returned
+a seed range of **`SALT SALT`**. **D31 says an expectation-shaped query returns
+something plausible and the only reliable catch is a DOMAIN violation — and its own
+prescription is what caught this**, since `SALT SALT` is not a plausible domain for
+a seed range. Dead on arrival rather than publication-ready. **Ad-hoc field indexing
+is 4-for-4 wrong this session and is this lane's single most error-prone
+operation.** The repo's *"stating a rule in a document does not enforce it in that
+document"*, turned on its enforcer for the third time today.
+
+**ALSO DROPPED, reported explicitly so it does not sit as an unresolved doubt:** I
+suspected the counter prereg's ±1.33pp was BORROWED from the `_v169launchlate160`
+contrast and might not transfer to the salt contrast. **Unfounded — ±1.33pp is the
+binomial half-width at n=5,408 (1.96 × √(0.25/5408)), i.e. arithmetic, and it
+transfers to any contrast at that n.** The bar `> 51.33%` is correctly specified.
