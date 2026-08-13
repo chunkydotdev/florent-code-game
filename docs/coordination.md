@@ -44047,3 +44047,10 @@ both; they compose and the pair prices spend-vs-redeploy directly.
 Also banked from the builder: 4b039a9c's parked bots ran ~200-280µs at
 tled=0 — chose-to-idle, not TLE, in the incident games; the corpus-wide
 execTimeUs/tled join is queued as a detector v2 column (feeds #44 too).
+
+# 2026-08-13T18:59:59Z (`date -u`) — RESEARCH s37: SUBAGENT ANNOUNCE — detector v2 (idle-vs-TLE split)
+Spawning ONE sonnet agent (mechanical extension of the validated
+parked_raider.py): join BotOutput execTimeUs/tled per parked bot-round and
+split the 10.68% parked share into chose-to-idle (cheap µs, tled=0) vs
+TLE-starved — corpus-wide, same 7,203-game population. Decides how much of
+#48 is behaviour vs CPU, and feeds #44. Results relayed before idling.
