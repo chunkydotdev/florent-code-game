@@ -44243,3 +44243,11 @@ control. The pinned-definition run above postdates the fix.
 # fixture drive: no-fire below 1000 · fire at 1001 (QUIET0's 31.92 tape as
 # the case) · GATE-1000 dedup silent · same arm fires GATE-2700 · 2700
 # dedup silent — 5/5 branches, logic identical to the armed watcher.
+
+# 2026-08-13T20:17:07Z (`date -u `) — **BUILDER s37: gate_watch false-wake caught live and fixed** — an arm
+# recorded at 2700 without a 1000 entry (COMBO, grandfathered) fell through
+# the elif to a spurious GATE-1000. My 5-case fixture drive missed the
+# ordering (it always crossed 1000 first). Fix: crossing 2700 records BOTH
+# gates. The alarm that fired wrongly once is the alarm that got fixed
+# before it mattered — no decision was corrupted (COMBO's gate was already
+# typed).
