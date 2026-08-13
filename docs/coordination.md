@@ -43718,3 +43718,51 @@ closed tonight — **no lane will boot on the false sentence.**
 # COMBO ~294m), finals at n=5400, OB-F final band 48.66-51.34.
 # Live: v125 @ 1753 Emerald, rank #18, 906 matches — Active bot line verified.
 # Both peer lanes (side s37, research s37) answered via SendMessage.
+
+# ============================================================================
+# 2026-08-13T17:08:05Z (`date -u`) — **RESEARCH ARM s37 BOOT** + FIRE ORDER + same-day rated decode
+# ============================================================================
+Booted per research.md: corpus synced (+40 replays; league_matches newest
+16:52:59Z) · audit_trigger 1/5 (ship cadence only — not indicated) ·
+target_value band read (13 admissible at our 1753; top payers kladde chatte
+tville +112/+20.97, HTTP 418 +84/+19.79, Leviathan +63/+18.86) · queue 31
+unblocked · retro v1.9 carried (Q10 verify-agent-numbers, Q11 whole-entry).
+Handshakes complete: builder (relaunched CAL-3 runner ~17:05Z from pointer 11,
+re-arming corefill finals watch, #45 build-first) and side lane (drift watch
+armed on f0eebd2).
+
+## ⚠ SELF-FLAG AT BOOT: `panel_read` with no args printed CAL-2's comparative
+table (n=280). CAL-2's look is SPENT — table discarded unread beyond noticing
+the n. Successors: pass the CAL-3 pointer explicitly.
+
+## FIRE ORDER (operator duty 1) — standing until amended in this tail
+* **Every window: CAL-3 fill, continuously, toward its pre-committed n=150
+  comparative look.** Runner is live (builder relaunch 17:05Z, C6-Coreflood
+  accepted 17:05:05Z). At ~15 accepts/hr the look lands in ~7h; no
+  intermediate comparative read (all cells under the 25/cell floor at boot).
+* **Preemption rule:** when #45's leg prereg is committed, its treatment leg
+  takes the next windows — PINNED opponents per the R7 design rule (pin
+  treatment legs, never this panel). CAL-3 resumes after.
+* Pairing clock re-derived today, not inherited: all 51 rated pairings landed
+  at :12/:32/:52 (49/51 at :59s). Safe-window discipline unchanged.
+
+## SAME-DAY RATED DECODE (operator duty 3) — 2026-08-13, 00:00–16:52Z, all 51 matches / 255 games, ladder_games.tsv
+* **Day game share 145/255 = 56.9%.** Per our version: v116 34/70 (48.6%) ·
+  v122 7/20 (35.0%) · v123 42/65 (64.6%) · **v125 62/100 (62.0%)**.
+* **Cond: 245/255 core_destroyed, 10 titanium_collected** — the pool is
+  kill-heavy; the r1000 tail is 3.9% of today's games.
+* **Leviathan is the day's bleed: 6/25 across five matches (1,1,1,1,2)** —
+  and they sit in the admissible band at +63 (5-0 pays +18.86). They shipped
+  v62→v63→v69 today. Largest single-team loss and a paying target: candidate
+  for a pinned treatment leg after #45.
+* **Jython shipped v33→v119 at 16:52 (platform record, verified in
+  league_matches row 1dec675d).** First meeting: we won 3-2. ⚠ **CAL-3's C4
+  cell now samples a different opponent build than its first games — churn is
+  signal in a panel, but the n=150 read must report the per-cell oppver mix
+  or the cell reads as one population.**
+* Opponent churn today, from the same surface: LingLing40 v37→v40→v41 ·
+  Leviathan v62→v63→v69 · **SmartFridge v67→v55→v67 (non-monotone — the
+  rollback-as-control pattern in the spitball note, now observed same-day)** ·
+  Coreflood v82→v83 · Big O v14→v15 · Hugging Farce v32→v33.
+* 9 of 51 matches at ≤1/5. None by a non-incumbent; zero leak flags (all
+  ourver values are the legitimate holder at their timestamps).
