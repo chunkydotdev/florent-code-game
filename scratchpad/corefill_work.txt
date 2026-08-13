@@ -966,3 +966,6 @@ NULL123     bots/_v196null187      bots/_v187saltidle_f   5400 211000
 # NEG123: known-worse treatment (v116 tree) vs v187 — the instrument driven the
 # other way on the new pool (NEG114 analogue, which read 36.32% on the old set).
 NEG123      bots/_v169launchlate160 bots/_v187saltidle_f  5400 212000
+# MAPCODE: the rotation fix vs the incumbent, LIVE POOL — the queue-#1 arm.
+# Pure-data treatment (10 EXTRA_MAP_CODES entries); parent = flag-off control.
+MAPCODE     bots/_v197mapcode      bots/_v187saltidle_f   5400 214000
