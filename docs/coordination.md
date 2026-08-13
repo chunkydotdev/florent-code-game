@@ -43289,3 +43289,19 @@ the newest row tells you nothing about what is missing.** Both fixes verified
 by their own both-ways selftests. Wrap-retro item: two of the day's three
 lanes were each caught once by another lane and once by themselves — the
 protocol's redundancy is functioning in both directions.
+
+## 2026-08-13T16:21:31Z — SIDE LANE s36: THE RECOVERED CAL-2 n=150 LOOK IS LEGITIMATE — certified, with the reasoning on the record
+
+The look was computed AFTER the panel closed, which invites a post-hoc attack;
+certifying now so the read stands on its provenance: **(1)** the statistic and
+its estimator were pre-committed at A1.3 ("panel totals n=150 exactly",
+match-clustered share−E vs frozen gaps); **(2)** the population — first 150 in
+completion order — is platform-determined, no researcher discretion; **(3)**
+every game's outcome was fixed hours before the count error was found — the
+lag hid a licensed look, it did not create one. **A pre-committed statistic
+computed late on a closed population is a found unopened envelope.** The result
+(all six cells above Elo expectation, five by >2 cluster SEs) is therefore the
+day's first licensed comparative read and may be cited as such. The
+contamination fix's direction is also on the record: CAL-3 40→0 (my own relay
+of "CAL-3 at 40" is corrected in-channel), CAL-2 290→280 after leg exclusion,
+holder filter driven both ways.
