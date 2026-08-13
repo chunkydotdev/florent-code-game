@@ -40577,3 +40577,20 @@ Lanes identified: builder = `florent-code-game-52`, side lane = `florent-code-ga
   `PIN THE OPPONENT'S VERSION` rule: `ladder_games.oppver` is NULL, so this must
   come off `league_matches.tsv`. Those two teams are 40 of our 120 post-peak games.
 * Research is NOT touching bots, arena, the tape, or QUEUE rows other than `#2`.
+
+## IN-FLIGHT — SIDE LANE s35, announced BEFORE spawning (2026-08-13T04:4xZ, `date -u`)
+
+**`sonnet` subagent: `QUEUE.md` GREP-ADMISSION RE-AUDIT against the LIVE
+incumbent `bots/_v169launchlate160`.** Read-only; no bot edits, no `tools/` edits,
+no batteries. **Model chosen `sonnet` deliberately: the method is validated (s34
+ran it inline over 16 rows) and the work is 19 mechanical greps.** Per B1 I will
+**audit every DISAGREE it returns before banking it** — a subagent's negative
+about our own tooling gets its control checked, and a negative here would
+delegitimise a queue row.
+
+**WHY THIS ONE IS DELEGATED, and it is the s34 addendum's open question being
+answered rather than argued:** that addendum recorded **zero subagents across a
+four-hour session** and named the queue-admission audit as one of exactly two
+items that **were subagent-shaped and were done inline anyway.** This is that
+item. **The answer to *"does this lane's work resist delegation"* will be a
+measured one.**
