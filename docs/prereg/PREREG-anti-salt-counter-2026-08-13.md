@@ -274,3 +274,49 @@ the verdict is.**
 **⛔ THIS DOES NOT RETROSPECTIVELY VALIDATE v123.** v123 shipped on a look taken
 outside any schedule, on Magnus's call, and that stands as recorded. **The
 schedule binds what comes next.**
+
+---
+
+# AMENDMENT 4 — 2026-08-13T06:2xZ. **THE INTERIM BAND IS TIGHTENED. DISCLOSURE FIXED THE WRITE-UP; THIS FIXES THE DECISION.**
+
+**ADD-ONLY: it makes the early-stop bar STRICTER and leaves the final bar
+unchanged. Still legitimately pre-data — every arm is under 25% of target.**
+
+AMENDMENT 3 disclosed that two looks costs ~8-9% family-wise and required that
+sentence be attached to any interim stop. **That governs how a stop is WRITTEN
+UP. But the interim stop is an ACTION — a ship — and the action was being taken
+at inflated alpha regardless of what the write-up said.** Raised by the side lane;
+the distinction is theirs and it is correct.
+
+**AND THE DIRECTION IS THE EXPENSIVE ONE HERE:** an outside-band-HIGH interim
+means shipping a possibly-null plank, which **burns one of roughly four remaining
+ship-and-converge cycles.** It also compounds the standing asymmetry —
+`inside-band => NO SHIP` is unbiased per decision and biased toward the incumbent
+in aggregate — so an inflated interim adds false motion in **both** directions on
+a slot with very few cycles left.
+
+## THE NUMBERS, SOLVED RATHER THAN QUOTED
+
+O'Brien-Fleming boundaries, 2 equally-spaced looks, two-sided overall alpha 0.05,
+correlation sqrt(0.5), solved numerically here:
+
+    Z* = 1.9774
+    INTERIM  n=2,704   z = 2.797   half-width ±2.69pp   stop only outside 47.31–52.69%
+    FINAL    n=5,408   z = 1.977   half-width ±1.34pp   band 48.66–51.34%
+
+**⛔ AND I CHECKED MY OWN PRIOR CLAIM RATHER THAN ASSUMING IT: the naive scheme in
+AMENDMENT 3 (z=1.96 at BOTH looks) has a true overall alpha of 0.0831.** My
+"~8-9%" was right, and it is now measured rather than estimated.
+*(My first attempt at this contrast used the wrong parameterisation and printed
+0.1839. Caught before publishing, by recomputing the quantity I actually meant
+instead of the one my helper function happened to take — the same fault I have
+been flagging all session, in the act of correcting for it.)*
+
+**⇒ WHAT CHANGES IN PRACTICE:** the interim can still stop early on a genuinely
+LARGE effect — the only thing an interim look is for — and can no longer stop on
+a marginal one. **The FINAL band moves by 0.01pp, i.e. not at all.** One constant,
+alpha restored from 0.0831 to 0.0500.
+
+**Applies to `NULLSALT`, `SALTCLEAR`, `SALTROUTE`, `IDLEVSALT`, `ROUTEONLY`.
+Supersedes AMENDMENT 3's ±1.88pp interim band; everything else in AMENDMENT 3
+stands, including that it does NOT retrospectively validate v123.**
