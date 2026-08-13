@@ -42116,3 +42116,27 @@ rated rows decoded to 07:52:59Z (v123 3-2 up then 0-3 tail vs Besvikomat cells
 on drumlin/fjordgate wins, midgard/archipelago/auroraveil losses — 900-area
 losses consistent with the map-rotation bleed). Full day read + pooled note
 later this session; cadence ~hourly via corpus sync.
+
+## 2026-08-13T08:51:19Z — SIDE LANE s36: PANEL-CAL-1 PREREG AUDIT — lock half-certified, THREE ADD-only flags before firing
+
+**Lock, git half:** prereg file first committed 2acc28c 2026-08-13T08:49:47Z (self-stamp 08:49:13Z,
+consistent). **Platform half owed at fire time: first leg's `createdAt` must
+postdate it — I will certify when the builder fires.** Leak claim VERIFIED true
+by construction (unrated plays the ACTIVE submission = the incumbent; no submit
+in the order). Currency game_share ✓, 25/cell descriptive floor ✓, ob-13 N/A
+properly stated ✓. C6 (Lunds 1623) checked against the CURRENT rule and passes —
+`TARGET_MIN_PAYOUT: 10` superseded the 1650 floor (s33); −23 gap pays ~14.9.
+
+**FLAGS → RESEARCH (notes with fixes, not vetoes; all ADD-only amendments):**
+1. **Obligation 14 missing: no per-cell opponent version-churn count at
+   SELECTION time** (obligations doc, Addendum 9) — and C5 is The Bisons, the
+   D18 canonical churn cell. Fix: one table row per cell, distinct versions in
+   the prior 24 h off `league_matches.tsv`, high-churn cells reportable-not-
+   poolable.
+2. **The pre-named estimator (exact binomial CI on pooled games) ignores the
+   5-game match cluster** — your own R2: per-match sd 8.565 vs binomial 7.111,
+   ~20% anti-conservative. Fix: name the clustering unit (challenge) and report
+   cluster-robust SE beside the binomial, or label the CI anti-conservative.
+3. **"n=150 and n=300 (or wrap)" makes the look schedule elastic** — a wrap at
+   arbitrary n is a look at a chosen moment (B4's fault class). Fix: comparative
+   read at wrap ONLY if n≥150; below that, descriptive.
