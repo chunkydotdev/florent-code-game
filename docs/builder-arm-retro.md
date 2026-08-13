@@ -677,3 +677,120 @@ errors were bad controls, not bad reasoning:** a control bot with its own RNG, a
 frozen copy nobody re-checked, a pooled denominator, a turret census read as a
 build census, a median read as a sum. **The reasoning was fine every time. The
 thing under it was not what I thought it was.**
+
+---
+
+# INSTANCE — s35, 2026-08-13. **FIRINGS: 7.**
+
+Answered from commits, the platform and tool output. 69 commits, two ships, zero
+rollbacks.
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+**The verdicts that matter today are two I did NOT type.**
+* **`SALTBARONLY` 45.41% (n=868).** I had drafted *"the barrier adds nothing and
+  alone it hurts"* and was one message from sending it. **Dose measurement killed
+  it: 2.7 events/game against 19-79 for its siblings — low BY CONSTRUCTION.** A
+  low-dose arm's rate is confounded with its dose at any n.
+* **`SALT` 61.00% (n=5,408).** Called **escalate**, not confirmed; required a
+  disjoint-seed replication before anything rested on it. `SALTREP` then read
+  60.72%. **The one arm I refused to bank early is the one that replicated.**
+* **v122 and v123 ships** were Magnus's calls. On both I stated the reservation
+  **before executing** — for v123: *"'decisively' is carried by SALTIDLE2's
+  n=2,043, NOT by the head-to-head's n=517."* ✅ Not a firing: the reservation is
+  in the prereg with a timestamp preceding activation.
+* **The 30x30 finding** was scoped to *"three doctrines fail"*, never *"big maps
+  are unwinnable"*.
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+**✅ FIRES TWICE, AND BOTH RAN FLATTERING.**
+* **(a) I ran the Eir control on `_v71eir` when the last shipped Eir was v94.**
+  I grepped a name and took what matched instead of finding the latest. **The
+  older tree is WEAKER, which made my "all doctrines fail" conclusion EASIER to
+  reach.** Caught by Magnus, not by me. Re-run on the real v94: conclusion held,
+  and Eir came out worse — but that is luck, not method.
+* **(b) The Jython 5-0.** I published *"5-0 against a team rated 104 points above
+  us, expected score 0.36"* — arithmetically true, **evidentially misleading**.
+  They had reverted to a **nine-day-old bot** and were shedding ~20 Elo/match.
+  Caught by Magnus asking whether they had switched bots.
+* **(c) Not flattering, recorded for balance:** my *"tiebreaks 54.1% vs kills
+  50.0%"* initially SUPPORTED a pivot I was arguing against; controlling for
+  opponent rating showed it was a weak-opponent artifact (49.9% vs 52.5% among
+  peers). **That correction ran against the position I had just handed Magnus.**
+* **(d) Caught pre-publication:** a false-alarm contrast printed 0.1839 from a
+  wrong parameterisation; recomputed to 0.0831 before it left the session.
+
+### 3. INSTRUMENTS — driven to BOTH verdicts?
+**Nine built or repaired; every one driven to its firing verdict before use** —
+`corefill_forever` (4 branches), `corefill` guard 4b (5 pairs incl. the historical
+`_v150cb` case), `ship_ledger` (15/15, control forced to refuse), `dose.sh`
+(3 then re-driven after hardening), `cores_idle` picker (4), `queue_check` GREP
+staleness (both ways), `sync.py _pick` (4 incl. falsy-zero), `backfill_oppver`
+(**control driven to 99.89% mismatch and exit 3 before applying**), the CPU probe
+(**refuted its own hypothesis**).
+**✅ FIRES TWICE ANYWAY:**
+* **I broke `--json` in `ship_ledger` while ADDING two guards to it** — both new
+  prints went to stdout. Caught only by driving the json branch afterwards, **not
+  by reading my own diff.** Two guards added, one broken, same edit.
+* **`dose.sh`'s first flag pre-check was written to the INSTANCE, not the class**
+  — it required the flag name to contain literally `LOG`, which matched the exact
+  defect that prompted it and would have missed `SALT_VERBOSE`. **My own standing
+  rule, broken while fixing something else.** Replaced by asserting the tag exists
+  in source, which does not care what any flag is named.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+**✅ FIRES. `tools/claim_check.py` reports `ship_ledger.py: claims a mutation
+test, NO record in docs/legs or docs/research names it`** — my file, built today.
+**I never ran `claim_check` after building it.** This is s28's pattern verbatim:
+*run the check, watch it pass, treat the passing as the artefact* — except here I
+did not even run it. The tool caught me; no lane did.
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+**Two activations, zero rollbacks, ZERO LEAKED RATED MATCHES** (`ship_ledger`,
+per-match `ourver`, both holders). Both ships verified on the live `Active bot:`
+line, never an exit code.
+**✅ FIRES: v122 was displaced at k=4 against a gate that arms at k=8.** Its five
+prereg amendments, the calibration work, `ship_ledger` and the union false-alarm
+table **never ran once.** With ~4 ship-and-converge cycles left in the game, two
+were spent in 80 minutes and the first produced **zero rated information**. I
+recorded the cost honestly at the time; recording is not the same as avoiding it.
+**v123 at wrap: 5 matches, 19/25 games (0.760), +43.45 Elo.**
+
+### 6. WHAT THE BUDGET BOUGHT
+**✅ FIRES, AND IT IS THE QUIETEST ONE. I fired ZERO unrated matches this
+session.** All 13 of today's were the research lane's. `FIXTURE_OF_RECORD:
+live_unrated` names live games as the authority, and **the builder — the lane
+that owns ships — never touched the fixture of record while making two ships.**
+The rate-limited budget sat unused; a rate-limited resource left idle is a debit.
+Local cores were the opposite: saturated from 04:36 to wrap, ~10 batteries.
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+* **The eight running arms are on the OLD map set** (the array is assigned once at
+  startup, so they stay internally consistent) while `overnight.sh` now points at
+  the live pool. **A successor reading their verdicts must know half their maps
+  are retired.**
+* **The 30x30 diagnosis is COMPLETE and UNFIXED**, deliberately.
+* **`_probe_cpu`, `_probe_v94eir`, `_probe_saltdose`, `_probe_stall` are probes,
+  not arms** — none is a candidate.
+
+---
+
+## The one question that is not a list
+**Did I make a decision today that the machinery could not have caught?**
+
+**Yes, and it invalidated half the session's evidence.**
+
+**Every battery I ran today — 254,001 rows plus ~30,000 more — was on an eight-map
+set, and four of those eight were being retired from the competition pool.**
+Nothing in this repo checks that our map set matches the live pool. `gate.py`
+inspects the plank, the control, the parent, the opponents; `corefill` checks
+basename collisions and load; `overnight_read` checks calibration cells and
+bands. **Fifteen instruments, and not one asks whether the FIXTURE still matches
+the GAME.** I found out because Magnus told me the organisers had announced a
+rotation.
+
+**This is s28's finding one level down.** There the machinery inspected the
+experiment and never asked whether the QUESTION was worth answering. Here it
+inspected the experiment and never asked whether the WORLD had moved. **A map-pool
+check is one CLI call — `fcode maps list` — and no boot sequence has ever made
+it.** ⇒ **ROUTED: add a pool-vs-battery-set assertion to the boot checks.** Not
+built this session; named here so it is not merely observed.
