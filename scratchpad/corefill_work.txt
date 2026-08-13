@@ -893,3 +893,25 @@ SALTNOBLOCK bots/_v192saltnoblock bots/_v169launchlate160 5408 204000
 # substring match on the basename, so it would have read ~100% for whichever
 # side matched first. Guard worked. My name was wrong.
 NULLSALT    bots/_v195nullcell     bots/_v178salt         5408 205000
+# --- THE BAR ARMS. `salt+counter vs salt` -- Magnus's stated bar, verbatim:
+# *"A counter + salt vs just salt should win more than it loses."*
+# ⛔ SHIP BAR IS **ABOVE THE BAND (>51.33%)**, NOT ">50" -- a bare "clear 50%" is
+# met by 50.01% and cannot fail. Our own SHIPGATE160 read 49.44% and was
+# correctly called no-information on this same +/-1.33pp band. Inside band =>
+# NO SHIP, pre-committed in docs/prereg/PREREG-anti-salt-counter-2026-08-13.md.
+# ⛔ NULLSALT GATES BOTH: if the byte-identical cell does not read ~50%, neither
+# of these may be read at all.
+# Both are _v178salt + ONE counter block, ported onto salt (eco.py is
+# byte-identical between the two parents, md5 3b636ca8..., so the port is a
+# swap, not a merge). Diffs vs salt: saltclear +36/-3, saltroute +34/-3 --
+# matching the source arms exactly. Smoke-tested 4 games, 0 tracebacks.
+SALTCLEAR   bots/_v196saltclear    bots/_v178salt         5408 206000
+SALTROUTE   bots/_v197saltroute    bots/_v178salt         5408 207000
+# --- THE ATTRIBUTION ARMS. Counter WITHOUT salt, vs salt. These separate
+# "the counter defends" from "the counter is worth its price inside a salt bot".
+# Their control point is the FREE NEG: _v169launchlate160 vs _v178salt = 39.00%
+# at n=5,408. A counter-only arm should sit ABOVE 39.00% if the counter defends
+# at all. ⚠ That is a SALT-SIZED reference, not a counter-sized one -- it says
+# nothing about resolution near 50 (D13), which is what NULLSALT is for.
+CLEARONLY   bots/_v193clearlink    bots/_v178salt         5408 208000
+ROUTEONLY   bots/_v194routelink    bots/_v178salt         5408 209000
