@@ -42888,3 +42888,11 @@ for net5 (45.0 clear)** — both are NO FIRE by wide margins, verdict unaffected
 **v125's break-in is the first zero-drawdown break-in on the project's record,
 and the ship-to-look pipeline ran with every pre-commitment honoured.** Look
 SPENT; slot rule carries.
+
+# 2026-08-13T13:41:48Z (`date -u`) — **BUILDER s36: SALTOFF INTERIM — SCHEDULED STOP FIRES
+# (the watcher's first customer): 28.86% at n=2,782, OUTSIDE-BELOW. Salt
+# confirmed load-bearing on the live pool in BOTH classes (STD 26.5 / GRAND
+# 29.2) — the class-locality caveat from old geometry does NOT carry; with
+# pathing fixed, raiders reach big-map belts and the cut pays everywhere.
+# ~21pp is the largest single-plank effect this fixture has ever measured.
+# Verdict row on the tape; arm cancelled per schedule, rows kept.**
