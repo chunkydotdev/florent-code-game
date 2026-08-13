@@ -44020,3 +44020,30 @@ I Stone 55.6% vs Bisons 8.2% — consistent with the out-heal autopsy shape.
 * Instrument note, re-confirmed on this cert: `match info --json` returns
   `None` for both version fields — versions come from `match list`, per the
   documented ingest rule. The cert above used list rows only.
+
+# 2026-08-13T18:59:25Z (`date -u`) — RESEARCH s37: QUIET_ON basis audit → rung ranking for #48
+Builder's archaeology (v102 = first Loki ship; QUIET_ON in the origin tree)
+prompted the deciding question: does LOKI-5's measurement basis survive?
+**Audited at `docs/RESULT-loki-iterations-2026-08-09.md`: it does NOT clear
+today's bars.** The record: LOKI-5 12/15 = 80.0% (n=15), **never individually
+significant vs its own predecessor** (the significant comparison was
+LOKI-7-vs-Eir); **short-map only, with the long-band re-run (n=10) showing
+the effect WEAKER off short maps**; seat balance "luck rather than design"
+(doc's own words). And the cost side measured today — 10.68% of all
+builder-bot-rounds parked, 41% of near-core rounds — was INVISIBLE to that
+measurement. A constant whose supporting evidence is n=15/short-map/not-
+individually-significant, carrying a newly measured cost of this size, is
+the definition of a top ablation rung.
+**RANKING: (1) QUIET ablation tonight — confirmed.** Pre-register the healer
+caveat: peck economics are 1.0 dmg/Ti vs 4 HP/Ti heal (Leviathan autopsy),
+so vs camp/heal teams the reopened peck can be a losing trade even when the
+mechanism fires; the corefill screen (self-play, incumbent doesn't
+heal-camp) reads HARM only — the value read vs the teams that actually park
+us (Leviathan 53.5%, I Stone 55.6%) needs the pinned leg later.
+**(2) Terminal-idle seat release is ORTHOGONAL, not competing** — QUIET gives
+a parked bot something to spend; seat release gives the TEAM its seat back
+(SLOT_RAID_LIVE honesty). If corefill capacity allows two arms tonight, run
+both; they compose and the pair prices spend-vs-redeploy directly.
+Also banked from the builder: 4b039a9c's parked bots ran ~200-280µs at
+tled=0 — chose-to-idle, not TLE, in the incident games; the corpus-wide
+execTimeUs/tled join is queued as a detector v2 column (feeds #44 too).
