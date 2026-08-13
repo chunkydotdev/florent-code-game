@@ -452,6 +452,59 @@ def selftest() -> int:
     return 1 if bad else 0
 
 
+def current_incumbent() -> str | None:
+    """The `INCUMBENT:` field from PROGRAMME.md, as a bare tree name, or None."""
+    prog = ROOT / "PROGRAMME.md"
+    if not prog.exists():
+        return None
+    for line in prog.read_text().splitlines():
+        s = line.strip()
+        if s.startswith("INCUMBENT:"):
+            return s.split(":", 1)[1].strip().rsplit("/", 1)[-1] or None
+    return None
+
+
+def grep_staleness(rows, incumbent: str | None):
+    """Rows whose `GREP:` names a tree that is NOT the current incumbent.
+
+    ⛔ WHY THIS EXISTS — THE GATE PROVES A CHECK WAS RUN, NEVER THAT ITS RESULT
+    IS STILL TRUE. `PROGRAMME.md` denominates the `GREP:` gate in *"what was
+    checked in the INCUMBENT"*, so **the moment the incumbent moves, every row's
+    grep is potentially stale BY DEFINITION.** It moved on 2026-08-13 at
+    04:45:54Z (v116 `_v169launchlate160` -> v122 `_v178salt`) and no row had been
+    re-checked.
+
+    The worked case: `#18` ("arena.py must persist per-game rows") was **honest
+    when written** — `arena.py` genuinely discarded rows then — and `b4f56fa`
+    shipped the fix afterwards. The row still passes admission and was sitting at
+    **fire-order Tier 0**, so a repaired `cores_idle` would hand an idle builder
+    a plank whose premise is false. **It was caught by a one-off manual sweep,
+    which is not a gate.** This is `PROGRAMME.md`'s own *"THE FLOOR IS A TARGET
+    AND TARGETS GET MET"* one layer deeper: admission makes rows honest at WRITE
+    time and nothing re-checks them.
+
+    ⚠ DELIBERATELY DOES NOT RE-RUN THE GREPS. Flagging the mismatch is what makes
+    the staleness visible, and visibility is the whole gap. It also does NOT
+    block a row — an unnamed tree is the common case and is reported separately
+    from a WRONG tree, because "we cannot tell" and "we can tell it is stale" are
+    different states and must not be summed. Spec: side lane, 2026-08-13.
+    """
+    named, unnamed = [], []
+    if not incumbent:
+        return named, unnamed
+    for _section, row in rows:
+        m = re.search(r"grep:\s*(.*)", row, re.I)
+        if not m:
+            continue
+        seg = m.group(1)
+        trees = set(re.findall(r"_v\d+[a-z0-9_]*", seg))
+        if not trees:
+            unnamed.append(label(row))
+        elif incumbent not in trees:
+            named.append((label(row), sorted(trees)))
+    return named, unnamed
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--floor", type=int, default=FLOOR)
@@ -471,6 +524,23 @@ def main() -> int:
     print(f"QUEUE FLOOR CHECK — unblocked items: {len(live)} (floor {args.floor})")
     for section, row in live:
         print(f"   {label(row)}")
+
+    # --- GREP STALENESS vs the CURRENT incumbent -------------------------
+    inc = current_incumbent()
+    if inc:
+        stale, unnamed = grep_staleness(live, inc)
+        if stale:
+            print(f"   ⛔ GREP STALE — incumbent is {inc}; these were checked "
+                  f"against another tree ({len(stale)}):")
+            for lbl, trees in stale[:8]:
+                print(f"       {lbl[:52]}  [checked: {', '.join(trees)}]")
+        if unnamed:
+            print(f"   ⚠ GREP TREE UNNAMED ({len(unnamed)} of {len(live)}) — the "
+                  f"gate cannot tell whether these are stale. Incumbent: {inc}")
+        if not stale and not unnamed:
+            print(f"   ✅ every GREP names the current incumbent ({inc})")
+    else:
+        print("   ⚠ BLIND: PROGRAMME.md has no INCUMBENT field — staleness unchecked")
     # Migration visibility: these are the rows the substring era silently dropped.
     # They COUNT now. Printed so the reclassification is auditable rather than quiet
     # -- if one is genuinely not startable, give it a STATUS: token.

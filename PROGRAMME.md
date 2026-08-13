@@ -5,8 +5,9 @@ successor session inherit it. The fields below are parsed; the prose is not.
 
     LINE: loki
     LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?*
-    INCUMBENT: bots/_v169launchlate160
+    INCUMBENT: bots/_v178salt
     INCUMBENT_FROZEN: no
+    PREVIOUS_INCUMBENT: bots/_v169launchlate160
     PRIMARY_CURRENCY: game_share
     SECONDARY_CURRENCY: kill_speed_score
     KILL_SPEED_SHIP_GATE: -1.76
@@ -23,6 +24,38 @@ successor session inherit it. The fields below are parsed; the prose is not.
     QUEUE_FLOOR: 3
     QUEUE_OWNER: research
     TARGET_MIN_PAYOUT: 10
+
+## INCUMBENT MOVED 2026-08-13T04:45:54Z — v116 -> v122 (`bots/_v178salt`)
+
+**Edited on Magnus's explicit directive** (*"Do your recommendations"*, in answer
+to a recommendation naming this field and this value). Recorded here because this
+file is otherwise edit-on-directive-only and a successor must be able to see WHY
+a parsed field changed.
+
+**WHAT CHANGED AND WHAT IT MEANS.** `_v178salt` is the live slot as of 04:45:54Z
+(verified on the `Active bot:` line, not an exit code). `COMPARE_AGAINST:
+previous_line_iteration` therefore now points at **`_v178salt`**, not at
+`_v169launchlate160`. Magnus stated the rule himself before the file caught up:
+*"A counter + salt vs just salt should win more than it loses."*
+
+**⚠ CONSEQUENCE FOR EVERY OPEN BATTERY, so nobody misreads a live number:** the
+salt-family arms queued BEFORE the ship (`SALTREP`, `SALTIDLE2`, `SALTCUTONLY`,
+`SALTNOBLOCK`) are controlled on `_v169launchlate160` = **the PREVIOUS
+incumbent**. They remain valid — they answer *"better than the bot we
+replaced?"* — but they do **NOT** answer *"better than what is live?"* Arms
+queued after the ship (`NULLSALT`, `SALTCLEAR`, `SALTROUTE`, `IDLEVSALT`,
+`ROUTEONLY`) are controlled on `_v178salt` and do.
+
+**⛔ AND THE KNOCK-ON THE SIDE LANE NAMED, which is the real cost of this move:**
+`QUEUE.md`'s `GREP:` admission gate is denominated in *"what was checked in the
+INCUMBENT."* **Every existing row's grep was run against `_v169launchlate160`, so
+all of them became potentially stale at 04:45:54Z.** The gate proves a check WAS
+RUN; it never proves the result is STILL TRUE. `tools/queue_check.py` now flags
+this mismatch rather than re-running the greps.
+
+**ROLLBACK NOTE:** if v122 is rolled back, this field returns to
+`bots/_v169launchlate160` and `PREVIOUS_INCUMBENT` is removed. The rollback
+target is recorded in `docs/prereg/SHIP-salt-v178-2026-08-13.md`.
 
 ## ⭐⭐⭐ CORE VALUE, MAGNUS, 2026-08-11 (s31) — **ALWAYS BE RUNNING.**
 
