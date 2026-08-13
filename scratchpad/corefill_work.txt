@@ -934,3 +934,12 @@ ROUTEONLY   bots/_v194routelink    bots/_v178salt         5408 209000
 # games with logging forced on) -- it was written off last night as
 # "non-dosing" on a reading taken through a switched-off log.
 IDLEVSALT   bots/_v187saltidle_f   bots/_v178salt         5408 210000
+# --- 06:3xZ CANCEL NOTE (rows KEPT, n=836 stays readable): SALTBARONLY is
+# cancelled to free a slot for IDLEVSALT, which answers Magnus's direct
+# question ("can we run it against salt?"). SALTBARONLY's dose is MEASURED at
+# 2.7 events/game against 19-79 for its siblings -- low BY CONSTRUCTION, since
+# disabling the cut removes the thing that kills belts, and path (1) needs a
+# DEAD belt to salt. ⇒ its 46.89% cannot be read as "barriers hurt" at ANY n:
+# more games buy precision on a quantity that is already known to be
+# confounded with dose. Spending the slot on a confounded arm while the
+# question Magnus asked sits QUEUED is the wrong trade.
