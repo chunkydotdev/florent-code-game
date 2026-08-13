@@ -42808,3 +42808,13 @@ churn on C1 (v212).
 # provenance). Round-1 descriptive: 19/30, all wins core_destroyed, kill
 # medians 153-167 INCLUDING 900-area, zero tiebreak wins — v8 kills where
 # v123 tiebroke. Runner cadence unchanged.
+
+# 2026-08-13T11:15:19Z — BUILDER s36: dash-usability agent DONE (16cf301, relayed). Verdict:
+# view was unreadable not broken — false NEGATIVE badges (no-heartbeat vs
+# negative-age conflated), running shards sorted below 52 DONE rows, the
+# 'what it tests' prose in the payload but rendered nowhere, comment block
+# buried behind boilerplate, no clickable route from the front page, green
+# fresh badge on a 35h heartbeat. All fixed; S1 held (pure passthrough of
+# operator prose, no new statistics); diff check EXTENDED (comparison D:
+# captions must be verbatim runs of the shard's own comment block) and PASS
+# 8/8 selftest branches; live :8787 restarted and re-verified.
