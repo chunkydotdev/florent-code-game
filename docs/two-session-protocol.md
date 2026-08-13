@@ -1,7 +1,7 @@
-# Two-session protocol — builder arm + research arm
+# Multi-session protocol — builder · research · side lane
 
 Born 2026-08-07 (sessions 12/13, the Eir 5 cycle), written up on Magnus's
-ask. Two Fable sessions run this project in parallel with disjoint write
+ask. Fable sessions run this project in parallel with disjoint write
 surfaces: a **builder arm** (the measuring session, boots from HANDOVER.md)
 and a **research arm**. Why it works: context isolation (the builder's
 context stays on build/measure cycles; research burns its own on decodes and
@@ -10,6 +10,19 @@ was built and shipped), and **independent verification** — the research arm
 caught the builder's stale piece-specs against the live source; the builder
 caught the research arm duplicating a finished census. Neither catch happens
 inside one session.
+
+**⭐ AMENDED 2026-08-13 (Magnus: "apply your fixes", acting on
+`docs/workflow-analysis/lane-structure-review-2026-08-13.md`). THREE lanes,
+not two.** The side lane was commissioned 2026-08-09 and this doc never got a
+Roles entry for it — the review found the lane ran four days on an exception
+clause (rule 5) alone. **Charters are AUTHORITATIVE in
+`.claude/commands/{builder,research,sidelane}.md` — this doc is the map, those
+files are the law.** The 2026-08-13 endgame recharter: **research =
+live-measurement operator** (unrated-fixture cadence plan, pooled readouts,
+decode of our own rated games, opponent-version pinning — still never fires a
+platform action) and **side lane = ship-critical verification only**. Boot
+enforcement is now a SessionStart hook: it names your lane from `FCODE_LANE`
+or reminds you that charters are not auto-loaded.
 
 ## Roles
 
@@ -38,7 +51,26 @@ the same priority as opponent version bumps.
 read-only subagent fan-outs (research briefs), cross-thread synthesis, and
 relaying findings with staleness corrections. It NEVER: edits a bot,
 submits/activates, runs arena or unrated challenges, writes verdicts,
-touches HANDOVER.md or the tape.
+touches HANDOVER.md or the tape. **Since 2026-08-13 it is additionally the
+LIVE-MEASUREMENT OPERATOR — it owns the unrated-fixture cadence plan (which
+leg fires each rate-limit window, pooled across windows), the pooled
+readouts, the decode of our own rated games, and opponent-version pinning.
+The builder still executes every platform action; research schedules and
+reads.** Authoritative charter: `.claude/commands/research.md`.
+
+**Side lane** (commissioned by Magnus 2026-08-09; this Roles entry added
+2026-08-13 — the lane ran four days without one) owns: **ship-critical
+verification** — two-clock prereg certification, gate and stop-loss
+arithmetic, rated-leak checks at the pairing boundary, rollback readiness —
+plus prereg hygiene for live legs, auditing ship-chain commits against
+PROGRAMME.md. Since 2026-08-13 it does NOT audit every commit or every
+analysis doc (review R1: its detection was the best-measured value in the
+record — 16/16 real flags at ~2-minute median on 08-13 — and its volume was
+the cost, 1.4–7× more channel lines than any other lane on every day it ran).
+Hard limits unchanged from the rule-5 contract: no bot edits, no
+arena/unrated, no verdicts, no HANDOVER/tape writes, append-only
+coordination notes, commits its own named files only. Authoritative charter:
+`.claude/commands/sidelane.md`.
 
 **Subagents are pre-authorised for the research arm, permanently (Magnus,
 2026-08-09).** No per-session permission, no asking. Announce in IN-FLIGHT
@@ -60,6 +92,15 @@ successive sessions do not re-research the same ground. Findings land as files
 there with a source URL, an evidence grade, and an explicit transferability
 verdict against our ruleset; **`transfers: no` is a result worth filing**, an
 unsourced tactic is pollution.
+
+**⛔ AMENDED 2026-08-12/13 — the TRIGGER and OUTPUT CONTRACT above are
+RETIRED.** Research measured its own flagship at **313 files → 7 conversions →
+0 decision-path citations** and retired unconditional sweeping (s33, Magnus
+directive). Sweeps now fire on a **signal** (queue below floor, measured
+surprise), never on boot or a schedule, and a sweep's only deliverable is a
+`QUEUE.md` row that clears admission — or nothing. The authoritative version
+is in `.claude/commands/research.md`; the paragraph above is kept for history
+and must not be booted from.
 
 **The corpus is shared read infrastructure (2026-08-09).** `tools/corpus/`
 decodes the whole replay archive in ~3 min and `corpus/` holds the committed
@@ -95,6 +136,20 @@ builder-only (unchanged from its rules of the road).
    verdict's coordination note. Full retro synthesizes the deltas at
    Magnus's wrap-call (he wraps at least daily); incident-log rules still
    land immediately, not queued for retro.
+6. **Consumption receipts (2026-08-13, review R6).** The builder answers
+   every relayed finding with one line in the same channel: `CONSUMED: <what
+   changed>` or `KILLED: <why>`. What this closes, measured: 32.6% of
+   research docs self-disclaimed that they change anything, and a correct
+   hand-off was indistinguishable from a dropped one — four redo clusters,
+   9,134 lines, two same-question duplicates written 21 and 92 minutes apart
+   with zero cross-citation.
+
+**Channel reality check (2026-08-13):** the top-of-file IN-FLIGHT registry
+fossilised on 2026-08-08 (its rows still name v67-era work) and the `ASK:`
+convention last fired operationally on 2026-08-10. The working channels are
+the coordination TAIL plus session pings. Announcements as dated tail notes
+are fine — that is what everyone already does — but a session message that
+changes anything must land as a committed note the same hour.
 
 ## Shared platform budget (fcode)
 
@@ -239,6 +294,31 @@ mid-battery), the active-submission SLOT state, and any live SUBAGENT (fold its
 result into a committed doc or state it was dropped). Monitoring is now the
 exception, not the rule — everything else is either committed to the repo or
 lost.
+
+## Ephemeral auditors, and the directive rules (2026-08-13, review R5)
+
+**No fourth standing lane.** `tools/audit_trigger.py:11-15` predicted — the
+day before the side lane was created — that a permanent auditor would
+eventually acquire a stake; the side lane confirmed it from the inside
+(*"auditing is a defending state"*, its own retro). One-shot questions get an
+**ephemeral, stakeless session**: boot from the coordination tail, announce
+lane + scope there (rule 1), read-only or own-named-files-only, relay, and
+terminate. The 2026-08-13 lane-structure review is the worked example.
+
+**Directive admission bar.** A new standing directive must name its enforcing
+surface — a blocking script/hook, or a file some boot sequence opens — or it
+is filed as `OBSERVATION — NOT ROUTED`, not a directive. This is the retro
+routing rule applied to directives themselves. Measured basis: every
+prose-only rule in this repo has a recorded violation by its own author; the
+durable surfaces are booted files and tools that exit 1.
+
+**Directive sunset.** A prose directive that has not changed behaviour in two
+successive retros is deleted or demoted to observation — the clause every
+retro instrument already carries, now pointed at the directive stock. Basis:
+the stock reached 36+ D-rules with cross-lane numbering collisions nobody
+flagged, boot reads cost ~100k tokens/session
+(`docs/research/BOOT-LOAD-AUDIT-2026-08-10.md`), and that audit's own cut
+list sat 3 days unexecuted — the stock ate its own pruning directive.
 
 ## Incident log — 2026-08-07 (why the rules above exist)
 
