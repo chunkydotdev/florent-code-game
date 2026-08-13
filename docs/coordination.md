@@ -41745,3 +41745,104 @@ rewrites `INCUMBENT` + `PREVIOUS_INCUMBENT` and **refuses loudly on
 `INCUMBENT_FROZEN: yes`.**
 ⇒ **R3's `GREP STALE` spec now has a correct field to compare against** — it was
 blocked on exactly this and is no longer.
+
+# ============================================================================
+# 2026-08-13T07:5xZ — **BUILDER s35 WRAP** (Magnus called it).
+# Arm retro ran FIRST: `docs/builder-arm-retro.md`, instrument **v1**,
+# **FIRINGS 7**. Two ships, zero rollbacks, zero leaked rated matches.
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**B1. ⭐⭐ THE FIXTURE CAN GO STALE AGAINST THE WORLD, AND NOTHING CHECKS IT.**
+*(→ routed as a boot-check spec; NOT built.)* The organisers rotated the map pool
+mid-session. **Four of our eight battery maps were retired**, and eleven of the
+fifteen pool maps had **zero games in any battery**. Every local number produced
+today — and most of the 254k rows before it — is half on dead geometry.
+**`gate.py` inspects plank/control/parent/opponents; `corefill` checks basename
+collisions and load; `overnight_read` checks calibration cells. Fifteen
+instruments and not one asks whether the FIXTURE still matches the GAME.**
+⇒ **`fcode maps list` is one call. Add a pool-vs-`overnight.sh` assertion to the
+three boot checks.** Found because Magnus told me, not because anything fired.
+
+**B2. ⭐ A DOSE IS A PRECONDITION, AND OUR LOCAL BATTERIES WERE DOSE-BLIND BY OUR
+OWN CONFIGURATION.** *(→ built: `tools/dose.sh`.)* Magnus: *"on local plays we
+cant see if a play we think we built actually happens."* The mechanism is the
+opposite of the assumption: **bot `print()` goes INTO THE REPLAY and
+`overnight.sh` ran every game with `--replay /dev/null`.** Keeping it costs ~15
+s/game. **Two false zeros followed inside twenty minutes, both mine** — one read
+0 for **all five arms including the parent** (replay discarded), one read 0 for a
+single arm because that arm sets `LOKI_SALT_LOG = False` (**the instrument
+reading its own switch**). ⇒ `dose.sh` **refuses a bare zero**: it asserts the tag
+exists in source (exit 5), greps for logging-shaped flags, and proves its own
+counter is alive before reporting.
+
+**B3. ⛔ I WROTE A STOP-LOSS BY REACHING FOR A FAMILIAR PHRASE INSTEAD OF OPENING
+THE FILE.** *(→ five ADD-only amendments; behaviour change.)* The v122 prereg said
+*"cumulative net Elo <= -21 (the standing slot-swap rule)"*. `slot_rule.py:129`
+computes a **rolling five-match slope**, and nothing in the tree computed what I
+wrote. Worse, that rule fires on a **TRUE-NEUTRAL holder 74.6% of the time by
+k=27** while being **structurally blind to a bleed slower than -4.2/match** —
+which is SALT's characteristic failure. ⇒ **A gate is specified against the CODE
+THAT IMPLEMENTS IT, never against its name.**
+
+**B4. ⭐⭐ OPTIONAL STOPPING IS NOT MULTIPLICITY, AND A FIXED-n z CANNOT SEE IT.**
+*(→ pre-registered look schedules, local AND rated.)* I shipped v123 partly on a
+read at n=517 taken at a moment I chose, repeatedly, from a continuously-filling
+shard. **The inflation depends on the look schedule, which was never recorded, so
+it is not computable after the fact — that IS the disclosure.** Fixed
+prospectively: two looks per local arm, **O'Brien-Fleming boundaries solved
+numerically** (interim z=2.797/±2.69pp, final z=1.977/±1.34pp) after the naive
+two-look scheme measured **α=0.0831**. **And the rated slot had no schedule at
+all** — the surface most likely to be read repeatedly. Now one look at k=8,
+**pre-committed while the number was FAVOURABLE (+37 at k=4)**, because a stop
+rule that only appears on bad news is a ratchet.
+
+**B5. ⭐⭐ A FIELD CAN BE ON THE WIRE AND UNREAD FOR THE PROJECT'S WHOLE LIFE.**
+*(→ built: `sync.py` fix + `backfill_oppver.py`.)* `oppver` was the literal string
+`'None'` in **4,375 of 4,375** ladder rows. Cause: the ingest read `fcode match
+info`, which returns **our** version and **None for the opponent's**, while
+`fcode match list` returns both. `CLAUDE.md` had carried the CONSEQUENCE for days
+(*"nothing pins or even reads THEIRS"*) and prescribed a workaround. **Nobody
+checked whether the field was unavailable or merely unread.** Backfilled all
+4,375 with the join gated on a positive control (**reproduces the trusted
+`ourver` 4,375/4,375; driven to refuse at 99.89% mismatch first**). Found because
+Magnus asked what their data is worth without knowing their version.
+
+**B6. ⛔ A GUARD THAT RUNS ONCE CANNOT PROTECT A SURFACE THAT CHANGES.**
+*(→ `corefill` guard 4b.)* The basename-collision check ran on the worklist **as
+it was at startup**, but the worklist is re-read every poll and ADD is the whole
+operator interface. I appended a colliding pair, it launched, and `overnight.sh`
+refused it — **burning a shard slot and a permanent `.started` marker** to
+discover what the startup check already knew.
+
+**B7. ⚠ LINE POSITION IN A TEXT FILE SILENTLY BECOMES PRIORITY.** *(→
+`cores_idle` rewritten; class named by the side lane.)* Three instances:
+`cores_idle` returned `rows[0]` from a file whose own fire-order block declares
+positional order superseded **and re-implemented the admission gate, disagreeing
+with it**; `corefill` launched an arm Magnus asked for twice **behind two others
+by line position**; `fanout.sh` drops the tail of its id list. ⇒ **the tell is a
+reader taking `[0]` over a human-maintained list.**
+
+**B8. ⛔ A FIX SPECIFIED AGAINST THE SYMPTOM CAN BE WORSE THAN THE SYMPTOM.**
+*(→ `submit_clean` guards, never edits.)* `PROGRAMME.md`'s `INCUMBENT` went stale
+at every ship — three times today. The tempting fix (script updates the field)
+would trade a **stale** field for an **unattributable** one, because the commit
+message is the only place that file's authorisation exists. **A stale field is a
+known unknown; an unattributable one is not.** `--activate` now prints the exact
+lines and refuses to write.
+
+**B9. ⭐ NAMING LAPSED THE MOMENT IT MOVED INTO A SCRIPT.** *(→ `--name` required
+and format-enforced.)* v116/v122 carried "Loki v5"/"Loki v6"; **v123 shipped
+UNNAMED because `submit_clean` never passed `-n`.** Magnus's convention — ships
+`Loki vN`, unrated legs `Loki rcX.Y` — is now enforced in code, with the ship/leg
+distinction load-bearing because `fcode submit` auto-activates and a leg can enter
+the rated record.
+
+## ⚠ THE ASYMMETRY I WOULD KEEP
+**Both of my retractions today ran in the FLATTERING direction and BOTH WERE
+CAUGHT BY MAGNUS, NOT BY ME** — the wrong Eir tree (a weaker control makes "all
+doctrines fail" easier) and the Jython 5-0 framing (true arithmetic, misleading
+evidence). **Third session running that my errors point somewhere.** The
+mechanism that caught them was a human asking a specific question about a number
+I had just published.
