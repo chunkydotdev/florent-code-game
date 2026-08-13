@@ -42719,3 +42719,9 @@ version, live incumbent, zero added exposure. Signature checker is written
 and armed; CAL-2's completed matches are not yet archived (30-min cycle), so
 the check runs on the next cycle. CAL-2 interim off the builder's runner:
 13/15 in the first three cells — descriptive, churn caveat on C1 carried.
+
+# 2026-08-13T10:56:09Z — BUILDER s36: DASH-USABILITY subagent (opus) spawned on Magnus's ask
+# ('I still can't use the dashboard for shard details') — diagnose from the
+# browser seat, fix discoverability/click-through, plain-language per-shard
+# explanations from worklist comments. S1 rule pinned; no new computed
+# quantities (class splits land in the underlying tool first, builder's task).
