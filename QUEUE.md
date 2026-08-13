@@ -26,6 +26,14 @@ plank is a certain zero and every idle hour on the slot is spent.
 3. the FIXTURE it is measured on, and whether that fixture can resolve it
 4. why it is worth a slot **now** (`tools/target_value.py` band if it is a live leg)
 
+**+ HOT-TURN RIDER (s36, from #44's cut — a standing constraint, not a
+one-time reading): any item whose change touches per-turn work on the
+raid/doctrine hot path carries one line in its GREP stamp — "hot-turn cost:
+adds / neutral / reduces, vs the ~1,200µs GRAND margin" (v125's worst 900-area
+turn runs at median 8,748µs of 10,000, in a 55µs-tight cluster, and
+`get_cpu_time_elapsed()` reads ZERO locally, so no local test catches a
+regression — the stamp at stocking is the only cheap gate).**
+
 ---
 
 ## ⭐⭐⭐ FIRE ORDER — RE-RANKED s36 2026-08-13 (research, on Magnus's question "do we need to re-rank now that maps lean toward bigger areas?" — answer: YES, scoped)
