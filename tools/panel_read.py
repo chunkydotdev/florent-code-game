@@ -31,17 +31,23 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CELLS = {  # PREREG-PANEL-CAL1-v123-field-2026-08-13.md
+CELLS = {  # same six cells in CAL-1 and CAL-2 (deliberate, cross-panel contrast)
     "team lazy": "C1", "Focalground": "C2", "Juusto": "C3",
     "Jython": "C4", "The Bisons": "C5", "Lunds Stallions": "C6",
 }
+
+# Per-panel frozen parameters — each from its own committed prereg. A panel's
+# `since` is its prereg commit time; its `until` is the next holder's ship
+# (CAL-1 wrapped below n=150, so it is descriptive-only FOREVER per A1.3).
+PANELS = {
+    "cal1": {"since": "2026-08-13T08:49:13Z", "until": "2026-08-13T10:16:00Z",
+             "gaps": {"C1": -122, "C2": -96, "C3": -68, "C4": -54, "C5": -47, "C6": +23},
+             "comparative_allowed": False},  # wrapped at 30 games
+    "cal2": {"since": "2026-08-13T10:47:00Z", "until": "9999",
+             "gaps": {"C1": -85, "C2": -15, "C3": -48, "C4": -65, "C5": +28, "C6": +50},
+             "comparative_allowed": True},
+}
 AREA900 = 900  # drakkarfjord, glacierkeep, midgard, ragnarok, valkyrie
-
-# Pre-committed Elo gaps (ours - theirs) from the prereg's own table — the
-# comparison target is FROZEN at prereg time, not re-cached at read time, so
-# the n=150 comparative read has nothing left to choose.
-GAPS = {"C1": -122, "C2": -96, "C3": -68, "C4": -54, "C5": -47, "C6": +23}
-
 
 def expected(gap: float) -> float:
     return 1.0 / (1.0 + 10 ** (-gap / 400.0))
@@ -126,8 +132,8 @@ def cell_report(games, elo_gap=None):
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--since", default="2026-08-13T08:49:13Z",
-                    help="prereg commit time — panel games only")
+    ap.add_argument("--panel", default="cal2", choices=sorted(PANELS),
+                    help="which committed prereg's parameters to read under")
     ap.add_argument("--corpus", default=str(ROOT / "corpus"))
     ap.add_argument("--max-age-min", type=float, default=45.0)
     ap.add_argument("--selftest", action="store_true")
@@ -135,10 +141,12 @@ def main() -> int:
     if args.selftest:
         return selftest()
     corpus = Path(args.corpus)
-    games = join_area_turns(load(corpus, args.since), corpus)
+    panel = PANELS[args.panel]
+    games = [g for g in join_area_turns(load(corpus, panel["since"]), corpus)
+             if g["at"] < panel["until"]]
     newest = max((g["at"] for g in games), default=None)
     total = len(games)
-    print(f"PANEL-CAL-1 readout — since {args.since} — {total} games")
+    print(f"PANEL-{args.panel.upper()} readout — since {panel['since']} — {total} games")
     if newest:
         age_min = (datetime.now(timezone.utc)
                    - datetime.fromisoformat(newest.replace("Z", "+00:00"))
@@ -156,8 +164,10 @@ def main() -> int:
         print(f"{cell} {opp}: n={n}{floor}")
         for ln in lines:
             print(ln)
-    if total < 150:
-        print(f"\nPANEL TOTAL n={total} < 150 — DESCRIPTIVE ONLY. "
+    if total < 150 or not panel["comparative_allowed"]:
+        why = (f"n={total} < 150" if total < 150 else
+               "panel wrapped below its floor — descriptive-only forever (A1.3)")
+        print(f"\nPANEL DESCRIPTIVE ONLY ({why}). "
               f"Comparative reads are pre-committed at n=150 and n=300 exactly.")
         return 0
     # ---- comparative read (licensed only here, at the pre-committed looks) --
@@ -175,7 +185,7 @@ def main() -> int:
         m = len(shares)
         mean = statistics.mean(shares)
         se = statistics.stdev(shares) / math.sqrt(m) if m > 1 else float("nan")
-        e = expected(GAPS[cell])
+        e = expected(panel["gaps"][cell])
         print(f"  {cell} {opp}: share {mean:.3f} vs E {e:.3f} -> "
               f"{mean - e:+.3f} ± {se:.3f} (cluster SE, m={m})")
     print("  (verdict sentences remain the builder's; this table is the read)")
