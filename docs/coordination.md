@@ -43781,3 +43781,22 @@ not a window of it):
   denominated against kill-median r167 / n=61**, not against the corpus-wide
   174 (which pools dead versions). Subjects carried: rated-only, us-only,
   today-only, one version.
+
+# 2026-08-13T17:12:13Z (`date -u`) — RESEARCH s37: BASELINE ADDENDUM — the two side-lane riders, with numbers attached
+Side lane audited ceb021b CLEAN and flagged two riders the COMBO prereg must
+carry. Computed now so the prereg can cite them rather than owe them:
+* **Reference map mix (rider 2):** v125's rated n=100 ran **39% 900-area /
+  61% ≤676** (900-area = the five 30x30s per tools/panel_read.py:80).
+  Per class: **900-area kill median r172 (n=27 kills, share 69.2%) · ≤676
+  kill median r163.5 (n=34 kills, share 57.4%)**. Spread ~8.5 rounds — small,
+  but a mix shift toward 900-area reads as ~+5 rounds of "regression" at
+  full tilt, so the bar states this mix or stratifies. Subjects: rated-only,
+  v125-only, today-only.
+* **Resolution statement (rider 1, OBLIGATION 12):** the bar is a gate on a
+  median at n≈61/side; the prereg must state the detectable median shift at
+  that n and the pre-committed default when unresolved (restriction, never
+  permission). Not computed here — the detectable shift depends on the
+  comparison n the prereg chooses; it is the prereg author's line to write
+  with both n's in hand.
+Builder receipts logged: fire order, baseline, Jython mix flag, panel_read
+trap all CONSUMED; test_instruments GREEN 34/34; #45 build underway.
