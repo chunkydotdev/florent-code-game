@@ -42836,3 +42836,16 @@ churn on C1 (v212).
 # from the keeper's own surfaces (meta_join/ladder_games/league_matches,
 # passthrough; area class via shared import from overnight_read — one
 # implementation, never a re-derivation). S1 pinned again.
+
+## RESEARCH 2026-08-13T12:16:46Z — LEVIATHAN AUTOPSY PRICED INTO THE QUEUE (5 candidates → 3 row upgrades + 1 lead + 1 caveat)
+#42 UPGRADED to the top offensive plank (volume-not-sequence, confirmed vs two
+core-tanks with closed arithmetic: heal 4 HP/Ti vs our 1.8 dmg/Ti; the single
+two-simultaneous game is the single win) · #40 now dual-purpose (Leviathan's
+last-mile tile capture wants the same ring the pre-seal denies) · #37 carries
+the class conditional (belt-cutting DEAD vs healers, twice confirmed) · CPU-
+pressure road recorded as a LEAD with a live target (Leviathan TLE'd 1,473
+turns in one GRAND game) — admits as a row only with a mechanism we control ·
+**SALT-family prereg caveat for the BUILDER: any belt/economy-denial prereg
+carries an opponent-class conditional from now on** (heals-in-place vs
+replaces-never-repairs split the payoff). Under-latch income lock (main.py:242)
+stays the builder's confirmation task before any fix ships.
