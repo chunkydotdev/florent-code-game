@@ -16,8 +16,7 @@ successor session inherit it. The fields below are parsed; the prose is not.
     WIN_RATE_IS_VERDICT: yes
     COMPARE_AGAINST: previous_line_iteration
     KILL_WINDOW_RND: 250
-    R1000_IS_DEFEAT: conditional_on_map_area
-    R1000_DEFEAT_AREA_MAX: 676
+    R1000_IS_DEFEAT: yes
     PLAY_DEFENCE: not_at_the_kill_s_expense
     DEFENCE_ADMISSION_BAR: kill_round_non_regression
     FIXTURE_OF_RECORD: live_unrated
@@ -48,7 +47,29 @@ rewrites `INCUMBENT`/`PREVIOUS_INCUMBENT` on a verified ship (cb4540a,
 delegated by Magnus the same day — THAT FIELD ONLY; everything else in this
 file stays edit-on-directive-only).
 
-## ⭐⭐ MAP ROTATION 2026-08-13 — `R1000_IS_DEFEAT` IS NO LONGER UNCONDITIONAL
+## ⭐⭐ REVERTED 2026-08-13 ~11:2xZ — `R1000_IS_DEFEAT: yes`, UNCONDITIONAL AGAIN
+
+**Magnus, direct, verbatim: *"revert it, i'd like us to be an offensive team"***
+— given in answer to a recommendation that named the field and the evidence.
+Recorded verbatim because this file is edit-on-his-directive-only.
+
+**WHY THE EXEMPTION'S BASIS IS GONE.** The conditional (below, kept as history)
+rested on one measured fact: three doctrines could not kill a weak bot on 4 of
+5 area-900 maps. **That was the MAP_CODES pathfinding defect, not a property of
+big maps** — fixed and shipped as v125 "Loki v8" (`bots/_v197mapcode`,
+10:16Z). Post-fix: kills at turns 71/115/86 vs starter on the 900s; local
+GRAND class 93.7% ±3.6 with kill median 165 (n=742); live panel round 1: every
+win `core_destroyed`, medians 153–167 **including 900-area, zero tiebreak
+wins**. The kill fires everywhere, so the defeat rule holds everywhere.
+
+**WHAT SURVIVES THE REVERT:** the CQ/STD/GRAND three-class split stays as a
+MEASUREMENT dimension (overnight_read prints it; kill bars remain
+class-conditional where preregs say so) — it is reporting, not doctrine. Queue
+#36 re-scopes to eco-as-kill-enabler on big maps, never eco-as-win-path.
+**A r1000 finish is a defeat on every map. Economy buys the kill; it never
+scores.**
+
+## SUPERSEDED 2026-08-13 (kept as history) — MAP ROTATION: `R1000_IS_DEFEAT` briefly conditional
 
 **MAGNUS, 2026-08-13, direct: *"R1000_IS_DEFEAT does not hold on 30x30 anymore."***
 Recorded verbatim because this file is edit-on-his-directive-only and this
