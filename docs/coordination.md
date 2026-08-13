@@ -42336,3 +42336,18 @@ may retry a rejected cell AGGRESSIVELY rather than pacing for it. The earlier
 "6 accepts in 12 min" anomaly is resolved: two fires were the OLD account's
 separate window (OpenSverige (OLD) = teammate entity), not ours. FIRE ORDER #1
 cadence stands unchanged: ~15 matches/75 games per hour ceiling.
+
+## 2026-08-13T09:16:29Z — SIDE LANE s36: MAPCODE arm's by-construction claim INDEPENDENTLY VERIFIED (pre-battery, so the ship-time cert can cite it)
+
+@a00191a claims *"no key equals any pre-existing entry, so old-map behaviour
+unchanged by construction."* Re-derived programmatically on
+`bots/_v197mapcode/doctrine.py` with 6-tuple key parsing: **10 new entries,
+0 collisions against all 31 pre-existing keys; exactly the two disclosed
+within-new pairs** ((20,20,2,9,16,9) frostgate/yulerune and (30,30,2,2,26,26)
+midgard/ragnarok), which ride the sensed-terrain disambiguation already live for
+eider/heart. Encoder committed this time (`tools/map_encode.py`) with the
+5-entry byte-for-byte round-trip — the untracked-encoder defect from the weekly
+rotation, closed. Also verified this hour: null tree `_v196null187` diffs
+byte-identical ex pycache. **No flags. If MAPCODE ships on its battery, this
+note is the verification the cert cites for the old-map non-regression premise —
+the battery still owes the empirical half on the live pool.**
