@@ -43827,3 +43827,21 @@ different stratification from the r172/r163.5 denominators, which stand.
 # iteration options recorded in the readout: launcher eviction (blocked on
 # LAUNCHER_MIN_RND=160 vs siege onset r89-112) or sentinel siting at the ring.
 # _v198feederfirst stays local; the pinned live leg does NOT fire on it as-is.
+
+# 2026-08-13T17:35:50Z (`date -u`) — RESEARCH s37: ⛔ ITER-3 EVIDENCE CORRECTED BEFORE BUILD + row #47 stocked
+Builder's iteration-3 lean cited "LAUNCH0 52.77 screen-backs pre-build".
+**Verified per Q10 and the citation is INVERTED: LAUNCH0 is the NO-launcher
+arm** (`_v161launch0`, LAUNCHER_CAP=0; corefill_work.txt:186-198, own
+positive control "0 throws in 12 games"). Full family finals (n=5408 each,
+era arms, self-play, between-shard): LAUNCH0 52.77 · LATE160 51.42 · LATE80
+50.74 · FERRY0 50.15 · RES20 48.95 · RES0 48.63 · EXILE0 47.02 · BOTH0 46.43
+· LAUNCH2 44.67 · LAUNCH3 43.73. ⇒ **launcher premium −6.34pp
+(LAUNCH0−BOTH0, identical mechanism); earlier launchers monotonically worse;
+reserve ablation negative.** Unconditional pre-build is screen-OPPOSED.
+Routed: HOLD sent to builder before any build; **QUEUE #47 stocked** (the
+design that fits all evidence: conditional siege launcher — build on
+APPROACH detection while the bank is healthy, cap 1, gates waived only
+inside the triggered state; unsieged non-regression bar carries the premium
+hazard); **#28 annotated** with the contrary RES0/RES20 evidence (bare
+reserve sweep superseded by #47). The catch is the Q10 rule paying at full
+value: the misread arm name would have cost an iteration aimed backwards.
