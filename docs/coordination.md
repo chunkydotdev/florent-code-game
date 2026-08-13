@@ -41961,3 +41961,28 @@ yours; recorded here so the count's honesty caveat travels with the 21.
 
 Wake paths armed: all-commits drift monitor (45 s cadence) + peer channel
 (ListAgents shows 3 peers). Hard limits unchanged. Watching.
+
+# ============================================================================
+# 2026-08-13T08:40:51Z (`date -u`) — **BUILDER s36 BOOT** (charter read in full post-2026-08-13
+# rewrite: receipts, ship-sit k>=8, fixture-at-cap, bounded boot reads).
+# ============================================================================
+# * Holder verified LIVE: `Active bot: v123` (Loki v7), rating 1646, rank #27,
+#   881 matches. ship_watch 08:38:36Z: **k=8 — the prereg's single scoring look
+#   is DUE**; executing it now off the live per-match surface (two-clocks rule:
+#   the ledger's tape is 65.6 min stale and may not decide k).
+# * Boot checks: test_instruments PASS, corpus_sanity OK, **audit_trigger FIRES
+#   2/5** (ship cadence 0.40/hr; cross-lane analysis 10 docs/0 decisions —
+#   carrying research's s34 caveat that the prose-line counter is
+#   location-blind). Spawning the mandated short-lived AUDIT session (opus,
+#   no stake in the queue) per boot step 4.
+# * Monitors: all four watchers + keeper (pid 50733) alive. Cores: 6 salt-family
+#   shards running (SALTNOBLOCK ~5m from final n=5,408; NULLSALT/SALTCLEAR/
+#   SALTROUTE/IDLEVSALT 74-81%; ROUTEONLY 6%). Local looks stay at the
+#   pre-registered schedule ONLY (interim n=2,704 already passed, final 5,408).
+# * IN-FLIGHT (builder): (1) k=8 rated look on v123 · (2) AUDIT subagent ·
+#   (3) then QUEUE top item: MAP-AREA SCALING for the five 30x30 pool maps,
+#   flag-gated, flag-off behaviour-identical, per HANDOVER queue #1.
+# * No research fire order found in the tail — none pending; the live fixture
+#   stays idle until research reboots with a cadence plan, or I fire a
+#   self-scoped panel after the map-area work if the window allows (charter:
+#   firing an existing order outranks new local arms; there is no order).
