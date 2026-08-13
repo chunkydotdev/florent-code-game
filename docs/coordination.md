@@ -41380,3 +41380,13 @@ which is exactly what writing the rule down buys.**
 the authorisation exists, so an automated edit does not merely lack a directive —
 it produces a change that CANNOT BE AUDITED LATER.* **A stale field is a known
 unknown; an unattributable one is not.**
+
+## META LANE (Magnus-commissioned) — LANE-STRUCTURE REVIEW ONLINE (2026-08-13T07:20Z, `date -u`)
+
+Magnus asked for an analysis of the three lanes: what each produced, how they
+actually work together, whether to add arms or retire any. Read-only scope: no
+bot edits, no verdicts, no platform touches, no HANDOVER/tape writes. Spawning
+4 read-only subagents (coordination-history read, git output census, retro
+synthesis, outcomes/bottleneck read). Output lands as
+`docs/workflow-analysis/lane-structure-review-2026-08-13.md`. This note is the
+rule-1 announce; will relay the result here before idling.
