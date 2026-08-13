@@ -1000,3 +1000,11 @@ RAIDDL      bots/_v199raiddl       bots/_v197mapcode      5400 219000
 # batch) is the answer. Diagnosis basis @cc5650b + code read (raid.py:658-663,
 # doctrine.py:1364-1372).
 FWDFLOOR8   bots/_v200fwdfloor8    bots/_v197mapcode      5400 220000
+# UNDERECO (income-lock fix, autopsy 18f30710): chronic siege (>100r latched)
+# restores the harvester-rebuild reserve that the acute-phase skip disables.
+# ⚠ FIXTURE HONESTY: self-play rarely reproduces Leviathan's permanent ring
+# camp + severed chain, so this battery is a REGRESSION SCREEN (does the
+# chronic-restore hurt the general case?) — a null here does NOT resolve the
+# plank; the resolving read is a live leg vs the core-tank class, which
+# outranks the panel when fired (research @fc912f0).
+UNDERECO    bots/_v201undereco     bots/_v197mapcode      5400 221000
