@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cores — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/" class="on">Cores</a>
+    <a href="/game">Game</a>
+    <a href="/lingo">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock" id="clock">…</span>
+</header>
+
+<main>
+  <h1>What is running locally</h1>
+  <p class="lede">Read-only. Files and <code>ps</code> only — no <code>fcode</code> calls,
+     no network, nothing that can submit or spend a rate-limited request.</p>
+
+  <div class="note warn">
+    <strong>Every number here carries its age.</strong> A value past its own refresh
+    cadence is marked <span class="badge b-warn">STALE</span>, and a source that could
+    not be read is <span class="badge b-blind">BLIND</span> — never silently zero.
+    <em>ship_watch</em> once printed a healthy-looking line off seven-minute-old rows,
+    and a healthy line and a blind line were byte-identical. That is what these badges exist to stop.
+  </div>
+
+  <div class="grid" id="cards"></div>
+
+  <h2>Shards running now</h2>
+  <div class="count" id="shardcount">…</div>
+  <div class="scroll" id="shardwrap"><table id="shardtable">
+    <thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Heartbeat age</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h2>Full shard table</h2>
+  <p class="lede" style="margin-bottom:10px">
+    Verbatim output of <code>tools/corefill_status.sh</code> — the production
+    computation, not a copy of it. It is the authority on <em>STALLED vs DEAD</em>,
+    and it refuses to print a win rate under 400 rows because the band there is
+    wider than any effect we chase.
+  </p>
+  <div class="count" id="rawage">…</div>
+  <pre class="raw" id="raw">loading…</pre>
+
+  <footer>
+    Auto-refreshes every 10 s. Shard table regenerates every 45 s.
+    Serving from <span id="repo" class="mono"></span>.
+  </footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+
+function freshBadge(ageMin, cadenceMin) {
+  if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
+  const limit = (cadenceMin || 5) * 2;
+  const cls = ageMin > limit ? 'b-warn' : 'b-ok';
+  const label = ageMin > limit ? 'STALE' : 'fresh';
+  return `<span class="badge ${cls}">${label} ${ageMin.toFixed(1)}m</span>`;
+}
+
+function card(k, v, sub) {
+  return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div>
+          <div class="sub">${sub || ''}</div></div>`;
+}
+
+function render(s) {
+  $('#clock').textContent = s.served_at;
+  $('#repo').textContent = s.repo;
+  const c = [];
+
+  // --- games running
+  if (!s.procs.ok) {
+    c.push(card('Local games', '<span class="badge b-blind">BLIND</span>', s.procs.blind));
+  } else {
+    const n = s.procs.games;
+    const badge = n > 0 ? '<span class="badge b-ok">running</span>'
+                        : '<span class="badge b-bad">IDLE</span>';
+    c.push(card('Local games (fcode run)', n,
+      `${badge} ${s.procs.corefill ? 'corefill up' : '<span class="badge b-warn">no corefill</span>'}`));
+  }
+
+  // --- load
+  c.push(s.load.ok
+    ? card('Load average', s.load.one, `${s.load.five} · ${s.load.fifteen} &nbsp;(5m · 15m)`)
+    : card('Load average', '<span class="badge b-blind">BLIND</span>', s.load.blind));
+
+  // --- idle alarm
+  const ci = s.cores_idle;
+  if (!ci.ok) {
+    c.push(card('Idle alarm', '<span class="badge b-blind">BLIND</span>', ci.blind));
+  } else {
+    const v = ci.alerting ? '<span class="badge b-bad">CORES IDLE</span>'
+                          : '<span class="badge b-ok">OK</span>';
+    c.push(card('Idle alarm', v,
+      `${freshBadge(ci.age_min, ci.cadence_min)} consec_idle=${ci.consec_idle ?? '?'}`
+      + (ci.alert_file ? ' · ALERT file present' : '')));
+  }
+
+  // --- holder
+  const h = s.holder;
+  if (!h.ok) {
+    c.push(card('Holder', '<span class="badge b-blind">BLIND</span>', h.blind));
+  } else {
+    c.push(card('Holder (local tape)', h.version,
+      `rating ${h.rating} · ${h.matches} matches ${freshBadge(h.age_min, h.cadence_min)}`));
+  }
+
+  // --- shards
+  const sh = s.shards;
+  if (!sh.ok) {
+    c.push(card('Shards', '<span class="badge b-blind">BLIND</span>', sh.blind));
+  } else {
+    const stalled = sh.n_stalled > 0
+      ? ` <span class="badge b-warn">${sh.n_stalled} STALLED</span>` : '';
+    c.push(card('Shards running', sh.n_running,
+      `${sh.n_done} done · ${sh.n_total} total${stalled}`));
+  }
+
+  // --- monitors
+  const p = s.procs;
+  if (p.ok) {
+    const down = Object.entries(p.monitors).filter(([, up]) => !up).map(([n]) => n);
+    const v = down.length === 0 ? `${p.monitors_up}/${p.monitors_total}`
+      : `<span class="badge b-warn">${p.monitors_up}/${p.monitors_total}</span>`;
+    c.push(card('Monitors alive', v, down.length ? 'down: ' + down.join(', ') : 'all up'));
+  }
+
+  // --- queue (number comes from queue_check, the production admission gate)
+  const q = s.queue;
+  if (!q.ok) {
+    c.push(card('Queue', '<span class="badge b-blind">BLIND</span>', q.blind));
+  } else if (q.unblocked === null) {
+    c.push(card('Queue unblocked', '<span class="badge b-blind">GATE UNREADABLE</span>',
+      q.gate_unreadable || ''));
+  } else {
+    const low = q.unblocked <= q.floor;
+    const v = low ? `<span class="badge b-bad">${q.unblocked}</span>` : q.unblocked;
+    c.push(card('Queue unblocked', v,
+      `floor ${q.floor} · file ${freshBadge(q.age_min, 240)}`));
+  }
+
+  $('#cards').innerHTML = c.join('');
+
+  // --- running shard table
+  const tb = $('#shardtable tbody');
+  if (!sh.ok) {
+    tb.innerHTML = '<tr><td colspan="4"><span class="badge b-blind">BLIND</span> ' + sh.blind + '</td></tr>';
+    $('#shardcount').textContent = '';
+  } else {
+    const rows = [...sh.running, ...sh.stalled];
+    $('#shardcount').textContent =
+      `${sh.n_running} running · ${sh.n_stalled} stalled · ${sh.n_done} done · ${sh.n_total} shards seen`;
+    tb.innerHTML = rows.length === 0
+      ? '<tr><td colspan="4">Nothing running. ALWAYS_BE_RUNNING says that is a defect — see the idle alarm above for the next queue item.</td></tr>'
+      : rows.map(r => {
+          const st = r.state === 'STALLED'
+            ? '<span class="badge b-warn">STALLED</span>'
+            : '<span class="badge b-ok">running</span>';
+          const pct = r.target && +r.target > 0
+            ? ` (${Math.round(100 * r.done / r.target)}%)` : '';
+          return `<tr><td class="mono">${r.shard}</td><td>${st}</td>
+                  <td class="mono">${r.done} / ${r.target}${pct}</td>
+                  <td class="mono">${r.age_min === null ? '—' : r.age_min.toFixed(1) + 'm'}</td></tr>`;
+        }).join('');
+  }
+
+  // --- raw corefill_status text
+  const rt = s.shard_text;
+  if (rt.pending) {
+    $('#rawage').innerHTML = '<span class="badge b-dim">first run pending</span> ' + rt.note;
+    $('#raw').textContent = 'waiting for corefill_status.sh to complete its first run…';
+  } else if (!rt.ok) {
+    $('#rawage').innerHTML = '<span class="badge b-blind">BLIND</span> ' + (rt.error || '');
+    $('#raw').textContent = rt.text || '(no output)';
+  } else {
+    $('#rawage').innerHTML = 'generated ' + rt.at + ' ' + freshBadge(rt.age_min, rt.cadence_min);
+    $('#raw').textContent = rt.text || '(empty)';
+  }
+}
+
+async function tick() {
+  try {
+    const r = await fetch('/api/status', {cache: 'no-store'});
+    render(await r.json());
+  } catch (e) {
+    $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+  }
+}
+tick(); setInterval(tick, 10000);
+</script>
+</body>
+</html>

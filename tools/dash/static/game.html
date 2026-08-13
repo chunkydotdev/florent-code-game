@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/game" class="on">Game</a>
+    <a href="/lingo">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock">reference</span>
+</header>
+
+<main>
+  <h1>What each part of the game does</h1>
+  <p class="lede">Two teams, one grid, one resource. You write a single
+     <code>Player.run(ct)</code> which the engine calls once per round <em>for every
+     living unit you own</em> — the core, every builder bot, and every turret.</p>
+
+  <div class="note">
+    <strong>There is no shared game object.</strong> Everything is read through the
+    unit-scoped <code>Controller</code>. Its methods act on <em>this</em> unit unless you
+    pass an explicit entity id. Branch on <code>ct.get_entity_type()</code> at the top of
+    <code>run()</code> — that is the whole architecture.
+  </div>
+
+  <h2>How you win</h2>
+  <table>
+    <tr><th style="width:150px">Primary</th>
+        <td><strong>Destroy the enemy core.</strong> That is the only win this programme
+        counts. <code>R1000_IS_DEFEAT: yes</code> — a round-1000 tiebreak win is recorded
+        as a defeat even when the ladder pays for it.</td></tr>
+    <tr><th>If r1000 hits</th>
+        <td>Tiebreakers in order: <strong>titanium collected → harvesters alive →
+        titanium stored → coinflip</strong>. Key 1 decides ~94% of them.</td></tr>
+    <tr><th>The trap</th>
+        <td><em>“Collected” means DELIVERED TO THE CORE</em>, not mined and not emitted.
+        Engine-probed: a harvester alive all game with no conveyor route home scores
+        <strong>0</strong>. Passive income also counts <strong>0</strong>. A harvester
+        with no route home is worth nothing on the deciding key, forever.</td></tr>
+  </table>
+
+  <h2>The board</h2>
+  <table>
+    <tr><th style="width:150px">Grid</th><td>8×8 to 30×30, symmetric by reflection or rotation.</td></tr>
+    <tr><th>Tiles</th><td><code>EMPTY</code>, <code>WALL</code> (blocks building),
+        <code>ORE_TITANIUM</code> (the only place a harvester may be built).</td></tr>
+    <tr><th>Compass</th><td>(0,0) is the <em>north-west</em> corner; x grows east, y grows
+        south — so <strong>NORTH is (0, −1)</strong>. Builder bots may only <em>move</em>
+        in the 4 cardinal directions; all 8 are legal for facing and orientation.</td></tr>
+  </table>
+
+  <h2>The two economies</h2>
+  <div class="grid">
+    <div class="card"><div class="k">Titanium</div><div class="v" style="font-size:17px">500 to start</div>
+      <div class="sub">+10 passive every 4 rounds. Pays for every build.</div></div>
+    <div class="card"><div class="k">Ammunition</div><div class="v" style="font-size:17px">0 to start</div>
+      <div class="sub">No passive income at all. The core converts Ti → ammo 1:1.</div></div>
+  </div>
+  <div class="note">
+    <strong>Two separate things share the word “titanium”.</strong> There is the
+    <em>global pool</em> that pays build costs, and there are <em>physical stacks of 10</em>
+    that move through the map on conveyors. Turrets never touch either — they fire from
+    the global <em>ammo</em> balance, so they never need feeding.
+    <br><br><code>convert_ammo(amount)</code>: at most once per team per turn, usable the
+    same turn, and it does <strong>not</strong> consume the core's action cooldown — so
+    converting never costs you a spawn.
+  </div>
+
+  <h2>Entities</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>Entity</th><th class="mono">HP</th><th class="mono">Base cost</th>
+      <th class="mono">Scale</th><th>What it is for</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Core</strong></td><td class="mono">500</td><td class="mono">—</td><td class="mono">—</td>
+          <td>2×2. Vision r²=36, action r²=8. Spawns ≤1 builder bot per turn on an adjacent tile. Lose it and you lose.</td></tr>
+      <tr><td><strong>Builder bot</strong></td><td class="mono">40</td><td class="mono">30</td><td class="mono">+20%</td>
+          <td>The <em>only</em> mobile unit. Vision r²=20. Build / attack / heal / destroy all require an <strong>orthogonally adjacent</strong> tile — not diagonal, not its own tile.</td></tr>
+      <tr><td>Conveyor</td><td class="mono">20</td><td class="mono">3</td><td class="mono">+1%</td>
+          <td>Faces a cardinal direction. Accepts from 3 sides, outputs to the 4th.</td></tr>
+      <tr><td>Splitter</td><td class="mono">20</td><td class="mono">6</td><td class="mono">+1%</td>
+          <td>Accepts only from the back; rotates output among 3 directions, least-recently-used first.</td></tr>
+      <tr><td>Harvester</td><td class="mono">30</td><td class="mono">20</td><td class="mono">+5%</td>
+          <td>Ore tiles only. Emits a stack every 4 rounds, first one immediately on build.</td></tr>
+      <tr><td>Barrier</td><td class="mono">30</td><td class="mono">3</td><td class="mono">+1%</td>
+          <td>Cheap HP wall, no other function. 3 Ti to place; ~15 builder-pecks to clear.</td></tr>
+      <tr><td><strong>Gunner</strong></td><td class="mono">25</td><td class="mono">20</td><td class="mono">+20%</td>
+          <td>Facing turret. Vision/attack r²=13, damage 7, reload 1, <strong>4 ammo/shot</strong>. Straight-line shot that is <em>blocked</em> by obstacles. <code>rotate()</code> costs 10 Ti + 1 cooldown and is <strong>gunner-only</strong>.</td></tr>
+      <tr><td><strong>Sentinel</strong></td><td class="mono">40</td><td class="mono">30</td><td class="mono">+20%</td>
+          <td>Facing turret. Vision/attack r²=32, damage 18, reload 2, <strong>10 ammo/shot</strong>. Single-tile-wide line that <strong>ignores obstacles</strong>. Its facing is fixed for life — there is no sentinel rotate.</td></tr>
+      <tr><td><strong>Launcher</strong></td><td class="mono">30</td><td class="mono">20</td><td class="mono">+10%</td>
+          <td>Facing-independent, r²=26, <strong>0 ammo</strong>. Picks up an adjacent builder bot <em>from either team</em> and throws it to a passable tile.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note warn">
+    <strong>Cost scaling is ONE GLOBAL ADDITIVE FACTOR, not per-category.</strong>
+    Engine-confirmed. It starts at 1.0 and <em>every</em> build adds to the same number,
+    which then inflates the price of <em>every</em> entity type. Spawning only builder bots
+    drove the factor 100%→200% and raised the price of conveyors and harvesters that were
+    never built. Destroying your own building removes its contribution.
+    <br><br>Consequences: the gunner:sentinel price ratio is pinned 2:3 at every scale, and
+    each live builder bot has already added +20% before you buy a single turret.
+    <strong>Always use the <code>get_*_cost()</code> getters</strong> — never a hardcoded base cost.
+  </div>
+
+  <h2>What a builder bot can do</h2>
+  <p class="lede">One action per turn, cooldown-gated. Acting and moving are mutually
+     exclusive — doing one blocks the other until next turn.</p>
+  <table>
+    <tr><th style="width:130px">build</th><td>Any building type on an orthogonally adjacent empty tile.</td></tr>
+    <tr><th>attack</th><td>2 Ti → 2 damage to the building on an adjacent tile.</td></tr>
+    <tr><th>heal</th><td>1 Ti → +4 HP to <em>all</em> friendly entities on an adjacent tile.</td></tr>
+    <tr><th>destroy</th><td>Any <em>allied</em> building on an adjacent tile. Free, no cooldown, unlimited per turn.</td></tr>
+    <tr><th>self_destruct</th><td>Destroys the unit. Deals no explosion damage — it is not a weapon.</td></tr>
+  </table>
+
+  <h2>The delivery pipeline</h2>
+  <p>Conveyors, splitters and harvesters form a purely economic chain into the core.
+     Resource distribution happens <strong>once at end of round</strong>, after every unit
+     has acted. Turrets never participate and never hold resources.</p>
+  <div class="note warn">
+    <strong>The round-robin is team-blind.</strong> An enemy conveyor adjacent to your
+    harvester is a full-rank acceptor — an unwired harvester beside an enemy belt gives
+    roughly half its output away, and titanium is credited to whoever owns the
+    <em>destination</em> core. Pushing resources into an enemy core is a <em>gift</em>, not a poison.
+  </div>
+
+  <h2>Limits that bite</h2>
+  <div class="grid">
+    <div class="card"><div class="k">Unit cap</div><div class="v">50</div>
+      <div class="sub">Per team, including the core. <code>get_unit_count()</code>.</div></div>
+    <div class="card"><div class="k">CPU per unit / turn</div><div class="v">10 ms</div>
+      <div class="sub">Overrun interrupts that turn only. The unit survives.</div></div>
+    <div class="card"><div class="k">Comms store</div><div class="v">16</div>
+      <div class="sub">Integer slots, per team. Writes are buffered — visible next round.</div></div>
+  </div>
+
+  <div class="note warn">
+    <strong>An uncaught exception is permanent death.</strong> If anything other than a CPU
+    timeout escapes <code>run()</code>, the engine prints the traceback and
+    <em>destroys that unit for the rest of the match</em>. A CPU timeout does not.
+    <code>SystemExit</code> and <code>KeyboardInterrupt</code> are the only exemptions.
+    <br><br>This is not just a hazard — it is a weapon. It is the mechanism behind
+    <em>crash induction</em>: throw an enemy builder somewhere its own code cannot handle
+    and it kills itself with its own error handling. See the Lingo page.
+  </div>
+
+  <h2>Guard asymmetries worth remembering</h2>
+  <table>
+    <tr><th style="width:210px" class="mono">can_launch</th>
+        <td>No team check and no vision guard. You may pick up an <em>enemy</em> builder.</td></tr>
+    <tr><th class="mono">is_in_vision(pos)</th>
+        <td>Returns <code>False</code> off-map — it does <em>not</em> raise. The safe pre-check.</td></tr>
+    <tr><th class="mono">get_tile_*(pos)</th>
+        <td><em>Raises</em> off-map. This is the crash surface.</td></tr>
+    <tr><th class="mono">can_fire</th>
+        <td>Returns <code>True</code> at 0 ammo. The real check lives in the firing path and
+        <em>raises</em> — which destroys your own turret. A hazard to us, not a lever on them.</td></tr>
+    <tr><th class="mono">Gunner vs sentinel</th>
+        <td>They do <strong>not</strong> share a targeting predicate. Gunner
+        <code>can_fire_from</code> is False on every empty tile; sentinel returns True on the
+        same tiles. Any code or analysis treating them as one predicate is wrong for one of them.</td></tr>
+  </table>
+
+  <footer>
+    Sourced from the project <code>CLAUDE.md</code>, which carries the engine-verified
+    corrections to the organisers' documentation. Where the two disagree, the engine wins.
+  </footer>
+</main>
+</body>
+</html>

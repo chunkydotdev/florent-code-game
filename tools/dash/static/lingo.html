@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lingo — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/game">Game</a>
+    <a href="/lingo" class="on">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock">dictionary</span>
+</header>
+
+<main>
+  <h1>Lingo</h1>
+  <p class="lede">The words we use in commits, flags and read-outs. Type to filter.</p>
+  <input class="filter" id="q" placeholder="filter — try 'dose', 'band', 'salt', 'leak'…" autofocus>
+  <div class="count" id="count"></div>
+
+  <div id="body">
+
+  <h2 data-sec>Running an experiment</h2>
+  <dl>
+    <div class="term"><dt>arm</dt><dd>One variant in a comparison. Usually the parent bot plus <em>one</em> flag flipped, so any difference is attributable to that flag.</dd></div>
+    <div class="term"><dt>shard</dt><dd>One arm's local battery process, filling a <code>.tsv</code> row per game. What the Cores page counts.</dd></div>
+    <div class="term"><dt>battery</dt><dd>A block of local self-play games between two arms. Free and unlimited — nothing rations local cores but attention.</dd></div>
+    <div class="term"><dt>leg</dt><dd>A run of <em>live</em> games against a real opponent, via <code>fcode match unrated</code>. Costs rated exposure, because unrated matches play whatever submission is currently <em>active</em>.</dd></div>
+    <div class="term"><dt>cell</dt><dd>One (opponent × map × seat) combination in a leg or panel. A cell that cannot express the treatment measures nothing.</dd></div>
+    <div class="term"><dt>panel</dt><dd>A fixed set of opponents a leg is fired at.</dd></div>
+    <div class="term"><dt>ablation</dt><dd>Turning <em>off</em> one part of a shipped plank to find out which part was doing the work. <em>“We shipped a 61% we cannot attribute.”</em></dd></div>
+    <div class="term"><dt>plank</dt><dd>A single idea being tested — one behaviour change with a metric attached.</dd></div>
+  </dl>
+
+  <h2 data-sec>Pre-registration</h2>
+  <dl>
+    <div class="term"><dt>prereg</dt><dd>A committed file, written <em>before</em> the run, stating the bar, the estimator, the planned n and what would falsify the idea. Its whole value is that it predates the data.</dd></div>
+    <div class="term"><dt>two-clock standard</dt><dd>The proof a prereg really came first: its git author time must precede the platform's <code>createdAt</code> for the first match of the leg. Two independent clocks, neither of which we control.</dd></div>
+    <div class="term"><dt>ADD-only amendment</dt><dd>An amendment may only <em>add</em> a constraint, or fix a rule whose inputs do not exist yet. Anything that loosens, retargets or reinterprets an existing bar is a <em>new</em> prereg and must say so.</dd></div>
+    <div class="term"><dt>falsifier</dt><dd>The result that would kill the idea, written down before it can be argued with.</dd></div>
+    <div class="term"><dt>look schedule</dt><dd>Pre-committed points at which a filling arm may be <em>scored</em>. Progress can be watched any time; letting the moment you happened to look decide the verdict is the fault.</dd></div>
+  </dl>
+
+  <h2 data-sec>Measurement and its traps</h2>
+  <dl>
+    <div class="term"><dt>dose</dt><dd>How often the mechanism actually <em>fired</em>. A precondition, not a result — a rate read on an arm that never fired is not a null, it is a non-experiment.</dd></div>
+    <div class="term"><dt>null cell</dt><dd>An arm byte-identical to its control. It <em>must</em> read ~50%. If it does not, the fixture is broken and no other number on it means anything.</dd></div>
+    <div class="term"><dt>NEG cell</dt><dd>A known-bad arm. It must read clearly <em>below</em> 50%. Together with the null it proves the fixture can move in both directions.</dd></div>
+    <div class="term"><dt>positive control</dt><dd>A case where the answer is already known, run to prove the instrument works. <em>A check that has never produced the other verdict has not been seen to check.</em></dd></div>
+    <div class="term"><dt>band</dt><dd>The noise interval at a given n. At n=5,408 it is ±1.33pp; at n=2,704, ±1.88pp. Simply <code>1.96 × √(0.25/n)</code>.</dd></div>
+    <div class="term"><dt>inside-band</dt><dd>A result too close to 50% to mean anything ⇒ no ship. <em>Unbiased per decision and biased in aggregate</em>: a weak fixture lands inside-band systematically, and inside-band always resolves for whoever already holds the slot.</dd></div>
+    <div class="term"><dt>MDE</dt><dd>Minimum detectable effect — the smallest difference a given n could ever resolve. A null below the MDE means “no power”, never “no effect”, and those imply opposite actions.</dd></div>
+    <div class="term"><dt>optional stopping</dt><dd>Peeking repeatedly at a filling arm and stopping when it looks good. Inflates the false-positive rate, is invisible in a fixed-n z, and <em>cannot be corrected afterwards</em> unless the look schedule was recorded.</dd></div>
+    <div class="term"><dt>multiplicity</dt><dd>Many <em>arms</em> tested at once, so some look good by chance. A different fault from optional stopping, which is many <em>looks</em> at one arm — the corrections are not interchangeable.</dd></div>
+    <div class="term"><dt>O'Brien-Fleming</dt><dd>An interim boundary that is deliberately much stricter than the final one, so an early look only stops on a large effect and the overall error rate stays at 5%.</dd></div>
+    <div class="term"><dt>paired / unpaired</dt><dd>Paired = both arms play the identical (map, seed, seat) cell, so only the treatment differs. Strictly more powerful, and free on a deterministic engine — but it needs <code>NOISE_ON = False</code> or the cells are not reproducible.</dd></div>
+    <div class="term"><dt>echo loop</dt><dd>Testing against bots we wrote ourselves. They lie in a known direction, which is why live games are the fixture of record.</dd></div>
+    <div class="term"><dt>fixture of record</dt><dd><code>live_unrated</code> — real opponents. Local batteries may <em>prioritise</em> a road; only live games may <em>retire</em> one.</dd></div>
+  </dl>
+
+  <h2 data-sec>The ladder and shipping</h2>
+  <dl>
+    <div class="term"><dt>game share</dt><dd>Games won ÷ 5. <strong>The thing the ladder actually pays</strong>, so it is the primary currency. A 3–2 win can lose rating and a 2–3 loss can gain it.</dd></div>
+    <div class="term"><dt>Elo delta</dt><dd><code>32 × (S − E)</code> where S is game share and E the logistic expectation from the rating gap. Verified exactly, max residual 0.000000.</dd></div>
+    <div class="term"><dt>holder</dt><dd>The submission currently active on the ladder. Read it from the live <code>Active bot:</code> line — a document naming it is a <em>cache</em>.</dd></div>
+    <div class="term"><dt>incumbent</dt><dd>The bot tree the holder was built from. <code>PROGRAMME.md</code> names it, and every new arm is controlled against it.</dd></div>
+    <div class="term"><dt>ourver / oppver</dt><dd>Per-match version tags. The ground truth for “which bot actually played this match” — the rating tape tags rows by <em>poll time</em> and is structurally blind to it.</dd></div>
+    <div class="term"><dt>leak</dt><dd>A rated match played by something other than the intended holder — usually because a prototype was activated for an unrated leg and the ladder paired us mid-window. Budgeted at roughly −8 Elo per leaked match.</dd></div>
+    <div class="term"><dt>submitting IS shipping</dt><dd><code>fcode submit</code> <strong>auto-activates</strong> what it uploads. There is no “upload now, activate later”. The upload belongs inside the firing window or not at all.</dd></div>
+    <div class="term"><dt>slot rule</dt><dd>The stop-loss on a live holder: while armed at k≥8 matches, <code>net5 ≤ −21</code> frees the slot. It <em>frees</em>, it never forces.</dd></div>
+    <div class="term"><dt>net5</dt><dd>Rating now minus rating five matches ago — a rolling <em>slope</em>, not a level. It relaxes as a bad result ages out, so a bleed slower than −4.2/match never trips it, forever.</dd></div>
+    <div class="term"><dt>drawdown</dt><dd>Peak-to-current rating. Sees <em>level</em> where <code>net5</code> only sees slope — which is why both are printed.</dd></div>
+    <div class="term"><dt>p_null</dt><dd>The chance the slot rule fires on a holder that is doing nothing at all: 14% by k=8, 75% by k=27, 97% by k=60. <strong>A fire is close to uninformative; “never fired” is the informative half.</strong></dd></div>
+    <div class="term"><dt>converge</dt><dd>A rating needs ~100 matches to settle. With ~420 rated matches left in the game, that is about four ship-and-converge cycles total.</dd></div>
+    <div class="term"><dt>rc naming</dt><dd>Ships are <code>Loki vN</code>; unrated legs are <code>Loki rcX.Y</code>. The name says which kind of thing is on the slot.</dd></div>
+  </dl>
+
+  <h2 data-sec>Bot behaviour</h2>
+  <dl>
+    <div class="term"><dt>salt</dt><dd>Cut an enemy conveyor with builder melee, then <em>barrier the dead tile</em> so the cut sticks. The field repairs 40% of bare cuts within ~4 rounds, so the barrier is the point.</dd></div>
+    <div class="term"><dt>raid</dt><dd>The forward-offence module — everything we do in enemy territory.</dd></div>
+    <div class="term"><dt>ferry / insert</dt><dd>Using our own launcher to throw our own builder <em>forward</em>, past the walk. <em>Exile</em> is the same throw aimed at removing something.</dd></div>
+    <div class="term"><dt>kidnap</dt><dd>Throwing an <em>enemy</em> builder — legal because <code>can_launch</code> has no team check.</dd></div>
+    <div class="term"><dt>crash induction</dt><dd>Manoeuvring an enemy unit somewhere its own code raises — a map border, or off a cached plan. Their exception handling destroys the unit permanently. Costs us zero ammo and one throw. <strong>Asked of the organisers and approved.</strong></dd></div>
+    <div class="term"><dt>seat</dt><dd>A tile adjacent to a core — where builders stand to heal it, and what a raider denies by standing there.</dd></div>
+    <div class="term"><dt>ring</dt><dd>The 12 tiles around a 2×2 core. The core needs exactly one free ring tile to spawn.</dd></div>
+    <div class="term"><dt>trunk / belt</dt><dd>The main conveyor line from a harvester back to the core. A gap anywhere in it delivers nothing.</dd></div>
+    <div class="term"><dt>collar</dt><dd>Buildings ringing our own core — protective, and they block our own line of sight.</dd></div>
+    <div class="term"><dt>forward vs home</dt><dd>Which half of the map a turret was built in. Pooling the two <em>inverts the sign</em> of our biggest gap — home we are fine, forward we are eight rounds late and half the count.</dd></div>
+    <div class="term"><dt>LOKI-N</dt><dd>Numbered ideas on the Loki line. Loki is the trickster bot: cheap tricks, manipulation, poisoning, exploits.</dd></div>
+  </dl>
+
+  <h2 data-sec>Infrastructure</h2>
+  <dl>
+    <div class="term"><dt>corefill</dt><dd>The runner that keeps local cores busy from a worklist. It launches in <em>file order</em>, which has silently made priority decisions before.</dd></div>
+    <div class="term"><dt>keeper</dt><dd>The background process that pulls new matches, archives replays and decodes them into the corpus.</dd></div>
+    <div class="term"><dt>ladder_games.tsv</dt><dd>Our rated record, one row per game. <strong>The right surface for any population or denominator question.</strong></dd></div>
+    <div class="term"><dt>meta_join.tsv</dt><dd>Per-replay attribution across all archived games. Missing ~38% of ladder matches and full of sparse columns — <em>never</em> use it for a win-rate denominator.</dd></div>
+    <div class="term"><dt>league_matches.tsv</dt><dd>The whole league's match history, including <em>opponents' version timelines</em>. The only place to pin what bot the other side was actually running.</dd></div>
+    <div class="term"><dt>events.tsv</dt><dd>Decoded per-event wire data — the only surface that can see barriers. <code>builds.tsv</code> is a <em>turret</em> census and reports zero barriers for everyone.</dd></div>
+    <div class="term"><dt>cores_idle</dt><dd>The alarm that fires when nothing is running locally. It names the next queue item, so the alarm carries its own remedy.</dd></div>
+    <div class="term"><dt>ship_watch</dt><dd>Polls the live holder and prints the slot rule's state, the drawdown and the age of every source it read.</dd></div>
+  </dl>
+
+  <h2 data-sec>How we work</h2>
+  <dl>
+    <div class="term"><dt>lanes</dt><dd>Parallel sessions: <em>builder</em> (writes bots, runs batteries, ships), <em>research</em> (analysis, keeps the queue stocked), <em>side lane</em> (drift watch and prereg discipline — no bot edits, no verdicts), and occasionally a <em>meta</em> lane reviewing the structure itself.</dd></div>
+    <div class="term"><dt>drift watch</dt><dd>Every commit from every lane audited against a numbered checklist (D1…D32). A flag carries its anchor; it is never a veto.</dd></div>
+    <div class="term"><dt>D-number / Q-number</dt><dd>D = a drift-watch rule. Q = a question in a lane's own retro. Both are numbered so they can be cited rather than re-argued.</dd></div>
+    <div class="term"><dt>QUEUE.md</dt><dd>The build queue, in fire order. A row counts only if it carries a <code>GREP:</code> naming what was checked in the incumbent and what was found.</dd></div>
+    <div class="term"><dt>GREP gate</dt><dd>The admission rule above. It proves a check was <em>run</em> — not that its result is still <em>true</em>, which is a different and unguarded thing.</dd></div>
+    <div class="term"><dt>ALWAYS_BE_RUNNING</dt><dd>Idle local cores are a defect. Games are free and unlimited; only the platform is rate-limited.</dd></div>
+    <div class="term"><dt>IN-FLIGHT</dt><dd>The registry in <code>coordination.md</code> where a lane announces a subagent <em>before</em> spawning it, so nobody duplicates work.</dd></div>
+  </dl>
+
+  </div>
+  <footer id="foot">
+    Definitions distilled from <code>CLAUDE.md</code>, <code>PROGRAMME.md</code> and the
+    drift-watch checklist. Where a term has bitten us, the definition says how.
+  </footer>
+</main>
+
+<script>
+const q = document.getElementById('q');
+const terms = [...document.querySelectorAll('.term')];
+const secs = [...document.querySelectorAll('[data-sec]')];
+const count = document.getElementById('count');
+
+function apply() {
+  const v = q.value.trim().toLowerCase();
+  let shown = 0;
+  terms.forEach(t => {
+    const hit = !v || t.textContent.toLowerCase().includes(v);
+    t.classList.toggle('hidden', !hit);
+    if (hit) shown++;
+  });
+  // hide a section heading whose whole list is filtered out
+  secs.forEach(h => {
+    let n = h.nextElementSibling, any = false;
+    while (n && n.tagName === 'DL') {
+      if ([...n.querySelectorAll('.term')].some(t => !t.classList.contains('hidden'))) any = true;
+      n = n.nextElementSibling;
+    }
+    h.classList.toggle('hidden', !any);
+    let d = h.nextElementSibling;
+    while (d && d.tagName === 'DL') { d.classList.toggle('hidden', !any); d = d.nextElementSibling; }
+  });
+  count.textContent = v ? `${shown} of ${terms.length} terms` : `${terms.length} terms`;
+}
+q.addEventListener('input', apply);
+apply();
+</script>
+</body>
+</html>
