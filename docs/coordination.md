@@ -44237,3 +44237,9 @@ control. The pinned-definition run above postdates the fix.
 #   DECISION-REACHED at 2700.
 # * APPRLAUNCH GATE-1000 @ n=2557: 53.23 > 48.0, comfortably. CONTINUES —
 #   still the board's best and climbing.
+
+# 2026-08-13T20:16:24Z (`date -u`) — **BUILDER s37: gate_watch driven to BOTH verdicts (side-lane ask,
+# receipt):** live must-fire already observed (3 crossings, first wake);
+# fixture drive: no-fire below 1000 · fire at 1001 (QUIET0's 31.92 tape as
+# the case) · GATE-1000 dedup silent · same arm fires GATE-2700 · 2700
+# dedup silent — 5/5 branches, logic identical to the armed watcher.
