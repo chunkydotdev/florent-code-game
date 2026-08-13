@@ -170,3 +170,60 @@ the treatment. Concordant cells contribute nothing to a paired difference, so th
 band narrows **at the same n and the same cost.** Not changed mid-flight here —
 `NULLSALT` is already filling on 205000 and re-seeding now would cost more than
 the gain.
+
+---
+
+# AMENDMENT 2 — 2026-08-13T06:2xZ. **THE DISCRIMINATING TEST RAN. BOTH MY READINGS WERE WRONG, AND THE CONTROL BEAT THE TREATMENT.**
+
+16 instrumented games (8 vs `_v178salt`, 8 vs `_v169launchlate160` as control),
+4 maps x 2 seeds each, stderr-only instrumentation, zero tracebacks. **Every
+load-bearing claim below re-verified by me at the code, not taken on report.**
+
+## NEITHER (a) NOR (b). A THIRD FAILURE MODE.
+
+* **NOT (a) PERMANENT STALL.** The feared "head is 2 tiles away and unreachable"
+  geometry **never occurred** — the loop only inspects a tile once the builder is
+  ADJACENT, so the builder keeps walking and the block resolves the moment it
+  arrives. My inference was wrong about the control flow.
+* **NOT (b) SELF-HEALING**, despite `len(link_queue)` reaching 0 in 8 of 9 cases.
+  **In 7 of 9 the enemy building sat on the LAST queue tile** — the delivery seat
+  itself — **so popping it empties the queue TRIVIALLY.** Verified directly on
+  `ctrl_antler_910001` tile `(7,6)`: **never rebuilt or revisited across the
+  remaining ~190 rounds.**
+* **⭐ THE ACTUAL DEFECT: `len(link_queue)==0` IS NOT EVIDENCE OF CONNECTIVITY. It
+  is the code silently declaring the trunk DONE one tile short of our own core,
+  permanently.** `_wire_on_build` only re-plans on `not self.link_queue`, and this
+  is exactly how the queue empties — so **the re-plan never fires.** The symptom
+  is not a frozen builder; it is **an abandoned, unmonitored delivery connection.**
+
+## ⛔⛔ AND IT IS NOT SALT-SPECIFIC — THE CONTROL TRIGGERED IT MORE OFTEN
+
+    games with >=1 enemy-owned pop   SALT 3/8      CONTROL 6/8
+    total enemy-owned pop events     SALT 4        CONTROL 9
+
+**Verified at the code:** `LOKI_BARRIER_SEAL_ON = True` in **both** bots, and
+`_link_path`'s `raw_goals` are precisely the tiles cardinally adjacent to our core
+— **the heal seats a raider seals.** So ANY raider that reaches our core
+manufactures this position. **Salt is not the cause; salt was the excuse to look.**
+
+⇒ **THIS MAKES THE ONE-LINE FIX MORE VALUABLE, NOT LESS.** It was scoped as an
+anti-salt counter; it is a **generic economic defect** that fires against every
+raiding opponent, and the counter arms already built target it directly.
+⇒ **AND IT WEAKENS THE COUNTER LEG'S ATTRIBUTION**: `salt+counter vs salt` will
+capture a benefit that has little to do with salt. **The bar is unchanged; the
+CLAIM must not become "this counters salt."**
+
+## ⚠ WHAT IS STILL NOT MEASURED
+**Whether the abandoned seat costs delivered titanium.** Other seats or the
+pave-trail may bridge it incidentally. **Unmeasured, and the counter legs do not
+measure it either** — they measure outcomes, not delivery. Named here so a
+favourable counter result is not read as proof of this mechanism.
+
+## ⛔ AND A FIXTURE FACT THAT REACHES EVERY BATTERY IN THIS REPO
+`main.py:276` — **`self.spawn_salt = random.Random().randrange(97) if NOISE_ON
+else 0`** — is seeded from OS entropy, NOT from `--seed`. **So the same
+`(map, seed, seat)` cell is NOT reproducible while `NOISE_ON` is True.** This is
+the single nondeterminism site HANDOVER already names, now confirmed to matter in
+practice. ⇒ **It is a precondition on the paired-seed design proposed earlier: a
+paired contrast requires `NOISE_ON = False` in BOTH trees, or the pairing buys
+nothing.**
