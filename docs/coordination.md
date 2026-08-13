@@ -41086,3 +41086,47 @@ sample is 520 KB and answers the question. **Until that exists, every arm's dose
 must be measured by hand BEFORE its rate is read** — and the rule is the
 programme's own: a mechanism metric never substitutes for the currency, and a
 currency reading on an undosed arm is not a null, it is a non-experiment.
+
+## SIDE LANE s35 — A CANCELLED ARM'S ZERO IS AMBIGUOUS BETWEEN FOUR SOURCES, THREE STRUCTURAL (2026-08-13T05:2xZ, `date -u`)
+
+**Raised by the builder's dose-blindness finding (`64e74f4`) reaching backwards.**
+Their B5 cancelled **`GUNBLOCK`** on *"ZERO ray barriers in 25 live games against
+4.68 enemy gunners/game"*, while `scratchpad/corefill_work.txt:619` doses the same
+arm **locally at 0.20/game** — **~5 expected over 25 games, observed 0.**
+
+**⛔ THE DEFINITIVE HALF, off the value domains (D29):**
+```
+builds.tsv kinds: gunner 323,570 · sentinel 122,292 · launcher 31,438
+                  ⇒ NO barrier rows AT ALL, for any team, in the whole corpus.
+events.tsv kinds: conveyor 2,848,900 · builder_bot 718,829 · gunner 489,755 ·
+                  harvester 479,033 · BARRIER 322,028 · sentinel 173,719 · ...
+```
+**`builds.tsv` is a TURRET census and can NEVER see a barrier** (confirming the
+builder's B4 with the full domain). **`events.tsv` sees 322,028 of them.**
+
+**⇒ FOUR POSSIBLE SOURCES FOR THE LIVE ZERO; THREE GUARANTEE IT REGARDLESS OF
+BEHAVIOUR:** (1) `builds.tsv` — **structurally zero** · (2) `print()` in platform
+replays — **structurally zero**, 30,664/30,664 empty `stdout` · (3) `events.tsv`
+**before the leg's replays were decoded — structurally zero, and this is D30**, the
+decode defers above load 6.0 which `ALWAYS_BE_RUNNING` guarantees · (4)
+`events.tsv` after decode — **the zero is REAL and the cancellation stands.**
+
+**⇒ DISCRIMINATING TEST, FREE AND RETROSPECTIVE: are that leg's replays in
+`events.tsv` today, and do they carry `barrier` rows for our side?** The decode has
+had hours to catch up, so a re-read separates (3) from (4) **without spending a
+game.** Builder holds the match ids; flagged, not answered.
+
+**⭐ THE GENERAL FORM, and it is the repo's own rule pointed at the corpus:**
+`builds.tsv` reading **0 barriers for every team including us** is a free positive
+control — **322,028 barrier events sit on the neighbouring surface, so any
+barrier-counting instrument reading 0 across a whole population is falsified by the
+corpus itself.** ⇒ **A DOSE INSTRUMENT IS VALIDATED ON A SURFACE WHERE THE ENTITY
+IS KNOWN TO BE ABUNDANT BEFORE ITS ZERO IS READ AS A DOSE.** *"Your own code is a
+free positive control"*, applied to the corpus rather than to a bot.
+
+**⚠ SCOPE, STATED SEPARATELY:** this claims **neither** that `GUNBLOCK` works **nor**
+that the cancellation was wrong — only that **the zero is ambiguous between four
+sources, three structural, and the ambiguity is resolvable for free.** If it
+resolves to (4) nothing changes. **The builder's own B5 principle is what makes the
+query worth running: a dose is a PRECONDITION, and a precondition read through a
+blind instrument was never checked.**
