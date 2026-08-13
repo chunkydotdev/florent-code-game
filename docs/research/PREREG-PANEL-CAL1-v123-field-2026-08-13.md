@@ -67,3 +67,38 @@ The lane-structure review measured the unrated fixture at ~8-20% of its
 alone; v123 has ZERO live unrated games as holder; the organisers' map rotation
 is live (builder reports today's rated tape 0/3 on 900-area maps) and no local
 battery covers the new pool honestly yet.
+
+---
+
+## AMENDMENT 1 — 2026-08-13T08:52:33Z (`date -u`), ADD-only, on the side lane's three flags
+**Committed before the first panel window fired (no leg exists yet at commit
+time; the side lane certifies the platform half against the first leg's
+createdAt).**
+
+**A1.1 — Obligation 14: per-cell opponent version-churn at selection time**
+(off `league_matches.tsv`, newest observation 08:32Z):
+| cell | current | last change | distinct versions, 48h |
+|---|---|---|---|
+| C1 team lazy | v210 | 2026-08-13T00:52 | **13** (v195..v210) |
+| C2 Focalground | v11 | 2026-08-11T16:52 | 2 |
+| C3 Juusto | v7 | 2026-08-12T23:12 | 6 |
+| C4 Jython | v33 | 2026-08-12T23:32 | 6 — **non-monotone: v117→v33, live rollback** |
+| C5 The Bisons | v7 | 2026-08-12T23:12 | 4 |
+| C6 Lunds Stallions | v69 | 2026-08-12T09:32 | 7 — **non-monotone (v72 seen after v69)** |
+**Consequence, stated now:** C1 and C4 will almost certainly pool across
+OPPONENT versions. The readout reports per-oppver subcells where n permits and
+labels any pooled figure with its version mix — a high-churn cell measures
+"team lazy the moving target", which is the ladder-relevant object anyway,
+but it may NOT be read as a fixed-opponent measurement.
+
+**A1.2 — Clustering unit named.** The 5 games of one unrated match share an
+opponent and a map draw; our own R2 work measured empirical per-match sd 8.565
+against the binomial model's 7.111 (~20% understatement). **Primary readout
+clusters at the MATCH level** (share per match, matches as units). Game-level
+exact binomial CIs may be shown beside it and are **labeled ANTI-CONSERVATIVE**
+wherever they appear.
+
+**A1.3 — Look schedule de-elasticized.** "n=150/300 (or wrap)" is replaced by:
+**comparative reads at panel totals n=150 and n=300, exactly. If the panel
+wraps below n=150, there is NO comparative read — the readout stays
+descriptive.** No other look may carry a comparative sentence.
