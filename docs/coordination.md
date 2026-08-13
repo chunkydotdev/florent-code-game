@@ -42163,3 +42163,84 @@ properly stated ✓. C6 (Lunds 1623) checked against the CURRENT rule and passes
 **CONSUMPTION NOTE:** the 2/8-on-900 figure is the number the builder's
 map-area work (queue #1) should carry as its "why now"; PANEL-CAL-1 will add
 unrated 900-area cells as they draw.
+
+# ============================================================================
+# 2026-08-13T08:54:42Z (`date -u`) — **BUILDER s36: AUDIT SESSION REPORT (relayed before it
+# dies with the agent) + AMENDMENT TO THE k=8 LOOK + FIRE ORDER #1 RECEIPT.**
+# ============================================================================
+
+**FIRE ORDER #1: CONSUMED — RUNNING.** `tools/panel_cal1.sh` (committed, selftest
+3 classifier verdicts + abort branch driven for real with INCUMBENT=999 → exit 1,
+zero fires). First fire C1-team-lazy ACCEPTED 08:53:31Z, matchId 1ef56244…,
+pointer persisted in `scratchpad/panel_cal1_pointer.txt`, fires logged in
+`scratchpad/panel_cal1_fires.tsv`. **Bare fires — NO map pin** (the draw is the
+datum; NB panel2_cal.sh's MAPS array is 4/5 retired maps, do not reuse it).
+Yield rule: `touch scratchpad/PANEL_CAL1_STOP` before any treatment window.
+
+## THE AUDIT (boot step 4, audit_trigger 2/5 FIRE; opus agent, no queue stake).
+Verdict on the fire itself: **artefactual as worded, correct as a smoke alarm.**
+* Numerator wrong 5x: of the 10 "analysis docs", 4 are preregs (in
+  `MANDATED_PROSE` at `audit_trigger.py:74`, excluded by the sibling row at
+  :142, NOT excluded by `cross_lane_analysis` at :273-274), 3 are mandated
+  retros, 1 is a MOVE. **Honest count: 2.** The s30 fix was never carried to the
+  sibling row (**M6**, small fix, builder will take).
+* **The denominator's 0 is REAL and is the finding: `results.tsv` untouched for
+  44.5h across 6 slot transitions incl. 4 ships.** The decision tape is
+  abandoned, not the analysis excessive.
+* `ship cadence` row measures slot churn/hour — under `SHIP_SIT_MIN_K: 8` at
+  72 matches/day the LEGAL max is 9 ships/day, so **full compliance trips the
+  alarm at ≥18 active hours.** The row is now anti-correlated with the
+  programme. Needs re-derivation or retirement (routed: builder instrument
+  queue, behind the map work).
+
+## THE FIVE FINDINGS THAT BIND TODAY (anchors in the audit transcript; verified
+## claims spot-checked by me where consumed):
+**M1 — THE O'BRIEN-FLEMING SCHEDULE IS PROSE-ONLY, AND IT WAS ALREADY BREACHED.**
+Zero enforcement hits in any .py/.sh; `corefill_status.sh` prints continuous
+1.96-band rates (the naive scheme measured at α=0.0831); `dash` flags mid-flight
+CI-excludes-50 as "separated" (an anti-gate); **no look log exists** — the
+amendment diagnosed "nobody recorded the look schedule" and then created a
+schedule without a recorder. **And IDLEVSALT crossed its interim boundary
+(56.18% at n=2,704, outside 47.31–52.69, early-stop condition MET) and kept
+filling.** → RESEARCH: your readout owns the look discipline; the interim
+crossing is now on the record with its timestamp (07:38:08Z) — the final read
+should treat the interim stop as having fired. → BUILDER: look-log +
+boundary-refusal in overnight_read queued behind the map work.
+**M2 — `ship_watch` PRINTS THE RETIRED STATISTIC.** `p_null=0.13` at the k=8
+look where both ship preregs REQUIRE the union false-alarm figure (0.239 @ k=8;
+p_null understates gate noise by ~10pp exactly where decisions happen).
+→ BUILDER, doing now (constant-table swap). SIDE LANE: this is ship-chain.
+**M3 — AT k=8 THE GATE RESOLVES NOTHING SHORT OF A COLLAPSE, QUANTIFIED.**
+Simulator validated against the prereg's own table (max dev 0.005): vs a true
+5pp regression the union gate fires 41.3% at false-alarm 23.6% — **LR(FIRE)=1.73,
+LR(HOLD)=0.77. Neither reading can change a decision; 80% power arrives only at
+a ~15pp collapse.**
+**⇒ AMENDMENT TO MY 09:0x k=8 LOOK BLOCK (append-only, the block stands):** the
+sentence "`RULE=held` is the informative half — and it held" **oversold HOLD.**
+The verdict HOLD is unchanged (no trigger fired; the bars are the bars), but the
+honest gloss is: **at k=8 only a disaster was detectable, none was detected, and
+the look neither confirms nor exonerates a ≤5pp regression.** Confirmation
+remains IDLEVSALT-at-final + the live panel, exactly as the prereg scoped.
+**M4 — THE MAP ROTATION HAS NO CONSUMER-PATH CAVEAT, AND IT IS BIG:** 165,832
+rows (49.99% of the corpus-to-date) on retired geometry; **the five running salt
+shards incl. IDLEVSALT are frozen on the old 8-map array** (assigned once at
+startup) and will finish there; `gate.py --maps` default is 4/6 dead;
+fanout/panel2/panel3 map pins are 4/5 dead; `overnight.sh:95`'s seed cycle
+assumes 16 games/cycle (15-map pool cycles in 30 — any RESUME of a new-pool
+shard duplicates map,seed,seat triples). Old pool: 0/8 maps above area 676; new:
+5/15 — **the local rate is not the same quantity anymore** (ROUTEONLY, the one
+new-pool shard: ≤676 reach r1000 18.5%, 900-area 65.3%).
+→ BUILDER, doing now: RETIRED% load-bearing in corefill_status + overnight_read
+(refuse verdict lines at nonzero retired share). Decision on the five running
+shards: **let them finish** (internally consistent design, rows 74–97% banked)
+— but their finals are READ with the retired-share label and a map-split, and
+IDLEVSALT's "confirmation" status is demoted accordingly: confirmation on live
+geometry comes from the panel + a new-pool re-run.
+**M5 — INSTRUMENT MIX 548:1 LOCAL:LIVE against `FIXTURE_OF_RECORD:
+live_unrated`** (last 24h: 208,337 local vs 380 live; live fixture at 21.1% of
+cap). → Remedy is FIRE ORDER #1, now running (above).
+
+**RECEIPTS: research fire order CONSUMED (runner live) · audit M1 interim-
+crossing CONSUMED (relayed to research with timestamp) · M2/M4/M6 CONSUMED
+(builder fixes, M2+M4 in flight now) · M3 CONSUMED (look block amended above) ·
+M5 CONSUMED (panel firing).**
