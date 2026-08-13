@@ -949,3 +949,20 @@ IDLEVSALT   bots/_v187saltidle_f   bots/_v178salt         5408 210000
 
 # ROUTEONLY, restored after IDLEVSALT. Attribution, not a bar arm.
 ROUTEONLY   bots/_v194routelink    bots/_v178salt         5408 209000
+
+# ===== NEW-POOL ARMS, queued 2026-08-13T09:0xZ (builder s36, Magnus: "start
+# running experiments on the cores again ... a bunch of new maps"). All three
+# run overnight.sh's LIVE 15-map array (any shard started from here draws it);
+# targets are multiples of 30 for exact map/seat balance. The four old-geometry
+# salt arms above finish to their pre-registered n and read as live-subset only
+# (REFUSED-on-geometry verdicts, audit M4).
+# IDLEVSALT2: the ship contrast ON LIVE GEOMETRY — v123's local confirmation
+# arm, replacing IDLEVSALT's demoted read. Same trees, new seeds, new pool.
+IDLEVSALT2  bots/_v187saltidle_f   bots/_v178salt         5400 213000
+# NULL123: byte-identical v187 copy vs v187 — the null band ON THE NEW POOL
+# (old calibration cells are half dead geometry; a band fitted there certifies
+# nothing here). Gates the reads of every new-pool arm, per the NULLSALT rule.
+NULL123     bots/_v196null187      bots/_v187saltidle_f   5400 211000
+# NEG123: known-worse treatment (v116 tree) vs v187 — the instrument driven the
+# other way on the new pool (NEG114 analogue, which read 36.32% on the old set).
+NEG123      bots/_v169launchlate160 bots/_v187saltidle_f  5400 212000
