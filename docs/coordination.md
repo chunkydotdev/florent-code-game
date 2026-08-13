@@ -40914,3 +40914,61 @@ by GOING TO USE THE THING PROPERLY rather than by being careful.**
 #   their barrier for our own conveyor.
 # Building two counter arms (CLEARLINK, ROUTELINK). Model: sonnet, tight spec,
 # smoke-tested locally. I own the battery design and the verdict.
+
+## SIDE LANE s35 — `eco.py:551` CONFIRMED, AND THE CORRECT GUARD IS 34 LINES ABOVE IT (2026-08-13T05:1xZ, `date -u`)
+
+**The builder's bug claim (`6cdf9a8`), verified at the code in the LIVE incumbent
+`bots/_v169launchlate160`.**
+
+**THE DEFECT — `eco.py:551-555`:**
+```python
+occupied = ct.get_tile_building_id(tile) is not None
+...
+if occupied: self.link_queue.pop(0); continue
+```
+`get_tile_building_id` is **team-blind**, so an **enemy** building on a trunk tile
+is popped from the link queue as *"already built."*
+
+**⭐ AND THE CORRECT PATTERN IS IN THE SAME FILE, 34 LINES ABOVE** — `eco.py:516-517`
+`bid = ct.get_tile_building_id(t); if bid is None or ct.get_team(bid) != self.team:`
+⇒ **`CLAUDE.md`'s own exploit heuristic turned on us verbatim: *"a guard present on
+one path and absent from its neighbour is where exploits live."*** And `eco.py` is
+the file that doc cites for *"MINE OUR OWN BUG FIXES FOR THEIR BUGS"* — hardened
+once for the launcher-teleport case, **this path missed.** **The fix is a one-line
+copy of `:517`.**
+
+**⛔ NARROWER THAN "WE BUILD GAPPED BELTS" — THE RE-PLANNER IS ALREADY CORRECT.**
+`_link_path` blocks enemy buildings properly (`elif et not in (CONVEYOR, SPLITTER):
+blocked.add(key)` catches a barrier; `elif ct.get_team(eid) != self.team` catches
+enemy belts). **Only the incremental builder is blind.**
+
+**⚠ CONSEQUENCE IS INFERENCE, NOT MEASUREMENT — STATED AS SUCH (D12).** Reading the
+control flow: `:548` refuses a non-adjacent head, so after popping barriered tile
+**T** the head becomes **T+1**, unreachable past T; and `link_queue` re-plans only
+at `:502-504` **`if not self.link_queue`**, which never fires while T+1… remain.
+⇒ **INFERRED: a permanent STALL of the trunk build behind a 3 Ti barrier, not a
+self-healing detour.** **Two readings survive my read and I cannot separate them**
+(permanent stall vs the builder wandering until the queue drains into a re-plan).
+**THE DISCRIMINATING TEST IS LOCAL, FREE AND ONE GAME:** enemy barrier on a
+mid-route trunk tile, watch whether `link_queue` ever empties. **The fixture is a
+bot we already wrote — `SALT` builds exactly this position (cut the belt, barrier
+the dead tile).** If the stall reading holds, **we shipped the counter to our own
+weapon before the weapon.**
+
+**⚠ FIXTURE FLAG ON THE COUNTER PROGRAMME, raised early and cheaply, NOT a
+blocker:** a counter developed against `_v178salt` **and measured against
+`_v178salt`** optimises against the salt implementation **we wrote** — D11/D13 in
+its purest form. Fine as hardening; **it may not license a claim about what
+opponents would do to us.** Separately: **the "free" NEG (v169 vs salt, 39.00%)
+calibrates the fixture at SALT-size (z≈16), not at counter-size** — a negative
+control at a huge effect does not establish resolution at a small one, so the
+prereg owes its **MDE at the planned n** beside the two calibration cells. And
+**Magnus's bar *"must clear 50%"* is met by 50.01%**: last session `SHIPGATE160`
+49.44% / `SHIPGATE0` 49.19% were correctly cancelled inside a **±1.33pp** band, so
+a bare 50% bar would pass a value that band calls no-information. **ADD-only fix:
+keep the direction, supply the n and the margin** — and note the obligations doc
+already pre-commits the default, **an unresolved gate defaults to the RESTRICTION,
+never the permission.**
+
+**⇒ THE `:517` FIX STANDS ALONE AND SHOULD NOT WAIT FOR, OR BE RETIRED BY, THE
+COUNTER LEG.** A null on the counter must not take the one-line guard with it.
