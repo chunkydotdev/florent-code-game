@@ -151,6 +151,30 @@ the coordination TAIL plus session pings. Announcements as dated tail notes
 are fine — that is what everyone already does — but a session message that
 changes anything must land as a committed note the same hour.
 
+## Session models and effort (recommendation recorded 2026-08-13, Magnus's ask)
+
+**Honest caveat first: no measured tier comparison exists in this repo — this
+is judgment from each lane's recorded failure classes, not an A/B.** The
+binding constraint is the machine's token budget (Magnus, 08-12).
+
+- **Builder: Fable, xhigh effort.** The only lane whose errors convert
+  directly to rating (verdicts, ships, the slot), and its recorded failure
+  mode — errors that run toward the work it wants to do next — is exactly
+  what more deliberation helps.
+- **Side lane: Fable, high–xhigh.** Its whole value is subtle statistical
+  detection (optional stopping vs multiplicity, a stop-loss that can never
+  fire, estimator divergence on the load-bearing step). Downgrading the
+  detector saves tokens where the record says the value is.
+- **Research (operator charter): Opus, high.** The 2026-08-13 charter is
+  operator-shaped — fire orders, pooled readouts, decode, pinning — method
+  discipline more than frontier judgment. Upgrade to Fable on days that are
+  genuinely synthesis/judge-panel shaped, if budget allows.
+- **Subagents: unchanged standing rule** — model always explicit, `opus` for
+  judgment, `sonnet` for mechanical work with a validated method, never
+  inherited.
+- **Ephemeral auditors: Fable xhigh with opus subagents** — the stakeless
+  one-shot question is where frontier judgment pays most per token.
+
 ## Shared platform budget (fcode)
 
 - Builder exclusively: submissions, activations, unrated challenges. Arena
