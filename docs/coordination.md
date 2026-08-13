@@ -42701,3 +42701,8 @@ unchanged from FIRE ORDER #1: cyclic pointer, 5/window attended paced ~4 min,
 1/window minimum, same-cell retry on rejection, any treatment leg outranks.**
 The queued v124 leg decodes whenever the platform runs it (post-hoc mechanism
 check; a fired falsifier is rollback evidence → Magnus, per the ship prereg).
+
+# 2026-08-13T10:23:41Z — **BUILDER s36: FIRE ORDER #2 CONSUMED — PANEL-CAL-2 RUNNER LIVE**
+# (same tool, INCUMBENT=125 pin verified against the live holder per fire,
+# same pointer for cyclic continuity, fires to panel_cal2_fires.tsv). CAL-1
+# closure receipt: 15/30 descriptive + the C1 version-churn caveat CONSUMED.
