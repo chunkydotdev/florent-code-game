@@ -80,3 +80,32 @@ bar unchanged in form: ≥1 park per the pinned detector in ≥4 of 6 control
 games per map, now vs the camper; additionally the control game must reach
 r300+ (else the fixture still fails to stall and no cell is read). Seeds and
 all other bars unchanged.
+
+---
+
+## AMENDMENT 2 (ADD-only; committed with ZERO treatment games run — every
+## input below is control/fixture data; clock = this commit's git author time)
+
+**Validity as registered FAILED on both fixtures, both runs disclosed:**
+sitter 0/12 (structural — kills r63-90); camper v1 5/12 parks (2/6 midgard,
+3/6 frostgate, onsets r25-68, games r110-210); a strengthened camper v2 was
+tried and read WORSE (4/12, faster kills — extra builders inflate the
+fixture's own cost scale) and is REVERTED to the committed v1. **The pinned
+100-round park definition cannot live inside games v125 ends by r220 — that
+is a fact about the fixture class, not the plank.** Iterating the fixture
+further toward the bar would be fixture-shopping; stopped.
+
+**RE-SCOPED BARS (pre-treatment, control-data-driven):**
+* **Bar 2a (local, mechanism):** vs camper v1, seeds unchanged: `IDLEPECK48`
+  fires in ≥half of games, and the paired-cell kill round DROPS in ≥half of
+  matched cells (unchanged). The step's own precondition (8 actionless
+  rounds adjacent to the core) replaces the 100-round corpus definition as
+  the local exposure test.
+* **Bar 2b (live, the #48-definition read):** moves to the pinned camp-class
+  leg research already required — readable on the WIRE with by-construction
+  attribution: **v125 produces ZERO builder-attacks-on-core (QUIET_ON since
+  v102 origin; autopsy: 0 in all four Jython losses), so ANY builder-core-
+  attack event in a treatment leg is treatment-caused.** Same class as
+  iteration 4's r<160 eviction attribution.
+* Validity 5/12 at the pinned definition is DISCLOSED as the fixture's
+  ceiling, not cured.
