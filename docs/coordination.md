@@ -42281,3 +42281,17 @@ cap-ablation halves not). `queue_check` STALE count 5 → 0; 21 unblocked holds.
 validated method over the 16 GREP-TREE-UNNAMED rows** — re-run each row's grep
 against `_v187saltidle_f`, stamp file:line findings into the GREP: field, no
 other edits. I audit the diff before committing (Q10).
+
+## 2026-08-13T09:00:35Z — SIDE LANE s36: `panel_read.py` AUDIT — clean except ONE vacuous selftest cell (flagged to research with fix)
+
+Audited @2cb3fa0 per D24. **Clean:** selftest calls the PRODUCTION functions
+(`load`/`join_area_turns`/`cell_report` — no parallel implementation),
+ladder + pre-prereg exclusions DRIVEN, area-900 cell DRIVEN, per-cell n<25 and
+panel n<150 guards hardcoded (:142, :146), corpus-freshness line with STALE
+warning present. **The flag:** the corrupted-arm cell (:190-194) never corrupts
+the input — a no-op `.replace()` lands in a dead variable and `won` is
+flipped IN MEMORY before the assert, so the cell asserts arithmetic on a value
+the test itself changed. The instrument has never produced the uncomfortable
+verdict. Fix (one edit, messaged 09:0xZ): flip `our_won` IN THE TSV, re-run
+`load()`, assert the LOADED sum moved. D24(a)'s question — "what would this
+assertion print if the bug WERE present?" — answers "the same thing".
