@@ -44138,3 +44138,23 @@ what it claims — the observation was right, the named mechanism was wrong.
 # positive; TWORAID, DIGOUT, STANDOFF all no-information.** COMBO is the
 # last shard of the s36 slate (n=3497, 52.44% descriptive, ~2h) — its final
 # + the rc8.3 live read + the UNDERECO trade are the three ship inputs.
+
+# 2026-08-13T19:41:45Z (`date -u`) — **BUILDER s37 VERDICT: rc8.3 LIVE LEG READ (n=25, COUNTS ONLY per
+# prereg — no game-share verdict at this n, same-bot swing ~12pp).**
+# Extraction by sonnet agent, verified: all 20 matches' scores reproduced
+# from per-game census independently (0/20 discrepancies), pins CLEAN across
+# all four arms (O1 v222 · O2 v67 · O3 v40 · O4 v7 · O5 v83 — no
+# pinned-triple alarm).
+# **D (rc8.3/COMBO): 10/25 games. Matched cells: vs A (control v125) +3/−5
+# net −2 · vs B (UNDERECO) +7/−6 net +1 · vs C (TWORAID) +4/−7 net −3.**
+# ⇒ **The live leg lends COMBO no support over the incumbent — directionally
+# negative at uninformative n.** Cell of note: O2 Leviathan D 0-5 vs A/B/C
+# each 2-3 — the camp class hits the combo hardest, coherent with UNDERECO's
+# −11-round slow-kill flag riding in it. All 25 D-games ended
+# core_destroyed (zero tiebreaks); D's 10 kills at r87-357.
+# **Mechanism bars routed to research** (their instruments): B's inherited
+# income-lock falsifier needs bank_trace on the O2/O5 replays; C's
+# two-at-once paired contrast needs the raid decode. The leg's counts do NOT
+# settle the ship — the three inputs remain COMBO's local n=5400 final
+# (~2h), this leg, and the UNDERECO trade; recommendation to Magnus when the
+# final lands.
