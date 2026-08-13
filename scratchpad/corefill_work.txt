@@ -868,3 +868,24 @@ SALTBARONLY bots/_v191saltbaronly bots/_v169launchlate160 5408 203000
 # path (barrier ground beside a LIVE belt to deny the repair bot its approach).
 # The cleanest of the three: it subtracts one behaviour and touches no budget.
 SALTNOBLOCK bots/_v192saltnoblock bots/_v169launchlate160 5408 204000
+# ============================================================================
+# --- s35 ~05:3xZ. THE COUNTER PROGRAMME. Magnus's frame and Magnus's bar. ---
+# ⭐ FRAME: *"now that we have a salt bot, we can probably pit counters against
+# it and see what we can find and then put them together?"*
+# ⭐ BAR (his, and it is also PROGRAMME.md's `COMPARE_AGAINST:
+# previous_line_iteration`): *"A counter + salt vs just salt should win more
+# than it loses"* — i.e. **salt+counter vs salt must clear 50%.** SALT is v122,
+# the live incumbent, so it IS the control the next iteration answers to.
+#
+# ⭐⭐ THIS CONTRAST IS ALREADY HALF-CALIBRATED FOR FREE, WHICH IS WHY ONLY ONE
+# CELL IS QUEUED HERE:
+#   NEG cell — ALREADY MEASURED. `_v169launchlate160` vs `_v178salt` = 2,109/5,408
+#   = **39.00% at n=5,408**. That is the SALT battery read from the other side:
+#   a real, powered, known-worse arm on this exact contrast. Nothing to run.
+#   NULL cell — THE ONE THING MISSING, queued below. Without it the band applied
+#   to every counter arm is BORROWED, which the read-out flags in red.
+# SALTNULL -- byte-identical copy of _v178salt against itself. Verified identical
+# by `diff -r --exclude=__pycache__` at build time (zero differing files).
+# ⛔ IT MUST READ ~50%. If it does not, the fixture is biased on this contrast and
+# NO counter verdict may be read at all.
+SALTNULL    bots/_v178salt_null    bots/_v178salt         5408 205000
