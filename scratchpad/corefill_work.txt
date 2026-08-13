@@ -1008,3 +1008,10 @@ FWDFLOOR8   bots/_v200fwdfloor8    bots/_v197mapcode      5400 220000
 # plank; the resolving read is a live leg vs the core-tank class, which
 # outranks the panel when fired (research @fc912f0).
 UNDERECO    bots/_v201undereco     bots/_v197mapcode      5400 221000
+# DIGOUT (Magnus's live observation: seat-sealer walled itself in behind its
+# own barriers and paced): blocked-on-all-cardinals builders destroy their OWN
+# blocker — ct.destroy is FREE/ally-only/no-cooldown and had ZERO call sites
+# in the tree. Flag LOKI_DIGOUT_ON, barrier>conveyor>splitter preference,
+# desired-direction first, stuck>=2 gate so a one-round squeeze doesn't
+# demolish a working belt.
+DIGOUT      bots/_v202digout       bots/_v197mapcode      5400 222000
