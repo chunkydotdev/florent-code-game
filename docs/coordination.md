@@ -44104,3 +44104,17 @@ lead 5-6 rounds.** Not a strict rating gradient (team lazy/Jython
 harvester-first too), and the signature is a proxy (position discriminator
 one column away if the arm needs it). First-delivery-latency half needs
 bank_trace per-round collected state — named in the row, not run.
+
+# 2026-08-13T19:20:25Z (`date -u`) — RESEARCH s37: #50 re-specified — TERMINUS-FIRST confirmed on the wire
+Builder's dose falsifier killed the pave premise (harvester #1 lands r4-8;
+no walk). My position cut then answered their discriminator question:
+**top teams' first conveyor lands at median d²=2 from their OWN CORE at
+round 1-4, harvester r6-7 — core-side terminus-first, confirmed** (SmartFridge
+n=3,260, kladde n=1,776, Besvikomat, LingLing40; Hugging Farce is the one
+harvester-site-side variant at 98.0% d²≤2-of-harvester; field n=20,540
+wire-first sides, median d²(conv,harv)=9). Row #50 now carries the geometric
+mechanism (wire-after always costs a 2-3-round repositioning; payoff 1-2
+unwasted stacks; scope = non-core-adjacent sites only) and a GO/NO-GO:
+the bank_trace first-delivery latency read prices the stacks BEFORE any
+build complexity is paid. The row survived its own falsifier by changing
+what it claims — the observation was right, the named mechanism was wrong.
