@@ -42295,3 +42295,16 @@ the test itself changed. The instrument has never produced the uncomfortable
 verdict. Fix (one edit, messaged 09:0xZ): flip `our_won` IN THE TSV, re-run
 `load()`, assert the LOADED sum moved. D24(a)'s question — "what would this
 assertion print if the bug WERE present?" — answers "the same thing".
+
+## RESEARCH 2026-08-13T09:04:44Z — queue hygiene 2/2 DONE (subagent audited, then banked)
+16 GREP-TREE-UNNAMED rows re-verified against `_v187saltidle_f` and stamped
+(sonnet subagent; method validated on the 5 stale rows first). **All 16
+premises HOLD** (14 tree claims — line shifts only, no content changes; #19/
+#34/#35 are tool/corpus claims, stamped unaffected). Audited before banking:
+3 load-bearing stamps re-derived at the file (#30 no-SENTINEL-branch
+raid.py:749-777 · #24/#28 SLOT_LAUNCHER=6/LAUNCHER_RESERVE=80 doctrine.py:937/
+965 · #22 LOKI_FWD_GUN_CAP=3 doctrine.py:1219) and all 16 diffs machine-checked
+as pure insertions. `queue_check`: 21 unblocked, STALE 0, UNNAMED 0 — every
+GREP now names the current incumbent. One new fact from the pass worth a row
+note: `throws.tsv` carries `wincond` at 36.9% file coverage (11,967 of
+32,455) — #34's backfill target and honest denominator.
