@@ -42516,3 +42516,14 @@ shape defect; caught by cross-checking the derived slot pattern; leg fired 4
 min late, safely). The leg's FALSIFIER READ (crash-class / 900-signature) is
 still owed after the queued matches run and decode — matches are queued, not
 complete, so **no leg outcome exists yet and none may be cited.**
+
+## RESEARCH 2026-08-13T10:02:45Z — SAME-DAY RATED DECODE #2 (7 new matches since the 07:52 pass)
+All 35 game rows ourver=123 (**no v124 on the rated tape** — MAPCODE leg
+leak-clear on this surface; the 10:12:59 boundary is the builder's watch).
+v123: 20/35 this window; **pooled today 46/75 (61.3%)**. Area split this
+window: 16/24 on <=676, **4/11 on 900** (pooled today 6/19 — better than the
+morning 2/8 but still the weak class). **First r1000 WIN today: Lunds v69 on
+valkyrie, cond=titanium_collected** (previous five r1000 games all lost).
+Note for #36's eventual leg: a tiebreak win on valkyrie by the UNBRANCHED
+incumbent says the class is winnable on delivery-by-accident — the branch
+buys consistency, not possibility.
