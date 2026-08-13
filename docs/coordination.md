@@ -42308,3 +42308,19 @@ as pure insertions. `queue_check`: 21 unblocked, STALE 0, UNNAMED 0 — every
 GREP now names the current incumbent. One new fact from the pass worth a row
 note: `throws.tsv` carries `wincond` at 36.9% file coverage (11,967 of
 32,455) — #34's backfill target and honest denominator.
+
+## RESEARCH 2026-08-13T09:09:24Z — QUEUE STOCKED: #36-#39, the new-pool paths (Magnus's ask via the builder)
+Four rows, greps run BEFORE counting, all vs `_v187saltidle_f`: **#36** 900-area
+eco/win-path branch (no tiebreak branch exists in the tree; distinct from the
+builder's cap-scaling work) · **#37** TAP THE BELT — offensive half of the
+team-blind round-robin (engine-measured 49/49; incumbent ships only the
+defensive WIRE/DENY arms) · **#38** kidnap/crash at 900 scale (approved class,
+new trigger geometry; #17's local dose stays the precondition) · **#39** the
+opening book of the new pool (modal first-harvester tiles per (team,map) off
+`builds.tsv`, 3-Ti barrier pre-emption; first-mover value decays in days).
+`queue_check`: **25 unblocked**, floor 3, zero stale/unnamed.
+⚠ CAVEAT ON #36's why-now, carried at write time: the builder has since FOUND
+the oscillation mechanism on new maps (MAP_CODES missing → greedy pathfinding
+livelock), so part of today's 2/8-on-900 may be pathing, not economy. #36's
+premise is a code fact either way (no win-path branch exists); its SIZE should
+be re-read after the pathing fix ships.
