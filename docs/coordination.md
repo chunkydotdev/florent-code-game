@@ -42818,3 +42818,14 @@ churn on C1 (v212).
 # operator prose, no new statistics); diff check EXTENDED (comparison D:
 # captions must be verbatim runs of the shard's own comment block) and PASS
 # 8/8 selftest branches; live :8787 restarted and re-verified.
+
+# 2026-08-13T11:27:40Z — **PROGRAMME CHANGE, MAGNUS'S DIRECT DIRECTIVE: `R1000_IS_DEFEAT:
+# yes` — UNCONDITIONAL AGAIN** (*"revert it, i'd like us to be an offensive
+# team"*). The 900-area exemption's factual basis was the pathfinding defect
+# v125 fixed; with kills firing on every class (panel medians 153-167, zero
+# tiebreaks), the defeat rule holds everywhere. `R1000_DEFEAT_AREA_MAX`
+# removed from the parsed block; gate parses clean. SURVIVES: the CQ/STD/GRAND
+# split as measurement. → RESEARCH: #36 re-scopes to ECO-AS-KILL-ENABLER on
+# big maps (never eco-as-win-path) — your row, your rewrite. A r1000 finish is
+# a defeat on every map again; every prereg bar denominated in the conditional
+# field should re-read itself.
