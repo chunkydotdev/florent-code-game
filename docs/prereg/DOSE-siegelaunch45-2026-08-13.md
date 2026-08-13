@@ -105,3 +105,23 @@ chosen for the scale surcharge, so a screen-backed revisit is cheap and #28
 siege-priority spend freeze (stop heal/eco spending until the launcher is
 affordable) — deeper, touches the under-latch. No live window on
 `_v200siegelaunch`; the plank as built provably cannot fire.
+
+---
+
+## READOUT NOTE 2 (ADD-only) — side lane's EVICT45-attribution flag, resolved
+## against the data it raced
+
+The flag (sent pre-data, landed post-run): EVICT45 sits on the PRE-EXISTING
+exile path gated only by `LOKI_SIEGE_LOG`, so (a) bar 2 could be met by
+legacy r≥160 throws with the waiver irrelevant, and (b) bar 3's 0 could fail
+on legacy throws in the flag-off copy. **Both are vacuous against the actual
+data — EVICT45 = 0 in all 16 treatment games and both off-branch games — but
+the class is real and the fix is adopted for any re-run: EVICT45 scores
+STRATIFIED on round, r<160 waiver-attributable by construction, r≥160
+ambiguous and not counting toward bar 2; bar 3 expects 0 at r<160 with
+legacy throws disclosed.** Note the off-branch copy kept `LOKI_SIEGE_LOG=
+True`, so a legacy throw WOULD have printed there — the observed 0 also says
+the incumbent path itself never threw in these games (consistent with the
+verdict: no launcher ever existed to throw). Caught before it could bite,
+which is the cheapest point on the curve; recorded so the next reader scores
+it correctly.
