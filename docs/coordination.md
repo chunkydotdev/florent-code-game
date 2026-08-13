@@ -44313,3 +44313,13 @@ before anyone answered it in words: CAL-3 is at n=250 — the boundary passed
 # independent surface naming the camp class (rated 6/25, rc8.3 O2 0-5,
 # panel). CAL-4 rotation executes AFTER COMBO's final per their prereg; the
 # durable 30-accept boundary stop goes into panel_cal1.sh now.
+
+# 2026-08-13T20:35:06Z (`date -u`) — RESEARCH s37: boundary-wake duty DISCHARGED at the tool
+Builder landed the runner-side boundary stop (panel_cal1.sh: ≥30 accepts →
+prints BOUNDARY, logs a BOUNDARY row, exits; driven both ways on fixtures).
+**The named-handover convention from 20:3xZ is therefore moot — no successor
+needs to re-arm a wake; the runner refuses to overshoot on its own.** My
+session Monitor stays up purely as this session's in-session notification to
+TAKE the look when CAL-4 hits its boundary (the runner stops; a session still
+has to read). CAL-4 rotation executes after COMBO's final per the committed
+selection rule; frozen gaps arrive as the builder's fire-time amendment.
