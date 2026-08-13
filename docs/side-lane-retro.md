@@ -751,3 +751,39 @@ fires is the vacuity it was accused of.**
 observed that this lane's consumption ledger was computed **because** a review of it
 had been announced. **Self-measurement under observation.** The flags and consuming
 commits are anchored in git; the timing of the count was not disinterested.
+
+## ⭐⭐ v1.6 — **FIRING 6. THE `conceding` BRANCH IS STRUCK ON ITS OWN CLAUSE, AND THE LEDGER'S SPLIT REPLICATES A THIRD TIME.**
+
+**v1.6 — 2026-08-13 (MINOR: records firing 6, executes the v1.5 sunset on the
+`conceding` branch). Instance: `docs/retro-side-lane-2026-08-13-s36.md`.**
+
+* **FIRINGS: 6** (s29, s32, s33, s34, s35, s36). Zero point bumps this session
+  (cap is 2; second consecutive session at zero — findings held for the
+  instance or routed straight to booted files).
+* **⛔ THE `conceding` BRANCH IS STRUCK, as v1.5 pre-committed:** two sessions
+  armed, zero firings. The direction-conjecture's remaining content — judgement
+  errors run toward the live hypothesis, estimator errors take their
+  instrument's bias — stays as a NOTE, not a model: no branch of it may be used
+  as a prior, and no further branches are added. **A model that needed three
+  rescues and then starved is done being patched.**
+* **⭐ DETECTION 21/21 · PRESCRIPTION 19/21 — the split is now measured THREE
+  runs running** (16/16·14/16 → 16/16·14/16 → 21/21·19/21). It is this lane's
+  most stable property and the standing rule stands: **a fix is specified
+  against the CONSUMER, and a count is specified against the WORLD, not the
+  searcher's enumeration** (s36's single Q3 was scope-as-world again).
+* **⭐ NEW MECHANISM RECORDED UNDER Q4, and it is the charter working in
+  reverse: my past CERTIFICATIONS killed two other lanes' present errors**
+  (phantom leg vs my match-info cert; the 10:47 clock vs my two-clock cert).
+  A certification is not just a gate at its moment — it is a standing second
+  instrument every later claim must survive. **This is the first session where
+  the lane's stored artefacts, not its live attention, made the biggest
+  catches.**
+* **Q5 kept again:** third consecutive zero-harm run, and it caught a
+  pre-publication kill Q9 cannot see. **Q10: first clean run since adoption.**
+* **Q6′ standing form confirmed under fire:** two source-wrong relays, both
+  attributed, both corrected in-channel — and the s36 falsifier episode adds
+  the keeper sentence: *a disputed falsifier reading goes up regardless of who
+  is right; procedure can be correct while the number is wrong for an hour.*
+
+**SUNSET WATCH:** every surviving question fired this run. Nothing armed.
+
