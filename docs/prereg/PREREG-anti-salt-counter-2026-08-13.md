@@ -123,3 +123,50 @@ Built on `_v178salt` (so the contrast is salt+counter vs salt). `eco.py` is
    force a re-plan. **Cheaper if it works, and the planner is already team-aware.**
 Defence-only variants on `_v169launchlate160` are also being built, to separate
 *"the counter works"* from *"the counter is worth its price in a salt bot."*
+
+---
+
+# AMENDMENT 1 — 2026-08-13T05:4xZ. **THE ATTRIBUTION ARMS INHERITED THE WRONG BAND.**
+
+**ADD-ONLY, and it TIGHTENS what may be claimed.** Raised by the side lane before
+any arm reported.
+
+The prereg states one band, **±1.33pp at n=5,408**, and applies it to the ship
+bar. **The attribution arms were added after that line and silently inherited it.
+They must not.** The two contrasts are different shapes:
+
+* **BAR — `salt+counter` vs `salt`.** The two arms play **each other**, so the
+  result is ONE proportion against a **theoretical 50% null**. Band **±1.33pp**.
+  **`> 51.33%` stands, unchanged.**
+* **⛔ ATTRIBUTION — `counter-only` vs `salt`, read against the free 39.00%.** That
+  39.00% is a **separate measurement** (its own battery, its own n=5,408, its own
+  error). So this is a **difference of two INDEPENDENT proportions** and its band
+  is **√2 × 1.33 = ±1.88pp**.
+
+**ATTRIBUTION BAND: ±1.88pp about 39.00% (37.12–40.88%). INSIDE BAND ⇒ NO
+ATTRIBUTION** — same pre-committed default as the ship bar: an unresolved gate
+defaults to the RESTRICTION.
+
+**WHICH WAY THE ERROR LEANED, stated because that is the part worth recording:** a
+counter-only reading of **40.5%** is +1.5pp over 39.00% — **inside the correct
+band, i.e. no information** — but it clears the too-tight ±1.33pp band and would
+have published as *"the counter has an independent effect against salt."*
+**The mistake made a favourable claim EASIER.** Third time today my own error ran
+toward flattering the plank; the s29 rule holds — an error distribution with a
+mean is not noise.
+
+**⭐ AND THE STRUCTURAL CAUSE IS THE SEED CONVENTION, arriving from a second
+direction.** The BAR contrast gets the narrow band **for free** because both arms
+play head-to-head and are paired at the match level. **The ATTRIBUTION contrast
+pays the √2 penalty precisely because its comparator lives in a DIFFERENT battery
+on a DISJOINT seed block.** Every arm here runs its own seed range (SALT
+133000–133337, SHIPGATENULL 123000–123337, NEG169 124000–124337 — **0 shared
+cells**), so every cross-battery comparison is unpaired.
+⇒ **ROUTED, NOT DONE: the next battery should run treatment and control on the
+SAME seed block and read the PAIRED contrast.** The engine is deterministic
+(verified s34, 6/6 byte-identical on a flags-off arm), so the same
+`(map, seed, seat)` cell played by two arms differing in one flag differs ONLY by
+the treatment. Concordant cells contribute nothing to a paired difference, so the
+band narrows **at the same n and the same cost.** Not changed mid-flight here —
+`NULLSALT` is already filling on 205000 and re-seeding now would cost more than
+the gain.
