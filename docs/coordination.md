@@ -41290,3 +41290,47 @@ Bars unchanged from the v122 prereg's amended scheme (union false-alarm rates
 quoted, cumulative via `ship_ledger`, game share at k>=24).
 **⛔ PROGRAMME.md `INCUMBENT` NOW STALE AGAIN — it reads `bots/_v178salt` and the
 live slot is `_v187saltidle_f`. MAGNUS-ONLY FIELD; flagged, not edited.**
+
+## SIDE LANE s35 — v123 CERTIFIED CLEAN; TWO FLAGS ON THE SHIP CHAIN (2026-08-13T06:0xZ, `date -u`)
+
+**TWO-CLOCK ON v123 (`_v187saltidle_f`): CLEAN, UNCONDITIONALLY.** Prereg
+`dff92b4` added **06:05:58Z**; newest ladder pairing at read time **05:52:59Z
+carrying ourver=122** ⇒ no v123 match can predate the lock by construction.
+**The builder's reservation stated BEFORE executing is the right form.** *(On that
+reservation: the head-to-head at n=517 gives z≈3.56 against 50 — it survives a
+generous multiplicity penalty, so the caution is about PRECISION and significance
+is not the weak part.)*
+
+**1. ⛔ `PROGRAMME.md`'s `INCUMBENT` STALENESS IS STRUCTURAL, NOT AN INCIDENT.**
+`b768079` fixed it **05:45:33Z** (v116→v122); v123 shipped **06:06Z** and the
+field reads `bots/_v178salt` again ⇒ **21 MINUTES of accuracy, and COMMITTED stale
+this time**, so `HEAD` carries the wrong tree — worse than the uncommitted-but-
+correct state flagged an hour earlier. **Third lapse today** on a field this file
+says *"sends every admission grep at the wrong tree."*
+⇒ **ANOTHER MANUAL UPDATE IS NOT THE FIX.** The field goes stale at exactly one
+event and **that event is a script — `submit_clean.py --activate` IS the ship
+decision.** Either the ship procedure updates the field as a step, or the ship
+prereg template carries it as a required line. **MAGNUS-ONLY to edit; the
+PROCEDURE is what is proposed.**
+
+**2. ⚠ TWO SHIPS IN 80 MINUTES ⇒ NEITHER CONVERGES, AND v122'S GATE NEVER FIRED.**
+v122 shipped **04:45:54Z**, displaced **06:06Z**, reached **k=4** against a gate
+arming at **k≥8**. ⇒ **five amendments, the calibration work, `ship_ledger` and the
+union false-alarm table — none of it ever ran.** Arithmetic beside the builder's
+own honest note (*"v122's rated question is abandoned at k=4, not answered"*):
+**~420 rated matches remain, ~100 to converge ⇒ ~4 ship-and-converge cycles in the
+whole game, and two were spent in 80 minutes producing ZERO rated information.**
+
+**⭐ THE SHARPER FORM — a programme observation, not a scheduling one: the chain
+v116 → v122 → v123 rests ENTIRELY on LOCAL SELF-PLAY evidence while
+`FIXTURE_OF_RECORD: live_unrated` names live games as the authority.** Both of
+v123's supporting contrasts (57.83%, 65.54%) are local. **Not a criticism of the
+arms** — the local calibration is unusually good, clean null cell, disjoint seeds
+— **it is that the programme's stated fixture of record has not been consulted on
+any link in the chain**, and D12 / s26 D21 exist precisely because our own
+fixtures lie in a known direction.
+⇒ **NOT a request to hold.** The ask is that **whichever ship is allowed to sit
+gets long enough for one rated read**, or the rated slot's information value is
+zero and the local battery decides everything by default. **If v123 is displaced
+before k=8 too, that is a PATTERN to put in front of Magnus rather than discover
+at the third instance.**
