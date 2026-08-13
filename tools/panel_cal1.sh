@@ -21,18 +21,19 @@
 # the other verdict has not been seen to check.
 cd /Users/junghard/Projects/Work/florent-code-game || exit 2
 
-# CAL-3 cells (fire order #3 @63d45eb; prereg PREREG-PANEL-CAL3-v125-band).
-# CAL-1/CAL-2 cell sets retired with their panels — retained cells do NOT pool
+# CAL-4 cells (selection per docs/research/PREREG-PANEL-CAL4-selection-rule
+# + fire-time amendment 2026-08-13 s37; live band read at our 1783).
+# CAL-1/2/3 cell sets retired with their panels — retained cells do NOT pool
 # across panels; totals reset with the new PTR/OUT files.
 CELLS=(
-  648d1d5b-5443-4257-a0aa-7048661b612d  # C1 team lazy      (stretch, profiled)
-  f3362833-2d7a-4636-9a3c-e4f10fcebdc1  # C2 Big O          (stretch, unprofiled)
-  26286680-d861-4f9e-9073-a6201bd48d3b  # C3 Leviathan      (core-tank class)
-  8cf9b751-00d3-484a-b0ed-e3073ae1d46f  # C4 Jython         (even)
-  32087804-2dde-4265-acb2-b6ec9039fbee  # C5 Juusto         (even)
-  ea0d33c8-ca2b-497a-9be0-1837379eab1e  # C6 Coreflood      (below)
+  648d1d5b-5443-4257-a0aa-7048661b612d  # C1 team lazy      (-2, continuity)
+  32087804-2dde-4265-acb2-b6ec9039fbee  # C2 Juusto         (-67, continuity)
+  26286680-d861-4f9e-9073-a6201bd48d3b  # C3 Leviathan      (+101, REFERENCE cell — D13: floor-pinned in CAL-3, kept deliberately, deltas not readable)
+  12fdece5-48c9-4913-9533-6d95b73e22ab  # C4 HTTP 418       (+38, upward; churn noted: 4 versions/15 matches)
+  74ae65ff-96ae-4da5-a43e-692eb6fee38f  # C5 0033           (+64, upward, stable)
+  25288fdb-f3a0-4ae2-964f-2fd7eb9b11d7  # C6 farming_200s   (+73, upward, most stable: 1 version/15)
 )
-NAMES=(C1-team-lazy C2-Big-O C3-Leviathan C4-Jython C5-Juusto C6-Coreflood)
+NAMES=(C1-team-lazy C2-Juusto C3-Leviathan C4-HTTP418 C5-0033 C6-farming200s)
 
 INCUMBENT=${INCUMBENT:-123}     # overridable ONLY for the abort-branch selftest
 PTR=${PTR:-scratchpad/panel_cal1_pointer.txt}

@@ -64,3 +64,31 @@ questions per cell, not one:
 Keeping Leviathan may still be right (three surfaces converge on the camp
 class; a stable reference has value) — but the fire-time amendment must say
 which kind of cell it is.
+
+---
+
+## FIRE-TIME AMENDMENT (ADD-only, builder s37; clock = this commit's git
+## author time) — CELLS SELECTED, E GAPS FROZEN
+
+Live band read at selection (`target_value.py --band`, our 1783, corpus
+0.4h fresh): 12 admissible. **Cells:**
+* C1 team lazy **−2** (continuity, in-band)
+* C2 Juusto **−67** (continuity, in-band; was borderline at boot, admissible
+  at selection)
+* C3 Leviathan **+101** (continuity, in-band under the +125 ceiling;
+  **REFERENCE CELL per the D13 rider** — CAL-3 read it floor-pinned at
+  ±0.000, every match 1/5; kept DELIBERATELY as the camp-class reference,
+  its deltas declared unreadable)
+* C4 HTTP 418 **+38** (upward; churn NOTED: 4 versions in its last 15
+  matches, last change 17:32Z)
+* C5 0033 **+64** (upward; stable, 2 versions/15)
+* C6 farming_200s **+73** (upward; most stable, 1 version/15)
+* **Dropped:** Coreflood (below band, as the rule forecast). **Excluded:**
+  Erebus (+10) — SHIP-STORM at selection (5 versions in 15 matches incl. an
+  apparent rollback 102→63); the rule's version-stability check exists for
+  exactly this.
+* **E gaps frozen as listed above** (basis: our 1783 vs the live table);
+  per-cell oppver mix reported at every read; no cell pinned (panel rule).
+* Runner: `tools/panel_cal1.sh` cells updated in place (tracked, committed —
+  the runner is the record); fresh `panel_cal4_fires.tsv` + pointer 0; the
+  30-accept boundary stop rides in the runner.
