@@ -915,3 +915,22 @@ SALTROUTE   bots/_v197saltroute    bots/_v178salt         5408 207000
 # nothing about resolution near 50 (D13), which is what NULLSALT is for.
 CLEARONLY   bots/_v193clearlink    bots/_v178salt         5408 208000
 ROUTEONLY   bots/_v194routelink    bots/_v178salt         5408 209000
+# --- MAGNUS, 06:1xZ: *"Wait 65% against our current slot?"* NO -- and the
+# question exposed that I had stated it loosely. EVERY salt-family arm is
+# controlled on `_v169launchlate160` (= v116, the bot SALT REPLACED), NOT on
+# `_v178salt` (= v122, the LIVE slot). SALTIDLE and SALT HAVE NEVER PLAYED
+# EACH OTHER.
+#   SALT     61.00%  n=5,408  vs v116   (band +-1.33)
+#   SALTIDLE 65.79%  n=1,289  vs v116   (band +-2.73)
+# The 4.8pp gap is an UNPAIRED CROSS-BATTERY inference: combined band
+# +-3.04pp, so it is marginally outside -- suggestive, NOT settled, and the
+# direct contrast is strictly better AND cheaper (one proportion vs a
+# theoretical 50 null, band +-1.33 at full n, no sqrt-2 penalty).
+# ⇒ IDLEVSALT IS THE ARM THAT ANSWERS HIS QUESTION. Its control is the LIVE
+# SLOT. Bar is the same one his counter bar carries: >51.33% to beat the slot,
+# inside band => the slot stays. NULLSALT gates it like everything else on
+# this contrast.
+# ⚠ AND ITS DOSE IS NOW VERIFIED (196 SALT events + 2,571 funnel events over 8
+# games with logging forced on) -- it was written off last night as
+# "non-dosing" on a reading taken through a switched-off log.
+IDLEVSALT   bots/_v187saltidle_f   bots/_v178salt         5408 210000
