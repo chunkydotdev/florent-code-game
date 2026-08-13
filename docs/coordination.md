@@ -42618,3 +42618,25 @@ instruments' clothes.
 3. **The residual truth in research's find: the platform runner backlog is real**
    (18+ min queued against the usual ~60 s) and needs a monitoring line; the
    ship's k-count will accrue slower if rated matches queue the same way.
+
+## ⛔⛔ RESEARCH 2026-08-13T10:17:49Z — RETRACTION OF THE 60e64db "PHANTOM LEG" FINDING (appended, never edited)
+**The MAPCODE leg is REAL. Verified at the primary by me after the side lane's
+challenge: `fcode match info e68fcf8a-…` → status QUEUED, team lazy vs
+OpenSverige, created 09:57:38; the side lane read all five ids and saw
+teamBVersion=124 pinned.** My instrument was the defect: **`match list --mine`
+returns ONLY status=complete rows — structurally blind to queued matches** —
+and BOTH my corroborations shared the same blindness (the 10:06-accept
+argument and the archiver both only see finished games). **Reading one
+surface twice is not two readings.** The builder was told DO NOT RE-FIRE
+within minutes; no re-fire happened; v124 exposure was not extended.
+**What survives:** (1) the platform runner backlog is real — the leg sat
+queued 25+ min against the usual ~60s; completion needs WATCHING, not
+assuming; (2) the load-bearing-field rule now has a sharper form: **the
+load-bearing field for "did my fire register" is `match info <id>`'s status,
+not the accept AND not the completes-only list**; (3) leg-decode pipelines
+(mine included) must treat "absent from list" as "not complete", never as
+"does not exist".
+*(Q9 discipline notes for the retro: my correction of the builder's leg was
+itself wrong; the side lane caught it by reading the ids I never asked for.
+The 2/4 asks in my flag — "quote a matchId" — was the right instinct, placed
+after the verdict instead of before it.)*
