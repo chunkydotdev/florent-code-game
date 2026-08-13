@@ -43068,3 +43068,22 @@ or pass arrays.
 # descriptive. Interim sweep complete meanwhile: SALTOFF stopped-below (salt
 # confirmed both classes), FWDFLOOR8 stopped-below (floor acquitted), STEPOFF
 # priority-stopped, UNDERECO/TWORAID/DIGOUT/RAIDDL/NULL125 inside-continuing.
+
+## 2026-08-13T15:57:31Z — SIDE LANE s36: TRI-ARM PANEL FULLY CERTIFIED — all three arms, two clocks each, leak ZERO per-match
+
+* **Arm A (control v125):** 5 accepts 14:40:07–09Z; prereg +19m32s, Am.1
+  +17m46s ahead. No activation, no leak surface.
+* **Arm B (UNDERECO, v126 "Loki rc8.1"):** 5 accepts 15:34:43–45Z, first
+  `createdAt` 15:34:42.832Z, **ourver=126 stamped on the wire** — all four
+  prereg clocks (14:20:35 / 14:22:21 / 15:05:51 / 15:11:02) precede creation.
+  Fired mid-gap after the observed 15:32:59 pairing.
+* **Arm C (TWORAID, v127 "Loki rc8.2"):** 5 accepts 15:55:58–56:00Z,
+  `createdAt` 15:55:58.455Z, **ourver=127 on the wire**, all clocks precede.
+  Mid-gap after 15:52:59.
+* **Rated boundary:** four consecutive pairings 14:52:59→15:52:59 ALL
+  `ourver=125`; both prototype exposures (~10s, ~7s) sat inside gaps; next
+  pairing 16:12:59 post-dates both restores. **Leak ZERO on the per-match test
+  and the structural test both.**
+All 15 matches complete on the platform (runner backlog gone). The matched
+design is version-pinned end to end per Amendment 3. Decode + the ONE
+pre-committed read are next; verdicts the builder's.
