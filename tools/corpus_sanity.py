@@ -298,8 +298,92 @@ def conditionally_dead(root) -> int:
     return flipped
 
 
+def pool_check(pool_names=None) -> int:
+    """POOL vs FIXTURE vs BOT-TABLE assertion (audit B1, built s36 after the
+    2026-08-13 rotation invalidated half the corpus with no alarm).
+
+    Three surfaces must agree with the live pool:
+      1. tools/overnight.sh MAPS= (the battery fixture)
+      2. maps/<name>.map26 exists (else nothing else is verifiable)
+      3. the INCUMBENT tree's MAP_CODES/EXTRA_MAP_CODES contains the map's key
+         (else the bot pathfinds blind on it — the v123 livelock class)
+
+    pool_names=None reads `fcode maps list` live; a failed read prints BLIND
+    and returns 0 (a network flake must not fail boot) but says so loudly.
+    Pass an explicit list to drive the check without the network — the
+    selftest drives it to both verdicts that way.
+    """
+    import re as _re
+    import subprocess as _sp
+    root = Path(__file__).resolve().parent.parent
+    if pool_names is None:
+        try:
+            out = _sp.run([str(root / ".venv/bin/fcode"), "maps", "list"],
+                          capture_output=True, text=True, timeout=30).stdout
+            pool_names = _re.findall(r"^\W*│\s*(\w+)\s*│", out, _re.M)
+        except Exception:
+            pool_names = None
+        if not pool_names:
+            print("\nPOOL CHECK: BLIND — `fcode maps list` unreadable; the "
+                  "pool-vs-fixture assertion certifies NOTHING this boot.")
+            return 0
+    bad = 0
+    m = _re.search(r"^MAPS=\(([^)]*)\)", (root / "tools/overnight.sh").read_text(), _re.M)
+    fixture = set(m.group(1).split()) if m else set()
+    inc = None
+    for ln in (root / "PROGRAMME.md").read_text().splitlines():
+        if ln.strip().startswith("INCUMBENT:"):
+            inc = ln.split(":", 1)[1].strip()
+            break
+    keys = set()
+    if inc:
+        import importlib.util as _ilu
+        spec = _ilu.spec_from_file_location("_doc", root / inc / "doctrine.py")
+        mod = _ilu.module_from_spec(spec)
+        try:
+            spec.loader.exec_module(mod)
+            keys = set(mod.MAP_CODES) | {k for k, _c in mod.EXTRA_MAP_CODES}
+        except Exception as e:
+            print(f"\nPOOL CHECK: cannot load {inc}/doctrine.py ({e}) — "
+                  f"bot-table half is BLIND")
+    sys.path.insert(0, str(root / "tools"))
+    from map_encode import entry_for
+    for name in pool_names:
+        f = root / f"maps/{name}.map26"
+        if name not in fixture:
+            print(f"  *** POOL: '{name}' in the live pool, NOT in overnight.sh "
+                  f"MAPS — batteries cannot draw it"); bad += 1
+        if not f.exists():
+            print(f"  *** POOL: maps/{name}.map26 MISSING — bot-table coverage "
+                  f"unverifiable for it"); bad += 1
+            continue
+        if keys:
+            key, _code = entry_for(f)
+            if key not in keys:
+                print(f"  *** POOL: '{name}' has NO MAP_CODES entry in {inc} — "
+                      f"the bot pathfinds BLIND on it (the v123 livelock class)")
+                bad += 1
+    for name in sorted(fixture - set(pool_names)):
+        print(f"  *** POOL: '{name}' in overnight.sh MAPS but NOT in the live "
+              f"pool — batteries spend rows on dead geometry"); bad += 1
+    if not bad:
+        print(f"\nPOOL CHECK: OK — {len(pool_names)} pool maps all in the "
+              f"fixture and all covered by {inc or '?'}")
+    return bad
+
+
 def main(d="corpus"):
     bad = 0
+    if d == "--pool-selftest":
+        # both verdicts: the real pool must PASS; a fabricated map must FAIL
+        # on all three surfaces (not in fixture, no .map26, no table entry).
+        real = pool_check()   # live read; BLIND is acceptable here
+        fake = pool_check(["midgard", "notamap999"])
+        okA = real == 0
+        okB = fake >= 2       # missing from fixture + missing file at minimum
+        print(f"POOL_SELFTEST: {'PASS' if okA and okB else 'FAIL'} "
+              f"(real={real}, fake_bad={fake})")
+        return 0 if okA and okB else 1
     for f in sorted(Path(d).glob("*.tsv")):
         with open(f) as fh:
             rows = list(csv.DictReader(fh, delimiter="\t"))
@@ -347,6 +431,7 @@ def main(d="corpus"):
     bad += conditionally_dead(Path(d))
     stale = freshness(Path(d))
     bad += stale
+    bad += pool_check()
     print("\nno undocumented dead columns" if not bad else
           f"\n{bad} UNDOCUMENTED all-zero column(s) or STALE file(s): decoder "
           f"bug, or a real fact? Do not quote them until you know which.")
