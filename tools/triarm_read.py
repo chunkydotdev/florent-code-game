@@ -204,11 +204,12 @@ def main() -> int:
     # --- arm B falsifier input -------------------------------------------
     print("\nARM B FALSIFIER INPUT — longest bank pin (≤12 Ti consecutive "
           "rounds), via tools/bank_trace.")
-    print("  ⚠ UNCONDITIONAL: the prereg's bar is CONDITIONAL on a chronic "
-          "camp (enemy latches `under` >100 rnds with our belt cut) and this "
-          "tool does NOT detect that precondition — these are pin lengths over "
-          "ALL games in the cell. Reading them as the falsifier's answer would "
-          "evaluate a different bar than the one registered.")
+    print("  Precondition (tools/camp_detect): enemy turret d²≤64 of our core "
+          "sustained ≥100 rnds AND our belt cut inside that span. Cells where "
+          "it never fires are UNINFORMATIVE BY PRECONDITION — a result, not a "
+          "pass. Unconditional pins shown in brackets for context only.")
+    from camp_detect import scan as camp_scan
+    camps = camp_scan(corpus, files)
     try:
         from bank_trace import bank_series, longest_pin
     except Exception as e:                                   # pragma: no cover
@@ -217,19 +218,28 @@ def main() -> int:
     arch = Path(args.archive)
     for arm in sorted(fire):
         for opp in opps:
-            runs = []
+            cond, uncond, nfired = [], [], 0
             for r in by_arm_opp.get((arm, opp), []):
                 p = arch / r["file"]
                 if not p.exists():
                     continue
-                s = bank_series(p)
-                run, start = longest_pin(s[int(r["side"])], 12)
-                runs.append((run, start))
-            if runs:
-                worst = max(runs)
-                flag = "⛔ PINNED" if worst[0] >= 50 else "ok"
-                print(f"  {arm} {opp[:18].ljust(18)} longest {worst[0]:4d} rnds "
-                      f"(from r{worst[1]}) over {len(runs)} games -> {flag}")
+                run, _start = longest_pin(bank_series(p)[int(r["side"])], 12)
+                uncond.append(run)
+                if camps.get(r["file"], {}).get("fired"):
+                    nfired += 1
+                    cond.append(run)
+            if not uncond:
+                continue
+            if nfired == 0:
+                print(f"  {arm} {opp[:18].ljust(18)} UNINFORMATIVE BY "
+                      f"PRECONDITION — 0/{len(uncond)} games had a chronic camp "
+                      f"+ belt cut  [uncond longest {max(uncond)}]")
+            else:
+                worst = max(cond)
+                flag = "⛔ PINNED" if worst >= 50 else "not pinned"
+                print(f"  {arm} {opp[:18].ljust(18)} {nfired}/{len(uncond)} games "
+                      f"met the precondition; longest pin among them {worst} "
+                      f"rnds -> {flag}  [uncond {max(uncond)}]")
     return 0
 
 
