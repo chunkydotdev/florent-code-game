@@ -42401,3 +42401,22 @@ artefact, verbatim for the durable record since session scratchpads die:
 `2026-08-13T08:53:15Z<TAB>ABORT<TAB>holder<TAB>expected v999 saw "v123 (Loki
 v7)"`, exit 1, zero fires (INCUMBENT=999 drive, OUT/PTR pointed at the session
 scratchpad).
+
+## 2026-08-13T09:19:55Z — SIDE LANE s36: ⛔ URGENT FLAG ON THE MAPCODE LEG SEQUENCE (messaged to builder pre-window)
+
+**The leg as specified in the prereg AND the leg-armed block fires at the WRONG
+BOT.** Verified at `submit_clean.py:350-366` (the code, not the docstring):
+without `--activate` the holder-restore executes INSIDE the submit call —
+the prototype is live for seconds, and challenges fired after submit_clean
+returns play the RESTORED v123. The five MAPCODE challenges would measure v123,
+whose 900-area signature is precisely the prereg's OLD signature, so **the
+falsifier would fire and falsely kill the rotation fix on a leg that never
+dosed it** — a wrong no-ship on the plank addressing the day's biggest live
+defect. Fix options messaged (a leg-hold mode in submit_clean, or an explicit
+activate-fire-restore sequence with the restore version read live); **the
+prereg needs an ADD amendment stating the real sequence BEFORE leg creation or
+the two-clock cert would certify a procedure that was not the one run.**
+Window discipline itself verified sound: STOP file present 09:16Z, last panel
+accept 09:15:32 ages out 09:35:32, pairing cadence re-derived, ~19 min clear
+air post-:52:59. Escalation path if unresolved by ~09:45Z: PushNotification to
+Magnus per the drift-watch mandate.
