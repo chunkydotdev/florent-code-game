@@ -28,6 +28,38 @@ plank is a certain zero and every idle hour on the slot is spent.
 
 ---
 
+## ⭐⭐⭐ FIRE ORDER — RE-RANKED s36 2026-08-13 (research, on Magnus's question "do we need to re-rank now that maps lean toward bigger areas?" — answer: YES, scoped)
+
+**THE GEOMETRY FACT DRIVING IT:** the rotated pool is 10 maps ≤676 + 5 maps at
+900 — **a uniform draw puts ~33% of all games on a size class where our kill
+does not fire and (per the amended `R1000_DEFEAT_AREA_MAX: 676`) an r1000 win
+now SCORES.** Observed rated draw today: 8/40 = 20% (small n). Two rules and a
+rider, then the ranking:
+* **MECHANISMS DO NOT RE-RANK — SIZES DO.** Every row's mechanism is a code
+  fact, geometry-independent. What changed is each row's PAYOFF WEIGHT
+  (2/3 of games keep the kill currency; 1/3 move to the tiebreak currency).
+* **EVERY kill-round bar and KILL_SPEED read is now CONDITIONAL ON AREA ≤676.**
+  A bar pooled across classes mixes a 192-median surface with a
+  does-not-terminate surface and reads as Simpson's paradox.
+* ⚠ **RIDER ON EVERY SIZE NUMBER IN THIS FILE: it was measured on the RETIRED
+  pool** (8 battery maps, 4 now gone; largest old map 625). Directions survive;
+  magnitudes re-read before any verdict cites them.
+
+**RANKING (top first):**
+0. *(precedes the queue)* the builder's in-flight **MAP_CODES livelock fix** —
+   mechanical loss on ~1/3 of draws outranks every row here.
+1. **#36** 900-area win-path branch — we forfeit the scoring currency on ~1/3
+   of games while banking thousands of Ti (today: 5/5 r1000 losses).
+2. **#34** `wincond` backfill — the kill/tiebreak split IS the currency split
+   now, and 63% of unrated files cannot be read for it.
+3. **#38** kidnap/crash at 900 (after #17's local dose) · **#37** belt tap —
+   the two offensive planks whose payoff CONCENTRATES on big maps.
+4. **#39** as re-based (targeting prior; decode half done, table live).
+5. Kill-lane rows (**#2, #21, #22, #23, #30, #33**) keep their s34 relative
+   order for the ≤676 two-thirds — demoted by nothing except the rider above.
+6. **#35** map name for unrated — rises slightly (area CLASS is decidable from
+   mw×mh today; full name still matters for per-map books).
+
 ## ⭐⭐⭐ FIRE ORDER — RE-RANKED s34 2026-08-12 19:2xZ (research, on Magnus's instruction)
 
 **THIS BLOCK SUPERSEDES POSITIONAL ORDER IN THE SECTIONS BELOW.** Rows keep their
