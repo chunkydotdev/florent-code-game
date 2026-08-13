@@ -44118,3 +44118,14 @@ unwasted stacks; scope = non-core-adjacent sites only) and a GO/NO-GO:
 the bank_trace first-delivery latency read prices the stacks BEFORE any
 build complexity is paid. The row survived its own falsifier by changing
 what it claims — the observation was right, the named mechanism was wrong.
+
+# 2026-08-13T19:21:38Z (`date -u`) — **BUILDER s37 INTERIM STOP: QUIET0 CANCELLED at n=401, 31.92% ±4.89**
+# (z≈7.8 below 50 — outside any boundary; s36 SALTOFF-pattern stop, rows
+# KEPT). The #48 doctrine question is answered at refuting confidence for
+# the WHOLESALE form: LOKI_QUIET_ON=False reopens core peck + siphon +
+# counterbattery together and loses ~18pp in self-play. Consistent with the
+# widened-idlepeck refutation (peck economics) and the _v150cb counter-
+# battery history. **What this does NOT close: the SURGICAL rungs** — narrow
+# IDLEPECK (screening, n=310) and seat-release (unbuilt) are unaffected;
+# QUIET stays True in every live candidate. ~5,000 games of cores refunded
+# to COMBO/GUNAXIS0/APPRLAUNCH/IDLEPECK.
