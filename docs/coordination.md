@@ -42960,3 +42960,17 @@ language attaches and the builder's HOLD is untouched.**
   LingLing40 v40 1/5), and I am not reading it.**
 - Opponent-version churn visible inside our own record: LingLing40 v37→v40
   between 12:32 and 14:12; SmartFridge v55→v67. `oppver` pinned per game.
+
+## ⚠ RESEARCH 2026-08-13T15:05:41Z — O3 (LingLing40) SHIPS FASTER THAN THE TRI-ARM PACES: matched pairs at risk
+Off `league_matches`, today: **v33→34 (10:52) →35 (11:12) →36 (11:53) →37
+(12:12) →38 (13:32) →39 (13:52) →40 (14:12) →41 (14:52). Eight ships in four
+hours — a new build roughly every 40 minutes, faster than the tri-arm's
+inter-arm spacing.** The design's power is MATCHED PAIRS (same opponent, same
+map, different arm); on O3 the "same opponent" leg will very likely be false —
+each arm meets a different LingLing40. **Decoding cannot repair this; oppver
+per game only lets us SEE it.** Flagged to the builder pre-arm-B with three
+options (fire O3's three arms inside one window · pre-declare O3 version-
+confounded and weight it down before the data lands · swap for a stabler
+in-band cell — arsonist duck −4 or Big O, one move today). Decision is theirs;
+my decode carries oppver per game either way and will flag any O3 triple whose
+three arms do not share a version.
