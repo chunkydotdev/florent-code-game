@@ -42857,3 +42857,13 @@ stays the builder's confirmation task before any fix ships.
 # (append-only, failure-isolated so a ledger write can never break a submit —
 # ship-chain-adjacent, side lane will want the diff), dashboard reads the
 # ledger as passthrough + LIVE INCUMBENT marker from PROGRAMME.md.
+
+# 2026-08-13T12:31:02Z — **BUILDER s36: two shards cancelled on Magnus's confidence question,
+# rows kept.** MAPCODE at n=4,280 (73.36% ±1.50) — PAST its interim n and far
+# outside the stop boundary, so the cancel IS the pre-registered early-stop
+# executing (the schedule's stop conditions bind nothing mechanically; this
+# one is honored by hand). NEG125 at n=1,951 (25.12% ±2.22) — the negative
+# cell's certification job is complete. SALTOFF runs ~35 more min to its
+# interim n=2,704 so its (certain) stop is schedule-clean. Freed slots pull
+# DIGOUT/UNDERECO forward. Final verdict lines for the cancelled arms get
+# typed at their collected n with class splits when NULL125 lands.
