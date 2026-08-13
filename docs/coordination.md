@@ -40636,3 +40636,59 @@ vs −0.52). And it does **not** explain the drawdown: **−8.01 against a
 peak-to-current −68**, where research's simulation puts a ≥72-point drawdown at
 **p = 0.162** for a true break-even bot. **~12% of a decline that is itself
 consistent with noise. A record-integrity finding, not a performance one.**
+
+# ============================================================================
+# 2026-08-13T04:45:54Z (`date -u`) — ⭐⭐ **BUILDER s35: SHIP. `v122` = `_v178salt` IS LIVE.**
+# ============================================================================
+
+**MAGNUS'S DIRECT CALL, verbatim:** *"put the salt as out live slot i want to see
+it on some ladder games."* Prereg committed BEFORE activation at `c8e3347`
+(06:45:17 +0200 = 04:45:17Z); submit landed 04:45:54Z. **Two-clock standard met
+by 37 seconds** — thin, and recorded as thin.
+
+**HOLDER: before=v116 (`_v169launchlate160`) after=v122 (`_v178salt`).**
+Verified on the `Active bot:` line at 04:46:02Z, **never on the exit code.**
+Manifest was 4 `.py` files, zero docs.
+
+**WHY IT IS A LOW-RISK SHIP DESPITE BEING UNREPLICATED:** `_v178salt` is the
+outgoing holder **plus one flag-gated block** — `diff -r --exclude=__pycache__`
+reads **229 lines ADDED, 0 REMOVED**. `LOKI_SALT_ON = False` restores v116
+behaviour. This is not a new bot.
+
+**THE NUMBER:** SALT **61.00%** on n=5,408, against `SHIPGATENULL` **49.56%** and
+`NEG169` **40.53%** on the SAME contrast, same night, same n. z=+16.2; the 62-arm
+multiplicity warning does not reach a z of 16. Kills **3,116 vs 1,936**.
+
+**⛔ FOUR THINGS AGAINST IT, ALL STATED IN THE PREREG BEFORE FIRING:**
+1. A **live 25-game leg killed this plank yesterday** on tempo (p=0.008), and
+   live is `FIXTURE_OF_RECORD`. The local number does not settle it.
+2. **SALT's own prereg predicted it would LOSE.** Off-prediction ⇒ labelled.
+3. **`SALTREP` has not replicated yet** (running, disjoint seeds 200000+). The
+   in-table precedent is `GUNBLANK` 52.11% vs `GUNBLANKREP` 50.30%.
+4. **Median kill round 210→218 is UNRESOLVED.** It is conditioned on a kill
+   happening and the arm killed 1,180 more times, so the marginal late kills drag
+   the median on their own. **This is the most likely way the ship is wrong and
+   the unconditional computation is OWED, not done.**
+
+**STOP-LOSS, pre-registered:** roll back to v116 at **>=8 rated matches if net
+Elo <= -21**; roll back IMMEDIATELY at any n on a crash/timeout regression (the
+salt block adds a path inside `_raid_act`; that is its characteristic failure).
+
+**⚠ SHIPPED INTO A DRAWDOWN, stated plainly:** 1685 (21:15Z) → **1622** (04:41Z).
+**Direction it cuts: that decline happened UNDER v116**, so the incumbent is the
+bot that was bleeding. Not offered as justification — only so nobody later reads
+the ship as the cause of a decline that predates it.
+
+**WHAT THIS LEG MAY NOT CLAIM:** at n in the low tens of matches, nothing here
+confirms 61%. The slot's job is to catch a disaster fast and to give Magnus
+replays to watch. **Confirmation is `SALTREP` + a live unrated panel.**
+
+**LOCAL:** corefill relaunched 04:36:04Z (pid 880) after the 01:52:15Z clean
+deadline exit left cores idle ~70 min. Running `SALTREP`, `SALTIDLE2`.
+
+**ACKS:** side lane's `cores_idle` parser divergence — **builder-owned, accepted,
+both halves (admission gate AND the superseded positional order).** The
+`leak_audit.py` spec — accepted, queued, and I note its selftest cell is
+pre-named on real data, which is the right shape. Research's sentinel-cannot-
+`rotate()` finding — **that is the strongest thing on the board after SALT** and
+it wants the engine probe its own row demands before anyone builds on it.
