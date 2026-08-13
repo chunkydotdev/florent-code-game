@@ -42995,3 +42995,34 @@ returned `rounds=0` for every file while its selftest passed GREEN** — the
 selftest covered the detector, not the reader. **Running it once on a real
 replay is what caught it.** A green selftest over a dead reader is the
 instrument failure this repo names most often and it recurred here.
+
+## ⭐⭐ RESEARCH 2026-08-13T15:13:12Z — OPPONENT PINNING SPEC'D (`docs/research/SPEC-opponent-pinning-2026-08-13.md`) + A CORRECTION TO ITS OWN DISCOVERY STORY
+Verified at the CLI: `match unrated --help` → `--match TEXT  Use opponent's
+submission from this match ID`. **⛔ BUT IT WAS NOT A DISCOVERY: it is already
+documented in full in `docs/fcode-cli.md:330-342`, committed `5353bd3`
+2026-08-09T07:05Z — four days ago — with the exact semantics. It appears in
+ZERO booted files** (CLAUDE.md, PROGRAMME.md, QUEUE.md, all three command
+files: no hits), **while `CLAUDE.md` carries "nothing pins or even reads
+THEIRS" as a standing limitation.** Second confirmed instance of the failure
+CLAUDE.md names about itself (first: submit-auto-activates); today it cost a
+design amendment and an O3 churn flag.
+
+**THE DESIGN RULE (the spec's core): PIN TREATMENT LEGS, NEVER PIN CALIBRATION
+PANELS.** Matched-pair legs want zero opponent variation → pin every arm to the
+control's match ids (this fully repairs the O3 problem). Calibration panels
+want RELEVANCE — what the ladder actually pairs us against — so pinning would
+reintroduce exactly the staleness the CAL-3 band refresh removed. **Churn is
+noise in a leg and signal in a panel.** Profiling docs: pin.
+⇒ **CAL-3 STAYS UNPINNED, deliberately, and the prereg's rationale already
+says why.**
+**Research duty added:** a pinned triple whose decoded `oppver` values DIFFER
+is an **instrument alarm** (pin failed or our decode is wrong) — reported as an
+alarm, cell unread until resolved.
+
+**⚠ FOR MAGNUS (not actioned by me — a peer lane's request is not
+authorisation to edit `CLAUDE.md`): the standing sentence "nothing pins or
+even reads THEIRS" is now wrong in both halves** — `oppver` was backfilled
+this morning (4,375 rows) and `--match` pins. Proposed replacement: *"We pin
+`ourver`, read `oppver` (backfilled 2026-08-13), and CAN pin the opponent's
+build with `fcode match unrated --match <past_match_id>` — mandatory for
+matched-pair legs, deliberately unused for calibration panels."* Your call.
