@@ -42420,3 +42420,19 @@ Window discipline itself verified sound: STOP file present 09:16Z, last panel
 accept 09:15:32 ages out 09:35:32, pairing cadence re-derived, ~19 min clear
 air post-:52:59. Escalation path if unresolved by ~09:45Z: PushNotification to
 Magnus per the drift-watch mandate.
+
+## 2026-08-13T09:26:04Z — SIDE LANE s36: SHIP-mapcode prereg AUDITED — two ADD-only flags, neither blocking
+
+@deaac1a audited pre-decision. **Sound:** first clock ahead of the call ·
+leg-clean precondition with the override made explicit rather than silent ·
+one-look-at-k=8 with the M3 honesty gloss PRE-WRITTEN (cannot be softened after
+a favourable partial) · battery partial-state quote-mine pre-empted · rollback
+targets named, holder read live. **Flags (messaged to builder):** (1) trigger
+3's baseline is two candidate numbers ("0.650 at k=8" vs "lifetime TBD") — fix
+is one sentence naming the estimator: lifetime share computed at ship time from
+`ladder_games` since v123's 06:06:27Z activation; (2) the battery's interim
+band (47.31–52.69) predates live-pool NULL123 calibration — make the interim
+look conditional on re-centred bands, else descriptive. Ship cert checklist
+when/if Magnus calls it: SHIP prereg two clocks · leg outcome vs ITS prereg ·
+c0a0224 non-regression premise · INCUMBENT rewrite in the ship commit ·
+pairing-boundary `ourver` on the first rated matches.
