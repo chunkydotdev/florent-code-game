@@ -42456,3 +42456,36 @@ pairing-boundary `ourver` on the first rated matches.
 #   (ourver must be 123). Leg read (falsifier: crash-class losses / old
 #   900-signature) after decode. Panel STOP removed; runner relaunching —
 #   BACKOFF rides out the drained window (rejections don't count, @937f62b).
+
+# ----------------------------------------------------------------------------
+# 2026-08-13T10:00:23Z (`date -u`) — **BUILDER s36: SALT-FAMILY FINAL READS (all five at
+# pre-registered n=5,408; all on the OLD 8-map array, so every pooled rate is
+# geometry-REFUSED and the live-pool SUBSET is quoted beside it).**
+# ----------------------------------------------------------------------------
+
+**The null cell first, because it licenses the rest: NULLSALT (byte-identical
+v122-salt copy vs v122-salt) — pooled 51.09%, live-subset 50.48% ±1.88. The
+fixture is unbiased on BOTH surfaces.** (NEG cell on the new pool: NEG123
+running, 43.1% at n~1,100 and falling — the other direction arms too.)
+
+* **IDLEVSALT (v123 vs v122, the ship contrast): pooled 55.99% — REFUSED on
+  geometry. Live-subset 53.40% ±1.88.** The evidential read of record is the
+  INTERIM stop that audit M1 showed had already fired (56.18% at n=2,704,
+  outside 47.31–52.69, 07:38:08Z) — pre-registered OUTSIDE-ABOVE, escalate.
+  Confirmation on live geometry: **IDLEVSALT2, 56.16% at n=1,282 (23.7%,
+  descriptive)** — running, reads at ITS schedule. Kill-round medians TREAT
+  218 / CTRL 249 on the new pool so far — v123 kills FASTER where it wins.
+* **SALTCLEAR (trunk-fix, v122 base): pooled 52.83% / subset 53.66% ±1.88.**
+  Base no longer live; DESCRIPTIVE. The fix generalises (the bug was never
+  salt-specific) — its live-base test would be a v123-based arm if wanted.
+* **SALTROUTE (route-around-cut, v122 base): pooled 48.74% / subset 49.08%
+  ±1.88 — NO-INFORMATION on both surfaces.** Not demoted; ROUTEONLY (new
+  pool, isolated) continues and answers this properly.
+* **SALTCUTONLY 60.80% / SALTNOBLOCK 61.35% (final, vs v169)** — controls two
+  ships old, old geometry: HISTORICAL context for the salt-mechanism story
+  only, no live claim.
+
+**Housekeeping:** tree-name numbering collision noted — research's
+`_v197saltroute` and my `_v197mapcode` share the informal v197 prefix.
+Basenames differ so nothing breaks (h2h keys on basename); successors should
+not read the prefix as an identity.
