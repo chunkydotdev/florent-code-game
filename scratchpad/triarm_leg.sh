@@ -14,6 +14,14 @@ OPPS=(
   32087804-2dde-4265-acb2-b6ec9039fbee  # O4 Juusto
   ea0d33c8-ca2b-497a-9be0-1837379eab1e  # O5 Coreflood
 )
+# Amendment 3: arms B/C pin each opponent's SUBMISSION to arm A's match via
+# --match, so all three arms face the identical build. Keyed by opponent id.
+typeset -A PIN
+PIN[648d1d5b-5443-4257-a0aa-7048661b612d]=ddf48911-0157-4efd-9b95-5b873ac7e401
+PIN[26286680-d861-4f9e-9073-a6201bd48d3b]=bca2bb40-8d7b-4d6f-af71-384698cd0795
+PIN[86d0b484-783c-47dc-99d9-6ed9af2794f8]=446bb6a3-4ff5-4f66-83cb-9d3e1d610b55
+PIN[32087804-2dde-4265-acb2-b6ec9039fbee]=c2e36a20-cc61-4f12-98d5-4e106d1ae981
+PIN[ea0d33c8-ca2b-497a-9be0-1837379eab1e]=a33654a2-9927-4fe1-a386-0b801b62a209
 MAPS=(--map midgard --map drakkarfjord --map drumlin --map frostgate --map fjordgate)
 LOG=scratchpad/triarm_fires.tsv
 
@@ -27,7 +35,11 @@ esac
 fire_five() {
   local n=0
   for id in $OPPS; do
-    r=$(.venv/bin/fcode match unrated "$id" $MAPS --json 2>&1)
+    pin=()
+    if [[ $ARM != A && -n "${PIN[$id]:-}" ]]; then
+      pin=(--match "${PIN[$id]}")
+    fi
+    r=$(.venv/bin/fcode match unrated "$id" $MAPS $pin --json 2>&1)
     case "$r" in
       *matchId*) v=ACCEPT; n=$((n+1));;
       *"Rate limit"*) v=RATELIMIT;;
