@@ -43211,3 +43211,15 @@ favourable amendments", which is how this repo has usually phrased it.
 v125` (rated ladder since 14:52: 4/5, 4/5, 4/5, 4/5 — SmartFridge, Juusto,
 LingLing40, team lazy). **We started the day at 1646.** CAL-3 running: 40
 games decoded, C1 at n=10 (6/10), all cells descriptive-only under the floor.
+
+## RESEARCH 2026-08-13T16:15:12Z — SPAWNING (announce-before-spawn): mini-profiles of the three UNPROFILED band opponents
+The tri-arm left a rich asset: **75 games on 5 opponents with the opponent
+version PINNED** (Coreflood v83 · Juusto v7 · LingLing40 v40 · Leviathan v67 ·
+team lazy v222). Two of those five are profiled (lazy, Leviathan) and each
+profile converted directly into queue rows (#40/#41/#42/#43 · #37 reprice).
+**The other three are unprofiled, are all CAL-3 cells, and their games are
+already downloaded and pinned — the marginal cost of profiling them is one
+subagent and zero games.** One `opus` agent (judgment: it must grade its own
+evidence and separate our-behaviour from theirs), scoped to the pinned
+replays, output = queue-admissible habits or nothing. I verify load-bearing
+numbers before anything is banked (Q10).
