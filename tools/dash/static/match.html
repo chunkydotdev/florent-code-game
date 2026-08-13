@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Match — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+  .tagchip { display:inline-block; font-family:var(--mono); font-size:10.5px;
+             font-weight:700; padding:2px 7px; border-radius:5px; letter-spacing:.04em; }
+  .t-cal   { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); }
+  .t-leg   { background: color-mix(in srgb, var(--bad) 18%, transparent);    color: var(--bad); }
+  .t-other { background: var(--panel2); color: var(--dim); }
+  .t-alt   { background: color-mix(in srgb, var(--blind) 18%, transparent);  color: var(--blind); }
+  td.num { font-family: var(--mono); text-align: right; white-space: nowrap; }
+  .versus { font-size: 20px; margin: 0 0 4px; }
+  .versus .vs { font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/shards">Shards</a>
+    <a href="/matches" class="on">Matches</a>
+    <a href="/game">Game</a>
+    <a href="/lingo">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock" id="clock">…</span>
+</header>
+
+<main>
+  <p class="lede" style="margin-bottom:6px"><a href="/matches">&larr; all matches</a></p>
+  <h1 id="title" class="versus">…</h1>
+  <div class="count" id="read">…</div>
+
+  <div id="banner"></div>
+  <div class="grid" id="cards"></div>
+  <div id="origin"></div>
+  <div id="body"></div>
+
+  <footer>
+    <a href="/matches">&larr; all matches</a> · <a href="/">Cores overview</a> ·
+    Every value on this page is a column in a keeper file, named beside it. The only
+    arithmetic is the per-match sums and the one median below the game table, over
+    the rows shown directly above them — no rate, no band, no pooling with any other
+    match.
+  </footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s === null || s === undefined ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const ID = new URLSearchParams(location.search).get('id') || '';
+
+function card(k, v, sub) {
+  return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div>`
+       + (sub ? `<div class="sub">${sub}</div>` : '') + '</div>';
+}
+function typeBadge(t) {
+  if (!t) return '<span class="badge b-blind">TYPE UNKNOWN</span>';
+  const cls = {ladder:'b-ok', unrated:'b-warn', test:'b-dim'}[t] || 'b-dim';
+  return `<span class="badge ${cls}">${esc(t.toUpperCase())}</span>`;
+}
+function resultBadge(r) {
+  if (r === 'W') return '<span class="badge b-ok">W</span>';
+  if (r === 'L') return '<span class="badge b-bad">L</span>';
+  if (r === 'void') return '<span class="badge b-bad">ERROR</span>';
+  return '<span class="badge b-blind">UNKNOWN</span>';
+}
+function classBadge(c) {
+  if (!c) return '<span class="vs">—</span>';
+  const cls = {CQ:'b-ok', STD:'b-dim', GRAND:'b-warn', UNK:'b-blind'}[c] || 'b-dim';
+  const why = {CQ:'area ≤ 260', STD:'area 261–676', GRAND:'area > 676',
+               UNK:'no maps/<name>.map26 on this box, so the class cannot be read'}[c] || '';
+  return `<span class="badge ${cls}" title="${esc(why)} — tools/overnight_read.map_area_class, the one implementation">${esc(c)}</span>`;
+}
+function tagChip(o) {
+  if (!o || !o.tag) return '<span class="vs">— ladder pairing, nobody fires these</span>';
+  const cls = /^cal-/.test(o.tag) ? 't-cal' : /^leg/.test(o.tag) ? 't-leg'
+            : /account|acct/.test(o.tag) ? 't-alt' : 't-other';
+  return `<span class="tagchip ${cls}">${esc(o.tag)}</span>`;
+}
+
+function render(d) {
+  $('#clock').textContent = d.served_at || '';
+  if (!d.exists) {
+    $('#title').innerHTML = `<span class="mono">${esc(ID.slice(0, 8) || '(no id)')}</span>`;
+    $('#read').textContent = d.served_at || '';
+    $('#banner').innerHTML = `<div class="note warn"><strong>No such match on this box.</strong>
+      ${esc(d.why)}. That is a statement about the local corpus, not about the platform:
+      a match fired from another machine leaves nothing here to read.</div>`;
+    $('#cards').innerHTML = ''; $('#origin').innerHTML = ''; $('#body').innerHTML = '';
+    return;
+  }
+  const m = d.match;
+
+  // A null version must not render as a bare "v" — an empty version string looks
+  // like a version and this page is read to answer "which build played this".
+  const ver = v => (v === null || v === undefined || v === '')
+    ? '<span class="badge b-dim" title="no surface carries a version for this match yet">version unknown</span>'
+    : `<span class="vs">v${esc(v)}</span>`;
+  $('#title').innerHTML =
+    `${esc(m.our_name || 'OpenSverige')} ${ver(m.our_ver)}`
+    + ` <span class="vs">vs</span> `
+    + (m.opp_name ? `${esc(m.opp_name)} ${ver(m.opp_ver)}`
+                  : `<span class="badge b-dim">opponent not archived</span>`);
+  $('#read').innerHTML = `<span class="mono">${esc(m.id)}</span> · read ${esc(d.served_at)}`
+    + ` · ${esc(m.created_at || 'no stamp')} `
+    + `<span class="vs">(${m.created_is_fired ? 'fired' : m.created_is_completed ? 'completed' : 'created'})</span>`;
+
+  // ---- banners: every condition that changes what the numbers below mean ----
+  const b = [];
+  if (m.result === 'void') {
+    b.push(`<div class="note warn"><strong>${esc(m.status)} — this match was never played.</strong>
+      ${esc(m.status_note)}. It carries <strong>no score on any surface</strong>, so this page
+      shows no score rather than a 0-0 or a 0-5. Recorded in <code>${esc(m.status_source)}</code>.</div>`);
+  } else if (m.status === 'no score yet') {
+    b.push(`<div class="note"><strong>No score yet.</strong> ${esc(m.status_note)}.
+      Source of that judgement: ${esc(m.status_source)}.</div>`);
+  }
+  if (d.cwd && !d.cwd.ok)
+    b.push(`<div class="note warn"><strong>AREA CLASS IS BLIND.</strong> ${esc(d.cwd.why)}</div>`);
+  if (m.origin && m.origin.tag && /acct|account/.test(m.origin.tag))
+    b.push(`<div class="note warn"><strong>Not our account.</strong> ${esc(m.origin.label)}.
+      <span class="sub-mono" style="display:block">${esc(m.origin.cite || '')}</span></div>`);
+  $('#banner').innerHTML = b.join('');
+
+  // ---- cards ---------------------------------------------------------------
+  const c = [];
+  c.push(card('Type', typeBadge(m.type), esc(m.type_source)));
+  c.push(card('Score',
+    (m.score_us === null || m.score_them === null)
+      ? (m.result === 'void' ? '<span class="badge b-bad">ERROR</span>'
+                             : '<span class="badge b-dim">none yet</span>')
+      : `${esc(m.score_us)}-${esc(m.score_them)}`,
+    esc(m.score_source || m.status_note || '')));
+  c.push(card('Result', resultBadge(m.result), esc(m.result_why || '')));
+  if (m.elo_delta === null || m.elo_delta === undefined) {
+    c.push(card('Elo', '<span class="badge b-dim">not rated</span>',
+      'unrated matches move no rating — an absence, not a zero'));
+  } else {
+    c.push(card('Elo delta',
+      `<span class="badge ${m.elo_delta >= 0 ? 'b-ok' : 'b-bad'}" style="font-size:18px">${m.elo_delta >= 0 ? '+' : ''}${m.elo_delta.toFixed(2)}</span>`,
+      esc(m.elo_source)));
+    c.push(card('Rating before',
+      m.rating_before === null ? '—' : m.rating_before.toFixed(1),
+      'opponent ' + (m.opp_rating_before === null || m.opp_rating_before === undefined
+        ? '—' : m.opp_rating_before.toFixed(1))));
+  }
+  c.push(card('Our seat', esc((m.our_side || '?').toUpperCase()),
+    esc(m.our_side_source || 'team id vs the row\'s teamAId/teamBId')));
+  $('#cards').innerHTML = c.join('');
+
+  // ---- origin --------------------------------------------------------------
+  const o = m.origin || {};
+  $('#origin').innerHTML = `<div class="what"><div class="k">Where this match came from</div>
+    <p class="headline">${tagChip(o)} ${esc(o.label || '')}</p>
+    <table class="kv">
+      <tr><td>fired at</td><td class="mono">${esc(o.fired_at) || '<span class="vs">—</span>'}</td></tr>
+      <tr><td>panel cell</td><td class="mono">${esc(o.cell) || '<span class="vs">—</span>'}</td></tr>
+      <tr><td>log</td><td class="mono">${esc(o.source) || '<span class="vs">—</span>'}</td></tr>
+      <tr><td>platform status</td><td class="mono">${esc(m.status)}${m.status_note ? ' <span class="vs">— ' + esc(m.status_note) + '</span>' : ''}</td></tr>
+    </table>
+    ${o.cite ? `<p class="lede" style="font-size:12.5px;margin:10px 0 0">${esc(o.cite)}</p>` : ''}
+    ${o.ours_fired ? '' : `<p class="lede" style="font-size:12.5px;margin:10px 0 0">
+      A match is never tagged as fired by us without its id appearing in a fire log.</p>`}
+  </div>`;
+
+  // ---- games + aggregates ---------------------------------------------------
+  const parts = [];
+  if (!d.games || d.games.length === 0) {
+    parts.push(`<h2>Games</h2><div class="note warn"><strong>${esc(d.games_note)}</strong>
+      <br>No aggregate is shown, because ${esc(d.aggregates_note || 'there is nothing to sum')}.
+      An empty table of zeros here would be indistinguishable from a real 0.</div>`);
+  } else {
+    const gs = d.games_source || {};
+    parts.push(`<h2>Games <span class="vs" style="font-size:13px">${esc(d.games.length)} row(s) from <code>${esc(gs.file)}</code></span></h2>`);
+    if (gs.missing)
+      parts.push(`<div class="note warn"><strong>This surface carries ${esc(gs.has)} and nothing else.</strong>
+        ${esc(gs.missing)}</div>`);
+    parts.push(`<div class="scroll"><table><thead><tr>
+        <th class="mono">#</th><th>Map</th><th>Area class</th><th>Winner</th>
+        <th>Win condition</th><th class="mono">Rounds</th></tr></thead><tbody>`
+      + d.games.map(g => `<tr>
+          <td class="mono" title="game number source: ${esc(g.n_source)}">${g.n === null
+              ? esc(g.n_fallback) + '<span class="vs">?</span><div class="sub-mono">' + esc(g.n_source) + '</div>'
+              : esc(g.n)}</td>
+          <td>${esc(g.map) || '<span class="vs">not on this surface</span>'}</td>
+          <td>${classBadge(g.area_class)}</td>
+          <td>${g.winner === 'us' ? '<span class="badge b-ok">us</span>'
+                 : g.winner === 'them' ? '<span class="badge b-bad">them</span>'
+                 : '<span class="badge b-blind">unknown</span>'}
+              <div class="sub-mono" title="${esc(g.winner_source)}">${esc(g.winner_seat ? 'seat ' + g.winner_seat : '')}</div></td>
+          <td class="mono">${esc(g.cond) || '<span class="vs">not on this surface</span>'}</td>
+          <td class="num">${g.turns === null ? '<span class="vs">—</span>'
+              : (g.kill_round !== null
+                  ? `<strong>${esc(g.kill_round)}</strong><div class="sub-mono">kill round</div>`
+                  : `${esc(g.turns)}<div class="sub-mono" title="the core survived, so this is not a kill round">rounds played</div>`)}</td>
+        </tr>`).join('') + '</tbody></table></div>');
+
+    const a = d.aggregates;
+    const bits = [];
+    bits.push(`<tr><td>games shown</td><td class="mono">${esc(a.n_games)}</td></tr>`);
+    bits.push(`<tr><td>won / lost / unknown</td><td class="mono">${esc(a.won)} / ${esc(a.lost)} / ${esc(a.winner_unknown)}</td></tr>`);
+    bits.push(a.kills === null
+      ? `<tr><td>kills vs tiebreaks</td><td><span class="badge b-blind">NO WIN-CONDITION COLUMN</span>
+           <span class="vs">on this surface — not zero kills</span></td></tr>`
+      : `<tr><td>kills vs tiebreaks</td><td class="mono">${esc(a.kills)} core kills · ${esc(a.tiebreaks)} tiebreaks`
+        + (a.other_cond ? ` · ${esc(a.other_cond)} other` : '') + `</td></tr>`);
+    bits.push(a.median_kill_round === null
+      ? `<tr><td>median kill round</td><td><span class="badge b-dim">no game here ended on a core kill</span></td></tr>`
+      : `<tr><td>median kill round</td><td class="mono"><strong>${esc(a.median_kill_round)}</strong>
+           <span class="vs">over the ${esc(a.n_kill_rounds)} game(s) that ended on a core kill</span></td></tr>`);
+    bits.push(a.cond_counts
+      ? `<tr><td>win conditions</td><td class="mono">${Object.entries(a.cond_counts).map(([k, v]) => `${esc(v)}× ${esc(k)}`).join(' · ')}</td></tr>`
+      : '');
+    bits.push(a.maps_by_class
+      ? `<tr><td>maps by class</td><td>${Object.entries(a.maps_by_class).map(([k, v]) => `${classBadge(k)} <span class="mono">${esc(v)}</span>`).join(' ')}</td></tr>`
+      : `<tr><td>maps by class</td><td><span class="badge b-blind">NO MAP COLUMN</span> <span class="vs">on this surface</span></td></tr>`);
+    parts.push(`<h2>This match, summed</h2>
+      <div class="scroll"><table class="kv" style="width:100%;padding:6px 10px">${bits.join('')}</table></div>
+      <p class="lede" style="font-size:12.5px;margin-top:8px">${esc(a.basis)}</p>`);
+  }
+
+  // ---- sources -------------------------------------------------------------
+  const S = d.sources || {};
+  const srows = ['league_matches', 'ladder_games', 'meta_join'].map(k => {
+    const v = S[k]; if (!v) return '';
+    return `<tr><td class="mono">${esc(v.path)}</td>
+      <td>${v.blind ? '<span class="badge b-blind">BLIND</span> ' + esc(v.blind)
+        : 'newest row ' + esc(v.newest_row_at || '—') + ' · file captured ' + esc(v.at)
+          + ' · ' + esc(v.n_matches) + ' matches'}</td>
+      <td>${esc(v.what)}</td></tr>`;
+  }).join('') + (S.fire_logs || []).map(l =>
+    `<tr><td class="mono">${esc(l.file.path)}</td>
+      <td>${l.blind ? '<span class="badge b-blind">BLIND</span> ' + esc(l.blind)
+        : esc(l.n_ids) + ' match ids · newest fire ' + esc(l.newest_fire_at || '—')}</td>
+      <td>${esc(l.what)}${l.void ? `<br><span class="sub-mono">VOID: ${esc(l.void.why)} — ${
+        l.void.citation && l.void.citation.found
+          ? 'cited at ' + esc(l.void.cite_file) + ':' + esc(l.void.citation.line)
+          : '<span class="badge b-blind">CITATION NOT FOUND</span>'}</span>` : ''}</td></tr>`).join('');
+  parts.push(`<h2>Where every number above came from</h2>
+    <div class="scroll"><table><thead><tr><th>File</th><th>Freshness</th><th>What it carries</th></tr></thead>
+    <tbody>${srows}</tbody></table></div>`);
+
+  $('#body').innerHTML = parts.join('');
+}
+
+async function tick() {
+  try {
+    const r = await fetch('/api/match?id=' + encodeURIComponent(ID), {cache: 'no-store'});
+    render(await r.json());
+  } catch (e) {
+    $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+  }
+}
+tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>

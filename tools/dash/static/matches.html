@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matches — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+<style>
+  /* Page-scoped so the shared stylesheet stays untouched. */
+  .tagchip { display:inline-block; font-family:var(--mono); font-size:10.5px;
+             font-weight:700; padding:2px 7px; border-radius:5px; letter-spacing:.04em; }
+  .t-cal   { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); }
+  .t-leg   { background: color-mix(in srgb, var(--bad) 18%, transparent);    color: var(--bad); }
+  .t-other { background: var(--panel2); color: var(--dim); }
+  .t-alt   { background: color-mix(in srgb, var(--blind) 18%, transparent);  color: var(--blind); }
+  td.num { font-family: var(--mono); text-align: right; white-space: nowrap; }
+  .scroll table { min-width: 900px; }
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/shards">Shards</a>
+    <a href="/matches" class="on">Matches</a>
+    <a href="/game">Game</a>
+    <a href="/lingo">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock" id="clock">…</span>
+</header>
+
+<main>
+  <h1>Match history</h1>
+  <p class="lede">Every match on our team account — the rated ladder and the
+     unrated games we fire ourselves, in one list. <strong>Click any row</strong> for
+     the per-game breakdown. The <strong>origin</strong> column says which of this
+     box's fire logs started an unrated match, and a match is never tagged as ours
+     without its id appearing in one.</p>
+
+  <!-- BOTH CLOCKS FOR EVERY SURFACE. The newest ROW's age and the FILE's mtime
+       answer different questions, and a feed that stalled shows only in the gap
+       between them. meta_join additionally lags the archiver's ~30 min cycle, so
+       it is labelled with that cadence rather than looking current. -->
+  <div class="count" id="src">…</div>
+  <div id="alarms"></div>
+
+  <div class="chips" id="chips"></div>
+  <!-- ⛔ THE FILTER CHIPS CAN ONLY FILTER WHAT IS LOADED, so a chip reading
+       "other operator 0" on a 100-row page while 639 exist would be a false zero
+       in the one place this page cannot afford one. Two fixes, both needed: the
+       chips say what they are counting, and the depth control below can actually
+       reach the older matches. -->
+  <div class="chips" id="depth"></div>
+  <input class="filter" id="q" type="search" placeholder="filter by opponent, match id, version, origin tag, cell name…" autocomplete="off">
+  <div class="count" id="count">…</div>
+
+  <div class="scroll"><table id="tbl">
+    <thead><tr>
+      <th>When <span class="th-note">(UTC)</span></th>
+      <th>Type</th>
+      <th>Opponent <span class="th-note">(their version)</span></th>
+      <th class="mono">Ours</th>
+      <th class="mono">Score</th>
+      <th>Result</th>
+      <th>Origin <span class="th-note">(who fired it)</span></th>
+      <th class="mono">Rating &amp; elo</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h2 id="alt-anchor">Other OpenSverige-named accounts</h2>
+  <div id="altnote"></div>
+  <div class="scroll"><table id="alt">
+    <thead><tr><th>When</th><th>Type</th><th>Account</th><th>Opponent</th>
+      <th class="mono">Score</th><th>Result</th><th>Tag</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h2>How to read this table</h2>
+  <div class="note">
+    <strong>Every value here is a column in a file the keeper already writes.</strong>
+    Scores, versions, ratings and elo deltas come from
+    <code>corpus/league_matches.tsv</code>; per-game map / win condition / turns from
+    <code>corpus/ladder_games.tsv</code>; unrated games from
+    <code>corpus/meta_join.tsv.gz</code>. <strong>Nothing on this page computes a win
+    rate</strong> — the tallies are counts of rows shown, never a rate, because the two
+    surfaces fail in opposite directions on exactly that question and pooled readouts
+    are <code>tools/panel_read.py</code>'s pre-registered job.
+    <code>tools/dash/match_diffcheck.py</code> re-reads the TSVs independently and
+    fails on any disagreement with what this page serves.
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>What you see</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge b-ok">LADDER</span></td>
+          <td>A rated ladder pairing. <strong>Nobody fires these</strong> — the platform pairs them on a clock — so they carry no origin tag. Only these have an elo delta.</td></tr>
+      <tr><td><span class="badge b-warn">UNRATED</span></td>
+          <td><code>fcode match unrated</code>: a real team's real bot, no rating at stake. The origin column says which lane fired it.</td></tr>
+      <tr><td><span class="tagchip t-cal">cal-1</span> <span class="tagchip t-cal">cal-2</span></td>
+          <td>Fired by the pinned calibration panel runners, from <code>scratchpad/panel_cal1_fires.tsv</code> / <code>panel_cal2_fires.tsv</code>. The sub-line is the panel <em>cell</em> that fired it.</td></tr>
+      <tr><td><span class="tagchip t-leg">leg (voided: platform error)</span></td>
+          <td>The MAPCODE leg. Its five matches errored in the platform runner, so they carry <strong>no score at all</strong> and render <span class="badge b-bad">ERROR</span> — never 0-5. The status is quoted from <code>docs/coordination.md</code> and this page re-greps that citation on every load.</td></tr>
+      <tr><td><span class="tagchip t-other">other operator</span></td>
+          <td>Unrated on our account and in <strong>none</strong> of this box's fire logs. A teammate fires from the same team account. This is a statement about our logs, not about theirs.</td></tr>
+      <tr><td><span class="badge b-dim">no score yet</span></td>
+          <td>Fired and accepted, but no surface carries a score yet. <code>meta_join</code> lags the archiver's ~30 min cycle — this is <strong>lag</strong>, not a 0-0.</td></tr>
+      <tr><td class="mono">3-2 <span class="badge b-ok">W</span> <span class="mono">+1.15</span></td>
+          <td>Game score, match result, and the rated elo delta. <strong>A 3-2 win can lose rating and a 2-3 loss can gain it</strong> — the ladder pays <code>32 × (games won/5 − expected)</code>, so read the delta, not the W.</td></tr>
+    </tbody>
+  </table></div>
+
+  <footer>
+    <a href="/">&larr; Cores overview</a> · <a href="/shards">Shards</a> ·
+    Auto-refreshes every 15 s. Newest first, capped at <span id="cap">100</span> of
+    our matches; the counts above the table are over <strong>all</strong> of them.
+  </footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s === null || s === undefined ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function freshBadge(ageMin, cadenceMin) {
+  if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
+  const limit = (cadenceMin || 5) * 2;
+  const cls = ageMin > limit ? 'b-warn' : 'b-ok';
+  const label = ageMin > limit ? 'STALE' : 'fresh';
+  const t = ageMin < 90 ? ageMin.toFixed(1) + 'm' : (ageMin/60).toFixed(1) + 'h';
+  return `<span class="badge ${cls}">${label} ${t}</span>`;
+}
+
+function typeBadge(t) {
+  if (!t) return '<span class="badge b-blind">TYPE UNKNOWN</span>';
+  const cls = {ladder:'b-ok', unrated:'b-warn', test:'b-dim'}[t] || 'b-dim';
+  return `<span class="badge ${cls}">${esc(t.toUpperCase())}</span>`;
+}
+
+// ⛔ "unknown" AND "void" ARE RESULTS, NOT BLANKS. A match whose side cannot be
+// read, and a match the platform never ran, must not fall through to a quiet
+// empty cell that reads as a loss.
+function resultBadge(r) {
+  if (r === 'W') return '<span class="badge b-ok">W</span>';
+  if (r === 'L') return '<span class="badge b-bad">L</span>';
+  if (r === 'void') return '<span class="badge b-bad">ERROR</span>';
+  return '<span class="badge b-blind">UNKNOWN</span>';
+}
+
+function tagChip(o) {
+  if (!o || !o.tag) return '<span class="vs">—</span>';
+  const t = o.tag;
+  const cls = /^cal-/.test(t) ? 't-cal'
+            : /^leg/.test(t) ? 't-leg'
+            : /account|acct/.test(t) ? 't-alt' : 't-other';
+  const cell = o.cell ? `<div class="sub-mono">${esc(o.cell)}</div>` : '';
+  return `<span class="tagchip ${cls}" title="${esc(o.label || '')}${o.source ? ' · source: ' + esc(o.source) : ''}">${esc(t)}</span>${cell}`;
+}
+
+function scoreCell(r) {
+  if (r.score_us === null || r.score_them === null) {
+    if (r.result === 'void')
+      return `<span class="badge b-bad">ERROR</span><div class="sub-mono" title="${esc(r.status_note||'')}">no games played</div>`;
+    return `<span class="badge b-dim">no score yet</span><div class="sub-mono">archiver lag</div>`;
+  }
+  return `<strong>${esc(r.score_us)}-${esc(r.score_them)}</strong>`;
+}
+
+function eloCell(r) {
+  if (r.elo_delta === null || r.elo_delta === undefined) {
+    return '<span class="vs" title="unrated matches move no rating — this is an absence, not a zero">not rated</span>';
+  }
+  const d = r.elo_delta;
+  const cls = d >= 0 ? 'b-ok' : 'b-bad';
+  return `<span class="badge ${cls}">${d >= 0 ? '+' : ''}${d.toFixed(2)}</span>`
+       + `<div class="sub-mono">from ${r.rating_before === null ? '—' : r.rating_before.toFixed(0)}`
+       + `${r.opp_rating_before === null || r.opp_rating_before === undefined ? '' : ' vs ' + r.opp_rating_before.toFixed(0)}</div>`;
+}
+
+function whenCell(r) {
+  const t = r.created_at || '';
+  const short = t ? t.replace('T', ' ').replace(/\.\d+Z?$/, '').replace(/Z$/, '') : '';
+  const age = r.created_age_min === null || r.created_age_min === undefined ? ''
+    : (r.created_age_min < 90 ? `${r.created_age_min.toFixed(0)}m ago`
+       : r.created_age_min < 2880 ? `${(r.created_age_min/60).toFixed(1)}h ago`
+       : `${(r.created_age_min/1440).toFixed(1)}d ago`);
+  const what = r.created_is_fired ? 'fired' : (r.created_is_completed ? 'completed' : 'created');
+  return `<span class="mono" style="font-size:12px">${esc(short) || '<span class="badge b-blind">NO STAMP</span>'}</span>
+          <div class="sub-mono">${esc(age)}${age ? ' · ' : ''}${what}</div>`;
+}
+
+const CHIPS = [
+  ['all',      r => true],
+  ['ladder',   r => r.type === 'ladder'],
+  ['unrated',  r => r.type === 'unrated'],
+  ['ours-fired', r => r.origin && r.origin.ours_fired],
+  ['cal-1',    r => r.origin && r.origin.tag === 'cal-1'],
+  ['cal-2',    r => r.origin && r.origin.tag === 'cal-2'],
+  ['leg-voided', r => r.result === 'void'],
+  ['other operator', r => r.origin && r.origin.tag === 'other operator'],
+  ['not decoded', r => r.status === 'no score yet'],
+];
+
+let LAST = null, PICK = 'all', LIMIT = 100;
+const DEPTHS = [100, 300, 1000];
+
+function srcLine(s) {
+  const b = [];
+  for (const [k, label, cad] of [['league_matches','league_matches.tsv',20],
+                                 ['ladder_games','ladder_games.tsv',20],
+                                 ['meta_join','meta_join.tsv.gz',null]]) {
+    const v = s.sources[k];
+    if (!v) continue;
+    if (v.blind) { b.push(`<code>${esc(label)}</code> <span class="badge b-blind">BLIND</span> ${esc(v.blind)}`); continue; }
+    b.push(`<code>${esc(label)}</code> newest row ${esc(v.newest_row_at || '—')} `
+      + freshBadge(v.newest_row_age_min, cad || v.cadence_min)
+      + ` · file captured ${esc(v.at)}`);
+  }
+  return b.join('<br>');
+}
+
+function render(s) {
+  LAST = s;
+  $('#clock').textContent = s.served_at || '(server sent no read time)';
+  $('#cap').textContent = s.limit;
+
+  $('#src').innerHTML =
+    'data read <strong>' + esc(s.served_at) + '</strong><br>' + srcLine(s)
+    + `<br><code>meta_join</code> lags the replay archiver's <strong>~${esc(s.archiver_cycle_min)} min</strong> cycle`
+    + `, so the newest unrated fires are legitimately absent — that is LAG, never a 0-0.`
+    + '<br>' + (s.sources.fire_logs || []).map(l =>
+        `<code>${esc(l.file.path)}</code> ${l.blind ? '<span class="badge b-blind">BLIND</span> ' + esc(l.blind)
+          : esc(l.n_ids) + ' match id' + (l.n_ids === 1 ? '' : 's') + ' from ' + esc(l.n_rows) + ' row'
+            + (l.n_rows === 1 ? '' : 's') + (l.n_no_id ? ' (' + esc(l.n_no_id) + ' with no matchId — rejected challenges)' : '')
+            + ', newest fire ' + esc(l.newest_fire_at || '—')}`).join('<br>')
+    + `<br><code>${esc(s.sources.our_matches.path)}</code> ${s.sources.our_matches.blind
+        ? '<span class="badge b-blind">BLIND</span> ' + esc(s.sources.our_matches.blind)
+        : esc(s.sources.our_matches.n_matches) + ' matches recorded by unrated_run.sh, newest ' + esc(s.sources.our_matches.newest_row_at || '—')}`;
+
+  // Alarms: conditions that make a column mean nothing. Shown loudly, never
+  // swallowed — a silently all-UNK area class column looks exactly like data.
+  const al = [];
+  if (s.cwd && !s.cwd.ok)
+    al.push(`<div class="note warn"><strong>AREA CLASS IS BLIND.</strong> ${esc(s.cwd.why)}</div>`);
+  if (s.our_team && s.our_team.check && !s.our_team.check.ok)
+    al.push(`<div class="note warn"><strong>TEAM ID NOT FOUND IN THE CORPUS.</strong> ${esc(s.our_team.check.blind)}</div>`);
+  (s.sources.fire_logs || []).forEach(l => {
+    if (l.void && l.void.citation && !l.void.citation.found)
+      al.push(`<div class="note warn"><strong>VOID STATUS UNCITED.</strong> ${esc(l.key)} is rendered
+        ${esc(l.void.status)} on the strength of <code>${esc(l.void.cite_file)}</code>, and the string
+        <code>${esc(l.void.cite_needle)}</code> is no longer near <code>${esc(l.void.cite_id)}</code> there.
+        Treat that status as unverified.</div>`);
+  });
+  $('#alarms').innerHTML = al.join('');
+
+  const all = s.rows || [];
+  const tally = {};
+  CHIPS.forEach(([k, f]) => { tally[k] = all.filter(f).length; });
+
+  const loadedNote = `counts are over the ${all.length} match(es) loaded on this `
+    + `page (newest first), not over all ${s.n_total}. Load more below to reach older ones.`;
+  $('#chips').innerHTML = CHIPS.map(([k]) =>
+      `<button class="chip${PICK === k ? ' on' : ''}" data-pick="${esc(k)}" title="${esc(loadedNote)}">${esc(k)} ${tally[k]}</button>`).join('')
+    + `<a class="chip" href="#alt-anchor">other OpenSverige accts ${esc(s.n_alt_total)}</a>`;
+
+  $('#depth').innerHTML = '<span class="sub-mono" style="align-self:center;margin-right:4px">load newest</span>'
+    + DEPTHS.map(n => `<button class="chip${LIMIT === n ? ' on' : ''}" data-depth="${n}">${n}</button>`).join('')
+    + `<button class="chip${LIMIT >= s.n_total ? ' on' : ''}" data-depth="${esc(s.n_total)}">all ${esc(s.n_total)}</button>`;
+
+  const q = $('#q').value.trim().toLowerCase();
+  const pick = (CHIPS.find(c => c[0] === PICK) || CHIPS[0])[1];
+  const rows = all.filter(pick).filter(r => !q
+      || r.id.toLowerCase().includes(q)
+      || (r.opp_name || '').toLowerCase().includes(q)
+      || (r.type || '').toLowerCase().includes(q)
+      || String(r.our_ver || '').includes(q)
+      || (r.origin && (r.origin.tag || '').toLowerCase().includes(q))
+      || (r.origin && (r.origin.cell || '').toLowerCase().includes(q)));
+
+  // The origin tally is over ALL our matches, not the loaded page, and it is
+  // labelled as such. `unrated_run.sh` writes one tag per ARM, so nine of them
+  // are collapsed into a single count — the individual arm tags are on the rows.
+  const org = {};
+  Object.entries(s.by_origin).filter(([k]) => !/^\(ladder/.test(k)).forEach(([k, v]) => {
+    const key = /^leg · /.test(k) ? 'unrated_run.sh legs' : k;
+    org[key] = (org[key] || 0) + v;
+  });
+  $('#count').innerHTML =
+    `${rows.length} shown of ${all.length} loaded · <strong>${esc(s.n_total)}</strong> matches total on `
+    + `<code>${esc(s.our_team.name)}</code> (${Object.entries(s.by_type).map(([k, v]) => `${v} ${esc(k)}`).join(', ')})`
+    + ` · origin over <em>all</em> of them: ` + Object.entries(org)
+        .sort((a, b) => b[1] - a[1]).map(([k, v]) => `${v} ${esc(k)}`).join(', ');
+
+  $('#tbl tbody').innerHTML = rows.length === 0
+    ? '<tr><td colspan="8">No match matches that filter.</td></tr>'
+    : rows.map(r => {
+        const opp = r.opp_name
+          ? `${esc(r.opp_name)} <span class="vs">v${esc(r.opp_ver)}</span>`
+          : (r.origin && r.origin.cell
+              ? `<span class="badge b-dim">not archived</span><div class="sub-mono" title="the panel cell that fired it — a fire-log label, not a match row">cell ${esc(r.origin.cell)}</div>`
+              : '<span class="badge b-blind">UNKNOWN</span>');
+        return `<tr onclick="location.href='/match?id=${encodeURIComponent(r.id)}'" style="cursor:pointer">
+          <td>${whenCell(r)}</td>
+          <td>${typeBadge(r.type)}</td>
+          <td><a href="/match?id=${encodeURIComponent(r.id)}">${opp}</a>
+              <div class="sub-mono">${esc(r.id.slice(0, 8))}</div></td>
+          <td class="mono">${r.our_ver === null ? '<span class="vs">—</span>' : 'v' + esc(r.our_ver)}</td>
+          <td class="num">${scoreCell(r)}</td>
+          <td>${resultBadge(r.result)}</td>
+          <td>${tagChip(r.origin)}</td>
+          <td class="num">${eloCell(r)}</td></tr>`;
+      }).join('');
+
+  // ---- the other-account section -----------------------------------------
+  $('#altnote').innerHTML =
+    `<div class="note"><strong>These are NOT on our account and are kept out of the list above.</strong>`
+    + (s.alt_accounts || []).map(a =>
+        `<br><span class="tagchip t-alt">${esc(a.tag)}</span> ${esc(a.label)} — <strong>${esc(a.n_matches)}</strong> match${a.n_matches === 1 ? '' : 'es'}.
+         <span class="sub-mono" style="display:block">${esc(a.cite)}</span>`).join('')
+    + `<br>The brief asked for an <code>old-account</code> tag; that name occurs in
+       <strong>zero</strong> rows of either corpus surface today, so the tag is defined
+       and fires zero times rather than being quietly attached to the nearest
+       similar-looking team.</div>`;
+  $('#alt tbody').innerHTML = (s.alt_rows || []).length === 0
+    ? '<tr><td colspan="7">No matches on any other OpenSverige-named account.</td></tr>'
+    : s.alt_rows.map(r => `<tr onclick="location.href='/match?id=${encodeURIComponent(r.id)}'" style="cursor:pointer">
+        <td>${whenCell(r)}</td>
+        <td>${typeBadge(r.type)}</td>
+        <td>${esc(r.our_name)} <span class="vs">v${esc(r.our_ver)}</span></td>
+        <td><a href="/match?id=${encodeURIComponent(r.id)}">${esc(r.opp_name)} <span class="vs">v${esc(r.opp_ver)}</span></a></td>
+        <td class="num">${scoreCell(r)}</td>
+        <td>${resultBadge(r.result)}</td>
+        <td>${tagChip(r.origin)}</td></tr>`).join('')
+      + (s.n_alt_total > s.n_alt_shown
+          ? `<tr><td colspan="7"><span class="badge b-dim">showing ${esc(s.n_alt_shown)} of ${esc(s.n_alt_total)}</span></td></tr>`
+          : '');
+}
+
+$('#chips').addEventListener('click', e => {
+  const b = e.target.closest('[data-pick]');
+  if (!b) return;
+  PICK = b.dataset.pick;
+  if (LAST) render(LAST);
+});
+$('#depth').addEventListener('click', e => {
+  const b = e.target.closest('[data-depth]');
+  if (!b) return;
+  LIMIT = parseInt(b.dataset.depth, 10) || 100;
+  tick();
+});
+$('#q').addEventListener('input', () => { if (LAST) render(LAST); });
+
+async function tick() {
+  try {
+    const r = await fetch('/api/matches?limit=' + LIMIT, {cache: 'no-store'});
+    render(await r.json());
+  } catch (e) {
+    $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+    $('#src').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span> '
+      + 'the rows below are whatever was last read and are NOT being refreshed.';
+  }
+}
+tick(); setInterval(tick, 15000);
+</script>
+</body>
+</html>

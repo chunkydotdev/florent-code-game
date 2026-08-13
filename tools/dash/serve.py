@@ -32,6 +32,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 import threading
 import time
 import urllib.parse
@@ -42,6 +43,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 STATIC = Path(__file__).resolve().parent / "static"
 PORT = int(os.environ.get("PORT", "8787"))
+
+# The match history lives in its own module: it reads different files, on a
+# different cadence, and keeping it out of here keeps this file's diff to the
+# routes below. See tools/dash/matches.py for what it is and is not allowed to do.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import matches                                                    # noqa: E402
 
 OVERNIGHT = ROOT / "scratchpad" / "overnight"
 STARTED = ROOT / "scratchpad" / "corefill_started"
@@ -860,7 +867,8 @@ def build_status() -> dict:
 
 PAGES = {"/": "cores.html", "/cores": "cores.html",
          "/game": "game.html", "/lingo": "lingo.html",
-         "/shards": "shards.html", "/shard": "shard.html"}
+         "/shards": "shards.html", "/shard": "shard.html",
+         "/matches": "matches.html", "/match": "match.html"}
 TYPES = {".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
          ".js": "application/javascript; charset=utf-8"}
 
@@ -883,6 +891,20 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/status":
             body = json.dumps(build_status(), indent=1).encode()
             return self._send(200, body, "application/json; charset=utf-8")
+        if path == "/api/matches":
+            n = (query.get("limit") or ["100"])[0]
+            lim = int(n) if n.isdigit() and 0 < int(n) <= 20000 else 100
+            body = json.dumps(matches.collect_match_list(lim), indent=1).encode()
+            return self._send(200, body, "application/json; charset=utf-8")
+        if path == "/api/match":
+            mid = (query.get("id") or [""])[0]
+            # Platform match ids are uuids: no separators beyond `-`, no traversal.
+            if not re.fullmatch(r"[0-9a-fA-F-]{8,64}", mid or ""):
+                return self._send(400, json.dumps(
+                    {"error": "bad or missing ?id= (expected a match uuid)"}).encode(),
+                    "application/json; charset=utf-8")
+            body = json.dumps(matches.collect_match_detail(mid), indent=1).encode()
+            return self._send(200, body, "application/json; charset=utf-8")
         if path == "/api/shards":
             body = json.dumps(collect_shard_list(), indent=1).encode()
             return self._send(200, body, "application/json; charset=utf-8")
@@ -904,10 +926,18 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main() -> int:
+    # `tools/overnight_read.map_area_class` — the ONE implementation of the
+    # CQ/STD/GRAND boundaries, which the match view reuses — resolves
+    # `maps/<name>.map26` relative to the process cwd. Started from anywhere else
+    # it returns UNK for every map, i.e. a whole column that silently means
+    # nothing. Asserting the cwd is cheaper than a second copy of the boundaries,
+    # and `matches.cwd_ok()` reports the condition on the page either way.
+    os.chdir(ROOT)
     threading.Thread(target=_shard_worker, daemon=True).start()
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     print(f"CORE DASHBOARD  http://127.0.0.1:{PORT}")
     print(f"  shards  : http://127.0.0.1:{PORT}/shards")
+    print(f"  matches : http://127.0.0.1:{PORT}/matches")
     print(f"  repo    : {ROOT}")
     print(f"  binds   : 127.0.0.1 only (not reachable from the network)")
     print(f"  reads   : files + `ps`. No fcode, no network, no writes.")
