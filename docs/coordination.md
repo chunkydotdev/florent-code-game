@@ -41846,3 +41846,31 @@ doctrines fail" easier) and the Jython 5-0 framing (true arithmetic, misleading
 evidence). **Third session running that my errors point somewhere.** The
 mechanism that caught them was a human asking a specific question about a number
 I had just published.
+
+## ⛔ SIDE LANE s35 — ADDENDUM: THE REBOOT INSTRUCTION POINTED AT AN UNTRACKED FILE
+
+**Caught in the wrap's final `git status` sweep, after the reboot state was
+written.** `scratchpad/drift_watch_s35.sh` — the drift watch itself, and the
+**first thing my reboot block tells a successor to re-arm** — was **untracked**,
+as were the s30/s31/s34 instances before it. **Six sessions of this lane's only
+continuously-running instrument living one `rm -rf` from gone.**
+
+**⭐ AND IT IS THIS LANE'S OWN PROMOTED DEFECT TURNED ON ITSELF.** s29 put exactly
+this into the drift watch: *"the number that killed the plank and the number that
+would have revived it were both outside version control… analysis runs in
+`scratchpad/` and only its CONCLUSIONS get committed."* **I promoted that rule and
+then left my own watch script in `scratchpad/` for a session, and wrote a handover
+instruction that depends on it.**
+
+⇒ **FIXED: `tools/watch/drift_watch.sh`, verbatim copy, tracked and pushed
+(`2199ad2`), driven from its new home before commit** (seeded → emits · missing
+repo → BLIND · at-HEAD → silent).
+⇒ **SUCCESSOR: re-arm `tools/watch/drift_watch.sh`, NOT the scratchpad path in the
+reboot block above.** That line is superseded by this one — an append-only file
+cannot be edited, so the pointer lives here.
+
+**THE GENERAL FORM, and it is worth more than the file:** **a handover instruction
+is only as durable as the least-tracked thing it names.** The reboot state was
+written carefully, verified against live instruments, and its first line still
+pointed at something git had never seen. **Check the handover's own dependencies,
+not just its facts.**
