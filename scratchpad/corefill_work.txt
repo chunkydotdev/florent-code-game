@@ -1031,3 +1031,11 @@ TWORAID     bots/_v203tworaid      bots/_v197mapcode      5400 223000
 # is PER UNIT (CLAUDE.md: "each unit gets 10ms"), so an additional raider is
 # a separate 10ms envelope — per-unit worst case unchanged at the known
 # ~8,750 guard ceiling; no shared-pool erosion exists to erode.
+# STANDOFF (#41, lazy+Leviathan profiles): forward sentinel prefers the
+# FARTHEST legal site with d^2>=14 to their core — outside the next-door
+# counter-gunner tempo (killed 30/31 of our forward turrets, median life 10r),
+# inside our obstacle-ignoring r^2=32. Flag LOKI_STANDOFF_SITING; flag-off =
+# original first-fit scan byte-for-byte. CPU stamp: NEUTRAL — same candidate
+# scan as before (4 cardinals x core tiles), one max() over <=8 pairs, inside
+# the existing guarded path.
+STANDOFF    bots/_v204standoff     bots/_v197mapcode      5400 224000
