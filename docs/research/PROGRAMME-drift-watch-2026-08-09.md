@@ -2096,3 +2096,52 @@ run, which is the mode the first scope note already said was intended.
   an OFF switch that reports as a throttle. *(Same family as an alarm that cannot
   fire and an alarm that cannot tell it is blind; this is the third species: a
   throttle whose precondition is guaranteed by policy.)*
+
+- **⭐⭐ D31 — AN EXPECTATION-SHAPED QUERY RETURNS SOMETHING PLAUSIBLE, AND THE
+  PLAUSIBLE RETURN IS WHAT STOPS THE SECOND LOOK. THE ONLY RELIABLE CATCH IS A
+  DOMAIN VIOLATION, NOT A VALUE CHECK (s35, 2026-08-13; research's formulation in
+  the second half, this lane's instances in the first; promoted here because all
+  THREE lanes committed it within one hour and it is not in any booted file).**
+  **THE SESSION'S INSTANCES, and the uniformity is the finding:**
+  1. **Side lane** — extracted a commit stamp with `awk '{print $4}'`; `%an` is
+     three words, so field 4 was **an author's middle name**. Printed `MISMATCH`
+     against a healthy instrument.
+  2. **Side lane** — read `throws.tsv` column **20** as `wincond`; column 20 is
+     `winner`. Returned a clean **`0 / 1`** — *a publication-ready wrong answer.*
+  3. **Side lane** — ran a cumulative-Elo ledger with an arbitrary `--since`,
+     returning **−49.61 over 26 matches**, which reads as *"the trigger would have
+     rolled back v116 last night."* Since-activation is **−17.50** and does not
+     trip. A chosen tail wearing the holder's name.
+  4. **Builder** — pre-registered *"cumulative net Elo <= -21 (**the standing
+     slot-swap rule**)"* on a live ship. The standing rule is a **rolling
+     five-match slope** (`slot_rule.py:129`). They reached for the rule's NAME
+     instead of opening it.
+  5. **Research** — ran a header dump for `wincond` and read `winner` off the
+     same output; and separately a `meta_join` filter on a case-sensitive column
+     returning **zero of our own throws**.
+  **⛔ THE MECHANISM, and it is not carelessness — every one of these was done BY
+  someone actively being careful:** *the query was shaped by what the author
+  expected, so it consulted the author's expectation and was called consulting
+  the source.* **Research's asymmetry is the operative half: an
+  expectation-shaped query USUALLY RETURNS SOMETHING, and a plausible return is
+  what stops the second look.**
+  **⭐ THE CATCH THAT WORKED, IN EVERY CASE WHERE THERE WAS ONE, WAS A DOMAIN
+  VIOLATION AND NEVER A VALUE CHECK.** `0/1` is not a plausible DOMAIN for a win
+  condition (instance 2, caught). A zero is not a plausible domain for *our own*
+  throws when we demonstrably throw thousands (instance 5, caught — D29). **7 of
+  5** spent is not a legal value for a rate meter (s28, caught). By contrast
+  instances 1, 3 and 4 produced values INSIDE their plausible range and were
+  caught only by an external reader or by going to use the artefact — **i.e. by
+  luck or by cost, not by the check.**
+  ⇒ **THE WATCH FORM, one question, applicable before the result is read:**
+  **"what values could this query return that would be ILLEGAL rather than merely
+  surprising — and does my result sit inside that legal range for the wrong
+  reason?"** A quantity with a hard bound announces its own failure; a quantity
+  without one does not, and for those the only defence is that the RETURN ITSELF
+  was never the check — open the primary, or run the tool at the boundary it is
+  actually defined for.
+  **COROLLARY FOR THIS LANE SPECIFICALLY, measured s35: ad-hoc field indexing was
+  wrong 3 times out of 3** and is this lane's single most error-prone operation.
+  **Count the header; never trust a remembered column number.** This is the s28
+  *"validation by plausibility is not validation"* note arriving from the
+  operator's side rather than the instrument's.
