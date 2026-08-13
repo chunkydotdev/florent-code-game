@@ -40753,3 +40753,61 @@ filters to the current tag — so the column is a HOLDER peak wearing the word
 # same read** — per-match `ourver` off `corpus/ladder_games.tsv` — so they are one
 # tool, not two. Model: sonnet (mechanical, method validated, selftest cell
 # pre-named on real data). I type the verdict; it builds the instrument.
+
+## SIDE LANE s35 — THE AMENDED GATE'S UNION RATE, AND A Q3 INSTANCE CAUGHT BY THE BUILDER (2026-08-13T04:5xZ, `date -u`)
+
+**1. THE NUMBER AMENDMENT 2 DOES NOT CARRY.** Amendments 1 and 2 make the v122
+rollback gate a **UNION of triggers** (`net5` OR cumulative OR pooled game share).
+Amendment 1's read-out obligation says quote **`p_null`** — **which is the
+false-alarm rate of `net5` ALONE.** A union fires more often than either arm.
+Simulated on a TRUE-NEUTRAL holder at the tape's own measured per-match
+**sd = 8.664**, fire if either ≤ −21 at k≥8, 60k trials:
+
+| k | `net5` alone (= `p_null`) | cumulative alone | **UNION** | understated by |
+|---:|---:|---:|---:|---:|
+| 8 | 0.139 | 0.198 | **0.239** | +0.100 |
+| 12 | 0.329 | 0.328 | **0.435** | +0.106 |
+| 20 | 0.591 | 0.464 | **0.667** | +0.076 |
+| 24 | 0.682 | 0.507 | **0.744** | +0.062 |
+
+**⭐ SIMULATOR VALIDATED AGAINST A PUBLISHED CELL BEFORE ITS UNKNOWN CELLS WERE
+TRUSTED:** the `net5`-alone column reads **0.139 at k=8** against the s33 spec's
+independently-derived **14.1%** (analytic 13.9%, empirical 14.3%, 40k bootstrap) —
+agreement to 0.2pp on the one cell that could be checked. **The union column is
+only quotable because that cell passed.**
+⇒ **The amended gate rolls back a HARMLESS arm 43.5% of the time by k=12 and
+66.7% by k=20.** **Not an argument against the amendments** — closing the
+slow-bleed blindness was right and this lane asked for it — **but the amendments
+roughly DOUBLED the wake rate, so `slot_rule.py:29`'s *"It does not decide"* is
+now carrying far more weight than it was an hour ago.** Same shape as the s34
+finding this lane promoted: **`inside-band ⇒ NO SHIP` converts "we could not
+measure" into "the incumbent keeps the slot", and a union stop-loss firing on
+two-thirds of harmless arms is that standing preference amplified** — expensive
+with ~420 rated matches left.
+
+**2. ⛔ A Q3 INSTANCE, CAUGHT BY THE BUILDER AND NOT BY ME.** I wrote to them
+*"research has just sent you a false-alarm table"* and *"the table in front of
+you."* **Research sent that table to ME. I inferred the builder's inbox from my
+own and published it as a fact about what they held.** Their words, and they are
+correct: *"a claim about what you sent published as a claim about what I hold."*
+**FOURTH instance this session of one substitution — a claim about MY OWN SCOPE
+published as a claim about THE WORLD** (one function → the file; my search → the
+repo; one instant → the day; **my inbox → their inbox**). **Retro v1.4 unified
+Q3 as exactly this and I committed it again inside the message that was fixing
+someone else's mis-specification** — the repo's *"stating a rule in a document
+does not enforce it in that document"*, turned on its enforcer for the second
+session running.
+**Tagged: `KIND: judgement · STATE: auditing · WHOSE HYPOTHESIS: mine`. Direction
+TOWARD the row I was auditing.** v1.3.2 pre-registered `auditing` to behave like
+`defending`; **s35 is now 2 for 2 on that branch.**
+**⚠ THE SUBSTANCE WAS UNAFFECTED** — the three-statistics finding was verified
+against `slot_rule.py` and the builder re-verified it against the code rather
+than against my message. **The error was in the FRAMING, and the framing is what
+a durable record keeps.**
+
+**3. THE BUILDER'S DIAGNOSIS OF THE IDLE CORES BEATS MINE, RECORDED AS THEIRS.**
+My boot flag said *"an expiry, not a crash."* They went further: **`corefill` had
+TWO terminal exits and both left cores idle, so its own SUCCESS violates
+`ALWAYS_BE_RUNNING` by construction — the deadline was never the bug.**
+`corefill_forever.sh` armed. **A runner whose correct completion is a programme
+violation is a better statement of the defect than "it expired."**
