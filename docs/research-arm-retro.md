@@ -833,3 +833,102 @@ briefed myself.** A well-briefed agent that runs its own control is evidence its
 METHOD was sound; it is not evidence its ARITHMETIC was. Ask: which number in
 this relay would change a decision if it were wrong by 2×, and did I recompute
 that one?*
+
+# ============================================================================
+# RUN s36 — 2026-08-13, wrap called by Magnus. **v1.8 → v1.9. FIRINGS: 6.**
+# Answered from the day's artefacts: 47 research/queue commits, the cross-lane
+# message log, `git log`, and the tools themselves. Not from memory.
+# ============================================================================
+
+## 1. CONSUMPTION — the highest of any session, and the shape changed
+**CONSUMED (another lane acted):** FIRE ORDERS #1/#2/#3 → **the builder fired
+every one** (the fixture went from idle-at-8-20%-of-cap to three panels and a
+tri-arm in one day) · the O3 churn flag → **Amendment 2 within the hour, then
+Amendment 3 when `--match` was found** · arm B's conditional-bar caveat →
+**builder typed nothing against the falsifier until the detector existed** ·
+the unregistered-rule refusal → **verdict typed under the registered text
+instead** · `bank_trace`/`camp_detect`/`triarm_read` → **the entire arm B and
+arm C read** · the `maps sync` triage find → **builder wired it into the boot
+checks the same hour (`7eebbce`)** · #42's diagnosis + dose → **row closed,
+binder named** · #40's field-wide camp base rate · the R1000 reversion executed
+across the queue · three opponent profiles → two new rows. **UNREAD: none.**
+**PENDING:** #45 (builder's build-first pick), the `econ` rebuild for the new
+`shots` column.
+
+## 2. LATENCY — the strongest column, and one near-miss that defines it
+**BEFORE the decision, every time it mattered:** the O3 flag beat arm B's fire ·
+the arm-B instrument gap was found **before the data landed, not after** · the
+unregistered-rule objection landed **before the verdict was typed** · the
+`--match` spec beat CAL-3's design · the camp detector beat arm C's decode.
+**⚠ The one that nearly wasn't: CAL-2's n=150 look.** I declared it unreachable
+on a lag-truncated count and only caught it hours later — **archaeology avoided
+only because a look is definable by n rather than wall clock.**
+
+## 3. RELAY FIDELITY — Q10 applied, and it paid twice
+One subagent (three opponent profiles). **I re-derived all four load-bearing
+claims at the primary before banking; all four reproduced exactly.** And the
+recount **found what the agent's per-opponent scope structurally could not:
+Leviathan 12,539 TLE'd turns vs Coreflood's 382** — the CPU story is a team
+property, not a map-size one. **Q10 did not merely verify; it produced the
+better finding.**
+
+## 4. OWN CHECKS ON OWN WORK — **7 self-caught, 3 peer-caught. The best ratio recorded.**
+Self: the phantom-leg retraction (verified at `match info` before withdrawing) ·
+`bank_trace` v1 returning `rounds=0` under a green selftest · the zsh
+word-splitting false negative · **the panel contamination (leg games counted as
+panel games; CAL-3 was 100% tri-arm)** · **CAL-2 closed on an archive-lag
+count** · #46's gating cut refuting #46 · the `#39` surface error.
+Peer: the phantom-leg call itself (side lane), the interpolated `10:47` (side
+lane), the CAL-2 predates-prereg framing (side lane).
+⇒ **But the pattern from s34/s35 INVERTED and it is worth naming: my checks
+now catch my INFERENCES too, and what my peers caught were my INSTRUMENTS.**
+
+## 5. DECLINES — four, all upheld
+Declined to score arm B under the unconditional proxy · **declined to score it
+under the builder's post-hoc rule, computing both readings instead** ·
+declined to edit `CLAUDE.md` on a peer's request (routed the text to Magnus) ·
+declined to trigger an `econ` rebuild on a box at load 10.9 (builder's surface).
+
+## 6. PER LANE — **RETRACTIONS REACHING A LANE: 5**
+(phantom leg · "unregistered auxiliary" · CAL-2 closed at 95 · #46 blocked ·
+#39's decode surface.) **Down from s33's 7; and 4 of 5 were self-caught, none
+was acted on before withdrawal.** **BUILDER** got numbers before every decision
+and three instruments built to their bars. **SIDE LANE** got re-derivable
+primaries and caught two real defects in mine.
+
+## 7. CLOSURES — one road narrowed, one row killed, both by measurement
+**CPU-denial's obvious lever is measured dead** (corr(our builds, their TLEs)
+≈ 0 both classes) — narrowed, not closed, and labeled observational. **#46
+killed by its own gating cut.** Neither closure rests on inference.
+
+## 8. Q8 — instruments read, not just built
+`audit_trigger`, `target_value --band`, `queue_check` after every edit, corpus
+freshness before every read. ⚠ **And the one I read but misused: `panel_read`
+PRINTED corpus age while I read its game COUNT as complete.**
+
+## 9. Q9 — CORRECTIONS THAT NEEDED CORRECTING: **2 of 6, and both are instructive**
+"Phantom leg" → retracted. **"#46 blocked on a decoder change" → wrong, and the
+working surface was named in the second clause of the very entry I quoted as
+proof.** ⇒ **new question below.**
+
+---
+
+**FIRINGS (6):** (a) Q10 forced the re-derivation that produced the Leviathan
+finding. (b) Q3's discipline carried every agent caveat intact. (c) Q5
+produced the refusal that decided how a falsifier was scored. (d) Q9 caught
+the half-read entry. (e) The routing rule put **every** finding in `QUEUE.md`,
+a tool, or a booted file — **zero standalone documents except the specs that
+were asked for.** (f) Q8-at-boot caught `audit_trigger`'s 2/5 before relaying.
+**SUNSET: NOT ARMED.**
+
+## ⭐⭐ NEW QUESTION — Q11: **DID I READ THE WHOLE ENTRY, OR THE HALF THAT AGREED WITH ME?**
+*Incident (s36): I reported #46 blocked because `econ.tsv`'s `shots` column is
+dead, citing `corpus_sanity.py:90` — whose entry reads `"econ.tsv shots":
+replay_econ.py:109 pass **-- use build_agg.tsv metric=='shot'**`. I quoted the
+first clause as proof and never read the second, which names the working
+surface. Running the cut on that surface then REFUTED the row I had stocked.*
+**This is not a search failure — the file was open and the answer was on the
+same line.** It is the citation equivalent of stopping a test at the first
+confirming result. **The derived check, mechanical rather than attitudinal:
+when a source is cited as a BLOCKER, quote it to the end of the entry — and
+if it names an alternative, run the alternative before publishing the block.**
