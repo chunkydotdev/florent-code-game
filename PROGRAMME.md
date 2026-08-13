@@ -5,9 +5,9 @@ successor session inherit it. The fields below are parsed; the prose is not.
 
     LINE: loki
     LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?*
-    INCUMBENT: bots/_v178salt
+    INCUMBENT: bots/_v187saltidle_f
     INCUMBENT_FROZEN: no
-    PREVIOUS_INCUMBENT: bots/_v169launchlate160
+    PREVIOUS_INCUMBENT: bots/_v178salt
     PRIMARY_CURRENCY: game_share
     SECONDARY_CURRENCY: kill_speed_score
     KILL_SPEED_SHIP_GATE: -1.76
@@ -16,7 +16,8 @@ successor session inherit it. The fields below are parsed; the prose is not.
     WIN_RATE_IS_VERDICT: yes
     COMPARE_AGAINST: previous_line_iteration
     KILL_WINDOW_RND: 250
-    R1000_IS_DEFEAT: yes
+    R1000_IS_DEFEAT: conditional_on_map_area
+    R1000_DEFEAT_AREA_MAX: 676
     PLAY_DEFENCE: not_at_the_kill_s_expense
     DEFENCE_ADMISSION_BAR: kill_round_non_regression
     FIXTURE_OF_RECORD: live_unrated
@@ -24,6 +25,52 @@ successor session inherit it. The fields below are parsed; the prose is not.
     QUEUE_FLOOR: 3
     QUEUE_OWNER: research
     TARGET_MIN_PAYOUT: 10
+
+## ⭐⭐ MAP ROTATION 2026-08-13 — `R1000_IS_DEFEAT` IS NO LONGER UNCONDITIONAL
+
+**MAGNUS, 2026-08-13, direct: *"R1000_IS_DEFEAT does not hold on 30x30 anymore."***
+Recorded verbatim because this file is edit-on-his-directive-only and this
+reverses a field that has governed the whole Loki line.
+
+**READING OF THE NEW FIELDS.** `R1000_DEFEAT_AREA_MAX: 676` — on maps of area
+**<= 676 a round-1000 finish is still a DEFEAT**, exactly as before. On maps
+**ABOVE 676** it is an **admissible win**. The boundary sits between
+`archipelago` (26x26 = 676) and the five 30x30s (900), so it names the new size
+class and nothing else. Read map area at runtime from `get_map_width()` x
+`get_map_height()`.
+
+**WHY IT CHANGED — MEASURED TODAY, NOT ARGUED.** The organisers rotated the pool
+to 15 maps and **five are 30x30 (area 900), a size class we had never played.**
+Our largest previous map was 625. Against `bots/starter` — a WEAK reference bot —
+on those five maps:
+
+    Loki v123 (rush)    1 kill of 5
+    Eir  v94  (heal)    1 kill of 5, and LOSES two outright
+    Thor v116 (offense) 1 kill of 5
+
+**Three independent doctrines, ~50 versions of development apart, all fail to
+kill a weak opponent on 4 of 5 big maps.** A win condition that does not fire is
+not a standard to hold the line to.
+
+**AND THE MECHANISM IS BANKED RATHER THAN GUESSED.** Over 18 games (2 seeds x 9
+maps) the split is clean: **maps <= 625 mean 94 Ti banked, 27.2 buildings, 8/8
+kills; maps at 900 mean 4,805 Ti banked, 21.6 buildings, 3/10 kills.** One cell
+(`valkyrie` seed 971002) finished with **0 titanium mined in 1,000 rounds** —
+pure passive income, no delivery at all. **We are not too slow on big maps; we
+are rich and idle.** `doctrine.py` references map size **zero times** and every
+cap is an absolute integer fitted on the old pool (`MAX_BUILDERS 5`,
+`LOKI_MAX_BUILDERS 11`, `LOKI_FWD_GUN_CAP 3`, `ECO_CAP 18`), and at least one
+radius is absolute too — `eco.py:372` gates the harvester-count sync on
+`d^2 <= 64`, which covers **58% of `fjordgate` and 6.4% of `midgard`**, the same
+58 tiles on every map.
+
+**⛔ WHAT THIS DOES NOT LICENSE.** It does not revive the tiebreak as a TARGET on
+small and medium maps, where 10 of the 15 maps still sit and where the kill
+demonstrably works. It does not retire `KILL_WINDOW_RND: 250` there. **And the
+measured tiebreak record is not a licence either: against EVEN opponents we win
+49.9% of r1000 games and 52.5% of short ones** — controlled for rating gap — so
+on maps where we CAN kill, killing is still better. **The change is scoped to the
+size class where the kill does not fire at all.**
 
 ## INCUMBENT MOVED 2026-08-13T04:45:54Z — v116 -> v122 (`bots/_v178salt`)
 

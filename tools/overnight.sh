@@ -58,7 +58,14 @@ HB=$OUT/${SHARD}.heartbeat
 ROWS=$OUT/${SHARD}.tsv
 DONEF=$OUT/${SHARD}.COMPLETE
 FC=.venv/bin/fcode
-MAPS=(antler atoll drumlin fjordgate heart hive meander nordkap)
+# ⛔ RE-POINTED 2026-08-13 AT THE LIVE 15-MAP POOL (organisers rotated it today).
+# The old set was (antler atoll drumlin fjordgate heart hive meander nordkap) and
+# FOUR of those eight -- atoll, heart, hive, meander -- are NO LONGER IN THE POOL,
+# so half of every battery result predating this line is on retired geometry.
+# The pool also added a size class we had never played: five 30x30 maps (area 900)
+# against a previous maximum of 625. Targets should be multiples of 30 (15 maps x
+# 2 seats) for exact map/seat balance; the old multiples of 16 no longer balance.
+MAPS=(antler archipelago auroraveil drakkarfjord drumlin fjordgate frostgate glacierkeep icefloe midgard nordkap ragnarok royale valkyrie yulerune)
 B=$(basename $TREAT); C=$(basename $CTRL)
 
 # IDENTICAL BASENAMES ARE UNSCORABLE -- fcode names the winner by basename, so a
