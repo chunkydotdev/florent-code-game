@@ -43930,3 +43930,12 @@ value: the misread arm name would have cost an iteration aimed backwards.
 # own n=5400 final (interim 52.05 ±2.02 at n=2344, descriptive only) —
 # attribution vs best ingredient now means vs UNDERECO.** STANDOFF ~70m,
 # COMBO ~3h.
+
+# 2026-08-13T18:34:22Z (`date -u`) — **BUILDER s37: rc8.3 LEG ANNOUNCED (Magnus: "run it as rc8.3").**
+# Prereg committed @HEAD before leg creation. COMBO (_v205combo) fires as arm
+# D of the tri-arm design — same 5 pinned cells, matched-pair vs A/B/C.
+# **CAL-3 RUNNER STOPPED at 18:33Z for the leg (yield rule)** — its last
+# accept 18:30:54Z; I relaunch it after the leg's holder-restore verifies.
+# Window: burst of 5 just after the ~18:52:59Z pairing, all rate slots free.
+# Separately: Magnus asked for an autopsy of 4b039a9c (Jython builder
+# lock-in hypothesis) — delegated to an opus subagent, report lands here.
