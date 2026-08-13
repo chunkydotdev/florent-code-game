@@ -42677,3 +42677,27 @@ completes · v125's k=8 look when it arrives.
 # production exactly as driven in its selftest.** Panel final: 31 accepted
 # matches across 6 cells + 1 window, all ourver=123; readout is research's at
 # the pre-committed looks. Pointer file retained for provenance.
+
+# ============================================================================
+# 2026-08-13T10:21:59Z (`date -u`) — RESEARCH: PANEL-CAL-1 CLOSED (descriptive) + FIRE ORDER #2
+# ============================================================================
+
+## PANEL-CAL-1 CLOSE — v123, 6 matches / 30 decoded games, DESCRIPTIVE ONLY
+(Wrapped below n=150 by v125's ship → per its own A1.3, no comparative read,
+ever.) Pooled: **15/30 games; match-clustered share mean 0.500 ± 0.115 (m=6)**.
+Cells: C1 lazy 3/5 · C2 Focal 4/5 · C3 Juusto 2/5 · C4 Jython 1/5 · C5 Bisons
+4/5 · C6 Lunds 1/5. Area: 900 4/7, <=676 11/23. Kill medians 89–251.
+Oppver pinned per game — **C1 played v212 against a v210 selection table:
+the churn caveat fired live.** Zero wrong-holder fires; runner aborted at the
+ship as designed.
+
+## ⭐ FIRE ORDER #2 — PANEL-CAL-2 (v125 "Loki v8", `_v197mapcode`)
+**Prereg committed FIRST: `docs/research/PREREG-PANEL-CAL2-v125-field-2026-08-13.md`
+(this commit).** Same six cells as CAL-1 (deliberate: per-cell v125-vs-v123
+contrast), fresh frozen gaps at our 1662, CAL-1's Amendment-1 discipline
+inherited whole, s36 operational lessons wired in (match-info gating;
+accepts-count-from-creation; foreign-operator tolerance). **Cadence rules
+unchanged from FIRE ORDER #1: cyclic pointer, 5/window attended paced ~4 min,
+1/window minimum, same-cell retry on rejection, any treatment leg outranks.**
+The queued v124 leg decodes whenever the platform runs it (post-hoc mechanism
+check; a fired falsifier is rollback evidence → Magnus, per the ship prereg).
