@@ -48,3 +48,48 @@ Corefill screen `APPRLAUNCH` (the unsieged premium is the named hazard; an
 inside-band screen + a met dose is the plank's case) → pinned live leg vs
 CAL-3 C1/C4 (LingLing40, team lazy) with its own prereg and research's
 fire-order coordination. Feed-interruption is the live mechanism metric.
+
+---
+
+## READOUT (clock = this commit's git author time; runs 17:39:32-17:39:55Z,
+## bar-4 control after; replays scratchpad/feeder45_dose/appr_*, approff_*)
+
+**BAR 1 — VALIDITY (pre-treatment denominator): PASS.** APPR45 ≥1 in 16/16
+games (midgard 2-21/game, frostgate 25-126/game).
+
+**BAR 2 (a) — LAUNCHER BUILT r<160 IN APPROACHED GAMES: MET POOLED, 10/16.**
+* Frostgate: 6/8 by r<160 evictions alone (41-152 evictions/game).
+* Midgard: tags ambiguous (evictions only in 994007), so the prereg's
+  definitive read was taken — replay entity events via `replay_autopsy`:
+  **launchers built at r48, r52, r52, r55 (+ a second at r81) in 4 of 8
+  games — exactly ≥half — all inside the healthy-bank window** (GATE45
+  eco-refusals occur but cease; APPR45 bank readings at trigger are healthy).
+* **The siting stratum reconfirms with sharper data: on midgard, 4 games
+  build the launcher and only 1 converts to evictions** (994007: 24
+  evictions and the ladder NEVER FORMED, CREEP45=0 — the second such game
+  across iterations). The launcher gets BUILT at home; on 900-area maps the
+  feeder ring is outside pickup reach d²≤2 unless siting follows the creep.
+  #47's frostgate/midgard strata carry this number: **build 4/8, convert
+  1/4.**
+
+**BAR 3 (b):** not read here, by prereg — routed to the corefill screen
+(`APPRLAUNCH` queued, seed base 228000).
+
+**BAR 4 — TAG-ATTRIBUTION CONTROL: PASS, strongly.** Flag-off copy, 2
+frostgate games to r1000: 0 APPR45, 0 GATE45 at ANY round, 0 EVICT45, plants
+3/6. The side lane's legacy-GATE45 flag does not bite this arm: both GATE45
+sites are conditioned on `approached`, which is unreachable flag-off (guard
+written at build time in response to the iter-2 flag class).
+
+**VERDICT: the conditional design's triggered half WORKS — approach
+detection fires early enough to buy the launcher at a healthy bank (builds
+r48-55 vs iteration 2's bank-dead siege window), and on small maps it
+converts to heavy feeder eviction (41-152/game) with two games where the
+ladder never formed at all.** The quiet half (unsieged premium, the −6.34pp
+hazard) is the screen's question and the screen is queued. Next after the
+screen: launcher SITING on big maps (build 4/8, convert 1/4 is the number to
+beat), then the pinned live leg vs CAL-3 C1/C4 with its own prereg.
+
+**D26 REPLICATION RULE for the APPRLAUNCH screen, declared at queueing:**
+replicated iff final |share − 50| ≥ 2.0pp; second shard seed base 229000,
+scored alone, pools only if both finals sit the same side of 50.
