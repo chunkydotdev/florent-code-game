@@ -2145,3 +2145,36 @@ run, which is the mode the first scope note already said was intended.
   **Count the header; never trust a remembered column number.** This is the s28
   *"validation by plausibility is not validation"* note arriving from the
   operator's side rather than the instrument's.
+
+- **⭐ D32 — LINE POSITION IN A HUMAN-MAINTAINED TEXT FILE SILENTLY BECOMES
+  PRIORITY, AND NOTHING IN THE FILE DECLARES IT (s35, 2026-08-13; builder's
+  phrasing, side lane's third instance; promoted because two of the three were
+  found INDEPENDENTLY on the same day and the pattern is what makes the fourth
+  cheap to catch).**
+  **Builder, `326a6a9`: *"a priority decision made accidentally by a text file."***
+  **THREE INSTANCES:**
+  1. **`tools/monitors/cores_idle.py:84`** — `next_queue_item()` returns
+     `rows[0]` in FILE ORDER, while `QUEUE.md`'s own fire-order block declares
+     *"THIS BLOCK SUPERSEDES POSITIONAL ORDER IN THE SECTIONS BELOW."* **The alarm
+     whose design virtue is naming the next plank hands out whatever sits highest
+     in the file.** *(Side lane, s35 boot. Still open.)*
+  2. **`corefill` launches in worklist ORDER**, so a head-to-head Magnus asked for
+     **twice** sat queued behind two attribution arms **purely by line position.**
+     *(Builder, s35.)*
+  3. **`fanout.sh` — ALREADY IN `CLAUDE.md` FOR DAYS AND NEVER CONNECTED TO THE
+     OTHERS.** Its `fire()` retries three times then gives up; under a rate-limit
+     window it cannot outwait, **the drop is systematic and always lands on the
+     SAME cells — the tail of the id list.** The doc's own prescription is
+     *"rotate its starting cell"*; `panel2_cal.sh` does it, **`fanout.sh` is still
+     unpatched on that half.**
+  **⇒ WHAT MAKES IT A CLASS RATHER THAN THREE BUGS: in all three the file has NO
+  FIELD EXPRESSING INTENT.** The ordering is emergent from how the READER
+  iterates, so it is invisible in the file and gets edited by people who do not
+  know it is load-bearing. **The tell is a reader that takes `[0]`, or iterates
+  without a sort key, over a human-maintained list.**
+  **⇒ THE CHECK, prospective and cheap: for every human-maintained list a tool
+  reads, ask what happens to the LAST ROW — and whether any field in the file
+  expresses the intended order.** If nothing expresses it, **the file's line order
+  IS the policy.** Sibling of D31: both are cases where the artefact returns
+  something usable and therefore never announces that it was never asked the right
+  question.
