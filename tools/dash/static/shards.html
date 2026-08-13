@@ -82,7 +82,7 @@
       <tr><td class="mono">52.11%</td>
           <td>Share of that shard's finished games won by the <strong>treatment</strong> tree (the tool counts rows whose winner column is <code>T</code>). 50% is the no-difference point; the control is the other tree on the same line.</td></tr>
       <tr><td class="mono">± 1.33pp</td>
-          <td>95% band, <code>1.96·√(0.25/n)·100</code>. <span class="badge b-ok">separated</span> means the whole interval sits off 50 — the arm is saying something. <span class="badge b-warn">inside band</span> means it is not yet distinguishable from its control, which is <em>no information</em>, not <em>no effect</em>.</td></tr>
+          <td>95% band, <code>1.96·√(0.25/n)·100</code>. <span class="badge b-ok">separated</span> means the whole interval sits off 50 <em>at this instant on a continuously-watched stream</em> — suggestive, never a verdict: with continuous looks the naive interval pokes past 50 far more often than 5%, which is why verdicts happen only at the pre-registered looks (audit M1). <span class="badge b-warn">inside band</span> means it is not yet distinguishable from its control, which is <em>no information</em>, not <em>no effect</em>.</td></tr>
       <tr><td><span class="badge b-dim">n&lt;400</span></td>
           <td>The tool <strong>refuses to print a rate</strong> below ~400 rows: “<em>at n=200 the 95% band is about ±7pp; a number printed there reads as a result and is noise</em>”. This page inherits the refusal instead of putting a tempting number beside n=41.</td></tr>
       <tr><td><span class="badge b-warn">RETIRED 50%</span></td>
@@ -174,7 +174,7 @@ function resultCell(r) {
                         : '<span class="badge b-dim">nothing yet</span>';
   }
   const sep = r.separated
-    ? `<span class="badge ${r.rate >= 50 ? 'b-ok' : 'b-bad'}">separated ${r.rate >= 50 ? 'ABOVE' : 'BELOW'} 50</span>`
+    ? `<span class="badge ${r.rate >= 50 ? 'b-ok' : 'b-bad'}" title="naive interval on a continuously-filling shard — NOT a scheduled look; verdicts happen at the pre-registered n only (interim 2,700 / final 5,400)">separated ${r.rate >= 50 ? 'ABOVE' : 'BELOW'} 50 · mid-flight</span>`
     : '<span class="badge b-warn">inside band</span>';
   const iv = (r.band !== null && r.band !== undefined)
     ? `${r.lo.toFixed(2)} – ${r.hi.toFixed(2)} <span class="vs">±${r.band.toFixed(2)}pp · n=${esc(r.n)}</span>` : '';
