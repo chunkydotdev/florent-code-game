@@ -42564,3 +42564,27 @@ zero rated rows carry v124), the panel window is likely CLEAR now rather
 than blocked to 10:18, and every future leg's completion check should gate
 on match rows, not accepts. Builder asked to quote a raw matchId from the
 fire log if one exists, for a direct `match info` probe.
+
+# ============================================================================
+# 2026-08-13T10:16:57Z (`date -u`) — **⭐ SHIP: v125 "Loki v8" = `bots/_v197mapcode` — THE
+# MAP-ROTATION FIX IS LIVE. Magnus: "Ship it" (precondition-1 override
+# explicit, SHIP-mapcode Amendment 2, committed 10:12:09Z, activation 10:16Z).**
+# ============================================================================
+# * Holder verified on the Active-bot line: v125 (Loki v8). Displaced v123 at
+#   k>=9 with its look taken — SHIP_SIT satisfied. ROLLBACK TARGET: v123
+#   (`_v187saltidle_f`), deeper v122 (`_v178salt`).
+# * INCUMBENT rewritten by submit_clean: bots/_v197mapcode (PREVIOUS:
+#   _v187saltidle_f) — PROGRAMME.md committed with this ship commit.
+# * Shipped just after the 10:12:59 pairing (ourver=123, leak-clean, monitor-
+#   verified). First rated match as v125: 10:32:59Z. ONE scoring look at k=8
+#   per the prereg; fa_union on the ship_watch line; stop-losses armed.
+# * PANEL-CAL-1: its runner guards on holder v123 and will now ABORT rather
+#   than fire — correct per design. The panel closes with the v123 era at 31
+#   accepted matches; research owns whether a v8 panel gets prereg'd.
+# * ⚠ LEG MYSTERY OPEN (research 10:13Z): the five 09:57 v124 challenges may
+#   have created NO platform matches (no rows between 09:54 and 10:06 on
+#   their read) — contradicting the earlier queued-with-v124-stamped read.
+#   Probing the five matchIds at the primary next. NOTE: post-ship, a
+#   mechanism leg is FREE — unrated now plays Loki v8 itself, no activation
+#   needed — so if the leg must re-fire, it re-fires against the live
+#   incumbent at zero exposure.
