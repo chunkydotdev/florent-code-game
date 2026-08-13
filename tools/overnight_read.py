@@ -46,6 +46,30 @@ from collections import Counter
 from pathlib import Path
 
 
+_DIMS_CACHE: dict[str, tuple[int, int] | None] = {}
+
+
+def map_area_class(name: str) -> str:
+    """CQ (<=260) / STD (261-676) / GRAND (>676) / UNK, from the map's own
+    .map26 header — never a hardcoded size table (the 2026-08-13 rotation is
+    why). Retired maps still classify: their files remain in maps/.
+    Boundaries per the s36 three-class scheme: CQ = fjordgate+antler's regime,
+    STD = the fitted 400-676 pool, GRAND = the 900s (R1000-admissible class,
+    PROGRAMME R1000_DEFEAT_AREA_MAX: 676)."""
+    if name not in _DIMS_CACHE:
+        try:
+            import map_encode
+            w, h, _rows, _cores = map_encode.parse_map26(Path(f"maps/{name}.map26"))
+            _DIMS_CACHE[name] = (w, h)
+        except Exception:
+            _DIMS_CACHE[name] = None
+    dims = _DIMS_CACHE[name]
+    if dims is None:
+        return "UNK"
+    area = dims[0] * dims[1]
+    return "CQ" if area <= 260 else ("STD" if area <= 676 else "GRAND")
+
+
 def live_pool(src: str = "tools/overnight.sh") -> set[str] | None:
     """The live map pool, parsed from overnight.sh's own MAPS= line — ONE
     source, never a second copy (S1 rule). Returns None (BLIND) if the parse
@@ -303,6 +327,11 @@ def summarise(sh, d):
         lg = [r for r in good if r[3] in pool]
         wl = sum(1 for r in lg if r[6] == "T")
         live_sub = (wl, len(lg))
+    classes = {}
+    for r in good:
+        c = map_area_class(r[3])
+        w_, n_ = classes.get(c, (0, 0))
+        classes[c] = (w_ + (1 if r[6] == "T" else 0), n_ + 1)
     return dict(sh=sh, n=N, target=d["target"], status=d["status"], W=W, p=p, hw=hw,
                 seatA=(sum(1 for r in seatA if r[6] == "T"), len(seatA)),
                 seatB=(sum(1 for r in seatB if r[6] == "T"), len(seatB)),
@@ -310,6 +339,7 @@ def summarise(sh, d):
                 override_note=override_note,
                 dup_note=dup_note,
                 retired=retired, ret_maps=ret_maps, live_sub=live_sub,
+                classes=classes,
                 maps=len({r[3] for r in good}))
 
 
@@ -508,6 +538,20 @@ def main():
               f"{50-s['hw']*100:.2f}%–{50+s['hw']*100:.2f}%")
         a, an = s["seatA"]; b, bn = s["seatB"]
         print(f"   seat A {a}/{an}={a/max(an,1):.1%}   seat B {b}/{bn}={b/max(bn,1):.1%}")
+        # Three-class split (s36): rate printed only at n>=400 per class — the
+        # same floor as the headline; a thin class shows its n and nothing else.
+        parts = []
+        for c in ("CQ", "STD", "GRAND", "UNK"):
+            if c not in s.get("classes", {}):
+                continue
+            w_, n_ = s["classes"][c]
+            if n_ >= 400:
+                hw_ = 1.96 * math.sqrt(0.25 / n_)
+                parts.append(f"{c} {w_}/{n_}={w_/n_:.1%} ±{hw_*100:.1f}pp")
+            else:
+                parts.append(f"{c} n={n_} (no rate)")
+        if parts:
+            print(f"   by class: {'   '.join(parts)}")
         if s["kt"] and s["kc"]:
             mt = sorted(s["kt"])[len(s["kt"]) // 2]; mc = sorted(s["kc"])[len(s["kc"]) // 2]
             print(f"   median kill round  TREAT {mt}  CTRL {mc}   "
