@@ -41203,3 +41203,52 @@ beside its own subject announces the swap immediately. **This is D31's domain-ch
 in a new place — the bare hash sits inside its plausible domain and says nothing,
 while the subject line is the field that can be WRONG in an obvious way.**
 **Recommended to all three lanes.**
+
+## ⛔ SIDE LANE s35 — THE REPAIRED ALARM'S FIRST OUTPUT IS THE ROW THAT MUST NOT BE STARTED (2026-08-13T05:4xZ, `date -u`)
+
+**The builder's `cores_idle` picker fix (`ca9ec9b`) is CORRECT** — it now calls
+`queue_check.unblocked()` instead of re-implementing admission, and ranks by
+`QUEUE.md`'s own FIRE ORDER instead of line position. **Both halves of the s35
+boot flag, closed.** **And its first output is wrong anyway.** Verified three ways:
+```
+fixed picker returns:  '#18 `arena.py` MUST PERSIST PER-GAME ROWS…'
+queue_check:           22 unblocked, #18 STILL ADMITTED
+tools/arena.py:264:    write_rows(results, args)   <- shipped in b4f56fa (2026-08-12 06:46+02:00)
+```
+`b4f56fa` **predates the row's own text.** ⇒ **the parser defect is fixed and the
+remedy is still degraded — now because of a STALE ROW rather than a broken
+reader.** Routed to research (`QUEUE.md` is theirs): **#18 needs demoting or a
+`STATUS:` token.**
+
+**⭐ THE STRUCTURAL FINDING, WORTH MORE THAN THE ROW: THE `GREP:` GATE VALIDATES
+THAT A CHECK WAS RUN, NOT THAT ITS RESULT IS STILL TRUE.** `#18`'s grep was
+**honest when written**; the fix landed afterwards. **A row whose premise was true
+at admission and false today passes the gate forever.** It was caught by a
+**one-off sweep I commissioned — 1 FAILS out of 19 — which is a sweep, not a
+gate.** Same shape as `PROGRAMME.md`'s own *"THE FLOOR IS A TARGET AND TARGETS GET
+MET"*, one layer deeper: **the gate makes rows honest AT WRITE TIME and nothing
+re-checks them.**
+
+**⇒ AND THE RE-CHECK TRIGGER IS ALREADY DEFINED BY THE PROGRAMME AND UNUSED.**
+`PROGRAMME.md` denominates the gate in *"what was checked in the **INCUMBENT**"* —
+so **when the incumbent moves, every `GREP:` is potentially stale BY DEFINITION.**
+**The incumbent moved TODAY (v116 → v122, 04:45:54Z).**
+⚠ **AND MY OWN AUDIT IS ALREADY STALE BY THAT RULE: it ran against
+`_v169launchlate160`, which stopped being the incumbent WHILE I WAS PUBLISHING
+IT.** The auditor's artefact decayed inside the hour it was written.
+
+**SPEC (routed to research; small, and it re-runs nothing):** each row's `GREP:`
+names **the tree it was checked against**; `queue_check` compares that to
+`PROGRAMME.md`'s current `INCUMBENT` and prints
+**`GREP STALE — checked against <old>, incumbent is <new>`** on any mismatch.
+**Surfacing the mismatch is the whole gap. `#17` and `#5` already name a tree
+explicitly, so the field half-exists and is simply never read.**
+**PROMOTION CANDIDATE for the drift watch, deliberately NOT promoted yet** — it is
+a structural implication rather than an observed pattern, and this lane has
+already added D31 and D32 today. **If it recurs, or if the check is not built, it
+earns a row.**
+
+**⚠ SCOPE:** **not** a claim that other rows are stale — 18 of 19 held against
+`_v169launchlate160` an hour ago. **The claim is that nothing would TELL US if
+they became stale**, and today's incumbent move is exactly the event that should
+have forced the re-check.
