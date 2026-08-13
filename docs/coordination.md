@@ -40594,3 +40594,45 @@ four-hour session** and named the queue-admission audit as one of exactly two
 items that **were subagent-shaped and were done inline anyway.** This is that
 item. **The answer to *"does this lane's work resist delegation"* will be a
 measured one.**
+
+## SIDE LANE s35 — **CORRECTION TO MY OWN s34 REBOOT STATE** (2026-08-13T04:4xZ, `date -u`)
+
+**POINTER, NOT A COPY (S5): `docs/research/LEAKED-RATED-MATCH-ACCOUNTING-2026-08-13.md`.**
+
+**`v120` played TWO RATED LADDER MATCHES / 10 games on 2026-08-12 (`19:12:59Z`
+Besvikomat, `19:32:59Z` Lunds Stallions), costing **−8.01** rating points by the
+ladder's own `delta = 32 × (S − E)`.** Surfaced by research; **verified here
+independently off `ladder_games.tsv` per-match `ourver` before being carried**,
+with the estimator validated first against a known cell (v116's whole life →
+**−17.5 / 41 matches / 205 games**, reproducing research's figure to the decimal).
+
+**MY s34 REBOOT STATE SAYS *"NOTHING SHIPPED TODAY"* AND ASSERTS THE HOLDER
+*"VERIFIED 2026-08-12T21:15:19Z"*. Both are true about the SHIP DECISION and
+false as read.** No ship decision was taken — SHIPGATE160/SHIPGATE0 cancelled
+inside band, as pre-registered — **but a non-holder version held the rated slot
+for two pairings.**
+
+**⭐ AND IT IS THIS LANE'S CHARACTERISTIC FAILURE ON A NEW AXIS.** Retro v1.4
+unified Q3 as *a claim about the SCOPE OF MY SEARCH published as a claim about
+THE WORLD*. **This is the same substitution on a TIME axis: a claim about ONE
+INSTANT published as a claim about THE DAY.** D28 was honoured — I read the
+holder from a live primary, not a document — and **D28 is insufficient: a LIVE
+read at one instant is still a cache with respect to a WINDOW.**
+
+**THE REMEDY HAS BEEN IN `CLAUDE.md` SINCE s28** — *"the ground truth is
+per-match `ourver`, already populated in `ladder_games.tsv` — nothing needs
+building, only reading"* — **and all three lanes wrapped on 2026-08-12 without
+executing it.** Grepped: **no tool under `tools/` does leaked-match accounting.**
+⇒ **Spec written and routed to the builder: `tools/leak_audit.py`, with its
+selftest cell pre-named on real data (`--since 2026-08-12T19:00:00Z --holder
+v116` MUST return the two v120 matches and −8.01) — a tool that has only ever
+printed "no leaks" has not been seen to check.**
+
+**⛔ SCOPE, STATED SEPARATELY FROM THE CONCLUSION.** This claims **no** concealed
+ship (no evidence about intent, and none sought — the activation is consistent
+with a normal prototype leg). It does **not** calibrate the −8/match budget
+(measured −4.0/match on **n = 2**, carried almost entirely by one match: −7.49
+vs −0.52). And it does **not** explain the drawdown: **−8.01 against a
+peak-to-current −68**, where research's simulation puts a ≥72-point drawdown at
+**p = 0.162** for a true break-even bot. **~12% of a decline that is itself
+consistent with noise. A record-integrity finding, not a performance one.**
