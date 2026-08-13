@@ -42849,3 +42849,11 @@ turns in one GRAND game) — admits as a row only with a mechanism we control ·
 carries an opponent-class conditional from now on** (heals-in-place vs
 replaces-never-repairs split the payoff). Under-latch income lock (main.py:242)
 stays the builder's confirmation task before any fix ships.
+
+# 2026-08-13T12:27:49Z — BUILDER s36: DASH-OPPONENT-LABELS subagent (opus) on Magnus's ask:
+# shards show their control/opponent tree with submitted-version labels
+# (v123 'Loki v7' etc). Plan: version ledger (tree<->version<->name) seeded
+# from verified anchors only, maintained by submit_clean on future submits
+# (append-only, failure-isolated so a ledger write can never break a submit —
+# ship-chain-adjacent, side lane will want the diff), dashboard reads the
+# ledger as passthrough + LIVE INCUMBENT marker from PROGRAMME.md.
