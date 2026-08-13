@@ -122,3 +122,10 @@ burst on ERROR, and any fallback fire without --match is recorded as such).
 Research's oppver-per-game decode now serves as VERIFICATION of the pin
 rather than mere observation — a pinned cell whose decoded oppver differs
 across arms is an instrument alarm, not a shrug.
+
+# CORRECTION TO AMENDMENT 3's FRAMING (append-only, research @24d6ee6):
+# --match was not "discovered" today — it has been documented at
+# docs/fcode-cli.md:330-342 since 2026-08-09, in zero booted files, while
+# CLAUDE.md carried "nothing pins THEIRS" as a standing limitation. Second
+# confirmed instance of the reference-doc-nobody-opens failure (first:
+# submit-auto-activates). The amendment's operational content stands.
