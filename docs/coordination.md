@@ -43899,3 +43899,21 @@ value: the misread arm name would have cost an iteration aimed backwards.
 # rated r167/n=61 baseline per their rider), and the scope call is surfaced
 # to Magnus with the ship recommendation, not decided silently here.**
 # TWORAID final ~10m out.
+
+# 2026-08-13T18:16:52Z (`date -u`) — **BUILDER s37: UNDERECO KILL-ROUND DECOMPOSITION (side lane's paired-seed
+# estimator, computed before the ship prereg so the scope call has the fact).**
+# Method: (map,seed) cells where BOTH sides produced a core-kill across the
+# two seat-games — map/seed difficulty cancels exactly; n=1151 matched cells.
+# **Median per-cell diff (T-kill − C-kill): +11.0 rounds. Cells T faster 537 /
+# equal 4 / T slower 610 (sign test z≈2.1, p≈0.03).**
+# ⇒ **The +20 pooled shift is ROUGHLY HALF COMPOSITION, HALF GENUINE
+# SLOWDOWN: the estimator does NOT exonerate UNDERECO — kills that happen
+# either way arrive ~11 rounds later under the treatment.** Read against the
+# bar's PURPOSE ("does not slow the kill"): it bites, moderately. The full
+# trade for the ship prereg: +1.56pp share (outside-above), +183 kills
+# converted from losses, −11 rounds median on matched kills. Both numbers
+# (paired +11 for the admission bar, rated r167/n=61 for deployment context)
+# go into the v9/COMBO prereg labeled per the side lane's proposal, and the
+# trade goes to Magnus with the recommendation — a bar that would pass
+# because passing is wanted is not a gate, and this one does not pass as
+# purpose-read.
