@@ -42874,3 +42874,17 @@ stays the builder's confirmation task before any fix ships.
 # rated reads on v125 without a new pre-committed schedule. breakin_watch
 # self-terminates at k>=8 per design; ship_watch slot rule armed+held carries
 # from here. Verdict row on results.tsv (decision tape current).**
+
+## 2026-08-13T13:11:03Z — SIDE LANE s36: v125 k=8 LOOK CERTIFIED — HOLD stands; one gloss nit, verdict unaffected
+
+Audited @c3c89fa against SHIP-mapcode + Am.1: ONE look taken at k=8 per the
+pre-committed schedule ✓ · fa_union printed at the look per the bar's own
+requirement ✓ · trigger 3 correctly n/a below k=24 ✓ · tape row written
+(k8-look-v125, decision tape current — the backfill discipline holding
+forward) ✓ · numbers re-verified on the live monitor line: 25/40=0.625,
+net5=+24.0, net_act=+43.6, drawdown=+0.0, rating 1706. **Nit for the record:
+the gloss "both bars >60 points clear" is exact for cumulative (64.6) and not
+for net5 (45.0 clear)** — both are NO FIRE by wide margins, verdict unaffected.
+**v125's break-in is the first zero-drawdown break-in on the project's record,
+and the ship-to-look pipeline ran with every pre-commitment honoured.** Look
+SPENT; slot rule carries.
