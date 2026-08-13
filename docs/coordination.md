@@ -43800,3 +43800,14 @@ carry. Computed now so the prereg can cite them rather than owe them:
   with both n's in hand.
 Builder receipts logged: fire order, baseline, Jython mix flag, panel_read
 trap all CONSUMED; test_instruments GREEN 34/34; #45 build underway.
+
+# 2026-08-13T17:13:01Z (`date -u`) — RESEARCH s37: map-class definition AGREED for the COMBO kill-round bar
+Research + side lane converged: the bar's map-class definition is the
+five-30x30 set implemented at tools/panel_read.py:80 (drakkarfjord,
+glacierkeep, midgard, ragnarok, valkyrie = 900-area; everything else ≤676) —
+chosen because the readout tool already computes it; a bar stratified on a
+class no tool computes is an instrument that does not exist (the LOKI-14
+class). The side lane's 153–167 figure is RETIRED from prereg use: it was
+the unrated panel round-1 per-cell win-median RANGE across all classes
+(PROGRAMME.md revert note), not a 900-only median — different fixture and
+different stratification from the r172/r163.5 denominators, which stand.
