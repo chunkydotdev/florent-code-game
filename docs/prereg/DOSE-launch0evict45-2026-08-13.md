@@ -47,3 +47,54 @@ what the screen prices; LAUNCH0's 52.77 says the premium was affordable in
 its era, this screen says whether it still is), then the pinned live leg
 with its own prereg. If the falsifier fires on (b), the next lever is
 launcher SITING, not timing.
+
+---
+
+## READOUT (clock = this commit's git author time; runs 17:34:41-17:35:04Z,
+## bar-3 control after; replays scratchpad/feeder45_dose/l0e_*, l0eoff_*)
+
+**⛔ FIRST, A CITATION CORRECTION THAT OUTRANKS THE RESULT — research's HOLD,
+which raced this dose and lost by minutes: THIS PREREG CITES LAUNCH0
+BACKWARDS.** `LAUNCH0` = `_v161launch0` = **`LAUNCHER_CAP=0` — the
+NO-launcher arm** (its own positive control: 0 throws in 12 games). Its
+52.77% is the no-launcher arm WINNING; the family reads launcher premium =
+LAUNCH0−BOTH0 = **+6.34pp for NOT paying**, earlier = monotonically worse,
+reserve ablation negative. **Unconditional pre-build is screen-OPPOSED in
+unsieged pooled games, not screen-backed.** The "replication-by-rule" framing
+was therefore replication of a MISREAD rule — the constant I changed
+(MIN_RND 160→0) was never LAUNCH0's constant. The dose below survives as
+MECHANISM evidence only, and the arm does NOT proceed to a screen.
+
+**BAR 1 — VALIDITY: PASS** (CREEP45 in 15/16; the one 0-plant game is the
+treatment's own doing, see below).
+
+**BAR 2 — r<160 EVICT45, as registered: NOT MET POOLED, MET ON FROSTGATE.**
+Frostgate: 6 of 8 valid games evict (9-48 evictions/game). Midgard: 0 of 7
+valid games. Pooled 6/15 — under ≥half. **FALSIFIER (0 everywhere)
+DEFINITIVELY NOT FIRED: the road iteration 2 proved shut is OPEN when the
+launcher pre-exists.** All 205 evictions are r<160; r≥160 = 0 everywhere.
+
+**⚠ DENOMINATOR DEFECT IN MY OWN BAR, named for the next prereg: midgard
+seed 993003 shows 18 evictions and 0 CREEP45 plants — the mechanism's
+STRONGEST game (feeders evicted before they could ever plant) is EXCLUDED
+from the bar's denominator because the bar conditions on plants, an outcome
+the treatment suppresses.** A validity denominator must be a PRE-treatment
+quantity (e.g. enemy builders entering our half), not a post-treatment one.
+Collider by construction; the bar verdict above is still reported as
+registered.
+
+**BAR 3 — TAG-ATTRIBUTION CONTROL: PASS.** MIN_RND=160 restored, tag
+present, 2 frostgate games: 0 r<160 EVICT45, 0 r≥160, plants 3/3.
+
+**VERDICT (mechanism): a pre-existing launcher evicts point-blank feeders at
+0 ammo, repeatedly, and in the best case prevents the ladder from forming at
+all. The COST side is research's verified family read: paying for launchers
+is expensive in pooled unsieged games.** ⇒ The two results point at exactly
+research's combined row: **CONDITIONAL pre-build on APPROACH detection**
+(build when creepers walk in, before the bank drains — iteration 2 proved
+detection machinery fires), with the premium as the named hazard and
+unsieged non-regression as a bar. `_v201launch0evict` goes no further;
+iteration 4 builds from research's row when it lands. Map split noted for
+that row: eviction fired on frostgate (small) and not midgard (900-area) —
+launcher siting vs creep path likely differs by map class; worth a stratum
+in the row's bars.
