@@ -41986,3 +41986,59 @@ Wake paths armed: all-commits drift monitor (45 s cadence) + peer channel
 #   stays idle until research reboots with a cadence plan, or I fire a
 #   self-scoped panel after the map-area work if the window allows (charter:
 #   firing an existing order outranks new local arms; there is no order).
+
+# ----------------------------------------------------------------------------
+# 2026-08-13T08:44:33Z (`date -u`) — **BUILDER s36: THE k=8 LOOK ON v123 — VERDICT: HOLD.**
+# The single pre-committed scoring look (SHIP-saltidle prereg, Amendment 1).
+# Taken ONCE, off the LIVE surface per the two-clocks rule. **The look is now
+# SPENT — no further rated reads on v123 without a new pre-committed schedule.**
+# ----------------------------------------------------------------------------
+
+**Per-match record, live CLI (`fcode match list --mine --type ladder`), all 8
+since activation 06:06:27Z, opponent version pinned per row:**
+
+    06:12 gsxWins(v22)      W 5-0  ·  06:32 arsonist duck(v24)  W 3-2
+    06:52 Jython(v33)       W 5-0  ·  07:12 Lunds Stallions(v69) L 2-3
+    07:32 I Stone(v22)      W 4-1  ·  07:52 Besvikomat(v45)     L 2-3
+    08:12 Landers(v119)     L 2-3  ·  08:32 Coreflood(v82)      W 3-2
+
+**The three pre-committed statistics together:**
+1. **net5 = −7.0** (ship_watch 08:38:36Z, tape_age 1.6 min) vs bar ≤ −21:
+   **NO FIRE.** Union false-alarm context: 0.239 @ k=8 for a true-neutral, so
+   `RULE=held` is the informative half — and it held.
+2. **Cumulative since activation = +35** (tape: 1611 at the 06:07Z baseline row →
+   1646 now; ship_watch derived +34.8) vs bar ≤ −21: **NO FIRE.** Beside it per
+   the prereg: v116 lifetime −17.50 at share 0.502; v122's 4-match life 8/20
+   games (0.400), 1628→1611 = −17.
+   ⚠ `ship_ledger` prints +43.45 over 5 matches — that is its 68.8-min-stale
+   decode window (its own lag line says ~3.4 matches missing), NOT the look's
+   number. The live-tape figure over all 8 is the one that counts.
+3. **Pooled game share 26/40 = 0.650 at k=8** (5W-3L). Trigger 3 (below v116's
+   0.502 by >1 pooled SE) applies at k≥24 only — not applicable. Distance
+   +14.8pp ≈ +1.7 per-match SE (per-match share sd≈0.25) — **favourable, NOT
+   conclusive, and this look does not claim it is.**
+4. Crash/timeout regression: all 8 complete, none observed. **NO FIRE.**
+
+**⇒ HOLD. v123 keeps the slot. What this look may NOT claim (prereg): nothing
+here confirms 57.83% or 65.54% — confirmation is IDLEVSALT at full n plus a live
+unrated panel.**
+
+**⚠ TZ TRAP, LIVE INSTANCE (side lane's boot warning, same hour):** my first
+baseline read took tape rows at `2026-08-13T06:0x` as UTC — they are LOCAL
+(UTC+2), which lands in the v116 era and reads baseline 1628 (⇒ +18 cumulative).
+Caught because ship_watch's derived +34.8 disagreed — two instruments, one
+number. The tape's timestamps are naive local; anything joining tape rows to
+platform UTC must shift by +2h.
+
+**RECEIPTS (side lane s36 boot flags):**
+* FLAG 1 (k=8 look arrived): **CONSUMED** — this block is the look; taken once.
+* FLAG 2 (breakin_watch stale): **CONSUMED — action attempted, needs Magnus's
+  hand.** The loop (pid 66446) is `while true` around a script whose design
+  EXITS at k≥8 — pinned `BREAKIN_VERSION=v116 BREAKIN_ROLLBACK=115`, two ships
+  stale, guarding a dead tape segment. v123's break-in window (k 0→8) has now
+  PASSED regardless; ship_watch's slot rule is armed and held. The kill was
+  blocked by this session's permission layer. **MAGNUS: `kill 66446` when
+  convenient** — and the re-arm duty belongs AT THE NEXT SHIP with the fresh
+  holder + PREVIOUS_INCUMBENT as rollback (docstring's own rule; a while-true
+  wrapper contradicts its exit-when-done design, so re-arm WITHOUT the wrapper
+  or with a version-change guard).
