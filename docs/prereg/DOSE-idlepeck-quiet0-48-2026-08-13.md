@@ -109,3 +109,26 @@ further toward the bar would be fixture-shopping; stopped.
   iteration 4's r<160 eviction attribution.
 * Validity 5/12 at the pinned definition is DISCLOSED as the fixture's
   ceiling, not cured.
+
+---
+
+## READOUT (iteration 1) + AMENDMENT 3 (ADD-only): the widened arm
+
+**Bar 2a (as re-scoped in Amendment 2): NOT MET — IDLEPECK48 in 1/12 games.**
+The firing game is the mechanism's positive control: frostgate 995001, 101
+pecks, kill r136 vs the control's r164 on the same (map,seed) — **−28 rounds
+paired**. Cause of the 11 zeros, read from the replays: the step requires
+CORE-adjacency, and the camper's healer bodies + barrier ring occupy the
+core-adjacent tiles — parked raiders sit at d²≤4 but not orthogonal to a
+core tile. Adjacency starvation, not a dead mechanism.
+
+**AMENDMENT 3 — `bots/_v210idlepeck2` (iteration 2, ZERO treatment games at
+commit):** the idle round is spent on the best adjacent enemy BUILDING —
+core first, else whatever stands between the body and the core (chewing a
+30 HP barrier at 2 dmg/round reopens the seat). `_v208idlepeck`'s running
+screen continues UNCHANGED (it measures the narrow step; per rider 1 it is a
+harm read). Iteration-2 dose: same fixture, same seeds, same bars as
+Amendment 2's 2a. Live-leg wire filter, per the side lane's scope caveat:
+**builder-attacks-ON-CORE (target type CORE), not all builderAttack — the
+conveyor-melee carve-out means the incumbent's melee is only zero on the
+correctly-scoped event class.**
