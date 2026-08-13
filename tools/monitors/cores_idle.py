@@ -81,21 +81,94 @@ def running_games() -> int:
     return n
 
 
+def _fire_order_numbers(text: str) -> list[str]:
+    """Row numbers in the order `QUEUE.md`'s own FIRE ORDER block ranks them.
+
+    ⛔ THE FILE DECLARES ITS LINE ORDER VOID AND THIS READER USED TO IGNORE THAT:
+    *"THIS BLOCK SUPERSEDES POSITIONAL ORDER IN THE SECTIONS BELOW."* Returns []
+    when no fire-order block is present, which the caller treats as "fall back to
+    admission order AND SAY SO" — never as "positional order is correct".
+    """
+    out, seen, in_block = [], set(), False
+    for line in text.splitlines():
+        if "FIRE ORDER" in line and line.lstrip().startswith("#"):
+            in_block = True
+            continue
+        if in_block and line.startswith("## ") and "FIRE ORDER" not in line:
+            break                       # next top-level section ends the block
+        if not in_block:
+            continue
+        for num in re.findall(r"`?#(\d+)`?", line):
+            if num not in seen:
+                seen.add(num)
+                out.append(num)
+    return out
+
+
 def next_queue_item():
-    """Top unblocked row of QUEUE.md, so the alarm carries its own remedy."""
+    """The next row a builder should actually START — admitted AND top-ranked.
+
+    ⛔ REWRITTEN 2026-08-13 (s35). THIS FUNCTION HAD TWO INDEPENDENT DEFECTS AND
+    BOTH POINTED THE SAME WAY: it handed a 3am builder a row that could not be
+    built.
+
+    1. IT RE-IMPLEMENTED THE ADMISSION GATE, AND DISAGREED WITH IT. It skipped
+       only `~~`/`WITHDRAWN`/`SHIPPED`, while `queue_check.unblocked()` also
+       requires a substantive `GREP:` cell (the incumbent check) and rejects
+       `STATUS:` tokens and unmet-grep markers. Measured on live data at s35 boot:
+       `queue_check` counted 19 rows and **the row THIS function returned was not
+       among them.** That is the s29 green-selftest signature — a second copy of
+       the computation — here in PRODUCTION rather than in a test. Fixed by
+       CALLING `queue_check.unblocked()` instead of imitating it.
+    2. IT READ POSITIONAL ORDER OUT OF A FILE THAT DECLARES POSITIONAL ORDER
+       SUPERSEDED. `rows[0]` is whatever sits highest in the markdown.
+
+    ⭐ AND (2) IS A CLASS, NOT AN INCIDENT — three instances in this repo:
+    this function; `corefill.sh`, where an arm Magnus asked for twice sat queued
+    behind two others purely by LINE POSITION; and `fanout.sh`, whose retry
+    exhaustion always drops the TAIL of the id list (CLAUDE.md prescribes
+    rotating the start cell; `panel2_cal.sh` does, `fanout.sh` still does not).
+    **In all three the file has no field expressing intent, so line order BECOMES
+    the policy and is then edited by people who do not know that.** The tell is a
+    reader taking `[0]` over a human-maintained list. Class named by the side
+    lane; instances 1 and 2 fixed, 3 left as CLAUDE.md already prescribes it.
+
+    Returns (label_or_None, age_min).
+    """
     if not QUEUE.exists():
         return None, None
     age_min = (time.time() - QUEUE.stat().st_mtime) / 60.0
-    rows = []
-    for line in QUEUE.read_text().splitlines():
-        if not line.startswith("|"):
-            continue
-        if "~~" in line or "WITHDRAWN" in line or "SHIPPED" in line:
-            continue
-        cells = [c.strip() for c in line.strip("|").split("|")]
-        if len(cells) >= 2 and cells[0].isdigit():
-            rows.append(cells[1].replace("*", ""))
-    return (rows[0] if rows else None), age_min
+    text = QUEUE.read_text()
+
+    try:                                # call the REAL gate, never a copy of it
+        sys.path.insert(0, str(ROOT / "tools"))
+        import queue_check              # noqa: E402
+        admitted = queue_check.unblocked(queue_check.parse(text))
+        labels = [queue_check.label(row) for _sec, row in admitted]
+    except Exception as exc:            # BLIND, not empty — say which
+        return f"(BLIND: queue_check unavailable: {exc})", age_min
+
+    if not labels:
+        return None, age_min
+
+    def numof(lbl: str):
+        m = re.match(r"\s*#?(\d+)", lbl)
+        return m.group(1) if m else None
+
+    by_num = {}
+    for lbl in labels:
+        n = numof(lbl)
+        if n is not None:
+            by_num.setdefault(n, lbl)
+
+    for n in _fire_order_numbers(text):     # ranked order wins
+        if n in by_num:
+            return by_num[n], age_min
+
+    # No fire-order row is admitted. Fall back, but SAY it is a fallback —
+    # a silent fallback here is how positional order became policy in the
+    # first place.
+    return f"{labels[0]}  [no ranked row admitted; admission order]", age_min
 
 
 def main() -> int:
