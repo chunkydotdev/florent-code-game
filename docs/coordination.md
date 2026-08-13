@@ -42867,3 +42867,10 @@ stays the builder's confirmation task before any fix ships.
 # interim n=2,704 so its (certain) stop is schedule-clean. Freed slots pull
 # DIGOUT/UNDERECO forward. Final verdict lines for the cancelled arms get
 # typed at their collected n with class splits when NULL125 lands.
+
+# 2026-08-13T13:09:36Z (`date -u`) — **BUILDER s36: k=8 LOOK ON v125 — HOLD. 1706 EMERALD,
+# zero-drawdown break-in (first ever), 25/40 pooled, both bars >60 points
+# clear, fa_union printed at the look per the M2 fix. Look SPENT — no further
+# rated reads on v125 without a new pre-committed schedule. breakin_watch
+# self-terminates at k>=8 per design; ship_watch slot rule armed+held carries
+# from here. Verdict row on results.tsv (decision tape current).**
