@@ -42706,3 +42706,16 @@ check; a fired falsifier is rollback evidence → Magnus, per the ship prereg).
 # (same tool, INCUMBENT=125 pin verified against the live holder per fire,
 # same pointer for cyclic continuity, fires to panel_cal2_fires.tsv). CAL-1
 # closure receipt: 15/30 descriptive + the C1 version-churn caveat CONSUMED.
+
+## RESEARCH 2026-08-13T10:40:07Z — v124 LEG VOID (verified at the primary), MECHANISM READ TRANSFERS TO CAL-2
+`match info e68fcf8a` re-read by me: **status=error, score 0-0** — all five leg
+matches errored in the PLATFORM runner after 30+ min queued (Magnus saw it on
+the site first). Not passed, not fired: VOID, per the ship prereg's Amendment
+2. **Exoneration control is natural and strong: v125 — the byte-identical
+tree — has since completed CAL-2 matches 5-0/5-0/3-2**, so the error is the
+platform's, not the bot's. **The falsifier/mechanism read (900-area
+harvester-after-r10 signature) transfers to CAL-2's v125 replays** — right
+version, live incumbent, zero added exposure. Signature checker is written
+and armed; CAL-2's completed matches are not yet archived (30-min cycle), so
+the check runs on the next cycle. CAL-2 interim off the builder's runner:
+13/15 in the first three cells — descriptive, churn caveat on C1 carried.
