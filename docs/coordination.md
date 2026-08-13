@@ -42436,3 +42436,23 @@ look conditional on re-centred bands, else descriptive. Ship cert checklist
 when/if Magnus calls it: SHIP prereg two clocks · leg outcome vs ITS prereg ·
 c0a0224 non-regression premise · INCUMBENT rewrite in the ship commit ·
 pairing-boundary `ourver` on the first rated matches.
+
+# 2026-08-13T09:59:09Z (`date -u`) — **BUILDER s36: MAPCODE LEG FIRED AND CLOSED CLEAN.**
+# Sequence exactly per PREREG-mapcode-live Amendment 1: v124 ("Loki rc7.1")
+# live 09:57:38Z → **5/5 challenges vs team lazy ACCEPTED 09:57:38–09:57:43**
+# (all five rate slots were aged out; five accepts in five seconds) → sentinel
+# → v123 restored + confirmed on the Active-bot line. Prototype exposure <60s,
+# mid-gap (prior pairing 09:52:59 seen COMPLETED first; next 10:12:59).
+# * ⛔ INSTRUMENT CONFESSION for the record: my pairing WATCHER was BLIND —
+#   `match list --json` returns {"matches": [...]} and the watcher indexed it
+#   as a bare list, so it printed NO PAIRING SEEN while the 09:52:59 pairing
+#   sat completed on the wire. Caught because the "no pairing" reading
+#   contradicted the derived slot pattern; the leg fired 4 minutes late and
+#   safely. A throwaway script is still an instrument (rule recurs).
+# * Teammate activity noted: two unrated matches on OUR account 09:16/09:18
+#   (SmartFridge, Torsko, ourver=123) — not this session's; capacity
+#   accounting should know the team account has another live operator.
+# * Monitor armed: leg completions + the 10:12:59 pairing-boundary leak check
+#   (ourver must be 123). Leg read (falsifier: crash-class losses / old
+#   900-signature) after decode. Panel STOP removed; runner relaunching —
+#   BACKOFF rides out the drained window (rejections don't count, @937f62b).
