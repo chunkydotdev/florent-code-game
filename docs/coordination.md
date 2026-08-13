@@ -44251,3 +44251,14 @@ control. The pinned-definition run above postdates the fix.
 # gates. The alarm that fired wrongly once is the alarm that got fixed
 # before it mattered — no decision was corrupted (COMBO's gate was already
 # typed).
+
+# 2026-08-13T20:22:47Z (`date -u`) — **BUILDER s37 GATE DECISION: GUNAXIS0 dropped at GATE-2700,
+# DECISION-REACHED (ablation clause).** n=2733, 49.51 ±1.87, interval
+# [47.6, 51.4]: every value in it yields the same decision — **the
+# LOKI_GUNAXIS_PENALTY flag STAYS** (removal reads null-to-harmful; even the
+# interval's top edge is below the raised ship bar). #33's queue question is
+# answered at the decision level: the shipped flag is not dead weight, and
+# #30/#31a stop being gated on it. The row's deferred mechanism read
+# (gunner-covered forward deaths, kept replays) remains available if anyone
+# needs the finer number — the gate stops buying precision past the
+# decision. Rows kept, ~2,650 games refunded to COMBO/APPRLAUNCH.
