@@ -63,3 +63,20 @@ Both arms carry kill-round non-regression at their screens (paired-seed
 estimator per the UNDERECO decomposition — matched (map,seed) cells, median
 per-cell diff ≤ 0 expected; IDLEPECK's mechanism PREDICTS faster kills, so a
 kill-round RISE in either arm is a red flag, not a nuance).
+
+---
+
+## AMENDMENT 1 (ADD-only, pre-treatment-data; clock = this commit's git
+## author time): FIXTURE-INVALID fallback taken, as pre-registered
+
+Bar 1's control read: **parks 0 in 12/12 sitter games — and the cause is
+structural, not behavioural: v125 kills the sitter at r63-90, so a ≥100-round
+park cannot exist in the game** (rounds verified on two replays). Per bar 1's
+own text the dose moves to a camp-shaped fixture: **`bots/_probe_camper`**
+(new: builders heal the core every round +4/1Ti, barrier ring; lie direction
+stated — perfect heal uptime overstates the camp, making parks EASIER, which
+is against the treatment's interest at bar 2's kill-round clause). Validity
+bar unchanged in form: ≥1 park per the pinned detector in ≥4 of 6 control
+games per map, now vs the camper; additionally the control game must reach
+r300+ (else the fixture still fails to stall and no cell is read). Seeds and
+all other bars unchanged.
