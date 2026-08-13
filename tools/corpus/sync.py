@@ -48,6 +48,17 @@ DECODERS = [
 ]
 
 
+
+def _pick(listrow, info, key):
+    """Prefer the LIST payload for a field the DETAIL endpoint nulls.
+
+    Explicit `is not None` rather than `or`, so a legitimate 0 is never
+    silently replaced by the fallback."""
+    v = listrow.get(key) if isinstance(listrow, dict) else None
+    if v is not None:
+        return v
+    return info.get(key)
+
 def sh(args, **kw):
     return subprocess.run(args, cwd=ROOT, text=True, capture_output=True, **kw)
 
@@ -150,8 +161,23 @@ def sync_ladder() -> int:
             row = dict(
                 match=m["id"], created=mm.get("createdAt", ""),
                 opp=mm["teamBName"] if side == "a" else mm["teamAName"],
-                oppver=mm.get("teamBVersion") if side == "a" else mm.get("teamAVersion"),
-                ourver=mm.get("teamAVersion") if side == "a" else mm.get("teamBVersion"),
+                # ⛔ VERSIONS COME FROM THE **LIST** PAYLOAD (`m`), NOT FROM
+                # `match info` (`mm`). Measured 2026-08-13 across 6 consecutive
+                # matches: `fcode match info` returns the version for OUR side
+                # and **None for the OPPONENT'S**, every time, while
+                # `fcode match list` returns BOTH. That single asymmetry is why
+                # `ladder_games.tsv.oppver` was the literal string 'None' in
+                # **all 4,375 rows** while `ourver` populated correctly — the
+                # ingest read a field the detail endpoint does not fill in.
+                #   list: 24/123   info: None/123   (we are B)
+                #   list: 122/52   info: 122/None   (we are A)
+                # CLAUDE.md already flagged the consequence — "we pin ourver …
+                # and nothing pins or even reads THEIRS" — and prescribed
+                # `league_matches.tsv` as the workaround. The field was on the
+                # wire the whole time. `mm` is kept as a fallback so a future
+                # API that fills it in still works.
+                oppver=_pick(m, mm, "teamBVersion" if side == "a" else "teamAVersion"),
+                ourver=_pick(m, mm, "teamAVersion" if side == "a" else "teamBVersion"),
                 ourbef=mm.get("ratingABefore") if side == "a" else mm.get("ratingBBefore"),
                 oppbef=mm.get("ratingBBefore") if side == "a" else mm.get("ratingABefore"),
             )
