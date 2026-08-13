@@ -43,8 +43,11 @@
 ##  2. **#45 KILL THE BUILDER, NOT THE LADDER** — build-first pick (two teams
 ##     walk point-blank gunner ladders with 1-2 round refunds; the 40 HP
 ##     feeder is never targeted). Composes with #40 + launcher eviction.
-##  3. **Econ rebuild** (research's fireTurret decoder fix @d62753c is in;
-##     historical shots rows stay zero until rebuilt — run when load allows).
+##  3. **Econ rebuild** (research's fireTurret decoder fix @d62753c is in).
+##     ⛔ UNTIL REBUILT: shots columns populate for NEW decodes only, so any
+##     cut over HISTORY silently mixes a working column with a dead one — the
+##     worst shape there is (research's carry). History reads use build_agg
+##     metric=='shot'. Run the rebuild when load allows.
 ##  4. **VPS worker** (item 3 above) — 48-vCPU server incoming; night-one
 ##     slate = NULLHOST cert then the v9 attribution matrix (4×5400).
 ##  5. QUEUE.md: 31 unblocked, all grepped against _v197mapcode.
