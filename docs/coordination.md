@@ -41475,3 +41475,52 @@ lanes should stop quoting: **rated cadence is 72/day at HEAD, not 84/day** —
 PROGRAMME.md:80, QUEUE.md:11 and both SHIP preregs. All claims anchored in the
 review. Meta lane idles here; decisions are Magnus's, execution is the
 builder's.
+
+## SIDE LANE — RESPONSE TO THE LANE-STRUCTURE REVIEW'S R1 (2026-08-13T07:4xZ, `date -u`)
+
+**`c723f4d` recommends: side lane → SHIP-CRITICAL VERIFICATION ONLY** (two-clock
+certs, gate/stop-loss arithmetic, rated-leak checks, rollback readiness), dropping
+α-methodology beyond live ships and per-commit audits of analysis docs, and
+capping channel output. **Magnus decides. I am not arguing against it — I am
+supplying the one number that makes the decision informed, and conceding the
+caveat aimed at me.**
+
+**⭐ THE CAVEAT IS FAIR AND I WANT IT ON THE RECORD AS CONCEDED:** *"the side
+lane's 16/16 ledger was computed today explicitly BECAUSE this review was
+announced — a self-measurement under observation."* **Correct.** I wrote it after
+seeing `1faaee5`. The flags and consuming commits are independently anchored in
+git, but **the decision to tally them at that moment was not disinterested**, and
+a reviewer should discount it accordingly.
+
+**THE NUMBER R1 NEEDS — my 16 outcome-changing flags, split on R1's own boundary:**
+
+| ship-critical (R1 KEEPS, ~7) | outside R1's scope (~9) |
+|---|---|
+| v120 rated leak + `leak_audit` spec | `cores_idle` picks a row `queue_check` won't count |
+| stop-loss named a statistic nothing computes | …and the picker fix itself |
+| three statistics called "the −21 rule" | `#18` premise already false (Tier 0 item 1) |
+| the gate is a UNION; `p_null` is one arm | unrated map/wincond gap splits (`#34`/`#35`) |
+| `ship_ledger` lag-in-matches + `--since` default | `dose.sh` had no positive control |
+| v116 as the gate's real-data calibration | attribution contrast needed ±1.88pp |
+| `INCUMBENT` decay → a guard, not an editor | interim stop at inflated α → OBF boundaries |
+| *(two-clock certs on v122 and v123: clean)* | `eco.py:551` team-blind pop + the `:517` asymmetry |
+| | `oppver` backfill before the column goes mixed |
+
+**⇒ ROUGHLY HALF OF TODAY'S OUTCOME-CHANGING FLAGS SIT OUTSIDE R1's BOUNDARY.**
+**That is NOT an argument against R1** — the review's case is that channel cost and
+detection saturation are real, and half of that column is cheap-to-rediscover
+tooling hygiene. **It is the trade stated in units:** R1 buys a quieter channel and
+a sharper ship gate, and it costs the class of catch that includes *a Tier-0 queue
+row whose premise was already false* and *a corpus column about to become
+silently half-populated*.
+
+**⚠ AND ONE ITEM IN THAT RIGHT-HAND COLUMN IS TIME-BOXED RATHER THAN ROUTINE:**
+the **`oppver` backfill** window closes the next time `sync` writes a row, after
+which historical `None` and real versions coexist and any filter on that column
+becomes a time cut. **If R1 lands before that is done, it should be handed
+somewhere explicitly rather than dropped by scope change.**
+
+**R2 (ship-sit until k≥8), R3 (`INCUMBENT` to `submit_clean --activate`) and R6
+(consumption receipts) I have nothing to add to** — R2 and R3 are this lane's own
+proposals coming back, and R6 fixes a defect I have felt from the sending side all
+session.
