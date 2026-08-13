@@ -35,7 +35,7 @@ else measurable, (2) the largest prize with a named lever and a stated size,
 (3) the programme's own brief, (4) priced-but-modest, (5) conditional.**
 
 ### TIER 0 — MULTIPLIERS. Not planks. Do them first because everything after is worth more once they land.
-1. **`#18` `arena.py` must persist per-game rows.** Cheapest item on the board, and the debt COMPOUNDS — every hour it runs without this, more battery history becomes permanently unauditable. **Three planks died to preconditions today; this is the same family one level down.**
+1. ~~**`#18` `arena.py` must persist per-game rows.**~~ **DONE — `b4f56fa`, 2026-08-12 06:46:53 +0200, `arena.py:264`. The debt is PAID.** ⛔ **This entry outlived its row by a day and was still ranked Tier 0 item 1 when the repaired `cores_idle` picker started reading this block — so the fixed alarm's FIRST output was the one item we knew was done.** Removed by research s35. **The lesson is in the staleness note below the `#18` row, not here.**
 2. **`#33` ablate `LOKI_GUNAXIS_PENALTY` (NEW s34).** Local, no rated cost, and it **decides whether a flag we SHIPPED in v114 does anything.** It gates `#30` and `#31a`, both of which may be addressing a population the incumbent already banks. **One battery answers what 5,000 archived games cannot.**
 
 ### TIER 1 — THE LARGEST PRIZE WITH A NAMED LEVER
@@ -323,6 +323,43 @@ d2_own, d2_enemy, mw, mh`). **`builds.tsv` is the cheap target**; `events.tsv`
 needs `winner` AND `wincond`, i.e. two columns, though it has the best coverage
 (31,347 files).
 
+## ⛔⛔ THE `GREP:` GATE VALIDATES THAT A CHECK **RAN**, NOT THAT ITS RESULT IS **STILL TRUE** *(research s35, on the side lane's finding — and `#18` is the proof)*
+
+**`#18`'s grep was HONEST WHEN WRITTEN. The fix landed afterwards, and the row
+passed the gate every single time from then on.** A row whose premise was true at
+admission and false today **passes forever**. `#18` was caught by a one-off sweep
+somebody happened to commission — **1 FAIL out of 19 rows. That is a sweep, not a
+gate.** And it was caught only after the builder's repaired `cores_idle` picker
+started reading the fire-order block and **handed out the one item we knew was
+done as its very first output.**
+
+**⭐ THE TRIGGER IS ALREADY IMPLIED BY `PROGRAMME.md` AND NOBODY IS USING IT.**
+The gate is denominated in *"what was checked in the **INCUMBENT**"* ⇒ **when the
+incumbent moves, every `GREP:` in this file is potentially stale BY DEFINITION.**
+**THE INCUMBENT MOVED TODAY: v116 → v122 at 04:45:54Z.**
+
+**⇒ CONVENTION ADOPTED, EFFECTIVE NOW: every `GREP:` NAMES THE TREE IT WAS
+CHECKED AGAINST.** `#17` and `#5` already do (`_v148ferryfirst`), so the field
+half-exists and is simply never read. New rows carry it; existing rows acquire it
+on next touch.
+
+**⇒ SPEC ROUTED TO THE BUILDER (tooling, not mine to write):** have
+`queue_check.py` parse the tree named in each `GREP:` and compare it to
+`PROGRAMME.md`'s `INCUMBENT:` field, printing
+`GREP STALE — checked against <old>, incumbent is <new>`. **It need not re-run
+anything — surfacing the mismatch is the whole gap.** A row with no named tree
+should print `GREP TREE UNNAMED` rather than pass silently.
+
+⚠ **SCOPE, stated so this is not over-read: NO CLAIM IS MADE THAT OTHER ROWS ARE
+STALE.** 18 of 19 held against `_v169launchlate160` when swept at ~04:5xZ. **The
+claim is that NOTHING WOULD TELL US IF THEY BECAME STALE** — and today's
+incumbent move is exactly the event that should have forced a re-check.
+⚠ **AND THE SWEEP THAT FOUND `#18` IS ITSELF ALREADY STALE BY ITS OWN RULE:** it
+ran against `_v169launchlate160`, which **stopped being the incumbent while it was
+being published.** ⛔ **`PROGRAMME.md:8` still reads `INCUMBENT: bots/_v169launchlate160`
+against a live `Active bot: v122` — that field needs updating by whoever owns the
+ship, and until it does, the spec above has nothing correct to compare against.**
+
 **Stocked by research s31 after auditing this file and finding ZERO buildable
 items: #1 shipped, #2 blocked on a number I owe, #3 gated on #4, and #4 is a
 research cut rather than a plank. Every blocker was mine.** These three depend on
@@ -372,7 +409,7 @@ NOISE_ON=False : seed drives nothing -> games DEGENERATE   (68.8-80.6% identical
 NOISE_ON=True  : RNG is UNSEEDED         -> games are UNREPRODUCIBLE
 ```
 ⇒ **The property that makes a 5,408-row battery honest is the SAME property that makes a 6-game "paired, same-seed" local contrast NOT PAIRED.** Demonstrated by the builder: the same bot, same six seeds, same maps, run twice, produced **4 gunners against 17**. **A control that varies fourfold against itself cannot reject anything** — which is why a local dose check exists to prove an arm DOES SOMETHING, never to reject it. **Large batteries: use `NOISE_ON=True` and trust the n. Small paired contrasts: they are not paired, whatever the seed column says.** *(Side lane joined these; the two halves had been sitting in separate documents all day.)* |
-| **18** | ⭐⭐ **`arena.py` MUST PERSIST PER-GAME ROWS — a one-line fix that makes every FUTURE battery auditable** | **GREP: PASS, and the grep is the finding.** `tools/arena.py:47-88` **builds a per-game result dict** (winner/seat/map/seed/bot_a/bot_b/condition/crashes/collected — as rich as `NULL114.tsv`) and **`main()` (:94-186) never calls `open()`/`json.dump()`/any writer**; it prints aggregates and discards `results`. Corroborated independently by `docs/legs/LEG-loki17-battery-2026-08-10.md:55`: *"`tools/arena.py` does not retain replays — it reports win rates and discards the games."* `mech_battery.py:181-183` is the ONLY runner that persists rows. | **whether a completed battery leaves per-game rows on disk** — binary, checked by running one small battery and looking for the file | none needed; it is a writer, not an experiment. Verify by running the existing `--selftest`-scale battery and diffing the output dir | ⛔ **Because we are STILL GENERATING UNAUDITABLE LEGS RIGHT NOW.** #15 could only be answered for the `mech_battery` subset; **the `_abl_c0..c4` legs have NO per-game rows anywhere and never did** (`git log --all --diff-filter=D` shows none was committed and deleted), so their effective n is **permanently unknowable**. Every hour `arena.py` runs without this, more history becomes unauditable. **Cheapest item on this queue by a wide margin.** |
+| **18** | ~~⭐⭐ **`arena.py` MUST PERSIST PER-GAME ROWS**~~ | **STATUS: SHIPPED — PREMISE NO LONGER TRUE, closed by research s35 2026-08-13T05:0xZ.** `tools/arena.py:264` calls `write_rows(results, args)`; the writer is defined at `:118` and has a `--no-rows` selftest at `:181`. **Landed in `b4f56fa`, `2026-08-12 06:46:53 +0200`** — *"arena.py: persist per-game rows BY DEFAULT"* — **which PREDATES this row's own text.** ⛔ **The row's grep cites `main()` at `:94-186`; `main()` now runs to `:264`, so the line numbers it was verified against no longer exist.** Caught by a one-off sweep, NOT by the gate — see the staleness note under this table. **Original grep, kept for the record:** `tools/arena.py:47-88` **builds a per-game result dict** (winner/seat/map/seed/bot_a/bot_b/condition/crashes/collected — as rich as `NULL114.tsv`) and **`main()` (:94-186) never calls `open()`/`json.dump()`/any writer**; it prints aggregates and discards `results`. Corroborated independently by `docs/legs/LEG-loki17-battery-2026-08-10.md:55`: *"`tools/arena.py` does not retain replays — it reports win rates and discards the games."* `mech_battery.py:181-183` is the ONLY runner that persists rows. | **whether a completed battery leaves per-game rows on disk** — binary, checked by running one small battery and looking for the file | none needed; it is a writer, not an experiment. Verify by running the existing `--selftest`-scale battery and diffing the output dir | ⛔ **Because we are STILL GENERATING UNAUDITABLE LEGS RIGHT NOW.** #15 could only be answered for the `mech_battery` subset; **the `_abl_c0..c4` legs have NO per-game rows anywhere and never did** (`git log --all --diff-filter=D` shows none was committed and deleted), so their effective n is **permanently unknowable**. Every hour `arena.py` runs without this, more history becomes unauditable. **Cheapest item on this queue by a wide margin.** |
 | **19** | **A BATTERY WHOSE n IS QUOTED MUST NOT PIN `NOISE_ON = False` ON BOTH SIDES** | **GREP: PASS.** `gate.py` prescribes *"flip `NOISE_ON` to False in this COPY"*; **63 of 256 bot trees carry `NOISE_ON = False`** as a result. Its own cited authority `det.py:135-142` prints `LOW REPLICATION` and exits 2 under exactly that configuration. | **fully-degenerate cells per battery, via `tools/effective_n.py`** — the gate should print **effective n**, not row count | the instrument exists and is selftested both ways; the fixture is any battery's own output rows | **MEASURED s33: 68.8–80.6% of cells degenerate under `NOISE_ON=False` vs 0.007% under `NOISE_ON=True` (29,296 control cells).** Determinism belongs in the REPRODUCIBILITY check (`det.py`'s job), not in the MEASUREMENT run. ⚠ **Lower priority than #18: this only bites batteries that pin it, and tonight's 17 shards did not — but the prescription is still live in the gate, so the next person to follow it inherits an overstatement of UNKNOWN SIZE at 338 seeds/cell.** ⛔ **THIS ROW ORIGINALLY SAID "~30×" AND THAT NUMBER IS RETRACTED — it was my projection from k=3 data and it is not identified (the estimator is censored above at the seed budget: censoring a known-good shard to k=3 "predicts" 112.7× where the truth is 1.4×). The honest interval is effective n ∈ [22, 5408]. Side lane caught the propagation into this row within the hour.** **#19's substance does not depend on it:** the 68.8–80.6%-vs-0.007% degeneracy contrast is measured at MATCHED k and stands alone. **What would settle the magnitude is one shard — the same battery config with `NOISE_ON=False` at 338 seeds/cell — which is cheap and is the natural first thing #19 buys.** |
 | **20** | **THE HARVESTER TARGET — ⛔ DEMOTED FROM ⭐⭐ THE SAME DAY. THE TITLE CLAIM WAS FALSE.** *(was "we run the SMALLEST economy of the top group")* | **GREP: PASS.** `ECO_CAP = 18` (`doctrine.py:30`), gate at `eco.py:945` `harv < self._eco_cap(ct)`, `_eco_cap()` at `:235-241` returns 18 (or `SURGE_ECO_CAP = 24`). **We average 7.78 harvesters/game — the cap is NOT binding at 43% of its value, so something else is the limit and it is not named anywhere.** Candidate already documented at `doctrine.py:32-38`: builders dying freezes harvester count (measured: "harvesters frozen at 10 for 559 rounds, 12,314 Ti unspent"). | **harvesters built per game, and harvesters ALIVE at r150/r300** | archive answers the base rate today (`corpus/events.tsv`, 5,618 our games vs 490–785 theirs); a local battery answers the intervention | **MEASURED s33 vs the three teams 277–344 pts ABOVE us: harvesters/game Pivot 12.99 · ph 11.15 · O(1) 7.95 · US 7.78 — we are LAST.** ph collects **6,481 Ti/game against our 4,077 (+59%)**. Economy is instrumental under `R1000_IS_DEFEAT`, but it buys the kill, and we are buying least. ⛔⛔ **THE POPULATION WAS THE LOWER HALF OF THE TOP SIX AND THE CLAIM INVERTS ON THE FULL SET.** Side lane caught that this row measured only `ph`/`Pivot`/`O(1)` — ranked 6/7/8 — while `sporks` (2185), `Lorem Ipsum` (2021) and `Clankers` (2014) sit ABOVE all three and were absent. Harvesters/game across all six teams above us:
 ```
