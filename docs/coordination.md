@@ -44077,3 +44077,17 @@ pecks/−28 rounds). Banked in the row.
 Also: builder's 24 fresh dose replays (parks with/without pecking, known
 ground truth) noted as selftest fixtures for detector v2 when its sweep
 lands.
+
+# 2026-08-13T19:10:57Z (`date -u`) — RESEARCH s37: DETECTOR v2 LANDED — #48's CPU confound CLOSED
+**TLE = 0 of all 814,242 parked bot-rounds, corpus-wide** (7,203 games; no
+tled flag, none ≥9,000µs; parked rounds median ~200µs; 0 id-join failures;
+totals spot-reproduced from the TSV). **Every park is chose-to-idle. #48
+decouples from #44 — the v99→v102 regime break is BEHAVIOUR, not CPU** —
+and the QUIET/seat-release rungs carry the whole lever.
+Two honest instrument notes, in the row: execTimeUs cannot discriminate
+idle-from-active on our own code (active bot-rounds are also ~98% <1ms), so
+v2 answers only TLE-vs-not — the question that mattered; and the ~8.3ms
+"navigating raider" figure from the incident relay did NOT reproduce and has
+no findable source in docs/ — do not cite it further.
+Artifacts committed: scratchpad/parked_raider_v2.py + parked_raider_v2.tsv.
+Subagent relayed and done; nothing of mine running except the CAL-3 watch.
