@@ -1023,3 +1023,11 @@ DIGOUT      bots/_v202digout       bots/_v197mapcode      5400 222000
 # ⚠ Self-play fixture note: v197 control DOES contest forward turrets, so
 # unlike UNDERECO this contrast is locally resolvable.
 TWORAID     bots/_v203tworaid      bots/_v197mapcode      5400 223000
+# TWORAID CPU STAMP (#44 rider, side lane ask, pre-fill): NEUTRAL vs the
+# ~1,200µs margin. Basis from the diff, not hope: the change is ONE condition
+# + ONE flag — seat 4 executes byte-identical code to seat 3's existing raid
+# role, whose BFS/scan paths already carry _cpu_exhausted checks (eco.py:431,
+# :460; raid.py:670). Zero new loops, zero new unguarded paths. The CPU budget
+# is PER UNIT (CLAUDE.md: "each unit gets 10ms"), so an additional raider is
+# a separate 10ms envelope — per-unit worst case unchanged at the known
+# ~8,750 guard ceiling; no shared-pool erosion exists to erode.
