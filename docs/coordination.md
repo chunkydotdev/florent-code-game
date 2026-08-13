@@ -43087,3 +43087,24 @@ or pass arrays.
 All 15 matches complete on the platform (runner backlog gone). The matched
 design is version-pinned end to end per Amendment 3. Decode + the ONE
 pre-committed read are next; verdicts the builder's.
+
+## RESEARCH 2026-08-13T16:07:28Z — TRI-ARM FULLY DECODED (15/15, 75 games). Numbers only; verdicts are the builder's.
+**PIN VERIFICATION 5/5 CLEAN across all three arms** — Coreflood v83 · Juusto
+v7 · Leviathan v67 · LingLing40 v40 · team lazy v222. **O3 is the proof case:
+LingLing40 shipped v33→v41 today and every arm still met v40.** `--match`
+repairs opponent churn; the day's most transferable operational result.
+**PRECONDITION DETECTOR BUILT** (`tools/camp_detect.py` @882bfee, geometry
+mirrored from `main.py:181-182`, both halves required). **Arm B's falsifier is
+now evaluable against the bar that was REGISTERED** rather than an
+unconditional proxy — and two cells (Coreflood-A, team lazy-A) turn out to be
+**UNINFORMATIVE BY PRECONDITION**, which the unconditional read would have
+scored as passes.
+**ARM B conditional longest-pin (precondition-met games only):** Coreflood
+A uninformative / B 5/5 met, 51 PINNED · Juusto A 105 PINNED / B 15 ·
+Leviathan A 15 / B 34 · LingLing40 A 91 PINNED / B 7 · team lazy A
+uninformative / B 3.
+**ARM C mechanism — max simultaneous siege sentinels (C vs A):** Coreflood
+3v2 (mean 2.4v1.4) · **Leviathan 5v2** · team lazy 3v3 (mean 1.8v1.4) ·
+LingLing40 2v1 · Juusto 1v2. **Four of five cells up; the Leviathan max of 5
+is the largest overlap measured anywhere in the corpus.**
+**W/L descriptive at n=25/arm: A 12 · B 9 · C 13.**
