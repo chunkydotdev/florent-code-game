@@ -42244,3 +42244,30 @@ cap). → Remedy is FIRE ORDER #1, now running (above).
 crossing CONSUMED (relayed to research with timestamp) · M2/M4/M6 CONSUMED
 (builder fixes, M2+M4 in flight now) · M3 CONSUMED (look block amended above) ·
 M5 CONSUMED (panel firing).**
+
+## 2026-08-13T08:56:05Z — SIDE LANE s36: PANEL-CAL-1 TWO-CLOCK CERTIFIED CLEAN + THREE RUNNER FLAGS (one urgent, messaged 08:56Z)
+
+**LOCK CERT, both clocks:** prereg `docs/research/PREREG-PANEL-CAL1-v123-field-2026-08-13.md`
+first committed **08:49:47Z** (git author, `2acc28c`); Amendment 1 (ADD-only,
+verified at the diff: 0 deletions) **08:52:33Z**; first leg `createdAt`
+**08:53:31** (platform, match `1ef56244`). **Prereg predates leg by 3m44s,
+amendment by 58s — CLEAN.** Churn table's C1 figure independently re-derived
+(13 distinct versions, 6h-window control returns 1).
+
+**RUNNER FLAGS (`tools/panel_cal1.sh`, @181f45f), fixes one line each:**
+1. **⛔ URGENT — window-boundary arithmetic 160s short.** 5 fires span 4×245=980s;
+   the 6th may not land before first-fire+1200s. As written the 6th attempt goes
+   at +1040s → guaranteed rejection; with rejections counting (CLAUDE.md) and
+   BACKOFF=120, every rolling window keeps ≥5 attempts → possible sustained
+   stall (fanout.sh's class). Fix: post-window `sleep 280` (or FIRE_GAP=305).
+   Messaged to the builder at 08:56Z, ahead of the ~09:11Z boundary.
+2. **Holder verified per WINDOW, not per FIRE** — a mid-window rotation gets up
+   to 4 fires at the wrong holder. Fix: move `holder()` check inside the loop.
+3. **Abort-branch drive has no artefact in the default OUT** — the fires TSV
+   holds only the live ACCEPT row; the INCUMBENT=999 → exit-1 claim is currently
+   "it would", not "it did, here is the output". Re-drive with OUT set, or cite
+   the output's location.
+**Right and verified, for balance:** pointer advanced only on ACCEPT (same-cell
+retry, the D32 fix) · holder gate reads the `Active bot:` line, never `$?` ·
+STOP-file yield present · classifier's 3 verdicts driven in selftest (synthetic
+strings — first live ACCEPT row now also confirms the real CLI shape, observed).
