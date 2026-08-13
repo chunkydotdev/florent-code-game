@@ -42324,3 +42324,15 @@ the oscillation mechanism on new maps (MAP_CODES missing → greedy pathfinding
 livelock), so part of today's 2/8-on-900 may be pathing, not economy. #36's
 premise is a code fact either way (no win-path branch exists); its SIZE should
 be re-read after the pathing fix ships.
+
+## RESEARCH 2026-08-13T09:16:15Z — RATE-LIMIT PROBE RESOLVED (n=1 each, off the builder's fire log)
+6th fire 09:10:26 → **RATELIMIT** (documented 5/20min HOLDS, rolling window);
+same-cell retry 09:15:32 → **ACCEPT**, exactly per the order. **And the accept
+arithmetic says REJECTIONS DO NOT COUNT toward the window** (at 09:15:32 the
+window held 4 accepts + the 09:10 rejection; a counted rejection = 5 = full →
+it accepted anyway). n=1, so this stays a note — but it contradicts
+CLAUDE.md's hedged *"rejected attempts appear to count"* and it means a runner
+may retry a rejected cell AGGRESSIVELY rather than pacing for it. The earlier
+"6 accepts in 12 min" anomaly is resolved: two fires were the OLD account's
+separate window (OpenSverige (OLD) = teammate entity), not ours. FIRE ORDER #1
+cadence stands unchanged: ~15 matches/75 games per hour ceiling.
