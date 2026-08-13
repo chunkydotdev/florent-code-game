@@ -52,10 +52,36 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FCODE = ROOT / ".venv" / "bin" / "fcode"
+
+# --leg mode (2026-08-13 s36, side-lane catch): WITHOUT this mode the holder
+# restore runs INSIDE the submit command, so a challenge fired after
+# submit_clean returns plays the RESTORED incumbent — a leg that measures the
+# wrong bot and can falsely kill its own treatment. --leg holds with the
+# prototype live until the sentinel appears, then restores. The TIMEOUT is the
+# fail-safe: the restore fires even if the leg operator dies mid-window, so a
+# hung leg cannot span a rated pairing.
+LEG_SENTINEL = ROOT / "scratchpad" / "LEG_FIRES_DONE"
+LEG_TIMEOUT_S = 300.0
+
+
+def _leg_hold(sentinel: Path, timeout_s: float,
+              _clock=time.monotonic, _sleep=time.sleep) -> str:
+    """Wait for the sentinel (-> 'sentinel', consumed) or timeout (-> 'timeout')."""
+    t0 = _clock()
+    while _clock() - t0 < timeout_s:
+        if sentinel.exists():
+            try:
+                sentinel.unlink()
+            except OSError:
+                pass
+            return "sentinel"
+        _sleep(2)
+    return "timeout"
 ALLOW = (".py",)
 
 
@@ -238,6 +264,15 @@ def main(argv: list[str]) -> int:
         args.remove(_nm)
     dry = "--dry-run" in argv
     activate = "--activate" in argv
+    leg = "--leg" in argv
+    if leg and activate:
+        sys.exit("--leg and --activate are mutually exclusive: a leg RESTORES, "
+                 "a ship KEEPS. Pick one.")
+    if leg and LEG_SENTINEL.exists():
+        LEG_SENTINEL.unlink()
+        print(f"stale {LEG_SENTINEL.name} removed BEFORE submit — a leftover "
+              f"sentinel would end the hold instantly and fire the leg at the "
+              f"restored holder.")
     ok, msg = check_name(_nm, activate)
     print(msg)
     if not ok:
@@ -348,6 +383,13 @@ def main(argv: list[str]) -> int:
                 return 3
             return 0
         if holder_after and holder_before and holder_after != holder_before:
+            if leg:
+                print(f"** LEG MODE: {holder_after} IS LIVE. Fire the leg now; "
+                      f"touch {LEG_SENTINEL} when done "
+                      f"(auto-restore in {LEG_TIMEOUT_S:.0f}s regardless). **",
+                      flush=True)
+                why = _leg_hold(LEG_SENTINEL, LEG_TIMEOUT_S)
+                print(f"** LEG HOLD ENDED ({why}). **")
             print(f"** `fcode submit` ACTIVATED {holder_after}. Restoring {holder_before}. **")
             ver = "".join(c for c in holder_before.split()[0] if c.isdigit())
             if not ver:

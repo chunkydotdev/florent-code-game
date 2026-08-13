@@ -53,3 +53,26 @@ anything. The ship decision cites: this leg's smoke+mechanism outcome + the
 MAPCODE local battery (n=5,400, live pool, running) + Magnus's call. The
 panel (PANEL-CAL-1) yielded this window per the fire order's yield rule and
 resumes after the leg (delete `scratchpad/PANEL_CAL1_STOP`).
+
+---
+
+# AMENDMENT 1 — ADD-ONLY, committed BEFORE leg creation. THE ACTUAL FIRE SEQUENCE.
+
+**The side lane caught (verified at submit_clean.py:350-366, pre-fire) that the
+original "restore is submit_clean's automatic holder-restore" sequence would
+have fired all 5 challenges at the RESTORED v123** — the restore runs inside
+the submit command — measuring the wrong bot and falsely tripping this prereg's
+own falsifier against an undosed treatment.
+
+**THE SEQUENCE ACTUALLY RUN (submit_clean `--leg` mode, built + driven for
+this leg: sentinel/timeout/mid-hold 3/3, --leg×--activate mutual exclusion,
+stale-sentinel pre-clean):**
+1. `rm -f scratchpad/LEG_FIRES_DONE` (also done by the tool itself).
+2. `submit_clean.py bots/_v197mapcode --name "Loki rc7.1" --leg` in background
+   — submits (auto-activates), prints `LEG MODE: <proto> IS LIVE`, then HOLDS.
+3. On the LIVE line: fire 5 × `fcode match unrated 648d1d5b-…` sequentially.
+4. `touch scratchpad/LEG_FIRES_DONE` → the tool restores v123 and confirms on
+   the `Active bot:` line (never the exit code).
+5. **Fail-safe: a 300s timeout auto-restores even if the operator dies** — the
+   hold cannot span the next pairing (window 09:53→10:12 is 19+ min).
+6. Leak check unchanged: per-match `ourver` at the pairing boundary.
