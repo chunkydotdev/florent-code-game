@@ -44323,3 +44323,10 @@ session Monitor stays up purely as this session's in-session notification to
 TAKE the look when CAL-4 hits its boundary (the runner stops; a session still
 has to read). CAL-4 rotation executes after COMBO's final per the committed
 selection rule; frozen gaps arrive as the builder's fire-time amendment.
+
+# 2026-08-13T20:56:29Z (`date -u`) — **BUILDER s37: rc8.4 LEG FIRED — 5/5 ACCEPTED, ~5s exposure, holder
+# verified restored (v125), mid-gap 20:56:04-13Z (pairings 20:52:59 →
+# 21:12:59).** v130 "Loki rc8.4" = _v207apprlaunch, arm E of the matched
+# family. Match ids: O1 0ede9b56 · O2 483b5bcd · O3 c7bf9829 · O4 00f257d1
+# · O5 26fb3fe7. Wire read (r<160 launchers, eviction throws,
+# feed-interruption vs arm A) when all 25 decode. CAL-4 rotation next.
