@@ -43663,3 +43663,44 @@ contradicting a correct reference doc, now mechanised by
 header** (it is a generated fork; a stale fork was the exact failure that
 header exists to prevent). The side lane's and this lane's "tomorrow" item is
 closed tonight — **no lane will boot on the false sentence.**
+
+# ============================================================================
+# 2026-08-13T17:04:49Z (`date -u`) — **SIDE LANE s37 BOOT** (Magnus commissioned; /sidelane).
+# ============================================================================
+* **Boot sequence complete:** PROGRAMME.md · coordination tail (both s36 wraps +
+  the 17:01:43Z CLAUDE.md correction note) · drift-watch mandate (D1-D32 read,
+  head + tail; middle greppable) · obligations doc (1-14) · arm retro v1.6
+  (FIRINGS 6; `conceding` branch struck; detection/prescription split
+  21/21 · 19/21 is the lane's most stable property).
+* **Monitors verified alive, not re-armed (builder-owned):** keeper pid 50733
+  == corpus/keeper.pid · cores_idle · ship_watch · cpu_watch loops all in `ps`.
+  Note: ship_watch's loop env still pins `SHIP_VERSION=v116 SHIP_BASELINE=1655`
+  but the tape rows DERIVE the version (`v125`, `net_act_src=derived`) — output
+  is correct; env pin is decorative. Newest row 16:58:41Z: **v125 k=19
+  rating=1752 net5=+42 drawdown=+0.0 RULE=held**, tape_age 4.7 min.
+* **My drift watch RE-ARMED** (session Monitor over `tools/watch/drift_watch.sh`,
+  45 s cadence, base `f0eebd2`) — **all cells driven to both verdicts first**:
+  BLIND on a broken repo (exit 1), 2 COMMIT lines from a seeded rev, quiet at
+  HEAD, and the TZ cell DISCRIMINATES on this CEST box (same format without
+  `TZ=UTC` prints 19:01:44Z for the 17:01:44Z commit — the guard is load-bearing,
+  re-verified live).
+* **Scope per the 08-13 rescope:** ship chain only (incumbent, preregs,
+  gates/stop-loss arithmetic, tape, PROGRAMME.md, platform actions) + two-clock
+  certs + rated-leak checks. Analysis docs and non-ship commits NOT audited.
+  Flags carry anchors and a one-line fix; never verdicts.
+* **Open items carried from the s36 wrap, re-checked at boot:**
+  1. ~~CLAUDE.md:484 falsehood~~ **CLOSED 17:01:43Z** — Magnus authorised
+     ("fix it"), landed as `f0eebd2` with AGENTS.md regenerated. Verified in the
+     booted file this session; no lane boots on the false sentence.
+  2. **v9 (COMBO) ship prereg**, when written, owes citations: tri-arm cert
+     @588b2c0 · TWORAID dose verdict · UNDERECO registered-text no-fire ·
+     NULL125 fixture cert (51.04). I audit for these at prereg time.
+  3. **CAL-3**: two-clock cert owed on its first window vs prereg @63d45eb.
+  4. **Completes-only rule** (fire-registration on `match info`; list absence
+     ≠ nonexistence) still in no booted file — candidate: protocol doc's leg
+     section. Standing flag.
+* **Queue floor**: 31 unblocked (floor 3), every GREP names `_v197mapcode`; 13
+  rows carry legacy marker words in prose (no STATUS: token) — cosmetic, noted.
+* **Peers**: two sessions live (`florent-code-game-2a`, `-df`, both booted
+  ~17:02Z); announcing to both. Hard limits unchanged: no bot edits, no
+  arena/unrated runs, no verdicts, no HANDOVER/tape writes; own files only.
