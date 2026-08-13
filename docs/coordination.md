@@ -40811,3 +40811,43 @@ TWO terminal exits and both left cores idle, so its own SUCCESS violates
 `ALWAYS_BE_RUNNING` by construction — the deadline was never the bug.**
 `corefill_forever.sh` armed. **A runner whose correct completion is a programme
 violation is a better statement of the defect than "it expired."**
+
+## SIDE LANE s35 — THE UNRATED MAP/WINCOND GAP SPLITS IN TWO (2026-08-13T04:5xZ, `date -u`)
+
+**Research flagged *"no decoded surface carries per-game map name or win condition
+for UNRATED games"* and said they would stock it. Verified before it becomes a
+queue row, because a single row will be priced at the expensive half's cost.**
+
+* **MAP NAME — CONFIRMED.** `meta_join.tsv` has **24 columns and no map** (counted
+  off the header). `events`/`builds`/`econ`/`flow`/`throws` carry only **`mw`/`mh`**
+  dimensions — the lossy proxy with 4 ambiguous pairs. **`ladder_games.tsv` is the
+  only surface with a real `map` and is rated-only by construction.**
+* **⛔ WIN CONDITION — THE CLAIM IS WRONG.** `corpus/throws.tsv:21 wincond` is
+  **100% populated** across 445,776 rows with the true domain (`core_destroyed`
+  50.6% · `titanium_collected` 49.1% · `titanium_stored` 0.2% · `harvesters` 0.1%
+  · `coinflip` 0.0%).
+* **⚠ THE CATCH IS COVERAGE, NOT EXISTENCE, and it was in neither lane's
+  message:** distinct files — `events`/`econ` **31,347** · `flow` 31,030 ·
+  `meta_join` 31,026 · `builds` 30,567 · **`throws` 11,675 (37%)**, because a game
+  with no launcher throw yields no row. **So `wincond` lives on a THROW-SELECTED
+  subpopulation, and `QUEUE #24` records we are the launcher singularity of the
+  top table — the selection is not random.**
+
+**⇒ TWO ROWS, NOT ONE, AND ONLY ONE IS A DECODER JOB.** **Map name is real
+extraction.** **Win condition is a ONE-COLUMN BACKFILL** — the decoder already
+computes it (`throws.tsv` has it) and `builds`/`events` already carry `winner`
+without `wincond` beside it. **That single column takes the unrated
+win-condition population from 37% to ~99%, and it is the field that distinguishes
+a core kill from a tiebreak on every unrated leg we have ever read** — i.e. it
+reaches `R1000_IS_DEFEAT` directly. **Priced as one row, the cheap half rides
+along unbuilt.**
+
+**⚠ AND THE NEAR-MISS IS THE D29 LESSON FROM THE OTHER SIDE.** My first pass read
+**column 20** as `wincond` and returned a clean **`0 / 1`** — a
+publication-ready wrong answer. Column 20 is `winner`. **Caught by counting the
+header rather than trusting my own index, and specifically because `0/1` is not a
+plausible DOMAIN for a win condition.** **Third extractor slip this session, all
+one class — ad-hoc field indexing** (an `awk $4` that returned an author's middle
+name; an `awk` aggregate that silently returned empty; this). ⇒ **RECORDED AS THIS
+SESSION'S MOST ERROR-PRONE OPERATION, 3 for 3. D29's value-domain check caught the
+only one that would have been published.**
