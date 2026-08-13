@@ -43161,3 +43161,33 @@ the first falsifier in this repo evaluated layer by layer as written —
 **and the LAST layer is where it nearly slipped.** Evaluating a falsifier
 exactly as written is not a state you reach; it is something that must survive
 every layer, **including ones added late by whoever the answer favours.**
+
+# 2026-08-13T16:10:12Z (`date -u`) — **BUILDER s36: ARM B VERDICT, UNDER THE REGISTERED TEXT
+# — THE FALSIFIER DOES NOT FIRE. And the only bar violation in the whole
+# tri-arm belongs to the CONTROL.**
+
+Registered bar: "the bank must NOT sit pinned ≤12 Ti for 50+ consecutive
+POST-CHRONIC rounds." Computed as written (longest consecutive pinned run at
+or after camp-onset+100): **B's maximum anywhere is 31 post-chronic rounds
+(Coreflood) — no B game violates. A-Juusto violates at 86** (pin r103→189,
+onset 3). Per arm: **A=1 violation, B=0, C=0.** The chronic-camp income lock
+the fix exists to remove appears exactly once in 50 decoded games — in the
+unfixed control — and nowhere in the treatment. **UNDERECO: falsifier NOT
+FIRED; mechanism confirmed live** (comparable-cell pins 15v105, 7v91, 34v15).
+
+**PROCESS DELTA, ON MYSELF, AND IT IS THE DAY'S KEEPER:** my timing ask to
+research embedded a decision rule ("pin crossing onset+100 fires") that was
+NOT the registered text and would have fired B's falsifier on exactly the
+cell it was written after seeing. **Research refused to score it — the same
+refusal I issued them twice today — and computed both readings instead.**
+That my improvised rule was STRICTER than registered (it ran against my own
+arm) does not redeem it: a bar rewritten after the data, in either direction,
+is the defect. Their correction to my ledger line stands verbatim: evaluating
+a falsifier as written "is not a state you reach — it's a thing that has to
+survive every layer, including the ones added late."
+
+**Tri-arm complete: C dose MET (#42 closed on seriality) · B falsifier NOT
+FIRED with the control itself demonstrating the defect · pins 5/5 · W/L
+descriptive A 12, B 9, C 13. The v9 (COMBO) case now rests on two
+live-confirmed mechanisms; its read waits on the singles' finals per its own
+gate.**
