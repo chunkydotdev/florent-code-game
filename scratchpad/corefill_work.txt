@@ -815,3 +815,24 @@ SENTSAFE2   bots/_v188sentsafe_g   bots/_v169launchlate160  5408 143000
 #   * control-arm rate at ~0.60 and the arms still tie -> **NO EFFECT**, and that
 #     verdict does reach #30.
 # WITHOUT THIS LINE A NULL DEFAULTS TO THE FIRST READING AND TAKES #30 WITH IT.
+# ============================================================================
+# --- s35 BOOT BATCH, 2026-08-13 ~04:4xZ. THE SALT SURPRISE. ---
+# ⭐⭐ SALT READ 61.00% ON n=5408 AND ITS OWN PREREG SAID "EXPECTED TO LOSE".
+# Calibrated on the SAME contrast the same night: SHIPGATENULL 49.56%,
+# NEG169 40.53%. z=+16.2 -- the multiplicity warning (62 arms at 5%) does not
+# reach a z of 16. Kills 3116 vs 1936 of 5408 (57.6% vs 35.8% core-kill share),
+# which is the PRIMARY currency direction under R1000_IS_DEFEAT.
+# ⛔ AND IT CONTRADICTS THE LIVE 25-GAME LEG THAT KILLED IT (13 kills at median
+# r179 vs pooled 129, p=0.008). One of those two is wrong. Local n=5408 with a
+# both-ways-calibrated fixture beats live n=25 against a POOLED baseline on
+# precision -- but live is FIXTURE_OF_RECORD, so neither settles it alone.
+# ⇒ THIS BLOCK BUYS: (1) an independent replication on FRESH SEEDS, and
+#   (2) the two single-mechanism ablations, because a 61% we cannot attribute
+#   is a 61% we cannot iterate on.
+# SALTREP -- SAME PAIR, DISJOINT SEED RANGE (133000..133337 -> 200000..200337).
+# The one check that separates "real" from "seed artefact" without new code.
+SALTREP     bots/_v178salt         bots/_v169launchlate160  5408 200000
+# SALTIDLE2 -- _v187saltidle_f NEVER GOT A ROW (cancelled at 0 as non-dosing on
+# a stale freeze). It is the gated variant and is now the RIGHT-HAND point of a
+# dose curve rather than a revival test, because the ungated arm did not lose.
+SALTIDLE2   bots/_v187saltidle_f   bots/_v169launchlate160  5408 201000
