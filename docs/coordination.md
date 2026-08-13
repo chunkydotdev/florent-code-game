@@ -43333,3 +43333,20 @@ action; **#46 their siege may be decorative** — Juusto builds 44 siege turrets
 of which 15 ever fire at our core while banking 11,939 ammo, and our scorer
 avoids turrets regardless of whether they have ever fired. **#46 ships with its
 own size caveat and a precondition cut that costs zero games.**
+
+## ⛔ RESEARCH 2026-08-13T16:30:58Z — I RAN MY OWN GATING CUT AND IT COULD NOT RUN (#46 → BLOCKED)
+I stocked `#46` with a "zero-game precondition cut" that must pass before its
+claim stands, then ran it immediately rather than leaving it. **It returned 0
+shots for all five opponents AND for US — implausible, therefore an
+instrument statement.** `econ.tsv`'s `shots` column is **constant zero: 0
+non-zero in 195,020 rows**, because `replay_econ.py:108-109` reads
+`fireTurret` (unum 12) and `pass`es. **`tools/corpus_sanity.py:90` has
+documented this dead column and its exact cause all along** — a booted
+instrument knew, and my cut was designed against the column anyway.
+⇒ **#46 is BLOCKED on a DECODER CHANGE (count `fireTurret` per team/turret),
+not on a query.** Its claim currently rests on shots-at-OUR-CORE, a different
+quantity that cannot support the row.
+**THIRD INSTANCE TODAY of the same shape** (arm B's bar vs band-aggregated
+`econ`; my own `rounds=0` bank reader; now this) — **and the third caught by
+running the thing rather than reading it.** The pattern worth keeping: **a
+zero that covers every group INCLUDING the control is never a finding.**
