@@ -27,9 +27,18 @@ The engine requires `main.py` at the zip root or inside exactly one top-level
 directory, and auxiliary modules must travel with it for the imports to resolve
 — so this is per-extension and recursive, never main.py-only.
 
+NAMING IS ENFORCED, NOT REMEMBERED (Magnus, 2026-08-13):
+    a SHIP        -> --name 'Loki vN'      and --activate
+    an UNRATED LEG-> --name 'Loki rcX.Y'   and NO --activate
+`--name` is REQUIRED and the format must match the ship/leg mode, or this exits 2.
+It exists because this tool never passed `-n` at all and **v123 shipped UNNAMED**
+while v116/v122 carried "Loki v5"/"Loki v6" -- a known convention that lapsed the
+moment submitting moved into a script.
+
 Usage:
-    .venv/bin/python tools/submit_clean.py bots/_v124loki8            # submit
-    .venv/bin/python tools/submit_clean.py bots/_v124loki8 --dry-run  # manifest only
+    .venv/bin/python tools/submit_clean.py bots/_vX --name 'Loki rc7.1'
+    .venv/bin/python tools/submit_clean.py bots/_vX --name 'Loki v8' --activate
+    .venv/bin/python tools/submit_clean.py bots/_vX --name 'Loki rc7.1' --dry-run
 
 It PRINTS THE FULL MANIFEST before uploading, every time. The failure mode this
 guards against was invisible for an entire session; the fix should be the
@@ -38,6 +47,7 @@ opposite of invisible.
 from __future__ import annotations
 
 import ast
+import re
 import shutil
 import subprocess
 import sys
@@ -118,10 +128,71 @@ def _holder() -> str | None:
     return None
 
 
+SHIP_NAME_RE = re.compile(r"^Loki v\d+$")
+LEG_NAME_RE = re.compile(r"^Loki rc\d+\.\d+$")
+
+
+def _name_from(argv: list[str]) -> str | None:
+    """`--name "Loki v7"` or `--name=Loki v7`."""
+    for i, a in enumerate(argv):
+        if a == "--name" and i + 1 < len(argv):
+            return argv[i + 1]
+        if a.startswith("--name="):
+            return a.split("=", 1)[1]
+    return None
+
+
+def check_name(name: str | None, activate: bool) -> tuple[bool, str]:
+    """Enforce Magnus's naming convention (2026-08-13). Returns (ok, message).
+
+    ⛔ WHY THIS IS ENFORCED IN CODE AND NOT WRITTEN DOWN. This tool never passed
+    `-n` at all, so **v123 shipped UNNAMED** while v116 and v122 carried "Loki v5"
+    and "Loki v6" — the convention existed, was known, and silently lapsed the
+    moment submitting moved into a script. This repo's own finding is that
+    *every prose-only rule here has a recorded violation by its own author*, and
+    that the durable surfaces are the always-loaded file and **tools that exit 1**.
+
+    THE CONVENTION, Magnus 2026-08-13:
+      * a SHIP (`--activate`) is named  `Loki vN`     e.g. "Loki v7"
+      * an UNRATED LEG (no --activate) is `Loki rcX.Y` e.g. "Loki rc7.1"
+        — a release candidate off ship lineage X, leg Y.
+
+    ⭐ AND THE DISTINCTION IS LOAD-BEARING RATHER THAN COSMETIC. `fcode submit`
+    AUTO-ACTIVATES, so an unrated leg is a version that briefly held the live slot
+    and can appear in the rated record (measured once at -24.67 Elo across three
+    leaked matches). **A prototype indistinguishable from a ship in the submission
+    list is one an autopsy cannot separate from a ship** — and per-match `ourver`
+    is the only ground truth we have. The `rc` tag makes the leg legible in the
+    one place both a human and `ladder_games.tsv` will look.
+    """
+    if not name:
+        return False, (
+            "NAME REQUIRED. --name is not optional:\n"
+            "  ship          : --name 'Loki v8'    (with --activate)\n"
+            "  unrated leg   : --name 'Loki rc7.1' (without --activate)\n"
+            "v123 shipped unnamed because this tool never passed one.")
+    if activate and not SHIP_NAME_RE.match(name):
+        return False, (f"SHIP NAME MUST MATCH 'Loki vN' — got {name!r}.\n"
+                       "  --activate means this takes the live slot.")
+    if not activate and not LEG_NAME_RE.match(name):
+        return False, (f"UNRATED-LEG NAME MUST MATCH 'Loki rcX.Y' — got {name!r}.\n"
+                       "  No --activate means this is a leg, not a ship.\n"
+                       "  X = the ship lineage it descends from, Y = the leg number.")
+    return True, f"name OK: {name!r} ({'SHIP' if activate else 'unrated leg'})"
+
+
 def main(argv: list[str]) -> int:
     args = [a for a in argv if not a.startswith("--")]
+    # the value of --name is not a flag but must not be read as the bot dir
+    _nm = _name_from(argv)
+    if _nm and _nm in args:
+        args.remove(_nm)
     dry = "--dry-run" in argv
     activate = "--activate" in argv
+    ok, msg = check_name(_nm, activate)
+    print(msg)
+    if not ok:
+        return 2
     if not args:
         sys.exit(__doc__)
     src = Path(args[0]).resolve()
@@ -192,7 +263,7 @@ def main(argv: list[str]) -> int:
         # not shipping.
         holder_before = _holder()
         print()
-        r = subprocess.run([str(FCODE), "submit", str(dst)], cwd=ROOT)
+        r = subprocess.run([str(FCODE), "submit", str(dst), "-n", _nm], cwd=ROOT)
         if r.returncode != 0:
             return r.returncode
 
