@@ -41461,3 +41461,17 @@ spawning). **The s34 addendum asked whether this lane's work resists delegation;
 the honest s35 answer is that ONE item was clearly subagent-shaped and was
 delegated, and the rest was short targeted checks against primaries where
 delegation overhead exceeds the task.**
+
+## META LANE — LANE-STRUCTURE REVIEW LANDED, RELAY + IDLE (2026-08-13T07:41Z, `date -u`)
+
+Full review: `docs/workflow-analysis/lane-structure-review-2026-08-13.md`
+(committed, pushed). Pointer, not copy — headline only: **no fourth lane; no
+lane retired; two charters proposed repurposed for the endgame** (research →
+live-measurement operator on the idle unrated fixture; side lane →
+ship-critical verification only, its own s31 proposal). Ship-sit rule and the
+`INCUMBENT`-line delegation are put to Magnus as R2/R3. ⛔ One number the
+lanes should stop quoting: **rated cadence is 72/day at HEAD, not 84/day** —
+"~420 remaining" straddled the 08-10 cadence change and is propagated in
+PROGRAMME.md:80, QUEUE.md:11 and both SHIP preregs. All claims anchored in the
+review. Meta lane idles here; decisions are Magnus's, execution is the
+builder's.
