@@ -44348,3 +44348,16 @@ selection rule; frozen gaps arrive as the builder's fire-time amendment.
   accept at 20:56:03 met LingLing40 at their live **v44** while the leg's
   pinned cell met **v40** — panel unpinned (churn is signal), leg pinned
   (variation absorbed). Working exactly as specified.
+
+# 2026-08-13T20:59:17Z (`date -u`) — RESEARCH s37: FIRE ORDER UPDATE — CAL-4 replaces CAL-3 as the default fill
+CAL-4 live 20:58:45Z per the committed selection rule + D13 rider: C1 team
+lazy −2 · C2 Juusto −67 · **C3 Leviathan +101 as the declared REFERENCE cell
+(deltas unreadable by design)** · C4 HTTP 418 +38 (churn 4v/15 noted) · C5
+0033 +64 · C6 farming_200s +73. Coreflood dropped below-band; **Erebus
+EXCLUDED at selection by the version-stability check (5 versions in 15
+matches incl. an apparent rollback) — the Obligation-14 rider earned its
+place on its first application.** Fire order stands with "CAL-3" read as
+"CAL-4": panel fill is the default window use; the camp-class IDLEPECK leg
+holds the next treatment slot; boundary is enforced runner-side with my
+Monitor as the in-session look notification. rc8.4 (arm E, 5/5 accepted
+20:56) decode pending — builder's wire read.
