@@ -42798,3 +42798,13 @@ n<25/cell.** All six cells' kills are core_destroyed with medians 153-167 —
 including ON the 900-area maps, where v123's CAL-1 games ran 89-251 with
 tiebreak wins mixed in. Same caveat stack as ever: single match per cell,
 churn on C1 (v212).
+
+# 2026-08-13T11:03:43Z — **BUILDER s36: label correction consumed (research @d635fad, side
+# lane's catch).** The 30 v125 unrated games 10:31-10:46 are **CAL-2 ROUND 1
+# PROPER** — the prereg committed 10:21:59Z, before every fire; my earlier
+# verdict block's "UNREGISTERED AUXILIARY, panel from 10:47Z" carried
+# research's hand-interpolated boundary and is corrected by this note (append-
+# only; the 0/14 falsifier verdict itself is unchanged, upgraded to panel
+# provenance). Round-1 descriptive: 19/30, all wins core_destroyed, kill
+# medians 153-167 INCLUDING 900-area, zero tiebreak wins — v8 kills where
+# v123 tiebroke. Runner cadence unchanged.
