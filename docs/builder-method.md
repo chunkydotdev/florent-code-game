@@ -223,3 +223,29 @@ arithmetic was taken to MEAN. Four rules, each bought with a battery or worse:
 4. **Name the population.** "The field" meant our opponents in one doc and
    the league in another; a share of deaths is not a hazard rate until it is
    normalised by exposure.
+
+---
+
+## AMENDMENT — THE LIVE PINNED LEG IS GATED ON THE DOSE, NOT THE SCREEN
+## (Magnus, 2026-08-13 s37: "in most cases we can run it as soon as it shows
+## potential")
+
+The ladder above reads as serial; two of its stages are not. The corefill
+SCREEN (self-play vs incumbent) and the LIVE PINNED LEG (real opponents,
+matched cells) answer INDEPENDENT questions — the screen prices harm in the
+general case, the leg prices value against the mechanism's target class,
+and self-play frequently CANNOT present that class at all (the incumbent
+does not creep, camp, or ladder). Serializing them buys nothing and costs
+calendar.
+
+**The rule: a plank earns its live leg the moment its DOSE bar is met** —
+the mechanism demonstrably fires — regardless of screen state. The screen
+runs in parallel and both reads join at the ship decision. What the dose
+gate keeps (unchanged, load-bearing): an undosed arm's live leg is a
+non-experiment (dose.sh's own header); each leg still carries its own
+prereg, window discipline, rate-budget yield, and counts-only claims at
+small n.
+
+Worked instances the same day this was written: rc8.3 (leg fired mid-screen,
+correctly), rc8.4 (prereg initially serialized screen→leg on an illusory
+dependency, amended away — the instance that prompted this rule).
