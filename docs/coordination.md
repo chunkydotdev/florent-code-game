@@ -43108,3 +43108,30 @@ uninformative / B 3.
 LingLing40 2v1 · Juusto 1v2. **Four of five cells up; the Leviathan max of 5
 is the largest overlap measured anywhere in the corpus.**
 **W/L descriptive at n=25/arm: A 12 · B 9 · C 13.**
+
+# 2026-08-13T16:07:59Z (`date -u`) — **BUILDER s36: TRI-ARM VERDICTS (15/15 decoded, pins
+# 5/5 verified across all three arms, detector-conditioned per the prereg).**
+
+**ARM C (TWORAID) — DOSE BAR MET, the volume mechanism is LIVE.** Amendment
+1's paired contrast: max simultaneous siege sentinels C-vs-A UP in 4 of 5
+cells (Coreflood 3v2, mean 2.4v1.4 · Leviathan **5v2** — the largest overlap
+ever measured on any surface · lazy 3v3, mean 1.8v1.4 · LingLing40 2v1;
+Juusto 1v2 down). **Closing #42's diagnosis: travel seriality was the binder
+— FWDFLOOR8 acquitted the bank floor this afternoon, and adding a BODY moves
+the overlap.** The volume plank graduates from hypothesis to live-confirmed
+mechanism.
+
+**ARM B (UNDERECO) — VERDICT DELIBERATELY HELD ON ONE NUMBER.** On every cell
+where both arms have precondition-met games, B's longest pin undercuts A's
+(Juusto 15 vs 105 · LingLing40 7 vs 91 · Leviathan 34 vs 15, both sub-
+threshold) — the right direction everywhere comparable. **But B's Coreflood
+pin of 51 is over the 50 threshold, and the registered bar reads "50+
+consecutive POST-CHRONIC rounds" — a 51-round pin could sit entirely inside
+the acute first-100 window where UNDERECO deliberately behaves like the
+control.** Asked research for the pin's timing relative to camp onset; the
+falsifier types FIRED or NOT-FIRED on that one number, not before. Everything
+else about B reads clean.
+
+**W/L strictly descriptive at n=25/arm: A 12 · B 9 · C 13.** No share claims.
+COMBO (v9 candidate) fills meanwhile; its read stays gated on these verdicts
++ the singles' finals.
