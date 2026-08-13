@@ -76,3 +76,16 @@ stale-sentinel pre-clean):**
 5. **Fail-safe: a 300s timeout auto-restores even if the operator dies** — the
    hold cannot span the next pairing (window 09:53→10:12 is 19+ min).
 6. Leak check unchanged: per-match `ourver` at the pairing boundary.
+
+---
+
+# AMENDMENT 2 — ADD-ONLY, 2026-08-13T10:37:09Z. **LEG VOID-ON-PLATFORM.**
+All five matches ran after 30+ min queued and ERRORED in the platform's runner:
+`status: error, score 0-0`, zero games, no error detail exposed. **The
+falsifier was never dosed and reads NOTHING — void, not passed, not fired.**
+Exonerating control for our code: v125 (byte-identical tree, shipped 10:16Z)
+has since completed 5-0 / 5-0 / 3-2 in PANEL-CAL-2 — the runner failure is
+platform-side (Magnus's read, confirmed at the primary). **Evidential
+succession: the mechanism/falsifier check transfers to CAL-2's v125 replays**
+— right version, live incumbent, zero activation cost — per the ship prereg's
+Amendment 2 clause (a post-hoc fired falsifier remains rollback evidence).
