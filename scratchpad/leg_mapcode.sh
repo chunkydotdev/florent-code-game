@@ -6,6 +6,23 @@ set -u
 TARGET=648d1d5b-5443-4257-a0aa-7048661b612d   # team lazy (prereg TARGET BAND)
 LOG=scratchpad/leg_mapcode_fires.tsv
 
+# The incumbent, read LIVE at script start (never hardcoded — D28). Used only
+# by the dead-process branches below: if submit_clean dies between the platform
+# activation and its own restore, ITS 300s fail-safe died with it, so the
+# executor restores. (Side lane s36, second executor audit.)
+HOLDER_PRE=$(.venv/bin/fcode status 2>/dev/null | grep "Active bot" | sed 's/.*Active bot: //')
+[[ -z "$HOLDER_PRE" ]] && { echo "cannot read the live holder — NOT submitting"; exit 1; }
+
+restore_if_displaced() {
+  live=$(.venv/bin/fcode status 2>/dev/null | grep "Active bot" | sed 's/.*Active bot: //')
+  if [[ "$live" != "$HOLDER_PRE" ]]; then
+    ver=$(echo "$HOLDER_PRE" | grep -o '[0-9]\+' | head -1)
+    echo "DEAD-PROCESS RESTORE: live='$live' != pre='$HOLDER_PRE' — activating v$ver"
+    .venv/bin/fcode submission activate "$ver"
+    .venv/bin/fcode status 2>/dev/null | grep "Active bot"
+  fi
+}
+
 rm -f scratchpad/LEG_FIRES_DONE
 .venv/bin/python tools/submit_clean.py bots/_v197mapcode --name "Loki rc7.1" --leg \
     > scratchpad/leg_submit.log 2>&1 &
@@ -14,10 +31,10 @@ SUBMIT_PID=$!
 # wait for the LIVE line (max 90s) — fire NOTHING before it
 for i in $(seq 1 45); do
   grep -q "LEG MODE: .* IS LIVE" scratchpad/leg_submit.log && break
-  kill -0 $SUBMIT_PID 2>/dev/null || { echo "SUBMIT DIED pre-LIVE; see leg_submit.log"; exit 1; }
+  kill -0 $SUBMIT_PID 2>/dev/null || { echo "SUBMIT DIED pre-LIVE; see leg_submit.log"; restore_if_displaced; exit 1; }
   sleep 2
 done
-grep -q "LEG MODE: .* IS LIVE" scratchpad/leg_submit.log || { echo "NO LIVE LINE in 90s — touching sentinel to force restore"; touch scratchpad/LEG_FIRES_DONE; exit 1; }
+grep -q "LEG MODE: .* IS LIVE" scratchpad/leg_submit.log || { echo "NO LIVE LINE in 90s — sentinel + verify"; touch scratchpad/LEG_FIRES_DONE; sleep 8; restore_if_displaced; exit 1; }
 echo "$(date -u +%H:%M:%SZ) PROTOTYPE LIVE — firing 5"
 
 n=0
