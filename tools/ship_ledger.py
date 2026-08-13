@@ -390,9 +390,16 @@ def selftest() -> int:
     matches = build_matches(rows)
 
     # ---- CELL 1: the known-positive cell -------------------------------
+    # ⛔ CLOSED WINDOW (repaired s36). These cells pin REAL tape history —
+    # legitimate — but the first version bounded them only on the left, so
+    # every match the tape gained afterwards became a "leak" against a
+    # holder that was long gone (16 false leaks by 09:2xZ on ship day).
+    # A fixture window over a growing surface must be closed on BOTH ends.
     since_dt = parse_iso("2026-08-12T19:00:00Z")
+    until_iso = "2026-08-12T23:59:59Z"
     holder = "116"
-    windowed = in_window(matches, since_dt)
+    windowed = [m for m in in_window(matches, since_dt)
+                if m["created"] <= until_iso]
     leaked = [m for m in windowed if m["ourver"] != holder]
     leaks = build_leaks(leaked)
     check("cell1: exactly 2 leaked matches", leaks["n_complete"], 2)
@@ -409,10 +416,12 @@ def selftest() -> int:
           f"ALARMING verdict — {leaks['n_complete']} leak(s) found, "
           f"{leaks['total_delta']:+.2f} Elo)")
 
-    # ---- CELL 2: the known-negative cell --------------------------------
-    since_dt2 = parse_iso("2026-08-12T20:00:00Z")
+    # ---- CELL 2: the known-negative cell (closed window, same repair) ----
+    since_dt2 = parse_iso("2026-08-12T22:00:00Z")
+    until_iso2 = "2026-08-13T03:59:59Z"
     holder2 = "116"
-    windowed2 = in_window(matches, since_dt2)
+    windowed2 = [m for m in in_window(matches, since_dt2)
+                 if m["created"] <= until_iso2]
     leaked2 = [m for m in windowed2 if m["ourver"] != holder2]
     leaks2 = build_leaks(leaked2)
     check("cell2: examined count is nonzero (0 leaks != 0 rows)",
