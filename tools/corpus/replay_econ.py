@@ -32,6 +32,7 @@ def band(r):
 
 BANDS = ("r0-150", "r150-200", "r200-300", "r300+")
 COLS = ["file", "team", "band", "ammo_converted", "n_convert", "shots",
+        "shots_gunner", "shots_sentinel",
         "heals", "builds", "attacks", "deliveries", "tled", "turns_run",
         "cpu_sum_us", "cpu_max_us", "ti_end", "ammo_end", "ti_collected_end"]
 
@@ -46,13 +47,23 @@ def census(path: Path, out):
         return
     # entity -> team, so botOutput/heal/build rows can be attributed
     team_of: dict[int, int] = {}
+    # ⭐ s36: FireTurret carries only {from, to} POSITIONS (schema line 94) — no
+    # id, no team — which is why `shots` was a dead column (0 non-zero in
+    # 195,020 rows; corpus_sanity.py:90 has documented it since s25). Attribute
+    # by POSITION: turrets are buildings and do not move, so a pos->team map
+    # built from placeEntity resolves the shooter exactly.
+    pos_team: dict[tuple[int, int], int] = {}
+    pos_kind: dict[tuple[int, int], int] = {}
+    id_pos: dict[int, tuple[int, int]] = {}
+    TURRET_FIELDS = {21: "gunner", 22: "sentinel"}
     acc: dict[tuple[int, str], dict] = {}
 
     def cell(t, b):
         k = (t, b)
         if k not in acc:
             acc[k] = dict.fromkeys(
-                ("ammo_converted", "n_convert", "shots", "heals", "builds",
+                ("ammo_converted", "n_convert", "shots", "shots_gunner",
+                 "shots_sentinel", "heals", "builds",
                  "attacks", "deliveries", "tled", "turns_run", "cpu_sum_us",
                  "cpu_max_us", "ti_end", "ammo_end", "ti_collected_end"), 0)
         return acc[k]
@@ -65,12 +76,30 @@ def census(path: Path, out):
                     for en, _ew, ebuf in fields(ubuf):
                         if en != 1:
                             continue
-                        d = {}
+                        d, sub = {}, {}
                         for k, w2, v in fields(ebuf):
                             if w2 == WIRE_VARINT:
                                 d[k] = v
+                            elif w2 == WIRE_LEN:
+                                sub[k] = v
                         if 1 in d:
                             team_of.setdefault(d[1], d.get(2, 0))
+                        if 3 in sub:                            # Entity.position
+                            pd = {k: v for k, w2, v in fields(sub[3])
+                                  if w2 == WIRE_VARINT}
+                            xy = (pd.get(1, 0), pd.get(2, 0))
+                            pos_team[xy] = d.get(2, 0)
+                            for fn in TURRET_FIELDS:
+                                if fn in sub:
+                                    pos_kind[xy] = fn
+                            if 1 in d:
+                                id_pos[d[1]] = xy
+                elif unum == 3:                                 # removeEntity
+                    d = {k: v for k, w2, v in fields(ubuf) if w2 == WIRE_VARINT}
+                    xy = id_pos.pop(d.get(1), None)
+                    if xy is not None:
+                        pos_team.pop(xy, None)
+                        pos_kind.pop(xy, None)
                 elif unum == 14:                                # coreConvertAmmo
                     d = {}
                     for k, w2, v in fields(ubuf):
@@ -105,8 +134,24 @@ def census(path: Path, out):
                         continue
                     c = cell(t, b)
                     c["heals" if unum == 15 else "builds" if unum == 16 else "attacks"] += 1
-                elif unum == 12:                                # fireTurret (unattributed)
-                    pass
+                elif unum == 12:                                # fireTurret
+                    pd = None
+                    for fn, fw, fv in fields(ubuf):
+                        if fn == 1 and fw == WIRE_LEN:          # Pos from
+                            pd = {k: v for k, w2, v in fields(fv)
+                                  if w2 == WIRE_VARINT}
+                            break
+                    if pd is not None:
+                        xy = (pd.get(1, 0), pd.get(2, 0))
+                        t = pos_team.get(xy)
+                        if t is not None:
+                            cc = cell(t, b)
+                            cc["shots"] += 1
+                            k = pos_kind.get(xy)
+                            if k == 21:
+                                cc["shots_gunner"] += 1
+                            elif k == 22:
+                                cc["shots_sentinel"] += 1
                 elif unum == 4:                                 # distributeResources
                     for _mn, _mw, _mv in fields(ubuf):
                         pass

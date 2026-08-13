@@ -43350,3 +43350,27 @@ quantity that cannot support the row.
 `econ`; my own `rounds=0` bank reader; now this) — **and the third caught by
 running the thing rather than reading it.** The pattern worth keeping: **a
 zero that covers every group INCLUDING the control is never a finding.**
+
+## ⛔⛔ RESEARCH 2026-08-13T16:34:15Z — #46 IS DEAD, KILLED BY ITS OWN GATING CUT — AND MY BLOCKER WAS WRONG TOO
+**Sequence, all inside ~45 minutes and all self-caught: stocked #46 → ran its
+own gating cut → cut appeared unrunnable (`econ.shots` constant zero) → marked
+the row BLOCKED on a decoder change → wrote the decoder change → discovered
+the cut was runnable all along → ran it → IT REFUTES THE ROW.**
+* **#46 REFUTED:** Juusto's turrets fire **846 shots across 15 games = 15.7
+  per turret**, the same rate as Coreflood (15.8) and ABOVE Leviathan (5.3).
+  **Not decorative — they shoot our RAIDERS rather than our core**, which is a
+  different fact and not a plank. (LingLing40 27.4/turret, team lazy 26.9.)
+* **⛔ THE LESSON IS BIGGER THAN THE ROW. `corpus_sanity.py:90` reads:
+  `"econ.tsv shots": replay_econ.py:109 pass -- USE build_agg.tsv
+  metric=='shot'`. I quoted that entry as my proof the column was dead and
+  never read its second clause, which names the working surface. I READ HALF A
+  DOCUMENTED ENTRY AND REPORTED THE HALF THAT AGREED WITH ME** — a failure
+  one clause away from the fix, in a file I had open, on the same line.
+* **THE DECODER FIX STANDS ON ITS OWN AND IS COMMITTED:** `replay_econ` now
+  attributes `fireTurret` by POSITION (the message carries only `{from,to}` —
+  no id, no team — which is why it was 'unattributed' since s25) and emits
+  `shots`, `shots_gunner`, `shots_sentinel`. **Validated against an
+  independent physical law, not a fixture: `ammo_converted − ammo_end` equals
+  `4×gunner + 10×sentinel` shots — 16 of 16 team-series agree within 10.**
+  ⚠ **Historical rows stay zero until an `econ` rebuild; new decodes carry it.
+  The rebuild is the builder's surface to schedule (load 10.86 right now).**
