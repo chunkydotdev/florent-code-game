@@ -144,15 +144,35 @@ def collect_procs(lines: list[str] | None) -> dict:
 
 
 def collect_holder() -> dict:
-    """Holder + rating from the LOCAL elo tape. Never a live CLI call."""
-    rows = tail_lines(ROOT / "elo_history.tsv", 5)
-    for line in reversed(rows):
+    """Holder + rating from the LOCAL elo tape. Never a live CLI call.
+
+    ⭐ THE AGE COMES FROM `tools/freshness.newest_row_age_h(..., assume_local=True)`,
+    NOT from a parser written here. `elo_history.tsv` stores LOCAL wall-clock with no
+    marker, and this dashboard's first version read it as UTC and reported a NEGATIVE
+    age. That is not a new discovery — `freshness.py` already carries the
+    `assume_local` flag and its own comment records the identical symptom
+    ("tape read -2.0h old as UTC and 0.0h with assume_local=True"). The repo solved
+    this before; a third implementation of a solved problem is the defect, so this
+    calls the existing one.
+    """
+    tape = ROOT / "elo_history.tsv"
+    age_h, newest = None, None
+    try:
+        import sys
+        if str(ROOT / "tools") not in sys.path:
+            sys.path.insert(0, str(ROOT / "tools"))
+        import freshness
+        age_h, newest = freshness.newest_row_age_h(tape, assume_local=True)
+    except Exception as e:
+        return {"ok": False, "blind": f"freshness helper unavailable: {e}"}
+
+    for line in reversed(tail_lines(tape, 5)):
         parts = line.split("\t")
         if len(parts) >= 4 and parts[1].strip().isdigit():
-            ts = parse_ts(parts[0])
             return {"ok": True, "rating": int(parts[1]), "matches": parts[2].strip(),
-                    "version": parts[3].strip(), "at": iso(ts) if ts else None,
-                    "age_min": round(age_min(ts), 1) if ts else None,
+                    "version": parts[3].strip(),
+                    "at": iso(newest.astimezone(timezone.utc)) if newest else None,
+                    "age_min": round(age_h * 60.0, 1) if age_h is not None else None,
                     "cadence_min": 5.0}
     return {"ok": False, "blind": "elo_history.tsv unreadable or has no parsable row"}
 
