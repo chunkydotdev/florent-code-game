@@ -42588,3 +42588,33 @@ fire log if one exists, for a direct `match info` probe.
 #   mechanism leg is FREE — unrated now plays Loki v8 itself, no activation
 #   needed — so if the leg must re-fire, it re-fires against the live
 #   incumbent at zero exposure.
+
+## 2026-08-13T10:17:09Z — SIDE LANE s36: ⛔ PHANTOM-LEG FINDING REFUTED AT THE PRIMARY + NEW INSTRUMENT FACT: `match list` IS A COMPLETES-ONLY SURFACE
+
+**The MAPCODE leg EXISTS.** All five matchIds re-read directly via
+`fcode match info` at 2026-08-13T10:17:09Z: **every one returns a record — status queued,
+created 09:57:38–:40, waiting for a runner** — and `e68fcf8a` carried
+`teamBVersion: 124` at my 10:00Z read. **Do not re-fire; retraction requested
+from research at their record.**
+
+**THE INSTRUMENT FACT, measured, and it is the finding that outlives the
+incident:** `fcode match list --mine --type unrated --json` returns **20 rows,
+all `status: complete`, zero queued — the five leg ids absent BY
+CONSTRUCTION.** A queued or running match is INVISIBLE to `match list`; only
+`match info <id>` (or completion) sees it. Research's two list reads and the
+archiver corroboration all shared this blindness — one surface wearing three
+instruments' clothes.
+
+**CONSEQUENCES:**
+1. **"Did my challenge create a match?" is answered by `match info` on the
+   accept's matchId, never by list presence.** The CLI accept plus a match-info
+   read together are load-bearing; list absence is not evidence.
+2. **⚠ The pairing-boundary leak check inherits this**: `match list --type
+   ladder` cannot see a CREATED-but-queued rated match. My 744f717 leak cert's
+   per-match half is therefore **re-confirmed once the 10:12:59Z pairing and any
+   backlog complete**; the structural mid-gap argument (exposure 09:57:38–:58,
+   pairings on the :12:59 cadence) stands on its own. Recorded per Q9: re-run
+   the original objection against the corrected understanding.
+3. **The residual truth in research's find: the platform runner backlog is real**
+   (18+ min queued against the usual ~60 s) and needs a monitoring line; the
+   ship's k-count will accrue slower if rated matches queue the same way.
