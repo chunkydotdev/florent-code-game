@@ -982,3 +982,15 @@ NULL125     bots/_v198null125      bots/_v197mapcode      5400 215000
 # fixture driven the other way on the new base (expect ~26-30%, mirroring
 # MAPCODE's ~74%).
 NEG125      bots/_v187saltidle_f   bots/_v197mapcode      5400 216000
+# ===== PHASE-1 ARMS vs v197 (builder s36; Magnus: "start experimenting
+# against it"). All three are one-mechanism children of _v197mapcode.
+# SALTOFF: LOKI_SALTIDLE_ON=False (one flag) — does the salt plank still pay
+# on live geometry now that raiders actually ARRIVE? Expect BELOW 50 if yes.
+SALTOFF     bots/_v199saltoff      bots/_v197mapcode      5400 217000
+# STEPOFF: ore step-off gated on on_ore alone (dead >=80-walls condition
+# dropped) — a builder standing on ore can never mine that tile.
+STEPOFF     bots/_v199stepoff      bots/_v197mapcode      5400 218000
+# RAIDDL: cold-insert deadline scaled by map diagonal (150 * (mw+mh)/50 —
+# exactly 150 on 25x25, 180 on 30x30). Same time-past-arrival budget, not
+# same clock.
+RAIDDL      bots/_v199raiddl       bots/_v197mapcode      5400 219000
