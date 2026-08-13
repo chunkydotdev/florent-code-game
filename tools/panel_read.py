@@ -187,11 +187,16 @@ def selftest() -> int:
     assert sum(1 for x in g if x["area"] == 900) == 1
     n, lines = cell_report(g)
     assert n == 5 and "m=1" in lines[1] and "single match" in lines[1]
-    # the OTHER verdict: corrupt our_won so the count MUST disagree
-    bad = open(mj).read().replace("unrated\t2026-08-13T09", "unrated\t2026-08-13T09")  # no-op guard
+    # the OTHER verdict: corrupt the TSV ITSELF (m1_g1 won 1 -> 0), re-run the
+    # PRODUCTION loader, and require the LOADED count to move 3 -> 2. Flipping
+    # a dict in memory would only assert Python arithmetic (side lane, s36).
+    rows[0]["our_won"] = "0"
+    with open(mj, "w", newline="") as f:
+        wtr = csv.DictWriter(f, fieldnames=cols, delimiter="\t")
+        wtr.writeheader(); wtr.writerows(rows)
     g2 = load(d, "2026-08-13T08:49:13Z")
-    g2[0]["won"] = 1 - g2[0]["won"]
-    assert sum(x["won"] for x in g2) != 3, "corrupted fixture failed to change the count — selftest is vacuous"
+    assert sum(x["won"] for x in g2) == 2, (
+        "corrupted TSV did not change the LOADED count — selftest is vacuous")
     print("selftest PASS (5-game fixture; ladder + pre-prereg rows excluded; "
           "area 900 detected; corrupted arm changed the count)")
     return 0
