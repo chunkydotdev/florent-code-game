@@ -1039,3 +1039,11 @@ TWORAID     bots/_v203tworaid      bots/_v197mapcode      5400 223000
 # scan as before (4 cardinals x core tiles), one max() over <=8 pairs, inside
 # the existing guarded path.
 STANDOFF    bots/_v204standoff     bots/_v197mapcode      5400 224000
+# COMBO (the Loki v9 candidate, Magnus: "are we running a combination shard?"):
+# UNDERECO + TWORAID + DIGOUT merged (disjoint diffs: core-turn economy /
+# seat conversion / navigation — no shared lines or seats). FILL starts now;
+# ⛔ the READ waits for the singles' finals + the tri-arm decode so the combo
+# can be attributed against its best ingredient, not just the control. CPU
+# stamp: NEUTRAL (three stamped-neutral diffs; TWORAID's extra unit is its
+# own 10ms envelope).
+COMBO       bots/_v205combo        bots/_v197mapcode      5400 225000
