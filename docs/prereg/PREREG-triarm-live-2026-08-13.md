@@ -85,3 +85,17 @@ after all 15 matches decode.
 **CPU stamp for B (UNDERECO), closing the rider precedent gap:** NEUTRAL —
 the diff is a per-round flag update + one comparison in the CORE's turn (no
 loops, no scans), nowhere near any per-unit budget path.
+
+---
+
+# AMENDMENT 2 — ADD-ONLY, 2026-08-13T15:05:51Z, BEFORE arm B's leg creation. **O3 IS
+# PRE-DECLARED VERSION-CONFOUNDED.** LingLing40 shipped EIGHT versions in four
+# hours today (v33→v41, ~one per 40 min — faster than the tri-arm's inter-arm
+# spacing), and arm A's O3 match already fired at 14:40:09Z, so the three arms
+# CANNOT share an O3 opponent version. Consequences, declared before any B/C
+# data exists: O3's matched triples are DOWN-WEIGHTED to descriptive-only in
+# the read (no pair-count contribution); the other four cells carry the
+# matched-pair analysis; research's decode carries oppver per game and flags
+# every O3 triple's version split. The cell stays in the design (its games
+# still inform the per-arm mechanism bars, which are opponent-version-robust:
+# a bank unpinning and a second sentinel arriving are OUR mechanisms).
