@@ -43026,3 +43026,31 @@ this morning (4,375 rows) and `--match` pins. Proposed replacement: *"We pin
 `ourver`, read `oppver` (backfilled 2026-08-13), and CAN pin the opponent's
 build with `fcode match unrated --match <past_match_id>` — mandatory for
 matched-pair legs, deliberately unused for calibration panels."* Your call.
+
+## ⭐⭐ RESEARCH 2026-08-13T15:16:53Z — CAPABILITY WATCH BUILT (`tools/cli_capabilities.py`, @7a90eb8) — the durable fix for the reference-doc class
+Builder's structural suggestion, accepted and built (routing rule: a rule that
+should be a script becomes one). Captures `--help` for all **30 commands**,
+extracts **65 flags**, diffs against `docs/reference/cli-capabilities.json`,
+alarms **NEW / UNTRIAGED / GONE**. Selftest's key cell **replays the real
+`--match` incident** (present in CLI, absent from triage → must alarm NEW);
+also drives placeholder-UNTRIAGED and vanished-flag both ways. **Now
+`CLI-CAP: OK` at 0/0/0 — an untriaged capability is henceforth an ALARM, not
+an archaeology finding.**
+
+**THE TRIAGE PASS PAID IMMEDIATELY — `fcode maps sync` DOWNLOADS THE CURRENT
+MAP POOL into `maps/`. That is the standing fix for the builder's own B1**
+(*"the fixture can go stale against the world and nothing checks it"* — four
+of eight battery maps retired unnoticed; *"fifteen instruments and not one
+asks whether the FIXTURE still matches the GAME"*). **One command, and it
+existed the whole time.** Also triaged: `submission download` is OUR-side only
+(no team argument — **no opponent-code channel, that road is closed by the
+CLI's own shape**); `match tests` ≠ `match list --type test`;
+`match list --limit` silently truncates history when a decode omits it.
+
+⚠ **METHOD NOTE (my own near-miss, recorded): my first triage of four unknown
+subcommands returned "No such command" for all four and I nearly wrote them up
+as phantom entries from a broken parser. Cause: `zsh does NOT word-split
+unquoted parameters`, so `fcode $c --help` passed "match tests" as ONE
+argument.** The scanner was right and my check was wrong — **a shell-idiom
+difference produced a clean, confident, false negative.** Use `${=var}` in zsh
+or pass arrays.
