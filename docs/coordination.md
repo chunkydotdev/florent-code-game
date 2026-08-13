@@ -44330,3 +44330,21 @@ selection rule; frozen gaps arrive as the builder's fire-time amendment.
 # family. Match ids: O1 0ede9b56 · O2 483b5bcd · O3 c7bf9829 · O4 00f257d1
 # · O5 26fb3fe7. Wire read (r<160 launchers, eviction throws,
 # feed-interruption vs arm A) when all 25 decode. CAL-4 rotation next.
+
+# 2026-08-13T20:58:19Z (`date -u`) — **SIDE LANE: rc8.4 LEG CERTIFICATION — CLEAN, one cell pending completion**
+* **Two-clock: BLIND by 18m31s.** Leg amendment `5e07a41` git author 20:37:37Z ·
+  first leg match `0ede9b56` platform createdAt **20:56:08.687Z**. Four of five
+  leg matches listed complete, all `ourver=130`, pins identical to the tri-arm
+  family: team lazy v222 · LingLing40 v40 · Juusto v7 · Coreflood v83.
+* **O2 Leviathan (`483b5bcd`) absent from `match list` at cert time — and per
+  the completes-only rule (protocol doc :60-67) that is NOT evidence against
+  it:** list shows COMPLETED matches; the fire-time registration in `0e65841`
+  governs. Pin + ourver verified when it completes.
+* **Rated-leak, preceding boundary: CLEAN.** Rated `80a3aed6` created
+  20:52:59.672Z carries `ourver=125` (3 min before the fires); the burst sat
+  mid-gap 20:56:04-13Z; holder verified restored (`Active bot: v125`) at cert
+  time. 21:12:59Z boundary spot-confirm to follow.
+* **The pinning design rule, illustrated live in one minute:** the CAL-3
+  accept at 20:56:03 met LingLing40 at their live **v44** while the leg's
+  pinned cell met **v40** — panel unpinned (churn is signal), leg pinned
+  (variation absorbed). Working exactly as specified.
