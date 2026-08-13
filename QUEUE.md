@@ -69,8 +69,73 @@ else measurable, (2) the largest prize with a named lever and a stated size,
 ## NEXT UP — ready to build
 | # | plank | change | mechanism metric | why now |
 |---|---|---|---|---|
-| ~~2~~ | ~~**Idle-builder defence**~~ | **WITHDRAWN — WE ALREADY SHIP IT.** See below. |
-| 2 | **DESTROY ENEMY TURRETS** | not yet specified — **intervention deliberately NOT named** | enemy turrets alive per forward builder-round (term `A`) | **Largest single term on the board: 1.77x, 47.3% of the log hazard gap. Reduces `A` DIRECTLY, does not touch forward-round counts, and therefore escapes the LOKI-25 numerator/denominator trap BY CONSTRUCTION.** |
+| ~~2a~~ | ~~**Idle-builder defence**~~ | **WITHDRAWN — WE ALREADY SHIP IT.** See below. |
+| 2 | **KILL THE SENTINEL FROM OFF ITS AXIS — `rotate()` IS GUNNER-ONLY** | raider adjacent to an enemy SENTINEL, on a tile off its facing line, attacks it to death instead of routing around it | **GREP: PASS** — `raid.py:366` already attacks turrets (priority 3/7) so the bare plank is SHIPPED; `raid.py:501-566` + `doctrine.py:1515 LOKI_GUNAXIS_PENALTY=8` is **avoidance only** and `raid.py:518` builds the axis set from `EntityType.GUNNER` alone — **no path prefers an off-axis tile in order to ATTACK, and sentinels are never modelled as shooters.** Metric: enemy sentinels destroyed by builder attack per game (now ~0) | **The intervention `#2` was missing. On-axis attack is a LOSING trade by rules arithmetic (we lose by 1 round vs a gunner, 11 vs a sentinel); off-axis against a sentinel is FREE, because a sentinel cannot turn to face the attacker.** |
+
+**⭐⭐ `#2` RE-SPECIFIED s35 (research). It was admitted with `change` = *"not yet
+specified — intervention deliberately NOT named"* and NO `GREP:`, so
+`queue_check` refused to count it while `cores_idle.next_queue_item()` — which
+reads positional order — handed it to a builder as the top of the queue. Side
+lane flagged the split; this row is the fix. The duplicate row number `2` is also
+resolved (the withdrawn idle-builder row is now `2a`).**
+
+**`GREP:` (run against the SHIPPED tree `bots/_v169launchlate160`, which is live
+as v116, BEFORE counting this row):**
+* **We ALREADY attack enemy turrets** — `raid.py:366`, priority **3 of 7** in the
+  raider's adjacency attack scan (`CORE 0 · seat conveyor 1 · LAUNCHER 2 ·
+  GUNNER/SENTINEL 3 · HARVESTER 4 · conveyor 5`). So *"destroy enemy turrets"* as
+  a bare instruction is **a feature we ship**, and the cheapest null in this repo
+  would have been a leg that tested it.
+* **What we do NOT ship is any axis awareness on the OFFENSIVE side.** The
+  `gun_axis` machinery (`raid.py:501-566`, `LOKI_GUNAXIS_PENALTY = 8` at
+  `doctrine.py:1515`) is **pure avoidance** — it penalises *standing* on a ray —
+  and `raid.py:518` builds that set from `EntityType.GUNNER` **only**. **No code
+  path prefers an off-axis tile in order to ATTACK.** Sentinels appear in the
+  scorer as targets, never as shooters (same blindness `#30` names defensively).
+
+**⭐ THE ARITHMETIC THAT NAMES THE INTERVENTION** *(rules-level, from the entity
+table: builder 40 HP and 2 Ti → 2 dmg adjacent, 1 action/round; gunner 25 HP dmg
+7 reload 1; sentinel 40 HP dmg 18 reload 2)*:
+
+| duel, ON the turret's firing axis | rounds we need | rounds until our builder dies | verdict |
+|---|---|---|---|
+| builder vs **GUNNER** | 13 (26 Ti) | 6 hits × 2 = **12** | **WE LOSE by 1 round** |
+| builder vs **SENTINEL** | 20 (40 Ti) | 3 hits × 3 = **9** | **WE LOSE by 11 rounds** |
+
+⇒ **This is why the intervention was never nameable: head-on, attacking a turret
+is a losing trade in BOTH cases, and no amount of prioritisation fixes it.**
+
+**⭐⭐ AND THE ASYMMETRY THAT MAKES IT FREE: `rotate()` IS GUNNER-ONLY**
+(`CLAUDE.md:124`, *"Gunner-only; 10 Ti, sets action cooldown to 1"*). A gunner
+answers an off-axis attacker for 10 Ti and one cooldown. **A SENTINEL CANNOT
+ANSWER AT ALL** — it is a facing turret with a single-tile-wide line shot
+(`CLAUDE.md:38`) and no rotate in the API. **A builder orthogonally adjacent to a
+sentinel but off its facing line kills it in 20 rounds for 40 Ti while taking
+ZERO damage from it.** And because turret facing may be any of the 8 directions
+while builders stand only on the 4 orthogonal neighbours, **a diagonally-facing
+sentinel cannot hit ANY adjacent tile.**
+
+**WHY NOW:** `#32` measures **our sentinels dying at 71% against theirs at 34% —
+the largest measured gap on the board.** This is the same asymmetry read from the
+other end: if a fixed-facing sentinel is nearly free to kill from off-axis, the
+gap is a *behaviour* difference, not a durability one, and this row is the
+offensive half of it.
+
+**FIXTURE THAT CAN RESOLVE IT:** local self-play on the `_v169launchlate160`
+contrast (the calibrated one — null reads 49.56%, known-bad reads 40.53% at
+n=5408), mechanism metric = **enemy sentinels destroyed by builder attack per
+game**, which is currently ~0 and so is a clean dose check: if the arm does not
+move it off zero, the leg is uninterpretable and must not be read (`B5`).
+
+⛔ **VERIFY BEFORE BUILDING — THIS RESTS ON THE ORGANISERS' DOC, WHICH IS
+KNOWN-WRONG IN PLACES.** `rotate()` being gunner-only and the sentinel shot being
+a single-tile line are both read off `CLAUDE.md`, **not off the engine.** The
+repo's own standard says the `.so` is authoritative and the doc is not. **The
+cheap confirmation is a local probe** (`bots/_probe_*` pattern): build a
+sentinel, stand a builder on each of its 4 orthogonal neighbours, and record
+which ones take damage. **If a sentinel CAN rotate, this row collapses to the
+gunner case and is a losing trade — so the probe is a genuine falsifier, not a
+formality.**
 
 **⛔ #2 WITHDRAWN — THE CHEAPEST NULL IN THIS REPO IS A LEG THAT TESTS A FEATURE
 WE ALREADY SHIP, AND THIS WAS ONE.** Research's idle/active split gave the number
