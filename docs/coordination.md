@@ -40744,3 +40744,12 @@ every `main.py` citation** while other files land exact — *how an Obligation 1
 v112).** 1690 is the **v116-era** peak by construction — `slot_rule.holder_rows()`
 filters to the current tag — so the column is a HOLDER peak wearing the word
 "peak". Correct-as-computed, misleading-as-labelled.
+
+# --- IN-FLIGHT 2026-08-13T04:5xZ — BUILDER s35 spawning ONE sonnet subagent ---
+# `tools/ship_ledger.py` — the CUMULATIVE-since-activation Elo column that
+# AMENDMENT 1 to the v122 ship prereg declares OWED, plus the leaked-rated-match
+# accounting the side lane specced in
+# `docs/research/LEAKED-RATED-MATCH-ACCOUNTING-2026-08-13.md`. **They are the
+# same read** — per-match `ourver` off `corpus/ladder_games.tsv` — so they are one
+# tool, not two. Model: sonnet (mechanical, method validated, selftest cell
+# pre-named on real data). I type the verdict; it builds the instrument.
