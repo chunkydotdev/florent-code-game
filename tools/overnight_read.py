@@ -40,9 +40,22 @@ from __future__ import annotations
 
 import glob
 import math
+import re
 import sys
 from collections import Counter
 from pathlib import Path
+
+
+def live_pool(src: str = "tools/overnight.sh") -> set[str] | None:
+    """The live map pool, parsed from overnight.sh's own MAPS= line — ONE
+    source, never a second copy (S1 rule). Returns None (BLIND) if the parse
+    fails, so the caller can say so instead of silently passing everything:
+    a retired-check that cannot tell it is blind is the ship_watch defect."""
+    try:
+        m = re.search(r"^MAPS=\(([^)]*)\)", Path(src).read_text(), re.M)
+    except OSError:
+        return None
+    return set(m.group(1).split()) if m else None
 
 # Opponent-controlled version effects (research, 2c261c8) -- NOT rating snapshots.
 # v112 is deliberately absent: zero archived ladder games, so no ladder side.
@@ -276,12 +289,27 @@ def summarise(sh, d):
     kills_t = [int(r[8]) for r in good if r[6] == "T" and r[7] == "core_destroyed" and r[8].isdigit()]
     kills_c = [int(r[8]) for r in good if r[6] == "C" and r[7] == "core_destroyed" and r[8].isdigit()]
     ties = sum(1 for r in good if r[7] == "tiebreak")
+    # Audit M4 (2026-08-13): the map rotation retired 4 of the old 8 battery
+    # maps and a shard's array is frozen at startup, so a rate can silently
+    # span dead geometry. Tally the retired share; the printer refuses the
+    # verdict line when it is nonzero and reports the live-pool subset instead.
+    pool = live_pool()
+    if pool is None:
+        retired, ret_maps, live_sub = -1, set(), None       # BLIND
+    else:
+        ret_rows = [r for r in good if r[3] not in pool]
+        retired = len(ret_rows)
+        ret_maps = {r[3] for r in ret_rows}
+        lg = [r for r in good if r[3] in pool]
+        wl = sum(1 for r in lg if r[6] == "T")
+        live_sub = (wl, len(lg))
     return dict(sh=sh, n=N, target=d["target"], status=d["status"], W=W, p=p, hw=hw,
                 seatA=(sum(1 for r in seatA if r[6] == "T"), len(seatA)),
                 seatB=(sum(1 for r in seatB if r[6] == "T"), len(seatB)),
                 kt=kills_t, kc=kills_c, ties=ties, nowin=nowin, refusals=refusals,
                 override_note=override_note,
                 dup_note=dup_note,
+                retired=retired, ret_maps=ret_maps, live_sub=live_sub,
                 maps=len({r[3] for r in good}))
 
 
@@ -487,7 +515,25 @@ def main():
         v = ("OUTSIDE-BELOW real negative" if s["p"] < 0.5 - s["hw"]
              else "OUTSIDE-ABOVE escalate" if s["p"] > 0.5 + s["hw"]
              else "NO-INFORMATION — back to the pool, NOT demoted")
-        print(f"   VERDICT: {v}")
+        # Audit M4: no verdict on dead geometry, and no silence about it either.
+        if s.get("retired", 0) == -1:
+            print("   ⚠ RETIRED-CHECK BLIND: live pool unparseable from tools/overnight.sh")
+            print(f"   VERDICT: {v}")
+        elif s.get("retired", 0) > 0:
+            rp = 100.0 * s["retired"] / s["n"]
+            print(f"   ⛔ RETIRED GEOMETRY: {s['retired']}/{s['n']} rows ({rp:.1f}%) on "
+                  f"maps no longer in the pool ({', '.join(sorted(s['ret_maps']))})")
+            wl, nl = s["live_sub"]
+            if nl >= 400:
+                hwl = 1.96 * math.sqrt(0.25 / nl)
+                print(f"   VERDICT: REFUSED — rate spans dead geometry. Live-pool "
+                      f"subset: {wl}/{nl} = {wl/nl:.2%} (band ±{hwl*100:.2f}pp) — "
+                      f"a SUBSET, not a scheduled look")
+            else:
+                print(f"   VERDICT: REFUSED — rate spans dead geometry. Live-pool "
+                      f"subset n={nl} (<400): NO RATE PRINTED")
+        else:
+            print(f"   VERDICT: {v}")
 
     # ---- HARNESS CALIBRATION: what the control shards are FOR ----
     # ⛔ THEY WERE REPORTED AS ORDINARY PEERS, WHICH WASTES THEM. A null arm that

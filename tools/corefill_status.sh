@@ -24,6 +24,18 @@ OUT=${OUT:-scratchpad/overnight}
 STATE=${STATE:-scratchpad/corefill_started}
 NOW=$(date -u +%s)
 
+# 4. **A RATE ON RETIRED GEOMETRY SAYS SO ON THE SAME LINE.** The 2026-08-13
+#    map rotation retired 4 of the old 8 battery maps; a shard launched before
+#    it keeps its startup array, so its rate silently spans dead maps (audit
+#    M4: 165,832 rows, 49.99%, with no consumer-path caveat). The live pool is
+#    parsed from tools/overnight.sh's own MAPS= line — ONE source, never a
+#    second copy. If the parse fails we print RETIRED:BLIND rather than
+#    nothing: an alarm that cannot tell it is blind is this repo's
+#    most-repeated defect.
+POOL_SRC=${POOL_SRC:-tools/overnight.sh}
+LIVE_MAPS=$(sed -n 's/^MAPS=(\(.*\))$/\1/p' $POOL_SRC 2>/dev/null)
+[[ -z $LIVE_MAPS ]] && print -r -- "*** LIVE POOL UNPARSEABLE from $POOL_SRC — every RETIRED%% below is BLIND ***"
+
 print -r -- "COREFILL STATUS  $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 print -r -- "load $(uptime | sed 's/.*averages: *//')   shards $(ps ax -o command= | grep -c '[o]vernight.sh ')   worklist $WORK"
 [[ -f scratchpad/COREFILL_STOP ]] && print -r -- "*** PAUSED — scratchpad/COREFILL_STOP present ***"
@@ -64,9 +76,15 @@ while read -r SH TR CT TG SL; do
 
   res=""
   if (( rows >= 400 )); then
-    res=$(awk -F'\t' 'NR>1{n++; if($7=="T") w++} END{
+    res=$(awk -F'\t' -v pool="$LIVE_MAPS" 'BEGIN{
+        blind = (pool == "") ? 1 : 0
+        split(pool, a, " "); for (i in a) P[a[i]] = 1
+      }
+      NR>1{n++; if($7=="T") w++; if(!blind && !($4 in P)) ret++} END{
         if(n>0){p=w/n; b=1.96*sqrt(0.25/n)*100;
-        printf "%.2f%%  band +-%.2fpp  (n=%d)", p*100, b, n}}' $tsv 2>/dev/null)
+        printf "%.2f%%  band +-%.2fpp  (n=%d)", p*100, b, n;
+        if (blind) printf "  RETIRED:BLIND";
+        else if (ret>0) printf "  RETIRED %.0f%%", 100*ret/n}}' $tsv 2>/dev/null)
   elif (( rows > 0 )); then
     res="n=$rows — under 400 rows, NO RATE PRINTED (band would be wider than any effect we chase)"
   fi
