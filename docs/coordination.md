@@ -42066,3 +42066,53 @@ D30/two-freshness rule. No flag. HOLD verdict stands as certified.
 # array). (5) OSC-MECHANISM subagent (opus) reading _v187saltidle_f for the
 # builder-oscillation mechanism on 900-area maps (Magnus replay observation:
 # "builders mostly walking back and forth"); local repro running in my window.
+
+# ============================================================================
+# 2026-08-13T08:49:47Z (`date -u`) — **RESEARCH s36 BOOT + FIRE ORDER #1** (charter read in
+# full post-rewrite: live-measurement operator — fire order, pooled readouts,
+# same-day rated decode, oppver pinning. Hard limits unchanged: research never
+# fires/submits/activates.)
+# ============================================================================
+
+**BOOT (read, not asserted):** band 17 admissible at our 1646 · queue_check 21
+unblocked (floor 3) · audit_trigger **FIRES 2/5** (ship cadence 0.40/hr,
+cross-lane 10/0 — s34 caveat carried: the prose-line counter is location-blind;
+builder's AUDIT session already spawned, so not double-spawned by me) · corpus
+synced +1,108 replays, oppver live 6448/6463 · retro v1.8 carried (Q10: verify
+agents' load-bearing numbers, not headlines; re-verify live state before any
+recommendation about it).
+
+## ⭐ FIRE ORDER #1 — PANEL-CAL-1 (v123 field calibration, unrated, incumbent)
+**Prereg COMMITTED FIRST: `docs/research/PREREG-PANEL-CAL1-v123-field-2026-08-13.md`
+(this commit). Builder fires; research reads. Zero activation cost — the panel
+plays the ACTIVE submission (v123 = INCUMBENT), so no submit window, no rated
+leak surface.**
+
+**THE ORDER, per 20-minute rate-limit window (max 5 unrated matches/window,
+rejected attempts count):**
+- **Fire cells in cyclic order C1→C2→C3→C4→C5→C6→C1…, CONTINUING the pointer
+  across windows** (5 fires/window means the starting cell auto-rotates — the
+  anti-tail-bias rule from CLAUDE.md, by construction).
+- **Attended mode: 5 matches/window (~one fire per 4 min).**
+  **Unattended/busy mode: minimum 1 match/window, same pointer.** An idle
+  fixture window is a measurement failure (charter).
+- **On a rate-limit rejection: wait out the window, retry the SAME cell.**
+- **Yield rule: any treatment leg the builder schedules OUTRANKS this panel
+  for the window** — the panel is the fixture's idle-capacity filler, never a
+  blocker.
+
+Cells (full table + team_ids in the prereg): C1 team lazy · C2 Focalground ·
+C3 Juusto · C4 Jython · C5 The Bisons · C6 Lunds Stallions.
+
+**Readout is mine:** pooled game_share per cell (no comparative sentence below
+25 games/cell; comparative reads only at panel n=150/300), kill-round median,
+**map area class per game from mw×mh — the 900-area games are the builder's
+live 30x30 evidence for queue #1**, opponent version pinned at read time.
+**This panel is NOT rated evidence and cannot cite into a ship/rollback
+decision alone; v123's rated look (k=8, HOLD) stands untouched.**
+
+**SAME-DAY RATED DECODE (charter duty 3):** first pass done at boot — newest
+rated rows decoded to 07:52:59Z (v123 3-2 up then 0-3 tail vs Besvikomat cells
+on drumlin/fjordgate wins, midgard/archipelago/auroraveil losses — 900-area
+losses consistent with the map-rotation bleed). Full day read + pooled note
+later this session; cadence ~hourly via corpus sync.
