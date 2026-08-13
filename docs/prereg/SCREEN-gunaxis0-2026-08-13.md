@@ -37,3 +37,15 @@ free — DIGOUT finishes first).
 
 No ship implication either direction without the mechanism read; the screen
 alone cannot distinguish "flag inert" from "flag helps here, hurts there".
+
+---
+
+## AMENDMENT 1 (ADD-only, before the shard's first heartbeat — side lane's
+## D26 flag): REPLICATION RULE DECLARED NOW
+
+`GUNAXIS0` is replicated **iff its final |share − 50| ≥ 2.0pp** (outside
+~1.5× the ±1.33 band — a reading worth confirming rather than noise worth
+farming). The second shard, if triggered, uses seed base 227000, is scored
+ALONE per D26, and pools with the first only if both finals sit the same
+side of 50. Any reading inside 2.0pp: not replicated; a later second shard
+would need its own prereg and cannot pool with this one.
