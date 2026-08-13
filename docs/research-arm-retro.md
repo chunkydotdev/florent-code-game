@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.7** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.8** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -670,3 +670,166 @@ and the `queue_check` noise floor.*
 number, re-run the ORIGINAL objection against the corrected number before
 publishing it.** *"Is my fix vulnerable to the thing that broke the original?"*
 D45's fix was not — and that is the whole finding.
+
+# ============================================================================
+# RUN s35 — 2026-08-13T08:2xZ. **v1.8. FIRINGS: 5.** Answered from the day's
+# artefacts: 6 research commits (`b2ef369`, `9bf239a`, `efe9e61`, `2423f75`,
+# `959a354`, `c35d285`), the cross-lane message log, and `git log`.
+# ============================================================================
+
+## 1. CONSUMPTION — 5 CONSUMED, 3 PENDING, 0 UNREAD
+
+**CONSUMED (changed a decision or a record):**
+* **The drawdown negative** — the builder's first message asked for it (*"take the
+  drawdown, it's yours and I want it"*) and the result **stopped a regression
+  hunt before it started**. The side lane adopted my limit clause (*"no evidence
+  of a break is not evidence of no break"*) **verbatim** into their leak doc's
+  scope section, explicitly so a successor cannot recruit the −8.01 leak into a
+  regression story.
+* **The v120 rated leak** — re-derived independently by the side lane, who then
+  **corrected their own s34 REBOOT STATE** and routed a `leak_audit.py` spec.
+* **`#18` closure** — consumed within minutes. The repaired `cores_idle` picker's
+  **first output was `#18`**, and the row was already shipped in `b4f56fa`.
+  Removed from Tier 0 of the fire order.
+* **The rollback-gate work** — consumed, **after being wrong twice** (Q9). The
+  corrected table and the power half fed the builder's look-schedule amendments.
+* **The SALT direction correction** — the builder explicitly asked before banking
+  *"the map gap cuts toward SALT"*; the answer (it cuts **both** ways, and what
+  rescues SALT is the choice of statistic) **changed the sentence they wrote**.
+
+**PENDING:** `#2` (engine-confirmed, unbuilt) · `#34`/`#35` (stocked, unbuilt).
+**UNREAD: none I can name** — the output contract held; **every finding landed in
+`QUEUE.md` or a relay, and I wrote ZERO standalone documents.**
+
+## 2. LATENCY — ⛔ THE WORST COLUMN THIS SESSION, AND IT IS A NEW FAILURE
+
+Most items were pre-decision: the drawdown before the builder spent a morning on
+it, the `#18` closure before a 3am builder acted on the alarm, the SALT
+disambiguation inside the hour the builder asked for.
+
+⛔ **BUT THE HEADLINE RECOMMENDATION MISSED ITS DECISION ENTIRELY.** I closed a
+relay with *"nothing on the ladder tape licenses a ship today… holding until
+SALTREP lands is still right"* — **and v122 had gone live 20 minutes earlier**
+on Magnus's direct call. The side lane caught it. **A document advising a hold
+while the ship is live is the D14 shape**, and the fault is mine: I had verified
+the holder at boot and **never re-verified before writing a recommendation about
+it**. **D28 in its own mirror: I treated a boot-time read as current at wrap-time.**
+⇒ **Routed as a standing rule below.**
+
+## 3. RELAY FIDELITY — ⛔ THE GAP THIS SESSION EXPOSED, AND IT BECOMES Q10
+
+Three agents (SALT reconciliation, opponent-version, engine read). **I verified
+the LOAD-BEARING HEADLINE of two and the CORE of none.**
+* **Opponent-version agent → VERIFIED.** I re-derived gsxWins' 541-match v22 run
+  and our 10/15 → 3/10 split from `league_matches` + `ladder_games` myself
+  before relaying. ✅
+* **SALT agent → PARTIALLY.** I independently recounted the **local battery**
+  (5,408 rows, 8 maps × 676, T=61.00%) — but **only because the builder
+  challenged it.** I relayed `z=+3.55`, `z=+2.42`, `z=−0.22` and the log-rank
+  **without recomputing any of them**, and those three numbers are the entire
+  basis of the direction correction I sent.
+* **Engine agent → NOT VERIFIED.** I relayed symbol addresses and three
+  enforcement layers into a `QUEUE.md` row that now reads as engine-confirmed.
+  **I did not open the binary.** The agent ran its own control
+  (`can_destroy`'s team check) and intersected two toolchains, which is why I
+  accepted it — **but an agent grading its own method is not me checking it.**
+⇒ **`#2` is currently a row whose authority rests on an unverified relay.** Said
+plainly here rather than discovered later.
+
+## 4. OWN CHECKS ON OWN WORK — 4 SELF-CAUGHT vs 6 PEER-CAUGHT. **WORSE THAN s34's NEAR-PARITY.**
+
+**Self-caught, all before publishing:**
+1. **The peak-split regression-to-the-mean artefact.** My first drawdown cut split
+   the series at its own maximum and produced a "significant" 20.7pp decline.
+   **Thrown out before it left the session** — splitting at the max guarantees a
+   decline from a stationary process.
+2. **The `meta_join` zero** — filtered on a column that does not exist. Caught
+   because **zero was implausible**, not because I checked.
+3. **The `pays()` exponent sign flip** (+10.81 where the tool said +21.18).
+4. **The unoriented `scoreA-scoreB` display** — "gaining +9.82 on a 1-4" is a
+   **domain violation**, which is the only reason I looked.
+
+**Peer-caught (6):** the `−4.0/match` calibration on n=2 · the wrong statistic for
+the stop-loss · the variance understatement · `wincond` exists · the `#35` naming
+ambiguity · the hold-recommendation aimed at a past decision.
+⇒ **The pattern is unchanged from s34 and now has three sessions behind it: my
+checks catch my INSTRUMENTS, my peers catch my INFERENCES.** All four self-catches
+were arithmetic or domain violations; **all six peer catches were judgements
+about what a number meant.**
+
+## 5. DECLINES — FIVE, ALL UPHELD
+* **Declined to run a probe** for the `#2` falsifier (hard limit: no arena) —
+  **routed to an engine READ instead, which is a stronger instrument anyway.**
+* **Declined to edit `PROGRAMME.md`'s `INCUMBENT`** — not mine; flagged it as
+  blocking the staleness spec instead.
+* **Declined to edit `cores_idle`** — builder tooling; wrote the spec.
+* **Declined to soften my agreement with the builder** on SALT's z≈16 *"just to
+  be the check"* — said so explicitly. **Agreement is a measurement outcome.**
+* **Declined to bank the direction the builder invited** (*"cuts toward SALT"*)
+  when the data said it cut both ways.
+
+## 6. PER LANE — AND **SIX RETRACTIONS REACHED A LANE**
+* **BUILDER:** the drawdown negative, the v120 leak, the corrected rollback gate
+  + its power half, the SALT reconciliation, the direction correction, the n=1
+  calibration (−6.48 = 0.76 SD).
+* **SIDE LANE:** the band reconciliation (21 vs 19 = one instrument, moving
+  input), `#18` closed, `#34`/`#35` split and stocked, and my sentence promoted
+  as **D31**.
+* **MAGNUS:** the `DEFENCE_ADMISSION_BAR` conditional-vs-unconditional question
+  (**still open at wrap**), and the stale `PROGRAMME.md:8 INCUMBENT`.
+* **RETRACTIONS: 6** (s33 was 7, s34 was 4). **Four were caught by peers within
+  ~20 minutes of my sending them**, which is the protocol working — but the rate
+  is not improving and Q4 says why.
+
+## 7. CLOSURES — ⭐ I CLOSED A ROW, NOT A ROAD, AND THAT IS THE RIGHT ANSWER
+`#18` was closed on a commit hash that predates the row's text — **a fact, not an
+inference, so no closure standard applies.** **`#2`'s falsifier was CLEARED,
+which OPENS a road rather than closing one** — and I left the three caveats that
+survive (local-only `.so`, per-sentinel not per-position pricing, the `can_fire`
+gate) **in the row rather than in a message.** **The SALT reconciliation closed
+NOTHING** — it left the plank's question open and routed the deciding ambiguity
+to Magnus. **Given Q7's standard, declining to close is the finding.**
+
+## 8. Q8 — DID I READ THE INSTRUMENTS I RAN? **YES, AND AT BOOT.**
+`audit_trigger` (2/5 FIRE — relayed, though see the delta below), `target_value
+--band` (21 teams — **and I quoted it to Magnus, then had to withdraw it 90
+minutes later as stale**), `queue_check` (19 → 22 → 21, read after every edit),
+`corpus/sync` freshness. **The `--band` case is Q8 passing and Q9 failing in the
+same act: I read the column and still published a perishable number as a fact.**
+
+## 9. ⭐⭐ Q9 — DID MY CORRECTIONS NEED CORRECTING? **YES. ONCE, AND IT TOOK THREE
+ATTEMPTS.**
+The rollback-gate table. **Attempt 1:** cumulative-endpoint statistic — wrong
+statistic. **Attempt 2:** corrected to the implemented rolling `net5` after the
+side lane flagged it — **still wrong, by 1.7×**, because I kept a binomial noise
+model. **Attempt 3:** found the actual cause — **the 5 games of a match share an
+opponent and a map draw, so empirical per-match sd is 8.565 against my model's
+7.111, a 20% understatement** — and the corrected numbers then reproduced the
+side lane's to within 1pp.
+⇒ **The lesson is not "check twice". It is that my FIRST correction fixed the
+half I had been TOLD about and never re-asked whether the rest was sound.**
+**S1 from the side lane's s34 wrap, arriving in my lane: when you correct a
+number, re-run the ORIGINAL objection against the CORRECTED number before
+publishing.** I did not, and the second wrong table went out with the same
+confidence as the first.
+
+**FIRINGS (5):** (a) **Q4/domain-violation → four self-catches before
+publishing**, including the peak-split artefact which would have been a false
+finding to Magnus. (b) **The routing rule → 6 commits, all into `QUEUE.md` or
+relays, ZERO standalone documents.** (c) **Q5 → five recorded declines, all
+upheld.** (d) **Q9 → naming the correction-needing-correction is what produced
+the variance investigation**, which is the session's most transferable result.
+(e) **Verify-don't-relay → re-deriving gsxWins and the local battery both
+mattered**, and Q3 shows exactly where I stopped short.
+**SUNSET: NOT ARMED.**
+
+## ⭐⭐ NEW QUESTION — Q10: **DID I VERIFY MY OWN AGENTS' LOAD-BEARING NUMBERS, OR
+ONLY THEIR HEADLINES?**
+*Incident (s35): three agents, and I published a `QUEUE.md` row asserting
+engine-confirmation without opening the binary, plus a direction correction
+resting on three z-statistics I never recomputed. **The standing rule says a
+relay I did not check is a claim, not a fact — and it does not exempt agents I
+briefed myself.** A well-briefed agent that runs its own control is evidence its
+METHOD was sound; it is not evidence its ARITHMETIC was. Ask: which number in
+this relay would change a decision if it were wrong by 2×, and did I recompute
+that one?*

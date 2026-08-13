@@ -41524,3 +41524,103 @@ somewhere explicitly rather than dropped by scope change.**
 (consumption receipts) I have nothing to add to** — R2 and R3 are this lane's own
 proposals coming back, and R6 fixes a defect I have felt from the sending side all
 session.
+
+# ============================================================================
+# 2026-08-13T08:22Z — **RESEARCH ARM s35 WRAP** (Magnus called it). Retro ran FIRST:
+# `docs/research-arm-retro.md`, instrument **v1.8**, **FIRINGS 5**.
+# Ledger: 5 consumed · 3 pending · 0 unread · **6 retractions reached a lane**.
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**R1. ⛔⛔ A RECOMMENDATION ABOUT A LIVE SLOT MUST RE-READ THE SLOT IN THE SAME
+BREATH IT IS WRITTEN.** *(behaviour change → standing rule, stated here because
+this file IS booted.)* I closed a relay with *"nothing licenses a ship today,
+holding is still right"* — **v122 had been live for 20 minutes.** I verified the
+holder at BOOT and never re-verified before advising about it. **D28 says a
+document naming the holder is a cache; this is its mirror — MY OWN EARLIER READ
+IS ALSO A CACHE.** ⇒ **Any sentence containing a ship/hold/rollback verb re-reads
+`fcode status` in the same tool call that writes it.** Cheap, mechanical, and it
+is the only one of today's deltas that would have prevented a wrong
+recommendation reaching a live decision.
+
+**R2. ⭐⭐ WHEN YOU CORRECT A NUMBER, RE-RUN THE **ORIGINAL** OBJECTION AGAINST THE
+CORRECTED NUMBER.** *(behaviour change → adopted into the retro as Q9's operating
+form; the side lane's s34 S1 arriving in this lane.)* My rollback table was wrong
+**twice**: attempt 1 used the wrong statistic (cumulative vs the implemented
+rolling `net5`), attempt 2 fixed the statistic the side lane had NAMED and kept a
+binomial noise model that understated real variance by 20%. **The first correction
+fixed only the half I had been told about.** Root cause, and it is a durable fact
+about this fixture: **the 5 games of a match share an opponent AND a map draw, so
+per-match Elo delta has empirical sd 8.565 against a binomial model's 7.111.**
+⇒ **Never model a match as 5 independent games.**
+
+**R3. ⭐ THE `GREP:` GATE VALIDATES THAT A CHECK **RAN**, NOT THAT ITS RESULT IS
+**STILL TRUE**.** *(behaviour change → standing block in `QUEUE.md`; convention
+adopted; tooling spec routed to the builder.)* `#18` was admitted honestly, fixed
+by `b4f56fa` the next morning, and **passed the gate forever after** — caught only
+because the repaired `cores_idle` picker handed it out as its first output.
+**1 FAIL in 19 rows is a sweep, not a gate.** The trigger was already implied and
+unused: `PROGRAMME.md` denominates the gate in the **INCUMBENT**, so an incumbent
+move stales every grep by definition. ⇒ **Every `GREP:` now names its tree;**
+`queue_check` should compare that to `PROGRAMME.md:INCUMBENT` and print
+`GREP STALE`, with `GREP TREE UNNAMED` for rows that name none — otherwise the
+check only fires on rows conscientious enough to be checkable.
+
+**R4. A QUERY SHAPED BY WHAT YOU EXPECT CANNOT REPORT WHAT YOU ASSUMED.**
+*(routed: promoted by the side lane as **D31** into the drift-watch file, quoting
+this lane's clause — *"the expectation-shaped query usually returns something, and
+a plausible return is what stops the second look."*)* **Five instances across
+three lanes inside one hour; a sixth (mine) was caught BY the rule 90 minutes
+later.** ⭐ **The corollary I owe: all four caught instances had an EXTERNAL
+INVARIANT** — a legal domain, a known-nonzero population, a rate ceiling, a sign
+identity — **while the three that landed inside their plausible range were derived
+aggregates with no invariant at all.** ⇒ **The defence is not vigilance; it is
+ARRANGING to compute something an invariant can contradict.** My `scoreA-scoreB`
+slip was caught only because the Elo delta happened to sit in the same row.
+
+**R5. SPLIT A STOCKED ITEM WHEN ITS HALVES HAVE DIFFERENT COSTS.** *(behaviour
+change → `#34`/`#35` stocked as two rows on the side lane's verification.)* My
+one claim (*"no surface carries map name or win condition for unrated games"*)
+**split on checking: the map half held, the win-condition half was WRONG.**
+`wincond` exists fully-computed in `throws.tsv` — **but on a throw-SELECTED 37%
+of files, which is the real finding.** ⇒ **As one row it would have been priced at
+the map half's cost and the cheap half would have ridden along unbuilt.**
+
+**R6. ⚠ MY `audit_trigger` RELAY DROPPED MY OWN LANE'S RECORDED CAVEAT.** I
+relayed **2/5 FIRE** to the builder without the s34 finding that the
+`cross-lane analysis` row **counts prose lines without regard to where they
+landed** — a caveat written by this lane, one session earlier. **A number I
+quoted was thinner than my own file's version of it.** *(Q9-shaped; recorded, not
+routed further, because the fix is R2.)*
+
+## RESEARCH'S FOUR CARRIES FOR A SUCCESSOR
+1. **⛔ MAGNUS-ONLY, STILL OPEN: `DEFENCE_ADMISSION_BAR: kill_round_non_regression`
+   does not say CONDITIONAL or UNCONDITIONAL.** SALT is the first case where the
+   two differ in **sign of significance** — conditional p=0.0004, unconditional
+   log-rank **z=−0.22, p=0.83.** ⚠ And the bar governs **defensive** planks while
+   SALT is offensive denial — **the prereg invoked it voluntarily**, so this is
+   not a bar that bound and failed.
+2. **`#2` IS ENGINE-CONFIRMED BUT UNVERIFIED BY ME (Q10).** The row asserts three
+   enforcement layers and symbol addresses **read by an agent, not by me.** Its
+   caveats — local-only `.so`, pricing is per-SENTINEL not per-POSITION, must gate
+   on `can_fire()` — are in the row.
+3. **THE ROLLBACK GATE IS NOT A STOP-LOSS.** `net5` fires on **88.8% of harmless
+   arms by k=40** and is **blind to any bleed slower than −4.2/match** (−240 Elo
+   over 60 matches, never trips). Pooled game share needs **~60 matches** to see a
+   real 5pp regression. **A mechanism metric is the only thing resolvable inside
+   an evening.**
+4. **`PROGRAMME.md:8 INCUMBENT` decays at exactly one event and that event is a
+   script.** Until `submit_clean` owns it, R3's spec has nothing correct to
+   compare against.
+
+## RESEARCH ARM STATE — VERIFIED 08:22:33Z, NOT ASSERTED
+* **Live: rating 1641, rank #28 of 123, 880 matches, `Active bot: v123` (Loki v7).**
+  Read off `fcode status`, not off the tape. **Recovered from the 1616 low.**
+* **`queue_check`: 21 unblocked (floor 3), selftest PASS**, unique-row-number
+  assertion green.
+* **NOTHING OF MINE IS RUNNING.** Three subagents (SALT reconciliation,
+  opponent-version, engine read) **all reported; all findings are in `QUEUE.md`
+  or in the builder relays.** Nothing is parked in a live agent.
+* **A successor must NOT inherit unchecked:** the three z-statistics in the SALT
+  direction correction, and `#2`'s engine addresses — see carry 2 and Q10.
