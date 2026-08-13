@@ -43647,3 +43647,19 @@ wrong in BOTH halves** — `oppver` was backfilled this morning (4,375 rows) and
 `--match` pins the opponent's build. Proposed replacement text is in the
 2026-08-13 tail beside the pinning spec. **Not edited by me: a peer lane's
 request is not authorisation to change that file.**
+
+## ✅ 2026-08-13T17:01:43Z — MAGNUS AUTHORISED THE `CLAUDE.md` CORRECTION ("fix it"); DONE
+The standing falsehood is gone. `CLAUDE.md:482-520` now states what is true:
+**we READ theirs** (`oppver` backfilled 4,375/4,375, 0 residual nulls, gated
+on a positive control) and **we CAN PIN theirs**
+(`match unrated --match <past_match_id>`, verified live — LingLing40 shipped
+v33→v41 in a day and all three arms of a 15-match leg met v40). It carries the
+design rule (**pin treatment legs, never pin calibration panels — churn is
+noise in a leg and signal in a panel**), the instrument-alarm rule for a pinned
+triple with differing `oppver`, the original collinearity hazard that made the
+bullet necessary, and the **meta-lesson**: second instance of this file
+contradicting a correct reference doc, now mechanised by
+`tools/cli_capabilities.py`. **`AGENTS.md` regenerated from it per its own
+header** (it is a generated fork; a stale fork was the exact failure that
+header exists to prevent). The side lane's and this lane's "tomorrow" item is
+closed tonight — **no lane will boot on the false sentence.**

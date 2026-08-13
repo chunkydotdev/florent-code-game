@@ -479,14 +479,45 @@ and both produced false findings on 2026-08-10:**
   unrated-vs-ladder comparison is a prototype-vs-shipped comparison wearing a
   fixture-vs-fixture costume. That alone explains the 40.5pp gap on The Bisons
   (21.3% mixed vs **49.0% ladder-only**) with no era story required.
-* **PIN THE OPPONENT'S VERSION AT ANALYSIS TIME.** We pin `ourver`, assert the
-  holder, and verify `teamAVersion` on the platform for every leg — **and
-  nothing pins or even reads THEIRS.** The Bisons shipped v4 forty minutes
-  before our v102's first ladder game: perfectly collinear, so *"our v102 is
-  worse"* and *"their v4 is better"* fit identically. **`ladder_games.tsv.oppver`
-  is NULL for all 100 Bisons games and a null column reads as "no version
-  change" to any cut that trusts it — use `league_matches.tsv` for their
-  timeline.**
+* **PIN THE OPPONENT'S VERSION — AT FIRE TIME AND AT ANALYSIS TIME.**
+  ⭐⭐ **CORRECTED 2026-08-13 (s36, on Magnus's instruction). THIS BULLET READ
+  "nothing pins or even reads THEIRS" AND BOTH HALVES ARE NOW FALSE.** What is
+  true today:
+  * **WE READ THEIRS.** `ladder_games.tsv.oppver` was the literal string
+    `'None'` in **4,375 of 4,375 rows** — not because the field was
+    unavailable but because the ingest read `fcode match info` (which returns
+    None for the opponent) instead of `fcode match list` (which returns both).
+    **Backfilled 2026-08-13, 0 residual nulls, gated on a positive control.**
+  * **WE CAN PIN THEIRS.** `fcode match unrated <team> --match <past_match_id>`
+    plays **the submission they had in that past match** — documented at
+    `docs/fcode-cli.md:330` since 2026-08-09 and unread for four days while
+    this file asserted the opposite. **Verified live: LingLing40 shipped
+    v33→v41 in a single day and all three arms of a 15-match leg still met
+    v40.**
+  * ⭐ **THE DESIGN RULE, because the two fixtures want opposite things:
+    PIN TREATMENT LEGS, NEVER PIN CALIBRATION PANELS.** A matched-pair leg
+    cannot absorb opponent variation, so pinning is mandatory. A calibration
+    panel exists to measure RELEVANCE — what the ladder will actually pair us
+    against — so pinning reintroduces the staleness the panel is for.
+    **Churn is noise in a leg and signal in a panel.** Opponent PROFILES pin.
+    Full spec: `docs/research/SPEC-opponent-pinning-2026-08-13.md`.
+  * **A pinned triple whose decoded `oppver` values DIFFER is an INSTRUMENT
+    ALARM** (the pin did not take, or the decode is wrong) — report it and do
+    not read that cell.
+  **The original hazard still stands and is why this bullet exists:** The
+  Bisons shipped v4 forty minutes before our v102's first ladder game —
+  perfectly collinear, so *"our v102 is worse"* and *"their v4 is better"* fit
+  identically. **A null version column reads as "no version change" to any cut
+  that trusts it.** `league_matches.tsv` remains the authority for their
+  timeline.
+  ⛔ **AND THE META-LESSON, because this is the SECOND time this file has
+  contradicted a correct reference doc** (the first: `fcode submit`
+  auto-activates, documented at `docs/fcode-cli.md:262` while the procedure
+  three sections down implied otherwise): **a fact recorded in a reference
+  nobody boots and contradicted by the always-loaded file is a fact nobody
+  has.** Mechanised 2026-08-13 by `tools/cli_capabilities.py` — it diffs every
+  CLI `--help` against a triage file and **alarms on any capability nobody has
+  classified.**
 
 **5. UNRATED GAMES ARE FREE. USE THEM AS MUCH AS YOU WANT.**
 Magnus, 2026-08-10: *"You are free to use unrated games as much as you want,
