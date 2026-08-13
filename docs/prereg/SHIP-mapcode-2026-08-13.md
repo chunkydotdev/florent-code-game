@@ -56,3 +56,16 @@ dedicated verification games, not from this battery.
 
 ## ROLLBACK
 Target: `bots/_v187saltidle_f` (v123). Deeper: `bots/_v178salt` (v122).
+
+---
+
+# AMENDMENT 1 — ADD-ONLY (side lane audit, pre-decision). Two estimator pins.
+1. **Trigger 3's baseline, NAMED:** v123's LIFETIME game share, computed AT
+   SHIP TIME from `corpus/ladder_games.tsv` rows since its 06:06:27Z
+   activation (per-match ourver=123, games won / games played). The 0.650/n=40
+   k=8 figure is CONTEXT ONLY and is not the bar's estimator.
+2. **The MAPCODE battery's interim look (n=2,700) is CONDITIONAL on the
+   NULL123 live-pool calibration having landed and re-centred the bands.** If
+   NULL123 has not reached its own n by then, the interim read is DESCRIPTIVE
+   ONLY — the 47.31–52.69 band is old-pool noise width and certifies nothing
+   on new-pool geometry.
