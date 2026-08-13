@@ -41390,3 +41390,74 @@ bot edits, no verdicts, no platform touches, no HANDOVER/tape writes. Spawning
 synthesis, outcomes/bottleneck read). Output lands as
 `docs/workflow-analysis/lane-structure-review-2026-08-13.md`. This note is the
 rule-1 announce; will relay the result here before idling.
+
+## SIDE LANE s35 — Q1/Q2 LEDGER, COMPUTED LIVE (2026-08-13T07:2xZ, `date -u`)
+
+**Recorded now because a META LANE has been commissioned to review lane structure
+(`1faaee5`, read-only) and FLAG→OUTCOME CAUSALITY IS THE ONE THING ARTEFACTS
+CANNOT RECONSTRUCT — the messages die with the sessions.** Also this lane's own
+retro Q1 (consumption) and Q2 (latency), which must be answered from the day's
+artefacts rather than memory.
+
+### OUTCOME-CHANGING FLAGS — 16, each with the commit that consumed it
+
+| flag | consumed by | latency |
+|---|---|---|
+| `cores_idle` picks a row `queue_check` won't count | `9bf239a` QUEUE #2 re-spec | ~5 min |
+| …and the picker itself | `ca9ec9b` calls `unblocked()`, reads fire order | ~62 min |
+| v120 rated leak + leak-accounting spec | `c45720c`/`66fd945` `ship_ledger.py` | ~5 min |
+| ship prereg stop-loss names a statistic nothing computes | `a409fd9` AMENDMENT 1 | ~2 min |
+| three statistics called "the −21 rule" | `55be0e4` AMENDMENT 2 | ~2 min |
+| the gate is a UNION; `p_null` is one arm's rate | `c6d8e23` AMENDMENT 3 | ~1 min |
+| unrated map/wincond gap SPLITS (cheap half + dear half) | `2423f75` QUEUE #34/#35 | ~3 min |
+| `ship_ledger` lag in MATCHES not minutes; `--since` default | `46a2b11` two guards | ~2 min |
+| v116 = the gate's real-data calibration (−17.50 / 0.502) | `28220bb` AMENDMENT 5 | ~1 min |
+| attribution contrast needs ±1.88pp, not ±1.33pp | `253ea59` counter AMENDMENT 1 | ~2 min |
+| `#18`'s premise already false (Tier 0 item 1) | `c35d285` QUEUE #18 CLOSED | ~47 min |
+| `dose.sh` has no positive control; flag guard name-based | `328f097` both closed | ~2 min |
+| `PROGRAMME.md` correct-but-UNCOMMITTED | `b768079` committed w/ directive | ~1 min |
+| INCUMBENT decay → a GUARD, not an editor | `129cf5b` read-only guard | ~2 min |
+| interim stop is an ACTION at inflated alpha | `5547192` AMENDMENT 4 (OBF) | ~2 min |
+| `eco.py:551` confirmed + the `:517` asymmetric guard | builder ran the discriminating test | ~9 min |
+
+**MEDIAN LATENCY ≈ 2 MINUTES.** Two outliers (47, 62 min) are both cases where the
+fix was owned by a lane other than the one flagged.
+
+### ⛔ WRONG OR WITHDRAWN — 4, and they are the honest denominator
+
+| claim | fate | caught by |
+|---|---|---|
+| GUNBLOCK's zero is resolvable "free and retrospectively" | **ran it; test does not discriminate** (no facing on the wire; 3.5 barriers/side/game vs a 0.20 dose) | **me**, superseded in `ca29ed4` |
+| *"you have the match ids; I do not"* | **false — `meta_join` attributes them by version** | **me**, same commit |
+| INCUMBENT fix = "ship procedure UPDATES the field" | **conflicts with the file's Magnus-only rule; corrected to a GUARD** | **me, before it was built** |
+| the counter prereg's ±1.33pp is a BORROWED band | **unfounded — it is the binomial half-width at n, transfers anywhere** | **me, before publishing** |
+| builder's reservation is "about precision" | **wrong: it was OPTIONAL STOPPING, which a fixed-n z cannot see** | **the BUILDER** |
+
+**⇒ DETECTION vs PRESCRIPTION, the s34 split, measured: of 16 outcome-changing
+flags the DEFECT was real in 16. Of the FIXES I named, 2 needed correcting
+(GUNBLOCK's test, the INCUMBENT editor) — both caught before or at the point of
+build.** The s34 finding holds: **detection is the strong half.**
+
+**⇒ Q4 (self-catch): 4 of 5 wrong claims caught by me, 1 by a peer.** The
+mechanism is unchanged and is **not diligence — it is GOING TO USE THE THING**
+(running the GUNBLOCK test; opening `target_value.py`; computing the binomial
+band; going to build the INCUMBENT fix).
+
+**⛔ AND THE ONE A PEER CAUGHT IS A NEW FAULT CLASS FOR THIS LANE** — *restating
+someone else's concern in weaker terms and then addressing the weaker version* —
+**worse than a scope error because it is COMFORTING.** Full entry above at 06:1xZ.
+
+**MEASUREMENT ERRORS (not flags — instrument slips in my own checks): 6, all one
+class, ad-hoc field indexing.** `awk $4` → an author's middle name · an `awk`
+aggregate returning empty · `throws.tsv` col 20 read as `wincond` · `SALT.tsv`
+col 2 read as `seed` · a `[A-Z_]+` regex excluding `R1000_IS_DEFEAT` from a
+COMPLETENESS check · `$?` after a pipe ending in `head`. **Every one caught by a
+DOMAIN or STRUCTURAL implausibility, never by re-reading the code — which is D31,
+and the last is a REPEAT of a specifically-named prior instance from the s34
+retro.**
+
+**SUBAGENTS: 1** (the 19-row `QUEUE.md` GREP audit, `sonnet`, announced before
+spawning). **The s34 addendum asked whether this lane's work resists delegation;
+the honest s35 answer is that ONE item was clearly subagent-shaped and was
+delegated, and the rest was short targeted checks against primaries where
+delegation overhead exceeds the task.**
