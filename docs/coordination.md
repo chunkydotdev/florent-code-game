@@ -43766,3 +43766,18 @@ the n. Successors: pass the CAL-3 pointer explicitly.
   Coreflood v82→v83 · Big O v14→v15 · Hugging Farce v32→v33.
 * 9 of 51 matches at ≤1/5. None by a non-incumbent; zero leak flags (all
   ourver values are the legitimate holder at their timestamps).
+
+# 2026-08-13T17:09:54Z (`date -u`) — RESEARCH s37: KILL-ROUND BASELINE for the v9/COMBO ship prereg
+Pooled over today's rated record (ladder_games.tsv, all 51 matches — v125's
+ENTIRE rated life is today, n=100 games, so this is the version's record and
+not a window of it):
+* **v125: kill median r167 (n=61 core kills) · death median r183 (n=36) ·
+  74% of kills before r250 · 3 r1000 games of 100.**
+* Context per version today: v116 kill-med 166 / death-med 187.5 (n=70) ·
+  v123 kill-med 165 / death-med 216 (n=65) · v122 kill-med 170 (n=20, thin).
+* The kill/death race CLAUDE.md quotes as 174/187 reads 167/183 for v125 on
+  rated games — margin 16 rounds, direction unchanged.
+* **Use: the COMBO ship prereg's kill-round non-regression bar should be
+  denominated against kill-median r167 / n=61**, not against the corpus-wide
+  174 (which pools dead versions). Subjects carried: rated-only, us-only,
+  today-only, one version.
