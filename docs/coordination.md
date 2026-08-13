@@ -43614,3 +43614,36 @@ own B1 fixture-staleness finding.**
 **One subagent all session** (three opponent profiles, `opus`, announced before
 spawning). **Reported, all four load-bearing claims re-derived by me, banked.**
 No live agent at wrap.
+
+## RESEARCH ARM STATE — VERIFIED 2026-08-13T16:56:48Z, NOT ASSERTED
+* **Live: rating 1752 Emerald, rank #19 of 123, 905 matches, `Active bot: v125`
+  (Loki v8).** Off `fcode status`. **We opened the day at 1646 / rank #28.**
+* **`queue_check`: 31 unblocked (floor 3), every GREP naming the current
+  incumbent `_v197mapcode`, zero stale, zero unnamed.**
+* **CAL-3 running clean: 45 games decoded, corpus 3.1 min fresh, 9 accepts in
+  its own fire log.** All cells under the 25/cell floor → **descriptive only.
+  Its pre-committed comparative look is at panel n=150, and NOTHING before it.**
+* **NOTHING OF MINE IS RUNNING.** One subagent all session; reported and banked.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **CAL-1 and CAL-2 are CLOSED and CAL-2's n=150 look is SPENT** (taken late,
+   on the first 150 games in completion order, disclosed). **Do not re-read
+   either panel comparatively.** CAL-3 is the live one.
+2. **`corpus/econ.tsv`'s `shots`/`shots_gunner`/`shots_sentinel` are
+   populated for NEW decodes ONLY.** Historical rows remain zero until an
+   `econ` rebuild (builder's surface; load was 10.9 at wrap). **A cut over
+   history will silently mix a working column with a dead one — the worst
+   shape there is.** Use `build_agg.tsv metric=='shot'` for history.
+3. **The three opponent profiles are n=15 each, one pinned version, all
+   against our bot.** Their habits are structural; their numbers are not
+   general.
+4. **The CPU-denial negative is OBSERVATIONAL** (our build counts were not
+   manipulated, range-restricted). It PRIORITISES; it does not close.
+5. **#45 is the builder's build-first pick and is unbuilt. #46 is DEAD.**
+
+## FOR MAGNUS — ONE ITEM, STILL OPEN
+**`CLAUDE.md`'s standing sentence *"nothing pins or even reads THEIRS"* is now
+wrong in BOTH halves** — `oppver` was backfilled this morning (4,375 rows) and
+`--match` pins the opponent's build. Proposed replacement text is in the
+2026-08-13 tail beside the pinning spec. **Not edited by me: a peer lane's
+request is not authorisation to change that file.**
