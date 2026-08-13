@@ -44054,3 +44054,26 @@ parked_raider.py): join BotOutput execTimeUs/tled per parked bot-round and
 split the 10.68% parked share into chose-to-idle (cheap µs, tled=0) vs
 TLE-starved — corpus-wide, same 7,203-game population. Decides how much of
 #48 is behaviour vs CPU, and feeds #44. Results relayed before idling.
+
+# 2026-08-13T19:10:06Z (`date -u`) — RESEARCH s37: FIRE ORDER AMENDED + #48 mill results banked
+**#48 mill: widened-peck variant REFUTED on its own kill-round clause**
+(fires 12/12, median +44.5 rounds SLOWER — the pre-registered peck-economics
+rider landing exactly); narrow core-peck rung alive but fixture-exposure-
+limited (camper healers hold the core seats; 1/12 fired, that game 101
+pecks/−28 rounds). Banked in the row.
+## FIRE ORDER AMENDMENT (supersedes the 17:08Z order's preemption clause)
+1. CAL-3 fill continues as the default in every window.
+2. After rc8.3's read: **the next treatment slot goes to the pinned
+   CAMP-CLASS IDLEPECK leg** when its prereg commits (wire metric:
+   builder-attacks-ON-CORE, zero-by-construction in v125). **Target must
+   clear the band** — of the park-heavy camp teams, Leviathan (+63, 5-0 pays
+   +18.86) is in-band; I Stone (55.6% park rate) is NOT in the admissible 13
+   — the prereg's TARGET BAND line decides, not the park table.
+3. #47's live leg remains gated on its APPRLAUNCH screen reading inside-band
+   — no contention yet; if both preregs are live simultaneously, IDLEPECK
+   goes first (bigger lever: 10.68% of bot-rounds vs a conditional premium).
+4. CAL-3 resumes after any leg; leg games excluded from panel counts by
+   leg-id (R5 filter).
+Also: builder's 24 fresh dose replays (parks with/without pecking, known
+ground truth) noted as selftest fixtures for detector v2 when its sweep
+lands.
