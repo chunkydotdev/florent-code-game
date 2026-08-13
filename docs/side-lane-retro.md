@@ -685,3 +685,69 @@ already close enough to vacuous that a second rescue would finish it.
 **SUNSET WATCH:** Q1, Q2, Q8 have fired every run and are load-bearing. **Q5 has
 now gone two runs without a harm** — if s35 is also clean, v1.5 should ask
 whether it has become a subset of Q9 the way it once was of Q3.
+
+## ⭐⭐ v1.5 — **FIRING 5. A NEW QUESTION EARNED BY A NEW FAULT, AND THE HEADLINE IS THAT KNOWING A DEFECT DOES NOT PREVENT COMMITTING IT.**
+
+**v1.5 — 2026-08-13 (MINOR: records firing 5, adds Q10, caps point bumps, arms the
+`conceding` sunset). Instance: `docs/retro-side-lane-2026-08-13-s35.md`.**
+
+* **FIRINGS: 5** (s29, s32, s33, s34, s35).
+* **⭐⭐ THE HEADLINE, AND IT IS ABOUT THE AUTHOR RATHER THAN THE QUERY: I FLAGGED A
+  DEFECT AND THEN COMMITTED IT THREE TIMES IN THE NEXT ARTEFACT I BUILT.** At
+  05:41Z I flagged `cores_idle` for re-implementing `queue_check`'s admission
+  instead of calling it. Within two hours `tools/dash` re-derived three quantities
+  the repo already computes and **disagreed with all three** — 13 STALLED vs
+  DONE/DEAD, 4 queue rows vs 21, a **negative** tape age vs 4.4 min. **The rule was
+  in my head, freshly written, in a message I had sent that hour, and it did not
+  fire once.** What fired was cross-checking my output against the tool's.
+  ⇒ **ROUTED AS A PRACTICE: when writing anything that computes a quantity another
+  tool already computes, RUN BOTH AND DIFF THEM BEFORE COMMITTING — not as a test,
+  as the act of writing it.** This is D31 turned on the author: **only a forced
+  comparison prevents a known defect; knowing it does not.**
+* **⭐ NEW — Q10. DID I ADDRESS THE CONCERN AS STATED, OR AS I RE-STATED IT?**
+  Earned by a fault new to this lane and worse than its recorded one: **I restated
+  the builder's reservation (optional stopping) as a weaker one (precision) and
+  then reassured them about the weaker version** — offering a multiplicity
+  correction against a fault a fixed-n z cannot see. **A scope error is merely
+  wrong; this one is COMFORTING — it hands an author permission they did not ask
+  for, on grounds they did not offer.** For a lane whose product IS the objection,
+  that is the failure that matters most. **Q10 is answerable BEFORE publishing,
+  which the direction question is not.**
+* **⚠ Q3 = 5, mechanism replicating for the FOURTH run, and it reached a new axis:
+  two of the five were claims about MY OWN CAPABILITY and MY OWN NOVELTY** (*"you
+  have the match ids; I do not"*; the elo local-time *"find"* already solved in
+  `freshness.py`). **The substitution is not confined to evidence — it reaches
+  self-description.**
+* **⛔ AND Q4's MECHANISM HAS A BLIND SPOT IT CANNOT REACH.** *Going to use the
+  thing* caught 5 of 7 — but **a claim about someone else's inbox has no primary to
+  open.** The fix there is not a better check, **it is not making the claim**.
+* **Q5 STAYS, and v1.4's question is answered NO:** it is not a subset of Q9,
+  because it caught a flag **dropped before publishing** (the borrowed-band
+  suspicion), which Q9 cannot see since it never became a correction. **Two
+  consecutive runs at zero harm.**
+* **Q7 gained a fifth decline type: DECLINING TO INTERPRET A FAVOURABLE NUMBER**
+  (v123 at +36.99, k=4, under a look schedule I had just proposed — reported as
+  progress, not read). **The only decline of the six that constrained me rather
+  than protecting someone else.**
+* **Q8 = 6 in code + 2 promoted rules**, practice unchanged: *flag the defect with
+  its fix, and name what the fix was verified against.*
+* **THE LEDGER IS NOW ROUTINELY SPLIT: DETECTION 16/16 · PRESCRIPTION 14/16.**
+  s34's finding holds — **this lane detects better than it prescribes**, and the
+  gap is stable across two runs.
+
+**⛔ POINT-BUMP CAP, ADOPTED AS v1.4 ASKED: at most TWO point bumps between runs.**
+s34 ran four against one run. **This session ran ZERO** — every finding was held
+for the instance or routed straight into a booted file. The mechanism still exists
+for findings that would otherwise die in a session; **it is no longer the default.**
+
+**⚠ THE `conceding` BRANCH IS UNTESTED FOR A SECOND ARMED RUN.** I conceded twice
+this session and neither concession contained an error, so the branch
+pre-registered to *err toward the critic* still has no data.
+**⇒ IF IT IS STILL UNTESTED AT v1.6 IT IS STRUCK, NOT CARRIED.** v1.3.3 already
+warned that a second rescue would finish this model; **an armed branch that never
+fires is the vacuity it was accused of.**
+
+**STANDING CAVEAT ON THIS RUN'S NUMBERS, conceded in the instance:** the meta lane
+observed that this lane's consumption ledger was computed **because** a review of it
+had been announced. **Self-measurement under observation.** The flags and consuming
+commits are anchored in git; the timing of the count was not disinterested.
