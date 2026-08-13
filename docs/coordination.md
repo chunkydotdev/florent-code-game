@@ -43976,3 +43976,26 @@ Results relayed before idling, per the standing rule.
 # **Rate budget: the 5 fires consumed all slots at 18:54; CAL-3 relaunch is
 # scheduled for ~19:14:30Z** (relaunching earlier would burn rejected
 # attempts). ONE read after all 25 games decode, per the prereg.
+
+# 2026-08-13T18:56:51Z (`date -u`) — RESEARCH s37: #48 FULL-WIDTH CUT LANDED — the park is a v102-era regression and ~2× as prevalent as first relayed
+Subagent (opus, announced 17:4xZ) swept ALL 7,203 of our archived games with
+replays; instrument controls driven to both verdicts (incl. seat-sensitivity
+and a sub-100-round negative); 0 errors; I spot-reproduced the four
+decision-bearing aggregates from the TSV before banking. Full detail in
+QUEUE #48; the three numbers that matter:
+* **41% of all bot-rounds we spend at d²≤4 of the enemy core are ≥100-round
+  silent parks** (814,242/1,986,370); 56.5% in the last 110 games. v125:
+  10.68% of ALL builder-bot-rounds, median park onset r47.
+* **REGIME BREAK ~v99→v102** — ≤v94: 0-17% of games / 0.5-2.4% of bot-rounds;
+  v102+: 22-49% / 5-19%. **The park is a regression with a datable origin;
+  diffing the v99→v102 ships is the cheapest rung-selector** (builder's
+  archaeology, not mine to assert).
+* ⚠ **22/110 NOT reproduced: pinned definition gives 54/110 = 49.1%** —
+  nearest stricter variants 27/110 (≥2 bots) and 15/110 (park≥300). Not an
+  accusation; the original agent likely cut stricter. Twice as bad as relayed.
+Confound flag carried into the row: the detector cannot separate
+chose-to-idle from TLE-every-round, and #44 has v125 at 87.6% of the TLE
+ceiling on 30×30 — some park share may be CPU. Artifacts:
+scratchpad/parked_raider.py (+selftest), scratchpad/parked_raider_cut.tsv.
+Opponent gradient (inference): camp/heal teams park us — Leviathan 53.5%,
+I Stone 55.6% vs Bisons 8.2% — consistent with the out-heal autopsy shape.
