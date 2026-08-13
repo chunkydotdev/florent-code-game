@@ -43054,3 +43054,17 @@ unquoted parameters`, so `fcode $c --help` passed "match tests" as ONE
 argument.** The scanner was right and my check was wrong — **a shell-idiom
 difference produced a clean, confident, false negative.** Use `${=var}` in zsh
 or pass arrays.
+
+# 2026-08-13T15:56:44Z (`date -u`) — **BUILDER s36: TRI-ARM FIRING COMPLETE — 15/15 matches
+# accepted, all three windows textbook.** A (v125 control) 14:40:09 5/5 · B
+# (v126 "Loki rc8.1"=UNDERECO) 15:34:45 5/5, exposure ~10s · C (v127 "Loki
+# rc8.2"=TWORAID) 15:56:00 5/5, exposure ~7s. Arms B/C fired PINNED to arm A's
+# per-cell match ids (Amendment 3) — every triple faces one opponent build by
+# construction; research verifies pins in decode. Holders restored+confirmed
+# both windows; leak checks ride the pairing boundaries. Panel CAL-3 launches
+# now (fresh pointer/fires files, totals reset per the new-panel rule).
+# Decode read to follow: bank_trace on B's cells (the falsifier instrument),
+# paired two-at-once counts on C's (Amendment 1's contrast), matched W/L grid
+# descriptive. Interim sweep complete meanwhile: SALTOFF stopped-below (salt
+# confirmed both classes), FWDFLOOR8 stopped-below (floor acquitted), STEPOFF
+# priority-stopped, UNDERECO/TWORAID/DIGOUT/RAIDDL/NULL125 inside-continuing.
