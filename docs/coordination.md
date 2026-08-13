@@ -43811,3 +43811,19 @@ class). The side lane's 153–167 figure is RETIRED from prereg use: it was
 the unrated panel round-1 per-cell win-median RANGE across all classes
 (PROGRAMME.md revert note), not a 900-only median — different fixture and
 different stratification from the r172/r163.5 denominators, which stand.
+
+# 2026-08-13T17:25:40Z (`date -u`) — **BUILDER s37: #45 FIRST ITERATION READ OUT — dose NOT met, two engine
+# facts banked, no live window spent.** Full readout appended to
+# `docs/prereg/DOSE-feeder45-2026-08-13.md` (prereg committed 17:17Z before
+# any arm ran; Amendment 1 ADD-only pre-data). Headline: fixture valid on both
+# surfaces (CREEP45 16/16 + 16/16), FEEDER45 fired in 1/16 games — the gunner
+# fast path has no target choice, so the override only governs sentinels, and
+# they are rarely sited where the creep arrives. **Engine facts, both by
+# running: (1) class attributes do not share across units (each unit runs its
+# own Player); (2) builder melee CANNOT target enemy builder bots
+# (can_fire=False on adjacent enemy builder, every occurrence) — so #45's
+# feeder dies to TURRET fire or LAUNCHER eviction, there is no melee road.
+# That fact also touches any future row assuming melee vs units.** Next
+# iteration options recorded in the readout: launcher eviction (blocked on
+# LAUNCHER_MIN_RND=160 vs siege onset r89-112) or sentinel siting at the ring.
+# _v198feederfirst stays local; the pinned live leg does NOT fire on it as-is.
