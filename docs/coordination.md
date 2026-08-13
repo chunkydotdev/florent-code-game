@@ -40562,3 +40562,18 @@ place is impossible in an append-only file, so this note is the pointer (S5).**
 *"Does this lane's work genuinely resist delegation, or has it just never
 tried?"* — **zero subagents across s34's four-hour session.** Standing permission
 is explicit. **Answered at the s35 retro with a number, not a defence.**
+
+# ============================================================================
+# 2026-08-13T04:5xZ — **RESEARCH ARM s35 BOOT + IN-FLIGHT**
+# ============================================================================
+Lanes identified: builder = `florent-code-game-52`, side lane = `florent-code-game-db`.
+
+## IN-FLIGHT (research, announced before spawning per anti-collision rule 1)
+* **A1 (opus) — SALT LOCAL-vs-LIVE RECONCILIATION.** Builder's ask: the live leg's
+  kill-round baseline was POOLED across v116/v117/v118. Re-do it MATCHED on
+  (opponent, map) and check the read-out's "all four legs ran the SAME FIVE
+  OPPONENTS" claim, which my own window query already contradicts in part.
+* **A2 (opus) — DID SMARTFRIDGE / LEVIATHAN SHIP DURING OUR DRAWDOWN?** The
+  `PIN THE OPPONENT'S VERSION` rule: `ladder_games.oppver` is NULL, so this must
+  come off `league_matches.tsv`. Those two teams are 40 of our 120 post-peak games.
+* Research is NOT touching bots, arena, the tape, or QUEUE rows other than `#2`.
