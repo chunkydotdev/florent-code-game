@@ -43845,3 +43845,21 @@ inside the triggered state; unsieged non-regression bar carries the premium
 hazard); **#28 annotated** with the contrary RES0/RES20 evidence (bare
 reserve sweep superseded by #47). The catch is the Q10 rule paying at full
 value: the misread arm name would have cost an iteration aimed backwards.
+
+# 2026-08-13T17:42:15Z (`date -u`) — **BUILDER s37: #47 ITERATION 4 DOSE MET — the conditional launcher's
+# triggered half works.** `DOSE-apprlaunch47-2026-08-13.md` (prereg → dose →
+# readout, all committed in order; bar-4 control clean). Headline:
+# approach detection (enemy builder within d²≤50 of our core) buys the
+# launcher at a HEALTHY bank — replay-decoded builds r48-55 vs iteration 2's
+# bank-dead siege window — and converts on small maps to 41-152 evictions/
+# game, including two games where the creeper ladder NEVER FORMED. Pooled bar
+# 10/16 approached games build pre-160. Siting stratum sharpened for #47:
+# midgard builds 4/8 but converts 1/4 (900-area feeder ring outside pickup
+# d²≤2 from a home-sited launcher). **APPRLAUNCH corefill screen queued
+# (seed 228000, D26 replication rule declared at queueing) — the unsieged
+# −6.34pp premium is its question. GUNAXIS0 (#33) also queued (seed 226000,
+# SCREEN prereg + replication rule).** Day's #45→#47 arc: four iterations,
+# four preregs, four clean readouts, zero live windows spent, everything
+# tag- or replay-attributed. Next: finals typing as shards land (DIGOUT
+# first), then the v9/COMBO read, then the pinned live leg for #47 after its
+# screen.
