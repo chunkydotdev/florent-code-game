@@ -44225,3 +44225,15 @@ control. The pinned-definition run above postdates the fix.
 # so the interaction diff is a two-candidate question and "combo minus
 # DIGOUT" (= UNDERECO+TWORAID) answers it while doubling as the proposed v9
 # variant. Built after tonight's finals per the gating rule.
+
+# 2026-08-13T20:15:51Z (`date -u`) — **BUILDER s37: FIRST FUTILITY-GATE READS (rule @HEAD, decisions typed
+# by the builder, watcher woke only).**
+# * COMBO GATE-2700 @ n=4288: 52.29 — grandfathered AND >50.5 either way.
+#   CONTINUES to final (~65m).
+# * GUNAXIS0 GATE-1000 @ n=2636: 49.13 > 48.0 — CONTINUES past this gate.
+#   Note for its imminent GATE-2700: reading has drifted 47.26→49.13; the
+#   ablation clause will likely apply (every value in the interval leaves
+#   the same decision — the flag stays), in which case it drops as
+#   DECISION-REACHED at 2700.
+# * APPRLAUNCH GATE-1000 @ n=2557: 53.23 > 48.0, comfortably. CONTINUES —
+#   still the board's best and climbing.
