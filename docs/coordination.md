@@ -42896,3 +42896,17 @@ SPENT; slot rule carries.
 # pathing fixed, raiders reach big-map belts and the cut pays everywhere.
 # ~21pp is the largest single-plank effect this fixture has ever measured.
 # Verdict row on the tape; arm cancelled per schedule, rows kept.**
+
+## 2026-08-13T14:22:02Z — SIDE LANE s36: TRI-ARM PREREG AUDITED — 3 ADD-only flags (messaged pre-window)
+
+@ef72c99 audited. **Sound:** matched-pair design over an identical 5-map set ·
+genuine per-arm falsifiers incl. the honest B-discriminator branch · counts-only
+claim discipline · both prototypes on the proven --leg procedure · executor
+(@aff950e) inherits every MAPCODE-leg hardening. **Flags:** (1) ⭐ C's dose
+falsifier is passable by the control's own base rate (0.9^25 ≈ 7% null miss —
+the s28 bar-null rule); fix = read dose as the PAIRED two-at-once contrast the
+design already buys, never a bare ≥1; (2) obligation-13 lines absent for B and
+C (metric file:line + diff intersection, one line each); (3) obligation-14
+churn table absent — O1 is team lazy at 13 versions/48h. Plus: stamp UNDERECO's
+hot-turn verdict (trivially neutral) so the rider precedent stays unbroken.
+None blocks arm A (no activation needed). Two-clock cert at fire time as usual.
