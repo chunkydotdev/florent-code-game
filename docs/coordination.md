@@ -41874,3 +41874,16 @@ is only as durable as the least-tracked thing it names.** The reboot state was
 written carefully, verified against live instruments, and its first line still
 pointed at something git had never seen. **Check the handover's own dependencies,
 not just its facts.**
+
+## ⛔ CORRECTION TO DELTA B8, SAME SESSION — appended because a past block is never edited
+**B8 says `submit_clean` "guards, never edits". THAT IS NO LONGER TRUE, and the
+change is AUTHORISED, not drift.** Commit `cb4540a` (2026-08-13 08:21Z) has
+`--activate` **rewrite** `INCUMBENT`/`PREVIOUS_INCUMBENT`, citing a Magnus
+delegation of exactly that field (lane-structure review R3, *"could you apply your
+fixes"*, after it went stale at four consecutive ships). It refuses on
+`INCUMBENT_FROZEN: yes`; everything else in `PROGRAMME.md` stays Magnus-only.
+⇒ **The reasoning in B8 was right on the information available** — an automated
+edit to a directive-only file trades a stale field for an unattributable one —
+**and it was overridden by a policy change, which is not the same as having been
+wrong.** The authorisation now exists at policy level and is named in the code.
+Verified by me at the file, not taken from the relay.
