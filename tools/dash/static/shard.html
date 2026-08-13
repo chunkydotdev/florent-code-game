@@ -57,6 +57,20 @@ function freshBadge(ageMin, cadenceMin) {
   return `<span class="badge ${cls}">${label} ${ageMin.toFixed(1)}m</span>`;
 }
 
+// PASSTHROUGH OF corpus/version_trees.tsv (same renderer as the list view). A
+// tree the ledger does not name gets NO chip: the directory name is not a version
+// (`_v197mapcode` is submission v125), so guessing one would be a fabrication.
+function verChips(lab) {
+  if (!lab) return '';
+  let s = (lab.versions || []).map(v =>
+    ` <span class="badge b-dim" title="corpus/version_trees.tsv — evidence: ${esc(v.evidence || 'none recorded')}">v${esc(v.version)}${v.name ? ' “' + esc(v.name) + '”' : ''}</span>`).join('');
+  if (lab.incumbent)
+    s += ` <span class="badge b-ok" title="this tree is PROGRAMME.md's INCUMBENT — the bot holding the live ladder slot">LIVE INCUMBENT</span>`;
+  if (lab.ledger_blind)
+    s += ` <span class="badge b-blind" title="${esc(lab.ledger_blind)}">LEDGER BLIND</span>`;
+  return s;
+}
+
 // ⛔ A FILE ON DISK HAS NO CADENCE, SO IT CANNOT BE CALLED "fresh". The previous
 // version passed a cadence of 1e9 to freshBadge for every artefact, which printed
 // a green `fresh 2141.2m` beside a heartbeat last touched a day and a half ago.
@@ -148,9 +162,18 @@ function render(d) {
     }
   }
   if (w) {
+    // ⭐ WHAT THIS SHARD RUNS AGAINST, said in one line before the table. The
+    // worklist names two directories; the ledger (corpus/version_trees.tsv) says
+    // which of them we actually SUBMITTED, and PROGRAMME.md says which one holds
+    // the live slot. Passthrough of both — a tree in neither renders bare.
+    if (d.treatment_ver || d.control_ver) {
+      wparts.push(`<p class="sub-mono" style="margin:0 0 10px;font-size:12.5px">
+        <span class="vs">arm</span> ${esc(w.treatment)}${verChips(d.treatment_ver)}
+        &nbsp;<span class="vs">vs</span>&nbsp; ${esc(w.control)}${verChips(d.control_ver)}</p>`);
+    }
     wparts.push(`<table class="kv">
-      <tr><td>treatment (the arm)</td><td class="mono">${esc(w.treatment) || '<span class="badge b-dim">—</span>'}</td></tr>
-      <tr><td>control</td><td class="mono">${esc(w.control) || '<span class="badge b-dim">—</span>'}</td></tr>
+      <tr><td>treatment (the arm)</td><td class="mono">${esc(w.treatment) || '<span class="badge b-dim">—</span>'}${verChips(d.treatment_ver)}</td></tr>
+      <tr><td>control</td><td class="mono">${esc(w.control) || '<span class="badge b-dim">—</span>'}${verChips(d.control_ver)}</td></tr>
       <tr><td>target games</td><td class="mono">${esc(w.target) || '<span class="badge b-dim">—</span>'}</td></tr>
       <tr><td>seed block</td><td class="mono">${esc(w.seed_lo) || '<span class="badge b-dim">—</span>'}</td></tr>
     </table>

@@ -103,8 +103,18 @@ function render(d) {
   const ver = v => (v === null || v === undefined || v === '')
     ? '<span class="badge b-dim" title="no surface carries a version for this match yet">version unknown</span>'
     : `<span class="vs">v${esc(v)}</span>`;
+  // ⭐ THE SUBMISSION NAME BESIDE OUR VERSION NUMBER. `ourver` is a bare platform
+  // integer everywhere in the corpus; `corpus/version_trees.tsv` is the only
+  // surface that says v125 was named "Loki v8" and built from `_v197mapcode`.
+  // Passthrough — a version the ledger does not name renders as the number alone.
+  const L = m.our_ver_label;
+  const ourVer = L
+    ? ver(m.our_ver) + ` <span class="badge b-dim" title="corpus/version_trees.tsv`
+        + ` — tree ${esc(L.tree || 'not recorded')} · evidence: ${esc(L.evidence || 'none recorded')}">`
+        + `${esc(L.name || L.tree)}</span>`
+    : ver(m.our_ver);
   $('#title').innerHTML =
-    `${esc(m.our_name || 'OpenSverige')} ${ver(m.our_ver)}`
+    `${esc(m.our_name || 'OpenSverige')} ${ourVer}`
     + ` <span class="vs">vs</span> `
     + (m.opp_name ? `${esc(m.opp_name)} ${ver(m.opp_ver)}`
                   : `<span class="badge b-dim">opponent not archived</span>`);

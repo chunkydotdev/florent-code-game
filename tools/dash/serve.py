@@ -752,6 +752,14 @@ def collect_shard_list() -> dict:
         # below is computed, scored or paraphrased here.
         r["worklist_lineno"] = w.get("lineno")
         r["treatment"], r["control"] = w.get("treatment"), w.get("control")
+        # ⭐ WHAT OPPONENT EACH SHARD RUNS AGAINST, AND WHETHER EITHER TREE IS A
+        # BOT WE ACTUALLY SUBMITTED. The worklist names two directories and stops
+        # there, so "is this arm being measured against the bot on the ladder?"
+        # was unanswerable from this page. `matches.tree_label` is the ONE
+        # implementation (ledger + PROGRAMME.md INCUMBENT); an unledgered tree
+        # comes back with `versions: []` and renders as its bare path.
+        r["treatment_ver"] = matches.tree_label(r["treatment"])
+        r["control_ver"] = matches.tree_label(r["control"])
         r["target"], r["seed_lo"] = w.get("target"), w.get("seed_lo")
         r["comment_block"] = w.get("comment_block") or []
         r["note"] = worklist_note(r["shard"], w.get("comment_block") or [])
@@ -836,6 +844,9 @@ def collect_shard_detail(shard: str) -> dict:
         # --- what defines it -------------------------------------------------
         "worklist": w, "worklist_path": wl["path"],
         "tests": (w or {}).get("tests"),
+        # Same one implementation as the list view — see collect_shard_list.
+        "treatment_ver": matches.tree_label((w or {}).get("treatment")),
+        "control_ver": matches.tree_label((w or {}).get("control")),
         "note": worklist_note(shard, (w or {}).get("comment_block") or []),
         # --- artefacts -------------------------------------------------------
         "maps": shard_map_set(shard),

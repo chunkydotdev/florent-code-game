@@ -30,7 +30,7 @@
   <div class="count" id="src">…</div>
 
   <div class="chips" id="chips"></div>
-  <input class="filter" id="q" type="search" placeholder="filter by shard name, state, arm/control tree, or words from the worklist note…" autocomplete="off">
+  <input class="filter" id="q" type="search" placeholder="filter by shard name, state, arm/control tree, submission name (&ldquo;Loki v8&rdquo;), or words from the worklist note…" autocomplete="off">
   <div class="count" id="count">…</div>
 
   <div class="scroll"><table id="tbl">
@@ -129,9 +129,30 @@ const CHIPS = ['running','STALLED','queued','DEAD','CANCELLED','DONE'];
 
 let LAST = null, PICK = 'all';
 
+// ---------------------------------------------------------------- tree labels
+// PASSTHROUGH OF corpus/version_trees.tsv, VIA THE API. A tree the ledger does
+// not name renders as its bare path with NO version chip — the directory name is
+// not a version (`_v197mapcode` was submitted as v125), so guessing one here
+// would be a fabricated claim about what we shipped.
+function verChips(lab) {
+  if (!lab) return '';
+  let s = (lab.versions || []).map(v =>
+    ` <span class="badge b-dim" title="corpus/version_trees.tsv — evidence: ${esc(v.evidence || 'none recorded')}">v${esc(v.version)}${v.name ? ' “' + esc(v.name) + '”' : ''}</span>`).join('');
+  if (lab.incumbent)
+    s += ` <span class="badge b-ok" title="this tree is PROGRAMME.md's INCUMBENT — the bot holding the live ladder slot">LIVE INCUMBENT</span>`;
+  if (lab.ledger_blind)
+    s += ` <span class="badge b-blind" title="${esc(lab.ledger_blind)}">LEDGER BLIND</span>`;
+  return s;
+}
+function labText(lab) {
+  return !lab ? '' : (lab.versions || []).map(v => `v${v.version} ${v.name || ''}`).join(' ')
+                     + (lab.incumbent ? ' live incumbent' : '');
+}
+
 function noteCell(r) {
   const arm = (r.treatment && r.control)
-    ? `<div class="sub-mono">${esc(r.treatment)} <span class="vs">vs</span> ${esc(r.control)}</div>` : '';
+    ? `<div class="sub-mono"><span class="vs">arm</span> ${esc(r.treatment)}${verChips(r.treatment_ver)}
+        <span class="vs">vs</span> ${esc(r.control)}${verChips(r.control_ver)}</div>` : '';
   if (!r.note) {
     return (arm || '<span class="badge b-dim">no worklist note</span>')
       + (r.worklist_line ? '' : '');
@@ -199,6 +220,8 @@ function render(s) {
       || r.shard.toLowerCase().includes(q)
       || (r.state || '').toLowerCase().includes(q)
       || (r.worklist_line || '').toLowerCase().includes(q)
+      || labText(r.treatment_ver).toLowerCase().includes(q)
+      || labText(r.control_ver).toLowerCase().includes(q)
       || (r.note && r.note.text.toLowerCase().includes(q)))
     .sort((a, b) => ((GROUP[a.state] ?? 9) - (GROUP[b.state] ?? 9)) || (a._i - b._i));
 

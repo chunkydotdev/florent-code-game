@@ -53,10 +53,12 @@ import subprocess
 import sys
 import tempfile
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 FCODE = ROOT / ".venv" / "bin" / "fcode"
+VERSION_LEDGER = ROOT / "corpus" / "version_trees.tsv"
 
 # --leg mode (2026-08-13 s36, side-lane catch): WITHOUT this mode the holder
 # restore runs INSIDE the submit command, so a challenge fired after
@@ -201,6 +203,59 @@ def _update_incumbent(prog: Path, new_tree: str) -> tuple[str, str]:
     prog.write_text("".join(lines))
     return "updated", (f"INCUMBENT: {cur} -> {new_tree}; "
                        f"PREVIOUS_INCUMBENT: {cur}")
+
+
+def record_version(ledger: Path, holder_before: str | None,
+                   holder_after: str | None, tree: str, name: str | None) -> str:
+    """Append one row to the version ledger. NEVER raises, NEVER changes a verdict.
+
+    `corpus/version_trees.tsv` is the only surface that joins a platform version
+    (`ourver=125`) to the tree we built it from (`bots/_v197mapcode`) and the name
+    it carries ("Loki v8"). That join went unrecorded for 16 submissions and had to
+    be reconstructed by hand out of prose in five files; this is the point where
+    all three facts are in scope at once, so this is where it gets written.
+
+    ⛔ IT IS NOT PART OF THE SHIP CHAIN AND MUST NEVER BEHAVE AS IF IT WERE. The
+    caller prints what this returns and does nothing else with it: no exception
+    escapes, no exit code moves, no branch above depends on it. A bookkeeping file
+    that could fail a ship would be strictly worse than no bookkeeping file.
+
+    The VERSION comes from the `Active bot:` line, never from the submit echo —
+    standing repo rule (gate on the load-bearing field). Two refusals, and both are
+    silence-with-a-warning rather than a guessed row, because a wrong ledger row is
+    worse than a missing one:
+      * the holder cannot be read (None) -> nothing to record;
+      * the holder did not CHANGE -> the version live now predates this submit, so
+        attributing it to this tree would be a fabricated mapping.
+    """
+    try:
+        at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        if not holder_after:
+            return ("LEDGER: not recorded — the holder could not be read after the "
+                    "submit, so no version can be attributed to this tree.")
+        if holder_before and holder_after == holder_before:
+            return (f"LEDGER: not recorded — holder unchanged ({holder_after}), so "
+                    f"the live version predates this submit and is not this tree.")
+        ver = "".join(c for c in holder_after.split()[0] if c.isdigit())
+        if not ver:
+            return (f"LEDGER: not recorded — no version parses out of "
+                    f"{holder_after!r}.")
+        row = "\t".join([ver, (name or "").replace("\t", " "), tree,
+                         f"submit_clean auto — `fcode status` Active bot: "
+                         f"{holder_after}", at])
+        new = not ledger.exists()
+        with ledger.open("a", encoding="utf-8") as fh:
+            if new:
+                fh.write("# VERSION LEDGER — version<TAB>name<TAB>tree<TAB>"
+                         "evidence<TAB>recorded_at. Appended by "
+                         "tools/submit_clean.py; absence means unknown, never "
+                         "guessed.\nversion\tname\ttree\tevidence\trecorded_at\n")
+            fh.write(row + "\n")
+        return (f"LEDGER: v{ver} = {tree} ({name or 'unnamed'}) -> "
+                f"{ledger.name}{' (created)' if new else ''}")
+    except Exception as e:                      # never raise out of bookkeeping
+        return (f"LEDGER WARNING: could not record v?/{tree} in {ledger}: "
+                f"{type(e).__name__}: {e} — the submit above is unaffected.")
 
 
 SHIP_NAME_RE = re.compile(r"^Loki v\d+$")
@@ -353,6 +408,12 @@ def main(argv: list[str]) -> int:
 
         holder_after = _holder()
         print(f"\nHOLDER: before={holder_before or '?'}  after={holder_after or '?'}")
+        # Bookkeeping only — see record_version. Every path below (ship, leg,
+        # default restore) passes through here, so the ledger sees legs as well as
+        # ships, which is the point: a leg version is what `ourver` will carry if
+        # one leaks onto the rated tape.
+        print(record_version(VERSION_LEDGER, holder_before, holder_after,
+                             f"bots/{src.name}", _nm))
         if activate:
             print("--activate given: leaving the new submission live. THIS IS A SHIP.")
             # PROGRAMME.md's INCUMBENT went stale at four consecutive ships

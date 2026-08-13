@@ -152,6 +152,26 @@ LEAGUE_TSV = ROOT / "corpus" / "league_matches.tsv"
 LADDER_TSV = ROOT / "corpus" / "ladder_games.tsv"
 META_GZ = ROOT / "corpus" / "meta_join.tsv.gz"
 
+# ---------------------------------------------------------- the version ledger
+# ⭐ WHICH LOCAL TREE IS WHICH PLATFORM SUBMISSION. Nothing in this repo joined
+# the two before 2026-08-13: `ladder_games.tsv.ourver` carries `125`, the shard
+# worklist carries `bots/_v197mapcode`, and the sentence "those are the same bot"
+# lived only in prose. `corpus/version_trees.tsv` is that join, seeded ONLY from
+# written anchors, and this is the ONE place the dashboard reads it — the shard
+# pages and the match page both call through here rather than each parsing it.
+#
+# ⛔ ABSENCE IS UNKNOWN, NOT UNLABELLED-BUT-GUESSABLE. A tree with no ledger row
+# renders as its bare path. Inferring a version from a directory name (`_v197` ->
+# "v197"?) would be a fabricated claim about what we shipped, on the page built
+# to answer exactly that — and the numbers do not even coincide (`_v197mapcode`
+# is submission v125).
+VERSION_LEDGER = ROOT / "corpus" / "version_trees.tsv"
+# `INCUMBENT` is read from PROGRAMME.md itself, per request (mtime-keyed, so a
+# `submit_clean --activate` rewrite shows up on the next page load). NOT copied
+# into this file: a second copy of the incumbent is the defect that left the real
+# field stale across four consecutive ships.
+PROGRAMME_MD = ROOT / "PROGRAMME.md"
+
 # The archiver's own cycle. Stated on the page so `meta_join` absence reads as
 # LAG rather than as "this match had no games".
 ARCHIVER_CYCLE_MIN = 30
@@ -302,6 +322,97 @@ def load_meta() -> tuple[dict, str | None]:
             out.setdefault(r["match"], []).append(r)
         return out
     return _cached(META_GZ, build)
+
+
+def load_version_ledger() -> tuple[dict, str | None]:
+    """`corpus/version_trees.tsv`, indexed both ways. Passthrough, no inference.
+
+    Returns {"by_tree": tree -> [row, ...], "by_version": version -> row, "n": k}.
+    A tree may carry SEVERAL versions (`_v197mapcode` was submitted twice: v124 as
+    an unrated leg, v125 as the ship), so `by_tree` is a list, newest version
+    first. Comment lines (`#`) are the file's own header block and are skipped.
+    """
+    def build(p):
+        by_tree: dict[str, list] = {}
+        by_version: dict[str, dict] = {}
+        hdr = None
+        for raw in p.read_text(errors="replace").splitlines():
+            if not raw.strip() or raw.lstrip().startswith("#"):
+                continue
+            f = [c.strip() for c in raw.split("\t")]
+            if hdr is None:
+                hdr = f
+                continue
+            r = dict(zip(hdr, f))
+            ver, tree = r.get("version", ""), r.get("tree", "")
+            if not ver:
+                continue
+            rec = {"version": ver, "name": r.get("name") or None,
+                   "tree": tree or None, "evidence": r.get("evidence") or None,
+                   "recorded_at": r.get("recorded_at") or None}
+            by_version[ver] = rec
+            if tree:
+                by_tree.setdefault(tree, []).append(rec)
+        for rows in by_tree.values():
+            rows.sort(key=lambda d: (_int(d["version"]) is None,
+                                     -(_int(d["version"]) or 0), d["version"]))
+        return {"by_tree": by_tree, "by_version": by_version,
+                "n": len(by_version)}
+    return _cached(VERSION_LEDGER, build)
+
+
+def programme_incumbent() -> tuple[dict, str | None]:
+    """PROGRAMME.md's INCUMBENT / PREVIOUS_INCUMBENT / INCUMBENT_FROZEN.
+
+    Same four-space-indented `FIELD: value` shape `tools/gate.py:166` parses —
+    that file is the enforcement authority and this is a read of the same block,
+    not a second definition of what the incumbent is.
+    """
+    def build(p):
+        fields = dict(re.findall(r"^\s{4}([A-Z_0-9]+):\s*(.+?)\s*$",
+                                 p.read_text(errors="replace"), re.M))
+        return {"incumbent": fields.get("INCUMBENT"),
+                "previous": fields.get("PREVIOUS_INCUMBENT"),
+                "frozen": fields.get("INCUMBENT_FROZEN")}
+    return _cached(PROGRAMME_MD, build)
+
+
+def _rel(p: Path) -> str:
+    try:
+        return str(p.relative_to(ROOT))
+    except Exception:
+        return str(p)
+
+
+def tree_label(tree: str | None) -> dict | None:
+    """What a bot tree IS: its platform submissions, and whether it is LIVE.
+
+    `versions: []` means the ledger does not name this tree — rendered as the bare
+    path. `incumbent` is a separate fact from a separate file (PROGRAMME.md), so an
+    unledgered tree can still be flagged LIVE INCUMBENT without inventing a version.
+    """
+    if not tree:
+        return None
+    led, led_err = load_version_ledger()
+    prog, prog_err = programme_incumbent()
+    inc = (prog or {}).get("incumbent")
+    return {
+        "tree": tree,
+        "versions": ((led or {}).get("by_tree", {}).get(tree) or []),
+        "incumbent": bool(inc) and tree == inc,
+        "ledger_path": _rel(VERSION_LEDGER),
+        "ledger_blind": led_err,
+        "incumbent_source": _rel(PROGRAMME_MD) + " INCUMBENT",
+        "incumbent_blind": prog_err,
+    }
+
+
+def version_label(ver: str | None) -> dict | None:
+    """The ledger row for a platform version number, or None if it names none."""
+    if ver in (None, ""):
+        return None
+    led, _err = load_version_ledger()
+    return ((led or {}).get("by_version", {}) or {}).get(str(ver).strip())
 
 
 def load_fire_logs() -> dict:
@@ -671,6 +782,12 @@ def build_row(mid: str, team_id: str, league: dict, meta: dict, ladder: dict,
     row.setdefault("our_ver", None)
     row.setdefault("opp_name", None)
     row.setdefault("opp_ver", None)
+
+    # ⭐ WHICH BUILD IS `ourver=125`? The corpus carries a bare integer and nothing
+    # else; the ledger is the only surface that says it was named "Loki v8" and
+    # built from `bots/_v197mapcode`. None when the ledger does not name it — a
+    # version we cannot anchor renders as the number alone, never as a guess.
+    row["our_ver_label"] = version_label(row.get("our_ver"))
 
     t = parse_iso(row.get("created_at"))
     row["created_age_min"] = round(age_min(t), 1) if t else None

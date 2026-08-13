@@ -48,6 +48,23 @@ D. NOTE TEXT vs the worklist it claims to quote. The list view captions every
    shard at all. Without D, a paraphrase, or a caption borrowed from the
    neighbouring shard's line, would render exactly like an honest one.
 
+E. VERSION LABELS vs `corpus/version_trees.tsv` and PROGRAMME.md's INCUMBENT.
+   Both shard views now say which platform submission each arm/control tree IS
+   (`v125 "Loki v8"`) and which one holds the live slot. That is the highest-risk
+   passthrough on the page: a version label is a claim about WHAT WE SHIPPED, read
+   by a human deciding whether a battery is even measuring the live bot, and a
+   plausible wrong one is unfalsifiable by eye. So three assertions, and the second
+   is the one that keeps the page honest:
+     1. every rendered label equals that tree's ledger rows, version and name;
+     2. a tree the ledger does NOT name renders with NO version at all — the
+        directory name is not a version (`_v197mapcode` is submission v125), and
+        both sides of this are counted, so "nothing was labelled" cannot pass as
+        agreement;
+     3. `LIVE INCUMBENT` appears on exactly the rows whose tree is PROGRAMME.md's
+        `INCUMBENT` — no more, no fewer. The ledger is re-read here with
+        `csv.DictReader` and the incumbent with a line-prefix scan, neither of
+        which is how `matches.py` does it.
+
 C. MAP LABEL vs the tool's RETIRED%. The detail view labels each shard's map set
    from that shard's own tsv rows; `corefill_status.sh` independently counts rows
    played off the live pool. Two derivations of one fact, so they must agree in
@@ -68,6 +85,8 @@ means UNKNOWN, not FAIL. Exit 0 = pass, 1 = fail, 2 = unknown/not-run.
 from __future__ import annotations
 
 import argparse
+import csv
+import io
 import json
 import os
 import re
@@ -79,6 +98,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 FIELDS = ("state", "rows", "pct", "hb_age", "eta", "result_raw")
+LEDGER = ROOT / "corpus" / "version_trees.tsv"
+PROGRAMME = ROOT / "PROGRAMME.md"
 
 
 # ------------------------------------------------------------ independent parse
@@ -286,6 +307,77 @@ def diff_notes(rendered: dict) -> tuple[list[str], int, int]:
             bad.append(f"  {sh:<14} claims a shard-specific caption but the caption "
                        f"itself never names {sh}: {text[:90]!r}")
     return bad, checked, skipped
+
+
+# --------------------------------------------------- the ledger, read differently
+
+def ledger_independent(path: Path = LEDGER) -> dict[str, set]:
+    """tree -> {(version, name)}, via csv.DictReader. NOT matches.py's split parse."""
+    text = "\n".join(l for l in path.read_text(errors="replace").splitlines()
+                     if l.strip() and not l.lstrip().startswith("#"))
+    out: dict[str, set] = {}
+    for r in csv.DictReader(io.StringIO(text), delimiter="\t"):
+        tree = (r.get("tree") or "").strip()
+        ver = (r.get("version") or "").strip()
+        if tree and ver:
+            out.setdefault(tree, set()).add((ver, (r.get("name") or "").strip() or None))
+    return out
+
+
+def incumbent_independent(path: Path = PROGRAMME) -> str | None:
+    """PROGRAMME.md's INCUMBENT by line-prefix scan, not by matches.py's regex."""
+    for l in path.read_text(errors="replace").splitlines():
+        s = l.strip()
+        if s.startswith("INCUMBENT:"):
+            return s.split(":", 1)[1].strip()
+    return None
+
+
+def diff_labels(rendered: dict, ledger: dict[str, set],
+                incumbent: str | None) -> tuple[list[str], int, int, int]:
+    """Rendered version labels vs the ledger. -> (bad, labelled, bare, inc_rows)."""
+    bad, labelled, bare, inc_rows = [], 0, 0, 0
+    for sh, r in sorted(rendered.items()):
+        for side in ("treatment", "control"):
+            tree, lab = r.get(side), r.get(side + "_ver")
+            if not tree:
+                if lab:
+                    bad.append(f"  {sh:<14} {side}: no tree in the worklist yet a "
+                               f"label was rendered: {lab!r}")
+                continue
+            if lab is None:
+                bad.append(f"  {sh:<14} {side}: tree {tree} carries NO label object "
+                           f"— the page cannot say whether it is a submission")
+                continue
+            if lab.get("tree") != tree:
+                bad.append(f"  {sh:<14} {side}: label is for {lab.get('tree')!r} but "
+                           f"the row's tree is {tree!r}")
+            got = {(v.get("version"), v.get("name")) for v in (lab.get("versions") or [])}
+            want = ledger.get(tree, set())
+            if got != want:
+                bad.append(f"  {sh:<14} {side} {tree}: rendered {sorted(got)} but the "
+                           f"ledger says {sorted(want)}")
+            elif want:
+                labelled += 1
+                # Newest first, or a two-version tree shows the leg above the ship.
+                nums = [int(v["version"]) for v in lab["versions"]
+                        if str(v["version"]).isdigit()]
+                if nums != sorted(nums, reverse=True):
+                    bad.append(f"  {sh:<14} {side} {tree}: versions are not newest "
+                               f"first: {nums}")
+            else:
+                bare += 1
+                if lab.get("versions"):
+                    bad.append(f"  {sh:<14} {side} {tree}: NOT in the ledger yet a "
+                               f"version was rendered — that is a guess")
+            want_inc = bool(incumbent) and tree == incumbent
+            if bool(lab.get("incumbent")) != want_inc:
+                bad.append(f"  {sh:<14} {side} {tree}: incumbent="
+                           f"{lab.get('incumbent')} but PROGRAMME.md INCUMBENT is "
+                           f"{incumbent!r}")
+            elif want_inc:
+                inc_rows += 1
+    return bad, labelled, bare, inc_rows
 
 
 def report(name: str, headline: str, bad: list[str], passline: str,
@@ -510,6 +602,51 @@ def main() -> int:
         f"{checked_d} captions are contiguous runs of their own comment block and "
         f"every shard_named flag matches the block")
 
+    led = ledger_independent()
+    inc = incumbent_independent()
+    bad_e, n_lab, n_bare, n_inc = diff_labels(rendered, led, inc)
+    # BOTH SIDES OF THE LABELLING RULE MUST HAVE BEEN EXERCISED. If no shard runs
+    # against a ledgered tree, "every label matches" is a statement about zero
+    # labels — the constant-column defect — so it is reported as UNTESTED here
+    # rather than counted as agreement.
+    for what, n in (("labelled (tree IS in the ledger)", n_lab),
+                    ("bare (tree is NOT in the ledger)", n_bare),
+                    ("LIVE INCUMBENT", n_inc)):
+        if not n:
+            bad_e.append(f"  UNTESTED — 0 arm/control sides came out {what}; this "
+                         f"comparison certified nothing about that branch")
+    fails += report(
+        "E. LEDGER  version labels vs corpus/version_trees.tsv + PROGRAMME.md",
+        f"{len(led)} trees in the ledger, INCUMBENT={inc!r}; {n_lab} sides "
+        f"labelled, {n_bare} correctly bare, {n_inc} flagged LIVE INCUMBENT",
+        bad_e,
+        f"every rendered version/name equals its ledger row, no unledgered tree "
+        f"carries a version, and LIVE INCUMBENT sits on exactly the {n_inc} sides "
+        f"whose tree is {inc}")
+
+    # The detail view builds its labels from the same call; check it agrees for
+    # every shard the list says is ledgered or incumbent, so a divergence between
+    # the two pages cannot hide behind the list alone.
+    bad_e2, n_det = [], 0
+    for sh, r in sorted(rendered.items()):
+        if not any((r.get(s + "_ver") or {}).get("versions")
+                   or (r.get(s + "_ver") or {}).get("incumbent")
+                   for s in ("treatment", "control")):
+            continue
+        d = fetch(base + "/api/shard?id=" + sh)
+        n_det += 1
+        for side in ("treatment", "control"):
+            if d.get(side + "_ver") != r.get(side + "_ver"):
+                bad_e2.append(f"  {sh:<14} {side}: /shard says "
+                              f"{d.get(side + '_ver')!r}, /shards says "
+                              f"{r.get(side + '_ver')!r}")
+    fails += report(
+        "E2.LEDGER  the detail view's labels vs the list view's",
+        f"{n_det} shard(s) carry a version label or the incumbent flag",
+        bad_e2 if n_det else
+        ["  UNTESTED — no shard carries a label, so the two views were not compared"],
+        f"both views render byte-identical label objects for all {n_det}")
+
     if args.selftest:
         print("\nSELFTEST  driving each comparison to its FAILING verdict")
         ok = True
@@ -597,8 +734,53 @@ def main() -> int:
             print(f"   D2 flip {dcand}'s `batch note` badge       -> {len(got7)} "
                   f"mismatch(es) {'OK' if got7 else '*** DID NOT FIRE ***'}")
             ok &= bool(got7)
+        # E — a wrong version, a version on an unledgered tree, and a misplaced
+        #     LIVE INCUMBENT must each fire. These are claims about what we
+        #     SHIPPED; none of them is checkable by eye once rendered.
+        def _side_with(pred):
+            for s, rr in sorted(rendered.items()):
+                for sd in ("treatment", "control"):
+                    if rr.get(sd) and pred(rr.get(sd + "_ver") or {}):
+                        return s, sd
+            return None, None
+        esh, eside = _side_with(lambda l: l.get("versions"))
+        if esh:
+            mute = {esh: {**rendered[esh]}}
+            lab = dict(mute[esh][eside + "_ver"])
+            lab["versions"] = [{**lab["versions"][0], "version": "999",
+                                "name": "Loki v999"}]
+            mute[esh][eside + "_ver"] = lab
+            got8, *_ = diff_labels(mute, led, inc)
+            print(f"   E1 relabel {esh}.{eside} as v999 'Loki v999' -> {len(got8)} "
+                  f"mismatch(es) {'OK' if got8 else '*** DID NOT FIRE ***'}")
+            ok &= bool(got8)
         else:
-            print("   D  UNTESTED — no shard carries a caption. Not a pass.")
+            print("   E1 UNTESTED — no rendered side carries a version. Not a pass.")
+        bsh, bside = _side_with(lambda l: not l.get("versions"))
+        if bsh:
+            mutf = {bsh: {**rendered[bsh]}}
+            mutf[bsh][bside + "_ver"] = {**(mutf[bsh][bside + "_ver"] or {}),
+                                         "tree": mutf[bsh][bside],
+                                         "versions": [{"version": "42",
+                                                       "name": "guessed"}]}
+            got9, *_ = diff_labels(mutf, led, inc)
+            print(f"   E2 invent a version for unledgered {mutf[bsh][bside]} -> "
+                  f"{len(got9)} mismatch(es) "
+                  f"{'OK' if got9 else '*** DID NOT FIRE ***'}")
+            ok &= bool(got9)
+        else:
+            print("   E2 UNTESTED — every rendered tree is in the ledger. Not a pass.")
+        # E3 — move the incumbent underneath the page. Every LIVE INCUMBENT badge
+        #      the page is showing must now be wrong, and every tree that should
+        #      have gained one must be missing it.
+        if n_inc:
+            got10, *_ = diff_labels(rendered, led, "bots/_not_the_incumbent")
+            print(f"   E3 point INCUMBENT at another tree            -> {len(got10)} "
+                  f"mismatch(es) {'OK' if got10 else '*** DID NOT FIRE ***'}")
+            ok &= bool(got10)
+        else:
+            print("   E3 UNTESTED — no rendered tree is the incumbent, so the "
+                  "badge branch was not exercised. Not a pass.")
         if ok:
             print("   SELFTEST OK — every exercised comparison produced the "
                   "other verdict")

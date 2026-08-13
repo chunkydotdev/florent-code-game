@@ -1,0 +1,58 @@
+# VERSION LEDGER — which PLATFORM SUBMISSION is which LOCAL BOT TREE.
+#
+# WHAT THIS IS. `ladder_games.tsv.ourver` and `league_matches.tsv.teamAVersion`
+# carry a bare integer (125). The shard worklist, PROGRAMME.md and every prereg
+# carry a directory (bots/_v197mapcode). Nothing joined the two: the sentence
+# "v125 is _v197mapcode and it was named Loki v8" lived only in prose, in three
+# different files, and a page that wanted to say it had to guess. This file is
+# that join, and it is the surface tools/dash reads for every version label.
+#
+# ⛔ SEEDED ONLY FROM WRITTEN ANCHORS. Every row below cites a file:line (or a
+# commit) whose verbatim text states the mapping, and every one of those lines was
+# re-read before the row was written. No row is inferred from a directory name —
+# the numbers do not even coincide (`bots/_v197mapcode` is submission v125, and
+# `_v115dodge` is v92 AND v94 AND v101).
+#
+# ⛔ ABSENCE MEANS UNKNOWN, NOT GUESSED. A version or a tree that is not here is
+# one we could not anchor, NOT one that does not exist — v105-v111, v113, v117,
+# v118 and v119 were all real submissions whose name and tree are not written down
+# anywhere on this box. An EMPTY `name` cell means the same thing at field level:
+# no anchor states the platform name (v115, v120 are teammate ships; v94/v101/v102
+# are ours but were uploaded before names were used). Consumers must render the
+# absence as an absence.
+#
+# `tree` = `none (teammate)` is a POSITIVE fact, not a missing value: a version
+# activated by a teammate on the shared account, for which no tree exists in this
+# repo by construction.
+#
+# WHO MAINTAINS IT. `tools/submit_clean.py` appends a row after every successful
+# submit, with the tree it staged, the --name it passed, and the version string
+# `fcode status` returned on its `Active bot:` line (evidence `submit_clean auto`).
+# That append is wrapped so no failure of it can touch the submit flow — so if the
+# ship chain is ever noisy here, the ledger is what is wrong, not the ship.
+# Rows seeded by hand carry their own anchor instead.
+#
+# COLUMNS  version  name  tree  evidence  recorded_at
+#   version     the platform submission number, bare, exactly as it appears in
+#               ladder_games.tsv.ourver / league_matches.tsv.teamAVersion
+#   name        the submission name on the platform ("Loki v8"), empty if unanchored
+#   tree        repo-relative bot directory, or `none (teammate)`
+#   evidence    file:line or commit hash — the anchor, quoted where it fits
+#   recorded_at when THIS ROW was written (not when the version shipped)
+version	name	tree	evidence	recorded_at
+125	Loki v8	bots/_v197mapcode	docs/coordination.md:42569 'SHIP: v125 "Loki v8" = `bots/_v197mapcode`' · PROGRAMME.md:59 · docs/prereg/SHIP-mapcode-2026-08-13.md:1 · commit 2014a65	2026-08-13T12:34:43Z
+124	Loki rc7.1	bots/_v197mapcode	UNRATED LEG, not a ship · docs/coordination.md:42441 'v124 ("Loki rc7.1")' · scratchpad/leg_mapcode.sh:27 'submit_clean.py bots/_v197mapcode --name "Loki rc7.1" --leg'	2026-08-13T12:34:43Z
+123	Loki v7	bots/_v187saltidle_f	HANDOVER.md:1 'LIVE: **v123 = `bots/_v187saltidle_f`** = **"Loki v7"**' · docs/prereg/SHIP-saltidle-v187-2026-08-13.md · PROGRAMME.md PREVIOUS_INCUMBENT · name applied on the platform AFTER submit (tools/submit_clean.py:224 'v123 shipped UNNAMED')	2026-08-13T12:34:43Z
+122	Loki v6	bots/_v178salt	tree: docs/coordination.md:40641 '`v122` = `_v178salt` IS LIVE' + PROGRAMME.md:118 · name: tools/submit_clean.py:35 'v116/v122 carried "Loki v5"/"Loki v6"' · docs/prereg/SHIP-salt-v178-2026-08-13.md	2026-08-13T12:34:43Z
+120		none (teammate)	HANDOVER.md:55 "Magnus rolled back x3r0's v120 at ~19:40Z" — x3r0 ship, no tree in this repo; platform name unanchored	2026-08-13T12:34:43Z
+116	Loki v5	bots/_v169launchlate160	docs/coordination.md:37541 'HOLDER: `v116` ("Loki v5" = `bots/_v169launchlate160`)' · HANDOVER.md:55 · PROGRAMME.md:277	2026-08-13T12:34:43Z
+115		none (teammate)	results.tsv:335 "v115 = x3r0's ammo pre-buy ship, 2026-08-12 — a TEAMMATE's activation" · PROGRAMME.md:270 'v114, v115 (x3r0's ship), v116'; platform name unanchored	2026-08-13T12:34:43Z
+114	Loki v4	bots/_v146gunaxis	docs/coordination.md:36689 '**v114 (Loki v4 = `_v146gunaxis`) holds the ladder**' · HANDOVER-archive.md:185	2026-08-13T12:34:43Z
+112	Loki v3	bots/_v148ferryfirst	tree: HANDOVER-archive.md:275 'v112 = `bots/_v148ferryfirst` (LOKI-27 ferry-first)' + PROGRAMME.md:301 · name: scratchpad/unrated_run_v113_20260811T133211Z.log:3 'holder before: v112 (Loki v3)'	2026-08-13T12:34:43Z
+104	Loki v2	bots/_v130loki13	HANDOVER-archive.md:381 'LIVE: v104 "Loki v2" = `bots/_v130loki13`' · docs/coordination.md:26774 (Magnus: "Do it, and name it Loki v2")	2026-08-13T12:34:43Z
+102		bots/_v124loki8	docs/coordination.md:18476 'LIVE: `v102` = `bots/_v124loki8`, treehash `2dad5a2a`' — first Loki ship; no platform name written anywhere	2026-08-13T12:34:43Z
+101		bots/_v115dodge	docs/coordination.md:19805 '`v94 ≡ v101 ≡ `bots/_v115dodge` = Eir, byte-identical (md5 `77ae5c09`)' — re-upload of the v92 tree; name unanchored	2026-08-13T12:34:43Z
+94		bots/_v115dodge	docs/coordination.md:19805 '`v94 ≡ v101 ≡ `bots/_v115dodge` = Eir, byte-identical (md5 `77ae5c09`)' — re-upload of the v92 tree; name unanchored	2026-08-13T12:34:43Z
+92	Eir 10	bots/_v115dodge	name: docs/coordination.md:15759 'v92 shipped as "v92 Eir 10 dodge (covered-tile pathing)"' + :15766 'platform name stays "Eir 10" for v92' · tree: docs/coordination.md:15967 'live v92 `_v115dodge`' + PROGRAMME.md:298	2026-08-13T12:34:43Z
+90	Heimdall 1 (launcher relight)	bots/_v104latch	docs/coordination.md:10058 'SHIP ANNOUNCEMENT (rule 3) — v90 "Heimdall 1 (launcher relight)" = `bots/_v104latch`'	2026-08-13T12:34:43Z
+79	Eir 10	bots/_v91osb	docs/coordination.md:5602 'SHIP — v79 "Eir 10" LIVE on Magnus's direct call (= _v91osb, md5 6a909e72)' — NAME COLLISION: "Eir 10" is also v92's name, so name is not a key	2026-08-13T12:34:43Z

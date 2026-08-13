@@ -14,3 +14,13 @@ corpus/keeper_state.json
 # reconstruct a row after the fact. An ignored ledger is a ledger that dies with
 # one machine, which is the defect it was built to fix.
 !our_matches.tsv
+
+# ⛔ SAME EXCEPTION, SAME REASON, 2026-08-13. `version_trees.tsv` joins a platform
+# submission (`ourver=125`) to the tree we built it from (`bots/_v197mapcode`) and
+# the name it shipped under ("Loki v8"). NOTHING REGENERATES IT: the platform does
+# not tell us which local directory produced a version, and the sixteen seed rows
+# had to be reconstructed by hand out of prose scattered across coordination.md,
+# HANDOVER, PROGRAMME.md and five preregs, each cited at a file:line. Ignoring it
+# would mean the dashboard's version labels exist on one machine only, and the
+# next lane would re-derive the same anchors from scratch.
+!version_trees.tsv
