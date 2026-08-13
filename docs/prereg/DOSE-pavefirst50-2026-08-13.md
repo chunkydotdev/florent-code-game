@@ -31,3 +31,31 @@ harvester-first. Tag `PAVE50` on each waived pave.
 D26: replicated iff |share−50| ≥ 2.0pp, second shard 235000, scored alone,
 same-side pooling only. Kill-round paired-seed non-regression rides along
 (economy openings can shift kill timing; the bar catches it).
+
+---
+
+## READOUT — FALSIFIER FIRED, AND THE DIAGNOSIS RE-SPECIFIES #50
+
+**Bar 1: 0 PAVE50 in 8/8 games; signature stays harvester-first (h r4-8,
+c 2-3 rounds later) — as registered, instrument first.** The instrument is
+fine; the PREMISE is absent: **harvester #1 lands at r4-8 because first ore
+is near-adjacent on these maps — there is no walk for the pave gate to act
+on.** The side-conditional pave-gate arm addresses a geometry that the
+opening rarely presents.
+
+**What the field's 100% pave-first signature must therefore mean: LOCAL
+wire-first — the belt terminus is built BEFORE the harvester even at
+close ore.** Geometric fact derived en route: an acceptor tile for site bp
+is never orthogonally adjacent to the builder position that can build bp, so
+wire-after always costs a repositioning (our c-h gap of 2-3 rounds) and
+wire-first costs the same rounds in the other order. The entire payoff is
+1-2 unwasted stacks per harvester (first emission lands on a live belt).
+Also noted: `_has_acceptor` counts the CORE — core-adjacent harvesters waste
+nothing, so the fix's scope is non-core-adjacent sites only.
+
+**ROUTED: back to research/#50 as a re-specification** — the arm is an
+approach re-sequencing (build terminus two tiles out, traverse it — builders
+walk over conveyors — then place the harvester), not a pave-gate flip.
+`_v211pavefirst` goes no further; its screen slot (234000) is WITHDRAWN from
+the worklist before start. The dose replays carry the local baseline (c-h
+gap 2-3 rounds, 8/8 games).
