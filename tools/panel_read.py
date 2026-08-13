@@ -37,6 +37,15 @@ CELLS = {  # PREREG-PANEL-CAL1-v123-field-2026-08-13.md
 }
 AREA900 = 900  # drakkarfjord, glacierkeep, midgard, ragnarok, valkyrie
 
+# Pre-committed Elo gaps (ours - theirs) from the prereg's own table — the
+# comparison target is FROZEN at prereg time, not re-cached at read time, so
+# the n=150 comparative read has nothing left to choose.
+GAPS = {"C1": -122, "C2": -96, "C3": -68, "C4": -54, "C5": -47, "C6": +23}
+
+
+def expected(gap: float) -> float:
+    return 1.0 / (1.0 + 10 ** (-gap / 400.0))
+
 
 def load(corpus: Path, since: str):
     games = []  # dicts: match, file, opp, our_won, completedAt
@@ -146,6 +155,26 @@ def main() -> int:
     if total < 150:
         print(f"\nPANEL TOTAL n={total} < 150 — DESCRIPTIVE ONLY. "
               f"Comparative reads are pre-committed at n=150 and n=300 exactly.")
+        return 0
+    # ---- comparative read (licensed only here, at the pre-committed looks) --
+    print(f"\nCOMPARATIVE READ (panel n={total} >= 150; target E frozen at the "
+          f"prereg gaps, match-clustered):")
+    for opp, cell in sorted(CELLS.items(), key=lambda kv: kv[1]):
+        sub = [g for g in games if g["opp"] == opp]
+        if len(sub) < 25:
+            print(f"  {cell} {opp}: n={len(sub)} < 25 — cell withheld")
+            continue
+        by_match = defaultdict(list)
+        for g in sub:
+            by_match[g["match"]].append(g["won"])
+        shares = [sum(v) / len(v) for v in by_match.values()]
+        m = len(shares)
+        mean = statistics.mean(shares)
+        se = statistics.stdev(shares) / math.sqrt(m) if m > 1 else float("nan")
+        e = expected(GAPS[cell])
+        print(f"  {cell} {opp}: share {mean:.3f} vs E {e:.3f} -> "
+              f"{mean - e:+.3f} ± {se:.3f} (cluster SE, m={m})")
+    print("  (verdict sentences remain the builder's; this table is the read)")
     return 0
 
 
