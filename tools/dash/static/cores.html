@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cores — Loki dashboard</title>
 <link rel="stylesheet" href="/style.css">
+<script src="/tz.js"></script>
 </head>
 <body>
 <header>
@@ -24,6 +25,11 @@
   <h1>What is running locally</h1>
   <p class="lede">Read-only. Files and <code>ps</code> only — no <code>fcode</code> calls,
      no network, nothing that can submit or spend a rate-limited request.</p>
+
+  <!-- Every stamp the server sends is UTC; these pages render it in the reader's
+       own zone, because a current line that reads as two hours old is the same
+       failure as a stale line that reads as fresh. -->
+  <div class="count" id="tznote">…</div>
 
   <div class="note warn">
     <strong>Every number here carries its age.</strong> A value past its own refresh
@@ -99,7 +105,8 @@ function card(k, v, sub) {
 }
 
 function render(s) {
-  $('#clock').textContent = s.served_at;
+  $('#clock').innerHTML = s.served_at ? tzTime(s.served_at) : '';
+  $('#tznote').innerHTML = tzNote();
   $('#repo').textContent = s.repo;
   const c = [];
 
@@ -230,7 +237,7 @@ function render(s) {
     $('#rawage').innerHTML = '<span class="badge b-blind">BLIND</span> ' + (rt.error || '');
     $('#raw').textContent = rt.text || '(no output)';
   } else {
-    $('#rawage').innerHTML = 'generated ' + rt.at + ' ' + freshBadge(rt.age_min, rt.cadence_min);
+    $('#rawage').innerHTML = 'generated ' + tzTime(rt.at) + ' ' + freshBadge(rt.age_min, rt.cadence_min);
     $('#raw').textContent = rt.text || '(empty)';
   }
 }

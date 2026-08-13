@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shard — Loki dashboard</title>
 <link rel="stylesheet" href="/style.css">
+<script src="/tz.js"></script>
 </head>
 <body>
 <header>
@@ -120,19 +121,19 @@ function fileBlock(title, f, extra) {
   }
   return `<h3>${title}</h3>
     <div class="count"><code>${esc(f.path)}</code> · ${esc(f.bytes)} bytes ·
-      written ${esc(f.at)} ${fileAge(f.age_min)}</div>
+      written ${tzTime(f.at)} ${fileAge(f.age_min)}</div>
     ${extra || ''}`;
 }
 
 function render(d) {
   document.title = d.shard + ' — Loki dashboard';
   $('#name').textContent = d.shard;
-  $('#clock').textContent = d.served_at;
+  $('#clock').innerHTML = d.served_at ? tzTime(d.served_at) : '';
 
   if (!d.exists) {
     $('#what').innerHTML = '';
     $('#cards').innerHTML = '';
-    $('#read').textContent = 'read ' + (d.served_at || '');
+    $('#read').innerHTML = tzNote() + '<br>read ' + tzTime(d.served_at);
     $('#body').innerHTML = `<div class="note warn"><strong>No such shard.</strong>
       Nothing on disk and no worklist line for <code>${esc(d.shard)}</code>.
       <a href="/shards">Back to the shard list.</a></div>`;
@@ -141,9 +142,10 @@ function render(d) {
 
   // ---------- the two clocks, said out loud -------------------------------
   $('#read').innerHTML =
-    'page data read <strong>' + esc(d.served_at) + '</strong> · state/rows/rate from '
+    tzNote() + '<br>'
+    + 'page data read <strong>' + tzTime(d.served_at) + '</strong> · state/rows/rate from '
     + '<code>' + esc(d.status_source) + '</code> captured '
-    + (d.status_at ? esc(d.status_at) + ' ' + freshBadge(d.status_age_min, d.status_cadence_min)
+    + (d.status_at ? tzTime(d.status_at) + ' ' + freshBadge(d.status_age_min, d.status_cadence_min)
                    : '<span class="badge b-blind">never — no capture yet</span>')
     + ' · auto-refreshing every 10 s';
 
@@ -258,7 +260,7 @@ function render(d) {
     <details><summary>Why the map set matters (same on every shard)</summary>
     <p class="lede">The organisers rotated the map pool on 2026-08-13;
       <code>tools/overnight.sh</code> was re-pointed at the live 15-map pool in
-      <code>${esc(m.rotation_commit)}</code> at <code>${esc(m.rotation_at)}</code>.
+      <code>${esc(m.rotation_commit)}</code> at ${tzTime(m.rotation_at)}.
       Four maps of the previous eight — <code>atoll heart hive meander</code> — are
       no longer in the pool, so <strong>half of every pre-rotation shard is played on
       geometry that no longer exists</strong> and the two populations must not be

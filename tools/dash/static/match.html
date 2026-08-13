@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Match — Loki dashboard</title>
 <link rel="stylesheet" href="/style.css">
+<script src="/tz.js"></script>
 <style>
   .tagchip { display:inline-block; font-family:var(--mono); font-size:10.5px;
              font-weight:700; padding:2px 7px; border-radius:5px; letter-spacing:.04em; }
@@ -86,10 +87,10 @@ function tagChip(o) {
 }
 
 function render(d) {
-  $('#clock').textContent = d.served_at || '';
+  $('#clock').innerHTML = d.served_at ? tzTime(d.served_at) : '';
   if (!d.exists) {
     $('#title').innerHTML = `<span class="mono">${esc(ID.slice(0, 8) || '(no id)')}</span>`;
-    $('#read').textContent = d.served_at || '';
+    $('#read').innerHTML = tzNote() + '<br>' + tzTime(d.served_at);
     $('#banner').innerHTML = `<div class="note warn"><strong>No such match on this box.</strong>
       ${esc(d.why)}. That is a statement about the local corpus, not about the platform:
       a match fired from another machine leaves nothing here to read.</div>`;
@@ -118,8 +119,9 @@ function render(d) {
     + ` <span class="vs">vs</span> `
     + (m.opp_name ? `${esc(m.opp_name)} ${ver(m.opp_ver)}`
                   : `<span class="badge b-dim">opponent not archived</span>`);
-  $('#read').innerHTML = `<span class="mono">${esc(m.id)}</span> · read ${esc(d.served_at)}`
-    + ` · ${esc(m.created_at || 'no stamp')} `
+  $('#read').innerHTML = tzNote() + '<br>'
+    + `<span class="mono">${esc(m.id)}</span> · read ${tzTime(d.served_at)}`
+    + ` · ${tzTime(m.created_at)} `
     + `<span class="vs">(${m.created_is_fired ? 'fired' : m.created_is_completed ? 'completed' : 'created'})</span>`;
 
   // ---- banners: every condition that changes what the numbers below mean ----
@@ -170,7 +172,7 @@ function render(d) {
   $('#origin').innerHTML = `<div class="what"><div class="k">Where this match came from</div>
     <p class="headline">${tagChip(o)} ${esc(o.label || '')}</p>
     <table class="kv">
-      <tr><td>fired at</td><td class="mono">${esc(o.fired_at) || '<span class="vs">—</span>'}</td></tr>
+      <tr><td>fired at</td><td>${o.fired_at ? tzTime(o.fired_at) : '<span class="vs">—</span>'}</td></tr>
       <tr><td>panel cell</td><td class="mono">${esc(o.cell) || '<span class="vs">—</span>'}</td></tr>
       <tr><td>log</td><td class="mono">${esc(o.source) || '<span class="vs">—</span>'}</td></tr>
       <tr><td>platform status</td><td class="mono">${esc(m.status)}${m.status_note ? ' <span class="vs">— ' + esc(m.status_note) + '</span>' : ''}</td></tr>
@@ -242,13 +244,13 @@ function render(d) {
     const v = S[k]; if (!v) return '';
     return `<tr><td class="mono">${esc(v.path)}</td>
       <td>${v.blind ? '<span class="badge b-blind">BLIND</span> ' + esc(v.blind)
-        : 'newest row ' + esc(v.newest_row_at || '—') + ' · file captured ' + esc(v.at)
+        : 'newest row ' + tzTime(v.newest_row_at) + ' · file captured ' + tzTime(v.at)
           + ' · ' + esc(v.n_matches) + ' matches'}</td>
       <td>${esc(v.what)}</td></tr>`;
   }).join('') + (S.fire_logs || []).map(l =>
     `<tr><td class="mono">${esc(l.file.path)}</td>
       <td>${l.blind ? '<span class="badge b-blind">BLIND</span> ' + esc(l.blind)
-        : esc(l.n_ids) + ' match ids · newest fire ' + esc(l.newest_fire_at || '—')}</td>
+        : esc(l.n_ids) + ' match ids · newest fire ' + tzTime(l.newest_fire_at)}</td>
       <td>${esc(l.what)}${l.void ? `<br><span class="sub-mono">VOID: ${esc(l.void.why)} — ${
         l.void.citation && l.void.citation.found
           ? 'cited at ' + esc(l.void.cite_file) + ':' + esc(l.void.citation.line)

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shards — Loki dashboard</title>
 <link rel="stylesheet" href="/style.css">
+<script src="/tz.js"></script>
 </head>
 <body>
 <header>
@@ -188,7 +189,7 @@ function render(s) {
   LAST = s;
   // The header clock is the SERVER's read time, not the browser's — a browser
   // clock keeps looking healthy while the fetch behind it is failing.
-  $('#clock').textContent = s.served_at || '(server sent no read time)';
+  $('#clock').innerHTML = s.served_at ? tzTime(s.served_at) : '(server sent no read time)';
 
   if (s.pending) {
     $('#src').innerHTML = '<span class="badge b-dim">first run pending</span> ' + esc(s.note || '');
@@ -196,8 +197,9 @@ function render(s) {
     $('#src').innerHTML = '<span class="badge b-blind">BLIND</span> ' + esc(s.error || 'corefill_status.sh produced nothing');
   } else {
     $('#src').innerHTML =
-      'data read <strong>' + esc(s.served_at) + '</strong>'
-      + ' · <code>' + esc(s.source) + '</code> captured ' + esc(s.at) + ' '
+      tzNote() + '<br>'
+      + 'data read <strong>' + tzTime(s.served_at) + '</strong>'
+      + ' · <code>' + esc(s.source) + '</code> captured ' + tzTime(s.at) + ' '
       + freshBadge(s.age_min, s.cadence_min)
       + ' · worklist <code>' + esc(s.worklist.path) + '</code> ('
       + esc(s.worklist.n) + ' lines) ' + freshBadge(s.worklist.age_min, 240);
@@ -252,7 +254,7 @@ function render(s) {
       : s.orphans.map(o => `<tr onclick="location.href='/shard?id=${encodeURIComponent(o.shard)}'" style="cursor:pointer">
           <td class="mono"><a href="/shard?id=${encodeURIComponent(o.shard)}">${esc(o.shard)}</a></td>
           <td class="mono" style="font-size:12px">${esc(o.heartbeat_line) || '<span class="badge b-dim">no heartbeat</span>'}</td>
-          <td class="mono" style="font-size:12px">${o.heartbeat.exists ? esc(o.heartbeat.at) : '—'}</td></tr>`).join('');
+          <td style="font-size:12px">${o.heartbeat.exists ? tzTime(o.heartbeat.at) : '—'}</td></tr>`).join('');
   }
 }
 

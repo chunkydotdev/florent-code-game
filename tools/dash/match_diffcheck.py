@@ -68,6 +68,7 @@ import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -415,20 +416,31 @@ def check_undecoded(mid: str, row: dict, det: dict) -> list[str]:
 # --------------------------------------------------------------- comparison C
 
 RENDER_HARNESS = r"""
-import fs from 'fs'; import vm from 'vm';
+import fs from 'fs'; import path from 'path'; import vm from 'vm';
 const html = fs.readFileSync(process.argv[2],'utf8');
 const m = html.match(/<script>([\s\S]*?)<\/script>/);
 if (!m) { console.error('no <script> in ' + process.argv[2]); process.exit(3); }
+// ⛔ THE PAGE'S EXTERNAL SCRIPTS ARE LOADED TOO, IN ORDER. `/tz.js` holds the
+// single implementation of local-time rendering; a harness that skipped it would
+// leave `tzTime` undefined and every timestamp assertion would fail for the
+// wrong reason — or, worse, a harness that stubbed it would be checking a stub.
+const dir = path.dirname(process.argv[2]);
+const srcs = [...html.matchAll(/<script src="\/([^"]+)"><\/script>/g)].map(x => x[1]);
 const payload = JSON.parse(fs.readFileSync(process.argv[3],'utf8'));
 const els = {};
 function el(sel){ if(!els[sel]) els[sel]={sel,innerHTML:'',textContent:'',value:'',
                                          addEventListener(){}, dataset:{}}; return els[sel]; }
 const ctx = { console, document:{querySelector:el},
   location:{search:'?id='+(process.argv[4]||''), href:''},
-  URLSearchParams, fetch: async()=>({json:async()=>payload}),
+  URLSearchParams, Intl, fetch: async()=>({json:async()=>payload}),
   setInterval:()=>0, setTimeout:()=>0, encodeURIComponent };
 ctx.window=ctx; ctx.globalThis=ctx;
 vm.createContext(ctx);
+for (const s of srcs) {
+  const p = path.join(dir, s);
+  if (!fs.existsSync(p)) { console.error('missing external script ' + p); process.exit(3); }
+  vm.runInContext(fs.readFileSync(p,'utf8'), ctx, {filename: p});
+}
 vm.runInContext(m[1], ctx, {filename: process.argv[2]});
 ctx.render(payload);
 const out={}; for(const k of Object.keys(els)) out[k]=els[k].innerHTML||els[k].textContent;
@@ -469,6 +481,56 @@ def render_contains(rendered: dict | None, needles: list[str]) -> list[str]:
         return [f"render harness failed: {rendered['__error__']}"]
     blob = "\n".join(str(v) for v in rendered.values())
     return [f"rendered HTML does not contain {n!r}" for n in needles if n not in blob]
+
+
+# --------------------------------------------------------------- comparison E
+# ⛔ WHY THIS COMPARISON EXISTS, AND IT IS A REPORTED DEFECT, NOT A HYPOTHETICAL.
+# The pages printed the server's UTC stamps raw. Magnus reads Stockholm time and
+# misread a CURRENT match list as running hours behind — the same failure family
+# as a stale line that reads fresh, arriving from the other direction. The fix is
+# display-side, so the check has to be display-side too: an API test cannot see it.
+#
+# ⛔⛔ AND IT IS RE-DERIVED IN PYTHON, NOT BY CALLING THE PAGE'S OWN CONVERTER.
+# Asserting `tzTime(iso)` equals `tzTime(iso)` validates anything. Python parses
+# the title's UTC, converts with its own tzinfo, and formats independently; the
+# two implementations must land on the same wall clock.
+TS_RE = re.compile(
+    r'<span class="ts[^"]*" title="([^"]+?)(?:\s|&mdash;|—)[^"]*">([^<]+)</span>')
+TS_FALLBACK_RE = re.compile(r'<span class="ts[^"]*" title="([^" ]+)[^"]*">([^<]+)</span>')
+
+
+def local_of(iso: str, utc_instead: bool = False) -> str | None:
+    """`YYYY-MM-DD HH:MM:SS` in the machine's local zone (or UTC, to drive a FAIL)."""
+    s = iso.strip()
+    try:
+        d = datetime.fromisoformat(s.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if d.tzinfo is None:
+        return None
+    return (d if utc_instead else d.astimezone()).strftime("%Y-%m-%d %H:%M:%S")
+
+
+def check_timestamps(rendered: dict | None, utc_instead: bool = False
+                     ) -> tuple[list[str], int]:
+    """Every `class="ts"` stamp: does its visible text match its own title's UTC?"""
+    if rendered is None or "__error__" in (rendered or {}):
+        return ["__untested__"], 0
+    blob = "\n".join(str(v) for v in rendered.values())
+    hits = TS_RE.findall(blob) or TS_FALLBACK_RE.findall(blob)
+    bad, n = [], 0
+    for iso, shown in hits:
+        want = local_of(iso, utc_instead)
+        if want is None:
+            bad.append(f"title {iso!r} is not a zoned ISO stamp — it must be the "
+                       f"exact source value so it stays greppable against the logs")
+            continue
+        n += 1
+        got = shown.strip()
+        if got not in (want, want[:16]):        # allow a minute-precision render
+            bad.append(f"stamp {iso}: page shows {got!r}, "
+                       f"{'UTC' if utc_instead else 'local'} is {want!r}")
+    return bad, n
 
 
 # --------------------------------------------------------------- comparison D
@@ -684,6 +746,39 @@ def main() -> int:
         "voided match renders no 0-0/0-5 anywhere",
         untested=untested_c)
 
+    # ---------------------------------------------------------------- E
+    bad_e: list[str] = []
+    untested_e = None
+    n_stamps = 0
+    rl_for_ts = None
+    if shutil.which("node") is None:
+        untested_e = "node is not on PATH, so no page was rendered to read stamps from"
+    else:
+        rl_for_ts = node_render(STATIC / "matches.html", listing)
+        b1, n1 = check_timestamps(rl_for_ts)
+        pages = [("matches.html", b1, n1)]
+        if sample:
+            rd = node_render(STATIC / "match.html", details[sample[0]], sample[0])
+            b2, n2 = check_timestamps(rd)
+            pages.append(("match.html", b2, n2))
+        for _name, b, n in pages:
+            bad_e += [x for x in b if x != "__untested__"]
+            n_stamps += n
+        if n_stamps == 0 and not bad_e:
+            untested_e = ('no `class="ts"` stamp was rendered at all — the pages '
+                          "may have stopped converting timestamps entirely")
+    off_min = int(datetime.now().astimezone().utcoffset().total_seconds() // 60)
+    fails += report(
+        "E. TIMEZONE the rendered stamps vs their own title's UTC, re-derived in Python",
+        f"{n_stamps} `class=\"ts\"` stamp(s) across the two pages; this machine is "
+        f"UTC{'+' if off_min >= 0 else '-'}{abs(off_min) // 60}"
+        f"{':' + str(abs(off_min) % 60).zfill(2) if abs(off_min) % 60 else ''}, so a "
+        f"page still printing UTC would differ by that much",
+        bad_e,
+        f"{n_stamps} stamps show the local wall clock of the exact UTC value kept "
+        f"in their title attribute",
+        untested=untested_e)
+
     # ---------------------------------------------------------------- D
     bad_d = scan_forbidden(listing, "list") + (
         scan_forbidden(details[sample[0]], "detail") if sample else [])
@@ -819,6 +914,22 @@ def main() -> int:
             ok &= bool(leaked)
         else:
             print("   C  UNTESTED — node absent. Not a pass.")
+
+        # E — the reported defect itself: assert the check can tell a page that
+        # renders UTC from one that renders local. On a machine sitting ON UTC
+        # the two are identical and nothing can distinguish them, so that case is
+        # UNTESTED rather than a free pass.
+        if rl_for_ts is not None and off_min != 0:
+            gote, ne = check_timestamps(rl_for_ts, utc_instead=True)
+            gote = [x for x in gote if x != "__untested__"]
+            print(f"   E  compare the same stamps against UTC instead of local -> "
+                  f"{len(gote)} mismatch(es) {'OK' if gote else '*** DID NOT FIRE ***'}")
+            ok &= bool(gote)
+        elif off_min == 0:
+            print("   E  UNTESTED — this machine is on UTC, so local and UTC are "
+                  "the same string and the check cannot be driven. Not a pass.")
+        else:
+            print("   E  UNTESTED — no rendered page to read stamps from. Not a pass.")
 
         # D — plant a win rate in a value position.
         planted = {"rows": [{"note_not_prose": "win rate 61.2% pooled over 3 legs"}]}
