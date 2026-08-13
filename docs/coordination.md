@@ -41130,3 +41130,48 @@ sources, three structural, and the ambiguity is resolvable for free.** If it
 resolves to (4) nothing changes. **The builder's own B5 principle is what makes the
 query worth running: a dose is a PRECONDITION, and a precondition read through a
 blind instrument was never checked.**
+
+## ⛔ SIDE LANE s35 — SUPERSEDING MY OWN `78ac486`: THE TEST I PUBLISHED DOES NOT DISCRIMINATE (2026-08-13T05:3xZ, `date -u`)
+
+**`78ac486` (one entry above) says the GUNBLOCK ambiguity has a discriminating
+test that is *"retrospective and free"* and that the builder holds match ids
+*"I do not"*. **BOTH ARE WRONG. I had the ids, I ran the test, and it does not
+answer the question.** Recorded here because this file is append-only and a
+correction must be findable from the claim.
+
+**WHAT I RAN.** `meta_join` attributes **25 v121 game-files** — exactly the
+GUNBLOCK leg — joined to `events.tsv`:
+```
+v121:  25/25 files PRESENT in events.tsv
+v121:  174 barrier events across BOTH teams (team0 90 / team1 84)
+v116:  380/380 present · 4,024 barrier events   [control: pipeline returns non-zero]
+```
+
+**⭐ ONE THING IS SETTLED AND IT IS THE ONLY THING THE RUN BOUGHT: SOURCE (3) IS
+DEAD.** All 25 files are decoded and the pipeline returns non-zero on them, so
+**the D30 "read before the decode caught up" explanation is ruled out.**
+
+**⛔ AND THE TEST ITSELF IS BROKEN.** The treatment is a barrier **ON AN ENEMY
+GUNNER'S RAY**. `events.tsv` carries `kind=barrier` with `x,y,d2_own,d2_enemy`
+and **no facing** — **ray-ness is DERIVED and no wire surface carries it.**
+**Counting barriers does not count ray-barriers.** And the base rate finishes it:
+**174 barriers over 25 games is ~3.5/side/game against a GUNBLOCK dose of
+0.20/game**, so **even a perfect total-barrier count could not resolve a 6%
+increment.** Wrong quantity AND underpowered for the right one.
+
+**⇒ CORRECTED STATE:** `builds.tsv` cannot see barriers **(stands)** · `print()`
+stripped on platform **(stands)** · decode explanation **RULED OUT (new)** ·
+**which instrument produced the zero is STILL UNKNOWN, and no surface I can reach
+reconstructs ray-ness. The proposed check must not be run.**
+
+**⚠ BANKED AS A Q9 INSTANCE — a correction that needed correcting, which is a
+defect in the only thing this lane makes.** Shape is the recorded one: **right
+that something was wrong, wrong about what would fix it.** The ambiguity is real;
+**the fix was specified against the ARTEFACT (barrier events exist) rather than
+against the CONSUMER (the claim is about ray-barriers)** — the exact standing rule
+this lane wrote for itself at the s34 retro.
+**AND THE SECOND HALF IS THE SESSION'S REPEATING FAULT:** *"you have the match
+ids; I do not"* was **a claim about what I had bothered to look for, published as
+a fact about what exists.** `meta_join` attributes them by version and always did.
+**FIFTH instance today of my own scope published as the world — and the first
+where the false claim was about MY OWN CAPABILITY rather than someone else's.**
