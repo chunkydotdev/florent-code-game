@@ -21,15 +21,18 @@
 # the other verdict has not been seen to check.
 cd /Users/junghard/Projects/Work/florent-code-game || exit 2
 
+# CAL-3 cells (fire order #3 @63d45eb; prereg PREREG-PANEL-CAL3-v125-band).
+# CAL-1/CAL-2 cell sets retired with their panels — retained cells do NOT pool
+# across panels; totals reset with the new PTR/OUT files.
 CELLS=(
-  648d1d5b-5443-4257-a0aa-7048661b612d  # C1 team lazy
-  00191498-aa36-4f5a-aafb-e432e57607e8  # C2 Focalground
-  32087804-2dde-4265-acb2-b6ec9039fbee  # C3 Juusto
-  8cf9b751-00d3-484a-b0ed-e3073ae1d46f  # C4 Jython
-  f670dfed-dfee-421b-8c01-a67b8a278ce3  # C5 The Bisons
-  eceb8455-7cb3-442b-ba40-c6597c16b446  # C6 Lunds Stallions
+  648d1d5b-5443-4257-a0aa-7048661b612d  # C1 team lazy      (stretch, profiled)
+  f3362833-2d7a-4636-9a3c-e4f10fcebdc1  # C2 Big O          (stretch, unprofiled)
+  26286680-d861-4f9e-9073-a6201bd48d3b  # C3 Leviathan      (core-tank class)
+  8cf9b751-00d3-484a-b0ed-e3073ae1d46f  # C4 Jython         (even)
+  32087804-2dde-4265-acb2-b6ec9039fbee  # C5 Juusto         (even)
+  ea0d33c8-ca2b-497a-9be0-1837379eab1e  # C6 Coreflood      (below)
 )
-NAMES=(C1-team-lazy C2-Focalground C3-Juusto C4-Jython C5-The-Bisons C6-Lunds-Stallions)
+NAMES=(C1-team-lazy C2-Big-O C3-Leviathan C4-Jython C5-Juusto C6-Coreflood)
 
 INCUMBENT=${INCUMBENT:-123}     # overridable ONLY for the abort-branch selftest
 PTR=${PTR:-scratchpad/panel_cal1_pointer.txt}
