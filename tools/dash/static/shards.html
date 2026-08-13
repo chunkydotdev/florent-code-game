@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shards — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/shards" class="on">Shards</a>
+    <a href="/game">Game</a>
+    <a href="/lingo">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock" id="clock">…</span>
+</header>
+
+<main>
+  <h1>Battery shards</h1>
+  <p class="lede">Every shard on this box, run and running. Click a row for its detail.</p>
+
+  <div class="note">
+    <strong>Every state, row count, percentage, heartbeat age, ETA, rate and band on
+    this page is <em>read out of</em> <code>tools/corefill_status.sh</code>, not
+    recomputed here.</strong> That tool is the authority on <em>STALLED</em> (alive
+    but frozen) vs <em>DEAD</em> (started, no process), and it
+    <strong>refuses to print a win rate under 400 rows</strong> because the band
+    there is wider than any effect we chase. This page inherits the refusal instead
+    of putting a tempting number beside n=41.
+    <code>tools/dash/shard_diffcheck.py</code> re-parses the same text with a
+    different implementation and fails on any disagreement.
+  </div>
+
+  <div class="count" id="src">…</div>
+
+  <input class="filter" id="q" type="search" placeholder="filter by shard name, state, or arm/control tree…" autocomplete="off">
+  <div class="count" id="count">…</div>
+
+  <div class="scroll"><table id="tbl">
+    <thead><tr>
+      <th>Shard</th><th>State</th><th class="mono">Rows</th><th class="mono">Pct</th>
+      <th class="mono">HB age</th><th class="mono">ETA</th><th>Result (verbatim)</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <h2>Artefacts with no worklist line</h2>
+  <p class="lede" style="margin-bottom:10px">
+    <code>corefill_status.sh</code> iterates the worklist, so these shards — whose
+    lines were replaced by later batches — are <strong>not covered by the
+    authority</strong>. This page therefore prints <strong>no state, no rows and no
+    rate</strong> for them; only the artefacts they left on disk. Deriving those
+    numbers here would be a second copy of the computation, which is the one thing
+    this view is not allowed to be.
+  </p>
+  <div class="scroll"><table id="orph">
+    <thead><tr><th>Shard</th><th class="mono">Heartbeat line (verbatim, written by overnight.sh)</th><th class="mono">Heartbeat file</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <footer>
+    Auto-refreshes every 10 s. The underlying <code>corefill_status.sh</code> run
+    regenerates every 45 s and its age is stamped above — a value past two cadences
+    is marked <span class="badge b-warn">STALE</span>.
+  </footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s === null || s === undefined ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function freshBadge(ageMin, cadenceMin) {
+  if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
+  const limit = (cadenceMin || 5) * 2;
+  const cls = ageMin > limit ? 'b-warn' : 'b-ok';
+  const label = ageMin > limit ? 'STALE' : 'fresh';
+  return `<span class="badge ${cls}">${label} ${ageMin.toFixed(1)}m</span>`;
+}
+
+function stateBadge(st) {
+  const cls = {running:'b-ok', DONE:'b-ok', STALLED:'b-warn', DEAD:'b-bad',
+               CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
+  return `<span class="badge ${cls}">${esc(st)}</span>`;
+}
+
+let LAST = null;
+
+function render(s) {
+  $('#clock').textContent = new Date().toISOString().replace(/\.\d+Z$/,'Z');
+  LAST = s;
+
+  if (s.pending) {
+    $('#src').innerHTML = '<span class="badge b-dim">first run pending</span> ' + esc(s.note || '');
+  } else if (!s.ok) {
+    $('#src').innerHTML = '<span class="badge b-blind">BLIND</span> ' + esc(s.error || 'corefill_status.sh produced nothing');
+  } else {
+    $('#src').innerHTML = 'source <code>' + esc(s.source) + '</code> · generated '
+      + esc(s.at) + ' ' + freshBadge(s.age_min, s.cadence_min)
+      + ' · worklist <code>' + esc(s.worklist.path) + '</code> ('
+      + esc(s.worklist.n) + ' lines) ' + freshBadge(s.worklist.age_min, 240);
+  }
+
+  const q = $('#q').value.trim().toLowerCase();
+  const rows = (s.rows || []).filter(r => !q
+    || r.shard.toLowerCase().includes(q)
+    || (r.state || '').toLowerCase().includes(q)
+    || (r.worklist_line || '').toLowerCase().includes(q));
+
+  const tally = {};
+  (s.rows || []).forEach(r => { tally[r.state] = (tally[r.state] || 0) + 1; });
+  $('#count').textContent =
+    `${rows.length} of ${s.n_rows} shown · `
+    + Object.entries(tally).map(([k, v]) => `${v} ${k}`).join(' · ')
+    + ` · ${s.n_orphans} with no worklist line`;
+
+  $('#tbl tbody').innerHTML = rows.length === 0
+    ? '<tr><td colspan="7">No shard matches that filter.</td></tr>'
+    : rows.map(r => {
+        let result;
+        if (r.refused) {
+          result = `<span class="badge b-dim">n&lt;400</span> <span class="mono" style="font-size:12px">${esc(r.result_raw)}</span>`;
+        } else if (r.rate !== null && r.rate !== undefined) {
+          const sep = r.separated
+            ? `<span class="badge ${r.rate >= 50 ? 'b-ok' : 'b-bad'}">separated</span>`
+            : '<span class="badge b-warn">inside band</span>';
+          result = `<span class="mono">${esc(r.result_raw)}</span> ${sep}`;
+        } else {
+          result = r.result_raw
+            ? `<span class="mono">${esc(r.result_raw)}</span>`
+            : '<span class="badge b-dim">nothing yet</span>';
+        }
+        const hb = /^-/.test(r.hb_age)
+          ? `<span class="badge b-warn" title="corefill_status.sh captures NOW once, before its loop; a heartbeat written during the loop reads as negative age">${esc(r.hb_age)}</span>`
+          : esc(r.hb_age);
+        return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
+            <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${esc(r.shard)}</a></td>
+            <td>${stateBadge(r.state)}</td>
+            <td class="mono">${esc(r.rows)}</td>
+            <td class="mono">${esc(r.pct)}</td>
+            <td class="mono">${hb}</td>
+            <td class="mono">${esc(r.eta)}</td>
+            <td>${result}</td></tr>`;
+      }).join('');
+
+  const ob = $('#orph tbody');
+  if (s.orphans_blind) {
+    ob.innerHTML = `<tr><td colspan="3"><span class="badge b-blind">BLIND</span> ${esc(s.orphans_blind)}</td></tr>`;
+  } else {
+    ob.innerHTML = (s.orphans || []).length === 0
+      ? '<tr><td colspan="3">None — every shard on disk has a line in the worklist.</td></tr>'
+      : s.orphans.map(o => `<tr onclick="location.href='/shard?id=${encodeURIComponent(o.shard)}'" style="cursor:pointer">
+          <td class="mono"><a href="/shard?id=${encodeURIComponent(o.shard)}">${esc(o.shard)}</a></td>
+          <td class="mono" style="font-size:12px">${esc(o.heartbeat_line) || '<span class="badge b-dim">no heartbeat</span>'}</td>
+          <td class="mono" style="font-size:12px">${o.heartbeat.exists ? esc(o.heartbeat.at) : '—'}</td></tr>`).join('');
+  }
+}
+
+async function tick() {
+  try {
+    const r = await fetch('/api/shards', {cache: 'no-store'});
+    render(await r.json());
+  } catch (e) {
+    $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+  }
+}
+$('#q').addEventListener('input', () => { if (LAST) render(LAST); });
+tick(); setInterval(tick, 10000);
+</script>
+</body>
+</html>

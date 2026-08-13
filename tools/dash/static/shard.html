@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shard — Loki dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <span class="brand">LOKI</span>
+  <nav>
+    <a href="/">Cores</a>
+    <a href="/shards" class="on">Shards</a>
+    <a href="/game">Game</a>
+    <a href="/lingo">Lingo</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="clock" id="clock">…</span>
+</header>
+
+<main>
+  <p class="lede" style="margin-bottom:6px"><a href="/shards">&larr; all shards</a></p>
+  <h1 id="name" class="mono">…</h1>
+  <p class="lede" id="tests"></p>
+
+  <div class="grid" id="cards"></div>
+
+  <div id="body"></div>
+
+  <footer>
+    Auto-refreshes every 10 s. State, rows, percentage, heartbeat age, ETA, rate and
+    band are read out of <code>tools/corefill_status.sh</code>; everything else on
+    this page is a file on disk, shown with its own timestamp.
+  </footer>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s === null || s === undefined ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const ID = new URLSearchParams(location.search).get('id') || '';
+
+function freshBadge(ageMin, cadenceMin) {
+  if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
+  const limit = (cadenceMin || 5) * 2;
+  const cls = ageMin > limit ? 'b-warn' : 'b-ok';
+  const label = ageMin > limit ? 'STALE' : 'fresh';
+  return `<span class="badge ${cls}">${label} ${ageMin.toFixed(1)}m</span>`;
+}
+
+function stateBadge(st) {
+  const cls = {running:'b-ok', DONE:'b-ok', STALLED:'b-warn', DEAD:'b-bad',
+               CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
+  return `<span class="badge ${cls}">${esc(st)}</span>`;
+}
+
+function card(k, v, sub) {
+  return `<div class="card"><div class="k">${k}</div><div class="v">${v}</div>
+          <div class="sub">${sub || ''}</div></div>`;
+}
+
+function mapBadge(label) {
+  if (label === 'live pool') return '<span class="badge b-ok">live pool</span>';
+  if (label === 'MIXED') return '<span class="badge b-bad">MIXED</span>';
+  if (label === 'unknown') return '<span class="badge b-blind">unknown</span>';
+  return '<span class="badge b-warn">pre-rotation</span>';
+}
+
+function fileBlock(title, f, extra) {
+  if (!f || !f.exists) {
+    return `<h3>${title}</h3><p class="lede"><span class="badge b-dim">absent</span>
+            <code>${esc((f && f.path) || '')}</code> does not exist.</p>`;
+  }
+  return `<h3>${title}</h3>
+    <div class="count"><code>${esc(f.path)}</code> · ${esc(f.bytes)} bytes ·
+      written ${esc(f.at)} ${freshBadge(f.age_min, 1e9)}</div>
+    ${extra || ''}`;
+}
+
+function render(d) {
+  $('#clock').textContent = d.served_at;
+  document.title = d.shard + ' — Loki dashboard';
+  $('#name').textContent = d.shard;
+
+  if (!d.exists) {
+    $('#tests').innerHTML = '';
+    $('#cards').innerHTML = '';
+    $('#body').innerHTML = `<div class="note warn"><strong>No such shard.</strong>
+      Nothing on disk and no worklist line for <code>${esc(d.shard)}</code>.</div>`;
+    return;
+  }
+
+  $('#tests').innerHTML = d.tests
+    ? 'Tests ' + esc(d.tests)
+    : '<span class="badge b-dim">what it tests: not derivable from a worklist line</span>';
+
+  // ---------- cards: the authority's own fields, nothing recomputed ----------
+  const st = d.status;
+  const c = [];
+  if (d.status_pending) {
+    c.push(card('State', '<span class="badge b-dim">pending</span>',
+                'corefill_status.sh has not completed its first run'));
+  } else if (!st) {
+    c.push(card('State', '<span class="badge b-blind">NOT REPORTED</span>',
+                d.in_worklist ? 'in the worklist but absent from the tool output'
+                              : 'no worklist line — the status tool does not cover it'));
+  } else {
+    c.push(card('State', stateBadge(st.state),
+                freshBadge(d.status_age_min, d.status_cadence_min)
+                + ' from corefill_status.sh'));
+    c.push(card('Rows', `${esc(st.rows)}`,
+                `${esc(st.pct)} of target${d.worklist && d.worklist.target ? ' ' + esc(d.worklist.target) : ''}`));
+    let rateV, rateS;
+    if (st.refused) {
+      rateV = '<span class="badge b-dim">NO RATE</span>';
+      rateS = esc(st.result_raw);
+    } else if (st.rate !== null && st.rate !== undefined) {
+      rateV = st.rate.toFixed(2) + '%';
+      rateS = (st.band !== null && st.band !== undefined
+               ? `${st.lo.toFixed(2)} – ${st.hi.toFixed(2)} (±${st.band.toFixed(2)}pp, n=${esc(st.n)})` : '')
+              + ' ' + (st.separated
+                ? `<span class="badge ${st.rate >= 50 ? 'b-ok' : 'b-bad'}">separated</span>`
+                : '<span class="badge b-warn">inside band</span>');
+    } else {
+      rateV = '<span class="badge b-dim">—</span>';
+      rateS = esc(st.result_raw) || 'the tool printed no result for this shard';
+    }
+    c.push(card('Rate (from the tool)', rateV, rateS));
+    const neg = /^-/.test(st.hb_age);
+    c.push(card('Heartbeat age', esc(st.hb_age),
+      (neg ? '<span class="badge b-warn">NEGATIVE</span> corefill_status.sh captures NOW once, before its ~5 s loop; a heartbeat written during the loop reads as negative. Defect is in the tool, reported not patched.'
+           : 'as printed by corefill_status.sh') + ` · ETA ${esc(st.eta)}`));
+  }
+  const m = d.maps;
+  c.push(card('Map set', mapBadge(m.label),
+    `${esc(m.n_maps)} distinct maps · decided from ${esc(m.source || 'nothing')}`));
+  $('#cards').innerHTML = c.join('');
+
+  // ---------- body ----------
+  const b = [];
+
+  // map set, in full — this is a real analysis hazard, not a decoration
+  b.push(`<h2>Map set</h2>
+    <div class="note ${m.label === 'live pool' ? '' : 'warn'}">
+      <strong>${mapBadge(m.label)} ${esc(m.label)}</strong><br>
+      ${esc(m.why)}<br>
+      <span class="mono" style="font-size:12px">maps: ${m.maps.length ? esc(m.maps.join(' ')) : '(none)'}</span>
+    </div>
+    <p class="lede">The organisers rotated the map pool on 2026-08-13;
+      <code>tools/overnight.sh</code> was re-pointed at the live 15-map pool in
+      <code>${esc(m.rotation_commit)}</code> at <code>${esc(m.rotation_at)}</code>.
+      Four maps of the previous eight — <code>atoll heart hive meander</code> — are
+      no longer in the pool, so <strong>half of every pre-rotation shard is played on
+      geometry that no longer exists</strong> and the two populations must not be
+      pooled. The label above is read from this shard's own <code>map</code> column
+      where its rows decide it, and only falls back to launch time when they do not —
+      which it says when it does.</p>`);
+
+  // what defines it
+  if (d.worklist) {
+    b.push(`<h2>Worklist line</h2>
+      <div class="count">${esc(d.worklist_path)} line ${esc(d.worklist.lineno)}</div>
+      <pre class="raw">${esc(d.worklist.line)}</pre>`);
+    if (d.worklist.comment_block && d.worklist.comment_block.length) {
+      b.push(`<h3>Comment block above it in the worklist (verbatim)</h3>
+        <pre class="raw">${esc(d.worklist.comment_block.join('\n'))}</pre>`);
+    }
+  } else {
+    b.push(`<h2>Worklist line</h2>
+      <div class="note warn"><strong>No line in
+        <code>${esc(d.worklist_path)}</code>.</strong> Its line was replaced by a
+        later batch. <code>corefill_status.sh</code> iterates the worklist, so the
+        authority reports nothing for this shard — and neither does this page:
+        no state, no rows, no rate. The artefacts below are all that can honestly
+        be shown.</div>`);
+  }
+
+  b.push(fileBlock('Heartbeat', d.heartbeat,
+    d.heartbeat.line ? `<pre class="raw">${esc(d.heartbeat.line)}</pre>
+      <p class="lede" style="font-size:13px">Written by <code>tools/overnight.sh</code> as
+      <code>ts&nbsp;games_done&nbsp;TARGET_N&nbsp;shard&nbsp;STATE</code>. Shown verbatim; the
+      row count this page reports comes from the status tool, not from this line.</p>` : ''));
+
+  b.push(fileBlock('Started marker', d.started_marker,
+    d.started_marker.text ? `<pre class="raw">${esc(d.started_marker.text)}</pre>` : ''));
+  if (!d.started_marker.exists) {
+    b.push(`<p class="lede" style="margin-top:-10px">No marker means
+      <code>corefill.sh</code> never launched it — markers are written
+      <em>before</em> the launch and never removed.</p>`);
+  }
+
+  b.push(fileBlock('Completion marker', d.complete_marker,
+    d.complete_marker.line ? `<pre class="raw">${esc(d.complete_marker.line)}</pre>` : ''));
+
+  b.push(fileBlock('Rows file', d.tsv));
+
+  b.push(fileBlock('launch.log (last 40 lines)', d.launch_log,
+    `<pre class="raw">${d.launch_log.tail && d.launch_log.tail.length
+       ? esc(d.launch_log.tail.join('\n'))
+       : '(empty — overnight.sh writes here only on RESUMING, ABORT or COMPLETE)'}</pre>`));
+
+  $('#body').innerHTML = b.join('');
+}
+
+async function tick() {
+  if (!ID) {
+    $('#body').innerHTML = '<div class="note warn">No <code>?id=</code> in the URL. <a href="/shards">Pick a shard.</a></div>';
+    return;
+  }
+  try {
+    const r = await fetch('/api/shard?id=' + encodeURIComponent(ID), {cache: 'no-store'});
+    render(await r.json());
+  } catch (e) {
+    $('#clock').innerHTML = '<span class="badge b-blind">SERVER UNREACHABLE</span>';
+  }
+}
+tick(); setInterval(tick, 10000);
+</script>
+</body>
+</html>
