@@ -40896,3 +40896,21 @@ by GOING TO USE THE THING PROPERLY rather than by being careful.**
    **The v122 window is structurally blind right now:** the tape's newest row
    (`04:12:59`) PREDATES the activation (`04:45:54`), so no v122 match can appear
    in it yet however many have completed.
+
+# --- IN-FLIGHT 2026-08-13T05:2xZ — BUILDER s35, sonnet subagent #2 ---
+# ⭐⭐ MAGNUS'S FRAME: *"now that we have a salt bot, we can probably pit counters
+# against it and see what we can find and then put them together?"* — SALT becomes
+# the ADVERSARY and we develop the defence against our own weapon.
+# ⭐ AND THE BASELINE IS ALREADY PAID FOR: the SALT battery read from the other
+# side IS the control arm. `_v169launchlate160` scored 2,109/5,408 = **39.00%**
+# against `_v178salt` at n=5,408 on a both-ways-calibrated fixture. A counter's
+# job is to move 39.00% toward 50. Zero new games needed to establish it.
+# ⛔ THE BUG THE COUNTER TARGETS, found by reading rather than measuring:
+#   `bots/_v178salt/eco.py:553` — `occupied = ct.get_tile_building_id(tile) is not
+#   None` then `self.link_queue.pop(0)`. **NO TEAM CHECK.** An ENEMY barrier on
+#   our trunk route reads to us as "link already built", so we pop it and walk on,
+#   leaving a HOLE — and doctrine.py:638 calls out "nothing re-plans a chain once
+#   its head is destroyed (the known L4 defect)". Salt sticks because we mistake
+#   their barrier for our own conveyor.
+# Building two counter arms (CLEARLINK, ROUTELINK). Model: sonnet, tight spec,
+# smoke-tested locally. I own the battery design and the verdict.
