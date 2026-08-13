@@ -1,0 +1,831 @@
+### Coreflood: 15 games, oppver=['83'], ourver=['125', '126', '127'], we won 9/15
+
+===== match 16f73264 g1 ourver=v126 oppver=v83 our_won=True
+
+########## 16f73264 g1  30x30  rounds=583  winner=B cond=core_destroyed  LAZY=seat A core@(2, 2)  US=seat B core@(26, 26) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(2, 1) rel=(0, -1) d2own=1 d2enemy=1201 dir=-
+   r3    harvester   @(2, 6) rel=(0, 4) d2own=16 d2enemy=976 dir=-
+   r5    conveyor    @(2, 5) rel=(0, 3) d2own=9 d2enemy=1017 dir=N
+   r74   gunner      @(27, 23) rel=(25, 21) d2own=1066 d2enemy=10 dir=S
+   r101  sentinel    @(28, 22) rel=(26, 20) d2own=1076 d2enemy=20 dir=NW
+   r190  launcher    @(26, 13) rel=(24, 11) d2own=697 d2enemy=169 dir=-
+   builder spawns lazy: n=10 rounds=[0, 1, 2, 3, 4, 85, 125, 165, 205, 245]
+   builder spawns us  : n=10 rounds=[0, 1, 2, 3, 4, 9, 37, 60, 196, 223]
+-- LAZY turrets (all) --
+   r74   gunner   #226  @(27, 23) d2own=1066  d2enemy=10    FWD dir=S
+   r79   gunner   #251  @(27, 23) d2own=1066  d2enemy=10    FWD dir=S
+   r80   gunner   #254  @(27, 23) d2own=1066  d2enemy=10    FWD dir=S
+   r82   gunner   #263  @(27, 23) d2own=1066  d2enemy=10    FWD dir=S
+   r83   gunner   #269  @(27, 23) d2own=1066  d2enemy=10    FWD dir=S
+   r101  sentinel #341  @(28, 22) d2own=1076  d2enemy=20    FWD dir=NW
+   r119  sentinel #415  @(27, 23) d2own=1066  d2enemy=10    FWD dir=S
+   r131  sentinel #464  @(27, 23) d2own=1066  d2enemy=10    FWD dir=S
+   r134  sentinel #475  @(27, 23) d2own=1066  d2enemy=10    FWD dir=NW
+   r166  sentinel #597  @(4, 1) d2own=5     d2enemy=1109  HOME dir=N
+   r168  sentinel #604  @(5, 1) d2own=10    d2enemy=1066  HOME dir=NW
+   r190  launcher #663  @(26, 13) d2own=697   d2enemy=169   FWD dir=-
+   r192  launcher #667  @(26, 17) d2own=801   d2enemy=81    FWD dir=-
+   r216  sentinel #726  @(23, 21) d2own=802   d2enemy=34    FWD dir=E
+   r228  sentinel #754  @(26, 21) d2own=937   d2enemy=25    FWD dir=S
+   r240  sentinel #780  @(24, 21) d2own=845   d2enemy=29    FWD dir=SE
+-- US turrets (all) --
+   r75   sentinel #232  @(28, 23) d2own=13    d2enemy=1117  HOME dir=W
+   r77   sentinel #240  @(29, 21) d2own=34    d2enemy=1090  HOME dir=SW
+   r78   sentinel #247  @(29, 23) d2own=18    d2enemy=1170  HOME dir=W
+   r102  sentinel #345  @(28, 21) d2own=29    d2enemy=1037  HOME dir=S
+   r108  sentinel #368  @(28, 20) d2own=40    d2enemy=1000  HOME dir=S
+   r133  sentinel #471  @(27, 21) d2own=26    d2enemy=986   HOME dir=S
+   r135  sentinel #481  @(27, 22) d2own=17    d2enemy=1025  HOME dir=S
+   r155  sentinel #554  @(4, 0) d2own=1160  d2enemy=8     FWD dir=SW
+   r218  launcher #730  @(27, 23) d2own=10    d2enemy=1066  HOME dir=-
+   r225  sentinel #747  @(27, 21) d2own=26    d2enemy=986   HOME dir=W
+   r327  gunner   #933  @(27, 21) d2own=26    d2enemy=986   HOME dir=W
+   r395  sentinel #969  @(23, 24) d2own=13    d2enemy=925   HOME dir=N
+   r432  gunner   #985  @(23, 20) d2own=45    d2enemy=765   HOME dir=S
+   r464  gunner   #995  @(26, 20) d2own=36    d2enemy=900   HOME dir=S
+   r516  launcher #1013 @(27, 4) d2own=485   d2enemy=629   HOME dir=-
+   r539  sentinel #1022 @(1, 0) d2own=1301  d2enemy=5     FWD dir=SE
+-- core LAZY: dmg=522 heal=+12 first_dmg=r156 delta_histogram={18: 29}
+      fire->core: sentinel #1022 from (1, 0) x22 (d2 to victim core=5)
+      fire->core: sentinel #554 from (4, 0) x7 (d2 to victim core=8)
+      dmg rounds: r156..r582 n=29
+-- core US: dmg=414 heal=+414 first_dmg=r229 delta_histogram={18: 23}
+      fire->core: sentinel #754 from (26, 21) x23 (d2 to victim core=25)
+      dmg rounds: r229..r274 n=23
+-- economy (lazy) --
+   harvester  built=11  died=0   alive[r50:7 r100:8 r150:10 r200:11 r300:11 r500:11]
+   conveyor   built=156 died=10  alive[r50:24 r100:59 r150:72 r200:79 r300:133 r500:141]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   REBUILD conveyor: 0/10 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=23 on_own_core=3 on_own_econ_tiles=15
+   builderHeal us   total=157
+-- defence reaction --
+   our first intrusion: r146 our barrier built @(4, 3) d2=5
+   lazy first home-defence build after: r166 sentinel @(4, 1) d2own=5  LATENCY=20 rounds
+   lazy home-defence builds BEFORE intrusion: []
+-- cpu: tled lazy=37 us=0  execmax lazy=11312us us=8816us  execmean lazy=2113us us=2522us
+-- final players: lazy ti=49 coll=3950 ammo=8 | us ti=56 coll=2510 ammo=50
+
+===== match 16f73264 g2 ourver=v126 oppver=v83 our_won=False
+
+########## 16f73264 g2  30x30  rounds=272  winner=A cond=core_destroyed  LAZY=seat A core@(2, 24)  US=seat B core@(26, 4) lazy_won=True
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(1, 24) rel=(-1, 0) d2own=1 d2enemy=1025 dir=-
+   r10   harvester   @(3, 15) rel=(1, -9) d2own=82 d2enemy=650 dir=-
+   r12   conveyor    @(3, 16) rel=(1, -8) d2own=65 d2enemy=673 dir=S
+   r33   gunner      @(5, 19) rel=(3, -5) d2own=34 d2enemy=666 dir=E
+   r52   sentinel    @(6, 20) rel=(4, -4) d2own=32 d2enemy=656 dir=SW
+   r260  barrier     @(25, 8) rel=(23, -16) d2own=785 d2enemy=17 dir=-
+   builder spawns lazy: n=7 rounds=[0, 1, 2, 3, 4, 93, 126]
+   builder spawns us  : n=6 rounds=[0, 1, 2, 3, 4, 12]
+-- LAZY turrets (all) --
+   r33   gunner   #89   @(5, 19) d2own=34    d2enemy=666   HOME dir=E
+   r36   gunner   #98   @(5, 17) d2own=58    d2enemy=610   HOME dir=S
+   r42   gunner   #113  @(6, 21) d2own=25    d2enemy=689   HOME dir=SW
+   r52   sentinel #135  @(6, 20) d2own=32    d2enemy=656   HOME dir=SW
+   r75   sentinel #191  @(27, 0) d2own=1201  d2enemy=17    FWD dir=S
+   r258  sentinel #569  @(2, 22) d2own=4     d2enemy=900   HOME dir=SW
+-- US turrets (all) --
+   r43   sentinel #115  @(4, 22) d2own=808   d2enemy=8     FWD dir=SW
+   r131  gunner   #326  @(23, 4) d2own=9     d2enemy=841   HOME dir=SE
+   r192  sentinel #457  @(0, 24) d2own=1076  d2enemy=4     FWD dir=E
+   r208  gunner   #485  @(24, 8) d2own=20    d2enemy=740   HOME dir=NE
+-- core LAZY: dmg=432 heal=+248 first_dmg=r44 delta_histogram={18: 24}
+      fire->core: sentinel #457 from (0, 24) x16 (d2 to victim core=4)
+      fire->core: sentinel #115 from (4, 22) x8 (d2 to victim core=8)
+      dmg rounds: r44..r240 n=24
+-- core US: dmg=1614 heal=+1110 first_dmg=r76 delta_histogram={2: 33, 18: 86}
+      fire->core: sentinel #191 from (27, 0) x86 (d2 to victim core=17)
+      builder_attack->core: bot #3 team A x33
+      dmg rounds: r76..r271 n=119
+-- economy (lazy) --
+   harvester  built=6   died=0   alive[r50:4 r100:5 r150:6 r200:6]
+   conveyor   built=79  died=3   alive[r50:20 r100:29 r150:47 r200:71]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0]
+   barrier    built=1   died=0   alive[r50:0 r100:0 r150:0 r200:0]
+   REBUILD conveyor: 0/3 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=64 on_own_core=62 on_own_econ_tiles=2
+   builderHeal us   total=309
+-- defence reaction --
+   our first intrusion: r40 our bot #4 stepped to (4, 22) d2=8
+   lazy first home-defence build after: r42 gunner @(6, 21) d2own=25  LATENCY=2 rounds
+   lazy home-defence builds BEFORE intrusion: [(33, 'gunner', (5, 19)), (36, 'gunner', (5, 17))]
+-- cpu: tled lazy=4 us=0  execmax lazy=11071us us=8750us  execmean lazy=1497us us=1413us
+-- final players: lazy ti=43 coll=2370 ammo=2 | us ti=42 coll=810 ammo=2
+
+===== match 16f73264 g3 ourver=v126 oppver=v83 our_won=False
+
+########## 16f73264 g3  25x25  rounds=176  winner=A cond=core_destroyed  LAZY=seat A core@(5, 5)  US=seat B core@(18, 18) lazy_won=True
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(6, 7) rel=(1, 2) d2own=5 d2enemy=265 dir=-
+   r4    harvester   @(10, 6) rel=(5, 1) d2own=26 d2enemy=208 dir=-
+   r6    conveyor    @(9, 6) rel=(4, 1) d2own=17 d2enemy=225 dir=W
+   r21   gunner      @(19, 15) rel=(14, 10) d2own=296 d2enemy=10 dir=S
+   builder spawns lazy: n=5 rounds=[0, 1, 2, 3, 4]
+   builder spawns us  : n=5 rounds=[0, 1, 2, 3, 4]
+-- LAZY turrets (all) --
+   r21   gunner   #57   @(19, 15) d2own=296   d2enemy=10    FWD dir=S
+   r22   gunner   #61   @(19, 13) d2own=260   d2enemy=26    FWD dir=SW
+   r171  gunner   #248  @(17, 20) d2own=369   d2enemy=5     FWD dir=NE
+-- US turrets (all) --
+   r18   sentinel #50   @(10, 9) d2own=145   d2enemy=41    FWD dir=NW
+-- core LAZY: dmg=1044 heal=+784 first_dmg=r19 delta_histogram={18: 58}
+      fire->core: sentinel #50 from (10, 9) x58 (d2 to victim core=41)
+      dmg rounds: r19..r151 n=58
+-- core US: dmg=969 heal=+468 first_dmg=r25 delta_histogram={2: 5, 7: 137}
+      fire->core: gunner #57 from (19, 15) x134 (d2 to victim core=10)
+      fire->core: gunner #248 from (17, 20) x3 (d2 to victim core=5)
+      builder_attack->core: bot #3 team A x5
+      dmg rounds: r25..r175 n=142
+-- economy (lazy) --
+   harvester  built=4   died=0   alive[r50:4 r100:4 r150:4]
+   conveyor   built=21  died=2   alive[r50:6 r100:9 r150:16]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0]
+   REBUILD conveyor: 0/2 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=197 on_own_core=196 on_own_econ_tiles=1
+   builderHeal us   total=117
+-- defence reaction --
+   our first intrusion: r24 our bot #4 stepped to (7, 7) d2=8
+   lazy home-defence build after intrusion: NONE
+   lazy home-defence builds BEFORE intrusion: []
+-- cpu: tled lazy=0 us=0  execmax lazy=9066us us=6789us  execmean lazy=1046us us=511us
+-- final players: lazy ti=20 coll=920 ammo=1 | us ti=32 coll=560 ammo=16
+
+===== match 16f73264 g4 ourver=v126 oppver=v83 our_won=False
+
+########## 16f73264 g4  20x20  rounds=558  winner=A cond=core_destroyed  LAZY=seat A core@(2, 9)  US=seat B core@(16, 9) lazy_won=True
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(1, 10) rel=(-1, 1) d2own=2 d2enemy=226 dir=-
+   r3    harvester   @(6, 9) rel=(4, 0) d2own=16 d2enemy=100 dir=-
+   r5    conveyor    @(5, 9) rel=(3, 0) d2own=9 d2enemy=121 dir=W
+   r10   gunner      @(5, 11) rel=(3, 2) d2own=13 d2enemy=125 dir=NE
+   r497  launcher    @(16, 2) rel=(14, -7) d2own=245 d2enemy=49 dir=-
+   r512  sentinel    @(17, 7) rel=(15, -2) d2own=229 d2enemy=5 dir=S
+   builder spawns lazy: n=12 rounds=[0, 1, 2, 3, 32, 324, 360, 372, 404, 414, 429, 444]
+   builder spawns us  : n=6 rounds=[0, 1, 2, 3, 4, 7]
+-- LAZY turrets (all) --
+   r10   gunner   #28   @(5, 11) d2own=13    d2enemy=125   HOME dir=NE
+   r15   gunner   #43   @(13, 7) d2own=125   d2enemy=13    FWD dir=S
+   r15   gunner   #44   @(5, 7) d2own=13    d2enemy=125   HOME dir=S
+   r497  launcher #661  @(16, 2) d2own=245   d2enemy=49    FWD dir=-
+   r512  sentinel #686  @(17, 7) d2own=229   d2enemy=5     FWD dir=S
+   r515  sentinel #693  @(18, 7) d2own=260   d2enemy=8     FWD dir=SW
+   r542  sentinel #735  @(0, 7) d2own=8     d2enemy=260   HOME dir=E
+-- US turrets (all) --
+   r10   sentinel #27   @(8, 9) d2own=64    d2enemy=36    FWD dir=W
+   r228  sentinel #249  @(19, 6) d2own=18    d2enemy=298   HOME dir=S
+   r280  gunner   #324  @(14, 10) d2own=5     d2enemy=145   HOME dir=E
+   r486  sentinel #636  @(3, 7) d2own=173   d2enemy=5     FWD dir=S
+-- core LAZY: dmg=1296 heal=+1118 first_dmg=r11 delta_histogram={18: 72}
+      fire->core: sentinel #27 from (8, 9) x45 (d2 to victim core=36)
+      fire->core: sentinel #636 from (3, 7) x27 (d2 to victim core=5)
+      dmg rounds: r11..r554 n=72
+-- core US: dmg=876 heal=+366 first_dmg=r154 delta_histogram={2: 195, 18: 27}
+      fire->core: sentinel #686 from (17, 7) x15 (d2 to victim core=5)
+      fire->core: sentinel #693 from (18, 7) x12 (d2 to victim core=8)
+      builder_attack->core: bot #406 team A x96
+      builder_attack->core: bot #3 team A x75
+      builder_attack->core: bot #512 team A x24
+      dmg rounds: r154..r557 n=222
+-- economy (lazy) --
+   harvester  built=8   died=0   alive[r50:5 r100:5 r150:5 r200:5 r300:5 r500:8]
+   conveyor   built=111 died=12  alive[r50:5 r100:15 r150:23 r200:41 r300:54 r500:99]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   REBUILD conveyor: 3/12 same-tile rebuilds, latencies=[21, 22, 31]
+   builderHeal lazy total=305 on_own_core=280 on_own_econ_tiles=23
+   builderHeal us   total=400
+-- defence reaction --
+   our first intrusion: r10 our sentinel built @(8, 9) d2=36
+   lazy first home-defence build after: r10 gunner @(5, 11) d2own=13  LATENCY=0 rounds
+   lazy home-defence builds BEFORE intrusion: []
+   lazy no-damage removals (crash / self_destruct / teardown): [(355, 'builder_bot', (4, 8))]
+-- cpu: tled lazy=0 us=0  execmax lazy=10084us us=6977us  execmean lazy=977us us=242us
+-- final players: lazy ti=12 coll=3820 ammo=4 | us ti=40 coll=1010 ammo=7
+
+===== match 16f73264 g5 ourver=v126 oppver=v83 our_won=False
+
+########## 16f73264 g5  10x10  rounds=307  winner=A cond=core_destroyed  LAZY=seat A core@(2, 2)  US=seat B core@(6, 6) lazy_won=True
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(4, 2) rel=(2, 0) d2own=4 d2enemy=20 dir=-
+   r2    gunner      @(4, 4) rel=(2, 2) d2own=8 d2enemy=8 dir=SE
+   r6    harvester   @(6, 0) rel=(4, -2) d2own=20 d2enemy=36 dir=-
+   r9    conveyor    @(6, 1) rel=(4, -1) d2own=17 d2enemy=25 dir=W
+   r190  sentinel    @(7, 4) rel=(5, 2) d2own=29 d2enemy=5 dir=S
+   builder spawns lazy: n=11 rounds=[0, 1, 2, 3, 129, 140, 154, 168, 205, 245, 285]
+   builder spawns us  : n=6 rounds=[0, 1, 2, 3, 4, 224]
+-- LAZY turrets (all) --
+   r2    gunner   #9    @(4, 4) d2own=8     d2enemy=8     HOME dir=SE
+   r4    gunner   #13   @(6, 3) d2own=17    d2enemy=9     FWD dir=S
+   r5    gunner   #14   @(5, 4) d2own=13    d2enemy=5     FWD dir=SE
+   r6    gunner   #17   @(2, 5) d2own=9     d2enemy=17    HOME dir=SE
+   r34   gunner   #48   @(1, 7) d2own=26    d2enemy=26    HOME dir=NW
+   r190  sentinel #219  @(7, 4) d2own=29    d2enemy=5     FWD dir=S
+   r212  sentinel #248  @(8, 6) d2own=52    d2enemy=4     FWD dir=W
+   r225  sentinel #266  @(8, 4) d2own=40    d2enemy=8     FWD dir=SW
+   r238  sentinel #284  @(7, 9) d2own=74    d2enemy=10    FWD dir=N
+-- US turrets (all) --
+   r5    sentinel #15   @(4, 8) d2own=8     d2enemy=40    HOME dir=N
+   r6    sentinel #19   @(5, 7) d2own=2     d2enemy=34    HOME dir=NW
+   r8    sentinel #22   @(5, 8) d2own=5     d2enemy=45    HOME dir=NW
+-- core LAZY: untouched (0 dmg, heal +0)
+-- core US: dmg=2621 heal=+2119 first_dmg=r3 delta_histogram={2: 178, 7: 141, 18: 71}
+      fire->core: gunner #13 from (6, 3) x73 (d2 to victim core=9)
+      fire->core: gunner #14 from (5, 4) x62 (d2 to victim core=5)
+      fire->core: sentinel #266 from (8, 4) x39 (d2 to victim core=8)
+      fire->core: sentinel #284 from (7, 9) x31 (d2 to victim core=10)
+      fire->core: gunner #9 from (4, 4) x6 (d2 to victim core=8)
+      fire->core: sentinel #219 from (7, 4) x1 (d2 to victim core=5)
+      builder_attack->core: bot #171 team A x126
+      builder_attack->core: bot #3 team A x52
+      dmg rounds: r3..r306 n=390
+-- economy (lazy) --
+   harvester  built=4   died=0   alive[r50:2 r100:3 r150:3 r200:4 r300:4]
+   conveyor   built=29  died=1   alive[r50:8 r100:15 r150:28 r200:28 r300:28]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0]
+   REBUILD conveyor: 1/1 same-tile rebuilds, latencies=[10]
+   builderHeal lazy total=28 on_own_core=0 on_own_econ_tiles=24
+   builderHeal us   total=548
+-- defence reaction --
+   our first intrusion: r6 our harvester built @(3, 7) d2=26
+   lazy first home-defence build after: r6 gunner @(2, 5) d2own=9  LATENCY=0 rounds
+   lazy home-defence builds BEFORE intrusion: [(2, 'gunner', (4, 4)), (4, 'gunner', (6, 3)), (5, 'gunner', (5, 4))]
+   lazy no-damage removals (crash / self_destruct / teardown): [(193, 'sentinel', (7, 4)), (213, 'sentinel', (8, 6))]
+-- cpu: tled lazy=0 us=0  execmax lazy=3194us us=1171us  execmean lazy=645us us=173us
+-- final players: lazy ti=125 coll=2880 ammo=19 | us ti=27 coll=0 ammo=24
+
+===== match 1a5e31e9 g1 ourver=v127 oppver=v83 our_won=True
+
+########## 1a5e31e9 g1  30x30  rounds=780  winner=A cond=core_destroyed  LAZY=seat B core@(26, 26)  US=seat A core@(2, 2) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(27, 25) rel=(1, -1) d2own=2 d2enemy=1154 dir=-
+   r5    harvester   @(23, 27) rel=(-3, 1) d2own=10 d2enemy=1066 dir=-
+   r7    conveyor    @(24, 27) rel=(-2, 1) d2own=5 d2enemy=1109 dir=E
+   r45   sentinel    @(7, 0) rel=(-19, -26) d2own=1037 d2enemy=29 dir=SW
+   r47   gunner      @(6, 1) rel=(-20, -25) d2own=1025 d2enemy=17 dir=S
+   r345  launcher    @(10, 2) rel=(-16, -24) d2own=832 d2enemy=64 dir=-
+   builder spawns lazy: n=12 rounds=[0, 1, 2, 3, 4, 85, 125, 165, 205, 245, 285, 325]
+   builder spawns us  : n=19 rounds=[0, 1, 2, 3, 4, 5, 40, 112, 132, 142, 153, 176, 230, 244]...
+-- LAZY turrets (all) --
+   r45   sentinel #122  @(7, 0) d2own=1037  d2enemy=29    FWD dir=SW
+   r46   sentinel #125  @(7, 2) d2own=937   d2enemy=25    FWD dir=W
+   r47   gunner   #130  @(6, 1) d2own=1025  d2enemy=17    FWD dir=S
+   r57   gunner   #158  @(9, 3) d2own=818   d2enemy=50    FWD dir=W
+   r149  gunner   #453  @(14, 12) d2own=340   d2enemy=244   FWD dir=N
+   r155  gunner   #474  @(15, 8) d2own=445   d2enemy=205   FWD dir=SW
+   r157  gunner   #479  @(17, 9) d2own=370   d2enemy=274   FWD dir=W
+   r160  gunner   #488  @(16, 6) d2own=500   d2enemy=212   FWD dir=SW
+   r232  gunner   #727  @(10, 8) d2own=580   d2enemy=100   FWD dir=W
+   r233  gunner   #730  @(10, 6) d2own=656   d2enemy=80    FWD dir=SW
+   r250  sentinel #790  @(28, 23) d2own=13    d2enemy=1117  HOME dir=NW
+   r251  sentinel #794  @(29, 24) d2own=13    d2enemy=1213  HOME dir=NW
+   r252  sentinel #797  @(27, 24) d2own=5     d2enemy=1109  HOME dir=N
+   r271  sentinel #844  @(20, 21) d2own=61    d2enemy=685   HOME dir=SE
+   r345  launcher #1027 @(10, 2) d2own=832   d2enemy=64    FWD dir=-
+   r433  gunner   #1257 @(6, 5) d2own=841   d2enemy=25    FWD dir=S
+   r440  gunner   #1275 @(7, 4) d2own=845   d2enemy=29    FWD dir=S
+-- US turrets (all) --
+   r47   sentinel #131  @(7, 5) d2own=34    d2enemy=802   HOME dir=N
+   r49   sentinel #135  @(5, 4) d2own=13    d2enemy=925   HOME dir=NE
+   r52   sentinel #145  @(6, 3) d2own=17    d2enemy=929   HOME dir=NE
+   r65   gunner   #181  @(4, 1) d2own=5     d2enemy=1109  HOME dir=E
+   r82   gunner   #228  @(6, 3) d2own=17    d2enemy=929   HOME dir=E
+   r93   gunner   #262  @(6, 3) d2own=17    d2enemy=929   HOME dir=E
+   r160  launcher #489  @(6, 1) d2own=17    d2enemy=1025  HOME dir=-
+   r250  sentinel #789  @(27, 22) d2own=1025  d2enemy=17    FWD dir=S
+   r255  sentinel #806  @(27, 22) d2own=1025  d2enemy=17    FWD dir=S
+   r264  sentinel #830  @(22, 23) d2own=841   d2enemy=25    FWD dir=SE
+   r349  sentinel #1042 @(8, 2) d2own=36    d2enemy=900   HOME dir=W
+   r350  sentinel #1047 @(6, 2) d2own=16    d2enemy=976   HOME dir=W
+   r352  sentinel #1054 @(7, 0) d2own=29    d2enemy=1037  HOME dir=SW
+   r353  sentinel #1059 @(7, 2) d2own=25    d2enemy=937   HOME dir=W
+   r370  sentinel #1101 @(1, 6) d2own=17    d2enemy=1025  HOME dir=NE
+   r388  sentinel #1147 @(0, 6) d2own=20    d2enemy=1076  HOME dir=N
+   r401  sentinel #1175 @(0, 8) d2own=40    d2enemy=1000  HOME dir=NE
+   r758  sentinel #1997 @(21, 27) d2own=986   d2enemy=26    FWD dir=E
+   r760  sentinel #2003 @(22, 27) d2own=1025  d2enemy=17    FWD dir=E
+   r764  sentinel #2014 @(24, 25) d2own=1013  d2enemy=5     FWD dir=SE
+   r771  sentinel #2030 @(24, 25) d2own=1013  d2enemy=5     FWD dir=SE
+   r777  sentinel #2045 @(25, 29) d2own=1258  d2enemy=10    FWD dir=NE
+-- core LAZY: dmg=684 heal=+180 first_dmg=r251 delta_histogram={18: 38}
+      fire->core: sentinel #1997 from (21, 27) x11 (d2 to victim core=26)
+      fire->core: sentinel #2003 from (22, 27) x10 (d2 to victim core=17)
+      fire->core: sentinel #830 from (22, 23) x7 (d2 to victim core=25)
+      fire->core: sentinel #2014 from (24, 25) x3 (d2 to victim core=5)
+      fire->core: sentinel #2030 from (24, 25) x3 (d2 to victim core=5)
+      fire->core: sentinel #789 from (27, 22) x2 (d2 to victim core=17)
+      fire->core: sentinel #806 from (27, 22) x1 (d2 to victim core=17)
+      fire->core: sentinel #2045 from (25, 29) x1 (d2 to victim core=10)
+      dmg rounds: r251..r779 n=38
+-- core US: dmg=72 heal=+72 first_dmg=r47 delta_histogram={18: 4}
+      fire->core: sentinel #125 from (7, 2) x4 (d2 to victim core=25)
+      dmg rounds: r47..r53 n=4
+-- economy (lazy) --
+   harvester  built=9   died=0   alive[r50:6 r100:6 r150:7 r200:8 r300:8 r500:9]
+   conveyor   built=175 died=1   alive[r50:16 r100:24 r150:59 r200:86 r300:131 r500:174]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   REBUILD conveyor: 1/1 same-tile rebuilds, latencies=[6]
+   builderHeal lazy total=48 on_own_core=45 on_own_econ_tiles=0
+   builderHeal us   total=59
+-- defence reaction --
+   our first intrusion: r250 our sentinel built @(27, 22) d2=17
+   lazy first home-defence build after: r250 sentinel @(28, 23) d2own=13  LATENCY=0 rounds
+   lazy home-defence builds BEFORE intrusion: []
+-- cpu: tled lazy=97 us=0  execmax lazy=11066us us=8793us  execmean lazy=2067us us=1743us
+-- final players: lazy ti=6423 coll=11250 ammo=72 | us ti=2364 coll=5340 ammo=80
+
+===== match 1a5e31e9 g2 ourver=v127 oppver=v83 our_won=False
+
+########## 1a5e31e9 g2  30x30  rounds=1000  winner=B cond=titanium_collected  LAZY=seat B core@(26, 4)  US=seat A core@(2, 24) lazy_won=True
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(28, 6) rel=(2, 2) d2own=8 d2enemy=1000 dir=-
+   r10   harvester   @(26, 14) rel=(0, 10) d2own=100 d2enemy=676 dir=-
+   r12   conveyor    @(27, 14) rel=(1, 10) d2own=101 d2enemy=725 dir=N
+   r44   gunner      @(6, 24) rel=(-20, 20) d2own=800 d2enemy=16 dir=W
+   r172  sentinel    @(9, 25) rel=(-17, 21) d2own=730 d2enemy=50 dir=NE
+   r350  launcher    @(9, 22) rel=(-17, 18) d2own=613 d2enemy=53 dir=-
+   builder spawns lazy: n=12 rounds=[0, 1, 2, 3, 4, 101, 125, 165, 205, 245, 285, 325]
+   builder spawns us  : n=16 rounds=[0, 1, 2, 3, 4, 12, 237, 252, 376, 401, 431, 455, 481, 532]...
+-- LAZY turrets (all) --
+   r44   gunner   #108  @(6, 24) d2own=800   d2enemy=16    FWD dir=W
+   r49   gunner   #123  @(6, 24) d2own=800   d2enemy=16    FWD dir=W
+   r62   gunner   #175  @(5, 26) d2own=925   d2enemy=13    FWD dir=NW
+   r76   gunner   #218  @(5, 22) d2own=765   d2enemy=13    FWD dir=SW
+   r172  sentinel #493  @(9, 25) d2own=730   d2enemy=50    FWD dir=NE
+   r185  sentinel #532  @(8, 25) d2own=765   d2enemy=37    FWD dir=W
+   r188  sentinel #544  @(6, 24) d2own=800   d2enemy=16    FWD dir=SE
+   r197  sentinel #572  @(7, 21) d2own=650   d2enemy=34    FWD dir=SW
+   r276  gunner   #897  @(4, 14) d2own=584   d2enemy=104   FWD dir=SE
+   r327  sentinel #1132 @(10, 24) d2own=656   d2enemy=64    FWD dir=SW
+   r328  sentinel #1137 @(8, 24) d2own=724   d2enemy=36    FWD dir=SE
+   r350  launcher #1222 @(9, 22) d2own=613   d2enemy=53    FWD dir=-
+   r353  sentinel #1233 @(6, 22) d2own=724   d2enemy=20    FWD dir=SW
+   r418  gunner   #1478 @(2, 4) d2own=576   d2enemy=400   FWD dir=SE
+   r786  gunner   #2814 @(29, 6) d2own=13    d2enemy=1053  HOME dir=N
+   r954  gunner   #3145 @(10, 15) d2own=377   d2enemy=145   FWD dir=NE
+   r988  sentinel #3199 @(24, 2) d2own=8     d2enemy=968   HOME dir=S
+   r991  sentinel #3203 @(22, 5) d2own=17    d2enemy=761   HOME dir=SE
+   r992  sentinel #3207 @(21, 4) d2own=25    d2enemy=761   HOME dir=SE
+-- US turrets (all) --
+   r45   sentinel #111  @(6, 20) d2own=32    d2enemy=656   HOME dir=S
+   r87   gunner   #250  @(5, 25) d2own=10    d2enemy=882   HOME dir=S
+   r110  gunner   #305  @(4, 23) d2own=5     d2enemy=845   HOME dir=W
+   r134  sentinel #354  @(0, 26) d2own=8     d2enemy=1160  HOME dir=NE
+   r144  sentinel #388  @(0, 23) d2own=5     d2enemy=1037  HOME dir=E
+   r175  gunner   #503  @(10, 25) d2own=65    d2enemy=697   HOME dir=W
+   r188  sentinel #543  @(6, 23) d2own=17    d2enemy=761   HOME dir=SE
+   r198  sentinel #578  @(9, 21) d2own=58    d2enemy=578   HOME dir=SW
+   r207  gunner   #615  @(5, 21) d2own=18    d2enemy=730   HOME dir=E
+   r258  sentinel #812  @(4, 21) d2own=13    d2enemy=773   HOME dir=E
+   r274  launcher #886  @(2, 28) d2own=16    d2enemy=1152  HOME dir=-
+   r287  launcher #951  @(1, 21) d2own=10    d2enemy=914   HOME dir=-
+   r300  launcher #1010 @(1, 15) d2own=82    d2enemy=746   HOME dir=-
+   r325  launcher #1119 @(5, 11) d2own=178   d2enemy=490   HOME dir=-
+   r345  launcher #1201 @(3, 11) d2own=170   d2enemy=578   HOME dir=-
+   r419  launcher #1485 @(4, 17) d2own=53    d2enemy=653   HOME dir=-
+   r468  launcher #1675 @(8, 17) d2own=85    d2enemy=493   HOME dir=-
+   r502  sentinel #1794 @(4, 20) d2own=20    d2enemy=740   HOME dir=SE
+   r567  launcher #2028 @(3, 11) d2own=170   d2enemy=578   HOME dir=-
+   r593  launcher #2118 @(7, 8) d2own=281   d2enemy=377   HOME dir=-
+   r606  launcher #2166 @(14, 4) d2own=544   d2enemy=144   FWD dir=-
+   r621  launcher #2219 @(20, 9) d2own=549   d2enemy=61    FWD dir=-
+   r633  launcher #2261 @(23, 17) d2own=490   d2enemy=178   FWD dir=-
+   r647  launcher #2314 @(25, 28) d2own=545   d2enemy=577   HOME dir=-
+   r660  launcher #2360 @(19, 26) d2own=293   d2enemy=533   HOME dir=-
+   r684  launcher #2446 @(15, 25) d2own=170   d2enemy=562   HOME dir=-
+   r711  launcher #2541 @(13, 25) d2own=122   d2enemy=610   HOME dir=-
+   r740  launcher #2646 @(11, 21) d2own=90    d2enemy=514   HOME dir=-
+   r745  launcher #2661 @(8, 26) d2own=40    d2enemy=808   HOME dir=-
+   r765  sentinel #2737 @(7, 25) d2own=26    d2enemy=802   HOME dir=NW
+   r769  sentinel #2751 @(7, 22) d2own=29    d2enemy=685   HOME dir=W
+   r772  sentinel #2765 @(6, 25) d2own=17    d2enemy=841   HOME dir=NW
+   r878  launcher #3036 @(4, 8) d2own=260   d2enemy=500   HOME dir=-
+   r905  launcher #3071 @(4, 8) d2own=260   d2enemy=500   HOME dir=-
+   r925  launcher #3099 @(16, 15) d2own=277   d2enemy=221   FWD dir=-
+   r952  sentinel #3142 @(29, 7) d2own=1018  d2enemy=18    FWD dir=NW
+   r986  sentinel #3194 @(24, 7) d2own=773   d2enemy=13    FWD dir=NE
+-- core LAZY: dmg=162 heal=+0 first_dmg=r953 delta_histogram={18: 9}
+      fire->core: sentinel #3142 from (29, 7) x9 (d2 to victim core=18)
+      dmg rounds: r953..r969 n=9
+-- core US: dmg=497 heal=+497 first_dmg=r45 delta_histogram={2: 4, 7: 39, 18: 12}
+      fire->core: gunner #175 from (5, 26) x22 (d2 to victim core=13)
+      fire->core: gunner #218 from (5, 22) x11 (d2 to victim core=13)
+      fire->core: sentinel #572 from (7, 21) x8 (d2 to victim core=34)
+      fire->core: gunner #108 from (6, 24) x4 (d2 to victim core=16)
+      fire->core: gunner #123 from (6, 24) x2 (d2 to victim core=16)
+      fire->core: sentinel #532 from (8, 25) x2 (d2 to victim core=37)
+      fire->core: sentinel #1233 from (6, 22) x2 (d2 to victim core=20)
+      builder_attack->core: bot #4 team B x4
+      dmg rounds: r45..r356 n=55
+-- economy (lazy) --
+   harvester  built=11  died=0   alive[r50:4 r100:5 r150:7 r200:8 r300:10 r500:10 r999:11]
+   conveyor   built=269 died=10  alive[r50:29 r100:45 r150:61 r200:90 r300:177 r500:231 r999:259]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0 r999:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0 r999:0]
+   REBUILD conveyor: 2/10 same-tile rebuilds, latencies=[5, 81]
+   builderHeal lazy total=61 on_own_core=0 on_own_econ_tiles=57
+   builderHeal us   total=544
+-- defence reaction --
+   our first intrusion: r777 our bot #1320 stepped to (25, 6) d2=5
+   lazy first home-defence build after: r786 gunner @(29, 6) d2own=13  LATENCY=9 rounds
+   lazy home-defence builds BEFORE intrusion: []
+   lazy no-damage removals (crash / self_destruct / teardown): [(934, 'builder_bot', (27, 8))]
+-- cpu: tled lazy=216 us=0  execmax lazy=11308us us=8755us  execmean lazy=2952us us=962us
+-- final players: lazy ti=12306 coll=19060 ammo=46 | us ti=152 coll=6570 ammo=0
+
+===== match 1a5e31e9 g3 ourver=v127 oppver=v83 our_won=True
+
+########## 1a5e31e9 g3  25x25  rounds=172  winner=A cond=core_destroyed  LAZY=seat B core@(18, 18)  US=seat A core@(5, 5) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(18, 17) rel=(0, -1) d2own=1 d2enemy=313 dir=-
+   r4    harvester   @(14, 18) rel=(-4, 0) d2own=16 d2enemy=250 dir=-
+   r6    conveyor    @(15, 18) rel=(-3, 0) d2own=9 d2enemy=269 dir=E
+   r17   sentinel    @(14, 17) rel=(-4, -1) d2own=17 d2enemy=225 dir=N
+   r168  barrier     @(12, 7) rel=(-6, -11) d2own=157 d2enemy=53 dir=-
+   builder spawns lazy: n=7 rounds=[0, 1, 2, 3, 4, 108, 133]
+   builder spawns us  : n=5 rounds=[0, 1, 2, 3, 4]
+-- LAZY turrets (all) --
+   r17   sentinel #43   @(14, 17) d2own=17    d2enemy=225   HOME dir=N
+   r19   sentinel #49   @(16, 16) d2own=8     d2enemy=242   HOME dir=NW
+   r161  sentinel #540  @(12, 2) d2own=292   d2enemy=58    FWD dir=S
+-- US turrets (all) --
+   r16   sentinel #36   @(14, 14) d2own=162   d2enemy=32    FWD dir=SE
+   r50   sentinel #119  @(11, 7) d2own=40    d2enemy=170   HOME dir=NW
+   r80   gunner   #207  @(8, 5) d2own=9     d2enemy=269   HOME dir=W
+   r95   sentinel #253  @(9, 2) d2own=25    d2enemy=337   HOME dir=W
+   r104  sentinel #286  @(7, 3) d2own=8     d2enemy=346   HOME dir=N
+   r118  sentinel #337  @(17, 21) d2own=400   d2enemy=10    FWD dir=NE
+   r169  sentinel #569  @(16, 20) d2own=346   d2enemy=8     FWD dir=NE
+-- core LAZY: dmg=540 heal=+36 first_dmg=r17 delta_histogram={18: 30}
+      fire->core: sentinel #337 from (17, 21) x27 (d2 to victim core=10)
+      fire->core: sentinel #36 from (14, 14) x2 (d2 to victim core=32)
+      fire->core: sentinel #569 from (16, 20) x1 (d2 to victim core=8)
+      dmg rounds: r17..r171 n=30
+-- core US: untouched (0 dmg, heal +0)
+-- economy (lazy) --
+   harvester  built=7   died=0   alive[r50:4 r100:5 r150:7]
+   conveyor   built=56  died=3   alive[r50:9 r100:34 r150:50]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0]
+   barrier    built=1   died=0   alive[r50:0 r100:0 r150:0]
+   REBUILD conveyor: 0/3 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=26 on_own_core=9 on_own_econ_tiles=16
+   builderHeal us   total=39
+-- defence reaction --
+   our first intrusion: r16 our sentinel built @(14, 14) d2=32
+   lazy first home-defence build after: r17 sentinel @(14, 17) d2own=17  LATENCY=1 rounds
+   lazy home-defence builds BEFORE intrusion: []
+-- cpu: tled lazy=0 us=0  execmax lazy=9342us us=6779us  execmean lazy=1556us us=401us
+-- final players: lazy ti=108 coll=1050 ammo=64 | us ti=76 coll=2060 ammo=62
+
+===== match 1a5e31e9 g4 ourver=v127 oppver=v83 our_won=True
+
+########## 1a5e31e9 g4  20x20  rounds=194  winner=A cond=core_destroyed  LAZY=seat B core@(16, 9)  US=seat A core@(2, 9) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(15, 10) rel=(-1, 1) d2own=2 d2enemy=170 dir=-
+   r4    gunner      @(15, 12) rel=(-1, 3) d2own=10 d2enemy=178 dir=W
+   r5    harvester   @(13, 9) rel=(-3, 0) d2own=9 d2enemy=121 dir=-
+   r7    conveyor    @(14, 9) rel=(-2, 0) d2own=4 d2enemy=144 dir=E
+   r11   sentinel    @(14, 10) rel=(-2, 1) d2own=5 d2enemy=145 dir=W
+   builder spawns lazy: n=8 rounds=[0, 1, 2, 3, 65, 119, 139, 177]
+   builder spawns us  : n=8 rounds=[0, 1, 2, 3, 4, 5, 129, 137]
+-- LAZY turrets (all) --
+   r4    gunner   #13   @(15, 12) d2own=10    d2enemy=178   HOME dir=W
+   r11   sentinel #32   @(14, 10) d2own=5     d2enemy=145   HOME dir=W
+   r158  sentinel #350  @(8, 12) d2own=73    d2enemy=45    FWD dir=E
+   r189  sentinel #413  @(19, 7) d2own=13    d2enemy=293   HOME dir=S
+-- US turrets (all) --
+   r11   sentinel #31   @(11, 10) d2own=82    d2enemy=26    FWD dir=E
+   r34   gunner   #71   @(2, 7) d2own=4     d2enemy=200   HOME dir=S
+   r57   gunner   #117  @(1, 8) d2own=2     d2enemy=226   HOME dir=E
+   r77   sentinel #158  @(2, 4) d2own=25    d2enemy=221   HOME dir=S
+   r87   sentinel #177  @(7, 8) d2own=26    d2enemy=82    HOME dir=W
+   r145  sentinel #320  @(13, 12) d2own=130   d2enemy=18    FWD dir=NE
+   r165  sentinel #366  @(19, 11) d2own=293   d2enemy=13    FWD dir=NW
+   r184  sentinel #405  @(18, 12) d2own=265   d2enemy=13    FWD dir=NW
+-- core LAZY: dmg=558 heal=+54 first_dmg=r12 delta_histogram={18: 31}
+      fire->core: sentinel #366 from (19, 11) x14 (d2 to victim core=13)
+      fire->core: sentinel #320 from (13, 12) x9 (d2 to victim core=18)
+      fire->core: sentinel #405 from (18, 12) x5 (d2 to victim core=13)
+      fire->core: sentinel #31 from (11, 10) x3 (d2 to victim core=26)
+      dmg rounds: r12..r193 n=31
+-- core US: untouched (0 dmg, heal +0)
+-- economy (lazy) --
+   harvester  built=9   died=0   alive[r50:4 r100:7 r150:9]
+   conveyor   built=38  died=0   alive[r50:13 r100:26 r150:34]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0]
+   builderHeal lazy total=36 on_own_core=14 on_own_econ_tiles=22
+   builderHeal us   total=79
+-- defence reaction --
+   our first intrusion: r11 our sentinel built @(11, 10) d2=26
+   lazy first home-defence build after: r11 sentinel @(14, 10) d2own=5  LATENCY=0 rounds
+   lazy home-defence builds BEFORE intrusion: [(4, 'gunner', (15, 12))]
+-- cpu: tled lazy=0 us=0  execmax lazy=7972us us=3981us  execmean lazy=1112us us=273us
+-- final players: lazy ti=20 coll=1460 ammo=63 | us ti=20 coll=1280 ammo=48
+
+===== match 1a5e31e9 g5 ourver=v127 oppver=v83 our_won=True
+
+########## 1a5e31e9 g5  10x10  rounds=275  winner=A cond=core_destroyed  LAZY=seat B core@(6, 6)  US=seat A core@(2, 2) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(7, 5) rel=(1, -1) d2own=2 d2enemy=34 dir=-
+   r3    gunner      @(6, 3) rel=(0, -3) d2own=9 d2enemy=17 dir=W
+   r4    harvester   @(3, 7) rel=(-3, 1) d2own=10 d2enemy=26 dir=-
+   r6    conveyor    @(4, 7) rel=(-2, 1) d2own=5 d2enemy=29 dir=E
+   r117  sentinel    @(7, 3) rel=(1, -3) d2own=10 d2enemy=26 dir=W
+   builder spawns lazy: n=6 rounds=[0, 1, 2, 3, 70, 97]
+   builder spawns us  : n=7 rounds=[0, 1, 2, 3, 4, 100, 188]
+-- LAZY turrets (all) --
+   r3    gunner   #12   @(6, 3) d2own=9     d2enemy=17    HOME dir=W
+   r4    gunner   #15   @(5, 4) d2own=5     d2enemy=13    HOME dir=NW
+   r10   gunner   #23   @(7, 3) d2own=10    d2enemy=26    HOME dir=NW
+   r17   gunner   #39   @(1, 8) d2own=29    d2enemy=37    HOME dir=N
+   r57   gunner   #86   @(7, 9) d2own=10    d2enemy=74    HOME dir=NE
+   r102  gunner   #133  @(3, 5) d2own=10    d2enemy=10    HOME dir=SE
+   r117  sentinel #150  @(7, 3) d2own=10    d2enemy=26    HOME dir=W
+   r133  sentinel #167  @(8, 3) d2own=13    d2enemy=37    HOME dir=W
+-- US turrets (all) --
+   r5    sentinel #17   @(0, 4) d2own=8     d2enemy=40    HOME dir=E
+   r41   gunner   #72   @(5, 1) d2own=10    d2enemy=26    HOME dir=SE
+   r108  sentinel #141  @(4, 3) d2own=5     d2enemy=13    HOME dir=SE
+   r148  gunner   #184  @(1, 6) d2own=17    d2enemy=25    HOME dir=S
+   r202  sentinel #220  @(2, 5) d2own=9     d2enemy=17    HOME dir=E
+   r224  sentinel #235  @(8, 4) d2own=40    d2enemy=8     FWD dir=SW
+   r269  sentinel #258  @(9, 5) d2own=58    d2enemy=10    FWD dir=SW
+-- core LAZY: dmg=792 heal=+288 first_dmg=r109 delta_histogram={18: 44}
+      fire->core: sentinel #235 from (8, 4) x25 (d2 to victim core=8)
+      fire->core: sentinel #141 from (4, 3) x16 (d2 to victim core=13)
+      fire->core: sentinel #258 from (9, 5) x3 (d2 to victim core=10)
+      dmg rounds: r109..r274 n=44
+-- core US: dmg=905 heal=+905 first_dmg=r5 delta_histogram={7: 119, 18: 4}
+      fire->core: gunner #12 from (6, 3) x117 (d2 to victim core=17)
+      fire->core: sentinel #150 from (7, 3) x3 (d2 to victim core=26)
+      fire->core: gunner #15 from (5, 4) x2 (d2 to victim core=13)
+      fire->core: sentinel #167 from (8, 3) x1 (d2 to victim core=37)
+      dmg rounds: r5..r272 n=123
+-- economy (lazy) --
+   harvester  built=2   died=0   alive[r50:2 r100:2 r150:2 r200:2]
+   conveyor   built=5   died=3   alive[r50:4 r100:4 r150:3 r200:2]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0]
+   REBUILD conveyor: 0/3 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=74 on_own_core=72 on_own_econ_tiles=0
+   builderHeal us   total=352
+-- defence reaction --
+   our first intrusion: r1 our bot #3 stepped to (5, 4) d2=5
+   lazy first home-defence build after: r3 gunner @(6, 3) d2own=9  LATENCY=2 rounds
+   lazy home-defence builds BEFORE intrusion: []
+-- cpu: tled lazy=0 us=0  execmax lazy=3197us us=1270us  execmean lazy=235us us=137us
+-- final players: lazy ti=0 coll=690 ammo=1 | us ti=9 coll=1190 ammo=55
+
+===== match a33654a2 g1 ourver=v125 oppver=v83 our_won=False
+
+########## a33654a2 g1  30x30  rounds=136  winner=A cond=core_destroyed  LAZY=seat A core@(2, 2)  US=seat B core@(26, 26) lazy_won=True
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(1, 1) rel=(-1, -1) d2own=2 d2enemy=1250 dir=-
+   r4    harvester   @(6, 2) rel=(4, 0) d2own=16 d2enemy=976 dir=-
+   r7    conveyor    @(5, 2) rel=(3, 0) d2own=9 d2enemy=1017 dir=W
+   r52   sentinel    @(29, 23) rel=(27, 21) d2own=1170 d2enemy=18 dir=NW
+   r58   gunner      @(28, 22) rel=(26, 20) d2own=1076 d2enemy=20 dir=NW
+   r61   barrier     @(27, 22) rel=(25, 20) d2own=1025 d2enemy=17 dir=-
+   builder spawns lazy: n=7 rounds=[0, 1, 2, 3, 4, 85, 125]
+   builder spawns us  : n=10 rounds=[0, 1, 2, 3, 4, 24, 52, 120, 125, 132]
+-- LAZY turrets (all) --
+   r52   sentinel #161  @(29, 23) d2own=1170  d2enemy=18    FWD dir=NW
+   r53   sentinel #163  @(29, 21) d2own=1090  d2enemy=34    FWD dir=W
+   r58   gunner   #181  @(28, 22) d2own=1076  d2enemy=20    FWD dir=NW
+   r60   gunner   #192  @(28, 21) d2own=1037  d2enemy=29    FWD dir=NE
+   r63   gunner   #201  @(28, 24) d2own=1160  d2enemy=8     FWD dir=SW
+   r130  sentinel #455  @(27, 21) d2own=986   d2enemy=26    FWD dir=S
+-- US turrets (all) --
+   r53   sentinel #165  @(28, 22) d2own=20    d2enemy=1076  HOME dir=SE
+   r57   sentinel #179  @(29, 20) d2own=45    d2enemy=1053  HOME dir=S
+-- core LAZY: untouched (0 dmg, heal +0)
+-- core US: dmg=509 heal=+0 first_dmg=r67 delta_histogram={7: 65, 18: 3}
+      fire->core: gunner #201 from (28, 24) x65 (d2 to victim core=8)
+      fire->core: sentinel #455 from (27, 21) x3 (d2 to victim core=26)
+      dmg rounds: r67..r135 n=68
+-- economy (lazy) --
+   harvester  built=7   died=0   alive[r50:6 r100:7]
+   conveyor   built=61  died=0   alive[r50:24 r100:49]
+   splitter   built=0   died=0   alive[r50:0 r100:0]
+   barrier    built=2   died=1   alive[r50:0 r100:1]
+   builderHeal lazy total=3 on_own_core=0 on_own_econ_tiles=0
+   builderHeal us   total=11
+-- defence reaction --
+   our units never intruded
+   lazy no-damage removals (crash / self_destruct / teardown): [(59, 'gunner', (28, 22)), (126, 'barrier', (27, 22))]
+-- cpu: tled lazy=0 us=0  execmax lazy=10344us us=8746us  execmean lazy=1764us us=4264us
+-- final players: lazy ti=171 coll=1690 ammo=9 | us ti=226 coll=980 ammo=24
+
+===== match a33654a2 g2 ourver=v125 oppver=v83 our_won=True
+
+########## a33654a2 g2  30x30  rounds=214  winner=B cond=core_destroyed  LAZY=seat A core@(2, 24)  US=seat B core@(26, 4) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(2, 26) rel=(0, 2) d2own=4 d2enemy=1060 dir=-
+   r10   harvester   @(3, 15) rel=(1, -9) d2own=82 d2enemy=650 dir=-
+   r12   conveyor    @(2, 15) rel=(0, -9) d2own=81 d2enemy=697 dir=S
+   r45   gunner      @(23, 4) rel=(21, -20) d2own=841 d2enemy=9 dir=E
+   builder spawns lazy: n=5 rounds=[0, 1, 2, 3, 4]
+   builder spawns us  : n=6 rounds=[0, 1, 2, 3, 4, 13]
+-- LAZY turrets (all) --
+   r45   gunner   #118  @(23, 4) d2own=841   d2enemy=9     FWD dir=E
+   r46   gunner   #123  @(22, 5) d2own=761   d2enemy=17    FWD dir=S
+   r48   gunner   #130  @(3, 27) d2own=10    d2enemy=1058  HOME dir=E
+-- US turrets (all) --
+   r45   sentinel #120  @(22, 0) d2own=32    d2enemy=976   HOME dir=S
+   r48   gunner   #131  @(22, 4) d2own=16    d2enemy=800   HOME dir=S
+   r106  gunner   #279  @(25, 3) d2own=2     d2enemy=970   HOME dir=S
+   r114  gunner   #293  @(24, 5) d2own=5     d2enemy=845   HOME dir=SW
+   r129  sentinel #313  @(22, 7) d2own=25    d2enemy=689   HOME dir=E
+   r138  sentinel #324  @(23, 8) d2own=25    d2enemy=697   HOME dir=NE
+   r148  sentinel #336  @(24, 8) d2own=20    d2enemy=740   HOME dir=N
+   r168  sentinel #364  @(1, 27) d2own=1154  d2enemy=10    FWD dir=NE
+   r202  sentinel #398  @(0, 26) d2own=1160  d2enemy=8     FWD dir=NE
+-- core LAZY: dmg=504 heal=+0 first_dmg=r169 delta_histogram={18: 28}
+      fire->core: sentinel #364 from (1, 27) x23 (d2 to victim core=10)
+      fire->core: sentinel #398 from (0, 26) x5 (d2 to victim core=8)
+      dmg rounds: r169..r213 n=28
+-- core US: dmg=49 heal=+49 first_dmg=r46 delta_histogram={7: 7}
+      fire->core: gunner #118 from (23, 4) x7 (d2 to victim core=9)
+      dmg rounds: r46..r53 n=7
+-- economy (lazy) --
+   harvester  built=5   died=0   alive[r50:4 r100:5 r150:5 r200:5]
+   conveyor   built=68  died=2   alive[r50:27 r100:49 r150:57 r200:66]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0]
+   REBUILD conveyor: 0/2 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=1 on_own_core=0 on_own_econ_tiles=1
+   builderHeal us   total=34
+-- defence reaction --
+   our first intrusion: r37 our bot #4 stepped to (4, 22) d2=8
+   lazy first home-defence build after: r48 gunner @(3, 27) d2own=10  LATENCY=11 rounds
+   lazy home-defence builds BEFORE intrusion: []
+   lazy no-damage removals (crash / self_destruct / teardown): [(202, 'builder_bot', (24, 9))]
+-- cpu: tled lazy=28 us=0  execmax lazy=11459us us=8762us  execmean lazy=2195us us=1108us
+-- final players: lazy ti=6 coll=340 ammo=4 | us ti=65 coll=1390 ammo=35
+
+===== match a33654a2 g3 ourver=v125 oppver=v83 our_won=True
+
+########## a33654a2 g3  25x25  rounds=126  winner=B cond=core_destroyed  LAZY=seat A core@(5, 5)  US=seat B core@(18, 18) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(5, 4) rel=(0, -1) d2own=1 d2enemy=365 dir=-
+   r5    harvester   @(10, 6) rel=(5, 1) d2own=26 d2enemy=208 dir=-
+   r7    conveyor    @(9, 6) rel=(4, 1) d2own=17 d2enemy=225 dir=W
+   r25   gunner      @(19, 15) rel=(14, 10) d2own=296 d2enemy=10 dir=S
+   builder spawns lazy: n=5 rounds=[0, 1, 2, 3, 4]
+   builder spawns us  : n=6 rounds=[0, 1, 2, 3, 4, 5]
+-- LAZY turrets (all) --
+   r25   gunner   #64   @(19, 15) d2own=296   d2enemy=10    FWD dir=S
+   r26   gunner   #66   @(19, 13) d2own=260   d2enemy=26    FWD dir=SW
+-- US turrets (all) --
+   r27   sentinel #71   @(14, 15) d2own=25    d2enemy=181   HOME dir=E
+   r82   sentinel #242  @(4, 3) d2own=421   d2enemy=5     FWD dir=SE
+   r112  sentinel #296  @(3, 4) d2own=421   d2enemy=5     FWD dir=SE
+-- core LAZY: dmg=504 heal=+0 first_dmg=r83 delta_histogram={18: 28}
+      fire->core: sentinel #242 from (4, 3) x22 (d2 to victim core=5)
+      fire->core: sentinel #296 from (3, 4) x6 (d2 to victim core=5)
+      dmg rounds: r83..r125 n=28
+-- core US: dmg=35 heal=+35 first_dmg=r26 delta_histogram={7: 5}
+      fire->core: gunner #64 from (19, 15) x5 (d2 to victim core=10)
+      dmg rounds: r26..r30 n=5
+-- economy (lazy) --
+   harvester  built=9   died=0   alive[r50:7 r100:9]
+   conveyor   built=42  died=4   alive[r50:21 r100:37]
+   splitter   built=0   died=0   alive[r50:0 r100:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0]
+   REBUILD conveyor: 0/4 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=1 on_own_core=0 on_own_econ_tiles=1
+   builderHeal us   total=23
+-- defence reaction --
+   our first intrusion: r26 our bot #4 stepped to (7, 7) d2=8
+   lazy home-defence build after intrusion: NONE
+   lazy home-defence builds BEFORE intrusion: []
+-- cpu: tled lazy=0 us=0  execmax lazy=8526us us=6684us  execmean lazy=1239us us=547us
+-- final players: lazy ti=13 coll=630 ammo=46 | us ti=46 coll=790 ammo=60
+
+===== match a33654a2 g4 ourver=v125 oppver=v83 our_won=True
+
+########## a33654a2 g4  20x20  rounds=676  winner=B cond=core_destroyed  LAZY=seat A core@(2, 9)  US=seat B core@(16, 9) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(3, 8) rel=(1, -1) d2own=2 d2enemy=170 dir=-
+   r4    gunner      @(5, 10) rel=(3, 1) d2own=10 d2enemy=122 dir=E
+   r6    harvester   @(3, 14) rel=(1, 5) d2own=26 d2enemy=194 dir=-
+   r8    conveyor    @(3, 13) rel=(1, 4) d2own=17 d2enemy=185 dir=N
+   r10   sentinel    @(6, 6) rel=(4, -3) d2own=25 d2enemy=109 dir=S
+   r321  launcher    @(7, 4) rel=(5, -5) d2own=50 d2enemy=106 dir=-
+   builder spawns lazy: n=12 rounds=[0, 1, 2, 3, 125, 184, 200, 242, 260, 280, 293, 325]
+   builder spawns us  : n=19 rounds=[0, 1, 2, 3, 4, 8, 151, 181, 228, 322, 344, 394, 424, 462]...
+-- LAZY turrets (all) --
+   r4    gunner   #12   @(5, 10) d2own=10    d2enemy=122   HOME dir=E
+   r7    gunner   #16   @(5, 8) d2own=10    d2enemy=122   HOME dir=SE
+   r10   gunner   #25   @(13, 8) d2own=122   d2enemy=10    FWD dir=S
+   r10   sentinel #27   @(6, 6) d2own=25    d2enemy=109   HOME dir=S
+   r216  sentinel #548  @(5, 13) d2own=25    d2enemy=137   HOME dir=NE
+   r321  launcher #825  @(7, 4) d2own=50    d2enemy=106   HOME dir=-
+   r353  launcher #916  @(15, 2) d2own=218   d2enemy=50    FWD dir=-
+   r408  sentinel #1057 @(8, 10) d2own=37    d2enemy=65    HOME dir=SW
+   r409  sentinel #1059 @(7, 11) d2own=29    d2enemy=85    HOME dir=SW
+   r592  sentinel #1520 @(0, 7) d2own=8     d2enemy=260   HOME dir=E
+   r594  sentinel #1525 @(1, 5) d2own=17    d2enemy=241   HOME dir=SE
+-- US turrets (all) --
+   r10   sentinel #26   @(6, 10) d2own=101   d2enemy=17    FWD dir=W
+   r67   gunner   #124  @(14, 12) d2own=13    d2enemy=153   HOME dir=NW
+   r73   sentinel #135  @(11, 10) d2own=26    d2enemy=82    HOME dir=NE
+   r85   sentinel #160  @(10, 11) d2own=40    d2enemy=68    HOME dir=NE
+   r92   sentinel #175  @(13, 8) d2own=10    d2enemy=122   HOME dir=E
+   r96   gunner   #184  @(15, 7) d2own=5     d2enemy=173   HOME dir=S
+   r111  gunner   #213  @(12, 12) d2own=25    d2enemy=109   HOME dir=NE
+   r118  gunner   #233  @(13, 13) d2own=25    d2enemy=137   HOME dir=N
+   r128  sentinel #262  @(11, 13) d2own=41    d2enemy=97    HOME dir=NE
+   r138  sentinel #290  @(13, 12) d2own=18    d2enemy=130   HOME dir=N
+   r168  launcher #392  @(11, 7) d2own=29    d2enemy=85    HOME dir=-
+   r191  sentinel #471  @(7, 13) d2own=97    d2enemy=41    FWD dir=NW
+   r204  sentinel #518  @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r250  gunner   #634  @(17, 6) d2own=10    d2enemy=234   HOME dir=NW
+   r298  gunner   #758  @(13, 6) d2own=18    d2enemy=130   HOME dir=S
+   r313  launcher #803  @(7, 2) d2own=130   d2enemy=74    FWD dir=-
+   r332  launcher #858  @(18, 3) d2own=40    d2enemy=292   HOME dir=-
+   r358  sentinel #928  @(18, 2) d2own=53    d2enemy=305   HOME dir=SW
+   r371  sentinel #961  @(17, 3) d2own=37    d2enemy=261   HOME dir=SW
+   r407  sentinel #1051 @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r473  sentinel #1221 @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r590  sentinel #1512 @(3, 7) d2own=173   d2enemy=5     FWD dir=S
+   r593  sentinel #1522 @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r594  sentinel #1526 @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r665  sentinel #1702 @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r666  sentinel #1705 @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r669  sentinel #1714 @(6, 12) d2own=109   d2enemy=25    FWD dir=NW
+   r672  sentinel #1724 @(5, 11) d2own=125   d2enemy=13    FWD dir=NW
+-- core LAZY: dmg=4716 heal=+4210 first_dmg=r11 delta_histogram={18: 262}
+      fire->core: sentinel #471 from (7, 13) x242 (d2 to victim core=41)
+      fire->core: sentinel #518 from (6, 12) x9 (d2 to victim core=25)
+      fire->core: sentinel #26 from (6, 10) x3 (d2 to victim core=17)
+      fire->core: sentinel #1512 from (3, 7) x3 (d2 to victim core=5)
+      fire->core: sentinel #1724 from (5, 11) x2 (d2 to victim core=13)
+      fire->core: sentinel #1051 from (6, 12) x1 (d2 to victim core=25)
+      fire->core: sentinel #1526 from (6, 12) x1 (d2 to victim core=25)
+      fire->core: sentinel #1705 from (6, 12) x1 (d2 to victim core=25)
+      dmg rounds: r11..r675 n=262
+-- core US: untouched (0 dmg, heal +0)
+-- economy (lazy) --
+   harvester  built=6   died=0   alive[r50:2 r100:2 r150:3 r200:6 r300:6 r500:6]
+   conveyor   built=56  died=7   alive[r50:8 r100:18 r150:35 r200:51 r300:50 r500:49]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0 r200:0 r300:0 r500:0]
+   REBUILD conveyor: 0/7 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=1085 on_own_core=1070 on_own_econ_tiles=12
+   builderHeal us   total=104
+-- defence reaction --
+   our first intrusion: r10 our sentinel built @(6, 10) d2=17
+   lazy first home-defence build after: r10 sentinel @(6, 6) d2own=25  LATENCY=0 rounds
+   lazy home-defence builds BEFORE intrusion: [(4, 'gunner', (5, 10)), (7, 'gunner', (5, 8))]
+   lazy no-damage removals (crash / self_destruct / teardown): [(279, 'builder_bot', (2, 8))]
+-- cpu: tled lazy=0 us=0  execmax lazy=9282us us=4282us  execmean lazy=1075us us=180us
+-- final players: lazy ti=2224 coll=5650 ammo=60 | us ti=113 coll=9260 ammo=70
+
+===== match a33654a2 g5 ourver=v125 oppver=v83 our_won=True
+
+########## a33654a2 g5  10x10  rounds=158  winner=B cond=core_destroyed  LAZY=seat A core@(2, 2)  US=seat B core@(6, 6) lazy_won=False
+-- LAZY opening (first build per kind; rel = pos - own core NW) --
+   r0    builder_bot @(3, 1) rel=(1, -1) d2own=2 d2enemy=34 dir=-
+   r4    gunner      @(3, 5) rel=(1, 3) d2own=10 d2enemy=10 dir=E
+   r6    harvester   @(6, 0) rel=(4, -2) d2own=20 d2enemy=36 dir=-
+   r7    sentinel    @(6, 2) rel=(4, 0) d2own=16 d2enemy=16 dir=SW
+   r37   conveyor    @(3, 8) rel=(1, 6) d2own=37 d2enemy=13 dir=W
+   builder spawns lazy: n=4 rounds=[0, 1, 2, 3]
+   builder spawns us  : n=7 rounds=[0, 1, 2, 3, 4, 75, 82]
+-- LAZY turrets (all) --
+   r4    gunner   #12   @(3, 5) d2own=10    d2enemy=10    HOME dir=E
+   r5    gunner   #13   @(6, 3) d2own=17    d2enemy=9     FWD dir=S
+   r7    sentinel #19   @(6, 2) d2own=16    d2enemy=16    HOME dir=SW
+   r7    sentinel #20   @(5, 3) d2own=10    d2enemy=10    HOME dir=SW
+-- US turrets (all) --
+   r5    sentinel #15   @(5, 8) d2own=5     d2enemy=45    HOME dir=N
+   r7    sentinel #18   @(4, 4) d2own=8     d2enemy=8     HOME dir=NW
+   r92   sentinel #71   @(5, 6) d2own=1     d2enemy=25    HOME dir=NW
+-- core LAZY: dmg=630 heal=+128 first_dmg=r8 delta_histogram={18: 35}
+      fire->core: sentinel #71 from (5, 6) x33 (d2 to victim core=25)
+      fire->core: sentinel #18 from (4, 4) x2 (d2 to victim core=8)
+      dmg rounds: r8..r157 n=35
+-- core US: dmg=392 heal=+360 first_dmg=r6 delta_histogram={7: 56}
+      fire->core: gunner #13 from (6, 3) x56 (d2 to victim core=9)
+      dmg rounds: r6..r157 n=56
+-- economy (lazy) --
+   harvester  built=1   died=0   alive[r50:1 r100:1 r150:1]
+   conveyor   built=9   died=1   alive[r50:4 r100:9 r150:8]
+   splitter   built=0   died=0   alive[r50:0 r100:0 r150:0]
+   barrier    built=0   died=0   alive[r50:0 r100:0 r150:0]
+   REBUILD conveyor: 0/1 same-tile rebuilds, latencies=[]
+   builderHeal lazy total=33 on_own_core=32 on_own_econ_tiles=0
+   builderHeal us   total=105
+-- defence reaction --
+   our first intrusion: r5 our harvester built @(3, 7) d2=26
+   lazy first home-defence build after: r5 gunner @(6, 3) d2own=17  LATENCY=0 rounds
+   lazy home-defence builds BEFORE intrusion: [(4, 'gunner', (3, 5))]
+-- cpu: tled lazy=0 us=0  execmax lazy=3057us us=1097us  execmean lazy=344us us=181us
+-- final players: lazy ti=6 coll=0 ammo=5 | us ti=77 coll=530 ammo=50

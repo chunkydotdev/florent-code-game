@@ -43305,3 +43305,31 @@ day's first licensed comparative read and may be cited as such. The
 contamination fix's direction is also on the record: CAL-3 40→0 (my own relay
 of "CAL-3 at 40" is corrected in-channel), CAL-2 290→280 after leg exclusion,
 holder filter driven both ways.
+
+## RESEARCH 2026-08-13T16:28:55Z — THREE OPPONENT PROFILES BANKED (subagent, verified), 2 QUEUE ROWS, AND A ROAD-NARROWING NEGATIVE
+`opus` agent, zero games spent (the tri-arm's own pinned replays). Docs:
+`OPP-coreflood-profile`, `OPP-juusto-profile`, `OPP-lingling40-profile`
+(all 2026-08-13). **Every load-bearing claim re-derived by me at the primary
+before banking (Q10) — all three reproduced exactly:**
+* Coreflood TLEs **5 of 6 900-area games, 0 of 9 small** (max 11,459µs) ✓
+* LingLing40 siege turrets **median d²=5, 45 of 80 at ≤5, 14 at ≤2** ✓
+* Juusto **11,939 unspent ammo** in one game, **>200 in 4 of 15** ✓
+
+**⭐ AND MY RECOUNT FOUND WHAT THE AGENT'S PER-OPPONENT SCOPE COULD NOT:
+Leviathan TLEs 6/6 on 900-area AND 7/9 on small — 12,539 TLE'd turns against
+Coreflood's 382.** The CPU story is not a map-size story; it is a TEAM story.
+
+**⛔ ROAD-NARROWING NEGATIVE — the obvious CPU-denial lever is measured dead.**
+`corr(OUR builds, THEIR TLE'd turns) = −0.130` on 900-area (n=30) and
+`+0.084` on small (n=45). **Putting more of our stuff on the map does not cost
+them CPU.** Observational, range-restricted, so it PRIORITISES rather than
+closes — but the CPU road now needs a lever that is not entity count, and the
+dead lever is worth more than the lead was.
+
+**QUEUE +2 (32 unblocked):** **#45 kill the BUILDER not the ladder** — two
+teams independently walk point-blank gunner ladders (median d²=5) with 1-2
+round rebuild latency, so every turret we kill is refunded before our next
+action; **#46 their siege may be decorative** — Juusto builds 44 siege turrets
+of which 15 ever fire at our core while banking 11,939 ammo, and our scorer
+avoids turrets regardless of whether they have ever fired. **#46 ships with its
+own size caveat and a precondition cut that costs zero games.**

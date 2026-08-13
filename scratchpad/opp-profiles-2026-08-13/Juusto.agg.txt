@@ -1,0 +1,69 @@
+tag	map	rounds	cond	we_won	harv1	harv1_d2	harv_n	harv_lost	conv_n	split_n	barr_n	bb_n	bb_r30	tur1	fwd1	fwd1_d2enemy	n_gun	n_sen	n_lau	n_fwd	tur_dead	tur_selfrm	tur_life	ourcore_dmg	ourcore_heal	ourcore_first	ourcore_dead	batk_core	heal_n	heal_core	heal_econ	heal_tur	heal_us	conv_cut	conv_reb	intrude	predef	def_lat	ourfwd_n	ourfwd_died	ourfwd_life	shot_lat	cpu_max	tled	cpu_max_us_ours	tled_ours	ti_coll	ammo_end
+2cf0df8eg1	30x30	1000	titanium_collected	False	6	10	5	0	31	0	0	10	5	47	47	20	0	13	0	13	11	0	7	162	0	124	False	0	25	0	6	24	1	2	0	None	0	None	0	0	None	None	2363	0	8776	0	12110	11939
+2cf0df8eg2	30x30	1000	titanium_collected	True	None	None	0	0	62	0	0	4	4	41	41	16	0	1	0	1	1	0	113	828	828	42	False	0	0	0	0	0	289	0	0	None	0	None	3	0	None	None	1893	0	8755	0	0	40
+2cf0df8eg3	25x25	194	core_destroyed	False	8	16	2	0	11	0	1	4	4	22	22	16	1	2	0	2	0	0	None	1754	1252	23	True	103	46	31	15	0	313	1	0	14	0	9	1	1	25	20	2055	0	6368	0	850	10
+2cf0df8eg4	20x20	114	core_destroyed	False	8	16	3	0	13	0	5	5	4	14	14	25	2	3	0	4	0	0	None	514	0	64	True	86	91	41	50	0	11	1	1	11	0	5	1	1	18	6	1880	0	3081	0	760	29
+2cf0df8eg5	10x10	1000	titanium_collected	False	6	18	1	0	10	0	0	4	4	3	None	None	1	1	0	0	0	0	None	190	16	55	False	95	1122	0	9	1113	11	0	0	2	0	1	1	0	None	None	1610	0	990	0	2460	40
+c2e36a20g1	30x30	127	core_destroyed	False	6	16	5	0	23	0	4	5	5	46	46	17	1	4	0	4	0	0	None	504	0	99	True	0	92	66	26	0	2	1	1	76	0	4	3	2	12.5	7.5	2444	0	8789	0	1200	289
+c2e36a20g2	30x30	221	core_destroyed	True	None	None	0	0	5	0	0	4	4	43	43	16	1	1	0	1	0	0	None	990	970	44	False	0	29	29	0	0	255	1	0	40	0	7	3	1	13	3	1889	0	8747	0	0	1
+c2e36a20g3	25x25	101	core_destroyed	True	6	20	2	0	10	0	7	4	4	22	22	16	0	2	0	2	0	0	None	414	20	29	False	0	0	0	0	0	21	3	0	26	0	None	2	0	None	None	2033	0	6727	0	160	1
+c2e36a20g4	20x20	136	core_destroyed	True	10	17	2	0	9	0	3	4	4	13	13	25	1	1	0	1	0	0	None	0	0	None	False	0	13	13	0	0	95	4	0	15	0	5	3	1	17	12	1875	0	3437	0	180	22
+c2e36a20g5	10x10	189	core_destroyed	False	6	16	3	0	7	0	2	5	4	3	3	5	1	3	0	4	0	0	None	1843	1332	32	True	36	16	0	3	8	354	1	0	6	1	1	0	0	None	None	1385	0	1152	0	1290	238
+e0beff8dg1	30x30	168	core_destroyed	False	6	16	5	0	21	0	3	8	5	46	46	17	0	3	0	3	1	0	7	900	400	65	True	0	0	0	0	0	125	1	0	None	0	None	0	0	None	None	2442	0	8831	0	1720	520
+e0beff8dg2	30x30	201	core_destroyed	True	None	None	0	0	15	0	0	4	4	41	41	26	1	1	0	1	0	0	None	0	0	None	False	0	23	23	0	0	8	0	0	47	1	None	2	1	10	4	1923	0	8769	0	0	40
+e0beff8dg3	25x25	77	core_destroyed	False	6	20	2	0	11	0	7	4	4	20	20	26	0	2	0	2	0	0	None	504	0	22	True	0	27	17	10	0	0	2	2	28	0	None	1	1	34	None	1971	0	6783	0	260	10
+e0beff8dg4	20x20	200	core_destroyed	False	10	17	5	0	31	0	5	6	5	10	10	16	1	4	0	4	1	0	6	612	104	166	True	0	50	0	46	2	111	1	1	17	0	123	1	1	24	19	2029	0	3083	0	1420	100
+e0beff8dg5	10x10	305	core_destroyed	True	6	16	2	0	10	0	2	5	5	3	3	5	2	1	0	1	1	0	2	30	0	290	False	15	0	0	0	0	251	2	0	5	1	2	2	1	9	4	1430	0	1047	0	150	40
+
+--- killers (turret tiles that shot our core footprint) ---
+2cf0df8eg1 [('sentinel', 327, (5, 5), 9, 124, 18)]
+2cf0df8eg2 [('sentinel', 57, (6, 24), 46, 42, 16)]
+2cf0df8eg3 [('sentinel', 42, (9, 5), 86, 23, 16)]
+2cf0df8eg4 [('sentinel', 124, (4, 11), 10, 95, 8), ('sentinel', 125, (2, 8), 9, 95, 1)]
+2cf0df8eg5 []
+c2e36a20g1 [('sentinel', 233, (29, 23), 14, 99, 18), ('sentinel', 235, (28, 24), 14, 100, 8)]
+c2e36a20g2 [('sentinel', 67, (22, 4), 55, 44, 16)]
+c2e36a20g3 [('sentinel', 52, (18, 14), 23, 29, 16)]
+c2e36a20g4 []
+c2e36a20g5 [('gunner', 44, (5, 5), 145, 32, 2), ('sentinel', 122, (6, 9), 42, 104, 9)]
+e0beff8dg1 [('sentinel', 150, (29, 23), 50, 65, 18)]
+e0beff8dg2 []
+e0beff8dg3 [('sentinel', 47, (18, 14), 28, 22, 16)]
+e0beff8dg4 [('sentinel', 275, (18, 11), 17, 166, 8), ('sentinel', 276, (19, 12), 17, 167, 18)]
+e0beff8dg5 []
+
+--- no-damage removals (opp) ---
+
+--- builder spawn rounds (opp, first 8) ---
+2cf0df8eg1 [0, 1, 2, 3, 11, 98, 103, 133]
+2cf0df8eg2 [0, 1, 2, 3]
+2cf0df8eg3 [0, 1, 2, 3]
+2cf0df8eg4 [0, 1, 2, 3, 66]
+2cf0df8eg5 [0, 1, 2, 3]
+c2e36a20g1 [0, 1, 2, 3, 12]
+c2e36a20g2 [0, 1, 2, 3]
+c2e36a20g3 [0, 1, 2, 3]
+c2e36a20g4 [0, 1, 2, 3]
+c2e36a20g5 [0, 1, 2, 3, 72]
+e0beff8dg1 [0, 1, 2, 3, 12, 78, 84, 167]
+e0beff8dg2 [0, 1, 2, 3]
+e0beff8dg3 [0, 1, 2, 3]
+e0beff8dg4 [0, 1, 2, 3, 17, 127]
+e0beff8dg5 [0, 1, 2, 3, 16]
+
+--- SUMMARY n=15 games ---
+  harv1          n=12 med=6.0 min=6 max=10 vals=[6, 6, 6, 6, 6, 6, 6, 6, 8, 8, 10, 10]
+  tur1           n=15 med=22 min=3 max=47 vals=[3, 3, 3, 10, 13, 14, 20, 22, 22, 41, 41, 43, 46, 46, 47]
+  fwd1           n=14 med=22.0 min=3 max=47 vals=[3, 3, 10, 13, 14, 20, 22, 22, 41, 41, 43, 46, 46, 47]
+  fwd1_d2enemy   n=14 med=16.5 min=5 max=26 vals=[5, 5, 16, 16, 16, 16, 16, 17, 17, 20, 25, 25, 26, 26]
+  def_lat        n= 9 med=5 min=1 max=123 vals=[1, 1, 2, 4, 5, 5, 7, 9, 123]
+  tur_life       n= 5 med=7 min=2 max=113 vals=[2, 6, 7, 7, 113]
+  ourfwd_life    n= 9 med=17 min=9 max=34 vals=[9, 10, 12.5, 13, 17, 18, 24, 25, 34]
+  shot_lat       n= 8 med=6.8 min=3 max=20 vals=[3, 4, 4, 6, 7.5, 12, 19, 20]
+  cpu_max        n=15 med=1923 min=1385 max=2444 vals=[1385, 1430, 1610, 1875, 1880, 1889, 1893, 1923, 1971, 2029, 2033, 2055, 2363, 2442, 2444]
+  tled           n=15 med=0 min=0 max=0 vals=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  heal_n         n=15 med=25 min=0 max=1122 vals=[0, 0, 0, 0, 13, 16, 23, 25, 27, 29, 46, 50, 91, 92, 1122]
+  heals: core=220 econ=165 turret=1147 total=1534
+  turrets: gun=12 sen=42 lau=0 fwd=43 dead=15 selfrm=0
+  our core died in 7/15; conv cut 20 rebuilt 5; harv built 37 lost 0
+  predef>0 in 3/15 games; splitters 0; barriers 39

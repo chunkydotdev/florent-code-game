@@ -1,0 +1,110 @@
+####  Juusto
+
+== 2cf0df8eg1 30x30 map=60e11efa r=1000 cond=titanium_collected we_won=False ore_n=16 nearest_ore_d2=[10, 10, 36, 52]
+   harvesters=[(6, (23, 27), 10), (6, (27, 23), 10), (18, (27, 18), 65), (37, (22, 20), 52), (61, (18, 26), 64)]
+   ammo converts n=721 first=[(11, 20), (12, 20), (48, 10), (49, 10)] total=12139
+   siege turrets (d2<=26 of OUR core) n=12: [(47, 'sentinel', (6, 0), 20, 119), (48, 'sentinel', (5, 1), 10, 122), (92, 'sentinel', (7, 3), 26, 259), (104, 'sentinel', (6, 3), 17, 293), (117, 'sentinel', (5, 5), 18, 327), (118, 'sentinel', (5, 3), 10, 330), (191, 'sentinel', (5, 0), 13, 510), (191, 'sentinel', (5, 1), 10, 511), (192, 'sentinel', (6, 0), 20, 514), (195, 'sentinel', (5, 1), 10, 526)]
+   siege replacement latency after death: [1, 1, 2, 2, 6, 7, 37, 50, 58]
+   heals on own turret tiles: [((6, 0), 12), ((6, 3), 6), ((5, 1), 6)]
+
+== 2cf0df8eg2 30x30 map=5ede4adb r=1000 cond=titanium_collected we_won=True ore_n=16 nearest_ore_d2=[90, 100, 100, 125]
+   harvesters=[]
+   ammo converts n=42 first=[(42, 10), (43, 10), (44, 10), (45, 10)] total=360
+   siege turrets (d2<=26 of OUR core) n=1: [(41, 'sentinel', (6, 24), 16, 57)]
+   OURFWD launcher r746@(20, 18) d2theircore=232: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+   OURFWD launcher r752@(22, 23) d2theircore=377: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+   OURFWD launcher r905@(13, 5) d2theircore=170: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+
+== 2cf0df8eg3 25x25 map=99d1b5f3 r=194 cond=core_destroyed we_won=False ore_n=30 nearest_ore_d2=[16, 18, 26, 26]
+   harvesters=[(8, (14, 18), 16), (16, (13, 19), 26)]
+   ammo converts n=83 first=[(12, 20), (13, 20), (24, 6), (26, 10)] total=774
+   siege turrets (d2<=26 of OUR core) n=1: [(22, 'sentinel', (9, 5), 16, 42)]
+   OURFWD sentinel r14@(14, 14) d2theircore=32: first_shot=34 first_builder_atk=None n_atk=0 died_r=39
+
+== 2cf0df8eg4 20x20 map=12f9036e r=114 cond=core_destroyed we_won=False ore_n=20 nearest_ore_d2=[9, 10, 16, 25]
+   harvesters=[(8, (16, 5), 16), (8, (13, 10), 10), (17, (13, 9), 9)]
+   ammo converts n=23 first=[(13, 20), (14, 20), (15, 20), (16, 20)] total=221
+   siege turrets (d2<=26 of OUR core) n=4: [(14, 'sentinel', (6, 6), 25, 32), (94, 'sentinel', (4, 11), 8, 124), (94, 'sentinel', (2, 8), 1, 125), (95, 'gunner', (4, 8), 5, 129)]
+   OURFWD sentinel r11@(11, 9) d2theircore=25: first_shot=17 first_builder_atk=None n_atk=0 died_r=29
+
+== 2cf0df8eg5 10x10 map=5ff3ef96 r=1000 cond=titanium_collected we_won=False ore_n=6 nearest_ore_d2=[10, 16, 18, 29]
+   harvesters=[(6, (3, 9), 18)]
+   ammo converts n=15 first=[(4, 20), (5, 10), (6, 10), (8, 10)] total=126
+   siege turrets (d2<=26 of OUR core) n=2: [(3, 'sentinel', (5, 6), 25, 11), (36, 'gunner', (4, 6), 20, 50)]
+   heals on own turret tiles: [((5, 6), 1113)]
+   OURFWD sentinel r88@(5, 8) d2theircore=5: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+
+== c2e36a20g1 30x30 map=60e11efa r=127 cond=core_destroyed we_won=False ore_n=16 nearest_ore_d2=[16, 16, 50, 74]
+   harvesters=[(6, (2, 6), 16), (6, (6, 2), 16), (17, (3, 9), 50), (31, (2, 11), 81), (45, (7, 9), 74)]
+   ammo converts n=40 first=[(11, 20), (12, 20), (47, 10), (48, 20)] total=398
+   siege turrets (d2<=26 of OUR core) n=4: [(46, 'sentinel', (27, 22), 17, 117), (75, 'sentinel', (27, 21), 26, 189), (98, 'sentinel', (29, 23), 18, 233), (99, 'sentinel', (28, 24), 8, 235)]
+   OURFWD sentinel r73@(7, 6) d2theircore=41: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+   OURFWD sentinel r76@(6, 5) d2theircore=25: first_shot=88 first_builder_atk=None n_atk=0 died_r=93
+   OURFWD sentinel r78@(7, 3) d2theircore=26: first_shot=81 first_builder_atk=None n_atk=0 died_r=86
+
+== c2e36a20g2 30x30 map=5ede4adb r=221 cond=core_destroyed we_won=True ore_n=16 nearest_ore_d2=[80, 82, 106, 145]
+   harvesters=[]
+   ammo converts n=22 first=[(44, 10), (45, 10), (46, 10), (47, 10)] total=196
+   siege turrets (d2<=26 of OUR core) n=1: [(43, 'sentinel', (22, 4), 16, 67)]
+   OURFWD sentinel r45@(5, 22) d2theircore=13: first_shot=48 first_builder_atk=None n_atk=0 died_r=58
+   OURFWD sentinel r185@(1, 22) d2theircore=5: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+   OURFWD sentinel r200@(0, 23) d2theircore=5: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+
+== c2e36a20g3 25x25 map=99d1b5f3 r=101 cond=core_destroyed we_won=True ore_n=30 nearest_ore_d2=[20, 26, 32, 36]
+   harvesters=[(6, (1, 7), 20), (24, (11, 5), 36)]
+   ammo converts n=17 first=[(16, 20), (17, 20), (30, 20), (31, 9)] total=190
+   siege turrets (d2<=26 of OUR core) n=2: [(22, 'sentinel', (18, 14), 16, 52), (23, 'sentinel', (19, 13), 26, 56)]
+   OURFWD sentinel r60@(7, 3) d2theircore=8: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+   OURFWD sentinel r85@(8, 4) d2theircore=10: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+
+== c2e36a20g4 20x20 map=12f9036e r=136 cond=core_destroyed we_won=True ore_n=20 nearest_ore_d2=[16, 17, 17, 26]
+   harvesters=[(10, (3, 5), 17), (17, (6, 10), 17)]
+   ammo converts n=17 first=[(14, 10), (15, 10), (16, 10), (17, 10)] total=136
+   siege turrets (d2<=26 of OUR core) n=1: [(13, 'sentinel', (12, 6), 25, 29)]
+   OURFWD sentinel r11@(8, 10) d2theircore=37: first_shot=23 first_builder_atk=None n_atk=0 died_r=28
+   OURFWD sentinel r108@(6, 12) d2theircore=25: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+   OURFWD sentinel r117@(4, 12) d2theircore=13: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+
+== c2e36a20g5 10x10 map=5ff3ef96 r=189 cond=core_destroyed we_won=False ore_n=6 nearest_ore_d2=[16, 20, 26, 37]
+   harvesters=[(6, (6, 2), 16), (11, (8, 1), 37), (17, (6, 0), 20)]
+   ammo converts n=58 first=[(4, 10), (5, 10), (6, 10), (7, 10)] total=461
+   siege turrets (d2<=26 of OUR core) n=4: [(3, 'sentinel', (5, 4), 5, 11), (24, 'gunner', (5, 5), 2, 44), (102, 'sentinel', (5, 8), 5, 120), (103, 'sentinel', (6, 9), 9, 122)]
+   heals on own turret tiles: [((5, 8), 5), ((6, 9), 3)]
+
+== e0beff8dg1 30x30 map=60e11efa r=168 cond=core_destroyed we_won=False ore_n=16 nearest_ore_d2=[16, 16, 50, 74]
+   harvesters=[(6, (2, 6), 16), (6, (6, 2), 16), (17, (3, 9), 50), (31, (2, 11), 81), (45, (7, 9), 74)]
+   ammo converts n=73 first=[(11, 20), (12, 20), (47, 10), (48, 20)] total=863
+   siege turrets (d2<=26 of OUR core) n=3: [(46, 'sentinel', (27, 22), 17, 112), (58, 'sentinel', (29, 23), 18, 150), (138, 'sentinel', (27, 21), 26, 342)]
+   siege replacement latency after death: [5]
+
+== e0beff8dg2 30x30 map=5ede4adb r=201 cond=core_destroyed we_won=True ore_n=16 nearest_ore_d2=[80, 82, 106, 145]
+   harvesters=[]
+   ammo converts n=12 first=[(42, 10), (43, 10), (44, 10), (45, 6)] total=98
+   siege turrets (d2<=26 of OUR core) n=1: [(41, 'sentinel', (21, 5), 26, 65)]
+   OURFWD sentinel r41@(7, 20) d2theircore=41: first_shot=45 first_builder_atk=None n_atk=0 died_r=51
+   OURFWD sentinel r115@(1, 22) d2theircore=5: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+
+== e0beff8dg3 25x25 map=99d1b5f3 r=77 cond=core_destroyed we_won=False ore_n=30 nearest_ore_d2=[20, 26, 32, 36]
+   harvesters=[(6, (1, 7), 20), (24, (11, 5), 36)]
+   ammo converts n=21 first=[(16, 20), (17, 20), (25, 10), (27, 10)] total=185
+   siege turrets (d2<=26 of OUR core) n=2: [(20, 'sentinel', (19, 13), 26, 45), (21, 'sentinel', (18, 14), 16, 47)]
+   OURFWD sentinel r21@(10, 10) d2theircore=50: first_shot=None first_builder_atk=36 n_atk=20 died_r=55
+
+== e0beff8dg4 20x20 map=12f9036e r=200 cond=core_destroyed we_won=False ore_n=20 nearest_ore_d2=[16, 17, 17, 26]
+   harvesters=[(10, (3, 5), 17), (17, (6, 10), 17), (91, (8, 9), 36), (98, (8, 10), 37), (108, (3, 14), 26)]
+   ammo converts n=35 first=[(11, 10), (12, 10), (13, 10), (14, 10)] total=332
+   siege turrets (d2<=26 of OUR core) n=4: [(10, 'sentinel', (12, 9), 16, 23), (18, 'sentinel', (13, 7), 13, 46), (165, 'sentinel', (18, 11), 8, 275), (166, 'sentinel', (19, 12), 18, 276)]
+   siege replacement latency after death: [2]
+   heals on own turret tiles: [((12, 9), 2)]
+   OURFWD sentinel r124@(0, 11) d2theircore=8: first_shot=143 first_builder_atk=None n_atk=0 died_r=148
+
+== e0beff8dg5 10x10 map=5ff3ef96 r=305 cond=core_destroyed we_won=True ore_n=6 nearest_ore_d2=[16, 20, 26, 37]
+   harvesters=[(6, (6, 2), 16), (14, (8, 1), 37)]
+   ammo converts n=13 first=[(4, 10), (5, 10), (6, 20), (21, 4)] total=128
+   siege turrets (d2<=26 of OUR core) n=2: [(3, 'sentinel', (5, 4), 5, 11), (19, 'gunner', (2, 5), 17, 34)]
+   OURFWD sentinel r20@(0, 3) d2theircore=5: first_shot=24 first_builder_atk=None n_atk=0 died_r=29
+   OURFWD sentinel r132@(4, 1) d2theircore=5: first_shot=None first_builder_atk=None n_atk=0 died_r=None
+
+>> our core died rounds [76, 113, 126, 167, 188, 193, 199] (n=7)
+>> their core died rounds [100, 135, 200, 220, 304] (n=5)
+>> siege turret d2-to-our-core: median=16.0 dist=[1, 2, 5, 5, 5, 5, 8, 8, 8, 9, 10, 10, 10, 10, 10, 13, 13, 16, 16, 16, 16, 16, 16, 17, 17, 17, 17, 18, 18, 18, 18, 20, 20, 20, 20, 25, 25, 25, 26, 26, 26, 26, 26, 26]
