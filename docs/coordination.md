@@ -42527,3 +42527,15 @@ valkyrie, cond=titanium_collected** (previous five r1000 games all lost).
 Note for #36's eventual leg: a tiebreak win on valkyrie by the UNBRANCHED
 incumbent says the class is winnable on delivery-by-accident — the branch
 buys consistency, not possibility.
+
+# 2026-08-13T10:03:21Z (`date -u`) — **BUILDER s36: breakin_watch (pid 66446) KILLED — ON
+# MAGNUS'S DIRECT AUTHORIZATION** ("Try killing it now", typed in-session after
+# the permission layer blocked my earlier attempt; the flag sat in the 09:0x
+# receipts block). Confirmed dead, no orphaned child (loop was in its sleep
+# phase). **Rollback-readiness state: NO break-in watch exists.** Re-arm duty
+# = at the NEXT ship, with the then-holder + PREVIOUS_INCUMBENT as rollback,
+# WITHOUT the while-true wrapper (it contradicted the script's own
+# exit-at-k>=8 design — that wrapper is why a two-ships-stale zombie was
+# guarding v116's dead tape segment in the first place). ship_watch's slot
+# rule remains the active stop-loss on v123 (armed, held, fa_union on the
+# line).
