@@ -127,15 +127,85 @@ n=5408), mechanism metric = **enemy sentinels destroyed by builder attack per
 game**, which is currently ~0 and so is a clean dose check: if the arm does not
 move it off zero, the leg is uninterpretable and must not be read (`B5`).
 
-⛔ **VERIFY BEFORE BUILDING — THIS RESTS ON THE ORGANISERS' DOC, WHICH IS
-KNOWN-WRONG IN PLACES.** `rotate()` being gunner-only and the sentinel shot being
-a single-tile line are both read off `CLAUDE.md`, **not off the engine.** The
-repo's own standard says the `.so` is authoritative and the doc is not. **The
-cheap confirmation is a local probe** (`bots/_probe_*` pattern): build a
-sentinel, stand a builder on each of its 4 orthogonal neighbours, and record
-which ones take damage. **If a sentinel CAN rotate, this row collapses to the
-gunner case and is a losing trade — so the probe is a genuine falsifier, not a
-formality.**
+## ⭐⭐⭐ FALSIFIER CLEARED ON THE ENGINE BINARY, s35 2026-08-13 (research)
+
+**The row was admitted resting on `CLAUDE.md`, which this repo records as
+known-wrong in places. It no longer does. Both premises are CONFIRMED on
+`fcode_engine.cpython-313-darwin.so`, two toolchains intersected
+(`objdump -d` Apple/LLVM and `otool -tV -arch arm64`, instruction-for-instruction
+agreement over both decisive windows), with strings and jump tables read as RAW
+BYTES rather than trusted from disassembler annotation.**
+
+**PREMISE 1 — `rotate()` IS GUNNER-ONLY. CONFIRMED at THREE independent
+enforcement layers**, each demanding the raw entity tag `0x8000000000000006`
+(GUNNER = 6, SENTINEL = 7, LAUNCHER = 8, established three separate ways):
+
+| layer | address | sentinel outcome |
+|---|---|---|
+| `__pymethod_can_rotate__` | check `0xb2c8`–`0xb2dc` | returns **False** |
+| `__pymethod_rotate__` | check `0x8418`–`0x842c` | **GameError `"Unit is not a gunner"`** |
+| `Game::rotate_gunner` | check `0x267d4`–`0x267dc` | Rust panic `"rotate_gunner called on non-gunner"` |
+
+⇒ **A SENTINEL'S FACING IS IMMUTABLE FOR ITS ENTIRE LIFE.** `rotate_gunner` has
+**exactly one call site in the whole binary** (`0x85cc`) and the symbol table
+contains **no other direction or facing mutator**. Direction is set at build time
+and never changes.
+
+**PREMISE 2 — THE SENTINEL RAY CANNOT REACH AN OFF-AXIS ADJACENT TILE.
+CONFIRMED.** `turret_target_valid_from@0x276f8`, sentinel branch at
+`0x27764`–`0x27800`, is a pure ray walk: true **iff**
+`target == turret + k·(dx,dy)` exactly, for `k ≥ 1`, bounded by `k²·|step|² ≤ 32`.
+The unit-step tables at `0x9e5f8`/`0x9e618` were read as raw bytes and are the
+exact 8-compass vectors. **The branch contains NO `GameMap::tile` call at all** —
+obstacle-ignoring confirmed by absence, and **the absence is meaningful because
+the GUNNER branch in the same function does call `gunner_attack_line` then
+`GameMap::tile@0x2f0b0` per tile to block.** `attackable_tiles_from@0x27130` runs
+the byte-identical predicate, so `get_attackable_tiles()` agrees — no wider
+hidden pattern. `fire_sentinel@0x26230` damages **exactly one** entity, no splash
+(`mov w2, #0x12` = 18 → `apply_damage@0x22048`).
+
+⇒ **EXACT GEOMETRY: a sentinel at (x,y) facing NORTH covers precisely
+(x,y−1)…(x,y−5). The other three orthogonal neighbours — (x−1,y), (x+1,y),
+(x,y+1) — are NOT in the set and CANNOT be made so.** Cardinal facing reaches 5
+tiles, diagonal facing 4.
+
+**PREMISE 3 — BUILDER ATTACK. CONFIRMED:** adjacency is `|dx|+|dy| == 1` exactly
+(`can_fire@0x16280`); damage 2 (`mov w3,#0x2` at `0x5be8`); cost 2 Ti
+(`0x5bd0`–`0x5bd8`); **action cooldown incremented by 1 after attacking, so with
+the end-of-round decrement it is exactly ONE ATTACK PER ROUND — 20 attacks = 20
+rounds.** And `damage_building_tile` has **no team compare**, so an enemy
+sentinel is a legal target.
+
+**THE CONTROL, run because an absence had to be meaningful:** `can_destroy@0x3bc0`
+loads the building's team byte and compares it to the caller's on its **first
+three instructions** — the method surfaces a team check instantly where one
+exists, and surfaced type checks in four separate functions. **So "no tile lookup
+in the sentinel branch" is a real absence, not a method failure.**
+
+## ⚠ THREE CAVEATS THAT SURVIVE — none touches the two premises
+1. **LOCAL-ONLY.** This is the local `.so`; the platform may ship a different
+   build. Every address above is a file offset in this binary.
+2. **⭐ THE PRICING IS PER-SENTINEL, NOT PER-POSITION.** The result says nothing
+   about a SECOND turret covering that tile. **A gunner (r²=13, and it CAN
+   rotate for 10 Ti) or another sentinel on-axis is the real threat model**, and
+   20 stationary rounds is a long time to be wrong about that. The prereg must
+   score the tile against ALL enemy turrets, not just the target.
+3. Our builder must gate on `can_fire()` every turn — see the by-product below.
+
+## ⭐ TWO BY-PRODUCTS OF THE ENGINE READ — both checked against our own tree, both CLEAN
+* **`fire()` subtracts 2 Ti UNCONDITIONALLY with no re-check.** The affordability
+  guard lives in `can_fire` only (`cmp w8,#0x2` at `0x16650`). **Calling `fire()`
+  ungated below 2 Ti drives team titanium NEGATIVE silently rather than raising.**
+  **Audited s35: all 8 `fire()` call sites in `_v178salt` and all 7 in
+  `_v169launchlate160` are gated on `can_fire()`. WE ARE NOT EXPOSED.**
+* **⭐⭐ A LOKI LEAD, RECORDED NOT CLAIMED: an opponent that calls `rotate()` on a
+  SENTINEL without catching the GameError DESTROYS ITS OWN UNIT PERMANENTLY**
+  (`0x1ac5c` → `Game::destroy_entity`, prior art). **We cannot force it** — rotate
+  is self-only — so this is not a weapon today. It becomes one only if a
+  displacement trick can make a bot's own facing logic fire on the wrong unit
+  type. **Not queued as a plank; logged so the next launcher-kidnap design knows
+  the sentinel case exists.** (Our own rotate calls are all gated on
+  `can_rotate()` — verified same session.)
 
 **⛔ #2 WITHDRAWN — THE CHEAPEST NULL IN THIS REPO IS A LEG THAT TESTS A FEATURE
 WE ALREADY SHIP, AND THIS WAS ONE.** Research's idle/active split gave the number
