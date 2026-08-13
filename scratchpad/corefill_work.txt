@@ -1047,3 +1047,7 @@ STANDOFF    bots/_v204standoff     bots/_v197mapcode      5400 224000
 # stamp: NEUTRAL (three stamped-neutral diffs; TWORAID's extra unit is its
 # own 10ms envelope).
 COMBO       bots/_v205combo        bots/_v197mapcode      5400 225000
+GUNAXIS0    bots/_v206gunaxis0     bots/_v197mapcode      5400 226000
+APPRLAUNCH  bots/_v207apprlaunch   bots/_v197mapcode      5400 228000
+IDLEPECK    bots/_v208idlepeck     bots/_v197mapcode      5400 230000
+QUIET0      bots/_v209quiet0       bots/_v197mapcode      5400 231000

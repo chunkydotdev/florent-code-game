@@ -1,0 +1,65 @@
+# PREREG — #48 rungs: IDLEPECK (surgical) + QUIET0 (doctrine ablation)
+
+**Committed before any dose game or shard heartbeat (two-clock per readout).**
+Builder s37, 2026-08-13. Basis: research's #48 full-width cut (10.68% of ALL
+v125 builder-rounds parked, median onset r47; 54/110 recent games; camp/heal
+teams park us hardest) + the 4b039a9c autopsy lever + research's rung ranking
+(QUIET's LOKI-5 basis: 12/15 at n=15, short-map, would not clear today's
+bars). Research's two riders adopted verbatim below.
+
+## The arms (both single-diff vs `_v197mapcode`)
+
+* **`bots/_v208idlepeck`** — ladder step 8: a raider with
+  `LOKI_IDLE_PECK_RNDS=8` consecutive actionless rounds, adjacent to the
+  enemy core, pecks it. Quiet doctrine untouched for active raiders. Idle
+  clock resets only on non-idle-peck actions (call-site bookkeeping).
+  Tag `IDLEPECK48`.
+* **`bots/_v209quiet0`** — `LOKI_QUIET_ON` True→False, one constant: the
+  doctrine test (reopens core peck, siphon hit, counterbattery wholesale).
+  No tag needed: the contrast is behavioural and read by the detector +
+  builderAttack counts in replays.
+
+## Dose (IDLEPECK only; QUIET0 goes straight to screen — its mechanism is
+## the removal of a gate, visible in builderAttack counts, not a new path)
+
+Fixture `bots/_probe_sitter` (a sitter reproduces the park: raiders arrive,
+ladder empties — no seal targets die, no wounded, no belts to salt). 6 games
+× {midgard, frostgate}, seeds 995001-6, kept replays.
+
+1. **VALIDITY (pre-treatment):** control (`_v197mapcode` vs sitter) shows ≥1
+   parked raider per research's PINNED detector (`scratchpad/parked_raider.py`
+   — their definition governs, not the autopsy agent's) in ≥4 of 6 games per
+   map. If the sitter fails to reproduce the park, the dose is FIXTURE-INVALID
+   and moves to a camp-shaped fixture, not to a verdict.
+2. **DOSE BAR:** in treatment games with a parked-eligible raider (same
+   detector, on the pre-peck rounds), `IDLEPECK48` fires in ≥half; **kill
+   round strictly falls vs the paired control cell in ≥half of matched
+   (map,seed) cells** (the peck arithmetic predicts large drops — a parked
+   bot adds 2 dmg/round to a 500 HP core). FALSIFIER: 0 IDLEPECK48 across
+   all valid games ⇒ the clock or adjacency test is wrong — instrument
+   first, plank second.
+3. **OFF-BRANCH (2 games):** `LOKI_IDLE_PECK=False` copy, tag present:
+   0 IDLEPECK48, parks still present per detector (exposure denominator).
+
+## Screens (corefill, both queued at commit time)
+
+* `IDLEPECK` vs `_v197mapcode`, n=5400, seed base 230000.
+* `QUIET0` vs `_v197mapcode`, n=5400, seed base 231000.
+* **D26 replication rules, declared now:** each replicated iff final
+  |share−50| ≥ 2.0pp; second shards at seed bases 232000/233000, scored
+  alone, pool only on same-side finals.
+* **Rider 1 (research): the screens read HARM ONLY.** Self-play incumbent
+  does not heal-camp; peck economics (1.0 dmg/Ti vs 4 HP/Ti heal) can lose
+  exactly where parks are worst. The VALUE read is a pinned live leg vs the
+  camp class (Leviathan/I Stone) with its own prereg — neither screen
+  licenses a ship.
+* **Rider 2 (research): terminal-idle SEAT RELEASE is orthogonal, not
+  competing** — queued as the next build, not raced tonight; the pair prices
+  spend-vs-redeploy when both have screens.
+
+## Kill-round bars
+
+Both arms carry kill-round non-regression at their screens (paired-seed
+estimator per the UNDERECO decomposition — matched (map,seed) cells, median
+per-cell diff ≤ 0 expected; IDLEPECK's mechanism PREDICTS faster kills, so a
+kill-round RISE in either arm is a red flag, not a nuance).
