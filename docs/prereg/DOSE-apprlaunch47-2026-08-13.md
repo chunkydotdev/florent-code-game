@@ -93,3 +93,32 @@ beat), then the pinned live leg vs CAL-3 C1/C4 with its own prereg.
 **D26 REPLICATION RULE for the APPRLAUNCH screen, declared at queueing:**
 replicated iff final |share − 50| ≥ 2.0pp; second shard seed base 229000,
 scored alone, pools only if both finals sit the same side of 50.
+
+---
+
+## AMENDMENT (ADD-only; clock = this commit's git author time) — LIVE LEG
+## REORDERED AHEAD OF THE SCREEN FINAL (Magnus's prompt: "did we try
+## APPRLAUNCH as an rc?")
+
+The registered sequence (screen → live leg) implied a dependency that does
+not exist: the screen prices the UNSIEGED PREMIUM (harm side — self-play
+cannot present the creeper shape), the live leg prices the VALUE side vs the
+real ladder teams. Independent surfaces; order not load-bearing. The screen
+CONTINUES to its final unchanged (currently 53.54 at n=2854, past GATE-2700).
+
+**rc8.4 leg, declared before firing:** `bots/_v207apprlaunch` as
+"Loki rc8.4" via submit_clean --leg; 5 pinned matches:
+* C1-shape team lazy (648d1d5b…) --match ddf48911… (the tri-arm pin)
+* C4-shape LingLing40 (86d0b484…) --match 446bb6a3… (pin holds them at v40,
+  the profiled build the plank was designed against)
+* + the same three remaining tri-arm cells (Leviathan/Juusto/Coreflood pins)
+  so all 25 games stay matched-pair comparable with arms A-D.
+Maps: the tri-arm five. Window: first clean post-pairing slot with CAL-3
+yielded. TARGET BAND: unrated pays 0; cells kept for pairing integrity
+(same disclosure as rc8.3).
+**Bars (wire, by construction):** (a) launcher built at r<160 in ≥half of
+games with enemy-builder approach — v125 CANNOT build pre-160, so every
+early launcher is treatment-caused; (b) EVICT45-equivalent throws read from
+throw events (platform strips stdout — the WIRE events are the instrument,
+not tags); (c) feed-interruption vs arm A's same cells (rebuild latency of
+their siege turrets stretched off the 1-2 baseline). Counts only at n=25.
