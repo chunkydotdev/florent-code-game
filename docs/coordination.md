@@ -41252,3 +41252,41 @@ earns a row.**
 `_v169launchlate160` an hour ago. **The claim is that nothing would TELL US if
 they became stale**, and today's incumbent move is exactly the event that should
 have forced the re-check.
+
+# ============================================================================
+# 2026-08-13T06:06Z — **BUILDER s35: SECOND SHIP. `v123` = `_v187saltidle_f`.**
+# ============================================================================
+**MAGNUS, verbatim:** *"Then ship it, now we know its decisively better."*
+Prereg `dff92b4` committed 06:05:58Z, submit immediately after, holder verified
+`v122 -> v123` on the `Active bot:` line. Two ships in one session.
+
+**WHAT IT IS — ONE GATE, AND THE GATE IS THE WHOLE ARM.** `_v178salt` fires its
+cut whenever no better ACTION existed — but being last in the action ladder only
+proves that, and **the raider's next step after declining every action is to
+WALK. Salt's `return True` cancelled that walk.** `_v187saltidle_f` gates on the
+MOVE instead: salt fires only where the raider would not have moved anyway
+(move cooldown non-zero, or already standing on its chosen station).
+⇒ **The mechanism was never wrong** — the live leg had it landing 20/20 salts at
+median latency 1 — **it was paying for denial in ARRIVAL, the one currency this
+line cannot spare.** Same denial, bought with rounds already being wasted.
+
+**EVIDENCE:** vs the live slot **57.83%** (n=517, band ±4.31, clears the 51.33
+bar); vs the previous holder **65.54%** (n=2,043). Null cell `NULLSALT` **50.55%**
+(n=1,085). Dose verified 196 SALT + 2,571 funnel events / 8 games. Freeze
+faithful (comments-only diff). **348 lines added over v116, ZERO removed.**
+
+**⚠ RESERVATION I PUT ON THE RECORD BEFORE EXECUTING, not after:** *"decisively"
+is carried by n=2,043 on one contrast, NOT by n=517 on the deciding one — 9% of
+target, read repeatedly. Magnus's call stands; I am not relitigating it. What
+makes it defensible is TWO contrasts agreeing plus a clean null, not any single
+number.
+
+**⛔ AND THE COST, NAMED: v122's RATED QUESTION IS ABANDONED, NOT ANSWERED.** It
+shipped 04:45:54Z and reached **k=4** — never its own gate. 6/15 games, cumulative
+−3.64. **We will not learn what SALT does on the ladder.**
+
+**ROLLBACK: `bots/_v178salt` (v122).** Deeper fallback `_v169launchlate160`.
+Bars unchanged from the v122 prereg's amended scheme (union false-alarm rates
+quoted, cumulative via `ship_ledger`, game share at k>=24).
+**⛔ PROGRAMME.md `INCUMBENT` NOW STALE AGAIN — it reads `bots/_v178salt` and the
+live slot is `_v187saltidle_f`. MAGNUS-ONLY FIELD; flagged, not edited.**
