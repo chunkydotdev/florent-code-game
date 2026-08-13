@@ -99,3 +99,26 @@ loops, no scans), nowhere near any per-unit budget path.
 # every O3 triple's version split. The cell stays in the design (its games
 # still inform the per-arm mechanism bars, which are opponent-version-robust:
 # a bank unpinning and a second sentinel arriving are OUR mechanisms).
+
+---
+
+# AMENDMENT 3 — ADD-ONLY, before arm B's leg creation. **OPPONENT-VERSION
+# PINNING VIA `--match`: THE MATCHED-PAIR DESIGN IS REPAIRED, O3 INCLUDED.**
+Discovered at the CLI (`fcode match unrated --match <id>`: "Use opponent's
+submission from this match ID") minutes after Amendment 2. Arms B and C now
+pin EVERY cell to the opponent submission from arm A's corresponding match:
+
+    O1 lazy      → --match ddf48911-0157-4efd-9b95-5b873ac7e401
+    O2 Leviathan → --match bca2bb40-8d7b-4d6f-af71-384698cd0795
+    O3 LingLing40→ --match 446bb6a3-4ff5-4f66-83cb-9d3e1d610b55
+    O4 Juusto    → --match c2e36a20-cc61-4f12-98d5-4e106d1ae981
+    O5 Coreflood → --match a33654a2-9927-4fe1-a386-0b801b62a209
+
+"Same opponent version" becomes TRUE BY CONSTRUCTION for every triple.
+**Amendment 2's O3 down-weighting becomes the FALLBACK, not the rule: it
+applies only to any cell whose --match fire FAILS at fire time** (the flag is
+previously unused by us; the executor logs each response verbatim, aborts the
+burst on ERROR, and any fallback fire without --match is recorded as such).
+Research's oppver-per-game decode now serves as VERIFICATION of the pin
+rather than mere observation — a pinned cell whose decoded oppver differs
+across arms is an instrument alarm, not a shrug.
