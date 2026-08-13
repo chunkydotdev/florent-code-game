@@ -128,6 +128,55 @@ def _holder() -> str | None:
     return None
 
 
+def _update_incumbent(prog: Path, new_tree: str) -> tuple[str, str]:
+    """Rewrite PROGRAMME.md's INCUMBENT (and PREVIOUS_INCUMBENT) after a ship.
+
+    DELEGATED AUTHORITY, NOT DRIFT. PROGRAMME.md is edit-on-Magnus's-directive
+    -only. Magnus delegated exactly this field to this script on 2026-08-13
+    (lane-structure review R3, "could you apply your fixes" — after the field
+    went stale at four consecutive ships; it goes stale at exactly one event,
+    and that event IS this script). Everything else in the file stays
+    Magnus-only.
+
+    Returns (status, message), status in:
+      updated — field rewritten, PREVIOUS_INCUMBENT set to the old value
+      noop    — already correct, file untouched
+      frozen  — INCUMBENT_FROZEN: yes, refused (a frozen incumbent is a Magnus
+                hold; a ship over it is loud, not silent)
+      error   — field missing/unreadable. Caller exits 3: a ship whose control
+                tree cannot be recorded must not read as a clean ship.
+    """
+    try:
+        lines = prog.read_text().splitlines(keepends=True)
+    except OSError as e:
+        return "error", f"cannot read {prog}: {e}"
+    inc_i = prev_i = None
+    frozen = None
+    for i, l in enumerate(lines):
+        s = l.strip()
+        if s.startswith("INCUMBENT:"):
+            inc_i = i
+        elif s.startswith("PREVIOUS_INCUMBENT:"):
+            prev_i = i
+        elif s.startswith("INCUMBENT_FROZEN:"):
+            frozen = s.split(":", 1)[1].strip()
+    if inc_i is None:
+        return "error", f"no `INCUMBENT:` line found in {prog}"
+    cur = lines[inc_i].strip().split(":", 1)[1].strip()
+    if frozen == "yes":
+        return "frozen", (f"INCUMBENT_FROZEN: yes — leaving INCUMBENT: {cur} "
+                          f"untouched; new live tree is {new_tree}")
+    if cur == new_tree:
+        return "noop", f"INCUMBENT already reads {new_tree}"
+    indent = lines[inc_i][:len(lines[inc_i]) - len(lines[inc_i].lstrip())]
+    lines[inc_i] = f"{indent}INCUMBENT: {new_tree}\n"
+    if prev_i is not None:
+        lines[prev_i] = f"{indent}PREVIOUS_INCUMBENT: {cur}\n"
+    prog.write_text("".join(lines))
+    return "updated", (f"INCUMBENT: {cur} -> {new_tree}; "
+                       f"PREVIOUS_INCUMBENT: {cur}")
+
+
 SHIP_NAME_RE = re.compile(r"^Loki v\d+$")
 LEG_NAME_RE = re.compile(r"^Loki rc\d+\.\d+$")
 
@@ -271,35 +320,32 @@ def main(argv: list[str]) -> int:
         print(f"\nHOLDER: before={holder_before or '?'}  after={holder_after or '?'}")
         if activate:
             print("--activate given: leaving the new submission live. THIS IS A SHIP.")
-            # ⛔ PROGRAMME.md's INCUMBENT GOES STALE AT EXACTLY THIS INSTANT, AND
-            # THAT EVENT IS THIS SCRIPT. Measured 2026-08-13: the field was fixed
-            # by hand at 05:45:33Z and was stale again 21 MINUTES later when the
-            # next ship landed -- the third lapse that day, on a field
-            # PROGRAMME.md itself says "sends every admission grep at the wrong
-            # tree". A fourth manual update would go stale at the next ship too.
-            # The file is edit-on-Magnus's-directive-only, so this cannot fix it;
-            # it can refuse to let it pass UNNOTICED, which is the half a script
-            # is allowed to own.
-            prog = ROOT / "PROGRAMME.md"
-            try:
-                cur = next((l.split(":", 1)[1].strip()
-                            for l in prog.read_text().splitlines()
-                            if l.strip().startswith("INCUMBENT:")), None)
-            except Exception:
-                cur = None
-            want = f"bots/{src.name}"
-            if cur != want:
-                print()
+            # PROGRAMME.md's INCUMBENT went stale at four consecutive ships
+            # because it goes stale at exactly one event and that event is this
+            # script. As of 2026-08-13 Magnus delegated THIS FIELD (and only
+            # this field) to this script — see _update_incumbent's docstring.
+            status, msg = _update_incumbent(ROOT / "PROGRAMME.md", f"bots/{src.name}")
+            print()
+            if status == "updated":
+                print(f"PROGRAMME.md {msg}")
+                print("   -> COMMIT PROGRAMME.md WITH THE SHIP COMMIT — an "
+                      "uncommitted update is the committed-stale bug's twin.")
+            elif status == "noop":
+                print(f"PROGRAMME.md: {msg}")
+            elif status == "frozen":
                 print("=" * 68)
-                print("⛔ PROGRAMME.md INCUMBENT IS NOW STALE — IT JUST WENT STALE HERE.")
-                print(f"     reads : INCUMBENT: {cur}")
-                print(f"     should: INCUMBENT: {want}")
-                print(f"             PREVIOUS_INCUMBENT: {cur}")
-                print("   COMPARE_AGAINST: previous_line_iteration reads this field,")
-                print("   so every new arm is otherwise controlled on the WRONG tree.")
-                print("   ⚠ MAGNUS-ONLY FIELD: ask, do not edit. This is the ONE")
-                print("     moment it is knowably wrong, so it is asked for here.")
+                print(f"⛔ {msg}")
+                print("   A frozen incumbent is a Magnus hold. This ship just "
+                      "displaced it on the platform — tell Magnus NOW.")
                 print("=" * 68)
+            else:  # error
+                print("=" * 68)
+                print(f"⛔ PROGRAMME.md INCUMBENT COULD NOT BE MAINTAINED: {msg}")
+                print("   COMPARE_AGAINST: previous_line_iteration reads this "
+                      "field, so every new arm is controlled on the WRONG tree "
+                      "until it is fixed BY HAND.")
+                print("=" * 68)
+                return 3
             return 0
         if holder_after and holder_before and holder_after != holder_before:
             print(f"** `fcode submit` ACTIVATED {holder_after}. Restoring {holder_before}. **")
