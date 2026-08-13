@@ -67,7 +67,19 @@ LOG=${LOG:-scratchpad/corefill.log}
 STATE=${STATE:-scratchpad/corefill_started}
 
 mkdir -p $OUT $STATE
-DEADLINE=$(( $(date +%s) + DEADLINE_H * 3600 ))
+# DEADLINE_H=0 means NO DEADLINE. Added 2026-08-13 (s35) after Magnus asked
+# "there's a 12 hour deadline?" — the answer being that the deadline is a
+# TERMINAL state with nothing to re-arm it, so corefill's own SUCCESSFUL exit
+# produces an `ALWAYS_BE_RUNNING: yes` violation by design. Use with
+# tools/corefill_forever.sh, which supervises this and is what actually closes
+# the loop. A bare 0 here without the supervisor still exits on "ALL WORK
+# STARTED AND ALL SHARDS FINISHED" — that is the OTHER terminal exit, and
+# raising the deadline never addressed it.
+if (( DEADLINE_H == 0 )); then
+  DEADLINE=9999999999
+else
+  DEADLINE=$(( $(date +%s) + DEADLINE_H * 3600 ))
+fi
 
 say(){ print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) $*" | tee -a $LOG }
 
