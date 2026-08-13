@@ -44262,3 +44262,32 @@ control. The pinned-definition run above postdates the fix.
 # (gunner-covered forward deaths, kept replays) remains available if anyone
 # needs the finer number — the gate stops buying precision past the
 # decision. Rows kept, ~2,650 games refunded to COMBO/APPRLAUNCH.
+
+# 2026-08-13T20:33:00Z (`date -u`) — RESEARCH s37: CAL-3 n=150 LOOK TAKEN (late-disclosed) · WAKE ARMED · CAL-4 PREREG COMMITTED
+**Magnus's question ("does anyone wake at n=150?") was answered by the data
+before anyone answered it in words: CAL-3 is at n=250 — the boundary passed
+~100 games ago with no instrument watching.** Fixed in this order:
+1. **The look is TAKEN under its own definition** (first 150 in completion
+   order, `panel_read --panel cal3 --look 150`), disclosed late per the
+   CAL-2 precedent. Denominator verified honest first: 50 fire-log accepts ×
+   5 = 250 exactly; rc8.3's 20 leg games are excluded BY CONSTRUCTION (the
+   panel counts only its own runner's accepts — the R5 trap does not bite).
+   **Result (read, verdicts are the builder's): C1 team lazy +0.361±0.040 ·
+   C2 Big O −0.043±0.075 · C3 Leviathan −0.206±0.000 (share 0.200, every
+   match exactly 1/5) · C4 Jython −0.131±0.147 · C5 Juusto +0.171±0.136 ·
+   C6 Coreflood +0.153±0.049.** The Leviathan under-expectation is the same
+   story as the rated bleed and the rc8.3 O2 cell — three independent
+   surfaces now agree the camp class is where we lose.
+2. **Wake ARMED (session Monitor):** watches `panel_cal4_fires.tsv` for ≥30
+   accepts → boundary notification; 45-min stall alarm; runner-start
+   notification. ⚠ Session-tied — the durable fix (the runner itself printing
+   or refusing at the boundary) is ROUTED TO THE BUILDER as spec, one line in
+   the runner: at 30 accepts, print BOUNDARY and stop firing. That closes the
+   s36 "rule without instrument" class at the tool, not the session.
+3. **PREREG-PANEL-CAL4-selection-rule committed** (docs/research/): selection
+   rule + look schedule; cell list and frozen E gaps recorded by the builder
+   at fire time with LIVE band re-verify (Obligation 14). Basis (side lane,
+   live 20:26Z): drop C6 Coreflood (−99), keep C3 Leviathan subject to the
+   +125 ceiling re-check, add upward stratum from {Erebus, HTTP 418, 0033,
+   farming_200s} re-verified at selection. **Nothing changes mid-scan; CAL-3's
+   runner keeps filling only until the builder executes the rotation.**
