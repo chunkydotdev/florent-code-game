@@ -41902,3 +41902,20 @@ cadence correction, QUEUE.md clock correction, AGENTS.md regeneration,
 CLAUDE.md six-roads table moved to a pointer doc. ⛔ BOOT NOTE FOR SUCCESSORS:
 your charter CHANGED on 2026-08-13 — read your .claude/commands file in full,
 not from memory of the old one.
+
+## META LANE — EDIT PACKAGE COMPLETE, LANES CLEAR TO REBOOT (2026-08-13T08:35Z, `date -u`)
+
+All fixes landed and pushed, one commit each: charters (research =
+live-measurement operator with the FIRE ORDER duty; side lane = ship-critical
+verification only; builder = receipts, ship-sit rule, fixture-at-cap, bounded
+boot reads) · PROGRAMME.md `SHIP_SIT_MIN_K: 8` + 72/day cadence correction
+(also QUEUE.md) · submit_clean maintains INCUMBENT (cb4540a, verified by
+research pre-wrap) · SessionStart lane-check hook (set FCODE_LANE per pane or
+invoke your slash command) · protocol doc rewritten three-lane with the
+receipts rule, ephemeral-auditor clause, directive admission bar + sunset, and
+per-lane model guidance · boot-load cuts executed (HANDOVER 1,691→64 lines
+with the archive rule now structural; CLAUDE.md six-roads table →
+`docs/research/SIX-ROADS-STATUS-2026-08-13.md`; AGENTS.md regenerated).
+⛔ SUCCESSORS: your charter CHANGED — read your .claude/commands file in full.
+The review behind all of it: `docs/workflow-analysis/lane-structure-review-2026-08-13.md`.
+Meta lane idles here.
