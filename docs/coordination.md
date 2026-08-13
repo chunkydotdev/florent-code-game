@@ -40395,3 +40395,170 @@ mechanical breadth-first work that wants a second pair of eyes).
 work genuinely resist delegation, or has it just never tried?** **Four runs of
 this instrument and not one has asked.** A lane with standing permission it never
 exercises should be able to say which of the two it is.
+
+# ============================================================================
+# 2026-08-13T04:38:16Z (`date -u`) — **SIDE LANE s35 BOOT NOTE.**
+# Booted on HEAD `7009bd9` (author time `2026-08-12T21:29:28Z`, `TZ=UTC git log`).
+# Append-only; this lane never edits another arm's content.
+# ============================================================================
+
+## BOOT SEQUENCE — COMPLETED, AND WHAT EACH STEP RETURNED
+
+1. `PROGRAMME.md` read. 2. `docs/coordination.md` tail read through the s34
+wraps of all three lanes and the s34 side-lane REBOOT STATE. 3. Drift-watch
+mandate (D1–D18 + the standing notes through D30) and the prereg obligations
+doc (through obligations 12–14) read. 4. Monitors verified LIVE, below.
+5. `ListAgents` → two peers, both booted within ~40 s of me. 6. Wake paths
+armed, below. 7. `docs/side-lane-retro.md` read at **v1.4, FIRINGS 4**; its open
+items are carried and named at the end of this note.
+
+## WAKE PATHS — ARMED, AND DRIVEN BEFORE THEY WERE TRUSTED
+
+**`scratchpad/drift_watch_s35.sh`** (copy of the s34 instance — *fixtures are
+versioned, never edited in place*), armed as a persistent Monitor. Confirmed
+live: `DRIFT-WATCH ARMED 2026-08-13T04:35:03Z … base 7009bd9`.
+
+**DRIVEN FIVE WAYS FIRST, per the s34 reboot state, and every cell produced the
+verdict it had to produce rather than the comfortable one:**
+
+| cell | required | observed |
+|---|---|---|
+| seeded 3-back | 3 `COMMIT` lines | 3 (`b4a51ed`, `16f0763`, `7009bd9`) |
+| seeded at HEAD | silent | empty output |
+| missing repo | `DRIFT-WATCH BLIND` | BLIND, exit 1 |
+| not-a-repo (`/private/tmp`, a real dir) | `DRIFT-WATCH BLIND` | BLIND, exit 1 |
+| TZ trap | emitted stamp byte-matches `TZ=UTC git log` | `2026-08-12T21:29:28Z` == `2026-08-12T21:29:28Z` |
+
+**⭐ THE TZ CELL IS ONLY INFORMATIVE BECAUSE ITS COMPLEMENT WAS COMPUTED IN THE
+SAME COMMAND:** the ambient render is `2026-08-12T23:29:28Z`, **two hours
+different**, so the match discriminates. Had the box been on UTC the cell would
+have passed trivially and certified nothing — *a check that has never produced
+the other verdict has not been seen to check*, and a cell whose two branches
+coincide is the degenerate-fixture species from the s29 sweep. **Recorded so a
+successor re-running this on a UTC machine knows the cell has gone blind.**
+
+⚠ **AND MY OWN EXTRACTOR FAILED THE TZ CELL FIRST TIME — an ESTIMATOR error in
+the check, not in the instrument.** I read the stamp with `awk '{print $4}'`;
+field 4 is the author's middle name, because `%an` is three words. It printed
+`MISMATCH` against a healthy instrument. Re-run with a regex extractor: MATCH.
+**Tagged `KIND: estimator · STATE: surveying`** — outside the conjecture's scope
+by v1.2.1's own rule, recorded for the ledger rather than for the model.
+
+## MONITORS — VERIFIED ALIVE **AND FRESH**, because alive is not working
+
+* **keeper** pid `50733` (matches `corpus/keeper.pid`), etime 11:04, newest
+  `corpus/keeper.log` cycle `04:31:36Z`.
+* **`cores_idle`** pid 16119 · **`ship_watch`** 66445 · **`breakin_watch`** 66446
+  · **`elo_logger`** 25811 · **`match_watcher`** 25942 · **`opp_watcher`** 25943
+  · **`replay_archiver`** 25944.
+* **Freshness, not just presence:** `ship_watch` newest row `04:28:33Z`
+  (`tape_age_min=2.6`) · `cores_idle` `04:33:59Z` · `elo_history.tsv` `04:31`.
+  `corpus/SHIP_ALERT` absent; **`corpus/CORES_IDLE_ALERT` PRESENT.**
+
+## LIVE STATE — READ, NOT ASSERTED
+
+* **Holder `v116`** (`bots/_v169launchlate160`). **Rating 1629 on the tape,
+  k=43, peak 1690, drawdown −61.0, `armed=True RULE=held`, `sprt_fast=BLEED`,
+  `sprt_slow=OK`, `net_act=-26.0`, `p_null=0.90`, rank #27.** ⚠ **Research reads
+  1622 live off `fcode status` against the tape's 1629 with the tape 2 min
+  old** — a real intra-poll move, not a blind instrument; **the CLI is the
+  primary and a document naming a rating is a cache (D28).** The s34 wrap left
+  this at **1685**, so the overnight move is roughly **−56 to −63**.
+* **NOTHING RUNNING LOCALLY.** Load 2.90, zero `fcode run`, `consec_idle=14`.
+* **`queue_check` 19 unblocked (floor 3), exit 0.**
+
+## THE ONE LIVE FLAG RAISED AT BOOT — shipped to both peers as its own message
+
+Per the s29 finding that **single-flag messages get actioned while six-item
+sweeps get consumed 2 of 6**, this went as a message and is recorded here as the
+durable half.
+
+**(1) CORES IDLE ~70 MIN, AND THE CAUSE IS AN EXPIRY RATHER THAN A CRASH.**
+`scratchpad/corefill.log` ends `2026-08-13T01:52:15Z DEADLINE reached (12h).
+Launching nothing further` / `COREFILL done.` **The runner exited CLEANLY at its
+own 12-hour deadline and nothing replaced it.** Anchor `ALWAYS_BE_RUNNING: yes`.
+Builder-owned; I verify, I do not re-arm.
+
+**(2) ⭐ THE TWO QUEUE INSTRUMENTS DISAGREE ABOUT THE TOP OF THE QUEUE, AND THE
+ONE THAT NAMES THE REMEDY PICKS THE ROW THE OTHER REFUSES TO COUNT.**
+`tools/queue_check.py` — the `SessionStart` hook in **every** lane's boot —
+counts 19 rows with **`#3`** at the top and **does not count `#2` at all**,
+excluded by the `GREP:` admission gate. `tools/monitors/cores_idle.py:84`
+`next_queue_item()`, whose docstring is *"Top unblocked row of QUEUE.md, so the
+alarm carries its own remedy"*, returns `rows[0]` = **`#2 DESTROY ENEMY
+TURRETS`**: its filter skips only `~~`/`WITHDRAWN`/`SHIPPED`, with no `GREP:`
+gate. **And `#2`'s intervention cell reads verbatim *"not yet specified —
+intervention deliberately NOT named"* — there is nothing in it to start.**
+**SECOND, INDEPENDENT DEFECT IN THE SAME PICKER:** `QUEUE.md`'s own fire-order
+block declares *"THIS BLOCK SUPERSEDES POSITIONAL ORDER IN THE SECTIONS BELOW"*
+and ranks Tier 0 as `#18` then `#33`; **the picker reads positional order out of
+a file that declares positional order superseded.** Wrong independently of the
+GREP gate.
+**FIX SPECIFIED AGAINST THE CONSUMER** (s34 S1 — detection is this lane's strong
+half and prescription its weak one): the consumer is a builder acting on the
+alert alone, so **`cores_idle` should call `queue_check.py:254 unblocked()`
+rather than re-implement a parser.** That is the s29 green-selftest signature —
+*"builds its own copy of the computation instead of calling the production
+function"* — appearing in PRODUCTION code rather than in a test. **Verified
+against live data rather than asserted: the two parsers disagree today.**
+`tools/` is builder-owned; not touched.
+
+**⚠ AND THE FIRST VERSION OF THIS FLAG WAS WRONG, SAVED BY AN ADDRESSING ERROR
+RATHER THAN BY PROCESS.** I drafted it naming **`#3`** and citing that row's
+`[withdrawn, refuted]` legacy marker. **Both halves false.** The alarm names
+`#2`; and `#3`'s marker sits on a superseded FRAMING *inside* the row (*"was 'we
+go forward late' — refuted; then over-sized — corrected"*), while `#3` itself is
+live and honestly sized (+1.06 destructions ⇒ **−0.72 net standing**, since
+destroying a turret provokes a replacement at +32.1pp). The send failed on a
+missing `[ref]`, and **the branch-discriminating read I had PROMISED inside that
+same message is what caught the error** — the Q4 mechanism again, *going to use
+the thing*, not diligence. **Tagged per v1.4's pre-registered scheme:
+`KIND: judgement · STATE: auditing · WHOSE HYPOTHESIS: mine`, direction TOWARD
+my own conclusion — which is what v1.3.2 pre-registered `auditing` to do.**
+First s35 data point for the conjecture, and it is a **confirmation, so it earns
+the model nothing it did not have.**
+
+## ⚠ A FLAG I DID NOT RAISE, RECORDED BECAUSE THE PRIMARY SAID NO
+
+`lg_age_min` climbing 45.6 → 85.6 across ship_watch rows reads exactly like the
+s34 keeper regression returning. **It is not.** `corpus/keeper.log` shows
+`net=skipped(cycle 59 % 6)` then `net=ON(cycle 60 % 6)` with
+`ladder_games: +15 new game rows` — **the net pull fires every 6th cycle (~66
+min), so the age SAWTOOTHS and resets rather than ramping.** The s34 fix is
+working.
+⚠ **ONE WORDING CORRECTION OWED TO THE RECORD, and it is why I nearly fired:**
+the s34 research state says `lg_age_min` is *"DOWN FROM 125.4 AT BOOT AND NO
+LONGER RAMPING."* **It does ramp; what changed is that it now RESETS.** Those
+are different claims, and the first one licenses a successor to read this
+sawtooth as a regression — as I did for about ninety seconds. **Superseded in
+place is impossible in an append-only file, so this note is the pointer (S5).**
+
+## CARRIED FROM THE s34 REBOOT STATE — STILL OPEN, NOT DONE
+
+1. **⛔ `PROGRAMME.md`'s PROSE STILL ENFORCES THE RETIRED 1650 FLOOR IN THE
+   PRESENT TENSE** (*"No live leg may be aimed at a team rated below 1650…
+   Enforced in `tools/target_value.py` — `RATING_FLOOR`"*, `:414-422`) while the
+   parsed field reads **`TARGET_MIN_PAYOUT: 10`** and the tool has removed
+   `RATING_FLOOR`. **A successor reading the prose applies a rule nothing
+   implements. MAGNUS-ONLY — this lane may not edit that file.** Re-verified
+   present at s35 boot.
+2. **`_v171late160ammo`'s eight arms still have NEITHER calibration cell** — no
+   null on that contrast may be read as *"this plank does nothing."*
+3. **The `#30`/`#31a`/`#32` family is gated behind `#33`'s
+   `LOKI_GUNAXIS_PENALTY` ablation**; `#30`'s honest size is **~0.32 forward
+   builder deaths/game (ceiling 0.63)**, never the 4.6× share ratio.
+4. **`#8` seat-relative scan order has gone unbuilt for THREE sessions** and
+   carries the only Elo estimate on the board (~+7–14). **It needs scheduling,
+   not re-ranking.**
+5. **The keeper decode still defers above `LOAD_CEILING = 6.0` (D30)** — but see
+   the flag above: **the box is at load 2.90 with nothing running**, so the
+   decode is NOT deferring right now for the opposite reason. **D30's conflict
+   is dormant only while we are violating `ALWAYS_BE_RUNNING`**, which is a
+   sharper statement of D30 than the one I inherited: the two defects mask each
+   other, and fixing the idle cores will re-arm the decode blindness.
+
+## THE s34 ADDENDUM'S QUESTION, CARRIED AND NOT YET ANSWERED
+
+*"Does this lane's work genuinely resist delegation, or has it just never
+tried?"* — **zero subagents across s34's four-hour session.** Standing permission
+is explicit. **Answered at the s35 retro with a number, not a defence.**
