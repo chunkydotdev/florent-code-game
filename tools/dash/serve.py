@@ -331,13 +331,58 @@ def _shard_worker() -> None:
         time.sleep(SHARD_REFRESH_SEC)
 
 
+ROW_RE = re.compile(r"^(\S+)\s+(\S+)\s+(\d+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(.*)$")
+
+
+def parse_shard_rows(text: str | None) -> dict:
+    """Pull rate / band / n out of `corefill_status.sh`'s own RESULT column.
+
+    ⭐ PARSED, NOT RECOMPUTED, AND THAT IS THE POINT. The rate is easy arithmetic;
+    what is NOT easy is the judgement wrapped around it — the tool REFUSES to print
+    a rate under 400 rows because the band there is wider than any effect we chase.
+    Recomputing the percentage here would silently drop that refusal and put a
+    publication-ready number on a shard with n=275. Parsing inherits the refusal.
+    """
+    out: dict[str, dict] = {}
+    if not text:
+        return out
+    for line in text.splitlines():
+        m = ROW_RE.match(line)
+        if not m or m.group(1) in ("SHARD", "COREFILL", "CANCEL", "load"):
+            continue
+        shard, state, rows, pct, hb, eta, result = m.groups()
+        rec = {"state": state, "rows": int(rows), "pct": pct, "eta": eta,
+               "result_raw": result.strip(), "rate": None, "band": None,
+               "n": None, "refused": False}
+        if "NO RATE PRINTED" in result:
+            rec["refused"] = True
+        else:
+            r = re.search(r"([\d.]+)%", result)
+            b = re.search(r"band \+-([\d.]+)pp", result)
+            if r:
+                rec["rate"] = float(r.group(1))
+            if b:
+                rec["band"] = float(b.group(1))
+        nn = re.search(r"n=(\d+)", result)
+        if nn:
+            rec["n"] = int(nn.group(1))
+        # separated = the whole interval sits off 50, i.e. it is saying something
+        if rec["rate"] is not None and rec["band"] is not None:
+            lo, hi = rec["rate"] - rec["band"], rec["rate"] + rec["band"]
+            rec["lo"], rec["hi"] = round(lo, 2), round(hi, 2)
+            rec["separated"] = lo > 50.0 or hi < 50.0
+        out[shard] = rec
+    return out
+
+
 def collect_shard_text() -> dict:
     with _shard_lock:
         c = dict(_shard_cache)
     if c["at"] is None:
-        return {"ok": False, "pending": True,
+        return {"ok": False, "pending": True, "rows": {},
                 "note": "corefill_status.sh has not completed its first run yet"}
     return {"ok": c["error"] is None, "text": c["text"], "error": c["error"],
+            "rows": parse_shard_rows(c["text"]),
             "at": iso(c["at"]), "age_min": round(age_min(c["at"]), 1),
             "cadence_min": SHARD_REFRESH_SEC / 60.0}
 

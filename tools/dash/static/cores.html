@@ -36,9 +36,20 @@
   <h2>Shards running now</h2>
   <div class="count" id="shardcount">…</div>
   <div class="scroll" id="shardwrap"><table id="shardtable">
-    <thead><tr><th>Shard</th><th>State</th><th class="mono">Progress</th><th class="mono">Heartbeat age</th></tr></thead>
+    <thead><tr>
+      <th>Shard</th><th>State</th><th class="mono">Progress</th>
+      <th class="mono">Win rate</th><th class="mono">95% interval</th><th>Says</th>
+    </tr></thead>
     <tbody></tbody>
   </table></div>
+  <div class="note" style="margin-top:12px">
+    <strong>“Separated” means the whole interval sits off 50%</strong> — the arm is
+    saying something. <strong>“Inside band”</strong> means it is not yet distinguishable
+    from its control, which is <em>no information</em> rather than <em>no effect</em>.
+    Rates and bands are read straight from <code>corefill_status.sh</code>, which
+    <strong>refuses to print a rate under 400 rows</strong> at all; those shards show
+    <span class="badge b-dim">n&lt;400</span> instead of a tempting number.
+  </div>
 
   <h2>Full shard table</h2>
   <p class="lede" style="margin-bottom:10px">
@@ -159,17 +170,38 @@ function render(s) {
     const rows = [...sh.running, ...sh.stalled];
     $('#shardcount').textContent =
       `${sh.n_running} running · ${sh.n_stalled} stalled · ${sh.n_done} done · ${sh.n_total} shards seen`;
+    const res = (s.shard_text && s.shard_text.rows) || {};
     tb.innerHTML = rows.length === 0
-      ? '<tr><td colspan="4">Nothing running. ALWAYS_BE_RUNNING says that is a defect — see the idle alarm above for the next queue item.</td></tr>'
+      ? '<tr><td colspan="6">Nothing running. ALWAYS_BE_RUNNING says that is a defect — see the idle alarm above for the next queue item.</td></tr>'
       : rows.map(r => {
           const st = r.state === 'STALLED'
             ? '<span class="badge b-warn">STALLED</span>'
             : '<span class="badge b-ok">running</span>';
+          const d = res[r.shard] || {};
+          const n = d.n !== undefined && d.n !== null ? d.n : r.done;
           const pct = r.target && +r.target > 0
-            ? ` (${Math.round(100 * r.done / r.target)}%)` : '';
+            ? `${Math.round(100 * r.done / r.target)}%` : '—';
+
+          let rate = '—', interval = '—', says = '<span class="badge b-dim">no data yet</span>';
+          if (d.refused) {
+            rate = '<span class="badge b-dim">n&lt;400</span>';
+            interval = '—';
+            says = '<span class="badge b-dim">too few rows to print a rate</span>';
+          } else if (d.rate !== null && d.rate !== undefined) {
+            const above = d.rate >= 50;
+            rate = `<strong>${d.rate.toFixed(2)}%</strong>`;
+            interval = (d.band !== null && d.band !== undefined)
+              ? `${d.lo.toFixed(2)} – ${d.hi.toFixed(2)} &nbsp;<span style="color:var(--dimmer)">±${d.band.toFixed(2)}pp</span>`
+              : '—';
+            says = d.separated
+              ? `<span class="badge ${above ? 'b-ok' : 'b-bad'}">separated ${above ? 'ABOVE' : 'BELOW'} 50</span>`
+              : '<span class="badge b-warn">inside band</span>';
+          }
           return `<tr><td class="mono">${r.shard}</td><td>${st}</td>
-                  <td class="mono">${r.done} / ${r.target}${pct}</td>
-                  <td class="mono">${r.age_min === null ? '—' : r.age_min.toFixed(1) + 'm'}</td></tr>`;
+                  <td class="mono">${n} / ${r.target} <span style="color:var(--dimmer)">${pct}</span></td>
+                  <td class="mono">${rate}</td>
+                  <td class="mono">${interval}</td>
+                  <td>${says}</td></tr>`;
         }).join('');
   }
 
