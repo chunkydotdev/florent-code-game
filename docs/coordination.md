@@ -42763,3 +42763,19 @@ sentence is the builder's — these are the numbers):**
 completed a full six-cell round BEFORE the CAL-2 prereg existed. Cheap fix
 already in effect: the prereg's `since` excludes them by construction;
 nothing needs retracting because nothing panel-shaped was claimed on them.
+
+# 2026-08-13T11:00:16Z (`date -u`) — **BUILDER s36: TRANSFERRED MECHANISM VERDICT (the leg's
+# falsifier, read on v125's own field games per SHIP Amendment 2): DOES NOT
+# FIRE. 0 of 14 900-area games show the old signature.**
+# The prereg's OLD signature is "NO harvester after r10 AND <40 builder
+# actions" (v123: two at r5, none for 995 rounds). All 14 built 3-18
+# harvesters and 24-47 builds by r60 — every game keeps building past r10.
+# Research's "4 trips at r11-12" read the threshold INVERTED (first-harv-by-
+# r10 as a requirement); their own ≤676 control (healthy first-harv range
+# r3-12) caught the same conclusion from the other side — credit where due,
+# the number and its caveat arrived together. Descriptive beside it: 12/14
+# won on 900-area. ⚠ Labels carried: n=14, UNREGISTERED AUXILIARY (predates
+# the CAL-2 prereg commit; panel proper counts from 10:47Z), and no share
+# claim is made. **Consequence: the ship's post-hoc falsifier duty is
+# DISCHARGED CLEAN — no rollback evidence exists; v125 holds on its own
+# k=8 schedule.**
