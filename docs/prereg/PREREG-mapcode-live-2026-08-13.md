@@ -89,3 +89,18 @@ platform-side (Magnus's read, confirmed at the primary). **Evidential
 succession: the mechanism/falsifier check transfers to CAL-2's v125 replays**
 — right version, live incumbent, zero activation cost — per the ship prereg's
 Amendment 2 clause (a post-hoc fired falsifier remains rollback evidence).
+
+---
+
+# POST-HOC NOTE — 2026-08-13T11:01:00Z. RESOLUTION OF THE r10-CLAUSE READING (dated record,
+# LOCKED text untouched). The falsifier's OLD-signature clause reads, verbatim:
+# "no harvester after r10 AND <40 builder actions". In the transfer relay this
+# was transcribed as "first harvester after r10 [trips]" — the INVERSE. Applied
+# literally to the 14 auxiliary 900-area v125 games: all 14 built harvesters
+# AFTER r10 (research: 3-18 harvesters, 24-47 builds by r60), so clause (a) is
+# false in every game and the falsifier reads 0/14 — NO TRIP under the locked
+# text, no threshold miscalibration to rule on. The 4 games research counted
+# (first harvester at r11-12) SATISFY the healthy signature. Surfaced to
+# Magnus with both lanes' readings regardless, per the surfacing clause's
+# spirit: a disputed falsifier reading goes up, it does not get settled by the
+# lane that owns the ship.
