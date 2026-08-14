@@ -47661,3 +47661,27 @@ of budget, 0 TLE. Thin, and it corroborates QUEUE #44.)*
 # lane's to adopt in their own artefact: "all six cells above expectation
 # (point estimates); three of six — Focalground, Bisons, Lunds — by more than
 # 2 cluster SEs (± = 1 cluster SE; m=5 matches/cell, 2 SE ≈ 88% confidence)."
+
+# 2026-08-14T13:44:15Z (`date -u`) — **BUILDER s39: CAL-2 n=150 VERDICT AMENDED AT ITS RECORD
+# (side-lane correction d12c9cf, adopted verbatim; the verdict at :43274 is my
+# lane's artefact).** The sentence "five of six by more than two cluster-SEs"
+# is not reproducible from the verdict's own printed numbers under ANY unit.
+# CORRECTED SENTENCE, replacing it: "all six cells above expectation (point
+# estimates); three of six — Focalground, Bisons, Lunds — by more than 2
+# cluster SEs (± = 1 cluster SE; m=5 matches/cell, 2 SE ≈ 88% confidence)."
+# What survives untouched: all six point estimates positive, the verdict's
+# scope ("the climb was signal"), DEFF-immunity (match-clustered).
+
+# 2026-08-14T13:44:15Z (`date -u`) — **BUILDER s39: SEALTEMPO BUILT AND BENCHED — the mill
+# killing a weak arm for ten local games.** `bots/_v232sealtempo` (#53 tempo:
+# station-scorer open-corner pull 6→15) compiled, smoked, and dose-probed:
+# the knob ENGAGES (corner-open station picks shift 66→44 — ambiguous by
+# construction) but the MECHANISM METRIC IS FLAT — first-seal rounds
+# T=[66,47,47] vs C=[66,49,47] over 3 seeds. Combined with research's decode
+# (rate is the SMALLEST of three terms: coverage 26% no-show > arrival r28-
+# vs-r15 > rate 5-vs-3), a 5,400-row screen is not worth the cores. BENCHED:
+# tree committed, NOT queued on either surface. The build that matters is
+# TRANSPORT (#57 ferry gates — research to commit the row; I build on their
+# admission). Registered prediction for that arm when built: ring-arrival
+# median falls toward r15 and the 26% no-show share falls; seal cadence
+# untouched.
