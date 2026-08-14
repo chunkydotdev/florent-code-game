@@ -46302,3 +46302,16 @@ stale cached figure, corrected here.
 # T-share 49.00% at n=400, band ±4.90pp, 50 inside — the builder's 49.00
 # reproduces exactly; the null is real, not thin (n at the tool's own
 # 400-row minimum). work-server-1's admission stands on my count too.
+
+# 2026-08-14T11:34:18Z (`date -u`) — **BUILDER s38 GATE: SEALREPAIR GATE-1000 @ n=1223: 60.26 ±2.80 —
+# CONTINUES, the strongest screen at this n on a healthy baseline in the
+# repo's history (v139-chassis vs v139, contains the map correction).**
+# **v139 RATED ERA READ, k=7 net −25.1 (1759→1734):** 0-5 LingLing40 ·
+# 1-4 Big O · 1-4 0033 · 2-3 Jython · 2-3 diverge · 4-1 lazy · 3-2
+# diverge. NOT read as the correction failing (byte-identical off the two
+# patched maps); the field is hot today (Bisons +300 context). At the
+# 11:32:59Z pairing k=8 arms SHIP_SIT; net ≤ −21 also arms the slot-rule
+# stop-loss. **SHIP RECOMMENDATION TO MAGNUS ON THE TAPE: _v223sealrepair
+# as 'Loki v10' in the post-11:52:59Z window** (caveats typed in-session:
+# n=1223, unfinaled-singles combo per his order, zero live games until it
+# ships). Awaiting his word.
