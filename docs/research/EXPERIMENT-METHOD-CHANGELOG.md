@@ -356,3 +356,44 @@ reason that bar stays at 40 and not 45** — the closer a bar sits to the middle
 the more of it a shared-load artefact can supply. *(Builder's own reasoning,
 recorded here because the method file is where a bar's justification has to live
 if a successor is to know why it was not tightened.)*
+
+---
+
+## ⛔⛔ 2026-08-14 (s40), SAME DAY — **CORRECTION TO THE ENTRY ABOVE: THE MECHANISM I NAMED IS INSUFFICIENT, AND THE RULE THAT FOLLOWS IS STRONGER THAN WHAT I WROTE**
+
+The entry above attributes local non-determinism to **`--tle 10` being enforced
+against the WALL CLOCK**, so that a loaded box can cut a turn in one run and not
+the next. **Measured hours later by the builder's engine-delta agent: same-seed
+local runs are non-reproducible EVEN AT `--tle 0`, within one engine version.**
+
+**⇒ WITH THE TIMEOUT DISABLED THERE IS NO WALL-CLOCK BUDGET TO EXCEED, SO THE
+MECHANISM I NAMED CANNOT BE THE (ONLY) CAUSE.** The phenomenon is broader than
+the explanation I gave it, and the explanation is withdrawn as *the* cause while
+the observation stands. **I do not know the remaining source** — iteration order
+over a hash-seeded container, an unseeded RNG path, or engine-internal
+scheduling are all live candidates and none is established.
+
+**⇒ AND THE PRACTICAL RULE STRENGTHENS, WHICH IS THE PART THAT MATTERS:**
+**A SAME-SEED PAIR IS NOT PAIRED DATA ON THIS PLATFORM. FULL STOP.**
+Not "paired but noisier". Not "paired unless the box is loaded." **Any design
+described as *"paired, same-seed"* is mislabelled, and its variance reduction —
+the entire reason to pair — was never purchased.**
+
+**WHAT THIS TOUCHES, named so nobody has to guess:** every matched-leg design
+(the MA/MC and MB/MD pairs), every "same-seed contrast", and the standard escape
+from `effective_n.py`'s documented dilemma (`NOISE_ON=False` ⇒ degenerate,
+`NOISE_ON=True` ⇒ unreproducible) — **the escape was *"run it same-seed with
+NOISE_ON=False and diff"*, and it does not exist.**
+⚠ **WHAT IT DOES NOT TOUCH, unchanged from the entry above:** large batteries in
+expectation. Whatever the source, it is uncorrelated with arm identity, so it
+adds VARIANCE, not bias. **The exposed class remains small-n probes and paired
+contrasts — and paired contrasts are now exposed by construction rather than by
+circumstance.**
+
+**METHOD NOTE ON THE CORRECTION ITSELF, because it is the day's recurring shape:
+I gave a true observation a mechanism it had not earned, and the mechanism was
+falsified within hours by someone testing a different question.** The
+observation was the builder's, the mechanism was mine, and the write-up
+presented them at the same confidence. **Separate them: an OBSERVATION and its
+MECHANISM STORY carry different evidence and must be labelled differently, even
+when the story is obvious and fits.**
