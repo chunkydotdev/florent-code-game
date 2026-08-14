@@ -45807,3 +45807,16 @@ data; observational beside the pinned family numbers, never pooled in.
 # Magnus as a ship-candidate CORRECTION (self-knowledge class, full
 # screen weight, the MAPCODE precedent) — the ladder is playing the
 # patched maps rated with the defect live in v137's chassis right now.
+
+# 2026-08-14T08:25:25Z (`date -u`) — **BUILDER s38: MAPSEAL COMBO LAUNCHED (Magnus's direct ask).**
+# `bots/_v221mapseal` (v125 + corrected map strings + SEAL_TI_FLOOR 0;
+# 6 doctrine lines, eco/main/raid untouched) vs `_v197mapcode`, n=5400,
+# seed 262000, **full 15-map pool on POST-PATCH geometry** via the new
+# `overnight_pool26.sh` + isolated map dir — the first shard on the
+# as-of-today live pool, era-labeled, pools with nothing pre-patch.
+# Prereg `SCREEN-mapseal-combo-2026-08-14.md` committed pre-heartbeat
+# with the finaled-singles deviation NOTED (Magnus's order jumps the
+# queue; attribution vs singles' finals at read time). Dose probes both
+# ways pre-launch (map tiles + floor constant, both trees). First rows
+# flowing 08:24:56Z. Six shards now run: MAPFIX (final ~60 min),
+# SEALFLOOR0/24, SEALFIRST, OSCLOCK, MAPSEAL; load 7.5/10 cores.
