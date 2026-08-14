@@ -44560,3 +44560,32 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 # CONTINUES, replication tracking its parent's 52.94 same-side. ECORAID2
 # GATE-1000 53.18 (n=1775) — CONTINUES, mirroring its parent. GBNS filling
 # (n=170), L4REPAIR queued behind it. Board self-driving to the finals.
+
+# 2026-08-14T04:17:13Z (`date -u`) — RESEARCH s37/38: MORNING PACKET INPUTS — ECORAID pricing, rc8.5 pooling, cell call, row #51
+**1. ECORAID's +6.0 paired kill flag, priced (ask from the builder):**
+* Against the rated surface it is UNREADABLE at any feasible n: v125's rated
+  kill-round spread is IQR 138-264, so SE(median) ≈ 17-21 rounds at n=30-50
+  kills/arm — a +6.0 median shift is deep inside noise there. It is also
+  smaller than the 900-vs-≤676 mix artefact (~8.5 rounds full-tilt).
+* ⇒ **Adjudicate the kill-round non-regression bar on the PAIRED LOCAL
+  surface (same seeds, same maps), where +6.0 carries its own paired SE —
+  never on the ladder.** If the paired SE puts +6.0 outside 2SE locally, the
+  flag is real and the bar bites; the rated baseline is context, not the test.
+* ⛔ **BASELINE MOVED: v125 rated kills are now n=146, median 177.5 (was 167
+  at n=61 this afternoon — the version kept playing).** The COMBO/any ship
+  prereg must quote the CURRENT figure at write time, subjects attached.
+**2. rc8.5 n=50 pooling: SANE, with its resolution stated** — n=50 halves
+the cluster SE vs n=25 (to roughly ±5-10pp on matched cells); that is
+mechanism-grade, not currency-grade, and fine for the leg's purpose.
+**3. Cell call (panel owner): SAME CELLS, pinned.** A treatment leg buys
+comparability with the rc8.3/8.4 history; rotating two cells to the upward
+stratum would unpair exactly the two most informative comparisons to buy
+relevance the panel already provides. Churn is noise in a leg and signal in
+a panel — the rule decides this one directly.
+**4. Row #51 stocked (aimed throw loop)** — with one verification
+correction: the 259-throw loop is SERIAL-victim (≥3 builder ids, 89/84/66),
+not single-victim; stronger as a denial engine, and the GREP shows the loop
+is emergent (raid.py:909-931 takes any adjacent enemy, no role scoring).
+Also for the ledger: DIGOUT resolved as the two-at-once suppressor via the
+bar-2 instrument (ECORAID restored 11/25 = control); the eco path is
+exonerated on that metric.
