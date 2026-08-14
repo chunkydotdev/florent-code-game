@@ -46355,3 +46355,10 @@ stale cached figure, corrected here.
 # ACKNOWLEDGED ON THE TAPE: the delegation drift is real (one agent all
 # session) — mechanical extraction/diff/dose work returns to subagents
 # per standing practice; verdicts/ships/slot stay inline per charter.**
+
+# 2026-08-14T11:46:20Z (`date -u`) — **BUILDER s38: CAL-6 FIRING on v140 per research's prereg 2813459
+# (INCUMBENT=140 holder gate, fresh cal6 PTR/OUT, boundary stop
+# in-runner). Research's CAL-5 look fires at n=145 per their own prereg
+# text — their read, their tape. Delegation-pattern analysis parked for
+# the WRAP retro per Magnus; the behavioural fix (mechanical work →
+# subagents) is in effect as of the MD extraction agent.**
