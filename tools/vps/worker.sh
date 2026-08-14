@@ -81,6 +81,27 @@ set -u
 WORK=${1:-work/worklist.txt}
 OUT=${OUT:-results}
 STOPF=${STOPF:-STOP}
+# CURFEW — the host is shared: its owners need the full box 23:00-06:00 CET
+# (Magnus, 2026-08-14) = 21:00-04:00 UTC, enforced HERE because a rule that
+# lives in a session's memory has a recorded violation in its future. UTC
+# arithmetic so the box's TZ setting is irrelevant. The worker SLEEPS through
+# the window at batch boundaries (zero CPU, rows kept) and self-resumes —
+# nobody has to be awake at 06:00 CET. Override for tests: CURFEW=off.
+CURFEW=${CURFEW:-on}
+curfew_wait() {
+  [ "$CURFEW" = off ] && return 0
+  while :; do
+    hm=$(date -u +%H%M)
+    # window [2055, 2400) u [0000, 0400): start 5 min early so a running batch
+    # never straddles 21:00.
+    if [ "$hm" -ge 2055 ] || [ "$hm" -lt 0400 ]; then
+      printf '%s curfew: sleeping (UTC %s inside 20:55-04:00 blackout)\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$hm"
+      sleep 300
+    else
+      return 0
+    fi
+  done
+}
 FC=${FC:-.venv/bin/fcode}
 PINF=${PINF:-tools/ENGINE_PIN}
 POOLF=${POOLF:-work/MAPS.list}
@@ -222,6 +243,7 @@ run_shard() {
   trap "rm -rf '$TMPD'" EXIT
 
   while [ "$n" -lt "$TARGET" ]; do
+    curfew_wait
     if [ -f "$STOPF" ]; then
       printf '%s%s%s%s%s%s%s%s%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$T" "$n" "$T" "$TARGET" "$T" "$SHARD" "$T" STOPPED > "$HB"
       say "STOP file present — $SHARD halted at $n/$TARGET. Rows are KEPT."
@@ -349,6 +371,7 @@ fi
 while read -r SH TR CT TG SL; do
   case "${SH:-}" in ''|'#'*) continue;; esac
   [ "$SH" = NULLHOST ] && continue
+  curfew_wait
   if [ -f "$STOPF" ]; then say "STOP file present — launching no further shards."; break; fi
   run_shard "$SH" "$TR" "$CT" "$TG" "$SL"; rc=$?
   [ "$rc" -eq 10 ] && { say "STOP during $SH — halting."; break; }
