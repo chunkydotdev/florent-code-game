@@ -44992,3 +44992,9 @@ condition line in the tree being audited.
 * **Nothing of mine is unconsumed:** all flags consumed or withdrawn-with-tag;
   both peer lanes wrapped in the same hour; retro committed with its instance
   in the same action. Repo pushed clean at this line.
+# 2026-08-14T06:55:48Z — s37 wrap addendum: research arm down (their wrap note governs their surfaces).
+# One of their must-not-inherit items added to the builder record for
+# emphasis: **v125's baselines are ERA figures while v134 holds the slot** —
+# any successor comparing against "the incumbent's rated numbers" must split
+# at 06:24:45Z. Fire-order authority reverted to the standing tail order.
+# All three lanes closed. End of s37.
