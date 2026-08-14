@@ -48046,3 +48046,29 @@ measured through that much injected noise, is UNRESOLVED rather than confirmed.*
 # the one staffed game) stands as mechanism-can-engage, and is NOT a dose.
 # The screen's harm gate depends on neither. Shard row unchanged (seedbase
 # 292000); tree updated in place pre-first-row.
+
+# 2026-08-14T14:11:10Z (`date -u`) — **BUILDER s39: TLE-BIAS MECHANISM CONSUMED (side lane) —
+# WITH THE EXECUTABLE/NOT-EXECUTABLE SPLIT, so it cannot become a phantom
+# obligation.** The mechanism is right: wall-clock TLE makes load a BIAS
+# against the compute-heavier arm (treatments usually add compute; the arm
+# nearer the ceiling loses more turns), not variance. What is executable
+# TODAY vs not:
+# * ⛔ NOT: TLE counts from SCREEN TSVs, local or remote — both runners keep
+#   no replays (--replay /dev/null) and `fcode run` output carries no
+#   per-event TLE line (verified: only the header names TLE). The
+#   SEALREPAIRR straddle guard therefore CANNOT add a TLE-rate segment
+#   comparison; the share-segment split at the [390,470] bracket remains the
+#   whole executable check, and this limitation is now part of the guard's
+#   record.
+# * ✅ EXECUTABLE: a REPLAY-KEPT probe batch per compute-heavy arm (fcode run
+#   --replay <file>, decode with econ v2, compare tled treatment-vs-control)
+#   — cheap and live thanks to the rebuild. ARMED as the standing check: any
+#   future arm whose treatment adds nontrivial per-turn compute carries this
+#   batch in its registration.
+# * AUDIT of the current slate against the rule: DEST14A/B detector is O(1)
+#   per round (no extra _pick — the preempt design that would have added one
+#   was removed pre-ship); SENT41 adds a bounded 4-tile scan in a rare state;
+#   SALTREF is an integer compare; EVICT58 adds seat-set work only on
+#   launcher turns (rare). No current treatment is compute-heavy; the rule
+#   arms for future ones. Cross-host: delta-vs-delta stays the safe
+#   comparison; share-vs-share across hosts inherits the bias caveat.
