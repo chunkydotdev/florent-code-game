@@ -133,6 +133,7 @@ def floor_warning(ours: float) -> str:
 
 _OVERRIDE: dict = {}
 _RATING_AGE: dict = {}   # team -> ISO timestamp of its most recent observed rating
+_ALIASES: dict = {}      # current name -> every name observed for that teamId (renames)
 
 
 def pairing_gaps(min_our: float = 1600.0) -> list[float]:
@@ -195,8 +196,10 @@ def history(name: str) -> tuple[int, float | None]:
     if not path.exists():
         return 0, None
     seen, latest, latest_gap = set(), "", None
+    # a renamed team's old rows carry the old name — match any alias of `name`
+    aliases = _ALIASES.get(name) or {name}
     for r in csv.DictReader(path.open(), delimiter="\t"):
-        if r.get("opp") != name:
+        if r.get("opp") not in aliases:
             continue
         m = r.get("match")
         if m in seen:
@@ -235,6 +238,13 @@ def _live_ratings() -> tuple[float, dict[str, float]]:
         return _OVERRIDE["ours"], _OVERRIDE["ratings"]
     ours, best = 0.0, {}
     seen: dict[str, str] = {}
+    # ⛔ KEY ON teamId, NEVER ON NAME (s41, 2026-08-14): lingling renamed
+    # LingLing40 -> lingling_40h mid-day and this table printed ONE team as TWO
+    # admissible targets at two cached ratings. A rename must collapse to one
+    # row under the latest name; every name ever seen for an id is kept in
+    # _ALIASES so history() still finds the old-name rows.
+    by_id: dict[str, tuple[str, str, float]] = {}   # id -> (when, name, rating)
+    names_of: dict[str, set] = {}                   # id -> every name observed
     path = ROOT / "corpus" / "league_matches.tsv"
     if path.exists():
         for r in csv.DictReader(path.open(), delimiter="\t"):
@@ -242,15 +252,21 @@ def _live_ratings() -> tuple[float, dict[str, float]]:
             for side, other in (("A", "B"), ("B", "A")):
                 name = r.get(f"team{side}Name")
                 rt = r.get(f"rating{side}Before")
+                tid = r.get(f"team{side}Id") or f"<no-id:{name}>"
                 if not name or not rt:
                     continue
                 try:
                     rt = float(rt)
                 except ValueError:
                     continue
-                if when >= seen.get(name, ""):
-                    seen[name] = when
-                    best[name] = rt
+                names_of.setdefault(tid, set()).add(name)
+                if when >= by_id.get(tid, ("", "", 0.0))[0]:
+                    by_id[tid] = (when, name, rt)
+    _ALIASES.clear()
+    for tid, (when, name, rt) in by_id.items():
+        best[name] = rt
+        seen[name] = when
+        _ALIASES[name] = names_of[tid]
     # ⛔ FRESHNESS, s33. `seen[name]` already holds the timestamp of each team's
     # most recent observation and it was being DISCARDED. CLAUDE.md: "A monitor
     # that reads a file must report that file's FRESHNESS." This gate is MANDATED
