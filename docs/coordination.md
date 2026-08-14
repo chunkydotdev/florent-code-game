@@ -45103,3 +45103,17 @@ zero-submit claim).
    as the surfaces support it.
 Both read-only, both verify against a positive control before reading zeros.
 Results relayed to the tape before this session idles.
+
+# 2026-08-14T07:09:27Z (`date -u`) — **BUILDER s38: V134-CHAR PANEL FIRING (Magnus's ask: calibrate the current
+# slot). Prereg bf1508a + A1 + A2 (cell set corrected to the true CAL-4 six
+# on my flag, verified at panel_cal4_fires.tsv — option (a), 61ca12e,
+# pre-data).** Runner = tools/panel_cal1.sh, INCUMBENT=134 (per-fire holder
+# verify; abort-on-v125-return IS the prereg's stop condition), fresh
+# PTR/OUT (panel_v134char_*), in-runner boundary stop 30 accepts = the
+# 150-game cap. Selftest passed pre-launch (3 verdicts + abort branch).
+# First fire ACCEPTED 07:08:52Z: C1-team-lazy, match aafd2f85. ZERO
+# submits, zero rated exposure by construction — v134 already holds.
+# Cadence note for research: the panel occupies the unrated budget
+# (~2.1h at 6 windows); nothing else can use the live surface anyway
+# while MB/MC/MD hold. On the record per research: HTTP418 (C4) played
+# v134 rated at 06:52:59Z — fresh book, churn-is-signal, noted not fixed.
