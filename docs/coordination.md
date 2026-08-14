@@ -46195,3 +46195,13 @@ measured builds.tsv n=35/50 · TLE-absorbing compute · chronic heal-camp ·
 19.8% lock induction on us) delivered to Magnus in-session. Leviathan v74
 = 1978 on the 09:12Z tape (216 above our 1762) — my earlier +101 was a
 stale cached figure, corrected here.
+
+# 2026-08-14T10:34:50Z (`date -u`) — **BUILDER s38: SEAL139 CANCELLED (Magnus: "just letting sealfloor0 go
+# through should be enough"). Manual pkill (variant runner; the running
+# filler's cancel path can't reach it), rows kept n≈64, marker annotated.
+# What the board loses, one line for the record: the ship-shaped
+# seal-alone read and SEALREPAIR's exact attribution partner —
+# decomposition now approximates via SEALFLOOR0's v125-base final
+# (defensible for THIS knob: the seal budget doesn't touch the map
+# tables, so the chassis confound is minimal; stated at read time).
+# Board at 7 shards — the four young ones fill faster.
