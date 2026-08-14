@@ -52079,3 +52079,62 @@ rule but DECAY WITHIN A SESSION: one honest `date -u` at boot licensed forty min
 interpolation afterwards.** ⇒ **the durable amendment is that the rule binds PER STAMP, not
 per session — a `date -u` is not a session-level credential.** *(Recorded rather than
 silently repaired: four of these were published to two other lanes.)*
+
+--- 2026-08-14T19:58:10Z (`date -u`) RESEARCH (s42) — ⛔⛔ **THE TLE BIAS SIGN ATTACHES TO COMPUTE WEIGHT, NOT TO THE TREATMENT LABEL. MY OWN SIGNED PREDICTION FAILED, IN THE DANGEROUS DIRECTION.** ---
+`docs/research/TLE-FIXTURE-EXPOSURE-2026-08-14.md`.
+
+**I predicted:** a wall-clock TLE under contention penalises the compute-heavier arm, and
+since a TREATMENT usually adds work, **"degraded-fixture NULLS are suspect, POSITIVES are
+conservative."**
+⛔ **WRONG ON TWO OF FOUR POSITIVES.** x3r0's **v142/v143 are 9,215-line routers carrying
+two full policy trees against our 4,757** — **the heavy arm was the CONTROL**, so
+contention **FLATTERED US on exactly the two legs that fired ship decisions.**
+⇒ **A TRIAGE RULE KEYED TO "TREATMENT" WOULD HAVE MARKED PRECISELY THE WRONG LEGS SAFE,
+which is worse than no rule. Key it to COMPUTE WEIGHT, and that means measuring the arms,
+not labelling them.**
+
+**MECHANISM CONFIRMED ON THE ENGINE, not inferred:** the TLE budget is **WALL CLOCK** —
+`Instant::now` → `clock_gettime(CLOCK_UPTIME_RAW)`, sole call site in `Watchdog::arm`.
+*(This also corrects the bump note's own parenthetical, which called it CPU time.)*
+**Straddle inside SEALREPAIRR: +4.13pp pre→post (p=0.067) with THREE controls at ≈0**
+(local twin +0.55 · unbumped remote −0.24 · un-degraded cross-host head +0.51). **The
+banked 2.53pp "host heterogeneity" (`results.tsv:367`) decomposes onto the bump: +0.51pp
+pre (p=0.87) vs −2.85pp post (p=0.004)** — explained, not merely correlated.
+**ncpu≈16 independently confirmed from our own timestamps: quadrupling workers CUT
+throughput 47.2 → 34.2 games/min.**
+
+**EXPOSURE (fixture derived from each leg's OWN rows, not from the handed-over list):**
+| leg | fixture | margin/SE | verdict |
+|---|---|---|---|
+| V140VS142 | W=40, 2.5× | +3.74 | EXPOSED, anti-conservative; decision survives |
+| V140VS143 | W=40 **+ co-resident shard ≈5×** | +3.91 | EXPOSED, worst fixture; survives |
+| **SALTREF** (the null) | W=40, 2.5× | **−2.80** | **EXPOSED — the suspect class** |
+| SEALREPAIRR | **straddles** the bump at row ~509 | +8.13 | ROBUST; its *cross-host* inference is exposed |
+| SEALFLOOR0R | W=10, **finished 11 min BEFORE the bump** | +3.43 | **NOT EXPOSED — the handed-over leg list was wrong here** |
+⇒ **5 of 6 clear ±3 SE. The one that does not is SALTREF — i.e. the only leg without a
+cushion is exactly the leg the bias could have manufactured.** Bounded by a local n=1,025
+replication at 49.95. **No number retired (point 6); the output for SALTREF is
+"re-run on the fixed fixture", not a retraction.**
+
+⛔ **NULLHOST IS PROVABLY POWERLESS HERE — VERIFIED, NOT INHERITED.** Its arms are
+**md5-identical**, so its expectation is 50% under ANY fixture; a degraded fixture and a
+clean one are indistinguishable to it. On work-server-1 it ran at W=10 two hours before
+the bump and **never sampled the degraded regime.** **It certifies the HARNESS, not the
+FIXTURE.** *(Also: the relayed server-2 "52.0%, CI [45.1,54.9]" is 50±4.9 — the ACCEPTANCE
+BAND, not a CI. The real 95% CI is [47.1,56.9]. Conclusion unchanged, quoted form narrower
+than truth.)*
+
+## ⭐ THE STRUCTURAL FINDING, AND IT IS A ONE-LINE FIX
+**A SHARD CANNOT STATE ITS OWN FIXTURE.** Row schema is
+`ts/shard/game/map/seed/seat/winner/cond/turns` — **no host, no WORKERS, no ncpu, no load
+ceiling, no engine version, and no per-game wall duration** (`ts` is completion only, so
+latency is unrecoverable). **TWO SHARDS CHANGED FIXTURE MID-FLIGHT TODAY AND NEITHER FILE
+SHOWS IT.** This audit existed only because a human happened to mention ncpu.
+⛔ **And the telemetry we assumed we had does not exist: ENGINE 2.3.6 LOCAL REPLAYS CARRY
+NO `execTimeUs` AND NO TIMED-OUT FLAG** (12 games decoded, 0 records). **TLE incidence is
+currently UNOBSERVABLE on our own fixture** — the same class as the s28 finding that
+platform replays strip `stdout`: an instrument planned on telemetry that is not there.
+⇒ **a three-line shard header plus one `date +%s` per game would have made this audit a
+`grep`.** Offered to the builder as a spec, pairing with POOL ERA and `#65`'s
+record-both-arms'-versions half — **all three are the same shape: make the fixture declare
+itself.**
