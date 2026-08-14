@@ -1040,3 +1040,112 @@ accept and nearly read an all-zero as a finding. The check that saved it
 (positive control on a known-camp cell) should have run BEFORE the sweep,
 not after the zeros arrived. **Instrument-before-the-read, not
 instrument-when-the-read-looks-wrong.**
+
+# ============================================================================
+# RUN s39 — 2026-08-14T07:00Z → 12:5xZ (Magnus called the wrap, conditioned
+# on the builder's; theirs closed 12:46:45Z). **v1.10 → v1.11. FIRINGS: 5.**
+# Answered from the day's artefacts: ~40 research/prereg/queue commits of the
+# session's 188, the cross-lane message log, the tools, git log. Not memory.
+# ============================================================================
+
+## 1. CONSUMPTION — nothing UNREAD; the books-to-arms pipeline is the shape of the day
+**CONSUMED (another lane acted):** every fire order (V134-CHAR → CAL-5 →
+CAL-6 → the stability gate; the fixture never idled while a stable holder
+existed) · #49 answered (row closed, #7 evidence, decoder facts) · #51
+baseline (row re-specified geometry+ammo; builder accepted) · the
+oscillation trace + #54 prevalence (**builder built OSCLOCK arm 1 within
+the hour**) · the nest-removal ledgers (**held the #3 spec until the how
+was known; NESTSHOT specced from them**) · the Bisons book (Magnus +
+#3/#45) · **the 0033 book (NESTSHOT2 widened BEFORE the narrow screen
+entrenched — the narrow arm cancelled at n≈250)** · the x3r0-run ledger
+(v134/135/137 decoded same-hour; Magnus + builder grading) · CAL-5's
+declared look (builder typed the verdict) · the coupling exhibit (cited in
+their wrap) · GREP carry ×46 rows · plank_ack loki28 · econ.tsv corruption
+(HANDOVER 4b same hour). **PENDING:** Juusto book (Magnus directive, next
+session) · #3's sentinel-rays note (successor) · L4REPAIR2 coupling grading
+(screen final) · OSCLOCK/NESTSHOT2 screen reads. **UNREAD: none nameable.**
+
+## 2. LATENCY — the widening-before-entrenchment case is the column's best; two misses cost tape corrections
+**BEFORE:** the 0033 shape-difference reached the builder MID-SPEC (the
+exact before-case this question exists for) · the stability gate landed
+before any CAL-7 scramble · the ledgers held #3 until the mechanism was
+named · every prereg beat its leg (five preregs, five certs).
+**AFTER (the misses, named):** (i) the first-contact claim was published
+MINUTES after an inline cut and needed a Magnus-reaching retraction;
+(ii) the v135-record correction chain (1/15→1/20→4/25) trailed my report
+commit. Archaeology cost: two tape corrections.
+
+## 3. RELAY FIDELITY / Q10 — seven agents; fired BOTH directions
+Load-bearing numbers verified at primaries before banking: #51 (259/89/84/
+66/20 exact) · prevalence (headline re-derived from the census file
+exactly) · Bisons (h2h re-derived exactly; 4 wire claims verified by the
+agent + 2 scalps it added) · 0033 (**the agent caught MY denominator —
+24/80 not 24/95 — and I verified the correction inline before banking**).
+**And Q10's mirror: the mechanism agent's positive control caught my
+win/removal INVERSION** — the instrument I commissioned corrected me.
+
+## 4. OWN CHECKS — more caught-by-others than by me, BUT the catchers were mostly instruments I built
+**Caught by peers/agents (6):** the CAL-4 cell-set error (builder, at the
+primary) · the hand-approximated "~07:2xZ" + burst clock naming (side
+lane) · v135 1/20 (side lane; then BOTH lanes missed team lazy) · the
+win/removal inversion (my agent's control) · 24/95 (my agent) · the
+valkyrie urgency misaim (builder — a freshness fact is not a defect until
+the owner's intent is checked). **Self-caught (3):** the A3 two-cell fix
+pre-commit · the midgard fingerprint run BEFORE endorsing the stale-grid
+hypothesis · the x3r0-burst verification at the CLI before taping.
+⇒ The s37 lesson holds at larger n: **the judge does not improve; the
+harness does. Four of the six catches came from controls I specified.**
+
+## 5. DECLINES — four, all upheld
+Declined the V135ECORAIDLIVE burst-multiplex with a slot op (endorsed the
+builder's kill; the prereg died clean pre-fire) · declined CAL-7 on an
+unstable slot (converted to the standing gate) · declined to pool v137's
+chassis subtotals · declined to treat 15-game panel fragments as reads.
+
+## 6. PER LANE — RETRACTIONS REACHING A LANE: 5
+(the win/removal inversion [reached Magnus AND builder] · 24/95 · v135
+1/20 · the valkyrie urgency · the 157→159 median nit.) **The inversion is
+the expensive one: published minutes after an inline cut, on an
+UNVERIFIED JOIN of two orderings (ladder-row order mapped onto game-file
+order).** BUILDER got fire orders, ledgers before specs, book counters
+mid-spec, the econ trap, and the #54 package that became an arm in an
+hour. SIDE LANE got five certifiable preregs and re-derivable primaries;
+they certified everything and caught three real defects of mine. MAGNUS
+got two books, the x3r0 ledger, the Leviathan contrast, and every
+retraction surfaced unprompted.
+
+## 7-11, compressed
+**Q7:** inference markers shipped inline everywhere they were owed
+(economic-bleed, coupling family property, map-size gradient, heal-wall
+mechanism, matchup-not-strength). **Q8:** instruments read at boot and at
+use — **ob-14 changed a call on its FIRST use** (lazy 11 / Leviathan 12
+versions/24h → reportable-not-poolable). **Q9 FIRED, worst instance of
+the week: my correction of the side lane's v135 count was itself wrong,
+from the SAME blind surface class (meta_join same-hour lag) it was
+correcting.** Mechanism named on the tape; the derived rule is promoted
+(below). **Q11:** the #48-vs-oscillation distinction was made by reading
+the whole row before claiming novelty.
+
+**FIRINGS (5):** (a) Q10 both directions — my agents' controls caught two
+errors of MINE. (b) Q9 → the correction-inherits-the-blindness incident
+produced a promoted rule (same-hour counts from the live CLI only).
+(c) Q5 → the stability gate: a decline converted into a standing rule the
+successor inherits without asking. (d) Routing — zero orphan documents
+(both books were asked-for deliverables; everything else landed in
+QUEUE.md, the tape, preregs, or tools). (e) Q8 → ob-14's first read
+changed a pooling decision.
+**SUNSET: NOT ARMED.**
+
+## ⭐ Q10 SHARPENED (v1.11, on the s39 inversion incident — not a new question)
+*Incident: game_2's 7/9 removal was mapped onto "the game we won" by
+joining LADDER-ROW ORDER to GAME-FILE ORDER without checking either. The
+claim reached Magnus and the builder; the agent's positive control killed
+it.* **A JOIN BETWEEN TWO ORDERINGS IS ITSELF A CLAIM and gets its own
+check — same bar as an agent's load-bearing number. If two lists are
+glued by position, verify one row of the glue at the primary before
+publishing anything built on it.**
+
+**THE ONE THING I WOULD NOT PRODUCE AGAIN:** the first-contact tape note,
+published minutes after an inline cut on an unverified ordering join.
+Speed bought a retraction that reached Magnus; holding it twenty minutes
+for the agent's ledger would have cost nothing.
