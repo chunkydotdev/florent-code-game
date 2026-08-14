@@ -17,6 +17,18 @@
 #    pause (s40 ~18:33Z), NOT a crash. Ask him before rm. Loop wrappers need
 #    relaunch after reboot even to resume.
 # 4. Side lane re-arms its own drift watch (their charter).
+# 5. Dashboard (shared infra, builder-owned since s41): nohup .venv/bin/python
+#    tools/dash/serve.py >> scratchpad/dash_serve.log 2>&1 &  — verify with
+#    curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8787/  (NOT ps).
+# ⛔ s41 HARDWARE CORRECTION (Magnus): work-server-1 is ncpu=16, WE BORROW 10 —
+#    the repo's "48 vCPU"/WORKERS=40 record was wrong; WORKERS>10 oversubscribes
+#    a shared box AND biases wall-clock --tle 10 against the heavier bot. Fire
+#    remote shards at WORKERS=10. work-server-2 (6 cores, WORKERS=4) certified
+#    s41: NULLHOST 52.0% n=400 in [45.1,54.9]. Retro on 40-on-16-era numbers:
+#    research owns it (s42).
+# ⚠ s41: team 86d0b484 RENAMED LingLing40 -> lingling_40h ~12:00Z 2026-08-14.
+#    NAMES ARE NOT KEYS — name-keyed joins (target_value, cell matching) split
+#    or drop a team on rename; key on teamId.
 #
 # ===== CAL-8 — EXACT STATE + STANDING PRE-LOOK DECISIONS (do NOT re-open) =====
 # State: 13 ACCEPTS / 65 GAMES. DERIVE, never inherit (s40's own bug):
