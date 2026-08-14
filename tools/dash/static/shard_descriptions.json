@@ -571,8 +571,13 @@
   "confidence": "high"
  },
  "AIMTHROW": {
-  "brief": "Exiled enemy builders land ON a friendly sentinel's firing line, with ammo floored at 30 so the kill shot exists.",
-  "full": "Queue #51: the launcher's exile loop is already a perfect denial engine (100% action denial in the decoded archetype game) that converts to zero damage — throws landed off every sentinel ray while ammo sat at 24, one shot short of the 30 a builder kill needs. This arm prefers throw sites on a friendly sentinel's firing line and floors ammo at 30 while a launcher is latched. Empty ray falls back to exactly the old ordering (verified both ways). Opponent-coupled: self-play under-doses exiles, so the screen is a harm-gate; the value read needs live evidence. Runs on the v125 chassis vs v125 — a mechanism read; any ship case re-bases on the v139 incumbent.",
+  "brief": "CANCELLED at n=28 (v125-chassis first cut of the aimed throw) — superseded by AIMTHROW2 on the v139 chassis.",
+  "full": "The first cut of the aimed-throw arm, built on the v125 chassis and controlled on v125 — cancelled at n=28 when Magnus caught the sequencing miss (v139 had already shipped). Rows kept; note they were played by _v222aimthrow's PRE-re-base bytes (the tree was then re-based in place to the v139 chassis). See AIMTHROW2 for the live screen.",
+  "confidence": "high"
+ },
+ "AIMTHROW2": {
+  "brief": "Exiled enemy builders land ON a friendly sentinel's firing line, ammo floored at 30 — on the v139 chassis vs v139.",
+  "full": "Queue #51, re-based per A2 on Magnus's catch: the exile loop is a perfect denial engine (100% action denial in the decoded archetype game) that converts to zero damage — throws landed off every sentinel ray while ammo sat one shot short of a builder kill. The arm prefers throw pads on a friendly sentinel's firing line and floors ammo at 30 while a launcher is latched; empty ray falls back to the old ordering exactly (verified both ways). Chassis-matched on the live incumbent, so the mechanism read and any ship case share a base. Opponent-coupled: self-play under-doses exiles, so this screen is a harm-gate; value needs live evidence.",
   "confidence": "high"
  }
 }
