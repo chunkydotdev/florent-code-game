@@ -15,6 +15,7 @@ HANDOVER top block carries this file as a re-arm duty and the successor
 respawns from NEXT on boot.
 
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
+- 2026-08-14T15:2xZ HOME-LOCK-MECHANISM (opus) → docs/research/HOME-LOCK-MECHANISM-2026-08-14.md
 - 2026-08-14T15:2xZ QUEUE-ECONOMICS (opus) → docs/research/QUEUE-ECONOMICS-SWEEP-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
@@ -22,10 +23,6 @@ respawns from NEXT on boot.
    caveat on SCREEN-v140vs142 A1 and pre-clears the fleet upgrade boundary
    (s38 checklist taped). Sonnet if the changelog is published; opus if it
    needs binary diffing.
-3. HOME-LOCK MECHANISM — WHY two-tile limit cycles form at our own core
-   (23x concentration, research's inversion): decode 10-20 locked-bot
-   trajectories from replays; the answer designs the nav arm that beats the
-   51-bar (mapfix-class candidate). Opus.
 4. CAL-7 SALVAGE READ — the 110 descriptive games: per-cell tallies + ob-14
    churn only, labeled non-comparative (research to consume; no P1). Sonnet.
 5. OPPONENT-POOL SEGMENT MAP — which live opponents concentrate on which
