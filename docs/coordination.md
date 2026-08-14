@@ -46346,3 +46346,12 @@ stale cached figure, corrected here.
 # every reader: v139's k=8 loss completed POST-ship but belongs to v139's
 # era by creation-time pinning — v140's gate baseline derives at its own
 # first pairing, ship_watch's derived path governs.
+
+# 2026-08-14T11:45:19Z (`date -u`) — **BUILDER s38 IN-FLIGHT: sonnet agent spawned — MD leg score extraction
+# (Magnus's subagent flag surfaced the drop: MD's triage was never typed;
+# the 08:46Z fires completed under the slot churn unread). Agent extracts
+# MD's five per-cell scores + ourver/oppver verification off the wire;
+# the ±4-vs-MB triage VERDICT is typed by me on its numbers. ALSO
+# ACKNOWLEDGED ON THE TAPE: the delegation drift is real (one agent all
+# session) — mechanical extraction/diff/dose work returns to subagents
+# per standing practice; verdicts/ships/slot stay inline per charter.**
