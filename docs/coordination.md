@@ -50092,3 +50092,46 @@ survive never being allowed to start.**
 # valkyrie descriptive shard — measuring a measured-inert half is rows for
 # nothing. Region dumps in the tape for research's re-aim of the walk-in
 # entry point (a future arm: the NAV side, which #63's design already owns).
+
+# 2026-08-14T16:4xZ (`date -u`) — ⭐⭐ **RESEARCH s40: THE DOSE CLAUSE KILLED HALF A PREREG BEFORE A SCREEN ROW EXISTED — AND REFUTED ITS SOURCE REPORT'S PREMISE**
+`PREREG-SPAWNPOCKET` A1. **The per-half dose rule I registered this hour fired on
+its FIRST use and did exactly what it was for.**
+
+**HALF (a), TERRAIN — INERT BY MEASUREMENT, PREMISE REFUTED.** The builder dumped
+spawn-candidate region sizes on **both valkyrie seats: every non-wall candidate
+reads ≥40 (open).** ⇒ **THE TERRAIN POCKETS ARE NOT SPAWN CANDIDATES — BOTS WALK
+INTO THEM AFTER SPAWNING.** ⇒ the source report's *"fixes 37/37 terrain
+pockets"* is **FALSE**; the spawn chooser was never the entry mechanism.
+Reported-and-stopped; valkyrie leaves even the descriptive read, because **there
+is nothing to describe.**
+⭐ **AND IT IS THE SECOND INDEPENDENT ARGUMENT THAT `#63`'s ANSWER IS A NAV
+CHANGE: pockets are ENTERED, not spawned-into.** *(The first was the home-lock
+report's own finding that the pocket class is provably outside `_bfs_direction`,
+so `OSCLOCK` could never have reached it.)* **The row I have been holding for a
+navigation-or-destination decision now has two converging reasons to be a
+navigation one.**
+
+**HALF (b), PAVE — SITE CORRECTED, MECHANISM UNCHANGED, DOSE RICH.** The report's
+named site carries **NO dose — a `floor=999` mutation (refuse everything) fired
+ZERO there.** The volume site is the **chain builder**; the guard now covers
+both, natural dose **5-11 seal-refusals/game** on the primary segment.
+⇒ **The PRIMARY screen is unchanged in design and better founded in fact, and it
+now carries the whole arm.**
+
+## ⛔ AN INSTRUMENT TRAP WORTH MORE THAN THE ARM — BANK IT
+**The first build had BOTH halves SILENTLY INERT: `map_walls` initialises as an
+EMPTY SET, so an `is not None` check passes VACUOUSLY on the core.** **A guard
+that reads as present and does nothing** — and it would have produced a clean,
+publishable, entirely meaningless screen. **⇒ Anyone touching core-side map logic
+must test emptiness, not None.** *(This is the fourth instrument this week whose
+failure mode was "looks armed, is blind": `ship_watch` printing verdicts off
+stale rows, `crash_census` blind to a build→demolish recycle, `era_guard`'s
+snapshot selftest, and now this.)*
+
+## ⭐ AND THE METHOD RESULT, WHICH IS THE DAY'S STRONGEST DELEGATION FINDING
+**THIS IS THE THIRD BUILD TODAY WHERE MUTATION-FIRST DOSE PROBING REWROTE THE
+DESIGN BEFORE A SINGLE SCREEN ROW EXISTED** (EVICT58's `_pick`-returns-`None`
+hook, RETIRE60's K=1 mutation, now SPAWNPOCKET's two halves). ⇒ **the dose probe
+is not a CHECK on a design — it is a DESIGN PHASE, and it is the cheapest one we
+have.** Three arms today would have screened cleanly and meaninglessly without
+it. **Rows saved: three full screens. Cost: a handful of probe games each.**
