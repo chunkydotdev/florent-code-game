@@ -45251,3 +45251,41 @@ hardcoded -1/0/0/0 on EXILE rows — never filter on them.
 # Durable monitors committed this session: gate_watch.sh (corefill
 # gates/finals, fixture-driven 6 verdicts + blind + share, ledger
 # backfilled for history) and holder_watch.sh (both armed, exit-to-wake).
+
+# 2026-08-14T07:26:37Z (`date -u`) — RESEARCH s39: #49 CUT LANDED (routed) · v134 era closed · V135-CHAR prereg committed
+**1. #49 ANSWERED (opus agent, 3,430 archived rated games, all validators
+driven both ways; spot-verified: builds.tsv is TURRETS-ONLY, events.tsv is
+the build surface — my agent brief was wrong and the agent caught it):**
+* **The barrier BINDS THE TILE, NOT THE ECONOMY.** Tile: 0.28x harvester-
+  placement suppression when planted r≤60 (per-game paired p=1.5e-27),
+  bind gone past r150; 85.8% of 1,929 barriers never cleared (~30 Ti to
+  undo 3 Ti). Economy: at the median 21%-coverage dose, r150 harvest/ti
+  within-opponent are +0.8/+19 — null-to-wrong-sign.
+* **The −20pp win-rate association is a MARKER of harvester-killing raids**
+  (INFERENCE, collider caveat stated): conditioning on our harvester deaths
+  collapses it to +0.8pp. The raid costs the game; the barrier tags it.
+* Prevalence 19.8% of rated games (team lazy 80%, I Stone 70%, Focalground
+  55%; Jython version-gated v119+). The dose that could bind is EARLY+TOTAL
+  (≥50% coverage: 17.3% of denial games; Jython's 10/10-tile icefloe form
+  exists only in unrated-era archives — coverage statement, not absence).
+* **We retired our own version of the tactic: ourver 76 = 26/40 games,
+  v125 = 1/300.** #7 (offensive twin) updated with the priced prescription
+  (3-5 early barriers, never spam: +1% scale each). #49's row marked
+  answered; residuals routed to #7/#47.
+**2. v134 RATED ERA CLOSED at x3r0's v135 ship (~07:24Z): 3 matches, 6/15
+game share (Erebus 3/5, HTTP418 1/5, diverge 2/5), net ~−11 elo, ourbef
+1797.2→1790.1; all 15 games core_destroyed, zero r1000; fast losses
+(diverge losses at r85/r106/r162).** V134-CHAR window 1 = its only panel
+data (final per stop condition).
+**3. V135-CHAR prereg COMMITTED (new prereg per retarget rule, design
+inherited from V134-CHAR through A4, INCUMBENT=135, holder verified live).**
+Builder: re-point the runner only after this commit; its v134 gate refusing
+window 2 is working as designed.
+**4. LAUNCHER FERRY-STARVATION CONFIRMED SHARED WITH THE SHIPPED TREE:**
+raid.py of rc8.4 and _v197mapcode are byte-identical except LOKI_APPR_LOG
+prints; LOKI_FERRY_ON=True/STALE=3 in both doctrines. EXILE preempts FERRY
+unconditionally (throw → return), so any opponent streaming approach bots
+at our launcher starves our own insertions — the 483b5bcd mechanism is
+incumbent-relevant, not rc8.4-specific. With #51's baseline on the tape,
+the composed prescription is one design question: the launcher needs a
+priority rule, not just an aim rule.
