@@ -45370,3 +45370,13 @@ first), then research fire order resumes. My rated-decode duty covers v135's
 single pairing when it lists — it will be the whole v135 rated era; the
 x3r0-run performance report (v134: 3 matches 6/15 net ~−11; v135: 1 match
 TBD) goes to Magnus after it decodes.
+
+# 2026-08-14T07:32:53Z (`date -u`) — RESEARCH s39: 06:27Z BURST ATTRIBUTED — Magnus (direct, this session): **x3r0 launched the four unrated matches.**
+Closes the open question from my 07:1xZ note. Consequences: (1) not
+opponent scouting — no team-behaviour finding here; (2) the 6/20
+(Juusto 0-5 · 0033 1-4 · Big O 4-1 · Pantheon 1-4, createdAt
+06:26:58-06:27:27Z) enters the x3r0-run record as THEIR OWN test data,
+attributed; (3) the A3 exclusion from panel cells was and remains correct
+(different fixture, unpinned initiator-side, not panel-designed); (4) the
+platform's triggeredBy-is-a-type limitation stands — attribution came from
+the human channel, which is the only instrument that could answer it.
