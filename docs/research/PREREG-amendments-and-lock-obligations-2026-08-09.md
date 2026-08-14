@@ -435,3 +435,58 @@ verified, (match, map) pairs with more than one game = **0 of 415**, since a
 ρ = 0.0743, m̄ ≈ 2 games per opponent per map cell ⇒ DEFF ≈ 1.07.**
 **Enumerate both clusters per `CLAUDE.md`'s scope procedure; do not carry 1.53
 into a segment bar.**
+
+---
+
+## Addendum 11, 2026-08-14T23:41:01Z (s42) — **OBLIGATION 16: A BAR CARRIES A PRE-SPECIFIED MDE, OR IT CANNOT BE SIZED AND EVERY ATTEMPT TO SIZE IT IS CIRCULAR**
+
+**Formulated by the builder (`50bab486`) out of an error we made jointly; REHOMED
+HERE because that commit put it in `CLOSURE-queue-21-2-2026-08-14.md`, a dated
+closure doc that NO lane boots — and this file is where preregs are written and
+is in the side lane's boot sequence.** The s29 finding (*a rule promoted into a
+file nobody opens*) applied to a rule about rules.
+
+**THE INCIDENT, and both lanes own a half.** `#17`'s bar: *"≥10.0% of cell-P games
+contain ≥1 weapon-attributable destruction."* Measured at n=60: **5.0%, Wilson
+[1.71%, 13.70%] — contains the bar.** The re-run was then sized **off that 5%
+point estimate**, giving n=300 and *"±2.47pp excludes 10.0%"*. **At n=300 the true
+rate read 8.00%, Wilson [5.43%, 11.63%] — STILL contains the bar.**
+* **Builder's diagnosis, verbatim and better than mine:** *"sizing a confirmatory
+  run off the point estimate of the underpowered run it is meant to replace is
+  circular — the estimate I was correcting is the estimate I sized with."*
+* **Side lane's half: I CERTIFIED that sizing.** I checked the arithmetic, found
+  it correct, and never asked whether **p=5% was a legitimate input.** Arithmetic
+  verified, premise unasked — the borrowed-premise class, third instance from
+  this lane in one session.
+
+**⛔ AND THE CIRCULARITY IS NOT SPECIFIC TO A BAD FIRST ESTIMATE — IT IS A
+PROPERTY OF SIZING OFF ANY OBSERVED POINT ESTIMATE.** Required n to exclude a
+10% bar from above:
+
+    truth  5%  ->  n =    73 / cell
+    truth  8%  ->  n =   707 / cell     (the corrected figure; reproduces)
+    truth  9%  ->  n =  3147 / cell
+    p -> bar   ->  n -> INFINITY
+
+**An estimate near the bar can never tell you how much data the bar needs.**
+
+### THE OBLIGATION
+**Every prereg carrying a BAR states, on the bar line, the effect it must be able
+to EXCLUDE — a pre-specified MDE — and the n that exclusion requires.** One of:
+* `BAR: <x>. MDE: we call it a MISS if the true rate is at or below <y>. n for that exclusion: <N>.`
+* or a declaration that the bar is a **POINT RULE ONLY** and **licenses no
+  exclusion claim** — which is honest and is what `#17`'s bar actually was.
+
+**⇒ SIZE OFF THE VALUE YOU MUST EXCLUDE, NEVER THE ONE YOU HOPE TO OBSERVE.**
+
+**⚠ THIS IS OBLIGATION 12 FOR BARS, REACHED FROM THE OTHER END.** OB12 requires a
+GATE to carry its resolution statement; **a bar was never asked for one**, because
+a bar looks like a definition rather than a measurement. **It is a measurement.**
+
+**⭐ AND THE HALF THAT KEEPS THIS FROM BECOMING BAR-CHASING, from the same leg:
+the builder did NOT re-fire at n=707, and was right.** Lethality on landing
+**1.00 (128/128)**, delivery **~8% of games**, guarded control **104 arrivals /
+zero deaths**. **The bar had become the least informative number in the leg.**
+⇒ **An unresolvable bar is a reason to state what IS resolved, not a licence to
+spend games until it resolves.** Sizing discipline exists to make bars honest,
+not to make them mandatory.
