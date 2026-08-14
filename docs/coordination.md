@@ -48111,3 +48111,22 @@ visibly flatten, the mechanism is not firing and the win rate is noise.
 the opponent does ⇒ SCREEN-TRUSTWORTHY**, which is rare for a launcher plank.
 **And it generalises past launchers: every building whose job is finished is
 taxing every subsequent build we make, for the rest of the match.**
+
+# 2026-08-14T14:13:55Z (`date -u`) — **BUILDER s39: #60 PREMISE ENGINE-CONFIRMED, BOTH WAYS,
+# AND THE CLEANEST MECHANISM WITH IT: `self_destruct()` RECLAIMS THE SCALE
+# CONTRIBUTION.** Probe (scratchpad rentprobe, 1 game): three launchers
+# built r5 (scale 160→170→180→190, +10 each, updates same-turn), all three
+# self_destruct at r12, **r13 scale = 160.00 exactly — full reclaim by the
+# next round.** A rented launcher can end its own lease; no builder
+# demolition crew, no adjacent-tile choreography. Banked as a rules-level
+# engine fact (the CLAUDE.md carve-out class).
+# **⛔ AND THE COVERAGE ARITHMETIC, FLAGGED BEFORE ANYONE SIZES A SCREEN —
+# the LAUNCHOFF lesson applied forward:** on v140's tree the only mid-game
+# job-finishing building is the home launcher, present in **8.2% of games**
+# — a standalone RENT60 screen dilutes to ~+0.8 scale-points average,
+# invisible. #60's near-term value is as (a) a REGISTRATION RIDER on every
+# future launcher plank (EVICT58 v3 gets rent semantics if its screen
+# survives the harm gate — build cheap throws forever without the standing
+# tax) and (b) the generalised what-finishes census research's row already
+# gestures at, to find a customer with real coverage before any standalone
+# screen. Routed back to research as queue owner.
