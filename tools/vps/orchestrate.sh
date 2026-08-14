@@ -288,11 +288,19 @@ cmd_setup() {
   SCRIPT="set -e
 mkdir -p '$REMOTE_ROOT'/work '$REMOTE_ROOT'/results '$REMOTE_ROOT'/tools/vps
 cd '$REMOTE_ROOT'
-if ! command -v python3 >/dev/null 2>&1 || ! python3 -c 'import venv' >/dev/null 2>&1; then
-  sudo apt-get update -qq
-  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3 python3-venv python3-pip rsync coreutils
+command -v rsync >/dev/null 2>&1 || { echo '⛔ rsync missing — needs root once: apt-get install rsync'; exit 5; }
+# fcode ships compiled cp312/cp313 manylinux wheels ONLY — a 3.9 box reads
+# 'from versions: none' (work-server-1, 2026-08-14). If system python is too
+# old, bootstrap a standalone CPython via uv: rootless, no admin round-trip.
+PYOK=\$(python3 -c 'import sys; print(1 if sys.version_info >= (3,12) else 0)' 2>/dev/null || echo 0)
+if [ \"\$PYOK\" = 1 ]; then
+  [ -x .venv/bin/pip ] || { rm -rf .venv; python3 -m venv .venv; }  # gate on the LOAD-BEARING file — a dir from a failed create is not a venv
+else
+  export PATH=\"\$HOME/.local/bin:\$PATH\"
+  command -v uv >/dev/null 2>&1 || curl -LsSf https://astral.sh/uv/install.sh | sh -s -- -q
+  uv python install 3.12 -q
+  { [ -x .venv/bin/pip ] && .venv/bin/python -c 'import sys; raise SystemExit(0 if sys.version_info >= (3,12) else 1)' 2>/dev/null; } || { rm -rf .venv; uv venv -q --seed --python 3.12 .venv; }  # a WORKING venv on a too-old python still fails the wheel — version is load-bearing too
 fi
-[ -d .venv ] || python3 -m venv .venv
 .venv/bin/pip install --quiet --upgrade pip
 .venv/bin/pip install --quiet 'fcode==$PIN'
 echo \"python: \$(python3 --version)\"
