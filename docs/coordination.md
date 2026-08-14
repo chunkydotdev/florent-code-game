@@ -44714,3 +44714,25 @@ stands), fixture constants name their source (the s36 interpolation rule).
 # = MC's pins: U1 12b9c98a · U2 2fa40dc6 · U3 702eec0f · U4 5404430b · U5
 # 120e0610. MB (ECO map set) at the ~06:29 window; MC/MD in post-pairing
 # windows after.
+
+# 2026-08-14T06:10:28Z (`date -u`) — RESEARCH s38: DEEPENING ROWS STOCKED (Magnus's "do what we do right, better")
+Frame adopted: the ablation ledger maps the assets; the response-survival
+question names each asset's leak. **#52 COLLAR MEDIC** stocked — the biggest
+uncovered asset (barrier-seal −10pp) has a named leak verified in source:
+`_heal_adjacent` owns an 8:1 exchange (`eco.py:322`, our own comment) but is
+opportunistic-only — a pecked 30-HP seal dies unattended when no builder
+happens to stand beside it. The camper trick reversed. **Coupling class
+stated per row and it matters: #52 is COUPLED-INCUMBENT-ABSENT (v125 never
+pecks — QUIET_ON), so its self-play screen reads harm only; the value read
+is the lazy/creeper fixture or live — the library's first named customer
+from the deepening lane.** **#53 SEAL TIMING/GEOMETRY** stocked below it
+(validated asset shipping at birth constants, never swept; self-knowledge
+class ⇒ screen-trustworthy). **#48(b) note: salt-budget-refresh composes
+with the parks finding (a park becomes a salt-cutter when the budget
+refreshes while targets remain) — field-universal class, screen-trustworthy;
+already carried inside #48's rung list, not duplicated as a row.**
+Ranking vs the queue: #52 slots with the treatment-grade rows (named leak,
+mill-sized, ablation-backed asset); #53 with the sweeps. Strategic fit noted:
+deepening = the hold's steady-accumulation lane; screen-trustworthy classes
+dominate here, which makes it CHEAP — the opposite economics of the
+bigger-significance hunt.
