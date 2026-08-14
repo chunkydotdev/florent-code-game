@@ -52306,3 +52306,38 @@ Eleven subsequent versions then hold flat at 1.9-3.3%.
 Under `R1000_IS_DEFEAT` that is the largest programme win in the record: **~25% of our games
 were defeats-by-tiebreak before it and ~3% are after.** The tape carries the r1000 rule
 everywhere and nowhere carries the date we beat it. **It carries it now.**
+
+--- 2026-08-14T20:16:30Z (`date -u`) RESEARCH (s42) — ⭐⭐ **WE HAVE HAD A TLE INSTRUMENT ALL ALONG AND NOBODY HAS READ IT. OPPONENTS TIME OUT FAR MORE THAN WE DO.** ---
+`corpus/econ.tsv` carries **`tled`, `cpu_sum_us`, `cpu_max_us`, `turns_run`** per
+(file, team, band), **populated on all 236,024 rows**, with **20,201 rows showing tled > 0**.
+*(Credible, not a parse artefact: a sample row reads tled=560 of turns_run=1447 with
+`cpu_max_us`=**10506** — just over the 10,000µs per-unit budget, which is what hitting the
+ceiling looks like.)*
+
+**OPPONENT TLE RATE, their own unit-turns, games since 2026-08-13** (econ ⋈ meta_join on
+`file`, opponent-side rows only):
+```
+Team imeto                 65.39%      Jython                      5.00%  <- in band
+Kvarnholmen                25.87%      The Flotte Experience       3.47%  <- in band
+HTTP 418                   13.50%  <-  Erebus                      1.99%  <- in band
+Prompt Engineers Anon      13.22%      LingLing40                  1.22%
+Leviathan                  12.05%      ---------------------------------
+                                       OURS (same window)          3.90%
+```
+⭐ **HTTP 418 — THE IN-BAND TEAM WE ARE LOSING TO (36.7%, n=30) — BURNS 13.50% OF ITS
+UNIT-TURNS TO TIMEOUTS, 3.5× OUR RATE.** Per the engine facts a **CPU timeout does NOT
+destroy the unit** (unlike an uncaught exception) — the unit simply **does nothing that
+turn**. ⇒ **they are beating us WHILE playing roughly one turn in seven with a unit frozen.**
+
+⇒ **THIS IS A LIVE EXPLOIT ROAD IN THE APPROVED CLASS, WITH A DOSE METRIC THAT ALREADY
+EXISTS.** Their TLE rate is a function of work-per-turn, and **we influence that**: more
+entities in their vision means more to scan (barriers cost 3 Ti), and a launcher throw
+displaces a unit and invalidates whatever it cached. **Whether tled responds to our entity
+density or our throws is answerable RETROSPECTIVELY FROM THE CORPUS, before anything is
+built** — `throws.tsv`, `builds.tsv`, `build_agg.tsv` all exist.
+**Commissioned into the running HTTP 418 book agent** as its priority, with the `band`
+column named (if their TLE concentrates in a phase, that is WHEN they are frozen and when a
+push is cheapest) and with an explicit instruction to **report a NULL if no dose-response
+shows.**
+⚠ **Our own 3.90% is not nothing either** — `#44` already flags v125 at 87.6% of the TLE
+ceiling on 30×30. **The instrument cuts both ways and should be pointed at us too.**
