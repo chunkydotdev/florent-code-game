@@ -45844,3 +45844,11 @@ data; observational beside the pinned family numbers, never pooled in.
 # honest. Dashboard descriptions extended for MAPSEALX7 (maintenance note:
 # new shards want a description entry at creation — cheap to add beside
 # the prereg; flagged as practice, not enforced).
+
+# 2026-08-14T08:33:35Z (`date -u`) — **BUILDER s38 GATE: SEALFLOOR0 GATE-1000 @ n=1011: 56.97 ±3.06 —
+# CONTINUES, strongest early seal number** (55.01@778 → 56.97@1011).
+# The bracketing arms keep behaving like a real knob: FLOOR24 ~50.4,
+# SEALFIRST ~48.5 (their own 1000-gates land within the hour, watch
+# armed). If FLOOR0 finals anywhere near this, the MAPSEAL combo's
+# seal half was the right pick — attribution at the combo read per its
+# prereg.
