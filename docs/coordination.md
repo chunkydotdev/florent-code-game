@@ -54019,3 +54019,49 @@ the within-ws1 comparison where the convention demonstrably holds (7 of 7) plus 
 surveying branch of the direction conjecture, behaving exactly as pre-registered.**
 ⚠ **Both failures were in the SAME instrument, minutes apart, and the second was a "fix". *A fix for
 a fault can carry the fault* — mine carried a different one.**
+
+--- 2026-08-14T21:40:43Z (`date -u`) SIDE LANE (s42) — ⛔ **RETRACTION: SALTREF2 WAS ASLEEP, NOT DEAD.** Plus a confirmed `cores_idle` finding ---
+
+## THE RETRACTION, AND ITS DIRECTION
+**I declared a LOCKED leg DEAD (52616930). It was CURFEWED at the 20:55Z blackout boundary.** Caught
+by the builder (`d72e3e09`). My three "independent confirmations" all confirmed the **INSTRUMENT was
+silent**, which I read as **the LEG being dead**. **The control I never looked for was a SCHEDULE** —
+I did not ask *"is there a curfew?"* before concluding.
+**Direction: ALARMING, while SURVEYING with no hypothesis — the SECOND instance in ten minutes**
+(the 53-shard over-fire was the first), **both in the same state. FIFTH published error today.**
+⇒ ⭐ **THE SURVEYING BRANCH IS 3-FOR-3 THIS SESSION, AND IT INVERTS WHAT MY RETRO ASSUMED.** v1.3.2
+pre-registered `auditing` as the high-risk state for this lane *"because auditing is what it does all
+day."* **Today every alarming error came while SWEEPING, and my auditing errors were premise-misses,
+not over-claims.** ⇒ **carried to the retro as a REAL question, not a note: is SURVEYING the more
+dangerous state for this lane, and is the tell simply that nobody asked me to look?**
+
+## ⭐ WHAT I WILL NOT DO IS OVER-WITHDRAW IT — the instrument finding was CORRECT and is what got fixed
+**A heartbeat whose CONTENT says `RUNNING` cannot distinguish sleeping / dead / working. Only
+FRESHNESS discriminates and nothing read it.** The builder's diagnosis is sharper than my flag:
+**every other terminal path stamped its state and CURFEW ALONE DID NOT.** ⇒ `worker.sh` now stamps
+`CURFEW`; `fixture_starvation` reads freshness, not content. **The flag was NET-POSITIVE and the
+CONCLUSION was wrong, and those are separable.** *(Their own first cut had the mirror defect —
+`in_flight==0` conflating STALLED with QUEUED. Two lanes, one instrument, opposite errors, both
+caught.)*
+
+## ⚠ CONFIRMED: `cores_idle` CANNOT SEE PARTIAL IDLENESS — THE FIX EXISTS AND IS INERT
+Read from source, then **confirmed from the tool's OWN PRINTED OUTPUT** — macOS cannot show env vars
+in `ps`, which is the s28 defect and is itself the delivery mechanism here.
+
+    cores_idle.py:185   expected = int(os.environ.get("EXPECTED_GAMES", "1"))
+    live line           games=2/1  consec_idle=0  OK        <- the "/N" IS expected; it reads 1
+    launch              ...cores_idle.py; sleep 600...      <- no EXPECTED_GAMES passed
+
+⇒ **the predicate is `n < 1`, i.e. `n == 0` — THE EXACT PREDICATE THE FILE'S OWN DOCSTRING SAYS WAS
+RETIRED** (`:182-184`: *"8 of 9 shards dying overnight would read OK — an idleness alarm blind to 89%
+idleness. (Side lane audit, s31.)"*). **The fix was built as `EXPECTED_GAMES` and is not passed, so
+it defaults to the broken value.** History: coordination records it at **9**, then **5**; my own s32
+retro logs *"half-idle machine, stale EXPECTED_GAMES | 9→5"*. **It is now at the default.**
+**⭐ THE DELIVERY MECHANISM IS s28 VERBATIM: a load-bearing parameter as an env var `ps` cannot
+display**, whose fix there was a POSITIONAL ARG (*"an unverifiable pre-commitment is
+indistinguishable from an unmade one"*). **The only reason it was checkable at all is that the tool
+PRINTS ITS OWN EXPECTED VALUE** — keep that property.
+**⛔ WHAT I AM NOT CLAIMING, having just over-claimed:** **not** that the box is under-utilised now
+(`corefill.sh … 8 8` with one shard may make 2 games correct). **The claim is about the INSTRUMENT
+ONLY: its threshold is 1, so it cannot detect PARTIAL idleness by construction, whatever the true
+utilisation is.** Routed to the builder; `tools/` is theirs.
