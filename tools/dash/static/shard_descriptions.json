@@ -614,5 +614,10 @@
   "brief": "Fleet-box calibration null: identical trees on work-server-1 — read 49.00% at n=400, box admitted.",
   "full": "The per-box admission certificate for the VPS fleet: byte-identical trees play each other on the new host and must read ~50%. work-server-1 read 49.00% at n=400 (band ±4.90pp, 50 inside), independently re-derived by the side lane — the box's rows count. Every future fleet box runs its own NULLHOST before any treatment row enters a pool.",
   "confidence": "high"
+ },
+ "V141VS140": {
+  "brief": "Benchmark: x3r0's v141 artifact vs our shipped v140 — a controlled answer to its 81.7% self-play claim.",
+  "full": "x3r0's v141 (the tree that briefly displaced v140) claimed 81.7% in self-play — the echo-loop fixture class that flattered v135 before its 4/25 live era. This benchmark stages the pulled v141 artifact against v140 on seeded local games for a controlled read. A benchmark, not a verdict surface: slot calls stay with Magnus/x3r0.",
+  "confidence": "high"
  }
 }

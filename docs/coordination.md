@@ -46601,3 +46601,8 @@ what our rare wins did right and which counters on our queue apply.
 # * **MAPFIX2 GATE-1000 @ n=1858: 57.48 — CONTINUES; FINAL at n=2160 in
 #   ~20 min, tracking ABOVE its parent (55.65).**
 # Gate watch re-armed.
+
+# 2026-08-14T12:27:00Z (`date -u`) — **SIDE LANE s38: V141VS140 CERTIFIED** (6 s two-clock: 6e0c310
+# 12:24:29Z vs first row 12:24:35Z; benchmark/echo-loop framing clauses
+# present). The controlled answer to an 81.7% self-play claim — the exact
+# instrument the v135 lesson prescribes. Description entry added.
