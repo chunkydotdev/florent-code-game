@@ -1,0 +1,140 @@
+--- /Users/junghard/Projects/Work/florent-code-game/bots/_v223sealrepair/eco.py	2026-08-14 11:31:11
++++ /private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/f9bf597b-8baf-43f0-beca-9b50d5872569/scratchpad/_c63instr3/eco.py	2026-08-15 01:30:31
+@@ -29,6 +29,103 @@
+ from fcode import Direction, EntityType, Environment, Position
+ 
+ from doctrine import *  # noqa: F401,F403
++
++# ===========================================================================
++# C63 PROBE INSTRUMENTATION -- scratchpad copy only, NEVER in bots/.
++# Implements docs/research/DESIGN-63-long-approach-arrival-2026-08-14.md §4
++# cells C1..C4.  Counters only; one compact stderr line per Core round.
++# LOCAL-ONLY instrument (platform replays strip stdout; stderr is console).
++# ===========================================================================
++C63 = {}
++C63_KEYS = (
++    'nav', 'nav_centre', 'ok', 'ok_prog', 'ok_noprog', 'ref',
++    'r_bot', 'r_bot_friend', 'r_bot_enemy', 'r_bot_unk', 'r_bot_and_bld',
++    'r_bld', 'r_wall', 'r_other', 'r_other_ore', 'r_oob', 'r_unread', 'r_exc',
++    'perp', 'back', 'stuck4', 'osc2',
++    'r_bld_belt', 'r_bld_other', 'r_free_mcd', 'r_free_acd',
++    'r_bld_core', 'r_bld_harv', 'r_bld_barrier', 'r_bld_turret', 'r_bld_unk',
++)
++
++
++def _c63(k, n=1):
++    C63[k] = C63.get(k, 0) + n
++
++
++def _c63_classify(self, ct, n):
++    """Why was the FIRST step refused?  C1 = builder body, C2 = building/wall."""
++    try:
++        if not (0 <= n.x < self.mw and 0 <= n.y < self.mh):
++            _c63('r_oob')
++            return
++        bot = None
++        bld = None
++        env = None
++        try:
++            bot = ct.get_tile_builder_bot_id(n)
++        except Exception:
++            _c63('r_unread')
++        try:
++            bld = ct.get_tile_building_id(n)
++        except Exception:
++            pass
++        try:
++            env = ct.get_tile_env(n)
++        except Exception:
++            pass
++        if bot is not None:
++            _c63('r_bot')                       # ---- C1 ----
++            try:
++                if ct.get_team(bot) == ct.get_team():
++                    _c63('r_bot_friend')
++                else:
++                    _c63('r_bot_enemy')
++            except Exception:
++                _c63('r_bot_unk')
++            if bld is not None:
++                _c63('r_bot_and_bld')
++        elif bld is not None:
++            _c63('r_bld')                       # ---- C2 (building) ----
++            try:
++                bt = ct.get_entity_type(bld)
++                if bt in (EntityType.CONVEYOR, EntityType.SPLITTER):
++                    _c63('r_bld_belt')          # the BELTBLIND slice
++                else:
++                    _c63('r_bld_other')
++                    if bt == EntityType.CORE:
++                        _c63('r_bld_core')
++                    elif bt == EntityType.HARVESTER:
++                        _c63('r_bld_harv')
++                    elif bt == EntityType.BARRIER:
++                        _c63('r_bld_barrier')
++                    elif bt in (EntityType.GUNNER, EntityType.SENTINEL,
++                                EntityType.LAUNCHER):
++                        _c63('r_bld_turret')
++                    else:
++                        _c63('r_bld_unk')
++            except Exception:
++                pass
++        elif env == Environment.WALL:
++            _c63('r_wall')                      # ---- C2 (wall) ----
++        else:
++            _c63('r_other')                     # refused, tile looks free
++            if env == Environment.ORE_TITANIUM:
++                _c63('r_other_ore')
++    except Exception:
++        _c63('r_exc')
++
++
++def _c63_osc(self, p):
++    """Two-tile ping-pong detector: last 4 nav positions span <= 2 tiles."""
++    h = getattr(self, '_c63_h', None)
++    if h is None:
++        h = self._c63_h = []
++    h.append((p.x, p.y))
++    if len(h) > 4:
++        del h[0]
++    if len(h) == 4:
++        s = set(h)
++        if len(s) <= 2 and h[0] != h[1]:
++            _c63('osc2')
+ 
+ 
+ # ---------------------------------------------------------------------------
+@@ -900,14 +997,31 @@
+             return
+         desired = self._bfs_direction(ct, self.tgt)
+         if desired == Direction.CENTRE:
++            _c63('nav_centre')
+             return
++        _c63('nav')
++        p0 = ct.get_position()
++        d0 = abs(p0.x - self.tgt.x) + abs(p0.y - self.tgt.y)
++        _c63_osc(self, p0)
+         if self._move(ct, desired, pave):
++            try:
++                p1 = ct.get_position()
++                d1 = abs(p1.x - self.tgt.x) + abs(p1.y - self.tgt.y)
++                _c63('ok_prog' if d1 < d0 else 'ok_noprog')
++            except Exception:
++                pass
++            _c63('ok')
+             return
+-        idx = CARDINALS.index(desired) if desired in CARDINALS else 0
+-        for d in (CARDINALS[(idx + 1) % 4], CARDINALS[(idx + 3) % 4], desired.opposite()):
++        _c63('ref')
++        _c63_classify(self, ct, p0.add(desired))
++        idx = CARDINALS.index(desired) if desired in CARDINALS else 0
++        _fb = (CARDINALS[(idx + 1) % 4], CARDINALS[(idx + 3) % 4], desired.opposite())
++        for _j, d in enumerate(_fb):
+             if self._move(ct, d, pave):
++                _c63('back' if _j == 2 else 'perp')      # C3 = back
+                 return
+         self.stuck += 1
++        _c63('stuck4')                                    # C4
+ 
+     def _move(self, ct, d, pave=True):
+         if d == Direction.CENTRE:

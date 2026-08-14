@@ -1,0 +1,200 @@
+TAPE: 1415 unit-rows, 192 games, maps=['glacierkeep', 'midgard', 'ragnarok', 'valkyrie']
+ACCOUNTING: all 5 identities hold on every row
+INSTRUMENT-COST CHECK: instrumented tree won 96/192 = 50.0% of self-play games (50% = instrumentation is not costing games)
+
+=== POOLED (all 4 maps)  (games=192, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 276778
+    desired move SUCCEEDED            : 186082 (67.2% of nav)   [prog 87.9% / noprog 12.1%]
+    desired move REFUSED              : 90696 (32.8% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :  62759     69.2%  [62.9, 76.7]
+          ... friendly                :  39040     43.0%
+          ... enemy                   :  23719     26.2%
+    C2  BUILDING / WALL on the tile   :  27549     30.4%  [22.8, 36.7]
+          ... building                :  18877     20.8%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :   8672      9.6%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :    388      0.4%  (14 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :  79973     88.2% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :   5538      6.1% of refusals      2.0% of nav  [1.2, 2.9]
+    C4  all four refused (stuck += 1) :   5185      5.7% of refusals      1.9% of nav  [0.8, 3.2]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       : 158605     57.3% of nav  [51.1, 62.5]
+  C1 as a share of ALL nav rounds     : 22.7%  [19.1, 25.8]
+
+=== PRIMARY SEGMENT {midgard, ragnarok}  (games=96, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 157384
+    desired move SUCCEEDED            : 94574 (60.1% of nav)   [prog 84.4% / noprog 15.6%]
+    desired move REFUSED              : 62810 (39.9% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :  41043     65.3%  [58.2, 72.9]
+          ... friendly                :  31022     49.4%
+          ... enemy                   :  10021     16.0%
+    C2  BUILDING / WALL on the tile   :  21586     34.4%  [26.7, 41.5]
+          ... building                :  13323     21.2%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :   8263     13.2%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :    181      0.3%  (4 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :  54952     87.5% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :   3862      6.1% of refusals      2.5% of nav  [1.4, 3.8]
+    C4  all four refused (stuck += 1) :   3996      6.4% of refusals      2.5% of nav  [0.7, 4.6]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :  94529     60.1% of nav  [49.7, 67.6]
+  C1 as a share of ALL nav rounds     : 26.1%  [21.2, 29.5]
+
+=== CONTROL SEGMENT {valkyrie, glacierkeep}  (games=96, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 119394
+    desired move SUCCEEDED            : 91508 (76.6% of nav)   [prog 91.5% / noprog 8.5%]
+    desired move REFUSED              : 27886 (23.4% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :  21716     77.9%  [65.2, 88.3]
+          ... friendly                :   8018     28.8%
+          ... enemy                   :  13698     49.1%
+    C2  BUILDING / WALL on the tile   :   5963     21.4%  [11.0, 34.0]
+          ... building                :   5554     19.9%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :    409      1.5%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :    207      0.7%  (10 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :  25021     89.7% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :   1676      6.0% of refusals      1.4% of nav  [0.6, 2.4]
+    C4  all four refused (stuck += 1) :   1189      4.3% of refusals      1.0% of nav  [0.5, 1.7]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :  64076     53.7% of nav  [47.6, 58.9]
+  C1 as a share of ALL nav rounds     : 18.2%  [14.4, 23.0]
+
+=== MAP glacierkeep  (games=48, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 82856
+    desired move SUCCEEDED            : 60920 (73.5% of nav)   [prog 95.2% / noprog 4.8%]
+    desired move REFUSED              : 21936 (26.5% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :  17063     77.8%  [61.6, 90.7]
+          ... friendly                :   6386     29.1%
+          ... enemy                   :  10677     48.7%
+    C2  BUILDING / WALL on the tile   :   4762     21.7%  [8.9, 37.8]
+          ... building                :   4557     20.8%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :    205      0.9%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :    111      0.5%  (10 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :  19693     89.8% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :   1359      6.2% of refusals      1.6% of nav  [0.5, 3.1]
+    C4  all four refused (stuck += 1) :    884      4.0% of refusals      1.1% of nav  [0.4, 2.1]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :  50932     61.5% of nav  [55.2, 66.4]
+  C1 as a share of ALL nav rounds     : 20.6%  [15.4, 26.4]
+
+=== MAP midgard  (games=48, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 32155
+    desired move SUCCEEDED            : 27621 (85.9% of nav)   [prog 91.5% / noprog 8.5%]
+    desired move REFUSED              : 4534 (14.1% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :   4120     90.9%  [86.8, 94.5]
+          ... friendly                :   2451     54.1%
+          ... enemy                   :   1669     36.8%
+    C2  BUILDING / WALL on the tile   :    291      6.4%  [2.7, 10.5]
+          ... building                :    290      6.4%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :      1      0.0%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :    123      2.7%  (0 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :   3724     82.1% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :    595     13.1% of refusals      1.9% of nav  [1.4, 2.4]
+    C4  all four refused (stuck += 1) :    215      4.7% of refusals      0.7% of nav  [0.5, 0.8]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :   7353     22.9% of nav  [18.2, 28.8]
+  C1 as a share of ALL nav rounds     : 12.8%  [11.5, 14.2]
+
+=== MAP ragnarok  (games=48, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 125229
+    desired move SUCCEEDED            : 66953 (53.5% of nav)   [prog 81.5% / noprog 18.5%]
+    desired move REFUSED              : 58276 (46.5% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :  36923     63.4%  [55.8, 71.5]
+          ... friendly                :  28571     49.0%
+          ... enemy                   :   8352     14.3%
+    C2  BUILDING / WALL on the tile   :  21295     36.5%  [28.3, 44.1]
+          ... building                :  13033     22.4%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :   8262     14.2%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :     58      0.1%  (4 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :  51228     87.9% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :   3267      5.6% of refusals      2.6% of nav  [1.2, 4.3]
+    C4  all four refused (stuck += 1) :   3781      6.5% of refusals      3.0% of nav  [0.7, 5.6]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :  87176     69.6% of nav  [60.7, 76.3]
+  C1 as a share of ALL nav rounds     : 29.5%  [24.6, 33.0]
+
+=== MAP valkyrie  (games=48, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 36538
+    desired move SUCCEEDED            : 30588 (83.7% of nav)   [prog 84.0% / noprog 16.0%]
+    desired move REFUSED              : 5950 (16.3% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :   4653     78.2%  [69.2, 85.9]
+          ... friendly                :   1632     27.4%
+          ... enemy                   :   3021     50.8%
+    C2  BUILDING / WALL on the tile   :   1201     20.2%  [12.5, 29.1]
+          ... building                :    997     16.8%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :    204      3.4%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :     96      1.6%  (0 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :   5328     89.5% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :    317      5.3% of refusals      0.9% of nav  [0.5, 1.4]
+    C4  all four refused (stuck += 1) :    305      5.1% of refusals      0.8% of nav  [0.4, 1.6]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :  13144     36.0% of nav  [29.5, 42.7]
+  C1 as a share of ALL nav rounds     : 12.7%  [10.3, 15.2]
+
+=== SEAT A  (games=96, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 137943
+    desired move SUCCEEDED            : 90489 (65.6% of nav)   [prog 89.4% / noprog 10.6%]
+    desired move REFUSED              : 47454 (34.4% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :  31381     66.1%  [57.0, 78.2]
+          ... friendly                :  18557     39.1%
+          ... enemy                   :  12824     27.0%
+    C2  BUILDING / WALL on the tile   :  15912     33.5%  [21.3, 42.7]
+          ... building                :  12016     25.3%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :   3896      8.2%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :    161      0.3%  (4 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :  41665     87.8% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :   2107      4.4% of refusals      1.5% of nav  [0.8, 2.3]
+    C4  all four refused (stuck += 1) :   3682      7.8% of refusals      2.7% of nav  [0.6, 4.8]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :  76911     55.8% of nav  [47.4, 62.6]
+  C1 as a share of ALL nav rounds     : 22.7%  [17.6, 27.2]
+
+=== SEAT B  (games=96, builder-unit-rows pooled)
+  nav rounds (target held, cooldown 0, desired != CENTRE) : 138835
+    desired move SUCCEEDED            : 95593 (68.9% of nav)   [prog 86.5% / noprog 13.5%]
+    desired move REFUSED              : 43242 (31.1% of nav)
+  --- classification of the FIRST REFUSED step (denominator = refusals) ---
+    C1  BUILDER BOT on the tile       :  31378     72.6%  [64.7, 80.6]
+          ... friendly                :  20483     47.4%
+          ... enemy                   :  10895     25.2%
+    C2  BUILDING / WALL on the tile   :  11637     26.9%  [18.7, 34.7]
+          ... building                :   6861     15.9%   [belt(conveyor/splitter) 0, other 0]
+          ... wall                    :   4776     11.0%
+    --  out of bounds                 :      0      0.0%
+    --  refused, tile reads FREE      :    227      0.5%  (10 on ore; move_cd!=0 in 0, action_cd!=0 in 0)
+  --- outcome of the refused round ---
+    perpendicular succeeded           :  38308     88.6% of refusals
+    C3  BACKSTEP succeeded (F3 fires) :   3431      7.9% of refusals      2.5% of nav  [1.1, 4.0]
+    C4  all four refused (stuck += 1) :   1503      3.5% of refusals      1.1% of nav  [0.5, 1.8]
+  --- bonus: 2-tile ping-pong (last 4 nav positions span <= 2 tiles) ---
+    osc2 rounds                       :  81694     58.8% of nav  [49.0, 66.4]
+  C1 as a share of ALL nav rounds     : 22.6%  [17.3, 26.6]
+
+=== PER-UNIT REFUSAL PROFILE (units with >= 20 nav rounds) ===
+  PRIMARY: 762 units | refused-share median 11.8% p90 48.7% | 53 units (7.0%) refused >=50% of nav rounds
+      F4 escape hatch: 17/762 units (2.2%) accumulated >=5 stuck events over the game (the re-pick threshold); >=1 in 232 (30.4%)
+      osc2 share of nav: median 11.6% p90 91.0%
+  CONTROL: 621 units | refused-share median 9.5% p90 43.5% | 22 units (3.5%) refused >=50% of nav rounds
+      F4 escape hatch: 23/621 units (3.7%) accumulated >=5 stuck events over the game (the re-pick threshold); >=1 in 222 (35.7%)
+      osc2 share of nav: median 16.8% p90 80.9%

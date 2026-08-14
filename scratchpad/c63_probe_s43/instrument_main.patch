@@ -1,0 +1,27 @@
+--- /Users/junghard/Projects/Work/florent-code-game/bots/_v223sealrepair/main.py	2026-08-14 11:31:01
++++ /private/tmp/claude-501/-Users-junghard-Projects-Work-florent-code-game/f9bf597b-8baf-43f0-beca-9b50d5872569/scratchpad/_c63instr3/main.py	2026-08-15 01:30:31
+@@ -27,7 +27,7 @@
+ 
+ from doctrine import *  # noqa: F401,F403
+ from eco import (
+-    EcoMixin, core_tiles, enemy_core_for, heal_seats, known_map_for,
++    C63, C63_KEYS, EcoMixin, core_tiles, enemy_core_for, heal_seats, known_map_for,
+     nearest_cardinal, pack_pos, ring, unpack_pos,
+ )
+ from raid import RaidMixin
+@@ -137,6 +137,15 @@
+                 import sys
+                 import traceback
+                 traceback.print_exc(file=sys.stderr)
++        if C63:
++            try:
++                import sys
++                sys.stderr.write("C63\t%s\t%d\t%d\t%s\n" % (
++                    getattr(ct.get_team(), 'name', '?'), ct.get_id(),
++                    ct.get_current_round(),
++                    "\t".join(str(C63.get(k, 0)) for k in C63_KEYS)))
++            except Exception:
++                pass
+ 
+     def _dispatch(self, ct):
+         e = ct.get_entity_type()
