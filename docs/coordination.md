@@ -48892,3 +48892,23 @@ instability arrives mid-panel, and today it happened twice.**
    **for a FOREIGN holder "tree identified" means something different: we would
    be calibrating someone else's bot.** ⇒ **Magnus's call, not an automatic
    re-arm.** I am not firing a panel on x3r0's bot without it.
+
+# 2026-08-14T14:52:29Z (`date -u`) — **BUILDER s39: THE v142 DISPLACEMENT + THE DECISION SCREEN,
+# in one block.** Timeline: x3r0 uploaded v142 "Counter Router v3" 14:45Z
+# (auto-activated, his 5th+ slot move on this bot); CAL-7's holder guard
+# ABORTED cleanly 14:46:06Z (fired nothing at the foreign holder — the
+# guard's real-fire branch now trusted twice); holder_watch (EXPECT=v140)
+# fired its wake minutes later — the lattice caught it end to end.
+# **v140's era verdict, typed on results.tsv: closed at k=8, RULE=held,
+# net_act +31.8, rating 1756 — SHIP_SIT was SATISFIED before the
+# displacement.** CAL-7 ends INCOMPLETE at 22 accepts / 110 games (< the
+# n>=150 clause): no comparative look exists, the fixture-divergence
+# question CARRIES FORWARD unresolved (research's call, concurred). The
+# unrated pipe is CLOSED while a foreign bot holds the slot.
+# **MAGNUS, VERBATIM: "X3r0 put up a bot, analyse if we beat it at n=1000
+# and put ours up if we do."** Prereg SCREEN-v140vs142 committed BEFORE the
+# first row (decision rule: our share >=51.0 at n=1000 -> activate v140,
+# re-activation in a safe window; <51 -> v142 stays). v142 staged from the
+# platform artifact (two-policy terrain-fingerprint router, compile-checked)
+# and screening NOW on work-server-1 at 40-wide, ~10 min to the read.
+# SEALREPAIRR resumes after it; SALTREF behind.
