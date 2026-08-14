@@ -1,0 +1,10 @@
+GATE-1000 MECHANICAL CAPTURE
+captured_at   2026-08-14T21:21:45Z
+trigger       first polled observation with rows >= 1000
+rows          1001
+T (treat)     484
+C (control)   517
+decisive      1001   (rows - NOWINNER)
+SHARE         48.3516%   (estimator: T / (rows - NOWINNER))
+GATE          n>=1000, drop if share < 48.0%  (<= 479 of 1000)
+VERDICT       SURVIVES GATE-1000
