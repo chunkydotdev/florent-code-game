@@ -53054,3 +53054,99 @@ controls come back ABSENT the probe is **UNINFORMATIVE and says so**, rather tha
 clean confirmation. **A probe that can only confirm has not been seen to check.**
 Spec + the exact insertion paragraph to follow as a dated doc; `CLAUDE.md` and
 `.claude/commands/` are **outside my write surface** and I am not editing them.
+
+--- 2026-08-14T20:51:25Z RESEARCH (s43) — ⛔⛔ **THE POOLED OPPONENT TABLE IS PROTOTYPE-CONTAMINATED AND SPLITTING IT FLIPS A SIGN. Plus: seat is a MATCH-level property, which retracts my own lane's s42 seat claim — and a powered league-wide side-A constant that re-bases QUEUE #8.** ---
+Surface: `corpus/meta_join.tsv` synced this session (42,285 rows; newest league_matches obs
+2026-08-14T20:32:59Z). Our live rating **1775** read off `fcode status` at 20:45Z (`Active bot:
+v140 (Loki v10)`, rank #20/125) — **live, not the cache**; `target_value.py:283` shells
+`fcode status` for OUR rating and uses the corpus only for OPPONENTS. #56 is about the
+opponent half and stands.
+
+## 1. METHOD — **SEAT IS A MATCH-LEVEL PROPERTY. EVERY SEAT STATISTIC WE HAVE QUOTED IN GAMES IS ANTICONSERVATIVE.**
+```
+matches = 1789   MIXED-seat matches = 0        <- seat never varies within a match
+positive control: 1781 of 1789 matches have >1 distinct game id
+games-per-match: {5: 1759, 4: 21, 1: 8, 2: 1}
+```
+The control is stated both ways on purpose: the zero is only meaningful because the same
+grouping key **does** resolve multiple games per match. ⇒ **for a seat cut the MATCH cluster
+is not merely live, it is PERFECT (ρ→1 on the seat variable), so the unit is the match and
+the DEFF is the full ~5.** This is the `CLAUDE.md` enumeration procedure run, not asserted:
+MATCH cluster survives at full strength; OPPONENT cluster survives too and is not removed here.
+
+## 2. ⛔ RETRACTION OF MY OWN LANE'S s42 FINDING — **"seat a 49.1% vs seat b 27.4%, p≈0.033" DOES NOT SURVIVE THE CORRECT UNIT**
+Recomputed at match level on the synced corpus (population differs slightly from s42's; both
+stated rather than reconciled):
+```
+HTTP418 seat a  41.92%  (13 matches, se 7.20pp)
+HTTP418 seat b  26.11%  (18 matches, se 4.93pp)
+seat a vs seat b:  +15.81pp  se 8.72  t=1.813  p=0.070   <- NOT significant at 0.05
+```
+**Direction survives; significance does not.** ⚠ **What DOES survive is stronger and is not a
+seat claim:** `HTTP418 seat b vs our own field seat b = −20.61pp, p=4.0e-05`, while
+`seat a vs field seat a = −8.25pp, p=0.26`. ⇒ **the defensible statement is "HTTP 418 is a bad
+matchup", not "we have a seat problem against HTTP 418".**
+
+## 3. ⭐ NEW AND POWERED — **THE LEAGUE HAS A STRUCTURAL SIDE-A ADVANTAGE, AND IT IS NOT OURS**
+Per match, share of games won by side A, **our matches removed entirely**:
+```
+other teams only:  51.17%   n = 6,696 matches   se 0.38pp   p = 0.0022
+=> a structural seat gap of +2.33pp +- 0.76 on the REAL map pool
+our own seat gap:  50.17% (a, n=902) vs 46.72% (b, n=887) = +3.45pp +- 1.36  p = 0.011
+EXCESS over structural = +1.11pp  se 1.56  t=0.714  p=0.48
+```
+⇒ **no platform evidence of a bot-specific seat bug.**
+⛔ **THIS IS NOT A REFUTATION OF QUEUE #8 AND MUST NOT BE READ AS ONE.** #8's 7.6pp gap is
+**byte-identical SELF-PLAY**, where any asymmetry is pure; mine is platform play against ~100
+opponents whose own seat asymmetries dilute it, and **my MDE on the excess is ~3.8pp — I cannot
+see a 1.1pp effect.** #8 already says the ladder cannot settle this (its own MDE 4.58pp) and it
+is right. **What this DOES do is upgrade one of #8's inputs:** #8 attributes ~1.8pp to maps
+from *"third-party same-8-maps 51.76%, n.s."* — **a non-significant read on 8 battery maps.**
+Replace it with **2.33pp ± 0.76 (p=0.002, n=6,696 matches, real pool)**. The structural share
+is *larger* than assumed, so #8's "residual is OURS" shrinks ~5.8pp → ~5.3pp. **#8 survives,
+slightly cheaper. Routed to the builder as an input swap, not a status change.**
+
+## 4. ⛔⛔ **THE FINDING THAT NEARLY WENT OUT WRONG — POOLING FIXTURES INVERTS A TARGET**
+I built the obvious table (every in-band opponent × seat vs our own baseline) and it named
+**The Bisons −19.06pp (p=5e-05, n=45 matches)** as a top target. **That table is wrong**, and
+the reason is the rule already in `CLAUDE.md`: **unrated pools PROTOTYPES, ladder pools SHIPPED
+BOTS.** Split:
+```
+The Bisons     ladder ALL 47.69% (n=26)   unrated ALL 26.79% (n=56)   unrated >=08-12 68.24% (n=17)
+farming_200s   ladder ALL 43.75% (n=16)   unrated ALL 23.04% (n=56)
+```
+**A −19pp target became a +21pp one on the same opponent by naming the fixture.** Fully
+decomposed, the anomaly is an **opponent counter-ship**, not noise:
+```
+The Bisons, since 08-12, by fixture x THEIR version x OUR version
+  unrated  theirv=7  ourv=125    37/45 = 82.2%     <- the whole 68% cell
+  vs their CURRENT v8, both fixtures pooled:  14/30 = 46.7%
+```
+⇒ **we held an 82% edge over their v7 with our v125, and their v8 erased it.** That is a
+measured, dated counter-ship by a team at gap −1, and it is the most actionable single fact
+in this note.
+
+## 5. ⭐ FIRE ORDER — **cells that survive the fixture split, are CURRENT, and are in band**
+Ranked. Each carries the mechanism-occurrence check the builder asked for.
+| # | target | gap / 5-0 pays | ladder (>=08-12) | unrated (>=08-12) | mechanism OCCURS? |
+|---|---|---|---|---|---|
+| **1** | **0033** | **+64 / +18.93** | **25.71% (n=7 m)** | **26.67% (n=42 m)** | **YES — both fixtures agree, and it is version-independent on THEIR side: 19.7–40% across their v54,55,56,57,58,59 (n=241 games). Last played 19:36Z today vs our v140.** |
+| **2** | **HTTP 418** | **+3 / +16.15** | **36.67% (n=6 m)** | **35.00% (n=21 m)** | **YES — both fixtures agree; stable on their v103 at 36.5% over n=126 games. Last played 19:18Z today vs v140.** |
+| — | The Bisons | −1 / +15.94 | 45.00% (n=8 m) | 68.24% (n=17 m) | **⛔ DO NOT ORDER AS A WEAKNESS CELL** — the split resolves it; vs their current v8 we are 46.7% (n=30 games), i.e. baseline. |
+| — | farming_200s, 0033-seat, kladde | — | — | — | **⛔ pooled cells only; not re-derived per fixture. Do not spend a window on them until they are.** |
+| ctl | team lazy | +10 / +16.45 | 70.91% (n=11 m) | 61.54% (n=52 m) | **positive control — a cell where we are unusually GOOD.** Any diagnosis that also "explains" team lazy is wrong. |
+
+⭐ **AND THE HONEST SCHEDULING CALL, which is the opposite of ordering games: FOR 0033 THE
+FIXTURE IS NOT THE BOTTLENECK.** We already hold **241 games against them since 08-12**,
+current and against v140. **Firing more is not what is missing — a DECODE of the loss mode is.**
+Per my own R6, the deliverable is question selection, not utilisation: **I am taking the 0033
+decode as a research task this session and NOT asking for a window for it.** The windows are
+better spent on cells where we lack data, and on the counter-ship question in §4.
+
+## OPEN, FLAGGED NOT EDITED
+**`PROGRAMME.md`'s `TARGET_MIN_PAYOUT` section (:580-590) prices off "~1663–1666 (v114, live
+at 20:35Z)" and concludes "zero admissible targets below us".** Our live rating is **1775** and
+the band now spans **+111 to −70, i.e. teams both above AND below us**. The prose is stale by
+~110 points and its conclusion has inverted. **That file is edit-on-Magnus's-directive only —
+this is a note for him, not an edit.** *(Raised jointly: the side lane flagged the same
+inconsistency from the other direction at 20:44Z.)*
