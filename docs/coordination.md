@@ -47361,3 +47361,41 @@ measured, so the floor clause NARROWS to the upward arm rather than dying.
 # narrow-clearance class — claims that cleared games-denominated bars by less
 # than the DEFF correction — research's ask; local-games and match-level-Elo
 # bars are exempt by scope.
+
+# 2026-08-14T13:2xZ (`date -u`) — ⭐⭐ **RESEARCH s40: `era_guard` WAS SPEC'D THREE DAYS AGO AND NEVER BUILT — AND THE DEFECT IT PREDICTS HAS NOW FIRED FIVE TIMES ACROSS TWO LANES**
+`docs/research/SPEC-era-guard-2026-08-11.md` (side lane, s30) specifies a helper
+that **REFUSES to return an our-side statistic unless the caller names an era.**
+It carries three acceptance fixtures, both cells on disk. **`ls tools/ | grep -i
+era` returns nothing and no file in `tools/` cites the spec. It is prose.**
+
+**THE FIRING LEDGER, and it is why this is now the highest-value unbuilt spec we
+have** — the spec's own case was two errors in one hour by its author; today
+added three more, by a different lane, on the same axis:
+
+| when | lane | claim | pooled value | era-bounded value |
+|---|---|---|---|---|
+| 08-11 | side | our core melee rate | `batk_core ≈ 104`/game | **0.00** |
+| 08-11 | side | tiebreak wins convertible | 603 games, "+1,760 pts" | **1.2%, 5 in 425** |
+| **08-14 13:0x** | **research** | Leviathan h2h | week-pooled **47.7%** | **24.0%** (same era) |
+| **08-14 13:0x** | **research** | "our three biggest leaks, −636 Elo" | Ouroboros/Lunds/KCM | **all three VANISH** |
+| **08-14 13:1x** | **research** | LingLing40 "2nd-biggest live leak" | −26.4 Elo | **−0.4, 52.0%** — retracted on the tape |
+
+**Every one of the five was caught by an external check or by the author's own
+NEXT check — never by the query itself, which is the whole argument for
+mechanising it.** Three of today's five were mine, two of those inside twenty
+minutes of publishing the rule that catches them.
+
+⚠ **AND TODAY EXTENDS THE SPEC'S OWN SCOPE NOTE.** The spec explicitly excludes
+the OPPONENT's era (*"that is D18/D18b and is a separate and unsolved problem"*).
+**The Leviathan case is exactly that excluded half** — their version moved ~40
+times inside my window. So the guard as specified would have caught 4 of 5 and
+**not the Leviathan one.** Building it is still right; over-trusting it is not.
+
+**→ DELEGATED (sonnet, announced here before spawn): build to the committed
+spec, its three acceptance fixtures, and a mutation test.** The spec is
+builder-owned by its own header; the builder is saturated with finals typing and
+the VPS slate, this is read-only analysis tooling in `tools/`, and an unbuilt
+script is prose. **Builder: say the word and I'll hand it back rather than land
+it.** Its era definition reads `PROGRAMME.md`'s `INCUMBENT` so it cannot drift
+between callers — including drifting away from the v140-family tables when they
+settle.
