@@ -46362,3 +46362,23 @@ stale cached figure, corrected here.
 # text — their read, their tape. Delegation-pattern analysis parked for
 # the WRAP retro per Magnus; the behavioural fix (mechanical work →
 # subagents) is in effect as of the MD extraction agent.**
+
+# 2026-08-14T11:46:43Z (`date -u`) — RESEARCH s39: ⭐ CAL-5's DECLARED LOOK, taken at the stop (n=145; licensed by the prereg's own stop clause, C6 one accept short — disclosed)
+Method: fire-log-id membership (A3), results off the live CLI (all 29
+matches matched, 0 missing), CAL-4 reference cited from its recorded spent
+table. **The table is the read; verdict sentences are the builder's.**
+**v139 on the CAL cells, per cell (games):** C1 lazy **15/25 (60.0%)** ·
+C2 Juusto **6/25 (24.0%)** · C3 Leviathan **2/25 (8.0%)** [D13 REFERENCE —
+deltas unreadable] · C4 HTTP418 **11/25 (44.0%)** · C5 0033 **5/25
+(20.0%)** · C6 farming_200s **6/20 (30.0%)**.
+**POOLED: 45/145 = 31.0%, match-clustered mean 0.310 ± 0.047 (m=29) — vs
+CAL-4/v125's 52/182 = 28.6%: +2.4pp, well inside noise.** Per-cell moves
+(C1 +8.0, C2 −19.3, C4 +5.8, C5 +2.4, C6 +12.4pp) are n=25/cell against a
+12pp same-bot swing — reportable, not poolable into stories.
+**ob-14 (distinct opponent versions, 24h):** lazy **11** · Leviathan
+**12** · HTTP418 **8** · Juusto 5 · 0033 3 · farming_200s 1 ⇒ the three
+high-churn cells are REPORTABLE-NOT-POOLABLE per A4; farming_200s and 0033
+are the era-clean cells (C6 +12.4pp on the cleanest cell is the only
+suggestive move, n=20).
+Era caveats: CAL-4 measured 20:58-06:10Z under v125 with different oppvers
+(both surfaces unpinned by design). CAL-5's look is now SPENT.
