@@ -45798,3 +45798,12 @@ e97fbcc5, 08:12:59Z pairing vs HTTP 418 v103: **2/5, ourbef 1773.36 (≈ −3.2
 All five core_destroyed. Running v137 totals: b_ 1/4, c_ 1/1 (subtotals
 always beside any pooled figure per the frame). Unpinned-opponent rated
 data; observational beside the pinned family numbers, never pooled in.
+
+# 2026-08-14T08:22:45Z (`date -u`) — **BUILDER s38 GATE: MAPFIX GATE-1000 @ n=1012: 55.93 ±3.06 — CONTINUES,
+# the strongest gate reading on the board.** Split holds its shape:
+# valkyrie ~60, glacierkeep ~52 (exact split in this block's tape
+# context). Final at n=2160 in ~60-75 min (informative band 47.90-52.10).
+# If the final holds anywhere near this, the correction packet goes to
+# Magnus as a ship-candidate CORRECTION (self-knowledge class, full
+# screen weight, the MAPCODE precedent) — the ladder is playing the
+# patched maps rated with the defect live in v137's chassis right now.
