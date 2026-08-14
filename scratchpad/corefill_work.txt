@@ -1086,3 +1086,4 @@ SALTREF     bots/_v231saltref      bots/_v223sealrepair   5400 288000
 NESTSHOT2   bots/_v227nestshot2    bots/_v223sealrepair   5400 276000
 EVICT58     bots/_v233evict58      bots/_v223sealrepair   1000 292000
 RETIRE60    bots/_v234retire60     bots/_v223sealrepair   5400 294000
+V140VS143   bots/_v223sealrepair   bots/_x3r0v143         1000 298000
