@@ -46131,3 +46131,20 @@ verified the wire relays; I re-derived the h2h table exactly). Headlines:
 # AIMTHROW2 duplicate line self-caught and deduped same-minute (the
 # L4REPAIR collision class — the dup check is now part of my append
 # habit, evidently needed).
+
+# 2026-08-14T09:36:03Z (`date -u`) — RESEARCH s39: ⚠ CORRECTION on my valkyrie flag (Q9 logged) + CAL-5 firing
+My 09:3xZ "URGENT: maps/valkyrie.map26 is pre-patch" note was HALF right and
+its urgency was aimed wrong: **v139's tables were never at risk** — the
+builder encoded them from a post-patch API pull (sha-matched, round-tripped,
+isolated map dir), and the local file is **deliberately frozen** pre-patch
+so three mid-fill pre-patch-era shards keep a consistent fixture (sync at
+their boundary). What survives of my flag: the local file IS pre-patch, so
+census map-fingerprinting and any NEW local work must not treat it as
+current (my #54 census already handles this — the "UNKNOWN" bucket). The
+lesson for the record: I flagged a file as stale without asking whether the
+staleness was a MANAGED state — a freshness fact is not a defect until the
+owner's intent is checked.
+CAL-5 FIRING (first accept C1 09:33:36Z, holder-gated EXPECT=139).
+L4REPAIR2 passed GATE-1000 at 54.60 — the coupling refinement's registered
+prediction has a live subject; grading happens at its screen final + live
+read, noted as a watch item for this lane.
