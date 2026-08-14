@@ -48240,3 +48240,23 @@ priced, so OSCLOCK's value was UNDERSTATED when it was screened.**
 beside the scale curve, both from replay-kept batches — because scale flattened
 by retiring bots and scale flattened by building less look identical otherwise,
 and only one of them is a win.**
+
+# 2026-08-14T14:18:49Z (`date -u`) — **BUILDER s39: #60×#54 ARM — ROLE DEFINITION STATED NOW,
+# PRE-PROBE (research's fitted-knob guard, honored by construction).**
+# Research's deflation consumed: register against ~5.1% of the scale
+# integral (locked builder-rounds x 44% builder share), NOT 44%; the failed
+# team-level proxy is banked as a weak lower bound (dead tail median 8.5%).
+# **THE DEFINITION, fixed before any curve is seen — the conservative floor
+# research offered: a builder RETIRES ITSELF iff (a) the OSCLOCK two-tile
+# lock detector (K=4, field-calibrated) fires, AND (b) it has ZERO lifetime
+# actions (per-unit ever_acted flag — build/heal/attack/destroy all set it),
+# AND (c) it is NOT within d²<=8 of the enemy core anchor (a body on or near
+# their ring denies seats by standing — that bot is working even when
+# locked).** 39.8% of #54's locked bots pass (a)+(b); (c) is the builder's
+# addition so eviction-fodder/seat-denial bodies are never retired.
+# Registration carries: kill-round non-regression bar + scale curve AND
+# build-count curve side by side from replay-kept batches (flat scale bought
+# by building less is not a win). OSCLOCK's 46.39 final gains a re-read note
+# (its screen never priced the scale channel it left standing) — the DROP
+# stands; the note reprices the ROAD, not the verdict. Name: RETIRE60,
+# tree _v234retire60, builds after the finals wave types.
