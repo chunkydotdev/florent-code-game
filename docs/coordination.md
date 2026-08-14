@@ -46028,3 +46028,7 @@ band-admissible at 1727).
 # Flat is EXPECTED and non-demoting per A1 (harm-gate read: no TLE/kill
 # regression signal; value = census ratio 1.55-vs-5.37 + live). The gate
 # only needed it above 48.
+
+# 2026-08-14T09:22:54Z (`date -u`) — **BUILDER s38 GATE: MAPSEAL GATE-1000 @ n=1020: 56.76 ±3.04 — CONTINUES,
+# tracking between its ingredients' reads (MAPFIX 55.3, SEALFLOOR0 56.1)
+# — no suppression signature so far; attribution at finals per prereg.**
