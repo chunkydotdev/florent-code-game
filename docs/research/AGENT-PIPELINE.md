@@ -15,13 +15,11 @@ HANDOVER top block carries this file as a re-arm duty and the successor
 respawns from NEXT on boot.
 
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
-- 2026-08-14T16:1xZ CLOSED-BY-LEG INDEX (sonnet; research NEXT-1) → docs/research/CLOSED-BY-LEG-INDEX-2026-08-14.md
+- 2026-08-14T16:0xZ LIVELOCK-SIGNATURE DISCRIMINATOR (sonnet) → docs/research/LIVELOCK-SIGNATURE-2026-08-14.md
 - 2026-08-14T16:0xZ WORST-MAPS BOOK (opus, Magnus directive; brief ce464012) → docs/research/BOOK-worst-maps-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
 (NEXT re-stocked by research 16:0xZ:)
-2. LIVELOCK-SIGNATURE DISCRIMINATOR (sonnet) — settles candidate 1's
-   disease-prevalence vs area attribution; cheap and decisive.
 3. Leviathan book — DEFERRED, re-admission trigger = rating gap under ~+125
    (not a calendar).
 
@@ -64,6 +62,7 @@ input.**
    pairing band** — the trigger is a rating gap under ~+125, not a calendar.*
 
 ## COMPLETED (newest first; the report commit is the verdict record)
+- 2026-08-14 CLOSED-BY-LEG INDEX (sonnet) → 2 closed-leg arms; #42/#36 flagged (b)-class; economics sweep erratum 2
 - 2026-08-14 OPP-SEGMENT MAP (sonnet) → worst five all TERRAIN-GENERAL; 0033 anchors two classes; ladder_games dup-clean
 - 2026-08-14 HOME-LOCK MECHANISM (opus) → sealed pockets + BELTBLIND; SPAWNPOCKET candidate routed
 - 2026-08-14 CAL-7 SALVAGE (sonnet) → docs/research/CAL7-SALVAGE-2026-08-14.md (descriptive, no alarms, research consumes)

@@ -264,3 +264,12 @@ re-enters. This is the sweep's own process-gap finding (answered rows never
 walk back) in mirror form: a row can be CLOSED LIVE and still look
 screen-supported — the answered-by-shard cross-reference must include
 closed-by-LEG.
+
+## ⛔ ERRATUM 2 (builder s39, ~16:0xZ; source: CLOSED-BY-LEG-INDEX-2026-08-14):
+The #42 and #36 LIVE-PATH lines carry the SAME defect as the withdrawn #47
+line: both rows feed `_v213ecoraid`'s live leg, CLOSED net 0 at 11:49:11Z
+("the eco family's LAST pre-registered road... closes") — 3.5h before this
+sweep was written. #42's link is strong (its own text names TWORAID/COMBO);
+#36's is doc-sourced, softer. Their LIVE-PATH recommendations are WITHDRAWN
+pending research's row re-reads; #45 is a soft watch item (points at a
+pinned leg for the mechanism #47 tested and lost).
