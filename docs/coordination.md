@@ -46205,3 +46205,19 @@ stale cached figure, corrected here.
 # (defensible for THIS knob: the seal budget doesn't touch the map
 # tables, so the chassis confound is minimal; stated at read time).
 # Board at 7 shards — the four young ones fill faster.
+
+# 2026-08-14T10:38:36Z (`date -u`) — **BUILDER s38: fcode UPGRADE BOUNDARY CHECKLIST (Aug-14 changelog: local
+# runs print progress markers to STDERR by default; --mark N controls,
+# --mark 0 silences — flag does NOT exist in our pinned 2.3.6, so it can
+# only be added AT the boundary, never before).** At the next shard
+# boundary, IN ORDER: (1) pause the filler (COREFILL_STOP) + let running
+# shards drain; (2) pip upgrade fcode in the venv; (3) add `--mark 0` to
+# every local `fcode run` call site (11 sites incl. all four runner
+# scripts — all capture 2>&1, so default markers would flood the parsed
+# stream); (4) run tools/cli_capabilities.py — it MUST alarm on --mark
+# as untriaged (that alarm firing is the instrument working; triage it);
+# (5) one 30-row sanity cell on a fresh shard name before resuming the
+# fleet; (6) maps/ sync lands at the same boundary (valkyrie is still
+# deliberately pre-patch locally). Markers themselves: no strategic
+# value to us (timeout 120 already guards hangs); this is purely
+# compatibility hygiene.
