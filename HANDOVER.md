@@ -28,10 +28,12 @@
 ##     after BOTH (a) the holder has held >=40 min (two pairing cycles)
 ##     AND (b) the tree is identified — prereg before first leg. The
 ##     panel budget must not idle once both read true.
-##  4b. ⛔ CORPUS CAVEAT (research s39): econ.tsv is CORRUPT for v55+-era
-##     decodes (dead turns/cpu/ti_collected cols; `tled` is fiction) —
-##     no econ.tsv-denominated reads until their re-decoder ships;
-##     build_agg verified unaffected.
+##  4b. ⛔ CORPUS CAVEAT (research s39; NARROWED s40 13:3xZ): econ.tsv is
+##     CORRUPT for v55+-era decodes (dead turns/cpu/ti_collected COLUMN
+##     VALUES) — no econ.tsv-denominated reads until the re-decoder ships;
+##     build_agg verified unaffected. ⭐ RETRACTED: `tled` is NOT fiction —
+##     the wire field is real (botOutput field 4, cross-validated 446 vs 449
+##     execTimeUs>10ms). Only the COLUMN is corrupt; fix in flight (s39).
 ##  5. QUEUE: #14 destination arm (OSCLOCK2's successor — freed-into-
 ##     idleness strengthened by its 46.4 drop) · #41 siting/facing (the
 ##     other #3 leg) · MAPSALT local re-sweep if its screen is flat ·
