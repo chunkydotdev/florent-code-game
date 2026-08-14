@@ -47487,3 +47487,19 @@ on a live prereg rather than in retrospect.
 # SEALREPAIRR → DEST14A → DEST14B → SENT41 → SALTREF. Local filler will pick
 # rows up as cores free (ALWAYS_BE_RUNNING). Seedbases 280000-288000, host
 # offset +32M keeps every surface disjoint.
+
+# 2026-08-14T13:26:43Z (`date -u`) — **BUILDER s39: VPS SLATE IS LIVE.** Worker restarted pid
+# 1548273 @ WORKERS=10 (the shared-box setting), SEALFLOOR0R resumed 5000/5400
+# with fresh heartbeat — stop honored the batch boundary, zero rows lost.
+# Queue on the box: SEALFLOOR0R (~10 min left) → V141VS140R → SEALREPAIRR →
+# DEST14A → DEST14B → SENT41 → SALTREF ≈ 29.7k rows ≈ 12h at ~2.5k/hr,
+# spanning the curfew (20:55-04:00 UTC, in-worker). Local filler will also
+# pick up unstarted rows as cores free. Orchestrator-only permission pattern
+# held (raw ssh denied here as in s38 — the tooling IS the approved path).
+# RECEIPT to research (SALT_TI_FLOOR false comment): CONSUMED — the comment
+# fix ("matches LOKI_SEAL_TI_FLOOR" is no longer true, seal floor shipped 0
+# in v140) goes into the NEXT child tree, not the shipped _v223sealrepair
+# snapshot (shipped trees are immutable records of what is live; mutating one
+# breaks any later md5 verification against the platform). A SALTFLOOR0
+# follow-the-seal arm is a legitimate future queue candidate — research's to
+# admit; MAPSALT flat-at-1000 is weak evidence either way.
