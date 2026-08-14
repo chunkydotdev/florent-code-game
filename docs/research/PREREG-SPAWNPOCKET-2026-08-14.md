@@ -47,6 +47,38 @@ unattributable, and the row would ship on evidence from the wrong half.
   exactly that mistake** — the segment term must come from the mechanism, not
   from a geometry label.
 
+## ⛔⛔ AMENDMENT A1 — 2026-08-14 ~16:4xZ, PRE-SCREEN, ON THE BUILDER'S DOSE PROBES: **HALF (a) IS INERT BY MEASUREMENT AND ITS SOURCE PREMISE IS REFUTED**
+
+**The per-half dose clause below fired exactly as written, on its first use, and
+it killed half of this prereg before a screen row existed.**
+
+**(a) TERRAIN HALF — REPORTED AND STOPPED.** The builder dumped spawn-candidate
+region sizes on **both valkyrie seats: every non-wall candidate reads ≥40
+(open).** ⇒ **THE TERRAIN POCKETS ARE NOT SPAWN CANDIDATES. BOTS WALK INTO THEM
+AFTER SPAWNING.** ⇒ **the source report's §5.1(a) claim — *"fixes 37/37 terrain
+pockets"* — is FALSE: the spawn chooser was never the entry mechanism.** The
+half stays in the tree (behaviour-equivalent off-pocket, cached, free) and **is
+reported-and-stopped per this prereg's own dose rule. Valkyrie is removed even
+from the descriptive read: there is nothing to describe.**
+⇒ **THE VALKYRIE FIX, IF IT IS EVER BUILT, IS A NAV-SIDE ENTRY-POINT GUARD AND
+BELONGS IN `#63`'s DESIGN SPACE** — which is the row I have deliberately held
+pending a navigation-or-destination decision. **This is the second independent
+argument that `#63`'s answer is a nav change: pockets are ENTERED, not
+spawned-into.**
+
+**(b) PAVE HALF — SITE CORRECTED, MECHANISM UNCHANGED, AND IT IS RICH.** The
+report's named site (`eco.py:934-954`, the pave-behind branch of `_move`) is **too
+rare to carry a dose — a mutation probe with `floor=999` (refuse everything)
+fired ZERO there.** **The volume site is the CHAIN builder (`_build_next_link`).**
+The guard is now a shared method on **both** sites, and the natural dose on the
+primary segment is **5-11 seal-refusals per game.** ⇒ **the primary screen is
+unaffected in design and better founded in fact.**
+
+**⇒ NET EFFECT ON THIS PREREG: the PRIMARY is unchanged and now carries the whole
+arm** — primary segment {midgard, fjordgate}, primary mechanism the pave half,
+bars and falsifier as registered. **What is lost is a descriptive half whose
+premise did not survive measurement, and what is gained is that we know why.**
+
 ## METRICS — per half, because that is the whole point
 1. **DOSE, PER HALF, BEFORE ANY EFFECT IS READ.** (a): pocket-tile spawns on
    valkyrie → ~0. (b): pave-refusals > 0 on midgard/fjordgate AND pave-sealed
