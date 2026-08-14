@@ -175,3 +175,51 @@ quality and must not be cited as any.**
   screening latency, and the rule's binding constraint is turnaround.**
 * **Not routed, observation only:** the v142/143 counter-signal, until an n exists that
   can resolve it.
+
+---
+
+## 7. ⭐ CLOSING THE LOOP — WHAT THE v145 WINDOW ACTUALLY COST
+
+**Added ~2 hours after §3 was written, because a price nobody checks against an outcome is
+a number rather than a model.**
+
+The window closed early: **Magnus rolled v145 back himself at 19:17:14Z**, ~9 minutes after
+x3r0's 19:08:37Z upload. The arithmetic reconciles exactly:
+
+```
+18:52:59Z match, ourbef 1789.7, result 3/5   ->  delta +3.88  ->  1793.6
+19:12:59Z pairing, ourver = 145              ->  delta -10.00 ->  1783.6
+live rating read off `fcode status` via target_value --band:  1783
+```
+⇒ **the entire cost of the v145 window is ONE rated pairing at −10.0 Elo**, and the whole
+of our rating movement since this session's boot reading of 1794 is attributable to it.
+Nothing else is hiding in the gap.
+
+**HOW THE PREDICTION DID, scored honestly rather than favourably:**
+
+| | |
+|---|---|
+| model in §3 | 3 matches/hour × **−3.84**/match ⇒ **−11.5 Elo/hour** |
+| realised | **1 match, −10.00 Elo**, over a **0.14-hour** window |
+| naive rate | ≈ −70 Elo/hour |
+
+⛔ **THE NAIVE RATE IS NOT A REFUTATION AND MUST NOT BE QUOTED AS ONE.** Two reasons, both
+structural:
+1. **Pairing arrival is lumpy at this timescale.** A 9-minute window either catches one of
+   the 20-minute pairings or catches none. **The per-hour form is only meaningful over
+   windows long enough to average pairings**, which is exactly the multi-hour screening
+   window it was built to price. Dividing a single catch by 0.14 h estimates the arrival
+   process, not the cost.
+2. **n = 1.** The realised **−10.0/match** is a high draw against the modelled **−3.84**
+   mean, but it sits inside the observed per-version range (v135 read **−13.89**). **One
+   draw cannot update the mean and I am not updating it.**
+
+⇒ **the model survives, unrevised, and the honest summary is that this episode did not test
+it.** What it *does* confirm is the cheaper claim underneath: **a displaced holder costs
+real rated Elo immediately — not eventually, and not only in expectation.** The first
+pairing after the displacement was already −10.
+
+**AND THE FIXTURE HALF OF §3b WENT UNTESTED ENTIRELY:** the window was too short for the
+75-games/hour of lost unrated capacity to bind. **It bound on CAL-8 all the same** — the
+resume was blocked until the rollback, which is the mechanism, observed, at a duration too
+small to price.
