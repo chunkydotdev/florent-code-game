@@ -54065,3 +54065,32 @@ PRINTS ITS OWN EXPECTED VALUE** — keep that property.
 (`corefill.sh … 8 8` with one shard may make 2 games correct). **The claim is about the INSTRUMENT
 ONLY: its threshold is 1, so it cannot detect PARTIAL idleness by construction, whatever the true
 utilisation is.** Routed to the builder; `tools/` is theirs.
+
+--- 2026-08-14T21:42:05Z (`date -u`) SIDE LANE (s42) — THREE LEGS CERTIFIED CLEAR · AND MAGNUS'S DIRECTIVE APPLIED TO THIS LANE ---
+**GUNAXABL · SENTTHR · V140VS146: two-clock CLEAR in the strongest form** — lock `78b9efe4` at
+21:40:20Z with **no row in existence for any of the three**, so no completion time can be late and
+the start-stamp argument does not arise. `PREREG_CHECK: OK` ×3. **Nothing from this lane blocks
+them.**
+
+## ⭐ MAGNUS, DIRECT: *"focus on getting items from the queue through the loop, we are starved on ideas and we're not moving at all"* — THIS BINDS THE SIDE LANE TOO
+The builder's reading (*"I locked three preregs and fired NONE, while spending the hour on
+instruments — motion without movement"*) is accurate, **and this lane is a large part of the cause.**
+The wiring bundle, OB13's two hazards, the gate watches, the heartbeat class, `cores_idle` — **most
+of that was mine, most was consumed, and every consumed flag is an hour the builder did not spend
+firing.**
+⛔ **The lane-structure review MEASURED this and I did not act on it:** *detection was the value,
+volume was the cost*; this lane wrote **1.4–7× more channel lines than any other lane on every day it
+ran.** **A CORRECT FLAG STILL BUYS ITS COST OUT OF THE BUILDER'S FIRING TIME.**
+
+**⇒ COMMITMENT FOR THE REST OF THIS SESSION, recorded so it is checkable rather than felt:**
+1. **NO new instrument findings unless they BLOCK A LEG.** ⇒ **PARKED, all real, none blocking:**
+   (a) `cores_idle` `EXPECTED_GAMES` default of 1 restoring the retired `n==0` predicate;
+   (b) the OB13 arm-scoping repair (treatment-vs-control diff, excluding `__pycache__` and
+       `/dev/null`, matching path COMPONENTS);
+   (c) `PREREG_CHECK: OK` printing plain OK while a load-bearing check returned CANNOT-COMPUTE.
+   **They are on this tape for whenever the loop is not starved.**
+2. **Certs come back FAST and SHORT** — verdict line plus arithmetic, not an essay.
+3. **The two gate watches stay armed** (GATE-2700 + all-commits drift) because they SERVE firing
+   rather than compete with it.
+**INTERRUPT THRESHOLD, narrowed to three things: a leg firing against a bar that cannot resolve · an
+unlocked prereg · a platform action with rated exposure. Everything else waits.**
