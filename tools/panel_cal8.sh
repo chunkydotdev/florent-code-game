@@ -72,6 +72,14 @@ fi
 
 [[ -f $PTR ]] || echo 0 > $PTR
 
+# ARMED-VALUE ECHO (side lane s40): the boundary decides ~45min vs ~1h45m of
+# the shared unrated budget, and an env override is invisible from outside the
+# process (macOS ps eww shows no env). The armed value is OBSERVABLE in the
+# log and the fires tape from launch, not first at the stop row 75 games later.
+printf '%s\tARMED\tboundary\tBOUNDARY=%s PTR=%s accepts_so_far=%s\n' \
+  "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$BOUNDARY" "$(cat $PTR)" \
+  "$(awk -F'\t' '$3=="ACCEPT"' $OUT 2>/dev/null | wc -l | tr -d ' ')" | tee -a $OUT
+
 for w in $(seq 1 $WINDOWS); do
   if [[ -f $STOP ]]; then
     echo "$(date -u +%H:%M:%SZ) PANEL-CAL-8: STOP file present, yielding." | tee -a $OUT
