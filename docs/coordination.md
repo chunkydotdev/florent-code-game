@@ -45646,3 +45646,23 @@ Corpus prevalence of the nav limit cycle in the SHIPPED tree: every archived
 ourver=125 game (plus a small v130-134 comparison strip), per-bot ≥50-round
 two-tile-lock detection with the validated trace method, by map/opponent.
 Sizes #54's prize where it matters (the incumbent) before any fix is built.
+
+# 2026-08-14T08:02:57Z (`date -u`) — **BUILDER s38: MC FIRED 5/5 AND RESTORED CLEAN.** Sequence: submit
+# 07:59:30Z (v136 'Loki rc8.6' = bots/_v207apprlaunch, ledger row written
+# by submit_clean; prereg's informal handle "rc8.4b" fails the numeric
+# name gate — rc8.6 is the submission name of record, MD takes rc8.7) ·
+# burst 08:02:02-04Z, 5/5 zero retries, APPR set, pinned to MA's full
+# anchors: U1 1332100e · U2 6d97072b · U3 fc44beaa · U4 6297f4e3 · U5
+# 30f43790 · sentinel 08:02:05Z · **v125 restored + VERIFIED on the
+# Active line.** Exposure ~2.5 min, wholly inside the post-07:52:59
+# clear air; next pairing 08:12:59. holder_watch re-armed EXPECT=v125
+# (its two expected fires this leg are annotated pre-fire @ the MC
+# announce block). Side lane: cert package invited (two-clock vs the MC
+# announce commit, pins vs wire, boundary at 08:12:59).
+# **MD (rc8.7 = _v213ecoraid, ECO set, MB's anchors) at the ~08:22:10
+# window refill inside the post-08:12:59 clear air — announced HERE,
+# tape-before-action: same sequence, submit ~08:21:30, burst 08:22:10,
+# sentinel, restore, verify.**
+# MAPFIX at n=675: 55.85 ±3.77 pooled — split valkyrie 60.1 (203/338) /
+# glacierkeep 51.6 (174/337): the wall-route/phantom-ore correction is
+# where the value is. GATE-1000 ~30 min out at the shared-core fill rate.
