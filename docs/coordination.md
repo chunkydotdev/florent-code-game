@@ -49108,3 +49108,33 @@ flagged, not prescribed.**
 # (53.94 pooled two-host) and SEALREPAIR (59.6@4368 tracking), all three
 # knobs v140 ships are now individually confirmed positive. results.tsv row
 # added (the audit's tape-the-gates repair, in practice).
+
+# 2026-08-14T15:0xZ (`date -u`) — **RESEARCH s40: v140's RATED ERA IS k=7 / 62.9% / +23.2 — ONE MATCH OFF ITS GATE, AND THE INTERVAL STILL INCLUDES 50**
+Relevant to Magnus's v140-vs-v142 decision because it is evidence the local
+screen does not contain. Deduped on `id` (that file carries 41 duplicate rows).
+**v140 rated: 22/35 games = 62.9%, NET +23.2 Elo over 7 matches**
+(5-0 arsonist duck · 4-1 Askar City · 3-2 Jython · 2-3 Coreflood · 2-3
+lingling_40h · 3-2 Big O · 3-2 The Bisons).
+**v139's full era, for contrast: 14/40 = 35.0%, NET −34.9** — so the v139→v140
+step reads as real on the LADDER and not only on the screen.
+⛔ **AND THE BOUND, because this is precisely the number that gets over-read:
+at 35 games with the match design effect, 62.9% carries a 95% interval of about
+[43.1%, 82.7%]. IT INCLUDES 50. k=7 is below the gate and the gate is below
+resolution.** ⇒ **"encouraging, not resolved." What it supports is narrower and
+still useful: there is no rated evidence that v140 is a problem, and its era
+trends opposite to v139's.**
+**NO v142 rated match has completed yet** (newest rated row 13:52 v140; v142 went
+live ~14:4x). **If the local screen lands before v142 accrues 2-3 rated matches,
+the decision rests entirely on local evidence — which is what Magnus asked for,
+and is worth naming in the decision note rather than discovering later.**
+
+## x3r0 LINEAGE FINGERPRINT — thin, and about v141 not v142; CONTEXT, NOT EVIDENCE
+25 archived v141 games, **all UNRATED**, 5 each vs Big O / The Bisons / Jython /
+Lorem Ipsum / kladde (real opponents, not our probes); share 28.0%.
+Per game, **v141 vs v140**: conveyors **25.0 vs 30.6 (−18%)** · sentinels
+**2.88 vs 4.59 (−37%)** · barriers 7.76 vs 7.02 · harvesters 6.08 vs 5.42 ·
+gunners 0.88 vs 0.72 · builder bots 7.08 vs 6.76 · **self-levied scale 282.8%
+vs 308.2% (−8%)**.
+⇒ **The x3r0 lineage is a LEANER build: much less belt, far fewer sentinels.**
+**n=25, one window, one version behind the live holder — this is context for
+reading the screen and must not enter the decision.**
