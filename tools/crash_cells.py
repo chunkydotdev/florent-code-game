@@ -89,6 +89,36 @@ CELLS = [
     ("C_OFF_RAW",  "bots/_v131loki14off", "bots/_probe_border_raw",   "ARM_CONTROL"),
 ]
 
+# ⛔ THE CHASSIS IS A PARAMETER, AND HARDCODING IT MADE THIS TOOL UNABLE TO ANSWER
+# THE ONLY OPEN QUESTION IT HAS. The three cells above pin `_v131loki14`, the
+# chassis the weapon was FIRST measured on (2026-08-12, 13 border arrivals / 13
+# crashes). That reading is not transferable: `_v131loki14` has no
+# `LAUNCHER_MIN_RND` at all, while the SHIPPED tree gates the launcher behind
+# `LAUNCHER_MIN_RND = 160` -- past our median kill round of 174 -- so the shipped
+# bot builds no launcher and throws nothing. The mechanism is therefore
+# **unreproduced on the chassis we actually ship**, and re-running the pinned
+# cells would re-answer the question that is already closed.
+# ⇒ `--ours/--ours-off` re-point the cells at any arm pair. Defaults are
+# unchanged, so every historical invocation reproduces byte-for-byte.
+def cells_for(ours: str | None, ours_off: str | None):
+    """Rebuild the three cells around a given arm pair, roles preserved.
+
+    The ROLES are what make this a both-ways drive and they are NOT parameters:
+    POSITIVE (armed vs raw victim) must fire, FORCED_ZERO (armed vs GUARDED
+    victim) must not, ARM_CONTROL (disarmed vs raw victim) must not. Swapping a
+    tree may not swap a role -- a drive whose forced-negative can be re-labelled
+    proves nothing.
+    """
+    if not ours and not ours_off:
+        return CELLS
+    o = ours or CELLS[0][1]
+    off = ours_off or CELLS[2][1]
+    return [
+        ("A_ON_RAW",   o,   "bots/_probe_border_raw",   "POSITIVE"),
+        ("B_ON_GUARD", o,   "bots/_probe_border_guard", "FORCED_ZERO"),
+        ("C_OFF_RAW",  off, "bots/_probe_border_raw",   "ARM_CONTROL"),
+    ]
+
 RE_POS = re.compile(r"^B(?:RAW|GRD) r=(\d+) unit=(\d+) pos=\((\d+),(\d+)\)", re.M)
 
 
@@ -259,13 +289,16 @@ def main() -> int:
     ap.add_argument("--jobs", type=int, default=4)
     ap.add_argument("--tle", type=int, default=10)
     ap.add_argument("--seed0", type=int, default=7100)
+    ap.add_argument("--ours", help="override the ARMED tree (POSITIVE + FORCED_ZERO cells)")
+    ap.add_argument("--ours-off", dest="ours_off", help="override the DISARMED tree (ARM_CONTROL cell)")
     ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()
+    cells = cells_for(getattr(a, "ours", None), getattr(a, "ours_off", None))
     if a.selftest:
         return selftest()
 
     jobs = [(c, o, t, MAPS[i % len(MAPS)], a.seed0 + i, a.tle)
-            for c, o, t, _r in CELLS for i in range(a.games)]
+            for c, o, t, _r in cells for i in range(a.games)]
     out = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=a.jobs) as ex:
         futs = [ex.submit(run_game, *j) for j in jobs]
@@ -279,7 +312,7 @@ def main() -> int:
     print("position trace, never from our stdout.  See the v1 defect in the docstring.")
     print("=" * 78)
     agg = {}
-    for cell, ours, theirs, role in CELLS:
+    for cell, ours, theirs, role in cells:
         rows = [r for r in out if r["cell"] == cell and not r["timeout"]]
         tmo = sum(1 for r in out if r["cell"] == cell and r["timeout"])
         tb = sum(r["thr_border"] for r in rows)
