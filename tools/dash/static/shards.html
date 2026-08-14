@@ -201,9 +201,12 @@ function resultCell(r) {
     return r.result_raw ? `<span class="mono">${esc(r.result_raw)}</span>`
                         : '<span class="badge b-dim">nothing yet</span>';
   }
+  // "mid-flight" on a shard sitting at its target read as still-running
+  // (Magnus, s41) — a finished shard says so.
+  const atTarget = r.target && Number(r.rows) >= Number(r.target);
   const sep = r.separated
-    ? `<span class="badge ${r.rate >= 50 ? 'b-ok' : 'b-bad'}" title="naive interval on a continuously-filling shard — NOT a scheduled look; verdicts happen at the pre-registered n only (interim 2,700 / final 5,400)">separated ${r.rate >= 50 ? 'ABOVE' : 'BELOW'} 50 · mid-flight</span>`
-    : '<span class="badge b-warn">inside band</span>';
+    ? `<span class="badge ${r.rate >= 50 ? 'b-ok' : 'b-bad'}" title="naive interval on a continuously-filling shard — NOT a scheduled look; verdicts happen at the pre-registered n only (interim 2,700 / final 5,400)">separated ${r.rate >= 50 ? 'ABOVE' : 'BELOW'} 50 · ${atTarget ? 'at target n' : 'mid-flight'}</span>`
+    : `<span class="badge b-warn">inside band${atTarget ? ' · at target n' : ''}</span>`;
   const iv = (r.band !== null && r.band !== undefined)
     ? `${r.lo.toFixed(2)} – ${r.hi.toFixed(2)} <span class="vs">±${r.band.toFixed(2)}pp · n=${esc(r.n)}</span>` : '';
   let ret = '';

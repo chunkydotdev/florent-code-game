@@ -339,14 +339,14 @@ RULES = [
              "more than one member' -- the applicable DEFF is over the clusters that "
              "SURVIVE, and a per-map bar carrying 1.53 is over-corrected exactly as "
              "wrongly as a pooled bar carrying 1.00"),
-    dict(id="ESTIMATOR", keys=["ESTIMATOR"], ob="side-lane check 4",
+    dict(id="ESTIMATOR", attested=True, keys=["ESTIMATOR"], ob="side-lane check 4",
          why="s28 ring-hold: FOUR estimators sat within 0.010 of one bar and flipped "
              "MEET/MISS among themselves -- an unnamed estimator is a free choice made "
              "after the data"),
     dict(id="PLANNED_N", keys=["PLANNED n"], ob="side-lane check 5",
          why="an unfixed n permits optional stopping (s28 LOKI-16b); the planned n is "
              "also the only input the resolvability arithmetic below can use"),
-    dict(id="CUT_SHORT", keys=["CUT-SHORT"], ob="side-lane check 5",
+    dict(id="CUT_SHORT", attested=True, keys=["CUT-SHORT"], ob="side-lane check 5",
          why="CAL-6 stopped at 75 and CAL-7 at 110, both on holder changes, and neither "
              "had pre-committed what a short leg may claim -- CAL-8's n>=75 floor is "
              "the live example of this clause doing work"),
@@ -381,7 +381,7 @@ RULES = [
          why="AN UNRESOLVED GATE DEFAULTS TO THE RESTRICTION, NEVER THE PERMISSION -- "
              "granting the permissive branch on an estimate that cannot distinguish "
              "delivery from non-delivery is precisely a flatter"),
-    dict(id="OB7_PRESTATE", keys=["PRE-STATE"], ob="OBLIGATION 7",
+    dict(id="OB7_PRESTATE", attested=True, keys=["PRE-STATE"], ob="OBLIGATION 7",
          why="the 15:46 conversion prereg predicted change on three cells ALREADY in "
              "the target state at lock and excluded the two that moved -- 2/2 on "
              "excluded maps, 0/3 on named ones. A prereg predicting change on cells "
@@ -488,7 +488,13 @@ def check_presence(text: str, f: dict) -> tuple[list, list]:
             rows.append(("FAIL", rid, token, "malformed value"))
             fails.append((rid, r["ob"], r.get("extra_why", r["why"]), f"value: {f[got][:70]!r}"))
             continue
-        rows.append(("ok  ", rid, token, f[got][:58]))
+        # ⛔ ATTESTED, NOT CHECKED (side-lane H2, 2026-08-14): these fields have
+        # no arithmetic or predicate consumer, so a placeholder value ("TBD",
+        # "see below") passes them. A blocklist would be incomplete by
+        # construction; the honest form is to say on the tin that presence is
+        # all this layer verifies, until each gains a consumer.
+        tag = "ok~ " if r.get("attested") else "ok  "
+        rows.append((tag, rid, token, f[got][:58] + ("   [attested — presence only, value unchecked]" if r.get("attested") else "")))
     return rows, fails
 
 
