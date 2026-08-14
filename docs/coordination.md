@@ -49841,3 +49841,60 @@ not.**
 # could plausibly catch RETURNING bots — unmeasured, labeled as such).
 # The corrected story stands: locks are mostly open-ground and unexplained,
 # pockets are the actionable 10.7%, and SPAWNPOCKET is the admitted arm.
+
+# 2026-08-14T15:44:48Z (`date -u`) — **BUILDER s39: OPP-SEGMENT MAP BANKED (sonnet).** The
+# attribution read Magnus's directive needed: **ALL FIVE worst maps are
+# TERRAIN-GENERAL** (top-2-opponent loss concentration 25.0-38.1% vs the
+# 60% bar; 9-11 distinct opponents per map) — the weakness is OUR play on
+# the terrain, not hard opponents concentrating there. TINY is the weak
+# CLASS (37.5% vs 51-56 elsewhere). **0033 anchors two area classes and is
+# the worst matchup overall (23.3%@30) — named top candidate for a
+# segment-pinned live leg** (composes with EVICT58's heal-heavy targeting).
+# Instrument notes: the agent checked ladder_games for dups THREE WAYS and
+# found ZERO — the 41-dup finding was on league_matches.tsv (my brief
+# conflated the files; task #9 stays aimed at league_matches, ladder_games
+# is certified clean today); 25 cond=error rows with empty replay-path
+# reported as a separate real blemish. One self-caught arithmetic slip
+# fixed pre-finalize (52.6 not 51.4). The worst-maps book consumes this as
+# its attribution frame.
+
+# 2026-08-14T16:1xZ (`date -u`) — ⭐ **RESEARCH s40: THE NEW MAP SURFACE PAYS IMMEDIATELY — OUR WORST MAPS ARE NOT UPSET-PRONE, SO THE WEAKNESS IS OURS**
+The builder's point on `league_maps.tsv` — *"a map where everyone is weak is a
+different finding than a map where only we are"* — is now answerable, and it
+sharpens the worst-maps directive rather than complicating it.
+
+**FAVOURITE-WIN RATE BY MAP, league-wide, 6,185 games with a rating gap ≥25.
+Overall 60.2%.** A low value = an upset-prone map, where a strong team will look
+weak for structural reasons.
+| our worst-five | favourite-win rate | vs league 60.2% | our share |
+|---|---|---|---|
+| midgard | 57.0% [50.0, 64.0] | mildly below | 38.2% |
+| antler | **60.5%** | **dead average** | 36.7% |
+| ragnarok | **60.7%** | **dead average** | 42.4% |
+| fjordgate | **60.8%** | **dead average** | 38.5% |
+| **frostgate** | **64.3%** [57.6, 71.0] | **ABOVE — 3rd most favourite-friendly map in the pool** | **44.0%** |
+**⇒ FOUR OF FIVE ARE AT OR ABOVE THE LEAGUE'S FAVOURITE-WIN RATE. THE
+"HIGH-VARIANCE MAP" EXPLANATION IS DEAD.** *(For scale, the genuinely
+upset-prone end is drakkarfjord 52.0% / yulerune 52.6% / valkyrie 54.4% — and
+**yulerune and valkyrie are two of our BEST maps.** We do well where the
+favourite does worst and badly where the favourite does best.)*
+**⇒ THE WEAKNESS IS OURS, NOT THE TERRAIN'S — which is exactly the mandate the
+worst-maps book needed, and it is now evidenced rather than assumed.**
+
+## THE CONVERSION CUT — directional, NOT resolved, and stated that way
+Our conversion **as the favourite** (rating gap ≥25):
+| era | worst-five | elsewhere | diff |
+|---|---|---|---|
+| all eras (v116+) | 53.8% [41.7, 66.0] n=65 | 61.7% [55.5, 67.9] n=235 | −7.9pp ±13.6 **OVERLAP** |
+| **era-bound `ourver`≥125** | **50.0% [33.7, 66.3] n=36** | **63.3% [52.7, 73.9] n=79** | **−13.3pp ±19.5 OVERLAP** |
+**Directional in both cuts, resolved in neither.** ⚠ **And I nearly published the
+all-eras row alone — the FOURTH time today I have reached for a cut that spans
+our own version churn.** The era-bound version is larger in point estimate and
+wider in interval, which is the honest shape. **Reported as a lead for the book,
+NOT as a finding.**
+
+## ROUTED
+→ **the worst-maps book brief**: the upset-proneness table is a MANDATE
+STRENGTHENER (the maps are not the problem, so a mechanism exists to find), and
+the conversion cut is a lead to size, not a result to explain. **Both go in as
+inputs with their intervals attached.**
