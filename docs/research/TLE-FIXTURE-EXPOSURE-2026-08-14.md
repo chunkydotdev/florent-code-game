@@ -35,6 +35,55 @@ all. The only two instruments that saw anything were the outcome itself and the 
 
 ---
 
+## 0b. ⛔⛔ AMENDMENT TO THE RULING — **THE "NO DECISION FLIPS" CLAUSE WAS ARGUED IN THE WRONG UNITS**
+
+**Added 2026-08-14T20:0xZ after a side-lane flag, against this document's own ruling. The
+MEASUREMENTS below are untouched; the RULING's safety clause is not.**
+
+The ruling says the margins are **3.7–8.1 SE** against their bars and that the largest bias
+this audit can measure is **~4pp**. ⛔ **Those are different units in the same clause.**
+**SE answers a SAMPLING question. The exposure is a SYSTEMATIC BIAS. An 8-SE margin gives
+ZERO protection against a 6pp bias.** Restated in the currency that actually binds — pp
+against pp:
+
+| leg | share | bar | **MARGIN** | flips if bias exceeds | proxy bias | **cushion** |
+|---|---|---|---|---|---|---|
+| V140VS142 | 56.80 | 51.0 | **5.80pp** | 5.80pp | 4.13pp | **1.40×** |
+| V140VS143 | 57.06 | 51.0 | **6.06pp** | 6.06pp | 4.13pp | **1.47×** |
+
+⛔ **AND THE PROXY DOES NOT TRANSFER, WHICH IS THE SHARPER HALF OF THE FLAG.** The 4.13pp
+comes from the SEALREPAIRR straddle — but **SEALREPAIRR's arms are `_v223sealrepair` vs
+`_v218mapfix`, 4,757 vs 4,522 lines: asymmetry 1.05×, i.e. essentially SYMMETRIC.** The two
+reactivation legs run **4,757 vs 9,215 lines: asymmetry 1.94×**, and per §5 **V140VS143 was
+additionally co-resident at ~5× oversubscription.** *(All four line counts re-derived by
+this lane rather than relayed.)*
+
+**Compute asymmetry IS the mechanism this document identified. A bias measured where the
+mechanism is nearly absent is not a bound on that bias where the mechanism is strong.**
+That is a number true SOMEWHERE used SOMEWHERE ELSE.
+
+⇒ **CORRECTED DISPOSITION FOR THESE TWO LEGS: EXPOSED-AND-UNRESOLVED, not
+exposed-and-safe.** The magnitude at 1.94× asymmetry is **UNMEASURED**, and a 1.40× cushion
+over an untransferable estimate is thin rather than comfortable. **The measured direction
+still says contention FLATTERED us on both** — so the untested possibility is that we held
+the slot against better bots.
+
+**WHAT BOUNDS THE URGENCY, and it is why this is an amendment rather than an alarm: THE
+EXPOSURE IS HISTORICAL, NOT LIVE.** v142 and v143 are off the slot; the live question is
+v145, and **V140VS145B is already re-firing at WORKERS=10 on the fixed fixture.**
+⇒ **nobody needs to undo anything, and the number governing the CURRENT slot is being
+produced correctly.** ⚠ **But the conditional is worth writing down now while it is cheap:
+if v145's clean read comes in BELOW 51.0, the v142/v143 pattern stops being historical and
+becomes a live question about whether we have been systematically holding the slot against
+better bots.** If it comes in above, the historical question is moot.
+
+*(Raised by the side lane; the flag was possible only because §3 had already labelled the
+compute-asymmetry column as INFERENCE FROM SOURCE STRUCTURE, NOT MEASUREMENT — a caveat
+this document wrote about itself and then did not apply to its own ruling one section
+later. Same class as the two self-corrections in the CAL-8 read.)*
+
+---
+
 ## 1. THE FIXTURE, ESTABLISHED FROM THE RECORD
 
 | fact | value | source |
