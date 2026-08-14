@@ -1149,3 +1149,107 @@ publishing anything built on it.**
 published minutes after an inline cut on an unverified ordering join.
 Speed bought a retraction that reached Magnus; holding it twenty minutes
 for the agent's ledger would have cost nothing.
+
+# ============================================================================
+# RUN s40 — 2026-08-14, wrap called by Magnus 17:5xZ. **v1.11 → v1.12. FIRINGS: 6.**
+# Answered from the day's artefacts — ~207 commits in the window, the coordination
+# tail, QUEUE.md's diff, six agent reports, the cross-lane message log. Not memory.
+# ============================================================================
+
+## 1. CONSUMPTION — nothing UNREAD; and the counter-example is the day's best case
+**CONSUMED (another lane acted):** the Juusto book (→ `#57`, `#45`, `#51`, and the
+ring-race finding that gave `#53` its "why now") · the GREP carry ×39 (builder
+consumed rather than re-grepping; it caught `#53`'s FALSE premise) · the DEFF
+finding (→ `CLAUDE.md`, the side lane's repricing sweep, `#55`) · the era-bounding
+rule (builder adopted for every rated cut they type) · `era_guard` built · the
+league-maps surface (→ the worst-maps book's field benchmark) · `OBLIGATION 15`
+(→ three segment candidates, then SPAWNPOCKET's own segment) · the worst-maps
+brief (→ the book → `#62`/`#63`) · the EVICT58 leg design (→ fired, refuted, and
+its ruling is now combo law) · `#52`'s promotion (→ re-ranked same hour) · the
+fixture-requirement tier · every fire order.
+**PENDING:** `#63`'s design (deliberately held) · CAL-8's read (running) ·
+SPKT64P's screen · the batk-by-target instrument gap.
+**UNREAD: none nameable.**
+
+## 2. LATENCY — one BEFORE that saved a window, and it is the column's best entry
+**BEFORE:** the `#47` hold — I went to write its prereg, found its family's live
+road closed at net −1 this morning, and stopped the fire **with the pipe free for
+the evening**. **A few hours later would have been a wasted window and a
+re-opened road.** Also before: the CAL-8 tenure re-point (before a cell fired),
+the SPAWNPOCKET re-segmentation (before the tree existed), the TINYECO gate
+correction (before launch), the EVICT58 ruling (registered blind, two hours before
+the dose it excluded).
+**AFTER (the misses):** the superseded `GATE-1000` citation reached BOTH a tape
+note and a prereg before the side lane caught it; my "home-base phenomenon"
+reached the builder and produced two typed consequences before it was tested.
+
+## 3. RELAY FIDELITY / Q10 — six agents, and the verification changed outcomes twice
+Load-bearing numbers checked at primaries before banking every time: Juusto's
+403/402 launchers and 708/717 barriers reproduced EXACTLY; the GREP carry's
+`LOKI_SEAL_TI_FLOOR` 12→0 verified across three trees; the carve-out's
+`#54` headline reproduced before its new column was read; `league_maps`'
+930/930 join corroborated independently. **Twice the check changed the outcome:
+the seat/frame control on `d2_own`/`d2_enemy` (which produced the "it is OUR
+plank" correction), and the `MAP_CODES` membership derivation (which found
+candidate 1's segment EMPTY).**
+
+## 4. OWN CHECKS — the ratio improved, and the mechanism is harnesses not judgement
+**Self-caught (6+):** the 7-day pooling trap caught TWICE in one hour (Leviathan,
+then the −636 leak table) · LingLing40-as-leak retracted · the Leviathan book
+withdrawn 15 min after proposing it · the keyword scan disowned as measuring the
+wrong thing · the map-agent "false invariant" flag withdrawn after reading the
+docstring · the small-map round-gate hypothesis killed before it became a row.
+**Caught by peers (5):** the ±7.5pp resolution error · the mix-population
+reference · P4-cannot-separate · the annulus table's branch order · the
+superseded gate.
+⇒ **Better than s39's ratio — but note WHAT the self-catches were: five of six
+were caught by APPLYING A RULE I HAD JUST WRITTEN to my own output.** The judge
+did not improve; **the rules did, and then bound their author.**
+
+## 5. DECLINES — six, all upheld
+CAL-7's comparative look at n=110 (with the reference two lines away in a file I
+wrote) · pooling CAL-7's spent games into CAL-8 · the small-map queue row (no
+mechanism) · the Leviathan book · a private GATE-1000 band for my own arm ·
+extending TINYECO (arithmetically futile).
+
+## 6. PER LANE — RETRACTIONS REACHING A LANE: 6
+(Leviathan week-pooling · the −636 leak table · LingLing40 · `tled`-is-fiction ·
+the home-base phenomenon · the map-agent invariant flag.) **The `tled` one is the
+expensive one: this lane RETIRED A LIVE INSTRUMENT yesterday and it took a
+three-way falsification to restore it.**
+BUILDER got: fire orders, five preregs, a leg design, four rulings, the `#47`
+hold, and two new corpus surfaces. SIDE LANE got: five certifiable preregs and a
+CLAUDE.md edit submitted for audit by its own author. MAGNUS got: the Juusto
+book, the worst-maps programme, and every retraction surfaced unprompted.
+
+## 7-11, compressed
+**Q7:** inference markers shipped inline (the ring-race table explicitly NOT a
+causal claim; the conversion cut labelled lead-not-result). **Q8:** instruments
+read at boot AND at use — `audit_trigger` fired and I reported it against my own
+lane before assessing it. **Q9 FIRED:** the `GATE-1000` citation — I quoted a bar
+Magnus had superseded 90 minutes earlier, and had already propagated it into a
+tape note. **Q10 both directions.** **Q11:** BELTBLIND recognised as `#54`'s
+existing mechanism rather than admitted as new.
+
+**FIRINGS (6):** (a) Q10 → two verifications changed outcomes, not wordings.
+(b) Q9 → the superseded-constant class, now carrying "a cited CONSTANT carries
+its commit the way a number carries its denominator". (c) Q5 → six declines, two
+of which (the n=110 look, the CAL-7 pooling) were refusals of data I had already
+seen. (d) Q2 → the `#47` hold, a BEFORE that saved a live window. (e) Q4 → the
+self-catch mechanism identified as rule-application rather than vigilance.
+(f) Q1 → zero unread, with the pipeline converting books to arms same-hour.
+**SUNSET: NOT ARMED.**
+
+## ⭐ Q12 ADDED (v1.12) — **DID A RULE I WROTE TODAY BIND *ME* BEFORE IT BOUND ANYONE ELSE?**
+*Incident: five of six self-catches this session came from applying a
+just-written rule to my own output, and the pattern held across four instruments
+(`name_check`, `inert_check`, `era_guard`, the DEFF scope clause) whose authors
+were their first violators.* **A rule written from a failure is written by someone
+who has just demonstrated they are prone to it, so the author getting it wrong
+quickly is the EXPECTED case.** ⇒ **AUDIT THE RULE'S FIRST APPLICATION, NOT JUST
+THE RULE** — cheap, and on this session's evidence it has a high hit rate.
+
+**THE ONE THING I WOULD NOT PRODUCE AGAIN:** the "home-base phenomenon" gloss. The
+23× was real; the story was mine, untested, and it reached the builder as "the
+sleeper find of the day" and produced two typed consequences before anyone
+checked whether those bots had ever left their spawn.
