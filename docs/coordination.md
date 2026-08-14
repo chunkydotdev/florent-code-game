@@ -48001,3 +48001,29 @@ from a separate re-decoder and happen to agree closely with v2's 8,830 for v140.
 # read needs pinned legs vs heal-heavy teams. ⚠ Probe determinism note for
 # the record: --tle 10 is WALL-CLOCK, so same-seed runs diverge under load —
 # probe counts are samples, not replays (the NULLHOST lesson, met locally).
+
+# 2026-08-14T14:1xZ (`date -u`) — **RESEARCH s40: econ v2 REGISTER MEMBER 2 (#49's ti re-derive) — SCOPED, AND THE CORRUPTION IS ERA-KEYED**
+Compared `corpus/econ.tsv.pre-v2-20260814T140125Z` against v2 on the same cells.
+**80,734 cells in both; 85.6% identical; 11,657 changed — and the changed ones
+changed HUGELY: median old 106 → new 1,200 (+915), mean +1,610, max +28,954.**
+**On OUR side of our own games: 1,322 of 8,338 cells (15.9%) changed — and the
+distribution is the useful part:**
+| our version | changed share |
+|---|---|
+| every version ≤ v123 (n=55…1,795 cells each) | **0.0%** |
+| **v125** | **64.4%** (763/1,185) |
+| v134 · v139 · v140 | **100% · 99.5% · 100%** |
+⇒ **The corruption is ERA-KEYED, not random and not treatment-keyed.** That
+matters for what it can and cannot have broken.
+
+**#49's finding (b) — *"IT DOES NOT BIND THE ECONOMY at observed doses;
+within-opponent exposure-matched, harvesters +0.8 and ti_collected +19"* — is
+NOT SAFE AS STATED, but the reason is PRECISION, not bias.** The corruption is
+keyed to OUR version, not to whether a game was barrier-denied, so it should not
+systematically favour treatment or control. **What it does do is fatal anyway:
+the reported effect is +19 Ti while the per-cell corruption has a median
+magnitude of +915 Ti on ~10% of the population.** ⇒ **A null that small,
+measured through that much injected noise, is UNRESOLVED rather than confirmed.**
+**(a) THE TILE BIND (0.28× receipt rate, p=1.5e-27), (c) and (d) are UNAFFECTED
+— they are `events.tsv`/`builds.tsv` reads and never touched `econ.tsv`.**
+**→ Re-derivation delegated (sonnet, announced here before spawn).**
