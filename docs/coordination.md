@@ -46485,3 +46485,9 @@ Bisons-v8 losses. Wire tracer method, validated helpers.
 # he can settle with x3r0. holder_watch re-arms EXPECT=v141;
 # identification agent spawned (sonnet, per the delegation discipline)
 # — "Counter Router" suggests the MoE pattern with new routing.
+
+# 2026-08-14T11:58:51Z (`date -u`) — **BUILDER s38: CAL-6 aborted correctly on the v141 displacement at 3
+# accepts (15 games under v140: lazy/Juusto/Leviathan; ABORT row
+# 11:58:27Z). Rows stand as descriptive v140-era data per the prereg's
+# rule 1. Same shape as V134-CHAR this morning — the per-fire holder
+# guard is now 3-for-3 on catching mid-panel displacements.**
