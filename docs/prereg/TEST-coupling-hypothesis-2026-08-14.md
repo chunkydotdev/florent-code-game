@@ -48,3 +48,30 @@ No ship implications either way (the hold governs). If the hypothesis
 survives, the −5pp haircut stays and gains a mechanism; if it falsifies on
 salt, the haircut becomes empirical-only and the refinement gets its own
 test. Either outcome is banked.
+
+---
+
+## AMENDMENT (ADD-only; clock = this commit's git author time) — RETROSPECTIVE
+## RESULT + INTERPRETATION PIN + METHOD PIN
+
+**RESULT (research, classification committed before gaps — provable order):
+the hypothesis is FALSIFIED-AS-UNIVERSAL, twice.** Salt — the pre-named hard
+case — is coupled-with-transfer; TWORAID is coupled with gap −3.4pp. **The
+pre-named refinement scores 7/7 on signs:** what predicts flattery is not
+coupling but whether the exploited behaviour is FIELD-UNIVERSAL (belt
+repair, healing → transfers: salt, TWORAID) or INCUMBENT-ABSENT (chronic
+camp, creep-ladders — behaviours our own bot does not exhibit, so self-play
+cannot price them → flatters: UNDERECO +13.6, APPRLAUNCH +10.7, with
+COMBO/ECORAID inheriting in the order DIGOUT-removal predicts). MAPCODE
+(decoupled) transfers. **TWORAID is the refinement's only out-of-sample
+hit, so the refinement SURVIVES rather than confirms — GBNS, L4REPAIR and
+#8/SEATREL remain the registered prospective test.**
+
+**INTERPRETATION PIN (research's ask, side-lane audit item):** "payoff"
+in the classification rule means the plank's AS-REGISTERED bar text — the
+behaviour named in its own prereg — never a post-hoc reading of what the
+code might also do. Future classifications cite the bar text verbatim.
+
+**METHOD PIN for the prospective reads:** transfer gap = (screen excess vs
+matched control) − (live excess vs matched control), never raw screen−live
+— cell hardness confounds the raw difference by ~−8pp at these cells.
