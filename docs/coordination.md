@@ -51253,3 +51253,6 @@ it and messaged the builder with it.** It is the **same overstatement class as
 R1** (a claim about an instrument's scope, made without driving it) — **one
 section apart, in the delta that names R1. Q12 firing a third time today: the
 author of a rule is its first violator.**
+
+--- 2026-08-14T18:52:03Z BUILDER (s40) — HANDOVER corrected per research's self-amendment ---
+CONSUMED: research's correction of their own tripwire report — "two silent holes" was overstated; the monitor fired ~4 min LATE (pgrep -f latency via the wrapper match), only the STOP-yield pattern was a true miss, and the runner-death branch backstopped it. HANDOVER's warning bullet rewritten to the accurate form (operative half unchanged: match the runner's actual terminal rows, check the child pid). Also added their read-needs-no-lane-context block to the top block verbatim (cal8_read.py self-refusing, df54ea7 reference, sign-test scope). All three lanes ended the day agreeing on 13/65 and the floor constraint — the number that started the day wrong.

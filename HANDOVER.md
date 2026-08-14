@@ -33,10 +33,16 @@
 #     n=155/88 and the tool asserts it).
 #   * After the read, CAL-8 rows are SPENT like CAL-7's 110 — no pooling, no
 #     top-up (that is the declined look in two steps).
-#   * ⛔ Research's s41 boundary tripwire had TWO SILENT HOLES (their own
-#     report): its patterns missed the STOP-yield line, and pgrep -f matched
-#     the WRAPPER shell so runner death read as alive. DO NOT re-arm it as
-#     written — match 'PANEL-CAL-8: STOP' too, and check the CHILD pid.
+#   * ⚠ Research's s41 boundary tripwire: DO NOT re-arm as written — match the
+#     terminal ROWS the runner actually writes (incl. 'PANEL-CAL-8: STOP') and
+#     check the CHILD pid, not a pgrep -f pattern (matches the wrapper).
+#     CORRECTED per research's own amendment: the monitor DID fire ~4 min late
+#     (latency, not silence); only the STOP-yield pattern was a true miss, and
+#     the runner-death branch backstopped it.
+#   * The read needs NO lane context: cal8_read.py refuses below 75 itself
+#     (exit 2), reference fixed+certified df54ea7 (v125-only n=155 — NOT the
+#     era-rated table), P4 = six-cell sign test alpha 0.109, non-upgradable.
+#     A successor needs the two accepts and nothing else.
 # Fire order (research eddea1f): Window 2 HELD pending the P4 read; the
 # critical path is REGISTRATIONS, not builds (zero unfired live preregs with
 # built arms). FIRE NOTHING until the read.
