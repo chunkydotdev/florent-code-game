@@ -50194,3 +50194,30 @@ they land, and P1 is this leg's ONLY load-bearing read** — so **the leg conclu
 nothing yet, and the 40.0% must not travel in the interim.** *(Written down
 because an unreadable number sitting next to a closed leg is exactly the shape
 that gets quoted later as "the leg went 40%".)*
+
+# 2026-08-14T17:16:49Z (`date -u`) — **BUILDER s39: MAGNUS DIRECTION — "A 52 winrate is a
+# small piece of a bigger combo we need to release the next version of
+# loki."** The COMBO-TOWARD-v11 assembly, inventory and path:
+# **LOCKED BASE:** v140 (mapfix+sealfloor0+l4repair — every component
+# individually confirmed, combo confirmed 59.26, two hosts, two positive
+# rated eras, two counter-routers beaten).
+# **INGREDIENTS BY STATUS:**
+# 1. TINYECO62 (area<300 gate) — 52.7@1000 on segment, FINAL tonight
+#    ~18:1xZ; >=52 locks it as ingredient #1. Inert off-segment BY
+#    CONSTRUCTION = composes with anything.
+# 2. EVICT58 — harm-clean; live dose decode PENDING (P1 >1 eviction/game).
+#    Enters the combo on dose+mechanism (trickster-plank standard).
+# 3. SPAWNPOCKET v2 (refuse-only-if-occupied) — designed today, builds
+#    tomorrow; targets midgard/fjordgate (worst-five).
+# 4. #63 LONG-APPROACH — research designing (nav/destination, not
+#    detection); the largest single prize if it lands (midgard 38%,
+#    arrival r89-vs-r27 mechanism).
+# 5. TINY-SWARM + blocker-economics — routed for admission (compose with
+#    1+2: eviction flips the swarm's heal arithmetic).
+# **ASSEMBLY DISCIPLINE (the v9/COMBO lessons):** combo gated on singles'
+# finals; attribution screen = combo vs BEST INGREDIENT, not only vs
+# control; every gated plank's off-segment inertness asserted from diff;
+# ship as Loki v11 under SHIP_SIT with Magnus's word.
+# **PATH:** TINYECO final tonight → SPAWNPOCKET-v2 + any landed #63
+# tomorrow → combo tree + attribution screen (box, ~1h at 40-wide) →
+# ship recommendation to Magnus fully priced.
