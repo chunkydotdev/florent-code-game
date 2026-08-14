@@ -46729,3 +46729,71 @@ delegation drift (one agent in the first 5 hours) was flagged by MAGNUS,
 not by any instrument; three agents ran post-flag and two carried
 positive controls that caught real errors. If the pattern recurs, an
 instrument (agent-per-verdict ratio in audit_trigger?) is the shape.
+
+# ============================================================================
+# 2026-08-14T12:35:10Z (`date -u`) — **SIDE LANE s38 WRAP** (trigger: Magnus's "wrap when
+# builder wraps"; builder wrapped 12:31:25Z). **Retro ran FIRST:**
+# `docs/retro-side-lane-2026-08-14-s38.md`, instrument **v1.8**, **FIRING 8**
+# (404dc63). Ledger: **detection ~19/22 · prescriptions all consumed ·
+# prevented 4 major · caused 0 · nearly caused 1 (the seat-inverted gloss) ·
+# wrong flags 0 — fifth consecutive zero-harm run.**
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**S1. ⭐⭐ THE FRAME RULE (→ retro v1.8 Q3, and carried here because the tape
+is booted): a wire field is in the PLATFORM'S frame, not ours.** Both of this
+lane's published errors were raw fields read without normalizing the frame
+(scoreA/B without the seat; a match list without its window); both near-misses
+were the same class (zone, input-existence). Before any per-match number
+leaves a lane: name the frame — seat, clock, units, window.
+
+**S2. ⭐ A CROSS-REFERENCE CLAIM CERTIFIES AGAINST THE REFERENCED PRIMARY,
+never against the citing document's internal consistency** *(behaviour change,
+applied in-session after the cell-set miss — the one certification failure of
+the day; every later cert opened the referenced primary and three of them
+caught something).*
+
+**S3. DOMAIN CHECKS ARE THE MEASURED SELF-CATCH MECHANISM (2-for-2 vs 0-for-2
+on plausible readings)** — prefer queries whose failure modes produce ILLEGAL
+values; a plausible return is unverified until the primary is opened. (D31,
+now measured within one session on this lane.)
+
+**S4. OBSERVATION — NOT ROUTED:** the system corrected itself four times today
+faster than any single participant could have (flag→counter-catch chains in
+minutes, in every direction). No lane was the reliable one; the structure was.
+
+## ⛔ OPEN FOR SUCCESSORS, priority order
+1. **v140 gate**: arms at k≥8 from baseline 1734@961 (holder Active bot: v140 (Loki v10), k≈3
+   at wrap, tracking positive); slot rule + ship_watch govern; rollback chain
+   v139→v125 on the tape.
+2. **x3r0 standing rule remains OPEN with Magnus** — four slot events today;
+   V141VS140 benchmark filling answers the 81.7% claim on a controlled surface.
+3. **Finals inbound**: SEALFLOOR0 (local, attribution half of the shipped
+   sealrepair) + SEALFLOOR0R (fleet pool close, D26 rule-selected) · MAPFIX2 ·
+   SEALREPAIR confirmation · AIMTHROW2 · MAPSALT · NESTSHOT · V141VS140 —
+   each certified pre-fire, reads owed at their pre-registered n.
+4. **CAL-6** windows continue under the matured template (single pre-declared
+   look; stop conditions live).
+5. **fcode 2.3.8 upgrade boundary**: checklist taped, ENGINE_PIN 2.3.6 on the
+   fleet; local upgrade is a fixture-era event when taken.
+6. **Method-file note owed (small):** the D26 threshold-trigger + same-side
+   pooling procedure is declared-at-queueing house practice; its residual
+   parent-selection bias is accepted by declaration — one paragraph in the
+   method changelog would close the question a successor will re-derive.
+
+## REBOOT STATE — SIDE LANE (s38, safe to reboot) — read 2026-08-14T12:35:10Z, not asserted
+* **Active bot: v140 (Loki v10) · Rating: 1744 (Emerald) — 964 matches played** — live `fcode status` read at wrap.
+* **Survives me:** dashboard server pid 17252 (nohup, restarted this session
+  with fleet rendering) · holder_watch (nohup) · keeper · cores_idle ·
+  ship_watch · cpu_watch · elo/match/opp watcher loops · corefill fleet +
+  filler (14 game procs at wrap) · vps_pull · work-server-1 worker (curfew
+  in-worker).
+* **Dies with me:** the all-commits drift watch (successor re-arms
+  `tools/watch/drift_watch.sh` and DRIVES ITS CELLS first — the TZ cell
+  discriminates on this box, and this session walked into that exact trap
+  once anyway; see S1) · my two-clock hooks (every pending one is closed;
+  new preregs open their own).
+* **Nothing of mine unconsumed:** description agent completed and banked
+  (122 dashboard entries); all flags consumed or corrected; retro committed
+  WITH its instance in the same action. Repo pushed clean at this line.
