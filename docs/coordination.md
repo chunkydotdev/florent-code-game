@@ -49250,3 +49250,29 @@ session's largest miss.
 # carries the file as a successor re-arm duty — in-flight agents die with a
 # session, the pipeline does not. An empty NEXT list = a stocking failure,
 # flagged to research (analysis) or Magnus (direction).
+
+# 2026-08-14T15:14:25Z (`date -u`) — **BUILDER s39: SEGMENT SWEEP LANDED (Fable agent) —
+# committed as the verdict record; HYPOTHESIS-GENERATING throughout, negative
+# control clean (null shards 0/6 at |z|>=2, NEG125 positive control z=+18).
+# 10 valid hits at |z|>=3 vs 0.28 expected — segment structure is REAL.**
+# Three headlines, all routed to research for 15c admission:
+# 1. ⭐⭐ **THE SHIPPED MAPCODE PLANK IS SEGMENT-CONDITIONAL: 93.7% on its
+#    eight fixed 900-maps, 53.0% on frostgate+royale (never fixed), and
+#    48.7% ON LEGACY MAPS vs the bot it displaced — with the LADDER
+#    independently reading current-era legacy at 46.9%, frostgate 44%,
+#    royale 48%.** If a 15c re-screen confirms, the fix is MAP-GATING what
+#    we already ship (+ extending the table to frostgate/royale) — a
+#    candidate worth points on maps we play every rotation.
+# 2. ROUTEONLY (dropped at 47.6 pooled) reads 77.3@484 on icefloe+
+#    drakkarfjord (z=+14) — retro-rescue candidate, shared-control confound
+#    named, re-screen designed.
+# 3. Seal-FLOOR/REPAIR drags on lockheavy maps (5 arms same direction, 2
+#    remote replicates; SEALFLOOR24 leans opposite) — **candidate: keep
+#    floor>0 on midgard/ragnarok/valkyrie**, directly relevant to v140
+#    (ships floor=0 everywhere).
+# Coverage honesty: 71 of ~130 arms predate the 900-pool — the GUN/BURST/
+# LAUNCH era is SILENT on segments, not clean. Three re-screens pre-sized:
+# ~2,700 segment-games each, ~2h of one lane, zero rated cost.
+# PIPELINE: NEXT item 1 (candidate sizing) ABSORBED by the sweep's own final
+# section; spawning item 3 (home-lock mechanism decode) now per the rolling
+# rule.

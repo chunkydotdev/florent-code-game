@@ -15,12 +15,9 @@ HANDOVER top block carries this file as a re-arm duty and the successor
 respawns from NEXT on boot.
 
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
-- 2026-08-14T15:1xZ SEGMENT-SWEEP (fable, Magnus-authorized) → docs/research/SEGMENT-SWEEP-2026-08-14.md
 - 2026-08-14T15:2xZ QUEUE-ECONOMICS (opus) → docs/research/QUEUE-ECONOMICS-SWEEP-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
-1. SEGMENT-CANDIDATE SIZING — take the segment sweep's top candidates and
-   draft the 15c re-screen preregs (segment, 15a direction, n, cost). Opus.
 2. ENGINE 2.3.6→2.3.8 CHANGELOG CHECK — closes the "transfer UNVERIFIED"
    caveat on SCREEN-v140vs142 A1 and pre-clears the fleet upgrade boundary
    (s38 checklist taped). Sonnet if the changelog is published; opus if it
@@ -36,6 +33,7 @@ respawns from NEXT on boot.
    connects Obligation 15 segments to live-leg targeting. Sonnet.
 
 ## COMPLETED (newest first; the report commit is the verdict record)
+- 2026-08-14 SEGMENT-SWEEP (fable) → docs/research/SEGMENT-SWEEP-2026-08-14.md (3 candidates routed; NEXT-1 sizing absorbed)
 - 2026-08-14 AUDIT (opus) → docs/workflow-analysis/AUDIT-2026-08-14-s39.md
 - 2026-08-14 V141VS140 per-map splits (sonnet) → banked in coordination tail 14:2xZ
 - 2026-08-14 ECON-DECODER diagnosis (opus) → tools/corpus/replay_econ.py v2 + register
