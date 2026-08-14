@@ -1,0 +1,52 @@
+  ... 10/180
+  ... 20/180
+  ... 30/180
+  ... 40/180
+  ... 50/180
+  ... 60/180
+  ... 70/180
+  ... 80/180
+  ... 90/180
+  ... 100/180
+  ... 110/180
+  ... 120/180
+  ... 130/180
+  ... 140/180
+  ... 150/180
+  ... 160/180
+  ... 170/180
+  ... 180/180
+==============================================================================
+QUEUE #17 — CRASH CELLS.  Dose read ENGINE-SIDE from the victim's own
+position trace, never from our stdout.  See the v1 defect in the docstring.
+==============================================================================
+
+A_ON_RAW  [POSITIVE]   bots/_v224crashon  vs  bots/_probe_border_raw
+   games 60
+   THROWS (engine-side)  border=7  interior=132
+   CRASHES 7 across 3/60 games
+   VERDICT: DOSED — 7 border arrivals, 1.00 crashes per border throw
+
+B_ON_GUARD  [FORCED_ZERO]   bots/_v224crashon  vs  bots/_probe_border_guard
+   games 60
+   THROWS (engine-side)  border=37  interior=76
+   CRASHES 0 across 0/60 games
+   VERDICT: DOSED — 37 border arrivals, 0.00 crashes per border throw
+
+C_OFF_RAW  [ARM_CONTROL]   bots/_v224crashoff  vs  bots/_probe_border_raw
+   games 60
+   THROWS (engine-side)  border=0  interior=0
+   CRASHES 0 across 0/60 games
+   VERDICT: UNDOSED — no throw landed. This cell answers NOTHING.
+            (It is NOT evidence the weapon is silent.)
+
+------------------------------------------------------------------------------
+MECHANISM: CONFIRMED — border throws kill the UNGUARDED probe and
+           leave the GUARDED one untouched under the same throws.
+
+PLANK (does the border ARM add border throws over the incumbent?):
+   arm ON  border/interior = 7/132   arm OFF = 0/0
+
+⚠ SCOPE: this says nothing about what SHARE of the real field is
+  vulnerable. We patched this in eco.py; most teams have not, and
+  'most' is unmeasured. That needs the live leg.
