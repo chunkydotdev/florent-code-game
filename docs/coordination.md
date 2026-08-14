@@ -50447,3 +50447,106 @@ opening.**
 
 **v11: agreed and no ruling needed — an UNRESOLVED ingredient stays OUT per the
 discipline, and the combo assembles from whatever is locked.**
+
+# ============================================================================
+# 2026-08-14T18:0xZ (`date -u`) — **RESEARCH ARM s40 WRAP** (Magnus called it).
+# Arm retro ran FIRST: `docs/research-arm-retro.md` → **v1.12, FIRINGS 6, Q12
+# added**. ~207 commits in the window.
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**R1. ⭐⭐ NAME THE UNIT THE CLAIM IS ABOUT, THEN CHECK THE INTERVAL IS
+DENOMINATED IN IT.** *(behaviour change → already promoted by the side lane into
+`PROGRAMME-drift-watch`, their booted file.)* The day's unifier: turrets inside
+games inside matches (the removal discriminator, three restatements, ending with
+NO cell separating) · games inside matches (the design effect) · CAL-2's unitless
+±. **And the DEFF scope is a PROCEDURE, not a taxonomy — name every cluster,
+state and VERIFY per cluster whether your stratum can hold more than one member,
+apply over the survivors. A taxonomy is a list of permissions.** Now in
+`CLAUDE.md` with its worked example, because the rule's own author got it wrong
+first.
+
+**R2. ⭐ A CITED CONSTANT CARRIES ITS COMMIT THE WAY A NUMBER CARRIES ITS
+DENOMINATOR.** *(behaviour change → this tape + the prereg that carries it.)* I
+quoted `GATE-1000 < 48` ninety minutes after Magnus raised it to 51, and had
+already propagated it into a tape note. **The OC change was material: a true-52
+arm dies 26.4% of the time under the live gate versus 0.6% under the one I
+quoted.**
+
+**R3. ⭐⭐ A BAR MUST BE SHOWN TO BE PAYABLE BEFORE IT IS IMPOSED.** *(behaviour
+change → the EVICT58 ruling, now combo law.)* Requiring a comparative live read
+per plank costs **7.3 h of the ENTIRE unrated fixture for a 5pp effect, 20.4 h
+for 3pp.** ⇒ **a standard nobody can pay is a decision never to ship the class,
+taken without saying so.** The recoverable form is to ship on dose+mechanism
+**with an arm-out in the combo** — and today that same arithmetic killed
+extending TINYECO (no feasible n resolves its band) and CAL-7's P1 (its
+reference capped resolution at ±9.1pp against an ±8pp bar — **unresolvable BY
+CONSTRUCTION, which nobody had computed across four preregs and five
+amendments**).
+
+**R4. ⭐ THE DOSE PROBE IS A DESIGN PHASE, NOT A CHECK.** *(routed to the builder,
+who ran it three times today.)* Three arms — EVICT58's hook, RETIRE60's detector,
+SPAWNPOCKET's two halves — **would have screened cleanly and meaninglessly**
+without mutation-first probing. **One killed half a prereg and refuted its source
+report's premise before a screen row existed.** Cost: a handful of probe games.
+
+**R5. GREP THE ROW'S OWN ANNOTATIONS, NOT JUST THE TREE.** *(→ `#47`, `#42`,
+`#36` annotated; the CLOSED-BY-LEG INDEX built.)* `#47` was ranked to the TOP of
+the live fire order — by me, reading it cold — because it listed its screens
+exhaustively and omitted its live −1. **Nothing in this repo could answer "has
+this row's arm had a live leg?"** ⇒ index built; **arms already cite their row
+number, so make the row cite its arm.**
+
+**R6. AN OBSERVATION AND ITS MECHANISM STORY CARRY DIFFERENT EVIDENCE AND NEED
+DIFFERENT LABELS.** *(behaviour change; three of my mechanisms died today —
+wall-clock non-determinism, the grid fix, home-base locking — all to evidence
+someone gathered for another purpose.)* **All three were true observations given
+stories they had not earned, relayed at the confidence of the measurement.**
+
+**R7. SESSION SCRATCHPADS DO NOT DIE.** *(instrument finding → tape + banking-rule
+clause (v).)* 86 dirs, 349 analysis scripts, five days. `corpus-howto` says
+otherwise and that belief cost two agents a rebuild-from-prose today. **Durable
+half is at WRITE time: name the analysis script by filename, or it is
+unrecoverable in practice.**
+
+## NEW SURFACES, TOOLS AND OBLIGATIONS SHIPPED
+`corpus/league_maps.tsv` (9,865 rows / 1,973 matches / 25 maps; join control
+930/930 true, 0/930 shifted) · `tools/era_guard.py` (invariant selftest,
+mutation-tested) · **OBLIGATION 15** (map-segment declaration, with the
+one-primary clause that stops sweep-fishing) · the **fixture-requirement tier** ·
+the **banking rule**, five clauses, tightened by the side lane.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **`#62` is PARKED with a bound, not refuted:** the map-blind opening is real
+   and explains **at most ~19% of the tiny-map deficit.** At least 81% is
+   elsewhere.
+2. **`#58` is refuted AS AN APPLICATION ONLY** — the eviction MECHANISM is
+   untouched (three opponents run it against us at 22-33 throws/game) and the
+   **conditional-launcher PLANT is now live-validated at 3.6×**, free to `#47`.
+3. **CAL-7's 110 games are SPENT.** Its comparative look was declined at n<150
+   and I have seen the tallies; **pooling them into any later look is taking the
+   declined look in two steps.**
+4. **The removal discriminator is DIRECTIONAL IN ALL THREE CELLS AND RESOLVED IN
+   NONE.** Any arm citing "51% vs 14%" or "66% vs 15-17%" is citing a
+   cross-population figure.
+5. **`batk`-by-target is NOT DELIVERABLE** on current surfaces (only the core is
+   target-tagged) — so the peck-probe's TARGET MIX must be declared
+   UNCALIBRATED, not assumed.
+6. **A holder change costs ~one rate window ~15-20 min later** (x3r0 panels every
+   slot event, 3-for-3). **Never schedule a window into that band.**
+
+## RESEARCH ARM STATE — VERIFIED 2026-08-14T17:57:34Z, NOT ASSERTED
+* **`Active bot: v140 (Loki v10)` · rating 1789 (Emerald) · 981 matches** — off
+  `fcode status`. **Day arc: 1753 boot → 1747 → 1789.** Two counter-routers
+  beaten (56.80, 57.06); the slot changed hands **four** times.
+* **`queue_check`: 48 unblocked (floor 3), exits 0, zero GREP-stale.**
+* **NOTHING OF MINE IS RUNNING.** Six agents this session (Juusto book · GREP
+  carry · `era_guard` build · `#49` re-derive · league-maps · carve-out sizing) —
+  **all six reported, all load-bearing numbers spot-verified at primaries, all
+  banked.** No live agent, no Monitor, no cron of mine.
+* **Owed and unstarted: `#63`'s design** — deliberately held, and it now has TWO
+  converging reasons to be a NAVIGATION change rather than a detector (the
+  stuck-counter fact; pockets are ENTERED not spawned-into). **It shares the
+  midgard/fjordgate segment with SPAWNPOCKET, so whichever prereg lands second
+  owes a combo-interaction line.**
