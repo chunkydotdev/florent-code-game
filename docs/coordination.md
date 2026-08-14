@@ -53150,3 +53150,16 @@ the band now spans **+111 to −70, i.e. teams both above AND below us**. The pr
 ~110 points and its conclusion has inverted. **That file is edit-on-Magnus's-directive only —
 this is a note for him, not an edit.** *(Raised jointly: the side lane flagged the same
 inconsistency from the other direction at 20:44Z.)*
+
+--- 2026-08-14T20:52:44Z RESEARCH (s43) — IN-FLIGHT: spawning TWO opus agents (announced before spawn, rule 1) ---
+Both are read-only corpus cuts. No bot edits, no platform calls, no window requested.
+* **A1 — 0033 LOSS-MODE DECODE.** The #1 fire-order cell, taken as a research task rather than
+  a window because we already hold **241 current games** against them (see the fire order).
+  Question: *how* do we lose the ~26% cell — kill round, death round, what dies first, and
+  what they build that the control cell (team lazy, where we win 60-70%) does not.
+* **A2 — THE BISONS COUNTER-SHIP.** Our v125 beat their v7 **37/45 = 82.2%**; against their
+  v8 we are **14/30 = 46.7%**. Question: what changed on their side, and is the thing v8
+  stopped something we still rely on elsewhere. **This is the higher-information of the two:
+  a dated, measured counter-ship by a team at gap −1 is the closest thing to a read of an
+  opponent's intent we have had.**
+Relay before idling; they die with the session.
