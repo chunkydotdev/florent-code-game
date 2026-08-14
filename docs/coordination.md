@@ -48072,3 +48072,42 @@ measured through that much injected noise, is UNRESOLVED rather than confirmed.*
 #   launcher turns (rare). No current treatment is compute-heavy; the rule
 #   arms for future ones. Cross-host: delta-vs-delta stays the safe
 #   comparison; share-vs-share across hosts inherits the bias caveat.
+
+# 2026-08-14T14:2xZ (`date -u`) — ⭐⭐⭐ **RESEARCH s40: #60 STOCKED — THE LAUNCHER PREMIUM IS REFUNDABLE, AND WE HAVE NEVER CALLED `destroy()` ONCE**
+**This is the honest resurrection of the launcher question, on an axis the s37
+sweep never touched — as against my retracted `#57` lever, which ran straight
+into it.**
+
+**THE GREP IS THE FINDING: `ct.destroy(` and `ct.can_destroy(` appear ZERO times
+in the entire live tree** (`_v223sealrepair`, all four modules; all 11 textual
+"destroy" hits are comments). **And `main.py:256` reads: *"dies (destroying an
+entity removes its contribution), so surplus bank…"* — WE WROTE THE MECHANISM
+INTO OUR OWN SOURCE AS A COMMENT AND NEVER ACTED ON IT.** *(Third instance of
+this exact shape: `#52` — we wrote the 8:1 heal arithmetic in a comment and never
+staffed it; `#57` — we shipped a ferry and stopped firing it; now this.
+**A comment stating a mechanism is not an implementation, and this codebase keeps
+mistaking one for the other.**)* Our launcher DEATHs are ENEMY kills, not
+demolitions: v104 329/2125 · v125 76/371 · **v140 1/17**.
+
+**WHY IT IS NOT THE ARM s37 REJECTED.** That sweep measured launchers we **KEEP**;
+its **−6.34pp is literally `LAUNCH0 − BOTH0`, the PERMANENT scale contribution of
+a STANDING launcher.** **A launcher demolished two rounds after use pays the Ti
+and NONE of the permanent inflation.** Not a variant of the rejected arm — the
+arm that avoids the cost the sweep measured.
+**ENGINE FACT, SOURCE-READ:** `get_scale_percent@0x11fb8` is team-keyed and
+*"its contribution removed when that team's building is destroyed"*
+(`engine-guard-matrix-exploit-hunt-2026-08-10.md:154-159`, disassembly of the
+shipped `.so`). **Rules-level ⇒ admissible without a live test per CLAUDE.md's
+own carve-out**, which is the difference between this and an inference.
+**Juusto is the existence proof: 402 of 403 launchers demolished at an age of
+exactly 2 rounds, +132 Elo in 11.7 h.**
+
+⚠ **THE LIMIT, IN THE ROW AND IN THE BUILDER'S REGISTRATION: THE TITANIUM IS NOT
+REFUNDED — only the scale contribution.** ~73+ Ti/game at Juusto's rate, spent in
+the r0-50 window where our kill is bought. ⇒ **the FIRST read is the SCALE CURVE
+(`get_scale_percent()` at r50/r100/r150), not the win rate.** If scale does not
+visibly flatten, the mechanism is not firing and the win rate is noise.
+**Coupling class: SELF-KNOWLEDGE — the scale factor is ours and moves whatever
+the opponent does ⇒ SCREEN-TRUSTWORTHY**, which is rare for a launcher plank.
+**And it generalises past launchers: every building whose job is finished is
+taxing every subsequent build we make, for the rest of the match.**
