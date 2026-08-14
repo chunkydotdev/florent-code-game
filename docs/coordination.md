@@ -47439,3 +47439,51 @@ made the leg's claims SMALLER. Not one lane caught its own error at the moment
 it mattered; the structure did, every time, within minutes** — which is the same
 observation the side lane banked as S4 at the s38 wrap and is now measured again
 on a live prereg rather than in retrospect.
+
+# 2026-08-14T13:24:36Z (`date -u`) — **BUILDER s39: VPS SLATE REGISTERED (Magnus directive this boot: "We should
+# be testing more shards on the vps, can we pull some items from the queue?").**
+# Four queue arms BUILT + one replication, registered BEFORE launch; all greps
+# consumed from research's carry (41 unblocked, zero stale) + my own build-
+# admission probes. Controls all _v223sealrepair (live incumbent). Gates:
+# 1000 futility <48 · 2700 <50.5 · final ±1.33 @5400. DOSE VERIFIED PER ARM
+# before registration (the #17 rule: a knob that never fires screens nothing):
+# * **DEST14A/B** (`_v228dest14a`/`_v229dest14b`, #14 two-arm): idle builder
+#   gets a DESTINATION (A: forward anchor) vs RECALL (B: home). Detector is
+#   denominated in the WIRE's bucket-A definition (idle_split_s31): K=4
+#   consecutive free movement-tail entries without moving — a free tail entry
+#   PROVES a no-action round (ac=1 immediately after acting, engine-probed
+#   today; bucket D=0.00% corollary). ⚠ FIRST BUILD OF THIS ARM WAS WRONG and
+#   the dose probe caught it: hooked `_pick`-returns-None, which fired 0 times
+#   in 4 games (443-round game included) — _pick ALWAYS finds a target; the
+#   idle bucket is a plan-not-progressing state, not a no-plan state. Rebuilt
+#   at the movement tail; dose now 2-64 assignments/game (heaviest in long
+#   games — the freed-into-idleness population). REGISTERED PREDICTION: A and
+#   B move median kill round in OPPOSITE signs from the same idle pool. B
+#   carries the DEFENCE_ADMISSION_BAR kill-round non-regression rider: if B's
+#   median kill round rises, B is off-programme whatever its win rate. Scope:
+#   expand-role only (parked raiders are #48c's road, not raced). Coupling:
+#   detector is self-knowledge; A's VALUE half (forward bodies) is live-
+#   coupled — screen reads harm+direction, value confirmation needs live.
+# * **SENT41** (`_v230sent41`, #41): forward-sentinel siting band d²14-32 (was
+#   ≤32 with NO minimum) + one 3-Ti denial barrier on the core-side seat
+#   (sentinel fire ignores obstacles; the reactive counter-gunner r²=13 does
+#   not). Dose: band-rejects occur, 1-2 barriers built/game. Coupling:
+#   HARM-GATE screen — the value premise (their reactive point-blank counter-
+#   build) is opponent behaviour our incumbent does not express; live leg owed
+#   if the screen is harm-clean. Mechanism metric: fwd-sentinel median
+#   lifetime (baseline 10 rounds).
+# * **SALTREF** (`_v231saltref`, #48b): peck budget refreshes every 160 rounds
+#   (was a LIFETIME cap of 40 — bots measured at exactly 40 attacks then
+#   permanent silence). Epoch reset selftested both directions (REFRESH=0
+#   never resets). Coupling: salt is the family where coupling was falsified-
+#   as-universal (s38 refinement) — screen-trustworthy.
+# * **V141VS140R** (`_x3r0v141` vs `_v223sealrepair`, 2700): remote
+#   replication of the public-claim benchmark, D26 SAME-SIDE POOL WITH LOCAL
+#   V141VS140 DECLARED HERE AT QUEUEING; verdict types once at pooled
+#   pre-registered n, never before (research's hold consumed — n=516 color
+#   stays lane-internal). Slotted FIRST among new remote rows per research's
+#   preference (answers a public claim; thin n costs most there).
+# Remote slate order on work-server-1: SEALFLOOR0R (finishing) → V141VS140R →
+# SEALREPAIRR → DEST14A → DEST14B → SENT41 → SALTREF. Local filler will pick
+# rows up as cores free (ALWAYS_BE_RUNNING). Seedbases 280000-288000, host
+# offset +32M keeps every surface disjoint.
