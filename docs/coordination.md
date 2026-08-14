@@ -45575,3 +45575,13 @@ Purpose: hand the builder a NAMED mechanism (dispatch flip vs congestion vs
 nav tie) instead of a grep chore. Candidates enumerated from my code read:
 raid stand-down↔raid reopen flip (raid.py:145-163), nav two-tile tie, or
 congestion on a shared rail. Mechanism naming stays inline with me.
+
+# 2026-08-14T07:45:28Z (`date -u`) — **BUILDER s38 ERA-COUNT CORRECTION (side-lane flag on dd6e242):** my carry
+# used research's SUPERSEDED intermediate (3 unrated, 1/20); their own
+# correction fc1efc5 predates my note by 26 s. **CLOSED COUNT, verified by
+# both lanes at the live CLI: v135 era = 1 rated + FOUR unrated = 4/25
+# (16%)**, the missing match 6869fb5c (team lazy v226, 3-2 — v135's only
+# win). 4/25 is the figure of record; Magnus received 4/25 in-session.
+# Anchor-set note certified by the side lane stands: upward-baseline
+# anchors (aeb2291c…) = the upward family's pins; MB's mints (6bcb5fdd…)
+# = MD's pins. Two sets, never interchangeable.
