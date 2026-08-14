@@ -49,7 +49,10 @@ while read -r SH TR CT TG SL; do
   tsv=$OUT/${SH}.tsv
   rows=0; [[ -f $tsv ]] && rows=$(( $(wc -l < $tsv) - 1 )); (( rows < 0 )) && rows=0
   tot_rows=$(( tot_rows + rows ))
-  alive=$(ps ax -o command= | grep -c "[o]vernight.sh $SH ")
+  # [o]vernight[a-z_]* : variant runners (overnight_mapfix.sh) are the same
+  # shard family — the bare "overnight.sh" pattern called a live MAPFIX DEAD
+  # on the dashboard (2026-08-14, Magnus caught it).
+  alive=$(ps ax -o command= | grep -c "[o]vernight[a-z_]*\.sh $SH ")
   hb=$OUT/${SH}.heartbeat
   age="-"; agesec=999999
   if [[ -f $hb ]]; then agesec=$(( NOW - $(stat -f %m $hb) )); age="${agesec}s"; fi
@@ -58,7 +61,8 @@ while read -r SH TR CT TG SL; do
   elif grep -q cancelled $STATE/$SH 2>/dev/null; then st="CANCELLED"
   elif (( alive > 0 )) && (( agesec > 600 ));   then st="STALLED"      # alive but frozen
   elif (( alive > 0 ));                          then st="running"
-  elif [[ -f $STATE/$SH ]];                      then st="DEAD"        # started, no process
+  elif [[ -f $STATE/$SH ]] && (( agesec < 600 )); then st="running?"   # no matching process but heartbeat FRESH — an unmatched runner, not a corpse
+  elif [[ -f $STATE/$SH ]];                      then st="DEAD"        # started, no process, heartbeat stale
   else                                                st="queued"
   fi
 

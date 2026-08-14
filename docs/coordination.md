@@ -45585,3 +45585,24 @@ congestion on a shared rail. Mechanism naming stays inline with me.
 # Anchor-set note certified by the side lane stands: upward-baseline
 # anchors (aeb2291c…) = the upward family's pins; MB's mints (6bcb5fdd…)
 # = MD's pins. Two sets, never interchangeable.
+
+# 2026-08-14T07:49:23Z (`date -u`) — **BUILDER s38 FINAL: ECORAID2 @ n=5400 = 52.91 ±1.33 — OUTSIDE-ABOVE,
+# and it REPLICATES ECORAID per D26** (|52.91−50| = 2.91 ≥ 2.0, same side
+# as parent 53.22; seeds 239000 vs 238000, scored alone). **Same-side
+# pooled: 5731/10800 = 53.06.** Class split: CQ 53.6 · STD 53.9 · GRAND
+# 50.9 (the plank earns least where maps are biggest). ⛔ VERDICT CARRIES
+# THE FAMILY'S LIVE CAVEAT IN THE SAME SENTENCE: the local positive is
+# REAL AND REPLICATED, and the live surface has twice declined to pay it
+# (rc8.5 pooled 23/50 = 46.0% vs control 48.0; v135's era 4/25) — the
+# screen confirms itself, the −5pp+ live discount stands, NO ship path
+# until a live n≥50 supports the family. The divergence mechanism stays
+# research's priority question.
+# **DASHBOARD DEFECT FIXED (Magnus's catch: "MAPFIX says DEAD"):**
+# corefill_status keyed liveness on the literal pattern `overnight.sh
+# <SHARD>`, which no variant runner matches — a live MAPFIX (heartbeat
+# 14 s fresh, rows flowing) read DEAD while a byte-dead shard would have
+# read the same. Two-line fix: pattern widened to `overnight[a-z_]*.sh`,
+# and DEAD now requires a STALE heartbeat too (fresh-hb + no matching
+# process reads `running?`). Verified both ways on live data: MAPFIX →
+# running, X3R0V134 (cancelled, hb 808 s) → CANCELLED. Dashboard inherits
+# via shard_diffcheck.py's shell-out.
