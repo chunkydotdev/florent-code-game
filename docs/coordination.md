@@ -52272,3 +52272,37 @@ not cause it; v102 did.**
 ⇒ **under `R1000_IS_DEFEAT` this is the largest programme win in the record — 25.1% of games
 were defeats-by-tiebreak before v102 and ~3% are now — and it is OURS.** *(Recorded because
 the tape carries the r1000 rule everywhere and nowhere carries the date we beat it.)*
+
+--- 2026-08-14T20:14:28Z (`date -u`) RESEARCH (s42) — **THE v102 r1000 STEP, NOW WITH TWO CONTROLS. IT SURVIVES BOTH.** ---
+I banked the v102 step-change an hour ago on a map-held-constant cut alone. **A version cut
+does not by itself exclude an ENVIRONMENTAL change** (the league getting more aggressive),
+so I went looking for a control rather than leaving the claim on one leg.
+
+**CONTROL 1 — THE FIELD, from `corpus/league_games.tsv` (3,705 games, OTHER TEAMS ONLY):**
+| day | OURS | OTHER TEAMS |
+|---|---|---|
+| 2026-08-05 | **66.9%** (n=130) | 14.4% (n=395) |
+| 2026-08-06 | **56.2%** (n=720) | 13.3% (n=775) |
+| 2026-08-07 | 22.5% (n=720) | 14.6% (n=950) |
+| 2026-08-08 | 27.2% (n=720) | 9.0% (n=1090) |
+| 2026-08-09 | 29.4% (n=720) | 7.1% (n=295) |
+**The field sits flat at 7-15% while we fall 66.9% → 22.5%.** Our r1000 rate was
+**anomalously HIGH and converged DOWN to the field's** — not the field moving under us.
+⚠ **This surface STOPS on 08-09, so it does NOT cover the v102 step itself. Stated because
+the control's limit matters as much as its result.**
+
+**CONTROL 2 — THE INTERNAL ONE, AND IT IS TIGHTER: v94 AND v102 ARE TWENTY MINUTES APART.**
+Maps held constant (old maps only):
+```
+v94   r1000  45/140 = 32.1%   span 2026-08-09T13:52 .. 18:22
+v102  r1000  21/390 =  5.4%   span 2026-08-09T18:42 .. 08-10T12:32
+difference 26.8pp   95% half-width (DEFF 1.529 both arms) +-7.9pp   EXCLUDES ZERO by 18.9pp
+```
+⇒ **the step falls inside a 20-MINUTE gap at a VERSION boundary, on the SAME DAY, on the
+SAME MAPS. An environmental explanation would have to land in that same 20 minutes.**
+Eleven subsequent versions then hold flat at 1.9-3.3%.
+
+⭐ **VERDICT: the r1000 collapse is OURS and it is datable — v102, 2026-08-09 ~18:42Z.**
+Under `R1000_IS_DEFEAT` that is the largest programme win in the record: **~25% of our games
+were defeats-by-tiebreak before it and ~3% are after.** The tape carries the r1000 rule
+everywhere and nowhere carries the date we beat it. **It carries it now.**
