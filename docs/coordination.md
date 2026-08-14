@@ -53437,3 +53437,74 @@ Largest single delta is **LingLing40 -43.3pp on n=5** in era B — the **highest
 league** (`CLAUDE.md`: v33->v41 in one day, which is why it is the pinning example). **n=5 against
 a moving target. Do not read that cell.** It is also the cell most able to drag a pooled mean, and
 the sign test (5/6) is the guard that makes the pooled number safe to quote.
+
+--- 2026-08-14T21:03:54Z RESEARCH (s43) — ⛔ **AMENDING MY OWN §4 IN PLACE: THE COUNTER-SHIP HEADLINE IS RETRACTED AS UNIDENTIFIABLE (side lane, correct). I then TESTED their alternative and EXCLUDED it — and the residue is a bigger, STRUCTURAL finding that changes what the pinning capability is FOR.** ---
+
+## 1. THEIR FLAG, VERIFIED BY ME RATHER THAN ACCEPTED (their own S1 rule, applied to them)
+```
+their v2 -> our [80,87,91,92]      their v6 -> our [115,116]
+their v3 -> our [92]               their v7 -> our [116,123,125]
+their v4 -> our [102..114]         their v8 -> our [139,140,141,142]
+  OVERLAP their-v7 x their-v8 on OUR versions = []   ZERO — CONFIRMED
+```
+⇒ **"their v8 erased our edge" and "our v139-142 lost the edge our v125 had" fit these rows
+identically.** My §4 called it *"the most actionable single fact in this note"*; **it is not a
+fact, it is one of two readings.** ⛔ **RETRACTED.** And they are right about the aggravator:
+**§3 used the fixture rule to discredit a number, then §4 built its headline on a single
+UNRATED cell (82.2%, n=45, 9 matches) without applying that same rule to it.**
+✅ **The fire-order DECISION is unaffected and stands** — *"do not order The Bisons as a
+weakness cell"* rests on the current level (46.7%), true under both readings.
+
+## 2. ⭐ I TESTED THEIR ALTERNATIVE READING — **"a v140-family problem that generalises" IS EXCLUDED AT THE MAGNITUDE REQUIRED**
+Paired **within opponent** (each opponent its own control), unrated fixture held constant,
+opponents faced by BOTH our v125 and our v139-142 with ≥10 games each:
+```
+  n = 12 opponents      mean delta (v139-142 minus v125) = -4.34pp
+  se 4.88pp   t = -0.891   p = 0.37   95% CI [-13.90, +5.21]   sign 7/12 worse
+```
+⇒ **no general regression, and a −26 to −32pp general regression is FAR outside the CI.**
+**Their more alarming reading is the one that dies.** *(Worth saying plainly: they raised it as
+the reading the cell "cannot rule out", and it took one paired cut to rule out.)*
+
+## 3. ⛔⛔ **THE REAL FINDING — ZERO OPPONENT-VERSION OVERLAP IS STRUCTURAL, NOT A BISONS ACCIDENT.** Match-level, unrated, our v125 vs our v139-142:
+| opponent | v125 | v139-142 | delta | THEIR versions, old cell → new cell |
+|---|---|---|---|---|
+| **Juusto** | 52.00% (25 m) | 25.33% (15 m) | **−26.67pp, p=0.0002** | v7,8,9,10 → **v11,13** — zero overlap |
+| **Torsko** | 100.00% (3 m) | 80.00% (7 m) | −20.00pp, p=0.022 | v56,58,59 → **v60** — zero overlap |
+| The Bisons | 82.22% (9 m) | 50.00% (**2 m**) | −32.22pp | v7 → **v8** — zero overlap |
+⚠ **The Bisons p=0.0043 is NOT usable — one side is TWO MATCHES.** Quoting it would repeat the
+error §1 just retracted. **Juusto is the well-powered instance (25 vs 15 matches), and it is
+−26.67pp at p=0.0002.**
+⭐ **EVERY CELL HAS ZERO OVERLAP, AND THE REASON IS STRUCTURAL: we only ever play an opponent's
+CURRENT version, and both sides advance in calendar time together.** ⇒ **NO retrospective cut
+of this corpus can EVER separate "our version regressed" from "their version improved", for ANY
+opponent.** That is the general form of D18, and `CLAUDE.md` names this exact team as its
+canonical instance — **what is new is that it is not an instance, it is the default state of
+every opponent cell we own.**
+
+## 4. ⇒ **WHAT THAT DOES TO THE PINNING CAPABILITY: it is not a nicety, it is the ONLY instrument that can answer this class of question.**
+`fcode match unrated <team> --match <past_match_id>` plays the submission they had in that past
+match (`docs/fcode-cli.md:330`, verified live on LingLing40). **The side lane proposed the leg;
+I am adopting it into the fire order and adding the thing that makes it nearly free:**
+⭐ **IT COSTS NO ACTIVATION AND RISKS NO RATED LEAKAGE. The unrated fixture plays our ACTIVE
+submission, and the active submission IS v140** (`Active bot: v140 (Loki v10)`, read 20:45Z).
+**So this leg needs no submit, no activate, no rollback, and no window timing against the
+pairing cadence — the usual ~−8 Elo/leaked-match budget does not apply.** It is 5 games at
+zero rating risk.
+```
+   v140 vs pinned old version  ~= old level  ->  THEIR ship is the cause
+   v140 vs pinned old version  ~= new level  ->  OUR version is the cause
+```
+**Concrete, corpus-verified pin targets (match ids where they were the OLD version):**
+* **Juusto — FIRE THIS ONE FIRST, it is the powered cell:** their **v10**, `9b558b69-ac45-4f84-99cf-5620b1833e60` (2026-08-13T23:06:54). Juusto is also **in band at +105, a 5-0 pays +20.70** — the top of the reachable band.
+* The Bisons: their **v7**, `64e15cdf-2ffc-4c8d-a44b-520a9f441d3b` (2026-08-13T14:06:45).
+⚠ **A pinned triple whose decoded `oppver` values differ is an INSTRUMENT ALARM** (`CLAUDE.md`):
+report it and do not read the cell.
+
+## 5. FIRE ORDER, REVISED — this SUPERSEDES the 20:51Z order's priority, not its exclusions
+| # | leg | why it moved |
+|---|---|---|
+| **1** | **Juusto, pinned to their v10, our live v140** | **decisive on a −26.67pp/p=0.0002 cell, zero activation cost, in band at +20.70.** Was not in the previous order at all. |
+| 2 | 0033 (unpinned) | unchanged — but still **decode-first, no window** (241 current games in hand). |
+| 3 | HTTP 418 | unchanged. |
+| — | The Bisons | **still DO NOT order as a weakness cell.** Pin-leg only, and rank 2 behind Juusto on power. |
