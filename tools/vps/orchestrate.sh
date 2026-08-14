@@ -294,12 +294,16 @@ command -v rsync >/dev/null 2>&1 || { echo '⛔ rsync missing — needs root onc
 # old, bootstrap a standalone CPython via uv: rootless, no admin round-trip.
 PYOK=\$(python3 -c 'import sys; print(1 if sys.version_info >= (3,12) else 0)' 2>/dev/null || echo 0)
 if [ \"\$PYOK\" = 1 ]; then
-  [ -x .venv/bin/pip ] || { rm -rf .venv; python3 -m venv .venv; }  # gate on the LOAD-BEARING file — a dir from a failed create is not a venv
-else
+  [ -x .venv/bin/pip ] || { rm -rf .venv; python3 -m venv .venv || true; }  # gate on the LOAD-BEARING file — a dir from a failed create is not a venv
+fi
+if ! { [ -x .venv/bin/pip ] && .venv/bin/python -c 'import sys; raise SystemExit(0 if sys.version_info >= (3,12) else 1)' 2>/dev/null; }; then
+  # python too old (work-server-1: 3.9) OR venv module crippled (work-server-2,
+  # 2026-08-14: 3.12 present but python3.12-venv/ensurepip absent) — either way
+  # the rootless uv bootstrap is the fallback; gate stays the LOAD-BEARING file.
   export PATH=\"\$HOME/.local/bin:\$PATH\"
   command -v uv >/dev/null 2>&1 || curl -LsSf https://astral.sh/uv/install.sh | sh -s -- -q
   uv python install 3.12 -q
-  { [ -x .venv/bin/pip ] && .venv/bin/python -c 'import sys; raise SystemExit(0 if sys.version_info >= (3,12) else 1)' 2>/dev/null; } || { rm -rf .venv; uv venv -q --seed --python 3.12 .venv; }  # a WORKING venv on a too-old python still fails the wheel — version is load-bearing too
+  rm -rf .venv; uv venv -q --seed --python 3.12 .venv
 fi
 .venv/bin/pip install --quiet --upgrade pip
 .venv/bin/pip install --quiet 'fcode==$PIN'
