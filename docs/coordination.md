@@ -45899,3 +45899,17 @@ data; observational beside the pinned family numbers, never pooled in.
 # single mechanism.** The "minimal fix = RICH_TI back above 500" advice
 # is downgraded from mechanism-backed to hypothesis. Direction check
 # (s29 rule): this error ran AGAINST my earlier confident story — noted.
+
+# 2026-08-14T08:44:53Z (`date -u`) — **BUILDER s38: v125 RESTORED BY MAGNUS'S OWN HAND (verified Active bot:
+# v125 at 08:44:30Z, 1759/953; holder_watch EXPECT=v137 fired on the
+# change as designed). The x3r0 interlude closes: v134/v135/v137 combined
+# rated era −39.4 Elo over 6 matches vs v125's +20.5 over its 6 today.**
+# **MD ANNOUNCED — TAPE BEFORE ACTION, executing NOW in the pre-08:52:59
+# clear air (window clean, MC's accepts aged out 08:22):** submit
+# `bots/_v213ecoraid` as 'Loki rc8.7' (leg mode, auto-restore +
+# sentinel) · burst scratchpad/md_leg_burst.sh (pre-written: ECO set
+# antler/auroraveil/frostgate/royale, MB's full anchors 6bcb5fdd/
+# cea633ec/c8683709/eb6f89b1/09c67a4e) · sentinel · verify v125.
+# holder_watch re-arms EXPECT=v125 AFTER the leg (it would false-fire
+# mid-leg). MD completes the map-conditional test: ECORAID's triage
+# against MB per the +4 rule — the family's last pre-registered road.
