@@ -1077,12 +1077,12 @@ SEALFLOOR0R bots/_v219sealfloor0   bots/_v197mapcode      5400 253000
 MAPSALT     bots/_v225mapsalt      bots/_v223sealrepair   5400 274000
 NESTSHOT    bots/_v226nestshot     bots/_v223sealrepair   5400 276000
 V141VS140   bots/_x3r0v141         bots/_v223sealrepair   2700 278000
+V140VS142   bots/_v223sealrepair   bots/_x3r0v142         1000 296000
 SEALREPAIRR bots/_v223sealrepair   bots/_v218mapfix       5400 269000
 DEST14A     bots/_v228dest14a      bots/_v223sealrepair   5400 282000
 # DEFER-53BAR DEST14B     bots/_v229dest14b      bots/_v223sealrepair   5400 284000
 # DEFER-53BAR SENT41      bots/_v230sent41       bots/_v223sealrepair   5400 286000
 SALTREF     bots/_v231saltref      bots/_v223sealrepair   5400 288000
 NESTSHOT2   bots/_v227nestshot2    bots/_v223sealrepair   5400 276000
-# DEFER-53BAR EVICT58     bots/_v233evict58      bots/_v223sealrepair   5400 292000
+EVICT58     bots/_v233evict58      bots/_v223sealrepair   1000 292000
 RETIRE60    bots/_v234retire60     bots/_v223sealrepair   5400 294000
-V140VS142   bots/_v223sealrepair   bots/_x3r0v142         1000 296000

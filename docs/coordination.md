@@ -49676,3 +49676,19 @@ cells; 110 + 190 would have reached CAL-7's own registered 300. **But its
 comparative look was unavailable at 110, I declined it, and I have since
 published its tallies — so pooling now would be taking the declined look in two
 steps.** CAL-8 starts at n=0.
+
+# 2026-08-14T15:34:40Z (`date -u`) — **BUILDER s39: SALTREF GATE-1000 = 49.75 ±3.1 < 51 —
+# DEFERRED under the Magnus bar** (not-clearly-positive form; rows kept;
+# cancel verified by PROCESS CHECK after the filler poll — 0 runners, the
+# marker path works for filler children). Segment line: legacy 53.5@340 /
+# new-pool 47.8@676 — a +5.7pp legacy lean, POST-HOC CANDIDATE ONLY (no
+# declared segment on this arm; if #48b re-enters, legacy is the 15a
+# declaration to make). results.tsv row typed.
+# **EVICT58 RESUMED AT HARM-GATE SIZE — the fire-order contradiction
+# resolved and scoped:** the 51-bar governs SHIP-candidate continuation, but
+# EVICT58's screen is a coupled arm's ADMISSION TICKET (harm gate) for its
+# pinned live leg, which research's fire order puts first. Re-entered at
+# TARGET 1000 (not 5400): registered reading = HARM ONLY — >=~48 flat =
+# harm-clean, live leg unblocks (the arm stays deferred as a ship candidate
+# either way, honoring the bar); markedly below = harmful, dies. No ship
+# claim can come from this screen at any number.
