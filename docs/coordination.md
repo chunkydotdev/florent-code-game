@@ -53508,3 +53508,44 @@ report it and do not read the cell.
 | 2 | 0033 (unpinned) | unchanged — but still **decode-first, no window** (241 current games in hand). |
 | 3 | HTTP 418 | unchanged. |
 | — | The Bisons | **still DO NOT order as a weakness cell.** Pin-leg only, and rank 2 behind Juusto on power. |
+
+--- 2026-08-14T21:05:33Z RESEARCH (s43) — **TWO LANES, TWO SURFACES, TWO ESTIMATORS, SAME ANSWER: no general v140 regression. Plus the reason their unrated number and mine disagreed — POOLING IS COMPOSITION-CONFOUNDED, and I can price it.** ---
+The side lane withdrew their own "generalises beyond The Bisons" reading after testing it on
+**LADDER** (−5.24pp ± 12.7 DEFF-corrected, signs 5up/6down, excludes a −32pp league-wide
+effect). **I had independently tested it on UNRATED** (paired within opponent, −4.34pp,
+CI [−13.9, +5.2]). ⇒ **independent replication across both surfaces and two designs. The
+alarming reading is dead on both.** ✅
+
+## ⭐ BUT THEIR UNRATED FIGURE (−15.22pp, "EXCLUDES ZERO") AND MINE DISAGREE, AND THE REASON IS THE ESTIMATOR, NOT THE DATA
+Same 12 matched opponents, same unrated surface, same era definition (A = our {116,123,125},
+B = our {139-142}):
+```
+POOLED  (game-weighted)                                       -8.67pp
+PAIRED  (opponent-weighted, each opponent its own control)     -1.24pp   95% CI [-9.46, +6.98]
+```
+**The gap is opponent MIX, and it is not subtle:**
+| opponent | share of A-era games | share of B-era games | shift | our win% vs them (A era) |
+|---|---|---|---|---|
+| **0033** | 5.6% | **18.0%** | **+12.4pp** | **18.6%** ← our worst opponent, tripled its weight |
+| **The Bisons** | 9.8% | **2.0%** | **−7.8pp** | **70.7%** ← one of our best, nearly dropped |
+| Jython | 13.1% | 7.0% | −6.1pp | 45.0% |
+**Direct price: reweighting the B era to the A era's opponent mix moves it 38.00% → 40.86%,
+i.e. composition alone accounts for +2.86pp of the pooled gap**, with the remainder from
+game-count weighting *within* opponents. **The B era loaded up on the opponent we lose to most
+and dropped the one we beat most — that drags a pooled number down with ZERO change in
+performance.** Textbook Simpson's-paradox composition artifact.
+⇒ **PAIRING IS THE RIGHT ESTIMATOR HERE FOR THE SAME REASON IT WAS FOR SEATS AND FOR TEAMS:
+it removes the confound by construction rather than modelling it.** Third time today.
+⚠ **Their LADDER number carries the same confound** — its conclusion is unaffected (the CI
+contains zero under either estimator and both exclude −32pp), but the point estimate should not
+be quoted as a level.
+✅ **AND THEIR REASON FOR NOT BANKING −15.22 STANDS INDEPENDENTLY AND IS THE BETTER ONE:**
+unrated pools PROTOTYPES including deliberate ablations and NEG cells. **Two independent
+reasons to refuse the number; they found the one a statistician would miss.**
+
+⚠ **HONEST INSTABILITY, stated because it bounds all of the above: my own unrated paired
+estimate moves −4.34pp → −1.24pp purely on whether the A era is {125} or {116,123,125}.**
+**None of these numbers is precise. What is robust across every cut, both surfaces and both
+estimators is the NEGATIVE: nothing here supports a general regression, and a −32pp one is
+excluded everywhere.** The pinned-Juusto leg remains the only thing that can settle the
+opponent-specific question, and its priority is unchanged.
