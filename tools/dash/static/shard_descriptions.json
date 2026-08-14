@@ -1,0 +1,563 @@
+{
+ "GUNFERRY": {
+  "brief": "Adds the 'ferry-first' launcher plank that every other arm in the same batch is missing.",
+  "full": "GUNFERRY (_v154gunferry) was queued against the v114 incumbent as the batch's top plank, alongside the two mandatory calibration cells. The worklist never spells the plank out; it only names it and notes that the four arms queued beside it 'ALL LACK FERRY-FIRST', so their earlier numbers were really the arm minus ferry-first. Elsewhere in the file 'ferry' is the launcher throwing our own builder bots forward toward the enemy core, as opposed to 'exile', which throws enemy bots away. The exact form of the change is not stated, so treat the mechanism as unconfirmed.",
+  "confidence": "low"
+ },
+ "NULL114": {
+  "brief": "Nothing at all - a byte-identical copy of the incumbent played against itself to calibrate the fixture.",
+  "full": "NULL114 runs _v146null, a byte-identical copy of the v114 incumbent, against v114 itself. It is one of the two calibration cells the worklist calls non-negotiable: without a null cell and the NEG114 negative beside it, the battery cannot tell 'no effect' from 'no power', and no other verdict in the batch can be read. It must land near 50%; anything else means the fixture is biased on this contrast. The same construction was later reused for _v169null.",
+  "confidence": "high"
+ },
+ "NEG114": {
+  "brief": "Removes the barrier collar seal (and, unintentionally, the gun-axis penalty) - a deliberately worse arm.",
+  "full": "NEG114 plays the older _v140noseal tree, which lacks the barrier 'collar' seal, against v114 as the batch's negative control: it must read clearly below 50%, or the fixture cannot detect a known-bad arm and every 'no effect' verdict on this contrast is really 'no power'. It read 36.32%. The worklist later corrects an over-claim drawn from it: _v140noseal also lacks the LOKI_GUNAXIS_PENALTY plank and differs by 7 doctrine lines plus 26 in raid.py, so the 13.7pp gap is an upper bound on what the collar is worth, not its value. NEG169 was built to get the clean single-line number.",
+  "confidence": "high"
+ },
+ "GUNBLANK": {
+  "brief": "Builds a barrier on a visible enemy gunner's firing axis to blank out its shot.",
+  "full": "Called LOKI-26 'gunblank' in the worklist and described there as 'a barrier on an enemy GUNNER's firing axis'. It was screened the previous night against the older v112 chassis and re-listed here against v114 so the contrast is clean, since both trees lack the ferry-first plank. It read 52.11% (n=5,408), outside-above, which made it a ship candidate; this repo replicates before it ships, so GUNBLANKREP was queued on a fresh seed block to confirm it.",
+  "confidence": "high"
+ },
+ "CAP12B": {
+  "brief": "Sets an unnamed cap constant to 12; paired with CAP6B as a two-point dose sweep.",
+  "full": "CAP12B (_v144cap12) and CAP6B (_v143cap6) form a dose pair on a cap constant the worklist never names. Both were screened against the older v112 chassis and are re-listed here against v114 so the comparison is clean: like their batch-mates they lack the ferry-first plank, and against a control that also lacks it the contrast is finally uncontaminated. What the cap governs is not stated anywhere in the file.",
+  "confidence": "low"
+ },
+ "CAP6B": {
+  "brief": "Sets the same unnamed cap constant to 6; the low end of the CAP12B/CAP6B dose sweep.",
+  "full": "CAP6B (_v143cap6) is the low point of a two-point dose pair with CAP12B (_v144cap12) on a cap constant the worklist does not name. Both arms were first screened against the older v112 chassis and were re-listed against v114 because treatment and control then both lack the ferry-first plank, making the contrast clean. Nothing in the file says what the cap limits.",
+  "confidence": "low"
+ },
+ "BESTFITB": {
+  "brief": "Switches some placement or selection step to a 'best fit' rule; the worklist never says which.",
+  "full": "BESTFITB runs _v145bestfit against the v114 incumbent. The only thing the worklist says about it is that it belongs to the group of four arms screened the previous night against v112 and re-baselined against v114 so that treatment and control both lack the ferry-first plank. The tree name suggests a best-fit selection rule replacing whatever the incumbent used, but the mechanism is not described anywhere in the file.",
+  "confidence": "low"
+ },
+ "GUNPEN4": {
+  "brief": "Halves the gun-axis siting penalty from 8 to 4, the shipped knob nobody had ever swept.",
+  "full": "v114 went live with LOKI_GUNAXIS_PENALTY = 8, the constant that pushes station siting away from enemy gunner firing lines, and the knob was never swept. GUNPEN4 and GUNPEN16 are the two ends of that sweep. The read was pre-declared: monotone in the penalty means the benefit is VOLUME (a bigger push pulls stations further back), while an interior optimum means it is SITING - answering the same question a second, independent way on one constant. Both ends later read flat, which the worklist calls a dead knob.",
+  "confidence": "high"
+ },
+ "GUNPEN16": {
+  "brief": "Doubles the gun-axis siting penalty from 8 to 16, the top end of the sweep on the shipped knob.",
+  "full": "The upper point of the dose sweep on LOKI_GUNAXIS_PENALTY, the constant that pushes station siting away from enemy gunner firing lines; v114 shipped at 8 and nobody had swept it. Monotone behaviour across 4/8/16 would mean the benefit comes from sheer volume of displacement, while an interior optimum would mean it comes from better siting. The worklist later reports both GUNPEN4 and GUNPEN16 reading flat, i.e. the knob has no measurable live effect either way.",
+  "confidence": "high"
+ },
+ "GUNSEAT": {
+  "brief": "Makes the gun-axis/station logic seat-relative, tested on the chassis that is actually live.",
+  "full": "GUNSEAT (_v156gunseat) puts the 'seat-relative' variant on the live v114 chassis. The motivation is stated plainly: a parallel experiment (LOKI-29) was testing seat-relative logic on the older v112 chassis, and if it worked it would have to be re-tested on v114 anyway, so this arm runs that test directly instead of waiting for the other to read out. What 'seat-relative' changes concretely is never described in the worklist.",
+  "confidence": "low"
+ },
+ "GUNBLANKREP": {
+  "brief": "Nothing new - re-runs the gunblank barrier arm on a fresh seed block as an independent replication.",
+  "full": "Same treatment and control trees as GUNBLANK, drawn from a fresh seed block (50000) so it is an independent draw rather than a longer run of the same one. It exists because GUNBLANK read 52.11% outside-above against the live incumbent, making it a ship candidate, and this repo replicates before shipping - the precedent cited is GUNAXIS, replicated by GUNAXREP before v114 went live. The worklist later notes this replication was reading well below the first draw at partial n, which is why the BLANKBORDER stack became uninterpretable.",
+  "confidence": "high"
+ },
+ "GUNBORDER": {
+  "brief": "Reorders the exile sort key so kidnapped enemy builders get thrown to map-border tiles first.",
+  "full": "A pure sort-key reorder in the launcher's exile logic: no new unit, no new cost, no filtering, so it cannot lose an exile the incumbent would have made. Measured dose was 28 border arrivals and 28 crashes per 48 games against the incumbent's 7 and 7 - about 4x the border dose and 4x the kills, since a bot thrown to the border tends to query an off-map tile and destroy itself. The worklist then relabels the shard: the control tree wraps its dispatch in a blanket try/except, so the crash channel is off by construction and the shard schema has no crash column anyway. It therefore answers only 'is the reorder free?' - a clean ~50% is non-inferiority licensing a live leg, never evidence of no benefit.",
+  "confidence": "high"
+ },
+ "BLANKBORDER": {
+  "brief": "Stacks both planks at once: the gunner-axis barrier plus the border-first exile ordering.",
+  "full": "BLANKBORDER combines LOKI-26 gunblank (a barrier on an enemy gunner's firing axis) with LOKI-33 border-first exile (throwing kidnapped enemies to border tiles first). The two mechanisms are independent, so they were expected not to interact; a read below both singles would mean they do, which is worth knowing before shipping either. The worklist flags a hard caveat: the stack is uninterpretable without its base, and GUNBLANK's replication was failing at the time, so if GUNBLANKREP nulls this shard cannot attribute any effect between the two planks.",
+  "confidence": "high"
+ },
+ "SURCH30": {
+  "brief": "Taxes all non-strike spending by 30 titanium while a raider is live and the round is under 250.",
+  "full": "One condition added at the single chokepoint for non-strike spending (_eco_spendable in eco.py, covering conveyors, harvesters and launchers): while a raider heartbeat is fresh and the round is below 250, that spend must clear cost plus a surcharge. One new constant, no new store slots, no new units, no scale change - at surcharge 0 it is byte-identical to the incumbent. It encodes the defence-admission bar as a runtime gate rather than something a reviewer checks afterwards, so median kill round matters as much as game share. It read 38.10% and was refuted; it was later re-listed only to finish its kill-round cell, and the supervisor would not restart a cancelled shard.",
+  "confidence": "high"
+ },
+ "SURCH90": {
+  "brief": "The same non-strike spending tax at the heavy dose of 90 instead of 30.",
+  "full": "The high point of the LOKI-34 surcharge dose sweep: while a raider is live and the round is under 250, all non-strike economy spending must clear cost plus 90. Together with SURCH30 it produced a clean monotone negative - 0 gives 50% by construction, 30 gives 38%, 90 gives 27% - so every increment of the tax makes us worse with no interior optimum. The conclusion recorded is that starving the economy to protect the strike costs more than the strike gains at every dose tested; the arm was resolved on both game share (26.42%) and kill round (+58 rounds) and stayed cancelled.",
+  "confidence": "high"
+ },
+ "LAUNCH0": {
+  "brief": "Never builds a launcher at all, removing the exile and ferry roles and the 20 Ti plus 10% scale they cost.",
+  "full": "LAUNCHER_CAP set to 0, with an explicit early return added because at cap 0 the cap test is trivially true and execution would otherwise fall through and build the launcher anyway. The point is to price a unit nobody else buys: five of the top six teams build essentially zero launchers and we build about 1.17 per game at 20 Ti and +10% global cost scale each. The ablation was outcome-verified - 0 throws in 12 games against the incumbent's 68. Because it removes both launcher jobs and the purchase, a positive read is ambiguous between 'retire the kidnap line' and 'the launcher is simply too expensive', which is what EXILE0, FERRY0 and BOTH0 were built to separate.",
+  "confidence": "high"
+ },
+ "EXILE0": {
+  "brief": "Keeps and pays for the launcher but stops it exiling enemy builders; the ferry role stays on.",
+  "full": "The launcher does two opposite jobs - exile intruders (the kidnap weapon, throwing enemy bots away) and ferry our own raiders forward toward the enemy core. EXILE0 disables only the exile half, so unlike LAUNCH0 it still pays the launcher's 20 Ti and +10% scale. Running the pair separates 'retire the kidnap line' from 'the launcher itself is too expensive'. The ablation was outcome-verified at 0 enemy throws in 12 games against the incumbent's 33; the worklist is explicit that the ferry half still firing was NOT verified by outcome, only by a code read, with the arm's higher exposure as suggestive support.",
+  "confidence": "high"
+ },
+ "FERRY0": {
+  "brief": "Keeps the launcher and its exiling but stops it ferrying our own raiders forward.",
+  "full": "The fourth corner of the launcher 2x2 (launcher built yes/no, exile on/off, ferry on/off): FERRY0 isolates the ferry at constant launcher cost. It was queued because the earlier LAUNCH0 vs EXILE0 contrast looked like it bracketed a strongly negative ferry, but those two arms differ in more than mechanism - LAUNCH0 also saves the purchase price and the +10% scale - so the operator had conflated the launcher's price with the ferry's value. The worklist later reports it at 49.84%, i.e. the ferry is worth about nothing.",
+  "confidence": "high"
+ },
+ "BOTH0": {
+  "brief": "Builds and pays for a launcher that then neither exiles nor ferries - isolates its pure ownership cost.",
+  "full": "The other new corner of the launcher 2x2. BOTH0 vs LAUNCH0 is the pair that matters: identical mechanism (neither arm exiles nor ferries), differing only in whether the launcher is built and paid for, so the difference between them is the launcher premium measured directly instead of inferred across shards. The worklist prices it at roughly 7pp to own (BOTH0 45.79% against LAUNCH0 52.77%) versus mechanisms returning about 4.2pp - which is what motivated the deferral and rent arms that try to keep the mechanism without the ownership cost.",
+  "confidence": "high"
+ },
+ "LAUNCH2": {
+  "brief": "Caps launchers at 2 per game, filling in the middle of the 0/1/2/3 dose curve on launcher count.",
+  "full": "One of the two arms that complete the launcher-count dose curve alongside LAUNCH0 (cap 0) and the incumbent (about 1.17 per game). It was queued behind the FERRY0/BOTH0 decomposition, which was reordered ahead of it because a doctrine decision on whether to drop the kidnap line was waiting on those two arms. The worklist later reports the 0>1>2>3 curve as monotone, i.e. more launchers is worse.",
+  "confidence": "high"
+ },
+ "LAUNCH3": {
+  "brief": "Caps launchers at 3 per game, the top point of the 0/1/2/3 launcher-count dose curve.",
+  "full": "The heaviest point of the launcher-count dose curve, run alongside LAUNCH2 to turn the delete-vs-keep question into a curve rather than two points. Each launcher costs 20 Ti and adds +10% to the single global cost scale, inflating every later build of every type, which is the cost this curve prices. The worklist reports the resulting curve 0>1>2>3 as monotone.",
+  "confidence": "high"
+ },
+ "GUNFIRST": {
+  "brief": "Tries a gunner before a sentinel when picking a counter-battery turret, reversing the tuple order.",
+  "full": "The counter-battery routine in main.py tries SENTINEL then GUNNER. Because a sentinel's line ignores obstacles at r^2=32 while a gunner's is blocked at r^2=13, can_fire_from is true for a sentinel everywhere it is true for a gunner and strictly more often - so the sentinel wins every contested tile and the gunner branch is reachable only when we cannot afford a sentinel. Nobody chose that; it is tuple order meeting a dominance relation. Dose was outcome-verified over 6 paired games: 4.75x the gunners and 30% more turrets for the same titanium. The worklist stresses the per-titanium stats actually favour the sentinel, so the field's heavy gunner counts are the only reason to test it.",
+  "confidence": "high"
+ },
+ "GUNEARLY150": {
+  "brief": "Sets a gunner-timing threshold to 150; paired with GUNEARLY60 as a two-point sweep.",
+  "full": "GUNEARLY150 and GUNEARLY60 (_v166gunearly150/60) are queued together in the 's33 experimentation load' batch, where every arm built that day was run. The block explains why previously-rejected arms came back rather than what they do: the local dose controls that rejected them are unreliable, because the bot reseeds an unseeded RNG every game, and the same incumbent on the same seeds and maps produced 4 gunners in one run and 17 in another. The 5,408-game shard reads game share straight off the engine's winner field instead. What the 150 and 60 measure - rounds, titanium or something else - is not stated.",
+  "confidence": "low"
+ },
+ "GUNEARLY60": {
+  "brief": "Sets the same gunner-timing threshold to 60, the low end of the GUNEARLY pair.",
+  "full": "The other point of the _v166gunearly dose pair against the v114 incumbent. Its block gives the batch rationale, not the mechanism: arms rejected earlier on small local dose checks were re-queued because those checks cannot be trusted (the bot reseeds an unseeded RNG each game, so the same code swung 4x on identical seeds and maps), and the large battery reads the engine's own winner field instead. The file never says what quantity 60 sets.",
+  "confidence": "low"
+ },
+ "GUNSUB": {
+  "brief": "Substitutes gunners for other turrets while trying to hold the total turret count constant.",
+  "full": "GUNSUB (_v165gunsub) was queued in the s33 experimentation batch and later cancelled at about 12% complete to free a slot for the launcher decomposition arms, with its rows kept. The only description of its mechanism is in that cancellation note: it 'failed to hold count, which was its entire purpose', implying it was meant to swap in gunners without changing how many turrets get built. The cancellation is explicitly not a verdict - it was simply one of the two lowest-prior arms on the board while a doctrine decision waited on other shards.",
+  "confidence": "low"
+ },
+ "GUNADD": {
+  "brief": "Adds extra gunner builds on the raid path - at a call site a grep says does not exist.",
+  "full": "GUNADD (_v163gunadd) was queued in the s33 experimentation batch and cancelled at about 6% complete, rows kept, to free a slot for the launcher decomposition. The cancellation note is the only mechanism description available and it is damning: 'GUNADD's site was refuted by grep - no build_gunner exists in raid.py at all', so the intended insertion point is not there and the arm may not dose at all. The cancellation is recorded as an allocation decision, not a verdict.",
+  "confidence": "low"
+ },
+ "LAUNCHLATE80": {
+  "brief": "Delays the first launcher purchase until round 80 so its +10% cost scale is levied on less of the game.",
+  "full": "LOKI-42 launcher deferral, the likely shippable form of LAUNCH0: instead of deleting the launcher it just buys it late. The cost being avoided is not the 20 Ti but the +10% added to the single global cost scale, which inflates every later build of every type for the rest of the match - bought at round 10 that surcharge is levied on the whole game, bought late only on the tail. If LAUNCH0's gain was the premium, deferral captures most of it while keeping the exile mechanism; if LAUNCH0's gain was the ferry, this reads null, which is a clean answer either way. Dosed at two points (80 and 160) because deferral also delays the ferry and early exile is our cheapest home defence.",
+  "confidence": "high"
+ },
+ "LAUNCHLATE160": {
+  "brief": "Delays the first launcher purchase until round 160, the heavier end of the deferral sweep.",
+  "full": "The later of the two LOKI-42 deferral doses: the launcher is not bought until round 160, so its permanent +10% global cost-scale contribution only weighs on the tail of the match rather than all of it. It reads 51.40% against v114 in the worklist and this tree became the shipped bot v116, after which it serves as the control for nearly every later arm in the file. The trade is explicitly not free - deferring also delays the ferry and gives up early exile, which is the cheapest home defence we have.",
+  "confidence": "high"
+ },
+ "AMMO115": {
+  "brief": "Plays a rival's shipped v115 - our v114 plus a round-0 pre-buy converting titanium to ammo up to 17.",
+  "full": "Team x3r0 shipped v115 and took the ladder slot; it was downloaded and diffed against our v114 and differs by six lines in main.py, an opening ammo pre-buy at round 0, with doctrine, economy and raid files byte-identical. Ammo starts at 0 with no passive income and the only source is convert_ammo, so the change amounts to 'the first turret we build can actually fire'. This shard is a bridge, not a plank: every other arm in the batch is controlled on v114, so pricing the v114 to v115 step lets all of them be read against the live holder without re-running any.",
+  "confidence": "high"
+ },
+ "ZEROAMMO": {
+  "brief": "Deletes the launcher entirely on top of the rival's ammo pre-buy, holding ammo behaviour constant.",
+  "full": "One of the two 'stacks': our launcher finding plus x3r0's opening ammo pre-buy, controlled against x3r0's v115 so the arms differ from the control in the launcher treatment and nothing else (verified by diff - the only non-comment deltas are the launcher gates). It asks whether deleting the launcher still pays once ammo is held constant. It is the first family of arms whose control is a bot that has actually held the ladder slot.",
+  "confidence": "high"
+ },
+ "LATE160AMMO": {
+  "brief": "Defers the launcher to round 160 on top of the rival's ammo pre-buy.",
+  "full": "The deferral counterpart to ZEROAMMO: v116's launcher deferral plus x3r0's round-0 ammo pre-buy, controlled on x3r0's v115 so the only difference from the control is the launcher gate. It answers the ship question directly, because our shipped v116 is this arm WITHOUT the ammo pre-buy - so if this beats the control, the pre-buy that v116 silently reverted is an additive fix worth restoring. It later becomes the control tree for the burst, healer and idle-cull arms as the chassis closest to what is live.",
+  "confidence": "high"
+ },
+ "DELVSDEF": {
+  "brief": "Head-to-head between deleting the launcher and deferring it to round 160, both carrying the ammo pre-buy.",
+  "full": "The decision arm. Delete (52.77%) and defer (51.40%) had each been measured against v114 in separate shards with different seeds, so the 1.37pp gap between them carried both shards' noise and was not significant; this puts both arms in the same games so the contrast itself resolves. Run on the ammo stacks so ammo is held constant and the winner is directly shippable. The read was declared asymmetric before the data: a DELETE win is strong because it won despite a fixture that cannot exercise deferral's failure mode (the delete arm has no launcher, hence no ferry, so it attacks late and never arrives inside deferral's undefended window), while a DEFER win is doubly weak - the favourable fixture plus the fact that deferral is the incumbent. Replays predicted an inside-band read since v116 built a launcher in only 2 of 50 live games.",
+  "confidence": "high"
+ },
+ "BURST64": {
+  "brief": "Raises the per-turn ammo conversion cap to 64 (from 16) once a forward gun exists, filling its magazine sooner.",
+  "full": "LOKI-44 magazine burst. Decoding live games showed the first thing that can fire is a forward sentinel around round 13, and a sentinel costs 10 ammo a shot; the incumbent already knows the right magazine size but dribbles conversion at 16 per turn, and the forward-gun count is read from a store slot buffered one round, so the magazine is not full until about round 17 - four rounds of a forward sentinel in the enemy half holding one shot. The change raises the per-turn cap only when a forward gun exists: no earlier spend, no larger target. It was cancelled before reading because the expected effect was below the shard's resolution band, then re-queued as BURST64B/BURST32B when both cancellation arguments turned out to be wrong.",
+  "confidence": "high"
+ },
+ "BURST32": {
+  "brief": "Same magazine-fill change at the lighter dose: per-turn ammo cap 32 instead of 16 when a forward gun exists.",
+  "full": "The low dose of the LOKI-44 pair, swept at 32 and 64 because the operator did not know where the bank-floor trade bites. It only raises the rate at which titanium is converted to ammo while a forward gun exists, and it can never exceed the ammo target the incumbent already asks for. The control is the v116-plus-ammo-pre-buy tree, so the shard measures the timing fix alone on the chassis closest to live. Cancelled before reading on an arithmetic argument, then re-queued under a fresh name as BURST32B.",
+  "confidence": "high"
+ },
+ "BURST64B": {
+  "brief": "The same round-64 magazine-fill change, re-queued under a fresh name after its cancellation was reversed.",
+  "full": "Identical trees to BURST64, re-listed with a new shard name and seed block because the runner keeps a cancelled shard cancelled and launches it only once. It is back because both reasons for killing it were wrong: the first (nothing to kill in the round 13-20 window) measured enemy builder deaths, but the forward sentinel is aimed at the CORE and core damage produces no death event; the second (their core out-heals our damage) ignored that a builder gets one action per turn and healing is mutually exclusive with building, attacking or moving, so absorption pins their builders in place. If the sentinel's job is pinning rather than killing, filling its magazine sooner means pinning sooner. Stated before the data: game share resolves 1.33pp here, so a null means 'under 1.33pp', not 'the pin does not work'.",
+  "confidence": "high"
+ },
+ "BURST32B": {
+  "brief": "The same round-32 magazine-fill change, re-queued under a fresh name after its cancellation was reversed.",
+  "full": "Identical trees to BURST32, re-listed with a new name and seed block because the runner will not restart a cancelled shard. The revival rests on two corrected errors: the forward sentinel targets the enemy core rather than builders, so 'nothing died in that window' measured the wrong outcome; and enemy healing is not free, since a builder that heals cannot build, attack or move, so soaking their repair capacity pins four builders in place for about 5 Ti of ammo a round. The worklist also warns this is the wrong instrument - the metric that would test pinning is enemy builder-actions denied, which replays can answer and a win-rate shard cannot.",
+  "confidence": "high"
+ },
+ "HEALERFIRST": {
+  "brief": "Makes a forward turret shoot enemy builders before shooting the enemy core.",
+  "full": "LOKI-46. Measured over 75 live games, the enemy core carries a median of 4 builders repairing up to 16 HP a round against our sentinel's 6 HP a round, so shooting the core is net negative; those same builders do 2 damage each to our 40 HP sentinel, 41% of our sentinels die, and their builder replacement latency after a death is a median 12 rounds capped at one spawn per core turn. Dose was verified over 12 paired games at 30 enemy builders killed versus the control's 19. Two caveats are recorded up front: our own sentinel losses went UP (18 vs 13), the opposite of the prediction, and this is a repeatable ~12-round tempo window rather than attrition, since destroying their units refunds their cost scale.",
+  "confidence": "high"
+ },
+ "NOAPPROACH": {
+  "brief": "Deletes the approach sentinel entirely.",
+  "full": "LOKI-47, the mirror of HEALERFIRST: the same arithmetic that says core fire is net negative implies a gun firing before the collar is sealed makes zero net progress while costing 30 Ti and +20% global cost scale. Rather than assert that, this measures it - if the approach sentinel is worth about nothing, deleting it should be neutral-to-positive, and if it is worth something this reads clearly negative. Both this and HEALERFIRST rest on a premise the worklist names as unverified: enemy healing has never been observed directly, since the event log carries only builds and deaths, so '16 HP/round' is capacity rather than behaviour. It was cancelled at 18.6% as a decided negative, rows kept.",
+  "confidence": "high"
+ },
+ "IDLECULL": {
+  "brief": "Self-destructs a builder bot after 12 consecutive idle rounds to refund its +20% cost-scale contribution.",
+  "full": "LOKI-48. Over 75 live games we run at about 377% cost scale and builder bots are 44% of it (6.2 per game at +20 percentage points each, more than every turret combined); destruction refunds the contribution, and 25.76% of our builder-rounds are idle with both cooldowns at zero - the same share in wins, so it is what the bot always does rather than a losing-position artefact. Dose was verified over 8 paired games: 6.8 builders culled per game against the control's 1.6, and end scale 222% versus 318%, a 96 point reduction that makes every later build about 25% cheaper. The catch, also measured, is that it rebuilds (8.4 built vs 6.9), so the cull is partly a treadmill and the titanium cost is real. Nobody in the field does this. Cancelled at 33.5% as a decided negative, rows kept.",
+  "confidence": "high"
+ },
+ "SHIPGATE160": {
+  "brief": "The deferred-launcher-plus-ammo candidate measured against the actual live holder for the first time.",
+  "full": "Every candidate to this point had been controlled against v114 or against x3r0's v115, never against v116, the bot we would actually be replacing - a three-hop transitive chain across three fixtures, which a ship decision does not get to be. This shard puts the candidate directly against the holder. Declared before the data: above the band means the ammo repair is additive and v116's silent revert of the pre-buy is a real regression to undo; below means the earlier numbers were a baseline artefact and nothing ships on them; inside the band means no ship, because an arm that cannot separate from the live bot has no claim on the slot. It read 49.44% and was cancelled at 56% - inside the band, which IS the verdict.",
+  "confidence": "high"
+ },
+ "SHIPGATE0": {
+  "brief": "The launcher-deleted-plus-ammo candidate measured directly against the live holder.",
+  "full": "The delete-side twin of SHIPGATE160, closing the same gap: no shard until then had been controlled on v116, the bot actually holding the slot. The same pre-declared read applies - clearly above the band licenses replacing the holder, clearly below means the earlier v115-based numbers were a baseline artefact, and inside the band is no ship. It read 49.19% and was cancelled at 56% as an inside-band verdict, rows kept.",
+  "confidence": "high"
+ },
+ "SHIPGATENULL": {
+  "brief": "Nothing - a byte-identical copy of the live holder against itself, the missing calibration cell for the ship gate.",
+  "full": "The ship-gate shards were appended without a calibration cell, breaking this file's own non-negotiable rule that a null and a negative are needed to tell 'no effect' from 'no power'. The existing calibration cells were both controlled on a different tree, so the harness adjudicating the ship was calibrated on a different pair than the one it judged. _v169null is a byte-identical copy of the holder, md5-verified on all four files with an empty diff. It matters specifically because the read-out tool only re-centres inside a high-z branch and prints per-shard verdicts before the calibration block runs, so a clean bill from a control that cannot see this fixture is worthless. It read 49.56%.",
+  "confidence": "high"
+ },
+ "NEG169": {
+  "brief": "Turns the barrier collar seal off with one line on the live holder - a known-worse arm.",
+  "full": "The negative control the ship-gate contrast lacked, doing a second job at the same time. NEG114 (the older no-seal tree) had been about to be quoted as 'the collar is worth 13.7pp', but that tree also lacks the gun-axis penalty and differs by dozens of lines, so it only ever bounded the collar from above. _v169noseal is the live holder with a single line changed, LOKI_BARRIER_SEAL_ON true to false, verified as a one-line diff - clean attribution on the chassis we actually ship. Pre-declared: it must read well below 50%, and a near-50 read would mean the fixture cannot detect a known-bad arm, invalidating every no-information verdict on the same contrast including the ship gate's. It read 40.53%.",
+  "confidence": "high"
+ },
+ "L4REPAIR": {
+  "brief": "Repairs cut conveyor trunks and finishes belt heads our own builder abandoned mid-walk.",
+  "full": "LOKI-49, from a replay observation: we repair 6.8% of our cut conveyors against a field rate of 40.5% and our own opponents' 50.3%, with the matcher driven to the opposite verdict four different ways. The arm's own build found the defect is worse than that - PAVE_TRAIL_ON is false in this tree, so the 'incidental repair' the doctrine describes does not exist at all and repair is structurally zero. The biggest surprise came from counting: only 1 of the first 55 repaired tiles had ever held a conveyor, so the belt half is mostly repairing our own dead heads, chains the link-builder abandoned mid-walk because it pops its queue as it lays it. The arm fixes both halves and cannot attribute between them. Dose verified at 40 repairs in 40 games against the control's 0. CPU headroom is unverified because the local CPU instrument reads zero, so shipping it needs a platform check first. Note two shards carry this name: the original against the v116-era holder, and a later re-based run against the v125 map-code incumbent.",
+  "confidence": "high"
+ },
+ "GUNAX0": {
+  "brief": "Zeroes the gun-axis siting penalty on the live holder, reverting station scoring to pre-LOKI-25 behaviour.",
+  "full": "An ablation of the very plank v114 shipped on: one line, LOKI_GUNAXIS_PENALTY 8 to 0, verified as a single-file, single-line diff. It exists because the justification embedded in the shipped tree is stale - it claims 92% of our forward builder deaths are enemy gunners, which reproduces all-time but on the shipped trees is 64.8% any-gunner against 68.4% any-sentinel, i.e. sentinels now cover more forward deaths than gunners. An independent measurement agrees: enemy sentinel share of turret builds went 21.4% to 48.8%. That is not a refutation, since suppressing gunner deaths mechanically raises the sentinel share, so only an ablation can answer it. Pre-declared reads: below band the flag is load-bearing, above band we shipped a plank that hurts, inside band it is worth under 1.33pp on a fixture that under-represents enemy gunner rays. A later amendment requires reporting gunner-covered forward deaths per game in the control arm first, because a null otherwise cannot be told apart from 'no population'.",
+  "confidence": "high"
+ },
+ "SCREEN": {
+  "brief": "Adds approach-screening barriers out at squared distance 17-25, a doctrine we have none of and two rivals run.",
+  "full": "A screen of barriers placed further out than our collar, copying a doctrine two field teams use and we have zero of. Dosed at 2.57 per game with at least one in 92 of 96 games, and verified not to cannibalise either the collar (6.01 vs 5.20 pooled) or the forward sentinel (1.67 vs 1.66). Read as declared: above band the doctrine transfers, below band approach barriers cost us and our collar-only doctrine is correct - which is worth knowing either way - and inside band is under 1.33pp on this fixture, noting the fixture is our own bot, which also has no approach screen to be obstructed by.",
+  "confidence": "high"
+ },
+ "SCREEN4": {
+  "brief": "Doubles the approach-screen dose: cap raised from 2 to 4 barriers and the gap cut from 10 rounds to 5.",
+  "full": "The second point of a dose curve on the approach-screen doctrine, run while SCREEN itself was already filling. Monotone behaviour is the strongest shape either verdict can take: if both 2.57 and roughly 5 barriers per game help, the doctrine transfers, and if both hurt, our collar-only doctrine is correct and that is worth as much. The worklist is explicit that it must be read only beside SCREEN - alone it is a single point. It runs from a frozen, md5-verified snapshot of the tree so a late edit could not contaminate the games.",
+  "confidence": "high"
+ },
+ "GUNBLOCK": {
+  "brief": "Places a barrier on a visible enemy gunner's ray - queued to price the cost of carrying the logic, not its benefit.",
+  "full": "Locally this doses only 0.20 per game, and the worklist treats that as a floor rather than an estimate: we build 1.26 gunners per game against field teams building 8 to 14, so a self-play fixture under-represents the rays this arm exists to block by 4 to 11 times. An inside-band read is therefore nearly uninformative by construction, and the shard is queued to answer 'does carrying the logic hurt?' rather than 'does it help?'. It was cut at 793 rows (kept) in favour of GBNOSHIELD, since the shield clause was the prime suspect and running the plank alongside its own precondition was the expensive ordering.",
+  "confidence": "high"
+ },
+ "GBNOSHIELD": {
+  "brief": "The same ray barrier without its shield clause - 4x the dose, at the cost of sometimes covering nothing.",
+  "full": "The informative half of the gunblock pair. Removing the shield clause raises the local dose from 0.20 to 0.83 per game, sometimes placing cover in front of nothing. It is the arm that matters because a live 25-game leg of the shipped bot placed ZERO ray barriers against 4.68 enemy gunners per game, making the shield clause the prime suspect for why the plank never fires. If the cheap high-dose version measures the same or better, the clever logic is unnecessary complexity. Runs from a frozen md5-verified snapshot.",
+  "confidence": "high"
+ },
+ "MINHARV1": {
+  "brief": "Lowers the harvester requirement for pushing forward from 2 to 1, so the first forward sentinel lands earlier.",
+  "full": "One line, LOKI_FWD_MIN_HARV 2 to 1 - the clean forward-timing arm. Dose moves the first forward sentinel from round 27 to round 22, which is inside the same-bot noise band and therefore a weak dose, but the field deficit is round 33 against their 25, so the direction is right. It is explicitly preferred over the rush-flag arm, which is a re-run tested twice with opposite signs and has a second consumer that also sends an extra body on the raid, making any delta there unattributable.",
+  "confidence": "high"
+ },
+ "SALT": {
+  "brief": "Raiders cut enemy conveyor belts and barrier the tiles so the line cannot simply be rebuilt.",
+  "full": "The salt plank, whose three components are named in its later ablations: a belt-cutting melee, a barrier planted where a belt piece died, and a speculative barrier beside a live belt to deny the repair bot its approach. It was queued against the holder expecting to LOSE - a live 25-game leg had killed it on tempo, with 13 kills at a median round 179 against a pooled baseline of 129 - and a clean outside-below read with a measured kill-round delta was the intended deliverable. Instead it read 61.00% at n=5,408 with a core-kill share of 57.6% against 35.8%, calibrated the same night by a null at 49.56% and a negative at 40.53%. The worklist records the contradiction with the live leg openly rather than resolving it, and this tree went on to ship as v122.",
+  "confidence": "high"
+ },
+ "RUSHON": {
+  "brief": "Flips the rush flag on, lifting the harvester/bank gate and also sending a second seat out on the raid.",
+  "full": "One line, LOKI2_RUSH_ON false to true, queued with its defects stated up front. It is a re-run: the same flip was tested twice with opposite signs, badly in an arena fixture this repo considers unreliable and well (+16pp core-kill share) in a live unrated leg. Worse, the flag has a second consumer that sends seats (0,1) on the raid rather than just seat 0, so any delta is unattributable between 'the gate lifted' and 'a second body left home'. It was queued for dose and cost only, never for attribution, and was then cut outright on the grounds that confounding is not a power problem, so no shard size can fix it - MINHARV1 is the clean single-mechanism arm on the same axis.",
+  "confidence": "high"
+ },
+ "COLLARVOL": {
+  "brief": "Buys more collar barriers by lowering the bank floor, keeping placement identical.",
+  "full": "We spend about 34 Ti a game on barriers while a rival spends 110 on the same median titanium at the same unit cost, so this arm asks whether our under-spend is a defect or a choice. Same placement logic, just a lower titanium reserve before buying. The worklist flags that volume is not obviously good: the team topping the ladder builds only 3.02 barriers a game, and every barrier adds +1% to the global cost scale forever - the same scale that prices our launcher out. It runs from a frozen snapshot, and the file later notes this freeze was one of two that froze stale.",
+  "confidence": "high"
+ },
+ "SALTIDLE": {
+  "brief": "Only salts when the raider has nothing better to do, so the denial costs no tempo.",
+  "full": "The revival test for a plank killed on tempo rather than mechanism: the live leg showed 13 kills at a median round 179 against a pooled 129, while the mechanism itself worked 20 out of 20 corpse-salts at a median latency of 1. Gating salt on the raider having no better action available should keep the denial and drop the tempo cost. Reading rules were set in advance: kill round similar to the parent with salt events above zero means revived; kill round regressed to the ungated arm means the idle-gate hypothesis is wrong; roughly zero salt events means the gate never opens and the shard says nothing about salt. This listing never got a row - it was cancelled at zero as non-dosing, on a stale frozen snapshot, and the dose was later verified properly (196 salt events over 8 games with logging forced on).",
+  "confidence": "high"
+ },
+ "SALTIDLE2": {
+  "brief": "The same idle-gated salt arm, re-listed after the first attempt was cancelled at zero rows on a stale snapshot.",
+  "full": "Identical trees to SALTIDLE against the v116-era holder, re-queued on a fresh seed block. Its role changed: because the ungated salt arm did not lose (it read 61.00%), this is no longer a revival test but the right-hand point of a dose curve on how aggressively to salt. Its earlier write-off as non-dosing turned out to be a reading taken through a switched-off log.",
+  "confidence": "high"
+ },
+ "V120": {
+  "brief": "Plays a teammate's shipped v120 against our holder to check the 25-game panel that got it rolled back.",
+  "full": "x3r0's v120 had been rolled back after an in-house panel read 12% (3 of 25) against four baselines sitting at 40-45% on identical maps, but that is n=25 and its rated record was 5 of 10 over two matches. A teammate's bot deserves better than a 25-game verdict and the tree was already local, so this is the cheapest honest answer available. Pre-declared: below band confirms the panel and the rollback, above band means the panel was wrong and v120 was rolled back on noise, inside band means the 12% was a small-n artefact.",
+  "confidence": "high"
+ },
+ "LAUNCHRES20": {
+  "brief": "Cuts the launcher spending reserve from 80 to 20 titanium, so the launcher stops being priced out of the bank.",
+  "full": "One constant. The launcher build gate requires the launcher cost plus LAUNCHER_RESERVE, roughly 120-160 Ti in practice, but our bank at the end of the round 150-200 band is a median 54 Ti and clears 120 in only 12.4% of games - matching a live decode where 3 of 55 games built a launcher. Two independent surfaces therefore say the launcher is priced out rather than deferred, making the deferral plank close to a no-op. Resolution was declared before the shards: at about 1.17 launchers per game, a dose that does not move launchers-per-game by at least 1 is uninterpretable, so read the dose column first and refuse the win rate if the dose did not land.",
+  "confidence": "high"
+ },
+ "LAUNCHRES0": {
+  "brief": "Removes the launcher spending reserve entirely (80 to 0), the far end of the reserve dose pair.",
+  "full": "The second point of the LAUNCHER_RESERVE sweep, taking the extra reserve to zero so the launcher only has to clear its own cost. Two points make it a curve rather than a point, which matters because the whole hypothesis is that the launcher is priced out of the bank rather than deliberately deferred. Same pre-declared rule as its twin: if launchers per game do not move by at least 1, the win rate is not readable.",
+  "confidence": "high"
+ },
+ "SENTSAFE": {
+  "brief": "Penalises forward-sentinel sites inside visible enemy turret coverage, softly rather than by veto.",
+  "full": "Reuses the engine's hypothetical-turret coverage machinery to score candidate forward-sentinel sites, with soft penalties (gunner 8, sentinel 3, gunner-rotation 4) rather than a hard veto so it degrades gracefully when every site is covered. It targets the largest measured gap on the board: our sentinels die at 71% with a 12-round median life against their 34% and 34 rounds. The headline metric was declared to be sentinel median lifetime and destroyed-share, not win rate, with a specific failure guard - an arm that simply plants fewer sentinels has cured the symptom by removing the patient. This listing ran on a snapshot that turned out to be stale (the build agent finished after the freeze), so it was caught at 0 rows and re-queued as SENTSAFE2.",
+  "confidence": "high"
+ },
+ "SENTSAFE2": {
+  "brief": "The same enemy-turret-coverage penalty on forward-sentinel siting, re-run on a verified, non-stale snapshot.",
+  "full": "Identical plank to SENTSAFE, re-queued on a re-verified tree after the third stale freeze of the session; the rule that came out of it is that a snapshot is only valid once its build agent has reported. Verification on the new snapshot: all files compile, one master flag, and flag-off games 8 of 8 identical to the parent. The measurement inverted the brief - all 14 site redirects were driven by SENTINEL coverage and none by gunner coverage, so gunner-only gating would have dosed nothing. The no-fewer-sentinels requirement holds by construction (497 forward sentinels against the parent's 498): the arm re-chooses among admissible sites and never refuses one. Dose is sparse and structurally capped - 3.4% of builds redirect and 92.7% of games are byte-identical - and there is a physics ceiling, since a builder sees less far than a sentinel shoots, so an inside-band read means 'we could only see part of it', not 'coverage does not matter'.",
+  "confidence": "high"
+ },
+ "SALTREP": {
+  "brief": "Nothing new - re-runs the salt bot on a disjoint seed range to check the 61% was not a seed artefact.",
+  "full": "Same pair of trees as SALT with the seed range moved to a fresh block. It was queued because SALT read 61.00% at n=5,408 while its own pre-registration said it was expected to lose, and because that result contradicts the 25-game live leg that killed the plank on tempo. Local n=5,408 with a both-ways-calibrated fixture beats live n=25 on precision, but live games are the fixture of record, so neither settles it alone. This is the one check that separates 'real' from 'seed artefact' without writing any new code.",
+  "confidence": "high"
+ },
+ "SALTCUTONLY": {
+  "brief": "Keeps only the belt-cutting melee: the per-unit barrier budget drops to 0, killing both barrier paths.",
+  "full": "One of three single-line ablations built to attribute the salt bot's surprising 61%, since a result you cannot attribute is one you cannot iterate on. LOKI_SALT_MAX_PER_UNIT goes 4 to 0, which kills both barrier paths (each needs the barrier affordability check) and leaves the belt-cutting melee alone. The three are read together: if this matches full salt, the barrier is decoration and the cut is the plank; if both single arms land far below salt, the design doc's claim that the two halves only pay together is correct and this is a genuine interaction rather than a sum.",
+  "confidence": "high"
+ },
+ "SALTBARONLY": {
+  "brief": "Keeps only the barriers: the belt-cutting budget drops to 0, so the melee never fires.",
+  "full": "The mirror ablation, LOKI_SALT_CUT_MAX 40 to 0, killing the melee cut while leaving both barrier paths intact. Its dose was expected to fall by construction, since the main barrier path salts a tile where a belt piece died and, with our own cutting disabled, it only fires on belts that die to other causes - so a low reading here is partly a dose story rather than a mechanism one. That is exactly what happened: dose measured 2.7 events per game against 19-79 for its siblings, so its 46.89% cannot be read as 'barriers hurt' at any n, and it was cancelled to free a slot, rows kept.",
+  "confidence": "high"
+ },
+ "SALTNOBLOCK": {
+  "brief": "Drops only the speculative barrier planted beside a live belt to deny the repair bot its approach.",
+  "full": "LOKI_SALT_BLOCK_ON true to false - the cleanest of the three salt ablations, since it subtracts one behaviour and touches no budget. Reading rules were set in advance: matching full salt means the speculative pre-emptive barrier is free to cut, while reading below salt means denying the rebuild seat is carrying the result, which the operator flags as the most surprising outcome available here. All three ablations are verified single-line diffs from the salt tree and share salt's control, so no band is borrowed.",
+  "confidence": "high"
+ },
+ "NULLSALT": {
+  "brief": "Nothing - a byte-identical copy of the salt bot against itself, the null band for every anti-salt counter arm.",
+  "full": "The one calibration cell the counter programme was missing. Its negative cell came free (the previous holder against salt already measured 39.00% at n=5,408, a real powered known-worse arm on this exact contrast), but without a null the band applied to every counter arm would be borrowed. Verified identical by a recursive diff at build time. It must read about 50%: if it does not, the fixture is biased on this contrast and no counter verdict may be read at all. It also carries a naming lesson - the original name was refused by the collision guard because the runner scores by substring match on the tree basename, which would have read about 100% for whichever side matched first.",
+  "confidence": "high"
+ },
+ "SALTCLEAR": {
+  "brief": "Adds the 'clear-link' anti-salt counter on top of the salt bot itself.",
+  "full": "From Magnus's framing - now that we have a salt bot we can pit counters against it and then combine them - with his bar taken verbatim: a counter plus salt versus just salt should win more than it loses. The ship bar was tightened to clearly above the band rather than a bare 50%, which 50.01% would meet and could never fail. The arm is the salt tree plus one counter block ported across (the economy files are byte-identical between the two parents, so the port is a swap rather than a merge), a +36/-3 diff matching the source arm exactly, smoke-tested with no tracebacks. The worklist does not spell out what the clear-link counter does mechanically. The null cell gates it: if the byte-identical cell does not read about 50%, this may not be read at all.",
+  "confidence": "high"
+ },
+ "SALTROUTE": {
+  "brief": "Adds the 'route-link' anti-salt counter on top of the salt bot itself.",
+  "full": "The second of the two bar arms in the counter programme, built the same way: the salt tree plus one counter block ported over as a swap rather than a merge, a +34/-3 diff matching its source arm exactly. It answers Magnus's bar - salt plus counter against plain salt must clear the band, not merely 50% - and is gated by the byte-identical null cell like everything else on this contrast. What the route-link counter does internally is not described in the worklist beyond its role as a counter to belt salting.",
+  "confidence": "high"
+ },
+ "CLEARONLY": {
+  "brief": "The clear-link counter alone, without the salt behaviour, played against the salt bot.",
+  "full": "An attribution arm rather than a bar arm: running the counter without salt separates 'the counter defends' from 'the counter is worth its price inside a salt bot'. Its reference point is the free negative cell - the previous holder against salt read 39.00% at n=5,408 - so a counter-only arm should sit above 39.00% if the counter defends at all. The worklist warns that this is a salt-sized reference and says nothing about resolution near 50, which is what the null cell is for. It was cancelled at n=20 to make room for the arm answering Magnus's direct question, with nothing measurable lost.",
+  "confidence": "high"
+ },
+ "ROUTEONLY": {
+  "brief": "The route-link counter alone, without the salt behaviour, played against the salt bot.",
+  "full": "The attribution twin of CLEARONLY: the counter on its own against the salt bot, to separate whether the counter defends at all from whether it earns its price inside a salt bot. It sits against the same free negative reference of 39.00%. It was deferred and re-added at the end of the worklist because the runner launches in file order, and an item Magnus had asked for twice was sitting behind two attribution arms purely because of line position.",
+  "confidence": "high"
+ },
+ "IDLEVSALT": {
+  "brief": "Idle-gated salt against plain salt directly - the two had never actually played each other.",
+  "full": "This exists because of a question from Magnus. Every salt-family arm was controlled on the previous holder, not on the live salt bot, so the apparent 4.8pp gap between salt (61.00%) and idle-gated salt (65.79%) was an unpaired cross-battery inference with a combined band of about 3pp - suggestive, not settled. The direct contrast is strictly better and cheaper, resolving the difference itself rather than two separate comparisons to a theoretical 50. Its control is the live slot, and the bar is the same one the counter arms carry: clearly above the band to take the slot, inside band and the slot stays. Its dose was verified at 196 salt events plus 2,571 funnel events over 8 games, after having been written off through a switched-off log.",
+  "confidence": "high"
+ },
+ "IDLEVSALT2": {
+  "brief": "The same idle-gated-salt versus plain-salt contrast, re-run on the live 15-map pool with fresh seeds.",
+  "full": "Same trees as IDLEVSALT, re-queued when the runner switched to the live 15-map array, with targets set to multiples of 30 for exact map and seat balance. It is the ship contrast on live geometry - the local confirmation arm for the shipped bot - replacing the earlier read, which was demoted because the four old-geometry salt arms only cover a subset of the live map pool and are read as live-subset only. It was later cancelled as diluted, since on 10 of the 15 pool maps both trees lack map tables and livelock, so about two thirds of its games measure blind pacing; rows were kept.",
+  "confidence": "high"
+ },
+ "NULL123": {
+  "brief": "Nothing - a byte-identical copy of the incumbent against itself, re-calibrating the band on the new map pool.",
+  "full": "The null cell for the new-pool era. The older calibration cells were fitted on a map set that is now half dead geometry, and a band fitted there certifies nothing on the live pool, so this re-measures it. It gates the reads of every new-pool arm under the same rule the salt-era null established: if the byte-identical cell does not land near 50%, no verdict on this contrast may be read. It was later cancelled as diluted along with its batch, rows kept.",
+  "confidence": "high"
+ },
+ "NEG123": {
+  "brief": "Runs the superseded older bot as a known-worse treatment, driving the fixture the other way.",
+  "full": "The negative control for the new-pool contrast, the analogue of the earlier no-seal negative that read 36.32% on the old map set. Its job is to show the fixture can still detect a known-worse arm on the live geometry, which is what licenses reading any inside-band result as 'no effect' rather than 'no power'. It became the measurement of the dilution problem instead: it read 43.8% against the old-pool analogue's 36.3%, and that gap is exactly the dilution caused by both trees livelocking on 10 of the 15 pool maps, which is why its whole batch was cancelled with rows kept.",
+  "confidence": "high"
+ },
+ "MAPCODE": {
+  "brief": "Adds 10 extra map-code table entries so the bot recognises the new maps instead of pacing blind.",
+  "full": "The queue's top arm and a pure-data treatment: ten additional entries in the extra-map-codes table, with the unmodified parent as the flag-off control. It matters because on 10 of the 15 maps in the live pool a tree without map tables livelocks, so roughly two thirds of those games measure blind pacing rather than any plank. That is why every other arm in its batch was cancelled as diluted while this one ran to final - its contrast IS new-versus-old geometry handling, so the dilution is precisely its effect. This tree became the new incumbent and the control for the entire following batch.",
+  "confidence": "high"
+ },
+ "NULL125": {
+  "brief": "Nothing - a byte-identical copy of the new map-code incumbent against itself, the null band for the new era.",
+  "full": "The calibration null for the v125 era, re-fitted after the map-code ship moved the base. It plays a byte-identical copy of the incumbent against the incumbent and must read near 50%; per this file's standing rule, without it the band applied to every arm in the era is borrowed and no inside-band verdict can be distinguished from no power.",
+  "confidence": "high"
+ },
+ "NEG125": {
+  "brief": "Runs the displaced previous incumbent as a known-worse treatment against the new map-code base.",
+  "full": "The negative control for the v125 era: the bot that map-code displaced, played as the treatment so the fixture is driven the other way on the new base. The expectation was stated in advance at roughly 26-30%, mirroring map-code's own roughly 74% in the opposite direction. A near-50 read here would mean the fixture cannot detect a known-worse arm, which would invalidate every no-information verdict in the era.",
+  "confidence": "high"
+ },
+ "SALTOFF": {
+  "brief": "Turns the salt plank off with one flag, asking whether it still pays now that raiders actually arrive.",
+  "full": "A one-flag ablation (LOKI_SALTIDLE_ON set false) of the new incumbent, and the first phase-1 child of the map-code tree. The question is era-specific: salt was measured on the old geometry, and now that the map tables let raiders actually arrive, the plank may no longer be earning its place. The read is pre-declared - if salt is still paying, removing it should land below 50%.",
+  "confidence": "high"
+ },
+ "STEPOFF": {
+  "brief": "Lets a builder step off ore whenever it is standing on ore, dropping a dead extra wall-count condition.",
+  "full": "A one-mechanism child of the map-code incumbent: the ore step-off behaviour is gated on the on-ore test alone, with a condition requiring 80-plus walls dropped as dead. The justification is a rules fact - a builder standing on an ore tile can never mine that tile - so the extra condition could only ever suppress a move that is always correct.",
+  "confidence": "high"
+ },
+ "RAIDDL": {
+  "brief": "Scales the cold-insert raid deadline by map size instead of using one fixed round number.",
+  "full": "The raid's cold-insert deadline becomes a function of the map diagonal - 150 times (width plus height) over 50, i.e. exactly 150 on a 25x25 map and 180 on a 30x30 - so raiders get the same time-past-arrival budget on every map rather than the same clock. It is one of the phase-1 arms built against the new map-code incumbent, and follows directly from the pool now containing maps of different sizes.",
+  "confidence": "high"
+ },
+ "FWDFLOOR8": {
+  "brief": "Cuts the forward-push titanium floor from 40 to 8 everywhere, to see if the bank floor is what serialises sieges.",
+  "full": "One of two discriminators for the same question: why do our siege sentinels arrive one at a time? If the bank floor is what serialises them, this arm should double up and move; if the real constraint is that a single raider has to travel, this reads null and the two-raider arm is the answer instead. The pair is designed to discriminate travel-seriality from bank-pacing. The worklist later notes it trending around 46%, i.e. the floor has value and is not the serialiser.",
+  "confidence": "high"
+ },
+ "UNDERECO": {
+  "brief": "Under long sieges, restores the harvester-rebuild reserve that the short-term emergency mode switches off.",
+  "full": "An income-lock fix: when a siege has been latched for more than 100 rounds (chronic rather than acute), the harvester-rebuild reserve that the acute-phase skip disables is restored, so we do not starve our own economy while camped. Fixture honesty is declared up front - self-play rarely reproduces the specific opponent behaviour that motivated it (a permanent ring camp with a severed supply chain), so this battery is a regression screen asking whether the chronic restore hurts the general case. A null here does not resolve the plank; the resolving read is a live leg against the core-tank class.",
+  "confidence": "high"
+ },
+ "DIGOUT": {
+  "brief": "A builder boxed in on all four sides destroys its own blocking building to dig itself out.",
+  "full": "From a live observation by Magnus: a seat-sealer walled itself in behind its own barriers and then paced. Builders blocked on all cardinals now destroy their own blocker, which is free, ally-only and has no cooldown - a call that had zero call sites anywhere in the tree. Behind flag LOKI_DIGOUT_ON, with a preference order of barrier over conveyor over splitter, the desired direction tried first, and a stuck-for-2-rounds gate so a one-round squeeze does not demolish a working belt.",
+  "confidence": "high"
+ },
+ "TWORAID": {
+  "brief": "Converts a second seat into a raider under the identical gate as the first, putting two bodies at the ring.",
+  "full": "The volume hypothesis in pure form and the second discriminator on siege seriality: seat 4 converts to the raid role under exactly the same state gate as seat 3, behind flag LOKI_TWORAID_ON, so two simultaneous forward sentinels become possible. Read against the bank-floor arm, the pair separates travel-seriality from bank-pacing. Unlike the economy arm in the same batch, this contrast is locally resolvable because the control does contest forward turrets. A CPU note is recorded in advance: the extra raider executes byte-identical code to the existing raid role and gets its own 10ms per-unit budget, so no shared-pool erosion exists.",
+  "confidence": "high"
+ },
+ "STANDOFF": {
+  "brief": "The forward sentinel picks the farthest legal site from the enemy core instead of the first one that fits.",
+  "full": "Built from opponent profiling: sitting next door to their core puts our forward turret inside the counter-gunner tempo that killed 30 of 31 of our forward turrets at a median life of 10 rounds, while our sentinel's line ignores obstacles out to r^2=32. So the siting rule prefers the farthest legal site at squared distance 14 or more - outside their counter-tempo, still inside our range. Behind flag LOKI_STANDOFF_SITING, with flag-off reproducing the original first-fit scan byte for byte. CPU stamped neutral: the same candidate scan plus one max over at most eight pairs, inside the already-guarded path.",
+  "confidence": "high"
+ },
+ "COMBO": {
+  "brief": "All three of the siege-economy, second-raider and dig-out changes merged into one bot.",
+  "full": "The combined candidate Magnus asked about, merging the chronic-siege economy restore, the second raid seat and the self-unblocking dig-out. The three diffs are disjoint - core-turn economy, seat conversion and navigation - with no shared lines or seats. Filling started immediately but the READ was held until the individual arms finished and a decode landed, so the combination can be attributed against its best single ingredient rather than only against the control. CPU stamped neutral, since all three components were stamped neutral and the extra raider carries its own per-unit budget.",
+  "confidence": "high"
+ },
+ "GUNAXIS0": {
+  "brief": "Appears to re-run the gun-axis penalty ablation, re-based on the newer map-code incumbent.",
+  "full": "This shard has no comment block of its own - it is one of a run of arms appended with only their tree names. The tree (_v206gunaxis0) matches the naming of the earlier GUNAX0 arm, which was described as the live holder with one line changed, the gun-axis siting penalty taken from 8 to 0, reverting station scoring to its pre-LOKI-25 behaviour. On that basis this looks like the same ablation re-based on the map-code incumbent, but the worklist does not confirm it.",
+  "confidence": "low"
+ },
+ "APPRLAUNCH": {
+  "brief": "Builds ONE launcher when enemy builders approach our half, instead of on fixed round/bank gates.",
+  "full": "Queue #47, the conditional siege launcher: the incumbent's launcher is gated on round 160 and an 80 Ti reserve, which iteration work showed leaves the bank dead exactly when creeper opponents siege us. This arm triggers a single launcher build on APPROACH DETECTION (an enemy builder observed in our half — a pre-treatment quantity), waiving the gates only inside the triggered state. The screen's declared hazard bar: unsieged games must not pay the -6.3pp standing-launcher premium the ablation family measured.",
+  "confidence": "high"
+ },
+ "APPRLAUNCH2": {
+  "brief": "Declared-at-queueing replication of APPRLAUNCH (the approach-triggered launcher).",
+  "full": "Same arms as APPRLAUNCH on the pre-declared replication seed block — the replication was scheduled when the first shard was queued (the D26 rule done properly), so the two runs pool legitimately.",
+  "confidence": "high"
+ },
+ "IDLEPECK": {
+  "brief": "A parked raider pecks the adjacent enemy core instead of standing silent (core-only variant).",
+  "full": "Queue #48 rung: raiders that arrive at the enemy core and run out of actions currently idle forever (the terminal-idle finding). This variant lets them spend 2 Ti pecks on the CORE only. The widened any-building variant was refuted on its own kill-round clause (pecks diverted titanium from the ammo pipeline, kills ~44 rounds slower); this narrow one is exposure-limited in self-play because the camper's own healers hold the core-adjacent seats — the resolving read is a live camp-class leg.",
+  "confidence": "high"
+ },
+ "QUIET0": {
+  "brief": "Turns builder melee back ON — ablates the LOKI_QUIET flag that silences all builder attacks.",
+  "full": "The incumbent ships LOKI_QUIET_ON=True, which kills all builder melee (part of the parked-raider #48 investigation: an arrived raider with no melee has nothing left to do). This arm ablates the flag to measure what the silence is worth. Stopped at an interim futility gate.",
+  "confidence": "high"
+ },
+ "AMMO0": {
+  "brief": "Zeroes an ammunition-related constant or flag; the worklist does not say which.",
+  "full": "Appended against the map-code incumbent with a tree name only (_v212ammo0) and no comment block. Ammunition appears elsewhere in the file as the pre-buy at round 0 and the per-turn conversion cap, and a trailing 0 in this file's naming usually means the feature is switched off, but which ammo behaviour this ablates is not recorded. AMMO02 runs the same trees on a second seed block.",
+  "confidence": "low"
+ },
+ "AMMO02": {
+  "brief": "Cheap replication of AMMO0 under the futility-gate rule — confirmed the parent's negative at a fifth of the cost.",
+  "full": "Second draw of the AMMO0 ablation, run under the futility-gate allocation rules; the gates stopped it early once it confirmed the parent's negative direction, spending about a fifth of a full battery. An example of the gate machinery refunding games on an already-answered question.",
+  "confidence": "high"
+ },
+ "ECORAID": {
+  "brief": "The rc8.5 'eco-raid' retune of v125 — the family a teammate later shipped as v135.",
+  "full": "An economy/raid constants retune of the v125 chassis (the rc8.5 candidate). Locally it screens positive (53.2%, replicated at 52.9%), but the live surface has twice declined to pay this family: a pre-declared live pooled read came back 46.0% vs control 48.0% (NO SUPPORT), and when x3r0 shipped the identical tree as v135 it went 4/25 in its brief slot era. The standing example of self-play flattering an economy plank; no ship path without live support.",
+  "confidence": "high"
+ },
+ "ECORAID2": {
+  "brief": "Independent-seed replication of ECORAID (the rc8.5 eco-raid retune) under the declared replication rule.",
+  "full": "Same trees as ECORAID on a fresh seed block, run under the house replication rule (any final 2pp or more from 50 replicates, scored alone). It confirmed the parent: 52.91% vs the parent's 53.22%, pooled 53.06%. The verdict carries the family's live caveat in the same sentence — the live surface has twice declined to pay this family, so the local positive licenses nothing by itself.",
+  "confidence": "high"
+ },
+ "GBNS": {
+  "brief": "Likely the gunblock-without-shield-clause barrier arm, re-based on the newer incumbent.",
+  "full": "Appended against the map-code incumbent with a tree name only (_v214gbns). The abbreviation matches GBNOSHIELD, described earlier in the file as placing a barrier on a visible enemy gunner's ray without the shield clause - roughly 4x the local dose at the cost of sometimes putting cover in front of nothing, and the arm that matters of that pair because the shipped bot placed zero ray barriers in a 25-game live leg. The identification is inferred from the name; the worklist does not confirm it.",
+  "confidence": "low"
+ },
+ "MAPFIX": {
+  "brief": "Corrects the built-in map tables for valkyrie and glacierkeep to the Aug-14 patched terrain (2 lines).",
+  "full": "The organisers patched two 30x30 maps on Aug 14: valkyrie lost 8 near-core walls and one ore tile per side became a wall; glacierkeep's center ore cluster moved to a symmetric spread. The incumbent's hardcoded map tables still describe the OLD terrain, so its pathfinder routes into a now-real wall (the livelock class MAP_CODES exists to prevent) and its harvester planner targets a phantom ore tile. This arm is v125 plus exactly the two corrected table strings, screened only on the two patched maps (games elsewhere would pit identical trees). Early result was strong exactly where the defect was diagnosed (valkyrie ~60%).",
+  "confidence": "high"
+ },
+ "SEALFLOOR0": {
+  "brief": "Seals spawn-ring seats as soon as a barrier is affordable — the 12 Ti bank floor drops to 0.",
+  "full": "The barrier-seal (plugging free spawn-ring seats with 3 Ti barriers) is one of the bot's most valuable behaviours by ablation (~-10pp when removed), but it ships at never-swept birth constants. This arm drops LOKI_SEAL_TI_FLOOR from 12 to 0, so seals go up earlier and more often. One of three one-knob arms in the #53 seal sweep (with SEALFLOOR24 and SEALFIRST).",
+  "confidence": "high"
+ },
+ "SEALFLOOR24": {
+  "brief": "Seals spawn-ring seats only when rich — the 12 Ti bank floor rises to 24.",
+  "full": "The opposite pole of the #53 seal-floor sweep: LOKI_SEAL_TI_FLOOR raised from 12 to 24, so seals happen later and less often, keeping titanium for other spending. Read together with SEALFLOOR0, this brackets whether the seal's birth constant is too eager, too shy, or already right.",
+  "confidence": "high"
+ },
+ "SEALFIRST": {
+  "brief": "A raider on a seat seals the free seat before spending its action pecking — priority swap in the raid ladder.",
+  "full": "In the incumbent, a raider that reaches the enemy spawn ring pecks first and seals only lower in its action ladder, so free seats can stay open while it fights. This arm swaps that order: SEAL outranks PECK. Third arm of the #53 seal sweep; one code-order change, verified by line order in both trees.",
+  "confidence": "high"
+ },
+ "OSCLOCK": {
+  "brief": "Adds an oscillation detector to navigation: a builder bouncing between two tiles is forced to repick its target.",
+  "full": "Queue #54 found that a two-tile navigation loop is invisible to the bot's own stuck counter (a backstep counts as a successful move), and 11.6% of ALL v125 builder-rounds sit in such permanent locks — 47.6% of games, worst on big maps. This arm is v125 plus a last-8-positions parity detector at the top of _nav: strict A/B alternation clears the target and fires the existing repick machinery. Pre-launch dose evidence: locked builder-rounds fell 5.37% to 1.55% on a midgard replay batch. Known gap, declared in the prereg: period-4 (dwell-2) cycles are not caught; a follow-up arm covers them if this one pays.",
+  "confidence": "high"
+ },
+ "SEATREL": {
+  "brief": "Makes the bot's scan order seat-relative instead of absolute, so it plays symmetrically from either seat.",
+  "full": "Queue #8, found by reading the tree rather than replays: iteration order over tiles/units is absolute, so the bot behaves slightly differently from seat A than seat B. This arm makes the order seat-relative. Ran as one of the coupling-rule's registered live probes; dropped at its 2,700-game futility gate reading 50.40 (allocation decision, not a verdict — rows kept for the coupling-test grading).",
+  "confidence": "high"
+ },
+ "X3R0V134": {
+  "brief": "Screens teammate x3r0's v134 submission against our v125 — the courtesy battery from its slot era.",
+  "full": "When x3r0's v134 (a 17-constant retune of the v125 chassis) held the team's ladder slot, this shard screened the downloaded artifact tree against v125 locally to give their run an independent read. Cancelled (rows kept) when the slot moved on.",
+  "confidence": "high"
+ },
+ "GUNAXREP": {
+  "brief": "A replication run of the gun-axis siting plank on fresh seeds, before that plank shipped.",
+  "full": "This name never appears as a shard line in the worklist; it is mentioned once, as precedent: 'GUNAXIS was replicated by GUNAXREP (51.94% -> 52.31%) before v114 went live'. So it was the confirmation run for the gun-axis station-siting plank - the one that pushes our stations away from enemy gunner firing lines - and it is cited to justify the house rule that a ship candidate is replicated on a fresh seed block before it ships. No trees, target or seed block for it survive in this file.",
+  "confidence": "low"
+ },
+ "GUNAXTB": {
+  "brief": "An earlier arm asking whether the gun-axis penalty pays through displacement volume or through better siting.",
+  "full": "Not a shard line in this worklist - it appears once, in the block introducing the penalty dose sweep, which says that sweep 'answers the GUNAXTB question a second, independent way, on one constant'. The question named there is whether the gun-axis penalty's benefit comes from VOLUME (a bigger push moves stations further back) or from SITING (choosing better stations), which the sweep tests by looking for monotonicity versus an interior optimum. What GUNAXTB itself changed, and against what, is not recorded here.",
+  "confidence": "low"
+ },
+ "PAVEFIRST": {
+  "brief": "Unknown - no line or description for this shard exists in the worklist.",
+  "full": "This name appears only in the shard list and nowhere in the worklist, so it has no treatment tree, control tree, target or comment block on record here. The only related mention is the PAVE_TRAIL_ON flag, noted as switched off in the tree, which had produced 'incidental repair' of conveyor lines as a side effect of paving a trail - so a paving-related change is a plausible but unverified reading of the name.",
+  "confidence": "low"
+ },
+ "SR1CUR": {
+  "brief": "Unknown - no line or description for this shard exists in the worklist.",
+  "full": "This shard appears only in the shard name list; the worklist contains no line for it and no comment block mentioning it, so neither its treatment nor its control tree can be stated. Its name pattern pairs it with SR1NULL, and this file's convention is that a NULL cell is a byte-identical copy used to calibrate the fixture while the other cell carries the actual contrast - which would make this the live or current arm of an 'SR' pair - but that is inference from naming alone.",
+  "confidence": "low"
+ },
+ "SR1NULL": {
+  "brief": "Probably a calibration cell (byte-identical arms) for an 'SR' pair, but nothing in the worklist covers it.",
+  "full": "Present only in the shard name list, with no worklist line or comment block. Throughout this file a shard whose name ends in NULL plays a byte-identical copy of a tree against itself to establish the band, and its verdict gates every other read on the same contrast; on that convention this is the null cell of an SR1 contrast. The trees, target and contrast are unknown.",
+  "confidence": "low"
+ },
+ "SR2CUR": {
+  "brief": "Unknown - no line or description for this shard exists in the worklist.",
+  "full": "Appears only in the shard name list. By name it is the counterpart of SR2NULL, i.e. the substantive arm of a second 'SR' pair alongside SR1CUR/SR1NULL, following this file's habit of running a real contrast beside a byte-identical calibration cell. Nothing else about it - trees, mechanism, control, target - is recorded in the worklist.",
+  "confidence": "low"
+ },
+ "SR2NULL": {
+  "brief": "Probably the calibration cell (byte-identical arms) for the second 'SR' pair; not covered by the worklist.",
+  "full": "Listed only among the shard names, with no worklist line or comment block. The NULL suffix is used consistently in this file for a byte-identical copy of a tree played against itself, which must read about 50% before any verdict on the same contrast may be read. That is the most that can responsibly be said about it.",
+  "confidence": "low"
+ },
+ "SRNULL0": {
+  "brief": "Probably another calibration cell in the 'SR' family; the worklist contains nothing about it.",
+  "full": "Present only in the shard name list. Both naming conventions in play here point the same way - NULL for a byte-identical calibration cell, and the SR prefix shared with SR1NULL, SR1CUR, SR2NULL and SR2CUR - but the worklist has no line, trees or comment block for it, so its contrast and purpose are unknown.",
+  "confidence": "low"
+ },
+ "MAPSEAL": {
+  "brief": "Combo: the corrected map tables (MAPFIX) plus seal-anytime (SEALFLOOR0) together, on the post-patch map pool.",
+  "full": "Magnus's ask: MAPFIX's two corrected map strings and SEALFLOOR0's floor-to-0 knob on one tree vs v125 — exactly three knob changes. It is the FIRST battery on the as-of-today post-patch 15-map pool, so its numbers are a new era and must not be pooled with any pre-patch shard, including its own ingredients' screens. Attribution is read against the singles' finals when they land: the two patched maps isolate the MAPFIX half, the other 13 isolate the seal half; a combo below its best ingredient is a suppression finding, not a ship case.",
+  "confidence": "high"
+ },
+ "_meta": {
+  "what": "Authored, humanized descriptions for the dashboard's shard list/detail pages.",
+  "authored_by": "side lane s38 (Claude) — drafted from the worklist's own comment blocks by an opus agent, then reviewed; entries the session knew first-hand (certified preregs, tape record) rewritten by hand.",
+  "date": "2026-08-14",
+  "policy": "brief = one plain-English line on the change the treatment brings; full = what/why/how-to-read. confidence:low means the worklist block did not describe the mechanism and the text says only what the artefacts support. The verbatim worklist note remains on every shard page; this file never replaces a primary."
+ }
+}

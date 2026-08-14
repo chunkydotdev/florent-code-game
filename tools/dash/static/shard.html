@@ -50,6 +50,15 @@ const esc = s => String(s === null || s === undefined ? '' : s)
   .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const ID = new URLSearchParams(location.search).get('id') || '';
 
+// Authored descriptions (same file the list page uses). Loaded once; the page
+// re-renders when it arrives so a slow fetch degrades to the worklist note,
+// never to a blank.
+let DESC = {}, LASTD = null;
+fetch('/shard_descriptions.json', {cache: 'no-store'})
+  .then(r => r.ok ? r.json() : {})
+  .then(j => { DESC = j || {}; if (LASTD) render(LASTD); })
+  .catch(() => {});
+
 function freshBadge(ageMin, cadenceMin) {
   if (ageMin === null || ageMin === undefined) return '<span class="badge b-blind">NO STAMP</span>';
   const limit = (cadenceMin || 5) * 2;
@@ -126,6 +135,7 @@ function fileBlock(title, f, extra) {
 }
 
 function render(d) {
+  LASTD = d;
   document.title = d.shard + ' — Loki dashboard';
   $('#name').textContent = d.shard;
   $('#clock').innerHTML = d.served_at ? tzTime(d.served_at) : '';
@@ -149,13 +159,26 @@ function render(d) {
                    : '<span class="badge b-blind">never — no capture yet</span>')
     + ' · auto-refreshing every 10 s';
 
-  // ---------- what it tests, in the operator's own words -------------------
+  // ---------- what this shard tests ----------------------------------------
+  // Two layers, clearly separated: (1) the AUTHORED description (curated in
+  // tools/dash/static/shard_descriptions.json — the brief line is the same one
+  // the list page shows, the full text expands it); (2) the operator's verbatim
+  // worklist note, kept untouched below because nothing on this page is allowed
+  // to silently paraphrase the primary.
   const w = d.worklist;
   const block = (w && w.comment_block) || [];
   const prose = block.map(l => l.replace(/^#\s?/, '')).join('\n').trim();
   const wparts = [];
-  if (d.note) {
-    wparts.push(`<p class="headline">${esc(d.note.text)}</p>`);
+  const dd = DESC[d.shard];
+  if (dd && dd.brief) {
+    wparts.push(`<p class="headline">${esc(dd.brief)}</p>`);
+    if (dd.full) {
+      wparts.push(`<p class="lede" style="margin:0 0 10px; white-space:pre-line">${esc(dd.full)}</p>`);
+    }
+    wparts.push(`<p class="lede" style="font-size:11.5px;margin:0 0 10px;opacity:.75">Authored description
+      (<code>shard_descriptions.json</code>) — the operator's own worklist note is below, verbatim.</p>`);
+  } else if (d.note) {
+    wparts.push(`<p class="headline"><span class="badge b-dim" title="no authored description yet — this is the raw worklist note">worklist note</span> ${esc(d.note.text)}</p>`);
     if (!d.note.shard_named) {
       wparts.push(`<p class="lede" style="margin:0 0 10px"><span class="badge b-dim">batch note</span>
         This line does not name <code>${esc(d.shard)}</code>: worklist comment blocks sit
