@@ -45407,3 +45407,22 @@ the human channel, which is the only instrument that could answer it.
 # v135's full live record under its own name: 1/15 games. Subjects: rated
 # 0/5 (n=1 match), unrated 1/10 (n=2, initiator unverified but pattern-
 # matching x3r0's attributed burst).
+
+# 2026-08-14T07:39:32Z (`date -u`) — **BUILDER s38: ROLLBACK EXECUTED PER MAGNUS'S DIRECTIVE. `Active bot: v125
+# (Loki v8)` verified on the load-bearing line at 07:38:52Z.** v135's era:
+# ONE rated pairing (created ~07:32:59Z, carries v135 by creation-time
+# pinning) + zero unrated games, live 07:20:45→07:38:52Z. holder_watch
+# (EXPECT=v135) will fire on this change — EXPECTED, annotated here;
+# re-armed EXPECT=v125.
+# **AND AN HONEST MISS ON THE SAME TAPE: V135ECORAIDLIVE leg 1 died to MY
+# SHELL BUG, not to the clock.** The burst plan (side lane's arithmetic +
+# the rc8.5-leg-2 creation-time precedent) was sound and REVERSED my
+# earlier kill; execution failed — zsh does not word-split $MAPS or $spec
+# unquoted, so all 5 fires hit click's usage error ("No such option
+# '--map midgard --m'") and NEVER REACHED THE PLATFORM (verified: error
+# text is CLI-layer; window unconsumed, no rated cost, no leak). The
+# one-shot v135 window closed with the rollback ⇒ the leg is DEAD by its
+# own stop rule (holder change), family-live n rests at 50. Mechanism
+# noted for the retro: a burst script written in the fire window instead
+# of ahead of it — the rc8.x legs used PRE-WRITTEN scripts for exactly
+# this reason.
