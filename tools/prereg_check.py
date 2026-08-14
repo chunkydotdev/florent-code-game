@@ -155,11 +155,37 @@ def key_pattern(key: str) -> re.Pattern:
 
 
 def field(text: str, key: str) -> str | None:
-    """Value of the first DECLARATION of `key`, or None."""
+    """Value of the first DECLARATION of `key`, or None.
+
+    ⛔ EMPTY ⇒ ABSENT (research ruling, 2026-08-14, no per-token exceptions):
+    nobody omits a field once a checker demands it — they type it and leave it
+    blank, and 13 of 19 presence rules passed on exactly that (side-lane cert
+    H1/H2). The one legal refusal is EXPLICIT and non-empty: `KEY: N/A — <why>`.
+    ⭐ LIST-VALUE FORM: a declaration whose value is empty but which is
+    immediately followed by bullet lines (`* `/`- `) takes the joined bullets
+    as its value — CAL-4's `**Cells:**` heading is live house style and must
+    keep ACTIVATING the rules its content triggers, not escape them as empty.
+    """
     m = key_pattern(key).search(text)
     if not m:
         return None
-    return m.group(1).replace("**", "").replace("`", "").strip()
+    v = m.group(1).replace("**", "").replace("`", "").strip()
+    if v:
+        return v
+    bullets = []
+    for line in text[m.end():].splitlines():
+        s = line.strip()
+        if not s:
+            if bullets:
+                break
+            continue
+        if s.startswith(("* ", "- ")):
+            bullets.append(s[2:].replace("**", "").replace("`", "").strip())
+        else:
+            break
+    if bullets:
+        return "; ".join(bullets)
+    return None
 
 
 def parse_fields(text: str) -> dict[str, str]:
@@ -980,7 +1006,19 @@ def selftest() -> int:
             ("metric file IS in the diff", ["eco.py", "main.py"], False),
             ("metric file is NOT in the diff (LOKI-18)", ["main.py", "doctrine.py"], True),
             ("no computable diff -> WARN, never FAIL", None, False)):
-        _r, fails, warns = run_checks(COMPLETE, "<ob13>", diff_paths=paths, quiet=True)
+        # The None case tests run_checks's WARN branch, not git: without the
+        # override it shells out to `git diff HEAD` and FAILS whenever the
+        # working tree carries any modified .py — an environment-dependent
+        # selftest cell (bit its own author while patching this file, s41).
+        if paths is None:
+            global git_diff_paths
+            _saved, git_diff_paths = git_diff_paths, (lambda refs: None)
+            try:
+                _r, fails, warns = run_checks(COMPLETE, "<ob13>", diff_paths=None, quiet=True)
+            finally:
+                git_diff_paths = _saved
+        else:
+            _r, fails, warns = run_checks(COMPLETE, "<ob13>", diff_paths=paths, quiet=True)
         got = any(x[0] == "OB13_INTERSECTION" for x in fails)
         ok = got == want_fail
         if paths is None:
