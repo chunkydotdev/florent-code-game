@@ -146,7 +146,11 @@ def key_pattern(key: str) -> re.Pattern:
         #   `MECHANISM METRIC READS: <f:l>. TREATMENT DIFF TOUCHES: <p>. INTERSECTION: <y/n>.`
         r"(?:^[^A-Za-z0-9\n]{0,8}|\*\*|[.·;]\s+)\s*"
         + re.escape(key).replace(r"\ ", r"\s+")
-        + r"\s*(?:\([^)\n]{0,40}\))?\s*:\s*([^\n]*)",
+        # ⛔ `[ \t]*` and NOT `\s*` after the colon (side-lane cert, 2026-08-14):
+        # `\s*` matches the newline, so an EMPTY declaration captured the NEXT
+        # LINE as its value — an empty `SURFACE:` above a CLUSTER UNIT line
+        # passed the SURFACE malformed-value guard on its neighbour's text.
+        + r"\s*(?:\([^)\n]{0,40}\))?\s*:[ \t]*([^\n]*)",
         re.IGNORECASE | re.MULTILINE)
 
 
@@ -747,6 +751,22 @@ def check_amendment(locked: Path, amended: Path) -> int:
               f"with its own lock, not an addendum to this one.")
         print("\nPREREG_CHECK: FAIL")
         return 1
+    # ⛔ COVERAGE GUARD (side-lane finding 3, 2026-08-14): this mode diffs only
+    # TOKENISED bar lines. On a prose prereg (all 81 pre-migration documents) it
+    # matched 3 of the 12 lines naming the decision boundary of SCREEN-v140vs145
+    # and printed ADD-ONLY: OK while an amendment changed the decision rule.
+    # A guard that cannot see its subject says so instead of passing.
+    comparator = re.compile(r"[<>≥≤]=?\s*\d|(?:->|→)\s*(?:reactivate|v?\d)", re.IGNORECASE)
+    untok = [l for l in b.splitlines()
+             if comparator.search(l) and not BAR_LINE_PAT.search(l)]
+    if not old or len(untok) > len(old):
+        print(f"  tokenised bar lines: {len(old)}   decision-shaped untokenised lines: {len(untok)}")
+        print(f"\nAMENDMENT CHECK: NOT APPLICABLE — the tokenised diff class sees too "
+              f"little of this document to certify ADD-ONLY ({len(old)} tokenised vs "
+              f"{len(untok)} decision-shaped prose lines). Migrate the registration "
+              f"block or certify the amendment by hand; do not read this as a pass.")
+        print("\nPREREG_CHECK: NOT_APPLICABLE")
+        return 2
     print(f"\nADD-ONLY: OK ({len(added)} line(s) added, 0 edited)")
     print("\nPREREG_CHECK: OK")
     return 0
