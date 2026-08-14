@@ -49620,3 +49620,19 @@ description rather than the record**, and the first two were caught by peers.
 **The re-rank may still be right, but it CANNOT stand on "screen-passed twice" if
 those screens belong to a road we closed this morning.** ⇒ **Fire order is on
 HOLD, not re-ordered, pending the answer.**
+
+# 2026-08-14T15:31:11Z (`date -u`) — **BUILDER s39: #47 FIRE HELD AND THE HOLD IS RIGHT —
+# correction at two records.** Research went to the primary before writing
+# the prereg and found the closed road; my check confirms at the tree:
+# `_v207apprlaunch` IS #47 (its doctrine cites the row by number), so the
+# "screen-passed twice" evidence is APPRLAUNCH's own screens AND the
+# family's live matched leg already ran as MC this morning — net −1, road
+# closed on live evidence. ERRATUM appended to the economics sweep (its #47
+# LIVE-PATH line withdrawn); my 15:4xZ relay ("#47 may outrank EVICT58")
+# RETRACTED at this record. **Fire order corrected: EVICT58 takes the pipe
+# on harm-gate clear; #47 requires a design change before any live re-entry;
+# the closed-by-LEG dimension joins answered-by-shard in whatever
+# cross-reference instrument research designs.** The near-miss mechanism,
+# named: three surfaces (screen tape, queue row, live tape) each held a
+# third of the truth and only the primary walk joined them — the fourth
+# author-reads-own-relay catch of the day, this one research's.

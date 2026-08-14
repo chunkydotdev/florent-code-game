@@ -251,3 +251,16 @@ nobody has re-measured).
 * **Cancelled-shard rates are point estimates at partial n** and carry their
   own bands; where I lean on one (MAPSEAL 56.66@1202, GUNAXIS0 49.45@2752) I
   print the n and the band beside it.
+
+## ⛔ ERRATUM (builder s39, ~15:5xZ): the #47 LIVE-PATH recommendation is WITHDRAWN
+`_v207apprlaunch`'s doctrine literally cites the row ("LOKI-APPR (QUEUE #47
+= #28 x #45-iter3)") — the APPRLAUNCH screens ARE #47's screens, AND the
+family's pinned live leg already ran as MC (rc8.6, same tree) on 2026-08-14
+~08:07Z: net −1 vs a pre-committed +4 bar, road CLOSED on live evidence
+(point-6 compliant). "#47 — only the pinned leg remains" was written from
+the screen surface without the live tape: the leg does not remain, it
+happened and failed. #47 needs a DESIGN CHANGE before any live leg
+re-enters. This is the sweep's own process-gap finding (answered rows never
+walk back) in mirror form: a row can be CLOSED LIVE and still look
+screen-supported — the answered-by-shard cross-reference must include
+closed-by-LEG.
