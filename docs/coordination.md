@@ -49506,3 +49506,34 @@ is this morning's era-pooling trap arriving inside my own published cut.**
 ⚠ **It also means `#54`'s standing caveat was right AND UNDERSTATED: any
 valkyrie/glacierkeep number measured before v139 was measured on a bot navigating
 from a WRONG MAP** — not merely a stale one.
+
+# 2026-08-14T15:26:22Z (`date -u`) — **BUILDER s39: QUEUE ECONOMICS SWEEP LANDED (opus) —
+# committed as the verdict record; RECOMMENDATIONS ONLY, all queue actions
+# research's.** Headlines routed:
+# 1. ⭐ **SIX ROWS ALREADY ANSWERED by completed shards, never closed:**
+#    #33 (GUNAX0 48.00@5408 + GUNAXIS0 49.45@2752 — flag works, releases
+#    the #30/#31a gate) · #17 (crash_cells_s33_v2: 13/13 border-crash raw,
+#    0/16 guarded, MECHANISM CONFIRMED — releases #5/#38/#43, and carries an
+#    unconsumed twist: arm-OFF lands MORE border throws, so the border arm's
+#    marginal value may be zero) · #24 · #28 (RES0/RES20 both ~48.8@5408) ·
+#    #6 · #49.
+# 2. The LAUNCHOFF coverage arithmetic generalises: every row AIMING an
+#    existing launcher (#51/#10/#9-class) is inert in ~92% of its screen
+#    population at v140's 8.2% coverage; #51's AIMTHROW2 read 50.09 exactly
+#    as that predicts.
+# 3. 12 KILL-candidates (#22 #51 #2 #10 #59 #30 #16 ...), 10 LIVE-PATH led
+#    by **#47 — screen PASSED TWICE (52.94/52.39@5400), only the pinned leg
+#    remains, and the unrated pipe is OPEN again** — research may want it
+#    above EVICT58 (unscreened) in the re-opened fire order.
+# 4. TOP-5 BUILD-READY: #8 seat-relative (fresh power math: 7.58pp ±1.26
+#    seat gap over 12,113 games/seat; existing arms structurally
+#    underpowered; the declared byte-identical null NEVER RUN) · #48c seat
+#    release (10.68% of builder-rounds, disjoint from RETIRE60) · #54
+#    re-screen on the true-900 segment (both negatives ran ~6.6x
+#    under-dosed) · #53 MAPSEAL resume (56.66@1202) · #21 GUNADD re-run.
+# 5. ⛔ PROCESS GAP FOR THE RETRO + research: ANSWERED rows never walk back
+#    to the queue — a row can be answered and pass every gate forever (the
+#    mirror of #18's staleness defect). Candidate mechanism: queue_check
+#    gains an answered-by-shard cross-reference; needs a design decision
+#    from the queue owner.
+# PIPELINE: spawning NEXT-2 (engine changelog check) per the rolling rule.
