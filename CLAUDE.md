@@ -614,20 +614,36 @@ ONE SAMPLE (a single bar on one surface):
 TWO-FIXTURE COMPARISON (e.g. a panel share vs a rated share):
     half_width_95 = 1.96*sqrt( p̄(1-p̄) * ( DEFF_u/n_unrated + DEFF_r/n_rated ) )
 ```
-**SCOPE RULE — a single multiplier OVERCORRECTS a stratified bar. THREE CLAUSES,
-and the third is the general form:**
-* a pooled share over a **MATCHMADE** record (the ladder picks the mix, so the
-  mix genuinely IS sampling variance) takes the **POOLED** constant;
-* a bar **stratified by OPPONENT** (we chose the cells, or the read conditions on
-  one opponent, so the mixture is removed by design) takes the
-  **WITHIN-OPPONENT** constant;
-* ⭐ **a bar stratified by MAP takes NO DEFF AT ALL** — measured 2026-08-14:
-  a 5-game match uses five DIFFERENT maps, so **(match, map) pairs with more than
-  one game = 0 of 415**, and a per-map cell holds at most one game per match.
-  **⇒ THE GENERAL FORM: a design effect applies only where the STRATUM CAN
-  CONTAIN MORE THAN ONE MEMBER OF THE CLUSTER. Check that, do not assume it** —
-  a correction applied where it does not belong inflates every interval for
-  nothing, and it fails in the FLATTERING direction for a null.
+**⛔ SCOPE — AND IT IS A PROCEDURE, NOT A TAXONOMY. A LOOKUP TABLE OF CASES IS
+WHAT LETS SOMEONE DROP THE CORRECTION BY DECIDING THEIR CUT "LOOKS LIKE" ONE.**
+
+**THE GENERAL FORM: a design effect applies only where the STRATUM CAN CONTAIN
+MORE THAN ONE MEMBER OF THE CLUSTER.**
+
+**THE PROCEDURE, and a banked cut performs it in writing:**
+1. **NAME EVERY CLUSTER THIS DATA HAS.** Currently **two: MATCH and OPPONENT**
+   (add a third if a window effect is ever shown to bind).
+2. **For each, state whether YOUR stratum can hold more than one member — and
+   VERIFY it, do not assert it.**
+3. **The applicable DEFF is over the clusters that SURVIVE.**
+
+**WORKED EXAMPLE — and it is worked because the author of this rule got it wrong
+first.** A per-MAP bar: a 5-game match uses five DIFFERENT maps, verified both
+ways — **(match, map) pairs with more than one game = 0 of 415, while games per
+MATCH = exactly 5 for every match.** ⇒ **the MATCH cluster dies.** ⛔ **The
+OPPONENT cluster does NOT: a map cell still holds several games against the same
+opponent from different matches.** Measured on that cut: **m̄ = 1.98 games per
+opponent per cell, ρ_opp = 0.0743 ⇒ residual DEFF ≈ 1.07** (interval inflation
+×1.04; ×1.05 at the densest cell). **Small — but "no DEFF at all", which is what
+this clause said for half an hour, is wrong and would license the error at cells
+where m̄ is larger.**
+
+**Reference values: pooled 1.529 rated / 1.833 unrated (both clusters live) ·
+within-opponent 1.366 / 1.434 (opponent cluster removed) · per-map ≈1.07 on
+current cells (match cluster removed, opponent cluster measured).**
+⚠ **A correction applied where it does not belong inflates intervals for nothing
+and fails in the FLATTERING direction for a null — so both over- and
+under-correction are errors, and only the enumeration catches either.**
 
 **⛔ DIRECTION — AND THE GUARANTEE IS NOT UNCONDITIONAL. THIS IS THE CLAUSE THAT
 KEEPS THE CORRECTION FROM FLATTERING THE CLAIMS MOST TEMPTING TO BANK.**
