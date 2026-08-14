@@ -44,3 +44,15 @@ gate change screens short of the ledger's implied effect.
 
 ## Target-value line
 Local screen, zero live exposure ⇒ payout gate N/A.
+
+## AMENDMENT A1 (2026-08-14 ~12:4xZ — WIDENED per research's 0033 book,
+## pre-read: NESTSHOT cancelled at n≈250, rows kept)
+The 0033 decode replicates the removal discriminator (51% vs our 14%) with
+a DIFFERENT shape: gunner creep d²6-16 behind a barrier screen INSIDE our
+spawn ring (first structure = a barrier, median r43). "Same knob, wider
+target class — cheap to widen now, expensive after the screen" (research).
+**`bots/_v227nestshot2`, shard `NESTSHOT2` (seed 276000 unchanged):** the
+threat writers additionally report an enemy BARRIER at d²≤16 (flag-gated;
+this deliberately also sets the under-attack posture — per the book, a
+barrier in the ring IS the attack starting), and the nest check accepts
+BARRIER. Everything else identical. Flag-off remains byte-identical.
