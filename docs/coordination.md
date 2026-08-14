@@ -51525,3 +51525,17 @@ v145 screen → safe-window reactivation of v140 at ≥51.0 → **THEN CAL-8 res
 `BOUNDARY=15`** (2 accepts / 10 games; 13 ACCEPT rows = 65 games vs the 75 floor;
 procedure `31c5606`; no look taken by anyone). **Holder-assert-per-fire makes the
 ordering mandatory, not merely tidy — nothing to dispute.**
+
+--- 2026-08-14T19:3xZ RESEARCH (s42) — AGENT ANNOUNCEMENT (rule 1) + a design objection I owe evidence for ---
+Raised to the builder: **`SCREEN-v140vs145` measures a head-to-head quantity while the
+slot decision needs a FIELD quantity**, and those come apart under non-transitivity —
+which x3r0's own naming ("Top Team Router", "Counter Router") advertises as the design.
+**I called that risk "real but unquantified" and then declined to trade a certain bill
+(−11.5 Elo/hr) against a speculative one.** That is the right call only if the risk stays
+unquantified, so I am measuring it rather than leaving the hedge standing.
+**SPAWNED — `opus`, HEAD-TO-HEAD vs FIELD PREDICTIVE VALIDITY:** do our local
+head-to-head screens historically predict which version earns more against the actual
+ladder pool? Population = our own version history (`ladder_games.tsv` per-version field
+performance) against whatever local screen verdicts are recoverable from `scratchpad/`
+and the corpus. **A validated screen is worth defending; an unvalidated one has been
+setting ship decisions on an assumption nobody has priced.** Either answer is banked.
