@@ -51603,3 +51603,65 @@ evaporates the moment the file is repaired. Run the trap against the corrupt
 never having fired on the defect it was written for.
 The spec carries a `PROVENANCE` section recording that **this lane's own boot sync was
 the second writer** of the 78-row block.
+
+--- 2026-08-14T19:27:xxZ SIDE LANE (s41) — FLAG CLOSED · LOCK CERT PROVISIONAL · FINDING 3 · DEFF RECONCILED ---
+
+1. SHIP-CHAIN FLAG CLOSED, AND I WAS WRONG ABOUT THE ACTOR. Branch (a) — "the builder
+   reactivated" — was mine and it was FALSE. No activation by the builder between 19:13Z and
+   19:18Z; the actor was MAGNUS, verbatim "I rolled back until you can decide if it's better or
+   not", caught by holder_watch at 19:17:14Z. The ORDERING concern I defended is resolved in the
+   programme's direction: Magnus's directive makes the screen symmetric and A2 types the
+   uncomfortable branch (<51.0 REACTIVATES v145 over our own bot). NO DRIFT.
+   Q6' note on myself: I published two branches rather than one conclusion, which is why being
+   wrong about the actor cost a one-line reply. The branch structure is what made the wrong half
+   cheap.
+
+2. TWO-CLOCK CERTIFICATION, SCREEN-v140vs145 — **PROVISIONAL, and the unverified half is named.**
+   * CLOCK 1 VERIFIED BY ME: lock 8a30265 author 19:21:21Z read with TZ=UTC (load-bearing: without
+     it --date=format-local prints CEST under a Z), and `--diff-filter=A` confirms the file was
+     ADDED by that commit — not an in-place re-dating (s28). A1 3a94856 19:22:31Z · A2 d8f2467
+     19:22:57Z · A3 adc82ee 19:24:48Z.
+   * CLOCK 2 RELAYED, NOT YET VERIFIABLE: builder's remote start 19:23:31Z. No V140VS145 artefact
+     on my side at 19:26Z; newest vps_pull 19:23:08Z. I do not certify a clock off a message.
+   * INDEPENDENT BOUND I DO HAVE: the 19:23:08Z pull carried no V140VS145 artefact, and that is
+     AFTER A2 (19:22:57Z). Corroborates ordering; does not date the fire.
+   * A2 -> first fire is 34 SECONDS (s28 template was 2m33s). Not an objection — recorded because
+     that is the regime where a slow push or clock skew stops being academic.
+
+3. ⛔ FINDING 3 — THE ADD-ONLY GUARD IS BLIND ON REAL PREREG TEXT (cert amended, aeabf0e).
+   `prereg_check --amendment` returned `ADD-ONLY: OK (0 added, 0 edited)` on a +51-line amendment
+   that REWROTE the decision rule. BAR_LINE_PAT matched 3 lines before and 3 after; 12 lines name
+   the 51.0 boundary and 0 match it. Returned OK a SECOND time after A3 — an independent
+   replication 90 seconds later. It is the one control between an amendment and the s28
+   quietly-widened-bar hazard, whose stated remedy is that THE DIFF CLASS IS THE ENFORCEMENT AND
+   IT IS THE ONLY ONE. Fails silent and green, on all 81 unmigrated preregs.
+   SCOPE: the builder's prereg is NOT the defect — A1 fixed an attribution, A2 executes Magnus's
+   directive, A3 adds the mirror-vs-field limit; every one TIGHTENS. The defect is that the
+   instrument could not have told that from a quiet widening.
+   ⚠ AND IT INDICTS MY OWN CERT §2: I certified the amendment mode on the author's SYNTHETIC
+   fixture, where bars ARE tokenised, having just argued in §1 that a generated fixture cannot be
+   corrupted like real text. Same fault, one section apart, in the document naming it.
+   ⇒ REVISED VERDICT: presence + arithmetic layers CERTIFIED with three holes; AMENDMENT LAYER
+   NOT CERTIFIED.
+
+4. DEFF: RESEARCH AND I ARE NOT IN CONFLICT — driven against `deff_for`, not argued.
+   EMPTY/unparseable CLUSTER UNIT -> largest constant on the surface (unrated 1.833 / rated 1.529),
+   i.e. conservative — my sentence holds. A DECLARED survivor token -> 1.07 for `opponent`/`per-map`
+   whatever m̄ is — their sentence holds, and their formula reproduces on my run (rho=0.0743:
+   m̄=1.98 -> 1.073, m̄=3 -> 1.149, m̄=6 -> 1.372, i.e. +28.2% under-correction at m̄=6).
+   THE RECONCILIATION: the empty case can never REACH 1.07, because an unparseable token cannot
+   select a survivor key. So the under-correction is reachable only from a CORRECTLY-SPELLED
+   declaration — the danger is the well-formed field, not the malformed one. Conceded to them:
+   "fails safe on the arithmetic" was true of the input I tested and I stated it as a property of
+   the CHECK (Q3's scope-as-world, mild form).
+
+5. NOT FLAGGED, DELIBERATELY — a phantom defect avoided (s37 class). I was about to flag that the
+   unresolved-gate default AND ties-to-sitter BOTH now favour v140, having flipped via an event
+   outside the experiment. The prereg already says it: "Ties-to-sitter now favours v140 (the
+   current sitter); the ~3:1 OC note carries with the sitter identity swapped. A 50.x read leaves
+   v140 up and is not relitigated." Caught by reading the condition line in the tree being audited
+   before flagging — the v1.7 practice, third confirmed pre-publication save.
+
+6. CAL-8 RESUMED, DERIVED NOT RELAYED: 14 ACCEPT rows (was 13), STOP file removed, ARMED echo
+   `19:23:44Z BOUNDARY=15 PTR=13 accepts_so_far=13`, runner pid 51744 alive. ONE more accept = 15
+   = 75 games = the floor, at which point cal8_read.py stops refusing.
