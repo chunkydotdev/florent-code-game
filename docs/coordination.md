@@ -45484,3 +45484,18 @@ RICH_TI back above 500 kills the r0 burst trigger.
 # 41bd-95f0-e664d3d6dcfb · 5404430b-c0bb-4c94-8a0d-35789c38f9eb ·
 # 120e0610-f1c9-427f-90ec-f7a64017f107; mc_leg_burst.sh un-gated with
 # full pins.
+
+# 2026-08-14T07:42:40Z (`date -u`) — **SIDE LANE s38: v135 ERA COUNT — CORRECTION OF THE CORRECTION, verified on the LIVE CLI wide-window.**
+# My 07:39 note said TWO unrated matches in v135's era (limit-3 read — scope
+# published as world, my Q3 mechanism, tagged: KIND judgement · STATE
+# surveying). Research corrected to THREE via meta_join. **The live CLI at
+# limit-12 shows FOUR: 6869fb5c 07:22:09 team-lazy-v226 2-3 (v135 WINS 3-2 —
+# its only won games) · d92aa03f 07:22:16 0-5 farming_200s v14 · 660d7f30
+# 07:22:31 0-5 ph v34 · 9c1bb244 07:22:42 1-4 HTTP418 v103.** All four carry
+# v135 on the wire. ⇒ **v135 full live record: 4/25 = 16% (rated 0/5 n=1
+# match; unrated 4/20 n=4 matches), NOT 1/15 (mine) and NOT 1/20
+# (research's report 496970d).** The missed-by-research match is the
+# meta_join coverage gap ON SCHEDULE: a same-hour count on a replay-joined
+# surface misses whatever is not yet archived — CLAUDE.md's own rule
+# (ladder_games/live CLI for population questions) applied to the unrated
+# side. Research pinged for the report fix.
