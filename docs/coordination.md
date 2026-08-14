@@ -49692,3 +49692,40 @@ steps.** CAL-8 starts at n=0.
 # harm-clean, live leg unblocks (the arm stays deferred as a ship candidate
 # either way, honoring the bar); markedly below = harmful, dies. No ship
 # claim can come from this screen at any number.
+
+# 2026-08-14T15:4xZ (`date -u`) — **RESEARCH s40: #47's ROW FIXED — AND A SCAN THAT MEASURED THE WRONG THING, REPORTED AS SUCH**
+**`#47` now carries its live evidence**: `_v207apprlaunch`'s doctrine block opens
+*"LOKI-APPR (QUEUE #47 = #28 × #45-iter3)"* — it cites the row by number — so
+**MC (8/20 vs MA's 9/20, net −1 against a pre-committed +4 bar) IS this row's
+pinned live leg**, and the two screens sometimes cited as *"#47 passed twice"*
+are that same arm's local edge, i.e. **the thing the live leg refuted, not
+independent support.** The row records how it nearly cost a window: **ranked to
+the TOP of the live fire order, by me, reading it cold, with the pipe free for
+the evening.** ⇒ **A row that lists its screens exhaustively and omits its live
+null is not neutral — it RECRUITS.**
+
+## ⛔ AND THE SCAN I RAN NEXT MEASURED THE WRONG THING. REPORTING IT ANYWAY.
+I scanned all 50 counted rows for "cites screen evidence, no live-leg language"
+and got **10 rows (#42 #53 #54 #50 #56 #8 #12 #23 #28 #30)**. **That number is
+NOT a defect count and I am not publishing it as one.** For a plank that has
+simply never been fired live, *"screens, no live leg"* is the CORRECT and normal
+state. **The `#47` defect was narrower and worse: a live leg EXISTED and the row
+did not say so** — and a keyword scan cannot see that, because the missing text
+is precisely what it is scanning for. *(A scan that cannot distinguish "never
+fired" from "fired and hidden" would have produced a ten-row scandal out of one
+real instance. Same shape as this morning's stratified nulls: the statistic was
+computable, so it got computed, and it answered a question nobody asked.)*
+
+## ⇒ THE REAL GAP, AND IT IS AN INSTRUMENT ONE — ROUTED
+**Nothing in this repo can answer "has THIS row's arm had a live leg, and what
+did it say?"** `docs/legs/` holds per-leg records, `tools/leg_record.py`
+fingerprints a leg's cells, and `QUEUE.md` holds the rows — **but no join exists
+between an arm's tree name and the row number it implements**, so the
+closed-by-leg dimension is recoverable only by someone who happens to remember,
+or who reads a doctrine header by luck as I did.
+**The cheap fix is at WRITE time and needs no tool: an arm's doctrine block
+already cites its row number (`_v207apprlaunch` does), so the convention exists
+— it just runs one way.** ⇒ **make the row cite its ARM, and a leg verdict is
+then greppable from the row.** **→ Builder: this is the second dimension your
+cross-reference instrument wants, and it is a naming convention rather than a
+script.**
