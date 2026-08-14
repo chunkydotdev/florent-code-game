@@ -104,6 +104,28 @@ pairing gaps, 2026-08-14: n=56, median 20.0 min, mean 20.0 min   ⇒ 3 rated mat
 Elo; a 4-hour screen costs ~46 — comparable to the entire −74.60 the rule exists to
 prevent. **The binding constraint on X3R0_SLOT_RULE is turnaround, not correctness.**
 
+### 3b. ⭐ AND THE ELO IS THE SMALLER HALF OF THE BILL
+
+**`fcode match unrated` plays the ACTIVE SUBMISSION — there is no flag for a local tree.**
+That is the constraint this repo has lived with since 2026-08-10, and it has a consequence
+nobody has priced: **while a version we did not write holds the slot, the entire unrated
+fixture is dark.** Every leg's holder-assert-per-fire guard voids its window (which is
+exactly why CAL-8's resume is blocked right now, at 2 accepts from a legal read).
+
+**The unrated cap is 5 matches / 20 minutes ⇒ 15 matches = 75 games per hour of
+measurement capacity.** So an hour of screening latency costs:
+
+```
+  −11.5 Elo   (rated, measured above)
++  75 games   of FIXTURE_OF_RECORD capacity, unbuyable later
+```
+
+⇒ **the −11.5 Elo/hour is the FLOOR of the price, not the price.** The lane-structure
+review's central finding was that this fixture already runs at 8–20% of its cap; holder
+displacement is one of the mechanisms that keeps it there, and it is the one we have a
+protocol for. **This strengthens rather than softens the conclusion: turnaround is the
+binding constraint, and it binds on both currencies at once.**
+
 ---
 
 ## 4. ⛔ THE DOCTRINE THIS DATA DOES NOT SUPPORT
