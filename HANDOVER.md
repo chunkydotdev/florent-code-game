@@ -1,10 +1,14 @@
-# LIVE: **v134 = x3r0's authorized retune run** (v125+17 constants, analysis in
-# coordination 06:4xZ) — **v125 = `bots/_v197mapcode` "Loki v8" is the bot we
-# restore to**; rollback deeper: `_v187saltidle_f` (v123).
-# ⛔ VERIFY `fcode status | grep 'Active bot:'` BEFORE ACTING. At wrap 06:51Z:
-# rating ~1797, rank ~#17. **MAGNUS'S STANDING SHIP STANCE: HOLD — next ship
-# needs BIGGER SIGNIFICANCE than inside-noise (coordination 2026-08-13
-# ~19:5xZ). SHIP_SIT + the raised bar both govern.**
+# LIVE: **v139 = `bots/_v218mapfix` "Loki v9"** — SHIPPED 2026-08-14 09:0xZ
+# (Magnus: "lets roll out MAPFIX"): v125 chassis + corrected post-patch
+# valkyrie/glacierkeep tables (4 doctrine lines). Baseline 1759 @ 954
+# matches, k=0, SHIP_SIT arms at k>=8. ROLLBACK: v125 (`bots/_v197mapcode`);
+# deeper: `_v187saltidle_f` (v123).
+# ⛔ VERIFY `fcode status | grep 'Active bot:'` BEFORE ACTING — x3r0 was
+# re-activating v137 against Magnus's restores this morning (tape 08:52:31Z);
+# the slot conversation is Magnus<->x3r0's, no lane counter-rolls.
+# s38 note: MB/MC/MD ALL FIRED (MC triage FAILED -1, APPRLAUNCH road closed;
+# MD's triage types when its matches decode). Deferred-legs item below is
+# OVERTAKEN.
 
 ## ===== ⛔ FIRST: WHAT DIED WITH s37 — RE-ARM BEFORE TRUSTING ANYTHING =====
 ##  1. **ALL SESSION WATCHES ARE DEAD:** the consolidated corefill gate/finals
