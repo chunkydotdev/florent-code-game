@@ -51665,3 +51665,42 @@ the second writer** of the 78-row block.
 6. CAL-8 RESUMED, DERIVED NOT RELAYED: 14 ACCEPT rows (was 13), STOP file removed, ARMED echo
    `19:23:44Z BOUNDARY=15 PTR=13 accepts_so_far=13`, runner pid 51744 alive. ONE more accept = 15
    = 75 games = the floor, at which point cal8_read.py stops refusing.
+
+--- 2026-08-14T19:30:xxZ SIDE LANE (s41) — TWO-CLOCK CERT UPGRADED PROVISIONAL -> FULL (SCREEN-v140vs145) ---
+The clock I refused to take on relay is now derived from a primary. `V140VS145.tsv` arrived on the
+19:28:09Z pull; **CLOCK 2 = the first ROW's own timestamp, written by the remote worker in its own
+frame: 2026-08-14T19:23:46Z.** (The file's LOCAL mtime 19:27:36Z is the PULL time and is NOT the
+fire clock — a local mtime is in this box's frame, the row is in the worker's. Naming the frame is
+the v1.8 rule and it is the difference between a 4-minute error and none.)
+
+| commit | authored (TZ=UTC git) | vs first row |
+|---|---|---|
+| 8a30265 LOCK | 19:21:21Z | **PRE by 145s** |
+| 3a94856 A1 | 19:22:31Z | **PRE by 75s** |
+| d8f2467 A2 | 19:22:57Z | **PRE by 49s** |
+| adc82ee A3 | 19:24:48Z | **POST by 62s** |
+
+⇒ **LOCK + A1 + A2 CERTIFIED PRE-FIRST-ROW.** The s28 template (the 15:46 prereg) predated leg
+creation by 2m33s; this lock predates it by 2m25s — the same regime.
+⇒ **THE BUILDER'S RELAYED 19:23:31Z IS ACCURATE** (15s before the first COMPLETED game row, which
+is what a start-then-first-result gap should look like). Relay verified, not assumed.
+
+**A3 IS POST-FIRST-ROW AND ITS OWN HEADER SAYS `pre-first-row-READ`, WHICH IS THE CORRECT AND
+HONEST WORDING** — rows existed, no read had occurred. The distinction is now load-bearing, so it
+gets certified rather than accepted:
+⭐ **A3's BLINDNESS IS VERIFIABLE FROM THE PULL LOG, INDEPENDENTLY OF ANYONE'S CLAIM.** The pull
+immediately BEFORE A3 (19:23:08Z) carried no V140VS145 artefact; the first pull carrying the tape
+is 19:28:09Z, **3m21s AFTER A3 was authored**. ⇒ at A3's authoring time **zero outcome rows were
+available on this box through the routine channel**.
+⚠ **WHAT THAT DOES AND DOES NOT ESTABLISH, stated rather than glossed:** it certifies the rows were
+not available via the channel everyone actually uses. **It cannot exclude a direct read on the
+remote box.** A negative-look claim is not verifiable in principle; what IS verifiable is whether
+the data had arrived, and it had not. That is the strongest form available and it is stronger than
+an assertion.
+
+**LOOK DISCIPLINE, FLAGGED FORWARD BECAUSE THE TEMPTATION IS NOW LOCAL:** the prereg registers ONE
+look, at n=1000 ("this shard's own read IS the n=1000 look; no 2700/final band exists"). The tape
+is now on this box and GROWING — 160 rows of 1000 at 19:27:24Z, 0.73 games/s, **ETA to n=1000
+~19:46:3xZ**. Every pull from here makes an interim look one `awk` away. It is the CAL-8 shape
+exactly, on a shorter clock. No look before 1000, by anyone, including me — and I have read only
+the `ts` column and the row COUNT, never the `winner` column.
