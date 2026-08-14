@@ -48198,3 +48198,45 @@ kill-round non-regression bar.**
 # retires its own +20%" — carrying kill-round non-regression AND the
 # scale-curve + build-count-curve pair read side by side (a flat scale curve
 # bought by doing less work is not a win — their guard 2, adopted verbatim).
+
+# 2026-08-14T14:3xZ (`date -u`) — ⛔ **RESEARCH s40: SIZING THE BUILDER-BOT SCALE CHANNEL — AND DEFLATING MY OWN FRAMING BEFORE THE BUILDER BUILDS ON IT**
+My last note said builder bots are **44% of the scale we add and 53% of what
+stands at the end**. True, and it reads as though 135.3 scale-points/game are in
+play. **They are not. Most builders are working, and I should not have left that
+implication standing.**
+
+**FIRST, THE CHEAP PROXY I TRIED, AND IT DOES NOT SUPPORT A BIG TEAM-LEVEL
+DEAD TAIL.** Round of our LAST non-bot build vs game length, v125+v140, n=1,270
+archived games: **last build median r136 · game length median r175 ⇒ DEAD TAIL
+median 16 rounds, 8.5% of the game** (p75 57 · p90 142; and in games ≥400 rounds
+the tail is median 39 rounds = **6.3%**, i.e. in LONG games we keep building
+almost to the end). ⇒ **At team level we do not stop building. The proxy fails to
+find the waste** — and it fails for a knowable reason: **a team-level "last
+build" cannot see 4 locked bots while 2 others build.** `events.tsv` carries no
+entity ids, so per-bot action attribution needs a replay decode; the proxy is a
+LOWER BOUND and it is a weak one.
+
+**SO THE SIZE COMES FROM `#54`, WHICH ALREADY MEASURED IT PER BOT:** 11.58% of
+ALL builder-rounds are spent in permanent two-tile locks (183,489/1,584,948,
+v125, 100% coverage of 1,160 games), 962 locked bots, **39.8% of which never
+acted in their lives**, median lock onset r68.
+**Scale tax accrues per bot-ROUND ALIVE, so the locked share of builder-rounds is
+the recoverable share of the builder-bot scale integral:**
+* **~11.6% of the builder-bot scale integral is carried by bots doing nothing.**
+* Builder bots are **44%** of the scale we levy ⇒ **~5.1% of our TOTAL
+  self-levied scale integral is carried by permanently locked builders.**
+* **Against the launcher channel's 0.65% — so ~8× `#60`'s original customer, and
+  an order of magnitude BELOW the 135.3 my previous note implied.**
+
+**⇒ THE HONEST NUMBER FOR ANY REGISTRATION IS ~5% OF THE SCALE INTEGRAL, NOT
+44%.** Realisable is a little less (a K=4 detector cannot retire before it
+detects; negligible against a median onset of r68 in a 175-round game).
+**The builder's shape-note is right and this sizing supports it: "OSCLOCK's
+existing detector + `self_destruct` + a role definition" is the arm** — and note
+what it says about OSCLOCK2, whose failure was freeing the locked bot into
+idleness. **Retiring instead reclaims the +20%, a channel that screen never
+priced, so OSCLOCK's value was UNDERSTATED when it was screened.**
+**Their control is the right one and is adopted: the BUILD-COUNT curve read
+beside the scale curve, both from replay-kept batches — because scale flattened
+by retiring bots and scale flattened by building less look identical otherwise,
+and only one of them is a win.**
