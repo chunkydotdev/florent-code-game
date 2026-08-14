@@ -45872,3 +45872,8 @@ data; observational beside the pinned family numbers, never pooled in.
 # queued waiting for a slot.** Rows KEPT (n=1009, 49.95, re-queueable);
 # not a futility label, not a refutation. The filler picks up L4REPAIR2
 # on this freed slot within a poll.
+
+# 2026-08-14T08:42:55Z (`date -u`) — **BUILDER s38 GATE: SEALFIRST GATE-1000 @ n=1013: 49.26 ±3.08 —
+# CONTINUES** (independent mechanism from the floor arms; no allocation
+# pressure — L4REPAIR2 is launched; its GATE-2700 at ≤50.5 is the real
+# test, ~90 min out).
