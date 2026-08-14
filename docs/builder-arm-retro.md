@@ -974,3 +974,81 @@ re-runs instead of inheriting.
 **FIRINGS this instance: 3** (Q1 seal verdict, Q2 flattering direction, Q4
 claim-ahead-of-record — one root cause, three question-hits, which is itself the
 evidence the questions triangulate).
+
+# ============================================================================
+# INSTANCE — s41, 2026-08-14T20:36:37Z. **FIRINGS: 4.** Run at Magnus's wrap-call, before the
+# process deltas. Post-reboot boot → x3r0 v145 slot episode → corpus-race fix →
+# fixture-defect discovery → two arms drafted (one fired, two banked).
+# ============================================================================
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+The v145 close-out (A10) is the test case and it holds: v145 50.80% [47.73,
+53.87] < 51.0 → "v140 stays because v145 did not clear the challenger's bar, NOT
+because v140 measured better" — the CI-could-not-separate language is in the
+verdict, not sanded off. CAL-8 read consumed as a NULL (P4 does not fire) with
+the three-computations-stable caveat quoted, not enjoyed. **No verdict oversold
+this session.** FIRING (Q1): I initially wrote the v145 decision rule as a zone
+construction (A6/A7/A8) that Magnus's own directive superseded — I built decision
+machinery ahead of asking the principal whose rule it was. Corrected when he
+ruled (A9/A10), but the machinery predated the question.
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+Two. (a) I relayed research's deliberate-CPU-load exploit vectors to Magnus as
+LIVE options without checking SIX-ROADS-STATUS first — it was HELD ON NORMS.
+Error ran toward ACTION (an exploit sounded live). Corrected same session. (b) I
+told Magnus his belt-heal idea's cheapest test was a corpus peck-by-target read —
+correct, but research then showed the premise (melee pecking) barely exists.
+Error ran toward ENCOURAGEMENT (the idea sounded testable). **Both ran toward
+"yes, do the exciting thing" — the flattering direction, same distribution the
+research arm named in its own retro. Worth watching.**
+
+### 3. INSTRUMENTS — changed, and each driven to BOTH verdicts?
+Five, all both-ways: prereg_check newline-bleed regex, empty⇒absent + list-value,
+amendment coverage-guard (NOT_APPLICABLE), local-surface BOUNDARY exemption, OB13
+import-binding. Plus TRAP 9 (fired pre-repair on real corrupt data, silent post),
+target_value teamId-keying (caught a 2nd rename unprompted), corefill_status
+heartbeat-not-marker, orchestrate reset-done/log/gen-NULLHOST/venv-fallback.
+**prereg_check went draft-uncertified → first-ever green pass on a live
+registration in one session, side-lane certified.** FIRING (Q3): the OB13
+selftest cell was environment-dependent (shelled to git diff HEAD, failed on any
+dirty tree) — bit me twice while patching the same file before I isolated it.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+FIRING: my CAL-8 terminal-row monitor grepped the LOG for "BOUNDARY stop" while
+the runner writes that phrase only to the FIRES TAPE — I violated research's own
+R4 ("match the rows the runner actually writes") one session after consuming it.
+The child-pid death branch backstopped it ~2 min late. Same class as the research
+arm's own R4 self-amendment: the consumer of a rule is its first violator.
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+**Zero by me.** No submit, no activation this session. v140 held throughout
+(RULE=held every ship_watch row, net_act +58.8→+69.8). The one −10.0 Elo cost was
+x3r0's v145 window (19:08:37–19:17:14Z, ended by MAGNUS's rollback) — a foreign
+holder, not our action. The screen decided on a LOCAL fixture with zero rated
+exposure, which is the procedure working.
+
+### 6. WHAT THE BUDGET BOUGHT
+Slot settled (v140 stays). Corpus race fixed + TRAP 9. CAL-8 read (null). VPS #2
+certified. #66a engine question answered (STALL not DISCARD → re-ranked #66).
+#53 SEALFLOOR6 locked+firing (first green prereg). #52 + belt-idea RETIRED on
+premise-absence before either burned a window — the cheapest possible kill.
+prereg_check made real. Six subagents (2 stage/provision, 4 probe/build/draft),
+all relayed before idling.
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+Moved to HANDOVER: the two live reads + their bars, the hardware correction
+(ncpu=16/borrow-10, WORKERS=10 rule), the comment-hygiene sweep (4 instances),
+the wiring bundle's contents, #52/belt PREMISE-ABSENT (retire not retest).
+
+## The one question that is not a list
+**Did I make a decision the machinery could not have caught? Yes — I built the
+v145 zone construction (A6-A8) as if the tie-resolution were mine to design,
+when it was Magnus's rule to state.** No tool flags "you are drafting policy the
+principal should set." The machinery certified each amendment's arithmetic
+flawlessly while the whole edifice was answering a question I should have asked
+him first — which I eventually did, and A9 replaced three amendments with one
+sentence. **The lesson: a pre-commitment is only load-bearing when it encodes a
+DECISION already owned; encoding one still owed is elaborate displacement.**
+**FIRINGS this instance: 4** (Q1 machinery-ahead-of-ruling, Q3 env-dependent
+selftest, Q4 monitor-row-mismatch, + Q2's two flattering-direction retractions
+counted as one pattern).
