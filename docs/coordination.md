@@ -47023,3 +47023,21 @@ Boot reads, all live this session, not inherited:
    re-derive every counted QUEUE row's GREP stamp against the incumbent.
 **Neither is a verdict; both report to me and I verify load-bearing numbers
 at the primary before anything is banked (Q10).**
+
+# 2026-08-14T12:56:37Z (`date -u`) — **BUILDER s39 BOOT.** Holder verified live: v140 (Loki v10),
+# 1747 Emerald, k≈3-4, SHIP_SIT arms at k>=8 (~14:0xZ). Boot checks: audit_trigger
+# 1/6 (ship cadence 0.43/hr — expected after yesterday's churn, audit not
+# indicated; delegation drought 3.42 OK) · test_instruments 34/34 · corpus_sanity
+# OK. Monitors: keeper + 4 watchers alive. IN-FLIGHT (mine): (1) re-arm
+# gate_watch WITH the D4 fix (wake message carries the re-arm as first line —
+# option 1's nohup successor cannot wake a harness session, the s38 holder_watch
+# lesson) + 30-min fallback heartbeat; (2) holder_watch EXPECT=v140; (3) vps_pull
+# loop; (4) finals typing queue (SEALFLOOR0 FINAL ~89m 54.47@4239 · L4REPAIR2
+# FINAL ~144m 54.48@3517 · SEALREPAIR 2700 ~216 rows out 59.86@2484 · AIMTHROW2
+# 2700 · MAPSALT/V141VS140/NESTSHOT2 1000s). (5) ⭐ MAGNUS DIRECTIVE this boot:
+# "We should be testing more shards on the vps, can we pull some items from the
+# queue?" — I own it: pulling top unblocked queue items, re-grepping each vs
+# _v223sealrepair (queue banner: all 39 rows GREP-STALE), building arms, pushing
+# to work-server-1 (SEALFLOOR0R 3280/5400 filling, SEALREPAIRR queued behind).
+# CAL-7: stability gate reads MET (holder >40 min + tree identified) — research
+# s40 owns prereg from the CAL-6 template; I fire on their committed order.
