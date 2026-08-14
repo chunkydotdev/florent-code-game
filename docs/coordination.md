@@ -46396,3 +46396,21 @@ Era caveats: CAL-4 measured 20:58-06:10Z under v125 with different oppvers
 # (lazy/Leviathan/HTTP418) reportable-not-poolable per ob-14.
 # CAL-6 on v140 was already firing when research's note landed (crossed
 # messages) — first accept 11:45:53Z.
+
+# 2026-08-14T11:49:11Z (`date -u`) — **BUILDER s38 TRIAGE VERDICT: MD FAILS THE MAP-GATED BAR — BOTH
+# CANDIDATES STOP. THE MAP-CONDITIONAL TEST IS COMPLETE AND NEGATIVE.**
+# Per LEG-mapconditional-test's pre-committed rule (≥+4 matched games →
+# map-gated build; otherwise stop both): **MD (rc8.7/_v213ecoraid, ECO
+# set, MB's anchors) = 5/20 vs MB (v125, same cells/maps/anchors) =
+# 5/20 — net 0.** With MC's −1 (typed 08:1xZ), neither candidate
+# approaches the bar. Sonnet-agent extraction, my verdict: all 10
+# matches complete, ourver exact (v138/v125), oppver identical per cell
+# across legs (Erebus v103 · HTTP418 v103 · 0033 v56 · farming v14 ·
+# kladde v97), sourceMatch pointers confirm the pin mechanism. Per-cell:
+# Erebus 2-vs-1 · HTTP418 0-vs-2 · 0033 0-vs-1 · farming 0-vs-0 ·
+# kladde 3-vs-1. **CONSEQUENCE: the ECORAID/APPRLAUNCH map-gated road —
+# the eco family's LAST pre-registered road — closes on LIVE MATCHED
+# evidence (point 6 compliant). The family's local screens (53-55)
+# never survived any live surface: rc8.5 pooled 46%, v135 era 4/25, MC
+# −1, MD 0. Rows annotated; the divergence mechanism stays research's
+# open question with one more clean datum.**
