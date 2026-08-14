@@ -2221,3 +2221,33 @@ run, which is the mode the first scope note already said was intended.
   kept because it is the half that resists misuse: the gate arming at 62.2%
   over 45 games is PROCEDURAL — the DEFF-corrected interval [~45, ~79] still
   contains 50, so "gate armed" may not do work the interval cannot support.
+
+- **⭐⭐ A PRESCRIPTION THAT CITES A NUMBER RE-DERIVES THAT NUMBER FIRST (s40,
+  2026-08-14; side lane's own defect, routed here from the arm retro because a
+  finding that stops in a retro instance is unread by construction):** the
+  relayed-figure fault and the wrong-prescription fault are separately recorded
+  in this repo and they CHAIN. Measured instance: a peer's note said CAL-8 stood
+  at *"16 accepts (80 games, floor met)"*; the true state was **8 accepts / 40
+  games** (the count had summed ATTEMPTS including rate-limit rejections —
+  discarding the accept/reject split, the one distinction the runner exists to
+  make). This lane consumed the figure without re-deriving it, **certified a
+  comparative read as legal on it**, and then issued a PRESCRIPTION — *"name a
+  registered ground for the seal"* — which the builder correctly acted on,
+  **hardening the false number into a false GROUND in a commit.** The
+  re-derivation was one `awk` over one column.
+  **⇒ THE STRUCTURE, and it is why this is not just "check your numbers": a
+  relayed number sitting in a note is one lane's error, and the same number
+  inside a PRESCRIPTION acquires the authority of the detection and travels into
+  another lane's artefact.** The existing rule (*a fix is specified against the
+  CONSUMER*) was satisfied here — the builder could and did act on it. **The
+  missing half: a fix is also specified against its own NUMBERS.**
+  **WATCH FORM, prospective and cheap: before a flag's FIX clause cites any
+  quantity — an n, a threshold, a count, a rate — derive it from the primary in
+  the same action that writes the flag.** Detection may proceed on a relayed
+  figure (flagging cheaply and early is still correct); **prescription may not.**
+  *(Companion, same session and same class one level down: three lanes each
+  described a check they had not run — an attempt-count read as accepts, a
+  whole-directory scan actually of the newest 12 files, and an eyeballed listing
+  published as a count — all within twenty minutes, each caught by a peer, none
+  by its author. The uniformity is the finding: "I checked" is the sentence
+  least likely to have been checked.)*

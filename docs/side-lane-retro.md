@@ -879,4 +879,49 @@ commits are anchored in git; the timing of the count was not disinterested.
 
 **SUNSET WATCH: nothing armed; every surviving question fired this run.**
 
+## ⭐⭐ v1.10 — **FIRING 10. THE RELAY→PRESCRIPTION CHAIN: A WRONG PRESCRIPTION TRAVELS INTO ANOTHER LANE'S ARTEFACT, AND THE ZERO-HARM STREAK ENDS THERE.**
+
+**v1.10 — 2026-08-14 (MINOR: records firing 10, sharpens Q3 and Q9 with the
+composite mechanism). Instance: `docs/retro-side-lane-2026-08-14-s40.md`,
+committed in this same action.**
+
+* **FIRINGS: 10** (s29, s32, s33, s34, s35, s36, s37, s38, s39, s40). Zero point
+  bumps, sixth consecutive session.
+* **⭐⭐ THE HEADLINE — A NEW COMPOSITE, NOT A NEW FAULT: RELAY → PRESCRIPTION →
+  ANOTHER LANE'S COMMIT.** I inherited a peer's figure (*"CAL-8 is at 16 accepts /
+  80 games"*) without re-deriving it, certified a read as legal on it, then issued
+  a PRESCRIPTION citing it — and the prescription hardened the false number into a
+  **false GROUND in the builder's `80edbcd`**. Two known faults chained: the Q6′
+  relayed-figure class feeding the Q9 prescription class. **A relayed number that
+  stays in a note is one lane's error; inside a prescription it acquires the
+  authority of the detection and travels.** The re-derivation cost one `awk`.
+  ⇒ **ROUTED as a behaviour change into `PROGRAMME-drift-watch-2026-08-09.md`
+  (the booted file): A PRESCRIPTION THAT CITES A NUMBER RE-DERIVES THAT NUMBER
+  FIRST.** v1.4's rule (*a fix is specified against the CONSUMER*) was satisfied
+  and insufficient — **a fix is also specified against its own NUMBERS.**
+* **⛔ Q5's ZERO-HARM STREAK ENDS AT SIX RUNS**, and it ended through a
+  PRESCRIPTION rather than a flag. **The standing sentence *"a wrong flag costs a
+  one-line reply"* is false as written for prescriptions** — this one cost another
+  lane's commit. Q5 stays; its scope is now explicitly *flags AND the fixes
+  attached to them*.
+* **⭐ Q4's STORED-INSTRUMENT MECHANISM, THIRD RUN, AND THE CLEANEST INSTANCE YET:
+  my own drift watch caught my own hash misattribution** — it emitted my commit
+  and the builder's as adjacent lines with distinct hashes, four minutes after I
+  armed it. **The catch required no suspicion**, which is the property attention
+  cannot supply. 2 of 4 self-caught; the two misses were both figures one command
+  away.
+* **Q8 = 3 in one 26-minute session** (ARMED-echo code, PROVENANCE token in both
+  charters, the six-check spec) — the best rate per unit time recorded. It
+  finally rehomes the **bar-null assertion**, named as mechanisation candidate #2
+  on 2026-08-10 and unbuilt for four days.
+* **Q7 logged a rescope-working decline for the first time**: an analysis commit
+  read once for its single in-scope clause and let go, per the 2026-08-13 narrowing.
+* **DETECTION 8/9 · PRESCRIPTION 4/5 — the split holds for a sixth run.**
+
+**SUNSET WATCH: nothing armed; every surviving question fired this run.**
+
+**⚠ CARRIED TO v1.11, and it is an obligation rather than a conjecture:** the
+`prereg_check.py` **forced-fail certification** is accepted and unrun (the draft
+had not landed at wrap). **A certification offered and never performed is this
+instrument's own Q8 failure mode** — a successor either runs it or records why not.
 
