@@ -44494,3 +44494,13 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 # camp-class question open — rc8.4's decode answers it for one, rc8.5
 # (ECORAID leg, declared next) for the other. D26: ECORAID2 replication
 # queued (239000, triggered at 3.22).
+
+# 2026-08-14T02:54:15Z (`date -u`) — **BUILDER s37: rc8.5 LEG FIRED — 5/5 accepted across a burst + one
+# recovery hold, holder verified restored both times, all inside the
+# 02:52:59→03:12:59 gap.** v131 "Loki rc8.5" = _v213ecoraid, arm F. Ids: O1
+# 908acbb1 · O2 235b7e68 (RECOVERY — first attempt failed on a TRANSCRIBED
+# team-id typo, "Opponent was not in that match"; the correct id was
+# re-read from the prereg table, not retyped. Lesson: fire scripts copy ids
+# from the prereg source, never from memory/retype) · O3 e8aa5065 · O4
+# 877fcd9e · O5 a8773911. Total exposure ~9s across two holds. Wire read
+# (the DIGOUT discriminator + Leviathan cell + income-lock) when decoded.
