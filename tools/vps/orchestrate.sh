@@ -343,10 +343,36 @@ EOF
 # ---------------------------------------------------------------------------
 # start / stop
 # ---------------------------------------------------------------------------
+# ⛔ THE CURFEW IS PER-HOST AND IT WAS NOT. `worker.sh`'s blackout was written for
+# work-server-1, whose owners need that box 23:00-06:00 CET (Magnus, 2026-08-14)
+# -- but the check is unconditional and names no host, so it applied to EVERY
+# fleet box. Measured consequence, same day: work-server-2 was stocked with two
+# 5400-game shards, passed all four gates, skipped its already-passed NULLHOST,
+# and then went straight to `curfew: sleeping` -- **six cores idle until 04:00Z
+# on a box with no curfew on record**, at the moment the principal had said
+# "use local and work-server-2 cores". A rule copied from one host to all hosts
+# is not a stricter rule, it is a wrong one.
+# ⇒ NO_CURFEW_HOSTS names the hosts EXPLICITLY CLEARED to run around the clock.
+# **Anything not on that list defaults to CURFEW=on.** The two errors are not
+# symmetric: wrong-toward-SLEEPING costs us cores, wrong-toward-RUNNING costs
+# somebody else their machine at midnight. So the default is the expensive one,
+# and clearing a host is a deliberate act with a name attached.
+# ⚠ The list is phrased as the EXEMPTION, not the rule, on purpose. A first cut
+# here used `CURFEW_HOSTS` (hosts that HAVE one) and its unlisted default came
+# out OFF -- while the comment above it claimed ON. Prose contradicting the code
+# beside it, in a block written to fix exactly that class. Caught by driving the
+# selector on a third, unlisted hostname before touching any box.
+NO_CURFEW_HOSTS=${NO_CURFEW_HOSTS:-work-server-2}
 cmd_start() {
   W=${ARGS[0]:-}
   WK=""
   [ -n "$W" ] && WK="WORKERS=$W "
+  CF="on"
+  case " $NO_CURFEW_HOSTS " in
+    *" ${HOST#*@} "*) CF="off";;
+  esac
+  say "curfew for ${HOST#*@}: $CF   (round-the-clock hosts: $NO_CURFEW_HOSTS; everything else curfews by default)"
+  WK="${WK}CURFEW=$CF "
   r_exec "rm -f STOP; ${WK}nohup bash tools/vps/worker.sh > worker.out 2>&1 & echo \"started pid \$!\""
   say "STARTED on $HOST (nohup). Watch: $0 status $HOST"
   say "  tmux alternative:  ssh $HOST 'tmux new -d -s fcw \"cd $REMOTE_ROOT && ${WK}bash tools/vps/worker.sh\"'"
