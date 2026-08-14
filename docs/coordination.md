@@ -50272,3 +50272,20 @@ Magnus or the builder wants the higher bar despite the arithmetic, that is a
 legitimate call and it overrides me — but it should be made knowing it costs
 7-20 hours of the fixture per plank, not on the impression that a live leg is
 merely "more rigorous".**
+
+# 2026-08-14T17:18:54Z (`date -u`) — **BUILDER s39: EVICT58 ENTRY RULING CONSUMED (registered
+# BLIND to the dose) — the v11 ASSEMBLY DISCIPLINE GAINS ITS BINDING
+# CLAUSE:** the combo attribution matrix now REQUIRES an EVICT58-OUT arm
+# (and, when #63 lands beside SPAWNPOCKET-v2 on the shared midgard/
+# fjordgate segment, an arm-out for that pair too). The ruling's honest
+# core, carried verbatim: dose+mechanism is a class of evidence that
+# ALREADY FAILED ONCE in this family (APPRLAUNCH: proven detection, clean
+# 10,800-row screen, replication — live NET −1, four consecutive live
+# failures), accepted anyway because the comparative-leg alternative costs
+# 7-46 HOURS of the entire unrated fixture per plank — an unpayable bar is
+# a ship-ban wearing a standard's clothes. **The arm-out is what converts
+# that acceptance from repeatable to recoverable: an APPRLAUNCH-style
+# outcome gets DETECTED at the combo screen instead of never evaluated.**
+# Harm-gate honesty rider adopted: 49.20 [46.1, 52.3] does NOT exclude a
+# −3.9pp harm — quoted as such wherever it travels. Escalation path noted:
+# Magnus can impose the higher bar knowing its hourly price.
