@@ -65,3 +65,9 @@ _v218mapfix; diff = flag block + exile sort + ammo floor only), control =
 Chassis-matched on the LIVE incumbent — the mechanism read and any future
 ship case now share a base. A1's re-base caveat is discharged by
 construction for this screen.
+
+**A2 addendum (side-lane fixture-versioning line):** AIMTHROW's kept rows
+(n=31 per the TSV, not 28) were played by `_v222aimthrow` **as of commit
+69c3968** — the pre-A2 v125-chassis bytes. The name now denotes the
+re-based tree; any later read of those rows resolves the tree via that
+hash, never via the worklist line.
