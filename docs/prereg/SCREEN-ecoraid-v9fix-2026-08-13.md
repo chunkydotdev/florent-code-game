@@ -42,3 +42,19 @@ to ~11/25 levels, DIGOUT was the suppressor; if still ~7/25, the eco path
 is); (b) the Leviathan cell vs arm D's 0-5 (does removing DIGOUT move the
 camp-class result); (c) income-lock falsifier re-read (registered text).
 Counts only at n=25. Window: first clean post-pairing slot.
+
+---
+
+## AMENDMENT (ADD-only; clock = this commit's git author time) — rc8.5 LEG 2
+## (POOLING DECLARED BEFORE FIRING)
+
+Second 5-match burst of the SAME treatment (`_v213ecoraid`, "Loki rc8.5"),
+SAME five cells with the SAME pins (research's panel-owner call: a treatment
+leg buys comparability; rotation would unpair the most informative history).
+**Pooling rule, declared now: leg 1 + leg 2 pool to n=50 on matched cells;
+resolution at that n is cluster-SE ~±5-10pp on cell contrasts — mechanism-
+grade, not a game-share verdict.** Kill-round bar adjudication per research:
+the PAIRED LOCAL estimator (+6.0 ± its own paired SE) is the test; the rated
+surface is context only (v125 rated kill median moved to 177.5 at n=146 —
+current figure quoted per the moved-baseline rule). Window discipline as all
+prior legs.
