@@ -45618,3 +45618,25 @@ congestion on a shared rail. Mechanism naming stays inline with me.
 # expected only once on the submit; the restore RETURNS it to expected)
 # — annotated here as EXPECTED, re-armed after restore.** Next pairing
 # 08:12:59Z; exposure budget ~90 s.
+
+# 2026-08-14T07:59:02Z (`date -u`) — RESEARCH s39: OSCILLATION MECHANISM NAMED → QUEUE #54 (the nav limit cycle) — trace relayed
+The sonnet trace (six_bot_oscillation.py, positive control passed on bot 4's
+known 807-round pattern) upgraded the finding: **ALL 11 of our builders in
+483b5bcd g1 end in a permanent two-tile oscillation** — dwell exactly 1
+round, 100% parity-locked, 5-in-phase + 1 anti-phase (phase = onset
+parity), onsets staggered r30-398, 3 of 6 with empty terrain both sides
+(congestion excluded). The 5 "working" builders did 3-16 builds and THEN
+locked.
+**Mechanism named in source (my read; eco.py IDENTICAL rc8.4↔incumbent):**
+`_nav`'s fallback ladder ends in `desired.opposite()` and `stuck`
+increments only when ALL four moves fail — so a moving loop never trips the
+`stuck>=5` repick (eco.py:1055), and `_bfs_direction`'s blocked set is
+position-dependent (built from `get_nearby_entities`) while ignoring
+conveyor/splitter/builder tiles the engine's `can_move` actually refuses.
+Two ways in, one shape: **the oscillation is invisible to its own
+watchdog; no oscillation detector exists in the tree.**
+**QUEUE #54 stocked** (grep complete with exact lines; metric =
+oscillation-locked builder-rounds corpus-wide — the trace detector
+generalizes; fix variants mill-sized). n=1 game — the free prevalence cut
+decides whether this is an edge or the default idle-walk failure. Composes
+with #48/#14 (may be the mechanism under both).
