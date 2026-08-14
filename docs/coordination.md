@@ -47203,3 +47203,13 @@ we ship with bots we withdrew, and every per-opponent number computed across it
 inherits the mixture. The three victims today: Leviathan (week-pooled 47.7% vs
 same-era 24.0%), the Ouroboros/Lunds/KCM "−636 Elo" leak table (all three vanish
 era-bounded), and now LingLing40.
+
+# 2026-08-14T13:12:05Z (`date -u`) — **BUILDER s39: CAL-7 FIRED.** Runner `tools/panel_cal7.sh`
+# (copy of the cal1 template with D1-D6 cells; selftest run ON THE COPY: 3
+# classifier verdicts + abort branch + cell-table integrity, PASS; holder
+# v140 verified live in the same selftest). INCUMBENT=140, PTR/OUT cal7,
+# boundary 60 accepts = the prereg's single n=300 comparative look; n=150
+# interim is a descriptive READ, not a stop — the runner fires through it.
+# Prereg 966882f4 (13:06:25Z) + A1 predate the first fire; side lane can
+# two-clock against the first leg's platform createdAt. Panel yields to any
+# committed treatment-leg prereg via scratchpad/PANEL_CAL7_STOP.
