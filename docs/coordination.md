@@ -46260,3 +46260,17 @@ stale cached figure, corrected here.
 #    a null-vs-null shard must read ~50 before any treatment row from
 #    that host is admissible.
 # Nothing built yet — waiting on host/user from the admin.
+
+# 2026-08-14T11:11:43Z (`date -u`) — **BUILDER s38: VPS KIT ACCEPTANCE TEST GREEN — first completed run of the
+# s36 draft chain (tools/vps/{worker,orchestrate,selftest}.sh +
+# ENGINE_PIN=2.3.6), all 17 cells: gen→push→4 refusal gates BOTH
+# verdicts→NULLHOST-first at WORKERS=2→stop→resume→pull→reader cert both
+# ways (doctored null EXCLUDED). Kit committed — no longer the untested-
+# artefact class. DECLARED RESIDUE (the selftest's own header): key auth,
+# ssh-alias resolution, rsync-over-ssh — exercised by `orchestrate.sh
+# setup --execute` on the real host, loud failures, presence-checked on
+# the load-bearing file never $?. ENGINE PIN 2.3.6 = local's version (the
+# --mark/2.3.7 boundary applies fleet-wide when we take it; the pin file
+# documents the bump procedure). Runbook when the host lands: setup →
+# NULLHOST cert → first scout wave. Magnus reports the box is nearly
+# live; public key delivered.

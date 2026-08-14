@@ -1,0 +1,16 @@
+# ENGINE PIN — the ONLY fcode version whose games may be pooled with ours.
+#
+# WHY A PIN AND NOT "whatever pip installs": a battery worker exists to add rows
+# to the SAME denominator this box already fills. Two engine versions are two
+# fixtures wearing one name — and the failure is silent, because a 2.3.7 row and
+# a 2.3.6 row are byte-identical in the TSV. `fcode run --help` on this box
+# already advertises `2.3.6 -> 2.3.7`, so the drift is not hypothetical: the
+# first `pip install fcode` on a fresh server gets the NEWER engine by default.
+#
+# HOW TO CHANGE IT: bump this file, `orchestrate.sh setup --execute` every host
+# (it installs `fcode==<pin>`), and treat rows either side of the bump as
+# different surfaces. Never edit it to match a server.
+#
+# Read by: tools/vps/worker.sh (refuses to run on a mismatch)
+#          tools/vps/orchestrate.sh (setup pins pip to this)
+2.3.6
