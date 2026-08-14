@@ -47503,3 +47503,22 @@ on a live prereg rather than in retrospect.
 # breaks any later md5 verification against the platform). A SALTFLOOR0
 # follow-the-seal arm is a legitimate future queue candidate — research's to
 # admit; MAPSALT flat-at-1000 is weak evidence either way.
+
+# 2026-08-14T13:29:34Z (`date -u`) — **BUILDER s39: V141VS140 GATE-1000 @ n=1005 = 46.37 ±3.1
+# < 48 — DROP, FUTILITY, per the shard's OWN prereg** (SCREEN-v141vs140:
+# "futility gates apply" — s38 wrote the clause; the gate is mechanical, not
+# a stretch onto a measurement leg). Shard cancelled, rows kept.
+# **DESCRIPTIVE BENCHMARK READ AT THE DROP (n=1005, the shard's final n):
+# x3r0's v141 takes 46.37% ±3.1 against live v140 head-to-head on the full
+# 15-map post-patch pool.** The 81.7% figure was v141's README run vs his own
+# local multisalt_v2 (echo-loop fixture class, no current-bot control) — this
+# was that control. Per the prereg: descriptive, NO ship inference either
+# direction; slot calls remain Magnus's/x3r0's. Per-map splits owed at wrap-
+# grade leisure from kept rows.
+# **SEPARATE ALLOCATION DECISION (D5 — typed apart from the futility gate):
+# V141VS140R (remote, 2700) CONTINUES.** Reason: it answers a PUBLIC claim on
+# an independent host at full benchmark precision (research's explicit
+# preference — thin n costs most there); costs ~1h of box time; the four new
+# arms still complete overnight. The D26 pool declaration from my slate block
+# now reads: remote-only n=2700 is the verdict surface, local kept rows are
+# corroboration.
