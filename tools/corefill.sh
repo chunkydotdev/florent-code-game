@@ -112,9 +112,9 @@ while true; do
   if [[ -d scratchpad/corefill_cancel ]]; then
     for cf in scratchpad/corefill_cancel/*(N); do
       csh=${cf:t}
-      if ps ax -o command= 2>/dev/null | grep -q "[o]vernight.sh $csh "; then
+      if ps ax -o command= 2>/dev/null | grep -q "[o]vernight[a-z0-9_]*\.sh $csh "; then  # variant runners too (pool26/mapfix) — the unmatched-pattern class, 3rd instance 2026-08-14
         say "CANCEL $csh -- killing on request. Partial rows are KEPT and remain readable."
-        pkill -f "overnight.sh $csh " 2>/dev/null
+        pkill -f "overnight[a-z0-9_]*\.sh $csh " 2>/dev/null
       fi
       print -r -- "cancelled $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $STATE/$csh
       rm -f $cf
@@ -126,7 +126,7 @@ while true; do
   fi
 
   # ---- guard 2: blind is not idle -----------------------------------------
-  running=$(ps ax -o command= 2>/dev/null | grep -c "[o]vernight.sh ")
+  running=$(ps ax -o command= 2>/dev/null | grep -c "[o]vernight[a-z0-9_]*\.sh ")
   if [[ -z $running ]]; then
     say "BLIND: cannot read process table -- refusing to launch this cycle"
     sleep $POLL_S; continue
