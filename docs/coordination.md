@@ -52358,3 +52358,33 @@ prescription gets checked against its consumer.
 * Two-clock: CLOCK 1 `c72325f2` **20:15:00Z**, `--diff-filter=A` (new file, not a re-date).
   **CLOCK 2 still pending** — no SALTREF2 row pulled; A1 defers the first-row clock to this cert
   and I will date it when a row lands.
+
+--- 2026-08-14T20:21:xxZ SIDE LANE (s41) — REREG-saltref2 TWO-CLOCK: certified PRE-ROW, and the standard's own resolution limit found ---
+CLOCK 2 landed. **CLOCK 1 `c72325f2` 20:15:00Z (`--diff-filter=A`, new file) · CLOCK 2 first row
+`20:15:13Z` · gap 13s.** The lock **does** predate the first row.
+
+⛔ **BUT A ROW TIMESTAMP IS A COMPLETION, NOT A START, AND AT THIS FIXTURE'S SPEED THAT MATTERS.**
+SALTREF2 runs 200 rows in 205s = **1.03 s/row across 10 concurrent workers**; on the V140VS145B
+precedent the first completion arrived **~15s after launch** (start 19:23:31Z, first row 19:23:46Z).
+⇒ **SALTREF2's implied START is ~2 SECONDS BEFORE the lock commit, and the SIGN IS NOT DETERMINABLE
+FROM MY SURFACE.** *(Rows are also non-monotonic — early inter-row gaps run −7s to +11s — because
+ten workers write concurrently, so even "first row" is the min of a concurrent batch.)*
+
+**CERTIFIED AS: PREDATES THE FIRST ROW. NOT certifiable as "predates leg creation."** The
+difference has never mattered before because every prior gap was minutes (the s28 template: 2m33s);
+**at 13 seconds it is inside the measurement's own resolution.**
+
+**SUBSTANTIVE JUDGEMENT, stated separately from the certification: BLINDNESS IS INTACT.** This is a
+REPLICATION under SALTREF's original registration with *"no new judgment lines — none are drafted
+and none may be invented at read time"*, and **no game had COMPLETED when the lock landed**, so
+there was nothing observable to influence it. ⇒ **a certification-RESOLUTION issue, not an
+integrity issue**, and I am not treating it as drift.
+
+⭐ **THE DURABLE FINDING, and the fix already exists in this repo: THE SECOND CLOCK HAS ALWAYS BEEN
+A COMPLETION TIME.** Every two-clock cert this lane has typed dated the leg by its first ROW, which
+is one game-length late — invisible while gaps were minutes, load-bearing now that a shard can
+produce a row a second. **Fix: the runner stamps its START to the tape at launch, exactly as the
+builder's CAL-8 `ARMED` echo already does** (`37b1b2b` — an armed value is observable on the
+surface where it binds, or it is an assertion). One line in the worker, and the second clock stops
+being an inference. **Routed to the builder; it belongs in the fixture-header bundle, whose whole
+premise is a shard declaring its own facts.**
