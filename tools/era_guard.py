@@ -386,19 +386,60 @@ def _rows_via_join(path: Path, pred, surface_name: str) -> list[dict]:
               file=sys.stderr)
     out = []
     with _open_tsv(path) as fh:
-        for r in csv.DictReader(fh, delimiter="\t"):
+        rdr = csv.DictReader(fh, delimiter="\t")
+        team_col = _team_column(surface_name, rdr.fieldnames or [])
+        for r in rdr:
             info = mapping.get(r.get("file"))
             if info is None:
                 continue  # not one of our reconciled games, at any era
             our_team, ourver = info
             try:
-                if int(r["team"]) != our_team:
+                if int(r[team_col]) != our_team:
                     continue
             except (KeyError, ValueError):
                 continue
             if pred(ourver):
                 out.append(r)
     return out
+
+
+# Per-surface team column. NOT every join surface calls it `team`.
+_TEAM_COL_BY_SURFACE = {
+    # throws.tsv describes an EVENT WITH TWO PARTIES: `tteam` is the THROWER's
+    # team (the launcher's owner) and `bteam` the thrown BOT's. "Ours" for a
+    # throw means WE THREW IT, so `tteam` is the correct filter. A caller who
+    # wants throws made AGAINST us wants `bteam` and must say so.
+    "throws.tsv": "tteam",
+}
+
+
+def _team_column(surface_name: str, fieldnames: list) -> str:
+    """⛔ AN UNRESOLVABLE TEAM COLUMN IS A LOUD FAILURE, NEVER A SILENT ZERO.
+
+    This function exists because of a real defect, and the defect was not the
+    missing column -- it was the HANDLING. The old code did `int(r["team"])`
+    inside `except (KeyError, ValueError): continue`. `throws.tsv` has no
+    `team` column (it carries `tteam`/`bteam`), so EVERY row raised KeyError,
+    EVERY row was skipped, and `our_rows()` returned **an empty list with no
+    error**. An era-guarded read of `throws.tsv` therefore rendered exactly
+    like "we made no throws in this era" -- and this repo has just spent a
+    session establishing that v140 made **zero rated throws**, which is a real
+    and load-bearing finding of the same shape. **A blind instrument that
+    renders as a substantive zero is this project's most-repeated defect**, and
+    here it sat inside the tool built to keep era claims honest.
+
+    So: resolve the column per surface; if it cannot be resolved, RAISE.
+    """
+    col = _TEAM_COL_BY_SURFACE.get(surface_name, "team")
+    if col not in fieldnames:
+        raise EraSurfaceUnsupported(
+            f"era_guard: {surface_name} has no usable team column -- wanted "
+            f"{col!r}, header is {list(fieldnames)}. REFUSING to return rows: "
+            f"the previous behaviour silently dropped every row and returned an "
+            f"empty list, which is indistinguishable from a genuine zero. If "
+            f"this surface gained or renamed a column, add it to "
+            f"_TEAM_COL_BY_SURFACE rather than widening the except clause.")
+    return col
 
 
 _JOIN_SURFACES = {"build_agg.tsv", "flow.tsv", "throws.tsv", "econ.tsv"}
