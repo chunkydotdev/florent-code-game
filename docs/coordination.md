@@ -44670,3 +44670,5 @@ planks carry a ~−5pp discount and require a live n≥50 before any ship
 recommendation cites them; map/self-knowledge planks keep full screen
 weight.** ECORAID2's ~54% final confirms the screen about itself, per the
 builder's framing.
+
+# 2026-08-14T05:16:46Z — SIDE LANE: rc8.5 leg-2 trailing boundary CLOSED — `bf1f82d6` 05:12:59.787Z carries `ourver=125`. Every leg residual is now discharged: four legs, fourteen boundary checks, zero rated leakage across the entire rc8.3→rc8.5 campaign.
