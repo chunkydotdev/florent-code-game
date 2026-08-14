@@ -49276,3 +49276,53 @@ session's largest miss.
 # PIPELINE: NEXT item 1 (candidate sizing) ABSORBED by the sweep's own final
 # section; spawning item 3 (home-lock mechanism decode) now per the rolling
 # rule.
+
+# 2026-08-14T15:2xZ (`date -u`) — **RESEARCH s40: THREE SEGMENT CANDIDATES ADMITTED UNDER OBLIGATION 15 — ranked 1/3/2, all carrying a WINNER'S-CURSE RIDER**
+The builder's segment sweep (`docs/research/SEGMENT-SWEEP-2026-08-14.md`) is
+`OBLIGATION 15` consumed within the hour of being written. Controls clean (null
+shards 0/6 at |z|≥2; NEG125 positive control z=+18.2); **10 valid hits at |z|≥3
+against 0.28 expected.**
+
+**⛔ THE RIDER, WHICH APPLIES TO ALL THREE AND IS THE THING A SWEEP-FED LEG GETS
+WRONG.** These are **SWEEP-DISCOVERED**, so 15a's *"expected direction"* is
+**INHERITED FROM THE DISCOVERY, NOT PREDICTED** ⇒ **each re-screen is a
+REPLICATION test, not a discovery test**, which is a weaker claim than a segment
+declared on a fresh plank and must be written as such.
+**And the corollary that sets the bars: 10-vs-0.28 establishes that the FAMILY is
+real; it does NOT protect any individual hit, because each was SELECTED ON ITS
+EXTREMITY. 93.7%, 77.3% and the floor-drag deltas are WINNER'S-CURSE ESTIMATES.**
+⇒ **NO RE-SCREEN MAY USE ITS DISCOVERY NUMBER AS ITS BAR.** Size against the
+pooled/parent expectation plus a pre-declared minimum interesting effect; the
+discovery estimate is what is being TESTED, never what it is tested against.
+
+**RANKING — 1 → 3 → 2, and the re-order is deliberate:**
+1. **MAPCODE IS SEGMENT-CONDITIONAL.** First because part of its evidence sits
+   **OUTSIDE the sweep's multiplicity** — the ladder corroboration was not one of
+   the ~130×segment tests, so it is independent confirmation rather than another
+   draw — and because it concerns **a knob we already ship**, with the live
+   possibility that we run a NEGATIVE on maps in every rotation. **Primary
+   segment: maps ABSENT from `MAP_CODES`; direction NEGATIVE.**
+2. **(ranked 2nd) SEAL-FLOOR DRAG ON LOCKHEAVY — promoted above ROUTEONLY
+   because it is about the LIVE BOT:** v140 ships floor=0 EVERYWHERE, so if the
+   drag is real we are carrying it now on midgard/ragnarok/valkyrie. ⚠
+   **SEALFLOOR24 leaning the opposite way is a genuine weakener and goes in the
+   prereg as a stated inconsistency — five arms one way with one dissent is a
+   pattern WITH a dissent, and the re-screen should be powered to RESOLVE the
+   dissent rather than outvote it.**
+3. **(ranked 3rd) ROUTEONLY RETRO-RESCUE.** A dropped arm (47.6 pooled) rescued
+   on a two-map segment found post-hoc is the **maximum winner's-curse case in
+   the set**. Admissible because the sweep names its shared-control confound and
+   designs around it; **its prereg should state that failure to replicate is the
+   expected outcome under the null it tests.**
+
+**OPEN, back to the builder:** (a) **which maps the sweep called "legacy"** — I
+could not corroborate independently because all 25 map names have `.map26` files
+and `MAP_CODES` is keyed by (w, h, core positions) rather than name; (b) a small
+cross-check to settle before both numbers land in one document — their ladder
+corroboration reads **frostgate 44% / royale 48%**, my current-era per-map cut
+(415 games) reads **frostgate 44.0% (11/25) — exact — and royale 45.8%
+(11/24)**.
+**COVERAGE HONESTY, reinforced: 71 of ~130 arms predate the 900-pool ⇒ THAT ERA
+IS SILENT ON SEGMENTS, NOT CLEAN.** *"No segment effect in the older arms"* is an
+absence of measurement, not a result — the exact distinction 15a's "none
+expected" clause exists to force onto the page.
