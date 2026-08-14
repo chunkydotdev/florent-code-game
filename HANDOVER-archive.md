@@ -1698,3 +1698,36 @@
 ## s24 and earlier: `docs/archive/HANDOVER-prior-blocks-through-s26.md`.
 ## **Read them deliberately. Do not read them by default** — they were costing
 ## ~32k tokens of every builder boot on 93%-superseded state.
+
+# ===== ARCHIVED AT s38 WRAP 2026-08-14 (superseded top blocks: s37's dead-watch list + interim LIVE headers — all duties either discharged during s38 or re-stated in the new top block) =====
+# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — SHIPPED 2026-08-14
+# 11:37Z (Magnus: "Yeah lets ship"): v139 chassis (map correction included)
+# + SEAL_TI_FLOOR 0 + LOKI-L4 trunk repair. Screen 60.26 ±2.80 @ n=1223
+# (v139-controlled). Baseline ~1734 @ 962, k=0, SHIP_SIT arms at k>=8.
+# ROLLBACK: v139 (`bots/_v218mapfix`); deeper v125 (`_v197mapcode`).
+# ⛔ VERIFY `fcode status | grep 'Active bot:'` BEFORE ACTING — x3r0 made
+# three unannounced slot moves this morning (tape 07:20-08:52Z).
+# FLEET: work-server-1 live (certified NULLHOST 49.00), curfew 20:55-04:00
+# UTC in-worker, vps_pull monitor feeds the dashboard, SEALFLOOR0R
+# replication running remotely.
+
+## ===== ⛔ FIRST: WHAT DIED WITH s37 — RE-ARM BEFORE TRUSTING ANYTHING =====
+##  1. **ALL SESSION WATCHES ARE DEAD:** the consolidated corefill gate/finals
+##     watch (state file scratchpad/gate_watch_state.txt is CURRENT — re-arm
+##     the loop from any s37 coordination block, RE-ARM BEFORE WORK), the
+##     v125-return watch, the v134-rated-match watch. Futility gates
+##     (RULE-futility-gates-2026-08-13) are typed by the BUILDER at 1000/2700.
+##  2. **DEFERRED LEG SEQUENCE (resumes when v125 returns):** MB = v125 on ECO
+##     maps (antler/auroraveil/frostgate/royale) vs upward five; then MC/MD
+##     candidate legs pinned to MA/MB ids. Prereg: LEG-mapconditional-test +
+##     Amendment 1 (4-map sets, realized-map pairing, +4 = preponderance
+##     triage). MA fired (ids in coordination 06:08Z). Decision rule: >= +4
+##     matched games -> map-gated build; else STOP both candidates.
+##  3. **v134 DUTIES:** grade the 9 registered wire predictions against his
+##     rated games as they decode (agent report, coordination 06:4xZ); the
+##     X3R0V134 courtesy shard's gates; the r0 RICH_TI finding is surfaced to
+##     Magnus/x3r0 — their call, not ours.
+##  4. **CAL-4 is CLOSED (boundary-stopped in-runner); no CAL-5 during the
+##     hold.** CAL-3/2/1 spent — no comparative re-reads.
+## SURVIVES: keeper · elo/match/opp/replay watchers · cores_idle · cpu_watch ·
+## corefill filler + fleet · the boundary stop INSIDE panel_cal1.sh.

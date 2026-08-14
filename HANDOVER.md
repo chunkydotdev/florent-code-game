@@ -1,35 +1,36 @@
-# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — SHIPPED 2026-08-14
-# 11:37Z (Magnus: "Yeah lets ship"): v139 chassis (map correction included)
-# + SEAL_TI_FLOOR 0 + LOKI-L4 trunk repair. Screen 60.26 ±2.80 @ n=1223
-# (v139-controlled). Baseline ~1734 @ 962, k=0, SHIP_SIT arms at k>=8.
-# ROLLBACK: v139 (`bots/_v218mapfix`); deeper v125 (`_v197mapcode`).
-# ⛔ VERIFY `fcode status | grep 'Active bot:'` BEFORE ACTING — x3r0 made
-# three unannounced slot moves this morning (tape 07:20-08:52Z).
-# FLEET: work-server-1 live (certified NULLHOST 49.00), curfew 20:55-04:00
-# UTC in-worker, vps_pull monitor feeds the dashboard, SEALFLOOR0R
-# replication running remotely.
+# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** (mapfix + sealfloor0 +
+# l4repair) — shipped 2026-08-14 11:37Z, screen 60.26±2.8@n=1223, rated era
+# k=1 net +16.1 (5-0 arsonist duck), SHIP_SIT arms at k>=8. Baseline 1734 @
+# 962 at ship. ROLLBACK: v139 (`_v218mapfix`), deeper v125 (`_v197mapcode`).
+# ⛔ VERIFY `Active bot:` BEFORE ACTING — x3r0 made 4 unannounced slot moves
+# on 2026-08-14 (all taped); his v141 analysis was delivered on his request.
 
-## ===== ⛔ FIRST: WHAT DIED WITH s37 — RE-ARM BEFORE TRUSTING ANYTHING =====
-##  1. **ALL SESSION WATCHES ARE DEAD:** the consolidated corefill gate/finals
-##     watch (state file scratchpad/gate_watch_state.txt is CURRENT — re-arm
-##     the loop from any s37 coordination block, RE-ARM BEFORE WORK), the
-##     v125-return watch, the v134-rated-match watch. Futility gates
-##     (RULE-futility-gates-2026-08-13) are typed by the BUILDER at 1000/2700.
-##  2. **DEFERRED LEG SEQUENCE (resumes when v125 returns):** MB = v125 on ECO
-##     maps (antler/auroraveil/frostgate/royale) vs upward five; then MC/MD
-##     candidate legs pinned to MA/MB ids. Prereg: LEG-mapconditional-test +
-##     Amendment 1 (4-map sets, realized-map pairing, +4 = preponderance
-##     triage). MA fired (ids in coordination 06:08Z). Decision rule: >= +4
-##     matched games -> map-gated build; else STOP both candidates.
-##  3. **v134 DUTIES:** grade the 9 registered wire predictions against his
-##     rated games as they decode (agent report, coordination 06:4xZ); the
-##     X3R0V134 courtesy shard's gates; the r0 RICH_TI finding is surfaced to
-##     Magnus/x3r0 — their call, not ours.
-##  4. **CAL-4 is CLOSED (boundary-stopped in-runner); no CAL-5 during the
-##     hold.** CAL-3/2/1 spent — no comparative re-reads.
-## SURVIVES: keeper · elo/match/opp/replay watchers · cores_idle · cpu_watch ·
-## corefill filler + fleet · the boundary stop INSIDE panel_cal1.sh.
-
+## ===== ⛔ FIRST: WHAT DIES WITH s38 — RE-ARM BEFORE TRUSTING ANYTHING =====
+##  1. **gate_watch loop** (`zsh tools/monitors/gate_watch.sh` as a waking
+##     session task; ledger scratchpad/gate_watch_state.txt is CURRENT).
+##     ⛔ D4 (retro): the manual re-arm step FAILED under ship-flow once
+##     today (OSCLOCK2 dropped 45 min late) — build the self-re-arming
+##     version before trusting yourself more than s38 did.
+##     PENDING GATES/FINALS: MAPFIX2 final (~2160, replication of the v139
+##     ship read, was 57.5 tracking above parent) · SEALFLOOR0 final
+##     (~55, then D26 pool w/ remote SEALFLOOR0R) · SEALREPAIR (the SHIP's
+##     confirmation screen, was 60.3@1223) · L4REPAIR2 (54.3@3023) ·
+##     AIMTHROW2 · MAPSALT (x3r0's salt table on v140) · NESTSHOT (#3
+##     one-gate arm) · V141VS140 (benchmark answering x3r0's 81.7% claim).
+##  2. **holder_watch** (`EXPECT=v140 zsh tools/monitors/holder_watch.sh`).
+##  3. **vps_pull loop** (`bash tools/monitors/vps_pull.sh >> corpus/
+##     vps_pull.log`) — without it remote rows go stale (dashboard shows
+##     pull-age honestly). Remote worker itself SURVIVES: work-server-1,
+##     curfew 20:55-04:00 UTC in-worker, SEALFLOOR0R filling (was 53.3).
+##  4. **CAL-6 panel runner** (INCUMBENT=140, cal6 PTR/OUT — resumes from
+##     its pointer; research's standing rule: new-holder panels only after
+##     40 min stability + tree named).
+##  5. QUEUE: #14 destination arm (OSCLOCK2's successor — freed-into-
+##     idleness strengthened by its 46.4 drop) · #41 siting/facing (the
+##     other #3 leg) · MAPSALT local re-sweep if its screen is flat ·
+##     scout tier (Magnus-approved in principle, unfired) · fcode 2.3.8
+##     upgrade boundary checklist (taped 2026-08-14, incl. --mark 0 on 11
+##     call sites + maps/ valkyrie sync).
 ## ===== THE NIGHT IN ONE PARAGRAPH =====
 ## Ship bar raised (Magnus) -> s36 slate finals typed (UNDERECO only above-
 ## band single; COMBO 52.30; ECORAID fix 53.22 best) -> rc8.3/8.4/8.5 live
