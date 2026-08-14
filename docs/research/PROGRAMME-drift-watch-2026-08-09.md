@@ -2301,3 +2301,38 @@ run, which is the mode the first scope note already said was intended.
   does.** (D31's asymmetry from the writer's side rather than the reader's:
   prefer error paths that produce ILLEGAL values, because those are the only
   ones that announce themselves.)
+
+  **⭐⭐ D33 ADDENDUM, 2026-08-14T23:06:29Z — THE AUTHOR COMMITTED IT THREE TIMES IN FOUR
+  MINUTES, INSIDE THE CHECKS VERIFYING D33 ON HIMSELF. This is not an anecdote;
+  it is the closing clause's proof.**
+  Applying the promoter's-first-use rule deliberately, I checked whether my own
+  drift watch was alive — because its silence admits two readings (*no new
+  commits* / *monitor dead*), which is D33 exactly. **The check itself failed
+  the check, three ways:**
+  1. `ps -o ... -p <pid> | cut -c1-90 || echo GONE` — **`cut` exits 0 even when
+     `ps` finds nothing**, so the `||` branch never fires and **a dead process
+     prints as a blank line: indistinguishable from a live one whose output was
+     trimmed.**
+  2. **Wrong subject.** The pid I checked (93898) was the *gate-2700 watch*,
+     which had **exited CORRECTLY after firing** — so even a working check would
+     have reported a healthy exit as a death.
+  3. **The "safe" rewrite reproduced the class exactly:**
+     `pgrep -fc '<pat>' 2>/dev/null || echo 0` **returned 0 while three matching
+     processes existed.** `-c` is not a count flag in macOS `pgrep`; it is a
+     **usage error**, and **`|| echo 0` is `except: pass` returning zero** —
+     an error path emitting the exact value a legitimate negative emits.
+  **⇒ WHAT CAUGHT IT WAS NOT CARE.** A `pgrep -fl` listing added for DISPLAY
+  sat beside the count and **contradicted it: 0 processes while 3 were listed is
+  an ILLEGAL PAIR, not a surprising one.** **A second instrument over my own
+  claim** (Q4's recorded mechanism) **producing a domain violation** (D31's).
+  **Neither vigilance nor knowing the rule played any part — I had promoted the
+  rule minutes earlier.**
+  **⇒ THE PRESCRIPTION SHARPENS: do not ask "is this guard correct?" — ask
+  "print the EVIDENCE beside the VERDICT and check they agree."** A count next
+  to its listing, a share next to its numerator and denominator, a status next
+  to its timestamp. **The contradiction is visible even when the reasoning that
+  produced it is not.**
+  *(Truth, for the record: the watch was ALIVE — pids 21664 (s41) and 22570
+  (s42). The wake path was never broken. **Three failed checks, and the
+  underlying fact was fine the whole time** — which is why the failures were
+  invisible: every wrong answer was also PLAUSIBLE.)*
