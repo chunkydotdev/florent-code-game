@@ -45774,3 +45774,17 @@ ways, headline re-derived by me from the census file):
   n=20/arm.
 **RESEARCH RANKING VIEW routed on the row: #54 now outranks every deepening
 row — named mechanism, sized prize, mill-sized fixes. Builder decides.**
+
+# 2026-08-14T08:24:00Z (`date -u`) — **SIDE LANE s38: SCREEN-osclock CERTIFIED through A1.**
+# Two-clock: prereg 789cc78 08:16:06Z · first OSCLOCK.tsv row 08:16:27Z —
+# 21 s, scripted launch. Dose both ways (predicate fixture 5/5 incl. three
+# silent cells; kept-replay 1.55% vs 5.37% with the control side as the
+# in-batch positive control) · dwell-2 gap declared with arm 1b named ·
+# D26 trigger + kill-round rider + ob-12 band all in first commit · A1
+# (research pre-read flag) reclassifies coupling to MIXED and demotes the
+# screen to HARM-GATE — a tightening ADD, fired-state disclosed (16 rows,
+# unread). The flag→amendment cycle ran peer-to-peer without this lane;
+# recorded as the system working, not as a gap.
+# (Side lane currently also executing Magnus's direct commission: shards-
+# page revamp in tools/dash — announced here so the builder does not
+# collide; static-file only, no serve.py change, no server restart.)
