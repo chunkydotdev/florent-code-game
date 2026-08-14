@@ -53389,3 +53389,51 @@ never counted flags correctly WITHHELD.** Today ran **five withheld** against th
 errors, and s41 recorded four more dying pre-publication with no home. **The only metric on which
 this lane's improvement is currently invisible.** Goes into the retro at the next run, per the
 routing rule — not into a wrap line.
+
+--- 2026-08-14T21:03:53Z (`date -u`) SIDE LANE (s42) — ⭐ I RAN MY OWN FLAG'S DISCRIMINATOR AND IT WENT AGAINST MY HYPOTHESIS. THE "WE HAVE A v140 PROBLEM" READING IS NARROWED, AND I AM CORRECTING MY OWN PUBLISHED FRAMING ---
+
+Twelve minutes ago I published that the Bisons cell cannot exclude *"a v140-family problem that
+GENERALISES BEYOND THEM"* and called that the alarming reading. **The archive can speak to the
+generalising half for free, so I checked it rather than leave my own alarm standing.**
+
+## THE CUT — ladder only, opponents matched across eras, Bisons EXCLUDED
+Eras taken from the Bisons decomposition, **not invented**: A = our {116,123,125}, B = our
+{139,140,141,142}. **Fixtures split, never pooled** — the rule I enforced on research twice today.
+
+    LADDER, opponents played in BOTH eras (mix controlled by MATCHING)
+      pooled A: 280 games 58.6%    pooled B: 135 games 53.3%    delta -5.24pp
+      naive 95%            -5.24 +- 10.3pp
+      DEFF-corrected 1.529 -5.24 +- 12.7pp   (match + opponent clusters BOTH live, enumerated)
+      per-opponent signs: 5 up / 6 down / 12   <- balanced, distribution-free
+
+**⛔ RESTATED AS AN EXCLUSION BEFORE THE CORRECTION IS APPLIED**, per `CLAUDE.md`'s direction
+clause — a fail-to-exclude read raw is exactly what DEFF launders:
+**the interval [-17.9, +7.5] EXCLUDES a league-wide regression of the magnitude at issue.**
+The Bisons swing is ~32pp (82.2% -> 50.0%). **A −32pp league-wide effect would have been seen. It
+was not.**
+
+## ⇒ WHAT I GOT WRONG AND WHAT REPLACES IT
+* **CORRECTED:** *"a v140-family problem that generalises beyond them"* — **the broad form is
+  EXCLUDED at the magnitude that matters.** My framing was the alarming reading and the cheapest
+  available check does not support it. **I had a live hypothesis and the error would have run
+  toward it; the check is what stopped that, not care.**
+* **WHAT SURVIVES — two readings, both still live, both narrower:**
+  1. their v8 countered us (**opponent-side**), or
+  2. our v139-142 changed something **specifically** bad against The Bisons (**our-side, but
+     OPPONENT-SPECIFIC, not general**).
+  **The pinned leg still separates these two and nothing here replaces it** (D12: archive
+  prioritises, never retires).
+
+## ⚠ AND THE NUMBER THAT WOULD HAVE TEMPTED ME, NAMED SO NOBODY ELSE BANKS IT
+The same cut on the **UNRATED** surface reads **-15.22pp +- 4.9, EXCLUDES ZERO** — and it **MUST
+NOT be read as a regression.** Unrated pools **PROTOTYPES**, and our screening arms deliberately
+include ablations and NEG cells that are bad **by construction**. A drop there is a statement about
+**which arms we chose to screen**, not about our shipped bot. **The surface that measures the
+shipped bot is the LADDER, and it is the one that came back flat.** This is the two-corpus-surface
+rule in `CLAUDE.md` applied to a number that flattered my own hypothesis.
+
+## SMALLEST-CELL CAVEAT, stated rather than buried
+Largest single delta is **LingLing40 -43.3pp on n=5** in era B — the **highest-churn team in the
+league** (`CLAUDE.md`: v33->v41 in one day, which is why it is the pinning example). **n=5 against
+a moving target. Do not read that cell.** It is also the cell most able to drag a pooled mean, and
+the sign test (5/6) is the guard that makes the pooled number safe to quote.
