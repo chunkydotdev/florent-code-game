@@ -52388,3 +52388,53 @@ builder's CAL-8 `ARMED` echo already does** (`37b1b2b` — an armed value is obs
 surface where it binds, or it is an assertion). One line in the worker, and the second clock stops
 being an inference. **Routed to the builder; it belongs in the fixture-header bundle, whose whole
 premise is a shard declaring its own facts.**
+
+--- 2026-08-14T20:21:14Z (`date -u`) RESEARCH (s42) — ⛔⛔ **CORRECTING MY OWN TLE NUMBERS FROM ~20 MINUTES AGO. THE FINDING SURVIVES AND STRENGTHENS; ONE FIGURE WAS WRONG BY FOUR ORDERS OF MAGNITUDE.** ---
+**THE BUG:** I joined `econ.tsv` to `meta_join` and used **`us_side`** to pick our side.
+**`meta_join` covers EVERY archived replay** — 41,878 rows, most of them **other teams'
+games**, where `us_side` is meaningless. My "our side" filter was selecting an arbitrary
+side of strangers' games.
+⭐ **IT ANNOUNCED ITSELF AS AN IMPOSSIBLE VALUE:** the resulting "our version" list contained
+**v226 and v243 — versions our team has never had.** *(Third time today the
+impossible-value rule caught something; the trigger was outcome-independent, exactly as the
+rule claims.)*
+**THE FIX:** filter to rows where `OpenSverige` is `teamAName`/`teamBName` **first**, then
+derive the side from the NAME. econ drops 236,468 → **42,884 rows.**
+✅ **VALIDATION: the corrected join reproduces s40's independently derived figure TO THE
+DIGIT — 107 TLE'd turns.** *(s40: "107 TLE'd turns of 23.3M"; mine: 107 of 24.6M.)*
+
+## CORRECTED — ALL RESTRICTED TO **OUR GAMES ONLY**
+```
+OURS   (all versions, all time)   107 / 24,585,869 = 0.0004%
+THEIRS (opponents in our games)   305,979 / 27,837,374 = 1.0992%
+
+OPPONENT TLE RATE IN OUR GAMES, since 2026-08-13:
+  HTTP 418      16.531%  (43,322/262,068)  <- IN BAND, and we lose to them
+  Leviathan     14.282%      Erebus         2.979%  <- in band
+  Jython         3.760%      LingLing40     1.177%  <- in band
+                             0033           0.023%  <- in band
+```
+⇒ **HTTP 418 IS WORSE THAN I REPORTED (16.5%, not 13.5%) AND WE ARE BETTER (0.0004%, not
+3.90%). The ratio is ~41,000×, not 3.5×.**
+
+⛔ **RETRACTED, and it was the more damaging half:** *"our own 3.90% is not nothing — #44
+already flags v125 at 87.6% of the TLE ceiling."* **The 3.90% was an artefact and is FALSE.**
+Our shipped bots essentially never time out: **v104, v116, v125 and v140 are all EXACTLY 0
+across millions of unit-turns.** *(`#44`'s 87.6%-of-ceiling claim is about HEADROOM, a
+different quantity, and is untouched by this — but it must not be propped up with my number.)*
+**Also drop Team imeto (65%) and Kvarnholmen (26%) from any framing here** — real for those
+teams, but from games we are not in.
+
+## ⛔ AND A GOVERNANCE POINT I SHOULD HAVE CHECKED BEFORE THE FIRST NOTE
+`docs/research/SIX-ROADS-STATUS-2026-08-13.md` **already carries this road**:
+**CPU-timeout INDUCTION is HELD ON NORMS — Magnus owes the organisers a question before any
+induction leg** — and the row explicitly warns *"measuring headroom is not inducing
+exhaustion, and merging them is the error this row already warns about."* **I merged them.**
+⇒ **THE SPLIT, and only the first is open:**
+* **OBSERVE-AND-EXPLOIT-TIMING** (read their frozen phases, time our pushes) — **pure
+  observation, UNBLOCKED, needs no question.**
+* **INDUCE-BY-NORMAL-PLAY** (our economy happens to load them) — **just playing the game.**
+* ⛔ **INDUCE-BY-DELIBERATE-LOAD** (junk entities to inflate their scan cost) — **HELD ON
+  NORMS. Not a fireable queue row until Magnus asks.**
+**The retrospective corpus dose-response is observation and proceeds either way** — it
+PRICES the held road without walking it.
