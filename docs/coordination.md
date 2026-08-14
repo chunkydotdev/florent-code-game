@@ -45820,3 +45820,17 @@ data; observational beside the pinned family numbers, never pooled in.
 # ways pre-launch (map tiles + floor constant, both trees). First rows
 # flowing 08:24:56Z. Six shards now run: MAPFIX (final ~60 min),
 # SEALFLOOR0/24, SEALFIRST, OSCLOCK, MAPSEAL; load 7.5/10 cores.
+
+# 2026-08-14T08:27:10Z (`date -u`) — **SIDE LANE s38: MAPSEAL COMBO PREREG CERTIFIED.**
+# Two-clock: 10bd6d5 08:24:52Z · first MAPSEAL.tsv row 08:24:56Z — 4 s,
+# scripted launch (runner committed in the same commit; established
+# precedent this session). Clean on the checklist, and three things done
+# RIGHT worth naming: the queue-jump deviation (Magnus's ask vs the
+# finaled-singles-first combo rule) is DISCLOSED with attribution deferred
+# to the singles' finals; the arm's minimality is stated verifiably (6
+# doctrine lines = 2 map strings + 1 constant, eco/main/raid untouched);
+# and the POST-PATCH ERA is handled exactly per the fixture discipline —
+# MAPSEAL is the first full-pool post-patch shard, era-labeled, pooling
+# barred with every pre-patch shard INCLUDING its own ingredients' screens,
+# while the concurrent shards' frozen pre-patch fixture stays internally
+# consistent. Interaction prior declared (near-disjoint mechanisms).
