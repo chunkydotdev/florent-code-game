@@ -50289,3 +50289,51 @@ merely "more rigorous".**
 # Harm-gate honesty rider adopted: 49.20 [46.1, 52.3] does NOT exclude a
 # −3.9pp harm — quoted as such wherever it travels. Escalation path noted:
 # Magnus can impose the higher bar knowing its hourly price.
+
+# 2026-08-14T17:2xZ (`date -u`) — ⛔⛔ **RESEARCH s40: EVICT58's DOSE DECODE — P1 FAILS BY 25×. THE PLANK IS REFUTED AS DESIGNED AND ENTERS NOTHING.**
+**Wire-decoded off `throws.tsv` (`tteam`=us, `bteam`=them, EXILE) across all 25
+leg games, all `oppver`=v57, all `ourver`=v144.**
+
+**P1 — EVICTIONS OF THEIR BUILDERS: 1 across 25 games = 0.04/game. REGISTERED BAR
+WAS >1.0. MISSES BY ~25×.** *(The single eviction was in `872086fc…game_1`,
+which we won — n=1, no inference drawn.)*
+
+## ⭐ THE ATTRIBUTION SPLITS CLEANLY, AND THAT IS WHAT THE LEG BOUGHT
+| dose | v140 control | EVICT58 leg |
+|---|---|---|
+| **launchers BUILT / game** | 0.341 (109 / 320 games) | **1.240 (31 / 25) — 3.6×** |
+| **evictions / game** | — | **0.04 (1 / 25)** |
+**⇒ THE ARM IS NOT INERT — THE CONDITIONAL PLANT WORKS (31 launchers across 9 of
+25 games). WHAT FAILS IS THE THROW.** ⇒ **the binding constraint is PICKUP
+OPPORTUNITY, not planting: 0033's builders never enter the forward launcher's
+d²≤2 envelope.**
+**And that follows from their own book rather than surprising it: `BOOK-0033`
+measured their core-kill as 100% TURRET FIRE, `batk_core` = 0 in 246/246
+archived games, EVERY ERA. They do not send builders forward — so a forward
+launcher near their core has nothing to pick up.**
+
+## THE RULING APPLIED TO ITSELF
+**Condition 2 of the 17:17:36Z ruling — *"P1 must fire; dose ≈ 0 refutes the
+plank as designed and it enters nothing"* — was registered BLIND to this dose two
+hours before it landed, and it has now excluded the plank it was written for.**
+**That is a pre-registered bar doing the one thing that makes it worth having,
+and it is worth more than the plank was.**
+
+## ⛔ WHAT IS **NOT** REFUTED — the distinction matters for `#45`/`#47`/`#51`
+**The eviction MECHANISM is untouched. Three opponents run it against US at
+22-33 throws/game** (Jython 32.9, Focalground 24.7, LingLing40 22.1), so it
+demonstrably works **where the pickup envelope is populated.** ⇒ **what died is
+this APPLICATION — a FORWARD launcher against a BACK-SITTING TURRET bot.** A
+HOME-side eviction launcher (`#47`'s territory, against opponents whose builders
+DO come forward) is a different question **and this leg says nothing about it.**
+**⇒ THE FAILURE IS OPPONENT-SHAPED, AND THE ROW MUST SAY SO** — otherwise the
+next reader sees "eviction refuted" and closes a mechanism that three teams use
+successfully against us every day.
+
+## CONSEQUENCE FOR THE v11 COMBO
+**Drop EVICT58 from the ingredient list.** The EVICT58-OUT arm is no longer
+needed ⇒ the attribution matrix simplifies to **COMBO vs BEST-INGREDIENT vs
+COMBO-minus-(`#63`/`SPKT`)** when those land.
+**Leg cost, for the record: one rate window, 36 seconds of prototype exposure,
+zero rated leakage. A refutation at that price is the fixture working exactly as
+the programme intends.**
