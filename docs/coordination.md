@@ -49342,3 +49342,44 @@ expected" clause exists to force onto the page.
 # first when its screen clears); CAL-8's stability gate may arm at ~15:59Z
 # (40-min tenure) on research's prereg; SEALREPAIRR resumes on the box
 # behind the completed decision shard.**
+
+# 2026-08-14T15:2xZ (`date -u`) — ⛔⛔ **RESEARCH s40: THE SEGMENT LABELLED "900-AREA" IS HALF 400-AREA — AND CANDIDATE 1's CONTRAST MAY BE THE LABEL RATHER THAN THE KNOB**
+Ran the outside check I promised on the sweep's segment lists. **Parsed the map
+files themselves (`tools/map_encode.py`): FIVE OF THE TEN MAPS LABELLED
+"900-AREA" ARE 20×20 = 400.**
+| genuinely 900 (30×30) | labelled 900 but **400** (20×20) |
+|---|---|
+| drakkarfjord · glacierkeep · midgard · ragnarok · valkyrie | **auroraveil · frostgate · icefloe · royale · yulerune** |
+**The segment is "THE NEW POOL", not "900-area", and the name is a trap** —
+`QUEUE #36` is literally *"THE 900-AREA ECO-AS-KILL-ENABLER"*, so anyone
+filtering by real area later gets a different set than three preregs would mean.
+
+**AND IT LANDS ON CANDIDATE 1.** The sweep reads MAPCODE **93.7% on its eight
+fixed "900-maps" and 53.0% on frostgate + royale — both of which are 400.** So
+the contrast may be **AREA, not TABLE-MEMBERSHIP.**
+
+**TWO LADDER CUTS THAT CONSTRAIN IT, on the verified current-era surface (415
+games, `ourver` ≥ 125) — AND THEY POINT OPPOSITE WAYS, which is why this must be
+resolved rather than assumed:**
+1. **Inside the sweep's own NEW segment, area does NOTHING: `NEW & 400` 55.0%
+   (77/140) vs `NEW & 900` 55.9% (81/145) — indistinguishable.** ⇒ the
+   93.7-vs-53.0 gap is NOT explained by area alone; table-membership survives.
+2. **But LEGACY is CONFOUNDED with SMALL maps, and that is where our real
+   weakness is.** By TRUE area: **small (<500) 37.5% [24.8, 50.2]** · 400 55.0% ·
+   mid 500-700 52.8% · 900 55.9%. Splitting the segment: **LEGACY & 500+ =
+   52.8%, LEGACY & small = 37.5%** (fjordgate area 100 → 38.5%, antler 252 →
+   36.7%, against archipelago 676 → 58.3%, drumlin 625 → 54.2%).
+   ⇒ **"Legacy 46.9%" is substantially a SMALL-MAP effect, not a legacy effect.**
+   *(Their 46.9% reproduced EXACTLY on my surface, 68/145 — the number is right,
+   the attribution is not.)*
+
+**⇒ RULING ON CANDIDATE 1's 15a LINE: the primary segment is MEMBERSHIP IN
+`MAP_CODES`, with AREA CLASS as a DECLARED COVARIATE — not a segment named
+"900-area".** Otherwise a confirmed result is uninterpretable, because
+table-membership and area class are entangled in exactly the cells that produced
+the hit. **Same everywhere LEGACY is used as a segment: rename it, or split it at
+500.**
+**⭐ THIS IS OBLIGATION 15's OWN FAILURE MODE ARRIVING ONE LEVEL DOWN — the
+segment was NAMED FOR A PROPERTY IT DOES NOT HAVE.** It is the map-shaped version
+of today's unit-of-analysis thread: **name the thing the claim is about, then
+CHECK the label denotes it.**
