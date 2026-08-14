@@ -46446,3 +46446,20 @@ GBNS · L4REPAIR2 [gate passed 54.60, grading at final] · #8) — this datum
 raises its prior, does not convert it to a rule. The eco family's last
 pre-registered road is closed on live evidence (point 6 satisfied: closure
 by live games, not by screen).
+
+# 2026-08-14T11:52:30Z (`date -u`) — **SIDE LANE s38: CORRECTION OF MY OWN 08:49 TAPE GLOSS + MD-TRIAGE CERT.**
+# My MD cert note carried "observed raw scores (MD ~17/20...)" and my
+# summary to Magnus said the ECO half "looks like it clears with room."
+# **WRONG — seat-inverted.** I printed the wire's scoreA-scoreB without
+# normalizing by our seat; the extraction's decode (ourver/oppver exact,
+# sourceMatch pointers confirming the pins) reads **MD 5/20 vs MB 5/20,
+# net 0.** The s30 winner_seat lesson verbatim, committed by me on the
+# same class of column. Tagged at occurrence per retro practice: KIND
+# judgement · STATE surveying · direction toward the exciting. The cert
+# itself (pins/versions/boundaries) is untouched — the score gloss was
+# never load-bearing and was labeled input, but the directional sentence
+# to Magnus was mine and was wrong.
+# **TRIAGE CERTIFIED: net 0 and MC's −1 both against the pre-committed
+# ≥+4 rule ⇒ STOP BOTH is the rule's own branch; the eco family's last
+# pre-registered road closes on live matched evidence — D12 compliant,
+# per-cell table on the tape, pin mechanism platform-confirmed.**
