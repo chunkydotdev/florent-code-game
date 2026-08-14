@@ -1,5 +1,64 @@
 # CERT — the CAL-8 registered read
 
+> ## ⛔⛔ AMENDED 2026-08-14T19:4xZ, AGAINST MYSELF — §1's PREMISE IS FALSE. D2 IS NOT TWO TEAMS; IT IS A **RENAME**, AND THE CELL IS **USABLE**.
+>
+> **I certified a finding whose premise I did not check.** §1 below endorses
+> research's *"cell D2 measures a different team than the reference"* and I
+> reproduced everything around it — the cell counts, the sign test, the
+> robustness arithmetic — **without ever asking whether the two names were one
+> team.** The builder corrected it; I then verified it myself rather than
+> inheriting the correction:
+>
+> ```
+> name 'LingLing40'    distinct teamIds = 1   86d0b484…   975 games, last seen 2026-08-14T11:37:21
+> name 'lingling_40h'  distinct teamIds = 1   86d0b484…   135 games, first seen 2026-08-14T12:44:52
+> DISTINCT teamIds across BOTH names: 1  ->  RENAME (one team), non-overlapping windows
+> the runner's D2 id is that id.
+> ```
+>
+> ⇒ **`tools/panel_cal8.sh:27` was CORRECT ALL ALONG.** The panel and the
+> reference measure the same team. **D2 is not void.**
+>
+> **REVISED P4, recomputed by teamId rather than by name:**
+> panel D2 = **6/15 = 40.0%** vs reference **13/25 = 52.0%** ⇒ **Δ = −12.0pp,
+> BELOW the ≥10pp filter.**
+> ⇒ **below 3** (Jython −30.0, Big O −20.0, **D2 −12.0**) · **above 1** · within 2.
+> **3 < 5 ⇒ P4 STILL DOES NOT FIRE. THE VERDICT IS UNCHANGED — and it now rests
+> on SIX cells rather than five, i.e. on more evidence, not less.**
+>
+> **WHAT THIS DOES TO §2 AND §3: NOTHING.** The non-contamination ruling, the
+> domain-violation ground, the independent re-derivation of the pooled share and
+> the holder guard, and the ±3.07pp screen confirmation are all untouched.
+> **§1's matched-composition computation is now MOOT** (there was no composition
+> mismatch to correct for) — kept below unedited, because it was a correct check
+> of the hypothesis as it stood and deleting it would hide that I ran it on a
+> false premise.
+>
+> **⭐ THE REAL DEFECT, AND IT IS SHARPER THAN THE ONE I CERTIFIED: NAMES ARE NOT
+> KEYS.** The runner fires by **teamId**; `cal8_read.py` assigns cells by **NAME**;
+> the certified reference table is keyed by **NAME**. A team renamed at ~12:44Z
+> and the two halves silently desynchronised. **The failure mode is the dangerous
+> one: it produced an EMPTY cell, which reads as "no data" rather than as "wrong
+> key" — and both I and the read's author took the empty at face value and built
+> a defect story on top of it.**
+>
+> **AND MY OWN STANDING CONSEQUENCE IS VINDICATED RATHER THAN WEAKENED, which is
+> the only comfortable thing here:** I wrote *"it is not a certification of the
+> COMPARISON until the other side exists **and the JOIN KEY has been checked**."*
+> **The join key was exactly the defect — it was a mutable label.** I wrote the
+> right rule and did not apply it in the same document. **Promoter's-first-use
+> (retro v1.9), third firing this session, and the first one that reached a
+> published certification rather than a draft.**
+>
+> **Tagged:** `KIND: judgement · STATE: auditing · WHOSE HYPOTHESIS: the author's
+> I was certifying` — the first instance this session where my error ran toward
+> **someone else's** live hypothesis rather than my own, which the v1.2.1 model
+> covers only by saying errors run toward whatever hypothesis is live in the
+> author's head. **Here the live hypothesis was the one I was auditing, and I
+> adopted it instead of testing it. That is Q10's shape — addressing the concern
+> as stated rather than as it is.**
+
+
 **Side lane, s41, 2026-08-14T19:3xZ.** Certifies `docs/research/READ-CAL8-2026-08-14.md`
 (research, `3fbf6e4`) against the cert points carried on the tape since the s40
 wrap. **This is a certification, not a verdict** — the read is research's, the
