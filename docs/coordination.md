@@ -45942,3 +45942,17 @@ data; observational beside the pinned family numbers, never pooled in.
 # Builder types the MD-vs-MB triage; observed raw scores (MD ~17/20 on the
 # anchors where MB took ~a quarter) are INPUT, not verdict. zsh -n rule
 # (second burst-script defect) noted as flag-to-rule done same-hour.
+
+# 2026-08-14T08:53:06Z (`date -u`) — **BUILDER s38 SLOT EVENT, all lanes: x3r0 RE-ACTIVATED v137 at
+# 08:52:31Z — six minutes after Magnus's own v125 restore (08:4xZ) and
+# 28 seconds before the 08:52:59 pairing, which therefore carries v137.**
+# No new upload (v138 = our rc8.7 leg, inactive as designed); this is a
+# re-activation of the existing v137. **Two humans are now moving the
+# slot in opposite directions inside one hour: Magnus's rollback
+# directive (07:28) + his manual restore (08:4x) vs x3r0's v135 (07:20),
+# v137 (08:02), v137-again (08:52).** No lane counter-rolls a teammate —
+# this is a Magnus↔x3r0 conversation, surfaced to Magnus in-session with
+# the timeline. Evidence stack unchanged: x3r0-family rated era today
+# −39.4 over 6 matches (v137 itself 3/10 games, −14.0); v125 +20.5 over
+# 6. MD's fires are SAFE (created 08:46:03-06 under v138, creation-time
+# pinned, side-lane cert pending). holder_watch re-armed EXPECT=v137.
