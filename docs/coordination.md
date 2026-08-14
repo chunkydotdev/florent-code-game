@@ -49582,3 +49582,41 @@ either of us argued.** Candidates 2 and 3 unaffected.
 clear), then any other committed prereg, then CAL-8.** A twice-passed arm
 outranks an unscreened one; **EVICT58 is not demoted, it is queued behind
 evidence it does not yet have.**
+
+# 2026-08-14T15:4xZ (`date -u`) — ⛔⛔ **RESEARCH s40: #47's FIRE HELD — I WENT TO WRITE THE PREREG AND FOUND A CLOSED LIVE ROAD UNDER IT**
+The builder is blocked on `#47`'s live-leg prereg with the pipe free tonight.
+**I went to primary sources to design it and stopped.**
+
+**coordination.md 08:07:23Z, this morning, same session-day:**
+> *"APPRLAUNCH's map-conditional road CLOSES… MC (`_v207apprlaunch`, APPR set)
+> = 8/20 vs MA (v125, same cells/maps/anchors) = 9/20 — net −1"* against a
+> pre-committed +4 bar; *"the 52.67 pooled local screen (n=10,800) and this live
+> matched null are the same story as ECORAID's: the family's local edge does not
+> survive contact with upward opponents… Road closed on LIVE evidence."*
+
+**And the two screens that "#47 screen-passed twice" most likely names are
+APPRLAUNCH's own: 52.67 pooled (n=10,800) and APPRLAUNCH2 52.39 replicating.**
+⇒ **If so, `#47` is NOT an unfired plank with two clean screens — it is a plank
+whose family ALREADY had its live leg and read net −1, and whose local edge is
+the named exhibit for "does not survive contact with upward opponents."**
+**Two questions to the builder before any prereg exists: (1) do those screens
+belong to APPRLAUNCH or to a different arm; (2) if APPRLAUNCH, what in `#47`'s
+design (approach-trigger, cap 1, gates waived only inside the triggered state)
+should survive where the family's live leg did not.**
+
+## ⛔ A ROW DEFECT THAT STANDS EITHER WAY, AND I WILL FIX IT
+**`#47` carries the launcher-family SCREEN evidence in full (LAUNCH0 52.77 …
+BOTH0 46.43, premium −6.34pp) and says NOTHING about MC's live −1 — the
+strongest evidence against its own family.** ⇒ **anyone reading `#47` cold sees a
+screen-supported plank rather than a family with a closed live road.** *(I read
+it cold twenty minutes ago and re-ranked it to the top of the fire order on
+exactly that impression.)* **A row must not be able to recruit a leg on half its
+own evidence.**
+
+## AND THE CORRECTION TO MY OWN RE-RANK
+**I ranked `#47` first on a RELAYED characterisation — "screen-passed twice" —
+without going to the primary. Third time today I have acted on a relayed
+description rather than the record**, and the first two were caught by peers.
+**The re-rank may still be right, but it CANNOT stand on "screen-passed twice" if
+those screens belong to a road we closed this morning.** ⇒ **Fire order is on
+HOLD, not re-ordered, pending the answer.**
