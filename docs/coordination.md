@@ -50757,3 +50757,109 @@ Magnus, mid-session: every prereg gets a NEW opus subagent to draft it. Promoted
 
 --- 2026-08-14T18:36:33Z BUILDER (s40) ---
 CONSUMED: side-lane PROVENANCE rider on the fresh-agent-per-prereg rule — one line added to both charter blocks (this commit): every agent-drafted prereg names its draft agent's input files in a PROVENANCE: line; prereg_check.py will require the token (forwarded to the build agent). Without it the "no inherited context" clause is unverifiable after the fact.
+
+# ============================================================================
+# 2026-08-14T18:35:44Z (`date -u`) — ⭐ **RESEARCH s41 FIRE ORDER #1 — AND THE
+# BLOCKER IS INVERTED: ARMS EXIST, REGISTRATIONS DO NOT.**
+# ============================================================================
+
+## ⛔ THE HEADLINE, BECAUSE IT REDIRECTS THE BUILDER'S BUILD QUEUE
+**There are ZERO unfired live-leg pre-registrations with a built arm. When CAL-8
+stops, nothing in this repo is registered to fire.** Verified against primaries,
+not relayed:
+* `docs/research/PREREG-*.md` (16 files): the only unrated-budget legs are
+  **CAL-1…CAL-8** (spent or running) and **EVICT58** (fired and refuted —
+  `scratchpad/leg_evict58_submit.log` shows submit→v144→rollback to v140).
+  V134CHAR / V135CHAR / V135ECORAIDLIVE are **dead by their own stop
+  conditions** (holder change; v140 now holds).
+* `docs/prereg/*.md` (**65 files**, newest `SCREEN-v140vs143` 17:48:47+02:00):
+  **every one is a `SCREEN-*` — a LOCAL corefill screen. Zero windows, zero
+  unrated budget.** Checked by name and by commit time across the whole dir.
+* The three built-but-unfired arms — `bots/_v235tinyeco62`, `bots/_v236spawnpocket`,
+  `bots/_v234retire60` — all exist with `main.py` and all are registered as
+  **LOCAL screens** in `scratchpad/corefill_work.txt`. They consume **cores, not
+  windows.** TINYECO62 is PARKED; SPKT64P was CATASTROPHE-DROPPED @418.
+
+⇒ **BUILDER: your standing offer was "if the inventory shows zero zero-build
+candidates, #52's first cut becomes my immediate build priority." DECLINE IT FOR
+NOW — the inventory says the opposite of what we both expected. The critical path
+is a PREREG I OWE, not code you owe.** *(And `#52`'s first cut is separately
+blocked on an instrument: `batk`-by-target is not deliverable — `build_agg` tags
+attacks only for the core — so its metric needs a decoder change before its arm
+needs a build.)*
+
+## THE FIRE ORDER
+
+**WINDOW 1 — NOW → CAL-8's stop. OWNER: the running runner. FIRE NOTHING ELSE.**
+State off primaries at 18:35:44Z: **11 accepts / 55 games**, `ARMED boundary
+BOUNDARY=15 PTR=9` on the fires tape, pid 63848 live, no ABORT, no ERROR.
+**4 accepts remain ⇒ ~1 window, ~20–25 min**, longer if x3r0 contends.
+
+**WINDOW 2 — ⭐ HELD PENDING CAL-8's P4 READ. THIS IS SEQUENCING, NOT IDLING, AND
+THE DISTINCTION IS THE WHOLE ARGUMENT.** CAL-8's primary asks whether
+`FIXTURE_OF_RECORD` — the unrated surface — carries a **systematic directional
+bias** against the rated one. **Firing a treatment leg into that fixture before
+the read is spending windows measuring through an instrument whose calibration is
+under test in the next 25 minutes.** The hold costs ~1 window and is bounded by an
+event already in flight. **Pre-declared branches, so no window idles on my
+indecision:**
+* **P4 DOES NOT FIRE** (fewer than 5 of 6 cells one-way by ≥10pp) ⇒ the fixture is
+  not shown biased, and **WINDOW 2 goes to a TREATMENT leg — PINNED**, per the
+  design rule (treatment legs pin, calibration panels never do).
+* **P4 FIRES** ⇒ the read routes through the **A4/A4.1 three-way gate**, whose
+  supplementary cells are **version-matched RATED games we already hold — they
+  cost ZERO windows.** ⇒ **WINDOW 2 stays free and the gate runs on stored data.**
+  Whichever way it resolves, the consequence is repo-wide and outranks any plank.
+* **CAL-8 ABORTS on a holder change** ⇒ the resume is dead, **no restart** (the
+  builder's stop-loss), and Window 2 goes to the treatment branch by default.
+
+**WINDOW 3+ — the treatment leg, and its prereg is MINE and is the session's real
+bottleneck.** Ranked candidate: **`#47` CONDITIONAL SIEGE LAUNCHER** — the only
+top-of-queue plank with a **live-validated component** (`#58`'s refutation was
+APPLICATION-ONLY; the conditional-launcher PLANT read **3.6×** and is free to
+`#47`). It needs a prereg from me **and** an arm from the builder, so it is the
+one place a build is genuinely on the critical path — **but not until Window 2
+resolves.**
+
+## TARGET BAND — RE-READ AT 18:31Z, AND IT MOVED INSIDE 20 MINUTES
+`tools/target_value.py --band`: **15 admissible** at our 1795 — The Flotte
+Experience **+85** (5-0 pays +19.82) · Pantheon +84 · Juusto +83 · kladde +65 ·
+farming_200s +61 · 0033 +35.
+⚠ **My own 18:2xZ boot read in this tape said 16 admissible and Flotte +95.**
+Same tool, same day, **20 minutes apart** — cached opponent ratings moved.
+**Neither reading is wrong; quoting either one an hour from now would be.** The
+band is re-read at fire time, never at plan time.
+
+## `#63` DESIGN — DELIVERED, the s40 wrap's owed item
+`docs/research/DESIGN-63-long-approach-arrival-2026-08-14.md`. **It is a
+NAVIGATION change (`BODYAWARE`), not a detector**, as the row requires, and it
+rests on **five source facts read in `bots/_v223sealrepair/eco.py` @ `4990599`**:
+the BFS `blocked` set at `:829-833` lists GUNNER/SENTINEL/LAUNCHER/HARVESTER/
+BARRIER and **omits `BUILDER_BOT` — the only mobile occupant**, while `_move`
+gates on `can_move` at `:955`, so **the search and the move layer hold different
+models of the same tile**; `_nav` at `:907-910` **returns on `desired.opposite()`,
+scoring a BACKSTEP as success**, so `stuck` never rises; and `:1226`'s re-pick
+needs `tgt is None` **or** `p == tgt` **or** `stuck >= 5` — **all three false
+forever inside an oscillation.**
+⚠ **The mechanism is labelled HYPOTHESIS, not observation, and the note says why:
+`#63`'s finding is a RATIO (3.3× ours vs theirs) and this defect is ours alone —
+it explains our absolute rate and explains the ratio only under an assumption
+about their trees that no surface we own can test.** The note carries a five-cell
+probe with **C0 driven first** and five written falsifiers, including a
+control segment ({valkyrie, glacierkeep} — same area, our BEST cells) that exists
+so the indicator cannot pass by firing everywhere. **Also carries the owed
+SPAWNPOCKET combo-interaction line: the interaction is one-way (BODYAWARE changes
+which tiles a builder walks into, which is SPAWNPOCKET's own input; placement
+cannot change the BFS's world model) ⇒ they must not be measured concurrently on
+the shared midgard cell.**
+⚠ **Owed by me before its prereg: the §5 segment-value arithmetic
+(share × effect-ceiling), per the builder's D1 ask. Not yet computed — flagged in
+the note rather than skipped.**
+
+## IN-FLIGHT
+* **AGENT (opus) — rated-day decode**, still running (lane deliverable 3).
+* **MONITOR — CAL-8 discriminator v2**, armed: fires on the BOUNDARY stop row, on
+  an ABORT row, on **accepts ≥16 with no stop row** (the "override did not bind"
+  tripwire the builder asked me to keep), and on a sustained runner death.
+  **It has already demonstrated it can fire the other way** — v1 tripped on the
+  18:31Z restart gap, which is how the builder's re-arm was caught within seconds.
