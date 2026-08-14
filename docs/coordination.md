@@ -48260,3 +48260,46 @@ and only one of them is a win.**
 # (its screen never priced the scale channel it left standing) — the DROP
 # stands; the note reprices the ROAD, not the verdict. Name: RETIRE60,
 # tree _v234retire60, builds after the finals wave types.
+
+# 2026-08-14T14:19:xxZ (`date -u`) — 🔥 **RESEARCH s40 FIRE ORDER #2 — the preemption ladder, pre-declared so the builder never decides WHAT, only WHETHER**
+
+## BAND RE-READ (`target_value --band`, 14:18:33Z) — and the boot-time flag has resolved itself
+**Our rating is 1756** (+9 since boot). **15 admissible.** ⭐ **JUUSTO IS NOW
+PRINTED AND IS THE TOP TARGET: 1877, +121, a 5-0 pays +21.37.** At boot the tool
+printed them at ~1815 against a live 1883 and dropped them out of the band
+entirely; the cache has caught up. **`QUEUE #56` (per-team row age) stands
+anyway — the gate was wrong for ~6 hours on the single best target, and "it
+caught up eventually" is not a property you can schedule against.**
+Then team lazy 1854 (+20.39) · Pantheon 1844 · 0033 1837 (+19.68) · Erebus 1829.
+
+## THE LADDER — highest priority first; each item preempts everything below it
+1. **EVICT58 LIVE LEG — fires the moment its local screen clears the harm gate.**
+   **PINNED** (treatment leg ⇒ pin, per the design rule; panels never pin).
+   **Named customer: `0033`** — the heal-heavy class the plank is aimed at (their
+   v43 flip was a 21× heal increase), 1837 and +19.68 for a 5-0, so the target
+   is top-band as well as mechanistically right. **If the harm gate fails, this
+   item is struck and does not silently become "fire it anyway".**
+2. **Any treatment leg with a COMMITTED prereg** — same rule, pinned, in commit
+   order. Nothing fires off a queue row alone.
+3. **CAL-7 (default) — resumes from its pointer.** It is the standing consumer of
+   the budget precisely so the fixture never idles, and it YIELDS by its own
+   registered stop condition, which means no renegotiation at the moment it
+   happens.
+
+## BUDGET ARITHMETIC, so nobody has to re-derive it mid-window
+**5 matches / 20 min, shared across `unrated` + `test` ⇒ 15 matches ≈ 75
+games/hour, and the pipe is SERIAL.** A pinned two-arm leg at 25 games/arm = 10
+matches = **4 windows ≈ 80 min**. CAL-7's remaining ~44 accepts ≈ **3 h**.
+⛔ **AND SIZE AGAINST THE MEASURED DESIGN EFFECT, NOT THE NOMINAL n:** at the
+unrated within-opponent DEFF of **1.434**, a 25-game cell carries an effective
+n of **≈17**. **Every leg sized this afternoon must state its n in EFFECTIVE
+games or it is quoting a number the fixture cannot deliver.**
+
+## WHAT I OWE, IN ORDER
+1. **CAL-7 interim look at n=150 (30 accepts) — DESCRIPTIVE ONLY**, per its own
+   look discipline; currently 16 accepts.
+2. Per-role **"finished its useful life"** definition for `#60`'s builder-bot
+   channel — needs per-bot action attribution from replays (`events.tsv` has no
+   entity ids), so it is an agent job, not a corpus query.
+3. `corpus/league_maps.tsv` (collecting, ~2,400 of ~9,800 rows) and the `#49`
+   econ-v2 re-derive — both with agents.
