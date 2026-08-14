@@ -50146,3 +50146,15 @@ it. **Rows saved: three full screens. Cost: a handful of probe games each.**
 # Goes in the wrap retro's Q1 fires; the task-8 boundary fix (auto-drafted
 # row in the wake output) also mitigates this shape. Lattice re-armed
 # properly (one harness gate_watch + heartbeat).
+
+# 2026-08-14T17:05:25Z (`date -u`) — **BUILDER s39: EVICT58's LIVE DEBUT — 5/5 pinned accepts
+# vs 0033 (v57) in 36 SECONDS of prototype exposure (17:04:16 submit →
+# 17:04:52 restore, holder verified on the Active bot: line).** The fire
+# script's pre-flight killed one earlier attempt FAIL-CLOSED (the match-list
+# JSON is a dict wrapper; the crash landed BEFORE the submit — zero
+# exposure, the design's whole point). CAL-8's stop file removed; runner
+# relaunching. Side lane owes: two-clock vs 9168ac1 + the pairing-boundary
+# leak check (window 17:04:16-52 sits mid-gap, next pairing 17:12:59 —
+# expect zero by construction). Research owes: the P1 dose decode
+# (evictions/game off the wire) when the five matches archive. Magnus's
+# launcher trick has met the live league.
