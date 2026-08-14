@@ -1,4 +1,4 @@
-# SIDE-LANE RETRO — the instrument. **v1.9** (2026-08-14; created v1 2026-08-10; the changelog below is the authority)
+# SIDE-LANE RETRO — the instrument. **v1.11** (2026-08-14; created v1 2026-08-10; the changelog below is the authority)
 
 **Commissioned by Magnus, 2026-08-10, asked of all three arms.** The generic
 session wrap is **lane-agnostic and is a FAILURE LOG** — it records what broke
@@ -925,3 +925,58 @@ committed in this same action.**
 had not landed at wrap). **A certification offered and never performed is this
 instrument's own Q8 failure mode** — a successor either runs it or records why not.
 
+
+
+## ⭐⭐ v1.11 — **FIRING 11. THE SPLIT INVERTS A SECOND TIME, AND Q3 GAINS THE BORROWED-PREMISE FORM.**
+
+**v1.11 — 2026-08-14 (MINOR: records firing 11, sharpens Q3, retires a settled
+claim). Instance: `docs/retro-side-lane-2026-08-14-s41.md`, committed in this
+same action.**
+
+* **FIRINGS: 11** (s29, s32, s33, s34, s35, s36, s37, s38, s39, s40, s41). Zero
+  point bumps, seventh consecutive session.
+* **⭐⭐ THE HEADLINE — Q3 GAINS A NEW FORM AND IT IS THE MOST EXPENSIVE ONE YET:
+  THE BORROWED PREMISE. I CERTIFIED A FINDING WHOSE PREMISE I NEVER CHECKED.** I
+  re-derived everything *around* another lane's claim — cell counts, the sign
+  test, the robustness arithmetic, even a matched-composition correction nobody
+  asked for — **and never asked whether its premise was true.** It was not: two
+  team NAMES were one `teamId`, renamed mid-day.
+  **Direction: toward the AUTHOR'S live hypothesis, not my own.** v1.3.2
+  pre-registered `auditing` to behave like `defending` and it does — **but the
+  hypothesis defended was the one I was auditing.** ⇒ **Practice, routed here
+  because this is the failure's only instrument: when certifying someone else's
+  FINDING, the first check is its PREMISE, not its arithmetic. Re-deriving a
+  conclusion's numbers is not verification if the thing being claimed was never
+  tested.** A certification inherits the authority of having been careful, and
+  careful-about-the-wrong-half is the disguise.
+* **⛔ RETIRE AS SETTLED: "this lane detects better than it prescribes."**
+  **DETECTION 15/17 · PRESCRIPTION 17/17** — the second inversion in six measured
+  runs (s37 was the first), and this one is harder: **every prescription survived
+  contact, and two were IMPROVED ON by their consumers.** Both detection losses
+  were premise-level. **The property is no longer stable and must stop being
+  quoted as this lane's signature.** What replicates is the MECHANISM (Q3's
+  substitution), never the ledger's direction.
+* **⭐ Q5 EARNS ITS KEEP IN A NEW WAY: FOUR PHANTOM FLAGS KILLED BEFORE PUBLICATION**
+  by the s37 read-the-condition-line practice — a tie asymmetry already stated in
+  the prereg, a road closure that already had its 126 live games, an amendment
+  already branch-symmetric, and a byte-identical guard that was the INVERSE of
+  the incident it resembled. **Q5 has never before counted flags that did not
+  happen; it should, because that is where the s37 sharpening pays.**
+* **Q8 = 7, the best rate recorded**, and **v1.10's carried OBLIGATION IS
+  DISCHARGED**: the forced-fail certification, *offered, accepted and unrun* at
+  s40, was run — then **re-run three times as the tool changed under it**.
+  ⇒ **Promoted with it: A CERTIFICATION OF ONE SIDE OF A COMPARISON CARRIES AN
+  EXPIRY**, and a certified tool that changes expires its certification. Both
+  bound me today.
+* **Q4's stored-instrument mechanism, FOURTH consecutive run** — and the cleanest
+  form yet: **my own certification harness proved MY OWN FIXTURE wrong**, not the
+  tool it was built to audit.
+* **Q9 = 2, and both were DETECTIONS rather than PRESCRIPTIONS — a first.**
+
+**SUNSET WATCH: nothing armed; every surviving question fired this run.**
+
+**⚠ CARRIED TO v1.12:** the `gate.py` wiring bundle is unwritten and carries four
+of my accepted items (escape-flag tape, local-accepts WARN, CUT-SHORT consumer,
+OB13 untracked-arm gap). **A successor certifies it against ONE diff, as the
+builder asked — and re-runs the forced-fail harness first, because by then the
+certification will have expired again.**
