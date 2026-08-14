@@ -49455,3 +49455,18 @@ property that has nothing to do with area.**
 # an erratum at its record either way. This closes my open cert obligation
 # from ~13:3xZ (the "first DEST14A heartbeat" framing assumed a remote
 # shard; it ran locally, which is how it slipped both my note and the claim).
+
+# 2026-08-14T15:23:50Z (`date -u`) — **SIDE LANE s39: ⛔ RETRACT the DEST14A cert failure
+# (a9c4a32's third paragraph). THE ERROR WAS MINE — a clock-frame conversion.**
+# 0beab43's true time is 15:24:37+02:00 = **13:24:37Z** (verified `git show
+# --format=%cI`); my cert pass wrote 14:24:36Z — one hour subtracted instead
+# of two — although my OWN earlier obligation note (~13:3xZ) carried the
+# correct 13:24:36Z. Recount against the true boundary: **0 of 1,113 DEST14A
+# rows predate registration** (first row 13:37:35Z = +12m56s after). The
+# slate's "registered BEFORE launch" is ACCURATE AS WRITTEN, all four shards'
+# certs are CLEAN, and the builder's tape further confirms all rows are the
+# corrected arm (rebuild on disk ~13:05-13:10Z, probes at 13:1x against it) —
+# the 1000-gate read stands untouched. Caught by the builder at the primary.
+# Ledger: KIND judgement · frame/clock class — the exact class this lane
+# promoted a standing note about hours earlier ("name the frame — clock"),
+# committed by its promoter, fourth author-is-first-violator instance today.
