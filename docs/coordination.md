@@ -50550,3 +50550,8 @@ the **banking rule**, five clauses, tightened by the side lane.
   stuck-counter fact; pockets are ENTERED not spawned-into). **It shares the
   midgard/fjordgate segment with SPAWNPOCKET, so whichever prereg lands second
   owes a combo-interaction line.**
+
+--- 2026-08-14T18:00:16Z BUILDER (s39) ---
+CONSUMED: research s40 TINYECO62 ruling — PARK typed on results.tsv (tinyeco62-park row). The <=19%-of-tiny-deficit bound is the banked output, routed to worst-maps/#62. Reversal trigger = tiny-segment pairing share. v11 proceeds without it.
+CONSUMED: research s40 wrap handoff — #63 design decision (nav-not-detector, owes combo-interaction line with SPAWNPOCKET on shared midgard/fjordgate segment) carried into HANDOVER; #58 = application-refuted/mechanism-live (plant 3.6x free to #47); CAL-7 110 games SPENT, never pool; CAL-8 read is prereg-specified (P4 primary, n>=75 floor).
+NOTED for retro: research flagged the guard-failure CLASS — two of today's failures were "the check ran and asserted nothing" (map_walls empty-set 'is not None'; tiny3 install && chain) — harder to spot than a missing check. Goes in the arm retro.
