@@ -45204,3 +45204,50 @@ hardcoded -1/0/0/0 on EXILE rows — never filter on them.
 # flipped at 07:01:09Z mid-shard — SEATREL/GBNS/ECORAID reads must split
 # glacierkeep games at that boundary or exclude them; MAPFIX itself is
 # isolated from `maps/` by design.**
+
+# 2026-08-14T07:25:48Z (`date -u`) — **BUILDER s38: THREE EVENTS ON THE TAPE, in order of weight.**
+#
+# **1. v135 (x3r0, 07:20:45Z, auto-activated) IS OUR rc8.5/ECORAID TREE —
+# byte-identical to `bots/_v213ecoraid` on all four files (CRLF-normalized,
+# per D4).** Its README ships it on self-play: 56.8% vs v134 (n=340), 56.7%
+# vs v125 (n=120) — "official-map evidence" that is exactly the echo-loop
+# fixture class. **The pre-declared LIVE pooled read on this same tree
+# closed ~2h ago: 23/50 (46.0%) vs control 48.0% — NO SUPPORT (rc8.5,
+# builder verdict 05:12Z, side-lane-certified digits).** The self-play
+# flattery finding (research 05:15Z: eco-combo family +5-14pp local vs
+# live) fits x3r0's numbers with nothing left over. Slot calls are
+# Magnus's/x3r0's, not mine — but the evidence is unusually direct here:
+# the live surface has ALREADY measured this bot class and said no.
+# Surfaced to Magnus in-session. v134's own rated era closed at ~net −7
+# over 10 games (research's decode). holder_watch armed EXPECT=v135.
+#
+# **2. THE AUG-14 MAP PATCH (Magnus's report, verified on the wire).**
+# valkyrie: 10 tiles — 8 near-core walls removed, 1 ore/side became WALL
+# ((6,14)/(23,14), d²<=16 from cores). glacierkeep: doctrine entry differs
+# from the sha-current platform file by 9 tiles (center ore cluster ->
+# symmetric spread). **v125/v134/v135 ALL carry stale grids for both maps**
+# (verified in the artifacts) — feeding _bfs_direction (routes into a real
+# wall = the livelock class) and map_ores (phantom harvester targets).
+# `maps/glacierkeep.map26` flipped on disk at 07:01:09Z MID-SHARD (lane
+# boot sync racing the patch rollout — running shards' glacierkeep rows
+# split at that ts, recoverable per-row); `maps/valkyrie.map26` stays
+# PRE-patch until a shard boundary (mid-shard sync declined, correctly).
+# **MAPFIX screen LAUNCHED on the slot GBNS freed** (Magnus: "should we
+# put something on them?"): `bots/_v218mapfix` (v125 + the two corrected
+# strings, nothing else) vs `_v197mapcode`, valkyrie+glacierkeep ONLY,
+# post-patch geometry from an ISOLATED map dir, n=2160, prereg
+# `SCREEN-mapfix-2026-08-14.md` @aed5544 pre-heartbeat, dose driven both
+# ways. Early rows: real kills, both seats. Self-knowledge class => full
+# screen weight. **Possible unification: research's 6/11-builders
+# two-tile-oscillation finding (rc8.4 game) matches the stale-grid BFS
+# signature — if that game was on valkyrie/glacierkeep, one mechanism
+# explains both.** Asked research for the game's map.
+#
+# **3. V134-CHAR panel: 3 windows fired under v134 (15 games: lazy,
+# Juusto, Leviathan — match ids in panel_v134char_fires.tsv), then ABORTED
+# on sight of v135 at 07:21:25Z — the per-fire holder guard working as
+# designed; descriptive rows stand per prereg rule 1.** A V135-CHAR needs
+# research's amendment (their design surface, mechanics identical).
+# Durable monitors committed this session: gate_watch.sh (corefill
+# gates/finals, fixture-driven 6 verdicts + blind + share, ledger
+# backfilled for history) and holder_watch.sh (both armed, exit-to-wake).
