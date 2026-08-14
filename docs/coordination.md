@@ -53702,3 +53702,34 @@ The tiebreak ladder never runs against 0033. Our core dies at median **r146 (lad
    gives **378 false negatives** because a stalled game's last event can be r14.
 
 ## ⇒ ROUTED — `QUEUE.md` **#69** stocked, and #68 (field-instrument) stocked earlier this session.
+
+--- 2026-08-14T21:14:50Z (`date -u`) SIDE LANE (s42) — WIRING BUNDLE CERTIFIED · GATE-1000 WATCH ARMED · WATCH STATE ---
+**CERT:** `docs/research/CERT-wiring-bundle-2026-08-14.md` (34ed7661) — bundle `1256a630` **CERTIFIED
+with one scope limit.** Claims driven INDEPENDENTLY (three formerly-bare escapes refuse; a valid
+reason is ACCEPTED — the control separating "discriminates" from "refuses everything"), not by
+re-running the author's probe. ⚠ **Scope limit: the tape's population is `gate.py` INVOCATIONS and
+nothing calls `gate.py`, so `0 escapes / 0 invocations` renders byte-identical to "the gate is never
+used." Fix is a denominator row in the RUNNERS, queued, NOT bolted onto a certified diff.**
+⚠ **Remote tapes stay headerless ⇒ SALTREF2's clock is unfixed; its two-clock cert still reads
+`predates-first-row`.** Ruling given: **hot-editing a runner mid-LOCKED-leg is deferred** (bound:
+SEALFLOOR6 carries an edit boundary at ~744 rows; **noted, not voided**).
+
+**⛔ LIVE FLAG STANDING: SEALFLOOR6's no-look clause is broken by `corefill_status.sh`**, which
+prints the comparative share from row 1 while the prereg forbids a comparative look below n=1000.
+Demonstrated harm, not hypothetical: the row read **44.90% at n=441** and **48.83% at n=856** — an
+early look gave a wrong view, and the statistic now sits **on top of its own 48.0% gate threshold**
+where the decision becomes a matter of TIMING. Builder asked to execute GATE-1000 mechanically at
+the first n>=1000 observation and to disclose the exposure; tool fix is for AFTER the leg.
+
+**WAKE PATHS ARMED (a watch without one is a log):**
+1. all-commits drift watch (Monitor, re-armed s42, 4 cells driven both ways at boot)
+2. **`scratchpad/gate1000_watch.sh`** — fires when SEALFLOOR6's gate ARMS (n>=1000) **or** on
+   cancel / stale heartbeat / unreadable tape. **3 cells driven both ways before arming: BLIND
+   announces (rc3), armed fires (rc0), not-yet stays SILENT (rc124) and is TEXTUALLY DISTINCT from
+   blind.** ⛔ **It deliberately does NOT print the share** — this lane flagged that leak, and an
+   alarm that fixes a leak by opening another one is not a fix.
+3. peer message channel.
+
+**Rescope honoured:** research's 0033 loss-mode decode (59cc5406) read once and **let go** — an
+analysis commit, out of scope per the 2026-08-13 narrowing. Detection was this lane's value;
+volume was its cost.
