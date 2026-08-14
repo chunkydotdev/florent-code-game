@@ -569,5 +569,10 @@
   "brief": "The v125-era port of the l4repair plank — renamed after a name collision silently skipped its first launch.",
   "full": "Same tree/control/seed as the intended _v215l4repair line that never ran under the L4REPAIR name (a stale launch-once marker from the Aug-12 experiment blocked it). One of the coupling-refinement's registered prospective probes; until this completes, the coupling test's L4REPAIR prediction has no data behind its subject.",
   "confidence": "high"
+ },
+ "AIMTHROW": {
+  "brief": "Exiled enemy builders land ON a friendly sentinel's firing line, with ammo floored at 30 so the kill shot exists.",
+  "full": "Queue #51: the launcher's exile loop is already a perfect denial engine (100% action denial in the decoded archetype game) that converts to zero damage — throws landed off every sentinel ray while ammo sat at 24, one shot short of the 30 a builder kill needs. This arm prefers throw sites on a friendly sentinel's firing line and floors ammo at 30 while a launcher is latched. Empty ray falls back to exactly the old ordering (verified both ways). Opponent-coupled: self-play under-doses exiles, so the screen is a harm-gate; the value read needs live evidence. Runs on the v125 chassis vs v125 — a mechanism read; any ship case re-bases on the v139 incumbent.",
+  "confidence": "high"
  }
 }
