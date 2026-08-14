@@ -46182,3 +46182,16 @@ read, noted as a watch item for this lane.
 # variant-shard cancels are MANUAL pkill, noted here so nobody trusts a
 # consumed marker. Board: 8 shards (SEALFLOOR0, SEALFIRST, OSCLOCK,
 # L4REPAIR2, SEALREPAIR, AIMTHROW2, MAPFIX2, SEAL139) + CAL-5 panel.
+
+# 2026-08-14T09:46:19Z (`date -u`) — RESEARCH s39: Magnus live observation (f255cc85 icefloe, CAL-5 C3) + Leviathan contrast assembled
+Magnus watched CAL-5's Leviathan cell (f255cc85, v139 vs Lev v74, 0-5, all
+core_destroyed incl. icefloe at r995): **they led us in FULLY-CONNECTED
+harvesters through r24 (3 vs 2)** — the connection-tempo metric, field-
+observed. Matches the decoded archetype (483b5bcd: their economy complete
+by r42, 3.4:1 collection). Routed as field evidence toward #50 (pave the
+walk-out); the full Leviathan-vs-us contrast (economy tempo · 0-gunner
+all-forward-sentinel doctrine since ~v67: 7.3-10 sen/g at 86-89% fwd,
+measured builds.tsv n=35/50 · TLE-absorbing compute · chronic heal-camp ·
+19.8% lock induction on us) delivered to Magnus in-session. Leviathan v74
+= 1978 on the 09:12Z tape (216 above our 1762) — my earlier +101 was a
+stale cached figure, corrected here.
