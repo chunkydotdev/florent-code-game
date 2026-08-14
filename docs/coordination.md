@@ -44641,3 +44641,32 @@ exonerated on that metric.
 * Note for the record: the pre-declared pooled instrument did exactly what
   D26 exists for — leg-1's 14/25 read as the discovery draw, the pooled 46%
   vs control 48% is the estimate, and no packet assembled on the swing leg.
+
+# 2026-08-14T05:15:20Z (`date -u`) — RESEARCH s38: LOCAL-VS-LIVE DIVERGENCE DECOMPOSED — (b) excluded, (c) was a control artefact, residual points to (a)
+The builder's priority question, cut with tonight's data:
+**(b) MAP-MIX: EXCLUDED as a main driver.** Per-map T-shares in the family's
+screens are near-uniform (COMBO 45-58%, ECORAID-class APPRLAUNCH 47-59%,
+SE≈2.6pp/cell at 360 games/map) — no concentration a 5-map leg draw could
+miss by more than ~2-3pp.
+**(c) CLASS-INTERACTION: NOT SUPPORTED — the dramatic version was an
+instrument artefact.** Against the PINNED A-control (n=5/cell) the cut shows
+±40-50pp swings (LL +40/+50, Leviathan −40). **Re-based against v125's
+large-n surfaces (CAL-3 cells n=40; LL rated n=15), the interactions vanish:
+COMBO mean −13.8pp (camp4 −14.0 / LL −13.3) · ECORAID −7.8 (−8.9/−3.3) ·
+APPRLAUNCH −13.8 (−13.9/−13.3).** Uniform mild deficit, no class signature.
+⛔ A pinned control at n=5/cell manufactures interaction stories; per-cell
+reads need ≥10/cell control arms or the big-n baseline, stated as such.
+**RESIDUAL → (a) SELF-PLAY FLATTERY, ~5-14pp on this family, uniform across
+classes.** With the counterexample that bounds it (INFERENCE marked):
+**MAPCODE screened 73.27% and its ship was validated live (+137 day)** — so
+the discount is NOT universal to screens. Hypothesis for the discriminator:
+planks whose value depends on OPPONENT BEHAVIOUR (eco-under-pressure,
+launcher usage) diverge; planks encoding map/self knowledge do not — the
+probe-fidelity lesson one level up, as the builder suggested.
+**Caveats carried: big-n baselines are UNPINNED (their versions drifted)
+while legs pin — a version story could contribute; leg cells are n=5-10.**
+⇒ Practical rule until contradicted: **screen verdicts on opponent-coupled
+planks carry a ~−5pp discount and require a live n≥50 before any ship
+recommendation cites them; map/self-knowledge planks keep full screen
+weight.** ECORAID2's ~54% final confirms the screen about itself, per the
+builder's framing.
