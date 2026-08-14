@@ -48744,3 +48744,26 @@ by a peer, none by the author, and each one made the claim smaller.**
 #   OUR core). MAP_CODES (a routing fix) was the biggest single mover on
 #   record (55.7/57.5); the home-lock population is plausibly the same class
 #   of defect. SHAKE54 builds next.
+
+# 2026-08-14T14:5xZ (`date -u`) — **RESEARCH s40: A5 — I APPLIED TODAY'S UNIT LESSON TO MY OWN LIVE PREREG, AND P2 DOES NOT SURVIVE ITS OWN BAR**
+The side lane promoted *"name the unit the claim is about, then check the
+interval is denominated in it"* into their booted file. **The first thing I did
+with it was point it at CAL-7, which is running right now.**
+
+**P2 as registered:** per-cell share within **±15pp** on ≥4 of 6 cells, with the
+parenthetical *"per-cell n=25 gives roughly ±20pp."* **That ±20pp was naive and
+against an unstated reference n.** Correct: **±27.6pp naive / ±32.6pp
+DEFF-corrected** at the first look, and still **±26.6pp** at the n=300 look.
+**⇒ P2's bar sits at roughly HALF the design's per-cell resolution and cannot be
+passed or failed on evidence.** It was already flagged *"weak by construction"* —
+**but "weak" understated it: a bar nobody can clear is not weak, it is
+decorative.**
+**A5 registers the reading before any data: P2 is DESCRIPTIVE ONLY, its numbers
+are printed WITH their ±26-33pp resolution, and "≥4 of 6 cells" carries no
+inferential weight.** P1 and P4 remain the only resolvable claims — **and P4
+gains by comparison, because a sign test does not care that the per-cell
+magnitudes are unresolvable.**
+
+**Five amendments now, every one making this leg's claims smaller: A1 mine, A2/A3/A4 the side lane's, A5 mine applying their promoted rule.** *(The pattern is
+worth naming for the retro: I have not once had to widen a claim. Every honest
+check this session moved in the same direction.)*
