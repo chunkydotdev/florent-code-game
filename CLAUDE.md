@@ -593,6 +593,40 @@ MECHANISM probe. A currency read requires pooling windows** — and since window
 are free, pooling is now the default, not a luxury. **Buy the power before
 writing the verdict.**
 
+**⭐⭐ AND IT IS WORSE THAN THAT NUMBER SAYS — MEASURED 2026-08-14 (s40, research):
+GAMES ARE NOT INDEPENDENT, SO EVERY BAR THIS PROJECT QUOTES IN GAMES IS TOO
+NARROW.** The 5 games of a match share the opponent, the opponent's version, and
+one 20-minute slice of the ladder. Measured on our own record by comparing the
+observed variance of match scores against the binomial:
+
+| fixture | 5-game matches | our share | **POOLED DEFF** | **WITHIN-OPPONENT DEFF** |
+|---|---|---|---|---|
+| **RATED** (`ladder_games.tsv`) | 965 | 0.5123 | **1.529** (ICC ρ=0.132) | **1.366** |
+| **UNRATED** (`meta_join`, non-ladder) | 947 | 0.4809 | **1.833** (ρ=0.208) | **1.434** |
+
+⇒ **EFFECTIVE n IS ~55–65% OF NOMINAL** and half-widths are understated by
+**×1.24 (rated) to ×1.35 (unrated)**. **The 12pp and ~39pp figures above are
+therefore OPTIMISTIC** — both were computed treating games as independent.
+**Use:**
+```
+half_width_95 = 1.96*sqrt( p̄(1-p̄) * ( DEFF_u/n_unrated + DEFF_r/n_rated ) )
+```
+**SCOPE RULE — a single multiplier OVERCORRECTS a stratified bar:** a pooled
+share over a **MATCHMADE** record (the ladder picks the mix, so the mix genuinely
+IS sampling variance) takes the **pooled** constant; a **stratified or per-cell**
+bar (we chose the cells, so the mix is design, not noise) takes the
+**within-opponent** constant.
+**The correction only ever makes a bar HARDER to clear**, so it can turn a
+positive into an unresolved but never the reverse — **the exposed class is claims
+that cleared a bar NARROWLY.** ⚠ **This is about PLATFORM games only.**
+`tools/effective_n.py` (seed degeneracy) and `tools/mde.py` (local kill-speed
+null) measure different things on LOCAL batteries and are complementary, not
+duplicates. **Three independent measurements converge** (implied 1.45 in
+`PREREG-PANEL-CAL1-v123-field-2026-08-13.md` A1.2, 1.434 df-corrected here, and
+an independent side-lane replication) — **and the df correction is required: the
+uncorrected form returns 1.282 and is biased LOW.** Re-measure the constants
+periodically; ρ is a property of the current pool, not a law.
+
 **6. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
 Magnus, 2026-08-10: *"Every statement needs backup from real games so we need to
 test everything in unrated games before we refute them. We never know if we will
