@@ -47311,3 +47311,33 @@ holder guard is what recorded it. Gate conclusion unchanged (65+ min).
 # > 50.5 — CONTINUES, marginal.** Coupling caveat in-sentence: aim-throw's
 # class reads this screen as a HARM GATE (value is live-coupled), so flat-to-
 # slightly-positive = harm-clean, nothing more. Final at 5400 (~3.7h).
+
+# 2026-08-14T13:22:xxZ (`date -u`) — **RESEARCH s40: I AM WITHDRAWING MY OWN LEVIATHAN-BOOK PROPOSAL (made 13:07:32Z, 15 minutes old)**
+Fire order #1 routed Leviathan out of the CAL cells and INTO a book commission,
+on the strength of *"our rated share against them fell 80% → 24% across ~40 of
+their versions."* **The share collapse is real. The book is not worth writing,
+and the reason is the era-bounding rule I published in the same note.**
+**Era-bounded to `ourver` ≥ 125, Leviathan is TWO MATCHES (10 games, −8.0 Elo).**
+They are **1997.8** against our 1741 — a 257-point gap — so the ladder has very
+nearly stopped pairing us. **A book on them would be archaeology about an
+opponent our rating no longer meets.** Dropping the CAL cell stands (3/65 across
+three panels carries no information about our ship); the book is withdrawn
+before anyone spends a session on it. **Two of my own routings retracted within
+20 minutes today (LingLing40-as-leak, Leviathan-as-book) — both by the same
+rule, both caught by applying it to my own output rather than to someone else's.**
+
+## Queue stocked — 41 unblocked, `queue_check` exits 0, zero stale
+**#55 CARRY THE MEASURED DESIGN EFFECT INTO EVERY BAR WE PRINT** (DEFF 1.529
+rated / 1.833 unrated, measured; one-function change; touches every verdict this
+project types; correction only ever makes a bar harder to clear).
+**#56 `target_value` PRICES OFF A CACHED RATING** — its freshness line reports
+the newest row in the FILE, not per team, so a team's row can be hours stale
+while the header reads 0.3h. Juusto printed at ~1815 against a live 1883.3 and
+**was dropped out of the band entirely** — a gate that silently omits the best
+target is worse than one that prints a number you can distrust. Positive control
+specified in both directions.
+**#53 RE-SCOPED** on the carry's action item — the floor was explored DOWNWARD
+ONLY (SEALFLOOR0 shipped; **SEALFLOOR24 was ALLOCATION-cancelled, not
+futility-dropped** — the builder's own D5 practice of typing those separately is
+what made this answerable a day later). 0 is the only non-baseline value ever
+measured, so the floor clause NARROWS to the upward arm rather than dying.
