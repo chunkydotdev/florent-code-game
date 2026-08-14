@@ -38,4 +38,12 @@ comparison that crosses it.
 When the rebuild lands (gated swap: single 19-col width + coverage vs the
 ledger), the builder appends the completion line + old-table path here.
 
-**LANDED 2026-08-14 (fill in at swap): pending.**
+**LANDED 2026-08-14T14:01:25Z.** 40,367 files / all-19-col rows / 0 decode
+errors; old table preserved at `corpus/econ.tsv.pre-v2-20260814T140125Z`.
+Coverage note: 184 ledger entries had no replay on disk (old hand-named
+LOCAL probe files, e.g. `antler_s1_a_ad.replay26`) — their pre-v2 rows
+remain only in the preserved old table. First run's swap gate correctly
+refused on the raw-ledger denominator; gate re-denominated to
+files-on-disk and the swap done under the corrected check. **Members (a)-(d)
+are now unblocked: the embargo on v55+-era econ reads is LIFTED for reads
+that cite this rebuild.**

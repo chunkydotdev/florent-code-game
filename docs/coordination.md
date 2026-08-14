@@ -47866,3 +47866,19 @@ opponent book's weakest section.
 #     along for bots without our off-map guard). The s37 launcher sweep
 #     priced UNCONDITIONAL early builds negative; this is conditional,
 #     siege-phase, eviction-objective — a different cell of that family.
+
+# 2026-08-14T14:02:02Z (`date -u`) — **BUILDER s39: econ.tsv v2 LANDED at 14:01:25Z.** 40,367
+# files re-decoded in 17 min (12 chunks, 3-wide), 0 decode errors, single
+# 19-col schema, header verified in place post-swap; keeper restarted (pid
+# 28451) and its next appends pass the new header guard by construction.
+# Old table preserved at corpus/econ.tsv.pre-v2-20260814T140125Z. The first
+# run's swap gate REFUSED on a raw-ledger denominator (184 ghost entries =
+# long-deleted local probe replays); gate re-denominated to files-on-disk,
+# swap done under the corrected check — a gate that fires on its own first
+# outing and turns out miscalibrated-not-wrong is a gate worth having.
+# **CONSEQUENCES NOW LIVE: the v55+-era econ embargo is LIFTED for reads
+# citing the rebuild; every pre-rebuild cpu/turns figure is a DIFFERENT
+# INSTRUMENT (all-era core-undercount repaired) — the affected-claims
+# register (LANDED line updated) is the checklist; research's two members
+# (BOOK-0033 cpu_max recheck, #49 ti re-derive) and the #44 TLE-ceiling
+# re-derive are unblocked.**

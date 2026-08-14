@@ -50,7 +50,11 @@ for p in $RB/part_*.tsv; do tail -n +2 "$p" >> corpus/econ.tsv.new; done
 widths=$(awk -F'\t' 'NR>1 {c[NF]++} END {n=0; for (k in c) n++; print n}' corpus/econ.tsv.new)
 w19=$(awk -F'\t' 'NR>1 && NF==19' corpus/econ.tsv.new | head -1 | wc -l | tr -d ' ')
 nfiles=$(awk -F'\t' 'NR>1 {f[$1]=1} END {print length(f)}' corpus/econ.tsv.new)
-ledger=$(wc -l < corpus/decoded.txt | tr -d ' ')
+# The honest denominator is ledger entries WITH a file on disk — the chunk
+# loop skips missing files silently, and 184 ghost entries (old local-probe
+# replays long deleted) refused the first run's swap against the raw ledger.
+ledger=0
+while read -r f; do [[ -f "replay_archive/$f" ]] && ledger=$((ledger+1)); done < corpus/decoded.txt
 errs=$(cat $RB/part_*.err 2>/dev/null | grep -c '^ERR ' || true)
 say "gates: distinct widths=$widths (want 1, all 19: nonzero=$w19)  files=$nfiles/$ledger  decode errors=$errs"
 if [[ "$widths" != "1" || "$w19" != "1" ]]; then
