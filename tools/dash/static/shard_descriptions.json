@@ -599,5 +599,10 @@
   "brief": "x3r0's salt-table tuning grafted onto the shipped v140, with its glacierkeep keys corrected to the patched map.",
   "full": "Cherry-picks the salt table from x3r0's tree family onto the v140 incumbent — their tuning of the belt-cutting constants, re-keyed for the post-patch glacierkeep grid (their original keys were fitted to the pre-patch terrain). Chassis-matched on the live incumbent vs v140 itself, so a positive final is ship-shaped.",
   "confidence": "high"
+ },
+ "NESTSHOT": {
+  "brief": "Opens one gate so already-shipped turret targeting may shoot the enemy nest cluster the Bisons book flagged.",
+  "full": "Queue #3 arm 1, sized by the GREP discipline: the detection and priority machinery already ship in the incumbent — this arm changes exactly one gate so the existing sentinel targeting can engage the nest-removal case surfaced by the Bisons v8 book and mechanism ledger. Chassis-matched on v140 vs v140.",
+  "confidence": "high"
  }
 }

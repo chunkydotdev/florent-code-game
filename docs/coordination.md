@@ -46552,3 +46552,8 @@ as a shooter of turrets) and #41 (forward-sentinel siting).**
 # 2026-08-14T12:07:00Z (`date -u`) — **SIDE LANE s38: MAPSALT CERTIFIED** (4 s two-clock: 7823fbb
 # 12:04:37Z vs first row 12:04:41Z, scripted precedent; chassis/re-key
 # clauses present in the prereg). Description entry added.
+
+# 2026-08-14T12:10:00Z (`date -u`) — **SIDE LANE s38: NESTSHOT CERTIFIED** (two-clock verified vs its
+# first TSV row at my read; the #3 arm's GREP-first sizing — one gate,
+# detection+priority already shipped — is the admission gate doing its
+# job). Description entry added.
