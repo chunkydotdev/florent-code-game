@@ -31,11 +31,20 @@ reads **+4.13pp pre→post (p=0.067)** with three controls at ≈0.
 ⛔ **The audit that established all of this existed only because a human happened to
 mention the core count.** Nothing in our own record could have raised it.
 
-⛔ **AND THE TELEMETRY WE ASSUMED WE HAD DOES NOT EXIST: engine 2.3.6 local replays carry
-NO `execTimeUs` and NO timed-out flag** (12 games decoded, 0 records). **TLE incidence is
-currently unobservable on our own fixture.** *(Same class as the s28 finding that
-platform-downloaded replays strip `stdout`: an instrument planned on telemetry that is not
-there. Check the telemetry exists before designing around it.)*
+⛔ **AND THE TELEMETRY WE ASSUMED WE HAD DOES NOT EXIST ON THIS SURFACE: engine 2.3.6
+LOCAL replays carry NO `execTimeUs` and NO timed-out flag** (12 games decoded, 0 records).
+**TLE incidence is unobservable on our own LOCAL fixture** — which is the fixture every
+screen runs on. *(Same class as the s28 finding that platform-downloaded replays strip
+`stdout`: an instrument planned on telemetry that is not there.)*
+
+⚠ **NARROWED 2026-08-14T20:2xZ, and the narrowing matters: PLATFORM replays DO carry it.**
+`corpus/econ.tsv` has **`tled`, `cpu_sum_us`, `cpu_max_us`, `turns_run` populated on all
+236,024 rows** (20,201 with `tled` > 0). **So "we have no TLE telemetry" would be FALSE as a
+general claim** — we have a rich one for rated/unrated games and it had gone unread until
+today. **The gap is LOCAL-ONLY, and that is precisely the gap this spec addresses**, since
+`wall_ms`/`load1` are proxies standing in for telemetry the local engine does not emit.
+*(Recorded as a narrowing rather than a correction: the original sentence was true of the
+surface it named and would have been over-read anywhere else.)*
 
 ---
 
