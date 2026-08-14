@@ -100,3 +100,11 @@ passing vacuously on an EMPTY SET, and an install gate whose `&&` chain did not
 bind on the nonzero count it printed. A guard you have never watched FAIL its
 forced-fail case is decoration; this class is harder to spot than a missing
 check because the check visibly runs.
+
+**⭐ EVERY PREREG IS DRAFTED BY A FRESH OPUS SUBAGENT (Magnus, 2026-08-14 s40).**
+Same rule as research.md carries: one fresh opus agent per prereg (no inherited
+session context beyond named inputs; fresh read of the obligations doc), the
+owning lane ratifies the judgment lines (hypothesis, bar, falsifier, segment),
+runs `tools/prereg_check.py` once landed, and types the lock commit itself.
+The agent prepares; the lane commits. Applies to builder-authored preregs
+exactly as to research's.

@@ -81,3 +81,15 @@ and what was found.** The grep runs BEFORE the item is counted, not at prereg.
 **A minimum count is a TARGET: this alarm was Goodharted by its own author within
 half an hour (6 stocked at 13:27, 3 withdrawn by 13:51). An honest 3 that FIRES
 beats a padded 6 that cannot.**
+
+**⭐ EVERY PREREG IS DRAFTED BY A FRESH OPUS SUBAGENT (Magnus, 2026-08-14 s40).**
+One new agent per prereg, no inherited session context beyond named input files —
+the agent reads the obligations doc FRESH and assembles the full checklist
+(this is the anchoring-and-from-memory-assembly fix: CAL-7's unresolvable-by-
+construction bar and CAL-8's boundary-units miscount were both from-memory
+checklist assemblies by a lane mid-session). Model explicit `opus`. **The
+boundary that keeps the lock meaningful: the agent DRAFTS and PROPOSES; the
+owning lane RATIFIES the judgment lines (hypothesis, bar, falsifier, segment),
+runs `tools/prereg_check.py` (once landed; until then the checklist by hand),
+and TYPES the lock commit itself.** An agent-drafted prereg the lane has not
+ratified line-by-line is not locked, whatever its commit time says.
