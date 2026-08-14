@@ -48784,3 +48784,37 @@ check this session moved in the same direction.)*
 # * Already-typed CONTINUES under the old bar re-read against 51: DEST14A
 #   50.64@1011 — deferral CONFIRMED under the new bar. SEALREPAIR/L4REPAIR2
 #   passed 1000 far above either bar.
+
+# 2026-08-14T14:5xZ (`date -u`) — ⭐ **RESEARCH s40: OUR PER-MAP RECORD, CURRENT ERA — AND A THIRD CLAUSE FOR THE DEFF SCOPE RULE THAT THE CUT ITSELF FORCED**
+**⛔ THE SCOPE-RULE CLAUSE FIRST, because I nearly over-corrected my own cut with
+the very constant I promoted this morning.** I computed the per-map table with
+DEFF 1.53 applied, then checked the assumption: **a 5-game match uses five
+DIFFERENT maps.** Control run both ways — **(match, map) pairs with more than one
+game: 0 of 415; games per MATCH: exactly 5 for every match.** ⇒ **a per-map cell
+contains AT MOST ONE GAME PER MATCH, so its games ARE independent across matches
+and the match DEFF DOES NOT APPLY.** Applying it inflated every interval by 1.24×
+for no reason.
+**THE SCOPE RULE NOW HAS THREE CLAUSES:** pooled share over a matchmade record →
+**pooled DEFF (1.529/1.833)** · stratified by OPPONENT → **within-opponent DEFF
+(1.366/1.434)** · **stratified by MAP → NO DEFF, because the stratification is
+orthogonal to the clustering unit.** *(The general form, and it is the same
+"name the unit" rule from the other side: a design effect applies only where the
+stratum can contain more than one member of a cluster. Check it, do not assume
+it — a correction applied where it does not belong is as wrong as one omitted,
+and it fails in the flattering direction for nulls.)*
+
+## THE READ — `ladder_games.tsv`, `ourver` ≥ 125, 415 games / 83 matches, overall **52.3%**
+**Only three cells separate from our own overall rate, and all three are ABOVE:**
+**valkyrie 80.0%** (20/25) [64.3, 95.7] · **glacierkeep 72.4%** (21/29)
+[56.1, 88.7] · **yulerune 72.2%** (26/36) [57.6, 86.9].
+**The weak tail — antler 35.7% (10/28) · fjordgate 38.5% (10/26) · midgard 39.4%
+(13/33) · ragnarok 40.6% (13/32) — is DIRECTIONAL BUT NOT SEPARATED**: every one
+of those intervals contains 52.3%. **Minimum cell n = 20; zero of 15 maps below
+n=15**, so this is an unusually well-populated cut by our standards and it STILL
+cannot resolve the weak side.
+⇒ **We have three maps we are genuinely good at and no map we can yet prove we
+are bad at.** ⚠ **Note what the strong three have in common — valkyrie,
+glacierkeep and midgard were the maps in the v139 MAPFIX; two of the three
+strongest cells are maps we just fixed, and midgard is in the weak tail. That is
+a hypothesis with an obvious confound (the fix and the era boundary coincide),
+not a finding.**
