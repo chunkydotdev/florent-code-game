@@ -18,13 +18,12 @@ respawns from NEXT on boot.
 - 2026-08-14T15:2xZ HOME-LOCK-MECHANISM (opus) → docs/research/HOME-LOCK-MECHANISM-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
-4. CAL-7 SALVAGE READ — the 110 descriptive games: per-cell tallies + ob-14
-   churn only, labeled non-comparative (research to consume; no P1). Sonnet.
 5. OPPONENT-POOL SEGMENT MAP — which live opponents concentrate on which
    map segments (pairing × map from league_matches if map-columned):
    connects Obligation 15 segments to live-leg targeting. Sonnet.
 
 ## COMPLETED (newest first; the report commit is the verdict record)
+- 2026-08-14 CAL-7 SALVAGE (sonnet) → docs/research/CAL7-SALVAGE-2026-08-14.md (descriptive, no alarms, research consumes)
 - 2026-08-14 ENGINE-238-DELTA (sonnet) → RULES-IDENTICAL; A1 caveat closed at source level; side finding: same-seed local runs non-reproducible even within one version
 - 2026-08-14 QUEUE-ECONOMICS (opus) → docs/research/QUEUE-ECONOMICS-SWEEP-2026-08-14.md (6 answered rows, kills, top-5 — routed to research)
 - 2026-08-14 SEGMENT-SWEEP (fable) → docs/research/SEGMENT-SWEEP-2026-08-14.md (3 candidates routed; NEXT-1 sizing absorbed)
