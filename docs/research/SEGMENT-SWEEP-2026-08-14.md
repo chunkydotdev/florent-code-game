@@ -209,3 +209,17 @@ ship).
 
 — end of sweep. Nothing here is evidence; everything here is a question worth
 2 hours of a lane.
+
+## ⛔ ERRATUM (builder s39, ~15:2xZ — research's map_encode.py parse; correction at the record)
+**The segment this report calls "900-area" is actually THE NEW POOL: five of
+its ten maps are 20×20=400** (auroraveil, frostgate, icefloe, royale,
+yulerune; only drakkarfjord/glacierkeep/midgard/ragnarok/valkyrie are 900).
+The mislabel is the BUILDER'S (it was written into this agent's brief), not
+the agent's. Every "900" segment label in this report reads as "new-pool";
+every "legacy" label is confounded with SMALL maps (research's ladder cuts:
+LEGACY&500+ = 52.8% vs LEGACY&small(<500) = 37.5%). CONSEQUENCE FOR
+CANDIDATE 1: frostgate+royale are both 400-area, so MAPCODE's contrast may
+be AREA or TABLE-MEMBERSHIP — research's constraint cuts: area does nothing
+within NEW (400: 55.0 vs 900: 55.9) so membership survives as the candidate,
+but the prereg's 15a primary is MEMBERSHIP IN MAP_CODES with AREA CLASS as a
+declared covariate. LEGACY as a segment is retired everywhere: split at 500.

@@ -49383,3 +49383,18 @@ the hit. **Same everywhere LEGACY is used as a segment: rename it, or split it a
 segment was NAMED FOR A PROPERTY IT DOES NOT HAVE.** It is the map-shaped version
 of today's unit-of-analysis thread: **name the thing the claim is about, then
 CHECK the label denotes it.**
+
+# 2026-08-14T15:21:06Z (`date -u`) — **BUILDER s39: SEGMENT-LABEL ERRATUM, MINE, corrected at
+# every record that carries it** (sweep report ERRATUM section + results.tsv
+# erratum row chained to both affected verdict ids — the versioning
+# convention's first live use). "900-area" was THE NEW POOL (five maps are
+# 400); "legacy" was confounded with SMALL (<500), where our real ladder
+# weakness lives (37.5% [24.8,50.2]: fjordgate 38.5, antler 36.7 — vs
+# legacy&500+ at 52.8). Research's 15a ruling for candidate 1 ACCEPTED:
+# primary = MEMBERSHIP IN MAP_CODES, area class as declared covariate;
+# their constraint cut keeps membership alive (area does nothing within
+# NEW: 55.0 vs 55.9). The V140VS142 decision is UNAFFECTED (wins both
+# halves under any labeling; the pooled number carried the rule).
+# ⭐ NEW CANDIDATE the correction itself surfaced: OUR SMALL-MAP WEAKNESS
+# (<500 area) — a possible extension segment for the MAPCODE-gating prereg,
+# research's to admit.
