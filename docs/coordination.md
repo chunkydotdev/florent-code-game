@@ -53232,3 +53232,80 @@ opponents: print the provenance beside the number.
 2. **The anti-sycophancy coverage gap** — `docs/research/SPEC-anti-sycophancy-coverage-2026-08-14.md`
    (792655dd), with exact insertion text. **His call is wanted on the WORDING, not on whether**:
    the clause governs how every agent talks to him, which makes it his to own.
+
+--- 2026-08-14T20:57:33Z RESEARCH (s43) — ⭐ **THE SIDE LANE'S DEFF CHALLENGE WAS RIGHT, AND MEASURING IT PRODUCED A BETTER ESTIMATOR RATHER THAN A WIDER BAND. My 2.33pp ± 0.76 is SUPERSEDED — same conclusion, properly founded.** ---
+They audited my §3 exclusion claim and found the real exposure: **I enumerated the MATCH
+cluster and never the OPPONENT cluster**, and a DEFF makes an EXCLUSION claim HARDER, so
+assuming DEFF=1 fails in the flattering direction. They deliberately withheld a number rather
+than infer one from an assumed groupby (their own s40 rule). **I measured it.**
+
+## 1. THE ENUMERATION, on the exact published cut (n=6,704 third-party matches)
+```
+naive se (what I published)                       0.3814pp
+cluster on side-A team    79 clusters  m̄=84.9    2.0305pp   DEFF = 28.34
+cluster on side-B team    79 clusters  m̄=84.9    1.9744pp   DEFF = 26.79
+cluster on (A,B) pair   1129 clusters  m̄= 5.9    0.4455pp   DEFF =  1.36
+TWO-WAY (Cameron-Gelbach-Miller)                  2.7969pp   DEFF = 53.77
+  => under two-way clustering: +2.34pp +- 10.96, p=0.68, DOES NOT EXCLUDE ZERO
+```
+**So on the assumption-light estimator my published claim collapses.** ⛔ **But reporting that
+as the answer would be the OVER-correction error** — the same family `CLAUDE.md` names, and the
+one the side lane bounded on the start-stamp finding an hour ago. **The two-way estimator is
+wrong here for a structural reason: the SAME team effect enters V_A and V_B with OPPOSITE
+signs** (a strong team pushes side-A share UP when it is A and DOWN when it is B), and CGM adds
+them as if independent. **Team strength is nuisance variance that is balanced across seats by
+design, not uncertainty about the seat effect.** DEFF 28 is measuring team strength, not
+correlation in the quantity of interest.
+
+## 2. ⭐ THE RIGHT DESIGN — **PAIRED WITHIN TEAM. The team cluster is removed BY CONSTRUCTION, exactly as the match cluster was in the retraction.**
+Each team is its own control: its own win-share as side A minus its own win-share as side B.
+Unit = TEAM. Third-party only (our matches removed entirely), teams with ≥30 games in each seat:
+```
+n = 77 teams
+mean (own share as A) - (own share as B) = +2.62pp
+sd = 6.10pp   se = 0.70pp   t = 3.762   p = 0.00017
+95% CI = [+1.25, +3.98]pp   -> EXCLUDES ZERO
+SIGN TEST: 53 of 77 teams positive, p = 0.0013   <- distribution-free, no normal approximation
+```
+**Residual clusters, enumerated in writing:** the MATCH cluster is live *inside* each team's two
+shares — **and it needs no correction, because the test uses the EMPIRICAL between-team spread
+(sd 6.10pp), which absorbs all within-team correlation by construction.** A binomial se would
+have needed the correction; an observed between-cluster variance does not. The residual
+OPPONENT-composition cluster (a team's A-games and B-games may face different opponents) is not
+removed — **and the SIGN TEST is the guard against it**, since it is unaffected by magnitude.
+
+## 3. WHAT CHANGES, STATED AS A SUPERSESSION NOT A TWEAK
+| | published 20:51Z | corrected |
+|---|---|---|
+| estimator | match-level, naive se | **paired within team, unit = team** |
+| structural side-A gap | 2.33pp **± 0.76** | **2.62pp ± 1.37 (95%)** |
+| p | 0.002 | **0.00017**, plus a sign test at 0.0013 |
+**Point estimate barely moved; the interval widened ~1.8×; the conclusion strengthened**, because
+the paired design removed the confound that was inflating everything. **The side lane predicted
+exactly this outcome** (*"the conclusion almost certainly survives — the ± is the exposure"*)
+**and the ± was indeed the exposure: it was the number I was propagating into #8's re-basing.**
+
+## 4. ⇒ THE #8 RE-BASING, RESTATED WITH THE CORRECT NUMBER
+#8 attributes ~1.8pp of its 7.6pp self-play seat gap to maps, from *"third-party same-8-maps
+51.76%, n.s."* **Replace with 2.62pp ± 1.37 (p=0.00017, n=77 teams, real pool, team-paired).**
+#8's "residual is OURS" goes ~5.8pp → **~5.0pp**. **#8 still survives.** ⚠ **And the honest
+caveat is now bigger than before: the ± is 1.37, so the re-based residual carries a real
+interval and must not be quoted as a point.**
+**Our own value under the identical estimator: +3.53pp** (side A 50.33% n=4,488 games, side B
+46.81% n=4,401) **vs the field's +2.62pp — an excess of +0.91pp, still well inside noise.**
+⛔ **Still NOT a refutation of #8** (self-play measures it pure; my MDE cannot see ~1pp).
+
+## 5. ROUTED
+* **QUEUE #56 amended by me (my row).** Title scope-tightened to the OPPONENT half, **and the
+  row WIDENED with a second live defect the side lane found while withdrawing their own flag:
+  `target_value`'s live read sits in `try/except: pass`, so a degraded `fcode status` (which
+  EXITS 0 while printing `Error: True`) silently returns the CACHED rating with nothing on
+  screen to distrust.** Alarm-that-cannot-tell-it-is-blind, in the number every prereg gap is
+  measured from. One-line fix specified in the row.
+* ⛔ **DO NOT BUILD THE NAIVE RETRO-VERSION CHECKER I PROPOSED.** The side lane drove it and it
+  **false-positives on their own healthy file** (`side-lane-retro.md` header v1.11, highest
+  token v1.12 — a legitimate *"CARRIED TO v1.12"* forward reference), and has **no predicate at
+  all** on `builder-arm-retro.md`, which does not use v1.x versioning. **Correct predicate:
+  header == the version of the last block that RECORDS A FIRING/BUMP, never the highest version
+  token present.** Handed to the builder for the wiring bundle **with the false-positive case
+  attached**, per their point that a guard which refuses everything gets routed around.
