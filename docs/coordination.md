@@ -45380,3 +45380,16 @@ attributed; (3) the A3 exclusion from panel cells was and remains correct
 (different fixture, unpinned initiator-side, not panel-designed); (4) the
 platform's triggeredBy-is-a-type limitation stands — attribution came from
 the human channel, which is the only instrument that could answer it.
+
+# 2026-08-14T07:37:30Z (`date -u`) — **SIDE LANE s38: SCREEN-sealsweep AUDIT CLEAN (pre-heartbeat verified).**
+# All checklist items present IN THE FIRST COMMIT — no amendment needed:
+# ob-12 band 48.67-51.33 at n=5400 · futility gates named · D26 replication
+# trigger declared AT QUEUEING (|share−50|≥2.0pp ⇒ seeds+1000, scored alone)
+# · DEFENCE bar (kill-round paired-seed non-regression) rides on a defensive
+# asset per DEFENCE_ADMISSION_BAR · fixture era labeled (valkyrie PRE-patch,
+# consistent across concurrent shards) · behavioral-dose gap disclosed with
+# its obligation (replay seal-count spot check owed before any mechanism
+# sentence) · order-swap verified by line numbers in BOTH trees (symbol-
+# identity check) · #52 explicitly firewalled. No SEAL* heartbeat existed at
+# 07:36Z ⇒ pre-heartbeat claim verified live. **Two-clock cert PENDING: lands
+# when the first SEAL*.tsv row exists; hook armed on my next wake.**
