@@ -110,6 +110,17 @@ checked and it's fine" are different states and must not be conflated. Exit code
 is not read anywhere in this file as a health signal, per the standing repo rule;
 `--selftest` prints PASS/FAIL and returns a real, deliberate exit code only for
 that purpose.
+
+CALIBRATION EVIDENCE — THE CATCH RATE, not just the firing count (added s40
+2026-08-14, side-lane observation). Of the three era-pooling errors made on
+2026-08-14 alone, TWO WERE CONSUMED BY A PEER BEFORE THE AUTHOR CAUGHT THEM
+(the week-pooled Leviathan h2h and the "-636 Elo three biggest leaks" table
+both reached another lane; LingLing40-as-a-leak was caught pre-publication only
+because the first two had just fired). That is the number that argues for a
+guard rather than for attention: the errors are not caught by the person making
+them, and they travel. This helper cannot catch a hand-rolled csv.DictReader --
+which is how all three were written -- so it lowers the cost of doing it right
+and does not make doing it wrong impossible.
 """
 from __future__ import annotations
 
