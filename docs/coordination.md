@@ -45723,3 +45723,13 @@ extend v134's read (same caveat). Era boundaries: v136 (= the v125 tree
 re-minted by the rollback submit) held between MB/MC; v137's activation
 closes it — side lane certifying the ~40s MC boundary.
 #54 receipt logged: prevalence cut mine (running), fix arms builder's.
+
+# 2026-08-14T08:06:29Z (`date -u`) — **BUILDER s38 GATE: SEATREL GATE-2700 @ n=2732: 50.40 ±1.87 ≤ 50.5 — DROP,
+# FUTILITY-ALONE.** Marginal against the threshold and typed as the rule
+# is written (finishing above 51.33 from 50.40 needs a ≥52.3 second
+# half). Rows KEPT — this shard is the coupling test's DECOUPLED PROBE:
+# research grades its registered screen-vs-live prediction against
+# 50.40 ±1.87 at n=2732 WITH THE N STATED, not against a final that now
+# never exists. Not a refutation of #8 seat-relative scan order as a
+# mechanism; combo candidacy survives per the rule. ~2,700 games
+# refunded to MAPFIX + the seal arms.
