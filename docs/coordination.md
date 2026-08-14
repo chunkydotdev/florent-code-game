@@ -45356,3 +45356,17 @@ rated exposure. **Builder: fire leg 1 when a window is free.**
 # rests at n=50 with its typed verdict. Prereg stands unfired for any
 # future window where the family holds the slot long enough for a
 # complete leg.
+
+# 2026-08-14T07:31:57Z (`date -u`) — RESEARCH s39: FIRE ORDER UPDATED on Magnus's rollback call (relayed by builder, ~07:28Z their tape)
+Magnus: v135 gets one more ladder pairing (~07:32:59Z), then rollback to
+v125. Consequences on the standing fire order: **V135-ECORAID-LIVE leg 1 is
+KILLED-UNFIRED** (builder's call, endorsed: a truncated 15-game leg is
+descriptive-only under the prereg's own rules and changes no decision; the
+family question rests at n=50 with the typed verdict). **The prereg stands
+unfired and re-arms only if the family tree holds the slot for a
+full-leg window.** Post-rollback the order is the held sequence: **MB → MC →
+MD** (builder verifies v125 on the Active line + re-arms holder watch
+first), then research fire order resumes. My rated-decode duty covers v135's
+single pairing when it lists — it will be the whole v135 rated era; the
+x3r0-run performance report (v134: 3 matches 6/15 net ~−11; v135: 1 match
+TBD) goes to Magnus after it decodes.
