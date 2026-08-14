@@ -52803,3 +52803,57 @@ where the s37 sharpening actually pays.**
   **My one caused-harm** (endorsing an unchecked premise into a published
   certification) **is corrected on the record at `ecd27e66`, with the mechanism
   named rather than the text quietly repaired.**
+
+# ============================================================================
+# 2026-08-14T20:37:10Z — **BUILDER ARM s41 WRAP** (Magnus called it). Arm retro ran FIRST
+# (docs/builder-arm-retro.md s41 instance, FIRINGS 4, committed before this).
+# Post-reboot boot → x3r0 v145 slot episode → corpus-race fix → fixture-defect
+# discovery → arms. Zero platform actions; v140 held throughout.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**D1. A PRE-COMMITMENT IS ONLY LOAD-BEARING IF IT ENCODES A DECISION ALREADY
+OWNED.** *(behaviour → this booted tape.)* I built the v145 tie-resolution as a
+zone construction (A6/A7/A8), certified each amendment's arithmetic flawlessly,
+and the whole edifice was answering a question that was MAGNUS's rule to state,
+not mine to design — he ruled (A9) and one sentence replaced three amendments.
+Encoding a decision still owed by the principal is elaborate displacement, and no
+tool flags it. **Route: when a decision rule has a human owner, ASK before
+drafting the machinery.** Side lane's independent finding agrees: a flag put as a
+QUESTION (the n=1000 scope) outperformed every flag put as a finding — Magnus's
+answer was NEITHER of two readings, it closed on a number in hand.
+
+**D2. THE CONSUMER OF A RULE IS ITS FIRST VIOLATOR — AGAIN.** *(instrument →
+the terminal-row monitor pattern.)* My CAL-8 monitor grepped the LOG for
+"BOUNDARY stop" while the runner writes that phrase only to the FIRES TAPE — I
+broke research's own R4 ("match the rows the runner actually writes") one session
+after consuming it. Backstopped ~2 min late by the child-pid branch. Third
+same-shape event across lanes this cycle; it is not a memory failure, it is that
+a rule is followed where attention is and violated where it is not.
+
+**D3. A GREP THAT HITS ONLY doctrine.py FOUND A SPEC, NOT A BEHAVIOUR.**
+*(behaviour → the queue's admission GREP + comment-hygiene.)* Research's #67
+finding, promoted: a doctrine-only code-search hit is a NEGATIVE that RAISES an
+item's priority, never retires it. Origin of THREE stale-comment incidents today
+(8:1 heal, Default-OFF/NOISE_ON, _hunt_turret spec) + a 4th at cert
+(LOKI_SALT_TI_FLOOR "matches SEAL"). **The comment-hygiene sweep is owed and
+these four are its worklist** — none fixed on live trees mid-screen (breaks the
+one-line-diff).
+
+**D4. FIFTH ADMISSION CLAUSE — MECHANISM-OCCURRENCE, ONE STEP BEFORE GREP.**
+*(behaviour → the four-part admission.)* Research's #52 kill: the admission asks
+for a fixture that can RESOLVE a mechanism but never whether the mechanism OCCURS
+in the field. #52's melee-peck premise does not exist — our buildings die to
+TURRET fire, and one builder's +4 HP/turn cannot hold vs a sentinel's 9. The
+cheapest null is a leg we already ship (GREP); the second-cheapest is a leg whose
+mechanism the field never presents (this). Killed #52 AND Magnus's belt-heal idea
+before either burned a window.
+
+**D5. THE ERROR DISTRIBUTION HAS A MEAN, AND IT POINTS AT "YES".** *(observation,
+routed to the arm-retro Q2 series.)* Both my retractions this session ran toward
+action/encouragement (relayed a held exploit as live; called a premise-absent
+idea testable). Same flattering direction the research arm named in its own retro.
+Watch it: an arm that errs toward "do the exciting thing" needs its own skeptic.
+
+WRAP STATE below in the reboot block.
