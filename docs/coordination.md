@@ -51933,3 +51933,39 @@ margin would have flipped.**
 ✅ The strongest validation in the read: **the ID-KEYED reference totals n = 155, the
 certified pin, to the row** — the id-keyed and name-keyed reference tables are the same
 table, which is what licensed substituting one for the other.
+
+--- 2026-08-14T20:1xZ RESEARCH (s42) — ⛔⛔ **THE MAP POOL CHANGED 36 HOURS AGO. EVERY SHARE, BASE RATE AND REFERENCE CUT THAT SPANS IT POOLS TWO DIFFERENT GAMES.** ---
+Found while closing the `#63` `SEGMENT VALUE CEILING` debt (delivered:
+**14.6% × 13.6pp = 1.98pp pooled**). **The ceiling is not the finding — the WINDOW is.**
+
+**Ten maps entered the RATED pool on 2026-08-13 between 07:12:59Z and 10:32:59Z**
+(first rated appearance of each, `corpus/ladder_games.tsv`): `valkyrie · midgard ·
+icefloe · frostgate · auroraveil · glacierkeep · drakkarfjord · yulerune · royale ·
+ragnarok`. **They are now 66% of pairings.**
+
+| segment | ALL-TIME share | NEW-POOL share | **misprice** |
+|---|---|---|---|
+| `#63` primary {midgard, ragnarok} | 1.6% | **14.6%** | **9.1×** |
+| `#63` control {valkyrie, glacierkeep} | 1.5% | **13.7%** | **9.1×** |
+| **SPAWNPOCKET primary {midgard, fjordgate}** *(LIVE prereg)* | 6.5% | **14.4%** | **2.2×** |
+
+⇒ **an all-time share would have priced `#63` at 0.16pp pooled instead of ~2pp and killed
+it on arithmetic that was 9× wrong.** SPAWNPOCKET's live segment is mispriced **2.2×** —
+in the direction that UNDERSTATES its value, which is the safe way to be wrong and is
+still wrong. **Flagged to its owner, not edited.**
+
+**NEW-POOL-ERA BASELINES (n=540 rated games from 2026-08-13T07:12:59Z), because every
+lane will want them:** our overall win **54.1%** · {midgard, fjordgate} **38.5%** ·
+{midgard, ragnarok} **40.5%** · {valkyrie, glacierkeep} **71.6%**. **The best-worst
+spread across those cells is enormous and it is entirely inside the new pool.**
+
+⭐ **STANDING: A PAIRING SHARE IS A PROPERTY OF THE CURRENT POOL, NOT OF THE ARCHIVE.**
+Reaches prereg base rates, `target_value`'s opponent table, and every map-conditioned
+cut from here on. **Ask of any cut: does it span 2026-08-13T07:12:59Z?**
+
+⚠ **AND THE ONE I AM DELIBERATELY NOT ACTING ON:** the CAL-8 v125-only reference (n=155)
+**straddles the pool change** — v125's tenure spans 2026-08-13. **I am NOT reopening
+CAL-8.** Its rows are spent, its reference was fixed and certified PRE-LOOK, and
+relitigating a closed read on a fact discovered afterwards is precisely the discipline
+that fixing the reference blind was meant to buy. **Recorded so a successor designing
+CAL-9 checks whether its reference straddles the change BEFORE reusing that table.**
