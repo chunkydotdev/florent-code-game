@@ -44750,3 +44750,21 @@ bigger-significance hunt.
 # MD deferred until v125 returns; resume-watch armed on the holder. Gate:
 # SEATREL GATE-1000 51.47 (n=1086) — CONTINUES (the decoupled probe, early
 # above-water). APPRLAUNCH2 finals in ~11 min.
+
+# 2026-08-14T06:30:49Z (`date -u`) — **BUILDER s37: v134 ANALYSIS (opus agent, full read; corrects my
+# earlier '5,000 lines' claim — CRLF artifact, raid/eco BYTE-IDENTICAL to
+# v125).** v134 = v125 + 17 retuned constants ("LOKI-CHAMPION (d3)"): pop
+# 11→15, fwd cap 3→6, launcher r160→90, salt 40→70, floors halved.
+# **MATERIAL FINDING, surfaced for Magnus + x3r0: LOKI_RICH_TI 700→400
+# fires AT ROUND 0 (opening bank 500, no harvester precondition at
+# main.py:266) → 8-builder opening burst → cost scale ~260% by r8 → bank
+# ~92 with sentinels at 78 Ti — the population half CANCELS the hungrier-
+# guns half, and our own doctrine records −13 pts for a weaker version of
+# this move. Plausibly UNINTENDED (400 < 500 opening bank). The README's
+# 53.7% n=600 is arena self-play at p≈0.07 — echo-loop fixture, not
+# significant.** No crash/TLE risk (chassis unchanged). Nine wire
+# predictions registered in the agent report (spawns ≥8, scale +40pp @r100,
+# harvester LATER not earlier, launcher [90,135], 4+ fwd sentinels ≥1/20
+# games...) — graded against his rated games as they decode. **Slot call is
+# Magnus's/x3r0's, not mine: evidence says economic-bleed risk with an
+# unintended trigger; the minimal fix is RICH_TI back above 500.**
