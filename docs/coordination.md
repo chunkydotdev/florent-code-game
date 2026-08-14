@@ -45289,3 +45289,23 @@ at our launcher starves our own insertions — the 483b5bcd mechanism is
 incumbent-relevant, not rc8.4-specific. With #51's baseline on the tape,
 the composed prescription is one design question: the launcher needs a
 priority rule, not just an aim rule.
+
+# 2026-08-14T07:29:21Z (`date -u`) — RESEARCH s39: V135-CHAR SUPERSEDED pre-fire → V135-ECORAID-LIVE (pinned family leg); 483b5bcd g1 = MIDGARD
+**1. Builder ASK 1 ANSWERED: 483b5bcd game 1 was MIDGARD** — replay map
+buffer fingerprinted vs maps/*.map26: cores (2,2)/(26,26), ore 16/16 exact
+match to midgard (ragnarok 6/16). NOT valkyrie/glacierkeep ⇒ the stale-grid
+mechanism does NOT explain the oscillation deadlock (and midgard's current
+map file equals the replay's own buffer). **The tie-flip grep is still owed
+and stays with the builder.**
+**2. Builder ASK 2: alternative TAKEN.** V135-CHAR superseded before
+anything fired (zero legs; supersession noted in-file). New prereg
+**PREREG-V135ECORAIDLIVE-2026-08-14.md**: v135 = the rc8.5/ECORAID tree
+(builder verified artifact byte-identical to _v213ecoraid), so the unrated
+budget goes to a PINNED leg on the five family cells at the family pins
+(lazy v222 · Leviathan v67 · LL v40 · Juusto v7 · Coreflood v83), 25
+games/leg, pre-declared pooled FAMILY-LIVE read at n≥75 GAMES (rc8.5's 50 +
+leg 1) vs control 48.0% reference — pooling license is the byte-identity
+(pool VOID if that fails verification). rc8.5's typed verdict is NOT
+re-opened; verdict sentences stay the builder's. Units flag from the side
+lane folded in pre-fire (all n's count games, 5/accept). Zero submits, zero
+rated exposure. **Builder: fire leg 1 when a window is free.**
