@@ -1,14 +1,13 @@
-# LIVE: **v139 = `bots/_v218mapfix` "Loki v9"** — SHIPPED 2026-08-14 09:0xZ
-# (Magnus: "lets roll out MAPFIX"): v125 chassis + corrected post-patch
-# valkyrie/glacierkeep tables (4 doctrine lines). Baseline 1759 @ 954
-# matches, k=0, SHIP_SIT arms at k>=8. ROLLBACK: v125 (`bots/_v197mapcode`);
-# deeper: `_v187saltidle_f` (v123).
-# ⛔ VERIFY `fcode status | grep 'Active bot:'` BEFORE ACTING — x3r0 was
-# re-activating v137 against Magnus's restores this morning (tape 08:52:31Z);
-# the slot conversation is Magnus<->x3r0's, no lane counter-rolls.
-# s38 note: MB/MC/MD ALL FIRED (MC triage FAILED -1, APPRLAUNCH road closed;
-# MD's triage types when its matches decode). Deferred-legs item below is
-# OVERTAKEN.
+# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — SHIPPED 2026-08-14
+# 11:37Z (Magnus: "Yeah lets ship"): v139 chassis (map correction included)
+# + SEAL_TI_FLOOR 0 + LOKI-L4 trunk repair. Screen 60.26 ±2.80 @ n=1223
+# (v139-controlled). Baseline ~1734 @ 962, k=0, SHIP_SIT arms at k>=8.
+# ROLLBACK: v139 (`bots/_v218mapfix`); deeper v125 (`_v197mapcode`).
+# ⛔ VERIFY `fcode status | grep 'Active bot:'` BEFORE ACTING — x3r0 made
+# three unannounced slot moves this morning (tape 07:20-08:52Z).
+# FLEET: work-server-1 live (certified NULLHOST 49.00), curfew 20:55-04:00
+# UTC in-worker, vps_pull monitor feeds the dashboard, SEALFLOOR0R
+# replication running remotely.
 
 ## ===== ⛔ FIRST: WHAT DIED WITH s37 — RE-ARM BEFORE TRUSTING ANYTHING =====
 ##  1. **ALL SESSION WATCHES ARE DEAD:** the consolidated corefill gate/finals
