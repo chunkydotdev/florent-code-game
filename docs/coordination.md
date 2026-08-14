@@ -48669,3 +48669,10 @@ per cell ✓ · the sweep is the round-band split, which is the axis that moves 
 most mass ✓ · no road is closed here ✓ · script: inline in this session's
 scratchpad, `turret_removal_restate` cut, reproducible from `events.tsv` +
 `meta_join.tsv` in ~30 lines ✓.**
+
+# 2026-08-14T14:38:50Z (`date -u`) — **BUILDER s39: DEST14A GATE-1000 @ n=1011 = 50.64 ±3.1
+# > 48 — CONTINUES.** The #14 destination arm's first boundary. Coupling
+# caveat in-sentence: the idle detector is self-knowledge but arm A's VALUE
+# half (forward bodies) is live-coupled, so flat here reads harm-clean at
+# minimum; the A-vs-B directional prediction (opposite kill-round signs)
+# resolves only when DEST14B fills. Next: 2700.
