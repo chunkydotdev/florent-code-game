@@ -50221,3 +50221,54 @@ that gets quoted later as "the leg went 40%".)*
 # **PATH:** TINYECO final tonight → SPAWNPOCKET-v2 + any landed #63
 # tomorrow → combo tree + attribution screen (box, ~1h at 40-wide) →
 # ship recommendation to Magnus fully priced.
+
+# 2026-08-14T17:17:36Z (`date -u`, measured) — ⭐⭐ **RESEARCH s40 RULING, REGISTERED BEFORE THE DOSE LANDS: EVICT58 MAY ENTER v11 ON DOSE + MECHANISM + HARM GATE — AND THE REASON IS ARITHMETIC, NOT PERMISSIVENESS**
+Builder asked for a bar-setting call and was right that it must be registered
+**before** the dose decode, not after. **The dose is still blocked on the
+archiver (0/25 at 17:08:52Z), so this ruling is made blind to it.**
+
+## THE ARITHMETIC THAT SETTLES IT
+**What would a comparative LIVE read on this plank cost?** At the unrated
+within-opponent DEFF of 1.434, to resolve an effect of:
+| effect | games | matches | rate windows | hours of the ENTIRE unrated budget |
+|---|---|---|---|---|
+| 2pp | 3,443 | 689 | 138 | **45.9 h** |
+| 3pp | 1,530 | 306 | 61 | **20.4 h** |
+| **5pp** | **551** | **110** | **22** | **7.3 h** |
+| 8pp | 215 | 43 | 9 | 2.9 h |
+**⇒ A COMPARATIVE LIVE READ ON A SINGLE PLANK COSTS 7+ HOURS OF THE WHOLE FIXTURE
+FOR A 5pp EFFECT, AND 20 HOURS FOR 3pp.** ⇒ **requiring one is not a higher
+standard — it is a PERMANENT BLOCK wearing a standard's clothes.** A rule whose
+cost nobody can pay is a decision to never ship the class, taken without saying
+so.
+
+## THE RULING
+**EVICT58 MAY ENTER v11 ON DOSE + MECHANISM + A CLEAN HARM GATE**, subject to
+three conditions, all of which bind:
+1. ⛔ **THE HARM GATE MUST BE QUOTED AS AN EXCLUSION WITH ITS INTERVAL, AND IT IS
+   WEAKER THAN "CLEAN" SOUNDS: 49.20 [46.1, 52.3] DOES NOT EXCLUDE A REAL HARM OF
+   UP TO −3.9pp.** Per `CLAUDE.md`'s fail-to-exclude law, *"no significant harm"*
+   is not *"harm excluded"*. **Anyone citing the harm gate cites the interval.**
+2. **P1 MUST FIRE — evictions/game > 1.0 vs 0033. If the dose is ~0 the plank is
+   refuted as designed and does not enter anything.**
+3. ⭐ **THE COMBO CARRIES THE ATTRIBUTION BURDEN THIS PLANK CANNOT: if EVICT58
+   enters on dose alone, the v11 assembly MUST include an EVICT58-OUT arm.**
+   Otherwise the plank is never evaluated, ever — **which is the actual failure
+   mode of shipping on mechanism, and the only one that compounds.**
+
+## ⛔ AND THE STRONGEST ARGUMENT AGAINST MY OWN RULING, STATED RATHER THAN BURIED
+**`#47`/APPRLAUNCH had PROVEN DETECTION (SIEGE45 fired 15/16), a clean local
+screen (52.67 pooled, n=10,800) and a replicating second screen (52.39) — and its
+pinned live leg read NET −1.** *"Dose and mechanism proven"* is very close to
+what that family had before it lost. **The eco/launcher family's local edge has
+now failed on FOUR consecutive live surfaces.**
+**⇒ THE HONEST STATEMENT OF THIS RULING IS: I am accepting a class of evidence
+that has already failed once in this exact family, because the alternative
+standard is unpayable — and condition 3 is what makes that recoverable rather
+than repeatable.** If the v11 combo ships with an EVICT58-out arm, a repeat of
+the APPRLAUNCH outcome is DETECTED. Without it, it is not.
+⚠ **This ruling is mine and it is a bar-setting call, not a measurement. If
+Magnus or the builder wants the higher bar despite the arithmetic, that is a
+legitimate call and it overrides me — but it should be made knowing it costs
+7-20 hours of the fixture per plank, not on the impression that a live leg is
+merely "more rigorous".**
