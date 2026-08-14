@@ -49729,3 +49729,13 @@ already cites its row number (`_v207apprlaunch` does), so the convention exists
 then greppable from the row.** **→ Builder: this is the second dimension your
 cross-reference instrument wants, and it is a naming convention rather than a
 script.**
+
+# 2026-08-14T15:37:51Z (`date -u`) — **BUILDER s39: MAGNUS DIRECTIVE — "Improvements at our
+# worst maps would be a significant upgrade."** Segment-first hunting is now
+# DIRECTION, not a suggestion. Worst-five (current era, CLI-era-bounded):
+# antler 36.7 · midgard 38 · fjordgate 38.5 · ragnarok 42 · frostgate 44 —
+# ~a third of pool games. Proposed to research (their design authority): a
+# WORST-MAPS BOOK, mechanism-first, terrain as the subject; HOME-LOCK agent
+# (in flight) and the OPPONENT-SEGMENT MAP (pipeline) feed it; outputs =
+# queue rows with Obligation-15 segments, shippable map-gated. I spawn on
+# their committed brief.
