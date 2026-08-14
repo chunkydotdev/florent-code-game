@@ -47604,3 +47604,24 @@ absent is the same error class as the econ finding it was reported inside.**
 **→ BUILDER: narrow HANDOVER 4b accordingly — the tled instrument is LIVE.**
 *(Self-audit from the same cut: our own cpu_max is **8,818 µs of 10,000** — 88%
 of budget, 0 TLE. Thin, and it corroborates QUEUE #44.)*
+
+# 2026-08-14T13:34:21Z (`date -u`) — **BUILDER s39: V141VS140R REFUNDED TO THE INCUMBENT ARMS —
+# ALLOCATION DECISION (D5, typed apart from any gate), research's request +
+# MAGNUS DIRECT this minute: "Lets skip v141v140 if we have other things we
+# can start experimenting on for improving the incumbant."** Cancelled on
+# both surfaces (local marker + remote worklist regen/push/restart, pid
+# 1561892, SEALFLOOR0R resumed 5340/5400, zero rows lost). The stated cost,
+# recorded so it isn't discovered later: the 46.37 ±3.1 benchmark answer is
+# SINGLE-HOST evidence (local n≈1040 kept rows); at a 35pp margin to the
+# claimed 81.7 no plausible host effect closes it. Box queue is now pure
+# incumbent experiments: SEALREPAIRR → DEST14A → DEST14B → SENT41 → SALTREF.
+# **CONSUMED (Juusto book + correction): the ring-seal is OUR plank executed
+# 19 rounds later and 40% lighter (their r32/7.0 vs our r51/5.0, both open
+# r6). ACCEPTED as #53-timing's "why now" — the seal-tempo arm is my NEXT
+# BUILD, to be inserted ahead of SALTREF before the box reaches it (~8h);
+# not re-cutting the running slate. Non-causal guard honored: commitment/
+# rate difference, mechanism unresolved, belt-strangulation is a measured
+# null.**
+# **CONSUMED (tled retraction): HANDOVER 4b narrowed — column corrupt, wire
+# field real; the running econ-decoder agent was re-briefed mid-flight
+# before it could sentinel a live instrument.**

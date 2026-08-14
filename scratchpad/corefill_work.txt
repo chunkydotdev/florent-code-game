@@ -1077,7 +1077,6 @@ SEALFLOOR0R bots/_v219sealfloor0   bots/_v197mapcode      5400 253000
 MAPSALT     bots/_v225mapsalt      bots/_v223sealrepair   5400 274000
 NESTSHOT    bots/_v226nestshot     bots/_v223sealrepair   5400 276000
 V141VS140   bots/_x3r0v141         bots/_v223sealrepair   2700 278000
-V141VS140R  bots/_x3r0v141         bots/_v223sealrepair   2700 280000
 SEALREPAIRR bots/_v223sealrepair   bots/_v218mapfix       5400 269000
 DEST14A     bots/_v228dest14a      bots/_v223sealrepair   5400 282000
 DEST14B     bots/_v229dest14b      bots/_v223sealrepair   5400 284000
