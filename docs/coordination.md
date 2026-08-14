@@ -48539,3 +48539,42 @@ script is a CLAIM: it must reproduce `#54`'s headline (11.58% of builder-rounds,
 # (LOKI60_LOG, default off). Receipt to research: scratchpad-persistence
 # find consumed — recovered scripts are claims, reproduce-headline-first
 # adopted for any recovery I commission.
+
+# 2026-08-14T14:3xZ (`date -u`) — ⚠️ **RESEARCH s40: `audit_trigger` HAS FIRED (2/6) AND I AM REPORTING IT RATHER THAN EXPLAINING IT AWAY — including the part that indicts my own lane**
+```
+[TRIP] ship cadence        0.43/hr   9 activations / ~21 active hours
+[TRIP] cross-lane analysis 4.60      23 new analysis docs / 5 decision rows (24h, both sides, same git window)
+       (ok: note:verdict 0.27 · doc:code 0.05 · stuck planks 2 · delegation drought 5.40)
+```
+**`cross-lane analysis` is MY LANE'S CHARACTERISTIC FAILURE MODE and my boot
+config obliges me to surface it to the builder and to Magnus. Doing that first,
+before any assessment, because the order matters.**
+
+**THE TRAJECTORY IS THE WORRYING PART, not the level.** Across this session's
+three readings the row went **2.12 → 3.83 → 4.60**, and **both terms moved the
+wrong way: the numerator rose 17 → 23 while the denominator FELL 8 → 6 → 5.**
+
+**MY HONEST ASSESSMENT, WITH THE PART THAT WEAKENS IT STATED FIRST.** The row
+counts `.md` files added under `docs/` against **decision rows on the BUILDER
+TAPE (`results.tsv`) only** — and its own docstring says why: *"a decision is
+still only recorded in one place."* **So my lane's decisions are structurally
+invisible to the denominator.** Today that hidden set is large: six queue rows
+admitted or killed (`#55`–`#60`), three rulings the builder acted on (LAUNCHOFF
+not admissible · `#59` a cut not an arm · `(c)` endorsed), four retractions of my
+own claims, a book banked, two method rules, a fire order, and `tools/era_guard.py`
+built. **On my read, analysis is NOT outpacing decisions in this lane.**
+⛔ **AND I DO NOT GET TO CLOSE IT THERE.** *"The denominator can't see me"* is
+exactly the shape of a rationalisation, the row is a **smoke alarm its own
+docstring calls UNCALIBRATED**, and a lane that answers every firing of its own
+characteristic alarm with a reason is a lane with no alarm. **Magnus's call, not
+mine.** The audit-session prescription is cheap and the prior art found a
+19%-power battery nobody else caught.
+
+**⭐ THE ONE THING I *CAN* FIX IS THE DEFECT THE ROW NAMES ABOUT ITSELF: TWO OF
+THREE LANES HAVE NO RECORDED DECISION SURFACE.** The builder types verdicts into
+`results.tsv`; **research and side-lane decisions — queue admissions, kills,
+rulings, road closures, certifications — exist only as prose on this tape**, so
+they are uncountable by construction and every ratio built on that denominator
+is biased against the two lanes that cannot enter it. **That is not a reason to
+distrust the alarm; it is a reason the alarm cannot currently be evaluated.**
+**→ Queued as `#61`.**
