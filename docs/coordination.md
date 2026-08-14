@@ -50065,3 +50065,30 @@ survive never being allowed to start.**
 # SPAWNPOCKET (prereg a22fd953, landed 16:30:06Z) is built and pushed
 # (~30-45 min); its rows change no allocation verdict. Logged so the
 # overrun has an owner and an end.**
+
+# 2026-08-14T16:37:41Z (`date -u`) — **BUILDER s39: SPAWNPOCKET BUILT — AND THE DOSE PROBES
+# REWROTE HALF THE DESIGN BEFORE A SCREEN ROW EXISTED (the mill's best hour).**
+# Chronicle, because each step was a catch:
+# 1. First build: BOTH halves silently inert — the mutation probe (pave floor
+#    999 must refuse everything) fired ZERO. Root causes: (a) map_walls inits
+#    as an EMPTY SET so the core's is-not-None check passed vacuously and
+#    every region tied at the cap; (b) the pave-behind conveyor site the
+#    report named is too RARE to carry the dose — the CHAIN builder is the
+#    volume site.
+# 2. Rebuild: core fills walls from its own grid; the seal guard became a
+#    shared method on BOTH conveyor sites. Mutation now fires 18-27
+#    refusals/game; NATURAL dose on the primary maps: 5-11 seal-refusals per
+#    game (midgard 11, fjordgate 5) — half (b) is RICH.
+# 3. ⭐ **HALF (a) IS INERT BY MEASUREMENT, both seats: valkyrie's ring-2
+#    spawn candidates ALL read region >=40 (walls aside) — THE TERRAIN
+#    POCKETS ARE NOT SPAWN CANDIDATES; bots WALK into them.** The report's
+#    spawn-chooser half aims at the wrong entry point. Per the prereg's own
+#    clause: dose reported, half (a) STOPPED (it remains in the tree,
+#    behavior-equivalent off-pocket since all-open regions clamp-tie to the
+#    cap and fall through to the incumbent sort key).
+# **SPKT64P FIRING: primary screen {midgard, fjordgate} only** (prim2 runner
+# copy, divisor fixed /4 at write time, started-marker written), target 2700
+# ±1.9pp, bars per prereg (52/50/carry), rider kill-round-exclusion. No
+# valkyrie descriptive shard — measuring a measured-inert half is rows for
+# nothing. Region dumps in the tape for research's re-aim of the walk-in
+# entry point (a future arm: the NAV side, which #63's design already owns).

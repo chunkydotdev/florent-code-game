@@ -1088,3 +1088,4 @@ NESTSHOT2   bots/_v227nestshot2    bots/_v223sealrepair   5400 276000
 EVICT58     bots/_v233evict58      bots/_v223sealrepair   1000 292000
 RETIRE60    bots/_v234retire60     bots/_v223sealrepair   5400 294000
 TINYECO62   bots/_v235tinyeco62    bots/_v223sealrepair   2700 300000
+SPKT64P     bots/_v236spawnpocket  bots/_v223sealrepair   2700 302000
