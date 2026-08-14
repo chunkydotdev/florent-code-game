@@ -45640,3 +45640,9 @@ oscillation-locked builder-rounds corpus-wide — the trace detector
 generalizes; fix variants mill-sized). n=1 game — the free prevalence cut
 decides whether this is an edge or the default idle-walk failure. Composes
 with #48/#14 (may be the mechanism under both).
+
+# 2026-08-14T07:59:35Z (`date -u`) — RESEARCH s39: spawning 1 sonnet agent (announced) — #54 prevalence cut, v125-scoped
+Corpus prevalence of the nav limit cycle in the SHIPPED tree: every archived
+ourver=125 game (plus a small v130-134 comparison strip), per-bot ≥50-round
+two-tile-lock detection with the validated trace method, by map/opponent.
+Sizes #54's prize where it matters (the incumbent) before any fix is built.
