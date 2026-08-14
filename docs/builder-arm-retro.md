@@ -794,3 +794,103 @@ inspected the experiment and never asked whether the WORLD had moved. **A map-po
 check is one CLI call — `fcode maps list` — and no boot sequence has ever made
 it.** ⇒ **ROUTED: add a pool-vs-battery-set assertion to the boot checks.** Not
 built this session; named here so it is not merely observed.
+
+---
+
+# INSTANCE — s39, 2026-08-14. **FIRINGS: 6.** Run at Magnus's wrap-call, before the process deltas.
+
+Answered from results.tsv (~20 rows typed today), the platform, the gate ledger,
+and the two arms' relay tape. `claim_check`: **clean, 15/15 tools point at records
+naming their own file.** `audit_trigger`: 0/6 (the delegation-drought row now
+exists and reads 5.00 — the s38 fix, measured live).
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+The big ones scoped correctly under temptation: **TINYECO62 held at UNRESOLVED
+50.93** in its own pre-declared band when both "worst-maps arm works" and "drop
+it" were more tellable stories — then PARKED on research's arithmetic, with the
+banked bound (opening ≤19% of the tiny deficit) carried instead of a verdict.
+**EVICT58 typed as refuted-AS-DESIGNED with clean attribution** (plant 3.6×
+validated, throw starved opponent-shaped) — not "eviction is dead."
+**SPKT64P catastrophe-dropped at 39.00@418** on the gate built that morning.
+✅ **FIRES ONCE, AND MAGNUS CAUGHT IT: I told him 872086fc was a match we won.
+It was a 2–3 loss containing a won game** — game-level fact promoted to
+match-level claim in conversation, exactly the game-share/match-win conflation
+this repo's own scoring block warns about, committed orally where no tool reads.
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+**Four, and the cluster is FLATTERING again:** (a) the 872086fc "win" (flattering,
+Magnus caught it) · (b) the segment-label error — my "900-area" list held five
+400-tile maps and "legacy" was confounded with "small"; the tidier story, caught
+against the primary and corrected with chained errata (**rule minted: segment
+DEFINITIONS get a primary-source check the same way counts get the CLI**) ·
+(c) LAUNCHOFF's kill was delayed by MY arithmetic error running toward the arm
+(coverage 8.2% killed it once computed right) · (d) NESTSHOT2's "harm" claim
+amended by the audit — pooled 48.38 no longer excludes 50, harm UNRESOLVED (the
+dramatic reading, walked back). **s31's diagnosis stands: toward the more
+decisive-sounding claim. The mechanism that corrects it is still a peer or a
+primary, not my judgement improving.**
+
+### 3. INSTRUMENTS — driven to BOTH verdicts?
+gate_watch's catastrophe gate: selftested both directions BEFORE arming, then
+**caught SPKT64P live at n=418 the same day — the session's best instrument
+return.** econ v2 rebuild: swap-gated, and the FIRST coverage gate was itself
+wrong (raw-ledger denominator, 184 ghosts) — caught because the gate was made to
+fail before trusting it. EVICT58 pre-flight: failed CLOSED on the JSON shape,
+zero exposure — the correct failure direction, then fixed and validated
+standalone. ✅ **FIRES TWICE:**
+* **The tiny3 install gate ran and asserted nothing** — my `&&` chain printed 2
+  live processes and installed anyway (benign only because the runner had already
+  exited). Same family as the morning's `map_walls is not None` on an empty set.
+  **Research named the class at wrap and it is the right cut: two of today's
+  guard failures were "the check ran and asserted nothing," not "the check was
+  missing." A guard that cannot fail its own forced-fail case is decoration.**
+  ROUTED: line added to `.claude/commands/builder.md` — inline shell gates and
+  truthiness guards get a forced-fail probe exactly like tools do.
+* **DRAFT-ROW shipped with a cosmetic defect visible on its first firing**
+  ("0.50.93"). Trivial, but it reached production unprobed on its output format —
+  the selftest checked verdict logic, not the printed row.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+**Clean by the tool** (`claim_check` above), and one near-miss owned in-session:
+the interim NESTSHOT2 harm sentence was typed on the tape before the audit
+re-read it — the amendment chain (-amended rows) is the record working as
+designed, not a save.
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+**Two legitimate reactivations under X3R0_SLOT_RULE** (v142, v143 both beaten
+≥51 at n≈1000; both reactivations in clean pairing windows, holder verified on
+the `Active bot:` line each time). **EVICT58 submit-hold leg: 36 SECONDS of
+prototype exposure** (17:04:16→17:04:52Z), 5/5 pinned accepts, holder restored
+and verified — tightest on record. Rated leakage: none observed at the pairing
+boundary during the windows checked in-session.
+
+### 6. WHAT THE BUDGET BOUGHT
+CAL-7's 110 games (SPENT — the n<150 look correctly declined and now sealed),
+CAL-8 partial toward its 30-accept boundary, EVICT58's 5, Magnus's 3 watch
+games. Local: ~19k screen rows landed (SEALREPAIR receipt stack completed,
+TINYECO 2700, SPKT 418-and-dropped) plus the remote SALTREF stopgap.
+✅ **FIRES: x3r0 is an UNMODELLED SECOND CONSUMER of the shared 5/20min budget**
+— he fires a 5-cell panel within ~30 min of every slot event, which is exactly
+when our runners also want the window. Flagged to Magnus for the team channel;
+no runner models it yet.
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+All moved to HANDOVER's top block at wrap: #63's owed design decision
+(nav-not-detector; combo-interaction line owed vs SPAWNPOCKET on the shared
+midgard/fjordgate segment) · CAL-7 SPENT (pooling later = the declined look in
+two steps) · CAL-8's read is prereg-bound (P4 primary, n≥75 floor) · the PARK
+reversal trigger is PAIRING SHARE, not a new idea · pool26 zombie-runner
+cancel-guard status · the atlas file lands from an agent that dies with me.
+
+## The one question that is not a list
+**Did I make a decision the machinery could not have caught? Yes: I spent 2,700
+local games answering a question whose ceiling was ~+0.4pp overall, and the
+number that killed it at wrap was computable BEFORE the screen.** Research's
+PARK arithmetic — segment pairing share × plausible on-segment effect = overall
+ceiling — used nothing that wasn't known at prereg time. `target_value.py`
+prices OPPONENTS; **nothing prices SEGMENTS**, so Obligation 15 made me declare
+WHERE the effect lives without ever asking WHAT the cell is worth. That is s28's
+finding at the segment level. **ROUTED: segment-value line (share × effect
+ceiling, written in the prereg before the leg) proposed into the Obligation-15
+template — flagged in coordination for research's next boot, since they own the
+obligations doc.**
