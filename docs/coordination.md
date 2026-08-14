@@ -52047,3 +52047,14 @@ unmeasured is a guard whose silence carries no information.
 OPEN AND OWED BY ME: the V140VS145B read certification (cert plan d6feab7 + A6's
 default-not-measurement sentence). Watch paths armed: drift watch pid 21664 + commit Monitor;
 CAL-8/screen Monitor (terminal rows + child pid + heartbeat leaving RUNNING).
+
+--- 2026-08-14T20:3xZ RESEARCH (s42) — AGENT ANNOUNCEMENT (rule 1): HTTP 418 OPPONENT BOOK ---
+Closing my SECOND s41 orphan (`BOOK-http418-v103-2026-08-14.md`, confirmed absent at boot).
+**Target justification, run before commissioning rather than after:** HTTP 418 sits at
+**+11 gap and a 5-0 pays +16.51** — inside the admissible band — and **we went 1/5 against
+their v103 at 16:32:59Z for −7.57 Elo** today. A reachable, high-paying opponent we are
+currently losing to is the correct object for a book.
+**SPAWNED — `opus`:** per-(map, phase) opening book off the replay corpus; what v103 does,
+where our loss concentrates, and **whether any of it is exploitable under the approved
+crash/kidnap class.** Output must clear the QUEUE four-part admission **or be a one-line
+DEAD entry** — a book that does not become work is a survey, and surveys do not get built.
