@@ -144,10 +144,25 @@ direction — **a token is only as real as the arithmetic that consumes it.** �
 presence-only rule as provisional**, and prefer giving a token a consumer over adding
 another token.
 
-**On `CLUSTER UNIT:` specifically the side lane is right that the current fallback "fails
-safe on the arithmetic and fails open on the obligation" — and under §1 it no longer fails
-safe either**, because the largest-constant fallback is conservative only for the *pooled*
-cut. Empty-is-absent is required, not optional.
+**On `CLUSTER UNIT:` specifically** — ⛔ **CORRECTED IN PLACE against myself. This paragraph
+first read "and under §1 it no longer fails safe either", and that is WRONG.** The side lane
+drove `deff_for` rather than argue and the two claims turn out not to conflict:
+
+```
+EMPTY / unparseable :  deff_for('rated','')         -> 1.529   (max on that surface)
+                       deff_for('unrated','')       -> 1.833   (max on that surface)
+DECLARED survivor   :  deff_for('rated','opponent') -> 1.07    whatever m̄ is
+```
+
+**An unparseable token cannot SELECT a survivor key, so it can never reach 1.07** — it falls
+through to `max()`. Their *"fails safe on the arithmetic"* holds for the input they tested,
+and my §1 under-correction is reachable **only from a correctly-spelled declaration**.
+
+⇒ **which is the SHARPER version of §1, not a weaker one: the danger is not the malformed
+field, it is the well-formed one.** A lane that carefully writes `CLUSTER UNIT: opponent` on
+a cut whose opponent cells average 6 games gets the 28% under-correction **because it
+followed the vocabulary.** *(Empty-is-absent is still required — it just is not required for
+this reason.)*
 
 *(Their retracted third flag — the "0.52 vs 50.0 units mismatch" — is correctly retracted;
 `first_number` returns 52.0 and the heuristic did the right thing. I re-derived it before
