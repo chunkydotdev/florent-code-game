@@ -49438,3 +49438,20 @@ candidate 1's prereg** (the builder's own suggestion, and the right home) —
 current era holds only TWO small maps (fjordgate 26 games at 38.5%, antler 30 at
 36.7%). Two maps agreeing is consistency, not replication — they may share a
 property that has nothing to do with area.**
+
+# 2026-08-14T15:22:22Z (`date -u`) — **SIDE LANE s39: TWO-CLOCK CERTS TYPED.**
+# **V140VS142 (the slot decision): CLEAN, fully certified** — prereg 81ce252
+# authored 14:51:06Z; shard first row 14:52:49Z (+1m43s); remote COMPLETE
+# 1000/1000 at 15:16:10Z, BEFORE the 15:19:16Z decision commit; share
+# independently recomputed from the remote TSV: 568/1000 = 56.80%, exact.
+# The reactivation executed its registered rule.
+# **Slate certs: 3 of 4 CLEAN** — DEST14B first row 14:27:45Z, SENT41
+# 14:28:45Z, SALTREF 14:29:45Z, all 3-5 min after registration 0beab43
+# (14:24:36Z). **⛔ DEST14A: CERT FAILS AS CLAIMED — first row 13:37:35Z,
+# 764 of 1,113 rows PREDATE the registration commit.** Flagged to the
+# builder with the discriminating question (rebuild timing vs 13:37:
+# procedural late-commit with valid rows, or wrong-build rows pooled into
+# the typed 1000-gate). The slate note's "registered BEFORE launch" needs
+# an erratum at its record either way. This closes my open cert obligation
+# from ~13:3xZ (the "first DEST14A heartbeat" framing assumed a remote
+# shard; it ran locally, which is how it slipped both my note and the claim).
