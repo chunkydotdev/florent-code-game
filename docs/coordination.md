@@ -52569,3 +52569,52 @@ trees**, while `LOKI_SEAL_TI_FLOOR` is 0/6. **The comment asserts a relationship
 hold.** It cannot confound this screen (SALT is unchanged across arms), but it is the
 prose-contradicting-code class research counted three of today, and the live hazard is a future
 author who changes one constant believing the other follows.
+
+--- 2026-08-14T20:32:31Z (`date -u`) RESEARCH (s42) — ⛔⛔ **`#52` COLLAR MEDIC: I WENT TO PICK ITS FIXTURE CELLS AND FOUND ITS PREMISE MAY NOT EXIST IN THE FIELD. RE-SCOPE BEFORE ANY LEG.** ---
+The builder banked `#52` as *"local fixture can't instrument it"* — correct, and my FIRE
+ORDER #2 said that is exactly why it belongs on the free unrated fixture. **So I went to
+name the cells. The cell-selection query answered a different and more important question.**
+
+**WHO ACTUALLY DESTROYS OUR BARRIERS** (our barriers, our games, `events.tsv` BUILD/DEATH,
+OpenSverige-guarded join; ≥80 barriers built, ≥20 games):
+```
+opponent                   games  built  died  rate   their turrets/g   verdict
+Powerpuff Girls              114   3067  2909   95%        30.57        turret-heavy
+Ouroboros                     64    386   314   81%        58.67        turret-heavy
+Besvikomat                   102    992   768   77%         5.67        mixed
+Lunds Stallions              303   4335  3342   77%        15.13        turret-heavy
+Torsko                       162   3073  2254   73%         7.42        turret-heavy
+CtrlAltDefeat                298   3211  2227   69%        15.17        turret-heavy
+kladde chatte tville         148   1269   723   57%        12.90        turret-heavy  <-in band
+lingling_40h                  59    250   106   42%         4.51        mixed         <-in band
+Jython                       140    955   395   41%         6.84        turret-heavy  <-in band
+```
+⛔ **NOT ONE MELEE-DOMINANT CELL EXISTS.** The lowest turret count among opponents who
+actually kill our barriers is **4.51/game**. **Our barriers die to TURRET FIRE, not to
+builder pecks — and `#52`'s whole premise is the melee exchange.**
+
+## ⭐ AND THE ARITHMETIC SHOWS WHY THAT IS FATAL RATHER THAN INCONVENIENT
+The row argues from the **EXCHANGE RATE**. The binding constraint is **THROUGHPUT**, and it
+is not in the row. One builder heals **+4 HP per TURN**; a unit with reload R fires every
+max(R,1) rounds:
+| damage source | dmg/rnd | their Ti/rnd | our Ti to undo | exchange | **healers to hold ONE** |
+|---|---|---|---|---|---|
+| melee peck | 2.00 | 2.00 | 0.50 | **4.00:1** | **0.50** |
+| gunner | 7.00 | 4.00 | 1.75 | 2.29:1 | **1.75** |
+| sentinel | 9.00 | 5.00 | 2.25 | 2.22:1 | **2.25** |
+⇒ **the exchange RATE favours us against all three — and we still LOSE against turrets,
+because we cannot heal fast enough.** One builder beats **two** peckers; it loses **1v1** to
+a gunner; **a 30 HP barrier under one sentinel dies in ~4 rounds whatever we spend.**
+
+⇒ ⛔ **`#52` FUNCTIONS ONLY WHERE DAMAGE IS MELEE-DOMINANT, AND THE FIELD IS NOT.**
+**Recommendation: KEEP IT BANKED — but for THIS reason, not the fixture reason, because the
+two imply different next steps.** *(Fixture-blocked ⇒ fire it elsewhere. Premise-absent ⇒
+re-scope or retire.)* **The re-scope that survives, if any: heal-dispatch against
+BUILDER-PECK damage specifically, which needs a cell where that damage exists — and I cannot
+find one.**
+⚠ **HONEST LIMIT: barrier DEATH does not name its killer** — `events.tsv` carries BUILD and
+DEATH only, no attack events. Turret COUNT is a proxy for turret DAMAGE. **The absence of any
+low-turret/high-death cell is the load-bearing observation, not any single row.**
+✅ **This is the queue's own GREP discipline arriving one step earlier: the cheapest null is a
+leg testing a feature we already ship — and the second cheapest is a leg whose mechanism the
+field never presents.**
