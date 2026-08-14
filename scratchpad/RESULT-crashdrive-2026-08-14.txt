@@ -50,3 +50,34 @@ PLANK (does the border ARM add border throws over the incumbent?):
 ⚠ SCOPE: this says nothing about what SHARE of the real field is
   vulnerable. We patched this in eco.py; most teams have not, and
   'most' is unmeasured. That needs the live leg.
+
+===== A1 — BOUND ON THE MISS (2026-08-14, builder; side-lane flag, verified) =====
+The BAR MISS STANDS: the pre-registered rule is a point-estimate rule, the point
+estimate is 3/60 = 5.0%, the bar is 10.0%, and 5.0 < 10.0. That is a MISS and
+nothing below softens it.
+
+WHAT IS ADDED: n=60 COULD NOT HAVE SEPARATED 5% FROM 10% EITHER WAY.
+  point       5.00%  (3/60)
+  Wilson 95%  [1.71%, 13.70%]   <- CONTAINS the 10.0% bar
+  (the normal approximation gives [-0.51%, 10.51%], an impossible lower bound;
+   Wilson is the correct form at this k and n and is what is quoted.)
+=> The honest sentence: "the bar is not met at the delivered dose, and this n
+   could not have separated a true 5% from a true 10%." This is OBLIGATION 12
+   applied to a BAR rather than a gate — the prereg carried no resolution
+   statement for it and nothing required one. Same shape as the LOKI-19 gate
+   whose 10pp-wide bands were answered by 19 events.
+
+PROVENANCE OF THE CORRECTION, recorded because it matters how it arrived: the
+SIDE LANE raised it AND flagged that it runs TOWARD the plank — the flattering
+direction — and told me to discount them accordingly. I recomputed rather than
+accepted, and their conclusion holds while their interval did not.
+
+WHAT IS UNTOUCHED: the mechanism (7/7 unguarded vs 0/37 guarded) does not
+depend on the bar at all, and the DELIVERY finding — 7 border arrivals in 60
+games — is the routing signal under every reading. AIM/SITING remains where
+this family points.
+
+ACTION TAKEN RATHER THAN BANKED: re-fired at n=300/cell, seed block 94000
+(disjoint from 93000). At n=300 the half-width at p=5% is +-2.47pp, which
+EXCLUDES 10.0% — so the bar becomes resolvable instead of unresolvable. An
+unresolvable miss is worth less than ten minutes of cores.
