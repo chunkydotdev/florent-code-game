@@ -607,25 +607,47 @@ observed variance of match scores against the binomial:
 ⇒ **EFFECTIVE n IS ~55–65% OF NOMINAL** and half-widths are understated by
 **×1.24 (rated) to ×1.35 (unrated)**. **The 12pp and ~39pp figures above are
 therefore OPTIMISTIC** — both were computed treating games as independent.
-**Use:**
+**Use — TWO FORMS, and picking the wrong one is the common mistake:**
 ```
-half_width_95 = 1.96*sqrt( p̄(1-p̄) * ( DEFF_u/n_unrated + DEFF_r/n_rated ) )
+ONE SAMPLE (a single bar on one surface):
+    half_width_95 = 1.96*sqrt( p̄(1-p̄) * DEFF / n )
+TWO-FIXTURE COMPARISON (e.g. a panel share vs a rated share):
+    half_width_95 = 1.96*sqrt( p̄(1-p̄) * ( DEFF_u/n_unrated + DEFF_r/n_rated ) )
 ```
 **SCOPE RULE — a single multiplier OVERCORRECTS a stratified bar:** a pooled
 share over a **MATCHMADE** record (the ladder picks the mix, so the mix genuinely
 IS sampling variance) takes the **pooled** constant; a **stratified or per-cell**
-bar (we chose the cells, so the mix is design, not noise) takes the
-**within-opponent** constant.
-**The correction only ever makes a bar HARDER to clear**, so it can turn a
-positive into an unresolved but never the reverse — **the exposed class is claims
-that cleared a bar NARROWLY.** ⚠ **This is about PLATFORM games only.**
-`tools/effective_n.py` (seed degeneracy) and `tools/mde.py` (local kill-speed
-null) measure different things on LOCAL batteries and are complementary, not
-duplicates. **Three independent measurements converge** (implied 1.45 in
-`PREREG-PANEL-CAL1-v123-field-2026-08-13.md` A1.2, 1.434 df-corrected here, and
-an independent side-lane replication) — **and the df correction is required: the
-uncorrected form returns 1.282 and is biased LOW.** Re-measure the constants
-periodically; ρ is a property of the current pool, not a law.
+bar (we chose the cells, or the read conditions on one opponent, so the mixture
+is removed by design) takes the **within-opponent** constant.
+
+**⛔ DIRECTION — AND THE GUARANTEE IS NOT UNCONDITIONAL. THIS IS THE CLAUSE THAT
+KEEPS THE CORRECTION FROM FLATTERING THE CLAIMS MOST TEMPTING TO BANK.**
+Widening an interval only ever makes an **EXCLUSION** claim harder — superiority,
+harm-exclusion, closure-by-upper-bound. **It makes a FAIL-TO-EXCLUDE claim
+EASIER**: *"no significant rise"*, *"consistent with zero"*, a null banked
+because nothing cleared. **That class is live here — `DEFENCE_ADMISSION_BAR`'s
+kill-round non-regression is scored exactly that way.**
+⇒ **A fail-to-exclude claim must first be RESTATED AS AN EXCLUSION (the CI
+excludes the regression bar) before the correction is applied.** Applied to the
+unrestated form, DEFF launders a weak null into a confident one.
+**With that restatement: the exposed class is claims that cleared a bar
+NARROWLY.**
+
+⚠ **PLATFORM games only.** `tools/effective_n.py` (seed degeneracy) and
+`tools/mde.py` (local kill-speed null) measure different things on LOCAL
+batteries — complementary, not duplicates.
+**PROVENANCE, stated precisely because "three measurements converge" was too
+loose:** the **unrated** constant is two independent measurements —
+**1.45 implied** (`PREREG-PANEL-CAL1-v123-field-2026-08-13.md` A1.2, per-match sd
+8.565 vs binomial 7.111) and **1.434 df-corrected** (here) — and the **method**
+was independently replicated by the side lane on the **rated** surface (1.529
+digit-for-digit, 1.366 df-corrected). **The df correction is required: the
+uncorrected form returns 1.282 and is biased LOW.** The unrated cut comes from
+`meta_join` because unrated games are not in `ladder_games.tsv` — that is
+correct and is **not** a breach of the "never `meta_join` for a denominator"
+rule, which governs RATED win-rate denominators; the caveat that does apply is
+that it covers the ARCHIVED subset. Re-measure periodically; ρ is a property of
+the current pool, not a law.
 
 **6. A REFUTATION WITHOUT LIVE-GAME BACKING IS A HYPOTHESIS, NOT A REFUTATION.**
 Magnus, 2026-08-10: *"Every statement needs backup from real games so we need to
