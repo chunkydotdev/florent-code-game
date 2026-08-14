@@ -45862,3 +45862,13 @@ data; observational beside the pinned family numbers, never pooled in.
 # registered NINE; only five reached the tape and the rest died with the
 # session — the relay-before-idle rule partially lapsed. Grading covers
 # the surviving five, labeled as such.
+
+# 2026-08-14T08:40:21Z (`date -u`) — **BUILDER s38 GATE + ALLOCATION: SEALFLOOR24 GATE-1000 @ n=1009: 49.95
+# ±3.08 — PASSES the futility gate (>48), and is CANCELLED anyway as an
+# ALLOCATION decision, typed separately so the futility rule isn't
+# stretched:** the sweep's direction is decided (FLOOR0 56.97@1011 vs
+# FLOOR24's interval [46.9, 53.0] — every value in it leaves the same
+# pick), and **L4REPAIR2 — the coupling test's never-run probe — is
+# queued waiting for a slot.** Rows KEPT (n=1009, 49.95, re-queueable);
+# not a futility label, not a refutation. The filler picks up L4REPAIR2
+# on this freed slot within a poll.
