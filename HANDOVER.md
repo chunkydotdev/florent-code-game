@@ -1,70 +1,79 @@
-# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — REACTIVATED TWICE today
-# under **X3R0_SLOT_RULE** (PROGRAMME field, Magnus verbatim): beat his v142
-# 56.80@1000 and v143 57.06@999, both whole-interval over the 51 bar. Rating
-# ~1764. Era before first displacement: k=8 RULE=HELD +31.8. RECEIPT STACK:
-# SEALREPAIR 59.26@5400 (strongest screen on record) + remote 56.77@5394
-# (real cross-host heterogeneity z≈2.7 — quote PER-HOST) + every component
-# confirmed. ⛔ VERIFY `Active bot:` before acting — x3r0 uploads on no
-# schedule; holder_watch EXPECT=v140 is the tripwire; his post-change 5-cell
-# panel spends ~1 rate window within 30 min of EVERY slot event.
+# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — rating ~1795, k=20,
+# RULE=held all s40. ⛔ VERIFY `Active bot:` before acting (x3r0 uploads on no
+# schedule; a holder change costs ~1 rate window ~15-20 min later).
 #
-# ===== RULES MINTED TODAY (all enforced/committed) =====
-# GATE-1000 futility bar = 51 (Magnus; drops 26% of true +2pp arms — a drop
-#   is NOT-CLEARLY-POSITIVE, bottom-of-queue, never closure) · CATASTROPHE
-#   gate n∈[400,1000) bar<40 wake<42 (first live catch: SPKT64P @418) ·
-#   Obligation 15 segments (ONE primary + direction; segment DEFF 1.07;
-#   local screens DEFF 0.98 = naive bars) · X3R0_SLOT_RULE (screen n=1000,
-#   reactivate >=51, submit-hold pattern w/ budget pre-flight) · BUILD
-#   DELEGATION + rolling AGENT-PIPELINE (docs/research/AGENT-PIPELINE.md) ·
-#   verdict versioning (-amended suffix rows) · same-seed pairs are NEVER
-#   paired data · era-bound every rated cut, counts from live CLI only.
+# ===== s40 WRAPPED 2026-08-14 ~19:0xZ ON MAGNUS'S CALL — MACHINE REBOOT (A
+# REAL ONE; s39's wrap said reboot and none happened — this one Magnus is
+# executing himself). EVERYTHING DIES: keeper, elo/match/opp/replay watchers,
+# vps_pull, dash, corefill loop wrappers, side-lane drift watch, CAL-8 runner
+# (STOP-yielded cleanly). Zero rated exposure in s40; no submit, no activation.
 #
-# ===== WRAPPED 2026-08-14 ~18:0xZ on Magnus's call. Retro s39 (6 firings) +
-# PROCESS DELTAS D1-D6 are on the tape. WAKE PATH: NONE for gate boundaries —
-# gate_watch/heartbeat wakes die with s39. CAL-8 runner self-terminates at 30
-# accepts (holder-asserts per fire; research's prereg governs the read: P4
-# primary, n>=75 floor; CAL-7's 110 games are SPENT — pooling them is the
-# declined look in two steps). Remote SALTREF runs under curfew. Keeper + 4
-# watchers + corefill survive. Atlas + swarm agent docs may sit UNCOMMITTED in
-# docs/research/ — next boot commits them. =====
+# ===== POST-REBOOT BOOT LIST =====
+# 1. Re-arm keeper + 4 watchers per tools/monitors/ docstrings (the s39-era
+#    invocations are in ps history / the monitors' own headers).
+# 2. Re-arm vps_pull: nohup bash tools/monitors/vps_pull.sh >> corpus/vps_pull.log 2>&1 &
+#    (remote box IDLE — all 6 shards COMPLETE and pulled; SALTREF verdict banked.)
+# 3. ⛔ COREFILL STAYS PAUSED: scratchpad/COREFILL_STOP is MAGNUS'S deliberate
+#    pause (s40 ~18:33Z), NOT a crash. Ask him before rm. Loop wrappers need
+#    relaunch after reboot even to resume.
+# 4. Side lane re-arms its own drift watch (their charter).
 #
-# ===== v11 COMBO STATE (Magnus: "52 is a small piece of a bigger combo") =====
-# TINYECO62 **PARKED** (research s40: extension arithmetically futile, prize
-#   ~+0.4pp overall; reversal trigger = tiny-segment PAIRING SHARE; banked
-#   bound: opening explains <=19% of the -14.8pp tiny deficit) ·
-# EVICT58 REFUTED-AS-DESIGNED (0.04 vs >1.0 evictions/game — 0033 sends no
-#   builders forward; the conditional PLANT validated 3.6x, inheritable) ·
-# SPKT64P CATASTROPHE-DROPPED @418 (chain-puncture; v2 = refuse-only-if-
-#   builder-inside-region, designed not built) · TOMORROW'S INGREDIENTS:
-#   SPAWNPOCKET-v2 + #63 long-approach. ⛔ #63's DESIGN DECISION is the owed
-#   item (research s40 wrap): a NAVIGATION change, not a detector (stuck
-#   counter counts only FAILED moves; pockets are ENTERED, not spawned into);
-#   shares {midgard,fjordgate} segment with SPAWNPOCKET — whichever prereg
-#   lands SECOND owes a combo-interaction line.
-# MATRIX: combo vs BEST-INGREDIENT vs shared-segment arm-outs.
+# ===== CAL-8 — EXACT STATE + STANDING PRE-LOOK DECISIONS (do NOT re-open) =====
+# State: 13 ACCEPTS / 65 GAMES. DERIVE, never inherit (s40's own bug):
+#   awk -F'\t' '$3=="ACCEPT"' scratchpad/panel_cal8_fires.tsv | wc -l
+#   (cross-check: scratchpad/panel_cal8_pointer.txt; matchId rows in meta_join)
+# BELOW the 75-game floor -> NOT READABLE. NO LOOK HAS OCCURRED (both lanes on
+# record). Standing decisions, all typed pre-look on the tape:
+#   * RESUME to BOUNDARY=15 accepts (31c5606): rm scratchpad/PANEL_CAL8_STOP,
+#     then BOUNDARY=15 zsh tools/panel_cal8.sh (nohup, log to scratchpad/) —
+#     the ARMED echo prints the armed boundary to the fires tape at launch.
+#   * READ with scratchpad/cal8_read.py (research-built, side-lane certified
+#     df54ea7; REFUSES below floor; P4 = six-cell SIGN test, pre-filter alpha
+#     0.109 — may NOT be upgraded in any write-up; reference pinned v125-only
+#     n=155/88 and the tool asserts it).
+#   * After the read, CAL-8 rows are SPENT like CAL-7's 110 — no pooling, no
+#     top-up (that is the declined look in two steps).
+# Fire order (research eddea1f): Window 2 HELD pending the P4 read; the
+# critical path is REGISTRATIONS, not builds (zero unfired live preregs with
+# built arms). FIRE NOTHING until the read.
 #
-# ===== DIES WITH s39 — RE-ARM AT BOOT =====
-# 1. gate_watch loop (NEW code: DONE-fallthrough, re-arm-race drop, DRAFT-ROW
-#    [cosmetic 0.50.93 decimal bug]; RE-ARM FIRST on every wake, READ every
-#    wake — two misses today were wake-reads, not re-arms) + 30-min heartbeat
-#    (prints pipeline state). 2. holder_watch EXPECT=v140. 3. CAL-8 runner
-#    (tools/panel_cal8.sh, PTR/OUT cal8, boundary 30 accepts = n=150 P4-
-#    primary look; prereg + A1). 4. Atlas agent (opus, BUILDER-TACTICS-ATLAS
-#    — Magnus's builder-body exploration; may land before wrap).
-# SURVIVES: keeper · elo/match/opp/replay watchers · cores_idle · corefill
-# filler · remote worker (SALTREF stopgap, curfew 20:55-04:00) · dash.
+# ===== FILES LEFT BY DYING AGENTS — VERIFY STATE BEFORE TRUSTING =====
+# * tools/prereg_check.py — DRAFT, UNCERTIFIED (opus agent died at wrap; spec
+#   doc may be missing). Token scope accreted from 3 sources, all in the s40
+#   tail: ~15 obligations + side lane's 6 (bar-null, computed Ob-13
+#   intersection, reference-side floor, estimator+cluster, planned-n+cut-short,
+#   add-only amendments) + PROVENANCE + DOSE (both-verdicts). Side lane owes
+#   forced-fail certification; wiring verdict is the builder's. NOT wired.
+# * bots/_v232collarmedic — #52 collar-medic arm (dispatch/stay the heal
+#   exchange; economics stated at 4:1 NOT the source comment's wrong 8:1).
+#   Agent died mid-task: dose probe state UNKNOWN — re-run it (vs
+#   _probe_creeper, flag-off mutation must return to control) before any
+#   screen. No fire claim; sits pending its prereg (fresh opus agent per the
+#   new rule, both charters).
+# * Research orphans (their s41 wrap, same hour): check working tree for
+#   docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md (archipelago r140/146
+#   titanium_collected wins — possible new win path or platform truncation)
+#   and docs/research/BOOK-http418-v103-2026-08-14.md.
+#
+# ===== RULES MINTED s40 (all committed) =====
+# Fresh-opus-subagent-per-prereg + lane-ratifies-lock (Magnus; BOTH charters) ·
+# PROVENANCE token · DOSE token (probe gates screen, both verdicts) · armed
+# values echo to the surface where they bind (panel_cal8 ARMED row) · numbers
+# crossing session boundaries are re-derived before decisions consume them ·
+# corpus_sanity TRAP 8 fixed (comment-headed TSVs; ragged-row alarm).
+# X3R0_SLOT_RULE cost measured for the first time: −74.60 Elo over v134-v139
+# (research RATED-DAY-DECODE) — price the rule in Elo at next PROGRAMME touch;
+# also owed there: kill/death race is 178/182 (four rounds), not 174/187.
 #
 # ===== QUEUE/PIPELINE HEAD =====
-# #52 belt-medic PROMOTED (field pecks us 85.5/game, 19/20 opponents; 8:1
-# exchange declined ~85x/game; batk-by-target is the first cut) · fixture-
-# requirement tier incoming (peck-capable/approach-capable share fixtures) ·
-# INTERCEPTOR + TINY-SWARM + blocker routed (Magnus's builder-body thread) ·
-# tasks: #8 remnant (draft-row decimal), #9 league_matches dedup ·
-# closed-by-leg index live (2 closed-leg arms; #42/#36 annotated).
+# Registrations first (eddea1f). Then: #52 arm awaits prereg + probe re-run ·
+# #48 rung (b) NULL banked (SALTREF 49.11@5400), rung (c) never screened ·
+# #53 re-scoped (floor upward arm cheapest) · #63 nav design still owed
+# (shares midgard/fjordgate segment with SPAWNPOCKET — second prereg owes the
+# combo-interaction line).
 
 ## ===== ARCHIVE =====
 Everything superseded lives in `HANDOVER-archive.md` (boot-load audit cut 1,
-executed 2026-08-13: a whole-file boot read measured ~34k tokens and regrew
-after a one-time trim, so the bound is structural now). AT WRAP: rewrite the
-top block above and MOVE what it replaces into the archive file — do not let
-this file grow back. The top block IS the state; the archive is history.
+2026-08-13: whole-file boot read ~34k tokens, bound is structural). AT WRAP:
+rewrite the top block above and MOVE what it replaces into the archive file.
+The top block IS the state; the archive is history.
