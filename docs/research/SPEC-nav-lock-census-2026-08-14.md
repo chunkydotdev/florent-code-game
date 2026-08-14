@@ -326,3 +326,32 @@ worth spending a clause on.
    several games from the same match and several matches against the same
    opponent.  The unrated pooled constant (1.833) is the starting point, not the
    answer; enumerate rather than look up.
+
+---
+
+## 8. COMMIT PROVENANCE — and a live instance of the failure this file exists to stop
+
+**This tool's history does not say what it is, because it was committed twice by
+lanes that were not writing it.**
+
+* `59cc5406` (research s43, 23:13 +0200) swept in the **first draft** — the
+  version that reads `MAX_DWELL` as a tile count and reports **41.5%** instead
+  of 11.6%.  A wrong instrument entered the tree under a commit message about
+  the 0033 loss-mode decode.
+* `2b18b24c` (side lane s42) swept in the **finished** tool and this spec,
+  under a commit message about v140's stop-loss.
+
+Both were `git add -A` from a concurrent lane, landing between this agent's
+`git add` and its `git commit`.  Neither commit message mentions the census, so
+**`git log tools/nav_lock_census.py` currently tells a reader nothing about what
+the file is, what it reproduces, or which controls were driven** — the whole
+record lives in this file and in the commit that added this section.
+
+⚠ **The content is correct and verified** (`--selftest` 30/30, `--controls`
+positive 11/11 + negative 1/6 + N1–N4, worktree identical to HEAD).  Only the
+attribution was lost.
+
+⇒ **The standing lesson, and it is the same one that lost the original script
+twice: `git add -A` in a repo with three live lanes silently annexes other
+agents' in-progress work — including drafts that are WRONG and were never meant
+to be committed.** Stage by path.
