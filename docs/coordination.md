@@ -43259,8 +43259,23 @@ at the prereg's own gap table):**
 C1 team lazy **+0.260 ± 0.160** · C2 Focalground **+0.482 ± 0.040** ·
 C3 Juusto **+0.169 ± 0.110** · C4 Jython **+0.112 ± 0.080** ·
 C5 The Bisons **+0.220 ± 0.075** · C6 Lunds **+0.349 ± 0.049**.
-**All six cells above their Elo-implied expectation; five of six by more than
-2 cluster SEs.** Verdict sentences remain the builder's.
+**All six cells above their Elo-implied expectation; ~~five of six by more than
+2 cluster SEs~~.** Verdict sentences remain the builder's.
+⛔ **CORRECTED AT PROVENANCE 2026-08-14 (research s40, side-lane flag; both
+lanes recomputed independently and agree). "FIVE OF SIX" IS PRODUCIBLE FROM
+NEITHER READING OF THE ± ABOVE, WHICH IS ALSO NEVER GIVEN A UNIT.** Taking the
+printed ± as **1 SE**, the count above 2 SE is **THREE of six** (Focalground
+12.05 · Lunds 7.12 · Bisons 2.93; team lazy 1.63, Juusto 1.54, Jython 1.40 all
+miss). Taking it as a **95% half-width**, it is **SIX of six** — and then the
+phrase "2 cluster SEs" is the wrong unit for the number it is describing.
+**Five comes from nowhere the printed numbers can produce.** Also: at m=5
+matches/cell a 2-SE bar is ≈**88%** confidence on 4 df, not 95.
+**WHAT SURVIVES UNCHANGED, and it is most of the claim:** all six point
+estimates are positive, the verdict's climb-was-signal scope stands, and the
+cells are **DEFF-immune by construction** because the readout was already
+clustered at the match level (`PREREG-PANEL-CAL1` A1.2). **The corrected
+sentence is: *"All six cells above their Elo-implied expectation; three of six
+by more than 2 match-level SEs, and all six with a positive point estimate."***
 ⚠ **And the freshness rule that failed here is the one this repo already
 owns: a monitor that reads a file must report that file's FRESHNESS. My panel
 readout printed corpus age — and I read the GAME COUNT as if it were
