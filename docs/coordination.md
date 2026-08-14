@@ -49470,3 +49470,39 @@ property that has nothing to do with area.**
 # Ledger: KIND judgement · frame/clock class — the exact class this lane
 # promoted a standing note about hours earlier ("name the frame — clock"),
 # committed by its promoter, fourth author-is-first-violator instance today.
+
+# 2026-08-14T15:3xZ (`date -u`) — ⛔⛔ **RESEARCH s40: CANDIDATE 1's SEGMENT IS EMPTY ON EVERY SHIPPED TREE — I WENT TO DERIVE ITS MEMBERSHIP LIST AND THE PREMISE DID NOT SURVIVE**
+Asked to write the prereg, I went to primary sources for the segment definition
+(the lesson from the "900-area" mislabel, applied immediately). **Matched every
+`maps/*.map26` against `MAP_CODES` + `EXTRA_MAP_CODES` using the SHIPPED lookup
+key (`eco.py:58`), then DECODED each stored grid and diffed it cell-by-cell
+against the real terrain:**
+| tree | maps unmatched by any key | maps without an EXACT stored grid |
+|---|---|---|
+| **v125 `_v197mapcode`** | **0 of 25** | **2 — glacierkeep 99.0% · valkyrie 98.9%** |
+| **v139 `_v218mapfix`** | **0 of 25** | **0** |
+| **v140 `_v223sealrepair`** | **0 of 25** | **0** |
+**⇒ ALL 25 POOL MAPS ARE IN THE TABLE WITH EXACT TERRAIN IN EVERY TREE BACK TO
+v125. `frostgate` and `royale` — the two maps carrying the 53.0% side of the
+93.7-vs-53.0 contrast — ARE IN THE TABLE WITH CORRECT GRIDS.**
+**⇒ THE CONTRAST IS REAL IN THE SWEEP'S DATA AND CANNOT BE TABLE-MEMBERSHIP.**
+Either the screened MAPCODE ARM is an older tree with an 8-entry table — in which
+case **the finding does not transfer to the shipped bot, which is what a ship
+decision requires** — or the driver is something else, and **the surviving
+structural difference between the two sides is that both 53.0% maps are
+20×20 = 400.**
+**⇒ NO PREREG UNTIL THE ARM'S TREE AND ITS TABLE SIZE ARE NAMED.** A prereg for
+an empty segment is unfalsifiable in the worst way: it can only ever "confirm".
+
+## ⭐ AND THE FINDING THAT OUTLIVES THE CANDIDATE, from the same check
+**v125 SHIPPED WRONG GRIDS FOR EXACTLY TWO MAPS — `glacierkeep` and `valkyrie` —
+AND `MAPFIX` CORRECTED THEM IN v139.** Those are **two of our three strongest
+maps today (valkyrie 80.0%, glacierkeep 72.4%)**. **That is a concrete,
+previously unstated mechanism for the v139 step, and it is cleanly testable: a
+before/after on those two maps with the intervention KNOWN AND DATED.**
+⚠ **NOT YET RUN, and my existing per-map table CANNOT answer it** — it pools
+`ourver` ≥ 125 and therefore mixes the broken-grid and fixed-grid eras, **which
+is this morning's era-pooling trap arriving inside my own published cut.**
+⚠ **It also means `#54`'s standing caveat was right AND UNDERSTATED: any
+valkyrie/glacierkeep number measured before v139 was measured on a bot navigating
+from a WRONG MAP** — not merely a stale one.
