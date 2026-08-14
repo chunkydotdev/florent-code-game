@@ -305,9 +305,12 @@ def selftest() -> int:
         f.write("m1_g1.replay26\tDEATH\t180\tb\tcore\t0\t0\t0\t0\t30\t30\n")
         f.write("m1_g2.replay26\tDEATH\t250\ta\tcore\t0\t0\t0\t0\t20\t20\n")
     with open(d / "econ.tsv", "w") as f:
-        f.write("file\tteam\tband\tammo_converted\tn_convert\tshots\theals\tbuilds\tattacks\tdeliveries\ttled\tturns_run\tcpu_sum_us\tcpu_max_us\tti_end\tammo_end\tti_collected_end\n")
+        # v2 schema (s39): shots_gunner/shots_sentinel inserted after shots —
+        # fixture tracks the real header so a by-position read can never pass
+        # here while failing on the live table.
+        f.write("file\tteam\tband\tammo_converted\tn_convert\tshots\tshots_gunner\tshots_sentinel\theals\tbuilds\tattacks\tdeliveries\ttled\tturns_run\tcpu_sum_us\tcpu_max_us\tti_end\tammo_end\tti_collected_end\n")
         for i in range(1, 6):
-            f.write(f"m1_g{i}.replay26\ta\t0\t0\t0\t0\t0\t0\t0\t0\t0\t{150+i}\t0\t0\t0\t0\t0\n")
+            f.write(f"m1_g{i}.replay26\ta\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t{150+i}\t0\t0\t0\t0\t0\n")
     g = join_area_turns(load(d, "2026-08-13T08:49:13Z", CELLS_BY_PANEL["cal1"]), d)
     # holder filter must EXCLUDE a game our other version played (the s36 bug)
     rows_leg = rows + [row("leg_g1.replay26", "leg", "Juusto", 1)]

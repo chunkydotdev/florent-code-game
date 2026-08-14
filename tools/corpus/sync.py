@@ -83,6 +83,21 @@ def append_stripping_header(src: Path, dst: Path) -> int:
     body = lines[1:] if lines else []
     if not dst.exists() and lines:
         dst.write_text(lines[0])
+    elif lines and dst.exists():
+        # HEADER-DRIFT GUARD (s39, 2026-08-14). The s36 COLS widening of
+        # replay_econ.py landed 31,986 19-field rows under econ.tsv's 17-field
+        # header because this function appends the body VERBATIM — every column
+        # past the first difference silently reads its neighbour's value and
+        # every cell still parses as an integer. Refusing loudly is the class
+        # fix; it covers every appended surface, not only econ.
+        with dst.open() as fh:
+            dst_header = fh.readline()
+        if dst_header != lines[0]:
+            raise RuntimeError(
+                f"HEADER DRIFT {src.name} -> {dst.name}: source and destination "
+                f"headers differ; appending would silently shift columns (the "
+                f"s36 econ defect). Rebuild {dst.name} with the current decoder."
+                f"\n  dst: {dst_header.rstrip()}\n  src: {lines[0].rstrip()}")
     with dst.open("a") as fh:
         fh.writelines(body)
     return len(body)
