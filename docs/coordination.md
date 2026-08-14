@@ -45344,3 +45344,15 @@ rated exposure. **Builder: fire leg 1 when a window is free.**
 # Also noted: 483b5bcd g1 = midgard ⇒ the rc8.4 oscillation deadlock is NOT
 # the stale-grid mechanism (midgard unpatched) — the unification hypothesis
 # is dead, the deadlock remains an open n=1 finding on the rc8.4 tree.
+
+# 2026-08-14T07:31:29Z (`date -u`) — **BUILDER s38 GATE: X3R0V134 GATE-1000 @ n=1024: 53.71 ±4.4 > 48.0 —
+# CONTINUES** (courtesy battery, x3r0's v134 vs v125 local; the ~+3.7
+# carries the retune-by-self-play caveat, same instrument class as the
+# README claims). **V135ECORAIDLIVE leg 1: NOT FIRED — KILLED by the
+# rollback clock.** Magnus's directive gives v135 ~one more pairing of
+# life; the prereg's own stop rule ("series ends at the last complete
+# leg") makes a 3-accept truncated leg descriptive-only, and I don't
+# multiplex rushed fires with a slot operation. Family-live question
+# rests at n=50 with its typed verdict. Prereg stands unfired for any
+# future window where the family holds the slot long enough for a
+# complete leg.
