@@ -51005,3 +51005,81 @@ D3. COMMENT-HEADED TSVs CRASHED THE SANITY SCANNER (TRAP 8): DictReader took a #
 D4. CROSSING TAIL ENTRIES RECONCILE WITH CITATION (D14 instance): 02ab6b8 contradicted eddea1f without citing it; reconciled 91602df with the decision explicit. One line at write time beats a successor's archaeology.
 D5. RULES MINTED TODAY (all committed): fresh-opus-subagent-per-prereg + lane-ratifies-lock (Magnus, both charters) · PROVENANCE token (side lane) · DOSE token — probe gates screen with both-verdicts evidence (Magnus) · prereg_check.py carries all of it (DRAFT, uncertified, agent dies at this wrap).
 WRAP STATE: no submit/activation this session, zero rated exposure, v140 held throughout. CAL-8 at 14-15 accepts (see HANDOVER for exact end-state + the standing pre-look decisions). SALTREF verdict banked (49.11 null). Shards PAUSED by Magnus (COREFILL_STOP — deliberate, not a crash). Agents dying with me: prereg_check draft (tools/prereg_check.py ON DISK, uncertified) + #52 collar-medic build (bots/_v232collarmedic ON DISK, 4:1-corrected brief; dose probe may be incomplete — check the dir and the agent's declared gaps at next boot). Research's possible orphan files for next boot: docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md + BOOK-http418-v103-2026-08-14.md. cal8_read.py (scratchpad/, certified df54ea7) executes the CAL-8 read without re-derivation — P4 is a six-cell sign test at pre-filter alpha 0.109, NOT upgradable in any write-up.
+
+# ============================================================================
+# 2026-08-14T18:48:49Z (`date -u`) — **SIDE LANE s40 WRAP** (Magnus called it). Arm retro ran
+# FIRST per charter: docs/side-lane-retro.md → **v1.10, FIRINGS 10**, instance
+# docs/retro-side-lane-2026-08-14-s40.md committed WITH the bump (9f5ea95).
+# Headline: the RELAY→PRESCRIPTION chain — I inherited a peer's "80 games"
+# without re-deriving it, certified a read legal on it, then PRESCRIBED a fix
+# citing it, hardening the false number into a false GROUND in another lane's
+# commit. Detection 8/9 · prescription 4/5 (sixth run of the same split).
+# A ~26-minute lane: 9 flags, 8 consumed, 3 became code/tokens.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ A PRESCRIPTION THAT CITES A NUMBER RE-DERIVES THAT NUMBER FIRST.**
+*(behaviour change → PROMOTED into `PROGRAMME-drift-watch-2026-08-09.md`, the
+booted file, this same commit.)* Detection may proceed on a relayed figure —
+flagging cheaply and early stays correct. **Prescription may not**: a relayed
+number inside a fix acquires the detection's authority and travels into someone
+else's artefact. Companion recorded with it: three lanes each described a check
+they had not run within twenty minutes (attempt-count-as-accepts; a whole-dir
+scan actually of the newest 12; an eyeballed listing published as a count) —
+**"I checked" is the sentence least likely to have been checked.**
+
+**S2. THE STORED INSTRUMENT CAUGHT ITS OWN AUTHOR.** *(observation, routed to the
+retro's Q4 series — third consecutive run of this mechanism.)* The drift watch I
+armed at boot emitted my flag commit and the builder's as adjacent lines four
+minutes later, which is how my hash misattribution surfaced. **The catch required
+no suspicion.** Argues for arming the watch BEFORE the first flag, not after.
+
+**S3. THE 2026-08-13 RESCOPE PAID OUT AND SHOULD NOT BE WIDENED BACK.** The
+rated-day decode (`cde6378`) was read once for its single ship-chain clause
+(rated-leak: authorised x3r0 incumbents, not leaks — correctly framed) and let
+go. Under the old all-commits mandate it would have consumed the wrap.
+
+## ⚠ WHAT A SUCCESSOR INHERITS — OPEN AND UNCERTIFIED
+
+1. **⛔ CAL-8 IS STILL RUNNING AND ITS READ IS UNCERTIFIED.** At this wrap:
+   **13 accepts, 0 BOUNDARY stop rows**, runner pid 63848 alive,
+   `ARMED boundary BOUNDARY=15` on the fires tape. **My stop-row watch and commit
+   Monitor DIE WITH THIS SESSION.** The successor certifies research's P4 read
+   against the prereg: gap declared with span (18:15:41Z–18:28:32Z) and commits
+   (9556569 false-premise stop, 31c5606 revised seal) · **P4 primary, P1/P2/P3
+   descriptive with the ±9.1pp floor sentence adjacent** · honest pre-filter alpha
+   **0.109** · per-game `ourver`≠140 voids its window · a firing routes through
+   the A4/A4.1 three-way gate before any repo-wide sentence.
+   **ALREADY CERTIFIED, do not re-litigate (df54ea7):** the v125-only reference
+   table (n=155) reproduced to the digit off `ladder_games.tsv`, floor ±9.12pp,
+   and **P4 scoped as a six-cell SIGN test** — it may not upgrade itself.
+2. **`prereg_check.py` FORCED-FAIL CERTIFICATION: OFFERED, ACCEPTED, UNRUN.**
+   The draft had not landed at wrap. Standard: every obligation check driven to
+   its FAILING verdict on corrupted real prereg text, each corruption aimed at a
+   DIFFERENT check (the `meta_attrib` template). Scope spec: `92f8c4c`
+   (six checks incl. the bar-null assertion, unbuilt since 2026-08-10) + the
+   PROVENANCE token (53b8560) + the DOSE token (e59fead).
+3. **Two stale 8:1 heal-exchange figures remain** in `eco.py`'s source comment and
+   the `#52` QUEUE row (the arm itself got 4:1 before hardening) — flagged to
+   their owners, unfixed at wrap.
+
+## REBOOT STATE — SIDE LANE (s40, safe to reboot) — 2026-08-14T18:48:49Z
+* **Dies with me:** the all-commits drift watch (pid 34941 — successor re-arms
+  `tools/watch/drift_watch.sh` and **DRIVES ITS THREE CELLS FIRST**; all three
+  discriminated on this box at 18:20Z) · the commit Monitor · the CAL-8
+  BOUNDARY-stop background watch.
+* **Survives me:** every builder-owned monitor (keeper pid 28451 · cores_idle ·
+  cpu_watch · ship_watch · elo/match/opp watchers · corefill ×2) and the CAL-8
+  runner (pid 63848) — **verified alive at boot AND at wrap; the machine never
+  rebooted (uptime 30 days), so the HANDOVER post-reboot re-arm list is still
+  NOT owed.**
+* **Open cert obligations: ONE — CAL-8's P4 read** (item 1 above). The reference
+  table, the two-clock lock, the gap declaration and the boundary observability
+  are all typed and clean.
+* **Nothing of mine unconsumed:** 8 of 9 flags consumed in-session; the ninth
+  (the six-check spec) is delivered and its consumption is the builder's build.
+  My one caused-harm (80edbcd's false ground) is corrected on the record at
+  313f468 with the mechanism named.
+* **Vault daily note 2026-08-14: EXISTS** (verified at the s39 wrap correction,
+  18:01:14Z) — separate from this repo wrap per the standing distinction.
