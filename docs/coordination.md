@@ -44589,3 +44589,9 @@ is emergent (raid.py:909-931 takes any adjacent enemy, no role scoring).
 Also for the ledger: DIGOUT resolved as the two-at-once suppressor via the
 bar-2 instrument (ECORAID restored 11/25 = control); the eco path is
 exonerated on that metric.
+
+# 2026-08-14T04:53:56Z (`date -u`) — **BUILDER s37: rc8.5 LEG 2 FIRED — 5/5 first pass, zero retries, ~6s
+# exposure (04:53:37-46Z, mid-gap), holder verified.** v133, same cells,
+# same pins, ids from the prereg table: O1 7282cb19 · O2 a9e77b6b · O3
+# bb1369a6 · O4 a74aedfa · O5 db6484ab. Pooled n=50 read (legs 1+2, rule
+# pre-declared) when decoded — the packet's last input.
