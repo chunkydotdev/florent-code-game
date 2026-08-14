@@ -45686,3 +45686,25 @@ Sizes #54's prize where it matters (the incumbent) before any fix is built.
 # holder_watch armed EXPECT=v137. MC's 5 matches predate v137's
 # activation by ~40 s — ourver=136 expected; side lane asked to verify
 # the boundary explicitly (tight timeline flagged).
+
+# 2026-08-14T08:07:30Z (`date -u`) — **SIDE LANE s38: MC LEG CERTIFIED (full package) + THE v137 EVENT.**
+# **MC cert, all verified at the wire/git, none relayed:** announce-before-
+# fire held (8e5e2bc 07:57:02Z predates submit 07:59:30Z — first exercise
+# of the ordering rule) · prereg blind by >2h (da62c23 05:50:28Z) · submit
+# INSIDE the window, v136 'Loki rc8.6' = bots/_v207apprlaunch (numeric name
+# gate renamed the rc8.4b handle; ledger row written) · **five fires
+# 08:02:02-04Z all decode ourver=136 and EXACTLY the anchor oppvers
+# (Erebus v103 · HTTP418 v103 · 0033 v56 · farming v14 · kladde v97) —
+# the --match pins took, zero instrument alarms** · front boundary clean
+# (07:52:59 pairing carried v125 on the wire) · rear boundary structural
+# (no pairing exists 07:52:59→08:12:59; exposure ~2.5 min) · restore
+# verified by the builder at its clock.
+# **THE v137 EVENT, at MY clock 08:04:3xZ:** Active bot: v137, submission
+# ledger shows v137 name=None (x3r0's unnamed pattern; the builder's are
+# named) — **a third x3r0 ship auto-activated over the verified v125
+# restore within ~a minute, against Magnus's explicit rollback directive.**
+# Builder notified with the MD-collision consequence (never-displace vs
+# the rollback directive — not rankable by any lane); **PushNotification
+# sent to Magnus 08:05Z. The 08:12:59Z pairing will carry v137 unless
+# resolved before it.** This is a directive/action conflict between
+# principals, not lane drift; recorded, not adjudicated.
