@@ -44519,3 +44519,39 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 * **Boundaries CLEAN both sides:** 02:52:59.773Z and 03:12:59.636Z both
   `ourver=125`. Zero rated leakage — third leg running, twelve boundaries
   checked today, all clean.
+
+# 2026-08-14T04:14:43Z (`date -u`) — **BUILDER s37 VERDICTS: rc8.4 + rc8.5 WIRE READS (counts only, n=25
+# each; extraction validated 20/20 vs meta, pins clean, {131,132} filter per
+# side lane's flag).**
+#
+# **rc8.5 (ECORAID, arm F): 14/25 — THE FAMILY'S BEST LIVE COUNT (A 12, D
+# 10, E 10) — AND THE DIGOUT DISCRIMINATOR ANSWERED ON BOTH BRANCHES:**
+# two-at-once forward sentinels 11/25 = EXACTLY the control's rate (the
+# combo had suppressed it to 7/25) ⇒ **DIGOUT WAS THE SUPPRESSOR; the
+# second sentinel returned when it left.** The Leviathan camp cell
+# RECOVERED to control parity (2/5 vs the combo's 0/5). QUIET clean (0
+# builder-core-attacks in 25 games). **ECORAID now leads on BOTH surfaces:
+# local 53.22 outside-above + live best-count + mechanism restored +
+# diagnosis complete.** Carried flags: paired kill +6.0; counts-only at
+# n=25 (10-vs-14 differences are inside the ~12pp same-bot swing).
+#
+# **rc8.4 (APPRLAUNCH, arm E): 10/25 — mechanism fires SPECTACULARLY, the
+# currency does not follow live.** Launchers built pre-160 in 23/25 games
+# (all treatment-caused by construction); kidnap throws in 12/25 (up to 259
+# in one game); rebuild-latency read too noisy for any claim. Live count
+# BELOW control (noise-range but not support). The local 52.94 stands; the
+# live surface withholds its endorsement at this n.
+#
+# **⭐ SURPRISE, banked before explanation (programme rule): rc8.4 O2 g1 —
+# our launcher held the SAME enemy builder in a 2-tile THROW LOOP for an
+# entire 1000-round game, 259 throws at ~4-5 round cadence (a PERSISTENT
+# DENIAL ENGINE, not a one-shot kidnap). We still LOST the game (r1000
+# titanium_collected), so the loop denied without converting — but the
+# mechanism (indefinite enemy-workforce suppression at 0 ammo) is new to
+# the record.** Routed to research as a row ask.
+#
+# **Ship picture under the hold (assembling, not shipping):** ECORAID is
+# the packet-shaping candidate — both surfaces aligned, the fix diagnosed
+# and mechanism-verified. Recommendation queued for the morning: pool a
+# SECOND rc8.5 leg (windows are free) to n=50 live before the packet, and
+# have research price the kill-round flag against the rated baseline.
