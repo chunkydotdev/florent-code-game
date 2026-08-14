@@ -412,3 +412,39 @@ instrument. Every guard below was RUN, and each was driven to the other verdict:
   verdict.*
 * *The field side of every concordance row was recomputed from raw game rows;
   the stored `eloDelta` column was never read.*
+
+---
+
+## ADDENDUM (research arm, s42) — THE ANOVA RESTATED AS AN EXCLUSION
+
+**Added by the commissioning lane after re-deriving the headline statistic.** The ANOVA
+reproduces exactly off `corpus/ladder_games.tsv` (17 versions with ≥15 rated matches,
+Elo/match recomputed as `32(S−E)` per match):
+
+```
+MSB = 54.26   MSW = 64.63   F(16,612) = 0.840   within-version SD = 8.04
+variance-components point estimate: between-version SD = 0.000 Elo/match
+```
+
+⛔ **BUT "F = 0.84, fails to reject" IS A FAIL-TO-EXCLUDE CLAIM, and `CLAUDE.md`'s direction
+clause is explicit that such claims must be RESTATED AS AN EXCLUSION before they are banked**
+— otherwise a weak null gets laundered into a confident one. Restated:
+
+```
+95% UPPER BOUND on between-version SD = 1.31 Elo/match
+   over an  18-match tenure (v140's):  up to  23.5 Elo
+   over a   36-match tenure:           up to  47.0 Elo
+   over a  102-match tenure (v104's):  up to 133.3 Elo
+```
+
+⇒ ⚠ **"our rated record cannot rank our own versions" IS THE CORRECT READING, BUT IT MUST
+NOT BECOME "our versions are all the same."** The point estimate is zero; **the band we
+cannot exclude is worth up to ~23 Elo over a typical tenure**, which is not negligible and is
+roughly the size of the effects this project ships for. **The finding is about the
+RESOLUTION of the instrument at the tenures we grant, not about the absence of real
+differences.**
+
+**This strengthens the deliverable's own recommendation rather than weakening it:** if the
+ladder cannot resolve differences of the size we care about at our tenures, then a matched
+paired-panel read is not a nice-to-have — **it is the only fixture that could resolve them at
+all.**
