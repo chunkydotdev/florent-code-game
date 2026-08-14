@@ -44,7 +44,7 @@ T=$'\t'      # REAL tab. `print -r` does NOT interpret \t in zsh, and a
 # CANCELDIR is env-overridable (not hardcoded) for the same reason OUT is
 # below: a hardcoded path makes an isolated selftest impossible.
 # Selftest for this guard lives in tools/overnight_pool26.sh --selftest
-# (identical function, same fix applied to this pool26 variant).
+# (identical function, same fix applied to this tiny3 variant).
 check_cancel() {
   [[ -e "$CANCELDIR/$SHARD" ]] || return 1
   print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) CANCEL $SHARD: marker present at $CANCELDIR/$SHARD, stopping at $n/$TARGET (rows kept)"
@@ -82,7 +82,7 @@ FC=.venv/bin/fcode
 # The pool also added a size class we had never played: five 30x30 maps (area 900)
 # against a previous maximum of 625. Targets should be multiples of 30 (15 maps x
 # 2 seats) for exact map/seat balance; the old multiples of 16 no longer balance.
-MAPS=(midgard fjordgate)
+MAPS=(antler fjordgate moonrise)
 MAPDIR=${MAPDIR:-maps}  # MAPFIX variant 2026-08-14: POST-PATCH geometry from an isolated dir so maps/ stays frozen mid-shard
 B=$(basename $TREAT); C=$(basename $CTRL)
 
@@ -110,7 +110,7 @@ nowin=0
 existing=$(( $(wc -l < $ROWS) - 1 ))
 (( existing < 0 )) && existing=0
 n=$existing
-seed=$(( SEEDLO + n / 4 ))   # 2 maps x 2 seats per cycle (prim2 variant — divisor MUST equal 2*len(MAPS))
+seed=$(( SEEDLO + n / 6 ))   # 3 maps x 2 seats per cycle (tiny3 variant — divisor MUST equal 2*len(MAPS))
 (( n > 0 )) && print "RESUMING $SHARD at $n/$TARGET (seed $seed)"
 while (( n < TARGET )); do
   for M in $MAPS; do
