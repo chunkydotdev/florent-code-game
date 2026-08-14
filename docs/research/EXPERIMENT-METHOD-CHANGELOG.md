@@ -343,3 +343,16 @@ what gets built, which changes everything downstream.
 expectation — load is not correlated with arm identity, so it adds variance
 rather than bias. **The exposed class is small-n probes and any same-seed paired
 contrast**, which is exactly where this project reaches for cheap certainty.
+
+**ADDENDUM, same day, from the builder — the worst implication, and it belongs
+with the rule rather than beside it.** Wall-clock TLE noise is not independent
+across contemporaneous rows: **games run in the same window share the box's load
+state, so same-window rows are NOT exchangeable with later ones.** That degrades
+the floor of any **early, small-n gate** read off a live-filling shard — the
+CATASTROPHE gate (`<42` wake / `<40` typed bar at n∈[400,1000)) is the named
+instance. **At that extremity it cannot flip a verdict**, because a 400-row read
+sitting under 40% is not being carried there by load. **It is, however, one more
+reason that bar stays at 40 and not 45** — the closer a bar sits to the middle,
+the more of it a shared-load artefact can supply. *(Builder's own reasoning,
+recorded here because the method file is where a bar's justification has to live
+if a successor is to know why it was not tightened.)*
