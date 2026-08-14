@@ -91,3 +91,12 @@ programme carried a line about it.
 **Never idle waiting for analysis** — if the top item is blocked on a research
 number, take the next UNBLOCKED one and say so. `.venv/bin/python
 tools/queue_check.py` prints what is startable today.
+
+**⛔ PROBE THE GUARD, NOT JUST THE TOOL (s39 retro Q3, 2026-08-14).** The
+instruments rule ("driven to both verdicts") applies to INLINE gates too —
+`&&`-chains, truthiness tests, `is not None` on collections. Two same-day
+failures were "the check ran and asserted nothing": `map_walls is not None`
+passing vacuously on an EMPTY SET, and an install gate whose `&&` chain did not
+bind on the nonzero count it printed. A guard you have never watched FAIL its
+forced-fail case is decoration; this class is harder to spot than a missing
+check because the check visibly runs.

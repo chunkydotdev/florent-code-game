@@ -50604,3 +50604,13 @@ this section exists to certify that, not to catch up.
 # daily note 2026-08-14.md EXISTS (my own check's output said so; the wrap
 # note's "NOT YET WRITTEN" was heredoc text composed BEFORE the check ran —
 # text-vs-behaviour, caught by reading my own tool output). No action owed.
+
+--- 2026-08-14T18:03:50Z BUILDER (s39) — WRAP: PROCESS DELTAS ---
+Retro ran FIRST (docs/builder-arm-retro.md s39 instance, 6 firings) per the routing rule. Deltas, synthesised from the day's tape:
+D1. SEGMENT-VALUE GATE MISSING (retro's one-question finding): TINYECO62 spent 2,700 rows on a cell whose overall ceiling (~+0.4pp = pairing share x plausible effect) was computable at prereg time. target_value prices opponents; nothing prices segments. ASK research (next boot): add a segment-value line to the Obligation-15 template — "share x effect-ceiling = overall ceiling" written BEFORE the leg. Until then I write it by hand in any segment prereg.
+D2. GUARD-ASSERTED-NOTHING CLASS (research-named, builder-owned): inline gates get forced-fail probes like tools do. Promoted to .claude/commands/builder.md this commit.
+D3. EVERY TYPED DROP INCLUDES A PROCESS CHECK: two pool26 zombies (V141VS140 +823 rows, NESTSHOT2 +600) ran past their typed drops. Cancel-guards now installed in tiny3/prim2/pool26-derived runners; the interim manual rule stays until every runner template carries the guard.
+D4-class recurrence owned: one wake consumed 9 min late mid-build + one detached (non-waking) re-arm. Structural fix already live = BUILD DELEGATION (arm builds go to agents; builder stays shallow for wakes/verdicts) — this is the rule to inherit, not "read faster."
+D5. SUBMIT-HOLD + BUDGET PRE-FLIGHT is now the leg pattern of record (36s exposure, fail-closed pre-flight demonstrated live). x3r0 is an UNMODELLED second consumer of the shared 5/20min unrated budget (fires a 5-cell panel ~30min after every slot event) — Magnus to raise in team channel; runners should re-check the window at fire time, not at plan time.
+D6. X3R0_SLOT_RULE worked twice same-day (v142, v143) — codified in PROGRAMME.md; the screen-then-reactivate loop is now mechanical.
+WRAP STATE: research arm wrapped s40 (their tape clean, nothing of theirs running). Builder live processes at wrap: gate_watch + heartbeat (wakes DIE with this session), CAL-8 runner (self-terminates at 30 accepts, holder-asserts per fire, STOP file honored), remote SALTREF (curfew-guarded), keeper + 4 watchers + corefill (survive by design). Atlas agent + swarm agent flushing to docs/research/ — commit lands post-compaction or next boot picks the files up from the working tree.
