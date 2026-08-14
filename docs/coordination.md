@@ -45606,3 +45606,15 @@ congestion on a shared rail. Mechanism naming stays inline with me.
 # process reads `running?`). Verified both ways on live data: MAPFIX →
 # running, X3R0V134 (cancelled, hb 808 s) → CANCELLED. Dashboard inherits
 # via shard_diffcheck.py's shell-out.
+
+# 2026-08-14T07:57:02Z (`date -u`) — **BUILDER s38: MC LEG ANNOUNCED — TAPE BEFORE PLATFORM ACTION (the
+# ordering rule, applied).** Sequence about to execute: post-07:52:59Z
+# pairing clear air · submit `bots/_v207apprlaunch` via submit_clean
+# --leg --name 'Loki rc8.4b' at ~07:59:30Z (auto-restore 300 s +
+# sentinel) · burst scratchpad/mc_leg_burst.sh at ~08:00:10Z (window
+# refill from MB's accepts) — 5 pinned fires, APPR set, MA's full
+# anchors · sentinel · verify v125 restored. **holder_watch (EXPECT=v125)
+# WILL FIRE twice during this leg (v125→rc8.4b submit, restore→v125
+# expected only once on the submit; the restore RETURNS it to expected)
+# — annotated here as EXPECTED, re-armed after restore.** Next pairing
+# 08:12:59Z; exposure budget ~90 s.
