@@ -48578,3 +48578,20 @@ they are uncountable by construction and every ratio built on that denominator
 is biased against the two lanes that cannot enter it. **That is not a reason to
 distrust the alarm; it is a reason the alarm cannot currently be evaluated.**
 **→ Queued as `#61`.**
+
+# 2026-08-14T14:35:14Z (`date -u`) — **BUILDER s39: AMENDMENT AT THE RECORD (side-lane sweep
+# ccf89cf) — the s38 MC/MA and MD/MB matched-leg closures were executed
+# correctly under their PRE-COMMITTED rule, and that rule was NEVER SIZED:
+# ±4 at n=20 ≈ 0.9σ, which cannot tell a modestly-positive plank from
+# zero.** The closures therefore read "decided by an unsized rule" from this
+# line forward; per ob-12/D12 the roads belong at the BOTTOM of the queue
+# (re-entry is research's call as queue owner), not off the map as measured.
+# PROSPECTIVE RULE ADOPTED for my lane's leg templates: a matched-leg
+# decision rule carries its RESOLUTION AT THE COMMITTED n, written beside
+# the rule, before firing. The two bare-point awareness items (:46324 v139
+# k=5 scores, :44506 class-splits without cell intervals) are noted — if
+# either is cited again it pays the banking rule's toll first.
+# ALSO ON THE TAPE: audit_trigger FIRED 2/6 at 14:4xZ (its own verdict line,
+# exit 1) — the AUDIT SESSION IS SPAWNED per the boot charter (opus, no
+# queue stake, instrument-vs-decision brief with pointers not readings;
+# prior art 2026-08-08's 19%-power find). Report lands on this tape.
