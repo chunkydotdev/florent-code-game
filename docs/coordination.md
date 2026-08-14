@@ -47699,3 +47699,19 @@ of budget, 0 TLE. Thin, and it corroborates QUEUE #44.)*
 # screen) would be the rebuild if the live question stays worth asking.
 # Shard cancelled, rows kept. ROUTED: research owns whether a narrow rebuild
 # re-enters the queue.
+
+# 2026-08-14T13:47:33Z (`date -u`) — **BUILDER s39: WORKERS 10→40 BUMP + THE STRADDLE GUARD,
+# PRE-COMMITTED BEFORE ANY AFFECTED FINAL (side lane's ask, one detail
+# corrected: the straddling shard is SEALREPAIRR — SEALFLOOR0R completed
+# 5400/5400 entirely under WORKERS=10 and needs nothing).** Bump executed
+# 13:46:12Z on Magnus's ask ("why are we not able to fill it up?"); load
+# ramping 4→15→(~40); remaining remote queue (~26.6k rows) now drains hours
+# before curfew. **THE GUARD: SEALREPAIRR's boundary row is BRACKETED
+# [390, 470]** (390 read at 13:45:24Z under 10; 470 read at 13:48Z under 40;
+# halt was at a batch boundary between). At SEALREPAIRR's final, report the
+# pooled share AND the two segments split at BOTH bracket ends — segments
+# agreeing within noise licenses the pool; a real gap means the bump was a
+# fixture change and the segments are the readable units. DEST14A/B, SENT41,
+# SALTREF start entirely under 40 — nothing needed. (The 10ms budget is CPU
+# time, mostly contention-immune; cache pressure under 4x is the unproven
+# residual this guard bounds.)
