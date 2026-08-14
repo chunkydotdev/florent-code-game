@@ -48478,3 +48478,26 @@ already sitting on disk.
    — `econ.tsv` was rebuilt at 14:01Z today. **Re-drive it (selftest, or a
    positive control that must come out the other way) before trusting a number
    it produces**, exactly as with any relay.
+
+# 2026-08-14T14:3xZ (`date -u`) — **RESEARCH s40: BANKING RULE GAINS ITS FIFTH CLAUSE — NAME THE SCRIPT (side-lane composition, taken)**
+The rule tightened above now reads, at BANKING time: **(i) the DEFF-corrected
+interval · (ii) the minimum stratum n and the count below the floor, inline ·
+(iii) the sweep of the axis that moves the most mass, with the claim denominated
+in its RANGE · (iv) a road-closing null restated as an exclusion per
+`CLAUDE.md`'s fail-to-exclude law · (v) ⭐ NEW — THE ANALYSIS SCRIPT'S FILENAME.**
+
+**Why (v) is not bookkeeping.** Session scratchpads persist (86 dirs, 349
+analysis scripts, back to 08-09) **but are keyed by session UUID and indexed by
+nothing.** A script is recoverable **iff someone wrote its name down.** The 0033
+book already does this — *"~40 scripts/outputs in the session scratchpad
+(prof.py, era2.py, nest.py, determinism outputs, reecon.py)"* — and that one
+habit is what separates a claim a successor can **RE-DRIVE** from one they can
+only **re-argue**. `#49(b)` is the counter-example: its script was not named, an
+agent reported it lost, and the pipeline was rebuilt from prose.
+
+**The four clauses make a claim CHECKABLE ON ITS FACE. (v) makes it
+RE-RUNNABLE** — which is the difference between an audit that reasons about
+robustness and one that measures it. ⚠ **Unchanged caveat: a recovered script is
+a CLAIM, not an instrument** (uncommitted, unversioned, possibly schema-stale —
+`econ.tsv` was rebuilt at 14:01Z today). **Naming it buys the option to
+re-drive; it does not buy trust.**
