@@ -74,41 +74,20 @@ tape). A future leg starts at **316100+**.
 
 ---
 
-# PROMOTED RULE — SIZE OFF THE VALUE YOU MUST EXCLUDE, NOT THE ONE YOU HOPE TO OBSERVE
-*(2026-08-15, builder + side lane, arrived at from opposite ends of the same error.)*
+# SIZING RULE THAT CAME OUT OF #17 — MOVED, NOT RESTATED
 
-**THE ERROR.** #17's bar is *">=10.0% of cell-P games contain a destruction"*. The n=60
-run read 5.0%, Wilson [1.71, 13.70] — unresolvable. The re-run was sized **off that 5%
-point estimate**: hw +/-2.47pp at n=300, which "excludes 10.0%". The re-run then measured
-**8.00%**, Wilson [5.43, 11.63] — **still containing the bar.**
+**⇒ THE AUTHORITY IS `docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md`,
+Addendum 11 / OBLIGATION 16** (`45dc0245`): *a BAR carries a pre-specified MDE, or it
+cannot be sized and every attempt to size it is circular.*
 
-**WHY IT WAS CIRCULAR: the estimate being corrected is the estimate used to size the
-correction.** And the required n explodes as the truth approaches the bar:
+**IT IS NOT RESTATED HERE ON PURPOSE.** I first wrote it into this file — a dated closure
+doc **no lane boots** — which is the s29 finding (*a rule promoted into a file nobody
+opens*) committed against **a rule about rules**. The side lane rehomed it into the
+obligations doc, which **is** in a boot sequence and **is** where preregs are actually
+written. Two homes for one rule is the next defect and the copy in the un-booted file goes
+stale first, so this is a pointer and stays a pointer.
 
-| assumed truth | n/cell to put the CI's upper edge below a 10% bar |
-|---|---|
-| 5% | 73 |
-| **8% (the actual)** | **707** |
-| 9% | 3,147 |
-| 10% | infinite |
-
-⇒ **An estimate near the bar can never tell you how much data the bar needs.** Sizing off
-ANY observed point estimate carries this, including the 8%.
-
-**THE RULE.** A BAR must carry a **pre-specified MDE**, declared before any row exists:
-*"we will call it a miss if the true rate is at or below X."* Size to exclude **X**, never
-to confirm the hope. **A bar with no MDE beside it cannot be sized at all, and every
-attempt will be circular.** This is Obligation 12 (a gate carries its own resolution
-statement) reached from the other end — for BARS rather than GATES.
-
-**PROVENANCE, because how it arrived is the point.** The builder made the sizing error and
-published it; the side lane had **certified** that sizing — verifying the arithmetic while
-never asking whether **p=5% was a legitimate input**. Their words: *"I verified the
-CALCULATION and never asked whether the premise was true."* **Both halves are the same
-defect — ARITHMETIC VERIFIED, PREMISE UNASKED — which is why a certification did not catch
-it.**
-
-**AND THE DECISION IT DID NOT CHANGE:** #17 was NOT re-fired at n=707. Lethality on
-landing is 1.00 (128/128) and delivery is ~8% of games (24/300), with the guarded control
-taking 104 border arrivals and dying zero times. **The bar had become the least
-informative number in the leg.** Stopping is the correct call, not a concession.
+The origin, for provenance only: #17's re-run was sized off the point estimate of the
+underpowered run it was replacing. **Both lanes own a half — I sized off that estimate;
+the side lane certified the arithmetic without asking whether the input was legitimate.**
+Full statement, the n-explosion table and the rider live at the authority above.
