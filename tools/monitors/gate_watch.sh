@@ -45,6 +45,18 @@ scan() {  # prints one line per due gate; returns 0 if none due, 3 if any
       gate="GATE-2700"   # covers a missing 1000 too — never a spurious GATE-1000 (s37 fix)
     elif (( n >= 1000 )) && (( n < 2700 )) && ! grep -q "^$shard:1000$" "$STATE" 2>/dev/null; then
       gate="GATE-1000"
+    elif (( n >= 400 )) && (( n < 1000 )) && ! grep -q "^$shard:400$" "$STATE" 2>/dev/null; then
+      # CATASTROPHE GATE (s39, Magnus: "any reason we continue it across 1000
+      # ... when it's so far below 50%?"). NOAPPROACH ran to 2,264 rows at
+      # 18.55% because nothing looked before 1000. Wake ONLY when the share
+      # reads under 42 at n in [400,1000) — the typed bar is <40 (a true-50%
+      # arm crosses it with p ~ 3e-5 even before correlation inflation, so the
+      # extra look spends ~no alpha); 42 wakes the builder ahead of the bar.
+      # The watcher still never decides: it wakes, the builder types.
+      local w4=$(awk -F'\t' 'NR>1 && $7=="T"' "$tsv" | wc -l | tr -d ' ')
+      if (( 100 * w4 < 42 * n )); then
+        gate="GATE-400-CATA"
+      fi
     fi
     if [[ -n $gate ]]; then
       wins=$(awk -F'\t' 'NR>1 && $7=="T"' "$tsv" | wc -l | tr -d ' ')
@@ -67,6 +79,13 @@ if [[ "$1" == "--selftest" ]]; then
         echo "2026-08-14T00:00:00Z\t$1\t$i\tm\t1\tA\t$w\tx\t100"
       done } > "$FIX/tsv/$1.tsv"
   }
+  mkfixture_lo() {  # $1 shard, $2 rows: T wins only every 10th row (10% share)
+    { echo "ts\tshard\tgame\tmap\tseed\tseat\twinner\tcond\tturns"
+      for i in $(seq 1 $2); do
+        if (( i % 10 == 0 )); then w=T; else w=C; fi
+        echo "2026-08-14T00:00:00Z\t$1\t$i\tm\t1\tA\t$w\tx\t100"
+      done } > "$FIX/tsv/$1.tsv"
+  }
   mkdir -p "$FIX/tsv"; : > "$FIX/state"
   {
     echo "QUIETSHARD  bots/_a  bots/_b  5400  1"
@@ -75,14 +94,18 @@ if [[ "$1" == "--selftest" ]]; then
     echo "GRANDDADDY  bots/_a  bots/_b  5400  1"
     echo "FINALSHARD  bots/_a  bots/_b  5400  1"
     echo "TYPEDSHARD  bots/_a  bots/_b  5400  1"
+    echo "CATASHARD   bots/_a  bots/_b  5400  1"
+    echo "TYPEDCATA   bots/_a  bots/_b  5400  1"
   } > "$FIX/work"
-  mkfixture QUIETSHARD 999            # below every gate -> silent
+  mkfixture QUIETSHARD 999            # 50% inside [400,1000) -> silent (healthy band)
   mkfixture EARLYSHARD 1001           # -> GATE-1000
   mkfixture MIDSHARD 2750             # 1000 typed -> GATE-2700
   mkfixture GRANDDADDY 2750           # NOTHING typed -> GATE-2700 only, no spurious 1000
   mkfixture FINALSHARD 5400           # 1000+2700 typed -> FINAL
   mkfixture TYPEDSHARD 5400           # all typed -> silent
-  printf 'MIDSHARD:1000\nFINALSHARD:1000\nFINALSHARD:2700\nTYPEDSHARD:1000\nTYPEDSHARD:2700\nTYPEDSHARD:DONE\n' > "$FIX/state"
+  mkfixture_lo CATASHARD 450          # 10% share at n=450 -> GATE-400-CATA
+  mkfixture_lo TYPEDCATA 450          # same but :400 typed -> silent
+  printf 'MIDSHARD:1000\nFINALSHARD:1000\nFINALSHARD:2700\nTYPEDSHARD:1000\nTYPEDSHARD:2700\nTYPEDSHARD:DONE\nTYPEDCATA:400\n' > "$FIX/state"
   out=$(WORK="$FIX/work" TSVDIR="$FIX/tsv" STATE="$FIX/state" SCAN_FLAG="$FIX/flag" zsh "$0" --check)
   echo "$out"
   echo "$out" | grep -q "QUIETSHARD"                        && { echo "FAIL: quiet shard woke"; fail=1; }
@@ -92,6 +115,9 @@ if [[ "$1" == "--selftest" ]]; then
   echo "$out" | grep -q "GRANDDADDY  *GATE-1000"            && { echo "FAIL: spurious GATE-1000 (s37 bug)"; fail=1; }
   echo "$out" | grep -q "FINALSHARD  *FINAL"                || { echo "FAIL: FINAL did not fire"; fail=1; }
   echo "$out" | grep -q "TYPEDSHARD"                        && { echo "FAIL: fully-typed shard woke"; fail=1; }
+  echo "$out" | grep -q "CATASHARD  *GATE-400-CATA"         || { echo "FAIL: catastrophe gate did not fire at 10%/450"; fail=1; }
+  echo "$out" | grep -q "QUIETSHARD"                        && { echo "FAIL: healthy 50% shard in [400,1000) woke"; fail=1; }
+  echo "$out" | grep -q "TYPEDCATA"                         && { echo "FAIL: typed :400 shard woke again"; fail=1; }
   # blind branch: point at a missing dir
   bout=$(WORK="$FIX/work" TSVDIR="$FIX/nodir" STATE="$FIX/state" zsh "$0" --check)
   echo "$bout" | grep -q "BLIND"                            || { echo "FAIL: blind branch silent"; fail=1; }
@@ -102,7 +128,7 @@ if [[ "$1" == "--selftest" ]]; then
   # T-share arithmetic: 5400 rows, T on evens = exactly 50.00
   echo "$out" | grep "FINALSHARD" | grep -q "T-share=50.00" || { echo "FAIL: share arithmetic"; fail=1; }
   rm -rf "$FIX"
-  (( fail == 0 )) && echo "SELFTEST PASS (6 wake/quiet verdicts + blind + share + D4 re-arm line both ways)" || echo "SELFTEST FAIL"
+  (( fail == 0 )) && echo "SELFTEST PASS (8 wake/quiet verdicts incl. catastrophe both ways + blind + share + D4 re-arm line both ways)" || echo "SELFTEST FAIL"
   exit $fail
 fi
 
