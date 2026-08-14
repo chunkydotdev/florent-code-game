@@ -47531,3 +47531,76 @@ on a live prereg rather than in retrospect.
 # the discriminating pair is commit author time vs earliest remote artefact
 # time. CAL-7's cert is COMPLETE (both clocks, AUDIT-prereg-cal7 doc) — the
 # builder's candidate list included it; no action remains there.
+
+# 2026-08-14T13:4xZ (`date -u`) — ⭐⭐ **RESEARCH s40: JUUSTO BOOK BANKED (Magnus's directive, closed) — A FOURTH SHAPE, AND A CORRECTION THAT MOVES ITS ROUTING**
+`docs/research/BOOK-juusto-2026-08-14.md` (opus agent, 516 archived games, zero
+replay downloads). **Magnus's standing directive from the s39 tape is closed.**
+
+**THE SHAPE: A LAUNCHER-RELAY BEACHHEAD.** 403 launchers in 110 v11 games,
+**402 demolished at an age of EXACTLY 2 rounds (p25=median=p75=2)** — a rented
+taxi whose demolition refunds its own +10% cost-scale, which is what makes 3.66
+launchers/game affordable. It ferries their own builder at **2.52 tiles/round
+against a walking builder's 1.0** (decoded chain: one bot id, r6 d²1013 → r9 685
+→ r12 421 → r15 221 → r18 d²13), to plant **717 barriers of which 708 = 98.7%
+sit on the four core-hugging tiles of OUR ring**. They abandoned builder melee at
+the same boundary (`batk_core` vs us v9 132.0 → **v11 0.00**). Their kill clock
+vs us **r183 → r124.5**; ours did not move. **+12.1pp over Elo expectation and
++132 Elo in 11.7 h — still underrated at 1883.**
+**I re-derived the headline at the primaries before banking:** 403/402 launchers,
+717 barriers with 708 at d²≤5 and a distribution that is exactly d²=5/4/2/1 and
+nothing else until 13, v10 2/113. *(Two immaterial deltas: book says v7 5/617, I
+read 3/617; and `builds.tsv` carries ZERO barrier rows — barriers live only in
+`events.tsv`.)*
+
+## ⛔ MY CORRECTION, AND IT IS WHAT CHANGES WHAT WE DO
+The book reads the ring as the new shape's novelty. **It is not new. IT IS OUR
+OWN PLANK.** We place **6,004 of 6,779 v125 barriers (88.6%) at d²≤5 of the
+ENEMY core and 0 of 12,465 at d²≤5 of our own** — v116 100.0%, v139 86.3%,
+**v140 90.8%**. *(Frame controlled, because the whole reading hangs on it:
+`replay_events.py:87` computes `own, enemy = corepos[e.team], corepos[1-e.team]`
+per ACTING team, and splitting our own barriers by OUR SEAT gives 0.0%/90.1% as
+team 0 and 0.0%/86.9% as team 1 — the same both ways, which rules out a
+fixed-perspective mislabel.)*
+**HEAD-TO-HEAD, 65 archived games: they seal OUR ring at median r32 (7.0/game);
+we seal THEIRS at median r51 (5.0/game). Both open at r6** — so it is not
+access, it is **commitment and rate. We are losing a race on our own asset.**
+⇒ **This is the "why now" #53 never had.** Its surviving scope after today's
+re-scoping is exactly seal TIMING and GEOMETRY, and it was ranked low as
+"exploration of a validated asset with **no named leak**". A live opponent
+running it 19 rounds earlier and 40% heavier **is** the named leak.
+⚠ **NOT A CAUSAL CLAIM.** The book's own belt-strangulation story is a measured
+NULL, the ring's mechanism is UNRESOLVED, and r32-vs-r51 is a difference in
+executing a plank whose value is separately ablation-validated. A clean table is
+not a mechanism.
+
+## ⭐ AND THE GREP CAUGHT THE BOOK'S OWN PROPOSED ROW — for the second time today
+The book's closing routing proposes *"NEW, no row yet: the disposable-launcher
+ferry as our own plank… our raiders walk."* **We already ship it.**
+`LOKI_FERRY_ON = True` (`doctrine.py:1275`), path at `raid.py:934-958`, and it
+FIRES — own-bot INSERTs in `throws.tsv`: **v125 29 · v130 10 · v139 7 · v140 1**.
+**⇒ ~0.025 inserts/game against Juusto's 3.6/game: a ~140× rate gap on a
+mechanism we own.** Queued as **#57** re-specified onto the three gates visible
+in our source — a SINGLE `SLOT_FERRY_ID` (one raider in flight team-wide), a
+3-round `LOKI_FERRY_STALE_RNDS`, and **no launcher is ever built FOR the ferry**
+(ours are sited by the station scorer for combat value, so a ferry only happens
+where one coincidentally stands). **The rent-don't-own demolition is the ONLY
+genuinely new import.** *(#53 was the first catch of the day; this is the second.
+Both would have been legs testing features we already ship.)*
+
+## ⛔⛔ RETRACTION — `tled` IS NOT FICTION. THIS LANE RETIRED A LIVE INSTRUMENT YESTERDAY.
+`BOOK-0033-2026-08-14.md:73` says *"`tled` is fiction — the wire flag does not
+exist in platform replays"*. **FALSE, and amended in place.** Three independent
+falsifications: (1) `tools/corpus/replay_econ.py:126` reads tled from **botOutput
+field 4**, a varint distinct from field 3 (`execTimeUs`); (2) **a prior research
+census consumed 26,356 tled unit-turns across 85 Ouroboros games**
+(coordination.md:10630) — the measurement that settled the
+`official-docs.md:1091` "disqualified" vs `CLAUDE.md` "interrupted"
+contradiction, and 26,356 events cannot come from a field that does not exist;
+(3) today's independent re-read: **446 tled turns vs 449 computed
+`execTimeUs > 10,000`**, agreeing to 0.7%. **What is corrupt is `econ.tsv`'s
+COLUMN, not the wire field** — the same corruption that zeroes `turns_run` and
+`cpu_sum`. **Reading zeros in a corrupt column and concluding the wire field is
+absent is the same error class as the econ finding it was reported inside.**
+**→ BUILDER: narrow HANDOVER 4b accordingly — the tled instrument is LIVE.**
+*(Self-audit from the same cut: our own cpu_max is **8,818 µs of 10,000** — 88%
+of budget, 0 TLE. Thin, and it corroborates QUEUE #44.)*
