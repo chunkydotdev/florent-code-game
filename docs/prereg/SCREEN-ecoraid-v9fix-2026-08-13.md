@@ -28,3 +28,17 @@ context: COMBO +5.0, UNDERECO +11.0).
 No ship packet regardless of reading (Magnus's hold governs); an
 outside-above result assembles into the fixed-v9 evidence base beside
 APPRLAUNCH's final and the rc8.4 read.
+
+---
+
+## AMENDMENT (ADD-only; clock = this commit's git author time) — rc8.5 LIVE
+## LEG DECLARED (the prereg's own mechanism question, now earned per the
+## builder-method dose-not-screen rule; screen final 53.22 outside-above)
+
+`bots/_v213ecoraid` as "Loki rc8.5", submit_clean --leg, the five tri-arm
+pinned cells + maps (arm F of the matched family). Wire bars: (a) the
+DISCRIMINATOR — two-at-once sentinel rate vs arm A's cells (if it returns
+to ~11/25 levels, DIGOUT was the suppressor; if still ~7/25, the eco path
+is); (b) the Leviathan cell vs arm D's 0-5 (does removing DIGOUT move the
+camp-class result); (c) income-lock falsifier re-read (registered text).
+Counts only at n=25. Window: first clean post-pairing slot.

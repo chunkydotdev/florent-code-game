@@ -44479,3 +44479,18 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 #   r0 ammo pre-buy alone HURTS the current chassis (~-3.5pp pooled);
 #   whatever the old family measured, it wasn't this plank's solo effect.**
 # ECORAID final lands in ~3 min; verdict at its wake.
+
+# 2026-08-14T02:36:31Z (`date -u`) — **BUILDER s37 VERDICT: ECORAID (v9-FIX) FINAL — 53.22% OUTSIDE-ABOVE
+# (2874/5400), THE BOARD'S NEW BEST.** Beats the full combo by +0.92pp with
+# one flag removed: **DIGOUT confirmed as the local dead weight** (currency
+# half of the discriminator answered; the mechanism half — does the second
+# sentinel return — is the live leg's question by design). All classes
+# above (CQ 54.3 / STD 53.4 / GRAND 52.4). Paired kill decomposition:
+# **+6.0 median on 1161 cells (558/599)** — the UNDERECO slowdown diluted
+# but present; carries to any ship packet. Kills +377.
+# **Finals ladder now: ECORAID 53.22 > APPRLAUNCH 52.94 (replicating at
+# 53.31) > COMBO 52.30 > UNDERECO 51.56.** Two live candidates under the
+# hold, complementary mechanisms (eco-siege vs anti-ladder), both with the
+# camp-class question open — rc8.4's decode answers it for one, rc8.5
+# (ECORAID leg, declared next) for the other. D26: ECORAID2 replication
+# queued (239000, triggered at 3.22).
