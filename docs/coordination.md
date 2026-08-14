@@ -53163,3 +53163,72 @@ Both are read-only corpus cuts. No bot edits, no platform calls, no window reque
   a dated, measured counter-ship by a team at gap −1 is the closest thing to a read of an
   opponent's intent we have had.**
 Relay before idling; they die with the session.
+
+--- 2026-08-14T20:55:56Z (`date -u`) SIDE LANE (s42) — AUDIT RESULTS: research's side-A cut + TWO OF MY OWN ERRORS ---
+
+**⛔ MY OWN, FIRST, BOTH IN TWENTY MINUTES, BOTH AD-HOC PARSING — the corollary in the standing
+notes calls this my most error-prone operation and today it ran 4 of 4.**
+1. **A PHANTOM FLAG (s37 class).** I flagged research's `target_value` rating as possibly cached.
+   **`tools/target_value.py:281-288` shells `fcode status` and parses `Rating:` live** — and the
+   comment at `:272-277` credits **MY OWN LANE** with getting that fixed. **I pattern-matched a
+   prior version's structure onto the current tree.** Cost one reply. Their 1775 is live, read
+   20:45Z.
+2. **AN INVERTED ONE-LINER, caught only by a DOMAIN VIOLATION.** My first worklist-starvation
+   detector used `grep -c 'NULLHOST'`, which counts the **header comment** that explains NULLHOST
+   in prose. It printed `data_rows=1 nullhost_rows=2` — **illegal, and that is the only reason I
+   looked.** Its verdict was **exactly inverted** (flagged server-1 STARVED, cleared server-2).
+   ⚠ **AND IT AGREED WITH MY LIVE HYPOTHESIS**, which is the reason it was nearly adopted. An
+   estimator error takes its direction from the tool; **the reason it survives is that it flatters
+   the author.** D31 firing on the lane that promoted it.
+3. **A THIRD DIED PRE-PUBLICATION** — my retro header/version check returned EMPTY on 2 of 3 files
+   and I nearly reported research's file as still-mismatched **on a check that was itself broken.**
+
+**⭐ AND THAT THIRD ONE PRODUCED THE USEFUL FINDING: DO NOT BUILD THE NAIVE RETRO-VERSION CHECKER.**
+Research proposed a 3-line mechanical header-vs-content check across all three arm retros. Driven:
+`side-lane-retro.md` header **v1.11**, highest token **v1.12** — **my header is CORRECT**, the
+v1.12 is the legitimate *"CARRIED TO v1.12"* forward reference, which is the standard idiom here.
+`builder-arm-retro.md` does not use v1.x at all. ⇒ **a header-vs-highest-token check FIRES ON A
+HEALTHY RETRO, and a guard that refuses everything gets routed around — the `LINE_DIRS` scar.**
+Correct predicate: **header == the version of the last block RECORDING A FIRING**, never the
+highest token present. Routed to the builder with the false-positive case attached.
+
+**RESEARCH'S SIDE-A CUT — audited on the published wording, not on their description of it.**
+* **THE NULL IS CLEAN.** `+1.11pp / p=0.48` does **no closure work anywhere** in `d28e085a`; their
+  line 51 bars it explicitly with the MDE reasoning attached. That is `CLAUDE.md`'s
+  DEFF-direction clause satisfied, unprompted. ✅
+* ⚠ **THE EXPOSURE IS ON THE HALF THEY DID NOT ASK ABOUT.** `2.33pp ± 0.76, p=0.002` is an
+  **EXCLUSION** claim — the class a design effect makes HARDER. **MATCH cluster removed by
+  construction** (that is their retraction's content). **OPPONENT cluster NOT ENUMERATED**, and
+  `CLAUDE.md`'s procedure makes the enumeration mandatory in writing. The **conclusion** very
+  likely survives (2.33 is ~3× the half-width); **the ± is the exposure, because the ± is what
+  they propagate into #8's re-basing as a precise number.**
+  ⛔ **I deliberately gave them NO corrected half-width and NO m̄** — I do not know their cut's
+  construction, and **a prescription that cites a number re-derives that number first** (my own s40
+  rule). Prescription is a groupby, not an arithmetic: **measure ρ_opp; assuming DEFF = 1 fails in
+  the FLATTERING direction for an exclusion.**
+* **THEIR SEAT RETRACTION ENDORSED, premise and arithmetic.** The part worth naming is the
+  **control**: *"0 of 1,789 matches have mixed seat"* is worthless alone (a collapsed grouping key
+  returns exactly that) — **1,781/1,789 with >1 distinct game id is what makes the zero mean
+  something.** The standard actually executed rather than cited.
+
+**A REAL DEFECT FOUND WHILE RETRACTING THE PHANTOM, and it is not the one I flagged:**
+`target_value`'s live-rating read is wrapped in `try/except Exception: pass`, so a failed read
+**silently falls back to the CACHED corpus rating and returns normally.** `CLAUDE.md` records that
+`fcode status` **exits 0 while printing `Error: True`** in an outage — so a degraded response has
+no `Rating:` line, the parse finds nothing, and the number every gap in every prereg is measured
+from goes stale **with no indication which path supplied it.** Alarm-that-cannot-tell-it-is-blind,
+in the one input the target gate cannot be wrong about. Fix is the one they already apply to
+opponents: print the provenance beside the number.
+
+**⚠ FOR MAGNUS — TWO ITEMS NEEDING HIS DIRECTIVE, RAISED ON TWO CHANNELS SO NEITHER SITS IN A NOTE:**
+1. **`PROGRAMME.md:580-590` IS STALE BY ~110 POINTS AND ITS CONCLUSION HAS INVERTED.** It prices
+   off *"~1663-1666 (v114, live at 20:35Z)"* and concludes *"every admissible team is at or above
+   our rating and there are ZERO admissible targets below us."* **We are at 1775** (live,
+   `fcode status`, 20:45Z, verified by research and its code path verified by me). At 1775 the
+   band spans **+111 to −70 — teams above AND below.** Raised jointly with research; **filed, not
+   edited**, because that file is edit-on-his-directive-only. ⚠ **Its own caveat warns a successor
+   reading it at a LOW rating will misread a near-total ban as a mild filter. The inverse now
+   applies and nothing in the file says so.**
+2. **The anti-sycophancy coverage gap** — `docs/research/SPEC-anti-sycophancy-coverage-2026-08-14.md`
+   (792655dd), with exact insertion text. **His call is wanted on the WORDING, not on whether**:
+   the clause governs how every agent talks to him, which makes it his to own.
