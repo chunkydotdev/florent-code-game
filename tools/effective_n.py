@@ -64,8 +64,13 @@ MODAL_SHARE_WARN = 0.50
 
 
 def load(path):
+    # ⛔ FILTER `#` LINES BEFORE DictReader. The shard tape now opens with a
+    # `# FIXTURE` line carrying the runner's START stamp, and DictReader takes
+    # the FIRST line as its fieldnames -- so an unfiltered read would name every
+    # column after the fixture header and silently return rows of None.
     with open(path, newline="") as fh:
-        return list(csv.DictReader(fh, delimiter="\t"))
+        body = [l for l in fh if not l.startswith("#")]
+    return list(csv.DictReader(body, delimiter="\t"))
 
 
 def analyse(rows):

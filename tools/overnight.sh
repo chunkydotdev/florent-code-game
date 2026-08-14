@@ -81,15 +81,41 @@ if [[ $B == $C || $B == *$C* || $C == *$B* ]]; then
 fi
 
 rm -f $DONEF
-print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)${T}0${T}$TARGET${T}$SHARD${T}STARTING" > $HB
-[[ -f $ROWS ]] || print -r -- "ts${T}shard${T}game${T}map${T}seed${T}seat${T}winner${T}cond${T}turns" > $ROWS
+# ⭐ 6. FIXTURE HEADER — THE START STAMP, WRITTEN BEFORE THE FIRST GAME.
+# ⛔ THE DEFECT IT CLOSES. Every two-clock certification this project has typed
+# dates a leg by its FIRST RESULT ROW -- and a result row is written when a game
+# FINISHES, so that clock is ONE GAME LENGTH (~10-20s) LATE. At minute-scale
+# gaps it changes nothing (the banked 40m43s and 4m05s claims stand); at the
+# SALTREF2 leg's 13-second gap the SIGN of "did the prereg predate the leg?" is
+# undeterminable. No smarter reader can recover a stamp that was never written,
+# so the runner writes its own START before the first game and a certification
+# can finally say PREDATES-LEG-CREATION instead of predates-first-row.
+# Comment-prefixed so it can never be mistaken for a game row; every reader in
+# tools/ skips `#` lines (overnight_read.py, effective_n.py were patched with
+# this line). tools/prereg_check.py --tape enforces it.
+START=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+print -r -- "${START}${T}0${T}$TARGET${T}$SHARD${T}STARTING" > $HB
+HOSTN=$(hostname -s 2>/dev/null || hostname)
+if [[ ! -f $ROWS ]]; then
+  print -r -- "# FIXTURE${T}shard=$SHARD${T}treatment=$TREAT${T}control=$CTRL${T}planned_n=$TARGET${T}workers=${WORKERS:-1}${T}host=$HOSTN${T}start=$START${T}runner=tools/overnight.sh" > $ROWS
+  print -r -- "ts${T}shard${T}game${T}map${T}seed${T}seat${T}winner${T}cond${T}turns" >> $ROWS
+elif ! grep -q '^# FIXTURE' $ROWS; then
+  # LEGACY TAPE, RESUMED. Its true START is gone and NOTHING here invents one --
+  # `start=UNKNOWN-legacy-tape` fails the schema check on purpose, so a legacy
+  # tape is IDENTIFIABLE rather than quietly grandfathered. The stamp fixes
+  # certifications going FORWARD; it retro-fixes nothing and nothing needs it.
+  print -r -- "# FIXTURE-RESUME${T}shard=$SHARD${T}treatment=$TREAT${T}control=$CTRL${T}planned_n=$TARGET${T}workers=${WORKERS:-1}${T}host=$HOSTN${T}start=UNKNOWN-legacy-tape${T}resumed=$START${T}runner=tools/overnight.sh" >> $ROWS
+fi
 
 # ⛔ RESUME, DO NOT RESTART FROM ZERO. The watchdog restarts a dead shard; the
 # first version reset n=0 and APPENDED, so a restart at 3,000 left 10,300 rows
 # skewed to low seeds while the marker still read 7300/7300. Nothing compared
 # wc -l to n. Now the row count IS the progress.
 nowin=0
-existing=$(( $(wc -l < $ROWS) - 1 ))
+# ⛔ `grep -vc '^#'` AND NOT `wc -l`: the fixture header above is a comment line,
+# so a bare line count would report one extra game and shift the resume seed.
+# The -1 is still the COLUMN header, which is not a comment.
+existing=$(( $(grep -vc '^#' $ROWS) - 1 ))
 (( existing < 0 )) && existing=0
 n=$existing
 seed=$(( SEEDLO + n / 16 ))

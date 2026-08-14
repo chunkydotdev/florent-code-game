@@ -60,6 +60,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
+if str(Path(__file__).resolve().parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+from escape_tape import record as tape_record          # noqa: E402
+
+MIN_REASON_CHARS = 20          # same bar as gate.py's four escapes
+
 # ---------------------------------------------------------------------------
 # DESIGN EFFECTS. Source: CLAUDE.md, "GAMES ARE NOT INDEPENDENT" -- measured on
 # our own tape, 965 rated / 947 unrated 5-game matches.
@@ -113,7 +119,21 @@ KNOWN_KEYS = [
     "MAP SEGMENT", "PRIMARY SEGMENT", "EXPECTED DIRECTION",
     "SEGMENT VALUE CEILING", "CELLS", "CELL VERSION CHURN", "FALSIFIER",
     "PROVENANCE", "DOSE",
+    # s43 wiring bundle
+    "POOL ERA", "SPANS-POOL-CHANGE", "TREATMENT TREE",
 ]
+
+# --- POOL ERA derivation constants (docs/research/SPEC-pool-era-token-2026-08-14.md)
+# ⛔ THE BOUNDARY TABLE IS DERIVED FROM THE TAPE, NEVER HARDCODED. A list of
+# pool-change dates baked into a tool is a constant with no source -- the defect
+# this repo has recorded four times (an interpolated constant once filtered 30
+# games and produced a false accusation). The three tunables below ARE printed
+# on every run, per the SPEC, because a derived rule whose knobs are invisible is
+# a hardcoded rule wearing a derivation's clothes.
+POOL_EVENT_MIN_NEW_MAPS = 3        # a single rare map appearing is not a pool change
+POOL_EVENT_WINDOW_H = 24           # first-appearances this close are ONE cohort
+POOL_EVENT_MIN_PRIOR_GAMES = 500   # ⛔ NOT DECORATION -- see pool_eras()
+LADDER_TAPE = ROOT / "corpus" / "ladder_games.tsv"
 
 
 # ---------------------------------------------------------------------------
@@ -220,6 +240,85 @@ def first_number(s: str | None) -> float | None:
         return 100.0 * num / den if den else None
     v = float(m.group(3).replace(",", ""))
     return v * 100.0 if 0.0 < v <= 1.0 else v
+
+
+def _iso(s: str):
+    """A UTC datetime from the several spellings this repo types, or None."""
+    from datetime import datetime, timezone
+    s = s.strip().rstrip(".,;")
+    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%MZ",
+                "%Y-%m-%d"):
+        try:
+            d = datetime.strptime(s.replace("+00:00", "Z") if fmt.endswith("Z") else s, fmt)
+            return d.replace(tzinfo=timezone.utc) if d.tzinfo is None else d.astimezone(timezone.utc)
+        except ValueError:
+            continue
+    try:
+        d = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return d.replace(tzinfo=timezone.utc) if d.tzinfo is None else d.astimezone(timezone.utc)
+    except ValueError:
+        return None
+
+
+def pool_eras(tape: Path | None = None,
+              min_prior: int = POOL_EVENT_MIN_PRIOR_GAMES):
+    """-> (boundaries, note). `boundaries` is None when the tool is BLIND.
+
+    A POOL EVENT is a window in which >= POOL_EVENT_MIN_NEW_MAPS previously-unseen
+    maps make their first rated appearance within POOL_EVENT_WINDOW_H of each
+    other, AND at least `min_prior` rated games precede the window.
+
+    ⛔ THE SECOND CLAUSE IS THE LOAD-BEARING ONE AND THE SPEC'S AUTHOR SHIPPED IT
+    ONLY BECAUSE THEY RAN THE DEGENERATE CASE FIRST. Without it the rule returns
+    TWO events: the real 2026-08-13 rotation, and 2026-08-05T19:42:43 with 33
+    maps -- which is not a pool change at all, it is THE TAPE'S OWN BEGINNING,
+    where every map is trivially "previously unseen". A pool CHANGE requires a
+    pool to change FROM. `min_prior=0` reproduces the spurious cohort on demand,
+    which is the only cell that proves this clause does anything.
+
+    ⛔ AND BLIND IS NOT "NO EVENTS". An unreadable tape returns (None, why) and
+    every consumer must render that differently from an empty list -- this
+    repo's most-repeated defect is an alarm that cannot tell it is blind.
+    """
+    import csv
+    from datetime import timedelta
+    p = tape or LADDER_TAPE
+    try:
+        with open(p, newline="") as fh:
+            rows = [(r.get("created") or "", r.get("map") or "")
+                    for r in csv.DictReader(fh, delimiter="\t")]
+    except Exception as exc:                                       # noqa: BLE001
+        return None, f"BLIND: {p} unreadable ({exc})"
+    rows = sorted((c, m) for c, m in rows if c and m)
+    if not rows:
+        return None, f"BLIND: {p} has no (created, map) rows"
+    firsts, seen = [], set()
+    for i, (ts, m) in enumerate(rows):
+        if m in seen:
+            continue
+        seen.add(m)
+        d = _iso(ts)
+        if d is None:
+            return None, f"BLIND: unparseable timestamp {ts!r} in {p}"
+        firsts.append((d, m, i))
+    clusters, cur = [], []
+    for f in firsts:
+        if cur and f[0] - cur[0][0] <= timedelta(hours=POOL_EVENT_WINDOW_H):
+            cur.append(f)
+        else:
+            if cur:
+                clusters.append(cur)
+            cur = [f]
+    if cur:
+        clusters.append(cur)
+    events = [c for c in clusters
+              if len(c) >= POOL_EVENT_MIN_NEW_MAPS and c[0][2] >= min_prior]
+    note = (f"{len(rows)} rated rows, {len(seen)} maps; rule: >={POOL_EVENT_MIN_NEW_MAPS} "
+            f"new maps within {POOL_EVENT_WINDOW_H}h AND >={min_prior} prior games")
+    # Truncate to whole seconds: the tape carries milliseconds and a human
+    # declaring `POOL ERA: 2026-08-13T07:12:59Z..now` would otherwise read as
+    # starting 737ms BEFORE the boundary and be failed for spanning it.
+    return [(c[0][0].replace(microsecond=0), len(c), c[0][2]) for c in events], note
 
 
 def raw_number(s: str | None) -> float | None:
@@ -346,7 +445,9 @@ RULES = [
     dict(id="PLANNED_N", keys=["PLANNED n"], ob="side-lane check 5",
          why="an unfixed n permits optional stopping (s28 LOKI-16b); the planned n is "
              "also the only input the resolvability arithmetic below can use"),
-    dict(id="CUT_SHORT", attested=True, keys=["CUT-SHORT"], ob="side-lane check 5",
+    # NO LONGER `attested`: CUT_SHORT_FLOOR in check_arithmetic consumes the value
+    # (floor <= planned n), so presence is no longer all that is verified.
+    dict(id="CUT_SHORT", keys=["CUT-SHORT"], ob="side-lane check 5",
          why="CAL-6 stopped at 75 and CAL-7 at 110, both on holder changes, and neither "
              "had pre-committed what a short leg may claim -- CAL-8's n>=75 floor is "
              "the live example of this clause doing work"),
@@ -501,7 +602,8 @@ def check_presence(text: str, f: dict) -> tuple[list, list]:
 # ---------------------------------------------------------------------------
 # ARITHMETIC CHECKS
 # ---------------------------------------------------------------------------
-def check_arithmetic(f: dict, diff_paths=None) -> tuple[list, list, list]:
+def check_arithmetic(f: dict, diff_paths=None, text: str = "",
+                     fire: bool = False) -> tuple[list, list, list]:
     """-> (lines, fails, warns). Recompute where cheap; WARN where a live query
     would be needed. A check that cannot compute says so LOUDLY -- 'not computed'
     and 'computed clean' must never render identically."""
@@ -524,6 +626,19 @@ def check_arithmetic(f: dict, diff_paths=None) -> tuple[list, list, list]:
         # PANEL failure mode; a local shard has no attempt/accept distinction to
         # get wrong. Games alone is the whole boundary here.
         lines.append(f"BOUNDARY_UNITS   ok    {gms} games (LOCAL surface: 1 row = 1 game, no accepts)")
+        # ⭐ (b) LOCAL-ACCEPTS WARN. The exemption above is correct and it is also
+        # a hole: it fires on `surface == local` ALONE, so a document that
+        # declares BOTH a local surface AND an accepts count is waved through
+        # while the tool prints "no accepts" over a line that has one. A local
+        # shard has no accept/attempt distinction to get wrong, so an accepts
+        # count on a local surface is a PANEL TEMPLATE WEARING A LOCAL COSTUME --
+        # one of the two declarations is wrong and the tool cannot tell which.
+        # WARN, not FAIL: which one is wrong is judgement.
+        if acc is not None:
+            warns.append(f"SURFACE: local but BOUNDARY declares {acc} accepts. A local "
+                         f"shard has no accepts (1 row = 1 game) -- either the surface "
+                         f"or the boundary is a panel template wearing the other's "
+                         f"costume. The games=5xaccepts identity was NOT checked here.")
     elif acc is None or gms is None:
         lines.append(f"BOUNDARY_UNITS   FAIL  need BOTH units, got accepts={acc} games={gms}")
         fails.append(("BOUNDARY_UNITS", "CAL-8 incident",
@@ -550,6 +665,36 @@ def check_arithmetic(f: dict, diff_paths=None) -> tuple[list, list, list]:
                       f"{n_plan} vs {gms}"))
     elif n_plan and gms:
         lines.append(f"BOUNDARY_VS_N    ok    PLANNED n = BOUNDARY games = {gms}")
+
+    # --- 1b. CUT-SHORT CONSUMER: the floor must be REACHABLE. ---------------
+    # ⭐ (c). CUT-SHORT was `attested` -- presence-only, value unchecked -- which
+    # is the class the side lane's H2 flagged: a field with no consumer passes on
+    # "TBD". It has one now, and it is an identity, not a taste: a floor ABOVE
+    # the planned n is unsatisfiable by construction, so the leg can never reach
+    # its own floor and the clause silently converts into "descriptive only,
+    # always". `floor == planned_n` is LEGAL but does no work (comparative claims
+    # only on full completion) -- that is a WARN, because a leg may genuinely
+    # intend it.
+    cs = f.get("CUT-SHORT")
+    cs_floor = int_before(cs, "games?") or int_before(cs, r"\b")
+    if cs is None or cs_floor is None:
+        lines.append("CUT_SHORT_FLOOR  not computed -- no numeric floor in the CUT-SHORT line")
+    elif not n_plan:
+        lines.append(f"CUT_SHORT_FLOOR  not computed -- floor {cs_floor} but no PLANNED n")
+    elif cs_floor > n_plan:
+        lines.append(f"CUT_SHORT_FLOOR  FAIL  floor {cs_floor} games > PLANNED n {n_plan} games")
+        fails.append(("CUT_SHORT_FLOOR", "side-lane check 5 (CUT-SHORT consumer)",
+                      "the cut-short floor is ABOVE the leg's own planned n, so the leg "
+                      "cannot reach it at full completion -- the clause is unsatisfiable "
+                      "and silently means 'descriptive only, always'",
+                      f"floor {cs_floor} > planned n {n_plan}"))
+    elif cs_floor == n_plan:
+        lines.append(f"CUT_SHORT_FLOOR  ok    floor {cs_floor} == PLANNED n {n_plan} (no headroom)")
+        warns.append(f"CUT-SHORT floor ({cs_floor}) EQUALS PLANNED n -- legal, but the "
+                     f"clause then does no work: any short leg at all is descriptive-only. "
+                     f"Say so deliberately or set a floor below n.")
+    else:
+        lines.append(f"CUT_SHORT_FLOOR  ok    floor {cs_floor} <= PLANNED n {n_plan} games")
 
     if f.get("PLANNED n") and "game" not in f["PLANNED n"].lower():
         warns.append("PLANNED n does not name its unit. Every bar this project quotes is "
@@ -706,11 +851,40 @@ def check_arithmetic(f: dict, diff_paths=None) -> tuple[list, list, list]:
     else:
         paths = diff_paths if diff_paths is not None else git_diff_paths(f.get("TREATMENT DIFF REFS"))
         if not paths:
-            lines.append(f"OB13_INTERSECTION WARN  metric file {metric_file}; no computable "
-                         f"diff (tree clean or refs unavailable)")
-            warns.append("Obligation 13 intersection DECLARED but NOT COMPUTED: no diff "
-                         "was available. A prereg committed before the arm tree exists is "
-                         "the legitimate case; re-run this check once the tree lands.")
+            # ⛔ (d) CANNOT-COMPUTE IS ITS OWN VERDICT AND ITS OWN STRING.
+            # "the metric file is not in the diff" (a real, computed negative)
+            # and "there is no diff to look in" (the check did not run) are
+            # opposite facts, and until this line they were both a WARN one word
+            # apart. A can't-tell that renders like a checked-and-clean is this
+            # repo's most-repeated defect class; the probe asserts the two
+            # strings DIFFER, not merely that something was printed.
+            untracked = untracked_arm_paths(f)
+            why = (f"arm tree UNTRACKED by git: {', '.join(untracked)}" if untracked
+                   else "tree clean, arm not yet built, or refs unavailable")
+            lines.append(f"OB13_INTERSECTION CANNOT-COMPUTE  metric file {metric_file}: "
+                         f"no diff exists to intersect ({why}). This is NOT 'checked and "
+                         f"clean' -- the check did not run.")
+            if untracked:
+                fails.append(("OB13_UNTRACKED_ARM", "OBLIGATION 13, untracked-arm gap",
+                              "the arm tree EXISTS on disk and git does not track it, so "
+                              "`git diff` returns nothing and the intersection cannot be "
+                              "computed -- which is NOT the legitimate 'locked before the "
+                              "tree exists' case, where the tree is absent. Nothing can "
+                              "verify 'the diff is one line' for an untracked arm: `git "
+                              "add -N` the tree (or commit it) before firing",
+                              f"untracked: {untracked}"))
+            elif fire:
+                fails.append(("OB13_NOT_COMPUTED", "vocabulary ruling §5.1, --fire mode",
+                              "at LOCK time a non-computable diff is expected and WARNs; "
+                              "at FIRE time the arm tree exists by definition, so a "
+                              "non-computable diff IS the defect. A WARN nothing re-runs "
+                              "is a PASS",
+                              f"metric {metric_file}, 0 diff paths, --fire"))
+            else:
+                warns.append("Obligation 13 intersection DECLARED but NOT COMPUTED: no diff "
+                             "was available. A prereg committed before the arm tree exists is "
+                             "the legitimate case; re-run this check with --fire once the "
+                             "tree lands, where the same condition FAILs.")
         else:
             hit = [p for p in paths if p.endswith(metric_file) or metric_file.endswith(p)]
             # IMPORT-BINDING: a constant-sweep changes a value in a constants
@@ -761,6 +935,140 @@ def check_arithmetic(f: dict, diff_paths=None) -> tuple[list, list, list]:
             if stray:
                 warns.append(f"TREATMENT DIFF TOUCHES names path(s) absent from the real "
                              f"diff: {stray}. Declared and actual disagree.")
+
+    # --- 8. POOL ERA. -------------------------------------------------------
+    plines, pfails, pwarns = check_pool_era(f, text)
+    lines += plines
+    fails += pfails
+    warns += pwarns
+    return lines, fails, warns
+
+
+ARM_KEYS = ("TREATMENT TREE", "TREATMENT DIFF TOUCHES", "TREATMENT DIFF REFS",
+            "PROVENANCE", "MECHANISM METRIC READS")
+
+
+def untracked_arm_paths(f: dict) -> list[str]:
+    """Paths NAMED BY THE PREREG that EXIST on disk and are NOT tracked by git.
+
+    ⛔ THE GAP. `git diff` cannot see an untracked tree, so a local arm built in
+    an untracked directory yields an EMPTY diff -- indistinguishable, in the
+    branch that consumes it, from the LEGITIMATE case of a prereg locked before
+    the arm tree exists. They are opposite situations: in the legitimate case
+    the tree IS ABSENT; here it is present and git merely cannot see it, so
+    Obligation 13's intersection cannot be computed and the one-line-diff claim
+    is unverifiable for that arm.
+
+    Only .py files and `bots/` paths are candidates -- a doc or a corpus tape
+    named in PROVENANCE is not an arm, and FAILing on an untracked scratch note
+    would make this rule noise within a day.
+    """
+    cands = []
+    for key in ARM_KEYS:
+        for tok in re.findall(r"[\w./\-]+", f.get(key) or ""):
+            tok = tok.strip("./")
+            if "/" not in tok or not (tok.endswith(".py") or tok.startswith("bots/")):
+                continue
+            if (ROOT / tok).exists() and tok not in cands:
+                cands.append(tok)
+    out = []
+    for tok in cands[:12]:                 # bounded: this shells out per path
+        try:
+            r = subprocess.run(["git", "ls-files", "--", tok], cwd=ROOT,
+                               capture_output=True, text=True, timeout=30)
+        except Exception:                                          # noqa: BLE001
+            continue
+        if not r.stdout.strip():
+            out.append(tok)
+    return out
+
+
+def check_pool_era(f: dict, text: str) -> tuple[list, list, list]:
+    """POOL ERA -- docs/research/SPEC-pool-era-token-2026-08-14.md.
+
+    Ten maps entered the rated pool on 2026-08-13 and are now 66% of pairings.
+    An all-time share averages over a period in which they did not exist: `#63`'s
+    primary segment reads 1.6% all-time and 14.6% on the new pool, a 9.1x
+    misprice, and a SEGMENT VALUE CEILING computed off the all-time tape would
+    have killed the row on arithmetic that was 9x wrong. The number was
+    computable at prereg time AND computable wrong from the obvious population,
+    which is what makes it a tool problem.
+
+    Required iff the document carries a share-bearing declaration. NOT required
+    on a LOCAL surface (SPEC §6): a local screen's map pool is a property of our
+    own fixture config, and that was MEASURED rather than assumed -- the local
+    shard tapes read 66.7% new-pool against the ladder's 66.0%.
+    """
+    lines, fails, warns = [], [], []
+    share_keys = [k for k in ("BASE RATE", "REFERENCE n", "SEGMENT VALUE CEILING")
+                  if f.get(k) and not (f[k].strip().lower().startswith(("none", "n/a")))]
+    if "%" in (f.get("BAR") or ""):
+        share_keys.append("BAR (%-bearing)")
+    surface = (f.get("SURFACE") or "").strip().lower()
+    if not share_keys:
+        lines.append("POOL_ERA         n/a   no share-bearing declaration to date")
+        return lines, fails, warns
+    if surface.startswith("local"):
+        lines.append("POOL_ERA         n/a   LOCAL surface (SPEC §6: our own fixture "
+                     "config, measured at 66.7% new-pool vs the ladder's 66.0%)")
+        return lines, fails, warns
+
+    raw = key_pattern("POOL ERA").search(text)
+    v = f.get("POOL ERA")
+    if raw and not v:
+        lines.append("POOL_ERA_NONEMPTY FAIL  `POOL ERA:` declared with an EMPTY value")
+        fails.append(("POOL_ERA_NONEMPTY", "SPEC-pool-era §4",
+                      "empty is absent (research ruling, no per-token exceptions): nobody "
+                      "omits a field once a checker demands it, they type it and leave it "
+                      "blank. The one legal refusal is `POOL ERA: N/A - <why>`",
+                      "POOL ERA: <blank>"))
+        return lines, fails, warns
+    if not v:
+        lines.append(f"POOL_ERA_PRESENT FAIL  absent, but {share_keys} carry a share")
+        fails.append(("POOL_ERA_PRESENT", "SPEC-pool-era-token-2026-08-14 §2",
+                      "a share, base rate, reference or segment ceiling must declare the "
+                      "window its population came from -- the map pool rotated on "
+                      "2026-08-13 and an all-time cut mispriced `#63`'s primary by 9.1x",
+                      f"share-bearing: {share_keys}"))
+        return lines, fails, warns
+
+    eras, note = pool_eras()
+    if eras is None:
+        lines.append(f"POOL_ERA_SINGLE  BLIND  {note}")
+        warns.append(f"POOL ERA boundaries NOT DERIVED -- {note}. The span check did not "
+                     f"run; this is blindness, not an absence of pool changes.")
+        return lines, fails, warns
+    lines.append("POOL ERAS        " + (" | ".join(
+        f"{d.strftime('%Y-%m-%dT%H:%M:%SZ')} ({n} new maps, prior={pr})" for d, n, pr in eras)
+        or "(no pool events derived)") + f"   [{note}]")
+
+    dates = [d for d in (_iso(s) for s in re.findall(r"\d{4}-\d{2}-\d{2}(?:T[\d:]+Z?)?", v))
+             if d is not None]
+    if not dates:
+        lines.append(f"POOL_ERA_SINGLE  not computed -- value has no parseable ISO date: {v[:48]!r}")
+        warns.append(f"POOL ERA value {v[:48]!r} is not machine-readable, so POOL_ERA_SINGLE "
+                     f"was NOT COMPUTED. Write an ISO range (`2026-08-13T07:12:59Z..now`).")
+        return lines, fails, warns
+    lo = min(dates)
+    hi = max(dates) if len(dates) > 1 else None       # `..now` leaves one date
+    crossed = [d for d, _n, _p in eras if d > lo and (hi is None or d <= hi)]
+    spans_reason = f.get("SPANS-POOL-CHANGE")
+    if not crossed:
+        lines.append(f"POOL_ERA_SINGLE  ok    window lies inside ONE derived era")
+    elif spans_reason:
+        lines.append(f"POOL_ERA_SPAN_OK ok    spans {len(crossed)} boundary(ies), justified: "
+                     f"{spans_reason[:44]}")
+    else:
+        lines.append(f"POOL_ERA_SINGLE  FAIL  window spans "
+                     f"{[d.strftime('%Y-%m-%d') for d in crossed]}")
+        fails.append(("POOL_ERA_SINGLE", "SPEC-pool-era §4",
+                      "the declared window crosses a derived pool boundary, so the "
+                      "population averages over map sets that did not coexist. Narrow the "
+                      "window, or declare `SPANS-POOL-CHANGE: <reason>` -- the point is "
+                      "never to forbid spanning, it is to make spanning a sentence "
+                      "somebody wrote rather than a population somebody defaulted to",
+                      f"POOL ERA: {v[:50]!r} crosses "
+                      f"{[d.strftime('%Y-%m-%dT%H:%M:%SZ') for d in crossed]}"))
     return lines, fails, warns
 
 
@@ -784,6 +1092,107 @@ def git_diff_paths(refs: str | None) -> list[str] | None:
         return None
     paths = [p for p in r.stdout.split() if p.endswith(".py")]
     return paths or None
+
+
+# ---------------------------------------------------------------------------
+# TAPE MODE — the FIXTURE HEADER and its START marker.
+#
+# ⛔ WHY A START STAMP IS A REQUIRED FIELD AND NOT A NICETY. Every two-clock
+# certification this project has ever typed dates a leg by its FIRST RESULT ROW
+# -- and a result row is written when a game FINISHES, so that clock is one game
+# length (~10-20s) LATE. At minute-scale gaps this is invisible and changes
+# nothing (the banked 40m43s and 4m05s claims stand). At the SALTREF2 leg's
+# 13-second gap the SIGN of "did the prereg predate the leg?" is undeterminable.
+# The durable fix is not a smarter reader: it is the runner stamping its OWN
+# START to the tape before the first game, which is what tools/overnight.sh now
+# does. This check is the consumer that makes the stamp non-optional.
+#
+# ⛔ AND IT FAILS THE SCHEMA ON A REQUIRED FIELD -- it does not warn. A warning
+# on a missing clock is a clock nobody adds.
+# ---------------------------------------------------------------------------
+TAPE_HEADER_PREFIX = "# FIXTURE"
+TAPE_REQUIRED_FIELDS = ("shard", "treatment", "control", "planned_n", "workers",
+                        "host", "start")
+TAPE_ROW_COLUMNS = ("ts", "shard", "game", "map", "seed", "seat", "winner", "cond", "turns")
+
+
+def parse_fixture_header(text: str) -> dict[str, str]:
+    """`# FIXTURE\\tk=v\\tk=v...` -> {k: v}. Empty dict when absent."""
+    for line in text.splitlines():
+        if line.startswith(TAPE_HEADER_PREFIX):
+            out = {}
+            for tok in line.split("\t")[1:]:
+                if "=" in tok:
+                    k, _, val = tok.partition("=")
+                    out[k.strip()] = val.strip()
+            return out
+    return {}
+
+
+def check_tape(path: Path, legacy_ok: str = "") -> int:
+    """Validate a shard result tape's FIXTURE HEADER + game-row schema."""
+    fails, warns, lines = [], [], []
+    try:
+        text = path.read_text()
+    except Exception as exc:                                       # noqa: BLE001
+        print(f"TAPE CHECK  {path}\n  UNREADABLE: {exc}\n\nPREREG_CHECK: FAIL")
+        return 1
+    body = [l for l in text.splitlines() if l.strip() and not l.startswith("#")]
+    hdr = parse_fixture_header(text)
+    print(f"TAPE CHECK  {path}")
+    print(f"  {len(body)} non-comment line(s); fixture header "
+          f"{'PRESENT' if hdr else 'ABSENT'}")
+
+    if not hdr:
+        # LEGACY IS IDENTIFIED, NOT GRANDFATHERED. Every tape written before the
+        # runner carried this header lands here, and it FAILS -- deliberately.
+        # The escape is a typed reason that goes on the invocation tape, so the
+        # rate at which we wave legacy tapes through is a number somebody can
+        # read rather than a habit nobody can see.
+        first = body[1].split("\t")[0] if len(body) > 1 else "?"
+        detail = (f"no `{TAPE_HEADER_PREFIX}` line; first data row {first} "
+                  f"(LEGACY: pre-header tape)")
+        if legacy_ok:
+            warns.append(f"TAPE_FIXTURE_HEADER escaped: {detail}. Reason: {legacy_ok}")
+        else:
+            fails.append(("TAPE_FIXTURE_HEADER", "start"), )
+            lines.append(f"TAPE_FIXTURE_HEADER FAIL  required field `start` absent -- {detail}")
+    else:
+        missing = [k for k in TAPE_REQUIRED_FIELDS if not hdr.get(k)]
+        if missing:
+            fails.append(("TAPE_FIXTURE_HEADER", ",".join(missing)))
+            lines.append(f"TAPE_FIXTURE_HEADER FAIL  required field(s) absent or empty: {missing}")
+        else:
+            lines.append("TAPE_FIXTURE_HEADER ok    " + "  ".join(
+                f"{k}={hdr[k]}" for k in TAPE_REQUIRED_FIELDS))
+            if _iso(hdr["start"]) is None:
+                fails.append(("TAPE_START_PARSES", "start"))
+                lines.append(f"TAPE_START_PARSES  FAIL  start={hdr['start']!r} is not an "
+                             f"ISO UTC timestamp -- an unparseable clock is not a clock")
+            else:
+                lines.append(f"TAPE_START_PARSES  ok    {hdr['start']}")
+
+    cols = body[0].split("\t") if body else []
+    if list(cols) != list(TAPE_ROW_COLUMNS):
+        fails.append(("TAPE_ROW_SCHEMA", "columns"))
+        lines.append(f"TAPE_ROW_SCHEMA    FAIL  column header is {cols}, expected "
+                     f"{list(TAPE_ROW_COLUMNS)}")
+    else:
+        lines.append(f"TAPE_ROW_SCHEMA    ok    {len(TAPE_ROW_COLUMNS)} columns, "
+                     f"{max(0, len(body)-1)} game row(s)")
+
+    for l in lines:
+        print(f"  {l}")
+    for w in warns:
+        print(f"WARN  {w}")
+    for cid, detail in fails:
+        print(f"FAIL  {cid}   [{detail}]")
+    if fails:
+        print("\nA tape with no START stamp can only be dated by its first result ROW, "
+              "which is a game COMPLETION -- one game length late. Certifications written "
+              "off it say PREDATES-FIRST-ROW, never predates-leg-creation.")
+    print(f"\nPREREG_CHECK: {'FAIL' if fails else 'OK'}")
+    return 1 if fails else 0
 
 
 # ---------------------------------------------------------------------------
@@ -850,10 +1259,11 @@ def check_amendment(locked: Path, amended: Path) -> int:
 # ---------------------------------------------------------------------------
 # REPORT
 # ---------------------------------------------------------------------------
-def run_checks(text: str, label: str, diff_paths=None, quiet=False) -> tuple[list, list, list]:
+def run_checks(text: str, label: str, diff_paths=None, quiet=False,
+               fire: bool = False) -> tuple[list, list, list]:
     f = parse_fields(text)
     rows, fails = check_presence(text, f)
-    alines, afails, warns = check_arithmetic(f, diff_paths=diff_paths)
+    alines, afails, warns = check_arithmetic(f, diff_paths=diff_paths, text=text, fire=fire)
     fails = fails + afails
     if not quiet:
         print(f"PREREG CHECK  {label}")
@@ -877,8 +1287,8 @@ def run_checks(text: str, label: str, diff_paths=None, quiet=False) -> tuple[lis
     return rows, fails, warns
 
 
-def check_file(path: Path) -> int:
-    _rows, fails, _warns = run_checks(path.read_text(), str(path))
+def check_file(path: Path, fire: bool = False) -> int:
+    _rows, fails, _warns = run_checks(path.read_text(), str(path), fire=fire)
     print()
     if fails:
         print(f"{len(fails)} obligation(s) unmet. A prereg is not locked until this "
@@ -921,6 +1331,7 @@ COMPLETE = """\
 **BASE RATE: 50.0**
 **BAR SOURCE: pre-registered treatment bar, this document**
 **BASE RATE SOURCE: corpus/ladder_games.tsv, ourver >= 125, n = 415 games, cut 2026-08-14**
+**POOL ERA: 2026-08-13T07:12:59Z..2026-08-14T23:59:59Z (n=540, the post-rotation pool)**
 **REFERENCE n: none**
 **MECHANISM METRIC READS: eco.py:934. TREATMENT DIFF TOUCHES: eco.py, main.py. INTERSECTION: yes.**
 **GATE RESOLUTION: the dose gate discriminates its branches at n >= 60 events; UNRESOLVED ⇒ the RESTRICTION (no ship)**
@@ -1038,6 +1449,28 @@ def selftest() -> int:
         ("DOSE_BOTH_VERDICTS", "treatment and flag-off IDENTICAL",
          COMPLETE.replace("vs flag-off 0.0/game", "vs flag-off 7.4/game"), True),
         ("DOSE_BOTH_VERDICTS", "7.4 vs flag-off 0.0", COMPLETE, False),
+        # --- s43 wiring bundle ------------------------------------------------
+        ("CUT_SHORT_FLOOR", "floor 200 above the leg's own PLANNED n of 150",
+         COMPLETE.replace("below 75 games", "below 200 games"), True),
+        ("CUT_SHORT_FLOOR", "floor 75 below PLANNED n 150", COMPLETE, False),
+        ("POOL_ERA_PRESENT", "a BASE RATE with no POOL ERA on a non-local surface",
+         _strip_rule(COMPLETE, dict(keys=["POOL ERA"])), True),
+        ("POOL_ERA_PRESENT", "POOL ERA declared", COMPLETE, False),
+        ("POOL_ERA_PRESENT", "SPEC §6: a LOCAL surface needs no pool era",
+         _strip_rule(COMPLETE, dict(keys=["POOL ERA"])).replace("SURFACE: unrated",
+                                                                "SURFACE: local"), False),
+        ("POOL_ERA_NONEMPTY", "POOL ERA declared with an EMPTY value",
+         COMPLETE.replace("**POOL ERA: 2026-08-13T07:12:59Z..2026-08-14T23:59:59Z "
+                          "(n=540, the post-rotation pool)**", "**POOL ERA:**"), True),
+        ("POOL_ERA_SINGLE", "a window that spans the 2026-08-13 rotation, unjustified",
+         COMPLETE.replace("2026-08-13T07:12:59Z..2026-08-14T23:59:59Z",
+                          "2026-08-01T00:00:00Z..2026-08-14T23:59:59Z"), True),
+        ("POOL_ERA_SINGLE", "the same spanning window WITH SPANS-POOL-CHANGE",
+         COMPLETE.replace("2026-08-13T07:12:59Z..2026-08-14T23:59:59Z",
+                          "2026-08-01T00:00:00Z..2026-08-14T23:59:59Z")
+                 .replace("## FALSIFIER",
+                          "**SPANS-POOL-CHANGE: CPU cost per turn is pool-independent**"
+                          "\n\n## FALSIFIER"), False),
     ]
     for rid, label, txt, want_fail in cases:
         _r, fails, _w = run_checks(txt, f"<{rid}>", diff_paths=["eco.py", "main.py"], quiet=True)
@@ -1148,11 +1581,44 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--amendment", nargs=2, metavar=("LOCKED", "AMENDED"),
                     help="ADD-ONLY enforcement: the amended file may only ADD "
                          "bar/branch lines, never edit or remove one")
+    ap.add_argument("--tape", metavar="SHARD_TSV",
+                    help="validate a shard result tape's FIXTURE HEADER (START marker) "
+                         "and game-row schema")
+    ap.add_argument("--tape-legacy-ok", nargs="?", const="", default=None, metavar="REASON",
+                    help="ESCAPE, TAKES A >=20-char REASON: downgrade a MISSING fixture "
+                         "header to a WARN for a pre-header (legacy) tape")
+    ap.add_argument("--fire", action="store_true",
+                    help="FIRE-TIME mode (vocabulary ruling §5.1): the Obligation-13 "
+                         "'no computable diff' WARN becomes a FAIL, because at fire time "
+                         "the arm tree exists by definition")
     a = ap.parse_args(argv)
+
+    # ⭐ ONE ROW PER INVOCATION on the shared tape, escaped or not. Same design as
+    # gate.py: escaped rows are the numerator, ALL rows are the denominator.
+    granted = {}
+    if a.tape_legacy_ok is not None:
+        if len(a.tape_legacy_ok.strip()) < MIN_REASON_CHARS:
+            print(f"REFUSING: --tape-legacy-ok requires a REASON of >={MIN_REASON_CHARS} "
+                  f"chars. An escape with no stated reason is not a decision on the "
+                  f"record.\n\nPREREG_CHECK: FAIL")
+            return 1
+        granted["tape-legacy-ok"] = a.tape_legacy_ok.strip()
+    mode = ("selftest" if a.selftest else "amendment" if a.amendment
+            else "tape" if a.tape else "prereg")
+    tape_record("prereg_check.py",
+                a.tape or (a.amendment[1] if a.amendment else a.path or ""),
+                escapes=granted, mode=mode)
+
     if a.selftest:
         return selftest()
     if a.amendment:
         return check_amendment(Path(a.amendment[0]), Path(a.amendment[1]))
+    if a.tape:
+        p = Path(a.tape)
+        if not p.exists():
+            print(f"REFUSING: {p} does not exist.\n\nPREREG_CHECK: FAIL")
+            return 1
+        return check_tape(p, legacy_ok=granted.get("tape-legacy-ok", ""))
     if not a.path:
         print(__doc__)
         return 2
@@ -1160,7 +1626,7 @@ def main(argv: list[str]) -> int:
     if not p.exists():
         print(f"REFUSING: {p} does not exist.\n\nPREREG_CHECK: FAIL")
         return 1
-    return check_file(p)
+    return check_file(p, fire=a.fire)
 
 
 if __name__ == "__main__":

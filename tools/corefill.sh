@@ -162,7 +162,11 @@ while true; do
       fi
       print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > $STATE/$SH
       say "LAUNCH $SH  $TR vs $CT  target=$TG seed_lo=$SL   (running was $running, load $load1)"
-      nohup zsh tools/overnight.sh $SH $TR $CT $TG $SL >> $OUT/${SH}.launch.log 2>&1 &
+      # WORKERS is the fleet width this shard shares the box with; it lands in
+      # the shard tape's FIXTURE header, where a later reader needs it to judge
+      # whether a shard was CPU-starved. A bare `overnight.sh` invocation
+      # defaults it to 1, which is true of a bare invocation.
+      WORKERS=$MAX_SHARDS nohup zsh tools/overnight.sh $SH $TR $CT $TG $SL >> $OUT/${SH}.launch.log 2>&1 &
       launched=1
       break
     done < $WORK

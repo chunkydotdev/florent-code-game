@@ -219,7 +219,14 @@ def load(d):
     out = {}
     for f in sorted(glob.glob(f"{d}/*.tsv")):
         sh = Path(f).stem
-        rows = [l.split("\t") for l in Path(f).read_text().splitlines()[1:] if l.strip()]
+        # ⛔ SKIP `#` LINES ANYWHERE, then drop the COLUMN header -- not
+        # `splitlines()[1:]`. The tape now opens with a `# FIXTURE` line (the
+        # runner's START stamp) and a resumed legacy tape gets a
+        # `# FIXTURE-RESUME` line appended MID-FILE. A blind [1:] would have
+        # read the column header as a game whose winner is the string "winner".
+        body = [l for l in Path(f).read_text().splitlines()
+                if l.strip() and not l.startswith("#")]
+        rows = [l.split("\t") for l in body[1:]]
         hb = Path(f"{d}/{sh}.heartbeat")
         n_hb = tgt = None
         status = "NO_HEARTBEAT"

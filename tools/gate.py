@@ -24,9 +24,15 @@ Usage:
                                   --control bots/_v114off \
                                   --parent bots/_det_v100hf \
                                   --opponents bots/_det_opp_v63 bots/_det_opp_v78 \
-                                  [--maps hive atoll ...] [--allow-self-play]
+                                  [--maps hive atoll ...] [--allow-self-play REASON]
 
 Exit code 0 = cleared to run a battery. Non-zero = do not measure.
+
+EVERY INVOCATION IS TAPED to gate_invocations.tsv (tools/escape_tape.py),
+escaped or not, so the BYPASS RATE has a denominator. All four escapes
+(--pooled-not-paired, --off-programme, --skip-tle, --allow-self-play) take a
+>=20-char REASON and are REFUSED without one; a refused escape does not silence
+its check.
 """
 from __future__ import annotations
 
@@ -41,12 +47,50 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FCODE = ROOT / ".venv" / "bin" / "fcode"
 
+if str(Path(__file__).resolve().parent) not in sys.path:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+from escape_tape import record as tape_record          # noqa: E402
+
+# ⛔ FOUR ESCAPES, NOT ONE, AND THEY WERE ASYMMETRIC UNTIL 2026-08-14.
+# `--pooled-not-paired` demanded a >=20-char REASON on the argument that "an
+# escape with no stated reason is not a decision on the record". Its three
+# neighbours -- `--off-programme`, `--skip-tle`, `--allow-self-play` -- were bare
+# `store_true` and demanded nothing. **A guard present on one path and absent
+# from its neighbour is exactly the shape this project hunts for in opponents'
+# code** (CLAUDE.md, "LOOK FOR ASYMMETRIC GUARDS"); finding it in our own gate is
+# not something to leave in place. All four now take a reason and REFUSE without
+# one -- and a refused escape is NOT taken, so the check it would have silenced
+# still runs.
+ESCAPE_FLAGS = ("pooled-not-paired", "off-programme", "skip-tle", "allow-self-play")
+MIN_REASON_CHARS = 20
+
 # identifiers that appear in our own lineage and would not appear in a
 # genuinely foreign bot; used to detect a self-play pool
 OUR_SIGNATURES = ("SLOT_ROLE_N", "HUNT_BAND_DSQ", "_try_counterbattery", "SLOT_UNDER")
 
 FAIL: list[str] = []
 WARN: list[str] = []
+
+
+def take_escape(name: str, value: str | None) -> str:
+    """-> the REASON if the escape was validly taken, else "" (REFUSED).
+
+    `value is None` means the flag was not passed at all -- silence, no FAIL.
+    `value == ""` means the flag WAS passed with no reason (argparse `const`),
+    which is a refusal WITH a FAIL: the caller reached for the escape and did
+    not pay for it. The distinction matters because "" and None would otherwise
+    render identically and a bare flag would read as an untyped flag.
+    """
+    if value is None:
+        return ""
+    if len(value.strip()) < MIN_REASON_CHARS:
+        FAIL.append(
+            f"--{name} requires a REASON of >={MIN_REASON_CHARS} chars naming the "
+            f"design decision (got {len(value.strip())}). An escape with no stated "
+            f"reason is not a decision on the record -- and a REFUSED escape does "
+            f"not silence its check, so re-run with the reason or fix the battery.")
+        return ""
+    return value.strip()
 
 
 def _src(bot: Path) -> str:
@@ -303,29 +347,59 @@ def main() -> int:
     ap.add_argument("--opponents", nargs="+", required=True)
     ap.add_argument("--maps", nargs="+",
                     default=["hive", "atoll", "meander", "archipelago", "saga", "nordkap"])
-    ap.add_argument("--skip-tle", action="store_true",
-                    help="skip the remote TLE fidelity check (records a WARN)")
-    ap.add_argument("--off-programme", action="store_true",
-                    help="run a battery outside the active PROGRAMME.md line")
-    ap.add_argument("--pooled-not-paired", metavar="REASON", default="",
-                    help="ESCAPE, TAKES A REASON STRING: downgrade the NOISE_ON FAILs to WARN. "
+    # ⛔ ALL FOUR ESCAPES TAKE A REASON. `nargs="?"` with `const=""` keeps the
+    # bare form PARSEABLE on purpose -- a bare `--skip-tle` must reach
+    # take_escape() and be REFUSED with a named FAIL, not die in argparse with a
+    # usage string that says nothing about why the reason exists.
+    esc = dict(nargs="?", const="", default=None, metavar="REASON")
+    ap.add_argument("--skip-tle", **esc,
+                    help="ESCAPE, TAKES A REASON: skip the remote TLE fidelity check "
+                         "(records a WARN; local runs are --tle 0 and cannot see a CPU "
+                         "regression)")
+    ap.add_argument("--off-programme", **esc,
+                    help="ESCAPE, TAKES A REASON: run a battery outside the active "
+                         "PROGRAMME.md line")
+    ap.add_argument("--pooled-not-paired", **esc,
+                    help="ESCAPE, TAKES A REASON: downgrade the NOISE_ON FAILs to WARN. "
                          "Valid ONLY for a POOLED estimate, never a paired/seed-matched "
                          "one. Pinning NOISE_ON=False is not a free fix: engine seed "
                          "sensitivity is map-dependent and measured at ZERO on antler.")
-    ap.add_argument("--allow-self-play", action="store_true",
-                    help="acknowledge a self-play pool and proceed (result is SAFETY only)")
+    ap.add_argument("--allow-self-play", **esc,
+                    help="ESCAPE, TAKES A REASON: acknowledge a self-play pool and "
+                         "proceed (result is SAFETY only)")
     a = ap.parse_args()
 
     plank, control, parent = Path(a.plank), Path(a.control), Path(a.parent)
     opponents = [Path(o) for o in a.opponents]
 
-    check_programme(plank, a.off_programme)
+    # Validate every escape FIRST, so the tape row below records what was
+    # actually GRANTED rather than what was typed.
+    granted = {}
+    for name in ESCAPE_FLAGS:
+        r = take_escape(name, getattr(a, name.replace("-", "_")))
+        if r:
+            granted[name] = r
+
+    # ⭐ ONE ROW PER INVOCATION, ESCAPED OR NOT. The escaped rows are the
+    # numerator and ALL rows are the denominator -- a tape of escapes alone is a
+    # count with nothing to divide by. See tools/escape_tape.py.
+    battery = (f"plank={plank.name};control={control.name};parent={parent.name};"
+               f"opponents={','.join(o.name for o in opponents)};"
+               f"maps={','.join(a.maps)}")
+    tape_record("gate.py", battery, escapes=granted, mode="battery")
+    print("ESCAPES  " + (", ".join(f"--{k}" for k in sorted(granted)) if granted
+                         else "none taken (this invocation is on the tape as a "
+                              "denominator row)"))
+    for k in sorted(granted):
+        print(f"  --{k}: {granted[k]}")
+
+    check_programme(plank, bool(granted.get("off-programme")))
 
     check_determinism([plank, control, parent] + opponents,
-                      pooled_not_paired=a.pooled_not_paired)
-    check_pool_identity(opponents, a.allow_self_play)
+                      pooled_not_paired=granted.get("pooled-not-paired", ""))
+    check_pool_identity(opponents, bool(granted.get("allow-self-play")))
     if not FAIL:
-        if a.pooled_not_paired:
+        if granted.get("pooled-not-paired"):
             # ⛔ SKIPPED DELIBERATELY, s32. check_control_equivalence runs the
             # control and the parent in TWO SEPARATE `fcode run` processes at
             # --seed 1 and demands byte-identical outcomes -- an ACROSS-RUN
@@ -343,7 +417,7 @@ def main() -> int:
             check_control_equivalence(control, parent, opponents[0], a.maps)
     if not FAIL:
         try:
-            check_platform_instruments(plank, parent, a.skip_tle)
+            check_platform_instruments(plank, parent, bool(granted.get("skip-tle")))
         except Exception as exc:                                  # noqa: BLE001
             WARN.append(f"remote TLE check did not run: {exc}")
 

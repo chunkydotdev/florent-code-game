@@ -1,0 +1,14 @@
+ts	tool	user	host	mode	escapes	setter	reasons	subject
+2026-08-14T20:56:58Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-14T20:57:00Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sealfloor6-2026-08-14.md
+2026-08-14T20:57:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-mapsalt-2026-08-14.md
+2026-08-14T20:57:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-nestshot-2026-08-14.md
+2026-08-14T20:57:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-osclock2-2026-08-14.md
+2026-08-14T20:57:27Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sealrepair-2026-08-14.md
+2026-08-14T20:58:42Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sealrepair-2026-08-14.md
+2026-08-14T21:01:07Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-14T21:01:36Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-aimthrow-2026-08-14.md
+2026-08-14T21:03:12Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-sealfloor6-2026-08-14.md
+2026-08-14T21:07:19Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-14T21:08:06Z	prereg_check.py	junghard	MacBook-Pro.local	selftest				
+2026-08-14T21:08:11Z	prereg_check.py	junghard	MacBook-Pro.local	prereg				docs/prereg/SCREEN-crashdrive-2026-08-14.md
