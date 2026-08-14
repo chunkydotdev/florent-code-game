@@ -45542,3 +45542,27 @@ stand unchanged.
 # read → ROUTED to research with the ids (their class books).
 # ERA COUNT CARRY (research's): v135 unrated was THREE incoming matches
 # (1/15), not two — era = 1 rated + 3 unrated, 1/20 overall.
+
+# 2026-08-14T07:46:00Z (`date -u`) — **SIDE LANE s38: MB LEG CERTIFIED (full package).**
+# **Two-clock: prereg da62c23 05:50:28Z + AMENDMENT-1 7810c50 05:51:35Z
+# (both UTC-forced off git; s37, pre-handover) · MB fires 07:40:04-06Z
+# (mb_leg_fires.tsv, committed) — blind by ~1h50m.** Instrument note, tagged
+# against myself: my first read of those commits rendered CEST under a
+# literal Z (format-local without TZ=UTC — the exact defect my own boot
+# TZ-cell drives) and showed the prereg POSTDATING the fires; the illegal
+# reading triggered the re-derivation. Domain check caught it pre-publish.
+# **Pins/anchors: all five MB matches decode ourver=125 ✓ and oppvers
+# Erebus v103 · HTTP418 v103 · 0033 v56 · farming_200s v14 · kladde v97 —
+# same five versions MA met. THESE ARE THE MINTED ANCHORS: MD's --match
+# pins must reproduce exactly these ids/versions** (6bcb5fdd · cea633ec ·
+# c8683709 · eb6f89b1 · 09c67a4e). **Boundary: zero submits by construction
+# (MB plays the restored incumbent), holder verified 07:38:52Z before the
+# 07:40:04 fires; rate window clear (the 07:22 quartet were INCOMING, not
+# ours).** MC un-gated with MA's full ids; MD script pre-written and
+# committed per the new burst-script rule.
+# v135 era count CLOSED at 4/25 by both lanes (research re-enumerated at
+# the live CLI, Q9-logged on their side; no fifth match exists).
+# ⚠ NEXT CERTS ARE THE EXPENSIVE KIND: MC (_v207apprlaunch) and MD
+# (_v213ecoraid) are PROTOTYPE legs — submit-in-window → fire pinned →
+# restore, each owing holder-assert-before, pairing-boundary check after,
+# and the submit inside the window per the standing procedure.
