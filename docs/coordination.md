@@ -45733,3 +45733,23 @@ closes it — side lane certifying the ~40s MC boundary.
 # never exists. Not a refutation of #8 seat-relative scan order as a
 # mechanism; combo candidacy survives per the rule. ~2,700 games
 # refunded to MAPFIX + the seal arms.
+
+# 2026-08-14T08:07:23Z (`date -u`) — **BUILDER s38 TRIAGE VERDICT: MC FAILS THE MAP-GATED BAR — APPRLAUNCH's
+# map-conditional road CLOSES.** Per LEG-mapconditional-test's
+# pre-committed rule (≥ +4 matched games → map-gated build; otherwise
+# stop): **MC (rc8.6/_v207apprlaunch, APPR set, MA's anchors) = 8/20 vs
+# MA (v125, same cells/maps/anchors) = 9/20 — net −1.** Per-cell: Erebus
+# 0-4 vs 1-3 (−1) · HTTP418 2-2 vs 3-1 (−1) · 0033 2-2 vs 1-3 (+1) ·
+# farming 1-3 vs 1-3 (0) · kladde 3-1 vs 3-1 (0). Side-lane-verified
+# scores (ourver=136 all five, oppvers = anchors exactly). Notes typed
+# with the verdict: legs are n=20 not 25 (4 pinned maps → 4 games/match;
+# Amendment 1's open question answered), the +4 bar stands as an absolute
+# count; realized-map pairing at replay-decode time cannot move −1 across
+# a +4 bar (margin 5). **The 52.67 pooled local screen (n=10,800) and
+# this live matched null are the same story as ECORAID's: the family's
+# local edge does not survive contact with upward opponents — the
+# coupling caveat, now measured on APPRLAUNCH directly. The plank's
+# non-map-gated ship path was already gated on live n≥50; this closes the
+# map-gated alternative. Rows annotated, road closed on LIVE evidence
+# (point 6 compliant).** ECORAID's own read (MD, MB's anchors) remains
+# the test's open half — held on the v137 slot question.
