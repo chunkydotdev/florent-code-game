@@ -614,11 +614,20 @@ ONE SAMPLE (a single bar on one surface):
 TWO-FIXTURE COMPARISON (e.g. a panel share vs a rated share):
     half_width_95 = 1.96*sqrt( p̄(1-p̄) * ( DEFF_u/n_unrated + DEFF_r/n_rated ) )
 ```
-**SCOPE RULE — a single multiplier OVERCORRECTS a stratified bar:** a pooled
-share over a **MATCHMADE** record (the ladder picks the mix, so the mix genuinely
-IS sampling variance) takes the **pooled** constant; a **stratified or per-cell**
-bar (we chose the cells, or the read conditions on one opponent, so the mixture
-is removed by design) takes the **within-opponent** constant.
+**SCOPE RULE — a single multiplier OVERCORRECTS a stratified bar. THREE CLAUSES,
+and the third is the general form:**
+* a pooled share over a **MATCHMADE** record (the ladder picks the mix, so the
+  mix genuinely IS sampling variance) takes the **POOLED** constant;
+* a bar **stratified by OPPONENT** (we chose the cells, or the read conditions on
+  one opponent, so the mixture is removed by design) takes the
+  **WITHIN-OPPONENT** constant;
+* ⭐ **a bar stratified by MAP takes NO DEFF AT ALL** — measured 2026-08-14:
+  a 5-game match uses five DIFFERENT maps, so **(match, map) pairs with more than
+  one game = 0 of 415**, and a per-map cell holds at most one game per match.
+  **⇒ THE GENERAL FORM: a design effect applies only where the STRATUM CAN
+  CONTAIN MORE THAN ONE MEMBER OF THE CLUSTER. Check that, do not assume it** —
+  a correction applied where it does not belong inflates every interval for
+  nothing, and it fails in the FLATTERING direction for a null.
 
 **⛔ DIRECTION — AND THE GUARANTEE IS NOT UNCONDITIONAL. THIS IS THE CLAUSE THAT
 KEEPS THE CORRECTION FROM FLATTERING THE CLAIMS MOST TEMPTING TO BANK.**
