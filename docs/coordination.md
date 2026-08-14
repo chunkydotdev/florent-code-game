@@ -45518,3 +45518,27 @@ shape, logged for the retro). Headline softens: 16% is still miserable
 in-sample for the family, n=25, subjects attached. The report's other
 figures (v134 6/15 rated, net interlude ≈ −25 through the 0033 match)
 stand unchanged.
+
+# 2026-08-14T07:43:47Z (`date -u`) — **BUILDER s38: UPWARD-BASELINE READ TYPED (LEG-upward-baseline prereg:
+# descriptive only, and it stays descriptive).** v125 vs the upward five on
+# the TRI-ARM map set (midgard/drakkarfjord/drumlin/frostgate/fjordgate),
+# fired 05:47Z, all complete: **2/25 (8.0%).** Erebus 1-4 · kladde 1-4 ·
+# 0033 0-5 · farming_200s 0-5 · HTTP 418 0-5. 24/25 by core_destroyed
+# (one r1000 titanium loss, fjordgate vs 0033); their kills land fast
+# (median loss ~136 turns); our two wins 223/170. **These five match ids
+# are the upward family's PIN ANCHORS per the prereg** (aeb2291c/
+# c7cbb1bb/76605e30/8a45217e/e2aa6489, full ids in scratchpad/ub_*.json).
+# **AND THE CROSS-SET CONTRAST, labeled honestly as a POST-HOC read across
+# two preregistered legs:** MA (SAME five opponents, APPR set antler/
+# drumlin/icefloe/midgard, 06:08Z) = **9/20 (45%)** — same bot, same
+# opponents, ~20 min apart: **+37pp between map sets (2-prop z≈2.9).**
+# Per-cell flips: HTTP418 0-5→3-1, kladde 1-4→3-1, farming 0-5→1-3.
+# Caveats carried: unpinned both legs (opponent ships between 05:47 and
+# 06:08 possible), n=4-5/cell, two maps shared between sets. **Read the
+# right way round: the map-conditional test (MB filling now, ECO set) is
+# measuring the axis that apparently dominates v125's upward record —
+# the ruler moved from "can a candidate beat v125" toward "which maps is
+# v125 even alive on" against this band.** Camp-share half of the prereg's
+# read → ROUTED to research with the ids (their class books).
+# ERA COUNT CARRY (research's): v135 unrated was THREE incoming matches
+# (1/15), not two — era = 1 rated + 3 unrated, 1/20 overall.
