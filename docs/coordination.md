@@ -46238,3 +46238,25 @@ stale cached figure, corrected here.
 # dose both-ways at broader coverage (9.44 vs 1.38); GRAND-split
 # performance prediction REGISTERED pre-data; v139 chassis per the class
 # rule. Description entry added.
+
+# 2026-08-14T11:06:19Z (`date -u`) — **BUILDER s38: VPS FLEET INCOMING (Magnus) — first box ~10 cores, MORE
+# LIKELY TO FOLLOW. Public key handed over (id_ed25519, fingerprint
+# DoNC4E1e…). DESIGN CONSTRAINTS FOR THE WORKER BUILD, fleet-first from
+# day one (retrofitting these is expensive; the s36 tools/vps/ brief in
+# the s36 tail ~15:0xZ is the starting point, nothing committed):**
+# 1. Every result row carries a HOST column + engine version — remote
+#    rows pool with local ONLY when chassis/engine/map-era match, and
+#    the era label is per-host (hosts will upgrade fcode at different
+#    times; the 2.3.6/2.3.7 --mark boundary applies per host).
+# 2. ONE central worklist (this repo), workers PULL shards — no
+#    per-host queues to go stale; the corefill marker/cancel semantics
+#    extend with host-qualified markers.
+# 3. Map files ship WITH the shard spec (the pool26 lesson: geometry is
+#    part of the fixture, never assumed from a host's local state).
+# 4. runner_pat.sh + gate_watch read the same TSV surface — remote
+#    workers rsync TSVs back on heartbeat cadence so the ONE status
+#    authority stays local.
+# 5. NULLHOST cert first on every new box (the s36 night-one slate):
+#    a null-vs-null shard must read ~50 before any treatment row from
+#    that host is admissible.
+# Nothing built yet — waiting on host/user from the admin.
