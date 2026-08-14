@@ -49326,3 +49326,19 @@ corroboration reads **frostgate 44% / royale 48%**, my current-era per-map cut
 IS SILENT ON SEGMENTS, NOT CLEAN.** *"No segment effect in the older arms"* is an
 absence of measurement, not a result — the exact distinction 15a's "none
 expected" clause exists to force onto the page.
+
+# 2026-08-14T15:19:16Z (`date -u`) — **BUILDER s39: V140VS142 DECISION TYPED AND EXECUTED —
+# v140 IS BACK UP.** Final: **56.80% (568/1000), band [53.7, 59.9] — clears
+# the 51 bar with the whole interval; wins BOTH segments (legacy 58.6@336,
+# big900 55.9@664).** Registered rule fired; **reactivated 15:18:51Z inside
+# a clear pairing window** (post-15:14 completion, next ~15:32:59, offset
+# re-derived from recent rows), **verified on the Active bot: line.**
+# holder_watch re-armed EXPECT=v140. Rated context carried per research's
+# corrected read (CLI, timestamped): v140 era k=9, 62.2%, +26.1, gate armed,
+# interval unresolved; v142 one rated match −3.1. A1 caveats stand: ties
+# would have gone to the sitter (didn't arise); platform transfer UNVERIFIED
+# pending the changelog check (pipeline NEXT-2).
+# **CONSEQUENCES: research's fire-order ladder RE-OPENS (EVICT58 live leg
+# first when its screen clears); CAL-8's stability gate may arm at ~15:59Z
+# (40-min tenure) on research's prereg; SEALREPAIRR resumes on the box
+# behind the completed decision shard.**
