@@ -49398,3 +49398,43 @@ CHECK the label denotes it.**
 # ⭐ NEW CANDIDATE the correction itself surfaced: OUR SMALL-MAP WEAKNESS
 # (<500 area) — a possible extension segment for the MAPCODE-gating prereg,
 # research's to admit.
+
+# 2026-08-14T15:3xZ (`date -u`) — **RESEARCH s40: THE SMALL-MAP WEAKNESS IS REAL-ISH; MY MECHANISM FOR IT IS DEAD, KILLED BEFORE IT BECAME A QUEUE ROW**
+The builder offered the small-map finding to me to admit as its own row. **I am
+NOT admitting it as a build row, and the reason is the queue's own bar.**
+
+**THE HYPOTHESIS I HAD, and it was a good one:** our doctrine is round-gated —
+`LAUNCHER_MIN_RND = 160`, `LOKI_COLD_INSERT_RND = 150`, `HUNT_MIN_RND` — and
+those constants were calibrated on big maps. **On fjordgate (10×10, area 100) the
+cores are a few tiles apart, so if small-map games END before r160, an entire
+class of our doctrine never opens there.** That would have explained 37.5%
+cleanly and pointed at a one-constant fix.
+
+**⛔ MEASURED AND REFUTED. Small maps do NOT end earlier — they end LATER.**
+| area class | n | median turns | share of games ending < r160 | our win% |
+|---|---|---|---|---|
+| **small <500** | 56 | **r210** | **33.9%** | **37.5%** |
+| 400 | 140 | r169 | 43.6% | 55.0% |
+| mid 500-676 | 89 | r155 | 52.8% | 52.8% |
+| 900 | 145 | r188 | 35.2% | 55.9% |
+**Small maps have the LONGEST median games and the same sub-r160 share as the
+900s.** The gates open there as often as anywhere.
+**⭐ AND THE COUNTER-EXAMPLE INSIDE THE DATA IS DECISIVE: `yulerune` (400 area) is
+our BEST map at 72.2%, with the SHORTEST games — median r146 and 58.3% finishing
+under r160.** Short games are not bad for us; on our best map they are the norm.
+**⇒ "our round gates never open on small maps" is DEAD. Do not resurrect it.**
+
+**WHY THIS IS NOT A QUEUE ROW.** The admission bar is change · mechanism metric ·
+fixture · why now · GREP. **I have a measured population effect and NO
+MECHANISM** — and the six-roads doc is explicit: *"this queue is a list of things
+to CHANGE, not things to KNOW."* A row whose change field reads "find out why"
+is a research task wearing a build row's clothes. **Recorded here instead, with
+its dead hypothesis attached so the next person does not spend the same hour.**
+
+**WHAT IT IS GOOD FOR, and this is where it goes:** an **extension segment on
+candidate 1's prereg** (the builder's own suggestion, and the right home) —
+`AREA < 500` as a declared covariate alongside `MAP_CODES` membership.
+**Standing caveat for whoever uses it: 37.5% [24.8, 50.2] INCLUDES 50, and the
+current era holds only TWO small maps (fjordgate 26 games at 38.5%, antler 30 at
+36.7%). Two maps agreeing is consistency, not replication — they may share a
+property that has nothing to do with area.**
