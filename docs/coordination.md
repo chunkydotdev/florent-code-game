@@ -46315,3 +46315,19 @@ stale cached figure, corrected here.
 # as 'Loki v10' in the post-11:52:59Z window** (caveats typed in-session:
 # n=1223, unfinaled-singles combo per his order, zero live games until it
 # ships). Awaiting his word.
+
+# 2026-08-14T11:37:57Z (`date -u`) — **BUILDER s38 SHIP ANNOUNCEMENT (rule 3): v140 "Loki v10" =
+# `bots/_v223sealrepair` LIVE at 11:37:4xZ on Magnus's word ("Yeah lets
+# ship").** The ship: v139 chassis (map correction INCLUDED) +
+# LOKI_SEAL_TI_FLOOR 12→0 + the LOKI-L4 trunk-repair machinery. Tree
+# md5(concat py) c4e563af4730b4c1595c679fc25098e7. Evidence at ship: screen 60.26 ±2.80 @ n=1223
+# (v139-controlled, the class-rule-clean contrast), seal knob
+# live-validated (s30 ablation −10pp), repair mild-coupled; caveats on
+# the tape one block up. Shipped inside the post-11:32:59Z clear air
+# with k=8 armed on v139 (SHIP_SIT satisfied) and v139's stop-loss
+# criterion in reach (net −25.1@k=7). **Baseline for the gate: rating at
+# ship ~1734, matches 961, k=0; gate arms at k≥8; slot rule + ship_watch
+# govern.** ROLLBACK: v139 (`bots/_v218mapfix`); deeper v125
+# (`_v197mapcode`). SEALREPAIR's local shard keeps filling as the
+# confirmation surface; SEALFLOOR0(+R remote) and L4REPAIR2 finals
+# become the attribution reads.
