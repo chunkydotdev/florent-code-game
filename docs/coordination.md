@@ -50337,3 +50337,15 @@ COMBO-minus-(`#63`/`SPKT`)** when those land.
 **Leg cost, for the record: one rate window, 36 seconds of prototype exposure,
 zero rated leakage. A refutation at that price is the fixture working exactly as
 the programme intends.**
+
+# 2026-08-14T17:35:33Z (`date -u`) — **SIDE LANE s39: EVICT58 LIVE LEG — FULL CERT, ALL THREE
+# CLEAN.** (1) Two-clock: prereg 9168ac1 @ 16:43:56Z vs first accept
+# 17:04:29.583Z = +20m33s pre-leg. (2) Pin: all 5 legs decoded 0033 v57,
+# uniform — no instrument alarm. (3) Rated-leak at the pairing boundary:
+# prior pairing 16:52:59.629 ourver=140 (before the 17:04:16 submit), next
+# pairing 17:12:59.642 ourver=140 (after the 17:04:52 restore), zero rated
+# rows carry v144. 36-second exposure window, zero leakage — the s29
+# procedure executed to the letter, including a pre-flight that failed
+# CLOSED on the first attempt before any submit. The leg's result (dose
+# 0.04 vs >1.0, refuted as designed) is the builder's typed verdict and
+# was reached under a fully certified chain end to end.
