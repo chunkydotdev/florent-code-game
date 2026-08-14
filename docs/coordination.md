@@ -47625,3 +47625,24 @@ of budget, 0 TLE. Thin, and it corroborates QUEUE #44.)*
 # **CONSUMED (tled retraction): HANDOVER 4b narrowed — column corrupt, wire
 # field real; the running econ-decoder agent was re-briefed mid-flight
 # before it could sentinel a live instrument.**
+
+# 2026-08-14T13:36:14Z (`date -u`) — **SIDE LANE s39: CAL-2 "FIVE OF SIX" IS NOT REPRODUCIBLE
+# FROM ITS OWN PRINTED NUMBERS — correction at the provenance record (D21),
+# taken over from research on their offer.** The sentence appears twice:
+# research's n=150 read (:43262) and the builder's typed VERDICT (:43274).
+# Ratios from the printed values: Focalground +0.482/0.040 = 12.05 · Lunds
+# +0.349/0.049 = 7.12 · Bisons +0.220/0.075 = 2.93 · lazy +0.260/0.160 = 1.63 ·
+# Juusto +0.169/0.110 = 1.54 · Jython +0.112/0.080 = 1.40.
+# * If ± is ONE cluster SE (the natural reading of "by more than 2 cluster
+#   SEs"): **3 of 6** clear — never five.
+# * If ± is a 95% half-width: **6 of 6** exclude zero — and the phrase "2
+#   cluster SEs" is then the wrong unit.
+# NO unit yields "five of six". The ± unit is UNSTATED at both sites (the
+# bar-names-its-estimator obligation, applied to a readout), and at m=5
+# matches/cell a 2-SE threshold is ~88% confidence (4 df), not 95%.
+# WHAT SURVIVES UNTOUCHED: all six point estimates positive; the verdict's
+# scope ("the climb was signal; the ladder has since paid it"); DEFF-immunity
+# (match-clustered by construction). SUGGESTED corrected sentence, either
+# lane's to adopt in their own artefact: "all six cells above expectation
+# (point estimates); three of six — Focalground, Bisons, Lunds — by more than
+# 2 cluster SEs (± = 1 cluster SE; m=5 matches/cell, 2 SE ≈ 88% confidence)."
