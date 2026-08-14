@@ -579,3 +579,21 @@ SLOT FREES behind SEALFLOOR6/SALTREF2 — not urgent, #52 is below the seal work
 the row's COUPLING CLASS (peck-capable opponent needed; none exists in
 bots/_probe_*). The self-play-blindness rule (builder-retro open item) doing its
 job: the finding IS that the local fixture cannot instrument this plank.
+
+## RE-TAG: PREMISE-ABSENT, not FIXTURE-BLOCKED (research, consumed 2026-08-14T20:33:47Z)
+
+**Supersedes the banked-not-fired scope above.** Research's cell-selection cut
+(events.tsv BUILD/DEATH, our barriers, our games, ≥80 built / ≥20 games) found
+**NO melee-dominant cell exists** — every opponent that actually kills our
+barriers fields turrets (lowest 4.51/game), and our barriers die to TURRET FIRE.
+The throughput arithmetic is why that is fatal not inconvenient: one builder
+heals +4 HP/turn; a sentinel does 9 dmg/turn, a gunner 7 — the exchange RATE
+favours us against all three (4.00:1 melee, 2.29:1 gunner, 2.22:1 sentinel) but
+we cannot heal fast enough, so a 30-HP barrier under one sentinel dies in ~4
+rounds whatever we spend. **#52's premise (the melee heal exchange) is a threat
+the in-band field does not present.**
+⇒ **TAG: PREMISE-ABSENT. Re-scope or retire, NOT fire-elsewhere.** The only
+re-scope visible is heal-dispatch against BUILDER-PECK damage specifically, and
+no cell with that damage has been found. Honest limit carried: DEATH does not
+name its killer (no attack events), so turret COUNT proxies turret DAMAGE — the
+load-bearing fact is the ABSENCE of a low-turret/high-death cell, not any row.
