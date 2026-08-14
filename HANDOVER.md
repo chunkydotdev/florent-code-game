@@ -19,14 +19,28 @@
 #   verdict versioning (-amended suffix rows) · same-seed pairs are NEVER
 #   paired data · era-bound every rated cut, counts from live CLI only.
 #
+# ===== WRAPPED 2026-08-14 ~18:0xZ on Magnus's call. Retro s39 (6 firings) +
+# PROCESS DELTAS D1-D6 are on the tape. WAKE PATH: NONE for gate boundaries —
+# gate_watch/heartbeat wakes die with s39. CAL-8 runner self-terminates at 30
+# accepts (holder-asserts per fire; research's prereg governs the read: P4
+# primary, n>=75 floor; CAL-7's 110 games are SPENT — pooling them is the
+# declined look in two steps). Remote SALTREF runs under curfew. Keeper + 4
+# watchers + corefill survive. Atlas + swarm agent docs may sit UNCOMMITTED in
+# docs/research/ — next boot commits them. =====
+#
 # ===== v11 COMBO STATE (Magnus: "52 is a small piece of a bigger combo") =====
-# TINYECO62 UNRESOLVED 50.93 [49,52.8] (research ruling extend/park/redose) ·
+# TINYECO62 **PARKED** (research s40: extension arithmetically futile, prize
+#   ~+0.4pp overall; reversal trigger = tiny-segment PAIRING SHARE; banked
+#   bound: opening explains <=19% of the -14.8pp tiny deficit) ·
 # EVICT58 REFUTED-AS-DESIGNED (0.04 vs >1.0 evictions/game — 0033 sends no
 #   builders forward; the conditional PLANT validated 3.6x, inheritable) ·
 # SPKT64P CATASTROPHE-DROPPED @418 (chain-puncture; v2 = refuse-only-if-
 #   builder-inside-region, designed not built) · TOMORROW'S INGREDIENTS:
-#   SPAWNPOCKET-v2 + #63 long-approach (research designing, nav-not-
-#   detection, shares {midgard,fjordgate} segment w/ SPKT — arm-out needed).
+#   SPAWNPOCKET-v2 + #63 long-approach. ⛔ #63's DESIGN DECISION is the owed
+#   item (research s40 wrap): a NAVIGATION change, not a detector (stuck
+#   counter counts only FAILED moves; pockets are ENTERED, not spawned into);
+#   shares {midgard,fjordgate} segment with SPAWNPOCKET — whichever prereg
+#   lands SECOND owes a combo-interaction line.
 # MATRIX: combo vs BEST-INGREDIENT vs shared-segment arm-outs.
 #
 # ===== DIES WITH s39 — RE-ARM AT BOOT =====
