@@ -27,9 +27,19 @@ WHAT IT COMPUTES
 For every one of OUR builder bots in a game, the per-round position track is
 decoded straight off the `.replay26` wire (`placeEntity` / `moveBuilderBot` /
 `removeEntity`).  A **LOCK** is a window of at least `MIN_SPAN` consecutive
-rounds during which the bot occupies at most `MAX_DWELL` distinct tiles.
+rounds in which
 
-Two readings of that, and they are NOT interchangeable:
+    (1) the bot occupies at most `MAX_TILES` distinct tiles, AND
+    (2) it never sits on one tile for more than `MAX_DWELL` consecutive rounds.
+
+Clause (2) is what makes this an OSCILLATION detector rather than an idleness
+detector: a bot that simply parks has dwell = the whole window and is excluded,
+which is exactly what `HOME-LOCK-MECHANISM-2026-08-14.md:150` records —
+*"a pocket produces either a stall (long dwell — excluded by the detector's
+MAX_DWELL = 2) or a 2-cycle"*.  Drop clause (2) and the v125 rate reads 41.5%
+instead of 11.6%, because every parked builder counts.
+
+Two readings of the window, and they are NOT interchangeable:
 
   * **STRICT** (the headline) — a *permanent* lock: the qualifying window runs
     to the bot's last living round.  The bot never came out of it.  Onset is the
@@ -39,8 +49,10 @@ Two readings of that, and they are NOT interchangeable:
     a bot that locks, escapes, and locks again is counted for both stretches.
 
 `MIN_SPAN = 50`, `MAX_DWELL = 2` are the recorded parameter names and values of
-the lost original.  See the spec for exactly which parts of the predicate around
-them are inference rather than record.
+the lost original.  `MAX_TILES = 2` is NOT recorded — it is inferred from the
+row's own wording ("two-tile lock") and is stated as an inference in the spec,
+alongside everything else about the predicate that is reconstruction rather than
+record.
 
 USAGE
 =====
@@ -75,7 +87,6 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import os
 import statistics
 import sys
 from collections import Counter, defaultdict
@@ -89,12 +100,14 @@ sys.path.insert(0, str(REPO / "tools"))
 # exactly one implementation of it in the tree.
 from replay_census import fields, read_pos, packed_varints  # noqa: E402
 
-# --- the detector's two parameters -------------------------------------------
-# Recorded names and values of the lost original (`analyze_bot_lock`,
-# `find_windows`, MIN_SPAN=50, MAX_DWELL=2).  Constants, never magic numbers:
-# every call site takes them as defaults so a sweep is one flag, not an edit.
+# --- the detector's parameters -----------------------------------------------
+# MIN_SPAN and MAX_DWELL are the recorded names and values of the lost original
+# (`analyze_bot_lock`, `find_windows`, MIN_SPAN=50, MAX_DWELL=2).  MAX_TILES is
+# an inference — see the spec.  Constants, never magic numbers: every call site
+# takes them as defaults, so a sensitivity sweep is one flag and not an edit.
 MIN_SPAN = 50    # a window must span at least this many consecutive rounds
-MAX_DWELL = 2    # ...during which the bot occupies at most this many tiles
+MAX_TILES = 2    # ...over at most this many distinct tiles ("two-tile lock")
+MAX_DWELL = 2    # ...never resting on one tile more than this many rounds
 
 # --- wire constants ----------------------------------------------------------
 WIRE_LEN = 2
@@ -116,41 +129,58 @@ DEFAULT_MAPS = REPO / "maps"
 # THE DETECTOR
 # =============================================================================
 
-def left_bounds(track, max_dwell=MAX_DWELL):
-    """For each index r, the smallest l with |{track[l..r]}| <= max_dwell.
+def left_bounds(track, max_tiles=MAX_TILES, max_dwell=MAX_DWELL):
+    """For each index r, the smallest l for which the window [l..r] qualifies
+    on the two shape constraints (span is applied by the caller).
 
-    Standard two-pointer over a distinct-count window: O(n) and exact.  This is
-    the primitive both `find_windows` and `analyze_bot_lock` are built on, so it
-    is the one thing the selftest checks element by element.
+    A window qualifies when
+      * it contains at most `max_tiles` distinct positions, and
+      * every maximal run of identical consecutive positions INSIDE the window
+        — boundary runs included, truncated by the window edges — is at most
+        `max_dwell` rounds long.
+
+    Both constraints are monotone in l (shrinking a window from the left can
+    only drop tiles and can only truncate the leftmost run), so one forward
+    two-pointer computes both exactly in O(n).  `l_tiles` is the classic
+    distinct-count pointer; `l_run` is pinned forward whenever the run ending at
+    r has already outgrown max_dwell, since the only way to satisfy the bound
+    then is to cut into that run.
     """
     counts = {}
     out = []
-    l = 0
+    l_tiles = 0
+    l_run = 0
+    run = 0
+    prev = object()
     for r, p in enumerate(track):
+        run = run + 1 if p == prev else 1
+        prev = p
+        if run > max_dwell:
+            l_run = max(l_run, r - max_dwell + 1)
         counts[p] = counts.get(p, 0) + 1
-        while len(counts) > max_dwell:
-            q = track[l]
+        while len(counts) > max_tiles:
+            q = track[l_tiles]
             counts[q] -= 1
             if not counts[q]:
                 del counts[q]
-            l += 1
-        out.append(l)
+            l_tiles += 1
+        out.append(max(l_tiles, l_run))
     return out
 
 
-def find_windows(track, min_span=MIN_SPAN, max_dwell=MAX_DWELL, lb=None):
+def find_windows(track, min_span=MIN_SPAN, max_tiles=MAX_TILES,
+                 max_dwell=MAX_DWELL, lb=None):
     """Maximal qualifying windows as inclusive [start, end] round indices.
 
-    A window qualifies when it spans >= min_span rounds and the bot occupies
-    <= max_dwell distinct tiles across it.  Maximal = not contained in another
-    qualifying window; overlapping maximal windows are merged, because two
-    windows that overlap describe one uninterrupted stretch of locked rounds.
+    Maximal = not contained in another qualifying window; overlapping or
+    abutting maximal windows are merged, because they describe one
+    uninterrupted stretch of locked rounds and must not be counted twice.
     """
     n = len(track)
     if n < min_span:
         return []
     if lb is None:
-        lb = left_bounds(track, max_dwell)
+        lb = left_bounds(track, max_tiles, max_dwell)
     spans = []
     for r in range(n):
         if r - lb[r] + 1 >= min_span:
@@ -163,14 +193,15 @@ def find_windows(track, min_span=MIN_SPAN, max_dwell=MAX_DWELL, lb=None):
     return [(a, b) for a, b in spans]
 
 
-def analyze_bot_lock(track, min_span=MIN_SPAN, max_dwell=MAX_DWELL):
+def analyze_bot_lock(track, min_span=MIN_SPAN, max_tiles=MAX_TILES,
+                     max_dwell=MAX_DWELL):
     """Lock verdict for one bot's position track (index i == its i-th living round).
 
     Returns:
       strict         permanent lock: a qualifying window runs to the last round
       onset          index of the first round of that permanent window (else None)
       strict_rounds  length of the permanent window (0 when not strict)
-      lock_tiles     the <= max_dwell tiles of the permanent window
+      lock_tiles     the <= max_tiles tiles of the permanent window
       soft_rounds    rounds covered by ANY qualifying window
       windows        the maximal qualifying windows
     """
@@ -179,8 +210,8 @@ def analyze_bot_lock(track, min_span=MIN_SPAN, max_dwell=MAX_DWELL):
                  soft_rounds=0, windows=[])
     if n < min_span:
         return empty
-    lb = left_bounds(track, max_dwell)
-    windows = find_windows(track, min_span, max_dwell, lb=lb)
+    lb = left_bounds(track, max_tiles, max_dwell)
+    windows = find_windows(track, min_span, max_tiles, max_dwell, lb=lb)
     onset = lb[n - 1]
     strict_rounds = n - onset
     strict = strict_rounds >= min_span
@@ -303,15 +334,31 @@ _MAP_INDEX = None
 
 
 def map_index(maps_dir=DEFAULT_MAPS):
-    """Fingerprint every known map by (width, height, tile grid) -> name."""
+    """Two fingerprints per known map.
+
+    `grid`  (width, height, tile grid) -> name          — exact, always trusted
+    `sig`   (width, height, coreA, coreB) -> {names}    — layout signature
+
+    The signature exists because the PLATFORM HAS RESHIPPED GRIDS.  The v125
+    population was played on valkyrie and glacierkeep layouts that differ from
+    the copies now in `maps/` by 10 and 9 tiles — and those two `.map26` files
+    were only committed on 2026-08-14 22:07Z (`f9fda96a`), i.e. AFTER the
+    original census ran.  Exact-grid alone therefore leaves 144 of 1,160 v125
+    games unnamed (80 valkyrie + 64 glacierkeep), which is where the original's
+    "64 UNKNOWN games ... verified by dims+cores (14,2)/(14,26)" note came from.
+    A signature hit is reported with a `*` suffix so a re-grid is never silently
+    laundered into an exact match.
+    """
     global _MAP_INDEX
     if _MAP_INDEX is not None:
         return _MAP_INDEX
-    idx = {}
+    grid = {}
+    sig = defaultdict(set)
     for p in sorted(Path(maps_dir).glob("*.map26")):
         buf = p.read_bytes()
         w = h = 0
         rows = []
+        cores = {}
         for num, wire, value in fields(buf):
             if num == 1:
                 w = value
@@ -323,36 +370,51 @@ def map_index(maps_dir=DEFAULT_MAPS):
                     if rn == 1:
                         row.extend(packed_varints(rv) if rw == WIRE_LEN else [rv])
                 rows.append(tuple(row))
-        idx[(w, h, tuple(rows))] = p.stem
-    _MAP_INDEX = idx
-    return idx
+            elif num == 4:
+                d = {}
+                for cn, _cw, cv in fields(value):
+                    d[cn] = cv
+                cores[d.get(2, 0)] = read_pos(d[3]) if 3 in d else None
+        grid[(w, h, tuple(rows))] = p.stem
+        sig[(w, h, cores.get(0), cores.get(1))].add(p.stem)
+    _MAP_INDEX = {"grid": grid, "sig": dict(sig)}
+    return _MAP_INDEX
 
 
-def identify_map(width, height, tiles, maps_dir=DEFAULT_MAPS):
-    """Exact-grid map name, or 'UNKNOWN'.
+def identify_map(width, height, tiles, cores=None, maps_dir=DEFAULT_MAPS):
+    """'<name>' on an exact grid match, '<name>*' on a unique layout signature,
+    else 'UNKNOWN'.
 
-    UNKNOWN is not a parse failure: the platform has served grids that differ
-    from the copies in maps/ (the pre-MAPFIX glacierkeep layout is the known
-    case, 64 games in the v125 population).  Those games still carry dims and
-    core positions in the JSONL, which is how they were identified by hand.
+    midgard and ragnarok share dims AND core positions, so the signature stage
+    deliberately refuses to guess when more than one map matches — those two are
+    only ever named by the exact grid.
     """
-    return map_index(maps_dir).get((width, height, tuple(tiles)), "UNKNOWN")
+    idx = map_index(maps_dir)
+    name = idx["grid"].get((width, height, tuple(tiles)))
+    if name:
+        return name
+    if cores:
+        cand = idx["sig"].get((width, height, cores.get(0), cores.get(1)))
+        if cand and len(cand) == 1:
+            return next(iter(cand)) + "*"
+    return "UNKNOWN"
 
 
 # =============================================================================
 # PER-GAME CENSUS
 # =============================================================================
 
-def census_game(path, our_team, min_span=MIN_SPAN, max_dwell=MAX_DWELL,
-                maps_dir=DEFAULT_MAPS, with_map=True):
+def census_game(path, our_team, min_span=MIN_SPAN, max_tiles=MAX_TILES,
+                max_dwell=MAX_DWELL, maps_dir=DEFAULT_MAPS, with_map=True):
     """One game -> one census record (the JSONL row)."""
     g = decode_tracks(path, our_team)
-    name = identify_map(g["width"], g["height"], g["tiles"], maps_dir) if with_map else None
+    name = (identify_map(g["width"], g["height"], g["tiles"], g["cores"], maps_dir)
+            if with_map else None)
     own_core = g["cores"].get(our_team)
     bots_out = []
     for eid, b in sorted(g["bots"].items()):
         track = b["track"]
-        a = analyze_bot_lock(track, min_span, max_dwell)
+        a = analyze_bot_lock(track, min_span, max_tiles, max_dwell)
         max_d2 = 0
         if own_core and track:
             cx, cy = own_core
@@ -496,11 +558,20 @@ def print_report(agg, fh=sys.stdout):
 POS_CONTROL_FILE = "483b5bcd-b4e4-4db7-a554-e204d1f42015_game_1.replay26"
 POS_CONTROL_TEAM = 1                                   # us_side = 'b'
 POS_CONTROL_IDS = [4, 11, 18, 435, 724, 760]           # hand-traced in s39
-# Their recorded permanent-window lengths (QUEUE #54).  Bot 4's recorded 807 is
-# from the ORIGINAL hand tracer's oscillation-window definition, not from this
-# detector — it is the one bot the trace note flags as having exceptions
-# ("zero exceptions for 5 of 6 traced").  Only the five clean ones are asserted.
-POS_CONTROL_WINDOWS = {11: 961, 18: 970, 435: 626, 724: 629, 760: 606}
+# The recorded NEGATIVE control: 1/6.  Game 2 of the same match, our own side —
+# the complement group, same bot, same opponent, same session, and it comes out
+# the other way.  This one is load-bearing: under a tiles-only predicate (no
+# MAX_DWELL clause) the same cell reads 3/6, so this control is what separates
+# the two candidate readings of MAX_DWELL.
+NEG_CONTROL_FILE = "483b5bcd-b4e4-4db7-a554-e204d1f42015_game_2.replay26"
+NEG_CONTROL_TEAM = 1
+NEG_CONTROL_EXPECT = (1, 6)
+# Window lengths recorded in QUEUE #54 for the six hand-traced ids.  ⚠ THESE ARE
+# NOT THIS DETECTOR'S OUTPUT: they come from `six_bot_oscillation.py`, the s39
+# hand tracer that ran BEFORE the census and used a parity/two-tile window with
+# no dwell clause.  Reported as a cross-check, NOT gated — see the spec's
+# reproduction table for the two that differ and why.
+TRACER_WINDOWS = {4: 807, 11: 961, 18: 970, 435: 626, 724: 629, 760: 606}
 
 
 def run_controls(archive=DEFAULT_ARCHIVE, fh=sys.stdout):
@@ -527,25 +598,37 @@ def run_controls(archive=DEFAULT_ARCHIVE, fh=sys.stdout):
     p(f"  all six traced ids present .. {'PASS' if have else 'FAIL'}  {POS_CONTROL_IDS}")
     ok &= have
     by_id = {b["id"]: b for b in rec["bots"]}
-    for i, want in sorted(POS_CONTROL_WINDOWS.items()):
+    p("  cross-check vs the s39 HAND TRACER's windows (informational, not gated —")
+    p("  different instrument: parity window, no dwell clause):")
+    for i, want in sorted(TRACER_WINDOWS.items()):
         got = by_id[i]["strict_rounds"]
-        good = got == want
-        p(f"  window id={i:<4} recorded={want:<5} got={got:<5} "
-          f"{'PASS' if good else 'FAIL'}")
-        ok &= good
+        p(f"    id={i:<4} tracer={want:<5} census={got:<5} "
+          f"{'same' if got == want else 'DIFFERS'}")
 
     p("")
     p("NEGATIVE CONTROLS — the same detector must come out the other way")
 
+    # N0 — THE RECORDED ONE.  Our own builders in game 2 of the same match:
+    # 1/6, against 11/11 in game 1.  Same bot, same opponent, same session,
+    # same wire path; only the game changes.
+    neg = census_game(Path(archive) / NEG_CONTROL_FILE, NEG_CONTROL_TEAM)
+    nlocked = [b["id"] for b in neg["bots"] if b["strict"]]
+    got = (len(nlocked), len(neg["bots"]))
+    good = got == NEG_CONTROL_EXPECT
+    p(f"  N0 RECORDED complement (g2, our side): {got[0]}/{got[1]} locked {nlocked} "
+      f"— recorded {NEG_CONTROL_EXPECT[0]}/{NEG_CONTROL_EXPECT[1]}  "
+      f"{'PASS' if good else 'FAIL'}")
+    ok &= good
+
     # N1 — the complement side of the very same wire read: the OPPONENT's
     # builders in the identical replay.  Same file, same parser, same detector;
     # only the team byte changes.  A detector that reports locks unconditionally
-    # cannot produce a split here.
+    # cannot produce 11/11 here and 0/8 there.
     enemy = census_game(path, 1 - POS_CONTROL_TEAM)
     elocked = [b["id"] for b in enemy["bots"] if b["strict"]]
-    good = 0 < len(elocked) < len(enemy["bots"])
+    good = len(elocked) < len(enemy["bots"])
     p(f"  N1 opponent side, same file: {len(elocked)}/{len(enemy['bots'])} locked "
-      f"{elocked}  {'PASS' if good else 'FAIL'} (must be a strict split)")
+      f"{elocked}  {'PASS' if good else 'FAIL'}")
     ok &= good
 
     # N2 — mutation of the positive control's own tracks: splice a third tile
@@ -579,6 +662,34 @@ def run_controls(archive=DEFAULT_ARCHIVE, fh=sys.stdout):
       f"read UNLOCKED  {'PASS' if good else 'FAIL'}")
     ok &= good
 
+    # N4 — park each traced bot: replace its permanent window with a stall on
+    # one of its own two lock tiles.  This is the control for the MAX_DWELL
+    # clause specifically, and it is the one that matters most: with the clause
+    # dropped, the v125 headline reads 41.5% instead of 11.6%, so a detector
+    # that passes N1-N3 but fails N4 is the exact detector that produces the
+    # wrong number.
+    flipped = 0
+    g = decode_tracks(path, POS_CONTROL_TEAM)
+    for i in POS_CONTROL_IDS:
+        track = list(g["bots"][i]["track"])
+        onset = analyze_bot_lock(track)["onset"]
+        park = track[-1]
+        track[onset:] = [park] * (len(track) - onset)
+        if not analyze_bot_lock(track)["strict"]:
+            flipped += 1
+    good = flipped == len(POS_CONTROL_IDS)
+    p(f"  N4 window replaced by a STALL: {flipped}/{len(POS_CONTROL_IDS)} "
+      f"read UNLOCKED  {'PASS' if good else 'FAIL'}")
+    ok &= good
+
+
+    p("")
+    p("  N0's identity was RECOVERED, not recorded: the original published only")
+    p("  the bare string 'negative control 1/6'.  Game 2 of the control match,")
+    p("  our own side, is the only cell in the match that reads 1/6 — and it")
+    p("  reads 3/6 under the tiles-only predicate, which is how the same figure")
+    p("  also discriminates between the two readings of MAX_DWELL.")
+
     p("")
     p(f"CONTROLS: {'ALL PASS' if ok else 'FAILURE'}")
     return ok
@@ -601,9 +712,42 @@ def selftest(fh=sys.stdout):
 
     A, B, C = (1, 1), (1, 2), (5, 5)
 
-    # left_bounds, element by element, on a hand-computable case
-    check("left_bounds ABCA", left_bounds([A, B, C, A], 2), [0, 0, 1, 2])
-    check("left_bounds dwell1", left_bounds([A, A, B], 1), [0, 0, 2])
+    # left_bounds, element by element, on hand-computable cases
+    check("left_bounds tiles ABCA", left_bounds([A, B, C, A], 2, 9), [0, 0, 1, 2])
+    check("left_bounds dwell cut", left_bounds([A, A, A, B], 9, 2), [0, 0, 1, 1])
+    check("left_bounds tiles=1", left_bounds([A, A, B], 1, 9), [0, 0, 2])
+
+    # the forward two-pointer must agree with a naive O(n^2) reference on the
+    # suffix onset — this is the check that the l_run pin is not an approximation
+    import random
+    rng = random.Random(20260814)
+    pool = [(0, 0), (0, 1), (1, 0), (1, 1)]
+
+    def naive_onset(t, mt, md):
+        for l in range(len(t)):
+            w = t[l:]
+            if len(set(w)) > mt:
+                continue
+            runs, cur = [], 1
+            for i in range(1, len(w)):
+                if w[i] == w[i - 1]:
+                    cur += 1
+                else:
+                    runs.append(cur)
+                    cur = 1
+            runs.append(cur)
+            if max(runs) <= md:
+                return l
+        return len(t)
+
+    bad = 0
+    for _ in range(300):
+        t = [rng.choice(pool) for _ in range(rng.randint(1, 40))]
+        for mt in (1, 2, 3):
+            for md in (1, 2, 3):
+                if left_bounds(t, mt, md)[-1] != naive_onset(t, mt, md):
+                    bad += 1
+    check("two-pointer == naive reference (300 random tracks x 9 params)", bad, 0)
 
     # MIN_SPAN binds in both directions
     check("50-round 2-cycle is locked",
@@ -611,13 +755,24 @@ def selftest(fh=sys.stdout):
     check("49-round 2-cycle is NOT locked",
           analyze_bot_lock(([A, B] * 25)[:49])["strict"], False)
 
-    # MAX_DWELL binds in both directions
+    # MAX_TILES binds in both directions
     check("3-tile cycle is NOT locked",
           analyze_bot_lock([A, B, C] * 100)["strict"], False)
-    check("stationary bot IS locked (dwell 1)",
-          analyze_bot_lock([A] * 60)["strict"], True)
-    check("3-tile cycle IS locked at max_dwell=3",
-          analyze_bot_lock([A, B, C] * 100, max_dwell=3)["strict"], True)
+    check("3-tile cycle IS locked at max_tiles=3",
+          analyze_bot_lock([A, B, C] * 100, max_tiles=3)["strict"], True)
+
+    # MAX_DWELL binds in both directions.  THIS IS THE CLAUSE THAT SEPARATES AN
+    # OSCILLATION FROM A STALL — without it the v125 rate reads 41.5%, not 11.6%.
+    check("parked bot is NOT locked (stall, long dwell)",
+          analyze_bot_lock([A] * 600)["strict"], False)
+    check("parked bot IS locked at max_dwell=600",
+          analyze_bot_lock([A] * 600, max_dwell=600)["strict"], True)
+    check("dwell-2 alternation is locked",
+          analyze_bot_lock([A, A, B, B] * 50)["strict"], True)
+    check("dwell-3 alternation is NOT locked",
+          analyze_bot_lock([A, A, A, B, B, B] * 50)["strict"], False)
+    check("dwell-3 alternation IS locked at max_dwell=3",
+          analyze_bot_lock([A, A, A, B, B, B] * 50, max_dwell=3)["strict"], True)
 
     # a free walk is never locked
     walk = [(i, 0) for i in range(500)]
@@ -643,21 +798,38 @@ def selftest(fh=sys.stdout):
     check("two windows -> 2 maximal windows", len(a["windows"]), 2)
 
     # a bot shorter than MIN_SPAN is inert, not an exception
-    check("short track inert", analyze_bot_lock([A] * 10)["strict"], False)
+    check("short track inert", analyze_bot_lock([A, B] * 5)["strict"], False)
     check("empty track inert", analyze_bot_lock([])["strict"], False)
 
     # find_windows merges overlaps rather than emitting one window per round
     check("one long window stays one",
           find_windows([A, B] * 200), [(0, 399)])
 
-    # map fingerprinting: a real map resolves, a mutated grid does not
+    # map fingerprinting, driven to all three verdicts
     idx = map_index()
-    if idx:
-        (w, h, rows), name = next(iter(sorted(idx.items(), key=lambda kv: kv[1])))
-        check("known map resolves", identify_map(w, h, rows), name)
+    if idx["grid"]:
+        (w, h, rows), name = next(iter(sorted(idx["grid"].items(), key=lambda kv: kv[1])))
+        cores = None
+        for sig, names in idx["sig"].items():
+            if names == {name}:
+                cores = {0: sig[2], 1: sig[3]}
+                break
+        check("known map resolves exactly", identify_map(w, h, rows, cores), name)
         bad = list(rows)
         bad[0] = tuple((v + 1) % 3 for v in bad[0])
-        check("mutated grid -> UNKNOWN", identify_map(w, h, bad), "UNKNOWN")
+        # a re-gridded map still resolves, but flagged with '*'
+        check("re-gridded map -> signature hit", identify_map(w, h, bad, cores),
+              name + "*")
+        # ...and with no signature to fall back on it must refuse, not guess
+        check("re-gridded, no signature -> UNKNOWN",
+              identify_map(w, h, bad, {0: (99, 99), 1: (98, 98)}), "UNKNOWN")
+        check("wrong dims -> UNKNOWN", identify_map(w + 1, h, rows, cores), "UNKNOWN")
+        # midgard/ragnarok share dims AND cores: the signature stage must refuse
+        shared = [s for s, n in idx["sig"].items() if len(n) > 1]
+        if shared:
+            s = shared[0]
+            check("ambiguous signature -> UNKNOWN",
+                  identify_map(s[0], s[1], [(9, 9)], {0: s[2], 1: s[3]}), "UNKNOWN")
     else:
         fails.append("map index empty")
         p("  FAIL  map index empty")
@@ -683,6 +855,7 @@ def main(argv=None):
     ap.add_argument("--limit", type=int,
                     help="take the N OLDEST games by completedAt (snapshot approximation)")
     ap.add_argument("--min-span", type=int, default=MIN_SPAN)
+    ap.add_argument("--max-tiles", type=int, default=MAX_TILES)
     ap.add_argument("--max-dwell", type=int, default=MAX_DWELL)
     ap.add_argument("--jsonl", help="write one census record per game here")
     ap.add_argument("--report", action="store_true", help="print the aggregate report")
@@ -699,7 +872,8 @@ def main(argv=None):
     if args.game:
         if args.team is None:
             ap.error("--game needs --team")
-        rec = census_game(args.game, args.team, args.min_span, args.max_dwell, args.maps)
+        rec = census_game(args.game, args.team, args.min_span, args.max_tiles,
+                          args.max_dwell, args.maps)
         print(json.dumps(rec))
         return 0
 
@@ -713,7 +887,8 @@ def main(argv=None):
     errors = 0
     for n, (path, team, _when, _ver) in enumerate(pop, 1):
         try:
-            rec = census_game(path, team, args.min_span, args.max_dwell, args.maps)
+            rec = census_game(path, team, args.min_span, args.max_tiles,
+                              args.max_dwell, args.maps)
         except Exception as exc:                       # noqa: BLE001
             errors += 1
             print(f"PARSE ERROR {path.name}: {exc}", file=sys.stderr)
@@ -728,10 +903,12 @@ def main(argv=None):
     agg = aggregate(records)
     agg["parse_errors"] = errors
     agg["min_span"] = args.min_span
+    agg["max_tiles"] = args.max_tiles
     agg["max_dwell"] = args.max_dwell
     if args.report:
         print(f"population {len(pop)} games, parse errors {errors}, "
-              f"MIN_SPAN={args.min_span} MAX_DWELL={args.max_dwell}")
+              f"MIN_SPAN={args.min_span} MAX_TILES={args.max_tiles} "
+              f"MAX_DWELL={args.max_dwell}")
         print_report(agg)
     else:
         print(json.dumps({k: v for k, v in agg.items() if k != "per_map"}))

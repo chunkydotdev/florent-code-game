@@ -53844,3 +53844,59 @@ checked-and-clean for a check that did not run. **The byte-identical healthy/bli
 level above where we just fixed it.** Not asking for a hard FAIL (locking before an arm exists is
 legitimate); asking that the summary cannot say plain OK — `OK (1 CANNOT-COMPUTE)`. **A distinction
 built at the row level has to survive to the line people read.**
+
+--- 2026-08-14T21:29:00Z (`date -u`) SIDE LANE (s42) — ⛔⛔ **v140's STOP-LOSS FIRED AT 21:22:15Z, SIXTY-EIGHT SECONDS BEFORE x3r0 TOOK THE SLOT. NEITHER OTHER LANE HAS NAMED IT.** ---
+
+Found on my own tape read while auditing `LEG-juustopin`, **independently of the builder's misfire
+report**, which is about x3r0's upload and does not mention our own rule firing.
+
+    21:02:15Z  v140  k=28  1769  net5=-15.0  drawdown=-26.0  RULE=held
+    21:12:15Z  v140  k=28  1769  net5=-15.0  drawdown=-26.0  RULE=held
+    21:22:15Z  v140  k=29  1759  net5=-24.0  drawdown=-36.0  RULE=SLOT FREE   <-- OUR stop-loss
+    21:23Z     elo_history.tsv first v146 row                                 <-- x3r0 takes the slot
+    21:24:12Z  builder fires juustopin window 1 into v146
+
+**CONSTANTS READ FROM `tools/slot_rule.py`, NOT REMEMBERED** (D31 instance 4 was reaching for this
+rule's NAME instead of opening it, on a live ship): **`SWAP_THRESHOLD = -21`, `ARM_AFTER = 8`,
+`WINDOW = 5`**; `slot_free = armed and net5 <= SWAP_THRESHOLD`. **Live row: k=29 ≥ 8 → ARMED;
+net5 = −24.0 ≤ −21 → SLOT FREE, with 3 points of margin. The condition is MET.**
+
+## ⇒ THE CONSEQUENCE, AND IT IS A GAP IN MAGNUS'S OWN RULE THAT DID NOT EXIST AN HOUR AGO
+`X3R0_SLOT_RULE: screen_n1000_reactivate_on_51` — *"put ours back if we win."* `SLOT_RULE` — **v140's
+slot is FREE.**
+⚠ **NOT formally contradictory, and I am not claiming they are:** SLOT FREE is a stop-loss **and wake
+signal**, not an instruction to deactivate. **But it makes one word under-specified: "put OURS
+back" — WHICH of ours?** **Both precedents (v142, v143) were set while our holder was HEALTHY; the
+rule has never been exercised against a holder whose own stop-loss had just fired.** If the screen
+runs v140's tree as treatment and clears 51.0, the rule as written **reactivates a version whose
+stop-loss fired minutes earlier.**
+⇒ **PUT TO THE BUILDER AS A QUESTION, NOT A RULING** (S3: the flag put as a question outperformed
+every flag put as a finding): **the displacement cost us nothing we were not already going to pay** —
+v140 was arriving at replacement on its own arithmetic (drawdown −36 from peak 1795, net5 −24,
+k=29, far past `SHIP_SIT_MIN_K: 8`). **Is the move to fight to restore v140, or to treat the freed
+slot as the wake signal it is and put up something better?** **That is Magnus's rule and his word,
+or the builder's as verdict holder. It is NOT mine and I did not answer it.** What this lane owns:
+**the screen must not default to "v140 vs v146" when the premise that made v140 the obvious
+treatment expired 68 seconds before v146 landed.**
+
+## LIVE TARGET-GATE PROBLEM FOR THE JUUSTOPIN RE-FIRE (bears on the AMENDMENT, not the void window)
+* prereg `TARGET BAND`: **gap +114, 5-0 pays +21.07**
+* `target_value --band` now: **our 1759, Juusto 1883, gap +124, pays +21.49 — and `BAND_HI` is us+125**
+⇒ **Juusto is ONE POINT inside the admissible band, and we dropped 10 points in ten minutes.** The
+leg plans 7 windows ≈ 2h20m. ⚠ **This is `CLAUDE.md`'s own worked example with the same number**
+(*"Leviathan was +124 and admissible at 1669; at 1663 it is +130 and outside BAND_HI"*). ⇒ **the
+amendment must re-derive the band at re-fire time and pre-commit what happens if the target exits
+mid-leg.**
+⚠ **CAVEAT ON MY OWN NUMBER, and it is my own flag biting my own audit:** `target_value` wraps its
+`fcode status` call in `try/except: pass` and **silently falls back to the cached rating**, so it
+could not tell me whether 1759 was live. **The elo tape independently reads 1759 at 23:13/23:18/23:23
+local (2.9 min old), which is why I believe it** — but the tool's silence is not evidence.
+
+## BUILDER'S MISFIRE — assessed, and their diagnosis outranks the incident
+Fired juustopin window 1 at 21:24:12Z with **v146 active, not v140**; the registered cell
+(our v140 × their v10) **was not measured**. **Zero rated exposure confirmed from my side** —
+unrated fixture, and v146's activation is x3r0's doing. Their durable output: **"a guard and its
+guarded action in one non-blocking sequence is not a guard"** — the holder read ran in the same
+command block as the firing loop and gated nothing. **Their refusal to bank the 2-3/4-1/3-2/4-1
+numbers is the harder call and the correct one.** Procedure fix (holder read as a SEPARATE BLOCKING
+step, value asserted before any firing command is composed) accepted; certification owed by me.
