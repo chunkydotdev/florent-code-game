@@ -670,6 +670,11 @@ class RaidMixin:
                     return False
         except Exception:
             return False
+        try:
+            seats58 = [(sp.x, sp.y) for sp in heal_seats(E, self.mw, self.mh)]
+        except Exception:
+            seats58 = []
+        best, best_k = None, None
         for d in CARDINALS:
             bp = p.add(d)
             if not (0 <= bp.x < self.mw and 0 <= bp.y < self.mh):
@@ -677,12 +682,27 @@ class RaidMixin:
             if min(bp.distance_squared(c) for c in tiles) > LOKI58_NEAR_DSQ:
                 continue
             try:
-                if ct.can_build_launcher(bp):
-                    ct.build_launcher(bp)
-                    self.l58_done = True
-                    return True
+                if not ct.can_build_launcher(bp):
+                    continue
             except Exception:
                 continue
+            # Magnus's frame (s39): the pickup ring (d^2<=2) should COVER the
+            # heal seats -- an evicted healer VACATES the seat and the
+            # ordinary seal step barriers it on the next raider turn, so the
+            # throw both removes the heal and opens the tile we could not
+            # barrier while it stood there.
+            cov = sum(1 for sx, sy in seats58
+                      if (bp.x - sx) ** 2 + (bp.y - sy) ** 2 <= 2)
+            k = (cov, -min(bp.distance_squared(c) for c in tiles))
+            if best_k is None or k > best_k:
+                best, best_k = bp, k
+        if best is not None:
+            try:
+                ct.build_launcher(best)
+                self.l58_done = True
+                return True
+            except Exception:
+                return False
         return False
 
     def _try_forward_sentinel(self, ct, E):
@@ -962,6 +982,7 @@ class RaidMixin:
         # 1471/1472 wild throw events).  This is the same tool the field uses
         # against our raiders, and it is the cheapest home defence we own.
         friendly_bots = []
+        enemy_bots = []
         for eid in ct.get_nearby_entities():
             try:
                 if ct.get_entity_type(eid) != EntityType.BUILDER_BOT:
@@ -972,23 +993,35 @@ class RaidMixin:
                 if ct.get_team(eid) == self.team:
                     friendly_bots.append((eid, bp))
                     continue
+                enemy_bots.append(bp)
             except Exception:
                 continue
+        if enemy_bots:
             # LOKI-58: a FORWARD launcher (closer to their core than ours)
             # throws the evictee far from THEIR core, border tiles preferred
-            # (the approved crash channel rides along for unguarded bots).
-            if dest is not None and lp.distance_squared(dest) < lp.distance_squared(self.core):
+            # (the approved crash channel rides along for unguarded bots) --
+            # and a healer STANDING ON a heal seat is evicted FIRST (Magnus's
+            # frame: it both heals and blocks our barrier; the throw opens
+            # the seat for the ordinary seal step).
+            fwd58 = dest is not None and lp.distance_squared(dest) < lp.distance_squared(self.core)
+            if fwd58:
                 far = sorted(sites, key=lambda t: (t.distance_squared(dest),
                              t.x in (0, w - 1) or t.y in (0, h - 1)), reverse=True)
+                try:
+                    seatset58 = {(sp.x, sp.y) for sp in heal_seats(dest, self.mw, self.mh)}
+                except Exception:
+                    seatset58 = set()
+                enemy_bots.sort(key=lambda b: (b.x, b.y) in seatset58, reverse=True)
             else:
                 far = sorted(sites, key=lambda t: t.distance_squared(self.core), reverse=True)
-            for site in far:
-                try:
-                    if ct.can_launch(bp, site):
-                        ct.launch(bp, site)
-                        return
-                except Exception:
-                    continue
+            for bp in enemy_bots:
+                for site in far:
+                    try:
+                        if ct.can_launch(bp, site):
+                            ct.launch(bp, site)
+                            return
+                    except Exception:
+                        continue
 
         # 2. FERRY.  Only the raider that pinged, only while the ping is fresh,
         # and only to a site strictly closer to the enemy Core than it stands.

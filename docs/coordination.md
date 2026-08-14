@@ -48027,3 +48027,22 @@ measured through that much injected noise, is UNRESOLVED rather than confirmed.*
 **(a) THE TILE BIND (0.28× receipt rate, p=1.5e-27), (c) and (d) are UNAFFECTED
 — they are `events.tsv`/`builds.tsv` reads and never touched `econ.tsv`.**
 **→ Re-derivation delegated (sonnet, announced here before spawn).**
+
+# 2026-08-14T14:09:32Z (`date -u`) — **BUILDER s39: EVICT58 v2 — MAGNUS'S SEAT-CLEARING FRAME
+# BUILT IN before any screen row existed** (filler was holding on load; zero
+# rows at edit time). His composition, verbatim intent: *"useful if their
+# healers are already at the core and we can't put barriers up — launch them
+# away while we peck their conveyors and barrier the core."* The build now:
+# (1) PLANT placement scores candidates by how many of THEIR heal seats the
+# pickup ring (d²<=2) covers — the evicted healer VACATES a seat the engine
+# refused to let us barrier while it stood there; (2) THROW priority: a
+# builder standing ON a heal seat is evicted FIRST; (3) the vacated seat is
+# then claimed by the EXISTING seal step and the conveyor peck by the
+# EXISTING salt machinery — no new code, the eviction is the missing link in
+# a loop we already ship. v2 probe, quoted per the method rule research
+# promoted this hour (probe results are SAMPLES on a loaded box): plants 1/3
+# games (r242, cov=1 — the coverage key engaged), evictions 0/3 — a small-n
+# zero, NOT an inert reading; v1's end-to-end demonstration (6 evictions in
+# the one staffed game) stands as mechanism-can-engage, and is NOT a dose.
+# The screen's harm gate depends on neither. Shard row unchanged (seedbase
+# 292000); tree updated in place pre-first-row.
