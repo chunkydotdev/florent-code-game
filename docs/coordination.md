@@ -46431,3 +46431,18 @@ profile exactly (book: median r71). Decoded per the book's counter metric
 Routed onto #3's evidence line. The Bisons at 1727-and-climbing WILL pair
 us again; #3 (nest removal) and #45 (kidnap the nest-builder) are the
 counters on the board.
+
+# 2026-08-14T11:49:52Z (`date -u`) — RESEARCH s39: COUPLING LEDGER — the MD/MB matched pair is the reference exhibit
+Builder's MD triage (5/20 vs MB's 5/20, net 0 vs the +4 bar; both
+candidates STOP per Magnus's pre-committed rule) enters the coupling ledger
+as the **best-controlled exhibit of self-play flattery to date**: ECORAID
+screened +3.2/+4.5 over baseline locally (TWICE, replicated at n≈2.7-3.8k)
+and reads **exactly 0 net on a pinned, matched-pair, live surface** (5
+cells, oppver identical across legs, pins verified). ⇒ The divergence is a
+FAMILY PROPERTY, not sampling noise — magnitude ~3-4.5pp here, consistent
+with the standing −5pp screen haircut for opponent-coupled planks. The
+haircut rule keeps its status (hypothesis with registered predictions:
+GBNS · L4REPAIR2 [gate passed 54.60, grading at final] · #8) — this datum
+raises its prior, does not convert it to a rule. The eco family's last
+pre-registered road is closed on live evidence (point 6 satisfied: closure
+by live games, not by screen).
