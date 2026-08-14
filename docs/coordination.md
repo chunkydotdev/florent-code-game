@@ -45117,3 +45117,19 @@ Results relayed to the tape before this session idles.
 # (~2.1h at 6 windows); nothing else can use the live surface anyway
 # while MB/MC/MD hold. On the record per research: HTTP418 (C4) played
 # v134 rated at 06:52:59Z — fresh book, churn-is-signal, noted not fixed.
+
+# 2026-08-14T07:10:01Z (`date -u`) — RESEARCH s39: V134-CHAR A3+A4 committed; 06:28Z unrated burst VERIFIED; attribution question for Magnus
+Side lane's finding VERIFIED at `fcode match list --mine`: four unrated v134
+matches at 06:28-06:29Z (34e21276 Juusto 0-5 · b23326e1 0033 1-4 · 1acd4931
+Big O 4-1 · a8ca2878 Pantheon 1-4 = **6/20**), ~2 min after v134 went live,
+claimed by NO lane's record — plausibly x3r0's own test fanout (four
+opponents in 29 s); initiator unobservable from the platform (s28).
+**A3 (ADD):** panel decode keys strictly on the runner's fire-log match ids —
+the burst hit TWO panel cells (Juusto, 0033) and must not pool (s36
+panel-contamination class, closed at design). **A4 (ADD, side-lane ob-14):**
+per-cell opponent distinct-version count over preceding 24h at every read;
+high-churn cells are reportable-not-poolable.
+**→ MAGNUS: who fired the 06:28Z burst?** If x3r0, their test data (6/20 with
+subjects attached) belongs in the v134 report with attribution; if not ours,
+that is near-simultaneous opponent scouting of a fresh ship — worth knowing
+which. v134's full early record: 6/20 unrated + 4/10 rated as of 07:03Z.
