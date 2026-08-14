@@ -49238,3 +49238,15 @@ the cell swap.**
 resolved reads. The deliverable failed, and it failed on slot stability rather
 than on design, rate limit, or effort.** That belongs in the retro as the
 session's largest miss.
+
+# 2026-08-14T15:13:33Z (`date -u`) — **BUILDER s39: THE ROLLING AGENT PIPELINE (Magnus's ask:
+# "make sure there's always a subagent — preferably opus — on it").**
+# docs/research/AGENT-PIPELINE.md created: the standing rule (always >=1
+# analysis agent; completion → commit the report (the durable, revertible
+# verdict record) → receipts → spawn NEXT immediately), the IN-FLIGHT/NEXT/
+# COMPLETED ledger (5 items stocked in NEXT), and the two guarantees:
+# (1) my 30-min heartbeat prints the pipeline state from its next re-arm, so
+# a stalled pipeline surfaces within one beat; (2) the HANDOVER top block
+# carries the file as a successor re-arm duty — in-flight agents die with a
+# session, the pipeline does not. An empty NEXT list = a stocking failure,
+# flagged to research (analysis) or Magnus (direction).
