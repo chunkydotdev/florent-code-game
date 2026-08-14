@@ -1,4 +1,4 @@
-# SIDE-LANE RETRO — the instrument. **v1** (2026-08-10)
+# SIDE-LANE RETRO — the instrument. **v1.9** (2026-08-14; created v1 2026-08-10; the changelog below is the authority)
 
 **Commissioned by Magnus, 2026-08-10, asked of all three arms.** The generic
 session wrap is **lane-agnostic and is a FAILURE LOG** — it records what broke
@@ -843,6 +843,39 @@ commits are anchored in git; the timing of the count was not disinterested.
   repeatedly); the panel template went four-amendments-needed → zero inside
   one session. **Detection ~19/22 · prescriptions all consumed (one rightly
   declined on operational grounds — the lens the auditor underweights).**
+
+**SUNSET WATCH: nothing armed; every surviving question fired this run.**
+
+## ⭐⭐ v1.9 — **FIRING 9. THE SPLIT'S ORIGINAL DIRECTION RETURNS, AND Q3 GAINS THE PROMOTER'S-FIRST-USE RULE.**
+
+**v1.9 — 2026-08-14 (MINOR: records firing 9, sharpens Q3). Instance:
+`docs/retro-side-lane-2026-08-14-s39.md`.**
+
+* **FIRINGS: 9** (s29, s32, s33, s34, s35, s36, s37, s38, s39). Zero point
+  bumps, fifth consecutive session.
+* **⭐⭐ DETECTION ~21/23 · PRESCRIPTION ~14/18 — s37's inversion was the
+  outlier; the lane's original property (detects better than it prescribes)
+  is restored and now measured across five runs.** The compensation observed
+  this session: consumers specified my fixes for me (the TLE executable
+  split; the bracketed straddle guard) — the system routing around the
+  lane's known weakness is acceptable; relying on it is not.
+* **⭐ Q3 SHARPENED — THE PROMOTER'S-FIRST-USE RULE.** Both s39 published
+  errors were instances of rules I had promoted HOURS earlier (the
+  frame/clock note; the lagged-count note) — and the day produced four
+  author-is-first-violator instances across three lanes, every one caught by
+  a peer, none by its author. **A rule written from a failure is written by
+  someone who has just demonstrated they are prone to it. Practice: after
+  promoting any rule, treat your own NEXT use of its subject matter as the
+  rule's first-application audit — run the check the rule prescribes on
+  yourself, deliberately, before publishing.** (Research's v1.12 adopted the
+  same question the same hour, independently — Q12 "did a rule I wrote today
+  bind ME first?" — which is the cross-lane replication this bump cites.)
+* **Q5: sixth consecutive zero-harm run**, and the s37 read-the-condition-line
+  practice logged its second and third confirmed pre-publication saves.
+* **Q7 logged the decline-to-tell class applied CORRECTLY for the first
+  time** (withholding a seen result from a blinded author) — the v1.2 entry
+  worried this decline could be wrong in a unique way; s39 shows its
+  legitimate face.
 
 **SUNSET WATCH: nothing armed; every surviving question fired this run.**
 

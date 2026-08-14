@@ -50555,3 +50555,48 @@ the **banking rule**, five clauses, tightened by the side lane.
 CONSUMED: research s40 TINYECO62 ruling — PARK typed on results.tsv (tinyeco62-park row). The <=19%-of-tiny-deficit bound is the banked output, routed to worst-maps/#62. Reversal trigger = tiny-segment pairing share. v11 proceeds without it.
 CONSUMED: research s40 wrap handoff — #63 design decision (nav-not-detector, owes combo-interaction line with SPAWNPOCKET on shared midgard/fjordgate segment) carried into HANDOVER; #58 = application-refuted/mechanism-live (plant 3.6x free to #47); CAL-7 110 games SPENT, never pool; CAL-8 read is prereg-specified (P4 primary, n>=75 floor).
 NOTED for retro: research flagged the guard-failure CLASS — two of today's failures were "the check ran and asserted nothing" (map_walls empty-set 'is not None'; tiny3 install && chain) — harder to spot than a missing check. Goes in the arm retro.
+
+# ============================================================================
+# 2026-08-14T18:00:55Z (`date -u`) — **SIDE LANE s39 WRAP** (Magnus called it). Arm retro ran
+# FIRST per charter: docs/side-lane-retro.md → **v1.9, FIRINGS 9**, instance
+# docs/retro-side-lane-2026-08-14-s39.md committed WITH the bump in this
+# same action. Headline: detection/prescription split restored to its
+# original direction (~21/23 vs ~14/18 over the session); Q3 gains the
+# PROMOTER'S-FIRST-USE rule (both of my published errors were instances of
+# rules I had promoted hours earlier — the day's four author-is-first-
+# violator instances across three lanes are the provenance; research's
+# v1.12 Q12 is the independent same-hour convergence). Retro header
+# staleness fixed same-commit (the class research flagged at 31cf881).
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+**S1. Everything substantive this session was routed as it happened** — two
+standing notes promoted into the booted drift-watch file (unit-of-the-claim
+eae50a8; lagged-count-favours-sleep 5feed85), two sweep reports committed
+with [V] annotations (11d1649, ccf89cf), every cert typed on the tape at its
+event. Nothing is being routed at this wrap that was not already routed;
+this section exists to certify that, not to catch up.
+
+## REBOOT STATE — SIDE LANE (s39, safe to reboot) — 2026-08-14T18:00:55Z
+* **Dies with me:** the all-commits drift watch (pid 45777 KILLED at this
+  wrap — successor re-arms `tools/watch/drift_watch.sh` and DRIVES ITS
+  CELLS first; the TZ cell discriminates on this box and this session's
+  DEST14A error is the year's best argument for it) · the commit Monitor ·
+  the gate-consumption watch (successor: wrap gate_watch.sh --check in a
+  20-min-unconsumed poller; selftest pattern in this session's record at
+  ~12:58Z) · my session-scratchpad watcher script (persists on disk at the
+  session scratchpad; re-armable by path).
+* **Survives me:** all builder-owned monitors (keeper · cores_idle ·
+  cpu_watch · ship_watch · elo/match/opp watchers · corefill + gate lattice ·
+  dash) — verified alive at boot, builder-owned throughout.
+* **Open cert obligations: NONE.** CAL-7 chain, CAL-8 (certified pre-leg;
+  zero cells fired — successor certifies its first cell vs 7fa94cb + the
+  re-pointed R3 gate), V140VS142, V140VS143, the four slate shards, and the
+  EVICT58 live leg (two-clock + pin 5/5 + pairing-boundary, f0d0842) are all
+  typed and clean. My one wrong cert (DEST14A) is retracted at 18857fc with
+  the mechanism named.
+* **Nothing of mine unconsumed:** both sweep agents reported and banked;
+  every flag consumed or retracted; repo pushed clean at this line.
+* ⚠ **Vault daily note for 2026-08-14: NOT YET WRITTEN at my wrap** — the
+  day may not be over (builder s39 still live); flagged to Magnus rather
+  than claimed unilaterally.
