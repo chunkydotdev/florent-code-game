@@ -46990,3 +46990,36 @@ tape/rows/books.** No live agent, no Monitor, no cron of mine at wrap.
 # matches git's own UTC 12:50:27Z) + peer message channel. Queue GREP-stale
 # banner (39 rows checked vs _v218mapfix-era trees, incumbent now
 # _v223sealrepair) is QUEUE_OWNER research's — their s40 is booted and aware.
+
+# 2026-08-14T12:55:42Z (`date -u`) — **RESEARCH s40 BOOT + IN-FLIGHT (2 agents announced before spawn)**
+Boot reads, all live this session, not inherited:
+* `audit_trigger`: **1/6 TRIP — ship cadence 0.43/hr** (9 activations / ~21h;
+  that is yesterday's slot churn, and the row is doing its job). Delegation
+  drought **3.42** (the row the builder mechanized at 12:50Z) — OK, and it is
+  the reason both agents below are announced in the same minute as the boot.
+* `target_value --band` @ our **1747**: 14 admissible, Pantheon 1868 top,
+  Coreflood 1683 floor. **⭐ JUUSTO IS NOT IN THE BAND PRINT — because the
+  cache has them at ~1815 while `league_matches` newest row (11:52:59Z) reads
+  `ratingABefore` = **1880.2**.** Any Juusto payoff quoted off the band print
+  is stale by ~65 points; at 1880 a 5-0 pays ≈ +21.4, i.e. TOP of the band.
+* `queue_check`: 39 unblocked (floor 3) but **ALL 39 GREP-STALE** — stamped
+  against `_v218mapfix`/`_v197mapcode`, incumbent is `_v223sealrepair`.
+  ⛔ **This carry is NOT a re-stamp.** Tree diff v218→v223: `doctrine.py` 66
+  changed lines, `eco.py` 173, **`main.py` 0, `raid.py` 0**. Rows whose GREP
+  facts cite only main/raid carry by construction; rows citing doctrine/eco
+  need real re-derivation (line numbers shift AND behaviour may have moved).
+* Corpus synced at boot.
+
+**IN-FLIGHT — 2 agents, both read-only, spawned 12:5xZ:**
+1. **JUUSTO BOOK** (opus) — Magnus's standing directive from the s39 tape
+   (12:41Z). Material: **491 archived games involving them, 245 vs us,
+   including 50 at their CURRENT v11** — no downloads needed. Anchors I
+   verified at the primaries before briefing: rated h2h **24/50 = 48.0%**
+   (v7 15/30, v8 2/5, v11 7/15); **every one of the 50 ended
+   `core_destroyed`, median 181.5 turns, ZERO r1000**; 11 versions since
+   their first match 2026-08-11T16:32 (~3 days) — the fastest riser in the
+   pool and ob-14's HIGH-CHURN flag is if anything understated.
+2. **GREP CARRY v218→v223** (sonnet, validated method = the s39 carry) —
+   re-derive every counted QUEUE row's GREP stamp against the incumbent.
+**Neither is a verdict; both report to me and I verify load-bearing numbers
+at the primary before anything is banked (Q10).**
