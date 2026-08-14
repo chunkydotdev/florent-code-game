@@ -50349,3 +50349,57 @@ the programme intends.**
 # CLOSED on the first attempt before any submit. The leg's result (dose
 # 0.04 vs >1.0, refuted as designed) is the builder's typed verdict and
 # was reached under a fully certified chain end to end.
+
+# 2026-08-14T17:4xZ (`date -u`) — **RESEARCH s40: THE FIXTURE-REQUIREMENT TIER, ENCODED — AND THE FIRST CUT I DEMANDED FOR `#52` CANNOT BE RUN ON EXISTING SURFACES**
+
+## ⛔ FIRST, THE INSTRUMENT GAP, BECAUSE I CREATED IT
+I required *"batk-by-target"* as `#52`'s first cut. **It is NOT DELIVERABLE from
+the corpus as it stands.** `build_agg` carries `batk` and `batk_core` and nothing
+else — **attacks are target-tagged ONLY for the core.** Barrier-vs-belt is not
+recoverable without a decoder change (tag the attack target) or a replay-level
+decode. ⇒ **I set a requirement that cannot currently be met, and I am naming that
+rather than letting a proxy stand in for it.**
+
+**WHAT *IS* DIRECTLY MEASURABLE, AND IT SPLITS THE FIELD CLEANLY — `batk_core`
+share of all their builder attacks (`ourver`≥125, n≥15 games):**
+| core-directed | core-blind |
+|---|---|
+| **Jython 45.4%** · arsonist duck 31.4% · Juusto 22.2% · Coreflood 14.2% · diverge 11.8% | **0033 0.0% · team lazy 0.0% · LingLing40 0.0% · Focalground 0.0% · HTTP 418 0.0% · farming_200s 0.0% · Erebus 0.0% · Lunds 0.0%** |
+**⇒ A REAL BEHAVIOURAL SPLIT: some opponents peck the CORE, others peck
+everything BUT the core.** *(A death-side proxy — our conveyor deaths run far
+above our barrier deaths for most high-batk opponents, e.g. 0033 8.91 vs 0.46 —
+SUGGESTS the non-core attacks are belt-weighted, but our building deaths are
+ALL-CAUSES and include turret fire. **It is a hint, not the cut.**)*
+
+## THE FIXTURE SPEC FOR A PECK-CAPABLE PROBE — the builder's constraint, made concrete
+Their rule: **a probe must peck at field-median RATE and TARGET-MIX or the
+medic's dose reads against a strawman** — *"the fixture-lies-in-a-known-direction
+rule applies to fixtures we build to be honest just as much as to the ones that
+flattered us."* ⇒ **spec: ~85 attacks/game at ~0% core share** (the modal live
+opponent — 0033, team lazy, LingLing40, HTTP 418 and Erebus are all exactly
+0.0%). ⛔ **The TARGET-MIX half of that spec CANNOT BE SET until the instrument
+gap above is closed — so the probe should be built to the RATE now and its
+target mix declared as UNCALIBRATED, not assumed.**
+
+## ⭐ THE TIER, ENCODED — KEYED ON WHAT THE MEASUREMENT NEEDS, NOT ON WHAT THE PLANK LOOKS LIKE
+Builder's line, and it is the right articulation: **a tier keyed on WHAT THE
+MEASUREMENT NEEDS makes its members share probes and legs; a tier keyed on what
+they LOOK like just shares a name.**
+**TIER: OPPONENT-BEHAVIOUR-COUPLED PLANKS** — those whose value channel requires
+the opponent to DO something our self-play control never does.
+* **Members today:** `#52` (needs pecking) · `#45`/`#51` (need forward-coming
+  builders) · `#47` home-side (needs approach) · the interceptor and blocker
+  candidates from Magnus's builder-body probing (need approach).
+* **Why the tier is operationally useful and not just tidy: THEY CAN SHARE ONE
+  PROBE FIXTURE AND ONE LIVE LEG.** A peck-and-approach-capable probe serves
+  `#52`, the interceptor and the blocker at once; a single pinned live leg
+  against a forward-coming opponent serves `#45`, `#51` and home-side `#47`.
+* **Entry rule:** a plank enters this tier when its coupling class is
+  INCUMBENT-ABSENT — i.e. **the self-play screen reads harm-only by
+  construction.** That is a property of the MEASUREMENT, checkable from the row's
+  own GREP, not a judgement about the plank.
+* ⚠ **And the tier's hazard, stated with it: a shared fixture is a shared point
+  of failure. If the probe's rate or target mix is wrong, EVERY plank in the tier
+  reads against the same strawman at once** — which is exactly why the
+  uncalibrated-target-mix flag above must travel with the probe rather than be
+  quietly resolved by whoever builds it first.
