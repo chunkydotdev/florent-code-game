@@ -51867,3 +51867,69 @@ slot), **a decision by DEFAULT, not a measurement.** NOT asked for: a third exte
 — the slippery slope ends at 9.4k games) or a bar change (s28 hazard whatever the motive).
 **The uncomfortable half, said because it costs us: the design's most probable terminal state hands
 the slot to OUR OWN bot on a default rather than on a number.**
+
+# ============================================================================
+# 2026-08-14T20:0xZ (`date -u`) — ⭐⭐ **RESEARCH s42: THREE FINDINGS ROUTED INTO
+# THE BOOTED TAPE. All three were earned by CAL-8 and none of them are about CAL-8.**
+# ============================================================================
+*(Routing owed to the side lane, who asked that these not stay in a read nobody
+reopens. Each is stated so it survives without its instance.)*
+
+## ⭐ 1. NAMES ARE NOT KEYS. THE TEAM ID IS THE KEY.
+**Measured, with a timestamp.** Team `86d0b484-783c-47dc-99d9-6ed9af2794f8` renamed
+**`LingLing40` → `lingling_40h` at ~12:00Z on 2026-08-14, mid-session, while we were
+measuring it** (`v49` on both sides of the boundary; `fcode ladder --json` has exactly
+one matching team). Verified independently by all three lanes.
+**WHAT IT BROKE, and the failure mode is the dangerous one:**
+* `cal8_read.py` assigns cells **by NAME** while `tools/panel_cal8.sh` fires **by
+  teamId** ⇒ the rename silently desynchronised them and **produced an EMPTY cell,
+  which reads as "no data" rather than "wrong key".** ⛔ **Two lanes took the empty at
+  face value and built a defect story on top of it** — a runner "defect" that did not
+  exist. Both retracted.
+* **`tools/target_value.py` printed the SAME TEAM TWICE** — `lingling_40h 1802` and
+  `LingLing40 1793` — as two separate admissible targets at two cached ratings, **in
+  the gate we size every prereg against.** *(Builder-owned; flagged, not edited.)*
+⇒ **STANDING: join on teamId; treat NAME as display only.** A name-keyed reference
+table is stale the moment an opponent renames. **This also narrows what `df54ea7`
+certified: it verified the reference table's COUNTS BY NAME — exactly the thing a
+rename invalidates.**
+
+## ⭐ 2. THE BOUNDARY OF AN INSTRUMENT IS WHERE THE NEXT DEFECT WILL BE.
+`cal8_read.py` certified five functions and left the **cell assignment and holder
+guard** to hand-written read-time glue. **The certified core was never wrong; both of
+the read's errors landed in the glue** (a `us_side` case comparison, then a name-keyed
+cell join). ⇒ **an instrument certified short of the FINAL JOIN is not certified
+end-to-end, and the uncertified remainder is reliably the fiddly part.**
+**Its companion, from the side lane, is the same finding from the other end:**
+**a certification of ONE SIDE of a comparison carries an EXPIRY — it is not a
+certification of the COMPARISON until the other side exists AND THE JOIN KEY HAS BEEN
+CHECKED.** *(The join key was the defect, and it was a mutable label.)*
+
+## ⭐ 3. BUILD GUARDS THAT FAIL ON **IMPOSSIBLE** VALUES, NOT IMPLAUSIBLE ONES.
+> An impossible-value guard cannot be outcome-selective, so **ITS FIRING certifies that
+> the DECISION TO INVESTIGATE was independent of the result. It does NOT certify what
+> was changed afterwards, and its SILENCE certifies nothing at all.**
+
+**Both boundaries are load-bearing and the author of the rule elided both:**
+1. **Trigger ≠ intervention.** An analyst can see an impossible value, fix it correctly,
+   and make three unrecorded changes in the same pass. **The fix-is-forced argument and
+   the trigger-is-blind argument are complementary; neither subsumes the other.**
+2. **Silence carries no information.** Most bugs produce *plausible* values — that
+   asymmetry is the whole reason for the rule — so **reading a quiet impossible-value
+   guard as assurance is the alarm-that-cannot-fire trap in a new costume.**
+**Why it matters here: it is what closed the ASYMMETRIC-DEBUGGING hazard on the CAL-8
+read** — an author who dislikes a verdict hunts for a bug and one who likes it does not,
+so *"I found a bug and fixed it"* can smuggle in outcome-dependent effort **even when
+every step of the fix is forced.** The CAL-8 bug announced itself as `OpenSverige`
+resolved as our own opponent — **not surprising, ILLEGAL** — so the hunt was
+outcome-independent by construction.
+
+## ⚠ 4. AND THE HONEST FOOTNOTE ON ALL THREE
+**CAL-8's verdict did not move across three computations** (broken-glue, name-keyed,
+id-keyed): **P4 DOES NOT FIRE**, finally at **3 below / 1 above of six complete cells**.
+⛔ **That stability is a property of the MARGIN — 3 against a threshold of 5 — NOT
+evidence that the two wrong runs were harmless. Two of three were wrong and a different
+margin would have flipped.**
+✅ The strongest validation in the read: **the ID-KEYED reference totals n = 155, the
+certified pin, to the row** — the id-keyed and name-keyed reference tables are the same
+table, which is what licensed substituting one for the other.
