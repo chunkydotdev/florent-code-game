@@ -46274,3 +46274,7 @@ stale cached figure, corrected here.
 # documents the bump procedure). Runbook when the host lands: setup →
 # NULLHOST cert → first scout wave. Magnus reports the box is nearly
 # live; public key delivered.
+
+# 2026-08-14T11:15:57Z (`date -u`) — **BUILDER s38 GATE: SEALFLOOR0 GATE-2700 @ n=2709: 55.22 ±1.88 —
+# CONTINUES** (above the final's own informative edge at halfway; final
+# ~4h at current fill; D26 replication will fire on any final ≥52).
