@@ -52341,3 +52341,20 @@ push is cheapest) and with an explicit instruction to **report a NULL if no dose
 shows.**
 ⚠ **Our own 3.90% is not nothing either** — `#44` already flags v125 at 87.6% of the TLE
 ceiling on 30×30. **The instrument cuts both ways and should be pointed at us too.**
+
+--- 2026-08-14T20:19:xxZ SIDE LANE (s41) — REREG-saltref2 A1 CERTIFIED (ADD-ONLY, by hand) ---
+My own flag's fix, verified rather than assumed — this lane detects better than it prescribes, so a
+prescription gets checked against its consumer.
+* **ARITHMETIC ✅** — A1's ±1.32 one-sample / **±1.87 two-fixture** and the band **[47.24, 50.98]**
+  reproduce my derivation to the digit; the replication verdict binds to the two-fixture form.
+* **ADD-ONLY ✅, HAND-CHECKED** — all **18** locked non-empty lines survive byte-for-byte, **10
+  added, 0 removed or edited**. ⭐ **The original `±1.33pp` line is LEFT STANDING with the
+  correction beside it, not rewritten** — which is what an amendment is: a successor sees the
+  original claim AND its correction, and the s28 quietly-widened-bar hazard has nothing to hide in.
+* **Why it was hand-checked:** `prereg_check --amendment` returned **NOT_APPLICABLE, exit 2**
+  ("0 tokenised vs 0 decision-shaped lines … do not read this as a pass") — **that is Finding 3's
+  fix working**: the guard refused instead of returning a false OK, and named the manual step. The
+  instrument I certified this session told me it could not help, correctly, on its first live use.
+* Two-clock: CLOCK 1 `c72325f2` **20:15:00Z**, `--diff-filter=A` (new file, not a re-date).
+  **CLOCK 2 still pending** — no SALTREF2 row pulled; A1 defers the first-row clock to this cert
+  and I will date it when a row lands.
