@@ -44705,3 +44705,6 @@ stands), fixture constants name their source (the s36 interpolation rule).
 # (bots/_x3r0_* lineage known: v115/v120), decode its ladder games as they
 # complete, and report behaviour + performance vs v125's equilibrium
 # baseline (1783, CAL-4).** Holder watch running.
+# 2026-08-14T05:56:24Z — addendum: x3r0's upload is UNCERTAIN (may not happen). The prior note is
+# preparedness, not a forecast — watch idles harmlessly, gates only bind on
+# an actual change, no lane should expect a displacement.
