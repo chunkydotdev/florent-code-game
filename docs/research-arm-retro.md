@@ -1288,3 +1288,37 @@ same verification as a number.**
 *(Companion to Q12: this was also a Q12 firing — the session opened with me
 naming the guard-asserted-nothing class in its counting form, and the scope
 sentence went out ~40 minutes later. **Audit the rule's FIRST APPLICATION.**)*
+
+---
+
+# RUN s42 — 2026-08-14, boot 19:07Z. **v1.14. FIRINGS: 6.**
+Instance: `docs/retro-research-arm-2026-08-14-s42.md` (committed with this bump).
+
+**Headline: the lane's own checks caught 6 of its own errors against 4 caught by peers —
+and the one that caught the most damaging error was a rule this lane had published ninety
+minutes earlier.** The `meta_join` contamination announced itself as an IMPOSSIBLE VALUE
+(v243 in a list of our own versions), not as an implausible number, so the bug hunt was
+outcome-independent by construction.
+
+**Q7 fired hardest: I named a CAUSE from an EFFECT and the field refuted it in four hours.**
+HTTP 418 discards 16.5% of unit-turns ⇒ I inferred an exploitable handicap; the book measured
+the dose we control as the WEAKEST of five drivers, sign-reversing early game, worth
+0.0/0.0/−9.6pp. **Instrument right, inference wrong** — and it only surfaced because the
+book was commissioned with an explicit NULL instruction.
+
+**Q3 found an unverified relay by being answered honestly:** I published the archipelago
+agent's "22 of 42,035 both cores dead, complement 33,830/33,830" without checking it, having
+verified only the half I could reach cheaply. *"It has a control"* is a property of the
+argument, not evidence I checked the number.
+
+## ⭐ NEW QUESTION 14 — **DID A FINDING CLAIM NOVELTY WITHOUT A GREP?**
+> **A finding that claims novelty carries its own `GREP:` — what was searched for prior art,
+> and what came back.**
+
+Minted from a live failure: I announced an "unread" TLE instrument that **my own lane had
+read the same day**, in a row that **also carried the norms hold I then violated**. Two
+greps would have stopped a wrong number reaching two lanes and Magnus. **The queue demands
+this of every PLANK before it counts; it was never demanded of a FINDING — and a finding
+travels faster.** ⚠ **Honest cause: believing it was new is what skipped the check.**
+
+**FIRINGS: 6.** Sunset clause remains **disarmed**.
