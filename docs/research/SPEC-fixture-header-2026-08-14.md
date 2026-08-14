@@ -75,7 +75,7 @@ writes a marker row into the same file:**
 # FIXTURE-CHANGE at game=509  workers=10->40  load1=6.2->31.8  ncpu=16 (unchanged)
 ```
 
-**Two properties this must have:**
+**Three properties this must have:**
 1. **The marker lives in the DATA FILE, not a log.** A sidecar drifts, is rotated, or is
    not copied when the file is pulled from a remote box. **The row file is the artefact
    that survives to analysis time; the fixture fact has to travel inside it.**
@@ -83,6 +83,27 @@ writes a marker row into the same file:**
    so.** ⚠ **The reader half is not optional — a marker nobody consumes is the
    alarm-that-cannot-fire trap.** Minimum: the read prints
    `SPANS FIXTURE-CHANGE at game=509 — split or justify`, and does not silently pool.
+3. ⛔⛔ **THE MARKER MUST BE UNMISTAKABLE FOR A GAME ROW, AND THAT IS A FORMAT REQUIREMENT
+   RATHER THAN A CONVENTION.** *(Side-lane catch at design time, adopted.)* **A marker row
+   is a NON-GAME ROW inside a game tape, and every consumer of that tape now has to know
+   that.** The precedent is eleven hours old: **TRAP 8 — comment-headed TSVs crashed the
+   sanity scanner because `DictReader` read a `#` line as a one-column header, `restkey`
+   lists escaped the ValueError handler, and the tool died BEFORE its verdict line.**
+
+   **Two failure modes, and only one is survivable:**
+   * **loud** — a consumer crashes or the row lands in `restkey`. Recoverable, and TRAP 8
+     is fixed for the `#` form specifically.
+   * ⚠ **silent, and this is the one that matters — the marker PARSES AS A GAME with empty
+     or default fields and ENTERS A TALLY.** On a 1,000-row screen decided at a 51.0 bar,
+     **one or two phantom rows are not nothing, and nothing about the number would look
+     wrong.**
+
+   ⇒ **the marker must FAIL THE GAME-ROW SCHEMA ON A REQUIRED FIELD, not merely look
+   different.** A naive reader must get an **ILLEGAL** value, never a plausible one —
+   e.g. a non-numeric `game` index and an empty `winner`, both of which any tally must
+   already reject. **This is §5's own impossible-value rule applied to the tape format,
+   and it is the version that does not depend on every future reader remembering a
+   convention.**
 
 ---
 
@@ -111,8 +132,9 @@ populate, or it becomes a constant column, and a constant column validates anyth
 | H6 | reader over clean rows | **silent** — proves H5 discriminates |
 | H7 | arm with no platform version | header reads `@vNONE`, **not blank** |
 | H8 | header unreadable / absent (legacy file) | reader **announces the file predates the header**, never assumes a fixture |
+| **H9** | **a tape carrying a `FIXTURE-CHANGE` row, read by EVERY EXISTING consumer unmodified** | each consumer **excludes it or refuses** — ⛔ **never silently counts it. If any consumer counts it, THAT IS THE FINDING**, and it is better found here than in a screen read-out |
 
-**H2 and H8 are the cells that will be skipped and must not be.** **H2 is the entire point
+**H2, H8 and H9 are the cells that will be skipped and must not be.** **H2 is the entire point
 of the spec** — a transcribed `ncpu` reproduces today's defect exactly. **H8 is the
 alarm-that-cannot-tell-it-is-blind trap**: every existing shard file lacks the header, and
 a reader that treats "no header" as "fixture fine" is worse than one that has no opinion.
