@@ -1,98 +1,76 @@
-# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — rating ~1795, k=20,
-# RULE=held all s40. ⛔ VERIFY `Active bot:` before acting (x3r0 uploads on no
-# schedule; a holder change costs ~1 rate window ~15-20 min later).
+# LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — md5 c4e563af4730b4c1595c679fc25098e7,
+# rating ~1783, k=24, RULE=held ALL s41 (net_act +58.8→+69.8). Baseline/rollback
+# target: v140 itself (it is the incumbent; no newer ship). ⛔ VERIFY `Active bot:`
+# before acting — x3r0 uploads on no schedule; a holder change costs ~1 rate window.
 #
-# ===== s40 WRAPPED 2026-08-14 ~19:0xZ ON MAGNUS'S CALL — MACHINE REBOOT (A
-# REAL ONE; s39's wrap said reboot and none happened — this one Magnus is
-# executing himself). EVERYTHING DIES: keeper, elo/match/opp/replay watchers,
-# vps_pull, dash, corefill loop wrappers, side-lane drift watch, CAL-8 runner
-# (STOP-yielded cleanly). Zero rated exposure in s40; no submit, no activation.
+# ===== s41 WRAPPED 2026-08-14 ~20:3xZ ON MAGNUS'S CALL. NO machine reboot (this
+# is a normal wrap). ZERO platform actions all session; v140 held throughout. =====
 #
-# ===== POST-REBOOT BOOT LIST =====
-# 1. Re-arm keeper + 4 watchers per tools/monitors/ docstrings (the s39-era
-#    invocations are in ps history / the monitors' own headers).
-# 2. Re-arm vps_pull: nohup bash tools/monitors/vps_pull.sh >> corpus/vps_pull.log 2>&1 &
-#    (remote box IDLE — all 6 shards COMPLETE and pulled; SALTREF verdict banked.)
-# 3. ⛔ COREFILL STAYS PAUSED: scratchpad/COREFILL_STOP is MAGNUS'S deliberate
-#    pause (s40 ~18:33Z), NOT a crash. Ask him before rm. Loop wrappers need
-#    relaunch after reboot even to resume.
-# 4. Side lane re-arms its own drift watch (their charter).
-# 5. Dashboard (shared infra, builder-owned since s41): nohup .venv/bin/python
-#    tools/dash/serve.py >> scratchpad/dash_serve.log 2>&1 &  — verify with
-#    curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8787/  (NOT ps).
-# ⛔ s41 HARDWARE CORRECTION (Magnus): work-server-1 is ncpu=16, WE BORROW 10 —
-#    the repo's "48 vCPU"/WORKERS=40 record was wrong; WORKERS>10 oversubscribes
-#    a shared box AND biases wall-clock --tle 10 against the heavier bot. Fire
-#    remote shards at WORKERS=10. work-server-2 (6 cores, WORKERS=4) certified
-#    s41: NULLHOST 52.0% n=400 in [45.1,54.9]. Retro on 40-on-16-era numbers:
-#    research owns it (s42).
-# ⚠ s41: team 86d0b484 RENAMED LingLing40 -> lingling_40h ~12:00Z 2026-08-14.
-#    NAMES ARE NOT KEYS — name-keyed joins (target_value, cell matching) split
-#    or drop a team on rename; key on teamId.
+# ===== WHAT SURVIVES / WHAT DIES =====
+# SURVIVE (detached, builder-owned): keeper (pidfile corpus/keeper.pid) + elo/
+#   match/opp/replay watchers + ship/holder/cpu/cores watchers + vps_pull + the
+#   dashboard (serve.py, HTTP 200 on 127.0.0.1:8787 — side-lane-started s41,
+#   builder-owned) + the two live-read shards (SEALFLOOR6 local, SALTREF2 remote).
+# DIE with this session: the persistent read-completion Monitor (SEALFLOOR6 +
+#   SALTREF2) — A SUCCESSOR MUST RE-ARM IT OR READ THE TWO SHARDS BY HAND (see
+#   THE TWO LIVE READS). Side lane's drift watch + terminal monitors also died
+#   (their wrap); re-arm tools/watch/drift_watch.sh, drive its 3 cells first.
 #
-# ===== CAL-8 — EXACT STATE + STANDING PRE-LOOK DECISIONS (do NOT re-open) =====
-# State: 13 ACCEPTS / 65 GAMES. DERIVE, never inherit (s40's own bug):
-#   awk -F'\t' '$3=="ACCEPT"' scratchpad/panel_cal8_fires.tsv | wc -l
-#   (cross-check: scratchpad/panel_cal8_pointer.txt; matchId rows in meta_join)
-# BELOW the 75-game floor -> NOT READABLE. NO LOOK HAS OCCURRED (both lanes on
-# record). Standing decisions, all typed pre-look on the tape:
-#   * RESUME to BOUNDARY=15 accepts (31c5606): rm scratchpad/PANEL_CAL8_STOP,
-#     then BOUNDARY=15 zsh tools/panel_cal8.sh (nohup, log to scratchpad/) —
-#     the ARMED echo prints the armed boundary to the fires tape at launch.
-#   * READ with scratchpad/cal8_read.py (research-built, side-lane certified
-#     df54ea7; REFUSES below floor; P4 = six-cell SIGN test, pre-filter alpha
-#     0.109 — may NOT be upgraded in any write-up; reference pinned v125-only
-#     n=155/88 and the tool asserts it).
-#   * After the read, CAL-8 rows are SPENT like CAL-7's 110 — no pooling, no
-#     top-up (that is the declined look in two steps).
-#   * ⚠ Research's s41 boundary tripwire: DO NOT re-arm as written — match the
-#     terminal ROWS the runner actually writes (incl. 'PANEL-CAL-8: STOP') and
-#     check the CHILD pid, not a pgrep -f pattern (matches the wrapper).
-#     CORRECTED per research's own amendment: the monitor DID fire ~4 min late
-#     (latency, not silence); only the STOP-yield pattern was a true miss, and
-#     the runner-death branch backstopped it.
-#   * The read needs NO lane context: cal8_read.py refuses below 75 itself
-#     (exit 2), reference fixed+certified df54ea7 (v125-only n=155 — NOT the
-#     era-rated table), P4 = six-cell sign test alpha 0.109, non-upgradable.
-#     A successor needs the two accepts and nothing else.
-# Fire order (research eddea1f): Window 2 HELD pending the P4 read; the
-# critical path is REGISTRATIONS, not builds (zero unfired live preregs with
-# built arms). FIRE NOTHING until the read.
+# ===== THE TWO LIVE READS — the only unfinished measurements =====
+# 1. SEALFLOOR6 (LOCAL corefill, #53 floor-upward arm _v238sealfloor6 vs v140):
+#    LOCK 372e1562 (side-lane certified b148a08c, first-ever green prereg).
+#    At wrap ~3% of 5400. BARS: ≥51.33% KEEP-dev / ≤48.67% REAL-NEGATIVE (closes
+#    the floor third) / inside = DROP ("could not separate", not "6 == 0").
+#    Direction NEGATIVE expected (SEALFLOOR0's 0-beats-12). Kill-round rider:
+#    CI on Δ median kill excludes +10. DEFF 0.98 local, ±1.33pp. Read off
+#    scratchpad/overnight/SEALFLOOR6.tsv when DONE.
+# 2. SALTREF2 (REMOTE work-server-1, replication of the TLE-suspect null):
+#    REREG c72325f2 + A1 e94996b5 (side-lane certified PREDATES-FIRST-ROW).
+#    At wrap ~970/5400. Same arms as SALTREF (_v231saltref vs v140), WORKERS=10
+#    (the FIXTURE FIX — original ran 40-on-16). VERDICT BINDS TO THE TWO-FIXTURE
+#    [47.24, 50.98] (A1), NOT the one-sample ±1.32. Replicates → #48(b) bank
+#    stands + TLE caveat lifted; doesn't → #48(b) reopens. Pull via vps_pull;
+#    read scratchpad/overnight-remote/worker@work-server-1/SALTREF2.tsv.
 #
-# ===== FILES LEFT BY DYING AGENTS — VERIFY STATE BEFORE TRUSTING =====
-# * tools/prereg_check.py — DRAFT, UNCERTIFIED (opus agent died at wrap; spec
-#   doc may be missing). Token scope accreted from 3 sources, all in the s40
-#   tail: ~15 obligations + side lane's 6 (bar-null, computed Ob-13
-#   intersection, reference-side floor, estimator+cluster, planned-n+cut-short,
-#   add-only amendments) + PROVENANCE + DOSE (both-verdicts). Side lane owes
-#   forced-fail certification; wiring verdict is the builder's. NOT wired.
-# * bots/_v232collarmedic — #52 collar-medic arm (dispatch/stay the heal
-#   exchange; economics stated at 4:1 NOT the source comment's wrong 8:1).
-#   Agent died mid-task: dose probe state UNKNOWN — re-run it (vs
-#   _probe_creeper, flag-off mutation must return to control) before any
-#   screen. No fire claim; sits pending its prereg (fresh opus agent per the
-#   new rule, both charters).
-# * Research orphans (their s41 wrap, same hour): check working tree for
-#   docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md (archipelago r140/146
-#   titanium_collected wins — possible new win path or platform truncation)
-#   and docs/research/BOOK-http418-v103-2026-08-14.md.
+# ===== HARDWARE — CORRECTED s41 (Magnus) =====
+# work-server-1 is **ncpu=16, we borrow 10** (the repo's "48 vCPU"/WORKERS=40
+# record was WRONG). FIRE REMOTE SHARDS AT WORKERS=10 — WORKERS>10 oversubscribes
+# AND biases wall-clock --tle 10 against the heavier bot. work-server-2 (`work-
+# server-2` in ~/.ssh/config, 204.168.247.88, 6 cores, WORKERS=4) certified s41:
+# NULLHOST 52.0% n=400 CI [47.1,56.9]. Both boxes in scratchpad/vps/hosts.txt.
+# ⛔ The 40-on-16 era (≥13:47:33Z 2026-08-13) TLE-degraded remote shards; research
+# owns the exposure table (v142/v143/SEALREPAIRR flattered-us but survive >3.7SE;
+# SALTREF the one suspect, hence SALTREF2). NULLHOST certs are immune (identical
+# trees). START-STAMP owed: the runner does not stamp its start, so two-clock
+# certs date by COMPLETION (one game late) — belongs in the fixture-header bundle.
 #
-# ===== RULES MINTED s40 (all committed) =====
-# Fresh-opus-subagent-per-prereg + lane-ratifies-lock (Magnus; BOTH charters) ·
-# PROVENANCE token · DOSE token (probe gates screen, both verdicts) · armed
-# values echo to the surface where they bind (panel_cal8 ARMED row) · numbers
-# crossing session boundaries are re-derived before decisions consume them ·
-# corpus_sanity TRAP 8 fixed (comment-headed TSVs; ragged-row alarm).
-# X3R0_SLOT_RULE cost measured for the first time: −74.60 Elo over v134-v139
-# (research RATED-DAY-DECODE) — price the rule in Elo at next PROGRAMME touch;
-# also owed there: kill/death race is 178/182 (four rounds), not 174/187.
+# ===== OWED — CERT + BUILD OBLIGATIONS (from side lane's wrap + mine) =====
+# * WIRING BUNDLE (unbuilt): gate.py hook (new preregs only, escape-flag TAPE
+#   logging prereg-path+time+setter) + these prereg_check items: local-accepts
+#   WARN · CUT-SHORT consumer (cut_short_floor ≤ planned_n) · OB13 untracked-arm
+#   diff gap · POOL-ERA token (research SPEC) · FIXTURE-HEADER + START marker
+#   (research SPEC, must fail the game-row schema on a required field) · empty
+#   local-accepts WARN. Certify against ONE diff; RE-RUN scratchpad/prereg_cert_
+#   s41.py FIRST (prereg_check changed 3× today → cert expired).
+# * COMMENT-HYGIENE SWEEP (D3): 4 stale prose-vs-code comments — eco.py:325-343
+#   "eight to one" (wrong, 4:1) · main.py near NOISE_ON "Default OFF" (it is True)
+#   · doctrine.py:1580 LOKI_SALT_TI_FLOOR "(matches SEAL)" (SEAL is 0, SALT 12) ·
+#   doctrine.py _hunt_turret 90 lines of present-tense spec for absent behaviour.
+#   ⛔ NOT on live trees mid-screen (breaks the one-line-diff); next chassis.
+# * target_value + cal8-cell joins: name-keyed → id-key them (lingling rename
+#   listed one team twice; teamId fix shipped in target_value, others owed).
 #
-# ===== QUEUE/PIPELINE HEAD =====
-# Registrations first (eddea1f). Then: #52 arm awaits prereg + probe re-run ·
-# #48 rung (b) NULL banked (SALTREF 49.11@5400), rung (c) never screened ·
-# #53 re-scoped (floor upward arm cheapest) · #63 nav design still owed
-# (shares midgard/fjordgate segment with SPAWNPOCKET — second prereg owes the
-# combo-interaction line).
+# ===== QUEUE / PIPELINE HEAD =====
+# #52 collar-medic RETIRED PREMISE-ABSENT (our buildings die to TURRET fire not
+#   melee; heal throughput can't hold vs a sentinel's 9/turn — re-scope or retire,
+#   NOT retest). Magnus's belt-heal idea dies on the same finding.
+# #66/#66a: STALL confirmed (lossless back-pressure) → variation (d) harvester-
+#   end-first is PRIMARY; remaining constraint is the comms store being FULL (16/16).
+# #67 opened (HTTP 418 book): _hunt_turret is doctrine-only (spec not behaviour) —
+#   owes git log -S never-wired-vs-removed. CPU-denial CLOSED by measurement.
+# #63 nav design still owed (midgard/fjordgate segment, combo-interaction line).
+# Local cores DRAINED except SEALFLOOR6; `zsh tools/corefill.sh scratchpad/
+#   corefill_work.txt 8 8` refills. Fire order: research owns the CADENCE PLAN.
 
 ## ===== ARCHIVE =====
 Everything superseded lives in `HANDOVER-archive.md` (boot-load audit cut 1,
