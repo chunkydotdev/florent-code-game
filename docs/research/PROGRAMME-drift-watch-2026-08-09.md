@@ -2251,3 +2251,53 @@ run, which is the mode the first scope note already said was intended.
   published as a count — all within twenty minutes, each caught by a peer, none
   by its author. The uniformity is the finding: "I checked" is the sentence
   least likely to have been checked.)*
+
+- **⭐⭐ D33 — A GUARD THAT REPORTS SUCCESS ON A NO-OP. SIX INSTANCES IN ONE
+  SESSION, ACROSS ALL THREE LANES, EVERY ONE COMMITTED BY A LANE AUDITING THE
+  SAME CLASS (s42, 2026-08-14; converged on independently by the builder and
+  this lane within minutes; promoted here because the instances are the
+  evidence and the CLASS is the finding).**
+  **THE GENERALISATION, and it is what makes this one item rather than six
+  bugs: EVERY INSTANCE IS AN ERROR PATH THAT RETURNS THE SAME VALUE AS A CLEAN
+  NEGATIVE RESULT.** Not *"the check was missing"* — **the check RAN, swallowed
+  its own failure, and emitted the SHAPE OF A REAL ANSWER.**
+  **THE SIX:**
+  1. **side lane** — a `scipy` branch falling through to a normal
+     approximation **silently**, producing an **illegal negative proportion**
+     (`[-0.5%, 10.5%]`) that was published to another lane.
+  2. **`target_value.py`** — `try/except: pass` around the live `fcode status`
+     read, **falling back to the CACHED rating** with no indication which path
+     supplied the number every prereg's gap is measured from.
+  3. **`worker.sh`** — a heartbeat whose last written content is the literal
+     string `RUNNING`, so **a sleeping worker and a dead one are byte-identical
+     in CONTENT**; only the mtime discriminates and nothing read it. *(This
+     lane declared a LOCKED leg dead on it. The instrument finding was right
+     and the conclusion was wrong.)*
+  4. **`cores_idle.py`** — `EXPECTED_GAMES` defaulting to `1`, i.e. the
+     **retired `n == 0` predicate operationally restored by a default**, in the
+     alarm whose own docstring retires it citing this lane's s31 audit.
+  5. **builder** — `git add -A <path> 2>/dev/null` swallowing a failure →
+     empty index → `commit` no-ops → **`push` still echoes PUSHED.**
+  6. **builder (their instance, attributed, not re-derived by me)** —
+     `era_guard` returning an **EMPTY LIST** for `throws.tsv` because
+     `int(r["team"])` raised `KeyError` inside a bare `except: continue`, on a
+     surface where **v140 genuinely makes zero rated throws**. **A blind zero
+     and a real zero, byte-identical on the same table, inside the tool built
+     to keep era claims honest.**
+  **⇒ THE WATCH FORM, one question, applicable to any guard or tool before its
+  silence is trusted: WHAT DOES THIS RETURN WHEN IT FAILS — and is that value
+  DISTINGUISHABLE from a legitimate negative result?** If a swallowed exception,
+  a missing key, a stale cache or an empty match yields `0`, `[]`, `OK`,
+  `RUNNING` or `PUSHED`, **the guard cannot tell you it is blind and its silence
+  carries no information.**
+  **PRESCRIPTION: an error path must return a value OUTSIDE the legal domain of
+  a real answer, or announce itself.** `CANNOT-COMPUTE` as a distinct string
+  (the s42 OB13 fix) is the shape that works; `except: pass` is the shape that
+  does not.
+  ⚠ **AND THE REASON THIS IS A DRIFT ROW RATHER THAN AN ENGINEERING NOTE: all
+  six were committed by lanes actively auditing this exact class, on the same
+  night, while quoting the rule at each other.** Knowing the defect does not
+  prevent committing it — **only a forced question at the moment of writing
+  does.** (D31's asymmetry from the writer's side rather than the reader's:
+  prefer error paths that produce ILLEGAL values, because those are the only
+  ones that announce themselves.)
