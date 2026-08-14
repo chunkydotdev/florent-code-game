@@ -482,12 +482,24 @@ def selftest() -> int:
         rows_125, used_125 = our_rows(LADDER, era=125)
         check("era='all' era_used label", used_all, "all")
         check("era=125 era_used label", used_125, "v125")
-        check("era='all' returns data (n games)", len(rows_all), 4825)
-        check("era=125 returns data (n games)", len(rows_125), 305)
+        # ⛔ THESE WERE HARDCODED SNAPSHOTS (4825 / 305) AND FAILED THE DAY THE
+        # CORPUS GREW BY 20 GAMES -- a selftest that fails on healthy growth is a
+        # selftest that gets ignored. Assert INVARIANTS derived from the file, not
+        # a frozen count: invariants catch LOGIC errors, snapshots catch APPENDS.
+        import csv as _csv
+        with open(LADDER) as _f:
+            _raw = [r for r in _csv.DictReader(_f, delimiter="\t")]
+        _n_all = len(_raw)
+        _n_125 = sum(1 for r in _raw if r.get("ourver") == "125")
+        check("era='all' returns EVERY row of the surface", len(rows_all), _n_all)
+        check("era=125 returns exactly the ourver==125 rows", len(rows_125), _n_125)
+        check("era=125 is a STRICT subset of era='all'", 0 < len(rows_125) < len(rows_all), True)
         share_all = sum(int(r["won"]) for r in rows_all) / len(rows_all)
         share_125 = sum(int(r["won"]) for r in rows_125) / len(rows_125)
-        check("pooled game share ~51.2%", round(share_all, 4), round(2472 / 4825, 4))
-        check("ourver==125 game share ~55.7%", round(share_125, 4), round(170 / 305, 4))
+        _won_all = sum(1 for r in _raw if r.get("won") == "1")
+        _won_125 = sum(1 for r in _raw if r.get("ourver") == "125" and r.get("won") == "1")
+        check("pooled share matches the surface", round(share_all, 4), round(_won_all / _n_all, 4))
+        check("v125 share matches the surface", round(share_125, 4), round(_won_125 / _n_125, 4))
         check("the two shares actually DIFFER", abs(share_all - share_125) > 0.01, True)
         matches_125 = len({r["match"] for r in rows_125})
         check("ourver==125 distinct matches == 61", matches_125, 61)
@@ -634,9 +646,15 @@ def selftest() -> int:
         # ===== era spec parsing: list and "N+" forms, both directions =====
         print("\n--- era spec forms: list, 'N+', bad spec ---")
         rows_list, used_list = our_rows(LADDER, era=[125, 140])
-        check("era=[125,140] combined count", len(rows_list), 320)
+        _r125, _ = our_rows(LADDER, era=125)
+        _r140, _ = our_rows(LADDER, era=140)
+        check("era=[125,140] == era(125) + era(140), an invariant not a snapshot",
+              len(rows_list), len(_r125) + len(_r140))
         rows_plus, used_plus = our_rows(LADDER, era="125+")
-        check("era='125+' count", len(rows_plus), 395)
+        _n_plus = sum(1 for r in _raw
+                      if str(r.get("ourver", "")).isdigit() and int(r["ourver"]) >= 125)
+        check("era='125+' == every row at ourver>=125", len(rows_plus), _n_plus)
+        check("era='125+' is a STRICT superset of era=125", len(rows_plus) > len(rows_125), True)
         check("era='125+' label", used_plus, "v125+")
         bad_raised = False
         try:
