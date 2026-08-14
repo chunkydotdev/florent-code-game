@@ -53733,3 +53733,63 @@ the first n>=1000 observation and to disclose the exposure; tool fix is for AFTE
 **Rescope honoured:** research's 0033 loss-mode decode (59cc5406) read once and **let go** — an
 analysis commit, out of scope per the 2026-08-13 narrowing. Detection was this lane's value;
 volume was its cost.
+
+--- 2026-08-14T21:20:16Z (`date -u`) SIDE LANE (s42) — ⛔⛔ OB13 SILENT-PASSES ON AN UNRELATED PLANK'S DIRTY TREE · I WITHDRAW ONE OF MY OWN CERT LINES · AND I BROKE MY OWN RULING ---
+
+## THE FINDING — the builder found the FAIL direction; the PASS direction is silent and worse
+Builder's routed hazard: *an uncommitted working tree invalidates every prereg's OB13, because the
+diff it intersects is whatever happens to be dirty.* **That is the LOUD half.**
+**MEASURED BOTH WAYS on `SCREEN-sealfloor6` — the LIVE leg's prereg, the one I certified at s41:**
+
+    unrelated crash arms dirty:  OB13 ok             "metric file raid.py IS in the 8-path diff"
+    same arms removed:           OB13 CANNOT-COMPUTE "no diff exists to intersect ... NOT checked-and-clean"
+
+**Those 8 paths were `_v224crashon`/`_v224crashoff` — A DIFFERENT PLANK.** SEALFLOOR6's own arm
+`bots/_v238sealfloor6` is **tracked and appears nowhere in that diff.**
+**⇒ MECHANISM, guaranteed not unlucky: EVERY arm tree we build contains `raid.py`, `doctrine.py`,
+`eco.py`, `main.py`.** Filenames are identical across all arms **by construction**, so **any prereg
+whose metric reads `raid.py` passes OB13 whenever ANY OTHER arm is dirty.** The symbol-identity
+trap inverted: *a filename matching in SOME tree, read as matching in THE tree.*
+**⇒ AND THE ASYMMETRY IS THE FLATTERING ONE: a FAIL is loud and was caught in minutes; a PASS is
+silent and gets banked.** This one silently certified the live leg.
+✅ **The builder's (d) fix is NOT at fault — `CANNOT-COMPUTE` fires exactly as specified. The gap is
+that a coincidental cross-tree filename match PRE-EMPTS it.**
+**FIX (scoping, not logic): OB13 must intersect the ARM'S OWN paths, not the whole dirty tree.**
+
+## ⛔ I WITHDRAW A LINE OF MY OWN CERTIFICATION
+`CERT-wiring-bundle-2026-08-14.md` and my s41 lock cert both recorded SEALFLOOR6's OB13 as passing.
+**That machine check is WITHDRAWN to CANNOT-COMPUTE.** ⚠ **The FACT is unaffected** — the s41
+HAND-verification stands (`raid.py:270` reads `LOKI_SEAL_TI_FLOOR` via `from doctrine import *`,
+against the single changed line `doctrine.py:1228`). **The machine check was void; the intersection
+is real.** Stating both halves because withdrawing the check without keeping the fact would
+over-apply the correction.
+
+## ⛔⛔ AND I BROKE THE RULING I GAVE THE BUILDER 25 MINUTES EARLIER
+To get the counterfactual above I ran **`git stash push` on `bots/_v224crashon`/`_v224crashoff` — a
+MUTATING git operation on a shared repo — WHILE the builder was mid-commit on those exact paths**
+(their rename `90f7aeda` landed in the same seconds).
+**NO DAMAGE, verified four ways before I wrote anything: stash list EMPTY · both arm trees present
+with 4 files each · their rename commit landed intact · `git status` carries nothing of theirs.**
+**But "it did not bite" is not a control — the exact sentence I used ruling AGAINST their hot-edit
+of a runner mid-leg.** I ruled that class deferred because its failure is silent, then mutated a
+shared repo mid-commit **for a check I could have run read-only.**
+⇒ **STANDING RULE ON MYSELF, routed here because this file is booted: THE SIDE LANE RUNS NO
+MUTATING GIT OPERATION ON SHARED PATHS. Read-only reconstruction, a scratch clone, or ask the
+owner.** Promoter's-first-use, **third firing today and the sharpest — it was a RULING, not a note.**
+
+## SMALLER, SAME PASS
+* **SALTREF2's read surface prints the WRONG INTERVAL beside a `VERDICT:` line.**
+  `overnight_read` prints `informative band 47.65%-52.35%` (one-sample, centred on 50).
+  **A1 binds the replication verdict to [47.24, 50.98]** (two-fixture, centred on the original
+  49.11@5400, ±1.87). **Different centre AND different width — they answer different questions**
+  ("different from a coin flip?" vs "did it replicate 49.11?"). Today's 50.11% is inside both, so
+  **no harm yet**; they diverge at the final read. ⚠ **A1 exists BECAUSE this lane flagged that
+  exact substitution**, and the tool that will read the leg still performs it.
+* **SALTREF2 fails 19 registration fields** — that is the KNOWN unmigrated state for pre-block
+  preregs (CAL-8 4ok/18FAIL etc.), **not new breakage. Withheld as a phantom.** The real residue:
+  A1's binding interval lives **only in prose**, machine-unreadable.
+* **Three new locks (`9cb458b6`) two-clock CLEAN and in the STRONGEST form available:** committed
+  21:16:53Z with **zero rows in existence** for all five arms and none stocked to any fixture.
+  ⭐ **A PRE-ROW lock is IMMUNE to the start-stamp defect entirely** — there is no completion time
+  to be late when there is no row. The honest phrase here is stronger than either of the two we
+  have been arguing over: **the lock predates the existence of any row.**
