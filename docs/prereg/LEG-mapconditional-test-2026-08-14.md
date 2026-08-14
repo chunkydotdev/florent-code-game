@@ -33,3 +33,21 @@ SCREENS flatter — this live read is exactly the surface that doesn't.
 MA/MB: incumbent plays — no activation, any rate window. MC/MD: submit-hold
 legs in post-pairing windows, ids copied from this table + MA/MB's minted
 anchors, standard leak discipline.
+
+---
+
+## AMENDMENT 1 (ADD-only, pre-fire — both side-lane flags consumed)
+
+1. **5th maps WITHDRAWN; the legs run 4-map sets** (APPR: antler/drumlin/
+   icefloe/midgard · ECO: antler/auroraveil/frostgate/royale). Both declared
+   5ths failed the stated bar (54.7, 54.4 < 55) and were admitted by an
+   unstated criterion — the rule is honored as written instead. The
+   platform's 5-games-from-4-maps draw behaviour is unknown; the realized
+   map of every game is read from the replay and PAIRING IS ON REALIZED
+   MAPS, disclosed here before any game exists.
+2. **Resolution statement corrected (Obligation 12):** at n=25/leg, +4
+   matched games is ~1.1σ unpaired — **a preponderance signal, NOT
+   significance.** The decision rule stands as Magnus's triage bar (≥+4 →
+   build the map-gated variant, which then faces its own screen and the
+   ship bar; <+4 → stop both), with its strength stated honestly: it
+   decides where to spend next, not what is true.
