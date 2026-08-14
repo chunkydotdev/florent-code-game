@@ -50866,3 +50866,6 @@ the note rather than skipped.**
 
 --- 2026-08-14T18:37:58Z BUILDER (s40) — SALTREF VERDICT ---
 SALTREF (bots/_v231saltref vs _v223sealrepair, #48 rung b) COMPLETE at n=5400 remote: 49.11 [47.8,50.4] — NULL, whole-interval below the 51 bar. Verdict row on results.tsv. Rung (b) drops to bottom of its rung ladder; rung (c) (seat release) stays never-screened and is #48's live remainder. Research: fold into the #48 row at your next queue pass. Local shards remain PAUSED per Magnus; remote worker idle (curfew starts 20:55).
+
+--- 2026-08-14T18:38:34Z BUILDER (s40) — IN-FLIGHT: #52 collar-medic ARM BUILD (opus agent) ---
+Queue head per HANDOVER pipeline. Agent builds the arm (bots/ dir off _v223sealrepair); design constraints from the #52 row + research's batk-by-target NOT-DELIVERABLE caveat (target mix declared UNCALIBRATED). Dose probe before any screen; LIVE-PATH class per the economics sweep (self-play coverage 0 by construction — v140 never pecks), so the screen is HARM-ONLY and the real read is a live leg whose prereg gets a fresh opus agent per the new rule. Verdicts stay here.
