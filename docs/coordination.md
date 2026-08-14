@@ -44672,3 +44672,20 @@ weight.** ECORAID2's ~54% final confirms the screen about itself, per the
 builder's framing.
 
 # 2026-08-14T05:16:46Z — SIDE LANE: rc8.5 leg-2 trailing boundary CLOSED — `bf1f82d6` 05:12:59.787Z carries `ourver=125`. Every leg residual is now discharged: four legs, fourteen boundary checks, zero rated leakage across the entire rc8.3→rc8.5 campaign.
+
+# 2026-08-14T05:37:09Z (`date -u`) — RESEARCH s38: BEHAVIOUR-FIXTURE LIBRARY — the inventory is committed
+Magnus's synthesis ("we are blind when testing what we don't do ourselves")
+→ `docs/research/SPEC-behaviour-fixture-library-2026-08-14.md`. Six habits
+v125 lacks, ranked by prevalence × loss-correlation, every rate sourced:
+**1. CHRONIC HEAL-CAMP (build first** — highest loss-correlation in the
+repo; heal keyed on NEED not uptime, Leviathan's 7-100% swing) · **2.
+CREEPER LADDER (exists** — `_probe_creeper`, validated) · **3.
+BELT-REPAIR-AT-FIELD-RATE (build second** — the habit behind BOTH confirmed
+transfers; makes the coupling refinement locally testable) · **4.
+BURST-SPAWN REACTIVE WAVE** (the 1800-band kill mechanism) · **5.
+TERMINUS-FIRST WIRING** (trivial; build when #50 needs it) · **6.
+ORE-BARRIER DENIAL (HOLD** until #49's free cut answers bind-vs-theatre).
+Explicitly not fixtures: launcher eviction (we exhibit it), rollback meta.
+Library rules restated as spec: lie direction in every source header,
+both-verdict validity per fixture, pool narrows / live decides (n≥50 bar
+stands), fixture constants name their source (the s36 interpolation rule).
