@@ -47255,3 +47255,54 @@ an acceptor — the long-known "severed trunk never re-plans" defect. Distinct
 from the chain-medic (which heals damaged-not-missing links) and from #54's
 navigation oscillation. Rows #37/#48 sit near this territory; **none of their
 premises are falsified by it.**
+
+# 2026-08-14T13:18:xxZ (`date -u`) — ⭐⭐ **RESEARCH s40: A REPO-WIDE INSTRUMENT FACT — OUR GAMES-LEVEL BARS ARE ALL TOO NARROW. MEASURED.**
+Surfaced while fixing a CAL-7 resolution error the SIDE LANE caught (their flag,
+my arithmetic error — see PREREG-CAL7 A2). **The bigger fact is not the fix.**
+
+**EVERY interval, MDE and bar this project has denominated in GAMES treats the 5
+games of a match as 5 independent trials. They are not.** They share the
+opponent, the opponent's version, and one 20-minute slice of the ladder.
+Measured on our own record, observed variance of match scores against binomial:
+
+| fixture | 5-game matches | our share | **DESIGN EFFECT** | implied ICC ρ |
+|---|---|---|---|---|
+| **RATED** (`ladder_games.tsv`) | 965 | 0.5123 | **1.529** | 0.132 |
+| **UNRATED** (`meta_join`, non-ladder) | 947 | 0.4809 | **1.833** | 0.208 |
+
+⇒ **EFFECTIVE n IS ~55–65% OF NOMINAL.** 300 unrated games ≈ **164 effective**;
+195 rated games ≈ **128 effective**. **Half-widths are understated by ~1.24×
+(rated) to ~1.35× (unrated).**
+**And note the unrated fixture clusters HARDER than the rated one** — which is
+its own small finding, since the unrated fixture is the one we call
+`FIXTURE_OF_RECORD` and the one we fire in 5-game blocks by choice.
+
+**WHAT THIS TOUCHES, named so nobody has to guess:** the CLAUDE.md figures for
+the *"25-game window has a 12pp same-bot swing"* and the *"MDE of ~39pp"*; every
+CAL panel bar; every screen and battery bar quoted in games; every `±` in a
+leg's verdict sentence. **None of those conclusions is necessarily wrong — the
+direction of the correction always makes a bar HARDER to clear, so it can only
+turn a positive into an unresolved, never an unresolved into a positive.** The
+exposed class is **claims that CLEARED a bar narrowly.**
+**The correction, use it directly:**
+```
+half_width_95 = 1.96*sqrt( p̄(1-p̄) * ( DEFF_u/n_unrated + DEFF_r/n_rated ) )
+                DEFF_u = 1.833 , DEFF_r = 1.529   (measured 2026-08-14)
+```
+**→ BUILDER: this is a one-function change to whatever computes our bars, and
+it is yours to place.** A queue row follows from me. *(Method note: DEFF is
+measured, not assumed — the first draft of A2 carried an ASSUMED ρ and the
+measurement moved it. The repo rule that an instrument must be driven both ways
+applies to a constant too: an assumed ρ has never been seen to be anything.)*
+
+## CAL-7 A2 in one line, for the tape
+±7.5pp was computed against n=395 (the full current-era record) when P1's
+reference is the six-cell pool n=195 → naive ±9.0, **measured-DEFF ±11.6**.
+**P1's ±8pp band is narrower than the design can resolve on every path**, so A2
+ADDS (changing nothing registered): the resolution as a **FORMULA** rather than
+a number, a pre-committed **UNRESOLVED annulus** between band edge and
+resolution in BOTH directions, and **P4** — the directional 5-of-6 test, whose
+null probability (0.109; 0.016 for 6-of-6) is the part the budget CAN resolve.
+Also A2.5: the stability-gate basis is **continuous tenure from ~11:59Z**, not
+11:37Z — a ~1-min v141 blip at 11:58:27Z sits between them and CAL-6's own
+holder guard is what recorded it. Gate conclusion unchanged (65+ min).
