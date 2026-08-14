@@ -49774,3 +49774,56 @@ script.**
 # Obligation-15 lines); the 15a pocket-maps vocabulary fix theirs; the #60
 # deflation to the RETIRE60 registration. Worst-maps book (in flight) gets
 # this as a landed input for its midgard/fjordgate cells.
+
+# 2026-08-14T16:0xZ (`date -u`) — ⛔ **RESEARCH s40: CORRECTING MY OWN "HOME-BASE PHENOMENON" — IT IS A SPAWN-LOCATION ARTEFACT. Plus the two HOME-LOCK admissions.**
+
+## ⛔ THE CORRECTION, AND IT WAS CONSUMED BEFORE IT WAS CHECKED
+I published (15:2xZ): *"Locks cluster at OUR OWN core, not theirs or mid-map —
+17.9% of the retirement population within d²≤8 of our core against 0.8% of
+theirs, 23×. Nothing is in transit. The limit cycle is a HOME-BASE
+PHENOMENON."* **The builder's home-lock agent deflates it: near-core locks have
+a median max-travel of d²=9 — THOSE BOTS NEVER LEFT.** ⇒ **"Locks cluster at our
+base" is close to tautological, because bots SPAWN at our base. It is a
+spawn-location artefact, not a property of the base.**
+**⚠ AND IT TRAVELLED BEFORE IT WAS TESTED: I called it "the sleeper find of the
+day" and the builder typed TWO consequences off it** (lock-nursery bots freeing
+our own spawn/heal tiles; the DEST14B cross-note about recall-home sending idle
+builders into a "23× lock zone"). **Both rest on the deflated framing and need
+re-reading. The RETIREMENT POPULATION and the (c)-carve-out cost are UNAFFECTED
+— those were counted, not interpreted.**
+**⇒ Same shape as the wall-clock mechanism and the grid-fix: a true measurement
+given an interpretation it had not earned, relayed at the confidence of the
+measurement.** Third instance today. **The measurement was 23×; the story was
+mine.**
+
+## ADMISSIONS FROM THE HOME-LOCK REPORT (`docs/research/HOME-LOCK-MECHANISM-2026-08-14.md`)
+**1. SPAWNPOCKET — ADMITTED, and it is the FIRST MECHANISM-BACKED CANDIDATE
+UNDER MAGNUS'S WORST-MAPS DIRECTIVE.** Spawn-chooser free-region sort key + pave
+guard. **15a primary segment: POCKET MAPS {valkyrie, midgard, fjordgate},
+ragnarok EXPLICITLY EXCLUDED (2 pocket bots / 84 games).** Direction: **positive
+on-segment, ~zero off.** ⭐ **midgard and fjordgate are two of the five
+worst-five cells** — a mechanism arriving at the segment the directive named.
+⚠ **"Pocket maps" is a NEW segment term and it is NOT my "lock-heavy" set**
+(midgard/ragnarok/valkyrie) — **using lock-heavy here would dilute the mechanism
+by including ragnarok, which the report excludes on evidence.** Adopted as a
+distinct term; **the segment vocabulary now has a mechanism-specific entry that
+was DERIVED rather than assumed, which is exactly what Obligation 15 asks for.**
+Ships segment-conditional via the MAPCODE-gated pattern — **NOT a pooled
+51-clearer, and its prereg must say so.**
+
+**2. BELTBLIND — NOT a new row. IT IS `#54`'s MECHANISM (3), NOW SIZED.**
+`#54` already carries it from the source read: *"`_bfs_direction` … ignores
+CONVEYOR/SPLITTER/BUILDER tiles the engine actually refuses, so `can_move` vetoes
+steps BFS believes in."* The report adds the magnitude — **~22% of builder-rounds
+with every optimal first step impassable, 64% self-inflicted** — which is a large
+and welcome quantification. ⇒ **it extends `#54` rather than opening a row**, and
+the builder's own judgement stands: **unreachable-goal design risk means a design
+pass before a row, not a build.**
+
+**3. THE ROAD CLOSURE IS THE MOST VALUABLE ITEM AND IT IS FREE.** The report
+recommends AGAINST any third detect-and-repick leg, with the source fact that
+explains BOTH OSCLOCK drops: **`stuck` counts only FAILED moves, and oscillation
+is made of SUCCESSFUL ones — so the escape hatches CAN NEVER FIRE.** ⇒ **a
+rules-level fact about our own code, not an inference: no amount of detector
+tuning reaches it.** Two arms already died to this. **Recorded so a third does
+not.**
