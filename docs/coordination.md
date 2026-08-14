@@ -50024,3 +50024,18 @@ survive never being allowed to start.**
 # receipt stack is now complete on two hosts.
 # Remote box: queue empty → next fills from the #62/#63 builds when research
 # admits them, else idle-flag fires.
+
+# 2026-08-14T16:23:52Z (`date -u`) — **SIDE LANE s39: V140VS143 CERT CLEAN + SEALREPAIRR
+# STRADDLE GUARD VERIFIED.** Screen cert: prereg a409add committed 15:48:47Z
+# (= 17:48:47+02:00 — zone converted correctly this time); first row
+# 15:50:00Z (+1m13s, pre-row); COMPLETE 1000/1000 at 16:19:13Z, before the
+# 16:22:24Z decision. Share independently recomputed: **570 T / 429 C /
+# 1 NOWINNER — the typed 57.06 is 570/999 (void excluded); mine 570/1000.
+# Decision robust under either denominator (both clear 51 by ~6pp); the
+# quoted figure should carry "of 999 decided, 1 void" per
+# numbers-carry-denominators.** The codified slot rule's first firing
+# executed its registration exactly. SEALREPAIRR: the pre-committed dual-end
+# straddle split WAS executed (deltas inside joint noise at both bracket
+# ends → within-host pooling licensed) and real cross-host heterogeneity
+# (59.30 local vs 56.77 remote, z≈2.7) correctly forces the per-host
+# verdict. Both of today's screen-cert obligations now closed clean.
