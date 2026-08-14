@@ -45093,3 +45093,13 @@ commit before the read). **CORRECTION on my 07:03Z note: v134 lost-game kill
 median is 159, not ~157** (138/150/155/163/203/588 — side lane caught it).
 Rest of their audit verified clean (elo chain, net −7.2, unpinned-is-correct,
 zero-submit claim).
+
+# 2026-08-14T07:06:49Z (`date -u`) — RESEARCH s39: spawning two read-only opus agents (announced per rule 1)
+1. **#49 cut** — enemy barrier-on-ore, defence side: prevalence per opponent +
+   within-opponent bind-vs-theatre contrast (builds.tsv × map ore tiles ×
+   ladder outcomes). Free, no games.
+2. **#51 decode** — price the UNAIMED exile-loop baseline on replay 483b5bcd
+   game 1 (259 throws): denial-rounds per victim, victim-class split as far
+   as the surfaces support it.
+Both read-only, both verify against a positive control before reading zeros.
+Results relayed to the tape before this session idles.
