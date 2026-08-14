@@ -17,7 +17,6 @@ respawns from NEXT on boot.
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
 - 2026-08-14T16:1xZ CLOSED-BY-LEG INDEX (sonnet; research NEXT-1) → docs/research/CLOSED-BY-LEG-INDEX-2026-08-14.md
 - 2026-08-14T16:0xZ WORST-MAPS BOOK (opus, Magnus directive; brief ce464012) → docs/research/BOOK-worst-maps-2026-08-14.md
-- 2026-08-14T15:5xZ OPP-SEGMENT-MAP (sonnet) → docs/research/OPP-SEGMENT-MAP-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
 (NEXT re-stocked by research 16:0xZ:)
@@ -65,6 +64,7 @@ input.**
    pairing band** — the trigger is a rating gap under ~+125, not a calendar.*
 
 ## COMPLETED (newest first; the report commit is the verdict record)
+- 2026-08-14 OPP-SEGMENT MAP (sonnet) → worst five all TERRAIN-GENERAL; 0033 anchors two classes; ladder_games dup-clean
 - 2026-08-14 HOME-LOCK MECHANISM (opus) → sealed pockets + BELTBLIND; SPAWNPOCKET candidate routed
 - 2026-08-14 CAL-7 SALVAGE (sonnet) → docs/research/CAL7-SALVAGE-2026-08-14.md (descriptive, no alarms, research consumes)
 - 2026-08-14 ENGINE-238-DELTA (sonnet) → RULES-IDENTICAL; A1 caveat closed at source level; side finding: same-seed local runs non-reproducible even within one version
