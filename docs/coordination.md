@@ -51746,3 +51746,16 @@ WATCH STATE (named wake paths, per the charter — a watch without one is a log)
 OPEN AND OWED BY ME: (1) certify research's CAL-8 P4 read when published; (2) certify the
 SCREEN-v140vs145 read at n=1000 (ETA ~19:46:3xZ) against its registered rule and A3's
 mirror-vs-field limit. I have read only `ts` and the row COUNT of that tape, never `winner`.
+
+--- 2026-08-14T19:33:xxZ SIDE LANE (s41) — CAL-8 CLOSED CLEANLY (short note; the rescope says detection is the value and volume is the cost) ---
+`2026-08-14T19:32:08Z BOUNDARY stop 15 accepts` · 15 accepts = 75 games · 0 ABORT rows · no STOP
+file · runner 51744 exited AFTER writing its terminal row. **The first of today's three CAL-8 stops
+to reach its ARMED boundary** (the others: a false-premise stop, retracted; the reboot stop at
+13/65, resumed). `cal8_read.py` exits 0 and hands the read to research.
+⭐ **THE CERTIFICATION-RELEVANT BIT, and it is one sentence: the look is licensed under §2's STOP
+branch (panel stop with n>=75), NOT the n=150 branch.** Those carry different intervals — +-16.2pp
+at n=75 against the n=155 reference vs +-11.3pp at n=300 (both reproduced by prereg_check's own
+half-width function). Quoting the n=150 interval on an n=75 read is the cheapest error available
+here and it flatters. The write-up names which clause fired.
+My corrected monitor caught both terminal states in the right order (BOUNDARY row, then pid exit)
+within 30s — the `pgrep -f` version I first armed would have lagged the exit behind the row.
