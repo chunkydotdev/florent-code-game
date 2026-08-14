@@ -82,9 +82,21 @@ HYPOTHESES = [
                 .replace("DOSE: pocket-entries 37.0/game vs flag-off 0.0/game (n=24 probe shards)",
                          "DOSE: no probe was run vs no control (n=0)")),
 
-    ("H6  BAR AND BASE RATE IN DIFFERENT UNITS",
-     "BAR written as a proportion (0.52) against a BASE RATE in points (50.0) — "
-     "the 0..1 heuristic the tool documents as unreachable in practice",
+    # ⛔ H6 IS A **NEGATIVE CONTROL**, NOT A HYPOTHESIS. It was published by me as a
+    # third hole and RETRACTED against the primary the same hour: `first_number`
+    # returns 52.0 for `≥0.52`, i.e. the documented 0..1 heuristic does the RIGHT
+    # thing and the document is not defective. Kept, relabelled, because:
+    #   (a) a harness that still reports a retracted finding as a live hole will
+    #       mislead the next reader — my own instrument carrying a known-false
+    #       cell is the defect I flag in other people's;
+    #   (b) converted to a control it now EARNS its place: it is the cell that
+    #       proves this probe can return "not a hole", so the probe has been seen
+    #       to produce both verdicts. A probe that has only ever cried HOLE has
+    #       not been seen to check.
+    # ⇒ EXPECTED: NOT a hole. If this ever reports HOLE, the heuristic changed.
+    ("H6  [NEGATIVE CONTROL] proportion-spelled BAR is read CORRECTLY",
+     "BAR as `≥0.52` against BASE RATE 50.0 — the 0..1 heuristic converts to 52.0, "
+     "which IS the author's intent. My own retracted 'third hole'; expected NOT a hole",
      lambda t: t.replace("BAR: ≥52.0", "BAR: ≥0.52")),
 
     ("H7  A REFERENCE THAT CANNOT GROW, DECLARED AS PROSE",
@@ -107,9 +119,13 @@ def main() -> int:
     holes = []
     for name, why, fn in HYPOTHESES:
         v, fails, warns = verdict(fn(carrier), name)
-        hole = (v == "OK")
+        control = "[NEGATIVE CONTROL]" in name
+        hole = (v == "OK") and not control
         holes.append((name, hole))
-        print(f"[{'HOLE' if hole else 'held'}] {name}")
+        if control and v != "OK":
+            print(f"[BAD ] {name}\n       NEGATIVE CONTROL FAILED — a valid document was rejected")
+            holes.append((name+" (control)", True))
+        print(f"[{'HOLE' if hole else ('ctrl' if control else 'held')}] {name}")
         print(f"       {why}")
         print(f"       PREREG_CHECK: {v}"
               + ("" if v == "OK" else f"  (caught by: {', '.join(sorted(fails))})"))
