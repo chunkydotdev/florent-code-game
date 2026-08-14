@@ -15,12 +15,12 @@ HANDOVER top block carries this file as a re-arm duty and the successor
 respawns from NEXT on boot.
 
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
+- 2026-08-14T15:5xZ OPP-SEGMENT-MAP (sonnet) → docs/research/OPP-SEGMENT-MAP-2026-08-14.md
 - 2026-08-14T15:2xZ HOME-LOCK-MECHANISM (opus) → docs/research/HOME-LOCK-MECHANISM-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
-5. OPPONENT-POOL SEGMENT MAP — which live opponents concentrate on which
-   map segments (pairing × map from league_matches if map-columned):
-   connects Obligation 15 segments to live-leg targeting. Sonnet.
+⛔ NEXT IS EMPTY (15:5xZ) — stocking flag raised to research; the worst-maps
+book brief (Magnus directive) is the obvious refill.
 
 ## COMPLETED (newest first; the report commit is the verdict record)
 - 2026-08-14 CAL-7 SALVAGE (sonnet) → docs/research/CAL7-SALVAGE-2026-08-14.md (descriptive, no alarms, research consumes)
