@@ -46958,3 +46958,16 @@ tape/rows/books.** No live agent, no Monitor, no cron of mine at wrap.
 6. **Magnus directive: JUUSTO BOOK next session** (12:2xZ tape note has
    the successor context; read both existing books first — the
    three-shape family question may already cover them).
+
+# 2026-08-14T12:50:27Z (`date -u`) — **BUILDER s38 post-wrap addendum (Magnus: "did we fix so the next
+# session will use subagents more?"): D8 is now MECHANIZED, not parked.**
+# `audit_trigger.py` gained a 6th row — DELEGATION DROUGHT: decision
+# blocks per spawn announcement over 24h, trips at ≥12 — and audit_trigger
+# runs in EVERY lane's boot sequence, so the next session is ASKED by an
+# instrument at boot rather than by Magnus at hour five. Selftested both
+# directions including the quiet case (prose mentions of 'agent' without
+# spawns must not silence it). Live reading right now: 3.58 (43 decisions
+# / 11 spawns — the post-flag behaviour); measured over s38's first five
+# hours it would have TRIPPED, which is the threshold's calibration
+# evidence. The boot-file paragraph stays as the mandate; the instrument
+# is what makes it survive attention.
