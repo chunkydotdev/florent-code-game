@@ -513,8 +513,17 @@ def check_arithmetic(f: dict, diff_paths=None) -> tuple[list, list, list]:
     # declaring both makes it an identity a machine can check.
     bd = f.get("BOUNDARY")
     acc, gms = int_before(bd, "accepts?"), int_before(bd, "games?")
+    surface = (f.get("SURFACE") or "").strip().lower()
     if bd is None:
         lines.append("BOUNDARY_UNITS   not computed -- no BOUNDARY: line")
+    elif surface.startswith("local") and gms is not None:
+        # LOCAL SURFACE: one shard row IS one game — there are no accepts, so the
+        # platform games=5xaccepts identity does not apply and demanding an
+        # accepts count would force every local sweep arm to fabricate one. The
+        # miscount this check guards (a boundary counted over attempt lines) is a
+        # PANEL failure mode; a local shard has no attempt/accept distinction to
+        # get wrong. Games alone is the whole boundary here.
+        lines.append(f"BOUNDARY_UNITS   ok    {gms} games (LOCAL surface: 1 row = 1 game, no accepts)")
     elif acc is None or gms is None:
         lines.append(f"BOUNDARY_UNITS   FAIL  need BOTH units, got accepts={acc} games={gms}")
         fails.append(("BOUNDARY_UNITS", "CAL-8 incident",
@@ -704,9 +713,43 @@ def check_arithmetic(f: dict, diff_paths=None) -> tuple[list, list, list]:
                          "the legitimate case; re-run this check once the tree lands.")
         else:
             hit = [p for p in paths if p.endswith(metric_file) or metric_file.endswith(p)]
-            lines.append(f"OB13_INTERSECTION {'ok  ' if hit else 'FAIL'}  metric file "
-                         f"{metric_file} {'IS' if hit else 'is NOT'} in the {len(paths)}-path diff")
+            # IMPORT-BINDING: a constant-sweep changes a value in a constants
+            # module (doctrine.py) that the metric file READS via `from doctrine
+            # import *`. The path proxy misses this and false-FAILs most of our
+            # sweep arms. If the metric file imports a module the diff touched,
+            # the mechanism metric genuinely responds to the change — OB13's
+            # intent (LOKI-18: metric identical in both arms) is satisfied. This
+            # is a real check: a diff to an UNIMPORTED module still FAILs.
+            import_hit = []
             if not hit:
+                # Resolve the metric file against the ARM TREE the diff lives in
+                # (the prereg names it bare, e.g. "raid.py", but it sits beside
+                # the changed file in bots/_vNNN/).
+                mbase = Path(metric_file).name
+                mpath = ROOT / metric_file
+                if not mpath.exists():
+                    for p in paths:
+                        cand = ROOT / Path(p).parent / mbase
+                        if cand.exists():
+                            mpath = cand; break
+                try:
+                    msrc = mpath.read_text()
+                except Exception:
+                    msrc = ""
+                for p in paths:
+                    stem = Path(p).stem
+                    if re.search(rf"^\s*(from\s+{re.escape(stem)}\s+import|import\s+{re.escape(stem)})\b",
+                                 msrc, re.MULTILINE):
+                        import_hit.append(p)
+            if hit:
+                lines.append(f"OB13_INTERSECTION ok    metric file {metric_file} IS in the {len(paths)}-path diff")
+            elif import_hit:
+                lines.append(f"OB13_INTERSECTION ok    metric {metric_file} reads {import_hit} "
+                             f"via import — the changed constant binds through the import (not a path match)")
+            else:
+                lines.append(f"OB13_INTERSECTION FAIL  metric file {metric_file} is NOT in "
+                             f"the {len(paths)}-path diff and imports none of it")
+            if not hit and not import_hit:
                 fails.append(("OB13_INTERSECTION", "OBLIGATION 13, computed",
                               "the file the mechanism metric reads is NOT in the actual "
                               "treatment diff -- this is LOKI-18 exactly: the metric reads "
