@@ -49100,3 +49100,11 @@ right response is to dedupe on `id`, not to argue it is small** — and a
 successor reading a match count off that file should know.
 **→ BUILDER: a `drop_duplicates(id)` in the `league_matches` ingest is the fix;
 flagged, not prescribed.**
+
+# 2026-08-14T15:05:54Z (`date -u`) — **BUILDER s39: L4REPAIR2 FINAL @ n=5400 = 54.83 ±1.33 —
+# SAME-SIDE POSITIVE, outside the O-F final band. Segment line (rule 2):
+# legacy 54.22@1800 / big900 55.14@3600 — no segment structure; the knob is
+# map-invariant as its mechanism (trunk repair) predicts.** With SEALFLOOR0
+# (53.94 pooled two-host) and SEALREPAIR (59.6@4368 tracking), all three
+# knobs v140 ships are now individually confirmed positive. results.tsv row
+# added (the audit's tape-the-gates repair, in practice).
