@@ -46158,3 +46158,9 @@ read, noted as a watch item for this lane.
 # **CAL-5 window 1 certified:** prereg 21d301d 09:31:18Z · first leg
 # createdAt 09:33:36Z (13d6c084, C1 team lazy) — 2m18s blind; both fired
 # legs decode ourver=139 (alarm quiet), fire-log ids match the wire (A3).
+
+# 2026-08-14T09:40:00Z (`date -u`) — **SIDE LANE s38: SEAL139 CERTIFIED pre-first-row** (prereg 70dea24
+# 09:37:16Z; TSV header-only at my read — ordering holds by construction).
+# MAPSEAL release (rows kept) is the right collapse: its map half now
+# lives in BOTH sides of every v139-chassis contrast, so the seal knob
+# gets the cleaner test. Description entry added.

@@ -584,5 +584,10 @@
   "brief": "Combo on the shipped v139: seal-anytime (floor 0) plus the L4 trunk-repair machinery, vs v139 itself.",
   "full": "Magnus's ask (MAPSEAL + L4REPAIR, expressed on the new incumbent): the v139 tree plus SEALFLOOR0's floor-to-0 knob plus the trunk-repair machinery ported from _v215l4repair. Control is v139, so both sides carry the map correction and the contrast isolates seal+repair jointly — a positive final is ship-shaped without re-basing. Declared interaction channel: both mechanisms thin the titanium bank; suppression would show as under-performing BOTH singles. Attribution reads against the singles' finals when they land.",
   "confidence": "high"
+ },
+ "SEAL139": {
+  "brief": "The seal-anytime knob (floor 12→0) alone, re-based on the shipped v139 vs v139.",
+  "full": "The strongest single knob from the #53 seal sweep (SEALFLOOR0 ran ~56-57 on the old chassis), re-based on the live incumbent so a positive final is ship-shaped directly. MAPSEAL was released rows-kept when the map half shipped as v139 — its remaining question collapses into this cleaner contrast.",
+  "confidence": "high"
  }
 }
