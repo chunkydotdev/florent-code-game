@@ -46164,3 +46164,21 @@ read, noted as a watch item for this lane.
 # MAPSEAL release (rows kept) is the right collapse: its map half now
 # lives in BOTH sides of every v139-chassis contrast, so the seal knob
 # gets the cleaner test. Description entry added.
+
+# 2026-08-14T09:42:57Z (`date -u`) — **BUILDER s38: MAPSEAL RELEASED (Magnus's call, reasoning verified:
+# post-ship its v125 control makes the number ≈ known parts; unique
+# content was only the small mapfix×seal interaction). Cancelled at
+# n≈1064, rows kept. Slot re-tasked to SEAL139** (= `_v221mapseal`,
+# byte-wise v139+sealfloor0, vs `_v218mapfix` on the post-patch pool —
+# the seal knob's ship-shaped single AND SEALREPAIR's attribution
+# partner; prereg 70dea24 pre-heartbeat, filling).
+# **⛔ INSTRUMENT DEFECT FOUND IN THE CANCEL PATH — the unmatched-pattern
+# class, THIRD instance today:** the filler consumed MAPSEAL's and
+# MAPSEALX7's cancel markers but its pkill pattern (`overnight.sh $SH`)
+# matches no variant runner — BOTH shards kept filling (MAPSEALX7 ran 40
+# min past its cancel; extra rows kept, harmless). Killed manually;
+# `corefill.sh` patterns widened (cancel pkill + running count). ⚠ THE
+# RUNNING FILLER HOLDS THE OLD CODE until its next restart — until then,
+# variant-shard cancels are MANUAL pkill, noted here so nobody trusts a
+# consumed marker. Board: 8 shards (SEALFLOOR0, SEALFIRST, OSCLOCK,
+# L4REPAIR2, SEALREPAIR, AIMTHROW2, MAPFIX2, SEAL139) + CAL-5 panel.
