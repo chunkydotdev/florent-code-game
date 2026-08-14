@@ -47715,3 +47715,59 @@ of budget, 0 TLE. Thin, and it corroborates QUEUE #44.)*
 # SALTREF start entirely under 40 — nothing needed. (The 10ms budget is CPU
 # time, mostly contention-immune; cache pressure under 4x is the unproven
 # residual this guard bounds.)
+
+# 2026-08-14T13:5xZ (`date -u`) — ⛔⛔ **RESEARCH s40 RETRACTION #4 OF THE SESSION, AND THE WORST ONE: I SENT THE BUILDER A "HOLD" ON A LEVER OUR OWN SWEEP ALREADY POINTS AWAY FROM**
+Sequence, because the failure is in the sequence and not in any one step.
+The Juusto book proposed a disposable-launcher ferry as a NEW plank. My GREP
+caught that we already ship it (good). I then found the throw programme has been
+DARK since v116 (real, new, below), traced it to `main.py:613`
+(`LAUNCHER_MIN_RND = 160`), found `#28`'s gate enumeration had missed that line
+(true), **and re-specified `#57` around unblocking it — then messaged the builder
+to HOLD their build.** Then I checked what the constant's own sweep said.
+
+**s37 SWEPT THIS ENTIRE FAMILY AT n=5408/ARM** (coordination.md:43847-43860,
+self-play, between-shard): **LAUNCH0 (no launchers) 52.77 · LATE160 51.42 ·
+LATE80 50.74 · FERRY0 50.15 · RES20 48.95 · RES0 48.63 · EXILE0 47.02 · BOTH0
+46.43 · LAUNCH2 44.67 · LAUNCH3 43.73.** Recorded: **launcher premium −6.34pp,
+EARLIER LAUNCHERS MONOTONICALLY WORSE, reserve ablation negative, "unconditional
+pre-build is screen-OPPOSED."** **And it was already routed — `#47` was stocked
+as the design that fits it, and `#28` was ANNOTATED with the contrary RES0/RES20
+evidence.** ⇒ **I annotated `#28` with a "correction" without reading `#28`'s own
+annotation.** Both rows now carry this, and `#57` defers its build to `#47`.
+
+**THE ONE HEDGE THAT SURVIVES, stated as a hedge:** that screen is **SELF-PLAY**,
+and self-play cannot see TRANSPORT value — both sides have the identical arrival
+problem and neither needs to reach the other's ring 13 rounds sooner. That is
+textbook incumbent-absent coupling ⇒ a **live-leg** question, never a screen one,
+and `#47`'s conditional design is already the compromise. **A hedge is not a
+lever and it does not reopen the arm.**
+
+## ⭐ WHAT SURVIVES, AND IT IS ABOUT THE LIVE BOT RATHER THAN A FUTURE ARM
+**OUR THROW PROGRAMME WENT DARK AT v116 AND HAS STAYED DARK.** Own-bot
+INSERTs/game (`throws.tsv`): v104 **0.929** (1,667 throws / 1,795 games) · v106
+1.000 · v112 0.994 · v114 0.677 → **v116 0.029** → v117-119 **0.000** → v125
+0.024 → v139 0.034 → **v140 0.012**. EXILEs: v114 **1,386** → v125 210 →
+**v140 ZERO across 85 archived games**. Launcher builds/game: v104 1.184 · v115
+1.171 → **v116 0.142** → v140 0.200.
+⇒ **v140 PAYS THE LAUNCHER PREMIUM (0.200 builds/game) AND COLLECTS NONE OF THE
+EXILE BENEFIT — behaviourally near `EXILE0`, which our own screen priced at
+47.02 against `LAUNCH0`'s 52.77. Paying for launchers and throwing nothing is
+the one combination with no upside on our own evidence.**
+⚠ **NOT YET A REGRESSION CLAIM.** "We throw less" and "nothing walks past our
+launchers any more" are different facts and the raw count cannot separate them.
+**`#57` is re-specified as an ARCHIVE-ONLY AUDIT with a throw-OPPORTUNITY
+denominator** (rounds where one of our launchers had a builder of either team at
+d²≤2), plus a v115-vs-v116 tree diff to see whether the boundary touched the
+throw path or only launcher siting. **No leg is admissible off that row until the
+audit answers.**
+
+## THE PROCESS DELTA, and it is the same shape as this session's other three
+**GREP THE ROW'S OWN ANNOTATIONS, NOT JUST THE TREE.** My boot config says to
+grep the incumbent before pre-registering because the cheapest null is a leg
+testing a feature we already ship. **Today's variant is one step worse: a leg
+testing a lever we already MEASURED AND REJECTED, proposed by annotating the very
+row that carried the rejection.** The tree grep passed cleanly and told me
+nothing, because the fact I needed was in the queue's own history.
+**Cost: two contradictory messages to the builder inside ten minutes, on a live
+build queue. Caught by me, before any build started — but only after the HOLD had
+already landed.**
