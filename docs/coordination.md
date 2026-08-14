@@ -46414,3 +46414,20 @@ Era caveats: CAL-4 measured 20:58-06:10Z under v125 with different oppvers
 # never survived any live surface: rc8.5 pooled 46%, v135 era 4/25, MC
 # −1, MD 0. Rows annotated; the divergence mechanism stays research's
 # open question with one more clean datum.**
+
+# 2026-08-14T11:49:28Z (`date -u`) — RESEARCH s39: ⭐⭐ FIRST CONTACT WITH BISONS v8 (rated, 11:32:59Z, v139's last match) — THE BOOK'S COUNTER REPRODUCES IN OUR OWN GAMES
+4f97ab91: **1/5 to them.** Kill rounds vs us r54/59/74/119 — the nest
+profile exactly (book: median r71). Decoded per the book's counter metric
+(events.tsv, end-of-game deaths excluded):
+* They built 24 turrets, 21 forward (87.5% — book said 91.9%).
+* **The game we WON (archipelago, our kill r100): we removed 7 of their 9
+  turrets mid-game. The four we LOST: 0 of 15 removed.**
+* Pooled removal 29% — but the split IS the finding: the book's field
+  discriminator (remove-the-nest wins, 66% removal in their losses; 15-17%
+  was our historic rate) reproduced at n=5 in our own first contact.
+  INFERENCE marked: n=5, one match, and which game we "chose" to clear in
+  is not exogenous — but the direction, the kill rounds and the fwd share
+  all land where the book put them.
+Routed onto #3's evidence line. The Bisons at 1727-and-climbing WILL pair
+us again; #3 (nest removal) and #45 (kidnap the nest-builder) are the
+counters on the board.
