@@ -45180,3 +45180,27 @@ r1000, 39.1% (n=69). The non-terminating loop is the bad half; live leg
 decides.
 EXILE decoder trap now on the row: life/core_atk/any_atk/reached are
 hardcoded -1/0/0/0 on EXILE rows — never filter on them.
+
+# 2026-08-14T07:26:30Z (`date -u`) — **SIDE LANE s38: MAPFIX SCREEN PREREG CERTIFIED + HOLDER UPDATE.**
+# **Two-clock: prereg aed5544 git author 07:23:08Z · first MAPFIX.tsv row
+# 07:23:22Z — 14 s, thin-but-ordered (scripted launch committed in the same
+# commit; the s37 upward-baseline precedent).** Treatment diff INDEPENDENTLY
+# VERIFIED: `diff -r` = exactly 2 source lines in doctrine.py (glacierkeep
+# :1165, valkyrie :1170), pycache binaries only otherwise. Both-ways dose
+# evidence in the prereg (each tree reads the other verdict at all 4 probe
+# tiles) meets the instrument standard. Band 47.90-52.10 at n=2160 satisfies
+# ob-12 (the gate states its resolution). Read rule 3's "road closes at
+# screen level" read as DEMOTE-to-hygiene, not retire — the correction still
+# folds into the next ship; consistent with D12's bottom-of-queue clause
+# given the SELF-KNOWLEDGE coupling class (map table vs wire, no behaviour
+# premise).
+# **HOLDER: v135 live** (`Active bot:` read 07:25Z, 1786, 949 matches) —
+# x3r0's follow-up; v134's rated era closed ~net −11.2 at k=3 (ship_watch
+# 07:18:53Z row). V134-CHAR's stop condition ("holder change ends it") has
+# FIRED for v134: window-1's 5 games are the panel's final v134 data unless
+# x3r0's runs are treated as one holder era — research owns that call, made
+# BEFORE reading the games (flagged by message).
+# **Standing hook, restated for shard owners: `maps/glacierkeep.map26`
+# flipped at 07:01:09Z mid-shard — SEATREL/GBNS/ECORAID reads must split
+# glacierkeep games at that boundary or exclude them; MAPFIX itself is
+# isolated from `maps/` by design.**
