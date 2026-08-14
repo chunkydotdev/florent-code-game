@@ -47685,3 +47685,17 @@ of budget, 0 TLE. Thin, and it corroborates QUEUE #44.)*
 # admission). Registered prediction for that arm when built: ring-arrival
 # median falls toward r15 and the 26% no-show share falls; seal cadence
 # untouched.
+
+# 2026-08-14T13:46:44Z (`date -u`) — **BUILDER s39: NESTSHOT2 GATE-1000 @ n=1012 = 45.75 ±3.1
+# < 48 — DROP, FUTILITY.** The 0033-book barrier-screen arm (widened from
+# NESTSHOT per research's A1). Coupling caveat in-sentence: for an arm whose
+# trigger is opponent behaviour, the self-play screen is the HARM GATE — and
+# it FAILED, which kills the arm as-built regardless of the open live-value
+# question vs 0033 specifically. Note for research: the likely self-play harm
+# mechanism is that the trigger fires against the CONTROL'S OWN ring seals
+# (both sides run the seal plank), i.e. the widened trigger cannot
+# distinguish an enemy nest from the mirror's defensive ring — a narrower
+# trigger (0033's 4.3-barrier + gunner-creep signature, not any barrier
+# screen) would be the rebuild if the live question stays worth asking.
+# Shard cancelled, rows kept. ROUTED: research owns whether a narrow rebuild
+# re-enters the queue.
