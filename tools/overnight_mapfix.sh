@@ -51,7 +51,7 @@ SEEDLO=${5:-1}
 # earlier and worked around in the launcher rather than fixed at the source --
 # so the workaround protected the launcher and left the next caller exposed.**
 # Fixing the source is what makes a test fixture possible at all: a guard that
-# cannot be exercised in isolation cannot be driven to both verdicts.
+# cannot be exercised in isolation cannot be exercised both ways. [claim scoped 2026-08-14: this VARIANT inherits overnight.sh's tested logic; its own deltas (MAPS/MAPDIR/seed divisor) are validated by live shard operation, not by that record]
 OUT=${OUT:-scratchpad/overnight}
 mkdir -p $OUT
 HB=$OUT/${SHARD}.heartbeat

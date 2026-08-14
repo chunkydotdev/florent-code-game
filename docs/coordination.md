@@ -46606,3 +46606,126 @@ what our rare wins did right and which counters on our queue apply.
 # 12:24:29Z vs first row 12:24:35Z; benchmark/echo-loop framing clauses
 # present). The controlled answer to an 81.7% self-play claim — the exact
 # instrument the v135 lesson prescribes. Description entry added.
+
+# ============================================================================
+# 2026-08-14T12:31:24Z (`date -u`) — **BUILDER s38 WRAP** (Magnus: "when you have a good spot you can
+# wrap" — spot taken with MAPFIX2 ~200 rows from final; its read types
+# below when the watch fires). Arm retro ran FIRST (v3; basis = the
+# session's dated blocks and the platform, never memory).
+# ============================================================================
+
+## ARM RETRO (v3)
+
+**Q1 VERDICTS (~24 typed).** 3 finals (APPRLAUNCH2 52.39-replicates ·
+ECORAID2 52.91-replicates · MAPFIX 55.65 ship-confirmation) · 12 gate reads
+(2 futility drops: GBNS, SEATREL; 1 late drop: OSCLOCK2; 9 continues) · 2
+matched-leg triages (MC −1, MD 0 — both candidates stopped, test complete)
+· upward-baseline 2/25 + the 8%-vs-45% cross-set contrast (labeled
+post-hoc) · CAL-5 equilibrium-unchanged · v134 wire grades (1/3/1 — my own
+mechanism story falsified) · NULLHOST cert 49.00 · 3 allocation cancels
+typed SEPARATELY from futility (X3R0V134, SEALFLOOR24, SEALFIRST/MAPSEAL/
+SEAL139 per Magnus) — the rule never stretched. Every final carried its
+coupling caveat in the verdict sentence. ✅ FIRES: **(a) OSCLOCK2's drop
+ran ~45 min late — the gate watch had fired for SEALREPAIR and exited; I
+typed that gate from a BOARD READ mid-ship-flow and never re-armed. Magnus
+caught it, not the machinery. ~800 wasted rows, the s37 AMMO0 class
+recurring in miniature DESPITE the durable watch — because the manual
+re-arm step survived into the durable design.** (b) The V135ECORAIDLIVE
+leg died to my zsh quoting bug inside its one-shot window (window lost;
+zero platform cost) — and MD's burst script then carried a SECOND syntax
+bug, caught in-window at 60 s cost. Both after "pre-written scripts" was
+adopted; the missing half was `zsh -n` AT WRITE TIME, adopted mid-session
+and held for MC/MD.
+
+**Q2 RETRACTIONS + DIRECTION.** (1) v134 RICH_TI-burst mechanism —
+falsified by the grading I commissioned; direction AGAINST my earlier
+confident story. (2) v135 era count carried a superseded number (3→4
+unrated) — bookkeeping, side-lane-corrected. (3) OSCLOCK-arm-1-as-the-fix —
+superseded by my own analysis + Magnus's push, toward MORE work. (4) The
+leg-1 kill→reversal→failure arc: the kill was CONSERVATIVE, the reversal
+correct, the failure mechanical. **Direction profile is MIXED this session
+— an improvement over s37's all-flattering pattern — and the two catches
+that mattered most were still structural (the agent's positive control on
+research's inverted claim; claim_check at wrap), not judgment.**
+
+**Q3 INSTRUMENTS (~9 built/fixed, each driven both ways or the gap
+declared).** gate_watch.sh (fixture 6 verdicts + blind + share; the s37
+fallthrough encoded; its REMAINING defect is the manual re-arm — see D4) ·
+holder_watch.sh (5+ real fires incl. every x3r0 displacement; the nohup
+no-wake mistake made TWICE and caught twice) · runner_pat.sh lib (the
+3-instances-in-one-day pattern class closed with a live kill-path selftest
+cell) · corefill_status ×3 (variant liveness, freshness-aware DEAD, ps
+snapshot + DONE cache 73s→20s) · corefill.sh cancel path (was consuming
+markers while killing NOTHING — zombie shards ran 40 min past cancel) ·
+VPS kit first green acceptance (setup hardened twice on real failures:
+load-bearing-file+version venv guard; rootless uv for old-python boxes) ·
+in-worker curfew (predicate driven both ways) · vps_pull monitor · CAL
+panel holder guard 3-for-3 on mid-panel displacements.
+
+**Q4 CLAIMS AHEAD OF RECORD.** claim_check fired at wrap on 3 runner
+VARIANTS inheriting overnight.sh's tested-claim header — scoped per the
+rule's own remedy, now green. Two commit trailers carried a typo'd session
+URL (cosmetic, noted for exactness).
+
+**Q5 THE SLOT (the day's defining surface).** TWO SHIPS MINE (v139 'Loki
+v9' map-correction @09:05, 1 rated match 5-0 +16.1 before displacement...
+then era k=8 net −34.9 → stop-loss retro-validated the v140 timing; v140
+'Loki v10' @11:37 on Magnus's word, k=1 +16.1, sitting). Two submit-hold
+legs (v136/MC, v138/MD) with ~2.5 min and ~70 s exposure, ZERO rated
+leakage (side-lane certified; MC's 40 s boundary to v137's activation
+closed by explicit ourver reads). One Magnus-ordered rollback executed
+(v135→v125). FOUR x3r0 displacements taped with timestamps, zero
+counter-rolls by any lane, resolved by the humans; v141 analyzed ON HIS
+REQUEST → tree declined, salt idea grafted with credit (MAPSALT), his
+81.7% claim calibrated against the echo-loop record and put under the
+honest test (V141VS140 running).
+
+**Q6 BUDGET.** Local: ~50k rows across the day's shards; futility gates +
+allocation cancels refunded ~20k rows' worth of core-time to better arms.
+Live: ~50 unrated accepts (3 pinned legs, 2.9 panels' worth), zero rated
+leakage all day. Remote: first fleet box certified and ~1.5k replication
+rows banked before its curfew. The unrated budget idled only during slot
+churn windows.
+
+**Q7 SUCCESSOR — READ HANDOVER TOP BLOCK.** Dies with me: gate_watch loop
+· holder_watch (EXPECT=v140) · CAL-6 runner · vps_pull loop · the finals
+typing for SEALFLOOR0/SEALREPAIR/L4REPAIR2/AIMTHROW2/MAPSALT/NESTSHOT/
+V141VS140 (+ MAPFIX2 if it outlives this wrap). Survives: keeper · 4
+watchers · cores_idle · cpu_watch · corefill filler+shards · REMOTE WORKER
+(curfew self-managing, resumes 04:00Z) · dash server (nohup'd by side
+lane).
+
+## THE ONE QUESTION
+**Did I decide something the machinery could not catch? Yes, twice, same
+root: the wake→type→re-arm loop has a HUMAN step, and under ship-flow
+pressure I consumed wakes without re-arming (OSCLOCK2's 45-min hole;
+caught by MAGNUS). The machinery that exists is sound; the step between
+machines is where this session leaked. D4 routes the fix.**
+
+## PROCESS DELTAS — routed, not merely recorded
+**D1 (→ adopted mid-session, held):** the tape moves BEFORE the platform
+action — reversal notes precede fires.
+**D2 (→ adopted mid-session, held):** fire scripts are pre-written AND
+`zsh -n`-checked at write time; two in-window syntax failures in one day
+is the evidence.
+**D3 (→ built: tools/lib/runner_pat.sh):** a pattern used by N tools lives
+in ONE sourced file with a selftest that includes the kill path — the
+"second implementation is the one nobody tests" rule applied to a regex.
+**D4 (→ SUCCESSOR BUILD ITEM, spec'd):** gate_watch must not depend on a
+human re-arm: either self-re-arming (wake appends to a DUE ledger and the
+loop continues; the session consumes the ledger) or the wake message
+carries the re-arm as its first line. The s37 lesson said RE-ARM BEFORE
+WORK; s38 shows a rule held in attention fails under ship-flow — build it
+into the tool.
+**D5 (→ practice, applied 3×):** allocation cancels are typed as SEPARATE
+decisions from futility gates — the gate rule stays unstretched.
+**D6 (→ practice, applied to every final):** the coupling caveat lives IN
+the verdict sentence, not beside it.
+**D7 (→ built + certified):** fleet admission = NULLHOST cert + host/seed
+partition + era labels; curfew enforced in-worker. The pattern is now
+reusable for every future box.
+**D8 (observation, parked for the retro-of-retros per Magnus):** the
+delegation drift (one agent in the first 5 hours) was flagged by MAGNUS,
+not by any instrument; three agents ran post-flag and two carried
+positive controls that caught real errors. If the pattern recurs, an
+instrument (agent-per-verdict ratio in audit_trigger?) is the shape.
