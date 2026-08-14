@@ -1,3 +1,66 @@
+# LIVE: **v134 = x3r0's authorized retune run** (v125+17 constants, analysis in
+# coordination 06:4xZ) — **v125 = `bots/_v197mapcode` "Loki v8" is the bot we
+# restore to**; rollback deeper: `_v187saltidle_f` (v123).
+# ⛔ VERIFY `fcode status | grep 'Active bot:'` BEFORE ACTING. At wrap 06:51Z:
+# rating ~1797, rank ~#17. **MAGNUS'S STANDING SHIP STANCE: HOLD — next ship
+# needs BIGGER SIGNIFICANCE than inside-noise (coordination 2026-08-13
+# ~19:5xZ). SHIP_SIT + the raised bar both govern.**
+
+## ===== ⛔ FIRST: WHAT DIED WITH s37 — RE-ARM BEFORE TRUSTING ANYTHING =====
+##  1. **ALL SESSION WATCHES ARE DEAD:** the consolidated corefill gate/finals
+##     watch (state file scratchpad/gate_watch_state.txt is CURRENT — re-arm
+##     the loop from any s37 coordination block, RE-ARM BEFORE WORK), the
+##     v125-return watch, the v134-rated-match watch. Futility gates
+##     (RULE-futility-gates-2026-08-13) are typed by the BUILDER at 1000/2700.
+##  2. **DEFERRED LEG SEQUENCE (resumes when v125 returns):** MB = v125 on ECO
+##     maps (antler/auroraveil/frostgate/royale) vs upward five; then MC/MD
+##     candidate legs pinned to MA/MB ids. Prereg: LEG-mapconditional-test +
+##     Amendment 1 (4-map sets, realized-map pairing, +4 = preponderance
+##     triage). MA fired (ids in coordination 06:08Z). Decision rule: >= +4
+##     matched games -> map-gated build; else STOP both candidates.
+##  3. **v134 DUTIES:** grade the 9 registered wire predictions against his
+##     rated games as they decode (agent report, coordination 06:4xZ); the
+##     X3R0V134 courtesy shard's gates; the r0 RICH_TI finding is surfaced to
+##     Magnus/x3r0 — their call, not ours.
+##  4. **CAL-4 is CLOSED (boundary-stopped in-runner); no CAL-5 during the
+##     hold.** CAL-3/2/1 spent — no comparative re-reads.
+## SURVIVES: keeper · elo/match/opp/replay watchers · cores_idle · cpu_watch ·
+## corefill filler + fleet · the boundary stop INSIDE panel_cal1.sh.
+
+## ===== THE NIGHT IN ONE PARAGRAPH =====
+## Ship bar raised (Magnus) -> s36 slate finals typed (UNDERECO only above-
+## band single; COMBO 52.30; ECORAID fix 53.22 best) -> rc8.3/8.4/8.5 live
+## legs, ECORAID's leg-1 14/25 REVERSED by the pre-declared pooled n=50
+## (23/50 vs control 48% - NO live support, packet correctly not assembled)
+## -> the divergence became the COUPLING TEST (Magnus): falsified-as-
+## universal on salt, refinement (field-universal vs incumbent-absent
+## behaviour) 7/7 retrodictive, prospective probes GBNS/L4REPAIR/SEATREL
+## screening with registered predictions -> behaviour-fixture library (2
+## bricks calibrated; salt-preempts-repair banked) -> deepening lane stocked
+## (#52 collar medic, #53 seal sweep) -> map-conditional test designed
+## (qualifying map sets confirmed both candidates, 4 legs, half fired) ->
+## x3r0's v134 live + analyzed (v125+17 knobs, r0 trigger flag, courtesy
+## battery queued).
+
+## ===== THE QUEUE, IN PRIORITY ORDER =====
+##  1. **Type gates/finals as corefill lands:** ECORAID2 (~53.4, finishing),
+##     GBNS (marginal 49, GATE-2700 will likely drop), SEATREL (the coupling
+##     test's decoupled probe — its final + live transfer prediction is the
+##     TEST), X3R0V134 (courtesy battery, gates apply).
+##  2. **Resume MB/MC/MD when v125 returns** (item 2 above) -> map-gated-or-
+##     stop decision.
+##  3. **Upward-baseline read** (25 games fired 05:47, ids in prereg) — v125
+##     vs Erebus/HTTP418/0033/farming/kladde; the design brief for the
+##     bigger-significance candidate (camp class) hangs on it.
+##  4. **Coupling-test prospective reads** as GBNS/L4REPAIR/SEATREL final +
+##     get live legs (predictions registered in TEST-coupling-hypothesis).
+##  5. **Deepening lane:** #52 collar medic (fixture library customer #1),
+##     #48(b) salt-refresh, #53 seal sweep. Screen-trustworthy classes.
+##  6. **#51 throw-loop** (serial-victim, emergent) — D17 classification in
+##     its prereg when built.
+## ⛔ Queue: 30+ unblocked; ALWAYS_BE_RUNNING governs cores; the live budget
+## is planned like cores now (research fire orders + leg preregs).
+
 # LIVE: **v125 = `bots/_v197mapcode`** = **"Loki v8"** — shipped 10:16Z (s36, Magnus's call).
 # ⛔ **VERIFY WITH `fcode status | grep 'Active bot:'` BEFORE ACTING ON THIS LINE.**
 # At wrap 16:4xZ: **rating 1752 (Emerald), k=18, net5 +50, ZERO drawdown since
