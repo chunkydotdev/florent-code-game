@@ -215,8 +215,8 @@
   "confidence": "high"
  },
  "L4REPAIR": {
-  "brief": "Repairs cut conveyor trunks and finishes belt heads our own builder abandoned mid-walk.",
-  "full": "LOKI-49, from a replay observation: we repair 6.8% of our cut conveyors against a field rate of 40.5% and our own opponents' 50.3%, with the matcher driven to the opposite verdict four different ways. The arm's own build found the defect is worse than that - PAVE_TRAIL_ON is false in this tree, so the 'incidental repair' the doctrine describes does not exist at all and repair is structurally zero. The biggest surprise came from counting: only 1 of the first 55 repaired tiles had ever held a conveyor, so the belt half is mostly repairing our own dead heads, chains the link-builder abandoned mid-walk because it pops its queue as it lays it. The arm fixes both halves and cannot attribute between them. Dose verified at 40 repairs in 40 games against the control's 0. CPU headroom is unverified because the local CPU instrument reads zero, so shipping it needs a platform check first. Note two shards carry this name: the original against the v116-era holder, and a later re-based run against the v125 map-code incumbent.",
+  "brief": "The OLD Aug-12 l4repair experiment (v116 era) — its rows are this name's only data; see L4REPAIR2.",
+  "full": "This name was accidentally reused: an Aug-12 shard (_v177l4repair vs the v116-era holder) completed under it, and a NEW Aug-14 port (_v215l4repair vs v125) was silently never launched — the old run's started-marker blocked the launch-once guard while this row read DONE. All data under this name is the OLD experiment. The new port was renamed L4REPAIR2 and runs separately. Found by the description-drafting pass; verified and fixed by the builder same hour.",
   "confidence": "high"
  },
  "GUNAX0": {
@@ -563,6 +563,11 @@
  "MAPSEALX7": {
   "brief": "Benchmark: the MAPSEAL combo vs teammate x3r0's v137 (the map-routing bot) on the post-patch pool.",
   "full": "Magnus's ask: a local head-to-head of the MAPSEAL combo tree against the pulled v137 artifact (x3r0's mixture-of-experts router: rc8.5/ECORAID chassis by default, the v134 retune on three weak maps). NOT the plank's verdict surface — MAPSEAL's verdict stays on its vs-v125 shard. Pre-registered expectation: MAPSEAL over-performs on valkyrie and glacierkeep, where v137 still carries the stale pre-patch map tables; the other 13 maps read the chassis matchup. Per-map splits double as per-chassis attribution on v137's side.",
+  "confidence": "high"
+ },
+ "L4REPAIR2": {
+  "brief": "The v125-era port of the l4repair plank — renamed after a name collision silently skipped its first launch.",
+  "full": "Same tree/control/seed as the intended _v215l4repair line that never ran under the L4REPAIR name (a stale launch-once marker from the Aug-12 experiment blocked it). One of the coupling-refinement's registered prospective probes; until this completes, the coupling test's L4REPAIR prediction has no data behind its subject.",
   "confidence": "high"
  }
 }
