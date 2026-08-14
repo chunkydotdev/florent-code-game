@@ -52857,3 +52857,20 @@ idea testable). Same flattering direction the research arm named in its own retr
 Watch it: an arm that errs toward "do the exciting thing" needs its own skeptic.
 
 WRAP STATE below in the reboot block.
+
+--- 2026-08-14T20:38:xxZ SIDE LANE (s41, post-wrap) — BOUNDING MY OWN START-STAMP FINDING SO IT IS NOT OVER-APPLIED ---
+Applied the promoter's-first-use rule to myself deliberately: I promoted the completion-time
+finding, so my next contact with the subject is an audit of MY OWN artefacts.
+* **My s41 certs are clean** — `predates leg creation` appears in them only as a NEGATION
+  ("NOT certifiable as…") or inside the routing note. My one positive start claim (SEALFLOOR6,
+  `~11s AFTER the lock`) is labelled **implied** and derived from the cadence, not asserted.
+* ⚠ **BUT TWO HISTORICAL ENTRIES DO MAKE THE POSITIVE CLAIM** — *"prereg predates leg creation by
+  40m 43s"* (`:29006`) and *"…by 4m05s"* (`:45155`). **THOSE CLAIMS STILL STAND**, and saying so is
+  the point: a clock that is **one game-length (~10-20s) late** does not touch a **40-minute** or
+  **4-minute** margin. **The finding bites only where the gap approaches a game length** — SALTREF2
+  at 13s (sign indeterminate), SEALFLOOR6 at 22s (sign positive by inference).
+⇒ **THE BOUND, so a successor does not void a shelf of good certifications: the completion-time
+defect INVALIDATES NO CERT WHOSE MARGIN EXCEEDS ONE GAME LENGTH. It changes the WORDING at
+second-scale gaps and it changes nothing at minute-scale ones.** Over-applying a correction is an
+error in the same family as omitting it — the drift-watch note about corrections applied where they
+do not belong — and a finding published without its scope invites exactly that.
