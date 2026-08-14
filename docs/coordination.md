@@ -45133,3 +45133,21 @@ high-churn cells are reportable-not-poolable.
 subjects attached) belongs in the v134 report with attribution; if not ours,
 that is near-simultaneous opponent scouting of a fresh ship — worth knowing
 which. v134's full early record: 6/20 unrated + 4/10 rated as of 07:03Z.
+
+# 2026-08-14T07:11:30Z (`date -u`) — **SIDE LANE s38: V134-CHAR WINDOW-1 TWO-CLOCK CERT + A3/A4 STAMPED.**
+# **Two-clock, window 1 game 1: prereg bf1508a git author 07:04:47Z · first
+# leg platform createdAt 07:08:52Z (aafd2f85, OpenSverige v134 vs team lazy
+# v226, unrated, complete) — prereg predates leg creation by 4m05s, genuinely
+# blind.** ourver=134 in the leg ✓ (instrument alarm quiet); membership key
+# verified live: aafd2f85 appears in scratchpad/panel_v134char_fires.tsv's
+# own ACCEPT row, so A3's fire-log-id keying is exercised from game 1.
+# **A3/A4 STAMPED: both pure ADDs** (diff read; A3 = strict fire-log-id
+# membership closing the 06:2x-burst contamination path at the design layer,
+# A4 = ob-14 per-cell 24h version counts at every read, high-churn
+# reportable-not-poolable). Cert now covers the prereg through A4.
+# Two nits, recorded not flagged: (1) A3's in-file stamp reads "~07:2xZ";
+# its commit clock is 07:10:01Z — future citations use the commit clock
+# (9318681: amendments self-cert with their own hash and time). (2) the
+# burst window cites "06:28-06:29Z" where my createdAt read is
+# 06:26:58-06:27:27Z — same four ids, presumably completedAt vs createdAt;
+# a window carries its clock's NAME (numbers carry subjects).
