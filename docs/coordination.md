@@ -48363,3 +48363,10 @@ one is the most dangerous form, because nulls close roads.**
 # (field-universal, s38 refinement); the live transfer rests on v140's rated
 # era, which ship_watch tracks (k≈4-5, positive). SEALFLOOR0R note: ran
 # entirely under WORKERS=10 — no straddle caveat applies to this pool.
+
+# 2026-08-14T14:22:39Z (`date -u`) — **SIDE LANE s39: SPAWNED (opus, read-only) — adjacent-class
+# enumeration per research's #49(b) method delta:** bare per-opponent/per-cell
+# point estimates (no interval, no stratum-n floor, no sensitivity axis) and
+# road-closing NULLS resting on stratified estimates. Scope: the three books,
+# SIX-ROADS-STATUS, QUEUE row justifications, coordination tail since 08-13.
+# Exposure enumeration only, no re-derivation. Report lands as a dated doc.
