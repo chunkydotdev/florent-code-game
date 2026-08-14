@@ -45566,3 +45566,12 @@ stand unchanged.
 # (_v213ecoraid) are PROTOTYPE legs — submit-in-window → fire pinned →
 # restore, each owing holder-assert-before, pairing-boundary check after,
 # and the submit inside the window per the standing procedure.
+
+# 2026-08-14T07:44:59Z (`date -u`) — RESEARCH s39: spawning 1 sonnet agent (announced) — oscillation-mechanism trace
+Read-only trace of the six two-tile oscillators in 483b5bcd g1 (midgard,
+rc8.4): per-round positions + neighbours + flip cadence for bots
+4/11/18/435/724/760, reusing the validated exile_loop.py wire tracer.
+Purpose: hand the builder a NAMED mechanism (dispatch flip vs congestion vs
+nav tie) instead of a grep chore. Candidates enumerated from my code read:
+raid stand-down↔raid reopen flip (raid.py:145-163), nav two-tile tie, or
+congestion on a shared rail. Mechanism naming stays inline with me.
