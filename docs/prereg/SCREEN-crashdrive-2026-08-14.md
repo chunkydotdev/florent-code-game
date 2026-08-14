@@ -59,7 +59,7 @@ probe of 2026-08-14 — cell G (guarded victim, SAME thrower, SAME maps and seed
 0 destructions in 15 games at a HIGHER measured border dose (15 arrivals vs 2),
 and cell Z (`EXILE_ON = False`) 0 destructions and 0 throws in 15 games.**
 **REFERENCE n: none**
-**MECHANISM METRIC READS: bots/_v224crashdrive/raid.py:931. TREATMENT DIFF TOUCHES: bots/_v224crashdrive/doctrine.py bots/_v224crashdrive/raid.py bots/_v224crashdrive_noexile/doctrine.py bots/_v224crashdrive_noexile/raid.py. INTERSECTION: yes.**
+**MECHANISM METRIC READS: bots/_v224crashon/raid.py:931. TREATMENT DIFF TOUCHES: bots/_v224crashon/doctrine.py bots/_v224crashon/raid.py bots/_v224crashoff/doctrine.py bots/_v224crashoff/raid.py. INTERSECTION: yes.**
 **TREATMENT DIFF REFS: HEAD -- bots/** — ⛔ scoped to `bots/` ON PURPOSE and it is
 not a convenience: at drafting time the working tree carries unrelated modified
 files under `tools/` from another lane, and an unscoped `git diff HEAD` makes the
@@ -94,8 +94,8 @@ ship a new version mid-leg, so the 24-hour distinct-version count that Obligatio
 **SPANS-POOL-CHANGE: no — the map pool here is the LOCAL 15-map list frozen in
 `tools/overnight.sh:68`, not the platform rotation; it does not move during the
 leg.**
-**TREATMENT TREE: `bots/_v224crashdrive` (thrower, exile ON) and
-`bots/_v224crashdrive_noexile` (thrower, exile OFF)**
+**TREATMENT TREE: `bots/_v224crashon` (thrower, exile ON) and
+`bots/_v224crashoff` (thrower, exile OFF)**
 
 ---
 
@@ -227,26 +227,26 @@ Both thrower trees are copies of `bots/_v223sealrepair` (v140) and differ from i
 and from each other ONLY in what follows. **Nothing else may be touched; a
 byte-diff wider than this list invalidates the leg.**
 
-**(a) `bots/_v224crashdrive/doctrine.py:1536` — ARM THE WEAPON**
+**(a) `bots/_v224crashon/doctrine.py:1536` — ARM THE WEAPON**
 ```
 -LAUNCHER_MIN_RND = 160
 +LAUNCHER_MIN_RND = 0
 ```
-Same edit, same line, in `bots/_v224crashdrive_noexile/doctrine.py:1536`.
+Same edit, same line, in `bots/_v224crashoff/doctrine.py:1536`.
 *Reason: stop condition (3). Without it the launcher is never built in this
 fixture and every cell reads UNDOSED. This is an ARMING change, not a plank —
 §7.*
 
-**(b) `bots/_v224crashdrive/doctrine.py`, appended after line 1536 — the
+**(b) `bots/_v224crashon/doctrine.py`, appended after line 1536 — the
 ablation constant, in the established form**
 ```
 +# QUEUE #17 crashdrive: gate ONLY the enemy-pickup exile throw. Same constant
 +# name and same gate shape as bots/_v162exile0/doctrine.py:1518.
 +EXILE_ON = True
 ```
-and in `bots/_v224crashdrive_noexile/doctrine.py`: `EXILE_ON = False`.
+and in `bots/_v224crashoff/doctrine.py`: `EXILE_ON = False`.
 
-**(c) `bots/_v224crashdrive/raid.py` — the gate, inserted immediately BEFORE the
+**(c) `bots/_v224crashon/raid.py` — the gate, inserted immediately BEFORE the
 line that is `bots/_v223sealrepair/raid.py:925`, inside `_launcher_turn`'s EXILE
 loop**
 ```
@@ -256,7 +256,7 @@ loop**
 +                continue
              far = sorted(sites, key=lambda t: t.distance_squared(self.core), reverse=True)
 ```
-Identical insert in `bots/_v224crashdrive_noexile/raid.py`.
+Identical insert in `bots/_v224crashoff/raid.py`.
 **This gates the ENEMY throw and nothing else.** The `friendly_bots.append(...)`
 branch above it and the entire FERRY block below (`raid.py:934-957`) are
 untouched, so the two thrower arms differ in exactly one behaviour: whether an
@@ -283,9 +283,9 @@ output and the victim's own traceback path.
 
 | cell | thrower | victim | role | REQUIRED reading |
 |---|---|---|---|---|
-| **P** | `_v224crashdrive` (`EXILE_ON=True`) | `_probe_border_raw` | **FORCED POSITIVE** | destructions **> 0** |
-| **G** | `_v224crashdrive` (`EXILE_ON=True`) | `_probe_border_guard` | **FORCED NEGATIVE (victim-side)** | border arrivals **>= 20**, destructions **== 0** |
-| **Z** | `_v224crashdrive_noexile` (`EXILE_ON=False`) | `_probe_border_raw` | **FORCED NEGATIVE (weapon-side)** | enemy throws **== 0**, destructions **== 0** |
+| **P** | `_v224crashon` (`EXILE_ON=True`) | `_probe_border_raw` | **FORCED POSITIVE** | destructions **> 0** |
+| **G** | `_v224crashon` (`EXILE_ON=True`) | `_probe_border_guard` | **FORCED NEGATIVE (victim-side)** | border arrivals **>= 20**, destructions **== 0** |
+| **Z** | `_v224crashoff` (`EXILE_ON=False`) | `_probe_border_raw` | **FORCED NEGATIVE (weapon-side)** | enemy throws **== 0**, destructions **== 0** |
 | **S** | `bots/_v223sealrepair` **unchanged** | `_probe_border_raw` | **DESCRIPTIVE** | reported, never read as a verdict |
 
 **G is the victim-side forced negative:** same thrower, same maps, same seats,
@@ -510,3 +510,27 @@ session) · `tools/kidnap_fate.py` (header) · `tools/arena.py` (header) ·
 **Games run during drafting (design-phase only, no repo file written):** 30 rows
 seed block 91000 (shipped tree vs `_probe_border_raw`) and 45 rows seed block
 92000 (three-cell dose probe, arms built in the drafting agent's scratchpad).
+
+
+## A1 — ADD-ONLY AMENDMENT (2026-08-14, BEFORE the leg exists: zero shard rows, no outcome column read by any lane)
+
+**ARM TREES RENAMED — `_v224crashdrive` → `_v224crashon`, `_v224crashdrive_noexile` → `_v224crashoff`.**
+
+**REASON, and it is a fixture-mechanics defect, not a design change.** The drafted
+names collide: **`_v224crashdrive` is a literal SUBSTRING of
+`_v224crashdrive_noexile`**, and `tools/overnight.sh` **scores by substring match
+on the basename**. `tools/corefill.sh`'s guard 4 documents this exact failure with
+its own worked example — *"`_v150cb` vs `_v150cbturret` reads ~100% for the
+control"*. Left alone, cell Z (the **weapon-side forced-negative**, the cell that
+makes the whole both-ways drive mean anything) would have scored against the wrong
+tree, and the leg would have produced a confident, wrong instrument validation.
+`corefill.sh` refuses such a pair up front, so this would have surfaced as a
+refusal to start — but the names had to change either way. Caught by the builder
+at stocking, before any row existed.
+
+**WHAT CHANGES:** the two tree paths, and the OB13 `MECHANISM METRIC READS` path
+that names one of them, which had to move with the tree or the intersection check
+would read a directory that no longer exists.
+**WHAT DOES NOT CHANGE:** the bar, the base rate, planned n, the cut-short floor,
+the cell definitions, the dose, the falsifier, the segment, or the seed blocks.
+The two arms remain byte-identical except `EXILE_ON`, verified after the rename.
