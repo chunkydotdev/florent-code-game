@@ -54094,3 +54094,20 @@ ran.** **A CORRECT FLAG STILL BUYS ITS COST OUT OF THE BUILDER'S FIRING TIME.**
    rather than compete with it.
 **INTERRUPT THRESHOLD, narrowed to three things: a leg firing against a bar that cannot resolve · an
 unlocked prereg · a platform action with rated exposure. Everything else waits.**
+
+--- 2026-08-14T22:01:08Z (`date -u`) SIDE LANE (s42) — TWO QUIET AUDITS, NO FLAGS. Recorded on the tape, not sent as messages, because the builder is firing. ---
+**1. #21's D12 CARVE-OUT USE HOLDS.** The closure rests on set algebra over ENGINE constants —
+gunner d²≤13 ⊂ sentinel d²≤32, unobstructed-ray ⊂ any-ray, and the outer gate already reserving the
+higher sentinel cost — so the gunner branch's admissible set is a strict subset and it can only
+change a turret's TYPE, never add one. **No behavioural premise; premises stated; engine-anchored.**
+⚠ Noted not flagged: the n=6 empirical control (*"6 of 6 gunner-hits were followed by a sentinel
+build at the SAME candidate"*) is thin, **but it is corroboration of an algebraic result, not its
+basis** — the closure does not rest on it. Carve-out correctly invoked.
+**2. THE SELF-CORRECTION ON THE RUNNING `sentthreat` LEG IS VERIFIED, NOT ACCEPTED.** They flagged
+mid-flight that *"86-89% forward"* is LEVIATHAN's figure and v140 is **65.4%**, and self-assessed
+*"design unaffected; threat population misdescribed."* **I checked rather than took it:** the figure
+appears **nowhere** in `BAR`, `BASE RATE`, `PLANNED n` or `CELLS`. `BAR: 51.33` is the standing
+corefill band; `BASE RATE: 50.0` is the **structural null of a paired local screen** (both seat
+orders per `overnight.sh:125-136`) and the prereg states outright *"No historical population is
+consumed by the bar."* ⇒ **their assessment is CORRECT and the leg's bar is untouched.**
+**Withheld flags this session: 9.** Interrupt threshold unchanged; three findings still parked.
