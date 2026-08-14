@@ -44768,3 +44768,83 @@ bigger-significance hunt.
 # games...) — graded against his rated games as they decode. **Slot call is
 # Magnus's/x3r0's, not mine: evidence says economic-bleed risk with an
 # unintended trigger; the minimal fix is RICH_TI back above 500.**
+
+# ============================================================================
+# 2026-08-14T06:51:32Z (`date -u`) — **BUILDER s37 WRAP** (Magnus: "Is this a good spot to
+# wrap up?" — assessment: yes, all instruments fielded, no mid-operation
+# state). Arm retro ran FIRST (v2, condensed; basis = the session's dated
+# blocks). ~187 commits this session.
+# ============================================================================
+
+## ARM RETRO (v2)
+
+**Q1 VERDICTS (24 typed).** Boot claim_check repair · DIGOUT/UNDERECO/TWORAID/
+STANDOFF/COMBO/APPRLAUNCH/AMMO0/ECORAID finals · 8 futility-gate reads · 4
+interim stops (QUIET0/IDLEPECK/GUNAXIS0/AMMO02) · rc8.3/8.4/8.5 wire reads ·
+rc8.5 pooled null · CAL-4 equilibrium · UNDERECO/COMBO/ECORAID paired kill
+decompositions · v134 analysis. ✅ FIRES: **(a) the ECORAID packet was
+half-assembled on leg-1's 14/25 before the pre-declared pooled read reversed
+it** — the instrument caught me, not vice versa; my summaries to Magnus had
+already leaned hopeful. **(b) I told Magnus v134 was "~5,000 lines
+different" off a raw diff — a CRLF artifact; corrected in the analysis
+verdict, but the wrong number reached him first. Diffs on foreign artifacts
+normalize line endings BEFORE measuring (now done in-tree).**
+
+**Q2 RETRACTIONS + DIRECTION.** The 14/25 "camp cell recovered" (swing) ·
+"restored to control levels" on the discriminator (softened at pooled n) ·
+the 5,000-lines claim · leg-1-based packet framing. **Direction: ALL FOUR ran
+in the flattering direction. The counterweights that worked were structural
+(pre-declared pooling, pre-named hard cases), not my judgment — keep
+building the structure, not trusting the judge.**
+
+**Q3 INSTRUMENTS.** ~12 built (futility gate-watch, holder gates/watches,
+finals watches, camper2, repairer via agent, seatrel port...). Every one
+driven to both verdicts... eventually: **gate_watch shipped with 2 defects
+found by LIVE firing (elif fallthrough false-wake; zsh $status reserved
+word) after a 5-case fixture drive missed both — fixture drives sample the
+branches you thought of.** ⛔ **THE EXPENSIVE ONE: I broke my own watch
+lattice by not re-arming after a fire (worked the CAL-4 rotation instead) —
+AMMO0 ran through BOTH futility gates unwatched, ~4,400 games wasted.
+Promoted mid-session: RE-ARM BEFORE WORK, and it held for the rest of the
+night.**
+
+**Q4 CLAIMS AHEAD OF RECORD.** The two in Q1's fires; both corrected on the
+tape same-session. claim_check green at wrap.
+
+**Q5 THE SLOT.** v125 held ALL session (hold directive honored; ship bar
+raised by Magnus and encoded). Five prototype exposures (rc8.3 x1, rc8.4 x1,
+rc8.5 x3 incl. recovery + leg2) totaling <40s, ZERO rated leakage, every
+boundary certified by the side lane. v134 (x3r0, authorized) live at wrap —
+NOT ours to manage; analysis delivered, predictions registered.
+
+**Q6 BUDGET.** ~40,000 local games (6 finals + 4 stops + replications), 50
+live unrated (3 legs + baselines) — the live surface finally used at real
+cadence (lesson from s35/s36 closed). Futility gates refunded ~15,000 games
+their first day.
+
+**Q7 SUCCESSOR — READ HANDOVER TOP BLOCK.** Critical: what dies with me
+(ALL watches — gate/finals/holder/v134-rated/v125-return; the deferred
+MB/MC/MD sequence; the v134 prediction-grading task) vs what survives
+(keeper, 4 monitors, cores_idle, cpu_watch, corefill fleet + filler, CAL-4
+boundary-stop IN the runner).
+
+## THE ONE QUESTION
+**Did I decide something the machinery couldn't catch? Yes: I nearly shipped
+enthusiasm twice (ECORAID packet, v134 first-read), and both times the catch
+came from PRE-COMMITTED structure (pooling rule; the agent's independent
+read), not from me noticing. The generalization is already in
+builder-method: the judge doesn't improve, the harness does.**
+
+## PROCESS DELTAS — routed, not merely recorded
+**D1 (→ promoted mid-session, held):** RE-ARM BEFORE WORK at every wake.
+**D2 (→ builder-method, done):** live leg gated on dose, not screen; screens
+harm-only for incumbent-absent planks (−5pp haircut, live n≥50).
+**D3 (→ RULE-futility-gates, done):** allocation gates ≠ verdict bands; the
+composition with D26 replication (AMMO02: confirmed negative at 1/5 cost).
+**D4 (→ in-tree, done):** normalize CRLF before diffing foreign artifacts.
+**D5 (→ TEST-coupling prereg, done):** hypotheses about our own instruments
+get preregs with pre-named hard cases — the falsification (salt) taught more
+than confirmation would have.
+**D6 (observation):** the three-lane redundancy caught me 4 times, I caught
+peers 2; every catch used a different mechanism. The protocol's cost is
+message volume; its yield tonight was the ECORAID packet not shipping.
