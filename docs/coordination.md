@@ -46382,3 +46382,17 @@ are the era-clean cells (C6 +12.4pp on the cleanest cell is the only
 suggestive move, n=20).
 Era caveats: CAL-4 measured 20:58-06:10Z under v125 with different oppvers
 (both surfaces unpinned by design). CAL-5's look is now SPENT.
+
+# 2026-08-14T11:47:18Z (`date -u`) — **BUILDER s38 VERDICT (CAL-5, research's declared look at n=145, look
+# SPENT): v139's CAL-cell equilibrium is UNCHANGED from v125's — 31.0%
+# (±4.7 clustered) vs 28.6%, +2.4pp inside noise. READ THE RIGHT WAY
+# ROUND: this is CONSISTENT with the ship's design, not against it — the
+# map correction pays on 2 of 15 maps against navigation-driven losses;
+# a six-cell panel of mostly-stronger opponents dilutes that to ~nothing
+# detectable at n=145. The correction's price remains the MAPFIX screen
+# (55.65 outside-above, replication running remotely). No regression
+# signal anywhere on the panel; farming_200s +12.4 at n=20 is noted as
+# suggestive-only (era-clean cell, small n). High-churn cells
+# (lazy/Leviathan/HTTP418) reportable-not-poolable per ob-14.
+# CAL-6 on v140 was already firing when research's note landed (crossed
+# messages) — first accept 11:45:53Z.
