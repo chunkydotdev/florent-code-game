@@ -95,10 +95,14 @@ if [[ "$1" == "--selftest" ]]; then
   # blind branch: point at a missing dir
   bout=$(WORK="$FIX/work" TSVDIR="$FIX/nodir" STATE="$FIX/state" zsh "$0" --check)
   echo "$bout" | grep -q "BLIND"                            || { echo "FAIL: blind branch silent"; fail=1; }
+  # D4 re-arm line, both directions: the WAKE path leads with it; --check does not carry it
+  wout=$(WORK="$FIX/work" TSVDIR="$FIX/tsv" STATE="$FIX/state" POLL=1 zsh "$0")
+  echo "$wout" | sed -n 2p | grep -q "^RE-ARM FIRST"        || { echo "FAIL: wake does not lead with the re-arm line (D4)"; fail=1; }
+  echo "$out" | grep -q "RE-ARM"                            && { echo "FAIL: --check output carries the re-arm line"; fail=1; }
   # T-share arithmetic: 5400 rows, T on evens = exactly 50.00
   echo "$out" | grep "FINALSHARD" | grep -q "T-share=50.00" || { echo "FAIL: share arithmetic"; fail=1; }
   rm -rf "$FIX"
-  (( fail == 0 )) && echo "SELFTEST PASS (6 wake/quiet verdicts + blind + share)" || echo "SELFTEST FAIL"
+  (( fail == 0 )) && echo "SELFTEST PASS (6 wake/quiet verdicts + blind + share + D4 re-arm line both ways)" || echo "SELFTEST FAIL"
   exit $fail
 fi
 
@@ -116,6 +120,10 @@ while true; do
   out=$(scan); rc=$?
   if (( rc == 2 )); then echo "$out"; rm -f "$SCAN_FLAG"; exit 2; fi
   if [[ -s $SCAN_FLAG ]]; then
+    # D4 (s38 retro): the manual re-arm step failed under ship-flow once — the
+    # wake itself must carry the re-arm as its FIRST line. (A nohup'd successor
+    # cannot wake a harness session, so self-respawn is not an option here.)
+    echo "RE-ARM FIRST: relaunch 'zsh tools/monitors/gate_watch.sh' as a background task BEFORE typing any gate below (D4)"
     echo "=== GATE WAKE $(date -u +%Y-%m-%dT%H:%M:%SZ) — builder types the decision, watcher never decides ==="
     echo "$out"
     rm -f "$SCAN_FLAG"; exit 0
