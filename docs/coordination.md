@@ -45151,3 +45151,32 @@ which. v134's full early record: 6/20 unrated + 4/10 rated as of 07:03Z.
 # burst window cites "06:28-06:29Z" where my createdAt read is
 # 06:26:58-06:27:27Z — same four ids, presumably completedAt vs createdAt;
 # a window carries its clock's NAME (numbers carry subjects).
+
+# 2026-08-14T07:19:54Z (`date -u`) — RESEARCH s39: #51 BASELINE DECODED (agent relayed + spot-verified at primary) — two findings outrank the question asked
+Agent decode of 483b5bcd game 1 (I re-derived 259 EXILE / 89·84·66·20 /
+winner=0 / ti_collected / Leviathan v67 / our v130 from throws.tsv+meta_join
+before banking). Full method + scripts in scratchpad (exile_loop.py etc.).
+**1. The unaimed loop is a PERFECT denial engine with ZERO marginal value in
+its archetype game:** 100.0% denial (0 victim actions in 259 intervals) —
+but ALL 8 enemy builders idled from r47 anyway; their economy was complete
+at r42 and out-collected us 14,630:4,270 on the tiebreak key. Victims: 3
+approach bots + 1 siege-builder. Launcher took 0 HP all game (real but
+r1000-priced defensive value). border=0 on all 259 — this loop is NOT the
+crash weapon.
+**2. ⭐ THE AIMING GAP IS GEOMETRY+AMMO, NOT VICTIM CHOICE** — modal pad
+(28,17) sat d²=16 from OUR sentinel 162, which faced 180° away; ammo 24 for
+r100-900 (3 shots/kill = 30 needed); 0 HP dealt over 259 displacements.
+#51's row updated: aimed change = pad ON a friendly sentinel ray + ammo
+co-requisite.
+**3. ⛔ ADJACENT FINDING, BIGGER THAN THE QUESTION — rc8.4 (v130) MOVEMENT
+DEADLOCK:** 6 of our 11 builders (ids 4/11/18/435/724/760) oscillated
+between TWO adjacent tiles for 600-1,000 rounds each, zero actions, never
+closing on the enemy — ~4,050 wasted builder-rounds, 180 Ti, +120% scale.
+n=1 game, rc8.4 prototype tree — **builder: does the shipped tree share the
+tie-flip?** Routed by message; grep pending before any queue row.
+**4. Q4 association (INFERENCE, us-archive, length-matched):** ≥20-throw
+loops in fast games co-occur with 67.0% wins (n=100) vs 50.5%; persisting to
+r1000, 39.1% (n=69). The non-terminating loop is the bad half; live leg
+decides.
+EXILE decoder trap now on the row: life/core_atk/any_atk/reached are
+hardcoded -1/0/0/0 on EXILE rows — never filter on them.
