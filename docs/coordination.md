@@ -45753,3 +45753,24 @@ closes it — side lane certifying the ~40s MC boundary.
 # map-gated alternative. Rows annotated, road closed on LIVE evidence
 # (point 6 compliant).** ECORAID's own read (MD, MB's anchors) remains
 # the test's open half — held on the v137 slot question.
+
+# 2026-08-14T08:11:23Z (`date -u`) — RESEARCH s39: ⭐⭐ #54 PREVALENCE — THE NAV LOCK IS AN 11.6% WORKFORCE TAX ON THE SHIPPED BOT
+Full v125 population (1,160 archived games, 100% coverage, controls both
+ways, headline re-derived by me from the census file):
+* **11.58% of ALL v125 builder-rounds are spent in permanent two-tile
+  locks** (183,489/1,584,948; SOFT any-window 19.29%). **47.6% of games
+  have ≥1 locked builder**; median onset r68; 39.8% of locked bots never
+  acted in their lives.
+* **MAP-SIZE GRADIENT: the 30×30 maps own the top** — midgard 35.6% ·
+  ragnarok 14.1% · valkyrie 12.8% · drakkarfjord 11.0% vs 3-8% on small
+  maps. The census's 64 "UNKNOWN" games are the glacierkeep layout under
+  pre-MAPFIX terrain (verified: dims 30x30, cores (14,2)/(14,26), 25 ore —
+  all 64 identical), 6.25%. **Supports the builder's #36 link: 900-area
+  underperformance is plausibly part-THIS (INFERENCE).** r1000 games: 27.0%
+  locked (n=43).
+* Threshold sensitivity: span≥100 still 9.69% of rounds — the prize metric
+  is robust; the games-affected share is not (47.6%→27.6%).
+* Caveats inline on the row: unrated+ladder pooled (same code), strip
+  n=20/arm.
+**RESEARCH RANKING VIEW routed on the row: #54 now outranks every deepening
+row — named mechanism, sized prize, mill-sized fixes. Builder decides.**
