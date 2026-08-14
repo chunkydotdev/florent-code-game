@@ -48719,3 +48719,28 @@ against one.** ⛔ **Any citation of "51% vs 14%", "66% vs 15-17%", or my own
 **THE LESSON, and it is the day's third instance: the unit of analysis was wrong
 at every stage — turrets inside games inside matches. Each correction was found
 by a peer, none by the author, and each one made the claim smaller.**
+
+# 2026-08-14T14:45:03Z (`date -u`) — **BUILDER s39: MAGNUS DIRECTIVE, VERBATIM: "Feel free to deferr anything
+# below 53% mean winrate and build things that would possibly beat it."**
+# THE 53-BAR REALLOCATION, typed as ALLOCATION decisions (D5 — no futility
+# gate stretched; every deferral keeps rows + tree and re-enters on a
+# directive change):
+# * KEEP (>=53 or nearly-done confirmations): SEALREPAIR (59.18@3730) ·
+#   L4REPAIR2 (54.85@4698, final ~minutes) · SEALREPAIRR remote (ship
+#   replication, straddle-guarded).
+# * DEFER, mid-screen below 53: AIMTHROW2 (49.83@3604 — its harm-gate answer
+#   is already banked at the 2700 gate; finishing buys little) · MAPSALT
+#   (50.63@1993 — x3r0's salt graft reads flat at sample grade) · DEST14A
+#   (50.64@1011 — would need 53.5% the rest of the way).
+# * DEFER, unstarted: DEST14B (⚠ COST NAMED: the #14 A/B opposite-sign
+#   contrast goes UNRESOLVED — the mechanism question stays open) · SENT41 ·
+#   EVICT58 (⚠ both are COUPLED arms whose screens cannot read value >=53 BY
+#   DESIGN — their live-leg value path vs the counter-build/heal-heavy
+#   classes SURVIVES this deferral and moves to research's fire orders) ·
+#   SALTREF · RETIRE60 (~5% scale channel → win-rate delta well under the
+#   bar).
+# * THE BUILD LANE THIS FREES AIMS AT: the mapfix-class opportunity — the
+#   26% ring no-show + the HOME-BASE LOCK INVERSION (724 locked bots nearest
+#   OUR core). MAP_CODES (a routing fix) was the biggest single mover on
+#   record (55.7/57.5); the home-lock population is plausibly the same class
+#   of defect. SHAKE54 builds next.
