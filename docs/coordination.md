@@ -48852,3 +48852,43 @@ just demonstrated they are prone to that failure. The author getting it wrong
 quickly is the EXPECTED case, not an embarrassment.** ⇒ **AUDIT THE RULE'S FIRST
 APPLICATION, NOT JUST THE RULE.** That is what the side lane did here and it is
 what caught it; it is cheap, and on this evidence it has a high hit rate.
+
+# 2026-08-14T14:5xZ (`date -u`) — ⛔⛔ **RESEARCH s40: HOLDER CHANGED TO v142 (Counter Router v3) — CAL-7 STOPPED AT n=110 AND ITS REGISTERED LOOK IS UNAVAILABLE**
+**Live, verified not asserted: `fcode status` 14:50:54Z reads `Active bot: v142
+(Counter Router v3)`, rating 1750, 971 matches.** x3r0 again.
+**CAL-7's holder guard caught it and ABORTED at 14:46:06Z** — *expected v140 saw
+"v142 (Counter Router v3)"* — **so the panel fired nothing into a foreign
+holder.** The guard has now fired for real in BOTH CAL-6 and CAL-7; it is
+observed working in the branch that costs data, which is the branch that is
+usually untested.
+
+**⛔ THE CONSEQUENCE, STATED BEFORE I LOOK AT ANY NUMBERS: THE REGISTERED LOOK IS
+UNAVAILABLE AND I AM NOT TAKING ONE.** Look discipline: *"ONE comparative look at
+n=300, or at the panel's stop if earlier with **n≥150**."* **The panel stopped at
+22 accepts = 110 GAMES. 110 < 150.** The n=150 interim descriptive read was never
+reached either. **CAL-7 leaves 110 games of per-cell tallies and NOTHING that
+speaks to P1, P4, or the fixture-divergence question it was built for.**
+**That question is UNRESOLVED and carries forward.** *(A4 registered "unresolved"
+as the likely outcome — but it named a thin supplementary as the cause, not a
+slot displacement. Predicting the verdict for the wrong reason is not a
+prediction met, and the retro should record it that way.)*
+
+**⭐ AND THE HONEST READING OF THE DAY'S PANEL BUDGET: CAL-6 ran 75 games and its
+look WAS available; CAL-7 ran 110 and its look is NOT. Both were stopped by a
+holder change, not by a design decision. Two panels, ~185 games of free fixture,
+and the fixture-bias question is exactly where it was this morning.** The
+constraint on this lane's deliverable is not the rate limit and never was — **it
+is slot stability, which no lane controls.** `R3` (the stability gate) was
+written to protect against firing INTO instability; **it does not help when the
+instability arrives mid-panel, and today it happened twice.**
+
+## CONSEQUENCES FOR THE FIRE ORDER
+1. **The unrated pipe is effectively CLOSED while a foreign bot holds the slot** —
+   an unrated challenge plays the ACTIVE submission, so every item on the ladder,
+   including EVICT58's pinned live leg, is blocked until the slot is ours again.
+   **This is not a scheduling choice; it is a hard constraint and the fire order
+   is suspended, not re-ordered.**
+2. **CAL-8 does NOT auto-arm.** R3 says holder ≥40 min + tree identified — and
+   **for a FOREIGN holder "tree identified" means something different: we would
+   be calibrating someone else's bot.** ⇒ **Magnus's call, not an automatic
+   re-arm.** I am not firing a panel on x3r0's bot without it.
