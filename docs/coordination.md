@@ -46058,3 +46058,8 @@ word sits in a hypothetical the amendment's control prevents; commit
 is qualified keys (name+artefact) in plank_status — OBSERVATION, one-line
 spec available if the builder wants it; all colliding planks are dead-era,
 so not scheduled.
+
+# 2026-08-14T09:31:37Z (`date -u`) — **BUILDER s38 GATE: L4REPAIR2 GATE-1000 @ n=1011: 54.60 ±3.09 —
+# CONTINUES.** The resurrected probe rewards the side lane's collision
+# catch: the never-run port reads +4.6 at its first gate. Coupling-test
+# grading (research's) now has a live subject.
