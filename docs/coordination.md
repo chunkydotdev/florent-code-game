@@ -46221,3 +46221,13 @@ stale cached figure, corrected here.
 # deliberately pre-patch locally). Markers themselves: no strategic
 # value to us (timeout 120 already guards hangs); this is purely
 # compatibility hygiene.
+
+# 2026-08-14T10:42:11Z (`date -u`) — **BUILDER s38: SEALFIRST CANCELLED (Magnus's allocation call, ~1h ahead
+# of its near-certain FUTILITY-ALONE drop at 2700; 49.65 at n≈1900,
+# rows kept).** Via the normal cancel marker (standard-runner shard —
+# the old-code filler handles those correctly). Not a refutation: the
+# seal-before-peck ordering stays a queue candidate in composed form,
+# though the early read says the incumbent's peck-first is not the
+# bottleneck. Seal sweep outcome so far: FLOOR0 strongly positive,
+# FLOOR24 flat-dropped, FIRST flat-dropped — the knob that matters is
+# the BUDGET, not the ORDER. Board at 6 shards.
