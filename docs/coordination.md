@@ -46115,3 +46115,19 @@ verified the wire relays; I re-derived the h2h table exactly). Headlines:
 # content verified in-prereg with the map-string identity check · shared-
 # resource interaction prior declared with its signature (suppression =
 # under-performing BOTH singles).
+
+# 2026-08-14T09:35:19Z (`date -u`) — **BUILDER s38 FINAL: MAPFIX @ n=2160 = 55.65 ±2.11 — OUTSIDE-ABOVE
+# DECISIVELY (band 47.90–52.10). THE SHIP'S LOCAL CONFIRMATION.** Split:
+# valkyrie 59.3 (640/1080) · glacierkeep 52.0 (562/1080) — the wall-walk/
+# phantom-ore correction carries ~9pp on valkyrie; glacierkeep's phantom-
+# center-ore fix reads ~+2 (inside its own noise). |final−50| = 5.65 ≥
+# 2.0 ⇒ D26 REPLICATION FIRED: MAPFIX2 launched (seed 251000, same
+# post-patch 2-map fixture, scored alone, same-side pooling), first rows
+# flowing. v139 sits on the ladder with this number behind it; the rated
+# k-gate (k≥8) remains the live verdict per SHIP_SIT. ALSO: CAL-5 panel
+# FIRING on v139 per research's prereg 21d301d (first accept C1-lazy
+# 09:33:36Z, ids in panel_cal5_fires.tsv); AIMTHROW2 launched on the
+# POST-patch pool (era-consistent with its v139 chassis); worklist
+# AIMTHROW2 duplicate line self-caught and deduped same-minute (the
+# L4REPAIR collision class — the dup check is now part of my append
+# habit, evidently needed).
