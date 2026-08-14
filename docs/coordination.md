@@ -52642,12 +52642,12 @@ faster.** ⚠ **Cause, stated plainly: believing it was new is exactly what skip
 the tape earlier today in the side lane's bounded form.)* **Its firing certifies that the
 DECISION TO INVESTIGATE was outcome-independent; it does NOT certify what was changed
 afterwards, and its SILENCE certifies nothing.** **It caught its own author twice within
-ninety minutes of publication** —  resolved as our own opponent, then **v243 in
-a list of our own versions.** Both were ILLEGAL, not merely surprising.
+ninety minutes of publication** — `OpenSverige` resolved as our own opponent, then
+**v243 in a list of our own versions.** Both were ILLEGAL, not merely surprising.
 
 **R3. ⭐ THE MECHANISM-OCCURRENCE CHECK — a fifth admission clause.** *(→ builder's wrap.)*
 The four-part admission asks for **a fixture that can RESOLVE** the mechanism and **never
-whether the mechanism OCCURS in the field.**  was banked as fixture-blocked; going to
+whether the mechanism OCCURS in the field.** `#52` was banked as fixture-blocked; going to
 name its cells showed **not one melee-dominant opponent kills our barriers** (lowest turret
 count among them 4.51/g) **and the throughput arithmetic is fatal** — exchange rate favours
 us 2.2–4.0:1 against all three damage sources **and we still lose**, because one builder
@@ -52691,8 +52691,8 @@ SELECTION, not utilisation** — the fixture is busy; what needs owning is what 
    control STOPS on 08-09 and does not cover the step itself.**
 
 ## RESEARCH ARM STATE — VERIFIED, NOT ASSERTED
-* **NOTHING OF MINE IS RUNNING.** All four agents landed and were relayed before this wrap
-  (archipelago · rated-day decode · screen validity · TLE exposure · HTTP 418 book — five).
+* **NOTHING OF MINE IS RUNNING.** All FIVE agents landed and were relayed before this wrap
+  (archipelago · rated-day decode · screen validity · TLE exposure · HTTP 418 book).
   **Zero unrelayed agent output**, against two lost at the s41 wrap.
 * **Both s41 orphans are CLOSED** — `SHORT-TIEBREAK-ANOMALY` and `BOOK-http418-v103` both
   exist and are committed.
@@ -52702,3 +52702,89 @@ SELECTION, not utilisation** — the fixture is busy; what needs owning is what 
   because that was the race I had just documented.
 * **OWED, uncollected:** `effective_n.py`'s seed-degeneracy premise may be inverted by
   `NOISE_ON=True` (flagged by the builder, not re-derived by me).
+
+# ============================================================================
+# 2026-08-14T20:35:xxZ (`date -u`) — **SIDE LANE s41 WRAP** (Magnus called it).
+# Arm retro ran FIRST per charter: `docs/side-lane-retro.md` → **v1.11,
+# FIRINGS 11**; instance `docs/retro-side-lane-2026-08-14-s41.md` committed in
+# the same action (`6e44ed84`). Session 19:08Z–20:35Z (~87 min), audit surface
+# 97 repo commits, 17 flags raised, 17 consumed, **7 became code**.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ WHEN CERTIFYING SOMEONE ELSE'S FINDING, THE FIRST CHECK IS ITS PREMISE,
+NOT ITS ARITHMETIC.** *(behaviour change → promoted into the arm retro as Q3's
+BORROWED-PREMISE form; the practice belongs to whoever certifies next.)* I
+re-derived everything around research's D2 claim — cell counts, sign test,
+robustness, an unasked-for matched-composition correction — **and never asked
+whether its premise was true.** Two team NAMES were one `teamId`, renamed at
+midday. **Re-deriving a conclusion's numbers is not verification when the thing
+being claimed was never tested**, and a certification inherits the authority of
+having been careful. **Direction ran toward the AUTHOR'S live hypothesis** — a
+new axis: `auditing` behaves like `defending`, and the hypothesis defended was
+the one under audit.
+
+**S2. ⛔ A CERTIFICATION EXPIRES — TWICE OVER, AND BOTH FIRED TODAY.** *(promoted
+into `PROGRAMME-drift-watch-2026-08-09.md` via the CAL-8 cert; restated here
+because it bound me a second time.)* (a) **A certification of ONE SIDE of a
+comparison is not a certification of the COMPARISON** until the other side exists
+and the JOIN KEY is checked — `df54ea7` certified a reference table by NAME, and
+a rename invalidated exactly that. (b) **A certified TOOL that changes expires
+its certification** — `prereg_check` changed three times after I certified it and
+I re-ran the harness each time. **The third re-run found MY fixture wrong, not
+the tool.**
+
+**S3. A FLAG PUT AS A QUESTION OUTPERFORMED EVERY FLAG PUT AS A FINDING.** The
+n=1000-vs-n=3000 scope divergence was published as a QUESTION with both readings
+and their costs, addressed to the principal. **His answer was NEITHER reading —
+it closed the screen instead, on a number already in hand.** ~1,570 games and
+~2h45m not spent, **and the two readings could have diverged in OUTCOME.** Had I
+ruled, I would have picked one of two wrong answers. **Where the ambiguity is in
+a PRINCIPAL'S sentence, the lane's product is the question, not the resolution.**
+
+**S4. FOUR PHANTOM FLAGS DIED BEFORE PUBLICATION** on the s37
+read-the-condition-line practice (a tie asymmetry already in the prereg; a road
+closure that already had 126 live games; an amendment already branch-symmetric; a
+byte-identical guard that was the INVERSE of the incident it resembled).
+**Recorded because Q5 has never counted flags that did NOT happen, and that is
+where the s37 sharpening actually pays.**
+
+## ⚠ WHAT A SUCCESSOR INHERITS — OPEN AND UNCERTIFIED
+
+1. **`gate.py` WIRING BUNDLE — UNWRITTEN, and it carries FOUR accepted items of
+   mine**: the escape-flag tape (path+time+setter, so the bypass RATE is
+   readable), the local-accepts WARN, the CUT-SHORT consumer
+   (`cut_short_floor <= planned_n`), and the OB13 untracked-local-arm gap.
+   **Certify against ONE diff as the builder asked — and RE-RUN
+   `scratchpad/prereg_cert_s41.py` FIRST, because by then the certification will
+   have expired again** (S2b).
+2. **TWO LEGS LIVE, both locked and both certified, reads owed:**
+   **SEALFLOOR6** (local, 159/5400 at 20:35:27Z) — bar 51.33 KEEP / ≤48.67
+   REAL-NEGATIVE / inside=DROP; **SALTREF2** (remote, 900/5400 at 20:33:57Z) —
+   replication verdict binds to **[47.24, 50.98]** per A1, NOT the one-sample
+   ±1.32.
+3. **THE START-STAMP FIX IS ROUTED BUT UNSHIPPED.** Every two-clock cert this
+   lane has ever typed dated a leg by its first ROW, which is a COMPLETION — one
+   game-length late. Invisible at minute-scale gaps; load-bearing at 13s
+   (SALTREF2, sign indeterminate). **Until the runner stamps its START to the
+   tape, a two-clock cert says PREDATES-FIRST-ROW, never predates-leg-creation.**
+
+## REBOOT STATE — SIDE LANE (s41, safe to reboot) — 2026-08-14T20:35Z, verified not asserted
+
+* **Dies with me:** the all-commits drift watch (**pid 21664 — ALIVE**; successor
+  re-arms `tools/watch/drift_watch.sh` and **DRIVES ITS THREE CELLS FIRST**, all
+  three discriminated at 19:08Z) · the commit Monitor · the SALTREF2/SEALFLOOR6
+  terminal-state Monitor.
+* **Survives me:** keeper (**19708 ALIVE**, pidfile matches) + the four watchers
+  + vps_pull + corefill · **the dashboard (pid 82283, `http://127.0.0.1:8787`,
+  verified by SERVING — HTTP 200 — not by `ps`)**. ⚠ **The dashboard survives a
+  SESSION reboot, NOT a machine reboot**; it is on HANDOVER's post-reboot list
+  (`28fa710`) and is builder-owned.
+* **Holder: v140 `Loki v10`**, read live off `active_submission`, never `$?`.
+  **Zero platform actions by me this session.**
+* **Open cert obligations: THREE** — the wiring bundle, and the two live reads.
+* **Nothing of mine unconsumed:** 17 of 17 flags consumed in-session.
+  **My one caused-harm** (endorsing an unchecked premise into a published
+  certification) **is corrected on the record at `ecd27e66`, with the mechanism
+  named rather than the text quietly repaired.**
