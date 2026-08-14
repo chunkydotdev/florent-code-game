@@ -813,3 +813,37 @@ commits are anchored in git; the timing of the count was not disinterested.
   corrections needing correction — a first, and the other face of the
   inverted split.
 
+## ⭐⭐ v1.8 — **FIRING 8. Q3 GAINS THE FRAME RULE, AND THE DOMAIN CHECK IS THE MEASURED SELF-CATCH MECHANISM.**
+
+**v1.8 — 2026-08-14 (MINOR: records firing 8, sharpens Q3). Instance:
+`docs/retro-side-lane-2026-08-14-s38.md`.**
+
+* **FIRINGS: 8** (s29, s32, s33, s34, s35, s36, s37, s38). Zero point bumps,
+  fourth consecutive session.
+* **⭐⭐ Q3 SHARPENED — THE FRAME RULE: A WIRE FIELD IS IN THE PLATFORM'S
+  FRAME, NOT OURS.** Both s38 published errors were raw platform fields read
+  without normalizing the frame — scoreA/B without the SEAT, a match list
+  without its WINDOW — and the session's two near-misses were the same class
+  (git dates without the ZONE; a sha without checking the INPUT existed).
+  **Practice: before any per-match/per-commit number leaves the lane, name
+  the frame — seat, clock, units, window — and show the normalization.**
+  This is the s30 winner_seat lesson generalised, committed twice by the
+  lane that recorded it.
+* **⭐ Q4's measured self-catch mechanism this run: the DOMAIN CHECK, 2-for-2**
+  — both frame errors with an ILLEGAL reading (prereg postdating its fires;
+  the empty-string sha) were caught pre-publish; both with merely PLAUSIBLE
+  readings were published and caught externally. D31's asymmetry, now
+  measured on this lane across one session: **prefer queries whose failure
+  modes produce illegal values; treat plausible returns as unverified.**
+* **Q5: fifth consecutive zero-harm run, and ZERO wrong flags** — s37's
+  phantom-defect class produced nothing; the S3 read-the-condition-line
+  practice prevented at least two would-be instances. **The s37 sharpening
+  worked on its first full session.**
+* **Q8: flag→rule compounding at the fastest recorded cadence** (same-hour,
+  repeatedly); the panel template went four-amendments-needed → zero inside
+  one session. **Detection ~19/22 · prescriptions all consumed (one rightly
+  declined on operational grounds — the lens the auditor underweights).**
+
+**SUNSET WATCH: nothing armed; every surviving question fired this run.**
+
+
