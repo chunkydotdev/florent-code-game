@@ -52007,3 +52007,43 @@ fixture ran at **8-20% of its 1,800-games/day cap** while ships went out on loca
 self-play. **Today it was dark for a further ~9 minutes on a holder displacement and most
 of the day on nothing at all.** `#52` is the case that proves the cost: **a plank whose
 value is UNMEASURABLE on the fixture we habitually use, waiting behind that fixture.**
+
+--- 2026-08-14T19:51:xxZ SIDE LANE (s41) — prereg_check RE-CERT + target_value rename fix verified against the CLASS ---
+**prereg_check: ALL THREE LAYERS CERTIFIED** (`CERT-prereg-check-forced-fail-2026-08-14.md` §5c,
+d01a67e). Re-run, not read. Forced-fail **31/31, no regression** · findings 1+2 CLOSED · six shapes
+driven by me **6/6** incl. the discriminating pair (empty+prose NOT swallowed, empty+bullets joined)
+· **the CAL-4 cost I costed in §5b is PAID, NOT INCURRED** — the bullet heading still ACTIVATES
+Ob-14 · **amendment layer 9/9 on a tokenised carrier**, one corruption per bar line, with BOTH
+negative controls (pure-ADD and whitespace-reflow must not false-FAIL) and the untokenised prereg
+still refusing at NOT_APPLICABLE/exit 2. Three states, no collision on line or exit code.
+**ONE hole survived — H2 placeholder values — and I recommended AGAINST a blocklist** (incomplete by
+construction; a guard whose silence carries no information). Principled read, applying research's
+own ruling one level up: **every field that survived the empty-value probe survived because
+ARITHMETIC reads it**; the three H2 defeats have no consumer, so they are ATTESTATIONS not
+computations. Builder took the declare-the-limit option (edea4c8).
+
+**`target_value` rename fix (1e9642d): VERIFIED AGAINST THE FAULT CLASS.** Audited because
+names-are-not-keys is a rule I co-produced this hour — v1.9's promoter's-first-use practice applied
+deliberately for once, rather than after being caught by it. selftest PASS with shipped entry points
+· lingling prints ONCE (was twice, two ratings) · `_ALIASES` is **78 entries built from
+`names_of[teamId]`, not a hardcoded map**.
+⭐ **A SECOND RENAME EXISTS AND NOBODY HAD NOTICED IT: `f71a9567` Klarum -> Part-timers.** The fix
+collapses it too ⇒ **the class test PASSES — a general mechanism handling a case no one wrote code
+for.** Recorded because the usual finding is the opposite.
+**The merge hazard my own rule creates is EMPTY, measured not assumed: names shared by more than one
+teamId across the whole archive = 0.** A property of the current league, not a law; the id-keying is
+what makes it safe rather than lucky.
+⚠ Klarum/Part-timers is absent from `--band` because it is OUTSIDE the admissible band, **not**
+because the fix missed it — checked before concluding, since "absent from the output" and "absent
+from the fix" are the two readings an empty result admits. **That is the lesson the empty D2 cell
+cost us an hour ago, applied the same hour.**
+
+ONE CAUTION HANDED TO THE BUILDER on the planned `gate.py` wiring (their verdict, no objection to
+the substance): **the escape flag is the mechanism by which a gate quietly becomes decorative** —
+`LINE_DIRS`/`h2h.sh` is this repo's own scar. Asked for one line: **log every escape (path, time,
+setter) to a tape**, so the bypass RATE is a number somebody can read. A guard whose bypass rate is
+unmeasured is a guard whose silence carries no information.
+
+OPEN AND OWED BY ME: the V140VS145B read certification (cert plan d6feab7 + A6's
+default-not-measurement sentence). Watch paths armed: drift watch pid 21664 + commit Monitor;
+CAL-8/screen Monitor (terminal rows + child pid + heartbeat leaving RUNNING).
