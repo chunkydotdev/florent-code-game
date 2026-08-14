@@ -53,6 +53,7 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+import time
 import tempfile
 from pathlib import Path
 
@@ -145,10 +146,51 @@ class Surface:
         except OSError:
             return False
 
+    # A heartbeat older than this is not evidence of life. One remote batch is
+    # minutes; 15 min is several cadences and still catches an hour-long stall.
+    HB_FRESH_S = 900
+
+    def shard_state(self, shard: str) -> tuple:
+        """(state, age_seconds) from the heartbeat -- CONTENT **and** FRESHNESS.
+
+        ⛔ CONTENT ALONE IS NOT EVIDENCE OF LIFE, and the incident is exact.
+        `worker.sh`'s curfew slept without stamping the heartbeat, so a shard
+        that had stopped at the 20:55Z blackout boundary kept its last written
+        state -- the literal string `RUNNING` -- indefinitely. **A dead worker,
+        a sleeping worker and a working worker were byte-identical in heartbeat
+        CONTENT.** The side lane read `RUNNING`, saw a 41-minute-stale file and
+        no `.COMPLETE` where 7 of 7 finished shards on that host had one, and
+        declared a locked leg DEAD. It was asleep.
+        **Only the mtime discriminated, and nothing read it -- including this
+        tool, whose first version counted that shard as in-flight and reported
+        the surface DRAINING rather than idle.** That is the flattering
+        direction again: it made a stalled fixture look busier than it was.
+        """
+        hb = self.outdir / f"{shard}.heartbeat"
+        if not hb.exists():
+            return (None, None)
+        try:
+            age = time.time() - hb.stat().st_mtime
+            f = hb.read_text().strip().split("\t")
+            return ((f[4] if len(f) >= 5 else None), age)
+        except OSError:
+            return (None, None)
+
     def shard_started(self, shard: str) -> bool:
         if self.state_dir is None:
             return (self.outdir / f"{shard}.tsv").exists()
         return (self.state_dir / shard).exists()
+
+    def shard_live(self, shard: str) -> bool:
+        """In flight = started AND its heartbeat is fresh AND not curfewed."""
+        if not self.shard_started(shard):
+            return False
+        state, age = self.shard_state(shard)
+        if state == "CURFEW":
+            return False  # asleep by policy -- real, but not doing work
+        if age is not None and age > self.HB_FRESH_S:
+            return False  # stale: whatever it says, it is not advancing
+        return True
 
     def counts(self, rows):
         """(data_rows, cert_rows). A SEAM, on purpose.
@@ -174,6 +216,7 @@ class Surface:
             "real_rows": 0,
             "real_remaining": 0,
             "in_flight": 0,
+            "stalled": 0,
             "state": BLIND,
             "note": "",
         }
@@ -210,10 +253,12 @@ class Surface:
             if self.shard_done(shard) or self.shard_cancelled(shard):
                 continue
             remaining.append(shard)
-            if self.shard_started(shard):
+            if self.shard_live(shard):
                 in_flight.append(shard)
         r["real_remaining"] = len(remaining)
         r["in_flight"] = len(in_flight)
+        r["stalled"] = sum(1 for s in remaining
+                           if self.shard_started(s) and not self.shard_live(s))
 
         # GUARD 1 + 4.
         if r["real_rows"] == 0:
@@ -225,6 +270,20 @@ class Surface:
         elif r["real_remaining"] == 0:
             r["state"] = STARVED
             r["note"] = "every real shard is DONE or CANCELLED -- nothing left to launch"
+        elif r["stalled"] and r["stalled"] == r["real_remaining"]:
+            # EVERY remaining shard is STARTED but NOT ADVANCING (stale heartbeat
+            # or CURFEW). ⛔ This is NOT the same as `in_flight == 0`: a shard
+            # that is merely QUEUED has not started and is legitimately not in
+            # flight -- that is the healthy OK case. The first cut of this
+            # branch tested `in_flight == 0` and turned every queued surface
+            # STARVED; the selftest's `has_work` positive control caught it,
+            # which is the whole reason that control exists.
+            r["state"] = STARVED
+            r["note"] = (
+                f"{r['real_remaining']} shard(s) remain and EVERY ONE is started but "
+                "not advancing (heartbeat stale or CURFEW) -- an idle box, whatever "
+                "the tape says"
+            )
         elif r["real_remaining"] == r["in_flight"]:
             r["state"] = DRAINING
             r["note"] = (

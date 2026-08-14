@@ -88,13 +88,36 @@ STOPF=${STOPF:-STOP}
 # the window at batch boundaries (zero CPU, rows kept) and self-resumes —
 # nobody has to be awake at 06:00 CET. Override for tests: CURFEW=off.
 CURFEW=${CURFEW:-on}
+# ⛔ THE HEARTBEAT MUST SAY CURFEW, AND THIS COST AN HOUR OF ANOTHER LANE'S TIME.
+# The first cut of curfew_wait slept without touching $HB. Every other terminal
+# path stamps its state -- STARTING (:233), STOPPED (:248), RUNNING (:315),
+# ABORTED_NOWINNER (:320), COMPLETE (:326) -- and curfew alone did not. So a
+# curfewed worker's heartbeat kept its LAST written state, the literal string
+# `RUNNING`, forever.
+# WHAT THAT PRODUCED, 2026-08-14: SALTREF2 froze at 1740/5400 at 20:55:34Z (the
+# curfew boundary, exactly) with a heartbeat reading RUNNING. The side lane
+# correctly observed a 41-minute-stale file, three independent confirmations,
+# and no .COMPLETE marker where 7 of 7 finished shards on that host have one --
+# and concluded the leg was DEAD. It was asleep. **A DEAD WORKER AND A SLEEPING
+# WORKER WERE BYTE-IDENTICAL IN HEARTBEAT CONTENT; only the mtime discriminated,
+# and nothing read it.** That is this repo's signature defect (`ship_watch`
+# printing a healthy line off stale rows) reproduced in the fixture layer.
+# ⇒ Stamp CURFEW on entry and RUNNING is restored by the caller on resume. A
+# consumer can now distinguish asleep / dead / working from CONTENT, and should
+# STILL check freshness -- content alone was never enough.
 curfew_wait() {
   [ "$CURFEW" = off ] && return 0
+  stamped=
   while :; do
     hm=$(date -u +%H%M)
     # window [2055, 2400) u [0000, 0400): start 5 min early so a running batch
     # never straddles 21:00.
     if [ "$hm" -ge 2055 ] || [ "$hm" -lt 0400 ]; then
+      if [ -z "$stamped" ] && [ -n "${HB:-}" ]; then
+        printf '%s%s%s%s%s%s%s%s%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$T" "${n:-0}" \
+          "$T" "${TARGET:-0}" "$T" "${SHARD:-?}" "$T" CURFEW > "$HB"
+        stamped=1
+      fi
       printf '%s curfew: sleeping (UTC %s inside 20:55-04:00 blackout)\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$hm"
       sleep 300
     else
