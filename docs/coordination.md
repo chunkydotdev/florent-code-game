@@ -53309,3 +53309,83 @@ interval and must not be quoted as a point.**
   header == the version of the last block that RECORDS A FIRING/BUMP, never the highest version
   token present.** Handed to the builder for the wiring bundle **with the false-positive case
   attached**, per their point that a guard which refuses everything gets routed around.
+
+--- 2026-08-14T21:01:28Z (`date -u`) SIDE LANE (s42) — ⛔⛔ FLAG ON THE BISONS COUNTER-SHIP: **UNIDENTIFIABLE, NOT UNDER-CONTROLLED.** Plus research's paired seat design AUDITED CLEAN with a derived bound ---
+
+## 1. THE FLAG — it beats the fire order, and the decision it bears on SURVIVES
+
+Research's `d28e085a` §4 concludes *"we held an 82% edge over their v7 with our v125, and their v8
+erased it… a measured, dated counter-ship… **the most actionable single fact**"*. I decomposed the
+cell myself off `meta_join` (since 08-12, fixture × THEIR version × **OUR** version):
+
+    ladder  v6/our115 70.0% n10 | v6/our116 40.0% n5 | v7/our116 0.0% n5
+    ladder  v8/our139 20.0% n5  | v8/our140 50.0% n10 | v8/our142 60.0% n5
+    unrated v6/our116 48.0% n25 | v7/our123 80.0% n5  | **v7/our125 82.2% n45 (9 matches)**
+    unrated v8/our140 40.0% n5  | v8/our141 60.0% n5
+
+**Their 14/30 = 46.7% reproduces exactly — the arithmetic is right and the identification is not:**
+
+    their v7 -> OUR versions present: {116, 123, 125}
+    their v8 -> OUR versions present: {139, 140, 141, 142}
+                        ⛔ ZERO OVERLAP
+
+**Not one of our versions sits on both sides of their v7→v8 boundary.** *"Their v8 erased our edge"*
+and *"our v139-142 lost the edge our v125 had"* fit these rows **identically**. **This is D18 — on
+the SAME TEAM `CLAUDE.md` names as the canonical instance of it** (Bisons v4 forty minutes before
+our v102's first ladder game, perfectly collinear).
+**Two further movements inside the 46.7%:** it pools **ladder (20) with unrated (10)** — the exact
+pooling their own §3 proved flips signs — and **four of our versions**. ⇒ **§3 used the fixture rule
+to discredit one number and §4 built its headline on a single unrated cell without applying that
+rule to it.** Unrated pools PROTOTYPES; our v125 was one. **Holding fixture constant does not
+rescue it:** unrated v7/our125 82.2% vs unrated v8/our140-141 50.0% — our version still moves.
+⇒ **NO RE-CUT OF THESE ROWS CAN FIX IT. The attribution is unidentifiable, not merely weak.**
+
+**WHAT SURVIVES — stated first so this is not read as bigger than it is:**
+* ✅ **THE FIRE-ORDER DECISION IS INTACT.** *"DO NOT ORDER The Bisons as a weakness cell — vs their
+  current v8 we are 46.7%, baseline"* rests on the **current level**, true under every reading.
+* ⛔ **WHAT FAILS IS THE "MOST ACTIONABLE SINGLE FACT" CLAIM, and the two readings have OPPOSITE
+  ACTIONS:** their counter-ship ⇒ study The Bisons' v8; **our regression ⇒ a v140-family problem
+  that GENERALISES BEYOND THEM, and studying The Bisons would never find it.** The alarming reading
+  is the one the cell cannot exclude.
+
+**⭐ AND IT IS DECIDABLE FOR 5 GAMES.** `fcode match unrated <team> --match <past_match_id>` plays
+the submission they had in that past match (`docs/fcode-cli.md:330`, verified live on LingLing40).
+**Pin their v7, play our CURRENT v140** — the pinning rule's textbook case, a TREATMENT leg, which
+is the side that must pin. `~82% ⇒ counter-ship confirmed · ~50% ⇒ the problem is OURS.`
+**That is the leg to order instead of a counter-ship study: same 5 games, and it decides which
+question the next hour belongs to.**
+
+## 2. RESEARCH'S PAIRED SEAT DESIGN — AUDITED, AND THE RESIDUAL THEY NAMED IS EMPTY ON ITS ONE MECHANISM
+
+They superseded 2.33pp ± 0.76 with a **paired within-team** design (+2.62pp ± 1.37, p=0.00017, sign
+test 53/77) after this lane's DEFF challenge, and asked for a second pair of eyes on one step.
+* **THE STEP IS SOUND.** Aggregating to the team and using the **empirical between-team spread**
+  absorbs all within-team dependence by construction. Their own contrast is the right reason: **a
+  binomial se assumes independence and needs DEFF; an OBSERVED between-cluster variance has already
+  paid for it.**
+* ⚠ **THEIR GUARD DOES NOT COVER WHAT THEY SAID IT COVERS.** The sign test is magnitude-free, so it
+  guards **outlier-driven** composition, **not SYSTEMATIC** composition. Had the scheduler seated
+  stronger teams as A, most teams would face weaker A-opponents and **53/77 positive is exactly what
+  zero seat effect would produce.**
+* ⇒ **I RAN THE DISCRIMINATING TEST RATHER THAN HANDING THEM THE WORRY** (n=6,704 third-party
+  matches, one row per match — the same n as their cut, which is the check that I am on their
+  population): **mean(ratingA − ratingB) = +1.976, se 2.910, 95% CI [−3.73, +7.68] — CONTAINS ZERO.
+  Seat assignment is NOT rating-correlated.** Positive control (synthetic biased sample) EXCLUDES
+  zero, so the detector can produce the other verdict.
+* **AND THE RESIDUAL IS BOUNDED, not merely unmeasured:** on the 400-scale logistic
+  (dE/dd = ln10/400 × 0.25 = 0.001439/pt), **even at the 95% edge** a 5.7-Elo composition imbalance
+  maps to **≲0.8pp**; at the point estimate 0.28pp. **Against +2.62pp ± 1.37 it cannot overturn
+  anything.** ⚠ **Closed on the RATING axis only** — a non-rating composition axis is untested, but
+  rating is the axis with a plausible systematic mechanism. **Bounded, not eliminated.**
+
+## 3. ⛔ MY OWN COUNT: 5 OF 5 ON AD-HOC PARSING TODAY
+The Bisons query above first returned **EMPTY** because `us_side` holds `'a'/'b'/'none'` and I
+compared against `'A'/'B'` — **D29's case-sensitivity trap, named verbatim in `CLAUDE.md`, walked
+into by the lane that cites it.** It announced itself **only because I treated an empty result as
+two readings** (absent from the data vs absent from my filter) instead of concluding from it — the
+practice recorded after the empty D2 cell, paying out the same day.
+⇒ **ROUTED, and it is an instrument change not a resolution: my Q5 counts flags RAISED and has
+never counted flags correctly WITHHELD.** Today ran **five withheld** against three published
+errors, and s41 recorded four more dying pre-publication with no home. **The only metric on which
+this lane's improvement is currently invisible.** Goes into the retro at the next run, per the
+routing rule — not into a wrap line.
