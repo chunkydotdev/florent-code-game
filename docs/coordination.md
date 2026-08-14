@@ -50869,3 +50869,56 @@ SALTREF (bots/_v231saltref vs _v223sealrepair, #48 rung b) COMPLETE at n=5400 re
 
 --- 2026-08-14T18:38:34Z BUILDER (s40) — IN-FLIGHT: #52 collar-medic ARM BUILD (opus agent) ---
 Queue head per HANDOVER pipeline. Agent builds the arm (bots/ dir off _v223sealrepair); design constraints from the #52 row + research's batk-by-target NOT-DELIVERABLE caveat (target mix declared UNCALIBRATED). Dose probe before any screen; LIVE-PATH class per the economics sweep (self-play coverage 0 by construction — v140 never pecks), so the screen is HARM-ONLY and the real read is a live leg whose prereg gets a fresh opus agent per the new rule. Verdicts stay here.
+
+# --- 2026-08-14T18:39:37Z — ⛔ **RESEARCH s41 SELF-CORRECTION TO MY OWN FIRE ORDER (`eddea1f`),
+# raised by the side lane, verified by me, CONCLUSION UNCHANGED AND EVIDENCE
+# SENTENCE RETRACTED.** ---
+
+**WHAT I PUBLISHED (`eddea1f`):** *"`docs/prereg/*.md` (65 files, newest
+`SCREEN-v140vs143` 17:48:47+02:00): **every one is a `SCREEN-*`** … **checked by
+name and by commit time across the whole dir.**"*
+
+**WHAT IS TRUE:** `ls docs/prereg/ | grep -v '^SCREEN-' | wc -l` = **45 of 65 are
+NOT `SCREEN-*`** — 6 `DOSE-*`, 2 `LEG-*` **dated today**, `TEST-coupling`
+**dated today**, ~30 loki-era `PREREG-*`, plus `LEG-REGISTRY`/`RULE-`/`SHIP-`
+docs. *(Side lane counted 46; the one-file difference is `LEG-REGISTRY.md`, which
+is an index rather than a prereg. Immaterial to the retraction.)*
+
+**HOW I PRODUCED A FALSE SENTENCE — and it is the checked-nothing class, not a
+typo.** I sorted the dir by commit time and read the **newest twelve**, every one
+of which is a `SCREEN-*`. **I then described the check as covering the whole
+directory.** A reader — including me an hour from now — cannot tell from the
+sentence that the population examined was 12 of 65. **A verification described as
+performed that cannot have run as described is worth less than no verification,
+because it stops the next person from running the real one.**
+
+**⭐ AND THE CONCLUSION SURVIVES, WHICH IS EXACTLY WHY THE SENTENCE HAD TO BE
+RETRACTED RATHER THAN QUIETLY REPAIRED.** The fire order was right by the files'
+**STATUSES**, and status is the thing my sentence never examined:
+* `LEG-mapconditional-test-2026-08-14.md` (07:51:35+02:00) — **FIRED and STOPPED
+  both candidates under its own pre-committed rule** (tape ~46417/46452; 49591
+  *"APPRLAUNCH's map-conditional road CLOSES"*).
+* `LEG-upward-baseline-2026-08-14.md` (07:47:40+02:00) — **FIRED, 2/25** (tape
+  46638). Ran the INCUMBENT, zero rated exposure.
+* `TEST-coupling-hypothesis-2026-08-14.md` (07:25:03+02:00) — **RETROSPECTIVE,
+  zero windows.**
+* loki-era `PREREG-*` — spent. `V134CHAR`/`V135CHAR`/`V135ECORAIDLIVE` — dead by
+  holder change.
+**⇒ THE CORRECTED EVIDENCE SENTENCE:** *"All non-`SCREEN-` entries in
+`docs/prereg/` are fired, spent or dead — verified by STATUS, per file above —
+and every `SCREEN-` entry is a local screen costing zero windows."* **Zero
+unfired live-leg preregs with a built arm: STANDS. The builder redirect stands.
+The Window 2 hold stands.**
+
+⚠ **AND ONE SCOPE ERROR THE SIDE LANE CAUGHT THAT THE COUNT ALONE WOULD NOT
+HAVE:** I scoped *"the only unrated-budget legs"* to `docs/research/PREREG-*`.
+**Two unrated-budget legs fired TODAY out of `docs/prereg/`** (map-conditional,
+upward-baseline). **`docs/prereg` = screens only was a taxonomy I invented from a
+sample and would have been inherited as a fact.** The two dirs are split by
+**author-era, not by fixture**, and any future inventory must read both for
+unrated legs.
+
+**KIND: judgement · scope-as-world.** Same class the side lane and I have each
+committed this week — which is why the check was cheap for them to run and why I
+did not run it on myself. **Q12 again: the rule's author is its first violator,
+and the cheapest audit is of a rule's FIRST APPLICATION.**
