@@ -53622,3 +53622,83 @@ inside the band).** ⇒ **Queue row owed; it belongs beside the pinning rule in 
 opponent-version bullet, which currently says only that we can PIN.**
 ⚠ **Its limit is exactly what makes Juusto still interesting: a counter aimed at US is invisible
 to it by construction.** It removes the boring explanation; it cannot confirm the interesting one.
+
+--- 2026-08-14T21:13:13Z RESEARCH (s43) — ⭐⭐ **AGENT RELAY: THE 0033 LOSS MODE IS DECODED, AND IT IS A CONJUNCTION — SPAWN-RING SIEGE × BELT ATTRITION. Neither factor alone separates; together they name our TWO worst matchups.** ---
+Agent-decoded (opus), match-level throughout, ladder and unrated never pooled, control opponent
+`team lazy` run on every cut. **Relayed with its own limits attached; the causal half is
+INFERENCE and is labelled as such below.**
+
+## THE DISCRIMINATOR — the one channel where 0033 is #1 of 18 opponents
+```
+match-level mean +- 95%              0033          team lazy      FIELD        0033 - lazy
+our conveyor deaths by r150 (unr) 5.67 +- 0.49   2.65 +- 0.50  2.87 +- 0.25  +3.02 +- 0.70
+same, LADDER                      5.97 +- 0.49   2.76 +- 0.72  2.29 +- 0.31  +3.21 +- 0.88
+their barriers in our spawn ring   4.11 +- 0.38  1.92 +- 0.32  2.30 +- 0.50  +2.19 +- 0.49
+games with ANY spawn-ring build        96%            67%          36%
+```
+⭐ **THE SHAPE MATTERS MORE THAN THE LEVEL.** Against every other opponent our conveyor-loss
+curve **flattens after r100** (the belt reaches steady state). **Against 0033 it stays LINEAR to
+r200** — slope r100→r200 **4.55 vs 1.85 (lazy) / 2.22 (field)**. **They are still eating it when
+our core falls.** Exposure-normalised they are **1st of 18 at 4.10 deaths/100 rounds**; the floor
+is The Bisons 0.34 and Focalground 0.01 — **a 12-400x range, which is what makes the metric a
+discriminator rather than a level.**
+
+## ⛔ AND THE HEADLINE IS THE CONJUNCTION, WHICH IS WHY SINGLE-FACTOR STORIES ALL FAILED
+Cross-opponent Spearman over 17 opponents (unrated, ≥40 games, area≥400):
+**−0.83 forward-build ratio r<100 · −0.79 spawn-ring-siege rate · −0.72 conveyor attrition** ·
+−0.27 their early sentinels · −0.18 their early gunners · **−0.03 their melee attacks · −0.01
+their mid-game conveyors**.
+**The two teams at the top of BOTH siege and attrition — 0033 (96%, 4.10) and Leviathan (95%,
+3.02) — are our two worst matchups in the window (26.7%, 15.9%).** ⚠ **NEITHER ALONE SEPARATES:
+lazy sieges 66% and we WIN 63%; Coreflood grinds our belt at 2.54/100r with 1% siege and we WIN
+65%.** ⇒ **any plank aimed at one half predicts nothing.**
+
+## WHAT IT COSTS US, in our own build
+Our **r0-100 is essentially unchanged** (sentinel 1.39 vs 1.64 lazy; conveyor 21.4 vs 25.2).
+**The divergence starts at r100 and is total** (per 100 rounds in band):
+| ours, r100-250 | 0033 | lazy | field |
+|---|---|---|---|
+| sentinel | **0.71** | 2.02 | 1.38 |
+| conveyor | **5.31** | 9.33 | 6.35 |
+| builder spawns | **0.39** | 0.93 | 1.04 |
+**Ti collected at r150: 620 ours vs 930 theirs — 310 behind, 2x the field gap and 5x the lazy
+gap. That is what the missing mid-game sentinels are made of.**
+⭐ **AND OUR ARMY BARELY DIES — OUR INFRASTRUCTURE DOES.** Our builder bots die in only **40%** of
+games (lazy 72%, field 63%), and when they do they die **3.6 tiles from OUR core and 14.8 from
+THEIRS** (vs lazy 8.0 / **5.4**). **Our insertion never arrives.** Our sentinels die at median
+6.4 tiles from our own core (lazy 18.6, field 13.5) — **dying at home, not forward.**
+
+## ✅ R1000 IS NOT THE STORY — it is RARER here than anywhere
+0.0% (ladder) / 1.5% (unrated) vs field 3.2%/4.6%. **Rated: core_destroyed 35 of 35 = 100%.**
+The tiebreak ladder never runs against 0033. Our core dies at median **r146 (ladder) / r165
+(unrated)**, **54%/46% dead by r200** against field 27%/28% — a narrow **r125-200** window, and
+**we are NOT rushed** (dead by r100: 0-1.9%, BELOW the field's 5.4%).
+
+## NULLS, EACH WITH ITS CONTROL — roads closed cheaply
+* **Titanium siphon: DEAD.** Median leak fraction r0-150 is **0.00% for us, for them, for 0033,
+  for lazy and for the field.**
+* **Builder-melee VOLUME: DEAD** (ρ=−0.03). Coreflood 60 attacks/game, Hugging Farce 60,
+  Focalground 59 — **we win those 65%, 86%, 83%.** ⇒ **attacks matter only WHERE they land.**
+* **Their conveyor economy: DEAD** (ρ=−0.01; Coreflood builds MORE and we beat them).
+* **Map size: CONTROLLED** — 0033 skews small (median area 400 vs 520); restricted to area≥400
+  the effect is intact (siege 96%, win share 28.2%).
+* **Launcher kidnap, either direction: ZERO launchers built by 0033 or lazy in any game.**
+
+## ⚠ LIMITS, RELAYED NOT BURIED
+1. ⛔ **ATTRIBUTION IS INFERENCE.** `events.tsv` carries BUILD and DEATH only — no attack event.
+   *"Their builders destroyed our conveyors"* is **not measured.** Converging circumstantial
+   support (their melee 63-74/game vs 20-27 elsewhere; our conveyor deaths cluster 3.6 tiles from
+   OUR core; our own `destroy()` cannot drive it because zero-attack matchups floor at 0.34/0.01).
+2. **The siege dose is SATURATED inside 0033** (83 of 120 games have ≥3 ring barriers by r150), so
+   **no within-opponent dose-response exists** — 27% vs 17% unrated and it **REVERSES on ladder**
+   (20% vs 38%, n=5/13). **The evidence is ACROSS-opponent only.**
+3. **Ladder is 7 matches** (±16.5pp on win share). Directionally identical, cannot resolve alone.
+   **The v140-only cut (13 unrated matches, 26.2% vs lazy 68.9%) is the like-for-like read** —
+   the hole is not an artefact of pooling old prototypes.
+4. **Instrument built and validated BOTH WAYS:** unrated games carry no `turns`, so game length
+   was derived from the in-replay core DEATH event — **3,633 of 3,635 correct (99.94%)** against
+   `ladder_games` ground truth, producing both verdicts (3,089 core-kill / 544 r1000, **0 false
+   negatives on r1000**). **The obvious alternative was explicitly rejected**: max-event-round
+   gives **378 false negatives** because a stalled game's last event can be r14.
+
+## ⇒ ROUTED — `QUEUE.md` **#69** stocked, and #68 (field-instrument) stocked earlier this session.

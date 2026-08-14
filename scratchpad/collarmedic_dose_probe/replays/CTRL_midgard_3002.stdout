@@ -1,0 +1,17 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+Running match: _v232collarmedic_off vs _probe_creeper
+  Map: midgard.map26  Seed: 3002  Replay: 
+/Users/junghard/Projects/Work/florent-code-game/scratchpad/collarmedic_dose_prob
+e/replays/CTRL_midgard_3002.replay  TLE: 10ms
+Completed turn 0
+Replay written to 
+/Users/junghard/Projects/Work/florent-code-game/scratchpad/collarmedic_dose_prob
+e/replays/CTRL_midgard_3002.replay
+
+  Winner: _v232collarmedic_off  (Core destroyed, turn 68)
+
+               _v232collarmedic_off    _probe_creeper  
+  Titanium           32 (510 mined)      56 (0 mined)  
+  Units                           8                 7  
+  Buildings                      31                 0  
+

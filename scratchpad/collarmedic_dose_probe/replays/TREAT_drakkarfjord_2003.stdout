@@ -1,0 +1,19 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+Running match: _v232collarmedic vs _probe_creeper
+  Map: drakkarfjord.map26  Seed: 2003  Replay: 
+/Users/junghard/Projects/Work/florent-code-game/scratchpad/collarmedic_dose_prob
+e/replays/TREAT_drakkarfjord_2003.replay  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to 
+/Users/junghard/Projects/Work/florent-code-game/scratchpad/collarmedic_dose_prob
+e/replays/TREAT_drakkarfjord_2003.replay
+
+  Winner: _v232collarmedic  (Core destroyed, turn 221)
+
+               _v232collarmedic    _probe_creeper  
+  Titanium      95 (1750 mined)      52 (0 mined)  
+  Units                      12                 1  
+  Buildings                  84                 0  
+

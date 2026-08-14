@@ -1,0 +1,19 @@
+Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode
+Running match: _v232collarmedic_off vs _probe_creeper
+  Map: hive.map26  Seed: 3003  Replay: 
+/Users/junghard/Projects/Work/florent-code-game/scratchpad/collarmedic_dose_prob
+e/replays/CTRL_hive_3003.replay  TLE: 10ms
+Completed turn 0
+Completed turn 100
+Completed turn 200
+Replay written to 
+/Users/junghard/Projects/Work/florent-code-game/scratchpad/collarmedic_dose_prob
+e/replays/CTRL_hive_3003.replay
+
+  Winner: _v232collarmedic_off  (Core destroyed, turn 236)
+
+               _v232collarmedic_off    _probe_creeper  
+  Titanium          84 (1100 mined)      52 (0 mined)  
+  Units                          10                 5  
+  Buildings                      64                 0  
+

@@ -1091,3 +1091,4 @@ TINYECO62   bots/_v235tinyeco62    bots/_v223sealrepair   2700 300000
 SPKT64P     bots/_v236spawnpocket  bots/_v223sealrepair   2700 302000
 # REMOTE-ONLY (A4 voided the 40-worker rows; B decides) V140VS145   bots/_v223sealrepair   bots/_x3r0v145   1000 304000
 # REMOTE-ONLY (prereg: this shard alone decides, work-server-1) V140VS145B  bots/_v223sealrepair   bots/_x3r0v145   1000 306000
+SEALFLOOR6  bots/_v238sealfloor6   bots/_v223sealrepair   5400 308000

@@ -4208,3 +4208,53 @@
 2026-08-14T20:00:39Z policy: LAUNCH ONCE, NEVER RELAUNCH. a dead shard is logged and left.
 2026-08-14T20:00:39Z ALL WORK STARTED AND ALL SHARDS FINISHED. exiting.
 2026-08-14T20:00:39Z COREFILL done.
+2026-08-14T20:25:57Z COREFILL up. work=scratchpad/corefill_work.txt items=126 max_shards=8 deadline=8h out=scratchpad/overnight load_ceil=11.0
+2026-08-14T20:25:57Z policy: LAUNCH ONCE, NEVER RELAUNCH. a dead shard is logged and left.
+2026-08-14T20:25:57Z LAUNCH SEALFLOOR6  bots/_v238sealfloor6 vs bots/_v223sealrepair  target=5400 seed_lo=308000   (running was 0, load 3.14)
+2026-08-14T20:26:57Z hold: running=1/8 load=3.71 unstarted=0
+2026-08-14T20:27:58Z hold: running=1/8 load=3.29 unstarted=0
+2026-08-14T20:28:58Z hold: running=1/8 load=3.21 unstarted=0
+2026-08-14T20:29:58Z hold: running=1/8 load=2.94 unstarted=0
+2026-08-14T20:30:58Z hold: running=1/8 load=3.38 unstarted=0
+2026-08-14T20:31:58Z hold: running=1/8 load=2.65 unstarted=0
+2026-08-14T20:32:58Z hold: running=1/8 load=2.79 unstarted=0
+2026-08-14T20:33:58Z hold: running=1/8 load=3.08 unstarted=0
+2026-08-14T20:34:59Z hold: running=1/8 load=2.51 unstarted=0
+2026-08-14T20:35:59Z hold: running=1/8 load=3.63 unstarted=0
+2026-08-14T20:36:59Z hold: running=1/8 load=3.45 unstarted=0
+2026-08-14T20:37:59Z hold: running=1/8 load=3.45 unstarted=0
+2026-08-14T20:38:59Z hold: running=1/8 load=3.76 unstarted=0
+2026-08-14T20:39:59Z hold: running=1/8 load=3.90 unstarted=0
+2026-08-14T20:40:59Z hold: running=1/8 load=3.50 unstarted=0
+2026-08-14T20:42:00Z hold: running=1/8 load=5.39 unstarted=0
+2026-08-14T20:43:00Z hold: running=1/8 load=4.54 unstarted=0
+2026-08-14T20:44:00Z hold: running=1/8 load=3.76 unstarted=0
+2026-08-14T20:45:00Z hold: running=1/8 load=3.80 unstarted=0
+2026-08-14T20:46:00Z hold: running=1/8 load=3.66 unstarted=0
+2026-08-14T20:47:00Z hold: running=1/8 load=3.41 unstarted=0
+2026-08-14T20:48:00Z hold: running=1/8 load=3.70 unstarted=0
+2026-08-14T20:49:00Z hold: running=1/8 load=3.25 unstarted=0
+2026-08-14T20:50:01Z hold: running=1/8 load=3.86 unstarted=0
+2026-08-14T20:51:01Z hold: running=1/8 load=3.03 unstarted=0
+2026-08-14T20:52:01Z hold: running=1/8 load=2.70 unstarted=0
+2026-08-14T20:53:01Z hold: running=1/8 load=3.27 unstarted=0
+2026-08-14T20:54:01Z hold: running=1/8 load=3.84 unstarted=0
+2026-08-14T20:55:01Z hold: running=1/8 load=3.71 unstarted=0
+2026-08-14T20:56:01Z hold: running=1/8 load=3.60 unstarted=0
+2026-08-14T20:57:02Z hold: running=1/8 load=3.44 unstarted=0
+2026-08-14T20:58:02Z hold: running=1/8 load=3.76 unstarted=0
+2026-08-14T20:59:02Z hold: running=1/8 load=3.94 unstarted=0
+2026-08-14T21:00:02Z hold: running=1/8 load=3.84 unstarted=0
+2026-08-14T21:01:02Z hold: running=1/8 load=4.26 unstarted=0
+2026-08-14T21:02:02Z hold: running=1/8 load=5.95 unstarted=0
+2026-08-14T21:03:02Z hold: running=1/8 load=4.05 unstarted=0
+2026-08-14T21:04:03Z hold: running=1/8 load=3.84 unstarted=0
+2026-08-14T21:05:03Z hold: running=1/8 load=3.11 unstarted=0
+2026-08-14T21:06:03Z hold: running=1/8 load=4.31 unstarted=0
+2026-08-14T21:07:03Z hold: running=1/8 load=4.83 unstarted=0
+2026-08-14T21:08:03Z hold: running=1/8 load=5.07 unstarted=0
+2026-08-14T21:09:03Z hold: running=1/8 load=5.39 unstarted=0
+2026-08-14T21:10:03Z hold: running=1/8 load=4.52 unstarted=0
+2026-08-14T21:11:03Z hold: running=1/8 load=4.63 unstarted=0
+2026-08-14T21:12:04Z hold: running=1/8 load=6.36 unstarted=0
+2026-08-14T21:13:04Z hold: running=1/8 load=6.31 unstarted=0

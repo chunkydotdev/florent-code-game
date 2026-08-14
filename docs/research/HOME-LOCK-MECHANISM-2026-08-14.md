@@ -27,7 +27,7 @@ simply locks with early onset and zero travel** (median max-d² ever reached =
 mechanism.
 
 **⚠ ROAD ALREADY WALKED TWICE.** `OSCLOCK` (two-tile-lock detector + repick)
-finished **46.39** and `OSCLOCK2` (free the locked bot) **46.49/46.39** — both
+finished **48.53** ⛔ *(CORRECTED s43: this read **46.39**, which is OSCLOCK2's GATE-1800 number duplicated onto its sibling. OSCLOCK never read 46.39 at any checkpoint — its series is 50.30 / 50.19 / 48.83 / **48.53 final**.)* and `OSCLOCK2` (free the locked bot) **46.49** — both
 DROPPED (`docs/coordination.md:46042,46607`). My class decomposition says why:
 the detector frees a class-O bot back into the state that produced the cycle,
 and it **cannot free a class-P bot at all** — that bot is physically walled in.
@@ -311,8 +311,8 @@ EXPECTED DIRECTION: positive everywhere, larger where our trunk is longer.
 
 ### 5.3 What I recommend AGAINST
 
-**A third "detect the 2-cycle and repick" leg.** `OSCLOCK` 46.39 and
-`OSCLOCK2` 46.39/46.49 already tested it; §3.2 refutes every mechanism a
+**A third "detect the 2-cycle and repick" leg.** `OSCLOCK` **48.53** and
+`OSCLOCK2` **46.49** already tested it ⛔ *(both figures CORRECTED s43 — see above; and note the honest reading is weaker than the original text implied: OSCLOCK's POOLED CI **[46.29, 50.77] INCLUDES 50**, i.e. pooled it is a "could not separate", and only its lock-heavy segment [39.46, 49.48] is a clean exclusion. Direction unaffected — both arms are dead — but ONE measurement was reading as TWO independent confirmations.)*; §3.2 refutes every mechanism a
 repick would address for the 89.3% class-O majority, and §3.3 says the locked
 bot's distinguishing feature is that it **never acted** (39.9% vs 12.2%), not
 that it could not find a route. A bot with nothing to do, freed, has nothing

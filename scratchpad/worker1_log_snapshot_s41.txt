@@ -1,0 +1,46 @@
+==> worker.log <==
+2026-08-14T14:51:47Z STOP file present — SEALREPAIRR halted at 3310/5400. Rows are KEPT.
+2026-08-14T14:51:47Z STOP during SEALREPAIRR — halting.
+2026-08-14T14:51:47Z WORKER done. (a shard that failed is LOGGED AND LEFT — nothing here relaunches anything)
+2026-08-14T14:51:50Z WORKER up. host=junghard-server ncpu=16 workers=40 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T14:51:50Z SHARD V140VS142  _v223sealrepair vs _x3r0v142  target=1000 seedbase=32296000
+2026-08-14T15:16:10Z SHARD V140VS142 COMPLETE 1000/1000
+2026-08-14T15:16:10Z RESUMING SEALREPAIRR at 3310/5400
+2026-08-14T15:16:10Z SHARD SEALREPAIRR  _v223sealrepair vs _v218mapfix  target=5400 seedbase=32269000
+2026-08-14T15:49:25Z WORKER up. host=junghard-server ncpu=16 workers=40 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T15:49:25Z SHARD V140VS143  _v223sealrepair vs _x3r0v143  target=1000 seedbase=32298000
+2026-08-14T15:52:24Z hold: load 20.03 > ceiling 20 — waiting 30s (V140VS143 at 120/1000)
+2026-08-14T15:54:40Z hold: load 20.10 > ceiling 20 — waiting 30s (SEALREPAIRR at 4990/5400)
+2026-08-14T15:56:19Z hold: load 20.77 > ceiling 20 — waiting 30s (V140VS143 at 320/1000)
+2026-08-14T16:09:01Z hold: load 20.21 > ceiling 20 — waiting 30s (SEALREPAIRR at 5390/5400)
+2026-08-14T16:10:41Z SHARD SEALREPAIRR COMPLETE 5400/5400
+2026-08-14T16:10:41Z SHARD SALTREF  _v231saltref vs _v223sealrepair  target=5400 seedbase=32288000
+2026-08-14T16:19:13Z SHARD V140VS143 COMPLETE 1000/1000
+2026-08-14T16:19:13Z SKIP SEALREPAIRR — already COMPLETE
+2026-08-14T16:19:13Z WORKER done. (a shard that failed is LOGGED AND LEFT — nothing here relaunches anything)
+2026-08-14T16:56:50Z hold: load 20.10 > ceiling 20 — waiting 30s (SALTREF at 1880/5400)
+2026-08-14T18:17:09Z SHARD SALTREF COMPLETE 5400/5400
+2026-08-14T18:17:09Z WORKER done. (a shard that failed is LOGGED AND LEFT — nothing here relaunches anything)
+2026-08-14T19:23:31Z WORKER up. host=junghard-server ncpu=16 workers=40 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T19:23:31Z SHARD V140VS145  _v223sealrepair vs _x3r0v145  target=1000 seedbase=32304000
+2026-08-14T19:36:02Z STOP file present — V140VS145 halted at 480/1000. Rows are KEPT.
+2026-08-14T19:36:02Z STOP during V140VS145 — halting.
+2026-08-14T19:36:02Z WORKER done. (a shard that failed is LOGGED AND LEFT — nothing here relaunches anything)
+2026-08-14T19:36:31Z WORKER up. host=junghard-server ncpu=16 workers=10 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T19:36:31Z SHARD V140VS145B  _v223sealrepair vs _x3r0v145  target=1000 seedbase=32306000
+2026-08-14T20:00:34Z SHARD V140VS145B COMPLETE 1000/1000
+2026-08-14T20:00:34Z WORKER done. (a shard that failed is LOGGED AND LEFT — nothing here relaunches anything)
+2026-08-14T20:03:05Z WORKER up. host=junghard-server ncpu=16 workers=10 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T20:03:05Z SKIP V140VS145B — already COMPLETE
+2026-08-14T20:03:05Z WORKER done. (a shard that failed is LOGGED AND LEFT — nothing here relaunches anything)
+2026-08-14T20:03:29Z WORKER up. host=junghard-server ncpu=16 workers=10 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T20:03:29Z SKIP V140VS145B — already COMPLETE
+2026-08-14T20:03:29Z WORKER done. (a shard that failed is LOGGED AND LEFT — nothing here relaunches anything)
+2026-08-14T20:04:17Z WORKER up. host=junghard-server ncpu=16 workers=10 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T20:04:17Z RESUMING V140VS145B at 1000/3000
+2026-08-14T20:04:17Z SHARD V140VS145B  _v223sealrepair vs _x3r0v145  target=3000 seedbase=32306000
+
+==> worker.out <==
+2026-08-14T20:04:17Z WORKER up. host=junghard-server ncpu=16 workers=10 load_ceil=20 engine=2.3.6(pin 2.3.6) maps=15 work=work/worklist.txt out=results
+2026-08-14T20:04:17Z RESUMING V140VS145B at 1000/3000
+2026-08-14T20:04:17Z SHARD V140VS145B  _v223sealrepair vs _x3r0v145  target=3000 seedbase=32306000
