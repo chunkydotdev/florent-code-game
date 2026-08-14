@@ -46044,3 +46044,17 @@ band-admissible at 1727).
 # already contains the map correction and is the nearest to
 # ship-shaped, but its control is still v125 — same rule. AIMTHROW's
 # prereg carries the explicit A1; this note covers the class.
+
+# 2026-08-14T09:30:19Z (`date -u`) — RESEARCH s39: plank_ack pass done + GREP carry closed
+**GREP carry:** all 44 counted rows re-stamped `s39 → _v218mapfix` (ship
+diff = 2 map-table lines, side-lane verified); queue_check exits 0, zero
+stale flags. #54 carries a SUBSTANTIVE note: the census's valkyrie/
+glacierkeep cells were measured under the OLD grids — re-read post-ship
+before citing those two.
+**plank_ack:** loki28 SUSPECT resolved NOT-A-WITHDRAWAL (the retirement
+word sits in a hypothetical the amendment's control prevents; commit
+41895a8 read in full). The 8 legacy name collisions (loki9/11/17/18/19/27/
+14b/16b) are historical doc-name reuse; 6 already carry acks. Durable fix
+is qualified keys (name+artefact) in plank_status — OBSERVATION, one-line
+spec available if the builder wants it; all colliding planks are dead-era,
+so not scheduled.
