@@ -52536,3 +52536,36 @@ builder 0, core 0: ONLY ammo-spending types** — fits the known **0-ammo `fire(
 exactly *(`can_fire` returns TRUE at 0 ammo; the check lives in `finish_firing_turret` and
 RAISES)*. **Two discriminators were run and NEITHER confirmed it.** Recommended as a
 research task, **not a bot change**.
+
+--- 2026-08-14T20:31:xxZ SIDE LANE (s41) — SCREEN-sealfloor6 LOCK CERTIFIED (and the first-ever green PREREG_CHECK) ---
+**TWO-CLOCK ✅, with margin this time.** CLOCK 1 `372e1562` **20:25:37Z**, and the prereg file is in
+that commit's `--diff-filter=A` list (the arm tree landed with it, so no tree-edited-after-lock
+question exists). CLOCK 2 first row **20:25:59Z**, gap **22s**. Applying my own completion-time
+caveat: local cadence is 3.32 s/row with a max early inter-row gap of **11s** ≈ one game, so the
+**implied START is ~11s AFTER the lock** — the sign is positive here, unlike SALTREF2's. *(The
+`.launch.log` is EMPTY, which independently confirms the gap I routed an hour ago: no start stamp
+exists anywhere yet.)*
+
+⭐ **`PREREG_CHECK: OK` — THE FIRST PREREG EVER TO PASS.** 21 ok / 1 n-a / 0 FAIL, three of them the
+new `ok~` ATTESTED tags. The migration works, and the tool went from draft-uncertified to a live
+green on a real registration inside one session.
+
+⛔ **AND A GREEN RUN IS A FLOOR, WHICH IS THE WHOLE POINT — so I checked the two things it CANNOT.**
+1. **THE ONE-HUNK CLAIM: VERIFIED.** `diff -r` over the two trees' `.py` files returns **exactly 2
+   changed lines** — `LOKI_SEAL_TI_FLOOR = 0` → `6` at `doctrine.py:1228`. The prereg's
+   *"verified at draft (not asserted)"* is true.
+2. **OB13 SEMANTICALLY, and this is the interesting one: `raid.py` IS BYTE-IDENTICAL BETWEEN THE
+   ARMS** — which is LOKI-18's exact surface shape, the incident Obligation 13 was written for.
+   **It is NOT a repeat; it is the inverse.** `raid.py:64` does `from doctrine import *`, and
+   `raid.py:270` reads `LOKI_SEAL_TI_FLOOR` in its guard condition, so **the guard's BEHAVIOUR
+   differs between arms while its BYTES do not.** In LOKI-18 the metric sat behind a guard that
+   could not move; here it sits behind one that moves through an import-bound constant.
+   ⇒ **INTERSECTION IS REAL.** The builder's `7b6cfad3` OB13 import-binding patch is precisely what
+   makes this distinguishable by machine — shipped an hour before the first document that needed it.
+
+**MINOR, DOCUMENTATION NOT EXPERIMENT, flagged to the builder:** `doctrine.py:1580` reads
+`LOKI_SALT_TI_FLOOR = 12  # bank floor for a salt barrier (matches LOKI_SEAL_TI_FLOOR)` **in BOTH
+trees**, while `LOKI_SEAL_TI_FLOOR` is 0/6. **The comment asserts a relationship that does not
+hold.** It cannot confound this screen (SALT is unchanged across arms), but it is the
+prose-contradicting-code class research counted three of today, and the live hazard is a future
+author who changes one constant believing the other follows.
