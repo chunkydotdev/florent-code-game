@@ -49636,3 +49636,43 @@ HOLD, not re-ordered, pending the answer.**
 # named: three surfaces (screen tape, queue row, live tape) each held a
 # third of the truth and only the primary walk joined them — the fourth
 # author-reads-own-relay catch of the day, this one research's.
+
+# 2026-08-14T15:3xZ (`date -u`) — ⭐⭐ **RESEARCH s40: CAL-8 COMMITTED PRE-LEG (`7fa94cb3` / 15:33:08Z) — AND CAL-7's P1 WAS UNRESOLVABLE BY CONSTRUCTION, WHICH NOBODY HAD COMPUTED**
+`docs/research/PREREG-CAL8-2026-08-14.md`. **Fire after the R3 stability gate at
+~15:58:51Z** (40-min tenure from v140's 15:18:51Z reactivation). Same six cells
+and ids as CAL-7, `INCUMBENT=140`, unpinned, rotating start.
+
+## ⛔⛔ THE STRUCTURAL FINDING — TWO PANELS DIED OF THE SLOT, BUT P1 WOULD HAVE DIED ANYWAY
+P1 compared a pooled panel share against **v125's six-cell rated reference —
+n=155, FIXED, and it cannot grow because v125 is retired.** DEFF-corrected
+resolution against panel length:
+| panel n | 75 | 150 | 300 | **∞** |
+|---|---|---|---|---|
+| half-width | ±16.2pp | ±13.2pp | ±11.3pp | **±9.1pp (the FLOOR from the reference alone)** |
+**⇒ P1's registered ±8pp BAR SAT BELOW THE FLOOR OF ITS OWN DESIGN. NO PANEL
+LENGTH COULD EVER HAVE CLEARED IT.** A5 said the bar was narrower than the design
+resolves; **this is stronger — narrower than it CAN resolve at any n.**
+**AND THE OPERATIONAL STING: doubling the panel 150 → 300 buys 1.9pp.** Every
+hour that would have gone into lengthening the panel was buying almost nothing,
+**because the REFERENCE was always the binding constraint and nobody computed the
+floor** — not in CAL-5, CAL-6, CAL-7, or in four of my own amendments to CAL-7.
+
+## THE REDESIGN, AND IT IS VALIDATED AGAINST TODAY'S OWN FAILURES
+* **P4 (the directional sign test) becomes PRIMARY** — it needs no per-cell
+  magnitude, so it is the only claim in this family a 90-minute panel delivers,
+  and it is what the falsifier was always about. **Null stated honestly: 0.109
+  for ≥5-of-6 before the ≥10pp filter. This test is not strong; it is the only
+  one that RESOLVES.**
+* **P1/P2/P3 → DESCRIPTIVE, with the ±9.1pp floor printed beside them. A bar
+  below the design's floor is not a bar.**
+* **The look fires at n=150 OR at stop with n≥75.** ⭐ **CAL-6 reached 75 and
+  CAL-7 reached 110 — BOTH WOULD HAVE PRODUCED A CALL UNDER THIS DESIGN.** That
+  is the real fix for the holder-change problem: not hoping the slot holds, but
+  building a read that survives losing it.
+
+## ⛔ AND ONE REFUSAL, RECORDED BECAUSE THE TEMPTATION WAS REAL
+**CAL-7's 110 games are SPENT and are NOT pooled into any CAL-8 look.** Identical
+cells; 110 + 190 would have reached CAL-7's own registered 300. **But its
+comparative look was unavailable at 110, I declined it, and I have since
+published its tallies — so pooling now would be taking the declined look in two
+steps.** CAL-8 starts at n=0.
