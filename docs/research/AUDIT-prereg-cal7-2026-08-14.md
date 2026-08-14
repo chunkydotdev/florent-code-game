@@ -162,6 +162,33 @@ mix-matched and unaffected.
 marginal in-sentence, reading capped at harm-clean; local corefill games carry
 no 5-per-match structure, so DEFF is correctly out of scope there.
 
+## ADDENDUM 3 — my DEFF number needed correcting · A3 audited · the P4 flag (~13:2xZ)
+
+**Q9 INSTANCE, MINE: the 1.282 published above was biased LOW** — the
+within-opponent moment estimator loses K degrees of freedom to the K estimated
+opponent means. Research caught it; **verified on my own pipeline: N=960
+matches, K=59 opponents, 1.282 × 960/901 = 1.366 exactly**, cross-checked by
+their two independent estimator forms (1.364 / 1.366). **Standing constants:
+within-opponent/stratified DEFF rated 1.366 · unrated 1.434; pooled-matchmade
+1.529 / 1.833.** The scope split itself was a CONVERGENCE, not a relay —
+research reached it independently in the same minute (their statement,
+recorded at their request).
+
+**A3 (`b9601ac`) audited:** A3.2's revert to the mix-matched v125 reference is
+the right call at the available n (post-stratifying onto ~1 populated cell
+would be fabrication), and naming the reopened version confound pre-data is
+the honest form. **One flag, sent pre-look (~13:2xZ): A3's sentence "what can
+separate them: P4 plus the per-cell supplementary" overstates P4.** A v140
+uniformly worse than v125 by ≥10pp produces the identical 5-of-6-low
+signature — directional coherence separates systematic-from-noise, never
+fixture-bias-from-version-regression. **Offered as A4: the falsifier's
+consequence (repo-wide CAL correction factor) fires ONLY if version-matched
+supplementary cells (≥10 v140 rated games) show the same low pattern; in-line
+supplementary reading ⇒ "v140 regression", consequence does not fire; no
+supplementary volume ⇒ attribution UNRESOLVED, carries to the next panel.**
+Without it, a v140 regression would trigger the costliest misread available:
+a correction factor stamped on every historical CAL number.
+
 ## Frame notes for any later reader
 
 * `elo_history.tsv` stamps **local CEST with no zone marker** — normalise −2h
