@@ -51827,3 +51827,43 @@ sampling noise (ANOVA F(16,612) = 0.840, p = 0.64; between-version SD estimated 
 within-version 8.04). OUR RATED RECORD CANNOT RANK OUR OWN VERSIONS AT THE TENURES WE
 GRANT THEM** — so *"the ladder will tell us"* is not available as a fallback. **Does not
 retire the screen (point 6); it is written beside it.**
+
+--- 2026-08-14T19:41:xxZ SIDE LANE (s41) — CAL-8 READ CERTIFIED · A5 GATE ARITHMETIC FLAGGED (pre-read) ---
+
+**CAL-8 READ CERTIFIED** (`CERT-READ-CAL8-2026-08-14.md`, 9c178da). Method is the certification:
+I did NOT re-run `cal8_read.py` — I joined the fires tape's 15 matchIds to `meta_join` on `match`
+and resolved wins via **`game_winner_id`, a different code path from the `us_side` column the
+disclosed bug was in.** All reproduce: 75 games · holder `{'140': 75}` · 34/75 = 45.3% · six-cell
+table to the digit · P4 DOES NOT FIRE · ±15.3 / ±9.1. (My two-fixture ±17.9 vs their ±17.8 is the
+rounded 45.3 vs exact 45.333 — stated, not smoothed.)
+Two things I was asked to attack: **(a)** their robustness arithmetic is right, but their sentence
+*"P1 does not depend on cell identity"* is looser than the rest — P1 COMPARES two sides and after
+the D2 defect they hold a different team in one cell. Computed: matched-composition Δ = **−11.0pp**
+vs −11.5pp as read, so the conclusion stands **on a computation now, not an assertion**. **(b)**
+their broken first run is **NOT a second look**, on a stronger ground than they gave: a forced-fix
+argument is about the FIX, while the hazard is ASYMMETRIC DEBUGGING — and the bug announced itself
+through a **DOMAIN VIOLATION** (ourselves as our own opponent; opponent versions in our histogram),
+so the hunt was outcome-independent BY CONSTRUCTION. D31 doing its job.
+**Accepted against my own cert's scope, their phrasing:** a reference validated alone is half an
+identity. ⇒ **a certification of ONE side of a comparison carries an expiry; it is not a
+certification of the COMPARISON until the other side exists and the JOIN KEY has been checked.**
+
+⛔ **A5 GATE ARITHMETIC — FLAGGED PRE-READ, and it is NOT an objection to A5.** A5 is the right
+response to the BAR_RESOLVABLE finding (bar untouched, extension pre-committed, ADD-only at <60
+rows, CI mandatory) and I checked the thing that would have made it a rescue: **the unresolved zone
+(46.9, 53.1) is symmetric about 50.0, NOT about the 51.0 bar**, so both branches extend equally —
+branch-symmetric, no preferential rescue of our own bot.
+**THE FINDING: the extension buys PRECISION, not the DECISION.** Recomputed at DEFF 0.98:
+```
+n=1000  ±3.07pp  51.0 -> CI [47.93, 54.07]  contains 50.0
+n=3000  ±1.77pp  51.0 -> CI [49.23, 52.77]  contains 50.0   <-- STILL
+```
+At n=3000 the zone that would trigger a further extension on A5's own logic is (48.23, 51.77) **and
+the 51.0 bar sits inside it**. Half-width falls below the 1.0pp bar-to-null distance only at
+**n ≈ 9,412**. ⇒ Obligation 12 exactly: this gate discriminates at neither 1000 nor 3000.
+ASKED FOR: **one sentence, pre-committed while still blind** — a reading inside (48.23, 51.77) at
+n=3000 is UNRESOLVED and resolves by the registered default (the RESTRICTION, sitter v140 keeps the
+slot), **a decision by DEFAULT, not a measurement.** NOT asked for: a third extension (keep the ONE
+— the slippery slope ends at 9.4k games) or a bar change (s28 hazard whatever the motive).
+**The uncomfortable half, said because it costs us: the design's most probable terminal state hands
+the slot to OUR OWN bot on a default rather than on a number.**
