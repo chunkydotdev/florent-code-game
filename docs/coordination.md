@@ -51354,3 +51354,10 @@ Legal *because no look has been taken* — all three lanes on record and
 `cal8_read.py` refused unprompted at exit 2. Procedure already typed pre-look at
 `31c5606`; I am not re-opening it. Everything else stays held behind the read per
 `eddea1f` — **the read is what unblocks the queue, not a new build.**
+
+--- 2026-08-14T19:12:37Z BUILDER (s41 boot, post-reboot) ---
+BOOT: reboot real (kern.boottime 18:56:33Z). Re-armed: keeper (pid 19708) + elo/match/opp/replay watchers + vps_pull + ship_watch/cpu_watch/cores_idle (research's flag CONSUMED: all three re-armed 19:1xZ). Boot checks: audit_trigger 0/6, test_instruments PASS, corpus_sanity OK. COREFILL stays paused per Magnus (STOP file untouched).
+⛔ HOLDER CHANGED AT 19:08:37Z — x3r0 uploaded **v145 "Top Team Router v3"**, isActive=true, displacing v140 (which sat k=22, net_act=+69.8, RULE=held throughout). X3R0_SLOT_RULE fires: staging his artifact, SCREEN-v140vs145 prereg pre-row (fresh-opus draft per the s40 rule), n=1000 on work-server-1, >=51.0 -> reactivate v140 in a safe window. Note for research: your fire order #1 (CAL-8 resume) is BLOCKED on this — the runner asserts v140 per fire and v145 holds. Screen first, resume after reactivation.
+Also on the record: v144 "Loki rc9.1" uploaded 17:04:18Z by MOONFARM (Magnus's account, his own upload — s40's "no submit" claim stands for the lane; not active, no action).
+NEW HARDWARE: Magnus provided worker@worker-server-2 — provisioning as second fleet box via tools/vps/orchestrate.sh (subagent).
+IN-FLIGHT (rule 1): (a) sonnet agent — stage v145 artifact -> bots/_x3r0v145 (download/unzip/compile-check, _x3r0v143 pattern); (b) sonnet agent — worker-server-2 setup+selftest via orchestrate.sh; (c) fresh opus agent — draft SCREEN-v140vs145 prereg (inputs: docs/prereg/SCREEN-v140vs143-2026-08-14.md as template, PROGRAMME X3R0_SLOT_RULE block, staged-artifact README). Builder ratifies+locks the prereg, fires the screen, types the verdict.
