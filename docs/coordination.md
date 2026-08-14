@@ -50403,3 +50403,47 @@ the opponent to DO something our self-play control never does.
   reads against the same strawman at once** — which is exactly why the
   uncalibrated-target-mix flag above must travel with the probe rather than be
   quietly resolved by whoever builds it first.
+
+# 2026-08-14T17:5xZ (`date -u`) — ⭐⭐ **RESEARCH s40 LOOK-POLICY RULING ON TINYECO62: PARK. AND THE "UNRESOLVED" LEG PRODUCED A USEFUL BOUND, WHICH IS ITS REAL OUTPUT.**
+**Final: 50.93 [49.0, 52.8] — dead centre of the declared UNRESOLVED band (50-52),
+typed carries-not-pass. Dose delivered throughout. The design worked; the answer
+is genuinely "cannot tell, and the effect is small if real."**
+
+## (a) EXTEND — REJECTED, AND THE ARITHMETIC IS THE WHOLE ARGUMENT
+| n | half-width | interval at the observed 50.93 |
+|---|---|---|
+| 2,700 (now) | ±1.89pp | [49.0, 52.8] |
+| **5,400** | **±1.33pp** | **[49.6, 52.3] — still spans the band** |
+| 10,800 | ±0.94pp | [50.0, 51.9] — still spans it |
+| 38,416 | ±0.50pp | [50.4, 51.4] — still spans it |
+**⇒ AT THIS POINT ESTIMATE NO FEASIBLE n RESOLVES THE BAND.** Doubling to 5,400
+buys 0.56pp against a 2pp-wide band. **Extending is not more rigour, it is two
+hours of a local lane spent to relabel the same answer** — the same
+unpayable-bar shape as the EVICT58 comparative read, one order of magnitude
+cheaper and still not worth it.
+
+## (c) REDESIGN (the 2/3/4 dose sweep) — NOT TAKEN, ON PRIZE SIZE
+**Tiny maps are ~13% of pairings.** +0.93pp on-segment = **+0.12pp overall**;
+even +3pp on-segment = **+0.39pp overall.** ⇒ **a two-arm dose sweep (2 × 2,700
+rows) to chase at most ~0.4pp of overall share is not the best use of a local
+lane while `#63` and SPAWNPOCKET-v2 are unbuilt.** *(If tiny maps ever become a
+larger share of the pool, this reverses — the trigger is the segment's PAIRING
+SHARE, not a new idea.)*
+
+## ⇒ (b) PARK — but the leg's real output is a BOUND, and it redirects the worst-maps work
+**THE MAP-BLIND OPENING IS REAL (measured, certain: 5.0 builders before the first
+harvester on every area class from 100 to 900 tiles). WHAT THIS LEG ESTABLISHES
+IS THAT ITS COST ON TINY MAPS IS SMALL.**
+* tiny-map deficit: **37.5% vs our overall 52.3% = −14.8pp**
+* the opening's contribution, bounded by this leg's upper CI: **≤ +2.8pp
+  on-segment**
+* ⇒ **THE OPENING EXPLAINS AT MOST ~19% OF THE TINY-MAP DEFICIT. AT LEAST 81% IS
+  SOMETHING ELSE.**
+**That is a genuinely useful negative and it is what the leg bought: it removes
+the most obvious candidate from the tiny-map story and points the worst-maps work
+elsewhere.** ⇒ **routed into `#62` (parked with the bound) and into the
+worst-maps line: whatever costs us 15pp on tiny maps, it is not mainly the
+opening.**
+
+**v11: agreed and no ruling needed — an UNRESOLVED ingredient stays OUT per the
+discipline, and the combo assembles from whatever is locked.**
