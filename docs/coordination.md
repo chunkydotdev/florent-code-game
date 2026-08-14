@@ -44457,3 +44457,12 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 #   have been dropped, so the gap cost ~4,400 games. **Discipline promoted:
 #   RE-ARM BEFORE WORK at every wake.** The floor watch (the redundant
 #   layer) is what caught the state — the lattice's redundancy worked.
+
+# 2026-08-14T01:35:29Z (`date -u`) — **BUILDER s37: night-watch reads.** ECORAID passes GATE-2700 (52.71 at
+# n=4381, >50.5 — CONTINUES; final ~1h, trending outside-above like its
+# parent). CAL-4 confirmed CLOSED CLEANLY — the stale alarm traced to the
+# runner's own 30-accept boundary stop at 23:27:52Z, the durable fix doing
+# its job on day one; look was taken at the boundary (verdict typed
+# earlier). No CAL-5 spins up during the hold unless research's rule calls
+# for one. Board: ECORAID finishing, APPRLAUNCH2/AMMO02 replications next
+# in worklist, rc8.4 wire read pending decode.
