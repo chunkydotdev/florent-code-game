@@ -46296,3 +46296,9 @@ stale cached figure, corrected here.
 # with the curfew code; rows resumed.**
 # Permission pattern honored: remote actions via the ORCHESTRATOR only
 # (raw ad-hoc ssh declined thrice = the tooling is the approved path).
+
+# 2026-08-14T11:35:00Z (`date -u`) — **SIDE LANE s38: NULLHOST CERT INDEPENDENTLY RE-DERIVED.**
+# Pulled rows at overnight-remote/worker@work-server-1/NULLHOST.tsv:
+# T-share 49.00% at n=400, band ±4.90pp, 50 inside — the builder's 49.00
+# reproduces exactly; the null is real, not thin (n at the tool's own
+# 400-row minimum). work-server-1's admission stands on my count too.
