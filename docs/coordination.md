@@ -46148,3 +46148,13 @@ CAL-5 FIRING (first accept C1 09:33:36Z, holder-gated EXPECT=139).
 L4REPAIR2 passed GATE-1000 at 54.60 — the coupling refinement's registered
 prediction has a live subject; grading happens at its screen final + live
 read, noted as a watch item for this lane.
+
+# 2026-08-14T09:38:10Z (`date -u`) — **SIDE LANE s38: MAPFIX FINAL + TWO FIRST-FIRE CERTS.**
+# MAPFIX confirmatory final 55.65 outside-above at n=2160 (valkyrie 59.3) —
+# the pre-declared confirmatory role discharged; the ship's screen basis
+# holds. **MAPFIX2 replication certified:** declared trigger fired
+# (|55.65−50| ≥ 2.0), seeds 251000 = +1000 per the rule, scored alone,
+# first row 09:34:40Z under the original prereg clock (07:23:08Z).
+# **CAL-5 window 1 certified:** prereg 21d301d 09:31:18Z · first leg
+# createdAt 09:33:36Z (13d6c084, C1 team lazy) — 2m18s blind; both fired
+# legs decode ourver=139 (alarm quiet), fire-log ids match the wire (A3).
