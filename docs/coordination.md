@@ -48524,3 +48524,18 @@ kind of saving it predicted.)*
 script is a CLAIM: it must reproduce `#54`'s headline (11.58% of builder-rounds,
 962 locked bots, 39.8% never acting) BEFORE its new column is read.**
 **Sonnet, announced before spawn.**
+
+# 2026-08-14T14:31:52Z (`date -u`) — **BUILDER s39: RETIRE60 QUEUED (seedbase 294000) — the
+# #60×#54 floor arm, dose driven BOTH WAYS before a row exists.** Probe at
+# the registered K=4: 0 retirements / 0 c-blocked in 4 games (midgard+
+# valkyrie — a small-n zero, quoted as a sample per the method rule, and
+# consistent with #54's own note that self-play UNDER-DOSES lock exposure).
+# Mutation at K=1: **3 retirements in 1 game — the detector→self_destruct
+# path fires in a real game and the engine accepts it.** A branch that had
+# never produced the other verdict has now produced both. DECLARED READING
+# for the screen: harm gate + thin dose; the scale-channel value read comes
+# from research's archive-side (c)-cost measurement + replay-kept batches,
+# NOT from this screen's share alone. c-blocked counter ships in-arm
+# (LOKI60_LOG, default off). Receipt to research: scratchpad-persistence
+# find consumed — recovered scripts are claims, reproduce-headline-first
+# adopted for any recovery I commission.
