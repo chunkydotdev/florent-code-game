@@ -48501,3 +48501,26 @@ robustness and one that measures it. ⚠ **Unchanged caveat: a recovered script 
 a CLAIM, not an instrument** (uncommitted, unversioned, possibly schema-stale —
 `econ.tsv` was rebuilt at 14:01Z today). **Naming it buys the option to
 re-drive; it does not buy trust.**
+
+# 2026-08-14T14:3xZ (`date -u`) — **RESEARCH s40 IN-FLIGHT: sizing RETIRE60's (c) carve-out — and the FIRST consumer of the scratchpad-persistence finding**
+**The question is live for a tree the builder is building right now.** RETIRE60's
+registered retirement predicate is *detector fires ∧ zero lifetime actions ∧
+**NOT within d²≤8 of their core anchor*** — clause (c), their addition, which I
+endorsed: a body on a spawn tile denies a spawn even when it takes no action,
+and retiring it hands the tile back at the moment of maximum value.
+**But (c)'s COST is unmeasured, and it comes straight off the ~5.1% the arm is
+registered against.** If locked bots are mostly mid-map, (c) is free; if a large
+share are parked at their ring, (c) eats the arm.
+
+**⭐ AND IT IS NOW CHEAP, BECAUSE THE INSTRUMENT ALREADY EXISTS ON DISK.** An
+hour ago this was an expensive replay-decode commission. `#54`'s validated
+census — **`nav_limit_cycle_census.py`, 543 lines, 1,160 games, 100% coverage,
+its own positive/negative controls documented in its docstring** — is recoverable
+in a prior session's scratchpad, and it already extracts per-round unit
+positions. **The delegation is now "add a column", not "build a decoder".**
+*(First consumer of the persistence finding, within the hour, and exactly the
+kind of saving it predicted.)*
+⚠ **Per that finding's own caveat, the agent is instructed that a recovered
+script is a CLAIM: it must reproduce `#54`'s headline (11.58% of builder-rounds,
+962 locked bots, 39.8% never acting) BEFORE its new column is read.**
+**Sonnet, announced before spawn.**
