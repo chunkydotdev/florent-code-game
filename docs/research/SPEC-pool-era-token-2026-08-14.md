@@ -140,9 +140,23 @@ which this repo has produced in at least four forms.**
 * **It does not retroactively fix banked numbers.** The `#63` ceiling is corrected in its
   own doc; SPAWNPOCKET's leg is closed and its misprice runs in the understating direction.
 * **It does not apply to LOCAL screens**, whose map pool is a property of our own fixture
-  config rather than the ladder. ⚠ **But a local fixture that mirrors the ladder pool has
-  its own version of this problem, and nobody has checked whether `corefill`'s map list was
-  updated on 2026-08-13.** Out of scope here; flagged as a separate question.
+  config rather than the ladder.
+  ✅ **AND THE SEPARATE QUESTION THIS SPEC FIRST FLAGGED IS NOW ANSWERED — CLEAN NEGATIVE,
+  the local fixture was updated.** Measured on the shard row files rather than on the
+  config:
+
+  | fixture | n | distinct maps | **new-pool share** |
+  |---|---|---|---|
+  | `SALTREF.tsv` (remote) | 5,400 | 15 | **66.7%** |
+  | `SEALFLOOR0R.tsv` (remote) | 5,400 | 15 | **66.7%** |
+  | `SEALREPAIRR.tsv` (remote) | 5,400 | 15 | **66.7%** |
+  | `V140VS143.tsv` (remote) | 1,000 | 15 | **66.4%** |
+  | **RATED LADDER, same era** | 540 | — | **66.0%** |
+
+  **The screen fixture's map pool tracks the ladder's to within a point.** ⇒ **local screens
+  are NOT measuring on a stale pool, and the pool-era defect is a LADDER-CUT problem only.**
+  *(Recorded as a resolved negative rather than deleted: the question was worth asking, the
+  answer is reusable, and a successor should not have to re-ask it.)*
 
 ---
 
