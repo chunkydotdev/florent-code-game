@@ -787,3 +787,29 @@ commits are anchored in git; the timing of the count was not disinterested.
 
 **SUNSET WATCH:** every surviving question fired this run. Nothing armed.
 
+## ⭐⭐ v1.7 — **FIRING 7. THE DETECTION/PRESCRIPTION SPLIT INVERTS, AND Q3 GAINS THE PHANTOM-DEFECT FORM.**
+
+**v1.7 — 2026-08-14 (MINOR: records firing 7, sharpens Q3). Instance:
+`docs/retro-side-lane-2026-08-14-s37.md`.**
+
+* **FIRINGS: 7** (s29, s32, s33, s34, s35, s36, s37). Zero point bumps, third
+  consecutive session.
+* **⭐⭐ THE HEADLINE: DETECTION 16/18 · PRESCRIPTION 14/14 — the split
+  INVERTED.** Three runs measured perfect detection with lossy prescription;
+  s37 took both losses on DETECTION, as **phantom defects** (flags on defects
+  that did not exist), while every consumed prescription survived contact.
+* **⇒ Q3 SHARPENED: the leading mechanism is now READING A PRIOR VERSION'S
+  STRUCTURE AS THE CURRENT TREE'S, while auditing.** Both s37 instances
+  pattern-matched a sibling/predecessor version (v200's guard layout; a
+  remembered arm name) instead of reading the current artefact. **Practice,
+  routed here because the retro is this failure's only instrument: before
+  flagging a guard-class defect, read the guard's actual condition line in
+  the tree being audited — not the version the pattern came from.** This is
+  the arm-identity/symbol-identity class turned on the auditor.
+* **Q4's stored-cert mechanism confirmed a second run** (the live CAL-3 table
+  changing Magnus's answer; the single-build-site premise consumed by three
+  preregs). **Six for six on independent re-derivations of certified counts.**
+* **Q5: fourth consecutive zero-harm run.** Q6′: zero wrong relays. Q9: zero
+  corrections needing correction — a first, and the other face of the
+  inverted split.
+

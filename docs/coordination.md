@@ -44933,3 +44933,62 @@ boundary Monitor fired its purpose and exited. No live agent at wrap.
    its value read needs the peck-class fixture or live.
 5. **The 8.3ms "navigating raider" figure is RETIRED** (unsourced, does not
    reproduce); parked-bot CPU numbers come from detector v2's TSV.
+
+# ============================================================================
+# 2026-08-14T06:55:42Z (`date -u`) — **SIDE LANE s37 WRAP** (Magnus called it). Retro ran FIRST:
+# `docs/retro-side-lane-2026-08-14-s37.md`, instrument **v1.7**, **FIRING 7**.
+# Ledger: **DETECTION 16/18 · PRESCRIPTION 14/14 (the split INVERTED — both
+# losses were phantom-defect flags) · prevented 4 major · caused 0 · nearly
+# caused 0 · wrong flags 2 (cost: two replies).**
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**S1. ⭐⭐ THE FLAG→GUARD→CLASS-DEATH COMPOUND CYCLE, measured inside one
+session.** *(observation of the system, routed as confirmation — the builder
+already institutionalized it as house style.)* The EVICT45 legacy-throw flag
+(iter 2) became the BUILT-IN guard by iter 4 — and my own iter-4 flag on the
+same class was WRONG precisely because the guard already existed. **A flag
+system compounding correctly eventually makes its own author's pattern-matched
+flags stale; the cure is S3, not fewer flags.**
+
+**S2. ⭐ CERTIFY-EAGERLY CONFIRMED A THIRD RUN, now with the live-read form:**
+the CAL-3 cell table re-derived LIVE (cached was 53 min stale) changed
+Magnus's answer on C6 (edge→OUT). **A freshness sweep on demand is a
+certification; the tool's own "verify the SELECTED target" warning proved out
+within the hour.** Six-for-six exact on independent count re-derivations.
+
+**S3. ⛔ THE LANE'S NEW LEADING FAILURE: PHANTOM-DEFECT FLAGS from reading a
+prior version's structure as the current tree's, while auditing.** *(instrument
+change → retro v1.7 Q3 sharpening; both s37 instances tagged at occurrence.)*
+Practice: before flagging a guard-class defect, read the guard's actual
+condition line in the tree being audited.
+
+## ⛔ OPEN FOR SUCCESSORS, in priority order
+1. **MB/MC/MD legs of the map-conditional test are HELD on holder gates**
+   (v134/x3r0 authorized run live at wrap). When v125 returns and they fire,
+   each owes the standard cert package (two-clock vs da62c23+7810c50, pins to
+   the minted anchors, boundaries). MA partial: U1 verified v125; U2-U5
+   pending completion. The upward-baseline leg is FULLY certified (5/5 v125,
+   two-clock 2 s — thin-but-ordered, scripted launch).
+2. **APPRLAUNCH2 final imminent** + v134 courtesy battery gates — under the
+   builder's consolidated watcher (which DIES with their session; their
+   HANDOVER carries the re-arm).
+3. **Coupling test's prospective probes** (GBNS/L4REPAIR/SEATREL live reads)
+   are the real test of the −5pp haircut; my audit hooks stand on any of them
+   reaching a leg.
+4. **The rc8.3→rc8.5 campaign leak record is COMPLETE** (14/14 boundaries
+   v125) — nothing pending on any fired leg except MA's completions.
+
+## REBOOT STATE — SIDE LANE (s37, safe to reboot) — read 2026-08-14T06:55:42Z, not asserted
+* **Holder v134 (x3r0's AUTHORIZED slot run), our team at 1801 / #18 / 947
+  matches** — live `fcode status` read at 06:53:58Z. v125's slot return is
+  Magnus/x3r0's call; all lanes' analysis on it is registered, not decided.
+* **Monitors:** keeper + cores_idle + ship_watch + cpu_watch + panel runner +
+  4 corefill shards alive at wrap (8 processes verified in `ps`). **My drift
+  watch and background timers DIE WITH THIS SESSION** — successor re-arms
+  `tools/watch/drift_watch.sh` and drives its cells first (the TZ cell
+  discriminates on this CEST box).
+* **Nothing of mine is unconsumed:** all flags consumed or withdrawn-with-tag;
+  both peer lanes wrapped in the same hour; retro committed with its instance
+  in the same action. Repo pushed clean at this line.
