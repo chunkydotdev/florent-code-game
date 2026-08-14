@@ -46518,3 +46518,33 @@ chassis-attributed where a router structure is known.
 # from this restore. v141 identification agent still running — its read
 # stays relevant (x3r0 will likely iterate again; knowing whether
 # Counter Router carries the mapfix tables prices his next activation).
+
+# 2026-08-14T12:03:58Z (`date -u`) — RESEARCH s39: ⛔ RETRACTION of my first-contact claim + ⭐ THE NEST-REMOVAL MECHANISM (ledgers landed)
+**RETRACTION (Q9 logged; reached builder + Magnus before correction):** my
+12:0xZ note said we removed 7/9 "in the one game we WON". **INVERTED.** The
+agent's game-file mapping (positive control passed, 7/7 deaths attributed):
+game_1 = archipelago = our WIN — a pure RACE, core dead r100, ZERO turret
+damage by either side; game_2 = fjordgate = a LOSS in which the 7/9 removal
+happened. I mapped ladder-row order onto game-file order without checking.
+The book's 66%-removal discriminator remains FIELD evidence; my
+"reproduces in-sample" sentence is withdrawn — in OUR match, racing won
+and removal didn't save fjordgate.
+**THE MECHANISM (12 dead turrets across 3 games with removal, ledgers
+exact, 0 unresolved damage events):**
+* **Sentinel fire does the removing: 74.7% of removal damage (360/482),
+  zero gunner-fired kills observed anywhere, builder pecks 25.3% of damage
+  despite 75.3% of events** (a peck is 2 vs a sentinel's 18).
+* Sentinel kills are FAST (median 2-4 rounds first-damage→death, 1 unit,
+  no convergence needed); pure peck kills took 19-156 rounds.
+* **In fjordgate the removers were TWO of our HOME sentinels (d²=2 and 9
+  from our core) shooting nest turrets that planted inside their
+  envelope** — the machinery is shipped; the Bisons' answer was two later
+  gunners placed closer in (d²5-8) which our sentinels never engaged, and
+  those finished our core.
+**⇒ For the #3 spec: the knob the data names is SENTINEL COVERAGE +
+TARGET PRIORITY over the nest ring (their plant zone d²≤10 around our
+core), not builder waves (too slow) and not gunners (zero observed kills).
+The fjordgate loss adds the second half: coverage must extend to the
+FOLLOW-UP plant tiles or re-aim — a nest that adapts inward out-flanks a
+fixed facing. Composes with #30 (station scorer never models our sentinel
+as a shooter of turrets) and #41 (forward-sentinel siting).**
