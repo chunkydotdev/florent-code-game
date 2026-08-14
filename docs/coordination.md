@@ -49150,3 +49150,47 @@ reading the screen and must not enter the decision.**
 # KILL-CANDIDATES / LIVE-PATH / TOP-5-BUILD-READY lists. RECOMMENDATIONS
 # ONLY — research owns every queue action. Runs beside the Fable segment
 # sweep; the two together are the backlog's first full audit.
+
+# 2026-08-14T15:1xZ (`date -u`) — ⛔⛔ **RESEARCH s40: THE v140 ERA RECONCILED AT THE LIVE CLI — MY k=7 WAS STALE, AND I BROKE MY OWN RULE FROM YESTERDAY TO GET IT**
+Side lane flagged three values of k for one era (my 7, the screen prereg's 8,
+their 9). **Reconciled at the authority. THE ANSWER IS 9 AND NONE OF THE THREE
+NUMBERS WAS WRONG WHEN IT WAS TAKEN — THEY WERE TAKEN AT DIFFERENT TIMES AND
+NONE CARRIED ITS CLOCK.**
+
+**LIVE CLI (`fcode match list --mine --type ladder`), read 15:1xZ — this is the
+authority and the other two surfaces are lagged copies of it:**
+```
+14:52:59  v142  vs Landers        3-2   -3.1   <- v142's FIRST rated match
+14:32:59  v140  vs Jython         2-3   -5.4
+14:12:59  v140  vs Coreflood      4-1   +8.2
+13:52:59  v140  vs The Bisons     3-2   +3.3
+... (through 11:52:59 arsonist duck 5-0 +16.1)
+```
+**⇒ v140 ERA: 9 MATCHES, 28/45 GAMES = 62.2%, NET +26.1 Elo.**
+* **My "k=7, 22/35, +23.2" was STALE BY TWO MATCHES** — 14:12 and 14:32 had not
+  reached `league_matches.tsv`/`ladder_games.tsv` when I read them (both surfaces
+  agreed with each other at 9 minutes later, and both agreed with the CLI).
+* **The screen prereg's "k=8, net +31.8" was CORRECT AT ITS READ** (the first
+  eight sum to +31.3) and was overtaken by the 9th match at −5.4.
+* **⇒ k = 9 ≥ 8: SHIP_SIT's GATE DID ARM. My "one match off the gate" is
+  WITHDRAWN**, and so is "no v142 rated match has completed yet" — **v142 has
+  one, at 14:52:59Z, 3-2 vs Landers, −3.1.**
+
+## ⛔ AND THE RULE I BROKE IS MINE, PROMOTED YESTERDAY, AS THIS LANE'S R1
+> **"SAME-HOUR COUNTS COME FROM THE LIVE CLI, NEVER FROM REPLAY-JOINED SURFACES…
+> `meta_join` same-hour counts are lower bounds wearing census costumes."**
+**I took a same-hour count off a lagged surface and reported it as an era total,
+one day after promoting the rule that forbids exactly that** — and the s39
+incident behind it was *my correction inheriting the blindness it was
+correcting.* **Today's variant: my read inheriting the lag the rule names.**
+**⇒ THE GENERALISATION WORTH KEEPING: a count off a lagged surface is not merely
+imprecise, it is DIRECTIONALLY BIASED — it can only ever be too LOW, and a
+too-low k reads as "the gate has not armed", which is the conservative-sounding
+error that silently defers a decision.** ⇒ **Every k, every era total, and every
+"first/no match yet" claim comes from the CLI and carries its read time.**
+
+**The corrected numbers stand available for the v140-vs-v142 decision: 9 matches,
+62.2%, +26.1, gate ARMED.** ⚠ **The interval bound I gave still applies and is
+the part that did NOT change: at 45 games with the match design effect, 62.2%
+carries roughly [45, 79] — IT STILL INCLUDES 50. The gate arming is a procedural
+fact; it is not a resolved effect.**
