@@ -46868,3 +46868,93 @@ my #49 agent's r0-150 ti outcome on newer games) carry a caveat.**
 # in HANDOVER item 1. The slot: v140 k=1 +16.1, SHIP_SIT arming ~14:0xZ;
 # ship_watch tracks it unattended. Repo pushed clean at this line.
 # End of s38.
+
+# ============================================================================
+# 2026-08-14T12:49:38Z (`date -u`) — **RESEARCH ARM s39 WRAP** (Magnus called it,
+# conditioned on the builder's wrap — theirs closed 12:46:45Z). Arm retro ran
+# FIRST: docs/research-arm-retro.md → **v1.11, FIRINGS 5.** ~40 research/
+# prereg/queue commits of the session's 188.
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**R1. ⭐⭐ SAME-HOUR COUNTS COME FROM THE LIVE CLI, NEVER FROM REPLAY-JOINED
+SURFACES.** *(behaviour change → promoted here; Q9's worst instance.)* The
+v135 record went 1/15 (side lane, limit-3 list) → 1/20 (my "verification"
+at meta_join — the archiver-lagged surface, blind to unarchived matches) →
+4/25 (full-era CLI enumeration). **My correction inherited the exact
+blindness it was correcting. meta_join same-hour counts are lower bounds
+wearing census costumes.**
+
+**R2. ⭐ AN ORDERING JOIN IS A CLAIM.** *(retro Q10 sharpened, v1.11.)* The
+first-contact win/removal inversion came from gluing ladder-row order to
+game-file order without checking one row of the glue. **If two lists are
+joined by position, verify one row at the primary before publishing.**
+
+**R3. ⭐ PANEL BUDGET RIDES A STABILITY GATE, STANDING.** *(behaviour
+change → in the fire order AND builder HANDOVER item 4.)* Five holder
+changes in 5.5h made per-ship panel decisions a scramble producing
+15-game fragments. **Holder ≥40 min + tree identified → CAL-(n+1)
+instantiates from the template, prereg-first. The successor inherits the
+trigger without asking.**
+
+**R4. THE PREREG-BY-REFERENCE CHAIN WORKS.** *(observation — OBSERVATION,
+NOT ROUTED beyond this note.)* V134-CHAR (amended A1-A4 by three lanes) →
+V135-CHAR → V135-ECORAID-LIVE → CAL-5 → CAL-6: five preregs in a day,
+every one committed pre-leg and certified, two dying clean pre-fire when
+conditions changed. Design-by-inheritance kept amendment discipline
+without re-litigating the base design.
+
+**R5. ⭐ BOOKS BECAME ARMS SAME-HOUR — the two-lane pipeline at its best.**
+*(observation of the system, with the mechanism named so it repeats:
+what made it fast was MECHANISM-FIRST DECODE (damage fingerprints, era
+boundaries) rather than narrative profiles.)* Bisons book → nest-removal
+ledgers → NESTSHOT spec; 0033 book's shape-difference → NESTSHOT2
+widened BEFORE the narrow screen entrenched (narrow arm cancelled at
+n≈250). A book that names the knob is consumed; a book that describes
+the opponent is filed.
+
+**R6. econ.tsv CORRUPTION** *(instrument finding → routed to the builder
+same hour, HANDOVER 4b; the agent's re-decoder reecon.py is the fix
+seed.)* ~5,455 recently-decoded files carry wrong ti_collected_end,
+zeroed cpu, and a `tled` column measuring a wire flag that DOES NOT
+EXIST. ≤v54-era files clean; build_agg unaffected. **No economy read
+from econ.tsv on recent files until the decoder is fixed.**
+
+## RELAYED — nothing of mine is still running
+Seven agents this session (#49, #51, oscillation trace, #54 prevalence,
+nest-removal mechanism, Bisons book, 0033 book) — **all seven reported,
+all load-bearing numbers spot-verified at primaries, all banked on the
+tape/rows/books.** No live agent, no Monitor, no cron of mine at wrap.
+
+## RESEARCH ARM STATE — VERIFIED 2026-08-14T12:48:02Z, NOT ASSERTED
+* **Live: 1747 Emerald, #23 of 123, 965 matches, `Active bot: v140 (Loki
+  v10)`** — off `fcode status` at 12:48:02Z. Day arc: 1753 boot → 1801
+  peak → 1747 (the x3r0 interlude cost ~−25; v139/140/141 churn the rest;
+  NESTSHOT2/OSCLOCK arms are the response in the mill).
+* **queue_check: 39 unblocked (floor 3), zero GREP-stale, all rows carry
+  `_v218mapfix`** — note the INCUMBENT will move again when v140-family
+  tables settle; the carry template is in the s39 tape.
+* **7 background processes alive** (corefill shards + keeper + monitors) —
+  the builder's HANDOVER governs their re-arm, not this note.
+* Panels: **CAL-5 look SPENT** (taken at n=145 under its stop clause).
+  CAL-6 aborted at 15 games (descriptive only). **CAL-7 fires on the
+  stability gate** (HANDOVER item 4).
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **econ.tsv is corrupt on recent files** (R6) — check the tape for the
+   fix before any economy read; build_agg is the safe surface.
+2. **Every CAL look through CAL-5 is SPENT**; CAL-6's 15 games are
+   descriptive; panel_read still defaults to cal2's spent table — always
+   `--panel`.
+3. **v1xx-era baselines are ERA FIGURES** — the slot changed hands seven
+   times today (v134/135/136/137/139/140/141); any "incumbent" number
+   must carry its version and era boundary.
+4. **The coupling −5pp haircut is STILL a hypothesis** — the MD/MB pair
+   is its best exhibit, not its proof; L4REPAIR2's final + GBNS/#8 carry
+   the registered predictions.
+5. **The #54 census's valkyrie/glacierkeep cells were measured under OLD
+   grids** — re-read post-MAPFIX games before citing those two maps.
+6. **Magnus directive: JUUSTO BOOK next session** (12:2xZ tape note has
+   the successor context; read both existing books first — the
+   three-shape family question may already cover them).
