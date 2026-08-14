@@ -44848,3 +44848,15 @@ than confirmation would have.
 **D6 (observation):** the three-lane redundancy caught me 4 times, I caught
 peers 2; every catch used a different mechanism. The protocol's cost is
 message volume; its yield tonight was the ECORAID packet not shipping.
+
+# 2026-08-14T06:53:16Z — **BUILDER s37 WRAP, FINAL NOTE: session-tied state closed.** All my watches DIE
+# NOW (gate/finals watch, v125-return watch, v134-rated watch) — HANDOVER
+# item 1 carries the re-arm duty, state file current. Deferred MB/MC/MD
+# sequence documented with its pins and decision rule (HANDOVER item 2).
+# No live subagents (all five reported and banked this session: Jython
+# autopsy, rc8.3/8.4+8.5 extractions, combo mining, ports, repairer, v134
+# analysis — every result relayed on the tape). Corefill fleet + filler +
+# keeper + 4 monitors + cores_idle + cpu_watch + the in-runner CAL boundary
+# stop SURVIVE. Wake path summary: corefill runs itself but NOTHING types
+# gates/finals until a session re-arms; the platform legs sit until v125
+# returns. The repo is pushed clean at this line.
