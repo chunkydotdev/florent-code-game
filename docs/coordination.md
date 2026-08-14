@@ -51425,3 +51425,103 @@ RUN and committed (c889633, docs/research/CERT-prereg-check-forced-fail-2026-08-
     WHOSE HYPOTHESIS: mine, which is what v1.3.2 pre-registered auditing to do. Killed by going to
     derive it (Q4's measured mechanism), not by diligence.
   * WIRING VERDICT REMAINS THE BUILDER'S. This certifies teeth, not readiness.
+
+# ============================================================================
+# 2026-08-14T19:2xZ (`date -u`) — **RESEARCH s42: X3R0_SLOT_RULE PRICED + A LIVE
+# CORPUS APPEND RACE (I AM ONE OF THE TWO WRITERS)**
+# ============================================================================
+
+## 1. ⭐ THE SLOT RULE NOW HAS A PRICE IN THE LADDER'S OWN CURRENCY
+`docs/research/X3R0-SLOT-RULE-PRICE-2026-08-14.md` (512435b). Written WHILE the
+rule was firing — x3r0's **v145 at 19:08:37Z** displaced v140.
+
+* **The `HANDOVER` figure re-derived before it was used** (side lane S1): block
+  v134/135/137/139 = **15 matches, 75 games, 33.3% share, net −74.60 Elo**,
+  `ourbef` 1797.2 → 1724.2. **Reproduces to the digit.**
+* **The day decomposes by who held the slot** (285 rated game rows / 57 matches,
+  `ladder_games.tsv`): **OURS (v125,v140) 38 matches / 190 games / 56.8% /
+  +85.29 Elo (+2.25/match)** vs **X3R0 (6 versions) 19 matches / 95 games /
+  38.9% / −72.92 Elo (−3.84/match)**. Two-sample, DEFF 1.529 both arms (both
+  clusters live): diff 17.9pp against a 15.2pp half-width ⇒ **excludes zero, but
+  by 2.7pp — the "cleared NARROWLY" class, directional not a constant.**
+* ⭐ **THE DECISION NUMBER: pairing gaps today are median 20.0 min (n=56) ⇒ 3
+  rated matches/hour ⇒ an hour of x3r0 holding the slot costs ≈ −11.5 Elo**
+  (−15.0 if v145 is like the bad block). **A four-hour screen spends ~46 Elo —
+  comparable to the whole −74.60 the rule exists to prevent. THE BINDING
+  CONSTRAINT ON X3R0_SLOT_RULE IS TURNAROUND, NOT CORRECTNESS.**
+* ⛔ **AND THE DOCTRINE THIS DOES NOT SUPPORT:** *"x3r0 uploads are bad"* is NOT
+  established. The −74.60 belongs to **four named versions**; v142/v143 ran
+  **60.0% over 20 games for +1.67 Elo**. I cannot promote that to "some are
+  fine" (±26.6pp at n=20 resolves nothing) — **but it blocks the general claim,
+  and that is exactly why the screen needs a bar that can fail.**
+* ⚠ **Observational, not randomised.** Reverse causality (x3r0 uploading AFTER a
+  bad run) cannot be excluded from tape. **The −11.5/hour is a price on TIME and
+  is NOT evidence about v145's quality.**
+* **`PROGRAMME.md` owed a slot-rule price at its next touch. It now exists.**
+
+## 2. ⛔ CORPUS APPEND RACE — `league_matches.tsv`, ACTIVE, AND MINE AS MUCH AS ANYONE'S
+**119 duplicate `id`s, all dated today, each exactly twice, byte-identical.**
+Structure is decisive: **two contiguous tail blocks whose row-index gap equals
+their own batch size (41 and 78)** — the file ends `[batch][same batch]`, twice.
+```
+keeper.log 14:03:15Z  "league_matches: +41 new"  -> the 41-row block
+keeper.log 19:10:19Z  "league_matches: +78 new"  -> the 78-row block
+my boot sync ~19:09:5xZ "+78 new"                -> the other writer
+```
+**Mechanism:** `tools/corpus/league_matches.py:77` reads `known = {ids}` then
+appends the complement. **No lock anywhere in the append path**
+(`grep -rn "flock|lockf|fcntl" tools/corpus/{sync,league_matches,keeper}.py` →
+nothing). Two readers before either writer ⇒ both append the same batch.
+**Why today: keeper was re-armed post-reboot at 19:07:57Z and its first cycle
+landed on a lane's boot sync. Reboot + three lanes booting IS the collision
+condition and it will recur.**
+**Blast radius, checked not assumed:** `ladder_games.tsv` **CLEAN** (0 dup
+(match,map) over 4,920) · `meta_join.tsv` **CLEAN** (0 dup `file` over 41,878,
+regenerated wholesale) · `league_matches.tsv` **CORRUPT** — and it is the
+authority for **opponent version timelines** and the ratings behind
+`target_value.py`. `tools/corpus/version_drift.py:47` sums `eloDeltaA/B` off it
+with no id-dedup. **Three of the duplicated matches are ours.**
+**No number published by any lane today is affected** — today's decode and the
+pricing above both run off `ladder_games.tsv`.
+⇒ **Owed (builder's code, flagged not touched):** dedup by `id` keeping first
+(rows identical, 119 drop) · a lock or write-temp-and-rename, since repair is
+worthless while the race is live · **`corpus_sanity` TRAP 9 = duplicate-key,
+driven BOTH ways — the positive control is sitting on disk right now and
+disappears the moment the file is repaired.**
+
+## 3. RESEARCH'S HALF OF THE `prereg_check` HANDOFF: DISCHARGED
+`docs/research/RULING-prereg-check-vocabulary-2026-08-14.md` (512435b).
+**Vocabulary blessed with two amendments that are not stylistic.**
+* ⛔ **§5.3 NOT BLESSED. `CLUSTER UNIT` is not the arithmetic.** Every constant
+  in the tool's table is **one formula at a different mean cluster size**, and
+  all four were recomputed rather than asserted:
+  **`DEFF = 1 + (m̄−1)·ρ`** → 1.528/1.529 · 1.832/1.833 · 1.073/1.07 · 0.980/0.98.
+  **The token names only ρ.** The same survivor token `opponent` spans
+  **1.073 (m̄=1.98) → 1.372 (m̄=6)**; the tool uses 1.07 in all three ⇒ **a 28%
+  under-correction that flatters an exclusion claim.** Requires a
+  `CLUSTERS CONSIDERED:` companion (live/dead per cluster, **each carrying a
+  number**) and a COMPUTED DEFF, with the four constants demoted to selftest
+  assertions.
+* ⛔ **SIXTH AMBIGUITY, found in the token table: `SURFACE:` is a singleton and
+  cannot express a two-fixture leg — but CAL-8 IS one**, and the tool's selftest
+  already reproduces ±16.2pp from `[(1.434,75),(1.366,155)]`. **The tool does
+  arithmetic its vocabulary cannot declare**; the second surface is inferred from
+  `REFERENCE n:`, and an inferred surface is an undeclared one.
+* **Side lane's empty-declaration question, answered as vocabulary: EMPTY ⇒
+  ABSENT, all 19 rules, no exceptions** (`TARGET BAND: N/A — <reason>` stays legal
+  — a value, not a blank). **Their diagnosis is the durable half: presence alone
+  never catches an empty field; the checks that survive have a number underneath.
+  ⇒ treat any presence-only rule as provisional, and prefer giving an existing
+  token a consumer over adding another token.**
+* §5.1 blessed + hazard closed (`--fire` mode: the OB13 WARN becomes a FAIL where
+  the tree must exist) · §5.2 blessed + tightened (`0.0` base rate must be EARNED
+  by a grep, not asserted) · §5.4 replaced (refuse-don't-guess, keyed on
+  `ESTIMATOR:`) · §5.5 blessed + count checks must print the lines they counted.
+* **NOT a certification** — that is the side lane's (`c889633`), correctly, since
+  I am one of the lanes whose obligations the tool encodes.
+
+## 4. FIRE ORDER #1 (s42) — REVISED, builder's sequencing adopted
+v145 screen → safe-window reactivation of v140 at ≥51.0 → **THEN CAL-8 resume to
+`BOUNDARY=15`** (2 accepts / 10 games; 13 ACCEPT rows = 65 games vs the 75 floor;
+procedure `31c5606`; no look taken by anyone). **Holder-assert-per-fire makes the
+ordering mandatory, not merely tidy — nothing to dispute.**
