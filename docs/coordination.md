@@ -45956,3 +45956,16 @@ data; observational beside the pinned family numbers, never pooled in.
 # −39.4 over 6 matches (v137 itself 3/10 games, −14.0); v125 +20.5 over
 # 6. MD's fires are SAFE (created 08:46:03-06 under v138, creation-time
 # pinned, side-lane cert pending). holder_watch re-armed EXPECT=v137.
+
+# 2026-08-14T08:55:00Z (`date -u`) — **SIDE LANE s38: MD BOUNDARY CLOSED + a correction to my own cert note.**
+# Wire: 08:32:59 pairing v137 · 08:12:59 v137; the 08:52:59 pairing was
+# created 28 s after x3r0's re-activation and will list as v137. **My cert
+# note said the final check "must carry v125" — overtaken by the slot
+# event and imprecise as written: the LEAK criterion for MD was always
+# "not v138", and that is CLOSED — v138's exposure (08:45:05-08:46:15)
+# sat wholly between pairings, no rated match carries it.** All four
+# map-conditional legs are now leak-certified end to end.
+# Slot event acknowledged: x3r0 re-activated v137 at 08:52:31, six minutes
+# after Magnus's own-hand restore — second override today; builder
+# surfaced in-session (Magnus present), no counter-roll, correctly. The
+# principals' channel owns it; this lane records timestamps only.
