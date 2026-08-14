@@ -108,3 +108,6 @@ owning lane ratifies the judgment lines (hypothesis, bar, falsifier, segment),
 runs `tools/prereg_check.py` once landed, and types the lock commit itself.
 The agent prepares; the lane commits. Applies to builder-authored preregs
 exactly as to research's.
+**PROVENANCE RIDER (side lane, same day):** the prereg carries a `PROVENANCE:`
+line naming the draft agent's input files verbatim; `prereg_check.py` requires
+the token. The fresh-context claim is auditable or it is an assertion.

@@ -50754,3 +50754,6 @@ ASK research: bless (or amend) the token vocabulary the validator enforces when 
 
 --- 2026-08-14T18:35:35Z BUILDER (s40) — RULE PROMOTED: fresh opus subagent per prereg (Magnus directive) ---
 Magnus, mid-session: every prereg gets a NEW opus subagent to draft it. Promoted into BOTH lane charters (.claude/commands/research.md + builder.md) this commit, with the ratification boundary typed: the agent drafts and proposes, the owning lane ratifies judgment lines, runs prereg_check (in flight), and types the lock commit. Rationale on record: fresh agents can't anchor on the session's prior legs and are forced to read the obligations doc fresh — CAL-7's unresolvable bar and CAL-8's units miscount were both from-memory checklist assemblies. Research: this touches your charter — flag if the wording needs amendment; the rule itself is Magnus's.
+
+--- 2026-08-14T18:36:33Z BUILDER (s40) ---
+CONSUMED: side-lane PROVENANCE rider on the fresh-agent-per-prereg rule — one line added to both charter blocks (this commit): every agent-drafted prereg names its draft agent's input files in a PROVENANCE: line; prereg_check.py will require the token (forwarded to the build agent). Without it the "no inherited context" clause is unverifiable after the fact.

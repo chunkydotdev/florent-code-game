@@ -93,3 +93,7 @@ owning lane RATIFIES the judgment lines (hypothesis, bar, falsifier, segment),
 runs `tools/prereg_check.py` (once landed; until then the checklist by hand),
 and TYPES the lock commit itself.** An agent-drafted prereg the lane has not
 ratified line-by-line is not locked, whatever its commit time says.
+**PROVENANCE RIDER (side lane, same day):** the prereg carries a `PROVENANCE:`
+line naming the draft agent's input files verbatim — the fresh-context claim is
+otherwise an assertion about a prompt nobody can read. `prereg_check.py`
+requires the token; a successor audits what the draft could have anchored on.
