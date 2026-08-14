@@ -56,3 +56,14 @@ version	name	tree	evidence	recorded_at
 92	Eir 10	bots/_v115dodge	name: docs/coordination.md:15759 'v92 shipped as "v92 Eir 10 dodge (covered-tile pathing)"' + :15766 'platform name stays "Eir 10" for v92' · tree: docs/coordination.md:15967 'live v92 `_v115dodge`' + PROGRAMME.md:298	2026-08-13T12:34:43Z
 90	Heimdall 1 (launcher relight)	bots/_v104latch	docs/coordination.md:10058 'SHIP ANNOUNCEMENT (rule 3) — v90 "Heimdall 1 (launcher relight)" = `bots/_v104latch`'	2026-08-13T12:34:43Z
 79	Eir 10	bots/_v91osb	docs/coordination.md:5602 'SHIP — v79 "Eir 10" LIVE on Magnus's direct call (= _v91osb, md5 6a909e72)' — NAME COLLISION: "Eir 10" is also v92's name, so name is not a key	2026-08-13T12:34:43Z
+126	Loki rc8.1	bots/_v201undereco	submit_clean auto — `fcode status` Active bot: v126 (Loki rc8.1)	2026-08-13T15:34:41Z
+127	Loki rc8.2	bots/_v203tworaid	submit_clean auto — `fcode status` Active bot: v127 (Loki rc8.2)	2026-08-13T15:55:56Z
+128	Loki rc8.3	bots/_v205combo	submit_clean auto — `fcode status` Active bot: v128 (Loki rc8.3)	2026-08-13T18:53:48Z
+129	Loki rc8.3	bots/_v205combo	submit_clean auto — `fcode status` Active bot: v129 (Loki rc8.3)	2026-08-13T18:54:21Z
+130	Loki rc8.4	bots/_v207apprlaunch	submit_clean auto — `fcode status` Active bot: v130 (Loki rc8.4)	2026-08-13T20:56:07Z
+131	Loki rc8.5	bots/_v213ecoraid	submit_clean auto — `fcode status` Active bot: v131 (Loki rc8.5)	2026-08-14T02:53:30Z
+132	Loki rc8.5	bots/_v213ecoraid	submit_clean auto — `fcode status` Active bot: v132 (Loki rc8.5)	2026-08-14T02:53:59Z
+133	Loki rc8.5	bots/_v213ecoraid	submit_clean auto — `fcode status` Active bot: v133 (Loki rc8.5)	2026-08-14T04:53:40Z
+136	Loki rc8.6	bots/_v207apprlaunch	submit_clean auto — `fcode status` Active bot: v136 (Loki rc8.6)	2026-08-14T07:59:32Z
+138	Loki rc8.7	bots/_v213ecoraid	submit_clean auto — `fcode status` Active bot: v138 (Loki rc8.7)	2026-08-14T08:44:58Z
+139	Loki v9	bots/_v218mapfix	submit_clean auto — `fcode status` Active bot: v139 (Loki v9)	2026-08-14T09:05:13Z

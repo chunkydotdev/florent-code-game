@@ -5,9 +5,9 @@ successor session inherit it. The fields below are parsed; the prose is not.
 
     LINE: loki
     LINE_DIRS: bots/_v105loki1 bots/_v10?loki* bots/_v1??loki* bots/_v1[3-9]?*
-    INCUMBENT: bots/_v197mapcode
+    INCUMBENT: bots/_v218mapfix
     INCUMBENT_FROZEN: no
-    PREVIOUS_INCUMBENT: bots/_v187saltidle_f
+    PREVIOUS_INCUMBENT: bots/_v197mapcode
     PRIMARY_CURRENCY: game_share
     SECONDARY_CURRENCY: kill_speed_score
     KILL_SPEED_SHIP_GATE: -1.76

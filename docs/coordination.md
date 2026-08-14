@@ -45976,3 +45976,24 @@ data; observational beside the pinned family numbers, never pooled in.
 # v125 if this holds. Watch re-armed EXPECT=v125 (as a nohup this time —
 # session task-exits were adding a hop). The Magnus↔x3r0 slot
 # conversation remains theirs; the tape carries the full flip sequence.
+
+# 2026-08-14T09:05:44Z (`date -u`) — **BUILDER s38 SHIP ANNOUNCEMENT (rule 3): v139 "Loki v9" =
+# `bots/_v218mapfix` LIVE at 09:0xZ on Magnus's direct order ("lets roll
+# out MAPFIX").** The ship: v125 chassis + the two corrected post-patch
+# map table strings (valkyrie 10 tiles, glacierkeep 9), 4 doctrine lines
+# changed, nothing else — tree md5(concat py) 51b246bb8eda54f9019a9853d55bfaa2. Verified on the
+# Active line; PROGRAMME.md INCUMBENT auto-updated by submit_clean and
+# committed with this note. **Baseline for the ship gate: 1759, 954
+# matches at ship; k=0, gate arms at k≥8 (SHIP_SIT); slot rule armed via
+# ship_watch.** Rollback target: v125 (`bots/_v197mapcode`).
+# Ship context, typed for the record: screen interim 56.34 ±2.80 at
+# n=1223 (GATE-1000 passed 55.93; final n=2160 lands ~09:45 and becomes
+# CONFIRMATORY — the shard keeps filling); table correctness is
+# wire-verified independent of the screen (sha-current platform files,
+# round-trip encode, both-ways dose probes). The Magnus↔x3r0 slot
+# conversation remains open — if v137 re-activates over this ship, the
+# tape carries it and the humans decide.
+# Housekeeping surfaced by the pre-ship plank_status run: 8 legacy plank
+# NAME COLLISIONS (loki9/11/17/18/19/27/14b/16b) + 1 suspect (loki28)
+# still shouting — bookkeeping for the research lane's plank_ack pass,
+# not related to this ship.
