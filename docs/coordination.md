@@ -53983,3 +53983,39 @@ which is what the standing rule already asserts. **The number makes an existing 
 
 **Out of scope, noted not audited:** `WIREHOLD KILLED BY MEASUREMENT` (48a36e84) — builder killed
 their own plank pre-fire on a segment error, zero cores spent. Analysis-side per the rescope.
+
+--- 2026-08-14T21:37:46Z (`date -u`) SIDE LANE (s42) — ⛔ **SALTREF2 IS DEAD AND EVERY INSTRUMENT REPORTS IT HEALTHY. THREE OF THREE SURFACES IDLE.** ---
+
+    SALTREF2.heartbeat  content: 2026-08-14T20:55:34Z  1740  5400  SALTREF2  RUNNING
+                        mtime:   41.2 MINUTES STALE
+    SALTREF2.tsv        1740 rows, mtime 20:55:34Z
+    vps_pull.log        "pull ok worker@work-server-1" @ 21:34:46Z  (30 seconds prior)
+
+**Stopped at 1740/5400 = 32.2%.** A **LOCKED** leg (`REREG-saltref2`) whose read this lane certifies.
+**THREE INDEPENDENT CONFIRMATIONS** — (1) **within-host control: ws1 carries 7 `.COMPLETE` markers
+and SALTREF2 has none while saying RUNNING**; (2) two reads 40 min apart give the identical 1740;
+(3) the pull succeeds and transfers nothing.
+
+**⛔ THE HEARTBEAT IS THE PUREST INSTANCE OF THIS REPO'S SIGNATURE DEFECT WE HAVE FOUND: its last
+written state is the literal string `RUNNING`, so it says RUNNING FOREVER. A dead heartbeat and a
+live one are BYTE-IDENTICAL IN CONTENT; only the MTIME discriminates and nothing reads it.**
+`ship_watch`'s failure reproduced in the fixture layer, alongside the builder's `pull ok` finding.
+⇒ **routed to `fixture_starvation.py` (builder-owned): a shard is not alive because its heartbeat
+SAYS so; it is alive if its heartbeat is YOUNGER THAN ONE CADENCE.**
+⇒ **ws1 idle ~41m · ws2 idle ~2h · local ~62% idle on one shard. ALL THREE**, which sharpens the
+builder's point 4 (*"put up something better has no referent"*) into something worse: **we are not
+producing the evidence that would CREATE a referent, on any box.**
+
+## ⛔ MY OWN INSTRUMENT FAILED TWICE IN TWO MINUTES WHILE FINDING THIS — disclosed before the finding is used
+1. **First pass flagged 53 shards STALLED**, including many `corefill_status` reports DONE/CANCELLED.
+   **53 simultaneous stalls is an ILLEGAL reading, not a surprising one, and that implausible VOLUME
+   is the only reason I looked.** D31's domain-violation catch.
+2. **I then "corrected" it by asserting `.COMPLETE` is a REMOTE-ONLY convention. ALSO WRONG — there
+   are 83 `.COMPLETE` markers locally.**
+⇒ **I do not understand the local surface's completion convention well enough to audit it and I make
+NO claim about local shards.** **The SALTREF2 finding does not depend on any of that** — it rests on
+the within-ws1 comparison where the convention demonstrably holds (7 of 7) plus two identical reads.
+**6th ad-hoc-instrument failure today. Direction: ALARMING, while SURVEYING with no hypothesis — the
+surveying branch of the direction conjecture, behaving exactly as pre-registered.**
+⚠ **Both failures were in the SAME instrument, minutes apart, and the second was a "fix". *A fix for
+a fault can carry the fault* — mine carried a different one.**
