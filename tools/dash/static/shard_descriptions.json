@@ -579,5 +579,10 @@
   "brief": "Exiled enemy builders land ON a friendly sentinel's firing line, ammo floored at 30 — on the v139 chassis vs v139.",
   "full": "Queue #51, re-based per A2 on Magnus's catch: the exile loop is a perfect denial engine (100% action denial in the decoded archetype game) that converts to zero damage — throws landed off every sentinel ray while ammo sat one shot short of a builder kill. The arm prefers throw pads on a friendly sentinel's firing line and floors ammo at 30 while a launcher is latched; empty ray falls back to the old ordering exactly (verified both ways). Chassis-matched on the live incumbent, so the mechanism read and any ship case share a base. Opponent-coupled: self-play under-doses exiles, so this screen is a harm-gate; value needs live evidence.",
   "confidence": "high"
+ },
+ "SEALREPAIR": {
+  "brief": "Combo on the shipped v139: seal-anytime (floor 0) plus the L4 trunk-repair machinery, vs v139 itself.",
+  "full": "Magnus's ask (MAPSEAL + L4REPAIR, expressed on the new incumbent): the v139 tree plus SEALFLOOR0's floor-to-0 knob plus the trunk-repair machinery ported from _v215l4repair. Control is v139, so both sides carry the map correction and the contrast isolates seal+repair jointly — a positive final is ship-shaped without re-basing. Declared interaction channel: both mechanisms thin the titanium bank; suppression would show as under-performing BOTH singles. Attribution reads against the singles' finals when they land.",
+  "confidence": "high"
  }
 }

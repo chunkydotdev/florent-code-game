@@ -46105,3 +46105,13 @@ verified the wire relays; I re-derived the h2h table exactly). Headlines:
   viable in this league, for us and them.
 * We have NEVER met v8; last contact 0/5 vs their WORST version (v7).
   They are band-admissible at 1727 if a leg wants them.
+
+# 2026-08-14T09:36:30Z (`date -u`) — **SIDE LANE s38: SEALREPAIR CERTIFIED** (3 s two-clock: 4990599
+# 09:32:53Z vs first row 09:32:56Z). Clean: class rule applied (v139
+# chassis vs v139 — both sides carry the map fix, so a positive final is
+# ship-shaped without re-basing; note the arm = Magnus's "MAPSEAL +
+# L4REPAIR" exactly, since v139 IS mapfix) · queue-jump disclosed with
+# attribution deferred to both singles' finals (MAPSEAL precedent) · arm
+# content verified in-prereg with the map-string identity check · shared-
+# resource interaction prior declared with its signature (suppression =
+# under-performing BOTH singles).
