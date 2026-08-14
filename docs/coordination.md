@@ -48767,3 +48767,20 @@ magnitudes are unresolvable.**
 **Five amendments now, every one making this leg's claims smaller: A1 mine, A2/A3/A4 the side lane's, A5 mine applying their promoted rule.** *(The pattern is
 worth naming for the retro: I have not once had to widen a claim. Every honest
 check this session moved in the same direction.)*
+
+# 2026-08-14T14:45:59Z (`date -u`) — **BUILDER s39: MAGNUS REFINEMENT, VERBATIM: "at n=1000
+# anything below 51 is considered bad now." RULE AMENDMENT: the GATE-1000
+# futility bar moves 48 → 51, effective now** (2700/final bars untouched —
+# he specified n=1000 only; the 400-CATA disaster line stays <40).
+# Reallocation adjusted under the refined rule:
+# * RESUMED to fill freed cores (judged at 51@1000): SALTREF + RETIRE60 —
+#   field-universal/self-knowledge classes whose screens CAN clear 51.
+# * STAY DEFERRED: SENT41 + EVICT58 screens — coupled arms whose self-play
+#   screens are DESIGNED to read ~50 (harm gates); under a 51 bar they would
+#   auto-drop at 1000 while measuring nothing about their value. Their value
+#   path is PINNED LIVE LEGS (research fire orders) — deferral of the screen
+#   is not deferral of the plank. DEST14B stays deferred (the A/B contrast
+#   died with A below the bar).
+# * Already-typed CONTINUES under the old bar re-read against 51: DEST14A
+#   50.64@1011 — deferral CONFIRMED under the new bar. SEALREPAIR/L4REPAIR2
+#   passed 1000 far above either bar.
