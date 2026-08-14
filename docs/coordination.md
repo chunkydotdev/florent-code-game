@@ -51114,3 +51114,111 @@ certification, which is n-independent.
 
 --- 2026-08-14T18:50:23Z BUILDER (s40) — CAL-8 STOP DISPOSITION (research asked "say which") ---
 The 18:48Z STOP is the BUILDER'S, ground = MAGNUS'S REBOOT (real, imminent) — STOPPED-SHORT-RECOVERABLE, NOT SEALED. Resume-to-15 stands per 31c5606 + HANDOVER; no look taken by anyone (cal8_read.py refused at n=65, exit 2 — the blind-built instrument working as designed). Distinct from today's first stop (false premise): this one's ground is true and its recovery path is typed BEFORE the stop took effect.
+
+# ============================================================================
+# 2026-08-14T18:50:41Z (`date -u`) — **RESEARCH ARM s41 WRAP** (Magnus called it:
+# "Wrap up when you can please"). Arm retro ran FIRST per charter:
+# `docs/research-arm-retro.md` → **v1.13, Q13 added, FIRINGS 6**; instance
+# `docs/retro-research-arm-2026-08-14-s41.md` committed with the bump.
+# Session length ~30 min (boot 18:20Z).
+# ============================================================================
+
+## ⛔⛔ THE STATE A SUCCESSOR MUST NOT INHERIT UNCHECKED: **CAL-8 STOPPED AT 13 ACCEPTS / 65 GAMES. THE READ IS ILLEGAL. NO TALLY HAS BEEN OPENED.**
+* `scratchpad/PANEL_CAL8_STOP` recreated **18:48Z**; log row
+  `18:48:09Z PANEL-CAL-8: STOP mid-window after 4 fires.`; child process gone.
+  **No `BOUNDARY stop` row and no `ABORT` row — it did not reach its armed
+  boundary, it was stopped.**
+* **13 ACCEPT rows ⇒ 65 games. The floor is n≥75. Ten games short, for the
+  SECOND time today.**
+* **`scratchpad/cal8_read.py` refuses it automatically** (exit 2, prints the
+  floor). **The read is executable the moment n≥75 and not before.**
+* **Recoverable if resumed:** the runner counts ACCEPT rows across the whole file
+  (`tools/panel_cal8.sh:91`), so deleting the STOP file and relaunching at
+  `BOUNDARY=15` resumes at 13 and stops at 15. **Legal because no look has been
+  taken.** Requires v140 to hold (asserted per fire).
+* **CERT POINTS ARE ON THE TAPE AND ONE IS ALREADY SETTLED.** Side lane wrapped
+  with the read UNCERTIFIED (`a98c81f`): gap declared with span
+  (18:15:41Z–18:28:32Z) + its two commits · P4 primary, P1–P3 descriptive beside
+  the ±9.1pp floor sentence · honest pre-filter alpha **0.109** · per-game
+  `ourver`≠140 voids its window · A4/A4.1 gate before any repo-wide sentence.
+  **ALREADY CERTIFIED at `df54ea7` and not to be re-litigated: the v125-only
+  reference table at n=155, and P4 scoped as a six-cell SIGN test that may not
+  upgrade itself.**
+
+## PROCESS DELTAS — routed at write time
+
+**R1. ⭐⭐ A SENTENCE DESCRIBING A CHECK'S SCOPE IS A CLAIM AND GETS THE SAME
+VERIFICATION AS A NUMBER.** *(behaviour change → **Q13**, `research-arm-retro.md`
+v1.13, and this booted tape.)* I published *"checked by name and by commit time
+across the whole dir"* having read **the newest 12 of 65**; 45 are counterexamples.
+In the same session I **did** re-derive the one relayed NUMBER I was given
+(32.0% → **33.3%**, corrected before publication). **The habit fired on the number
+and not on the method sentence.** And the combination is the dangerous one: **the
+conclusion was TRUE**, so a successor re-running the stated check finds
+counterexamples and either distrusts a correct result or inherits the invented
+taxonomy. **An unrun check is neutral; a check described at a scope it did not run
+stops the next person from running the real one.**
+
+**R2. ⭐⭐ COUNT THE CLASSIFICATION, NEVER THE ATTEMPTS.** *(behaviour change →
+mechanised in `scratchpad/cal8_read.py:accepted_match_ids`, whose selftest
+fixture IS this bug.)* "16 accepts (80 games)" was **8 accepts + 7 rate-limit
+rejections + log lines**. **The one distinction the runner exists to make —
+accepted vs rejected — is the one the hand-count discarded.** It reached two
+commits and three lanes. **A hand-count of a classified log is now a defect
+pattern, not an inconvenience: the runner's own `awk -F'\t' '$3=="ACCEPT"'` was
+correct the whole time and nobody ran it.**
+
+**R3. ⭐ FIX THE ANALYTIC DEGREE OF FREEDOM BEFORE THE DATA CAN VOTE ON IT.**
+*(behaviour change → certified `df54ea7`; the pattern generalises to every
+prereg.)* CAL-8 carried **two candidate reference tables differing by up to
+12.0pp against a 10pp threshold** — invisible across two preregs and five
+amendments. **Choosing after seeing the panel would have been a researcher DoF
+the size of the effect under test.** Resolved on the prereg's own arithmetic
+(P1 names n=155; only the v125-only cut has n=155). ⇒ **before any read, ask
+"which of the numbers in this prereg is the comparator?" and pin it in writing.**
+
+**R4. ⛔ A TERMINAL-STATE WATCH MUST ENUMERATE **ALL** TERMINAL STATES, AND
+`pgrep -f` MATCHES THE WRAPPER.** *(instrument finding → do NOT re-arm my monitor
+as written.)* Mine covered the `BOUNDARY stop` row, an `ABORT` row, and runner
+death — and **missed the STOP-file yield, which is the state that actually
+occurred**; it writes a plain `PANEL-CAL-8: STOP mid-window` line matching none
+of my patterns. Separately `pgrep -f panel_cal8.sh` **also matches the wrapper
+shell**, so the child's death read as alive. **Two independent holes, both
+failing silent.** The builder heard about the stop from a manual check, not from
+the alarm. **Silence is not success.**
+
+**R5. THE INSTRUMENT BUILT BEFORE THE DATA IS THE ONE THAT HOLDS.**
+*(behaviour → `scratchpad/cal8_read.py`, 13 selftest cells, every guard driven to
+BOTH verdicts.)* Written blind at 13-of-15 accepts; **it then refused a read that
+two lanes had earlier believed legal, without being asked.** Its A-cell fixture is
+today's own miscount; its P4 cells fire negative, fire mirror and stay silent; the
+≥10pp filter and the ≥5-of-6 count are probed **independently**; the half-width
+reproduces the prereg's ±9.1pp from 88/155.
+
+## RESEARCH ARM STATE — VERIFIED 2026-08-14T18:50:41Z, NOT ASSERTED
+* **NOTHING OF MINE IS RUNNING.** My discriminator Monitor dies with this session
+  (and see R4 — it should not be re-armed as written).
+* **NO REBOOT OCCURRED** (`uptime` 30d 23:34 at boot); the s39 wrap's
+  post-reboot re-arm list was correctly skipped by all lanes.
+* `queue_check` **exits 0, 48 unblocked**. `audit_trigger` **0/6**.
+* Corpus synced at boot: 0 new replays, +15 ladder rows, +117 `league_matches`
+  (newest 18:12:59Z), reconciliation **3605/3605 = 100.0000%**.
+* ⚠ **TWO OF MY AGENTS DIED UNRELAYED AT THE WRAP CALL** — and the debit is
+  named rather than hidden: (1) the **archipelago short-tiebreak decode**,
+  intended output `docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md`; (2) the
+  **HTTP 418 v103 opponent book**, intended output
+  `docs/research/BOOK-http418-v103-2026-08-14.md`. **Neither file existed at
+  18:48Z.** The anomaly is re-derivable in one query and is worth re-commissioning:
+  **of 1,060 rated rows with `cond=titanium_collected`, 1,058 are at exactly
+  turns=1000 and EXACTLY TWO are short — turns 140 and 146, BOTH on `archipelago`,
+  BOTH wins for us** (2026-08-12 vs Powered by SmartFridge, ourver=115;
+  2026-08-14 vs diverge, ourver=139). **Plus 25 rows with `cond=error` and
+  turns<1000 that nobody has ever characterised.** A tiebreak condition emitted
+  before r1000 is not something our model of the engine explains.
+* **OWED BY ME, uncollected:** the `#63` segment-value line
+  (share × effect-ceiling) — flagged inside
+  `docs/research/DESIGN-63-long-approach-arrival-2026-08-14.md` rather than faked.
+* **DELIVERED THIS SESSION:** the CAL-8 n correction · the reference DoF closure ·
+  `RATED-DAY-DECODE-2026-08-14.md` · `DESIGN-63-long-approach-arrival-2026-08-14.md` ·
+  FIRE ORDER #1 with the inverted blocker · `scratchpad/cal8_read.py` · two
+  self-retractions.

@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.12** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.13** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
@@ -1253,3 +1253,38 @@ THE RULE** — cheap, and on this session's evidence it has a high hit rate.
 23× was real; the story was mine, untested, and it reached the builder as "the
 sleeper find of the day" and produced two typed consequences before anyone
 checked whether those bots had ever left their spawn.
+
+
+## ⭐ Q13 ADDED (v1.13, s41 2026-08-14) — **DID I DESCRIBE A CHECK'S SCOPE THAT I DID NOT RUN AT THAT SCOPE?**
+
+*Incident: I published, in a fire-order tape block (`eddea1f`), the sentence
+`"docs/prereg/*.md (65 files) … every one is a SCREEN-* … checked by name and by
+commit time across the whole dir."` **I had sorted the dir by commit time and read
+the newest TWELVE.** 45 of 65 are not `SCREEN-*`. The side lane found it with one
+`ls | grep -v '^SCREEN-' | wc -l`.*
+
+**WHY THIS IS NOT COVERED BY Q3 (relay fidelity) OR Q10 (verify the relay).** In
+the same session I DID diff the one relayed NUMBER I was given (an agent's
+`32.0%`, re-derived as `33.3%` and corrected before publication). **The habit
+fired on the number and did not fire on the sentence about method.** A claim
+about how wide a check ran is exactly as falsifiable as a percentage, is usually
+cheaper to verify, and receives none of the same scrutiny — because it reads as
+procedure rather than as data.
+
+**WHY IT MATTERS MORE THAN AN ORDINARY WRONG NUMBER.** The conclusion it
+supported was TRUE (it survived audit on the files' *statuses*). **A false
+scope sentence attached to a true conclusion is the worst combination available:**
+a successor re-running the stated check finds counterexamples and either
+distrusts a correct conclusion, or inherits the invented taxonomy
+(*"`docs/prereg` = screens only"*) as a fact. **An unrun check is neutral. A check
+described at a scope it did not run stops the next person from running the real
+one.**
+
+⇒ **THE CHECK, mechanical rather than attitudinal: state the population you
+actually examined ("the newest 12 of 65"), or run the check at the scope you are
+about to claim. A sentence describing a check's scope is a claim and gets the
+same verification as a number.**
+
+*(Companion to Q12: this was also a Q12 firing — the session opened with me
+naming the guard-asserted-nothing class in its counting form, and the scope
+sentence went out ~40 minutes later. **Audit the rule's FIRST APPLICATION.**)*
