@@ -53900,3 +53900,54 @@ guarded action in one non-blocking sequence is not a guard"** — the holder rea
 command block as the firing loop and gated nothing. **Their refusal to bank the 2-3/4-1/3-2/4-1
 numbers is the harder call and the correct one.** Procedure fix (holder read as a SEPARATE BLOCKING
 step, value asserted before any firing command is composed) accepted; certification owed by me.
+
+--- 2026-08-14T21:31:28Z (`date -u`) SIDE LANE (s42) — STOP-LOSS FLAG RESOLVED · PROCEDURE FIX CERTIFIED AS NECESSARY-NOT-SUFFICIENT ---
+
+**RESOLVED, and the builder's handling is the model:** they verified both claims at primaries rather
+than accepting my relay, **and closed a premise check I had left open** — `slot_rule.py:77` warns a
+foreign match can contaminate `net5`; **they verified the SLOT FREE row (21:22:15Z) PRECEDES v146's
+first tape row (21:23Z), so the stop-loss fired on v140's OWN uncontaminated matches.** That is the
+difference between a real signal and an artefact of the displacement, **and it was MY flag's missing
+premise. Second time today a peer supplied the premise check on a finding of mine** — the exact
+failure my s41 retro named as the borrowed-premise form. **Recorded against Q3.**
+
+**⭐ AND THEIR REFRAME BEATS MY FLAG, adopted:** *"v146 is not an opponent. It is our own team's
+submission, by a teammate."* I framed it as a RULES CONFLICT; **it is a SELECTION problem**, and read
+that way **the stop-loss firing is evidence toward LEAVING v146 UP, not a reason to fight for v140.**
+Sequencing agreed: **the measurement is not blocked on a decision the measurement informs** — the
+screen runs, the action question goes to Magnus in parallel. His rule, his word.
+
+## PROCEDURE FIX — CERTIFIED, NECESSARY BUT NOT SUFFICIENT
+*"Holder read as a SEPARATE BLOCKING step, value asserted before any firing command is composed."*
+✅ **Closes the fault that occurred** (a guard and its guarded action in one non-blocking sequence).
+**⛔ IT CANNOT CLOSE THE HOLE, and the arithmetic is their own incident: x3r0 uploaded ~21:23Z, they
+fired 21:24:12Z — a SEVENTY-TWO SECOND window.** `fcode submit` auto-activates and x3r0 uploads on
+no schedule, so **a check-then-act sequence has a TOCTOU gap BY CONSTRUCTION; making the check
+blocking shrinks it and does not remove it.**
+⇒ **THE COMPLEMENT IS THE AUDITABLE HALF: RECORD THE HOLDER PER ACCEPT, NOT PER WINDOW.**
+**Prevention has a floor; detection does not.** ⭐ **The detection mechanism already exists and is
+what caught this** — the elo tape's version column, and per-match `teamAVersion`/`teamBVersion` off
+`fcode match list --mine` (the s28 pairing-boundary read). **A leg's readout should join its accepts
+to the version live for each, so a contaminated accept is IDENTIFIABLE afterwards even when it was
+not PREVENTABLE.** Then a void window is void **by a column**, not by inference from a commit
+message. **Same shape as their own escape tape: you cannot stop every bypass, so you make the rate
+readable.**
+
+## ONE BOUND ON WHAT THE SCREEN'S NUMBER CAN LICENSE
+**The screen and the stop-loss measure DIFFERENT POPULATIONS.** Screen = v140 vs v146 head-to-head,
+LOCAL. Stop-loss = v140 vs THE FIELD, on the LADDER. **A tree can beat v146 at 55% and still bleed
+rating against the field; those are answers to different questions, not a tension.**
+⇒ **A screen pass licenses "the better of the two available trees". It NEVER licenses "fit to hold
+the slot."** The builder's own point 4 is the same fact from the other side and is the sharper one:
+**"put up something better" currently HAS NO REFERENT** — SEALFLOOR6 is mid-leg, wirehold unfired,
+crashdrive is an instrument drive. ⇒ **the starved fixture matters more tonight than which of two
+bots holds the slot**, which is a better statement of the exposure than my rules-conflict framing.
+**On a marginal 51.x read at ±3.10pp, "better of two" and "fit to hold" come apart exactly where
+the decision is hardest.**
+
+## ADOPTED INTO THE JUUSTOPIN RE-FIRE AMENDMENT (builder's, on my flag)
+**Re-derive the target band AT re-fire time, and REGISTER THE EXIT RULE: if the target leaves
+`BAND_HI` mid-leg the leg STOPS and reports the windows it has**, rather than continuing
+off-programme. Without it a 2h20m leg could have run silently off-programme while our rating fell.
+⚠ **Their addition to my caveat:** the `--band` header itself prints *"opponent ratings are CACHED"*
+— **so the gap is only as fresh as the cache on THEIR side too**, not just ours.
