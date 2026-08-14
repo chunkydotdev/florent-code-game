@@ -48676,3 +48676,46 @@ scratchpad, `turret_removal_restate` cut, reproducible from `events.tsv` +
 # half (forward bodies) is live-coupled, so flat here reads harm-clean at
 # minimum; the A-vs-B directional prediction (opposite kill-round signs)
 # resolves only when DEST14B fills. Next: 2700.
+
+# 2026-08-14T14:5xZ (`date -u`) — ⛔⛔⛔ **RESEARCH s40: THE REMOVAL DISCRIMINATOR, THIRD AND FINAL RESTATEMENT — AT THE CORRECT UNIT, NO CELL'S INTERVALS SEPARATE. THIS CLAIM FUNDED TWO BUILDS.**
+Side-lane flag on my own restatement, and it is **the DEFF lesson recurring one
+level down inside the fix for it**: my intervals were **TURRET-denominated while
+turrets cluster within GAMES** — a stomped game loses many turrets together, and
+each cell carries 3-4× more turrets than games.
+
+**THEY PREDICTED Bisons would survive and 0033 would be fragile. THE OPPOSITE
+HAPPENED, and then both fell.**
+| cell | turret-level (my restatement) | GAME-level | GAME-level × match clustering |
+|---|---|---|---|
+| **The Bisons** | 36.9 vs 17.6 · **SEPARATE**, +11.9pp air | 18.9 vs 13.1 · **OVERLAP**, −2.8pp | **OVERLAP, −4.8pp** |
+| **0033** | 29.5 vs 17.3 · SEPARATE, +4.6pp | 25.7 vs 15.0 · SEPARATE, **+1.1pp** | **OVERLAP, −1.2pp** |
+| **Juusto v11 ring** | OVERLAP, −4.9pp | OVERLAP, −11.0pp | **OVERLAP, −16.4pp** |
+*(Game-level = per-game removal share, games as units — the correct unit because
+the OUTCOME is per game. Clustering applies the pooled rated DEFF 1.53, since
+these games arrive in 5-game matches.)*
+
+**⇒ THE HONEST FINAL STATEMENT: AT THE UNIT THE CLAIM IS ABOUT, NO CELL'S
+INTERVALS SEPARATE. The removal discriminator is DIRECTIONAL IN ALL THREE CELLS
+(wins always above losses) AND RESOLVED IN NONE.** What survives as the strongest
+evidence is not the level difference at all — it is **the round-band split**,
+which is a within-cell contrast and therefore untouched by this: early (r<100)
+removal runs **2.1× (0033) and 2.8× (Juusto)** higher in our wins, against
+**1.2× — nearly flat — for the Bisons.**
+
+**⭐ AND THE BISONS COLLAPSE IS ITSELF INFORMATIVE, not just a retraction.** Its
+turret-level number was inflated by a few high-turret games: pooled 36.9% against
+a per-game mean of 18.9%. **The effect was concentrated in games where they built
+many turrets — which is exactly the signature of "we were already winning, so we
+had the tempo to clear a lot", i.e. the reverse-causation story.** The clustered
+redo and the flat early-band split now agree on the same cell, from two
+independent directions.
+
+## CONSEQUENCE FOR `#3` — third revision today, each one smaller
+The row keeps its priority on the **directional consistency across three
+independent opponents plus the early-band asymmetry on two of them**, which is a
+real pattern. **It cannot claim a resolved effect size, and no arm may be sized
+against one.** ⛔ **Any citation of "51% vs 14%", "66% vs 15-17%", or my own
+"+19.3pp / +12.2pp" is superseded by this note.** Books amended.
+**THE LESSON, and it is the day's third instance: the unit of analysis was wrong
+at every stage — turrets inside games inside matches. Each correction was found
+by a peer, none by the author, and each one made the claim smaller.**
