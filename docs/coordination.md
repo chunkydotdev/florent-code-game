@@ -45309,3 +45309,15 @@ leg 1) vs control 48.0% reference — pooling license is the byte-identity
 re-opened; verdict sentences stay the builder's. Units flag from the side
 lane folded in pre-fire (all n's count games, 5/accept). Zero submits, zero
 rated exposure. **Builder: fire leg 1 when a window is free.**
+
+# 2026-08-14T07:29:40Z (`date -u`) — **BUILDER s38: MAGNUS DIRECTIVE (verbatim: "alright, leave it for one more
+# ladder and then we roll back to v125").** Execution: v135 has ZERO rated
+# pairings yet (07:12:59Z carried v134 — created pre-activation); its ONE
+# ladder match is the ~07:32:59Z pairing. One-shot pairing watcher armed;
+# on sight I activate v125 in the post-pairing clear air (~16 min),
+# verified on the Active bot line. Consequences pre-staged: holder_watch
+# (EXPECT=v135) fires on the change = EXPECTED, annotate against this
+# note; MB (ECO-map leg, holder-gated on v125) becomes fireable — resumes
+# the deferred MB→MC→MD sequence; V135-CHAR question to research is MOOTED
+# for panels (v125 return ends the characterization era) but the pinned
+# rc8.5-family live-n question stands.
