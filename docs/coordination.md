@@ -47041,3 +47041,100 @@ at the primary before anything is banked (Q10).**
 # to work-server-1 (SEALFLOOR0R 3280/5400 filling, SEALREPAIRR queued behind).
 # CAL-7: stability gate reads MET (holder >40 min + tree identified) — research
 # s40 owns prereg from the CAL-6 template; I fire on their committed order.
+
+# 2026-08-14T13:07:xxZ (`date -u`) — ⭐ **RESEARCH s40 FIRE ORDER #1 + CAL-6 READ + A UNITS CORRECTION TO OUR OWN s39 WRAP**
+Two committed files, both pre-leg, at **966882f4 / 13:06:25Z**:
+`docs/research/CAL6-READ-2026-08-14.md` · `docs/research/PREREG-CAL7-2026-08-14.md`.
+
+## ⛔ CORRECTION FIRST — CAL-6 IS 75 GAMES, NOT 15
+The s39 research wrap says *"CAL-6 aborted at 15 games (descriptive only)"*.
+**Wrong by 5×.** `panel_cal6_fires.tsv` holds **15 ACCEPTED MATCHES**, and both
+CAL preregs fix the unit in the design line — *"all n's count GAMES, 5 per
+accepted match"*. Verified at the primary: `fcode match info` on all 15 ids
+returns a five-game table each. **The wrap read the runner's POINTER as a game
+count.** Consequence: at 15 the panel is under its own n≥50 threshold and its
+look is unavailable; **at 75 the look is DUE — this session came within one
+check of inheriting "descriptive only" and leaving 75 live games unread.**
+
+## CAL-6 LOOK — TAKEN AT ITS STOP (declared trigger: stop with n≥50; runner dead)
+**POOLED: v125 30.0% (45/150) → v139 31.0% (45/145) → v140 29.3% (22/75). FLAT.**
+Instrument alarm CLEAN: 70/70 archived games decode `ourver`=140, and the holder
+guard **fired for real** at 11:58:27Z on the v141 displacement (a guard trusted
+for having cost data, not for having passed). Method positive-controlled: the
+same script reproduces s39's published C2 cells (44.0%, 24.0%) **exactly**.
+**⭐ AND THE POWER STATEMENT IS THE PART THAT MATTERS: the 95% interval on the
+CAL-4-vs-CAL-6 difference is ~±13pp. A +3–5pp ship is INVISIBLE to this design.
+Three flat panels are three nulls the design guaranteed — not evidence our ships
+do nothing.** Full per-cell table in the read.
+
+## ⭐⭐ THE DIVERGENCE THAT OUTRANKS THE SHIP READ
+Same opponents, same day, two fixtures:
+* **Juusto — panel 20.0% (v140) vs current-era rated 52.5% (21/40, +4.2 Elo).**
+* **team lazy — panel 53.3% vs rated 74.3% (26/35, +66.5 Elo).**
+* 0033 — panel 20.0% vs rated 23.3% (agrees).
+Small n both sides and our version differs across columns ⇒ **NOT a finding, the
+best available QUESTION.** Seat is already closed as the explanation, with its
+control: across 8,338 archived games ours, rated A 52.3%/B 48.5%, unrated A
+49.3%/B 46.2% — a ~3pp seat effect cannot make 32pp.
+**If the panel reads systematically low, every CAL number we have published is a
+lower bound needing a correction factor.** That is bigger than any single ship,
+and the unrated budget can resolve it. Hence CAL-7.
+
+## ⛔⛔ A HAZARD I WALKED INTO TWICE IN ONE HOUR — ERA-BOUND BOTH SIDES OR THE CUT IS FICTION
+I twice built a headline on a **7-day pooled cut of our own rated record**, and
+it is **void: our bot moved ~90 versions inside that window.**
+* First on **Leviathan** — week-pooled 47.7% vs same-era (2026-08-13, their
+  v62–69) **24.0%**.
+* Then on the Elo ledger, which named **Ouroboros −291.8, Lunds Stallions −205.1,
+  Kings College Munich −139.4 (−636 total)** as our three biggest leaks.
+  **Era-bounded, ALL THREE VANISH:** no Ouroboros or KCM pairing since
+  2026-08-10, and every Lunds row from 2026-08-10 on is positive (+21.0, +19.5,
+  +3.3, +2.4). I caught both before publication; the second one only because the
+  first had just fired. **Recording it because a lane that only reports the catch
+  and not the near-miss teaches nothing.**
+
+## THE READ THAT SURVIVES ERA-BOUNDING — our rated ledger, `ourver` ≥ 125
+**79 matches / 395 games since 2026-08-13 ~10:16Z: 52.4% share, NET +84.5 Elo.**
+Current-era leaks, in order: **0033 −39.4** (6 m, 23.3%) · **LingLing40 −26.4**
+(7 m, 40.0%) · HTTP 418 −11.7 · Flotte −11.4 (1 m). Gains: **team lazy +66.5** ·
+**arsonist duck +48.0** · Coreflood +19.0 · Big O +15.7.
+⇒ **0033 is our largest live leak and it already has a book and an arm
+(NESTSHOT2). LingLing40 is second-largest and has NEITHER.** Fresh cut
+(`ourver` ≥ 139, 11 matches) is −12.3 and far too thin to read; noted, not used.
+
+## 🔥 FIRE ORDER #1 — the unrated pipe is ONE SERIAL QUEUE, not a set
+Rate limit 5 matches / 20 min shared across `unrated` + `test` ⇒ **~15 matches =
+75 games/hour, and two things cannot fire at once.** Priority:
+1. **CAL-7 (`INCUMBENT=140`), windows 1→12 ≈ 4 h, 60 matches / 300 games.** Six
+   cells with their ids in the prereg: 0033 · LingLing40 · Juusto · Jython ·
+   Big O · team lazy. Rotating start cell; rate-limit rejection waits out the
+   window and retries the SAME cell. Interim look at n=150 is DESCRIPTIVE ONLY;
+   the P1/P2/P3 call is at **n=300**.
+2. **PREEMPTION, standing: any committed treatment-leg prereg outranks CAL-7.**
+   The panel yields mid-cycle and resumes from its pointer — that stop condition
+   is in its own design, so no renegotiation is needed at the moment it happens.
+3. **On a holder change, CAL-7 stops at the last fully-under-v140 window** and
+   the R3 stability gate re-arms for CAL-8 (holder ≥40 min + tree identified).
+**REMOTE (VPS) REPLICATION — the screens I want, with reasons, builder slots them:**
+(a) **V141VS140 first** — it is the one final this week that answers a PUBLIC
+claim (x3r0's 81.7%), so it is the one most likely to be quoted back at us and
+the one where thin n costs most. (b) **SEALREPAIR confirmation** — it is the
+shipped holder's own screen; a same-host-only confirmation of the live bot is the
+weakest link in the ship chain. (c) SEALFLOOR0R/SEALREPAIRR continue as queued.
+
+## ALSO ON MY PLATE, ANNOUNCED
+* **Juusto book** (opus agent, running) — Magnus's directive. Anchors verified:
+  rated h2h 24/50 = 48.0%; **all 50 games ended `core_destroyed`, median 181.5
+  turns, ZERO r1000**; 491 archived games (245 vs us, 50 at their current v11);
+  **11 versions since 2026-08-11T16:32Z**; rating **1883.3** @12:32Z.
+* **GREP carry v218→v223** (sonnet agent, running, holds `QUEUE.md`) — I am
+  holding my own queue additions until it lands so we do not collide on the file.
+* **Queue rows owed by me once QUEUE.md frees:** (i) `target_value` reads a
+  CACHED per-team rating and is ~65 points stale on fast risers — it should read
+  the newest `league_matches` row per team, or print per-opponent row age
+  (builder raised it, mine to admit). (ii) **LEVIATHAN BOOK** — they are 1997.8,
+  our rated share against them fell 80% (2026-08-08, their v27) → 24%
+  (2026-08-13, v62–69) across ~40 of their versions, and they are being DROPPED
+  as a panel cell for carrying no information (3/65 across three panels). A cell
+  that is a floor is not an instrument; an opponent out-developing us is a
+  subject.
