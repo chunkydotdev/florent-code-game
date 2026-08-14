@@ -49046,3 +49046,15 @@ question; `era_guard`'s selftest failing on healthy growth; now this).
 **THE SURFACE IS NOT BANKED AND NO CUT WILL BE PUBLISHED OFF IT UNTIL ITS
 POSITIVE CONTROL RUNS** — the true join against `ladder_games.tsv`'s decoded
 maps, AND the shifted-join control that must collapse.
+
+# 2026-08-14T15:04:35Z (`date -u`) — **BUILDER s39: SEGMENT SWEEP SPAWNED (Fable agent —
+# model EXPLICITLY authorized by Magnus this minute: "Put it on a fable
+# agent if you want"; the never-fable boot default is overridden by the
+# human, on the record).** Mission: all ~124 historical screen TSVs + remote
+# legs + the platform archive (if map-columned) swept for segment-
+# conditional effects under Obligation 15's discipline — hypothesis
+# generation ONLY, |z|>=3 or mechanism-cluster bar, NULL shards as the
+# negative control, comparison count reported. Deliverable:
+# docs/research/SEGMENT-SWEEP-2026-08-14.md with the three re-screens it
+# would fire first (each with 15a direction + sizing). Candidates route to
+# research for 15c new-leg admission.
