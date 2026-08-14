@@ -27,3 +27,58 @@ rather than being invariant to opponent identity."*
 
 Rows enter step 2's gap table ONLY where both a screen final and live/rated
 evidence exist at read time; the classification above stands regardless.
+
+---
+
+# STEP 2: GAP TABLE (separate commit, AFTER the classification above — ordering provable in git)
+
+**Method for legs (matched surfaces):** gap = (screen_T − 50) − (live_T −
+live_control), live_control = the pinned A-arm at the same five cells
+(12/25 = 48%). This removes cell hardness, which the raw screen−live
+difference confounds. **For SALT and MAPCODE no matched leg exists** (prereg:
+"rated break-in delta where legs don't") — their live evidence is the ship
+record, incommensurable in pp; sign and rough magnitude only, said so.
+
+| arm | class (step 1) | screen excess | live excess (vs 48% control) | GAP (flattery) |
+|---|---|---|---|---|
+| UNDERECO | coupled | +1.56 | 9/25 = 36% → −12 | **+13.6pp** |
+| COMBO | coupled | +2.31 | 10/25 = 40% → −8 | **+10.3pp** |
+| APPRLAUNCH | coupled | +2.68 (pooled 5005/9500) | 10/25 = 40% → −8 | **+10.7pp** |
+| ECORAID | coupled | +3.77 (pooled 4508/8383) | 23/50 = 46% → −2 | **+5.8pp** |
+| **TWORAID** | coupled | +0.63 | 13/25 = 52% → **+4** | **−3.4pp — NO FLATTERY** |
+| MAPCODE | decoupled | +23.27 (⚠ control era: `_v187saltidle_f`) | ship record: zero-drawdown break-in, validated climb | **~0 — transferred** (imprecise bound) |
+| SALT | coupled (hard case) | +11.00 (⚠ control era: `_v169launchlate160`) | ship record: validated on ladder | **~0 — transferred** |
+
+## VERDICT AGAINST THE REGISTERED PREDICTIONS
+* Registered: coupled mean gap ≥ +5pp; decoupled |gap| ≤ 2pp.
+* **FALSIFIED-AS-UNIVERSAL, twice over: SALT (the pre-named hard case) is
+  coupled-with-transfer, and TWORAID is coupled with gap −3.4pp.** Decoupled
+  prediction holds on its single row (MAPCODE).
+
+## THE PRE-NAMED REFINEMENT, SCORED
+*"Coupling flatters only when the exploited behaviour DIFFERS between our
+incumbent and the field."* Applied row by row:
+* SALT exploits belt repair — **field-universal** (40.5%), incumbent repairs
+  too → predicts transfer ✓
+* TWORAID's payoff is out-damaging repair/heal — **field-universal** →
+  predicts transfer ✓ *(the refinement's only genuinely out-of-sample hit —
+  it was pre-named against salt, not against TWORAID)*
+* UNDERECO exploits the CHRONIC-CAMP response — incumbent kills at median
+  ~167 and does not chronic-camp (self-play camp exposure ≈ absent) →
+  predicts flattery ✓
+* APPRLAUNCH's trigger is point-blank CREEP — incumbent never creeps
+  (99.7% harvester-first, no ladder) → predicts flattery ✓
+* COMBO/ECORAID contain UNDERECO → predict flattery ✓ (+10.3 / +5.8, ordered
+  as expected with DIGOUT removed)
+* MAPCODE decoupled → transfer ✓
+**7/7 signs predicted.** ⚠ Honest weight: the refinement was authored knowing
+salt's outcome; TWORAID is its only clean out-of-sample success. **It is a
+surviving hypothesis, not a confirmed rule — the prospective probes (GBNS,
+L4REPAIR, and #8 as the decoupled contrast) are the real test, predictions
+already registered in the prereg.**
+
+## Caveats carried
+Screen controls span three eras (v197 for the legs; `_v169`/`_v187` for
+SALT/MAPCODE) — the excess is vs different bases where flagged. Live leg
+cells are n=25-50; the A-control is n=25. SALT/MAPCODE live evidence is the
+confounded ship record, sign-grade only.
