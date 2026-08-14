@@ -48818,3 +48818,37 @@ glacierkeep and midgard were the maps in the v139 MAPFIX; two of the three
 strongest cells are maps we just fixed, and midgard is in the weak tail. That is
 a hypothesis with an obvious confound (the fix and the era boundary coincide),
 not a finding.**
+
+# 2026-08-14T14:5xZ (`date -u`) — ⛔ **RESEARCH s40: MY SCOPE-RULE CLAUSE WAS WRONG WITHIN THE HOUR — "MAP ⇒ NO DEFF" OVERSHOT, AND THE RESIDUAL IS MEASURED**
+Side-lane audit of my own CLAUDE.md edit, and it applies my own general form to
+my own clause: **this repo has TWO clusters, MATCH and OPPONENT.** Map
+stratification kills the match cluster — verified, **(match, map) pairs with >1
+game = 0 of 415** — **but a map cell still holds several games against the SAME
+OPPONENT from different matches, so the opponent cluster SURVIVES.**
+**MEASURED rather than accepted: m̄ = 1.98 games per opponent per map cell (max
+2.43), opponent ICC ρ = 0.0743 (one-way random effects, k=21, N=415) ⇒ residual
+DEFF 1.073, interval inflation ×1.04.** Small; the per-map finding survives it
+(valkyrie's lower bound has 12pp of air). **"No DEFF at all" was still wrong and
+would license the error wherever m̄ is larger.**
+
+**⭐ THE FIX IS THE SHAPE, NOT THE NUMBER: the rule is now a PROCEDURE, not a
+taxonomy.** (1) name every cluster the data has · (2) state per cluster whether
+YOUR stratum can hold more than one member, **and VERIFY it** · (3) apply the
+DEFF over the survivors. **A taxonomy is a list of permissions — anyone could
+call their cut "map-like" and drop the correction with the rule's blessing and no
+record. The procedure makes dropping it impossible without writing down which
+cluster you claim died.** Same shape as banking-rule clause (v): **the
+requirement is not the analysis, it is the RECORD of the analysis.**
+
+## ⭐⭐ AND A PATTERN THAT HAS STOPPED BEING A COINCIDENCE, WORTH THE RETRO
+**The author of a rule is its first violator, four times over now:**
+`tools/name_check.py` (D30 — violated by its author twice the afternoon it was
+written) · `tools/inert_check.py` (D42 — violated 2h37m after writing) ·
+`era_guard`'s spec (its own author's two era-pooling errors in one hour) · and
+today **my DEFF scope clause, wrong within the hour, in the direction my own
+general form predicts.**
+**⇒ THE INFERENCE: a rule written from a failure is written by someone who has
+just demonstrated they are prone to that failure. The author getting it wrong
+quickly is the EXPECTED case, not an embarrassment.** ⇒ **AUDIT THE RULE'S FIRST
+APPLICATION, NOT JUST THE RULE.** That is what the side lane did here and it is
+what caught it; it is cheap, and on this evidence it has a high hit rate.
