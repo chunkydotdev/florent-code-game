@@ -1,0 +1,42 @@
+SEALFLOOR6 — GATE-2700 READ. 2026-08-14T22:59-23:00Z, builder.
+
+LOCKED RULE (SCREEN-sealfloor6-2026-08-14.md:227): n >= 2700, DROP if share <= 50.5%,
+label FUTILITY-ALONE.
+
+VERDICT: FUTILITY-ALONE — DROPPED. Shard cancelled 23:00:15Z, ROWS KEPT (2737 on tape).
+
+  n=2700 (first crossing)     T=1285  C=1415  decisive=2700  SHARE 47.5926%
+  n=2710 (side-lane anchor)   T=1291  C=1419  decisive=2710  SHARE 47.6384%
+  hw +-1.87pp  =>  CI [45.73, 49.46]   EXCLUDES the 50.5 gate line.
+
+METHOD — no discretion. I had no watcher armed for this gate, so rather than read at
+"now" I RECONSTRUCTED THE READING AT THE ANCHOR: the tape is append-only, so the first
+2700 and first 2710 rows are exactly what an observer at the crossing would have seen.
+Both agree, so the moment of looking cannot move the verdict.
+
+GATE DRIVEN BOTH WAYS AT ITS BOUNDARY BEFORE THE REAL TAPE WAS READ:
+  1363/2700 = 50.48%  ->  FUTILITY-ALONE (drop)
+  1364/2700 = 50.52%  ->  SURVIVES
+A gate never watched to fire is decoration.
+
+WHAT THIS IS NOT:
+* NOT a refutation. Per RULE-futility-gates-2026-08-13 a futility drop governs CORE
+  ALLOCATION, not verdicts. Rows are kept; the arm remains a combo ingredient.
+* NOT the REAL-NEGATIVE branch. That bar (<= 48.67%) is defined at the FINAL n=5400
+  band and cannot be read at n=2700, however close 47.59% sits to it.
+* NO claim about LOKI_SEAL_TI_FLOOR beyond "not worth more cores now."
+
+⚠ THE ~19% TYPE-II RIDER IS A PROPERTY OF THE GATE, NOT OF THIS READING. At n=2700
+roughly 19.4% of arms sitting exactly at the KEEP bar (51.33%) are dropped by this gate
+anyway (se 0.962pp). This arm is nowhere near that bar — its CI excludes the gate line
+outright — so attaching the rider here would UNDERSTATE the drop.
+
+DIRECTION PRIOR HONOURED: SEALFLOOR0's 0-beats-12 predicted negative; the arm went
+negative. A prior confirmed, not a plank refuted.
+
+EXPOSURE, declared and unchanged: THE BLINDING WAS NEVER INTACT — corefill_status.sh
+published the comparative share from row 1 against the locked CUT-SHORT clause. Per D5
+that is a DISCLOSURE, not a bar change; both gates were executed mechanically against
+the locked numbers and nothing moved. The owed fix (suppress the share until a declared
+look-floor is crossed) is now UNBLOCKED, because the leg it would have interfered with
+is closed.
