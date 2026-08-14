@@ -53011,3 +53011,46 @@ stock.** Naming your own tempting corner before you are at it is worth more than
 
 Nothing of mine is running beyond the drift watch. Zero platform actions. Holder unread by me
 this session — I have not asserted one.
+
+--- 2026-08-14T20:49:27Z (`date -u`) SIDE LANE (s42) — AGENT ANNOUNCEMENT (rule 1) + a MAGNUS QUESTION with a measured answer ---
+**Magnus asked directly: does `CLAUDE.md` state anti-sycophantic behaviour for all our agents?**
+**Measured answer: NO.** Neither `CLAUDE.md` (project) nor `~/.claude/CLAUDE.md` (global) carries
+any stance clause. Grepped both ways — `sycophan*`, `flatter*`, `courtesy`, `adversarial`,
+`disagree*`, `defer`, `echo`, `praise`, `oversell`, `hold request`, `say so`, `honest`.
+Project `CLAUDE.md`'s only `FLATTERING` hits (`:645`, `:649`) are about **statistical error
+direction in the DEFF scope clause**, not conduct; its three other near-hits (`:243`, `:288`,
+`:415`) are numbers-carry-subjects, nulls-are-iterations, and "the only honest fixture". The
+global file returns **zero hits on every term**. `PROGRAMME.md`: three incidental near-hits, no
+behavioural clause.
+
+**IT EXISTS IN EXACTLY THREE FILES, AND ALL THREE ARE THE ONES THAT ARE NOT AUTO-LOADED:**
+`.claude/commands/builder.md:73`, `research.md:45`, `sidelane.md:26` — one `Stance:` paragraph
+each. **Our own SessionStart hook prints the problem verbatim:** *"the charter, hard limits and
+boot sequence live in `.claude/commands/` and are NOT auto-loaded."*
+
+**TWO GAPS, AND THE SECOND IS THE ONE THAT MATTERS.**
+1. A session that never types `/builder` gets no stance instruction. **Bounded — the hook warns.**
+2. ⛔ **SUBAGENTS. They inherit the project `CLAUDE.md`, which has no clause, and never load
+   `.claude/commands/*.md`, which is where the clause lives.** `CLAUDE.md:211-214` grants standing
+   permission to spawn them and mandates the model tier and says **nothing about their stance.**
+   All three lanes spawn them constantly. **So the instruction is present exactly where a human is
+   reading the transcript and absent exactly where nobody is** — and a subagent's product arrives
+   as a RELAY, this repo's most-measured error channel.
+**AND THE THREE THAT EXIST ARE NOT THE SAME CLAUSE.** Only `builder.md` names the Magnus-facing
+case (*"a gate that would pass because passing is wanted is not a gate"*). Research's is
+builder-facing. **Mine does not use the word at all.** ⇒ **Two of three lanes have no written
+instruction about what to do when Magnus's preferred direction disagrees with the measurement.**
+
+This is the shape `CLAUDE.md` itself names twice — *a fact recorded in a reference nobody boots
+and contradicted by the always-loaded file is a fact nobody has* — and the s29 retro's *a rule
+promoted into a file nobody opens*, which is the routing rule THIS lane wrote.
+
+**SPAWNED — `sonnet`, one-shot instrument probe (announced before/with the spawn, rule 1):**
+the subagent-inheritance half above is a property of the HARNESS, not of our files, and I had it
+as high-confidence INFERENCE. Probing it rather than publishing it. **Pre-registered three-outcome
+design with a SKIP for non-evidence** (copying `_probe_nearby_default`): the agent reports
+presence/absence of a charter-only string and **two CLAUDE.md-only POSITIVE CONTROLS** — if the
+controls come back ABSENT the probe is **UNINFORMATIVE and says so**, rather than returning a
+clean confirmation. **A probe that can only confirm has not been seen to check.**
+Spec + the exact insertion paragraph to follow as a dated doc; `CLAUDE.md` and
+`.claude/commands/` are **outside my write surface** and I am not editing them.
