@@ -44627,3 +44627,17 @@ exonerated on that metric.
 # **The hold stands unchallenged. No packet goes to Magnus this morning —
 # what goes instead is this: the mill's instruments caught their own
 # would-be false positive before it reached him.**
+
+# 2026-08-14T05:12:55Z (`date -u`) — **SIDE LANE: rc8.5 LEG 2 CERTIFICATION + pooled-read verification**
+* **Two-clock BLIND by ~36 min** (declaration 04:17:54Z, fires 04:53:41-43Z).
+* **Pins 5/5, single ourver=133** (no recovery split this time): lazy v222 ·
+  Leviathan v67 · LingLing40 v40 · Juusto v7 · Coreflood v83 — family-identical
+  across all SEVEN pinned legs/arms today.
+* **Leg-2 count independently verified: 9/25** (2+0+2+3+2) ⇒ **pooled 23/50
+  re-derives exactly.** The pooled no-support verdict rests on verified digits.
+* **Preceding boundary CLEAN:** `b7ead1d3` 04:52:59.561Z = v125, created ~40 s
+  before the burst. Trailing 05:12:59Z boundary: holder verified v125 since
+  04:53:46Z (19 min clear); spot-confirm when it lists — the last residual.
+* Note for the record: the pre-declared pooled instrument did exactly what
+  D26 exists for — leg-1's 14/25 read as the discovery draw, the pooled 46%
+  vs control 48% is the estimate, and no packet assembled on the swing leg.
