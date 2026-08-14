@@ -17,3 +17,15 @@ TLE caveat is lifted; if it does NOT, the original null was fixture-made and
 #48(b) reopens.** DEFF 0.98 local; ±1.33pp at n=5400.
 PROVENANCE: docs/research/TLE-FIXTURE-EXPOSURE-2026-08-14.md (grounds) + the
 original SALTREF registration (rule) + this builder session (fixture facts).
+
+## A1 — ADD-ONLY, ESTIMATOR-NAMING (2026-08-14T20:18:08Z; no SALTREF2 row read by any lane)
+
+**Two comparisons, two intervals (side-lane flag: the single ±1.33 was the
+one-sample form applied to both, 41% too narrow for the replication question
+and narrow in the direction that REOPENS #48(b) — the exciting branch):**
+* vs the fixed point 50.0 — ONE-SAMPLE: **±1.32pp**.
+* vs the original 49.11@5400 — TWO-FIXTURE, both terms n=5400 DEFF 0.98:
+  **±1.87pp** ⇒ "did not replicate" requires the new share OUTSIDE
+  **[47.24, 50.98]**. This is the interval the replication verdict uses.
+Clock note: the header timestamp is the COMMIT clock; the first-row clock is
+added by the side-lane cert when the first pulled row dates it.
