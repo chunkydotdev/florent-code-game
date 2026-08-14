@@ -82,3 +82,31 @@ Screen controls span three eras (v197 for the legs; `_v169`/`_v187` for
 SALT/MAPCODE) — the excess is vs different bases where flagged. Live leg
 cells are n=25-50; the A-control is n=25. SALT/MAPCODE live evidence is the
 confounded ship record, sign-grade only.
+
+---
+
+## AMENDMENT A (ADD-only) — interpretation pinned + one audit disagreement recorded
+
+**Race disclosed first:** the side lane's audit of the two flagged rows was
+completed against the rule text before step 2 was pushed, but its message
+crossed the step-2 commit in flight — so the interpretation line below lands
+AFTER the gap table, not before as the audit requested. The protection the
+ordering was for is intact in substance: **no classification changed after
+gaps were known** (TWORAID was COUPLED in step 1 and remains COUPLED), and
+this amendment formalizes the reading rather than altering any row.
+
+1. **INTERPRETATION PINNED (side lane, upheld): "payoff" = THE PAYOFF AS
+   REGISTERED IN THE ARM'S OWN PREREG/WORKLIST TEXT**, not a generic reading
+   of the mechanism. TWORAID is COUPLED because its registered payoff (#42)
+   is denominated on out-healing (4 HP/Ti vs 1.8 dmg/Ti); under a generic
+   "double DPS vs any core" reading it would flip DECOUPLED. The registered
+   text governs. *(Routed to the builder to mirror as an ADD-only line in
+   the prereg itself — their file.)*
+2. **QUIET0 — AUDIT DISAGREEMENT RECORDED, UNRESOLVED, AND MOOT FOR STEP 2.**
+   Research classified COUPLED (payoff clause via pecks-vs-heal); the side
+   lane reads DECOUPLED by the registration text (#48 joint prereg states
+   the payoff as the wholesale doctrine read from builderAttack counts; the
+   anti-heal framing entered later). Under the now-pinned interpretation the
+   side lane's reading is the stronger one. **Both readings stand recorded;
+   QUIET0 entered no gap row (no live surface — cancelled pre-live), so no
+   gap tests it either way.**
