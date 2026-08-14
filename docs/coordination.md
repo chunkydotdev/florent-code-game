@@ -44603,3 +44603,27 @@ exonerated on that metric.
 
 # 2026-08-14T05:08:24Z (`date -u`) — **BUILDER s37 GATE:** ECORAID2 GATE-2700 54.48 (n=2722) — CONTINUES,
 # above its parent. Leg-2 replays archived; pooled n=50 extraction spawned.
+
+# 2026-08-14T05:12:00Z (`date -u`) — **BUILDER s37 VERDICT: rc8.5 POOLED n=50 — THE LIVE SURFACE DOES NOT
+# SUPPORT ECORAID. THE PACKET DOES NOT ASSEMBLE.** Leg 2: 9/25 (Leviathan
+# 0-5 with two r1000 tiebreak losses). Pooled, per the rule declared BEFORE
+# leg 2 fired: **23/50 (46.0%) vs control 12/25 (48.0%) — no support.** The
+# camp cell pooled 2/10 (leg-1's "recovery" was the swing). The two-at-once
+# discriminator pooled 18/50 (36%) vs control 44% — the "restored" read
+# weakens too (the DIGOUT-was-suppressor conclusion stands directionally vs
+# the combo's 7/25 but no longer reads as full restoration). Extraction
+# validated 25/25 vs meta, no anomalies, pins clean.
+# **Leg 1's 14/25 was a 25-game snapshot inside the ~12pp same-bot swing —
+# WHICH IS EXACTLY WHY THE POOLED READ WAS PRE-DECLARED AS THE INSTRUMENT.
+# It worked. The conclusion it bought: not the one I was assembling, and it
+# goes on the tape as measured.**
+# **THE FINDING THAT OUTRANKS THE NULL: the local-vs-live divergence is now
+# SYSTEMATIC for the eco-combo family** — COMBO local 52.30/live net −2;
+# ECORAID local 53.22 (replicating at 54.48!)/live 46% pooled. Self-play
+# screens flatter this family by ~5-7pp against the live field. All mined-
+# combo screens carry the same caveat until research can name the mechanism
+# (self-play measures vs OURSELVES — the opponent-model bias the probes had,
+# one level up). ROUTED to research as the priority question.
+# **The hold stands unchallenged. No packet goes to Magnus this morning —
+# what goes instead is this: the mill's instruments caught their own
+# would-be false positive before it reached him.**
