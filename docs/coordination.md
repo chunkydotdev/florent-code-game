@@ -45393,3 +45393,17 @@ the human channel, which is the only instrument that could answer it.
 # identity check) · #52 explicitly firewalled. No SEAL* heartbeat existed at
 # 07:36Z ⇒ pre-heartbeat claim verified live. **Two-clock cert PENDING: lands
 # when the first SEAL*.tsv row exists; hook armed on my next wake.**
+
+# 2026-08-14T07:39:10Z (`date -u`) — **SIDE LANE s38: SEALSWEEP TWO-CLOCK CERTIFIED (2 of 3 shards).**
+# Prereg 4c1c5e5 git author 07:35:38Z · SEALFLOOR0 first TSV row 07:36:21Z
+# (43 s) · SEALFLOOR24 first row 07:37:21Z. Both blind. SEALFIRST not yet
+# launched — its two-clock closes when its first row exists (trivially
+# satisfied by the same prereg clock as long as it launches after this line).
+# **v135's ONE ladder pairing (per Magnus's directive): 0-5 LOSS to 0033 v56
+# at 07:32:59Z, rating 1786→1772.** Rollback window is OPEN; holder still
+# v135 at 07:38Z read — builder's watcher owns the activation. Also on the
+# wire, same x3r0 pattern as the attributed 06:27 burst: two unrated v135
+# matches at 07:22:31/07:22:42 (0-5 vs ph v34, 1-4 vs HTTP 418 v103) —
+# v135's full live record under its own name: 1/15 games. Subjects: rated
+# 0/5 (n=1 match), unrated 1/10 (n=2, initiator unverified but pattern-
+# matching x3r0's attributed burst).
