@@ -49002,3 +49002,47 @@ first where an INSTRUMENT rather than a peer did the catching.
 # cluster only; matches never repeat a map — 0 of 415 pairs), never 1.53.
 # DEST14A's +2.7 legacy lean RELABELED: candidate, not evidence (15c's own
 # discipline applied to the row that prompted it).
+
+# 2026-08-14T15:0xZ (`date -u`) — **RESEARCH s40: OBLIGATION 15 WRITTEN (Magnus's map-segment observation) + AN INSTRUMENT QUESTION OPEN ON MY OWN AGENT**
+
+## OBLIGATION 15 — a prereg declares its mechanism's MAP DEPENDENCE, or declares it expects none
+Written into `PREREG-amendments-and-lock-obligations-2026-08-09.md` (Addendum
+10), on Magnus's observation relayed by the builder: **could map-segment effects
+be CANCELLING tactics we pool across all maps — and we do not account for it when
+building experiments. Checked: none of s40's six preregs declared a segment
+split.**
+**THE ARITHMETIC THAT MAKES IT A LOSS RATHER THAN A REFINEMENT: +6pp on 5 of 15
+maps pools to +0.67pp. A pooled screen does not measure a conditional plank
+weakly — it measures it as ZERO, and the road closes.**
+Three parts; **two differ from the version handed to me and both differences are
+guards:**
+* **15a carries an EXPECTED DIRECTION**, not just a segment — a segment with no
+  predicted sign is unfalsifiable, since either outcome "confirms" it.
+* ⛔ **15b: EXACTLY ONE PRIMARY SEGMENT, others descriptive — MY ADDITION.**
+  Without it 15c is a licence: **declaring K segments gives K chances to rescue a
+  failed arm.** That is subgroup fishing and it is how a 51-bar gets defeated by
+  anyone patient enough to enumerate.
+* **15c: the re-screen is a NEW LEG WITH ITS OWN n** — the rows that suggested
+  the segment cannot also confirm it.
+Vocabulary prefers **mechanism-specific** sets (ring-geometry, lock-heavy,
+open-lane, long-approach) over size classes, because **size is a proxy for the
+terrain property and a proxy dilutes** — the same dilution the obligation exists
+to prevent, one level down. Units rider attached: **a segment bar takes NO match
+DEFF (0/415 control); residual opponent DEFF ≈1.07. Do not carry 1.53 into it.**
+
+## ⚠ AND AN INSTRUMENT QUESTION I HAVE PUT TO MY OWN AGENT, RECORDED BECAUSE IT IS THE DAY'S RECURRING SHAPE
+`corpus/league_maps.tsv` went **9,912 rows → 722** and is climbing again from a
+fresh header: **the SECOND full restart of that collection.** Its own script
+docstring says *"RESUMABLE BY CONSTRUCTION. Output is appended to, never
+rewritten, and a sibling `.done` ledger records match ids that produced a WRITTEN
+row."* **A file that loses 9,190 rows was rewritten.**
+**Either the resumability is not implemented as documented, or the run was
+discarded deliberately and the docstring does not cover that path** — I have
+asked which, and told the agent that **either answer is acceptable but the
+docstring must match the behaviour.** ⇒ **Fourth instance today of a stated
+invariant that the behaviour contradicts** (scratchpads "die with the session";
+`LAUNCHER_MIN_RND` "swept, not guessed" with a range that never reached the
+question; `era_guard`'s selftest failing on healthy growth; now this).
+**THE SURFACE IS NOT BANKED AND NO CUT WILL BE PUBLISHED OFF IT UNTIL ITS
+POSITIVE CONTROL RUNS** — the true join against `ladder_games.tsv`'s decoded
+maps, AND the shifted-join control that must collapse.
