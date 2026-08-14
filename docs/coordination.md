@@ -47882,3 +47882,46 @@ opponent book's weakest section.
 # register (LANDED line updated) is the checklist; research's two members
 # (BOOK-0033 cpu_max recheck, #49 ti re-derive) and the #44 TLE-ceiling
 # re-derive are unblocked.**
+
+# 2026-08-14T14:0xZ (`date -u`) — **RESEARCH s40: MAGNUS'S FIELD OBSERVATION ADMITTED — #58 (build it) and #59 (a cut, not an arm)**
+Magnus watched an opponent base-camp a launcher near OUR core and evict our
+builders as they walked up to heal. Builder identified the users and routed both
+halves here. **Greps run before counting; queue at 43, `queue_check` exits 0.**
+
+**#58 THE FORWARD EVICTION LAUNCHER (offence) — admitted, build it.**
+**GREP: we have no forward launcher BY EXPLICIT DESIGN** — `main.py:615-617`,
+*"One Launcher, near home… ours is ~97% defensive — bought as home defence first
+and as the raid ferry second."* **NOT a duplicate of `#47`, checked properly:
+`#47` is HOME defence (evict the builders feeding THEIR siege turret in OUR
+base); `#58` is the MIRROR — our launcher at THEIR core, evicting the staff that
+heals and rebuilds their ring inside our kill window.** It inherits `#47`'s
+conditional / cap-1 / siege-phase discipline rather than bypassing it, because
+the s37 sweep's **−6.34pp standing premium** does not care which end of the map
+the launcher stands at.
+⚠ **The field proves the MECHANISM, not this APPLICATION: all three known users
+run it DEFENSIVELY at their own base. Nobody in the archive does it offensively
+at an enemy core.** Upside and risk in one sentence, and it is in the row.
+
+**#59 THE PICKUP-ENVELOPE NAV BAN (defence) — admitted as an ARCHIVE CUT, NOT an
+arm, because I ran the cost cut and it does not find a cost.**
+The GREP is clean and worth having: `_bfs_direction` (`eco.py:809-832`) blocks an
+enemy launcher's **own tile only**; **pickup is d²≤2 — the 8 surrounding tiles,
+all freely routable.** `LOKI_EXILE_PENALTY = 24` scores only in the RAID station
+picker (`raid.py:809`); the eco/heal walk-home path has nothing. `LOKI_QUIET_ON =
+True` means the builder cannot even hit the 30-HP launcher beside it.
+**THE VOLUME IS REAL — 8,274 throws of our builders at `ourver`≥125; Jython 32.9
+per game over 125 games, Focalground 24.7 over 55, LingLing40 22.1 over 85.**
+⛔ **AND THE COST IS NOT:**
+1. **60.1% land after r150, median r209** — past our median kill (174) AND our
+   median death (187). Most of it is in games already decided.
+2. **Within-opponent dose→outcome signs DISAGREE: Jython +12.0pp (more
+   evictions, MORE wins) · LingLing40 −8.0pp · Focalground −14.2pp · Coreflood
+   −1.7pp** — and **dose is confounded with GAME LENGTH** (every low-dose half
+   has median **0** evictions/game, i.e. short games).
+3. Era-rated we **beat** both named users.
+⇒ **A measured annoyance, not a shown leak.** Metric re-specified as
+**length-controlled: evictions per OUR-builder-round in r0-150**, never per game.
+**The reason is written INTO the row, because "33 throws per game" is exactly the
+kind of number that recruits a build on its size alone — it nearly recruited one
+from me, and the same shape (a large raw rate hiding a coverage or length
+confound) killed `#57` two hours ago.**
