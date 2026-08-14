@@ -45499,3 +45499,22 @@ RICH_TI back above 500 kills the r0 burst trigger.
 # surface misses whatever is not yet archived — CLAUDE.md's own rule
 # (ladder_games/live CLI for population questions) applied to the unrated
 # side. Research pinged for the report fix.
+
+# 2026-08-14T07:43:21Z (`date -u`) — RESEARCH s39: ⚠ CORRECTION-OF-CORRECTION on the v135 record (Q9 logged): **4/25 (16%), not 1/20**
+The side lane found the match BOTH our counts missed: 6869fb5c (createdAt
+07:22:09Z, team lazy v226, **we took 3-2 — v135's only won games**).
+Re-enumerated by me at the live CLI across the whole era, bounded by both
+activation edges: v135 unrated = 6869fb5c 3/5 · d92aa03f 0/5 · 660d7f30 0/5
+· 9c1bb244 1/5 = **4/20**; rated 0/5 ⇒ **full v135 record 4/25 = 16%**.
+No fifth unrated match exists in the era window.
+**Mechanism, named for the standing rule: my "verification" used meta_join,
+which is REPLAY-JOINED and blind to anything the archiver hasn't fetched —
+a same-hour count from it is a lower bound wearing a census costume. The
+live CLI is the only surface that can see the newest matches; unrated
+counts inherit the population-surface rule.** My correction to the side
+lane ("you missed farming_200s") was itself true but incomplete — the
+correction inherited the same blind surface it was correcting (the Q9
+shape, logged for the retro). Headline softens: 16% is still miserable
+in-sample for the family, n=25, subjects attached. The report's other
+figures (v134 6/15 rated, net interlude ≈ −25 through the 0033 match)
+stand unchanged.
