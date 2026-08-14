@@ -894,3 +894,83 @@ finding at the segment level. **ROUTED: segment-value line (share × effect
 ceiling, written in the prereg before the leg) proposed into the Obligation-15
 template — flagged in coordination for research's next boot, since they own the
 obligations doc.**
+
+---
+
+# INSTANCE — s40, 2026-08-14 ~18:5xZ (wrap on Magnus's call: machine reboot, a REAL one this time)
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+Four typed. **SALTREF 49.11 [47.8,50.4] n=5400 NULL** — interval-supported,
+whole-interval below the 51 bar, rung (b) demoted not closed. **ship_watch env
+= decorative** — verified at ship_watch.py:543 (version=None past the env) and
+independently replicated by research at the same lines. **corpus_sanity TRAP 8**
+— crash diagnosed to the comment-header/restkey mechanism, fix probed both ways.
+🔥 **CAL-8 SEALED-AT-80: WRONG.** The ruling's load-bearing premise (floor met at
+80 games) was false — true state 8 accepts/40 games; the "16 accepts" was an
+ATTEMPT-LINE count (rate-limit rejections included) inherited from s39's notes
+and never re-derived. Revised PRE-LOOK to RESUME at BOUNDARY=15 (31c5606); no
+outcome data was seen by anyone before the revision — the blindness held, the
+count did not.
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+Two retractions, same root: the seal ruling and its ground-restatement
+(80edbcd). **Both ran FLATTERING** — a met floor, a legal read, a sealed leg.
+The direction-of-error question from s29 fires again: the inherited number I
+failed to re-derive was the one that made my decision legal.
+
+### 3. INSTRUMENTS — driven to BOTH verdicts?
+**corpus_sanity ragged-row guard**: fabricated ragged fixture ALARMS, commented
+file parses clean — both verdicts driven before trust. **panel_cal8 ARMED echo**:
+the armed BOUNDARY now prints to the fires tape at launch (the env was invisible
+from outside the process); its forced-fail is research's independent tripwire
+(accepts≥16 with no BOUNDARY row). **prereg_check.py**: drafted by an agent
+(dies at this wrap), spec mandates per-rule both-verdicts fixtures; UNCERTIFIED
+— side lane owes the forced-fail certification, wiring verdict stays builder's.
+⚠ One instrument sin, owned: my boot-check invocation piped corpus_sanity
+through `| tail`, masking $? — exactly the failure its :464 comment predicts;
+the verdict-line convention caught it anyway.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+🔥 My boot note relayed "CAL-8 sealed at 80 games, floor MET" to two lanes and
+the tape before any re-derivation — the claim traveled ~40 minutes ahead of its
+record and was corrected by ANOTHER lane's count. The class fix (boundary
+declared in accepts AND games, and counts taken over the classification the
+runner exists to make) is now in prereg_check's scope, not prose.
+
+### 5. THE SLOT AND THE HOLDER — what did activation cost?
+**Zero.** No submit, no activation, no rated exposure this session. v140 held
+throughout (k=20 → RULE=held at every ship_watch row). The unrated budget spent
+~7 CAL-8 resume accepts (~35 games) — exactly the spend the pre-look RESUME
+decision priced.
+
+### 6. WHAT THE BUDGET BOUGHT
+CAL-8 from 8 accepts to the 15-accept boundary (legal P4 read for research —
+the panel redesign's entire point). SALTREF's 5,400 remote games read and
+banked (49.11 null). Local cores: paused by Magnus mid-session (deliberate,
+STOP file, rows kept). Agent budget: prereg_check draft + #52 collar-medic arm
+(4:1-corrected) — both die with me, both leave files.
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+Moved to HANDOVER top block: CAL-8 end-state + the standing pre-look decisions
+(read at 15 is research's; CAL-7 AND CAL-8 rows spent after the read; a
+sub-boundary stop's resume-to-15 is ALREADY decided pre-look — do not re-open) ·
+prereg_check UNCERTIFIED status + the full token scope accreted from three
+sources · #52 arm state + the 4:1 correction · COREFILL_STOP is MAGNUS'S pause,
+not a crash · the reboot kills every monitor (real one this time — s39's wrap
+said this and was wrong; this one is right because Magnus is executing it).
+
+## The one question that is not a list
+**Did I make a decision the machinery could not have caught? Yes — the seal
+ruling consumed a session-boundary number no tool had ever seen.** The 16/80
+count lived only in prose (a wrap note and a commit message); every tool that
+COULD count (the fires tape, the pointer, meta_join) disagreed, and none was
+consulted because the prose was written by the lane I trust most — my own
+predecessor. **ROUTED, all three: the ARMED echo (built, committed), the
+boundary-in-both-units + DOSE tokens (prereg_check scope), and the rule that a
+number crossing a session boundary is re-derived before a decision consumes it —
+promoted to the wrap-note discipline below, not left as prose:** the HANDOVER
+top block now carries counts WITH their derivation command, so a successor
+re-runs instead of inheriting.
+**FIRINGS this instance: 3** (Q1 seal verdict, Q2 flattering direction, Q4
+claim-ahead-of-record — one root cause, three question-hits, which is itself the
+evidence the questions triangulate).
