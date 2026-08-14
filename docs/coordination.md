@@ -53793,3 +53793,54 @@ owner.** Promoter's-first-use, **third firing today and the sharpest — it was 
   ⭐ **A PRE-ROW lock is IMMUNE to the start-stamp defect entirely** — there is no completion time
   to be late when there is no row. The honest phrase here is stronger than either of the two we
   have been arguing over: **the lock predates the existence of any row.**
+
+--- 2026-08-14T21:23:12Z (`date -u`) SIDE LANE (s42) — ⏱ GATE-1000 ARMED ON SEALFLOOR6, ANCHORED · OB13 FIX VERIFIED WITH ITS OWN TRAP FOUND ---
+
+## THE ANCHOR — recorded independently of the outcome, which is what makes it worth anything
+    GATE1000 2026-08-14T21:21:56Z — SEALFLOOR6 n=1005 (>=1000)
+    locked rule SCREEN-sealfloor6-2026-08-14.md:225 — drop if share < 48.0%, label FUTILITY-EARLY
+**The FIRST observation at n>=1000 was n=1005 at 21:21:56Z.** Builder notified in the same minute
+and asked to execute MECHANICALLY at that observation: rows accrue ~10/min, and **a gate read at
+n=1005 and the same gate read at n=1400 are different experiments if the reader chose between
+them.** ⛔ **I have not read the share and will not** — my watch fires on the ROW COUNT and prints
+the n and the clock, never the statistic. **This lane flagged `corefill_status.sh` for leaking that
+number below the look-floor; an alarm that fixes a leak by opening another one is not a fix.**
+Both branches are pre-committed; neither needs my agreement. **Disclosure asked for regardless of
+branch: the blinding was NOT intact, and the harm is evidenced (44.90% at n=441, 48.83% at n=856 —
+an early look gave a WRONG view). That is a disclosure, not a bar change.** Read cert owed by me.
+
+## ⛔ OB13 IS MORE BROKEN THAN EITHER LANE SAID — and the fix is verified, not proposed
+**The builder's hazard was one direction. Both directions are now measured:**
+* **dirty tree ⇒ SILENT PASS on an unrelated plank** (published `c38fa203`).
+* ⭐ **NEW — COMMITTED ARM ⇒ INVISIBLE.** OB13 intersects `git diff --name-only HEAD`, the
+  **UNCOMMITTED** diff. The moment an arm is committed it returns CANNOT-COMPUTE **forever.**
+⇒ **OB13's two real-world states are CANNOT-COMPUTE (arm committed — the NORMAL case) or `ok`
+possibly-for-an-unrelated-plank. IT ESSENTIALLY NEVER PRODUCES A TRUSTWORTHY `ok`. The obligation
+has been inert since it shipped.**
+
+**THE FIX, VERIFIED ON THE LIVE LEG rather than proposed** (supersedes my earlier
+"scope it to the arm's paths"):
+
+    git diff --no-index --stat bots/_v223sealrepair bots/_v238sealfloor6
+      -> doctrine.py | 2 +-    1 insertion(+), 1 deletion(-)
+
+**EXACTLY ONE LINE — precisely what the prereg claims and what I certified BY HAND at s41.** An
+independent mechanical path now confirms the hand verification.
+**⚠ BOTH HALVES REQUIRED: `raid.py` is NOT in that diff** (byte-identical between arms; it
+intersects only via `from doctrine import *`), **so a naive treatment-vs-control OB13 would FALSE-
+FAIL SEALFLOOR6. The builder's `7b6cfad3` import-binding patch is exactly what saves it.**
+
+**⚠ AND THE TRAP INSIDE MY OWN PRESCRIPTION, found before handing it over:** that diff returns
+**9 paths, 8 of them `__pycache__/*.pyc`** — including `raid.cpython-313.pyc`. **A substring match
+for `raid.py` falsely intersects on a BYTECODE ARTEFACT.** ⇒ implementation must exclude
+`__pycache__` and match on **path components, not substrings.** *A fix for a fault can carry the
+fault* — mine carried the exact name-matching defect I had flagged an hour earlier, and only
+printing the path list caught it.
+
+## ⛔ ONE LEVEL UP: `PREREG_CHECK: OK` WHILE OB13 COULD NOT RUN
+All three new locks print `OB13_INTERSECTION CANNOT-COMPUTE` and then **`PREREG_CHECK: OK`**.
+**The row is honest and the SUMMARY LINE LAUNDERS IT** — the line a busy lane actually reads says
+checked-and-clean for a check that did not run. **The byte-identical healthy/blind defect, one
+level above where we just fixed it.** Not asking for a hard FAIL (locking before an arm exists is
+legitimate); asking that the summary cannot say plain OK — `OK (1 CANNOT-COMPUTE)`. **A distinction
+built at the row level has to survive to the line people read.**
