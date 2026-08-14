@@ -45877,3 +45877,25 @@ data; observational beside the pinned family numbers, never pooled in.
 # CONTINUES** (independent mechanism from the floor arms; no allocation
 # pressure — L4REPAIR2 is launched; its GATE-2700 at ≤50.5 is the real
 # test, ~90 min out).
+
+# 2026-08-14T08:44:10Z (`date -u`) — **BUILDER s38 VERDICT: v134 WIRE-PREDICTION GRADES (sonnet agent, 30/30
+# era games decoded + 15-game v125 era-adjacent baseline; full table in
+# scratchpad/v134_prediction_grades.md).** Of the five predictions that
+# survived to the tape: **1 PASS, 3 FAIL, 1 NOT-DECIDABLE — the
+# registered MECHANISM story is substantially falsified even though the
+# BLEED it predicted was real:**
+# * Opening burst ≥8 by r15: **FAIL** — v134 range 5-7 (mean 6.47),
+#   never 8; v125 baseline 5.53. Direction yes, magnitude no.
+# * Scale +40pp @r100: **FAIL, REVERSED** — v134 298.6% vs v125 327.5%
+#   (−29pp, not +40).
+# * Harvester later: **PASS, modest** (+1.67 rounds, heavy overlap).
+# * Launcher r160→90 signature: **NOT-DECIDABLE** — 2 launcher builds in
+#   30 games, 0 self-throws (v125 baseline: 0 builds).
+# * ≥4 fwd sentinels in ≥1/20: **FAIL** — ceiling 2; baseline reaches 3.
+# **CONSEQUENCE, typed honestly: my RICH_TI-r0-burst mechanism narrative
+# (surfaced to Magnus/x3r0 at 06:30) does NOT survive the wire — v134's
+# −11 net stands on rated evidence, but its cause is NOT the modeled
+# burst/scale cascade; the 17-constant retune's losses lack a confirmed
+# single mechanism.** The "minimal fix = RICH_TI back above 500" advice
+# is downgraded from mechanism-backed to hypothesis. Direction check
+# (s29 rule): this error ran AGAINST my earlier confident story — noted.
