@@ -100,3 +100,38 @@ is the selection criterion, per the coupling refinement.**
    fixture-pool screen as its live evidence — the n≥50 live bar stands.
 4. Fixture rates derive from MEASURED numbers with the source named (a
    fixture constant without a source line is the s36 interpolation defect).
+
+---
+
+## AMENDMENT 1 (ADD-only) — heal-camp fixture validity REDEFINED after camper2's honest fail
+
+**Builder finding (banked): v125 kills any scripted-simple camp by ~r150, so
+the 100-round park definition barely fits inside fixture games at all.**
+Two-iteration fixture-shopping limit respected; the fail itself is a
+measurement — the camp class threatens us only when backed by competence a
+130-line script lacks, which is the coupling lesson applied recursively: a
+fixture is an opponent model too.
+
+**ROAD (b) FIRST — validity redefinition — with the anti-Goodhart rule:**
+the fixture's validity bar is defined by THE EXPOSURE QUANTITIES THE
+CAMP-CLASS TREATMENTS KEY ON, never by what the fixture happens to achieve:
+1. **Siege pressure as a RATE, not a count** — parks and camps per
+   near-core round (length-invariant; the 100-round absolute was a LIVE-game
+   definition and a fixture that dies at r150 can't host it). The live
+   anchors: 41% of near-core bot-rounds parked corpus-wide, 56.5% recent.
+2. **Need-keyed heal response observed** — heal-share swing correlated with
+   damage taken (Leviathan's 7-100%), not uptime.
+3. **Bank-pin reproduction** — the fixture induces our ≤12-Ti pin
+   (bank_trace, the UNDERECO trigger) in some measured share of games.
+A treatment prereg screening against this fixture MUST name which of the
+three exposures its mechanism needs; a fixture "valid" on exposures the
+treatment doesn't use is not valid for that screen.
+
+**ROAD (a) — corpus-transcribed camper — DEFERRED WITH A NAMED CUSTOMER:**
+built only when a treatment specifically needs PARK GEOMETRY (IDLEPECK-class
+adjacency work is the known customer; its resolving read moved to the pinned
+live leg anyway). Subagent-sized, fidelity-checked against the corpus the
+way parked_raider was, when triggered.
+
+**Belt-repairer (#2) unaffected and proceeds** — its habit is
+field-universal, v125 fights it fine, no competence gap in the way.
