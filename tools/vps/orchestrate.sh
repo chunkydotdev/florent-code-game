@@ -381,6 +381,23 @@ cmd_stop() {
   r_exec "touch STOP; echo 'STOP written — the worker halts at the next batch boundary and KEEPS its rows'"
   say "STOP requested on $HOST. It halts at a batch boundary; partial rows are kept and remain readable."
 }
+# ⛔ `stop` CANNOT REACH A CURFEWED WORKER, AND THAT IS WHY THIS EXISTS.
+# `worker.sh` calls curfew_wait() BEFORE its STOP check, and curfew_wait sleeps
+# in a 300s loop. So a worker inside the blackout never reaches the STOP test:
+# `stop` is silently a no-op until the window ends. Measured 2026-08-14 —
+# work-server-2 sat curfewed with 6 idle cores and two stocked shards, and
+# `stop` could not have freed it before 04:00Z.
+# ⚠ AND `stop` + `start` IS NOT A SUBSTITUTE, it is worse: cmd_start does
+# `rm -f STOP`, so the OLD sleeping worker wakes into a world with no STOP file
+# and launches its own WORKERS alongside the new ones — double-subscribing a
+# shared box. `--tle 10` is WALL-CLOCK, so that silently corrupts every row both
+# workers produce. Killing the process is the only correct sequence.
+# Rows are never touched: the worker holds no state a SIGTERM can lose, and
+# nothing in this pipeline deletes results.
+cmd_kill() {
+  r_exec "pkill -f 'tools/vps/worker.sh' 2>/dev/null; sleep 1; n=\$(pgrep -fc 'tools/vps/worker.sh' 2>/dev/null || echo 0); echo \"workers remaining: \$n\"; ls results/*.tsv 2>/dev/null | wc -l | xargs echo 'result tapes still present:'"
+  say "KILL sent to $HOST. Verify 'workers remaining: 0' above — a nonzero count means it did NOT die and you must not start another."
+}
 
 case "$CMD" in
   gen)    cmd_gen;;
@@ -396,5 +413,6 @@ case "$CMD" in
     SH=${ARGS[0]:?reset-done needs a SHARD name}
     r_exec "if [ -f results/$SH.COMPLETE ]; then rm results/$SH.COMPLETE && echo \"removed results/$SH.COMPLETE (rows kept: \$(wc -l < results/$SH.tsv))\"; else echo \"no results/$SH.COMPLETE on this host\"; fi";;
   stop)   cmd_stop;;
-  *) die "unknown subcommand '$CMD'. one of: gen push pull status setup start stop" 2;;
+  kill)   cmd_kill;;
+  *) die "unknown subcommand '$CMD'. one of: gen push pull status setup start stop kill" 2;;
 esac
