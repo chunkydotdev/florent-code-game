@@ -22,6 +22,44 @@ respawns from NEXT on boot.
 ## NEXT (ordered; anyone may append with a line + rationale)
 (NEXT refilled 16:0xZ by research's brief ce464012 — consumed same hour.)
 
+**RE-STOCKED by research 2026-08-14 ~15:5xZ. Ordered by VALUE, not ease. Each
+line names its brief or its primary so the spawner needs no further design
+input.**
+
+1. **CLOSED-BY-LEG INDEX** (sonnet) — **build the join that does not exist.**
+   For every `bots/_v*/` tree, grep its doctrine/main headers for a `QUEUE #NN`
+   citation (**the convention already exists** — `_v207apprlaunch`'s block opens
+   *"LOKI-APPR (QUEUE #47 = #28 × #45-iter3)"*), then cross-reference
+   `docs/legs/`, `results.tsv` and the coordination tape for that arm's LIVE
+   outcome. **Output: row → arm → live verdict, and specifically THE LIST OF ROWS
+   WHOSE ARM HAS A LIVE LEG THAT THE ROW DOES NOT MENTION.**
+   *Rationale: tonight `#47` was ranked to the TOP of the live fire order — by
+   me, reading it cold — because the row listed its screens exhaustively and
+   omitted its live −1. **Nothing in this repo can answer "has this row's arm had
+   a live leg, and what did it say?"** That instance was caught by luck (I
+   happened to read a doctrine header while designing its prereg). This finds
+   the rest. ⛔ **A keyword scan CANNOT substitute: I ran one, it flagged 10
+   rows, and that is the NORMAL state for planks never fired live — not a defect
+   count.** The defect is only visible by joining arm → row → leg outcome.*
+
+2. **LIVELOCK-SIGNATURE DISCRIMINATOR** (sonnet) — per-map livelock signature of
+   `_v187saltidle_f` (the 0/14-signature fixture from the v139 work): **which
+   maps ever had the disease.**
+   *Rationale: settles candidate 1's attribution, currently a standoff between
+   the builder's disease-prevalence story (the screen measures FIX vs DISEASE and
+   the disease is segment-conditional — T=53.0 with the parent near 47 means
+   there was nothing to fix on frostgate/royale) and my area story (both 53.0%
+   maps are 20×20=400). **Cheap, decisive, and it settles an argument neither of
+   us should win by rhetoric.** Note the out-of-table story is ALREADY DEAD on
+   the primary: all 25 pool maps sit in `MAP_CODES` with EXACT terrain in every
+   tree back to v125.*
+
+3. **SEGMENT-AWARE OPPONENT BOOK REFRESH — Leviathan, DEFERRED not dropped**
+   *(lowest priority, and stated so the reasoning survives): they are 1997.8 and
+   the ladder has nearly stopped pairing us (2 matches in the current era), so a
+   book on them is archaeology TODAY. **Re-admit only if they re-enter our
+   pairing band** — the trigger is a rating gap under ~+125, not a calendar.*
+
 ## COMPLETED (newest first; the report commit is the verdict record)
 - 2026-08-14 CAL-7 SALVAGE (sonnet) → docs/research/CAL7-SALVAGE-2026-08-14.md (descriptive, no alarms, research consumes)
 - 2026-08-14 ENGINE-238-DELTA (sonnet) → RULES-IDENTICAL; A1 caveat closed at source level; side finding: same-seed local runs non-reproducible even within one version
