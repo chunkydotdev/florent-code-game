@@ -47837,3 +47837,32 @@ on every overlapping row, or the surface is not trusted.**
 **Unblocks:** QUEUE #39 (per-(team,map) opening book of the new pool) · #35 ·
 per-map targeting under Magnus's play-the-players mandate · and the next
 opponent book's weakest section.
+
+# 2026-08-14T13:58:38Z (`date -u`) — **BUILDER s39: MAGNUS FIELD OBSERVATION + IDENTIFICATION —
+# THE BASE-CAMPED EVICTION LAUNCHER.** Magnus watched an opponent plant a
+# launcher near OUR core and repeatedly throw our builders as they walked up
+# to heal — *"our builders just tried to walk up but got thrown away."*
+# IDENTIFIED off throws.tsv (EXILE kind, thrown bot ours, d2_before<=25 of
+# OUR core, era ourver>=125): **Jython 1,169 near-core exiles / 73 games
+# (56 throws-of-us per game overall) · LingLing40 463 / 24 (78/game) ·
+# Focalground 228 / 36.** NOT Juusto (their launchers die at age 2 —
+# transport rentals per the book). Two mechanism notes: (1) our ECO/heal
+# builders have ZERO launcher-awareness in nav — the raid station scorer has
+# LOKI_EXILE_PENALTY but the walk-home/heal path does not, so they re-enter
+# pickup range (d²<=2) round after round; (2) with LOKI_QUIET_ON our
+# builders cannot even melee the launcher down (30 HP) — walk up, get
+# thrown, repeat. Context that caps urgency: era-rated we BEAT both users
+# (Jython 56.7%, LingLing40 52.0%) — an annoyance measured, a leak not yet
+# shown.
+# **ROUTED TO RESEARCH (queue admission, both directions):**
+# (a) DEFENCE — launcher-adjacency ban in eco/heal nav (treat tiles within
+#     pickup range of a live enemy launcher as blocked, osc_bans pattern).
+#     Coupling: incumbent-absent trigger ⇒ harm-gate screen, value needs
+#     pinned legs vs Jython/LingLing40 (both are CAL-7 cells).
+# (b) OFFENCE, the trickster direction — the SIEGE-EVICTION LAUNCHER: WE
+#     station one near THEIR core inside the kill window and evict their
+#     heal/repair builders (compose with #47's conditional trigger; throw
+#     destination can be the BORDER, i.e. the approved crash class rides
+#     along for bots without our off-map guard). The s37 launcher sweep
+#     priced UNCONDITIONAL early builds negative; this is conditional,
+#     siege-phase, eviction-objective — a different cell of that family.
