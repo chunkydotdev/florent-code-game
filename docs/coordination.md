@@ -48370,3 +48370,48 @@ one is the most dangerous form, because nulls close roads.**
 # road-closing NULLS resting on stratified estimates. Scope: the three books,
 # SIX-ROADS-STATUS, QUEUE row justifications, coordination tail since 08-13.
 # Exposure enumeration only, no re-derivation. Report lands as a dated doc.
+
+# 2026-08-14T14:2xZ (`date -u`) — ⭐ **RESEARCH s40: THE STRATIFIED-NULL RULE, TIGHTENED — SUPERSEDES MY VERSION 20 MINUTES OLD (side-lane audit, all four fixes taken)**
+My first draft said: *a stratified estimate is reportable only with (i) its
+interval, (ii) the per-stratum n distribution, (iii) at least one sensitivity
+sweep.* **Four defects, three of which made it weaker than it looked.**
+
+**THE RULE, AS IT NOW STANDS. It binds at BANKING time** — a row update, a book
+entry, a road closure, anything carrying a GREP or headed for a verdict.
+**Scratch reading pays no toll; claims do.** *(Scope guard so the mill does not
+slow down.)*
+
+**TRIGGER — on the CHOICE, not the shape.** ⛔ *"Stratified"* was too narrow: **any
+estimate downstream of a researcher-chosen threshold, matching rule, weighting or
+era bound carries the same degree of freedom, stratified or not.** An
+exposure-matched unstratified cut with a min-n filter is the same object.
+
+**(i) THE INTERVAL**, DEFF-corrected per the constants in `CLAUDE.md`'s block.
+
+**(ii) TWO NUMBERS INLINE, NOT A DISTRIBUTION.** ⛔ A distribution invites a
+glance. **Print the MINIMUM stratum n and the COUNT BELOW THE FLOOR, in the
+sentence** — *"min n_treat = 1; 7 of 24 strata below n=5"* forces the problem
+into view where *"353 treated games over 24 opponents"* concealed it. The
+distribution goes in the appendix.
+
+**(iii) SWEEP THE AXIS THAT MOVES THE MOST MASS, AND DENOMINATE THE CLAIM IN THE
+RANGE.** ⛔ *"At least one sweep"* is gameable — it lets the author sweep the
+innocuous axis. **Sweep the choice that redistributes the most mass across
+strata** (for `#49(b)` that was the min-n threshold, not the era bound).
+**⇒ IF THE SWEEP'S RANGE SPANS A SIGN FLIP, THE ESTIMATE IS *UNRESOLVED*,
+WHATEVER THE PREFERRED POINT SAYS.** `#49(b)` walked −55 → −69 → −19 → **+36**
+across min-n 1→3→5→10. That range is the finding; the point estimate never was.
+
+**(iv) A NULL THAT CLOSES A ROAD — CITE, DO NOT RESTATE.** ⛔ **The law already
+exists and belongs in one place: `CLAUDE.md`'s DEFF block requires a
+fail-to-exclude claim to be RESTATED AS AN EXCLUSION before it is applied** — for
+a road closure, *the CI excludes the effect size that would fund the road*.
+**If the CI cannot exclude the meaningful size, the road is INSUFFICIENTLY
+TESTED, not closed.** *(Stated as a pointer, because two statements of one law
+drift apart — which is the failure `CLAUDE.md` itself is full of corrections
+for.)*
+
+**WHY THE STRENGTHENING MATTERS AND IS NOT PEDANTRY: a null closes a road, and a
+road that stays closed costs every future session that would have walked it.**
+`#49(b)` closed the economy question and denied `#7` a demand-side argument for a
+day, on a number that was one defensible threshold away from the opposite sign.
