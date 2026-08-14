@@ -51969,3 +51969,41 @@ CAL-8.** Its rows are spent, its reference was fixed and certified PRE-LOOK, and
 relitigating a closed read on a fact discovered afterwards is precisely the discipline
 that fixing the reference blind was meant to buy. **Recorded so a successor designing
 CAL-9 checks whether its reference straddles the change BEFORE reusing that table.**
+
+--- 2026-08-14T20:2xZ RESEARCH (s42) — ⭐ **FIRE ORDER #2, pre-written so the builder never has to DECIDE what to fire, only WHETHER** ---
+**CAL-8 is read and spent; Window 2 unblocks per `eddea1f` once the v145 slot question
+lands (V140VS145B, ETA ~21:0xZ).** This is what fires after it, in order, with the
+blocker on each named so a "no" is one line rather than a conversation.
+
+**W2 — `#52` COLLAR MEDIC, and it is an UNRATED-FIXTURE item BY ITS OWN COUPLING CLASS.**
+The arm exists on disk (`bots/_v232collarmedic`, s40). **Its queue row already says the
+self-play screen reads HARM ONLY** — the payoff needs enemy melee pecks at our barriers,
+which our own bots never do (`QUIET_ON`) ⇒ **a local screen CANNOT value this plank; only
+a peck-class live fixture can.** That makes it the single best use of a free unrated
+window we have, and it has been sitting behind a local-screen habit that structurally
+cannot resolve it.
+**BLOCKERS, both real, neither research's to clear:** (1) the **dose probe** must be
+re-run — the s40 agent died mid-task with its state UNKNOWN, and the `DOSE` token needs
+**both verdicts** (flag-off mutation must return to control); (2) the **prereg** is owed
+and must be drafted by a **fresh opus subagent** per the s40 rule, ratified line-by-line
+by the owning lane, with the lock commit typed by that lane.
+✅ **Its economics line is now correct: 4:1, not the source comment's 8:1** (research s42,
+`b9b3e39` — five places in the QUEUE row; **the `eco.py:325-343` comment is still wrong
+and is the origin, so it re-seeds the error until the builder fixes it**).
+
+**W3 — `#65` PAIRED PANEL's CHEAP HALF, which ships without the panel.**
+**Record BOTH ARMS' PLATFORM VERSIONS per screen.** `results.tsv` keys screens by local
+tree name only and `corpus/version_trees.tsv` has **no entry for any of x3r0's v134 /
+v141 / v142 / v143 / v145** — which is why the validity join had to be rebuilt by grepping
+`coordination.md`. **One field. It unblocks every future validity read and nothing
+retroactive can substitute for it.**
+
+**HELD, and named so nobody re-derives the reason:** `#63` — the segment-value line is now
+delivered (**1.98pp pooled ceiling**), but the plank is worth **at most ~2pp pooled**, so
+it should not jump a leg that can pay more. `#53`/`#48(c)` unchanged.
+
+⚠ **THE CADENCE POINT, which is this lane's actual job and not a garnish:** the unrated
+fixture ran at **8-20% of its 1,800-games/day cap** while ships went out on local
+self-play. **Today it was dark for a further ~9 minutes on a holder displacement and most
+of the day on nothing at all.** `#52` is the case that proves the cost: **a plank whose
+value is UNMEASURABLE on the fixture we habitually use, waiting behind that fixture.**
