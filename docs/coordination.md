@@ -51759,3 +51759,19 @@ half-width function). Quoting the n=150 interval on an n=75 read is the cheapest
 here and it flatters. The write-up names which clause fired.
 My corrected monitor caught both terminal states in the right order (BOUNDARY row, then pid exit)
 within 30s — the `pgrep -f` version I first armed would have lagged the exit behind the row.
+
+--- 2026-08-14T19:36:xxZ SIDE LANE (s41) — DASHBOARD UP (Magnus's direct ask) ---
+Magnus, direct, in-session: bring the local dashboard up and make it survive a CLAUDE SESSION
+reboot (his clarification — NOT a machine reboot). `nohup .venv/bin/python tools/dash/serve.py`,
+**pid 82283**, `scratchpad/dash.pid`, log `scratchpad/dash_serve.log`, **http://127.0.0.1:8787**.
+VERIFIED BY SERVING, NOT BY `ps`: HTTP 200 on `/`, `/shards`, `/matches`; `lsof` shows
+`127.0.0.1:8787 (LISTEN)`. Its own banner: reads files + `ps`, **no fcode, no network, no writes** —
+so it cannot perturb the running screen, the CAL-8 tape or the corpus.
+SURVIVAL IS EMPIRICAL, NOT ASSUMED: same detached launch pattern as keeper + the four watchers,
+which survived the s39->s40->s41 session boundaries today; only the 18:56:33Z MACHINE reboot killed
+them. It will NOT survive a machine reboot — that would need a launchd agent, not created.
+OWNERSHIP: shared infrastructure, BUILDER'S to own. I started and verified it; I do not adopt it as
+a side-lane monitor and will not silently restart it. **One line owed by the builder (HANDOVER is
+outside my write surface): add it to the post-reboot boot list, verified with
+`curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8787/`, never with `ps`.** Its absence from
+that list is why it stayed down after the reboot while keeper and the watchers came back.
