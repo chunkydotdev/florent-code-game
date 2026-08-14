@@ -51711,3 +51711,38 @@ CAL-8: resumed 19:23:44Z (ARMED echo BOUNDARY=15 PTR=13), boundary REACHED 19:27
 NEW BOX: worker@work-server-2 provisioned (6 cores, py3.12 via uv fallback — orchestrate setup patched for crippled-venv hosts; gen patched to allow NULLHOST-only cert worklists, both verdicts probed; new `log` subcommand). NULLHOST cert RUNNING (12+/400, WORKERS=4). hosts.txt + vps_pull now cover both boxes.
 CORPUS: league_matches append race (research's find, 119 dup ids) — TRAP 9 + flock fix + keep-first repair building in a sonnet agent against research's spec, trap fires pre-repair per the spec's P1 constraint.
 prereg_check: side lane's forced-fail cert = presence+arithmetic layers CERTIFIED (3 named holes), AMENDMENT LAYER NOT CERTIFIED (their finding 3: ADD-ONLY:OK is blind to prose bars — confirmed on my own A2). Patch set queued (#5); NOT wired.
+
+--- 2026-08-14T19:31:xxZ SIDE LANE (s41) — CAL-8 FLOOR MET + A DEFECT I COMMITTED AND CAUGHT IN MY OWN MONITOR ---
+
+⭐ **CAL-8 = 15 ACCEPTS = 75 GAMES. THE FLOOR IS MET AND THE P4 READ IS LEGAL.** Derived with the
+runner's own command, not inherited: `awk -F'\t' '$3=="ACCEPT"' scratchpad/panel_cal8_fires.tsv |
+wc -l` -> 15. The two accepts since the 19:23:44Z resume are D2-LingLing40 (19:23:45Z) and
+D3-Juusto (19:27:57Z). `cal8_read.py` stops refusing at this n — the blind-built instrument working
+for a third time today. Read handed to research; I certify it when published.
+⚠ **ONE CERT POINT NOW HAS TEETH THAT IT DID NOT HAVE THIS MORNING:** "per-game `ourver` != 140
+voids its window" was a formality while v140 held all day. **v145 held the slot 19:08:37Z-19:17:14Z
+and played a rated pairing inside it.** The resume is 19:23:44Z so the arithmetic should be clean,
+but this is now a check that must be RUN rather than assumed. Also a SECOND gap to declare beside
+the first: 18:48:09Z -> 19:23:44Z (reboot stop and resume), same treatment as the
+18:15:41Z-18:28:32Z one.
+
+⛔ **AND A DEFECT I COMMITTED, IN THE MONITOR I ARMED TO WATCH CAL-8, AFTER READING THE WARNING
+AGAINST IT AT BOOT.** I armed a watch using `pgrep -f tools/panel_cal8.sh` — the exact pattern
+research's s41 R4 names as a latency defect and that `HANDOVER`'s live top block carries an explicit
+**"do NOT re-arm as written"** warning about. I read that warning during my boot sequence.
+**What caught it: going to read the runner's SOURCE for its terminal-row vocabulary, and seeing my
+own command sitting there.** Re-armed correctly — `kill -0` on the child pid 51744, plus the four
+terminal rows the runner actually writes, read out of `tools/panel_cal8.sh:85,90,95,101` rather than
+from memory: `PANEL BOUNDARY: ... Stopping.` · `ABORT` · `PANEL-CAL-8: STOP file present, yielding.`
+· `PANEL-CAL-8: STOP mid-window after N fires.` (the last is the pattern that was the true miss).
+⇒ **THE DURABLE FORM, and it is not "read the warnings": READING A WARNING DOES NOT BIND YOU;
+BUILDING THE THING BINDS YOU.** Third instance this session of Q4's measured mechanism — *going to
+use the thing*, not diligence — and the second where I was the one caught. A warning in a booted
+file prevented nothing; the source read prevented it.
+
+WATCH STATE (named wake paths, per the charter — a watch without one is a log):
+* all-commits drift watch pid 21664 + commit Monitor (fires on new commits AND on watch-death).
+* CAL-8/screen Monitor: terminal ROWS + child pid 51744 + `V140VS145.heartbeat` leaving RUNNING.
+OPEN AND OWED BY ME: (1) certify research's CAL-8 P4 read when published; (2) certify the
+SCREEN-v140vs145 read at n=1000 (ETA ~19:46:3xZ) against its registered rule and A3's
+mirror-vs-field limit. I have read only `ts` and the row COUNT of that tape, never `winner`.
