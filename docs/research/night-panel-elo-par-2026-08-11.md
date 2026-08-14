@@ -111,6 +111,31 @@ farming_200s **0.0016** · CtrlAltDefeat 0.028 · Team 48 **0.040** · I Stone 0
 · Powerpuff Girls 0.172 · kladde 0.221 · Lunds Stallions 0.341 · Landers 0.497 ·
 gsxWins 0.779.
 
+> ⛔ **ADDENDUM 2026-08-14 (research s40) — THE ANTI-CONSERVATIVE CAVEAT ABOVE IS
+> NOW QUANTIFIED, AND TWO OF THESE CELLS DISSOLVE.** The paragraph said the
+> clustering made these p-values anti-conservative and then printed two of them
+> in bold, and section (b) below names Team 48 as one of "the two cells worth a
+> mechanism hunt". **A hedge that does not change a number does not change a
+> reader's conclusion.** The design effect has since been measured on our own
+> record: **within-opponent, unrated, df-corrected DEFF = 1.434** (947 five-game
+> matches; three independent measurements converge — see `QUEUE.md` #55 and
+> `PREREG-PANEL-CAL1-v123-field-2026-08-13.md` A1.2). Recomputed at effective
+> n = 50/1.434 ≈ 35:
+>
+> | cell | naive p | **p at DEFF 1.434** | at DEFF 1.833 (pooled) |
+> |---|---|---|---|
+> | Team 48 (24/50) | 0.040 | **0.114** | 0.162 |
+> | CtrlAltDefeat (39/50) | 0.027 | **0.081** | 0.114 |
+>
+> **Neither survives a 0.05 bar under any DEFF choice.** *(A side-lane
+> recomputation of the same two cells returned 0.087 and 0.067 — the same
+> conclusion from a slightly different effective-n convention; the disagreement
+> is in the convention, not in the verdict, and BOTH readings dissolve the
+> claims.)* **farming_200s at 0.0016 survives comfortably** and is unaffected.
+> ⇒ **Section (b) should be read as naming ONE cell worth a mechanism hunt, not
+> two.** The document's headline caveat about farming_200s's 119-point in-window
+> swing is untouched by this and still governs.
+
 ---
 
 ## ⚠ THE CAVEAT ON THIS DOCUMENT'S OWN HEADLINE
