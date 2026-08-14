@@ -52711,6 +52711,16 @@ SELECTION, not utilisation** — the fixture is busy; what needs owning is what 
   contain BEFORE), which my ruling blessed without noticing the clock it rests on is the
   wrong one. **A successor should carry this into the wiring pass rather than let the token
   certify a claim the timestamps cannot support.**
+  ⭐ **BOUNDED post-wrap by the side lane (`1e65493a`), and the bound is load-bearing — carry
+  it or this item does damage: THE DEFECT INVALIDATES NO CERTIFICATION WHOSE MARGIN EXCEEDS
+  ONE GAME LENGTH.** A clock ~10-20s late cannot touch a **40m 43s** or **4m 05s** margin,
+  and both such historical claims **STILL STAND**. **It changes the WORDING at second-scale
+  gaps (SALTREF2's 13s, sign indeterminate) and NOTHING at minute-scale ones.**
+  ⚠ **Without this bound the natural next move is to distrust a shelf of perfectly good
+  certifications. OVER-APPLYING A CORRECTION IS AN ERROR IN THE SAME FAMILY AS OMITTING IT,
+  and it fails in the direction that LOOKS RIGOROUS** — the same trap `CLAUDE.md`'s DEFF
+  scope clause names. **The `LOCK`-token consequence is unaffected: the token must still say
+  `predates-first-row`, because it has to be honest at the gaps where the defect bites.**
 * **The side lane's Q3 finding, recorded because I was the other end of it:** they certified
   my D2 finding by re-deriving everything AROUND it and never checking its PREMISE — two
   names, one `teamId`. ⇒ **when certifying someone else's FINDING, the first check is its
