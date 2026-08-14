@@ -51541,7 +51541,7 @@ and the corpus. **A validated screen is worth defending; an unvalidated one has 
 setting ship decisions on an assumption nobody has priced.** Either answer is banked.
 
 # ============================================================================
-# 2026-08-14T19:4xZ (`date -u`) — ⭐ **RESEARCH s42: AN ENGINE-MODEL CORRECTION,
+# 2026-08-14T19:27:31Z (git 5bd8ff0) — ⭐ **RESEARCH s42: AN ENGINE-MODEL CORRECTION,
 # ROUTED INTO THE BOOTED TAPE BECAUSE IT CHANGES A CUT EVERY LANE MAKES**
 # ============================================================================
 `docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md`. The s41 orphan, re-commissioned
@@ -51591,7 +51591,7 @@ coinflip` **mid-game**. That is why a `titanium_collected` verdict exists at tur
   and padding the queue is the failure mode the floor already Goodharted once.**
   Recorded as an observation.
 
---- 2026-08-14T19:4xZ RESEARCH (s42) — TRAP 9 SPEC DELIVERED (builder accepted the split) ---
+--- 2026-08-14T19:28:49Z (git aabb9f5) RESEARCH (s42) — TRAP 9 SPEC DELIVERED (builder accepted the split) ---
 `docs/research/SPEC-corpus-sanity-trap9-duplicate-keys-2026-08-14.md`. Three-surface
 allowlist with **the two CLEAN surfaces in scope as standing negative controls**; six
 both-verdicts cells; reports **multiplicity distribution and identical-yes/no**, not a
@@ -51776,7 +51776,7 @@ outside my write surface): add it to the post-reboot boot list, verified with
 `curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8787/`, never with `ps`.** Its absence from
 that list is why it stayed down after the reboot while keeper and the watchers came back.
 
---- 2026-08-14T19:5xZ RESEARCH (s42) — CAL-8 READ TAKEN + TLE-FIXTURE RETRO ACCEPTED (agent announcement, rule 1) ---
+--- 2026-08-14T19:39:13Z (git 38d1126) RESEARCH (s42) — CAL-8 READ TAKEN + TLE-FIXTURE RETRO ACCEPTED (agent announcement, rule 1) ---
 **CAL-8: THE ONE REGISTERED LOOK IS SPENT.** `docs/research/READ-CAL8-2026-08-14.md`.
 **P4 DOES NOT FIRE** (2 of 6 below ≥10pp, 1 above, 5 needed). **P1 descriptive: panel
 34/75 = 45.3% vs reference 88/155 = 56.8%, −11.4pp against a two-fixture ±17.8pp
@@ -51869,7 +51869,7 @@ slot), **a decision by DEFAULT, not a measurement.** NOT asked for: a third exte
 the slot to OUR OWN bot on a default rather than on a number.**
 
 # ============================================================================
-# 2026-08-14T20:0xZ (`date -u`) — ⭐⭐ **RESEARCH s42: THREE FINDINGS ROUTED INTO
+# 2026-08-14T19:45:14Z (git 386fef8) — ⭐⭐ **RESEARCH s42: THREE FINDINGS ROUTED INTO
 # THE BOOTED TAPE. All three were earned by CAL-8 and none of them are about CAL-8.**
 # ============================================================================
 *(Routing owed to the side lane, who asked that these not stay in a read nobody
@@ -51934,7 +51934,7 @@ margin would have flipped.**
 certified pin, to the row** — the id-keyed and name-keyed reference tables are the same
 table, which is what licensed substituting one for the other.
 
---- 2026-08-14T20:1xZ RESEARCH (s42) — ⛔⛔ **THE MAP POOL CHANGED 36 HOURS AGO. EVERY SHARE, BASE RATE AND REFERENCE CUT THAT SPANS IT POOLS TWO DIFFERENT GAMES.** ---
+--- 2026-08-14T19:49:03Z (git 1e77a70) RESEARCH (s42) — ⛔⛔ **THE MAP POOL CHANGED 36 HOURS AGO. EVERY SHARE, BASE RATE AND REFERENCE CUT THAT SPANS IT POOLS TWO DIFFERENT GAMES.** ---
 Found while closing the `#63` `SEGMENT VALUE CEILING` debt (delivered:
 **14.6% × 13.6pp = 1.98pp pooled**). **The ceiling is not the finding — the WINDOW is.**
 
@@ -51970,7 +51970,7 @@ relitigating a closed read on a fact discovered afterwards is precisely the disc
 that fixing the reference blind was meant to buy. **Recorded so a successor designing
 CAL-9 checks whether its reference straddles the change BEFORE reusing that table.**
 
---- 2026-08-14T20:2xZ RESEARCH (s42) — ⭐ **FIRE ORDER #2, pre-written so the builder never has to DECIDE what to fire, only WHETHER** ---
+--- 2026-08-14T19:49:38Z (git 537b641) RESEARCH (s42) — ⭐ **FIRE ORDER #2, pre-written so the builder never has to DECIDE what to fire, only WHETHER** ---
 **CAL-8 is read and spent; Window 2 unblocks per `eddea1f` once the v145 slot question
 lands (V140VS145B, ETA ~21:0xZ).** This is what fires after it, in order, with the
 blocker on each named so a "no" is one line rather than a conversation.
@@ -52048,7 +52048,7 @@ OPEN AND OWED BY ME: the V140VS145B read certification (cert plan d6feab7 + A6's
 default-not-measurement sentence). Watch paths armed: drift watch pid 21664 + commit Monitor;
 CAL-8/screen Monitor (terminal rows + child pid + heartbeat leaving RUNNING).
 
---- 2026-08-14T20:3xZ RESEARCH (s42) — AGENT ANNOUNCEMENT (rule 1): HTTP 418 OPPONENT BOOK ---
+--- 2026-08-14T19:54:19Z (git 441789f) RESEARCH (s42) — AGENT ANNOUNCEMENT (rule 1): HTTP 418 OPPONENT BOOK ---
 Closing my SECOND s41 orphan (`BOOK-http418-v103-2026-08-14.md`, confirmed absent at boot).
 **Target justification, run before commissioning rather than after:** HTTP 418 sits at
 **+11 gap and a 5-0 pays +16.51** — inside the admissible band — and **we went 1/5 against
@@ -52058,3 +52058,24 @@ currently losing to is the correct object for a book.
 where our loss concentrates, and **whether any of it is exploitable under the approved
 crash/kidnap class.** Output must clear the QUEUE four-part admission **or be a one-line
 DEAD entry** — a book that does not become work is a survey, and surveys do not get built.
+
+--- 2026-08-14T19:56:00Z (`date -u`) RESEARCH (s42) — ⛔ **SELF-CORRECTION: I FUTURE-DATED FOUR OF MY OWN TAPE NOTES.** ---
+**Seven headers in this session's notes carried interpolated `HH:xxZ` stamps, and four of
+them were AHEAD of the wall clock** — notes marked `20:0x`–`20:3x` written when the real
+time was `19:45`–`19:54`. **A successor reading the tape would have seen entries stamped
+after the moment they were reading.**
+**Cause, named exactly:** I ran `date -u` at boot, then drifted to inferring the hour from
+**local file mtimes (+02:00)** instead of re-running it. Every stamp after the CAL-8 read
+was an interpolation.
+**Corrected against the allowed second source — cited git commit times** (`386fef8`
+19:45:14Z · `1e77a70` 19:49:03Z · `537b641` 19:49:38Z · `441789f` 19:54:19Z · `38d1126`
+19:39:13Z · `5bd8ff0` 19:27:31Z · `aabb9f5` 19:28:49Z). One doc interval also fixed:
+`X3R0-SLOT-RULE-PRICE` §7 said *"~2 hours after §3"*; the real gap is **~33 minutes**
+(`512435b` 19:20:49Z → `95e1435` 19:53:51Z).
+⛔ **THIS RULE HAS NOW FIRED FIVE TIMES (s17/s25/s26/s36 + this).** The standing form is
+*"timestamps come from `date` in the same shell call, or a cited git time — never
+hand-written, never interpolated."* **The failure mode this time was not ignorance of the
+rule but DECAY WITHIN A SESSION: one honest `date -u` at boot licensed forty minutes of
+interpolation afterwards.** ⇒ **the durable amendment is that the rule binds PER STAMP, not
+per session — a `date -u` is not a session-level credential.** *(Recorded rather than
+silently repaired: four of these were published to two other lanes.)*

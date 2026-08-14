@@ -180,8 +180,8 @@ quality and must not be cited as any.**
 
 ## 7. ⭐ CLOSING THE LOOP — WHAT THE v145 WINDOW ACTUALLY COST
 
-**Added ~2 hours after §3 was written, because a price nobody checks against an outcome is
-a number rather than a model.**
+**Added ~33 minutes after §3 (git `512435b` 19:20:49Z -> `95e1435` 19:53:51Z), because a price
+nobody checks against an outcome is a number rather than a model.**
 
 The window closed early: **Magnus rolled v145 back himself at 19:17:14Z**, ~9 minutes after
 x3r0's 19:08:37Z upload. The arithmetic reconciles exactly:
