@@ -1,0 +1,124 @@
+  ... 10/900
+  ... 20/900
+  ... 30/900
+  ... 40/900
+  ... 50/900
+  ... 60/900
+  ... 70/900
+  ... 80/900
+  ... 90/900
+  ... 100/900
+  ... 110/900
+  ... 120/900
+  ... 130/900
+  ... 140/900
+  ... 150/900
+  ... 160/900
+  ... 170/900
+  ... 180/900
+  ... 190/900
+  ... 200/900
+  ... 210/900
+  ... 220/900
+  ... 230/900
+  ... 240/900
+  ... 250/900
+  ... 260/900
+  ... 270/900
+  ... 280/900
+  ... 290/900
+  ... 300/900
+  ... 310/900
+  ... 320/900
+  ... 330/900
+  ... 340/900
+  ... 350/900
+  ... 360/900
+  ... 370/900
+  ... 380/900
+  ... 390/900
+  ... 400/900
+  ... 410/900
+  ... 420/900
+  ... 430/900
+  ... 440/900
+  ... 450/900
+  ... 460/900
+  ... 470/900
+  ... 480/900
+  ... 490/900
+  ... 500/900
+  ... 510/900
+  ... 520/900
+  ... 530/900
+  ... 540/900
+  ... 550/900
+  ... 560/900
+  ... 570/900
+  ... 580/900
+  ... 590/900
+  ... 600/900
+  ... 610/900
+  ... 620/900
+  ... 630/900
+  ... 640/900
+  ... 650/900
+  ... 660/900
+  ... 670/900
+  ... 680/900
+  ... 690/900
+  ... 700/900
+  ... 710/900
+  ... 720/900
+  ... 730/900
+  ... 740/900
+  ... 750/900
+  ... 760/900
+  ... 770/900
+  ... 780/900
+  ... 790/900
+  ... 800/900
+  ... 810/900
+  ... 820/900
+  ... 830/900
+  ... 840/900
+  ... 850/900
+  ... 860/900
+  ... 870/900
+  ... 880/900
+  ... 890/900
+  ... 900/900
+==============================================================================
+QUEUE #17 — CRASH CELLS.  Dose read ENGINE-SIDE from the victim's own
+position trace, never from our stdout.  See the v1 defect in the docstring.
+==============================================================================
+
+A_ON_RAW  [POSITIVE]   bots/_v224crashon  vs  bots/_probe_border_raw
+   games 300
+   THROWS (engine-side)  border=128  interior=565
+   CRASHES 128 across 24/300 games
+   VERDICT: DOSED — 128 border arrivals, 1.00 crashes per border throw
+
+B_ON_GUARD  [FORCED_ZERO]   bots/_v224crashon  vs  bots/_probe_border_guard
+   games 300
+   THROWS (engine-side)  border=104  interior=489
+   CRASHES 0 across 0/300 games
+   VERDICT: DOSED — 104 border arrivals, 0.00 crashes per border throw
+
+C_OFF_RAW  [ARM_CONTROL]   bots/_v224crashoff  vs  bots/_probe_border_raw
+   games 300
+   THROWS (engine-side)  border=0  interior=0
+   CRASHES 0 across 0/300 games
+   VERDICT: UNDOSED — no throw landed. This cell answers NOTHING.
+            (It is NOT evidence the weapon is silent.)
+
+------------------------------------------------------------------------------
+MECHANISM: CONFIRMED — border throws kill the UNGUARDED probe and
+           leave the GUARDED one untouched under the same throws.
+
+PLANK (does the border ARM add border throws over the incumbent?):
+   arm ON  border/interior = 128/565   arm OFF = 0/0
+
+⚠ SCOPE: this says nothing about what SHARE of the real field is
+  vulnerable. We patched this in eco.py; most teams have not, and
+  'most' is unmeasured. That needs the live leg.
