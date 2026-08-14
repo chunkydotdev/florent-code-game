@@ -46852,3 +46852,19 @@ my #49 agent's r0-150 ti outcome on newer games) carry a caveat.**
 # econ.tsv corruption caveat: v55+-era decodes have dead turns/cpu/
 # ti_collected columns — no econ.tsv-denominated read until their
 # re-decoder lands; build_agg unaffected (their verification).
+
+# 2026-08-14T12:46:45Z (`date -u`) — **BUILDER s38 WRAP, FINAL NOTE: session-tied state closed.** MY WATCHES
+# DIE NOW: gate_watch · holder_watch (EXPECT=v140) · CAL-6 runner ·
+# vps_pull — HANDOVER items 1-4 carry each re-arm verbatim. NO LIVE
+# SUBAGENTS (all three reported and banked on the tape: v134 grading,
+# MD extraction, v141 identification). SURVIVES: keeper · elo/match/
+# opp/replay watchers · cores_idle · cpu_watch · corefill filler + 7
+# local shards (SEALFLOOR0, SEALREPAIR, L4REPAIR2, AIMTHROW2, MAPSALT,
+# NESTSHOT2, V141VS140) · the REMOTE worker (SEALFLOOR0R then
+# SEALREPAIRR, curfew self-managing through 20:55-04:00 UTC) · dash
+# server. Wake path: corefill and the remote box run themselves but
+# NOTHING types gates/finals until a session re-arms gate_watch —
+# first duties on boot: re-arm the four watches, then the finals queue
+# in HANDOVER item 1. The slot: v140 k=1 +16.1, SHIP_SIT arming ~14:0xZ;
+# ship_watch tracks it unattended. Repo pushed clean at this line.
+# End of s38.
