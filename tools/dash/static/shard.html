@@ -97,13 +97,14 @@ function fileAge(ageMin) {
 }
 
 function stateBadge(st) {
-  const cls = {running:'b-ok', DONE:'b-ok', STALLED:'b-warn', DEAD:'b-bad',
-               CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
+  const cls = {running:'b-ok', remote:'b-ok', DONE:'b-ok', STALLED:'b-warn',
+               DEAD:'b-bad', CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
   return `<span class="badge ${cls}">${esc(st)}</span>`;
 }
 
 const STATE_MEANS = {
   running:   'an `overnight.sh` process is alive and its heartbeat is moving',
+  remote:    'running on a fleet box (see the @host badge); rows and heartbeat arrive via vps_pull, so the heartbeat age is the PULL age',
   STALLED:   'alive but frozen — the process exists, the heartbeat has not moved for over 600 s',
   DEAD:      'started, no process. corefill deliberately never relaunches, so it stays dead until a human looks',
   DONE:      'its .COMPLETE marker exists — it reached its pre-registered target',
@@ -137,7 +138,9 @@ function fileBlock(title, f, extra) {
 function render(d) {
   LASTD = d;
   document.title = d.shard + ' — Loki dashboard';
-  $('#name').textContent = d.shard;
+  $('#name').innerHTML = esc(d.shard) + (d.remote_host
+    ? ` <span class="badge b-dim" style="vertical-align:middle" title="artefacts below are the vps_pull mirror from this fleet box — their timestamps are pull times, not write times">@${esc(d.remote_host)}</span>`
+    : '');
   $('#clock').innerHTML = d.served_at ? tzTime(d.served_at) : '';
 
   if (!d.exists) {

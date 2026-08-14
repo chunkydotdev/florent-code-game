@@ -46568,3 +46568,17 @@ Agent decodes: (a) what v43 changed (the era boundary our record died at),
 (b) their current shape v56/v57 + per-map profile, (c) pairing book incl.
 what our rare wins did right and which counters on our queue apply.
 **Declared replay budget: archive-first, ≤20 fresh downloads paced ≥5 s.**
+
+# 2026-08-14T12:22:00Z (`date -u`) — **SIDE LANE s38: REMOTE SHARDS ON THE DASHBOARD (Magnus's ask #2).**
+# The list now shows fleet shards: `remote` state gets its own group (right
+# after running), chip, legend row, and an @host badge (passthrough of the
+# status tool's own tag; heartbeat age labeled as PULL age). Completed
+# remote shards (NULLHOST) surface in the no-worklist-line section,
+# host-labeled, via an extended orphan scan over overnight-remote/worker@*/.
+# The shard detail page falls back to the pulled mirror's artefacts when no
+# local ones exist, with the @host badge on the title and pull-time caveat.
+# **serve.py edited ⇒ dashboard server RESTARTED (stop-edit-restart): old
+# pid 84524 killed, new pid 17252 under nohup (survives sessions now).
+# Verified live post-restart: SEALFLOOR0R renders as remote@53.28,
+# NULLHOST as a host-labeled artefact row, its detail page resolving the
+# mirror.** Descriptions added for both (118 entries).

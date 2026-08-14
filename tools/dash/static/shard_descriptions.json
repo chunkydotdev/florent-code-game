@@ -604,5 +604,15 @@
   "brief": "Opens one gate so already-shipped turret targeting may shoot the enemy nest cluster the Bisons book flagged.",
   "full": "Queue #3 arm 1, sized by the GREP discipline: the detection and priority machinery already ship in the incumbent — this arm changes exactly one gate so the existing sentinel targeting can engage the nest-removal case surfaced by the Bisons v8 book and mechanism ledger. Chassis-matched on v140 vs v140.",
   "confidence": "high"
+ },
+ "SEALFLOOR0R": {
+  "brief": "Fleet replication of the seal-anytime knob (floor 12→0), running on work-server-1.",
+  "full": "The first treatment shard on the VPS fleet: SEALFLOOR0's contrast replicated on work-server-1 after the box passed its NULLHOST calibration (49.00% at n=400). Host-labeled rows arrive via vps_pull; its games pool with the local shard only under the declared host-stratum rules.",
+  "confidence": "high"
+ },
+ "NULLHOST": {
+  "brief": "Fleet-box calibration null: identical trees on work-server-1 — read 49.00% at n=400, box admitted.",
+  "full": "The per-box admission certificate for the VPS fleet: byte-identical trees play each other on the new host and must read ~50%. work-server-1 read 49.00% at n=400 (band ±4.90pp, 50 inside), independently re-derived by the side lane — the box's rows count. Every future fleet box runs its own NULLHOST before any treatment row enters a pool.",
+  "confidence": "high"
  }
 }

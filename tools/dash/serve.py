@@ -52,6 +52,13 @@ import matches                                                    # noqa: E402
 
 OVERNIGHT = ROOT / "scratchpad" / "overnight"
 STARTED = ROOT / "scratchpad" / "corefill_started"
+# Pulled mirrors of fleet boxes' artefact dirs (vps_pull), one per host:
+# scratchpad/overnight-remote/worker@<host>/<SHARD>.{tsv,heartbeat,COMPLETE}.
+# corefill_status.sh prints RUNNING remote shards (state `remote`, host tag in
+# the result column); COMPLETED remote shards leave artefacts only, so the
+# orphan scan below covers them the same way it covers replaced local lines —
+# artefacts shown verbatim, no state invented.
+REMOTE = ROOT / "scratchpad" / "overnight-remote"
 WORKLIST = Path(os.environ.get("COREFILL_WORK",
                                str(ROOT / "scratchpad" / "corefill_work.txt")))
 
@@ -767,8 +774,11 @@ def collect_shard_list() -> dict:
     try:
         on_disk = sorted({p.name.split(".")[0] for p in OVERNIGHT.glob("*.heartbeat")}
                          | {p.name for p in STARTED.glob("*")})
+        # Remote artefacts: (shard, host) pairs from every pulled mirror dir.
+        remote_disk = sorted({(p.name.split(".")[0], p.parent.name.split("@", 1)[-1])
+                              for p in REMOTE.glob("worker@*/*.heartbeat")})
     except Exception as e:
-        on_disk = []
+        on_disk, remote_disk = [], []
         orphans_blind = f"{type(e).__name__}: {e}"
     else:
         orphans_blind = None
@@ -782,7 +792,18 @@ def collect_shard_list() -> dict:
         except Exception:
             pass
         orphans.append({"shard": sh, "heartbeat_line": line,
-                        "heartbeat": _file_facts(hb)})
+                        "heartbeat": _file_facts(hb), "host": None})
+    for sh, host in remote_disk:
+        if sh in known:   # running remote shards already have a tool row
+            continue
+        hb = REMOTE / f"worker@{host}" / f"{sh}.heartbeat"
+        line = ""
+        try:
+            line = hb.read_text(errors="replace").strip()
+        except Exception:
+            pass
+        orphans.append({"shard": sh, "heartbeat_line": line,
+                        "heartbeat": _file_facts(hb), "host": host})
     return {"ok": st.get("ok", False), "pending": st.get("pending", False),
             "error": st.get("error"), "note": st.get("note"),
             # TWO CLOCKS, AND THEY ARE NOT THE SAME ONE. `served_at` is when this
@@ -808,10 +829,22 @@ def collect_shard_detail(shard: str) -> dict:
     wl = load_worklist()
     rows = parse_shard_rows(st.get("text")) if st.get("text") else {}
     row = rows.get(shard)
-    hb = OVERNIGHT / f"{shard}.heartbeat"
-    lg = OVERNIGHT / f"{shard}.launch.log"
-    tsv = OVERNIGHT / f"{shard}.tsv"
-    done = OVERNIGHT / f"{shard}.COMPLETE"
+    base, remote_host = OVERNIGHT, None
+    # Remote fallback: when the shard has no local artefacts but a pulled fleet
+    # mirror holds them, show THOSE files (verbatim, with their own timestamps).
+    # The mirror's mtimes are pull times, not write times — the page's fileAge
+    # already refuses to call any artefact "fresh", so no false liveness.
+    if not any((OVERNIGHT / f"{shard}{ext}").exists()
+               for ext in (".heartbeat", ".tsv", ".COMPLETE")):
+        for rd in sorted(REMOTE.glob("worker@*")):
+            if any((rd / f"{shard}{ext}").exists()
+                   for ext in (".heartbeat", ".tsv", ".COMPLETE")):
+                base, remote_host = rd, rd.name.split("@", 1)[-1]
+                break
+    hb = base / f"{shard}.heartbeat"
+    lg = base / f"{shard}.launch.log"
+    tsv = base / f"{shard}.tsv"
+    done = base / f"{shard}.COMPLETE"
     marker = STARTED / shard
     hb_line, done_line, marker_text = "", "", ""
     try:
@@ -831,6 +864,7 @@ def collect_shard_detail(shard: str) -> dict:
     return {
         "shard": shard,
         "exists": exists,
+        "remote_host": remote_host,
         "served_at": iso(now_utc()),
         # --- the authority ---------------------------------------------------
         "status": row,

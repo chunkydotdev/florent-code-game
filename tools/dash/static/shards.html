@@ -69,6 +69,8 @@
     <tbody>
       <tr><td><span class="badge b-ok">running</span></td>
           <td>An <code>overnight.sh &lt;SHARD&gt;</code> process is alive and its heartbeat file is moving.</td></tr>
+      <tr><td><span class="badge b-ok">remote</span></td>
+          <td>Running on a FLEET BOX (the <code>@host</code> badge names it), certified by its own NULLHOST calibration before any row counts. Rows arrive via <code>vps_pull</code>; the heartbeat age shown is the <em>pull</em> age, suffixed <code>(pull)</code>. A completed remote shard leaves the tool's table and its artefacts appear in the no-worklist-line section below, host-labeled.</td></tr>
       <tr><td><span class="badge b-warn">STALLED</span></td>
           <td>“<em>alive but frozen</em>” — the process exists, the heartbeat has not been rewritten for over 600 s.</td></tr>
       <tr><td><span class="badge b-bad">DEAD</span></td>
@@ -116,17 +118,25 @@ function freshBadge(ageMin, cadenceMin) {
 }
 
 function stateBadge(st) {
-  const cls = {running:'b-ok', DONE:'b-ok', STALLED:'b-warn', DEAD:'b-bad',
-               CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
+  const cls = {running:'b-ok', remote:'b-ok', DONE:'b-ok', STALLED:'b-warn',
+               DEAD:'b-bad', CANCELLED:'b-dim', queued:'b-dim'}[st] || 'b-dim';
   return `<span class="badge ${cls}">${esc(st)}</span>`;
+}
+
+// The status tool prints a remote shard's host inside its result column
+// ("@work-server-1 · 53.28% ..."). Surface it as its own badge so a fleet row
+// is recognisable at a glance; passthrough of the tool's own tag, not derived.
+function hostBadge(r) {
+  const m = /^@(\S+)/.exec(r.result_raw || '');
+  return m ? ` <span class="badge b-dim" title="running on fleet box ${esc(m[1])}; rows arrive via vps_pull — the heartbeat age is the PULL age">@${esc(m[1])}</span>` : '';
 }
 
 // VIEW-LEVEL GROUPING ONLY — nothing is recomputed, no row is hidden, and inside
 // each group the tool's own order is preserved by a stable sort. The list used to
 // render in pure worklist order, which put the running shards below 50-odd
 // finished ones: the first question anyone opens this page with was answered last.
-const GROUP = {running:0, STALLED:1, queued:2, DEAD:3, CANCELLED:4, DONE:5};
-const CHIPS = ['running','STALLED','queued','DEAD','CANCELLED','DONE'];
+const GROUP = {running:0, remote:1, STALLED:2, queued:3, DEAD:4, CANCELLED:5, DONE:6};
+const CHIPS = ['running','remote','STALLED','queued','DEAD','CANCELLED','DONE'];
 
 let LAST = null, PICK = 'all';
 
@@ -258,7 +268,7 @@ function render(s) {
         const tgt = r.target ? ` <span class="vs">/ ${esc(r.target)}</span>` : '';
         return `<tr onclick="location.href='/shard?id=${encodeURIComponent(r.shard)}'" style="cursor:pointer">
             <td class="mono"><a href="/shard?id=${encodeURIComponent(r.shard)}">${esc(r.shard)}</a></td>
-            <td>${stateBadge(r.state)}</td>
+            <td>${stateBadge(r.state)}${hostBadge(r)}</td>
             <td class="mono">${esc(r.rows)}${tgt}<div class="sub-mono">${esc(r.pct)}${r.eta && r.eta !== '-' ? ' · ETA ' + esc(r.eta) : ''}</div></td>
             <td>${resultCell(r)}</td>
             <td>${noteCell(r)}</td></tr>`;
@@ -271,7 +281,7 @@ function render(s) {
     ob.innerHTML = (s.orphans || []).length === 0
       ? '<tr><td colspan="3">None — every shard on disk has a line in the worklist.</td></tr>'
       : s.orphans.map(o => `<tr onclick="location.href='/shard?id=${encodeURIComponent(o.shard)}'" style="cursor:pointer">
-          <td class="mono"><a href="/shard?id=${encodeURIComponent(o.shard)}">${esc(o.shard)}</a></td>
+          <td class="mono"><a href="/shard?id=${encodeURIComponent(o.shard)}">${esc(o.shard)}</a>${o.host ? ` <span class="badge b-dim" title="artefacts pulled from fleet box ${esc(o.host)}">@${esc(o.host)}</span>` : ''}</td>
           <td class="mono" style="font-size:12px">${esc(o.heartbeat_line) || '<span class="badge b-dim">no heartbeat</span>'}</td>
           <td style="font-size:12px">${o.heartbeat.exists ? tzTime(o.heartbeat.at) : '—'}</td></tr>`).join('');
   }
