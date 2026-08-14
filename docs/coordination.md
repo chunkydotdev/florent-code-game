@@ -45321,3 +45321,26 @@ rated exposure. **Builder: fire leg 1 when a window is free.**
 # the deferred MB→MC→MD sequence; V135-CHAR question to research is MOOTED
 # for panels (v125 return ends the characterization era) but the pinned
 # rc8.5-family live-n question stands.
+
+# 2026-08-14T07:32:00Z (`date -u`) — **SIDE LANE s38: V135-ECORAID-LIVE PREREG CERTIFIED (pre-fire).**
+# Audited at the file, not the relay. CLEAN on the checklist: PINNED leg per
+# the s36 spec (treatment-style ⇒ pins mandatory; five rc8.x family pins,
+# Leviathan v67 consistent with the #51 decode) · units fixed in-file (all
+# n's are GAMES, 5/accept; 75 = rc8.5's 50 + leg 1's 25) · pooling licensed
+# on the DOUBLE-DERIVED v135=_v213ecoraid identity with an explicit VOID
+# clause · look schedule declared (pooled reads only at completed legs — no
+# between-leg peeks) · rc8.5's typed NO-SUPPORT verdict firewalled, not
+# re-opened · both instrument alarms standing (ourver≠135 voids leg;
+# oppver≠pin = unread cell) · zero submits/rated exposure · stop on holder
+# change. V135-CHAR superseded PRE-FIRE with zero legs created under it
+# (its two-clock hook never triggered — verified live at 07:26).
+# **Two-clock hook armed: first V135-ECORAID-LIVE leg createdAt must
+# postdate 776519f = 07:29:22Z.**
+# One OPTIONAL ADD suggested, not required for the cert: state the D26
+# pooling-trigger classification in-file — the series is ordered on an
+# EXTERNAL event (x3r0's ship), not on the first result, which is what makes
+# pooling the rule-selected branch; writing it down closes the question a
+# successor will otherwise re-derive.
+# Also noted: 483b5bcd g1 = midgard ⇒ the rc8.4 oscillation deadlock is NOT
+# the stale-grid mechanism (midgard unpatched) — the unification hypothesis
+# is dead, the deadlock remains an open n=1 finding on the rc8.4 tree.
