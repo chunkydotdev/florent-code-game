@@ -44595,3 +44595,8 @@ exonerated on that metric.
 # same pins, ids from the prereg table: O1 7282cb19 · O2 a9e77b6b · O3
 # bb1369a6 · O4 a74aedfa · O5 db6484ab. Pooled n=50 read (legs 1+2, rule
 # pre-declared) when decoded — the packet's last input.
+
+# 2026-08-14T05:02:46Z (`date -u`) — **BUILDER s37 GATE:** GBNS GATE-1000 49.05 (n=1052) > 48.0 —
+# CONTINUES, marginal; its GATE-2700 at ≤50.5 will be the real test.
+# Replications: ECORAID2 54.48 (n=2623, running ABOVE its parent's 53.22);
+# APPRLAUNCH2 52.40 (n=3756, tracking). L4REPAIR still queued.
