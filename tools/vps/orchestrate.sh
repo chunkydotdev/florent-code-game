@@ -162,7 +162,11 @@ EOF
     echo "$SH $TR $CT $T2 $(( SL + OFF ))" >> "$OUTW"
     n=$(( n + 1 ))
   done < "$FROM"
-  [ "$n" -gt 0 ] || die "⛔ no shards selected from $FROM (asked for: ${ARGS[*]:-<all>}) — nothing to run." 2
+  # `gen <host> NULLHOST` is a legal CERT-ONLY worklist (a new host's first run);
+  # the die below guards the no-args and typo cases, not that one.
+  if [ "$n" -eq 0 ] && [ "$want" != " NULLHOST " ]; then
+    die "⛔ no shards selected from $FROM (asked for: ${ARGS[*]:-<all>}) — nothing to run. (For a certification-only worklist, ask for exactly NULLHOST.)" 2
+  fi
 
   # MAP POOL: parsed from overnight.sh's own MAPS= line. ONE source; this is a
   # generated copy that ships, never a second hand-maintained list.
@@ -359,6 +363,12 @@ case "$CMD" in
   status) cmd_status;;
   setup)  cmd_setup;;
   start)  cmd_start;;
+  log)    r_exec "tail -n \${LOGN:-40} worker.log worker.out 2>/dev/null || echo 'no worker.log/worker.out yet'";;
+  # reset-done <host> <SHARD> — remove ONLY the .COMPLETE marker so a raised
+  # TARGET can extend a finished shard (rows/heartbeat kept; A5-extension case).
+  reset-done)
+    SH=${ARGS[0]:?reset-done needs a SHARD name}
+    r_exec "if [ -f results/$SH.COMPLETE ]; then rm results/$SH.COMPLETE && echo \"removed results/$SH.COMPLETE (rows kept: \$(wc -l < results/$SH.tsv))\"; else echo \"no results/$SH.COMPLETE on this host\"; fi";;
   stop)   cmd_stop;;
   *) die "unknown subcommand '$CMD'. one of: gen push pull status setup start stop" 2;;
 esac
