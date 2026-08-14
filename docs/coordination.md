@@ -54111,3 +54111,36 @@ corefill band; `BASE RATE: 50.0` is the **structural null of a paired local scre
 orders per `overnight.sh:125-136`) and the prereg states outright *"No historical population is
 consumed by the bar."* ⇒ **their assessment is CORRECT and the leg's bar is untouched.**
 **Withheld flags this session: 9.** Interrupt threshold unchanged; three findings still parked.
+
+--- 2026-08-14T22:54:56Z (`date -u`) SIDE LANE (s42) — ⭐ PLATFORM ACTION CERTIFIED: v140 REACTIVATED 22:51:25Z ---
+**CERTIFIED.** Verified on the `Active bot:` line (never $?), Magnus ruled the branch, `X3R0_SLOT_RULE`'s
+policy threshold met. Screen `V140VS146` n=1000: **T=530 C=470, 53.00%, CI [49.93, 56.07]**.
+⭐ **The builder kept POLICY and SUPERIORITY as TWO numbers unprompted** — policy 51.0 **PASS**;
+superiority 53.1 **MISSED by 0.10pp** with the CI **including parity** ⇒ *"the gate could not separate
+these bots"* is the sentence that travels. **A 53.00 against a 53.1 bar is where rounding tempts most
+and they named that themselves.**
+
+## ⚠ TWO ITEMS FOR MAGNUS — neither reverses anything; both are his rules
+**1. `SHIP_SIT_MIN_K` WAS SUPERSEDED AND THE RECORD SHOULD SAY SO.** Off the tape's matches column:
+**v146 held 21:23Z→22:48Z, matches 991→995 ⇒ k = 4, against a floor of 8.** **No stop-loss fired on
+v146** (v140's fired at 21:22:15Z, *before* v146 took the slot), so the field's *"unless a stop-loss
+fires"* carve-out does **not** cover it.
+⚠ **The profile is almost exactly the incident that CREATED the field:** `PROGRAMME.md` cites *"v122
+shipped 04:45:54Z, displaced 06:06Z at k=4 — two ships in 80 minutes bought zero rated information."*
+**v146: 88 minutes, k=4.** ⇒ **NOT called off-programme — Magnus ruled the branch explicitly and a
+direct ruling supersedes a parsed field.** The cost is precise and worth stating: **4 rated matches
+cannot tell us anything about v146**, which is the screen's conclusion from the other side —
+**neither instrument knows whether v146 was better.** ⇒ **`X3R0_SLOT_RULE` should state its
+relationship to `SHIP_SIT_MIN_K` before the next x3r0 upload. This WILL recur.**
+**2. `v144 "Loki rc9.1"` IS OURS AND NEWER THAN v140.** The builder **flagged rather than
+substituted** — correct: INCUMBENT names v140, the screen was v140-vs-v146, Magnus's ruling named
+v140. **Silently restoring a newer version because it looked newer would have been the error.**
+Whether v144 should be the line's incumbent is his call.
+
+## CORRECTION RAISED AND CONSUMED IN 90 SECONDS (`f72b1ca8`)
+Published cost of the foreign hold was **−35** (1775→1740). **1775 was read 38 min BEFORE the window
+it describes**; the last v140 row before handover is **1759**. ⇒ **true within-window cost −19**, the
+other 16 points being **v140's own pre-handover decline — the one that fired its stop-loss.**
+The poll-time caveat they had attached was right and did not cover this: **the defect was the
+window's START, not the tagging.** ⚠ **Direction: it made the foreign hold look ~84% more expensive,
+supporting the reactivation just performed** — flagged for that as much as for the arithmetic.
