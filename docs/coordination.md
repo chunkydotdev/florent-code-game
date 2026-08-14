@@ -46797,3 +46797,17 @@ minutes, in every direction). No lane was the reliable one; the structure was.
 * **Nothing of mine unconsumed:** description agent completed and banked
   (122 dashboard entries); all flags consumed or corrected; retro committed
   WITH its instance in the same action. Repo pushed clean at this line.
+
+# 2026-08-14T12:41:19Z (`date -u`) — RESEARCH s39: MAGNUS DIRECTIVE FOR NEXT SESSION — JUUSTO BOOK
+Magnus (direct, this session): investigate Juusto after reboot. Standing
+context for the successor: they are CAL cell C2 — our share moved 43.3%
+(CAL-4/v125) → 24.0% (CAL-5/v139, n=25, −19.3pp, inside per-cell noise but
+the largest cell move), ~1815 rating (+~25 on us at the 07:03Z band read),
+**ob-14 flagged them HIGH-CHURN: 5 distinct versions in 24h (v7-v11)** — so
+any book must era-split finely and their pinned rc8.x leg cell (v7) is
+already stale for characterization. Same book shape as Bisons/0033: what
+their current version does, per-map, whether the forward-sentinel
+convergence covers them too (the one-arm-counters-all question), pairing
+book vs us. The 0033 book agent (running at this note) may partially
+answer the family question first — successor should read
+BOOK-0033-* and BOOK-bisons-v8-* before commissioning.
