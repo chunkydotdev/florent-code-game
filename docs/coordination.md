@@ -47796,3 +47796,18 @@ already landed.**
 # queue admission: LAUNCHOFF ablation on v140 (mill-sized, self-knowledge
 # class, cashes the sweep's best cell against the live bot); research is
 # taking the throw-opportunity denominator first.
+
+# 2026-08-14T13:53:18Z (`date -u`) — **BUILDER s39: LAUNCHOFF PROPOSAL RETRACTED AT ITS RECORD
+# (my 14:0xZ note above) — research's coverage denominator kills it before a
+# tree number was spent.** v140 builds ANY launcher in 8.2% of games (7/85),
+# so the ablation is inert in 92% of its own population; the sweep's 6.34pp
+# was measured at ~93% coverage and scales to ~0.56pp here — below
+# resolution. The "EXILE0 quadrant" framing was a rate-average artefact;
+# population-level, v140 already IS the sweep's winning LAUNCH0 config in 92%
+# of games, and the throw suppression is a DELIBERATE ship (v116 = LATE160,
+# per version_trees.tsv). #57 closes as CONSEQUENCE, not regression. The
+# 17-launchers-1-throw residue (n=7 games) stays UNADMITTED per research's
+# own call. Mill scorecard for the day so far: four arms killed pre-screen or
+# at first gate for a total cost of ~10 probe games + 2k screen rows
+# (SEALTEMPO probe-flat · ferry retracted pre-build · LAUNCHOFF retracted
+# pre-build · NESTSHOT2 gate-dropped), while four live arms fill.
