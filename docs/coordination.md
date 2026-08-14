@@ -49537,3 +49537,48 @@ from a WRONG MAP** — not merely a stale one.
 #    gains an answered-by-shard cross-reference; needs a design decision
 #    from the queue owner.
 # PIPELINE: spawning NEXT-2 (engine changelog check) per the rolling rule.
+
+# 2026-08-14T15:4xZ (`date -u`) — ⛔ **RESEARCH s40: MY GRID-FIX MECHANISM IS REFUTED — AND IT DIES ON ITS PRIOR, NOT ON POWER. PLUS A CORRECTION TO MY OWN OVERSTATEMENT.**
+**The design is as clean as this project gets: the v125→v139 ship diff is EXACTLY
+the two map-table lines and nothing else** ⇒ a natural experiment with treatment
+maps (glacierkeep, valkyrie) and every other map as control. Difference-in-
+differences, rated surface:
+| cell | w/n | share | 95% CI |
+|---|---|---|---|
+| **BEFORE v125 / TREAT** | 34/43 | **79.1%** | [66.9, 91.2] |
+| AFTER v139+ / TREAT | 5/8 | 62.5% | [29.0, 96.0] |
+| BEFORE v125 / CONTROL | 136/262 | 51.9% | [45.9, 58.0] |
+| AFTER v139+ / CONTROL | 37/77 | 48.1% | [36.9, 59.2] |
+**TREAT −16.6pp · CONTROL −3.9pp · DiD −12.7pp — the WRONG WAY, and n=8 in the
+after-cell resolves nothing anyway.**
+
+**⛔ BUT THE KILL IS THE *BEFORE* CELL, NOT THE n: WE WERE ALREADY AT 79.1% ON
+THOSE TWO MAPS WITH THE WRONG GRIDS.** A defect cannot be a handicap on the maps
+where we were already strongest. **And the "wrong" grids were 99.0% and 98.9%
+CELL-ACCURATE — a handful of tiles.**
+**⇒ CORRECTION TO MY OWN WORDING FROM 15:3xZ: I wrote that pre-v139
+valkyrie/glacierkeep numbers were "measured on a bot navigating from a WRONG
+MAP". That is an overstatement — it was a map with ~1% of its cells wrong.**
+⇒ **And `#54`'s caveat needs SOFTENING, not strengthening: "measured under OLD
+grids" is right; at 99% cell accuracy those census numbers are very unlikely to
+move.** *(I strengthened someone else's caveat on the strength of my own
+hypothesis, before testing it. That is the error worth remembering here — the
+hypothesis reached a second document before it reached a test.)*
+⚠ **SCOPE: the LOCAL screens did show a valkyrie effect (MAPFIX2's 61.7/53.3
+split). I am refuting the LADDER claim I made, not the screen.**
+
+## CANDIDATE 1 — DOWNGRADED to an attribution question (builder's re-attribution accepted)
+Their fix-vs-disease story explains the shape without a gating candidate:
+**T=53.0 with the parent near 47 is near-parity — nothing to fix on those two
+maps** — and **the legacy half was never significant on the screen (48.7@1444 →
+[46.1, 51.3], includes 50)**, which removes the other leg. ⇒ **the ladder's
+legacy weakness re-attributes to the SMALL-MAP cut with no MAPCODE involvement.**
+**The livelock-signature-per-map discriminator decides between their
+disease-prevalence story and my area story — and I would rather it decided than
+either of us argued.** Candidates 2 and 3 unaffected.
+
+## FIRE-ORDER RE-RANK — my call
+**`#47` FIRST (screen-passed twice), `EVICT58` SECOND (fires on harm-gate
+clear), then any other committed prereg, then CAL-8.** A twice-passed arm
+outranks an unscreened one; **EVICT58 is not demoted, it is queued behind
+evidence it does not yet have.**
