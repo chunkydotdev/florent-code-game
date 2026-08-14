@@ -359,12 +359,56 @@ def stuck_planks():
     return n, f"{n} KEEP-dev mentions in the last 60 tape rows"
 
 
+
+def delegation_drought():
+    """Decisions typed per subagent spawned — the drift Magnus has now caught
+    TWICE by hand (s38: one agent in the first five hours while ~15 verdicts
+    were typed inline; the standing-permission paragraph in the boot file did
+    not prevent it, so a boot-run instrument does the asking instead).
+
+    Numerator: dated coordination blocks in the last 24h whose header window
+    carries a decision word (VERDICT/GATE/FINAL/TRIAGE/SHIP). Denominator:
+    spawn announcements (the IN-FLIGHT convention names the model). High =
+    many decisions, no delegation. Spawn-mentions must match SPAWN phrasing,
+    not the word "agent" (retros discuss agents without spawning any).
+    """
+    import re as _re
+    from datetime import datetime, timedelta, timezone
+    text = _OVERRIDE.get("deleg_coord")
+    if text is None:
+        text = "\n".join((ROOT / "docs" / "coordination.md").read_text().splitlines()[-2500:])
+    now = _OVERRIDE.get("deleg_now") or datetime.now(timezone.utc)
+    cutoff = now - timedelta(hours=24)
+    spawn_re = _re.compile(r"(sonnet|opus)\s+agent\b|agent\s+spawn|spawn(ed|ing)\b[^\n]{0,60}\bagent", _re.I)
+    dec_re = _re.compile(r"VERDICT|GATE[: ]|FINAL[: ]|TRIAGE|SHIP ANNOUNCEMENT", _re.I)
+    lines = text.splitlines()
+    spawns = decisions = 0
+    for i, ln in enumerate(lines):
+        m = _re.search(r"(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2}):(\d{2})Z", ln)
+        if not m or not ln.lstrip().startswith("#"):
+            continue
+        try:
+            ts = datetime.fromisoformat(f"{m.group(1)}T{m.group(2)}:{m.group(3)}:{m.group(4)}+00:00")
+        except ValueError:
+            continue
+        if ts < cutoff:
+            continue
+        window = "\n".join(lines[i:i + 3])
+        if spawn_re.search(window):
+            spawns += 1
+        if dec_re.search(window):
+            decisions += 1
+    val = decisions / (spawns + 1)
+    return val, f"{decisions} decision blocks / {spawns} spawn announcements (24h)"
+
+
 CHECKS = [
     ("note:verdict ratio", note_verdict_ratio, 1.5, "analysis is outpacing decisions"),
     ("doc:code churn",     doc_code_churn,     1.0, "writing about the work faster than doing it"),
     ("ship cadence",       ship_cadence,       None, "decisions per hour has fallen"),
     ("stuck planks",       stuck_planks,       3,   "planks parked instead of shipped or refuted"),
     ("cross-lane analysis", cross_lane_analysis, 4.0, "analysis docs piling up across all lanes"),
+    ("delegation drought", delegation_drought, 12.0, "verdicts typed inline while no subagent runs — context is the scarce resource"),
 ]
 
 
@@ -384,6 +428,9 @@ _TRIPPERS = {
                                         "docs/e.md\n",
                             "tape_patch": "+++ b/results.tsv\n"
                                           "+a\tb\tc\td\te\tverdict\tx\n"},
+    "delegation drought": {"deleg_coord": "\n".join(
+        f"# 2026-08-14T0{i%10}:00:00Z — **BUILDER GATE: X FINAL typed**" for i in range(30)),
+        "deleg_now": __import__("datetime").datetime(2026, 8, 14, 12, 0, tzinfo=__import__("datetime").timezone.utc)},
 }
 
 # THE QUIET DIRECTION. _TRIPPERS above only prove a row CAN fire; a row stuck at
@@ -400,6 +447,12 @@ _MUST_STILL_TRIP = {
                        + "".join(f"-r{i}\tb\tc\td\te\tverdict\tx\n" for i in range(300))
                        + "".join(f"+r{i}\tb\tc\td\te\tverdict\tx\n" for i in range(301))},
         "a whole-file rewrite of the tape must NOT read as 301 decisions"),
+    "delegation drought": (
+        {"deleg_coord": "\n".join(
+            f"# 2026-08-14T0{i%10}:00:00Z — **BUILDER VERDICT: the agent report was read; no agent needed**"
+            for i in range(30)),
+         "deleg_now": __import__("datetime").datetime(2026, 8, 14, 12, 0, tzinfo=__import__("datetime").timezone.utc)},
+        "the word 'agent' in prose (reports READ, not spawned) must not silence the drought"),
 }
 
 
