@@ -372,6 +372,187 @@ def pool_check(pool_names=None) -> int:
     return bad
 
 
+# ===== TRAP 9: duplicate keys on append-mode surfaces (s42, 2026-08-14) =====
+# tools/corpus/league_matches.py:77 reads `known = {r["id"] for r in rows}` and
+# then appends the complement -- no lock anywhere in the append path. Two
+# processes that read `known` before either writes both classify the same rows
+# as fresh and both append. Measured 2026-08-14T19:2xZ: league_matches.tsv
+# carried 45,436 rows against 45,317 distinct ids -- 119 duplicates, each
+# appearing exactly twice, byte-identical, forming two contiguous tail blocks
+# (41 + 78 rows) whose row-index gap equals their own batch size, matching two
+# writers (keeper + a lane boot sync) racing the same `known` read after the
+# 2026-08-14 18:56:33Z reboot re-armed keeper into a boot-sync collision.
+# Spec: docs/research/SPEC-corpus-sanity-trap9-duplicate-keys-2026-08-14.md
+#
+# Explicit three-surface ALLOWLIST, not a glob over corpus/*.tsv. Several
+# corpus files are legitimately event-grain and hold repeated keys by
+# construction; a trap that fires on a legitimate surface gets muted, and a
+# muted trap is worse than no trap.
+TRAP9_SURFACES = {
+    "league_matches.tsv": ("id",),          # platform match id; the observed defect
+    "ladder_games.tsv": ("match", "map"),   # game grain; a match plays each map once
+    "meta_join.tsv": ("file",),             # one row per replay file
+}
+
+
+def _trap9_scan_rows(rows, cols):
+    """Group `rows` (list of dict) by `cols` and report duplicates.
+
+    Returns dict(n, ndup, excess, mult, identical, examples). `identical` is
+    True iff every duplicated key's rows are byte-identical to each other
+    (safe keep-first repair), False if any duplicated key's rows differ (a
+    worse defect -- two sources disagreeing about the same key -- and must
+    NOT be silently deduped), None if there were no duplicates at all.
+    """
+    from collections import Counter, defaultdict
+    groups: dict[tuple, list[dict]] = defaultdict(list)
+    for r in rows:
+        groups[tuple(r.get(c, "") for c in cols)].append(r)
+    dup = {k: v for k, v in groups.items() if len(v) > 1}
+    n = len(rows)
+    if not dup:
+        return dict(n=n, ndup=0, excess=0, mult={}, identical=None, examples=[])
+    mult = Counter(len(v) for v in dup.values())
+    identical = all(all(row == v[0] for row in v[1:]) for v in dup.values())
+    excess = sum(len(v) - 1 for v in dup.values())
+    examples = [",".join(str(x) for x in k) for k in sorted(dup, key=str)[:5]]
+    return dict(n=n, ndup=len(dup), excess=excess, mult=dict(mult),
+                identical=identical, examples=examples)
+
+
+def _trap9_read(path: Path):
+    """Returns (rows, None) or (None, reason). Absence/unreadable is a
+    distinct outcome from 0 duplicates -- P6 requires this be ANNOUNCED, never
+    silently treated as a pass."""
+    if not path.exists():
+        return None, "absent"
+    try:
+        with path.open(newline="") as fh:
+            return list(csv.DictReader(fh, delimiter="\t")), None
+    except OSError as e:
+        return None, str(e)
+
+
+def _trap9_report(name, cols, result) -> int:
+    keyname = ",".join(cols)
+    if result["ndup"] == 0:
+        print(f"  ok    {name}  key=({keyname})  {result['n']} rows, "
+              f"0 duplicate keys")
+        return 0
+    ident_s = "yes" if result["identical"] else "no"
+    print(f"  *** FAIL ***  {name}  key=({keyname})  {result['ndup']} duplicate "
+          f"key(s), {result['excess']} excess row(s), "
+          f"multiplicity={result['mult']}, identical={ident_s}")
+    print(f"            examples: {', '.join(result['examples'])}")
+    if not result["identical"]:
+        print(f"            DIFFERING duplicates -- two sources disagree about "
+              f"the same key. DO NOT auto-dedup; repair tool must refuse this "
+              f"surface until resolved.")
+    return 1
+
+
+def trap9_duplicate_keys(root: Path) -> int:
+    """TRAP 9: duplicate-key FAIL (not WARN) on the three append-mode
+    surfaces. Every surface in TRAP9_SURFACES is either platform-id-keyed or
+    key-unique by construction, so a duplicate is always a defect there."""
+    print("\nTRAP 9  duplicate-key check (append-mode surfaces)")
+    bad = 0
+    for name, cols in TRAP9_SURFACES.items():
+        rows, err = _trap9_read(root / name)
+        if rows is None:
+            print(f"  *** TRAP9 BLIND ***  {name}: {err} -- duplicate-key "
+                  f"check could not run. Absence of a FAIL is NOT a PASS "
+                  f"unless the file was read.")
+            bad += 1
+            continue
+        bad += _trap9_report(name, cols, _trap9_scan_rows(rows, cols))
+    return bad
+
+
+def trap9_selftest(root: Path) -> int:
+    """Six both-verdicts cells, SPEC sec 3
+    (docs/research/SPEC-corpus-sanity-trap9-duplicate-keys-2026-08-14.md).
+
+    P3/P4/P5/P6 are synthetic and self-contained so this selftest does not
+    depend on repair timing. P1/P2 read the LIVE corpus files: P1 is a
+    positive control only while league_matches.tsv is pre-repair (it degrades
+    to 'already repaired' after the dedup lands -- that is expected, not a
+    failure of the selftest itself). P2 is the standing negative control on
+    the two clean surfaces.
+    """
+    print("\nTRAP9 SELFTEST")
+    ok = True
+
+    # P1 positive, LIVE DATA: league_matches.tsv as it stands right now.
+    rows, err = _trap9_read(root / "league_matches.tsv")
+    if rows is None:
+        print(f"  P1 FAIL-TO-RUN: league_matches.tsv unreadable ({err})")
+        ok = False
+    else:
+        r1 = _trap9_scan_rows(rows, ("id",))
+        p1 = r1["ndup"] > 0
+        print(f"  P1 (positive, live league_matches.tsv): "
+              f"{'FAIL as expected' if p1 else 'clean -- already repaired'} "
+              f"ndup={r1['ndup']} mult={r1['mult']} identical={r1['identical']}")
+
+    # P2 negative, LIVE DATA: the two clean surfaces, unmodified.
+    for name, cols in (("ladder_games.tsv", ("match", "map")),
+                        ("meta_join.tsv", ("file",))):
+        rows, err = _trap9_read(root / name)
+        if rows is None:
+            print(f"  P2 FAIL-TO-RUN: {name} unreadable ({err})")
+            ok = False
+            continue
+        r2 = _trap9_scan_rows(rows, cols)
+        p2 = r2["ndup"] == 0
+        print(f"  P2 ({name}): {'PASS as expected' if p2 else 'FAIL -- unexpected'} "
+              f"ndup={r2['ndup']}")
+        ok = ok and p2
+
+    # P3 positive, synthetic: duplicate one row of a clean fixture.
+    fixture = [{"k": "a", "v": "1"}, {"k": "b", "v": "2"}, {"k": "a", "v": "1"}]
+    r3 = _trap9_scan_rows(fixture, ("k",))
+    p3 = r3["ndup"] == 1 and r3["identical"] is True
+    print(f"  P3 (synthetic dup, identical): "
+          f"{'FAIL as expected' if p3 else 'WRONG'} "
+          f"ndup={r3['ndup']} identical={r3['identical']}")
+    ok = ok and p3
+
+    # P4 negative, post-repair: keep-first dedup of the same fixture.
+    seen: set = set()
+    deduped = []
+    for r in fixture:
+        if r["k"] in seen:
+            continue
+        seen.add(r["k"])
+        deduped.append(r)
+    r4 = _trap9_scan_rows(deduped, ("k",))
+    p4 = r4["ndup"] == 0
+    print(f"  P4 (post-repair, keep-first): "
+          f"{'PASS as expected' if p4 else 'WRONG'} ndup={r4['ndup']}")
+    ok = ok and p4
+
+    # P5 differing-duplicate: same key, one field altered -- must NOT read as
+    # identical=yes, the branch that must not be auto-repaired.
+    fixture5 = [{"k": "a", "v": "1"}, {"k": "a", "v": "2"}]
+    r5 = _trap9_scan_rows(fixture5, ("k",))
+    p5 = r5["ndup"] == 1 and r5["identical"] is False
+    print(f"  P5 (differing dup): "
+          f"{'FAIL as expected, identical=no' if p5 else 'WRONG'} "
+          f"ndup={r5['ndup']} identical={r5['identical']}")
+    ok = ok and p5
+
+    # P6 blind: unreadable/absent path must ANNOUNCE, never silently pass.
+    rows, err = _trap9_read(root / "__trap9_does_not_exist__.tsv")
+    p6 = rows is None and err == "absent"
+    print(f"  P6 (blind path): "
+          f"{'announced absent as expected' if p6 else 'WRONG'} err={err}")
+    ok = ok and p6
+
+    print(f"TRAP9_SELFTEST: {'PASS' if ok else 'FAIL'}")
+    return 0 if ok else 1
+
+
 def main(d="corpus"):
     bad = 0
     if d == "--pool-selftest":
@@ -384,6 +565,8 @@ def main(d="corpus"):
         print(f"POOL_SELFTEST: {'PASS' if okA and okB else 'FAIL'} "
               f"(real={real}, fake_bad={fake})")
         return 0 if okA and okB else 1
+    if d == "--trap9-selftest":
+        return trap9_selftest(Path("corpus"))
     for f in sorted(Path(d).glob("*.tsv")):
         with open(f) as fh:
             # TRAP 8 (s40 boot, 2026-08-14). league_maps.tsv opens with a `#`
@@ -444,6 +627,7 @@ def main(d="corpus"):
             else:
                 bad += 1
     bad += conditionally_dead(Path(d))
+    bad += trap9_duplicate_keys(Path(d))
     stale = freshness(Path(d))
     bad += stale
     # `fcode maps sync` BEFORE the pool check (research triage @7a90eb8): the

@@ -20,6 +20,7 @@ and ROLLBACK detection, and reaction-latency timing — all without a single
 from __future__ import annotations
 
 import csv
+import fcntl
 import json
 import subprocess
 import sys
@@ -105,15 +106,44 @@ def update(out_path: Path) -> int:
     if not fresh:
         print("league_matches: +0 new (up to date)")
         return 0
-    write_header = not out_path.exists()
-    with out_path.open("a") as fh:
-        if write_header:
-            fh.write("\t".join(COLS) + "\n")
-        for m in fresh.values():
-            fh.write("\t".join(str(m.get(c, "")) for c in COLS) + "\n")
-    newest = max((m.get("createdAt") or "") for m in fresh.values())
-    print(f"league_matches: +{len(fresh)} new (newest {newest[:19]})")
-    return len(fresh)
+
+    # 2026-08-14 119-DUPLICATE INCIDENT: this function used to append `fresh`
+    # straight off the `known` set read at the top of this call, with no
+    # lock. Two processes (keeper + a lane boot sync, both re-armed by the
+    # same 18:56:33Z reboot) read `known` before either had written, both
+    # classified the SAME rows as fresh, and both appended them -- 119 ids
+    # landed twice, byte-identical, in two contiguous tail blocks (41 + 78
+    # rows) matching the two writers' own batch sizes. Caught by TRAP 9 in
+    # tools/corpus_sanity.py. Fix: take an exclusive flock on a sibling
+    # `.lock` file, RE-READ `known` under the lock (a concurrent writer may
+    # have landed between our first read and now), and drop anything that is
+    # no longer actually fresh before writing.
+    # Spec: docs/research/SPEC-corpus-sanity-trap9-duplicate-keys-2026-08-14.md
+    lock_path = out_path.with_name(out_path.name + ".lock")
+    lock_path.touch(exist_ok=True)
+    with lock_path.open("r+") as lockfh:
+        fcntl.flock(lockfh, fcntl.LOCK_EX)
+        try:
+            known_now: set[str] = set()
+            if out_path.exists():
+                with out_path.open() as fh:
+                    rows = csv.DictReader(fh, delimiter="\t")
+                    known_now = {r["id"] for r in rows if r.get("id")}
+            fresh_now = {mid: m for mid, m in fresh.items() if mid not in known_now}
+            if not fresh_now:
+                print("league_matches: +0 new (another writer landed the batch first)")
+                return 0
+            write_header = not out_path.exists()
+            with out_path.open("a") as fh:
+                if write_header:
+                    fh.write("\t".join(COLS) + "\n")
+                for m in fresh_now.values():
+                    fh.write("\t".join(str(m.get(c, "")) for c in COLS) + "\n")
+            newest = max((m.get("createdAt") or "") for m in fresh_now.values())
+            print(f"league_matches: +{len(fresh_now)} new (newest {newest[:19]})")
+            return len(fresh_now)
+        finally:
+            fcntl.flock(lockfh, fcntl.LOCK_UN)
 
 
 def main():
