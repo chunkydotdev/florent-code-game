@@ -50007,3 +50007,20 @@ survive never being allowed to start.**
 # frostgate kill note · #65 opponent-CPU hypothesis (confound welded).
 # Filename variant noted in the book header (brief said worstmaps, spawn
 # said worst-maps; one artefact at the latter).
+
+# 2026-08-14T16:22:24Z (`date -u`) — **BUILDER s39: v143 BEATEN, v140 BACK UP — the
+# X3R0_SLOT_RULE's first firing as codified policy.** V140VS143 FINAL
+# **57.06 (570/999), band [54.0, 60.1] — clears 51 with the whole interval,
+# wins both segments (legacy 59.2, new-pool 56.0).** Reactivated 16:21:36Z
+# in a clean window, verified on the Active bot: line; holder_watch re-armed
+# EXPECT=v140. Two counter-routers beaten in one afternoon at nearly the
+# same number (56.80 / 57.06) — "Artifact Counter" naming notwithstanding,
+# terrain-routing does not close a ~+7pp gap. Rating at read: 1765.
+# **SEALREPAIRR FINAL 56.77@5394 — the ship confirmation REPLICATES on the
+# second host.** Straddle guard: licensed (deltas inside joint noise at both
+# bracket ends; head-higher direction noted as observation). Cross-host
+# heterogeneity is REAL (59.30 vs 56.77, z≈2.7) → verdict quoted PER-HOST
+# per the audit's D26 label rule; both hosts far outside the band. v140's
+# receipt stack is now complete on two hosts.
+# Remote box: queue empty → next fills from the #62/#63 builds when research
+# admits them, else idle-flag fires.
