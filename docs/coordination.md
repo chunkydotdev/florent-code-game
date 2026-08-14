@@ -52231,3 +52231,44 @@ correctly labelled by the builder. **I hold per-map new-pool baselines (n=540 ra
 2026-08-13T07:12:59Z) and can compute what share OUR OWN map strength alone predicts on his
 fallback set.** If 41.8% is fully explained, the *"his base router beats us"* reading
 dissolves; if a gap survives, it is the most interesting thing in the leg.
+
+--- 2026-08-14T20:10:12Z (`date -u`) RESEARCH (s42) — ⛔ **THE KILL/DEATH RACE FIGURE QUEUED FOR `PROGRAMME.md` POOLS BOTS WE DID NOT WRITE** ---
+`HANDOVER` carries, as owed to the next PROGRAMME touch: *"kill/death race is 178/182 (four
+rounds), not 174/187."* **That number pools x3r0's versions with ours.** Cut on
+`ladder_games.tsv`, new-pool era (n=540 rated games from 2026-08-13T07:12:59Z):
+
+| population | n | KILL med | DEATH med | RACE | core dies |
+|---|---|---|---|---|---|
+| ALL versions pooled | 540 | 175 (n=284) | 178 (n=234) | **−4** | 43.3% |
+| **OUR versions** (v125+v140) | 395 | 176 (n=221) | 182 (n=160) | −6 | 40.5% |
+| **x3r0's versions** | 95 | 170 (n=35) | **158** (n=57) | **+12** | **60.0%** |
+| ⭐ **v140 ONLY — THE LIVE BOT** | 90 | 174 (n=53) | **308** (n=30) | **−134** | **33.3%** |
+| v125 only | 305 | 176 (n=168) | 168 (n=130) | +8 | 42.6% |
+
+⇒ **x3r0's bots DIE BEFORE THEY KILL (race +12) and lose their core in 60% of games** —
+an independent confirmation of the −74.60 Elo block, from a completely different statistic.
+**Pooling them drags the race toward zero and attributes their fragility to us.**
+
+⚠⚠ **AND THE CAVEATS ARE LOAD-BEARING — DO NOT PROMOTE THE v140 ROW AS A RESULT:**
+* **v140's death median rests on n=30 games** in which our core died. A median on 30 is
+  noisy, and 308-vs-168 is a large gap on a thin cell.
+* **The core-death rate difference is NOT RESOLVED:** v140 33.3% (n=90) vs v125 42.6%
+  (n=305) is a 9.3pp gap against a **14.3pp** half-width (DEFF 1.529 both arms) — **it does
+  not exclude zero.**
+* **Opponent mix is uncontrolled** — v140 played a later, different slice of the ladder.
+⇒ **The claim I am making is the NEGATIVE one, which the data does support: the pooled
+178/182 is not a statement about our bot, so it must not enter `PROGRAMME.md` as one.**
+**The positive claim — that v140 has a 134-round cushion — is NOT established and I am not
+making it.**
+
+## ⭐ AND A CLEAN DECOMPOSITION WORTH BANKING: THE r1000 COLLAPSE IS A **VERSION** EFFECT AT **v102**, NOT THE POOL CHANGE
+With **map held constant** (OLD maps only), r1000 rate by our version:
+```
+v94  32.1% (n=140)  ->  v102  5.4% (n=390)  ->  v104  2.4% (n=510)  ->  v116  1.9%  ->  v125  3.2%
+```
+**A step change at v102, holding flat at ~2-3% for eleven versions since.** Post-pool-change
+r1000 is **4.2% on NEW maps and 3.3% on OLD** — indistinguishable ⇒ **the pool change did
+not cause it; v102 did.**
+⇒ **under `R1000_IS_DEFEAT` this is the largest programme win in the record — 25.1% of games
+were defeats-by-tiebreak before v102 and ~3% are now — and it is OURS.** *(Recorded because
+the tape carries the r1000 rule everywhere and nowhere carries the date we beat it.)*
