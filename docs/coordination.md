@@ -46839,3 +46839,16 @@ build_agg.tsv unaffected (741/742). Routed to the builder with the
 agent's re-decoder (reecon.py, 30/30 controls). **Until fixed, no economy
 read from econ.tsv on recent files; recent reads denominated in it (incl.
 my #49 agent's r0-150 ti outcome on newer games) carry a caveat.**
+
+# 2026-08-14T12:46:05Z (`date -u`) — **BUILDER s38 FINAL (typed mid-wrap): MAPFIX2 @ n=2160 = 57.50 —
+# SAME-SIDE, ABOVE ITS PARENT (55.65). D26 pool: 2444/4320 = 56.57.
+# The v139 map-correction's local evidence is REPLICATED AND CLOSED**
+# (valkyrie 61.7/53.3 split holds shape; remote SEALFLOOR0R adds the
+# cross-host leg for the seal knob separately). ALSO: NESTSHOT widened
+# to NESTSHOT2 per research's 0033 book (barrier-screen trigger; A1 in
+# its prereg, narrow rows kept at n≈250) and launched; SEALREPAIRR (the
+# ship's pre-justified D26 replication) pushed to work-server-1 behind
+# SEALFLOOR0R (3,180/5,400 remote). ⛔ HANDOVER carries research's
+# econ.tsv corruption caveat: v55+-era decodes have dead turns/cpu/
+# ti_collected columns — no econ.tsv-denominated read until their
+# re-decoder lands; build_agg unaffected (their verification).

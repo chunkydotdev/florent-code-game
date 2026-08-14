@@ -25,6 +25,10 @@
 ##  4. **CAL-6 panel runner** (INCUMBENT=140, cal6 PTR/OUT — resumes from
 ##     its pointer; research's standing rule: new-holder panels only after
 ##     40 min stability + tree named).
+##  4b. ⛔ CORPUS CAVEAT (research s39): econ.tsv is CORRUPT for v55+-era
+##     decodes (dead turns/cpu/ti_collected cols; `tled` is fiction) —
+##     no econ.tsv-denominated reads until their re-decoder ships;
+##     build_agg verified unaffected.
 ##  5. QUEUE: #14 destination arm (OSCLOCK2's successor — freed-into-
 ##     idleness strengthened by its 46.4 drop) · #41 siting/facing (the
 ##     other #3 leg) · MAPSALT local re-sweep if its screen is flat ·

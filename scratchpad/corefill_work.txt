@@ -1074,3 +1074,8 @@ MAPFIX2     bots/_v218mapfix       bots/_v197mapcode      2160 251000
 SEAL139     bots/_v221mapseal      bots/_v218mapfix       5400 270000
 OSCLOCK2    bots/_v224osclock2     bots/_v218mapfix       5400 272000
 SEALFLOOR0R bots/_v219sealfloor0   bots/_v197mapcode      5400 253000
+MAPSALT     bots/_v225mapsalt      bots/_v223sealrepair   5400 274000
+NESTSHOT    bots/_v226nestshot     bots/_v223sealrepair   5400 276000
+V141VS140   bots/_x3r0v141         bots/_v223sealrepair   2700 278000
+SEALREPAIRR bots/_v223sealrepair   bots/_v218mapfix       5400 269000
+NESTSHOT2   bots/_v227nestshot2    bots/_v223sealrepair   5400 276000
