@@ -376,3 +376,62 @@ league's scheduler, not a law.
 **Companion, so this is not read as a strength claim:** sweep 22 measures
 freshly-shipped versions as **STRONGER** (matched DiD **+0.524**, t = +4.89).
 **A stable cell is a READABLE one, not a weak one.**
+
+---
+
+## Addendum 10, 2026-08-14 ~15:0xZ (s40) — **OBLIGATION 15: A PREREG DECLARES ITS MECHANISM'S MAP DEPENDENCE, OR DECLARES THAT IT EXPECTS NONE**
+
+**THE INCIDENT.** Magnus, direct, this session: could map-segment effects be
+CANCELLING tactics that we pool across all maps — and we do not account for it
+when building experiments. **Checked: none of s40's six preregs declared a
+segment split.** Supporting evidence, all from the same day: **V141VS140's 29pp
+per-map spread** · the s39 audit's **map-interaction DEFF outliers at 1.20-1.25**
+· **`#54`'s lock concentration on midgard (35.6% of builder-rounds vs 3-8% on
+small maps)** · and **v142 being a terrain-fingerprint router with no
+opponent-identity reads — an opponent has already shipped map-conditional
+policy while we screen pooled.**
+
+**THE ARITHMETIC THAT MAKES THIS A REAL LOSS AND NOT A REFINEMENT: a plank worth
++6pp on 5 of 15 maps pools to +0.67pp.** Against any bar this project types, that
+is a null. **A pooled screen does not measure a conditional plank weakly — it
+measures it as ZERO, and the road closes.**
+
+### THE OBLIGATION, three parts
+
+**15a. EVERY screen prereg carries a MAP DEPENDENCE line.** One of:
+* `MAP SEGMENT: none expected — <why the mechanism is map-invariant>`, or
+* `MAP SEGMENT: <named set> — <mechanism reason> — EXPECTED DIRECTION <sign>`.
+
+**⛔ THE EXPECTED DIRECTION IS NOT OPTIONAL.** A segment declared without a
+predicted sign is unfalsifiable: whichever way it lands, it "confirms" the
+mechanism. **The direction is what makes it a test.**
+
+**15b. EXACTLY ONE PRIMARY SEGMENT. Any others are DESCRIPTIVE.**
+*(This clause is mine and is not in the version handed to me — without it, 15c
+becomes a licence: declaring K segments gives K chances to rescue a failed arm,
+which is textbook subgroup fishing and is how a 51-bar gets defeated by anyone
+patient enough to enumerate. One primary, declared before the fire.)*
+
+**15c. A POOLED-FAIL THAT CLEARS ITS PRE-DECLARED PRIMARY SEGMENT RE-SCREENS ON
+THAT SEGMENT** and, if it holds, ships MAP_CODES-style conditional. ⚠ **The
+re-screen is a NEW leg with its own n — not a re-read of the same rows.** The
+rows that suggested the segment cannot also confirm it.
+
+### SEGMENT VOCABULARY — pick from these or define one with a mechanism reason
+* **SIZE CLASS** — the default: `small` · `mid` · `900-area` (the 30×30s:
+  midgard, ragnarok, valkyrie, drakkarfjord, glacierkeep).
+* **MECHANISM-SPECIFIC, and usually better than size** —
+  **ring-geometry maps** for seal/spawn-ring planks · **lock-heavy maps** for the
+  `#54` nav family (midgard 35.6%, ragnarok 14.1%, valkyrie 12.8%) ·
+  **open-lane maps** for sentinel/gunner line-of-fire planks · **long-approach
+  maps** for raid/transport planks.
+**A mechanism-specific segment beats a size class whenever the mechanism names a
+terrain property — size is a proxy for the property, and a proxy dilutes.**
+
+### AND THE UNITS RIDER, because it is the same day's other lesson
+**A per-map or per-segment bar does NOT take the match design effect** —
+verified, (match, map) pairs with more than one game = **0 of 415**, since a
+5-game match uses five different maps. **The residual is the OPPONENT cluster:
+ρ = 0.0743, m̄ ≈ 2 games per opponent per map cell ⇒ DEFF ≈ 1.07.**
+**Enumerate both clusters per `CLAUDE.md`'s scope procedure; do not carry 1.53
+into a segment bar.**
