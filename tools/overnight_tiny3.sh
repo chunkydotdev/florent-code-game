@@ -35,6 +35,22 @@
 set -u
 T=$'\t'      # REAL tab. `print -r` does NOT interpret \t in zsh, and a
             # literal backslash-t makes every row unparseable in the morning.
+
+# ⛔ CANCEL-MARKER GUARD, added 2026-08-14 -- the zombie class: V141VS140 ran
+# 823 rows past its typed drop because nothing in the per-game loop ever
+# looked for a cancel signal. $CANCELDIR/$SHARD present -> exit 0 with rows
+# KEPT (this is a clean stop, not a crash -- the morning read-out still pools
+# whatever rows exist; COMPLETE is never written, so it never reads as done).
+# CANCELDIR is env-overridable (not hardcoded) for the same reason OUT is
+# below: a hardcoded path makes an isolated selftest impossible.
+# Selftest for this guard lives in tools/overnight_pool26.sh --selftest
+# (identical function, same fix applied to this tiny3 variant).
+check_cancel() {
+  [[ -e "$CANCELDIR/$SHARD" ]] || return 1
+  print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) CANCEL $SHARD: marker present at $CANCELDIR/$SHARD, stopping at $n/$TARGET (rows kept)"
+  return 0
+}
+
 SHARD=${1:?shard_id}
 TREAT=${2:?treatment dir}
 CTRL=${3:?control dir}
@@ -53,6 +69,7 @@ SEEDLO=${5:-1}
 # Fixing the source is what makes a test fixture possible at all: a guard that
 # cannot be exercised in isolation cannot be exercised both ways. [claim scoped 2026-08-14: this VARIANT inherits overnight.sh's tested logic; its own deltas (MAPS/MAPDIR/seed divisor) are validated by live shard operation, not by that record]
 OUT=${OUT:-scratchpad/overnight}
+CANCELDIR=${CANCELDIR:-scratchpad/corefill_cancel}
 mkdir -p $OUT
 HB=$OUT/${SHARD}.heartbeat
 ROWS=$OUT/${SHARD}.tsv
@@ -99,6 +116,7 @@ while (( n < TARGET )); do
   for M in $MAPS; do
     for ORD in A B; do
       (( n >= TARGET )) && break
+      check_cancel && exit 0
       # ⛔ --tle 10 IS NOT OPTIONAL. The default is 0 = NO CPU LIMIT, and the
       # platform enforces 10ms. Measured 2026-08-11: _v145bestfit wins 6/6 with
       # the limit OFF and loses 5/6 with it ON -- so a run without --tle
