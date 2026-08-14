@@ -980,3 +980,57 @@ of my accepted items (escape-flag tape, local-accepts WARN, CUT-SHORT consumer,
 OB13 untracked-arm gap). **A successor certifies it against ONE diff, as the
 builder asked — and re-runs the forced-fail harness first, because by then the
 certification will have expired again.**
+
+## ⚠ v1.11.1 — **THE LEDGER MEASURES THE INVERSE OF THIS LANE'S OUTPUT. A PEER HAD TO SAY IT.**
+
+**v1.11.1 — 2026-08-14 (s42, mid-session). POINT bump. NOT A RETRO RUN — FIRINGS REMAIN 11**
+and the v2.0 question below is **recorded, not executed**: a major bump requires a RUN, and runs
+fire on Magnus's word. First point bump since v1.10; the cap is 2 and this session is at 1.
+
+**Recorded now rather than held, per the v1.2.1 mechanism, because it would otherwise die in a
+session — which is exactly the failure this instrument's own routing rule exists to stop.**
+
+### THE FINDING — raised by the RESEARCH ARM, not self-caught (a Q4 datum in its own right)
+
+Across one session this lane produced, by category:
+
+| category | count | has a home in the ledger? |
+|---|---:|---|
+| flags **withheld** before publication (bad query, unverified premise) | 5 | ❌ |
+| **phantom** flags killed pre-publication (defect did not exist) | 4 *(s41)* | ❌ |
+| flags **corrected before consumption** (right defect, published, narrowed before anyone acted) | 1 | ❌ |
+| **published errors** | 3 | ✅ — the only one counted |
+
+**⇒ THE LEDGER COUNTS ONLY THE ERRORS THAT ESCAPED, IN A LANE WHOSE ENTIRE FUNCTION IS CATCHING
+THINGS BEFORE THEY ESCAPE.** Research's formulation, and it is sharper than mine: *"a ledger that
+counts only the errors that escaped, in a lane whose function is catching things before they
+escape, is measuring the inverse of the lane's output."*
+
+**THE PRIOR ATTEMPTS AT THIS ARE THE EVIDENCE IT IS A PREMISE PROBLEM AND NOT A MISSING COUNTER.**
+v1.11 already noticed one third of it — *"Q5 has never before counted flags that did not happen; it
+should, because that is where the s37 sharpening pays"* — and **recorded it as a note rather than
+changing anything.** s41 logged four phantoms with no home. **Two runs have now observed the gap and
+neither closed it, because each treated it as a missing tally under an existing question.**
+
+### ⇒ THE PROPOSED v2.0 QUESTION — recorded for the next RUN to accept or reject
+
+> **Q0. WHAT DID NOT HAPPEN BECAUSE THIS LANE WAS RUNNING?** Count, per session:
+> flags withheld · phantoms killed pre-publication · flags corrected before consumption ·
+> decisions changed before they were taken. **These are the product. Published errors are the
+> DEFECT RATE ON the product, not the product.**
+
+**Why this is a MAJOR bump and not another question:** the bump rules say *major = only if the
+lane's PREMISE changes.* The premise on record is *"the product is a flag that beats its decision."*
+**Today's evidence is that the product is mostly a flag that never becomes one** — and every
+existing question (Q1 consumption, Q2 latency, Q5 false positives, Q9 wrong corrections) is
+denominated in flags that WERE published. **All eight measure the visible tail of the output.**
+
+⚠ **THE HAZARD IN ADOPTING IT, NAMED BEFORE ANYONE DOES:** *"things I chose not to say"* is
+**self-reported and unfalsifiable**, and this lane already retracted one within-session pattern for
+resting on n=4 of its own judgement (v1.2.1). **A withheld-flag count is trivially inflatable by a
+lane that wants a good number, and no peer can audit it.** ⇒ **If Q0 is adopted it needs an
+anchoring rule the other questions do not: a withheld flag counts ONLY if the check that killed it
+left an artefact — a command run, a file opened, a message not sent but drafted.** Otherwise this
+lane gets a metric it grades itself on, which is the one failure mode a drift watch cannot afford.
+
+**SUNSET WATCH: unchanged. FIRINGS: 11. The v2.0 decision belongs to the next run.**
