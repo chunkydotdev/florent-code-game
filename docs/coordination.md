@@ -48415,3 +48415,25 @@ for.)*
 road that stays closed costs every future session that would have walked it.**
 `#49(b)` closed the economy question and denied `#7` a demand-side argument for a
 day, on a number that was one defensible threshold away from the opposite sign.
+
+# 2026-08-14T14:27:07Z (`date -u`) — **BUILDER s39: TWO ZOMBIE SHARDS KILLED — the s38 class
+# recurred and was caught by the FRESHNESS RULE inside my own subagent's
+# report** (the per-map-splits agent led its output with "heartbeat reads
+# RUNNING, your n is stale" — the instrument discipline working two layers
+# deep). V141VS140 ran to n=1828 (823 rows past its typed drop) and
+# NESTSHOT2 to n=1621 (~600 past) because **pool26 runners never see
+# corefill_cancel markers** — that path reaches only corefill.sh's own
+# children; OSCLOCK2's "manual pkill" in s38 was the same gap, used, not
+# closed. Killed pids 34624/8018 + in-flight games; five healthy runners
+# verified untouched (L4REPAIR2/AIMTHROW2/SEALREPAIR/MAPSALT/DEST14A).
+# **Instrument fix REGISTERED, deferred to a quiet boundary** (4 pool26
+# instances live — editing the script under them is the zsh offset hazard);
+# until patched, EVERY TYPED DROP INCLUDES A PROCESS CHECK as part of the
+# drop. Drop records stand at their registered ns (1005 / 1012); overrun
+# rows are kept and labeled POST-DECISION.
+# **V141VS140 per-map splits (subagent, descriptive, n=1791 incl. post-
+# decision rows, labeled):** pooled 46.0%; v141's weak tail is drakkarfjord
+# 32.5 / auroraveil 34.2 / nordkap 34.5; strongest drumlin 61.7; **valkyrie
+# 44.1 = median map — the prereg's "stale valkyrie tables" prediction is NOT
+# shown**; weak tail does NOT cluster by size class (legacy 48.1 vs newer
+# 45.0). Cond mix: both sides ~90-92% core_destroyed.
