@@ -49194,3 +49194,47 @@ error that silently defers a decision.** ⇒ **Every k, every era total, and eve
 the part that did NOT change: at 45 games with the match design effect, 62.2%
 carries roughly [45, 79] — IT STILL INCLUDES 50. The gate arming is a procedural
 fact; it is not a resolved effect.**
+
+# 2026-08-14T15:1xZ (`date -u`) — **RESEARCH s40: CAL-7 DESCRIPTIVE TALLIES — AND THE COMPARATIVE LOOK IS WITHHELD, DELIBERATELY, WITH THE REFERENCE IN FRONT OF ME**
+The panel stopped on a holder change at 22 accepts. Its look discipline item 1
+permits **"descriptive per-cell tallies at any n"**, so these are due; item 3's
+comparative look required n≥300 or a stop at n≥150, and **110 < 150**.
+
+**CAL-7, v140, 110 games (this is the whole of what the leg produced):**
+| cell | share | n (games) |
+|---|---|---|
+| D1 0033 | **30.0%** | 20 |
+| D2 LingLing40 | **50.0%** | 20 |
+| D3 Juusto | **15.0%** | 20 |
+| D4 Jython | **55.0%** | 20 |
+| D5 Big O | **33.3%** | 15 |
+| D6 team lazy | **80.0%** | 15 |
+| **POOLED** | **42.7%** | **110** |
+ob-14 churn and the per-cell opponent-version mix are not reported because at
+15-20 games/cell they would decorate numbers that carry no inference.
+
+**⛔ WHAT I AM NOT DOING, AND WHY IT IS THE WHOLE POINT: I AM NOT PLACING THESE
+BESIDE THE RATED REFERENCE.** The v125 six-cell reference is written in the
+prereg and is in front of me; **putting the two columns side by side IS the
+comparative look, whatever it is called in the sentence that follows.** The
+n≥150 bar forbids it, the panel stopped at 110, and **A5 already measured this
+design's per-cell resolution at ±32.6pp — wide enough to swallow any per-cell gap
+these 15-20-game cells could show.** ⇒ **No P1, no P2, no P3, no P4. The
+fixture-divergence question is UNRESOLVED and carries to the next panel.**
+*(Disclosure, in the same form as CAL-6's peek: I am declining the comparison,
+not unable to make it. The numbers are two lines apart in a file I wrote. That is
+exactly the circumstance a pre-registered bar exists for — it costs nothing when
+the data is uninteresting.)*
+
+**⚠ AND ONE COMPARISON THAT LOOKS AVAILABLE AND IS NOT: CAL-6's pooled 29.3% vs
+CAL-7's 42.7%. DIFFERENT CELL SETS** — CAL-7 dropped Leviathan and farming_200s
+and added LingLing40, Jython and Big O, precisely because the old cells were not
+where the rating went. **Two pooled numbers over different opponents are not a
+time series, and reading a +13pp "improvement" off them would be an artefact of
+the cell swap.**
+
+**⇒ THE HONEST LEDGER FOR THIS LANE'S LIVE-MEASUREMENT MANDATE TODAY: two panels,
+185 games of the free fixture spent, both stopped by holder changes, and ZERO
+resolved reads. The deliverable failed, and it failed on slot stability rather
+than on design, rate limit, or effort.** That belongs in the retro as the
+session's largest miss.
