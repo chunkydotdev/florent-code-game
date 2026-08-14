@@ -195,12 +195,49 @@ unchanged. **{valkyrie, glacierkeep} is the CONTROL segment** — same area, bes
 cells, and it exists so the arm cannot pass by moving everything everywhere.
 **One primary. No sweep across the remaining maps.**
 
-⚠ **SEGMENT-VALUE LINE, per the builder's D1 ask (s39 retro — "nothing prices
-segments"): this note does NOT yet carry `share × effect-ceiling = overall
-ceiling`, because the tiny-segment pairing share is the number TINYECO62 was
-parked on and I have not re-derived it for {midgard, ragnarok}. It is owed
-BEFORE the prereg, not after** — TINYECO62 spent 2,700 rows on a cell whose
-overall ceiling was computable at prereg time.
+### ✅ SEGMENT-VALUE LINE — DELIVERED 2026-08-14 (research s42), closing a debt this note declared against itself
+
+**`SEGMENT VALUE CEILING: 14.6% × 13.6pp = 1.98pp pooled`**
+
+Derived off `corpus/ladder_games.tsv`, population stated because it is the whole finding:
+
+```
+NEW-POOL ERA (from 2026-08-13T07:12:59Z, the first new-map pairing): n = 540 rated games
+  primary segment {midgard, ragnarok}   79/540 =  14.6% of pairings
+  our win, overall                                54.1%
+  our win, on segment                             40.5%   deficit 13.6pp
+  segment cell interval at n=79 (DEFF 1.366)     ±12.7pp
+```
+The **13.6pp** figure is the effect CEILING in the strict sense — it is what closing the
+entire on-segment deficit to our own overall rate would buy, and no plank that fixes a
+defect can exceed it. **⇒ the whole plank is worth at most ~2pp pooled.**
+⚠ **And the deficit is only just resolved by its own cell: 13.6pp against ±12.7pp.**
+
+### ⛔⛔ AND THE REASON THIS LINE WAS WORTH COMPUTING IS NOT THE ANSWER, IT IS THE WINDOW
+
+**THE MAP POOL CHANGED 36 HOURS AGO AND EVERY SEGMENT PRICED OFF POOLED HISTORY IS WRONG.**
+Ten maps entered the rated pool on **2026-08-13 between 07:12:59Z and 10:32:59Z** —
+`valkyrie · midgard · icefloe · frostgate · auroraveil · glacierkeep · drakkarfjord ·
+yulerune · royale · ragnarok`. **They are now 66% of pairings.** An all-time share averages
+over a period in which these maps DID NOT EXIST:
+
+| segment | all-time share | new-pool share | **misprice factor** |
+|---|---|---|---|
+| `#63` primary {midgard, ragnarok} | 1.6% | **14.6%** | **9.1×** |
+| `#63` control {valkyrie, glacierkeep} | 1.5% | **13.7%** | **9.1×** |
+| SPAWNPOCKET primary {midgard, fjordgate} | 6.5% | **14.4%** | **2.2×** |
+
+⇒ **a `SEGMENT VALUE CEILING` computed off the all-time tape would have priced this plank at
+0.16pp pooled instead of ~2pp and killed it on arithmetic that was 9× wrong.** *(The
+SPAWNPOCKET row is included because that prereg is LIVE and its segment is mispriced 2.2× in
+the same direction — flagged to its owner, not edited here.)*
+
+**STANDING CONSEQUENCE, and it generalises past segments: a pairing share is a property of
+the CURRENT pool, not of the archive. Any share, base rate or reference cut that spans
+2026-08-13T07:12:59Z pools two different games.** The `#63` debt was declared because
+TINYECO62 *"spent 2,700 rows on a cell whose overall ceiling was computable at prereg time"*
+— **the sharper lesson is that it was computable, and computable WRONG, from the obvious
+population.**
 
 ## 6. COMBO-INTERACTION WITH `SPAWNPOCKET` — owed by the s40 wrap
 
