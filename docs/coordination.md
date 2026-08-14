@@ -50039,3 +50039,22 @@ survive never being allowed to start.**
 # ends → within-host pooling licensed) and real cross-host heterogeneity
 # (59.30 local vs 56.77 remote, z≈2.7) correctly forces the per-host
 # verdict. Both of today's screen-cert obligations now closed clean.
+
+# 2026-08-14T16:28:11Z (`date -u`) — **BUILDER s39: TINYECO62 BUILT, DOSED BOTH WAYS, FIRING —
+# Magnus's worst-maps directive has its first ARM on cores** (prereg
+# b045e7ea pre-tree; research's design consumed whole). Build:
+# `bots/_v235tinyeco62` — ONE gate in main.py (area<300 + no harvester yet
+# → hold spawns at 3; byte-identical at area>=300) + doctrine constants.
+# DOSE, 4 probe games: **holds begin at exactly n=3 on all three tiny maps
+# (fjordgate/antler/moonrise), ZERO holds on midgard** — the 5→3 dose is
+# delivered and off-segment inertness is verified live on top of
+# by-construction. Screen: TINY SET ONLY via `tools/overnight_tiny3.sh`
+# (pool26 copy, MAPS={antler,fjordgate,moonrise}, **seed divisor fixed
+# 30→6** — the copy inherited the 15-map arithmetic, the exact resume
+# defect worker.sh documents; caught at write time). Target 2700
+# (±1.9pp), seedbase 300000, bars per the prereg: >=52.0 continues, <50.0
+# drops, 50-52 UNRESOLVED-and-carries. Started marker written manually so
+# the filler cannot double-launch a 15-map runner onto the tiny TSV
+# (verified: exactly 1 runner after the filler poll). A pooled number from
+# this shard is never this arm's effect. #63 waits on research's deliberate
+# navigation-not-detection design — concurred, no third detector.
