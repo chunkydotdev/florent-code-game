@@ -52618,3 +52618,87 @@ low-turret/high-death cell is the load-bearing observation, not any single row.*
 ✅ **This is the queue's own GREP discipline arriving one step earlier: the cheapest null is a
 leg testing a feature we already ship — and the second cheapest is a leg whose mechanism the
 field never presents.**
+
+# ============================================================================
+# 2026-08-14T20:35:13Z (`date -u`) — **RESEARCH ARM s42 WRAP** (Magnus: "We need to wrap up
+# soon"). Arm retro ran FIRST per charter: `docs/research-arm-retro.md` →
+# **v1.14, Q14 added, FIRINGS 6**; instance
+# `docs/retro-research-arm-2026-08-14-s42.md` committed with the bump.
+# Session ~1h50m (boot 19:07Z).
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**R1. ⭐⭐ A FINDING THAT CLAIMS NOVELTY CARRIES ITS OWN `GREP:`.** *(behaviour change →
+**Q14**, retro v1.14, and this booted tape.)* I published *"we have had a TLE instrument all
+along and nobody has read it."* **My own lane had read it that day** (s40 ~14:0xZ), and the
+same row I failed to open **also carried the NORMS HOLD I then violated by merging
+measurement with induction.** Two greps — instrument name, road name — would have stopped a
+wrong number reaching two lanes and Magnus's board. **The queue demands a GREP of every
+PLANK before it counts. It has never demanded one of a FINDING, and a finding travels
+faster.** ⚠ **Cause, stated plainly: believing it was new is exactly what skipped the check.**
+
+**R2. ⭐⭐ BUILD GUARDS THAT FAIL ON IMPOSSIBLE VALUES, NOT IMPLAUSIBLE ONES.** *(routed to
+the tape earlier today in the side lane's bounded form.)* **Its firing certifies that the
+DECISION TO INVESTIGATE was outcome-independent; it does NOT certify what was changed
+afterwards, and its SILENCE certifies nothing.** **It caught its own author twice within
+ninety minutes of publication** —  resolved as our own opponent, then **v243 in
+a list of our own versions.** Both were ILLEGAL, not merely surprising.
+
+**R3. ⭐ THE MECHANISM-OCCURRENCE CHECK — a fifth admission clause.** *(→ builder's wrap.)*
+The four-part admission asks for **a fixture that can RESOLVE** the mechanism and **never
+whether the mechanism OCCURS in the field.**  was banked as fixture-blocked; going to
+name its cells showed **not one melee-dominant opponent kills our barriers** (lowest turret
+count among them 4.51/g) **and the throughput arithmetic is fatal** — exchange rate favours
+us 2.2–4.0:1 against all three damage sources **and we still lose**, because one builder
+heals +4 HP/turn while a sentinel does 9 dmg/round. **Fixture-blocked means "fire it
+elsewhere"; premise-absent means "re-scope or retire".** It also killed a Magnus idea
+(mobile heal-patrol) before it was built.
+
+**R4. ⭐ A GREP THAT HITS ONLY `doctrine.py` HAS FOUND A SPEC, NOT A BEHAVIOUR.**
+*(→ promoted by the builder to a standing rule.)* `_hunt_turret` has **no definition and no
+call site**; its three mentions are comments, **two in the PRESENT TENSE**, with six tuned
+constants read zero times. **A lane grepping "do we hunt turrets?" correctly concludes YES
+and is wrong.** ⇒ **a doctrine-only hit RAISES an item's priority, never retires it.**
+**Third instance today of our own prose contradicting the code beside it** (stale 8:1 heal;
+"Default OFF" beside `NOISE_ON = True`; this).
+
+**R5. ⛔ TIMESTAMPS BIND PER STAMP, NOT PER SESSION.** *(5th firing of a rule I have written
+down.)* One honest `date -u` at boot licensed forty minutes of interpolation from local
+file mtimes; **four tape notes were FUTURE-DATED.** Corrected against cited git commit
+times. **A `date -u` is not a session-level credential.**
+
+**R6. A NUMBER QUOTED FORWARD IS A RELAYED NUMBER.** I cited the lane-structure review's
+*"fixture at 8–20% of cap"* twice to argue urgency; actual recent record is **85.8 / 42.2 /
+56.9 / 51.4%**. The review was right when written. **Quoting forward is relaying, and the
+side lane's S1 rule applies to it.** ⇒ **the cadence deliverable is re-founded on QUESTION
+SELECTION, not utilisation** — the fixture is busy; what needs owning is what it fires at.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. ⛔ **The archipelago engine-model correction on the booted tape rests on ONE UNVERIFIED
+   RELAY** — *"22 of 42,035 both cores dead, complement 33,830/33,830"* is the agent's
+   number, not mine. **I verified only the `ladder_games` half** (1,060/1,058/two short;
+   25 `cond=error` all at turns=0 — those ARE mine and exact). **Re-derive before it
+   hardens.** The consequence I routed from it (use `turns == 1000`, never the `cond`
+   string) is sound either way.
+2. **v140's "134-round death cushion" is NOT a claim I made** — n=30 deaths, and the
+   core-death rate difference vs v125 (9.3pp) does **not** exclude zero at ±14.3pp. Only the
+   NEGATIVE claim is supported: the pooled 178/182 is not about our bot.
+3. **CAL-8's rows are SPENT.** P4 does not fire (3 below / 1 above of six id-keyed cells);
+   read certified; **no pooling, no top-up.**
+4. **The v102 r1000 step survives two controls** (field flat at 7–15% while we fell 66.9→22.5;
+   v94 vs v102 twenty minutes apart, same maps, excludes zero by 18.9pp) — **but the field
+   control STOPS on 08-09 and does not cover the step itself.**
+
+## RESEARCH ARM STATE — VERIFIED, NOT ASSERTED
+* **NOTHING OF MINE IS RUNNING.** All four agents landed and were relayed before this wrap
+  (archipelago · rated-day decode · screen validity · TLE exposure · HTTP 418 book — five).
+  **Zero unrelayed agent output**, against two lost at the s41 wrap.
+* **Both s41 orphans are CLOSED** — `SHORT-TIEBREAK-ANOMALY` and `BOOK-http418-v103` both
+  exist and are committed.
+* `queue_check` **unblocked items: 51** (floor 3) · `audit_trigger` **0/6 tripped**.
+* **I never submitted, activated, fired a match, edited a bot, or ran arena.** One
+  deliberate abstention: I did **not** run a corpus sync when CAL-8's read needed one,
+  because that was the race I had just documented.
+* **OWED, uncollected:** `effective_n.py`'s seed-degeneracy premise may be inverted by
+  `NOISE_ON=True` (flagged by the builder, not re-derived by me).
