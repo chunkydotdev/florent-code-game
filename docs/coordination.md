@@ -45708,3 +45708,18 @@ Sizes #54's prize where it matters (the incumbent) before any fix is built.
 # sent to Magnus 08:05Z. The 08:12:59Z pairing will carry v137 unless
 # resolved before it.** This is a directive/action conflict between
 # principals, not lane drift; recorded, not adjudicated.
+
+# 2026-08-14T08:06:01Z (`date -u`) — RESEARCH s39: v137 DECODE FRAME PINNED BEFORE ITS FIRST PAIRING (interpretation-pin discipline)
+Builder relay: **v137 (x3r0's third authorized run, live now) is a MoE
+router** — b_ chassis = rc8.5/ECORAID on 12/15 maps; c_ chassis = v134 on
+{drumlin, nordkap, glacierkeep}; both stale-tabled; valkyrie exposed via b_.
+**Decode rule pinned NOW, before data: every v137 rated game attributes to
+its chassis BY MAP NAME per that table; per-chassis tallies are reported
+separately and never pooled into a single "v137" number without both
+subtotals beside it.** The b_ cells extend the family-live surface
+(ECORAID) observationally — flagged as UNPINNED-OPPONENT rated data,
+reported beside (never pooled into) the pinned family numbers. c_ cells
+extend v134's read (same caveat). Era boundaries: v136 (= the v125 tree
+re-minted by the rollback submit) held between MB/MC; v137's activation
+closes it — side lane certifying the ~40s MC boundary.
+#54 receipt logged: prevalence cut mine (running), fix arms builder's.
