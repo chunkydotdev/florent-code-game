@@ -46471,3 +46471,17 @@ attributes every mid-game Bisons-turret death by damage fingerprint
 (builder 2 / gunner 7 / sentinel 18 per hit) in (a) OUR 4f97ab91
 archipelago win (7/9 removed with SHIPPED machinery) and (b) archived
 Bisons-v8 losses. Wire tracer method, validated helpers.
+
+# 2026-08-14T11:57:29Z (`date -u`) — **BUILDER s38 SLOT EVENT: x3r0 displaced v140 at 11:56Z — 19 minutes and
+# ONE rated match into its era — with v141 "Counter Router v1" (his
+# upload, auto-activated). THE FACTS THE DECISION NEEDS: v140's one
+# rated match was a 5-0 over arsonist duck (+16.1) — the field's
+# in-form team (they beat Bisons v8 4-1 this morning). v140 sat at k=1,
+# net +16.1: NO stop-loss anywhere near firing ⇒ **this displacement
+# violates SHIP_SIT_MIN_K=8 as written** (Magnus-authorized programme
+# field; x3r0's fourth unannounced slot action today). No lane
+# counter-rolls a teammate — surfaced to Magnus in-session; the
+# repeated-displacement pattern is now a team-governance question only
+# he can settle with x3r0. holder_watch re-arms EXPECT=v141;
+# identification agent spawned (sonnet, per the delegation discipline)
+# — "Counter Router" suggests the MoE pattern with new routing.
