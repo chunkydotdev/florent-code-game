@@ -52178,3 +52178,49 @@ read-the-condition-line practice, applied before flagging.
 --- 2026-08-14T20:05:20Z BUILDER (s41) — SCREEN READ-1 + EXTENSION ---
 V140VS145B n=1000 look (READ-1, 3acaaaf): 49.20% [46.13, 52.27] — inside (46.9,53.1), A5 extension to n=3000 FIRED (running, WORKERS=10, ETA ~23:0xZ). No slot branch executed; v140 sits per registered default. Segment REVERSED (expert-9 54.2 / fallback-6 41.8, confound stated, descriptive only). Side-lane 23x external-validity caveat carried verbatim, pre-declared blind. Treatment md5 clean. Tooling minted on the way: orchestrate `reset-done` (extend a finished shard), SRC_WORKLIST temp-list pattern for single-shard gen.
 Local cores: COREFILL_STOP lifted on Magnus's word; worklist 125/125 COMPLETE — cores DRAINED, not paused. First fill: #66a stall-vs-discard engine probe (Magnus's belt-collaboration idea, admitted by research as #66/#66a). SALTREF re-run at honest WORKERS queued behind the extension on server 1.
+
+--- 2026-08-14T20:06:38Z (`date -u`) RESEARCH (s42) — ⭐ **PRE-READ NOTE ON SCREEN READ-2. Written BEFORE the number, which is the only time it counts.** ---
+**READ-1 (3acaaaf): 49.20% [46.13, 52.27] at n=1000.** ✅ **My predicted half-width was
+±3.07pp; the observed CI is a half-width of 3.07pp — EXACT.** The bar-resolution objection
+reproduces on live data, which is the only reason it is worth acting on.
+
+⛔ **WHAT THE n=3000 EXTENSION BUYS IS NOT WHAT IT LOOKS LIKE.** Holding 49.20:
+| n | half-width | CI | excludes 50.0? | excludes 51.0? |
+|---|---|---|---|---|
+| 1,000 | ±3.07pp | [46.13, 52.27] | no | no |
+| **3,000** | **±1.77pp** | **[47.43, 50.97]** | **NO** | **YES** |
+| 9,500 | ±1.00pp | [48.20, 50.20] | **NO** | YES |
+**To resolve the observed 49.20-vs-50.0 gap needs n ≈ 14,800**; to make any 1.0pp
+bar-to-null gap resolvable at all needs **n ≈ 9,500**.
+⇒ **THE EXTENSION MAKES THE BAR DECIDABLE WITHOUT MAKING THE QUESTION RESOLVED.**
+
+⇒ **THE DECISION SHAPE THAT WILL LAND:** if read-2 holds near 49.2, we install v145 on
+evidence that says *"v140 is not 1pp better"* while being unable to say v145 beats a coin
+flip. **THE SYMMETRIC RULE CONVERTS "CANNOT DISTINGUISH" INTO "SWAP THE HOLDER"** — and a
+swap carries a MEASURED cost (**−10.0 Elo on the first pairing** of the last one;
+**≈−11.5 Elo/hour plus 75 games of dark unrated fixture**) against a benefit the instrument
+explicitly cannot demonstrate.
+⚠ **THIS IS A CAVEAT THAT ATTACHES TO THE READ, NOT A REPAIR APPLIED UNDERNEATH IT.** A2/A5
+are pre-committed and Magnus directed the symmetry; **moving a decision rule after seeing
+read-1 is the s28 hazard whatever the motive.** The honest write-up sentence: *"v140 fails
+to clear 51.0 at n=3000 (CI excludes 51.0); the arms are NOT distinguishable at 50.0 and
+this design cannot distinguish them without ~15k games; the holder change follows the
+pre-committed rule rather than a demonstrated difference."*
+
+## ⭐ AND IT MAKES THE TLE CONDITIONAL LIVE — **READ-1 IS BELOW 51.0**
+The amended TLE ruling pre-committed this branch: *if v145's clean read lands below 51.0,
+the v142/v143 exposure stops being historical.* **It has.** Those two legs installed v140
+over x3r0 routers on a fixture that **flattered us**, with cushions of only **1.40× / 1.47×**
+over a bias estimate measured at **1.05× asymmetry when the legs themselves ran at 1.94×.**
+⇒ **if read-2 confirms below 51.0 on a CLEAN fixture, the pattern to take seriously is that
+we may have held the slot against better bots twice — and the mechanism is not mysterious:
+a 9,215-line router is the compute-heavier arm and contention penalised it.** Two
+independent legs now point the same way. **Belongs in the read-2 write-up, not in a later
+reconstruction.**
+
+**OFFERED, needs only two lists:** the leg's map split (54.2% on his 9 expert maps vs 41.8%
+on his 6 fallback maps) is confounded by our own worst maps sitting in the fallback set —
+correctly labelled by the builder. **I hold per-map new-pool baselines (n=540 rated since
+2026-08-13T07:12:59Z) and can compute what share OUR OWN map strength alone predicts on his
+fallback set.** If 41.8% is fully explained, the *"his base router beats us"* reading
+dissolves; if a gap survives, it is the most interesting thing in the leg.
