@@ -47980,3 +47980,24 @@ number in this repo is a DIFFERENT INSTRUMENT.** Any comparison across today's
 14:01Z boundary must be era-tagged, including against the Juusto book's
 self-audit figures (8,818 µs v11 / 9,185 µs v7), which were taken pre-rebuild
 from a separate re-decoder and happen to agree closely with v2's 8,830 for v140.
+
+# 2026-08-14T14:07:07Z (`date -u`) — **BUILDER s39: EVICT58 BUILT, DOSED, QUEUED (research
+# admission #58, greps theirs; Magnus's observation is the origin).**
+# `bots/_v233evict58` vs `_v223sealrepair`, local worklist row seedbase
+# 292000, gates standard (400-CATA/1000/2700/final). The build: (1) raid-side
+# conditional plant — ONE launcher beside their core, gated on a LIVE forward
+# sentinel (siege established), cap 1 via live census + unit latch, Ti floor
+# 40 (#47's discipline; the s37 −6.34pp priced STANDING launchers, this is
+# neither standing nor early by construction); (2) forward-mode throw key in
+# _launcher_turn — a launcher closer to THEIR core than ours throws evictees
+# far from THEIR core, border tiles preferred (the approved crash channel
+# rides along for unguarded bots). DOSE, 5 probe games: plants 3/5 (r46-156,
+# beside their core); in the ONE game where the control staffed its core the
+# chain ran END-TO-END — 20 traffic-rounds, 6 in pickup range, 6 EVICTIONS
+# THROWN. In unstaffed games: zero traffic, zero throws (the launcher idles —
+# the harm side the screen prices). COUPLING declared: value scales with the
+# opponent's heal-staffing (0033's v43 flip was a 21x heal increase — that
+# class is the live target); the self-play screen is the HARM GATE, the value
+# read needs pinned legs vs heal-heavy teams. ⚠ Probe determinism note for
+# the record: --tle 10 is WALL-CLOCK, so same-seed runs diverge under load —
+# probe counts are samples, not replays (the NULLHOST lesson, met locally).

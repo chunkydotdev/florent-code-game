@@ -1083,3 +1083,4 @@ DEST14B     bots/_v229dest14b      bots/_v223sealrepair   5400 284000
 SENT41      bots/_v230sent41       bots/_v223sealrepair   5400 286000
 SALTREF     bots/_v231saltref      bots/_v223sealrepair   5400 288000
 NESTSHOT2   bots/_v227nestshot2    bots/_v223sealrepair   5400 276000
+EVICT58     bots/_v233evict58      bots/_v223sealrepair   5400 292000
