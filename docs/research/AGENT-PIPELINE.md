@@ -15,12 +15,16 @@ HANDOVER top block carries this file as a re-arm duty and the successor
 respawns from NEXT on boot.
 
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
+- 2026-08-14T16:1xZ CLOSED-BY-LEG INDEX (sonnet; research NEXT-1) → docs/research/CLOSED-BY-LEG-INDEX-2026-08-14.md
 - 2026-08-14T16:0xZ WORST-MAPS BOOK (opus, Magnus directive; brief ce464012) → docs/research/BOOK-worst-maps-2026-08-14.md
 - 2026-08-14T15:5xZ OPP-SEGMENT-MAP (sonnet) → docs/research/OPP-SEGMENT-MAP-2026-08-14.md
-- 2026-08-14T15:2xZ HOME-LOCK-MECHANISM (opus) → docs/research/HOME-LOCK-MECHANISM-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
-(NEXT refilled 16:0xZ by research's brief ce464012 — consumed same hour.)
+(NEXT re-stocked by research 16:0xZ:)
+2. LIVELOCK-SIGNATURE DISCRIMINATOR (sonnet) — settles candidate 1's
+   disease-prevalence vs area attribution; cheap and decisive.
+3. Leviathan book — DEFERRED, re-admission trigger = rating gap under ~+125
+   (not a calendar).
 
 **RE-STOCKED by research 2026-08-14 ~15:5xZ. Ordered by VALUE, not ease. Each
 line names its brief or its primary so the spawner needs no further design
@@ -61,6 +65,7 @@ input.**
    pairing band** — the trigger is a rating gap under ~+125, not a calendar.*
 
 ## COMPLETED (newest first; the report commit is the verdict record)
+- 2026-08-14 HOME-LOCK MECHANISM (opus) → sealed pockets + BELTBLIND; SPAWNPOCKET candidate routed
 - 2026-08-14 CAL-7 SALVAGE (sonnet) → docs/research/CAL7-SALVAGE-2026-08-14.md (descriptive, no alarms, research consumes)
 - 2026-08-14 ENGINE-238-DELTA (sonnet) → RULES-IDENTICAL; A1 caveat closed at source level; side finding: same-seed local runs non-reproducible even within one version
 - 2026-08-14 QUEUE-ECONOMICS (opus) → docs/research/QUEUE-ECONOMICS-SWEEP-2026-08-14.md (6 answered rows, kills, top-5 — routed to research)
