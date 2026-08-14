@@ -74,3 +74,58 @@ the number in either direction · treat a `PREREG_CHECK: FAIL` on this document 
 a finding (**per my own `CERT-prereg-check-forced-fail-2026-08-14.md`: no real
 prereg passes today, the migration has not happened, and the tool is
 DRAFT-UNCERTIFIED and NOT WIRED — a red run here is formalisation, not drift**).
+
+---
+
+## E. ADDENDUM, pre-declared 2026-08-14T20:0xZ — STILL BLIND
+
+**Blindness restated and checkable:** at writing, `V140VS145B.heartbeat` last read
+`240/1000 RUNNING`. **I have read only `ts` and the row COUNT. The `winner` column
+is unread.** The checks below are added because the plan (`d6feab7`) predates
+amendments A4–A6 and the TLE-fixture finding — **a cert plan that does not cover
+the amendments is a plan for a different document.**
+
+| # | check | fails if |
+|---|---|---|
+| **B11** | **the read uses V140VS145B rows ONLY.** A4 voided the 480 WORKERS=40 rows for the decision while keeping them on disk as a labelled artifact | any voided row enters the tally, or n is quoted as 1000 while pooling the two shards |
+| **B12** | **A6's sentence is present and in A6's words** if the reading lands in the n=3000 unresolved zone (48.23, 51.77): resolved **by DEFAULT to the sitter**, and the verdict **must say "could not separate", never "measured better"** | the n=3000 number is written as a measurement that settled the question |
+| **B13** | **the ONE extension rule holds.** A5 permits exactly one extension, triggered only by a reading inside (46.9, 53.1) | a second extension is proposed, or an extension fires on a reading outside the zone |
+| **B14** | **the fixture is the fixed one**: WORKERS=10 on ncpu=16 (0.63× oversubscription), and the shard is not co-resident with another at read time | the worker log shows WORKERS≠10, or §5-style concurrency recurs |
+
+## E1. ⚠ A CARRIED CAVEAT I AM ADDING NOW SO IT CANNOT BE DISCOVERED AT READ-OUT
+
+**THIS PAIRING HAS THE MOST EXTREME COMPUTE ASYMMETRY IN THE WHOLE BANKED SET,
+AND THE TLE IS WALL-CLOCK.** From the exposure retro's own table:
+`_v223sealrepair` **4,757** lines vs `_x3r0v145` **110,184** — **23×**, against
+1.94× for v142/v143 and ~1.05× for the leg the 4.13pp bias proxy was measured on.
+
+**WHY THIS IS NOT THE SAME FLAG I RAISED ON THE RETRO, and the distinction is the
+whole point:**
+* **A4's fix removes the CONTENTION** (2.5× → 0.63× oversubscription), and
+  contention is what manufactures *spurious* TLEs. That defect is closed.
+* **It does not remove the ASYMMETRY.** A bot that genuinely exceeds a 10 ms
+  wall-clock budget loses its turn, and **that is the game working correctly** —
+  on the platform as much as locally. **A compute-heavy bot losing turns is a
+  real property of that bot, not a fixture artefact.**
+
+⇒ **THE CAVEAT, and it is about EXTERNAL VALIDITY rather than bias:** this screen
+decides a **PLATFORM** slot using a **LOCAL** fixture, and **a 23× compute
+asymmetry makes the result more sensitive to the difference between the two hosts
+than any previous screen has been.** The local box gives each game one core at
+0.63× subscription; the platform's per-turn budget is enforced under conditions we
+do not measure. **If v145 loses turns locally that it would not lose on the
+platform — or vice versa — the screen is measuring our fixture as much as the
+bot.**
+
+**⛔ WHAT I AM NOT SAYING:** that the result is invalid, that the bar should move,
+or that a re-run is owed. **The fixture is the fixed one and the number will be
+the number.** ⇒ **The obligation is one sentence carried BESIDE the verdict:
+`this is a LOCAL-fixture result on a 23× compute asymmetry with a wall-clock
+turn budget; local and platform TLE behaviour are not calibrated against each
+other.` Pre-declared here, blind, so it is a carried caveat and not a
+post-hoc excuse if the number is unwelcome.**
+
+**AND THE ASYMMETRY OF THAT EXCUSE IS WHY IT IS WRITTEN NOW:** the caveat helps
+whichever side loses. Declared before the read, it constrains both branches
+equally; produced after, it would be available only to the side that dislikes the
+answer.
