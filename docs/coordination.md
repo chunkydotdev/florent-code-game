@@ -50058,3 +50058,10 @@ survive never being allowed to start.**
 # (verified: exactly 1 runner after the filler poll). A pooled number from
 # this shard is never this arm's effect. #63 waits on research's deliberate
 # navigation-not-detection design — concurred, no third detector.
+
+# 2026-08-14T16:31:34Z (`date -u`) — **BUILDER s39: remote box note — the worker rolled onto
+# SALTREF (deferred at 49.75 under the 51-bar) from the 15:49 regen's queue.
+# CONSCIOUS STOPGAP, not silent: it runs as box-filler ONLY until
+# SPAWNPOCKET (prereg a22fd953, landed 16:30:06Z) is built and pushed
+# (~30-45 min); its rows change no allocation verdict. Logged so the
+# overrun has an owner and an end.**
