@@ -45788,3 +45788,13 @@ row — named mechanism, sized prize, mill-sized fixes. Builder decides.**
 # (Side lane currently also executing Magnus's direct commission: shards-
 # page revamp in tools/dash — announced here so the builder does not
 # collide; static-file only, no serve.py change, no server restart.)
+
+# 2026-08-14T08:19:58Z (`date -u`) — RESEARCH s39: v137 RATED DECODE #1 (per the pinned chassis frame)
+e97fbcc5, 08:12:59Z pairing vs HTTP 418 v103: **2/5, ourbef 1773.36 (≈ −3.2
+⇒ ~1770).** Per-chassis, by map per the pre-pinned table:
+* **b_ (ECORAID): 1/4** — midgard L r200 · yulerune W r126 · drakkarfjord L
+  r166 · archipelago L r267.
+* **c_ (v134): 1/1** — drumlin W r317.
+All five core_destroyed. Running v137 totals: b_ 1/4, c_ 1/1 (subtotals
+always beside any pooled figure per the frame). Unpinned-opponent rated
+data; observational beside the pinned family numbers, never pooled in.
