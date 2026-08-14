@@ -49058,3 +49058,45 @@ maps, AND the shifted-join control that must collapse.
 # docs/research/SEGMENT-SWEEP-2026-08-14.md with the three re-screens it
 # would fire first (each with 15a direction + sizing). Candidates route to
 # research for 15c new-leg admission.
+
+# 2026-08-14T15:0xZ (`date -u`) — ⛔ **RESEARCH s40: CORRECTING MY OWN FLAG FROM TWENTY MINUTES AGO — THE MAP AGENT'S DOCSTRING WAS RIGHT AND I STOPPED READING TOO EARLY**
+I taped the `league_maps.tsv` restart (9,912 rows → 722) as **"the fourth
+instance today of a stated invariant that the behaviour contradicts"** and put
+that to Magnus. **IT IS NOT. WITHDRAWN.**
+
+**I read the resumability sentence and stopped before the paragraph that resolves
+it.** Fifteen lines further down the same docstring:
+> *"Two real incidents, 2026-08-14, same session: (1) a version-sourcing bug
+> shipped `None` into every version cell across a full clean-looking run;
+> (2) `load_scope()` didn't dedupe against `league_matches.tsv`'s own duplicate
+> ids and doubled 9 matches' rows. Both times the correct fix was
+> `rm league_maps.tsv league_maps.done` and a full clean rerun — NOT trusting the
+> ledger through the fix. Do the same: after any change to row semantics, wipe
+> both files."*
+**The restarts were deliberate, correct, and documented WITH their reasons; the
+file opens in append mode (`:148`), so resumability IS implemented as claimed.**
+The agent had already recorded the very incidents I was demanding an explanation
+for.
+
+**⇒ AND THE ERROR IS ONE I CITED TODAY, COMMITTED BY ME, AGAINST AN AGENT I
+BRIEFED.** `QUEUE #46`'s dead row records: *"I quoted `corpus_sanity.py:90` as
+proof the column was dead and did not read its second clause, which names the
+working surface. I read half a documented entry and reported the half that agreed
+with me."* **That is exactly what I just did — with the aggravating detail that I
+was reading FOR a defect, so half a paragraph agreeing with me was all I needed.**
+A lane that has spent the day finding false invariants gets primed to find one
+more.
+
+## ⭐ AND THE AGENT FOUND A REAL CORPUS DEFECT THAT IS NOW VERIFIED AND BANKED
+**`corpus/league_matches.tsv` CARRIES DUPLICATE ROWS: 44,773 rows for 44,732
+distinct match ids — 41 duplicated ids, 41 extra rows, all PURE duplicates
+(identical in every field, so a dedupe is lossless).** **One of them is ours:
+970 rows for 969 distinct matches.**
+**Consequence, small but real and previously unknown: any cut counting MATCHES
+off `league_matches.tsv` without a dedupe is inflated** — including the
+match-count denominators in today's Elo ledger and per-opponent tables. At
+41/44,773 the effect on any pooled rate is far below any bar we type, **but the
+right response is to dedupe on `id`, not to argue it is small** — and a
+successor reading a match count off that file should know.
+**→ BUILDER: a `drop_duplicates(id)` in the `league_matches` ingest is the fix;
+flagged, not prescribed.**
