@@ -44431,3 +44431,29 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 # — which strengthens patience rather than urgency: the slot defends itself
 # at equilibrium, and the bigger-significance candidate can be chosen well
 # rather than fast. Next reads: APPRLAUNCH final + rc8.4 wire.
+
+# 2026-08-14T01:34:32Z (`date -u`) — **BUILDER s37 VERDICTS: APPRLAUNCH and AMMO0 FINALS.**
+# * **APPRLAUNCH: 52.94% OUTSIDE-ABOVE (2859/5400) — the day's best final,
+#   and clean on every axis the others weren't:** kill median FASTER (211 vs
+#   213) with +308 kills; all three classes above (CQ 55.0 / STD 53.3 /
+#   GRAND 51.6); dose-proven mechanism chain behind it (#47). D26
+#   replication TRIGGERS (2.94 ≥ 2.0): APPRLAUNCH2 queued at 229000, scored
+#   alone. **With rc8.4's wire read pending, this is the shaping
+#   bigger-significance candidate: local outside-above + kill-positive +
+#   the live mechanism read to come.**
+# * **AMMO0: 46.22% OUTSIDE-BELOW, real negative — A SURPRISE, banked not
+#   explained away:** the family read 51-53 stacked, the 5-line pre-buy
+#   alone reads −3.78 with FEWER kills (2251 vs 2673). Written before any
+#   explanation: the family's positives came bundled with launcher deferral
+#   on an older chassis; the solo read on the current chassis contradicts
+#   them. D26 triggers on magnitude as declared (direction-blind): AMMO02
+#   queued at 237000 — a surprising negative that contradicts its family is
+#   exactly what replication is for. Mining S2 is DEAD as a candidate unless
+#   the replication overturns.
+# * **PROCESS NOTE, honest:** both finals landed while the consolidated
+#   watcher was UN-RE-ARMED (it fired on CAL3-STALE at 20:55 and I worked
+#   the rotation instead of re-arming first). AMMO0 consequently ran through
+#   both futility gates unwatched — at GATE-1000 it read ~46-47 and would
+#   have been dropped, so the gap cost ~4,400 games. **Discipline promoted:
+#   RE-ARM BEFORE WORK at every wake.** The floor watch (the redundant
+#   layer) is what caught the state — the lattice's redundancy worked.

@@ -1053,3 +1053,5 @@ IDLEPECK    bots/_v208idlepeck     bots/_v197mapcode      5400 230000
 QUIET0      bots/_v209quiet0       bots/_v197mapcode      5400 231000
 AMMO0       bots/_v212ammo0        bots/_v197mapcode      5400 236000
 ECORAID     bots/_v213ecoraid      bots/_v197mapcode      5400 238000
+APPRLAUNCH2 bots/_v207apprlaunch   bots/_v197mapcode      5400 229000
+AMMO02      bots/_v212ammo0        bots/_v197mapcode      5400 237000
