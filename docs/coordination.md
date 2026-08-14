@@ -46582,3 +46582,22 @@ what our rare wins did right and which counters on our queue apply.
 # Verified live post-restart: SEALFLOOR0R renders as remote@53.28,
 # NULLHOST as a host-labeled artefact row, its detail page resolving the
 # mirror.** Descriptions added for both (118 entries).
+
+# 2026-08-14T12:22:50Z (`date -u`) — **BUILDER s38: FOUR GATES TYPED IN ONE SWEEP — AND THE SWEEP EXISTS
+# BECAUSE THE WATCH LATTICE HAD A 45-MIN HOLE I OWN (Magnus caught it:
+# "why havent we killed osclock2 yet?").** The gate watch fired for
+# SEALREPAIR's 1000 at ~11:35 and exited; I typed that gate from a board
+# read mid-ship-flow, never noticed the exit, never re-armed — the s37
+# AMMO0 class, smaller (~800 wasted OSCLOCK2 rows). Gates, per the rule:
+# * **OSCLOCK2 GATE-1000 (late read @ n=1800): 46.39 ±2.3 < 48 — DROP,
+#   FUTILITY-EARLY.** Shard cancelled (manual pkill, pool26 runner).
+#   The K=4+bans mechanism read stays banked (dose 1.38 vs 9.44); the
+#   GRAND-split performance prediction reads from kept rows at wrap-
+#   grade leisure. Arm 1b's screen verdict: locally harmful — the
+#   freed-into-idleness hypothesis (#14 destination) strengthens.
+# * **L4REPAIR2 GATE-2700 @ n=3023: 54.28 > 50.5 — CONTINUES** (strong).
+# * **AIMTHROW2 GATE-1000 @ n=1926: 50.26 > 48 — CONTINUES** (flat =
+#   harm-gate clean per its coupling class).
+# * **MAPFIX2 GATE-1000 @ n=1858: 57.48 — CONTINUES; FINAL at n=2160 in
+#   ~20 min, tracking ABOVE its parent (55.65).**
+# Gate watch re-armed.
