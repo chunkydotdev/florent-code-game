@@ -48303,3 +48303,51 @@ games or it is quoting a number the fixture cannot deliver.**
    entity ids), so it is an agent job, not a corpus query.
 3. `corpus/league_maps.tsv` (collecting, ~2,400 of ~9,800 rows) and the `#49`
    econ-v2 re-derive — both with agents.
+
+# 2026-08-14T14:2xZ (`date -u`) — ⛔⛔ **RESEARCH s40: #49(b) WITHDRAWN AS A FINDING — AND THE econ CORRUPTION WAS NOT THE REASON. A METHOD DELTA HIDES INSIDE THIS ONE.**
+Register member 2 discharged. **The re-derivation cleared the embargo and then
+found something worse than the thing the embargo was about.**
+
+**POSITIVE CONTROL FIRST, because a null means nothing without it.** The agent
+reproduced finding **(a)** at full strength on a rebuilt pipeline: **an our-side
+ore tile receives our harvester at 0.106× the same-game control rate after an
+enemy barrier lands (n=389 vs 1,853, z=−15.78; per-game paired t=−21.98 over 199
+games)** — a stricter causal definition than the banked 0.28×, same direction,
+same significance class. **Instrument trusted. Team-index verified two ways
+(builds-winner vs meta_join 500/500 exact; map-core distance vs `d2_own` at r0
+spawns).**
+
+**THEN (b) FAILED TO REPRODUCE ON *EITHER* TABLE.** Within-opponent, r≤60
+treatment / r0-150 outcomes, DEFF 1.366:
+| surface | ti_collected | 95% CI |
+|---|---|---|
+| econ **v2** | **−54.9** | [−236.2, +126.4] |
+| **old** (pre-v2) | **−35.0** | [−211.2, +141.2] |
+| v2, **clean era ≤v123** | **−45.6** | [−265.5, +174.3] |
+**The banked "+19" is not recoverable from the old table either** — so the
+corruption never was the problem with that number.
+
+⭐ **THE DECIDING FACT IS A SENSITIVITY SWEEP NOBODY RAN THE FIRST TIME.** Walking
+the per-opponent minimum-n matching threshold **1→3→5→10** moves the estimate
+**−55 → −69 → −19 → +36** on v2 and **−35 → −42 → −0.6 → +61** on the old table.
+**THE SIGN FLIPS TWICE INSIDE A RANGE ANY ANALYST WOULD CALL DEFENSIBLE**,
+because 353 treated games spread over 24 opponents leaves several cells at
+**n_treat = 1**. **And clean-era differs from full by ~9 Ti ⇒ the econ corruption
+is NOT the dominant noise source. OPPONENT-STRATIFICATION VARIANCE IS.**
+
+⇒ **`#49(b)` is WITHDRAWN as a finding and marked UNRESOLVED. `#7` does NOT
+inherit a clean negative on the economy question.** (a), (c), (d) stand — they
+never touched `econ.tsv`.
+
+## ⭐ THE METHOD DELTA, and it is bigger than this row
+**A within-opponent design published a POINT ESTIMATE with NO CI AND NO
+SENSITIVITY CHECK, and it was banked as a null.** The estimate was not stable to
+a single defensible analysis choice, and nothing in the write-up could have
+revealed that — *"+19"* looks identical whether it is robust or whether it is one
+arbitrary threshold away from −69. **This is the same family as today's DEFF
+finding: a number quoted without the property that makes it a number.**
+**⇒ RULE, promoted here because this tape is booted: a STRATIFIED estimate is
+reportable only with (i) its interval, (ii) the per-stratum n distribution (not
+just the total), and (iii) at least one sensitivity sweep of the stratification
+choice. A stratified point estimate alone is not a finding — and a NULL made of
+one is the most dangerous form, because nulls close roads.**
