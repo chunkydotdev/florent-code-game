@@ -68,3 +68,4 @@ version	name	tree	evidence	recorded_at
 138	Loki rc8.7	bots/_v213ecoraid	submit_clean auto — `fcode status` Active bot: v138 (Loki rc8.7)	2026-08-14T08:44:58Z
 139	Loki v9	bots/_v218mapfix	submit_clean auto — `fcode status` Active bot: v139 (Loki v9)	2026-08-14T09:05:13Z
 140	Loki v10	bots/_v223sealrepair	submit_clean auto — `fcode status` Active bot: v140 (Loki v10)	2026-08-14T11:37:38Z
+144	Loki rc9.1	bots/_v233evict58	submit_clean auto — `fcode status` Active bot: v144 (Loki rc9.1)	2026-08-14T17:04:19Z

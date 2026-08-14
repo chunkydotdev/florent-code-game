@@ -332,3 +332,584 @@
 2026-08-12T17:33:42Z	games=16/5	consec_idle=0	queue_age_min=21.7	OK
 2026-08-12T17:38:43Z	games=14/5	consec_idle=0	queue_age_min=4.2	OK
 2026-08-12T17:43:43Z	games=14/5	consec_idle=0	queue_age_min=1.6	OK
+2026-08-12T17:48:43Z	games=14/5	consec_idle=0	queue_age_min=1.4	OK
+2026-08-12T17:53:43Z	games=18/5	consec_idle=0	queue_age_min=3.9	OK
+2026-08-12T17:58:43Z	games=16/5	consec_idle=0	queue_age_min=8.9	OK
+2026-08-12T18:03:43Z	games=18/5	consec_idle=0	queue_age_min=1.6	OK
+2026-08-12T18:08:44Z	games=17/5	consec_idle=0	queue_age_min=2.1	OK
+2026-08-12T18:13:44Z	games=14/5	consec_idle=0	queue_age_min=3.6	OK
+2026-08-12T18:18:44Z	games=19/5	consec_idle=0	queue_age_min=4.4	OK
+2026-08-12T18:23:44Z	games=16/5	consec_idle=0	queue_age_min=9.4	OK
+2026-08-12T18:28:44Z	games=16/5	consec_idle=0	queue_age_min=14.4	OK
+2026-08-12T18:33:44Z	games=16/5	consec_idle=0	queue_age_min=19.4	OK
+2026-08-12T18:38:44Z	games=14/5	consec_idle=0	queue_age_min=0.2	OK
+2026-08-12T18:43:45Z	games=16/5	consec_idle=0	queue_age_min=1.8	OK
+2026-08-12T18:48:45Z	games=16/5	consec_idle=0	queue_age_min=6.8	OK
+2026-08-12T18:53:45Z	games=17/5	consec_idle=0	queue_age_min=11.8	OK
+2026-08-12T18:58:45Z	games=18/5	consec_idle=0	queue_age_min=16.8	OK
+2026-08-12T19:03:45Z	games=18/5	consec_idle=0	queue_age_min=21.8	OK
+2026-08-12T19:08:45Z	games=16/5	consec_idle=0	queue_age_min=26.8	OK
+2026-08-12T19:13:45Z	games=16/5	consec_idle=0	queue_age_min=31.8	OK
+2026-08-12T19:18:46Z	games=14/5	consec_idle=0	queue_age_min=3.4	OK
+2026-08-12T19:23:46Z	games=16/5	consec_idle=0	queue_age_min=3.8	OK
+2026-08-12T19:28:46Z	games=21/5	consec_idle=0	queue_age_min=2.0	OK
+2026-08-12T19:33:46Z	games=24/5	consec_idle=0	queue_age_min=7.0	OK
+2026-08-12T19:38:46Z	games=24/5	consec_idle=0	queue_age_min=12.0	OK
+2026-08-12T19:43:46Z	games=16/5	consec_idle=0	queue_age_min=17.0	OK
+2026-08-12T19:48:46Z	games=16/5	consec_idle=0	queue_age_min=22.0	OK
+2026-08-12T19:53:46Z	games=16/5	consec_idle=0	queue_age_min=27.0	OK
+2026-08-12T19:58:47Z	games=14/5	consec_idle=0	queue_age_min=32.0	OK
+2026-08-12T20:03:47Z	games=16/5	consec_idle=0	queue_age_min=37.0	OK
+2026-08-12T20:08:47Z	games=16/5	consec_idle=0	queue_age_min=42.0	OK
+2026-08-12T20:13:47Z	games=22/5	consec_idle=0	queue_age_min=47.0	OK
+2026-08-12T20:18:47Z	games=19/5	consec_idle=0	queue_age_min=52.0	OK
+2026-08-12T20:23:47Z	games=20/5	consec_idle=0	queue_age_min=57.0	OK
+2026-08-12T20:28:47Z	games=21/5	consec_idle=0	queue_age_min=62.0	OK
+2026-08-12T20:33:48Z	games=12/5	consec_idle=0	queue_age_min=0.9	OK
+2026-08-12T20:38:48Z	games=20/5	consec_idle=0	queue_age_min=4.2	OK
+2026-08-12T20:43:48Z	games=10/5	consec_idle=0	queue_age_min=9.2	OK
+2026-08-12T20:48:48Z	games=20/5	consec_idle=0	queue_age_min=14.2	OK
+2026-08-12T20:53:48Z	games=19/5	consec_idle=0	queue_age_min=3.3	OK
+2026-08-12T20:58:48Z	games=21/5	consec_idle=0	queue_age_min=8.3	OK
+2026-08-12T21:03:48Z	games=19/5	consec_idle=0	queue_age_min=13.3	OK
+2026-08-12T21:08:48Z	games=21/5	consec_idle=0	queue_age_min=18.3	OK
+2026-08-12T21:13:49Z	games=14/5	consec_idle=0	queue_age_min=23.3	OK
+2026-08-12T21:18:49Z	games=18/5	consec_idle=0	queue_age_min=28.3	OK
+2026-08-12T21:23:49Z	games=20/5	consec_idle=0	queue_age_min=33.3	OK
+2026-08-12T21:28:49Z	games=16/5	consec_idle=0	queue_age_min=38.3	OK
+2026-08-12T21:33:49Z	games=16/5	consec_idle=0	queue_age_min=43.3	OK
+2026-08-12T21:38:49Z	games=16/5	consec_idle=0	queue_age_min=48.3	OK
+2026-08-12T21:43:49Z	games=16/5	consec_idle=0	queue_age_min=53.3	OK
+2026-08-12T21:48:50Z	games=16/5	consec_idle=0	queue_age_min=58.3	OK
+2026-08-12T21:53:50Z	games=14/5	consec_idle=0	queue_age_min=63.3	OK
+2026-08-12T21:58:50Z	games=16/5	consec_idle=0	queue_age_min=68.3	OK
+2026-08-12T22:03:50Z	games=16/5	consec_idle=0	queue_age_min=73.3	OK
+2026-08-12T22:08:50Z	games=14/5	consec_idle=0	queue_age_min=78.3	OK
+2026-08-12T22:13:50Z	games=16/5	consec_idle=0	queue_age_min=83.3	OK
+2026-08-12T22:18:50Z	games=14/5	consec_idle=0	queue_age_min=88.3	OK
+2026-08-12T22:23:51Z	games=16/5	consec_idle=0	queue_age_min=93.3	OK
+2026-08-12T22:28:51Z	games=16/5	consec_idle=0	queue_age_min=98.3	OK
+2026-08-12T22:33:51Z	games=16/5	consec_idle=0	queue_age_min=103.3	OK
+2026-08-12T22:38:51Z	games=16/5	consec_idle=0	queue_age_min=108.3	OK
+2026-08-12T22:43:51Z	games=16/5	consec_idle=0	queue_age_min=113.3	OK
+2026-08-12T22:48:51Z	games=16/5	consec_idle=0	queue_age_min=118.3	OK
+2026-08-12T22:53:51Z	games=16/5	consec_idle=0	queue_age_min=123.3	OK
+2026-08-12T22:58:52Z	games=16/5	consec_idle=0	queue_age_min=128.3	OK
+2026-08-12T23:03:52Z	games=12/5	consec_idle=0	queue_age_min=133.3	OK
+2026-08-12T23:08:52Z	games=15/5	consec_idle=0	queue_age_min=138.3	OK
+2026-08-12T23:13:52Z	games=16/5	consec_idle=0	queue_age_min=143.3	OK
+2026-08-12T23:18:52Z	games=16/5	consec_idle=0	queue_age_min=148.3	OK
+2026-08-12T23:23:52Z	games=14/5	consec_idle=0	queue_age_min=153.3	OK
+2026-08-12T23:28:52Z	games=16/5	consec_idle=0	queue_age_min=158.3	OK
+2026-08-12T23:33:52Z	games=16/5	consec_idle=0	queue_age_min=163.3	OK
+2026-08-12T23:38:53Z	games=16/5	consec_idle=0	queue_age_min=168.3	OK
+2026-08-12T23:43:53Z	games=16/5	consec_idle=0	queue_age_min=173.3	OK
+2026-08-12T23:48:53Z	games=16/5	consec_idle=0	queue_age_min=178.3	OK
+2026-08-12T23:53:53Z	games=14/5	consec_idle=0	queue_age_min=183.3	OK
+2026-08-12T23:58:53Z	games=14/5	consec_idle=0	queue_age_min=188.3	OK
+2026-08-13T00:03:53Z	games=16/5	consec_idle=0	queue_age_min=193.3	OK
+2026-08-13T00:08:53Z	games=12/5	consec_idle=0	queue_age_min=198.4	OK
+2026-08-13T00:13:54Z	games=14/5	consec_idle=0	queue_age_min=203.4	OK
+2026-08-13T00:18:54Z	games=14/5	consec_idle=0	queue_age_min=208.4	OK
+2026-08-13T00:23:54Z	games=12/5	consec_idle=0	queue_age_min=213.4	OK
+2026-08-13T00:28:54Z	games=12/5	consec_idle=0	queue_age_min=218.4	OK
+2026-08-13T00:33:54Z	games=14/5	consec_idle=0	queue_age_min=223.4	OK
+2026-08-13T00:38:54Z	games=14/5	consec_idle=0	queue_age_min=228.4	OK
+2026-08-13T00:43:54Z	games=14/5	consec_idle=0	queue_age_min=233.4	OK
+2026-08-13T00:48:54Z	games=14/5	consec_idle=0	queue_age_min=238.4	OK
+2026-08-13T00:53:54Z	games=12/5	consec_idle=0	queue_age_min=243.4	OK
+2026-08-13T00:58:55Z	games=14/5	consec_idle=0	queue_age_min=248.4	OK
+2026-08-13T01:03:55Z	games=12/5	consec_idle=0	queue_age_min=253.4	OK
+2026-08-13T01:08:55Z	games=10/5	consec_idle=0	queue_age_min=258.4	OK
+2026-08-13T01:13:55Z	games=10/5	consec_idle=0	queue_age_min=263.4	OK
+2026-08-13T01:18:55Z	games=10/5	consec_idle=0	queue_age_min=268.4	OK
+2026-08-13T01:23:55Z	games=10/5	consec_idle=0	queue_age_min=273.4	OK
+2026-08-13T01:28:55Z	games=8/5	consec_idle=0	queue_age_min=278.4	OK
+2026-08-13T01:33:55Z	games=10/5	consec_idle=0	queue_age_min=283.4	OK
+2026-08-13T01:38:55Z	games=10/5	consec_idle=0	queue_age_min=288.4	OK
+2026-08-13T01:43:56Z	games=8/5	consec_idle=0	queue_age_min=293.4	OK
+2026-08-13T01:48:56Z	games=8/5	consec_idle=0	queue_age_min=298.4	OK
+2026-08-13T01:53:56Z	games=8/5	consec_idle=0	queue_age_min=303.4	OK
+2026-08-13T01:58:56Z	games=8/5	consec_idle=0	queue_age_min=308.4	OK
+2026-08-13T02:03:56Z	games=6/5	consec_idle=0	queue_age_min=313.4	OK
+2026-08-13T02:08:56Z	games=8/5	consec_idle=0	queue_age_min=318.4	OK
+2026-08-13T02:13:56Z	games=8/5	consec_idle=0	queue_age_min=323.4	OK
+2026-08-13T02:18:56Z	games=8/5	consec_idle=0	queue_age_min=328.4	OK
+2026-08-13T02:23:56Z	games=8/5	consec_idle=0	queue_age_min=333.4	OK
+2026-08-13T02:28:57Z	games=8/5	consec_idle=0	queue_age_min=338.4	OK
+2026-08-13T02:33:57Z	games=8/5	consec_idle=0	queue_age_min=343.4	OK
+2026-08-13T02:38:57Z	games=8/5	consec_idle=0	queue_age_min=348.4	OK
+2026-08-13T02:43:57Z	games=8/5	consec_idle=0	queue_age_min=353.4	OK
+2026-08-13T02:48:57Z	games=8/5	consec_idle=0	queue_age_min=358.4	OK
+2026-08-13T02:53:57Z	games=8/5	consec_idle=0	queue_age_min=363.4	OK
+2026-08-13T02:58:57Z	games=8/5	consec_idle=0	queue_age_min=368.4	OK
+2026-08-13T03:03:57Z	games=8/5	consec_idle=0	queue_age_min=373.4	OK
+2026-08-13T03:08:57Z	games=8/5	consec_idle=0	queue_age_min=378.4	OK
+2026-08-13T03:13:57Z	games=8/5	consec_idle=0	queue_age_min=383.4	OK
+2026-08-13T03:18:58Z	games=6/5	consec_idle=0	queue_age_min=388.4	OK
+2026-08-13T03:23:58Z	games=6/5	consec_idle=0	queue_age_min=393.4	OK
+2026-08-13T03:28:58Z	games=4/5	consec_idle=1	queue_age_min=398.4	OK
+2026-08-13T03:33:58Z	games=4/5	consec_idle=2	queue_age_min=403.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T03:38:58Z	games=4/5	consec_idle=3	queue_age_min=408.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T03:43:58Z	games=0/5	consec_idle=4	queue_age_min=413.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T03:48:58Z	games=0/5	consec_idle=5	queue_age_min=418.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T03:53:58Z	games=0/5	consec_idle=6	queue_age_min=423.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T03:58:58Z	games=0/5	consec_idle=7	queue_age_min=428.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:03:59Z	games=0/5	consec_idle=8	queue_age_min=433.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:08:59Z	games=0/5	consec_idle=9	queue_age_min=438.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:13:59Z	games=0/5	consec_idle=10	queue_age_min=443.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:18:59Z	games=0/5	consec_idle=11	queue_age_min=448.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:23:59Z	games=0/5	consec_idle=12	queue_age_min=453.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:28:59Z	games=0/5	consec_idle=13	queue_age_min=458.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:33:59Z	games=0/5	consec_idle=14	queue_age_min=463.4	*** CORES IDLE — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:38:59Z	games=4/5	consec_idle=15	queue_age_min=468.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: DESTROY ENEMY TURRETS ***
+2026-08-13T04:43:59Z	games=4/5	consec_idle=16	queue_age_min=0.0	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: CLEAR MORE ENEMY TURRETS (was "we go forward late" — refuted; then over-sized — corrected) ***
+2026-08-13T04:48:59Z	games=4/5	consec_idle=17	queue_age_min=5.0	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: CLEAR MORE ENEMY TURRETS (was "we go forward late" — refuted; then over-sized — corrected) ***
+2026-08-13T04:54:00Z	games=4/5	consec_idle=18	queue_age_min=0.7	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: CLEAR MORE ENEMY TURRETS (was "we go forward late" — refuted; then over-sized — corrected) ***
+2026-08-13T04:59:00Z	games=8/5	consec_idle=0	queue_age_min=5.7	OK
+2026-08-13T05:04:00Z	games=10/5	consec_idle=0	queue_age_min=1.1	OK
+2026-08-13T05:09:00Z	games=10/5	consec_idle=0	queue_age_min=6.1	OK
+2026-08-13T05:14:00Z	games=12/5	consec_idle=0	queue_age_min=11.1	OK
+2026-08-13T05:19:00Z	games=14/5	consec_idle=0	queue_age_min=16.1	OK
+2026-08-13T05:24:00Z	games=16/5	consec_idle=0	queue_age_min=21.1	OK
+2026-08-13T05:29:00Z	games=14/5	consec_idle=0	queue_age_min=26.1	OK
+2026-08-13T05:34:01Z	games=16/5	consec_idle=0	queue_age_min=31.1	OK
+2026-08-13T05:39:01Z	games=16/5	consec_idle=0	queue_age_min=36.1	OK
+2026-08-13T05:44:01Z	games=16/5	consec_idle=0	queue_age_min=0.1	OK
+2026-08-13T05:49:01Z	games=16/5	consec_idle=0	queue_age_min=4.8	OK
+2026-08-13T05:54:01Z	games=16/5	consec_idle=0	queue_age_min=9.8	OK
+2026-08-13T05:59:01Z	games=16/5	consec_idle=0	queue_age_min=14.8	OK
+2026-08-13T06:04:01Z	games=14/5	consec_idle=0	queue_age_min=19.8	OK
+2026-08-13T06:09:02Z	games=16/5	consec_idle=0	queue_age_min=24.8	OK
+2026-08-13T06:14:02Z	games=16/5	consec_idle=0	queue_age_min=29.8	OK
+2026-08-13T06:19:02Z	games=16/5	consec_idle=0	queue_age_min=34.8	OK
+2026-08-13T06:24:02Z	games=14/5	consec_idle=0	queue_age_min=39.8	OK
+2026-08-13T06:29:02Z	games=14/5	consec_idle=0	queue_age_min=44.8	OK
+2026-08-13T06:34:02Z	games=16/5	consec_idle=0	queue_age_min=49.8	OK
+2026-08-13T06:39:02Z	games=14/5	consec_idle=0	queue_age_min=54.8	OK
+2026-08-13T06:44:03Z	games=14/5	consec_idle=0	queue_age_min=59.8	OK
+2026-08-13T06:49:03Z	games=16/5	consec_idle=0	queue_age_min=64.8	OK
+2026-08-13T06:54:03Z	games=12/5	consec_idle=0	queue_age_min=69.8	OK
+2026-08-13T06:59:03Z	games=16/5	consec_idle=0	queue_age_min=74.8	OK
+2026-08-13T07:04:03Z	games=16/5	consec_idle=0	queue_age_min=79.8	OK
+2026-08-13T07:09:03Z	games=14/5	consec_idle=0	queue_age_min=84.8	OK
+2026-08-13T07:14:03Z	games=14/5	consec_idle=0	queue_age_min=89.8	OK
+2026-08-13T07:19:04Z	games=14/5	consec_idle=0	queue_age_min=94.8	OK
+2026-08-13T07:24:04Z	games=14/5	consec_idle=0	queue_age_min=99.8	OK
+2026-08-13T07:29:04Z	games=14/5	consec_idle=0	queue_age_min=104.8	OK
+2026-08-13T07:34:04Z	games=20/5	consec_idle=0	queue_age_min=109.8	OK
+2026-08-13T07:39:04Z	games=16/5	consec_idle=0	queue_age_min=114.8	OK
+2026-08-13T07:44:04Z	games=16/5	consec_idle=0	queue_age_min=119.8	OK
+2026-08-13T07:49:04Z	games=16/5	consec_idle=0	queue_age_min=124.8	OK
+2026-08-13T07:54:05Z	games=16/5	consec_idle=0	queue_age_min=129.8	OK
+2026-08-13T07:59:05Z	games=23/5	consec_idle=0	queue_age_min=134.8	OK
+2026-08-13T08:04:05Z	games=16/5	consec_idle=0	queue_age_min=139.8	OK
+2026-08-13T08:09:05Z	games=16/5	consec_idle=0	queue_age_min=144.8	OK
+2026-08-13T08:14:05Z	games=16/5	consec_idle=0	queue_age_min=149.8	OK
+2026-08-13T08:19:05Z	games=16/5	consec_idle=0	queue_age_min=154.8	OK
+2026-08-13T08:24:05Z	games=14/5	consec_idle=0	queue_age_min=159.8	OK
+2026-08-13T08:29:06Z	games=16/5	consec_idle=0	queue_age_min=164.8	OK
+2026-08-13T08:34:06Z	games=12/5	consec_idle=0	queue_age_min=2.2	OK
+2026-08-13T08:39:06Z	games=12/5	consec_idle=0	queue_age_min=7.2	OK
+2026-08-13T08:44:06Z	games=12/5	consec_idle=0	queue_age_min=12.2	OK
+2026-08-13T08:49:06Z	games=10/5	consec_idle=0	queue_age_min=17.2	OK
+2026-08-13T08:54:06Z	games=14/5	consec_idle=0	queue_age_min=22.2	OK
+2026-08-13T08:59:06Z	games=14/5	consec_idle=0	queue_age_min=3.3	OK
+2026-08-13T09:04:06Z	games=10/5	consec_idle=0	queue_age_min=1.0	OK
+2026-08-13T09:09:07Z	games=14/5	consec_idle=0	queue_age_min=0.1	OK
+2026-08-13T09:14:07Z	games=16/5	consec_idle=0	queue_age_min=2.1	OK
+2026-08-13T09:19:07Z	games=16/5	consec_idle=0	queue_age_min=3.8	OK
+2026-08-13T09:24:07Z	games=16/5	consec_idle=0	queue_age_min=2.2	OK
+2026-08-13T09:29:07Z	games=16/5	consec_idle=0	queue_age_min=7.2	OK
+2026-08-13T09:34:07Z	games=12/5	consec_idle=0	queue_age_min=12.2	OK
+2026-08-13T09:39:07Z	games=12/5	consec_idle=0	queue_age_min=17.2	OK
+2026-08-13T09:44:08Z	games=10/5	consec_idle=0	queue_age_min=22.2	OK
+2026-08-13T09:49:08Z	games=10/5	consec_idle=0	queue_age_min=27.2	OK
+2026-08-13T09:54:08Z	games=8/5	consec_idle=0	queue_age_min=32.2	OK
+2026-08-13T09:59:08Z	games=10/5	consec_idle=0	queue_age_min=37.2	OK
+2026-08-13T10:04:08Z	games=10/5	consec_idle=0	queue_age_min=2.3	OK
+2026-08-13T10:09:08Z	games=10/5	consec_idle=0	queue_age_min=7.3	OK
+2026-08-13T10:14:08Z	games=8/5	consec_idle=0	queue_age_min=12.3	OK
+2026-08-13T10:19:08Z	games=10/5	consec_idle=0	queue_age_min=17.3	OK
+2026-08-13T10:24:08Z	games=8/5	consec_idle=0	queue_age_min=0.6	OK
+2026-08-13T10:29:09Z	games=10/5	consec_idle=0	queue_age_min=5.6	OK
+2026-08-13T10:34:09Z	games=10/5	consec_idle=0	queue_age_min=10.6	OK
+2026-08-13T10:39:09Z	games=10/5	consec_idle=0	queue_age_min=15.7	OK
+2026-08-13T10:44:09Z	games=10/5	consec_idle=0	queue_age_min=20.7	OK
+2026-08-13T10:49:09Z	games=10/5	consec_idle=0	queue_age_min=25.7	OK
+2026-08-13T10:54:09Z	games=6/5	consec_idle=0	queue_age_min=30.7	OK
+2026-08-13T10:59:09Z	games=6/5	consec_idle=0	queue_age_min=35.7	OK
+2026-08-13T11:04:09Z	games=10/5	consec_idle=0	queue_age_min=40.7	OK
+2026-08-13T11:09:09Z	games=12/5	consec_idle=0	queue_age_min=45.7	OK
+2026-08-13T11:14:10Z	games=12/5	consec_idle=0	queue_age_min=50.7	OK
+2026-08-13T11:19:10Z	games=12/5	consec_idle=0	queue_age_min=55.7	OK
+2026-08-13T11:24:10Z	games=12/5	consec_idle=0	queue_age_min=60.7	OK
+2026-08-13T11:29:10Z	games=12/5	consec_idle=0	queue_age_min=0.5	OK
+2026-08-13T11:34:10Z	games=12/5	consec_idle=0	queue_age_min=5.5	OK
+2026-08-13T11:39:10Z	games=12/5	consec_idle=0	queue_age_min=0.1	OK
+2026-08-13T11:44:10Z	games=14/5	consec_idle=0	queue_age_min=0.3	OK
+2026-08-13T11:49:10Z	games=14/5	consec_idle=0	queue_age_min=4.2	OK
+2026-08-13T11:54:10Z	games=14/5	consec_idle=0	queue_age_min=9.2	OK
+2026-08-13T11:59:11Z	games=14/5	consec_idle=0	queue_age_min=14.2	OK
+2026-08-13T12:04:11Z	games=14/5	consec_idle=0	queue_age_min=19.2	OK
+2026-08-13T12:09:11Z	games=14/5	consec_idle=0	queue_age_min=24.2	OK
+2026-08-13T12:14:11Z	games=14/5	consec_idle=0	queue_age_min=29.2	OK
+2026-08-13T12:19:11Z	games=16/5	consec_idle=0	queue_age_min=1.5	OK
+2026-08-13T12:24:11Z	games=16/5	consec_idle=0	queue_age_min=6.5	OK
+2026-08-13T12:29:12Z	games=16/5	consec_idle=0	queue_age_min=11.5	OK
+2026-08-13T12:34:12Z	games=14/5	consec_idle=0	queue_age_min=16.5	OK
+2026-08-13T12:39:12Z	games=12/5	consec_idle=0	queue_age_min=21.5	OK
+2026-08-13T12:44:12Z	games=13/5	consec_idle=0	queue_age_min=26.5	OK
+2026-08-13T12:49:12Z	games=14/5	consec_idle=0	queue_age_min=31.5	OK
+2026-08-13T12:54:12Z	games=12/5	consec_idle=0	queue_age_min=36.5	OK
+2026-08-13T12:59:12Z	games=14/5	consec_idle=0	queue_age_min=41.5	OK
+2026-08-13T13:04:13Z	games=16/5	consec_idle=0	queue_age_min=46.5	OK
+2026-08-13T13:09:13Z	games=16/5	consec_idle=0	queue_age_min=51.5	OK
+2026-08-13T13:14:13Z	games=14/5	consec_idle=0	queue_age_min=56.5	OK
+2026-08-13T13:19:13Z	games=14/5	consec_idle=0	queue_age_min=61.5	OK
+2026-08-13T13:24:13Z	games=16/5	consec_idle=0	queue_age_min=66.5	OK
+2026-08-13T13:29:13Z	games=16/5	consec_idle=0	queue_age_min=71.5	OK
+2026-08-13T13:34:14Z	games=16/5	consec_idle=0	queue_age_min=76.6	OK
+2026-08-13T13:39:14Z	games=16/5	consec_idle=0	queue_age_min=81.6	OK
+2026-08-13T13:44:14Z	games=14/5	consec_idle=0	queue_age_min=86.6	OK
+2026-08-13T13:49:14Z	games=14/5	consec_idle=0	queue_age_min=91.6	OK
+2026-08-13T13:54:14Z	games=14/5	consec_idle=0	queue_age_min=96.6	OK
+2026-08-13T13:59:14Z	games=14/5	consec_idle=0	queue_age_min=101.6	OK
+2026-08-13T14:04:14Z	games=14/5	consec_idle=0	queue_age_min=106.6	OK
+2026-08-13T14:09:14Z	games=12/5	consec_idle=0	queue_age_min=111.6	OK
+2026-08-13T14:14:15Z	games=14/5	consec_idle=0	queue_age_min=116.6	OK
+2026-08-13T14:19:15Z	games=14/5	consec_idle=0	queue_age_min=121.6	OK
+2026-08-13T14:24:15Z	games=14/5	consec_idle=0	queue_age_min=126.6	OK
+2026-08-13T14:29:15Z	games=14/5	consec_idle=0	queue_age_min=131.6	OK
+2026-08-13T14:34:15Z	games=12/5	consec_idle=0	queue_age_min=136.6	OK
+2026-08-13T14:39:15Z	games=12/5	consec_idle=0	queue_age_min=141.6	OK
+2026-08-13T14:44:15Z	games=12/5	consec_idle=0	queue_age_min=146.6	OK
+2026-08-13T14:49:15Z	games=12/5	consec_idle=0	queue_age_min=151.6	OK
+2026-08-13T14:54:15Z	games=12/5	consec_idle=0	queue_age_min=156.6	OK
+2026-08-13T14:59:16Z	games=12/5	consec_idle=0	queue_age_min=161.6	OK
+2026-08-13T15:04:16Z	games=12/5	consec_idle=0	queue_age_min=166.6	OK
+2026-08-13T15:09:16Z	games=12/5	consec_idle=0	queue_age_min=171.6	OK
+2026-08-13T15:14:16Z	games=12/5	consec_idle=0	queue_age_min=176.6	OK
+2026-08-13T15:19:16Z	games=12/5	consec_idle=0	queue_age_min=181.6	OK
+2026-08-13T15:24:16Z	games=12/5	consec_idle=0	queue_age_min=186.6	OK
+2026-08-13T15:29:16Z	games=12/5	consec_idle=0	queue_age_min=191.6	OK
+2026-08-13T15:34:16Z	games=12/5	consec_idle=0	queue_age_min=196.6	OK
+2026-08-13T15:39:16Z	games=12/5	consec_idle=0	queue_age_min=201.6	OK
+2026-08-13T15:44:17Z	games=12/5	consec_idle=0	queue_age_min=206.6	OK
+2026-08-13T15:49:17Z	games=12/5	consec_idle=0	queue_age_min=211.6	OK
+2026-08-13T15:54:17Z	games=12/5	consec_idle=0	queue_age_min=216.6	OK
+2026-08-13T15:59:17Z	games=12/5	consec_idle=0	queue_age_min=221.6	OK
+2026-08-13T16:04:17Z	games=14/5	consec_idle=0	queue_age_min=226.6	OK
+2026-08-13T16:09:17Z	games=14/5	consec_idle=0	queue_age_min=231.6	OK
+2026-08-13T16:14:17Z	games=12/5	consec_idle=0	queue_age_min=0.1	OK
+2026-08-13T16:19:17Z	games=14/5	consec_idle=0	queue_age_min=5.1	OK
+2026-08-13T16:24:17Z	games=14/5	consec_idle=0	queue_age_min=10.1	OK
+2026-08-13T16:29:18Z	games=14/5	consec_idle=0	queue_age_min=0.7	OK
+2026-08-13T16:34:18Z	games=18/5	consec_idle=0	queue_age_min=0.0	OK
+2026-08-13T16:39:18Z	games=10/5	consec_idle=0	queue_age_min=5.0	OK
+2026-08-13T16:44:18Z	games=10/5	consec_idle=0	queue_age_min=10.0	OK
+2026-08-13T16:49:18Z	games=10/5	consec_idle=0	queue_age_min=15.0	OK
+2026-08-13T16:54:18Z	games=10/5	consec_idle=0	queue_age_min=20.0	OK
+2026-08-13T16:59:18Z	games=8/5	consec_idle=0	queue_age_min=25.0	OK
+2026-08-13T17:04:18Z	games=10/5	consec_idle=0	queue_age_min=30.1	OK
+2026-08-13T17:09:18Z	games=10/5	consec_idle=0	queue_age_min=35.1	OK
+2026-08-13T17:14:19Z	games=10/5	consec_idle=0	queue_age_min=40.1	OK
+2026-08-13T17:19:19Z	games=11/5	consec_idle=0	queue_age_min=45.1	OK
+2026-08-13T17:24:19Z	games=10/5	consec_idle=0	queue_age_min=50.1	OK
+2026-08-13T17:29:19Z	games=10/5	consec_idle=0	queue_age_min=1.2	OK
+2026-08-13T17:34:19Z	games=10/5	consec_idle=0	queue_age_min=6.2	OK
+2026-08-13T17:39:19Z	games=12/5	consec_idle=0	queue_age_min=1.2	OK
+2026-08-13T17:44:19Z	games=14/5	consec_idle=0	queue_age_min=1.4	OK
+2026-08-13T17:49:19Z	games=14/5	consec_idle=0	queue_age_min=6.4	OK
+2026-08-13T17:54:20Z	games=14/5	consec_idle=0	queue_age_min=11.4	OK
+2026-08-13T17:59:20Z	games=12/5	consec_idle=0	queue_age_min=16.4	OK
+2026-08-13T18:04:20Z	games=12/5	consec_idle=0	queue_age_min=21.4	OK
+2026-08-13T18:09:20Z	games=12/5	consec_idle=0	queue_age_min=26.4	OK
+2026-08-13T18:14:20Z	games=10/5	consec_idle=0	queue_age_min=31.4	OK
+2026-08-13T18:19:20Z	games=10/5	consec_idle=0	queue_age_min=36.4	OK
+2026-08-13T18:24:20Z	games=8/5	consec_idle=0	queue_age_min=41.4	OK
+2026-08-13T18:29:20Z	games=8/5	consec_idle=0	queue_age_min=46.4	OK
+2026-08-13T18:34:20Z	games=8/5	consec_idle=0	queue_age_min=51.5	OK
+2026-08-13T18:39:21Z	games=8/5	consec_idle=0	queue_age_min=56.5	OK
+2026-08-13T18:44:21Z	games=8/5	consec_idle=0	queue_age_min=61.5	OK
+2026-08-13T18:49:21Z	games=8/5	consec_idle=0	queue_age_min=2.1	OK
+2026-08-13T18:54:21Z	games=8/5	consec_idle=0	queue_age_min=7.1	OK
+2026-08-13T18:59:21Z	games=8/5	consec_idle=0	queue_age_min=2.8	OK
+2026-08-13T19:04:21Z	games=12/5	consec_idle=0	queue_age_min=7.8	OK
+2026-08-13T19:09:21Z	games=10/5	consec_idle=0	queue_age_min=12.8	OK
+2026-08-13T19:14:21Z	games=12/5	consec_idle=0	queue_age_min=0.4	OK
+2026-08-13T19:19:21Z	games=14/5	consec_idle=0	queue_age_min=5.4	OK
+2026-08-13T19:24:22Z	games=12/5	consec_idle=0	queue_age_min=3.2	OK
+2026-08-13T19:29:22Z	games=12/5	consec_idle=0	queue_age_min=8.3	OK
+2026-08-13T19:34:22Z	games=10/5	consec_idle=0	queue_age_min=13.3	OK
+2026-08-13T19:39:22Z	games=10/5	consec_idle=0	queue_age_min=18.3	OK
+2026-08-13T19:44:22Z	games=10/5	consec_idle=0	queue_age_min=23.3	OK
+2026-08-13T19:49:22Z	games=10/5	consec_idle=0	queue_age_min=28.3	OK
+2026-08-13T19:54:22Z	games=10/5	consec_idle=0	queue_age_min=33.3	OK
+2026-08-13T19:59:22Z	games=10/5	consec_idle=0	queue_age_min=38.3	OK
+2026-08-13T20:04:22Z	games=8/5	consec_idle=0	queue_age_min=43.3	OK
+2026-08-13T20:09:23Z	games=8/5	consec_idle=0	queue_age_min=48.3	OK
+2026-08-13T20:14:23Z	games=8/5	consec_idle=0	queue_age_min=53.3	OK
+2026-08-13T20:19:23Z	games=8/5	consec_idle=0	queue_age_min=58.3	OK
+2026-08-13T20:24:23Z	games=6/5	consec_idle=0	queue_age_min=63.3	OK
+2026-08-13T20:29:23Z	games=8/5	consec_idle=0	queue_age_min=68.3	OK
+2026-08-13T20:34:23Z	games=6/5	consec_idle=0	queue_age_min=73.3	OK
+2026-08-13T20:39:23Z	games=6/5	consec_idle=0	queue_age_min=78.3	OK
+2026-08-13T20:44:23Z	games=4/5	consec_idle=1	queue_age_min=83.3	OK
+2026-08-13T20:49:23Z	games=6/5	consec_idle=0	queue_age_min=88.3	OK
+2026-08-13T20:54:23Z	games=6/5	consec_idle=0	queue_age_min=93.3	OK
+2026-08-13T20:59:24Z	games=6/5	consec_idle=0	queue_age_min=98.3	OK
+2026-08-13T21:04:24Z	games=6/5	consec_idle=0	queue_age_min=103.3	OK
+2026-08-13T21:09:24Z	games=6/5	consec_idle=0	queue_age_min=108.3	OK
+2026-08-13T21:14:24Z	games=6/5	consec_idle=0	queue_age_min=113.3	OK
+2026-08-13T21:19:24Z	games=6/5	consec_idle=0	queue_age_min=118.3	OK
+2026-08-13T21:24:24Z	games=4/5	consec_idle=1	queue_age_min=123.3	OK
+2026-08-13T21:29:24Z	games=4/5	consec_idle=2	queue_age_min=128.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T21:34:24Z	games=6/5	consec_idle=0	queue_age_min=133.3	OK
+2026-08-13T21:39:24Z	games=4/5	consec_idle=1	queue_age_min=138.3	OK
+2026-08-13T21:44:25Z	games=6/5	consec_idle=0	queue_age_min=143.3	OK
+2026-08-13T21:49:25Z	games=6/5	consec_idle=0	queue_age_min=148.3	OK
+2026-08-13T21:54:25Z	games=6/5	consec_idle=0	queue_age_min=153.3	OK
+2026-08-13T21:59:25Z	games=6/5	consec_idle=0	queue_age_min=158.3	OK
+2026-08-13T22:04:25Z	games=6/5	consec_idle=0	queue_age_min=163.3	OK
+2026-08-13T22:09:25Z	games=6/5	consec_idle=0	queue_age_min=168.3	OK
+2026-08-13T22:14:25Z	games=6/5	consec_idle=0	queue_age_min=173.3	OK
+2026-08-13T22:19:25Z	games=6/5	consec_idle=0	queue_age_min=178.3	OK
+2026-08-13T22:24:25Z	games=6/5	consec_idle=0	queue_age_min=183.3	OK
+2026-08-13T22:29:26Z	games=6/5	consec_idle=0	queue_age_min=188.3	OK
+2026-08-13T22:34:26Z	games=6/5	consec_idle=0	queue_age_min=193.3	OK
+2026-08-13T22:39:26Z	games=6/5	consec_idle=0	queue_age_min=198.3	OK
+2026-08-13T22:44:26Z	games=6/5	consec_idle=0	queue_age_min=203.3	OK
+2026-08-13T22:49:26Z	games=6/5	consec_idle=0	queue_age_min=208.3	OK
+2026-08-13T22:54:26Z	games=6/5	consec_idle=0	queue_age_min=213.3	OK
+2026-08-13T22:59:26Z	games=6/5	consec_idle=0	queue_age_min=218.3	OK
+2026-08-13T23:04:26Z	games=4/5	consec_idle=1	queue_age_min=223.3	OK
+2026-08-13T23:09:26Z	games=4/5	consec_idle=2	queue_age_min=228.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:14:27Z	games=4/5	consec_idle=3	queue_age_min=233.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:19:27Z	games=4/5	consec_idle=4	queue_age_min=238.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:24:27Z	games=4/5	consec_idle=5	queue_age_min=243.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:29:27Z	games=4/5	consec_idle=6	queue_age_min=248.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:34:27Z	games=4/5	consec_idle=7	queue_age_min=253.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:39:27Z	games=4/5	consec_idle=8	queue_age_min=258.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:44:27Z	games=4/5	consec_idle=9	queue_age_min=263.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:49:27Z	games=4/5	consec_idle=10	queue_age_min=268.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:54:27Z	games=4/5	consec_idle=11	queue_age_min=273.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-13T23:59:27Z	games=4/5	consec_idle=12	queue_age_min=278.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:04:28Z	games=4/5	consec_idle=13	queue_age_min=283.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:09:28Z	games=4/5	consec_idle=14	queue_age_min=288.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:14:28Z	games=4/5	consec_idle=15	queue_age_min=293.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:19:28Z	games=4/5	consec_idle=16	queue_age_min=298.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:24:28Z	games=4/5	consec_idle=17	queue_age_min=303.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:29:28Z	games=4/5	consec_idle=18	queue_age_min=308.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:34:28Z	games=4/5	consec_idle=19	queue_age_min=313.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:39:28Z	games=4/5	consec_idle=20	queue_age_min=318.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:44:28Z	games=4/5	consec_idle=21	queue_age_min=323.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:49:29Z	games=4/5	consec_idle=22	queue_age_min=328.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:54:29Z	games=4/5	consec_idle=23	queue_age_min=333.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T00:59:29Z	games=2/5	consec_idle=24	queue_age_min=338.4	*** CORES UNDER-USED (2 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:04:29Z	games=4/5	consec_idle=25	queue_age_min=343.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:09:29Z	games=4/5	consec_idle=26	queue_age_min=348.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:14:29Z	games=4/5	consec_idle=27	queue_age_min=353.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:19:29Z	games=4/5	consec_idle=28	queue_age_min=358.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:24:29Z	games=2/5	consec_idle=29	queue_age_min=363.4	*** CORES UNDER-USED (2 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:29:29Z	games=2/5	consec_idle=30	queue_age_min=368.4	*** CORES UNDER-USED (2 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:34:30Z	games=2/5	consec_idle=31	queue_age_min=373.4	*** CORES UNDER-USED (2 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T01:39:30Z	games=6/5	consec_idle=0	queue_age_min=378.4	OK
+2026-08-14T01:44:30Z	games=6/5	consec_idle=0	queue_age_min=383.4	OK
+2026-08-14T01:49:30Z	games=6/5	consec_idle=0	queue_age_min=388.4	OK
+2026-08-14T01:54:30Z	games=6/5	consec_idle=0	queue_age_min=393.4	OK
+2026-08-14T01:59:30Z	games=6/5	consec_idle=0	queue_age_min=398.4	OK
+2026-08-14T02:04:30Z	games=6/5	consec_idle=0	queue_age_min=403.4	OK
+2026-08-14T02:09:30Z	games=6/5	consec_idle=0	queue_age_min=408.4	OK
+2026-08-14T02:14:30Z	games=6/5	consec_idle=0	queue_age_min=413.4	OK
+2026-08-14T02:19:30Z	games=6/5	consec_idle=0	queue_age_min=418.4	OK
+2026-08-14T02:24:31Z	games=6/5	consec_idle=0	queue_age_min=423.4	OK
+2026-08-14T02:29:31Z	games=6/5	consec_idle=0	queue_age_min=428.4	OK
+2026-08-14T02:34:31Z	games=4/5	consec_idle=1	queue_age_min=433.4	OK
+2026-08-14T02:39:31Z	games=4/5	consec_idle=2	queue_age_min=438.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T02:44:31Z	games=4/5	consec_idle=3	queue_age_min=443.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T02:49:31Z	games=4/5	consec_idle=4	queue_age_min=448.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T02:54:31Z	games=4/5	consec_idle=5	queue_age_min=453.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T02:59:31Z	games=4/5	consec_idle=6	queue_age_min=458.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:04:31Z	games=4/5	consec_idle=7	queue_age_min=463.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:09:32Z	games=4/5	consec_idle=8	queue_age_min=468.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:14:32Z	games=4/5	consec_idle=9	queue_age_min=473.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:19:32Z	games=4/5	consec_idle=10	queue_age_min=478.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:24:32Z	games=4/5	consec_idle=11	queue_age_min=483.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:29:32Z	games=4/5	consec_idle=12	queue_age_min=488.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:34:32Z	games=4/5	consec_idle=13	queue_age_min=493.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:39:32Z	games=4/5	consec_idle=14	queue_age_min=498.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:44:32Z	games=4/5	consec_idle=15	queue_age_min=503.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:49:32Z	games=4/5	consec_idle=16	queue_age_min=508.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:54:32Z	games=4/5	consec_idle=17	queue_age_min=513.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T03:59:33Z	games=4/5	consec_idle=18	queue_age_min=518.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T04:04:33Z	games=4/5	consec_idle=19	queue_age_min=523.4	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T04:09:33Z	games=6/5	consec_idle=0	queue_age_min=528.4	OK
+2026-08-14T04:14:33Z	games=6/5	consec_idle=0	queue_age_min=533.4	OK
+2026-08-14T04:19:33Z	games=6/5	consec_idle=0	queue_age_min=2.7	OK
+2026-08-14T04:24:33Z	games=6/5	consec_idle=0	queue_age_min=7.7	OK
+2026-08-14T04:29:33Z	games=6/5	consec_idle=0	queue_age_min=12.7	OK
+2026-08-14T04:34:33Z	games=6/5	consec_idle=0	queue_age_min=17.7	OK
+2026-08-14T04:39:33Z	games=6/5	consec_idle=0	queue_age_min=22.7	OK
+2026-08-14T04:44:34Z	games=6/5	consec_idle=0	queue_age_min=27.7	OK
+2026-08-14T04:49:34Z	games=6/5	consec_idle=0	queue_age_min=32.7	OK
+2026-08-14T04:54:34Z	games=6/5	consec_idle=0	queue_age_min=37.7	OK
+2026-08-14T04:59:34Z	games=6/5	consec_idle=0	queue_age_min=42.7	OK
+2026-08-14T05:04:34Z	games=6/5	consec_idle=0	queue_age_min=47.7	OK
+2026-08-14T05:09:34Z	games=6/5	consec_idle=0	queue_age_min=52.7	OK
+2026-08-14T05:14:34Z	games=6/5	consec_idle=0	queue_age_min=57.7	OK
+2026-08-14T05:19:34Z	games=6/5	consec_idle=0	queue_age_min=62.7	OK
+2026-08-14T05:24:34Z	games=8/5	consec_idle=0	queue_age_min=67.7	OK
+2026-08-14T05:29:35Z	games=8/5	consec_idle=0	queue_age_min=72.7	OK
+2026-08-14T05:34:35Z	games=8/5	consec_idle=0	queue_age_min=77.7	OK
+2026-08-14T05:39:35Z	games=8/5	consec_idle=0	queue_age_min=82.8	OK
+2026-08-14T05:44:35Z	games=8/5	consec_idle=0	queue_age_min=87.8	OK
+2026-08-14T05:49:35Z	games=8/5	consec_idle=0	queue_age_min=92.8	OK
+2026-08-14T05:54:35Z	games=9/5	consec_idle=0	queue_age_min=97.8	OK
+2026-08-14T05:59:35Z	games=11/5	consec_idle=0	queue_age_min=102.8	OK
+2026-08-14T06:04:35Z	games=8/5	consec_idle=0	queue_age_min=107.8	OK
+2026-08-14T06:09:35Z	games=8/5	consec_idle=0	queue_age_min=112.8	OK
+2026-08-14T06:14:36Z	games=8/5	consec_idle=0	queue_age_min=4.5	OK
+2026-08-14T06:19:36Z	games=8/5	consec_idle=0	queue_age_min=9.5	OK
+2026-08-14T06:24:36Z	games=8/5	consec_idle=0	queue_age_min=14.5	OK
+2026-08-14T06:29:36Z	games=7/5	consec_idle=0	queue_age_min=19.5	OK
+2026-08-14T06:34:36Z	games=8/5	consec_idle=0	queue_age_min=24.5	OK
+2026-08-14T06:39:36Z	games=8/5	consec_idle=0	queue_age_min=29.5	OK
+2026-08-14T06:44:36Z	games=8/5	consec_idle=0	queue_age_min=34.5	OK
+2026-08-14T06:49:36Z	games=8/5	consec_idle=0	queue_age_min=39.5	OK
+2026-08-14T06:54:36Z	games=8/5	consec_idle=0	queue_age_min=44.5	OK
+2026-08-14T06:59:36Z	games=8/5	consec_idle=0	queue_age_min=49.5	OK
+2026-08-14T07:04:37Z	games=8/5	consec_idle=0	queue_age_min=54.5	OK
+2026-08-14T07:09:37Z	games=6/5	consec_idle=0	queue_age_min=59.5	OK
+2026-08-14T07:14:37Z	games=6/5	consec_idle=0	queue_age_min=64.5	OK
+2026-08-14T07:19:37Z	games=6/5	consec_idle=0	queue_age_min=0.1	OK
+2026-08-14T07:24:37Z	games=8/5	consec_idle=0	queue_age_min=5.1	OK
+2026-08-14T07:29:37Z	games=8/5	consec_idle=0	queue_age_min=4.0	OK
+2026-08-14T07:34:37Z	games=8/5	consec_idle=0	queue_age_min=9.0	OK
+2026-08-14T07:39:37Z	games=12/5	consec_idle=0	queue_age_min=14.0	OK
+2026-08-14T07:44:37Z	games=12/5	consec_idle=0	queue_age_min=19.0	OK
+2026-08-14T07:49:38Z	games=10/5	consec_idle=0	queue_age_min=24.0	OK
+2026-08-14T07:54:38Z	games=10/5	consec_idle=0	queue_age_min=29.0	OK
+2026-08-14T07:59:38Z	games=10/5	consec_idle=0	queue_age_min=0.9	OK
+2026-08-14T08:04:38Z	games=10/5	consec_idle=0	queue_age_min=5.9	OK
+2026-08-14T08:09:38Z	games=8/5	consec_idle=0	queue_age_min=10.9	OK
+2026-08-14T08:14:38Z	games=8/5	consec_idle=0	queue_age_min=3.5	OK
+2026-08-14T08:19:38Z	games=10/5	consec_idle=0	queue_age_min=2.9	OK
+2026-08-14T08:24:38Z	games=10/5	consec_idle=0	queue_age_min=7.9	OK
+2026-08-14T08:29:38Z	games=12/5	consec_idle=0	queue_age_min=12.9	OK
+2026-08-14T08:34:39Z	games=16/5	consec_idle=0	queue_age_min=17.9	OK
+2026-08-14T08:39:39Z	games=16/5	consec_idle=0	queue_age_min=22.9	OK
+2026-08-14T08:44:39Z	games=14/5	consec_idle=0	queue_age_min=27.9	OK
+2026-08-14T08:49:39Z	games=14/5	consec_idle=0	queue_age_min=32.9	OK
+2026-08-14T08:54:39Z	games=14/5	consec_idle=0	queue_age_min=37.9	OK
+2026-08-14T08:59:39Z	games=14/5	consec_idle=0	queue_age_min=42.9	OK
+2026-08-14T09:04:39Z	games=14/5	consec_idle=0	queue_age_min=47.9	OK
+2026-08-14T09:09:40Z	games=14/5	consec_idle=0	queue_age_min=52.9	OK
+2026-08-14T09:14:40Z	games=14/5	consec_idle=0	queue_age_min=57.9	OK
+2026-08-14T09:19:40Z	games=14/5	consec_idle=0	queue_age_min=62.9	OK
+2026-08-14T09:24:40Z	games=14/5	consec_idle=0	queue_age_min=67.9	OK
+2026-08-14T09:29:40Z	games=14/5	consec_idle=0	queue_age_min=1.3	OK
+2026-08-14T09:34:44Z	games=18/5	consec_idle=0	queue_age_min=2.3	OK
+2026-08-14T09:39:46Z	games=18/5	consec_idle=0	queue_age_min=7.3	OK
+2026-08-14T09:44:52Z	games=15/5	consec_idle=0	queue_age_min=12.4	OK
+2026-08-14T09:49:55Z	games=14/5	consec_idle=0	queue_age_min=17.5	OK
+2026-08-14T09:54:56Z	games=16/5	consec_idle=0	queue_age_min=22.5	OK
+2026-08-14T09:59:56Z	games=14/5	consec_idle=0	queue_age_min=27.5	OK
+2026-08-14T10:04:57Z	games=12/5	consec_idle=0	queue_age_min=32.5	OK
+2026-08-14T10:09:58Z	games=15/5	consec_idle=0	queue_age_min=37.5	OK
+2026-08-14T10:14:58Z	games=16/5	consec_idle=0	queue_age_min=42.5	OK
+2026-08-14T10:19:59Z	games=16/5	consec_idle=0	queue_age_min=47.5	OK
+2026-08-14T10:24:59Z	games=16/5	consec_idle=0	queue_age_min=52.5	OK
+2026-08-14T10:29:59Z	games=16/5	consec_idle=0	queue_age_min=57.6	OK
+2026-08-14T10:35:00Z	games=14/5	consec_idle=0	queue_age_min=62.6	OK
+2026-08-14T10:40:00Z	games=14/5	consec_idle=0	queue_age_min=67.6	OK
+2026-08-14T10:45:00Z	games=12/5	consec_idle=0	queue_age_min=72.6	OK
+2026-08-14T10:50:00Z	games=12/5	consec_idle=0	queue_age_min=77.6	OK
+2026-08-14T10:55:00Z	games=10/5	consec_idle=0	queue_age_min=82.6	OK
+2026-08-14T11:00:01Z	games=12/5	consec_idle=0	queue_age_min=87.6	OK
+2026-08-14T11:05:01Z	games=12/5	consec_idle=0	queue_age_min=92.6	OK
+2026-08-14T11:10:01Z	games=16/5	consec_idle=0	queue_age_min=97.6	OK
+2026-08-14T11:15:01Z	games=12/5	consec_idle=0	queue_age_min=102.6	OK
+2026-08-14T11:20:01Z	games=12/5	consec_idle=0	queue_age_min=107.6	OK
+2026-08-14T11:25:01Z	games=12/5	consec_idle=0	queue_age_min=112.6	OK
+2026-08-14T11:30:01Z	games=12/5	consec_idle=0	queue_age_min=117.6	OK
+2026-08-14T11:35:01Z	games=12/5	consec_idle=0	queue_age_min=122.6	OK
+2026-08-14T11:40:02Z	games=12/5	consec_idle=0	queue_age_min=127.6	OK
+2026-08-14T11:45:02Z	games=12/5	consec_idle=0	queue_age_min=132.6	OK
+2026-08-14T11:50:02Z	games=10/5	consec_idle=0	queue_age_min=137.6	OK
+2026-08-14T11:55:02Z	games=12/5	consec_idle=0	queue_age_min=142.6	OK
+2026-08-14T12:00:02Z	games=12/5	consec_idle=0	queue_age_min=147.6	OK
+2026-08-14T12:05:02Z	games=14/5	consec_idle=0	queue_age_min=0.8	OK
+2026-08-14T12:10:02Z	games=16/5	consec_idle=0	queue_age_min=4.3	OK
+2026-08-14T12:15:03Z	games=17/5	consec_idle=0	queue_age_min=9.4	OK
+2026-08-14T12:20:03Z	games=16/5	consec_idle=0	queue_age_min=14.4	OK
+2026-08-14T12:25:03Z	games=16/5	consec_idle=0	queue_age_min=19.4	OK
+2026-08-14T12:30:03Z	games=16/5	consec_idle=0	queue_age_min=24.4	OK
+2026-08-14T12:35:03Z	games=16/5	consec_idle=0	queue_age_min=29.4	OK
+2026-08-14T12:40:03Z	games=16/5	consec_idle=0	queue_age_min=34.4	OK
+2026-08-14T12:45:04Z	games=14/5	consec_idle=0	queue_age_min=1.9	OK
+2026-08-14T12:50:04Z	games=14/5	consec_idle=0	queue_age_min=6.9	OK
+2026-08-14T12:55:04Z	games=13/5	consec_idle=0	queue_age_min=11.9	OK
+2026-08-14T13:00:04Z	games=14/5	consec_idle=0	queue_age_min=16.9	OK
+2026-08-14T13:05:04Z	games=14/5	consec_idle=0	queue_age_min=21.9	OK
+2026-08-14T13:10:04Z	games=14/5	consec_idle=0	queue_age_min=0.6	OK
+2026-08-14T13:15:05Z	games=12/5	consec_idle=0	queue_age_min=5.6	OK
+2026-08-14T13:20:05Z	games=14/5	consec_idle=0	queue_age_min=0.4	OK
+2026-08-14T13:25:05Z	games=14/5	consec_idle=0	queue_age_min=5.4	OK
+2026-08-14T13:30:05Z	games=16/5	consec_idle=0	queue_age_min=10.4	OK
+2026-08-14T13:35:05Z	games=14/5	consec_idle=0	queue_age_min=1.4	OK
+2026-08-14T13:40:05Z	games=16/5	consec_idle=0	queue_age_min=6.4	OK
+2026-08-14T13:45:05Z	games=16/5	consec_idle=0	queue_age_min=11.4	OK
+2026-08-14T13:50:06Z	games=16/5	consec_idle=0	queue_age_min=0.1	OK
+2026-08-14T13:55:06Z	games=16/5	consec_idle=0	queue_age_min=1.8	OK
+2026-08-14T14:00:06Z	games=16/5	consec_idle=0	queue_age_min=6.8	OK
+2026-08-14T14:05:06Z	games=16/5	consec_idle=0	queue_age_min=3.4	OK
+2026-08-14T14:10:06Z	games=16/5	consec_idle=0	queue_age_min=8.4	OK
+2026-08-14T14:15:07Z	games=16/5	consec_idle=0	queue_age_min=3.4	OK
+2026-08-14T14:20:07Z	games=14/5	consec_idle=0	queue_age_min=8.4	OK
+2026-08-14T14:25:07Z	games=14/5	consec_idle=0	queue_age_min=4.7	OK
+2026-08-14T14:30:07Z	games=15/5	consec_idle=0	queue_age_min=9.7	OK
+2026-08-14T14:35:07Z	games=14/5	consec_idle=0	queue_age_min=2.1	OK
+2026-08-14T14:40:07Z	games=16/5	consec_idle=0	queue_age_min=7.1	OK
+2026-08-14T14:45:07Z	games=12/5	consec_idle=0	queue_age_min=12.1	OK
+2026-08-14T14:50:08Z	games=12/5	consec_idle=0	queue_age_min=17.1	OK
+2026-08-14T14:55:08Z	games=12/5	consec_idle=0	queue_age_min=1.3	OK
+2026-08-14T15:00:08Z	games=14/5	consec_idle=0	queue_age_min=6.3	OK
+2026-08-14T15:05:08Z	games=12/5	consec_idle=0	queue_age_min=11.3	OK
+2026-08-14T15:10:08Z	games=12/5	consec_idle=0	queue_age_min=16.3	OK
+2026-08-14T15:15:08Z	games=12/5	consec_idle=0	queue_age_min=21.3	OK
+2026-08-14T15:20:08Z	games=12/5	consec_idle=0	queue_age_min=26.3	OK
+2026-08-14T15:25:08Z	games=12/5	consec_idle=0	queue_age_min=31.4	OK
+2026-08-14T15:30:09Z	games=12/5	consec_idle=0	queue_age_min=36.4	OK
+2026-08-14T15:35:09Z	games=10/5	consec_idle=0	queue_age_min=0.5	OK
+2026-08-14T15:40:09Z	games=12/5	consec_idle=0	queue_age_min=5.5	OK
+2026-08-14T15:45:09Z	games=12/5	consec_idle=0	queue_age_min=10.5	OK
+2026-08-14T15:50:09Z	games=12/5	consec_idle=0	queue_age_min=15.5	OK
+2026-08-14T15:55:09Z	games=10/5	consec_idle=0	queue_age_min=20.5	OK
+2026-08-14T16:00:09Z	games=8/5	consec_idle=0	queue_age_min=25.5	OK
+2026-08-14T16:05:10Z	games=6/5	consec_idle=0	queue_age_min=2.4	OK
+2026-08-14T16:10:10Z	games=6/5	consec_idle=0	queue_age_min=3.6	OK
+2026-08-14T16:15:10Z	games=6/5	consec_idle=0	queue_age_min=8.6	OK
+2026-08-14T16:20:10Z	games=6/5	consec_idle=0	queue_age_min=13.6	OK
+2026-08-14T16:25:10Z	games=6/5	consec_idle=0	queue_age_min=18.6	OK
+2026-08-14T16:30:10Z	games=8/5	consec_idle=0	queue_age_min=0.1	OK
+2026-08-14T16:35:10Z	games=6/5	consec_idle=0	queue_age_min=5.1	OK
+2026-08-14T16:40:10Z	games=6/5	consec_idle=0	queue_age_min=10.1	OK
+2026-08-14T16:45:10Z	games=8/5	consec_idle=0	queue_age_min=15.1	OK
+2026-08-14T16:50:10Z	games=8/5	consec_idle=0	queue_age_min=20.1	OK
+2026-08-14T16:55:11Z	games=6/5	consec_idle=0	queue_age_min=25.1	OK
+2026-08-14T17:00:11Z	games=6/5	consec_idle=0	queue_age_min=30.1	OK
+2026-08-14T17:05:11Z	games=6/5	consec_idle=0	queue_age_min=35.1	OK
+2026-08-14T17:10:11Z	games=6/5	consec_idle=0	queue_age_min=40.1	OK
+2026-08-14T17:15:11Z	games=6/5	consec_idle=0	queue_age_min=45.1	OK
+2026-08-14T17:20:11Z	games=6/5	consec_idle=0	queue_age_min=50.1	OK
+2026-08-14T17:25:11Z	games=6/5	consec_idle=0	queue_age_min=2.5	OK
+2026-08-14T17:30:11Z	games=6/5	consec_idle=0	queue_age_min=7.5	OK
+2026-08-14T17:35:11Z	games=6/5	consec_idle=0	queue_age_min=12.5	OK
+2026-08-14T17:40:12Z	games=6/5	consec_idle=0	queue_age_min=17.5	OK
+2026-08-14T17:45:12Z	games=6/5	consec_idle=0	queue_age_min=22.5	OK
+2026-08-14T17:50:12Z	games=6/5	consec_idle=0	queue_age_min=27.5	OK
+2026-08-14T17:55:12Z	games=4/5	consec_idle=1	queue_age_min=4.3	OK
+2026-08-14T18:00:12Z	games=4/5	consec_idle=2	queue_age_min=9.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T18:05:12Z	games=4/5	consec_idle=3	queue_age_min=14.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
+2026-08-14T18:10:12Z	games=4/5	consec_idle=4	queue_age_min=19.3	*** CORES UNDER-USED (4 of 5) — NEXT QUEUE ITEM: #36 THE 900-AREA ECO-AS-KILL-ENABLER —  RE-SCOPED s36 ~11:3xZ  ***
