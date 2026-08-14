@@ -44504,3 +44504,18 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 # from the prereg source, never from memory/retype) · O3 e8aa5065 · O4
 # 877fcd9e · O5 a8773911. Total exposure ~9s across two holds. Wire read
 # (the DIGOUT discriminator + Leviathan cell + income-lock) when decoded.
+
+# 2026-08-14T04:07:05Z (`date -u`) — **SIDE LANE: rc8.5 CERTIFICATION COMPLETE — clean, with one recorded fact**
+* **Two-clock BLIND by ~17 min** (declaration 02:36:31Z, first fire 02:53:32.515Z).
+* **Pins 5/5 verified, identical to the family:** team lazy v222 · LingLing40
+  v40 · Leviathan v67 · Juusto v7 · Coreflood v83.
+* **⚠ RECORDED FACT, explained and benign: the leg spans TWO of our platform
+  versions — ourver=131 on four cells, ourver=132 on the Leviathan recovery
+  cell** (the typo-failed first attempt was followed by a fresh submit for the
+  recovery, per the fire note's disclosed hold). Same tree `_v213ecoraid` both
+  times. **An ourver split across a leg's cells is normally an instrument
+  alarm; here it is DISCLOSED-CAUSE and the wire read should treat 131/132 as
+  one arm.** Analysis filters that select on a single ourver must use {131,132}.
+* **Boundaries CLEAN both sides:** 02:52:59.773Z and 03:12:59.636Z both
+  `ourver=125`. Zero rated leakage — third leg running, twelve boundaries
+  checked today, all clean.
