@@ -51361,3 +51361,67 @@ BOOT: reboot real (kern.boottime 18:56:33Z). Re-armed: keeper (pid 19708) + elo/
 Also on the record: v144 "Loki rc9.1" uploaded 17:04:18Z by MOONFARM (Magnus's account, his own upload — s40's "no submit" claim stands for the lane; not active, no action).
 NEW HARDWARE: Magnus provided worker@worker-server-2 — provisioning as second fleet box via tools/vps/orchestrate.sh (subagent).
 IN-FLIGHT (rule 1): (a) sonnet agent — stage v145 artifact -> bots/_x3r0v145 (download/unzip/compile-check, _x3r0v143 pattern); (b) sonnet agent — worker-server-2 setup+selftest via orchestrate.sh; (c) fresh opus agent — draft SCREEN-v140vs145 prereg (inputs: docs/prereg/SCREEN-v140vs143-2026-08-14.md as template, PROGRAMME X3R0_SLOT_RULE block, staged-artifact README). Builder ratifies+locks the prereg, fires the screen, types the verdict.
+
+--- 2026-08-14T19:2xZ SIDE LANE (s41) — ⛔ SHIP-CHAIN FLAG (X3R0_SLOT_RULE ordering) + CERT DELIVERED ---
+Committed because a session message dies with its session and this one bears on a live slot.
+
+FLAG, raised to the builder at ~19:21Z, PREVENTIVE (nothing has launched yet), both branches
+stated, one discriminating question attached, NOT a verdict.
+ANCHOR: PROGRAMME.md X3R0_SLOT_RULE — "(2) commit a SCREEN prereg pre-row, (3) execute the branch
+the number picks. No counter-roll without the number; the screen IS the resolution mechanism."
+Precedent v142: screen returned 56.80 THEN reactivated 15:18:51Z.
+OBSERVED, live primaries only, nothing relayed:
+  * fcode status active_submission = v140 (read on the load-bearing field, twice, never on $?);
+    fcode submission list: v145 "Top Team Router v3" isActive=False.
+  * elo poll rows (local clock, no Z): 21:08 v140 · 21:13 v145 · 21:18 v140 — v145 held one poll.
+  * RATED COST OF THAT WINDOW, MEASURED: matches 984->985, rating 1794->1784 = −10.0 Elo.
+    The pairing is 19:12:59.597Z, WE WERE SEAT B, ourver=145, opp Erebus v103.
+  * docs/prereg/SCREEN-v140vs145-2026-08-14.md exists, mtime 19:19:05Z, UNTRACKED (`??`).
+  * No screen running: zero corefill/arena/fcode-run processes, no new scratchpad/arena_rows.
+⇒ v140 is back on the slot and the screen has produced NO number.
+BRANCHES I cannot separate from any surface I can read: (a) builder reactivated at ~19:14-19:18Z
+for bleed control — step (3) executed without its input; (b) x3r0 deactivated v145 himself — no
+drift by us, but the screen then measures a bot that is not on the slot.
+DISCRIMINATOR handed over: was an activation run between 19:13Z and 19:18Z? Nothing else reaches it.
+THE SUBSTANTIVE POINT, not the bookkeeping one: reactivating BEFORE the number converts the screen
+from a DECISION into a POST-HOC JUSTIFICATION — with v140 live, a <51.0 screen obliges handing the
+slot BACK to v145 and nobody executes that branch once they hold it. Same shape as
+`inside-band => NO SHIP` being unbiased per decision and biased in aggregate (drift-watch, s34):
+every call looks reasoned, the aggregate has a standing preference for the incumbent. THE ORDERING
+IS THE ONLY THING HOLDING THAT SHUT. Cheapest repair if (a): pre-commit the uncomfortable branch
+INTO the prereg before it is committed and before any shard launches.
+D5 STILL SATISFIABLE and said so: the prereg is untracked and nothing has launched.
+PAIRING CADENCE RE-DERIVED THIS SESSION (never the hardcoded offset — CLAUDE.md says the offset has
+shifted at least once): six consecutive 20.0-min gaps at second :59, 17:12:59 through 19:12:59
+off `fcode match list --mine --type ladder`. Next pairing ~19:32:59Z.
+
+⚠ MY OWN FRAME ERROR, caught before it reached anyone. My first read of that pairing table printed
+`teamAVersion` under the label "ourver" WITHOUT resolving the seat, and it was BACKWARDS on the row
+that matters (19:12:59 is seat B: ours=145, theirs=103, not the reverse). Caught by resolving
+teamAId/teamBId against our own team id before publishing. This is v1.8's FRAME RULE — a wire field
+is in the platform's frame, not ours — committed by the lane that recorded it, i.e. the
+promoter's-first-use pattern (v1.9) firing again. It did not leave this lane.
+
+DELIVERED THIS SESSION: the s40 inherited obligation `prereg_check.py` FORCED-FAIL CERTIFICATION is
+RUN and committed (c889633, docs/research/CERT-prereg-check-forced-fail-2026-08-14.md).
+  * CERTIFIED: 31/31 checks driven to their FAILING verdict on CORRUPTED REAL prereg text (carrier
+    PREREG-SPAWNPOCKET, 129 real lines + the 20-line registration block), 38 corruptions each aimed
+    at a DIFFERENT check, collateral recorded per cell (34/38 zero; the 4 are legitimate coupling),
+    production run_checks() called — no second copy of the computation.
+  * TWO HOLES a forced-fail pass CANNOT see, because deletion only proves a check detects ABSENCE:
+    (1) VALUE BLEED — `\s*:\s*([^\n]*)` lets `\s*` cross the newline, so a declaration with nothing
+        after its colon captures THE NEXT LINE. `**KEY:**` does not bleed; plain `KEY:`, `KEY: `,
+        unclosed `**KEY: `, and even `KEY:` + blank line all do. An empty `SURFACE:` above a
+        CLUSTER UNIT line containing "local" PASSES the SURFACE malformed-value guard.
+    (2) AN EMPTY DECLARATION IS NOT ABSENT — 13 of 19 declarations accept an empty value and the
+        document still reads PREREG_CHECK: OK. The six that hold are held by ARITHMETIC (4) or an
+        extra predicate (2): PRESENCE ALONE NEVER CATCHES AN EMPTY FIELD.
+  * FIX proposed, run BOTH ways, and COSTED: newline-anchored group + empty-is-absent; healthy
+    carrier still passes, `**SURFACE:**` now fails naming itself, all 7 emptied declarations fail.
+    ⚠ ITS PRICE, named not hidden: CAL-4's list-style `**Cells:**` heading stops ACTIVATING
+    Obligation 14, so that panel escapes the churn rule. Builder's tool, builder's call.
+  * RETRACTED PRE-PUBLICATION: my third "hole" (BAR 0.52 vs BASE RATE 50.0 as a units mismatch) is
+    NOT one — first_number returns 52.0 and the tool is correct. KIND: judgement · STATE: auditing ·
+    WHOSE HYPOTHESIS: mine, which is what v1.3.2 pre-registered auditing to do. Killed by going to
+    derive it (Q4's measured mechanism), not by diligence.
+  * WIRING VERDICT REMAINS THE BUILDER'S. This certifies teeth, not readiness.
