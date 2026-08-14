@@ -50935,3 +50935,61 @@ CONSUMED (second side-lane flag): the #52 heal exchange is 4:1, NOT 8:1 — the 
 
 --- 2026-08-14T18:42:05Z BUILDER (s40) — prereg_check scope: DOSE token added (Magnus) ---
 Magnus asked whether the dose-probe step LOOPS a non-firing arm back for hardening until it fires. Answer typed to him: yes by practice (RETIRE60/EVICT58 hardened post-probe; SPAWNPOCKET's probe took the OTHER legitimate exit — premise refuted, no screen), but enforcement is prose. Mechanised now: prereg_check gains a required DOSE: token — a screen/live prereg must cite its probe with BOTH verdicts (treatment dose vs flag-off at control), two differing numeric values or FAIL. Sufficiency stays a judgment line; the probe's two exits (fires→screen, premise-refuted→no screen) are in the spec.
+
+# --- 2026-08-14T18:42:44Z — ⭐ **RESEARCH s41: CAL-8 REFERENCE FIXED AND AN ANALYTIC DEGREE OF
+# FREEDOM CLOSED — TYPED BLIND, BEFORE THE READ.** (CAL-8 at 12 accepts.) ---
+
+**I HAVE STILL OPENED NO TALLY.** What follows is the REFERENCE side only —
+v125's rated cells — computed from `corpus/ladder_games.tsv`. It contains no
+CAL-8 outcome. **It is typed now precisely so it cannot be chosen after the
+panel is visible.**
+
+## THE v125 RATED REFERENCE, per CAL-8 cell (rated ladder only)
+| cell | games | wins | share | matches |
+|---|---|---|---|---|
+| 0033 | 20 | 6 | **30.0%** | 4 |
+| LingLing40 | 25 | 13 | **52.0%** | 5 |
+| Juusto | 40 | 21 | **52.5%** | 8 |
+| Jython | 20 | 12 | **60.0%** | 4 |
+| Big O | 20 | 14 | **70.0%** | 4 |
+| team lazy | 30 | 22 | **73.3%** | 6 |
+| **POOLED** | **155** | **88** | **56.8%** | 31 |
+
+**POSITIVE CONTROL ON MY OWN INSTRUMENT, and it is why I ran this first:** the
+prereg independently states the reference as **56.8%, n=155** and states a
+**±9.1pp** resolution floor. My cut reproduces **56.8% at n=155**, and the
+DEFF-corrected half-width on it — `1.96*sqrt(p(1-p)*1.366/155)` — is **±9.1pp**.
+**Two numbers written by someone else, both reproduced to the digit.** An
+instrument that had silently selected a different population would not have hit
+both.
+
+## ⛔ THE DEGREE OF FREEDOM, AND IT IS NOT COSMETIC — IT COULD FLIP P4 CELLS
+P4 asks whether each panel cell sits **below that cell's v125 rated reference by
+≥10pp**. **The prereg contains TWO candidate reference tables and they disagree
+by up to 12pp:**
+* the **v125-only** cut above, and
+* the **cell-selection table** in `tools/panel_cal8.sh`/the CAL-7 prereg, which
+  labels each cell with an **ERA-RATED (`ourver >= 125`)** share: 0033 23.3% ·
+  LingLing40 **40.0%** · Juusto 52.5% · Jython 56.7% · Big O 60.0% · team lazy
+  74.3%.
+
+**LingLing40 differs by 12.0pp between the two definitions (52.0 vs 40.0), Big O
+by 10.0pp, 0033 by 6.7pp.** Since P4's test is a **≥10pp** threshold, **the
+choice of reference table can by itself move cells across the bar.** Choosing it
+after seeing the panel would be a researcher degree of freedom of exactly the
+size of the effect being tested.
+
+**RESOLVED BLIND, ON THE PREREG'S OWN TEXT — THE v125-ONLY TABLE IS THE
+REFERENCE.** The prereg's P1 names *"v125's six-cell rated reference, **n=155**"*,
+and **only the v125-only cut has n=155** (the era-rated cut pools `ourver>=125`
+and is larger). **The n pins the population.** The era-rated percentages are the
+**cell-SELECTION criteria** — how the six opponents were chosen for current-era
+overlap — and were never the comparison baseline.
+⇒ **P4 is scored against the table above. This is fixed as of this line and will
+not be revisited after the panel is read.**
+
+⚠ **AND THE PER-CELL n's ARE THIN ON THE REFERENCE SIDE TOO** — 20, 25, 40, 20,
+20, 30. A ±10pp threshold against a 20-game reference is not a precise
+instrument; **P4 resolves as a SIGN test across six cells and nothing more, which
+is what the prereg already says (its honest pre-filter alpha is 0.109, not
+0.05).** Recorded so the read cannot quietly upgrade itself.
