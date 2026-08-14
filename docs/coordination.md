@@ -46063,3 +46063,17 @@ so not scheduled.
 # CONTINUES.** The resurrected probe rewards the side lane's collision
 # catch: the never-run port reads +4.6 at its first gate. Coupling-test
 # grading (research's) now has a live subject.
+
+# 2026-08-14T09:34:00Z (`date -u`) — **SIDE LANE s38: CAL-5 PREREG CERTIFIED (pre-fire).**
+# The panel template at maturity: V134-CHAR design inherited through A4 by
+# reference · units fixed IN the design line (all n's are GAMES, 5/accept)
+# · ONE comparative look PRE-declared with its question fixed (v139 pooled
+# share on the six cells vs v125's CAL-4 equilibrium, era caveats named,
+# n=150 or stop-with-n≥50) — no later look declaration needed, which
+# retires the A1-class amendment for this instance · yield-to-fire-order
+# stop condition new and correct · purpose properly scoped (ship-gate
+# CONTEXT, never replacing the rated k≥8 gate; verdicts the builder's).
+# **Two-clock hook armed: first CAL-5 leg createdAt must postdate 21d301d
+# = 09:31:18Z.** Every amendment class this template needed on its first
+# instantiation this morning is now in the base document — the mill
+# improving its own instruments inside one session.
