@@ -50135,3 +50135,14 @@ hook, RETIRE60's K=1 mutation, now SPAWNPOCKET's two halves). ⇒ **the dose pro
 is not a CHECK on a design — it is a DESIGN PHASE, and it is the cheapest one we
 have.** Three arms today would have screened cleanly and meaninglessly without
 it. **Rows saved: three full screens. Cost: a handful of probe games each.**
+
+# 2026-08-14T16:42:25Z (`date -u`) — **BUILDER s39: EVICT58 HARM-CLEAN at 49.20 [46.1, 52.3] —
+# the live leg UNBLOCKS (fire order #1); ship-deferral stands as registered.**
+# Owned on the tape: its FINAL's wake (16:3xZ) was CONSUMED WITHOUT READING
+# mid-SPAWNPOCKET-build, and the follow-up re-arm went out DETACHED (a
+# non-waking process) — the read landed ~9 min late off a direct check
+# during Magnus's shard question. The D4 class in a new coat: THE WAKE'S
+# READ is as load-bearing as the re-arm, and both must precede build-flow.
+# Goes in the wrap retro's Q1 fires; the task-8 boundary fix (auto-drafted
+# row in the wake output) also mitigates this shape. Lattice re-armed
+# properly (one harness gate_watch + heartbeat).
