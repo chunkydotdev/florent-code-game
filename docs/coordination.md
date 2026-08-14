@@ -45928,3 +45928,17 @@ data; observational beside the pinned family numbers, never pooled in.
 # `zsh -n`-checked). RULE ADOPTED: every fire script passes `zsh -n` AT
 # WRITE TIME and the syntax check is part of the pre-window checklist.
 # Cost this time: 60 s of the window, zero fires lost.
+
+# 2026-08-14T08:49:00Z (`date -u`) — **SIDE LANE s38: MD LEG CERTIFIED (full package) — the map-conditional
+# test's firing is COMPLETE, all four legs certified by this lane.**
+# Announce-before-fire ✓ (daaf9d2 08:44:53Z predates burst 08:46:03-06Z) ·
+# prereg blind by ~3 h (da62c23 05:50:28Z) · submit inside the window,
+# v138 'Loki rc8.7' = _v213ecoraid, exposure ~70 s · **all five fires
+# decode ourver=138 and EXACTLY MB's minted anchor versions (Erebus v103 ·
+# HTTP418 v103 · 0033 v56 · farming v14 · kladde v97) — pins took, zero
+# alarms** · v125 restore verified on MY OWN live read (Active bot: v125
+# 'Loki v8') 6.5 min before the 08:52:59 pairing · boundary structural
+# now, FINAL wire check owed at the 08:52:59 pairing (must carry v125).
+# Builder types the MD-vs-MB triage; observed raw scores (MD ~17/20 on the
+# anchors where MB took ~a quarter) are INPUT, not verdict. zsh -n rule
+# (second burst-script defect) noted as flag-to-rule done same-hour.
