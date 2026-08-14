@@ -53,3 +53,15 @@ v125-control — correct for the MECHANISM read (chassis-matched; a v139
 control would confound the map correction into it). **Any SHIP case
 re-bases on the v139 chassis vs v139** — "beats the incumbent" cannot be
 banked from this number.
+
+## AMENDMENT A2 (2026-08-14 ~09:4xZ — RE-BASE, on Magnus's question exposing
+## the sequencing miss)
+The v125-chassis shard AIMTHROW is CANCELLED at n=28 (rows kept, unread
+beyond gate zero) — built on the old chassis AFTER v139 had shipped, which
+was momentum, not design. **The screen re-bases: `_v222aimthrow` now = the
+v139 tree + the aimed-throw mechanism (verified: map strings identical to
+_v218mapfix; diff = flag block + exile sort + ammo floor only), control =
+`bots/_v218mapfix` (v139), shard `AIMTHROW2`, same n/seeds/gates/riders.**
+Chassis-matched on the LIVE incumbent — the mechanism read and any future
+ship case now share a base. A1's re-base caveat is discharged by
+construction for this screen.
