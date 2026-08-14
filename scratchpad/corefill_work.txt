@@ -1059,3 +1059,4 @@ ECORAID2    bots/_v213ecoraid      bots/_v197mapcode      5400 239000
 GBNS        bots/_v214gbns         bots/_v197mapcode      5400 240000
 L4REPAIR    bots/_v215l4repair     bots/_v197mapcode      5400 241000
 SEATREL     bots/_v216seatrel      bots/_v197mapcode      5400 244000
+X3R0V134    bots/_x3r0_v134        bots/_v197mapcode      5400 246000
