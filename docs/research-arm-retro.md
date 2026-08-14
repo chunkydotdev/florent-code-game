@@ -932,3 +932,111 @@ same line.** It is the citation equivalent of stopping a test at the first
 confirming result. **The derived check, mechanical rather than attitudinal:
 when a source is cited as a BLOCKER, quote it to the end of the entry — and
 if it names an alternative, run the alternative before publishing the block.**
+
+# ============================================================================
+# RUN s37/s38 — 2026-08-13T17:02Z → 2026-08-14T06:53Z (Magnus called the
+# wrap). **v1.9 → v1.10. FIRINGS: 5.** Answered from the day's artefacts:
+# ~62 research/queue/spec commits of the session's 173, the cross-lane
+# message log, the tools, and git log. Not from memory.
+# ============================================================================
+
+## 1. CONSUMPTION — the broadest of any session; UNREAD: none nameable
+**CONSUMED (another lane acted):** the fire orders (builder fired CAL-3/CAL-4
+and every treatment slot against them) · the v125 kill-round baseline + both
+riders + the map-class definition (COMBO prereg denominated on them) · the
+#45 fork input incl. the two-gates requirement (iter-2 built WITH the gate
+log; its falsifier attributed cleanly BECAUSE of it) · ⭐ **the LAUNCH0
+inversion (the session's single most valuable catch: the cited screen arm was
+the NO-launcher arm; iteration 3 retargeted, #47 born)** · #47's ladder
+(iter-4 dose MET from the row as written) · the #48 full-width cut + regime
+break (QUIET0 screened on the basis audit; seat-release ranked) · detector
+v2's TLE=0 (decoupled #48 from #44) · #50's respecification chain
+(pave→terminus-first, builder consumed each step same-hour) · the rc8.3
+mechanism bars (bar-2's instrument later closed the DIGOUT question) · the
+divergence decomposition (became Magnus's coupling-test directive) · the
+coupling test both steps (became the fixture library) · the fixture
+inventory (two fixtures built against it same-session) · the deepening frame
+(#52/#53). **PENDING:** #52/#53 (stocked at wrap), the bank_trace
+first-delivery read (scheduled post-finals), #49's cut, #51's decode.
+
+## 2. LATENCY — three races, all handled by disclosure; one boundary missed
+**BEFORE, where it mattered most:** the LAUNCH0 catch beat the SCREEN and
+the live window (iter-3's local dose had run — cost ≈ 0); the two-gates
+requirement beat iter-2's build; the n=5-control catch beat any verdict.
+**THE MISSES, named:** (i) CAL-3's n=150 boundary passed ~100 games before
+anyone woke — the look was legal (n-defined) but LATE; fixed at the tool
+(runner-side stop) same session, and CAL-4's boundary was then hit ON TIME.
+(ii) The iter-3 HOLD lost its race by minutes (local-only cost, disclosed).
+(iii) The side-lane audit crossed my step-2 commit (disclosed in the record;
+no post-gap reclassification occurred).
+
+## 3. RELAY FIDELITY / Q10 — both agents' load-bearing numbers re-derived
+parked_raider cut: 4 decision-bearing aggregates + the Leviathan cell
+spot-reproduced from the TSV before banking. Detector v2: totals
+reproduced exactly (767,484/0/46,758). **And Q10 fired OUTWARD at full
+value: the LAUNCH0 arm identity, verified at corefill_work.txt before the
+row was written — a peer's cited figure, checked at the primary, inverted.**
+The v2 agent's own honest negative-control failure (the 8.3ms reference not
+reproducing, no findable source) was surfaced and the figure retired.
+
+## 4. OWN CHECKS ON OWN WORK — 5 self-caught vs 3 peer-caught
+**Self:** the panel_read no-args CAL-2 spent-look trap (flagged before
+reading) · camp_detect's all-zero (caught by refusing a zero that covered
+the positive control — the R2 keeper sentence applied to my own run) · the
+zsh word-split recurrence (recognized from R2(iii) and fixed in-line) · the
+n=5-control interaction artefact (my own re-base killed my own earlier
+"camp-class treatments" framing before it became a verdict) · the
+builds.tsv→events.tsv surface error (caught by inspecting the zero).
+**Peer:** the D13 floor-pinned consequence on my look disclosure (side
+lane) · the TWORAID/QUIET0 classification wording (side-lane audit; QUIET0
+disagreement recorded, their reading stronger) · the interpretation-pin
+ordering ask. **RETRACTIONS REACHING A LANE: ~1** (the camp-class-treatment
+framing, softened by my own decomposition before any lane acted on it).
+
+## 5. DECLINES — five, all upheld
+Declined to read CAL-2's auto-printed comparative table (look spent) ·
+declined the delay-widened repairer (anti-Goodhart at the test layer) ·
+declined rotating rc8.5 leg cells to the upward stratum (churn is noise in
+a leg) · declined per-cell interaction reads at n=5 control · declined an
+ore-denial fixture before #49's free cut answers bind-vs-theatre.
+
+## 6. PER LANE
+**BUILDER:** numbers before decisions all session (baselines, gate logs,
+rankings, pricing); one inverted citation caught before it aimed an
+iteration; two instrument reads (rc8.3 bars) that localized the combo's
+defect; the fixture inventory their builds consumed twice. **SIDE LANE:**
+re-derivable primaries throughout; they certified the panel machinery
+end-to-end, audited the coupling classification against rule text, and both
+of their load-bearing riders (D13, interpretation-pin) were adopted verbatim.
+
+## 7. CLOSURES — the session's signature is closing AGAINST myself
+The coupling hypothesis (mine) FALSIFIED-AS-UNIVERSAL by its own
+pre-registered test, twice over — and published that way, with the
+refinement correctly weighted as retrospective. The CPU confound closed by
+measurement (TLE = 0/814,242). Map-mix excluded. The class-interaction
+story (partly mine) killed by my own re-base. **A lane that only closes
+roads pointing away from itself is half an instrument; this session's
+record is the other half working.**
+
+## 8-11. Q8: instruments read at boot and at every use (band, queue, sync,
+freshness). Q9: one correction-of-correction avoided — the re-base of the
+class cut ran the ORIGINAL objection (control validity) against the new
+numbers before publishing. Q11: the whole-entry rule produced the
+events.tsv surface correction.
+
+**FIRINGS (5):** (a) **Q10 outward — the LAUNCH0 inversion**, the highest-
+value single act of the session. (b) **Q4's positive-control discipline
+caught camp_detect's all-zero before a false "no camps" read.** (c) **Q7 —
+every causal frame this session shipped with its inference marker** (fresh-
+freeze artefact, opponent gradient, refinement, deepening classes). (d)
+**Routing — zero orphan documents: every finding landed in QUEUE.md, a
+booted file, a tool, or an asked-for spec.** (e) **The anti-Goodhart rule
+fired twice on my own designs** (fixture validity bar; test design).
+**SUNSET: NOT ARMED.**
+
+**THE ONE THING I WOULD NOT PRODUCE AGAIN:** the first camp_detect
+invocation — I ran a tool against paths its interface never promised to
+accept and nearly read an all-zero as a finding. The check that saved it
+(positive control on a known-camp cell) should have run BEFORE the sweep,
+not after the zeros arrived. **Instrument-before-the-read, not
+instrument-when-the-read-looks-wrong.**
