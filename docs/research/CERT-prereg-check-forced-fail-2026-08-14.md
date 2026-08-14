@@ -185,9 +185,82 @@ builder's tool and the builder's call.
 
 ---
 
+## 5b. ⛔⛔ FINDING 3, ADDED 19:2xZ — **THE ADD-ONLY GUARD IS BLIND ON REAL PREREG TEXT, AND MY OWN §2 CERTIFICATION OF IT SHARES THE DEFECT IT WAS BUILT TO CATCH**
+
+**Found by USING the tool on a live artefact within the hour** — the same
+mechanism Q4 measures (*going to use the thing*, not diligence) — while
+certifying `docs/prereg/SCREEN-v140vs145-2026-08-14.md`.
+
+**WHAT HAPPENED, measured:**
+
+| | locked `8a30265` | after A1 `3a94856` + A2 `d8f2467` |
+|---|---|---|
+| document | 227 lines | 278 lines (**+51**) |
+| `BAR_LINE_PAT` matched | **3** lines | **3** lines |
+| lines naming the `51.0` decision boundary | — | **12**, of which **0** match `BAR_LINE_PAT` |
+
+`prereg_check --amendment` printed **`ADD-ONLY: OK (0 line(s) added, 0 edited)`
+→ `PREREG_CHECK: OK`.**
+
+**AND THE DECISION RULE HAD SUBSTANTIVELY CHANGED.** A2 supersedes A1's reading
+in its own words — `< 51.0` moved from *"no counter-roll, v145 sits"* to
+**`< 51.0 (≤509/1000) → REACTIVATE v145`**. The guard saw none of it.
+
+**THE MECHANISM:** `BAR_LINE_PAT` matches only the **token vocabulary**
+(`BAR:`, `BOUNDARY:`, `GATE RESOLUTION:` …). Real preregs write their decision
+rule as **prose bullets**. ⇒ **`ADD-ONLY: OK` on a real prereg today means
+*"no TOKENISED bar changed"*, not *"no bar changed"*.**
+
+**WHY THIS IS THE MOST SERIOUS OF THE THREE.** It is the one control standing
+between an amendment and the s28 hazard the obligations doc exists for —
+*"a cert showing two honest timestamps still certifies clean if the later commit
+quietly WIDENED a bar"*. The stated remedy was that **the DIFF CLASS is the
+enforcement, and it is the only one.** Here the diff class saw nothing, and
+returned the reassuring verdict. It fails **silent and green**, and it does so
+**most reliably on documents that have not been migrated to the vocabulary —
+i.e. on all 81 of them.**
+
+### ⚠ AND IT INDICTS §2 OF THIS DOCUMENT, WHICH IS MINE
+
+**§2 reports the amendment mode as driven both ways.** It was — on the
+**synthetic** fixture, where the bars ARE tokenised (`**BAR: 60.0**` → `52.0`
+is caught, correctly). **I migrated the presence and arithmetic layers onto real
+text and left the amendment layer on the author's fixture shape.** So this
+document's own §1 argument — *a fixture built by string generation cannot be
+corrupted the same way* — **applies to my §2 and I did not apply it.** Same
+fault, one section apart, in the document that names the fault. Recorded rather
+than edited away.
+
+**Tagged for the retro:** `KIND: judgement · STATE: auditing · WHOSE HYPOTHESIS:
+mine` — and it is the **promoter's-first-use** pattern (v1.9) firing a second
+time this session.
+
+**⛔ SCOPE, stated so this is not read as a finding against the builder's
+prereg:** `SCREEN-v140vs145` itself is **not** the defect. Its amendments are
+pre-first-row (zero shard rows; newest `arena_rows` is 18:43:48Z, unrelated),
+A1 corrected a factual attribution, A2 executes a direct Magnus directive, and
+the change **TIGHTENS** — it makes the screen symmetric by pre-committing the
+uncomfortable branch (`< 51.0` obliges reactivating v145). **That is the s28
+rule honoured, not broken. The defect is that the INSTRUMENT could not have told
+the difference.**
+
+**REMEDY, one line, handed over rather than specified in depth:** the ADD-ONLY
+diff class must key on **what a prereg's decision rule actually looks like**, not
+on the token vocabulary alone — at minimum, treat any line containing a declared
+threshold value (the prereg's own bar number) as a bar/branch line. **A
+narrower, honest alternative that costs nothing: make the mode REFUSE — print
+`AMENDMENT CHECK: NOT APPLICABLE (0 tokenised bar lines)` — when the locked file
+carries fewer than N bar/branch lines.** *A guard that cannot see its subject
+must say so rather than return OK*; that is this repo's own alarm-that-cannot-
+tell-it-is-blind rule, and it is the cheaper half.
+
+---
+
 ## 6. VERDICT
 
-**CERTIFIED, WITH TWO NAMED HOLES.**
+**CERTIFIED FOR THE PRESENCE AND ARITHMETIC LAYERS, WITH THREE NAMED HOLES.
+⛔ THE AMENDMENT LAYER IS NOT CERTIFIED** — see §5b; my §2 pass on it was run
+against synthetic text and does not transfer.
 
 * **The forced-fail standard is MET:** 31/31 checks driven to their failing
   verdict on corrupted REAL prereg text, each corruption aimed at a different
