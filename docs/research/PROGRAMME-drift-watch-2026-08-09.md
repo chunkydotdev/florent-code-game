@@ -2178,3 +2178,26 @@ run, which is the mode the first scope note already said was intended.
   IS the policy.** Sibling of D31: both are cases where the artefact returns
   something usable and therefore never announces that it was never asked the right
   question.
+
+- **⭐⭐ THE UNIT OF THE CLAIM, NOT THE UNIT OF THE DATA (s39, 2026-08-14;
+  research's formulation at the end of the removal-discriminator chain,
+  promoted here because it unifies the day and the day proved it three
+  ways):** an interval is only a guard when it is denominated in the unit
+  the CLAIM is about. Turret-level intervals answer "what share of their
+  turrets did we remove"; the claim was about GAMES — and the discriminator
+  survived a turret-level restatement (+12.2pp "just separate") only to
+  dissolve at the game level with match clustering (NO cell separates).
+  Same fault, same day, two levels up: games treated as independent inside
+  MATCHES (the DEFF finding, now in CLAUDE.md), and CAL-2's ± carrying no
+  unit at all. **Watch form, cheap and prospective: before any interval is
+  banked, ask two questions — what unit is the CLAIM about, and is the
+  interval's denominator that unit?** A mismatch is not a smaller interval;
+  it is an answer to a different question. Chain record: three restatements
+  (51-vs-14 → +12.2pp → resolved-in-none), each smaller, each found by a
+  peer, none by the author, and the surviving evidence (the round-band
+  split) is precisely the contrast that lives WITHIN the claim's unit.
+  Companion instrument note: `era_guard`'s selftest failed on healthy
+  corpus growth within an hour of shipping (hardcoded row counts) and was
+  rewritten to surface-derived INVARIANTS, mutation-tested — invariants
+  catch logic errors, snapshots catch appends; a selftest that fails on
+  growth is one that gets ignored.
