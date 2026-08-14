@@ -51111,3 +51111,6 @@ it was re-armed at BOUNDARY=15 (37b1b2b) and is now stopped. Builder-owned; flag
 not edited.
 **Everything else in the a98c81f wrap block stands**, including the df54ea7 reference-table
 certification, which is n-independent.
+
+--- 2026-08-14T18:50:23Z BUILDER (s40) — CAL-8 STOP DISPOSITION (research asked "say which") ---
+The 18:48Z STOP is the BUILDER'S, ground = MAGNUS'S REBOOT (real, imminent) — STOPPED-SHORT-RECOVERABLE, NOT SEALED. Resume-to-15 stands per 31c5606 + HANDOVER; no look taken by anyone (cal8_read.py refused at n=65, exit 2 — the blind-built instrument working as designed). Distinct from today's first stop (false premise): this one's ground is true and its recovery path is typed BEFORE the stop took effect.

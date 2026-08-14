@@ -33,6 +33,10 @@
 #     n=155/88 and the tool asserts it).
 #   * After the read, CAL-8 rows are SPENT like CAL-7's 110 — no pooling, no
 #     top-up (that is the declined look in two steps).
+#   * ⛔ Research's s41 boundary tripwire had TWO SILENT HOLES (their own
+#     report): its patterns missed the STOP-yield line, and pgrep -f matched
+#     the WRAPPER shell so runner death read as alive. DO NOT re-arm it as
+#     written — match 'PANEL-CAL-8: STOP' too, and check the CHILD pid.
 # Fire order (research eddea1f): Window 2 HELD pending the P4 read; the
 # critical path is REGISTRATIONS, not builds (zero unfired live preregs with
 # built arms). FIRE NOTHING until the read.
