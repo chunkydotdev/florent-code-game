@@ -47149,3 +47149,57 @@ weakest link in the ship chain. (c) SEALFLOOR0R/SEALREPAIRR continue as queued.
 # * **MAPSALT GATE-1000 @ n=1015: 50.15 ±3.1 > 48 — CONTINUES (flat).** x3r0's
 #   salt-table graft on v140. No early futility; the "local re-sweep if flat"
 #   trigger (HANDOVER item 5) arms only at its FINAL, not at a 1000 gate.
+
+# 2026-08-14T13:10:xxZ (`date -u`) — ⛔ **RESEARCH s40 RETRACTION + PREREG-CAL7 AMENDMENT A1 (ADD-only, blind, pre-leg)**
+**I am retracting a claim I put on this tape 3 minutes ago (13:07:32Z), and the
+mechanism is the SAME era-pooling trap the same note warned about — committed a
+third time in one hour, this time on OUR OWN version axis instead of the
+opponent's.**
+
+**THE CUT THAT DOES THE WORK — rated ledger by OUR version:**
+| ourver | m | g | share | NET Elo |
+|---|---|---|---|---|
+| 116 | 42 | 210 | 49.5% | −24.7 |
+| 123 | 13 | 65 | 64.6% | +51.2 |
+| **125** | **61** | **305** | **55.7%** | **+136.4** |
+| 134 | 3 | 15 | 40.0% | −11.5 |
+| 135 | 1 | 5 | 0.0% | −13.9 |
+| 137 | 3 | 15 | 33.3% | −14.3 |
+| 139 | 8 | 40 | 35.0% | −34.9 |
+| **140** | **3** | **15** | **80.0%** | **+22.6** |
+**⇒ THE v134–139 CHURN BAND IS 12 MATCHES / 60 GAMES AT 31.7%, NET −63.1 ELO.**
+*Positive control: v139's −34.9 at k=8 reproduces the builder's own s38
+stop-loss figure exactly, so the cut agrees with the record where they overlap.*
+
+**WHAT IS RETRACTED.** Fire order #1 said *0033 largest live leak, LingLing40
+second-largest with neither book nor arm.* Era-bounded to **v125 alone**:
+* ✅ **0033 SURVIVES — 6/20 = 30.0%, −18.5 Elo over 4 matches** in one stable
+  version. Book + NESTSHOT2 stand, and the priority stands.
+* ⛔ **LingLing40 DOES NOT — 13/25 = 52.0%, −0.4 Elo.** Its −26.4 was **two
+  matches played by v137 and v139**. **"Second-biggest live leak" was an
+  artefact of pooling our own WITHDRAWN versions. Withdrawn — do not commission
+  a book off it.** (It stays a CAL-7 cell: it was selected for rated volume and
+  share spread, both still true; only the leak narrative dies.)
+
+**PREREG-CAL7 AMENDMENT A1 — committed, ADD-only, and BLIND: verified at
+13:09:30Z that no `scratchpad/panel_cal7*` exists and zero cells have fired.**
+The `ourver` ≥ 125 reference (51.3%) is **RETIRED as a mixture** of shipped and
+withdrawn bots (v125 alone reads 56.8% on the six cells; the churn band reads
+25.7%). **P1's reference becomes v140's OWN rated record at the moment of the
+look**, accrued in parallel while the panel fires — v140 held from 11:37Z and
+the ladder pairs ~3×/hour, so a 4-hour panel should see ~15 rated matches / 75
+games. **Same bot, same days, two fixtures: a natural experiment rather than a
+proxy** — and it dissolves the confound that "the panel is biased" and "v140 is
+worse than v125" would otherwise fit identically. Fallback if v140's rated n<50
+games: v125's 56.8% with the confound named IN the sentence. Bar unchanged ±8pp.
+
+**⚠ AND THE HONEST NOTE ON v140: 3 matches, 80%, +22.6.** That is k=3 against a
+k≥8 gate. **It is not a read and nothing here treats it as one** — it is named
+only because it is the reference P1 will use once it has n.
+
+**THE STANDING LESSON, third firing in one hour: ERA-BOUND BOTH AXES.** Not just
+the opponent's version — OURS. A window that spans our own slot churn mixes bots
+we ship with bots we withdrew, and every per-opponent number computed across it
+inherits the mixture. The three victims today: Leviathan (week-pooled 47.7% vs
+same-era 24.0%), the Ouroboros/Lunds/KCM "−636 Elo" leak table (all three vanish
+era-bounded), and now LingLing40.
