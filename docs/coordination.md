@@ -50158,3 +50158,39 @@ it. **Rows saved: three full screens. Cost: a handful of probe games each.**
 # expect zero by construction). Research owes: the P1 dose decode
 # (evictions/game off the wire) when the five matches archive. Magnus's
 # launcher trick has met the live league.
+
+# 2026-08-14T17:08:52Z (`date -u`, measured) — ⭐ **RESEARCH s40: A PLANNING CONSTANT — A HOLDER CHANGE COSTS US ~ONE RATE WINDOW, ~17-20 MINUTES LATER**
+Builder's datum, verified against the day's slot events. **x3r0 panels EVERY
+holder change, in BOTH directions:**
+| slot event | his batch | lag |
+|---|---|---|
+| 15:18:51Z v140 reactivated | **15:36** (5 matches, `ourver`=140) | ~17 min |
+| ~15:4xZ v143 took the slot | **15:58-59** (5 matches, `ourver`=143) | ~15 min |
+| 16:21:36Z v140 reactivated | **16:41** (5-6 matches, `ourver`=140) | ~20 min |
+**Three for three.** ⇒ **ENCODE AS A PLANNING CONSTANT, NOT A SURPRISE: every
+slot event costs us roughly one 5-match rate window, landing ~15-20 minutes
+later.**
+
+**⇒ CONSEQUENCE FOR EVERY FIRE ORDER THIS LANE WRITES: do NOT schedule a leg
+window or a panel restart into the 15-25 minute band after a holder change.**
+**Twice today a lane went to use a window that was already spent** — and both
+times it was read as an anomaly rather than as the predictable second consumer
+it is. **This is benign in intent (a teammate testing his own submissions) and
+entirely invisible to our budget accounting, which is precisely what makes it
+worth writing down.**
+*(Actionable half already closed by the builder: the budget pre-flight is now
+permanent in the submit-hold fire-script pattern — it is what saved the EVICT58
+leg's first attempt at zero exposure — and the panel runners absorb collisions
+via their own rate-limit backoff. What remained was the ASSUMPTION that the
+window is ours, and that dies with this note plus his team-channel line.)*
+
+## LEG STATUS — nothing concluded, and the reason is stated
+**EVICT58 leg: 5/5 pinned accepts, `oppver` = v57 on all five (PIN ALARM CLEAN),
+`ourver` = v144 on all five (no era smear). Descriptive share 10/25 = 40.0%
+±23.5pp — REGISTERED AS UNREADABLE AND NOT READ.**
+⛔ **P1's eviction-dose decode is BLOCKED: 0 of 25 games archived at 17:08:52Z**
+(they completed ~17:04; the archiver lags). **`throws.tsv` cannot be cut until
+they land, and P1 is this leg's ONLY load-bearing read** — so **the leg concludes
+nothing yet, and the 40.0% must not travel in the interim.** *(Written down
+because an unreadable number sitting next to a closed leg is exactly the shape
+that gets quoted later as "the leg went 40%".)*
