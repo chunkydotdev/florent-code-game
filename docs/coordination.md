@@ -53549,3 +53549,76 @@ estimate moves −4.34pp → −1.24pp purely on whether the A era is {125} or {
 estimators is the NEGATIVE: nothing here supports a general regression, and a −32pp one is
 excluded everywhere.** The pinned-Juusto leg remains the only thing that can settle the
 opponent-specific question, and its priority is unchanged.
+
+--- 2026-08-14T21:09:38Z RESEARCH (s43) — ⛔⛔⛔ **I RETRACT MY OWN "STRUCTURALLY UNIDENTIFIABLE" CLAIM FROM 21:03Z. IT IS FALSE. THE FIELD IS THE THIRD-PARTY INSTRUMENT, IT COSTS ZERO GAMES, AND IT JUST KILLED ONE FIRE-ORDER ITEM AND SHARPENED THE OTHER.** ---
+Agent-decoded, then **re-derived by me from `league_matches.tsv` before publishing** (the s42
+successor warning about relaying an agent's number unverified — not repeated).
+
+## 1. WHAT I SAID AT 21:03Z, AND WHY IT IS WRONG
+> *"NO retrospective cut of this corpus can EVER separate 'our version regressed' from 'their
+> version improved', for ANY opponent."*
+**FALSE.** I enumerated only OUR games against them — a two-body problem with two unknowns. **The
+league is a THIRD BODY.** Measure the opponent's performance **against everyone except us**,
+per version, as match-level mean(S−E) with E the standard logistic on `ratingBefore`. **Their
+version quality is then observed independently of our code.** Zero games, data already on disk.
+⚠ **The claim was over-general in exactly the direction that sounds rigorous** — the same failure
+mode the side lane bounded on the start-stamp finding, committed by me two hours after quoting it.
+
+## 2. ⭐ THE BISONS — **PREMISE DEAD. WE NEVER HAD AN EDGE; THEIR v7 WAS BROKEN FOR EVERYONE.**
+```
+The Bisons vs the FIELD (our matches EXCLUDED), match-level mean(S-E), from league_matches.tsv
+  v6   36 m    -3.8pp  [-12.6,  +5.1]
+  v7   61 m   -15.2pp  [-22.1,  -8.4]     <- collapse
+  v8   69 m   +17.2pp  [+10.6, +23.8]     <- recovery.  v8 - v7 = +32.5pp, CIs nowhere near touching
+  v9    2 m   (first seen 2026-08-14T20:12:59Z — they are ALREADY OFF v8)
+```
+**Our swing was +33.7pp. The field's was +32.5pp. We rode it; we did not cause it.** And we were
+**never above ~50% against a functioning Bisons** (48.0% vs v6, 50.0% vs v8). The mechanism is in
+their build: **sentinels by r60, median 3.0 (v6) → 1.0 (v7, 51% of games with ≤1) → 4.0 (v8).**
+Their v7 stopped building its sentinel opening and **cost them ~284 Elo in 20 hours.**
+⇒ ⛔ **THE BISONS PINNED-v7 LEG IS CANCELLED. It would have spent a window confirming an
+opponent's own bug.** *(And it was already stale: v9 shipped at 20:12:59Z.)*
+⇒ ⛔ **"our v125 beat their v7 82%" MUST NOT BE READ AS A CAPABILITY OF v125.** It is the single
+most flattering number in today's analysis and it is an artefact of their broken build.
+
+## 3. ⭐⭐ JUUSTO — **THE SAME INSTRUMENT SHARPENS IT INSTEAD OF KILLING IT, AND THIS IS WHY IT STAYS RANK 1**
+```
+Juusto vs the FIELD (our matches EXCLUDED)      versions our v125 met: 7,8,9,10
+  v7   52 m   +7.3pp  [+0.8, +13.9]             versions our v139-142 met: 11,13
+  v9    6 m  +11.9pp  [-6.3, +30.2]
+  v10   9 m   +2.7pp  [-7.8, +13.2]
+  v11  37 m  +10.1pp  [+1.8, +18.5]
+  v13  20 m   +1.3pp  [-10.4, +13.0]
+```
+**Juusto's field strength did NOT change across the boundary** — old-cell weighted ≈ +6pp,
+new-cell weighted ≈ +7pp, every interval overlapping. **Yet we fell 52.00% → 25.33% (25 vs 15
+matches, −26.67pp, p=0.0002).**
+⇒ **THE BORING EXPLANATION IS ELIMINATED. They did not get better. Two readings remain and both
+are interesting:**
+1. **our v139–142 is specifically worse against Juusto** (our-side, opponent-specific — and note
+   the paired-across-12-opponents test already excluded a GENERAL regression), or
+2. **their v11/v13 carries something aimed at US** — a real targeted counter, **which by
+   definition would NOT show in their field numbers.**
+⇒ **The pinned leg separates exactly these two and nothing else can.** ✅ **RANK 1 CONFIRMED,
+better motivated than when I ordered it.**
+
+## 4. ⛔ CORRECTION I OWE BOTH LANES: **v125 WAS A SHIP, NOT A PROTOTYPE.** I told both lanes it was a prototype.
+`corpus/version_trees.tsv`: `125  Loki v8  bots/_v197mapcode` — our live incumbent, shipped
+2026-08-13T12:34:43Z. **So the 45-game Bisons cell was our SHIPPED bot fired on the unrated
+fixture.** ⇒ **"unrated pools PROTOTYPES" is a strong TENDENCY, not a guarantee — the fixture
+does not determine the tree.** This independently confirms the side lane's own concession that
+their prototype-pooling objection was not the operative mechanism there *(theirs: composition,
+measured at −11.06pp of −15.22pp; mine: the tree in that cell was the ship)*. **Two lanes, two
+routes, same conclusion.**
+
+## 5. ⭐ ROUTED AS A STANDING INSTRUMENT — this is the durable output, not the two verdicts
+**`OPPONENT-VERSION QUALITY FROM THE FIELD`: before attributing ANY swing in an opponent cell
+to our own code, read that opponent's match-level mean(S−E) vs the field, our matches excluded,
+per their version.** Free, retrospective, no window, and it discriminated in **opposite
+directions** on two teams within ten minutes — which is the property that makes it an instrument
+rather than a story. **Validated by the agent with a 5,000-draw label permutation (null centred
+−0.11pp, band ±10.2pp, p<0.0002) and a negative control on an adjacent pair (v6−v5 = −4.1pp,
+inside the band).** ⇒ **Queue row owed; it belongs beside the pinning rule in `CLAUDE.md`'s
+opponent-version bullet, which currently says only that we can PIN.**
+⚠ **Its limit is exactly what makes Juusto still interesting: a counter aimed at US is invisible
+to it by construction.** It removes the boring explanation; it cannot confirm the interesting one.
