@@ -129,3 +129,70 @@ post-hoc excuse if the number is unwelcome.**
 whichever side loses. Declared before the read, it constrains both branches
 equally; produced after, it would be available only to the side that dislikes the
 answer.
+
+---
+
+## F. CERTIFICATION OF **READ-1** (n=1000) — 2026-08-14T20:0xZ
+
+**READ-1 CERTIFIED.** Every load-bearing number re-derived by me off
+`V140VS145B.tsv` — the tape, not the read-out.
+
+| check | result |
+|---|---|
+| **B1** n exactly 1000, counted off the tape | ✅ **1000 rows** |
+| **B11** B-shard rows ONLY, voided 480 excluded | ✅ `shard` column = `V140VS145B` × 1000, no A-shard row present |
+| **B2** share recomputed from `winner`, not copied | ✅ **T 492 / C 508 = 49.20%** — identical to the published figure |
+| **B5** LOCAL DEFF 0.98, not a platform constant | ✅ **±3.07pp → [46.13, 52.27]**, reproduces the published CI to the digit |
+| **B3** registered rule applied at the ≥/< 51.0 boundary | ✅ 49.20 is **BELOW** 51.0 **and inside A5's (46.9, 53.1)** ⇒ extension, **no slot branch executed** |
+| **B13** ONE extension, fired only from inside the zone | ✅ fired from inside; one extension |
+| **B10** VOID-on-treatment-edit | ✅ **CLEAN** — `c4e563af…` reproduced. ⚠ *my first computation used a different function and disagreed; I identified the method (`cat *.py \| md5`) before reporting anything. A hash cited in a forensic note has run the RIGHT computation — s28.* |
+| **B4** one look, no interim number | ✅ 400-CATA never evaluated in flight; no pre-1000 share quoted by any lane |
+| **B6** resolution statement carried | ✅ CI beside the estimate; A6's n=3000 clause in force |
+| **E1** the 23× external-validity caveat | ✅ **carried VERBATIM** |
+| **B14** fixture is WORKERS=10 on ncpu=16 | ⚠ **NOT VERIFIABLE FROM THIS BOX** — `worker.log` is remote and not pulled. **RELAYED by the builder, not certified by me.** Stated rather than ticked. |
+| **B7 / B8 / B12** | **n/a at this read** — no slot branch executed, so the mirror-vs-field restatement and the `< 51.0` consequences are owed at the **n=3000** read, not here |
+
+**THE SEGMENT REVERSAL IS HANDLED CORRECTLY AND IS NOT A FLAG.** The primary
+segment's registered sign FAILED (predicted our share LOWER on the 9
+WEAK_EXPERTS maps; observed expert-9 **54.2%** vs fallback-6 **41.8%**). ⇒ **15c's
+re-screen path is NOT available**, because 15c presupposes a segment clearing **in
+the predicted direction**; a segment clearing the opposite way is a failed
+prediction, not a conditional plank. **The read-out says exactly this** — descriptive
+only, confound stated (the fallback-6 set holds our independently-known worst
+maps), *"a segment claim, if ever wanted, buys its own screen."* Checked before
+flagging, per the read-the-condition-line practice.
+
+### F1. THE MID-FLIGHT TOOL EDIT — CHECKED AGAINST THE STANDING RULE, HAZARD DOES NOT APPLY
+
+Two tool commits landed around the extension, and this repo has a standing note
+(*do not edit a script that is already running unattended; stop, edit, restart*).
+Clocks, **all `TZ=UTC`**:
+
+```
+20:00:24Z   last row of the registered 1000
+20:02:55Z   READ-1 taken
+20:04:17Z   1d5cf34  orchestrate: reset-done (clears only the .COMPLETE marker)
+```
+
+⇒ **The shard had COMPLETED before the tooling changed** — that is precisely why a
+`.COMPLETE` marker needed clearing. **No running game process was edited underneath,
+and the first 1000 rows were banked and read before the commit existed.** The edit is
+to ORCHESTRATION (extending a finished shard), not to the runner during a run.
+**Hazard does not apply in its dangerous form.**
+
+### F2. ⇒ **B15, PRE-DECLARED NOW FOR THE n=3000 READ** (still blind to every row past 1000)
+
+The extension resumes the same shard through a code path that did not exist when
+the first 1000 ran. **Continuity is therefore a check, not an assumption:**
+* **no duplicate `game` indices** — a restart that RE-RAN rows would show them;
+* **the first 1000 rows unchanged**, verified by re-tallying them: must still read
+  **T 492 / C 508**;
+* **seeds continue the partition** rather than restarting it;
+* **row-timestamp continuity across the 1000/1001 boundary**, with any gap stated.
+
+⚠ **AND MY OWN SLIP, RECORDED: I printed those git timestamps as `22:04:17Z` first.**
+I dropped `TZ=UTC`, and `--date=format-local` renders the AMBIENT zone under a
+literal `Z` — **the exact defect my own `drift_watch.sh` calls LOAD-BEARING in its
+source comment**, and my second frame slip of the session. Caught by the times
+disagreeing with the commit monitor's own UTC line. **A second instrument over my
+own output, again — not diligence.**
