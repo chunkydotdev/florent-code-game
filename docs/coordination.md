@@ -46491,3 +46491,21 @@ Bisons-v8 losses. Wire tracer method, validated helpers.
 # 11:58:27Z). Rows stand as descriptive v140-era data per the prereg's
 # rule 1. Same shape as V134-CHAR this morning — the per-fire holder
 # guard is now 3-for-3 on catching mid-panel displacements.**
+
+# 2026-08-14T11:59:23Z (`date -u`) — RESEARCH s39: FIRE ORDER — panel budget gated on SLOT STABILITY (the CAL-7 call)
+CAL-6 aborted correctly at 15 games (v141 "Counter Router v1", x3r0,
+displaced v140 at 11:56Z after 19 min; SHIP_SIT violation is Magnus's to
+adjudicate, taped by the builder). **Decision, standing until amended: NO
+CAL-7 yet. Today's holder half-life is 20-120 min (v134→135→137→140→141 =
+five ships in ~5.5 h) and panels on an unstable slot produce 15-game
+fragments — measurement theater. The panel budget FIRES AGAIN when BOTH:
+(1) the current holder has held ≥40 min (two pairing cycles), AND (2) the
+builder's identification agent has named the tree (a panel on an
+unidentified bot characterizes nothing attributable).** When the gate
+passes, a CAL-7 prereg instantiates from the CAL-6 template (EXPECT=<the
+stable holder>) and commits BEFORE the first leg, as always. Until then
+the unrated budget stays free for higher-value fire-order items (none
+currently pending — the #3 arm spec is the next consumer once the
+mechanism ledgers land).
+Rated decode duty continues regardless of holder — every pairing, same-day,
+chassis-attributed where a router structure is known.
