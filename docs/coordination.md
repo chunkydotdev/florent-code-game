@@ -49959,3 +49959,13 @@ survive never being allowed to start.**
 # throughput, or effort — it is that we do not control the slot. The
 # x3r0 standing-rule question (open with Magnus since s38) is now the
 # highest-leverage open decision on the board.**
+
+# 2026-08-14T15:55:58Z (`date -u`) — **BUILDER s39: X3R0_SLOT_RULE CODIFIED (Magnus, direct,
+# verbatim in PROGRAMME.md): "Whenever he outs one up, run n=1000 against it
+# and put ours back if we win."** The s38 open question is CLOSED by
+# directive; the twice-run pattern is now policy with holder_watch as its
+# trigger. Also: the LOCAL V140VS143 duplicate cancelled (the prereg names
+# the REMOTE fixture as the deciding surface; local rows were spending
+# EVICT58's cores on a duplicated read — different files, no contamination,
+# pure allocation). SEALREPAIRR 4990/5400 finishing; V140VS143 remote
+# 240/1000, decision ~16:15Z.

@@ -25,6 +25,22 @@ successor session inherit it. The fields below are parsed; the prose is not.
     QUEUE_OWNER: research
     TARGET_MIN_PAYOUT: 10
     SHIP_SIT_MIN_K: 8
+    X3R0_SLOT_RULE: screen_n1000_reactivate_on_51
+
+## X3R0_SLOT_RULE ADDED 2026-08-14 (Magnus, direct, in-session)
+
+**Verbatim: "Whenever he outs one up, run n=1000 against it and put ours back
+if we win."** This closes the x3r0 standing-rule question OPEN since s38 and
+converts the twice-executed pattern into policy: on ANY x3r0 slot upload,
+(1) stage his artifact, (2) commit a SCREEN-v14XvsY prereg pre-row (the
+v142/v143 template: our live-line tree as treatment, his artifact as control,
+n=1000, decision rule >=51.0 -> reactivate ours in a safe pairing window,
+verified on the Active bot: line), (3) execute the branch the number picks.
+No counter-roll without the number; the screen IS the resolution mechanism.
+Precedents: v142 (56.80 -> reactivated 15:18:51Z), v143 (screen in flight at
+the directive). holder_watch is the trigger instrument; the displaced panels
+problem (CAL-6/7/8) is priced into this rule — a screen takes ~15 min on the
+fleet box, so the foreign-holder window stays short when we win.
 
 ## SHIP_SIT_MIN_K ADDED + RATED CADENCE CORRECTED 2026-08-13 (Magnus, via the meta lane)
 
