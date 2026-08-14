@@ -45666,3 +45666,23 @@ Sizes #54's prize where it matters (the incumbent) before any fix is built.
 # MAPFIX at n=675: 55.85 ±3.77 pooled — split valkyrie 60.1 (203/338) /
 # glacierkeep 51.6 (174/337): the wall-route/phantom-ore correction is
 # where the value is. GATE-1000 ~30 min out at the shared-core fill rate.
+
+# 2026-08-14T08:05:09Z (`date -u`) — **BUILDER s38: v137 (x3r0's THIRD upload, 08:02:44Z, unnamed) IDENTIFIED —
+# a terrain-keyed MIXTURE-OF-EXPERTS router.** `b_*` = the rc8.5/ECORAID
+# chassis (RICH_TI 700, ~byte-equal _v213ecoraid) as DEFAULT; `c_*` = v134
+# (RICH_TI 400, the r0-trigger retune) on WEAK_KEYS = {drumlin, nordkap,
+# glacierkeep}. Router reads terrain only, no opponent inspection.
+# **Evidence status of the ingredients, all previously on tape: default
+# chassis = the family at 46.0% pooled live / 4/25 slot era; fallback =
+# v134 at 6/15 net −11 with the unintended r0 burst; BOTH carry stale
+# pre-patch map tables (verified by grep), and valkyrie is NOT in
+# WEAK_KEYS ⇒ the default chassis plays it on the stale table — the
+# defect MAPFIX currently prices at ~10pp locally (valkyrie split 60.1%
+# at n=338).** The ROUTER PATTERN itself is the map-gated build Magnus's
+# own MD decision rule would produce — the flag is ingredient evidence +
+# the weak-map list's self-play provenance, not the architecture.
+# Slot call remains Magnus's/x3r0's; rated pairing ~08:12:59Z carries
+# v137. **MD HOLDS while a teammate's run is live (unchanged rule).**
+# holder_watch armed EXPECT=v137. MC's 5 matches predate v137's
+# activation by ~40 s — ourver=136 expected; side lane asked to verify
+# the boundary explicitly (tight timeline flagged).
