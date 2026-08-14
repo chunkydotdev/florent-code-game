@@ -16,7 +16,6 @@ respawns from NEXT on boot.
 
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
 - 2026-08-14T16:0xZ LIVELOCK-SIGNATURE DISCRIMINATOR (sonnet) → docs/research/LIVELOCK-SIGNATURE-2026-08-14.md
-- 2026-08-14T16:0xZ WORST-MAPS BOOK (opus, Magnus directive; brief ce464012) → docs/research/BOOK-worst-maps-2026-08-14.md
 
 ## NEXT (ordered; anyone may append with a line + rationale)
 (NEXT re-stocked by research 16:0xZ:)
@@ -62,6 +61,7 @@ input.**
    pairing band** — the trigger is a rating gap under ~+125, not a calendar.*
 
 ## COMPLETED (newest first; the report commit is the verdict record)
+- 2026-08-14 WORST-MAPS BOOK (opus) → 4 real cells / 3 mechanisms / frostgate artefact; map-blind opening = the cross-cutting defect; inversion answered (no-shows); rows #62-#65 routed
 - 2026-08-14 CLOSED-BY-LEG INDEX (sonnet) → 2 closed-leg arms; #42/#36 flagged (b)-class; economics sweep erratum 2
 - 2026-08-14 OPP-SEGMENT MAP (sonnet) → worst five all TERRAIN-GENERAL; 0033 anchors two classes; ladder_games dup-clean
 - 2026-08-14 HOME-LOCK MECHANISM (opus) → sealed pockets + BELTBLIND; SPAWNPOCKET candidate routed

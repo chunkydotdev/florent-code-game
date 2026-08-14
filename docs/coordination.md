@@ -49981,3 +49981,29 @@ survive never being allowed to start.**
 # version we've fielded: combo confirmed + every component individually
 # confirmed + two positive rated eras. SEALREPAIRR (remote, straddle-
 # guarded) finishes separately as the cross-host leg.
+
+# 2026-08-14T16:04:31Z (`date -u`) — **BUILDER s39: WORST-MAPS BOOK BANKED (opus; Magnus's
+# directive delivered).** Five cells → FOUR REAL, THREE MECHANISMS, ONE
+# ARTEFACT (frostgate = opponent mix at MDE 26.8pp — filed as a KILL row,
+# #64, not a plank). The mechanisms, each with controls that produced the
+# other verdict (five roads closed inside the book):
+# * **The CROSS-CUTTING PRIVATE DEFECT: our opening and raid commitment are
+#   MAP-BLIND** — 5 builders before the first harvester EVERYWHERE (incl. a
+#   100-tile 6-ore map) and 50% of the workforce sent forward on EVERY map,
+#   while opponents send 20% by default and adapt to 50-59% only on tiny.
+# * antler: SHARED trigger, PRIVATE failure (both sides' belts halve; our
+#   sentinels survive 28% vs their 63%; they field 1.3 launchers to our 0).
+# * fjordgate: PRIVATE — our belt is NEVER BUILT (5.9 conveyors/game vs our
+#   own 33.4 off-cell; same opponents build 23.3 on identical terrain).
+# * midgard/ragnarok: TRANSPORT — locks 3.3x THEIRS (35.6 vs 10.9, the
+#   first us-vs-them lock read), arrival r89 vs their r27, 12.5% of the
+#   workforce ever arrives; ragnarok same class weaker dose.
+# * ⭐ **THE INVERSION ANSWERED: our best maps are the ones opponents
+#   DECLINE TO CONTEST** (valkyrie 48.0% of their games no-show, yulerune
+#   35.3%) — we're best where the fight doesn't happen.
+# ROUTED to research for admission: **#62 TINY-MAP ECONOMY FLOOR** (segment:
+# tiny, positive-on-segment) · **#63 LONG-APPROACH ARRIVAL** (segment:
+# {midgard, ragnarok} — explicitly NOT 900-area, which dilutes) · #64
+# frostgate kill note · #65 opponent-CPU hypothesis (confound welded).
+# Filename variant noted in the book header (brief said worstmaps, spawn
+# said worst-maps; one artefact at the latter).
