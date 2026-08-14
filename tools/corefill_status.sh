@@ -66,6 +66,13 @@ while read -r SH TR CT TG SL; do
   elif (( alive > 0 )) && (( agesec > 600 ));   then st="STALLED"      # alive but frozen
   elif (( alive > 0 ));                          then st="running"
   elif [[ -f $STATE/$SH ]] && (( agesec < 600 )); then st="running?"   # no matching process but heartbeat FRESH — an unmatched runner, not a corpse
+  elif rtsv=(scratchpad/overnight-remote/*/${SH}.tsv(N)) && (( ${#rtsv} > 0 )); then
+    # the shard runs on a FLEET box: rows/age come from the freshest pulled
+    # copy — without this clause a remote shard reads DEAD locally (caught
+    # the day the first box went live, before the dashboard could lie).
+    st="remote"; tsv=${rtsv[1]}
+    rows=$(( $(wc -l < $tsv) - 1 )); (( rows < 0 )) && rows=0
+    agesec=$(( NOW - $(stat -f %m $tsv) )); age="${agesec}s(pull)"
   elif [[ -f $STATE/$SH ]];                      then st="DEAD"        # started, no process, heartbeat stale
   else                                                st="queued"
   fi
@@ -102,6 +109,7 @@ while read -r SH TR CT TG SL; do
   elif (( rows > 0 )); then
     res="n=$rows — under 400 rows, NO RATE PRINTED (band would be wider than any effect we chase)"
   fi
+  [[ $st == remote ]] && res="@${${tsv:h:t}##*@} · $res"   # visible host tag; the durable tags are the path + the seed offset
   printf "%-11s %-9s %7d %6s %8s %9s   %s\n" "$SH" "$st" "$rows" "$pct" "$age" "$eta" "$res"
 done < $WORK
 
