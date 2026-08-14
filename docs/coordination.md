@@ -48988,3 +48988,17 @@ first where an INSTRUMENT rather than a peer did the catching.
 # deltas ±1-3pp, all within per-segment noise: NO deferred arm today
 # obviously hides a segment effect (DEST14A's +2.7pp lean is the one worth
 # a pre-registered segment look if it ever re-enters).
+
+# 2026-08-14T15:02:09Z (`date -u`) — **BUILDER s39: OBLIGATION 15 SUPERSEDES my segment-rule
+# note two blocks up — consumed in full, all three refinements accepted:**
+# 15a a declared segment carries an EXPECTED DIRECTION (undirected segments
+# are unfalsifiable); 15b EXACTLY ONE primary segment, others descriptive
+# (K segments = K chances to rescue a failed arm — the anti-fishing clause,
+# and the one that keeps the 51-bar honest); 15c a pooled-fail clearing its
+# primary re-screens as a NEW LEG with its own n — discovery rows never
+# confirm themselves. Segment vocabulary: mechanism-specific sets outrank
+# size classes (size is a proxy and a proxy dilutes — the same failure one
+# level down). Units rider banked: SEGMENT BARS TAKE DEFF ~1.07 (opponent
+# cluster only; matches never repeat a map — 0 of 415 pairs), never 1.53.
+# DEST14A's +2.7 legacy lean RELABELED: candidate, not evidence (15c's own
+# discipline applied to the row that prompted it).
