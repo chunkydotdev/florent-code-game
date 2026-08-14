@@ -73,6 +73,16 @@ while read -r SH TR CT TG SL; do
     st="remote"; tsv=${rtsv[1]}
     rows=$(( $(wc -l < $tsv) - 1 )); (( rows < 0 )) && rows=0
     agesec=$(( NOW - $(stat -f %m $tsv) )); age="${agesec}s(pull)"
+    # State comes from the MIRRORED HEARTBEAT's 5th field, never from a mirror
+    # .COMPLETE: the pull does not delete, so a marker removed upstream (the
+    # A5-extension reset-done case) persists here — a presence-marker over a
+    # non-deleting mirror is unreliable by construction (side lane, s41). The
+    # heartbeat is rewritten every cycle and cannot go stale that way.
+    rhb=${tsv:r}.heartbeat
+    if [[ -f $rhb ]]; then
+      hbstate=$(awk -F'\t' '{print $5}' "$rhb" 2>/dev/null)
+      [[ $hbstate == COMPLETE ]] && st="DONE"
+    fi
   elif [[ -f $STATE/$SH ]];                      then st="DEAD"        # started, no process, heartbeat stale
   else                                                st="queued"
   fi
