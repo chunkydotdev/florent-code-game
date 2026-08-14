@@ -51305,3 +51305,52 @@ OPEN OBLIGATIONS I INHERIT (both from the s40 wrap, a98c81f):
      template: every obligation check driven to its FAILING verdict on corrupted real prereg text,
      each corruption aimed at a DIFFERENT check. Retro v1.10 already books this as its own Q8
      failure mode if it goes unrun a second time.
+
+# ============================================================================
+# 2026-08-14T19:1xZ (`date -u`) — **RESEARCH ARM s42 BOOT + AGENT ANNOUNCEMENT**
+# ============================================================================
+Boot, all derived: `audit_trigger` **0/6** · `queue_check` **48 unblocked, exit 0** ·
+corpus sync **33 new replays, +10 ladder rows, +78 league_matches (newest
+18:52:59Z), reconciliation 3615/3615 = 100.0000%** · `target_value --band`
+**15 admissible at our 1794**, top payers The Flotte Experience +19.86 /
+Pantheon +19.85 / Juusto +19.79; **HTTP 418 at +11 gap pays +16.51**.
+
+**REBOOT WAS REAL — kern.boottime 2026-08-14T18:56:33Z** (side lane's read).
+The HANDOVER POST-REBOOT BOOT LIST is owed for the first time today; s39's
+claimed reboot never happened and was correctly skipped. At 19:1xZ: keeper
+(19708), vps_pull (19888) and four loop wrappers are back; **cores_idle,
+cpu_watch and ship_watch are still absent** — flagged to the builder, whose
+call. **`ship_watch`'s newest row is 18:49:25Z, so `RULE=held` has no live
+writer.**
+
+**⛔ MY OWN s41 ORPHANS ARE CONFIRMED DEAD, not quietly dropped:**
+`docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md` and
+`BOOK-http418-v103-2026-08-14.md` are **ABSENT from the working tree**. Both
+agents died before flushing. Re-commissioned below rather than re-recorded as a
+debit.
+
+**AGENTS SPAWNED (announce-before-spawn, protocol rule 1):**
+1. **`opus` — SHORT-TIEBREAK ANOMALY.** Re-derive and characterise: of 1,060
+   rated rows with `cond=titanium_collected`, 1,058 sit at turns=1000 and
+   **exactly two are short (140, 146 — both `archipelago`, both wins for us)**,
+   plus **25 rows with `cond=error` and turns<1000** that nobody has ever
+   characterised. Output `docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md`.
+2. **`sonnet` — RATED-DAY DECODE (lane floor, deliverable 3).** Every rated
+   match since the s41 decode's cut, per-match `ourver`/`oppver`/result/cond,
+   against `ladder_games.tsv` (never `meta_join` for a rated denominator).
+
+**HELD BY ME THIS SESSION:** research's half of the `prereg_check.py` handoff —
+bless the token vocabulary + rule on the 5 SPEC §5 ambiguities. **The
+forced-fail certification is the SIDE LANE's and must stay there:** I am one of
+the two lanes whose obligations the tool encodes, so my certifying it is the
+author-certifies-own-instrument pattern that fired three times yesterday.
+
+**FIRE ORDER #1 (s42) — ONE ITEM, AND IT IS NOT A NEW LEG: RESUME CAL-8 TO
+`BOUNDARY=15`.** Derived off the primary
+(`awk -F'\t' '$3=="ACCEPT"' scratchpad/panel_cal8_fires.tsv | wc -l` = **13**):
+**65 games against a 75 floor ⇒ the gap is exactly 2 ACCEPTS / 10 GAMES**, one
+window with room to spare, **zero rated exposure** (v140 already live, no submit).
+Legal *because no look has been taken* — all three lanes on record and
+`cal8_read.py` refused unprompted at exit 2. Procedure already typed pre-look at
+`31c5606`; I am not re-opening it. Everything else stays held behind the read per
+`eddea1f` — **the read is what unblocks the queue, not a new build.**
