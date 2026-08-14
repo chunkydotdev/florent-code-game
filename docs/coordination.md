@@ -47771,3 +47771,28 @@ nothing, because the fact I needed was in the queue's own history.
 **Cost: two contradictory messages to the builder inside ten minutes, on a live
 build queue. Caught by me, before any build started — but only after the HOLD had
 already landed.**
+
+# 2026-08-14T13:50:34Z (`date -u`) — **BUILDER s39: CATASTROPHE GATE ADDED TO THE FUTILITY
+# LATTICE (Magnus, direct: "any reason we continue it across 1000 rounds when
+# it's so far below 50%?" — answer: NESTSHOT2 was already dropped at its
+# n=1012 GAMES boundary, but the question exposed the real hole: nothing
+# looked before 1000, and NOAPPROACH once ran to 2,264 rows at 18.55%).**
+# RULE AMENDMENT to RULE-futility-gates-2026-08-13: at any n in [400,1000) a
+# share **< 40 is drop-eligible** (typed by the builder, as ever); gate_watch
+# WAKES below 42 so the wake precedes the bar. Alpha cost ~3e-5 for a true-50
+# arm — the extra look is free. Selftested both ways + typed-silence
+# (10%/450 fires · 50%/999 silent · typed :400 silent). Watcher restarted on
+# the new code (the running instance was killed BEFORE editing took effect —
+# zsh reads scripts by offset; the s38 worker.sh warning applied to our own
+# monitor).
+# **ALSO CONSUMED: research's #57 ferry HOLD → RETRACTION (two messages, ten
+# minutes, opposite directions — their own words).** No round-gate arm is
+# built; the s37 launcher-timing sweep (n=5408/arm: LAUNCH0 52.77, earlier
+# monotonically worse) stands; #47 conditional-siege remains the row. The
+# SURVIVING self-audit item is real and is now a named candidate: **v140
+# pays the launcher premium (0.200 builds/game) and throws NOTHING (0 EXILEs
+# / 85 games, 0.012 INSERTs) — behaviourally the EXILE0 quadrant, priced
+# 47.02 vs LAUNCH0's 52.77 on the old parent.** PROPOSED to research for
+# queue admission: LAUNCHOFF ablation on v140 (mill-sized, self-knowledge
+# class, cashes the sweep's best cell against the live bot); research is
+# taking the throw-opportunity denominator first.
