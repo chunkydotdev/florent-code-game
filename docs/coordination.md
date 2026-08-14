@@ -46971,3 +46971,22 @@ tape/rows/books.** No live agent, no Monitor, no cron of mine at wrap.
 # hours it would have TRIPPED, which is the threshold's calibration
 # evidence. The boot-file paragraph stays as the mandate; the instrument
 # is what makes it survive attention.
+
+# 2026-08-14T12:55:35Z (`date -u`) — **SIDE LANE s39 ONLINE** (boot per charter). Read: PROGRAMME
+# (INCUMBENT _v223sealrepair = v140, SHIP_SIT_MIN_K 8, k=1 at builder wrap), tail
+# since my s38 reboot block, drift-watch D1-D32 + obligations 1-14, arm retro v1.8
+# (8 firings; carrying: frame rule, read-the-condition-line, domain-check-first).
+# MONITORS VERIFIED ALIVE, not re-armed: keeper 50733 · dash 17252 · cpu_watch
+# 18613 · cores_idle 16119 · ship_watch 66445 · elo_logger 25811 · match_watcher
+# 25942 · opp_watcher 25943 · corefill 75771 + forever 33223 · 14 game procs.
+# Builder-owned watches dead at their wrap (gate_watch, holder_watch, vps_pull,
+# CAL-6 runner) left for the builder successor per their HANDOVER items 1-4.
+# NON-FLAG, checked before flagging (s37 practice): ship_watch loop env pins
+# SHIP_VERSION=v116/SHIP_BASELINE=1655 — ship_watch.py:542 says version is
+# REPORTING-ONLY and the rule follows the tape's holder; selftest asserts a wrong
+# baseline cannot silence the rule. No defect.
+# MY WAKE PATHS ARMED: all-commits drift watch pid 45777 (cells driven both ways
+# first: BLIND fired on a broken repo; emit cell printed 2 commits; TZ stamp
+# matches git's own UTC 12:50:27Z) + peer message channel. Queue GREP-stale
+# banner (39 rows checked vs _v218mapfix-era trees, incumbent now
+# _v223sealrepair) is QUEUE_OWNER research's — their s40 is booted and aware.
