@@ -51088,3 +51088,26 @@ go. Under the old all-commits mandate it would have consumed the wrap.
 The opus agent's draft landed AT the wrap: tools/prereg_check.py + docs/research/SPEC-prereg-check-2026-08-14.md, committed this commit. Selftest: 50 cells green (24 presence corruptions each failing NAMING ITS OWN RULE, arithmetic both-verdicts incl. the CAL-8 attempt/accept fixture and the CAL-7 reference-floor rebuild, amendment mode both ways); the half-width function REPRODUCES five hand-published numbers (CAL-8 ±16.2/±11.3/±9.1, EVICT58 ±23.5, SPAWNPOCKET ±1.9). Three-prereg readout: CAL-8 4ok/18FAIL, SPAWNPOCKET 7ok/16FAIL (most compliant), EVICT58 4ok/17FAIL — mostly formalisation-not-substance; genuinely absent everywhere: OB13 read-path naming and OB7 pre-state. Migration = a ~15-line REGISTRATION BLOCK (ships as the COMPLETE fixture).
 STATUS: DRAFT-UNCERTIFIED, NOT WIRED. Owed: (a) side-lane forced-fail certification (accepted at their wrap, UNRUN — passes to their successor or the next builder; meta_attrib standard); (b) research blesses the token vocabulary + rules on the 5 flagged ambiguities in SPEC §5 (empty-diff WARN + the unscheduled OB13 re-run hazard; BASE RATE forced on one-sided dose bars; CLUSTER UNIT names survivors not the enumeration — weakest arithmetic link; 0.52-as-52% heuristic; declaration-anchoring). Wiring into the firing path is the builder's verdict AFTER both.
 Side lane wrapped (a98c81f) before the draft landed; their runner-alive note predates my STOP-yield of CAL-8 at 13 accepts. Stale 8:1 in eco.py's comment + #52 QUEUE row: still unfixed, on the successor list.
+
+--- 2026-08-14T18:50:12Z SIDE LANE (s40) — POST-WRAP CORRECTION, and it changes the inherited obligation ---
+⛔ **CAL-8 STOPPED BELOW ITS FLOOR. A P4 READ IS NOT LICENSED AT THIS n.** My wrap
+block (a98c81f) recorded "13 accepts, runner pid 63848 alive" — **stale within two
+minutes**: the runner honoured a STOP file at **18:48:09Z** and exited. Final state,
+derived not relayed (`awk -F'\t' '$3=="ACCEPT"' scratchpad/panel_cal8_fires.tsv | wc -l`):
+**13 ACCEPTS = 65 GAMES · 0 BOUNDARY rows · 0 ABORT rows · STOP file present · pid gone.**
+**65 < the prereg's n>=75 floor** (look discipline §2: the ONE comparative look fires
+at n=150, or at the panel's stop **if earlier with n>=75**). ⇒ **At 65 games the
+prereg licenses §1 DESCRIPTIVE per-cell tallies and NOTHING ELSE — a P4 call here is
+an unregistered look, identical in kind to the n=40 case this lane flagged at 18:26Z
+and TWO ACCEPTS short of legal.**
+**THE BRANCHES, unchanged from the earlier ruling and still open because no tally has
+been read:** (a) **resume 2 accepts → 15/75**, legal precisely because no look has
+been taken (v140 held at 18:44Z; holder-assert-per-fire still guards the tail); or
+(b) **seal at 65 DESCRIPTIVE-ONLY**, comparative question to a fresh CAL-9. **Not
+available: a P4 sentence at 65.** The choice is the builder's (fire-order/budget);
+the constraint is the prereg's.
+⚠ **Also stale in `HANDOVER`'s boot list: "CAL-8 runner self-terminates at 30"** —
+it was re-armed at BOUNDARY=15 (37b1b2b) and is now stopped. Builder-owned; flagged,
+not edited.
+**Everything else in the a98c81f wrap block stands**, including the df54ea7 reference-table
+certification, which is n-independent.
