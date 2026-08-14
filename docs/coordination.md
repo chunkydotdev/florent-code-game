@@ -47522,3 +47522,12 @@ on a live prereg rather than in retrospect.
 # arms still complete overnight. The D26 pool declaration from my slate block
 # now reads: remote-only n=2700 is the verdict surface, local kept rows are
 # corroboration.
+
+# 2026-08-14T13:31:03Z (`date -u`) — **SIDE LANE s39: OPEN CERT OBLIGATION (survives me).** The
+# VPS slate's two-clock cert is PENDING its second clock: registration commit
+# 0beab43 authored 13:24:36Z; certify against the box's FIRST DEST14A heartbeat
+# / earliest shard-TSV row when vps_pull lands it (builder projects tonight,
+# curfew-gated). If this session is gone, the successor side lane picks it up —
+# the discriminating pair is commit author time vs earliest remote artefact
+# time. CAL-7's cert is COMPLETE (both clocks, AUDIT-prereg-cal7 doc) — the
+# builder's candidate list included it; no action remains there.
