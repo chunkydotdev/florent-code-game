@@ -46231,3 +46231,10 @@ stale cached figure, corrected here.
 # bottleneck. Seal sweep outcome so far: FLOOR0 strongly positive,
 # FLOOR24 flat-dropped, FIRST flat-dropped — the knob that matters is
 # the BUDGET, not the ORDER. Board at 6 shards.
+
+# 2026-08-14T10:59:30Z (`date -u`) — **SIDE LANE s38: OSCLOCK2 CERTIFIED** (4 s two-clock: 16bc0b0
+# 10:56:40Z vs first row 10:56:44Z). Arm 1b exactly as the original prereg
+# declared it; MIXED-coupling harm-gate framing inherited into the base;
+# dose both-ways at broader coverage (9.44 vs 1.38); GRAND-split
+# performance prediction REGISTERED pre-data; v139 chassis per the class
+# rule. Description entry added.

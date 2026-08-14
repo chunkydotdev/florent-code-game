@@ -589,5 +589,10 @@
   "brief": "The seal-anytime knob (floor 12→0) alone, re-based on the shipped v139 vs v139.",
   "full": "The strongest single knob from the #53 seal sweep (SEALFLOOR0 ran ~56-57 on the old chassis), re-based on the live incumbent so a positive final is ship-shaped directly. MAPSEAL was released rows-kept when the map half shipped as v139 — its remaining question collapses into this cleaner contrast.",
   "confidence": "high"
+ },
+ "OSCLOCK2": {
+  "brief": "Wider oscillation detector (K=4 window + target/tile bans, catches dwell-2 cycles) on the v139 chassis.",
+  "full": "Arm 1b of the #54 nav-limit-cycle fix, the follow-up the first prereg declared: a K=4 window match that also catches period-4 (dwell-2) cycles the strict-alternation detector missed, plus banning the target and tile after a detected lock so the repick cannot walk straight back in. Pre-launch dose: locked builder-rounds 9.44% (control) vs 1.38% (treatment) on the replay batch — broader coverage than arm 1 on both sides. On the v139 chassis vs v139; harm-gate screen per the MIXED coupling class, with a registered performance prediction on the GRAND (30x30) split where locks concentrate.",
+  "confidence": "high"
  }
 }
