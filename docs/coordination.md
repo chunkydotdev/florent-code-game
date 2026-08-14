@@ -47925,3 +47925,58 @@ per game over 125 games, Focalground 24.7 over 55, LingLing40 22.1 over 85.**
 kind of number that recruits a build on its size alone — it nearly recruited one
 from me, and the same shape (a large raw rate hiding a coverage or length
 confound) killed `#57` two hours ago.**
+
+# 2026-08-14T14:0xZ (`date -u`) — ⭐⭐ **RESEARCH s40: econ v2 REGISTER DISCHARGED — AND THE CPU ROAD GOT THE EVIDENCE IT HAS BEEN ASKING FOR SINCE 08-13**
+The builder's `econ.tsv` v2 rebuild landed 14:01:25Z (40,367 files, 0 decode
+errors). **My R6 embargo is lifted for reads that cite it, and both of my
+affected-claims register members are now discharged.** *(Note the loop this
+closes: BOOK-0033's own econ finding forced the rebuild, and the rebuild has now
+falsified a different clause of that same book.)*
+
+## ⛔ MEMBER 1 — BOOK-0033's CPU CLAUSE IS WRONG, in the direction the register predicted
+It said *"CPU: true cpu_max 6-8.4 ms of 10 — no TLE lever either."* **On v2:
+0033 runs p50 5,197 µs · p95 9,271 · p99 11,261 · max 16,259, with 244
+band-cells over 10 ms, 172 files carrying an interruption, and 441 TLE'd
+unit-turns of 5,656,481 (0.0078%).** ⇒ **the lever is SMALL BUT NON-EMPTY where
+the clause said empty.** Corrected in place in the book.
+
+## ⭐ AND THE CUT THAT MATTERS MORE — PER-TEAM CPU HEADROOM, WHICH NOBODY COULD PRODUCE WHILE econ WAS CORRUPT
+| team | p50 | p95 | p99 | max | cells >10 ms | TLE'd turns |
+|---|---|---|---|---|---|---|
+| **Kvarnholmen** | **11,037** | 12,808 | 19,174 | 34,067 | 3,473 | **2,816,302 = 23.4%** |
+| Tyvrets | 7,669 | 11,063 | 11,395 | 15,028 | 827 | 4.12% |
+| Ouroboros | 7,417 | 10,611 | 11,062 | 14,728 | 925 | 2.08% |
+| **Erebus** | 5,413 | **11,048** | 11,285 | 12,795 | **1,052** | **0.77%** |
+| 0033 | 5,197 | 9,271 | 11,261 | 16,259 | 244 | 0.0078% |
+| **us (control)** | 3,847 | **8,847** | **9,411** | 12,967 | 67 | **0.0005%** |
+**`Kvarnholmen` is over budget in its MEDIAN band-cell and discards 23.4% of all
+its unit-turns.** **`Erebus` — IN OUR ADMISSIBLE BAND at 1824 — runs p95 11,048
+and loses 0.77%.** **Control: ours is the tightest column on the board, which is
+what makes this an instrument rather than a constant column.**
+*(Statistic is per (file, team, band) `cpu_max_us`, so "p50" is the median of
+per-band maxima — comparable across teams because it is the same statistic for
+all of them, not a median turn. `tled` is the authority for actual
+interruptions; a cell over 10 ms need not have been cut, because the engine
+carries a rolling ~5% buffer.)*
+
+**`SIX-ROADS-STATUS` said CPU denial was `REOPEN on evidence` — "the only
+statement of the refutation in the repo is one clause in a wrap, with no number,
+denominator, n, or script output." That is no longer true**, and the row is
+updated. **What the numbers support is deliberately narrow:**
+1. **THE DEFENSIVE HALF IS LIVE AND URGENT — our own p99 is 9,411 µs, 94% of
+   budget**, which independently corroborates `QUEUE #44` (87.6% ceiling on
+   30×30) on a different surface.
+2. **The INCIDENTAL half is priced as real, not theoretical: several teams we
+   actually play are ALREADY discarding turns with no help from us.**
+3. ⛔ **IT DOES NOT TOUCH THE NORMS QUESTION. Deliberate timeout-INDUCTION stays
+   HELD pending Magnus's question to the organisers. Measuring headroom is not
+   inducing exhaustion, and the six-roads row itself warns against merging
+   them — so this note keeps them apart on purpose.**
+
+## MEMBER 2 — #49's ti re-derive is unblocked and is next.
+## ⚠ AND THE REMINDER THE BUILDER ATTACHED, which bites this very note:
+**all cpu/turns figures moved in the rebuild**, so **every pre-14:01:25Z CPU
+number in this repo is a DIFFERENT INSTRUMENT.** Any comparison across today's
+14:01Z boundary must be era-tagged, including against the Juusto book's
+self-audit figures (8,818 µs v11 / 9,185 µs v7), which were taken pre-rebuild
+from a separate re-decoder and happen to agree closely with v2's 8,830 for v140.
