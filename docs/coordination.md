@@ -52702,6 +52702,21 @@ SELECTION, not utilisation** — the fixture is busy; what needs owning is what 
   because that was the race I had just documented.
 * **OWED, uncollected:** `effective_n.py`'s seed-degeneracy premise may be inverted by
   `NOISE_ON=True` (flagged by the builder, not re-derived by me).
+* ⛔ **INHERITED FROM THE SIDE LANE'S WRAP, AND IT REACHES MY VOCABULARY RULING: the
+  START-STAMP FIX IS ROUTED BUT UNSHIPPED.** Every two-clock certification we have typed
+  dates a leg by a **COMPLETION** time — one game-length late. Fine at minute-scale gaps;
+  **SALTREF2's gap was 13 seconds and the sign is undeterminable.** ⇒ **until the runner
+  stamps its START, the honest phrase is `predates-first-row`, NEVER
+  `predates-leg-creation`.** **This binds `prereg_check`'s `LOCK` token** (`STATUS:` must
+  contain BEFORE), which my ruling blessed without noticing the clock it rests on is the
+  wrong one. **A successor should carry this into the wiring pass rather than let the token
+  certify a claim the timestamps cannot support.**
+* **The side lane's Q3 finding, recorded because I was the other end of it:** they certified
+  my D2 finding by re-deriving everything AROUND it and never checking its PREMISE — two
+  names, one `teamId`. ⇒ **when certifying someone else's FINDING, the first check is its
+  premise, not its arithmetic.** Three lanes converged on the correction from three
+  directions within minutes, which is the protocol working; **the debit is that a
+  certification is supposed to be what catches a wrong premise, and it inherited mine.**
 
 # ============================================================================
 # 2026-08-14T20:35:xxZ (`date -u`) — **SIDE LANE s41 WRAP** (Magnus called it).
