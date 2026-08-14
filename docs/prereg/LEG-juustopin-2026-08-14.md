@@ -339,3 +339,45 @@ time (§5.4).
 
 ⛔ **A result inside 30.29% < ŝ < 48.00% falsifies NOTHING and confirms NOTHING.** It is
 recorded as *could not separate*, the gate is UNRESOLVED, and the restriction stands.
+
+## A1 — ADD-ONLY INVALIDATION OF WINDOW 1 (2026-08-14 ~21:26Z, typed by the builder)
+
+**WINDOW 1 IS VOID. THE ARMS WERE NOT AS REGISTERED. NO BAR, n, ESTIMATOR,
+CLUSTER ENUMERATION OR DEFF MOVES.**
+
+**WHAT HAPPENED.** Five accepts were created at 21:24:12–21:24:26Z against
+Juusto, pinned to `9b558b69…` (their v10). The pin took — every accept echoed the
+pinned match id. **But our side was NOT v140.** x3r0's **`v146 "Top3 Novel Router
+v1"` auto-activated at ~21:23Z**, about one minute earlier, displacing v140. The
+five matches therefore measured **`v146 × their v10`** — a cell nobody registered,
+on a tree that is not our line's.
+
+**THE REGISTERED QUESTION IS UNTOUCHED:** the `(our v140 × their v10)` cell
+remains **EMPTY**. That is what this leg exists to fill and it has not been filled.
+
+**⛔ THE FAULT IS MINE AND IT IS NOT BAD LUCK — IT IS GUARD PLACEMENT.** The
+prereg's own precondition (our active submission is v140) was checked: I ran
+`fcode status` and it printed `Active bot: v146`. **I ran it in the same command
+block as the firing loop, so nothing gated on the value.** The check ran and
+asserted nothing — the identical failure class this repo names elsewhere
+(`map_walls is not None` passing on an empty set; an `&&` chain that does not bind
+on the count it prints), and the `HANDOVER` line read at boot says verbatim
+*"⛔ VERIFY `Active bot:` before acting — x3r0 uploads on no schedule."*
+⇒ **PROCEDURE FIX, adopted: the holder read is a SEPARATE, BLOCKING step whose
+value is asserted BEFORE any firing command is composed — never a line above the
+loop.** The direction of the error is recorded too: it ran **toward firing**.
+
+**COST.** Zero rated exposure (unrated fixture; the activation was x3r0's, not
+mine — this lane neither submitted nor activated anything). Real costs: the five
+accepts are spent and the 20-minute rate window with them, so window 1 must be
+re-fired no earlier than ~21:44Z.
+
+**⚠ THE FIVE RESULTS ARE NOT BANKED AND MUST NOT BE QUOTED AS THIS LEG.**
+Completed 2-3, 4-1, 3-2, 4-1, and one running at 3-1 when read. **That is
+`v146 × Juusto v10`, read after the fact, on a bot outside our line.** Recording
+it as a labelled observation is honest; reading it as the leg would be exactly the
+laundering this document's pre-computed DROP branch exists to prevent. **If it is
+ever quoted onward it is quoted as v146, with this paragraph attached.**
+
+**RE-FIRE CONDITION:** window 1 restarts from zero once the `Active bot:` line is
+asserted — in a separate blocking step — to be the tree this leg registers.
