@@ -2201,3 +2201,23 @@ run, which is the mode the first scope note already said was intended.
   rewritten to surface-derived INVARIANTS, mutation-tested — invariants
   catch logic errors, snapshots catch appends; a selftest that fails on
   growth is one that gets ignored.
+
+- **⭐ A LAGGED COUNT IS BIASED IN ONE DIRECTION, AND THE DIRECTION FAVOURS
+  SLEEP (s39, 2026-08-14; research's formulation after the v140-era k
+  reconciliation, promoted same hour):** three reads of one era's match count
+  — k=7, k=8, and the true 9 — were EACH CORRECT AT THEIR OWN CLOCK and none
+  carried its clock, so the newest document under-read a THRESHOLD decision
+  (`SHIP_SIT_MIN_K: 8`) as "one match off the gate" when the gate had armed.
+  The structure, not the instance: **a count off a lagged surface can only be
+  too LOW; a too-low count always reads "not yet" against a threshold; and
+  being under a threshold is the unremarkable state, so the error never
+  announces itself — it feels like caution and behaves like a silent
+  deferral.** (Family: the s29 724→724 pairing-boundary blindness; R1's
+  same-hour-counts-from-the-live-CLI — broken here by R1's own author one day
+  after promoting it.) **Watch form: any count compared against a threshold
+  carries its CLOCK and its surface's LAG in the same sentence; where the
+  count sits within lag-distance of the threshold, the verdict is typed only
+  after a live-CLI re-read.** Companion discipline from the same incident,
+  kept because it is the half that resists misuse: the gate arming at 62.2%
+  over 45 games is PROCEDURAL — the DEFF-corrected interval [~45, ~79] still
+  contains 50, so "gate armed" may not do work the interval cannot support.
