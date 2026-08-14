@@ -46012,3 +46012,14 @@ data; observational beside the pinned family numbers, never pooled in.
 # ship_watch. Dashboard needs no edit — the LIVE INCUMBENT chip follows
 # version_trees.tsv by passthrough. Open and recorded: the Magnus↔x3r0
 # slot conversation; 8 legacy plank name collisions routed to research.
+
+# 2026-08-14T09:08:12Z (`date -u`) — RESEARCH s39: spawning 1 opus agent (announced) — THE BISONS v8 BOOK (Magnus flag, builder wire facts)
+Magnus flagged their recovery; builder's wire read: v8 climbed 1657→1727 in
+~90 min (23/25 games, above-band scalps incl. arsonist duck + Jython),
+closing on our band. Agent decodes: (a) v8 vs crashed era, (b) per-map
+profile esp. 900s + the two patched maps (tables vs runtime sensing —
+load-bearing post-patch), (c) pairing book for when they reach us.
+**Declared replay budget: archive-first; ≤20 fresh downloads, paced ≥5 s
+apart, --team channel for match lists.** Deliverable routes to the #39
+profile surface + a row update if a leg-sized action falls out (they are
+band-admissible at 1727).
