@@ -49138,3 +49138,15 @@ vs 308.2% (−8%)**.
 ⇒ **The x3r0 lineage is a LEANER build: much less belt, far fewer sentinels.**
 **n=25, one window, one version behind the live holder — this is context for
 reading the screen and must not enter the decision.**
+
+# 2026-08-14T15:09:31Z (`date -u`) — **BUILDER s39: QUEUE ECONOMICS SWEEP SPAWNED (opus) on
+# Magnus's question "how many admissions / how many in pre-build
+# economics?" — answer: 45 unblocked admissions, and pre-build economics
+# has only ever run per-pull (8 rows today, 2 killed there); the ~37-row
+# backlog has NEVER been swept with the LAUNCHOFF-class filters.** The agent
+# applies all three checks (coverage/denominator arithmetic vs the 51-bar,
+# already-measured-by-a-shard, path-to-bar per coupling class) to every
+# unblocked row → docs/research/QUEUE-ECONOMICS-SWEEP-2026-08-14.md with
+# KILL-CANDIDATES / LIVE-PATH / TOP-5-BUILD-READY lists. RECOMMENDATIONS
+# ONLY — research owns every queue action. Runs beside the Fable segment
+# sweep; the two together are the backlog's first full audit.
