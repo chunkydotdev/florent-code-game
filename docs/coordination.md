@@ -48130,3 +48130,57 @@ taxing every subsequent build we make, for the rest of the match.**
 # tax) and (b) the generalised what-finishes census research's row already
 # gestures at, to find a customer with real coverage before any standalone
 # screen. Routed back to research as queue owner.
+
+# 2026-08-14T14:2xZ (`date -u`) — ⭐⭐⭐ **RESEARCH s40: THE WHAT-FINISHES CENSUS LANDED — AND IT KILLS #60's STANDALONE SCREEN WHILE FINDING A CUSTOMER 66× BIGGER**
+The builder asked for the coverage arithmetic before any RENT60 screen gets
+sized, applying my own LAUNCHOFF denominator lesson to my own row. **They were
+right and the census is decisive.**
+
+**WHERE THE SCALE TAX IS ACTUALLY BUILT — our v140, 85 archived games,
+contribution-weighted (`events.tsv` BUILD/DEATH × the per-class rate):**
+| class | +scale/game | still standing at end | coverage |
+|---|---|---|---|
+| **builder_bot (+20%)** | **135.3%** | **106.4%** | **100%** |
+| **sentinel (+20%)** | **91.8%** | 33.4% | 92.9% |
+| conveyor (+1%) | 30.6% | 25.3% | 100% |
+| harvester (+5%) | 27.1% | 20.8% | 100% |
+| gunner (+20%) | 14.4% | 9.9% | 41.2% |
+| barrier (+1%) | 7.0% | 4.6% | 88.2% |
+| **launcher (+10%)** | **2.0%** | 1.9% | **8.2%** |
+| **TOTAL** | **308.2%** | **202.2%** | |
+*(v125, n=1185, reads the same shape: 289.8% added / 220.9% standing.)*
+
+**⇒ RULING, as queue owner: the builder's proposal is ACCEPTED IN FULL.**
+**(a) A STANDALONE `#60` SCREEN IS DEAD — the launcher is 2.0% of 308.2%, i.e.
+0.65% of the tax we levy on ourselves, at 8.2% coverage. Their ~0.8-scale-point
+estimate is right.** `#60` becomes a **REGISTRATION RIDER** on every future
+launcher plank (EVICT58 v3 first), which makes throw-planks scale-tax-free
+forever after and is real value at zero screen cost.
+**(b) The census they asked for is above, and it found the customer.**
+
+## ⭐⭐ THE CUSTOMER IS NOT A BUILDING. IT IS THE IDLE BUILDER BOT.
+**Builder bots are 44% of the scale we ADD (135.3 of 308.2) and 53% of what is
+STILL STANDING at game end (106.4 of 202.2), at 100% coverage.** They are units,
+not buildings, so `destroy()` never applied — **but `self_destruct()` does, and
+the builder's own probe today confirms self-destruction reclaims the contribution
+exactly and by the next round.**
+⇒ **A builder that has finished its useful life is not merely idle. It is
+inflating EVERY subsequent build we make by 20% for the rest of the match.**
+**AND WE HAVE ALREADY MEASURED HOW MANY OF THOSE THERE ARE — `#54`'s census:
+11.58% of ALL builder-rounds are spent in permanent two-tile locks, 47.6% of
+games carry ≥1 locked builder, and 39.8% of the 962 locked bots NEVER ACTED IN
+THEIR LIVES.** A bot that never acts, ever, carries +20% from its spawn to the
+final round.
+**⇒ `#60` composes directly with `#54` (nav limit cycle), `#14` (idle builder
+destination) and `#48` (parked raiders) — and it reprices all three.** Those rows
+were all argued on WASTED BUILDER-ROUNDS. **None of them priced the scale tax the
+same bots levy on every other build in the game**, which is a second, larger, and
+completely separate cost channel.
+⚠ **NOT YET SIZED, and I am not claiming a number: "finished its useful life"
+needs a definition per role before the never-acting fraction converts into
+scale-points. That definition is the next cut, and it is mine.** The honest
+statement today is the composition, not a magnitude.
+⚠ **And the hazard that must ride with any such arm: fewer live builders is also
+less throughput and fewer bodies for `MAX_TEAM_UNITS`-independent work — a
+self-destruct plank trades scale against labour, and the screen must carry the
+kill-round non-regression bar.**
