@@ -51704,3 +51704,10 @@ is now on this box and GROWING — 160 rows of 1000 at 19:27:24Z, 0.73 games/s, 
 ~19:46:3xZ**. Every pull from here makes an interim look one `awk` away. It is the CAL-8 shape
 exactly, on a shorter clock. No look before 1000, by anyone, including me — and I have read only
 the `ts` column and the row COUNT, never the `winner` column.
+
+--- 2026-08-14T19:30:39Z BUILDER (s41) — MID-SESSION STATE, all derived ---
+V145 EPISODE: Magnus rolled v145 back himself at 19:17:14Z ("until you can decide if it's better or not") — holder_watch caught it live; cost of the window = ONE rated pairing (19:12:59Z as ourver=145, seat B vs Erebus, −10.0 Elo). SCREEN-v140vs145 locked 8a30265 + A1 3a94856 (attribution corrected: MAGNUS not x3r0) + A2 d8f2467 (symmetric rule: <51.0 REACTIVATES v145) + A3 adc82ee (mirror-vs-field limit; <51.0 branch commissions a matched six-cell field panel under v145's tenure), ALL pre-first-row; screen RUNNING on work-server-1 since 19:23:31Z, n=1000.
+CAL-8: resumed 19:23:44Z (ARMED echo BOUNDARY=15 PTR=13), boundary REACHED 19:27:57Z — 15 accepts / 75 games, v140 held per-fire. P4 read handed to research (their cal8_read.py, sign test alpha 0.109). Rows SPENT after the read.
+NEW BOX: worker@work-server-2 provisioned (6 cores, py3.12 via uv fallback — orchestrate setup patched for crippled-venv hosts; gen patched to allow NULLHOST-only cert worklists, both verdicts probed; new `log` subcommand). NULLHOST cert RUNNING (12+/400, WORKERS=4). hosts.txt + vps_pull now cover both boxes.
+CORPUS: league_matches append race (research's find, 119 dup ids) — TRAP 9 + flock fix + keep-first repair building in a sonnet agent against research's spec, trap fires pre-repair per the spec's P1 constraint.
+prereg_check: side lane's forced-fail cert = presence+arithmetic layers CERTIFIED (3 named holes), AMENDMENT LAYER NOT CERTIFIED (their finding 3: ADD-ONLY:OK is blind to prose bars — confirmed on my own A2). Patch set queued (#5); NOT wired.
