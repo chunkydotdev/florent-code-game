@@ -46278,3 +46278,21 @@ stale cached figure, corrected here.
 # 2026-08-14T11:15:57Z (`date -u`) — **BUILDER s38 GATE: SEALFLOOR0 GATE-2700 @ n=2709: 55.22 ±1.88 —
 # CONTINUES** (above the final's own informative edge at halfway; final
 # ~4h at current fill; D26 replication will fire on any final ≥52).
+
+# 2026-08-14T11:28:16Z (`date -u`) — **BUILDER s38: work-server-1 IS LIVE AND EARNING — the fleet's first box.**
+# Chain: transport verified (Magnus's first-touch) · setup hardened twice
+# on real failures (venv guard → load-bearing file AND python version;
+# rootless uv path for old-python boxes — fcode ships cp312/313 manylinux
+# wheels only) · ENGINE PIN OK at 2.3.6 · gen found the structural null
+# (_v146null ≡ _v146gunaxis by md5, not by name) · push (no credentials,
+# no analysis surface) · **NULLHOST running first at WORKERS=10 (~80
+# rows/min — ≈3 local slots), worker self-gates until it certifies** ·
+# then SEALFLOOR0R = SEALFLOOR0's D26 replication (pre-fired legitimately:
+# at 55.22@2709 the final is mathematically ≥~52.6, so the ≥2pp trigger
+# cannot not-fire; seed offset +32M per the host partition).
+# **CURFEW ENFORCED IN THE WORKER (Magnus: box is shared, owners need it
+# 23:00-06:00 CET): sleeps 20:55-04:00 UTC at batch boundaries, zero CPU,
+# self-resumes — predicate driven both ways pre-push. Worker restarted
+# with the curfew code; rows resumed.**
+# Permission pattern honored: remote actions via the ORCHESTRATOR only
+# (raw ad-hoc ssh declined thrice = the tooling is the approved path).

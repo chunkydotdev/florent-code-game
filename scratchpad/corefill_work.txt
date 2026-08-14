@@ -1072,3 +1072,5 @@ AIMTHROW2   bots/_v222aimthrow     bots/_v218mapfix       5400 266000
 SEALREPAIR  bots/_v223sealrepair   bots/_v218mapfix       5400 268000
 MAPFIX2     bots/_v218mapfix       bots/_v197mapcode      2160 251000
 SEAL139     bots/_v221mapseal      bots/_v218mapfix       5400 270000
+OSCLOCK2    bots/_v224osclock2     bots/_v218mapfix       5400 272000
+SEALFLOOR0R bots/_v219sealfloor0   bots/_v197mapcode      5400 253000

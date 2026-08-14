@@ -1,0 +1,9 @@
+host: worker@work-server-1
+hostkey: worker@work-server-1
+seed_offset: 32000000
+formula: crc32(hostkey) % 50 * 1000000
+generated: 2026-08-14T11:24:07Z
+source_worklist: scratchpad/corefill_work.txt
+engine_pin: 2.3.6
+maps: antler archipelago auroraveil drakkarfjord drumlin fjordgate frostgate glacierkeep icefloe midgard nordkap ragnarok royale valkyrie yulerune 
+shards: NULLHOST SEALFLOOR0R 
