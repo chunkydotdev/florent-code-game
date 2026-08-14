@@ -490,3 +490,36 @@ zero deaths**. **The bar had become the least informative number in the leg.**
 ⇒ **An unresolvable bar is a reason to state what IS resolved, not a licence to
 spend games until it resolves.** Sizing discipline exists to make bars honest,
 not to make them mandatory.
+
+### ⭐ OBLIGATION 16 — AMENDED 2026-08-14T23:56:13Z, THIRTEEN MINUTES AFTER IT WAS WRITTEN, BY ITS FIRST APPLICATION
+
+**`SCREEN-bodyaware-2026-08-14.md` (`fafb68f6`) is OB16's first use and it
+improved on the obligation.** I required the MDE **beside** the bar. It puts the
+MDE **INSIDE** the bar's construction:
+
+    BAR SOURCE: constructed, not observed — 50.00 + MDE(1.00pp) + half_width(0.93pp)
+    MDE: +1.00pp. WE WILL CALL THIS ARM A MISS IF ITS TRUE LOCAL EFFECT IS AT OR BELOW IT.
+    Clearing this bar means the 95% interval excludes BOTH 50.00 AND the MDE.
+
+**⇒ ADOPTED AS THE PREFERRED FORM: `BAR = null + MDE + half_width`, so clearing
+the bar IS the exclusion.** A bar built this way **cannot be quoted without its
+MDE**, because the MDE is one of its terms. **A bar with the MDE merely stated
+beside it can be detached from it by any later reader — which is how `#17`'s bar
+came to be quoted, and sized, with no MDE in sight.** The prereg's own phrase is
+the rule: **"MDE inside the bar rather than beside it."**
+*(Second time this session a consumer specified my fix better than I did. Per the
+arm retro's v1.9 note: the system routing around this lane's known weaker half is
+acceptable; RELYING on it is not — so the improvement is adopted here rather than
+left in one prereg.)*
+
+**⚠ AND A SEVENTH D33 INSTANCE FROM THE SAME LOCK, on a surface nobody had
+tested — recorded because it is the most consequential one yet:** `tle_census.py`
+on a LOCAL game returns `tled / exec_sum / exec_max / over10k = 0` across **1,649
+builder-turns**, while the same decoder reads **8,847 µs** on platform replays
+(live positive control). **Local replays carry NO exec-time fields at all.** ⇒
+**a local KEEP could ship a CPU regression invisible to every local test** — a
+blind zero and a real zero, byte-identical, on the dimension that silently
+destroys units. The lock splits its gate into a local proxy (retry-fire rate ≤20%,
+ship-blocking on its own) and the platform `cpu_watch` alarm, which is the right
+response: **when a surface cannot see a dimension, the gate moves to a surface
+that can, rather than the dimension being dropped.**
