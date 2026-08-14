@@ -658,9 +658,15 @@ unrestated form, DEFF launders a weak null into a confident one.
 **With that restatement: the exposed class is claims that cleared a bar
 NARROWLY.**
 
-⚠ **PLATFORM games only.** `tools/effective_n.py` (seed degeneracy) and
-`tools/mde.py` (local kill-speed null) measure different things on LOCAL
-batteries — complementary, not duplicates.
+⚠ **PLATFORM games only (rated ladder + unrated challenges) — AND LOCAL'S
+EXEMPTION IS MEASURED, NOT ASSERTED.** Local corefill/arena screens are a
+**balanced-by-construction** fixture and read **pair-weighted DEFF = 0.98
+(ρ = −0.020) across 124 shards** (s39 audit, 2026-08-14): **naive local bars are
+correct and marginally conservative, and applying the platform constants to them
+would widen local intervals 24-35% for correlation that is not there.** Outlier
+arms with strong map interaction reach ~1.25. `tools/effective_n.py` (seed
+degeneracy) and `tools/mde.py` (local kill-speed null) measure different things
+on LOCAL batteries — complementary, not duplicates.
 **PROVENANCE, stated precisely because "three measurements converge" was too
 loose:** the **unrated** constant is two independent measurements —
 **1.45 implied** (`PREREG-PANEL-CAL1-v123-field-2026-08-13.md` A1.2, per-match sd
