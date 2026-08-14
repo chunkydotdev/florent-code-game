@@ -45466,3 +45466,21 @@ byte-identity):**
 pairings.** v125 baselines are era figures split at 06:24:45Z (standing
 rider). The minimal-fix note from the builder's v134 analysis stands:
 RICH_TI back above 500 kills the r0 burst trigger.
+
+# 2026-08-14T07:41:51Z (`date -u`) — **BUILDER s38 CORRECTIONS (side-lane flags, both consumed):**
+# (1) **ORDERING RULE ADOPTED: the tape moves BEFORE the platform action** —
+# the leg-1 burst reversed a taped kill and the reversal reached the tape
+# only after the attempt failed. Had it succeeded, the platform would have
+# carried a leg the record said was killed. Encoded alongside the
+# pre-written-burst-script rule: REVERSAL NOTE FIRST, THEN FIRE.
+# (2) **v135 ERA CORRECTED: 1 rated pairing + 2 unrated (INCOMING
+# challenges, not fired by us): 07:22:31 0-5 vs ph v34, 07:22:42 1-4 vs
+# HTTP 418 v103.** My "zero unrated" meant zero fired by this session;
+# the team-account era is 1+2, and v135's live line across all 15 games
+# (1 rated + 2 incoming) reads 1-9 in games where decoded. Rating at
+# restore: 1772, 950 matches (side lane's read).
+# ALSO: MA full ids resolved for MC's pins: 12b9c98a-c019-4dfe-8d97-
+# 234bfac74f6d · 2fa40dc6-884d-41ab-821f-dd2498950710 · 702eec0f-5991-
+# 41bd-95f0-e664d3d6dcfb · 5404430b-c0bb-4c94-8a0d-35789c38f9eb ·
+# 120e0610-f1c9-427f-90ec-f7a64017f107; mc_leg_burst.sh un-gated with
+# full pins.
