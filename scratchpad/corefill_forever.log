@@ -1,0 +1,4 @@
+2026-08-13T04:51:03Z COREFILL_FOREVER up. work=scratchpad/corefill_work.txt max_shards=8 poll=120s
+2026-08-13T04:51:03Z policy: restart the RUNNER on any exit; never touch a shard marker or its rows.
+2026-08-14T18:33:53Z PAUSED (scratchpad/COREFILL_STOP present) -- not supervising until it is removed.
+2026-08-14T18:35:53Z PAUSED (scratchpad/COREFILL_STOP present) -- not supervising until it is removed.

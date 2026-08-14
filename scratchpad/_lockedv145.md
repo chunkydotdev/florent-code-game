@@ -1,0 +1,227 @@
+# SCREEN PREREG — V140VS145: our v140 vs x3r0's v145, the slot screen
+
+**Committed BEFORE the shard's first row** (two-clock: this file's git author
+time vs the first `V140VS145` row's timestamp in `scratchpad/corefill.log` /
+the first remote heartbeat; the side lane certifies the pair). No row of this
+shard exists at commit time and none may be read before it does.
+
+**Authorization: `PROGRAMME.md:28` `X3R0_SLOT_RULE: screen_n1000_reactivate_on_51`
+— CODIFIED POLICY, not a per-instance announcement.** Magnus, verbatim,
+2026-08-14, in-session: *"Whenever he outs one up, run n=1000 against it and
+put ours back if we win."* This is the rule's **second codified firing**
+(v143 was the first; v142 predates the codification and is its precedent).
+**Consequence for this document: no fresh announcement to Magnus is owed
+before the fire, and no counter-roll is taken without the number — the screen
+IS the resolution mechanism** (`PROGRAMME.md:39`). He can countermand at any
+point before the activation branch executes.
+
+**Trigger:** x3r0 uploaded v145 "Top Team Router v3" at **2026-08-14T19:08:37Z**
+(`isActive=true`), displacing our v140 at **k=22 rated matches, net_act=+69.8,
+RULE=held** — i.e. displaced ABOVE `SHIP_SIT_MIN_K: 8` with the gate armed and
+holding, so nothing about the displacement is a stop-loss event on our side.
+
+**Contrast:** TREATMENT `bots/_v223sealrepair` (= v140, ours, the displaced
+holder; beat v142 **56.80 [53.7, 59.9] n=1000** and v143 **57.06 [54.0, 60.1]
+n=999**, both 2026-08-14) vs CONTROL `bots/_x3r0v145` (staged verbatim from
+the platform artifact via `fcode submission download 145`, **106 `.py` files,
+ALL compile-checked OK, 2026-08-14T19:14:53Z**; per its README a three-level
+terrain-fingerprint router — `main.py` `WEAK_EXPERTS` over 9 named maps →
+`base_router.py` over the full pool → 7 `p{NN}router` salt routers — with
+**no opponent-identity or match-outcome inspection anywhere**).
+
+**Fixture:** work-server-1 remote, WORKERS=40 on 48 vCPU (no oversubscription
+— material because v145 is a 110k-line, 106-file bot and a contested box would
+bias against the compute-heavier side), full 15-map pool
+(`antler archipelago auroraveil drakkarfjord drumlin fjordgate frostgate
+glacierkeep icefloe midgard nordkap ragnarok royale valkyrie yulerune`, parsed
+from `tools/overnight.sh`'s single `MAPS=` line by `tools/vps/orchestrate.sh`),
+seed partition per `tools/vps/orchestrate.sh` — offset = crc32(hostkey) % 50 ×
+1e6, **work-server-1 = +32,000,000**, sidecar-recorded — NULLHOST-certified
+host. Worklist row:
+`V140VS145 bots/_v223sealrepair bots/_x3r0v145 1000 304000`
+(⇒ effective seeds 32,304,000+, disjoint from the v142 and v143 shards).
+Engine 2.3.6, **RULES-IDENTICAL to platform 2.3.8** (ENGINE-238-DELTA-2026-08-14:
+GameConstants + Controller byte-identical, rules crate unchanged); residual
+caveat is only that no `.so` symbol diff was attempted.
+
+## n and decision rule
+
+**n = 1000 games. DECISION RULE — the same registered rule as v142's and
+v143's, restated here rather than incorporated by reference:**
+
+* our game share **≥ 51.0% at n = 1000 — equivalently ≥ 510 of 1000 games** →
+  **reactivate v140** (an existing platform version: a re-activation, not a
+  submit) inside a safe window **just after an observed pairing**, verified on
+  the **`Active bot:` line** of `fcode status`, never on an exit code.
+* our game share **< 51.0% — equivalently ≤ 509 of 1000 games** → **v145
+  stays**; result reported to Magnus, no action taken.
+* **400-CATA gate applies** on the way (abort if share < 40% at n = 400).
+  This shard's own read is the n=1000 look; no 2700/final band exists at
+  target 1000.
+* **No pooling with any other surface — this shard alone decides.** Per-map
+  splits are DESCRIPTIVE except for the one primary segment declared below.
+
+**Ties-to-sitter OC note (carried verbatim in effect from the v142 A1
+amendment):** at true equality v140 reclaims only **~26%** of the time
+(1 − Φ(0.63), 1 SE = 1.58pp at n=1000). **Ties go to the sitting v145 by
+~3:1.** This is read as the intent of *"put ours back if we win"* and is
+accepted in advance; **a 50.x read is not relitigated after the fact.**
+
+### Gate resolution statement (obligation 12)
+
+**The bar is a measurement and is sized here, before the fire.** At n = 1000
+and p̄ ≈ 0.5 the naive 1 SE is **1.58pp** and the 95% half-width is **±3.10pp**.
+⇒ **The 51.0 boundary CANNOT discriminate "true 51" from "true 50" at this n**
+— the gate resolves large effects (the v142/v143 reads at 56.8/57.1 cleared it
+by >3 SE) and does not resolve a genuinely marginal one.
+**PRE-COMMITTED BRANCH FOR THE UNRESOLVED CASE: an unresolved gate defaults to
+the RESTRICTION, never the permission — i.e. the sitter keeps the slot.** That
+is already exactly what the `< 51.0` branch does, so no extra machinery is
+needed; it is stated so the default is not mistaken for a judgement made at
+read-out.
+
+### Cluster enumeration and DEFF (CLAUDE.md scope procedure, performed in writing)
+
+1. **MATCH cluster — DIES.** A local shard has no 5-game match wrapper; every
+   row is an independently seeded single game. No stratum can hold two games
+   from one match because no match object exists.
+2. **OPPONENT cluster — degenerate, and measured.** Exactly one opponent
+   (`_x3r0v145`) for all 1000 rows, and no between-opponent contrast is drawn,
+   so there is no multi-member opponent stratum to inflate. Measured directly
+   on this fixture class: **local pair-weighted DEFF = 0.98 (ρ = −0.020, 124
+   shards, s39 audit)**.
+
+⇒ **Applicable DEFF = 1.00 (measured 0.98; naive intervals are correct and
+marginally conservative). The platform constants 1.529 / 1.833 are NOT
+imported** — doing so would widen local intervals 24–35% for correlation that
+is not there.
+⚠ **The one place this could bite:** the s39 audit found local outlier arms
+with strong map interaction reaching DEFF ≈ 1.25, and v145 is explicitly
+map-conditional. **The segment split below is therefore read as indicative,
+and a segment claim is banked only via the 15c re-screen, never off these
+rows.**
+
+## MAP DEPENDENCE (obligation 15a/15b) — the primary segment
+
+**`MAP SEGMENT: the 9 v145 WEAK_EXPERTS maps — antler, drakkarfjord, drumlin,
+frostgate, midgard, nordkap, ragnarok, royale, yulerune — versus the 6
+fallback maps — archipelago, auroraveil, fjordgate, glacierkeep, icefloe,
+valkyrie. MECHANISM: v145's top-level `main.py` router assigns a dedicated,
+separately-tuned policy module per (map, side) on exactly those 9 maps and
+falls through to `base_router.py` on everything else, so his tuning effort is
+concentrated on a set we can name in advance from his own artifact.
+EXPECTED DIRECTION: our share is LOWER on the 9 expert maps than on the 6
+fallback maps.`**
+
+**Verified at draft time, not assumed:** all 9 of his named expert maps are in
+our 15-map pool, and the complement is exactly 6 maps — so both arms of the
+segment are populated, ~600 vs ~400 games at even map allocation.
+
+**EXACTLY ONE PRIMARY SEGMENT.** Every other per-map, per-side or per-size cut
+is **descriptive** and may not be used to rescue a pooled fail. Named
+explicitly as descriptive-only so they cannot be promoted later: per-map
+splits; the A/B side split; the `base_router` `OPENINGS`-coverage split (14
+named maps in his `OPENINGS`, 10 in `SIGNATURES` + 4 via `COLLISION_GRIDS`, so
+at least one pool map may be unfingerprintable to him and land on a blind
+fallback — interesting, not primary).
+
+**15c applies:** if the pooled read fails < 51.0 **and** the 9-expert-map
+segment clears 51.0 in the predicted direction, that is a candidate for a
+**NEW screen with its own n** on that segment — never a re-read of these rows.
+The pooled number still decides the slot today.
+
+## Structural note — this screen is partly v140 against our own history
+
+**v145's policy modules are, by his own docstrings, OUR archived versions.**
+`crb/crg/fc/gu/la/t130` = `"LOKI-1 (v105)"`; `crc/lc` = `"LOKI-CHAMPION (d3)"`;
+`d6` = `"LOKI-D6"`; `se` = `"LOKI-SEAL2"`; all 14 `p{NN}h` modules are
+LOKI-1 (v105) and all 14 `p{NN}i` are LOKI-CHAMPION (d3). **So the control arm
+is largely a per-map router over LOKI policy families we shipped, and the
+screen is in substantial part v140 vs a map-conditional ensemble of our own
+lineage.**
+
+**Interpretive caveats this earns, stated before the fire:**
+1. **A win here is NOT evidence that v140 beats a foreign strategy.** It is
+   evidence that v140 beats a per-map mixture of earlier LOKI policies. The
+   currency question ("who holds the slot") is unaffected — the slot is decided
+   by the number, not by the provenance of the opponent's code — but any
+   downstream generalisation to the ladder field must carry this sentence.
+2. **A loss here is a live claim that a map-conditional mixture of our own
+   history beats our current line**, which is a far stronger statement than a
+   loss to an unrelated bot and would immediately promote the map-conditional
+   road (`LEG-mapconditional-test-2026-08-14.md`) rather than closing it.
+3. **His README's "official WR ~53.7% vs baseline loki (n=600)" is HIS number,
+   measured on HIS fixture, and this screen DOES NOT CONSUME IT.** It is not a
+   prior, not a bar, and not a comparator. It appears here once so that a later
+   reader cannot mistake its absence for an oversight.
+4. **No opponent-identity read is claimed or alleged.** Per the README, every
+   v145 routing decision reads only own entity type/position, nearby buildings,
+   the comms-store enemy-core position, and public map dimensions/terrain.
+   Nothing in this screen is a norms question.
+
+## Target-value line
+
+**TARGET BAND: n/a — local/remote screen, ZERO live rated exposure; the
+activation branch executes codified policy (`X3R0_SLOT_RULE`) rather than
+buying rating, so `tools/target_value.py`'s reachable-band question does not
+bind.** The rated value of the branch is the value of holding the slot with
+the version measured better, which Magnus has already priced by codifying the
+rule. **The one live cost this leg can incur is the reactivation itself**, and
+it is a re-activation of an existing version inside an observed-pairing window
+— no submit, no prototype exposure, no ~−8 Elo/leaked-match budget line.
+
+## Obligations register (`docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md`)
+
+* **Ob. 7 (outcome stated as MIX vs IN-OUR-FAVOUR):** satisfied — the outcome
+  is **game share IN OUR FAVOUR**, not a win-condition mix. Not already in the
+  target state at lock: the current state is v145 holding the slot, i.e. the
+  predicted-change set is by construction not pre-satisfied.
+* **Ob. 8 (denominator rule):** single opponent, single fixture, single shard;
+  the denominator is 1000 games from one worklist row and is not pooled with
+  any other surface.
+* **Ob. 12 (gate carries its resolution statement):** satisfied above,
+  including the pre-committed unresolved-case branch.
+* **Ob. 13 (`MECHANISM METRIC READS: file:line`):** **N/A by shape, stated
+  rather than skipped.** This is a whole-bot screen with no treatment diff and
+  no mechanism metric — the treatment tree `bots/_v223sealrepair` is unchanged
+  from the version that played the v142 and v143 screens, and the outcome
+  statistic is the shard's own game share. There is no diff for a read path to
+  intersect. **If any edit lands in `bots/_v223sealrepair` before the shard
+  completes, this screen is VOID and re-preregs.**
+* **Ob. 14 (opponent version stability):** satisfied by construction and
+  better than the obligation asks — the control is a **pinned local artifact**,
+  byte-frozen at 19:14:53Z. x3r0's platform churn cannot reach this shard. (The
+  churn is real and is exactly why the screen is local: v145 is his third
+  displacement of our slot today, after v142 and v143.)
+* **Ob. 15 (map dependence):** satisfied above with a signed direction and a
+  single primary segment. **Noted for the record: this is the FIRST prereg in
+  `docs/prereg/` to carry a `MAP SEGMENT` line** — the obligation was minted
+  s40 ~15:0xZ and the v142/v143 screens predate or missed it.
+* **Ob. 1–4, 6, 9–11:** Ouroboros/CAD-leg-specific or mechanism-leg-specific;
+  do not instantiate on a whole-bot screen.
+
+## PROVENANCE
+
+**This prereg was drafted by a FRESH agent with no inherited session context,
+per the standing rule (Magnus, 2026-08-14, s40: one fresh opus agent per
+prereg). Its ENTIRE input set was:**
+
+```
+PROVENANCE: docs/prereg/SCREEN-v140vs143-2026-08-14.md
+            PROGRAMME.md:28-45 (X3R0_SLOT_RULE block)
+            bots/_x3r0v145/README.md
+            docs/research/PREREG-amendments-and-lock-obligations-2026-08-09.md
+```
+
+Plus what those four reference and the builder's handed facts (v145 upload
+metadata, staging result, the v142/v143 screen numbers, the fixture and
+worklist row). Files opened for verification of a stated fact only, all
+read-only: `docs/prereg/SCREEN-v140vs142-2026-08-14.md` (the A1 OC note that
+input 1 incorporates by reference), `tools/overnight.sh` `MAPS=` (the 15-map
+pool, so the segment membership claim is verified not asserted),
+`tools/vps/orchestrate.sh` + `scratchpad/vps/worker@work-server-1/SEED_OFFSET`
+(the seed-partition figure), `ls docs/prereg/` and a `MAP SEGMENT` grep (the
+first-prereg-to-carry-it claim). **No shard row of any kind was read; no game
+was run by this agent.**
+
+**Timestamp:** drafted 2026-08-14T19:16:39Z (`date -u`, same shell call).

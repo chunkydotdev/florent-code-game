@@ -1,0 +1,23 @@
+Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+Packaging _v207apprlaunch...
+  Zip size: 73.3 KB
+Uploading...
+Submitted! Version 130 (ID: 3629c36a-e875-4e2f-926b-4f6e1dc716d1) — Loki rc8.4
+name OK: 'Loki rc8.4' (unrated leg)
+staging _v207apprlaunch: 4 code file(s) -> upload
+    +  doctrine.py
+    +  eco.py
+    +  main.py
+    +  raid.py
+  (nothing to exclude — dir was already code-only)
+
+
+HOLDER: before=v125 (Loki v8)  after=v130 (Loki rc8.4)
+LEDGER: v130 = bots/_v207apprlaunch (Loki rc8.4) -> version_trees.tsv
+** LEG MODE: v130 (Loki rc8.4) IS LIVE. Fire the leg now; touch /Users/junghard/Projects/Work/florent-code-game/scratchpad/LEG_FIRES_DONE when done (auto-restore in 300s regardless). **
+Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+Version 125 is now the active submission.
+** LEG HOLD ENDED (sentinel). **
+** `fcode submit` ACTIVATED v130 (Loki rc8.4). Restoring v125 (Loki v8). **
+HOLDER NOW: v125 (Loki v8)
+rollback confirmed against the holder, not the exit code.

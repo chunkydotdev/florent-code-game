@@ -52002,11 +52002,18 @@ retroactive can substitute for it.**
 delivered (**1.98pp pooled ceiling**), but the plank is worth **at most ~2pp pooled**, so
 it should not jump a leg that can pay more. `#53`/`#48(c)` unchanged.
 
-⚠ **THE CADENCE POINT, which is this lane's actual job and not a garnish:** the unrated
-fixture ran at **8-20% of its 1,800-games/day cap** while ships went out on local
-self-play. **Today it was dark for a further ~9 minutes on a holder displacement and most
-of the day on nothing at all.** `#52` is the case that proves the cost: **a plank whose
-value is UNMEASURABLE on the fixture we habitually use, waiting behind that fixture.**
+⚠ **THE CADENCE POINT, which is this lane's actual job and not a garnish** — ⛔ **and the
+figure I first wrote here was STALE, corrected 2026-08-14T20:0xZ against `meta_join`:**
+the unrated fixture ran at **8-20% of cap on 08-09 and 08-12 ONLY**. Actual recent record:
+**08-10 85.8% · 08-11 42.2% · 08-13 56.9% · 08-14 51.4%** (61.4% of the achievable rate
+for hours elapsed; **926 games today, newest 19:57:57Z — it is running RIGHT NOW**).
+**The lane-structure review was correct when written on 08-13; quoting it forward was my
+error, and it weakens the urgency argument I built on it.**
+⇒ **The cadence deliverable stands on a different and better footing: not "the fixture is
+idle" but "the fixture is busy and the QUESTION SELECTION is what needs owning."** `#52`
+remains the case that proves it — **a plank whose value is UNMEASURABLE on the fixture we
+habitually reach for, waiting behind that fixture** — and that is a routing failure, not a
+utilisation one.
 
 --- 2026-08-14T19:51:xxZ SIDE LANE (s41) — prereg_check RE-CERT + target_value rename fix verified against the CLASS ---
 **prereg_check: ALL THREE LAYERS CERTIFIED** (`CERT-prereg-check-forced-fail-2026-08-14.md` §5c,

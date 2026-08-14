@@ -1,0 +1,5 @@
+awk: can't open file scratchpad/panel_cal6_fires.tsv
+ source line number 1
+11:58:27Z PANEL-CAL-1 ABORT: holder is 'v141 (Counter Router v1)', not v140. Firing nothing.
+12:18:59Z PANEL-CAL-1: window 1 complete (5 accepted), pointer at 8.
+12:40:27Z PANEL-CAL-1: window 2 complete (5 accepted), pointer at 13.

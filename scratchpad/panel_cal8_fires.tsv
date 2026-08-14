@@ -1,0 +1,29 @@
+17:02:01Z PANEL-CAL-8: STOP file present, yielding.
+2026-08-14T17:05:30Z	D1-0033	RATELIMIT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-14T17:10:36Z	D1-0033	RATELIMIT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-14T17:15:43Z	D1-0033	RATELIMIT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-14T17:20:49Z	D1-0033	RATELIMIT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+17:25:54Z PANEL-CAL-8: STOP mid-window after 0 fires.
+2026-08-14T17:26:20Z	D1-0033	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "a3a78530-9afb-44d7-b1b1-423e3691666b"} 
+2026-08-14T17:30:31Z	D2-LingLing40	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "2171bde8-6f64-42e0-a3b9-12b9a8725938"} 
+2026-08-14T17:34:42Z	D3-Juusto	RATELIMIT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-14T17:39:48Z	D3-Juusto	RATELIMIT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-14T17:44:55Z	D3-Juusto	RATELIMIT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode Error: Rate limit exceeded: max 5 test/unrated matches per 20 minutes 
+2026-08-14T17:50:01Z	D3-Juusto	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "4ca292ab-ba19-4481-bab2-167a1151fc83"} 
+2026-08-14T17:54:13Z	D4-Jython	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "34c6605d-cdb0-42d4-8305-62ae3cdab21a"} 
+2026-08-14T17:58:25Z	D5-BigO	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "f19b53dc-eb88-4b52-a3a0-09fa4aa01d37"} 
+2026-08-14T18:03:06Z	D6-teamlazy	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "6f71b53b-a5bb-4295-8ee9-f8afc1220168"} 
+2026-08-14T18:07:20Z	D1-0033	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "740ae23a-a196-422e-aa69-6fa3c2ec2b85"} 
+2026-08-14T18:11:31Z	D2-LingLing40	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "0e8bc429-f5af-4787-91bc-c6149f70f0d6"} 
+18:15:41Z PANEL-CAL-8: STOP mid-window after 3 fires.
+2026-08-14T18:28:32Z	D3-Juusto	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "a720fd89-0b6f-40d5-8776-7810a2479cbc"} 
+2026-08-14T18:31:24Z	ARMED	boundary	BOUNDARY=15 PTR=9 accepts_so_far=9
+2026-08-14T18:31:25Z	D4-Jython	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "0975ee29-b632-4273-ac4a-84a0661369a4"} 
+2026-08-14T18:35:37Z	D5-BigO	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "d59c925e-bbd1-41bb-8e8a-368c5a001cd8"} 
+2026-08-14T18:39:48Z	D6-teamlazy	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "e4461242-fbcd-43cb-bca4-c8b07c64c15d"} 
+2026-08-14T18:43:59Z	D1-0033	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "4e90b469-3c28-4eb2-a8e2-a8ca23b161ae"} 
+18:48:09Z PANEL-CAL-8: STOP mid-window after 4 fires.
+2026-08-14T19:23:44Z	ARMED	boundary	BOUNDARY=15 PTR=13 accepts_so_far=13
+2026-08-14T19:23:45Z	D2-LingLing40	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "db633b26-69da-4dd9-89a9-4fc382ccebd0"} 
+2026-08-14T19:27:57Z	D3-Juusto	ACCEPT	Update available: 2.3.6 -> 2.3.8. Run: pip install --upgrade fcode {"matchId": "5870706a-f5ef-4a66-8f74-7efeec6c0215"} 
+2026-08-14T19:32:08Z	BOUNDARY	stop	15 accepts

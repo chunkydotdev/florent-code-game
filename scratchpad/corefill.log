@@ -4163,3 +4163,48 @@
 2026-08-14T18:12:21Z hold: running=2/8 load=2.79 unstarted=0
 2026-08-14T18:13:22Z hold: running=2/8 load=3.51 unstarted=0
 2026-08-14T18:14:22Z hold: running=2/8 load=3.49 unstarted=0
+2026-08-14T18:15:22Z hold: running=2/8 load=2.85 unstarted=0
+2026-08-14T18:16:22Z hold: running=2/8 load=2.89 unstarted=0
+2026-08-14T18:17:22Z hold: running=2/8 load=2.44 unstarted=0
+2026-08-14T18:18:22Z hold: running=2/8 load=3.17 unstarted=0
+2026-08-14T18:19:23Z hold: running=2/8 load=3.12 unstarted=0
+2026-08-14T18:20:23Z hold: running=2/8 load=5.24 unstarted=0
+2026-08-14T18:21:23Z hold: running=2/8 load=4.54 unstarted=0
+2026-08-14T18:22:23Z hold: running=2/8 load=5.54 unstarted=0
+2026-08-14T18:23:23Z hold: running=2/8 load=5.41 unstarted=0
+2026-08-14T18:24:23Z hold: running=2/8 load=6.65 unstarted=0
+2026-08-14T18:25:24Z hold: running=2/8 load=5.29 unstarted=0
+2026-08-14T18:26:24Z hold: running=2/8 load=4.61 unstarted=0
+2026-08-14T18:27:24Z hold: running=2/8 load=4.20 unstarted=0
+2026-08-14T18:28:24Z hold: running=2/8 load=6.34 unstarted=0
+2026-08-14T18:29:24Z hold: running=2/8 load=5.65 unstarted=0
+2026-08-14T18:30:24Z hold: running=2/8 load=6.66 unstarted=0
+2026-08-14T18:31:25Z hold: running=2/8 load=5.28 unstarted=0
+2026-08-14T18:32:25Z hold: running=2/8 load=88.92 unstarted=0
+2026-08-14T18:33:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:34:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:35:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:36:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:37:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:38:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:39:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:40:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:41:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:42:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:43:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:44:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:45:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:46:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:47:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:48:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:49:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:50:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:51:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:52:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:53:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:54:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T18:55:25Z PAUSED (scratchpad/COREFILL_STOP present). Running shards continue; launching nothing.
+2026-08-14T20:00:39Z COREFILL up. work=scratchpad/corefill_work.txt items=125 max_shards=8 deadline=8h out=scratchpad/overnight load_ceil=11.0
+2026-08-14T20:00:39Z policy: LAUNCH ONCE, NEVER RELAUNCH. a dead shard is logged and left.
+2026-08-14T20:00:39Z ALL WORK STARTED AND ALL SHARDS FINISHED. exiting.
+2026-08-14T20:00:39Z COREFILL done.

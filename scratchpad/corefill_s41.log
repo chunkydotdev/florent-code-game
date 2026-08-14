@@ -1,0 +1,4 @@
+2026-08-14T20:00:39Z COREFILL up. work=scratchpad/corefill_work.txt items=125 max_shards=8 deadline=8h out=scratchpad/overnight load_ceil=11.0
+2026-08-14T20:00:39Z policy: LAUNCH ONCE, NEVER RELAUNCH. a dead shard is logged and left.
+2026-08-14T20:00:39Z ALL WORK STARTED AND ALL SHARDS FINISHED. exiting.
+2026-08-14T20:00:39Z COREFILL done.

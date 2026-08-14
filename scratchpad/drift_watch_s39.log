@@ -1,0 +1,210 @@
+DRIFT-WATCH ARMED 2026-08-14T12:54:56Z — repo /Users/junghard/Projects/Work/florent-code-game, cadence 45s, base dd27a98
+COMMIT 9c874a0 Magnus Junghard Huttu 2026-08-14T12:55:35Z side lane s39 boot note: monitors verified, drift watch re-armed (cells driven), ship_watch env pin checked non-defect
+COMMIT 9487e61 Magnus Junghard Huttu 2026-08-14T12:56:02Z RESEARCH s40 boot: band/queue/audit reads + 2 agents announced (Juusto book, GREP carry v218->v223)
+COMMIT d51c30c Magnus Junghard Huttu 2026-08-14T12:56:37Z builder s39 boot note: re-arms in flight, Magnus VPS-expansion directive owned, CAL-7 gate met
+COMMIT 2d638e9 Magnus Junghard Huttu 2026-08-14T12:57:45Z gate_watch D4: wake message leads with its own re-arm command; selftest drives it both ways (wake carries it, --check does not)
+COMMIT 966882f Magnus Junghard Huttu 2026-08-14T13:06:25Z RESEARCH s40: CAL-6 declared look TAKEN at its stop (n=75, not 15 — units correction to our own s39 wrap) + PREREG-CAL7 'the divergence panel', committed pre-leg
+COMMIT bb8ac70 Magnus Junghard Huttu 2026-08-14T13:07:30Z RESEARCH s40 FIRE ORDER #1: CAL-7 divergence panel scheduled + CAL-6 look taken + units correction (75 not 15 games) + era-bounding hazard recorded (two near-misses named)
+COMMIT b8b6c6b Magnus Junghard Huttu 2026-08-14T13:10:04Z s39: SEALREPAIR 2700 + MAPSALT 1000 gates typed (both CONTINUE)
+COMMIT c0e55cb Magnus Junghard Huttu 2026-08-14T13:10:22Z RESEARCH s40: RETRACT LingLing40-as-leak (artefact of pooling our own withdrawn v137/v139) + PREREG-CAL7 A1 (ADD-only, blind, pre-leg): P1 reference becomes v140's own parallel rated record; ourver>=125 mixture retired
+COMMIT c3cf38c Magnus Junghard Huttu 2026-08-14T13:12:05Z CAL-7 divergence panel: runner (cal1-template copy, D1-D6 cells, n=300 boundary), selftested on the copy, fired
+COMMIT ca176e8 Magnus Junghard Huttu 2026-08-14T13:12:15Z GREP carry v218->v223 CLOSED: 39/39 rows re-stamped, queue_check exits 0
+COMMIT 3e4effc Magnus Junghard Huttu 2026-08-14T13:14:20Z PREREG-CAL7 A2 (ADD-only, data-blind) + repo-wide instrument fact: games cluster 5-per-match, DEFF measured 1.529 rated / 1.833 unrated
+COMMIT f427cfe Magnus Junghard Huttu 2026-08-14T13:14:59Z s39: AIMTHROW2 2700 gate typed (CONTINUES, marginal, harm-gate reading)
+COMMIT eed8896 Magnus Junghard Huttu 2026-08-14T13:16:05Z QUEUE: +#55 (carry the measured design effect into every bar we print) +#56 (target_value prices off a cached rating, stale on exactly the teams worth targeting); #53 re-scoped on the carry's action item
+COMMIT 01d9f40 Magnus Junghard Huttu 2026-08-14T13:17:10Z RESEARCH s40: withdraw my own Leviathan-book proposal (era-bounded they are 2 matches; +257 rating gap means the ladder has stopped pairing us) + queue stocked to 41
+COMMIT 002f2c5 Magnus Junghard Huttu 2026-08-14T13:17:33Z side lane s39: CAL-7 audit doc (two-clock cert complete, A2 certified, DEFF split 1.53 pooled vs 1.28 within-opponent, A1 mix-bias flag, GREP carry genuine)
+COMMIT b9601ac Magnus Junghard Huttu 2026-08-14T13:19:43Z PREREG-CAL7 A3 (ADD-only, data-blind) + #55 sharpened: the design effect SPLITS, and the same-bot pooled path is a mix comparison
+COMMIT cc9e036 Magnus Junghard Huttu 2026-08-14T13:21:05Z RESEARCH s40: era_guard spec'd 3 days ago, never built, and its predicted defect has now fired 5x across 2 lanes (3 mine today) — delegating the build to the committed spec
+COMMIT 8679256 Magnus Junghard Huttu 2026-08-14T13:21:50Z side lane s39: audit addendum 3 — DEFF df-correction verified (1.366/1.434, Q9 mine), A3 audited, P4-cannot-separate flag + A4 read-path offered
+COMMIT 0413e34 Magnus Junghard Huttu 2026-08-14T13:22:33Z PREREG-CAL7 A4 (ADD-only, data-blind): the falsifier gets a three-way read-path
+COMMIT 0beab43 Magnus Junghard Huttu 2026-08-14T13:24:37Z s39 VPS slate: DEST14A/B (#14 two-arm, wire-denominated idle detector), SENT41 (#41 band+denial), SALTREF (#48b refresh), V141VS140R replication — registered with doses, predictions, coupling classes BEFORE launch
+COMMIT 7313c14 Magnus Junghard Huttu 2026-08-14T13:26:43Z s39: VPS slate live (worker restarted, 6-shard queue through curfew); SALT_TI_FLOOR comment receipt
+COMMIT 11d1649 Magnus Junghard Huttu 2026-08-14T13:29:31Z side lane s39: DEFF re-pricing sweep — 3 exposed claims (HANDOVER GRAND-class superlative the headline), CAL family immune by construction, the constant existed in CAL-1 A1.2 since 08-13 and never propagated
+COMMIT 2b15554 Magnus Junghard Huttu 2026-08-14T13:29:34Z s39: V141VS140 futility drop @1005 (46.37, per its own prereg clause) + descriptive read; V141VS140R continues as separate allocation decision
+COMMIT bdf2935 Magnus Junghard Huttu 2026-08-14T13:30:30Z HANDOVER: GRAND-class claim demoted to mechanism-only per DEFF sweep (side lane flag) — kill restored categorical, magnitude unresolved at n=34
+COMMIT 8c166b0 Magnus Junghard Huttu 2026-08-14T13:30:59Z JUUSTO BOOK banked + verified, with the correction that moves its routing; tled retraction in BOOK-0033; CAL-7 A4.1; #55 partial-novelty correction
+COMMIT 0f23bb8 Magnus Junghard Huttu 2026-08-14T13:31:03Z side lane s39: open cert obligation — VPS slate second clock pending first DEST14A heartbeat
+COMMIT 6088005 Magnus Junghard Huttu 2026-08-14T13:33:40Z QUEUE +#57: we already ship the launcher ferry and fire it 140x less often than Juusto — the plank is the GATE, not the mechanism
+COMMIT e55b9a7 Magnus Junghard Huttu 2026-08-14T13:34:17Z RESEARCH s40: Juusto book banked (Magnus directive closed) — fourth shape, launcher-relay beachhead; my correction that the ring is OUR plank and we are 19 rounds slower on it; #57 stocked; tled retraction
+COMMIT 6495fe2 Magnus Junghard Huttu 2026-08-14T13:34:21Z s39: V141VS140R refunded to incumbent arms (allocation, Magnus+research); tled caveat narrowed (column corrupt, field real); #53 seal-tempo accepted as next build
+COMMIT 925bd51 Magnus Junghard Huttu 2026-08-14T13:34:43Z HANDOVER 4b: tled caveat actually narrowed (prior commit's edit died on an anchor assert; the note preceded the fact by one commit)
+COMMIT d12c9cf Magnus Junghard Huttu 2026-08-14T13:36:14Z side lane s39: CAL-2 'five of six by >2 cluster SEs' not reproducible under any unit (3/6 as 1-SE, 6/6 as half-width) — correction at provenance, both lanes' sites named
+COMMIT 278ed5e Magnus Junghard Huttu 2026-08-14T13:36:52Z BUILD tools/era_guard.py — refuses an our-side statistic unless the caller names an era
+COMMIT 561d501 Magnus Junghard Huttu 2026-08-14T13:37:17Z night-panel-elo-par addendum: quantify the anti-conservative caveat — Team 48 and CtrlAltDefeat both dissolve under the measured DEFF
+COMMIT 95967d6 Magnus Junghard Huttu 2026-08-14T13:37:47Z CAL-2 verdict sentence corrected at provenance: 'five of six by more than 2 cluster SEs' is producible from neither reading of the unlabelled +/-
+COMMIT f57158a Magnus Junghard Huttu 2026-08-14T13:41:39Z econ decoder v2: root cause was COLUMN DRIFT ON APPEND (s36 COLS 17->19, table never rebuilt) not a wire change; cores now counted (all-era 9-15% cpu/turns undercount); tled vindicated as real (field 4); sync gains the header-drift class guard (selftested 4 ways); panel_read fixture aligned
+COMMIT 471b203 Magnus Junghard Huttu 2026-08-14T13:42:34Z econ v2 rebuild script: gated swap (single-width + coverage), keeper stop/start bracketed, old table preserved
+COMMIT e454817 Magnus Junghard Huttu 2026-08-14T13:43:05Z econ_rebuild_v2: portable chunking (macOS split has no -n l/N)
+COMMIT 6bf9b6f Magnus Junghard Huttu 2026-08-14T13:43:39Z econ v2 affected-claims register (side-lane ask): #44 cpu ceiling direction-unknown, BOOK-0033 cpu_max recheck, ti embargo marking, era hazard named
+COMMIT d97364c Magnus Junghard Huttu 2026-08-14T13:44:15Z s39: CAL-2 verdict amended at its record (3-of-6 at 2 cluster-SEs, unit named); SEALTEMPO built+benched on flat dose (rate is the smallest term; transport is the build)
+COMMIT 9c263b3 Magnus Junghard Huttu 2026-08-14T13:45:49Z affected-claims register: (b) direction corrected per side lane — corrected cpu_max can only rise, headroom shrink, so the CPU no-lever closure can only WEAKEN or hold (my line said the opposite)
+COMMIT 83e456d Magnus Junghard Huttu 2026-08-14T13:46:44Z s39: NESTSHOT2 futility drop @1012 (45.75) — harm gate failed for the coupled arm; narrow-trigger rebuild routed to research
+COMMIT 04b6fe8 Magnus Junghard Huttu 2026-08-14T13:47:07Z QUEUE #57 re-specified (twice-moved premise) + #28 corrected: LAUNCHER_MIN_RND=160 is the binding gate both rows missed
+COMMIT 93dfda3 Magnus Junghard Huttu 2026-08-14T13:47:34Z s39: WORKERS 10->40 + SEALREPAIRR straddle guard pre-committed (boundary bracketed [390,470], dual-end split at final)
+COMMIT 50f717a Magnus Junghard Huttu 2026-08-14T13:49:41Z gate_watch: CATASTROPHE GATE at n in [400,1000) — wakes below 42, typed bar <40 (Magnus: why continue far below 50; NOAPPROACH's 2,264 rows at 18.55% is the prior). Selftest drives it both ways + typed-silence
+COMMIT 24408f5 Magnus Junghard Huttu 2026-08-14T13:50:02Z RETRACT the #57 re-spec lever: lowering LAUNCHER_MIN_RND is screen-OPPOSED and #47 already covers it
+COMMIT c5d806b Magnus Junghard Huttu 2026-08-14T13:50:33Z RESEARCH s40: retract the LAUNCHER_MIN_RND lever + the process delta (grep the row's own annotations, not just the tree)
+COMMIT 48ccadb Magnus Junghard Huttu 2026-08-14T13:50:34Z s39: catastrophe gate rule amendment on the tape; #57 retraction consumed; LAUNCHOFF-on-v140 proposed for admission
+COMMIT 01cb8a3 Magnus Junghard Huttu 2026-08-14T13:51:46Z gate ledger: :400 silencers for frozen pre-rule shards (SURCH30/SURCH90/QUIET0) — retro-fires on dead tapes, tsv_age exposed them correctly
+COMMIT d5ae517 Magnus Junghard Huttu 2026-08-14T13:53:18Z s39: LAUNCHOFF retracted at its record (coverage denominator: 8.2% of games have a launcher; effect scales to ~0.56pp)
+COMMIT 9f3bf67 Magnus Junghard Huttu 2026-08-14T13:53:18Z QUEUE #57 CLOSED as DEAD — its own audit answered it and killed the arm proposed off it
+COMMIT 5cb6bdd Magnus Junghard Huttu 2026-08-14T13:54:56Z RESEARCH s40: announce league-wide map surface build (era-bounded to the current pool, 1643 matches, positive control against decoded maps)
+COMMIT 41af8a6 Magnus Junghard Huttu 2026-08-14T13:56:32Z CLAUDE.md: the games-level bars in the STOP-CALLING-UNDERPOWERED-LEGS block are optimistic — carry the measured design effect into the always-loaded file
+COMMIT 6d56a02 Magnus Junghard Huttu 2026-08-14T13:58:38Z s39: base-camped eviction launcher identified (Jython/LingLing40, not Juusto); defence + siege-eviction directions routed to research
+COMMIT e5b6df7 Magnus Junghard Huttu 2026-08-14T13:58:43Z CLAUDE.md DEFF block: fix the overstated direction guarantee + add the one-sample form + precise provenance (side-lane audit, all three taken)
+COMMIT c949a91 Magnus Junghard Huttu 2026-08-14T14:01:42Z QUEUE +#58 (forward eviction launcher, OFFENCE) +#59 (pickup-envelope nav ban, DEFENCE, ranked low on a cut that found no cost)
+COMMIT 63391bd Magnus Junghard Huttu 2026-08-14T14:02:02Z econ v2 LANDED: 40,367 files, 0 errors, gated swap under corrected files-on-disk denominator; embargo lifted; register marked
+COMMIT ee44ffb Magnus Junghard Huttu 2026-08-14T14:02:26Z RESEARCH s40: Magnus's field observation admitted as #58 (build) and #59 (cut, not arm) — the cost cut found no cost
+COMMIT 12cfe3f Magnus Junghard Huttu 2026-08-14T14:04:40Z econ v2 register discharged: BOOK-0033's CPU clause CORRECTED and the CPU-denial road gets the evidence it asked for
+COMMIT 271255a Magnus Junghard Huttu 2026-08-14T14:05:09Z RESEARCH s40: econ v2 register discharged — BOOK-0033 CPU clause corrected, per-team CPU headroom table published, CPU-denial road's evidence gap closed (norms hold untouched)
+COMMIT 64e9529 Magnus Junghard Huttu 2026-08-14T14:07:07Z s39: EVICT58 built+dosed+queued (#58 forward eviction launcher) — end-to-end chain verified (6 evictions when core staffed), coupling and harm-gate reading declared
+COMMIT adc6b35 Magnus Junghard Huttu 2026-08-14T14:07:16Z RESEARCH s40: scope #49's econ re-derive — corruption is era-keyed (0% at <=v123, 64-100% at v125+), so (b)'s +19 Ti null is UNRESOLVED on precision grounds, not biased; (a)/(c)/(d) unaffected
+COMMIT 946cb72 Magnus Junghard Huttu 2026-08-14T14:08:38Z METHOD: a third source of local non-determinism — --tle 10 is wall-clock, so a loaded box breaks same-seed reproducibility
+COMMIT 61ad0b7 Magnus Junghard Huttu 2026-08-14T14:09:32Z EVICT58 v2: seat-coverage placement + seat-first eviction (Magnus's frame), pre-first-row; probe quoted as samples per the new method rule
+COMMIT 5c379a2 Magnus Junghard Huttu 2026-08-14T14:11:10Z s39: TLE-bias mechanism consumed with executable split (replay-kept probes = the instrument; screen TSVs cannot carry it; current slate audited compute-light)
+COMMIT 714dfbb Magnus Junghard Huttu 2026-08-14T14:11:41Z QUEUE +#60 RENT DON'T OWN — ct.destroy() appears ZERO times in the live tree, and main.py:256 carries the mechanism as a comment
+COMMIT 89853c9 Magnus Junghard Huttu 2026-08-14T14:11:54Z METHOD addendum: wall-clock TLE noise is shared across same-window rows, so early small-n gates are the exposed class — why the catastrophe bar stays at 40, not 45 (builder's reasoning, recorded at the bar's justification)
+COMMIT 76238b1 Magnus Junghard Huttu 2026-08-14T14:12:36Z RESEARCH s40: tape #60 — the launcher premium is the PERMANENT contribution and a demolished launcher leaves none of it; ct.destroy() has never been called in this bot
+COMMIT dc64b34 Magnus Junghard Huttu 2026-08-14T14:13:55Z s39: #60 premise engine-confirmed (self_destruct reclaims scale, exact, next-round); coverage arithmetic flags standalone screen as diluted — rider/census routing proposed
+COMMIT a38417f Magnus Junghard Huttu 2026-08-14T14:15:47Z RESEARCH s40: what-finishes census — standalone #60 screen is dead (launcher = 0.65% of our self-levied scale tax) and the real customer is the idle BUILDER BOT (44% of scale added, 53% still standing, 100% coverage)
+COMMIT 7eeec74 Magnus Junghard Huttu 2026-08-14T14:16:40Z s39: #60 census consumed — builder bots are the scale-tax customer; composition with #54/#14/#48 banked; build waits on research's finished-life definition
+COMMIT 140c2a7 Magnus Junghard Huttu 2026-08-14T14:17:51Z RESEARCH s40: size the builder-bot scale channel at ~5% of our scale integral, deflating my own 44% framing
+COMMIT b050320 Magnus Junghard Huttu 2026-08-14T14:18:49Z s39: RETIRE60 role definition fixed pre-probe (lock detector + zero lifetime actions + not-at-their-ring); registered against ~5.1pc not 44pc
+COMMIT 2ea1c9b Magnus Junghard Huttu 2026-08-14T14:19:05Z RESEARCH s40 FIRE ORDER #2: preemption ladder (EVICT58 pinned live leg vs 0033 > any committed prereg > CAL-7 default), band re-read at our 1756 with Juusto now printed as top target, and the rule that legs are sized in EFFECTIVE games at DEFF 1.434
+COMMIT 815dbb8 Magnus Junghard Huttu 2026-08-14T14:20:25Z #49(b) DOWNGRADED to UNRESOLVED on re-derivation — and the econ corruption was not the reason
+COMMIT fee19ba Magnus Junghard Huttu 2026-08-14T14:20:50Z RESEARCH s40: #49(b) withdrawn + the method delta — a stratified estimate needs its interval, its per-stratum n distribution, and a sensitivity sweep; a stratified point-estimate null is the most dangerous form because nulls close roads
+COMMIT e574a80 Magnus Junghard Huttu 2026-08-14T14:22:06Z s39: SEALFLOOR0 FINAL 54.74 same-side positive; D26 pool w/ remote 53.94@10800 — seal-floor-0 attribution confirmed on two hosts
+COMMIT 4e1c4c9 Magnus Junghard Huttu 2026-08-14T14:22:39Z side lane s39: announce adjacent-class sweep (bare stratified estimates + road-closing nulls)
+COMMIT 5a4675f Magnus Junghard Huttu 2026-08-14T14:24:37Z The stratified-null rule TIGHTENED, superseding my 20-minute-old version — side-lane audit, all four fixes taken
+COMMIT c0239d7 Magnus Junghard Huttu 2026-08-14T14:27:07Z s39: zombie shards killed (pool26 cancel gap registered, drop-includes-process-check interim rule); V141VS140 per-map splits banked (valkyrie prediction not shown)
+COMMIT 83cfcf9 Magnus Junghard Huttu 2026-08-14T14:27:15Z RESEARCH s40: session scratchpads persist (86 dirs, 349 analysis scripts, 5 days) — the repo's 'they die with the session' belief cost two agents a pipeline rebuild today
+COMMIT 19fc258 Magnus Junghard Huttu 2026-08-14T14:28:33Z Banking rule gains clause (v): name the analysis script by filename — scratchpads persist but are indexed by nothing, so a script is recoverable iff someone wrote its name down
+COMMIT 3f6b5c5 Magnus Junghard Huttu 2026-08-14T14:29:18Z RESEARCH s40: announce the RETIRE60 (c)-carve-out sizing — first consumer of the scratchpad-persistence finding, turning a replay-decode commission into an add-a-column job
+COMMIT 3fc850f Magnus Junghard Huttu 2026-08-14T14:31:53Z s39: RETIRE60 queued — K=4 probe 0/4 (sample; self-play under-doses locks), K=1 mutation fires 3 (both verdicts produced); harm-gate+thin-dose reading declared
+COMMIT d24e16c Magnus Junghard Huttu 2026-08-14T14:32:19Z audit_trigger FIRED 2/6 — reporting it, including the reading that indicts my own lane
+COMMIT 4ae28fa Magnus Junghard Huttu 2026-08-14T14:32:59Z QUEUE +#61: two of three lanes have no recorded decision surface, so audit_trigger's denominators are biased against them and today's firing cannot be evaluated
+COMMIT ccf89cf Magnus Junghard Huttu 2026-08-14T14:33:53Z side lane s39: bare-stratified sweep — discriminator most exposed (verified: outcome-stratified, no n, 2 builds spent), road closures DOWNGRADED to unsized-decision-rule class, era-catch-rate 1-in-3
+COMMIT 84cbd1a Magnus Junghard Huttu 2026-08-14T14:35:15Z s39: MC/MD closures annotated 'decided by an unsized rule' (0.9σ at committed n); resolution-at-committed-n adopted prospectively; audit session spawned on 2/6 fire
+COMMIT 709018f Magnus Junghard Huttu 2026-08-14T14:37:19Z s39: (c) kept as registered (0.8% cost, flat); end-anchored definition adopted; home-base lock inversion banked + DEST14B cross-note
+COMMIT 8cafc0f Magnus Junghard Huttu 2026-08-14T14:37:23Z Turret/ring-removal discriminator restated with n's, intervals and a round-band split — smaller than three books said, and the causal signal is in a different cell than the headline
+COMMIT b38d4aa Magnus Junghard Huttu 2026-08-14T14:37:42Z Amend BOOK-juusto and BOOK-0033 in place: withdraw the Juusto replication claim (intervals overlap) and restate 0033's discriminator on a same-population basis (+12.2pp, not 51-vs-14)
+COMMIT 074fcc1 Magnus Junghard Huttu 2026-08-14T14:38:04Z Amend BOOK-0033 in place: restate the removal discriminator on a same-population basis (+12.2pp, intervals just separate) and add the early/late split the claim never had
+COMMIT 1c59d67 Magnus Junghard Huttu 2026-08-14T14:38:48Z era_guard docstring: add the catch-rate calibration — 2 of 3 era-pooling errors on 2026-08-14 were consumed by a peer before the author caught them
+COMMIT 73c1a8a Magnus Junghard Huttu 2026-08-14T14:38:50Z s39: DEST14A 1000 gate typed (CONTINUES, 50.64)
+COMMIT 546fd6e Magnus Junghard Huttu 2026-08-14T14:42:05Z Removal discriminator, third restatement: at the GAME level with match clustering, NO cell's intervals separate
+COMMIT a061bcd Magnus Junghard Huttu 2026-08-14T14:42:23Z Amend both books again: at the game level with match clustering, no cell's removal-discriminator intervals separate
+COMMIT ce26b0d Magnus Junghard Huttu 2026-08-14T14:43:40Z era_guard selftest de-brittled: assert INVARIANTS derived from the surface, not frozen snapshots
+COMMIT eae50a8 Magnus Junghard Huttu 2026-08-14T14:44:34Z drift watch standing note: the unit of the claim, not the unit of the data (s39 — discriminator chain, DEFF, CAL-2 unified)
+COMMIT fefe256 Magnus Junghard Huttu 2026-08-14T14:45:06Z s39: the 53-bar reallocation (Magnus directive verbatim) — 3 mid-screen + 5 unstarted deferred with costs named; keeps SEALREPAIR/L4REPAIR2/SEALREPAIRR; build lane aims at home-lock/coverage
+COMMIT 33e3994 Magnus Junghard Huttu 2026-08-14T14:45:41Z PREREG-CAL7 A5 (ADD-only, data-blind): P2's +/-15pp bar is ~half the design's per-cell resolution (+/-32.6pp DEFF-corrected at the look, +/-26.6pp at n=300) — registered as DESCRIPTIVE ONLY before any data
+COMMIT c62f90c Magnus Junghard Huttu 2026-08-14T14:45:59Z s39: GATE-1000 bar 48->51 (Magnus refinement verbatim); SALTREF+RETIRE60 resumed under the new bar; coupled screens stay deferred to live legs
+COMMIT aff1d88 Magnus Junghard Huttu 2026-08-14T14:47:18Z Per-map record, current era + a THIRD clause for the DEFF scope rule: stratified by MAP takes NO deff
+COMMIT 4f161f1 Magnus Junghard Huttu 2026-08-14T14:47:36Z CLAUDE.md DEFF scope rule gains a third clause and its general form: a design effect applies only where the STRATUM can contain more than one member of the CLUSTER
+COMMIT c32e930 Magnus Junghard Huttu 2026-08-14T14:49:21Z audit consumed: results.tsv backfilled (11 rows incl. NESTSHOT2 harm-unresolved amendment, D26 relabel, v140 era-close verdict); audit report on repo
+COMMIT 2b38d24 Magnus Junghard Huttu 2026-08-14T14:50:02Z CLAUDE.md DEFF scope restated as a PROCEDURE, not a taxonomy — 'no DEFF for map bars' was wrong and I measured the residual
+COMMIT 4a5087d Magnus Junghard Huttu 2026-08-14T14:50:44Z Scope clause was wrong within the hour: opponent cluster survives map stratification (residual DEFF 1.073 measured). Rule restated as a procedure; and the author-is-first-violator pattern named as the expected case, arguing for auditing a rule's FIRST APPLICATION
+COMMIT 81ce252 Magnus Junghard Huttu 2026-08-14T14:51:06Z V140VS142 slot-decision screen: prereg committed pre-row (Magnus authorization verbatim, >=51@1000 -> activate v140); v142 staged from platform artifact
+COMMIT 94b8ee8 Magnus Junghard Huttu 2026-08-14T14:51:53Z HOLDER CHANGE to v142: CAL-7 stopped at n=110, registered look UNAVAILABLE (bar is n>=150) and not taken
+COMMIT 3314be5 Magnus Junghard Huttu 2026-08-14T14:52:29Z s39: v142 displacement arc + Magnus's decision screen running (prereg pre-row, >=51@1000 -> reactivate v140)
+COMMIT f441466 Magnus Junghard Huttu 2026-08-14T14:53:00Z SCREEN-v140vs142 A1 (add-only, data-blind): bar OC named (ties to sitter 3:1); engine transfer marked UNVERIFIED
+COMMIT a8de216 Magnus Junghard Huttu 2026-08-14T14:53:25Z #55 + CLAUDE.md: local's DEFF exemption becomes a MEASURED FACT (0.98, rho -0.020, 124 shards) — closing the one live hazard the s39 audit found in my own row
+COMMIT 5476749 Magnus Junghard Huttu 2026-08-14T14:53:48Z #61 partly answered, partly superseded: the audit ran and BOTH tripped rows were instrument defects — the FIRE was spurious, day reads 0/6 repaired
+COMMIT 3ca2427 Magnus Junghard Huttu 2026-08-14T14:54:16Z RESEARCH s40: the audit ran — FIRE was spurious, both rows instrument defects. My assessment was right in the denominator half and missed a numerator defect in my own preregs. The one live hazard was #55 (mine), now closed with the measured local DEFF 0.98
+COMMIT f86fc7b Magnus Junghard Huttu 2026-08-14T15:00:03Z s39: segment-declaration rule (Magnus) — preregs declare map dependence, gates print size-class splits, segment-strong failures re-screen gated; today's kept rows re-read clean
+COMMIT 90dabae Magnus Junghard Huttu 2026-08-14T15:01:24Z OBLIGATION 15: a prereg declares its mechanism's map dependence, or declares it expects none (Magnus's observation, s40)
+COMMIT 937ecd1 Magnus Junghard Huttu 2026-08-14T15:02:09Z s39: Obligation 15 consumed — direction + single-primary + new-leg refinements supersede my looser note; segment DEFF 1.07 banked; DEST14A lean relabeled candidate
+COMMIT 354503f Magnus Junghard Huttu 2026-08-14T15:02:31Z OBLIGATION 15 (Magnus's map-segment observation) + an open instrument question on my own map agent: 9,912 rows -> 722, second restart, against a docstring claiming append-only resumability
+COMMIT f24b846 Magnus Junghard Huttu 2026-08-14T15:04:35Z s39: segment sweep spawned on Fable (Magnus-authorized explicitly) under Obligation 15 discipline
+COMMIT 784b9b0 Magnus Junghard Huttu 2026-08-14T15:05:15Z WITHDRAW my false-invariant flag on the map agent — the docstring documents the wipe-and-rerun path and both incidents; I stopped reading fifteen lines early
+COMMIT f297333 Magnus Junghard Huttu 2026-08-14T15:05:54Z s39: L4REPAIR2 FINAL 54.83 same-side positive, segment-clean; typed on both tapes
+COMMIT 8993cd7 Magnus Junghard Huttu 2026-08-14T15:08:28Z v140's rated era: k=7, 22/35 = 62.9%, NET +23.2 — one match off the gate, and the 95% interval still includes 50 (encouraging, not resolved). No v142 rated match yet. Plus a thin v141 build fingerprint labelled context-not-evidence
+COMMIT eccd374 Magnus Junghard Huttu 2026-08-14T15:09:31Z s39: queue economics sweep spawned (opus) — first full backlog audit against the 51-bar filters
+COMMIT 0f5d493 Magnus Junghard Huttu 2026-08-14T15:10:49Z v140 era reconciled at the LIVE CLI: 9 matches, 28/45 = 62.2%, net +26.1, gate ARMED — my k=7 was stale by two matches and I broke my own R1 rule to get it
+COMMIT 5feed85 Magnus Junghard Huttu 2026-08-14T15:11:58Z drift watch standing note: a lagged count is biased toward sleep (v140-era k reconciliation; clock-on-every-count watch form)
+COMMIT b145d64 Magnus Junghard Huttu 2026-08-14T15:13:13Z CAL-7 descriptive tallies (110 games) — comparative look WITHHELD at n<150 with the reference in front of me
+COMMIT 9a5480c Magnus Junghard Huttu 2026-08-14T15:13:33Z s39: rolling agent pipeline (Magnus) — always-one-agent rule, durable verdict records, heartbeat guarantee, successor re-arm duty; NEXT stocked with 5 items
+COMMIT d9e6566 Magnus Junghard Huttu 2026-08-14T15:14:25Z s39: segment sweep banked — MAPCODE itself is segment-conditional (ladder-corroborated), ROUTEONLY retro-rescue, seal-floor lockheavy drag; 3 pre-sized re-screens routed to research
+COMMIT 6c9845f Magnus Junghard Huttu 2026-08-14T15:15:10Z pipeline: home-lock mechanism agent spawned (item 3 -> in-flight)
+COMMIT 721f9f7 Magnus Junghard Huttu 2026-08-14T15:17:15Z Three segment candidates admitted under Obligation 15, ranked 1/3/2, all with a winner's-curse rider
+COMMIT eb3295a Magnus Junghard Huttu 2026-08-14T15:19:16Z s39: V140VS142 = 56.80 both-segments -> v140 REACTIVATED (verified, clear window); fire-order ladder re-opens
+COMMIT f652200 Magnus Junghard Huttu 2026-08-14T15:20:49Z The sweep's '900-AREA' segment is half 400-area (5 of 10 maps are 20x20) — candidate 1's contrast may be the label rather than the knob
+COMMIT 992964b Magnus Junghard Huttu 2026-08-14T15:21:07Z s39: segment-label erratum (900-area was new-pool; legacy confounded with small) corrected at all records; membership-as-primary accepted for candidate 1
+COMMIT 1ec5828 Magnus Junghard Huttu 2026-08-14T15:22:21Z Small-map weakness: mechanism hypothesis KILLED before it became a queue row
+COMMIT a9c4a32 Magnus Junghard Huttu 2026-08-14T15:22:22Z side lane s39: two-clock certs — V140VS142 clean (exact recompute), 3 of 4 slate shards clean, DEST14A cert FAILS (764 pre-registration rows, flagged)
+COMMIT 18857fc Magnus Junghard Huttu 2026-08-14T15:23:50Z side lane s39: RETRACT DEST14A cert failure — my one-hour zone error; true boundary 13:24:37Z, 0 of 1113 rows pre-registration, all four slate certs CLEAN
+COMMIT 3c46bdc Magnus Junghard Huttu 2026-08-14T15:26:14Z Candidate 1's segment is EMPTY: all 25 pool maps are in MAP_CODES with exact terrain in every tree back to v125 — frostgate and royale included
+COMMIT cc580d8 Magnus Junghard Huttu 2026-08-14T15:26:22Z s39: queue economics sweep banked — 6 answered-never-closed rows, 12 kills, top-5 build-ready, the answered-rows process gap; all routed to research
+COMMIT c298ec5 Magnus Junghard Huttu 2026-08-14T15:28:06Z pipeline: economics sweep -> completed; engine-delta check spawned (NEXT-2 -> in-flight)
+COMMIT 077e420 Magnus Junghard Huttu 2026-08-14T15:29:05Z Grid-fix mechanism REFUTED — dies on its prior, not its power: we were already at 79.1% on those two maps WITH the wrong grids, which were 99% cell-accurate
+COMMIT aaf14dd Magnus Junghard Huttu 2026-08-14T15:30:42Z #47's fire HELD: went to write the prereg and found APPRLAUNCH's live road closed this morning at net -1 against a +4 bar
+COMMIT 36362ec Magnus Junghard Huttu 2026-08-14T15:31:11Z s39: #47 live-path recommendation WITHDRAWN (v207 IS #47; MC's closed leg was its live read) — errata at both records; EVICT58 takes the pipe on harm-clear
+COMMIT 7fa94cb Magnus Junghard Huttu 2026-08-14T15:33:08Z PREREG-CAL8: the panel redesigned so a holder change cannot destroy it — and P1 was unresolvable BY CONSTRUCTION
+COMMIT 557bc9b Magnus Junghard Huttu 2026-08-14T15:33:52Z CAL-8 committed pre-leg + the structural finding: CAL-7's P1 was unresolvable by construction (reference n=155 caps resolution at +/-9.1pp, bar was +/-8pp)
+COMMIT 7e8a3e2 Magnus Junghard Huttu 2026-08-14T15:34:40Z #47: add the LIVE evidence the row omitted — its own arm's pinned leg closed the road at net -1 this morning
+COMMIT 42a02a0 Magnus Junghard Huttu 2026-08-14T15:34:52Z s39: SALTREF deferred at 49.75 (segment lean noted as candidate); EVICT58 resumed at harm-gate size with registered harm-only scope
+COMMIT f266c7b Magnus Junghard Huttu 2026-08-14T15:35:29Z s39: engine delta RULES-IDENTICAL banked (A1 caveat closed at source level); CAL-8 runner prepped + selftested; pipeline ledger current
+COMMIT ccb9035 Magnus Junghard Huttu 2026-08-14T15:35:35Z #47 row fixed with its live evidence; and the follow-up scan measured the wrong thing, reported as such
+COMMIT a5ad24d Magnus Junghard Huttu 2026-08-14T15:36:29Z METHOD correction: the wall-clock mechanism I gave local non-determinism is insufficient — it persists at --tle 0, within one engine version
+COMMIT 63d8811 Magnus Junghard Huttu 2026-08-14T15:37:51Z s39: Magnus directive — worst-maps improvement is priority; worst-maps book proposed to research
+COMMIT 9c7f138 Magnus Junghard Huttu 2026-08-14T15:39:11Z BRIEF: the worst-maps book (Magnus's direction) — segment-FIRST hunting, which did not exist until now
+COMMIT ce46401 Magnus Junghard Huttu 2026-08-14T15:39:12Z pipeline: CAL-7 salvage banked (descriptive, all-v140, no alarms)
+COMMIT e3e4b4d Magnus Junghard Huttu 2026-08-14T15:39:43Z pipeline: opp-segment map spawned (last NEXT item) — NEXT EMPTY, stocking flag to research
+COMMIT a20612a Magnus Junghard Huttu 2026-08-14T15:40:15Z pipeline: worst-maps book spawned (opus) on research's committed brief — Magnus directive in execution
+COMMIT 333d97b Magnus Junghard Huttu 2026-08-14T15:41:15Z PIPELINE: re-stock NEXT with three items ordered by value
+COMMIT abdc966 Magnus Junghard Huttu 2026-08-14T15:42:12Z s39: home-lock mechanism banked — sealed pockets (valkyrie 50% of games, own-conveyor seals), stuck-counter source fact, SPAWNPOCKET + BELTBLIND candidates routed; 23x concentration deflated to spawn artifact
+COMMIT 810d0e8 Magnus Junghard Huttu 2026-08-14T15:42:13Z NEW CORPUS SURFACE: corpus/league_maps.tsv(.gz) — league-wide per-game MAP data, 9,865 rows / 1,973 matches / 25 maps
+COMMIT 6d471f1 Magnus Junghard Huttu 2026-08-14T15:43:19Z Correct my 'home-base phenomenon': near-core locks have median max-travel d2=9, so bots never left — a spawn-location artefact, not a property of the base
+COMMIT 9d91d0f Magnus Junghard Huttu 2026-08-14T15:43:22Z pipeline: closed-by-leg index spawned; NEXT re-stocked (discriminator, Leviathan deferred w/ trigger); ledger current
+COMMIT 28e53f5 Magnus Junghard Huttu 2026-08-14T15:44:22Z s39: two derived notes deflated with the 23x correction (chained at records); DEST14B cross-note withdrawn as mechanism
+COMMIT 0664bba Magnus Junghard Huttu 2026-08-14T15:44:49Z s39: opp-segment map banked — worst five terrain-general (Magnus directive attribution settled); 0033 the segment-pinned leg candidate; ladder_games dup-clean
+COMMIT 0a26cc1 Magnus Junghard Huttu 2026-08-14T15:45:27Z New map surface pays immediately: our worst maps are NOT upset-prone, so the weakness is ours
+COMMIT 7ea8adc Magnus Junghard Huttu 2026-08-14T15:48:06Z Third holder change (v143) — CAL-8 blocked at birth, fire order suspended again; plus my own timestamp correction
+COMMIT a409add Magnus Junghard Huttu 2026-08-14T15:48:47Z V140VS143 prereg committed pre-row (standing-pattern application announced to Magnus; slot-war context escalated); v143 staged
+COMMIT c46d38c Magnus Junghard Huttu 2026-08-14T15:51:05Z s39: RETIRE60 deferred at 50.15 (harm-clean per its registration)
+COMMIT 2f67ac6 Magnus Junghard Huttu 2026-08-14T15:52:51Z s39: v143 arc consolidated — screen running under the standing pattern; slot-control escalation to Magnus on the tape
+COMMIT d07a1af Magnus Junghard Huttu 2026-08-14T15:55:59Z X3R0_SLOT_RULE codified (Magnus verbatim): screen n=1000, reactivate on >=51 — s38 open question closed; local decision-screen duplicate cancelled
+COMMIT f862677 Magnus Junghard Huttu 2026-08-14T15:56:28Z s39: V140VS142 local replication 54.40 corroborates the 56.80 decision (no pooling, chained note)
+COMMIT 696c739 Magnus Junghard Huttu 2026-08-14T15:57:11Z ledger: V140VS142:1000 token (DONE does not silence lower bands for target<=1000 shards — gate_watch logic gap, folded into task 8)
+COMMIT 27ca5d6 Magnus Junghard Huttu 2026-08-14T16:01:16Z s39: closed-by-leg index banked (2 closed-leg arms; #42/#36 flagged); economics sweep erratum 2; discriminator spawning
+COMMIT 3ef3912 Magnus Junghard Huttu 2026-08-14T16:02:44Z #42 and #36 annotated with the ecoraid live close (closed-by-leg index's first real find)
+COMMIT 903fba4 Magnus Junghard Huttu 2026-08-14T16:03:57Z s39: SEALREPAIR FINAL 59.26 — strongest screen on record; v140's receipt stack complete (combo + all components + rated eras)
+COMMIT ecb8d3d Magnus Junghard Huttu 2026-08-14T16:04:31Z s39: WORST-MAPS BOOK banked — map-blind opening is the cross-cutting defect; inversion answered (no-show maps); #62-#65 routed to research
+COMMIT c6a2a36 Magnus Junghard Huttu 2026-08-14T16:06:31Z QUEUE +#62 TINY-MAP ECONOMY FLOOR +#63 LONG-APPROACH ARRIVAL — the worst-maps book's two admissions, verified before admitting
+COMMIT f031545 Magnus Junghard Huttu 2026-08-14T16:14:51Z s39: livelock discriminator — DISEASE-PREVALENCE confirmed (z=11.13, area-constant); MAPCODE gating candidate closes as no-gating-needed
+COMMIT 6a1f702 Magnus Junghard Huttu 2026-08-14T16:22:24Z s39: v143 beaten 57.06 -> v140 reactivated (slot rule's first codified firing); SEALREPAIRR 56.77 replicates the ship confirmation cross-host
+COMMIT 9447895 Magnus Junghard Huttu 2026-08-14T16:23:53Z side lane s39: V140VS143 cert clean (NOWINNER denominator reconciled), SEALREPAIRR straddle guard verified executed
+COMMIT b045e7e Magnus Junghard Huttu 2026-08-14T16:23:58Z PREREG-TINYECO62: cap pre-first-harvester builders at 3 on tiny maps (area<300) — committed pre-tree
+COMMIT 0396370 Magnus Junghard Huttu 2026-08-14T16:26:22Z TINYECO62 A1 + tape correction: I cited a gate Magnus superseded 90 minutes earlier
+COMMIT 7b3072b Magnus Junghard Huttu 2026-08-14T16:27:56Z PREREG-CAL8 A1 (ADD-only, data-blind, zero cells ever fired): re-point the tenure clock to v140's 16:21:36Z reactivation, new R3 gate ~17:01:36Z
+COMMIT ec14b0a Magnus Junghard Huttu 2026-08-14T16:28:11Z s39: TINYECO62 built+dosed+firing on the tiny set (seed divisor fixed in the runner copy; filler double-launch closed) — worst-maps arm #1 on cores
+COMMIT a22fd95 Magnus Junghard Huttu 2026-08-14T16:30:06Z QUEUE +#64 SPAWNPOCKET + its prereg, committed pre-tree — and registered with a DIFFERENT segment than its source proposes
+COMMIT 67e4df6 Magnus Junghard Huttu 2026-08-14T16:31:34Z s39: remote SALTREF stopgap logged with end condition (SPAWNPOCKET replaces it)
+COMMIT f1c6e8d Magnus Junghard Huttu 2026-08-14T16:37:41Z s39: SPAWNPOCKET built with probe-driven redesign (chain-site guard is the dose carrier; spawn half inert by measurement — pockets are walked into); SPKT64P primary screen firing
+COMMIT 119fab0 Magnus Junghard Huttu 2026-08-14T16:38:28Z SPAWNPOCKET A1 (pre-screen): half (a) is INERT BY MEASUREMENT and its source premise is refuted
+COMMIT 8624385 Magnus Junghard Huttu 2026-08-14T16:38:56Z The dose clause killed half a prereg pre-screen and refuted its source premise; plus the map_walls empty-set trap and the day's delegation finding
+COMMIT 26d3120 Magnus Junghard Huttu 2026-08-14T16:41:45Z s39: EVICT58 harm-clean at 49.20 — live leg unblocks; ship-deferral stands
+COMMIT 9d944c1 Magnus Junghard Huttu 2026-08-14T16:42:25Z s39: EVICT58 wake-read miss owned (consumed unread mid-build; detached re-arm); lattice re-armed
+COMMIT 9168ac1 Magnus Junghard Huttu 2026-08-14T16:43:56Z PREREG EVICT58 LIVE LEG vs 0033 — registered as a DOSE-AND-MECHANISM probe, not a currency read
+COMMIT 8eeb39d Magnus Junghard Huttu 2026-08-14T16:44:51Z pipeline: BUILD DELEGATION rule (Magnus) — arm builds go to agents with the mutation-first dose protocol; builder stays shallow for wakes/verdicts
+COMMIT e6c2c7c Magnus Junghard Huttu 2026-08-14T16:55:04Z s39: SPKT64P catastrophe-dropped at 418 (39.00) — chain-puncture mechanism; v2 refuse-only-if-occupied design routed; the CATA gate's first live catch
+COMMIT 463fc19 Magnus Junghard Huttu 2026-08-14T16:59:45Z s39: TINYECO62 1000-gate CONTINUES at 52.73 on its segment — the first worst-maps arm tracks positive
+COMMIT 3bd8832 Magnus Junghard Huttu 2026-08-14T17:05:25Z s39: EVICT58 live leg fired — 5/5 pinned, 36s exposure, holder verified; certs and dose decode handed off
+COMMIT f7356fa Magnus Junghard Huttu 2026-08-14T17:09:13Z Planning constant: a holder change costs ~one rate window ~15-20 min later (x3r0 panels every slot event, both directions, 3-for-3)
+COMMIT c5d9012 Magnus Junghard Huttu 2026-08-14T17:16:49Z s39: COMBO-TOWARD-v11 direction (Magnus) — ingredient inventory, assembly discipline, path
+COMMIT 3799a3e Magnus Junghard Huttu 2026-08-14T17:18:06Z RULING (registered blind to the dose): EVICT58 may enter v11 on dose+mechanism+harm gate, because a comparative live read costs 7-20 hours of the entire fixture per plank
+COMMIT 96d56d9 Magnus Junghard Huttu 2026-08-14T17:18:54Z s39: EVICT58 entry ruling consumed — v11 combo requires the EVICT58-OUT attribution arm; unpayable-bar arithmetic and the APPRLAUNCH counter-case carried verbatim
+COMMIT d1b4a4e Magnus Junghard Huttu 2026-08-14T17:21:48Z s39: EVICT58 refuted as designed (0.04 vs >1.0 dose bar) — plant worked, pickup starved; opponent-shaped; dropped from v11
+COMMIT 3893a41 Magnus Junghard Huttu 2026-08-14T17:21:55Z EVICT58 dose decode: P1 = 0.04 evictions/game against a >1.0 bar — refuted as designed, enters nothing
+COMMIT c597e52 Magnus Junghard Huttu 2026-08-14T17:22:43Z #58 REFUTED AS DESIGNED with its attribution + #47 inherits the live-validated plant
+COMMIT b781710 Magnus Junghard Huttu 2026-08-14T17:22:49Z s39: watcher patches installed (agent-built, boundary-installed) — pool26/prim2 cancel guards live; gate_watch gains DONE-fallthrough silence, re-arm-race drop, DRAFT-ROW output; tiny3.NEXT staged pending TINYECO62's runner exit
+COMMIT f0d0842 Magnus Junghard Huttu 2026-08-14T17:35:33Z side lane s39: EVICT58 live leg full cert — two-clock, pin 5/5, pairing-boundary leak check all clean; 36s window, zero leakage
+COMMIT 85c149d Magnus Junghard Huttu 2026-08-14T17:50:53Z #52 PROMOTED on Magnus's twice-pushed ask — because its stated blocker is wrong about the field
+COMMIT 392a225 Magnus Junghard Huttu 2026-08-14T17:52:56Z Encode the fixture-requirement tier + name the instrument gap I created for #52
+COMMIT f214b48 Magnus Junghard Huttu 2026-08-14T17:53:24Z s39: TINYECO62 FINAL 50.93 = declared UNRESOLVED-carries (not locked for v11); tiny3 cancel-guard installed at the runner-exit boundary
+COMMIT de6f3c5 Magnus Junghard Huttu 2026-08-14T17:55:14Z TINYECO62 look-policy ruling: PARK — extension is arithmetically futile and the redesign fails on prize size, but the leg produced a useful BOUND
+COMMIT 04387de Magnus Junghard Huttu 2026-08-14T17:55:49Z s39: HANDOVER top block refreshed mid-session (context-full hardening) — live state, minted rules, v11 combo state, re-arm list all durable
+COMMIT ff8ab44 Magnus Junghard Huttu 2026-08-14T17:58:21Z RESEARCH ARM RETRO s40 — v1.11 -> v1.12, FIRINGS 6, Q12 added (did a rule I wrote today bind ME first?)
+COMMIT 31cf881 Magnus Junghard Huttu 2026-08-14T17:58:33Z retro header was stale at v1.8 while the changelog ran to v1.12 — a versioned instrument advertising the wrong version
+COMMIT a573f97 Magnus Junghard Huttu 2026-08-14T17:59:19Z RESEARCH ARM s40 WRAP — process deltas R1-R7 routed, new surfaces/obligations listed, six must-not-inherit items, arm state verified not asserted
+COMMIT e4111ce Magnus Junghard Huttu 2026-08-14T18:00:16Z s39: TINYECO62 PARKED (research s40 ruling consumed) — banked bound: opening <=19% of tiny-map deficit; s40 handoff items receipted

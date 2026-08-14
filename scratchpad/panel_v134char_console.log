@@ -1,0 +1,3 @@
+awk: can't open file scratchpad/panel_v134char_fires.tsv
+ source line number 1
+07:21:25Z PANEL-CAL-1 ABORT: holder is 'v135', not v134. Firing nothing.

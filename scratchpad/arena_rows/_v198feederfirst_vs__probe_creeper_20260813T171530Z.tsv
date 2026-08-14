@@ -1,0 +1,3 @@
+bot_a	bot_b	map	seed	seat	winner	condition	turns	crashes_a	crashes_b	collected_a	collected_b
+bots/_v198feederfirst	bots/_probe_creeper	midgard	1	a	bots/_v198feederfirst	core_destroyed	72	0	0	570	0
+bots/_probe_creeper	bots/_v198feederfirst	midgard	1	b	bots/_v198feederfirst	core_destroyed	72	0	0	0	620

@@ -1,0 +1,39 @@
+2026-08-13T04:36:04Z COREFILL up. work=scratchpad/corefill_work.txt items=61 max_shards=8 deadline=10h out=scratchpad/overnight load_ceil=11.0
+2026-08-13T04:36:04Z policy: LAUNCH ONCE, NEVER RELAUNCH. a dead shard is logged and left.
+2026-08-13T04:36:04Z LAUNCH SALTREP  bots/_v178salt vs bots/_v169launchlate160  target=5408 seed_lo=200000   (running was 0, load 2.56)
+2026-08-13T04:37:04Z LAUNCH SALTIDLE2  bots/_v187saltidle_f vs bots/_v169launchlate160  target=5408 seed_lo=201000   (running was 1, load 2.76)
+2026-08-13T04:38:04Z hold: running=2/8 load=3.17 unstarted=0
+2026-08-13T04:39:04Z hold: running=2/8 load=3.76 unstarted=0
+2026-08-13T04:40:04Z hold: running=2/8 load=3.54 unstarted=0
+2026-08-13T04:41:04Z hold: running=2/8 load=3.30 unstarted=0
+2026-08-13T04:42:05Z hold: running=2/8 load=3.17 unstarted=0
+2026-08-13T04:43:05Z hold: running=2/8 load=4.05 unstarted=0
+2026-08-13T04:44:05Z hold: running=2/8 load=4.42 unstarted=0
+2026-08-13T04:45:05Z hold: running=2/8 load=5.05 unstarted=0
+2026-08-13T04:46:05Z hold: running=2/8 load=5.44 unstarted=0
+2026-08-13T04:47:05Z hold: running=2/8 load=4.90 unstarted=0
+2026-08-13T04:48:05Z hold: running=2/8 load=5.28 unstarted=0
+2026-08-13T04:49:06Z hold: running=2/8 load=4.61 unstarted=0
+2026-08-13T04:50:06Z hold: running=2/8 load=3.54 unstarted=0
+2026-08-13T04:51:06Z hold: running=2/8 load=3.54 unstarted=0
+2026-08-13T04:52:06Z hold: running=2/8 load=3.57 unstarted=0
+2026-08-13T04:53:06Z hold: running=2/8 load=3.60 unstarted=0
+2026-08-13T04:54:06Z hold: running=2/8 load=4.32 unstarted=0
+2026-08-13T04:55:06Z hold: running=2/8 load=4.23 unstarted=0
+2026-08-13T04:56:07Z hold: running=2/8 load=3.70 unstarted=0
+2026-08-13T04:57:07Z LAUNCH SALTCUTONLY  bots/_v190saltcutonly vs bots/_v169launchlate160  target=5408 seed_lo=202000   (running was 2, load 3.85)
+2026-08-13T04:58:07Z LAUNCH SALTBARONLY  bots/_v191saltbaronly vs bots/_v169launchlate160  target=5408 seed_lo=203000   (running was 3, load 4.07)
+2026-08-13T04:59:07Z LAUNCH SALTNOBLOCK  bots/_v192saltnoblock vs bots/_v169launchlate160  target=5408 seed_lo=204000   (running was 4, load 5.67)
+2026-08-13T05:00:07Z hold: running=5/8 load=5.90 unstarted=0
+2026-08-13T05:01:07Z hold: running=5/8 load=6.05 unstarted=0
+2026-08-13T05:02:07Z hold: running=5/8 load=6.78 unstarted=0
+2026-08-13T05:03:08Z hold: running=5/8 load=6.75 unstarted=0
+2026-08-13T05:04:08Z hold: running=5/8 load=9.94 unstarted=0
+2026-08-13T05:05:08Z hold: running=5/8 load=7.82 unstarted=0
+2026-08-13T05:06:08Z hold: running=5/8 load=6.94 unstarted=0
+2026-08-13T05:07:08Z hold: running=5/8 load=6.58 unstarted=0
+2026-08-13T05:08:08Z hold: running=5/8 load=6.32 unstarted=0
+2026-08-13T05:09:08Z hold: running=5/8 load=7.31 unstarted=0
+2026-08-13T05:10:09Z hold: running=5/8 load=9.38 unstarted=0
+2026-08-13T05:11:09Z LAUNCH SALTNULL  bots/_v178salt_null vs bots/_v178salt  target=5408 seed_lo=205000   (running was 5, load 7.15)
+2026-08-13T05:12:09Z hold: running=5/8 load=6.87 unstarted=0

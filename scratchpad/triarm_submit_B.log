@@ -1,0 +1,23 @@
+Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+Packaging _v201undereco...
+  Zip size: 72.8 KB
+Uploading...
+Submitted! Version 126 (ID: beb98374-9645-49cf-98c6-de839c88932d) — Loki rc8.1
+name OK: 'Loki rc8.1' (unrated leg)
+staging _v201undereco: 4 code file(s) -> upload
+    +  doctrine.py
+    +  eco.py
+    +  main.py
+    +  raid.py
+  (nothing to exclude — dir was already code-only)
+
+
+HOLDER: before=v125 (Loki v8)  after=v126 (Loki rc8.1)
+LEDGER: v126 = bots/_v201undereco (Loki rc8.1) -> version_trees.tsv
+** LEG MODE: v126 (Loki rc8.1) IS LIVE. Fire the leg now; touch /Users/junghard/Projects/Work/florent-code-game/scratchpad/LEG_FIRES_DONE when done (auto-restore in 300s regardless). **
+Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+Version 125 is now the active submission.
+** LEG HOLD ENDED (sentinel). **
+** `fcode submit` ACTIVATED v126 (Loki rc8.1). Restoring v125 (Loki v8). **
+HOLDER NOW: v125 (Loki v8)
+rollback confirmed against the holder, not the exit code.

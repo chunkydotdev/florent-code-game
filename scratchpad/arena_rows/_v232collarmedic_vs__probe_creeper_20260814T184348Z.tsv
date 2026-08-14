@@ -1,0 +1,3 @@
+bot_a	bot_b	map	seed	seat	winner	condition	turns	crashes_a	crashes_b	collected_a	collected_b
+_v232collarmedic	_probe_creeper	hive	1	a	_v232collarmedic	core_destroyed	124	0	0	660	0
+_probe_creeper	_v232collarmedic	hive	1	b	_v232collarmedic	core_destroyed	191	0	0	0	1870

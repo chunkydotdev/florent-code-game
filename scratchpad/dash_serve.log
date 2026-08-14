@@ -1,0 +1,8 @@
+CORE DASHBOARD  http://127.0.0.1:8787
+  shards  : http://127.0.0.1:8787/shards
+  matches : http://127.0.0.1:8787/matches
+  repo    : /Users/junghard/Projects/Work/florent-code-game
+  binds   : 127.0.0.1 only (not reachable from the network)
+  reads   : files + `ps`. No fcode, no network, no writes.
+  shard table refreshes every 45s via corefill_status.sh
+  Ctrl-C to stop.

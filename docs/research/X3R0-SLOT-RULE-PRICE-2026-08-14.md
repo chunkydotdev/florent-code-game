@@ -120,11 +120,27 @@ measurement capacity.** So an hour of screening latency costs:
 +  75 games   of FIXTURE_OF_RECORD capacity, unbuyable later
 ```
 
-⇒ **the −11.5 Elo/hour is the FLOOR of the price, not the price.** The lane-structure
-review's central finding was that this fixture already runs at 8–20% of its cap; holder
-displacement is one of the mechanisms that keeps it there, and it is the one we have a
-protocol for. **This strengthens rather than softens the conclusion: turnaround is the
-binding constraint, and it binds on both currencies at once.**
+⇒ **the −11.5 Elo/hour is the FLOOR of the price, not the price.**
+
+⛔ **CORRECTED AGAINST MYSELF, 2026-08-14T20:0xZ.** This paragraph first argued urgency from
+*"the lane-structure review's central finding that this fixture already runs at 8–20% of its
+cap."* **I quoted a 2026-08-13 figure forward without re-deriving it, and it is stale.**
+Measured on `meta_join` (our unrated games, `triggeredBy=unrated`), against the 1,800/day cap:
+
+```
+2026-08-09   277 games   15.4%      2026-08-12   355 games   19.7%
+2026-08-10  1545 games   85.8%      2026-08-13  1025 games   56.9%
+2026-08-11   760 games   42.2%      2026-08-14   926 games   51.4%  (61.4% of the
+                                                       achievable rate for hours elapsed)
+```
+**8–20% describes 08-09 and 08-12 and nothing since.** The review was correct when written;
+**the error is mine, in quoting it forward.**
+
+⇒ **the lost-capacity half of the price is REAL but SMALLER than I argued**: an idle hour
+costs 75 games only if the fixture would otherwise have been saturated, and it currently
+runs near 50–60%. **The Elo half is unaffected and remains the floor.** The conclusion —
+turnaround is the binding constraint — **survives on the Elo term alone**, which is why it
+is stated there and not here.
 
 ---
 

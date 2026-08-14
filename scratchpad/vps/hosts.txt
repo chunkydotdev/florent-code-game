@@ -1,1 +1,2 @@
 worker@work-server-1
+worker@work-server-2

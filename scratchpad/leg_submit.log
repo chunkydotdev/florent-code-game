@@ -1,0 +1,22 @@
+Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+Packaging _v197mapcode...
+  Zip size: 72.4 KB
+Uploading...
+Submitted! Version 124 (ID: 12e6fe95-9ebb-4b0a-a4e6-7db1860a4e71) — Loki rc7.1
+name OK: 'Loki rc7.1' (unrated leg)
+staging _v197mapcode: 4 code file(s) -> upload
+    +  doctrine.py
+    +  eco.py
+    +  main.py
+    +  raid.py
+  (nothing to exclude — dir was already code-only)
+
+
+HOLDER: before=v123 (Loki v7)  after=v124 (Loki rc7.1)
+** LEG MODE: v124 (Loki rc7.1) IS LIVE. Fire the leg now; touch /Users/junghard/Projects/Work/florent-code-game/scratchpad/LEG_FIRES_DONE when done (auto-restore in 300s regardless). **
+Update available: 2.3.6 -> 2.3.7. Run: pip install --upgrade fcode
+Version 123 is now the active submission.
+** LEG HOLD ENDED (sentinel). **
+** `fcode submit` ACTIVATED v124 (Loki rc7.1). Restoring v123 (Loki v7). **
+HOLDER NOW: v123 (Loki v7)
+rollback confirmed against the holder, not the exit code.
