@@ -52466,3 +52466,73 @@ announced itself as an **IMPOSSIBLE VALUE** (v226/v243 in a list of OUR versions
 implausible one. **The trigger was outcome-independent** — it would have fired identically
 had the contaminated numbers flattered us. *(Rule published earlier this session; caught its
 author's own error within the hour, which is the fourth firing of Q12 today.)*
+
+--- 2026-08-14T20:26:10Z (`date -u`) RESEARCH (s42) — ⭐⭐ **THE HTTP 418 BOOK CAME BACK WITH A DEFECT IN OUR OWN TREE, AND A GREP-POISONING HAZARD THAT AFFECTS THE QUEUE'S OWN ADMISSION RULE** ---
+`docs/research/BOOK-http418-v103-2026-08-14.md` (818 lines). **QUEUE `#67` opened.**
+
+## THE LOSS MECHANISM: THEY SUPPRESS OUR **EXPANSION**, THEY DO NOT KILL OUR ASSETS
+The discriminator between our wins and losses is **how much we BUILD**, not what we lose:
+**harvesters BUILT 8.13/g on wins vs 5.36/g on losses**, while **harvesters LOST is FLAT
+(2.43 vs 2.54)** and game length is identical (198 vs 199 median). Their **forward gunner
+picket — 5.21 gunners/game against a 2.20 field baseline**, at d²≈41 of OUR core, **5.07
+near-core builds/game in 84% of games from median round 40**. Chain measured end to end:
+our median `ti_collected` **1650 on wins → 455 on losses**, ammo **78 vs their 256**, our
+sentinel shots **20-22/band vs their 72-85**, our core dies **r191**. Confirmed by an
+independent cut aimed at something else (early entity count moves our win rate **+15 to
++19pp at every stratum**).
+
+## ⛔⛔ THE DEFECT, VERIFIED BY THIS LANE RATHER THAN RELAYED
+**`_hunt_turret` HAS NO DEFINITION AND NO CALL SITE ANYWHERE IN THE TREE.** Its only three
+occurrences are `doctrine.py:160, :231, :771` — **all COMMENTS, and two in the PRESENT
+TENSE**: *"the principle `_hunt_turret` is already built on"*, *"`_duel_safe` correctly
+refuses the melee duel, `_hunt_turret` therefore…"*. **All six constants
+(`HUNT_DESIGNATE_DSQ`=8, `HUNT_MIN_HEALERS`=2, `HUNT_FINISH_HP`, `HUNT_FIRE_TI`=2,
+`HUNT_DEFER_BASE`, `HUNT_DEFER_SPREAD`) are defined and read ZERO times in code.**
+⇒ **we wrote down the enemy, the answer, and the tuned constants, and shipped none of it.**
+
+## ⭐ AND THE PROCESS FINDING IS BIGGER THAN THE PLANK: **OUR DOCTRINE FILE CAN POISON A GREP**
+The queue's admission rule requires **`GREP:` the incumbent before an item is counted** —
+*"the cheapest possible null is a leg that tests a feature we already shipped."* **A lane
+grepping for "do we hunt turrets?" finds 90 lines of present-tense doctrine and six tuned
+constants, and correctly concludes YES. The answer is NO.**
+⇒ ⭐ **A GREP THAT HITS ONLY `doctrine.py` HAS FOUND A SPEC, NOT A BEHAVIOUR. The
+admission grep must land on a DEFINITION OR A CALL SITE in `main.py`/`eco.py`/`raid.py`,
+and a doctrine-only hit is a NEGATIVE result that should RAISE an item's priority, not
+retire it.** *(This is the same shape as today's other two: a stale 8:1 comment beside a 4:1
+arm, and a "Default OFF" comment beside `NOISE_ON = True`. **Three instances in one session
+of PROSE IN OUR OWN TREE CONTRADICTING THE CODE BESIDE IT.**)*
+
+## ROADS CLOSED BY THE BOOK — including one I was excited about four hours ago
+* ⛔ **CPU DENIAL: CLOSED ON EVIDENCE**, not merely held on norms. **At fixed build-out
+  their TLE rate is worth 0.0pp / 0.0pp / −9.6pp to us across three strata**, and **the dose
+  we control (entities in their vision) is the WEAKEST of five drivers tested
+  (partial r=+0.140) and REVERSES SIGN in r0-150 (−0.343).** Launcher-throw dose is
+  untestable — **14 throws across 126 games.** ⇒ **the norms question is now moot for this
+  opponent: the road is closed by measurement before it was closed by governance.**
+* **Border-throw crash-induction: closed.** **"They snipe our economy": closed** — the
+  harvesters-LOST flatness refutes it directly.
+* ✅ **My TLE numbers reproduced digit-for-digit from an independent band decomposition:
+  HTTP 418 16.531%, ours 0.0000% (0 of 5,795,692). Leviathan 14.282%, Jython 3.760% also
+  confirmed.**
+
+## NEW, READABLE, AND OPPONENT-SPECIFIC: **A SEAT EFFECT**
+**seat a 49.1% (n=53) vs seat b 27.4% (n=73), p≈0.033**, against a field baseline of
+50.8%/48.4% (n=1223/1252). Sharpest cell: **large maps + seat b, 26.3% (n=38)** vs our own
+49.9% baseline (n=665).
+
+## CORRECTIONS TO MY OWN BRIEF, accepted
+* **Net Elo across the 6 rated matches is −19.32, not the −7.57 I quoted** (that was one match).
+* **"All 30 games are in the new map pool" was imprecise** — 11 of 30 sit on pre-08-13 maps
+  and the live pool is **15 maps, not 10** (10 NEW + 5 retained). The no-confound conclusion
+  holds; **my phrasing did not.** ⚠ **`SPEC-pool-era` says "ten maps entered" — that is
+  still correct, but a reader could take it as "the pool is ten maps". Worth a word when it
+  is built.**
+* Population was **4× my brief: 26 matches / 126 games** (6 rated + 20 unrated).
+
+## OPEN, NOT FILED AS A ROW
+**HTTP 418's GUNNER-specific unexplained-removal rate is 3.2-3.7× the field and replicates
+against other teams (n=112).** Kind distribution — **gunner 655, sentinel 28, launcher 0,
+builder 0, core 0: ONLY ammo-spending types** — fits the known **0-ammo `fire()` crash**
+exactly *(`can_fire` returns TRUE at 0 ammo; the check lives in `finish_firing_turret` and
+RAISES)*. **Two discriminators were run and NEITHER confirmed it.** Recommended as a
+research task, **not a bot change**.
