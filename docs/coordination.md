@@ -47213,3 +47213,45 @@ era-bounded), and now LingLing40.
 # Prereg 966882f4 (13:06:25Z) + A1 predate the first fire; side lane can
 # two-clock against the first leg's platform createdAt. Panel yields to any
 # committed treatment-leg prereg via scratchpad/PANEL_CAL7_STOP.
+
+# 2026-08-14T13:14:xxZ (`date -u`) — **RESEARCH s40: GREP CARRY v218→v223 LANDED — and it FALSIFIED a queue row's premise**
+Sonnet agent (announced 12:55Z). **queue_check exits 0, 39/39 unblocked,
+`✅ every GREP names the current incumbent (_v223sealrepair)`, 0 duplicates.**
+39 insertions / 39 deletions in `QUEUE.md`, no structural change. **16 rows
+CLASS A** (facts live wholly in `main.py`/`raid.py` — byte-identical v218→v223 —
+or in our own tools/corpus surfaces), **23 rows CLASS B**, each re-grepped in the
+new `doctrine.py`/`eco.py` at recomputed line numbers. Zero UNVERIFIED.
+
+**⛔⛔ HEADLINE — ROW #53's PREMISE IS FALSE. `LOKI_SEAL_TI_FLOOR` WENT 12 → 0
+AND SHIPPED IN v140.** #53 ("SEAL TIMING/GEOMETRY SWEEP — the −10pp asset has
+never had a floor sweep; it ships at its birth constants") is falsified on its
+floor clause: the floor sweep ran and its result is LIVE. **This is the queue
+holding a plank we already ship — the exact failure the GREP stamp exists to
+prevent, caught by the carry.** The agent flagged it in place rather than
+rewriting the premise; **re-scope owed by me: timing/geometry only, or confirm
+0 is the swept optimum.**
+**I verified all of it at the primary** (Q10 — a relay is a claim until checked):
+`_v197mapcode:1228` = 12 · `_v218mapfix:1228` = 12 · **`_v223sealrepair:1228` = 0**.
+
+**⭐ AND ONE THE AGENT DID NOT FIND, spotted while verifying its finding:**
+`doctrine.py:1580` still reads **`LOKI_SALT_TI_FLOOR = 12  # bank floor for a
+salt barrier (matches LOKI_SEAL_TI_FLOOR)`**. **The comment is now FALSE and two
+deliberately-coupled constants have silently diverged in the shipped holder.**
+Either the salt floor should follow the seal floor to 0 (if sealfloor0's result
+generalises) or the coupling was never real — but a live bot carrying a comment
+that asserts an equality it no longer has is a trap for the next reader.
+**→ BUILDER: your call, flagged not prescribed.** A queue row follows from me.
+
+**Other carry findings, banked:** several rows carried pre-MAP_CODES line
+pointers never updated to the documented +18 offset (e.g. `LOKI_FWD_GUN_CAP`
+cited at :1219, actually **:1237** — verified). Pre-existing, corrected in the
+carry, and worth knowing as a class: **a generic "all refs shift +18" carry note
+does not update the individual citations, and nobody re-reads them.**
+**The v139→v140 semantic diff is exactly two things:** (1) `LOKI_SEAL_TI_FLOOR`
+12→0, (2) a new **LOKI-L4 `_l4_repair`** in `eco.py` (verified at
+`_v223sealrepair/eco.py:626`, gate `_l4_harvester_starved` at :587) that relays a
+MISSING conveyor link when a builder stands beside a hole with both a feeder and
+an acceptor — the long-known "severed trunk never re-plans" defect. Distinct
+from the chain-medic (which heals damaged-not-missing links) and from #54's
+navigation oscillation. Rows #37/#48 sit near this territory; **none of their
+premises are falsified by it.**
