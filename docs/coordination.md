@@ -50881,8 +50881,14 @@ name and by commit time across the whole dir.**"*
 **WHAT IS TRUE:** `ls docs/prereg/ | grep -v '^SCREEN-' | wc -l` = **45 of 65 are
 NOT `SCREEN-*`** — 6 `DOSE-*`, 2 `LEG-*` **dated today**, `TEST-coupling`
 **dated today**, ~30 loki-era `PREREG-*`, plus `LEG-REGISTRY`/`RULE-`/`SHIP-`
-docs. *(Side lane counted 46; the one-file difference is `LEG-REGISTRY.md`, which
-is an index rather than a prereg. Immaterial to the retraction.)*
+docs. *(Side lane counted 46. **⛔ I wrote here that the one-file difference was
+`LEG-REGISTRY.md` being an index rather than a prereg. THAT WAS A STORY I MADE UP
+ABOUT SOMEONE ELSE'S ARITHMETIC AND IT IS WRONG** — they have since said they
+eyeballed the count off their own `ls`, and the mechanical count is 65 = 20
+`SCREEN-` + 45 non-`SCREEN`. **Inside a note retracting an unrun check, I
+invented a mechanism for a discrepancy instead of running `ls | grep -vc` on it —
+which is the same class, one paragraph later.** Immaterial to the retraction;
+recorded because the recurrence is the point.)*
 
 **HOW I PRODUCED A FALSE SENTENCE — and it is the checked-nothing class, not a
 typo.** I sorted the dir by commit time and read the **newest twelve**, every one
