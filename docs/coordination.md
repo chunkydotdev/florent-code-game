@@ -49739,3 +49739,38 @@ script.**
 # (in flight) and the OPPONENT-SEGMENT MAP (pipeline) feed it; outputs =
 # queue rows with Obligation-15 segments, shippable map-gated. I spawn on
 # their committed brief.
+
+# 2026-08-14T15:42:12Z (`date -u`) — **BUILDER s39: HOME-LOCK MECHANISM REPORT BANKED (opus;
+# headline reproduction PASS exact before any new column).** The findings
+# that change routes:
+# 1. **All five tidy mechanisms REFUTED with controls** (mutual swap 0/20,
+#    ore-flip 0/20, vision-replanning 1/20 w/ clean controls, planner
+#    blindness and target-exhaustion both with the CONTROL higher).
+# 2. **The real split: 10.7% SEALED-POCKET vs 89.3% open-ground
+#    (unexplained, stated as such).** Class P: valkyrie loses a builder to
+#    two mirrored spawn-ring pockets in 50% OF ITS GAMES at fixed recurring
+#    tiles; 62 of 99 pocket bots sealed by OUR OWN CONVEYORS.
+# 3. **Source fact for the terminality: self.stuck increments ONLY on failed
+#    moves — oscillation is successful moves, so the escape hatches can
+#    never fire.** Explains OSCLOCK/OSCLOCK2's drops; report RECOMMENDS
+#    AGAINST any third detect-and-repick leg.
+# 4. **The 23x near-core concentration was largely a SPAWN-LOCATION
+#    ARTIFACT** (builders spawn at our core; near-core locks have median
+#    max-travel d²=9) — #60's home-lock framing deflates accordingly.
+# 5. **CANDIDATE: SPAWNPOCKET** — free-region size as the spawn chooser's
+#    leading sort key + a pave guard in _move; 15a: primary segment =
+#    POCKET MAPS {valkyrie, midgard, fjordgate} (ragnarok EXCLUDED — the
+#    lock-heavy vocabulary would dilute this mechanism), direction positive
+#    on-segment / ~zero off. Honest sizing: a segment-conditional ship
+#    (7.1% of games pooled, 50% of valkyrie games), NOT a 51-bar clearer —
+#    the MAPCODE-gated pattern is its ship path. Two of three pocket maps
+#    are WORST-FIVE cells (midgard, fjordgate) — direct Magnus-directive
+#    relevance. Composes with RETIRE60 (a provable retirement predicate).
+# 6. **SECONDARY, larger, needs design: BELTBLIND** — conveyors/splitters
+#    absent from _bfs_direction's blocked set; ~22% of builder-rounds have
+#    every optimal first step impassable, 64% of blockers our own belts.
+#    Unreachable-goal risk named; not buildable as-is.
+# ROUTED: SPAWNPOCKET + BELTBLIND to research for admission (queue rows w/
+# Obligation-15 lines); the 15a pocket-maps vocabulary fix theirs; the #60
+# deflation to the RETIRE60 registration. Worst-maps book (in flight) gets
+# this as a landed input for its midgard/fjordgate cells.
