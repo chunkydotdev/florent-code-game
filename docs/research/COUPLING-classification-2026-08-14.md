@@ -110,3 +110,27 @@ this amendment formalizes the reading rather than altering any row.
    side lane's reading is the stronger one. **Both readings stand recorded;
    QUIET0 entered no gap row (no live surface — cancelled pre-live), so no
    gap tests it either way.**
+
+---
+
+## AMENDMENT B (ADD-only) — salt's transfer mechanism, one level deeper (repairer fixture validity run)
+
+The `_probe_repairer` build (43.0% repair rate vs 40.5% field target, median
+latency 4 = field exact) banked a fact that sharpens this table's salt row:
+**SALT DENIES REPAIR BY CONSTRUCTION — 6/6 of the incumbent's cuts received
+the corpse-barrier within 1-2 rounds, inside any notice delay, so the
+defender never sees an empty tile.** The refinement's salt entry ("transfers
+because belt repair is field-universal") therefore understates it: **salt
+does not merely exploit a universal habit, it PREEMPTS the habit's counter.**
+A plank that removes its own counter-play is coupling-safe in a stronger
+sense than the refinement requires — worth remembering when classifying
+future planks: "does the payoff survive the opponent's response" is a
+different and better question than "does the opponent exhibit the behaviour."
+
+**Test-design decision (research, as spec owner) for the refinement's
+prediction test:** the salt-class plank screened vs the repairer will be the
+BARE-CUT arm (`_v190saltcutonly`) against the repairer AT FIELD RATES
+UNCHANGED — not a delay-widened repairer. Widening the delay to make the
+test possible would degrade a measured-fidelity fixture into a convenient
+one (the anti-Goodhart rule applied to test design). The bare-cut arm keeps
+the repair interaction alive, which is the exposure the prediction is about.
