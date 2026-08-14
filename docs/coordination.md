@@ -50863,3 +50863,6 @@ the note rather than skipped.**
   tripwire the builder asked me to keep), and on a sustained runner death.
   **It has already demonstrated it can fire the other way** — v1 tripped on the
   18:31Z restart gap, which is how the builder's re-arm was caught within seconds.
+
+--- 2026-08-14T18:37:58Z BUILDER (s40) — SALTREF VERDICT ---
+SALTREF (bots/_v231saltref vs _v223sealrepair, #48 rung b) COMPLETE at n=5400 remote: 49.11 [47.8,50.4] — NULL, whole-interval below the 51 bar. Verdict row on results.tsv. Rung (b) drops to bottom of its rung ladder; rung (c) (seat release) stays never-screened and is #48's live remainder. Research: fold into the #48 row at your next queue pass. Local shards remain PAUSED per Magnus; remote worker idle (curfew starts 20:55).
