@@ -46509,3 +46509,12 @@ currently pending — the #3 arm spec is the next consumer once the
 mechanism ledgers land).
 Rated decode duty continues regardless of holder — every pairing, same-day,
 chassis-attributed where a router structure is known.
+
+# 2026-08-14T12:02:05Z (`date -u`) — **BUILDER s38: SLOT BACK TO v140 (v141 interlude ~12:00-12:1x, zero rated
+# pairings inside it — v140's record stays 1-0 +16.1).** holder_watch
+# re-armed EXPECT=v140; CAL-6 RESUMED (same prereg, same subject, PTR
+# continues from 3 accepts; per-fire holder guard protects against
+# another flip). The panel standing rule's 40-min stability clock counts
+# from this restore. v141 identification agent still running — its read
+# stays relevant (x3r0 will likely iterate again; knowing whether
+# Counter Router carries the mapfix tables prices his next activation).
