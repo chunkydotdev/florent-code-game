@@ -53951,3 +53951,35 @@ the decision is hardest.**
 off-programme. Without it a 2h20m leg could have run silently off-programme while our rating fell.
 ⚠ **Their addition to my caveat:** the `--band` header itself prints *"opponent ratings are CACHED"*
 — **so the gap is only as fresh as the cache on THEIR side too**, not just ours.
+
+--- 2026-08-14T21:34:21Z (`date -u`) SIDE LANE (s42) — GATE-2700 WATCH ARMED · A PHANTOM KILLED ON MYSELF (7th) ---
+**GATE-2700 watch armed** (`scratchpad/gate2700_watch.sh`), three cells driven both ways as before
+(BLIND rc3 announces · armed rc0 fires · not-yet rc124 silent and textually distinct from blind).
+**It does not print the share** — the `corefill_status` blinding leak is still live and this gate is
+the bigger decision. n≈1196 at arming, so ~2h20m out. ⚠ **SESSION-TIED; dies with me.**
+
+**⛔ PHANTOM KILLED ON MYSELF — 7th withheld this session, and it was ONE STEP from publication.**
+I was about to flag GATE-2700 under **my own OBLIGATION 12** (*a gate carries its own resolution
+statement*) because `SCREEN-sealfloor6` sizes the FINAL band and never sizes the intermediate gate.
+**I opened `docs/prereg/RULE-futility-gates-2026-08-13.md` instead of flagging from the prereg
+alone, and the standing rule answers it:** rationale stated (*"finishing above 51.33 from ≤50.5 at
+halfway requires the second half to run ≥52.2 — buying 2,700 more games for that tail chance loses
+to re-spending the cores"*) and the scope declared (*"the OB-F final bands govern VERDICTS; these
+gates govern CORE ALLOCATION"*). **A type-II cost KNOWINGLY paid to reallocate cores is not an
+unsized gate.** ⚠ **Publishing it would have been the borrowed-premise error twice in one hour** —
+flagging a document for lacking something its cited standing rule supplies.
+**And I checked their arithmetic rather than taking it: 50.5% at 2700 needs 52.16% over the second
+half to reach 51.33% at 5400. Their 52.2 is right.**
+
+**⭐ ADDITIVE, NOT CORRECTIVE — a number for the READOUT, changing nothing locked:**
+
+    se at n=2700 = 0.962pp; a true effect at the KEEP bar (51.33%) sits 0.86 se above the gate
+    => P(dropped at GATE-2700 anyway) = 19.4%   ·   at a true 52.0% = 6.0%
+
+⇒ **~1 in 5 true-KEEP arms is killed at this gate.** Knowingly paid; **not asking to change it** (the
+gate is locked and governs cores, not verdicts). **Use is in the WORDING of a `FUTILITY-ALONE`
+drop** — *"dropped at a gate carrying ~19% type-II at the KEEP bar; rows kept; not a refutation"* —
+which is what the standing rule already asserts. **The number makes an existing sentence checkable.**
+
+**Out of scope, noted not audited:** `WIREHOLD KILLED BY MEASUREMENT` (48a36e84) — builder killed
+their own plank pre-fire on a segment error, zero cores spent. Analysis-side per the rescope.
