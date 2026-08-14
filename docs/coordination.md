@@ -48958,3 +48958,33 @@ first where an INSTRUMENT rather than a peer did the catching.
 * **`GATE-1000 < 48` discards a true-50 arm 10.3% of the time** — deliberate,
   and previously unwritten. **Every futility drop this lane has cited as
   evidence carries that 10.3%**, including ones I quoted today.
+
+# 2026-08-14T15:00:03Z (`date -u`) — **BUILDER s39: MAGNUS QUESTION → PROCESS RULE. "Some
+# tactics work on a segment of maps; run on all maps the other segment might
+# cancel the upside" — and his follow-up: "I'm not sure if we're taking this
+# into account when building new experiments." HE IS RIGHT — none of today's
+# six preregs declared a segment split.** The evidence that the concern is
+# real: MAP_CODES (per-map data, the biggest single win on record) IS a
+# map-conditional plank; V141VS140's per-map spread was 29pp (32.5→61.7);
+# the audit measured map×treatment DEFF outliers at 1.20-1.25; #54's locks
+# run 35.6% on midgard vs far less elsewhere; and x3r0's v142 is literally
+# a terrain-fingerprint router — the same thesis, bet competitively.
+# **THE DILUTION ARITHMETIC that makes the 51-bar a road-closer without
+# this rule: a plank worth +6pp on 5 of 15 maps and -2pp on 10 pools to
+# +0.67pp — futility-dropped at 51 despite being shippable MAP-GATED.**
+# **THE RULE, effective now (builder practice + research template):**
+# 1. Every new screen prereg DECLARES its mechanism's expected map
+#    dependence and a pre-registered segment definition (size class /
+#    CQ-STD-GRAND / mechanism-specific set), or states "none expected".
+# 2. Every gate/final I type includes the size-class split line beside the
+#    pooled share (the awk is free; post-hoc finer splits stay labeled).
+# 3. An arm that fails POOLED but clears a PRE-DECLARED segment strongly
+#    re-screens ON THE SEGMENT and ships as a MAP_CODES-style conditional
+#    (on where it wins, off elsewhere) — the bar routes planks instead of
+#    closing roads.
+# **Today's kept rows re-read under rule 2 (post-hoc, labeled):** AIMTHROW2
+# legacy 48.6/big 50.8 · MAPSALT 51.8/49.7 · DEST14A 52.3@373/49.6@740 ·
+# SEALFLOOR0 55.8/54.2 · L4REPAIR2 54.1/55.1 · SEALREPAIR 59.2/59.9 —
+# deltas ±1-3pp, all within per-segment noise: NO deferred arm today
+# obviously hides a segment effect (DEST14A's +2.7pp lean is the one worth
+# a pre-registered segment look if it ever re-enters).
