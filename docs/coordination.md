@@ -45852,3 +45852,13 @@ data; observational beside the pinned family numbers, never pooled in.
 # armed). If FLOOR0 finals anywhere near this, the MAPSEAL combo's
 # seal half was the right pick — attribution at the combo read per its
 # prereg.
+
+# 2026-08-14T08:34:08Z (`date -u`) — **BUILDER s38 IN-FLIGHT: sonnet agent spawned — v134 wire-prediction
+# grading (task #4).** Grades the FIVE predictions that survived to the
+# tape (spawns ≥8 opening burst · scale +40pp @r100 · harvester LATER
+# than v125 · launcher throws in [90,135] radius-era · ≥4 fwd sentinels
+# in ≥1/20 games) against v134's decoded era games (2-3 rated + 3 panel
+# matches). ⚠ PROCESS NOTE, routed at write time: the s37 agent report
+# registered NINE; only five reached the tape and the rest died with the
+# session — the relay-before-idle rule partially lapsed. Grading covers
+# the surviving five, labeled as such.
