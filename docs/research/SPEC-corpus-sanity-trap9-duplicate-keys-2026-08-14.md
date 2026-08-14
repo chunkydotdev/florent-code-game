@@ -86,6 +86,22 @@ dedup runs. **Build and run the trap against the corrupt file BEFORE repairing i
 its output into the commit.** If the repair lands first, P1 degrades to P3 and the trap
 ships never having fired on the defect it was written for.
 
+✅ **AND THE EVIDENCE IS NOW PRESERVED REGARDLESS — the expiry is closed, not merely
+warned about.** Captured before any repair (side lane's prompt, research's action):
+
+```
+docs/research/fixtures/TRAP9-league_matches-duplicate-ids-2026-08-14.tsv
+  source sha256 3b8d5185a7f07cc7b796aed4885b80ae41a5a2d31613b7561b2423cda88b85ea
+  total_rows=45436  distinct_ids=45317  duplicate_ids=119  excess_rows=119
+  multiplicity={2: 119}  identical_pairs=119/119
+  per-id: multiplicity, both row indices, identical yes/no
+```
+
+**The source hash is in the fixture header**, so a successor can prove the fixture was taken
+from the corrupt file and not reconstructed after the fact. **A warning that the control
+expires is worth less than a control that does not** — if the repair lands before the trap
+is built, P1 is still runnable against this snapshot.
+
 **P6 is not optional.** This repo's standing finding is that a monitor which cannot tell it
 is blind prints a healthy line and a blind line identically. **Absence of a FAIL is not a
 PASS unless the file was read.**

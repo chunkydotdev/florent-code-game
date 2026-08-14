@@ -216,3 +216,53 @@ rule for every count-based check, not a special case for this one.**
 ⚠ **STATUS: this is a ruling on vocabulary and arithmetic, not a certification. `prereg_check.py`
 remains UNWIRED until the builder's wiring verdict, which is theirs and is downstream of both
 this ruling and `c889633`.**
+
+---
+
+## 6. ADDENDUM — THE AMENDMENT LAYER (side lane FINDING 3, `aeabf0e`)
+
+**Added after the ruling above was published.** The side lane found that
+`prereg_check --amendment` returned **`ADD-ONLY: OK (0 lines added, 0 edited)`** on the LIVE
+`SCREEN-v140vs145` prereg after a **+51-line** amendment that **rewrote the decision rule**
+(`<51.0` moved from *"v145 sits"* to *"REACTIVATE v145"*). Cause: `BAR_LINE_PAT` keys on the
+token vocabulary, and **12 lines name the 51.0 boundary while 0 of them match it.**
+
+**RULING: the selection is the defect, and it cannot be fixed by widening the pattern.**
+
+`SPEC §1`'s amendment mode protects *"every bar/branch line"* by matching a list of tokens.
+**That requires knowing in advance which lines are load-bearing — which is exactly what you
+cannot know before the amendment you are trying to police.** A pattern that decides what to
+protect will always be one un-tokenised sentence behind the author, and the failure is
+silent: `ADD-ONLY: OK` reads identically whether nothing changed or nothing was checked.
+
+⇒ **Protect EVERY line of the locked file, not a selected subset.** *"Additions pass; edits
+and removals FAIL"* needs no pattern at all — it is a set relation:
+
+```
+every line of LOCKED (whitespace-normalised, blanks dropped) must appear in AMENDED
+```
+
+Additions still pass. Edits and removals still fail. **The token list disappears, and with it
+the entire class of "the tool did not know that line mattered".** Reformatting an existing
+line is then a FAIL — **correct**, because a reformatted bar line is indistinguishable from a
+rewritten one to anything that has already been shown to misclassify.
+
+**Two consequences that must be stated with it:**
+1. ⛔ **`ADD-ONLY: OK` MEANS "NO TOKENISED BAR CHANGED" ON ALL 81 UNMIGRATED PREREGS.** It
+   has now returned OK twice on a document whose decision rule was rewritten. **Until the
+   set-relation form lands, an `ADD-ONLY: OK` line is not evidence and must not be cited as
+   any** — including on `SCREEN-v140vs145`, whose A1/A2/A3 amendments are legitimate on the
+   two-clock standard and on Magnus's directive, but are **NOT verified add-only by the tool
+   that says they are.** *(The distinction matters: the amendments are almost certainly fine;
+   the INSTRUMENT is what failed, and conflating those would be exactly the substitution this
+   ruling is about.)*
+2. **The side lane's own scoping correction is the durable half** and is adopted here: they
+   migrated the presence and arithmetic layers onto real prereg text and left the amendment
+   layer on the author's synthetic fixture, **where bars are tokenised by construction** —
+   which is the same argument their §1 makes about empty declarations. **A forced-fail pass
+   certifies the checks that exist against the inputs it used, and neither half of that is a
+   property of the tool.**
+
+**REVISED STATUS OF `c889633`: presence and arithmetic layers certified with three holes
+(value bleed, empty-is-absent, and §1/§2 of this ruling uncovered); THE AMENDMENT LAYER IS
+NOT CERTIFIED.**
