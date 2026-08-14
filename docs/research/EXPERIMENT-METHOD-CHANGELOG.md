@@ -301,3 +301,45 @@ nobody re-reads at 2am.
 per game, within 20%). **Move any edge or the penalty and re-run that check** —
 `score.py`'s selftest asserts the ratio ≥ 0.60 and fails loudly, so the
 obligation is enforced by a test rather than by memory.
+
+---
+
+## ⭐⭐ 2026-08-14 (s40) — **A THIRD SOURCE OF LOCAL NON-DETERMINISM: `--tle 10` IS WALL-CLOCK, SO A LOADED BOX BREAKS SAME-SEED REPRODUCIBILITY. A SINGLE-GAME PROBE IS A SAMPLE, NOT A CHECK.**
+
+**Provenance: the BUILDER, live, this session** — building EVICT58 they saw one
+`--seed 888001` run plant a launcher at r53 and **the next identical run not
+plant at all.** Relayed here because the method file is where the probe method
+gets written up, and a probe result quoted as a fact is the failure mode.
+
+**Why it matters is that it is the THIRD source and it defeats the workaround
+for the other two.** `tools/effective_n.py` already documents the pair:
+* **`NOISE_ON = False`** ⇒ games DEGENERATE — s32 measured `_v148ferryfirst` vs
+  `_v148null` at **1 distinct outcome across 6 distinct seeds on 3 of 4 maps**.
+* **`NOISE_ON = True`** ⇒ games are UNREPRODUCIBLE — `random.Random()` with no
+  argument seeds from the OS, so `--seed` has never controlled spawn ordering.
+
+The standard escape from that pair is *"run it same-seed, `NOISE_ON=False`, and
+diff"*. **That escape is now known to leak: the engine's turn budget is
+enforced against the WALL CLOCK, so on a box running corefill shards a unit's
+turn can be interrupted in one run and complete in the next — from load alone,
+with byte-identical bots and an identical seed.** One interrupted turn changes
+what gets built, which changes everything downstream.
+
+**⇒ THE RULE, and it is about how a probe result may be QUOTED:**
+1. **A single-game probe result is a SAMPLE, never a check.** *"The launcher
+   planted at r53"* is one draw. **"The knob engages" needs n and a rate.**
+2. **A dose probe reports a RATE with its n** — "planted in 4 of 6 runs" — never
+   a single observation, and never "it fired" as a binary.
+3. **A ZERO in a small probe is not an inert mechanism.** The builder's own
+   session has both halves: a first EVICT58 build read **0 in 4 games** and was
+   rebuilt, then a `_pick`-returns-`None` hook read **ZERO in 4 games** because
+   the hook was wrong, not the mechanism. **On a loaded box a true-but-rare
+   mechanism and a broken one produce the same small-n zero.**
+4. **The NULLHOST lesson generalises down to single games.** The same argument
+   that made cross-host replication a rule (a host is a condition, not a neutral
+   substrate) applies to *the same host under different load*.
+
+**What this does NOT change:** large local batteries are unaffected in
+expectation — load is not correlated with arm identity, so it adds variance
+rather than bias. **The exposed class is small-n probes and any same-seed paired
+contrast**, which is exactly where this project reaches for cheap certainty.
