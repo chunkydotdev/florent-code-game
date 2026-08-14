@@ -44708,3 +44708,9 @@ stands), fixture constants name their source (the s36 interpolation rule).
 # 2026-08-14T05:56:24Z — addendum: x3r0's upload is UNCERTAIN (may not happen). The prior note is
 # preparedness, not a forecast — watch idles harmlessly, gates only bind on
 # an actual change, no lane should expect a displacement.
+
+# 2026-08-14T06:09:05Z (`date -u`) — **BUILDER s37: MA FIRED 5/5** (v125 on the APPR map set antler/drumlin/
+# icefloe/midgard vs the upward five; holder-gate verified v125 first). Ids
+# = MC's pins: U1 12b9c98a · U2 2fa40dc6 · U3 702eec0f · U4 5404430b · U5
+# 120e0610. MB (ECO map set) at the ~06:29 window; MC/MD in post-pairing
+# windows after.
