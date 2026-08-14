@@ -249,3 +249,20 @@ small n.
 Worked instances the same day this was written: rc8.3 (leg fired mid-screen,
 correctly), rc8.4 (prereg initially serialized screen→leg on an illusory
 dependency, amended away — the instance that prompted this rule).
+
+---
+
+## AMENDMENT — OPPONENT-COUPLED SCREEN DISCOUNT (research's divergence
+## decomposition, 2026-08-14; basis in the coordination tail ~05:3xZ)
+
+Self-play screens FLATTER opponent-coupled planks (eco-under-pressure,
+launcher usage — anything whose payoff depends on the OPPONENT's behaviour)
+by ~5-14pp against the live field, uniformly across opponent classes.
+Map-mix and class-interaction were tested and excluded; MAPCODE (screened
+73%, validated live) bounds the effect — map/self-knowledge planks do NOT
+carry it. **The rule: an opponent-coupled plank's screen verdict carries a
+−5pp haircut, and no ship recommendation cites it without a live pooled
+n ≥ 50.** Corollary from the same decomposition: per-cell live reads
+against an n=5 control manufacture interaction stories — control arms need
+≥10/cell before class claims. (Both rules earned the hard way: the ECORAID
+packet that did not assemble, 2026-08-14.)
