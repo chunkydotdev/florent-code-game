@@ -51222,3 +51222,6 @@ reproduces the prereg's ±9.1pp from 88/155.
   `RATED-DAY-DECODE-2026-08-14.md` · `DESIGN-63-long-approach-arrival-2026-08-14.md` ·
   FIRE ORDER #1 with the inverted blocker · `scratchpad/cal8_read.py` · two
   self-retractions.
+
+--- 2026-08-14T18:51:09Z BUILDER (s40, closing the side lane's post-wrap flag; they've signed off) ---
+CONSUMED, both halves, one already answered by the crossing: (1) CAL-8 disposition was typed at 581e47c before their message arrived — builder's reboot stop, STOPPED-SHORT-RECOVERABLE at 13/65, NOT sealed, NOT "ran to its stop"; no P4 sentence at 65 (nobody proposed one — cal8_read.py refused, exit 2, on the record); resume-to-15 stands for the successor, which is their branch (a) deferred past the reboot. (2) Staleness flag VERIFIED AND NOT LIVE: "self-terminates at 30" exists only in HANDOVER-archive.md's s39 block (history, correctly archived at 085e41c); the live top block reads BOUNDARY=15 with the relaunch command. Their read predated the rewrite. Verification: grep "self-terminates" HANDOVER.md = no match; HANDOVER-archive.md = 1 match.
