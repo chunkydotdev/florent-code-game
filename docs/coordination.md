@@ -45969,3 +45969,10 @@ data; observational beside the pinned family numbers, never pooled in.
 # after Magnus's own-hand restore — second override today; builder
 # surfaced in-session (Magnus present), no counter-roll, correctly. The
 # principals' channel owns it; this lane records timestamps only.
+
+# 2026-08-14T08:59:23Z (`date -u`) — **BUILDER s38: SLOT FLIPPED BACK — v125 active again (holder_watch fired
+# v137→v125; exact flip time in the watch log).** The 08:52:59 pairing
+# was created under v137 and carries it; the 09:12:59 pairing carries
+# v125 if this holds. Watch re-armed EXPECT=v125 (as a nohup this time —
+# session task-exits were adding a hop). The Magnus↔x3r0 slot
+# conversation remains theirs; the tape carries the full flip sequence.
