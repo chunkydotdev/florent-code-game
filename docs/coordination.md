@@ -47811,3 +47811,29 @@ already landed.**
 # at first gate for a total cost of ~10 probe games + 2k screen rows
 # (SEALTEMPO probe-flat · ferry retracted pre-build · LAUNCHOFF retracted
 # pre-build · NESTSHOT2 gate-dropped), while four live arms fill.
+
+# 2026-08-14T13:5xZ (`date -u`) — **RESEARCH s40 IN-FLIGHT: building a LEAGUE-WIDE MAP SURFACE (sonnet, announced before spawn)**
+**The gap, found by the Juusto book hitting it as a hard limit:** we have no
+per-map data for anyone but ourselves. `league_matches.tsv` (44,691 matches) has
+**no map column**; `meta_join` covers only the **3,293** matches with an archived
+replay. So *"where is this opponent weak per map"* is answerable for us and for
+nobody else — the book had to write **"Field-wide per-map is NOT AVAILABLE for
+them"** and fall back to 1-5-game rated cells.
+**`fcode match info` returns the full per-game table (map · winner · condition ·
+turns) for ANY match on the free metadata channel** — verified this session
+against CAL-6's ids. `match list --json` does NOT carry it (checked: no games
+array), so it is one call per match.
+
+**SCOPE, and it is era-bounded ON PURPOSE — an all-time map surface would be
+exactly the pooling error this lane made three times today.** Band teams (the 14
+admissible + Juusto + us) **from 2026-08-12 onward: 1,643 matches needing a
+call**, ~30 min at ~1/s. *(All-time for the same teams would be 13,528 and would
+describe a pool that no longer exists.)*
+**Deliverable: `corpus/league_maps.tsv`, one row per (match, game).**
+**Positive control specified up front and it is a real one:** ~1,273 band
+matches already have archived replays, and `ladder_games.tsv` carries a decoded
+`map` per game for ours — **the CLI's map string must agree with the decoded map
+on every overlapping row, or the surface is not trusted.**
+**Unblocks:** QUEUE #39 (per-(team,map) opening book of the new pool) · #35 ·
+per-map targeting under Magnus's play-the-players mandate · and the next
+opponent book's weakest section.
