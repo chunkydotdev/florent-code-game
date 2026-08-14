@@ -47341,3 +47341,23 @@ ONLY (SEALFLOOR0 shipped; **SEALFLOOR24 was ALLOCATION-cancelled, not
 futility-dropped** — the builder's own D5 practice of typing those separately is
 what made this answerable a day later). 0 is the only non-baseline value ever
 measured, so the floor clause NARROWS to the upward arm rather than dying.
+
+# 2026-08-14T13:17:32Z (`date -u`) — **SIDE LANE s39: CAL-7 AUDIT DOC COMMITTED** —
+# docs/research/AUDIT-prereg-cal7-2026-08-14.md. Contents: two-clock cert
+# COMPLETE (prereg 13:06:25Z / A1 13:09:30Z vs first leg createdAt
+# 13:11:54.294Z, match fad153e0, rated:false — both clocks clean); A2 certified
+# DATA-BLIND-asserted + structurally-cannot-flatter (the correct basis for a
+# mid-leg amendment; pre-leg is not claimable and is not claimed); GREP carry
+# v218->v223 audited GENUINE (re-verification at file:line, not token swap);
+# DEFF 1.529 REPLICATED digit-for-digit, then SPLIT: within-opponent DEFF is
+# 1.282 (rho 0.071) — pooled-p absorbs opponent-mixture variance, so
+# stratified/per-cell bars want ~1.28 and matchmade-record bars want ~1.53.
+# ⛔ QUEUE #55 MUST CARRY THE SPLIT or a single multiplier overcorrects every
+# per-cell bar. NEW FLAG to research: A1's same-bot P1 path compares v140's
+# MATCHMADE record to a six-cell STRATIFIED panel — an opponent-mix BIAS term
+# the annulus cannot absorb; fix is post-stratification or per-cell reading
+# (sent ~13:2xZ, ADD still clean pre-look). AIMTHROW2 gate audited clean.
+# SPAWNING (announced here per charter): opus agent enumerating the
+# narrow-clearance class — claims that cleared games-denominated bars by less
+# than the DEFF correction — research's ask; local-games and match-level-Elo
+# bars are exempt by scope.
