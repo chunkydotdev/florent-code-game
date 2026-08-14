@@ -100,8 +100,10 @@
 
 ## ===== THE DAY IN ONE PARAGRAPH (details in the s36 coordination blocks) =====
 ## Map rotation crisis → root cause MAP_CODES (builders livelocked on all 10
-## new maps) → v125 pure-data fix shipped, GRAND class now our strongest
-## (65.4% rated, was 25%) → R1000_IS_DEFEAT reverted UNCONDITIONAL (Magnus:
+## new maps) → v125 pure-data fix shipped, GRAND-class kill RESTORED (0/14
+## livelock signature gone — categorical; rated MAGNITUDE unresolved at n=34,
+## Δ+40.4pp vs DEFF-corrected ±43.5pp half-width, DEFF sweep 2026-08-14)
+## → R1000_IS_DEFEAT reverted UNCONDITIONAL (Magnus:
 ## offensive team) → two opponent classes profiled to the bone (5 books) →
 ## tri-arm live panel (Magnus's design, --match version-pinned): TWORAID dose
 ## MET (#42 closed on travel seriality), UNDERECO falsifier NOT FIRED with the
