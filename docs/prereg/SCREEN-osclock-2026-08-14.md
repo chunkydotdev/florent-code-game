@@ -67,3 +67,6 @@ Read rules therefore:
    a LIVE leg / post-ship ladder census re-run (research's stated live
    confirmation path).
 3. Ship path unchanged: live surface decides, per FIXTURE_OF_RECORD.
+
+Row count at amendment commit: OSCLOCK.tsv held 16 data rows, none read by
+any lane (first read remains GATE-1000 per the watch).
