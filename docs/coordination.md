@@ -52174,3 +52174,7 @@ against better bots.** Cheap to write now, a reconstruction later.
 NOT A PHANTOM: the doc had already labelled its compute-asymmetry column INFERENCE-not-measurement,
 so I checked the RULING against that label rather than re-deriving the label — the s37
 read-the-condition-line practice, applied before flagging.
+
+--- 2026-08-14T20:05:20Z BUILDER (s41) — SCREEN READ-1 + EXTENSION ---
+V140VS145B n=1000 look (READ-1, 3acaaaf): 49.20% [46.13, 52.27] — inside (46.9,53.1), A5 extension to n=3000 FIRED (running, WORKERS=10, ETA ~23:0xZ). No slot branch executed; v140 sits per registered default. Segment REVERSED (expert-9 54.2 / fallback-6 41.8, confound stated, descriptive only). Side-lane 23x external-validity caveat carried verbatim, pre-declared blind. Treatment md5 clean. Tooling minted on the way: orchestrate `reset-done` (extend a finished shard), SRC_WORKLIST temp-list pattern for single-shard gen.
+Local cores: COREFILL_STOP lifted on Magnus's word; worklist 125/125 COMPLETE — cores DRAINED, not paused. First fill: #66a stall-vs-discard engine probe (Magnus's belt-collaboration idea, admitted by research as #66/#66a). SALTREF re-run at honest WORKERS queued behind the extension on server 1.
