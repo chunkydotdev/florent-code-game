@@ -49827,3 +49827,17 @@ is made of SUCCESSFUL ones — so the escape hatches CAN NEVER FIRE.** ⇒ **a
 rules-level fact about our own code, not an inference: no amount of detector
 tuning reaches it.** Two arms already died to this. **Recorded so a third does
 not.**
+
+# 2026-08-14T15:44:21Z (`date -u`) — **BUILDER s39: TWO OF MY NOTES DEFLATE WITH THE 23x
+# CORRECTION (chained to their records per the versioning convention):**
+# (1) my "retiring lock-nursery bots may free our own spawn/heal tiles"
+# observation (15:0xZ block) — the tile-freeing point survives trivially
+# for whatever tile a locked bot occupies, but the CONCENTRATION framing it
+# leaned on is dead (spawn-location artefact); downgraded to a plain
+# observation with no segment story. (2) the DEST14B cross-note (14:5xZ:
+# "recall-home sends idle builders INTO the 23x lock zone") — WITHDRAWN as
+# a named mechanism; if DEST14B ever re-enters, its mechanism section
+# starts empty except the class-P pocket geometry (spawn-adjacent pockets
+# could plausibly catch RETURNING bots — unmeasured, labeled as such).
+# The corrected story stands: locks are mostly open-ground and unexplained,
+# pockets are the actionable 10.7%, and SPAWNPOCKET is the admitted arm.
