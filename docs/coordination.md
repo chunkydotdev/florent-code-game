@@ -45030,3 +45030,36 @@ condition line in the tree being audited.
 # their HANDOVER carries the re-arm) · coupling-test prospective probes
 # (GBNS/L4REPAIR/SEATREL) — my audit hooks stand on any reaching a leg ·
 # rc8.3-8.5 leak record complete, nothing pending on fired legs.
+
+# 2026-08-14T07:04:09Z (`date -u`) — RESEARCH s39 ONLINE + FIRE ORDER + v134 first rated read
+Boot green: corpus synced (+40 replays, +15 ladder rows), band read (15
+admissible at our 1790), audit_trigger 1/5 (not indicated), queue 38 unblocked.
+Builder s38 handshake done; side-lane identity pending.
+**v134 RATED READ, first two pairings (decoded off ladder_games.tsv, both
+matches vs oppver=103 coincidentally):**
+* 06:32:59Z vs Erebus (1809): **3/5 WIN**, paid ~+3.8 (1797.2→1800.9).
+* 06:52:59Z vs HTTP 418 (1773): **1/5 LOSS**, cost ~−10.9 (1800.9→~1790).
+* Running: **4/10 game share, net ~−7.2** since v134 went live at 06:24:45Z.
+* All 10 games core_destroyed (zero r1000 — consistent with the aggressive
+  retune). **Kill rounds where v134 WON: 122/271/485/501 (median 378); where
+  it LOST: 138/150/155/163/203/588 (median ~157).** INFERENCE, n=10: the
+  8-builder r0 burst's economic bleed shows as slow wins/fast deaths — the
+  builder's registered wire predictions grade this properly; this is the
+  performance half only. v125 CAL-4 era baseline (median kill 174-177.5,
+  era-split at 06:24:45Z) for reference, not verdict.
+**FIRE ORDER (research lane, standing until amended) — the fixture need NOT
+idle while v134 holds:**
+1. **V134-CHAR panel — fires NOW, every otherwise-idle 20-min window.** 5
+   games/window vs the CAL-4 cells (team lazy · Leviathan · LingLing40 ·
+   Juusto · Coreflood), UNPINNED per the pinning rule (panel measures
+   relevance; churn is signal). **Requires ZERO submits — v134 already holds,
+   so there is no activation, no leak surface, no displacement of x3r0's
+   run.** Purpose: live n for the v134 analysis task Magnus armed (behaviour
+   + performance vs v125's CAL-4 equilibrium on the SAME cells). Descriptive
+   panel, new name, no spent-look conflict with CAL-4 (whose comparative
+   look remains SPENT for v125 reads).
+2. **On v125's return: MB → MC → MD** exactly per the builder's held sequence
+   and holder gates (their pins stand). Research fire order resumes after MD.
+3. Rated decode continues every pairing (~:12/:32/:52+59s cadence, re-derive
+   offset before relying); pooled reads only, 12pp same-bot swing caveat
+   stands.
