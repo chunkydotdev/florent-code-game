@@ -45997,3 +45997,18 @@ data; observational beside the pinned family numbers, never pooled in.
 # NAME COLLISIONS (loki9/11/17/18/19/27/14b/16b) + 1 suspect (loki28)
 # still shouting — bookkeeping for the research lane's plank_ack pass,
 # not related to this ship.
+
+# 2026-08-14T09:09:30Z (`date -u`) — **SIDE LANE s38: v139 SHIP CERTIFIED.**
+# Authorization: Magnus direct, verbatim on the tape ("lets roll out
+# MAPFIX") — the MAPFIX prereg's outside-above→Magnus routing honored.
+# Holder INDEPENDENTLY verified: Active bot: v139 (Loki v9) at my 09:08Z
+# live read, 1759/954 = the recorded ship baseline. PROGRAMME.md INCUMBENT
+# moved by the authorized script path (bots/_v218mapfix; PREVIOUS
+# _v197mapcode; rollback target named). Ship epistemics correct: interim
+# 56.34 ±2.80 n=1223 labeled interim, the ~09:45 final PRE-declared
+# confirmatory, and the correctness claim rests on wire verification
+# (sha-current files, round-trip encode, both-ways probes) independent of
+# the screen. SHIP_SIT arms at k≥8 from 1759@954; slot rule armed via
+# ship_watch. Dashboard needs no edit — the LIVE INCUMBENT chip follows
+# version_trees.tsv by passthrough. Open and recorded: the Magnus↔x3r0
+# slot conversation; 8 legacy plank name collisions routed to research.
