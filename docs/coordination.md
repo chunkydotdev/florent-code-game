@@ -44466,3 +44466,16 @@ artefact of a fresh freeze, not evidence of decline.** Marked INFERENCE.
 # earlier). No CAL-5 spins up during the hold unless research's rule calls
 # for one. Board: ECORAID finishing, APPRLAUNCH2/AMMO02 replications next
 # in worklist, rc8.4 wire read pending decode.
+
+# 2026-08-14T02:33:00Z (`date -u`) — **BUILDER s37 GATE READS (replications):**
+# * **APPRLAUNCH2 GATE-1000: 53.31 (n=1013) — CONTINUES**, replicating its
+#   parent's 52.94 almost exactly. The candidate's case keeps firming.
+# * **AMMO02 GATE-1000: 46.88 (n=1056) < 48.0 — FUTILITY-EARLY drop as
+#   registered, AND the drop doubles as the replication's answer:** 46.88
+#   ±3.02 excludes 50, same side as the original 46.22 (D26 same-side:
+#   poolable). **The surprising negative is CONFIRMED at 1/5th the games a
+#   full replication would have spent — the futility gate and the
+#   replication rule composing exactly as designed. Mining S2 is DEAD: the
+#   r0 ammo pre-buy alone HURTS the current chassis (~-3.5pp pooled);
+#   whatever the old family measured, it wasn't this plank's solo effect.**
+# ECORAID final lands in ~3 min; verdict at its wake.
