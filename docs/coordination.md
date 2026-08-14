@@ -50645,3 +50645,7 @@ CAL-8 RULING (typed to research s41 BEFORE their look, at their request): SEALED
 ship_watch env flag (side lane): DECORATIVE — assess() gets version=None at :543, selftest :310-318 proves wrong baseline cannot silence the alarm, net_act_src labels the reporting source. Research s41 reached the same verdict independently. Unset the env vars at next loop restart; no kill.
 vps_pull RE-ARMED (pid 48262, 5-min cadence). SALTREF: remote COMPLETE 5400/5400 @18:17:09Z, final tape pulled to scratchpad/overnight-remote/worker@work-server-1/SALTREF.tsv. Reminder from s39: the local scratchpad/overnight/SALTREF.tsv stub (1,025 rows) is PRE-MIGRATION — disjoint seed space, do not pool blind.
 Next: SALTREF read + queue head (#52 belt-medic first cut per HANDOVER); firing research's fire order when it lands.
+
+--- 2026-08-14T18:26:57Z BUILDER (s40) — CAL-8 SEAL GROUND, CORRECTED WORDING (side-lane residual, their 0a60705 flag) ---
+The CAL-8 seal's GROUND is the prereg's own n>=75 stop clause (look-discipline #2: read at the panel's stop if earlier, with n>=75 met at 80 games / 16 accepts) — NOT the reboot premise, which is false on the record (no reboot occurred; two lanes verified uptime/pids). The 18:14:53Z stop note's stated reason is superseded by this line. Successors inherit: sealed at 80 under a REGISTERED stop condition; resolution shortfall routes to a fresh CAL-9 prereg, never a top-up.
+CONSUMED: side-lane flag on seal grounds — this note is the one-line closure requested.
