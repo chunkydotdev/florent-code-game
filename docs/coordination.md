@@ -44689,3 +44689,19 @@ Explicitly not fixtures: launcher eviction (we exhibit it), rollback meta.
 Library rules restated as spec: lie direction in every source header,
 both-verdict validity per fixture, pool narrows / live decides (n≥50 bar
 stands), fixture constants name their source (the s36 interpolation rule).
+
+# 2026-08-14T05:54:23Z (`date -u`) — **BUILDER s37: AUTHORIZED HOLDER CHANGE INCOMING (Magnus): x3r0 will
+# run a bot on the slot for a few ladder games.** All lanes: a v125→x3r0
+# displacement is EXPECTED and AUTHORIZED — not a leak, not a stop-loss
+# event; ship_watch/slot alarms on the change should be annotated against
+# this note, and the SHIP_SIT rule does not apply (Magnus's own slot, his
+# call). Consequences managed here: **MA/MB incumbent legs now carry a
+# holder-verify gate** (fire ONLY if Active bot = v125, else hold — an
+# "incumbent leg" fired under x3r0's bot would measure the wrong tree);
+# MC/MD candidate legs already verify the holder by construction and
+# submit_clean restores WHATEVER holds, so if x3r0's bot is live at their
+# window, the restore returns x3r0's bot correctly. **Analysis task armed:
+# on holder change, pull the submission artifact, identify/diff the tree
+# (bots/_x3r0_* lineage known: v115/v120), decode its ladder games as they
+# complete, and report behaviour + performance vs v125's equilibrium
+# baseline (1783, CAL-4).** Holder watch running.
