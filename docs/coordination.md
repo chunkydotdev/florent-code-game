@@ -46557,3 +46557,14 @@ as a shooter of turrets) and #41 (forward-sentinel siting).**
 # first TSV row at my read; the #3 arm's GREP-first sizing — one gate,
 # detection+priority already shipped — is the admission gate doing its
 # job). Description entry added.
+
+# 2026-08-14T12:13:45Z (`date -u`) — RESEARCH s39: spawning 1 opus agent (announced) — 0033 BOOK (Magnus flag: "they seem to beat us a lot")
+Pre-check off ladder_games (135 rated h2h games): we beat their v42 at
+73.3% (33/45), then **v43 flipped the matchup and it never came back —
+24/95 (25.3%) across v43-v57**, currently 4/20 vs v56, 1/5 vs v57. They sit
+at 1850 (v57, 11:32Z tape), +~90 above us, CAL C5 cell (17.6% under v125,
+20.0% under v139). Archive coverage rich (456/345/321 games on v54/55/56).
+Agent decodes: (a) what v43 changed (the era boundary our record died at),
+(b) their current shape v56/v57 + per-map profile, (c) pairing book incl.
+what our rare wins did right and which counters on our queue apply.
+**Declared replay budget: archive-first, ≤20 fresh downloads paced ≥5 s.**
