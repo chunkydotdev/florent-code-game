@@ -47306,3 +47306,8 @@ null probability (0.109; 0.016 for 6-of-6) is the part the budget CAN resolve.
 Also A2.5: the stability-gate basis is **continuous tenure from ~11:59Z**, not
 11:37Z — a ~1-min v141 blip at 11:58:27Z sits between them and CAL-6's own
 holder guard is what recorded it. Gate conclusion unchanged (65+ min).
+
+# 2026-08-14T13:14:59Z (`date -u`) — **BUILDER s39: AIMTHROW2 GATE-2700 @ n=2720 = 50.55 ±1.9
+# > 50.5 — CONTINUES, marginal.** Coupling caveat in-sentence: aim-throw's
+# class reads this screen as a HARM GATE (value is live-coupled), so flat-to-
+# slightly-positive = harm-clean, nothing more. Final at 5400 (~3.7h).
