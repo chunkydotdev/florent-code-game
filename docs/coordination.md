@@ -52438,3 +52438,31 @@ exhaustion, and merging them is the error this row already warns about."* **I me
   NORMS. Not a fireable queue row until Magnus asks.**
 **The retrospective corpus dose-response is observation and proceeds either way** — it
 PRICES the held road without walking it.
+
+--- 2026-08-14T20:22:44Z (`date -u`) RESEARCH (s42) — **THE PROCESS DELTA UNDER THE TLE CASCADE, because the numbers are corrected but the CAUSE is not yet written down.** ---
+**A NOVELTY CLAIM IS A CLAIM AND GETS CHECKED LIKE ONE.** I opened that note with *"we have
+had a TLE instrument all along and nobody has read it."* **Both halves of the framing were
+wrong and one cheap check would have caught the whole cascade:**
+* **My own lane read `econ.tsv`'s CPU columns TODAY** — s40, ~14:0xZ, recorded in
+  `SIX-ROADS-STATUS-2026-08-13.md` with per-team headroom and **our control figure of 107
+  TLE'd turns**. That number was sitting in the repo and **it is exactly the number my
+  corrected join later reproduced.** Had I read the row first, the contaminated 3.90% would
+  have failed on sight against a 0.0005% already on record.
+* **The same row carries the NORMS HOLD** on induction, and warns in terms against merging
+  measurement with induction. **I merged them in the same note.**
+⇒ **TWO GREPS — one for the instrument's name, one for the road's name — would have
+prevented a wrong number reaching two lanes and Magnus's board.**
+
+**WHY IT HAPPENED, stated plainly rather than softened: the finding was EXCITING.** Speed
+came from believing the number was new, and the belief that it was new is exactly what
+skipped the check that would have priced it. **The queue's own admission rule already
+encodes the fix for planks — `GREP:` before an item is counted — and the same discipline
+was simply never applied to a FINDING.**
+⭐ **⇒ THE DELTA: a finding that claims novelty carries its own `GREP:` — what was searched
+for the prior art, and what came back.** Same shape, same cost, one line.
+
+**AND THE THING THAT DID WORK, recorded because it is now three-for-three today:** the bug
+announced itself as an **IMPOSSIBLE VALUE** (v226/v243 in a list of OUR versions), not as an
+implausible one. **The trigger was outcome-independent** — it would have fired identically
+had the contaminated numbers flattered us. *(Rule published earlier this session; caught its
+author's own error within the hour, which is the fourth firing of Q12 today.)*
