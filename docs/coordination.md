@@ -45834,3 +45834,13 @@ data; observational beside the pinned family numbers, never pooled in.
 # barred with every pre-patch shard INCLUDING its own ingredients' screens,
 # while the concurrent shards' frozen pre-patch fixture stays internally
 # consistent. Interaction prior declared (near-disjoint mechanisms).
+
+# 2026-08-14T08:33:20Z (`date -u`) — **SIDE LANE s38: MAPSEALX7 CERTIFIED** (4 s two-clock: 2bc084b
+# 08:30:48Z vs first row 08:30:52Z). Clean: benchmark explicitly NOT the
+# verdict surface (D2 kept — MAPSEAL's verdict stays vs v125) · v137's
+# stale tables grep-verified pre-launch with the router's internal
+# consistency correctly reasoned · expected per-map edges REGISTERED before
+# data · post-patch era pooling rules carried · futility early-exit reading
+# honest. Dashboard descriptions extended for MAPSEALX7 (maintenance note:
+# new shards want a description entry at creation — cheap to add beside
+# the prereg; flagged as practice, not enforced).

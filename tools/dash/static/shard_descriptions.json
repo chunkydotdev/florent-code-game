@@ -559,5 +559,10 @@
   "authored_by": "side lane s38 (Claude) — drafted from the worklist's own comment blocks by an opus agent, then reviewed; entries the session knew first-hand (certified preregs, tape record) rewritten by hand.",
   "date": "2026-08-14",
   "policy": "brief = one plain-English line on the change the treatment brings; full = what/why/how-to-read. confidence:low means the worklist block did not describe the mechanism and the text says only what the artefacts support. The verbatim worklist note remains on every shard page; this file never replaces a primary."
+ },
+ "MAPSEALX7": {
+  "brief": "Benchmark: the MAPSEAL combo vs teammate x3r0's v137 (the map-routing bot) on the post-patch pool.",
+  "full": "Magnus's ask: a local head-to-head of the MAPSEAL combo tree against the pulled v137 artifact (x3r0's mixture-of-experts router: rc8.5/ECORAID chassis by default, the v134 retune on three weak maps). NOT the plank's verdict surface — MAPSEAL's verdict stays on its vs-v125 shard. Pre-registered expectation: MAPSEAL over-performs on valkyrie and glacierkeep, where v137 still carries the stale pre-patch map tables; the other 13 maps read the chassis matchup. Per-map splits double as per-chassis attribution on v137's side.",
+  "confidence": "high"
  }
 }
