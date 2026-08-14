@@ -256,11 +256,74 @@ tell-it-is-blind rule, and it is the cheaper half.
 
 ---
 
+## 5c. ⭐ RE-CERTIFICATION AFTER THE FIXES — 19:4xZ, ALL THREE LAYERS NOW CERTIFIED
+
+The builder patched findings 1 and 3 (`2b4b89d`) and finding 2 (`ca3e9ce`)
+within the hour. **Re-run rather than read** — a fix is verified against the
+fault CLASS, not the diff.
+
+| | |
+|---|---|
+| author selftest | **PASS** |
+| my forced-fail cert | **31/31, no regression** — the fixes removed no teeth |
+| finding 1 (newline bleed) | **CLOSED** |
+| finding 2 (empty ≠ absent) | **CLOSED** — H1 held; and the six shapes driven by me, **6/6** as claimed (empty-plain→None · empty-bold→None · `N/A — reason` kept · **bullets joined** · empty+prose NOT swallowed · normal unchanged) |
+| the cost I costed in §5b | **PAID, NOT INCURRED** — CAL-4's `**Cells:**` bullet heading still **ACTIVATES** Obligation 14 under the list-value form. The third part I declined to specify blind is the part that saved it. |
+| finding 3 (amendment layer) | **CERTIFIED — see below** |
+
+**AMENDMENT-LAYER CERTIFICATION, independently driven on a tokenised carrier,
+one corruption per bar line (meta_attrib standard) — 9/9:**
+
+```
+A. pure ADD (new constraint appended)          OK    <- must not false-FAIL
+B. BAR widened 52.0 -> 50.5                    FAIL
+C. BAR line deleted outright                   FAIL
+D. PLANNED n cut 2700 -> 900 (a power decision) FAIL
+E. BOUNDARY retargeted                         FAIL
+F. EXPECTED DIRECTION flipped (segment sign)   FAIL
+G. CUT-SHORT loosened                          FAIL
+H. ESTIMATOR swapped after the fact            FAIL
+I. whitespace/bold reflow ONLY                 OK    <- NEGATIVE CONTROL
++ untokenised real prereg -> NOT_APPLICABLE, exit 2
+```
+**Three states, distinguishable on the verdict LINE and on the exit code with no
+collision (OK 0 · FAIL 1 · NOT_APPLICABLE 2), and cells A and I prove it can
+still say OK** — a guard that only ever FAILs has not been seen to check.
+
+### ⛔ ONE HOLE SURVIVES, AND THE BUILDER PREDICTED IT WOULD NOT: **H2, PLACEHOLDER VALUES**
+
+`ESTIMATOR: TBD` · `PRE-STATE: see below` · `CUT-SHORT: TBD` are **non-empty
+strings**, so `empty ⇒ ABSENT` does not reach them. **1 of 7 defective documents
+still passes `PREREG_CHECK: OK`.**
+
+**⇒ AND MY RULING IS THAT IT SHOULD NOT BE CLOSED WITH A PLACEHOLDER BLOCKLIST.**
+A list of forbidden words (`TBD`, `unknown`, `see below`, …) is **incomplete by
+construction** — it is defeated by writing *"to be determined"* — and this repo
+has a standing note about guards whose silence carries no information.
+
+**The principled fix is research's own ruling applied one level up:** *a token is
+only as real as the arithmetic that consumes it*, and *prefer giving an existing
+token a CONSUMER over adding another token.* **Every field that survived my
+empty-value probe survived because ARITHMETIC reads it** (`BOUNDARY`, `OB13`,
+`SEGMENT VALUE CEILING`, `DOSE`) **or an `extra` predicate does** (`STATUS`,
+`TARGET BAND`). The three fields H2 defeats — `ESTIMATOR`, `PRE-STATE`,
+`CUT-SHORT` — **have no consumer at all; they are ATTESTATIONS, not
+computations.** ⇒ **A presence layer cannot detect insincerity, and dressing it
+up to look as though it can is worse than declaring the limit.** Either give
+those three a consumer, or state on the tin that they are attested rather than
+checked.
+
+---
+
 ## 6. VERDICT
 
-**CERTIFIED FOR THE PRESENCE AND ARITHMETIC LAYERS, WITH THREE NAMED HOLES.
-⛔ THE AMENDMENT LAYER IS NOT CERTIFIED** — see §5b; my §2 pass on it was run
-against synthetic text and does not transfer.
+**⭐ CERTIFIED — ALL THREE LAYERS (presence · arithmetic · amendment), with ONE
+surviving hole (H2, placeholder values) whose closure I recommend AGAINST in its
+obvious form.**
+
+*Superseded, kept for the record: this section previously read "CERTIFIED FOR THE
+PRESENCE AND ARITHMETIC LAYERS… THE AMENDMENT LAYER IS NOT CERTIFIED", which was
+correct against `90f7f4f` and is no longer correct against `ca3e9ce`.*
 
 * **The forced-fail standard is MET:** 31/31 checks driven to their failing
   verdict on corrupted REAL prereg text, each corruption aimed at a different
