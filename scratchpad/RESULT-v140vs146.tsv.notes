@@ -1,0 +1,11 @@
+CORRECTION 2026-08-15 (builder, on a side-lane flag, re-derived from elo_history.tsv):
+  PUBLISHED:  "v146 held ~21:23Z-22:51Z and our rating went 1775 -> 1740" = -35
+  ACTUAL:     v146 first tape row 21:23Z rating=1759 matches=991
+              v146 last  tape row 22:48Z rating=1740 matches=995
+              WITHIN-WINDOW = 1759 -> 1740 = -19
+  The 1775 reading is from 20:38Z, FORTY-FIVE MINUTES BEFORE the window.
+  The 1775->1759 leg is v140's OWN decline -- the one that fired its stop-loss
+  at 21:22:15Z. 16 of the 35 points I attributed to the foreign hold predate it.
+  DIRECTION: it made the foreign hold look ~84% more expensive than it was,
+  i.e. it supported the reactivation I had just performed.
+  k OVER THE HOLD = 995 - 991 = 4, against SHIP_SIT_MIN_K = 8.
