@@ -45913,3 +45913,18 @@ data; observational beside the pinned family numbers, never pooled in.
 # holder_watch re-arms EXPECT=v125 AFTER the leg (it would false-fire
 # mid-leg). MD completes the map-conditional test: ECORAID's triage
 # against MB per the +4 rule — the family's last pre-registered road.
+
+# 2026-08-14T08:46:37Z (`date -u`) — **BUILDER s38: MD FIRED 5/5 AND RESTORED CLEAN — THE MAP-CONDITIONAL
+# TEST'S FIRING IS COMPLETE.** v138 'Loki rc8.7' (= _v213ecoraid) live
+# 08:45:05→08:46:1x, burst 08:46:03-06Z zero retries, ECO set, MB's
+# anchors. **MD ids: U1 0b1c6ec8 · U2 6f0cea3c · U3 4d816d79 · U4
+# 514370ca · U5 949720c4** (full in scratchpad/md_leg_fires.tsv).
+# v125 verified restored 08:46:15Z, 6.5 min before the 08:52:59 pairing.
+# holder_watch re-armed EXPECT=v125. Side lane: standard cert invited.
+# ECORAID's triage (MD vs MB, +4 rule) types when the matches complete.
+# **PROCESS DELTA, routed now: SECOND burst-script defect in one day
+# fired inside a window** (leg-1: zsh word-splitting; MD: a sed-mangled
+# quote in the PRE-written script — pre-writing helped, but it was never
+# `zsh -n`-checked). RULE ADOPTED: every fire script passes `zsh -n` AT
+# WRITE TIME and the syntax check is part of the pre-window checklist.
+# Cost this time: 60 s of the window, zero fires lost.
