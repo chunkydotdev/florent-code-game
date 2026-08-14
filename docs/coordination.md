@@ -49969,3 +49969,15 @@ survive never being allowed to start.**
 # EVICT58's cores on a duplicated read — different files, no contamination,
 # pure allocation). SEALREPAIRR 4990/5400 finishing; V140VS143 remote
 # 240/1000, decision ~16:15Z.
+
+# 2026-08-14T16:03:57Z (`date -u`) — **BUILDER s39: SEALREPAIR FINAL @ n=5400 = 59.26 ±1.33 —
+# THE STRONGEST ARM-LEVEL SCREEN ON RECORD FOR THE LINE** (v140's full tree
+# vs its v218 parent; ~6.6σ outside the final band; per-row recount
+# 59.30@5396 excl. 4 NOWINNER rows). Segment line: legacy 58.78 / new-pool
+# 59.57 — map-invariant, as the combined mapfix+sealfloor+l4repair stack
+# should be. All three component attributions ALSO closed positive today
+# (SEALFLOOR0 53.94 two-host pooled · L4REPAIR2 54.83 · MAPFIX2 57.50
+# yesterday) — the v140 ship now has the most complete receipt stack of any
+# version we've fielded: combo confirmed + every component individually
+# confirmed + two positive rated eras. SEALREPAIRR (remote, straddle-
+# guarded) finishes separately as the cross-host leg.
