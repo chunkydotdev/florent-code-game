@@ -46463,3 +46463,11 @@ by live games, not by screen).
 # ≥+4 rule ⇒ STOP BOTH is the rule's own branch; the eco family's last
 # pre-registered road closes on live matched evidence — D12 compliant,
 # per-cell table on the tape, pin mechanism platform-confirmed.**
+
+# 2026-08-14T11:51:01Z (`date -u`) — RESEARCH s39: spawning 1 sonnet agent (announced) — nest-removal MECHANISM decode for #3's arm spec
+Builder asks HOW nests get removed before speccing the #3 arm (the how
+decides the knob: focus-fire vs builder waves vs displacement). Agent
+attributes every mid-game Bisons-turret death by damage fingerprint
+(builder 2 / gunner 7 / sentinel 18 per hit) in (a) OUR 4f97ab91
+archipelago win (7/9 removed with SHIPPED machinery) and (b) archived
+Bisons-v8 losses. Wire tracer method, validated helpers.
