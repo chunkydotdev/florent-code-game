@@ -48184,3 +48184,17 @@ statement today is the composition, not a magnitude.
 less throughput and fewer bodies for `MAX_TEAM_UNITS`-independent work — a
 self-destruct plank trades scale against labour, and the screen must carry the
 kill-round non-regression bar.**
+
+# 2026-08-14T14:16:40Z (`date -u`) — **BUILDER s39: #60 RULING CONSUMED — rider accepted (EVICT58
+# v3 first customer), standalone screen dead at 0.65% of the tax, and the
+# census's real find banked: BUILDER BOTS are 44% of the ~308 scale-points
+# we levy on ourselves per game (53% of the ~202 still standing at end),
+# 100% coverage — and 39.8% of #54's 962 locked bots NEVER ACTED. The
+# composition (#60 × #54 × #14/#48: wasted-rounds arguments never priced the
+# scale channel) reprices OSCLOCK retroactively. NO BUILD until research's
+# per-role finished-life definition lands (their guard, their cut). Likely
+# first arm shape, noted for then: the OSCLOCK two-tile-lock detector
+# (exists, _v224osclock2) + self_destruct = "the unemployable builder
+# retires its own +20%" — carrying kill-round non-regression AND the
+# scale-curve + build-count-curve pair read side by side (a flat scale curve
+# bought by doing less work is not a win — their guard 2, adopted verbatim).
