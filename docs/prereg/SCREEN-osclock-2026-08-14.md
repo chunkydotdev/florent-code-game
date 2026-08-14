@@ -49,3 +49,21 @@ as all concurrent shards, era-labeled at read).
 
 ## Target-value line
 Local screen, zero live exposure ⇒ payout gate N/A.
+
+## AMENDMENT A1 (ADD-only, 2026-08-14 ~08:2xZ, research's design flag; row
+## count at amendment time stated below — no read has occurred)
+
+The coupling classification above ("self-knowledge ⇒ full weight") is
+CORRECTED to **MIXED**: the census's own base-rate gap (35.6% locked
+builder-rounds on midgard vs real opponents, 5.37% in self-play, same
+detector) shows lock EXPOSURE is substantially opponent-induced — the
+self-play screen under-doses the defect and may equally under-read the fix.
+Read rules therefore:
+1. **The screen is a HARM GATE, not a value read.** Futility gates apply
+   unchanged (a harmful arm still drops); treatment-side regressions
+   (TLE, kill-round rise) still disqualify.
+2. **A flat or weakly-positive final does NOT demote the arm.** The value
+   instrument is the census ratio (1.55% vs 5.37%, banked pre-launch) plus
+   a LIVE leg / post-ship ladder census re-run (research's stated live
+   confirmation path).
+3. Ship path unchanged: live surface decides, per FIXTURE_OF_RECORD.
