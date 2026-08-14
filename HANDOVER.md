@@ -23,8 +23,11 @@
 ##     pull-age honestly). Remote worker itself SURVIVES: work-server-1,
 ##     curfew 20:55-04:00 UTC in-worker, SEALFLOOR0R filling (was 53.3).
 ##  4. **CAL-6 panel runner** (INCUMBENT=140, cal6 PTR/OUT — resumes from
-##     its pointer; research's standing rule: new-holder panels only after
-##     40 min stability + tree named).
+##     its pointer). ⭐ STANDING PANEL RULE (research, inherited trigger):
+##     on ANY new holder, CAL-(N+1) fires from the CAL-6 template ONLY
+##     after BOTH (a) the holder has held >=40 min (two pairing cycles)
+##     AND (b) the tree is identified — prereg before first leg. The
+##     panel budget must not idle once both read true.
 ##  4b. ⛔ CORPUS CAVEAT (research s39): econ.tsv is CORRUPT for v55+-era
 ##     decodes (dead turns/cpu/ti_collected cols; `tled` is fiction) —
 ##     no econ.tsv-denominated reads until their re-decoder ships;
