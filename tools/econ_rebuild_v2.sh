@@ -18,7 +18,10 @@ say "stopping keeper for the rebuild window"
 .venv/bin/python tools/corpus/keeper.py --stop || true
 
 rm -rf $RB && mkdir -p $RB
-split -n l/12 corpus/decoded.txt $RB/chunk_
+# portable chunking: macOS split has no -n l/N
+total=$(wc -l < corpus/decoded.txt | tr -d ' ')
+per=$(( (total + 11) / 12 ))
+split -l $per corpus/decoded.txt $RB/chunk_
 chunks=($RB/chunk_*)
 say "${#chunks[@]} chunks over $(wc -l < corpus/decoded.txt | tr -d ' ') ledgered files, 3-wide"
 
