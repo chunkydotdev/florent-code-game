@@ -45,3 +45,11 @@ throws (the aimed change touches the EXILE block only).
 
 ## Target-value line
 Local screen, zero live exposure ⇒ payout gate N/A.
+
+## AMENDMENT A1 (ADD-only, ~09:3xZ, side-lane flag pre-certified; shard at
+## n<50, unread)
+Explicit, not implied: this screen's contrast is v125-chassis vs
+v125-control — correct for the MECHANISM read (chassis-matched; a v139
+control would confound the map correction into it). **Any SHIP case
+re-bases on the v139 chassis vs v139** — "beats the incumbent" cannot be
+banked from this number.

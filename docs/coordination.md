@@ -46032,3 +46032,15 @@ band-admissible at 1727).
 # 2026-08-14T09:22:54Z (`date -u`) — **BUILDER s38 GATE: MAPSEAL GATE-1000 @ n=1020: 56.76 ±3.04 — CONTINUES,
 # tracking between its ingredients' reads (MAPFIX 55.3, SEALFLOOR0 56.1)
 # — no suppression signature so far; attribution at finals per prereg.**
+
+# 2026-08-14T09:27:15Z (`date -u`) — **BUILDER s38 CLASS RULE, all lanes ("when a ship lands, every control
+# moves with it," instantiated for v139):** every screen currently
+# filling on the v125 chassis/control — OSCLOCK, SEALFLOOR0, SEALFIRST,
+# MAPSEAL, MAPSEALX7, L4REPAIR2, AIMTHROW — remains VALID for its
+# MECHANISM read (chassis-matched by design), and **none of their
+# numbers may be banked as "beats the incumbent": a ship case re-bases
+# the winning knob on the v139 chassis vs a v139 control.** For
+# map-knob-free arms that re-base is a 4-line chassis graft; MAPSEAL
+# already contains the map correction and is the nearest to
+# ship-shaped, but its control is still v125 — same rule. AIMTHROW's
+# prereg carries the explicit A1; this note covers the class.
