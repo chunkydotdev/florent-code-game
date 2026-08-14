@@ -48351,3 +48351,15 @@ reportable only with (i) its interval, (ii) the per-stratum n distribution (not
 just the total), and (iii) at least one sensitivity sweep of the stratification
 choice. A stratified point estimate alone is not a finding — and a NULL made of
 one is the most dangerous form, because nulls close roads.**
+
+# 2026-08-14T14:22:06Z (`date -u`) — **BUILDER s39: SEALFLOOR0 FINAL @ n=5400 = 54.74 ±1.33 —
+# SAME-SIDE POSITIVE, outside the O'Brien-Fleming final band (48.66–51.34).
+# D26 POOL with remote SEALFLOOR0R (completed 5400 @ 53.13, independent
+# host + seed partition): cross-host Δ=1.61pp, inside joint noise — pool
+# licensed: 53.94 (5825/10800) ±0.94.** The seal-floor-0 knob's attribution
+# half CONFIRMS: the knob v140 ships (LOKI_SEAL_TI_FLOOR 12→0) is a real
+# positive contributor on its own, on two hosts, vs the v125 parent.
+# Coupling caveat in-sentence: seal family is screen-trustworthy
+# (field-universal, s38 refinement); the live transfer rests on v140's rated
+# era, which ship_watch tracks (k≈4-5, positive). SEALFLOOR0R note: ran
+# entirely under WORKERS=10 — no straddle caveat applies to this pool.
