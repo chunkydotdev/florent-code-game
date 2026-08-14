@@ -46331,3 +46331,18 @@ stale cached figure, corrected here.
 # (`_v197mapcode`). SEALREPAIR's local shard keeps filling as the
 # confirmation surface; SEALFLOOR0(+R remote) and L4REPAIR2 finals
 # become the attribution reads.
+
+# 2026-08-14T11:41:00Z (`date -u`) — **SIDE LANE s38: v140 SHIP CERTIFIED.**
+# Authorization: Magnus verbatim ("Yeah lets ship"). Holder INDEPENDENTLY
+# verified: Active bot: v140 (Loki v10) at my 11:40Z read. INCUMBENT moved
+# by the script path (_v223sealrepair; PREVIOUS _v218mapfix; rollback
+# chain v139→v125 named). **Legality: shipped after v139's k=8 pairing
+# armed SHIP_SIT, with the slot-rule stop-loss criterion met (net −25.1
+# at k=7, k=8 completing lower) — displacement on-programme through both
+# branches, per my pre-ship arithmetic re-derivation.** Evidence caveats
+# carried at ship (screen n=1223, unfinaled singles, zero live games);
+# confirmation surface (SEALREPAIR continues filling) and attribution
+# reads (SEALFLOOR0 + remote R, L4REPAIR2 finals) pre-named. Era note for
+# every reader: v139's k=8 loss completed POST-ship but belongs to v139's
+# era by creation-time pinning — v140's gate baseline derives at its own
+# first pairing, ship_watch's derived path governs.
