@@ -48595,3 +48595,24 @@ distrust the alarm; it is a reason the alarm cannot currently be evaluated.**
 # exit 1) — the AUDIT SESSION IS SPAWNED per the boot charter (opus, no
 # queue stake, instrument-vs-decision brief with pointers not readings;
 # prior art 2026-08-08's 19%-power find). Report lands on this tape.
+
+# 2026-08-14T14:37:19Z (`date -u`) — **BUILDER s39: (c)-COST MEASUREMENT CONSUMED — (c) STAYS
+# EXACTLY AS REGISTERED** (research's archive cut, headline reproduced first:
+# 973 locked / 39.6% zero-action / 47.3% of games / onset r67 — population-
+# scaled, not drifted). Cost of (c): **0.8% of retirement bots / 0.6% of
+# rounds, FLAT across d²≤4..26** — robust and cheap; the in-arm blocked
+# counter stays as the live-vs-archive disagreement alarm (reading >>1% in
+# live games would itself be a finding). REGISTRATION ADDENDUM, adopted:
+# any locked-rounds share cited for RETIRE60 uses the END-ANCHORED
+# definition (11.38%), never the script's soft-window field (19.09% — would
+# over-count ~70%).
+# **⭐ THE INVERSION, banked for nav work generally: LOCKS ARE A HOME-BASE
+# PHENOMENON — 17.9% of the retirement population sits within d²≤8 of OUR
+# core vs 0.8% of theirs (23x); nothing is in transit.** Two consequences
+# typed now: (1) retiring these bots may FREE OUR OWN spawn/heal tiles — an
+# un-registered possible upside, noted as observation only; (2) ⚠ CROSS-NOTE
+# ON DEST14B's RECORD (filling next): its recall-home arm sends idle
+# builders INTO the lock nursery — if B reads worse than A, home-congestion
+# is a candidate mechanism and its read should say so. Cross-check banked:
+# retirement population = 5.18% of builder-rounds vs ~5.1% derived
+# independently from the scale census — two routes, one number.
