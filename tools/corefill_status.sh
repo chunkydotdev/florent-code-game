@@ -52,7 +52,7 @@ while read -r SH TR CT TG SL; do
   # [o]vernight[a-z_]* : variant runners (overnight_mapfix.sh) are the same
   # shard family — the bare "overnight.sh" pattern called a live MAPFIX DEAD
   # on the dashboard (2026-08-14, Magnus caught it).
-  alive=$(ps ax -o command= | grep -c "[o]vernight[a-z_]*\.sh $SH ")
+  alive=$(ps ax -o command= | grep -c "[o]vernight[a-z0-9_]*\.sh $SH ")   # digits too: overnight_pool26.sh (caught live 2026-08-14, second pattern gap same morning)
   hb=$OUT/${SH}.heartbeat
   age="-"; agesec=999999
   if [[ -f $hb ]]; then agesec=$(( NOW - $(stat -f %m $hb) )); age="${agesec}s"; fi
