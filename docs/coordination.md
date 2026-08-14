@@ -44860,3 +44860,76 @@ message volume; its yield tonight was the ECORAID packet not shipping.
 # stop SURVIVE. Wake path summary: corefill runs itself but NOTHING types
 # gates/finals until a session re-arms; the platform legs sit until v125
 # returns. The repo is pushed clean at this line.
+
+# ============================================================================
+# 2026-08-14T06:55:21Z (`date -u`) — **RESEARCH ARM s37/s38 WRAP** (Magnus called it).
+# Arm retro ran FIRST: `docs/research-arm-retro.md` → **v1.10, FIRINGS 5.**
+# ~62 research/queue/spec commits this session.
+# ============================================================================
+
+## PROCESS DELTAS — routed, not merely recorded
+
+**R1. ⭐⭐ VERIFY THE ARM IDENTITY BEHIND ANY CITED SCREEN FIGURE.** *(behaviour
+change → promoted here; named in two lanes' records as the
+arm-identity-vs-position class.)* The LAUNCH0 citation was inverted — the
+"pre-build support" arm was the NO-LAUNCHER arm (LAUNCHER_CAP=0), knowable
+only at the worklist primary. An iteration was already aimed backwards when
+the check landed. **A shard name is a label, not a description; the primary
+is the worklist row that defines the arm.**
+
+**R2. ⭐ AN n=5 CONTROL CELL MANUFACTURES INTERACTION STORIES.** *(instrument
+rule → promoted; applied twice same-session.)* Per-cell treatment-vs-control
+reads against a 5-game pinned control produced ±40-50pp class "interactions"
+that vanish against large-n baselines. **Per-cell reads need ≥10/cell
+control arms or the big-n baseline named as such.**
+
+**R3. ⭐ ENFORCEMENT LIVES IN THE TOOL, NOT THE SESSION.** *(pattern
+confirmed by execution → the runner-side boundary stop.)* CAL-3's look
+boundary passed unwatched; the fix that held was the runner refusing to
+overshoot (fired at exactly 30 accepts on first live execution) — the
+session Monitor was only the notification layer. Same shape as D2/D3.
+
+**R4. ORDERING RACES ARE HANDLED BY DISCLOSURE, NOT PRETENSE.** *(behaviour
+confirmed under fire, twice: the iter-3 HOLD losing by minutes; the
+side-lane audit crossing the gap commit.)* Both records state the race and
+prove the protected substance held (no post-gap reclassification), rather
+than asserting the ordering.
+
+**R5. ⭐ COUPLING CLASS IS NOW ROW METADATA.** *(behaviour change → adopted
+in #52/#53 and the fixture spec.)* Screen-trustworthy (field-universal /
+self-knowledge) vs fixture-or-live-required (incumbent-absent) routes the
+screening budget per row. **Deepening rows skew screen-trustworthy — the
+steady-accumulation lane is cheap by construction.** OBSERVATION — the
+refinement behind this is retrospective (7/7 signs, one out-of-sample hit);
+the prospective probes (GBNS, L4REPAIR, #8) decide it.
+
+## RELAYED — nothing of mine is still running
+Two subagents all session (parked-raider cut, detector v2) — **both
+reported, both spot-reproduced at the primary, both banked in #48.** The
+boundary Monitor fired its purpose and exited. No live agent at wrap.
+
+## RESEARCH ARM STATE — VERIFIED 2026-08-14T06:55:21Z, NOT ASSERTED
+* **Live: rating 1801 Emerald, rank #18 of 123, 947 matches, `Active bot:
+  v134`, k=1 (unarmed, fresh ship on the builder's side).** Off
+  `.venv/bin/fcode status`. We were 1753/#19 at my boot — +48 across the
+  session.
+* **queue_check: 38 unblocked (floor 3).** Session added #47-#53.
+* **CAL-4: look SPENT at n=150 (taken AT the boundary); panel fills
+  descriptively; boundary stop rides in the runner.**
+* **NOTHING OF MINE IS RUNNING.** Monitor exited by design; both subagents
+  dead and relayed.
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+1. **CAL-4's comparative look is SPENT** (its prereg licenses n=150 ONLY —
+   no re-reads, no n=300). CAL-2/CAL-3 also spent. **panel_read with no
+   args defaults to cal2's spent table — always pass --panel.**
+2. **The coupling refinement is a SURVIVING hypothesis, not a rule** —
+   7/7 signs but retrospective; GBNS/L4REPAIR/#8 carry the registered
+   predictions that decide it.
+3. **The v125 kill-round baseline DRIFTS** (167→177.5 within one day as
+   games accrued); any bar quotes the figure at write time with n attached.
+   And v134 is now the holder — v125 baselines are era figures.
+4. **#52's self-play screen reads HARM ONLY** (COUPLED-INCUMBENT-ABSENT);
+   its value read needs the peck-class fixture or live.
+5. **The 8.3ms "navigating raider" figure is RETIRED** (unsourced, does not
+   reproduce); parked-bot CPU numbers come from detector v2's TSV.
