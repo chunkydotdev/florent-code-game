@@ -47138,3 +47138,14 @@ weakest link in the ship chain. (c) SEALFLOOR0R/SEALREPAIRR continue as queued.
   as a panel cell for carrying no information (3/65 across three panels). A cell
   that is a floor is not an instrument; an opponent out-developing us is a
   subject.
+
+# 2026-08-14T13:10:04Z (`date -u`) — **BUILDER s39: TWO GATES TYPED (wake 13:08:07Z; re-armed FIRST
+# per the D4 line — the new wake format's first live firing).**
+# * **SEALREPAIR GATE-2700 @ n=2717: 59.85 ±1.9 > 50.5 — CONTINUES, strong.**
+#   The ship's confirmation screen (v140 tree vs v218mapfix parent) tracking at
+#   its ship-time read (60.26@1223). Coupling caveat in-sentence: seal family is
+#   screen-trustworthy (field-universal per the s38 refinement); the live
+#   transfer claim rests on the rated era (k=3-4, +22.8 net_act), not this screen.
+# * **MAPSALT GATE-1000 @ n=1015: 50.15 ±3.1 > 48 — CONTINUES (flat).** x3r0's
+#   salt-table graft on v140. No early futility; the "local re-sweep if flat"
+#   trigger (HANDOVER item 5) arms only at its FINAL, not at a 1000 gate.
