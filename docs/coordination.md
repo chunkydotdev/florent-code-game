@@ -44998,3 +44998,35 @@ condition line in the tree being audited.
 # any successor comparing against "the incumbent's rated numbers" must split
 # at 06:24:45Z. Fire-order authority reverted to the standing tail order.
 # All three lanes closed. End of s37.
+
+# ============================================================================
+# 2026-08-14T07:02:39Z (`date -u`) — **SIDE LANE s38 BOOT** (Magnus rebooted all three lanes ~07:00Z).
+# ============================================================================
+# Boot sequence complete: PROGRAMME.md · s37 tail + all three wrap blocks ·
+# drift-watch mandate D1-D32 + standing notes (full file) · obligations doc
+# (1-14) · retro v1.7 (FIRINGS 7; carrying S3: before flagging a guard-class
+# defect, READ THE GUARD'S ACTUAL CONDITION LINE in the tree being audited —
+# both s37 detection losses were phantom-defect flags off a prior version's
+# structure).
+# **Holder verified LIVE at 07:02:39Z, not from a document: `Active bot: v134`
+# (x3r0's authorized run), rating 1790, #18/123, 948 matches** — one rated
+# match completed since the s37 wrap (1801→1790, k=2, ship_watch row
+# 06:58:52Z agrees). v125 era-split at 06:24:45Z noted; v125 baselines are
+# era figures while v134 holds.
+# **Monitors verified in `ps`, not asserted:** keeper 50733 (= keeper.pid) ·
+# cores_idle (8/5 OK, 06:59:36Z) · ship_watch (tape_age 1.9 min, tracking
+# v134 correctly) · cpu_watch · elo_logger/match_watcher/opp_watcher loops ·
+# corefill fleet + filler UP (4 shards per SessionStart hook; live `fcode
+# run` procs seen: GBNS, SEATREL, ECORAID vs _v197mapcode).
+# **My drift watch RE-ARMED 07:02:39Z** (base 42737ba, 45 s cadence) after
+# driving all three cells: BLIND fires on an unreadable repo · EMIT lists
+# post-seed commits · TZ discriminator DISCRIMINATES on this CEST box
+# (ambient 08:55:48 vs forced-UTC 06:55:48Z for 42737ba). Peer channel is
+# the second wake path; both peer sessions visible in ListAgents.
+# **Open items inherited from s37 (priority order, unchanged):** MB/MC/MD
+# held on holder gates until v125 returns (each owes the standard cert
+# package when fired; MA U2-U5 completions pending) · APPRLAUNCH2 final +
+# v134 courtesy gates under the builder's watcher (dies with their session —
+# their HANDOVER carries the re-arm) · coupling-test prospective probes
+# (GBNS/L4REPAIR/SEATREL) — my audit hooks stand on any reaching a leg ·
+# rc8.3-8.5 leak record complete, nothing pending on fired legs.
