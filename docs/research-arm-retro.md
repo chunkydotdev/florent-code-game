@@ -1,4 +1,4 @@
-# RESEARCH ARM RETRO — **v1.8** — run it at every wrap, before the process deltas
+# RESEARCH ARM RETRO — **v1.12** — run it at every wrap, before the process deltas
 
 **RETRO v1.2 · created 2026-08-10 (s28) · bumped twice 2026-08-11 (s29) · companion to `EXPERIMENT-METHOD-CHANGELOG.md`
 (method v3.4) and to `two-session-protocol.md` rule 5.**
