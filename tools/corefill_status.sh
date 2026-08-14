@@ -19,10 +19,17 @@
 #    is about +-7pp; a number printed there reads as a result and is noise. The
 #    band is printed beside every rate so nobody has to remember this.
 set -u
+source "$(dirname "$0")/lib/runner_pat.sh"
 WORK=${1:-scratchpad/corefill_work.txt}
 OUT=${OUT:-scratchpad/overnight}
 STATE=${STATE:-scratchpad/corefill_started}
 NOW=$(date -u +%s)
+# ONE ps snapshot for the whole run. 113 worklist lines × a fresh `ps ax`
+# each was ~73s wall under game load and blew the dashboard's 120s capture
+# budget (side-lane measurement, 2026-08-14) — the status authority got
+# slower the busier the box. The snapshot is also the freshness contract:
+# every liveness answer below is as-of $NOW, stated once.
+PSSNAP=$(ps ax -o command= 2>/dev/null)
 
 # 4. **A RATE ON RETIRED GEOMETRY SAYS SO ON THE SAME LINE.** The 2026-08-13
 #    map rotation retired 4 of the old 8 battery maps; a shard launched before
@@ -37,9 +44,9 @@ LIVE_MAPS=$(sed -n 's/^MAPS=(\(.*\))$/\1/p' $POOL_SRC 2>/dev/null)
 [[ -z $LIVE_MAPS ]] && print -r -- "*** LIVE POOL UNPARSEABLE from $POOL_SRC — every RETIRED%% below is BLIND ***"
 
 print -r -- "COREFILL STATUS  $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-print -r -- "load $(uptime | sed 's/.*averages: *//')   shards $(ps ax -o command= | grep -c '[o]vernight.sh ')   worklist $WORK"
+print -r -- "load $(uptime | sed 's/.*averages: *//')   shards $(print -r -- "$PSSNAP" | grep -c "$RUNNER_PAT ")   worklist $WORK"
 [[ -f scratchpad/COREFILL_STOP ]] && print -r -- "*** PAUSED — scratchpad/COREFILL_STOP present ***"
-ps ax -o command= | grep -q '[c]orefill.sh' || print -r -- "*** THE FILLER ITSELF IS NOT RUNNING — nothing new will be launched ***"
+print -r -- "$PSSNAP" | grep -q '[c]orefill.sh' || print -r -- "*** THE FILLER ITSELF IS NOT RUNNING — nothing new will be launched ***"
 print -r -- ""
 printf "%-11s %-9s %7s %6s %8s %9s   %s\n" SHARD STATE ROWS PCT HB_AGE ETA RESULT
 
@@ -49,10 +56,7 @@ while read -r SH TR CT TG SL; do
   tsv=$OUT/${SH}.tsv
   rows=0; [[ -f $tsv ]] && rows=$(( $(wc -l < $tsv) - 1 )); (( rows < 0 )) && rows=0
   tot_rows=$(( tot_rows + rows ))
-  # [o]vernight[a-z_]* : variant runners (overnight_mapfix.sh) are the same
-  # shard family — the bare "overnight.sh" pattern called a live MAPFIX DEAD
-  # on the dashboard (2026-08-14, Magnus caught it).
-  alive=$(ps ax -o command= | grep -c "[o]vernight[a-z0-9_]*\.sh $SH ")   # digits too: overnight_pool26.sh (caught live 2026-08-14, second pattern gap same morning)
+  alive=$(print -r -- "$PSSNAP" | grep -c "$RUNNER_PAT $SH ")
   hb=$OUT/${SH}.heartbeat
   age="-"; agesec=999999
   if [[ -f $hb ]]; then agesec=$(( NOW - $(stat -f %m $hb) )); age="${agesec}s"; fi
@@ -79,7 +83,12 @@ while read -r SH TR CT TG SL; do
   fi
 
   res=""
-  if (( rows >= 400 )); then
+  # DONE shards never change: their awk result is cached keyed on the TSV's
+  # mtime (72 of 113 lines were finished shards re-awked every 45s capture).
+  cachef=$OUT/${SH}.result_cache
+  if [[ $st == DONE && -f $cachef && $cachef -nt $tsv ]]; then
+    res=$(cat $cachef)
+  elif (( rows >= 400 )); then
     res=$(awk -F'\t' -v pool="$LIVE_MAPS" 'BEGIN{
         blind = (pool == "") ? 1 : 0
         split(pool, a, " "); for (i in a) P[a[i]] = 1
@@ -89,6 +98,7 @@ while read -r SH TR CT TG SL; do
         printf "%.2f%%  band +-%.2fpp  (n=%d)", p*100, b, n;
         if (blind) printf "  RETIRED:BLIND";
         else if (ret>0) printf "  RETIRED %.0f%%", 100*ret/n}}' $tsv 2>/dev/null)
+    [[ $st == DONE && -n $res ]] && print -r -- "$res" > $cachef
   elif (( rows > 0 )); then
     res="n=$rows — under 400 rows, NO RATE PRINTED (band would be wider than any effect we chase)"
   fi

@@ -57,6 +57,7 @@
 # the shortfall, so a cancelled shard is readable, just under-powered. Nothing
 # here ever deletes data.
 set -u
+source "$(dirname "$0")/lib/runner_pat.sh"
 WORK=${1:?worklist file}
 MAX_SHARDS=${2:-8}
 DEADLINE_H=${3:-8}
@@ -112,9 +113,9 @@ while true; do
   if [[ -d scratchpad/corefill_cancel ]]; then
     for cf in scratchpad/corefill_cancel/*(N); do
       csh=${cf:t}
-      if ps ax -o command= 2>/dev/null | grep -q "[o]vernight[a-z0-9_]*\.sh $csh "; then  # variant runners too (pool26/mapfix) — the unmatched-pattern class, 3rd instance 2026-08-14
+      if ps ax -o command= 2>/dev/null | grep -q "$RUNNER_PAT $csh "; then
         say "CANCEL $csh -- killing on request. Partial rows are KEPT and remain readable."
-        pkill -f "overnight[a-z0-9_]*\.sh $csh " 2>/dev/null
+        pkill -f "$RUNNER_PAT_PKILL $csh " 2>/dev/null
       fi
       print -r -- "cancelled $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $STATE/$csh
       rm -f $cf
@@ -126,7 +127,7 @@ while true; do
   fi
 
   # ---- guard 2: blind is not idle -----------------------------------------
-  running=$(ps ax -o command= 2>/dev/null | grep -c "[o]vernight[a-z0-9_]*\.sh ")
+  running=$(ps ax -o command= 2>/dev/null | grep -c "$RUNNER_PAT ")
   if [[ -z $running ]]; then
     say "BLIND: cannot read process table -- refusing to launch this cycle"
     sleep $POLL_S; continue
