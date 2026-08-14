@@ -1092,3 +1092,13 @@ SPKT64P     bots/_v236spawnpocket  bots/_v223sealrepair   2700 302000
 # REMOTE-ONLY (A4 voided the 40-worker rows; B decides) V140VS145   bots/_v223sealrepair   bots/_x3r0v145   1000 304000
 # REMOTE-ONLY (prereg: this shard alone decides, work-server-1) V140VS145B  bots/_v223sealrepair   bots/_x3r0v145   1000 306000
 SEALFLOOR6  bots/_v238sealfloor6   bots/_v223sealrepair   5400 308000
+# CRASHDRIVE (#17) — both-ways instrument drive, LOCK docs/prereg/SCREEN-crashdrive-2026-08-14.md + A1 rename.
+# P=forced-positive, G=forced-negative victim-side, Z=forced-negative weapon-side, S=descriptive shipped-tree.
+CRASHP      bots/_v224crashon      bots/_probe_border_raw     60 93000
+CRASHG      bots/_v224crashon      bots/_probe_border_guard   60 93100
+CRASHZ      bots/_v224crashoff     bots/_probe_border_raw     60 93200
+CRASHS      bots/_v223sealrepair   bots/_probe_border_raw     60 93300
+# GUNAXABL (#33) LOCK docs/prereg/SCREEN-gunaxabl-2026-08-14.md · SENTTHR (#30) LOCK SCREEN-sentthreat · V140VS146 X3R0_SLOT_RULE LOCK SCREEN-v140vs146
+GUNAXABL    bots/_v240gunaxabl     bots/_v223sealrepair   5400 312000
+SENTTHR     bots/_v241sentthreat   bots/_v223sealrepair   5400 314000
+V140VS146   bots/_v223sealrepair   bots/_x3r0v146         1000 310000
