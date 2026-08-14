@@ -594,5 +594,10 @@
   "brief": "Wider oscillation detector (K=4 window + target/tile bans, catches dwell-2 cycles) on the v139 chassis.",
   "full": "Arm 1b of the #54 nav-limit-cycle fix, the follow-up the first prereg declared: a K=4 window match that also catches period-4 (dwell-2) cycles the strict-alternation detector missed, plus banning the target and tile after a detected lock so the repick cannot walk straight back in. Pre-launch dose: locked builder-rounds 9.44% (control) vs 1.38% (treatment) on the replay batch — broader coverage than arm 1 on both sides. On the v139 chassis vs v139; harm-gate screen per the MIXED coupling class, with a registered performance prediction on the GRAND (30x30) split where locks concentrate.",
   "confidence": "high"
+ },
+ "MAPSALT": {
+  "brief": "x3r0's salt-table tuning grafted onto the shipped v140, with its glacierkeep keys corrected to the patched map.",
+  "full": "Cherry-picks the salt table from x3r0's tree family onto the v140 incumbent — their tuning of the belt-cutting constants, re-keyed for the post-patch glacierkeep grid (their original keys were fitted to the pre-patch terrain). Chassis-matched on the live incumbent vs v140 itself, so a positive final is ship-shaped.",
+  "confidence": "high"
  }
 }

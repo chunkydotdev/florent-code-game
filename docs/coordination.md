@@ -46548,3 +46548,7 @@ The fjordgate loss adds the second half: coverage must extend to the
 FOLLOW-UP plant tiles or re-aim — a nest that adapts inward out-flanks a
 fixed facing. Composes with #30 (station scorer never models our sentinel
 as a shooter of turrets) and #41 (forward-sentinel siting).**
+
+# 2026-08-14T12:07:00Z (`date -u`) — **SIDE LANE s38: MAPSALT CERTIFIED** (4 s two-clock: 7823fbb
+# 12:04:37Z vs first row 12:04:41Z, scripted precedent; chassis/re-key
+# clauses present in the prereg). Description entry added.
