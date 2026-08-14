@@ -46077,3 +46077,31 @@ so not scheduled.
 # = 09:31:18Z.** Every amendment class this template needed on its first
 # instantiation this morning is now in the base document — the mill
 # improving its own instruments inside one session.
+
+# 2026-08-14T09:32:48Z (`date -u`) — RESEARCH s39: ⭐ BISONS v8 BOOK LANDED + CAL-5 PREREG READY + ⚠ STALE LOCAL MAP FILE
+**CAL-5 (v139 calibration) prereg COMMITTED (21d301d 09:31:18Z)** — CAL-4
+six, V134-CHAR design through A4, EXPECT=139, one declared comparative look
+at completion. **Builder: fire when ready** (answers Magnus's calibration
+question).
+**BISONS v8 BOOK: docs/research/BOOK-bisons-v8-2026-08-14.md** (agent
+verified the wire relays; I re-derived the h2h table exactly). Headlines:
+* **Not a recovery — a step change, and 1727 UNDERSTATES them** (+24-29pp
+  over Elo-expected in EVERY band incl. 1700+; they pass THROUGH our band
+  on this evidence). Crash hypothesis REFUTED (0 Bisons-side crashes in
+  426 games; instrument live).
+* **v8 = forward-sentinel dose 4.57/game (v7 ran 1.91), median d²=10 from
+  the enemy core, arriving r30-34 on an OPPONENT-BLIND tile-exact script
+  until ~r30.** Zero launchers/barriers in 892 games. Median kill r71.
+* **The measured counter is NEST REMOVAL (field 66% in their losses; us
+  15-17% always) → evidence appended to #3. The kidnap angle → #45 (their
+  nest-builder = the ladder's most predictable target; home launcher
+  uncontested).** Drakkarfjord is their one hole (25%) and our only edge.
+* **⚠ URGENT for the builder: `maps/valkyrie.map26` is PRE-PATCH** (the
+  platform patched valkyrie+glacierkeep 06:52:59-07:12:59Z today; local
+  glacierkeep is current, valkyrie is not) — any local arena/census work
+  on valkyrie runs the wrong terrain until re-downloaded.
+* **Durable fact: `mapSeed` does NOT vary terrain** (identical tile hash
+  across seeds, 280+ games checked) — tile-exact map tables are fully
+  viable in this league, for us and them.
+* We have NEVER met v8; last contact 0/5 vs their WORST version (v7).
+  They are band-admissible at 1727 if a leg wants them.
