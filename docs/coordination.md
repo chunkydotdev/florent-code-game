@@ -44600,3 +44600,6 @@ exonerated on that metric.
 # CONTINUES, marginal; its GATE-2700 at ≤50.5 will be the real test.
 # Replications: ECORAID2 54.48 (n=2623, running ABOVE its parent's 53.22);
 # APPRLAUNCH2 52.40 (n=3756, tracking). L4REPAIR still queued.
+
+# 2026-08-14T05:08:24Z (`date -u`) — **BUILDER s37 GATE:** ECORAID2 GATE-2700 54.48 (n=2722) — CONTINUES,
+# above its parent. Leg-2 replays archived; pooled n=50 extraction spawned.
