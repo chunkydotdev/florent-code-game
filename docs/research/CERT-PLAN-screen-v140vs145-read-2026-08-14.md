@@ -196,3 +196,53 @@ literal `Z` — **the exact defect my own `drift_watch.sh` calls LOAD-BEARING in
 source comment**, and my second frame slip of the session. Caught by the times
 disagreeing with the commit monitor's own UTC line. **A second instrument over my
 own output, again — not diligence.**
+
+---
+
+## G. CERTIFICATION OF **A10 CLOSE-OUT** — 2026-08-14T20:1xZ. **SCREEN CERTIFIED CLOSED.**
+
+Recomputed on the **first 1000 rows only**; rows 1001+ are VOID-AND-UNREAD and I
+did not open them.
+
+| check | result |
+|---|---|
+| **B15a** first-1000 re-tally unchanged | ✅ **T 492 / C 508** — identical to READ-1 |
+| challenger share | ✅ **508/1000 = 50.80%** |
+| CI | ✅ **±3.07pp → [47.73, 53.87]**, reproduces A10 to the digit |
+| **B16** executed branch matches the operative rule (**A9**) | ✅ 50.80 **< 51.0** ⇒ **V140 STAYS**, no platform action |
+| **B15** continuity of the banked 1000 | ✅ 0 duplicate `game` indices, 34 distinct seeds |
+| void discipline | ✅ the close-out quotes **nothing** derived from rows 1001+ |
+| **B14** fixture | ✅ **CLOSED** — 8 `WORKER up` lines in the pulled snapshot, all `ncpu=16`; the two governing the run read `workers=10` |
+
+**CERT SPLIT, as pre-declared:** the DECISION is certified against **A9**
+(Magnus's rule, at n=1000 per his own scope ruling); the WORDING against **A7**;
+the fixture against **B14/B15**. **A6/A7/A8's zone construction is superseded as
+a DECISION rule and survives as reporting** — stated explicitly so no successor
+reads a reporting obligation as a decision rule, or the reverse.
+
+**⚠ ONE THING I DID NOT REPORT AS A DEFECT, and the restraint is the point:** at
+certification time `V140VS145B.heartbeat` still read **`RUNNING 1430/3000`**.
+That is **NOT** evidence the kill failed — the heartbeat is stamped **20:13:13Z**
+and the newest pull **20:13:46Z**, **both PREDATING the 20:14:36Z kill order**.
+**My surface had not refreshed; a stale RUNNING and a failed kill are
+byte-identical here.** ⇒ freshness checked BEFORE the verdict, per the standing
+rule that a monitor reading a file reports that file's age. Extension stop
+confirmed by the builder; **relayed, not certified by me.**
+
+### G1. THE SCOPE QUESTION WAS LOAD-BEARING — recorded because it is this lane's product
+
+A9 was committed reading *"at the n=3000 read"* while Magnus's sentence said
+*"at n=1000"*. I flagged the divergence as a question rather than a ruling, to him
+and to the builder, **before read-2**. **He ruled n=1000 — and the screen closed
+immediately on a read already in hand.**
+
+**What the flag was worth, measured:** ~**1,570 further games** and ~**2h45m** of
+fleet time not spent, and — the part that matters more — **the two readings could
+have DIVERGED IN OUTCOME**, not merely in cost: at n=3000 v145 could still have
+reached ≥51.0 and taken the slot on a rule its principal had already satisfied at
+n=1000. **A question asked while blind cost one line; the same question after
+read-2 would have been a free choice over the slot.**
+
+*(Restraint recorded alongside: I did not compute the running share at n=1210 or
+n=1430 at any point. The registered look was n=1000 and read-2 never became
+legal, so no interim number exists on my side to have influenced the question.)*
