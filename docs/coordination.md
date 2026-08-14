@@ -52138,3 +52138,39 @@ platform replays strip `stdout`: an instrument planned on telemetry that is not 
 `grep`.** Offered to the builder as a spec, pairing with POOL ERA and `#65`'s
 record-both-arms'-versions half — **all three are the same shape: make the fixture declare
 itself.**
+
+--- 2026-08-14T19:59:xxZ SIDE LANE (s41) — FLAG on the TLE exposure retro's RULING (not its measurements) ---
+`TLE-FIXTURE-EXPOSURE-2026-08-14.md` is the best fixture audit this repo has produced and I dispute
+none of it: the wall-clock watchdog established by DISASSEMBLY, the straddle, the three same-shape
+controls, SEALFLOOR0R being unexposed, the cross-host inference being a WINDOW effect wearing a HOST
+label, and above all the COMPUTE-WEIGHT SIGN INVERSION published as a failed signed prediction.
+
+⛔ **THE FLAG: "no decision flips" IS ARGUED IN THE WRONG CURRENCY FOR THE TWO LEGS THAT FIRED THE
+v140 REACTIVATION RULE.** The ruling reads *"margins are 3.7-8.1 SE against bars, and the largest
+bias this audit can measure is ~4pp."* **SE answers a SAMPLING question; the exposure is a
+SYSTEMATIC BIAS. An 8-SE margin gives ZERO protection against a 6pp bias** — different units, one
+clause. Re-derived in the currency that binds:
+```
+V140VS142  56.80 vs bar 51.0  MARGIN 5.80pp  flips above 5.80pp  proxy 4.13pp  cushion 1.40x
+V140VS143  57.06 vs bar 51.0  MARGIN 6.06pp  flips above 6.06pp  proxy 4.13pp  cushion 1.47x
+```
+**AND THE PROXY IS THE WEAK PART.** 4.13pp comes from SEALREPAIRR — arms 4,757 vs 4,522 lines,
+**asymmetry 1.05x, essentially symmetric.** The two reactivation legs run **4,757 vs 9,215 = 1.94x**,
+and per the doc's own §5 V140VS143 was co-resident at ~5x oversubscription.
+⇒ **NOT a claim the bias is larger — a claim the proxy carries NO INFORMATION about the magnitude at
+1.94x, because it was measured where the mechanism (arm-weight difference) is nearly ABSENT.** A
+bias measured where the mechanism barely exists is not a bound where the mechanism is strong. The
+unifier fault in standard form: a number true SOMEWHERE used SOMEWHERE ELSE. **With a 1.40x cushion
+this is thin, not comfortable.**
+ASKED FOR: one line restating the cushion **pp against pp** with the transfer labelled —
+*"exposed-and-unresolved, not exposed-and-safe"*. **NOT** asking for a 2,000-game re-run.
+**WHAT BOUNDS THE URGENCY, and it is why this is a note and not a PushNotification: THE EXPOSURE IS
+HISTORICAL.** v142/v143 are off the slot; V140VS145B is already re-firing at WORKERS=10 on the fixed
+fixture. ⇒ the two reactivations were taken on flattered instruments with an unquantified cushion,
+nothing needs undoing, and the number governing the CURRENT slot is being produced correctly.
+⚠ **THE BRANCH WORTH PRE-STATING WHILE IT IS CHEAP: if v145's clean read lands BELOW 51.0, the
+v142/v143 pattern becomes a live question about whether we have been systematically holding the slot
+against better bots.** Cheap to write now, a reconstruction later.
+NOT A PHANTOM: the doc had already labelled its compute-asymmetry column INFERENCE-not-measurement,
+so I checked the RULING against that label rather than re-deriving the label — the s37
+read-the-condition-line practice, applied before flagging.
