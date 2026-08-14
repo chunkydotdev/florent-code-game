@@ -48616,3 +48616,56 @@ distrust the alarm; it is a reason the alarm cannot currently be evaluated.**
 # is a candidate mechanism and its read should say so. Cross-check banked:
 # retirement population = 5.18% of builder-rounds vs ~5.1% derived
 # independently from the scale census — two routes, one number.
+
+# 2026-08-14T14:4xZ (`date -u`) — ⛔⛔ **RESEARCH s40: THE TURRET/RING-REMOVAL DISCRIMINATOR RESTATED WITH ITS n's AND INTERVALS — AND IT IS SMALLER THAN THREE BOOKS SAID. TWO BUILDS WERE SPENT ON IT.**
+Side-lane sweep flagged it as the repo's most exposed claim
+(`BARE-STRATIFIED-SWEEP-2026-08-14.md`). **They are right, and the defect is
+sharper than "no intervals": the headline compared a FIELD-DEFENDER population
+against OUR population while ALSO splitting on outcome. Two different
+populations and two different outcome conditions, inside one ratio.**
+
+**RESTATED — enemy forward-turret removal (deaths/builds of their gunners+
+sentinels), US as defender, split by OUR outcome, all eras, with 95% intervals
+and the round-band split that tests reverse causation:**
+| opponent | our WINS | our LOSSES | gap |
+|---|---|---|---|
+| The Bisons | **36.9%** [31.9, 41.9] (n=358 turrets, 96 games) | **17.6%** [15.3, 20.0] (n=1,027, 263 g) | **+19.3pp, intervals separate** |
+| 0033 | **29.5%** [24.2, 34.9] (n=281, 84 g) | **17.3%** [14.9, 19.6] (n=962, 205 g) | **+12.2pp, intervals just separate** |
+**And Juusto on the book's OWN metric (their v11 ring barriers at d²≤8, us as
+defender) — the arithmetic reproduces EXACTLY (24.2% = 16/66 · 15.0% = 52/346)
+and the intervals do not: [13.9, 34.6] vs [11.3, 18.8]. THEY OVERLAP.**
+⇒ **"The counter replicates a THIRD time" — which I published this morning — is
+NOT SUPPORTED at that cell's n. The point estimates line up; the evidence does
+not. Withdrawn as a replication claim.**
+
+**⭐ THE ROUND-BAND SPLIT, which is the test the claim never had, and it splits
+the three cases apart:**
+| | early removal (r<100) in our WINS | in our LOSSES |
+|---|---|---|
+| 0033 | **19.2%** | **9.3%** (2.1×) |
+| Juusto (ring) | **21.2%** | **7.5%** (2.8×) |
+| **The Bisons** | **19.6%** | **16.3%** (**1.2× — nearly flat**) |
+**Reverse causation predicts the win/loss gap lives in LATE removal (the side
+that is already winning has the tempo to mop up). For the Bisons that is
+exactly what we see — their large +19.3pp headline gap comes with almost NO
+early-removal difference, so the Bisons cell is the one most consistent with
+"winners remove" rather than "removing wins." For 0033 and Juusto the early
+split is 2-3×, which is the harder-to-explain-away direction.**
+⇒ **The strongest cell (Bisons, +19.3pp) is the weakest CAUSALLY; the causal
+signal sits with 0033.** That inversion is invisible in every version of the
+claim shipped so far.
+
+## WHAT THIS DOES AND DOES NOT DO TO `#3`
+**Does NOT refute it.** Two of three cells still show a real outcome association
+with separated intervals, and the early-removal split points the right way on
+both. **Does say the arm was sized against a number ~2-4× larger than the
+measured one, on a comparison that mixed populations.** ⇒ **`#3` may keep its
+priority and must lose its headline: any arm citing "51% vs 14%" or "66% vs
+15-17%" is citing a cross-population figure and must be restated against the
+same-population numbers above.** NESTSHOT2's futility drop at 45.75 is field
+behaviour consistent with the smaller effect.
+**Banking-rule compliance for this note (clauses i-v): intervals ✓ · n inline
+per cell ✓ · the sweep is the round-band split, which is the axis that moves the
+most mass ✓ · no road is closed here ✓ · script: inline in this session's
+scratchpad, `turret_removal_restate` cut, reproducible from `events.tsv` +
+`meta_join.tsv` in ~30 lines ✓.**
