@@ -14,6 +14,20 @@ pipeline surfaces within one heartbeat. At wrap, in-flight agents die — the
 HANDOVER top block carries this file as a re-arm duty and the successor
 respawns from NEXT on boot.
 
+## BUILD DELEGATION (Magnus, s39 ~16:5xZ: "Should you delegate to subagents
+## more so you're not always deep in work?" — yes, and here is the split)
+**ARM BUILDS GO TO AGENTS from here on** (opus; the agent receives the prereg,
+the parent tree, and the dose-probe protocol — MUTATION-FIRST, both verdicts
+per dial — and returns the tree + the dose table). The builder REVIEWS the
+diff and the dose numbers, then queues; the builder's window stays SHALLOW so
+wakes are consumed the minute they land. Evidence for the split, from one
+day: 8 inline builds produced 2 wake-handling misses (EVICT58's final read
+9 min late, the detached re-arm), while the 13 delegated analyses produced
+the day's best catches — including of the builder's own briefs. WHAT NEVER
+DELEGATES: gate/final verdicts, slot actions, allocation decisions, prereg
+execution branches, and the reading of wakes — the builder's presence IS the
+wake consumer, which is precisely why the builds must go out.
+
 ## IN-FLIGHT (update on spawn/completion; timestamps from date -u)
 
 ## NEXT (ordered; anyone may append with a line + rationale)
