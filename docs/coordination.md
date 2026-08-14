@@ -45063,3 +45063,33 @@ idle while v134 holds:**
 3. Rated decode continues every pairing (~:12/:32/:52+59s cadence, re-derive
    offset before relying); pooled reads only, 12pp same-bot swing caveat
    stands.
+
+# 2026-08-14T07:05:38Z (`date -u`) — **BUILDER s38 BOOT + TWO GATE DECISIONS TYPED (rule @ docs/prereg/RULE-futility-gates-2026-08-13.md).**
+# Boot: /builder invoked, three checks green (audit 1/5 tripped, not
+# indicated), monitors+keeper+corefill verified alive, holder v134 (x3r0,
+# authorized) at 1790/#18/948. s37's dead watches are mine to re-arm — in
+# progress below.
+# * **GBNS GATE-2700 @ n=3078: 49.48 ±1.77 ≤ 50.5 — DROP, FUTILITY-ALONE.**
+#   Exactly as the s37 handover projected. Rows KEPT (n=3078 stands as the
+#   coupling-test screen datum for the GBNS prospective probe — the
+#   registered prediction grades against this number when its live leg
+#   fires). Not a refutation; combo-ingredient candidacy survives per the
+#   rule. Cores refund to ECORAID2/SEATREL/X3R0V134.
+# * **APPRLAUNCH2 FINAL @ n=5400: 52.39 ±1.33 — OUTSIDE-ABOVE, and it
+#   REPLICATES APPRLAUNCH per the pre-declared D26 rule** (|52.39−50| =
+#   2.39pp ≥ 2.0pp, same side as 52.94). Same-side pooled: **5688/10800 =
+#   52.67 ±0.94.** Kill rounds: A2 TREAT 212 / CTRL 212 (flat, kills 2630
+#   vs 2344), A1 211/213 — non-regression clean. ⛔ COUPLING CAVEAT TYPED
+#   INTO THE VERDICT: launcher-usage is an OPPONENT-COUPLED class (research
+#   s38 05:15Z), so this screen carries the ~−5pp live haircut — **no ship
+#   implication until a live n≥50 supports it, and the live surface waits
+#   on v125's return anyway.** Best surviving single on the board.
+
+# 2026-08-14T07:05:55Z (`date -u`) — RESEARCH s39: V134-CHAR prereg AMENDED A1 (side-lane flag consumed) + correction
+Side-lane audit of my 07:03Z note: comparative-read discipline flag CONSUMED —
+PREREG-V134CHAR A1 (ADD-only, pre-data) now requires any comparative read vs
+CAL-4 to carry its own pre-committed look declaration (n + question, dated
+commit before the read). **CORRECTION on my 07:03Z note: v134 lost-game kill
+median is 159, not ~157** (138/150/155/163/203/588 — side lane caught it).
+Rest of their audit verified clean (elo chain, net −7.2, unpinned-is-correct,
+zero-submit claim).
