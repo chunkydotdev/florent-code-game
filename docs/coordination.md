@@ -45426,3 +45426,43 @@ the human channel, which is the only instrument that could answer it.
 # noted for the retro: a burst script written in the fire window instead
 # of ahead of it — the rc8.x legs used PRE-WRITTEN scripts for exactly
 # this reason.
+
+# 2026-08-14T07:40:46Z (`date -u`) — **BUILDER s38: MB FIRED 5/5** (v125 on the ECO map set antler/auroraveil/
+# frostgate/royale vs the upward five; holder verified v125 pre-fire, burst
+# 07:40:04-06Z, zero retries). **Ids = MD's pins: U1 6bcb5fdd · U2 cea633ec
+# · U3 c8683709 · U4 eb6f89b1 · U5 09c67a4e** (full ids in
+# scratchpad/mb_leg_fires.tsv). Side lane: MA-pattern cert package owed on
+# these when convenient. NEXT: MC (_v207apprlaunch, APPR set, pinned to
+# MA's ids) at the ~08:00 window refill inside the post-07:52:59 clear
+# air; MD (_v213ecoraid, ECO set, pinned to MB's ids above) at the ~08:20
+# refill inside the post-08:12:59 clear air. Burst scripts PRE-WRITTEN
+# this time (scratchpad/mc_leg_burst.sh, md_leg_burst.sh) — the leg-1
+# shell-bug lesson applied same-hour.
+
+# 2026-08-14T07:41:22Z (`date -u`) — RESEARCH s39: X3R0-RUN PERFORMANCE REPORT (for Magnus + x3r0; performance half — the builder's nine wire predictions grade separately)
+All figures decoded from ladder_games.tsv / meta_join.tsv / the live CLI,
+fixtures kept split with subjects attached.
+**v134 era (06:24:45Z → 07:20:45Z, "LOKI-CHAMPION (d3)", v125+17 constants):**
+* RATED: 3 matches, **6/15 (40%)** — Erebus 3/5 (+3.8) · HTTP418 1/5
+  (−10.9) · diverge 2/5 (−5.0) ≈ **net −11 (1797.2→1786)**. All 15 games
+  core_destroyed, zero r1000. Won-game kill rounds 122/271/485/501 (median
+  378); lost 138/150/155/163/203/588 (median 159) — slow wins, fast deaths.
+* PANEL (V134-CHAR window 1, descriptive, CAL-4 cells): **6/15** — lazy
+  v226 5-0 · Juusto 1-4 · Leviathan 0-5 (C3 = D13 reference cell).
+* X3R0'S OWN UNRATED BURST (Magnus-attributed): **6/20** at 06:26:58-27:27Z.
+**v135 era (07:20:45Z → rollback pending; = rc8.5/ECORAID tree per builder's
+byte-identity):**
+* RATED: 1 match, **0/5 vs 0033 v56** (r104/123/130/147/539, all
+  core_destroyed) ≈ **−14 (1785.7→~1772)**.
+* UNRATED: **1/15** — farming_200s v14 0-5 · ph v34 0-5 · HTTP418 v103 1-4
+  (all ourver=135 verified in meta_join; initiator formally unverified,
+  pattern-attributed to x3r0, INFERENCE). ⚠ Side-lane's "1/15 full record"
+  UNDERCOUNTS: they missed the farming_200s match — **full v135 record is
+  1/20 (5%)**.
+* Context: the family's live pooled read was 46.0% (n=50, typed); shipped
+  on 56.8% SELF-PLAY vs v134 — the self-play-flattery class, now confirmed
+  in-sample. n=20, subjects attached.
+**Net interlude cost: ~−25 rating (1797.2 → ~1772) in ~70 min, k=4
+pairings.** v125 baselines are era figures split at 06:24:45Z (standing
+rider). The minimal-fix note from the builder's v134 analysis stands:
+RICH_TI back above 500 kills the r0 burst trigger.
