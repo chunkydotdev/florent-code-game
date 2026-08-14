@@ -55,7 +55,7 @@ REGISTRATION_BLOCK = """
 **CLUSTER UNIT: none - balanced-by-construction local shards, pair-weighted DEFF 0.98**
 **ESTIMATOR: pooled game share, games-level, unweighted**
 **PLANNED n: 2700 games**
-**BOUNDARY: 540 accepts = 2700 games**
+**BOUNDARY: 2700 games**
 **CUT-SHORT: below 900 games this screen publishes descriptive tallies only and takes NO comparative look**
 **BASE RATE: 50.0**
 **BAR SOURCE: pre-registered treatment bar, this document**
@@ -149,8 +149,20 @@ CORRUPTIONS = [
     ("DOSE",              "DOSE deleted",                     _drop_line("DOSE:")),
 
     # --- ARITHMETIC, each a different identity broken ------------------------
-    ("BOUNDARY_UNITS",    "boundary counted over ATTEMPTS: 540 accepts declared as 540 games",
-     _sub("BOUNDARY: 540 accepts = 2700 games", "BOUNDARY: 540 accepts = 540 games")),
+    # ⛔ THE ACCEPTS/GAMES IDENTITY IS A **PANEL** FAILURE MODE (CAL-8), so it is driven
+    # on a PANEL surface. The tool exempts local surfaces because a local shard has no
+    # accept/attempt distinction to get wrong (1 row = 1 game) — correct, and my earlier
+    # fixture declared "540 accepts" under `SURFACE: local`, which is a panel template
+    # wearing a local surface and is not a document anyone would write. THE FIXTURE WAS
+    # WRONG, NOT THE TOOL; recorded rather than quietly re-pointed.
+    ("BOUNDARY_UNITS",    "PANEL surface, boundary counted over ATTEMPTS (540 accepts as 540 games)",
+     lambda t: t.replace("SURFACE: local", "SURFACE: unrated")
+                .replace("CLUSTER UNIT: none - balanced-by-construction local shards, pair-weighted DEFF 0.98",
+                         "CLUSTER UNIT: match - one opponent per arm")
+                .replace("BOUNDARY: 2700 games", "BOUNDARY: 540 accepts = 540 games")),
+    ("BOUNDARY_UNITS",    "PANEL surface, BOUNDARY missing a unit entirely",
+     lambda t: t.replace("SURFACE: local", "SURFACE: unrated")
+                .replace("BOUNDARY: 2700 games", "BOUNDARY: 540 accepts")),
     ("BOUNDARY_VS_N",     "PLANNED n and BOUNDARY disagree",
      _sub("PLANNED n: 2700 games", "PLANNED n: 2000 games")),
     ("BAR_RESOLVABLE",    "bar moved inside the half-width the fixture can produce",
