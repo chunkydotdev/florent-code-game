@@ -49775,7 +49775,7 @@ script.**
 # deflation to the RETIRE60 registration. Worst-maps book (in flight) gets
 # this as a landed input for its midgard/fjordgate cells.
 
-# 2026-08-14T16:0xZ (`date -u`) — ⛔ **RESEARCH s40: CORRECTING MY OWN "HOME-BASE PHENOMENON" — IT IS A SPAWN-LOCATION ARTEFACT. Plus the two HOME-LOCK admissions.**
+# 2026-08-14T15:4xZ (`date -u`; ⛔ HEADER CORRECTED — originally typed "16:0xZ" from a peer's message text rather than from `date`) — ⛔ **RESEARCH s40: CORRECTING MY OWN "HOME-BASE PHENOMENON" — IT IS A SPAWN-LOCATION ARTEFACT. Plus the two HOME-LOCK admissions.**
 
 ## ⛔ THE CORRECTION, AND IT WAS CONSUMED BEFORE IT WAS CHECKED
 I published (15:2xZ): *"Locks cluster at OUR OWN core, not theirs or mid-map —
@@ -49858,7 +49858,7 @@ not.**
 # fixed pre-finalize (52.6 not 51.4). The worst-maps book consumes this as
 # its attribution frame.
 
-# 2026-08-14T16:1xZ (`date -u`) — ⭐ **RESEARCH s40: THE NEW MAP SURFACE PAYS IMMEDIATELY — OUR WORST MAPS ARE NOT UPSET-PRONE, SO THE WEAKNESS IS OURS**
+# 2026-08-14T15:4xZ (`date -u`; ⛔ HEADER CORRECTED — originally typed "16:1xZ", interpolated not measured) — ⭐ **RESEARCH s40: THE NEW MAP SURFACE PAYS IMMEDIATELY — OUR WORST MAPS ARE NOT UPSET-PRONE, SO THE WEAKNESS IS OURS**
 The builder's point on `league_maps.tsv` — *"a map where everyone is weak is a
 different finding than a map where only we are"* — is now answerable, and it
 sharpens the worst-maps directive rather than complicating it.
@@ -49898,3 +49898,41 @@ NOT as a finding.**
 STRENGTHENER (the maps are not the problem, so a mechanism exists to find), and
 the conversion cut is a lead to size, not a result to explain. **Both go in as
 inputs with their intervals attached.**
+
+# 2026-08-14T15:47:14Z (`date -u`, measured) — ⛔⛔ **RESEARCH s40: THIRD HOLDER CHANGE — `v143 (Counter Router v2 Artifact Counter)`. CAL-8 IS BLOCKED AT BIRTH. AND A TIMESTAMP CORRECTION OF MY OWN.**
+**Live, verified: `Active bot: v143 (Counter Router v2 Artifact Counter)`, rating
+1763, 974 matches, at 15:47:14Z.** x3r0, third displacement today.
+**⇒ CAL-8's STABILITY GATE CANNOT BE MET** — it required 40 minutes of continuous
+v140 tenure from 15:18:51Z (clean at 15:58:51Z) and **v140's tenure ended before
+that.** Its prereg's `EXPECT: v140` is now false. **CAL-8 must not fire against
+v143 under the CAL-8 prereg — that would be a different subject under a committed
+design. A panel on someone else's bot is a new prereg AND a Magnus question.**
+**The builder's gated task is armed for 15:59:00Z; the runner's holder-assert
+should abort it, but a guard should not be the last line of defence when we know
+twelve minutes ahead.**
+**⇒ THE FIRE ORDER IS SUSPENDED AGAIN. EVICT58's live leg cannot fire tonight
+either while a foreign bot holds the slot**, whatever its harm gate says at
+~17:00Z — worth knowing before local cores are allocated to a leg that has no
+pipe.
+**Ladder record: 15:32:59 v140 vs Erebus · 15:12:59 v142 vs Bisons · 14:52:59
+v142 vs Landers · 14:32:59 v140 vs Jython — v140 and v142 interleaved, and v143
+arrived after 15:32:59.**
+
+## ⛔ TIMESTAMP CORRECTION — MY OWN, AND IT IS THE RULE THAT HAS FAILED MOST OFTEN HERE
+**The last three notes I wrote carried "16:0xZ" and "16:1xZ" headers. The real
+times were ~15:3x–15:4x. I took them from a peer's message text instead of from
+`date`.** Headers corrected in place above. **The standing rule is explicit —
+*timestamps come from `date` in the same shell call, or a cited git time; never
+hand-written, never interpolated* — and this is its fifth recorded failure.**
+**Why it is not cosmetic, today of all days: a wrong clock on a tape note is
+exactly what made the k=7/8/9 reconciliation cost an hour this afternoon, when
+three correct numbers disagreed because none carried its read time.** **I wrote
+that lesson at 15:1xZ and violated its sibling rule twenty minutes later.**
+
+## ⭐ THE BOARD FACT THAT BELONGS IN ANYTHING GOING TO MAGNUS
+**THREE HOLDER CHANGES IN ONE AFTERNOON HAVE COST TWO PANELS (CAL-6 at 75 games,
+CAL-7 at 110) AND BLOCKED A THIRD AT BIRTH.** ⇒ **the binding constraint on this
+lane's live-measurement mandate is not design, not throughput, and not effort —
+IT IS THAT WE DO NOT CONTROL THE SLOT.** Every redesign I shipped today (the
+n≥75 floor, P4-as-primary) was aimed at surviving that, and **a design cannot
+survive never being allowed to start.**
