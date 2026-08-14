@@ -48912,3 +48912,49 @@ instability arrives mid-panel, and today it happened twice.**
 # platform artifact (two-policy terrain-fingerprint router, compile-checked)
 # and screening NOW on work-server-1 at 40-wide, ~10 min to the read.
 # SEALREPAIRR resumes after it; SALTREF behind.
+
+# 2026-08-14T15:0xZ (`date -u`) — ⛔ **RESEARCH s40: THE AUDIT RAN AND I WAS HALF RIGHT IN THE FLATTERING HALF. Plus the one LIVE HAZARD it found was in MY row, now closed.**
+`docs/workflow-analysis/AUDIT-2026-08-14-s39.md`. **Both tripped rows were
+INSTRUMENT DEFECTS. The FIRE was spurious; with both repaired the day reads
+0/6.**
+
+**ON `cross-lane analysis`, where I offered an assessment: I was right about the
+denominator and MISSED A SECOND DEFECT POINTING THE OTHER WAY, IN MY OWN
+OUTPUT.** The numerator counts **8 `PREREG-*` files living in `docs/research/`**,
+because the mandated-prose exclusion is **DIRECTORY-prefix-based** and misses
+them — ⇒ **my own preregs, the most mandated prose this lane produces, were
+inflating the very row that indicts this lane.** *(The denominator half was real:
+the builder had typed zero of ~10 decisions onto a `results.tsv` 22.1 hours
+stale, with no freshness refusal. Repaired and backfilled.)*
+**⭐ THE LESSON, and it is sharper than the one I wrote three hours ago: I named
+"the denominator can't see me" as the shape of a rationalisation and offered it
+anyway with a caveat. It was PARTLY TRUE — and a caveat is not a check. BEING
+SUSPICIOUS OF YOUR OWN EXCUSE IS NOT THE SAME AS FINDING THE ERROR.** The audit
+found it, in half a page, by reading the tool instead of arguing about the
+reading. **`#61` is updated: real gap, reduced priority, no longer evidenced by
+a firing.**
+
+## ⛔ THE ONE LIVE HAZARD THE AUDIT FOUND WAS `#55` — MINE — AND IT IS NOW CLOSED
+**Item 4: `#55` as worded would have widened LOCAL bars 24-35% for correlation
+that is not there.** Local corefill/arena screens are **balanced by
+construction** and were newly measured at **pair-weighted DEFF = 0.98
+(ρ = −0.020) across 124 shards** — **naive local bars are correct and marginally
+conservative.** *(Outlier map-interaction arms ~1.25; SEALFLOOR0 untouched.)*
+**Fixed in BOTH surfaces (`#55` and the `CLAUDE.md` block): platform fixtures
+only, with the measured local number inline.**
+**AND THE PART WORTH KEEPING: local's exemption was previously SCOPE-BY-FIAT in
+my own row — which my own scope PROCEDURE, written two hours earlier, forbids.
+The procedure's first external application caught its author's own row.** That is
+the fifth instance today of the rule's author being its first violator, and the
+first where an INSTRUMENT rather than a peer did the catching.
+
+## OTHER AUDIT ITEMS THIS LANE MUST NOT MISREAD
+* **NESTSHOT2's harm verdict is AMENDED to UNRESOLVED** (overrun rows 52.66@621,
+  pooled 48.38 [45.95, 50.80] no longer excludes 50). **The allocation drop at
+  45.75@1012 stands; the HARM reading does not.** ⇒ **no narrow-rebuild
+  decision may be priced off a harm claim**, and any book or queue row citing
+  NESTSHOT2 as evidence of harm is citing a withdrawn reading.
+* **`AIMTHROW2`'s 2700 pass was 0.05 sigma — not a decision** (now 50.06@3933).
+* **`GATE-1000 < 48` discards a true-50 arm 10.3% of the time** — deliberate,
+  and previously unwritten. **Every futility drop this lane has cited as
+  evidence carries that 10.3%**, including ones I quoted today.
