@@ -51539,3 +51539,67 @@ ladder pool? Population = our own version history (`ladder_games.tsv` per-versio
 performance) against whatever local screen verdicts are recoverable from `scratchpad/`
 and the corpus. **A validated screen is worth defending; an unvalidated one has been
 setting ship decisions on an assumption nobody has priced.** Either answer is banked.
+
+# ============================================================================
+# 2026-08-14T19:4xZ (`date -u`) — ⭐ **RESEARCH s42: AN ENGINE-MODEL CORRECTION,
+# ROUTED INTO THE BOOTED TAPE BECAUSE IT CHANGES A CUT EVERY LANE MAKES**
+# ============================================================================
+`docs/research/SHORT-TIEBREAK-ANOMALY-2026-08-14.md`. The s41 orphan, re-commissioned
+and resolved.
+
+## ⭐ THE TIEBREAK CASCADE IS THE "NO CORE-KILL WINNER" RESOLVER, NOT A TURN-LIMIT RESOLVER
+`CLAUDE.md` describes the win condition as *"destroy the enemy core, or have the
+better tiebreakers after round 1000"*. **The second clause is incomplete.** When
+**BOTH cores die in the same round**, `core_destroyed` cannot name a winner and the
+engine falls through to `titanium_collected → harvesters → titanium_stored →
+coinflip` **mid-game**. That is why a `titanium_collected` verdict exists at turn 140.
+
+**Evidence, with the complement control that makes it a finding rather than a story:**
+* **22 of 42,035** archived replays have **both cores at hp ≤ 0** — all 22 in the
+  **same round**, all 22 with `rounds == deathround + 1`, **none** labelled
+  `core_destroyed`.
+* **Complement: 33,830 / 33,830** single-core-death games **are** `core_destroyed`,
+  and **0** have both or neither core dead.
+* **`{cond ≠ core_destroyed AND rounds < 1000}` == `{both cores dead}` exactly**
+  — 22 == 22, symmetric difference empty.
+* Truncation and decode both dead: **3,615/3,615** rated rows have platform
+  `turnsPlayed` == replay `len(turns)` **and** platform `cond` == the replay
+  binary's own `winCondition`; a live re-fetch reproduces `turns=146`.
+* **14 of the 22 are OTHER teams' games** — general engine behaviour, not ours.
+
+## ⛔ THE PART THAT CHANGES BEHAVIOUR — TWO CUT FILTERS, BOTH QUANTIFIED
+1. **Use `turns == 1000` as the went-the-distance filter. NEVER the `cond` string.**
+   On the current rated tape the two disagree by **exactly 2 rows (1,120 vs 1,122)**.
+   Small, and **the direction matters under `R1000_IS_DEFEAT`: those two are KILLS at
+   r140 and r146, inside the <r250 band.** Anything that binned them as tiebreak games
+   was wrong **in our favour** by two — **our kill count has been UNDERSTATED.**
+2. **Filter `cond=error` out of any turn-distribution or kill-round cut.** 25 rated
+   rows, **ALL `turns=0`**, ALL `won=1`, ALL on 2026-08-06, from **5 matches / 2
+   opponents** (arsonist duck v1 ×20, Kleos v12 ×5). **`turns=0` means their bot
+   failed to start — this is NOT evidence for the crash programme** and must not be
+   cited as any.
+*(Re-derived off `ladder_games.tsv` by this lane before relaying: 1,060
+`titanium_collected`, 1,058 at `turns=1000`, 2 short at 140/146. Exact.)*
+
+## TWO ROADS DELIBERATELY CLOSED RATHER THAN BUILT ON
+* **`archipelago` IS NOT SPECIAL.** 311 rated rows, **52.7% win vs 51.4% overall**,
+  cond mix normal, near-miss rate rank 11 of 15. **P(two rows share a map) = 0.0499**,
+  so 2-of-2 is coincidence at n=2 and the wider 22-game class spans **≥9 map
+  geometries**. The map was a red herring; killing it, not extending it.
+* **NO QUEUE ITEM on "mutual destruction converts a loss into a tiebreak".** Base rate
+  **22/42,035 = 0.05%** (we were in 8, won 5). **It does not clear the admission bar
+  and padding the queue is the failure mode the floor already Goodharted once.**
+  Recorded as an observation.
+
+--- 2026-08-14T19:4xZ RESEARCH (s42) — TRAP 9 SPEC DELIVERED (builder accepted the split) ---
+`docs/research/SPEC-corpus-sanity-trap9-duplicate-keys-2026-08-14.md`. Three-surface
+allowlist with **the two CLEAN surfaces in scope as standing negative controls**; six
+both-verdicts cells; reports **multiplicity distribution and identical-yes/no**, not a
+bare count — `{2:119}` says *two writers raced once per batch* while `{2:40, 3:12}`
+says something else, and **differing duplicates must NOT be auto-deduped.**
+⛔ **CELL P1 EXPIRES: it is a positive control on REAL PRODUCTION DATA and it
+evaporates the moment the file is repaired. Run the trap against the corrupt
+`league_matches` BEFORE the dedup and paste the output into the commit**, or it ships
+never having fired on the defect it was written for.
+The spec carries a `PROVENANCE` section recording that **this lane's own boot sync was
+the second writer** of the 78-row block.
