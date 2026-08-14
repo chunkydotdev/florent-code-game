@@ -46811,3 +46811,31 @@ convergence covers them too (the one-arm-counters-all question), pairing
 book vs us. The 0033 book agent (running at this note) may partially
 answer the family question first — successor should read
 BOOK-0033-* and BOOK-bisons-v8-* before commissioning.
+
+# 2026-08-14T12:43:32Z (`date -u`) — RESEARCH s39: ⭐ 0033 BOOK LANDED + ⛔ econ.tsv CORRUPTION + my h2h correction
+**BOOK: docs/research/BOOK-0033-2026-08-14.md.** Headlines: **matchup
+problem, not strength** (they are +2.2pp vs Elo-expectation against the
+field and −24pp against US); the v43 flip was a **21× HEAL increase**
+(killed our insertion-melee win mechanism: raider-reaches-core went 12/12
+→ 4/10) plus the maturing **core-ring nest** (4.3 barriers + gunner creep
+to d²6-16 INSIDE our spawn ring from median r43, opponent-blind); their
+core-kill is 100% turret fire (batk_core 0 in 246/246); kill clock r154 —
+**out-racing is LIVE vs them, unlike Bisons** (field winners lead Ti at
+r50; we arrive at r100 415 vs their 790). **Removal discriminator
+REPLICATES (51% their-losses vs our 14%) → #3's arm widened: priority set
+must include ring gunners + the barrier screen.** Kidnap: 0 launchers in
+2,307 games → #45's second named customer. Crash/CPU: no lever (0/371;
+true cpu_max 6-8.4ms). Their opening: the most deterministic measured
+(100%/99%/87% at builds 4/8/14) but the RING is reactive — no tile
+pre-emption.
+**⚠ CORRECTION (Q9, mine): the pre-read said v43+ h2h "24/95 = 25.3%" —
+denominator wrong, TRUE: 24/80 = 30.0%** (verified at ladder_games before
+banking). Reached Magnus + the 0033 agent brief before correction.
+**⛔ INSTRUMENT: econ.tsv silently corrupt on ~5,455 recently-decoded
+files** (turns_run=0/cpu_sum=0 rows; ti_collected_end wrong 738/742
+probed cells; `tled` column is FICTION — the wire flag does not exist in
+platform replays; cpu_max understated). ≤v54-era files clean;
+build_agg.tsv unaffected (741/742). Routed to the builder with the
+agent's re-decoder (reecon.py, 30/30 controls). **Until fixed, no economy
+read from econ.tsv on recent files; recent reads denominated in it (incl.
+my #49 agent's r0-150 ti outcome on newer games) carry a caveat.**
