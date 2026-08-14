@@ -48955,7 +48955,7 @@ first where an INSTRUMENT rather than a peer did the catching.
   decision may be priced off a harm claim**, and any book or queue row citing
   NESTSHOT2 as evidence of harm is citing a withdrawn reading.
 * **`AIMTHROW2`'s 2700 pass was 0.05 sigma — not a decision** (now 50.06@3933).
-* **`GATE-1000 < 48` discards a true-50 arm 10.3% of the time** — deliberate,
+* ~~**`GATE-1000 < 48` discards a true-50 arm 10.3% of the time**~~ ⛔ **CORRECTED s40 ~16:3xZ: I QUOTED A SUPERSEDED BAR. Magnus raised it 48 → 51 verbatim at `c62f90c` (14:45:59Z) — BEFORE I wrote this line. Current OC at n=1000: a true-50 arm drops 73.6%, a true-51 50.0%, a TRUE-52 26.4%, a true-53 10.3%.** ⇒ **the figure I quoted as the true-50 discard rate is in fact the true-53 rate under the live gate — off by three points of true effect.** Deliberate,
   and previously unwritten. **Every futility drop this lane has cited as
   evidence carries that 10.3%**, including ones I quoted today.
 

@@ -82,8 +82,39 @@ constants must NOT be applied.** At **n = 2,700 tiny-set rows**, the 95%
 half-width on a share near 50% is **±1.9pp**.
 ⇒ **BAR: ≥ 52.0 at n = 2,700 continues; < 50.0 drops (futility).** The band
 50.0–52.0 is **UNRESOLVED and carries to a second leg — it is not a pass.**
-⚠ **And the standing open-condition: `GATE-1000 < 48` discards a true-50 arm
-10.3% of the time.** That is accepted, and named so the drop is read correctly.
+### ⛔ AMENDMENT A1 — 2026-08-14 ~16:3xZ, ADD-ONLY, PRE-TREE (free): **I CITED A SUPERSEDED GATE**
+The clause above originally read *"`GATE-1000 < 48` discards a true-50 arm 10.3%
+of the time."* **That bar was raised 48 → 51 by Magnus, verbatim, at `c62f90c`
+(2026-08-14 14:45:59Z) — an hour and a half before this prereg was written.**
+Side-lane catch, pre-launch. **The correction is not cosmetic; it changes this
+design's operating characteristics materially.** Recomputed and verified:
+
+| true share | P(reads < 51 at n=1000) — **CURRENT** | P(reads < 48) — superseded |
+|---|---|---|
+| 50 | **73.6%** | 10.3% |
+| 51 | 50.0% | 2.9% |
+| **52 — THIS PREREG'S REGISTERED SUCCESS CASE** | **26.4%** | 0.6% |
+| 53 | 10.3% | 0.1% |
+
+**⇒ A QUARTER OF GENUINELY-PASSING ARMS DIE BEFORE THIS PREREG'S 2,700 BAR EVER
+READS.** The effective design is **≥51 @ n=1000 AND ≥52 @ n=2,700**, not the
+2,700 bar alone.
+
+**DECISION: ACCEPT THE PROPERTY. Do not carve out an exception for this arm.**
+The 51 gate is Magnus's rule and his throughput logic is defensible on its own
+terms — *a true-52 that cannot show 51 at n=1000 is not clearly promising, and
+the cores are better spent elsewhere.* **Pre-registering a private band for my
+own arm would be exactly the special pleading a standing rule exists to prevent,
+and it would need his authorisation regardless.**
+
+**⇒ BUT THE READ-PATH FOR A DROP CHANGES, AND THAT IS REGISTERED HERE: a futility
+drop at n=1000 on this arm is a THROUGHPUT DECISION WITH A KNOWN 26.4%
+FALSE-DROP RATE AT THE REGISTERED SUCCESS CASE. It is NOT strong evidence against
+the plank, and `#62` does NOT close on it** — only the n=2,700 falsifier (dose
+moves, share stays ≤50.0) closes the row. **A drop at 1000 returns `#62` to the
+queue as UNRESOLVED-and-deprioritised, not as refuted.** *(Stated now so the
+first drop is read against the right expectations rather than argued about
+afterwards.)*
 
 ## FALSIFIER
 **If the dose moves 5.0 → ~3.0 and the tiny-set share does NOT rise above 50.0,
