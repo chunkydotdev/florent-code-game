@@ -386,8 +386,23 @@ def main(d="corpus"):
         return 0 if okA and okB else 1
     for f in sorted(Path(d).glob("*.tsv")):
         with open(f) as fh:
-            rows = list(csv.DictReader(fh, delimiter="\t"))
+            # TRAP 8 (s40 boot, 2026-08-14). league_maps.tsv opens with a `#`
+            # provenance line; DictReader took it as a ONE-COLUMN header, every
+            # real row overflowed into the None restkey as a LIST, and
+            # float(<list>) raised TypeError -- which the ValueError handler
+            # below does not catch, so the whole tool CRASHED before printing
+            # its CORPUS_SANITY verdict line. Comment lines are not data.
+            data_lines = [ln for ln in fh if not ln.startswith("#")]
+        rows = list(csv.DictReader(data_lines, delimiter="\t"))
         if not rows:
+            continue
+        ragged = sum(1 for r in rows if r.get(None))
+        if ragged:
+            # Rows wider than the header: a decoder/ingest defect, alarm and
+            # skip the file -- per-column stats over misaligned rows lie.
+            print(f"*** RAGGED ROWS ***  {f.name}: {ragged} row(s) have more "
+                  f"fields than the header -- columns misaligned, file skipped")
+            bad += 1
             continue
         for col in rows[0]:
             vals = [r[col] for r in rows if r.get(col) not in (None, "")]
