@@ -25,6 +25,18 @@ STATE = os.path.join(os.environ.get("STATE_DIR", "."), "elo_logger_state.json")
 
 
 def main() -> None:
+    # ⛔ AN UNKNOWN FLAG MUST NOT EXIT 0 IN SILENCE. This module takes its input
+    # on STDIN and ignored argv entirely, so `--selftest` (or any typo) produced
+    # no output and exit 0 — indistinguishable from a silent PASS. That is the
+    # exact ambiguity a selftest exists to remove, and the side lane hit it while
+    # auditing the tier change. There is no selftest here; say so.
+    if len(sys.argv) > 1:
+        print(f"elo_logger takes NO arguments; it reads `fcode status --json` +\n"
+              f"'---SPLIT---' + `fcode submission list --json` on STDIN.\n"
+              f"Got {sys.argv[1:]!r}. There is NO --selftest for this module.",
+              file=sys.stderr)
+        return 2
+
     raw = sys.stdin.read()
     status_raw, _, subs_raw = raw.partition("---SPLIT---")
     try:
@@ -179,4 +191,10 @@ def main() -> None:
 # it never was. The arming loop invokes this file as a script, so behaviour
 # there is unchanged; see tests/test_instruments.py for what the guard bought.
 if __name__ == "__main__":
-    main()
+    # ⛔ WAS a bare `main()`, so EVERY return value was discarded and the process
+    # always exited 0 -- including the unknown-flag guard added minutes earlier,
+    # which printed the right message and then exited SUCCESS. "Prints correctly,
+    # exits wrong" is exactly the shape that makes an exit code useless as a
+    # signal, and this repo already rates exit codes untrustworthy on the fcode
+    # CLI for the same reason. Caught only after a piped check masked $? once.
+    sys.exit(main())
