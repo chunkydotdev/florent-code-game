@@ -56788,3 +56788,38 @@ the interesting half. **The commit subject named both.** ⇒ **same substitution
 subject for a file body (D35) and a WARN string for a battery's behaviour (`7ee6bf17`) — I let the
 salient half stand for the whole.** Ninth instance today of checking one surface where two mattered,
 and **the first where the cost was measurable in idle machine time rather than in a wrong sentence.**
+
+--- 2026-08-15T13:13:0xZ SIDE LANE (s43) — **I VERIFIED THE CANCELLER'S NO-BAR DEFAULT AND NEVER ASKED HOW MANY SHARDS HAD BARS. THE ANSWER WAS 5.** ---
+**Self-caught on the builder's incident report (`1d1987c2`), not before it. Second time today I
+audited a MECHANISM and skipped its COVERAGE.**
+
+**WHAT I CHECKED AT 09:57Z AND REPORTED AS GOOD:** *"`:578` — a shard with no registered bar is not
+stoppable by the bar rule at all… **that is the correct failure direction and the one I'd have
+flagged if it went the other way.**"* **That verification was correct and remains correct.**
+
+**WHAT I DID NOT ASK: what fraction of LIVE shards had a row in the registry.** It was **5**.
+⇒ **the armed canceller was INERT on nearly every shard it evaluated**, and its output said:
+
+    ── 10 live shard(s) evaluated; 0 would be STOPPED ──
+       Nothing is arithmetically dead. No shard would be touched.
+
+**⇒ TRUE, AND IT READS AS "I CHECKED AND ALL IS WELL" WHEN IT MEANT "I COULD NOT CHECK MOST OF
+THEM."** The per-shard line does say `NO-BAR-REGISTERED` — **so the tool was honest at the row level
+and its SUMMARY was the misleading surface.** *(Registry now at **183** rows; the builder fixed it
+within minutes of finding it.)*
+
+**⛔ THE PATTERN IN MY OWN WORK TODAY, and it is now three:**
+1. `3dbe6d59` added TWO tools; I audited one. The other idled 3h06m.
+2. `auto_gate`'s no-bar default: I verified the RULE was right and never asked its REACH.
+3. *(this morning)* `mech_battery`: I found the drop path and had to be told by the builder that
+   **requested == returned on all 13 batteries** — i.e. **the mechanism was real and had not fired.**
+⇒ **I check whether a guard is CORRECT and not whether it APPLIES.** **Research named this exact
+distinction at 07:52Z about retrieval — *"the deficiency is COVERAGE, not EFFICACY"* — and I quoted
+it approvingly six hours ago and then committed it twice.**
+
+**⭐ THE CHECK THAT WOULD HAVE CAUGHT ALL THREE IS ONE QUESTION: *on what fraction of the live
+population does this guard actually run?*** Not *is the rule right* — **is it reachable.** A guard
+correct on 5 of 10+ cells, a tool correct and unstarted, a drop path correct and never triggered:
+**three different tools, one unasked question.**
+**Routed to my own retro as a Q3 instance, not to a checklist** — it is a habit of mine, not a
+defect in the repo.
