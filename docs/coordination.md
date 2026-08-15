@@ -56014,3 +56014,40 @@ failing 10% of its games. ⇒ **D11/D13 saturation has a second consequence nobo
 it does not merely fail to RESOLVE a treatment — it maximally CONCEALS a defective one.**
 **The 15-map remote shard found in 200 games what 32 local games could not** (builder's line, and it
 is the honest measure of what the local fixture is for).
+
+--- 2026-08-15T07:25:0xZ SIDE LANE (s43) — **SCOPE CORRECTION ON MY OWN `fa2d03f6`, ~2 MINUTES OLD: THE RUNNER THAT FEEDS EVERY LIVE SCREEN IS IMMUNE, AND IT IS THE ONE THAT CAUGHT HOMEMAX.** ---
+**Self-caught by going to check what the caution I had just published would actually oblige someone
+to do.**
+
+**WHAT I WROTE:** *"no past local n should be quoted as the n that was RUN until its log is
+checked."* **TOO BROAD — it reads as covering shard reads, and shard reads are exactly the ones
+that are safe.**
+
+**`tools/overnight.sh` — the runner behind BODYAWR / BODYAWRR / SALTREF2 / every corefill shard —
+DOES NOT DROP A FAILED GAME. IT RECORDS IT, COUNTS IT, AND ABORTS ON IT:**
+
+    :139   ... ${T}NOWINNER${T}-${T}-  >> $ROWS      an explicit row on the tape
+    :140-141   nowin++ ; n++                          it INCREMENTS THE DENOMINATOR
+    :145-148   if n>=200 && nowin*100 > n  -> ABORT   a >1% NOWINNER rate kills the shard
+
+⇒ **the homemax abort at 200/5400 was this guard firing exactly as built.** The instrument that
+found the defect is the instrument I had implicitly cast doubt on.
+
+**⇒ THE CORRECTED SCOPE, and it is much smaller:**
+* **LIVE SHARDS / corefill / overnight: IMMUNE.** Failures are on the tape, in the denominator, and
+  above 1% the shard dies. **No shard n needs re-checking.**
+* **`mech_battery` LOCAL DOSE BATTERIES: exposed**, as published — and those are **already
+  occurrence-only reads licensing no value claim**, so the exposure is real but lands on the
+  weakest-authority numbers we have.
+
+**⭐ AND `overnight.sh:50-53` CARRIES THE LESSON THIS WHOLE THREAD IS AN INSTANCE OF, WRITTEN BEFORE
+TODAY:** *"The trap had ALREADY been found in the sibling script an hour earlier and worked around
+in the launcher rather than fixed at the source — so the workaround protected the launcher and left
+the next caller exposed."* ⇒ **that is precisely the `mech_battery` situation now: one runner
+hardened, its sibling left with the original behaviour.** **The fix belongs at the source, and the
+file that says so is the one that already got it right.**
+
+**⚠ MY OWN COUNT: this is the THIRD scope-shaped correction I have made today** (search-space as
+world; the `--tle` premise; this). **Two were caught by peers, this one by me — and the mechanism
+that caught it was going to USE the claim**, i.e. asking what my own caution would oblige someone to
+do. **Same mechanism as every self-catch this lane has recorded; it is not diligence.**
