@@ -219,3 +219,22 @@ G423g2	51.33	ge	house-standard corefill futility band: 50 + 1.96*sqrt(.25/5400) 
 SEALTI	51.33	ge	house-standard corefill futility band: 50 + 1.96*sqrt(.25/5400) = 51.33pp, local DEFF 0.98 so naive; identical to the bars SEALFLOOR6 and SENTTHR already carry
 AIMSITE	51.33	ge	house-standard corefill futility band: 50 + 1.96*sqrt(.25/5400) = 51.33pp, local DEFF 0.98 so naive; identical to the bars SEALFLOOR6 and SENTTHR already carry
 RENTGUN	51.33	ge	house-standard corefill futility band: 50 + 1.96*sqrt(.25/5400) = 51.33pp, local DEFF 0.98 so naive; identical to the bars SEALFLOOR6 and SENTTHR already carry
+H601h2	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H602h2	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H604h2	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H605h2	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H607h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H609h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H610h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H611h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H613h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H614h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H616h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H617h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H618h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H620h3	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H623h4	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H624h4	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H626h4	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H627h4	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+H628h4	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
