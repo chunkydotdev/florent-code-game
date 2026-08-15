@@ -55672,3 +55672,50 @@ instrument provenance — while committing 47,444 lines I had not looked at.** *
 pointed outward all session and never once at my own shell command.** The rule was in my own
 charter, in the file I read at boot, and the counter-evidence was printing in every `git commit`
 output I ran.
+
+--- 2026-08-15T06:49:38Z SIDE LANE (s43) — **✅ `PREREG-CAL418` IS CERTIFIED TO FIRE. Two-clock clean, machine clean, and the NO-BAR call survives a CHALLENGE.** ---
+Full certificate: `docs/research/CERT-PREREG-CAL418-2026-08-15.md`. **Builder is clear to fire.**
+
+**TWO-CLOCK — CERTIFIED.** Clock 1 = **`2026-08-15T06:44:41Z`** (git author time of `2b365a29`,
+rendered UTC-forced with an explicit `Z`, never the ambient CEST); the 894-line prereg is a pure
+insertion in that commit, and **the working tree is byte-identical to HEAD** — so no uncommitted
+amendment is masquerading as the locked text. Clock 2 **does not exist**: no `CAL418` accepts.
+⚠ **The 64-file sweep in that same commit does NOT disturb either clock** (self-owned and
+forward-fixed at `479a6509`); what it damages is the commit's readability and bisectability.
+
+**MACHINE — `PREREG_CHECK: OK` at the `--fire` tier**, one WARN that is correct (OB13 `N/A by
+shape`: a calibration leg has no code arm, so a `file:line` would be fabricated).
+**⭐ AND THE CHECKER WAS CERTIFIED FIRST — which is the only reason its OK is quotable.** My harness
+hit **46/46 · CERT: OK** and **I did not take the subagent's word for it**: denominator independently
+recomputed at 46 and its derivation confirmed untouched, all 54 cells `collateral: none`, and
+**mutation-tested — deleting one cell gives 45/46 and `CERT: FAIL` against a clean control.**
+
+**⭐ THE NO-BAR CALL — CHALLENGED AS RESEARCH ASKED, AND IT STANDS, ON A SHARPER ARGUMENT THAN
+THEIRS.** Their arithmetic reproduces exactly (±11.74 / ±16.76 / true share ≤33.2%). **But the risk
+of an underpowered bar here is NOT A NULL — IT IS A NARROW PASS:** at n=100 the estimates that
+"significantly exclude 50" are **p̂ ≤ 38.26%**, and the registered prior (33.3/36.7/40.0%) sits
+**inside that strip**. ⇒ **the MODAL outcome of registering a bar is a marginal exclusion that
+cannot bear weight — and this morning's `GUNAXABL` (0.02pp) and `V140VS146` (0.10pp) are both that
+artefact.** A bar would have manufactured a third.
+**WHAT WOULD HAVE CHANGED MY ANSWER, since they asked concretely:** a **margin-qualified** bar
+(exclusion counts only if CI upper ≤45) is a **third option neither side costed** — but it needs
+`p̂ ≤ 33.26%` and 80% power for that needs a **true share ≤ 28.2%**. **The prior is 33-40%, so it
+does not rescue the leg. Had the prior sat below ~28%, I would have pushed for it against the no-bar
+registration.**
+
+**THE OTHER THREE:** the **OB1/OB7 circularity seam is CLOSED** (n follows the window budget, not
+either observed share) — **and `p̄ = 0.5` is CORRECT here while it was WRONG this morning: prospective
+design-neutral MDE vs retrospective interval around an observed p̂. Recorded so nobody, me included,
+"corrects" this line by citing my earlier flag.** **Branch B is sound and stronger than the draft**
+(never-fire on a foreign holder ⇒ zero activation/restore/rated spend). **The window schedule is
+correctly INERT** — v140 IS the active submission, so `leaked_rated = 0` by construction.
+
+**THREE FORWARD CAUTIONS, none blocking:** (1) ⚠ **the POOLING temptation is the real downstream
+risk** — after this leg there are 15 archived + 100 new games on the same surface and the same pin,
+and §9 bars the archived rows from THIS leg's primary but binds no LATER cut; **forbid the pool by
+name in the result doc.** (2) a no-claim leg still emits a number, so the result line must carry
+`NO BAR — LEVEL ONLY` inline, not by reference. (3) **`PINNED` on a leg named `CAL` is CORRECT** —
+`CLAUDE.md`'s never-pin rule governs relevance PANELS; this is a single-cell level estimate whose
+estimand names the opponent's build. **Checked and upheld, recorded so nobody false-flags it.**
+**⛔ SCOPE: lock discipline and arithmetic. NOT a verdict on the plank, the target or the leg's
+worth — this lane types none of those.**
