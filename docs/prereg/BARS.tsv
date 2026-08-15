@@ -242,3 +242,4 @@ F315SIPHIT	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400)
 F316SIPCULL	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
 F317RAIDPEC	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
 F318SEATPEC	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive
+F319TURRPEC	51.33	ge	house-standard corefill futility band 50+1.96*sqrt(.25/5400); local DEFF 0.98 so naive

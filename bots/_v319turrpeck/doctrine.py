@@ -928,49 +928,6 @@ SIPHON_MAX_RNDS = 24
 # list.  Per unit, same locality argument as escort_ban.
 SIPHON_BAN_RNDS = 200
 
-# ============================================================================
-# ARM A (v315) -- SIPHON PAYLOAD RE-ARMED.  One site, one toggle.
-#
-# WHAT THE TEST AUDIT FOUND (143-test pure-predicate sweep, s44).  `_siphon_deny`
-# is a HUNT with a DEAD PAYLOAD as shipped.  At d>1 it sets `self.tgt` and calls
-# `_nav` -- i.e. it SPENDS THE BUILDER'S MOVE walking to an enemy belt beside our
-# harvester.  On arrival (d == 1) the `LOKI_QUIET_ON` branch returns False and
-# the belt is never attacked; SIPHON_MAX_RNDS (24) then bans that tile and the
-# builder picks the next one and walks to that.  Navigation live, payload dead.
-# The audit drove all three states and showed the arrival DOES kill the belt with
-# the quiet branch off.
-#
-# ⭐ THE MEASURED POPULATION, WHICH IS WHY THIS PAIR IS WORTH A SHARD AT ALL
-# (research s43, commit 549b3e3f): **30.2% of ALL bucket-A rounds -- 133 per
-# game -- are spent cardinally adjacent to an enemy belt emitting nothing.**
-# That is a LOCATED POPULATION counted on our own games, not a mechanism story.
-#
-# ⛔ AND THE MECHANISM IS OPEN -- DO NOT ASSERT ONE IN THE READ.  Commit
-# 86473148 killed BOTH competing accounts of what those rounds are doing: the
-# side lane's "the walk does nothing" AND research's "`_salt_turn` picks it up"
-# were each wrong, because the roles are mutually exclusive per `run()`.  So the
-# WASTE IS MEASURED and WHAT IT COSTS IS UNKNOWN.  This arm and v316 are the
-# two directions out of that state; the shard decides, not the argument.
-#
-# THIS ARM RE-ARMS THE PAYLOAD ONLY.  It does NOT lift LOKI_QUIET_ON, which also
-# silences the core peck, the raid peck and the counterbattery -- those are
-# separate arms (v316/v317/v318) precisely so a result is attributable to ONE
-# site.  With this on, LOKI_QUIET_ON stays True everywhere else in the tree.
-#
-# ⚠ NOTE ON CLASS, so this is not mis-shelved with arm D: an enemy CONVEYOR or
-# SPLITTER is 20 HP = ten pecks, and the doctrine's own carve-out paragraph
-# names exactly that as the target where the arithmetic INVERTS relative to a
-# 500 HP Core.  A siphon belt is the carve-out's class, not the rejected class.
-#
-# HOW THIS LOSES.  QUIET was a measured win because acting and moving are
-# mutually exclusive for a builder and ARRIVAL is the scarce quantity.  An
-# expander that now stops to peck a 20 HP belt is an expander not laying chain,
-# and ten pecks is ten rounds.  If this drops, that trade is what happened -- and
-# v316 is the opposite arm, which buys the move back instead.
-# ============================================================================
-
-LOKI_SIPHON_HIT_ON = True   # arm A: let the siphon hunt's arrival actually fire
-
 SLOT_ROLE_N = 0
 SLOT_UNDER = 1
 SLOT_ATK_RND = 2
@@ -1617,6 +1574,58 @@ LAUNCHER_MIN_RND = 160
 
 LOKI_SALTIDLE_ON = True      # master flag: False == the v169 parent, exactly
 LOKI_SALTIDLE_LOG = False    # funnel tag "S48 <uid> reach open fire"
+
+# ============================================================================
+# ARM E (v319) -- THE RESTRICTED PECK.  Successor to the WITHDRAWN v317.
+#
+# WHY v317 WAS WITHDRAWN RATHER THAN RUN, and the distinction matters because
+# this repo bans dismissing a plank by reason.  Magnus's rule forbids predicting
+# an arm's RESULT and skipping the test.  It does not require running an arm
+# whose DESIGN cannot answer a question.  v317 re-opened `_raid_peck`'s full
+# ladder, which mixes FOUR things:
+#   rank 0  enemy CORE            -- a plank measured and REJECTED (this file's
+#                                    LOKI-SALT block: "2 damage a round against
+#                                    a 500 HP Core ... is not progress"), and
+#                                    the FIRST thing the function reaches for;
+#   ranks 1, 5  conveyor/splitter -- behaviour we ALREADY SHIP live, via
+#                                    `_salt_turn` (LOKI_SALTIDLE_ON = True);
+#   the ORDERING                  -- step 6 runs BEFORE step 7 and has no idle
+#                                    gate, i.e. the exact arrangement measured
+#                                    HARMFUL at p=0.008 (_v178salt);
+#   ranks 2, 3, 4                 -- genuinely uncovered.
+# Any outcome would have been attributable to four different causes.  That is a
+# design defect and the fix is a better arm, not a verdict.
+#
+# WHAT THIS ARM IS.  The same function, called with a RANK WHITELIST of
+# {2, 3, 4} -- enemy LAUNCHER, GUNNER/SENTINEL, HARVESTER -- so the only
+# targets it can reach are ones no shipped path already covers and none of
+# which is the rejected Core class.  Ranks 0, 1, 5 and 6 are dropped.
+#
+# ⛔ AND THE ORDERING DEFECT IS FIXED SEPARATELY, BECAUSE DROPPING RANKS 1/5
+# DOES NOT FIX IT.  Verified, not assumed: raid.py:193 reads
+# `if ct.get_action_cooldown() == 0 and self._raid_act(ct, E, near): return`,
+# so ANY True return from _raid_act cancels this raider's move that round --
+# the cancellation attaches to the peck ACTION, not to the target class.  A
+# restricted ladder at step 6 would still have burned walks.  So the call site
+# is MOVED: it now sits after `_salt_turn`, inside the existing
+# `_salt_idle_ok` gate.  Salt keeps first refusal (no preemption) and the peck
+# can only fire on a round this raider was not going to walk.
+#
+# ⚠ ONE HONEST COUPLING: that placement is inside `if LOKI_SALTIDLE_ON:`.  It
+# is True in this tree (line 1575 above), so the arm is live -- but if that
+# master flag were ever turned off, this arm goes dark rather than losing its
+# idle gate.  Failing closed is the correct direction for a safety property,
+# and it is recorded here so nobody reads a null off a tree with salt disabled.
+#
+# HOW THIS LOSES.  The idle gate may leave it almost no rounds to fire on, in
+# which case this measures nothing and reads as a null -- the honest failure
+# mode is UNDERPOWER, not harm.  A turret or launcher also has more HP than a
+# belt (25/40/30 vs 20) and pecks land 2 at a time, so a raider can spend many
+# idle rounds on a target it never finishes.
+# ============================================================================
+
+LOKI_TURRPECK_ON = True                    # arm E master; False == the parent exactly
+LOKI_TURRPECK_RANKS = frozenset((2, 3, 4))  # launcher / gunner-sentinel / harvester only
 LOKI_SALTIDLE_DOWNSTREAM = True   # prefer the cut nearer their Core, free tiebreak
 LOKI_SALT_LOG = False        # _v178salt's own SALT tags
 

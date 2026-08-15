@@ -1109,7 +1109,16 @@ class EcoMixin:
                 )
             ):
                 seat_ban = self._seat_ban()
-                for d in DIRECTIONS:
+                # CARDINALS not DIRECTIONS: builder-bot builds require an
+                # orthogonally adjacent tile (can_build_harvester returns
+                # False for a diagonal position), so the 4 diagonal members
+                # of DIRECTIONS were guaranteed-False can_build_harvester
+                # calls on every pass through this branch. Filtering
+                # DIRECTIONS down to its cardinal members preserves the same
+                # relative N,E,S,W order as CARDINALS itself (the diagonals
+                # sit strictly between consecutive cardinals in the enum),
+                # so this is order-preserving, not just count-reducing.
+                for d in CARDINALS:
                     bp = p.add(d)
                     if seat_ban is not None and (bp.x, bp.y) in seat_ban:
                         continue

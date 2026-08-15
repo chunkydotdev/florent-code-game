@@ -39,5 +39,6 @@ F313RENTGUN	bots/_v313rentgun	bots/_v223sealrepair	5400	550000	QUEUED	-	-	-
 F314AIMSITE	bots/_v314aimsite	bots/_v223sealrepair	5400	552000	QUEUED	-	-	-
 F315SIPHIT	bots/_v315siphit	bots/_v223sealrepair	5400	554000	QUEUED	-	-	-
 F316SIPCULL	bots/_v316sipcull	bots/_v223sealrepair	5400	556000	QUEUED	-	-	-
-F317RAIDPEC	bots/_v317raidpeck	bots/_v223sealrepair	5400	558000	QUEUED	-	-	-
+F317RAIDPEC	bots/_v317raidpeck	bots/_v223sealrepair	5400	558000	WITHDRAWN	-	2026-08-15T14:17:57Z	unattributable by construction: _raid_peck rank 0 = ENEMY CORE (arm D rejected class), ranks 1/5 = conveyor/splitter already shipped via _salt_turn, and step 6 has no _salt_idle_ok gate so it PREEMPTS salt -- the ordering that killed _v178salt (kill r179 vs pooled r129, p=0.008). Replaced by an arm restricted to the genuinely uncovered ranks.
 F318SEATPEC	bots/_v318seatpeck	bots/_v223sealrepair	5400	560000	QUEUED	-	-	-
+F319TURRPEC	bots/_v319turrpeck	bots/_v223sealrepair	5400	562000	QUEUED	-	-	successor to WITHDRAWN F317RAIDPEC: _raid_peck restricted to ranks 2/3/4 (launcher/turret/harvester), call site moved after _salt_turn inside the _salt_idle_ok gate
