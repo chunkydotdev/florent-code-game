@@ -55791,3 +55791,42 @@ ONE THAT PRODUCED INFORMATION.** Checks 1-2 confirmed a fix I already knew had l
 *what happens on silent non-execution* — is the clause I nearly cut as boilerplate when drafting**,
 and it is the only one that returned a non-obvious answer. A successor tempted to run OB17 as a
 two-line grep should note that.
+
+--- 2026-08-15T07:00:0xZ SIDE LANE (s43) — **✅ TWO-CLOCK NOW CLOSED ON `CAL418`, MEASURED AT BOTH ENDS. Plus one per-accept check that is load-bearing and one no-op worth naming.** ---
+
+**THE FULL TWO-CLOCK STANDARD, both ends now observable:**
+
+    CLOCK 1  lock         2026-08-15T06:44:41Z   git author time, 2b365a29, UTC-forced
+    CLOCK 2  first accept 2026-08-15T06:56:34Z   the runner's own log, `queued 12fdece5 +5 games`
+             ------------------------------------------------------------------
+             MARGIN       11 min 53 s, lock FIRST                     ✅ CERTIFIED
+
+⚠ **I used the RUNNER LOG's accept time, not the `results.tsv` row's `06:58:21Z`** — that row is the
+row's WRITE time and is ~2 minutes after the first accept. **A certifier who takes the tape row as
+clock 2 is reading the wrong clock**, and the direction happens to flatter (a later clock 2 makes
+the margin look bigger). The platform `createdAt` for `3edfcb96` / `efefa34f` will be verifiable
+once archived; **the 11m53s margin is far outside any plausible skew, so the verdict does not
+depend on which of the three clocks is used.**
+
+**✅ THE BOUNDARY SURVIVED ITS FIRST CONTACT, and it survived BY REGISTRATION rather than by luck.**
+Cycle 1 returned **2 accepts, 3 rejections**. The locked `BOUNDARY` reads *"20 accepts... counted
+over accepts and never over attempts (rejected challenges consume the rate-limit bucket and are
+logged, but they are not the boundary)."* ⇒ **the exact failure that occurred was pre-registered
+and costs the leg time, not validity.** That clause was written before anyone knew the gate ate the
+bucket.
+
+**⛔ ONE CHECK I AM RAISING RATHER THAN ASSUMING — AND IT IS THE REGISTRATION'S OWN WORD:
+`PINNED: … every accept, no exceptions`.** The builder verified the pin **on the wire** for
+`efefa34f` (*A OpenSverige 140 | B HTTP 418 103*), which is the right instrument — engine-side, not
+our assertion. **Cycle 1 produced TWO accepts. `3edfcb96` is not named.** ⇒ **G2 is a PER-ACCEPT
+guard and the per-accept holder/oppver column is registered at `:464-470`; both accepts need the
+row.** *Almost certainly fine — the same command fired both — but "almost certainly" is what a
+per-accept column exists to replace.*
+
+**⚠ AND A NO-OP WORTH NAMING BECAUSE IT COULD BE MISREAD LATER:** the runner logged
+`cycle 1: activated v140` and `rollback confirmed: holder=v140`. **The prereg registers this leg as
+needing NO activation** (v140 IS the incumbent; `match unrated` plays the active submission).
+⇒ **the runner performed activate+rollback anyway; it was a no-op because the target and the holder
+were the same version, and the holder never left v140.** `leaked_rated = 0` still holds — **but it
+holds because the versions coincided, not because the step was skipped.** A successor reading
+*"activated"* in this log should not conclude the leg took an exposure window.
