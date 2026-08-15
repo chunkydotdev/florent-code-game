@@ -30,7 +30,16 @@
 # 3. **NULL5400** (queued, local) — byte-identical arms (md5-verified all 4 files).
 #    Any deviation from 50.0 is a PURE HOST TERM. ⭐ It is a **live dependency of
 #    beltsever's BAR**, whose BASE RATE 50.00 is the assumption it tests.
-# 4. **SALTREF2** (ws1, 1740/5400, curfewed) — replication of the TLE-suspect null.
+# 4. ⭐ **SALTREF2 — COMPLETE AND READ AT WRAP. THE NULL DID NOT REPLICATE.**
+#    ws1 n=5400 **51.7778%** [50.46, 53.10] vs the A1 locked interval **[47.24, 50.98]**
+#    and the original's 49.1111% [47.79, 50.43] — **the two CIs DO NOT OVERLAP.**
+#    Same host, same arms, same n; ONE change: WORKERS 40→10 on ncpu=16. **The direction
+#    was PRE-REGISTERED** ("TLE bias under contention runs toward the null for a
+#    work-adding treatment") and met at +2.67pp. ⇒ **#48 rung (b)'s bank REOPENS.**
+#    ⛔ NOT a KEEP: the clean read excludes 50, but the REREG registered a REPLICATION
+#    verdict, not a treatment bar — promoting it needs its own bar + MDE (OB16).
+#    ⚠ **THE 40-on-16 EXPOSURE TABLE MUST BE RE-READ**: v142/v143/SEALREPAIRR were
+#    assessed as flattered-but-surviving BEFORE a same-host re-run moved a number 2.67pp.
 #
 # ===== DRAFTED, GREEN, NOT STOCKED — and why =====
 # * **SCREEN-launchmax** (launcher ceiling probe): T1/T2 deliberately NOT lifted (measured
