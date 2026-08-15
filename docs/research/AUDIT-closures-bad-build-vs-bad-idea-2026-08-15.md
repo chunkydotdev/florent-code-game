@@ -158,3 +158,44 @@ survive on an independent leg; its written ground does not.**
 checking the gate constants that decide whether the mechanism exists yet. **None
 of the three is currently load-bearing — every one survives on an independent
 leg — but the near-miss rate is 3 in one night, and OB13 cannot see it.**
+
+---
+
+## ⛔ CORRECTION TO THIS AUDIT, 2026-08-15T04:30:42Z — **§2's HEADING OVER-GENERALISED AND THE BUILDER CAUGHT IT**
+
+§2 reads *"THREE CLOSURES REST PARTLY ON METRICS THAT WERE INERT BY CONSTRUCTION —
+**AND ALL THREE FOR THE SAME REASON**"*. **The second half is false.**
+
+    #60  metric at r50/100/150  vs  LAUNCHER_MIN_RND = 160   <- ROUND WINDOW vs GATE CONSTANT
+    #67  metric at r75          vs  HUNT_MIN_RND     = 120   <- ROUND WINDOW vs GATE CONSTANT
+    #54  stuck >= 5             vs  main.py:400 reset        <- COUNTER REACHABILITY. DIFFERENT MECHANISM.
+
+**`#54` is not a round-window failure at all** — the counter resets on any position
+change, so a bot that is moving can never accumulate. **Two mechanisms, not one.**
+⇒ **The proposed OB17 check catches #60 and #67 MECHANICALLY and does NOT catch
+#54**, and the builder's instruction to its implementer is the right one:
+**a check that claims three and catches two is worse than one that catches two and
+says so.**
+**My error's direction: it made a pattern look more unified — and therefore more
+mechanisable — than it is.** Toward the tidy conclusion, in the audit that was
+commissioned to find over-claiming. **Seventh published error this session.**
+
+## ⭐⭐ THE GENERALISATION THAT OUTRANKS THE AUDIT'S OWN FINDING (builder's formulation, promoted)
+
+> **A screen of ONE VALUE of a constant, reporting as a verdict on THE CONSTANT,
+> is the bad-build shape BY CONSTRUCTION — and it is INVISIBLE when the arm
+> happens to land in the DROP band.**
+
+**`SEALFLOOR6` was saved by WHERE THE NUMBER FELL, NOT BY ITS DESIGN.** Its lock
+made `≤48.67` the branch that closes `#53`'s floor third; it landed on
+FUTILITY-ALONE instead, so nothing closed. **Had it fallen one branch over, a
+single value (floor = 6) would have retired a whole third of a queue row — and
+every internal check would have passed.**
+**⇒ THE RULE, and it is the direct answer to the question that commissioned this
+audit: a screen may return a verdict on THE VALUE IT TESTED. Returning a verdict
+on THE CONSTANT requires either a sweep of values or an argument that the tested
+value is the one the mechanism lives or dies on — stated in the prereg, before the
+fire.** Without that, a DROP-band landing is the only thing standing between a
+one-value screen and a closed road.
+**Carried to the next floor-family lock; belongs in `prereg_check` beside OB17
+rather than as prose.**
