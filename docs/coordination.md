@@ -55916,3 +55916,56 @@ false premise is not a half-success — it is D36 pointed at myself: I would hav
 the outcome while being wrong about the world.**
 **⭐ AND THE BUILDER CHECKED AT THE PRIMARY RATHER THAN ACCEPTING A FLAG FROM THE AUDIT LANE — which
 is D36's own prescription, applied to me, by them.**
+
+--- 2026-08-15T07:0xZ (`date -u`) **RESEARCH s43 — IDLE-BUILDER CENSUS ON THE RECENT SLOT VERSIONS (Magnus's question)** ---
+**Q: how many games do we have idle builders in, recent slot versions only?**
+Population: the eight versions that have held the ladder slot since 2026-08-14 (v139→v147, per
+`elo_history` `active_bot` transitions), **1,153 archived games, 7,958 of our builder bots.**
+
+    ver      games      w/ park      w/ IDLE   parked   IDLE   park-rnds  idle-rnds
+    v140       743   623 (83.8%)  106 (14.3%)    1579    130      310823      25422
+    v139       205   179 (87.3%)   38 (18.5%)     475     46       76790       6580
+    v147        35    27 (77.1%)    8 (22.9%)      86     14       16118       2415
+    v146        75    57 (76.0%)   15 (20.0%)     159     20       37361       4458
+    v145         5    5 (100.0%)    2 (40.0%)      17      2        2575        153
+    v144        25    23 (92.0%)    4 (16.0%)      71      4       10735        466
+    v143        35    31 (88.6%)    8 (22.9%)      88     15       18961       3367
+    v142        30    24 (80.0%)    5 (16.7%)      77      6       15056       1107
+    TOTAL     1153   969 (84.0%)  186 (16.1%)    2552    237      488419      43968
+
+## ⭐ THE ANSWER: **186 of 1,153 games — 16.1%**
+That is the STRICT reading: at least one of our builders **sat on one tile for ≥50 consecutive
+rounds AND took no build/heal/attack action for the whole of it.**
+**969 games (84.0%) have a builder stationary ≥50 rounds — but 90.7% of those were WORKING**
+(building/healing/attacking from a fixed tile, which is correct behaviour for laying a belt or
+walling). ⇒ **the loose position-only number is an upper bound and would have overstated the problem
+by 5×.** Idle rounds are **43,968 of 1,658,452 builder-rounds = 2.65%.**
+
+## INSTRUMENT — and it produced a false 100% before it produced this
+`tools/nav_lock_census.py` is an **oscillation** detector that DELIBERATELY EXCLUDES parked bots
+(`MAX_DWELL=2`; its own control **N4 "window replaced by a STALL: 6/6 read UNLOCKED"** is the proof).
+Run inverted (`--max-tiles 1 --max-dwell ∞`) it becomes a park detector; **driven both ways before
+use** — my predicate fires on a stall and not on a 2-cycle or a traveller, the shipped one does the
+exact opposite. Selftest ALL PASS, controls ALL PASS.
+Window-scoped action attribution is `scratchpad/idle_during_park.py`, which **calls
+`decode_tracks`/`analyze_bot_lock`/`population` UNCHANGED** so the position decode and lock predicate
+are the certified ones; only the action-round scan is new.
+**⛔ AND ITS FIRST RUN RETURNED `71/71 = 100.0% idle`, WHICH WAS A BUG, NOT A FINDING.** The replay
+wire nests **three** levels (`turn → upd wrapper → update-type`) and I collapsed it to two, so `unum`
+read the wrapper's field number — always 1 — and **nothing ever matched `UPD_ACTIONS`.**
+⇒ **Caught by the constant column, NOT by reading the code** — the same tell this lane has been
+applying to other people's instruments all session, finally applied to its own on the first run that
+mattered. Positive control after the fix: my per-bot action counts reproduce the shipped tool's
+**exactly** (32/20/81/122/28), zero-vs-nonzero agreement **51/51, 0 mismatches**, and the park counts
+reproduce `nav_lock_census` digit-for-digit (v144: 25 games, 23 w/park, 71 bots, 10,735 rounds).
+
+## ⚠ WHAT THIS NUMBER IS NOT
+* **`destroy` and `self_destruct` are NOT attributed to a bot on the wire** (`nav_lock_census:114`),
+  so a builder that only ever destroys reads as idle. **Direction declared: this OVER-counts idleness.**
+* **≥50 rounds is a choice**, inherited from the census's `MIN_SPAN`. Against a median game of ~182
+  turns that is ~27% of a game; a shorter threshold would return more games.
+* ⛔ **It is NOT `QUEUE #14`'s 25.76%.** That is *"builder-rounds that are idle AND free"* — both
+  cooldowns 0, `run()` executed, nothing chosen — a **per-round** action-level measure. Mine counts
+  **sustained ≥50-round parks**. **Different granularity, not a contradiction, and they must not be
+  quoted against each other.**
+* Archived subset only; no rated/unrated split was applied.
