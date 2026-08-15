@@ -84,6 +84,65 @@ fi
 
 say(){ print -r -- "$(date -u +%Y-%m-%dT%H:%M:%SZ) $*" | tee -a $LOG }
 
+# ---- guard 5: ONE RUNNER PER WORKLIST -------------------------------------
+# ⛔ ADDED 2026-08-15. Guards 1-4 all protect a SHARD from being started twice;
+# nothing protected the WORKLIST from being *served* twice. Two runners on one
+# worklist each enforce MAX_SHARDS independently, so the box silently runs
+# 2 x MAX_SHARDS -- and `--tle 10` is WALL-CLOCK, so oversubscription does not
+# merely slow the batch, it corrupts every row both runners produce.
+#
+# This is not hypothetical bookkeeping: the `.started` marker makes a double
+# launch look HARMLESS in the log (the second runner skips started shards and
+# reports the same "hold:" lines), which is exactly why it needed a refusal
+# rather than a note. Blind is not idle -- if the process table cannot be read
+# we REFUSE rather than assume we are alone, same rule as guard 2.
+# PID-keyed, not pattern-keyed: $WORK is a PATH and contains `.`, which is a
+# regex metacharacter -- a pattern match could over-match and produce a FALSE
+# REFUSAL, and a filler that refuses to start is the very outage this file
+# exists to prevent.
+#
+# ⛔ TWO DISCRIMINATORS, AND THE FIRST DRAFT OF THIS GUARD NEEDED BOTH. Written
+# with the substring test alone it REFUSED ON A FRESH WORKLIST during its own
+# both-verdicts test: the invoking shell's argv contained the literal strings
+# `corefill.sh` and the worklist path (they were in the test's own echo lines),
+# so the guard matched its own PARENT. A guard that has only ever been watched
+# to fire has not been watched to PASS.
+#   (a) ANCESTRY  -- never count a process we are descended from.
+#   (b) ARGV SHAPE -- require a word ENDING in `corefill.sh` immediately
+#       FOLLOWED by the worklist, i.e. an actual invocation, not a mention
+#       inside some other command's quoted string.
+pt=$(ps ax -o pid=,command= 2>/dev/null)
+if [[ -z $pt ]]; then
+  say "REFUSING TO LAUNCH: cannot read the process table, so 'am I the only runner?' is UNKNOWN, not NO."
+  exit 3
+fi
+# (a) collect our ancestor pids
+typeset -A _anc
+_p=$$
+while [[ -n $_p && $_p != 0 && $_p != 1 ]]; do
+  _anc[$_p]=1
+  _p=$(ps -o ppid= -p $_p 2>/dev/null | tr -d ' ')
+done
+others=0
+while read -r _pid _cmd; do
+  [[ -n ${_anc[$_pid]:-} ]] && continue                       # (a)
+  _hit=0                                                       # (b)
+  _words=(${=_cmd})
+  for _i in {1..$#_words}; do
+    [[ ${_words[$_i]} == *corefill.sh ]] || continue
+    (( _i < $#_words )) && [[ ${_words[$_i+1]} == $WORK ]] && _hit=1
+  done
+  (( _hit )) || continue
+  others=$(( others + 1 ))
+  say "  already serving this worklist: pid $_pid -- $_cmd"
+done <<< "$pt"
+if (( others > 0 )); then
+  say "REFUSING TO LAUNCH: $others other corefill.sh already serving $WORK."
+  say "  Two runners each enforce MAX_SHARDS separately -> 2x oversubscription -> --tle 10 is wall-clock -> corrupted rows."
+  say "  Kill the other runner first, or point this one at a different worklist."
+  exit 3
+fi
+
 # ---- guard 4: validate the WHOLE worklist before starting anything ----------
 bad=0; n=0
 while read -r SH TR CT TG SL; do

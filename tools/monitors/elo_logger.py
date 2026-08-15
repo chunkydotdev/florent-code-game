@@ -15,7 +15,7 @@ Arm (from repo root; STATE_DIR = session scratchpad):
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 import slot_sprt  # noqa: E402  (single source of truth for the SPRT constants)
@@ -66,7 +66,21 @@ def main() -> None:
         except Exception:
             st = {}
 
-    ts = datetime.now().strftime("%Y-%m-%dT%H:%M")
+    # ⛔ UTC WITH AN EXPLICIT `Z`, NEVER `datetime.now()`. Until 2026-08-15 this
+    # line was `datetime.now()` -- LOCAL time (CEST), ISO-SHAPED, AND UNMARKED.
+    # Every other surface in this repo (ship_watch.log, ladder_games.tsv,
+    # gate_invocations.tsv, coordination notes) writes UTC with a `Z`, so the
+    # tape read ~2h AHEAD of all of them and therefore ALWAYS LOOKED THE
+    # FRESHEST FILE IN THE REPO -- it failed in the flattering direction.
+    # Measured that day: 2,510 of 2,510 rows carried no `Z`, and the repo's own
+    # shared helper refused the file outright:
+    #     tools/freshness.py -> "CLOCK ERROR: elo_history.tsv newest row
+    #                            2026-08-15T18:23 is 1.9h in the FUTURE"
+    # i.e. the primary rating tape could never pass a freshness assertion, and
+    # anything that did NOT assert freshness silently preferred it. Historic
+    # rows were backfilled to UTC in the same commit; the `Z` is the marker that
+    # makes a mixed-clock tape detectable rather than merely wrong.
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     with open(os.path.abspath(HIST), "a") as f:
         f.write(f"{ts}\t{round(rating)}\t{matches}\tv{ver}\trank #{rank}\t{tier}\n")
 

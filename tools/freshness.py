@@ -64,11 +64,35 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # Any ISO-8601-ish stamp: 2026-08-11T05:12:59.598Z, 2026-08-11T05:12, 2026-08-11 05:12:59
-_TS = re.compile(r"(\d{4}-\d{2}-\d{2})[T ](\d{2}:\d{2}(?::\d{2})?)")
-LOCAL_OFFSET_H = 2          # CEST. Only used when assume_local=True.
+# Group 3 captures a trailing `Z` when the row carries one. THE MARKER IS
+# AUTHORITATIVE -- see _parse.
+_TS = re.compile(r"(\d{4}-\d{2}-\d{2})[T ](\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?)(Z?)")
+LOCAL_OFFSET_H = 2          # CEST. Only used for NAIVE rows when assume_local=True.
 
 
-def _parse(day: str, clock: str, assume_local: bool) -> datetime | None:
+def _parse(day: str, clock: str, assume_local: bool,
+           marker: str = "") -> datetime | None:
+    """Parse one stamp. **A `Z` ON THE ROW OVERRIDES `assume_local`.**
+
+    ⭐ WHY THE MARKER WINS (2026-08-15). `elo_history.tsv` was migrated from
+    unmarked LOCAL CEST to UTC-with-`Z`. Callers pass `assume_local=True` for
+    that file (`ship_watch.py:519`, `dash/serve.py:245`) because that WAS the
+    right answer for every historic row. Had the writer flipped to UTC while
+    those callers kept subtracting two hours, the tape would have read 2h STALE
+    instead of 2h FRESH -- the same bug with the sign reversed, and reported as
+    a healthy-looking alarm rather than a parse error.
+
+    Honouring the marker makes both eras correct with NO caller change and no
+    flag day: a `Z` row is UTC, a bare row falls back to the caller's
+    assumption. That is also why the migration could be done at all -- there is
+    no instant at which the file is half-converted and wrong.
+
+    ⚠ `LOCAL_OFFSET_H` remains a hardcoded 2 and is WRONG for CET (+1) between
+    late October and late March. It is now only reachable by NAIVE rows, i.e.
+    only by historic data and by `corpus/SHIP_ALERT`. Deriving it per-row from
+    the local zone is the correct fix and is left as a named debt rather than
+    guessed at here.
+    """
     try:
         if len(clock) == 5:
             clock += ":00"
@@ -76,7 +100,7 @@ def _parse(day: str, clock: str, assume_local: bool) -> datetime | None:
     except ValueError:
         return None
     dt = dt.replace(tzinfo=timezone.utc)
-    if assume_local:
+    if assume_local and marker != "Z":
         dt -= timedelta(hours=LOCAL_OFFSET_H)
     return dt
 
@@ -104,7 +128,7 @@ def newest_row_age_h(path: Path, *, assume_local: bool = False,
         m = _TS.search(line)
         if not m:
             continue
-        dt = _parse(m.group(1), m.group(2), assume_local)
+        dt = _parse(m.group(1), m.group(2), assume_local, m.group(3))
         if dt and (newest is None or dt > newest):
             newest = dt
     if newest is None:
@@ -207,6 +231,32 @@ def selftest() -> int:
               assert_fresh(loc2, 6, now=now)[0], True)
         check("SAME row, assume_local=True  -> correctly STALE",
               assert_fresh(loc2, 6, assume_local=True, now=now)[0], False)
+
+        # ===== THE MARKER OVERRIDES THE CALLER (elo_history UTC migration) =====
+        # THE LOAD-BEARING PAIR: the SAME clock `07:30`, the SAME
+        # `assume_local=True` caller, and OPPOSITE verdicts decided by one
+        # character. now=12:00Z, limit 6h:
+        #     07:30Z  -> marker wins, 4.5h -> FRESH
+        #     07:30   -> naive, CEST->05:30Z, 6.5h -> STALE
+        # If these two agreed, the marker would be inert and the migration
+        # would be silently mis-reading one era.
+        zrow = d / "z.tsv"
+        zrow.write_text("2026-08-11T07:30Z\n")
+        check("Z row + assume_local=True -> marker WINS, 4.5h FRESH",
+              assert_fresh(zrow, 6, assume_local=True, now=now)[0], True)
+        naive = d / "naive.tsv"
+        naive.write_text("2026-08-11T07:30\n")
+        check("SAME clock, NO marker, same caller -> 6.5h STALE (marker was load-bearing)",
+              assert_fresh(naive, 6, assume_local=True, now=now)[0], False)
+        # A Z row must also be immune to the flag: both callers agree.
+        check("Z row + assume_local=False -> same verdict, FRESH",
+              assert_fresh(zrow, 6, now=now)[0], True)
+        # A mid-migration file holding BOTH eras reads the NEWEST by ITS OWN
+        # marker -- 07:30Z (4.5h) beats the naive 05:00, so: fresh.
+        mixed = d / "mixed.tsv"
+        mixed.write_text("2026-08-11T05:00\n2026-08-11T07:30Z\n")
+        check("mixed naive+Z file -> newest parsed by its own marker, FRESH",
+              assert_fresh(mixed, 6, assume_local=True, now=now)[0], True)
 
         # The daemon-looks-healthy divergence must be NAMED, not just refused.
         live = d / "live.tsv"

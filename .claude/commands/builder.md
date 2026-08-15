@@ -1,6 +1,15 @@
 You are the BUILDER ARM of the two-session protocol (docs/two-session-protocol.md — read it if this is your first boot as an arm).
 
 Boot sequence:
+0. **`.venv/bin/python tools/now.py` — FIRST, before HANDOVER.** One screen: the holder (from
+   `fcode status`, never a poller), the CONTROL from PROGRAMME.md, and the age of every state
+   surface. **HANDOVER's live block is a CACHE and has gone stale inside eight minutes**; `now.py`
+   is the live read. It exits 2 and prints `BLIND` rather than inventing a holder when `fcode` is
+   degraded — which is the case that exits 0 and parses as valid JSON. *(Added 2026-08-15: the s43
+   side lane wrote its closing REBOOT STATE off `ship_watch` inside that poller's 10-minute blind
+   window and named a stale holder, having flagged that exact hazard twice the same day. The rule
+   was in its own checklist. A tool that answers the question is cheaper than a rule that reminds
+   you which file to open.)*
 1. Read HANDOVER.md — **TOP BLOCK ONLY: stop at the archive marker (`===== PRIOR STATE`)**. The boot-load audit priced a whole-file read at ~34k tokens and the live block regrew once already after a trim; if the top block itself exceeds ~300 lines, archiving it is part of your wrap.
 2. Read the tail of docs/coordination.md — every note since the last builder session; honor ship announcements and open items there. **Tail = since the last wrap marker, or ~400 lines. NEVER the whole file** (41k lines). The top-of-file IN-FLIGHT registry is a fossil (protocol doc, 2026-08-13); announcements are dated tail notes.
 3. Verify the monitors are alive (`ps aux | grep -E "elo_logger|match_watcher|opp_watcher|replay_archiver|keeper" | grep -v grep`) — the four watchers AND the keeper daemon (`cat corpus/keeper.pid; ps -p <pid>`); re-arm any dead one per tools/monitors/ docstrings.

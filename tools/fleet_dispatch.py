@@ -263,10 +263,35 @@ def utc() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 
+def _stdout_is_the_log() -> bool:
+    """True when fd 1 is ALREADY the log file, i.e. the launcher redirected us
+    into it.
+
+    ⛔ WHY THIS EXISTS (measured 2026-08-15). `say()` wrote the line to stdout
+    AND appended it to LOG_F, and the supervising loop was launched with
+    `>> scratchpad/fleet_dispatch.log 2>&1` — the same file. EVERY LINE WAS
+    WRITTEN TWICE. That is not merely cosmetic: it doubles every startup
+    banner, so a reader counting banners in the log concludes TWO dispatchers
+    are running when there is one. The identical defect was live in
+    `corefill.sh` at the same moment and produced exactly that misreading.
+
+    Detection over convention: an inode comparison is true regardless of how
+    the process was launched, so neither the caller nor a future launcher has
+    to remember a rule. `os.fstat(1)` stats the open file description, which
+    is why this works where the shell equivalent does not — on macOS
+    `stat /dev/fd/1` reports the devfs node, not the target (verified).
+    """
+    try:
+        a, b = os.fstat(1), os.stat(LOG_F)
+    except OSError:
+        return False
+    return a.st_dev == b.st_dev and a.st_ino == b.st_ino
+
+
 def say(msg: str, log: bool = True) -> None:
     line = f"{utc()} {msg}"
     print(line, flush=True)
-    if log:
+    if log and not _stdout_is_the_log():
         try:
             LOG_F.parent.mkdir(parents=True, exist_ok=True)
             with LOG_F.open("a") as fh:

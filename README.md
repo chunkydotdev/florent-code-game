@@ -16,22 +16,53 @@ or on tiebreak by **titanium collected**, then harvester count, then titanium st
 
 Full details in [docs/game-model.md](docs/game-model.md).
 
-## Status
+## Start here
 
-**New session? Read [HANDOVER.md](HANDOVER.md) first.**
+```bash
+.venv/bin/python tools/now.py          # what is live, what is the control, how stale each surface is
+.venv/bin/python tools/queue_check.py  # what is startable today
+```
 
-Project scaffolded and **running matches locally**. `fcode` 2.3.6 installed in `.venv`
-(Python 3.13), starter bot at `bots/starter/main.py` (kept pristine as the reference opponent), eight
-self-generated maps in `maps/`. Current best bot is **`bots/v4`** — **74.2%** [68.5%, 79.2%]
-against starter over 256 matches, zero crashes, and mirror-fair on the maps where earlier
-versions auto-lost one seat. Lineage: v1 crash guard → v2 CPU guard → v3 ring spawn → v4
-full direction-neutralisation ([docs/strategy-log.md](docs/strategy-log.md)).
+**Then read [HANDOVER.md](HANDOVER.md) — the TOP BLOCK ONLY** (stop at `===== PRIOR STATE`).
+If this session is a protocol lane, invoke `/builder`, `/research` or `/sidelane` **first**:
+the charter and hard limits live in `.claude/commands/` and are not auto-loaded.
 
-**Not yet registered on the platform** — application submitted, awaiting approval. No account
-means no ladder, no real map pool, no submissions; it's the only blocker. The organisers have
-also announced the **map pool changed (hidden until the tournament), possibly other variables
-too** — [docs/runbook.md](docs/runbook.md) is the checklist for approval day and for absorbing
-rule changes. Everything accepted so far is distribution-independent by design.
+⚠ **Do not read a state number out of this file.** Everything about ratings, holders and
+incumbents moves hourly; `tools/now.py` reads it live and labels each surface with its age.
+This section said *"not yet registered on the platform"* and *"current best bot is `bots/v4`"*
+for nine days after both stopped being true — which is exactly the failure the router below
+exists to prevent.
+
+## Which surface answers which question
+
+**The dominant error in this repo is reading a surface that is correct — for a different
+question.** Five files answer "what is live" and three of them are right about something else.
+
+| Question | Read this | Never use instead |
+| --- | --- | --- |
+| What holds the ladder slot **right now**? | `fcode status` (`Active bot:`) | any poller — between polls a healthy line and a blind line are byte-identical |
+| Which way is the rating **moving**? | `corpus/ship_watch.log` | — (it is a 10-min poller; fine for trend, never for identity) |
+| Rating **history** | `elo_history.tsv` | its version tag is poll-time, not per-match |
+| What did we play, **per rated match**? | `corpus/ladder_games.tsv` | `meta_join` — it pools rated with unrated |
+| What are queued arms **scored against**? | `PROGRAMME.md: INCUMBENT` | the live holder — they diverge when a teammate ships |
+| Any **rated win-rate denominator** | `corpus/ladder_games.tsv` | `meta_join` (missing ~38% of ladder matches) |
+| An opponent's **version timeline** | `corpus/league_matches.tsv` | — |
+
+Run `tools/now.py` rather than memorising the table.
+
+## Where the work is queued
+
+Three separate queues — only the first is surfaced at session start:
+
+| File | Holds | Runner |
+| --- | --- | --- |
+| `QUEUE.md` | ideas / planks to build | `tools/queue_check.py` |
+| `scratchpad/corefill_work.txt` | local shard batteries | `tools/corefill.sh`, supervised by `tools/corefill_forever.sh` |
+| `scratchpad/fleet_queue.tsv` | remote-worker shards | `tools/fleet_dispatch.py` |
+
+None of this is part of the Claude Code harness — it is all repo-local files and daemons.
+The daemons are detached (`PPID 1`) and **nothing outside this repo restarts them**;
+`corefill_forever.sh` is the supervisor and it is the thing to check first when cores go idle.
 
 ## Docs
 
@@ -47,12 +78,14 @@ rule changes. Everything accepted so far is distribution-independent by design.
 | [docs/reference/](docs/reference/) | Verbatim scrape of all 23 official docs pages and 24 tutorial steps, plus the scraper. |
 | [program.md](program.md) | Protocol for running the bot-improvement loop unattended. |
 
-`AGENTS.md` (and its copy `CLAUDE.md`) is the organisers' own context file for AI coding
-tools, taken verbatim from `docs/agents-md`. It's the most compact accurate summary of the
-rules and API that exists — but note it has two known errors, flagged in
-[docs/game-model.md](docs/game-model.md) and [docs/open-questions.md](docs/open-questions.md):
-it says the cost scale starts at 1.0 (the API returns 100.0) and gives the Core a spawn radius
-that contradicts the rules page.
+`CLAUDE.md` is **this project's own standing directive** — the programme, the measurement
+rules and the engine facts we have verified ourselves. It began as the organisers' context
+file and has long since diverged; several of its sections exist specifically to correct the
+organisers' docs. **`AGENTS.md` is a GENERATED COPY of `CLAUDE.md`** for non-Claude tools
+(regenerate with `cp CLAUDE.md AGENTS.md`, then restore its header) — the dependency runs that
+way round, not the other. The organisers' verbatim pages are vendored under
+[docs/reference/](docs/reference/), and the known errors in them are flagged in
+[docs/game-model.md](docs/game-model.md) and [docs/open-questions.md](docs/open-questions.md).
 
 `docs/reference/` is vendored so the full Controller API is available offline and so we can
 diff it if the organisers change the rules mid-competition. Re-run with

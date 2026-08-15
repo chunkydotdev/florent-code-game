@@ -105,7 +105,14 @@ while true; do
   rm -f $ALARM
 
   say "RUNNER DOWN with $remaining unstarted item(s) -- relaunching corefill (deadline 0 = none)"
-  nohup zsh tools/corefill.sh $WORK $MAX_SHARDS 0 >> scratchpad/corefill.log 2>&1 &
+  # ⛔ STDOUT GOES TO /dev/null ON PURPOSE. corefill.sh's own say() already
+  # `tee -a`s into scratchpad/corefill.log, so redirecting stdout there too
+  # wrote EVERY LINE TWICE (measured 2026-08-15: 5,133 "hold:" lines, each a
+  # duplicate, and TWO identical `COREFILL up` banners at 15:40:28Z for ONE
+  # runner). A doubled banner reads as a doubled RUNNER, which is the single
+  # most alarming thing this log can falsely say. stderr is still captured --
+  # it carries real subprocess failures and is not produced by say().
+  nohup zsh tools/corefill.sh $WORK $MAX_SHARDS 0 >/dev/null 2>> scratchpad/corefill.log &
   sleep 10
   if print -r -- "$(ps ax -o command= 2>/dev/null)" | grep -q "[c]orefill.sh $WORK"; then
     say "relaunch CONFIRMED alive"

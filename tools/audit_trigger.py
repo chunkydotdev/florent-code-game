@@ -26,7 +26,7 @@ import csv
 import subprocess
 import sys
 from collections import Counter
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 # --selftest overrides. Every check below reads a file or `git log`; the only
@@ -184,7 +184,13 @@ def ship_cadence():
     # which is the exact family the sibling docstring says it was rewritten to
     # escape: it de-live-ified `hours` and left the timestamps live, so the
     # test's truth still changed with the wall clock, just a day later.
-    now = _OVERRIDE.get("now") or datetime.now()
+    # ⛔ NAIVE **UTC**, NOT NAIVE LOCAL. `elo_history.tsv` was migrated to
+    # UTC-with-`Z` on 2026-08-15; this comparison is naive on both sides, so if
+    # `now` stayed `datetime.now()` (LOCAL CEST) the 24h churn window would sit
+    # TWO HOURS off the rows it filters -- silently including or dropping
+    # activations at the edge. Both sides are UTC now. The `_OVERRIDE` seam is
+    # preserved (tests pass a naive datetime and still control the clock).
+    now = _OVERRIDE.get("now") or datetime.now(timezone.utc).replace(tzinfo=None)
     cutoff = now - timedelta(hours=CHURN_HOURS)
     rows = _OVERRIDE.get("elo") or list(csv.reader((ROOT / "elo_history.tsv").read_text().splitlines(), delimiter="\t"))[1:]
 
@@ -526,12 +532,22 @@ def main():
     if "--selftest" in sys.argv[1:]:
         return selftest()
     tripped = []
+    blind = []
     print("AUDIT TRIGGER — is analysis outpacing decisions?\n")
     for name, fn, thresh, why in CHECKS:
         try:
             val, detail = fn()
         except Exception as e:                     # never let the alarm break a boot
-            print(f"  [skip] {name}: {e}")
+            # ⛔ A CELL THAT COULD NOT EVALUATE IS **UNKNOWN**, NOT **NOT-TRIPPED**.
+            # Measured 2026-08-15: a NameError in ship_cadence printed
+            # `[skip] ship cadence: name 'timezone' is not defined` and the
+            # summary then read `OK — 0/6 tripped; audit not indicated.` The one
+            # cell that WAS tripping had gone silent and the verdict got
+            # HEALTHIER for it. That is this repo's most-repeated defect --
+            # "an alarm that cannot tell it is blind" -- living inside the boot
+            # check whose whole job is to notice such things.
+            print(f"  [BLIND] {name}: {type(e).__name__}: {e}")
+            blind.append(name)
             continue
         if name == "ship cadence":
             trip = val < 0.5
@@ -545,6 +561,14 @@ def main():
             tripped.append((name, why))
 
     print()
+    if blind:
+        # Printed BEFORE any verdict, because it bounds what the verdict can mean.
+        print(f"⚠ {len(blind)}/{len(CHECKS)} CELL(S) COULD NOT BE EVALUATED: "
+              f"{', '.join(blind)}")
+        print("  The count below is over the cells that RAN. A silent cell is not "
+              "a passing cell —")
+        print("  fix the error before reading 'audit not indicated' as reassurance.")
+        print()
     if len(tripped) >= 2:
         print(f"*** FIRE: {len(tripped)}/{len(CHECKS)} signals tripped ***")
         for n, why in tripped:
@@ -555,6 +579,11 @@ def main():
         print("  in the current queue and let it stop when it reports.")
         print("  Prior art: docs/workflow-analysis/ (2026-08-08, found 19% power).")
         return 1
+    ran = len(CHECKS) - len(blind)
+    if blind:
+        print(f"UNKNOWN — {len(tripped)}/{ran} of the cells that RAN tripped, "
+              f"{len(blind)} BLIND. Not a clean bill of health.")
+        return 2
     print(f"OK — {len(tripped)}/{len(CHECKS)} tripped; audit not indicated.")
     return 0
 

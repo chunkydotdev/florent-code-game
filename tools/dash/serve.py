@@ -156,7 +156,13 @@ def parse_ts(s: str) -> datetime | None:
     plausible-but-wrong offset would have shipped silently.
     """
     s = (s or "").strip()
-    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S.%fZ"):
+    # `%Y-%m-%dT%H:%MZ` is `elo_history.tsv` after its 2026-08-15 UTC migration:
+    # MINUTE precision (that is all the tape ever had -- writing `:00` seconds
+    # would fabricate precision) plus an explicit `Z`. Without this entry the
+    # migrated rows matched NEITHER the seconds-with-Z forms NOR the naive
+    # fallback below (the trailing Z fails it), so every row returned None and
+    # the dashboard's tape age went blank.
+    for fmt in ("%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S.%fZ", "%Y-%m-%dT%H:%MZ"):
         try:
             return datetime.strptime(s, fmt).replace(tzinfo=timezone.utc)
         except ValueError:
