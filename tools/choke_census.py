@@ -76,13 +76,24 @@ def parse_map(buf: bytes):
         elif num == 2 and wire == WIRE_VARINT:
             h = value
         elif num == 3 and wire == WIRE_LEN:
-            for rn, _rw, rv in fields(value):
-                # ⛔ THE WIRE-TYPE GUARD IS LOAD-BEARING, not defensive noise: a
-                # row whose tiles are all zero encodes as a VARINT here, and
-                # list()-ing an int raises. Without this the whole pool is
-                # unparseable on the first all-EMPTY row.
-                if rn == 1 and _rw == WIRE_LEN:
-                    rows.append(list(rv))
+            # ⛔⛔ A ROW COMES IN **TWO** LEGAL PROTO ENCODINGS AND HANDLING ONLY
+            # ONE SILENTLY DROPS WHOLE MAPS. `repeated uint32 tiles = 1` may be
+            # PACKED (wire 2: one bytes blob of w tiles) or UNPACKED (wire 0:
+            # one varint per tile). royale is packed; **glacierkeep and valkyrie
+            # are unpacked, and both are POOL maps** -- 2 of 15. A parser that
+            # assumes packed reads them as zero rows and reports the map
+            # UNPARSEABLE, which looks like a corrupt file rather than a partial
+            # parser. Accumulate both forms.
+            row: list[int] = []
+            for rn, rw, rv in fields(value):
+                if rn != 1:
+                    continue
+                if rw == WIRE_LEN:
+                    row.extend(rv)
+                elif rw == WIRE_VARINT:
+                    row.append(rv)
+            if row:
+                rows.append(row)
         elif num == 4 and wire == WIRE_LEN:
             c_team, c_pos = 0, None
             for cn, _cw, cv in fields(value):

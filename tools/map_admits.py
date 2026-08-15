@@ -62,9 +62,28 @@ def _terrain(buf: bytes) -> tuple[int, int, list[list[int]]]:
         elif num == 2 and wire == WIRE_VARINT:
             h = value
         elif num == 3 and wire == WIRE_LEN:
-            for rn, _rw, rv in fields(value):
-                if rn == 1:
-                    rows.append(list(rv))
+            # ⛔⛔ FIXED s44 2026-08-15. THIS MODULE CRASHED ON IMPORT --
+            # `TypeError: 'int' object is not iterable` out of `_load_library()`
+            # -- so the map-admission check, the tool whose whole purpose is to
+            # catch a fixture that cannot express the mechanism, COULD NOT RUN AT
+            # ALL, and neither could anything importing it.
+            # CAUSE: `repeated uint32 tiles = 1` has TWO legal proto encodings.
+            # PACKED (wire 2) is one bytes blob of w tiles; UNPACKED (wire 0) is
+            # one varint per tile. This read only the packed form. **glacierkeep
+            # and valkyrie are unpacked and both are POOL maps** -- so the
+            # library was missing 2 of 15 and died trying to build it.
+            # Found while pricing launcher chokepoints, by a second parser
+            # written against the same format hitting the same byte.
+            row: list[int] = []
+            for rn, rw, rv in fields(value):
+                if rn != 1:
+                    continue
+                if rw == WIRE_LEN:
+                    row.extend(rv)
+                elif rw == WIRE_VARINT:
+                    row.append(rv)
+            if row:
+                rows.append(row)
     return w, h, rows
 
 
