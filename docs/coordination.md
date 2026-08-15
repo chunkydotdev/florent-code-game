@@ -57525,3 +57525,67 @@ Correctness verified (40/40 rows, no dup/missing indices, seat 20/20, selftest g
 mechanism verified (occupancy 67%→81%), but **the production magnitude is PROJECTED, NOT
 MEASURED** — my first wall-clock A/B came out backwards because the box was at load 16-20.
 Proposed next step: deploy to **ws2 only**, leave ws1 as control, compare rows/h/core.
+
+--- 2026-08-15T20:2xZ (`date -u`) NON-LANE SESSION — ⛔ **RETRACTING MY OWN CLAIM FROM THE BLOCK ABOVE, AND REPLACING IT WITH THE ANALYSIS THAT ACTUALLY MATTERS** ---
+
+**WHAT I WROTE (deltas block, item 2 of "STILL WRONG"):** *"~40 queued g/h arms are
+UNDER-POWERED BY CONSTRUCTION: ±1.87pp pairwise band at n=5,400 against differences of
+0.17pp. They can answer 'is this above 50%' and cannot answer 'which is best', which is
+what the sweep looks like it is for."*
+
+**⛔ THAT IS WRONG, AND IT IS WRONG ABOUT THE DESIGN INTENT, NOT THE ARITHMETIC.**
+Magnus: *"we're not ranking them, we're figuring out which ones are better than v140 so we
+can try combinations… A 55 is not the goal, that just gives us an indication the arm might
+be on to something. When we unlock the real valuable piece it should show 60+."*
+
+⇒ **THE SWEEP IS A SCREEN, NOT A RANKING.** The question is one-sample vs 50%, and at
+n=5,400 the band is ±1.32pp — a 55% arm reads [53.7, 56.3] and a 60% arm is overwhelming.
+**n=5,400 is correctly sized for what it is being asked.** Pairwise resolution is irrelevant
+to a design that never pairs. I imported a ranking frame nobody was using and priced a
+requirement nobody had. ⚠ **The failure mode is the one this repo names most often: a true
+statement about the wrong subject.** The ±1.87pp figure is arithmetically right and answers
+a question the sweep does not ask.
+
+**WHAT SURVIVES:** the 4th-plank question specifically (*"does catapult beat sentshell as
+the 4th plank"*) is still unanswerable at n=5,400 — but that was MY question, not the
+programme's. `bodyblock`'s 9 queued arms are still ~54 core-hours re-confirming a measured
+negative; that one stands on its own.
+
+## ⭐ THE ANALYSIS THAT REPLACES IT — WHERE A 60 IS LIKELY TO COME FROM
+
+**1. THE GAINS ARE ON-PROGRAMME.** Decomposing the leaders by win condition, all arms,
+n≥400: tiebreak share is FLAT at 6.1–7.5% and nearly all the gain is in KILL-wins.
+`MIX280mix4` 55.24% = **52.63 kill** + 2.61 tiebreak. `BODYAWR` 53.70% = 50.38 kill + 3.32
+tiebreak. Nobody is buying win rate with r1000 coinflips.
+
+**2. ⭐⭐ THE WINS LIVE IN `eco.py`, AND `eco.py` HAS BEEN TOUCHED BY EXACTLY TWO PLANKS.**
+Per-plank file footprint vs `_v223sealrepair`, against its solo screen:
+
+| plank | main | raid | **eco** | doctrine | solo |
+|---|---|---|---|---|---|
+| bodyaware | 0 | 0 | **105** | 0 | **53.70** |
+| maxstack | 43 | 556 | **116** | 57 | **52.41** |
+| spawnlock | 0 | 96 | 0 | 30 | 49.70 |
+| sentshell | 9 | 460 | 0 | 120 | 48.75 |
+| bodyblock | 38 | 460 | 11 | 159 | 47.26 |
+
+⇒ **The two planks that touch `eco.py` are the two best solos. Every raid-heavy plank
+screens at or below 50.** `bodyaware` buys +3.7pp from 105 lines of `eco.py` ALONE.
+**1 of 1 pure-eco planks is a winner; 0 of 4 pure-raid planks are.** The raid subsystem has
+five planks and no solo winner; eco has two planks and both win.
+
+**3. THE ARITHMETIC OF 60, so the target is concrete.** ~6.5% of games tiebreak, so ~93.5%
+are decided by a kill. At 55.24% overall we win **56.3% of decided games**; 60% overall
+needs **61.4%** — a +5.1pp shift in the head-to-head kill race, not a tweak.
+
+**4. ⚠ AND THE LEADERS ARE WINNING BY NOT DYING, NOT BY KILLING FASTER.** Median kill round
+TREAT 236 vs CTRL 209 on `MIX280mix4` (and +20–47 on every other leader; `AWRLNCH` and
+`BODYAWR` are the flat exceptions at 205/208 and 205/207). An economy plank that wins
+attrition pushes games LONGER — which is both a `DEFENCE_ADMISSION_BAR` question and, for
+this goal, a probable CEILING: longer games trend to coinflips.
+⇒ **HYPOTHESIS FOR THE 60, stated as a hypothesis: it comes from an `eco.py` plank that
+converts the economy into a FASTER kill, not a longer life.** That is the one direction with
+a demonstrated hit rate (eco 2/2) that has not been pushed on the kill-round axis.
+⛔ **NOT A VERDICT — I am not a lane and I have typed none.** This is a prioritisation
+claim from the screen, and per the standing rule a road is not closed or opened without
+live-game evidence.
