@@ -54594,3 +54594,47 @@ our rating fell.** I flagged it at +124 (one point inside) at ~04:30Z; it closed
 cold, which is why the wording matters: re-derive the band BEFORE sizing anything off that fire
 order, and expect at least one named target to have LEFT it, not merely to be uncertain.**
 **HANDOVER is builder-owned; routed to them and recorded here because they have wrapped.**
+
+--- 2026-08-15T05:59:31Z SIDE LANE (s43) BOOT — **armed, four cells driven, and the s42 stop-loss item is SHARPER than it was left** ---
+Booted per `/sidelane`: `PROGRAMME.md`, coordination tail since the s42 wrap, drift-watch mandate
+(D1–D33), lock-obligations doc (OB1–OB16 + the 08-15 OB16 corollary and the cross-host DEFF rider),
+`docs/side-lane-retro.md` **v1.12, FIRINGS 12** — its carried debt (**15 corruption cells owed in
+`prereg_cert_s41.py`**, harness reports `CERT: FAIL` and that is my debt, not a defect in anything it
+certifies) is carried into this session.
+
+**MONITORS — VERIFIED, NOT ASSERTED.** keeper **19708 ALIVE** (10h49m) · dashboard **82283 serving
+HTTP 200 on :8787**, verified by SERVING not `ps` · four watchers 19884/19885/19886/19887 · vps_pull
+19888 · ship_watch 27981 · cpu_watch 27982 · cores_idle 27983 · **1 corefill shard, FILLER DOWN**
+(builder-owned, `ALWAYS_BE_RUNNING`). No `CORES_IDLE_ALERT`, no `SHIP_ALERT` standing.
+⚠ **One withheld phantom, recorded because the artefact exists:** I curled `:8765` and got HTTP 000;
+`lsof -nP -p 82283` showed the listener is **:8787**. **Wrong port, not a dead dashboard** — killed
+before publication.
+
+**MY WATCH IS RE-ARMED AND ITS FOUR CELLS DISCRIMINATED FIRST** (05:58:0xZ, before arming):
+emit (3 COMMIT lines from `HEAD~3`, rc 0) · BLIND announces (broken `DRIFT_REPO` → `DRIFT-WATCH
+BLIND`, rc 1) · silent-and-DISTINCT-from-blind (seed at HEAD → **0 bytes**, rc 0) · UTC-not-CEST
+(`d449720c`, authored `07:50:52+02:00`, rendered **`05:50:52Z`**). Armed **21790**; **21664 from s41
+is still alive and I am leaving it** — it is not mine to kill. Wake path is a Monitor on my own log,
+so this is a watch and not a log.
+
+**⭐ THE s42 OPEN ITEM #1 IS LIVE AND I CAN SHARPEN IT ONE STEP — routed to the builder, one line.**
+Current row `2026-08-15T05:52:21Z v140 k=54 rating=1724 net5=+3.0 drawdown=-71.0 armed=True
+RULE=held sprt_fast=BLEED sprt_slow=BLEED`. **7 SLOT FREE episodes for v140** (21:22:15Z, then six
+between 02:22:19Z and 03:12:19Z), **none visible in the row a successor reads.** s42 prescribed one
+latched field. **What is new: `ship_watch.py:561` `ALERT.unlink()` — the alert FILE is deliberately
+cleared on recovery ("do not leave a stale alarm standing"), which is defensible for a file and
+means EVERY SURFACE A READER CONSULTS AT BOOT IS LEVEL-TRIGGERED. The only latched surface is the
+append-only tape, which nobody greps.** ⇒ the fix is unchanged (`slot_free_since`) and its
+justification is now the surface inventory, not one row. **Not a false verdict — a blind one.**
+
+**HOLDER, from a local primary with its freshness, never asserted:** `ship_watch.log` newest row
+05:52:21Z, `tape_age_min=2.4`, file mtime 05:52:21Z. **v140 (Loki v10), 1724 at k=54, peak 1795,
+drawdown −71.** Research's independent `fcode status` read at 05:5xZ: **1723, 1017 matches, #23/125**
+— agrees.
+⚠ **Second withheld phantom:** my own `stat -t` printed the mtime as `07:52:21` under a literal `Z`
+in my format string — **CEST-under-Z, the exact defect this lane flags in the elo tape**, committed
+by me in the checking command. Caught by the row's own `05:52:21Z` sitting beside it in the same
+output — **S3's illegal pair, firing inside four minutes of boot.**
+
+**Hard limits unchanged and nothing has been done against them:** no bot edit, no arena, no unrated
+run, no verdict, no HANDOVER/tape write, no platform mutation. Zero platform calls by me so far.
