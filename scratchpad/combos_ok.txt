@@ -1,0 +1,112 @@
+bodyaware rnd1
+bodyaware spawnlock
+bodyaware bodyblock
+bodyaware catapult
+bodyaware collarseal
+bodyaware pinaim
+rnd1 spawnlock
+rnd1 bodyblock
+rnd1 catapult
+rnd1 collarseal
+rnd1 pinaim
+spawnlock bodyblock
+spawnlock catapult
+spawnlock collarseal
+spawnlock pinaim
+bodyblock catapult
+bodyblock collarseal
+bodyblock pinaim
+catapult collarseal
+catapult pinaim
+collarseal pinaim
+bodyaware rnd1 spawnlock
+bodyaware rnd1 bodyblock
+bodyaware rnd1 catapult
+bodyaware rnd1 collarseal
+bodyaware rnd1 pinaim
+bodyaware spawnlock bodyblock
+bodyaware spawnlock catapult
+bodyaware spawnlock collarseal
+bodyaware spawnlock pinaim
+bodyaware bodyblock catapult
+bodyaware bodyblock collarseal
+bodyaware bodyblock pinaim
+bodyaware catapult collarseal
+bodyaware catapult pinaim
+bodyaware collarseal pinaim
+rnd1 spawnlock bodyblock
+rnd1 spawnlock catapult
+rnd1 spawnlock collarseal
+rnd1 spawnlock pinaim
+rnd1 bodyblock catapult
+rnd1 bodyblock collarseal
+rnd1 bodyblock pinaim
+rnd1 catapult collarseal
+rnd1 catapult pinaim
+rnd1 collarseal pinaim
+spawnlock bodyblock catapult
+spawnlock bodyblock collarseal
+spawnlock bodyblock pinaim
+spawnlock catapult collarseal
+spawnlock catapult pinaim
+spawnlock collarseal pinaim
+bodyblock catapult collarseal
+bodyblock catapult pinaim
+bodyblock collarseal pinaim
+catapult collarseal pinaim
+bodyaware rnd1 spawnlock bodyblock
+bodyaware rnd1 spawnlock catapult
+bodyaware rnd1 spawnlock collarseal
+bodyaware rnd1 spawnlock pinaim
+bodyaware rnd1 bodyblock catapult
+bodyaware rnd1 bodyblock collarseal
+bodyaware rnd1 bodyblock pinaim
+bodyaware rnd1 catapult collarseal
+bodyaware rnd1 catapult pinaim
+bodyaware rnd1 collarseal pinaim
+bodyaware spawnlock bodyblock catapult
+bodyaware spawnlock bodyblock collarseal
+bodyaware spawnlock bodyblock pinaim
+bodyaware spawnlock catapult collarseal
+bodyaware spawnlock catapult pinaim
+bodyaware spawnlock collarseal pinaim
+bodyaware bodyblock catapult collarseal
+bodyaware bodyblock catapult pinaim
+bodyaware bodyblock collarseal pinaim
+bodyaware catapult collarseal pinaim
+rnd1 spawnlock bodyblock catapult
+rnd1 spawnlock bodyblock collarseal
+rnd1 spawnlock bodyblock pinaim
+rnd1 spawnlock catapult collarseal
+rnd1 spawnlock catapult pinaim
+rnd1 spawnlock collarseal pinaim
+rnd1 bodyblock catapult collarseal
+rnd1 bodyblock catapult pinaim
+rnd1 bodyblock collarseal pinaim
+rnd1 catapult collarseal pinaim
+spawnlock bodyblock catapult collarseal
+spawnlock bodyblock catapult pinaim
+spawnlock bodyblock collarseal pinaim
+spawnlock catapult collarseal pinaim
+bodyblock catapult collarseal pinaim
+bodyaware rnd1 spawnlock bodyblock catapult
+bodyaware rnd1 spawnlock bodyblock collarseal
+bodyaware rnd1 spawnlock bodyblock pinaim
+bodyaware rnd1 spawnlock catapult collarseal
+bodyaware rnd1 spawnlock catapult pinaim
+bodyaware rnd1 spawnlock collarseal pinaim
+bodyaware rnd1 bodyblock catapult collarseal
+bodyaware rnd1 bodyblock catapult pinaim
+bodyaware rnd1 bodyblock collarseal pinaim
+bodyaware rnd1 catapult collarseal pinaim
+bodyaware spawnlock bodyblock catapult collarseal
+bodyaware spawnlock bodyblock catapult pinaim
+bodyaware spawnlock bodyblock collarseal pinaim
+bodyaware spawnlock catapult collarseal pinaim
+bodyaware bodyblock catapult collarseal pinaim
+rnd1 spawnlock bodyblock catapult collarseal
+rnd1 spawnlock bodyblock catapult pinaim
+rnd1 spawnlock bodyblock collarseal pinaim
+rnd1 spawnlock catapult collarseal pinaim
+rnd1 bodyblock catapult collarseal pinaim
+spawnlock bodyblock catapult collarseal pinaim

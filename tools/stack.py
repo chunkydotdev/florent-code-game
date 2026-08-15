@@ -160,26 +160,84 @@ def compose(planks: list[str], out: Path, quiet=False) -> int:
     return 0
 
 
+def _synth(name: str, mutate) -> str:
+    """Materialise a synthetic plank tree off the base; register it in PLANKS."""
+    d = ROOT / "bots" / name
+    if d.exists():
+        shutil.rmtree(d)
+    shutil.copytree(BASE, d, ignore=shutil.ignore_patterns("__pycache__"))
+    toggles = mutate(d)
+    PLANKS[name] = (name, toggles)
+    return name
+
+
 def selftest() -> int:
-    """Both verdicts: a real composition succeeds; a no-op composition is REFUSED."""
+    """Drive the cells that can actually BITE, not only the one that cannot.
+
+    ⛔ The first version of this drove (a) a real compose and (b) an unknown plank
+    name. The side lane pointed out that (b) is the cell that CANNOT hurt you — a
+    typo fails loudly on first use — while the two paths the docstring CLAIMS
+    (conflict refusal, inert-toggle refusal) were asserted and never exercised.
+    An inert toggle is the dangerous one: compose returns 0, the arm runs,
+    reconciles, reports a clean 32/32 and MEASURES NOTHING — it reads as a null
+    rather than as a defect. Every downstream caveat assumes the arm differs from
+    its control.
+    """
     fail = 0
     tmp = ROOT / "bots" / "_zzstacktest"
+
     rc = compose(["bodyaware", "rnd1"], tmp, quiet=True)
-    print(f"  compose(bodyaware,rnd1)          rc={rc}  want 0")
+    print(f"  1 real compose(bodyaware,rnd1)        rc={rc}  want 0")
     if rc != 0:
         fail = 1
     else:
         eco_ok = (tmp / "eco.py").read_bytes() == (ROOT / "bots/_v242bodyaware/eco.py").read_bytes()
-        print(f"    eco.py identical to the bodyaware source: {eco_ok}  want True")
+        print(f"      eco.py byte-identical to source:  {eco_ok}  want True")
         fail |= (not eco_ok)
+    if tmp.exists():
         shutil.rmtree(tmp)
-    # forced fail: an unknown plank must be refused, not silently skipped
+
     rc = compose(["bodyaware", "nosuchplank"], tmp, quiet=True)
-    print(f"  compose(bodyaware,nosuchplank)   rc={rc}  want 2")
+    print(f"  2 unknown plank name                  rc={rc}  want 2")
     fail |= (rc != 2)
     if tmp.exists():
         shutil.rmtree(tmp)
-    print("SELFTEST PASS" if not fail else "SELFTEST FAIL")
+
+    # --- 3. CONFLICT MUST BE REFUSED, NOT GUESSED --------------------------
+    # Two synthetic planks rewriting the SAME line of raid.py in different ways.
+    def _confA(d):
+        p = d / "raid.py"; L = p.read_text().splitlines()
+        L[0] = "# SYNTHETIC CONFLICT ARM A"; p.write_text("\n".join(L)); return []
+    def _confB(d):
+        p = d / "raid.py"; L = p.read_text().splitlines()
+        L[0] = "# SYNTHETIC CONFLICT ARM B"; p.write_text("\n".join(L)); return []
+    a, b = _synth("_zzconfa", _confA), _synth("_zzconfb", _confB)
+    rc = compose([a, b], tmp, quiet=True)
+    print(f"  3 two planks conflicting in raid.py   rc={rc}  want 3 (REFUSED)")
+    fail |= (rc != 3)
+    if tmp.exists():
+        shutil.rmtree(tmp)
+
+    # --- 4. A DECLARED-BUT-UNCONSUMED TOGGLE MUST BE REFUSED ---------------
+    # This is the silent one: it would compose, run, and measure nothing.
+    def _inert(d):
+        p = d / "doctrine.py"
+        p.write_text(p.read_text() + "\nLOKI_ZZ_INERT_ON = True\n")
+        return ["LOKI_ZZ_INERT_ON"]          # declared, never referenced in code
+    c = _synth("_zzinert", _inert)
+    rc = compose([c], tmp, quiet=True)
+    print(f"  4 toggle declared but NEVER consumed  rc={rc}  want 5 (REFUSED)")
+    fail |= (rc != 5)
+    if tmp.exists():
+        shutil.rmtree(tmp)
+
+    for n in ("_zzconfa", "_zzconfb", "_zzinert"):
+        PLANKS.pop(n, None)
+        if (ROOT / "bots" / n).exists():
+            shutil.rmtree(ROOT / "bots" / n)
+
+    print("SELFTEST PASS (compose / unknown / CONFLICT / INERT-TOGGLE all discriminated)"
+          if not fail else "SELFTEST FAIL")
     return fail
 
 
