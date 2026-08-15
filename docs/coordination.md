@@ -54460,3 +54460,95 @@ retracted" message rather than a quiet amendment.** No mechanism proposed; namin
   whose number appears in a later `coordination.md` ruling. **The annotations stay mine.**
 * **Two live legs untouched by me all session** (SEALFLOOR6 local, SALTREF2 remote) — locked and
   certified at s41; **re-opening a bar mid-leg is what the lock exists to prevent.**
+
+# ============================================================================
+# 2026-08-15T05:46:23Z — **SIDE LANE s42 WRAP** (Magnus: *"Wrap when builder wraps"*; builder
+# wrapped at `8843bce4`). **Arm retro ran FIRST per charter — `docs/side-lane-retro.md`
+# → v1.12, FIRINGS 12; instance `docs/retro-side-lane-2026-08-15-s42.md` committed
+# in the same action (`cfa5015a`).** Session 20:41Z → 05:45Z (~9h), 78 repo commits
+# audited, ~18 flags changed an outcome, 8 published errors, 13 withheld.
+# ============================================================================
+
+## PROCESS DELTAS — routed at write time
+
+**S1. ⭐⭐ SURVEYING, NOT AUDITING, IS THIS LANE'S HIGH-RISK STATE — AND THAT INVERTS
+MY OWN INSTRUMENT'S PRE-REGISTRATION.** *(behaviour → the arm retro, which the
+charter boots.)* v1.3.2 pre-registered `auditing` to behave like `defending`
+*"because auditing is what this lane does all day."* **Measured on eight published
+errors: all four alarming over-claims came while SWEEPING with no hypothesis** (a
+53-shard false stall; a locked leg declared DEAD that was asleep; *"the fifteen
+never certified"*; an audit heading unifying three mechanisms into one). **The
+AUDITING errors were premise-misses, not over-claims.** ⇒ **the tell is that nobody
+asked me to look.** A commissioned audit has a subject and a stopping point; a
+sweep has neither, **and the alarming reading is what justifies the sweep.**
+
+**S2. ⭐ THE MECHANISM UNDER SIX OF EIGHT: I CHECKED THE SURFACE ADJACENT TO THE ONE
+THAT MATTERED.** *(behaviour → retro Q3.)* A commit that did something adjacent ·
+a comment instead of the code's history · the pulled **MIRROR** instead of the box,
+and never the **SCHEDULE** · my harness's **coverage line** instead of the probe's
+**assertion expressions**. **Not "I did not check" — "I checked, one surface over",
+which returns a PLAUSIBLE answer every time.**
+
+**S3. ⭐⭐ PRINT THE EVIDENCE BESIDE THE VERDICT AND CHECK THEY AGREE.** *(behaviour
+→ retro Q4; it is D33's practical form.)* The mechanism that caught my own errors
+was never suspicion — it was **a second instrument in the same output producing an
+ILLEGAL PAIR**: a `pgrep -fl` listing printed for DISPLAY beside a count of `0`.
+**It fired again FOUR MINUTES after I wrote it** (a count of "21 drift watches" that
+was my own command text matching the pattern; the listing beside it showed 2).
+
+**S4. A COVERAGE DENOMINATOR MUST BE DERIVED FROM THE SURFACE IT CERTIFIES.**
+*(instrument → fixed in code, `faffb082`.)* `prereg_cert_s41.py` derived from
+`PC.RULES` (presence rules only) ∪ a hand-maintained set, while every arithmetic
+and obligation check is emitted inline. **It printed `uncovered: none` by
+construction and I cited that FOUR TIMES as grounds for certifying another lane's
+work.** **D33 in the instrument that certifies the instruments.**
+
+**S5. A WRONG CONCLUSION ON A CORRECT INSTRUMENT FINDING IS NOT A PHANTOM, AND THE
+LEDGER SHOULD STOP SCORING THEM ALIKE.** *(instrument → retro Q5.)* SALTREF2-dead
+was the wrong **conclusion** (it was curfewed) on a right **instrument** finding (a
+heartbeat whose content says RUNNING forever). **It produced two fixes** — `worker.sh`
+stamps `CURFEW`, the detector reads freshness. **Scoring that identically to a
+phantom mis-prices the flag policy in both directions.**
+
+## ⚠ WHAT A SUCCESSOR MUST NOT INHERIT UNCHECKED
+
+1. **⛔ THE LIVE HOLDER IS BLEEDING AND ITS STOP-LOSS READS `held` WITH A POSITIVE
+   STATISTIC.** Current row: `2026-08-15T05:42:21Z	v140	k=54	rating=1724	net5=+3.0	peak=1795	drawdown=-71.0	armed=True	RULE=held	sprt_fast=B`
+   **`net5` has swung POSITIVE while `drawdown` sits at its worst.** Seven
+   `SLOT FREE` episodes exist for v140; **the most recent was 03:12:19Z and NONE is
+   visible in the row anyone reads at boot.** ⇒ **the fix is one LATCHED field
+   (`slot_free_since`), not a rule change.** **OPEN, routed, unresolved at wrap.**
+2. **SALTREF2 COMPLETED AND THE NULL DID NOT REPLICATE — READ CERTIFIED, VERDICT
+   OWED BY THE BUILDER.** ws1 n=5400: original **49.1111%** → SALTREF2 **51.7778%**,
+   against A1's locked **[47.24, 50.98]** ⇒ **OUTSIDE.** **Same host** (cross-host
+   term controlled), same arms/n/rule, **one change — the WORKERS=40→10 fixture
+   defect — whose direction the REREG PRE-REGISTERED.** ⇒ **the banked SALTREF null
+   looks like an artefact of a 2.5×-oversubscribed fixture.** ⚠ **I did NOT type the
+   `#48` rung (b) consequence; that is the builder's.**
+3. **MY HARNESS REPORTS `CERT: FAIL` AND THAT IS THE HONEST STATE.** 15 corruption
+   cells owed. **A successor must NOT read that FAIL as a defect in anything it
+   certifies** — it is my debt, and all 15 checks have id-level coverage elsewhere.
+4. **SIX ITEMS AWAIT MAGNUS, none blocking:** stop-loss observability ·
+   `X3R0_SLOT_RULE` vs `SHIP_SIT_MIN_K` (v146 displaced at k=4 against a floor of 8)
+   · v144 as incumbent · `PROGRAMME.md` rating prose stale ~110pts with its
+   conclusion inverted · `CLAUDE.md` anti-sycophancy clause absent from both
+   always-loaded files · `CLAUDE.md`'s local DEFF exemption silent on cross-host.
+
+## REBOOT STATE — SIDE LANE (s42, safe to reboot) — verified, not asserted
+
+* **Dies with me:** the all-commits drift watch (**2 live: 21664 from s41, 22570
+  mine**) and the commit Monitor. **A successor re-arms `tools/watch/drift_watch.sh`
+  and DRIVES ITS FOUR CELLS FIRST** (emit · BLIND announces · silent-and-DISTINCT
+  from blind · UTC-not-CEST) — all four discriminated at 20:47Z.
+* **Survives me:** keeper **19708 ALIVE** · dashboard **82283 verified by SERVING
+  (HTTP 200)**, never by `ps` · the four watchers · vps_pull · corefill.
+* **Legs:** **BODYAWR 6494/10800 advancing** · **BODYAWRR** on ws2 advancing ·
+  **SALTREF2 COMPLETE** (read certified above) · SEALFLOOR6 dropped FUTILITY-ALONE ·
+  GUNAXABL/SENTTHR verdicted DROP-band. **Gates are UNWATCHED BY DESIGN** —
+  reconstruction from the append-only tape supersedes armed watchers and needs
+  nothing armed in advance.
+* **Zero platform actions by me. I edited no bot, ran no arena, fired no match,
+  typed no verdict.** One deliberate breach recorded and self-ruled: **a `git stash`
+  on shared paths mid-commit** — no damage, verified four ways, **standing rule on
+  myself now: no mutating git operations on shared paths.**
+* **Nothing of mine is unrelayed.** Every flag was consumed or is listed above.
