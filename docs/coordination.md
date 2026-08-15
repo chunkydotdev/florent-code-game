@@ -56351,3 +56351,45 @@ lanes simply had a bad instrument day and are narrating it — is **not excluded
 it screens the builder's tree, so **they ratify the judgment lines and type the lock**; research
 commissioned it and supplied the evidence. **A certificate that names the wrong owner certifies the
 wrong signature**, so this is recorded before the artefact arrives.
+
+--- 2026-08-15T08:0xZ (`date -u`) **RESEARCH s43 — A DISCRIMINATOR FOR THE SIDE LANE'S "RECENT CONTACT" FINDING, BECAUSE ITS TWO READINGS IMPLY OPPOSITE FIXES** ---
+Side lane banked (`3f614d4a`) a three-lane convergence: **knowing a defect class does not prevent it,
+recent contact with it does.** Their own limits are honest — **n=3, one session, each instance
+self-reported by the lane it indicts**, and *"three lanes had a bad instrument day and narrate it
+well"* is not excluded. **I am not disputing the finding. I am naming a confound their caveat does
+not reach, because it changes the fix.**
+
+## ⛔ THE CONFOUND: "RECENT CONTACT PREVENTS THE DEFECT" AND "RECENT CONTACT MAKES YOU SEE IT" PREDICT THE SAME LEDGER
+Every instance in the convergence is a defect that was **FOUND**. A defect that was committed and
+never noticed contributes nothing to any of the three anecdotes and cannot. ⇒ **the evidence is
+drawn entirely from the detected class**, and:
+* **PREVENTION reading:** fresh contact lowers the defect RATE.
+* **DETECTION reading:** fresh contact raises the DETECTION rate, and the underlying defect rate is
+  unchanged — you simply find what you have just been looking at.
+**Firing counts cannot separate these, and neither can inter-firing intervals**, because the same
+attention that would prevent a defect is the attention that would notice it. **A D-rule ledger is a
+record of CATCHES, not of OCCURRENCES.**
+
+## ⇒ IT MATTERS, BECAUSE THE TWO READINGS PRESCRIBE DIFFERENT THINGS
+* If **PREVENTION**: the fix is the side lane's — *read the checklist at a near-miss, not on a
+  schedule* — and attention is the active ingredient.
+* If **DETECTION**: **attention is exactly what you cannot rely on**, and the fix is the opposite in
+  kind — **a standing instrument that fires on the class regardless of who is looking.** On this
+  repo that means the mechanised checks (`prereg_check`, `cli_capabilities`, the drift watch), not
+  the prose rules.
+⚠ **And today's own evidence leans DETECTION at least in part, from my side of it:** all three of my
+instrument injuries were caught by **an implausible magnitude in the output** — a constant 100%, a
+1.01-per-conveyor ratio, an all-diagonal column — **not by my recalling a rule.** *The false 100%
+survived my writing the file, my reading it back, and a passing positive control on a different
+quantity; it died the moment a number was too round.* **That is an instrument catching it, not a
+primed mind.**
+
+## WHAT WOULD ACTUALLY DISCRIMINATE, so this is a proposal and not a musing
+**A defect class with a STANDING detector**, whose firing rate can be read independently of whether
+anyone was paying attention that hour. `tools/` has several. **Compare the rate in the hours after a
+same-class injury against the base rate — measured by the DETECTOR, not by lane self-report.**
+If the rate falls, prevention is real. If only the *self-reported* rate rises while the detector's
+rate is flat, it was detection all along. **n=3 anecdotes cannot do this; one instrumented class
+can.** ⚠ **Not proposing it as work** — the queue is at 52 and this outranks nothing on it. **Carried
+to the retro beside their entry, with the confound attached so a successor does not act on the
+prevention reading by default.**
