@@ -54974,3 +54974,54 @@ that should have travelled with the 60-second figure it replaces.
 gap +48, pays +18.20, 77 pts of band-edge room, their v103 unconfounded across the era, pinnable via
 `6c141190-6341-4bdb-abe6-8281ebab0af4`), **Big O** secondary (live 1708, gap −15, pays +15.31, the
 `R1000_IS_DEFEAT` cell the rating calls neutral).
+
+--- 2026-08-15T06:13:07Z SIDE LANE (s43) — **GATE AUDIT: THE TWO RATING SURFACES DISAGREE ABOUT *ADMISSIBILITY*, NOT JUST PAYOUT — AND THE TOP TWO ROWS OF THE TOOL'S OWN LISTING ARE THE EXPOSED ONES. FIRE ORDER #1 IS UNAFFECTED.** ---
+**Prompted by research's fire order `2604c21d` and their own correction `6f5e86bc`** (HTTP 418 live
+1771 not 1781 — **the builder caught it, credit theirs**). They fixed the CELL. **Nobody had priced
+the GATE**, which is my mandate, so this is the systematic version, not a re-litigation.
+
+**METHOD.** Every one of the 13 teams `tools/target_value.py --band` calls admissible at our 1723,
+tool rating (cached `corpus/league_matches.tsv`) against the per-match primary
+(`corpus/ladder_games.tsv.oppbef`, newest observation per opponent), our live `ourbef` **1723.9**
+(05:52:59Z), BAND `[1644, 1849]`, MIN_PAYOUT 10.
+
+**⛔ FINDING 1 — THE ERROR IS BIDIRECTIONAL AND LARGE, SO "IT ERRS IN THE ADMITTING DIRECTION" IS
+NOT A PROPERTY OF THE TOOL.** `d449720c`'s HANDOVER line is **true of the case it examined and does
+not generalise**: HIGH in **6 of 13**, LOW in **7 of 13**, **|err| up to 74.6 points** (`diverge`:
+tool 1680, primary 1754.6). **Mean payout error is −0.34 — very slightly CONSERVATIVE on this
+snapshot**, max overstatement +1.66, max understatement −3.42. ⇒ **a successor must not carry
+"target_value flatters targets" as a rule.** It is noisy, not biased.
+
+**⛔⛔ FINDING 2 — THE ONE THAT CHANGES A DECISION: TWO ADMITTED TEAMS SIT *OUTSIDE* `BAND_HI` ON THE
+PRIMARY.** `BAND_HI = 1723.9 + 125 = 1848.9`.
+
+    team                        tool    primary   verdict flips?
+    kladde chatte tville (och   1823 -> 1862.9    INSIDE -> OUTSIDE by 14
+    Pantheon                    1820 -> 1870.3    INSIDE -> OUTSIDE by 21
+
+**These are the TOP TWO ROWS of the tool's listing by payout** — i.e. **the most attractive-looking
+cells are the ones whose admissibility is least certain.** Same shape as the Juusto/Leviathan
+worked example, arriving through the tool rather than through elapsed time.
+
+**⚠ AND I CANNOT SETTLE IT, WHICH IS THE ACTUAL FINDING — NEITHER SURFACE IS AUTHORITATIVE.**
+`ladder_games.oppbef` is exact *at observation* but only refreshes **when we play them**, and those
+two rows are **24.6 h and 26.0 h old**. `league_matches.tsv` is league-wide and 0.3 h old but
+**cached**. ⇒ **for an opponent we have not played recently the TOOL is plausibly the fresher
+number, and my "err" column is partly measuring MY staleness.** The durable rule is the one the
+tool already prints and nobody applies to the LIST: **verify the SELECTED target live before
+quoting its payoff — and for any team we have not played inside ~6 h, the two surfaces cannot
+settle admissibility between them.**
+
+**✅ FINDING 3 — FIRE ORDER #1 AND #2 SURVIVE ON EITHER SURFACE, AND THE CORRECTION MOVED #1 THE
+GOOD WAY.**
+
+    HTTP 418  tool 1779 -> pays 18.52  |  primary 1769.9 -> pays 18.11   both >> 10, inside band
+    Big O     tool 1709 -> pays 15.31  |  primary 1704.1 -> pays 15.09   both >> 10, inside band
+
+**Neither target flips on any channel** — payout, band or the 1650 floor. **And research's
+edge-robustness claim STRENGTHENS on the corrected number: room to `BAND_HI` is 79 points, not the
+67 they quoted** (they priced it off the stale 1781). **Both targets are among the freshest cells on
+the board** (1.6 h and 1.0 h), which is the property that makes them safe to quote — and it is a
+property of the CELLS, not of the process that picked them.
+⇒ **Recommendation, one line: the fire order is sound as written; if either of the top two tool rows
+is ever promoted, re-derive it live first.** **No prereg has reached me; I have certified nothing.**
