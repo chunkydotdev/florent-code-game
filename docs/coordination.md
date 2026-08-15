@@ -55429,3 +55429,39 @@ warned a successor about.** Discharging it before it is needed, not after.
 **VERIFICATION IS MINE, NOT THE AGENT'S:** I re-run `--selftest` myself and require (a) all 15 named
 cells report `ok`, (b) **the 31 existing cells still report `ok`**, (c) `COVERAGE 46/46`. **A cell
 whose `collateral:` list swallows its own id is not a pass.**
+
+--- 2026-08-15T06:31:0xZ SIDE LANE (s43) — **FOR MAGNUS'S QUEUE: the `PROGRAMME.md` rating prose is not merely stale, it describes a REGIME THE FIELD ITSELF RETIRED. Numbers attached so the decision is one line.** ---
+**Carried open item #4 from the s42 wrap, priced rather than re-asserted.** Nothing here is blocking
+and I have edited nothing — `PROGRAMME.md` is edit-on-Magnus's-directive-only.
+
+**✅ THE PARSED BLOCK IS CORRECT AND CURRENT.** `TARGET_MIN_PAYOUT: 10` is right, does not drift, and
+`target_value` enforces it. **No field needs changing.** What follows is about the PROSE under it.
+
+**⛔ THE PROSE'S CONCLUSION IS INVERTED AT TODAY'S RATING.** It states, as live guidance:
+*"At our ~1663 the admissible set is 11 teams… **every admissible team is at or above our rating and
+there are ZERO admissible targets below us.**"* **At our 1723, five of the thirteen admissible teams
+are BELOW us and all five clear the payout bar comfortably:**
+
+    Big O          1708   -21   5-0 pays +15.03      diverge         1689   -40   +14.17
+    Coreflood      1696   -33          +14.49        arsonist duck   1689   -40   +14.15
+    Dino           1661   -68          +12.89
+
+**⭐ AND THE ROOT IS NOT STALENESS — IT IS A RETIRED REGIME, which is why a rating refresh would not
+fix it.** That whole analysis (*"the floor is ABSOLUTE and the reachable band is RELATIVE, so the
+constraint TIGHTENS as we fall"*, the 1689/1663/1650 room-below table, *"squeezed from both ends"*)
+is a consequence of the **absolute 1650 floor**, which was **re-denominated to `TARGET_MIN_PAYOUT:
+10` on 2026-08-12.** **The section says so itself two paragraphs up** — *"`BAND_LO = -80` already
+pays 12.38, above the 10-point bar, so the bar **never binds on the low side**"*. ⇒ **the squeeze it
+warns about cannot occur under the current field, at any rating.** The document contains both its
+own correction and the superseded analysis, and the superseded half is the one written as live
+guidance with a table.
+
+**⚠ WHAT SHOULD SURVIVE ANY EDIT, because it is still true and is the reason the section exists:**
+the closing warning — *"a successor reading this field at a 1640 rating will read a mild filter and
+get a near-total ban"* — **is correct FOR THE ABSOLUTE FORM** and is exactly the hazard that
+motivated the re-denomination. **It reads today as a live caution about a rule we no longer run.**
+⇒ **the minimal honest fix is a dated marker on the ABSOLUTE-floor analysis (`SUPERSEDED 2026-08-12
+— kept as history`), matching how this file already handles `R1000_DEFEAT_AREA_MAX` and the v122
+incumbent entry.** No numbers need recomputing and no field moves.
+**⛔ MAGNUS'S CALL AND HIS FILE. Recorded with numbers so it can be answered in one line rather than
+re-derived.**
