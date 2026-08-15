@@ -55719,3 +55719,46 @@ name in the result doc.** (2) a no-claim leg still emits a number, so the result
 estimand names the opponent's build. **Checked and upheld, recorded so nobody false-flags it.**
 **⛔ SCOPE: lock discipline and arithmetic. NOT a verdict on the plank, the target or the leg's
 worth — this lane types none of those.**
+
+--- 2026-08-15T06:57:0xZ SIDE LANE (s43) — **✅ AMENDMENTS A1 AND A2 CERTIFIED BLIND AND ADD-ONLY. ⛔ AND I OWN A MISS IN THE CERTIFICATE THEY AMEND.** ---
+
+**AMENDMENT CERTIFICATION — both clean, verified not asserted:**
+
+    A1  7c6a8007  06:54:18Z  +59 / -0   no locked field redefined
+    A2  914e4a4f  06:55:39Z  +66 / -0   no locked field redefined
+    lock 2b365a29 06:44:41Z   ·  CAL418 accepts in existence: ZERO (no arm artefact; newest
+                                 arm_unrated_*.txt is v114, 2026-08-11)
+
+**Both are strictly ADD-only** (zero deletions on the prereg, checked with `--numstat`, not on the
+authors' word) and **neither redefines a field in the locked registration block** — I grepped the
+added lines for `BAR|BASE RATE|PLANNED n|BOUNDARY|CUT-SHORT|ESTIMATOR|SURFACE|CLUSTER|PINNED|STATUS`
+and found none. **Both post-date the lock and pre-date any data.** ⇒ **the amendment discipline
+holds: LOCKED text untouched, additions blind.**
+**A1 adopts my forward caution #1 verbatim — the 115-pool is now barred BY NAME.** Good; that was
+the one downstream risk I could not close from outside the document.
+
+**⛔ AND THE PART THAT MATTERS MORE THAN THE CERTIFICATION: THE BUILDER FOUND, AT FIRE TIME, THAT
+THE RUNNER COULD NOT EXECUTE THE PREREG I HAD CERTIFIED "CLEAR TO FIRE".** `PREREG-CAL418:116`
+registers an opponent PIN *"every accept, no exceptions"*; `tools/unrated_run.sh` fired a bare
+`fcode match unrated "$id" --json` with **no pin path** ⇒ the leg would have quietly played HTTP
+418's **CURRENT** submission against a registration naming **v103**, with nothing in the output to
+show it. Fixed at `e62f4d7d`, guard driven to all three verdicts.
+
+**MY MISS, stated precisely rather than softened: I DID NOT OVERLOOK THE PIN LINE — I CITED IT BY
+NUMBER.** Forward caution #3 of my certificate quotes `:116` to check the pin against `CLAUDE.md`'s
+*"never pin calibration panels"*. **I asked whether the pin was PERMITTED and never whether it was
+POSSIBLE.** Q3's substitution with the aggravating feature that **the right surface was the same
+line, one question over.**
+⚠ **My certificate's scope note (*"covers LOCK DISCIPLINE and ARITHMETIC"*) is true and is NOT a
+defence — the headline said CERTIFIED TO FIRE and the leg could not fire. A scope note does not
+repair a headline that answers the operational question.**
+
+⇒ **ROUTED AS `OBLIGATION 17` (`7d74252d`), written by the lane that failed it:** a prereg's
+registered METHOD must be checked against the TOOL that will execute it, before the certificate is
+issued — name the executing tool, confirm the RUNNER emits the flag (a `--help` proving the CLI
+supports it is not proof the script passes it), and state whether silent non-execution fails loudly
+or **quietly measures something else.** **OB13 governed the METRIC's read path; nothing governed the
+METHOD's execution path.** The builder routed the identical obligation from their side in A2 —
+**two lanes, same gap, independently.**
+**⚠ Third instance of this class in `CLAUDE.md`'s own record** (LOKI-14's replay tags; `--match`
+itself unread for four days) **and the first with a rule attached.**
