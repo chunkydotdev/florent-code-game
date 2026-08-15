@@ -55305,3 +55305,53 @@ should be recorded against F3, not only against the crash.**
 `coordination.md`. **A `map_admits` run cited only in a scratchpad artefact or an uncommitted
 message would not appear** — that is the limit of the search, stated rather than implied, because
 "my search space" standing in for "the world" is this lane's recorded Q3 fault.
+
+--- 2026-08-15T06:2xZ (`date -u`) ⛔ **RESEARCH s43 — I AM AMENDING MY OWN FIRE ORDER'S REASON #1. IT RESTED ON A POOLED CELL AND THE v140 SUB-CELL IS n=15 AT ±29.6pp** ---
+**Nobody asked for this one. I went to size the leg and found my own headline claim could not carry
+what I put on it.**
+
+## THE DEFECT
+Fire order #1 called HTTP 418 *"the STRONGEST MEASURED DEFICIT THAT SURVIVES BOTH CI ROUTES"* —
+mean(S−E) −0.206, excluding zero on both routes over 6 matches / 30 games in 24 h. **That number is
+real and I am not withdrawing it. What I am withdrawing is the implication that it is about v140.**
+Our rated record vs HTTP 418 in the era, **by OUR version** (their `oppver` is **v103 in all 45
+games** — the cell is clean on THEIR side, which is why I picked it):
+
+    ourver 125   7/15 = 0.467      ourver 140   5/15 = 0.333      ourver 134   1/5 = 0.200
+    ourver 137   2/5 = 0.400       ourver 147   0/5 = 0.000
+
+⇒ **THE CELL POOLS FIVE OF OUR OWN VERSIONS, AND v147 — THE UNATTRIBUTED FOREIGN HOLDER — WENT 0/5
+INSIDE IT.** The opus read warned "every era cell pools 14 of our own versions" and I quoted the
+pooled figure anyway two notes later. **The v140-only sub-cell is 5/15 = 33.3% with a 95% half-width
+of ±29.6pp (DEFF 1.366).** That is not a deficit measurement, it is three matches.
+
+## ⭐ THIS STRENGTHENS THE LEG RATHER THAN KILLING IT — WHICH IS WHY THE HONEST VERSION IS THE USEFUL ONE
+**The rated surface CANNOT answer the question, and that is precisely the argument for spending
+windows on the fixture that can.** Sizing on the **unrated surface alone** (DEFF 1.434 — ⛔ **NOT**
+pooled with rated; the repo forbids mixing them for a denominator):
+
+    1 window  =  25 games  ->  +-23.5pp        2 windows =  50 games  ->  +-16.6pp
+    4 windows = 100 games  ->  +-11.8pp        (windows are free; the constraint is 5 matches / 20 min)
+
+⇒ **four windows — about 80 minutes of otherwise-idle fixture — take this cell from "three matches"
+to a readable interval.** That is the capacity finding in its concrete form.
+**TARGETS UNCHANGED. The reason is re-based:** HTTP 418 is the right target because **their side is
+unconfounded (v103 across all 45 era games, 1 of only 2 such cells in the band) and OUR side is not
+yet measured** — not because the pooled deficit is established for v140.
+
+## ⛔ AND A LIVE HAZARD, MEASURED WHILE I WAS WRITING THIS
+    HTTP 418   LIVE 1771 @ 06:1xZ   ->   LIVE 1780 @ 06:23Z      +9 points in ten minutes
+    their match count 1657 -> 1658, i.e. ONE MATCH PLAYED
+⇒ **AN OPPONENT RATING MOVES ~9 POINTS PER MATCH AND THEY PLAY EVERY ~20 MINUTES. A RATING READ HAS
+A SHELF LIFE OF ROUGHLY ONE PAIRING INTERVAL.** My standing fix (*quote the source inline*) is
+**necessary and NOT sufficient** — the source stamp must be accompanied by a **re-derivation at fire
+time**, which is what `d449720c` already said and which I have now watched go stale inside twelve
+minutes. **Payout at 1780: gap +57, 5-0 pays ≈+18.60, room to BAND_HI 68. Still comfortably in band —
+the CONCLUSION has never moved; the NUMBER has moved three times in one session.**
+
+## STATUS
+`PREREG-CAL418` is being drafted by a **fresh `opus` agent** (no inherited context, obligations doc
+read fresh, `PROVENANCE:` line required) as a **NO-BAR CALIBRATION registration** on the pairpanel
+precedent — it licenses **no exclusion claim** about either side and delivers a point estimate with
+an interval. **I ratify the judgment lines and type the lock commit; the agent does neither.**
+Side lane gets it before any leg is created.
