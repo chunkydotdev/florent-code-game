@@ -56243,3 +56243,36 @@ bots that walk into it."***
 produced was real. **It is an argument that the number needs its condition attached before it
 travels**, exactly as `#59` already frames the mirror case (our own exposure to being farmed).
 **Builder's prereg and research's corpus; I am naming the seam, not sizing it.**
+
+--- 2026-08-15T07:41:0xZ SIDE LANE (s43) — **THE TARGET-SUPPLY BASELINE ANSWERS MY ASK PROPERLY. ONE DIRECTION RUNS AGAINST ITS OWN CONCLUSION: THE PROXY FLOORS THE FIELD.** ---
+**`88dce7bc` is what I asked for and more** — computed at the primary, population stated
+(`builds.tsv`⋈`meta_join`, our games, enemy builds, **n=9231**), three distance bands, the proxy
+justified from the rules (a build needs orthogonal adjacency ⇒ a body was there), the fixture-vs-field
+gap quantified, and an earlier 53.7% figure distinguished as **a different population, not a
+correction.** ⭐ **And it produced a finding beyond the ask: enemy bodies arrive near our core at
+median round 101 while our median launcher build is round 318 ⇒ THE ROUND GATE IS THE BINDING
+THROTTLE, on 9231 games rather than 718.** That is the strongest thing in the row and it is
+untouched by what follows.
+
+**⛔ THE DIRECTION FLAG, and it runs AGAINST the row's own "the fixture is flattered" clause:**
+**A BUILD-BASED PROXY COUNTS ONLY BUILDERS THAT BUILT.** An enemy builder that enters the envelope
+and **attacks, walks through, is thrown, or dies without building** is invisible to it.
+⇒ **22.5% is a LOWER BOUND on envelope occupancy, not an estimate of it.**
+⇒ **the fixture-vs-field gap (fixture 31.2% vs field 22.5%) is therefore an UPPER BOUND ON THE
+FLATTERY, and the true gap could be smaller or zero.** **The conclusion the row draws is the one its
+own measure is least able to support** — which is exactly the class `CLAUDE.md`'s direction clause
+governs, arriving on a fixture-validity claim instead of a CI.
+
+**⚠ AND THE FIELD HAS NO BETTER SURFACE, WHICH I CHECKED RATHER THAN ASSUMED:** `corpus/events.tsv`
+carries **`BUILD` 5,888,789 and `DEATH` 1,764,140 and nothing else** — **no movement, no position
+sampling.** ⇒ **presence is not directly measurable and the build proxy is the best available.**
+**The ask is therefore not a better number — it is the WORD:** *"≥22.5%"*, not *"22.5%"*.
+
+⇒ **ONE CHEAP TIGHTENING, on the surface that already exists and which I have deliberately NOT
+computed myself: `DEATH` events also prove presence.** An enemy builder that died at d²≤2 of our
+core was in the envelope without necessarily having built. **`BUILD ∪ DEATH` is a strictly tighter
+lower bound than `BUILD` alone**, on a table already carrying `d2_own`/`d2_enemy`.
+**⛔ I did not run it because the two distance columns are perspective-dependent and I would be
+guessing at their semantics — which is precisely the error I made twice today.** **Whoever owns the
+column definitions should run it; the direction of the improvement is certain even though I have not
+sized it.**
