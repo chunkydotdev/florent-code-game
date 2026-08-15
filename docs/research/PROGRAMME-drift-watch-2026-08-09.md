@@ -2336,3 +2336,33 @@ run, which is the mode the first scope note already said was intended.
   (s42). The wake path was never broken. **Three failed checks, and the
   underlying fact was fine the whole time** — which is why the failures were
   invisible: every wrong answer was also PLAUSIBLE.)*
+
+- **⛔ D29 COMPANION, 2026-08-15T04:04:35Z (s42) — `corpus/throws.tsv` PRODUCED TWO FALSE HEADLINES IN ONE HOUR, BOTH HANDED TO THE PRINCIPAL. Three enumerated traps; treat this surface like `meta_join`.**
+  **The builder's enumeration, adopted verbatim because they did the join and I did not:**
+  1. **`life` / `core_atk` / `any_atk` / `reached` are populated for `INSERT` ONLY and read as a
+     CONSTANT for `EXILE`.** Measured: INSERT has `life != -1` in **100.0% of 114,972 rows** with
+     990 distinct values; EXILE in **0.0% of 243,790 rows**, ONE distinct value. **`-1/0/0/0` means
+     NOT APPLICABLE and reads as a clean measured outcome.**
+  2. **THERE IS NO VERSION COLUMN** (21 columns; `file … kind … winner wincond`). **Every version
+     claim needs a `file → version` join, and the raw surface POOLS RATED WITH UNRATED.**
+  3. **`join.tsv` covers ~3,735 files against `meta_join`'s ~44,230**, so a cut built on it
+     **understates throw counts ~10× and silently misses the largest games.**
+  **THE TWO FAILURES, both in one hour:** *"it NEVER died / never attacked anything"* (trap 1 — a
+  constant column), and *"v140 makes ZERO exile throws across 115 rated games"* (trap 2 — no join).
+  **The truth: 200 rated games / 193 EXILE throws. The UNRATED half reproduced the relayed number
+  EXACTLY and the RATED half was a SIGN FLIP** — which is the pooling trap producing a plausible
+  wrong answer rather than an obvious one.
+  ⭐ **AND THE CORRECTED NUMBER IS SHARPER THAN THE FALSE ONE, so the conclusion SURVIVES:** the
+  throws occur in **3 of 200 rated games (1.5%)** and **ONE game carries 176 of the 193 (91%)** — the
+  same pathological signature as the 152-throw and 548-throw games: **a launcher latching onto ONE
+  victim and cycling it, not a weapon delivered across the field.** ⇒ **#51's kill stands** (aiming a
+  loop that fires in 1.5% of rated games buys nothing). **"Zero" was a STRONGER and FALSER claim
+  than "1.5%".**
+  **⇒ WATCH FORM: before any `throws.tsv` claim leaves a lane — name the `kind` the outcome columns
+  are valid for, state the join that supplied the version, and state which file set the cut covers.**
+  **A claim off this table that names none of the three has not been checked.**
+  ⚠ **THIS LANE'S HALF: I REPEATED the zero-throws figure back to its originator without
+  re-deriving it** (Q6′), flagged it as an unverified relay **only** because I noticed the missing
+  version column — **and my "low harm, I relayed it to its own originator" assessment was luck, not
+  reasoning: the same figure had already been handed to Magnus as a headline and put in the #38
+  brief as a load-bearing fact.** **A relayed figure's harm is not bounded by who I said it to.**
