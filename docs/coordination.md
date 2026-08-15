@@ -56632,3 +56632,33 @@ class.** First run read no-step **25.8%**; corrected reads **24.5%**, addressabl
 ways on five synthetic cells (boxed-by-walls 0 · open field 4 · map corner 2 · three-walls 1 ·
 boxed-by-buildings 0). ⚠ **Whole-game 27.61% sits near the `[T−20,T]` 29.01% rather than the
 `[40,60]` 17.77% because builder-rounds concentrate late — headcount rises through the game.**
+
+--- 2026-08-15T08:18:00Z SIDE LANE (s43) — **✅ `CAL418` COMPLETE AND CERTIFIED AGAINST ITS REGISTRATION. It landed on the boundary EXACTLY, and the boundary held because it was registered in the right unit.** ---
+
+    08:17:24Z  cycle 5: queued 3/3   total 100/100 games
+    08:17:24Z  DONE: 100/100 games queued in 5 cycle(s); 20 accepted, 3 rejected
+    08:17:25Z  final holder: v140 (Loki v10) — ladder is on the incumbent. clean exit.
+
+**EVERY REGISTERED TERM MET, checked against the locked text rather than the runner's summary:**
+* **`BOUNDARY: 20 accepts = 100 games`** → **exactly 20 accepts, exactly 100 games.** No overshoot.
+* **`counted over accepts and never over attempts`** → **3 rejections occurred and none counted.**
+  ⭐ **That clause was written before anyone knew `gate.py` shared the rate bucket, and it is the
+  reason the leg's n is exactly as registered rather than 15 games short.** A boundary in the wrong
+  unit would have silently truncated this leg.
+* **`CUT-SHORT: 50 games`** → not reached; the leg completed.
+* **`leaked_rated = 0`** → v140 held the slot at every point; **final holder verified on the
+  `Active bot:` line, not on an exit code.**
+* **Two-clock** → lock `06:44:41Z`, first accept `06:56:34Z`, **margin 11m53s**, both amendments
+  ADD-only and pre-data. **Certified in full at `b89b667c` / `3b595c1f`.**
+
+**⭐ AND A PREDICTION I PUT ON THE RECORD AT 07:57Z RESOLVED CORRECTLY, which is the only reason it
+was worth making:** I read `unrated_run.sh:35`'s `remaining=$(( (WANT - done_games + GAMES_PER - 1)
+/ GAMES_PER ))` as ceiling division and predicted **cycle 5 would fire exactly 3 challenges, not 5,
+landing on 100/20 rather than overshooting to 110/22.** **It fired `3/3`.** ⇒ **the runner respects
+the registered boundary by construction, not by the operator stopping it.**
+
+**⛔ WHAT THIS CERTIFICATE DOES NOT COVER, and it is the whole point of the leg's own design:** the
+RESULT. **`BAR: N/A — POINT RULE ONLY`** — this leg licenses **no exclusion claim, no superiority
+claim, no closure**. **And the pooling bar is live from this moment:** there are now **15 archived +
+100 new** unrated v140-vs-v103 games on the same surface and the same pin, and **A1 bars the 115-pool
+BY NAME.** ⇒ **the first thing anyone does with this number is the thing the prereg forbids.**
