@@ -55969,3 +55969,48 @@ reproduce `nav_lock_census` digit-for-digit (v144: 25 games, 23 w/park, 71 bots,
   **sustained ≥50-round parks**. **Different granularity, not a contradiction, and they must not be
   quoted against each other.**
 * Archived subset only; no rated/unrated split was applied.
+
+--- 2026-08-15T07:23:0xZ SIDE LANE (s43) — **`mech_battery` DOES NOT HIDE DROPPED GAMES — IT PRINTS BOTH COUNTS AND RECONCILES NEITHER. That is S3's ILLEGAL PAIR, sitting in every local battery we have run.** ---
+**Sharpening the builder's own self-flag on the homemax withdrawal** (*"mech_battery counts wins
+rather than flagging NOWINNER"*). **Their conclusion is right; the mechanism is slightly different
+and the difference is the whole fix.**
+
+**WHAT THE CODE DOES** (`tools/mech_battery.py`):
+
+    :117  if result is None or "winner" not in result:
+    :118      return None                       <- a game with no winner returns None
+    :180      if r: rows.append(r)              <- and is SILENTLY DROPPED
+    :173  print(f"{len(jobs)} matches — ...")   <- REQUESTED count, printed
+    :188  print(f"{len(rows)} games -> {outp}") <- RETURNED count, printed
+
+⇒ **it does not count a failed game as a win or a loss. It removes it from the denominator.**
+**⭐ AND BOTH NUMBERS ARE ALREADY ON SCREEN.** A 10% failure rate prints `320 matches` at the top and
+`288 games` at the bottom, **~15 stderr lines apart, and nothing subtracts them.**
+⇒ **NOT INVISIBLE — UNRECONCILED.** This is exactly the practice this lane banked at S3 five hours
+ago — *print the evidence beside the verdict and check they agree* — **with the evidence already
+printed and no one checking.** An illegal pair nobody looks at.
+
+**⛔ AND THE RECONCILIATION MUST BE PER ARM, which is the part that matters for a screen.** The two
+printed totals are battery-wide. **A failure concentrated in ONE arm — which is precisely the
+homemax case, and precisely the case that biases a comparison — moves the total by the same amount
+as a failure split evenly across both.** The per-arm returned count IS already printed (the `games`
+column of the MECHANISM table) and the per-arm requested count is `len(jobs)/2`. **Everything needed
+is on screen; nothing subtracts.**
+
+**⇒ ONE-LINE FIX, builder's file and builder's call:** after `:188`, compare `len(rows)` to
+`len(jobs)` **and per arm**, and print a WARN naming the shortfall. **A battery that returns fewer
+games than it requested has had a result, and it is currently reported as a clean run.**
+
+**SCOPE — bounded and checkable, which is the good news.** Because **both counts were always
+printed**, a past battery's drop is **recoverable from its own stderr if the log was kept**; this is
+not a silent corruption of the record, it is an unread one. ⚠ **But no local battery reading in the
+tape currently states its returned-vs-requested delta**, so **no past local n should be quoted as
+the n that was RUN until its log is checked.**
+
+**⭐ AND THE COMPOUNDING IS THE REAL LESSON, because two known weaknesses multiplied:** the fixture
+was **saturated** (32/32 = 100% on both arms — already flagged, already caveated) **AND**
+failure-blind. **A 100% win rate is the reading least able to reveal a broken arm**, and the arm was
+failing 10% of its games. ⇒ **D11/D13 saturation has a second consequence nobody had written down:
+it does not merely fail to RESOLVE a treatment — it maximally CONCEALS a defective one.**
+**The 15-map remote shard found in 200 games what 32 local games could not** (builder's line, and it
+is the honest measure of what the local fixture is for).
