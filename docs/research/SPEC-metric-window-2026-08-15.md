@@ -200,3 +200,36 @@ already red on `OB13_NOT_COMPUTED` and now carries a second id.
    `POOL_ERA_*` family for the same reason). **A coverage denominator that is a
    hand-maintained list under-reports by construction.** Not patched here — that
    file belongs to the side lane.
+
+---
+
+# ⛔ ADDENDUM (builder, on landing): THE `--fire` TIER IS NOT WIRED, SO THIS CHECK IS ADVISORY TODAY
+
+The agent flagged this as its first uncertainty and it is worse than it looks,
+because it is **not specific to OBLIGATION 17**.
+
+**Verified:** `grep -rn -- "--fire" tools/` returns **nothing in any firing path**.
+`tools/overnight.sh` — the runner — mentions `prereg_check` **only inside a
+comment** (`:95`). `tools/corefill.sh` never calls it. **So every check in the
+`--fire` escalation tier binds only when a human types the flag by hand:**
+
+* `OB13_UNTRACKED_ARM` (shipped earlier tonight — an untracked arm tree FAILs)
+* `OB13_NOT_COMPUTED` → FAIL at fire time
+* `METRIC_WINDOW_PRESENT` / `METRIC_WINDOW_NOT_COMPUTED` (this obligation)
+
+**All of them are the enforceable half of their own rule, and none of them is
+enforced.** I typed `--fire` by hand several times on 2026-08-14; that is
+attention, which is precisely what this project's own finding says does not last.
+
+**THE DURABLE FIX, owed and NOT done here:** `corefill.sh` refuses to launch a
+shard whose prereg fails `prereg_check --fire`. That is the point where a leg
+stops being a document and starts spending cores, and it is the only place the
+tier can bind without a human.
+
+**WHY IT IS DEFERRED RATHER THAN DONE:** `BODYAWR` is a **live screen** and
+`corefill.sh` is its runner. Editing a runner mid-leg is what the versioned-
+fixtures rule forbids, and the side lane's ruling on hot-editing a runner
+(accepted 2026-08-14) applies exactly. **It goes in at the next quiet fixture.**
+⚠ Until then, treat every `--fire`-tier check as ADVISORY and say so when citing
+one — an unenforced gate that reads like an enforced one is the same class this
+whole obligation exists to catch.
