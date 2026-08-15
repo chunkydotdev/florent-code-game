@@ -1096,3 +1096,47 @@ pre-registered direction, sharpens Q3 and Q4). Instance:
 **⚠ CARRIED TO v1.13:** the **15 corruption cells owed in `prereg_cert_s41.py`**.
 **The harness now reports `CERT: FAIL` until they exist — that is the honest state
 and a successor must not read that FAIL as a defect in anything it certifies.**
+
+## ⚠ v1.12.1 — **THE ADJACENT-SURFACE CHECK HAS A THIRD OUTCOME AND THE LEDGER HAS NO COLUMN FOR IT: IT REDIRECTS THE FLAG TO A BETTER ONE.**
+
+**v1.12.1 — 2026-08-15 (s43, mid-session). POINT bump. NOT A RETRO RUN — FIRINGS REMAIN 12.**
+First point bump of this session; the cap is 2. **Recorded now under the v1.2.1 mechanism because
+the distinction dies with the session otherwise** — it currently exists only in messages to two
+peers and in one coordination note that used the *wrong* framing for it.
+
+### THE FINDING
+
+v1.12 sharpened Q3 to *"I checked the surface adjacent to the one that mattered"* and v1.11.1 gave
+Q5 a **phantoms-killed-pre-publication** counter. **Both treat the adjacent-surface check as
+producing one of two outcomes: a flag, or nothing.** Measured on three instances today, it produces
+**three**:
+
+| # | the flag I had | what the adjacent check did | outcome |
+|---|---|---|---|
+| 1 | *"the dashboard is dead"* (HTTP 000) | `lsof` showed the listener is `:8787`; I curled `:8765` | **KILLED** — pure phantom |
+| 2 | *"`fanout.sh`'s holder check accepts any holder"* | `:52` shows `fire()` DOES compare to `$want`; `gate()` is a CLI-liveness gate | **REDIRECTED** — found `INCUMBENT=104` hardcoded instead |
+| 3 | *"rollback failure is unwatched"* (`HOLDER_ALERT` read by zero tools) | `holder_watch` IS running and polls the live platform | **REDIRECTED** — found it EXITS on first change, so a leg's own activation consumes it |
+
+⇒ **IN 2 OF 3 THE CHECK DID NOT CANCEL THE FLAG, IT MOVED IT** — to a defect that was **more
+specific, still real, and in both cases more consequential than the one I started with.** #3's
+redirect is the clearest: *"an alert file nobody reads"* is cosmetic; *"the independent watch is
+consumed at the instant the risk window opens"* is a live pre-leg hazard.
+
+### ⇒ WHY THIS IS AN INSTRUMENT CHANGE AND NOT AN OBSERVATION
+
+**Scoring a redirect as a phantom mis-prices the practice in the direction that would retire it.**
+Q5 counts phantoms as *cost avoided*; a redirect is **cost avoided AND a better finding produced**,
+and the second half is invisible. **A lane reading its own ledger would conclude the adjacent-surface
+check mostly cancels its own work** — when today it converted two vague flags into two precise ones.
+**That is an argument for checking MORE, and the current ledger cannot make it.**
+
+⇒ **Q5 gains a third bucket: `KILLED` · `REDIRECTED` · `PUBLISHED-AND-WRONG`.** **Q0 counts
+REDIRECTED under "what did not happen" only for the flag that died** — the flag that replaced it is
+ordinary output and belongs in Q1. **The anchoring rule is unchanged and already satisfied: all
+three redirects left artefacts** (an `lsof`, a `grep` of `fire()`, a `pgrep` of `holder_watch`).
+
+**⚠ AND THE HONEST LIMIT, stated because this instrument has retracted a within-session pattern
+before (v1.2.1, n=4):** **n=3, one session, one lane, and I classified after the fact.** The 2-of-3
+rate is not a rate. **What earns the bucket is not the ratio — it is that the CATEGORY has no home,
+which is a structural gap and does not need a sample size.** A successor should count the bucket and
+must not quote 2-of-3 as a base rate.
