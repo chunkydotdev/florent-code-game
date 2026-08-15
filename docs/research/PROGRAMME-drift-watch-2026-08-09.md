@@ -2366,3 +2366,46 @@ run, which is the mode the first scope note already said was intended.
   version column — **and my "low harm, I relayed it to its own originator" assessment was luck, not
   reasoning: the same figure had already been handed to Magnus as a headline and put in the #38
   brief as a load-bearing fact.** **A relayed figure's harm is not bounded by who I said it to.**
+
+- **⭐⭐ D34 — A FIX COMMITTED TO A SCRIPT THAT IS ALREADY RUNNING IS NOT DEPLOYED, AND EVERY
+  ARTEFACT THAT PROCESS EMITS AFTERWARD STILL CARRIES THE OLD BEHAVIOUR.** *(2026-08-15T06:10:23Z,
+  s43/s44. **Found by the BUILDER on their own instrument and offered to this lane for the
+  checklist** — their words: "I think this generalises past this one field". Recorded with their
+  attribution because a promoted finding carries whose it is.)*
+
+  **THE INSTANCE, measured:** the corefill FIXTURE header's `workers=` field reads the constant
+  `workers=1` on **5 of 5 filler-launched shards**, while the filler was launched 8-wide with 1-3
+  running. **It is not a code bug.** `WORKERS=$MAX_SHARDS` landed in `1256a630` at **21:08:41Z**;
+  the filler process had started at **20:25:57Z — 43 minutes earlier**. The commit is correct, the
+  test would pass, `git log` shows the fix, and **the running process never read it.**
+
+  **WHY IT BELONGS ON THIS CHECKLIST RATHER THAN IN A BUG LOG:** it defeats every verification
+  this repo trusts at once. **The code is right on disk. The selftest passes. The diff is in
+  version control. The commit timestamp PRECEDES the artefact.** ⇒ **a `git log` check
+  "confirming" a fix was live at the time an artefact was produced is INVALID unless the process
+  was restarted after the commit** — and that ordering is the natural, wrong check to run.
+
+  **⚠ AND IT IS LOAD-BEARING RIGHT NOW, which is why it is D-numbered rather than noted:**
+  `workers=` is the fleet-width field, and **SALTREF2 has just made fleet width worth 2.67pp**
+  (ws1 n=5400: 49.11% → 51.78% against A1's locked [47.24, 50.98], the single change being the
+  `WORKERS=40→10` fixture defect). **A constant `workers=` column cannot distinguish the widths
+  whose difference is the finding** — the D19/`CLAUDE.md` "a constant column validates anything"
+  failure, in the field that currently prices a live result.
+
+  **THE WATCH FORM, three questions, cheap:**
+  1. **When a fix lands in a script, ask whether an instance of that script is RUNNING.**
+     `pgrep -f <script>` beside the commit; if a process predates the commit, the fix is **not
+     deployed to it**.
+  2. **When an artefact is dated after a fix, do NOT infer the fix was active.** Compare the
+     artefact's clock to the **PROCESS START TIME** (`ps -o lstart`), never to the commit time.
+  3. **A long-running monitor or runner is a DEPLOYMENT TARGET, not just a file.** Restarting it
+     is part of landing the fix, and "committed and pushed" does not discharge that.
+
+  **⛔ THE SCOPE, so this does not become a demand to restart everything:** it binds where the
+  running process **EMITS A RECORD SOMEONE WILL READ AS EVIDENCE** — fixture headers, tape rows,
+  monitor verdicts, heartbeat content. A cosmetic fix to a running script's log formatting is not
+  a drift risk. **The trigger is: does this process write a field a later cut will trust?**
+
+  **SIBLING OF D28** (the instrument was right and nobody read it) **and its exact inverse: there
+  the artefact was correct and unread; here the artefact is read and stale.** Both are the gap
+  between a fix EXISTING and a fix BEING IN FORCE.
