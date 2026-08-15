@@ -56927,3 +56927,39 @@ conveyors/splitters, because *"20 HP is ten pecks and the tenth severs a deliver
 **Replaced with a premise-free control (the four outcomes must sum to the adjacency count — PASS).**
 ⭐ **A control built on an assumption about the code can only test the code as strongly as the
 assumption is true. The sum-check cannot be wrong about the tree, only about my arithmetic.**
+
+--- 2026-08-15T09:2xZ (`date -u`) ⭐⭐ **RESEARCH s43 — THE BODYBLOCK SCREEN'S POWER DEADLOCK DISSOLVES IF IT STOPS SCORING WIN RATE. MECHANISM BASELINE MEASURED.** ---
+**The deadlock:** #70's best case is **1.51pp** of game share; an OB16 bar at n=10,800 sits at
+**51.93**; clearing it needs **~40,000 games**. Side lane and I converged on that and neither of us
+could rescue it *as a win-rate screen*. **The exit is not more games. It is a different metric.**
+
+## THE MECHANISM BASELINE — 150 v140 games, `scratchpad/belt_sever.py`
+    our hits on enemy belts                35.3 / game
+    enemy belt entities REMOVED (any cause) 2.1 / game
+      ...ones WE had attacked -> SEVERS BY US  1.39 / game   (65.0% attribution share)
+    control: severs-by-us must be a strict subset of all removals — 208 <= 320, PASS
+
+## ⇒ WHY THIS RESOLVES WHERE WIN RATE CANNOT
+**The plank's located population is 133 idle rounds/game standing cardinally adjacent to a live
+enemy belt** (30.2% of all bucket A, measured above), **and that belt is a LEGAL target under the
+shipped conveyor carve-out — 20 HP = ten pecks.** ⇒ converting even a fraction of 133 idle rounds
+into pecks is a **multiple** of the current 35.3 hits/game, against a sever baseline of **1.39/game**.
+**A 2-4x change in a per-game count over thousands of games is trivially detectable; a 1.51pp change
+in game share at n=10,800 is not.** ⇒ **register severs/game and belt-hits/game as the PRIMARY
+mechanism metrics (OB13's own form), and carry game share as a SECONDARY, UNBARRED read.**
+**That is the `LEG-pairpanel` shape — a point rule that licenses no exclusion on the currency — but
+with a mechanism metric that CAN carry a bar.**
+
+## ⛔ THE BOUND, AND IT IS NOT OPTIONAL UNDER `R1000_IS_DEFEAT`
+**Severs/game is NOT the programme currency.** Economy is instrumental — *it buys the kill, it never
+scores*. ⇒ **a sever-rate win does NOT license "the bot is better", and the screen must say so in the
+same sentence it reports the metric.** What it licenses is *"the mechanism fires at the predicted
+dose"*, which is exactly what a screen at this stage is for and is what the win-rate arm cannot
+deliver at any affordable n. ⚠ **And a second bound: 65% attribution means a third of enemy belt
+losses are not ours** — the metric must be the attributed subset, never total enemy belt removals.
+
+## STATUS OF THE TWO MECHANISM CLAIMS THAT PRECEDED THIS
+Both dead, and the measurement replaced them: side lane's *"on arrival it does nothing"* (an
+inference about the BUILDER from a fact about the FUNCTION) and mine *"`_salt_turn` picks it up"*
+(void — roles are mutually exclusive per `run()`, `main.py:446-451`). **The outcome measurement
+needed neither.**
