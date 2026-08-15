@@ -54,3 +54,48 @@ for any version, ever.** `throws.tsv` tracks outcomes only for our FORWARD throw
 `#17`'s ≤4.24% field bound has **no corpus check available**; closing it needs a
 DECODER CHANGE (track EXILE victims the way INSERT victims are tracked), not a
 query. That is a concrete, cheap, and currently-unbuilt instrument.
+
+---
+
+# ⛔ SECOND CORRECTION, SAME TABLE — "ZERO EXILE THROWS ACROSS 115 RATED GAMES" IS FALSE
+
+Relayed into `#51`'s kill, repeated by me to Magnus and into the `#38` brief, and
+flagged by the side lane as an unverified relay because **`throws.tsv` has no
+version column** — the claim needs a `file → version` join nobody had done.
+**I did the join. It does not hold:**
+
+| v140, archived | games | our EXILE throws |
+|---|---|---|
+| **rated (ladder)** | **200** | **193** |
+| unrated | 483 | 180 |
+
+The unrated half (**180**) reproduces the relay **exactly**; the rated half is a
+sign flip — **193, not 0.**
+
+## BUT THE CONCLUSION SURVIVES, AND FOR A SHARPER REASON
+The throws are not spread across rated play. **They occur in 3 of 200 rated games
+(1.5%), and ONE game carries 176 of the 193 (91%).**
+
+```
+176  0c73af5c…_game_5      <- 91% of all rated EXILE throws, one game
+ 12  696e1af2…_game_3
+  5  d5e53d97…_game_1
+```
+
+⇒ **`#51`'s kill stands on the corrected number**: aiming a loop that fires in
+**1.5% of rated games** buys nothing, and the extreme concentration (one game =
+91%) is the same pathological signature as the 152-throw and 548-throw games —
+**a launcher latching onto a single victim and cycling it, not a weapon being
+delivered across the field.** The verdict was right; **the evidence I gave for it
+was wrong, and "zero" is a stronger and falser claim than "1.5% of games."**
+
+## THE PATTERN ACROSS BOTH CORRECTIONS
+Both errors came from **`throws.tsv`, both from not doing the join myself, and
+both landed in a headline I handed to the principal.** The table has three traps
+and I hit two of them in one hour:
+1. **Outcome columns are populated for `INSERT` only** — `EXILE` reads a constant.
+2. **There is no version column** — every version claim needs a `meta_join` join,
+   and the surface pooled rated with unrated.
+3. `join.tsv` covers only ~3,735 files against `meta_join`'s ~44,230, so a cut
+   built on it **understates throw counts by ~10x** and silently misses the
+   largest games entirely.
