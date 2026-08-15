@@ -489,9 +489,17 @@ case "$CMD" in
         echo \"   so cancelling now would report success and change nothing. Run 'kill $HOST' first.\"
         exit 3
       fi
-      if [ ! -f results/$SH.tsv ]; then
-        echo \"⛔ REFUSING: no results/$SH.tsv on this host — nothing by that name has run here.\"
-        ls results/*.tsv 2>/dev/null | head -20 | sed 's/^/   have: /'
+      # G2: the shard must be KNOWN to this host — either it has run (a tape) or
+      # it is parked in the worklist waiting to run. ⛔ THE WORKLIST HALF WAS
+      # MISSING and the guard was too strict because of it: cancelling an
+      # UNSTARTED but QUEUED shard is exactly the case you need when a row is
+      # withdrawn before its turn comes up, and the tape-only test refused it
+      # while offering no alternative. Still refuses a genuine typo, which is
+      # the thing G2 exists for.
+      if [ ! -f results/$SH.tsv ] && ! grep -q \"^$SH[[:space:]]\" work/worklist.txt 2>/dev/null; then
+        echo \"⛔ REFUSING: $SH is unknown here — no results/$SH.tsv and no worklist row.\"
+        ls results/*.tsv 2>/dev/null | head -10 | sed 's/^/   ran: /'
+        grep -v '^#' work/worklist.txt 2>/dev/null | awk '{print \$1}' | head -10 | sed 's/^/   queued: /'
         exit 4
       fi
       if [ -f results/$SH.COMPLETE ]; then
