@@ -21,13 +21,25 @@
         "hooks": [
           {
             "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null; OUT=$(timeout 40 .venv/bin/python tools/now.py 2>&1); RC=$?; if [ $RC -eq 2 ]; then   jq -n --arg o \"$OUT\" '{systemMessage:\"LIVE STATE IS BLIND - fcode did not return an active_submission. Do NOT substitute a poller for the holder.\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; elif [ $RC -ne 0 ]; then   jq -n --arg o \"$OUT\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:(\"tools/now.py did not complete; state is UNVERIFIED, not unchanged. Run it manually.\\n\" + $o)}}'; else   jq -n --arg o \"$OUT\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; fi",
+            "timeout": 50,
+            "statusMessage": "Reading live state (holder, control, surface ages)"
+          },
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null; OUT=$(.venv/bin/python tools/fleet_health.py --quiet 2>&1); RC=$?; if [ $RC -eq 1 ]; then   jq -n --arg o \"$OUT\" '{systemMessage:\"FLEET HEALTH PROBLEM - a supervisor is missing or a daemon is duplicated. Cores may be idle or a canceller double-armed.\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; elif [ $RC -eq 2 ]; then   jq -n --arg o \"$OUT\" '{systemMessage:\"FLEET HEALTH UNKNOWN - process table unreadable. This is BLIND, not healthy.\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; else   jq -n --arg o \"$OUT\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; fi",
+            "timeout": 20,
+            "statusMessage": "Checking fleet health (supervisors + duplicates)"
+          },
+          {
+            "type": "command",
             "command": "cd \"${CLAUDE_PROJECT_DIR:-.}\" 2>/dev/null; OUT=$(.venv/bin/python tools/queue_check.py 2>&1); RC=$?; if [ $RC -eq 2 ]; then jq -n --arg o \"$OUT\" '{systemMessage:\"BUILD QUEUE BELOW FLOOR - research stocks it before other work\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; elif [ $RC -ne 0 ]; then jq -n --arg o \"$OUT\" '{systemMessage:\"QUEUE CHECK FAILED - the floor is UNKNOWN, not met. Run .venv/bin/python tools/queue_check.py --selftest\", hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; else jq -n --arg o \"$OUT\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$o}}'; fi",
             "timeout": 20,
             "statusMessage": "Checking build-queue floor"
           },
           {
             "type": "command",
-            "command": "L=\"${FCODE_LANE:-}\"; case \"$L\" in builder|research|sidelane) M=\"LANE DECLARED: $L — read .claude/commands/$L.md NOW and follow its boot sequence before any other work.\" ;; \"\") M=\"NO LANE DECLARED (FCODE_LANE unset). If this session is a protocol lane, invoke /builder, /research or /sidelane BEFORE any work — the charter, hard limits and boot sequence live in .claude/commands/ and are NOT auto-loaded. A non-lane session announces itself in docs/coordination.md before writing anything (rule 1).\" ;; *) M=\"FCODE_LANE=$L IS NOT A KNOWN LANE (builder|research|sidelane). Fix the env var or invoke the right slash command before any work.\" ;; esac; jq -n --arg m \"$M\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$m}}'",
+            "command": "L=\"${FCODE_LANE:-}\"; case \"$L\" in builder|research|sidelane) M=\"LANE DECLARED: $L \u2014 read .claude/commands/$L.md NOW and follow its boot sequence before any other work.\" ;; \"\") M=\"NO LANE DECLARED (FCODE_LANE unset). If this session is a protocol lane, invoke /builder, /research or /sidelane BEFORE any work \u2014 the charter, hard limits and boot sequence live in .claude/commands/ and are NOT auto-loaded. A non-lane session announces itself in docs/coordination.md before writing anything (rule 1).\" ;; *) M=\"FCODE_LANE=$L IS NOT A KNOWN LANE (builder|research|sidelane). Fix the env var or invoke the right slash command before any work.\" ;; esac; jq -n --arg m \"$M\" '{hookSpecificOutput:{hookEventName:\"SessionStart\",additionalContext:$m}}'",
             "timeout": 10,
             "statusMessage": "Lane check"
           }

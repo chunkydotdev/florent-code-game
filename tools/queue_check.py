@@ -505,9 +505,51 @@ def grep_staleness(rows, incumbent: str | None):
     return named, unnamed
 
 
+def next_action(live, inc) -> int:
+    """Print ONE row — the first startable item — in full, with its control.
+
+    ⛔ WHY THIS EXISTS. The floor check prints 52 rows, every title truncated
+    mid-sentence, plus two staleness warnings and a legacy-marker list. The
+    charter says "read QUEUE.md and fire from the top" — but the top is not
+    shown, the ordering is not stated in the output, and QUEUE.md is ~80k
+    tokens. **The first decision a session must make is the one the tooling
+    helped with least.**
+
+    This does not re-rank anything: "top" is the same first-unblocked row the
+    floor check already computes. It just prints it whole, once, with the
+    control it will be scored against — because a truncated title and an
+    unnamed control are exactly what produced the 2026-08-15 stale-treatment
+    incident, where six arms ran against a control their prereg did not name.
+    """
+    if not live:
+        print("NEXT: nothing startable. The queue is below floor — stocking it "
+              "outranks starting anything.")
+        return 1
+    section, row = live[0]
+    cells = [c.strip() for c in row.strip().strip("|").split("|")]
+    print("NEXT — the top startable queue item (same ordering as the floor check)\n")
+    print(f"  SECTION: {section}")
+    print(f"  CONTROL: {inc or '⚠ UNKNOWN — PROGRAMME.md has no INCUMBENT field'}")
+    print("           ⛔ every arm is scored against THIS, not against what is live"
+          "\n              on the ladder. They diverge when a teammate ships.\n")
+    for c in cells:
+        if c:
+            print(f"  {c}")
+    print("\n  Full row text is above verbatim — nothing truncated. Before building:")
+    print("    1. tools/target_value.py --band   (is the target worth the window?)")
+    print("    2. grep the incumbent for the plank — the cheapest null is a leg")
+    print("       testing something we already ship.")
+    print("    3. the prereg is drafted by a FRESH opus subagent, ratified by you.")
+    return 0
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(
+        description="Build-queue floor alarm. --next prints the single top "
+                    "startable item instead of the whole list.")
     ap.add_argument("--floor", type=int, default=FLOOR)
+    ap.add_argument("--next", action="store_true",
+                    help="print ONE row — the top startable item — in full")
     ap.add_argument("--selftest", action="store_true")
     args = ap.parse_args()
     if args.selftest:
@@ -518,6 +560,8 @@ def main() -> int:
         return 1
 
     text = QUEUE.read_text()
+    if args.next:
+        return next_action(unblocked(parse(text)), current_incumbent())
     dupes = duplicate_numbers(text)
     parsed = parse(text)
     live = unblocked(parsed)
