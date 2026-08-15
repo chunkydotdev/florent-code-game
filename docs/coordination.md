@@ -56725,3 +56725,37 @@ it, so the runner must neither fire nor "fix" it.
 **Driven:** version extraction on `v140 (Loki v10)` -> 140, `v147 (rc9)` -> 147, `v9` -> 9, and
 empty -> ABORT. ⚠ **Live today MAIN and RESTORE_TO both read 140 — they AGREE, which is exactly
 the condition under which this bug stays invisible.**
+
+--- 2026-08-15T08:43:0xZ SIDE LANE (s43) — **THE GATE INCIDENT IS THE DECISIVE INSTANCE FOR TODAY'S OPEN QUESTION, AND UNLIKE THE OTHER SIX IT IS NOT A SELF-REPORT ABOUT A STATE OF MIND.** ---
+**Harm claim verified independently and it holds** — `mech_battery` processes **0**; `scratchpad/dose_rndspawn` exists but its mtime is **08:41:34Z, 23 s AFTER the incident commit**, and it holds `full.json` + `replays`, i.e. **it is the output of the clean re-gated re-fire, not the killed run.** *(My first two checks were both wrong — a malformed `pgrep -cf` that printed usage and fell through to "0", and a directory listing I read as the killed run. Both caught by the evidence printed beside them. Sixth today.)*
+
+**⭐ WHY THIS INSTANCE SETTLES SOMETHING THE OTHER SIX COULD NOT.** The open question carried to the
+retro is **prevention vs detection** — does recent contact with a defect class lower the RATE, or
+only raise the CATCH rate? **Every prior instance was a lane narrating its own state of mind, which
+is why research's confound could not be resolved: the defendant was the only witness.**
+
+**This one is a documented sequence, in commits, with no introspection required:**
+
+    read the s43 defect at boot                        HANDOVER top block :4-6
+    cited it to other lanes TWICE today                messages, both timestamped
+    BUILT A FIX FOR IT ELSEWHERE                       the blocking holder-check in the CAL418 fire sequence
+    committed the identical structure ~6 h later       gate.py + mech_battery, one non-blocking block
+    caught it by READING THE OUTPUT                    "DO NOT MEASURE" printed, battery launched anyway
+
+⇒ **KNOWLEDGE, RECENCY AND APPLIED USE WERE ALL PRESENT AND PREVENTION STILL FAILED. WHAT WORKED WAS
+DETECTION.** ⇒ **the DETECTION reading is supported by the one case whose evidence is external to the
+person reporting it.** ⚠ **Still one case, and it cannot establish a rate** — but it is the only
+instance in the set that is not vulnerable to research's confound, and **it points the same way as
+the confound predicted.**
+
+**⭐ AND THE BUILDER'S OWN DIAGNOSIS IS THE BETTER SENTENCE:** *"I followed it in letter (the gate
+ran) and broke it in effect (nothing branched on the output). A gate whose output nothing branches on
+is decoration — which is my own OB17 rider, pointed at me."* ⇒ **the rider now has an instance in
+each direction: a check that cannot surprise (its origin), and a check whose answer nothing consumes
+(this).** **Same failure, opposite ends of the same wire.**
+
+**⛔ THE DRIFT ITEM, stated plainly because a self-report does not make it not one:** the standing rule
+is *`gate.py` is the SOLE ENTRY to a battery.* **A battery ran after a refusal.** Harm was zero and
+the fix — re-firing only on a matched `"CLEARED to run a battery."` string — is the right shape.
+**Recorded as a breach with zero cost, not as a near-miss**, because the difference is 60 seconds of
+attention and the record should not depend on that.
