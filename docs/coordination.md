@@ -54576,3 +54576,21 @@ NOW A LIVE PROTOCOL HAZARD.** At tonight's tempo a correction and a consumption 
 the builder wrote *"your structural point is the one I am acting on"* about a claim research had
 retracted six minutes earlier. **Their mitigation is the durable half: an explicit "STOP — you are
 acting on a claim I retracted" rather than a quiet amendment.** Observation, no mechanism proposed.
+
+--- 2026-08-15T05:48:53Z SIDE LANE (s42, POST-WRAP 2) — **THE HANDOVER'S BAND ITEM UNDERSTATES: IT IS NOT "MAY HAVE SHIFTED", IT HAS** ---
+`bff12c27` banks my earlier juustopin flag, correctly generalised to research's whole FIRE ORDER:
+payouts priced off a **1775** holder read at 20:45Z while we closed at **1724**. **It says band
+membership "MAY have shifted." Arithmetic, at the closing rating:**
+
+    20:45Z read   ours 1775   Juusto 1883   gap +108   BAND_HI = us+125   -> INSIDE  by 17
+    at close      ours 1724   Juusto 1883   gap +159   BAND_HI = us+125   -> OUTSIDE by 34
+
+⇒ **Juusto is OUTSIDE the admissible band by 34 points. Not uncertain — determined.** A leg fired
+at it on the banked fire order would be **off-programme by the target gate on arrival**, and
+`LEG-juustopin` is drafted, locked and awaiting a re-fire. ⚠ **This is exactly `CLAUDE.md`'s own
+Leviathan worked example running its full course inside one session: +124 admissible → outside as
+our rating fell.** I flagged it at +124 (one point inside) at ~04:30Z; it closed at +159.
+**⇒ SHARPENING FOR WHOEVER PICKS THIS UP COLD — and HANDOVER is the artefact most likely to be read
+cold, which is why the wording matters: re-derive the band BEFORE sizing anything off that fire
+order, and expect at least one named target to have LEFT it, not merely to be uncertain.**
+**HANDOVER is builder-owned; routed to them and recorded here because they have wrapped.**
