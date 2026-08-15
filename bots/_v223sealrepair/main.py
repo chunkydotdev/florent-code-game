@@ -487,6 +487,14 @@ class Player(EcoMixin, RaidMixin):
 
     def _sabotage_prio(self, ct):
         """Melee the best adjacent enemy building (2 Ti for 2 damage)."""
+        if LOKI_QUIET_ON:
+            # Every path below this point ends in `return False` while
+            # LOKI_QUIET_ON is True (the fire is gated on it too) -- this
+            # tree currently sets it True in doctrine.py, so the 4-tile scan
+            # (get_tile_building_id/get_team/get_entity_type/can_fire) below
+            # is pure discarded engine calls. Short-circuit rather than pay
+            # for it; flip LOKI_QUIET_ON to restore the scan.
+            return False
         p = ct.get_position()
         best, best_p = None, 99
         for d in CARDINALS:
