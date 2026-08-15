@@ -137,6 +137,45 @@ while true; do
   load1=$(uptime | sed 's/.*averages: *//' | awk '{print $1}' | tr -d ',')
   over=$(awk -v a="$load1" -v b="$LOAD_CEIL" 'BEGIN{print (a>b)?1:0}')
 
+  # ---- guard 5: THE CONTROL TREE HAS NOT MOVED -----------------------------
+  # ⛔ ADDED 2026-08-15 AFTER THREE FORKS IN ONE AFTERNOON. The incumbent is the
+  # CONTROL for every queued row. It was edited in the working tree three times
+  # while shards referencing it were running -- twice by me, the second time 90
+  # minutes after I committed the rule forbidding it, and every occurrence was
+  # caught by another lane sampling trees BY HAND rather than by any tool.
+  #
+  # THE FAILURE IS SILENT AND DIRECTIONAL: nothing errors, every shard keeps
+  # writing, and the rows quietly measure `plank + (control_after - before)`.
+  # Because the edit made the control CHEAPER while treatments still paid, the
+  # delta ran the SAME WAY for every arm. Under a WALL-CLOCK --tle 10 that is a
+  # behavioural handicap, and it compounds with the auto-stopper: an arm reading
+  # low because its control got faster is indistinguishable from a dead plank,
+  # so the canceller kills the real ones.
+  #
+  # ⭐ WHY A GUARD AND NOT A RULE: a control md5 was pinned for exactly this on
+  # the FIRST occurrence and NOTHING CONSUMED IT. The rule was written, cited
+  # twice, and self-enforced once -- and did not fire the second time. The
+  # mechanism holds; the attention does not.
+  #
+  # Fails CLOSED: an absent pin, an unreadable tree, or a PROGRAMME.md with no
+  # INCUMDENT all REFUSE, because each is exactly what the silent case looks
+  # like. Re-pin deliberately (`control_pin.py --pin`) after re-basing or
+  # reverting -- never to silence this.
+  # ⛔ THE INTERPRETER IS PART OF THE GUARD. If .venv/bin/python is missing, the
+  # check cannot run -- and a guard that cannot run must REFUSE, not skip. A
+  # missing interpreter is indistinguishable from a passing check to any
+  # `if ! cmd` test, which is precisely how a guard becomes decorative.
+  CPIN_PY=${CPIN_PY:-.venv/bin/python}
+  if [[ ! -x $CPIN_PY ]]; then
+    say "REFUSING TO LAUNCH: $CPIN_PY not executable — the control-pin guard cannot run, so it refuses."
+    sleep $POLL_S; continue
+  fi
+  if ! $CPIN_PY tools/control_pin.py --check >/dev/null 2>&1; then
+    say "REFUSING TO LAUNCH: control tree moved (or is unverifiable). Details:"
+    $CPIN_PY tools/control_pin.py --check 2>&1 | sed 's/^/    /'
+    sleep $POLL_S; continue
+  fi
+
   launched=0
   if (( running < MAX_SHARDS )) && (( over == 0 )); then
     while read -r SH TR CT TG SL; do
