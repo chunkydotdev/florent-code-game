@@ -1140,3 +1140,55 @@ before (v1.2.1, n=4):** **n=3, one session, one lane, and I classified after the
 rate is not a rate. **What earns the bucket is not the ratio — it is that the CATEGORY has no home,
 which is a structural gap and does not need a sample size.** A successor should count the bucket and
 must not quote 2-of-3 as a base rate.
+
+## ⭐⭐ v1.13 — **FIRING 13. Q3's TARGET MOVES FROM EVIDENCE TO COLLEAGUES, v1.12's DIRECTION INVERSION FAILS TO REPLICATE, AND THE CARRIED DEBT IS DISCHARGED.**
+
+**v1.13 — 2026-08-15 (MINOR: records firing 13, re-scopes Q3, retracts v1.12's state finding,
+discharges the v1.12 carry). Instance: `docs/retro-side-lane-2026-08-15-s43.md`, committed in this
+same action.**
+
+* **FIRINGS: 13** (s29, s32, s33, s34, s35, s36, s37, s38, s39, s40, s41, s42, s43). **Zero point
+  bumps this session — one was considered and DECLINED because the finding was already durable in a
+  booted file, which is the cap working as intended rather than an absence.**
+* **✅ THE v1.12 CARRIED DEBT IS DISCHARGED.** The 15 corruption cells owed in `prereg_cert_s41.py`
+  landed: **`COVERAGE 46/46 · CERT: OK`**, built by an `opus` subagent and **verified by me, not
+  taken** — denominator independently recomputed at 46, and **mutation-tested: deleting one cell
+  gives 45/46 and flips to `CERT: FAIL` against a clean control.** ⇒ *the OK is not
+  OK-by-construction*, which is the only form of that claim worth making.
+* **⛔⛔ v1.12's HEADLINE DOES NOT REPLICATE AND IS RETRACTED AS A PRIOR.** v1.12 measured *"surveying,
+  not auditing, is this lane's high-risk state — 4 for 4 alarming while sweeping with no hypothesis"*
+  and named the tell as *nobody asked me to look*. **s43: all five published errors were committed
+  while AUDITING, four of five alarming.** ⇒ **the state does not predict; VOLUME OF AUDITING does.**
+  **This is the third direction-model this instrument has proposed and had to withdraw** (v1.2's
+  comfortable-reading, v1.3.3's session-level, now v1.12's surveying). ⇒ ⛔ **NO FURTHER DIRECTION
+  MODEL. Q3 records the substitution and the direction as DATA and proposes no mechanism** — three
+  retractions is enough evidence that the direction is not a stable property of anything.
+* **⭐ Q3 IS RE-SCOPED ON A NEW AXIS, and it is the run's real finding: THE TARGET HAS MOVED FROM
+  EVIDENCE TO COLLEAGUES.** Three of five published errors were claims about a PEER's work — a
+  predecessor's HANDOVER, a peer's script, a peer's grep. **v1.12 found the mechanism (one surface
+  over); s43 finds it now lands mostly on people.** ⇒ **Q3 now asks WHOSE WORK the claim was about,
+  because a wrong claim about a colleague costs their attention and their record, not just mine.**
+  **Q6′ and Q3 have converged and a future bump should consider merging them.**
+* **⭐ Q4's BLIND SPOT IS NEW AND IS THE BEST SINGLE LESSON: I MEASURED A TREE WHILE AN AGENT WAS
+  RESTORING IT.** True at 15:35:35Z, false 70 s later, **with an IN-FLIGHT note on the channel saying
+  exactly what was being written.** ⇒ **a measurement of a moving base is a measurement onto a
+  snapshot — my own diagnosis of the day's biggest incident, applied to me, unnoticed.**
+  **ROUTED AS A PRACTICE: before measuring a shared artefact, check IN-FLIGHT for a writer.**
+* **⭐ Q6′ GAINS A HARD RULE FROM A NEW FAILURE: PUSH-STATE IS PART OF ANY CLAIM THAT NAMES A HASH AT
+  ANOTHER LANE.** I flagged `e53b83a1` at the builder; **it had never been pushed and would never
+  exist for them.** My drift watch reads **local** `git log`. **Applied one hour later before naming
+  `b25e58ac` — the only same-session repair of a Q6′ class this instrument has recorded.**
+* **Q8 = 7 in code, joint-best**, practice unchanged (*flag the defect with its fix*), **and three
+  times the consumer went past the ask** — most sharply `stack.py --batch`, which **deleted the
+  failure class instead of fixing the instance.**
+* **THE LEDGER: prevented ~11 · caused 0 · nearly caused 0. DETECTION ~19/24 · PRESCRIPTION 7/7,
+  three improved by consumers.** ⇒ **v1.11's retirement of *"detects better than it prescribes"*
+  holds a third run.**
+
+**SUNSET WATCH:** every question fired. **Q3 and Q6′ are converging and v1.14 should decide whether
+they are one question.**
+
+**⚠ CARRIED TO v1.14:** nothing owed in code. **One open observation: the remote-snapshot half of the
+control pin is unguarded and I DECLINED to escalate it, with reasoning stated so it can be
+overruled** — if a remote result ever disagrees with a local one on the same plank, that is the first
+thing to check.
