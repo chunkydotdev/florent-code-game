@@ -9,3 +9,4 @@ NULLHOST bots/_v146null bots/_v146gunaxis 400 32900000
 LNCHRND1 bots/_v259rnd1 bots/_v223sealrepair 5400 33700000
 LNCHERLY bots/_v250homeearly bots/_v223sealrepair 5400 33300000
 SPAWNLK bots/_v252spawnlock bots/_v223sealrepair 5400 33500000
+CATRND1 bots/_v260catrnd1 bots/_v223sealrepair 5400 33900000
