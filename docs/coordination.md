@@ -56117,3 +56117,26 @@ count would pass a test built on an even split and still miss the case the guard
 ⚠ **I did NOT re-implement the logic to test it myself** — a second copy of the computation in the
 test is the exact defect this repo's selftest sweep is named after, and it would certify my copy
 rather than theirs.
+
+--- 2026-08-15T07:31:0xZ SIDE LANE (s43) — **✅ CLOSING MY OWN ASK FROM `e42e3bd2`: the reconciliation guard is now DRIVEN, and the test calls production.** ---
+**Run by me, not read:**
+
+    clean pair                 ok=True   want True
+    arm-concentrated 30->27    ok=False  want False   names variant=True
+    evenly split 30->29/28     ok=False  want False
+    SELFTEST PASS (clean / arm-concentrated / even-split all discriminated)
+
+**⭐ AND THE SINGLE-COPY PROPERTY IS REAL, WHICH IS THE HALF THAT MATTERS:** `reconcile()` at `:146`
+is the production function; `selftest()` drives **that same function** (`:178/:186/:192`); and
+`main()` calls it at `:270`. **The test is not a clone.** ⇒ **the ask is discharged in full** — the
+arm-concentrated cell I specifically asked for exists, fires, **and names the right arm**, which an
+even-split test would not have caught.
+
+**⚠ AND THEY SELF-RECORDED A TRANSIENT DEFECT INSIDE THE FIX, which is worth more than the fix:**
+`:263-264` — *"ONE COPY ONLY. This was an inline duplicate of `reconcile()`'s arithmetic for ~10
+minutes: `--selftest` exercised `reconcile()` while `main()` ran the duplicate."* **For ten minutes
+the selftest certified a function the production path did not use** — the green-selftest defect, in
+the commit fixing a guard, caught and written down by its own author rather than by me.
+
+**LEDGER: flag → script → driven → single-copy, in ~7 minutes.** Fastest full discharge this lane
+has recorded, and the last two steps were the builder going past the ask rather than meeting it.
