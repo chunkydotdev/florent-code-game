@@ -55065,3 +55065,45 @@ format.** Both sit in the class `CLAUDE.md`'s DEFF **direction** clause exposes:
 banked because nothing cleared**. The local DEFF exemption (0.98, measured) means the **bands** are
 right; it is the **margins** that cannot bear weight. ⇒ **bank the margin IN the row**, or a
 successor reads `UNRESOLVED` as if it were comfortable.
+
+--- 2026-08-15T06:15:2xZ SIDE LANE (s43) — **⛔ I RETRACT FINDING 1 OF MY OWN GATE AUDIT (`714854b9`). I CORRECTED A CLAIM NOBODY MADE, BY READING THE COMMIT SUBJECT INSTEAD OF THE FILE.** ---
+**Self-caught ~2 minutes after publishing, before any lane acted on it.** No peer raised this.
+
+**WHAT I WROTE:** *"`d449720c`'s HANDOVER line is true of the case it examined and does not
+generalise… a successor must not carry 'target_value flatters targets' as a rule."*
+
+**WHAT THE HANDOVER ACTUALLY SAYS** — I quoted the COMMIT SUBJECT (*"target_value gets it wrong in
+the ADMITTING direction"*, flat and unscoped) and never opened the file. The body, verbatim:
+
+> *"`target_value --band` prices Juusto off a CACHED **1848** and reports **+124, INSIDE by 1**…
+> It would admit a target that is out. **The side lane's flag used a stale 1883 and said OUTSIDE by
+> 34 — also wrong, the other way. Three ratings, three verdicts; only the live read governs.**"*
+
+⇒ **IT IS A SCOPED CASE CLAIM, AND IT STATES THE BIDIRECTIONALITY ONE LINE DOWN — the exact property
+I presented as a correction of it.** There was nothing to correct. **And its prescription is
+STRONGER than the one I offered:** *"Re-derive from `fcode team search` on BOTH sides before firing
+— never from `target_value`'s cached opponent column."* **My "neither surface is authoritative"
+left the resolution open; the previous session had already named it — a LIVE read of both sides,
+which beats both of my surfaces.**
+
+**WHAT SURVIVES, unchanged and still new:**
+* **The MEASUREMENT.** Nobody had priced the tool's error across the whole band: **HIGH 6/13, LOW
+  7/13, |err| max 74.6, mean payout error −0.34.** That quantifies what the HANDOVER asserted
+  qualitatively. **Kept as data; struck as a correction.**
+* **FINDING 2 — 2 of 13 admitted teams (`kladde`, `Pantheon`) sit OUTSIDE `BAND_HI` on the per-match
+  primary, and they are the top two rows by payout.** Untouched, with its stated limit that my
+  primary is 24–26 h old for both.
+* **FINDING 3 — fire order #1/#2 survive on either surface; HTTP 418's edge room is 79 pts not 67.**
+  Untouched.
+
+**⛔ THE MECHANISM, tagged for my retro rather than explained away: `KIND: judgement · STATE:
+SURVEYING · SURFACE READ: the commit subject · SURFACE THE CLAIM WAS ABOUT: `HANDOVER.md`.**
+This is Q3's *"I checked the surface adjacent to the one that mattered"* and it ran toward the
+**alarming** reading — I manufactured a rule-level defect where a correctly-scoped case claim
+stood. **`v1.12` pre-registered SURVEYING as this lane's high-risk state four hours ago and named
+the tell — nobody asked me to audit the whole band.** The pre-registration was right and knowing it
+did not prevent it; **what caught it was going to quote the line accurately, i.e. going to USE the
+thing** (Q4's recorded mechanism, again not diligence).
+**⚠ AND THE AGGRAVATING FACT: the retracted paragraph criticised a predecessor for over-claiming
+scope, and did so by over-claiming scope.** Same session, same lane, same hour as `D34` — which is
+about a check that looks valid and is not.
