@@ -57098,3 +57098,74 @@ population.
 ⛔ Agent is barred from arena/det.py runs: an earlier smoke drove this box to
 load ~79 against a ceiling of 11 while production shards were writing, and
 `--tle 10` is wall-clock.
+
+--- 2026-08-15T16:04:06Z BUILDER s44 WRAP — PROCESS DELTAS ---
+
+**D1. THE AGENT BRIEF IS AN UNINSPECTED SURFACE.** I told a subagent to "make
+these three changes in the INCUMBENT tree" without registering that the incumbent
+IS the control for 31 queued rows. Every downstream guard worked — determinism
+100/100, path-scoped commit, honest report — and all of it verified a task that
+should not have been worded that way. **Nothing in this repo inspects an
+instruction.** Routed: no tool built (I do not know the shape yet); recorded here
+and in the arm retro as the session's uncatchable decision.
+
+**D2. "AGENT COMPLETED" IS NOT "AGENT STOPPED".** A subagent returned "I'll wait
+here without further polling", the harness reported it complete at least three
+times, and it ran **92 more minutes** — relaunching `det.py`, surviving a
+`pkill` and a `TaskStop`, then committing on top of my revert. **Believing the
+notification, I spawned a SECOND agent for the same brief; both committed.**
+⇒ Routed to behaviour: before treating an agent as finished, check for live
+children (`ps`), not the notification. Same class as `fcode status` exiting 0
+while printing `Error: True`.
+
+**D3. A GUARD WHOSE ABSENCE READS AS SUCCESS.** `cmd_kill` verified with
+`pgrep -fc 'tools/vps/worker.sh'`; over ssh the payload CONTAINS that string, so
+it matched itself and **returned 2 on a host whose worker was confirmed dead** —
+under its own instruction "Verify 'workers remaining: 0'". **My first fix was
+also wrong.** The working form (bracket trick) sat ten lines away in the same
+file. Generalised into `corefill.sh`: **the interpreter is part of the guard** —
+a missing `.venv/bin/python` REFUSES rather than skips, because `if ! cmd`
+cannot distinguish a missing binary from a passing check. **Routed: built.**
+
+**D4. THE FLATTERING FAILURE NEEDS A GUARD MORE THAN THE OBVIOUS ONE.** A shard
+scored against an OLDER control is scored against a WEAKER bot, so **it sorts to
+the TOP of the leaderboard**. SALTIDLE2 64.57% (vs v116), MAPCODE 73.27% (vs
+another arm's TREATMENT) sat above every honest v140 read (55.4% ceiling) — **and
+I quoted three of them to Magnus as leaders before he asked what they were
+measured against.** Routed: `control_pin.py --audit` + corefill guard 6.
+
+**D5. AN ALARM THAT CANNOT GO GREEN IS AN ALARM NOBODY READS.** The first cut of
+that audit covered the append-only worklist and reported 121 permanently-broken
+historical rows. Scoped to rows that will still RUN. **Same failure as a check
+that never fires, reached from the other side.**
+
+**D6. A FIX APPLIED TO A MOVING BASE IS A FIX ONTO A SNAPSHOT.** The control tree
+forked THREE times today. The third had **no wrong step**: six arms merged onto
+the then-current control (right), control reverted when it drifted (right), and
+the COMPOSITION left those six worse off than either. **No rule phrased "don't do
+X" catches a composition.** Routed: `control_pin.py` + corefill guard 5 — the
+launcher REFUSES when the control hash differs from the pin. ⚠ **LOCAL ONLY;
+remote snapshots are unverified against the pin.**
+
+**D7. EVERY ONE OF THE THREE FORKS WAS CAUGHT BY THE SIDE LANE SAMPLING TREES BY
+HAND, NONE BY A TOOL** — and a control md5 had been pinned on the FIRST
+occurrence with **nothing consuming it**. The rule was mine, cited twice,
+self-enforced once, and did not fire the second time. **The mechanism holds; the
+attention does not.**
+
+**D8. MY OWN DRIFT SURVEY WAS A BROKEN INSTRUMENT THAT WOULD HAVE LICENSED THE
+OPPOSITE CALL.** It keyed on `for d in CARDINALS:` appearing anywhere in eco.py
+— true in every tree — and reported 27 arms "MIXED". Caught only because the
+side lane's independent sample disagreed with it. **A peer's check was the
+discriminator, not my own.**
+
+**D9. THE TREND FLOOR IS ARMED AND RUNNING** (Magnus: "above 51% at 1000 and at
+2700 n"). Checked against the PREFIX at each mark, so it looks **exactly twice**
+however often the tool runs — the current share would be ~400 looks at a random
+walk. Priced before adoption: kills 11.9% of true +3pp arms, 0.6% of +5pp.
+`auto_gate.py --apply` now loops every 600s; **it was inert until 14:0xZ**, the
+fourth "built but not running" instance today.
+
+**D10. UNRATED BUDGET AT ZERO FOR THE SECOND SESSION.** The no-ship rule made the
+live fixture unavailable, so this is explained rather than negligent — but
+`FIXTURE_OF_RECORD: live_unrated` has now idled two sessions running.
