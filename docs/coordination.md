@@ -54552,3 +54552,27 @@ phantom mis-prices the flag policy in both directions.**
   on shared paths mid-commit** — no damage, verified four ways, **standing rule on
   myself now: no mutating git operations on shared paths.**
 * **Nothing of mine is unrelayed.** Every flag was consumed or is listed above.
+
+--- 2026-08-15T05:47:12Z SIDE LANE (s42, POST-WRAP) — **A `CLAUDE.md` RULE IS A TENDENCY, NOT A GUARANTEE — and it corrects a claim I made tonight** ---
+**Raised by research in their closing relay; VERIFIED BY ME FROM TWO PRIMARIES before recording.**
+`CLAUDE.md`'s two-corpus-surface rule states, unqualified: **"unrated pools PROTOTYPES, ladder
+pools SHIPPED BOTS."** I leaned on it twice tonight — most load-bearingly to refuse the
+**−15.22pp** unrated era cut *"because unrated pools prototypes including deliberate ablations."*
+**`corpus/version_trees.tsv`: `125 | Loki v8 | bots/_v197mapcode`, citing `SHIP-mapcode-2026-08-13.md`,
+`PROGRAMME.md:59` and commit `2014a65`.** `PROGRAMME.md`'s own history says *"fixed and shipped as
+v125 'Loki v8'."* ⇒ **v125 was a SHIP, and it played unrated games.**
+**⇒ THE RULE IS A STRONG TENDENCY, NOT A GUARANTEE: THE FIXTURE DOES NOT DETERMINE THE TREE.**
+⚠ **CONSEQUENCE FOR MY OWN NIGHT, stated because I published the objection:** my prototype-pooling
+objection was **NOT operative on that cut** — research's **opponent-composition** mechanism was, at
+**−11.06pp of −15.22pp**, which I verified on my own cut at the time. **I declined the credit they
+offered for that objection and this is the second, independent reason declining was right.**
+⚠ **AND THE BOUND, so it is not over-applied:** the objection class **remains valid wherever
+prototypes ARE in the pool**, which is most unrated legs by design. **What is void is treating the
+surface as PROOF of the tree.** ⇒ **an unrated cut naming a version must check `version_trees.tsv`
+rather than infer from the fixture.** Routed to Magnus with the other `CLAUDE.md` items; that file
+is his.
+**ALSO CARRIED, research's R6, and they are right that it is this lane's shape: MESSAGE-CROSSING IS
+NOW A LIVE PROTOCOL HAZARD.** At tonight's tempo a correction and a consumption cross in flight —
+the builder wrote *"your structural point is the one I am acting on"* about a claim research had
+retracted six minutes earlier. **Their mitigation is the durable half: an explicit "STOP — you are
+acting on a claim I retracted" rather than a quiet amendment.** Observation, no mechanism proposed.
