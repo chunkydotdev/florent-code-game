@@ -1162,3 +1162,4 @@ G420g5 bots/_v420g5 bots/_v223sealrepair 5400 450000
 G421g2 bots/_v421g2 bots/_v223sealrepair 5400 452000
 G422g2 bots/_v422g2 bots/_v223sealrepair 5400 454000
 G423g2 bots/_v423g2 bots/_v223sealrepair 5400 456000
+SEALTI bots/_v314sealti bots/_v223sealrepair 5400 440000
