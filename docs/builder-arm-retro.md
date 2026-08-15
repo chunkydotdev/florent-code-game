@@ -1179,3 +1179,93 @@ every road — the useful version names WHICH throttle was never lifted.*
 **FIRINGS this instance: 5** (Q2 direction 6-of-7, Q3 trusted-on-first-output
 twice, Q4 five unbanked closures + a stale provenance record, Q5 the guard and its
 guarded action in one block, Q7 the unwired `--fire` tier).
+
+---
+
+# INSTANCE — s44, 2026-08-15. FIRINGS: 6.
+
+Run at Magnus's wrap-call, 2026-08-15T16:03:30Z. Answered from commits, logs and the platform.
+
+### 1. VERDICTS — did each carry exactly what its interval supports?
+**Three typed.** (a) *Contention does not demonstrably bias local shards* —
+−0.38pp [−1.37, +0.62] within-shard across 22 shards / 505k rows, stated as
+**not excluded** rather than "no effect", and I named that the interval still
+admits ~1.4pp of harm. ✅ (b) *The honest ceiling against v140 is 55.4%, not 65%* —
+carried its denominator and its control. ✅ (c) *ARM C / F317RAIDPEC is
+unattributable* — scoped to the DESIGN, explicitly not a prediction of the
+result, because "test don't reason" forbids the latter. ✅
+**The sentence I was tempted to write instead:** *"contention is fine"*.
+
+### 2. WHAT I RETRACTED, AND WHICH DIRECTION THE ERROR RAN
+**Four, and THREE RAN FLATTERING — the same signature as s29.**
+* ⛔ **"Contention effect EXCLUDED"** — a units bug (fractions vs pp) shrank a
+  0.81pp half-width to 0.01. **It manufactured a clean bill of health**, which
+  is what I wanted to be true so the fleet could keep running at 8/8.
+* ⛔ **SALTIDLE2 quoted to Magnus as a 64.57% leader.** Its control is v116 and
+  its treatment's main.py/raid.py are byte-identical to v140. **I read the share
+  and not the pairing, on the one board Magnus was reading.** He caught it.
+* ⛔ **Implied the runaway det.py runs were the side lane's.** They were my own
+  session's children. The side lane traced parentage; I asserted.
+* ✅ One ran AGAINST me: reporting the first cleanup agent as "stalled, delivered
+  nothing" — it was alive and working, which was worse for me, not better.
+**Diagnostic: the errors point somewhere. All three flattering ones moved toward
+"the thing I just did is fine".**
+
+### 3. INSTRUMENTS — driven to BOTH verdicts?
+**Built:** `control_pin.py` (9 selftest cells + live forced-fail on the real
+control), corefill guards 5 & 6 (both driven refusing AND passing on the live
+worklist), orchestrate `cancel` (both guards, live, on two hosts), auto_gate
+TREND-FLOOR (11 cells incl. the optional-stopping pair).
+⛔ **FIRES: my control-drift SURVEY was a broken instrument that would have
+licensed the opposite call** — it keyed on `for d in CARDINALS:` appearing
+anywhere in eco.py, matched unrelated loops in every tree, and reported 27 arms
+"MIXED". **Caught only because the side lane's independent sample disagreed.**
+⛔ **FIRES: `cmd_kill`'s worker count could never return 0** (pgrep matching its
+own ssh payload) — and **my first fix was also wrong**, with the correct
+implementation ten lines away in the same file.
+
+### 4. CLAIMS AHEAD OF THEIR RECORD
+⛔ **FIRES, mechanically, on my own file.** `claim_check.py` at wrap:
+`control_pin.py: claims a mutation test, NO record in docs/legs or docs/research
+names it`. The selftest exists and was run — **but the record is the artefact,
+and I did not write one.** Same pattern s28 recorded: run the check, watch it
+pass, treat the passing as the artefact.
+
+### 5. THE SLOT AND THE HOLDER
+**I made zero submissions and zero activations — the no-ship rule held.**
+⭐ **But the slot moved twice without us: v150 (~35 min, −24.65 Elo per research's
+decode) and v151 "Loki v10 turbo (CPU)", uploaded by x3r0 15:54 and ACTIVE at
+wrap.** Per Magnus, an x3r0 ship stays. **Rating 1720 → 1707 on the newest row.**
+
+### 6. WHAT THE BUDGET BOUGHT
+**Unrated/platform budget: ZERO fired.** Not a debit today — the no-ship rule
+made the live fixture unavailable — but it is the second session in a row where
+`FIXTURE_OF_RECORD: live_unrated` sat at 0% utilisation.
+**Local cores: 8/8 saturated all session; ~32,400 games of unattributable
+contrast STOPPED before spending** (6 stale-treatment arms + ARM C), and
+6,102 rows cancelled under the new trend floor.
+
+### 7. WHAT A SUCCESSOR CANNOT RECONSTRUCT
+* **The control tree forked THREE times and every occurrence was caught by
+  another lane sampling trees by hand.** Now guarded — but the guard is LOCAL
+  only; remote snapshots are unverified against the pin.
+* **"Agent completed" does not mean "agent stopped".** One subagent ran 92
+  minutes past its completion notification, survived a pkill and a TaskStop, and
+  committed on top of my revert.
+* **The CPU cleanup I reverted locally is LIVE on the ladder as x3r0's v151.**
+  ⇒ our control (v140) and the live bot have DIVERGED, so "beat 140" and "beat
+  what is live" are no longer the same instruction.
+
+---
+
+## Did I make a decision today that the machinery could not have caught?
+
+**Yes, and it is the brief.** I told an agent to "make these three changes in the
+INCUMBENT tree" without registering that **the incumbent IS the control for 31
+queued rows.** No gate inspects an agent brief. Every downstream guard fired
+correctly — determinism passed, the commit was path-scoped, the agent reported
+honestly — **and all of that was verification of a task that should not have been
+worded that way.** The machinery inspects the WORK; nothing inspects the
+INSTRUCTION. That is the s28 lesson (the machinery never asks whether the
+question is worth answering) relocated one step earlier, from the experiment to
+the brief that orders it.
