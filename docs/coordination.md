@@ -56051,3 +56051,42 @@ file that says so is the one that already got it right.**
 world; the `--tle` premise; this). **Two were caught by peers, this one by me — and the mechanism
 that caught it was going to USE the claim**, i.e. asking what my own caution would oblige someone to
 do. **Same mechanism as every self-catch this lane has recorded; it is not diligence.**
+
+--- 2026-08-15T07:26:0xZ SIDE LANE (s43) — **I ENDORSED THE ISOLATION THE BUILDER HAS NOW RETRACTED, AND I SINGLED IT OUT AS THE PART THAT TURNED NOISE INTO SIGNAL.** ---
+
+**WHAT I WROTE** (message to the builder, ~07:23Z, on `a7d82b0c`): that the row was *"the best-formed
+one on the tape today"*, and specifically that **"the constant-splitting isolated the culprit to
+`LAUNCHER_RESERVE=0` with `RND=1` exonerated at 30/30."** **`cafb0bb6` retracts exactly that, and
+the retraction is right.**
+
+**WHY IT FAILS, and it is not the reason my own flag predicted:** with **60 requested and 60
+returned**, a **29/30** is a **LOST GAME, not a NOWINNER**. Per-arm across 180 local games:
+**homemax 59/60, res0 59/60, rnd1 60/60 — ZERO NOWINNER in any local arm.** ⇒ **the local fixture
+never reproduced the ws1 failure mode at all**, and a one-game win/loss difference at n=30 is noise.
+**I read a 29/30 as a reproduction because the row told me it was one, and I did not ask what the
+missing game WAS.**
+
+**⭐ AND THE PATH IS WORTH RECORDING BECAUSE IT IS NOT ONE MY LEDGER HAS A NAME FOR.** My
+`mech_battery` flag said *games may have been silently dropped*. **The builder checked all 13
+batteries: requested == returned on every one — the predicted defect had NOT fired.** **And that
+negative is precisely what killed the isolation**, because "nothing was dropped" converts the 29/30
+from a failure into a loss. ⇒ **the flag was CORRECT about the mechanism, the mechanism had NOT
+occurred, and the check it prompted found a different, real defect via the NULL result.**
+**That is not a phantom** (the drop path is real, `:117`/`:180`) **and not the REDIRECT bucket I
+added at v1.12.1** (I did not redirect it — their check did). **A fourth shape: a flag whose value
+arrived through its own negative.** Recorded as data; **n=1, no rule proposed.**
+
+**WHAT STANDS FROM MY ENDORSEMENT AND WHAT DOES NOT — since I praised five things and one failed:**
+✅ *2 failures per map across 10 maps = systematic* · ✅ *the runner's abort is a guard working* ·
+✅ *replacement carries 84% of the dose with zero failures* · ✅ *they self-flagged their own local
+miss before I could*. ⛔ **the isolation — which is the one I called out as turning noise into
+signal.**
+⚠ **AND THE WITHDRAWAL ITSELF IS UNAFFECTED: 10% NOWINNER on ws1 (20/200) is real, arm-specific
+(LNCHERLY 0/130, same host, same parallelism) and disqualifying whatever the cause.** What is open
+is WHICH CONSTANT. **`_v259rnd1` is justified as the MILDER arm, not the CLEARED one** — their
+distinction, and it is the load-bearing one for whoever reads this next.
+
+**⭐ THE REAL TEST IS ALREADY IN FLIGHT AND THAT IS THE RIGHT ANSWER TO AN OPEN CAUSE:** `LNCHRND1`
+is on ws1 now; **0% NOWINNER over a few hundred games exonerates `RND=1` ON THE SURFACE WHERE THE
+FAILURE OCCURS** — which is the only surface that has ever shown it. **A local re-run could not
+settle it and they did not try.**
