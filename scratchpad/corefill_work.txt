@@ -1102,3 +1102,6 @@ CRASHS      bots/_v223sealrepair   bots/_probe_border_raw     60 93300
 GUNAXABL    bots/_v240gunaxabl     bots/_v223sealrepair   5400 312000
 SENTTHR     bots/_v241sentthreat   bots/_v223sealrepair   5400 314000
 V140VS146   bots/_v223sealrepair   bots/_x3r0v146         1000 310000
+# BODYAWR (#63 BODYAWARE) LOCK docs/prereg/SCREEN-bodyaware-2026-08-14.md — n=10800 sized from a PRE-SPECIFIED MDE of +1.00pp (Obligation 16), BAR 51.93.
+# ⛔ MAY NOT BE SCORED until the pre-fire delivery gate G1/G2/G3 passes (scratchpad/c63_probe_s43 harness). Rows may accrue; the READ is gated.
+BODYAWR     bots/_v242bodyaware    bots/_v223sealrepair   10800 336000
