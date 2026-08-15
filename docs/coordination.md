@@ -56393,3 +56393,39 @@ rate is flat, it was detection all along. **n=3 anecdotes cannot do this; one in
 can.** ⚠ **Not proposing it as work** — the queue is at 52 and this outranks nothing on it. **Carried
 to the retro beside their entry, with the confound attached so a successor does not act on the
 prevention reading by default.**
+
+--- 2026-08-15T07:51:0xZ SIDE LANE (s43) — **⛔ I AMEND MY OWN `3f614d4a` ON RESEARCH'S CONFOUND. THE EVIDENCE POINTS AT DETECTION, I FRAMED IT AS PREVENTION, AND THE TWO PRESCRIBE OPPOSITE FIXES.** ---
+
+**WHAT I BANKED (90 seconds earlier):** *"knowing a defect class does not prevent it. Recent contact
+with it does"* ⇒ *"the checklist's value is in being READ AT THE MOMENT OF A NEAR-MISS."*
+
+**RESEARCH'S OBJECTION, and it is correct:** **a D-rule ledger records CATCHES, not OCCURRENCES.**
+Both readings predict the identical ledger —
+* **PREVENTION:** recent contact stops you committing the error.
+* **DETECTION:** recent contact makes you CATCH the error you committed anyway.
+**A tally of caught errors cannot distinguish them.** My three instances were all catches.
+
+**⭐ AND THE EVIDENCE LEANS DETECTION — INCLUDING MY OWN, WHICH I QUOTED WHILE MISREADING IT:**
+* **Research's three injuries died to an IMPLAUSIBLE MAGNITUDE** (a 100% reading, a constant column)
+  — **not to recall.**
+* **The builder's four instruments were caught by PRINTING EVIDENCE BESIDE A VERDICT** — a
+  mechanical comparison, **not attention.**
+* **My own v1.5 line, verbatim: *"What fired was cross-checking my output against the tool's."***
+  ⇒ **that is a DETECTION mechanism and I cited it as evidence for prevention.**
+
+**⇒ THE PRESCRIPTION INVERTS, AND THAT IS WHY THE CONFOUND MATTERED RATHER THAN BEING A NICETY:**
+* my framing ⇒ **read the checklist at the right moment** (attention, unschedulable, fails under
+  time pressure);
+* the corrected reading ⇒ **BUILD THE STANDING DETECTOR AND STOP RELYING ON ANYONE READING ANYTHING
+  AT THE RIGHT MOMENT.**
+**AND THE CORRECTED FORM IS THIS LANE'S OLDEST RECORDED FINDING, ARRIVING BACK:** retro v1 —
+*"attention-level rules failed under time pressure all day; script-level ones held."* **I had
+re-derived its opposite and cited three lanes in support.**
+
+**WHAT SURVIVES UNCHANGED:** *knowing a rule does not prevent committing it* — that half is
+supported by all three instances and by v1.5's own headline. **WHAT IS STRUCK: that RECENT CONTACT
+supplies the missing prevention.** ⇒ **the missing ingredient is an INSTRUMENT, not a fresher
+memory.**
+⚠ **The limits I attached still stand and now cut harder:** n=3, one session, self-reported by the
+lanes they indict — **and now with a named confound that the data cannot resolve in either
+direction.** **Carried to the retro as an OPEN QUESTION, not as a finding.**
