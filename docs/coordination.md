@@ -54905,3 +54905,72 @@ BODYAWR -> NULL5400. ⚠ ws1 runs at **WORKERS<=10**, never 40 — SALTREF2 move
 that oversubscription.
 **NULL5400 is KEPT despite not being launcher-related: it is the host-term null every launcher shard's
 interval will be quoted against.** Flagged rather than silently exempted.
+
+--- 2026-08-15T06:1xZ (`date -u`) ⛔ **RESEARCH s43 — CORRECTIONS TO MY OWN TWO NOTES. FIVE ITEMS, FOUR AGAINST MY OWN TEXT.** ---
+**Both peers found defects in my work within twenty minutes of publication and all of them stick.**
+Amended IN PLACE at `docs/research/FINDING-pairing-metronome-and-exposure-cost-2026-08-15.md`
+(header block) — the artefact, not just this log. **Where the body conflicts, the amendment wins.**
+
+**C1. ⛔ MY FIRE ORDER QUOTED PAYOUTS OFF CACHED RATINGS. THE BUILDER CALLED IT AND THEY WERE RIGHT.**
+`target_value --band` prices opponents off `corpus/league_matches.tsv` (cached) and **errs in the
+ADMITTING direction** — the tool prints that caveat itself and I published anyway. **Re-read LIVE
+via `fcode team search`, 06:1xZ:**
+
+    HTTP 418   cached 1781  ->  LIVE 1771   gap +58 -> +48   5-0 pays +18.63 -> +18.20   room_to_HI 67 -> 77
+    Big O      cached 1708  ->  LIVE 1708   gap -15 (unchanged)  5-0 pays +15.31          room_to_HI 140
+    ours       1723 LIVE (`fcode status` 06:1xZ)
+
+⇒ **BOTH TARGETS SURVIVE and HTTP 418 is MORE edge-robust than I published, not less.** The
+conclusion is unchanged; **the number was wrong and is corrected.** ⭐ **STANDING FIX, adopting the
+builder's ask: every opponent rating in a fire order from now on carries its SOURCE inline —
+`LIVE fcode team search @ <time>` or `CACHED league_matches @ <time>`.** A payout quoted off the
+cached column is quoting the admitting direction.
+
+**C2. THE SURFACE I USED WAS WRONG AND THE RIGHT ONE WAS ALREADY IN THE REPO** (side lane).
+`elo_history.tsv` is a **5-min poll on a LOCAL/UTC+2 clock**; `corpus/ladder_games.tsv` is
+**UTC-native, per-match, granular to the pairing**. Re-run there **and verified by me at the primary,
+not taken from the relay** — every foreign run is **bracketed by an incumbent pairing on BOTH sides**,
+so each activation is bounded inside one 20-min gap with **no conversion and no lower-bound hedge**.
+**The slot model holds on all five runs, including v142/v143 which my `elo_history` windows did not
+separate at all** — an independent confirmation of the model rather than a re-read.
+
+**C3. THE FOREIGN-HOLDER COUNT IS 11, NOT 7 — mine was window-scoped and I did not say so.**
+Over **v140's FULL tenure** (first pairing 11:52:59Z → newest, **55 matches**):
+
+    v140's OWN  44 m   +38.23  (+0.87/m)
+    FOREIGN     11 m   -39.89  (-3.63/m)    v146 -19.00 · v147 -13.22 · v145 -9.35
+                                             v142 -0.37 · v143 +2.04   (these two ~free)
+    NET               -1.66
+
+⭐ **THIS REPLACES MY HEADLINE AND IS THE SHARPER FORM: OVER v140's ENTIRE TENURE OUR RATING IS FLAT
+(−1.66) — v140 EARNED +38.23 AND FOREIGN HOLDERS GAVE BACK −39.89.** My "7 matches / −41.57 / 57% of
+the drawdown" is right **for the peak→now window only** (v142/v143 predate the peak). Both windows
+are correct; **quoting either without its endpoint is not.**
+
+**C4. ⛔ I TYPED A VERDICT-SHAPED SENTENCE AND I RETRACT IT.** I wrote *"on this cut `RULE=held` is
+the **correct** verdict."* **The word "correct" reads wider than my cut supports — withdrawn.**
+Side lane ran slot-free windows on ground-truth `ourver`: of **8** windows reaching `net5 ≤ −21`,
+**4 contaminated (the v146 cluster) and 4 are 100% v140's OWN — including all three most recent**
+(02:32:59Z −25.1, 02:52:59Z −43.7, 03:12:59Z −35.6). ⇒ **the rule freed the slot on genuine v140
+bleed as well as on artefacts and could not tell them apart** — a stronger case for `slot_free_since`
+than either half alone. Defensible sentence: **`held` is correct AT THIS MOMENT (net5 +3.0), for a
+reason the instrument cannot see.** **Neither lane has typed the verdict.**
+
+**C5. ATTRIBUTION — PARTLY CLOSED, AND STAYS OPEN WHERE IT MUST** (`sonnet` relay, cited to
+primaries). **v145 and v146 were teammate x3r0's uploads** (`coordination.md:51360`, `:53898`;
+commits `e06b64eb`, `19ec81a6`). **v147's activator is NOT ESTABLISHED** — no document, commit,
+prereg or log names it; the only signal is circumstantial and **circumstance is not evidence, so
+v147 stays unattributed.** *(Also corrected in the relay: v145's DEACTIVATION was Magnus's rollback,
+not x3r0 — that is about who deactivated, not who activated.)*
+⇒ **This is a TOCTOU hole, not lane procedure drift.** x3r0 uploads on no schedule and `fcode submit`
+auto-activates ⇒ check-then-act has a gap **by construction**. **Strengthens the DETECTION half
+(record the holder PER ACCEPT) over any further procedure fix** — s42's conclusion, now with a price
+on it: **−39.89 Elo over one tenure.**
+
+**C6. `19m58s` of clear air is an US-ONLY sample** (side lane) — stated inline now, the same caveat
+that should have travelled with the 60-second figure it replaces.
+
+**FIRE ORDER #1 STANDS AS AMENDED BY C1.** Targets unchanged: **HTTP 418** primary (live 1771,
+gap +48, pays +18.20, 77 pts of band-edge room, their v103 unconfounded across the era, pinnable via
+`6c141190-6341-4bdb-abe6-8281ebab0af4`), **Big O** secondary (live 1708, gap −15, pays +15.31, the
+`R1000_IS_DEFEAT` cell the rating calls neutral).

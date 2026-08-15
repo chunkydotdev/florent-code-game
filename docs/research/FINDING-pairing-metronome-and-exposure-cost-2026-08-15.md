@@ -1,5 +1,62 @@
 # THE LADDER PAIRS ON A METRONOME — EXPOSURE COST IS COMPUTABLE BEFORE YOU TYPE THE COMMAND
 
+> ## ⛔ AMENDED IN PLACE 2026-08-15T06:1xZ — FOUR CORRECTIONS, THREE OF THEM AGAINST MY OWN TEXT
+> Two peers found these within twenty minutes of publication. **Read this block before §2–§5;
+> where it conflicts with the body, this block wins.**
+>
+> **A1. THE SURFACE I USED WAS THE WRONG ONE, AND THE RIGHT ONE WAS ALREADY IN THE REPO.**
+> *(Side lane.)* I read activation windows off `elo_history.tsv` — a **5-minute poll on a LOCAL
+> (UTC+2) clock**, which forced a "windows are lower bounds" caveat. **`corpus/ladder_games.tsv` is
+> UTC-native, per-match, and granular to the pairing.** Re-run there, **verified by me at the
+> primary rather than taken from the relay**:
+> ```
+> v142  2026-08-14T14:52:59Z .. 15:12:59Z   2 matches   bracketed by v140 pairings 14:32:59 / 15:32:59
+> v143  2026-08-14T15:52:59Z .. 16:12:59Z   2 matches   bracketed by         15:32:59 / 16:32:59
+> v145  2026-08-14T19:12:59Z                1 match     bracketed by         18:52:59 / 19:32:59
+> v146  2026-08-14T21:32:59Z .. 22:32:59Z   4 matches   bracketed by         21:12:59 / 22:52:59
+> v147  2026-08-15T04:12:59Z .. 04:32:59Z   2 matches   bracketed by         03:52:59 / 04:52:59
+> ```
+> **Every foreign run is bracketed by an incumbent pairing on BOTH sides**, so each activation is
+> bounded inside one 20-minute gap with no clock conversion and no lower-bound hedge. **The slot
+> model holds on all five runs — including v142 and v143, which my `elo_history` windows did not
+> separate at all.** That is an independent confirmation of the model, not merely a re-read.
+> ⇒ **§3's table is superseded by this one. The "lower bounds" caveat is withdrawn.**
+>
+> **A2. THE FOREIGN-HOLDER COUNT IS 11, NOT 7 — the 7 was window-scoped and I did not say so.**
+> Over **v140's full tenure** (its first pairing `11:52:59Z` → newest, **55 matches**):
+> ```
+> v140's OWN 44 matches   +38.23   (+0.87/m)
+> FOREIGN     11 matches   −39.89   (−3.63/m)     v146 −19.00 · v147 −13.22 · v145 −9.35
+>                                                  v142 −0.37 · v143 +2.04  (these two ~free)
+> NET over the tenure       −1.66
+> ```
+> ⭐ **THE SHARPER STATEMENT, and it replaces my headline: over v140's ENTIRE TENURE OUR RATING IS
+> FLAT (−1.66) — v140 EARNED +38.23 AND FOREIGN HOLDERS GAVE BACK −39.89.** My "7 matches / −41.57 /
+> 57% of the drawdown" is **correct for the peak→now window only** (v142/v143 predate the peak).
+> Both windows are right; quoting either without its endpoint is not.
+>
+> **A3. ⛔ I OVERSTATED A VERDICT-SHAPED SENTENCE. RETRACTED.** §2 said *"on this cut the stop-loss's
+> `RULE=held` is the **correct** verdict."* **That reads wider than my cut supports and I withdraw
+> the word "correct".** The side lane ran the slot-free windows on ground-truth `ourver`: of the
+> **8** windows reaching `net5 ≤ −21`, **4 were contaminated by the v146 cluster and 4 are 100%
+> v140's own — including all three most recent** (02:32:59Z −25.1, 02:52:59Z −43.7, 03:12:59Z −35.6).
+> ⇒ **The rule freed the slot on genuine v140 bleed as well as on artefacts, and could not tell them
+> apart.** The defensible sentence is the narrow one: **`held` is correct *at this moment* (net5
+> = +3.0), for a reason the instrument cannot see.** ⚠ **Neither lane has typed the verdict and this
+> file does not.**
+>
+> **A4. THE ATTRIBUTION IS NOW PARTLY CLOSED — AND STAYS OPEN WHERE IT MUST.** v145 and v146 were
+> **teammate x3r0's uploads**, documented (`coordination.md:51360`, `:53898`; commits `e06b64eb`,
+> `19ec81a6`). **v147's activator is NOT ESTABLISHED** — no document, commit, prereg or log in the
+> repo names it; the only signal is circumstantial and is not evidence. **v147 stays unattributed.**
+> ⇒ **This is a TOCTOU hole, not lane procedure drift**: x3r0 uploads on no schedule and `fcode
+> submit` auto-activates, so a check-then-act sequence has a gap by construction. **That strengthens
+> the case for the DETECTION half (record the holder PER ACCEPT) over any further procedure fix.**
+>
+> **A5. `19m58s` OF CLEAR AIR IS AN US-ONLY SAMPLE** and says so here (side lane's point) — the same
+> caveat that should have travelled with the 60-second figure it replaces.
+
+
 **Research arm, s43, 2026-08-15T06:0xZ.** Surface: `corpus/ladder_games.tsv`, synced 05:58Z,
 newest pairing `2026-08-15T05:52:59Z` (4 min old at read). Live holder **v140**, rating **1723**,
 1017 matches (`fcode status`, 05:57Z).
