@@ -1107,3 +1107,12 @@ V140VS146   bots/_v223sealrepair   bots/_x3r0v146         1000 310000
 BODYAWR     bots/_v242bodyaware    bots/_v223sealrepair   10800 336000
 # NULL5400 — host-term measurement. Byte-identical arms (md5-verified all 4 files): ANY deviation from 50.0 is a pure host term.
 NULL5400    bots/_v146null         bots/_v146gunaxis      5400 344000
+# ===== s44 LAUNCHER QUEUE (Magnus: "our cores need to work for us today, queue
+# up all you can muster"). These sit BEHIND BODYAWR and NULL5400 because the
+# filler runs MAX_SHARDS=1 — deliberate: BODYAWR reads 53.62% [52.57,54.68]
+# against a 51.93 bar, i.e. 0.64pp of margin at the lower bound, and SALTREF2
+# measured contention moving a null 2.67pp. I will not spend our strongest
+# result to fill idle cores; the two REMOTE boxes absorb the parallelism instead.
+SEALQ    bots/_v265sealquiet    bots/_v223sealrepair   5400 350000
+CATRND1L bots/_v260catrnd1      bots/_v223sealrepair   5400 352000
+SPAWNLKL bots/_v252spawnlock    bots/_v223sealrepair   5400 354000

@@ -1,0 +1,26 @@
+# HOST CAPACITY — the number WORKERS must be sized against.
+#
+# ⛔⛔ `nproc` IS THE WRONG INSTRUMENT AND IT OVERSTATES US. It reports the
+# MACHINE's logical CPUs, not what our user account may actually use. On
+# work-server-1 nproc says 16 and OUR ALLOCATION IS 10 — a 60% overstatement.
+# Sizing WORKERS off nproc there puts a shard at 1.6x oversubscribed, which is
+# the SALTREF2 condition (WORKERS 40 on 16 moved a byte-identical null 2.67pp,
+# and that is why the original SALTREF null did not replicate).
+#
+# WHY THIS FILE EXISTS (Magnus, 2026-08-15, s44, asking "Dont we document the
+# vps machines we have? Why did you assume this number?"). The honest answer was
+# that we did NOT: scratchpad/vps/hosts.txt carried hostnames only, and
+# docs/vps-workers.md had no core count anywhere. I inherited "ncpu=16" for
+# work-server-1 from a HANDOVER sentence about SALTREF2 and then GENERALISED it
+# to work-server-2, which I had never measured at all. It is 6. So ws2 ran a
+# host-term NULL at WORKERS=10 on 6 cores — 1.67x oversubscribed — for 140 rows
+# before Magnus corrected me. Those rows were abandoned, not resumed.
+# `coordination.md:51798` records the SAME class of error already: "work-server-1
+# is ncpu=16, not the recorded 48". The number has now been wrong three times;
+# this file is so it stops being carried in prose.
+#
+# RULE: WORKERS <= our_cores. Never size against nproc.
+#
+# host                  nproc   our_cores   source
+worker@work-server-1    16      10          Magnus 2026-08-15 s44: "Our user is limited to 10 cores on ws1"; nproc measured 16 via orchestrate status
+worker@work-server-2    6       6           Magnus 2026-08-15 s44: "ws2 is 6 cores"; nproc measured 6 — machine and allocation agree

@@ -263,7 +263,7 @@ cmd_status() {
   # byte-identical. A heartbeat older than ~10 min with no worker process is
   # DEAD, not "in progress".
   r_exec '
-    echo "host: $(hostname)   utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    echo "host: $(hostname)   utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)   NPROC: $(nproc 2>/dev/null || echo UNKNOWN)"
     if [ -r /proc/loadavg ]; then echo "load: $(cut -d" " -f1-3 /proc/loadavg)"; else echo "load: $(uptime | sed "s/.*averages*: *//")"; fi
     echo "runners: $(ps ax -o command= 2>/dev/null | grep -c "[f]code run")   worker: $(ps ax -o command= 2>/dev/null | grep -c "[w]orker.sh")"
     [ -f STOP ] && echo "*** STOP FILE PRESENT ***"
@@ -365,6 +365,33 @@ EOF
 NO_CURFEW_HOSTS=${NO_CURFEW_HOSTS:-work-server-2}
 cmd_start() {
   W=${ARGS[0]:-}
+  # ⛔⛔ SIZE WORKERS AGAINST OUR ALLOCATION, NEVER AGAINST nproc. `nproc` reports
+  # the MACHINE; on work-server-1 it says 16 while our user may use 10. Sizing off
+  # it puts a shard at 1.6x oversubscribed — the SALTREF2 condition, which moved a
+  # byte-identical null 2.67pp and is why the original SALTREF null did not
+  # replicate. Added s44 after I started a host-term NULL on a 6-core box at
+  # WORKERS=10 (1.67x) because I had assumed a core count I never measured.
+  CAP_F="scratchpad/vps/host_capacity.tsv"
+  if [ -n "$W" ] && [ -r "$CAP_F" ]; then
+    # ⛔ MATCH ON THE BARE HOSTNAME. $HOST is whatever the caller typed —
+    # "work-server-1" or "worker@work-server-1" — while the table is keyed with
+    # the user prefix. My first cut compared them literally and REFUSED ALL THREE
+    # test cells including the legal one: a guard that refuses everything, which
+    # is the exact class flagged in this repo hours earlier. Strip the prefix on
+    # both sides so the comparison is on the thing that identifies the machine.
+    _hb=${HOST#*@}
+    CORES=$(awk -v h="$_hb" '$1 !~ /^#/ { k=$1; sub(/^.*@/,"",k); if (k==h) { print $3; exit } }' "$CAP_F")
+    if [ -z "$CORES" ]; then
+      say "⛔ REFUSING: $HOST has no row in $CAP_F. Add its allocation (NOT its nproc) before starting."
+      exit 2
+    fi
+    if [ "$W" -gt "$CORES" ]; then
+      say "⛔ REFUSING: WORKERS=$W exceeds our allocation of $CORES cores on $HOST (oversubscription is the SALTREF2 defect)."
+      say "   Pass WORKERS <= $CORES, or correct $CAP_F if the allocation actually changed."
+      exit 2
+    fi
+    say "capacity check: WORKERS=$W <= our allocation $CORES on $HOST — OK"
+  fi
   WK=""
   [ -n "$W" ] && WK="WORKERS=$W "
   CF="on"

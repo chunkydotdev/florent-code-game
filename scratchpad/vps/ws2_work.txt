@@ -1,0 +1,13 @@
+# s44 ws2 LAUNCHER + CALIBRATION QUEUE. Magnus: "our cores need to work for us
+# today, we want to queue up all you can muster." ws2 was fully idle (load 0.50,
+# 0 runners) after BODYAWRR completed.
+# NULL140 is an A/A cell on the v140 chassis — the prereg agent flagged we have
+# NONE (NULL125 is v125), and it calibrates SCREEN-homeearly and every future
+# screen on this chassis. Byte-identical arms, md5-verified all 4 files.
+NULLHOST bots/_v146null bots/_v146gunaxis 400 14900000
+# NULL140 ABANDONED at 140 rows — written at WORKERS=10 on a 6-core host (1.67x
+# oversubscribed), which is the SALTREF2 condition that moved a null 2.67pp.
+# Restarted as NULL140B under capacity. The old rows stay on disk as a record.
+NULL140B bots/_v264nullalpha bots/_v264nullbeta 5400 15700000
+PINRND1 bots/_v263pinrnd1 bots/_v223sealrepair 5400 15300000
+LNCHERL2 bots/_v250homeearly bots/_v223sealrepair 5400 15500000
