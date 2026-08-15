@@ -57589,3 +57589,55 @@ a demonstrated hit rate (eco 2/2) that has not been pushed on the kill-round axi
 ⛔ **NOT A VERDICT — I am not a lane and I have typed none.** This is a prioritisation
 claim from the screen, and per the standing rule a road is not closed or opened without
 live-game evidence.
+
+--- 2026-08-15T20:3xZ (`date -u`) NON-LANE SESSION — **ws1 WINDS DOWN TONIGHT. STATE CAPTURED, AND THE ws2 DEPLOY MOVES TO THE MORNING (Magnus's call).** ---
+
+**Magnus: *"ws-1 is winding down in 26 minutes, lets do it in the morning."*** Nothing was
+deployed. Final pull from ws1 taken at **20:34:22Z** — its rows are local and safe.
+
+## ⛔ TWO ws1 ROWS ARE STRANDED BY THE SHUTDOWN — the fleet state machine is ONE-WAY
+| row | state | what it means in the morning |
+|---|---|---|
+| `F254COLLARS` (`_v254collarseal` vs v140) | RUNNING, **3,310/5,400** pulled | **usable partial** — `overnight_read.py` pools partials and prints the shortfall. It will never reach 5,400 on ws1. |
+| `F255HOMEMAX` (`_v255homemax` vs v140, n=5,400) | **CLAIMED, NEVER STARTED** | **stranded forever.** `fleet_queue.tsv`'s own rule: *"a CLAIMED row is claimed FOREVER… To retry a row, ADD A NEW ROW with a new shard_id and a fresh seed_lo — never edit a state backwards."* ⇒ to run this, ADD A NEW ROW. Do not flip it back to QUEUED. |
+⚠ **`_v255homemax` is worth re-queueing deliberately, not by habit:** it is in the
+`homeearly` family, and `AWRLNCH` (`bodyaware`+`homeearly`, 53.95% with a **FLAT** kill
+round) is the lead named in **QUEUE #71**. It carries no `stack.py` stamp — treat it as
+hand-built until someone checks its toggles are live (see the `_v260catrnd1` finding).
+
+## ⚠ THE A/B PLAN CHANGED, BECAUSE THE CONTROL HOST IS LEAVING
+The proposed test was *"deploy the rolling pool to ws2, keep ws1 on the old worker as a
+control."* **With ws1 gone there is no control host.** Revised, and it is better anyway:
+**measure OCCUPANCY on ws2 before and after.** `orchestrate.sh status` prints `runners`,
+and `occupancy = runners / 2 / WORKERS` (each game is 2 procs: the `timeout` wrapper and
+`fcode`, both matching the grep). **Occupancy is robust to machine load in a way wall-clock
+is not — my first wall-clock A/B came out backwards for exactly that reason.**
+
+**⭐ BASELINE CAPTURED TONIGHT, AND IT IS THE STRONGEST EVIDENCE THE FIX HAS:**
+```
+ws2  WORKERS=6  load 2.81   5 consecutive samples, 20:34-20:36Z
+     runners=2 -> 1.0 games in flight of 6 slots = 17% occupancy   (5 of 5 samples)
+```
+⇒ **FIVE OF SIX CORES IDLE, WAITING ON ONE STRAGGLER.** That is the batch barrier caught in
+the act on PRODUCTION, not in a sim — and it is worse than the 51% the resampling model
+predicts for N=6. ⚠ **Caveat, stated: 5 samples over ~30 s is one moment, not a duty
+cycle.** Take a longer baseline in the morning before deploying, or the before/after is
+comparing a snapshot to an average.
+
+## MORNING SEQUENCE (nothing here is started)
+1. **Longer ws2 occupancy baseline** — sample `orchestrate.sh status` every ~60 s for
+   ~20 min. That is the number the deploy is judged against.
+2. **Deploy the new worker to ws2**, documented sequence only:
+   `orchestrate.sh kill worker@work-server-2` (verify `workers remaining: 0`) → push →
+   `orchestrate.sh start`. ⛔ **NEVER `stop` then `start`** — `cmd_start` does `rm -f STOP`,
+   so a curfewed worker wakes with no STOP file and double-subscribes the box.
+   `F232COLLARM` resumes from its row count, so rows are kept.
+3. **Re-sample occupancy.** Expect ~17% → ~80-95% if the fix does what the sim showed
+   (67%→81% at WORKERS=4). Also confirm the new `LOAD_CEIL` line appears in the start
+   output (`allocation 6 + 25% = 7`, not nproc-derived).
+4. **Row quality gate before trusting anything:** NOWINNER must stay 0 and seat balance
+   must stay ~50/50. `--tle 10` is WALL-CLOCK, so a pool bug shows up as corrupted rows,
+   not as an error.
+5. Only then consider ws1's replacement / the 48-core box — and note **the barrier costs a
+   48-core box ~70% of its capacity**, so the fix is a precondition for that purchase, not
+   an optimisation after it.
