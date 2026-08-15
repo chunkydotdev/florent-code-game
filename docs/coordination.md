@@ -56885,3 +56885,45 @@ excludes these rounds, driving bucket A to zero cannot touch them, **and a lock-
 to OSCILLATION would score a purposeful, correctly-targeted, terminally-useless walk as healthy.**
 ⇒ **their one-line form is the right one and needs no measurement to stand: "emitting a verb" and
 "doing something" are different predicates.**
+
+--- 2026-08-15T09:1xZ (`date -u`) ⭐⭐ **RESEARCH s43 — SETTLED BY MEASUREMENT, NOT BY MECHANISM: 30.2% OF ALL OUR IDLE-AND-FREE ROUNDS ARE SPENT STANDING NEXT TO AN ENEMY BELT DOING NOTHING** ---
+Side lane and I each proposed a mechanism for what an `_expand`-role builder does after walking to an
+enemy belt. **Both were wrong.** Theirs: *"on arrival it does nothing"* (an inference about the
+BUILDER from a fact about the FUNCTION). Mine: *"`_salt_turn` picks it up"* — **void, and I verified
+their refutation at the primary: `main.py:446-451` dispatches to exactly ONE of
+`_raid`/`_defend`/`_expand`, `_siphon_deny` is in eco's ladder (`eco.py:1188`) and `_salt_turn` is in
+raid's (`raid.py:346`), so the two paths cannot meet on one `run()`.**
+⇒ **So I stopped arguing mechanism and measured the OUTCOME, which needs no role attribution.**
+
+## WHAT A BUILDER ADJACENT TO AN ENEMY BELT ACTUALLY DOES — 150 v140 games, 40,502 such rounds
+    attacked THE BELT          5,599   13.8%   <- the documented carve-out, working
+    attacked something else       75    0.2%
+    MOVED                     14,902   36.8%
+    ⭐ EMITTED NOTHING         19,926   49.2%   <- bucket A
+    (replacement control: the four outcomes sum to 40,502 = adj_rounds exactly. PASS)
+
+## ⇒ THE HEADLINE, AND IT IS BIGGER THAN EITHER MECHANISM CLAIM
+**19,926 of 65,877 bucket-A rounds = 30.2% OF ALL OUR IDLE-AND-FREE BUILDER-ROUNDS ARE SPENT
+CARDINALLY ADJACENT TO AN ENEMY CONVEYOR OR SPLITTER, EMITTING NOTHING.** That is **133 rounds per
+game** standing next to a live enemy belt doing nothing at all.
+⇒ **The side lane's "does nothing" is substantially RIGHT ON OUTCOME even though both our mechanisms
+were wrong** — which is the argument for measuring the outcome rather than adjudicating the path.
+
+## ⇒ AND IT HANDS #70 A NAMED DESTINATION WITH A MEASURED POPULATION
+My earlier decomposition put **54.9% of bucket A as FORWARD-PARKED** and could not say what those
+builders were near. **A third of all bucket A is now located precisely: adjacent to an enemy belt.**
+⇒ **These are the reframed plank's best cell** — already forward, already on a contact tile, already
+idle, and **the belt is a legal melee target under the shipped carve-out**. The plank does not need
+to move them at all; **it needs them to act, or to step one tile to a denial position.**
+⚠ **WHAT THIS DOES NOT SAY:** it does not say the carve-out *should* have fired on those 19,926
+rounds — `_salt_turn` has seat and `LOKI_PECK_TI_FLOOR` gates, and an adjacent round may be a
+walk-past rather than an arrival. **Why they are idle is UNMEASURED. That they are idle, and where,
+is measured.**
+
+## ⛔ AND THE CONTROL I REGISTERED WAS RETIRED FOR A FALSE PREMISE — recorded because it is the third
+*"with `LOKI_QUIET_ON=True`, belt attacks must be 0"* → observed **5,600**. **The premise was wrong,
+not the code:** `doctrine.py:1545` documents a **CONVEYOR-MELEE CARVE-OUT** exempting enemy
+conveyors/splitters, because *"20 HP is ten pecks and the tenth severs a delivery chain."*
+**Replaced with a premise-free control (the four outcomes must sum to the adjacency count — PASS).**
+⭐ **A control built on an assumption about the code can only test the code as strongly as the
+assumption is true. The sum-check cannot be wrong about the tree, only about my arithmetic.**
