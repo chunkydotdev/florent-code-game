@@ -176,6 +176,28 @@ while true; do
     sleep $POLL_S; continue
   fi
 
+  # ---- guard 6: EVERY LIVE ROW IS SCORED AGAINST THE INCUMBENT -------------
+  # ⛔ MAGNUS, 2026-08-15: "Everything needs to beat 140, nothing else matters."
+  # v140 == bots/_v223sealrepair (corpus/version_trees.tsv:70).
+  #
+  # ⭐ WHY A GUARD RATHER THAN A CONVENTION: A ROW AGAINST AN OLDER CONTROL
+  # SORTS TO THE TOP OF THE LEADERBOARD. It is scored against a weaker bot, so
+  # it reads HIGH -- today's board had SALTIDLE2 at 64.57% (vs v116), SALT at
+  # 61.00% (vs v116) and MAPCODE at 73.27% (vs another ARM's treatment) sitting
+  # above every honest v140 read, which tops out at 55.4%. I quoted three of
+  # them to Magnus as leaders before he asked what they were measured against.
+  # The failure is not merely silent, it is FLATTERING -- which is why it needs
+  # a check and not a habit.
+  #
+  # Scoped to rows that will still RUN (a .started marker exempts history, which
+  # cannot be fixed and must not nag) and nulls are exempt STRUCTURALLY
+  # (treatment path == control path), never by name.
+  if ! $CPIN_PY tools/control_pin.py --audit "$WORK" >/dev/null 2>&1; then
+    say "REFUSING TO LAUNCH: a live row is not scored against the incumbent. Details:"
+    $CPIN_PY tools/control_pin.py --audit "$WORK" 2>&1 | sed 's/^/    /'
+    sleep $POLL_S; continue
+  fi
+
   launched=0
   if (( running < MAX_SHARDS )) && (( over == 0 )); then
     while read -r SH TR CT TG SL; do

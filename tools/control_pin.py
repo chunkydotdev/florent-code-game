@@ -117,6 +117,73 @@ def cmd_pin() -> int:
     return 0
 
 
+def cmd_audit(paths: list[str]) -> int:
+    """Refuse any worklist row whose CONTROL is not the current incumbent.
+
+    ⛔ MAGNUS, 2026-08-15, verbatim: "Everything needs to beat 140, nothing else
+    matters." v140 is `bots/_v223sealrepair` per corpus/version_trees.tsv:70.
+
+    WHY THIS IS A GUARD AND NOT A CONVENTION. A row against an older control
+    still produces a clean-looking number, and that number LOOKS BETTER --
+    strictly, because it is scored against a weaker bot. Today's board had
+    SALTIDLE2 at 64.57% (vs v116), SALT at 61.00% (vs v116) and MAPCODE at
+    73.27% (vs another arm's TREATMENT) sitting above every honest v140 read,
+    which tops out at 55.4%. **The off-programme rows sort to the TOP of the
+    leaderboard**, so the failure is not merely silent -- it is actively
+    flattering, and it is what a tired reader will quote.
+
+    ⇒ The check is one line of arithmetic and the reason it is worth a tool is
+    that the wrong answer is the attractive one.
+    """
+    inc = incumbent()
+    if inc is None:
+        print("⛔ REFUSE: PROGRAMME.md has no readable INCUMBENT — cannot audit controls.")
+        return 1
+    want = str(inc.relative_to(ROOT)) if inc.is_relative_to(ROOT) else str(inc)
+    started_dir = ROOT / "scratchpad" / "corefill_started"
+    bad = 0
+    total = 0
+    for path in paths:
+        p = Path(path)
+        if not p.is_file():
+            print(f"⛔ REFUSE: {path} unreadable — BLIND, not clean.")
+            return 1
+        tsv = p.suffix == ".tsv"
+        for ln in p.read_text(errors="replace").splitlines():
+            if not ln.strip() or ln.lstrip().startswith("#"):
+                continue
+            f = ln.split("\t") if tsv else ln.split()
+            if len(f) < 3:
+                continue
+            if tsv and len(f) >= 6 and f[5] in ("WITHDRAWN", "DONE", "FAILED"):
+                continue
+            shard, treat, ctl = f[0].strip(), f[1].strip(), f[2].strip()
+            # ⛔ ONLY ROWS THAT WILL STILL RUN. corefill_work.txt is append-only
+            # and keeps every row ever launched, so auditing all of it reports
+            # ~121 historical rows forever. AN ALARM THAT CANNOT GO GREEN IS AN
+            # ALARM NOBODY READS -- the same failure as a check that never
+            # fires, arrived at from the opposite side. History is a fact about
+            # what we already measured; it cannot be fixed and must not nag.
+            if (started_dir / shard).exists():
+                continue
+            # NULL CELLS ARE EXEMPT, STRUCTURALLY (treatment path == control
+            # path), never by name. A null measures the FIXTURE's noise floor,
+            # not a plank, so "does it beat v140" is not a question it asks.
+            # Detected by identity because a naming convention rots.
+            if treat == ctl:
+                continue
+            total += 1
+            if ctl != want:
+                bad += 1
+                print(f"⛔ {p.name}: {shard} scored against {ctl}, not {want}")
+    if bad:
+        print(f"\n⛔ {bad} of {total} live row(s) do NOT beat {want}. "
+              f"A row against an older control reads HIGH and is off-programme.")
+        return 1
+    print(f"control audit OK: all {total} live row(s) scored against {want}")
+    return 0
+
+
 def cmd_check(shard: str | None) -> int:
     who = f" for shard {shard}" if shard else ""
     t = incumbent()
@@ -208,6 +275,26 @@ def selftest() -> int:
         chk("control tree has no .py files => REFUSE, not 'unchanged'", cmd_check(None), 1)
         chk("...and --pin REFUSES to pin an unhashable tree", cmd_pin(), 2)
 
+        print("\n── --audit: the control must BE the incumbent ──────────────────")
+        # ⛔ THE CELL THAT MATTERS: an off-programme row reads HIGH, so this
+        # guard must fire on the flattering case, not just the obvious one.
+        wl = tmp / "wl.txt"
+        wl.write_text("# comment\n"
+                      "GOODSHARD bots/_arm bots/_ctrl 5400 1000\n")
+        chk("all rows against the incumbent => PASS", cmd_audit([str(wl)]), 0)
+        wl.write_text("GOODSHARD bots/_arm bots/_ctrl 5400 1000\n"
+                      "OLDSHARD  bots/_arm bots/_v116old 5400 2000\n")
+        chk("one row against an OLDER control => REFUSE", cmd_audit([str(wl)]), 1)
+        # a TSV worklist, where terminal states are exempt
+        tsv = tmp / "q.tsv"
+        tsv.write_text("A\tbots/_arm\tbots/_v116old\t5400\t1\tWITHDRAWN\t-\t-\t-\n")
+        chk("a WITHDRAWN row against an old control is EXEMPT (not live)",
+            cmd_audit([str(tsv)]), 0)
+        tsv.write_text("A\tbots/_arm\tbots/_v116old\t5400\t1\tQUEUED\t-\t-\t-\n")
+        chk("...the SAME row QUEUED => REFUSE", cmd_audit([str(tsv)]), 1)
+        chk("an unreadable worklist => REFUSE (blind, not clean)",
+            cmd_audit([str(tmp / "nope.txt")]), 1)
+
         print("\n── the added-file case (a plank dropped in beside the control) ─")
         (ctrl / "main.py").write_text("A = 1\n")
         (ctrl / "eco.py").write_text("B = 2\n")
@@ -234,10 +321,14 @@ def main() -> int:
     ap.add_argument("--pin", action="store_true", help="record the current control hash")
     ap.add_argument("--check", action="store_true", help="exit 1 if the control moved")
     ap.add_argument("--shard", metavar="NAME", help="name the shard being gated, for the message")
+    ap.add_argument("--audit", nargs="+", metavar="WORKLIST",
+                    help="refuse any live row whose control is not the incumbent")
     ap.add_argument("--selftest", action="store_true")
     a = ap.parse_args()
     if a.selftest:
         return selftest()
+    if a.audit:
+        return cmd_audit(a.audit)
     if a.pin:
         return cmd_pin()
     if a.check:
