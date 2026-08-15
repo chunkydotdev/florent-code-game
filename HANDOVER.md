@@ -1,3 +1,28 @@
+# ⭐⭐ LIVE AT s44 WRAP (2026-08-15T16:0xZ): **v151 "Loki v10 turbo (CPU)", uploaded by
+# x3r0 15:54 and ACTIVE.** Rating **1707** on the newest tape row (1720 → 1707).
+# **WE SHIPPED NOTHING TODAY — zero submissions, zero activations. The no-ship rule held.**
+# Per Magnus, *"If x3r0 launches a new bot it stays"* — so v151 stays. Do not roll it back.
+#
+# ⛔⛔ **AND THE CONTROL HAS DIVERGED FROM THE LIVE BOT. READ THIS BEFORE ANY VERDICT.**
+# Magnus, s44: *"Everything needs to beat 140, nothing else matters."*  v140 =
+# `bots/_v223sealrepair` and **every one of our 88 live queue rows is scored against it**
+# (audited clean, `control_pin.py --audit`). **But v151 is v140 PLUS the CPU cleanup** —
+# three pure-waste removals (`_sabotage_prio` short-circuit, `_expand` CARDINALS,
+# `LOKI_L4_LOG` off), det-verified 100/100 identical at `--tle 0`. **I reverted that
+# cleanup LOCALLY twice today because it moved the control under 31 queued arms; x3r0
+# then shipped it.** ⇒ **"beat v140" and "beat what is live" are no longer the same
+# instruction, and Magnus's ruling names v140.** Follow v140 until he says otherwise, and
+# put this divergence in front of him early.
+#
+# ⛔ THE HONEST CEILING TODAY IS **55.4% against v140**, not 65%. Anything on a board
+# reading 59-73% is scored against an OLDER control and **sorts high because it is scored
+# against a weaker bot** (SALTIDLE2 64.57% vs v116, MAPCODE 73.27% vs another arm's
+# TREATMENT). I quoted three of those to Magnus as leaders before he caught it. The v140
+# leaders are: **MIX281mix4 55.41% · MIX282mix5 55.34% · MIX280mix4 54.92% ·
+# MIX284mix3 54.90% · AWRLNCH 53.95% · BODYAWR 53.70% (n=10,800)** — four of the six are
+# the COMBINATION arms, which is Magnus's thesis holding at +5.4pp, not +15.
+#
+# --- the block below is the 11:39Z state, kept for its still-live warnings ---
 # LIVE: **v140 = `bots/_v223sealrepair` "Loki v10"** — md5 c4e563af4730b4c1595c679fc25098e7,
 # rating **1686 (GOLD — demoted out of Emerald)**, k=71, **RULE=SLOT FREE**, both SPRT
 # arms **BLEED**, net5 −27.0. Read at 2026-08-15T11:39Z.
@@ -139,3 +164,59 @@ Everything superseded lives in `HANDOVER-archive.md` (boot-load audit cut 1,
 2026-08-13: whole-file boot read ~34k tokens, bound is structural). AT WRAP:
 rewrite the top block above and MOVE what it replaces into the archive file.
 The top block IS the state; the archive is history.
+
+---
+
+# s44 WRAP (2026-08-15T16:05:11Z) — WHAT IS IN FLIGHT AND WHAT WATCHES IT
+
+## RUNNING RIGHT NOW
+* **local: 8 corefill shards**, 58 unstarted rows, load ~11-15 (ceiling 11, so guard 3
+  holds launches near-permanently — that is normal, 8 shards x 2 games ~= 1.8x on 10 cores,
+  and **measured NOT to bias results**: within-shard high-vs-low load = **-0.38pp
+  [-1.37,+0.62]** across 22 shards / 505k rows).
+* **ws1 (10 workers)** and **ws2 (6 workers)** both alive. Fleet: 26 QUEUED, 3 CLAIMED.
+* **`auto_gate.py --apply` loops every 600s** -> `scratchpad/auto_gate.log`.
+  Kill switch: `touch scratchpad/AUTOGATE_STOP`.
+
+## THE STOP RULE (Magnus s44, verbatim: "above 51% at 1000 and at 2700 n")
+`TREND-FLOOR`: stop if the PREFIX share at n=1000 or n=2700 is < 51.0%. **Prefix, not
+current share — the current share would be ~400 looks at a random walk.** Exemptions:
+nulls (structural md5), ablation `le` bars, n<400. Catastrophe (CI hi < 45) still fires.
+**`--apply` acts on LOCAL shards only**; remote is report-only — cancel remotely with
+`orchestrate.sh cancel <host> <SHARD> "<reason>"` (needs `kill` first).
+Stopped today: CATRND1 (4,621 rows), LNCHERLY (1,481).
+
+## GUARDS ADDED TODAY — all driven to BOTH verdicts
+* `tools/control_pin.py` — control-tree hash pin. **corefill guard 5 REFUSES to launch
+  when the control moved.** `--pin` to re-record (deliberately, after re-basing —
+  **never to silence it**). ⚠ LOCAL ONLY; remote rsync snapshots unverified against it.
+* **corefill guard 6** — refuses any live row whose control is not the incumbent.
+* `orchestrate.sh cancel` — the per-shard remote cancel that did not exist.
+* `tools/rebase_arm.py` — 3-way rebase with declared-and-consumed checks.
+
+## OPEN, IN PRIORITY ORDER
+1. ⛔ **The v140-vs-v151 divergence above.** Magnus's call.
+2. **6 rebased arms queued but never started**: F320SIEGELA, F321LAUNCH0, F322IDLEPEC,
+   F323PAVEFIR, F324OSCK4, F325OSCK6 + F326SIEGEFU. All on the v140 base, bars registered.
+3. ⚠ **F320 cannot deliver its dose** — the plank waives `LAUNCHER_RESERVE` but
+   `_eco_spendable` still adds `SIEGE_HEAL_RESERVE_TI=16` under the same condition, so
+   the bar is cost+16 not cost+0 against a sieged bank of 1-44 Ti. **It already nulled
+   once for this.** `_v326siegefull` was built to fix it — **VERIFY the fix took before
+   trusting it; I stopped that agent mid-flight.**
+4. **F232SEALTEM on ws1 reads 44.52%** (prefix@1000 45.2) — below floor, needs a manual
+   remote cancel.
+5. `tools/stack.py` **ancestor trap**: it passes BASE as BOTH the merge seed AND the
+   ancestor (`:97`), so any arm forked before v223 merges as though the chassis delta
+   were a deletion. **Correct today only by luck.** A sentinel-survival guard was
+   specified and NOT built.
+6. `claim_check.py` fires on `control_pin.py` — selftest run, **record not written**.
+7. **`FIXTURE_OF_RECORD: live_unrated` at 0% for the second session running.**
+
+## THE WAKE PATH — READ THIS
+**Monitors that survive this session:** the four watchers + keeper, `gate_watch` (600s),
+**`auto_gate --apply` (600s)**, corefill (deadline 12h from 15:40Z), both remote workers.
+**Nothing wakes a human.** `auto_gate` stops local shards automatically; **remote shards
+below the floor will run to 5400 unless someone cancels them by hand.**
+⛔ **AND "AGENT COMPLETED" IS NOT "AGENT STOPPED"** — one subagent ran 92 minutes past its
+completion notification, survived `pkill` and `TaskStop`, and committed on top of a
+revert. **Check `ps` for live children before believing a notification.**
