@@ -1,0 +1,18 @@
+# s44 LAUNCHER SHARDS for work-server-1 (idle 16 cores). Magnus s44: dose then
+# throw it on a core. Both arms below have MEASURED dose off the replay wire.
+# LNCHMAX  883 throws, 12/32 games (dose-homemax,   commit 69b96d25)
+# LNCHERLY 183 throws,  7/32 games (dose-homeearly, commit 01e0a411)
+# LNCHMAX WITHDRAWN 07:1xZ — 10.00% NOWINNER (20/200) vs 0-0.98% for every other
+# shard on this host. Cause isolated by splitting the two constants: LAUNCHER_RESERVE=0
+# is the culprit (res0-alone 29/30, rnd1-alone 30/30 clean). Replaced by LNCHRND1.
+NULLHOST bots/_v146null bots/_v146gunaxis 400 32900000
+LNCHRND1 bots/_v259rnd1 bots/_v223sealrepair 5400 33700000
+SPAWNLK bots/_v252spawnlock bots/_v223sealrepair 5400 33500000
+CATRND1 bots/_v260catrnd1 bots/_v223sealrepair 5400 33900000
+LNCHERLY bots/_v250homeearly bots/_v223sealrepair 5400 33300000
+W400g4 bots/_v400g4 bots/_v223sealrepair 5400 430000
+W401g5 bots/_v401g5 bots/_v223sealrepair 5400 432000
+W402g2 bots/_v402g2 bots/_v223sealrepair 5400 434000
+W403g2 bots/_v403g2 bots/_v223sealrepair 5400 436000
+W404g3 bots/_v404g3 bots/_v223sealrepair 5400 438000
+W405g3 bots/_v405g3 bots/_v223sealrepair 5400 440000
