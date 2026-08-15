@@ -55025,3 +55025,43 @@ the board** (1.6 h and 1.0 h), which is the property that makes them safe to quo
 property of the CELLS, not of the process that picked them.
 ⇒ **Recommendation, one line: the fire order is sound as written; if either of the top two tool rows
 is ever promoted, re-derive it live first.** **No prereg has reached me; I have certified nothing.**
+
+--- 2026-08-15T06:1xZ (`date -u`) ⛔ **RESEARCH s43 — THE CRASH BATTERY'S CONTROL READS IDENTICAL TO ITS TREATMENT. #17 CANNOT BE CLOSED OFF IT.** ---
+Banked here rather than left in a cross-session message, per this lane's own rule that a finding
+living in a transcript dies with the session. **Readings off `tools/overnight_read.py --dir
+scratchpad/overnight`, all four shards COMPLETE at n=60.**
+
+    CRASHP  _v224crashON     vs _probe_border_raw     60/60 = 100.00%
+    CRASHZ  _v224crashOFF    vs _probe_border_raw     60/60 = 100.00%   <- CONTROL
+    CRASHS  _v223sealrepair  vs _probe_border_raw     60/60 = 100.00%   <- INCUMBENT, no crash arm
+    CRASHG  _v224crashON     vs _probe_border_guard   60/60 = 100.00%
+
+**ALL FOUR ARMS AT 100.0%, INCLUDING CRASH-OFF AND AN INCUMBENT THAT HAS NO CRASH ARM AT ALL.**
+⇒ the probe dies 100% of the time **regardless of whether the weapon fires**. `overnight_read`'s
+`OUTSIDE-ABOVE escalate` fires on all four, which makes the escalation meaningless.
+⭐ **THIS IS WORSE THAN AN UNTESTED GUARD, AND THE DISTINCTION IS THE POINT: the control RAN and
+returned the SAME verdict.** That is positive proof the fixture is blind, not an absence of
+evidence. A saturated fixture reads exactly like a decisive one in the results column.
+⇒ **#17 (`DOES THE CRASH WEAPON ACTUALLY FIRE?`) IS NOT ANSWERED BY THIS BATTERY** and must not be
+closed off it. Any replacement needs a fixture whose CONTROL can land below the band — against our
+own border probes it cannot, which is `CLAUDE.md`'s own warning that `bots/*_probe` is a fixture we
+authored and it lies in a known direction. **Verdict is the builder's; this is the reading.**
+
+## GATE READINGS AGAINST PRE-REGISTERED BARS — relayed to the builder so rows can be banked
+**No verdict typed by me. Bars quoted from the locked preregs; readings from the completed shards.**
+
+    SENTTHR    BAR 51.33 (SCREEN-sentthreat:76, band +-1.33pp @ n=5400, DEFF 0.98)
+               READ 49.80%  n=5400 COMPLETE  -> INSIDE 48.67-51.33 = UNRESOLVED
+               prereg :84 — UNRESOLVED defaults to the RESTRICTION, arm not promoted,
+               per §9 the row CLOSES rather than re-running.   CLEAN.
+    GUNAXABL   FALSIFIER 51.33 (:408); GATE-2700 resolves only at <48.13% (:280)
+               READ 48.69%  n=5400 COMPLETE  -> UNRESOLVED, falsifier NOT met
+               ⚠⚠ INSIDE THE LOWER EDGE BY 0.02pp.
+    V140VS146  BAR 53.1% pooled, SUPERIORITY (SCREEN-v140vs146:74)
+               READ 53.00%  n=1000 COMPLETE  -> FAILS the superiority bar BY 0.10pp; UNRESOLVED.
+
+⚠ **TWO OF THE THREE ARE KNIFE-EDGE — 0.02pp and 0.10pp. They are coin flips wearing a decision's
+format.** Both sit in the class `CLAUDE.md`'s DEFF **direction** clause exposes: a **fail-to-exclude
+banked because nothing cleared**. The local DEFF exemption (0.98, measured) means the **bands** are
+right; it is the **margins** that cannot bear weight. ⇒ **bank the margin IN the row**, or a
+successor reads `UNRESOLVED` as if it were comfortable.
