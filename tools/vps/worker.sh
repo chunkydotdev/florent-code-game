@@ -140,6 +140,11 @@ ncpu() {
 }
 NCPU=$(ncpu)
 WORKERS=${WORKERS:-$(( NCPU - 2 ))}
+# How many games between drains. The drain is where rows are flushed and the
+# heartbeat/abort checks run, so this trades straggler tax against how often
+# those fire. 8 puts the tax at ~1/8 of its old value while still flushing
+# every ~8*WORKERS games (80 on ws1, 48 on ws2).
+POOL_BATCH_MULT=${POOL_BATCH_MULT:-8}
 [ "$WORKERS" -lt 1 ] && WORKERS=1
 # Ceiling is generous on purpose: `fcode run` is one busy CPU per game, so a
 # healthy 48-vCPU box at WORKERS=46 sits near 46. The ceiling catches a box that
@@ -281,10 +286,61 @@ run_shard() {
     fi
 
     rm -f "$TMPD"/*
-    batch=$WORKERS
+    # ⭐⭐ ROLLING POOL, NOT A FIXED BATCH (2026-08-15). This loop used to launch
+    # exactly WORKERS games and then `wait` for ALL of them. A batch therefore
+    # cost max(duration), while the useful work is sum(duration)/N = mean --
+    # and game length here is wildly skewed (measured on 104,145 remote rows:
+    # mean 301 turns, median 220, p90 617, max 1000).
+    #
+    # MEASURED STRAGGLER TAX, by resampling that real distribution:
+    #     WORKERS=6   mean/max = 0.513  ->  49% of capacity lost
+    #     WORKERS=10  mean/max = 0.423  ->  58% of capacity lost
+    # ⇒ ws1 at WORKERS=10 was burning MORE of its allocation on the barrier than
+    # ws2 at WORKERS=6, which is exactly why a 10-core host was out-produced by
+    # a 6-core one (2,769 vs 2,402 rows/h -- 87%, where hardware alone predicted
+    # ws1 ahead). The anomaly and the tax are the same fact.
+    #
+    # So: keep WORKERS games IN FLIGHT and start a replacement as each finishes,
+    # instead of draining to zero every N games. The barrier now happens once per
+    # POOL_BATCH games rather than once per WORKERS games.
+    #
+    # ⛔ WHAT IS DELIBERATELY UNCHANGED, because these are the invariants that
+    # make the rows trustworthy:
+    #   * every game still writes its OWN file in $TMPD, keyed by index. No game
+    #     ever appends to $ROWS -- that is still done once, by this loop, after
+    #     the drain. Interleaved `>>` from N parallel games is unparseable and
+    #     invisible until the morning read-out.
+    #   * STOP and LOAD_CEIL are still checked BEFORE every launch, so the
+    #     operator's kill switch and the oversubscription guard respond at the
+    #     same granularity as before (per game, not per batch).
+    #   * the heartbeat, the row count and the NOWINNER abort still run on the
+    #     drained batch, from the ROW COUNT, which is the only truth.
+    batch=$(( WORKERS * POOL_BATCH_MULT ))
+    [ "$batch" -lt "$WORKERS" ] && batch=$WORKERS
     [ $(( n + batch )) -gt "$TARGET" ] && batch=$(( TARGET - n ))
     i=0
-    while [ "$i" -lt "$batch" ]; do
+    inflight=0
+    pool_halt=0
+    while [ "$i" -lt "$batch" ] || [ "$inflight" -gt 0 ]; do
+      # --- top the pool up to WORKERS, checking the guards before each launch --
+      while [ "$inflight" -lt "$WORKERS" ] && [ "$i" -lt "$batch" ] && [ "$pool_halt" -eq 0 ]; do
+        if [ -f "$STOPF" ]; then pool_halt=1; break; fi
+        # THROTTLE THE LOAD PROBE. `load1` shells out (uptime|sed|awk on non-Linux)
+        # and calling it before EVERY launch cost 0.43s per 40 games when measured
+        # -- overhead I added with the pool and did not notice until an A/B came
+        # out the WRONG WAY. Load average is a 1-minute mean; sampling it more
+        # than once a second cannot tell you anything the previous sample did not.
+        _nowsec=$(date +%s)
+        if [ "$_nowsec" != "${_last_load_probe:-}" ]; then
+          _last_load_probe=$_nowsec
+          L1=$(load1)
+        fi
+        if awk -v a="${L1:-0}" -v b="$LOAD_CEIL" 'BEGIN{exit !(a>b)}'; then
+          # Do not launch into an over-loaded box. Let the pool drain a slot and
+          # re-check; `--tle 10` is WALL-CLOCK, so oversubscription corrupts rows
+          # rather than merely slowing them (the SALTREF2 defect).
+          break
+        fi
       idx=$(( n + i ))
       ( # ---- ONE GAME. Same cycling ORDER as overnight.sh: seed { map { A,B } }
         k=$(( idx % per_seed ))
@@ -318,7 +374,21 @@ run_shard() {
         printf '%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s\n' "$TS" "$T" "$SHARD" "$T" "$idx" "$T" "$M" "$T" "$seed" "$T" "$ORD" "$T" "$WIN" "$T" "$COND" "$T" "$TN" \
           > "$TMPD/$(printf '%012d' "$idx")"
       ) &
-      i=$(( i + 1 ))
+        i=$(( i + 1 ))
+        inflight=$(( inflight + 1 ))
+      done
+      if [ "$inflight" -eq 0 ]; then
+        # Nothing running and nothing launchable: either halted, or the load
+        # ceiling is holding us off. Sleep rather than spin.
+        [ "$pool_halt" -eq 1 ] && break
+        [ "$i" -ge "$batch" ] && break
+        sleep 5
+        continue
+      fi
+      # `wait -n` returns as soon as ONE job finishes -- that is the whole point.
+      # bash >= 4.3; the shebang is bash and both hosts run bash 5.
+      wait -n 2>/dev/null || wait
+      inflight=$(( inflight - 1 ))
     done
     wait
 

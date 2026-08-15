@@ -416,6 +416,22 @@ cmd_start() {
   fi
   WK=""
   [ -n "$W" ] && WK="WORKERS=$W "
+  # ⛔⛔ LOAD_CEIL MUST BE SIZED ON OUR ALLOCATION, NOT ON THE BOX'S nproc.
+  # `worker.sh` defaults it to NCPU + NCPU/4, and NCPU there is `nproc` — THE
+  # MACHINE. On work-server-1 that is 16, so the ceiling defaulted to 20 while
+  # OUR SLICE IS 10: the worker would happily keep launching until the box was
+  # at twice our allocation. That is precisely the nproc-vs-allocation confusion
+  # `host_capacity.tsv` was created to end — it was enforced on WORKERS (with a
+  # hard refusal, above) and silently NOT on the ceiling, so the guard covered
+  # the launch count and not the thing the launch count is guarding against.
+  # Measured 2026-08-15 on ws1: `WORKER up. ncpu=16 workers=10 load_ceil=20`.
+  # No damage had occurred (0 NOWINNER in 57,139 rows) — this closes it before
+  # a noisy neighbour makes it matter, since `--tle 10` is WALL-CLOCK and
+  # oversubscription corrupts rows rather than merely slowing them.
+  if [ -n "$CORES" ]; then
+    WK="${WK}LOAD_CEIL=$(( CORES + CORES / 4 )) "
+    say "load ceiling for $HOST: $(( CORES + CORES / 4 )) (allocation $CORES + 25%), NOT nproc-derived"
+  fi
   CF="on"
   case " $NO_CURFEW_HOSTS " in
     *" ${HOST#*@} "*) CF="off";;
