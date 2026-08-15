@@ -1117,3 +1117,11 @@ SEALQ    bots/_v265sealquiet    bots/_v223sealrepair   5400 350000
 CATRND1L bots/_v260catrnd1      bots/_v223sealrepair   5400 352000
 SPAWNLKL bots/_v252spawnlock    bots/_v223sealrepair   5400 354000
 AWRLNCH  bots/_v267awrlnch      bots/_v223sealrepair   5400 356000
+MAXSTACK bots/_v274maxstack      bots/_v223sealrepair   5400 358000
+BODYBLK  bots/_v262bodyblock     bots/_v223sealrepair   5400 360000
+MIX280mix4 bots/_v280mix4 bots/_v223sealrepair 5400 362000
+MIX281mix4 bots/_v281mix4 bots/_v223sealrepair 5400 364000
+MIX282mix5 bots/_v282mix5 bots/_v223sealrepair 5400 366000
+MIX283mix5 bots/_v283mix5 bots/_v223sealrepair 5400 368000
+MIX284mix3 bots/_v284mix3 bots/_v223sealrepair 5400 370000
+MIX285mix2 bots/_v285mix2 bots/_v223sealrepair 5400 372000
