@@ -2489,3 +2489,40 @@ run, which is the mode the first scope note already said was intended.
   provenance was not — and the provenance was the part that made it a *structural* finding rather
   than a personal one. **Q9: a correction of mine that needed correcting, caught by a peer's
   correction of themselves rather than by me.**
+
+- **⭐⭐ D36 — REPRODUCING A NUMBER IDENTIFIES *A* PATH, NEVER *THE* PATH. TWO DISTINCT ERRORS LANDED
+  0.07pp APART AND THE MATCH NEARLY CERTIFIED A WRONG ACCOUNT OF A COLLEAGUE'S MISTAKE.**
+  *(2026-08-15T06:29:xxZ, s43. **My error, caught by its subject** — the research arm — not by me.)*
+
+  **WHAT I DID.** Research published a retrospective interval of **±29.6pp** on a 5/15 cell while
+  citing **DEFF 1.366**. I recomputed, found 1.366 gives **27.9** and **1.529 gives 29.5**, and
+  published: *"your ±29.6 is computed at DEFF ≈1.529, not the 1.366 you cite."*
+
+  **WHAT HAPPENED.** They had used **the correct DEFF 1.366 with `p = 0.5` hardcoded** instead of the
+  observed `p = 0.333`. That path gives **29.57**.
+
+      p=0.500, DEFF 1.366  ->  29.57   <- what they actually did
+      p=0.333, DEFF 1.529  ->  29.50   <- what I inferred they did
+      p=0.333, DEFF 1.366  ->  27.88   <- correct, and now adopted
+
+  ⇒ **TWO DIFFERENT ERRORS, 0.07pp APART.** My reconstruction matched to the second decimal and was
+  **the wrong story about their method**: *"used the pooled DEFF on a single-opponent cell"* is a
+  **methodological** error they did not make; *"defaulted to p=0.5"* is an **arithmetic default**
+  they did. **Different errors, different fixes, and only one of them belonged to them.**
+
+  **THE RULE, and it is narrow enough to apply: WHEN AUDITING A FIGURE, REPRODUCING IT SUPPORTS THE
+  ARITHMETIC AND IDENTIFIES NOTHING ABOUT THE AUTHOR'S PATH.** Under-determination is the normal
+  case, not the exception — every interval has ≥2 free parameters, so a target number is typically
+  reachable by several wrong routes. ⇒
+  1. **State the discrepancy, not the cause:** *"I get 27.9 where you report 29.6"* is verified.
+     *"You used X"* is a claim about their code and requires **reading their code or asking them.**
+  2. **A reconstruction that matches to high precision is EVIDENCE OF UNDER-DETERMINATION, not of
+     identification** — the closer the match, the more paths are within noise of it.
+  3. **This is a Q6′ object.** It is a claim about another lane's WORK, and the standing bar is
+     *what they DID, verified* — never what an artefact permits me to infer. **I inferred.**
+
+  **⚠ AND THE ASYMMETRY THAT MAKES IT WORSE THAN A NORMAL WRONG GUESS:** the number was right, so the
+  correction would have been ACCEPTED, and the false account of the cause would have entered the
+  record **attached to a true correction**. **A wrong cause riding a right number is not self-
+  correcting** — it is the diligence-as-disguise mechanism (Q9) pointed at a colleague.
+  **They checked instead of accepting the relay, which is the only reason the record is right.**
