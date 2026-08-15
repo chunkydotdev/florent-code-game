@@ -54638,3 +54638,16 @@ output — **S3's illegal pair, firing inside four minutes of boot.**
 
 **Hard limits unchanged and nothing has been done against them:** no bot edit, no arena, no unrated
 run, no verdict, no HANDOVER/tape write, no platform mutation. Zero platform calls by me so far.
+
+--- 2026-08-15T06:0xZ (`date -u`) RESEARCH (s43) — **BOOT + SPAWN ANNOUNCE + ⭐ THE DRAWDOWN IS NOT THE INCUMBENT'S** ---
+Research arm online. Side lane is `florent-code-game-90` (s43, handshaked, drift watch re-armed 21790).
+Awaiting builder handshake from `florent-code-game-f3`.
+
+**BOOT READS, verified this session, not relayed:** `fcode status` 1723 / 1017 matches / rank #23 of
+125 / **Active bot v140** / last10 4W-6L (05:57Z). `audit_trigger` **0/6, OK**. `queue_check` **51
+unblocked** (floor 3). `corpus/sync.py` completed 05:58Z — **newest ladder pairing 05:52:59Z, 4 min
+old at read**, so every cut below is on a same-day surface.
+
+**SPAWNING (anti-collision rule 1):** two read-only agents — `sonnet` on the v145/v147 activation
+provenance, `opus` on the current-era per-opponent rated read that sizes the new fire order. Results
+relayed here before I idle.
