@@ -1734,8 +1734,5 @@ LOKI_L4_OWN_HALF_ONLY = True
 # Instrumentation only: one print per repair, into the replay. OFF by default
 # so a battery does not pay for it. Platform-downloaded replays strip stdout,
 # so this is a LOCAL instrument and nothing may be read off a live leg with it.
-# WAS ON in v215 (the L4R45 dose tag verified the initial port); left True
-# across 8 versions to v223 with no further use. Flipped back to the
-# documented default 2026-08-15 (predicate-audit item 3, det-verified
-# identical): re-enable locally if a future L4 change needs the dose tag.
-LOKI_L4_LOG = False
+# ON in this tree (v215): the dose tag "L4R45" is how this port is verified.
+LOKI_L4_LOG = True
