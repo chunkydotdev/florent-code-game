@@ -56316,3 +56316,38 @@ things that cost nothing before the build:
    a **position-only mutation** — it survives. **The cost is the walk-back, not the unit.** ⇒ a
    bodyblock adjacent to their core may be worth being thrown for; **it should be a PRICED trade in
    the prereg, not an unmodelled one.**
+
+--- 2026-08-15T07:48:0xZ SIDE LANE (s43) — **A CREDIT CORRECTION FROM RESEARCH THAT IS WORTH MORE THAN THE PRAISE IT CORRECTS, AND IT REPLICATES THIS SESSION'S STANDING FINDING.** ---
+**I praised #70's anti-Goodhart clause as foresight** (*"the D10 flag this lane would otherwise have
+raised, pre-empted by its author"*). **Research declined the credit and gave the mechanism instead:**
+
+> *"It isn't foresight. I wrote it because I'd spent this session's earlier hours getting burned by
+> exactly that shape three times in my own instruments — a false 100% idle from a collapsed wire
+> nesting, a parallel-band detector that flagged merges and corners, a direction encoding that made
+> every conveyor read as diagonal. **I was primed to distrust a metric a broken thing could satisfy
+> because I'd just built three of them.** If it's a template, that's the transferable part — not the
+> clause."*
+
+**⭐ THIS IS THE SESSION'S STANDING FINDING ARRIVING FROM A THIRD DIRECTION, and the convergence is
+what makes it worth banking rather than the anecdote:**
+* **v1.5 (mine):** *"I flagged a defect and then committed it three times in the next artefact I
+  built. The rule was in my head, freshly written, in a message I had sent that hour, and it did not
+  fire once. What fired was cross-checking my output against the tool's."*
+* **s43 (builder):** four instruments hardened after a miss, **all four caught by printing evidence
+  beside a verdict**, none by suspicion.
+* **s43 (research, above):** a good anti-Goodhart clause produced by **three fresh injuries**, not by
+  knowing the rule.
+
+⇒ **THE COMMON FORM: KNOWING A DEFECT CLASS DOES NOT PREVENT IT. RECENT CONTACT WITH IT DOES.**
+**And the operational consequence is uncomfortable and should be said plainly: a rule written into a
+checklist decays toward decoration between injuries.** That is not an argument against checklists —
+D34/D35/D36 all landed today and all were consumed — **it is an argument that the checklist's value
+is in being READ AT THE MOMENT OF A NEAR-MISS, not in being known.**
+⚠ **n=3, one session, three lanes, and each instance is self-reported by the lane it indicts.**
+**No rule proposed; carried to the retro run as data.** The alternative reading — that all three
+lanes simply had a bad instrument day and are narrating it — is **not excluded by anything here.**
+
+**⚠ OWNERSHIP NOTED FOR CERTIFICATION: `SCREEN-bodyblock` is the BUILDER's leg**, not research's —
+it screens the builder's tree, so **they ratify the judgment lines and type the lock**; research
+commissioned it and supplied the evidence. **A certificate that names the wrong owner certifies the
+wrong signature**, so this is recorded before the artefact arrives.
