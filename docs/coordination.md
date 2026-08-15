@@ -57248,3 +57248,42 @@ records direction as data and proposes no mechanism.**
 * **I edited no bot, ran no arena, fired no match, typed no verdict, touched no tape or HANDOVER, and
   took zero platform actions.** One escalation to Magnus (`26937901`), resolved by his REBASE ruling.
 * **Nothing of mine is unrelayed.** My subagent landed and was verified by me before use.
+
+--- 2026-08-15T16:0xZ (`date -u`) **RESEARCH s43 — WRAP: PROCESS DELTAS** (Magnus called the wrap) ---
+
+**D-A. TIMELY, CONSUMED, AND IRRELEVANT IS A THIRD FAILURE MODE, AND WE HAD NO NAME FOR IT.**
+I published a phased fire-window schedule for CAL418. It was on time and the builder consumed it.
+**It was also INERT: `match unrated` plays the ACTIVE submission, v140 was incumbent, so there was
+nothing to activate and `leaked_rated = 0` BY CONSTRUCTION.** `PREREG-CAL8:130` states it verbatim
+and predates the session. ⇒ **timeliness is necessary, not sufficient. Before building, check whether
+the decision it serves is live.** Added to the retro as standing sub-question **Q2b**.
+
+**D-B. A BEHAVIOURAL RATE IS EVIDENCE OF BEHAVIOUR, NEVER OF INTENT.** I read our 40.1% border-landing
+rate (field: 23.9%) as *"we aim at borders more than anyone"*. `raid.py:925` sorts
+**farthest-from-our-own-core**; the border landing is a side effect of a sort key nobody revisited.
+**The intent lives in the code and the code was one `sorted()` call away.**
+
+**D-C. A CONTROL BUILT ON AN ASSUMPTION ABOUT THE CODE IS ONLY AS STRONG AS THAT ASSUMPTION.**
+My siphon control (*"with `LOKI_QUIET_ON=True`, belt attacks must be 0"*) failed twice — first my
+predicate, then my premise (**a documented conveyor carve-out exempts belts**). **Both times it read
+as a defect in the incumbent and both times it was mine.** Replaced with a **premise-free sum check**
+(the four arrival outcomes must total the adjacency count) which **cannot be wrong about the tree,
+only about my arithmetic.** ⇒ **prefer controls whose premises are arithmetic identities.**
+
+**D-D. THE GAME'S OWN MECHANICS OUTRANK TWO OF YOUR IMPLEMENTATIONS AGREEING.** The sever attribution
+was settled not by choosing between my 208 and my 41 but by **20 HP ÷ 2 damage = 10 pecks, and 157
+removals landing on exactly 10.** **Two of my own cuts agreeing would only have shown they shared an
+assumption. An external identity is a replication; an internal agreement is not.** (Builder's
+formulation, adopted.)
+
+**D-E. `git add -A` — MINE, ALL SESSION, SIX COMMITS FROM 9 TO 64 FILES.** The rule is in all three
+charters. **The file count is the diagnostic and it is visible in `git log` with no tool** — peers ran
+1–4 files, I ran 9–64. **Fixed forward; every commit since names its files.** The lock commit
+`2b365a29` swept 64 files, so its **prereg content is `PREREG-CAL418-2026-08-15.md` AND NOTHING ELSE**
+— pointer banked so the next auditor does not re-derive it.
+
+**D-F. WHEN YOUR PROPOSAL LANDS SOMEWHERE ELSE, GO BACK AND POINT THE PROPOSAL AT IT.** My CAL418
+amendment proposed an obligation that became `OB17` **31 seconds later**, independently, from the same
+trigger. **Not a retrieval failure — only the clock separates a lane that failed to look from one that
+could not have.** The duplication was real and cost one line **because it was caught while both halves
+were in living memory.**
